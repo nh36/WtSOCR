@@ -1,0 +1,9 @@
+*.pdf
+.DS_Store
+
+# OCR/data artifacts
+work/
+pdfs/
+**/__pycache__/
+*.pyc
+*.hocr
