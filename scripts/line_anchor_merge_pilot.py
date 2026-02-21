@@ -144,7 +144,8 @@ BIBLIO_MARKER_RE = re.compile(
     re.IGNORECASE,
 )
 YEAR_RE = re.compile(r"\b(?:1[89]\d{2}|20\d{2})\b")
-TRANSLIT_CHAR_RE = re.compile(r"[A-Za-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁźäÄöÖüÜıışŞņŅãÃ]")
+TRANSLIT_CHAR_RE = re.compile(r"[A-Za-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁźäÄöÖüÜßẞıışŞņŅãÃ]")
+UNSUPPORTED_LATIN_OCR_CHAR_RE = re.compile(r"[þÞðÐ]")
 QUOTE_NORMALIZE_MAP = str.maketrans(
     {
         "“": '"',
@@ -742,6 +743,29 @@ def line_is_translit_heavy(s: str) -> bool:
     return translitish >= max(2, len(tokens) // 2)
 
 
+def translit_noise_token_count(s: str) -> int:
+    return sum(1 for tok in re.findall(r"\S+", s) if is_roman_noise_token(tok))
+
+
+def translit_letter_count(s: str) -> int:
+    return len(TRANSLIT_CHAR_RE.findall(s))
+
+
+def translit_cleanup_scope(s: str) -> bool:
+    if line_is_translit_heavy(s):
+        return True
+    if TIB_RE.search(s):
+        return True
+    if "'" in s or "’" in s:
+        return True
+    if re.search(r"\b(?:Lex\.|skt\.?|skr\.?)\b", s, re.IGNORECASE):
+        return True
+    # Known OCR confusion locus in LOC transliteration contexts.
+    if re.search(r"\bI(?:ta|tar|ha|dan)\b", s):
+        return True
+    return False
+
+
 def collect_anomalies(page: int, line_no: int, text: str) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     zones = ",".join(sorted(line_zones(text)))
@@ -1115,7 +1139,17 @@ def should_replace(
         return False, "empty_b", 0.0, 0, 0
     if DEV_RE.search(b):
         return False, "unexpected_devanagari", 0.0, 0, 0
-    if TIB_RE.search(a) and not TIB_RE.search(b):
+    # Guard against OCR confusable letters outside project transliteration conventions.
+    if UNSUPPORTED_LATIN_OCR_CHAR_RE.search(b) and not UNSUPPORTED_LATIN_OCR_CHAR_RE.search(a):
+        return False, "unsupported_latin_char", 0.0, 0, 0
+    # Keep true Tibetan script loss blocked, but do not hard-block on isolated Tibetan
+    # digit artifacts embedded in otherwise Latin/transliteration lines.
+    a_has_tib_non_digit = bool(re.search(r"[\u0F00-\u0F1F\u0F2A-\u0FFF]", a))
+    a_starts_tib_digit = bool(re.match(r"^\s*[\u0F20-\u0F29]", a))
+    b_starts_digit = bool(re.match(r"^\s*[\u0F20-\u0F290-9]", b))
+    if a_starts_tib_digit and not b_starts_digit:
+        return False, "lost_tibetan_script", 0.0, 0, 0
+    if a_has_tib_non_digit and not TIB_RE.search(b):
         return False, "lost_tibetan_script", 0.0, 0, 0
     a_d = len(DIACRITIC_RE.findall(a))
     b_d = len(DIACRITIC_RE.findall(b))
@@ -1147,6 +1181,24 @@ def should_replace(
         b_sus = len(OCR_SUSPECT_RE.findall(b))
         if a_sus > b_sus and a_norm_conf == b_norm_conf:
             return True, "replace_confusable_gain", similarity, a_d, b_d
+        if (
+            a_sus > b_sus
+            and translit_cleanup_scope(a)
+            and base_equivalent_for_merge(a_norm_conf) == base_equivalent_for_merge(b_norm_conf)
+        ):
+            return True, "replace_confusable_baseeq_gain", similarity, a_d, b_d
+
+    # Conservative transliteration cleanup path: only for translit-heavy lines where
+    # obvious impossible tokens (digit/symbol runs) are reduced and text remains close.
+    if similarity >= max(min_similarity_diacritic_only, 0.86) and translit_cleanup_scope(a):
+        a_noise_toks = translit_noise_token_count(a)
+        if a_noise_toks >= 1:
+            b_noise_toks = translit_noise_token_count(b)
+            if b_noise_toks < a_noise_toks:
+                a_letters = translit_letter_count(a)
+                b_letters = translit_letter_count(b)
+                if b_letters + 2 >= a_letters:
+                    return True, "replace_translit_noise_cleanup", similarity, a_d, b_d
 
     if b_d <= a_d:
         # Allow Tibetan-headword anchored cleanup even without diacritic gain if B clearly improves
