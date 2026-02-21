@@ -145,7 +145,9 @@ BIBLIO_MARKER_RE = re.compile(
 )
 YEAR_RE = re.compile(r"\b(?:1[89]\d{2}|20\d{2})\b")
 TRANSLIT_CHAR_RE = re.compile(r"[A-Za-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁźäÄöÖüÜßẞıışŞņŅãÃ]")
-UNSUPPORTED_LATIN_OCR_CHAR_RE = re.compile(r"[þÞðÐ]")
+# OCR occasionally emits unsupported Latin letters/accents (e.g. thorn, grave vowels)
+# that are outside project transliteration/German target alphabets.
+UNSUPPORTED_LATIN_OCR_CHAR_RE = re.compile(r"[þÞðÐàÀèÈìÌòÒùÙ]")
 QUOTE_NORMALIZE_MAP = str.maketrans(
     {
         "“": '"',
