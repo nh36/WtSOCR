@@ -311,7 +311,18 @@ def normalize_romanization_segment(s: str, sanskrit_context: bool) -> str:
         parts.append(fixed)
         pos = m.end()
     parts.append(out[pos:])
-    return "".join(parts)
+    return apply_targeted_translit_repairs("".join(parts))
+
+
+def apply_targeted_translit_repairs(s: str) -> str:
+    # High-precision lexical repairs for recurrent OCR confusions in Tibetan transliteration.
+    out = s
+    out = re.sub(r"\btu\s+yañ(?=\s*/)", "tu yaṅ", out)
+    out = re.sub(r"\byañ(?=\s*/\s*de\s+nas\b)", "yaṅ", out)
+    out = re.sub(r"\bde\s+nas\s+mal\s+byor\b", "de nas rnal byor", out)
+    out = re.sub(r"\bmal\s+byor\b", "rnal byor", out)
+    out = re.sub(r"\bbyun(?=\s*(?:[—\-~]\s*)?/\s*)", "byuṅ", out)
+    return out
 
 
 def normalize_latin_spans(s: str, ctx: dict[str, bool]) -> str:
@@ -333,7 +344,10 @@ def normalize_latin_spans(s: str, ctx: dict[str, bool]) -> str:
         out_parts.append(fixed)
         pos = m.end()
     out_parts.append(s[pos:])
-    return "".join(out_parts)
+    out = "".join(out_parts)
+    if (ctx["romanization_block"] or ctx["tibetan_block"]) and not ctx["bibliography_block"]:
+        out = apply_targeted_translit_repairs(out)
+    return out
 
 
 def split_line_spans(s: str) -> list[tuple[str, str]]:
@@ -376,6 +390,8 @@ def post_cleanup_contextual(lines: list[str], idx: int, s: str) -> str:
         rebuilt.append(normalize_latin_spans(text, ctx))
 
     out = "".join(rebuilt)
+    if "/" in out and re.search(r"\b(?:yañ|byun|mal\s+byor)\b", out) and not ctx["bibliography_block"]:
+        out = apply_targeted_translit_repairs(out)
     if split_tibetan_prefix_tail(out)[0]:
         out = drop_roman_tail_noise_after_tibetan(out)
         out = enforce_ng_from_tibetan_prefix(out)
