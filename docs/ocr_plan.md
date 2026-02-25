@@ -14,7 +14,8 @@
 4. **Run full OCR** with a two-pass pipeline:
    - Pass A (layout/structure): `deu+bod`, `psm 3`
    - Pass B (diacritics): `deu+bod+script/Latin`, `psm 4`
-5. **QA**: sample pages, verify diacritics and Tibetan strings, and estimate character error rate on a small gold sample. Scan for IPA codepoints and review any hits (no auto-filtering).
+5. **Run full heuristic line-anchor merge** with locked profile (`deu+bod+san+script/Latin`, crop variants, conservative similarity gates).
+6. **QA**: sample pages, verify diacritics and Tibetan strings, and estimate character error rate on a small gold sample. Scan for IPA codepoints and review any hits (no auto-filtering).
 
 ## Baseline OCR Settings (current)
 - Engine: `ocrmypdf` + Tesseract
@@ -25,6 +26,8 @@
 ## Outputs
 - Pass A plain text sidecar (structure)
 - Pass B plain text sidecar (diacritics)
+- Line-anchored merged text (`*_lineanchored_merged_sample.txt`; filename kept for compatibility even in full runs)
+- Line-anchored summary and audit CSVs
 - IPA scan report (stdout)
 
 ## Next Steps
@@ -54,6 +57,19 @@ Useful overrides:
 - `START_PAGE=401 END_PAGE=800` to run a subrange.
 - `FORCE_REDO=1` to rerun already-complete chunks.
 
+## Production Heuristic Stage (default after two-pass)
+Use `scripts/run_line_anchor_full_locked.sh` to run the full heuristic cleanup on both volumes.
+
+```bash
+scripts/run_line_anchor_full_locked.sh "work/line_anchor_full_YYYYMMDDTHHMMSSZ"
+```
+
+Resume examples (after an interruption):
+```bash
+V2_START_PAGE=861 scripts/run_line_anchor_full_locked.sh "work/line_anchor_full_resume_YYYYMMDDTHHMMSSZ"
+V1_START_PAGE=401 V1_END_PAGE=900 scripts/run_line_anchor_full_locked.sh "work/line_anchor_full_slice_YYYYMMDDTHHMMSSZ"
+```
+
 ## QA + Merge Workflow (two-pass outputs)
 Use a stratified sample first, then page-level metrics, then deterministic merge.
 
@@ -82,7 +98,7 @@ scripts/merge_twopass_select_pages.py \
   --log "work/full_twopass/WtS 1-34_merged_Adefault.log.csv"
 ```
 
-## Geometry-Anchored Merge Pilot (recommended next)
+## Geometry-Anchored Merge Pilot (for quick experiments)
 To avoid page-level reflow mismatch, anchor merge on Pass A line geometry.
 
 What it does:
