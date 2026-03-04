@@ -1,0 +1,1903 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import re
+import unicodedata
+from collections import Counter, defaultdict
+from dataclasses import dataclass, field
+from pathlib import Path
+
+TIB_RE = re.compile(r"[\u0F00-\u0FFF]")
+TIB_PREFIX_RE = re.compile(r"^\s*([\u0F00-\u0FFF\u0F0B-\u0F14\s]+)")
+LATIN_CHARS = (
+    r"A-Za-z"
+    r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
+    r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
+    r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC"
+    r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3"
+)
+TRANSLIT_CHARS = (
+    r"A-Za-z"
+    r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
+    r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
+    r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\$"
+)
+LATIN_TOKEN_RE = re.compile(
+    rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*)*"
+)
+TRANSLIT_TOKEN_RE = re.compile(
+    rf"[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*(?:-[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*)*$"
+)
+TRANSLIT_CUE_RE = re.compile(
+    r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25"
+    r"\u1E43\u1E41\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ng|ny|zh|sh|lh|rg|rk|rt|rd)",
+    re.IGNORECASE,
+)
+TRANSLIT_DIACRITIC_RE = re.compile(
+    r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]"
+)
+STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh)", re.IGNORECASE)
+BOUNDARY_TRANSLIT_CLUSTER_RE = re.compile(
+    r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh|rg|rk|rt|rd)",
+    re.IGNORECASE,
+)
+DISTINCTIVE_TIB_CLUSTER_RE = re.compile(
+    r"(?:^|[-'’])(?:"
+    r"bsk|bsg|bst|brg|brk|brt|brd|"
+    r"dng|dby|dbr|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mny|"
+    r"rgy|rts|rky|"
+    r"sgr|sbr|sny|sng|"
+    r"rdz|gzh|"
+    r"zh|lh|ng|ny|"
+    r"kh|ph|th|dz|"
+    r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
+    r")",
+    re.IGNORECASE,
+)
+TIB_MEDIAL_Y_RE = re.compile(r"[bcdfghjklmnpqrstvwxyz]y", re.IGNORECASE)
+VOWEL_PARTICLE_SUFFIX_RE = re.compile(r"^(.*[aeiouāīūöü])(?:['’])(i|o)$", re.IGNORECASE)
+SANSKRIT_NYA_CLUSTER_RE = re.compile(r"ñ(?=(?:d?z|d?zh|c|ch|j|jh|ts|tsh|ś|ṣ|sh|zh))", re.IGNORECASE)
+PALATAL_NYA_ONSET_RE = re.compile(r"ñ(?=[aāiīuūeéoöüy])", re.IGNORECASE)
+TIBETAN_NYA_CLUSTER_RE = re.compile(r"(?<![a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁ-])(?:g|m|s)ñ", re.IGNORECASE)
+INITIAL_CONFUSABLE_I_RE = re.compile(r"^I(?=[a-zA-Zāīūṛṝḷḹṅñṭḍṇśṣ])")
+INITIAL_I_TRANSLIT_ONSET_RE = re.compile(
+    r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|zh|sh|ch|ny|ng|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
+    re.IGNORECASE,
+)
+NOISE_RE = re.compile(r"[\d@#%^&*_=/\\|~]")
+GERMAN_UMLAUT_RE = re.compile(r"[\u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00DF]")
+ALL_CAPS_RE = re.compile(r"^[A-ZÄÖÜ]{2,}$")
+ROMAN_NUMERAL_RE = re.compile(r"^(?=[ivxlcdmIVXLCDM]+$)[IVXLCDMivxlcdm]+$")
+SPACE_RE = re.compile(r"\s+")
+VOWEL_RE = re.compile(r"[aeiouāīūöü]", re.IGNORECASE)
+INITIAL_I_CANON_SHAPE_RE = re.compile(
+    r"^l(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)",
+    re.IGNORECASE,
+)
+GERMAN_LHR_PRONOUN_RE = re.compile(r"^lhr(?:e|en|em|es)?$", re.IGNORECASE)
+GERMAN_IHR_PRONOUN_RE = re.compile(r"^ihr(?:e|en|em|er|es)?$", re.IGNORECASE)
+
+ENTRY_STRONG_ZONES = {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed"}
+AUTO_FIX_ZONES = {
+    "headword_line",
+    "example_tibetan_latin",
+    "tibetan_latin_mixed",
+    "german_prose_with_translit",
+    "latin_other",
+}
+
+DISCOVER_MIN_SOURCE_COUNT = 2
+DISCOVER_MIN_SUGGESTED_COUNT = 12
+DISCOVER_RATIO_MIN_HIGH = 4.0
+DISCOVER_RATIO_MIN_MEDIUM = 5.5
+
+# Explicit user-approved rewrites that are safe to auto-apply in auto-fix zones.
+EXPLICIT_TIER_A_REWRITES = {
+    "yañ": "yaṅ",
+    "dañ": "daṅ",
+    "nañ": "naṅ",
+    "gañ": "gaṅ",
+    "oñs": "oṅs",
+    "lañs": "laṅs",
+    "gtsañ": "gtsaṅ",
+    "khri-ide": "khri-lde",
+    "pho-iha": "pho-lha",
+    "dgra-iba-gottheit": "dgra-lba-gottheit",
+    "dpal-idan": "dpal-ldan",
+}
+
+# Known dubious initial-I forms that should be queued for context review, not auto-applied.
+INITIAL_I_MANUAL_REVIEW_BLOCKLIST = {
+    "irāgheit",
+    "igñid",
+    "irde'n",
+    "irdo'i",
+    "irgyu'i",
+}
+
+GERMAN_HINT_WORDS = {
+    "auch",
+    "alte",
+    "schreibung",
+    "die",
+    "der",
+    "das",
+    "ein",
+    "eine",
+    "einer",
+    "einem",
+    "einen",
+    "eines",
+    "und",
+    "oder",
+    "von",
+    "zu",
+    "im",
+    "in",
+    "am",
+    "an",
+    "mit",
+    "ohne",
+    "fur",
+    "für",
+    "als",
+    "ist",
+    "sind",
+    "war",
+    "bei",
+    "dem",
+    "den",
+    "des",
+    "bezeichnet",
+    "bedeutet",
+    "lex",
+    "vgl",
+    "siehe",
+}
+
+GERMAN_INITIAL_I_STOPWORDS = {
+    "ich",
+    "ihm",
+    "ihn",
+    "ihr",
+    "ihre",
+    "ihrem",
+    "ihren",
+    "ihres",
+    "ihnen",
+    "im",
+    "in",
+    "ins",
+    "ist",
+}
+
+GERMAN_WORD_SUFFIXES = (
+    "ung",
+    "keit",
+    "chen",
+    "isch",
+    "lich",
+    "heit",
+    "schaft",
+    "ieren",
+    "ieren",
+)
+
+SHORT_TIB_SYLLABLES = {
+    "a",
+    "ba",
+    "bo",
+    "bya",
+    "can",
+    "chos",
+    "dan",
+    "de",
+    "di",
+    "du",
+    "gi",
+    "gyi",
+    "ka",
+    "kha",
+    "khyi",
+    "kyi",
+    "la",
+    "las",
+    "lha",
+    "lo",
+    "ma",
+    "mi",
+    "na",
+    "nas",
+    "ni",
+    "pa",
+    "po",
+    "ra",
+    "rje",
+    "rtse",
+    "sa",
+    "sems",
+    "sku",
+    "so",
+    "ste",
+    "su",
+    "ta",
+    "thar",
+    "tu",
+    "ya",
+    "yan",
+    "yin",
+    "yul",
+    "zhes",
+}
+
+DISCOVERY_GENERIC_SHORT_TARGETS = {
+    "a",
+    "ba",
+    "bo",
+    "de",
+    "di",
+    "du",
+    "gi",
+    "ka",
+    "kha",
+    "kyi",
+    "la",
+    "las",
+    "lo",
+    "ma",
+    "na",
+    "nas",
+    "ni",
+    "pa",
+    "po",
+    "ra",
+    "sa",
+    "so",
+    "su",
+    "ta",
+    "tu",
+    "ya",
+    "yin",
+}
+
+CONFUSABLE_TO_CANON = {
+    "$": "\u015B",  # ś
+    "I": "l",
+    "\u0131": "i",  # dotless i
+    "\u015F": "\u1E63",  # ş -> ṣ
+    "\u015E": "\u1E62",  # Ş -> Ṣ
+    "\u0146": "\u1E47",  # ņ -> ṇ
+    "\u0145": "\u1E46",  # Ņ -> Ṇ
+    "\u00E3": "\u0101",  # ã -> ā
+    "\u00C3": "\u0100",  # Ã -> Ā
+    "\u00F1": "\u1E45",  # ñ -> ṅ
+    "\u00D1": "\u1E44",  # Ñ -> Ṅ
+}
+
+SKELETON_MAP = str.maketrans(
+    {
+        "ā": "a",
+        "Ā": "a",
+        "ī": "i",
+        "Ī": "i",
+        "ū": "u",
+        "Ū": "u",
+        "ṛ": "r",
+        "Ṛ": "r",
+        "ṝ": "r",
+        "Ṝ": "r",
+        "ḷ": "l",
+        "Ḷ": "l",
+        "ḹ": "l",
+        "Ḹ": "l",
+        "ṅ": "n",
+        "Ṅ": "n",
+        "ñ": "n",
+        "Ñ": "n",
+        "ṭ": "t",
+        "Ṭ": "t",
+        "ḍ": "d",
+        "Ḍ": "d",
+        "ṇ": "n",
+        "Ṇ": "n",
+        "ś": "s",
+        "Ś": "s",
+        "ṣ": "s",
+        "Ṣ": "s",
+        "ḥ": "h",
+        "Ḥ": "h",
+        "ṃ": "m",
+        "Ṃ": "m",
+        "ṁ": "m",
+        "Ṁ": "m",
+        "ź": "z",
+        "Ź": "z",
+        "ä": "a",
+        "Ä": "a",
+        "ö": "o",
+        "Ö": "o",
+        "ü": "u",
+        "Ü": "u",
+        "ß": "s",
+        "ı": "i",
+        "ş": "s",
+        "Ş": "s",
+        "ņ": "n",
+        "Ņ": "n",
+        "ã": "a",
+        "Ã": "a",
+    }
+)
+
+
+def truthy(value: str | None) -> bool:
+    if value is None:
+        return False
+    return value.strip().lower() in {"1", "true", "yes", "y"}
+
+
+def normalize_line(s: str) -> str:
+    return SPACE_RE.sub(" ", unicodedata.normalize("NFC", s)).strip()
+
+
+def canonicalize_translit_token(token: str) -> str:
+    canon = "".join(CONFUSABLE_TO_CANON.get(ch, ch) for ch in token)
+    # OCR confusable special-case: "Ilh..." is often intended "lh...", not "llh...".
+    canon = re.sub(r"(?:(?<=^)|(?<=-))llh", "lh", canon)
+    return canon
+
+
+def distance_key(token: str) -> str:
+    t = canonicalize_translit_token(token.lower())
+    t = t.translate(SKELETON_MAP)
+    t = t.replace("'", "").replace("’", "").replace("-", "")
+    return t
+
+
+def token_is_translit_like(token: str, line_has_tibetan: bool, is_entry_start: bool) -> bool:
+    tok = token.lower()
+    if len(tok) < 2:
+        return False
+    if tok in GERMAN_HINT_WORDS:
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(tok):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if not LATIN_TOKEN_RE.fullmatch(token):
+        return False
+    if TRANSLIT_CUE_RE.search(token):
+        return True
+    if tok in SHORT_TIB_SYLLABLES:
+        return True
+    if is_entry_start and tok.islower() and len(tok) <= 14:
+        return True
+    if line_has_tibetan and tok.islower() and len(tok) <= 10:
+        if not tok.endswith(GERMAN_WORD_SUFFIXES):
+            return True
+    return False
+
+
+def token_is_german_like(token: str) -> bool:
+    tok = token.lower()
+    if tok in GERMAN_HINT_WORDS:
+        return True
+    if GERMAN_UMLAUT_RE.search(token):
+        return True
+    if token and token[0].isupper() and not ALL_CAPS_RE.fullmatch(token):
+        return True
+    if tok.endswith(GERMAN_WORD_SUFFIXES):
+        return True
+    return False
+
+
+def token_has_translit_cue(token: str) -> bool:
+    if not token:
+        return False
+    if TRANSLIT_DIACRITIC_RE.search(token):
+        return True
+    if "'" in token or "’" in token:
+        return True
+    if STRONG_TRANSLIT_CLUSTER_RE.search(token):
+        return True
+    if token.lower() in SHORT_TIB_SYLLABLES and len(token) >= 3:
+        return True
+    return False
+
+
+def token_has_hard_translit_marker(token: str) -> bool:
+    if not token:
+        return False
+    if TRANSLIT_DIACRITIC_RE.search(token):
+        return True
+    if "'" in token or "’" in token:
+        return True
+    return False
+
+
+def token_has_boundary_translit_cluster(token: str) -> bool:
+    if not token:
+        return False
+    return bool(BOUNDARY_TRANSLIT_CLUSTER_RE.search(token))
+
+
+def token_has_distinctive_tibetan_signature(token: str) -> bool:
+    if not token:
+        return False
+    low = canonicalize_translit_token(token).lower()
+    if low in SHORT_TIB_SYLLABLES:
+        return True
+    if token_has_hard_translit_marker(low):
+        return True
+    if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
+        return True
+    if TIB_MEDIAL_Y_RE.search(low):
+        return True
+    return False
+
+
+def token_is_discovery_translit_candidate(token: str) -> bool:
+    if not token:
+        return False
+    low = canonicalize_translit_token(token).lower()
+    if not TRANSLIT_TOKEN_RE.fullmatch(low):
+        return False
+    if len(low) < 2:
+        return False
+    if token_is_initial_i_german_function_word(low):
+        return False
+    if low in SHORT_TIB_SYLLABLES:
+        return True
+    if token_has_translit_cue(low):
+        return True
+    if token_has_distinctive_tibetan_signature(low):
+        return True
+    return False
+
+
+def token_is_discovery_generic_short_target(token: str) -> bool:
+    low = canonicalize_translit_token(token).lower()
+    return len(low) <= 3 and low in DISCOVERY_GENERIC_SHORT_TARGETS
+
+
+def split_vowel_particle_suffix(token: str) -> tuple[str, str] | None:
+    m = VOWEL_PARTICLE_SUFFIX_RE.fullmatch(token)
+    if not m:
+        return None
+    base = m.group(1)
+    suffix = m.group(2).lower()
+    return base, suffix
+
+
+def token_drops_vowel_particle_suffix(src: str, dst: str) -> bool:
+    parts = split_vowel_particle_suffix(src)
+    if parts is None:
+        return False
+    base, _ = parts
+    return dst == base
+
+
+def token_mismatches_vowel_particle_suffix(src: str, dst: str) -> bool:
+    src_parts = split_vowel_particle_suffix(src)
+    if src_parts is None:
+        return False
+    _, src_suffix = src_parts
+    dst_parts = split_vowel_particle_suffix(dst)
+    if dst_parts is None:
+        return True
+    _, dst_suffix = dst_parts
+    return src_suffix != dst_suffix
+
+
+def token_drops_apostrophe(src: str, dst: str) -> bool:
+    src_has = ("'" in src) or ("’" in src)
+    dst_has = ("'" in dst) or ("’" in dst)
+    return src_has and not dst_has
+
+
+def token_has_protected_sanskrit_nya(token: str) -> bool:
+    low = token.lower()
+    if "jñ" in low:
+        return True
+    return bool(SANSKRIT_NYA_CLUSTER_RE.search(low))
+
+
+def token_has_protected_palatal_nya(token: str) -> bool:
+    return bool(PALATAL_NYA_ONSET_RE.search(token.lower()))
+
+
+def token_has_protected_tibetan_nya_cluster(token: str) -> bool:
+    return bool(TIBETAN_NYA_CLUSTER_RE.search(token.lower()))
+
+
+def token_has_initial_confusable_I(token: str) -> bool:
+    return bool(INITIAL_CONFUSABLE_I_RE.match(token))
+
+
+def token_blocks_nya_to_nga(src: str, dst: str) -> bool:
+    src_low = src.lower()
+    dst_low = dst.lower()
+    src_nya_protected = token_has_protected_sanskrit_nya(src_low)
+    src_palatal_nya_protected = token_has_protected_palatal_nya(src_low)
+    src_tibetan_nya_cluster_protected = token_has_protected_tibetan_nya_cluster(src_low)
+    return (
+        (src_nya_protected or src_palatal_nya_protected or src_tibetan_nya_cluster_protected)
+        and "ñ" in src_low
+        and "ṅ" in dst_low
+        and "ñ" not in dst_low
+    )
+
+
+def token_is_initial_i_confusable_noise(src: str, dst: str) -> bool:
+    if not token_has_initial_confusable_I(src):
+        return False
+    if not dst.lower().startswith("l"):
+        return False
+    if token_has_hard_translit_marker(src) or token_has_hard_translit_marker(dst):
+        return False
+    if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
+        return False
+    if src.lower() in SHORT_TIB_SYLLABLES or dst.lower() in SHORT_TIB_SYLLABLES:
+        return False
+    if not token_is_german_like(src):
+        return False
+    return True
+
+
+def token_is_long_plain_initial_i_noise(src: str, dst: str) -> bool:
+    if not token_has_initial_confusable_I(src):
+        return False
+    if not dst.lower().startswith("l"):
+        return False
+    if len(src) < 8:
+        return False
+    if "-" in src or "'" in src or "’" in src:
+        return False
+    if not (src[:1].isupper() and src[1:].islower()):
+        return False
+    if INITIAL_I_TRANSLIT_ONSET_RE.match(src):
+        return False
+    if token_has_hard_translit_marker(src) or token_has_hard_translit_marker(dst):
+        return False
+    if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
+        return False
+    return True
+
+
+def token_is_initial_i_german_function_word(token: str) -> bool:
+    low = token.lower()
+    if low in GERMAN_INITIAL_I_STOPWORDS:
+        return True
+    if GERMAN_IHR_PRONOUN_RE.fullmatch(low):
+        return True
+    return False
+
+
+def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
+    if not token_has_initial_confusable_I(src):
+        return False
+    dst_low = dst.lower()
+    if not dst_low.startswith("l"):
+        return False
+    if token_is_initial_i_german_function_word(src):
+        return False
+    if GERMAN_LHR_PRONOUN_RE.fullmatch(dst_low):
+        return False
+    if not INITIAL_I_CANON_SHAPE_RE.match(dst_low):
+        return False
+    if not VOWEL_RE.search(dst_low):
+        return False
+    # Long plain titlecase I* words are usually German; keep these gated.
+    if len(src) >= 8 and src[:1].isupper() and src[1:].islower():
+        if not token_has_translit_cue(src) and not token_has_translit_cue(dst):
+            return False
+    if token_has_hard_translit_marker(src) or token_has_hard_translit_marker(dst):
+        return True
+    if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
+        return True
+    if "-" in src or "'" in src or "’" in src or "-" in dst or "'" in dst or "’" in dst:
+        return True
+    if dst_low in SHORT_TIB_SYLLABLES:
+        return True
+    if len(dst_low) <= 6 and (token_has_translit_cue(src) or token_has_translit_cue(dst)):
+        return True
+    return (not token_is_german_like(src)) and len(dst_low) <= 7
+
+
+def token_requires_manual_initial_i_review(src: str, dst: str) -> bool:
+    low = src.lower()
+    if low in INITIAL_I_MANUAL_REVIEW_BLOCKLIST:
+        return True
+    if not token_has_initial_confusable_I(src):
+        return False
+    if not dst.lower().startswith("l"):
+        return False
+    # Mixed translit+German compounds like *-gheit should be reviewed in context.
+    if low.endswith(("gheit", "kheit")) and (token_has_hard_translit_marker(src) or "ñ" in low):
+        return True
+    return False
+
+
+def token_is_citation_confusable_i_to_l_candidate(src: str, dst: str) -> bool:
+    if src.lower() == dst.lower():
+        return False
+    if "I" not in src:
+        return False
+    if src.startswith("I"):
+        return False
+    if src.islower() or src.isupper():
+        return False
+    if src[:1].isupper() and src[1:].islower():
+        return False
+    if len(src) < 6:
+        return False
+    if token_has_hard_translit_marker(src) or token_has_hard_translit_marker(dst):
+        return False
+    if TRANSLIT_DIACRITIC_RE.search(src) or TRANSLIT_DIACRITIC_RE.search(dst):
+        return False
+    if sum(1 for ch in src if ch.isupper()) < 3:
+        return False
+    # Bibliographic surnames often appear in German prose/citation contexts.
+    return token_is_german_like(src)
+
+
+def token_is_safe_coda_nya_to_nga(src: str, dst: str) -> bool:
+    src_low = src.lower()
+    dst_low = dst.lower()
+    if "ñ" not in src_low or "ṅ" not in dst_low:
+        return False
+    if token_blocks_nya_to_nga(src_low, dst_low):
+        return False
+    if len(src_low) != len(dst_low):
+        return False
+    for s_ch, d_ch in zip(src_low, dst_low):
+        if s_ch == d_ch:
+            continue
+        if s_ch == "ñ" and d_ch == "ṅ":
+            continue
+        return False
+    for idx, ch in enumerate(src_low):
+        if ch != "ñ":
+            continue
+        if idx + 1 >= len(src_low):
+            continue
+        nxt = src_low[idx + 1]
+        if nxt in {"-", "'", "’"}:
+            continue
+        # Keep this strictly coda-like for auto-fix; onset/palatal contexts stay in review.
+        if nxt not in {"s", "g", "k", "t", "d", "p", "b", "m", "r", "l", "n"}:
+            return False
+    return True
+
+
+def token_is_trailing_shortening(src: str, dst: str) -> bool:
+    if len(src) < 4 or len(dst) < 3:
+        return False
+    if src.startswith(dst) and len(src) - len(dst) <= 2:
+        if src.endswith(("i", "o", "'i", "’i", "'o", "’o")):
+            return True
+        if src.endswith("a") and dst.endswith(("r", "k")):
+            return True
+    return False
+
+
+def token_is_strict_clean_translit(token: str) -> bool:
+    if not TRANSLIT_TOKEN_RE.fullmatch(token):
+        return False
+    if token != canonicalize_translit_token(token):
+        return False
+    if GERMAN_UMLAUT_RE.search(token):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if token.lower() in GERMAN_HINT_WORDS:
+        return False
+    return True
+
+
+def validate_translit_token(token: str) -> list[tuple[str, str]]:
+    issues: list[tuple[str, str]] = []
+    canon = canonicalize_translit_token(token)
+    confusable_blocked = (
+        token_blocks_nya_to_nga(token, canon)
+        or token_is_initial_i_confusable_noise(token, canon)
+        or token_is_initial_i_german_function_word(token)
+    )
+    if canon != token and not confusable_blocked:
+        issues.append(("confusable_char", canon))
+    if not TRANSLIT_TOKEN_RE.fullmatch(canon):
+        issues.append(("invalid_translit_shape", canon))
+    if NOISE_RE.search(token):
+        issues.append(("digit_or_symbol_noise", canon))
+    if GERMAN_UMLAUT_RE.search(token):
+        issues.append(("german_umlaut_in_translit_context", canon))
+    return issues
+
+
+def first_confusable_suggestion(issues: list[tuple[str, str]]) -> str | None:
+    for issue, suggestion in issues:
+        if issue == "confusable_char":
+            return canonicalize_translit_token(suggestion).lower()
+    return None
+
+
+def extract_tibetan_prefix(line: str) -> tuple[str, int]:
+    m = TIB_PREFIX_RE.match(line)
+    if not m:
+        return "", 0
+    prefix = m.group(1).strip()
+    if not prefix or not TIB_RE.search(prefix):
+        return "", 0
+    return SPACE_RE.sub(" ", prefix), m.end()
+
+
+def extract_headword_latin(remainder: str) -> tuple[str, str]:
+    tokens: list[str] = []
+    used_cue = False
+    prev_end = 0
+    for m in LATIN_TOKEN_RE.finditer(remainder):
+        if len(tokens) >= 10:
+            break
+        between = remainder[prev_end : m.start()]
+        prev_end = m.end()
+        if re.search(r"\d", between):
+            break
+        if re.search(r"[.;:!?]", between) and tokens:
+            break
+        tok = m.group(0)
+        low = tok.lower()
+        is_trans = token_is_translit_like(tok, line_has_tibetan=True, is_entry_start=True)
+        if low in GERMAN_HINT_WORDS and tokens:
+            break
+        if not is_trans:
+            if not tokens:
+                continue
+            break
+        if TRANSLIT_CUE_RE.search(tok):
+            used_cue = True
+        tokens.append(tok)
+    if not tokens:
+        return "", "none"
+    conf = "high" if used_cue else "medium"
+    return " ".join(tokens), conf
+
+
+def classify_zone(line: str, is_entry_start: bool, translit_tokens: int, german_tokens: int) -> str:
+    has_tib = bool(TIB_RE.search(line))
+    if is_entry_start:
+        return "headword_line"
+    if has_tib and translit_tokens > 0 and german_tokens > 0:
+        return "example_tibetan_latin"
+    if has_tib and translit_tokens > 0:
+        return "tibetan_latin_mixed"
+    if has_tib:
+        return "tibetan_only"
+    if german_tokens > 0 and translit_tokens > 0:
+        return "german_prose_with_translit"
+    if german_tokens > 0:
+        return "german_prose"
+    if translit_tokens > 0:
+        return "latin_other"
+    return "other"
+
+
+def levenshtein_limited(a: str, b: str, max_dist: int) -> int | None:
+    if a == b:
+        return 0
+    if abs(len(a) - len(b)) > max_dist:
+        return None
+    if not a or not b:
+        d = max(len(a), len(b))
+        return d if d <= max_dist else None
+
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, start=1):
+        cur = [i] + [0] * len(b)
+        row_min = cur[0]
+        for j, cb in enumerate(b, start=1):
+            cost = 0 if ca == cb else 1
+            cur[j] = min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost)
+            if cur[j] < row_min:
+                row_min = cur[j]
+        if row_min > max_dist:
+            return None
+        prev = cur
+    d = prev[-1]
+    return d if d <= max_dist else None
+
+
+def apply_case_pattern(src: str, dst: str) -> str:
+    if src.isupper():
+        return dst.upper()
+    if len(src) == len(dst):
+        out: list[str] = []
+        for s_ch, d_ch in zip(src, dst):
+            if not d_ch.isalpha():
+                out.append(d_ch)
+                continue
+            # OCR confusable: uppercase I often stands for lowercase l in these tokens.
+            if s_ch == "I" and d_ch.lower() == "l":
+                out.append("l")
+                continue
+            if s_ch.isupper():
+                out.append(d_ch.upper())
+                continue
+            if s_ch.islower():
+                out.append(d_ch.lower())
+                continue
+            out.append(d_ch)
+        shaped = "".join(out)
+        if token_has_initial_confusable_I(src) and shaped.startswith("L"):
+            return "l" + shaped[1:]
+        return shaped
+    # OCR confusable: preserve corrected lowercase l* when source starts with mistaken I*.
+    if token_has_initial_confusable_I(src) and dst.startswith("l"):
+        return dst
+    if src and src[0].isupper():
+        return dst[:1].upper() + dst[1:]
+    return dst
+
+
+@dataclass
+class AuditStats:
+    rows: int = 0
+    candidates: int = 0
+    replaced: int = 0
+    reasons: Counter[str] = field(default_factory=Counter)
+
+
+@dataclass
+class Entry:
+    entry_id: int
+    start_page: int
+    start_line: int
+    headword_tibetan: str
+    headword_latin: str
+    headword_latin_confidence: str
+    end_page: int
+    end_line: int
+    line_count: int = 0
+    zone_counts: Counter[str] = field(default_factory=Counter)
+    audit_candidate_lines: int = 0
+    audit_replaced_lines: int = 0
+    audit_reasons: Counter[str] = field(default_factory=Counter)
+
+    def to_json(self) -> dict[str, object]:
+        return {
+            "entry_id": self.entry_id,
+            "start_page": self.start_page,
+            "start_line": self.start_line,
+            "end_page": self.end_page,
+            "end_line": self.end_line,
+            "headword_tibetan": self.headword_tibetan,
+            "headword_latin": self.headword_latin,
+            "headword_latin_confidence": self.headword_latin_confidence,
+            "line_count": self.line_count,
+            "zone_counts": dict(self.zone_counts),
+            "audit_candidate_lines": self.audit_candidate_lines,
+            "audit_replaced_lines": self.audit_replaced_lines,
+            "top_audit_reasons": self.audit_reasons.most_common(6),
+        }
+
+
+@dataclass
+class LineInfo:
+    page: int
+    line: int
+    entry_id: int
+    zone: str
+    line_text: str
+    has_tibetan: bool
+    is_entry_start: bool
+    translit_tokens: list[str]
+    german_tokens: list[str]
+
+
+@dataclass
+class DiscoveryPattern:
+    source_token: str
+    suggested_token: str
+    source_count: int
+    suggested_count: int
+    edit_distance: int
+    confidence: str
+    ambiguous: bool
+    example: str
+
+
+def load_audit(path: Path | None) -> dict[tuple[int, int], AuditStats]:
+    if path is None:
+        return {}
+    out: dict[tuple[int, int], AuditStats] = defaultdict(AuditStats)
+    with path.open(newline="", encoding="utf-8", errors="replace") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                page = int(row.get("page", "0"))
+                line = int(row.get("line", "0"))
+            except ValueError:
+                continue
+            key = (page, line)
+            stats = out[key]
+            stats.rows += 1
+            if truthy(row.get("candidate")):
+                stats.candidates += 1
+            if truthy(row.get("replaced")):
+                stats.replaced += 1
+            reason = (row.get("reason") or "").strip()
+            if reason:
+                stats.reasons[reason] += 1
+    return out
+
+
+def parse_entries(
+    merged_text: str,
+    audit_by_line: dict[tuple[int, int], AuditStats],
+) -> tuple[list[Entry], list[LineInfo], list[list[str]], list[list[str]], dict[str, object], list[list[str]]]:
+    pages = merged_text.split("\f")
+    page_lines: list[list[str]] = []
+    entries: list[Entry] = []
+    line_infos: list[LineInfo] = []
+    line_rows: list[list[str]] = []
+    validator_rows: list[list[str]] = []
+    entry_id = 0
+    current: Entry | None = None
+    uncaptured_headword_like = 0
+    total_lines = 0
+    translit_token_total = 0
+
+    for page_idx, page_text in enumerate(pages, start=1):
+        lines = page_text.splitlines()
+        norm_lines = [normalize_line(raw) for raw in lines]
+        page_lines.append(norm_lines)
+        for line_idx, line in enumerate(norm_lines, start=1):
+            total_lines += 1
+            if not line:
+                continue
+
+            tib_prefix, tib_end = extract_tibetan_prefix(line)
+            headword_latin = ""
+            headword_conf = "none"
+            if tib_prefix:
+                remainder = line[tib_end:].strip()
+                headword_latin, headword_conf = extract_headword_latin(remainder)
+            is_entry_start = bool(tib_prefix and headword_latin)
+
+            if tib_prefix and not headword_latin:
+                uncaptured_headword_like += 1
+
+            if is_entry_start:
+                entry_id += 1
+                if current is not None:
+                    entries.append(current)
+                current = Entry(
+                    entry_id=entry_id,
+                    start_page=page_idx,
+                    start_line=line_idx,
+                    headword_tibetan=tib_prefix,
+                    headword_latin=headword_latin,
+                    headword_latin_confidence=headword_conf,
+                    end_page=page_idx,
+                    end_line=line_idx,
+                )
+
+            has_tibetan = bool(TIB_RE.search(line))
+            latin_tokens = [m.group(0) for m in LATIN_TOKEN_RE.finditer(line)]
+            translit_tokens: list[str] = []
+            german_tokens: list[str] = []
+            for tok in latin_tokens:
+                if token_is_translit_like(tok, line_has_tibetan=has_tibetan, is_entry_start=is_entry_start):
+                    translit_tokens.append(tok)
+                elif token_is_german_like(tok):
+                    german_tokens.append(tok)
+            translit_token_total += len(translit_tokens)
+            zone = classify_zone(line, is_entry_start, len(translit_tokens), len(german_tokens))
+
+            audit = audit_by_line.get((page_idx, line_idx), AuditStats())
+            if current is not None:
+                current.end_page = page_idx
+                current.end_line = line_idx
+                current.line_count += 1
+                current.zone_counts[zone] += 1
+                if audit.candidates > 0:
+                    current.audit_candidate_lines += 1
+                if audit.replaced > 0:
+                    current.audit_replaced_lines += 1
+                current.audit_reasons.update(audit.reasons)
+
+            info = LineInfo(
+                page=page_idx,
+                line=line_idx,
+                entry_id=current.entry_id if current is not None else 0,
+                zone=zone,
+                line_text=line,
+                has_tibetan=has_tibetan,
+                is_entry_start=is_entry_start,
+                translit_tokens=translit_tokens,
+                german_tokens=german_tokens,
+            )
+            line_infos.append(info)
+
+            line_rows.append(
+                [
+                    str(page_idx),
+                    str(line_idx),
+                    str(info.entry_id),
+                    zone,
+                    tib_prefix,
+                    headword_latin,
+                    headword_conf,
+                    str(len(translit_tokens)),
+                    str(len(german_tokens)),
+                    str(audit.candidates),
+                    str(audit.replaced),
+                    line,
+                ]
+            )
+
+            for tok in translit_tokens:
+                for issue, suggestion in validate_translit_token(tok):
+                    validator_rows.append(
+                        [
+                            str(page_idx),
+                            str(line_idx),
+                            str(info.entry_id),
+                            zone,
+                            tok,
+                            issue,
+                            suggestion,
+                            line[:240],
+                        ]
+                    )
+
+    if current is not None:
+        entries.append(current)
+
+    zone_counter = Counter(row[3] for row in line_rows)
+    summary = {
+        "pages": len(pages),
+        "total_lines_seen": total_lines,
+        "non_empty_lines": len(line_rows),
+        "entries_detected": len(entries),
+        "translit_tokens_detected": translit_token_total,
+        "validator_issues": len(validator_rows),
+        "uncaptured_tibetan_prefix_lines": uncaptured_headword_like,
+        "zone_counts": dict(zone_counter),
+    }
+    return entries, line_infos, line_rows, validator_rows, summary, page_lines
+
+
+def build_entry_memory(
+    entries: list[Entry],
+    line_infos: list[LineInfo],
+) -> tuple[dict[int, set[str]], dict[int, set[str]]]:
+    headword_mem: dict[int, set[str]] = defaultdict(set)
+    memory_counts: dict[int, Counter[str]] = defaultdict(Counter)
+
+    for ent in entries:
+        for tok in LATIN_TOKEN_RE.findall(ent.headword_latin):
+            c = canonicalize_translit_token(tok.lower())
+            if token_is_strict_clean_translit(c):
+                headword_mem[ent.entry_id].add(c)
+                memory_counts[ent.entry_id][c] += 8
+
+    for info in line_infos:
+        if info.entry_id == 0:
+            continue
+        if info.zone in ENTRY_STRONG_ZONES:
+            for tok in info.translit_tokens:
+                c = canonicalize_translit_token(tok.lower())
+                if token_is_strict_clean_translit(c):
+                    memory_counts[info.entry_id][c] += 1
+
+    entry_mem: dict[int, set[str]] = defaultdict(set)
+    for ent in entries:
+        cnt = memory_counts.get(ent.entry_id, Counter())
+        out = set(headword_mem.get(ent.entry_id, set()))
+        for tok, n in cnt.items():
+            if n >= 2:
+                out.add(tok)
+        entry_mem[ent.entry_id] = out
+
+    return headword_mem, entry_mem
+
+
+def build_trusted_lexicon(
+    entries: list[Entry],
+    line_infos: list[LineInfo],
+    min_freq: int,
+) -> dict[str, int]:
+    counts: Counter[str] = Counter()
+    for ent in entries:
+        for tok in LATIN_TOKEN_RE.findall(ent.headword_latin):
+            c = canonicalize_translit_token(tok.lower())
+            if token_is_strict_clean_translit(c):
+                counts[c] += 4
+    for info in line_infos:
+        if info.zone not in ENTRY_STRONG_ZONES and not info.has_tibetan:
+            continue
+        for tok in info.translit_tokens:
+            c = canonicalize_translit_token(tok.lower())
+            if token_is_strict_clean_translit(c):
+                counts[c] += 1
+    return {tok: n for tok, n in counts.items() if n >= min_freq}
+
+
+def discover_common_errors(
+    line_infos: list[LineInfo],
+    trusted_lexicon: dict[str, int],
+    max_edit: int,
+    max_rare_freq: int,
+) -> tuple[dict[str, DiscoveryPattern], list[list[str]]]:
+    token_counts: Counter[str] = Counter()
+    token_examples: dict[str, str] = {}
+    token_issue_count: Counter[str] = Counter()
+
+    for info in line_infos:
+        if info.zone not in AUTO_FIX_ZONES:
+            continue
+        for tok in info.translit_tokens:
+            low = tok.lower()
+            token_counts[low] += 1
+            if low not in token_examples:
+                token_examples[low] = info.line_text
+            if validate_translit_token(tok):
+                token_issue_count[low] += 1
+
+    trusted_by_len: dict[int, list[tuple[str, int, str]]] = defaultdict(list)
+    for tok, cnt in trusted_lexicon.items():
+        key = distance_key(tok)
+        if len(key) < 2:
+            continue
+        trusted_by_len[len(key)].append((tok, cnt, key))
+
+    discovered: dict[str, DiscoveryPattern] = {}
+    discovered_rows: list[list[str]] = []
+
+    for src, src_count in token_counts.items():
+        if src in trusted_lexicon:
+            continue
+        src_issues = validate_translit_token(src)
+        src_has_cue = token_has_translit_cue(src)
+        src_has_hard_marker = token_has_hard_translit_marker(src)
+        src_has_signature = token_has_distinctive_tibetan_signature(src)
+        src_discovery_candidate = token_is_discovery_translit_candidate(src)
+        src_has_issue = bool(src_issues)
+        src_only_confusable_issue = bool(src_issues) and all(issue == "confusable_char" for issue, _ in src_issues)
+        src_confusable_suggestion = first_confusable_suggestion(src_issues)
+        src_issue_ratio = (token_issue_count[src] / src_count) if src_count else 0.0
+        src_umlaut_untrusted = bool(GERMAN_UMLAUT_RE.search(src)) and not src_has_hard_marker
+        if src_umlaut_untrusted:
+            continue
+        if not src_discovery_candidate and not src_has_issue:
+            continue
+        if (
+            token_is_german_like(src)
+            and not src_has_issue
+            and not src_has_hard_marker
+            and not src_has_signature
+        ):
+            continue
+        if src_count < DISCOVER_MIN_SOURCE_COUNT and not src_has_issue:
+            continue
+        if token_is_german_like(src) and token_issue_count[src] == 0 and not src_has_hard_marker:
+            continue
+        src_canon = canonicalize_translit_token(src)
+        src_key = distance_key(src)
+        if len(src_key) < 2:
+            continue
+        if (
+            len(src_key) < 3
+            and src not in SHORT_TIB_SYLLABLES
+            and not src_has_hard_marker
+            and not src_has_issue
+        ):
+            continue
+        if src_count > max_rare_freq and src_issue_ratio < 0.34:
+            continue
+
+        best: tuple[str, int, int, bool] | None = None
+        best_dist = max_edit + 1
+        ambiguous = False
+        for cand_len in range(len(src_key) - max_edit, len(src_key) + max_edit + 1):
+            for cand_tok, cand_count, cand_key in trusted_by_len.get(cand_len, []):
+                if src_key[0] != cand_key[0]:
+                    c0 = canonicalize_translit_token(src_key[0])
+                    d0 = canonicalize_translit_token(cand_key[0])
+                    if c0 != d0:
+                        continue
+                dist = levenshtein_limited(src_key, cand_key, max_edit)
+                if dist is None:
+                    continue
+                if dist < best_dist:
+                    best_dist = dist
+                    ambiguous = False
+                    best = (cand_tok, cand_count, dist, False)
+                elif dist == best_dist and best is not None:
+                    prev_tok, prev_count, _, _ = best
+                    if cand_count > prev_count:
+                        best = (cand_tok, cand_count, dist, True)
+                    if cand_count >= int(prev_count * 0.7):
+                        ambiguous = True
+                    else:
+                        _ = prev_tok
+
+        if best is None:
+            continue
+        cand_tok, cand_count, dist, _ = best
+        if dist > max_edit:
+            continue
+        if cand_count < DISCOVER_MIN_SUGGESTED_COUNT:
+            continue
+        cand_has_signature = token_has_distinctive_tibetan_signature(cand_tok)
+        cand_discovery_candidate = token_is_discovery_translit_candidate(cand_tok)
+        if not cand_discovery_candidate:
+            continue
+        cand_issues = validate_translit_token(cand_tok)
+        if token_is_german_like(cand_tok) and not cand_has_signature and not token_has_hard_translit_marker(cand_tok):
+            continue
+        ratio = cand_count / max(src_count, 1)
+        if ratio < 3.0:
+            continue
+        if src_canon == cand_tok:
+            continue
+        if len(cand_tok) < len(src):
+            continue
+        if token_drops_vowel_particle_suffix(src, cand_tok):
+            continue
+        if token_mismatches_vowel_particle_suffix(src, cand_tok):
+            continue
+        if token_is_trailing_shortening(src, cand_tok):
+            continue
+        if (
+            (
+                token_has_protected_sanskrit_nya(src)
+                or token_has_protected_palatal_nya(src)
+                or token_has_protected_tibetan_nya_cluster(src)
+            )
+            and "ñ" in src
+            and "ṅ" in cand_tok
+            and "ñ" not in cand_tok
+        ):
+            continue
+        if token_drops_apostrophe(src, cand_tok):
+            continue
+        # Avoid discovery drift when both forms are already clean transliteration tokens.
+        if (
+            dist == 1
+            and not src_has_issue
+            and not cand_issues
+            and token_is_strict_clean_translit(src_canon)
+            and token_is_strict_clean_translit(cand_tok)
+        ):
+            continue
+        # If validator already gives a single-char confusable fix, don't discover a different
+        # one-char target (typical false positive: onset drift like smy* -> sky*).
+        if (
+            dist == 1
+            and src_only_confusable_issue
+            and src_confusable_suggestion is not None
+            and cand_tok != src_confusable_suggestion
+        ):
+            continue
+
+        confusable_i_to_l = token_has_initial_confusable_I(src) and cand_tok.startswith("l")
+        if (
+            dist == 1
+            and not ambiguous
+            and (src_has_issue or src_issue_ratio >= 0.4 or src_count <= 3 or confusable_i_to_l)
+            and ratio >= DISCOVER_RATIO_MIN_HIGH
+        ):
+            confidence = "high"
+        elif (
+            dist <= max_edit
+            and (src_has_issue or src_issue_ratio >= 0.55 or src_count <= 2)
+            and ratio >= DISCOVER_RATIO_MIN_MEDIUM
+        ):
+            confidence = "medium"
+        else:
+            confidence = "low"
+
+        if confidence == "low":
+            continue
+
+        patt = DiscoveryPattern(
+            source_token=src,
+            suggested_token=cand_tok,
+            source_count=src_count,
+            suggested_count=cand_count,
+            edit_distance=dist,
+            confidence=confidence,
+            ambiguous=ambiguous,
+            example=token_examples.get(src, ""),
+        )
+        discovered[src] = patt
+        discovered_rows.append(
+            [
+                src,
+                cand_tok,
+                str(src_count),
+                str(cand_count),
+                str(dist),
+                confidence,
+                "1" if ambiguous else "0",
+                token_examples.get(src, "")[:240],
+            ]
+        )
+
+    discovered_rows.sort(
+        key=lambda r: (
+            {"high": 0, "medium": 1}.get(r[5], 9),
+            -int(r[3]),
+            int(r[4]),
+            r[0],
+        )
+    )
+    return discovered, discovered_rows
+
+
+def choose_rewrite(
+    token: str,
+    info: LineInfo,
+    headword_mem: set[str],
+    entry_mem: set[str],
+    trusted_lexicon: dict[str, int],
+    discovered: dict[str, DiscoveryPattern],
+) -> tuple[str, str, str] | None:
+    low = token.lower()
+    if len(low) == 1 and token.isupper():
+        return None
+    options: list[tuple[int, str, str, str]] = []
+    canon = canonicalize_translit_token(token).lower()
+    explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
+    if explicit_dst is not None and info.zone in AUTO_FIX_ZONES:
+        return explicit_dst, "A", "explicit_user_allowlist"
+    if token_requires_manual_initial_i_review(token, canon):
+        return canon, "B", "initial_i_manual_context_review"
+    src_translit_like_here = token_is_translit_like(token, info.has_tibetan, info.is_entry_start)
+    line_translit_dominant = len(info.translit_tokens) >= max(2, len(info.german_tokens))
+    src_has_cue = token_has_translit_cue(token)
+    src_has_hard_marker = token_has_hard_translit_marker(token)
+    src_has_issue = bool(validate_translit_token(token))
+    src_german_like = token_is_german_like(token)
+    src_umlaut_untrusted = bool(GERMAN_UMLAUT_RE.search(token)) and not src_has_hard_marker
+    src_initial_i_confusable = token_has_initial_confusable_I(token)
+    src_initial_i_german_function = token_is_initial_i_german_function_word(token)
+    confusable_nya_to_nga_blocked = token_blocks_nya_to_nga(low, canon)
+    canon_has_hard_marker = token_has_hard_translit_marker(canon)
+    canon_has_cue = token_has_translit_cue(canon)
+    initial_i_translit_candidate = token_is_initial_i_translit_candidate(token, canon)
+    strong_i_context_override = (
+        info.zone in ENTRY_STRONG_ZONES
+        and info.has_tibetan
+        and src_translit_like_here
+        and initial_i_translit_candidate
+        and (src_has_hard_marker or src_has_cue or canon_has_cue)
+    )
+    confusable_initial_i_noise_blocked = token_is_initial_i_confusable_noise(token, canon)
+    if src_initial_i_confusable and not initial_i_translit_candidate:
+        confusable_initial_i_noise_blocked = True
+    plain_initial_i_noise = token_is_long_plain_initial_i_noise(token, canon)
+    if confusable_initial_i_noise_blocked and initial_i_translit_candidate and (
+        canon in headword_mem
+        or canon in entry_mem
+        or strong_i_context_override
+    ):
+        # Keep long plain titlecase tokens blocked even if globally frequent.
+        if not plain_initial_i_noise and (
+            canon in headword_mem or canon in entry_mem or strong_i_context_override or canon_has_cue
+        ):
+            confusable_initial_i_noise_blocked = False
+    confusable_vowel_particle_drop_blocked = token_drops_vowel_particle_suffix(low, canon)
+    confusable_vowel_particle_mismatch_blocked = token_mismatches_vowel_particle_suffix(low, canon)
+    confusable_shortening_blocked = token_is_trailing_shortening(low, canon)
+
+    if (
+        src_initial_i_confusable
+        and canon.startswith("l")
+        and initial_i_translit_candidate
+        and not src_initial_i_german_function
+        and info.zone in AUTO_FIX_ZONES
+        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
+        and not confusable_initial_i_noise_blocked
+        and not plain_initial_i_noise
+    ):
+        if canon in headword_mem:
+            options.append((320, canon, "A", "confusable_initial_I_to_l_headword"))
+        elif canon in entry_mem:
+            options.append((310, canon, "A", "confusable_initial_I_to_l_entry_memory"))
+        elif canon in trusted_lexicon:
+            options.append((285, canon, "A", "confusable_initial_I_to_l_lexicon"))
+        elif (
+            info.zone in ENTRY_STRONG_ZONES
+            and info.has_tibetan
+            and (src_has_hard_marker or src_has_cue or canon_has_cue)
+        ):
+            options.append((275, canon, "A", "confusable_initial_I_to_l_strong_context"))
+        elif (
+            info.zone in {"german_prose_with_translit", "latin_other"}
+            and (
+                src_has_hard_marker
+                or canon_has_hard_marker
+                or "-" in token
+                or token_has_boundary_translit_cluster(token)
+                or token_has_boundary_translit_cluster(canon)
+            )
+        ):
+            options.append((245, canon, "A", "confusable_initial_I_to_l_marked_context"))
+        elif (
+            info.zone in {"german_prose_with_translit", "latin_other"}
+            and line_translit_dominant
+            and (
+                len(canon) <= 7
+                or src_has_hard_marker
+                or src_has_cue
+                or canon_has_cue
+                or "-" in token
+                or "'" in token
+                or "’" in token
+            )
+        ):
+            options.append((235, canon, "A", "confusable_initial_I_to_l_translit_dominant"))
+        else:
+            options.append((175, canon, "B", "confusable_initial_I_to_l_context"))
+
+    if (
+        canon != low
+        and token_is_safe_coda_nya_to_nga(low, canon)
+        and info.zone in AUTO_FIX_ZONES
+        and token == token.lower()
+        and not src_umlaut_untrusted
+        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
+        and (canon in headword_mem or canon in entry_mem or canon in trusted_lexicon)
+    ):
+        options.append((265, canon, "A", "confusable_nya_coda_safe"))
+
+    if (
+        canon != low
+        and token_is_safe_coda_nya_to_nga(low, canon)
+        and info.zone in ENTRY_STRONG_ZONES
+        and info.has_tibetan
+        and (src_translit_like_here or src_has_hard_marker or src_has_issue or src_has_cue)
+        and not src_umlaut_untrusted
+    ):
+        options.append((255, canon, "A", "confusable_nya_coda_safe_strong_context"))
+
+    if (
+        canon != low
+        and (src_translit_like_here or src_has_hard_marker or src_has_issue)
+        and (not src_initial_i_confusable or initial_i_translit_candidate)
+        and not src_initial_i_german_function
+        and not src_umlaut_untrusted
+        and not confusable_nya_to_nga_blocked
+        and not confusable_initial_i_noise_blocked
+        and not confusable_vowel_particle_drop_blocked
+        and not confusable_vowel_particle_mismatch_blocked
+        and not confusable_shortening_blocked
+    ):
+        if canon in headword_mem and info.zone in AUTO_FIX_ZONES:
+            options.append((300, canon, "A", "confusable_to_headword"))
+        elif canon in entry_mem and info.zone in AUTO_FIX_ZONES:
+            options.append((260, canon, "A", "confusable_to_entry_memory"))
+        elif (
+            info.zone in ENTRY_STRONG_ZONES
+            and info.has_tibetan
+            and (src_translit_like_here or src_has_hard_marker or src_has_issue)
+        ):
+            options.append((180, canon, "B", "confusable_context"))
+        elif (
+            canon in trusted_lexicon
+            and info.zone in {"german_prose_with_translit", "latin_other"}
+            and token == token.lower()
+            and (src_has_hard_marker or src_has_issue)
+            and (src_translit_like_here or line_translit_dominant)
+            and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+        ):
+            options.append((150, canon, "B", "confusable_global_lexicon"))
+
+    if (
+        canon != low
+        and info.zone in {"german_prose", "german_prose_with_translit", "latin_other"}
+        and token_is_citation_confusable_i_to_l_candidate(token, canon)
+    ):
+        options.append((140, canon, "B", "citation_confusable_I_to_l"))
+
+    patt = discovered.get(low)
+    if patt is not None:
+        cand = patt.suggested_token
+        cand_has_cue = token_has_translit_cue(cand)
+        cand_has_hard_marker = token_has_hard_translit_marker(cand)
+        cand_is_generic_short = token_is_discovery_generic_short_target(cand)
+        src_discovery_candidate = token_is_discovery_translit_candidate(token)
+        cand_discovery_candidate = token_is_discovery_translit_candidate(cand)
+        discover_ratio = patt.suggested_count / max(patt.source_count, 1)
+        discover_vowel_particle_drop_blocked = token_drops_vowel_particle_suffix(low, cand)
+        discover_vowel_particle_mismatch_blocked = token_mismatches_vowel_particle_suffix(low, cand)
+        discover_apostrophe_drop_blocked = token_drops_apostrophe(low, cand)
+        discover_shortening_blocked = token_is_trailing_shortening(low, cand)
+        discover_nya_to_nga_blocked = token_blocks_nya_to_nga(low, cand)
+        discovery_auto_ok = (
+            patt.confidence == "high"
+            and not patt.ambiguous
+            and patt.source_count >= DISCOVER_MIN_SOURCE_COUNT
+            and patt.suggested_count >= DISCOVER_MIN_SUGGESTED_COUNT
+            and discover_ratio >= DISCOVER_RATIO_MIN_HIGH
+            and len(cand) >= 3
+            and len(cand) >= len(low)
+            and info.zone in AUTO_FIX_ZONES
+            and token == token.lower()
+            and (src_has_hard_marker or cand_has_hard_marker or src_has_issue)
+            and not src_umlaut_untrusted
+            and not (src_german_like and not src_has_cue)
+            and not discover_vowel_particle_drop_blocked
+            and not discover_vowel_particle_mismatch_blocked
+            and not discover_apostrophe_drop_blocked
+            and not discover_shortening_blocked
+            and not discover_nya_to_nga_blocked
+            and src_discovery_candidate
+            and cand_discovery_candidate
+        )
+        if cand in headword_mem and discovery_auto_ok:
+            options.append((290, cand, "A", "discover_to_headword"))
+        elif cand in entry_mem and discovery_auto_ok:
+            options.append((250, cand, "A", "discover_to_entry_memory"))
+        elif (
+            info.zone in ENTRY_STRONG_ZONES
+            and info.has_tibetan
+            and patt.confidence == "high"
+            and not patt.ambiguous
+            and token == token.lower()
+            and patt.source_count >= DISCOVER_MIN_SOURCE_COUNT
+            and patt.suggested_count >= DISCOVER_MIN_SUGGESTED_COUNT
+            and discover_ratio >= DISCOVER_RATIO_MIN_HIGH
+            and src_discovery_candidate
+            and cand_discovery_candidate
+            and (src_translit_like_here or src_has_hard_marker or src_has_issue or src_has_cue)
+            and not (src_german_like and not (src_has_hard_marker or src_has_issue or src_has_cue))
+            and not src_umlaut_untrusted
+            and not discover_vowel_particle_drop_blocked
+            and not discover_vowel_particle_mismatch_blocked
+            and not discover_apostrophe_drop_blocked
+            and not discover_shortening_blocked
+            and not discover_nya_to_nga_blocked
+            and (not cand_is_generic_short or cand in headword_mem or cand in entry_mem)
+        ):
+            options.append((225, cand, "A", "discover_high_context_translit"))
+        elif (
+            info.zone in ENTRY_STRONG_ZONES
+            and info.has_tibetan
+            and token == token.lower()
+            and src_discovery_candidate
+            and cand_discovery_candidate
+            and (src_translit_like_here or src_has_hard_marker or src_has_issue or src_has_cue)
+            and not (src_german_like and not (src_has_hard_marker or src_has_issue or src_has_cue))
+            and not src_umlaut_untrusted
+            and not discover_vowel_particle_drop_blocked
+            and not discover_vowel_particle_mismatch_blocked
+            and not discover_apostrophe_drop_blocked
+            and not discover_shortening_blocked
+            and patt.source_count >= DISCOVER_MIN_SOURCE_COUNT
+            and patt.suggested_count >= DISCOVER_MIN_SUGGESTED_COUNT
+            and discover_ratio >= DISCOVER_RATIO_MIN_MEDIUM
+            and not discover_nya_to_nga_blocked
+            and (not cand_is_generic_short or cand in headword_mem or cand in entry_mem)
+        ):
+            options.append((170, cand, "B", f"discover_{patt.confidence}_context"))
+        elif (
+            info.zone == "german_prose_with_translit"
+            and cand in trusted_lexicon
+            and patt.confidence == "high"
+            and patt.source_count >= DISCOVER_MIN_SOURCE_COUNT
+            and patt.suggested_count >= DISCOVER_MIN_SUGGESTED_COUNT
+            and discover_ratio >= DISCOVER_RATIO_MIN_HIGH
+            and token == token.lower()
+            and src_discovery_candidate
+            and cand_discovery_candidate
+            and line_translit_dominant
+            and (src_translit_like_here or src_has_hard_marker or src_has_issue)
+            and (src_has_hard_marker or src_has_issue or (src_has_cue and len(low) >= 4))
+            and not (src_german_like and not (src_has_hard_marker or src_has_issue or src_has_cue))
+            and not src_umlaut_untrusted
+            and not discover_vowel_particle_drop_blocked
+            and not discover_vowel_particle_mismatch_blocked
+            and not discover_apostrophe_drop_blocked
+            and not discover_shortening_blocked
+            and not discover_nya_to_nga_blocked
+            and not cand_is_generic_short
+        ):
+            options.append((145, cand, "B", f"discover_{patt.confidence}_global"))
+
+    if not options:
+        return None
+    options.sort(key=lambda x: x[0], reverse=True)
+    _, dst, tier, reason = options[0]
+    if dst == low:
+        return None
+    return dst, tier, reason
+
+
+def apply_entry_aware_corrections(
+    page_lines: list[list[str]],
+    line_infos: list[LineInfo],
+    headword_memory: dict[int, set[str]],
+    entry_memory: dict[int, set[str]],
+    trusted_lexicon: dict[str, int],
+    discovered: dict[str, DiscoveryPattern],
+) -> tuple[str, list[list[str]], list[list[str]]]:
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    change_rows: list[list[str]] = []
+    review_rows: list[list[str]] = []
+    corrected_pages: list[str] = []
+
+    for page_idx, lines in enumerate(page_lines, start=1):
+        corrected_lines: list[str] = []
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            if info is None or info.entry_id == 0 or not line:
+                corrected_lines.append(line)
+                continue
+
+            head = headword_memory.get(info.entry_id, set())
+            mem = entry_memory.get(info.entry_id, set())
+
+            def repl(m: re.Match[str]) -> str:
+                tok = m.group(0)
+                if ALL_CAPS_RE.fullmatch(tok):
+                    return tok
+                choice = choose_rewrite(tok, info, head, mem, trusted_lexicon, discovered)
+                if choice is None:
+                    return tok
+                dst, tier, reason = choice
+                dst_case = apply_case_pattern(tok, dst)
+                if dst_case == tok:
+                    return tok
+                row = [
+                    str(info.page),
+                    str(info.line),
+                    str(info.entry_id),
+                    info.zone,
+                    tok,
+                    dst_case,
+                    tier,
+                    reason,
+                    "1" if tier == "A" else "0",
+                    info.line_text[:240],
+                ]
+                if tier == "A":
+                    change_rows.append(row)
+                    return dst_case
+                review_rows.append(row)
+                return tok
+
+            corrected_lines.append(LATIN_TOKEN_RE.sub(repl, line))
+        corrected_pages.append("\n".join(corrected_lines))
+
+    return "\f".join(corrected_pages), change_rows, review_rows
+
+
+def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
+    with path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        w.writerow(header)
+        w.writerows(rows)
+
+
+def run_one(
+    merged: Path,
+    audit: Path | None,
+    outdir: Path,
+    label: str,
+    trusted_min_freq: int,
+    discover_max_edit: int,
+    discover_max_rare_freq: int,
+) -> dict[str, object]:
+    text = merged.read_text(encoding="utf-8", errors="replace")
+    audit_by_line = load_audit(audit)
+    entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
+    headword_memory, entry_memory = build_entry_memory(entries, line_infos)
+    trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
+    discovered, discovered_rows = discover_common_errors(
+        line_infos,
+        trusted_lexicon=trusted_lexicon,
+        max_edit=discover_max_edit,
+        max_rare_freq=discover_max_rare_freq,
+    )
+    corrected_text, change_rows, review_rows = apply_entry_aware_corrections(
+        page_lines=page_lines,
+        line_infos=line_infos,
+        headword_memory=headword_memory,
+        entry_memory=entry_memory,
+        trusted_lexicon=trusted_lexicon,
+        discovered=discovered,
+    )
+
+    entry_jsonl = outdir / f"{label}_entry_map.jsonl"
+    line_tsv = outdir / f"{label}_line_zones.tsv"
+    validator_tsv = outdir / f"{label}_validator_issues.tsv"
+    summary_json = outdir / f"{label}_summary.json"
+    corrected_txt = outdir / f"{label}_corrected_full.txt"
+    changes_tsv = outdir / f"{label}_changes.tsv"
+    review_tsv = outdir / f"{label}_review_queue.tsv"
+    discovered_tsv = outdir / f"{label}_discovered_patterns.tsv"
+
+    with entry_jsonl.open("w", encoding="utf-8") as f:
+        for ent in entries:
+            f.write(json.dumps(ent.to_json(), ensure_ascii=False) + "\n")
+
+    write_tsv(
+        line_tsv,
+        [
+            "page",
+            "line",
+            "entry_id",
+            "zone",
+            "headword_tibetan",
+            "headword_latin",
+            "headword_latin_confidence",
+            "translit_token_count",
+            "german_token_count",
+            "audit_candidates",
+            "audit_replaced",
+            "line_text",
+        ],
+        line_rows,
+    )
+    write_tsv(
+        validator_tsv,
+        ["page", "line", "entry_id", "zone", "token", "issue", "suggestion", "line_excerpt"],
+        validator_rows,
+    )
+    corrected_txt.write_text(corrected_text, encoding="utf-8")
+    write_tsv(
+        changes_tsv,
+        [
+            "page",
+            "line",
+            "entry_id",
+            "zone",
+            "from_token",
+            "to_token",
+            "tier",
+            "reason",
+            "applied",
+            "line_excerpt",
+        ],
+        change_rows,
+    )
+    write_tsv(
+        review_tsv,
+        [
+            "page",
+            "line",
+            "entry_id",
+            "zone",
+            "from_token",
+            "to_token",
+            "tier",
+            "reason",
+            "applied",
+            "line_excerpt",
+        ],
+        review_rows,
+    )
+    write_tsv(
+        discovered_tsv,
+        [
+            "source_token",
+            "suggested_token",
+            "source_count",
+            "suggested_count",
+            "edit_distance",
+            "confidence",
+            "ambiguous",
+            "example",
+        ],
+        discovered_rows,
+    )
+
+    change_reason_counts = Counter(row[7] for row in change_rows)
+    review_reason_counts = Counter(row[7] for row in review_rows)
+    validator_issue_counts = Counter(row[5] for row in validator_rows)
+    discovered_confidence_counts = Counter(row[5] for row in discovered_rows)
+    summary = {
+        **summary,
+        "trusted_lexicon_size": len(trusted_lexicon),
+        "discovered_patterns": len(discovered_rows),
+        "tier_a_applied": len(change_rows),
+        "tier_b_suggestions": len(review_rows),
+        "discovered_confidence_counts": dict(discovered_confidence_counts),
+        "top_tier_a_reasons": change_reason_counts.most_common(12),
+        "top_tier_b_reasons": review_reason_counts.most_common(12),
+        "top_validator_issues": validator_issue_counts.most_common(12),
+    }
+    with summary_json.open("w", encoding="utf-8") as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    result = {
+        "label": label,
+        "merged": str(merged),
+        "audit": str(audit) if audit else "",
+        "entry_map": str(entry_jsonl),
+        "line_zones": str(line_tsv),
+        "validator_issues_tsv": str(validator_tsv),
+        "summary_json": str(summary_json),
+        "corrected_full": str(corrected_txt),
+        "changes_tsv": str(changes_tsv),
+        "review_queue_tsv": str(review_tsv),
+        "discovered_patterns_tsv": str(discovered_tsv),
+        **summary,
+    }
+    return result
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(
+        description=(
+            "Step 1+2+3 post-processing: transliteration validators, entry-aware zones, "
+            "and confidence-tiered entry-consistency corrections."
+        )
+    )
+    ap.add_argument("--merged", required=True, help="Merged full text file (form-feed page separated).")
+    ap.add_argument("--audit", default="", help="Optional line-anchor audit CSV.")
+    ap.add_argument("--outdir", required=True, help="Output directory.")
+    ap.add_argument("--label", default="", help="Output label prefix; defaults to merged stem.")
+    ap.add_argument("--trusted-min-freq", type=int, default=10, help="Min frequency for trusted translit lexicon.")
+    ap.add_argument(
+        "--discover-max-edit",
+        type=int,
+        default=2,
+        help="Max Levenshtein distance for discovery-based suggestions.",
+    )
+    ap.add_argument(
+        "--discover-max-rare-freq",
+        type=int,
+        default=6,
+        help="Skip discovery for high-frequency tokens without validator issues.",
+    )
+    args = ap.parse_args()
+
+    merged = Path(args.merged)
+    audit = Path(args.audit) if args.audit else None
+    outdir = Path(args.outdir)
+    outdir.mkdir(parents=True, exist_ok=True)
+    label = args.label if args.label else merged.stem.replace(" ", "_")
+
+    result = run_one(
+        merged=merged,
+        audit=audit,
+        outdir=outdir,
+        label=label,
+        trusted_min_freq=args.trusted_min_freq,
+        discover_max_edit=args.discover_max_edit,
+        discover_max_rare_freq=args.discover_max_rare_freq,
+    )
+    print(f"label={result['label']}")
+    print(f"merged={result['merged']}")
+    if result["audit"]:
+        print(f"audit={result['audit']}")
+    print(f"entries_detected={result['entries_detected']}")
+    print(f"non_empty_lines={result['non_empty_lines']}")
+    print(f"validator_issues={result['validator_issues']}")
+    print(f"trusted_lexicon_size={result['trusted_lexicon_size']}")
+    print(f"discovered_patterns={result['discovered_patterns']}")
+    print(f"tier_a_applied={result['tier_a_applied']}")
+    print(f"tier_b_suggestions={result['tier_b_suggestions']}")
+    print(f"uncaptured_tibetan_prefix_lines={result['uncaptured_tibetan_prefix_lines']}")
+    print(f"entry_map={result['entry_map']}")
+    print(f"line_zones={result['line_zones']}")
+    print(f"validator_issues_tsv={result['validator_issues_tsv']}")
+    print(f"corrected_full={result['corrected_full']}")
+    print(f"changes_tsv={result['changes_tsv']}")
+    print(f"review_queue_tsv={result['review_queue_tsv']}")
+    print(f"discovered_patterns_tsv={result['discovered_patterns_tsv']}")
+    print(f"summary_json={result['summary_json']}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
