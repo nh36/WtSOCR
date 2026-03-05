@@ -19,6 +19,7 @@ LATIN_CHARS = (
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC"
     r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3"
 )
+OCR_CONFUSABLE_TOKEN_CHARS = r"\$"
 TRANSLIT_CHARS = (
     r"A-Za-z"
     r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
@@ -27,6 +28,12 @@ TRANSLIT_CHARS = (
 )
 LATIN_TOKEN_RE = re.compile(
     rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*)*"
+)
+OCR_LATIN_TOKEN_RE = re.compile(
+    rf"[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+"
+    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+)*"
+    rf"(?:-[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+"
+    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+)*)*"
 )
 TRANSLIT_TOKEN_RE = re.compile(
     rf"[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*(?:-[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*)*$"
@@ -80,6 +87,8 @@ CITATION_CUE_RE = re.compile(
     r"\b(?:ed|hrsg|vgl|zit|zitiert|skt|vol|bd|pp|pl|repr|index|indices)\b\.?",
     re.IGNORECASE,
 )
+SANSKRIT_MVY_CUE_RE = re.compile(r"\(\s*Mvy\b", re.IGNORECASE)
+SANSKRIT_GENERAL_CUE_RE = re.compile(r"\b(?:skt|sanskrit|mahavyutpatti|mvy)\b\.?", re.IGNORECASE)
 CITATION_PAREN_RE = re.compile(r"\([^)\n]{0,120}\)")
 CITATION_PAREN_HINT_RE = re.compile(
     r"(?:\b(?:ed|hrsg|vol|bd|pp|pl|nr|no)\b|(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?|\b\d{1,3}\b)",
@@ -92,6 +101,48 @@ INITIAL_I_CANON_SHAPE_RE = re.compile(
 )
 GERMAN_LHR_PRONOUN_RE = re.compile(r"^lhr(?:e|en|em|es)?$", re.IGNORECASE)
 GERMAN_IHR_PRONOUN_RE = re.compile(r"^ihr(?:e|en|em|er|es)?$", re.IGNORECASE)
+SANSKRIT_DIACRITIC_RE = re.compile(r"[āīūṛṝḷḹṅñṭḍṇśṣḥṃṁĀĪŪṚṜḶḸṄÑṬḌṆŚṢḤṂṀ]")
+SANSKRIT_CLUSTER_RE = re.compile(
+    r"(?:jñ|kṣ|ṣṭ|ṣṇ|śr|tva|dva|dhy|bhy|mvy|arya|vams|samtu|stub|tub)",
+    re.IGNORECASE,
+)
+SANSKRIT_TOKEN_NOISE_RE = re.compile(r"[\$äöüÄÖÜãÃıI]")
+SANSKRIT_UMLAUT_RE = re.compile(r"[äöüÄÖÜ]")
+SANSKRIT_UMLAUT_LONG_VOWEL_MAP = str.maketrans(
+    {
+        "ä": "ā",
+        "Ä": "Ā",
+        "ö": "o",
+        "Ö": "O",
+        "ü": "u",
+        "Ü": "U",
+    }
+)
+SANSKRIT_SAFE_CHAR_MAP = str.maketrans(
+    {
+        "$": "ś",
+        "ä": "ā",
+        "Ä": "Ā",
+        "ö": "o",
+        "Ö": "O",
+        "ü": "u",
+        "Ü": "U",
+        "ã": "ā",
+        "Ã": "Ā",
+        "ı": "i",
+    }
+)
+SANSKRIT_ASCII_CLUSTER_RE = re.compile(
+    r"(?:jn|ksh|tva|dva|dhy|bhy|mvy|vams|arya|samt|stub|sva|atm|krt|smr|cch|ddh|dbh|rth|jñ)",
+    re.IGNORECASE,
+)
+SANSKRIT_ENDING_RE = re.compile(
+    r"(?:am|ah|ab|as|ena|anam|asya|tva|maya|kara|mukha|atma|artha|sutra|vati|vat|ika|aka|iya)$",
+    re.IGNORECASE,
+)
+SANSKRIT_LEX_CUE_RE = re.compile(r"\bLex\.", re.IGNORECASE)
+GANS_RI_RE = re.compile(r"\bGans\s+ri\b")
+SANSKRIT_AUTO_CONTEXT_MIN = 4
 
 ENTRY_STRONG_ZONES = {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed"}
 AUTO_FIX_ZONES = {
@@ -109,6 +160,10 @@ DISCOVER_RATIO_MIN_MEDIUM = 5.5
 
 # Explicit user-approved rewrites that are safe to auto-apply in auto-fix zones.
 EXPLICIT_TIER_A_REWRITES = {
+    "$es": "śes",
+    "$es-rab": "śes-rab",
+    "$in": "śiṅ",
+    "g$egs": "gśegs",
     "yañ": "yaṅ",
     "dañ": "daṅ",
     "nañ": "naṅ",
@@ -120,6 +175,32 @@ EXPLICIT_TIER_A_REWRITES = {
     "pho-iha": "pho-lha",
     "dgra-iba-gottheit": "dgra-lba-gottheit",
     "dpal-idan": "dpal-ldan",
+}
+
+# High-confidence OCR confusable forms where "$" should be acute-s.
+DOLLAR_SACUTE_TIER_A_ALLOWLIST = {
+    "$es",
+    "$es-rab",
+    "$in",
+    "g$egs",
+}
+
+# High-frequency Sanskrit normalization pairs validated on current corpus review queues.
+# These are safe to auto-apply even when local context score is below the Sanskrit
+# auto-threshold, as long as the token is already classified probable Sanskrit.
+SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
+    "upädhyäya": "upādhyāya",
+    "$rävaka": "śrāvaka",
+    "$rävakas": "śrāvakas",
+    "sädhya": "sādhya",
+    "madhyäntika": "madhyāntika",
+    "sıddh": "siddh",
+    "bodhicaryavatära": "bodhicaryavatāra",
+    "mahäsattva": "mahāsattva",
+    "mahäsattvas": "mahāsattvas",
+    "siddhärtha": "siddhārtha",
+    "vai$ravana": "vaiśravana",
+    "vai$ravanas": "vaiśravanas",
 }
 
 # Known dubious initial-I forms that should be queued for context review, not auto-applied.
@@ -418,7 +499,7 @@ def token_is_translit_like(token: str, line_has_tibetan: bool, is_entry_start: b
         return False
     if ALL_CAPS_RE.fullmatch(token):
         return False
-    if not LATIN_TOKEN_RE.fullmatch(token):
+    if not OCR_LATIN_TOKEN_RE.fullmatch(token):
         return False
     if TRANSLIT_CUE_RE.search(token):
         return True
@@ -724,6 +805,24 @@ def token_is_safe_coda_nya_to_nga(src: str, dst: str) -> bool:
     return True
 
 
+def token_is_safe_dollar_to_sacute(src: str, dst: str) -> bool:
+    if "$" not in src:
+        return False
+    if len(src) != len(dst):
+        return False
+    if not any(ch.isalpha() for ch in src):
+        return False
+    changed = False
+    for s_ch, d_ch in zip(src, dst):
+        if s_ch == d_ch:
+            continue
+        if s_ch == "$" and d_ch in {"ś", "Ś"}:
+            changed = True
+            continue
+        return False
+    return changed
+
+
 def token_is_trailing_shortening(src: str, dst: str) -> bool:
     if len(src) < 4 or len(dst) < 3:
         return False
@@ -789,7 +888,7 @@ def extract_headword_latin(remainder: str) -> tuple[str, str]:
     tokens: list[str] = []
     used_cue = False
     prev_end = 0
-    for m in LATIN_TOKEN_RE.finditer(remainder):
+    for m in OCR_LATIN_TOKEN_RE.finditer(remainder):
         if len(tokens) >= 10:
             break
         between = remainder[prev_end : m.start()]
@@ -1204,7 +1303,7 @@ def parse_entries(
                 )
 
             has_tibetan = bool(TIB_RE.search(line))
-            latin_tokens = [m.group(0) for m in LATIN_TOKEN_RE.finditer(line)]
+            latin_tokens = [m.group(0) for m in OCR_LATIN_TOKEN_RE.finditer(line)]
             translit_tokens: list[str] = []
             german_tokens: list[str] = []
             for tok in latin_tokens:
@@ -1297,7 +1396,7 @@ def build_entry_memory(
     memory_counts: dict[int, Counter[str]] = defaultdict(Counter)
 
     for ent in entries:
-        for tok in LATIN_TOKEN_RE.findall(ent.headword_latin):
+        for tok in OCR_LATIN_TOKEN_RE.findall(ent.headword_latin):
             c = canonicalize_translit_token(tok.lower())
             if token_is_strict_clean_translit(c):
                 headword_mem[ent.entry_id].add(c)
@@ -1331,7 +1430,7 @@ def build_trusted_lexicon(
 ) -> dict[str, int]:
     counts: Counter[str] = Counter()
     for ent in entries:
-        for tok in LATIN_TOKEN_RE.findall(ent.headword_latin):
+        for tok in OCR_LATIN_TOKEN_RE.findall(ent.headword_latin):
             c = canonicalize_translit_token(tok.lower())
             if token_is_strict_clean_translit(c):
                 counts[c] += 4
@@ -1572,7 +1671,7 @@ def choose_rewrite(
     options: list[tuple[int, str, str, str]] = []
     canon = canonicalize_translit_token(token).lower()
     explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
-    if explicit_dst is not None and info.zone in AUTO_FIX_ZONES:
+    if explicit_dst is not None and (info.zone in AUTO_FIX_ZONES or "$" in low):
         return explicit_dst, "A", "explicit_user_allowlist"
     if token_requires_manual_initial_i_review(token, canon):
         return canon, "B", "initial_i_manual_context_review"
@@ -1613,6 +1712,7 @@ def choose_rewrite(
     confusable_vowel_particle_drop_blocked = token_drops_vowel_particle_suffix(low, canon)
     confusable_vowel_particle_mismatch_blocked = token_mismatches_vowel_particle_suffix(low, canon)
     confusable_shortening_blocked = token_is_trailing_shortening(low, canon)
+    confusable_dollar_to_sacute_safe = token_is_safe_dollar_to_sacute(token, canon)
 
     if (
         src_initial_i_confusable
@@ -1674,6 +1774,26 @@ def choose_rewrite(
         and (canon in headword_mem or canon in entry_mem or canon in trusted_lexicon)
     ):
         options.append((265, canon, "A", "confusable_nya_coda_safe"))
+
+    if (
+        canon != low
+        and confusable_dollar_to_sacute_safe
+        and canon in trusted_lexicon
+        and info.zone in {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed", "german_prose_with_translit", "latin_other"}
+        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
+        and not src_umlaut_untrusted
+        and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+    ):
+        options.append((240, canon, "A", "confusable_dollar_to_sacute_lexicon"))
+
+    if (
+        canon != low
+        and confusable_dollar_to_sacute_safe
+        and low in DOLLAR_SACUTE_TIER_A_ALLOWLIST
+        and token_is_strict_clean_translit(canon)
+        and not src_umlaut_untrusted
+    ):
+        options.append((238, canon, "A", "confusable_dollar_to_sacute_allowlist"))
 
     if (
         canon != low
@@ -1866,7 +1986,15 @@ def apply_entry_aware_corrections(
                 tok = m.group(0)
                 if ALL_CAPS_RE.fullmatch(tok):
                     return tok
-                choice = choose_rewrite(tok, info, head, mem, trusted_lexicon, discovered)
+                choice: tuple[str, str, str] | None = None
+                if tok.lower() == "$in":
+                    nxt = OCR_LATIN_TOKEN_RE.search(line, m.end())
+                    if nxt is not None:
+                        nxt_low = canonicalize_translit_token(nxt.group(0)).lower()
+                        if nxt_low == "tu":
+                            choice = ("śin", "A", "explicit_user_allowlist_in_tu")
+                if choice is None:
+                    choice = choose_rewrite(tok, info, head, mem, trusted_lexicon, discovered)
                 if choice is None:
                     return tok
                 dst, tier, reason = choice
@@ -1891,7 +2019,7 @@ def apply_entry_aware_corrections(
                 review_rows.append(row)
                 return tok
 
-            corrected_lines.append(LATIN_TOKEN_RE.sub(repl, line))
+            corrected_lines.append(OCR_LATIN_TOKEN_RE.sub(repl, line))
         corrected_pages.append("\n".join(corrected_lines))
 
     return "\f".join(corrected_pages), change_rows, review_rows
@@ -1943,7 +2071,7 @@ def apply_citation_name_normalization(
                 break
             if not neighbor_citation:
                 continue
-            if LATIN_TOKEN_RE.search(line):
+            if OCR_LATIN_TOKEN_RE.search(line):
                 expanded_mask[idx] = True
         citation_like_masks[page_idx] = expanded_mask
 
@@ -1954,7 +2082,7 @@ def apply_citation_name_normalization(
                 continue
             if not citation_like_masks[page_idx][line_idx - 1]:
                 continue
-            for m in LATIN_TOKEN_RE.finditer(line):
+            for m in OCR_LATIN_TOKEN_RE.finditer(line):
                 tok = m.group(0)
                 if not token_is_citation_caps_name_candidate(tok):
                     continue
@@ -2054,11 +2182,350 @@ def apply_citation_name_normalization(
                 )
                 return canon
 
-            lines[line_idx - 1] = LATIN_TOKEN_RE.sub(repl, line)
+            lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, line)
 
     family_report_rows.sort(key=lambda r: (-int(r[5]), -int(r[2]), r[0]))
     normalized_text = "\f".join("\n".join(lines) for lines in pages)
     return normalized_text, change_rows, family_report_rows, len(family_to_canon)
+
+
+def sanskrit_safe_normalize_token(token: str) -> str:
+    return token.translate(SANSKRIT_SAFE_CHAR_MAP)
+
+
+def apply_case_shape(src: str, dst: str) -> str:
+    if not src:
+        return dst
+    if src.isupper():
+        return dst.upper()
+    if src[0].isupper() and src[1:].islower():
+        return dst[:1].upper() + dst[1:]
+    return dst
+
+
+def sanskrit_family_key(token: str) -> str:
+    norm = sanskrit_safe_normalize_token(token)
+    norm = unicodedata.normalize("NFC", norm).lower()
+    norm = norm.translate(SKELETON_MAP)
+    return re.sub(r"[^a-z]", "", norm)
+
+
+def sanskrit_token_signature_score(token: str) -> int:
+    low = sanskrit_safe_normalize_token(token).lower()
+    score = 0
+    if SANSKRIT_DIACRITIC_RE.search(token):
+        score += 3
+    if SANSKRIT_CLUSTER_RE.search(low):
+        score += 3
+    if SANSKRIT_ASCII_CLUSTER_RE.search(low):
+        score += 2
+    if SANSKRIT_ENDING_RE.search(low):
+        score += 1
+    if SANSKRIT_TOKEN_NOISE_RE.search(token):
+        score += 1
+    if low in GERMAN_HINT_WORDS:
+        score -= 5
+    elif token_is_german_like(token) and not (
+        SANSKRIT_DIACRITIC_RE.search(token)
+        or SANSKRIT_CLUSTER_RE.search(low)
+        or SANSKRIT_ASCII_CLUSTER_RE.search(low)
+    ):
+        score -= 2
+    return score
+
+
+def sanskrit_token_quality(token: str) -> int:
+    low = sanskrit_safe_normalize_token(token).lower()
+    quality = 0
+    if SANSKRIT_DIACRITIC_RE.search(token):
+        quality += 4
+    if SANSKRIT_CLUSTER_RE.search(low):
+        quality += 3
+    if SANSKRIT_ASCII_CLUSTER_RE.search(low):
+        quality += 2
+    if SANSKRIT_ENDING_RE.search(low):
+        quality += 1
+    if "$" in token:
+        quality -= 3
+    if SANSKRIT_UMLAUT_RE.search(token):
+        quality -= 2
+    if "ã" in token or "Ã" in token:
+        quality -= 2
+    if "ı" in token:
+        quality -= 1
+    if ALL_CAPS_RE.fullmatch(token):
+        quality -= 3
+    return quality
+
+
+def token_is_probable_sanskrit(token: str, context_score: int, line_text: str) -> bool:
+    if len(token) < 4:
+        return False
+    if not OCR_LATIN_TOKEN_RE.fullmatch(token):
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(token):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    low = token.lower()
+    if low in GERMAN_HINT_WORDS:
+        return False
+    if token_is_initial_i_german_function_word(token):
+        return False
+    sig = sanskrit_token_signature_score(token)
+    if context_score >= SANSKRIT_AUTO_CONTEXT_MIN + 2:
+        threshold = 2
+    elif context_score >= SANSKRIT_AUTO_CONTEXT_MIN:
+        threshold = 2
+    elif context_score >= 2:
+        threshold = 3
+    else:
+        threshold = 5
+    if SANSKRIT_MVY_CUE_RE.search(line_text):
+        threshold = max(1, threshold - 1)
+    return sig >= threshold
+
+
+def build_sanskrit_context_scores(
+    pages: list[list[str]],
+    line_infos: list[LineInfo],
+) -> dict[tuple[int, int], int]:
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    base_scores: dict[tuple[int, int], int] = {}
+
+    for page_idx, lines in enumerate(pages, start=1):
+        for line_idx, line in enumerate(lines, start=1):
+            key = (page_idx, line_idx)
+            info = info_by_key.get(key)
+            score = 0
+            if info is not None and info.entry_id != 0 and line:
+                if SANSKRIT_MVY_CUE_RE.search(line):
+                    score += 5
+                if SANSKRIT_GENERAL_CUE_RE.search(line):
+                    score += 2
+                if SANSKRIT_LEX_CUE_RE.search(line):
+                    score += 1
+                if info.zone in {"german_prose_with_translit", "latin_other", "other"}:
+                    score += 1
+            base_scores[key] = score
+
+    context_scores = dict(base_scores)
+    neighbor_boosts = {1: 2, 2: 1}
+    for page_idx, lines in enumerate(pages, start=1):
+        line_count = len(lines)
+        for line_idx in range(1, line_count + 1):
+            key = (page_idx, line_idx)
+            base = base_scores.get(key, 0)
+            if base < SANSKRIT_AUTO_CONTEXT_MIN:
+                continue
+            info = info_by_key.get(key)
+            if info is None or info.entry_id == 0:
+                continue
+            for dist, boost in neighbor_boosts.items():
+                for sign in (-1, 1):
+                    n_line = line_idx + (sign * dist)
+                    if n_line < 1 or n_line > line_count:
+                        continue
+                    n_key = (page_idx, n_line)
+                    n_info = info_by_key.get(n_key)
+                    if n_info is None or n_info.entry_id != info.entry_id:
+                        continue
+                    if not lines[n_line - 1]:
+                        continue
+                    candidate = base_scores.get(n_key, 0) + boost
+                    if candidate > context_scores.get(n_key, 0):
+                        context_scores[n_key] = candidate
+    return context_scores
+
+
+def apply_sanskrit_normalization(
+    corrected_text: str,
+    line_infos: list[LineInfo],
+) -> tuple[str, list[list[str]], list[list[str]], list[list[str]], int]:
+    pages = [page.split("\n") for page in corrected_text.split("\f")]
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    context_scores = build_sanskrit_context_scores(pages, line_infos)
+
+    family_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    family_context: dict[str, Counter[str]] = defaultdict(Counter)
+    family_examples: dict[str, str] = {}
+
+    for page_idx, lines in enumerate(pages, start=1):
+        for line_idx, line in enumerate(lines, start=1):
+            if not line:
+                continue
+            info = info_by_key.get((page_idx, line_idx))
+            if info is None or info.entry_id == 0:
+                continue
+            ctx = context_scores.get((page_idx, line_idx), 0)
+            for m in OCR_LATIN_TOKEN_RE.finditer(line):
+                tok = m.group(0)
+                if not token_is_probable_sanskrit(tok, ctx, line):
+                    continue
+                key = sanskrit_family_key(tok)
+                if len(key) < 4:
+                    continue
+                family_counts[key][tok] += 1
+                family_context[key][tok] += ctx
+                family_examples.setdefault(key, line[:240])
+
+    family_to_canon: dict[str, str] = {}
+    family_confidence: dict[str, str] = {}
+    family_report_rows: list[list[str]] = []
+    for key, variants in family_counts.items():
+        family_total = sum(variants.values())
+        if family_total < 2:
+            continue
+        scored: list[tuple[int, int, int, int, str]] = []
+        for tok, cnt in variants.items():
+            qual = sanskrit_token_quality(tok)
+            ctx_sum = family_context[key].get(tok, 0)
+            weighted = (cnt * 10) + (ctx_sum * 2) + (qual * 3)
+            scored.append((weighted, qual, cnt, ctx_sum, tok))
+        scored.sort(reverse=True)
+        canon = scored[0][4]
+        family_to_canon[key] = canon
+        noncanon_total = sum(cnt for tok, cnt in variants.items() if tok != canon)
+        score_gap = scored[0][0] - (scored[1][0] if len(scored) > 1 else 0)
+        if noncanon_total == 0:
+            confidence = "none"
+        elif score_gap >= 12 and scored[0][2] >= 2:
+            confidence = "high"
+        elif score_gap >= 6:
+            confidence = "medium"
+        else:
+            confidence = "low"
+        family_confidence[key] = confidence
+        top_variants = sorted(variants.items(), key=lambda kv: (kv[1], kv[0]), reverse=True)[:10]
+        family_report_rows.append(
+            [
+                key,
+                canon,
+                str(family_total),
+                str(len(variants)),
+                str(noncanon_total),
+                confidence,
+                " | ".join(f"{tok}:{cnt}" for tok, cnt in top_variants),
+                family_examples.get(key, ""),
+            ]
+        )
+
+    change_rows: list[list[str]] = []
+    review_rows: list[list[str]] = []
+    for page_idx, lines in enumerate(pages, start=1):
+        for line_idx, line in enumerate(lines, start=1):
+            if not line:
+                continue
+            info = info_by_key.get((page_idx, line_idx))
+            zone = info.zone if info is not None else "other"
+            entry_id = str(info.entry_id) if info is not None else "0"
+            ctx = context_scores.get((page_idx, line_idx), 0)
+            updated_line = line
+
+            if GANS_RI_RE.search(updated_line):
+                replaced_line = GANS_RI_RE.sub("Gaṅs ri", updated_line)
+                if replaced_line != updated_line:
+                    change_rows.append(
+                        [
+                            str(page_idx),
+                            str(line_idx),
+                            entry_id,
+                            zone,
+                            "Gans ri",
+                            "Gaṅs ri",
+                            "A",
+                            "explicit_gans_ri",
+                            "1",
+                            line[:240],
+                        ]
+                    )
+                    updated_line = replaced_line
+
+            def repl(m: re.Match[str]) -> str:
+                tok = m.group(0)
+                if not token_is_probable_sanskrit(tok, ctx, updated_line):
+                    return tok
+                key = sanskrit_family_key(tok)
+                if len(key) < 4:
+                    return tok
+                safe_norm = sanskrit_safe_normalize_token(tok)
+                replacement = tok
+                reason = ""
+                explicit_override = SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES.get(tok.lower())
+                if explicit_override:
+                    replacement = apply_case_shape(tok, explicit_override)
+                    reason = "sanskrit_high_freq_allowlist"
+
+                if replacement == tok and safe_norm != tok:
+                    # Umlaut-only rewrites need clear Sanskrit signal.
+                    if SANSKRIT_UMLAUT_RE.search(tok) and "$" not in tok and "ã" not in tok and "ı" not in tok:
+                        if sanskrit_token_signature_score(tok) < 2:
+                            safe_norm = tok
+                    if safe_norm != tok:
+                        replacement = safe_norm
+                        reason = "sanskrit_char_normalize"
+
+                if replacement == tok:
+                    canon = family_to_canon.get(key)
+                    conf = family_confidence.get(key, "low")
+                    if (
+                        canon is not None
+                        and canon != tok
+                        and conf == "high"
+                        and ctx >= (SANSKRIT_AUTO_CONTEXT_MIN + 1)
+                        and levenshtein_limited(distance_key(tok), distance_key(canon), 2) is not None
+                    ):
+                        replacement = canon
+                        reason = "sanskrit_family_canonicalize"
+
+                if replacement == tok or not reason:
+                    return tok
+
+                if ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist":
+                    change_rows.append(
+                        [
+                            str(page_idx),
+                            str(line_idx),
+                            entry_id,
+                            zone,
+                            tok,
+                            replacement,
+                            "A",
+                            reason,
+                            "1",
+                            updated_line[:240],
+                        ]
+                    )
+                    return replacement
+
+                review_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        entry_id,
+                        zone,
+                        tok,
+                        replacement,
+                        "B",
+                        reason,
+                        "0",
+                        updated_line[:240],
+                    ]
+                )
+                return tok
+
+            lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, updated_line)
+
+    family_report_rows.sort(
+        key=lambda r: (
+            {"high": 0, "medium": 1, "low": 2, "none": 3}.get(r[5], 9),
+            -int(r[4]),
+            -int(r[2]),
+            r[0],
+        )
+    )
+    normalized_text = "\f".join("\n".join(lines) for lines in pages)
+    return normalized_text, change_rows, review_rows, family_report_rows, len(family_to_canon)
 
 
 def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
@@ -2103,6 +2570,14 @@ def run_one(
         )
     )
     change_rows.extend(citation_change_rows)
+    corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
+        apply_sanskrit_normalization(
+            corrected_text=corrected_text,
+            line_infos=line_infos,
+        )
+    )
+    change_rows.extend(sanskrit_change_rows)
+    review_rows.extend(sanskrit_review_rows)
 
     entry_jsonl = outdir / f"{label}_entry_map.jsonl"
     line_tsv = outdir / f"{label}_line_zones.tsv"
@@ -2113,6 +2588,7 @@ def run_one(
     review_tsv = outdir / f"{label}_review_queue.tsv"
     discovered_tsv = outdir / f"{label}_discovered_patterns.tsv"
     citation_report_tsv = outdir / f"{label}_citation_name_report.tsv"
+    sanskrit_report_tsv = outdir / f"{label}_sanskrit_report.tsv"
 
     with entry_jsonl.open("w", encoding="utf-8") as f:
         for ent in entries:
@@ -2202,6 +2678,20 @@ def run_one(
         ],
         citation_report_rows,
     )
+    write_tsv(
+        sanskrit_report_tsv,
+        [
+            "family_key",
+            "canonical",
+            "family_total",
+            "variant_count",
+            "non_canonical_total",
+            "confidence",
+            "top_variants",
+            "example_line",
+        ],
+        sanskrit_report_rows,
+    )
 
     change_reason_counts = Counter(row[7] for row in change_rows)
     review_reason_counts = Counter(row[7] for row in review_rows)
@@ -2215,6 +2705,9 @@ def run_one(
         "tier_b_suggestions": len(review_rows),
         "citation_name_families": citation_family_count,
         "citation_name_changes": len(citation_change_rows),
+        "sanskrit_families": sanskrit_family_count,
+        "sanskrit_changes": len(sanskrit_change_rows),
+        "sanskrit_review_suggestions": len(sanskrit_review_rows),
         "discovered_confidence_counts": dict(discovered_confidence_counts),
         "top_tier_a_reasons": change_reason_counts.most_common(12),
         "top_tier_b_reasons": review_reason_counts.most_common(12),
@@ -2237,6 +2730,7 @@ def run_one(
         "review_queue_tsv": str(review_tsv),
         "discovered_patterns_tsv": str(discovered_tsv),
         "citation_name_report_tsv": str(citation_report_tsv),
+        "sanskrit_report_tsv": str(sanskrit_report_tsv),
         **summary,
     }
     return result
@@ -2296,6 +2790,9 @@ def main() -> int:
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
     print(f"citation_name_families={result['citation_name_families']}")
     print(f"citation_name_changes={result['citation_name_changes']}")
+    print(f"sanskrit_families={result['sanskrit_families']}")
+    print(f"sanskrit_changes={result['sanskrit_changes']}")
+    print(f"sanskrit_review_suggestions={result['sanskrit_review_suggestions']}")
     print(f"uncaptured_tibetan_prefix_lines={result['uncaptured_tibetan_prefix_lines']}")
     print(f"entry_map={result['entry_map']}")
     print(f"line_zones={result['line_zones']}")
@@ -2305,6 +2802,7 @@ def main() -> int:
     print(f"review_queue_tsv={result['review_queue_tsv']}")
     print(f"discovered_patterns_tsv={result['discovered_patterns_tsv']}")
     print(f"citation_name_report_tsv={result['citation_name_report_tsv']}")
+    print(f"sanskrit_report_tsv={result['sanskrit_report_tsv']}")
     print(f"summary_json={result['summary_json']}")
     return 0
 
