@@ -67,6 +67,10 @@ DISTINCTIVE_TIB_CLUSTER_RE = re.compile(
 )
 TIB_MEDIAL_Y_RE = re.compile(r"[bcdfghjklmnpqrstvwxyz]y", re.IGNORECASE)
 VOWEL_PARTICLE_SUFFIX_RE = re.compile(r"^(.*[aeiouāīūöü])(?:['’])(i|o)$", re.IGNORECASE)
+TIBETAN_APOSTROPHE_PARTICLE_RE = re.compile(
+    r"^[a-zāīūöüṛṝḷḹṅñṭḍṇśṣḥṃṁ]+(?:['’])(?:i|o|am|aṃ|aṁ|ang|aṅ)$",
+    re.IGNORECASE,
+)
 SANSKRIT_NYA_CLUSTER_RE = re.compile(r"ñ(?=(?:d?z|d?zh|c|ch|j|jh|ts|tsh|ś|ṣ|sh|zh))", re.IGNORECASE)
 PALATAL_NYA_ONSET_RE = re.compile(r"ñ(?=[aāiīuūeéoöüy])", re.IGNORECASE)
 TIBETAN_NYA_CLUSTER_RE = re.compile(r"(?<![a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁ-])(?:g|m|s)ñ", re.IGNORECASE)
@@ -141,6 +145,7 @@ SANSKRIT_ASCII_CLUSTER_RE = re.compile(
     r"(?:jn|ksh|tva|dva|dhy|bhy|mvy|vams|arya|samt|sva|atm|krt|smr|cch|ddh|dbh|rth|jñ)",
     re.IGNORECASE,
 )
+SANSKRIT_JN_VOWEL_CLUSTER_RE = re.compile(r"jn(?=[aāiīuūeoṛṝḷ])", re.IGNORECASE)
 COMPOUND_SEGMENT_SPLIT_RE = re.compile(r"([/-])")
 SANSKRIT_ENDING_RE = re.compile(
     r"(?:am|ah|ab|as|ena|anam|asya|tva|maya|kara|mukha|atma|artha|sutra|vati|vat|ika|aka|iya)$",
@@ -148,6 +153,11 @@ SANSKRIT_ENDING_RE = re.compile(
 )
 SANSKRIT_LEX_CUE_RE = re.compile(r"\bLex\.", re.IGNORECASE)
 GANS_RI_RE = re.compile(r"\bGans\s+ri\b")
+RASTRAPA_SPLIT_PREV_RE = re.compile(r"R[äa]strapa-\s*$", re.IGNORECASE)
+LAPARIPRCCHA_SPLIT_CURR_RE = re.compile(
+    r"\blapariprcch[äaā]n[äaā]mamah[äaā]y[äaā]nas[üuū]tra\b",
+    re.IGNORECASE,
+)
 SANSKRIT_AUTO_CONTEXT_MIN = 4
 
 ENTRY_STRONG_ZONES = {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed"}
@@ -225,6 +235,36 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
     "siddhärtha": "siddhārtha",
     "vai$ravana": "vaiśravana",
     "vai$ravanas": "vaiśravanas",
+}
+
+
+def load_sanskrit_promoted_overrides(path: Path) -> dict[str, str]:
+    """Load promoted rare-pair Sanskrit overrides from a TSV file if present."""
+    overrides: dict[str, str] = {}
+    if not path.exists():
+        return overrides
+    try:
+        with path.open("r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f, delimiter="\t")
+            for row in reader:
+                src = unicodedata.normalize("NFC", (row.get("from_token") or "").strip())
+                dst = unicodedata.normalize("NFC", (row.get("to_token") or "").strip())
+                if not src or not dst or src == dst:
+                    continue
+                decision = (row.get("decision") or "promote").strip().lower()
+                if decision and decision != "promote":
+                    continue
+                overrides[src.lower()] = dst
+    except OSError:
+        return {}
+    return overrides
+
+
+SANSKRIT_PROMOTED_OVERRIDES_PATH = Path(__file__).resolve().parents[1] / "data" / "sanskrit_promote_overrides.tsv"
+SANSKRIT_PROMOTED_TIER_A_OVERRIDES = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
+SANSKRIT_TIER_A_OVERRIDES = {
+    **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
+    **SANSKRIT_PROMOTED_TIER_A_OVERRIDES,
 }
 
 # Known dubious initial-I forms that should be queued for context review, not auto-applied.
@@ -2218,6 +2258,44 @@ def sanskrit_safe_normalize_token(token: str) -> str:
     return token.translate(SANSKRIT_SAFE_CHAR_MAP)
 
 
+def sanskrit_normalize_jn_cluster_token(token: str) -> str:
+    def repl(m: re.Match[str]) -> str:
+        src = m.group(0)
+        if src.isupper():
+            return "JÑ"
+        if src[:1].isupper():
+            return "Jñ"
+        return "jñ"
+
+    return SANSKRIT_JN_VOWEL_CLUSTER_RE.sub(repl, token)
+
+
+def sanskrit_normalize_jn_cluster_compound_token(token: str) -> tuple[str, bool, bool]:
+    parts = compound_token_parts(token)
+    if len(parts) == 1:
+        normalized = sanskrit_normalize_jn_cluster_token(token)
+        return normalized, normalized != token, False
+
+    out_parts: list[str] = []
+    changed = False
+    has_sanskrit_segment = False
+    for part in parts:
+        if part in {"-", "/"}:
+            out_parts.append(part)
+            continue
+        seg_lang = classify_compound_segment_language(part)
+        if seg_lang == "sanskrit":
+            has_sanskrit_segment = True
+            norm = sanskrit_normalize_jn_cluster_token(part)
+            out_parts.append(norm)
+            if norm != part:
+                changed = True
+            continue
+        out_parts.append(part)
+
+    return "".join(out_parts), changed, has_sanskrit_segment
+
+
 def compound_token_parts(token: str) -> list[str]:
     if "-" not in token and "/" not in token:
         return [token]
@@ -2316,6 +2394,27 @@ def apply_case_shape(src: str, dst: str) -> str:
     if src[0].isupper() and src[1:].islower():
         return dst[:1].upper() + dst[1:]
     return dst
+
+
+def apply_sanskrit_override_chain(token: str, max_hops: int = 4) -> tuple[str, bool]:
+    """Apply promoted/high-frequency overrides transitively for multi-step OCR forms."""
+    current = token
+    changed = False
+    seen: set[str] = set()
+    for _ in range(max_hops):
+        key = current.lower()
+        if key in seen:
+            break
+        seen.add(key)
+        target = SANSKRIT_TIER_A_OVERRIDES.get(key)
+        if not target:
+            break
+        nxt = apply_case_shape(current, target)
+        if nxt == current:
+            break
+        current = nxt
+        changed = True
+    return current, changed
 
 
 def sanskrit_family_key(token: str) -> str:
@@ -2470,6 +2569,8 @@ def token_is_probable_sanskrit(token: str, context_score: int, line_text: str) -
     if ROMAN_NUMERAL_RE.fullmatch(token):
         return False
     if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if TIBETAN_APOSTROPHE_PARTICLE_RE.fullmatch(token):
         return False
     low = token.lower()
     if low in GERMAN_HINT_WORDS:
@@ -2635,6 +2736,53 @@ def apply_sanskrit_normalization(
             ctx = context_scores.get((page_idx, line_idx), 0)
             updated_line = line
 
+            # Handle the known split citation form "Rästrapa-\nlapariprcch...":
+            # normalize across the break to avoid duplicate-prefix rewrites.
+            if line_idx > 1 and LAPARIPRCCHA_SPLIT_CURR_RE.search(updated_line):
+                prev_line = lines[line_idx - 2]
+                if RASTRAPA_SPLIT_PREV_RE.search(prev_line):
+                    prev_replaced = RASTRAPA_SPLIT_PREV_RE.sub("rāṣṭrapāla", prev_line)
+                    if prev_replaced != prev_line:
+                        prev_info = info_by_key.get((page_idx, line_idx - 1))
+                        prev_zone = prev_info.zone if prev_info is not None else "other"
+                        prev_entry_id = str(prev_info.entry_id) if prev_info is not None else "0"
+                        change_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx - 1),
+                                prev_entry_id,
+                                prev_zone,
+                                "Rästrapa-",
+                                "rāṣṭrapāla",
+                                "A",
+                                "explicit_rastrapala_split_prev",
+                                "1",
+                                prev_line[:240],
+                            ]
+                        )
+                        lines[line_idx - 2] = prev_replaced
+                    match = LAPARIPRCCHA_SPLIT_CURR_RE.search(updated_line)
+                    src_tok = match.group(0) if match is not None else "lapariprcchānāmamahāyānasutra"
+                    replaced_line = LAPARIPRCCHA_SPLIT_CURR_RE.sub(
+                        "paripṛcchānāmamahāyānasūtra", updated_line
+                    )
+                    if replaced_line != updated_line:
+                        change_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                entry_id,
+                                zone,
+                                src_tok,
+                                "paripṛcchānāmamahāyānasūtra",
+                                "A",
+                                "explicit_rastrapala_split_curr",
+                                "1",
+                                line[:240],
+                            ]
+                        )
+                        updated_line = replaced_line
+
             if GANS_RI_RE.search(updated_line):
                 replaced_line = GANS_RI_RE.sub("Gaṅs ri", updated_line)
                 if replaced_line != updated_line:
@@ -2656,7 +2804,8 @@ def apply_sanskrit_normalization(
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
-                if not token_is_probable_sanskrit(tok, ctx, updated_line):
+                explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok.lower())
+                if explicit_override is None and not token_is_probable_sanskrit(tok, ctx, updated_line):
                     return tok
                 key = sanskrit_family_key(tok)
                 if len(key) < 4:
@@ -2665,11 +2814,24 @@ def apply_sanskrit_normalization(
                 if "-" in tok or "/" in tok:
                     compound_norm, _, has_sanskrit_segment = sanskrit_safe_normalize_compound_token(tok)
                     safe_norm = compound_norm if has_sanskrit_segment else tok
+                jn_changed = False
+                if "jn" in safe_norm.lower() and token_is_probable_sanskrit(tok, ctx, updated_line):
+                    if "-" in safe_norm or "/" in safe_norm:
+                        jn_norm, jn_compound_changed, jn_has_sanskrit_segment = sanskrit_normalize_jn_cluster_compound_token(
+                            safe_norm
+                        )
+                        if jn_has_sanskrit_segment and jn_compound_changed:
+                            safe_norm = jn_norm
+                            jn_changed = True
+                    else:
+                        jn_norm = sanskrit_normalize_jn_cluster_token(safe_norm)
+                        if jn_norm != safe_norm:
+                            safe_norm = jn_norm
+                            jn_changed = True
                 replacement = tok
                 reason = ""
-                explicit_override = SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES.get(tok.lower())
                 if explicit_override:
-                    replacement = apply_case_shape(tok, explicit_override)
+                    replacement, _ = apply_sanskrit_override_chain(tok)
                     reason = "sanskrit_high_freq_allowlist"
 
                 if replacement == tok and safe_norm != tok:
@@ -2679,7 +2841,15 @@ def apply_sanskrit_normalization(
                             safe_norm = tok
                     if safe_norm != tok:
                         replacement = safe_norm
-                        reason = "sanskrit_char_normalize"
+                        reason = "sanskrit_jn_cluster_contextual" if jn_changed else "sanskrit_char_normalize"
+                        chained, chained_changed = apply_sanskrit_override_chain(replacement)
+                        if chained_changed:
+                            replacement = chained
+                            reason = (
+                                "sanskrit_jn_cluster_plus_allowlist"
+                                if jn_changed
+                                else "sanskrit_char_normalize_plus_allowlist"
+                            )
 
                 if replacement == tok:
                     canon = family_to_canon.get(key)
@@ -2697,10 +2867,22 @@ def apply_sanskrit_normalization(
                 if replacement == tok or not reason:
                     return tok
 
-                if token_is_pure_german_for_sanskrit_queue(tok, updated_line):
+                if explicit_override is None and token_is_pure_german_for_sanskrit_queue(tok, updated_line):
                     return tok
 
                 auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist"
+                if (
+                    not auto_apply
+                    and reason in {"sanskrit_jn_cluster_contextual", "sanskrit_jn_cluster_plus_allowlist"}
+                    and ctx >= 2
+                    and (
+                        SANSKRIT_MVY_CUE_RE.search(updated_line)
+                        or SANSKRIT_GENERAL_CUE_RE.search(updated_line)
+                        or SANSKRIT_LEX_CUE_RE.search(updated_line)
+                    )
+                ):
+                    auto_apply = True
+                    reason = "sanskrit_jn_cluster_context_gate"
                 if (
                     not auto_apply
                     and reason == "sanskrit_char_normalize"
@@ -2936,6 +3118,7 @@ def run_one(
         "citation_name_families": citation_family_count,
         "citation_name_changes": len(citation_change_rows),
         "sanskrit_families": sanskrit_family_count,
+        "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_OVERRIDES),
         "sanskrit_changes": len(sanskrit_change_rows),
         "sanskrit_review_suggestions": len(sanskrit_review_rows),
         "discovered_confidence_counts": dict(discovered_confidence_counts),
@@ -3021,6 +3204,7 @@ def main() -> int:
     print(f"citation_name_families={result['citation_name_families']}")
     print(f"citation_name_changes={result['citation_name_changes']}")
     print(f"sanskrit_families={result['sanskrit_families']}")
+    print(f"sanskrit_promoted_overrides_loaded={result['sanskrit_promoted_overrides_loaded']}")
     print(f"sanskrit_changes={result['sanskrit_changes']}")
     print(f"sanskrit_review_suggestions={result['sanskrit_review_suggestions']}")
     print(f"uncaptured_tibetan_prefix_lines={result['uncaptured_tibetan_prefix_lines']}")
