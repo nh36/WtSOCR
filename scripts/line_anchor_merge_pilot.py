@@ -8,7 +8,7 @@ Workflow per page:
 4. Merge line text conservatively when B improves diacritics with sane similarity.
 
 Outputs:
-- merged sampled pages in form-feed separated text
+- merged page text in form-feed separated text
 - per-page summary CSV
 - per-line audit CSV
 """
@@ -1461,10 +1461,18 @@ def main() -> int:
         )
 
     stem = pdf.stem
-    merged_out = outdir / f"{stem}_lineanchored_merged_sample.txt"
+    if args.all_pages:
+        merged_out = outdir / f"{stem}_lineanchored_merged_full.txt"
+        pages_out = outdir / f"{stem}_all_pages.txt"
+        merged_label = "merged_full"
+        pages_label = "all_pages"
+    else:
+        merged_out = outdir / f"{stem}_lineanchored_merged_sample.txt"
+        pages_out = outdir / f"{stem}_sampled_pages.txt"
+        merged_label = "merged_sample"
+        pages_label = "sampled_pages"
     summary_out = outdir / f"{stem}_lineanchored_summary.csv"
     audit_out = outdir / f"{stem}_lineanchored_audit.csv"
-    pages_out = outdir / f"{stem}_sampled_pages.txt"
     anomaly_out = outdir / f"{stem}_lineanchored_anomalies.csv"
 
     page_sep = "\f" if args.page_separator == "formfeed" else "\n\n<<<PAGE_BREAK>>>\n\n"
@@ -1531,7 +1539,9 @@ def main() -> int:
     print(f"lines_candidate={total_candidates}")
     print(f"lines_replaced={total_replaced}")
     print(f"replace_rate_candidates={(total_replaced / total_candidates):.4f}" if total_candidates else "replace_rate_candidates=0.0000")
-    print(f"merged_sample={merged_out}")
+    print(f"merged_text={merged_out}")
+    print(f"{merged_label}={merged_out}")
+    print(f"{pages_label}={pages_out}")
     print(f"summary_csv={summary_out}")
     print(f"audit_csv={audit_out}")
     if args.anomaly_report:

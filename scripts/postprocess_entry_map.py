@@ -74,6 +74,18 @@ ALL_CAPS_RE = re.compile(r"^[A-ZÄÖÜ]{2,}$")
 ROMAN_NUMERAL_RE = re.compile(r"^(?=[ivxlcdmIVXLCDM]+$)[IVXLCDMivxlcdm]+$")
 SPACE_RE = re.compile(r"\s+")
 VOWEL_RE = re.compile(r"[aeiouāīūöü]", re.IGNORECASE)
+CITATION_YEAR_RE = re.compile(r"\b(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?\b", re.IGNORECASE)
+CITATION_SPLIT_YEAR_RE = re.compile(r"\b(?:1[6-9]|20)\s{1,2}\d{2}(?:[a-z])?\b", re.IGNORECASE)
+CITATION_CUE_RE = re.compile(
+    r"\b(?:ed|hrsg|vgl|zit|zitiert|skt|vol|bd|pp|pl|repr|index|indices)\b\.?",
+    re.IGNORECASE,
+)
+CITATION_PAREN_RE = re.compile(r"\([^)\n]{0,120}\)")
+CITATION_PAREN_HINT_RE = re.compile(
+    r"(?:\b(?:ed|hrsg|vol|bd|pp|pl|nr|no)\b|(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?|\b\d{1,3}\b)",
+    re.IGNORECASE,
+)
+CITATION_PAREN_NAME_PAGE_RE = re.compile(r"\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,}\s*,\s*\d{1,3}\b")
 INITIAL_I_CANON_SHAPE_RE = re.compile(
     r"^l(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)",
     re.IGNORECASE,
@@ -186,6 +198,44 @@ GERMAN_WORD_SUFFIXES = (
     "ieren",
     "ieren",
 )
+
+CITATION_NAME_STOPWORDS = {
+    "bd",
+    "bde",
+    "ed",
+    "eds",
+    "hrsg",
+    "index",
+    "indices",
+    "institute",
+    "institut",
+    "press",
+    "publishing",
+    "foundation",
+    "university",
+    "centre",
+    "center",
+    "series",
+    "repr",
+    "reprint",
+    "skt",
+    "vol",
+    "pp",
+    "nr",
+    "no",
+}
+
+CITATION_AUTHOR_CANON_BY_KEY = {
+    "everding": "EVERDING",
+    "gruenwedel": "GRÜNWEDEL",
+    "grunwedel": "GRÜNWEDEL",
+    "imaeda": "IMAEDA",
+    "nobel": "NOBEL",
+    "schuh": "SCHUH",
+    "schwieger": "SCHWIEGER",
+    "snellgrove": "SNELLGROVE",
+    "takeuchi": "TAKEUCHI",
+}
 
 SHORT_TIB_SYLLABLES = {
     "a",
@@ -840,6 +890,174 @@ def apply_case_pattern(src: str, dst: str) -> str:
     if src and src[0].isupper():
         return dst[:1].upper() + dst[1:]
     return dst
+
+
+def token_upper_ratio(token: str) -> float:
+    letters = [ch for ch in token if ch.isalpha()]
+    if not letters:
+        return 0.0
+    uppers = sum(1 for ch in letters if ch.isupper())
+    return uppers / len(letters)
+
+
+def token_occurrence_near_year(line: str, start: int, end: int) -> bool:
+    left = max(0, start - 8)
+    right = min(len(line), end + 24)
+    snippet = line[left:right]
+    return bool(CITATION_YEAR_RE.search(snippet) or CITATION_SPLIT_YEAR_RE.search(snippet))
+
+
+def line_has_parenthetical_citation(line_text: str) -> bool:
+    for m in CITATION_PAREN_RE.finditer(line_text):
+        segment = m.group(0)
+        if CITATION_PAREN_HINT_RE.search(segment):
+            return True
+        if CITATION_PAREN_NAME_PAGE_RE.search(segment):
+            return True
+    return False
+
+
+def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
+    if info.zone not in {"german_prose", "german_prose_with_translit", "latin_other", "other"}:
+        return False
+    if CITATION_YEAR_RE.search(line_text):
+        return True
+    if CITATION_SPLIT_YEAR_RE.search(line_text):
+        return True
+    if line_has_parenthetical_citation(line_text):
+        return True
+    return bool(CITATION_CUE_RE.search(line_text))
+
+
+def token_is_citation_caps_name_candidate(token: str) -> bool:
+    if len(token) < 4:
+        return False
+    if "'" in token or "’" in token:
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(token):
+        return False
+    lower_initial_confusable = token[:1].islower() and token[1:2].isupper()
+    if not token.isupper() and token[:1].islower() and not lower_initial_confusable:
+        return False
+    low = token.casefold()
+    if low in GERMAN_HINT_WORDS or low in CITATION_NAME_STOPWORDS:
+        return False
+    if token_has_distinctive_tibetan_signature(token):
+        return False
+    letters = [ch for ch in token if ch.isalpha()]
+    if len(letters) < 4:
+        return False
+    uppers = sum(1 for ch in letters if ch.isupper())
+    if uppers < 2:
+        return False
+    ratio = uppers / len(letters)
+    if ratio >= 0.55:
+        return True
+    # Accept mixed-case OCR noise forms if they map to a known citation author family.
+    if token_looks_like_known_citation_author(token):
+        return True
+    return lower_initial_confusable and ratio >= 0.45
+
+
+def citation_name_family_key(token: str) -> str:
+    return token.casefold().replace("’", "'")
+
+
+def citation_author_key(token: str) -> str:
+    norm = unicodedata.normalize("NFD", token.casefold())
+    out: list[str] = []
+    for ch in norm:
+        if unicodedata.category(ch) == "Mn":
+            continue
+        if ch in {"-", "'", "’"}:
+            continue
+        if ch == "ß":
+            out.append("ss")
+            continue
+        if ch.isalpha():
+            out.append(ch)
+    return "".join(out)
+
+
+def token_looks_like_known_citation_author(token: str) -> bool:
+    src_key = citation_author_key(token)
+    if len(src_key) < 4:
+        return False
+    if src_key in CITATION_AUTHOR_CANON_BY_KEY:
+        return True
+    max_dist = 1
+    for key in CITATION_AUTHOR_CANON_BY_KEY:
+        if abs(len(src_key) - len(key)) > max_dist:
+            continue
+        if levenshtein_limited(src_key, key, max_dist) is not None:
+            return True
+    return False
+
+
+def build_citation_author_lexicon(
+    family_counts: dict[str, Counter[str]],
+    family_year_hits: Counter[str],
+) -> dict[str, str]:
+    lexicon = dict(CITATION_AUTHOR_CANON_BY_KEY)
+    for key, variants in family_counts.items():
+        if family_year_hits.get(key, 0) == 0:
+            continue
+        top_tok, top_cnt = max(variants.items(), key=lambda kv: (kv[1], token_upper_ratio(kv[0]), len(kv[0])))
+        if top_cnt < 2:
+            continue
+        if not token_is_citation_caps_name_candidate(top_tok):
+            continue
+        if token_upper_ratio(top_tok) < 0.72:
+            continue
+        author_key = citation_author_key(top_tok)
+        if len(author_key) < 4:
+            continue
+        lexicon.setdefault(author_key, top_tok.upper())
+    return lexicon
+
+
+def token_has_citation_ocr_noise_shape(token: str) -> bool:
+    if token.isupper():
+        letters = [ch for ch in token if ch.isalpha()]
+        if len(letters) >= 2 and letters[0] == letters[1]:
+            return True
+        if len(letters) >= 2 and letters[-1] == letters[-2]:
+            return True
+        return False
+    if token[:1].isupper() and token[1:].islower():
+        return False
+    return True
+
+
+def match_citation_author_lexicon(token: str, author_lexicon: dict[str, str]) -> str | None:
+    src_key = citation_author_key(token)
+    if len(src_key) < 4:
+        return None
+    exact = author_lexicon.get(src_key)
+    if exact is not None:
+        return exact
+
+    if not token_has_citation_ocr_noise_shape(token):
+        return None
+
+    max_dist = 1
+    best_dist = max_dist + 1
+    best_targets: set[str] = set()
+    for key, canon in CITATION_AUTHOR_CANON_BY_KEY.items():
+        if abs(len(src_key) - len(key)) > max_dist:
+            continue
+        dist = levenshtein_limited(src_key, key, max_dist)
+        if dist is None:
+            continue
+        if dist < best_dist:
+            best_dist = dist
+            best_targets = {canon}
+            continue
+        if dist == best_dist:
+            best_targets.add(canon)
+    if len(best_targets) != 1:
+        return None
+    return next(iter(best_targets))
 
 
 @dataclass
@@ -1679,6 +1897,170 @@ def apply_entry_aware_corrections(
     return "\f".join(corrected_pages), change_rows, review_rows
 
 
+def apply_citation_name_normalization(
+    corrected_text: str,
+    line_infos: list[LineInfo],
+) -> tuple[str, list[list[str]], list[list[str]], int]:
+    pages = [page.split("\n") for page in corrected_text.split("\f")]
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    family_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    family_year_hits: Counter[str] = Counter()
+    family_examples: dict[str, str] = {}
+    citation_like_masks: dict[int, list[bool]] = {}
+
+    for page_idx, lines in enumerate(pages, start=1):
+        base_mask: list[bool] = []
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            is_like = bool(
+                info is not None
+                and info.entry_id != 0
+                and line
+                and line_is_citation_like(info, line)
+            )
+            base_mask.append(is_like)
+        expanded_mask = base_mask[:]
+        for idx, is_like in enumerate(base_mask):
+            if is_like:
+                continue
+            line_idx = idx + 1
+            info = info_by_key.get((page_idx, line_idx))
+            line = lines[idx]
+            if info is None or info.entry_id == 0 or not line:
+                continue
+            neighbor_citation = False
+            lo = max(0, idx - 6)
+            hi = min(len(base_mask), idx + 7)
+            for neighbor_idx in range(lo, hi):
+                if neighbor_idx == idx or not base_mask[neighbor_idx]:
+                    continue
+                neighbor_info = info_by_key.get((page_idx, neighbor_idx + 1))
+                if neighbor_info is None:
+                    continue
+                if neighbor_info.entry_id != info.entry_id:
+                    continue
+                neighbor_citation = True
+                break
+            if not neighbor_citation:
+                continue
+            if LATIN_TOKEN_RE.search(line):
+                expanded_mask[idx] = True
+        citation_like_masks[page_idx] = expanded_mask
+
+    for page_idx, lines in enumerate(pages, start=1):
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            if info is None or info.entry_id == 0 or not line:
+                continue
+            if not citation_like_masks[page_idx][line_idx - 1]:
+                continue
+            for m in LATIN_TOKEN_RE.finditer(line):
+                tok = m.group(0)
+                if not token_is_citation_caps_name_candidate(tok):
+                    continue
+                key = citation_name_family_key(tok)
+                family_counts[key][tok] += 1
+                if key not in family_examples:
+                    family_examples[key] = line[:240]
+                if token_occurrence_near_year(line, m.start(), m.end()):
+                    family_year_hits[key] += 1
+
+    author_lexicon = build_citation_author_lexicon(family_counts, family_year_hits)
+    family_to_canon: dict[str, str] = {}
+    family_report_rows: list[list[str]] = []
+    for key, variants in family_counts.items():
+        total = sum(variants.values())
+        if total < 2:
+            continue
+        if family_year_hits[key] == 0:
+            continue
+        caps = [(tok, cnt) for tok, cnt in variants.items() if tok.isupper()]
+        if caps:
+            caps.sort(key=lambda kv: (kv[1], len(kv[0]), kv[0]), reverse=True)
+            canon = caps[0][0]
+        else:
+            best_tok, _ = max(variants.items(), key=lambda kv: (kv[1], token_upper_ratio(kv[0]), len(kv[0])))
+            if token_upper_ratio(best_tok) < 0.62:
+                continue
+            canon = best_tok.upper()
+        non_canon_total = sum(cnt for tok, cnt in variants.items() if tok != canon)
+        if non_canon_total == 0:
+            continue
+        family_to_canon[key] = canon
+        top_variants = sorted(variants.items(), key=lambda kv: (kv[1], kv[0]), reverse=True)[:8]
+        family_report_rows.append(
+            [
+                key,
+                canon,
+                str(total),
+                str(family_year_hits[key]),
+                str(len(variants)),
+                str(non_canon_total),
+                " | ".join(f"{tok}:{cnt}" for tok, cnt in top_variants),
+                family_examples.get(key, ""),
+            ]
+        )
+
+    change_rows: list[list[str]] = []
+    for page_idx, lines in enumerate(pages, start=1):
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            if info is None or info.entry_id == 0 or not line:
+                continue
+            if not citation_like_masks[page_idx][line_idx - 1]:
+                continue
+
+            def repl(m: re.Match[str]) -> str:
+                tok = m.group(0)
+                if not token_is_citation_caps_name_candidate(tok):
+                    return tok
+                lex_canon = match_citation_author_lexicon(tok, author_lexicon)
+                if lex_canon is not None and tok != lex_canon:
+                    change_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            lex_canon,
+                            "A",
+                            "citation_author_lexicon",
+                            "1",
+                            line[:240],
+                        ]
+                    )
+                    return lex_canon
+                key = citation_name_family_key(tok)
+                canon = family_to_canon.get(key)
+                if canon is None or tok == canon:
+                    return tok
+                # Keep this step as a strict case normalization pass.
+                if tok.casefold() != canon.casefold():
+                    return tok
+                change_rows.append(
+                    [
+                        str(info.page),
+                        str(info.line),
+                        str(info.entry_id),
+                        info.zone,
+                        tok,
+                        canon,
+                        "A",
+                        "citation_caps_name_normalize",
+                        "1",
+                        line[:240],
+                    ]
+                )
+                return canon
+
+            lines[line_idx - 1] = LATIN_TOKEN_RE.sub(repl, line)
+
+    family_report_rows.sort(key=lambda r: (-int(r[5]), -int(r[2]), r[0]))
+    normalized_text = "\f".join("\n".join(lines) for lines in pages)
+    return normalized_text, change_rows, family_report_rows, len(family_to_canon)
+
+
 def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
     with path.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f, delimiter="\t")
@@ -1714,6 +2096,13 @@ def run_one(
         trusted_lexicon=trusted_lexicon,
         discovered=discovered,
     )
+    corrected_text, citation_change_rows, citation_report_rows, citation_family_count = (
+        apply_citation_name_normalization(
+            corrected_text=corrected_text,
+            line_infos=line_infos,
+        )
+    )
+    change_rows.extend(citation_change_rows)
 
     entry_jsonl = outdir / f"{label}_entry_map.jsonl"
     line_tsv = outdir / f"{label}_line_zones.tsv"
@@ -1723,6 +2112,7 @@ def run_one(
     changes_tsv = outdir / f"{label}_changes.tsv"
     review_tsv = outdir / f"{label}_review_queue.tsv"
     discovered_tsv = outdir / f"{label}_discovered_patterns.tsv"
+    citation_report_tsv = outdir / f"{label}_citation_name_report.tsv"
 
     with entry_jsonl.open("w", encoding="utf-8") as f:
         for ent in entries:
@@ -1798,6 +2188,20 @@ def run_one(
         ],
         discovered_rows,
     )
+    write_tsv(
+        citation_report_tsv,
+        [
+            "family_key",
+            "canonical",
+            "family_total",
+            "near_year_hits",
+            "variant_count",
+            "non_canonical_total",
+            "top_variants",
+            "example_line",
+        ],
+        citation_report_rows,
+    )
 
     change_reason_counts = Counter(row[7] for row in change_rows)
     review_reason_counts = Counter(row[7] for row in review_rows)
@@ -1809,6 +2213,8 @@ def run_one(
         "discovered_patterns": len(discovered_rows),
         "tier_a_applied": len(change_rows),
         "tier_b_suggestions": len(review_rows),
+        "citation_name_families": citation_family_count,
+        "citation_name_changes": len(citation_change_rows),
         "discovered_confidence_counts": dict(discovered_confidence_counts),
         "top_tier_a_reasons": change_reason_counts.most_common(12),
         "top_tier_b_reasons": review_reason_counts.most_common(12),
@@ -1830,6 +2236,7 @@ def run_one(
         "changes_tsv": str(changes_tsv),
         "review_queue_tsv": str(review_tsv),
         "discovered_patterns_tsv": str(discovered_tsv),
+        "citation_name_report_tsv": str(citation_report_tsv),
         **summary,
     }
     return result
@@ -1887,6 +2294,8 @@ def main() -> int:
     print(f"discovered_patterns={result['discovered_patterns']}")
     print(f"tier_a_applied={result['tier_a_applied']}")
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
+    print(f"citation_name_families={result['citation_name_families']}")
+    print(f"citation_name_changes={result['citation_name_changes']}")
     print(f"uncaptured_tibetan_prefix_lines={result['uncaptured_tibetan_prefix_lines']}")
     print(f"entry_map={result['entry_map']}")
     print(f"line_zones={result['line_zones']}")
@@ -1895,6 +2304,7 @@ def main() -> int:
     print(f"changes_tsv={result['changes_tsv']}")
     print(f"review_queue_tsv={result['review_queue_tsv']}")
     print(f"discovered_patterns_tsv={result['discovered_patterns_tsv']}")
+    print(f"citation_name_report_tsv={result['citation_name_report_tsv']}")
     print(f"summary_json={result['summary_json']}")
     return 0
 

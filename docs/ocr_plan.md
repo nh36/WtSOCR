@@ -30,6 +30,66 @@
 - Line-anchored summary and audit CSVs
 - IPA scan report (stdout)
 
+## Post-OCR Post-Processing Roadmap (new)
+The OCR/merge stage is now considered upstream text acquisition. Systematic cleanup should run in a dedicated post-processing phase.
+
+1. Canonical transliteration target + validators
+- Lock one transliteration target (LOC-style Latin + diacritics) and validate against strict token/character rules.
+- Maintain explicit OCR confusion sets (`ñ↔ṅ`, `I↔l`, `$↔ś`, `ş↔ṣ`, `ņ↔ṇ`, missing apostrophes/spaces, etc.).
+- Emit validator issue reports; do not auto-apply low-confidence rewrites.
+
+2. Entry-aware parsing + zoning
+- Parse merged text into entry units with zones:
+  - `headword_tibetan`
+  - `headword_latin`
+  - `german_prose`
+  - `example_tibetan_latin`
+- Preserve page/line provenance and join with line-anchor audit CSV fields (`candidate`, `replaced`, `reason`).
+
+2b. Corpus-driven OCR error mining (new default in postprocess)
+- Build a trusted transliteration lexicon from high-confidence entry zones.
+- In translit-bearing zones, mine rare tokens with short Levenshtein distance to frequent trusted tokens.
+- Score candidates by:
+  - distance and frequency ratio
+  - validator issues/confusable characters
+  - zone context (headword/tibetan-mixed vs German prose)
+- Auto-apply only high-confidence Tier A candidates with strict safety gates; emit remaining candidates to review queue.
+- Linguistic safeguards (must remain on by default):
+  - Do not auto-drop Tibetan vowel-particle/genitive suffixes (`'i`, `'o`) in discovery rewrites.
+  - Do not auto-apply discovery rewrites that remove apostrophes (send to review instead).
+  - Block automatic `ñ -> ṅ` rewrites in Sanskrit-like clusters (e.g., `jñ`, `ñdz`, `ñc`, `ñj`) unless explicitly reviewed.
+  - Also block `ñ -> ṅ` rewrites when `ñ` is in a palatal onset shape (`ña`, `ñi`, `ñu`, etc.); only coda-like cases may auto-correct.
+
+3. Bilingual headword consistency correction (high precision)
+- When Tibetan and Latin headwords disagree, generate constrained candidates from confusion rules and transliteration mapping.
+- Auto-apply only if a unique best candidate passes strict validators and confidence thresholds.
+
+4. Section-local terminology memory
+- Build per-section memory of validated proper nouns/headwords.
+- In German prose, normalize near-matches only when bounded edit distance and shape checks pass.
+
+5. Continuous Tibetan/romanization repair
+- Apply token-boundary repair, apostrophe normalization, diacritic restoration, and Tibetan-stack sanity checks.
+- Use constrained candidate generation and context scoring; low-confidence cases go to review.
+
+6. Confidence tiers + review outputs
+- Tier A: auto-apply (very high confidence)
+- Tier B: suggest-only
+- Tier C: no change
+- Emit `corrected_full.txt`, `changes.csv`, and `review_queue.csv`.
+
+7. Evaluation gates
+- Maintain a gold set across both volumes and score by error class:
+  - headword consistency
+  - prose proper-noun consistency
+  - continuous Tibetan/romanization repair
+- Promote only rules with very high precision.
+
+8. Workflow integration
+- Default pipeline target:
+  `OCR -> compare/merge -> postprocess -> clean outputs`
+- Re-run OCR only when post-processing metrics show unrecoverable upstream OCR failure.
+
 ## Next Steps
 1. Run `scripts/sample_pages.py` to assess text layers.
 2. Run `scripts/ocr_pilot.sh` to OCR selected pages.
