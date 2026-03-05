@@ -1173,12 +1173,49 @@ def token_is_citation_caps_name_candidate(token: str) -> bool:
     return lower_initial_confusable and ratio >= 0.45
 
 
+def token_is_citation_author_lookup_candidate(token: str) -> bool:
+    if len(token) < 4:
+        return False
+    if "'" in token or "’" in token:
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(token):
+        return False
+    if token.islower():
+        return False
+    low = token.casefold()
+    if low in GERMAN_HINT_WORDS or low in CITATION_NAME_STOPWORDS:
+        return False
+    if token_has_distinctive_tibetan_signature(token):
+        return False
+    letters = [ch for ch in token if ch.isalpha()]
+    if len(letters) < 4:
+        return False
+    if token_is_citation_caps_name_candidate(token):
+        return True
+    if token[:1].isupper() and token[1:].islower():
+        return True
+    uppers = sum(1 for ch in letters if ch.isupper())
+    return uppers >= 2
+
+
+def citation_safe_confusable_rewrite(token: str) -> str:
+    """Safe citation-only OCR fixes (no deletions, no translit remapping)."""
+    out = token.replace("ı", "i")
+    if len(out) >= 2 and out[:1] == "l" and out[1:2].isupper():
+        tail_alpha = [ch for ch in out[1:] if ch.isalpha()]
+        if len(tail_alpha) >= 2:
+            tail_uppers = sum(1 for ch in tail_alpha if ch.isupper())
+            if tail_uppers >= max(1, len(tail_alpha) - 1):
+                out = "I" + out[1:]
+    return out
+
+
 def citation_name_family_key(token: str) -> str:
-    return token.casefold().replace("’", "'")
+    return citation_safe_confusable_rewrite(token).casefold().replace("’", "'")
 
 
 def citation_author_key(token: str) -> str:
-    norm = unicodedata.normalize("NFD", token.casefold())
+    norm = unicodedata.normalize("NFD", citation_safe_confusable_rewrite(token).casefold())
     out: list[str] = []
     for ch in norm:
         if unicodedata.category(ch) == "Mn":
@@ -1223,10 +1260,11 @@ def build_citation_author_lexicon(
             continue
         if token_upper_ratio(top_tok) < 0.72:
             continue
-        author_key = citation_author_key(top_tok)
+        top_tok_norm = citation_safe_confusable_rewrite(top_tok)
+        author_key = citation_author_key(top_tok_norm)
         if len(author_key) < 4:
             continue
-        lexicon.setdefault(author_key, top_tok.upper())
+        lexicon.setdefault(author_key, top_tok_norm.upper())
     return lexicon
 
 
@@ -1797,6 +1835,8 @@ def choose_rewrite(
     src_has_issue = bool(validate_translit_token(token))
     src_german_like = token_is_german_like(token)
     src_umlaut_untrusted = bool(GERMAN_UMLAUT_RE.search(token)) and not src_has_hard_marker
+    line_citation_like = line_is_citation_like(info, info.line_text)
+    citation_author_lookup_candidate = token_is_citation_author_lookup_candidate(token)
     src_initial_i_confusable = token_has_initial_confusable_I(token)
     src_initial_i_german_function = token_is_initial_i_german_function_word(token)
     confusable_nya_to_nga_blocked = token_blocks_nya_to_nga(low, canon)
@@ -1912,6 +1952,12 @@ def choose_rewrite(
             options.append((275, canon, "A", "confusable_dotless_i_to_i_entry_memory"))
         elif canon in trusted_lexicon:
             options.append((255, canon, "A", "confusable_dotless_i_to_i_lexicon"))
+        elif (
+            line_citation_like
+            and citation_author_lookup_candidate
+            and token == citation_safe_confusable_rewrite(token)
+        ):
+            options.append((248, canon, "A", "confusable_dotless_i_to_i_citation_name"))
         elif canon in DOTLESS_I_GERMAN_CORE_WORDS:
             options.append((245, canon, "A", "confusable_dotless_i_to_i_german_core"))
         elif (
@@ -1930,7 +1976,7 @@ def choose_rewrite(
             or "’" in token
         ):
             options.append((235, canon, "A", "confusable_dotless_i_to_i_context"))
-        else:
+        elif not (line_citation_like and citation_author_lookup_candidate):
             options.append((165, canon, "B", "confusable_dotless_i_to_i_review"))
 
     if (
@@ -2012,6 +2058,7 @@ def choose_rewrite(
         canon != low
         and info.zone in {"german_prose", "german_prose_with_translit", "latin_other"}
         and token_is_citation_confusable_i_to_l_candidate(token, canon)
+        and not (line_citation_like and citation_author_lookup_candidate)
     ):
         options.append((140, canon, "B", "citation_confusable_I_to_l"))
 
@@ -2206,6 +2253,7 @@ def apply_citation_name_normalization(
     family_year_hits: Counter[str] = Counter()
     family_examples: dict[str, str] = {}
     citation_like_masks: dict[int, list[bool]] = {}
+    citation_like_base_masks: dict[int, list[bool]] = {}
 
     for page_idx, lines in enumerate(pages, start=1):
         base_mask: list[bool] = []
@@ -2245,6 +2293,7 @@ def apply_citation_name_normalization(
             if OCR_LATIN_TOKEN_RE.search(line):
                 expanded_mask[idx] = True
         citation_like_masks[page_idx] = expanded_mask
+        citation_like_base_masks[page_idx] = base_mask
 
     for page_idx, lines in enumerate(pages, start=1):
         for line_idx, line in enumerate(lines, start=1):
@@ -2306,14 +2355,33 @@ def apply_citation_name_normalization(
             info = info_by_key.get((page_idx, line_idx))
             if info is None or info.entry_id == 0 or not line:
                 continue
-            if not citation_like_masks[page_idx][line_idx - 1]:
+            # Keep actual rewrites on strict citation-like lines only.
+            if not citation_like_base_masks[page_idx][line_idx - 1]:
                 continue
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
-                if not token_is_citation_caps_name_candidate(tok):
+                if not token_is_citation_author_lookup_candidate(tok):
                     return tok
-                lex_canon = match_citation_author_lexicon(tok, author_lexicon)
+                near_year = token_occurrence_near_year(line, m.start(), m.end())
+                safe_tok = citation_safe_confusable_rewrite(tok)
+                noisy_shape = token_has_citation_ocr_noise_shape(tok) or (safe_tok != tok)
+                lex_canon = match_citation_author_lexicon(safe_tok, author_lexicon)
+                if lex_canon is not None and tok != lex_canon:
+                    # Keep lexicon promotion conservative off-year unless OCR-noisy.
+                    if not near_year and not noisy_shape:
+                        lex_canon = None
+                    # Avoid forcing clean titlecase forms to all-caps unless the token
+                    # shows an OCR-noise pattern (e.g. ScHuH, lMAEDA, Tuccı).
+                    if (
+                        lex_canon is not None
+                        and
+                        lex_canon.isupper()
+                        and tok[:1].isupper()
+                        and tok[1:].islower()
+                        and not token_has_citation_ocr_noise_shape(tok)
+                    ):
+                        lex_canon = None
                 if lex_canon is not None and tok != lex_canon:
                     change_rows.append(
                         [
@@ -2330,28 +2398,47 @@ def apply_citation_name_normalization(
                         ]
                     )
                     return lex_canon
-                key = citation_name_family_key(tok)
+                key = citation_name_family_key(safe_tok)
                 canon = family_to_canon.get(key)
-                if canon is None or tok == canon:
-                    return tok
-                # Keep this step as a strict case normalization pass.
-                if tok.casefold() != canon.casefold():
-                    return tok
-                change_rows.append(
-                    [
-                        str(info.page),
-                        str(info.line),
-                        str(info.entry_id),
-                        info.zone,
-                        tok,
-                        canon,
-                        "A",
-                        "citation_caps_name_normalize",
-                        "1",
-                        line[:240],
-                    ]
-                )
-                return canon
+                if canon is not None and tok != canon:
+                    if not near_year and not noisy_shape:
+                        canon = None
+                    # Keep this step as a strict case normalization pass.
+                    if canon is not None and safe_tok.casefold() == canon.casefold():
+                        change_rows.append(
+                            [
+                                str(info.page),
+                                str(info.line),
+                                str(info.entry_id),
+                                info.zone,
+                                tok,
+                                canon,
+                                "A",
+                                "citation_caps_name_normalize",
+                                "1",
+                                line[:240],
+                            ]
+                        )
+                        return canon
+
+                if safe_tok != tok:
+                    change_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            safe_tok,
+                            "A",
+                            "citation_confusable_safe_map",
+                            "1",
+                            line[:240],
+                        ]
+                    )
+                    return safe_tok
+
+                return tok
 
             lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, line)
 
