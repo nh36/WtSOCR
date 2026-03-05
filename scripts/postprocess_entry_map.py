@@ -317,6 +317,22 @@ GERMAN_HINT_WORDS = {
     "siehe",
 }
 
+# Conservative set of high-frequency German function words where dotless-ı->i is safe.
+DOTLESS_I_GERMAN_CORE_WORDS = {
+    "im",
+    "in",
+    "ist",
+    "mit",
+    "die",
+    "ein",
+    "eine",
+    "einer",
+    "einem",
+    "einen",
+    "eines",
+    "siehe",
+}
+
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
     "ihm",
@@ -1896,6 +1912,15 @@ def choose_rewrite(
             options.append((275, canon, "A", "confusable_dotless_i_to_i_entry_memory"))
         elif canon in trusted_lexicon:
             options.append((255, canon, "A", "confusable_dotless_i_to_i_lexicon"))
+        elif canon in DOTLESS_I_GERMAN_CORE_WORDS:
+            options.append((245, canon, "A", "confusable_dotless_i_to_i_german_core"))
+        elif (
+            token == token.lower()
+            and token_is_strict_clean_translit(canon)
+            and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
+            and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+        ):
+            options.append((240, canon, "A", "confusable_dotless_i_to_i_translit_shape"))
         elif token_is_strict_clean_translit(canon) and (
             src_has_hard_marker
             or src_has_cue
@@ -1927,6 +1952,18 @@ def choose_rewrite(
         and not src_umlaut_untrusted
     ):
         options.append((238, canon, "A", "confusable_dollar_to_sacute_allowlist"))
+
+    if (
+        canon != low
+        and confusable_dollar_to_sacute_safe
+        and info.zone in ENTRY_STRONG_ZONES
+        and token == token.lower()
+        and token_is_strict_clean_translit(canon)
+        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
+        and not src_umlaut_untrusted
+        and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+    ):
+        options.append((237, canon, "A", "confusable_dollar_to_sacute_context_safe"))
 
     if (
         canon != low
