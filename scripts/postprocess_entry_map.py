@@ -103,7 +103,7 @@ GERMAN_LHR_PRONOUN_RE = re.compile(r"^lhr(?:e|en|em|es)?$", re.IGNORECASE)
 GERMAN_IHR_PRONOUN_RE = re.compile(r"^ihr(?:e|en|em|er|es)?$", re.IGNORECASE)
 SANSKRIT_DIACRITIC_RE = re.compile(r"[āīūṛṝḷḹṅñṭḍṇśṣḥṃṁĀĪŪṚṜḶḸṄÑṬḌṆŚṢḤṂṀ]")
 SANSKRIT_CLUSTER_RE = re.compile(
-    r"(?:jñ|kṣ|ṣṭ|ṣṇ|śr|tva|dva|dhy|bhy|mvy|arya|vams|samtu|stub|tub)",
+    r"(?:jñ|kṣ|ṣṭ|ṣṇ|śr|tva|dva|dhy|bhy|mvy|arya|vams|samtu)",
     re.IGNORECASE,
 )
 SANSKRIT_TOKEN_NOISE_RE = re.compile(r"[\$äöüÄÖÜãÃıI]")
@@ -132,10 +132,16 @@ SANSKRIT_SAFE_CHAR_MAP = str.maketrans(
         "ı": "i",
     }
 )
-SANSKRIT_ASCII_CLUSTER_RE = re.compile(
-    r"(?:jn|ksh|tva|dva|dhy|bhy|mvy|vams|arya|samt|stub|sva|atm|krt|smr|cch|ddh|dbh|rth|jñ)",
+# Strong ASCII clusters that are useful Sanskrit evidence and low-risk in German prose.
+SANSKRIT_ASCII_CLUSTER_STRONG_RE = re.compile(
+    r"(?:jn|ksh|tva|dva|dhy|bhy|mvy|cch|ddh|dbh|jñ)",
     re.IGNORECASE,
 )
+SANSKRIT_ASCII_CLUSTER_RE = re.compile(
+    r"(?:jn|ksh|tva|dva|dhy|bhy|mvy|vams|arya|samt|sva|atm|krt|smr|cch|ddh|dbh|rth|jñ)",
+    re.IGNORECASE,
+)
+COMPOUND_SEGMENT_SPLIT_RE = re.compile(r"([/-])")
 SANSKRIT_ENDING_RE = re.compile(
     r"(?:am|ah|ab|as|ena|anam|asya|tva|maya|kara|mukha|atma|artha|sutra|vati|vat|ika|aka|iya)$",
     re.IGNORECASE,
@@ -189,6 +195,24 @@ DOLLAR_SACUTE_TIER_A_ALLOWLIST = {
 # These are safe to auto-apply even when local context score is below the Sanskrit
 # auto-threshold, as long as the token is already classified probable Sanskrit.
 SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
+    "$raddhä": "śraddhā",
+    "$ridharasena": "śridharasena",
+    "$rijnäna": "śrijnāna",
+    "$rivatsa": "śrivatsa",
+    "äjneya": "ājneya",
+    "abhyäsa": "abhyāsa",
+    "adhyätma": "adhyātma",
+    "arthasästra": "arthasāstra",
+    "ayodhyä": "ayodhyā",
+    "bodhisattvacaryavatärasamskära": "bodhisattvacaryavatārasamskāra",
+    "buddhädhyesanakusalah": "buddhādhyesanakusalah",
+    "isvasträcäryah": "isvastrācāryah",
+    "madhyamaka-präsangika": "madhyamaka-prāsangika",
+    "pärasvadhikah": "pārasvadhikah",
+    "prajnä": "prajnā",
+    "samdhyäbhasa": "samdhyābhasa",
+    "säarthavaha": "sāarthavaha",
+    "täräbhyudayatantra": "tārābhyudayatantra",
     "upädhyäya": "upādhyāya",
     "$rävaka": "śrāvaka",
     "$rävakas": "śrāvakas",
@@ -271,6 +295,7 @@ GERMAN_INITIAL_I_STOPWORDS = {
 GERMAN_WORD_SUFFIXES = (
     "ung",
     "keit",
+    "ismus",
     "chen",
     "isch",
     "lich",
@@ -2193,6 +2218,96 @@ def sanskrit_safe_normalize_token(token: str) -> str:
     return token.translate(SANSKRIT_SAFE_CHAR_MAP)
 
 
+def compound_token_parts(token: str) -> list[str]:
+    if "-" not in token and "/" not in token:
+        return [token]
+    return [part for part in COMPOUND_SEGMENT_SPLIT_RE.split(token) if part]
+
+
+def token_has_hard_sanskrit_marker(token: str) -> bool:
+    low = sanskrit_safe_normalize_token(token).lower()
+    if "$" in token:
+        return True
+    if SANSKRIT_DIACRITIC_RE.search(token):
+        return True
+    if SANSKRIT_CLUSTER_RE.search(low):
+        return True
+    if SANSKRIT_ASCII_CLUSTER_STRONG_RE.search(low):
+        return True
+    return False
+
+
+def token_has_german_lexical_cue_for_sanskrit(segment: str) -> bool:
+    low = segment.lower()
+    low_norm = sanskrit_safe_normalize_token(segment).lower()
+    if low in GERMAN_HINT_WORDS:
+        return True
+    if token_is_initial_i_german_function_word(segment):
+        return True
+    if "über" in low:
+        return True
+    if "gottheit" in low:
+        return True
+    if re.search(r"(?:^|-)verdienst", low_norm):
+        return True
+    if re.search(r"(?:^|-)haltung", low_norm):
+        return True
+    if re.search(r"(?:^|-)abgekl", low_norm):
+        return True
+    if re.search(r"l[äa]ndern?$", low):
+        return True
+    if low_norm.endswith(GERMAN_WORD_SUFFIXES):
+        return True
+    return False
+
+
+def classify_compound_segment_language(segment: str) -> str:
+    if not segment or segment in {"-", "/"}:
+        return "unknown"
+    hard_sanskrit = token_has_hard_sanskrit_marker(segment)
+    german_lexical = token_has_german_lexical_cue_for_sanskrit(segment)
+    low_norm = sanskrit_safe_normalize_token(segment).lower()
+    soft_confusable = any(ch in segment for ch in "$ãÃıñÑäÄ")
+    if token_has_distinctive_tibetan_signature(segment):
+        return "sanskrit"
+    if hard_sanskrit and not german_lexical:
+        return "sanskrit"
+    if german_lexical and not hard_sanskrit:
+        return "german"
+    if hard_sanskrit and german_lexical:
+        return "german"
+    if soft_confusable and re.search(r"[aāiīuūeo]$", low_norm):
+        return "sanskrit"
+    if token_is_german_like(segment):
+        return "german"
+    return "unknown"
+
+
+def sanskrit_safe_normalize_compound_token(token: str) -> tuple[str, bool, bool]:
+    parts = compound_token_parts(token)
+    if len(parts) == 1:
+        return sanskrit_safe_normalize_token(token), False, False
+
+    out_parts: list[str] = []
+    changed = False
+    has_sanskrit_segment = False
+    for part in parts:
+        if part in {"-", "/"}:
+            out_parts.append(part)
+            continue
+        seg_lang = classify_compound_segment_language(part)
+        if seg_lang == "sanskrit":
+            has_sanskrit_segment = True
+            norm = sanskrit_safe_normalize_token(part)
+            out_parts.append(norm)
+            if norm != part:
+                changed = True
+            continue
+        out_parts.append(part)
+
+    return "".join(out_parts), changed, has_sanskrit_segment
+
+
 def apply_case_shape(src: str, dst: str) -> str:
     if not src:
         return dst
@@ -2234,6 +2349,95 @@ def sanskrit_token_signature_score(token: str) -> int:
     return score
 
 
+def token_has_strong_sanskrit_marker(token: str) -> bool:
+    low = sanskrit_safe_normalize_token(token).lower()
+    if "$" in token:
+        return True
+    if SANSKRIT_DIACRITIC_RE.search(token):
+        return True
+    if SANSKRIT_CLUSTER_RE.search(low):
+        return True
+    if SANSKRIT_ASCII_CLUSTER_STRONG_RE.search(low):
+        return True
+    if SANSKRIT_ENDING_RE.search(low):
+        return True
+    return False
+
+
+def token_is_pure_german_for_sanskrit_queue(token: str, line_text: str) -> bool:
+    parts = compound_token_parts(token)
+    if len(parts) > 1:
+        has_sanskrit = False
+        has_german = False
+        has_unknown = False
+        for part in parts:
+            if part in {"-", "/"}:
+                continue
+            seg_lang = classify_compound_segment_language(part)
+            if seg_lang == "sanskrit":
+                has_sanskrit = True
+            elif seg_lang == "german":
+                has_german = True
+            else:
+                has_unknown = True
+        if has_sanskrit:
+            return False
+        if has_german and not has_unknown:
+            return True
+
+    low = token.lower()
+    low_norm = sanskrit_safe_normalize_token(token).lower()
+    if low in GERMAN_HINT_WORDS:
+        return True
+    if token_is_initial_i_german_function_word(token):
+        return True
+    # Hard German lexical cues should override Sanskrit-marker heuristics.
+    if token_has_german_lexical_cue_for_sanskrit(token):
+        return True
+    if token_has_strong_sanskrit_marker(token):
+        return False
+    if token_is_german_like(token):
+        # Capitalization alone is not sufficient evidence; Sanskrit proper names
+        # are often title-cased in bibliographic contexts.
+        if token[:1].isupper() and not GERMAN_UMLAUT_RE.search(token) and not low.endswith(GERMAN_WORD_SUFFIXES):
+            pass
+        else:
+            return True
+    if low_norm.endswith(GERMAN_WORD_SUFFIXES):
+        return True
+    # In pure citation lines with year/citation cues, keep tokens unless they are clearly German.
+    if (CITATION_YEAR_RE.search(line_text) or CITATION_CUE_RE.search(line_text)) and token_has_strong_sanskrit_marker(token):
+        return False
+    return False
+
+
+def token_is_safe_sanskrit_char_map_rewrite(src: str, dst: str) -> bool:
+    if src == dst or len(src) != len(dst):
+        return False
+    changed = False
+    for s_ch, d_ch in zip(src, dst):
+        if s_ch == d_ch:
+            continue
+        if SANSKRIT_SAFE_CHAR_MAP.get(ord(s_ch)) == d_ch:
+            changed = True
+            continue
+        return False
+    return changed
+
+
+def line_has_singleton_sanskrit_gate(line_text: str, zone: str) -> bool:
+    if SANSKRIT_MVY_CUE_RE.search(line_text):
+        return True
+    if zone in {"german_prose_with_translit", "latin_other"} and (
+        CITATION_CUE_RE.search(line_text)
+        or CITATION_YEAR_RE.search(line_text)
+        or CITATION_SPLIT_YEAR_RE.search(line_text)
+        or SANSKRIT_LEX_CUE_RE.search(line_text)
+    ):
+        return True
+    return False
+
+
 def sanskrit_token_quality(token: str) -> int:
     low = sanskrit_safe_normalize_token(token).lower()
     quality = 0
@@ -2271,6 +2475,8 @@ def token_is_probable_sanskrit(token: str, context_score: int, line_text: str) -
     if low in GERMAN_HINT_WORDS:
         return False
     if token_is_initial_i_german_function_word(token):
+        return False
+    if token_is_pure_german_for_sanskrit_queue(token, line_text):
         return False
     sig = sanskrit_token_signature_score(token)
     if context_score >= SANSKRIT_AUTO_CONTEXT_MIN + 2:
@@ -2349,6 +2555,7 @@ def apply_sanskrit_normalization(
     family_counts: dict[str, Counter[str]] = defaultdict(Counter)
     family_context: dict[str, Counter[str]] = defaultdict(Counter)
     family_examples: dict[str, str] = {}
+    char_norm_pair_counts: Counter[tuple[str, str]] = Counter()
 
     for page_idx, lines in enumerate(pages, start=1):
         for line_idx, line in enumerate(lines, start=1):
@@ -2365,6 +2572,12 @@ def apply_sanskrit_normalization(
                 key = sanskrit_family_key(tok)
                 if len(key) < 4:
                     continue
+                safe_norm = sanskrit_safe_normalize_token(tok)
+                if "-" in tok or "/" in tok:
+                    compound_norm, _, has_sanskrit_segment = sanskrit_safe_normalize_compound_token(tok)
+                    safe_norm = compound_norm if has_sanskrit_segment else tok
+                if safe_norm != tok and token_is_safe_sanskrit_char_map_rewrite(tok, safe_norm):
+                    char_norm_pair_counts[(tok.lower(), safe_norm.lower())] += 1
                 family_counts[key][tok] += 1
                 family_context[key][tok] += ctx
                 family_examples.setdefault(key, line[:240])
@@ -2449,6 +2662,9 @@ def apply_sanskrit_normalization(
                 if len(key) < 4:
                     return tok
                 safe_norm = sanskrit_safe_normalize_token(tok)
+                if "-" in tok or "/" in tok:
+                    compound_norm, _, has_sanskrit_segment = sanskrit_safe_normalize_compound_token(tok)
+                    safe_norm = compound_norm if has_sanskrit_segment else tok
                 replacement = tok
                 reason = ""
                 explicit_override = SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES.get(tok.lower())
@@ -2481,7 +2697,21 @@ def apply_sanskrit_normalization(
                 if replacement == tok or not reason:
                     return tok
 
-                if ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist":
+                if token_is_pure_german_for_sanskrit_queue(tok, updated_line):
+                    return tok
+
+                auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist"
+                if (
+                    not auto_apply
+                    and reason == "sanskrit_char_normalize"
+                    and token_is_safe_sanskrit_char_map_rewrite(tok, replacement)
+                    and char_norm_pair_counts.get((tok.lower(), replacement.lower()), 0) == 1
+                    and line_has_singleton_sanskrit_gate(updated_line, zone)
+                ):
+                    auto_apply = True
+                    reason = "sanskrit_singleton_context_gate"
+
+                if auto_apply:
                     change_rows.append(
                         [
                             str(page_idx),
