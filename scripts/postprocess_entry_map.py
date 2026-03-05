@@ -85,6 +85,7 @@ ALL_CAPS_RE = re.compile(r"^[A-ZÄÖÜ]{2,}$")
 ROMAN_NUMERAL_RE = re.compile(r"^(?=[ivxlcdmIVXLCDM]+$)[IVXLCDMivxlcdm]+$")
 SPACE_RE = re.compile(r"\s+")
 VOWEL_RE = re.compile(r"[aeiouāīūöü]", re.IGNORECASE)
+DOLLAR_SACUTE_ARTIFACT_RE = re.compile(r"(?:sś|śz|śś|ṣś)", re.IGNORECASE)
 CITATION_YEAR_RE = re.compile(r"\b(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?\b", re.IGNORECASE)
 CITATION_SPLIT_YEAR_RE = re.compile(r"\b(?:1[6-9]|20)\s{1,2}\d{2}(?:[a-z])?\b", re.IGNORECASE)
 CITATION_CUE_RE = re.compile(
@@ -885,6 +886,37 @@ def token_is_safe_dollar_to_sacute(src: str, dst: str) -> bool:
             changed = True
             continue
         return False
+    if not changed:
+        return False
+
+    # Re-scan with indices for neighborhood checks around replaced positions.
+    replaced_at = [idx for idx, s_ch in enumerate(src) if s_ch == "$"]
+    dst_low = dst.lower()
+    if DOLLAR_SACUTE_ARTIFACT_RE.search(dst_low):
+        return False
+    for idx in replaced_at:
+        prev_ch = dst_low[idx - 1] if idx > 0 else ""
+        next_ch = dst_low[idx + 1] if idx + 1 < len(dst_low) else ""
+        if prev_ch in {"s", "ś", "ṣ"}:
+            return False
+        if next_ch in {"z", "ź", "ž", "ś", "ṣ"}:
+            return False
+    return True
+
+
+def token_is_safe_dotless_i_to_i(src: str, dst: str) -> bool:
+    if "ı" not in src:
+        return False
+    if len(src) != len(dst):
+        return False
+    changed = False
+    for s_ch, d_ch in zip(src, dst):
+        if s_ch == d_ch:
+            continue
+        if s_ch == "ı" and d_ch == "i":
+            changed = True
+            continue
+        return False
     return changed
 
 
@@ -916,10 +948,12 @@ def token_is_strict_clean_translit(token: str) -> bool:
 def validate_translit_token(token: str) -> list[tuple[str, str]]:
     issues: list[tuple[str, str]] = []
     canon = canonicalize_translit_token(token)
+    confusable_dollar_blocked = ("$" in token) and (not token_is_safe_dollar_to_sacute(token, canon))
     confusable_blocked = (
         token_blocks_nya_to_nga(token, canon)
         or token_is_initial_i_confusable_noise(token, canon)
         or token_is_initial_i_german_function_word(token)
+        or confusable_dollar_blocked
     )
     if canon != token and not confusable_blocked:
         issues.append(("confusable_char", canon))
@@ -1778,6 +1812,8 @@ def choose_rewrite(
     confusable_vowel_particle_mismatch_blocked = token_mismatches_vowel_particle_suffix(low, canon)
     confusable_shortening_blocked = token_is_trailing_shortening(low, canon)
     confusable_dollar_to_sacute_safe = token_is_safe_dollar_to_sacute(token, canon)
+    confusable_dollar_to_sacute_blocked = ("$" in token) and (not confusable_dollar_to_sacute_safe)
+    confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
 
     if (
         src_initial_i_confusable
@@ -1842,6 +1878,38 @@ def choose_rewrite(
 
     if (
         canon != low
+        and confusable_dotless_i_to_i_safe
+        and info.zone in AUTO_FIX_ZONES
+        and not src_umlaut_untrusted
+        and (
+            src_translit_like_here
+            or info.has_tibetan
+            or line_translit_dominant
+            or src_has_hard_marker
+            or src_has_cue
+            or canon_has_cue
+        )
+    ):
+        if canon in headword_mem:
+            options.append((295, canon, "A", "confusable_dotless_i_to_i_headword"))
+        elif canon in entry_mem:
+            options.append((275, canon, "A", "confusable_dotless_i_to_i_entry_memory"))
+        elif canon in trusted_lexicon:
+            options.append((255, canon, "A", "confusable_dotless_i_to_i_lexicon"))
+        elif token_is_strict_clean_translit(canon) and (
+            src_has_hard_marker
+            or src_has_cue
+            or canon_has_cue
+            or "-" in token
+            or "'" in token
+            or "’" in token
+        ):
+            options.append((235, canon, "A", "confusable_dotless_i_to_i_context"))
+        else:
+            options.append((165, canon, "B", "confusable_dotless_i_to_i_review"))
+
+    if (
+        canon != low
         and confusable_dollar_to_sacute_safe
         and canon in trusted_lexicon
         and info.zone in {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed", "german_prose_with_translit", "latin_other"}
@@ -1881,6 +1949,7 @@ def choose_rewrite(
         and not confusable_vowel_particle_drop_blocked
         and not confusable_vowel_particle_mismatch_blocked
         and not confusable_shortening_blocked
+        and not confusable_dollar_to_sacute_blocked
     ):
         if canon in headword_mem and info.zone in AUTO_FIX_ZONES:
             options.append((300, canon, "A", "confusable_to_headword"))

@@ -30,6 +30,10 @@
 - Line-anchored summary and audit CSVs
 - IPA scan report (stdout)
 
+## Latest Diagnostics
+- Current deep-dive diagnostics snapshot:
+  - `docs/ocr_diagnostics_2026-03-05.md`
+
 ## Post-OCR Post-Processing Roadmap (new)
 The OCR/merge stage is now considered upstream text acquisition. Systematic cleanup should run in a dedicated post-processing phase.
 
