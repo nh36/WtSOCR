@@ -2355,9 +2355,11 @@ def apply_citation_name_normalization(
             info = info_by_key.get((page_idx, line_idx))
             if info is None or info.entry_id == 0 or not line:
                 continue
-            # Keep actual rewrites on strict citation-like lines only.
-            if not citation_like_base_masks[page_idx][line_idx - 1]:
+            # Apply rewrites on the expanded citation mask as well so wrapped
+            # bibliography lines within the same entry get normalized.
+            if not citation_like_masks[page_idx][line_idx - 1]:
                 continue
+            line_is_base_citation = citation_like_base_masks[page_idx][line_idx - 1]
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
@@ -2422,6 +2424,10 @@ def apply_citation_name_normalization(
                         return canon
 
                 if safe_tok != tok:
+                    # On non-base (neighbor-expanded) lines, keep this fallback
+                    # mapping limited to OCR-noisy citation token shapes.
+                    if not line_is_base_citation and not noisy_shape:
+                        return tok
                     change_rows.append(
                         [
                             str(info.page),
