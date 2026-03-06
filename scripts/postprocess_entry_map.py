@@ -559,6 +559,7 @@ CITATION_SIGLUM_CANONICAL = {
     "Sambh",
     "Vis",
     "VisT",
+    "Xs",
     "Ys",
 }
 
@@ -570,7 +571,10 @@ CITATION_SIGLUM_CANONICAL_BY_KEY = {
 CITATION_SIGLUM_CONFUSABLE_MAP = {
     # Explicit observed $ confusions.
     "p$": "Ps",
+    "x$": "Xs",
+    "bu-$": "Bu-Sz",
     "bu-$z": "Bu-Sz",
+    "bu-$2": "Bu-Sz",
     "bu-$sz": "Bu-Sz",
     "vi$": "Vis",
     "vis$": "Vis",
@@ -1675,6 +1679,8 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
         return True
     if CITATION_SIGLUM_ARTIFACT_CUE_RE.search(line_text):
         return True
+    if line_has_citation_siglum_candidate(line_text):
+        return True
     return bool(CITATION_CUE_RE.search(line_text))
 
 
@@ -1789,6 +1795,13 @@ def token_is_citation_siglum_candidate(token: str) -> bool:
     if "$" not in core and CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is None:
         return False
     return match_citation_siglum(core) is not None
+
+
+def line_has_citation_siglum_candidate(line_text: str) -> bool:
+    for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
+        if token_is_citation_siglum_candidate(m.group(0)):
+            return True
+    return False
 
 
 def citation_name_family_key(token: str) -> str:

@@ -179,6 +179,43 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
 
+    def test_citation_sigla_standalone_and_split_lines(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "$Sambh\n"
+            "RoIN$\n"
+            "vgl. „x“ (P$ Kolophon);\n"
+            "„y“ (Bu-$2\n"
+            "22,9); z\n"
+            "„z“ (X$ 68d);\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Sambh", corrected)
+        self.assertIn("RoINS", corrected)
+        self.assertIn("(Ps Kolophon)", corrected)
+        self.assertIn("(Bu-Sz", corrected)
+        self.assertIn("(Xs 68d)", corrected)
+        self.assertNotIn("$Sambh", corrected)
+        self.assertNotIn("RoIN$", corrected)
+        self.assertNotIn("(P$ Kolophon)", corrected)
+        self.assertNotIn("(Bu-$2", corrected)
+        self.assertNotIn("(X$ 68d)", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("$Sambh", "Sambh", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("RoIN$", "RoINS", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
+        self.assertTrue(
+            any(
+                from_tok in {"Bu-$2", "Bu-$"}
+                and to_tok == "Bu-Sz"
+                and reason == "citation_siglum_confusable_map"
+                for from_tok, to_tok, reason in reasons
+            )
+        )
+        self.assertIn(("X$", "Xs", "citation_siglum_confusable_map"), reasons)
+
 
 if __name__ == "__main__":
     unittest.main()
