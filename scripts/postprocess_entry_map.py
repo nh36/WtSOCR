@@ -27,16 +27,16 @@ TRANSLIT_CHARS = (
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\$"
 )
 LATIN_TOKEN_RE = re.compile(
-    rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]+)*)*"
+    rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*)*"
 )
 OCR_LATIN_TOKEN_RE = re.compile(
     rf"[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+"
-    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+)*"
+    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]*)*"
     rf"(?:-[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+"
-    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]+)*)*"
+    rf"(?:[’'][{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}]*)*)*"
 )
 TRANSLIT_TOKEN_RE = re.compile(
-    rf"[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*(?:-[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]+)*)*$"
+    rf"[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]*)*(?:-[{TRANSLIT_CHARS}]+(?:[’'][{TRANSLIT_CHARS}]*)*)*$"
 )
 TRANSLIT_CUE_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25"
@@ -188,6 +188,15 @@ DISCOVER_MIN_SUGGESTED_COUNT = 12
 DISCOVER_RATIO_MIN_HIGH = 4.0
 DISCOVER_RATIO_MIN_MEDIUM = 5.5
 
+HARD_GUARD_BLOCK_FLAGS = {
+    "particle_suffix_drop",
+    "particle_suffix_mismatch",
+    "apostrophe_drop",
+    "trailing_shortening",
+    "protected_nya_to_nga",
+    "case_destructive_shift",
+}
+
 # Explicit user-approved rewrites that are safe to auto-apply in auto-fix zones.
 EXPLICIT_TIER_A_REWRITES = {
     "$es": "śes",
@@ -335,6 +344,8 @@ DOTLESS_I_GERMAN_CORE_WORDS = {
     "im",
     "in",
     "ist",
+    "sind",
+    "bei",
     "mit",
     "die",
     "ein",
@@ -414,14 +425,31 @@ CITATION_AUTHOR_CANON_BY_KEY = {
 }
 
 TIBETAN_NAME_PIECE_HINTS = {
+    "bkra",
     "bsod",
     "bstan",
     "bzang",
     "chos",
     "dbang",
     "dpal",
+    "ldan",
+    "ldebs",
+    "lde",
+    "lde'u",
+    "ldin",
+    "ldih",
+    "lcam",
+    "lcog",
+    "lha",
+    "lhag",
+    "lhas",
+    "lna",
+    "lho",
+    "lhun",
+    "lta",
     "mgon",
     "norbu",
+    "rigs",
     "rgyal",
     "rgyas",
     "rin",
@@ -902,6 +930,105 @@ def token_is_citation_confusable_i_to_l_candidate(src: str, dst: str) -> bool:
     return token_is_german_like(src)
 
 
+def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool:
+    """Conservative auto-fix for hyphenated Tibetan name compounds.
+
+    Primary target is segment-initial I->l (e.g. Rigs-Idan -> Rigs-ldan).
+    Also allows co-occurring safe $->ś changes in other segments of the same
+    token (e.g. Bkra-$is-Ihun-po -> Bkra-śis-lhun-po).
+    """
+    if src == dst:
+        return False
+    if "-" not in src or "-" not in dst:
+        return False
+    if src.count("-") != dst.count("-"):
+        return False
+    src_parts = src.split("-")
+    dst_parts = dst.split("-")
+    if len(src_parts) != len(dst_parts) or len(src_parts) < 2:
+        return False
+
+    def is_strong_tibetan_piece(piece: str) -> bool:
+        low = canonicalize_translit_token(piece).lower()
+        low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
+        if len(low_wylie) < 3:
+            return False
+        if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+            return True
+        if token_has_hard_translit_marker(low) or token_has_hard_translit_marker(low_wylie):
+            return True
+        if DISTINCTIVE_TIB_CLUSTER_RE.search(low) or DISTINCTIVE_TIB_CLUSTER_RE.search(low_wylie):
+            return True
+        if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+            return True
+        return False
+
+    changed_parts = 0
+    changed_i_parts = 0
+    changed_dollar_parts = 0
+    unchanged_strong_anchors = 0
+    unchanged_short_syllable_anchors = 0
+    changed_strong_parts = 0
+    for src_part, dst_part in zip(src_parts, dst_parts):
+        if not src_part or not dst_part:
+            return False
+        if src_part.casefold() == dst_part.casefold():
+            unchanged_low = canonicalize_translit_token(src_part).lower()
+            if is_strong_tibetan_piece(src_part) or is_strong_tibetan_piece(dst_part):
+                unchanged_strong_anchors += 1
+            elif unchanged_low in SHORT_TIB_SYLLABLES:
+                unchanged_short_syllable_anchors += 1
+            continue
+        if len(src_part) != len(dst_part):
+            return False
+        # Allow segment-initial I -> l with exact tail preservation.
+        if src_part.startswith("I") and dst_part.startswith("l"):
+            if src_part[1:].casefold() != dst_part[1:].casefold():
+                return False
+            if len(src_part) < 3:
+                return False
+            if not dst_part[1:].islower():
+                return False
+            # Block mixed-language artifacts (e.g. Indo-Aryan -> lndo-Aryan).
+            if not is_strong_tibetan_piece(dst_part):
+                return False
+            changed_strong_parts += 1
+            changed_i_parts += 1
+            changed_parts += 1
+            continue
+        # Permit safe $->ś changes in other segments of the same hyphen-chain.
+        if token_is_safe_dollar_to_sacute(src_part, dst_part):
+            changed_dollar_parts += 1
+            changed_parts += 1
+            continue
+        return False
+
+    if changed_parts == 0 or changed_parts > 2:
+        return False
+    if changed_i_parts == 0:
+        return False
+    # Allow two-part compounds where both parts are confidently Tibetan
+    # confusable I->l segments, e.g. IHa-Icam -> lha-lcam.
+    if (
+        len(src_parts) == 2
+        and changed_parts == 2
+        and changed_strong_parts == 2
+        and changed_dollar_parts == 0
+    ):
+        return True
+    if unchanged_strong_anchors > 0:
+        return True
+    # Allow two-part compounds like Iha-mo -> lha-mo when the second part is
+    # a short Tibetan syllable and the changed part is strongly Tibetan.
+    if len(src_parts) == 2 and unchanged_short_syllable_anchors > 0:
+        return True
+    # Also allow longer compounds when there is at least one short Tibetan
+    # syllable anchor (e.g. $is-Ihun-po -> śis-lhun-po via unchanged "po").
+    if unchanged_short_syllable_anchors > 0:
+        return True
+    return False
+
+
 def token_is_safe_coda_nya_to_nga(src: str, dst: str) -> bool:
     src_low = src.lower()
     dst_low = dst.lower()
@@ -981,14 +1108,89 @@ def token_is_safe_dotless_i_to_i(src: str, dst: str) -> bool:
 
 
 def token_is_trailing_shortening(src: str, dst: str) -> bool:
+    # Only guard true shortenings where candidate drops a short trailing tail.
+    if len(src) <= len(dst):
+        return False
     if len(src) < 4 or len(dst) < 3:
         return False
-    if src.startswith(dst) and len(src) - len(dst) <= 2:
+    if src.startswith(dst) and 1 <= (len(src) - len(dst)) <= 2:
         if src.endswith(("i", "o", "'i", "’i", "'o", "’o")):
             return True
         if src.endswith("a") and dst.endswith(("r", "k")):
             return True
     return False
+
+
+def token_has_case_destructive_shift(src: str, dst: str) -> bool:
+    if src == dst:
+        return False
+    src_alpha = [ch for ch in src if ch.isalpha()]
+    dst_alpha = [ch for ch in dst if ch.isalpha()]
+    if not src_alpha or not dst_alpha:
+        return False
+    src_norm = canonicalize_translit_token(src).casefold()
+    dst_norm = canonicalize_translit_token(dst).casefold()
+    if src_norm != dst_norm:
+        return False
+    src_upper = sum(1 for ch in src_alpha if ch.isupper())
+    dst_upper = sum(1 for ch in dst_alpha if ch.isupper())
+    if src_upper >= 2 and dst_upper == 0:
+        return True
+    if "-" in src and "-" in dst:
+        src_parts = src.split("-")
+        dst_parts = dst.split("-")
+        if len(src_parts) != len(dst_parts):
+            return False
+        for src_part, dst_part in zip(src_parts, dst_parts):
+            if not src_part or not dst_part:
+                continue
+            src_title = src_part[:1].isupper() and src_part[1:].islower()
+            dst_title = dst_part[:1].isupper() and dst_part[1:].islower()
+            if src_title and not dst_title:
+                if token_has_initial_confusable_I(src_part) and dst_part[:1] == "l" and dst_part[1:].islower():
+                    continue
+                return True
+    return False
+
+
+def rewrite_watchdog_flags(src: str, dst: str) -> list[str]:
+    flags: list[str] = []
+    src_low = canonicalize_translit_token(src).lower()
+    dst_low = canonicalize_translit_token(dst).lower()
+
+    if token_drops_vowel_particle_suffix(src_low, dst_low):
+        flags.append("particle_suffix_drop")
+    if token_mismatches_vowel_particle_suffix(src_low, dst_low):
+        flags.append("particle_suffix_mismatch")
+    if token_drops_apostrophe(src, dst):
+        flags.append("apostrophe_drop")
+    if token_is_trailing_shortening(src_low, dst_low):
+        flags.append("trailing_shortening")
+    if token_blocks_nya_to_nga(src_low, dst_low):
+        flags.append("protected_nya_to_nga")
+    if token_has_case_destructive_shift(src, dst):
+        flags.append("case_destructive_shift")
+
+    src_key = distance_key(src)
+    dst_key = distance_key(dst)
+    dist = levenshtein_limited(src_key, dst_key, 4)
+    if dist is None:
+        if abs(len(src_key) - len(dst_key)) >= 3:
+            flags.append("high_edit_distance_drift")
+    elif dist >= 3:
+        flags.append("high_edit_distance_drift")
+    return flags
+
+
+def rewrite_hard_guard_block_reason(src: str, dst: str, reason: str, stage: str) -> str | None:
+    del stage
+    for flag in rewrite_watchdog_flags(src, dst):
+        if flag not in HARD_GUARD_BLOCK_FLAGS:
+            continue
+        if flag == "case_destructive_shift" and reason == "citation_caps_name_normalize":
+            continue
+        return flag
+    return None
 
 
 def token_is_strict_clean_translit(token: str) -> bool:
@@ -2028,6 +2230,8 @@ def choose_rewrite(
             options.append((248, canon, "A", "confusable_dotless_i_to_i_citation_name"))
         elif canon in DOTLESS_I_GERMAN_CORE_WORDS:
             options.append((245, canon, "A", "confusable_dotless_i_to_i_german_core"))
+        elif token == token.lower() and canon in GERMAN_HINT_WORDS and len(canon) >= 3:
+            options.append((242, canon, "A", "confusable_dotless_i_to_i_german_hint"))
         elif (
             token == token.lower()
             and token_is_strict_clean_translit(canon)
@@ -2121,6 +2325,29 @@ def choose_rewrite(
             and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
         ):
             options.append((150, canon, "B", "confusable_global_lexicon"))
+
+    if (
+        canon != low
+        and info.zone
+        in {
+            "headword_line",
+            "example_tibetan_latin",
+            "tibetan_latin_mixed",
+            "german_prose",
+            "german_prose_with_translit",
+            "latin_other",
+        }
+        and token_is_safe_hyphenated_initial_i_to_l_translit(token, canon)
+        and (
+            line_citation_like
+            or info.zone in {"german_prose_with_translit", "latin_other"}
+            or info.has_tibetan
+            or line_translit_dominant
+            or token.count("-") >= 2
+            or token_has_distinctive_tibetan_signature(canon)
+        )
+    ):
+        options.append((252, canon, "A", "confusable_hyphenated_I_to_l_translit"))
 
     if (
         canon != low
@@ -2287,6 +2514,9 @@ def apply_entry_aware_corrections(
                 dst_case = apply_case_pattern(tok, dst)
                 if dst_case == tok:
                     return tok
+                guard_block_reason = rewrite_hard_guard_block_reason(
+                    tok, dst_case, reason, stage="entry"
+                )
                 row = [
                     str(info.page),
                     str(info.line),
@@ -2299,9 +2529,27 @@ def apply_entry_aware_corrections(
                     "1" if tier == "A" else "0",
                     info.line_text[:240],
                 ]
+                if tier == "A" and guard_block_reason is not None:
+                    review_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            dst_case,
+                            "B",
+                            f"hard_guard_{guard_block_reason}__{reason}",
+                            "0",
+                            info.line_text[:240],
+                        ]
+                    )
+                    return tok
                 if tier == "A":
                     change_rows.append(row)
                     return dst_case
+                if guard_block_reason is not None:
+                    row[7] = f"hard_guard_{guard_block_reason}__{reason}"
                 review_rows.append(row)
                 return tok
 
@@ -2314,7 +2562,7 @@ def apply_entry_aware_corrections(
 def apply_citation_name_normalization(
     corrected_text: str,
     line_infos: list[LineInfo],
-) -> tuple[str, list[list[str]], list[list[str]], int]:
+) -> tuple[str, list[list[str]], list[list[str]], list[list[str]], int]:
     pages = [page.split("\n") for page in corrected_text.split("\f")]
     info_by_key = {(li.page, li.line): li for li in line_infos}
     family_counts: dict[str, Counter[str]] = defaultdict(Counter)
@@ -2418,6 +2666,7 @@ def apply_citation_name_normalization(
         )
 
     change_rows: list[list[str]] = []
+    review_rows: list[list[str]] = []
     for page_idx, lines in enumerate(pages, start=1):
         for line_idx, line in enumerate(lines, start=1):
             info = info_by_key.get((page_idx, line_idx))
@@ -2431,6 +2680,43 @@ def apply_citation_name_normalization(
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
+
+                def apply_guarded(dst_tok: str, reason: str) -> str:
+                    guard_block_reason = rewrite_hard_guard_block_reason(
+                        tok, dst_tok, reason, stage="citation"
+                    )
+                    if guard_block_reason is not None:
+                        review_rows.append(
+                            [
+                                str(info.page),
+                                str(info.line),
+                                str(info.entry_id),
+                                info.zone,
+                                tok,
+                                dst_tok,
+                                "B",
+                                f"hard_guard_{guard_block_reason}__{reason}",
+                                "0",
+                                line[:240],
+                            ]
+                        )
+                        return tok
+                    change_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            dst_tok,
+                            "A",
+                            reason,
+                            "1",
+                            line[:240],
+                        ]
+                    )
+                    return dst_tok
+
                 if not token_is_citation_author_lookup_candidate(tok):
                     return tok
                 near_year = token_occurrence_near_year(line, m.start(), m.end())
@@ -2456,21 +2742,7 @@ def apply_citation_name_normalization(
                     ):
                         lex_canon = None
                 if lex_canon is not None and tok != lex_canon:
-                    change_rows.append(
-                        [
-                            str(info.page),
-                            str(info.line),
-                            str(info.entry_id),
-                            info.zone,
-                            tok,
-                            lex_canon,
-                            "A",
-                            "citation_author_lexicon",
-                            "1",
-                            line[:240],
-                        ]
-                    )
-                    return lex_canon
+                    return apply_guarded(lex_canon, "citation_author_lexicon")
                 canon = None
                 if person_candidate:
                     key = citation_name_family_key(safe_tok)
@@ -2480,42 +2752,14 @@ def apply_citation_name_normalization(
                         canon = None
                     # Keep this step as a strict case normalization pass.
                     if canon is not None and safe_tok.casefold() == canon.casefold():
-                        change_rows.append(
-                            [
-                                str(info.page),
-                                str(info.line),
-                                str(info.entry_id),
-                                info.zone,
-                                tok,
-                                canon,
-                                "A",
-                                "citation_caps_name_normalize",
-                                "1",
-                                line[:240],
-                            ]
-                        )
-                        return canon
+                        return apply_guarded(canon, "citation_caps_name_normalize")
 
                 if safe_tok != tok:
                     # On non-base (neighbor-expanded) lines, keep this fallback
                     # mapping limited to OCR-noisy citation token shapes.
                     if not line_is_base_citation and not noisy_shape:
                         return tok
-                    change_rows.append(
-                        [
-                            str(info.page),
-                            str(info.line),
-                            str(info.entry_id),
-                            info.zone,
-                            tok,
-                            safe_tok,
-                            "A",
-                            "citation_confusable_safe_map",
-                            "1",
-                            line[:240],
-                        ]
-                    )
-                    return safe_tok
+                    return apply_guarded(safe_tok, "citation_confusable_safe_map")
 
                 return tok
 
@@ -2523,7 +2767,7 @@ def apply_citation_name_normalization(
 
     family_report_rows.sort(key=lambda r: (-int(r[5]), -int(r[2]), r[0]))
     normalized_text = "\f".join("\n".join(lines) for lines in pages)
-    return normalized_text, change_rows, family_report_rows, len(family_to_canon)
+    return normalized_text, change_rows, review_rows, family_report_rows, len(family_to_canon)
 
 
 def sanskrit_safe_normalize_token(token: str) -> str:
@@ -3166,6 +3410,25 @@ def apply_sanskrit_normalization(
                     reason = "sanskrit_singleton_context_gate"
 
                 if auto_apply:
+                    guard_block_reason = rewrite_hard_guard_block_reason(
+                        tok, replacement, reason, stage="sanskrit"
+                    )
+                    if guard_block_reason is not None:
+                        review_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                entry_id,
+                                zone,
+                                tok,
+                                replacement,
+                                "B",
+                                f"hard_guard_{guard_block_reason}__{reason}",
+                                "0",
+                                updated_line[:240],
+                            ]
+                        )
+                        return tok
                     change_rows.append(
                         [
                             str(page_idx),
@@ -3219,6 +3482,34 @@ def write_tsv(path: Path, header: list[str], rows: list[list[str]]) -> None:
         w.writerows(rows)
 
 
+def build_watchdog_rows(change_rows: list[list[str]]) -> tuple[list[list[str]], Counter[str]]:
+    rows: list[list[str]] = []
+    flag_counts: Counter[str] = Counter()
+    for row in change_rows:
+        if len(row) < 10:
+            continue
+        flags = rewrite_watchdog_flags(row[4], row[5])
+        if not flags:
+            continue
+        for flag in flags:
+            flag_counts[flag] += 1
+        rows.append(
+            [
+                row[0],
+                row[1],
+                row[2],
+                row[3],
+                row[4],
+                row[5],
+                row[6],
+                row[7],
+                ",".join(flags),
+                row[9],
+            ]
+        )
+    return rows, flag_counts
+
+
 def run_one(
     merged: Path,
     audit: Path | None,
@@ -3247,13 +3538,14 @@ def run_one(
         trusted_lexicon=trusted_lexicon,
         discovered=discovered,
     )
-    corrected_text, citation_change_rows, citation_report_rows, citation_family_count = (
+    corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
         apply_citation_name_normalization(
             corrected_text=corrected_text,
             line_infos=line_infos,
         )
     )
     change_rows.extend(citation_change_rows)
+    review_rows.extend(citation_review_rows)
     corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
         apply_sanskrit_normalization(
             corrected_text=corrected_text,
@@ -3273,6 +3565,7 @@ def run_one(
     discovered_tsv = outdir / f"{label}_discovered_patterns.tsv"
     citation_report_tsv = outdir / f"{label}_citation_name_report.tsv"
     sanskrit_report_tsv = outdir / f"{label}_sanskrit_report.tsv"
+    watchdog_tsv = outdir / f"{label}_watchdog_flags.tsv"
 
     with entry_jsonl.open("w", encoding="utf-8") as f:
         for ent in entries:
@@ -3376,6 +3669,23 @@ def run_one(
         ],
         sanskrit_report_rows,
     )
+    watchdog_rows, watchdog_flag_counts = build_watchdog_rows(change_rows)
+    write_tsv(
+        watchdog_tsv,
+        [
+            "page",
+            "line",
+            "entry_id",
+            "zone",
+            "from_token",
+            "to_token",
+            "tier",
+            "reason",
+            "watchdog_flags",
+            "line_excerpt",
+        ],
+        watchdog_rows,
+    )
 
     change_reason_counts = Counter(row[7] for row in change_rows)
     review_reason_counts = Counter(row[7] for row in review_rows)
@@ -3393,6 +3703,8 @@ def run_one(
         "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_OVERRIDES),
         "sanskrit_changes": len(sanskrit_change_rows),
         "sanskrit_review_suggestions": len(sanskrit_review_rows),
+        "watchdog_flagged_changes": len(watchdog_rows),
+        "watchdog_flag_counts": dict(sorted(watchdog_flag_counts.items(), key=lambda kv: (-kv[1], kv[0]))),
         "discovered_confidence_counts": dict(discovered_confidence_counts),
         "top_tier_a_reasons": change_reason_counts.most_common(12),
         "top_tier_b_reasons": review_reason_counts.most_common(12),
@@ -3416,6 +3728,7 @@ def run_one(
         "discovered_patterns_tsv": str(discovered_tsv),
         "citation_name_report_tsv": str(citation_report_tsv),
         "sanskrit_report_tsv": str(sanskrit_report_tsv),
+        "watchdog_tsv": str(watchdog_tsv),
         **summary,
     }
     return result
