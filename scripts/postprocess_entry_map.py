@@ -546,9 +546,18 @@ CITATION_NAME_STOPWORDS = {
 # Canonical source-text sigla found in abbreviation/citation sections.
 # Keep this list narrow and explicit to avoid affecting normal transliteration.
 CITATION_SIGLUM_CANONICAL = {
+    "Bu-Sz",
+    "Gs",
+    "Gs-H",
+    "Ins",
     "Lsdz",
     "Lsdz-K",
     "Lis",
+    "Ps",
+    "RoINS",
+    "SPS",
+    "Sambh",
+    "Vis",
     "VisT",
     "Ys",
 }
@@ -559,6 +568,21 @@ CITATION_SIGLUM_CANONICAL_BY_KEY = {
 
 # OCR-confusable sigla variants observed in citations.
 CITATION_SIGLUM_CONFUSABLE_MAP = {
+    # Explicit observed $ confusions.
+    "p$": "Ps",
+    "bu-$z": "Bu-Sz",
+    "bu-$sz": "Bu-Sz",
+    "vi$": "Vis",
+    "vis$": "Vis",
+    "$ambh": "Sambh",
+    "$sambh": "Sambh",
+    "$ps": "SPS",
+    "roin$": "RoINS",
+    "roins$": "RoINS",
+    "in$": "Ins",
+    "g$": "Gs",
+    "g$-h": "Gs-H",
+    "g$s-h": "Gs-H",
     "l$dz": "Lsdz",
     "l$dz-k": "Lsdz-K",
     "l$dz-r": "Lsdz-R",
@@ -567,6 +591,12 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "vi$st": "VisT",
     "y$": "Ys",
     "ys$": "Ys",
+    # Safe case-noise sigla variants seen in citation contexts.
+    "vist": "VisT",
+    "visst": "VisT",
+    "viist": "VisT",
+    "ys": "Ys",
+    "gs-h": "Gs-H",
 }
 
 CITATION_AUTHOR_CANON_BY_KEY = {
@@ -1754,9 +1784,9 @@ def token_is_citation_siglum_candidate(token: str) -> bool:
     core = token
     if core.endswith(("'", "’")):
         core = core[:-1]
-    if "$" not in core:
-        return False
     if not re.fullmatch(r"[A-Za-z$]+(?:-[A-Za-z$]*)?", core):
+        return False
+    if "$" not in core and CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is None:
         return False
     return match_citation_siglum(core) is not None
 

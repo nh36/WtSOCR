@@ -115,6 +115,70 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Li$", "Lis", "citation_siglum_confusable_map"), reasons)
 
+    def test_citation_sigla_extended_safe_normalization(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "(P$ 7c) (Bu-$z 51,3) (Vi$ 67b) (Vis$ 6b) ($ambh 5b6) ($PS 38) "
+            "(RoIN$ 35,1) (In$ 29) (G$ 93a) (G$-H 481) (G$S-H 74a)\n"
+            "(ViST 228,30) (VisST 142,4) (VIST 158,23) (VIiST 210,6) (YS 80d) (GS-H 60d)\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("(Ps 7c)", corrected)
+        self.assertIn("(Bu-Sz 51,3)", corrected)
+        self.assertIn("(Vis 67b)", corrected)
+        self.assertIn("(Vis 6b)", corrected)
+        self.assertIn("(Sambh 5b6)", corrected)
+        self.assertIn("(SPS 38)", corrected)
+        self.assertIn("(RoINS 35,1)", corrected)
+        self.assertIn("(Ins 29)", corrected)
+        self.assertIn("(Gs 93a)", corrected)
+        self.assertIn("(Gs-H 481)", corrected)
+        self.assertIn("(Gs-H 74a)", corrected)
+        self.assertIn("(VisT 228,30)", corrected)
+        self.assertIn("(VisT 142,4)", corrected)
+        self.assertIn("(VisT 158,23)", corrected)
+        self.assertIn("(VisT 210,6)", corrected)
+        self.assertIn("(Ys 80d)", corrected)
+        self.assertIn("(Gs-H 60d)", corrected)
+
+        self.assertNotIn("(P$ 7c)", corrected)
+        self.assertNotIn("(Bu-$z 51,3)", corrected)
+        self.assertNotIn("(Vi$ 67b)", corrected)
+        self.assertNotIn("(Vis$ 6b)", corrected)
+        self.assertNotIn("($ambh 5b6)", corrected)
+        self.assertNotIn("($PS 38)", corrected)
+        self.assertNotIn("(RoIN$ 35,1)", corrected)
+        self.assertNotIn("(In$ 29)", corrected)
+        self.assertNotIn("(G$ 93a)", corrected)
+        self.assertNotIn("(G$-H 481)", corrected)
+        self.assertNotIn("(G$S-H 74a)", corrected)
+        self.assertNotIn("(ViST 228,30)", corrected)
+        self.assertNotIn("(VisST 142,4)", corrected)
+        self.assertNotIn("(VIST 158,23)", corrected)
+        self.assertNotIn("(VIiST 210,6)", corrected)
+        self.assertNotIn("(YS 80d)", corrected)
+        self.assertNotIn("(GS-H 60d)", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Bu-$z", "Bu-Sz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Vi$", "Vis", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Vis$", "Vis", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("$ambh", "Sambh", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("$PS", "SPS", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("RoIN$", "RoINS", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("In$", "Ins", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$", "Gs", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$S-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("ViST", "VisT", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("VisST", "VisT", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("VIST", "VisT", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("VIiST", "VisT", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+
 
 if __name__ == "__main__":
     unittest.main()
