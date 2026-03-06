@@ -104,6 +104,19 @@ INITIAL_I_CANON_SHAPE_RE = re.compile(
     r"^l(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)",
     re.IGNORECASE,
 )
+TIBETAN_NAME_PIECE_PREFIX_RE = re.compile(
+    r"^(?:"
+    r"bs|bz|bsk|bst|brg|brk|brt|brd|"
+    r"dng|dby|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mny|mg|"
+    r"rgy|rts|rky|"
+    r"sgr|sbr|sny|sng|"
+    r"rdz|gzh|"
+    r"zh|lh|ng|ny|"
+    r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
+    r")",
+    re.IGNORECASE,
+)
 GERMAN_LHR_PRONOUN_RE = re.compile(r"^lhr(?:e|en|em|es)?$", re.IGNORECASE)
 GERMAN_IHR_PRONOUN_RE = re.compile(r"^ihr(?:e|en|em|er|es)?$", re.IGNORECASE)
 SANSKRIT_DIACRITIC_RE = re.compile(r"[āīūṛṝḷḹṅñṭḍṇśṣḥṃṁĀĪŪṚṜḶḸṄÑṬḌṆŚṢḤṂṀ]")
@@ -399,6 +412,37 @@ CITATION_AUTHOR_CANON_BY_KEY = {
     "snellgrove": "SNELLGROVE",
     "takeuchi": "TAKEUCHI",
 }
+
+TIBETAN_NAME_PIECE_HINTS = {
+    "bsod",
+    "bstan",
+    "bzang",
+    "chos",
+    "dbang",
+    "dpal",
+    "mgon",
+    "norbu",
+    "rgyal",
+    "rgyas",
+    "rin",
+    "sang",
+    "sangs",
+    "shis",
+    "skal",
+    "sprul",
+}
+TIBETAN_LOC_TO_WYLIE_MAP = str.maketrans(
+    {
+        "ś": "sh",
+        "Ś": "sh",
+        "ź": "zh",
+        "Ź": "zh",
+        "ñ": "ny",
+        "Ñ": "ny",
+        "ṅ": "ng",
+        "Ṅ": "ng",
+    }
+)
 
 SHORT_TIB_SYLLABLES = {
     "a",
@@ -1245,6 +1289,30 @@ def token_looks_like_known_citation_author(token: str) -> bool:
     return False
 
 
+def token_is_likely_tibetan_name_piece(token: str) -> bool:
+    low = canonicalize_translit_token(token).lower()
+    low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
+    if len(low_wylie) < 3:
+        return False
+    if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+        return True
+    if token_has_distinctive_tibetan_signature(low) or token_has_distinctive_tibetan_signature(low_wylie):
+        return True
+    if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+        return True
+    return False
+
+
+def token_is_citation_person_name_candidate(token: str) -> bool:
+    if not token_is_citation_caps_name_candidate(token):
+        return False
+    if token_looks_like_known_citation_author(token):
+        return True
+    if token_is_likely_tibetan_name_piece(token):
+        return False
+    return True
+
+
 def build_citation_author_lexicon(
     family_counts: dict[str, Counter[str]],
     family_year_hits: Counter[str],
@@ -1256,7 +1324,7 @@ def build_citation_author_lexicon(
         top_tok, top_cnt = max(variants.items(), key=lambda kv: (kv[1], token_upper_ratio(kv[0]), len(kv[0])))
         if top_cnt < 2:
             continue
-        if not token_is_citation_caps_name_candidate(top_tok):
+        if not token_is_citation_person_name_candidate(top_tok):
             continue
         if token_upper_ratio(top_tok) < 0.72:
             continue
@@ -2304,7 +2372,7 @@ def apply_citation_name_normalization(
                 continue
             for m in OCR_LATIN_TOKEN_RE.finditer(line):
                 tok = m.group(0)
-                if not token_is_citation_caps_name_candidate(tok):
+                if not token_is_citation_person_name_candidate(tok):
                     continue
                 key = citation_name_family_key(tok)
                 family_counts[key][tok] += 1
@@ -2368,7 +2436,10 @@ def apply_citation_name_normalization(
                 near_year = token_occurrence_near_year(line, m.start(), m.end())
                 safe_tok = citation_safe_confusable_rewrite(tok)
                 noisy_shape = token_has_citation_ocr_noise_shape(tok) or (safe_tok != tok)
-                lex_canon = match_citation_author_lexicon(safe_tok, author_lexicon)
+                person_candidate = token_is_citation_person_name_candidate(safe_tok)
+                lex_canon = None
+                if person_candidate:
+                    lex_canon = match_citation_author_lexicon(safe_tok, author_lexicon)
                 if lex_canon is not None and tok != lex_canon:
                     # Keep lexicon promotion conservative off-year unless OCR-noisy.
                     if not near_year and not noisy_shape:
@@ -2400,8 +2471,10 @@ def apply_citation_name_normalization(
                         ]
                     )
                     return lex_canon
-                key = citation_name_family_key(safe_tok)
-                canon = family_to_canon.get(key)
+                canon = None
+                if person_candidate:
+                    key = citation_name_family_key(safe_tok)
+                    canon = family_to_canon.get(key)
                 if canon is not None and tok != canon:
                     if not near_year and not noisy_shape:
                         canon = None
