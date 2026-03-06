@@ -74,7 +74,7 @@ TIBETAN_APOSTROPHE_PARTICLE_RE = re.compile(
 SANSKRIT_NYA_CLUSTER_RE = re.compile(r"ñ(?=(?:d?z|d?zh|c|ch|j|jh|ts|tsh|ś|ṣ|sh|zh))", re.IGNORECASE)
 PALATAL_NYA_ONSET_RE = re.compile(r"ñ(?=[aāiīuūeéoöüy])", re.IGNORECASE)
 TIBETAN_NYA_CLUSTER_RE = re.compile(r"(?<![a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁ-])(?:g|m|s)ñ", re.IGNORECASE)
-INITIAL_CONFUSABLE_I_RE = re.compile(r"^I(?=[a-zA-Zāīūṛṝḷḹṅñṭḍṇśṣ])")
+INITIAL_CONFUSABLE_I_RE = re.compile(r"^I(?:(?=[a-zA-Zāīūṛṝḷḹṅñṭḍṇśṣ])|(?=['’]))")
 INITIAL_I_TRANSLIT_ONSET_RE = re.compile(
     r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|zh|sh|ch|ny|ng|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
     re.IGNORECASE,
@@ -101,7 +101,8 @@ CITATION_PAREN_HINT_RE = re.compile(
 )
 CITATION_PAREN_NAME_PAGE_RE = re.compile(r"\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,}\s*,\s*\d{1,3}\b")
 INITIAL_I_CANON_SHAPE_RE = re.compile(
-    r"^l(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)",
+    r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)"
+    r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng))",
     re.IGNORECASE,
 )
 TIBETAN_NAME_PIECE_PREFIX_RE = re.compile(
@@ -214,6 +215,26 @@ EXPLICIT_TIER_A_REWRITES = {
     "pho-iha": "pho-lha",
     "dgra-iba-gottheit": "dgra-lba-gottheit",
     "dpal-idan": "dpal-ldan",
+    "zium": "zlum",
+    "lidan": "lldan",
+    "phrulgyiiha": "phrulgyilha",
+    "bye'u": "bye’u",
+    "dga'": "dga’",
+    "rde'u": "rde’u",
+    "padma'i": "padma’i",
+}
+
+# Case-sensitive surgical rewrites promoted from review queue after manual audit.
+# Keep this list small and explicit to avoid broad false positives.
+EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES = {
+    "bIsan-rgod": "bTsan-rgod",
+    "mTIshur": "mTshur",
+    "mTIshur-phu-Ausgabe": "mTshur-phu-Ausgabe",
+    "mTIshur-’bar": "mTshur-’bar",
+    "m’TIshur": "m’Tshur",
+    "m'TIshur": "m'Tshur",
+    "tajnab": "tajñab",
+    "gZIgS": "gZigS",
 }
 
 # High-confidence OCR confusable forms where "$" should be acute-s.
@@ -357,6 +378,112 @@ DOTLESS_I_GERMAN_CORE_WORDS = {
     "siehe",
 }
 
+# User-vetted high-frequency queue items where OCR dotless-ı should be plain i.
+# Keep this conservative and corpus-driven; this list only promotes repeated pairs.
+DOTLESS_I_TIER_A_ALLOWLIST = {
+    "akanıstha",
+    "akanısthas",
+    "ajıramı",
+    "ajıta",
+    "amarasımha",
+    "anırtodana",
+    "anırta",
+    "anupamaraksıita",
+    "arıs",
+    "asıta",
+    "atıih",
+    "atısas",
+    "atınth",
+    "avicı",
+    "baı",
+    "bäi’ı",
+    "basıs",
+    "bkıh",
+    "bkıth",
+    "bıbliotheque",
+    "bıda",
+    "bırda",
+    "brajajıvan",
+    "byanı",
+    "cassıa",
+    "candragomın",
+    "cır",
+    "corydalıs",
+    "dolanjı",
+    "dbyahıs",
+    "ergatıv",
+    "ferrarı",
+    "gäl’ı",
+    "gzanı",
+    "gzeı",
+    "gzurı",
+    "gemahlın",
+    "gzıs",
+    "harı",
+    "harın",
+    "hımmelsrichtungen",
+    "hırnschale",
+    "janı",
+    "jına",
+    "jınamitra",
+    "kalınga",
+    "kapılavastu",
+    "kapıstan",
+    "maskarın",
+    "manı",
+    "mongolıan",
+    "myanı",
+    "mıgto",
+    "namıs",
+    "padın",
+    "paranirmitavasavartın",
+    "parnassıa",
+    "reı",
+    "relı",
+    "rsı",
+    "rıgzın",
+    "rıtipa",
+    "ryı",
+    "sakakı",
+    "sailamuktamı",
+    "sanghavı",
+    "sanı",
+    "sarı",
+    "särı'i",
+    "särı'ı",
+    "säkya’ı",
+    "samjayın",
+    "sikkım",
+    "skyı",
+    "sır",
+    "sınnesorgans",
+    "sıkkim",
+    "sıtz",
+    "stımmung",
+    "vaınth",
+    "vairocanaraksıta",
+    "varanası",
+    "vararucı",
+    "vajrası",
+    "vinayakarıka",
+    "vinayapıtaka",
+    "vıst",
+    "wyuıe",
+    "yidanıs",
+    "yıin",
+    "yıdam",
+    "yogın",
+    "yogıns",
+    "täla’ı",
+    "trıpathı",
+    "trırarkn",
+    "trırarthı",
+    "zanı",
+    "zıgs",
+    "zımbel",
+    "ziıg",
+}
+
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
     "ihm",
@@ -413,15 +540,35 @@ CITATION_NAME_STOPWORDS = {
 }
 
 CITATION_AUTHOR_CANON_BY_KEY = {
+    "bacot": "BACOT",
+    "bailey": "BAILEY",
+    "beyer": "BEYER",
+    "chandra": "CHANDRA",
+    "conze": "CONZE",
+    "dorji": "DORJI",
+    "eimer": "EIMER",
+    "emmerick": "EMMERICK",
+    "ensink": "ENSINK",
     "everding": "EVERDING",
+    "filliozat": "FILLIOZAT",
+    "filliozayr": "FILLIOZAT",
     "gruenwedel": "GRÜNWEDEL",
     "grunwedel": "GRÜNWEDEL",
     "imaeda": "IMAEDA",
+    "lokesh": "LOKESH",
+    "macdonald": "MACDONALD",
+    "monastic": "MONASTIC",
+    "mtsho": "MTSHO",
     "nobel": "NOBEL",
+    "schneider": "SCHNEIDER",
     "schuh": "SCHUH",
     "schwieger": "SCHWIEGER",
     "snellgrove": "SNELLGROVE",
     "takeuchi": "TAKEUCHI",
+    "tenzin": "TENZIN",
+    "tsepak": "TSEPAK",
+    "tucci": "TUCCI",
+    "viehbeck": "VIEHBECK",
 }
 
 TIBETAN_NAME_PIECE_HINTS = {
@@ -862,6 +1009,33 @@ def token_is_initial_i_german_function_word(token: str) -> bool:
     return False
 
 
+def token_is_mixed_caps_confusable_noise(src: str, dst: str) -> bool:
+    if src.lower() == dst.lower():
+        return False
+    letters = [ch for ch in src if ch.isalpha()]
+    if len(letters) < 4:
+        return False
+    if src.islower() or src.isupper():
+        return False
+    if token_has_translit_cue(src) or token_has_translit_cue(dst):
+        return False
+    if token_has_hard_translit_marker(src) or token_has_hard_translit_marker(dst):
+        return False
+    if "-" in src or "'" in src or "’" in src:
+        return False
+    uppers = sum(1 for ch in src if ch.isupper())
+    lowers = sum(1 for ch in src if ch.islower())
+    return uppers >= 2 and lowers >= 2
+
+
+def token_is_allcaps_confusable_fragment(token: str) -> bool:
+    stripped = token.replace("-", "").replace("'", "").replace("’", "")
+    letters = [ch for ch in stripped if ch.isalpha()]
+    if len(letters) < 4:
+        return False
+    return all(ch.isupper() for ch in letters)
+
+
 def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
     if not token_has_initial_confusable_I(src):
         return False
@@ -1003,7 +1177,7 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
             continue
         return False
 
-    if changed_parts == 0 or changed_parts > 2:
+    if changed_parts == 0 or changed_parts > 3:
         return False
     if changed_i_parts == 0:
         return False
@@ -1013,6 +1187,15 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
         len(src_parts) == 2
         and changed_parts == 2
         and changed_strong_parts == 2
+        and changed_dollar_parts == 0
+    ):
+        return True
+    # Also allow fully-changed three-part chains when every changed segment is
+    # a strong Tibetan I->l confusable (e.g. Iha-Icam-Ihun -> lha-lcam-lhun).
+    if (
+        len(src_parts) == 3
+        and changed_parts == 3
+        and changed_strong_parts == 3
         and changed_dollar_parts == 0
     ):
         return True
@@ -1105,6 +1288,39 @@ def token_is_safe_dotless_i_to_i(src: str, dst: str) -> bool:
             continue
         return False
     return changed
+
+
+def token_is_safe_internal_confusable_I_to_i(src: str, dst: str) -> bool:
+    if "I" not in src:
+        return False
+    if src.startswith("I"):
+        return False
+    if len(src) != len(dst):
+        return False
+    changed = False
+    for idx, (s_ch, d_ch) in enumerate(zip(src, dst)):
+        if s_ch == d_ch:
+            continue
+        if idx > 0 and s_ch == "I" and d_ch == "i":
+            changed = True
+            continue
+        return False
+    return changed
+
+
+def normalize_roman_numeral_confusable_l(token: str) -> str:
+    """Normalize lowercase OCR l to I in long roman numeral tokens."""
+    if "l" not in token or len(token) < 4:
+        return token
+    if any(ch not in "ivxlcdmIVXLCDMl" for ch in token):
+        return token
+    cand = token.replace("l", "I")
+    if not ROMAN_NUMERAL_RE.fullmatch(cand):
+        return token
+    # Keep short ambiguous forms untouched; target citation-style numerals.
+    if not any(ch in cand for ch in "XVLCDM"):
+        return token
+    return cand
 
 
 def token_is_trailing_shortening(src: str, dst: str) -> bool:
@@ -1333,6 +1549,10 @@ def apply_case_pattern(src: str, dst: str) -> str:
             if s_ch == "I" and d_ch.lower() == "l":
                 out.append("l")
                 continue
+            # Internal OCR confusable: uppercase I can also be lowercase i.
+            if s_ch == "I" and d_ch == "i":
+                out.append("i")
+                continue
             if s_ch.isupper():
                 out.append(d_ch.upper())
                 continue
@@ -1378,7 +1598,14 @@ def line_has_parenthetical_citation(line_text: str) -> bool:
 
 
 def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
-    if info.zone not in {"german_prose", "german_prose_with_translit", "latin_other", "other"}:
+    if info.zone not in {
+        "german_prose",
+        "german_prose_with_translit",
+        "latin_other",
+        "other",
+        "example_tibetan_latin",
+        "tibetan_latin_mixed",
+    }:
         return False
     if CITATION_YEAR_RE.search(line_text):
         return True
@@ -1440,8 +1667,9 @@ def token_is_citation_author_lookup_candidate(token: str) -> bool:
         return True
     if token[:1].isupper() and token[1:].islower():
         return True
-    uppers = sum(1 for ch in letters if ch.isupper())
-    return uppers >= 2
+    # Mixed-case OCR noise forms should map only when they look like an
+    # attested citation-author family.
+    return token_is_mixed_case_ocr_variant(token) and token_looks_like_known_citation_author(token)
 
 
 def citation_safe_confusable_rewrite(token: str) -> str:
@@ -1549,6 +1777,19 @@ def token_has_citation_ocr_noise_shape(token: str) -> bool:
     if token[:1].isupper() and token[1:].islower():
         return False
     return True
+
+
+def token_is_mixed_case_ocr_variant(token: str) -> bool:
+    letters = [ch for ch in token if ch.isalpha()]
+    if len(letters) < 4:
+        return False
+    if token.isupper() or token.islower():
+        return False
+    if token[:1].isupper() and token[1:].islower():
+        return False
+    uppers = sum(1 for ch in letters if ch.isupper())
+    lowers = sum(1 for ch in letters if ch.islower())
+    return uppers > 0 and lowers > 0
 
 
 def match_citation_author_lexicon(token: str, author_lexicon: dict[str, str]) -> str | None:
@@ -2088,11 +2329,19 @@ def choose_rewrite(
     trusted_lexicon: dict[str, int],
     discovered: dict[str, DiscoveryPattern],
 ) -> tuple[str, str, str] | None:
+    exact_explicit_dst = EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES.get(token)
+    if exact_explicit_dst is not None and info.zone in AUTO_FIX_ZONES:
+        return exact_explicit_dst, "A", "explicit_case_sensitive_allowlist"
     low = token.lower()
     if len(low) == 1 and token.isupper():
         return None
+    roman_norm = normalize_roman_numeral_confusable_l(token)
+    if roman_norm != token and info.zone in {"german_prose", "german_prose_with_translit", "latin_other", "other"}:
+        return roman_norm, "A", "citation_roman_l_to_I"
     options: list[tuple[int, str, str, str]] = []
     canon = canonicalize_translit_token(token).lower()
+    internal_i_raw = token.replace("I", "i")
+    internal_i_canon = canonicalize_translit_token(internal_i_raw).lower() if internal_i_raw != token else low
     explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
     if explicit_dst is not None and (info.zone in AUTO_FIX_ZONES or "$" in low):
         return explicit_dst, "A", "explicit_user_allowlist"
@@ -2107,11 +2356,23 @@ def choose_rewrite(
     src_umlaut_untrusted = bool(GERMAN_UMLAUT_RE.search(token)) and not src_has_hard_marker
     line_citation_like = line_is_citation_like(info, info.line_text)
     citation_author_lookup_candidate = token_is_citation_author_lookup_candidate(token)
+    citation_safe_tok = citation_safe_confusable_rewrite(token)
     src_initial_i_confusable = token_has_initial_confusable_I(token)
     src_initial_i_german_function = token_is_initial_i_german_function_word(token)
     confusable_nya_to_nga_blocked = token_blocks_nya_to_nga(low, canon)
+    canon_backed = canon in headword_mem or canon in entry_mem or canon in trusted_lexicon
+    confusable_initial_i_unbacked_blocked = (
+        src_initial_i_confusable and canon.startswith("l") and not canon_backed
+    )
     canon_has_hard_marker = token_has_hard_translit_marker(canon)
     canon_has_cue = token_has_translit_cue(canon)
+    confusable_context_anchor_ok = (
+        canon_backed
+        or token == token.lower()
+        or src_has_hard_marker
+        or src_has_cue
+        or canon_has_cue
+    )
     initial_i_translit_candidate = token_is_initial_i_translit_candidate(token, canon)
     strong_i_context_override = (
         info.zone in ENTRY_STRONG_ZONES
@@ -2140,6 +2401,40 @@ def choose_rewrite(
     confusable_dollar_to_sacute_safe = token_is_safe_dollar_to_sacute(token, canon)
     confusable_dollar_to_sacute_blocked = ("$" in token) and (not confusable_dollar_to_sacute_safe)
     confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
+    confusable_internal_I_to_i_safe = token_is_safe_internal_confusable_I_to_i(token, internal_i_raw)
+    internal_i_backed = (
+        internal_i_canon in headword_mem
+        or internal_i_canon in entry_mem
+        or internal_i_canon in trusted_lexicon
+    )
+    confusable_mixed_caps_noise_blocked = (
+        token_is_mixed_caps_confusable_noise(token, canon) and not canon_backed
+    )
+    confusable_allcaps_noise_blocked = token_is_allcaps_confusable_fragment(token) and not canon_backed
+
+    if (
+        internal_i_raw != token
+        and confusable_internal_I_to_i_safe
+        and info.zone in AUTO_FIX_ZONES
+        and not line_citation_like
+        and not src_initial_i_confusable
+        and not src_umlaut_untrusted
+        and internal_i_backed
+        and token_is_strict_clean_translit(internal_i_canon)
+        and (
+            src_translit_like_here
+            or info.has_tibetan
+            or line_translit_dominant
+            or src_has_hard_marker
+            or src_has_cue
+        )
+    ):
+        if internal_i_canon in headword_mem:
+            options.append((322, internal_i_canon, "A", "confusable_internal_I_to_i_headword"))
+        elif internal_i_canon in entry_mem:
+            options.append((312, internal_i_canon, "A", "confusable_internal_I_to_i_entry_memory"))
+        else:
+            options.append((288, internal_i_canon, "A", "confusable_internal_I_to_i_lexicon"))
 
     if (
         src_initial_i_confusable
@@ -2214,6 +2509,7 @@ def choose_rewrite(
             or src_has_hard_marker
             or src_has_cue
             or canon_has_cue
+            or (line_citation_like and citation_author_lookup_candidate and citation_safe_tok != token)
         )
     ):
         if canon in headword_mem:
@@ -2225,9 +2521,11 @@ def choose_rewrite(
         elif (
             line_citation_like
             and citation_author_lookup_candidate
-            and token == citation_safe_confusable_rewrite(token)
+            and citation_safe_tok != token
         ):
             options.append((248, canon, "A", "confusable_dotless_i_to_i_citation_name"))
+        elif low in DOTLESS_I_TIER_A_ALLOWLIST:
+            options.append((247, canon, "A", "confusable_dotless_i_to_i_allowlist"))
         elif canon in DOTLESS_I_GERMAN_CORE_WORDS:
             options.append((245, canon, "A", "confusable_dotless_i_to_i_german_core"))
         elif token == token.lower() and canon in GERMAN_HINT_WORDS and len(canon) >= 3:
@@ -2250,6 +2548,17 @@ def choose_rewrite(
             options.append((235, canon, "A", "confusable_dotless_i_to_i_context"))
         elif not (line_citation_like and citation_author_lookup_candidate):
             options.append((165, canon, "B", "confusable_dotless_i_to_i_review"))
+
+    # Dotless-i (U+0131) is an OCR confusable in this corpus; the plain-i rewrite
+    # is a one-character normalization and safe across auto-fix zones.
+    if (
+        canon != low
+        and confusable_dotless_i_to_i_safe
+        and info.zone in AUTO_FIX_ZONES
+        and not src_umlaut_untrusted
+        and not src_initial_i_confusable
+    ):
+        options.append((233, canon, "A", "confusable_dotless_i_to_i_safe_char_map"))
 
     if (
         canon != low
@@ -2305,6 +2614,8 @@ def choose_rewrite(
         and not confusable_vowel_particle_mismatch_blocked
         and not confusable_shortening_blocked
         and not confusable_dollar_to_sacute_blocked
+        and not confusable_initial_i_unbacked_blocked
+        and not confusable_mixed_caps_noise_blocked
     ):
         if canon in headword_mem and info.zone in AUTO_FIX_ZONES:
             options.append((300, canon, "A", "confusable_to_headword"))
@@ -2314,6 +2625,8 @@ def choose_rewrite(
             info.zone in ENTRY_STRONG_ZONES
             and info.has_tibetan
             and (src_translit_like_here or src_has_hard_marker or src_has_issue)
+            and confusable_context_anchor_ok
+            and not confusable_allcaps_noise_blocked
         ):
             options.append((180, canon, "B", "confusable_context"))
         elif (
@@ -2338,14 +2651,6 @@ def choose_rewrite(
             "latin_other",
         }
         and token_is_safe_hyphenated_initial_i_to_l_translit(token, canon)
-        and (
-            line_citation_like
-            or info.zone in {"german_prose_with_translit", "latin_other"}
-            or info.has_tibetan
-            or line_translit_dominant
-            or token.count("-") >= 2
-            or token_has_distinctive_tibetan_signature(canon)
-        )
     ):
         options.append((252, canon, "A", "confusable_hyphenated_I_to_l_translit"))
 
@@ -2353,7 +2658,8 @@ def choose_rewrite(
         canon != low
         and info.zone in {"german_prose", "german_prose_with_translit", "latin_other"}
         and token_is_citation_confusable_i_to_l_candidate(token, canon)
-        and not (line_citation_like and citation_author_lookup_candidate)
+        and line_citation_like
+        and token_looks_like_known_citation_author(token)
     ):
         options.append((140, canon, "B", "citation_confusable_I_to_l"))
 
@@ -2424,6 +2730,7 @@ def choose_rewrite(
             and token == token.lower()
             and src_discovery_candidate
             and cand_discovery_candidate
+            and (not patt.ambiguous or cand in headword_mem or cand in entry_mem)
             and (src_translit_like_here or src_has_hard_marker or src_has_issue or src_has_cue)
             and not (src_german_like and not (src_has_hard_marker or src_has_issue or src_has_cue))
             and not src_umlaut_untrusted
@@ -3510,6 +3817,44 @@ def build_watchdog_rows(change_rows: list[list[str]]) -> tuple[list[list[str]], 
     return rows, flag_counts
 
 
+def filter_stale_review_rows(review_rows: list[list[str]], corrected_text: str) -> tuple[list[list[str]], int]:
+    pages = [page.splitlines() for page in corrected_text.split("\f")]
+    kept: list[list[str]] = []
+    dropped = 0
+    for row in review_rows:
+        if len(row) < 10:
+            kept.append(row)
+            continue
+        try:
+            page_idx = int(row[0]) - 1
+            line_idx = int(row[1]) - 1
+        except ValueError:
+            kept.append(row)
+            continue
+        if page_idx < 0 or line_idx < 0:
+            kept.append(row)
+            continue
+        if page_idx >= len(pages) or line_idx >= len(pages[page_idx]):
+            kept.append(row)
+            continue
+        from_token = row[4]
+        to_token = row[5]
+        if not from_token or not to_token or from_token == to_token:
+            kept.append(row)
+            continue
+        final_line = pages[page_idx][line_idx]
+        final_tokens = OCR_LATIN_TOKEN_RE.findall(final_line)
+        # Drop rows whose source token is no longer present on the final line.
+        # Later passes (citation/sanskrit normalization) may resolve these into
+        # a third canonical form, so requiring an exact from->to match keeps
+        # stale review noise around unnecessarily.
+        if from_token not in final_tokens:
+            dropped += 1
+            continue
+        kept.append(row)
+    return kept, dropped
+
+
 def run_one(
     merged: Path,
     audit: Path | None,
@@ -3554,6 +3899,7 @@ def run_one(
     )
     change_rows.extend(sanskrit_change_rows)
     review_rows.extend(sanskrit_review_rows)
+    review_rows, stale_review_rows_removed = filter_stale_review_rows(review_rows, corrected_text)
 
     entry_jsonl = outdir / f"{label}_entry_map.jsonl"
     line_tsv = outdir / f"{label}_line_zones.tsv"
@@ -3703,6 +4049,7 @@ def run_one(
         "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_OVERRIDES),
         "sanskrit_changes": len(sanskrit_change_rows),
         "sanskrit_review_suggestions": len(sanskrit_review_rows),
+        "stale_review_rows_removed": stale_review_rows_removed,
         "watchdog_flagged_changes": len(watchdog_rows),
         "watchdog_flag_counts": dict(sorted(watchdog_flag_counts.items(), key=lambda kv: (-kv[1], kv[0]))),
         "discovered_confidence_counts": dict(discovered_confidence_counts),
