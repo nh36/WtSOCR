@@ -92,6 +92,10 @@ CITATION_CUE_RE = re.compile(
     r"\b(?:ed|hrsg|vgl|zit|zitiert|skt|vol|bd|pp|pl|repr|index|indices)\b\.?",
     re.IGNORECASE,
 )
+CITATION_SIGLUM_ARTIFACT_CUE_RE = re.compile(
+    r"\((?:[^)\n]{0,32})(?<![A-Za-z])(?:L\$dz(?:-[A-Za-z$]*)?|Vi\$s?T|Vis\$T|Li(?:\$|s\$)|Y\$|Ys\$)(?=[^A-Za-z$]|$)",
+    re.IGNORECASE,
+)
 SANSKRIT_MVY_CUE_RE = re.compile(r"\(\s*Mvy\b", re.IGNORECASE)
 SANSKRIT_GENERAL_CUE_RE = re.compile(r"\b(?:skt|sanskrit|mahavyutpatti|mvy)\b\.?", re.IGNORECASE)
 CITATION_PAREN_RE = re.compile(r"\([^)\n]{0,120}\)")
@@ -537,6 +541,32 @@ CITATION_NAME_STOPWORDS = {
     "pp",
     "nr",
     "no",
+}
+
+# Canonical source-text sigla found in abbreviation/citation sections.
+# Keep this list narrow and explicit to avoid affecting normal transliteration.
+CITATION_SIGLUM_CANONICAL = {
+    "Lsdz",
+    "Lsdz-K",
+    "Lis",
+    "VisT",
+    "Ys",
+}
+
+CITATION_SIGLUM_CANONICAL_BY_KEY = {
+    re.sub(r"s+", "s", canon.casefold()): canon for canon in CITATION_SIGLUM_CANONICAL
+}
+
+# OCR-confusable sigla variants observed in citations.
+CITATION_SIGLUM_CONFUSABLE_MAP = {
+    "l$dz": "Lsdz",
+    "l$dz-k": "Lsdz-K",
+    "l$dz-r": "Lsdz-R",
+    "li$": "Lis",
+    "vi$t": "VisT",
+    "vi$st": "VisT",
+    "y$": "Ys",
+    "ys$": "Ys",
 }
 
 CITATION_AUTHOR_CANON_BY_KEY = {
@@ -1613,6 +1643,8 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
         return True
     if line_has_parenthetical_citation(line_text):
         return True
+    if CITATION_SIGLUM_ARTIFACT_CUE_RE.search(line_text):
+        return True
     return bool(CITATION_CUE_RE.search(line_text))
 
 
@@ -1672,16 +1704,61 @@ def token_is_citation_author_lookup_candidate(token: str) -> bool:
     return token_is_mixed_case_ocr_variant(token) and token_looks_like_known_citation_author(token)
 
 
+def match_citation_siglum(token: str) -> str | None:
+    siglum = CITATION_SIGLUM_CONFUSABLE_MAP.get(token.casefold())
+    if siglum is not None:
+        return siglum
+    if "$" in token:
+        # Handle insertion-noise forms like Vis$T/Lis$ by collapsing repeated
+        # s after replacing $ with s, then matching against canonical sigla.
+        collapsed_guess = re.sub(r"s+", "s", token.replace("$", "s").casefold())
+        siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_guess)
+        if siglum is not None:
+            return siglum
+        dropped_guess = re.sub(r"s+", "s", token.replace("$", "").casefold())
+        siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(dropped_guess)
+        if siglum is not None:
+            return siglum
+    # Allow wrapped/extended L$dz sigla forms such as L$dz-, L$dz-K, L$dz-R.
+    if re.fullmatch(r"(?i)l\$dz(?:-[A-Za-z$]*)?", token):
+        siglum = "Lsdz" + token[4:]
+        return siglum.replace("$", "s")
+    return None
+
+
 def citation_safe_confusable_rewrite(token: str) -> str:
     """Safe citation-only OCR fixes (no deletions, no translit remapping)."""
     out = token.replace("ı", "i")
+    # Normalize a trailing apostrophe around citation sigla without changing it.
+    trail = ""
+    if out.endswith(("'", "’")):
+        trail = out[-1]
+        out = out[:-1]
+
+    siglum = match_citation_siglum(out)
+    if siglum is not None:
+        return siglum + trail
+
     if len(out) >= 2 and out[:1] == "l" and out[1:2].isupper():
         tail_alpha = [ch for ch in out[1:] if ch.isalpha()]
         if len(tail_alpha) >= 2:
             tail_uppers = sum(1 for ch in tail_alpha if ch.isupper())
             if tail_uppers >= max(1, len(tail_alpha) - 1):
                 out = "I" + out[1:]
-    return out
+    return out + trail
+
+
+def token_is_citation_siglum_candidate(token: str) -> bool:
+    if len(token) < 2:
+        return False
+    core = token
+    if core.endswith(("'", "’")):
+        core = core[:-1]
+    if "$" not in core:
+        return False
+    if not re.fullmatch(r"[A-Za-z$]+(?:-[A-Za-z$]*)?", core):
+        return False
+    return match_citation_siglum(core) is not None
 
 
 def citation_name_family_key(token: str) -> str:
@@ -2884,7 +2961,6 @@ def apply_citation_name_normalization(
             info = info_by_key.get((page_idx, line_idx))
             is_like = bool(
                 info is not None
-                and info.entry_id != 0
                 and line
                 and line_is_citation_like(info, line)
             )
@@ -2977,7 +3053,7 @@ def apply_citation_name_normalization(
     for page_idx, lines in enumerate(pages, start=1):
         for line_idx, line in enumerate(lines, start=1):
             info = info_by_key.get((page_idx, line_idx))
-            if info is None or info.entry_id == 0 or not line:
+            if info is None or not line:
                 continue
             # Apply rewrites on the expanded citation mask as well so wrapped
             # bibliography lines within the same entry get normalized.
@@ -3024,10 +3100,15 @@ def apply_citation_name_normalization(
                     )
                     return dst_tok
 
+                safe_tok = citation_safe_confusable_rewrite(tok)
+                if token_is_citation_siglum_candidate(tok) and safe_tok != tok:
+                    return apply_guarded(safe_tok, "citation_siglum_confusable_map")
+                if info.entry_id == 0:
+                    return tok
+
                 if not token_is_citation_author_lookup_candidate(tok):
                     return tok
                 near_year = token_occurrence_near_year(line, m.start(), m.end())
-                safe_tok = citation_safe_confusable_rewrite(tok)
                 noisy_shape = token_has_citation_ocr_noise_shape(tok) or (safe_tok != tok)
                 person_candidate = token_is_citation_person_name_candidate(safe_tok)
                 lex_canon = None
