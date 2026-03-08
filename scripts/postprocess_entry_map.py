@@ -93,7 +93,7 @@ CITATION_CUE_RE = re.compile(
     re.IGNORECASE,
 )
 CITATION_SIGLUM_ARTIFACT_CUE_RE = re.compile(
-    r"\((?:[^)\n]{0,32})(?<![A-Za-z])(?:L\$dz(?:-[A-Za-z$]*)?|Vi\$s?T|Vis\$T|Li(?:\$|s\$)|Y\$|Ys\$)(?=[^A-Za-z$]|$)",
+    r"\((?:[^)\n]{0,32})(?<![A-Za-z])(?:L\$dz(?:-[A-Za-z$]*)?|L1\$|1\.\$dz|Vi\$s?T|Vis\$T|Li(?:\$|s\$)|Y\$|Ys\$)(?=[^A-Za-z$]|$)",
     re.IGNORECASE,
 )
 SANSKRIT_MVY_CUE_RE = re.compile(r"\(\s*Mvy\b", re.IGNORECASE)
@@ -104,6 +104,10 @@ CITATION_PAREN_HINT_RE = re.compile(
     re.IGNORECASE,
 )
 CITATION_PAREN_NAME_PAGE_RE = re.compile(r"\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2,}\s*,\s*\d{1,3}\b")
+CITATION_SIGLUM_DIGIT_ARTIFACT_RE = re.compile(
+    r"(\(\s*)(L1\$|1\.\$dz)(?=\s+\d{1,4}(?:[,:./]\d{1,4}|[a-z])?)",
+    re.IGNORECASE,
+)
 INITIAL_I_CANON_SHAPE_RE = re.compile(
     r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)"
     r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng))",
@@ -590,6 +594,8 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "l$dz": "Lsdz",
     "l$dz-k": "Lsdz-K",
     "l$dz-r": "Lsdz-R",
+    "l1$": "Lis",
+    "1.$dz": "Lsdz",
     "li$": "Lis",
     "vi$t": "VisT",
     "vi$st": "VisT",
@@ -1798,6 +1804,8 @@ def token_is_citation_siglum_candidate(token: str) -> bool:
 
 
 def line_has_citation_siglum_candidate(line_text: str) -> bool:
+    if CITATION_SIGLUM_DIGIT_ARTIFACT_RE.search(line_text):
+        return True
     for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
         if token_is_citation_siglum_candidate(m.group(0)):
             return True
@@ -3194,6 +3202,48 @@ def apply_citation_name_normalization(
 
                 return tok
 
+            def repl_digit_siglum(m: re.Match[str]) -> str:
+                prefix = m.group(1)
+                tok = m.group(2)
+                safe_tok = citation_safe_confusable_rewrite(tok)
+                if safe_tok == tok:
+                    return m.group(0)
+                guard_block_reason = rewrite_hard_guard_block_reason(
+                    tok, safe_tok, "citation_siglum_confusable_map", stage="citation"
+                )
+                if guard_block_reason is not None:
+                    review_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            safe_tok,
+                            "B",
+                            f"hard_guard_{guard_block_reason}__citation_siglum_confusable_map",
+                            "0",
+                            line[:240],
+                        ]
+                    )
+                    return m.group(0)
+                change_rows.append(
+                    [
+                        str(info.page),
+                        str(info.line),
+                        str(info.entry_id),
+                        info.zone,
+                        tok,
+                        safe_tok,
+                        "A",
+                        "citation_siglum_confusable_map",
+                        "1",
+                        line[:240],
+                    ]
+                )
+                return prefix + safe_tok
+
+            line = CITATION_SIGLUM_DIGIT_ARTIFACT_RE.sub(repl_digit_siglum, line)
             lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, line)
 
     family_report_rows.sort(key=lambda r: (-int(r[5]), -int(r[2]), r[0]))

@@ -119,7 +119,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "ཀོང་ koṅ\n"
             "(P$ 7c) (Bu-$z 51,3) (Vi$ 67b) (Vis$ 6b) ($ambh 5b6) ($PS 38) "
-            "(RoIN$ 35,1) (In$ 29) (G$ 93a) (G$-H 481) (G$S-H 74a)\n"
+            "(RoIN$ 35,1) (In$ 29) (G$ 93a) (G$-H 481) (G$S-H 74a) (L1$ 30,2) (1.$dz 69,2)\n"
             "(ViST 228,30) (VisST 142,4) (VIST 158,23) (VIiST 210,6) (YS 80d) (GS-H 60d)\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
@@ -141,6 +141,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("(VisT 210,6)", corrected)
         self.assertIn("(Ys 80d)", corrected)
         self.assertIn("(Gs-H 60d)", corrected)
+        self.assertIn("(Lis 30,2)", corrected)
+        self.assertIn("(Lsdz 69,2)", corrected)
 
         self.assertNotIn("(P$ 7c)", corrected)
         self.assertNotIn("(Bu-$z 51,3)", corrected)
@@ -159,6 +161,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("(VIiST 210,6)", corrected)
         self.assertNotIn("(YS 80d)", corrected)
         self.assertNotIn("(GS-H 60d)", corrected)
+        self.assertNotIn("(L1$ 30,2)", corrected)
+        self.assertNotIn("(1.$dz 69,2)", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
@@ -178,6 +182,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("VIiST", "VisT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("L1$", "Lis", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("1.$dz", "Lsdz", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_standalone_and_split_lines(self) -> None:
         merged_text = (
