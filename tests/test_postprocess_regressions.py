@@ -66,13 +66,14 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_citation_sigla_confusables_normalized(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
-            "(NOBEL 1950:12) L$dz L$dz-K Vi$T Vi$ST Vis$T Li$ Lis$ Y$'\n"
-            "vgl. (NOBEL 1951:13) L$dz Vi$T Vis$T Y$\n"
+            "(NOBEL 1950:12) L$dz L$dz-K Vi$T Vi$ST Vis$T Li$ Lis$ Y$' Lis Lsdz Lsdz-K Lsdz-R\n"
+            "vgl. (NOBEL 1951:13) L$dz Vi$T Vis$T Y$ Lis Lsdz\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("Lśdz", corrected)
         self.assertIn("Lśdz-K", corrected)
+        self.assertIn("Lśdz-R", corrected)
         self.assertIn("VisT", corrected)
         self.assertIn("Liś", corrected)
         self.assertIn("Ys'", corrected)
@@ -84,6 +85,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("Li$", corrected)
         self.assertNotIn("Lis$", corrected)
         self.assertNotIn("Y$", corrected)
+        self.assertNotIn(" Lis ", corrected)
+        self.assertNotIn(" Lsdz", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("L$dz", "Lśdz", "citation_siglum_confusable_map"), reasons)
@@ -94,6 +97,10 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Lis$", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Lis", "Liś", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Lsdz", "Lśdz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Lsdz-K", "Lśdz-K", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Lsdz-R", "Lśdz-R", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_y_dollar_cue_without_year_or_siglum_word_boundary(self) -> None:
         merged_text = (

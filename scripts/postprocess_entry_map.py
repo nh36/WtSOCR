@@ -556,6 +556,7 @@ CITATION_SIGLUM_CANONICAL = {
     "Ins",
     "Lśdz",
     "Lśdz-K",
+    "Lśdz-R",
     "Liś",
     "Ps",
     "RoINS",
@@ -598,6 +599,12 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "1.$dz": "Lśdz",
     "li$": "Liś",
     "lis$": "Liś",
+    # Unaccented OCR outputs still seen in citation contexts; keep scope
+    # narrow by mapping only exact siglum tokens.
+    "lis": "Liś",
+    "lsdz": "Lśdz",
+    "lsdz-k": "Lśdz-K",
+    "lsdz-r": "Lśdz-R",
     "vi$t": "VisT",
     "vi$st": "VisT",
     "y$": "Ys",
@@ -1674,6 +1681,7 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
         "german_prose_with_translit",
         "latin_other",
         "other",
+        "headword_line",
         "example_tibetan_latin",
         "tibetan_latin_mixed",
     }:
