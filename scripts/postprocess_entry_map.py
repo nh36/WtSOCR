@@ -554,9 +554,9 @@ CITATION_SIGLUM_CANONICAL = {
     "Gs",
     "Gs-H",
     "Ins",
-    "Lsdz",
-    "Lsdz-K",
-    "Lis",
+    "Lśdz",
+    "Lśdz-K",
+    "Liś",
     "Ps",
     "RoINS",
     "SPS",
@@ -568,7 +568,7 @@ CITATION_SIGLUM_CANONICAL = {
 }
 
 CITATION_SIGLUM_CANONICAL_BY_KEY = {
-    re.sub(r"s+", "s", canon.casefold()): canon for canon in CITATION_SIGLUM_CANONICAL
+    re.sub(r"[sś]+", "s", canon.casefold()): canon for canon in CITATION_SIGLUM_CANONICAL
 }
 
 # OCR-confusable sigla variants observed in citations.
@@ -591,12 +591,13 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "g$": "Gs",
     "g$-h": "Gs-H",
     "g$s-h": "Gs-H",
-    "l$dz": "Lsdz",
-    "l$dz-k": "Lsdz-K",
-    "l$dz-r": "Lsdz-R",
-    "l1$": "Lis",
-    "1.$dz": "Lsdz",
-    "li$": "Lis",
+    "l$dz": "Lśdz",
+    "l$dz-k": "Lśdz-K",
+    "l$dz-r": "Lśdz-R",
+    "l1$": "Liś",
+    "1.$dz": "Lśdz",
+    "li$": "Liś",
+    "lis$": "Liś",
     "vi$t": "VisT",
     "vi$st": "VisT",
     "y$": "Ys",
@@ -1752,19 +1753,16 @@ def match_citation_siglum(token: str) -> str | None:
         return siglum
     if "$" in token:
         # Handle insertion-noise forms like Vis$T/Lis$ by collapsing repeated
-        # s after replacing $ with s, then matching against canonical sigla.
-        collapsed_guess = re.sub(r"s+", "s", token.replace("$", "s").casefold())
-        siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_guess)
-        if siglum is not None:
-            return siglum
-        dropped_guess = re.sub(r"s+", "s", token.replace("$", "").casefold())
-        siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(dropped_guess)
-        if siglum is not None:
-            return siglum
+        # s/ś after replacing $ with confusable values, then matching canon.
+        for candidate in (token.replace("$", "s"), token.replace("$", "ś"), token.replace("$", "")):
+            collapsed_guess = re.sub(r"[sś]+", "s", candidate.casefold())
+            siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_guess)
+            if siglum is not None:
+                return siglum
     # Allow wrapped/extended L$dz sigla forms such as L$dz-, L$dz-K, L$dz-R.
     if re.fullmatch(r"(?i)l\$dz(?:-[A-Za-z$]*)?", token):
-        siglum = "Lsdz" + token[4:]
-        return siglum.replace("$", "s")
+        siglum = "Lśdz" + token[4:]
+        return siglum.replace("$", "ś")
     return None
 
 

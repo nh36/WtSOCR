@@ -71,10 +71,10 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("Lsdz", corrected)
-        self.assertIn("Lsdz-K", corrected)
+        self.assertIn("Lśdz", corrected)
+        self.assertIn("Lśdz-K", corrected)
         self.assertIn("VisT", corrected)
-        self.assertIn("Lis", corrected)
+        self.assertIn("Liś", corrected)
         self.assertIn("Ys'", corrected)
         self.assertIn("Ys", corrected)
         self.assertNotIn("L$dz", corrected)
@@ -86,13 +86,13 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("Y$", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("L$dz", "Lsdz", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("L$dz-K", "Lsdz-K", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("L$dz", "Lśdz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("L$dz-K", "Lśdz-K", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vi$T", "VisT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vi$ST", "VisT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vis$T", "VisT", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("Li$", "Lis", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("Lis$", "Lis", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Lis$", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_y_dollar_cue_without_year_or_siglum_word_boundary(self) -> None:
@@ -107,13 +107,13 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertIn("(Ys 96c).", corrected)
         self.assertIn("(Ys", corrected)
-        self.assertIn("(Lis 17,10; KlonD 739,6;", corrected)
+        self.assertIn("(Liś 17,10; KlonD 739,6;", corrected)
         self.assertNotIn("Y$", corrected)
         self.assertNotIn("Li$", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("Li$", "Lis", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_extended_safe_normalization(self) -> None:
         merged_text = (
@@ -141,8 +141,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("(VisT 210,6)", corrected)
         self.assertIn("(Ys 80d)", corrected)
         self.assertIn("(Gs-H 60d)", corrected)
-        self.assertIn("(Lis 30,2)", corrected)
-        self.assertIn("(Lsdz 69,2)", corrected)
+        self.assertIn("(Liś 30,2)", corrected)
+        self.assertIn("(Lśdz 69,2)", corrected)
 
         self.assertNotIn("(P$ 7c)", corrected)
         self.assertNotIn("(Bu-$z 51,3)", corrected)
@@ -182,8 +182,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("VIiST", "VisT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("L1$", "Lis", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("1.$dz", "Lsdz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("L1$", "Liś", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("1.$dz", "Lśdz", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_standalone_and_split_lines(self) -> None:
         merged_text = (
