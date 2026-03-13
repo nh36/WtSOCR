@@ -644,6 +644,8 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     "$ps": "SPS",
     "roin$": "RoINS",
     "roins$": "RoINS",
+    "roins": "RoINS",
+    "roinss": "RoINS",
     "in$": "Ins",
     "g$": "Gs",
     "g$-h": "Gs-H",
@@ -708,6 +710,7 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     "in1o": "In10",
     "inlo": "In10",
     "ro1": "Rol",
+    "doll": "Dol1",
     "do14": "Dol4",
     "liy1": "Liyl",
     "liy1-2": "Liyl-2",
@@ -724,6 +727,15 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     "ttj740": "ITJ740",
     "1tj730": "ITJ730",
     "1n7": "In7",
+    # Keep Bhulg/BhuLg ambiguity unresolved; only fix duplicated-l OCR noise.
+    "bhullg": "BhuLg",
+}
+
+# Narrow standalone replacements for sigla-list rows split into single tokens.
+# Keep this explicit to avoid changing non-siglum standalone words.
+CITATION_SIGLUM_STANDALONE_ALLOWLIST = {
+    "doll",
+    "roins",
 }
 
 _SIGLA_REGISTRY_CANONICAL, _SIGLA_REGISTRY_CONFUSABLE_MAP = load_sigla_registry(SIGLA_REGISTRY_PATH)
@@ -1934,6 +1946,8 @@ def line_has_siglum_context_cue(line_text: str) -> bool:
                 or CITATION_CUE_RE.search(line_text)
             ):
                 return True
+    if line_has_allowlisted_siglum_context(line_text):
+        return True
     return False
 
 
@@ -1957,6 +1971,54 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
     if line_has_siglum_context_cue(line_text):
         return True
     return bool(CITATION_CUE_RE.search(line_text))
+
+
+def line_is_standalone_allowlisted_siglum(line_text: str) -> bool:
+    stripped = line_text.strip()
+    if not stripped:
+        return False
+    m = OCR_LATIN_TOKEN_RE.fullmatch(stripped)
+    if m is None:
+        return False
+    token = m.group(0)
+    core, _ = split_citation_siglum_token(token)
+    if core.casefold() not in CITATION_SIGLUM_STANDALONE_ALLOWLIST:
+        return False
+    return token_is_citation_siglum_candidate(token)
+
+
+def line_has_allowlisted_siglum_context(line_text: str) -> bool:
+    if not line_text:
+        return False
+    allowlisted_hits: list[tuple[int, int]] = []
+    for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
+        token = m.group(0)
+        core, _ = split_citation_siglum_token(token)
+        if core.casefold() not in CITATION_SIGLUM_STANDALONE_ALLOWLIST:
+            continue
+        allowlisted_hits.append((m.start(), m.end()))
+        lead = line_text[max(0, m.start() - 3) : m.start()]
+        tail = line_text[m.end() :]
+        if "(" in lead or "[" in lead:
+            if not tail or re.fullmatch(r"[\s\],.;:!?)]*", tail):
+                return True
+            # Wrapped citation where the siglum lands at a page break.
+            if re.match(r"^\s*\f", tail):
+                return True
+    if not allowlisted_hits:
+        return False
+    if not re.search(r"\busw\.", line_text, re.IGNORECASE):
+        return False
+    if "(" not in line_text or ")" not in line_text:
+        return False
+    if not re.search(r"\b[A-Za-z$]{1,8}\d{1,4}\b", line_text):
+        return False
+    for start, end in allowlisted_hits:
+        left = line_text[max(0, start - 2) : start]
+        right = line_text[end : end + 2]
+        if "," in left or "," in right:
+            return True
+    return False
 
 
 def token_is_citation_caps_name_candidate(token: str) -> bool:
@@ -2168,6 +2230,7 @@ def token_has_siglum_context(
     line_siglum_candidate_count: int,
 ) -> bool:
     token_core, _ = split_citation_siglum_token(token)
+    token_core_folded = token_core.casefold()
     artifact_shape = (
         "$" in token_core
         or any(ch.isdigit() for ch in token_core)
@@ -2179,6 +2242,14 @@ def token_has_siglum_context(
         lead = line_text[max(0, start - 3) : start]
         if "(" in lead or "[" in lead:
             return True
+    if token_core_folded in CITATION_SIGLUM_STANDALONE_ALLOWLIST:
+        lead = line_text[max(0, start - 3) : start]
+        if "(" in lead or "[" in lead:
+            tail = line_text[end:]
+            if not tail or re.fullmatch(r"[\s\],.;:!?)]*", tail):
+                return True
+            if re.match(r"^\s*\f", tail):
+                return True
     if line_siglum_candidate_count >= 2 and (line_is_base_citation or line_siglum_context_cue):
         return True
     if line_is_base_citation and token_occurrence_near_year(line_text, start, end):
@@ -2189,11 +2260,17 @@ def token_has_siglum_context(
         lead = line_text.lstrip().split(" ", 1)[0]
         if token == lead and token_is_citation_siglum_candidate(lead):
             return True
+    stripped = line_text.strip()
+    if stripped == token:
+        if token_core_folded in CITATION_SIGLUM_STANDALONE_ALLOWLIST:
+            return True
     if not line_is_base_citation:
-        stripped = line_text.strip()
         if stripped == token:
-            core, _ = split_citation_siglum_token(token)
-            if "$" in core or any(ch.isdigit() for ch in core) or token_has_initial_confusable_I(core):
+            if (
+                "$" in token_core
+                or any(ch.isdigit() for ch in token_core)
+                or token_has_initial_confusable_I(token_core)
+            ):
                 return True
     return False
 
@@ -3555,7 +3632,10 @@ def apply_citation_name_normalization(
             is_like = bool(
                 info is not None
                 and line
-                and line_is_citation_like(info, line)
+                and (
+                    line_is_citation_like(info, line)
+                    or line_is_standalone_allowlisted_siglum(line)
+                )
             )
             base_mask.append(is_like)
         expanded_mask = base_mask[:]

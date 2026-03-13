@@ -261,6 +261,122 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn(("X$", "Xs", "citation_siglum_confusable_map"), reasons)
 
+    def test_citation_sigla_doll_roins_and_bhullg_guardrails(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Doll\n"
+            "RoINs\n"
+            "vgl. (Doll 12,4) und (RoINs 7,1) und (RoINSs 21,9) und (BhuLlg 33,2).\n"
+            "Eine Puppe heißt Doll im Englischen.\n"
+            "Bhulg und BhuLg bleiben.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("\nDol1\n", corrected)
+        self.assertIn("\nRoINS\n", corrected)
+        self.assertIn("(Dol1 12,4)", corrected)
+        self.assertIn("(RoINS 7,1)", corrected)
+        self.assertIn("(RoINS 21,9)", corrected)
+        self.assertIn("(BhuLg 33,2)", corrected)
+        self.assertIn("Eine Puppe heißt Doll im Englischen.", corrected)
+        self.assertIn("Bhulg und BhuLg bleiben.", corrected)
+        self.assertNotIn("(Doll 12,4)", corrected)
+        self.assertNotIn("(RoINs 7,1)", corrected)
+        self.assertNotIn("(RoINSs 21,9)", corrected)
+        self.assertNotIn("(BhuLlg 33,2)", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Doll", "Dol1", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("RoINs", "RoINS", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("RoINSs", "RoINS", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("BhuLlg", "BhuLg", "citation_siglum_confusable_map"), reasons)
+
+    def test_sigla_standalone_allowlist_applies_on_base_citation_lines(self) -> None:
+        self.assertTrue(
+            pem.token_has_siglum_context(
+                "Doll",
+                "Doll",
+                0,
+                4,
+                line_is_base_citation=True,
+                line_siglum_context_cue=False,
+                line_siglum_candidate_count=1,
+            )
+        )
+        self.assertTrue(
+            pem.token_has_siglum_context(
+                "RoINs",
+                "RoINs",
+                0,
+                5,
+                line_is_base_citation=True,
+                line_siglum_context_cue=False,
+                line_siglum_candidate_count=1,
+            )
+        )
+        self.assertFalse(
+            pem.token_has_siglum_context(
+                "Haus",
+                "Haus",
+                0,
+                4,
+                line_is_base_citation=True,
+                line_siglum_context_cue=False,
+                line_siglum_candidate_count=1,
+            )
+        )
+
+    def test_citation_sigla_allowlist_applies_in_frontmatter_entry_zero(self) -> None:
+        merged_text = (
+            "Doll\n"
+            "RoINs\n"
+            "SCHMIDT 1841 (Tibetisch-Deutsches Wörterbuch).\n"
+        )
+        _, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("\nDol1\n", f"\n{corrected}")
+        self.assertIn("\nRoINS\n", f"\n{corrected}")
+        self.assertNotIn("\nDoll\n", f"\n{corrected}")
+        self.assertNotIn("\nRoINs\n", f"\n{corrected}")
+
+    def test_citation_sigla_allowlist_open_paren_wrap_context(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "vgl. (RoINs 7,1).\n"
+            "weitere Stelle (Doll\n"
+            "24,21) im Kontext.\n"
+        )
+        _, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("(RoINS 7,1).", corrected)
+        self.assertIn("(Dol1\n24,21)", corrected)
+        self.assertNotIn("(RoINs 7,1).", corrected)
+        self.assertNotIn("(Doll\n24,21)", corrected)
+
+    def test_citation_sigla_allowlist_formfeed_wrap_context(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "weitere Stelle (Doll\f"
+            "24,21) im Kontext.\n"
+        )
+        _, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("(Dol1\f24,21)", corrected)
+        self.assertNotIn("(Doll\f24,21)", corrected)
+
+    def test_citation_sigla_allowlist_intro_list_context(self) -> None:
+        merged_text = (
+            "Die verwendeten Abkürzungen sind historisch gewachsen.\n"
+            "Texte in Sammelbänden wurden ebenfalls durchnumeriert "
+            "(Bb33, Bb45, Doll, Dol3 usw.).\n"
+            "Eine Puppe heißt Doll im Englischen.\n"
+        )
+        _, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("(Bb33, Bb45, Dol1, Dol3 usw.)", corrected)
+        self.assertIn("Eine Puppe heißt Doll im Englischen.", corrected)
+        self.assertNotIn("(Bb33, Bb45, Doll, Dol3 usw.)", corrected)
+
 
 if __name__ == "__main__":
     unittest.main()
