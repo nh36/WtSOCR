@@ -126,7 +126,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "ཀོང་ koṅ\n"
             "(P$ 7c) (Bu-$z 51,3) (Vi$ 67b) (Vis$ 6b) ($ambh 5b6) ($PS 38) "
-            "(RoIN$ 35,1) (In$ 29) (G$ 93a) (G$-H 481) (G$S-H 74a) (L1$ 30,2) (1.$dz 69,2)\n"
+            "(RoIN$ 35,1) (In$ 29) (G$ 93a) (G$-H 481) (G$S-H 74a) (L1$ 30,2) (1.$dz 69,2) "
+            "(ISK 5a) (1ISK 6b)\n"
             "(ViST 228,30) (VisST 142,4) (VIST 158,23) (VIiST 210,6) (YS 80d) (GS-H 60d)\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
@@ -135,7 +136,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("(Bu-Sz 51,3)", corrected)
         self.assertIn("(Vis 67b)", corrected)
         self.assertIn("(Vis 6b)", corrected)
-        self.assertIn("(Sambh 5b6)", corrected)
+        self.assertIn("(Śambh 5b6)", corrected)
         self.assertIn("(SPS 38)", corrected)
         self.assertIn("(RoINS 35,1)", corrected)
         self.assertIn("(Ins 29)", corrected)
@@ -149,7 +150,9 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("(Ys 80d)", corrected)
         self.assertIn("(Gs-H 60d)", corrected)
         self.assertIn("(Liś 30,2)", corrected)
-        self.assertIn("(Lśdz 69,2)", corrected)
+        self.assertIn("(1.śdz 69,2)", corrected)
+        self.assertIn("(1SK 5a)", corrected)
+        self.assertIn("(1SK 6b)", corrected)
 
         self.assertNotIn("(P$ 7c)", corrected)
         self.assertNotIn("(Bu-$z 51,3)", corrected)
@@ -170,13 +173,15 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("(GS-H 60d)", corrected)
         self.assertNotIn("(L1$ 30,2)", corrected)
         self.assertNotIn("(1.$dz 69,2)", corrected)
+        self.assertNotIn("(ISK 5a)", corrected)
+        self.assertNotIn("(1ISK 6b)", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Bu-$z", "Bu-Sz", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vi$", "Vis", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vis$", "Vis", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("$ambh", "Sambh", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("$ambh", "Śambh", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("$PS", "SPS", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("RoIN$", "RoINS", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("In$", "Ins", "citation_siglum_confusable_map"), reasons)
@@ -190,7 +195,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("L1$", "Liś", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("1.$dz", "Lśdz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("ISK", "1SK", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("1ISK", "1SK", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_standalone_and_split_lines(self) -> None:
         merged_text = (
@@ -204,7 +210,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("Sambh", corrected)
+        self.assertIn("Śambh", corrected)
         self.assertIn("RoINS", corrected)
         self.assertIn("(Ps Kolophon)", corrected)
         self.assertIn("(Bu-Sz", corrected)
@@ -216,7 +222,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("(X$ 68d)", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("$Sambh", "Sambh", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("$Sambh", "Śambh", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("RoIN$", "RoINS", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
         self.assertTrue(

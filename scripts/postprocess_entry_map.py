@@ -565,6 +565,7 @@ CITATION_NAME_STOPWORDS = {
 # Canonical source-text sigla found in abbreviation/citation sections.
 # Keep this list narrow and explicit to avoid affecting normal transliteration.
 CITATION_SIGLUM_CANONICAL = {
+    "1SK",
     "Bu-Sz",
     "Gs",
     "Gs-H",
@@ -624,6 +625,11 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "vi$st": "VisT",
     "y$": "Ys",
     "ys$": "Ys",
+    # Sa-skya pa chen po Kun dga' snying po (Bd. 1) siglum:
+    # OCR often confuses leading digit "1" with capital "I".
+    "1sk": "1SK",
+    "isk": "1SK",
+    "1isk": "1SK",
     # Safe case-noise sigla variants seen in citation contexts.
     "vist": "VisT",
     "visst": "VisT",
@@ -640,14 +646,23 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "g71": "gZi",
     "g7i-sn": "gZi-Sn",
     "g7i": "gZi",
+    "g7zi-sn": "gZi-Sn",
+    "gzi1-sn": "gZi-Sn",
+    "gz21": "gZi",
     "inl1": "In11",
     "inll": "In11",
+    "ini1": "In11",
+    "inl2": "In12",
+    "inl3": "In13",
     "in1o": "In10",
     "inlo": "In10",
     "ro1": "Rol",
     "do14": "Dol4",
     "liy1": "Liyl",
     "liy1-2": "Liyl-2",
+    "l3dz-k": "Lśdz-K",
+    "ltdz-k": "Lśdz-K",
+    "1.5dz": "Lśdz",
     "l5dz-k": "Lśdz-K",
     "bu-5z": "Bu-Sz",
     "bu-52": "Bu-Sz",
@@ -655,6 +670,9 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "bu-s7": "Bu-Sz",
     "p5": "Ps",
     "y5": "Ys",
+    "ttj740": "ITJ740",
+    "1tj730": "ITJ730",
+    "1n7": "In7",
 }
 
 # Keep narrowly-scoped, exact-case siglum fixes separate so lexical Tibetan
