@@ -44,7 +44,8 @@ TRANSLIT_CUE_RE = re.compile(
     re.IGNORECASE,
 )
 TRANSLIT_DIACRITIC_RE = re.compile(
-    r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]"
+    r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]",
+    re.IGNORECASE,
 )
 STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh)", re.IGNORECASE)
 BOUNDARY_TRANSLIT_CLUSTER_RE = re.compile(
@@ -107,6 +108,17 @@ CITATION_PAREN_NAME_PAGE_RE = re.compile(r"\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß]{2
 CITATION_SIGLUM_DIGIT_ARTIFACT_RE = re.compile(
     r"(\(\s*)(L1\$|1\.\$dz)(?=\s+\d{1,4}(?:[,:./]\d{1,4}|[a-z])?)",
     re.IGNORECASE,
+)
+CITATION_SIGLUM_ALNUM_TOKEN_RE = re.compile(
+    rf"[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]+"
+    rf"(?:-[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]+)*(?:[’'])?"
+)
+# German citation shorthand OCR artifact: i.S.v. / i.S. frequently appears as
+# i.$.v., 1.$. v., i1.$.v., 1, $.v., etc.
+CITATION_DOTTED_DOLLAR_ABBREV_RE = re.compile(
+    r"(?<![A-Za-z0-9])"
+    r"(?:[iI1ı](?:1)?\s*[.,]\s*\$\s*\.(?:\s*(?P<trail>[vVxX])\s*\.)?)"
+    r"(?![A-Za-z0-9])"
 )
 INITIAL_I_CANON_SHAPE_RE = re.compile(
     r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)"
@@ -287,6 +299,9 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
     "siddhärtha": "siddhārtha",
     "vai$ravana": "vaiśravana",
     "vai$ravanas": "vaiśravanas",
+    "ati$a": "atiśa",
+    "mahes$vara": "maheśvara",
+    "mahe$vara": "maheśvara",
 }
 
 
@@ -561,7 +576,7 @@ CITATION_SIGLUM_CANONICAL = {
     "Ps",
     "RoINS",
     "SPS",
-    "Sambh",
+    "Śambh",
     "Vis",
     "VisT",
     "Xs",
@@ -583,8 +598,8 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "bu-$sz": "Bu-Sz",
     "vi$": "Vis",
     "vis$": "Vis",
-    "$ambh": "Sambh",
-    "$sambh": "Sambh",
+    "$ambh": "Śambh",
+    "$sambh": "Śambh",
     "$ps": "SPS",
     "roin$": "RoINS",
     "roins$": "RoINS",
@@ -615,6 +630,38 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "viist": "VisT",
     "ys": "Ys",
     "gs-h": "Gs-H",
+    # Additional high-confidence sigla OCR confusions (digit/letter mixups).
+    "gz1-sn": "gZi-Sn",
+    "gz1": "gZi",
+    "gz1-$n": "gZi-Sn",
+    "g21-sn": "gZi-Sn",
+    "g71-sn": "gZi-Sn",
+    "g21": "gZi",
+    "g71": "gZi",
+    "g7i-sn": "gZi-Sn",
+    "g7i": "gZi",
+    "inl1": "In11",
+    "inll": "In11",
+    "in1o": "In10",
+    "inlo": "In10",
+    "ro1": "Rol",
+    "do14": "Dol4",
+    "liy1": "Liyl",
+    "liy1-2": "Liyl-2",
+    "l5dz-k": "Lśdz-K",
+    "bu-5z": "Bu-Sz",
+    "bu-52": "Bu-Sz",
+    "bu-57": "Bu-Sz",
+    "bu-s7": "Bu-Sz",
+    "p5": "Ps",
+    "y5": "Ys",
+}
+
+# Keep narrowly-scoped, exact-case siglum fixes separate so lexical Tibetan
+# forms like "gir" are never remapped.
+CITATION_SIGLUM_CASE_SENSITIVE_MAP = {
+    "GIr": "Glr",
+    "Sambh": "Śambh",
 }
 
 CITATION_AUTHOR_CANON_BY_KEY = {
@@ -680,9 +727,11 @@ TIBETAN_NAME_PIECE_HINTS = {
     "rin",
     "sang",
     "sangs",
+    "shes",
     "shis",
     "skal",
     "sprul",
+    "ye",
 }
 TIBETAN_LOC_TO_WYLIE_MAP = str.maketrans(
     {
@@ -859,6 +908,47 @@ def canonicalize_translit_token(token: str) -> str:
     # OCR confusable special-case: "Ilh..." is often intended "lh...", not "llh...".
     canon = re.sub(r"(?:(?<=^)|(?<=-))llh", "lh", canon)
     return canon
+
+
+def dollar_to_sacute_preserve_case(token: str) -> str:
+    if "$" not in token:
+        return token
+    letters = [ch for ch in token if ch.isalpha()]
+
+    def should_emit_upper_sacute(idx: int) -> bool:
+        if not letters:
+            return False
+        if all(ch.isupper() for ch in letters):
+            return True
+        # Preserve titlecase only when the acute-s belongs to the first
+        # letter slot; internal mixed-caps OCR noise should collapse to lowercase.
+        if letters[0].isupper() and all(ch.islower() for ch in letters[1:]):
+            first_alpha_idx = next((i for i, ch in enumerate(token) if ch.isalpha()), 0)
+            return idx <= first_alpha_idx
+        return False
+
+    out: list[str] = []
+    n = len(token)
+    idx = 0
+    while idx < n:
+        ch = token[idx]
+        if ch in {"s", "S"} and idx + 1 < n and token[idx + 1] == "$":
+            emit_upper = ch == "S" and should_emit_upper_sacute(idx)
+            out.append("Ś" if emit_upper else "ś")
+            idx += 2
+            continue
+        if ch == "$" and idx + 1 < n and token[idx + 1] in {"s", "S"}:
+            emit_upper = token[idx + 1] == "S" and should_emit_upper_sacute(idx)
+            out.append("Ś" if emit_upper else "ś")
+            idx += 2
+            continue
+        if ch != "$":
+            out.append(ch)
+            idx += 1
+            continue
+        out.append("Ś" if should_emit_upper_sacute(idx) else "ś")
+        idx += 1
+    return "".join(out)
 
 
 def distance_key(token: str) -> str:
@@ -1203,10 +1293,10 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
     def is_strong_tibetan_piece(piece: str) -> bool:
         low = canonicalize_translit_token(piece).lower()
         low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-        if len(low_wylie) < 3:
-            return False
         if low_wylie in TIBETAN_NAME_PIECE_HINTS:
             return True
+        if len(low_wylie) < 3:
+            return False
         if token_has_hard_translit_marker(low) or token_has_hard_translit_marker(low_wylie):
             return True
         if DISTINCTIVE_TIB_CLUSTER_RE.search(low) or DISTINCTIVE_TIB_CLUSTER_RE.search(low_wylie):
@@ -1322,32 +1412,30 @@ def token_is_safe_coda_nya_to_nga(src: str, dst: str) -> bool:
 def token_is_safe_dollar_to_sacute(src: str, dst: str) -> bool:
     if "$" not in src:
         return False
-    if len(src) != len(dst):
-        return False
     if not any(ch.isalpha() for ch in src):
         return False
-    changed = False
-    for s_ch, d_ch in zip(src, dst):
-        if s_ch == d_ch:
-            continue
-        if s_ch == "$" and d_ch in {"ś", "Ś"}:
-            changed = True
-            continue
+    expected = dollar_to_sacute_preserve_case(src)
+    if dst != expected:
         return False
-    if not changed:
+    if expected == src:
         return False
 
-    # Re-scan with indices for neighborhood checks around replaced positions.
+    # Re-scan source neighborhoods around replaced positions.
     replaced_at = [idx for idx, s_ch in enumerate(src) if s_ch == "$"]
+    src_low = src.lower()
     dst_low = dst.lower()
     if DOLLAR_SACUTE_ARTIFACT_RE.search(dst_low):
         return False
     for idx in replaced_at:
-        prev_ch = dst_low[idx - 1] if idx > 0 else ""
-        next_ch = dst_low[idx + 1] if idx + 1 < len(dst_low) else ""
-        if prev_ch in {"s", "ś", "ṣ"}:
+        prev_ch = src_low[idx - 1] if idx > 0 else ""
+        next_ch = src_low[idx + 1] if idx + 1 < len(src_low) else ""
+        if prev_ch in {"ś", "ṣ"}:
             return False
-        if next_ch in {"z", "ź", "ž", "ś", "ṣ"}:
+        if next_ch in {"ś", "ṣ"}:
+            return False
+        if prev_ch in {"z", "ź", "ž"}:
+            return False
+        if next_ch in {"z", "ź", "ž"}:
             return False
     return True
 
@@ -1501,9 +1589,82 @@ def token_is_strict_clean_translit(token: str) -> bool:
     return True
 
 
+def token_is_titlecase_or_lower_compound_shape(token: str) -> bool:
+    def part_is_tibetan_mixed_caps_shape(part: str) -> bool:
+        letters = [ch for ch in part if ch.isalpha()]
+        if len(letters) < 3:
+            return False
+        if not letters[0].islower():
+            return False
+        upper_idxs = [idx for idx, ch in enumerate(letters) if ch.isupper()]
+        if not upper_idxs or len(upper_idxs) > 2:
+            return False
+        if any(idx == 0 or idx > 3 for idx in upper_idxs):
+            return False
+        if max(upper_idxs) >= len(letters) - 1:
+            return False
+        for idx, ch in enumerate(letters):
+            if idx in upper_idxs:
+                continue
+            if not ch.islower():
+                return False
+        return True
+
+    for part in token.split("-"):
+        if not part:
+            continue
+        letters = [ch for ch in part if ch.isalpha()]
+        if not letters:
+            continue
+        if all(ch.islower() for ch in letters):
+            continue
+        if letters[0].isupper() and all(ch.islower() for ch in letters[1:]):
+            continue
+        if part_is_tibetan_mixed_caps_shape(part):
+            continue
+        return False
+    return True
+
+
+def token_is_relaxed_dollar_translit_shape(token: str) -> bool:
+    if not LATIN_TOKEN_RE.fullmatch(token):
+        return False
+    canon = canonicalize_translit_token(token)
+    if token != canon:
+        changed = False
+        for ch in token:
+            mapped = CONFUSABLE_TO_CANON.get(ch, ch)
+            if mapped == ch:
+                continue
+            changed = True
+            if ch not in {"I", "ı", "ñ", "Ñ", "ş", "Ş", "ņ", "Ņ", "ã", "Ã"}:
+                return False
+        if not changed:
+            return False
+    if "$" in token:
+        return False
+    if token.lower() in GERMAN_HINT_WORDS:
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(token):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if not token_is_titlecase_or_lower_compound_shape(token):
+        return False
+    if GERMAN_UMLAUT_RE.search(token):
+        low = token.lower()
+        if low.endswith(GERMAN_WORD_SUFFIXES) and not (
+            token_has_hard_translit_marker(token) or token_has_translit_cue(token)
+        ):
+            return False
+    return True
+
+
 def validate_translit_token(token: str) -> list[tuple[str, str]]:
     issues: list[tuple[str, str]] = []
     canon = canonicalize_translit_token(token)
+    if "$" in token:
+        canon = canonicalize_translit_token(dollar_to_sacute_preserve_case(token))
     confusable_dollar_blocked = ("$" in token) and (not token_is_safe_dollar_to_sacute(token, canon))
     confusable_blocked = (
         token_blocks_nya_to_nga(token, canon)
@@ -1756,13 +1917,22 @@ def token_is_citation_author_lookup_candidate(token: str) -> bool:
 
 
 def match_citation_siglum(token: str) -> str | None:
+    siglum = CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(token)
+    if siglum is not None:
+        return siglum
     siglum = CITATION_SIGLUM_CONFUSABLE_MAP.get(token.casefold())
     if siglum is not None:
         return siglum
     if "$" in token:
-        # Handle insertion-noise forms like Vis$T/Lis$ by collapsing repeated
-        # s/ś after replacing $ with confusable values, then matching canon.
-        for candidate in (token.replace("$", "s"), token.replace("$", "ś"), token.replace("$", "")):
+        # In sigla, `$` is more often OCR for acute-S (ś/Ś) than plain `s`.
+        # Prefer that interpretation first, then fall back to plain `s` and
+        # deletion for insertion-noise forms.
+        for candidate in (
+            token.replace("$", "Ś"),
+            token.replace("$", "ś"),
+            token.replace("$", "s"),
+            token.replace("$", ""),
+        ):
             collapsed_guess = re.sub(r"[sś]+", "s", candidate.casefold())
             siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_guess)
             if siglum is not None:
@@ -1774,14 +1944,24 @@ def match_citation_siglum(token: str) -> str | None:
     return None
 
 
+def split_citation_siglum_token(token: str) -> tuple[str, str]:
+    core = token
+    suffix = ""
+    while core and core[-1] in ".,;:!?":
+        suffix = core[-1] + suffix
+        core = core[:-1]
+    if core.endswith(("'", "’")):
+        suffix = core[-1] + suffix
+        core = core[:-1]
+    return core, suffix
+
+
 def citation_safe_confusable_rewrite(token: str) -> str:
     """Safe citation-only OCR fixes (no deletions, no translit remapping)."""
     out = token.replace("ı", "i")
-    # Normalize a trailing apostrophe around citation sigla without changing it.
-    trail = ""
-    if out.endswith(("'", "’")):
-        trail = out[-1]
-        out = out[:-1]
+    out, trail = split_citation_siglum_token(out)
+    if not out:
+        return token
 
     siglum = match_citation_siglum(out)
     if siglum is not None:
@@ -1799,9 +1979,13 @@ def citation_safe_confusable_rewrite(token: str) -> str:
 def token_is_citation_siglum_candidate(token: str) -> bool:
     if len(token) < 2:
         return False
-    core = token
-    if core.endswith(("'", "’")):
-        core = core[:-1]
+    core, _ = split_citation_siglum_token(token)
+    if len(core) < 2:
+        return False
+    if CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(core) is not None:
+        return True
+    if CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is not None:
+        return match_citation_siglum(core) is not None
     if not re.fullmatch(r"[A-Za-z$]+(?:-[A-Za-z$]*)?", core):
         return False
     if "$" not in core and CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is None:
@@ -1812,6 +1996,9 @@ def token_is_citation_siglum_candidate(token: str) -> bool:
 def line_has_citation_siglum_candidate(line_text: str) -> bool:
     if CITATION_SIGLUM_DIGIT_ARTIFACT_RE.search(line_text):
         return True
+    for m in CITATION_SIGLUM_ALNUM_TOKEN_RE.finditer(line_text):
+        if token_is_citation_siglum_candidate(m.group(0)):
+            return True
     for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
         if token_is_citation_siglum_candidate(m.group(0)):
             return True
@@ -1856,15 +2043,26 @@ def token_looks_like_known_citation_author(token: str) -> bool:
 def token_is_likely_tibetan_name_piece(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
     low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-    if len(low_wylie) < 3:
-        return False
     if low_wylie in TIBETAN_NAME_PIECE_HINTS:
         return True
+    if len(low_wylie) < 3:
+        return False
     if token_has_distinctive_tibetan_signature(low) or token_has_distinctive_tibetan_signature(low_wylie):
         return True
     if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
         return True
     return False
+
+
+def token_has_tibetan_name_piece_anchor(token: str) -> bool:
+    parts = [part for part in token.split("-") if part]
+    if len(parts) < 2:
+        return False
+    strong = 0
+    for part in parts:
+        if token_is_likely_tibetan_name_piece(part):
+            strong += 1
+    return strong >= 2
 
 
 def token_is_citation_person_name_candidate(token: str) -> bool:
@@ -2107,7 +2305,17 @@ def parse_entries(
             for tok in latin_tokens:
                 if token_is_translit_like(tok, line_has_tibetan=has_tibetan, is_entry_start=is_entry_start):
                     translit_tokens.append(tok)
-                elif token_is_german_like(tok):
+                    continue
+                if "$" in tok:
+                    canon_tok = dollar_to_sacute_preserve_case(tok)
+                    if (
+                        token_is_safe_dollar_to_sacute(tok, canon_tok)
+                        and token_is_relaxed_dollar_translit_shape(canon_tok)
+                        and not token_is_citation_siglum_candidate(tok)
+                    ):
+                        translit_tokens.append(tok)
+                        continue
+                if token_is_german_like(tok):
                     german_tokens.append(tok)
             translit_token_total += len(translit_tokens)
             zone = classify_zone(line, is_entry_start, len(translit_tokens), len(german_tokens))
@@ -2532,8 +2740,34 @@ def choose_rewrite(
     confusable_vowel_particle_drop_blocked = token_drops_vowel_particle_suffix(low, canon)
     confusable_vowel_particle_mismatch_blocked = token_mismatches_vowel_particle_suffix(low, canon)
     confusable_shortening_blocked = token_is_trailing_shortening(low, canon)
-    confusable_dollar_to_sacute_safe = token_is_safe_dollar_to_sacute(token, canon)
+    dollar_case_canon = dollar_to_sacute_preserve_case(token)
+    dollar_canon = canonicalize_translit_token(dollar_case_canon).lower()
+    confusable_dollar_to_sacute_safe = token_is_safe_dollar_to_sacute(token, dollar_case_canon)
     confusable_dollar_to_sacute_blocked = ("$" in token) and (not confusable_dollar_to_sacute_safe)
+    dollar_relaxed_shape_ok = token_is_relaxed_dollar_translit_shape(dollar_case_canon)
+    dollar_siglum_candidate = token_is_citation_siglum_candidate(token)
+    dollar_backed = (
+        dollar_canon in headword_mem or dollar_canon in entry_mem or dollar_canon in trusted_lexicon
+    )
+    dollar_name_anchor = token_has_tibetan_name_piece_anchor(dollar_case_canon)
+    dollar_context_translit = (
+        src_translit_like_here
+        or info.has_tibetan
+        or line_translit_dominant
+        or src_has_hard_marker
+        or src_has_cue
+        or token_has_translit_cue(dollar_case_canon)
+        or dollar_backed
+        or dollar_name_anchor
+    )
+    dollar_zone_fallback = (
+        info.zone == "german_prose"
+        and info.entry_id != 0
+        and not line_citation_like
+        and not dollar_siglum_candidate
+        and (dollar_backed or dollar_name_anchor)
+    )
+    dollar_auto_zone_ok = info.zone in AUTO_FIX_ZONES or dollar_zone_fallback
     confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
     confusable_internal_I_to_i_safe = token_is_safe_internal_confusable_I_to_i(token, internal_i_raw)
     internal_i_backed = (
@@ -2697,34 +2931,50 @@ def choose_rewrite(
     if (
         canon != low
         and confusable_dollar_to_sacute_safe
-        and canon in trusted_lexicon
-        and info.zone in {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed", "german_prose_with_translit", "latin_other"}
-        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
-        and not src_umlaut_untrusted
-        and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+        and dollar_auto_zone_ok
+        and not dollar_siglum_candidate
+        and dollar_relaxed_shape_ok
+        and dollar_context_translit
+        and not (
+            src_german_like
+            and not (src_has_hard_marker or src_has_cue or token_has_translit_cue(dollar_case_canon))
+        )
     ):
-        options.append((240, canon, "A", "confusable_dollar_to_sacute_lexicon"))
+        if dollar_canon in headword_mem:
+            options.append((258, dollar_case_canon, "A", "confusable_dollar_to_sacute_headword"))
+        elif dollar_canon in entry_mem:
+            options.append((248, dollar_case_canon, "A", "confusable_dollar_to_sacute_entry_memory"))
+        elif dollar_canon in trusted_lexicon:
+            options.append((242, dollar_case_canon, "A", "confusable_dollar_to_sacute_lexicon"))
+        elif dollar_name_anchor:
+            options.append((239, dollar_case_canon, "A", "confusable_dollar_to_sacute_name_anchor"))
+        elif token_is_titlecase_or_lower_compound_shape(dollar_case_canon):
+            options.append((237, dollar_case_canon, "A", "confusable_dollar_to_sacute_shape_safe"))
+        elif token == token.lower():
+            options.append((236, dollar_case_canon, "A", "confusable_dollar_to_sacute_context_safe"))
 
     if (
         canon != low
         and confusable_dollar_to_sacute_safe
         and low in DOLLAR_SACUTE_TIER_A_ALLOWLIST
-        and token_is_strict_clean_translit(canon)
-        and not src_umlaut_untrusted
+        and dollar_relaxed_shape_ok
     ):
-        options.append((238, canon, "A", "confusable_dollar_to_sacute_allowlist"))
+        options.append((238, dollar_case_canon, "A", "confusable_dollar_to_sacute_allowlist"))
 
     if (
         canon != low
         and confusable_dollar_to_sacute_safe
-        and info.zone in ENTRY_STRONG_ZONES
+        and not dollar_siglum_candidate
+        and dollar_auto_zone_ok
+        and dollar_relaxed_shape_ok
         and token == token.lower()
-        and token_is_strict_clean_translit(canon)
-        and (src_translit_like_here or info.has_tibetan or line_translit_dominant)
-        and not src_umlaut_untrusted
-        and not (src_german_like and not (src_has_hard_marker or src_has_cue or canon_has_cue))
+        and dollar_context_translit
+        and not (
+            src_german_like
+            and not (src_has_hard_marker or src_has_cue or token_has_translit_cue(dollar_case_canon))
+        )
     ):
-        options.append((237, canon, "A", "confusable_dollar_to_sacute_context_safe"))
+        options.append((237, dollar_case_canon, "A", "confusable_dollar_to_sacute_lowercase_safe"))
 
     if (
         canon != low
@@ -2912,6 +3162,45 @@ def choose_rewrite(
     return dst, tier, reason
 
 
+def choose_orphan_dollar_sacute_rewrite(
+    token: str,
+    *,
+    line_has_tibetan: bool,
+    line_has_citation_siglum: bool,
+) -> tuple[str, str] | None:
+    if "$" not in token:
+        return None
+    if token_is_citation_siglum_candidate(token):
+        return None
+    dst = dollar_to_sacute_preserve_case(token)
+    if dst == token:
+        return None
+    if not token_is_safe_dollar_to_sacute(token, dst):
+        return None
+    if not token_is_relaxed_dollar_translit_shape(dst):
+        return None
+    # Keep citation-like all-caps sigla untouched when the line already
+    # contains explicit siglum cues.
+    if line_has_citation_siglum and token_upper_ratio(token) >= 0.45:
+        return None
+    # Require transliteration evidence to avoid touching plain German text.
+    has_translit_evidence = (
+        line_has_tibetan
+        or token_has_hard_translit_marker(dst)
+        or token_has_translit_cue(dst)
+        or token_has_distinctive_tibetan_signature(dst)
+    )
+    if not has_translit_evidence:
+        return None
+    if token_is_german_like(token) and not (
+        line_has_tibetan
+        or token_has_hard_translit_marker(dst)
+        or token_has_translit_cue(dst)
+    ):
+        return None
+    return dst, "orphan_safe_dollar_to_sacute"
+
+
 def apply_entry_aware_corrections(
     page_lines: list[list[str]],
     line_infos: list[LineInfo],
@@ -2928,9 +3217,63 @@ def apply_entry_aware_corrections(
     for page_idx, lines in enumerate(page_lines, start=1):
         corrected_lines: list[str] = []
         for line_idx, line in enumerate(lines, start=1):
-            info = info_by_key.get((page_idx, line_idx))
-            if info is None or info.entry_id == 0 or not line:
+            if not line:
                 corrected_lines.append(line)
+                continue
+            info = info_by_key.get((page_idx, line_idx))
+            if info is None or info.entry_id == 0:
+                line_has_tibetan = bool(TIB_RE.search(line))
+                line_has_siglum = line_has_citation_siglum_candidate(line)
+
+                def repl_orphan(m: re.Match[str]) -> str:
+                    tok = m.group(0)
+                    choice = choose_orphan_dollar_sacute_rewrite(
+                        tok,
+                        line_has_tibetan=line_has_tibetan,
+                        line_has_citation_siglum=line_has_siglum,
+                    )
+                    if choice is None:
+                        return tok
+                    dst, reason = choice
+                    guard_block_reason = rewrite_hard_guard_block_reason(
+                        tok, dst, reason, stage="entry"
+                    )
+                    zone = info.zone if info is not None else "other"
+                    entry_id = info.entry_id if info is not None else 0
+                    line_excerpt = info.line_text[:240] if info is not None else line[:240]
+                    if guard_block_reason is not None:
+                        review_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                str(entry_id),
+                                zone,
+                                tok,
+                                dst,
+                                "B",
+                                f"hard_guard_{guard_block_reason}__{reason}",
+                                "0",
+                                line_excerpt,
+                            ]
+                        )
+                        return tok
+                    change_rows.append(
+                        [
+                            str(page_idx),
+                            str(line_idx),
+                            str(entry_id),
+                            zone,
+                            tok,
+                            dst,
+                            "A",
+                            reason,
+                            "1",
+                            line_excerpt,
+                        ]
+                    )
+                    return dst
+
+                corrected_lines.append(OCR_LATIN_TOKEN_RE.sub(repl_orphan, line))
                 continue
 
             head = headword_memory.get(info.entry_id, set())
@@ -3112,6 +3455,48 @@ def apply_citation_name_normalization(
             info = info_by_key.get((page_idx, line_idx))
             if info is None or not line:
                 continue
+
+            def repl_dotted_abbrev(m: re.Match[str]) -> str:
+                tok = m.group(0)
+                dst = "i.S.v." if m.group("trail") else "i.S."
+                guard_block_reason = rewrite_hard_guard_block_reason(
+                    tok, dst, "citation_isv_dollar_abbrev_map", stage="citation"
+                )
+                if guard_block_reason is not None:
+                    review_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            dst,
+                            "B",
+                            f"hard_guard_{guard_block_reason}__citation_isv_dollar_abbrev_map",
+                            "0",
+                            line[:240],
+                        ]
+                    )
+                    return tok
+                change_rows.append(
+                    [
+                        str(info.page),
+                        str(info.line),
+                        str(info.entry_id),
+                        info.zone,
+                        tok,
+                        dst,
+                        "A",
+                        "citation_isv_dollar_abbrev_map",
+                        "1",
+                        line[:240],
+                    ]
+                )
+                return dst
+
+            line = CITATION_DOTTED_DOLLAR_ABBREV_RE.sub(repl_dotted_abbrev, line)
+            lines[line_idx - 1] = line
+
             # Apply rewrites on the expanded citation mask as well so wrapped
             # bibliography lines within the same entry get normalized.
             if not citation_like_masks[page_idx][line_idx - 1]:
@@ -3249,7 +3634,48 @@ def apply_citation_name_normalization(
                 )
                 return prefix + safe_tok
 
+            def repl_alnum_siglum(m: re.Match[str]) -> str:
+                tok = m.group(0)
+                safe_tok = citation_safe_confusable_rewrite(tok)
+                if not token_is_citation_siglum_candidate(tok) or safe_tok == tok:
+                    return tok
+                guard_block_reason = rewrite_hard_guard_block_reason(
+                    tok, safe_tok, "citation_siglum_confusable_map", stage="citation"
+                )
+                if guard_block_reason is not None:
+                    review_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            safe_tok,
+                            "B",
+                            f"hard_guard_{guard_block_reason}__citation_siglum_confusable_map",
+                            "0",
+                            line[:240],
+                        ]
+                    )
+                    return tok
+                change_rows.append(
+                    [
+                        str(info.page),
+                        str(info.line),
+                        str(info.entry_id),
+                        info.zone,
+                        tok,
+                        safe_tok,
+                        "A",
+                        "citation_siglum_confusable_map",
+                        "1",
+                        line[:240],
+                    ]
+                )
+                return safe_tok
+
             line = CITATION_SIGLUM_DIGIT_ARTIFACT_RE.sub(repl_digit_siglum, line)
+            line = CITATION_SIGLUM_ALNUM_TOKEN_RE.sub(repl_alnum_siglum, line)
             lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, line)
 
     family_report_rows.sort(key=lambda r: (-int(r[5]), -int(r[2]), r[0]))
