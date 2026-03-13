@@ -1,0 +1,31 @@
+canon	work_title	intro_line_ref	allowed_variants	status
+1SK	Sa skya pa chen po Kun dga' sñiṅ po	abbr_lit_3	1sk|isk|1isk	active
+Bu-Sz	bStan pa rdzon chos kyi blo gros	abbr_lit_3	bu-$|bu-$z|bu-$2|bu-$sz|bu-5z|bu-52|bu-57|bu-s7	active
+Gs	rGyud sde kun btus	abbr_lit_1	g$|g$s	active
+Gs-H	rGyud sde kun btus (Derge/H) variant	abbr_lit_1	g$-h|g$s-h|gs-h	active
+Ins	Inscription sources	abbr_lit_2	in$	active
+Lśdz	Li shi gur khang / Lśdz family	abbr_lit_3	l$dz|1.$dz|lsdz|lśdz	active
+Lśdz-K	Lśdz-K variant	abbr_lit_3	l$dz-k|lsdz-k|l3dz-k|ltdz-k|l5dz-k|lśdz-k	active
+Lśdz-R	Lśdz-R variant	abbr_lit_3	l$dz-r|lsdz-r|lśdz-r	active
+Liś	Li shi source siglum	abbr_lit_3	l1$|li$|lis$|lis|lís	active
+Ps	Peking source	abbr_lit_2	p$|p5	active
+RoINS	RoINS source	abbr_lit_2	roin$|roins$	active
+SPS	SPS source	abbr_lit_2	$ps	active
+Śambh	Śambh source	abbr_lit_2	$ambh|$sambh|sambh	active
+Vis	Vis source	abbr_lit_2	vi$|vis$	active
+VisT	VisT source	abbr_lit_2	vi$t|vi$st|vist|visst|viist	active
+Xs	Xs source	abbr_lit_2	x$	active
+Ys	Ys source	abbr_lit_2	y$|ys$|ys|y5	active
+gZi	gZi siglum	abbr_lit_4	gz1|g21|g71|g7i|gz21	active
+gZi-Sn	gZi-Sn siglum	abbr_lit_4	gz1-sn|gz1-$n|g21-sn|g71-sn|g7i-sn|g7zi-sn|gzi1-sn	active
+In10	In10 siglum	abbr_lit_4	in1o|inlo	active
+In11	In11 siglum	abbr_lit_4	inl1|inll|ini1	active
+In12	In12 siglum	abbr_lit_4	inl2	active
+In13	In13 siglum	abbr_lit_4	inl3	active
+Rol	Rol siglum	abbr_lit_4	ro1	active
+Dol4	Dol4 siglum	abbr_lit_4	do14	active
+Liyl	Liyl siglum	abbr_lit_4	liy1	active
+Liyl-2	Liyl-2 siglum	abbr_lit_4	liy1-2	active
+ITJ740	ITJ740 siglum	abbr_lit_4	ttj740	active
+ITJ730	ITJ730 siglum	abbr_lit_4	1tj730	active
+In7	In7 siglum	abbr_lit_4	1n7	active

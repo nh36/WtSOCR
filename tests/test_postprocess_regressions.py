@@ -63,6 +63,12 @@ class PostprocessRegressionTests(unittest.TestCase):
             "particle_suffix_drop",
         )
 
+    def test_sigla_registry_load_smoke(self) -> None:
+        self.assertTrue(pem.SIGLA_REGISTRY_PATH.exists())
+        canonical, confusable = pem.load_sigla_registry(pem.SIGLA_REGISTRY_PATH)
+        self.assertIn("Liś", canonical)
+        self.assertEqual(confusable.get("lís"), "Liś")
+
     def test_citation_sigla_confusables_normalized(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
@@ -121,6 +127,26 @@ class PostprocessRegressionTests(unittest.TestCase):
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
+
+    def test_citation_sigla_context_gate_keeps_lexical_lis(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "NOBEL 1950 lorem ipsum dolor sit amet consectetur adipisicing elit Lis.\n"
+            "vgl. (Lis 30,2) und sonstiges.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("elit Lis.", corrected)
+        self.assertIn("(Liś 30,2)", corrected)
+
+        lis_siglum_changes = [
+            row
+            for row in changes
+            if row["from_token"] == "Lis"
+            and row["to_token"] == "Liś"
+            and row["reason"] == "citation_siglum_confusable_map"
+        ]
+        self.assertEqual(len(lis_siglum_changes), 1)
 
     def test_citation_sigla_extended_safe_normalization(self) -> None:
         merged_text = (

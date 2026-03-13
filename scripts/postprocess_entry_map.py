@@ -113,6 +113,22 @@ CITATION_SIGLUM_ALNUM_TOKEN_RE = re.compile(
     rf"[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]+"
     rf"(?:-[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]+)*(?:[’'])?"
 )
+# Parenthetical siglum coordinate (e.g. "(1SK 5a)", "(Lśdz 293,17)").
+CITATION_SIGLUM_COORD_PAREN_RE = re.compile(
+    r"\((?:[^)\n]{0,24})(?<![A-Za-z0-9])"
+    r"(?:[A-Za-z$][A-Za-z$0-9.-]{1,15})"
+    r"(?=\s+\d{1,4}(?:[a-z]|[,:./]\d{1,4}[a-z]?)?)",
+    re.IGNORECASE,
+)
+# Sigla index/list form in abbreviation sections (left-column siglum + body).
+CITATION_SIGLUM_LEADING_LAYOUT_RE = re.compile(
+    r"^\s*[A-Za-z$0-9.]+(?:-[A-Za-z$0-9.]+){0,2}\s{2,}[^\n]{6,}$"
+)
+# Safe siglum-specific normalization: only convert dotted g.Yu when it is
+# clearly a parenthetical citation coordinate, e.g. "(g.Yu 293,17)".
+CITATION_G_DOT_YU_COORD_RE = re.compile(
+    r"(\(\s*)g\.Yu(?=\s+\d{1,4}[,:./]\d{1,4}(?:[^)\n]{0,24})\))"
+)
 # German citation shorthand OCR artifact: i.S.v. / i.S. frequently appears as
 # i.$.v., 1.$. v., i1.$.v., 1, $.v., etc.
 CITATION_DOTTED_DOLLAR_ABBREV_RE = re.compile(
@@ -562,9 +578,37 @@ CITATION_NAME_STOPWORDS = {
     "no",
 }
 
+SIGLA_REGISTRY_PATH = Path(__file__).resolve().parents[1] / "data" / "sigla_registry.tsv"
+
+
+def load_sigla_registry(path: Path) -> tuple[set[str], dict[str, str]]:
+    canonical: set[str] = set()
+    confusable_map: dict[str, str] = {}
+    if not path.exists():
+        return canonical, confusable_map
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            canon = (row.get("canon") or "").strip()
+            status = (row.get("status") or "active").strip().casefold()
+            if not canon:
+                continue
+            if status in {"hold", "blocked", "disabled", "0", "false"}:
+                continue
+            canonical.add(canon)
+            raw_variants = row.get("allowed_variants") or ""
+            if not raw_variants.strip():
+                continue
+            for variant in re.split(r"[|,;]", raw_variants):
+                variant = variant.strip()
+                if not variant:
+                    continue
+                confusable_map[variant.casefold()] = canon
+    return canonical, confusable_map
+
 # Canonical source-text sigla found in abbreviation/citation sections.
 # Keep this list narrow and explicit to avoid affecting normal transliteration.
-CITATION_SIGLUM_CANONICAL = {
+CITATION_SIGLUM_CANONICAL_FALLBACK = {
     "1SK",
     "Bu-Sz",
     "Gs",
@@ -584,12 +628,8 @@ CITATION_SIGLUM_CANONICAL = {
     "Ys",
 }
 
-CITATION_SIGLUM_CANONICAL_BY_KEY = {
-    re.sub(r"[sś]+", "s", canon.casefold()): canon for canon in CITATION_SIGLUM_CANONICAL
-}
-
 # OCR-confusable sigla variants observed in citations.
-CITATION_SIGLUM_CONFUSABLE_MAP = {
+CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     # Explicit observed $ confusions.
     "p$": "Ps",
     "x$": "Xs",
@@ -636,6 +676,17 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "viist": "VisT",
     "ys": "Ys",
     "gs-h": "Gs-H",
+    # Additional high-confidence sigla OCR confusions (directionality
+    # validated against abbreviation-intro anchors).
+    "migto": "MigTo",
+    "kunk": "KunK",
+    "śrkk": "Srkk",
+    "bhukkh": "BhuKkh",
+    "mdz0dg": "mDzodG",
+    "md20dg": "mDzodG",
+    "milgb": "MilGb",
+    "bhul.g": "Bhulg",
+    "śiknth": "SikNth",
     # Additional high-confidence sigla OCR confusions (digit/letter mixups).
     "gz1-sn": "gZi-Sn",
     "gz1": "gZi",
@@ -673,6 +724,16 @@ CITATION_SIGLUM_CONFUSABLE_MAP = {
     "ttj740": "ITJ740",
     "1tj730": "ITJ730",
     "1n7": "In7",
+}
+
+_SIGLA_REGISTRY_CANONICAL, _SIGLA_REGISTRY_CONFUSABLE_MAP = load_sigla_registry(SIGLA_REGISTRY_PATH)
+CITATION_SIGLUM_CANONICAL = set(CITATION_SIGLUM_CANONICAL_FALLBACK)
+CITATION_SIGLUM_CANONICAL.update(_SIGLA_REGISTRY_CANONICAL)
+CITATION_SIGLUM_CONFUSABLE_MAP = dict(CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK)
+CITATION_SIGLUM_CONFUSABLE_MAP.update(_SIGLA_REGISTRY_CONFUSABLE_MAP)
+
+CITATION_SIGLUM_CANONICAL_BY_KEY = {
+    re.sub(r"[sś]+", "s", canon.casefold()): canon for canon in CITATION_SIGLUM_CANONICAL
 }
 
 # Keep narrowly-scoped, exact-case siglum fixes separate so lexical Tibetan
@@ -1854,6 +1915,28 @@ def line_has_parenthetical_citation(line_text: str) -> bool:
     return False
 
 
+def line_has_siglum_context_cue(line_text: str) -> bool:
+    if CITATION_SIGLUM_ARTIFACT_CUE_RE.search(line_text):
+        return True
+    if CITATION_SIGLUM_COORD_PAREN_RE.search(line_text):
+        return True
+    if CITATION_SIGLUM_DIGIT_ARTIFACT_RE.search(line_text):
+        return True
+    if CITATION_G_DOT_YU_COORD_RE.search(line_text):
+        return True
+    if CITATION_SIGLUM_LEADING_LAYOUT_RE.match(line_text):
+        lead = line_text.lstrip().split(" ", 1)[0]
+        if token_is_citation_siglum_candidate(lead):
+            if (
+                CITATION_YEAR_RE.search(line_text)
+                or CITATION_SPLIT_YEAR_RE.search(line_text)
+                or line_has_parenthetical_citation(line_text)
+                or CITATION_CUE_RE.search(line_text)
+            ):
+                return True
+    return False
+
+
 def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
     if info.zone not in {
         "german_prose",
@@ -1871,9 +1954,7 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
         return True
     if line_has_parenthetical_citation(line_text):
         return True
-    if CITATION_SIGLUM_ARTIFACT_CUE_RE.search(line_text):
-        return True
-    if line_has_citation_siglum_candidate(line_text):
+    if line_has_siglum_context_cue(line_text):
         return True
     return bool(CITATION_CUE_RE.search(line_text))
 
@@ -2000,13 +2081,24 @@ def token_is_citation_siglum_candidate(token: str) -> bool:
     core, _ = split_citation_siglum_token(token)
     if len(core) < 2:
         return False
+    collapsed_core = re.sub(r"[sś]+", "s", core.casefold())
+    if CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_core) is not None:
+        return True
     if CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(core) is not None:
         return True
     if CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is not None:
         return match_citation_siglum(core) is not None
-    if not re.fullmatch(r"[A-Za-z$]+(?:-[A-Za-z$]*)?", core):
+    if not re.fullmatch(
+        rf"[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]+"
+        rf"(?:-[{LATIN_CHARS}{OCR_CONFUSABLE_TOKEN_CHARS}0-9.]*)?",
+        core,
+    ):
         return False
-    if "$" not in core and CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is None:
+    if (
+        "$" not in core
+        and CITATION_SIGLUM_CONFUSABLE_MAP.get(core.casefold()) is None
+        and CITATION_SIGLUM_CANONICAL_BY_KEY.get(collapsed_core) is None
+    ):
         return False
     return match_citation_siglum(core) is not None
 
@@ -2020,6 +2112,89 @@ def line_has_citation_siglum_candidate(line_text: str) -> bool:
     for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
         if token_is_citation_siglum_candidate(m.group(0)):
             return True
+    return False
+
+
+def line_citation_siglum_candidate_count(line_text: str) -> int:
+    count = 0
+    for m in OCR_LATIN_TOKEN_RE.finditer(line_text):
+        if token_is_citation_siglum_candidate(m.group(0)):
+            count += 1
+            if count >= 3:
+                return count
+    return count
+
+
+def token_has_bracketed_siglum_context(line_text: str, token_core: str, start: int, end: int) -> bool:
+    for opener, closer in (("(", ")"), ("[", "]")):
+        open_idx = line_text.rfind(opener, 0, start + 1)
+        if open_idx == -1:
+            continue
+        close_idx = line_text.find(closer, end)
+        if close_idx == -1:
+            continue
+        if close_idx - open_idx > 72:
+            continue
+        if not (open_idx < start and end <= close_idx):
+            continue
+        segment = line_text[open_idx : close_idx + 1]
+        if opener == "[":
+            return True
+        if (
+            "$" in token_core
+            or any(ch.isdigit() for ch in token_core)
+            or token_has_initial_confusable_I(token_core)
+        ):
+            # Parenthetical short tokens with OCR-artifact cues are typically
+            # bibliography sigla, even when they lack numeric coords.
+            return True
+        if CITATION_YEAR_RE.search(segment) or CITATION_SPLIT_YEAR_RE.search(segment):
+            return True
+        if re.search(r"\d{1,4}(?:[a-z]|[,:./]\d{1,4}[a-z]?)", segment, re.IGNORECASE):
+            return True
+        if CITATION_CUE_RE.search(segment):
+            return True
+    return False
+
+
+def token_has_siglum_context(
+    line_text: str,
+    token: str,
+    start: int,
+    end: int,
+    *,
+    line_is_base_citation: bool,
+    line_siglum_context_cue: bool,
+    line_siglum_candidate_count: int,
+) -> bool:
+    token_core, _ = split_citation_siglum_token(token)
+    artifact_shape = (
+        "$" in token_core
+        or any(ch.isdigit() for ch in token_core)
+        or token_has_initial_confusable_I(token_core)
+    )
+    if token_has_bracketed_siglum_context(line_text, token_core, start, end):
+        return True
+    if artifact_shape:
+        lead = line_text[max(0, start - 3) : start]
+        if "(" in lead or "[" in lead:
+            return True
+    if line_siglum_candidate_count >= 2 and (line_is_base_citation or line_siglum_context_cue):
+        return True
+    if line_is_base_citation and token_occurrence_near_year(line_text, start, end):
+        return True
+    if line_is_base_citation and line_siglum_context_cue:
+        return True
+    if CITATION_SIGLUM_LEADING_LAYOUT_RE.match(line_text):
+        lead = line_text.lstrip().split(" ", 1)[0]
+        if token == lead and token_is_citation_siglum_candidate(lead):
+            return True
+    if not line_is_base_citation:
+        stripped = line_text.strip()
+        if stripped == token:
+            core, _ = split_citation_siglum_token(token)
+            if "$" in core or any(ch.isdigit() for ch in core) or token_has_initial_confusable_I(core):
+                return True
     return False
 
 
@@ -3520,9 +3695,13 @@ def apply_citation_name_normalization(
             if not citation_like_masks[page_idx][line_idx - 1]:
                 continue
             line_is_base_citation = citation_like_base_masks[page_idx][line_idx - 1]
+            line_siglum_context_cue = line_has_siglum_context_cue(line)
+            line_siglum_candidate_count = line_citation_siglum_candidate_count(line)
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
+                tok_start = m.start()
+                tok_end = m.end()
 
                 def apply_guarded(dst_tok: str, reason: str) -> str:
                     guard_block_reason = rewrite_hard_guard_block_reason(
@@ -3562,7 +3741,17 @@ def apply_citation_name_normalization(
 
                 safe_tok = citation_safe_confusable_rewrite(tok)
                 if token_is_citation_siglum_candidate(tok) and safe_tok != tok:
-                    return apply_guarded(safe_tok, "citation_siglum_confusable_map")
+                    if token_has_siglum_context(
+                        line,
+                        tok,
+                        tok_start,
+                        tok_end,
+                        line_is_base_citation=line_is_base_citation,
+                        line_siglum_context_cue=line_siglum_context_cue,
+                        line_siglum_candidate_count=line_siglum_candidate_count,
+                    ):
+                        return apply_guarded(safe_tok, "citation_siglum_confusable_map")
+                    return tok
                 if info.entry_id == 0:
                     return tok
 
@@ -3617,6 +3806,16 @@ def apply_citation_name_normalization(
                 safe_tok = citation_safe_confusable_rewrite(tok)
                 if safe_tok == tok:
                     return m.group(0)
+                if not token_has_siglum_context(
+                    line,
+                    tok,
+                    m.start(2),
+                    m.end(2),
+                    line_is_base_citation=line_is_base_citation,
+                    line_siglum_context_cue=line_siglum_context_cue,
+                    line_siglum_candidate_count=line_siglum_candidate_count,
+                ):
+                    return m.group(0)
                 guard_block_reason = rewrite_hard_guard_block_reason(
                     tok, safe_tok, "citation_siglum_confusable_map", stage="citation"
                 )
@@ -3657,6 +3856,16 @@ def apply_citation_name_normalization(
                 safe_tok = citation_safe_confusable_rewrite(tok)
                 if not token_is_citation_siglum_candidate(tok) or safe_tok == tok:
                     return tok
+                if not token_has_siglum_context(
+                    line,
+                    tok,
+                    m.start(),
+                    m.end(),
+                    line_is_base_citation=line_is_base_citation,
+                    line_siglum_context_cue=line_siglum_context_cue,
+                    line_siglum_candidate_count=line_siglum_candidate_count,
+                ):
+                    return tok
                 guard_block_reason = rewrite_hard_guard_block_reason(
                     tok, safe_tok, "citation_siglum_confusable_map", stage="citation"
                 )
@@ -3692,6 +3901,46 @@ def apply_citation_name_normalization(
                 )
                 return safe_tok
 
+            def repl_g_dot_yu(m: re.Match[str]) -> str:
+                prefix = m.group(1)
+                tok = "g.Yu"
+                safe_tok = "gYu"
+                guard_block_reason = rewrite_hard_guard_block_reason(
+                    tok, safe_tok, "citation_siglum_confusable_map", stage="citation"
+                )
+                if guard_block_reason is not None:
+                    review_rows.append(
+                        [
+                            str(info.page),
+                            str(info.line),
+                            str(info.entry_id),
+                            info.zone,
+                            tok,
+                            safe_tok,
+                            "B",
+                            f"hard_guard_{guard_block_reason}__citation_siglum_confusable_map",
+                            "0",
+                            line[:240],
+                        ]
+                    )
+                    return m.group(0)
+                change_rows.append(
+                    [
+                        str(info.page),
+                        str(info.line),
+                        str(info.entry_id),
+                        info.zone,
+                        tok,
+                        safe_tok,
+                        "A",
+                        "citation_siglum_confusable_map",
+                        "1",
+                        line[:240],
+                    ]
+                )
+                return prefix + safe_tok
+
+            line = CITATION_G_DOT_YU_COORD_RE.sub(repl_g_dot_yu, line)
             line = CITATION_SIGLUM_DIGIT_ARTIFACT_RE.sub(repl_digit_siglum, line)
             line = CITATION_SIGLUM_ALNUM_TOKEN_RE.sub(repl_alnum_siglum, line)
             lines[line_idx - 1] = OCR_LATIN_TOKEN_RE.sub(repl, line)
