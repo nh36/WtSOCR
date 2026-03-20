@@ -377,6 +377,143 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("Eine Puppe heißt Doll im Englischen.", corrected)
         self.assertNotIn("(Bb33, Bb45, Doll, Dol3 usw.)", corrected)
 
+    def test_german_dotless_i_extended_safe_map_and_numeric(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Eın Artıkel ıst 111 den Fällen und 1111 Oktober publızıert.\n"
+            "Dıes dıeserlei dıejenigen Wırkung Stıftung Bıld Schrıft Schrıftsprache Tıbetisch Tıbetologen.\n"
+            "lexıkographisch und lexıkalisch in der Kommunıikation der Verwaltıng.\n"
+            "Bıographie und bıographisch; nıeder, nıederlassen, vernıchten, gelıngen.\n"
+            "Seı beı der Basıs und Iranıstik beschleunıgen.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Ein Artikel ist in den Fällen und im Oktober publiziert.", corrected)
+        self.assertIn(
+            "Dies dieserlei diejenigen Wirkung Stiftung Bild Schrift Schriftsprache Tibetisch Tibetologen.",
+            corrected,
+        )
+        self.assertIn("lexikographisch und lexikalisch in der Kommunikation der Verwaltung.", corrected)
+        self.assertIn("Biographie und biographisch; nieder, niederlassen, vernichten, gelingen.", corrected)
+        self.assertIn("Sei bei der Basis und Iranistik beschleunigen.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Eın", "Ein", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("Artıkel", "Artikel", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("111", "in", "german_numeric_function_word_confusion"), reasons)
+        self.assertIn(("1111", "im", "german_numeric_function_word_confusion"), reasons)
+        self.assertIn(("publızıert", "publiziert", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("Basıs", "Basis", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("Iranıstik", "Iranistik", "german_dotless_i_safe_map"), reasons)
+
+    def test_citation_name_safe_map(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "(NOBEL 1950:12) Tromas Wyrıe Pangiunc Pangiung Stem Kvzrne Engliish oftheIndo-Aryan "
+            "VoceL RicHarpson JAscake.\n"
+            "Das Stem bleibt in der Prosa unverändert.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("(NOBEL 1950:12) Thomas Wylie Panglung Panglung Stein Kværne English of the Indo-Aryan", corrected)
+        self.assertIn("VoceL RicHarpson JAscake.", corrected)
+        self.assertIn("Das Stem bleibt in der Prosa unverändert.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Tromas", "Thomas", "citation_name_safe_map"), reasons)
+        self.assertIn(("Wyrıe", "Wylie", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pangiunc", "Panglung", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pangiung", "Panglung", "citation_name_safe_map"), reasons)
+        self.assertIn(("Stem", "Stein", "citation_name_safe_map"), reasons)
+        self.assertIn(("Kvzrne", "Kværne", "citation_name_safe_map"), reasons)
+
+    def test_citation_safe_map_extended_bibliography_cleanup(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "(SCHMIDT 1902:7) UesachH UzsachH Pansiung Pansıung PangLung Cürpers Denwoop Schwirger Granmatik "
+            "Hindn Into SreinGass ZongrTse Dierz manuseript Vollkommenbeiten Ihe Iwo accompaniedbya.\n"
+            "(SCHMIDT 1902:8) Pangıunc.\n"
+            "(STEIN 1961:4) P rsian-English vice versä.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "(SCHMIDT 1902:7) Uebach Uebach Panglung Panglung Panglung Cüppers Denwood Schwieger Grammatik "
+            "Hindu into Steingass Zongtse Dietz manuscript Vollkommenheiten The Two accompanied by a.",
+            corrected,
+        )
+        self.assertIn("(SCHMIDT 1902:8) Panglung.", corrected)
+        self.assertIn("(STEIN 1961:4) Persian-English vice versa.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("UesachH", "Uebach", "citation_name_safe_map"), reasons)
+        self.assertIn(("UzsachH", "Uebach", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pansiung", "Panglung", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pansıung", "Panglung", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pangıunc", "Panglung", "citation_name_safe_map"), reasons)
+        self.assertIn(("PangLung", "Panglung", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("SreinGass", "Steingass", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("Into", "into", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("Ihe", "The", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("Iwo", "Two", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("accompaniedbya", "accompanied by a", "citation_english_spacing_loss_map"), reasons)
+        self.assertIn(("P rsian-English", "Persian-English", "citation_phrase_safe_map"), reasons)
+        self.assertIn(("vice versä", "vice versa", "citation_phrase_safe_map"), reasons)
+
+    def test_bibliography_author_year_and_continuation_lines_are_citation_like(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Schwirger, Peter 20092. Handbuch zur Granmatik der klassischen tibetischen Schrift-\n"
+            "for the conversion of Hindu and Muhammadan Into A.D. dates, and vice versä.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "Schwieger, Peter 20092. Handbuch zur Grammatik der klassischen tibetischen Schrift-",
+            corrected,
+        )
+        self.assertIn(
+            "for the conversion of Hindu and Muhammadan into A.D. dates, and vice versa.",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Schwirger", "Schwieger", "citation_name_safe_map"), reasons)
+        self.assertIn(("Granmatik", "Grammatik", "citation_name_safe_map"), reasons)
+        self.assertIn(("Into", "into", "citation_token_exact_safe_map"), reasons)
+        self.assertIn(("vice versä", "vice versa", "citation_phrase_safe_map"), reasons)
+
+    def test_bibliography_continuations_and_gloss_lines_get_narrow_context_fixes(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "3. ıch, für skt. abam.\n"
+            "1. sıch niederlassen.\n"
+            "geraten, sıch untereinander nicht einig wer-\n"
+            "will ıch zuerst vernichten (Mil 66,9).\n"
+            "tig, ıch diente ihr (Bca 7.52b).\n"
+            "Säkya-mchog-ldan. Reproduced from the unique manuseript prepared in the library.\n"
+            "tische Text unter Mitarbeit von Siglinde Dierz hg. v. Champa Thupten ZongrTse.\n"
+            "— /Pansiung, Lokesh Chandra 1982.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("3. ich, für skt. abam.", corrected)
+        self.assertIn("1. sich niederlassen.", corrected)
+        self.assertIn("geraten, sich untereinander nicht einig wer-", corrected)
+        self.assertIn("will ich zuerst vernichten (Mil 66,9).", corrected)
+        self.assertIn("tig, ich diente ihr (Bca 7.52b).", corrected)
+        self.assertIn("Reproduced from the unique manuscript prepared in the library.", corrected)
+        self.assertIn("Siglinde Dietz hg. v. Champa Thupten Zongtse.", corrected)
+        self.assertIn("— /Panglung, Lokesh Chandra 1982.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("ıch", "ich", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("sıch", "sich", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("manuseript", "manuscript", "citation_name_safe_map"), reasons)
+        self.assertIn(("Dierz", "Dietz", "citation_name_safe_map"), reasons)
+        self.assertIn(("ZongrTse", "Zongtse", "citation_name_safe_map"), reasons)
+        self.assertIn(("Pansiung", "Panglung", "citation_name_safe_map"), reasons)
+
 
 if __name__ == "__main__":
     unittest.main()

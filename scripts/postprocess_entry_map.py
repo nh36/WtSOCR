@@ -89,8 +89,31 @@ VOWEL_RE = re.compile(r"[aeiouāīūöü]", re.IGNORECASE)
 DOLLAR_SACUTE_ARTIFACT_RE = re.compile(r"(?:sś|śz|śś|ṣś)", re.IGNORECASE)
 CITATION_YEAR_RE = re.compile(r"\b(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?\b", re.IGNORECASE)
 CITATION_SPLIT_YEAR_RE = re.compile(r"\b(?:1[6-9]|20)\s{1,2}\d{2}(?:[a-z])?\b", re.IGNORECASE)
+CITATION_NOISY_YEAR_RE = re.compile(
+    r"\b(?:1[6-9]\d{2}|20\d{2})(?:\d|[a-z])?\b",
+    re.IGNORECASE,
+)
 CITATION_CUE_RE = re.compile(
-    r"\b(?:ed|hrsg|vgl|zit|zitiert|skt|vol|bd|pp|pl|repr|index|indices)\b\.?",
+    r"\b(?:ed|hrsg|vgl|zit|zitiert|vol|bd|pp|pl|repr|index|indices)\b\.?",
+    re.IGNORECASE,
+)
+CITATION_BIBLIO_AUTHOR_YEAR_RE = re.compile(
+    rf"^\s*(?:[—–-]\s*)?(?:/)?"
+    rf"[{LATIN_CHARS}][{LATIN_CHARS}'’.-]{{1,40}},\s+"
+    rf"[{LATIN_CHARS}][{LATIN_CHARS}'’./ -]{{0,48}}?"
+    rf"(?:1[6-9]\d{{2}}|20\d{{2}})(?:\d|[a-z])?[\.:]?",
+    re.IGNORECASE,
+)
+CITATION_BIBLIO_CONTINUATION_HEAD_RE = re.compile(
+    r"^\s*(?:and|for|from|in|of|the|to|with)\b",
+    re.IGNORECASE,
+)
+CITATION_BIBLIO_CONTINUATION_CUE_RE = re.compile(
+    r"(?:A\.D\.|\b(?:pp\.?|vol\.?|ed\.?|repr\.?|index|indices|london|berlin|wiesbaden|tokyo|halle|münchen|munich|roma|paris|oxford)\b)",
+    re.IGNORECASE,
+)
+CITATION_BIBLIO_INLINE_CUE_RE = re.compile(
+    r"(?:\breproduced\b|\bprepared\b|\bmanuscript\b|unter\s+Mitarbeit\s+von|\bhg\.?\s*v\.?)",
     re.IGNORECASE,
 )
 CITATION_SIGLUM_ARTIFACT_CUE_RE = re.compile(
@@ -522,6 +545,134 @@ DOTLESS_I_TIER_A_ALLOWLIST = {
     "zımbel",
     "ziıg",
 }
+
+# Exact high-frequency German OCR artifacts (mostly dotless-ı confusion).
+# Keep this list strict and token-exact; these rewrites are only applied in
+# German prose zones and are skipped on citation-like lines.
+GERMAN_PROSE_SAFE_REWRITES = {
+    "seı": "sei",
+    "eın": "ein",
+    "ın": "in",
+    "ım": "im",
+    "ıst": "ist",
+    "sınd": "sind",
+    "nıcht": "nicht",
+    "mıt": "mit",
+    "sıch": "sich",
+    "wıe": "wie",
+    "dıe": "die",
+    "dıes": "dies",
+    "dıeser": "dieser",
+    "dıesen": "diesen",
+    "dıesem": "diesem",
+    "dıeserlei": "dieserlei",
+    "dıejenigen": "diejenigen",
+    "ıch": "ich",
+    "ıhn": "ihn",
+    "ıhr": "ihr",
+    "ıhre": "ihre",
+    "ıhren": "ihren",
+    "ıhrem": "ihrem",
+    "ıhrer": "ihrer",
+    "ıhm": "ihm",
+    "mır": "mir",
+    "beı": "bei",
+    "beım": "beim",
+    "weıl": "weil",
+    "bıs": "bis",
+    "beıde": "beide",
+    "alleın": "allein",
+    "beschleunıgen": "beschleunigen",
+    "basıs": "basis",
+    "iranıstik": "iranistik",
+    "kommunıikation": "kommunikation",
+    "verwaltıng": "verwaltung",
+    "artıkel": "artikel",
+    "lexıkographisch": "lexikographisch",
+    "lexıkalisch": "lexikalisch",
+    "bıographie": "biographie",
+    "bıographisch": "biographisch",
+    "nıeder": "nieder",
+    "nıederlassen": "niederlassen",
+    "vernıchten": "vernichten",
+    "gelıngen": "gelingen",
+    "wırd": "wird",
+    "wırkung": "wirkung",
+    "stıftung": "stiftung",
+    "bıld": "bild",
+    "schrıft": "schrift",
+    "schrıftsprache": "schriftsprache",
+    "tıbetisch": "tibetisch",
+    "tıbetologen": "tibetologen",
+    "publızıert": "publiziert",
+}
+
+# Exact-token prose rewrites for cases where generic case-shaping would preserve
+# an OCR artifact or downcase a corrected capital.
+GERMAN_PROSE_TOKEN_EXACT_SAFE_REWRITES = {
+    "Iranıstik": "Iranistik",
+}
+
+# OCR digit/letter confusion in German prose: "111"/"1111" often stands for
+# "in"/"im". Apply only with strict local context checks.
+GERMAN_NUMERIC_FUNCTION_WORD_REWRITES = {
+    "111": "in",
+    "1111": "im",
+}
+
+# Frequent English bibliography spacing-loss artifacts.
+ENGLISH_BIBLIO_SPACELOSS_REWRITES = {
+    "ofthe": "of the",
+    "inthe": "in the",
+    "fromthe": "from the",
+    "oftheindo-aryan": "of the Indo-Aryan",
+    "accompaniedbya": "accompanied by a",
+    "engliish": "english",
+}
+
+# Conservative bibliography-only proper-name fixes (exact token matches).
+CITATION_NAME_SAFE_REWRITES = {
+    "cürpers": "cüppers",
+    "denwoop": "denwood",
+    "dierz": "dietz",
+    "granmatik": "grammatik",
+    "hindn": "hindu",
+    "manuseript": "manuscript",
+    "pansiung": "panglung",
+    "schwirger": "schwieger",
+    "uesachh": "uebach",
+    "uzsachh": "uebach",
+    "vollkommenbeiten": "vollkommenheiten",
+    "zongrtse": "zongtse",
+    "tromas": "thomas",
+    "wyrıe": "wylie",
+    "wyrie": "wylie",
+    "pangiunc": "panglung",
+    "pangiung": "panglung",
+    "sreingass": "steingass",
+    "stem": "stein",
+    "kvzrne": "kværne",
+}
+
+# Mixed-case and initial-confusion bibliography tokens that should normalize to
+# an exact target rather than preserve OCR-shaped capitalization.
+CITATION_TOKEN_EXACT_SAFE_REWRITES = {
+    "Ihe": "The",
+    "Into": "into",
+    "Iwo": "Two",
+    "PangLung": "Panglung",
+    "SreinGass": "Steingass",
+}
+
+# Bibliography-only phrase rewrites for OCR that breaks or distorts token
+# boundaries; keep these exact and conservative.
+CITATION_PHRASE_SAFE_REWRITE_PATTERNS = (
+    (re.compile(r"\bP\s+rsian-English\b"), "Persian-English", "citation_phrase_safe_map"),
+    (re.compile(r"\bvice versä\b"), "vice versa", "citation_phrase_safe_map"),
+)
+GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
+    r"(?<![0-9A-Za-z\u00C0-\u024F])(?P<token>1111|111)(?![0-9A-Za-z\u00C0-\u024F])"
+)
 
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
@@ -1969,6 +2120,17 @@ def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
     if line_has_parenthetical_citation(line_text):
         return True
     if line_has_siglum_context_cue(line_text):
+        return True
+    if CITATION_BIBLIO_AUTHOR_YEAR_RE.match(line_text):
+        return True
+    if (
+        CITATION_BIBLIO_CONTINUATION_HEAD_RE.match(line_text)
+        and CITATION_BIBLIO_CONTINUATION_CUE_RE.search(line_text)
+    ):
+        return True
+    if CITATION_BIBLIO_INLINE_CUE_RE.search(line_text):
+        return True
+    if CITATION_NOISY_YEAR_RE.search(line_text) and CITATION_CUE_RE.search(line_text):
         return True
     return bool(CITATION_CUE_RE.search(line_text))
 
@@ -3471,6 +3633,204 @@ def choose_orphan_dollar_sacute_rewrite(
     return dst, "orphan_safe_dollar_to_sacute"
 
 
+def line_is_german_prose_rewrite_context(
+    info: "LineInfo",
+    line_text: str,
+    *,
+    line_citation_like: bool,
+) -> bool:
+    if info.has_tibetan:
+        return False
+    if info.zone not in {"german_prose", "german_prose_with_translit", "latin_other", "other"}:
+        return False
+    if line_has_citation_siglum_candidate(line_text):
+        return False
+    if line_citation_like:
+        stripped_line = re.sub(r"\([^)]*\)", " ", line_text)
+        stripped_tokens = [m.group(0) for m in OCR_LATIN_TOKEN_RE.finditer(stripped_line)]
+        stripped_has_safe_prose_token = any(
+            tok in GERMAN_PROSE_TOKEN_EXACT_SAFE_REWRITES
+            or tok.lower() in GERMAN_PROSE_SAFE_REWRITES
+            or tok in GERMAN_NUMERIC_FUNCTION_WORD_REWRITES
+            for tok in stripped_tokens
+        )
+        if (
+            CITATION_BIBLIO_AUTHOR_YEAR_RE.match(line_text)
+            or (
+                CITATION_BIBLIO_CONTINUATION_HEAD_RE.match(line_text)
+                and CITATION_BIBLIO_CONTINUATION_CUE_RE.search(line_text)
+            )
+            or CITATION_BIBLIO_INLINE_CUE_RE.search(line_text)
+            or CITATION_YEAR_RE.search(line_text)
+            or CITATION_SPLIT_YEAR_RE.search(line_text)
+            or (
+                line_has_siglum_context_cue(line_text)
+                and not (stripped_has_safe_prose_token and len(stripped_tokens) >= 2)
+            )
+        ):
+            return False
+    german_count = len(info.german_tokens)
+    translit_count = len(info.translit_tokens)
+    if german_count >= 2 and german_count >= translit_count:
+        return True
+    if info.zone == "german_prose" and german_count >= 1 and translit_count == 0:
+        return True
+    if info.zone != "other" or translit_count != 0:
+        return False
+
+    latin_tokens = [m.group(0) for m in OCR_LATIN_TOKEN_RE.finditer(line_text)]
+    if len(latin_tokens) < 2:
+        return False
+    if not any(
+        tok in GERMAN_PROSE_TOKEN_EXACT_SAFE_REWRITES
+        or tok.lower() in GERMAN_PROSE_SAFE_REWRITES
+        or tok in GERMAN_NUMERIC_FUNCTION_WORD_REWRITES
+        for tok in latin_tokens
+    ):
+        return False
+    return True
+
+
+def apply_safe_prose_and_biblio_rewrites(
+    line: str,
+    info: "LineInfo",
+    *,
+    page: int,
+    line_no: int,
+    change_rows: list[list[str]],
+) -> str:
+    if not line:
+        return line
+    line_citation_like = line_is_citation_like(info, line)
+    german_prose_context = line_is_german_prose_rewrite_context(
+        info, line, line_citation_like=line_citation_like
+    )
+    if not line_citation_like and not german_prose_context:
+        return line
+
+    original_excerpt = line[:240]
+    updated = line
+
+    if line_citation_like:
+        for pattern, dst, reason in CITATION_PHRASE_SAFE_REWRITE_PATTERNS:
+            def repl_phrase(m: re.Match[str]) -> str:
+                src = m.group(0)
+                if src == dst:
+                    return src
+                change_rows.append(
+                    [
+                        str(page),
+                        str(line_no),
+                        str(info.entry_id),
+                        info.zone,
+                        src,
+                        dst,
+                        "A",
+                        reason,
+                        "1",
+                        original_excerpt,
+                    ]
+                )
+                return dst
+
+            updated = pattern.sub(repl_phrase, updated)
+
+    def repl_token(m: re.Match[str]) -> str:
+        tok = m.group(0)
+        low = tok.lower()
+        dst: str | None = None
+        reason: str | None = None
+
+        if line_citation_like:
+            citation_safe_tok = citation_safe_confusable_rewrite(tok)
+            citation_safe_low = citation_safe_tok.casefold()
+            exact_mapped = CITATION_TOKEN_EXACT_SAFE_REWRITES.get(tok)
+            if exact_mapped is None and citation_safe_tok != tok:
+                exact_mapped = CITATION_TOKEN_EXACT_SAFE_REWRITES.get(citation_safe_tok)
+            if exact_mapped is not None:
+                dst = exact_mapped
+                reason = "citation_token_exact_safe_map"
+            else:
+                mapped = ENGLISH_BIBLIO_SPACELOSS_REWRITES.get(citation_safe_low)
+                if mapped is not None:
+                    dst = apply_case_pattern(tok, mapped)
+                    reason = "citation_english_spacing_loss_map"
+                else:
+                    mapped = CITATION_NAME_SAFE_REWRITES.get(citation_safe_low)
+                    if mapped is not None:
+                        dst = apply_case_pattern(tok, mapped)
+                        reason = "citation_name_safe_map"
+        if dst is None and german_prose_context:
+            exact_mapped = GERMAN_PROSE_TOKEN_EXACT_SAFE_REWRITES.get(tok)
+            if exact_mapped is not None:
+                dst = exact_mapped
+                reason = "german_dotless_i_safe_map"
+            else:
+                mapped = GERMAN_PROSE_SAFE_REWRITES.get(low)
+                if mapped is not None:
+                    dst = apply_case_pattern(tok, mapped)
+                    reason = "german_dotless_i_safe_map"
+
+        if dst is None or reason is None or dst == tok:
+            return tok
+        change_rows.append(
+            [
+                str(page),
+                str(line_no),
+                str(info.entry_id),
+                info.zone,
+                tok,
+                dst,
+                "A",
+                reason,
+                "1",
+                original_excerpt,
+            ]
+        )
+        return dst
+
+    updated = OCR_LATIN_TOKEN_RE.sub(repl_token, updated)
+
+    if not german_prose_context:
+        return updated
+
+    def repl_numeric(m: re.Match[str]) -> str:
+        tok = m.group("token")
+        dst = GERMAN_NUMERIC_FUNCTION_WORD_REWRITES.get(tok)
+        if dst is None:
+            return tok
+        start, end = m.start("token"), m.end("token")
+        left = updated[:start]
+        right = updated[end:]
+        prev_non_space = left.rstrip()[-1:] if left else ""
+        next_non_space = right.lstrip()[:1] if right else ""
+        if prev_non_space in {"§", "#"} or prev_non_space.isdigit():
+            return tok
+        if next_non_space.isdigit():
+            return tok
+        prev_word = re.search(rf"[{LATIN_CHARS}]{{2,}}\W*$", left)
+        next_word = re.match(rf"^\W*[{LATIN_CHARS}]{{2,}}", right)
+        if prev_word is None and next_word is None:
+            return tok
+        change_rows.append(
+            [
+                str(page),
+                str(line_no),
+                str(info.entry_id),
+                info.zone,
+                tok,
+                dst,
+                "A",
+                "german_numeric_function_word_confusion",
+                "1",
+                original_excerpt,
+            ]
+        )
+        return dst
+
+    return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.sub(repl_numeric, updated)
+
+
 def apply_entry_aware_corrections(
     page_lines: list[list[str]],
     line_infos: list[LineInfo],
@@ -3491,6 +3851,14 @@ def apply_entry_aware_corrections(
                 corrected_lines.append(line)
                 continue
             info = info_by_key.get((page_idx, line_idx))
+            if info is not None:
+                line = apply_safe_prose_and_biblio_rewrites(
+                    line,
+                    info,
+                    page=page_idx,
+                    line_no=line_idx,
+                    change_rows=change_rows,
+                )
             if info is None or info.entry_id == 0:
                 line_has_tibetan = bool(TIB_RE.search(line))
                 line_has_siglum = line_has_citation_siglum_candidate(line)
