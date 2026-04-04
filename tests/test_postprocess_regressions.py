@@ -514,6 +514,80 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("ZongrTse", "Zongtse", "citation_name_safe_map"), reasons)
         self.assertIn(("Pansiung", "Panglung", "citation_name_safe_map"), reasons)
 
+    def test_new_exact_german_function_word_and_dotless_i_rewrites(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Wir sahen 6111 Blättern und €111 Beispiel, nicht aber ©111 42.\n"
+            "cine cinem cinen ciner cines seı Eın eın ıst.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Wir sahen ein Blättern und ein Beispiel, nicht aber ©111 42.", corrected)
+        self.assertIn("eine einem einen einer eines sei Ein ein ist.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("6111", "ein", "german_numeric_function_word_confusion"), reasons)
+        self.assertIn(("€111", "ein", "german_numeric_function_word_confusion"), reasons)
+        self.assertNotIn(("©111", "ein", "german_numeric_function_word_confusion"), reasons)
+        self.assertIn(("cine", "eine", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("cinem", "einem", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("cinen", "einen", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("ciner", "einer", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("cines", "eines", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("seı", "sei", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("Eın", "Ein", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("eın", "ein", "german_dotless_i_safe_map"), reasons)
+        self.assertIn(("ıst", "ist", "german_dotless_i_safe_map"), reasons)
+
+    def test_new_exact_tibetan_allowlist_rewrites(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "rmams breyud broyud broyad biin giien giier bsiien siian giis giiis griis miiam yiin fiid\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "rnams brgyud brgyud brgyad bzhin gnyen gnyer bsnyen snyan gnyis gnyis gnyis mnyam yin nyid",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("rmams", "rnams", "explicit_user_allowlist"), reasons)
+        self.assertIn(("breyud", "brgyud", "explicit_user_allowlist"), reasons)
+        self.assertIn(("broyud", "brgyud", "explicit_user_allowlist"), reasons)
+        self.assertIn(("broyad", "brgyad", "explicit_user_allowlist"), reasons)
+        self.assertIn(("biin", "bzhin", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giien", "gnyen", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giier", "gnyer", "explicit_user_allowlist"), reasons)
+        self.assertIn(("bsiien", "bsnyen", "explicit_user_allowlist"), reasons)
+        self.assertIn(("siian", "snyan", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giis", "gnyis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giiis", "gnyis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("griis", "gnyis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("miiam", "mnyam", "explicit_user_allowlist"), reasons)
+        self.assertIn(("yiin", "yin", "explicit_user_allowlist"), reasons)
+        self.assertIn(("fiid", "nyid", "explicit_user_allowlist"), reasons)
+
+    def test_boundary_safe_tibetan_l_cluster_and_bzhi_rewrites(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Ita Iha Ihan Iho Itos bii bii' bii’ fooItaBar\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("lta lha lhan lho ltos bzhi bzhi' bzhi’ fooItaBar", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Ita", "lta", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("Iha", "lha", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("Ihan", "lhan", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("Iho", "lho", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("Itos", "ltos", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii", "bzhi", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'", "bzhi'", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’", "bzhi’", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertNotIn(("fooItaBar", "fooltaBar", "explicit_case_sensitive_allowlist"), reasons)
+
 
 if __name__ == "__main__":
     unittest.main()

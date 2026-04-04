@@ -281,6 +281,21 @@ EXPLICIT_TIER_A_REWRITES = {
     "dga'": "dga’",
     "rde'u": "rde’u",
     "padma'i": "padma’i",
+    "rmams": "rnams",
+    "breyud": "brgyud",
+    "broyud": "brgyud",
+    "broyad": "brgyad",
+    "biin": "bzhin",
+    "giien": "gnyen",
+    "giier": "gnyer",
+    "bsiien": "bsnyen",
+    "siian": "snyan",
+    "giis": "gnyis",
+    "giiis": "gnyis",
+    "griis": "gnyis",
+    "miiam": "mnyam",
+    "yiin": "yin",
+    "fiid": "nyid",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -294,6 +309,14 @@ EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES = {
     "m'TIshur": "m'Tshur",
     "tajnab": "tajñab",
     "gZIgS": "gZigS",
+    "Ita": "lta",
+    "Iha": "lha",
+    "Ihan": "lhan",
+    "Iho": "lho",
+    "Itos": "ltos",
+    "bii": "bzhi",
+    "bii'": "bzhi'",
+    "bii’": "bzhi’",
 }
 
 # High-confidence OCR confusable forms where "$" should be acute-s.
@@ -550,6 +573,11 @@ DOTLESS_I_TIER_A_ALLOWLIST = {
 # Keep this list strict and token-exact; these rewrites are only applied in
 # German prose zones and are skipped on citation-like lines.
 GERMAN_PROSE_SAFE_REWRITES = {
+    "cine": "eine",
+    "cinem": "einem",
+    "cinen": "einen",
+    "ciner": "einer",
+    "cines": "eines",
     "seı": "sei",
     "eın": "ein",
     "ın": "in",
@@ -618,6 +646,9 @@ GERMAN_PROSE_TOKEN_EXACT_SAFE_REWRITES = {
 GERMAN_NUMERIC_FUNCTION_WORD_REWRITES = {
     "111": "in",
     "1111": "im",
+    "6111": "ein",
+    "€111": "ein",
+    "©111": "ein",
 }
 
 # Frequent English bibliography spacing-loss artifacts.
@@ -671,8 +702,12 @@ CITATION_PHRASE_SAFE_REWRITE_PATTERNS = (
     (re.compile(r"\bvice versä\b"), "vice versa", "citation_phrase_safe_map"),
 )
 GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
-    r"(?<![0-9A-Za-z\u00C0-\u024F])(?P<token>1111|111)(?![0-9A-Za-z\u00C0-\u024F])"
+    r"(?<![0-9A-Za-z\u00C0-\u024F€©])(?P<token>6111|1111|€111|©111|111)(?![0-9A-Za-z\u00C0-\u024F€©])"
 )
+
+
+def line_has_german_numeric_function_word(line_text: str) -> bool:
+    return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.search(line_text) is not None
 
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
@@ -3103,9 +3138,6 @@ def choose_rewrite(
     trusted_lexicon: dict[str, int],
     discovered: dict[str, DiscoveryPattern],
 ) -> tuple[str, str, str] | None:
-    exact_explicit_dst = EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES.get(token)
-    if exact_explicit_dst is not None and info.zone in AUTO_FIX_ZONES:
-        return exact_explicit_dst, "A", "explicit_case_sensitive_allowlist"
     low = token.lower()
     if len(low) == 1 and token.isupper():
         return None
@@ -3116,9 +3148,6 @@ def choose_rewrite(
     canon = canonicalize_translit_token(token).lower()
     internal_i_raw = token.replace("I", "i")
     internal_i_canon = canonicalize_translit_token(internal_i_raw).lower() if internal_i_raw != token else low
-    explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
-    if explicit_dst is not None and (info.zone in AUTO_FIX_ZONES or "$" in low):
-        return explicit_dst, "A", "explicit_user_allowlist"
     if token_requires_manual_initial_i_review(token, canon):
         return canon, "B", "initial_i_manual_context_review"
     src_translit_like_here = token_is_translit_like(token, info.has_tibetan, info.is_entry_start)
@@ -3200,6 +3229,37 @@ def choose_rewrite(
         and (dollar_backed or dollar_name_anchor)
     )
     dollar_auto_zone_ok = info.zone in AUTO_FIX_ZONES or dollar_zone_fallback
+    exact_explicit_dst = EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES.get(token)
+    explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
+    explicit_dst_has_tibetan_signature = (
+        explicit_dst is not None
+        and (
+            token_has_distinctive_tibetan_signature(explicit_dst)
+            or token_is_strict_clean_translit(canonicalize_translit_token(explicit_dst).lower())
+        )
+    )
+    exact_explicit_dst_has_tibetan_signature = (
+        exact_explicit_dst is not None and token_has_distinctive_tibetan_signature(exact_explicit_dst)
+    )
+    explicit_translit_zone_fallback = (
+        info.zone in {"german_prose", "other"}
+        and info.entry_id != 0
+        and not line_citation_like
+        and (
+            src_translit_like_here
+            or info.has_tibetan
+            or line_translit_dominant
+            or src_has_hard_marker
+            or src_has_cue
+            or canon in headword_mem
+            or canon in entry_mem
+            or explicit_dst_has_tibetan_signature
+            or exact_explicit_dst_has_tibetan_signature
+        )
+    )
+    explicit_auto_zone_ok = info.zone in AUTO_FIX_ZONES or explicit_translit_zone_fallback
+    if exact_explicit_dst is not None and explicit_auto_zone_ok:
+        return exact_explicit_dst, "A", "explicit_case_sensitive_allowlist"
     confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
     confusable_internal_I_to_i_safe = token_is_safe_internal_confusable_I_to_i(token, internal_i_raw)
     internal_i_backed = (
@@ -3211,6 +3271,8 @@ def choose_rewrite(
         token_is_mixed_caps_confusable_noise(token, canon) and not canon_backed
     )
     confusable_allcaps_noise_blocked = token_is_allcaps_confusable_fragment(token) and not canon_backed
+    if explicit_dst is not None and (explicit_auto_zone_ok or "$" in low):
+        return explicit_dst, "A", "explicit_user_allowlist"
 
     if (
         internal_i_raw != token
@@ -3653,7 +3715,7 @@ def line_is_german_prose_rewrite_context(
             or tok.lower() in GERMAN_PROSE_SAFE_REWRITES
             or tok in GERMAN_NUMERIC_FUNCTION_WORD_REWRITES
             for tok in stripped_tokens
-        )
+        ) or line_has_german_numeric_function_word(stripped_line)
         if (
             CITATION_BIBLIO_AUTHOR_YEAR_RE.match(line_text)
             or (
@@ -3686,7 +3748,7 @@ def line_is_german_prose_rewrite_context(
         or tok.lower() in GERMAN_PROSE_SAFE_REWRITES
         or tok in GERMAN_NUMERIC_FUNCTION_WORD_REWRITES
         for tok in latin_tokens
-    ):
+    ) and not line_has_german_numeric_function_word(line_text):
         return False
     return True
 
