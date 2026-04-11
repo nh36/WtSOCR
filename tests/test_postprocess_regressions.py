@@ -588,6 +588,92 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("bii’", "bzhi’", "explicit_case_sensitive_allowlist"), reasons)
         self.assertNotIn(("fooItaBar", "fooltaBar", "explicit_case_sensitive_allowlist"), reasons)
 
+    def test_structural_quote_wrap_direct(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "beispiel „sie vortra-\n"
+            "gen das klar“ (Mil 12,3)\n"
+        )
+        result, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("beispiel „sie vortragen das klar“ (Mil 12,3)", corrected)
+        self.assertEqual(result["structural_rewrite_count"], 1)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("vortra-/gen", "vortragen", "structural_german_quote_hyphen_wrap_direct"),
+            reasons,
+        )
+
+    def test_structural_quote_wrap_with_intervening_citation(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "tschJul khrims — gos gon pas (metr.) „sie tra-\n"
+            "(Gir\n"
+            "\n"
+            "24,24); lta ba — gi 97/ gzun nas „man legt\n"
+            "eine reine Sicht zu Grunde“ (Mil 86,27);\n"
+            "khon chos pa — ciig yin par ’dug „er scheint\n"
+            "\n"
+            "gen das Gewand einer reinen Moral“\n"
+            "\n"
+            "ein wahrhaft religiöser Mensch zu sein“ (Mil 128,7)\n"
+        )
+        result, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("„sie tragen das Gewand einer reinen Moral“ (Gir 24,24);", corrected)
+        self.assertIn("lta ba — gi 97/ gzun nas „man legt", corrected)
+        self.assertEqual(result["structural_rewrite_count"], 1)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("tra-/gen", "tragen", "structural_german_quote_hyphen_wrap_citation"),
+            reasons,
+        )
+
+    def test_structural_quote_wrap_does_not_touch_bibliography(self) -> None:
+        merged_text = (
+            "Schmidt, Isaak 1841: Tibetisch-Deutsches Wörterbuch.\n"
+            "Titel „Prajña-pāramitā-\n"
+            "samcaya“ in bibliographischer Form.\n"
+        )
+        result, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Titel „Prajña-pāramitā-\nsamcaya“ in bibliographischer Form.", corrected)
+        self.assertEqual(result["structural_rewrite_count"], 0)
+
+    def test_structural_quote_wrap_direct_stays_on_immediate_next_line(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "beispiel „Würmer, Insekten und Fi-\n"
+            "sche usw. sind aus Warmem und Feuchtem\n"
+            "geboren (skt. svedaja)“\n"
+        )
+        result, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("„Würmer, Insekten und Fische usw. sind aus Warmem und Feuchtem", corrected)
+        self.assertIn("geboren (skt. svedaja)“", corrected)
+        self.assertNotIn("Figeboren", corrected)
+        self.assertEqual(result["structural_rewrite_count"], 1)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("Fi-/sche", "Fische", "structural_german_quote_hyphen_wrap_direct"),
+            reasons,
+        )
+
+    def test_structural_quote_wrap_does_not_join_hyphenated_phrase(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Lex. „i.S.v. von Sonnen-\n"
+            "und Schattenseite“.\n"
+        )
+        result, corrected, _ = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("„i.S.v. von Sonnen-\nund Schattenseite“.", corrected)
+        self.assertNotIn("Sonnenund", corrected)
+        self.assertEqual(result["structural_rewrite_count"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -232,6 +232,87 @@ LAPARIPRCCHA_SPLIT_CURR_RE = re.compile(
     r"\blapariprcch[äaā]n[äaā]mamah[äaā]y[äaā]nas[üuū]tra\b",
     re.IGNORECASE,
 )
+GERMAN_QUOTE_WRAP_LINE_END_RE = re.compile(rf"(.*?)([{LATIN_CHARS}]{{2,20}})-\s*$")
+GERMAN_QUOTE_WRAP_CONTINUATION_HEAD_RE = re.compile(rf"^\s*([{LATIN_CHARS}]{{2,8}})\b(.*)$")
+GERMAN_QUOTE_WRAP_CITATION_HEAD_RE = re.compile(rf"^\s*\(([A-ZÄÖÜ][{LATIN_CHARS}.-]{{1,16}})\s*$")
+GERMAN_QUOTE_WRAP_COORD_PREFIX_RE = re.compile(r"^\s*(\d{1,4}(?:[,:./]\d{1,4}|[a-z])\);\s*)(.*)$")
+GERMAN_WRAP_COMMON_ENDINGS = (
+    "ade",
+    "bar",
+    "chen",
+    "eit",
+    "en",
+    "end",
+    "ende",
+    "er",
+    "ern",
+    "erns",
+    "gen",
+    "haft",
+    "heit",
+    "ieren",
+    "ig",
+    "isch",
+    "keit",
+    "lich",
+    "lung",
+    "nung",
+    "ren",
+    "schaft",
+    "sten",
+    "tion",
+    "ung",
+)
+GERMAN_WRAP_NON_CONTINUATION_HEADS = {
+    "aber",
+    "als",
+    "am",
+    "an",
+    "auch",
+    "auf",
+    "aus",
+    "bei",
+    "das",
+    "dem",
+    "den",
+    "der",
+    "des",
+    "die",
+    "dies",
+    "doch",
+    "ein",
+    "eine",
+    "einer",
+    "eines",
+    "er",
+    "es",
+    "für",
+    "gegen",
+    "im",
+    "in",
+    "ist",
+    "man",
+    "mit",
+    "nach",
+    "noch",
+    "nur",
+    "oder",
+    "ohne",
+    "schon",
+    "selbst",
+    "sie",
+    "so",
+    "über",
+    "um",
+    "und",
+    "von",
+    "vor",
+    "wie",
+    "wir",
+    "zu",
+    "zum",
+    "zur",
+}
 SANSKRIT_AUTO_CONTEXT_MIN = 4
 
 ENTRY_STRONG_ZONES = {"headword_line", "example_tibetan_latin", "tibetan_latin_mixed"}
@@ -2861,6 +2942,188 @@ def parse_entries(
     return entries, line_infos, line_rows, validator_rows, summary, page_lines
 
 
+def page_lines_to_text(page_lines: list[list[str]]) -> str:
+    return "\f".join("\n".join(lines) for lines in page_lines)
+
+
+def line_has_unclosed_german_quote(line_text: str) -> bool:
+    if "„" not in line_text:
+        return False
+    return "“" not in line_text.rsplit("„", 1)[-1]
+
+
+def joined_wrap_candidate_is_safe(
+    stem: str,
+    continuation: str,
+    corpus_counts: Counter[str],
+) -> bool:
+    candidate = (stem + continuation).strip()
+    if len(candidate) < 4:
+        return False
+    if continuation.lower() in GERMAN_WRAP_NON_CONTINUATION_HEADS:
+        return False
+    # Structural quote-wrap repair already runs behind a narrow German-quote gate.
+    # Here we only need to reject candidates that still carry obvious transliteration
+    # markers, not plain ASCII German verbs like "vortragen".
+    if re.search(r"[’'āīūṅñṭḍṇṣśṛḷṃṁ]", candidate.lower()):
+        return False
+    if token_is_german_like(candidate):
+        return True
+    lowered = candidate.lower()
+    if corpus_counts.get(lowered, 0) >= 1:
+        return True
+    if len(continuation) > 4:
+        return False
+    return lowered.endswith(GERMAN_WRAP_COMMON_ENDINGS)
+
+
+def line_is_structural_german_quote_context(info: LineInfo, line_text: str) -> bool:
+    if info.has_tibetan:
+        return False
+    if info.zone not in {"german_prose", "german_prose_with_translit", "latin_other", "other"}:
+        return False
+    if not line_has_unclosed_german_quote(line_text):
+        return False
+    return GERMAN_QUOTE_WRAP_LINE_END_RE.search(line_text) is not None
+
+
+def apply_structural_german_quote_wrap_repairs(
+    page_lines: list[list[str]],
+    line_infos: list[LineInfo],
+) -> tuple[str, list[list[str]], int]:
+    info_map = {(info.page, info.line): info for info in line_infos}
+    corpus_counts: Counter[str] = Counter()
+    for lines in page_lines:
+        for line in lines:
+            for m in OCR_LATIN_TOKEN_RE.finditer(line):
+                corpus_counts[m.group(0).lower()] += 1
+
+    structural_change_rows: list[list[str]] = []
+    rewrite_count = 0
+    updated_pages = [list(lines) for lines in page_lines]
+
+    for page_idx, lines in enumerate(updated_pages, start=1):
+        line_idx = 0
+        while line_idx < len(lines):
+            line = lines[line_idx]
+            info = info_map.get((page_idx, line_idx + 1))
+            if info is None or not line or not line_is_structural_german_quote_context(info, line):
+                line_idx += 1
+                continue
+
+            base_match = GERMAN_QUOTE_WRAP_LINE_END_RE.search(line)
+            if base_match is None:
+                line_idx += 1
+                continue
+            prefix = base_match.group(1)
+            stem = base_match.group(2)
+
+            citation_author: str | None = None
+            citation_coord: str | None = None
+            citation_coord_line_idx: int | None = None
+            continuation_line_idx: int | None = None
+            continuation_line: str | None = None
+            continuation_token: str | None = None
+            continuation_rest: str = ""
+            reason = "structural_german_quote_hyphen_wrap_direct"
+
+            direct_idx = line_idx + 1
+            if direct_idx < len(lines):
+                direct_line = lines[direct_idx]
+                if direct_line:
+                    direct_match = GERMAN_QUOTE_WRAP_CONTINUATION_HEAD_RE.match(direct_line)
+                    if direct_match is not None:
+                        direct_head = direct_match.group(1)
+                        if (
+                            direct_head[:1].islower()
+                            and joined_wrap_candidate_is_safe(stem, direct_head, corpus_counts)
+                        ):
+                            continuation_line_idx = direct_idx
+                            continuation_line = direct_line
+                            continuation_token = direct_head
+                            continuation_rest = direct_match.group(2)
+
+            if continuation_line_idx is None and direct_idx < len(lines):
+                citation_match = GERMAN_QUOTE_WRAP_CITATION_HEAD_RE.match(lines[direct_idx] or "")
+                if citation_match is not None:
+                    citation_author = citation_match.group(1)
+                    for lookahead_idx in range(direct_idx + 1, min(len(lines), line_idx + 9)):
+                        candidate_line = lines[lookahead_idx]
+                        if not candidate_line:
+                            continue
+                        if citation_coord is None:
+                            coord_match = GERMAN_QUOTE_WRAP_COORD_PREFIX_RE.match(candidate_line)
+                            if coord_match is not None:
+                                citation_coord = coord_match.group(1).strip()
+                                citation_coord_line_idx = lookahead_idx
+                                candidate_line = coord_match.group(2)
+                            else:
+                                continue
+                        continuation_match = GERMAN_QUOTE_WRAP_CONTINUATION_HEAD_RE.match(candidate_line)
+                        if continuation_match is None:
+                            continue
+                        continuation_head = continuation_match.group(1)
+                        if not continuation_head[:1].islower():
+                            continue
+                        if "“" not in candidate_line:
+                            continue
+                        if not joined_wrap_candidate_is_safe(stem, continuation_head, corpus_counts):
+                            continue
+                        continuation_line_idx = lookahead_idx
+                        continuation_line = candidate_line
+                        continuation_token = continuation_head
+                        continuation_rest = continuation_match.group(2)
+                        reason = "structural_german_quote_hyphen_wrap_citation"
+                        break
+
+            if continuation_line_idx is None or continuation_line is None or continuation_token is None:
+                line_idx += 1
+                continue
+
+            joined_line = prefix + stem + continuation_token + continuation_rest
+            if reason == "structural_german_quote_hyphen_wrap_citation":
+                if citation_author is None or citation_coord is None or citation_coord_line_idx is None:
+                    line_idx += 1
+                    continue
+                citation_coord_clean = citation_coord.strip()
+                if citation_coord_clean.endswith(");"):
+                    joined_line = f"{joined_line} ({citation_author} {citation_coord_clean}"
+                else:
+                    joined_line = f"{joined_line} ({citation_author} {citation_coord_clean})"
+                coord_line = lines[citation_coord_line_idx]
+                coord_match = GERMAN_QUOTE_WRAP_COORD_PREFIX_RE.match(coord_line)
+                if coord_match is not None:
+                    lines[citation_coord_line_idx] = coord_match.group(2).strip()
+                if citation_author is not None:
+                    for blank_idx in range(line_idx + 1, continuation_line_idx):
+                        if lines[blank_idx] and GERMAN_QUOTE_WRAP_CITATION_HEAD_RE.match(lines[blank_idx]):
+                            lines[blank_idx] = ""
+                            break
+
+            lines[line_idx] = joined_line
+            lines[continuation_line_idx] = ""
+            rewrite_count += 1
+            structural_change_rows.append(
+                [
+                    str(page_idx),
+                    str(line_idx + 1),
+                    str(info.entry_id),
+                    info.zone,
+                    f"{stem}-/{continuation_token}",
+                    stem + continuation_token,
+                    "tier_a",
+                    reason,
+                    "1",
+                    joined_line[:240],
+                ]
+            )
+            line_idx = continuation_line_idx + 1
+            continue
+        line_idx += 1
+
+    return page_lines_to_text(updated_pages), structural_change_rows, rewrite_count
+
+
 def build_entry_memory(
     entries: list[Entry],
     line_infos: list[LineInfo],
@@ -5250,6 +5513,12 @@ def run_one(
     text = merged.read_text(encoding="utf-8", errors="replace")
     audit_by_line = load_audit(audit)
     entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
+    text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
+        page_lines,
+        line_infos,
+    )
+    if structural_rewrite_count:
+        entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
     headword_memory, entry_memory = build_entry_memory(entries, line_infos)
     trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
     discovered, discovered_rows = discover_common_errors(
@@ -5266,6 +5535,7 @@ def run_one(
         trusted_lexicon=trusted_lexicon,
         discovered=discovered,
     )
+    change_rows = structural_change_rows + change_rows
     corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
         apply_citation_name_normalization(
             corrected_text=corrected_text,
@@ -5422,6 +5692,7 @@ def run_one(
     discovered_confidence_counts = Counter(row[5] for row in discovered_rows)
     summary = {
         **summary,
+        "structural_rewrite_count": structural_rewrite_count,
         "trusted_lexicon_size": len(trusted_lexicon),
         "discovered_patterns": len(discovered_rows),
         "tier_a_applied": len(change_rows),
