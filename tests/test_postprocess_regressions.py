@@ -46,10 +46,10 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("dpe'i", corrected)
         self.assertIn("gañdza", corrected)
 
-        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        reasons = {(row["from_token"].lower(), row["to_token"].lower(), row["reason"]) for row in changes}
         self.assertIn(("$in", "śin", "explicit_user_allowlist_in_tu"), reasons)
-        self.assertIn(("dgra-Iba-Gottheit", "dgra-lba-Gottheit", "explicit_user_allowlist"), reasons)
-        self.assertIn(("dPal-Idan", "dPal-ldan", "explicit_user_allowlist"), reasons)
+        self.assertIn(("dgra-iba-gottheit", "dgra-lba-gottheit", "explicit_user_allowlist"), reasons)
+        self.assertIn(("dpal-idan", "dpal-ldan", "explicit_user_allowlist"), reasons)
         self.assertIn(("g$egs", "gśegs", "explicit_user_allowlist"), reasons)
         self.assertEqual(result["tier_b_suggestions"], 0)
 
@@ -542,12 +542,14 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_new_exact_tibetan_allowlist_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
-            "rmams breyud broyud broyad biin giien giier bsiien siian giis giiis griis miiam yiin fiid\n"
+            "rmams breyud broyud broyad biin giien giier bsiien siian giis giiis griis miiam yiin fiid "
+            "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
-            "rnams brgyud brgyud brgyad bzhin gnyen gnyer bsnyen snyan gnyis gnyis gnyis mnyam yin nyid",
+            "rnams brgyud brgyud brgyad bzhin gnyen gnyer bsnyen snyan gnyis gnyis gnyis mnyam yin nyid "
+            "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyang yang byang gsang",
             corrected,
         )
 
@@ -567,6 +569,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("miiam", "mnyam", "explicit_user_allowlist"), reasons)
         self.assertIn(("yiin", "yin", "explicit_user_allowlist"), reasons)
         self.assertIn(("fiid", "nyid", "explicit_user_allowlist"), reasons)
+        self.assertIn(("kyı", "kyi", "explicit_user_allowlist"), reasons)
+        self.assertIn(("kyıs", "kyis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("gyı", "gyi", "explicit_user_allowlist"), reasons)
+        self.assertIn(("gyıs", "gyis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("yın", "yin", "explicit_user_allowlist"), reasons)
+        self.assertIn(("cıg", "cig", "explicit_user_allowlist"), reasons)
+        self.assertIn(("gcıg", "gcig", "explicit_user_allowlist"), reasons)
+        self.assertIn(("zıg", "zig", "explicit_user_allowlist"), reasons)
+        self.assertIn(("sıg", "sig", "explicit_user_allowlist"), reasons)
+        self.assertIn(("dkyıl", "dkyil", "explicit_user_allowlist"), reasons)
+        self.assertIn(("kyanı", "kyang", "explicit_user_allowlist"), reasons)
+        self.assertIn(("yanı", "yang", "explicit_user_allowlist"), reasons)
+        self.assertIn(("byanı", "byang", "explicit_user_allowlist"), reasons)
+        self.assertIn(("gsarı", "gsang", "explicit_user_allowlist"), reasons)
+
+    def test_new_tibetan_allowlist_does_not_spill_into_plain_german_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "Ein Druckfehler wie kyanı oder yani oder zıg soll hier nicht automatisch korrigiert werden.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "Ein Druckfehler wie kyanı oder yani oder zıg soll hier nicht automatisch korrigiert werden.",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("kyanı", "kyang", "explicit_user_allowlist"), reasons)
+        self.assertNotIn(("zıg", "zig", "explicit_user_allowlist"), reasons)
 
     def test_boundary_safe_tibetan_l_cluster_and_bzhi_rewrites(self) -> None:
         merged_text = (
@@ -587,6 +619,29 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("bii'", "bzhi'", "explicit_case_sensitive_allowlist"), reasons)
         self.assertIn(("bii’", "bzhi’", "explicit_case_sensitive_allowlist"), reasons)
         self.assertNotIn(("fooItaBar", "fooltaBar", "explicit_case_sensitive_allowlist"), reasons)
+
+    def test_exact_sanskrit_overrides_for_verified_forms(self) -> None:
+        merged_text = (
+            "སྐད skt. Nägärjuna Pramänakirtih Päramitäsamäsa Uddänas Mülasarvästiväda "
+            "Mülasarvästi- Mahämäyürividyäräjni Astäpadikrtadhüpayoga\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "skt. Nāgārjuna Pramāṇakīrtiḥ Pāramitāsamāsa Uddānas Mūlasarvāstivāda "
+            "Mūlasarvāsti- Mahāmāyūrīvidyārājñī Aṣṭapadīkṛtadhūpayoga",
+            corrected,
+        )
+
+        reasons = {(row["from_token"].lower(), row["to_token"].lower(), row["reason"]) for row in changes}
+        self.assertIn(("nägärjuna", "nāgārjuna", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("pramänakirtih", "pramāṇakīrtiḥ", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("päramitäsamäsa", "pāramitāsamāsa", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("uddänas", "uddānas", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("mülasarvästiväda", "mūlasarvāstivāda", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("mülasarvästi", "mūlasarvāsti", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("mahämäyürividyäräjni", "mahāmāyūrīvidyārājñī", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("astäpadikrtadhüpayoga", "aṣṭapadīkṛtadhūpayoga", "sanskrit_high_freq_allowlist"), reasons)
 
     def test_structural_quote_wrap_direct(self) -> None:
         merged_text = (

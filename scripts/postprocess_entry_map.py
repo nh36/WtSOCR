@@ -377,6 +377,20 @@ EXPLICIT_TIER_A_REWRITES = {
     "miiam": "mnyam",
     "yiin": "yin",
     "fiid": "nyid",
+    "kyı": "kyi",
+    "kyıs": "kyis",
+    "gyı": "gyi",
+    "gyıs": "gyis",
+    "yın": "yin",
+    "cıg": "cig",
+    "gcıg": "gcig",
+    "zıg": "zig",
+    "sıg": "sig",
+    "dkyıl": "dkyil",
+    "kyanı": "kyang",
+    "yanı": "yang",
+    "byanı": "byang",
+    "gsarı": "gsang",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -445,6 +459,14 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
     "ati$a": "atiśa",
     "mahes$vara": "maheśvara",
     "mahe$vara": "maheśvara",
+    "nägärjuna": "nāgārjuna",
+    "astäpadikrtadhüpayoga": "aṣṭapadīkṛtadhūpayoga",
+    "mahämäyürividyäräjni": "mahāmāyūrīvidyārājñī",
+    "pramänakirtih": "pramāṇakīrtiḥ",
+    "mülasarvästiväda": "mūlasarvāstivāda",
+    "mülasarvästi": "mūlasarvāsti",
+    "päramitäsamäsa": "pāramitāsamāsa",
+    "uddänas": "uddānas",
 }
 
 
