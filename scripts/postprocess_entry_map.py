@@ -48,6 +48,7 @@ TRANSLIT_DIACRITIC_RE = re.compile(
     re.IGNORECASE,
 )
 STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh)", re.IGNORECASE)
+ASCII_TIB_EVIDENCE_CLUSTER_RE = re.compile(r"(?:ny|ng|sh|zh)", re.IGNORECASE)
 BOUNDARY_TRANSLIT_CLUSTER_RE = re.compile(
     r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
@@ -160,19 +161,19 @@ CITATION_DOTTED_DOLLAR_ABBREV_RE = re.compile(
     r"(?![A-Za-z0-9])"
 )
 INITIAL_I_CANON_SHAPE_RE = re.compile(
-    r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)"
-    r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng))",
+    r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|y|w|kh|ph|th|ts|dz|ź|ś|ñ|ṅ)"
+    r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|y|w|kh|ph|th|ts|dz|ź|ś|ñ|ṅ))",
     re.IGNORECASE,
 )
 TIBETAN_NAME_PIECE_PREFIX_RE = re.compile(
     r"^(?:"
     r"bs|bz|bsk|bst|brg|brk|brt|brd|"
-    r"dng|dby|dgr|dkr|dpy|dpr|"
-    r"mth|mkh|mch|mny|mg|"
+    r"dṅ|dby|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mñ|mg|"
     r"rgy|rts|rky|"
-    r"sgr|sbr|sny|sng|"
-    r"rdz|gzh|"
-    r"zh|lh|ng|ny|"
+    r"sgr|sbr|sñ|sṅ|"
+    r"rdz|gź|"
+    r"ź|lh|ṅ|ñ|"
     r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
     r")",
     re.IGNORECASE,
@@ -387,10 +388,10 @@ EXPLICIT_TIER_A_REWRITES = {
     "zıg": "zig",
     "sıg": "sig",
     "dkyıl": "dkyil",
-    "kyanı": "kyang",
-    "yanı": "yang",
-    "byanı": "byang",
-    "gsarı": "gsang",
+    "kyanı": "kyaṅ",
+    "yanı": "yaṅ",
+    "byanı": "byaṅ",
+    "gsarı": "gsaṅ",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -1107,34 +1108,49 @@ TIBETAN_NAME_PIECE_HINTS = {
     "rin",
     "sang",
     "sangs",
+    "byaṅ",
+    "gsaṅ",
     "śes",
     "śis",
     "skal",
     "sprul",
     "ye",
 }
-
 SHORT_TIB_SYLLABLES = {
     "a",
     "ba",
     "bo",
     "bya",
+    "byaṅ",
     "can",
+    "cig",
     "chos",
     "dan",
     "de",
+    "dkyil",
     "di",
     "du",
+    "gcig",
     "gi",
     "gyi",
+    "gyis",
+    "gsaṅ",
     "ka",
     "kha",
     "khyi",
     "kyi",
+    "kyis",
+    "kyaṅ",
     "la",
     "las",
+    "ldan",
+    "lhan",
     "lha",
+    "lho",
+    "lhun",
     "lo",
+    "lta",
+    "ltos",
     "ma",
     "mi",
     "na",
@@ -1146,6 +1162,7 @@ SHORT_TIB_SYLLABLES = {
     "rje",
     "rtse",
     "sa",
+    "yaṅ",
     "sems",
     "sku",
     "so",
@@ -1159,6 +1176,22 @@ SHORT_TIB_SYLLABLES = {
     "yin",
     "yul",
     "zhes",
+}
+
+# Recognition-only fallback for ASCII/Wylie-like OCR evidence. Canonical output stays LoC.
+ASCII_TIB_EVIDENCE_MAP = str.maketrans({
+    "ś": "sh",
+    "Ś": "Sh",
+    "ź": "zh",
+    "Ź": "Zh",
+    "ñ": "ny",
+    "Ñ": "Ny",
+    "ṅ": "ng",
+    "Ṅ": "Ng",
+})
+ASCII_SHORT_TIB_SYLLABLES = {token.lower().translate(ASCII_TIB_EVIDENCE_MAP) for token in SHORT_TIB_SYLLABLES}
+ASCII_TIBETAN_NAME_PIECE_HINTS = {
+    token.lower().translate(ASCII_TIB_EVIDENCE_MAP) for token in TIBETAN_NAME_PIECE_HINTS
 }
 
 DISCOVERY_GENERIC_SHORT_TARGETS = {
@@ -1366,13 +1399,18 @@ def token_is_german_like(token: str) -> bool:
 def token_has_translit_cue(token: str) -> bool:
     if not token:
         return False
-    if TRANSLIT_DIACRITIC_RE.search(token):
+    low = canonicalize_translit_token(token).lower()
+    if TRANSLIT_DIACRITIC_RE.search(low):
         return True
-    if "'" in token or "’" in token:
+    if "'" in low or "’" in low:
         return True
-    if STRONG_TRANSLIT_CLUSTER_RE.search(token):
+    if STRONG_TRANSLIT_CLUSTER_RE.search(low):
         return True
-    if token.lower() in SHORT_TIB_SYLLABLES and len(token) >= 3:
+    if low in SHORT_TIB_SYLLABLES and len(low) >= 3:
+        return True
+    if low in ASCII_SHORT_TIB_SYLLABLES and len(low) >= 3:
+        return True
+    if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
         return True
     return False
 
@@ -1399,11 +1437,15 @@ def token_has_distinctive_tibetan_signature(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
     if low in SHORT_TIB_SYLLABLES:
         return True
+    if low in ASCII_SHORT_TIB_SYLLABLES:
+        return True
     if token_has_hard_translit_marker(low):
         return True
     if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
         return True
     if TIB_MEDIAL_Y_RE.search(low):
+        return True
+    if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
         return True
     return False
 
@@ -1509,7 +1551,11 @@ def token_is_initial_i_confusable_noise(src: str, dst: str) -> bool:
         return False
     if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
         return False
-    if src.lower() in SHORT_TIB_SYLLABLES or dst.lower() in SHORT_TIB_SYLLABLES:
+    src_low = canonicalize_translit_token(src).lower()
+    dst_low = canonicalize_translit_token(dst).lower()
+    if src_low in SHORT_TIB_SYLLABLES or dst_low in SHORT_TIB_SYLLABLES:
+        return False
+    if src_low in ASCII_SHORT_TIB_SYLLABLES or dst_low in ASCII_SHORT_TIB_SYLLABLES:
         return False
     if not token_is_german_like(src):
         return False
@@ -1584,6 +1630,8 @@ def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
         return False
     if not INITIAL_I_CANON_SHAPE_RE.match(dst_low):
         return False
+    if dst_low in SHORT_TIB_SYLLABLES:
+        return True
     if not VOWEL_RE.search(dst_low):
         return False
     # Long plain titlecase I* words are usually German; keep these gated.
@@ -1595,8 +1643,6 @@ def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
     if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
         return True
     if "-" in src or "'" in src or "’" in src or "-" in dst or "'" in dst or "’" in dst:
-        return True
-    if dst_low in SHORT_TIB_SYLLABLES:
         return True
     if len(dst_low) <= 6 and (token_has_translit_cue(src) or token_has_translit_cue(dst)):
         return True
@@ -1662,6 +1708,8 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
         low = canonicalize_translit_token(piece).lower()
         if low in TIBETAN_NAME_PIECE_HINTS:
             return True
+        if low in ASCII_TIBETAN_NAME_PIECE_HINTS:
+            return True
         if len(low) < 3:
             return False
         if token_has_hard_translit_marker(low):
@@ -1669,6 +1717,8 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
         if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
             return True
         if TIBETAN_NAME_PIECE_PREFIX_RE.search(low):
+            return True
+        if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
             return True
         return False
 
@@ -2600,6 +2650,8 @@ def token_looks_like_known_citation_author(token: str) -> bool:
 def token_is_likely_tibetan_name_piece(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
     if low in TIBETAN_NAME_PIECE_HINTS:
+        return True
+    if low in ASCII_TIBETAN_NAME_PIECE_HINTS:
         return True
     if len(low) < 3:
         return False
