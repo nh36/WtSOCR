@@ -40,27 +40,27 @@ TRANSLIT_TOKEN_RE = re.compile(
 )
 TRANSLIT_CUE_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25"
-    r"\u1E43\u1E41\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ng|ny|zh|sh|lh|rg|rk|rt|rd)",
+    r"\u1E43\u1E41\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ṅ|ñ|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
 )
 TRANSLIT_DIACRITIC_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]",
     re.IGNORECASE,
 )
-STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh)", re.IGNORECASE)
+STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh)", re.IGNORECASE)
 BOUNDARY_TRANSLIT_CLUSTER_RE = re.compile(
-    r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh|rg|rk|rt|rd)",
+    r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
 )
 DISTINCTIVE_TIB_CLUSTER_RE = re.compile(
     r"(?:^|[-'’])(?:"
     r"bsk|bsg|bst|brg|brk|brt|brd|"
-    r"dng|dby|dbr|dgr|dkr|dpy|dpr|"
-    r"mth|mkh|mch|mny|"
+    r"dṅ|dby|dbr|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mñ|"
     r"rgy|rts|rky|"
-    r"sgr|sbr|sny|sng|"
-    r"rdz|gzh|"
-    r"zh|lh|ng|ny|"
+    r"sgr|sbr|sñ|sṅ|"
+    r"rdz|gź|"
+    r"ź|lh|ṅ|ñ|"
     r"kh|ph|th|dz|"
     r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
     r")",
@@ -77,7 +77,7 @@ PALATAL_NYA_ONSET_RE = re.compile(r"ñ(?=[aāiīuūeéoöüy])", re.IGNORECASE)
 TIBETAN_NYA_CLUSTER_RE = re.compile(r"(?<![a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁ-])(?:g|m|s)ñ", re.IGNORECASE)
 INITIAL_CONFUSABLE_I_RE = re.compile(r"^I(?:(?=[a-zA-Zāīūṛṝḷḹṅñṭḍṇśṣ])|(?=['’]))")
 INITIAL_I_TRANSLIT_ONSET_RE = re.compile(
-    r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|zh|sh|ch|ny|ng|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
+    r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|ź|ś|ch|ñ|ṅ|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
     re.IGNORECASE,
 )
 NOISE_RE = re.compile(r"[\d@#%^&*_=/\\|~]")
@@ -1107,24 +1107,12 @@ TIBETAN_NAME_PIECE_HINTS = {
     "rin",
     "sang",
     "sangs",
-    "shes",
-    "shis",
+    "śes",
+    "śis",
     "skal",
     "sprul",
     "ye",
 }
-TIBETAN_LOC_TO_WYLIE_MAP = str.maketrans(
-    {
-        "ś": "sh",
-        "Ś": "sh",
-        "ź": "zh",
-        "Ź": "zh",
-        "ñ": "ny",
-        "Ñ": "ny",
-        "ṅ": "ng",
-        "Ṅ": "ng",
-    }
-)
 
 SHORT_TIB_SYLLABLES = {
     "a",
@@ -1672,16 +1660,15 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
 
     def is_strong_tibetan_piece(piece: str) -> bool:
         low = canonicalize_translit_token(piece).lower()
-        low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-        if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+        if low in TIBETAN_NAME_PIECE_HINTS:
             return True
-        if len(low_wylie) < 3:
+        if len(low) < 3:
             return False
-        if token_has_hard_translit_marker(low) or token_has_hard_translit_marker(low_wylie):
+        if token_has_hard_translit_marker(low):
             return True
-        if DISTINCTIVE_TIB_CLUSTER_RE.search(low) or DISTINCTIVE_TIB_CLUSTER_RE.search(low_wylie):
+        if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
             return True
-        if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+        if TIBETAN_NAME_PIECE_PREFIX_RE.search(low):
             return True
         return False
 
@@ -2612,14 +2599,13 @@ def token_looks_like_known_citation_author(token: str) -> bool:
 
 def token_is_likely_tibetan_name_piece(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
-    low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-    if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+    if low in TIBETAN_NAME_PIECE_HINTS:
         return True
-    if len(low_wylie) < 3:
+    if len(low) < 3:
         return False
-    if token_has_distinctive_tibetan_signature(low) or token_has_distinctive_tibetan_signature(low_wylie):
+    if token_has_distinctive_tibetan_signature(low):
         return True
-    if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+    if TIBETAN_NAME_PIECE_PREFIX_RE.search(low):
         return True
     return False
 

@@ -730,5 +730,22 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["structural_rewrite_count"], 0)
 
 
+class LocCanonicalizationTests(unittest.TestCase):
+    def test_loc_name_piece_detection_is_diacritic_first(self) -> None:
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("śes"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("sangs"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("lhun"))
+
+    def test_hyphenated_initial_i_to_l_translit_accepts_loc_forms(self) -> None:
+        self.assertTrue(pem.token_is_safe_hyphenated_initial_i_to_l_translit("Rigs-Idan", "Rigs-ldan"))
+        self.assertTrue(
+            pem.token_is_safe_hyphenated_initial_i_to_l_translit("Bkra-śis-Ihun-po", "Bkra-śis-lhun-po")
+        )
+
+    def test_distinctive_loc_clusters_detected_without_wylie_shadow(self) -> None:
+        self.assertTrue(bool(pem.DISTINCTIVE_TIB_CLUSTER_RE.search("gźon")))
+        self.assertTrue(bool(pem.DISTINCTIVE_TIB_CLUSTER_RE.search("sñiṅ")))
+
+
 if __name__ == "__main__":
     unittest.main()
