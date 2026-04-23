@@ -782,6 +782,21 @@ class LocCanonicalizationTests(unittest.TestCase):
         self.assertTrue(pem.token_has_distinctive_tibetan_signature("kyaṅ"))
         self.assertTrue(pem.token_has_distinctive_tibetan_signature("byaṅ"))
 
+    def test_token_is_translit_like_recovers_ascii_loc_contexts(self) -> None:
+        self.assertTrue(pem.token_is_translit_like("byang", line_has_tibetan=False, is_entry_start=True))
+        self.assertTrue(pem.token_is_translit_like("gsang", line_has_tibetan=False, is_entry_start=True))
+        self.assertTrue(pem.token_is_translit_like("kyis", line_has_tibetan=True, is_entry_start=False))
+        self.assertTrue(pem.token_is_translit_like("gyis", line_has_tibetan=True, is_entry_start=False))
+        self.assertTrue(pem.token_is_translit_like("lhun", line_has_tibetan=False, is_entry_start=True))
+        self.assertTrue(pem.token_is_translit_like("lta", line_has_tibetan=True, is_entry_start=False))
+
+    def test_token_is_translit_like_rejects_plain_german_or_latin_words(self) -> None:
+        self.assertFalse(pem.token_is_translit_like("einen", line_has_tibetan=False, is_entry_start=True))
+        self.assertFalse(pem.token_is_translit_like("Wrightia", line_has_tibetan=False, is_entry_start=True))
+        self.assertFalse(
+            pem.token_is_translit_like("antidysenterica", line_has_tibetan=False, is_entry_start=False)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

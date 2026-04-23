@@ -6,7 +6,7 @@ usage() {
 Usage:
   run_line_anchor_full_locked.sh [out_root]
 
-Runs full-volume line-anchored heuristic OCR merge for both dictionary PDFs.
+Runs full-volume line-anchored heuristic OCR merge for the configured dictionary PDFs.
 This is the locked production profile for transliteration/Tibetan/Sanskrit cleanup.
 
 Arguments:
@@ -15,13 +15,21 @@ Arguments:
 Environment overrides:
   PDF_1="pdfs/WtS 1-34.pdf"
   PDF_2="pdfs/WtS 35-51.pdf"
+  PDF_3=""                Optional third source PDF
+  PDF_4=""                Optional fourth source PDF
   LABEL_1="WtS_1-34"
   LABEL_2="WtS_35-51"
+  LABEL_3="WtS_8-b"
+  LABEL_4="WtS_9-m"
 
   V1_START_PAGE=1         Optional resume start page for volume 1
   V1_END_PAGE=0           Optional end page for volume 1 (0 = full to PDF end)
   V2_START_PAGE=1         Optional resume start page for volume 2
   V2_END_PAGE=0           Optional end page for volume 2 (0 = full to PDF end)
+  V3_START_PAGE=1         Optional resume start page for volume 3
+  V3_END_PAGE=0           Optional end page for volume 3 (0 = full to PDF end)
+  V4_START_PAGE=1         Optional resume start page for volume 4
+  V4_END_PAGE=0           Optional end page for volume 4 (0 = full to PDF end)
 
   DPI=300
   LANG_A="deu+bod"
@@ -54,13 +62,21 @@ fi
 OUT_ROOT=${1:-"work/line_anchor_full_$(date -u +%Y%m%dT%H%M%SZ)"}
 PDF_1=${PDF_1:-"pdfs/WtS 1-34.pdf"}
 PDF_2=${PDF_2:-"pdfs/WtS 35-51.pdf"}
+PDF_3=${PDF_3:-""}
+PDF_4=${PDF_4:-""}
 LABEL_1=${LABEL_1:-"WtS_1-34"}
 LABEL_2=${LABEL_2:-"WtS_35-51"}
+LABEL_3=${LABEL_3:-"WtS_8-b"}
+LABEL_4=${LABEL_4:-"WtS_9-m"}
 
 V1_START_PAGE=${V1_START_PAGE:-1}
 V1_END_PAGE=${V1_END_PAGE:-0}
 V2_START_PAGE=${V2_START_PAGE:-1}
 V2_END_PAGE=${V2_END_PAGE:-0}
+V3_START_PAGE=${V3_START_PAGE:-1}
+V3_END_PAGE=${V3_END_PAGE:-0}
+V4_START_PAGE=${V4_START_PAGE:-1}
+V4_END_PAGE=${V4_END_PAGE:-0}
 
 DPI=${DPI:-300}
 LANG_A=${LANG_A:-"deu+bod"}
@@ -102,10 +118,24 @@ require_int_ge() {
 
 require_pdf "$PDF_1"
 require_pdf "$PDF_2"
+if [[ -n "$PDF_3" ]]; then
+  require_pdf "$PDF_3"
+fi
+if [[ -n "$PDF_4" ]]; then
+  require_pdf "$PDF_4"
+fi
 require_int_ge "V1_START_PAGE" "$V1_START_PAGE" 1
 require_int_ge "V1_END_PAGE" "$V1_END_PAGE" 0
 require_int_ge "V2_START_PAGE" "$V2_START_PAGE" 1
 require_int_ge "V2_END_PAGE" "$V2_END_PAGE" 0
+if [[ -n "$PDF_3" ]]; then
+  require_int_ge "V3_START_PAGE" "$V3_START_PAGE" 1
+  require_int_ge "V3_END_PAGE" "$V3_END_PAGE" 0
+fi
+if [[ -n "$PDF_4" ]]; then
+  require_int_ge "V4_START_PAGE" "$V4_START_PAGE" 1
+  require_int_ge "V4_END_PAGE" "$V4_END_PAGE" 0
+fi
 
 mkdir -p "$OUT_ROOT"
 
@@ -113,6 +143,12 @@ echo "[line-anchor-full] out_root=$OUT_ROOT"
 echo "[line-anchor-full] profile: lang_b=$LANG_B psm_b_lines=$PSM_B_LINES psm_b_lines_tib=$PSM_B_LINES_TIB"
 echo "[line-anchor-full] profile: crop_variants=$CROP_VARIANTS min_similarity=$MIN_SIMILARITY min_similarity_diacritic_only=$MIN_SIMILARITY_DIACRITIC_ONLY min_similarity_tibetan_anchor=$MIN_SIMILARITY_TIBETAN_ANCHOR"
 echo "[line-anchor-full] profile: line_timeout_sec=$LINE_TIMEOUT_SEC anomaly_report=$ANOMALY_REPORT dehyphenate_wrap=$DEHYPHENATE_WRAP"
+if [[ -n "$PDF_3" ]]; then
+  echo "[line-anchor-full] optional volume3 label=$LABEL_3 pdf=$PDF_3 start_page=$V3_START_PAGE end_page=$V3_END_PAGE"
+fi
+if [[ -n "$PDF_4" ]]; then
+  echo "[line-anchor-full] optional volume4 label=$LABEL_4 pdf=$PDF_4 start_page=$V4_START_PAGE end_page=$V4_END_PAGE"
+fi
 
 run_volume() {
   local pdf="$1"
@@ -164,5 +200,11 @@ run_volume() {
 
 run_volume "$PDF_1" "$LABEL_1" "$V1_START_PAGE" "$V1_END_PAGE"
 run_volume "$PDF_2" "$LABEL_2" "$V2_START_PAGE" "$V2_END_PAGE"
+if [[ -n "$PDF_3" ]]; then
+  run_volume "$PDF_3" "$LABEL_3" "$V3_START_PAGE" "$V3_END_PAGE"
+fi
+if [[ -n "$PDF_4" ]]; then
+  run_volume "$PDF_4" "$LABEL_4" "$V4_START_PAGE" "$V4_END_PAGE"
+fi
 
 echo "[line-anchor-full] complete out_root=$OUT_ROOT"

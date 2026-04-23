@@ -1371,14 +1371,24 @@ def token_is_translit_like(token: str, line_has_tibetan: bool, is_entry_start: b
         return False
     if not OCR_LATIN_TOKEN_RE.fullmatch(token):
         return False
-    if TRANSLIT_CUE_RE.search(token):
+    if token_has_hard_translit_marker(token):
         return True
-    if tok in SHORT_TIB_SYLLABLES:
+    if token_has_distinctive_tibetan_signature(token):
         return True
-    if is_entry_start and tok.islower() and len(tok) <= 14:
+    if token_has_translit_cue(token):
         return True
-    if line_has_tibetan and tok.islower() and len(tok) <= 10:
-        if not tok.endswith(GERMAN_WORD_SUFFIXES):
+    if tok in SHORT_TIB_SYLLABLES or tok in ASCII_SHORT_TIB_SYLLABLES:
+        return True
+    if token_is_likely_tibetan_name_piece(token):
+        if line_has_tibetan or is_entry_start:
+            return True
+    if token_has_boundary_translit_cluster(token):
+        if line_has_tibetan or is_entry_start:
+            return True
+    if line_has_tibetan and tok.islower():
+        if TIB_MEDIAL_Y_RE.search(tok):
+            return True
+        if tok.endswith(("is", "ang", "ung", "ing")) and token_has_translit_cue(token):
             return True
     return False
 
@@ -1442,8 +1452,6 @@ def token_has_distinctive_tibetan_signature(token: str) -> bool:
     if token_has_hard_translit_marker(low):
         return True
     if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
-        return True
-    if TIB_MEDIAL_Y_RE.search(low):
         return True
     if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
         return True

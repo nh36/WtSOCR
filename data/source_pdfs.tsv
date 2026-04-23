@@ -1,0 +1,6 @@
+label	filename	pages	size_bytes	sha256	status	note
+WtS_1-34	pdfs/WtS 1-34.pdf	1352	110232410	20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62	ingested	full main dictionary source PDF
+WtS_35-51	pdfs/WtS 35-51.pdf	1128	79764217	8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239	ingested	full main dictionary source PDF
+WtS_8-b	pdfs/WtS 8-b.pdf	585	97173325	f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263	ingested	new source PDF copied from ~/Downloads on 2026-03-20
+
+WtS_9-m	pdfs/WtS 9-m.pdf	401	71529965	7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb	ingested	new source PDF copied from ~/Downloads on 2026-04-15
