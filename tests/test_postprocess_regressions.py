@@ -548,7 +548,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
-            "rnams brgyud brgyud brgyad bzhin gnyen gnyer bsnyen snyan gnyis gnyis gnyis mnyam yin nyid "
+            "rnams brgyud brgyud brgyad bźin gñen gñer bsñen sñan gñis gñis gñis mñam yin ñid "
             "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ snaṅ saṅs gaṅ",
             corrected,
         )
@@ -558,17 +558,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("breyud", "brgyud", "explicit_user_allowlist"), reasons)
         self.assertIn(("broyud", "brgyud", "explicit_user_allowlist"), reasons)
         self.assertIn(("broyad", "brgyad", "explicit_user_allowlist"), reasons)
-        self.assertIn(("biin", "bzhin", "explicit_user_allowlist"), reasons)
-        self.assertIn(("giien", "gnyen", "explicit_user_allowlist"), reasons)
-        self.assertIn(("giier", "gnyer", "explicit_user_allowlist"), reasons)
-        self.assertIn(("bsiien", "bsnyen", "explicit_user_allowlist"), reasons)
-        self.assertIn(("siian", "snyan", "explicit_user_allowlist"), reasons)
-        self.assertIn(("giis", "gnyis", "explicit_user_allowlist"), reasons)
-        self.assertIn(("giiis", "gnyis", "explicit_user_allowlist"), reasons)
-        self.assertIn(("griis", "gnyis", "explicit_user_allowlist"), reasons)
-        self.assertIn(("miiam", "mnyam", "explicit_user_allowlist"), reasons)
+        self.assertIn(("biin", "bźin", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giien", "gñen", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giier", "gñer", "explicit_user_allowlist"), reasons)
+        self.assertIn(("bsiien", "bsñen", "explicit_user_allowlist"), reasons)
+        self.assertIn(("siian", "sñan", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giis", "gñis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("giiis", "gñis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("griis", "gñis", "explicit_user_allowlist"), reasons)
+        self.assertIn(("miiam", "mñam", "explicit_user_allowlist"), reasons)
         self.assertIn(("yiin", "yin", "explicit_user_allowlist"), reasons)
-        self.assertIn(("fiid", "nyid", "explicit_user_allowlist"), reasons)
+        self.assertIn(("fiid", "ñid", "explicit_user_allowlist"), reasons)
         self.assertIn(("kyı", "kyi", "explicit_user_allowlist"), reasons)
         self.assertIn(("kyıs", "kyis", "explicit_user_allowlist"), reasons)
         self.assertIn(("gyı", "gyi", "explicit_user_allowlist"), reasons)
@@ -605,14 +605,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
 
-    def test_boundary_safe_tibetan_l_cluster_and_bzhi_rewrites(self) -> None:
+    def test_boundary_safe_tibetan_l_cluster_and_bzi_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
             "Ita Iha Ihan Iho Itos bii bii' bii’ bii'an bii’an bii'o bii’o bii'i bii’i fooItaBar\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("lta lha lhan lho ltos bzhi bzhi' bzhi’ bzhi'an bzhi’an bzhi'o bzhi’o bzhi'i bzhi’i fooItaBar", corrected)
+        self.assertIn(
+            "lta lha lhan lho ltos bźi bźi' bźi’ bźi'an bźi’an bźi'o bźi’o bźi'i bźi’i fooItaBar",
+            corrected,
+        )
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("Ita", "lta", "explicit_case_sensitive_allowlist"), reasons)
@@ -620,15 +623,15 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Ihan", "lhan", "explicit_case_sensitive_allowlist"), reasons)
         self.assertIn(("Iho", "lho", "explicit_case_sensitive_allowlist"), reasons)
         self.assertIn(("Itos", "ltos", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii", "bzhi", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii'", "bzhi'", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii’", "bzhi’", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii'an", "bzhi'an", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii’an", "bzhi’an", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii'o", "bzhi'o", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii’o", "bzhi’o", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii'i", "bzhi'i", "explicit_case_sensitive_allowlist"), reasons)
-        self.assertIn(("bii’i", "bzhi’i", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii", "bźi", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'", "bźi'", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’", "bźi’", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'an", "bźi'an", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’an", "bźi’an", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'o", "bźi'o", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’o", "bźi’o", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'i", "bźi'i", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’i", "bźi’i", "explicit_case_sensitive_allowlist"), reasons)
 
     def test_hyphenated_i_l_fixes_keep_loc_transliteration(self) -> None:
         merged_text = (
@@ -764,10 +767,13 @@ class LocCanonicalizationTests(unittest.TestCase):
 
     def test_loc_name_piece_detection_is_diacritic_first(self) -> None:
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("śes"))
-        self.assertTrue(pem.token_is_likely_tibetan_name_piece("sangs"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("saṅs"))
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("lhun"))
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("byaṅ"))
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("gsaṅ"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("bzaṅ"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("dbaṅ"))
+        self.assertTrue(pem.token_is_likely_tibetan_name_piece("sangs"))
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("byang"))
         self.assertTrue(pem.token_is_likely_tibetan_name_piece("gsang"))
 
