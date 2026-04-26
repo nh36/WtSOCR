@@ -606,6 +606,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
 
+    def test_tibetan_phrase_allowlist_rewrites_tshul_khrims(self) -> None:
+        merged_text = (
+            "ཚུལ་ཁྲིམས་ tshul khrims\n"
+            "tsbul kbrims rnam par dag pa\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("tshul khrims rnam par dag pa", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("tsbul kbrims", "tshul khrims", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+
+    def test_tibetan_phrase_allowlist_does_not_rewrite_orphan_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "Ein Druckfehler tsbul kbrims bleibt hier unverändert.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("tsbul kbrims", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(
+            ("tsbul kbrims", "tshul khrims", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+
     def test_boundary_safe_tibetan_l_cluster_and_bzi_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"

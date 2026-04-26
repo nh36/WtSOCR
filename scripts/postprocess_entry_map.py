@@ -815,6 +815,14 @@ CITATION_PHRASE_SAFE_REWRITE_PATTERNS = (
     (re.compile(r"\bP\s+rsian-English\b"), "Persian-English", "citation_phrase_safe_map"),
     (re.compile(r"\bvice versä\b"), "vice versa", "citation_phrase_safe_map"),
 )
+TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])tsbul(?P<space>[ \t]+)kbrims(?![{LATIN_CHARS}0-9])"),
+        "tshul",
+        "khrims",
+        "tibetan_translit_phrase_allowlist",
+    ),
+)
 GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
     r"(?<![0-9A-Za-z\u00C0-\u024F€©])(?P<token>6111|1111|€111|©111|111)(?![0-9A-Za-z\u00C0-\u024F€©])"
 )
@@ -4095,6 +4103,54 @@ def line_is_german_prose_rewrite_context(
     return True
 
 
+def line_is_tibetan_translit_phrase_rewrite_context(info: "LineInfo", line_text: str) -> bool:
+    if not line_text or info.entry_id == 0:
+        return False
+    if info.zone in AUTO_FIX_ZONES:
+        return True
+    if info.has_tibetan:
+        return True
+    return len(info.translit_tokens) >= max(2, len(info.german_tokens))
+
+
+def apply_safe_tibetan_translit_phrase_rewrites(
+    line: str,
+    info: "LineInfo",
+    *,
+    page: int,
+    line_no: int,
+    change_rows: list[list[str]],
+) -> str:
+    if not line or not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return line
+
+    original_excerpt = line[:240]
+    updated = line
+    for pattern, left_dst, right_dst, reason in TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS:
+
+        def repl(match: re.Match[str]) -> str:
+            src = match.group(0)
+            dst = f"{left_dst}{match.group('space')}{right_dst}"
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    src,
+                    dst,
+                    "A",
+                    reason,
+                    "1",
+                    original_excerpt,
+                ]
+            )
+            return dst
+
+        updated = pattern.sub(repl, updated)
+    return updated
+
+
 def apply_safe_prose_and_biblio_rewrites(
     line: str,
     info: "LineInfo",
@@ -4257,6 +4313,13 @@ def apply_entry_aware_corrections(
             info = info_by_key.get((page_idx, line_idx))
             if info is not None:
                 line = apply_safe_prose_and_biblio_rewrites(
+                    line,
+                    info,
+                    page=page_idx,
+                    line_no=line_idx,
+                    change_rows=change_rows,
+                )
+                line = apply_safe_tibetan_translit_phrase_rewrites(
                     line,
                     info,
                     page=page_idx,
