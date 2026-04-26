@@ -543,13 +543,13 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "ཀོང་ koṅ\n"
             "rmams breyud broyud broyad bsnal biin giien giier bsiien siian giis giiis griis miiam yiin fiid "
-            "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı snanı sarıs garı\n"
+            "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı snanı sarıs garı Igarı\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
             "rnams brgyud brgyud brgyad bsṅal bźin gñen gñer bsñen sñan gñis gñis gñis mñam yin ñid "
-            "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ snaṅ saṅs gaṅ",
+            "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ snaṅ saṅs gaṅ lgaṅ",
             corrected,
         )
 
@@ -587,16 +587,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
         self.assertIn(("sarıs", "saṅs", "explicit_user_allowlist"), reasons)
         self.assertIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
+        self.assertIn(("Igarı", "lgaṅ", "explicit_user_allowlist"), reasons)
 
     def test_new_tibetan_allowlist_does_not_spill_into_plain_german_prose(self) -> None:
         merged_text = (
             "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
-            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı soll hier nicht automatisch korrigiert werden.\n"
+            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı oder Igarı soll hier nicht automatisch korrigiert werden.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
-            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı soll hier nicht automatisch korrigiert werden.",
+            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı oder Igarı soll hier nicht automatisch korrigiert werden.",
             corrected,
         )
 
@@ -605,6 +606,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("zıg", "zig", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
+        self.assertNotIn(("Igarı", "lgaṅ", "explicit_user_allowlist"), reasons)
 
     def test_tibetan_phrase_allowlist_rewrites_tshul_khrims(self) -> None:
         merged_text = (
@@ -682,17 +684,18 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_exact_sanskrit_overrides_for_verified_forms(self) -> None:
         merged_text = (
             "སྐད skt. Nägärjuna Pramänakirtih Päramitäsamäsa Uddänas Mülasarvästiväda "
-            "Mülasarvästi- Mahämäyürividyäräjni Astäpadikrtadhüpayoga\n"
+            "Mülasarvästi- Mahämäyürividyäräjni Astäpadikrtadhüpayoga Dhäpayoga-ratnamaälä\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
             "skt. Nāgārjuna Pramāṇakīrtiḥ Pāramitāsamāsa Uddānas Mūlasarvāstivāda "
-            "Mūlasarvāsti- Mahāmāyūrīvidyārājñī Aṣṭapadīkṛtadhūpayoga",
+            "Mūlasarvāsti- Mahāmāyūrīvidyārājñī Aṣṭapadīkṛtadhūpayoga Dhūpayogaratnamālā",
             corrected,
         )
 
         reasons = {(row["from_token"].lower(), row["to_token"].lower(), row["reason"]) for row in changes}
+        self.assertIn(("dhäpayoga-ratnamaälä", "dhūpayogaratnamālā", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("nägärjuna", "nāgārjuna", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("pramänakirtih", "pramāṇakīrtiḥ", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("päramitäsamäsa", "pāramitāsamāsa", "sanskrit_high_freq_allowlist"), reasons)

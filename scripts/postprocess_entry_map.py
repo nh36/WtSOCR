@@ -396,6 +396,7 @@ EXPLICIT_TIER_A_REWRITES = {
     "snanı": "snaṅ",
     "sarıs": "saṅs",
     "garı": "gaṅ",
+    "igarı": "lgaṅ",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -470,6 +471,7 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
     "ati$a": "atiśa",
     "mahes$vara": "maheśvara",
     "mahe$vara": "maheśvara",
+    "dhäpayoga-ratnamaälä": "dhūpayogaratnamālā",
     "nägärjuna": "nāgārjuna",
     "astäpadikrtadhüpayoga": "aṣṭapadīkṛtadhūpayoga",
     "mahämäyürividyäräjni": "mahāmāyūrīvidyārājñī",
