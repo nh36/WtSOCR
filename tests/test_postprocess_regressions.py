@@ -542,13 +542,13 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_new_exact_tibetan_allowlist_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
-            "rmams breyud broyud broyad biin giien giier bsiien siian giis giiis griis miiam yiin fiid "
+            "rmams breyud broyud broyad bsnal biin giien giier bsiien siian giis giiis griis miiam yiin fiid "
             "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı snanı sarıs garı\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
-            "rnams brgyud brgyud brgyad bźin gñen gñer bsñen sñan gñis gñis gñis mñam yin ñid "
+            "rnams brgyud brgyud brgyad bsṅal bźin gñen gñer bsñen sñan gñis gñis gñis mñam yin ñid "
             "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ snaṅ saṅs gaṅ",
             corrected,
         )
@@ -558,6 +558,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("breyud", "brgyud", "explicit_user_allowlist"), reasons)
         self.assertIn(("broyud", "brgyud", "explicit_user_allowlist"), reasons)
         self.assertIn(("broyad", "brgyad", "explicit_user_allowlist"), reasons)
+        self.assertIn(("bsnal", "bsṅal", "explicit_user_allowlist"), reasons)
         self.assertIn(("biin", "bźin", "explicit_user_allowlist"), reasons)
         self.assertIn(("giien", "gñen", "explicit_user_allowlist"), reasons)
         self.assertIn(("giier", "gñer", "explicit_user_allowlist"), reasons)

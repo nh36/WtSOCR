@@ -367,6 +367,7 @@ EXPLICIT_TIER_A_REWRITES = {
     "breyud": "brgyud",
     "broyud": "brgyud",
     "broyad": "brgyad",
+    "bsnal": "bsṅal",
     "biin": "bźin",
     "giien": "gñen",
     "giier": "gñer",
