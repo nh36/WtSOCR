@@ -543,13 +543,13 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "ཀོང་ koṅ\n"
             "rmams breyud broyud broyad biin giien giier bsiien siian giis giiis griis miiam yiin fiid "
-            "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı\n"
+            "kyı kyıs gyı gyıs yın cıg gcıg zıg sıg dkyıl kyanı yanı byanı gsarı snanı sarıs garı\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
             "rnams brgyud brgyud brgyad bzhin gnyen gnyer bsnyen snyan gnyis gnyis gnyis mnyam yin nyid "
-            "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ",
+            "kyi kyis gyi gyis yin cig gcig zig sig dkyil kyaṅ yaṅ byaṅ gsaṅ snaṅ saṅs gaṅ",
             corrected,
         )
 
@@ -583,31 +583,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("yanı", "yaṅ", "explicit_user_allowlist"), reasons)
         self.assertIn(("byanı", "byaṅ", "explicit_user_allowlist"), reasons)
         self.assertIn(("gsarı", "gsaṅ", "explicit_user_allowlist"), reasons)
+        self.assertIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
+        self.assertIn(("sarıs", "saṅs", "explicit_user_allowlist"), reasons)
+        self.assertIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
 
     def test_new_tibetan_allowlist_does_not_spill_into_plain_german_prose(self) -> None:
         merged_text = (
             "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
-            "Ein Druckfehler wie kyanı oder yani oder zıg soll hier nicht automatisch korrigiert werden.\n"
+            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı soll hier nicht automatisch korrigiert werden.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
-            "Ein Druckfehler wie kyanı oder yani oder zıg soll hier nicht automatisch korrigiert werden.",
+            "Ein Druckfehler wie kyanı oder yani oder zıg oder snanı oder garı soll hier nicht automatisch korrigiert werden.",
             corrected,
         )
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertNotIn(("kyanı", "kyaṅ", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("zıg", "zig", "explicit_user_allowlist"), reasons)
+        self.assertNotIn(("snanı", "snaṅ", "explicit_user_allowlist"), reasons)
+        self.assertNotIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
 
     def test_boundary_safe_tibetan_l_cluster_and_bzhi_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
-            "Ita Iha Ihan Iho Itos bii bii' bii’ fooItaBar\n"
+            "Ita Iha Ihan Iho Itos bii bii' bii’ bii'an bii’an bii'o bii’o bii'i bii’i fooItaBar\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("lta lha lhan lho ltos bzhi bzhi' bzhi’ fooItaBar", corrected)
+        self.assertIn("lta lha lhan lho ltos bzhi bzhi' bzhi’ bzhi'an bzhi’an bzhi'o bzhi’o bzhi'i bzhi’i fooItaBar", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("Ita", "lta", "explicit_case_sensitive_allowlist"), reasons)
@@ -618,6 +623,26 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("bii", "bzhi", "explicit_case_sensitive_allowlist"), reasons)
         self.assertIn(("bii'", "bzhi'", "explicit_case_sensitive_allowlist"), reasons)
         self.assertIn(("bii’", "bzhi’", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'an", "bzhi'an", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’an", "bzhi’an", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'o", "bzhi'o", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’o", "bzhi’o", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii'i", "bzhi'i", "explicit_case_sensitive_allowlist"), reasons)
+        self.assertIn(("bii’i", "bzhi’i", "explicit_case_sensitive_allowlist"), reasons)
+
+    def test_hyphenated_i_l_fixes_keep_loc_transliteration(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Brag-Iha dGra-Iha'i Bkra-śis-Ihun-po foo-IhaBar\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Brag-lha dGra-lha'i Bkra-śis-lhun-po foo-IhaBar", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Brag-Iha", "Brag-lha", "confusable_hyphenated_I_to_l_translit"), reasons)
+        self.assertIn(("dGra-Iha'i", "dGra-lha'i", "confusable_hyphenated_I_to_l_translit"), reasons)
+        self.assertIn(("Bkra-śis-Ihun-po", "Bkra-śis-lhun-po", "confusable_hyphenated_I_to_l_translit"), reasons)
         self.assertNotIn(("fooItaBar", "fooltaBar", "explicit_case_sensitive_allowlist"), reasons)
 
     def test_exact_sanskrit_overrides_for_verified_forms(self) -> None:

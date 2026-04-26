@@ -392,6 +392,9 @@ EXPLICIT_TIER_A_REWRITES = {
     "yanı": "yaṅ",
     "byanı": "byaṅ",
     "gsarı": "gsaṅ",
+    "snanı": "snaṅ",
+    "sarıs": "saṅs",
+    "garı": "gaṅ",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -413,6 +416,12 @@ EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES = {
     "bii": "bzhi",
     "bii'": "bzhi'",
     "bii’": "bzhi’",
+    "bii'an": "bzhi'an",
+    "bii’an": "bzhi’an",
+    "bii'o": "bzhi'o",
+    "bii’o": "bzhi’o",
+    "bii'i": "bzhi'i",
+    "bii’i": "bzhi’i",
 }
 
 # High-confidence OCR confusable forms where "$" should be acute-s.
@@ -1079,6 +1088,7 @@ CITATION_AUTHOR_CANON_BY_KEY = {
 
 TIBETAN_NAME_PIECE_HINTS = {
     "bkra",
+    "brag",
     "bsod",
     "bstan",
     "bzang",
