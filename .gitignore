@@ -4,6 +4,7 @@
 # OCR/data artifacts
 work/
 pdfs/
+.cache/
 **/__pycache__/
 *.pyc
 *.hocr
