@@ -7,7 +7,12 @@ from scripts import postprocess_entry_map as pem
 
 
 class PostprocessRegressionTests(unittest.TestCase):
-    def run_postprocess_fixture(self, merged_text: str) -> tuple[dict[str, object], str, list[dict[str, str]]]:
+    def run_postprocess_fixture(
+        self,
+        merged_text: str,
+        *,
+        google_vision: bool = False,
+    ) -> tuple[dict[str, object], str, list[dict[str, str]]]:
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
             merged = root / "fixture_merged.txt"
@@ -23,11 +28,67 @@ class PostprocessRegressionTests(unittest.TestCase):
                 trusted_min_freq=2,
                 discover_max_edit=2,
                 discover_max_rare_freq=3,
+                google_vision=google_vision,
             )
             corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
             with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
                 changes = list(csv.DictReader(f, delimiter="\t"))
             return result, corrected, changes
+
+    def test_google_vision_loc_confusables_tibetan_context(self) -> None:
+        merged_text = "བྱང་ byaň\nབཟང་ bzań po žes šes rab\n"
+        result, corrected, changes = self.run_postprocess_fixture(merged_text, google_vision=True)
+
+        self.assertIn("byaṅ", corrected)
+        self.assertIn("bzaṅ po źes śes rab", corrected)
+        self.assertEqual(result["google_vision_rewrites"], 4)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("byaň", "byaṅ", "google_vision_loc_confusable"), reasons)
+        self.assertIn(("bzań", "bzaṅ", "google_vision_loc_confusable"), reasons)
+        self.assertIn(("žes", "źes", "google_vision_loc_confusable"), reasons)
+        self.assertIn(("šes", "śes", "google_vision_loc_confusable"), reasons)
+
+    def test_google_vision_loc_confusables_protects_slavic_bibliography(self) -> None:
+        merged_text = "བྱང་ byaň\nŠčerbackoj 1904: Nyāyabindu.\n"
+        _, corrected, _ = self.run_postprocess_fixture(merged_text, google_vision=True)
+
+        self.assertIn("byaṅ", corrected)
+        self.assertIn("Ščerbackoj", corrected)
+        self.assertNotIn("Śčerbackoj", corrected)
+
+    def test_google_vision_loc_confusables_raw_vision_line_without_entry_context(self) -> None:
+        merged_text = "Kah thog rig 'dzin Tshe dbaň nor bu'i žabs kyi rnam thar\n"
+        result, corrected, changes = self.run_postprocess_fixture(merged_text, google_vision=True)
+
+        self.assertIn("dbaṅ", corrected)
+        self.assertIn("źabs", corrected)
+        self.assertEqual(result["google_vision_rewrites"], 2)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dbaň", "dbaṅ", "google_vision_loc_confusable"), reasons)
+        self.assertIn(("žabs", "źabs", "google_vision_loc_confusable"), reasons)
+
+    def test_google_vision_page_markers_are_normalized(self) -> None:
+        merged_text = (
+            "=== page 001 ===\n"
+            "བྱང་ byaň\n"
+            "=== page 002 ===\n"
+            "གསང་ gsań\n"
+        )
+        result, corrected, _ = self.run_postprocess_fixture(merged_text, google_vision=True)
+
+        self.assertIn("\f", corrected)
+        self.assertIn("byaṅ", corrected)
+        self.assertIn("gsaṅ", corrected)
+        self.assertEqual(result["google_vision_rewrites"], 2)
+
+    def test_google_vision_nasal_confusables_keep_palatal_nasal_clusters(self) -> None:
+        merged_text = "mňam pa sniň po gňis mňon dňul\n"
+        result, corrected, _ = self.run_postprocess_fixture(merged_text, google_vision=True)
+
+        self.assertIn("mñam pa sñiṅ po gñis mṅon dṅul", corrected)
+        self.assertEqual(result["google_vision_rewrites"], 5)
 
     def test_high_risk_token_regressions(self) -> None:
         merged_text = (

@@ -17,7 +17,8 @@ LATIN_CHARS = (
     r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
     r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC"
-    r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3"
+    r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\u0148\u0147\u01F9\u01F8\u0144\u0143"
+    r"\u017E\u017D\u0161\u0160"
 )
 OCR_CONFUSABLE_TOKEN_CHARS = r"\$"
 TRANSLIT_CHARS = (
@@ -25,6 +26,7 @@ TRANSLIT_CHARS = (
     r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
     r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\$"
+    r"\u0148\u0147\u01F9\u01F8\u0144\u0143\u017E\u017D\u0161\u0160"
 )
 LATIN_TOKEN_RE = re.compile(
     rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*)*"
@@ -40,9 +42,27 @@ TRANSLIT_TOKEN_RE = re.compile(
 )
 TRANSLIT_CUE_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25"
-    r"\u1E43\u1E41\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ṅ|ñ|ź|ś|lh|rg|rk|rt|rd)",
+    r"\u1E43\u1E41\u0148\u01F9\u0144\u017E\u0161\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ṅ|ñ|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
 )
+GOOGLE_VISION_LOC_CONFUSABLE_CHARS = "\u0148\u0147\u01F9\u01F8\u0144\u0143\u017E\u017D\u0161\u0160"
+GOOGLE_VISION_LOC_CONFUSABLE_RE = re.compile(f"[{GOOGLE_VISION_LOC_CONFUSABLE_CHARS}]")
+GOOGLE_VISION_NASAL_CONFUSABLES = {"ň", "ǹ", "ń"}
+GOOGLE_VISION_NASAL_CONFUSABLES_UPPER = {"Ň", "Ǹ", "Ń"}
+GOOGLE_VISION_NON_NASAL_CONFUSABLE_MAP = str.maketrans(
+    {
+        "ž": "ź",
+        "Ž": "Ź",
+        "š": "ś",
+        "Š": "Ś",
+    }
+)
+GOOGLE_VISION_LOC_POST_TOKEN_FIXES = {
+    "sniṅ": "sñiṅ",
+    "sniṅs": "sñiṅs",
+}
+GOOGLE_VISION_PAGE_MARKER_RE = re.compile(r"^\s*===\s*page\s+\d+\s*===\s*$", re.IGNORECASE)
+GOOGLE_VISION_PROTECTED_SPAN_RE = re.compile(r"[Šš]č[^\s,.;:)\]]*")
 TRANSLIT_DIACRITIC_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]",
     re.IGNORECASE,
@@ -3035,6 +3055,34 @@ def page_lines_to_text(page_lines: list[list[str]]) -> str:
     return "\f".join("\n".join(lines) for lines in page_lines)
 
 
+def normalize_google_vision_page_markers(text: str) -> str:
+    """Convert Google Vision page marker lines into the form feeds used downstream."""
+    if "\f" in text:
+        return text
+    pages: list[str] = []
+    preamble: list[str] = []
+    current: list[str] = []
+    saw_marker = False
+    for line in text.splitlines():
+        if GOOGLE_VISION_PAGE_MARKER_RE.match(line):
+            if saw_marker:
+                pages.append("\n".join(current).strip("\n"))
+            else:
+                pre = "\n".join(preamble).strip("\n")
+                if pre:
+                    pages.append(pre)
+            saw_marker = True
+            current = []
+        elif saw_marker:
+            current.append(line)
+        else:
+            preamble.append(line)
+    if not saw_marker:
+        return text
+    pages.append("\n".join(current).strip("\n"))
+    return "\f".join(pages).strip("\n")
+
+
 def line_has_unclosed_german_quote(line_text: str) -> bool:
     if "„" not in line_text:
         return False
@@ -4291,6 +4339,132 @@ def apply_safe_prose_and_biblio_rewrites(
         return dst
 
     return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.sub(repl_numeric, updated)
+
+
+def span_overlaps_any(start: int, end: int, spans: list[tuple[int, int]]) -> bool:
+    return any(start < span_end and end > span_start for span_start, span_end in spans)
+
+
+def google_vision_protected_spans(line: str) -> list[tuple[int, int]]:
+    return [m.span() for m in GOOGLE_VISION_PROTECTED_SPAN_RE.finditer(line)]
+
+
+def google_vision_nasal_is_palatal(tok: str, index: int) -> bool:
+    """Google Vision often prints old-LoC ñ/ṅ as ň/ń/ǹ; choose ñ only in tight palatal clusters."""
+
+    lower = tok.lower()
+    before = lower[:index]
+    after = lower[index + 1 :]
+    return (
+        (before.endswith("m") and after.startswith("am"))
+        or (before.endswith("s") and (after.startswith("am") or after.startswith("i")))
+        or (before.endswith("g") and (after.startswith("is") or after.startswith("en") or after.startswith("er")))
+        or (before.endswith("br") and after.startswith("an"))
+        or (before.endswith("bs") and after.startswith("en"))
+    )
+
+
+def rewrite_google_vision_loc_confusables(tok: str) -> str:
+    chars: list[str] = []
+    for index, ch in enumerate(tok):
+        if ch in GOOGLE_VISION_NASAL_CONFUSABLES:
+            chars.append("ñ" if google_vision_nasal_is_palatal(tok, index) else "ṅ")
+        elif ch in GOOGLE_VISION_NASAL_CONFUSABLES_UPPER:
+            chars.append("Ñ" if google_vision_nasal_is_palatal(tok, index) else "Ṅ")
+        else:
+            chars.append(ch.translate(GOOGLE_VISION_NON_NASAL_CONFUSABLE_MAP))
+    rewritten = "".join(chars)
+    fixed = GOOGLE_VISION_LOC_POST_TOKEN_FIXES.get(rewritten)
+    if fixed is not None:
+        return fixed
+    lower_fixed = GOOGLE_VISION_LOC_POST_TOKEN_FIXES.get(rewritten.lower())
+    if lower_fixed is not None and rewritten[:1].isupper():
+        return lower_fixed[:1].upper() + lower_fixed[1:]
+    return rewritten
+
+
+def rewrite_google_vision_loc_token(tok: str) -> str | None:
+    if not GOOGLE_VISION_LOC_CONFUSABLE_RE.search(tok):
+        return None
+    dst = rewrite_google_vision_loc_confusables(tok)
+    if dst == tok:
+        return None
+    if not (
+        token_has_hard_translit_marker(dst)
+        or token_has_translit_cue(dst)
+        or DISTINCTIVE_TIB_CLUSTER_RE.search(dst)
+        or BOUNDARY_TRANSLIT_CLUSTER_RE.search(dst)
+    ):
+        return None
+    return dst
+
+
+def line_is_google_vision_loc_rewrite_context(info: LineInfo | None, line: str) -> bool:
+    if not line or not GOOGLE_VISION_LOC_CONFUSABLE_RE.search(line):
+        return False
+    if info is not None and line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return True
+    protected = google_vision_protected_spans(line)
+    for m in OCR_LATIN_TOKEN_RE.finditer(line):
+        if span_overlaps_any(m.start(), m.end(), protected):
+            continue
+        if rewrite_google_vision_loc_token(m.group(0)) is not None:
+            return True
+    return False
+
+
+def google_vision_loc_change_row_context(info: LineInfo | None, line: str) -> tuple[str, str]:
+    if info is None:
+        return "0", "google_vision_preclean"
+    if not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return str(info.entry_id), "google_vision_preclean"
+    return str(info.entry_id), info.zone
+
+
+def apply_google_vision_loc_preclean(
+    page_lines: list[list[str]],
+    line_infos: list[LineInfo],
+) -> tuple[str, list[list[str]], int]:
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    change_rows: list[list[str]] = []
+    cleaned_pages: list[list[str]] = []
+    for page_idx, lines in enumerate(page_lines, start=1):
+        corrected_lines: list[str] = []
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            if not line_is_google_vision_loc_rewrite_context(info, line):
+                corrected_lines.append(line)
+                continue
+            protected = google_vision_protected_spans(line)
+            original_excerpt = line[:240]
+            entry_id, zone = google_vision_loc_change_row_context(info, line)
+
+            def repl_token(m: re.Match[str]) -> str:
+                if span_overlaps_any(m.start(), m.end(), protected):
+                    return m.group(0)
+                tok = m.group(0)
+                dst = rewrite_google_vision_loc_token(tok)
+                if dst is None or dst == tok:
+                    return tok
+                change_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        entry_id,
+                        zone,
+                        tok,
+                        dst,
+                        "A",
+                        "google_vision_loc_confusable",
+                        "1",
+                        original_excerpt,
+                    ]
+                )
+                return dst
+
+            corrected_lines.append(OCR_LATIN_TOKEN_RE.sub(repl_token, line))
+        cleaned_pages.append(corrected_lines)
+    return page_lines_to_text(cleaned_pages), change_rows, len(change_rows)
 
 
 def apply_entry_aware_corrections(
@@ -5653,16 +5827,28 @@ def run_one(
     trusted_min_freq: int,
     discover_max_edit: int,
     discover_max_rare_freq: int,
+    google_vision: bool = False,
 ) -> dict[str, object]:
     text = merged.read_text(encoding="utf-8", errors="replace")
+    if google_vision:
+        text = normalize_google_vision_page_markers(text)
     audit_by_line = load_audit(audit)
     entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
+    google_vision_change_rows: list[list[str]] = []
+    google_vision_rewrite_count = 0
     text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
         page_lines,
         line_infos,
     )
     if structural_rewrite_count:
         entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
+    if google_vision:
+        text, google_vision_change_rows, google_vision_rewrite_count = apply_google_vision_loc_preclean(
+            page_lines,
+            line_infos,
+        )
+        if google_vision_rewrite_count:
+            entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
     headword_memory, entry_memory = build_entry_memory(entries, line_infos)
     trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
     discovered, discovered_rows = discover_common_errors(
@@ -5679,7 +5865,7 @@ def run_one(
         trusted_lexicon=trusted_lexicon,
         discovered=discovered,
     )
-    change_rows = structural_change_rows + change_rows
+    change_rows = structural_change_rows + google_vision_change_rows + change_rows
     corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
         apply_citation_name_normalization(
             corrected_text=corrected_text,
@@ -5837,6 +6023,8 @@ def run_one(
     summary = {
         **summary,
         "structural_rewrite_count": structural_rewrite_count,
+        "google_vision_mode": google_vision,
+        "google_vision_rewrites": google_vision_rewrite_count,
         "trusted_lexicon_size": len(trusted_lexicon),
         "discovered_patterns": len(discovered_rows),
         "tier_a_applied": len(change_rows),
@@ -5903,6 +6091,11 @@ def main() -> int:
         default=6,
         help="Skip discovery for high-frequency tokens without validator issues.",
     )
+    ap.add_argument(
+        "--google-vision",
+        action="store_true",
+        help="Preclean Google Vision page markers and LoC diacritic confusions before normal postprocess.",
+    )
     args = ap.parse_args()
 
     merged = Path(args.merged)
@@ -5919,6 +6112,7 @@ def main() -> int:
         trusted_min_freq=args.trusted_min_freq,
         discover_max_edit=args.discover_max_edit,
         discover_max_rare_freq=args.discover_max_rare_freq,
+        google_vision=args.google_vision,
     )
     print(f"label={result['label']}")
     print(f"merged={result['merged']}")
@@ -5929,6 +6123,8 @@ def main() -> int:
     print(f"validator_issues={result['validator_issues']}")
     print(f"trusted_lexicon_size={result['trusted_lexicon_size']}")
     print(f"discovered_patterns={result['discovered_patterns']}")
+    print(f"google_vision_mode={result['google_vision_mode']}")
+    print(f"google_vision_rewrites={result['google_vision_rewrites']}")
     print(f"tier_a_applied={result['tier_a_applied']}")
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
     print(f"citation_name_families={result['citation_name_families']}")
