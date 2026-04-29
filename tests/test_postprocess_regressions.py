@@ -699,6 +699,36 @@ class PostprocessRegressionTests(unittest.TestCase):
             reasons,
         )
 
+    def test_tibetan_phrase_allowlist_rewrites_dang_ldan_pa(self) -> None:
+        merged_text = (
+            "དང་ལྡན་པ་ daṅ ldan pa\n"
+            "chos dan ldan pa yin no\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("chos daṅ ldan pa yin no", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("dan ldan pa", "daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+
+    def test_tibetan_phrase_allowlist_does_not_rewrite_dang_ldan_pa_in_plain_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "Ein Druckfehler dan ldan pa bleibt hier unverändert.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("dan ldan pa", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(
+            ("dan ldan pa", "daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+
     def test_tibetan_dang_phrase_override_rewrites_curated_phrase(self) -> None:
         merged_text = (
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can\n"
@@ -791,7 +821,14 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("དང་པོ་ daṅ po", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("dan", "daṅ", "tibetan_dang_witness_rewrite"), reasons)
+        self.assertIn(
+            ("dan ldan pa", "daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+        self.assertIn(
+            ("དང་པོ་ dan po", "དང་པོ་ daṅ po", "tibetan_dang_phrase_override"),
+            reasons,
+        )
 
     def test_tibetan_dang_witness_does_not_touch_apostrophe_prefixed_dan(self) -> None:
         merged_text = "དང་ 'dan gsar\n"

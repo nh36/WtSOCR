@@ -845,6 +845,13 @@ TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
         "tibetan_translit_phrase_allowlist",
     ),
 )
+TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS = (
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pa(?![{LATIN_CHARS}0-9])"),
+        "daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+)
 TIBETAN_DANG_WITNESS_RE = re.compile(r"(?:^|[\s\u0F0B-\u0F14])(?:དང་|འདང་)")
 TIBETAN_DAN_TOKEN_RE = re.compile(rf"(?<!['’{LATIN_CHARS}0-9])dan(?![{LATIN_CHARS}0-9])")
 GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
@@ -4231,6 +4238,28 @@ def apply_safe_tibetan_translit_phrase_rewrites(
             return dst
 
         updated = pattern.sub(repl, updated)
+
+    for pattern, replacement, reason in TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS:
+
+        def repl_direct(match: re.Match[str]) -> str:
+            src = match.group(0)
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    src,
+                    replacement,
+                    "A",
+                    reason,
+                    "1",
+                    original_excerpt,
+                ]
+            )
+            return replacement
+
+        updated = pattern.sub(repl_direct, updated)
 
     for from_phrase, to_phrase in TIBETAN_DANG_PHRASE_OVERRIDES:
         occurrences = updated.count(from_phrase)
