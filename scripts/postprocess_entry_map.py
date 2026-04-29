@@ -845,6 +845,8 @@ TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
         "tibetan_translit_phrase_allowlist",
     ),
 )
+TIBETAN_DANG_WITNESS_RE = re.compile(r"(?:^|[\s\u0F0B-\u0F14])(?:དང་|འདང་)")
+TIBETAN_DAN_TOKEN_RE = re.compile(rf"(?<!['’{LATIN_CHARS}0-9])dan(?![{LATIN_CHARS}0-9])")
 GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
     r"(?<![0-9A-Za-z\u00C0-\u024F€©])(?P<token>6111|1111|€111|©111|111)(?![0-9A-Za-z\u00C0-\u024F€©])"
 )
@@ -852,6 +854,10 @@ GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
 
 def line_has_german_numeric_function_word(line_text: str) -> bool:
     return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.search(line_text) is not None
+
+
+def line_has_tibetan_dang_witness(line_text: str) -> bool:
+    return TIBETAN_DANG_WITNESS_RE.search(line_text) is not None
 
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
@@ -4198,6 +4204,29 @@ def apply_safe_tibetan_translit_phrase_rewrites(
             return dst
 
         updated = pattern.sub(repl, updated)
+
+    if line_has_tibetan_dang_witness(updated):
+
+        def dang_repl(match: re.Match[str]) -> str:
+            src = match.group(0)
+            dst = "daṅ"
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    src,
+                    dst,
+                    "A",
+                    "tibetan_dang_witness_rewrite",
+                    "1",
+                    original_excerpt,
+                ]
+            )
+            return dst
+
+        updated = TIBETAN_DAN_TOKEN_RE.sub(dang_repl, updated)
     return updated
 
 

@@ -742,6 +742,44 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Bkra-śis-Ihun-po", "Bkra-śis-lhun-po", "confusable_hyphenated_I_to_l_translit"), reasons)
         self.assertNotIn(("fooItaBar", "fooltaBar", "explicit_case_sensitive_allowlist"), reasons)
 
+    def test_tibetan_dang_witness_rewrites_latin_dan(self) -> None:
+        merged_text = (
+            "ཆུ་དང་ལྡན་པ་ chu dan ldan pa\n"
+            "དང་པོ་ dan po\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("ཆུ་དང་ལྡན་པ་ chu daṅ ldan pa", corrected)
+        self.assertIn("དང་པོ་ daṅ po", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dan", "daṅ", "tibetan_dang_witness_rewrite"), reasons)
+
+    def test_tibetan_dang_witness_does_not_touch_apostrophe_prefixed_dan(self) -> None:
+        merged_text = "དང་ 'dan gsar\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("དང་ 'dan gsar", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("'dan", "'daṅ", "tibetan_dang_witness_rewrite"), reasons)
+
+    def test_tibetan_headword_dang_witness_rewrites_latin_dan(self) -> None:
+        merged_text = "འདང་ dan \\Vldan.\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("འདང་ daṅ \\Vldan.", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dan", "daṅ", "tibetan_dang_witness_rewrite"), reasons)
+
+    def test_tibetan_dang_witness_does_not_fire_without_tibetan(self) -> None:
+        merged_text = "dan po gsal gi don\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("dan po gsal gi don", corrected)
+        self.assertNotIn("daṅ po", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("dan", "daṅ", "tibetan_dang_witness_rewrite"), reasons)
+
     def test_exact_sanskrit_overrides_for_verified_forms(self) -> None:
         merged_text = (
             "སྐད skt. Nägärjuna Pramänakirtih Päramitäsamäsa Uddänas Mülasarvästiväda "
