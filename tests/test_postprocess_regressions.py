@@ -699,6 +699,44 @@ class PostprocessRegressionTests(unittest.TestCase):
             reasons,
         )
 
+    def test_tibetan_dang_phrase_override_rewrites_curated_phrase(self) -> None:
+        merged_text = (
+            "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can\n"
+            "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("kun snan daṅ pa can, auch kun", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            (
+                "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun",
+                "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can, auch kun",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+
+    def test_tibetan_dang_phrase_override_does_not_rewrite_plain_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "kun snan dan pa can, auch kun\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("kun snan dan pa can, auch kun", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(
+            (
+                "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun",
+                "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can, auch kun",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+
     def test_boundary_safe_tibetan_l_cluster_and_bzi_rewrites(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
@@ -769,7 +807,15 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertIn("འདང་ daṅ \\Vldan.", corrected)
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("dan", "daṅ", "tibetan_dang_witness_rewrite"), reasons)
+        self.assertTrue(
+            ("dan", "daṅ", "tibetan_dang_witness_rewrite") in reasons
+            or (
+                "འདང་ dan \\Vldan.",
+                "འདང་ daṅ \\Vldan.",
+                "tibetan_dang_phrase_override",
+            )
+            in reasons
+        )
 
     def test_tibetan_dang_witness_does_not_fire_without_tibetan(self) -> None:
         merged_text = "dan po gsal gi don\n"

@@ -915,6 +915,9 @@ CITATION_NAME_STOPWORDS = {
 }
 
 SIGLA_REGISTRY_PATH = Path(__file__).resolve().parents[1] / "data" / "sigla_registry.tsv"
+TIBETAN_DANG_PHRASE_OVERRIDES_PATH = (
+    Path(__file__).resolve().parents[1] / "data" / "tibetan_dang_phrase_overrides.tsv"
+)
 
 
 def load_sigla_registry(path: Path) -> tuple[set[str], dict[str, str]]:
@@ -941,6 +944,27 @@ def load_sigla_registry(path: Path) -> tuple[set[str], dict[str, str]]:
                     continue
                 confusable_map[variant.casefold()] = canon
     return canonical, confusable_map
+
+
+def load_tibetan_dang_phrase_overrides(path: Path) -> list[tuple[str, str]]:
+    overrides: list[tuple[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    if not path.exists():
+        return overrides
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            from_phrase = (row.get("from_phrase") or "").strip()
+            to_phrase = (row.get("to_phrase") or "").strip()
+            if not from_phrase or not to_phrase or from_phrase == to_phrase:
+                continue
+            pair = (from_phrase, to_phrase)
+            if pair in seen:
+                continue
+            seen.add(pair)
+            overrides.append(pair)
+    overrides.sort(key=lambda pair: len(pair[0]), reverse=True)
+    return overrides
 
 # Canonical source-text sigla found in abbreviation/citation sections.
 # Keep this list narrow and explicit to avoid affecting normal transliteration.
@@ -1075,6 +1099,9 @@ CITATION_SIGLUM_STANDALONE_ALLOWLIST = {
 }
 
 _SIGLA_REGISTRY_CANONICAL, _SIGLA_REGISTRY_CONFUSABLE_MAP = load_sigla_registry(SIGLA_REGISTRY_PATH)
+TIBETAN_DANG_PHRASE_OVERRIDES = load_tibetan_dang_phrase_overrides(
+    TIBETAN_DANG_PHRASE_OVERRIDES_PATH
+)
 CITATION_SIGLUM_CANONICAL = set(CITATION_SIGLUM_CANONICAL_FALLBACK)
 CITATION_SIGLUM_CANONICAL.update(_SIGLA_REGISTRY_CANONICAL)
 CITATION_SIGLUM_CONFUSABLE_MAP = dict(CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK)
@@ -4204,6 +4231,27 @@ def apply_safe_tibetan_translit_phrase_rewrites(
             return dst
 
         updated = pattern.sub(repl, updated)
+
+    for from_phrase, to_phrase in TIBETAN_DANG_PHRASE_OVERRIDES:
+        occurrences = updated.count(from_phrase)
+        if not occurrences:
+            continue
+        updated = updated.replace(from_phrase, to_phrase)
+        for _ in range(occurrences):
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    from_phrase,
+                    to_phrase,
+                    "A",
+                    "tibetan_dang_phrase_override",
+                    "1",
+                    original_excerpt,
+                ]
+            )
 
     if line_has_tibetan_dang_witness(updated):
 
