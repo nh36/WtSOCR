@@ -847,6 +847,26 @@ TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
 )
 TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS = (
     (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])skal ba dan ldan pa"),
+        "skal ba daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])stobs dan ldan pa"),
+        "stobs daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])chos dan ldan pa"),
+        "chos daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dbaṅ dan ldan pa"),
+        "dbaṅ daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
         re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pa(?![{LATIN_CHARS}0-9])"),
         "daṅ ldan pa",
         "tibetan_translit_phrase_allowlist",
@@ -4203,6 +4223,16 @@ def line_is_tibetan_translit_phrase_rewrite_context(info: "LineInfo", line_text:
     return len(info.translit_tokens) >= max(2, len(info.german_tokens))
 
 
+def line_is_tibetan_direct_phrase_rewrite_context(info: "LineInfo", line_text: str) -> bool:
+    if not line_text or info.entry_id == 0:
+        return False
+    if info.zone in AUTO_FIX_ZONES:
+        return True
+    if info.has_tibetan:
+        return True
+    return bool(info.translit_tokens)
+
+
 def apply_safe_tibetan_translit_phrase_rewrites(
     line: str,
     info: "LineInfo",
@@ -4211,11 +4241,37 @@ def apply_safe_tibetan_translit_phrase_rewrites(
     line_no: int,
     change_rows: list[list[str]],
 ) -> str:
-    if not line or not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+    if not line:
         return line
 
     original_excerpt = line[:240]
     updated = line
+    if line_is_tibetan_direct_phrase_rewrite_context(info, line):
+        for pattern, replacement, reason in TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS:
+
+            def repl_direct(match: re.Match[str]) -> str:
+                src = match.group(0)
+                change_rows.append(
+                    [
+                        str(page),
+                        str(line_no),
+                        str(info.entry_id),
+                        info.zone,
+                        src,
+                        replacement,
+                        "A",
+                        reason,
+                        "1",
+                        original_excerpt,
+                    ]
+                )
+                return replacement
+
+            updated = pattern.sub(repl_direct, updated)
+
+    if not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return updated
+
     for pattern, left_dst, right_dst, reason in TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS:
 
         def repl(match: re.Match[str]) -> str:
@@ -4238,28 +4294,6 @@ def apply_safe_tibetan_translit_phrase_rewrites(
             return dst
 
         updated = pattern.sub(repl, updated)
-
-    for pattern, replacement, reason in TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS:
-
-        def repl_direct(match: re.Match[str]) -> str:
-            src = match.group(0)
-            change_rows.append(
-                [
-                    str(page),
-                    str(line_no),
-                    str(info.entry_id),
-                    info.zone,
-                    src,
-                    replacement,
-                    "A",
-                    reason,
-                    "1",
-                    original_excerpt,
-                ]
-            )
-            return replacement
-
-        updated = pattern.sub(repl_direct, updated)
 
     for from_phrase, to_phrase in TIBETAN_DANG_PHRASE_OVERRIDES:
         occurrences = updated.count(from_phrase)

@@ -702,11 +702,11 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_tibetan_phrase_allowlist_rewrites_dang_ldan_pa(self) -> None:
         merged_text = (
             "དང་ལྡན་པ་ daṅ ldan pa\n"
-            "chos dan ldan pa yin no\n"
+            "dan ldan pa yin no\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("chos daṅ ldan pa yin no", corrected)
+        self.assertIn("daṅ ldan pa yin no", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(
@@ -825,8 +825,54 @@ class PostprocessRegressionTests(unittest.TestCase):
             ("dan ldan pa", "daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
             reasons,
         )
+
+    def test_tibetan_phrase_allowlist_rewrites_curated_x_dan_ldan_pa_forms(self) -> None:
+        merged_text = (
+            "ཆོས་ chos\n"
+            "skal ba dan ldan pa rnams stobs dan ldan pas chos dan ldan pa'i "
+            "dpal dbaṅ dan ldan pa yi stobs dan ldan pa de rnams chos dan ldan pa ma\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
         self.assertIn(
-            ("དང་པོ་ dan po", "དང་པོ་ daṅ po", "tibetan_dang_phrase_override"),
+            "skal ba daṅ ldan pa rnams stobs daṅ ldan pas chos daṅ ldan pa'i "
+            "dpal dbaṅ daṅ ldan pa yi stobs daṅ ldan pa de rnams chos daṅ ldan pa ma",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("skal ba dan ldan pa", "skal ba daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+        self.assertIn(
+            ("stobs dan ldan pa", "stobs daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+        self.assertIn(
+            ("chos dan ldan pa", "chos daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+        self.assertIn(
+            ("dbaṅ dan ldan pa", "dbaṅ daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
+            reasons,
+        )
+
+    def test_tibetan_phrase_allowlist_rewrites_curated_x_dan_ldan_pa_on_german_heavy_line(self) -> None:
+        merged_text = (
+            "ཆོས་ chos\n"
+            "1. auch stobs dan ldan pa stark, mächtig, berühmt und weithin bekannt.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "1. auch stobs daṅ ldan pa stark, mächtig, berühmt und weithin bekannt.",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("stobs dan ldan pa", "stobs daṅ ldan pa", "tibetan_translit_phrase_allowlist"),
             reasons,
         )
 
