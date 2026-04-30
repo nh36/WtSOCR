@@ -1,9 +1,18 @@
 import csv
+import importlib.util
+import shutil
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-from scripts import postprocess_entry_map as pem
+ROOT = Path(__file__).resolve().parents[1]
+PEM_PATH = ROOT / "scripts" / "postprocess_entry_map.py"
+PEM_SPEC = importlib.util.spec_from_file_location("postprocess_entry_map", PEM_PATH)
+assert PEM_SPEC is not None and PEM_SPEC.loader is not None
+pem = importlib.util.module_from_spec(PEM_SPEC)
+sys.modules[PEM_SPEC.name] = pem
+PEM_SPEC.loader.exec_module(pem)
 
 
 class PostprocessRegressionTests(unittest.TestCase):
@@ -12,28 +21,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text: str,
         *,
         google_vision: bool = False,
+        alternate_merged_text: str | None = None,
+        alternate_google_vision: bool = False,
     ) -> tuple[dict[str, object], str, list[dict[str, str]]]:
-        with tempfile.TemporaryDirectory() as td:
-            root = Path(td)
-            merged = root / "fixture_merged.txt"
-            outdir = root / "out"
-            merged.write_text(merged_text, encoding="utf-8")
-            outdir.mkdir(parents=True, exist_ok=True)
+        td = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, td, ignore_errors=True)
+        root = Path(td)
+        merged = root / "fixture_merged.txt"
+        alternate_merged = root / "fixture_alternate_merged.txt"
+        outdir = root / "out"
+        merged.write_text(merged_text, encoding="utf-8")
+        if alternate_merged_text is not None:
+            alternate_merged.write_text(alternate_merged_text, encoding="utf-8")
+        outdir.mkdir(parents=True, exist_ok=True)
 
-            result = pem.run_one(
-                merged=merged,
-                audit=None,
-                outdir=outdir,
-                label="fixture",
-                trusted_min_freq=2,
-                discover_max_edit=2,
-                discover_max_rare_freq=3,
-                google_vision=google_vision,
-            )
-            corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
-            with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
-                changes = list(csv.DictReader(f, delimiter="\t"))
-            return result, corrected, changes
+        result = pem.run_one(
+            merged=merged,
+            audit=None,
+            outdir=outdir,
+            label="fixture",
+            trusted_min_freq=2,
+            discover_max_edit=2,
+            discover_max_rare_freq=3,
+            google_vision=google_vision,
+            alternate_merged=alternate_merged if alternate_merged_text is not None else None,
+            alternate_google_vision=alternate_google_vision,
+        )
+        corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
+        with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
+            changes = list(csv.DictReader(f, delimiter="\t"))
+        return result, corrected, changes
 
     def test_google_vision_loc_confusables_tibetan_context(self) -> None:
         merged_text = "བྱང་ byaň\nབཟང་ bzań po žes šes rab\n"
@@ -89,6 +106,84 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertIn("mñam pa sñiṅ po gñis mṅon dṅul", corrected)
         self.assertEqual(result["google_vision_rewrites"], 5)
+
+    def test_alternate_witness_adopts_clean_translit_token(self) -> None:
+        merged_text = "ཞེས་ žes\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(newline="", encoding="utf-8") as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "žes")
+        self.assertEqual(adoptions[0]["alternate_token"], "źes")
+        self.assertEqual(adoptions[0]["reason"], "alternate_witness_strict_translit")
+
+    def test_alternate_witness_logs_unresolved_unsafe_disagreement(self) -> None:
+        merged_text = "ཀོང་ koṅ po\n"
+        alternate_merged_text = "=== page 001 ===\nཀོང་ kuṅ po\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("koṅ po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "koṅ")
+        self.assertEqual(unresolved[0]["alternate_token"], "kuṅ")
+        self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
+
+    def test_alternate_witness_aligns_collapsed_blank_lines(self) -> None:
+        merged_text = "ཞེས་ žes\n\nཀོང་ koṅ po\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\nཀོང་ koṅ po\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes", corrected)
+        self.assertIn("\n\nཀོང་ koṅ po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+    def test_alternate_witness_rejects_nonempty_line_loss(self) -> None:
+        merged_text = "ཞེས་ žes\nཀོང་ koṅ po\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("žes", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["reason"], "nonempty_line_count_mismatch")
+        self.assertEqual(unresolved[0]["base_key"], "2")
+        self.assertEqual(unresolved[0]["alternate_key"], "1")
 
     def test_high_risk_token_regressions(self) -> None:
         merged_text = (

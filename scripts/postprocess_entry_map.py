@@ -2115,6 +2115,299 @@ def token_is_strict_clean_translit(token: str) -> bool:
     return True
 
 
+ALTERNATE_WITNESS_CANON_MAP = {
+    "ž": "ź",
+    "Ž": "Ź",
+    "š": "ś",
+    "Š": "Ś",
+}
+
+
+def canonicalize_alternate_witness_token(token: str) -> str:
+    canon = canonicalize_translit_token(token)
+    return "".join(ALTERNATE_WITNESS_CANON_MAP.get(ch, ch) for ch in canon)
+
+
+def token_is_alternate_witness_clean_translit(token: str) -> bool:
+    if not TRANSLIT_TOKEN_RE.fullmatch(token):
+        return False
+    if token != canonicalize_alternate_witness_token(token):
+        return False
+    if GERMAN_UMLAUT_RE.search(token):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if token.lower() in GERMAN_HINT_WORDS:
+        return False
+    return True
+
+
+def alternate_witness_distance_key(token: str) -> str:
+    t = canonicalize_alternate_witness_token(token.lower())
+    t = t.translate(SKELETON_MAP)
+    t = t.replace("'", "").replace("’", "").replace("-", "")
+    return t
+
+
+ALTERNATE_WITNESS_TOKEN_RE = re.compile(
+    r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+(?:['’.-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+)*"
+)
+
+
+def extract_alternate_witness_tokens(line: str) -> list[tuple[str, int, int]]:
+    return [(m.group(0), m.start(), m.end()) for m in ALTERNATE_WITNESS_TOKEN_RE.finditer(line)]
+
+
+def line_is_translit_context(info: "LineInfo | None") -> bool:
+    if info is None:
+        return False
+    return info.has_tibetan or info.is_entry_start or len(info.translit_tokens) >= 2
+
+
+def prepare_witness(
+    text: str,
+    audit_by_line: dict[tuple[int, int], dict[str, str]],
+    *,
+    google_vision: bool = False,
+) -> dict[str, object]:
+    if google_vision:
+        text = normalize_google_vision_page_markers(text)
+    (
+        entries,
+        line_infos,
+        line_rows,
+        validator_rows,
+        summary,
+        page_lines,
+    ) = parse_entries(text, audit_by_line)
+    google_vision_change_rows: list[list[str]] = []
+    google_vision_rewrite_count = 0
+    text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
+        page_lines,
+        line_infos,
+    )
+    if structural_rewrite_count:
+        (
+            entries,
+            line_infos,
+            line_rows,
+            validator_rows,
+            summary,
+            page_lines,
+        ) = parse_entries(text, audit_by_line)
+    if google_vision:
+        text, google_vision_change_rows, google_vision_rewrite_count = apply_google_vision_loc_preclean(
+            page_lines,
+            line_infos,
+        )
+        if google_vision_rewrite_count:
+            (
+                entries,
+                line_infos,
+                line_rows,
+                validator_rows,
+                summary,
+                page_lines,
+            ) = parse_entries(text, audit_by_line)
+    return {
+        "text": text,
+        "entries": entries,
+        "line_infos": line_infos,
+        "line_rows": line_rows,
+        "validator_rows": validator_rows,
+        "summary": summary,
+        "page_lines": page_lines,
+        "structural_change_rows": structural_change_rows,
+        "structural_rewrite_count": structural_rewrite_count,
+        "google_vision_change_rows": google_vision_change_rows,
+        "google_vision_rewrite_count": google_vision_rewrite_count,
+    }
+
+
+def alternate_witness_reason(
+    base_token: str,
+    alternate_token: str,
+    *,
+    line_info: "LineInfo | None",
+) -> str | None:
+    if base_token == alternate_token:
+        return None
+    if not line_is_translit_context(line_info):
+        return None
+    if not token_is_alternate_witness_clean_translit(alternate_token):
+        return None
+    if token_is_alternate_witness_clean_translit(base_token):
+        return None
+    if token_is_german_like(base_token):
+        return None
+    if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
+        return None
+    base_key = alternate_witness_distance_key(base_token)
+    alternate_key = alternate_witness_distance_key(alternate_token)
+    if not base_key or base_key != alternate_key:
+        return None
+    return "alternate_witness_strict_translit"
+
+
+def arbitrate_alternate_witness(
+    base_page_lines: list[list[str]],
+    base_line_infos: list["LineInfo"],
+    alternate_page_lines: list[list[str]],
+    alternate_line_infos: list["LineInfo"],
+) -> tuple[str, list[list[str]], list[list[str]], int]:
+    def align_alternate_page(
+        base_page: list[str],
+        alternate_page: list[str],
+    ) -> tuple[list[str] | None, str | None, str, str]:
+        if len(base_page) == len(alternate_page):
+            return alternate_page, None, "", ""
+        base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+        alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+        if len(base_nonempty) != len(alternate_nonempty):
+            return (
+                None,
+                "nonempty_line_count_mismatch",
+                str(len(base_nonempty)),
+                str(len(alternate_nonempty)),
+            )
+        aligned_page = [""] * len(base_page)
+        for (base_idx, _base_line), (_alternate_idx, alternate_line) in zip(base_nonempty, alternate_nonempty):
+            aligned_page[base_idx - 1] = alternate_line
+        return aligned_page, None, str(len(base_page)), str(len(alternate_page))
+
+    adoption_rows: list[list[str]] = []
+    unresolved_rows: list[list[str]] = []
+    if len(base_page_lines) != len(alternate_page_lines):
+        unresolved_rows.append(
+            [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "page_count_mismatch",
+                str(len(base_page_lines)),
+                str(len(alternate_page_lines)),
+                "",
+                "",
+            ]
+        )
+        return "\f".join("\n".join(page) for page in base_page_lines), adoption_rows, unresolved_rows, 0
+    aligned_alternate_pages: list[list[str]] = []
+    for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, alternate_page_lines), start=1):
+        aligned_page, reason, left_count, right_count = align_alternate_page(base_page, alternate_page)
+        if aligned_page is None:
+            unresolved_rows.append(
+                [
+                    str(page_idx),
+                    "",
+                    "",
+                    "",
+                    "",
+                    reason or "line_count_mismatch",
+                    left_count,
+                    right_count,
+                    "",
+                    "",
+                ]
+            )
+            aligned_alternate_pages.append(base_page[:])
+            continue
+        aligned_alternate_pages.append(aligned_page)
+    base_info_by_key = {(info.page, info.line): info for info in base_line_infos}
+    alternate_info_by_key = {(info.page, info.line): info for info in alternate_line_infos}
+    rewritten_pages = [page[:] for page in base_page_lines]
+    adoption_count = 0
+    for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, aligned_alternate_pages), start=1):
+        for line_idx, (base_line, alternate_line) in enumerate(zip(base_page, alternate_page), start=1):
+            if base_line == alternate_line:
+                continue
+            line_info = base_info_by_key.get((page_idx, line_idx)) or alternate_info_by_key.get((page_idx, line_idx))
+            if not line_is_translit_context(line_info):
+                unresolved_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        "",
+                        "",
+                        "",
+                        "non_translit_context",
+                        "",
+                        "",
+                        base_line,
+                        alternate_line,
+                    ]
+                )
+                continue
+            base_tokens = extract_alternate_witness_tokens(base_line)
+            alternate_tokens = extract_alternate_witness_tokens(alternate_line)
+            if len(base_tokens) != len(alternate_tokens):
+                unresolved_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        "",
+                        "",
+                        "",
+                        "token_count_mismatch",
+                        str(len(base_tokens)),
+                        str(len(alternate_tokens)),
+                        base_line,
+                        alternate_line,
+                    ]
+                )
+                continue
+            rebuilt: list[str] = []
+            cursor = 0
+            line_adoptions = 0
+            for token_index, (base_match, alternate_match) in enumerate(zip(base_tokens, alternate_tokens), start=1):
+                base_token, start, end = base_match
+                alternate_token = alternate_match[0]
+                rebuilt.append(base_line[cursor:start])
+                replacement = base_token
+                if base_token != alternate_token:
+                    reason = alternate_witness_reason(base_token, alternate_token, line_info=line_info)
+                    if reason:
+                        replacement = alternate_token
+                        adoption_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                str(token_index),
+                                base_token,
+                                alternate_token,
+                                reason,
+                                distance_key(base_token),
+                                distance_key(alternate_token),
+                                base_line,
+                                alternate_line,
+                            ]
+                        )
+                        line_adoptions += 1
+                    else:
+                        unresolved_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                str(token_index),
+                                base_token,
+                                alternate_token,
+                                "unsafe_token_disagreement",
+                                distance_key(base_token),
+                                distance_key(alternate_token),
+                                base_line,
+                                alternate_line,
+                            ]
+                        )
+                rebuilt.append(replacement)
+                cursor = end
+            rebuilt.append(base_line[cursor:])
+            if line_adoptions:
+                rewritten_pages[page_idx - 1][line_idx - 1] = "".join(rebuilt)
+                adoption_count += line_adoptions
+    return "\f".join("\n".join(page) for page in rewritten_pages), adoption_rows, unresolved_rows, adoption_count
+
+
 def token_is_titlecase_or_lower_compound_shape(token: str) -> bool:
     def part_is_tibetan_mixed_caps_shape(part: str) -> bool:
         letters = [ch for ch in part if ch.isalpha()]
@@ -5968,27 +6261,47 @@ def run_one(
     discover_max_edit: int,
     discover_max_rare_freq: int,
     google_vision: bool = False,
+    alternate_merged: Path | None = None,
+    alternate_google_vision: bool = False,
 ) -> dict[str, object]:
-    text = merged.read_text(encoding="utf-8", errors="replace")
-    if google_vision:
-        text = normalize_google_vision_page_markers(text)
     audit_by_line = load_audit(audit)
-    entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
-    google_vision_change_rows: list[list[str]] = []
-    google_vision_rewrite_count = 0
-    text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
-        page_lines,
-        line_infos,
+    witness = prepare_witness(
+        merged.read_text(encoding="utf-8"),
+        audit_by_line=audit_by_line,
+        google_vision=google_vision,
     )
-    if structural_rewrite_count:
-        entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
-    if google_vision:
-        text, google_vision_change_rows, google_vision_rewrite_count = apply_google_vision_loc_preclean(
-            page_lines,
-            line_infos,
+    text = witness["text"]
+    entries = witness["entries"]
+    line_infos = witness["line_infos"]
+    line_rows = witness["line_rows"]
+    validator_rows = witness["validator_rows"]
+    summary = witness["summary"]
+    page_lines = witness["page_lines"]
+    structural_change_rows = witness["structural_change_rows"]
+    structural_rewrite_count = witness["structural_rewrite_count"]
+    google_vision_change_rows = witness["google_vision_change_rows"]
+    google_vision_rewrite_count = witness["google_vision_rewrite_count"]
+    alternate_adoption_rows: list[list[str]] = []
+    alternate_unresolved_rows: list[list[str]] = []
+    alternate_adoption_count = 0
+    if alternate_merged is not None:
+        alternate_witness = prepare_witness(
+            alternate_merged.read_text(encoding="utf-8"),
+            audit_by_line=audit_by_line,
+            google_vision=alternate_google_vision,
         )
-        if google_vision_rewrite_count:
-            entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
+        (
+            text,
+            alternate_adoption_rows,
+            alternate_unresolved_rows,
+            alternate_adoption_count,
+        ) = arbitrate_alternate_witness(
+            base_page_lines=page_lines,
+            base_line_infos=line_infos,
+            alternate_page_lines=alternate_witness["page_lines"],
+            alternate_line_infos=alternate_witness["line_infos"],
+        )
+        entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
     headword_memory, entry_memory = build_entry_memory(entries, line_infos)
     trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
     discovered, discovered_rows = discover_common_errors(
@@ -6035,6 +6348,8 @@ def run_one(
     citation_report_tsv = outdir / f"{label}_citation_name_report.tsv"
     sanskrit_report_tsv = outdir / f"{label}_sanskrit_report.tsv"
     watchdog_tsv = outdir / f"{label}_watchdog_flags.tsv"
+    alternate_adoptions_tsv = outdir / f"{label}_alternate_witness_adoptions.tsv"
+    alternate_unresolved_tsv = outdir / f"{label}_alternate_witness_unresolved.tsv"
 
     with entry_jsonl.open("w", encoding="utf-8") as f:
         for ent in entries:
@@ -6155,6 +6470,38 @@ def run_one(
         ],
         watchdog_rows,
     )
+    write_tsv(
+        alternate_adoptions_tsv,
+        [
+            "page",
+            "line",
+            "token_index",
+            "base_token",
+            "alternate_token",
+            "reason",
+            "base_key",
+            "alternate_key",
+            "base_line",
+            "alternate_line",
+        ],
+        alternate_adoption_rows,
+    )
+    write_tsv(
+        alternate_unresolved_tsv,
+        [
+            "page",
+            "line",
+            "token_index",
+            "base_token",
+            "alternate_token",
+            "reason",
+            "base_key",
+            "alternate_key",
+            "base_line",
+            "alternate_line",
+        ],
+        alternate_unresolved_rows,
+    )
 
     change_reason_counts = Counter(row[7] for row in change_rows)
     review_reason_counts = Counter(row[7] for row in review_rows)
@@ -6165,6 +6512,11 @@ def run_one(
         "structural_rewrite_count": structural_rewrite_count,
         "google_vision_mode": google_vision,
         "google_vision_rewrites": google_vision_rewrite_count,
+        "alternate_witness_used": alternate_merged is not None,
+        "alternate_witness_path": str(alternate_merged) if alternate_merged is not None else "",
+        "alternate_google_vision_mode": alternate_google_vision if alternate_merged is not None else False,
+        "alternate_witness_adoptions": alternate_adoption_count,
+        "alternate_witness_unresolved": len(alternate_unresolved_rows),
         "trusted_lexicon_size": len(trusted_lexicon),
         "discovered_patterns": len(discovered_rows),
         "tier_a_applied": len(change_rows),
@@ -6202,6 +6554,8 @@ def run_one(
         "citation_name_report_tsv": str(citation_report_tsv),
         "sanskrit_report_tsv": str(sanskrit_report_tsv),
         "watchdog_tsv": str(watchdog_tsv),
+        "alternate_witness_adoptions_tsv": str(alternate_adoptions_tsv),
+        "alternate_witness_unresolved_tsv": str(alternate_unresolved_tsv),
         **summary,
     }
     return result
@@ -6236,6 +6590,16 @@ def main() -> int:
         action="store_true",
         help="Preclean Google Vision page markers and LoC diacritic confusions before normal postprocess.",
     )
+    ap.add_argument(
+        "--alternate-merged",
+        default="",
+        help="Optional second OCR witness to preclean and arbitrate against the base witness.",
+    )
+    ap.add_argument(
+        "--alternate-google-vision",
+        action="store_true",
+        help="Treat the alternate witness as Google Vision OCR and run Google-specific LoC preclean on it.",
+    )
     args = ap.parse_args()
 
     merged = Path(args.merged)
@@ -6253,6 +6617,8 @@ def main() -> int:
         discover_max_edit=args.discover_max_edit,
         discover_max_rare_freq=args.discover_max_rare_freq,
         google_vision=args.google_vision,
+        alternate_merged=Path(args.alternate_merged) if args.alternate_merged else None,
+        alternate_google_vision=args.alternate_google_vision,
     )
     print(f"label={result['label']}")
     print(f"merged={result['merged']}")
@@ -6265,6 +6631,12 @@ def main() -> int:
     print(f"discovered_patterns={result['discovered_patterns']}")
     print(f"google_vision_mode={result['google_vision_mode']}")
     print(f"google_vision_rewrites={result['google_vision_rewrites']}")
+    print(f"alternate_witness_used={result['alternate_witness_used']}")
+    if result["alternate_witness_used"]:
+        print(f"alternate_witness_path={result['alternate_witness_path']}")
+        print(f"alternate_google_vision_mode={result['alternate_google_vision_mode']}")
+    print(f"alternate_witness_adoptions={result['alternate_witness_adoptions']}")
+    print(f"alternate_witness_unresolved={result['alternate_witness_unresolved']}")
     print(f"tier_a_applied={result['tier_a_applied']}")
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
     print(f"citation_name_families={result['citation_name_families']}")
@@ -6283,6 +6655,9 @@ def main() -> int:
     print(f"discovered_patterns_tsv={result['discovered_patterns_tsv']}")
     print(f"citation_name_report_tsv={result['citation_name_report_tsv']}")
     print(f"sanskrit_report_tsv={result['sanskrit_report_tsv']}")
+    print(f"watchdog_tsv={result['watchdog_tsv']}")
+    print(f"alternate_witness_adoptions_tsv={result['alternate_witness_adoptions_tsv']}")
+    print(f"alternate_witness_unresolved_tsv={result['alternate_witness_unresolved_tsv']}")
     print(f"summary_json={result['summary_json']}")
     return 0
 
