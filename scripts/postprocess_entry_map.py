@@ -2124,8 +2124,9 @@ ALTERNATE_WITNESS_CANON_MAP = {
 
 
 def canonicalize_alternate_witness_token(token: str) -> str:
-    canon = canonicalize_translit_token(token)
-    return "".join(ALTERNATE_WITNESS_CANON_MAP.get(ch, ch) for ch in canon)
+    if GOOGLE_VISION_LOC_CONFUSABLE_RE.search(token):
+        return rewrite_google_vision_loc_confusables(token)
+    return "".join(ALTERNATE_WITNESS_CANON_MAP.get(ch, ch) for ch in token)
 
 
 def token_is_alternate_witness_clean_translit(token: str) -> bool:
@@ -2242,9 +2243,9 @@ def alternate_witness_reason(
         return None
     if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
         return None
-    base_key = alternate_witness_distance_key(base_token)
-    alternate_key = alternate_witness_distance_key(alternate_token)
-    if not base_key or base_key != alternate_key:
+    base_canon = canonicalize_alternate_witness_token(base_token)
+    alternate_canon = canonicalize_alternate_witness_token(alternate_token)
+    if not base_canon or base_canon != alternate_canon:
         return None
     return "alternate_witness_strict_translit"
 
@@ -2259,7 +2260,44 @@ def arbitrate_alternate_witness(
         base_page: list[str],
         alternate_page: list[str],
     ) -> tuple[list[str] | None, str | None, str, str]:
+        def line_has_compatible_structure(base_line: str, alternate_line: str) -> bool:
+            if base_line.strip() == alternate_line.strip():
+                return True
+            base_tokens = extract_alternate_witness_tokens(base_line)
+            alternate_tokens = extract_alternate_witness_tokens(alternate_line)
+            if not base_tokens or not alternate_tokens:
+                return False
+            if len(base_tokens) != len(alternate_tokens):
+                return False
+
+            def non_token_fragments(line: str, tokens: list[tuple[str, int, int]]) -> list[str]:
+                fragments: list[str] = []
+                cursor = 0
+                for _token, start, end in tokens:
+                    fragments.append(line[cursor:start])
+                    cursor = end
+                fragments.append(line[cursor:])
+                return fragments
+
+            return non_token_fragments(base_line, base_tokens) == non_token_fragments(
+                alternate_line,
+                alternate_tokens,
+            )
+
+        def page_has_compatible_content(aligned_page: list[str]) -> bool:
+            compatibility_hits = 0
+            for base_line, alternate_line in zip(base_page, aligned_page):
+                base_text = base_line.strip()
+                alternate_text = alternate_line.strip()
+                if not base_text or not alternate_text:
+                    continue
+                if line_has_compatible_structure(base_line, alternate_line):
+                    compatibility_hits += 1
+            return compatibility_hits > 0
+
         if len(base_page) == len(alternate_page):
+            if not page_has_compatible_content(alternate_page):
+                return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page))
             return alternate_page, None, "", ""
         base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
         alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
@@ -2273,29 +2311,37 @@ def arbitrate_alternate_witness(
         aligned_page = [""] * len(base_page)
         for (base_idx, _base_line), (_alternate_idx, alternate_line) in zip(base_nonempty, alternate_nonempty):
             aligned_page[base_idx - 1] = alternate_line
+        if not page_has_compatible_content(aligned_page):
+            return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page))
         return aligned_page, None, str(len(base_page)), str(len(alternate_page))
 
     adoption_rows: list[list[str]] = []
     unresolved_rows: list[list[str]] = []
-    if len(base_page_lines) != len(alternate_page_lines):
-        unresolved_rows.append(
-            [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "page_count_mismatch",
-                str(len(base_page_lines)),
-                str(len(alternate_page_lines)),
-                "",
-                "",
-            ]
-        )
-        return "\f".join("\n".join(page) for page in base_page_lines), adoption_rows, unresolved_rows, 0
     aligned_alternate_pages: list[list[str]] = []
-    for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, alternate_page_lines), start=1):
-        aligned_page, reason, left_count, right_count = align_alternate_page(base_page, alternate_page)
+    alternate_page_idx = 0
+    for page_idx, base_page in enumerate(base_page_lines, start=1):
+        matched_page_idx: int | None = None
+        aligned_page: list[str] | None = None
+        reason = None
+        left_count = ""
+        right_count = ""
+        search_idx = alternate_page_idx
+        while search_idx < len(alternate_page_lines):
+            candidate_page, candidate_reason, candidate_left_count, candidate_right_count = align_alternate_page(
+                base_page,
+                alternate_page_lines[search_idx],
+            )
+            if candidate_page is not None:
+                matched_page_idx = search_idx
+                aligned_page = candidate_page
+                left_count = candidate_left_count
+                right_count = candidate_right_count
+                break
+            if reason is None:
+                reason = candidate_reason or "line_count_mismatch"
+                left_count = candidate_left_count
+                right_count = candidate_right_count
+            search_idx += 1
         if aligned_page is None:
             unresolved_rows.append(
                 [
@@ -2313,16 +2359,16 @@ def arbitrate_alternate_witness(
             )
             aligned_alternate_pages.append(base_page[:])
             continue
+        alternate_page_idx = matched_page_idx + 1
         aligned_alternate_pages.append(aligned_page)
     base_info_by_key = {(info.page, info.line): info for info in base_line_infos}
-    alternate_info_by_key = {(info.page, info.line): info for info in alternate_line_infos}
     rewritten_pages = [page[:] for page in base_page_lines]
     adoption_count = 0
     for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, aligned_alternate_pages), start=1):
         for line_idx, (base_line, alternate_line) in enumerate(zip(base_page, alternate_page), start=1):
             if base_line == alternate_line:
                 continue
-            line_info = base_info_by_key.get((page_idx, line_idx)) or alternate_info_by_key.get((page_idx, line_idx))
+            line_info = base_info_by_key.get((page_idx, line_idx))
             if not line_is_translit_context(line_info):
                 unresolved_rows.append(
                     [

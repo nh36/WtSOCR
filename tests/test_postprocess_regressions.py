@@ -164,6 +164,28 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
+    def test_alternate_witness_scans_forward_to_next_alignable_page(self) -> None:
+        merged_text = "ཞེས་ žes\n\fཀོང་ koṅ po\n"
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "dummy page\n"
+            "=== page 002 ===\n"
+            "ཞེས་ žes\n"
+            "=== page 003 ===\n"
+            "ཀོང་ koṅ po\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes", corrected)
+        self.assertIn("\fཀོང་ koṅ po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
     def test_alternate_witness_rejects_nonempty_line_loss(self) -> None:
         merged_text = "ཞེས་ žes\nཀོང་ koṅ po\n"
         alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
@@ -184,6 +206,50 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(unresolved[0]["reason"], "nonempty_line_count_mismatch")
         self.assertEqual(unresolved[0]["base_key"], "2")
         self.assertEqual(unresolved[0]["alternate_key"], "1")
+
+    def test_alternate_witness_does_not_adopt_loc_loss(self) -> None:
+        merged_text = "གཉིས་ gñis\n"
+        alternate_merged_text = "=== page 001 ===\nགཉིས་ gnis\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("gñis", corrected)
+        self.assertNotIn("gnis", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "gñis")
+        self.assertEqual(unresolved[0]["alternate_token"], "gnis")
+        self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
+
+    def test_alternate_witness_does_not_adopt_loc_loss_in_gner(self) -> None:
+        merged_text = "གཉེར་ gñer\n"
+        alternate_merged_text = "=== page 001 ===\nགཉེར་ gner\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("gñer", corrected)
+        self.assertNotIn("gner", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "gñer")
+        self.assertEqual(unresolved[0]["alternate_token"], "gner")
+        self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
 
     def test_high_risk_token_regressions(self) -> None:
         merged_text = (
