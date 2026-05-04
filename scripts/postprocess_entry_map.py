@@ -1006,6 +1006,7 @@ CITATION_SIGLUM_CANONICAL_FALLBACK = {
     "Lśdz-K",
     "Lśdz-R",
     "Liś",
+    "Mvy",
     "Ps",
     "RoINS",
     "SPS",
@@ -2353,9 +2354,9 @@ def arbitrate_alternate_witness(
                 fragments: list[str] = []
                 cursor = 0
                 for _token, start, end in tokens:
-                    fragments.append(line[cursor:start])
+                    fragments.append(normalize_alignment_text(line[cursor:start]))
                     cursor = end
-                fragments.append(line[cursor:])
+                fragments.append(normalize_alignment_text(line[cursor:]))
                 return fragments
 
             return non_token_fragments(base_line, base_tokens) == non_token_fragments(
@@ -2365,14 +2366,18 @@ def arbitrate_alternate_witness(
 
         def page_has_compatible_content(aligned_page: list[str]) -> bool:
             compatibility_hits = 0
+            comparable_lines = 0
             for base_line, alternate_line in zip(base_page, aligned_page):
                 base_text = base_line.strip()
                 alternate_text = alternate_line.strip()
                 if not base_text or not alternate_text:
                     continue
+                comparable_lines += 1
                 if line_has_compatible_structure(base_line, alternate_line) or line_similarity(base_line, alternate_line) >= 0.93:
                     compatibility_hits += 1
-            return compatibility_hits > 0
+            if comparable_lines <= 1:
+                return compatibility_hits == comparable_lines
+            return compatibility_hits >= min(2, comparable_lines)
 
         def align_nonempty_runs() -> list[str] | None:
             base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
@@ -2384,17 +2389,26 @@ def arbitrate_alternate_witness(
             if len(alternate_nonempty) < len(base_nonempty):
                 return None
 
-            aligned_page = [""] * len(base_page)
-            alternate_cursor = 0
-            for base_pos, (base_idx, base_line) in enumerate(base_nonempty):
+            from functools import lru_cache
+
+            @lru_cache(maxsize=None)
+            def best_alignment(
+                base_pos: int,
+                alternate_cursor: int,
+            ) -> tuple[float, tuple[tuple[int, str], ...]] | None:
+                if base_pos == len(base_nonempty):
+                    if alternate_cursor == len(alternate_nonempty):
+                        return 0.0, ()
+                    return None
+
                 remaining_base = len(base_nonempty) - base_pos - 1
                 remaining_alternate = len(alternate_nonempty) - alternate_cursor
                 if remaining_alternate <= remaining_base:
                     return None
+
+                _base_idx, base_line = base_nonempty[base_pos]
                 max_take = min(3, remaining_alternate - remaining_base)
-                best_take: int | None = None
-                best_score = -1.0
-                best_line = ""
+                best: tuple[float, tuple[tuple[int, str], ...]] | None = None
                 for take in range(1, max_take + 1):
                     candidate_line = " ".join(
                         alternate_nonempty[alternate_cursor + offset][1].strip()
@@ -2403,16 +2417,24 @@ def arbitrate_alternate_witness(
                     score = line_similarity(base_line, candidate_line)
                     if line_has_compatible_structure(base_line, candidate_line):
                         score += 0.2
-                    if score > best_score:
-                        best_take = take
-                        best_score = score
-                        best_line = candidate_line
-                if best_take is None or best_score < 0.72:
-                    return None
-                aligned_page[base_idx - 1] = best_line
-                alternate_cursor += best_take
-            if alternate_cursor != len(alternate_nonempty):
+                    if score < 0.72:
+                        continue
+                    suffix = best_alignment(base_pos + 1, alternate_cursor + take)
+                    if suffix is None:
+                        continue
+                    total_score = score + suffix[0]
+                    candidate = (total_score, ((take, candidate_line),) + suffix[1])
+                    if best is None or total_score > best[0]:
+                        best = candidate
+                return best
+
+            alignment = best_alignment(0, 0)
+            if alignment is None:
                 return None
+
+            aligned_page = [""] * len(base_page)
+            for (base_idx, _base_line), (_take, aligned_line) in zip(base_nonempty, alignment[1]):
+                aligned_page[base_idx - 1] = aligned_line
             return aligned_page
 
         candidate_score = page_similarity(base_page, alternate_page)
@@ -2562,6 +2584,14 @@ def arbitrate_alternate_witness(
                             ]
                         )
                         line_adoptions += 1
+                    elif token_is_ignorable_alternate_siglum_disagreement(
+                        base_token,
+                        alternate_token,
+                        line_info=line_info,
+                        base_line=base_line,
+                        alternate_line=alternate_line,
+                    ):
+                        pass
                     else:
                         unresolved_rows.append(
                             [
@@ -2998,6 +3028,11 @@ def match_citation_siglum(token: str) -> str | None:
     siglum = CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(token)
     if siglum is not None:
         return siglum
+    siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(
+        re.sub(r"[sś]+", "s", token.casefold())
+    )
+    if siglum is not None:
+        return siglum
     siglum = CITATION_SIGLUM_CONFUSABLE_MAP.get(token.casefold())
     if siglum is not None:
         return siglum
@@ -3020,6 +3055,32 @@ def match_citation_siglum(token: str) -> str | None:
         siglum = "Lśdz" + token[4:]
         return siglum.replace("$", "ś")
     return None
+
+
+def token_is_ignorable_alternate_siglum_disagreement(
+    base_token: str,
+    alternate_token: str,
+    *,
+    line_info: LineInfo | None,
+    base_line: str,
+    alternate_line: str,
+) -> bool:
+    if not (
+        line_is_citation_like(line_info, base_line)
+        or line_is_citation_like(line_info, alternate_line)
+        or line_has_parenthetical_citation(base_line)
+        or line_has_parenthetical_citation(alternate_line)
+    ):
+        return False
+    base_siglum = match_citation_siglum(base_token)
+    alternate_siglum = match_citation_siglum(alternate_token)
+    if base_siglum is None or alternate_siglum is None:
+        return False
+    base_siglum_key = re.sub(r"[sś]+", "s", base_siglum.casefold())
+    alternate_siglum_key = re.sub(r"[sś]+", "s", alternate_siglum.casefold())
+    if base_siglum_key != alternate_siglum_key:
+        return False
+    return base_token == base_siglum and alternate_token != alternate_siglum
 
 
 def split_citation_siglum_token(token: str) -> tuple[str, str]:
