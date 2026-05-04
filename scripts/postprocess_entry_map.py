@@ -2151,6 +2151,28 @@ def alternate_witness_distance_key(token: str) -> str:
     return t
 
 
+GOOGLE_LOC_FRICATIVE_UPGRADE_PAIRS = {
+    ("s", "ś"),
+    ("S", "Ś"),
+    ("z", "ź"),
+    ("Z", "Ź"),
+}
+
+
+def token_is_google_loc_fricative_upgrade(base_token: str, alternate_token: str) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for base_char, alternate_char in zip(base_token, alternate_token):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) in GOOGLE_LOC_FRICATIVE_UPGRADE_PAIRS:
+            saw_upgrade = True
+            continue
+        return False
+    return saw_upgrade
+
+
 ALTERNATE_WITNESS_TOKEN_RE = re.compile(
     r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+(?:['’.-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+)*"
 )
@@ -2239,15 +2261,22 @@ def alternate_witness_reason(
         return None
     if not token_is_alternate_witness_clean_translit(alternate_token):
         return None
-    if token_is_alternate_witness_clean_translit(base_token):
-        return None
     if token_is_german_like(base_token):
         return None
     if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
         return None
+    if token_is_alternate_witness_clean_translit(base_token):
+        if (
+            alternate_witness_distance_key(base_token)
+            == alternate_witness_distance_key(alternate_token)
+            and token_is_google_loc_fricative_upgrade(base_token, alternate_token)
+        ):
+            return "alternate_witness_google_loc_fricative_upgrade"
     base_canon = canonicalize_alternate_witness_token(base_token)
     alternate_canon = canonicalize_alternate_witness_token(alternate_token)
     if not base_canon or base_canon != alternate_canon:
+        return None
+    if token_is_alternate_witness_clean_translit(base_token):
         return None
     return "alternate_witness_strict_translit"
 

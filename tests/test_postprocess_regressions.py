@@ -151,6 +151,51 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(unresolved[0]["alternate_token"], "kuṅ")
         self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
 
+    def test_alternate_witness_adopts_google_loc_fricative_upgrade(self) -> None:
+        merged_text = "ཞེས་ zes\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(newline="", encoding="utf-8") as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "zes")
+        self.assertEqual(adoptions[0]["alternate_token"], "źes")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_google_loc_fricative_upgrade",
+        )
+
+    def test_alternate_witness_does_not_adopt_clean_nasal_disagreement(self) -> None:
+        merged_text = "ཀོང་ kon po\n"
+        alternate_merged_text = "=== page 001 ===\nཀོང་ koň po\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("kon po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "kon")
+        self.assertEqual(unresolved[0]["alternate_token"], "koṅ")
+        self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
+
     def test_merge_only_uses_cleaned_alternate_witness_without_downstream_cleanup(self) -> None:
         merged_text = "\f1\nཞེས་ žes\n"
         alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
