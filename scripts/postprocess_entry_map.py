@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from difflib import SequenceMatcher
 import json
 import re
 import unicodedata
@@ -2173,6 +2174,7 @@ def prepare_witness(
 ) -> dict[str, object]:
     if google_vision:
         text = normalize_google_vision_page_markers(text)
+    text = normalize_form_feed_page_number_lines(text)
     (
         entries,
         line_infos,
@@ -2256,10 +2258,58 @@ def arbitrate_alternate_witness(
     alternate_page_lines: list[list[str]],
     alternate_line_infos: list["LineInfo"],
 ) -> tuple[str, list[list[str]], list[list[str]], int]:
+    def normalize_alignment_text(text: str) -> str:
+        normalized = unicodedata.normalize("NFKC", text)
+        normalized = re.sub(r"\s+", " ", normalized).strip().lower()
+        return normalized
+
+    def canonical_alignment_line(line: str) -> str:
+        tokens = extract_alternate_witness_tokens(line)
+        if not tokens:
+            return normalize_alignment_text(line)
+        parts: list[str] = []
+        cursor = 0
+        for token, start, end in tokens:
+            parts.append(normalize_alignment_text(line[cursor:start]))
+            parts.append(canonicalize_alternate_witness_token(token) or normalize_alignment_text(token))
+            cursor = end
+        parts.append(normalize_alignment_text(line[cursor:]))
+        return " ".join(part for part in parts if part)
+
+    def line_similarity(base_line: str, alternate_line: str) -> float:
+        return SequenceMatcher(
+            None,
+            canonical_alignment_line(base_line),
+            canonical_alignment_line(alternate_line),
+            autojunk=False,
+        ).ratio()
+
+    def page_similarity(base_page: list[str], alternate_page: list[str]) -> float:
+        base_nonempty = [line for line in base_page if line.strip()]
+        alternate_nonempty = [line for line in alternate_page if line.strip()]
+        if not base_nonempty or not alternate_nonempty:
+            return 1.0 if not base_nonempty and not alternate_nonempty else 0.0
+        sample_size = min(3, len(base_nonempty), len(alternate_nonempty))
+        if sample_size == 0:
+            return 0.0
+        base_samples = (
+            base_nonempty[:sample_size]
+            + base_nonempty[max(0, len(base_nonempty) - sample_size):]
+        )[: sample_size * 2]
+        alternate_samples = (
+            alternate_nonempty[:sample_size]
+            + alternate_nonempty[max(0, len(alternate_nonempty) - sample_size):]
+        )[: sample_size * 2]
+        comparisons = zip(base_samples, alternate_samples)
+        scores = [line_similarity(base_line, alternate_line) for base_line, alternate_line in comparisons]
+        if not scores:
+            return 0.0
+        return sum(scores) / len(scores)
+
     def align_alternate_page(
         base_page: list[str],
         alternate_page: list[str],
-    ) -> tuple[list[str] | None, str | None, str, str]:
+    ) -> tuple[list[str] | None, str | None, str, str, float]:
         def line_has_compatible_structure(base_line: str, alternate_line: str) -> bool:
             if base_line.strip() == alternate_line.strip():
                 return True
@@ -2291,29 +2341,73 @@ def arbitrate_alternate_witness(
                 alternate_text = alternate_line.strip()
                 if not base_text or not alternate_text:
                     continue
-                if line_has_compatible_structure(base_line, alternate_line):
+                if line_has_compatible_structure(base_line, alternate_line) or line_similarity(base_line, alternate_line) >= 0.93:
                     compatibility_hits += 1
             return compatibility_hits > 0
 
+        def align_nonempty_runs() -> list[str] | None:
+            base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+            alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+            if not base_nonempty and not alternate_nonempty:
+                return [""] * len(base_page)
+            if not base_nonempty or not alternate_nonempty:
+                return None
+            if len(alternate_nonempty) < len(base_nonempty):
+                return None
+
+            aligned_page = [""] * len(base_page)
+            alternate_cursor = 0
+            for base_pos, (base_idx, base_line) in enumerate(base_nonempty):
+                remaining_base = len(base_nonempty) - base_pos - 1
+                remaining_alternate = len(alternate_nonempty) - alternate_cursor
+                if remaining_alternate <= remaining_base:
+                    return None
+                max_take = min(3, remaining_alternate - remaining_base)
+                best_take: int | None = None
+                best_score = -1.0
+                best_line = ""
+                for take in range(1, max_take + 1):
+                    candidate_line = " ".join(
+                        alternate_nonempty[alternate_cursor + offset][1].strip()
+                        for offset in range(take)
+                    )
+                    score = line_similarity(base_line, candidate_line)
+                    if line_has_compatible_structure(base_line, candidate_line):
+                        score += 0.2
+                    if score > best_score:
+                        best_take = take
+                        best_score = score
+                        best_line = candidate_line
+                if best_take is None or best_score < 0.72:
+                    return None
+                aligned_page[base_idx - 1] = best_line
+                alternate_cursor += best_take
+            if alternate_cursor != len(alternate_nonempty):
+                return None
+            return aligned_page
+
+        candidate_score = page_similarity(base_page, alternate_page)
         if len(base_page) == len(alternate_page):
             if not page_has_compatible_content(alternate_page):
-                return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page))
-            return alternate_page, None, "", ""
+                return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page)), candidate_score
+            return alternate_page, None, "", "", candidate_score
         base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
         alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
-        if len(base_nonempty) != len(alternate_nonempty):
+        aligned_page = align_nonempty_runs()
+        if aligned_page is None:
+            mismatch_reason = "nonempty_line_count_mismatch"
+            if len(alternate_nonempty) >= len(base_nonempty):
+                mismatch_reason = "unalignable_rewrapped_page"
             return (
                 None,
-                "nonempty_line_count_mismatch",
+                mismatch_reason,
                 str(len(base_nonempty)),
                 str(len(alternate_nonempty)),
+                candidate_score,
             )
-        aligned_page = [""] * len(base_page)
-        for (base_idx, _base_line), (_alternate_idx, alternate_line) in zip(base_nonempty, alternate_nonempty):
-            aligned_page[base_idx - 1] = alternate_line
         if not page_has_compatible_content(aligned_page):
-            return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page))
-        return aligned_page, None, str(len(base_page)), str(len(alternate_page))
+            return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page)), candidate_score
+        return aligned_page, None, str(len(base_page)), str(len(alternate_page)), candidate_score
 
     adoption_rows: list[list[str]] = []
     unresolved_rows: list[list[str]] = []
@@ -2325,19 +2419,28 @@ def arbitrate_alternate_witness(
         reason = None
         left_count = ""
         right_count = ""
+        best_score = -1.0
         search_idx = alternate_page_idx
-        while search_idx < len(alternate_page_lines):
-            candidate_page, candidate_reason, candidate_left_count, candidate_right_count = align_alternate_page(
+        max_search_idx = min(len(alternate_page_lines), alternate_page_idx + 5)
+        while search_idx < max_search_idx:
+            (
+                candidate_page,
+                candidate_reason,
+                candidate_left_count,
+                candidate_right_count,
+                candidate_score,
+            ) = align_alternate_page(
                 base_page,
                 alternate_page_lines[search_idx],
             )
             if candidate_page is not None:
-                matched_page_idx = search_idx
-                aligned_page = candidate_page
-                left_count = candidate_left_count
-                right_count = candidate_right_count
-                break
-            if reason is None:
+                if candidate_score > best_score:
+                    matched_page_idx = search_idx
+                    aligned_page = candidate_page
+                    left_count = candidate_left_count
+                    right_count = candidate_right_count
+                    best_score = candidate_score
+            elif reason is None:
                 reason = candidate_reason or "line_count_mismatch"
                 left_count = candidate_left_count
                 right_count = candidate_right_count
@@ -3452,6 +3555,22 @@ def parse_entries(
 
 def page_lines_to_text(page_lines: list[list[str]]) -> str:
     return "\f".join("\n".join(lines) for lines in page_lines)
+
+
+def normalize_form_feed_page_number_lines(text: str) -> str:
+    """Drop page-number-only lines introduced immediately after form feeds."""
+    if "\f" not in text:
+        return text
+    raw_pages = text.split("\f")
+    if raw_pages and raw_pages[0] == "":
+        raw_pages = raw_pages[1:]
+    normalized_pages: list[str] = []
+    for page in raw_pages:
+        lines = page.splitlines()
+        if lines and re.fullmatch(r"\d{1,4}", lines[0].strip()):
+            lines = lines[1:]
+        normalized_pages.append("\n".join(lines))
+    return "\f".join(normalized_pages)
 
 
 def normalize_google_vision_page_markers(text: str) -> str:
@@ -6309,6 +6428,7 @@ def run_one(
     google_vision: bool = False,
     alternate_merged: Path | None = None,
     alternate_google_vision: bool = False,
+    merge_only: bool = False,
 ) -> dict[str, object]:
     audit_by_line = load_audit(audit)
     witness = prepare_witness(
@@ -6348,40 +6468,56 @@ def run_one(
             alternate_line_infos=alternate_witness["line_infos"],
         )
         entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
-    headword_memory, entry_memory = build_entry_memory(entries, line_infos)
-    trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
-    discovered, discovered_rows = discover_common_errors(
-        line_infos,
-        trusted_lexicon=trusted_lexicon,
-        max_edit=discover_max_edit,
-        max_rare_freq=discover_max_rare_freq,
-    )
-    corrected_text, change_rows, review_rows = apply_entry_aware_corrections(
-        page_lines=page_lines,
-        line_infos=line_infos,
-        headword_memory=headword_memory,
-        entry_memory=entry_memory,
-        trusted_lexicon=trusted_lexicon,
-        discovered=discovered,
-    )
-    change_rows = structural_change_rows + google_vision_change_rows + change_rows
-    corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
-        apply_citation_name_normalization(
-            corrected_text=corrected_text,
-            line_infos=line_infos,
+    if merge_only:
+        trusted_lexicon: set[str] = set()
+        discovered_rows: list[list[str]] = []
+        corrected_text = text
+        change_rows = structural_change_rows + google_vision_change_rows
+        review_rows: list[list[str]] = []
+        citation_change_rows = []
+        citation_review_rows = []
+        citation_report_rows = []
+        citation_family_count = 0
+        sanskrit_change_rows = []
+        sanskrit_review_rows = []
+        sanskrit_report_rows = []
+        sanskrit_family_count = 0
+        stale_review_rows_removed = 0
+    else:
+        headword_memory, entry_memory = build_entry_memory(entries, line_infos)
+        trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
+        discovered, discovered_rows = discover_common_errors(
+            line_infos,
+            trusted_lexicon=trusted_lexicon,
+            max_edit=discover_max_edit,
+            max_rare_freq=discover_max_rare_freq,
         )
-    )
-    change_rows.extend(citation_change_rows)
-    review_rows.extend(citation_review_rows)
-    corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
-        apply_sanskrit_normalization(
-            corrected_text=corrected_text,
+        corrected_text, change_rows, review_rows = apply_entry_aware_corrections(
+            page_lines=page_lines,
             line_infos=line_infos,
+            headword_memory=headword_memory,
+            entry_memory=entry_memory,
+            trusted_lexicon=trusted_lexicon,
+            discovered=discovered,
         )
-    )
-    change_rows.extend(sanskrit_change_rows)
-    review_rows.extend(sanskrit_review_rows)
-    review_rows, stale_review_rows_removed = filter_stale_review_rows(review_rows, corrected_text)
+        change_rows = structural_change_rows + google_vision_change_rows + change_rows
+        corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
+            apply_citation_name_normalization(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+            )
+        )
+        change_rows.extend(citation_change_rows)
+        review_rows.extend(citation_review_rows)
+        corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
+            apply_sanskrit_normalization(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+            )
+        )
+        change_rows.extend(sanskrit_change_rows)
+        review_rows.extend(sanskrit_review_rows)
+        review_rows, stale_review_rows_removed = filter_stale_review_rows(review_rows, corrected_text)
 
     entry_jsonl = outdir / f"{label}_entry_map.jsonl"
     line_tsv = outdir / f"{label}_line_zones.tsv"
@@ -6561,6 +6697,7 @@ def run_one(
         "alternate_witness_used": alternate_merged is not None,
         "alternate_witness_path": str(alternate_merged) if alternate_merged is not None else "",
         "alternate_google_vision_mode": alternate_google_vision if alternate_merged is not None else False,
+        "merge_only": merge_only,
         "alternate_witness_adoptions": alternate_adoption_count,
         "alternate_witness_unresolved": len(alternate_unresolved_rows),
         "trusted_lexicon_size": len(trusted_lexicon),
@@ -6646,6 +6783,11 @@ def main() -> int:
         action="store_true",
         help="Treat the alternate witness as Google Vision OCR and run Google-specific LoC preclean on it.",
     )
+    ap.add_argument(
+        "--merge-only",
+        action="store_true",
+        help="Stop after witness preparation/arbitration and write the merged witness without downstream cleanup passes.",
+    )
     args = ap.parse_args()
 
     merged = Path(args.merged)
@@ -6665,6 +6807,7 @@ def main() -> int:
         google_vision=args.google_vision,
         alternate_merged=Path(args.alternate_merged) if args.alternate_merged else None,
         alternate_google_vision=args.alternate_google_vision,
+        merge_only=args.merge_only,
     )
     print(f"label={result['label']}")
     print(f"merged={result['merged']}")
@@ -6681,6 +6824,7 @@ def main() -> int:
     if result["alternate_witness_used"]:
         print(f"alternate_witness_path={result['alternate_witness_path']}")
         print(f"alternate_google_vision_mode={result['alternate_google_vision_mode']}")
+    print(f"merge_only={result['merge_only']}")
     print(f"alternate_witness_adoptions={result['alternate_witness_adoptions']}")
     print(f"alternate_witness_unresolved={result['alternate_witness_unresolved']}")
     print(f"tier_a_applied={result['tier_a_applied']}")

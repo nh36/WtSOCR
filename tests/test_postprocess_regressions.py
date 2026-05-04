@@ -23,6 +23,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         google_vision: bool = False,
         alternate_merged_text: str | None = None,
         alternate_google_vision: bool = False,
+        merge_only: bool = False,
     ) -> tuple[dict[str, object], str, list[dict[str, str]]]:
         td = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, td, ignore_errors=True)
@@ -46,6 +47,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             google_vision=google_vision,
             alternate_merged=alternate_merged if alternate_merged_text is not None else None,
             alternate_google_vision=alternate_google_vision,
+            merge_only=merge_only,
         )
         corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
         with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
@@ -149,6 +151,41 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(unresolved[0]["alternate_token"], "kuṅ")
         self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
 
+    def test_merge_only_uses_cleaned_alternate_witness_without_downstream_cleanup(self) -> None:
+        merged_text = "\f1\nཞེས་ žes\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
+
+        result, corrected, rows = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+            merge_only=True,
+        )
+
+        self.assertTrue(result["merge_only"])
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["trusted_lexicon_size"], 0)
+        self.assertEqual(result["discovered_patterns"], 0)
+        self.assertEqual(result["citation_name_changes"], 0)
+        self.assertEqual(result["sanskrit_changes"], 0)
+        self.assertIn("ཞེས་ źes", corrected)
+        self.assertEqual(rows, [])
+
+    def test_alternate_witness_ignores_form_feed_page_number_line(self) -> None:
+        merged_text = "\f1\nཞེས་ žes\n"
+        alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"
+
+        result, corrected, rows = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཞེས་ źes", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+        self.assertEqual(rows, [])
+
     def test_alternate_witness_aligns_collapsed_blank_lines(self) -> None:
         merged_text = "ཞེས་ žes\n\nཀོང་ koṅ po\n"
         alternate_merged_text = "=== page 001 ===\nཞེས་ žes\nཀོང་ koṅ po\n"
@@ -182,6 +219,29 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
 
         self.assertIn("źes", corrected)
+        self.assertIn("\fཀོང་ koṅ po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+    def test_alternate_witness_scans_forward_across_rewrapped_page(self) -> None:
+        merged_text = "ཞེས་ žes koṅ po\n\fཀོང་ koṅ po\n"
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "dummy page\n"
+            "=== page 002 ===\n"
+            "ཞེས་ žes\n"
+            "koṅ po\n"
+            "=== page 003 ===\n"
+            "ཀོང་ koṅ po\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes koṅ po", corrected)
         self.assertIn("\fཀོང་ koṅ po", corrected)
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
