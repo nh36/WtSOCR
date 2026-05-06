@@ -2174,6 +2174,28 @@ def token_is_google_loc_fricative_upgrade(base_token: str, alternate_token: str)
     return saw_upgrade
 
 
+GOOGLE_LOC_NASAL_UPGRADE_PAIRS = {
+    ("n", "ṅ"),
+    ("N", "Ṅ"),
+    ("n", "ñ"),
+    ("N", "Ñ"),
+}
+
+
+def token_is_google_loc_nasal_upgrade(base_token: str, alternate_token: str) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for base_char, alternate_char in zip(base_token, alternate_token):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) in GOOGLE_LOC_NASAL_UPGRADE_PAIRS:
+            saw_upgrade = True
+            continue
+        return False
+    return saw_upgrade
+
+
 ALTERNATE_WITNESS_TOKEN_RE = re.compile(
     r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+(?:['’.-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+)*"
 )
@@ -2267,12 +2289,13 @@ def alternate_witness_reason(
     if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
         return None
     if token_is_alternate_witness_clean_translit(base_token):
-        if (
-            alternate_witness_distance_key(base_token)
-            == alternate_witness_distance_key(alternate_token)
-            and token_is_google_loc_fricative_upgrade(base_token, alternate_token)
+        if alternate_witness_distance_key(base_token) == alternate_witness_distance_key(
+            alternate_token
         ):
-            return "alternate_witness_google_loc_fricative_upgrade"
+            if token_is_google_loc_fricative_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_fricative_upgrade"
+            if token_is_google_loc_nasal_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_nasal_upgrade"
     base_canon = canonicalize_alternate_witness_token(base_token)
     alternate_canon = canonicalize_alternate_witness_token(alternate_token)
     if not base_canon or base_canon != alternate_canon:
@@ -2460,8 +2483,58 @@ def arbitrate_alternate_witness(
                 aligned_page[base_idx - 1] = aligned_line
             return aligned_page
 
+        def align_reordered_nonempty_lines() -> list[str] | None:
+            base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+            alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+            if not base_nonempty and not alternate_nonempty:
+                return [""] * len(base_page)
+            if not base_nonempty or not alternate_nonempty:
+                return None
+            if len(base_nonempty) != len(alternate_nonempty):
+                return None
+
+            scored_pairs: list[tuple[float, int, int]] = []
+            for base_pos, (_base_idx, base_line) in enumerate(base_nonempty):
+                for alternate_pos, (_alternate_idx, alternate_line) in enumerate(alternate_nonempty):
+                    score = line_similarity(base_line, alternate_line)
+                    compatible_structure = line_has_compatible_structure(base_line, alternate_line)
+                    if compatible_structure:
+                        score += 0.2
+                    if score < 0.9:
+                        continue
+                    scored_pairs.append((score, base_pos, alternate_pos))
+
+            if len(scored_pairs) < len(base_nonempty):
+                return None
+
+            scored_pairs.sort(reverse=True)
+            used_base: set[int] = set()
+            used_alternate: set[int] = set()
+            matched_pairs: list[tuple[int, int]] = []
+            for _score, base_pos, alternate_pos in scored_pairs:
+                if base_pos in used_base or alternate_pos in used_alternate:
+                    continue
+                used_base.add(base_pos)
+                used_alternate.add(alternate_pos)
+                matched_pairs.append((base_pos, alternate_pos))
+                if len(matched_pairs) == len(base_nonempty):
+                    break
+
+            if len(matched_pairs) != len(base_nonempty):
+                return None
+
+            aligned_page = [""] * len(base_page)
+            for base_pos, alternate_pos in matched_pairs:
+                base_idx, _base_line = base_nonempty[base_pos]
+                _alternate_idx, alternate_line = alternate_nonempty[alternate_pos]
+                aligned_page[base_idx - 1] = alternate_line.strip()
+            return aligned_page
+
         if len(base_page) == len(alternate_page):
             if not page_has_compatible_content(alternate_page):
+                reordered_page = align_reordered_nonempty_lines()
+                if reordered_page is not None and page_has_compatible_content(reordered_page):
+                    return reordered_page, None, "", "", aligned_page_score(reordered_page)
                 return (
                     None,
                     "unalignable_page_content",
