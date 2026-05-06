@@ -291,6 +291,46 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
+    def test_alternate_witness_prefers_best_aligned_page_over_edge_match(self) -> None:
+        merged_text = (
+            "ཀ་ ka\n"
+            "ཁ་ kha\n"
+            "ག་ ga\n"
+            "ཞེས་ zes\n"
+            "ཅ་ ca\n"
+            "ཆ་ cha\n"
+            "ཇ་ ja\n"
+        )
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "ཀ་ ka\n"
+            "ཁ་ kha\n"
+            "ག་ ga\n"
+            "completely unrelated witness line\n"
+            "ཅ་ ca\n"
+            "ཆ་ cha\n"
+            "ཇ་ ja\n"
+            "=== page 002 ===\n"
+            "ཀ་ ka\n"
+            "ཁ་ kha\n"
+            "ག་ ga\n"
+            "ཞེས་ žes\n"
+            "ཅ་ ca\n"
+            "ཆ་ cha\n"
+            "ཇ་ ja\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("źes", corrected)
+        self.assertNotIn("zes", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
     def test_alternate_witness_rejects_page_with_only_one_compatible_line(self) -> None:
         merged_text = "ཞེས་ žes\nཀོང་ koṅ po\n"
         alternate_merged_text = (

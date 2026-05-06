@@ -2340,6 +2340,8 @@ def arbitrate_alternate_witness(
         base_page: list[str],
         alternate_page: list[str],
     ) -> tuple[list[str] | None, str | None, str, str, float]:
+        base_nonempty_count = sum(1 for line in base_page if line.strip())
+
         def line_has_compatible_structure(base_line: str, alternate_line: str) -> bool:
             if base_line.strip() == alternate_line.strip():
                 return True
@@ -2378,6 +2380,27 @@ def arbitrate_alternate_witness(
             if comparable_lines <= 1:
                 return compatibility_hits == comparable_lines
             return compatibility_hits >= min(2, comparable_lines)
+
+        def aligned_page_score(aligned_page: list[str]) -> float:
+            total_similarity = 0.0
+            compatibility_hits = 0
+            comparable_lines = 0
+            for base_line, alternate_line in zip(base_page, aligned_page):
+                base_text = base_line.strip()
+                alternate_text = alternate_line.strip()
+                if not base_text or not alternate_text:
+                    continue
+                comparable_lines += 1
+                total_similarity += line_similarity(base_line, alternate_line)
+                if line_has_compatible_structure(base_line, alternate_line):
+                    compatibility_hits += 1
+            if comparable_lines == 0:
+                return page_similarity(base_page, aligned_page)
+            denominator = max(base_nonempty_count, 1)
+            return (
+                total_similarity / denominator
+                + 0.05 * (compatibility_hits / denominator)
+            )
 
         def align_nonempty_runs() -> list[str] | None:
             base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
@@ -2437,11 +2460,16 @@ def arbitrate_alternate_witness(
                 aligned_page[base_idx - 1] = aligned_line
             return aligned_page
 
-        candidate_score = page_similarity(base_page, alternate_page)
         if len(base_page) == len(alternate_page):
             if not page_has_compatible_content(alternate_page):
-                return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page)), candidate_score
-            return alternate_page, None, "", "", candidate_score
+                return (
+                    None,
+                    "unalignable_page_content",
+                    str(len(base_page)),
+                    str(len(alternate_page)),
+                    page_similarity(base_page, alternate_page),
+                )
+            return alternate_page, None, "", "", aligned_page_score(alternate_page)
         base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
         alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
         aligned_page = align_nonempty_runs()
@@ -2454,11 +2482,23 @@ def arbitrate_alternate_witness(
                 mismatch_reason,
                 str(len(base_nonempty)),
                 str(len(alternate_nonempty)),
-                candidate_score,
+                page_similarity(base_page, alternate_page),
             )
         if not page_has_compatible_content(aligned_page):
-            return None, "unalignable_page_content", str(len(base_page)), str(len(alternate_page)), candidate_score
-        return aligned_page, None, str(len(base_page)), str(len(alternate_page)), candidate_score
+            return (
+                None,
+                "unalignable_page_content",
+                str(len(base_page)),
+                str(len(alternate_page)),
+                page_similarity(base_page, alternate_page),
+            )
+        return (
+            aligned_page,
+            None,
+            str(len(base_page)),
+            str(len(alternate_page)),
+            aligned_page_score(aligned_page),
+        )
 
     adoption_rows: list[list[str]] = []
     unresolved_rows: list[list[str]] = []
