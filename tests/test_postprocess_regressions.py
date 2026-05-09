@@ -377,6 +377,26 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
+    def test_alternate_witness_ignores_google_separator_junk_line(self) -> None:
+        merged_text = "ཞེས་ žes (Mvy 1)\nཀོང་ koṅ po\n"
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "ཞེས་ žes(MVY 1)\n"
+            "::\n"
+            "ཀོང་ koň po\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertEqual(corrected.splitlines(), ["ཞེས་ źes (Mvy 1)", "ཀོང་ koṅ po"])
+        self.assertNotIn("MVY", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
     def test_alternate_witness_aligns_reordered_same_page_lines(self) -> None:
         merged_text = "ཀོང་ koṅ po\nཞེས་ žes (Mvy 1)\nབཀྲ་ bkra\n"
         alternate_merged_text = (

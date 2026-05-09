@@ -2310,6 +2310,7 @@ def arbitrate_alternate_witness(
     base_line_infos: list["LineInfo"],
     alternate_page_lines: list[list[str]],
     alternate_line_infos: list["LineInfo"],
+    alternate_google_vision: bool = False,
 ) -> tuple[str, list[list[str]], list[list[str]], int]:
     def normalize_alignment_text(text: str) -> str:
         normalized = unicodedata.normalize("NFKC", text)
@@ -2329,6 +2330,16 @@ def arbitrate_alternate_witness(
         parts.append(normalize_alignment_text(line[cursor:]))
         return " ".join(part for part in parts if part)
 
+    def is_google_alignment_junk_line(line: str) -> bool:
+        stripped = line.strip()
+        if not stripped:
+            return False
+        if any(ch.isalnum() for ch in stripped):
+            return False
+        if re.search(r"[\u0F00-\u0FFF]", stripped):
+            return False
+        return bool(re.fullmatch(r"[-–—=~_*.,:;|/\\\\(){}\[\]<>\"'`]+", stripped))
+
     def line_similarity(base_line: str, alternate_line: str) -> float:
         return SequenceMatcher(
             None,
@@ -2337,9 +2348,21 @@ def arbitrate_alternate_witness(
             autojunk=False,
         ).ratio()
 
-    def page_similarity(base_page: list[str], alternate_page: list[str]) -> float:
+    def page_similarity(
+        base_page: list[str],
+        alternate_page: list[str],
+        alternate_google_vision: bool = False,
+    ) -> float:
         base_nonempty = [line for line in base_page if line.strip()]
-        alternate_nonempty = [line for line in alternate_page if line.strip()]
+        alternate_nonempty = [
+            line
+            for line in alternate_page
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        ]
         if not base_nonempty or not alternate_nonempty:
             return 1.0 if not base_nonempty and not alternate_nonempty else 0.0
         sample_size = min(3, len(base_nonempty), len(alternate_nonempty))
@@ -2362,6 +2385,7 @@ def arbitrate_alternate_witness(
     def align_alternate_page(
         base_page: list[str],
         alternate_page: list[str],
+        alternate_google_vision: bool = False,
     ) -> tuple[list[str] | None, str | None, str, str, float]:
         base_nonempty_count = sum(1 for line in base_page if line.strip())
 
@@ -2418,7 +2442,11 @@ def arbitrate_alternate_witness(
                 if line_has_compatible_structure(base_line, alternate_line):
                     compatibility_hits += 1
             if comparable_lines == 0:
-                return page_similarity(base_page, aligned_page)
+                return page_similarity(
+                    base_page,
+                    aligned_page,
+                    alternate_google_vision=alternate_google_vision,
+                )
             denominator = max(base_nonempty_count, 1)
             return (
                 total_similarity / denominator
@@ -2427,7 +2455,15 @@ def arbitrate_alternate_witness(
 
         def align_nonempty_runs() -> list[str] | None:
             base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
-            alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+            alternate_nonempty = [
+                (idx, line)
+                for idx, line in enumerate(alternate_page, start=1)
+                if line.strip()
+                and not (
+                    alternate_google_vision
+                    and is_google_alignment_junk_line(line)
+                )
+            ]
             if not base_nonempty and not alternate_nonempty:
                 return [""] * len(base_page)
             if not base_nonempty or not alternate_nonempty:
@@ -2582,7 +2618,15 @@ def arbitrate_alternate_witness(
 
         def align_reordered_nonempty_lines() -> list[str] | None:
             base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
-            alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+            alternate_nonempty = [
+                (idx, line)
+                for idx, line in enumerate(alternate_page, start=1)
+                if line.strip()
+                and not (
+                    alternate_google_vision
+                    and is_google_alignment_junk_line(line)
+                )
+            ]
             if not base_nonempty and not alternate_nonempty:
                 return [""] * len(base_page)
             if not base_nonempty or not alternate_nonempty:
@@ -2637,11 +2681,23 @@ def arbitrate_alternate_witness(
                     "unalignable_page_content",
                     str(len(base_page)),
                     str(len(alternate_page)),
-                    page_similarity(base_page, alternate_page),
+                    page_similarity(
+                        base_page,
+                        alternate_page,
+                        alternate_google_vision=alternate_google_vision,
+                    ),
                 )
             return alternate_page, None, "", "", aligned_page_score(alternate_page)
         base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
-        alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
+        alternate_nonempty = [
+            (idx, line)
+            for idx, line in enumerate(alternate_page, start=1)
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        ]
         aligned_page = align_nonempty_runs()
         if aligned_page is None:
             mismatch_reason = "unalignable_rewrapped_page"
@@ -2655,7 +2711,11 @@ def arbitrate_alternate_witness(
                 mismatch_reason,
                 str(len(base_nonempty)),
                 str(len(alternate_nonempty)),
-                page_similarity(base_page, alternate_page),
+                page_similarity(
+                    base_page,
+                    alternate_page,
+                    alternate_google_vision=alternate_google_vision,
+                ),
             )
         if not page_has_compatible_content(aligned_page):
             return (
@@ -2663,7 +2723,11 @@ def arbitrate_alternate_witness(
                 "unalignable_page_content",
                 str(len(base_page)),
                 str(len(alternate_page)),
-                page_similarity(base_page, alternate_page),
+                page_similarity(
+                    base_page,
+                    alternate_page,
+                    alternate_google_vision=alternate_google_vision,
+                ),
             )
         return (
             aligned_page,
@@ -2696,6 +2760,7 @@ def arbitrate_alternate_witness(
             ) = align_alternate_page(
                 base_page,
                 alternate_page_lines[search_idx],
+                alternate_google_vision=alternate_google_vision,
             )
             if candidate_page is not None:
                 if candidate_score > best_score:
@@ -6769,6 +6834,7 @@ def run_one(
             base_line_infos=line_infos,
             alternate_page_lines=alternate_witness["page_lines"],
             alternate_line_infos=alternate_witness["line_infos"],
+            alternate_google_vision=alternate_google_vision,
         )
         entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
     if merge_only:
