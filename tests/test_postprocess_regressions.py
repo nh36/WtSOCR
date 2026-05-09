@@ -372,8 +372,8 @@ class PostprocessRegressionTests(unittest.TestCase):
             alternate_google_vision=True,
         )
 
-        self.assertIn("źes (Mvy 1)", corrected)
-        self.assertIn("koṅ po", corrected)
+        self.assertEqual(corrected.splitlines(), ["ཞེས་ źes (Mvy 1)", "ཀོང་ koṅ po"])
+        self.assertNotIn("MVY", corrected)
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
@@ -392,8 +392,8 @@ class PostprocessRegressionTests(unittest.TestCase):
             alternate_google_vision=True,
         )
 
-        self.assertIn("źes (Mvy 1)", corrected)
-        self.assertIn("koṅ po", corrected)
+        self.assertEqual(corrected.splitlines(), ["ཀོང་ koṅ po", "ཞེས་ źes (Mvy 1)", "བཀྲ་ bkra"])
+        self.assertNotIn("MVY", corrected)
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
@@ -414,9 +414,27 @@ class PostprocessRegressionTests(unittest.TestCase):
         with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
             unresolved = list(csv.DictReader(f, delimiter="\t"))
         self.assertEqual(len(unresolved), 1)
-        self.assertEqual(unresolved[0]["reason"], "nonempty_line_count_mismatch")
+        self.assertEqual(unresolved[0]["reason"], "unalignable_rewrapped_page")
         self.assertEqual(unresolved[0]["base_key"], "2")
         self.assertEqual(unresolved[0]["alternate_key"], "1")
+
+    def test_alternate_witness_aligns_reverse_rewrapped_page(self) -> None:
+        merged_text = "ཞེས་ žes (Mvy 1)\nཀོང་ koṅ po\n"
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "ཞེས་ žes(MVY 1) ཀོང་ koň po\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertEqual(corrected.splitlines(), ["ཞེས་ źes (Mvy 1)", "ཀོང་ koṅ po"])
+        self.assertNotIn("MVY", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
 
     def test_alternate_witness_does_not_adopt_loc_loss(self) -> None:
         merged_text = "གཉིས་ gñis\n"

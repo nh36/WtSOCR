@@ -2432,46 +2432,139 @@ def arbitrate_alternate_witness(
                 return [""] * len(base_page)
             if not base_nonempty or not alternate_nonempty:
                 return None
-            if len(alternate_nonempty) < len(base_nonempty):
-                return None
 
             from functools import lru_cache
+
+            def redistribute_grouped_alignment(
+                base_lines: list[str],
+                alternate_lines: list[str],
+            ) -> tuple[str, ...] | None:
+                normalized_alternate_lines = [line.strip() for line in alternate_lines if line.strip()]
+                if not normalized_alternate_lines:
+                    return None
+                if len(base_lines) == 1:
+                    return (" ".join(normalized_alternate_lines),)
+                if len(base_lines) == len(normalized_alternate_lines):
+                    direct_mapping = tuple(normalized_alternate_lines)
+                    if all(
+                        line_similarity(base_line, alternate_line) >= 0.55
+                        for base_line, alternate_line in zip(base_lines, direct_mapping)
+                    ):
+                        return direct_mapping
+
+                alternate_joined = " ".join(normalized_alternate_lines)
+                alternate_tokens = alternate_joined.split()
+                if len(alternate_tokens) < len(base_lines):
+                    return None
+
+                @lru_cache(maxsize=None)
+                def best_partition(
+                    base_offset: int,
+                    token_offset: int,
+                ) -> tuple[float, tuple[str, ...]] | None:
+                    remaining_base = len(base_lines) - base_offset
+                    remaining_tokens = len(alternate_tokens) - token_offset
+                    if remaining_base == 0:
+                        if remaining_tokens == 0:
+                            return 0.0, ()
+                        return None
+                    if remaining_tokens < remaining_base:
+                        return None
+
+                    best: tuple[float, tuple[str, ...]] | None = None
+                    max_end = len(alternate_tokens) - (remaining_base - 1)
+                    base_line = base_lines[base_offset]
+                    base_token_count = max(1, len(base_line.split()))
+                    for end in range(token_offset + 1, max_end + 1):
+                        candidate_line = " ".join(alternate_tokens[token_offset:end])
+                        score = line_similarity(base_line, candidate_line)
+                        if line_has_compatible_structure(base_line, candidate_line):
+                            score += 0.15
+                        score -= 0.02 * abs(len(candidate_line.split()) - base_token_count)
+                        if score < 0.52:
+                            continue
+                        suffix = best_partition(base_offset + 1, end)
+                        if suffix is None:
+                            continue
+                        total_score = score + suffix[0]
+                        candidate = (total_score, (candidate_line,) + suffix[1])
+                        if best is None or total_score > best[0]:
+                            best = candidate
+                    return best
+
+                best = best_partition(0, 0)
+                if best is None:
+                    return None
+                redistributed = best[1]
+                if any(
+                    line_similarity(base_line, alternate_line) < 0.55
+                    for base_line, alternate_line in zip(base_lines, redistributed)
+                ):
+                    return None
+                return redistributed
 
             @lru_cache(maxsize=None)
             def best_alignment(
                 base_pos: int,
-                alternate_cursor: int,
-            ) -> tuple[float, tuple[tuple[int, str], ...]] | None:
+                alternate_pos: int,
+            ) -> tuple[float, tuple[tuple[int, int, tuple[str, ...]], ...]] | None:
                 if base_pos == len(base_nonempty):
-                    if alternate_cursor == len(alternate_nonempty):
+                    if alternate_pos == len(alternate_nonempty):
                         return 0.0, ()
                     return None
-
-                remaining_base = len(base_nonempty) - base_pos - 1
-                remaining_alternate = len(alternate_nonempty) - alternate_cursor
-                if remaining_alternate <= remaining_base:
+                if alternate_pos == len(alternate_nonempty):
                     return None
 
-                _base_idx, base_line = base_nonempty[base_pos]
-                max_take = min(3, remaining_alternate - remaining_base)
-                best: tuple[float, tuple[tuple[int, str], ...]] | None = None
-                for take in range(1, max_take + 1):
-                    candidate_line = " ".join(
-                        alternate_nonempty[alternate_cursor + offset][1].strip()
-                        for offset in range(take)
-                    )
-                    score = line_similarity(base_line, candidate_line)
-                    if line_has_compatible_structure(base_line, candidate_line):
-                        score += 0.2
-                    if score < 0.72:
-                        continue
-                    suffix = best_alignment(base_pos + 1, alternate_cursor + take)
-                    if suffix is None:
-                        continue
-                    total_score = score + suffix[0]
-                    candidate = (total_score, ((take, candidate_line),) + suffix[1])
-                    if best is None or total_score > best[0]:
-                        best = candidate
+                remaining_base = len(base_nonempty) - base_pos
+                remaining_alternate = len(alternate_nonempty) - alternate_pos
+                if max(remaining_base, remaining_alternate) > min(remaining_base, remaining_alternate) * 3:
+                    return None
+
+                best: tuple[float, tuple[tuple[int, int, str], ...]] | None = None
+                max_base_take = min(3, remaining_base)
+                max_alternate_take = min(3, remaining_alternate)
+                for take_base in range(1, max_base_take + 1):
+                    after_base = remaining_base - take_base
+                    for take_alternate in range(1, max_alternate_take + 1):
+                        after_alternate = remaining_alternate - take_alternate
+                        if after_base > after_alternate * 3 or after_alternate > after_base * 3:
+                            continue
+
+                        base_group = " ".join(
+                            base_nonempty[base_pos + offset][1].strip()
+                            for offset in range(take_base)
+                        )
+                        alternate_group = " ".join(
+                            alternate_nonempty[alternate_pos + offset][1].strip()
+                            for offset in range(take_alternate)
+                        )
+                        score = line_similarity(base_group, alternate_group)
+                        if line_has_compatible_structure(base_group, alternate_group):
+                            score += 0.2
+                        if score < 0.72:
+                            continue
+                        redistributed_lines = redistribute_grouped_alignment(
+                            [
+                                base_nonempty[base_pos + offset][1]
+                                for offset in range(take_base)
+                            ],
+                            [
+                                alternate_nonempty[alternate_pos + offset][1]
+                                for offset in range(take_alternate)
+                            ],
+                        )
+                        if redistributed_lines is None:
+                            continue
+                        suffix = best_alignment(base_pos + take_base, alternate_pos + take_alternate)
+                        if suffix is None:
+                            continue
+                        total_score = score + suffix[0]
+                        candidate = (
+                            total_score,
+                            ((take_base, take_alternate, redistributed_lines),) + suffix[1],
+                        )
+                        if best is None or total_score > best[0]:
+                            best = candidate
                 return best
 
             alignment = best_alignment(0, 0)
@@ -2479,8 +2572,12 @@ def arbitrate_alternate_witness(
                 return None
 
             aligned_page = [""] * len(base_page)
-            for (base_idx, _base_line), (_take, aligned_line) in zip(base_nonempty, alignment[1]):
-                aligned_page[base_idx - 1] = aligned_line
+            base_cursor = 0
+            for take_base, _take_alternate, aligned_lines in alignment[1]:
+                for offset, aligned_line in enumerate(aligned_lines):
+                    base_idx, _base_line = base_nonempty[base_cursor + offset]
+                    aligned_page[base_idx - 1] = aligned_line
+                base_cursor += take_base
             return aligned_page
 
         def align_reordered_nonempty_lines() -> list[str] | None:
@@ -2547,9 +2644,12 @@ def arbitrate_alternate_witness(
         alternate_nonempty = [(idx, line) for idx, line in enumerate(alternate_page, start=1) if line.strip()]
         aligned_page = align_nonempty_runs()
         if aligned_page is None:
-            mismatch_reason = "nonempty_line_count_mismatch"
-            if len(alternate_nonempty) >= len(base_nonempty):
-                mismatch_reason = "unalignable_rewrapped_page"
+            mismatch_reason = "unalignable_rewrapped_page"
+            if (
+                abs(len(base_nonempty) - len(alternate_nonempty)) > 3
+                and min(len(base_nonempty), len(alternate_nonempty)) <= 1
+            ):
+                mismatch_reason = "nonempty_line_count_mismatch"
             return (
                 None,
                 mismatch_reason,
