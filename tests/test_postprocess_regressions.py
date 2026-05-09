@@ -199,6 +199,54 @@ class PostprocessRegressionTests(unittest.TestCase):
             "alternate_witness_google_loc_nasal_upgrade",
         )
 
+    def test_alternate_witness_adopts_initial_i_to_l_translit_upgrade(self) -> None:
+        merged_text = "ལྟ་བ་ Ita ba yin\n"
+        alternate_merged_text = "=== page 001 ===\nལྟ་བ་ lta ba yin\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("lta ba yin", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(newline="", encoding="utf-8") as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "Ita")
+        self.assertEqual(adoptions[0]["alternate_token"], "lta")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_initial_i_to_l_translit",
+        )
+
+    def test_alternate_witness_adopts_hyphenated_initial_i_to_l_translit_upgrade(self) -> None:
+        merged_text = "རིགས་ལྡན་ Rigs-Idan\n"
+        alternate_merged_text = "=== page 001 ===\nརིགས་ལྡན་ Rigs-ldan\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("Rigs-ldan", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(newline="", encoding="utf-8") as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "Rigs-Idan")
+        self.assertEqual(adoptions[0]["alternate_token"], "Rigs-ldan")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_hyphenated_initial_i_to_l_translit",
+        )
+
     def test_merge_only_uses_cleaned_alternate_witness_without_downstream_cleanup(self) -> None:
         merged_text = "\f1\nཞེས་ žes\n"
         alternate_merged_text = "=== page 001 ===\nཞེས་ žes\n"

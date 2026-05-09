@@ -2284,6 +2284,10 @@ def alternate_witness_reason(
         return None
     if not token_is_alternate_witness_clean_translit(alternate_token):
         return None
+    if token_is_safe_hyphenated_initial_i_to_l_translit(base_token, alternate_token):
+        return "alternate_witness_hyphenated_initial_i_to_l_translit"
+    if token_is_initial_i_translit_candidate(base_token, alternate_token):
+        return "alternate_witness_initial_i_to_l_translit"
     if token_is_german_like(base_token):
         return None
     if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
