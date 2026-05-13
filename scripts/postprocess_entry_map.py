@@ -2329,6 +2329,8 @@ def alternate_witness_reason(
                 return "alternate_witness_google_loc_velar_nasal_upgrade"
             if token_is_google_loc_nasal_upgrade(base_token, alternate_token):
                 return "alternate_witness_google_loc_nasal_upgrade"
+    if token_is_alternate_witness_citation_siglum_upgrade(base_token, alternate_token):
+        return "alternate_witness_citation_siglum"
     base_canon = canonicalize_alternate_witness_token(base_token)
     alternate_canon = canonicalize_alternate_witness_token(alternate_token)
     if not base_canon or base_canon != alternate_canon:
@@ -3392,6 +3394,23 @@ def token_is_ignorable_alternate_siglum_disagreement(
     if base_siglum_key != alternate_siglum_key:
         return False
     return base_token == base_siglum and alternate_token != alternate_siglum
+
+
+def token_is_alternate_witness_citation_siglum_upgrade(
+    base_token: str,
+    alternate_token: str,
+) -> bool:
+    base_siglum = match_citation_siglum(base_token)
+    alternate_siglum = match_citation_siglum(alternate_token)
+    if base_siglum is None or alternate_siglum is None:
+        return False
+    base_siglum_key = re.sub(r"[sś]+", "s", base_siglum.casefold())
+    alternate_siglum_key = re.sub(r"[sś]+", "s", alternate_siglum.casefold())
+    if base_siglum_key != alternate_siglum_key:
+        return False
+    if base_token == base_siglum:
+        return False
+    return alternate_token == alternate_siglum
 
 
 def split_citation_siglum_token(token: str) -> tuple[str, str]:
