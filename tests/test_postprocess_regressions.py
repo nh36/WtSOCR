@@ -199,6 +199,58 @@ class PostprocessRegressionTests(unittest.TestCase):
             "alternate_witness_google_loc_nasal_upgrade",
         )
 
+    def test_alternate_witness_adopts_google_loc_velar_nasal_upgrade(self) -> None:
+        merged_text = "ཀོང་ koñ po\n"
+        alternate_merged_text = "=== page 001 ===\nཀོང་ koṅ po\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("koṅ po", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="", encoding="utf-8"
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "koñ")
+        self.assertEqual(adoptions[0]["alternate_token"], "koṅ")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_google_loc_velar_nasal_upgrade",
+        )
+
+    def test_alternate_witness_blocks_google_loc_velar_nasal_upgrade_for_sanskrit_shape(
+        self,
+    ) -> None:
+        merged_text = "གནས་ gañdza\n"
+        alternate_merged_text = "=== page 001 ===\nགནས་ gaṅdza\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("gañdza", corrected)
+        self.assertNotIn("gaṅdza", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(
+            newline="", encoding="utf-8"
+        ) as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "gañdza")
+        self.assertEqual(unresolved[0]["alternate_token"], "gaṅdza")
+        self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
+
     def test_alternate_witness_adopts_initial_i_to_l_translit_upgrade(self) -> None:
         merged_text = "ལྟ་བ་ Ita ba yin\n"
         alternate_merged_text = "=== page 001 ===\nལྟ་བ་ lta ba yin\n"

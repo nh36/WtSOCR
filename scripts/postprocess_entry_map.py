@@ -2181,6 +2181,13 @@ GOOGLE_LOC_NASAL_UPGRADE_PAIRS = {
     ("N", "Ñ"),
 }
 
+GOOGLE_LOC_VELAR_NASAL_UPGRADE_PAIRS = {
+    ("ñ", "ṅ"),
+    ("Ñ", "Ṅ"),
+}
+
+GOOGLE_LOC_VELAR_NASAL_BLOCKING_CLUSTERS = ("dz", "j", "c")
+
 
 def token_is_google_loc_nasal_upgrade(base_token: str, alternate_token: str) -> bool:
     if len(base_token) != len(alternate_token):
@@ -2193,6 +2200,26 @@ def token_is_google_loc_nasal_upgrade(base_token: str, alternate_token: str) -> 
             saw_upgrade = True
             continue
         return False
+    return saw_upgrade
+
+
+def token_is_google_loc_velar_nasal_upgrade(
+    base_token: str, alternate_token: str
+) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for index, (base_char, alternate_char) in enumerate(
+        zip(base_token, alternate_token)
+    ):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) not in GOOGLE_LOC_VELAR_NASAL_UPGRADE_PAIRS:
+            return False
+        tail = base_token[index + 1 : index + 3].lower()
+        if any(tail.startswith(cluster) for cluster in GOOGLE_LOC_VELAR_NASAL_BLOCKING_CLUSTERS):
+            return False
+        saw_upgrade = True
     return saw_upgrade
 
 
@@ -2298,6 +2325,8 @@ def alternate_witness_reason(
         ):
             if token_is_google_loc_fricative_upgrade(base_token, alternate_token):
                 return "alternate_witness_google_loc_fricative_upgrade"
+            if token_is_google_loc_velar_nasal_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_velar_nasal_upgrade"
             if token_is_google_loc_nasal_upgrade(base_token, alternate_token):
                 return "alternate_witness_google_loc_nasal_upgrade"
     base_canon = canonicalize_alternate_witness_token(base_token)
