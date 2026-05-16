@@ -2224,7 +2224,7 @@ def token_is_google_loc_velar_nasal_upgrade(
 
 
 ALTERNATE_WITNESS_TOKEN_RE = re.compile(
-    r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+(?:['’.-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+)*"
+    r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+(?:['’.$-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+)*"
 )
 
 
@@ -2307,9 +2307,9 @@ def alternate_witness_reason(
 ) -> str | None:
     if base_token == alternate_token:
         return None
+    if token_is_alternate_witness_citation_siglum_upgrade(base_token, alternate_token):
+        return "alternate_witness_citation_siglum"
     if not line_is_translit_context(line_info):
-        return None
-    if not token_is_alternate_witness_clean_translit(alternate_token):
         return None
     if token_is_safe_hyphenated_initial_i_to_l_translit(base_token, alternate_token):
         return "alternate_witness_hyphenated_initial_i_to_l_translit"
@@ -2329,8 +2329,8 @@ def alternate_witness_reason(
                 return "alternate_witness_google_loc_velar_nasal_upgrade"
             if token_is_google_loc_nasal_upgrade(base_token, alternate_token):
                 return "alternate_witness_google_loc_nasal_upgrade"
-    if token_is_alternate_witness_citation_siglum_upgrade(base_token, alternate_token):
-        return "alternate_witness_citation_siglum"
+    if not token_is_alternate_witness_clean_translit(alternate_token):
+        return None
     base_canon = canonicalize_alternate_witness_token(base_token)
     alternate_canon = canonicalize_alternate_witness_token(alternate_token)
     if not base_canon or base_canon != alternate_canon:
@@ -2836,22 +2836,7 @@ def arbitrate_alternate_witness(
             if base_line == alternate_line:
                 continue
             line_info = base_info_by_key.get((page_idx, line_idx))
-            if not line_is_translit_context(line_info):
-                unresolved_rows.append(
-                    [
-                        str(page_idx),
-                        str(line_idx),
-                        "",
-                        "",
-                        "",
-                        "non_translit_context",
-                        "",
-                        "",
-                        base_line,
-                        alternate_line,
-                    ]
-                )
-                continue
+            translit_context = line_is_translit_context(line_info)
             base_tokens = extract_alternate_witness_tokens(base_line)
             alternate_tokens = extract_alternate_witness_tokens(alternate_line)
             if len(base_tokens) != len(alternate_tokens):
@@ -2881,22 +2866,38 @@ def arbitrate_alternate_witness(
                 if base_token != alternate_token:
                     reason = alternate_witness_reason(base_token, alternate_token, line_info=line_info)
                     if reason:
-                        replacement = alternate_token
-                        adoption_rows.append(
-                            [
-                                str(page_idx),
-                                str(line_idx),
-                                str(token_index),
-                                base_token,
-                                alternate_token,
-                                reason,
-                                distance_key(base_token),
-                                distance_key(alternate_token),
-                                base_line,
-                                alternate_line,
-                            ]
-                        )
-                        line_adoptions += 1
+                        if translit_context or reason == "alternate_witness_citation_siglum":
+                            replacement = alternate_token
+                            adoption_rows.append(
+                                [
+                                    str(page_idx),
+                                    str(line_idx),
+                                    str(token_index),
+                                    base_token,
+                                    alternate_token,
+                                    reason,
+                                    distance_key(base_token),
+                                    distance_key(alternate_token),
+                                    base_line,
+                                    alternate_line,
+                                ]
+                            )
+                            line_adoptions += 1
+                        else:
+                            unresolved_rows.append(
+                                [
+                                    str(page_idx),
+                                    str(line_idx),
+                                    str(token_index),
+                                    base_token,
+                                    alternate_token,
+                                    "non_translit_context",
+                                    distance_key(base_token),
+                                    distance_key(alternate_token),
+                                    base_line,
+                                    alternate_line,
+                                ]
+                            )
                     elif token_is_ignorable_alternate_siglum_disagreement(
                         base_token,
                         alternate_token,
@@ -2913,7 +2914,9 @@ def arbitrate_alternate_witness(
                                 str(token_index),
                                 base_token,
                                 alternate_token,
-                                "unsafe_token_disagreement",
+                                "unsafe_token_disagreement"
+                                if translit_context
+                                else "non_translit_context",
                                 distance_key(base_token),
                                 distance_key(alternate_token),
                                 base_line,
@@ -3200,7 +3203,9 @@ def line_has_siglum_context_cue(line_text: str) -> bool:
     return False
 
 
-def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
+def line_is_citation_like(info: "LineInfo | None", line_text: str) -> bool:
+    if info is None:
+        return False
     if info.zone not in {
         "german_prose",
         "german_prose_with_translit",

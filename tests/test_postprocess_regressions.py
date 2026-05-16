@@ -600,6 +600,31 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(unresolved[0]["alternate_token"], "gner")
         self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
 
+    def test_alternate_witness_adopts_citation_siglum_upgrade(self) -> None:
+        merged_text = "mdo sde (Vi$T 3)\n"
+        alternate_merged_text = "=== page 001 ===\nmdo sde (VisT 3)\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("VisT", corrected)
+        self.assertNotIn("Vi$T", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="", encoding="utf-8"
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "Vi$T")
+        self.assertEqual(adoptions[0]["alternate_token"], "VisT")
+        self.assertEqual(
+            adoptions[0]["reason"], "alternate_witness_citation_siglum"
+        )
+
     def test_high_risk_token_regressions(self) -> None:
         merged_text = (
             "ཀོང་ $in po\n"
