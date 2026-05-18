@@ -2304,11 +2304,16 @@ def alternate_witness_reason(
     alternate_token: str,
     *,
     line_info: "LineInfo | None",
+    line_text: str,
 ) -> str | None:
     if base_token == alternate_token:
         return None
     if token_is_alternate_witness_citation_siglum_upgrade(base_token, alternate_token):
         return "alternate_witness_citation_siglum"
+    if line_is_citation_like(line_info, line_text):
+        rewritten_base = citation_safe_confusable_rewrite(base_token)
+        if rewritten_base == alternate_token:
+            return "alternate_witness_citation_cleanup"
     if not line_is_translit_context(line_info):
         return None
     if token_is_safe_hyphenated_initial_i_to_l_translit(base_token, alternate_token):
@@ -2864,9 +2869,17 @@ def arbitrate_alternate_witness(
                 rebuilt.append(base_line[cursor:start])
                 replacement = base_token
                 if base_token != alternate_token:
-                    reason = alternate_witness_reason(base_token, alternate_token, line_info=line_info)
+                    reason = alternate_witness_reason(
+                        base_token,
+                        alternate_token,
+                        line_info=line_info,
+                        line_text=base_line,
+                    )
                     if reason:
-                        if translit_context or reason == "alternate_witness_citation_siglum":
+                        if translit_context or reason in {
+                            "alternate_witness_citation_siglum",
+                            "alternate_witness_citation_cleanup",
+                        }:
                             replacement = alternate_token
                             adoption_rows.append(
                                 [
@@ -3204,9 +3217,7 @@ def line_has_siglum_context_cue(line_text: str) -> bool:
 
 
 def line_is_citation_like(info: "LineInfo | None", line_text: str) -> bool:
-    if info is None:
-        return False
-    if info.zone not in {
+    if info is not None and info.zone not in {
         "german_prose",
         "german_prose_with_translit",
         "latin_other",
