@@ -2830,6 +2830,8 @@ def arbitrate_alternate_witness(
                 ]
             )
             aligned_alternate_pages.append(base_page[:])
+            if alternate_page_idx < len(alternate_page_lines):
+                alternate_page_idx += 1
             continue
         alternate_page_idx = matched_page_idx + 1
         aligned_alternate_pages.append(aligned_page)
