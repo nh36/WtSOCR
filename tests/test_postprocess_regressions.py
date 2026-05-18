@@ -420,6 +420,11 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("\fཞེས་ źes", corrected)
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 1)
+        with Path(result["alternate_witness_unresolved_tsv"]).open(newline="", encoding="utf-8") as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(unresolved[0]["base_line"], "searched_alternate_pages=1-5")
+        self.assertIn("1:", unresolved[0]["alternate_line"])
+        self.assertIn("5:", unresolved[0]["alternate_line"])
 
     def test_alternate_witness_prefers_best_aligned_page_over_edge_match(self) -> None:
         merged_text = (

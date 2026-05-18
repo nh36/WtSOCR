@@ -2790,6 +2790,10 @@ def arbitrate_alternate_witness(
         best_score = -1.0
         search_idx = alternate_page_idx
         max_search_idx = min(len(alternate_page_lines), alternate_page_idx + 5)
+        searched_alternate_pages: list[str] = []
+        search_window = "searched_alternate_pages=none"
+        if alternate_page_idx < max_search_idx:
+            search_window = f"searched_alternate_pages={alternate_page_idx + 1}-{max_search_idx}"
         while search_idx < max_search_idx:
             (
                 candidate_page,
@@ -2801,6 +2805,14 @@ def arbitrate_alternate_witness(
                 base_page,
                 alternate_page_lines[search_idx],
                 alternate_google_vision=alternate_google_vision,
+            )
+            searched_alternate_pages.append(
+                (
+                    f"{search_idx + 1}:"
+                    f"{candidate_reason or 'aligned'}"
+                    f"({candidate_left_count or '-'}"
+                    f"/{candidate_right_count or '-'})"
+                )
             )
             if candidate_page is not None:
                 if candidate_score > best_score:
@@ -2825,8 +2837,8 @@ def arbitrate_alternate_witness(
                     reason or "line_count_mismatch",
                     left_count,
                     right_count,
-                    "",
-                    "",
+                    search_window,
+                    ";".join(searched_alternate_pages),
                 ]
             )
             aligned_alternate_pages.append(base_page[:])
