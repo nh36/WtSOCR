@@ -17,6 +17,39 @@ PEM_SPEC.loader.exec_module(pem)
 
 
 class PostprocessRegressionTests(unittest.TestCase):
+    def test_production_qa_manifest_loader_reads_volume_status(self) -> None:
+        report_path = ROOT / "scripts" / "generate_production_qa_report.py"
+        report_spec = importlib.util.spec_from_file_location("generate_production_qa_report", report_path)
+        if report_spec is None or report_spec.loader is None:
+            raise ImportError(f"Could not load generate_production_qa_report module from {report_path}")
+        report_module = importlib.util.module_from_spec(report_spec)
+        sys.modules[report_spec.name] = report_module
+        report_spec.loader.exec_module(report_module)
+
+        td = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, td, ignore_errors=True)
+        root = Path(td)
+        manifest = root / "manifest.tsv"
+        source = root / "source2.pdf"
+        google = root / "google2.txt"
+        source.write_text("pdf placeholder", encoding="utf-8")
+        google.write_text("google placeholder", encoding="utf-8")
+        manifest.write_text(
+            "\t".join(report_module.MANIFEST_COLUMNS)
+            + "\n"
+            + "ready\tReady Volume\tsource.pdf\tmerged.txt\taudit.csv\tgoogle.txt\tReady.txt\tready\tall inputs present\n"
+            + f"missing\tMissing Volume\t{source}\t\t\t{google}\tMissing.txt\tmissing_upstream_ocr\tupstream missing\n",
+            encoding="utf-8",
+        )
+
+        volumes = report_module.load_volume_manifest(manifest)
+
+        self.assertEqual(["ready", "missing"], [volume.label for volume in volumes])
+        self.assertEqual("ready", volumes[0].status)
+        self.assertEqual("missing_upstream_ocr", volumes[1].status)
+        self.assertEqual("google.txt", volumes[0].alternate)
+        self.assertEqual(["merged", "audit"], report_module.missing_ready_inputs(volumes[1]))
+
     def run_postprocess_fixture(
         self,
         merged_text: str,

@@ -7,6 +7,7 @@ import hashlib
 import json
 import random
 import shutil
+import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -14,36 +15,98 @@ from pathlib import Path
 
 SAMPLE_SIZE = 100
 RANDOM_SEED = 20260519
+MANIFEST_PATH = Path("data/production_volume_inputs.tsv")
+MANIFEST_COLUMNS = [
+    "label",
+    "display",
+    "source_pdf",
+    "merged",
+    "audit",
+    "google_vision",
+    "final_name",
+    "status",
+    "note",
+]
 
 
 @dataclass(frozen=True)
 class VolumeSpec:
     label: str
     display: str
+    source_pdf: str
     merged: str
     audit: str
-    alternate: str
+    google_vision: str
     final_name: str
+    status: str
+    note: str
+
+    @property
+    def alternate(self) -> str:
+        return self.google_vision
 
 
-VOLUMES = (
-    VolumeSpec(
-        label="wts_1_34",
-        display="WtS 1-34",
-        merged="work/line_anchor_full_20260225T165417Z_locked/WtS_1-34/WtS 1-34_lineanchored_merged_sample.txt",
-        audit="work/line_anchor_full_20260225T165417Z_locked/WtS_1-34/WtS 1-34_lineanchored_audit.csv",
-        alternate="pdfs/WtS 1-34.vision.txt",
-        final_name="WtS_1-34_release_candidate.txt",
-    ),
-    VolumeSpec(
-        label="wts_35_51",
-        display="WtS 35-51",
-        merged="work/line_anchor_full_20260225T165417Z_locked/WtS_35-51/WtS 35-51_lineanchored_merged_sample.txt",
-        audit="work/line_anchor_full_20260225T165417Z_locked/WtS_35-51/WtS 35-51_lineanchored_audit.csv",
-        alternate="pdfs/WtS 35-51.vision.txt",
-        final_name="WtS_35-51_release_candidate.txt",
-    ),
-)
+def load_volume_manifest(path: Path = MANIFEST_PATH) -> list[VolumeSpec]:
+    with path.open(encoding="utf-8", errors="replace", newline="") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        missing = [column for column in MANIFEST_COLUMNS if column not in (reader.fieldnames or [])]
+        if missing:
+            raise ValueError(f"{path} is missing required columns: {', '.join(missing)}")
+        volumes: list[VolumeSpec] = []
+        for row in reader:
+            if not any((value or "").strip() for value in row.values()):
+                continue
+            values = {column: (row.get(column, "") or "").strip() for column in MANIFEST_COLUMNS}
+            volumes.append(VolumeSpec(**values))
+    return volumes
+
+
+def manifest_path_state(path_text: str) -> str:
+    if not path_text:
+        return "blank"
+    return "present" if Path(path_text).exists() else "missing"
+
+
+def missing_ready_inputs(spec: VolumeSpec) -> list[str]:
+    missing: list[str] = []
+    for field in ["source_pdf", "merged", "audit", "google_vision"]:
+        path_text = getattr(spec, field)
+        if not path_text or not Path(path_text).exists():
+            missing.append(field)
+    return missing
+
+
+def select_ready_volumes(volumes: list[VolumeSpec]) -> tuple[list[VolumeSpec], list[str]]:
+    ready: list[VolumeSpec] = []
+    warnings: list[str] = []
+    for spec in volumes:
+        if spec.status != "ready":
+            warnings.append(f"Skipping {spec.display}: status={spec.status} ({spec.note})")
+            continue
+        missing = missing_ready_inputs(spec)
+        if missing:
+            warnings.append(f"Skipping {spec.display}: ready row has missing inputs: {', '.join(missing)}")
+            continue
+        ready.append(spec)
+    return ready, warnings
+
+
+def volume_coverage_rows(volumes: list[VolumeSpec], included: set[str]) -> list[list[object]]:
+    rows: list[list[object]] = []
+    for spec in volumes:
+        rows.append(
+            [
+                spec.display,
+                spec.status,
+                "yes" if spec.label in included else "no",
+                manifest_path_state(spec.source_pdf),
+                manifest_path_state(spec.merged),
+                manifest_path_state(spec.audit),
+                manifest_path_state(spec.google_vision),
+                spec.note,
+            ]
+        )
+    return rows
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -273,7 +336,14 @@ def markdown_sample_rows(rows: list[dict[str, str]]) -> list[list[object]]:
     ]
 
 
-def run(output_dir: Path, sample_size: int, seed: int) -> None:
+def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MANIFEST_PATH) -> None:
+    volumes = load_volume_manifest(manifest_path)
+    ready_volumes, warnings = select_ready_volumes(volumes)
+    if not ready_volumes:
+        raise ValueError(f"No ready production volumes found in {manifest_path}")
+    for warning in warnings:
+        print(f"warning: {warning}", file=sys.stderr)
+
     rng = random.Random(seed)
     final_dir = output_dir / "final"
     final_dir.mkdir(parents=True, exist_ok=True)
@@ -287,12 +357,31 @@ def run(output_dir: Path, sample_size: int, seed: int) -> None:
         "# Production Release-Candidate OCR QA Report",
         "",
         f"Output directory: `{output_dir}`",
+        f"Volume manifest: `{manifest_path}`",
         f"Sample seed: `{seed}`",
         "",
+        "## Volume Coverage",
+        "",
     ]
+    report.extend(
+        md_table(
+            [
+                "volume",
+                "status",
+                "included",
+                "source_pdf",
+                "merged",
+                "audit",
+                "google_vision",
+                "note",
+            ],
+            volume_coverage_rows(volumes, {spec.label for spec in ready_volumes}),
+        )
+    )
+    report.append("")
     checksums: list[tuple[str, str]] = []
 
-    for spec in VOLUMES:
+    for spec in ready_volumes:
         volume_dir = output_dir / spec.label
         corrected = volume_dir / f"{spec.label}_corrected_full.txt"
         final_text = final_dir / spec.final_name
@@ -341,9 +430,10 @@ def run(output_dir: Path, sample_size: int, seed: int) -> None:
                 "",
                 "### Inputs",
                 "",
+                f"- Source PDF: `{spec.source_pdf}`",
                 f"- Base merged: `{spec.merged}`",
                 f"- Audit CSV: `{spec.audit}`",
-                f"- Google alternate witness: `{spec.alternate}`",
+                f"- Google alternate witness: `{spec.google_vision}`",
                 "",
                 "### Output Summary",
                 "",
@@ -496,10 +586,11 @@ def run(output_dir: Path, sample_size: int, seed: int) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate production OCR QA report from postprocess outputs.")
     parser.add_argument("--output-dir", required=True, type=Path)
+    parser.add_argument("--manifest", type=Path, default=MANIFEST_PATH)
     parser.add_argument("--sample-size", type=int, default=SAMPLE_SIZE)
     parser.add_argument("--seed", type=int, default=RANDOM_SEED)
     args = parser.parse_args()
-    run(args.output_dir, args.sample_size, args.seed)
+    run(args.output_dir, args.sample_size, args.seed, args.manifest)
 
 
 if __name__ == "__main__":
