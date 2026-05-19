@@ -96,13 +96,8 @@ chunk_log_has_empty_page() {
 
 chunk_sidecar_ends_with_formfeed() {
   local sidecar=$1
-  perl -e '
-    my $path = shift;
-    open my $fh, "<", $path or exit 1;
-    seek($fh, -1, 2) or exit 1;
-    read($fh, my $c, 1) == 1 or exit 1;
-    exit(ord($c) == 12 ? 0 : 1);
-  ' "$sidecar"
+  [ -s "$sidecar" ] || return 1
+  [ "$(tail -c 1 "$sidecar")" = "$(printf '\f')" ]
 }
 
 chunk_allows_trailing_blank_final_page() {
