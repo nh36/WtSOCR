@@ -588,6 +588,129 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
+    def test_alternate_witness_rewrapped_same_page_fallback_unlocks_token_adoption(
+        self,
+    ) -> None:
+        merged_text = (
+            "ཀ་ ka alpha bravo charlie delta\n"
+            "ཁ་ kha echo foxtrot golf hotel\n"
+            "ག་ ga india juliet kilo lima\n"
+            "ང་ nga mike november oscar papa\n"
+            "ཞེས་ zes quebec romeo sierra tango\n"
+            "ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "ཀ་ ka alpha bravo charlie delta ཁ་ kha echo foxtrot golf hotel "
+            "ག་ ga india juliet kilo lima ང་ nga mike november oscar papa\n"
+            "ཞེས་ žes quebec romeo sierra tango ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཞེས་ źes quebec", corrected)
+        self.assertNotIn("ཞེས་ zes quebec", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="",
+            encoding="utf-8",
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "zes")
+        self.assertEqual(adoptions[0]["alternate_token"], "źes")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_google_loc_fricative_upgrade",
+        )
+
+    def test_alternate_witness_rewrapped_fallback_keeps_base_line_text_with_noise(
+        self,
+    ) -> None:
+        merged_text = (
+            "ཀ་ ka alpha bravo charlie delta\n"
+            "ཁ་ kha echo foxtrot golf hotel\n"
+            "ག་ ga india juliet kilo lima\n"
+            "ང་ nga mike november oscar papa\n"
+            "ཞེས་ zes quebec romeo sierra tango\n"
+            "ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "12345 NOISE ཀ་ ka alpha bravo charlie delta ཁ་ kha echo foxtrot golf hotel "
+            "ག་ ga india juliet kilo lima ང་ nga mike november oscar papa\n"
+            "ཞེས་ žes quebec romeo sierra tango ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཀ་ ka alpha bravo charlie delta", corrected)
+        self.assertIn("ཞེས་ źes quebec", corrected)
+        self.assertNotIn("12345", corrected)
+        self.assertNotIn("NOISE", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+    def test_alternate_witness_rewrapped_offset_page_does_not_trigger_fallback(
+        self,
+    ) -> None:
+        merged_text = (
+            "ཀ་ ka alpha bravo charlie delta\n"
+            "ཁ་ kha echo foxtrot golf hotel\n"
+            "ག་ ga india juliet kilo lima\n"
+            "ང་ nga mike november oscar papa\n"
+            "ཞེས་ zes quebec romeo sierra tango\n"
+            "ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+        matching_rewrapped_page = (
+            "ཀ་ ka alpha bravo charlie delta ཁ་ kha echo foxtrot golf hotel "
+            "ག་ ga india juliet kilo lima ང་ nga mike november oscar papa\n"
+            "ཞེས་ žes quebec romeo sierra tango ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+        )
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "unrelated witness material alpha beta gamma\n"
+            "=== page 002 ===\n"
+            "unrelated witness material delta epsilon zeta\n"
+            "=== page 003 ===\n"
+            "unrelated witness material eta theta iota\n"
+            "=== page 004 ===\n"
+            f"{matching_rewrapped_page}"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཞེས་ zes quebec", corrected)
+        self.assertNotIn("ཞེས་ źes quebec", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
     def test_alternate_witness_does_not_adopt_loc_loss(self) -> None:
         merged_text = "གཉིས་ gñis\n"
         alternate_merged_text = "=== page 001 ===\nགཉིས་ gnis\n"

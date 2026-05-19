@@ -2422,10 +2422,153 @@ def arbitrate_alternate_witness(
             return 0.0
         return sum(scores) / len(scores)
 
+    base_info_by_key = {(info.page, info.line): info for info in base_line_infos}
+    context_free_alternate_reasons = {
+        "alternate_witness_citation_siglum",
+        "alternate_witness_citation_cleanup",
+    }
+
+    def alternate_reason_allowed_for_line(
+        reason: str,
+        line_info: "LineInfo | None",
+    ) -> bool:
+        return line_is_translit_context(line_info) or reason in context_free_alternate_reasons
+
+    def canonical_page_token_keys(
+        page: list[str],
+        *,
+        google_vision: bool = False,
+    ) -> list[str]:
+        keys: list[str] = []
+        for line in page:
+            if not line.strip():
+                continue
+            if google_vision and is_google_alignment_junk_line(line):
+                continue
+            for token, _start, _end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if len(key) >= 2:
+                    keys.append(key)
+        return keys
+
+    def page_token_overlap(
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        alternate_google_vision: bool = False,
+    ) -> tuple[int, float]:
+        base_keys = set(canonical_page_token_keys(base_page))
+        alternate_keys = set(
+            canonical_page_token_keys(
+                alternate_page,
+                google_vision=alternate_google_vision,
+            )
+        )
+        if not base_keys or not alternate_keys:
+            return 0, 0.0
+        shared = len(base_keys & alternate_keys)
+        return shared, shared / min(len(base_keys), len(alternate_keys))
+
+    def guarded_rewrapped_page_fallback(
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        base_page_no: int | None,
+        alternate_page_no: int | None,
+        candidate_score: float,
+        base_nonempty_count: int,
+        alternate_nonempty_count: int,
+        alternate_google_vision: bool = False,
+    ) -> list[str] | None:
+        if base_page_no is None or alternate_page_no is None:
+            return None
+        if candidate_score < 0.50:
+            return None
+        if abs(alternate_page_no - base_page_no) > 2:
+            return None
+        if not base_nonempty_count or not alternate_nonempty_count:
+            return None
+        line_count_ratio = base_nonempty_count / alternate_nonempty_count
+        if line_count_ratio < 0.5 or line_count_ratio > 2.0:
+            return None
+        shared_tokens, overlap = page_token_overlap(
+            base_page,
+            alternate_page,
+            alternate_google_vision=alternate_google_vision,
+        )
+        if shared_tokens < 10 or overlap < 0.35:
+            return None
+
+        base_token_records: list[tuple[int, str, int, int, str]] = []
+        for line_idx, line in enumerate(base_page, start=1):
+            if not line.strip():
+                continue
+            for token, start, end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if key:
+                    base_token_records.append((line_idx, token, start, end, key))
+
+        alternate_token_records: list[tuple[str, str]] = []
+        for line in alternate_page:
+            if not line.strip():
+                continue
+            if alternate_google_vision and is_google_alignment_junk_line(line):
+                continue
+            for token, _start, _end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if key:
+                    alternate_token_records.append((token, key))
+
+        if not base_token_records or not alternate_token_records:
+            return None
+
+        replacements_by_line: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
+        base_keys = [record[4] for record in base_token_records]
+        alternate_keys = [record[1] for record in alternate_token_records]
+        matcher = SequenceMatcher(None, base_keys, alternate_keys, autojunk=False)
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            if tag == "equal":
+                paired_indexes = zip(range(i1, i2), range(j1, j2))
+            elif tag == "replace" and i2 - i1 == j2 - j1:
+                paired_indexes = zip(range(i1, i2), range(j1, j2))
+            else:
+                continue
+            for base_record_idx, alternate_record_idx in paired_indexes:
+                line_idx, base_token, start, end, _key = base_token_records[base_record_idx]
+                alternate_token = alternate_token_records[alternate_record_idx][0]
+                if base_token == alternate_token:
+                    continue
+                line_info = base_info_by_key.get((base_page_no, line_idx))
+                reason = alternate_witness_reason(
+                    base_token,
+                    alternate_token,
+                    line_info=line_info,
+                    line_text=base_page[line_idx - 1],
+                )
+                if reason is None:
+                    continue
+                if not alternate_reason_allowed_for_line(reason, line_info):
+                    continue
+                replacements_by_line[line_idx].append((start, end, alternate_token))
+
+        if not replacements_by_line:
+            return None
+
+        aligned_page = base_page[:]
+        for line_idx, replacements in replacements_by_line.items():
+            line = base_page[line_idx - 1]
+            for start, end, alternate_token in sorted(replacements, reverse=True):
+                line = line[:start] + alternate_token + line[end:]
+            aligned_page[line_idx - 1] = line
+        return aligned_page
+
     def align_alternate_page(
         base_page: list[str],
         alternate_page: list[str],
         alternate_google_vision: bool = False,
+        *,
+        base_page_no: int | None = None,
+        alternate_page_no: int | None = None,
     ) -> tuple[list[str] | None, str | None, str, str, float]:
         base_nonempty_count = sum(1 for line in base_page if line.strip())
 
@@ -2746,16 +2889,36 @@ def arbitrate_alternate_witness(
                 and min(len(base_nonempty), len(alternate_nonempty)) <= 1
             ):
                 mismatch_reason = "nonempty_line_count_mismatch"
+            candidate_score = page_similarity(
+                base_page,
+                alternate_page,
+                alternate_google_vision=alternate_google_vision,
+            )
+            if mismatch_reason == "unalignable_rewrapped_page":
+                fallback_page = guarded_rewrapped_page_fallback(
+                    base_page,
+                    alternate_page,
+                    base_page_no=base_page_no,
+                    alternate_page_no=alternate_page_no,
+                    candidate_score=candidate_score,
+                    base_nonempty_count=len(base_nonempty),
+                    alternate_nonempty_count=len(alternate_nonempty),
+                    alternate_google_vision=alternate_google_vision,
+                )
+                if fallback_page is not None:
+                    return (
+                        fallback_page,
+                        None,
+                        str(len(base_nonempty)),
+                        str(len(alternate_nonempty)),
+                        candidate_score,
+                    )
             return (
                 None,
                 mismatch_reason,
                 str(len(base_nonempty)),
                 str(len(alternate_nonempty)),
-                page_similarity(
-                    base_page,
-                    alternate_page,
-                    alternate_google_vision=alternate_google_vision,
-                ),
+                candidate_score,
             )
         if not page_has_compatible_content(aligned_page):
             return (
@@ -2805,6 +2968,8 @@ def arbitrate_alternate_witness(
                 base_page,
                 alternate_page_lines[search_idx],
                 alternate_google_vision=alternate_google_vision,
+                base_page_no=page_idx,
+                alternate_page_no=search_idx + 1,
             )
             searched_alternate_pages.append(
                 (
@@ -2847,7 +3012,6 @@ def arbitrate_alternate_witness(
             continue
         alternate_page_idx = matched_page_idx + 1
         aligned_alternate_pages.append(aligned_page)
-    base_info_by_key = {(info.page, info.line): info for info in base_line_infos}
     rewritten_pages = [page[:] for page in base_page_lines]
     adoption_count = 0
     for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, aligned_alternate_pages), start=1):
@@ -2890,10 +3054,7 @@ def arbitrate_alternate_witness(
                         line_text=base_line,
                     )
                     if reason:
-                        if translit_context or reason in {
-                            "alternate_witness_citation_siglum",
-                            "alternate_witness_citation_cleanup",
-                        }:
+                        if translit_context or reason in context_free_alternate_reasons:
                             replacement = alternate_token
                             adoption_rows.append(
                                 [
