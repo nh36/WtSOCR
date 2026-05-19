@@ -139,7 +139,7 @@ CITATION_BIBLIO_INLINE_CUE_RE = re.compile(
     re.IGNORECASE,
 )
 CITATION_SIGLUM_ARTIFACT_CUE_RE = re.compile(
-    r"\((?:[^)\n]{0,32})(?<![A-Za-z])(?:L\$dz(?:-[A-Za-z$]*)?|L1\$|1\.\$dz|Vi\$s?T|Vis\$T|Li(?:\$|s\$)|Y\$|Ys\$)(?=[^A-Za-z$]|$)",
+    r"\((?:[^)\n]{0,32})(?<![A-Za-z])(?:L\$dz(?:-[A-Za-z$]*)?|L1\$|1\.\$dz|Vi\$s?T|Vis\$T|Li(?:\$|s\$)|Y\$|Ys\$|P\$|G\$(?:S?-H)?)(?=[^A-Za-z$]|$)",
     re.IGNORECASE,
 )
 SANSKRIT_MVY_CUE_RE = re.compile(r"\(\s*Mvy\b", re.IGNORECASE)
@@ -1123,6 +1123,8 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
 # Narrow standalone replacements for sigla-list rows split into single tokens.
 # Keep this explicit to avoid changing non-siglum standalone words.
 CITATION_SIGLUM_STANDALONE_ALLOWLIST = {
+    "$ambh",
+    "$sambh",
     "doll",
     "roins",
 }

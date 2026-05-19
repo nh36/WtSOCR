@@ -1070,6 +1070,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn(("X$", "Xs", "citation_siglum_confusable_map"), reasons)
 
+    def test_citation_sigla_residual_dollar_contexts_stay_bounded(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Freude' (P$ Kolophon); byar chub mchog\n"
+            "Untergebenen (skt. \"pajivin) tun?\" (G$\n"
+            "48b).\n"
+            "$ambh\n"
+            "1G$\n"
+            "von chin, $RF oha-tzu\n"
+            "foo P$ bar\n"
+            "dbang $zz pa bleibt.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Freude' (Ps Kolophon); byar chub mchog", corrected)
+        self.assertIn('Untergebenen (skt. "pajivin) tun?" (Gs', corrected)
+        self.assertIn("\nŚambh\n", corrected)
+        self.assertIn("\n1G$\n", corrected)
+        self.assertIn("von chin, $RF oha-tzu", corrected)
+        self.assertIn("foo P$ bar", corrected)
+        self.assertIn("dbang $zz pa bleibt.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$", "Gs", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("$ambh", "Śambh", "citation_siglum_confusable_map"), reasons)
+        self.assertNotIn(("1G$", "Gs", "citation_siglum_confusable_map"), reasons)
+        self.assertNotIn(("$RF", "ŚRF", "citation_siglum_confusable_map"), reasons)
+        self.assertNotIn(("$zz", "śzz", "citation_siglum_confusable_map"), reasons)
+
     def test_citation_sigla_doll_roins_and_bhullg_guardrails(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
