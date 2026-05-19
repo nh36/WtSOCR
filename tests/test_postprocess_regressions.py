@@ -1480,6 +1480,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("garı", "gaṅ", "explicit_user_allowlist"), reasons)
         self.assertNotIn(("Igarı", "lgaṅ", "explicit_user_allowlist"), reasons)
 
+    def test_reviewed_tibetan_confusable_exact_rewrites_in_tibetan_context(self) -> None:
+        merged_text = (
+            "རང་གསང་བཟང་ཤར་བཀྲ་ཤིས་ "
+            "rañ mgo gsañ ba'i bzañ po $ar phyogs su bkra $is\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("raṅ mgo gsaṅ ba'i bzaṅ po śar phyogs su bkra śis", corrected)
+
+        pairs = {(row["from_token"], row["to_token"]) for row in changes}
+        self.assertIn(("rañ", "raṅ"), pairs)
+        self.assertIn(("$ar", "śar"), pairs)
+        self.assertIn(("$is", "śis"), pairs)
+        self.assertIn(("gsañ", "gsaṅ"), pairs)
+        self.assertIn(("bzañ", "bzaṅ"), pairs)
+
+    def test_reviewed_tibetan_confusable_exact_stays_context_gated(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "rañ gsañ bzañ Ita bleiben als OCR-Beispiele stehen.\n"
+            "skt. rañ gsañ bzañ Prajñā bleibt als Sanskrit-Kontext.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("rañ gsañ bzañ Ita bleiben als OCR-Beispiele stehen.", corrected)
+        self.assertIn("skt. rañ gsañ bzañ Prajñā bleibt als Sanskrit-Kontext.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("rañ", "raṅ", "tibetan_translit_confusable_exact"), reasons)
+        self.assertNotIn(("gsañ", "gsaṅ", "tibetan_translit_confusable_exact"), reasons)
+        self.assertNotIn(("bzañ", "bzaṅ", "tibetan_translit_confusable_exact"), reasons)
+        self.assertNotIn(("Ita", "lta", "tibetan_translit_confusable_exact"), reasons)
+
     def test_tibetan_phrase_allowlist_rewrites_tshul_khrims(self) -> None:
         merged_text = (
             "ཚུལ་ཁྲིམས་ tshul khrims\n"

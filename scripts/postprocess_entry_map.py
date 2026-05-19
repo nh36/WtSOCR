@@ -455,6 +455,19 @@ DOLLAR_SACUTE_TIER_A_ALLOWLIST = {
     "g$egs",
 }
 
+# Exact Tibetan transliteration confusables promoted from all-volume QA.
+# These remain context-gated in choose_rewrite; this is not a character map.
+TIBETAN_TRANSLIT_CONFUSABLE_EXACT_REWRITES = {
+    "$ar": "śar",
+    "$is": "śis",
+    "$os": "śos",
+    "bzañ": "bzaṅ",
+    "chañ": "chaṅ",
+    "gsañ": "gsaṅ",
+    "rañ": "raṅ",
+    "snañ": "snaṅ",
+}
+
 # High-frequency Sanskrit normalization pairs validated on current corpus review queues.
 # These are safe to auto-apply even when local context score is below the Sanskrit
 # auto-threshold, as long as the token is already classified probable Sanskrit.
@@ -1968,6 +1981,14 @@ def token_is_safe_dollar_to_sacute(src: str, dst: str) -> bool:
         if next_ch in {"z", "ź", "ž"}:
             return False
     return True
+
+
+def line_has_sanskrit_or_indic_cue(line_text: str) -> bool:
+    return bool(
+        SANSKRIT_MVY_CUE_RE.search(line_text)
+        or SANSKRIT_GENERAL_CUE_RE.search(line_text)
+        or SANSKRIT_LEX_CUE_RE.search(line_text)
+    )
 
 
 def token_is_safe_dotless_i_to_i(src: str, dst: str) -> bool:
@@ -4858,6 +4879,7 @@ def choose_rewrite(
     dollar_auto_zone_ok = info.zone in AUTO_FIX_ZONES or dollar_zone_fallback
     exact_explicit_dst = EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES.get(token)
     explicit_dst = EXPLICIT_TIER_A_REWRITES.get(low)
+    exact_tibetan_confusable_dst = TIBETAN_TRANSLIT_CONFUSABLE_EXACT_REWRITES.get(low)
     explicit_dst_has_tibetan_signature = (
         explicit_dst is not None
         and (
@@ -4900,6 +4922,41 @@ def choose_rewrite(
     confusable_allcaps_noise_blocked = token_is_allcaps_confusable_fragment(token) and not canon_backed
     if explicit_dst is not None and (explicit_auto_zone_ok or "$" in low):
         return explicit_dst, "A", "explicit_user_allowlist"
+
+    if exact_tibetan_confusable_dst is not None:
+        exact_tibetan_shape_ok = (
+            token_is_safe_coda_nya_to_nga(low, exact_tibetan_confusable_dst)
+            or token_is_safe_dollar_to_sacute(low, exact_tibetan_confusable_dst)
+        )
+        exact_tibetan_zone_ok = (
+            info.zone in ENTRY_STRONG_ZONES
+            or (info.zone == "german_prose_with_translit" and info.has_tibetan)
+        )
+        exact_tibetan_anchor_ok = (
+            info.has_tibetan
+            or (
+                line_translit_dominant
+                and (src_has_hard_marker or src_has_cue or src_has_issue)
+            )
+        )
+        if (
+            exact_tibetan_shape_ok
+            and token == low
+            and exact_tibetan_zone_ok
+            and exact_tibetan_anchor_ok
+            and not src_umlaut_untrusted
+            and not line_citation_like
+            and not line_has_sanskrit_or_indic_cue(info.line_text)
+            and not (("$" in low) and dollar_siglum_candidate)
+        ):
+            options.append(
+                (
+                    267,
+                    exact_tibetan_confusable_dst,
+                    "A",
+                    "tibetan_translit_confusable_exact",
+                )
+            )
 
     if (
         internal_i_raw != token
