@@ -2469,6 +2469,66 @@ def arbitrate_alternate_witness(
         shared = len(base_keys & alternate_keys)
         return shared, shared / min(len(base_keys), len(alternate_keys))
 
+    @dataclass(frozen=True)
+    class AlignmentDiagnostics:
+        alignment_method: str = ""
+        alternate_page: str = ""
+        page_match_score: str = ""
+        canonical_overlap: str = ""
+        shared_canonical_tokens: str = ""
+        base_nonempty_count: str = ""
+        alternate_nonempty_count: str = ""
+        line_count_ratio: str = ""
+
+        def as_row(self) -> list[str]:
+            return [
+                self.alignment_method,
+                self.alternate_page,
+                self.page_match_score,
+                self.canonical_overlap,
+                self.shared_canonical_tokens,
+                self.base_nonempty_count,
+                self.alternate_nonempty_count,
+                self.line_count_ratio,
+            ]
+
+    def build_alignment_diagnostics(
+        alignment_method: str,
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        alternate_page_no: int | None,
+        page_match_score: float,
+    ) -> AlignmentDiagnostics:
+        base_nonempty_count = sum(1 for line in base_page if line.strip())
+        alternate_nonempty_count = sum(
+            1
+            for line in alternate_page
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        )
+        line_count_ratio = ""
+        if base_nonempty_count and alternate_nonempty_count:
+            line_count_ratio = f"{base_nonempty_count / alternate_nonempty_count:.3f}"
+        shared_tokens, overlap = page_token_overlap(
+            base_page,
+            alternate_page,
+            alternate_google_vision=alternate_google_vision,
+        )
+        return AlignmentDiagnostics(
+            alignment_method=alignment_method,
+            alternate_page=str(alternate_page_no) if alternate_page_no is not None else "",
+            page_match_score=f"{page_match_score:.3f}",
+            canonical_overlap=f"{overlap:.3f}",
+            shared_canonical_tokens=str(shared_tokens),
+            base_nonempty_count=str(base_nonempty_count),
+            alternate_nonempty_count=str(alternate_nonempty_count),
+            line_count_ratio=line_count_ratio,
+        )
+
     def guarded_rewrapped_page_fallback(
         base_page: list[str],
         alternate_page: list[str],
@@ -2569,7 +2629,7 @@ def arbitrate_alternate_witness(
         *,
         base_page_no: int | None = None,
         alternate_page_no: int | None = None,
-    ) -> tuple[list[str] | None, str | None, str, str, float]:
+    ) -> tuple[list[str] | None, str | None, str, str, float, str]:
         base_nonempty_count = sum(1 for line in base_page if line.strip())
 
         def line_has_compatible_structure(base_line: str, alternate_line: str) -> bool:
@@ -2858,7 +2918,14 @@ def arbitrate_alternate_witness(
             if not page_has_compatible_content(alternate_page):
                 reordered_page = align_reordered_nonempty_lines()
                 if reordered_page is not None and page_has_compatible_content(reordered_page):
-                    return reordered_page, None, "", "", aligned_page_score(reordered_page)
+                    return (
+                        reordered_page,
+                        None,
+                        "",
+                        "",
+                        aligned_page_score(reordered_page),
+                        "reordered_page_alignment",
+                    )
                 return (
                     None,
                     "unalignable_page_content",
@@ -2869,8 +2936,16 @@ def arbitrate_alternate_witness(
                         alternate_page,
                         alternate_google_vision=alternate_google_vision,
                     ),
+                    "",
                 )
-            return alternate_page, None, "", "", aligned_page_score(alternate_page)
+            return (
+                alternate_page,
+                None,
+                "",
+                "",
+                aligned_page_score(alternate_page),
+                "ordinary_page_alignment",
+            )
         base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
         alternate_nonempty = [
             (idx, line)
@@ -2912,6 +2987,7 @@ def arbitrate_alternate_witness(
                         str(len(base_nonempty)),
                         str(len(alternate_nonempty)),
                         candidate_score,
+                        "recovered_rewrapped_page",
                     )
             return (
                 None,
@@ -2919,6 +2995,7 @@ def arbitrate_alternate_witness(
                 str(len(base_nonempty)),
                 str(len(alternate_nonempty)),
                 candidate_score,
+                "",
             )
         if not page_has_compatible_content(aligned_page):
             return (
@@ -2931,6 +3008,7 @@ def arbitrate_alternate_witness(
                     alternate_page,
                     alternate_google_vision=alternate_google_vision,
                 ),
+                "",
             )
         return (
             aligned_page,
@@ -2938,15 +3016,19 @@ def arbitrate_alternate_witness(
             str(len(base_page)),
             str(len(alternate_page)),
             aligned_page_score(aligned_page),
+            "rewrapped_page_alignment",
         )
 
     adoption_rows: list[list[str]] = []
     unresolved_rows: list[list[str]] = []
     aligned_alternate_pages: list[list[str]] = []
+    aligned_alternate_page_diagnostics: list[AlignmentDiagnostics] = []
+    empty_alignment_diagnostics = AlignmentDiagnostics()
     alternate_page_idx = 0
     for page_idx, base_page in enumerate(base_page_lines, start=1):
         matched_page_idx: int | None = None
         aligned_page: list[str] | None = None
+        matched_alignment_diagnostics = empty_alignment_diagnostics
         reason = None
         left_count = ""
         right_count = ""
@@ -2964,6 +3046,7 @@ def arbitrate_alternate_witness(
                 candidate_left_count,
                 candidate_right_count,
                 candidate_score,
+                candidate_alignment_method,
             ) = align_alternate_page(
                 base_page,
                 alternate_page_lines[search_idx],
@@ -2986,6 +3069,13 @@ def arbitrate_alternate_witness(
                     left_count = candidate_left_count
                     right_count = candidate_right_count
                     best_score = candidate_score
+                    matched_alignment_diagnostics = build_alignment_diagnostics(
+                        candidate_alignment_method,
+                        base_page,
+                        alternate_page_lines[search_idx],
+                        alternate_page_no=search_idx + 1,
+                        page_match_score=candidate_score,
+                    )
             elif reason is None:
                 reason = candidate_reason or "line_count_mismatch"
                 left_count = candidate_left_count
@@ -3007,14 +3097,19 @@ def arbitrate_alternate_witness(
                 ]
             )
             aligned_alternate_pages.append(base_page[:])
+            aligned_alternate_page_diagnostics.append(empty_alignment_diagnostics)
             if alternate_page_idx < len(alternate_page_lines):
                 alternate_page_idx += 1
             continue
         alternate_page_idx = matched_page_idx + 1
         aligned_alternate_pages.append(aligned_page)
+        aligned_alternate_page_diagnostics.append(matched_alignment_diagnostics)
     rewritten_pages = [page[:] for page in base_page_lines]
     adoption_count = 0
-    for page_idx, (base_page, alternate_page) in enumerate(zip(base_page_lines, aligned_alternate_pages), start=1):
+    for page_idx, (base_page, alternate_page, alignment_diagnostics) in enumerate(
+        zip(base_page_lines, aligned_alternate_pages, aligned_alternate_page_diagnostics),
+        start=1,
+    ):
         for line_idx, (base_line, alternate_line) in enumerate(zip(base_page, alternate_page), start=1):
             if base_line == alternate_line:
                 continue
@@ -3068,6 +3163,7 @@ def arbitrate_alternate_witness(
                                     distance_key(alternate_token),
                                     base_line,
                                     alternate_line,
+                                    *alignment_diagnostics.as_row(),
                                 ]
                             )
                             line_adoptions += 1
@@ -7277,6 +7373,14 @@ def run_one(
             "alternate_key",
             "base_line",
             "alternate_line",
+            "alignment_method",
+            "alternate_page",
+            "page_match_score",
+            "canonical_overlap",
+            "shared_canonical_tokens",
+            "base_nonempty_count",
+            "alternate_nonempty_count",
+            "line_count_ratio",
         ],
         alternate_adoption_rows,
     )

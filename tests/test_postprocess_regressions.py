@@ -633,6 +633,11 @@ class PostprocessRegressionTests(unittest.TestCase):
             adoptions[0]["reason"],
             "alternate_witness_google_loc_fricative_upgrade",
         )
+        self.assertEqual(adoptions[0]["alignment_method"], "recovered_rewrapped_page")
+        self.assertEqual(adoptions[0]["alternate_page"], "1")
+        self.assertGreaterEqual(float(adoptions[0]["page_match_score"]), 0.50)
+        self.assertGreaterEqual(float(adoptions[0]["canonical_overlap"]), 0.35)
+        self.assertGreaterEqual(int(adoptions[0]["shared_canonical_tokens"]), 10)
 
     def test_alternate_witness_rewrapped_fallback_keeps_base_line_text_with_noise(
         self,
