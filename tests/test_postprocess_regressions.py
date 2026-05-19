@@ -1681,6 +1681,29 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("mahämäyürividyäräjni", "mahāmāyūrīvidyārājñī", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("astäpadikrtadhüpayoga", "aṣṭapadīkṛtadhūpayoga", "sanskrit_high_freq_allowlist"), reasons)
 
+    def test_reviewed_sanskrit_release_candidate_pairs_promote(self) -> None:
+        merged_text = "སྐད skt. Prajnāpāramitā śrävaka śästras\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("skt. Prajñāpāramitā śrāvaka śāstras", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Prajnāpāramitā", "Prajñāpāramitā", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("śrävaka", "śrāvaka", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("śästras", "śāstras", "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_reviewed_sanskrit_promotions_do_not_broaden_confusables(self) -> None:
+        merged_text = "སྐད skt. Männer Größe ch'a Irāgheit śrävaka\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Männer Größe ch'a Irāgheit śrāvaka", corrected)
+        self.assertNotIn("Mānner", corrected)
+        self.assertNotIn("Grōße", corrected)
+        self.assertNotIn("chā", corrected)
+        self.assertNotIn("lrāgheit", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("śrävaka", "śrāvaka", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertNotIn(("Irāgheit", "lrāgheit", "initial_i_manual_context_review"), reasons)
+
     def test_structural_quote_wrap_direct(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
