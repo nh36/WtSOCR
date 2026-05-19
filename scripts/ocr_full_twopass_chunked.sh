@@ -84,6 +84,36 @@ echo "[chunked] Range: $START_PAGE-$END_PAGE (chunk size $CHUNK_SIZE)"
 echo "[chunked] Force redo: $FORCE_REDO"
 echo "[chunked] State dir: $STATE_DIR"
 
+count_chunk_pages() {
+  awk 'BEGIN{RS="\f"} !/^\[OCR skipped on page\(s\) [0-9-]+\]$/ {n++} END{print n+0}' "$1"
+}
+
+chunk_log_has_empty_page() {
+  local log_file=$1
+  local page=$2
+  grep -Eq "^[[:space:]]*${page} \\[tesseract\\] Empty page!!$" "$log_file"
+}
+
+chunk_sidecar_ends_with_formfeed() {
+  local sidecar=$1
+  [ -s "$sidecar" ] || return 1
+  [ "$(tail -c 1 "$sidecar")" = "$(printf '\f')" ]
+}
+
+chunk_allows_trailing_blank_final_page() {
+  local sidecar=$1
+  local log_file=$2
+  local chunk_end=$3
+  local actual_pages=$4
+  local expected_pages=$5
+
+  [ "$END_PAGE" -eq "$TOTAL_PAGES" ] || return 1
+  [ "$chunk_end" -eq "$END_PAGE" ] || return 1
+  [ "$actual_pages" -eq $((expected_pages - 1)) ] || return 1
+  chunk_log_has_empty_page "$log_file" "$chunk_end" || return 1
+  chunk_sidecar_ends_with_formfeed "$sidecar" || return 1
+}
+
 run_chunk_pass() {
   local chunk_start=$1
   local chunk_end=$2
@@ -137,6 +167,8 @@ while [ "$chunk_start" -le "$END_PAGE" ]; do
 done
 
 echo "[chunked] Verifying chunk completeness before merge"
+append_blank_a=0
+append_blank_b=0
 chunk_start=$START_PAGE
 while [ "$chunk_start" -le "$END_PAGE" ]; do
   chunk_end=$((chunk_start + CHUNK_SIZE - 1))
@@ -149,6 +181,8 @@ while [ "$chunk_start" -le "$END_PAGE" ]; do
   done_b="$CHUNK_DIR/${BASE}_${label}.passB.done"
   chunk_a="$CHUNK_DIR/${BASE}_${label}_psm${PSM_A}_deu_bod.txt"
   chunk_b="$CHUNK_DIR/${BASE}_${label}_psm${PSM_B}_deu_bod_lat.txt"
+  log_a="$LOG_DIR/${BASE}_${label}.passA.log"
+  log_b="$LOG_DIR/${BASE}_${label}.passB.log"
 
   if [ ! -f "$done_a" ] || [ ! -s "$chunk_a" ]; then
     echo "Missing Pass A chunk for $label; aborting merge." >&2
@@ -160,15 +194,25 @@ while [ "$chunk_start" -le "$END_PAGE" ]; do
   fi
 
   expected_pages=$((chunk_end - chunk_start + 1))
-  actual_a=$(awk 'BEGIN{RS="\f"} !/^\[OCR skipped on page\(s\) [0-9-]+\]$/ {n++} END{print n+0}' "$chunk_a")
-  actual_b=$(awk 'BEGIN{RS="\f"} !/^\[OCR skipped on page\(s\) [0-9-]+\]$/ {n++} END{print n+0}' "$chunk_b")
+  actual_a=$(count_chunk_pages "$chunk_a")
+  actual_b=$(count_chunk_pages "$chunk_b")
   if [ "$actual_a" -ne "$expected_pages" ]; then
-    echo "Pass A chunk $label page-count mismatch: expected $expected_pages, got $actual_a" >&2
-    exit 1
+    if chunk_allows_trailing_blank_final_page "$chunk_a" "$log_a" "$chunk_end" "$actual_a" "$expected_pages"; then
+      append_blank_a=1
+      echo "[chunked] Pass A chunk $label is short by one page because final page $chunk_end is blank; preserving trailing blank page on merge"
+    else
+      echo "Pass A chunk $label page-count mismatch: expected $expected_pages, got $actual_a" >&2
+      exit 1
+    fi
   fi
   if [ "$actual_b" -ne "$expected_pages" ]; then
-    echo "Pass B chunk $label page-count mismatch: expected $expected_pages, got $actual_b" >&2
-    exit 1
+    if chunk_allows_trailing_blank_final_page "$chunk_b" "$log_b" "$chunk_end" "$actual_b" "$expected_pages"; then
+      append_blank_b=1
+      echo "[chunked] Pass B chunk $label is short by one page because final page $chunk_end is blank; preserving trailing blank page on merge"
+    else
+      echo "Pass B chunk $label page-count mismatch: expected $expected_pages, got $actual_b" >&2
+      exit 1
+    fi
   fi
   chunk_start=$((chunk_end + 1))
 done
@@ -190,6 +234,13 @@ done
 
 awk 'BEGIN{RS="\f"; ORS=""} !/^\[OCR skipped on page\(s\) [0-9-]+\]$/ {if (seen) printf "\f"; printf "%s", $0; seen=1}' "${a_files[@]}" > "$OUT_A"
 awk 'BEGIN{RS="\f"; ORS=""} !/^\[OCR skipped on page\(s\) [0-9-]+\]$/ {if (seen) printf "\f"; printf "%s", $0; seen=1}' "${b_files[@]}" > "$OUT_B"
+
+if [ "$append_blank_a" -eq 1 ]; then
+  printf '\f' >> "$OUT_A"
+fi
+if [ "$append_blank_b" -eq 1 ]; then
+  printf '\f' >> "$OUT_B"
+fi
 
 echo "[chunked] IPA scan (no filtering)"
 /Users/nathanhill/WtSOCR/scripts/ipa_scan.py "$OUT_A" "$OUT_B"

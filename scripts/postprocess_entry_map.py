@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from difflib import SequenceMatcher
 import json
 import re
 import unicodedata
@@ -17,7 +18,8 @@ LATIN_CHARS = (
     r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
     r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC"
-    r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3"
+    r"\u00DF\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\u0148\u0147\u01F9\u01F8\u0144\u0143"
+    r"\u017E\u017D\u0161\u0160"
 )
 OCR_CONFUSABLE_TOKEN_CHARS = r"\$"
 TRANSLIT_CHARS = (
@@ -25,6 +27,7 @@ TRANSLIT_CHARS = (
     r"\u0100\u0101\u012A\u012B\u016A\u016B\u1E5A\u1E5B\u1E5C\u1E5D\u1E36\u1E37\u1E38\u1E39"
     r"\u1E44\u1E45\u00D1\u00F1\u1E6C\u1E6D\u1E0C\u1E0D\u1E46\u1E47\u015A\u015B\u1E62\u1E63"
     r"\u1E24\u1E25\u1E42\u1E43\u1E40\u1E41\u0179\u017A\u0131\u015F\u015E\u0146\u0145\u00E3\u00C3\$"
+    r"\u0148\u0147\u01F9\u01F8\u0144\u0143\u017E\u017D\u0161\u0160"
 )
 LATIN_TOKEN_RE = re.compile(
     rf"[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*(?:-[{LATIN_CHARS}]+(?:[’'][{LATIN_CHARS}]*)*)*"
@@ -40,27 +43,46 @@ TRANSLIT_TOKEN_RE = re.compile(
 )
 TRANSLIT_CUE_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25"
-    r"\u1E43\u1E41\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ng|ny|zh|sh|lh|rg|rk|rt|rd)",
+    r"\u1E43\u1E41\u0148\u01F9\u0144\u017E\u0161\u2019']|(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ṅ|ñ|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
 )
+GOOGLE_VISION_LOC_CONFUSABLE_CHARS = "\u0148\u0147\u01F9\u01F8\u0144\u0143\u017E\u017D\u0161\u0160"
+GOOGLE_VISION_LOC_CONFUSABLE_RE = re.compile(f"[{GOOGLE_VISION_LOC_CONFUSABLE_CHARS}]")
+GOOGLE_VISION_NASAL_CONFUSABLES = {"ň", "ǹ", "ń"}
+GOOGLE_VISION_NASAL_CONFUSABLES_UPPER = {"Ň", "Ǹ", "Ń"}
+GOOGLE_VISION_NON_NASAL_CONFUSABLE_MAP = str.maketrans(
+    {
+        "ž": "ź",
+        "Ž": "Ź",
+        "š": "ś",
+        "Š": "Ś",
+    }
+)
+GOOGLE_VISION_LOC_POST_TOKEN_FIXES = {
+    "sniṅ": "sñiṅ",
+    "sniṅs": "sñiṅs",
+}
+GOOGLE_VISION_PAGE_MARKER_RE = re.compile(r"^\s*===\s*page\s+\d+\s*===\s*$", re.IGNORECASE)
+GOOGLE_VISION_PROTECTED_SPAN_RE = re.compile(r"[Šš]č[^\s,.;:)\]]*")
 TRANSLIT_DIACRITIC_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]",
     re.IGNORECASE,
 )
-STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh)", re.IGNORECASE)
+STRONG_TRANSLIT_CLUSTER_RE = re.compile(r"(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh)", re.IGNORECASE)
+ASCII_TIB_EVIDENCE_CLUSTER_RE = re.compile(r"(?:ny|ng|sh|zh)", re.IGNORECASE)
 BOUNDARY_TRANSLIT_CLUSTER_RE = re.compile(
-    r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|zh|sh|lh|rg|rk|rt|rd)",
+    r"(?:^|[-'’])(?:tsh|ts|ph|kh|dh|bh|dz|rdz|ź|ś|lh|rg|rk|rt|rd)",
     re.IGNORECASE,
 )
 DISTINCTIVE_TIB_CLUSTER_RE = re.compile(
     r"(?:^|[-'’])(?:"
     r"bsk|bsg|bst|brg|brk|brt|brd|"
-    r"dng|dby|dbr|dgr|dkr|dpy|dpr|"
-    r"mth|mkh|mch|mny|"
+    r"dṅ|dby|dbr|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mñ|"
     r"rgy|rts|rky|"
-    r"sgr|sbr|sny|sng|"
-    r"rdz|gzh|"
-    r"zh|lh|ng|ny|"
+    r"sgr|sbr|sñ|sṅ|"
+    r"rdz|gź|"
+    r"ź|lh|ṅ|ñ|"
     r"kh|ph|th|dz|"
     r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
     r")",
@@ -77,7 +99,7 @@ PALATAL_NYA_ONSET_RE = re.compile(r"ñ(?=[aāiīuūeéoöüy])", re.IGNORECASE)
 TIBETAN_NYA_CLUSTER_RE = re.compile(r"(?<![a-zāīūṛṝḷḹṅñṭḍṇśṣḥṃṁ-])(?:g|m|s)ñ", re.IGNORECASE)
 INITIAL_CONFUSABLE_I_RE = re.compile(r"^I(?:(?=[a-zA-Zāīūṛṝḷḹṅñṭḍṇśṣ])|(?=['’]))")
 INITIAL_I_TRANSLIT_ONSET_RE = re.compile(
-    r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|zh|sh|ch|ny|ng|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
+    r"^I(?:kh|khy|kr|gr|ph|phy|th|tsh|ts|dz|ź|ś|ch|ñ|ṅ|k|g|c|j|t|d|p|b|m|r|s|h|y|w|l)",
     re.IGNORECASE,
 )
 NOISE_RE = re.compile(r"[\d@#%^&*_=/\\|~]")
@@ -160,19 +182,19 @@ CITATION_DOTTED_DOLLAR_ABBREV_RE = re.compile(
     r"(?![A-Za-z0-9])"
 )
 INITIAL_I_CANON_SHAPE_RE = re.compile(
-    r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng)"
-    r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|z|y|w|kh|ph|th|ts|dz|zh|sh|ny|ng))",
+    r"^l(?:['’](?:h|t|n|d|k|g|c|j|p|b|m|r|s|y|w|kh|ph|th|ts|dz|ź|ś|ñ|ṅ)"
+    r"|(?:h|t|n|d|k|g|c|j|p|b|m|r|s|y|w|kh|ph|th|ts|dz|ź|ś|ñ|ṅ))",
     re.IGNORECASE,
 )
 TIBETAN_NAME_PIECE_PREFIX_RE = re.compile(
     r"^(?:"
     r"bs|bz|bsk|bst|brg|brk|brt|brd|"
-    r"dng|dby|dgr|dkr|dpy|dpr|"
-    r"mth|mkh|mch|mny|mg|"
+    r"dṅ|dby|dgr|dkr|dpy|dpr|"
+    r"mth|mkh|mch|mñ|mg|"
     r"rgy|rts|rky|"
-    r"sgr|sbr|sny|sng|"
-    r"rdz|gzh|"
-    r"zh|lh|ng|ny|"
+    r"sgr|sbr|sñ|sṅ|"
+    r"rdz|gź|"
+    r"ź|lh|ṅ|ñ|"
     r"rg|rk|rt|rd|db|dg|bk|bt|bd|mk|mt|md"
     r")",
     re.IGNORECASE,
@@ -366,17 +388,18 @@ EXPLICIT_TIER_A_REWRITES = {
     "breyud": "brgyud",
     "broyud": "brgyud",
     "broyad": "brgyad",
-    "biin": "bzhin",
-    "giien": "gnyen",
-    "giier": "gnyer",
-    "bsiien": "bsnyen",
-    "siian": "snyan",
-    "giis": "gnyis",
-    "giiis": "gnyis",
-    "griis": "gnyis",
-    "miiam": "mnyam",
+    "bsnal": "bsṅal",
+    "biin": "bźin",
+    "giien": "gñen",
+    "giier": "gñer",
+    "bsiien": "bsñen",
+    "siian": "sñan",
+    "giis": "gñis",
+    "giiis": "gñis",
+    "griis": "gñis",
+    "miiam": "mñam",
     "yiin": "yin",
-    "fiid": "nyid",
+    "fiid": "ñid",
     "kyı": "kyi",
     "kyıs": "kyis",
     "gyı": "gyi",
@@ -387,10 +410,14 @@ EXPLICIT_TIER_A_REWRITES = {
     "zıg": "zig",
     "sıg": "sig",
     "dkyıl": "dkyil",
-    "kyanı": "kyang",
-    "yanı": "yang",
-    "byanı": "byang",
-    "gsarı": "gsang",
+    "kyanı": "kyaṅ",
+    "yanı": "yaṅ",
+    "byanı": "byaṅ",
+    "gsarı": "gsaṅ",
+    "snanı": "snaṅ",
+    "sarıs": "saṅs",
+    "garı": "gaṅ",
+    "igarı": "lgaṅ",
 }
 
 # Case-sensitive surgical rewrites promoted from review queue after manual audit.
@@ -409,9 +436,15 @@ EXPLICIT_CASE_SENSITIVE_TIER_A_REWRITES = {
     "Ihan": "lhan",
     "Iho": "lho",
     "Itos": "ltos",
-    "bii": "bzhi",
-    "bii'": "bzhi'",
-    "bii’": "bzhi’",
+    "bii": "bźi",
+    "bii'": "bźi'",
+    "bii’": "bźi’",
+    "bii'an": "bźi'an",
+    "bii’an": "bźi’an",
+    "bii'o": "bźi'o",
+    "bii’o": "bźi’o",
+    "bii'i": "bźi'i",
+    "bii’i": "bźi’i",
 }
 
 # High-confidence OCR confusable forms where "$" should be acute-s.
@@ -459,6 +492,7 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
     "ati$a": "atiśa",
     "mahes$vara": "maheśvara",
     "mahe$vara": "maheśvara",
+    "dhäpayoga-ratnamaälä": "dhūpayogaratnamālā",
     "nägärjuna": "nāgārjuna",
     "astäpadikrtadhüpayoga": "aṣṭapadīkṛtadhūpayoga",
     "mahämäyürividyäräjni": "mahāmāyūrīvidyārājñī",
@@ -804,6 +838,43 @@ CITATION_PHRASE_SAFE_REWRITE_PATTERNS = (
     (re.compile(r"\bP\s+rsian-English\b"), "Persian-English", "citation_phrase_safe_map"),
     (re.compile(r"\bvice versä\b"), "vice versa", "citation_phrase_safe_map"),
 )
+TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])tsbul(?P<space>[ \t]+)kbrims(?![{LATIN_CHARS}0-9])"),
+        "tshul",
+        "khrims",
+        "tibetan_translit_phrase_allowlist",
+    ),
+)
+TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS = (
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])skal ba dan ldan pa"),
+        "skal ba daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])stobs dan ldan pa"),
+        "stobs daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])chos dan ldan pa"),
+        "chos daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dbaṅ dan ldan pa"),
+        "dbaṅ daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pa(?![{LATIN_CHARS}0-9])"),
+        "daṅ ldan pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+)
+TIBETAN_DANG_WITNESS_RE = re.compile(r"(?:^|[\s\u0F0B-\u0F14])(?:དང་|འདང་)")
+TIBETAN_DAN_TOKEN_RE = re.compile(rf"(?<!['’{LATIN_CHARS}0-9])dan(?![{LATIN_CHARS}0-9])")
 GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
     r"(?<![0-9A-Za-z\u00C0-\u024F€©])(?P<token>6111|1111|€111|©111|111)(?![0-9A-Za-z\u00C0-\u024F€©])"
 )
@@ -811,6 +882,10 @@ GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE = re.compile(
 
 def line_has_german_numeric_function_word(line_text: str) -> bool:
     return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.search(line_text) is not None
+
+
+def line_has_tibetan_dang_witness(line_text: str) -> bool:
+    return TIBETAN_DANG_WITNESS_RE.search(line_text) is not None
 
 GERMAN_INITIAL_I_STOPWORDS = {
     "ich",
@@ -868,6 +943,9 @@ CITATION_NAME_STOPWORDS = {
 }
 
 SIGLA_REGISTRY_PATH = Path(__file__).resolve().parents[1] / "data" / "sigla_registry.tsv"
+TIBETAN_DANG_PHRASE_OVERRIDES_PATH = (
+    Path(__file__).resolve().parents[1] / "data" / "tibetan_dang_phrase_overrides.tsv"
+)
 
 
 def load_sigla_registry(path: Path) -> tuple[set[str], dict[str, str]]:
@@ -895,6 +973,27 @@ def load_sigla_registry(path: Path) -> tuple[set[str], dict[str, str]]:
                 confusable_map[variant.casefold()] = canon
     return canonical, confusable_map
 
+
+def load_tibetan_dang_phrase_overrides(path: Path) -> list[tuple[str, str]]:
+    overrides: list[tuple[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    if not path.exists():
+        return overrides
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            from_phrase = (row.get("from_phrase") or "").strip()
+            to_phrase = (row.get("to_phrase") or "").strip()
+            if not from_phrase or not to_phrase or from_phrase == to_phrase:
+                continue
+            pair = (from_phrase, to_phrase)
+            if pair in seen:
+                continue
+            seen.add(pair)
+            overrides.append(pair)
+    overrides.sort(key=lambda pair: len(pair[0]), reverse=True)
+    return overrides
+
 # Canonical source-text sigla found in abbreviation/citation sections.
 # Keep this list narrow and explicit to avoid affecting normal transliteration.
 CITATION_SIGLUM_CANONICAL_FALLBACK = {
@@ -907,6 +1006,7 @@ CITATION_SIGLUM_CANONICAL_FALLBACK = {
     "Lśdz-K",
     "Lśdz-R",
     "Liś",
+    "Mvy",
     "Ps",
     "RoINS",
     "SPS",
@@ -1028,6 +1128,9 @@ CITATION_SIGLUM_STANDALONE_ALLOWLIST = {
 }
 
 _SIGLA_REGISTRY_CANONICAL, _SIGLA_REGISTRY_CONFUSABLE_MAP = load_sigla_registry(SIGLA_REGISTRY_PATH)
+TIBETAN_DANG_PHRASE_OVERRIDES = load_tibetan_dang_phrase_overrides(
+    TIBETAN_DANG_PHRASE_OVERRIDES_PATH
+)
 CITATION_SIGLUM_CANONICAL = set(CITATION_SIGLUM_CANONICAL_FALLBACK)
 CITATION_SIGLUM_CANONICAL.update(_SIGLA_REGISTRY_CANONICAL)
 CITATION_SIGLUM_CONFUSABLE_MAP = dict(CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK)
@@ -1078,11 +1181,12 @@ CITATION_AUTHOR_CANON_BY_KEY = {
 
 TIBETAN_NAME_PIECE_HINTS = {
     "bkra",
+    "brag",
     "bsod",
     "bstan",
-    "bzang",
+    "bzaṅ",
     "chos",
-    "dbang",
+    "dbaṅ",
     "dpal",
     "ldan",
     "ldebs",
@@ -1105,48 +1209,51 @@ TIBETAN_NAME_PIECE_HINTS = {
     "rgyal",
     "rgyas",
     "rin",
-    "sang",
-    "sangs",
-    "shes",
-    "shis",
+    "saṅ",
+    "saṅs",
+    "byaṅ",
+    "gsaṅ",
+    "śes",
+    "śis",
     "skal",
     "sprul",
     "ye",
 }
-TIBETAN_LOC_TO_WYLIE_MAP = str.maketrans(
-    {
-        "ś": "sh",
-        "Ś": "sh",
-        "ź": "zh",
-        "Ź": "zh",
-        "ñ": "ny",
-        "Ñ": "ny",
-        "ṅ": "ng",
-        "Ṅ": "ng",
-    }
-)
-
 SHORT_TIB_SYLLABLES = {
     "a",
     "ba",
     "bo",
     "bya",
+    "byaṅ",
     "can",
+    "cig",
     "chos",
     "dan",
     "de",
+    "dkyil",
     "di",
     "du",
+    "gcig",
     "gi",
     "gyi",
+    "gyis",
+    "gsaṅ",
     "ka",
     "kha",
     "khyi",
     "kyi",
+    "kyis",
+    "kyaṅ",
     "la",
     "las",
+    "ldan",
+    "lhan",
     "lha",
+    "lho",
+    "lhun",
     "lo",
+    "lta",
+    "ltos",
     "ma",
     "mi",
     "na",
@@ -1158,6 +1265,7 @@ SHORT_TIB_SYLLABLES = {
     "rje",
     "rtse",
     "sa",
+    "yaṅ",
     "sems",
     "sku",
     "so",
@@ -1170,7 +1278,23 @@ SHORT_TIB_SYLLABLES = {
     "yan",
     "yin",
     "yul",
-    "zhes",
+    "źes",
+}
+
+# Recognition-only fallback for ASCII/Wylie-like OCR evidence. Canonical output stays LoC.
+ASCII_TIB_EVIDENCE_MAP = str.maketrans({
+    "ś": "sh",
+    "Ś": "Sh",
+    "ź": "zh",
+    "Ź": "Zh",
+    "ñ": "ny",
+    "Ñ": "Ny",
+    "ṅ": "ng",
+    "Ṅ": "Ng",
+})
+ASCII_SHORT_TIB_SYLLABLES = {token.lower().translate(ASCII_TIB_EVIDENCE_MAP) for token in SHORT_TIB_SYLLABLES}
+ASCII_TIBETAN_NAME_PIECE_HINTS = {
+    token.lower().translate(ASCII_TIB_EVIDENCE_MAP) for token in TIBETAN_NAME_PIECE_HINTS
 }
 
 DISCOVERY_GENERIC_SHORT_TARGETS = {
@@ -1350,14 +1474,24 @@ def token_is_translit_like(token: str, line_has_tibetan: bool, is_entry_start: b
         return False
     if not OCR_LATIN_TOKEN_RE.fullmatch(token):
         return False
-    if TRANSLIT_CUE_RE.search(token):
+    if token_has_hard_translit_marker(token):
         return True
-    if tok in SHORT_TIB_SYLLABLES:
+    if token_has_distinctive_tibetan_signature(token):
         return True
-    if is_entry_start and tok.islower() and len(tok) <= 14:
+    if token_has_translit_cue(token):
         return True
-    if line_has_tibetan and tok.islower() and len(tok) <= 10:
-        if not tok.endswith(GERMAN_WORD_SUFFIXES):
+    if tok in SHORT_TIB_SYLLABLES or tok in ASCII_SHORT_TIB_SYLLABLES:
+        return True
+    if token_is_likely_tibetan_name_piece(token):
+        if line_has_tibetan or is_entry_start:
+            return True
+    if token_has_boundary_translit_cluster(token):
+        if line_has_tibetan or is_entry_start:
+            return True
+    if line_has_tibetan and tok.islower():
+        if TIB_MEDIAL_Y_RE.search(tok):
+            return True
+        if tok.endswith(("is", "ang", "ung", "ing")) and token_has_translit_cue(token):
             return True
     return False
 
@@ -1378,13 +1512,18 @@ def token_is_german_like(token: str) -> bool:
 def token_has_translit_cue(token: str) -> bool:
     if not token:
         return False
-    if TRANSLIT_DIACRITIC_RE.search(token):
+    low = canonicalize_translit_token(token).lower()
+    if TRANSLIT_DIACRITIC_RE.search(low):
         return True
-    if "'" in token or "’" in token:
+    if "'" in low or "’" in low:
         return True
-    if STRONG_TRANSLIT_CLUSTER_RE.search(token):
+    if STRONG_TRANSLIT_CLUSTER_RE.search(low):
         return True
-    if token.lower() in SHORT_TIB_SYLLABLES and len(token) >= 3:
+    if low in SHORT_TIB_SYLLABLES and len(low) >= 3:
+        return True
+    if low in ASCII_SHORT_TIB_SYLLABLES and len(low) >= 3:
+        return True
+    if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
         return True
     return False
 
@@ -1411,11 +1550,13 @@ def token_has_distinctive_tibetan_signature(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
     if low in SHORT_TIB_SYLLABLES:
         return True
+    if low in ASCII_SHORT_TIB_SYLLABLES:
+        return True
     if token_has_hard_translit_marker(low):
         return True
     if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
         return True
-    if TIB_MEDIAL_Y_RE.search(low):
+    if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
         return True
     return False
 
@@ -1521,7 +1662,11 @@ def token_is_initial_i_confusable_noise(src: str, dst: str) -> bool:
         return False
     if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
         return False
-    if src.lower() in SHORT_TIB_SYLLABLES or dst.lower() in SHORT_TIB_SYLLABLES:
+    src_low = canonicalize_translit_token(src).lower()
+    dst_low = canonicalize_translit_token(dst).lower()
+    if src_low in SHORT_TIB_SYLLABLES or dst_low in SHORT_TIB_SYLLABLES:
+        return False
+    if src_low in ASCII_SHORT_TIB_SYLLABLES or dst_low in ASCII_SHORT_TIB_SYLLABLES:
         return False
     if not token_is_german_like(src):
         return False
@@ -1596,6 +1741,8 @@ def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
         return False
     if not INITIAL_I_CANON_SHAPE_RE.match(dst_low):
         return False
+    if dst_low in SHORT_TIB_SYLLABLES:
+        return True
     if not VOWEL_RE.search(dst_low):
         return False
     # Long plain titlecase I* words are usually German; keep these gated.
@@ -1607,8 +1754,6 @@ def token_is_initial_i_translit_candidate(src: str, dst: str) -> bool:
     if token_has_boundary_translit_cluster(src) or token_has_boundary_translit_cluster(dst):
         return True
     if "-" in src or "'" in src or "’" in src or "-" in dst or "'" in dst or "’" in dst:
-        return True
-    if dst_low in SHORT_TIB_SYLLABLES:
         return True
     if len(dst_low) <= 6 and (token_has_translit_cue(src) or token_has_translit_cue(dst)):
         return True
@@ -1672,16 +1817,19 @@ def token_is_safe_hyphenated_initial_i_to_l_translit(src: str, dst: str) -> bool
 
     def is_strong_tibetan_piece(piece: str) -> bool:
         low = canonicalize_translit_token(piece).lower()
-        low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-        if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+        if low in TIBETAN_NAME_PIECE_HINTS:
             return True
-        if len(low_wylie) < 3:
+        if low in ASCII_TIBETAN_NAME_PIECE_HINTS:
+            return True
+        if len(low) < 3:
             return False
-        if token_has_hard_translit_marker(low) or token_has_hard_translit_marker(low_wylie):
+        if token_has_hard_translit_marker(low):
             return True
-        if DISTINCTIVE_TIB_CLUSTER_RE.search(low) or DISTINCTIVE_TIB_CLUSTER_RE.search(low_wylie):
+        if DISTINCTIVE_TIB_CLUSTER_RE.search(low):
             return True
-        if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+        if TIBETAN_NAME_PIECE_PREFIX_RE.search(low):
+            return True
+        if ASCII_TIB_EVIDENCE_CLUSTER_RE.search(low):
             return True
         return False
 
@@ -1969,6 +2117,1105 @@ def token_is_strict_clean_translit(token: str) -> bool:
     return True
 
 
+ALTERNATE_WITNESS_CANON_MAP = {
+    "ž": "ź",
+    "Ž": "Ź",
+    "š": "ś",
+    "Š": "Ś",
+}
+
+
+def canonicalize_alternate_witness_token(token: str) -> str:
+    if GOOGLE_VISION_LOC_CONFUSABLE_RE.search(token):
+        return rewrite_google_vision_loc_confusables(token)
+    return "".join(ALTERNATE_WITNESS_CANON_MAP.get(ch, ch) for ch in token)
+
+
+def token_is_alternate_witness_clean_translit(token: str) -> bool:
+    if not TRANSLIT_TOKEN_RE.fullmatch(token):
+        return False
+    if token != canonicalize_alternate_witness_token(token):
+        return False
+    if GERMAN_UMLAUT_RE.search(token):
+        return False
+    if ALL_CAPS_RE.fullmatch(token):
+        return False
+    if token.lower() in GERMAN_HINT_WORDS:
+        return False
+    return True
+
+
+def alternate_witness_distance_key(token: str) -> str:
+    t = canonicalize_alternate_witness_token(token.lower())
+    t = t.translate(SKELETON_MAP)
+    t = t.replace("'", "").replace("’", "").replace("-", "")
+    return t
+
+
+GOOGLE_LOC_FRICATIVE_UPGRADE_PAIRS = {
+    ("s", "ś"),
+    ("S", "Ś"),
+    ("z", "ź"),
+    ("Z", "Ź"),
+}
+
+
+def token_is_google_loc_fricative_upgrade(base_token: str, alternate_token: str) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for base_char, alternate_char in zip(base_token, alternate_token):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) in GOOGLE_LOC_FRICATIVE_UPGRADE_PAIRS:
+            saw_upgrade = True
+            continue
+        return False
+    return saw_upgrade
+
+
+GOOGLE_LOC_NASAL_UPGRADE_PAIRS = {
+    ("n", "ṅ"),
+    ("N", "Ṅ"),
+    ("n", "ñ"),
+    ("N", "Ñ"),
+}
+
+GOOGLE_LOC_VELAR_NASAL_UPGRADE_PAIRS = {
+    ("ñ", "ṅ"),
+    ("Ñ", "Ṅ"),
+}
+
+GOOGLE_LOC_VELAR_NASAL_BLOCKING_CLUSTERS = ("dz", "j", "c")
+
+
+def token_is_google_loc_nasal_upgrade(base_token: str, alternate_token: str) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for base_char, alternate_char in zip(base_token, alternate_token):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) in GOOGLE_LOC_NASAL_UPGRADE_PAIRS:
+            saw_upgrade = True
+            continue
+        return False
+    return saw_upgrade
+
+
+def token_is_google_loc_velar_nasal_upgrade(
+    base_token: str, alternate_token: str
+) -> bool:
+    if len(base_token) != len(alternate_token):
+        return False
+    saw_upgrade = False
+    for index, (base_char, alternate_char) in enumerate(
+        zip(base_token, alternate_token)
+    ):
+        if base_char == alternate_char:
+            continue
+        if (base_char, alternate_char) not in GOOGLE_LOC_VELAR_NASAL_UPGRADE_PAIRS:
+            return False
+        tail = base_token[index + 1 : index + 3].lower()
+        if any(tail.startswith(cluster) for cluster in GOOGLE_LOC_VELAR_NASAL_BLOCKING_CLUSTERS):
+            return False
+        saw_upgrade = True
+    return saw_upgrade
+
+
+ALTERNATE_WITNESS_TOKEN_RE = re.compile(
+    r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+(?:['’.$-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+)*"
+)
+
+
+def extract_alternate_witness_tokens(line: str) -> list[tuple[str, int, int]]:
+    return [(m.group(0), m.start(), m.end()) for m in ALTERNATE_WITNESS_TOKEN_RE.finditer(line)]
+
+
+def line_is_translit_context(info: "LineInfo | None") -> bool:
+    if info is None:
+        return False
+    return info.has_tibetan or info.is_entry_start or len(info.translit_tokens) >= 2
+
+
+def prepare_witness(
+    text: str,
+    audit_by_line: dict[tuple[int, int], dict[str, str]],
+    *,
+    google_vision: bool = False,
+) -> dict[str, object]:
+    if google_vision:
+        text = normalize_google_vision_page_markers(text)
+    text = normalize_form_feed_page_number_lines(text)
+    (
+        entries,
+        line_infos,
+        line_rows,
+        validator_rows,
+        summary,
+        page_lines,
+    ) = parse_entries(text, audit_by_line)
+    google_vision_change_rows: list[list[str]] = []
+    google_vision_rewrite_count = 0
+    text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
+        page_lines,
+        line_infos,
+    )
+    if structural_rewrite_count:
+        (
+            entries,
+            line_infos,
+            line_rows,
+            validator_rows,
+            summary,
+            page_lines,
+        ) = parse_entries(text, audit_by_line)
+    if google_vision:
+        text, google_vision_change_rows, google_vision_rewrite_count = apply_google_vision_loc_preclean(
+            page_lines,
+            line_infos,
+        )
+        if google_vision_rewrite_count:
+            (
+                entries,
+                line_infos,
+                line_rows,
+                validator_rows,
+                summary,
+                page_lines,
+            ) = parse_entries(text, audit_by_line)
+    return {
+        "text": text,
+        "entries": entries,
+        "line_infos": line_infos,
+        "line_rows": line_rows,
+        "validator_rows": validator_rows,
+        "summary": summary,
+        "page_lines": page_lines,
+        "structural_change_rows": structural_change_rows,
+        "structural_rewrite_count": structural_rewrite_count,
+        "google_vision_change_rows": google_vision_change_rows,
+        "google_vision_rewrite_count": google_vision_rewrite_count,
+    }
+
+
+def alternate_witness_reason(
+    base_token: str,
+    alternate_token: str,
+    *,
+    line_info: "LineInfo | None",
+    line_text: str,
+) -> str | None:
+    if base_token == alternate_token:
+        return None
+    if token_is_alternate_witness_citation_siglum_upgrade(base_token, alternate_token):
+        return "alternate_witness_citation_siglum"
+    if line_is_citation_like(line_info, line_text):
+        rewritten_base = citation_safe_confusable_rewrite(base_token)
+        if rewritten_base == alternate_token:
+            return "alternate_witness_citation_cleanup"
+    if not line_is_translit_context(line_info):
+        return None
+    if token_is_safe_hyphenated_initial_i_to_l_translit(base_token, alternate_token):
+        return "alternate_witness_hyphenated_initial_i_to_l_translit"
+    if token_is_initial_i_translit_candidate(base_token, alternate_token):
+        return "alternate_witness_initial_i_to_l_translit"
+    if token_is_german_like(base_token):
+        return None
+    if ALL_CAPS_RE.fullmatch(base_token) or ALL_CAPS_RE.fullmatch(alternate_token):
+        return None
+    if token_is_alternate_witness_clean_translit(base_token):
+        if alternate_witness_distance_key(base_token) == alternate_witness_distance_key(
+            alternate_token
+        ):
+            if token_is_google_loc_fricative_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_fricative_upgrade"
+            if token_is_google_loc_velar_nasal_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_velar_nasal_upgrade"
+            if token_is_google_loc_nasal_upgrade(base_token, alternate_token):
+                return "alternate_witness_google_loc_nasal_upgrade"
+    if not token_is_alternate_witness_clean_translit(alternate_token):
+        return None
+    base_canon = canonicalize_alternate_witness_token(base_token)
+    alternate_canon = canonicalize_alternate_witness_token(alternate_token)
+    if not base_canon or base_canon != alternate_canon:
+        return None
+    if token_is_alternate_witness_clean_translit(base_token):
+        return None
+    return "alternate_witness_strict_translit"
+
+
+def arbitrate_alternate_witness(
+    base_page_lines: list[list[str]],
+    base_line_infos: list["LineInfo"],
+    alternate_page_lines: list[list[str]],
+    alternate_line_infos: list["LineInfo"],
+    alternate_google_vision: bool = False,
+) -> tuple[str, list[list[str]], list[list[str]], int]:
+    def normalize_alignment_text(text: str) -> str:
+        normalized = unicodedata.normalize("NFKC", text)
+        normalized = re.sub(r"\s+", " ", normalized).strip().lower()
+        return normalized
+
+    def canonical_alignment_line(line: str) -> str:
+        tokens = extract_alternate_witness_tokens(line)
+        if not tokens:
+            return normalize_alignment_text(line)
+        parts: list[str] = []
+        cursor = 0
+        for token, start, end in tokens:
+            parts.append(normalize_alignment_text(line[cursor:start]))
+            parts.append(canonicalize_alternate_witness_token(token) or normalize_alignment_text(token))
+            cursor = end
+        parts.append(normalize_alignment_text(line[cursor:]))
+        return " ".join(part for part in parts if part)
+
+    def is_google_alignment_junk_line(line: str) -> bool:
+        stripped = line.strip()
+        if not stripped:
+            return False
+        if any(ch.isalnum() for ch in stripped):
+            return False
+        if re.search(r"[\u0F00-\u0FFF]", stripped):
+            return False
+        return bool(re.fullmatch(r"[-–—=~_*.,:;|/\\\\(){}\[\]<>\"'`]+", stripped))
+
+    def line_similarity(base_line: str, alternate_line: str) -> float:
+        return SequenceMatcher(
+            None,
+            canonical_alignment_line(base_line),
+            canonical_alignment_line(alternate_line),
+            autojunk=False,
+        ).ratio()
+
+    def page_similarity(
+        base_page: list[str],
+        alternate_page: list[str],
+        alternate_google_vision: bool = False,
+    ) -> float:
+        base_nonempty = [line for line in base_page if line.strip()]
+        alternate_nonempty = [
+            line
+            for line in alternate_page
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        ]
+        if not base_nonempty or not alternate_nonempty:
+            return 1.0 if not base_nonempty and not alternate_nonempty else 0.0
+        sample_size = min(3, len(base_nonempty), len(alternate_nonempty))
+        if sample_size == 0:
+            return 0.0
+        base_samples = (
+            base_nonempty[:sample_size]
+            + base_nonempty[max(0, len(base_nonempty) - sample_size):]
+        )[: sample_size * 2]
+        alternate_samples = (
+            alternate_nonempty[:sample_size]
+            + alternate_nonempty[max(0, len(alternate_nonempty) - sample_size):]
+        )[: sample_size * 2]
+        comparisons = zip(base_samples, alternate_samples)
+        scores = [line_similarity(base_line, alternate_line) for base_line, alternate_line in comparisons]
+        if not scores:
+            return 0.0
+        return sum(scores) / len(scores)
+
+    base_info_by_key = {(info.page, info.line): info for info in base_line_infos}
+    context_free_alternate_reasons = {
+        "alternate_witness_citation_siglum",
+        "alternate_witness_citation_cleanup",
+    }
+
+    def alternate_reason_allowed_for_line(
+        reason: str,
+        line_info: "LineInfo | None",
+    ) -> bool:
+        return line_is_translit_context(line_info) or reason in context_free_alternate_reasons
+
+    def canonical_page_token_keys(
+        page: list[str],
+        *,
+        google_vision: bool = False,
+    ) -> list[str]:
+        keys: list[str] = []
+        for line in page:
+            if not line.strip():
+                continue
+            if google_vision and is_google_alignment_junk_line(line):
+                continue
+            for token, _start, _end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if len(key) >= 2:
+                    keys.append(key)
+        return keys
+
+    def page_token_overlap(
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        alternate_google_vision: bool = False,
+    ) -> tuple[int, float]:
+        base_keys = set(canonical_page_token_keys(base_page))
+        alternate_keys = set(
+            canonical_page_token_keys(
+                alternate_page,
+                google_vision=alternate_google_vision,
+            )
+        )
+        if not base_keys or not alternate_keys:
+            return 0, 0.0
+        shared = len(base_keys & alternate_keys)
+        return shared, shared / min(len(base_keys), len(alternate_keys))
+
+    @dataclass(frozen=True)
+    class AlignmentDiagnostics:
+        alignment_method: str = ""
+        alternate_page: str = ""
+        page_match_score: str = ""
+        canonical_overlap: str = ""
+        shared_canonical_tokens: str = ""
+        base_nonempty_count: str = ""
+        alternate_nonempty_count: str = ""
+        line_count_ratio: str = ""
+
+        def as_row(self) -> list[str]:
+            return [
+                self.alignment_method,
+                self.alternate_page,
+                self.page_match_score,
+                self.canonical_overlap,
+                self.shared_canonical_tokens,
+                self.base_nonempty_count,
+                self.alternate_nonempty_count,
+                self.line_count_ratio,
+            ]
+
+    def build_alignment_diagnostics(
+        alignment_method: str,
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        alternate_page_no: int | None,
+        page_match_score: float,
+    ) -> AlignmentDiagnostics:
+        base_nonempty_count = sum(1 for line in base_page if line.strip())
+        alternate_nonempty_count = sum(
+            1
+            for line in alternate_page
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        )
+        line_count_ratio = ""
+        if base_nonempty_count and alternate_nonempty_count:
+            line_count_ratio = f"{base_nonempty_count / alternate_nonempty_count:.3f}"
+        shared_tokens, overlap = page_token_overlap(
+            base_page,
+            alternate_page,
+            alternate_google_vision=alternate_google_vision,
+        )
+        return AlignmentDiagnostics(
+            alignment_method=alignment_method,
+            alternate_page=str(alternate_page_no) if alternate_page_no is not None else "",
+            page_match_score=f"{page_match_score:.3f}",
+            canonical_overlap=f"{overlap:.3f}",
+            shared_canonical_tokens=str(shared_tokens),
+            base_nonempty_count=str(base_nonempty_count),
+            alternate_nonempty_count=str(alternate_nonempty_count),
+            line_count_ratio=line_count_ratio,
+        )
+
+    def guarded_rewrapped_page_fallback(
+        base_page: list[str],
+        alternate_page: list[str],
+        *,
+        base_page_no: int | None,
+        alternate_page_no: int | None,
+        candidate_score: float,
+        base_nonempty_count: int,
+        alternate_nonempty_count: int,
+        alternate_google_vision: bool = False,
+    ) -> list[str] | None:
+        if base_page_no is None or alternate_page_no is None:
+            return None
+        if candidate_score < 0.50:
+            return None
+        if abs(alternate_page_no - base_page_no) > 2:
+            return None
+        if not base_nonempty_count or not alternate_nonempty_count:
+            return None
+        line_count_ratio = base_nonempty_count / alternate_nonempty_count
+        if line_count_ratio < 0.5 or line_count_ratio > 2.0:
+            return None
+        shared_tokens, overlap = page_token_overlap(
+            base_page,
+            alternate_page,
+            alternate_google_vision=alternate_google_vision,
+        )
+        if shared_tokens < 10 or overlap < 0.35:
+            return None
+
+        base_token_records: list[tuple[int, str, int, int, str]] = []
+        for line_idx, line in enumerate(base_page, start=1):
+            if not line.strip():
+                continue
+            for token, start, end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if key:
+                    base_token_records.append((line_idx, token, start, end, key))
+
+        alternate_token_records: list[tuple[str, str]] = []
+        for line in alternate_page:
+            if not line.strip():
+                continue
+            if alternate_google_vision and is_google_alignment_junk_line(line):
+                continue
+            for token, _start, _end in extract_alternate_witness_tokens(line):
+                key = alternate_witness_distance_key(token)
+                if key:
+                    alternate_token_records.append((token, key))
+
+        if not base_token_records or not alternate_token_records:
+            return None
+
+        replacements_by_line: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
+        base_keys = [record[4] for record in base_token_records]
+        alternate_keys = [record[1] for record in alternate_token_records]
+        matcher = SequenceMatcher(None, base_keys, alternate_keys, autojunk=False)
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+            if tag == "equal":
+                paired_indexes = zip(range(i1, i2), range(j1, j2))
+            elif tag == "replace" and i2 - i1 == j2 - j1:
+                paired_indexes = zip(range(i1, i2), range(j1, j2))
+            else:
+                continue
+            for base_record_idx, alternate_record_idx in paired_indexes:
+                line_idx, base_token, start, end, _key = base_token_records[base_record_idx]
+                alternate_token = alternate_token_records[alternate_record_idx][0]
+                if base_token == alternate_token:
+                    continue
+                line_info = base_info_by_key.get((base_page_no, line_idx))
+                reason = alternate_witness_reason(
+                    base_token,
+                    alternate_token,
+                    line_info=line_info,
+                    line_text=base_page[line_idx - 1],
+                )
+                if reason is None:
+                    continue
+                if not alternate_reason_allowed_for_line(reason, line_info):
+                    continue
+                replacements_by_line[line_idx].append((start, end, alternate_token))
+
+        if not replacements_by_line:
+            return None
+
+        aligned_page = base_page[:]
+        for line_idx, replacements in replacements_by_line.items():
+            line = base_page[line_idx - 1]
+            for start, end, alternate_token in sorted(replacements, reverse=True):
+                line = line[:start] + alternate_token + line[end:]
+            aligned_page[line_idx - 1] = line
+        return aligned_page
+
+    def align_alternate_page(
+        base_page: list[str],
+        alternate_page: list[str],
+        alternate_google_vision: bool = False,
+        *,
+        base_page_no: int | None = None,
+        alternate_page_no: int | None = None,
+    ) -> tuple[list[str] | None, str | None, str, str, float, str]:
+        base_nonempty_count = sum(1 for line in base_page if line.strip())
+
+        def line_has_compatible_structure(base_line: str, alternate_line: str) -> bool:
+            if base_line.strip() == alternate_line.strip():
+                return True
+            base_tokens = extract_alternate_witness_tokens(base_line)
+            alternate_tokens = extract_alternate_witness_tokens(alternate_line)
+            if not base_tokens or not alternate_tokens:
+                return False
+            if len(base_tokens) != len(alternate_tokens):
+                return False
+
+            def non_token_fragments(line: str, tokens: list[tuple[str, int, int]]) -> list[str]:
+                fragments: list[str] = []
+                cursor = 0
+                for _token, start, end in tokens:
+                    fragments.append(normalize_alignment_text(line[cursor:start]))
+                    cursor = end
+                fragments.append(normalize_alignment_text(line[cursor:]))
+                return fragments
+
+            return non_token_fragments(base_line, base_tokens) == non_token_fragments(
+                alternate_line,
+                alternate_tokens,
+            )
+
+        def page_has_compatible_content(aligned_page: list[str]) -> bool:
+            compatibility_hits = 0
+            comparable_lines = 0
+            for base_line, alternate_line in zip(base_page, aligned_page):
+                base_text = base_line.strip()
+                alternate_text = alternate_line.strip()
+                if not base_text or not alternate_text:
+                    continue
+                comparable_lines += 1
+                if line_has_compatible_structure(base_line, alternate_line) or line_similarity(base_line, alternate_line) >= 0.93:
+                    compatibility_hits += 1
+            if comparable_lines <= 1:
+                return compatibility_hits == comparable_lines
+            return compatibility_hits >= min(2, comparable_lines)
+
+        def aligned_page_score(aligned_page: list[str]) -> float:
+            total_similarity = 0.0
+            compatibility_hits = 0
+            comparable_lines = 0
+            for base_line, alternate_line in zip(base_page, aligned_page):
+                base_text = base_line.strip()
+                alternate_text = alternate_line.strip()
+                if not base_text or not alternate_text:
+                    continue
+                comparable_lines += 1
+                total_similarity += line_similarity(base_line, alternate_line)
+                if line_has_compatible_structure(base_line, alternate_line):
+                    compatibility_hits += 1
+            if comparable_lines == 0:
+                return page_similarity(
+                    base_page,
+                    aligned_page,
+                    alternate_google_vision=alternate_google_vision,
+                )
+            denominator = max(base_nonempty_count, 1)
+            return (
+                total_similarity / denominator
+                + 0.05 * (compatibility_hits / denominator)
+            )
+
+        def align_nonempty_runs() -> list[str] | None:
+            base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+            alternate_nonempty = [
+                (idx, line)
+                for idx, line in enumerate(alternate_page, start=1)
+                if line.strip()
+                and not (
+                    alternate_google_vision
+                    and is_google_alignment_junk_line(line)
+                )
+            ]
+            if not base_nonempty and not alternate_nonempty:
+                return [""] * len(base_page)
+            if not base_nonempty or not alternate_nonempty:
+                return None
+
+            from functools import lru_cache
+
+            def redistribute_grouped_alignment(
+                base_lines: list[str],
+                alternate_lines: list[str],
+            ) -> tuple[str, ...] | None:
+                normalized_alternate_lines = [line.strip() for line in alternate_lines if line.strip()]
+                if not normalized_alternate_lines:
+                    return None
+                if len(base_lines) == 1:
+                    return (" ".join(normalized_alternate_lines),)
+                if len(base_lines) == len(normalized_alternate_lines):
+                    direct_mapping = tuple(normalized_alternate_lines)
+                    if all(
+                        line_similarity(base_line, alternate_line) >= 0.55
+                        for base_line, alternate_line in zip(base_lines, direct_mapping)
+                    ):
+                        return direct_mapping
+
+                alternate_joined = " ".join(normalized_alternate_lines)
+                alternate_tokens = alternate_joined.split()
+                if len(alternate_tokens) < len(base_lines):
+                    return None
+
+                @lru_cache(maxsize=None)
+                def best_partition(
+                    base_offset: int,
+                    token_offset: int,
+                ) -> tuple[float, tuple[str, ...]] | None:
+                    remaining_base = len(base_lines) - base_offset
+                    remaining_tokens = len(alternate_tokens) - token_offset
+                    if remaining_base == 0:
+                        if remaining_tokens == 0:
+                            return 0.0, ()
+                        return None
+                    if remaining_tokens < remaining_base:
+                        return None
+
+                    best: tuple[float, tuple[str, ...]] | None = None
+                    max_end = len(alternate_tokens) - (remaining_base - 1)
+                    base_line = base_lines[base_offset]
+                    base_token_count = max(1, len(base_line.split()))
+                    for end in range(token_offset + 1, max_end + 1):
+                        candidate_line = " ".join(alternate_tokens[token_offset:end])
+                        score = line_similarity(base_line, candidate_line)
+                        if line_has_compatible_structure(base_line, candidate_line):
+                            score += 0.15
+                        score -= 0.02 * abs(len(candidate_line.split()) - base_token_count)
+                        if score < 0.52:
+                            continue
+                        suffix = best_partition(base_offset + 1, end)
+                        if suffix is None:
+                            continue
+                        total_score = score + suffix[0]
+                        candidate = (total_score, (candidate_line,) + suffix[1])
+                        if best is None or total_score > best[0]:
+                            best = candidate
+                    return best
+
+                best = best_partition(0, 0)
+                if best is None:
+                    return None
+                redistributed = best[1]
+                if any(
+                    line_similarity(base_line, alternate_line) < 0.55
+                    for base_line, alternate_line in zip(base_lines, redistributed)
+                ):
+                    return None
+                return redistributed
+
+            @lru_cache(maxsize=None)
+            def best_alignment(
+                base_pos: int,
+                alternate_pos: int,
+            ) -> tuple[float, tuple[tuple[int, int, tuple[str, ...]], ...]] | None:
+                if base_pos == len(base_nonempty):
+                    if alternate_pos == len(alternate_nonempty):
+                        return 0.0, ()
+                    return None
+                if alternate_pos == len(alternate_nonempty):
+                    return None
+
+                remaining_base = len(base_nonempty) - base_pos
+                remaining_alternate = len(alternate_nonempty) - alternate_pos
+                if max(remaining_base, remaining_alternate) > min(remaining_base, remaining_alternate) * 3:
+                    return None
+
+                best: tuple[float, tuple[tuple[int, int, str], ...]] | None = None
+                max_base_take = min(3, remaining_base)
+                max_alternate_take = min(3, remaining_alternate)
+                for take_base in range(1, max_base_take + 1):
+                    after_base = remaining_base - take_base
+                    for take_alternate in range(1, max_alternate_take + 1):
+                        after_alternate = remaining_alternate - take_alternate
+                        if after_base > after_alternate * 3 or after_alternate > after_base * 3:
+                            continue
+
+                        base_group = " ".join(
+                            base_nonempty[base_pos + offset][1].strip()
+                            for offset in range(take_base)
+                        )
+                        alternate_group = " ".join(
+                            alternate_nonempty[alternate_pos + offset][1].strip()
+                            for offset in range(take_alternate)
+                        )
+                        score = line_similarity(base_group, alternate_group)
+                        if line_has_compatible_structure(base_group, alternate_group):
+                            score += 0.2
+                        if score < 0.72:
+                            continue
+                        redistributed_lines = redistribute_grouped_alignment(
+                            [
+                                base_nonempty[base_pos + offset][1]
+                                for offset in range(take_base)
+                            ],
+                            [
+                                alternate_nonempty[alternate_pos + offset][1]
+                                for offset in range(take_alternate)
+                            ],
+                        )
+                        if redistributed_lines is None:
+                            continue
+                        suffix = best_alignment(base_pos + take_base, alternate_pos + take_alternate)
+                        if suffix is None:
+                            continue
+                        total_score = score + suffix[0]
+                        candidate = (
+                            total_score,
+                            ((take_base, take_alternate, redistributed_lines),) + suffix[1],
+                        )
+                        if best is None or total_score > best[0]:
+                            best = candidate
+                return best
+
+            alignment = best_alignment(0, 0)
+            if alignment is None:
+                return None
+
+            aligned_page = [""] * len(base_page)
+            base_cursor = 0
+            for take_base, _take_alternate, aligned_lines in alignment[1]:
+                for offset, aligned_line in enumerate(aligned_lines):
+                    base_idx, _base_line = base_nonempty[base_cursor + offset]
+                    aligned_page[base_idx - 1] = aligned_line
+                base_cursor += take_base
+            return aligned_page
+
+        def align_reordered_nonempty_lines() -> list[str] | None:
+            base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+            alternate_nonempty = [
+                (idx, line)
+                for idx, line in enumerate(alternate_page, start=1)
+                if line.strip()
+                and not (
+                    alternate_google_vision
+                    and is_google_alignment_junk_line(line)
+                )
+            ]
+            if not base_nonempty and not alternate_nonempty:
+                return [""] * len(base_page)
+            if not base_nonempty or not alternate_nonempty:
+                return None
+            if len(base_nonempty) != len(alternate_nonempty):
+                return None
+
+            scored_pairs: list[tuple[float, int, int]] = []
+            for base_pos, (_base_idx, base_line) in enumerate(base_nonempty):
+                for alternate_pos, (_alternate_idx, alternate_line) in enumerate(alternate_nonempty):
+                    score = line_similarity(base_line, alternate_line)
+                    compatible_structure = line_has_compatible_structure(base_line, alternate_line)
+                    if compatible_structure:
+                        score += 0.2
+                    if score < 0.9:
+                        continue
+                    scored_pairs.append((score, base_pos, alternate_pos))
+
+            if len(scored_pairs) < len(base_nonempty):
+                return None
+
+            scored_pairs.sort(reverse=True)
+            used_base: set[int] = set()
+            used_alternate: set[int] = set()
+            matched_pairs: list[tuple[int, int]] = []
+            for _score, base_pos, alternate_pos in scored_pairs:
+                if base_pos in used_base or alternate_pos in used_alternate:
+                    continue
+                used_base.add(base_pos)
+                used_alternate.add(alternate_pos)
+                matched_pairs.append((base_pos, alternate_pos))
+                if len(matched_pairs) == len(base_nonempty):
+                    break
+
+            if len(matched_pairs) != len(base_nonempty):
+                return None
+
+            aligned_page = [""] * len(base_page)
+            for base_pos, alternate_pos in matched_pairs:
+                base_idx, _base_line = base_nonempty[base_pos]
+                _alternate_idx, alternate_line = alternate_nonempty[alternate_pos]
+                aligned_page[base_idx - 1] = alternate_line.strip()
+            return aligned_page
+
+        if len(base_page) == len(alternate_page):
+            if not page_has_compatible_content(alternate_page):
+                reordered_page = align_reordered_nonempty_lines()
+                if reordered_page is not None and page_has_compatible_content(reordered_page):
+                    return (
+                        reordered_page,
+                        None,
+                        "",
+                        "",
+                        aligned_page_score(reordered_page),
+                        "reordered_page_alignment",
+                    )
+                return (
+                    None,
+                    "unalignable_page_content",
+                    str(len(base_page)),
+                    str(len(alternate_page)),
+                    page_similarity(
+                        base_page,
+                        alternate_page,
+                        alternate_google_vision=alternate_google_vision,
+                    ),
+                    "",
+                )
+            return (
+                alternate_page,
+                None,
+                "",
+                "",
+                aligned_page_score(alternate_page),
+                "ordinary_page_alignment",
+            )
+        base_nonempty = [(idx, line) for idx, line in enumerate(base_page, start=1) if line.strip()]
+        alternate_nonempty = [
+            (idx, line)
+            for idx, line in enumerate(alternate_page, start=1)
+            if line.strip()
+            and not (
+                alternate_google_vision
+                and is_google_alignment_junk_line(line)
+            )
+        ]
+        aligned_page = align_nonempty_runs()
+        if aligned_page is None:
+            mismatch_reason = "unalignable_rewrapped_page"
+            if (
+                abs(len(base_nonempty) - len(alternate_nonempty)) > 3
+                and min(len(base_nonempty), len(alternate_nonempty)) <= 1
+            ):
+                mismatch_reason = "nonempty_line_count_mismatch"
+            candidate_score = page_similarity(
+                base_page,
+                alternate_page,
+                alternate_google_vision=alternate_google_vision,
+            )
+            if mismatch_reason == "unalignable_rewrapped_page":
+                fallback_page = guarded_rewrapped_page_fallback(
+                    base_page,
+                    alternate_page,
+                    base_page_no=base_page_no,
+                    alternate_page_no=alternate_page_no,
+                    candidate_score=candidate_score,
+                    base_nonempty_count=len(base_nonempty),
+                    alternate_nonempty_count=len(alternate_nonempty),
+                    alternate_google_vision=alternate_google_vision,
+                )
+                if fallback_page is not None:
+                    return (
+                        fallback_page,
+                        None,
+                        str(len(base_nonempty)),
+                        str(len(alternate_nonempty)),
+                        candidate_score,
+                        "recovered_rewrapped_page",
+                    )
+            return (
+                None,
+                mismatch_reason,
+                str(len(base_nonempty)),
+                str(len(alternate_nonempty)),
+                candidate_score,
+                "",
+            )
+        if not page_has_compatible_content(aligned_page):
+            return (
+                None,
+                "unalignable_page_content",
+                str(len(base_page)),
+                str(len(alternate_page)),
+                page_similarity(
+                    base_page,
+                    alternate_page,
+                    alternate_google_vision=alternate_google_vision,
+                ),
+                "",
+            )
+        return (
+            aligned_page,
+            None,
+            str(len(base_page)),
+            str(len(alternate_page)),
+            aligned_page_score(aligned_page),
+            "rewrapped_page_alignment",
+        )
+
+    adoption_rows: list[list[str]] = []
+    unresolved_rows: list[list[str]] = []
+    aligned_alternate_pages: list[list[str]] = []
+    aligned_alternate_page_diagnostics: list[AlignmentDiagnostics] = []
+    empty_alignment_diagnostics = AlignmentDiagnostics()
+    alternate_page_idx = 0
+    for page_idx, base_page in enumerate(base_page_lines, start=1):
+        matched_page_idx: int | None = None
+        aligned_page: list[str] | None = None
+        matched_alignment_diagnostics = empty_alignment_diagnostics
+        reason = None
+        left_count = ""
+        right_count = ""
+        best_score = -1.0
+        search_idx = alternate_page_idx
+        max_search_idx = min(len(alternate_page_lines), alternate_page_idx + 5)
+        searched_alternate_pages: list[str] = []
+        search_window = "searched_alternate_pages=none"
+        if alternate_page_idx < max_search_idx:
+            search_window = f"searched_alternate_pages={alternate_page_idx + 1}-{max_search_idx}"
+        while search_idx < max_search_idx:
+            (
+                candidate_page,
+                candidate_reason,
+                candidate_left_count,
+                candidate_right_count,
+                candidate_score,
+                candidate_alignment_method,
+            ) = align_alternate_page(
+                base_page,
+                alternate_page_lines[search_idx],
+                alternate_google_vision=alternate_google_vision,
+                base_page_no=page_idx,
+                alternate_page_no=search_idx + 1,
+            )
+            searched_alternate_pages.append(
+                (
+                    f"{search_idx + 1}:"
+                    f"{candidate_reason or 'aligned'}"
+                    f"({candidate_left_count or '-'}"
+                    f"/{candidate_right_count or '-'})"
+                )
+            )
+            if candidate_page is not None:
+                if candidate_score > best_score:
+                    matched_page_idx = search_idx
+                    aligned_page = candidate_page
+                    left_count = candidate_left_count
+                    right_count = candidate_right_count
+                    best_score = candidate_score
+                    matched_alignment_diagnostics = build_alignment_diagnostics(
+                        candidate_alignment_method,
+                        base_page,
+                        alternate_page_lines[search_idx],
+                        alternate_page_no=search_idx + 1,
+                        page_match_score=candidate_score,
+                    )
+            elif reason is None:
+                reason = candidate_reason or "line_count_mismatch"
+                left_count = candidate_left_count
+                right_count = candidate_right_count
+            search_idx += 1
+        if aligned_page is None:
+            unresolved_rows.append(
+                [
+                    str(page_idx),
+                    "",
+                    "",
+                    "",
+                    "",
+                    reason or "line_count_mismatch",
+                    left_count,
+                    right_count,
+                    search_window,
+                    ";".join(searched_alternate_pages),
+                ]
+            )
+            aligned_alternate_pages.append(base_page[:])
+            aligned_alternate_page_diagnostics.append(empty_alignment_diagnostics)
+            if alternate_page_idx < len(alternate_page_lines):
+                alternate_page_idx += 1
+            continue
+        alternate_page_idx = matched_page_idx + 1
+        aligned_alternate_pages.append(aligned_page)
+        aligned_alternate_page_diagnostics.append(matched_alignment_diagnostics)
+    rewritten_pages = [page[:] for page in base_page_lines]
+    adoption_count = 0
+    for page_idx, (base_page, alternate_page, alignment_diagnostics) in enumerate(
+        zip(base_page_lines, aligned_alternate_pages, aligned_alternate_page_diagnostics),
+        start=1,
+    ):
+        for line_idx, (base_line, alternate_line) in enumerate(zip(base_page, alternate_page), start=1):
+            if base_line == alternate_line:
+                continue
+            line_info = base_info_by_key.get((page_idx, line_idx))
+            translit_context = line_is_translit_context(line_info)
+            base_tokens = extract_alternate_witness_tokens(base_line)
+            alternate_tokens = extract_alternate_witness_tokens(alternate_line)
+            if len(base_tokens) != len(alternate_tokens):
+                unresolved_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        "",
+                        "",
+                        "",
+                        "token_count_mismatch",
+                        str(len(base_tokens)),
+                        str(len(alternate_tokens)),
+                        base_line,
+                        alternate_line,
+                    ]
+                )
+                continue
+            rebuilt: list[str] = []
+            cursor = 0
+            line_adoptions = 0
+            for token_index, (base_match, alternate_match) in enumerate(zip(base_tokens, alternate_tokens), start=1):
+                base_token, start, end = base_match
+                alternate_token = alternate_match[0]
+                rebuilt.append(base_line[cursor:start])
+                replacement = base_token
+                if base_token != alternate_token:
+                    reason = alternate_witness_reason(
+                        base_token,
+                        alternate_token,
+                        line_info=line_info,
+                        line_text=base_line,
+                    )
+                    if reason:
+                        if translit_context or reason in context_free_alternate_reasons:
+                            replacement = alternate_token
+                            adoption_rows.append(
+                                [
+                                    str(page_idx),
+                                    str(line_idx),
+                                    str(token_index),
+                                    base_token,
+                                    alternate_token,
+                                    reason,
+                                    distance_key(base_token),
+                                    distance_key(alternate_token),
+                                    base_line,
+                                    alternate_line,
+                                    *alignment_diagnostics.as_row(),
+                                ]
+                            )
+                            line_adoptions += 1
+                        else:
+                            unresolved_rows.append(
+                                [
+                                    str(page_idx),
+                                    str(line_idx),
+                                    str(token_index),
+                                    base_token,
+                                    alternate_token,
+                                    "non_translit_context",
+                                    distance_key(base_token),
+                                    distance_key(alternate_token),
+                                    base_line,
+                                    alternate_line,
+                                ]
+                            )
+                    elif token_is_ignorable_alternate_siglum_disagreement(
+                        base_token,
+                        alternate_token,
+                        line_info=line_info,
+                        base_line=base_line,
+                        alternate_line=alternate_line,
+                    ):
+                        pass
+                    else:
+                        unresolved_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                str(token_index),
+                                base_token,
+                                alternate_token,
+                                "unsafe_token_disagreement"
+                                if translit_context
+                                else "non_translit_context",
+                                distance_key(base_token),
+                                distance_key(alternate_token),
+                                base_line,
+                                alternate_line,
+                            ]
+                        )
+                rebuilt.append(replacement)
+                cursor = end
+            rebuilt.append(base_line[cursor:])
+            if line_adoptions:
+                rewritten_pages[page_idx - 1][line_idx - 1] = "".join(rebuilt)
+                adoption_count += line_adoptions
+    return "\f".join("\n".join(page) for page in rewritten_pages), adoption_rows, unresolved_rows, adoption_count
+
+
 def token_is_titlecase_or_lower_compound_shape(token: str) -> bool:
     def part_is_tibetan_mixed_caps_shape(part: str) -> bool:
         letters = [ch for ch in part if ch.isalpha()]
@@ -2240,8 +3487,8 @@ def line_has_siglum_context_cue(line_text: str) -> bool:
     return False
 
 
-def line_is_citation_like(info: "LineInfo", line_text: str) -> bool:
-    if info.zone not in {
+def line_is_citation_like(info: "LineInfo | None", line_text: str) -> bool:
+    if info is not None and info.zone not in {
         "german_prose",
         "german_prose_with_translit",
         "latin_other",
@@ -2381,6 +3628,11 @@ def match_citation_siglum(token: str) -> str | None:
     siglum = CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(token)
     if siglum is not None:
         return siglum
+    siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(
+        re.sub(r"[sś]+", "s", token.casefold())
+    )
+    if siglum is not None:
+        return siglum
     siglum = CITATION_SIGLUM_CONFUSABLE_MAP.get(token.casefold())
     if siglum is not None:
         return siglum
@@ -2403,6 +3655,49 @@ def match_citation_siglum(token: str) -> str | None:
         siglum = "Lśdz" + token[4:]
         return siglum.replace("$", "ś")
     return None
+
+
+def token_is_ignorable_alternate_siglum_disagreement(
+    base_token: str,
+    alternate_token: str,
+    *,
+    line_info: LineInfo | None,
+    base_line: str,
+    alternate_line: str,
+) -> bool:
+    if not (
+        line_is_citation_like(line_info, base_line)
+        or line_is_citation_like(line_info, alternate_line)
+        or line_has_parenthetical_citation(base_line)
+        or line_has_parenthetical_citation(alternate_line)
+    ):
+        return False
+    base_siglum = match_citation_siglum(base_token)
+    alternate_siglum = match_citation_siglum(alternate_token)
+    if base_siglum is None or alternate_siglum is None:
+        return False
+    base_siglum_key = re.sub(r"[sś]+", "s", base_siglum.casefold())
+    alternate_siglum_key = re.sub(r"[sś]+", "s", alternate_siglum.casefold())
+    if base_siglum_key != alternate_siglum_key:
+        return False
+    return base_token == base_siglum and alternate_token != alternate_siglum
+
+
+def token_is_alternate_witness_citation_siglum_upgrade(
+    base_token: str,
+    alternate_token: str,
+) -> bool:
+    base_siglum = match_citation_siglum(base_token)
+    alternate_siglum = match_citation_siglum(alternate_token)
+    if base_siglum is None or alternate_siglum is None:
+        return False
+    base_siglum_key = re.sub(r"[sś]+", "s", base_siglum.casefold())
+    alternate_siglum_key = re.sub(r"[sś]+", "s", alternate_siglum.casefold())
+    if base_siglum_key != alternate_siglum_key:
+        return False
+    if base_token == base_siglum:
+        return False
+    return alternate_token == alternate_siglum
 
 
 def split_citation_siglum_token(token: str) -> tuple[str, str]:
@@ -2612,14 +3907,15 @@ def token_looks_like_known_citation_author(token: str) -> bool:
 
 def token_is_likely_tibetan_name_piece(token: str) -> bool:
     low = canonicalize_translit_token(token).lower()
-    low_wylie = low.translate(TIBETAN_LOC_TO_WYLIE_MAP)
-    if low_wylie in TIBETAN_NAME_PIECE_HINTS:
+    if low in TIBETAN_NAME_PIECE_HINTS:
         return True
-    if len(low_wylie) < 3:
+    if low in ASCII_TIBETAN_NAME_PIECE_HINTS:
+        return True
+    if len(low) < 3:
         return False
-    if token_has_distinctive_tibetan_signature(low) or token_has_distinctive_tibetan_signature(low_wylie):
+    if token_has_distinctive_tibetan_signature(low):
         return True
-    if TIBETAN_NAME_PIECE_PREFIX_RE.search(low_wylie):
+    if TIBETAN_NAME_PIECE_PREFIX_RE.search(low):
         return True
     return False
 
@@ -2966,6 +4262,50 @@ def parse_entries(
 
 def page_lines_to_text(page_lines: list[list[str]]) -> str:
     return "\f".join("\n".join(lines) for lines in page_lines)
+
+
+def normalize_form_feed_page_number_lines(text: str) -> str:
+    """Drop page-number-only lines introduced immediately after form feeds."""
+    if "\f" not in text:
+        return text
+    raw_pages = text.split("\f")
+    if raw_pages and raw_pages[0] == "":
+        raw_pages = raw_pages[1:]
+    normalized_pages: list[str] = []
+    for page in raw_pages:
+        lines = page.splitlines()
+        if lines and re.fullmatch(r"\d{1,4}", lines[0].strip()):
+            lines = lines[1:]
+        normalized_pages.append("\n".join(lines))
+    return "\f".join(normalized_pages)
+
+
+def normalize_google_vision_page_markers(text: str) -> str:
+    """Convert Google Vision page marker lines into the form feeds used downstream."""
+    if "\f" in text:
+        return text
+    pages: list[str] = []
+    preamble: list[str] = []
+    current: list[str] = []
+    saw_marker = False
+    for line in text.splitlines():
+        if GOOGLE_VISION_PAGE_MARKER_RE.match(line):
+            if saw_marker:
+                pages.append("\n".join(current).strip("\n"))
+            else:
+                pre = "\n".join(preamble).strip("\n")
+                if pre:
+                    pages.append(pre)
+            saw_marker = True
+            current = []
+        elif saw_marker:
+            current.append(line)
+        else:
+            preamble.append(line)
+    if not saw_marker:
+        return text
+    pages.append("\n".join(current).strip("\n"))
+    return "\f".join(pages).strip("\n")
 
 
 def line_has_unclosed_german_quote(line_text: str) -> bool:
@@ -4038,6 +5378,134 @@ def line_is_german_prose_rewrite_context(
     return True
 
 
+def line_is_tibetan_translit_phrase_rewrite_context(info: "LineInfo", line_text: str) -> bool:
+    if not line_text or info.entry_id == 0:
+        return False
+    if info.zone in AUTO_FIX_ZONES:
+        return True
+    if info.has_tibetan:
+        return True
+    return len(info.translit_tokens) >= max(2, len(info.german_tokens))
+
+
+def line_is_tibetan_direct_phrase_rewrite_context(info: "LineInfo", line_text: str) -> bool:
+    if not line_text or info.entry_id == 0:
+        return False
+    if info.zone in AUTO_FIX_ZONES:
+        return True
+    if info.has_tibetan:
+        return True
+    return bool(info.translit_tokens)
+
+
+def apply_safe_tibetan_translit_phrase_rewrites(
+    line: str,
+    info: "LineInfo",
+    *,
+    page: int,
+    line_no: int,
+    change_rows: list[list[str]],
+) -> str:
+    if not line:
+        return line
+
+    original_excerpt = line[:240]
+    updated = line
+    if line_is_tibetan_direct_phrase_rewrite_context(info, line):
+        for pattern, replacement, reason in TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS:
+
+            def repl_direct(match: re.Match[str]) -> str:
+                src = match.group(0)
+                change_rows.append(
+                    [
+                        str(page),
+                        str(line_no),
+                        str(info.entry_id),
+                        info.zone,
+                        src,
+                        replacement,
+                        "A",
+                        reason,
+                        "1",
+                        original_excerpt,
+                    ]
+                )
+                return replacement
+
+            updated = pattern.sub(repl_direct, updated)
+
+    if not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return updated
+
+    for pattern, left_dst, right_dst, reason in TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS:
+
+        def repl(match: re.Match[str]) -> str:
+            src = match.group(0)
+            dst = f"{left_dst}{match.group('space')}{right_dst}"
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    src,
+                    dst,
+                    "A",
+                    reason,
+                    "1",
+                    original_excerpt,
+                ]
+            )
+            return dst
+
+        updated = pattern.sub(repl, updated)
+
+    for from_phrase, to_phrase in TIBETAN_DANG_PHRASE_OVERRIDES:
+        occurrences = updated.count(from_phrase)
+        if not occurrences:
+            continue
+        updated = updated.replace(from_phrase, to_phrase)
+        for _ in range(occurrences):
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    from_phrase,
+                    to_phrase,
+                    "A",
+                    "tibetan_dang_phrase_override",
+                    "1",
+                    original_excerpt,
+                ]
+            )
+
+    if line_has_tibetan_dang_witness(updated):
+
+        def dang_repl(match: re.Match[str]) -> str:
+            src = match.group(0)
+            dst = "daṅ"
+            change_rows.append(
+                [
+                    str(page),
+                    str(line_no),
+                    str(info.entry_id),
+                    info.zone,
+                    src,
+                    dst,
+                    "A",
+                    "tibetan_dang_witness_rewrite",
+                    "1",
+                    original_excerpt,
+                ]
+            )
+            return dst
+
+        updated = TIBETAN_DAN_TOKEN_RE.sub(dang_repl, updated)
+    return updated
+
+
 def apply_safe_prose_and_biblio_rewrites(
     line: str,
     info: "LineInfo",
@@ -4178,6 +5646,132 @@ def apply_safe_prose_and_biblio_rewrites(
     return GERMAN_NUMERIC_FUNCTION_WORD_TOKEN_RE.sub(repl_numeric, updated)
 
 
+def span_overlaps_any(start: int, end: int, spans: list[tuple[int, int]]) -> bool:
+    return any(start < span_end and end > span_start for span_start, span_end in spans)
+
+
+def google_vision_protected_spans(line: str) -> list[tuple[int, int]]:
+    return [m.span() for m in GOOGLE_VISION_PROTECTED_SPAN_RE.finditer(line)]
+
+
+def google_vision_nasal_is_palatal(tok: str, index: int) -> bool:
+    """Google Vision often prints old-LoC ñ/ṅ as ň/ń/ǹ; choose ñ only in tight palatal clusters."""
+
+    lower = tok.lower()
+    before = lower[:index]
+    after = lower[index + 1 :]
+    return (
+        (before.endswith("m") and after.startswith("am"))
+        or (before.endswith("s") and (after.startswith("am") or after.startswith("i")))
+        or (before.endswith("g") and (after.startswith("is") or after.startswith("en") or after.startswith("er")))
+        or (before.endswith("br") and after.startswith("an"))
+        or (before.endswith("bs") and after.startswith("en"))
+    )
+
+
+def rewrite_google_vision_loc_confusables(tok: str) -> str:
+    chars: list[str] = []
+    for index, ch in enumerate(tok):
+        if ch in GOOGLE_VISION_NASAL_CONFUSABLES:
+            chars.append("ñ" if google_vision_nasal_is_palatal(tok, index) else "ṅ")
+        elif ch in GOOGLE_VISION_NASAL_CONFUSABLES_UPPER:
+            chars.append("Ñ" if google_vision_nasal_is_palatal(tok, index) else "Ṅ")
+        else:
+            chars.append(ch.translate(GOOGLE_VISION_NON_NASAL_CONFUSABLE_MAP))
+    rewritten = "".join(chars)
+    fixed = GOOGLE_VISION_LOC_POST_TOKEN_FIXES.get(rewritten)
+    if fixed is not None:
+        return fixed
+    lower_fixed = GOOGLE_VISION_LOC_POST_TOKEN_FIXES.get(rewritten.lower())
+    if lower_fixed is not None and rewritten[:1].isupper():
+        return lower_fixed[:1].upper() + lower_fixed[1:]
+    return rewritten
+
+
+def rewrite_google_vision_loc_token(tok: str) -> str | None:
+    if not GOOGLE_VISION_LOC_CONFUSABLE_RE.search(tok):
+        return None
+    dst = rewrite_google_vision_loc_confusables(tok)
+    if dst == tok:
+        return None
+    if not (
+        token_has_hard_translit_marker(dst)
+        or token_has_translit_cue(dst)
+        or DISTINCTIVE_TIB_CLUSTER_RE.search(dst)
+        or BOUNDARY_TRANSLIT_CLUSTER_RE.search(dst)
+    ):
+        return None
+    return dst
+
+
+def line_is_google_vision_loc_rewrite_context(info: LineInfo | None, line: str) -> bool:
+    if not line or not GOOGLE_VISION_LOC_CONFUSABLE_RE.search(line):
+        return False
+    if info is not None and line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return True
+    protected = google_vision_protected_spans(line)
+    for m in OCR_LATIN_TOKEN_RE.finditer(line):
+        if span_overlaps_any(m.start(), m.end(), protected):
+            continue
+        if rewrite_google_vision_loc_token(m.group(0)) is not None:
+            return True
+    return False
+
+
+def google_vision_loc_change_row_context(info: LineInfo | None, line: str) -> tuple[str, str]:
+    if info is None:
+        return "0", "google_vision_preclean"
+    if not line_is_tibetan_translit_phrase_rewrite_context(info, line):
+        return str(info.entry_id), "google_vision_preclean"
+    return str(info.entry_id), info.zone
+
+
+def apply_google_vision_loc_preclean(
+    page_lines: list[list[str]],
+    line_infos: list[LineInfo],
+) -> tuple[str, list[list[str]], int]:
+    info_by_key = {(li.page, li.line): li for li in line_infos}
+    change_rows: list[list[str]] = []
+    cleaned_pages: list[list[str]] = []
+    for page_idx, lines in enumerate(page_lines, start=1):
+        corrected_lines: list[str] = []
+        for line_idx, line in enumerate(lines, start=1):
+            info = info_by_key.get((page_idx, line_idx))
+            if not line_is_google_vision_loc_rewrite_context(info, line):
+                corrected_lines.append(line)
+                continue
+            protected = google_vision_protected_spans(line)
+            original_excerpt = line[:240]
+            entry_id, zone = google_vision_loc_change_row_context(info, line)
+
+            def repl_token(m: re.Match[str]) -> str:
+                if span_overlaps_any(m.start(), m.end(), protected):
+                    return m.group(0)
+                tok = m.group(0)
+                dst = rewrite_google_vision_loc_token(tok)
+                if dst is None or dst == tok:
+                    return tok
+                change_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        entry_id,
+                        zone,
+                        tok,
+                        dst,
+                        "A",
+                        "google_vision_loc_confusable",
+                        "1",
+                        original_excerpt,
+                    ]
+                )
+                return dst
+
+            corrected_lines.append(OCR_LATIN_TOKEN_RE.sub(repl_token, line))
+        cleaned_pages.append(corrected_lines)
+    return page_lines_to_text(cleaned_pages), change_rows, len(change_rows)
+
+
 def apply_entry_aware_corrections(
     page_lines: list[list[str]],
     line_infos: list[LineInfo],
@@ -4200,6 +5794,13 @@ def apply_entry_aware_corrections(
             info = info_by_key.get((page_idx, line_idx))
             if info is not None:
                 line = apply_safe_prose_and_biblio_rewrites(
+                    line,
+                    info,
+                    page=page_idx,
+                    line_no=line_idx,
+                    change_rows=change_rows,
+                )
+                line = apply_safe_tibetan_translit_phrase_rewrites(
                     line,
                     info,
                     page=page_idx,
@@ -5531,50 +7132,100 @@ def run_one(
     trusted_min_freq: int,
     discover_max_edit: int,
     discover_max_rare_freq: int,
+    google_vision: bool = False,
+    alternate_merged: Path | None = None,
+    alternate_google_vision: bool = False,
+    merge_only: bool = False,
 ) -> dict[str, object]:
-    text = merged.read_text(encoding="utf-8", errors="replace")
     audit_by_line = load_audit(audit)
-    entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
-    text, structural_change_rows, structural_rewrite_count = apply_structural_german_quote_wrap_repairs(
-        page_lines,
-        line_infos,
+    witness = prepare_witness(
+        merged.read_text(encoding="utf-8", errors="replace"),
+        audit_by_line=audit_by_line,
+        google_vision=google_vision,
     )
-    if structural_rewrite_count:
+    text = witness["text"]
+    entries = witness["entries"]
+    line_infos = witness["line_infos"]
+    line_rows = witness["line_rows"]
+    validator_rows = witness["validator_rows"]
+    summary = witness["summary"]
+    page_lines = witness["page_lines"]
+    structural_change_rows = witness["structural_change_rows"]
+    structural_rewrite_count = witness["structural_rewrite_count"]
+    google_vision_change_rows = witness["google_vision_change_rows"]
+    google_vision_rewrite_count = witness["google_vision_rewrite_count"]
+    alternate_adoption_rows: list[list[str]] = []
+    alternate_unresolved_rows: list[list[str]] = []
+    alternate_adoption_count = 0
+    if alternate_merged is not None:
+        alternate_witness = prepare_witness(
+            alternate_merged.read_text(encoding="utf-8", errors="replace"),
+            audit_by_line=audit_by_line,
+            google_vision=alternate_google_vision,
+        )
+        (
+            text,
+            alternate_adoption_rows,
+            alternate_unresolved_rows,
+            alternate_adoption_count,
+        ) = arbitrate_alternate_witness(
+            base_page_lines=page_lines,
+            base_line_infos=line_infos,
+            alternate_page_lines=alternate_witness["page_lines"],
+            alternate_line_infos=alternate_witness["line_infos"],
+            alternate_google_vision=alternate_google_vision,
+        )
         entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(text, audit_by_line)
-    headword_memory, entry_memory = build_entry_memory(entries, line_infos)
-    trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
-    discovered, discovered_rows = discover_common_errors(
-        line_infos,
-        trusted_lexicon=trusted_lexicon,
-        max_edit=discover_max_edit,
-        max_rare_freq=discover_max_rare_freq,
-    )
-    corrected_text, change_rows, review_rows = apply_entry_aware_corrections(
-        page_lines=page_lines,
-        line_infos=line_infos,
-        headword_memory=headword_memory,
-        entry_memory=entry_memory,
-        trusted_lexicon=trusted_lexicon,
-        discovered=discovered,
-    )
-    change_rows = structural_change_rows + change_rows
-    corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
-        apply_citation_name_normalization(
-            corrected_text=corrected_text,
-            line_infos=line_infos,
+    if merge_only:
+        trusted_lexicon: set[str] = set()
+        discovered_rows: list[list[str]] = []
+        corrected_text = text
+        change_rows = structural_change_rows + google_vision_change_rows
+        review_rows: list[list[str]] = []
+        citation_change_rows = []
+        citation_review_rows = []
+        citation_report_rows = []
+        citation_family_count = 0
+        sanskrit_change_rows = []
+        sanskrit_review_rows = []
+        sanskrit_report_rows = []
+        sanskrit_family_count = 0
+        stale_review_rows_removed = 0
+    else:
+        headword_memory, entry_memory = build_entry_memory(entries, line_infos)
+        trusted_lexicon = build_trusted_lexicon(entries, line_infos, min_freq=trusted_min_freq)
+        discovered, discovered_rows = discover_common_errors(
+            line_infos,
+            trusted_lexicon=trusted_lexicon,
+            max_edit=discover_max_edit,
+            max_rare_freq=discover_max_rare_freq,
         )
-    )
-    change_rows.extend(citation_change_rows)
-    review_rows.extend(citation_review_rows)
-    corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
-        apply_sanskrit_normalization(
-            corrected_text=corrected_text,
+        corrected_text, change_rows, review_rows = apply_entry_aware_corrections(
+            page_lines=page_lines,
             line_infos=line_infos,
+            headword_memory=headword_memory,
+            entry_memory=entry_memory,
+            trusted_lexicon=trusted_lexicon,
+            discovered=discovered,
         )
-    )
-    change_rows.extend(sanskrit_change_rows)
-    review_rows.extend(sanskrit_review_rows)
-    review_rows, stale_review_rows_removed = filter_stale_review_rows(review_rows, corrected_text)
+        change_rows = structural_change_rows + google_vision_change_rows + change_rows
+        corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
+            apply_citation_name_normalization(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+            )
+        )
+        change_rows.extend(citation_change_rows)
+        review_rows.extend(citation_review_rows)
+        corrected_text, sanskrit_change_rows, sanskrit_review_rows, sanskrit_report_rows, sanskrit_family_count = (
+            apply_sanskrit_normalization(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+            )
+        )
+        change_rows.extend(sanskrit_change_rows)
+        review_rows.extend(sanskrit_review_rows)
+        review_rows, stale_review_rows_removed = filter_stale_review_rows(review_rows, corrected_text)
 
     entry_jsonl = outdir / f"{label}_entry_map.jsonl"
     line_tsv = outdir / f"{label}_line_zones.tsv"
@@ -5587,6 +7238,8 @@ def run_one(
     citation_report_tsv = outdir / f"{label}_citation_name_report.tsv"
     sanskrit_report_tsv = outdir / f"{label}_sanskrit_report.tsv"
     watchdog_tsv = outdir / f"{label}_watchdog_flags.tsv"
+    alternate_adoptions_tsv = outdir / f"{label}_alternate_witness_adoptions.tsv"
+    alternate_unresolved_tsv = outdir / f"{label}_alternate_witness_unresolved.tsv"
 
     with entry_jsonl.open("w", encoding="utf-8") as f:
         for ent in entries:
@@ -5707,6 +7360,46 @@ def run_one(
         ],
         watchdog_rows,
     )
+    write_tsv(
+        alternate_adoptions_tsv,
+        [
+            "page",
+            "line",
+            "token_index",
+            "base_token",
+            "alternate_token",
+            "reason",
+            "base_key",
+            "alternate_key",
+            "base_line",
+            "alternate_line",
+            "alignment_method",
+            "alternate_page",
+            "page_match_score",
+            "canonical_overlap",
+            "shared_canonical_tokens",
+            "base_nonempty_count",
+            "alternate_nonempty_count",
+            "line_count_ratio",
+        ],
+        alternate_adoption_rows,
+    )
+    write_tsv(
+        alternate_unresolved_tsv,
+        [
+            "page",
+            "line",
+            "token_index",
+            "base_token",
+            "alternate_token",
+            "reason",
+            "base_key",
+            "alternate_key",
+            "base_line",
+            "alternate_line",
+        ],
+        alternate_unresolved_rows,
+    )
 
     change_reason_counts = Counter(row[7] for row in change_rows)
     review_reason_counts = Counter(row[7] for row in review_rows)
@@ -5715,6 +7408,14 @@ def run_one(
     summary = {
         **summary,
         "structural_rewrite_count": structural_rewrite_count,
+        "google_vision_mode": google_vision,
+        "google_vision_rewrites": google_vision_rewrite_count,
+        "alternate_witness_used": alternate_merged is not None,
+        "alternate_witness_path": str(alternate_merged) if alternate_merged is not None else "",
+        "alternate_google_vision_mode": alternate_google_vision if alternate_merged is not None else False,
+        "merge_only": merge_only,
+        "alternate_witness_adoptions": alternate_adoption_count,
+        "alternate_witness_unresolved": len(alternate_unresolved_rows),
         "trusted_lexicon_size": len(trusted_lexicon),
         "discovered_patterns": len(discovered_rows),
         "tier_a_applied": len(change_rows),
@@ -5752,6 +7453,8 @@ def run_one(
         "citation_name_report_tsv": str(citation_report_tsv),
         "sanskrit_report_tsv": str(sanskrit_report_tsv),
         "watchdog_tsv": str(watchdog_tsv),
+        "alternate_witness_adoptions_tsv": str(alternate_adoptions_tsv),
+        "alternate_witness_unresolved_tsv": str(alternate_unresolved_tsv),
         **summary,
     }
     return result
@@ -5781,6 +7484,26 @@ def main() -> int:
         default=6,
         help="Skip discovery for high-frequency tokens without validator issues.",
     )
+    ap.add_argument(
+        "--google-vision",
+        action="store_true",
+        help="Preclean Google Vision page markers and LoC diacritic confusions before normal postprocess.",
+    )
+    ap.add_argument(
+        "--alternate-merged",
+        default="",
+        help="Optional second OCR witness to preclean and arbitrate against the base witness.",
+    )
+    ap.add_argument(
+        "--alternate-google-vision",
+        action="store_true",
+        help="Treat the alternate witness as Google Vision OCR and run Google-specific LoC preclean on it.",
+    )
+    ap.add_argument(
+        "--merge-only",
+        action="store_true",
+        help="Stop after witness preparation/arbitration and write the merged witness without downstream cleanup passes.",
+    )
     args = ap.parse_args()
 
     merged = Path(args.merged)
@@ -5797,6 +7520,10 @@ def main() -> int:
         trusted_min_freq=args.trusted_min_freq,
         discover_max_edit=args.discover_max_edit,
         discover_max_rare_freq=args.discover_max_rare_freq,
+        google_vision=args.google_vision,
+        alternate_merged=Path(args.alternate_merged) if args.alternate_merged else None,
+        alternate_google_vision=args.alternate_google_vision,
+        merge_only=args.merge_only,
     )
     print(f"label={result['label']}")
     print(f"merged={result['merged']}")
@@ -5807,6 +7534,15 @@ def main() -> int:
     print(f"validator_issues={result['validator_issues']}")
     print(f"trusted_lexicon_size={result['trusted_lexicon_size']}")
     print(f"discovered_patterns={result['discovered_patterns']}")
+    print(f"google_vision_mode={result['google_vision_mode']}")
+    print(f"google_vision_rewrites={result['google_vision_rewrites']}")
+    print(f"alternate_witness_used={result['alternate_witness_used']}")
+    if result["alternate_witness_used"]:
+        print(f"alternate_witness_path={result['alternate_witness_path']}")
+        print(f"alternate_google_vision_mode={result['alternate_google_vision_mode']}")
+    print(f"merge_only={result['merge_only']}")
+    print(f"alternate_witness_adoptions={result['alternate_witness_adoptions']}")
+    print(f"alternate_witness_unresolved={result['alternate_witness_unresolved']}")
     print(f"tier_a_applied={result['tier_a_applied']}")
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
     print(f"citation_name_families={result['citation_name_families']}")
@@ -5825,6 +7561,9 @@ def main() -> int:
     print(f"discovered_patterns_tsv={result['discovered_patterns_tsv']}")
     print(f"citation_name_report_tsv={result['citation_name_report_tsv']}")
     print(f"sanskrit_report_tsv={result['sanskrit_report_tsv']}")
+    print(f"watchdog_tsv={result['watchdog_tsv']}")
+    print(f"alternate_witness_adoptions_tsv={result['alternate_witness_adoptions_tsv']}")
+    print(f"alternate_witness_unresolved_tsv={result['alternate_witness_unresolved_tsv']}")
     print(f"summary_json={result['summary_json']}")
     return 0
 

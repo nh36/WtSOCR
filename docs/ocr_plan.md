@@ -30,6 +30,28 @@
 - Line-anchored summary and audit CSVs
 - IPA scan report (stdout)
 
+## Source PDFs
+- Canonical source inventory is tracked in `data/source_pdfs.tsv`.
+- Current ingested PDFs:
+  - `pdfs/WtS 1-34.pdf`
+  - `pdfs/WtS 35-51.pdf`
+  - `pdfs/WtS 8-b.pdf`
+  - `pdfs/WtS 9-m.pdf`
+
+## Current Pipeline Scope
+- `scripts/ocr_full.sh`, `scripts/ocr_full_twopass.sh`, and `scripts/ocr_full_twopass_chunked.sh` are already generic by input PDF path and can run directly on `pdfs/WtS 8-b.pdf` or `pdfs/WtS 9-m.pdf`.
+- `scripts/postprocess_entry_map.py` is already generic by merged text plus audit CSV.
+- `scripts/run_line_anchor_full_locked.sh` now supports optional third and fourth configured PDFs via:
+  - `PDF_3`
+  - `LABEL_3`
+  - `V3_START_PAGE`
+  - `V3_END_PAGE`
+  - `PDF_4`
+  - `LABEL_4`
+  - `V4_START_PAGE`
+  - `V4_END_PAGE`
+- That keeps `WtS 8-b` and `WtS 9-m` on the same production path as the earlier volumes instead of requiring one-off runners.
+
 ## Latest Diagnostics
 - Current deep-dive diagnostics snapshot:
   - `docs/ocr_diagnostics_2026-03-05.md`
@@ -112,6 +134,15 @@ tmux new -s wts_ocr
 scripts/ocr_full_twopass_chunked.sh "pdfs/WtS 1-34.pdf" "work/full_twopass" 100 2>&1 | tee -a "work/full_twopass/run_1_34_chunked.log"
 ```
 
+Same pattern for the newly ingested volumes:
+```bash
+scripts/ocr_full_twopass_chunked.sh "pdfs/WtS 8-b.pdf" "work/full_twopass" 100 2>&1 | tee -a "work/full_twopass/run_8-b_chunked.log"
+```
+
+```bash
+scripts/ocr_full_twopass_chunked.sh "pdfs/WtS 9-m.pdf" "work/full_twopass" 100 2>&1 | tee -a "work/full_twopass/run_9-m_chunked.log"
+```
+
 Resume behavior:
 - Completed chunks are skipped automatically on rerun.
 - Chunk state and logs are stored under `work/full_twopass/<PDF>_chunk_state/`.
@@ -125,6 +156,15 @@ Useful overrides:
 Use `scripts/run_line_anchor_full_locked.sh` to run the full heuristic cleanup on both volumes.
 
 ```bash
+scripts/run_line_anchor_full_locked.sh "work/line_anchor_full_YYYYMMDDTHHMMSSZ"
+```
+
+To include the newly ingested `WtS 8-b` and `WtS 9-m` PDFs on the same run:
+```bash
+PDF_3="pdfs/WtS 8-b.pdf" \
+LABEL_3="WtS_8-b" \
+PDF_4="pdfs/WtS 9-m.pdf" \
+LABEL_4="WtS_9-m" \
 scripts/run_line_anchor_full_locked.sh "work/line_anchor_full_YYYYMMDDTHHMMSSZ"
 ```
 

@@ -28,7 +28,7 @@ SAFE_CHAR_MAP = {
 TOKEN_RE = re.compile(r"[A-Za-z\u00C0-\u024F\u1E00-\u1EFF\$][A-Za-z\u00C0-\u024F\u1E00-\u1EFF\$'’-]*")
 TRANSLIT_CUE_RE = re.compile(
     r"[\u0101\u012B\u016B\u1E5B\u1E5D\u1E37\u1E39\u1E45\u00F1\u1E6D\u1E0D\u1E47\u015B\u1E63\u1E25\u1E43\u1E41]|"
-    r"(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ng|ny|zh|sh|lh)",
+    r"(?:kh|tsh|ts|ph|th|dh|bh|dz|rdz|ṅ|ñ|ź|ś|lh)",
     re.IGNORECASE,
 )
 GERMAN_UMLAUT_RE = re.compile(r"[äöüÄÖÜß]")

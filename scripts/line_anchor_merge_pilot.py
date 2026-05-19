@@ -1052,10 +1052,14 @@ def render_page_png(pdf: Path, page: int, dpi: int, out_png: Path) -> None:
             str(prefix),
         ]
     )
-    generated = out_png.parent / f"{prefix.name}-{page:04d}.png"
-    if not generated.exists():
-        raise RuntimeError(f"Expected rendered page image not found: {generated}")
-    generated.rename(out_png)
+    candidates = sorted(out_png.parent.glob(f"{prefix.name}-*.png"))
+    if len(candidates) != 1:
+        raise RuntimeError(
+            f"Expected exactly one rendered page image for prefix {prefix.name}, found {len(candidates)}"
+        )
+    generated = candidates[0]
+    if generated != out_png:
+        generated.rename(out_png)
 
 
 def tesseract_hocr(image: Path, lang: str, psm: int, dpi: int, out_hocr: Path) -> None:
