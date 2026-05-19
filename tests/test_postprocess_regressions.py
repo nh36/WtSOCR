@@ -9,7 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PEM_PATH = ROOT / "scripts" / "postprocess_entry_map.py"
 PEM_SPEC = importlib.util.spec_from_file_location("postprocess_entry_map", PEM_PATH)
-assert PEM_SPEC is not None and PEM_SPEC.loader is not None
+if PEM_SPEC is None or PEM_SPEC.loader is None:
+    raise ImportError(f"Could not load postprocess_entry_map module from {PEM_PATH}")
 pem = importlib.util.module_from_spec(PEM_SPEC)
 sys.modules[PEM_SPEC.name] = pem
 PEM_SPEC.loader.exec_module(pem)
