@@ -54,6 +54,33 @@ class PostprocessRegressionTests(unittest.TestCase):
             changes = list(csv.DictReader(f, delimiter="\t"))
         return result, corrected, changes
 
+    def test_run_one_tolerates_malformed_ocr_bytes(self) -> None:
+        td = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, td, ignore_errors=True)
+        root = Path(td)
+        merged = root / "fixture_merged.txt"
+        alternate_merged = root / "fixture_alternate_merged.txt"
+        outdir = root / "out"
+        outdir.mkdir(parents=True, exist_ok=True)
+        merged.write_bytes("=== page 001 ===\nཀ་ ka ".encode("utf-8") + b"\xff\n")
+        alternate_merged.write_bytes(
+            "=== page 001 ===\nཀ་ ka ".encode("utf-8") + b"\xfe\n"
+        )
+
+        result = pem.run_one(
+            merged=merged,
+            audit=None,
+            outdir=outdir,
+            label="fixture",
+            trusted_min_freq=2,
+            discover_max_edit=2,
+            discover_max_rare_freq=3,
+            alternate_merged=alternate_merged,
+        )
+
+        corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
+        self.assertIn("\ufffd", corrected)
+
     def test_google_vision_loc_confusables_tibetan_context(self) -> None:
         merged_text = "བྱང་ byaň\nབཟང་ bzań po žes šes rab\n"
         result, corrected, changes = self.run_postprocess_fixture(merged_text, google_vision=True)

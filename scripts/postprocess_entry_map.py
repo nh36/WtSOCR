@@ -7139,7 +7139,7 @@ def run_one(
 ) -> dict[str, object]:
     audit_by_line = load_audit(audit)
     witness = prepare_witness(
-        merged.read_text(encoding="utf-8"),
+        merged.read_text(encoding="utf-8", errors="replace"),
         audit_by_line=audit_by_line,
         google_vision=google_vision,
     )
@@ -7159,7 +7159,7 @@ def run_one(
     alternate_adoption_count = 0
     if alternate_merged is not None:
         alternate_witness = prepare_witness(
-            alternate_merged.read_text(encoding="utf-8"),
+            alternate_merged.read_text(encoding="utf-8", errors="replace"),
             audit_by_line=audit_by_line,
             google_vision=alternate_google_vision,
         )
