@@ -1954,6 +1954,16 @@ class PostprocessRegressionTests(unittest.TestCase):
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertNotIn(("Ingwer", "lngwer", "confusable_initial_I_to_l_strong_context"), reasons)
 
+    def test_initial_i_population_false_positives_are_exact_protected(self) -> None:
+        protected_tokens = ["Indra'", "Indrāni", "Insekt'", "IS$varas", "ITu'i"]
+        tibetan_tokens = ["Ita", "Iha", "Idan", "Ihun", "Iha'i"]
+
+        for token in protected_tokens:
+            self.assertTrue(pem.token_is_initial_i_german_function_word(token), token)
+
+        for token in tibetan_tokens:
+            self.assertFalse(pem.token_is_initial_i_german_function_word(token), token)
+
 
 class LocCanonicalizationTests(unittest.TestCase):
     def test_loc_canonicalization_keeps_output_in_loc(self) -> None:

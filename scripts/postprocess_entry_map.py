@@ -916,7 +916,12 @@ GERMAN_INITIAL_I_STOPWORDS = {
     "ist",
 }
 GERMAN_INITIAL_I_PROTECTED_WORDS = {
+    "indra'",
+    "indrāni",
     "ingwer",
+    "insekt'",
+    "is$varas",
+    "itu'i",
 }
 
 GERMAN_WORD_SUFFIXES = (
