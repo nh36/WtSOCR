@@ -915,6 +915,9 @@ GERMAN_INITIAL_I_STOPWORDS = {
     "ins",
     "ist",
 }
+GERMAN_INITIAL_I_PROTECTED_WORDS = {
+    "ingwer",
+}
 
 GERMAN_WORD_SUFFIXES = (
     "ung",
@@ -1710,6 +1713,8 @@ def token_is_long_plain_initial_i_noise(src: str, dst: str) -> bool:
 
 def token_is_initial_i_german_function_word(token: str) -> bool:
     low = token.lower()
+    if low in GERMAN_INITIAL_I_PROTECTED_WORDS:
+        return True
     if low in GERMAN_INITIAL_I_STOPWORDS:
         return True
     if GERMAN_IHR_PRONOUN_RE.fullmatch(low):

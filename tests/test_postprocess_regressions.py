@@ -1945,6 +1945,15 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("Sonnenund", corrected)
         self.assertEqual(result["structural_rewrite_count"], 0)
 
+    def test_initial_i_strong_context_preserves_german_ingwer(self) -> None:
+        merged_text = "སྒེའུ་གཤེར་ sge'u ger frischer Ingwer.\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("frischer Ingwer", corrected)
+        self.assertNotIn("frischer lngwer", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("Ingwer", "lngwer", "confusable_initial_I_to_l_strong_context"), reasons)
+
 
 class LocCanonicalizationTests(unittest.TestCase):
     def test_loc_canonicalization_keeps_output_in_loc(self) -> None:
