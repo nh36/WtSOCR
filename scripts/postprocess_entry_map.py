@@ -915,14 +915,22 @@ GERMAN_INITIAL_I_STOPWORDS = {
     "ins",
     "ist",
 }
-GERMAN_INITIAL_I_PROTECTED_WORDS = {
+# Exact tokens blocked from the Tibetan initial-I-to-l correction path. Some are
+# German/prose words; others need a more specific Sanskrit/citation treatment.
+INITIAL_I_TO_L_PROTECTED_TOKENS = {
     "indra'",
     "indrāni",
     "ingwer",
     "insekt'",
     "is$varas",
-    "itu'i",
 }
+
+
+def exact_protected_initial_i_sanskrit_override(token: str) -> str | None:
+    low = token.lower()
+    if low not in INITIAL_I_TO_L_PROTECTED_TOKENS or "$" not in low:
+        return None
+    return SANSKRIT_PROMOTED_TIER_A_OVERRIDES.get(low)
 
 GERMAN_WORD_SUFFIXES = (
     "ung",
@@ -1718,7 +1726,7 @@ def token_is_long_plain_initial_i_noise(src: str, dst: str) -> bool:
 
 def token_is_initial_i_german_function_word(token: str) -> bool:
     low = token.lower()
-    if low in GERMAN_INITIAL_I_PROTECTED_WORDS:
+    if low in INITIAL_I_TO_L_PROTECTED_TOKENS:
         return True
     if low in GERMAN_INITIAL_I_STOPWORDS:
         return True
@@ -4917,6 +4925,15 @@ def choose_rewrite(
         )
     )
     explicit_auto_zone_ok = info.zone in AUTO_FIX_ZONES or explicit_translit_zone_fallback
+    protected_sanskrit_dst = exact_protected_initial_i_sanskrit_override(token)
+    if (
+        protected_sanskrit_dst is not None
+        and info.zone in AUTO_FIX_ZONES
+    ):
+        # Exact audited edge cases: block the Tibetan initial-I path, then apply
+        # the reviewed Sanskrit/Indic target instead of treating the token as
+        # an already-correct German/prose word.
+        return protected_sanskrit_dst, "A", "sanskrit_high_freq_allowlist"
     if exact_explicit_dst is not None and explicit_auto_zone_ok:
         return exact_explicit_dst, "A", "explicit_case_sensitive_allowlist"
     confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
@@ -5358,6 +5375,9 @@ def choose_orphan_dollar_sacute_rewrite(
 ) -> tuple[str, str] | None:
     if "$" not in token:
         return None
+    protected_sanskrit_dst = exact_protected_initial_i_sanskrit_override(token)
+    if protected_sanskrit_dst is not None:
+        return protected_sanskrit_dst, "sanskrit_high_freq_allowlist"
     if token_is_citation_siglum_candidate(token):
         return None
     dst = dollar_to_sacute_preserve_case(token)

@@ -56,10 +56,12 @@ These high-frequency rows are normal Tibetan transliteration corrections and sho
 | `Indra'` | `lndra'` | WtS 1-34 p534 l123 | German/prose false positive | `Worte, das ist als 'Grammatik des Indra'` |
 | `Indrāni` | `lndrāni` | WtS 8-b p346 l72 | German/prose false positive | `1. die Gattin Indras, skt. Indrāni.` |
 | `Insekt'` | `lnsekt'` | WtS 35-51 p856 l79 | German/prose false positive | `sen, auch für das 'Insekt' Spinne" (brDa,` |
-| `IS$varas` | `lSśvaras` | WtS 1-34 p895 l110 | Citation/proper-name risk | `3. Beiname IS$varas.` |
-| `ITu'i` | `lTu'i` | WtS 8-b p109 l49 | Citation/proper-name risk | `kyi Ber-chun, ITu'i rGyan-gon und gTam-` |
+| `IS$varas` | `lSśvaras` | WtS 1-34 p895 l110 | Sanskrit/Indic edge case | `3. Beiname IS$varas.` |
+| `ITu'i` | `lTu'i` | WtS 8-b p109 l49 | Tibetan title/transliteration, allowed | `kyi Ber-chun, ITu'i rGyan-gon und gTam-` |
 
-The exact source tokens above were added to the initial-I protected-token list. This is deliberately not a broad capital-I block, because broad blocking would suppress valid Tibetan corrections such as `Ita→lta`, `Iha→lha`, and `Idan→ldan`.
+`Indra'`, `Indrāni`, and `Insekt'` remain exact protected tokens. `IS$varas` is also protected from the Tibetan initial-I path, but it is not treated as a German word: the local `Beiname` / `lha dban phyug` context supports a specific Sanskrit/Indic override to `Iśvaras`. `ITu'i` was removed from the protected-token list because the observed `lTu'i rGyan-gon` context is Tibetan title/name material and should keep the initial-I correction.
+
+This is deliberately not a broad capital-I block, because broad blocking would suppress valid Tibetan corrections such as `Ita→lta`, `Iha→lha`, and `Idan→ldan`.
 
 ## German/Prose Search
 
@@ -69,7 +71,7 @@ Observed matches for `Indien` and `Inner` were excerpt-only hits where the corre
 
 ## Recommendation
 
-Keep the initial-I correction machinery. The population is overwhelmingly Tibetan/transliteration material, and the remaining problems are a small set of exact non-Tibetan tokens. The appropriate fix is exact protection for those observed source tokens, not a broader rule.
+Keep the initial-I correction machinery. The population is overwhelmingly Tibetan/transliteration material, and the remaining problems are a small set of exact edge cases. The appropriate fix is exact protection or exact Sanskrit/citation treatment for observed source tokens, not a broader rule.
 
 The work-table used for this audit is:
 

@@ -18,6 +18,7 @@ promote	adhyä	adhyā	4	safe_char_map,translit_only,singleton_safe_char_map_prom
 promote	adhyäpanam	adhyāpanam	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:200:99
 promote	adhyäpayate	adhyāpayate	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:117:87
 promote	adhyäpayämäsa	adhyāpayāmāsa	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:117:85
+promote	IS$varas	Iśvaras	4	exact_edgecase_initial_i_block,context_beiname_isvara	wts_1_34:895:110
 promote	advaidhikäram	advaidhikāram	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:804:124
 promote	akrtaniriktapravarananı	akrtaniriktapravaranani	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:958:124
 promote	akrtäbhyaga	akrtābhyaga	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:1060:55

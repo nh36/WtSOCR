@@ -1955,14 +1955,42 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("Ingwer", "lngwer", "confusable_initial_I_to_l_strong_context"), reasons)
 
     def test_initial_i_population_false_positives_are_exact_protected(self) -> None:
-        protected_tokens = ["Indra'", "Indrāni", "Insekt'", "IS$varas", "ITu'i"]
-        tibetan_tokens = ["Ita", "Iha", "Idan", "Ihun", "Iha'i"]
+        protected_tokens = ["Indra'", "Indrāni", "Insekt'", "IS$varas"]
+        tibetan_tokens = ["Ita", "Iha", "Idan", "Ihun", "Iha'i", "ITu'i"]
 
         for token in protected_tokens:
             self.assertTrue(pem.token_is_initial_i_german_function_word(token), token)
 
         for token in tibetan_tokens:
             self.assertFalse(pem.token_is_initial_i_german_function_word(token), token)
+
+        self.assertTrue(pem.token_is_initial_i_translit_candidate("Ita", "lta"))
+        self.assertTrue(pem.token_is_initial_i_translit_candidate("Iha", "lha"))
+        self.assertTrue(pem.token_is_initial_i_translit_candidate("Idan", "ldan"))
+
+    def test_initial_i_edgecase_isvaras_uses_sanskrit_override(self) -> None:
+        merged_text = (
+            "གཏོགས་འདོད་ gtogs 'dod.\n"
+            "3. Beiname IS$varas.\n"
+            "Lex. !ha dban phyug gi min (Dagy).\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("3. Beiname Iśvaras.", corrected)
+        self.assertNotIn("lSśvaras", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("IS$varas", "Iśvaras", "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_initial_i_edgecase_itu_title_context_corrects(self) -> None:
+        merged_text = (
+            "བེར་ཆུང་ ber chuṅ npr. ein Kloster.\n"
+            "kyi Ber-chun, ITu'i rGyan-gon und gTam-\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("kyi Ber-chun, lTu'i rGyan-gon und gTam-", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("ITu'i", "lTu'i", "confusable_initial_I_to_l_marked_context"), reasons)
 
 
 class LocCanonicalizationTests(unittest.TestCase):
