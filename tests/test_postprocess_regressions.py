@@ -1972,7 +1972,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "གཏོགས་འདོད་ gtogs 'dod.\n"
             "3. Beiname IS$varas.\n"
-            "Lex. !ha dban phyug gi min (Dagy).\n"
+            "Lex. lha dban phyug gi min (Dagy).\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
