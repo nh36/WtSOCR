@@ -17,7 +17,7 @@ PEM_SPEC.loader.exec_module(pem)
 
 
 class PostprocessRegressionTests(unittest.TestCase):
-    def test_production_qa_manifest_loader_reads_volume_status(self) -> None:
+    def load_report_module(self):
         report_path = ROOT / "scripts" / "generate_production_qa_report.py"
         report_spec = importlib.util.spec_from_file_location("generate_production_qa_report", report_path)
         if report_spec is None or report_spec.loader is None:
@@ -25,7 +25,10 @@ class PostprocessRegressionTests(unittest.TestCase):
         report_module = importlib.util.module_from_spec(report_spec)
         sys.modules[report_spec.name] = report_module
         report_spec.loader.exec_module(report_module)
+        return report_module
 
+    def test_production_qa_manifest_loader_reads_volume_status(self) -> None:
+        report_module = self.load_report_module()
         td = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, td, ignore_errors=True)
         root = Path(td)
@@ -49,6 +52,62 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual("missing_upstream_ocr", volumes[1].status)
         self.assertEqual("google.txt", volumes[0].alternate)
         self.assertEqual(["merged", "audit"], report_module.missing_ready_inputs(volumes[1]))
+
+    def test_production_qa_suspicious_token_classifier_separates_noise(self) -> None:
+        report_module = self.load_report_module()
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [
+                {
+                    "token": "Ita",
+                    "issue": "confusable_char",
+                    "suggestion": "lta",
+                    "page": "1",
+                    "line": "1",
+                    "line_excerpt": "ལྟ་ lta",
+                },
+                {
+                    "token": "Überlieferung",
+                    "issue": "german_umlaut_in_translit_context",
+                    "suggestion": "",
+                    "page": "1",
+                    "line": "2",
+                    "line_excerpt": "deutsche Überlieferung",
+                },
+                {
+                    "token": "Gangä",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "Gaṅgā",
+                    "page": "1",
+                    "line": "3",
+                    "line_excerpt": "Skt. Gangä",
+                },
+                {
+                    "token": "q0rn",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "qorn",
+                    "page": "1",
+                    "line": "4",
+                    "line_excerpt": "q0rn",
+                },
+            ],
+            Path("review.tsv"),
+            [],
+            "lta Überlieferung Gangä q0rn",
+            [{"from_token": "Ita", "to_token": "lta", "applied": "1"}],
+            [],
+        )
+
+        by_token = {row["token"]: row for row in rows}
+        self.assertEqual("residual_real_candidate", by_token["q0rn"]["classification"])
+        self.assertEqual("sanskrit_or_indic", by_token["Gangä"]["classification"])
+        self.assertEqual("german_or_prose_false_positive", by_token["Überlieferung"]["classification"])
+        self.assertEqual("already_corrected_or_stale", by_token["Ita"]["classification"])
+        self.assertLess(
+            report_module.SUSPICIOUS_CLASS_PRIORITY[by_token["q0rn"]["classification"]],
+            report_module.SUSPICIOUS_CLASS_PRIORITY[by_token["Ita"]["classification"]],
+        )
 
     def run_postprocess_fixture(
         self,

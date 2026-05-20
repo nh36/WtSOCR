@@ -6,6 +6,7 @@ import csv
 import hashlib
 import json
 import random
+import re
 import shutil
 import sys
 from collections import Counter, defaultdict
@@ -27,6 +28,68 @@ MANIFEST_COLUMNS = [
     "status",
     "note",
 ]
+SUSPICIOUS_CLASS_ORDER = [
+    "residual_real_candidate",
+    "manual_review_only",
+    "unclear",
+    "citation_or_siglum",
+    "sanskrit_or_indic",
+    "german_or_prose_false_positive",
+    "already_corrected_or_stale",
+]
+SUSPICIOUS_CLASS_PRIORITY = {name: idx for idx, name in enumerate(SUSPICIOUS_CLASS_ORDER)}
+TOKEN_EDGE_CHARS = " \t\r\n\f\v.,;:!?()[]{}<>\"“”‘’‚‹›«»"
+GERMAN_UMLAUT_CHARS = set("äöüÄÖÜß")
+GERMAN_FALSE_POSITIVE_TOKENS = {
+    "abkürzungsverzeichnisse",
+    "abhängigkeit",
+    "anhänger",
+    "bewußtsein",
+    "erklärung",
+    "fülle",
+    "gefühle",
+    "glück",
+    "körper",
+    "könig",
+    "königs",
+    "länge",
+    "öffnung",
+    "prüfung",
+    "rückkehr",
+    "rüstung",
+    "unglück",
+    "übersetzung",
+    "überlieferung",
+    "verfügung",
+    "wörterbuch",
+}
+SANSKRIT_INDIC_HINTS = (
+    "ācāry",
+    "acary",
+    "āgama",
+    "agama",
+    "avalok",
+    "bodhisatt",
+    "dharma",
+    "gangä",
+    "gangā",
+    "jñ",
+    "jn",
+    "mantra",
+    "nāg",
+    "näg",
+    "praj",
+    "pāram",
+    "päram",
+    "śāstr",
+    "śästr",
+    "śrāv",
+    "śräv",
+    "sūtr",
+    "sutra",
+    "tantra",
+    "vajra",
+)
 
 
 @dataclass(frozen=True)
@@ -202,6 +265,146 @@ def reason_table(counter: Counter[str]) -> list[list[object]]:
     return [[reason, count] for reason, count in counter.most_common()]
 
 
+def normalize_report_token(token: str) -> str:
+    return (token or "").strip(TOKEN_EDGE_CHARS)
+
+
+def corrected_token_counter(text: str) -> Counter[str]:
+    tokens: Counter[str] = Counter()
+    for piece in re.split(r"\s+", text or ""):
+        token = normalize_report_token(piece)
+        if token:
+            tokens[token] += 1
+    return tokens
+
+
+def applied_from_token_counter(changes: list[dict[str, str]], adoptions: list[dict[str, str]]) -> Counter[str]:
+    tokens: Counter[str] = Counter()
+    for row in changes:
+        if row.get("applied", "1") == "0":
+            continue
+        token = normalize_report_token(row.get("from_token", ""))
+        if token:
+            tokens[token] += 1
+    for row in adoptions:
+        token = normalize_report_token(row.get("base_token", ""))
+        if token:
+            tokens[token] += 1
+    return tokens
+
+
+def looks_like_sanskrit_or_indic(token: str, reason: str, excerpt: str) -> bool:
+    token_l = normalize_report_token(token).lower()
+    context_l = f"{reason} {excerpt}".lower()
+    if "sanskrit" in context_l or "indic" in context_l or "skt" in context_l:
+        return True
+    return any(hint in token_l or hint in context_l for hint in SANSKRIT_INDIC_HINTS)
+
+
+def looks_like_german_or_prose(token: str, reason: str, excerpt: str) -> bool:
+    token_l = normalize_report_token(token).lower()
+    reason_l = (reason or "").lower()
+    if "german" in reason_l:
+        return True
+    if token_l in GERMAN_FALSE_POSITIVE_TOKENS:
+        return True
+    return any(char in token for char in GERMAN_UMLAUT_CHARS)
+
+
+def looks_like_citation_or_siglum(token: str, reason: str, excerpt: str) -> bool:
+    token_s = normalize_report_token(token)
+    reason_l = (reason or "").lower()
+    excerpt_l = (excerpt or "").lower()
+    if "citation" in reason_l or "siglum" in reason_l:
+        return True
+    if "$" in token_s and any(char.isupper() for char in token_s):
+        return True
+    if re.fullmatch(r"[A-Z][A-Za-z$Śś-]{1,12}(?:-[A-Z])?", token_s):
+        return any(cue in excerpt_l for cue in ["lex.", "sigl", "mahāvy", "mahavy", "t.", "p.", "liś", "viś"])
+    return False
+
+
+def looks_manual_review_only(token: str, reason: str, suggestion: str) -> bool:
+    token_s = normalize_report_token(token)
+    reason_l = (reason or "").lower()
+    if not suggestion or normalize_report_token(suggestion) == token_s:
+        return False
+    if "review" in reason_l:
+        return True
+    if "confusable" in reason_l:
+        return True
+    if "$" in token_s or "ñ" in token_s or "ṅ" in token_s:
+        return True
+    return bool(re.match(r"I[a-z]", token_s))
+
+
+def classify_suspicious_token(
+    row: dict[str, str],
+    corrected_tokens: Counter[str],
+    applied_from_tokens: Counter[str],
+) -> tuple[str, str]:
+    token = normalize_report_token(row.get("token", ""))
+    reason = row.get("reason_or_issue", "")
+    suggestion = normalize_report_token(row.get("suggestion", ""))
+    excerpt = row.get("sample_excerpt", "")
+    exact_count = corrected_tokens[token]
+    applied_count = applied_from_tokens[token]
+    if not token:
+        return "unclear", "blank token in source QA row"
+    if applied_count and not exact_count:
+        return (
+            "already_corrected_or_stale",
+            f"appears as applied from_token {applied_count} time(s) and not as an exact corrected-text token",
+        )
+    if not exact_count:
+        return "already_corrected_or_stale", "not found as an exact token in corrected text"
+    if looks_like_sanskrit_or_indic(token, reason, excerpt):
+        return "sanskrit_or_indic", "Sanskrit/Indic lexical or context cue"
+    if looks_like_german_or_prose(token, reason, excerpt):
+        return "german_or_prose_false_positive", "German/prose token flagged by transliteration validator"
+    if looks_like_citation_or_siglum(token, reason, excerpt):
+        return "citation_or_siglum", "citation/siglum-shaped token or context"
+    if applied_count:
+        return "already_corrected_or_stale", f"also appears as applied from_token {applied_count} time(s)"
+    if looks_manual_review_only(token, reason, suggestion):
+        return "manual_review_only", "possible OCR issue, but context-sensitive or unsafe for automatic correction"
+    if suggestion and suggestion != token:
+        return "residual_real_candidate", "appears in corrected text with a validator suggestion"
+    return "unclear", "no safe automatic classification evidence"
+
+
+def sort_suspicious_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    return sorted(
+        rows,
+        key=lambda row: (
+            SUSPICIOUS_CLASS_PRIORITY.get(row.get("classification", "unclear"), 99),
+            -safe_int(row.get("count", "")),
+            row.get("volume", ""),
+            row.get("token", ""),
+            row.get("source", ""),
+        ),
+    )
+
+
+def suspicious_summary_rows(rows: list[dict[str, str]], volume: str = "") -> list[dict[str, str]]:
+    row_counts: Counter[str] = Counter()
+    occurrence_counts: Counter[str] = Counter()
+    for row in rows:
+        classification = row.get("classification", "unclear") or "unclear"
+        row_counts[classification] += 1
+        occurrence_counts[classification] += safe_int(row.get("count", ""))
+    return [
+        {
+            "volume": volume,
+            "classification": classification,
+            "rows": str(row_counts[classification]),
+            "occurrences": str(occurrence_counts[classification]),
+        }
+        for classification in SUSPICIOUS_CLASS_ORDER
+        if row_counts[classification]
+    ]
+
+
 def sample_change_row(volume: str, source_file: Path, row: dict[str, str]) -> dict[str, str]:
     return {
         "volume": volume,
@@ -242,10 +445,15 @@ def collect_suspicious_tokens(
     validator_rows: list[dict[str, str]],
     review_path: Path,
     review_rows: list[dict[str, str]],
-    limit: int = 50,
+    corrected_text: str,
+    changes: list[dict[str, str]],
+    adoptions: list[dict[str, str]],
+    limit: int | None = None,
 ) -> list[dict[str, str]]:
     buckets: dict[tuple[str, str, str], dict[str, str]] = {}
     counts: Counter[tuple[str, str, str]] = Counter()
+    corrected_tokens = corrected_token_counter(corrected_text)
+    applied_from_tokens = applied_from_token_counter(changes, adoptions)
 
     def add(source: str, token: str, reason: str, suggestion: str, row: dict[str, str], source_file: Path) -> None:
         token = token.strip()
@@ -275,11 +483,18 @@ def collect_suspicious_tokens(
         add("review_queue_to", row.get("to_token", ""), row.get("reason", ""), row.get("from_token", ""), row, review_path)
 
     out: list[dict[str, str]] = []
-    for key, count in counts.most_common(limit):
+    for key, count in counts.items():
         item = dict(buckets[key])
         item["count"] = str(count)
+        token = normalize_report_token(item["token"])
+        classification, evidence = classify_suspicious_token(item, corrected_tokens, applied_from_tokens)
+        item["classification"] = classification
+        item["evidence"] = evidence
+        item["corrected_text_exact_count"] = str(corrected_tokens[token])
+        item["applied_change_count"] = str(applied_from_tokens[token])
         out.append(item)
-    return out
+    out = sort_suspicious_rows(out)
+    return out if limit is None else out[:limit]
 
 
 def page_attention_rows(
@@ -336,6 +551,24 @@ def markdown_sample_rows(rows: list[dict[str, str]]) -> list[list[object]]:
     ]
 
 
+def markdown_suspicious_rows(rows: list[dict[str, str]], limit: int = 50) -> list[list[object]]:
+    return [
+        [
+            row.get("classification", ""),
+            row.get("source", ""),
+            truncate(row.get("token", ""), 30),
+            truncate(row.get("reason_or_issue", ""), 45),
+            row.get("count", ""),
+            truncate(row.get("suggestion", ""), 30),
+            truncate(row.get("evidence", ""), 80),
+            row.get("sample_page", ""),
+            row.get("sample_line", ""),
+            truncate(row.get("sample_excerpt", ""), 80),
+        ]
+        for row in rows[:limit]
+    ]
+
+
 def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MANIFEST_PATH) -> None:
     volumes = load_volume_manifest(manifest_path)
     ready_volumes, warnings = select_ready_volumes(volumes)
@@ -387,6 +620,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         final_text = final_dir / spec.final_name
         if not corrected.exists():
             raise FileNotFoundError(f"missing corrected text: {corrected}")
+        corrected_text = corrected.read_text(encoding="utf-8", errors="replace")
         shutil.copy2(corrected, final_text)
         checksum = sha256_file(final_text)
         checksums.append((checksum, final_text.name))
@@ -416,7 +650,16 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             sample_adoption_row(spec.display, adoptions_path, row)
             for row in stratified_sample(adoptions, "reason", sample_size, rng)
         ]
-        suspicious = collect_suspicious_tokens(spec.display, validator_path, validators, review_path, reviews)
+        suspicious = collect_suspicious_tokens(
+            spec.display,
+            validator_path,
+            validators,
+            review_path,
+            reviews,
+            corrected_text,
+            changes,
+            adoptions,
+        )
         attention = page_attention_rows(spec.display, changes, reviews, validators, unresolved)
         all_change_samples.extend(change_samples)
         all_review_samples.extend(review_samples)
@@ -465,23 +708,53 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         report.extend(md_table(["alignment_method", "count"], reason_table(count_by(adoptions, "alignment_method"))))
         report.extend(["", "### Unresolved Alternate-Witness Rows By Reason", ""])
         report.extend(md_table(["reason", "count"], reason_table(count_by(unresolved, "reason"))))
-        report.extend(["", "### Top 50 Suspicious Tokens From Validator/Review Queues", ""])
+        report.extend(["", "### Suspicious Token Classification", ""])
         report.extend(
             md_table(
-                ["source", "token", "reason_or_issue", "count", "suggestion", "sample_page", "sample_line", "sample_excerpt"],
+                ["classification", "rows", "occurrences"],
                 [
-                    [
-                        row["source"],
-                        truncate(row["token"], 30),
-                        truncate(row["reason_or_issue"], 45),
-                        row["count"],
-                        truncate(row["suggestion"], 30),
-                        row["sample_page"],
-                        row["sample_line"],
-                        truncate(row["sample_excerpt"], 80),
-                    ]
-                    for row in suspicious
+                    [row["classification"], row["rows"], row["occurrences"]]
+                    for row in suspicious_summary_rows(suspicious)
                 ],
+            )
+        )
+        focused_suspicious = [
+            row
+            for row in suspicious
+            if row.get("classification") in {"residual_real_candidate", "manual_review_only", "unclear"}
+        ]
+        german_suspicious = [row for row in suspicious if row.get("classification") == "german_or_prose_false_positive"]
+        stale_suspicious = [row for row in suspicious if row.get("classification") == "already_corrected_or_stale"]
+        report.extend(["", "### Top Residual Or Manual-Review Suspicious Tokens", ""])
+        report.extend(
+            md_table(
+                [
+                    "classification",
+                    "source",
+                    "token",
+                    "reason_or_issue",
+                    "count",
+                    "suggestion",
+                    "evidence",
+                    "sample_page",
+                    "sample_line",
+                    "sample_excerpt",
+                ],
+                markdown_suspicious_rows(focused_suspicious),
+            )
+        )
+        report.extend(["", "### Top German/Prose Validator False Positives", ""])
+        report.extend(
+            md_table(
+                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                markdown_suspicious_rows(german_suspicious, limit=20),
+            )
+        )
+        report.extend(["", "### Top Stale Or Already-Corrected Suspicious Tokens", ""])
+        report.extend(
+            md_table(
+                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                markdown_suspicious_rows(stale_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top Pages By Number Of Changes", ""])
@@ -530,20 +803,62 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     write_tsv(output_dir / "sample_changes_for_manual_review.tsv", all_change_samples, manual_fields)
     write_tsv(output_dir / "sample_review_queue_for_manual_review.tsv", all_review_samples, manual_fields)
     write_tsv(output_dir / "sample_google_adoptions_for_manual_review.tsv", all_adoption_samples, manual_fields)
+    suspicious_fields = [
+        "volume",
+        "source",
+        "source_file",
+        "token",
+        "reason_or_issue",
+        "count",
+        "suggestion",
+        "classification",
+        "evidence",
+        "sample_page",
+        "sample_line",
+        "sample_excerpt",
+        "corrected_text_exact_count",
+        "applied_change_count",
+    ]
     write_tsv(
         output_dir / "top_suspicious_tokens.tsv",
         all_suspicious,
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "residual_real_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "residual_real_candidate"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "stale_or_already_corrected_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "already_corrected_or_stale"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "german_false_positive_validator_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "german_or_prose_false_positive"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "manual_review_only_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "manual_review_only"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "suspicious_token_classification_summary.tsv",
+        [
+            row
+            for volume in sorted({row.get("volume", "") for row in all_suspicious})
+            for row in suspicious_summary_rows(
+                [item for item in all_suspicious if item.get("volume", "") == volume],
+                volume,
+            )
+        ],
         [
             "volume",
-            "source",
-            "source_file",
-            "token",
-            "reason_or_issue",
-            "count",
-            "suggestion",
-            "sample_page",
-            "sample_line",
-            "sample_excerpt",
+            "classification",
+            "rows",
+            "occurrences",
         ],
     )
     write_tsv(
@@ -568,7 +883,14 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'sample_review_queue_for_manual_review.tsv'}`",
             f"- `{output_dir / 'sample_google_adoptions_for_manual_review.tsv'}`",
             f"- `{output_dir / 'top_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'residual_real_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'manual_review_only_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'stale_or_already_corrected_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'german_false_positive_validator_tokens.tsv'}`",
+            f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",
+            "",
+            "Warning: stale/already-corrected suspicious-token artifacts and German/prose false positives should not drive new OCR correction rules.",
             "",
             "## Cross-Volume Top Risk Categories",
             "",
