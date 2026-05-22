@@ -248,6 +248,26 @@ SANSKRIT_ENDING_RE = re.compile(
     re.IGNORECASE,
 )
 SANSKRIT_LEX_CUE_RE = re.compile(r"\bLex\.", re.IGNORECASE)
+SANSKRIT_ISVARA_FAMILY_REASON = "sanskrit_isvara_family_recovery"
+SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES = {
+    "IS$varas": "Īśvaras",
+    "Iśvaras": "Īśvaras",
+    "Iśvara": "Īśvara",
+    "Isvaras": "Īśvaras",
+    "Isvara": "Īśvara",
+    "iśvaras": "īśvaras",
+    "iśvara": "īśvara",
+    "isvaras": "īśvaras",
+    "isvara": "īśvara",
+}
+SANSKRIT_ISVARA_CONTEXT_RE = re.compile(
+    r"\b(?:Beiname|npr\.?|Gottheit|skt|Sanskrit|Mahavyutpatti|Mvy|Lex|Dagy|brDa|Hev|Tär)\b"
+    r"|dban phyug|dba[ṅñn] phyug|lha dban phyug"
+    r"|\b(?:Bogen des|das Selbst|Pur[aä]napuru[sṣ]a|wei[ßs]e|gelbe Indra|Gefolge des|"
+    r"Anh[äa]nger Brahmans|Brahmans oder|Zuflucht suchen|Begleiter|Sohn|Söhne|"
+    r"M[üu]tter|Ahnen)\b",
+    re.IGNORECASE,
+)
 GANS_RI_RE = re.compile(r"\bGans\s+ri\b")
 RASTRAPA_SPLIT_PREV_RE = re.compile(r"R[äa]strapa-\s*$", re.IGNORECASE)
 LAPARIPRCCHA_SPLIT_CURR_RE = re.compile(
@@ -931,6 +951,12 @@ def exact_protected_initial_i_sanskrit_override(token: str) -> str | None:
     if low not in INITIAL_I_TO_L_PROTECTED_TOKENS or "$" not in low:
         return None
     return SANSKRIT_PROMOTED_TIER_A_OVERRIDES.get(low)
+
+
+def exact_protected_initial_i_sanskrit_reason(token: str) -> str:
+    if token.lower() == "is$varas":
+        return SANSKRIT_ISVARA_FAMILY_REASON
+    return "sanskrit_high_freq_allowlist"
 
 GERMAN_WORD_SUFFIXES = (
     "ung",
@@ -4933,7 +4959,7 @@ def choose_rewrite(
         # Exact audited edge cases: block the Tibetan initial-I path, then apply
         # the reviewed Sanskrit/Indic target instead of treating the token as
         # an already-correct German/prose word.
-        return protected_sanskrit_dst, "A", "sanskrit_high_freq_allowlist"
+        return protected_sanskrit_dst, "A", exact_protected_initial_i_sanskrit_reason(token)
     if exact_explicit_dst is not None and explicit_auto_zone_ok:
         return exact_explicit_dst, "A", "explicit_case_sensitive_allowlist"
     confusable_dotless_i_to_i_safe = token_is_safe_dotless_i_to_i(low, canon)
@@ -5377,7 +5403,7 @@ def choose_orphan_dollar_sacute_rewrite(
         return None
     protected_sanskrit_dst = exact_protected_initial_i_sanskrit_override(token)
     if protected_sanskrit_dst is not None:
-        return protected_sanskrit_dst, "sanskrit_high_freq_allowlist"
+        return protected_sanskrit_dst, exact_protected_initial_i_sanskrit_reason(token)
     if token_is_citation_siglum_candidate(token):
         return None
     dst = dollar_to_sacute_preserve_case(token)
@@ -6718,6 +6744,21 @@ def line_has_singleton_sanskrit_gate(line_text: str, zone: str) -> bool:
     return False
 
 
+def sanskrit_isvara_family_rewrite(token: str, line_text: str, zone: str) -> str | None:
+    replacement = SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES.get(token)
+    if replacement is None:
+        return None
+    if (
+        SANSKRIT_ISVARA_CONTEXT_RE.search(line_text)
+        or SANSKRIT_MVY_CUE_RE.search(line_text)
+        or SANSKRIT_GENERAL_CUE_RE.search(line_text)
+        or SANSKRIT_LEX_CUE_RE.search(line_text)
+        or line_has_singleton_sanskrit_gate(line_text, zone)
+    ):
+        return replacement
+    return None
+
+
 def sanskrit_token_quality(token: str) -> int:
     low = sanskrit_safe_normalize_token(token).lower()
     quality = 0
@@ -6985,10 +7026,15 @@ def apply_sanskrit_normalization(
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
+                isvara_rewrite = sanskrit_isvara_family_rewrite(tok, updated_line, zone)
                 explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok.lower())
-                if explicit_override is None and not token_is_probable_sanskrit(tok, ctx, updated_line):
+                if (
+                    isvara_rewrite is None
+                    and explicit_override is None
+                    and not token_is_probable_sanskrit(tok, ctx, updated_line)
+                ):
                     return tok
-                key = sanskrit_family_key(tok)
+                key = sanskrit_family_key(isvara_rewrite or tok)
                 if len(key) < 4:
                     return tok
                 safe_norm = sanskrit_safe_normalize_token(tok)
@@ -7011,7 +7057,10 @@ def apply_sanskrit_normalization(
                             jn_changed = True
                 replacement = tok
                 reason = ""
-                if explicit_override:
+                if isvara_rewrite:
+                    replacement = isvara_rewrite
+                    reason = SANSKRIT_ISVARA_FAMILY_REASON
+                elif explicit_override:
                     replacement, _ = apply_sanskrit_override_chain(tok)
                     reason = "sanskrit_high_freq_allowlist"
 
@@ -7048,10 +7097,17 @@ def apply_sanskrit_normalization(
                 if replacement == tok or not reason:
                     return tok
 
-                if explicit_override is None and token_is_pure_german_for_sanskrit_queue(tok, updated_line):
+                if (
+                    isvara_rewrite is None
+                    and explicit_override is None
+                    and token_is_pure_german_for_sanskrit_queue(tok, updated_line)
+                ):
                     return tok
 
-                auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist"
+                auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason in {
+                    "sanskrit_high_freq_allowlist",
+                    SANSKRIT_ISVARA_FAMILY_REASON,
+                }
                 if (
                     not auto_apply
                     and reason in {"sanskrit_jn_cluster_contextual", "sanskrit_jn_cluster_plus_allowlist"}

@@ -59,7 +59,7 @@ These high-frequency rows are normal Tibetan transliteration corrections and sho
 | `IS$varas` | `lSśvaras` | WtS 1-34 p895 l110 | Sanskrit/Indic edge case | `3. Beiname IS$varas.` |
 | `ITu'i` | `lTu'i` | WtS 8-b p109 l49 | Tibetan title/transliteration, allowed | `kyi Ber-chun, ITu'i rGyan-gon und gTam-` |
 
-`Indra'`, `Indrāni`, and `Insekt'` remain exact protected tokens. `IS$varas` is also protected from the Tibetan initial-I path, but it is not treated as a German word: the local `Beiname` / `lha dban phyug` context supports a specific Sanskrit/Indic override to `Iśvaras`. `ITu'i` was removed from the protected-token list because the observed `lTu'i rGyan-gon` context is Tibetan title/name material and should keep the initial-I correction.
+`Indra'`, `Indrāni`, and `Insekt'` remain exact protected tokens. `IS$varas` is also protected from the Tibetan initial-I path, but it is not treated as a German word: the local `Beiname` / `lha dban phyug` context supports a specific Sanskrit/Indic override to `Īśvaras`. `ITu'i` was removed from the protected-token list because the observed `lTu'i rGyan-gon` context is Tibetan title/name material and should keep the initial-I correction.
 
 This is deliberately not a broad capital-I block, because broad blocking would suppress valid Tibetan corrections such as `Ita→lta`, `Iha→lha`, and `Idan→ldan`.
 

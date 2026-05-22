@@ -1976,10 +1976,46 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("3. Beiname Iśvaras.", corrected)
+        self.assertIn("3. Beiname Īśvaras.", corrected)
         self.assertNotIn("lSśvaras", corrected)
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("IS$varas", "Iśvaras", "sanskrit_high_freq_allowlist"), reasons)
+        self.assertIn(("IS$varas", "Īśvaras", "sanskrit_isvara_family_recovery"), reasons)
+
+    def test_sanskrit_isvara_family_recovery_exact_context(self) -> None:
+        merged_text = (
+            "1. Beiname Iśvara.\n"
+            "2. npr. ein Begleiter Isvaras.\n"
+            "Lex. dban phyug \"isvara\" (Dagy).\n"
+            "Puränapurusa, Iśvara, das Selbst [usw.]\n"
+            "ein Anhänger Brahmans oder Isvaras usw.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("1. Beiname Īśvara.", corrected)
+        self.assertIn("2. npr. ein Begleiter Īśvaras.", corrected)
+        self.assertIn("Lex. dban phyug \"īśvara\" (Dagy).", corrected)
+        self.assertIn("Puränapurusa, Īśvara, das Selbst [usw.]", corrected)
+        self.assertIn("ein Anhänger Brahmans oder Īśvaras usw.", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Iśvara", "Īśvara", "sanskrit_isvara_family_recovery"), reasons)
+        self.assertIn(("Isvaras", "Īśvaras", "sanskrit_isvara_family_recovery"), reasons)
+        self.assertIn(("isvara", "īśvara", "sanskrit_isvara_family_recovery"), reasons)
+
+    def test_sanskrit_isvara_family_recovery_requires_sanskrit_context(self) -> None:
+        self.assertIsNone(
+            pem.sanskrit_isvara_family_rewrite(
+                "Isvara",
+                "Das Wort Isvara steht hier.",
+                "german_prose",
+            )
+        )
+        self.assertIsNone(
+            pem.sanskrit_isvara_family_rewrite(
+                "isvara",
+                "ka kha isvara bla",
+                "translit",
+            )
+        )
 
     def test_initial_i_edgecase_itu_title_context_corrects(self) -> None:
         merged_text = (
