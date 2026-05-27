@@ -29,15 +29,28 @@ MANIFEST_COLUMNS = [
     "note",
 ]
 SUSPICIOUS_CLASS_ORDER = [
-    "residual_real_candidate",
+    "live_remaining",
     "manual_review_only",
-    "unclear",
+    "sanskrit_or_indic_policy_case",
     "citation_or_siglum",
-    "sanskrit_or_indic",
     "german_or_prose_false_positive",
     "already_corrected_or_stale",
 ]
 SUSPICIOUS_CLASS_PRIORITY = {name: idx for idx, name in enumerate(SUSPICIOUS_CLASS_ORDER)}
+LOW_GOOGLE_PAGE_MATCH_SCORE = 0.60
+LOW_GOOGLE_CANONICAL_OVERLAP = 0.35
+SUSPICIOUS_MARKDOWN_HEADERS = [
+    "classification",
+    "source",
+    "token",
+    "reason_or_issue",
+    "count",
+    "suggestion",
+    "evidence",
+    "sample_page",
+    "sample_line",
+    "sample_excerpt",
+]
 TOKEN_EDGE_CHARS = " \t\r\n\f\v.,;:!?()[]{}<>\"“”‘’‚‹›«»"
 GERMAN_UMLAUT_CHARS = set("äöüÄÖÜß")
 GERMAN_FALSE_POSITIVE_TOKENS = {
@@ -75,9 +88,13 @@ SANSKRIT_INDIC_HINTS = (
     "gangā",
     "jñ",
     "jn",
+    "mahā",
+    "mahä",
     "mantra",
     "nāg",
     "näg",
+    "nyāya",
+    "nyaya",
     "praj",
     "pāram",
     "päram",
@@ -88,7 +105,51 @@ SANSKRIT_INDIC_HINTS = (
     "sūtr",
     "sutra",
     "tantra",
+    "ṭīkā",
+    "tika",
     "vajra",
+    "vyutpatti",
+)
+SANSKRIT_REVIEW_REASONS = {
+    "sanskrit_char_normalize",
+    "sanskrit_jn_cluster_contextual",
+    "sanskrit_jn_cluster_plus_allowlist",
+    "sanskrit_singleton_context_gate",
+}
+SANSKRIT_FAMILY_FOLD = str.maketrans(
+    {
+        "ā": "a",
+        "ä": "a",
+        "â": "a",
+        "á": "a",
+        "à": "a",
+        "ã": "a",
+        "ī": "i",
+        "ı": "i",
+        "ï": "i",
+        "ū": "u",
+        "ü": "u",
+        "ṛ": "r",
+        "ṝ": "r",
+        "ḷ": "l",
+        "ṅ": "n",
+        "ñ": "n",
+        "ṇ": "n",
+        "ṭ": "t",
+        "ḍ": "d",
+        "ś": "s",
+        "ṣ": "s",
+        "ḥ": "h",
+        "ṃ": "m",
+        "ṁ": "m",
+    }
+)
+PAGE_MARKER_RE = re.compile(
+    r"^\s*(?:[-=]+\s*)?(?:\[?\s*)?page\s+0*(\d+)(?:\s*\]?)(?:\s*[-=]+)?\s*$",
+    re.IGNORECASE,
+)
+DIACRITIC_OR_CONFUSABLE_RE = re.compile(
+    r"[āīūṛṝḷṅñṇṭḍśṣḥṃṁĀĪŪṚṜḶṄÑṆṬḌŚṢḤṂ$ı]"
 )
 
 
@@ -243,6 +304,18 @@ def safe_int(value: str | None) -> int:
         return 0
 
 
+def safe_float(value: str | None) -> float:
+    try:
+        return float(value or "nan")
+    except ValueError:
+        return float("nan")
+
+
+def normalized_numeric_key(value: str | None) -> str:
+    match = re.search(r"\d+", value or "")
+    return str(int(match.group(0))) if match else ""
+
+
 def truncate(value: str, limit: int = 110) -> str:
     value = (value or "").replace("\n", " ").replace("\r", " ")
     if len(value) <= limit:
@@ -278,6 +351,54 @@ def corrected_token_counter(text: str) -> Counter[str]:
     return tokens
 
 
+def corrected_scope_token_counters(
+    text: str,
+) -> tuple[Counter[str], dict[str, Counter[str]], dict[str, Counter[str]]]:
+    global_tokens: Counter[str] = Counter()
+    page_tokens: dict[str, Counter[str]] = defaultdict(Counter)
+    line_tokens: dict[str, Counter[str]] = defaultdict(Counter)
+    global_line = 0
+    for page_index, page_text in enumerate((text or "").split("\f"), start=1):
+        current_page = str(page_index)
+        page_line = 0
+        for raw_line in page_text.splitlines():
+            marker = PAGE_MARKER_RE.match(raw_line)
+            if marker:
+                current_page = str(int(marker.group(1)))
+                page_line = 0
+                continue
+            global_line += 1
+            page_line += 1
+            line_counter = corrected_token_counter(raw_line)
+            if not line_counter:
+                continue
+            global_tokens.update(line_counter)
+            page_tokens[current_page].update(line_counter)
+            for key in {str(global_line), f"{current_page}:{page_line}", f"{current_page}:{global_line}"}:
+                line_tokens[key].update(line_counter)
+    return global_tokens, dict(page_tokens), dict(line_tokens)
+
+
+def corrected_presence_for_row(
+    row: dict[str, str],
+    token: str,
+    corrected_tokens: Counter[str],
+    corrected_page_tokens: dict[str, Counter[str]],
+    corrected_line_tokens: dict[str, Counter[str]],
+) -> tuple[int, str]:
+    page = normalized_numeric_key(row.get("sample_page") or row.get("page"))
+    line = normalized_numeric_key(row.get("sample_line") or row.get("line"))
+    if page and line:
+        for key in (f"{page}:{line}", line):
+            if key in corrected_line_tokens:
+                return corrected_line_tokens[key][token], f"line:{key}"
+    if page and page in corrected_page_tokens:
+        return corrected_page_tokens[page][token], f"page:{page}"
+    if line and line in corrected_line_tokens:
+        return corrected_line_tokens[line][token], f"line:{line}"
+    return corrected_tokens[token], "global"
+
+
 def applied_from_token_counter(changes: list[dict[str, str]], adoptions: list[dict[str, str]]) -> Counter[str]:
     tokens: Counter[str] = Counter()
     for row in changes:
@@ -299,6 +420,18 @@ def looks_like_sanskrit_or_indic(token: str, reason: str, excerpt: str) -> bool:
     if "sanskrit" in context_l or "indic" in context_l or "skt" in context_l:
         return True
     return any(hint in token_l or hint in context_l for hint in SANSKRIT_INDIC_HINTS)
+
+
+def is_sanskrit_review_suggestion(row: dict[str, str]) -> bool:
+    reason = (row.get("reason", "") or "").strip().lower()
+    return reason in SANSKRIT_REVIEW_REASONS
+
+
+def sanskrit_review_family_key(row: dict[str, str]) -> str:
+    token = normalize_report_token(row.get("to_token") or row.get("from_token", ""))
+    folded = token.lower().translate(SANSKRIT_FAMILY_FOLD)
+    family = re.sub(r"[^a-z]+", "", folded)
+    return family or normalize_report_token(row.get("from_token", "")).lower()
 
 
 def looks_like_german_or_prose(token: str, reason: str, excerpt: str) -> bool:
@@ -340,44 +473,49 @@ def looks_manual_review_only(token: str, reason: str, suggestion: str) -> bool:
 
 def classify_suspicious_token(
     row: dict[str, str],
-    corrected_tokens: Counter[str],
-    applied_from_tokens: Counter[str],
+    scoped_count: int,
+    scoped_scope: str,
+    global_count: int,
+    applied_count: int,
 ) -> tuple[str, str]:
     token = normalize_report_token(row.get("token", ""))
     reason = row.get("reason_or_issue", "")
     suggestion = normalize_report_token(row.get("suggestion", ""))
     excerpt = row.get("sample_excerpt", "")
-    exact_count = corrected_tokens[token]
-    applied_count = applied_from_tokens[token]
     if not token:
-        return "unclear", "blank token in source QA row"
-    if applied_count and not exact_count:
+        return "manual_review_only", "blank token in source QA row"
+    if applied_count and not scoped_count:
         return (
             "already_corrected_or_stale",
-            f"appears as applied from_token {applied_count} time(s) and not as an exact corrected-text token",
+            f"appears as applied from_token {applied_count} time(s) and not in corrected text for {scoped_scope}",
         )
-    if not exact_count:
-        return "already_corrected_or_stale", "not found as an exact token in corrected text"
+    if not scoped_count:
+        if global_count:
+            return (
+                "already_corrected_or_stale",
+                f"not found in corrected text for {scoped_scope}; exact token occurs {global_count} time(s) elsewhere",
+            )
+        return "already_corrected_or_stale", f"not found as an exact token in corrected text for {scoped_scope}"
     if looks_like_sanskrit_or_indic(token, reason, excerpt):
-        return "sanskrit_or_indic", "Sanskrit/Indic lexical or context cue"
+        return "sanskrit_or_indic_policy_case", f"still present in {scoped_scope}; Sanskrit/Indic lexical or context cue"
     if looks_like_german_or_prose(token, reason, excerpt):
-        return "german_or_prose_false_positive", "German/prose token flagged by transliteration validator"
+        return "german_or_prose_false_positive", f"still present in {scoped_scope}; German/prose token flagged by transliteration validator"
     if looks_like_citation_or_siglum(token, reason, excerpt):
-        return "citation_or_siglum", "citation/siglum-shaped token or context"
+        return "citation_or_siglum", f"still present in {scoped_scope}; citation/siglum-shaped token or context"
     if applied_count:
-        return "already_corrected_or_stale", f"also appears as applied from_token {applied_count} time(s)"
+        return "manual_review_only", f"still present in {scoped_scope} and also appears as applied from_token {applied_count} time(s)"
     if looks_manual_review_only(token, reason, suggestion):
-        return "manual_review_only", "possible OCR issue, but context-sensitive or unsafe for automatic correction"
+        return "manual_review_only", f"still present in {scoped_scope}; context-sensitive or unsafe for automatic correction"
     if suggestion and suggestion != token:
-        return "residual_real_candidate", "appears in corrected text with a validator suggestion"
-    return "unclear", "no safe automatic classification evidence"
+        return "live_remaining", f"still present in {scoped_scope} with a validator suggestion"
+    return "manual_review_only", f"still present in {scoped_scope}; no safe automatic classification evidence"
 
 
 def sort_suspicious_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     return sorted(
         rows,
         key=lambda row: (
-            SUSPICIOUS_CLASS_PRIORITY.get(row.get("classification", "unclear"), 99),
+            SUSPICIOUS_CLASS_PRIORITY.get(row.get("classification", "manual_review_only"), 99),
             -safe_int(row.get("count", "")),
             row.get("volume", ""),
             row.get("token", ""),
@@ -390,7 +528,7 @@ def suspicious_summary_rows(rows: list[dict[str, str]], volume: str = "") -> lis
     row_counts: Counter[str] = Counter()
     occurrence_counts: Counter[str] = Counter()
     for row in rows:
-        classification = row.get("classification", "unclear") or "unclear"
+        classification = row.get("classification", "manual_review_only") or "manual_review_only"
         row_counts[classification] += 1
         occurrence_counts[classification] += safe_int(row.get("count", ""))
     return [
@@ -439,6 +577,120 @@ def sample_adoption_row(volume: str, source_file: Path, row: dict[str, str]) -> 
     }
 
 
+def watchdog_review_row(volume: str, source_file: Path, row: dict[str, str]) -> dict[str, str]:
+    return {
+        "volume": volume,
+        "source_file": str(source_file),
+        "page": row.get("page", ""),
+        "line": row.get("line", ""),
+        "entry_id": row.get("entry_id", ""),
+        "zone": row.get("zone", ""),
+        "from_token": row.get("from_token", ""),
+        "to_token": row.get("to_token", ""),
+        "tier": row.get("tier", ""),
+        "reason": row.get("reason", ""),
+        "watchdog_flags": row.get("watchdog_flags", ""),
+        "line_excerpt": row.get("line_excerpt", ""),
+    }
+
+
+def sanskrit_review_row(volume: str, source_file: Path, row: dict[str, str]) -> dict[str, str]:
+    return {
+        "volume": volume,
+        "source_file": str(source_file),
+        "family_key": sanskrit_review_family_key(row),
+        "page": row.get("page", ""),
+        "line": row.get("line", ""),
+        "entry_id": row.get("entry_id", ""),
+        "zone": row.get("zone", ""),
+        "from_token": row.get("from_token", ""),
+        "to_token": row.get("to_token", ""),
+        "tier": row.get("tier", ""),
+        "reason": row.get("reason", ""),
+        "applied": row.get("applied", ""),
+        "line_excerpt": row.get("line_excerpt", ""),
+    }
+
+
+def google_review_row(volume: str, source_file: Path, row: dict[str, str], bucket: str, evidence: str) -> dict[str, str]:
+    return {
+        "volume": volume,
+        "source_file": str(source_file),
+        "bucket": bucket,
+        "evidence": evidence,
+        "page": row.get("page", ""),
+        "line": row.get("line", ""),
+        "token_index": row.get("token_index", ""),
+        "base_token": row.get("base_token", ""),
+        "alternate_token": row.get("alternate_token", ""),
+        "reason": row.get("reason", ""),
+        "base_key": row.get("base_key", ""),
+        "alternate_key": row.get("alternate_key", ""),
+        "alignment_method": row.get("alignment_method", ""),
+        "alternate_page": row.get("alternate_page", ""),
+        "page_match_score": row.get("page_match_score", ""),
+        "canonical_overlap": row.get("canonical_overlap", ""),
+        "base_line": row.get("base_line", ""),
+        "alternate_line": row.get("alternate_line", ""),
+    }
+
+
+def low_confidence_google_adoption_row(
+    volume: str,
+    source_file: Path,
+    row: dict[str, str],
+) -> dict[str, str] | None:
+    page_match_score = safe_float(row.get("page_match_score"))
+    canonical_overlap = safe_float(row.get("canonical_overlap"))
+    evidence: list[str] = []
+    if page_match_score == page_match_score and page_match_score < LOW_GOOGLE_PAGE_MATCH_SCORE:
+        evidence.append(f"page_match_score={row.get('page_match_score', '')}")
+    if canonical_overlap == canonical_overlap and canonical_overlap < LOW_GOOGLE_CANONICAL_OVERLAP:
+        evidence.append(f"canonical_overlap={row.get('canonical_overlap', '')}")
+    if not evidence:
+        return None
+    return google_review_row(volume, source_file, row, "low_confidence_google_adoption", "; ".join(evidence))
+
+
+def possible_missed_google_reading_row(
+    volume: str,
+    source_file: Path,
+    row: dict[str, str],
+) -> dict[str, str] | None:
+    base_token = normalize_report_token(row.get("base_token", ""))
+    alternate_token = normalize_report_token(row.get("alternate_token", ""))
+    if not base_token or not alternate_token or base_token == alternate_token:
+        return None
+    base_key = row.get("base_key", "")
+    alternate_key = row.get("alternate_key", "")
+    if base_key and alternate_key and base_key != alternate_key:
+        return None
+    combined = " ".join(
+        [
+            base_token,
+            alternate_token,
+            row.get("base_line", ""),
+            row.get("alternate_line", ""),
+        ]
+    ).lower()
+    known_review_families = (
+        "mahavyutpatti",
+        "mahävyutpatti",
+        "mahāvyutpatti",
+        "nyayabindutika",
+        "nyāyabinduṭīkā",
+    )
+    if not any(family in combined for family in known_review_families):
+        return None
+    return google_review_row(
+        volume,
+        source_file,
+        row,
+        "possible_missed_good_reading",
+        "known unresolved Sanskrit-family candidate; review source before promotion",
+    )
+
+
 def collect_suspicious_tokens(
     volume: str,
     validator_path: Path,
@@ -452,7 +704,7 @@ def collect_suspicious_tokens(
 ) -> list[dict[str, str]]:
     buckets: dict[tuple[str, str, str], dict[str, str]] = {}
     counts: Counter[tuple[str, str, str]] = Counter()
-    corrected_tokens = corrected_token_counter(corrected_text)
+    corrected_tokens, corrected_page_tokens, corrected_line_tokens = corrected_scope_token_counters(corrected_text)
     applied_from_tokens = applied_from_token_counter(changes, adoptions)
 
     def add(source: str, token: str, reason: str, suggestion: str, row: dict[str, str], source_file: Path) -> None:
@@ -487,10 +739,25 @@ def collect_suspicious_tokens(
         item = dict(buckets[key])
         item["count"] = str(count)
         token = normalize_report_token(item["token"])
-        classification, evidence = classify_suspicious_token(item, corrected_tokens, applied_from_tokens)
+        scoped_count, scoped_scope = corrected_presence_for_row(
+            item,
+            token,
+            corrected_tokens,
+            corrected_page_tokens,
+            corrected_line_tokens,
+        )
+        classification, evidence = classify_suspicious_token(
+            item,
+            scoped_count,
+            scoped_scope,
+            corrected_tokens[token],
+            applied_from_tokens[token],
+        )
         item["classification"] = classification
         item["evidence"] = evidence
         item["corrected_text_exact_count"] = str(corrected_tokens[token])
+        item["corrected_text_scoped_count"] = str(scoped_count)
+        item["corrected_text_scope"] = scoped_scope
         item["applied_change_count"] = str(applied_from_tokens[token])
         out.append(item)
     out = sort_suspicious_rows(out)
@@ -586,6 +853,10 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     all_adoption_samples: list[dict[str, str]] = []
     all_suspicious: list[dict[str, str]] = []
     all_pages_attention: list[dict[str, str]] = []
+    all_watchdog_rows: list[dict[str, str]] = []
+    all_sanskrit_review_rows: list[dict[str, str]] = []
+    all_low_google_adoptions: list[dict[str, str]] = []
+    all_possible_missed_google_rows: list[dict[str, str]] = []
     report: list[str] = [
         "# Production Release-Candidate OCR QA Report",
         "",
@@ -632,11 +903,14 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         validator_path = volume_dir / f"{spec.label}_validator_issues.tsv"
         adoptions_path = volume_dir / f"{spec.label}_alternate_witness_adoptions.tsv"
         unresolved_path = volume_dir / f"{spec.label}_alternate_witness_unresolved.tsv"
+        watchdog_path = volume_dir / f"{spec.label}_watchdog_flags.tsv"
         changes = read_tsv(changes_path)
         reviews = read_tsv(review_path)
         validators = read_tsv(validator_path)
         adoptions = read_tsv(adoptions_path)
         unresolved = read_tsv(unresolved_path)
+        watchdogs = read_tsv(watchdog_path)
+        sanskrit_reviews = [row for row in reviews if is_sanskrit_review_suggestion(row)]
 
         change_samples = [
             sample_change_row(spec.display, changes_path, row)
@@ -649,6 +923,21 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         adoption_samples = [
             sample_adoption_row(spec.display, adoptions_path, row)
             for row in stratified_sample(adoptions, "reason", sample_size, rng)
+        ]
+        watchdog_rows = [watchdog_review_row(spec.display, watchdog_path, row) for row in watchdogs]
+        sanskrit_review_rows = [sanskrit_review_row(spec.display, review_path, row) for row in sanskrit_reviews]
+        low_google_adoptions = [
+            row
+            for row in (low_confidence_google_adoption_row(spec.display, adoptions_path, source) for source in adoptions)
+            if row is not None
+        ]
+        possible_missed_google_rows = [
+            row
+            for row in (
+                possible_missed_google_reading_row(spec.display, unresolved_path, source)
+                for source in unresolved
+            )
+            if row is not None
         ]
         suspicious = collect_suspicious_tokens(
             spec.display,
@@ -666,6 +955,10 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         all_adoption_samples.extend(adoption_samples)
         all_suspicious.extend(suspicious)
         all_pages_attention.extend(attention)
+        all_watchdog_rows.extend(watchdog_rows)
+        all_sanskrit_review_rows.extend(sanskrit_review_rows)
+        all_low_google_adoptions.extend(low_google_adoptions)
+        all_possible_missed_google_rows.extend(possible_missed_google_rows)
 
         report.extend(
             [
@@ -695,6 +988,10 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     ["entries_detected", summary.get("entries_detected", "")],
                     ["alternate_witness_adoptions", len(adoptions)],
                     ["alternate_witness_unresolved", len(unresolved)],
+                    ["watchdog_rows", len(watchdogs)],
+                    ["sanskrit_review_suggestions", len(sanskrit_reviews)],
+                    ["low_confidence_google_adoptions", len(low_google_adoptions)],
+                    ["possible_missed_google_readings", len(possible_missed_google_rows)],
                 ],
             )
         )
@@ -718,14 +1015,25 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                 ],
             )
         )
-        focused_suspicious = [
-            row
-            for row in suspicious
-            if row.get("classification") in {"residual_real_candidate", "manual_review_only", "unclear"}
-        ]
+        live_suspicious = [row for row in suspicious if row.get("classification") == "live_remaining"]
+        manual_suspicious = [row for row in suspicious if row.get("classification") == "manual_review_only"]
+        sanskrit_suspicious = [row for row in suspicious if row.get("classification") == "sanskrit_or_indic_policy_case"]
+        citation_suspicious = [row for row in suspicious if row.get("classification") == "citation_or_siglum"]
         german_suspicious = [row for row in suspicious if row.get("classification") == "german_or_prose_false_positive"]
         stale_suspicious = [row for row in suspicious if row.get("classification") == "already_corrected_or_stale"]
-        report.extend(["", "### Top Residual Or Manual-Review Suspicious Tokens", ""])
+        report.extend(["", "### Manual Review Buckets", ""])
+        report.extend(
+            md_table(
+                ["bucket", "rows"],
+                [
+                    ["watchdog_rows", len(watchdog_rows)],
+                    ["sanskrit_review_suggestions", len(sanskrit_review_rows)],
+                    ["low_confidence_google_adoptions", len(low_google_adoptions)],
+                    ["possible_missed_google_readings", len(possible_missed_google_rows)],
+                ],
+            )
+        )
+        report.extend(["", "### Top 20 Live Remaining Suspicious Tokens", ""])
         report.extend(
             md_table(
                 [
@@ -740,7 +1048,28 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     "sample_line",
                     "sample_excerpt",
                 ],
-                markdown_suspicious_rows(focused_suspicious),
+                markdown_suspicious_rows(live_suspicious, limit=20),
+            )
+        )
+        report.extend(["", "### Top Manual-Review-Only Suspicious Tokens", ""])
+        report.extend(
+            md_table(
+                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                markdown_suspicious_rows(manual_suspicious, limit=20),
+            )
+        )
+        report.extend(["", "### Top Sanskrit/Indic Policy Suspicious Tokens", ""])
+        report.extend(
+            md_table(
+                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                markdown_suspicious_rows(sanskrit_suspicious, limit=20),
+            )
+        )
+        report.extend(["", "### Top Citation/Siglum Suspicious Tokens", ""])
+        report.extend(
+            md_table(
+                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                markdown_suspicious_rows(citation_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top German/Prose Validator False Positives", ""])
@@ -817,6 +1146,8 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         "sample_line",
         "sample_excerpt",
         "corrected_text_exact_count",
+        "corrected_text_scoped_count",
+        "corrected_text_scope",
         "applied_change_count",
     ]
     write_tsv(
@@ -825,10 +1156,11 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         suspicious_fields,
     )
     write_tsv(
-        output_dir / "residual_real_suspicious_tokens.tsv",
-        [row for row in all_suspicious if row.get("classification") == "residual_real_candidate"],
+        output_dir / "live_remaining_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "live_remaining"],
         suspicious_fields,
     )
+    write_tsv(output_dir / "residual_real_suspicious_tokens.tsv", [], suspicious_fields)
     write_tsv(
         output_dir / "stale_or_already_corrected_suspicious_tokens.tsv",
         [row for row in all_suspicious if row.get("classification") == "already_corrected_or_stale"],
@@ -842,6 +1174,16 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     write_tsv(
         output_dir / "manual_review_only_suspicious_tokens.tsv",
         [row for row in all_suspicious if row.get("classification") == "manual_review_only"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "sanskrit_or_indic_policy_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "sanskrit_or_indic_policy_case"],
+        suspicious_fields,
+    )
+    write_tsv(
+        output_dir / "citation_or_siglum_suspicious_tokens.tsv",
+        [row for row in all_suspicious if row.get("classification") == "citation_or_siglum"],
         suspicious_fields,
     )
     write_tsv(
@@ -874,6 +1216,68 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             "total_attention_rows",
         ],
     )
+    watchdog_fields = [
+        "volume",
+        "source_file",
+        "page",
+        "line",
+        "entry_id",
+        "zone",
+        "from_token",
+        "to_token",
+        "tier",
+        "reason",
+        "watchdog_flags",
+        "line_excerpt",
+    ]
+    write_tsv(output_dir / "all_watchdog_rows.tsv", all_watchdog_rows, watchdog_fields)
+    sanskrit_fields = [
+        "volume",
+        "source_file",
+        "family_key",
+        "page",
+        "line",
+        "entry_id",
+        "zone",
+        "from_token",
+        "to_token",
+        "tier",
+        "reason",
+        "applied",
+        "line_excerpt",
+    ]
+    all_sanskrit_review_rows.sort(
+        key=lambda row: (
+            row.get("family_key", ""),
+            row.get("volume", ""),
+            safe_int(row.get("page", "")),
+            safe_int(row.get("line", "")),
+            row.get("from_token", ""),
+        )
+    )
+    write_tsv(output_dir / "all_sanskrit_review_suggestions.tsv", all_sanskrit_review_rows, sanskrit_fields)
+    google_review_fields = [
+        "volume",
+        "source_file",
+        "bucket",
+        "evidence",
+        "page",
+        "line",
+        "token_index",
+        "base_token",
+        "alternate_token",
+        "reason",
+        "base_key",
+        "alternate_key",
+        "alignment_method",
+        "alternate_page",
+        "page_match_score",
+        "canonical_overlap",
+        "base_line",
+        "alternate_line",
+    ]
+    write_tsv(output_dir / "low_confidence_google_adoptions.tsv", all_low_google_adoptions, google_review_fields)
+    write_tsv(output_dir / "possible_missed_google_readings.tsv", all_possible_missed_google_rows, google_review_fields)
 
     report.extend(
         [
@@ -883,22 +1287,28 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'sample_review_queue_for_manual_review.tsv'}`",
             f"- `{output_dir / 'sample_google_adoptions_for_manual_review.tsv'}`",
             f"- `{output_dir / 'top_suspicious_tokens.tsv'}`",
-            f"- `{output_dir / 'residual_real_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'live_remaining_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'manual_review_only_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'sanskrit_or_indic_policy_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'citation_or_siglum_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'stale_or_already_corrected_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'german_false_positive_validator_tokens.tsv'}`",
+            f"- `{output_dir / 'all_watchdog_rows.tsv'}`",
+            f"- `{output_dir / 'all_sanskrit_review_suggestions.tsv'}`",
+            f"- `{output_dir / 'low_confidence_google_adoptions.tsv'}`",
+            f"- `{output_dir / 'possible_missed_google_readings.tsv'}`",
             f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",
             "",
-            "Warning: stale/already-corrected suspicious-token artifacts and German/prose false positives should not drive new OCR correction rules.",
+            "Warning: stale/already-corrected suspicious-token artifacts, German/prose false positives, and Sanskrit/Indic policy cases should not drive broad OCR correction rules.",
             "",
             "## Cross-Volume Top Risk Categories",
             "",
-            "1. Remaining transliteration-shape validator issues need manual/rule review before release.",
-            "2. German umlaut tokens in transliteration-like contexts remain a high-volume validator bucket.",
-            "3. Confusable-character validator issues remain concentrated in OCR-sensitive romanization tokens.",
-            "4. Review-queue suggestions are still manual-only and should be sampled before promotion.",
-            "5. Unresolved Google alternate-witness rows are useful diagnostics, but not a release success metric.",
+            "1. Live remaining suspicious-token rows are the only validator/review rows that still occur at their corrected-text page or line.",
+            "2. Watchdog rows and Sanskrit review suggestions should be reviewed before promoting any family-specific rule.",
+            "3. Low-confidence Google adoptions and possible missed good Google readings are reviewer-facing diagnostics, not a reason to loosen Google adoption.",
+            "4. Stale/already-corrected rows, German/prose false positives, citations/sigla, and Sanskrit/Indic policy cases are separated from live OCR candidates.",
+            "5. Any promoted text correction should remain exact, source-supported, and test-backed.",
             "",
         ]
     )

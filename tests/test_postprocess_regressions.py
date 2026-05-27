@@ -94,16 +94,19 @@ class PostprocessRegressionTests(unittest.TestCase):
             ],
             Path("review.tsv"),
             [],
-            "lta Überlieferung Gangä q0rn",
+            "lta\nÜberlieferung\nGangä\nq0rn",
             [{"from_token": "Ita", "to_token": "lta", "applied": "1"}],
             [],
         )
 
         by_token = {row["token"]: row for row in rows}
-        self.assertEqual("residual_real_candidate", by_token["q0rn"]["classification"])
-        self.assertEqual("sanskrit_or_indic", by_token["Gangä"]["classification"])
+        self.assertEqual("live_remaining", by_token["q0rn"]["classification"])
+        self.assertEqual("sanskrit_or_indic_policy_case", by_token["Gangä"]["classification"])
         self.assertEqual("german_or_prose_false_positive", by_token["Überlieferung"]["classification"])
         self.assertEqual("already_corrected_or_stale", by_token["Ita"]["classification"])
+        self.assertEqual("1", by_token["q0rn"]["corrected_text_scoped_count"])
+        self.assertEqual("line:1:4", by_token["q0rn"]["corrected_text_scope"])
+        self.assertEqual("0", by_token["Ita"]["corrected_text_scoped_count"])
         self.assertLess(
             report_module.SUSPICIOUS_CLASS_PRIORITY[by_token["q0rn"]["classification"]],
             report_module.SUSPICIOUS_CLASS_PRIORITY[by_token["Ita"]["classification"]],

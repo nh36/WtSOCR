@@ -20,8 +20,17 @@ VOLUMES = [
 
 PACKAGE_FILES = [
     "production_release_candidate_report.md",
-    "residual_real_suspicious_tokens.tsv",
+    "top_suspicious_tokens.tsv",
+    "live_remaining_suspicious_tokens.tsv",
     "manual_review_only_suspicious_tokens.tsv",
+    "sanskrit_or_indic_policy_suspicious_tokens.tsv",
+    "citation_or_siglum_suspicious_tokens.tsv",
+    "stale_or_already_corrected_suspicious_tokens.tsv",
+    "german_false_positive_validator_tokens.tsv",
+    "all_watchdog_rows.tsv",
+    "all_sanskrit_review_suggestions.tsv",
+    "low_confidence_google_adoptions.tsv",
+    "possible_missed_google_readings.tsv",
     "sample_changes_for_manual_review.tsv",
     "sample_review_queue_for_manual_review.tsv",
     "sample_google_adoptions_for_manual_review.tsv",
@@ -77,10 +86,10 @@ def format_row(row: dict[str, str], fields: list[str]) -> str:
 def make_dense_page_excerpts(input_dir: Path, output_dir: Path) -> None:
     page_rows = read_tsv(input_dir / "pages_with_many_changes.tsv")
     manual_rows = read_tsv(input_dir / "manual_review_only_suspicious_tokens.tsv")
-    residual_rows = read_tsv(input_dir / "residual_real_suspicious_tokens.tsv")
+    live_rows = read_tsv(input_dir / "live_remaining_suspicious_tokens.tsv")
 
     manual_by_page = rows_by_volume_page(manual_rows, "sample_page")
-    residual_by_page = rows_by_volume_page(residual_rows, "sample_page")
+    live_by_page = rows_by_volume_page(live_rows, "sample_page")
 
     for label, slug, _final_name in VOLUMES:
         volume = Volume(label, slug, _final_name)
@@ -140,14 +149,14 @@ def make_dense_page_excerpts(input_dir: Path, output_dir: Path) -> None:
                     out.write("- none\n")
                 out.write("\n")
 
-                out.write("Residual-real candidate rows sampled on this page:\n")
-                page_residual_rows = residual_by_page.get((volume.label, page), [])
-                if page_residual_rows:
-                    for residual in page_residual_rows:
+                out.write("Live remaining suspicious rows sampled on this page:\n")
+                page_live_rows = live_by_page.get((volume.label, page), [])
+                if page_live_rows:
+                    for live in page_live_rows:
                         out.write(
                             "- "
                             + format_row(
-                                residual,
+                                live,
                                 ["token", "reason_or_issue", "suggestion", "count", "sample_line", "sample_excerpt"],
                             )
                             + "\n"
@@ -183,7 +192,7 @@ def aggregate_classification_summary(input_dir: Path) -> list[tuple[str, int, in
 
 def write_readme(input_dir: Path, output_dir: Path) -> None:
     checksums = (input_dir / "final" / "SHA256SUMS.txt").read_text(encoding="utf-8").strip()
-    residual_rows = read_tsv(input_dir / "residual_real_suspicious_tokens.tsv")
+    live_rows = read_tsv(input_dir / "live_remaining_suspicious_tokens.tsv")
     classifications = aggregate_classification_summary(input_dir)
     files = sorted(path.name for path in output_dir.iterdir() if path.is_file())
 
@@ -217,39 +226,45 @@ def write_readme(input_dir: Path, output_dir: Path) -> None:
             out.write(f"| `{classification}` | {rows} | {occurrences} |\n")
         out.write("\n")
 
-        out.write("## Residual Candidate Decisions\n\n")
-        out.write(
-            "The readiness review found no residual candidate that justified an "
-            "automatic exact OCR fix before release. Review these rows first:\n\n"
-        )
-        for row in residual_rows:
+        out.write("## Live Remaining Candidate Decisions\n\n")
+        if live_rows:
             out.write(
-                "- "
-                f"{row.get('volume', '')} page {row.get('sample_page', '')}, "
-                f"line {row.get('sample_line', '')}: `{row.get('token', '')}` "
-                f"-> `{row.get('suggestion', '')}`; "
-                f"{row.get('sample_excerpt', '')}\n"
+                "These suspicious-token rows still occur at the matching corrected-text page or line. "
+                "Review them before promoting any exact OCR fix:\n\n"
+            )
+            for row in live_rows:
+                out.write(
+                    "- "
+                    f"{row.get('volume', '')} page {row.get('sample_page', '')}, "
+                    f"line {row.get('sample_line', '')}: `{row.get('token', '')}` "
+                    f"-> `{row.get('suggestion', '')}`; "
+                    f"{row.get('sample_excerpt', '')}\n"
+                )
+        else:
+            out.write(
+                "No live remaining suspicious-token row currently justifies an automatic exact OCR fix before release.\n"
             )
         out.write("\n")
 
         out.write("## Remaining Known Issues\n\n")
         out.write(
-            "- Manual-review-only transliteration candidates remain for initial `I`/`l`, "
-            "`ñ`/`ṅ`/`n`, and lowercase `$`/`ś` contexts outside exact reviewed allowlists.\n"
+            "- Watchdog rows and line-level Sanskrit review suggestions are included as source-backed manual-review buckets.\n"
         )
         out.write(
-            "- Citation/siglum and Sanskrit/Indic edge cases should be reviewed with source context.\n"
+            "- Low-confidence Google adoptions and possible missed good Google readings are diagnostics only; they should not loosen Google adoption rules.\n"
         )
         out.write(
-            "- German/prose validator rows are separated as QA noise and should not drive OCR rules.\n\n"
+            "- Stale/already-corrected rows, German/prose validator rows, citation/siglum rows, and Sanskrit/Indic policy rows are separated as QA noise or policy cases.\n\n"
         )
 
         out.write("## Suggested Manual Review Order\n\n")
-        out.write("1. `residual_real_suspicious_tokens.tsv`\n")
-        out.write("2. `manual_review_only_suspicious_tokens.tsv`\n")
-        out.write("3. Dense-page excerpt files, one per volume\n")
-        out.write("4. `sample_google_adoptions_for_manual_review.tsv`\n")
-        out.write("5. `sample_changes_for_manual_review.tsv`\n")
+        out.write("1. `all_watchdog_rows.tsv`\n")
+        out.write("2. `all_sanskrit_review_suggestions.tsv`\n")
+        out.write("3. `low_confidence_google_adoptions.tsv`\n")
+        out.write("4. `possible_missed_google_readings.tsv`\n")
+        out.write("5. `live_remaining_suspicious_tokens.tsv`\n")
+        out.write("6. `manual_review_only_suspicious_tokens.tsv`\n")
+        out.write("7. Dense-page excerpt files, one per volume\n")
 
 
 def create_package(input_dir: Path, output_dir: Path, readiness_note: Path) -> None:
@@ -272,19 +287,19 @@ def main() -> None:
     parser.add_argument(
         "--input-dir",
         type=Path,
-        default=Path("work/production_release_candidate_clean_qa_20260520T055946Z"),
+        default=Path("work/production_release_candidate_sanskrit_isvara_recovery_20260522T163207Z"),
         help="Production QA output directory to package.",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("work/manual_review_package_20260520"),
+        default=Path("work/manual_review_package_20260522"),
         help="Manual review package directory to create.",
     )
     parser.add_argument(
         "--readiness-note",
         type=Path,
-        default=Path("docs/release_candidate_readiness_2026-05-20.md"),
+        default=Path("docs/ocr_postprocess_audit_2026-05-22.md"),
         help="Readiness note to copy as README_RELEASE_CANDIDATE.md.",
     )
     args = parser.parse_args()
