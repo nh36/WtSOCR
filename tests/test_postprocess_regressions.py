@@ -112,6 +112,69 @@ class PostprocessRegressionTests(unittest.TestCase):
             report_module.SUSPICIOUS_CLASS_PRIORITY[by_token["Ita"]["classification"]],
         )
 
+    def test_production_qa_corrected_presence_prefers_page_scoped_evidence(self) -> None:
+        report_module = self.load_report_module()
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [
+                {
+                    "token": "exactlive",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "exactlīve",
+                    "page": "1",
+                    "line": "1",
+                    "line_excerpt": "exactlive",
+                },
+                {
+                    "token": "offpage",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "offpāge",
+                    "page": "1",
+                    "line": "2",
+                    "line_excerpt": "offpage",
+                },
+                {
+                    "token": "pagewide",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "pagewīde",
+                    "page": "1",
+                    "line": "2",
+                    "line_excerpt": "pagewide",
+                },
+                {
+                    "token": "appliedtoken",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "fixedtoken",
+                    "page": "1",
+                    "line": "4",
+                    "line_excerpt": "appliedtoken",
+                },
+            ],
+            Path("review.tsv"),
+            [],
+            "exactlive first line\nordinary second line\npagewide appears here\nfixedtoken\n\foffpage only elsewhere",
+            [{"from_token": "appliedtoken", "to_token": "fixedtoken", "applied": "1"}],
+            [],
+        )
+
+        by_token = {row["token"]: row for row in rows}
+        self.assertEqual("live_remaining", by_token["exactlive"]["classification"])
+        self.assertEqual("1", by_token["exactlive"]["corrected_text_scoped_count"])
+        self.assertEqual("line:1:1", by_token["exactlive"]["corrected_text_scope"])
+
+        self.assertEqual("already_corrected_or_stale", by_token["offpage"]["classification"])
+        self.assertEqual("1", by_token["offpage"]["corrected_text_exact_count"])
+        self.assertEqual("0", by_token["offpage"]["corrected_text_scoped_count"])
+        self.assertEqual("page:1", by_token["offpage"]["corrected_text_scope"])
+
+        self.assertEqual("live_remaining", by_token["pagewide"]["classification"])
+        self.assertEqual("1", by_token["pagewide"]["corrected_text_scoped_count"])
+        self.assertEqual("page:1", by_token["pagewide"]["corrected_text_scope"])
+
+        self.assertEqual("already_corrected_or_stale", by_token["appliedtoken"]["classification"])
+        self.assertEqual("1", by_token["appliedtoken"]["applied_change_count"])
+
     def run_postprocess_fixture(
         self,
         merged_text: str,

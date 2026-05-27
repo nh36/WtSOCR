@@ -388,14 +388,14 @@ def corrected_presence_for_row(
 ) -> tuple[int, str]:
     page = normalized_numeric_key(row.get("sample_page") or row.get("page"))
     line = normalized_numeric_key(row.get("sample_line") or row.get("line"))
-    if page and line:
-        for key in (f"{page}:{line}", line):
-            if key in corrected_line_tokens:
-                return corrected_line_tokens[key][token], f"line:{key}"
-    if page and page in corrected_page_tokens:
-        return corrected_page_tokens[page][token], f"page:{page}"
-    if line and line in corrected_line_tokens:
-        return corrected_line_tokens[line][token], f"line:{line}"
+    if page:
+        if line:
+            page_line_key = f"{page}:{line}"
+            if corrected_line_tokens.get(page_line_key, Counter())[token]:
+                return corrected_line_tokens[page_line_key][token], f"line:{page_line_key}"
+        return corrected_page_tokens.get(page, Counter())[token], f"page:{page}"
+    if line:
+        return corrected_line_tokens.get(line, Counter())[token], f"line:{line}"
     return corrected_tokens[token], "global"
 
 
