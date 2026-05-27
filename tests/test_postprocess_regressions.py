@@ -97,6 +97,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "lta\nÜberlieferung\nGangä\nq0rn",
             [{"from_token": "Ita", "to_token": "lta", "applied": "1"}],
             [],
+            [],
         )
 
         by_token = {row["token"]: row for row in rows}
@@ -156,6 +157,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "exactlive first line\nordinary second line\npagewide appears here\nfixedtoken\n\foffpage only elsewhere",
             [{"from_token": "appliedtoken", "to_token": "fixedtoken", "applied": "1"}],
             [],
+            [],
         )
 
         by_token = {row["token"]: row for row in rows}
@@ -174,6 +176,142 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertEqual("already_corrected_or_stale", by_token["appliedtoken"]["classification"])
         self.assertEqual("1", by_token["appliedtoken"]["applied_change_count"])
+
+    def test_production_qa_live_validator_only_rows_are_residue_not_corrections(self) -> None:
+        report_module = self.load_report_module()
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [
+                {
+                    "token": "q0rn",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "qorn",
+                    "page": "1",
+                    "line": "1",
+                    "line_excerpt": "q0rn remains here",
+                },
+            ],
+            Path("review.tsv"),
+            [],
+            "q0rn remains here",
+            [],
+            [],
+            [],
+        )
+
+        self.assertEqual(1, len(rows))
+        row = rows[0]
+        self.assertEqual("live_remaining", row["classification"])
+        self.assertEqual(report_module.LIVE_BUCKET_VALIDATOR_ONLY, row["live_evidence_bucket"])
+        self.assertEqual("yes", row["validator_only"])
+        self.assertIn("not a correction candidate", row["live_interpretation"])
+
+    def test_production_qa_writes_validator_only_live_residue_split(self) -> None:
+        report_module = self.load_report_module()
+        td = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, td, ignore_errors=True)
+        path = Path(td) / "live_validator_only_residue.tsv"
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [
+                {
+                    "token": "q0rn",
+                    "issue": "invalid_translit_shape",
+                    "suggestion": "qorn",
+                    "page": "1",
+                    "line": "1",
+                    "line_excerpt": "q0rn remains here",
+                },
+            ],
+            Path("review.tsv"),
+            [],
+            "q0rn remains here",
+            [],
+            [],
+            [],
+        )
+        residue = [
+            row
+            for row in rows
+            if row.get("live_evidence_bucket") == report_module.LIVE_BUCKET_VALIDATOR_ONLY
+        ]
+        report_module.write_tsv(path, residue, ["token", "classification", "live_evidence_bucket", "validator_only"])
+
+        with path.open(newline="", encoding="utf-8") as f:
+            written = list(csv.DictReader(f, delimiter="\t"))
+
+        self.assertEqual([report_module.LIVE_BUCKET_VALIDATOR_ONLY], [row["live_evidence_bucket"] for row in written])
+        self.assertEqual(["q0rn"], [row["token"] for row in written])
+
+    def test_production_qa_reciprocal_mkhai_rows_do_not_create_direction_evidence(self) -> None:
+        report_module = self.load_report_module()
+        review_rows = [
+            {
+                "from_token": "mkhai",
+                "to_token": "mkha'i",
+                "reason": "validator_suggestion",
+                "applied": "0",
+                "page": "1067",
+                "line": "144",
+                "line_excerpt": "mkhai remains on the exact line",
+            }
+        ]
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [],
+            Path("review.tsv"),
+            review_rows,
+            "\f" * 1066 + "mkha'i elsewhere on page\n" + "\n" * 142 + "mkhai remains on the exact line",
+            [],
+            [],
+            [],
+        )
+
+        by_token = {row["token"]: row for row in rows}
+        self.assertEqual(report_module.LIVE_BUCKET_POLICY_FALSE_POSITIVE, by_token["mkha'i"]["live_evidence_bucket"])
+        self.assertIn("wrong direction", by_token["mkha'i"]["live_interpretation"])
+        self.assertEqual("yes", by_token["mkha'i"]["review_queue_withheld_match"])
+        self.assertEqual("yes", by_token["mkha'i"]["validator_only"])
+        self.assertEqual(report_module.LIVE_BUCKET_REVIEW_QUEUE, by_token["mkhai"]["live_evidence_bucket"])
+        self.assertIn("no general apostrophe rule", by_token["mkhai"]["live_interpretation"])
+        self.assertEqual("yes", by_token["mkhai"]["review_queue_withheld_match"])
+        self.assertEqual("yes", by_token["mkhai"]["validator_only"])
+        self.assertNotEqual(report_module.LIVE_BUCKET_GOOGLE, by_token["mkha'i"]["live_evidence_bucket"])
+        self.assertNotEqual(report_module.LIVE_BUCKET_GOOGLE, by_token["mkhai"]["live_evidence_bucket"])
+
+    def test_production_qa_non_tibetan_romanisation_can_be_policy_false_positive(self) -> None:
+        report_module = self.load_report_module()
+        rows = report_module.collect_suspicious_tokens(
+            "fixture",
+            Path("validator.tsv"),
+            [],
+            Path("review.tsv"),
+            [
+                {
+                    "from_token": "ch'a",
+                    "to_token": "cha'",
+                    "reason": "validator_suggestion",
+                    "applied": "0",
+                    "page": "707",
+                    "line": "7",
+                    "line_excerpt": "Chinese ch'a romanisation context",
+                }
+            ],
+            "\f" * 706 + "Chinese ch'a romanisation context",
+            [],
+            [],
+            [],
+        )
+
+        self.assertEqual(2, len(rows))
+        live = {row["token"]: row for row in rows if row.get("classification") == "live_remaining"}
+        self.assertEqual(report_module.LIVE_BUCKET_POLICY_FALSE_POSITIVE, live["ch'a"]["live_evidence_bucket"])
+        self.assertIn("non-Tibetan romanisation", live["ch'a"]["live_interpretation"])
+        self.assertEqual("yes", live["ch'a"]["review_queue_withheld_match"])
+        self.assertEqual("yes", live["ch'a"]["validator_only"])
 
     def run_postprocess_fixture(
         self,

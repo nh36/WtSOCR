@@ -45,12 +45,56 @@ SUSPICIOUS_MARKDOWN_HEADERS = [
     "token",
     "reason_or_issue",
     "count",
-    "suggestion",
+    "heuristic_suggestion",
     "evidence",
     "sample_page",
     "sample_line",
     "sample_excerpt",
 ]
+LIVE_HEURISTIC_WARNING = (
+    "The suggestion field is produced by validator/canonicalisation heuristics. "
+    "It is not OCR-witness evidence and should not be treated as a correction direction unless independently supported."
+)
+LIVE_VALIDATOR_ONLY_NOTE = (
+    "`validator_only=yes` means no Google alternate-witness support is recorded; "
+    "withheld review-queue presence is provenance, not independent OCR-witness evidence."
+)
+LIVE_BUCKET_VALIDATOR_ONLY = "live_validator_only_residue"
+LIVE_BUCKET_REVIEW_QUEUE = "live_review_queue_candidates"
+LIVE_BUCKET_GOOGLE = "live_google_supported_candidates"
+LIVE_BUCKET_POLICY_FALSE_POSITIVE = "live_policy_or_false_positive"
+LIVE_BUCKET_OUTPUTS = [
+    (LIVE_BUCKET_VALIDATOR_ONLY, "live_validator_only_residue.tsv"),
+    (LIVE_BUCKET_REVIEW_QUEUE, "live_review_queue_candidates.tsv"),
+    (LIVE_BUCKET_GOOGLE, "live_google_supported_candidates.tsv"),
+    (LIVE_BUCKET_POLICY_FALSE_POSITIVE, "live_policy_or_false_positive.tsv"),
+]
+LIVE_ROW_ADJUDICATIONS = {
+    ("ch'a", "cha'"): (
+        LIVE_BUCKET_POLICY_FALSE_POSITIVE,
+        "non-Tibetan romanisation / validator false positive; likely Wade-Giles or another romanisation context; do not promote",
+    ),
+    ("źwa", "ziṅ"): (
+        LIVE_BUCKET_POLICY_FALSE_POSITIVE,
+        "validator false positive; źwa and ziṅ are distinct Tibetan forms; do not promote",
+    ),
+    ("mkha'i", "mkhai"): (
+        LIVE_BUCKET_POLICY_FALSE_POSITIVE,
+        "validator false positive / wrong direction; mkha'i is valid Tibetan/Wylie; do not promote",
+    ),
+    ("mkhai", "mkha'i"): (
+        LIVE_BUCKET_REVIEW_QUEUE,
+        "manual review only; possible local OCR/transliteration error only if page context confirms; no general apostrophe rule",
+    ),
+    ("ishod", "ishal"): (
+        LIVE_BUCKET_VALIDATOR_ONLY,
+        "validator-only/manual-review; not a correction candidate unless independently supported by source image or Google unresolved evidence",
+    ),
+    ("dzā", "dza"): (
+        LIVE_BUCKET_POLICY_FALSE_POSITIVE,
+        "orthographic/transcription policy or validator-only; do not promote automatically",
+    ),
+}
 TOKEN_EDGE_CHARS = " \t\r\n\f\v.,;:!?()[]{}<>\"“”‘’‚‹›«»"
 GERMAN_UMLAUT_CHARS = set("äöüÄÖÜß")
 GERMAN_FALSE_POSITIVE_TOKENS = {
@@ -342,6 +386,42 @@ def normalize_report_token(token: str) -> str:
     return (token or "").strip(TOKEN_EDGE_CHARS)
 
 
+def yes_no(value: bool) -> str:
+    return "yes" if value else "no"
+
+
+def page_line_token_key(row: dict[str, str], token: str) -> tuple[str, str, str]:
+    page = normalized_numeric_key(row.get("sample_page") or row.get("page"))
+    line = normalized_numeric_key(row.get("sample_line") or row.get("line"))
+    token = normalize_report_token(token)
+    if not page or not line or not token:
+        return ("", "", "")
+    return (page, line, token)
+
+
+def page_line_token_index(rows: list[dict[str, str]], token_fields: tuple[str, ...]) -> set[tuple[str, str, str]]:
+    index: set[tuple[str, str, str]] = set()
+    for row in rows:
+        page = normalized_numeric_key(row.get("page"))
+        line = normalized_numeric_key(row.get("line"))
+        if not page or not line:
+            continue
+        for field in token_fields:
+            token = normalize_report_token(row.get(field, ""))
+            if token:
+                index.add((page, line, token))
+    return index
+
+
+def withheld_review_token_index(rows: list[dict[str, str]]) -> set[tuple[str, str, str]]:
+    withheld = [
+        row
+        for row in rows
+        if (row.get("applied", "") or "").strip().lower() not in {"1", "true", "yes"}
+    ]
+    return page_line_token_index(withheld, ("from_token", "to_token"))
+
+
 def corrected_token_counter(text: str) -> Counter[str]:
     tokens: Counter[str] = Counter()
     for piece in re.split(r"\s+", text or ""):
@@ -507,8 +587,38 @@ def classify_suspicious_token(
     if looks_manual_review_only(token, reason, suggestion):
         return "manual_review_only", f"still present in {scoped_scope}; context-sensitive or unsafe for automatic correction"
     if suggestion and suggestion != token:
-        return "live_remaining", f"still present in {scoped_scope} with a validator suggestion"
+        return "live_remaining", f"still present in {scoped_scope} with a heuristic suggestion"
     return "manual_review_only", f"still present in {scoped_scope}; no safe automatic classification evidence"
+
+
+def live_row_bucket(row: dict[str, str]) -> tuple[str, str]:
+    token = normalize_report_token(row.get("token", ""))
+    suggestion = normalize_report_token(row.get("suggestion", ""))
+    adjudicated = LIVE_ROW_ADJUDICATIONS.get((token, suggestion))
+    if adjudicated:
+        return adjudicated
+    if (
+        row.get("alternate_witness_adoption_match") == "yes"
+        or row.get("alternate_witness_unresolved_match") == "yes"
+    ):
+        return (
+            LIVE_BUCKET_GOOGLE,
+            "Google alternate-witness evidence exists at the same page/line/token; review source before promotion",
+        )
+    if row.get("review_queue_withheld_match") == "yes":
+        return (
+            LIVE_BUCKET_REVIEW_QUEUE,
+            "withheld review-queue heuristic; requires source/context review before promotion",
+        )
+    if row.get("validator_only") == "yes":
+        return (
+            LIVE_BUCKET_VALIDATOR_ONLY,
+            "validator/canonicalisation heuristic only; not a correction candidate without independent support",
+        )
+    return (
+        LIVE_BUCKET_VALIDATOR_ONLY,
+        "no independent OCR-witness support recorded; not a correction candidate without source review",
+    )
 
 
 def sort_suspicious_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -700,12 +810,16 @@ def collect_suspicious_tokens(
     corrected_text: str,
     changes: list[dict[str, str]],
     adoptions: list[dict[str, str]],
+    unresolved: list[dict[str, str]],
     limit: int | None = None,
 ) -> list[dict[str, str]]:
     buckets: dict[tuple[str, str, str], dict[str, str]] = {}
     counts: Counter[tuple[str, str, str]] = Counter()
     corrected_tokens, corrected_page_tokens, corrected_line_tokens = corrected_scope_token_counters(corrected_text)
     applied_from_tokens = applied_from_token_counter(changes, adoptions)
+    adoption_token_index = page_line_token_index(adoptions, ("base_token", "alternate_token"))
+    unresolved_token_index = page_line_token_index(unresolved, ("base_token", "alternate_token"))
+    withheld_review_index = withheld_review_token_index(review_rows)
 
     def add(source: str, token: str, reason: str, suggestion: str, row: dict[str, str], source_file: Path) -> None:
         token = token.strip()
@@ -753,12 +867,28 @@ def collect_suspicious_tokens(
             corrected_tokens[token],
             applied_from_tokens[token],
         )
+        evidence_key = page_line_token_key(item, token)
+        adoption_match = bool(evidence_key != ("", "", "") and evidence_key in adoption_token_index)
+        unresolved_match = bool(evidence_key != ("", "", "") and evidence_key in unresolved_token_index)
+        review_match = bool(evidence_key != ("", "", "") and evidence_key in withheld_review_index)
         item["classification"] = classification
         item["evidence"] = evidence
+        item["evidence_scope"] = scoped_scope
+        item["alternate_witness_adoption_match"] = yes_no(adoption_match)
+        item["alternate_witness_unresolved_match"] = yes_no(unresolved_match)
+        item["review_queue_withheld_match"] = yes_no(review_match)
+        item["validator_only"] = yes_no(not adoption_match and not unresolved_match)
         item["corrected_text_exact_count"] = str(corrected_tokens[token])
         item["corrected_text_scoped_count"] = str(scoped_count)
         item["corrected_text_scope"] = scoped_scope
         item["applied_change_count"] = str(applied_from_tokens[token])
+        if classification == "live_remaining":
+            live_bucket, live_interpretation = live_row_bucket(item)
+            item["live_evidence_bucket"] = live_bucket
+            item["live_interpretation"] = live_interpretation
+        else:
+            item["live_evidence_bucket"] = ""
+            item["live_interpretation"] = ""
         out.append(item)
     out = sort_suspicious_rows(out)
     return out if limit is None else out[:limit]
@@ -828,6 +958,29 @@ def markdown_suspicious_rows(rows: list[dict[str, str]], limit: int = 50) -> lis
             row.get("count", ""),
             truncate(row.get("suggestion", ""), 30),
             truncate(row.get("evidence", ""), 80),
+            row.get("sample_page", ""),
+            row.get("sample_line", ""),
+            truncate(row.get("sample_excerpt", ""), 80),
+        ]
+        for row in rows[:limit]
+    ]
+
+
+def markdown_live_suspicious_rows(rows: list[dict[str, str]], limit: int = 50) -> list[list[object]]:
+    return [
+        [
+            row.get("live_evidence_bucket", ""),
+            row.get("source", ""),
+            truncate(row.get("token", ""), 30),
+            truncate(row.get("reason_or_issue", ""), 45),
+            row.get("count", ""),
+            truncate(row.get("suggestion", ""), 30),
+            row.get("evidence_scope", ""),
+            row.get("alternate_witness_adoption_match", ""),
+            row.get("alternate_witness_unresolved_match", ""),
+            row.get("review_queue_withheld_match", ""),
+            row.get("validator_only", ""),
+            truncate(row.get("live_interpretation", ""), 90),
             row.get("sample_page", ""),
             row.get("sample_line", ""),
             truncate(row.get("sample_excerpt", ""), 80),
@@ -948,6 +1101,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             corrected_text,
             changes,
             adoptions,
+            unresolved,
         )
         attention = page_attention_rows(spec.display, changes, reviews, validators, unresolved)
         all_change_samples.extend(change_samples)
@@ -1021,6 +1175,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         citation_suspicious = [row for row in suspicious if row.get("classification") == "citation_or_siglum"]
         german_suspicious = [row for row in suspicious if row.get("classification") == "german_or_prose_false_positive"]
         stale_suspicious = [row for row in suspicious if row.get("classification") == "already_corrected_or_stale"]
+        live_bucket_counts = Counter(row.get("live_evidence_bucket", "") for row in live_suspicious)
         report.extend(["", "### Manual Review Buckets", ""])
         report.extend(
             md_table(
@@ -1033,56 +1188,81 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                 ],
             )
         )
-        report.extend(["", "### Top 20 Live Remaining Suspicious Tokens", ""])
+        report.extend(["", "### Live Remaining Evidence Buckets", ""])
+        report.extend(
+            md_table(
+                ["bucket", "rows"],
+                [
+                    [bucket, live_bucket_counts.get(bucket, 0)]
+                    for bucket, _filename in LIVE_BUCKET_OUTPUTS
+                ],
+            )
+        )
+        report.extend(
+            [
+                "",
+                "### Top 20 Live Remaining Validator Candidates",
+                "",
+                LIVE_HEURISTIC_WARNING,
+                "",
+                LIVE_VALIDATOR_ONLY_NOTE,
+                "",
+            ]
+        )
         report.extend(
             md_table(
                 [
-                    "classification",
+                    "bucket",
                     "source",
                     "token",
                     "reason_or_issue",
                     "count",
-                    "suggestion",
-                    "evidence",
+                    "heuristic_suggestion",
+                    "evidence_scope",
+                    "alternate_witness_adoption_match",
+                    "alternate_witness_unresolved_match",
+                    "review_queue_withheld_match",
+                    "validator_only",
+                    "interpretation",
                     "sample_page",
                     "sample_line",
                     "sample_excerpt",
                 ],
-                markdown_suspicious_rows(live_suspicious, limit=20),
+                markdown_live_suspicious_rows(live_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top Manual-Review-Only Suspicious Tokens", ""])
         report.extend(
             md_table(
-                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                SUSPICIOUS_MARKDOWN_HEADERS,
                 markdown_suspicious_rows(manual_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top Sanskrit/Indic Policy Suspicious Tokens", ""])
         report.extend(
             md_table(
-                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                SUSPICIOUS_MARKDOWN_HEADERS,
                 markdown_suspicious_rows(sanskrit_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top Citation/Siglum Suspicious Tokens", ""])
         report.extend(
             md_table(
-                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                SUSPICIOUS_MARKDOWN_HEADERS,
                 markdown_suspicious_rows(citation_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top German/Prose Validator False Positives", ""])
         report.extend(
             md_table(
-                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                SUSPICIOUS_MARKDOWN_HEADERS,
                 markdown_suspicious_rows(german_suspicious, limit=20),
             )
         )
         report.extend(["", "### Top Stale Or Already-Corrected Suspicious Tokens", ""])
         report.extend(
             md_table(
-                ["classification", "source", "token", "reason_or_issue", "count", "suggestion", "evidence", "sample_page", "sample_line", "sample_excerpt"],
+                SUSPICIOUS_MARKDOWN_HEADERS,
                 markdown_suspicious_rows(stale_suspicious, limit=20),
             )
         )
@@ -1142,6 +1322,13 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         "suggestion",
         "classification",
         "evidence",
+        "evidence_scope",
+        "alternate_witness_adoption_match",
+        "alternate_witness_unresolved_match",
+        "review_queue_withheld_match",
+        "validator_only",
+        "live_evidence_bucket",
+        "live_interpretation",
         "sample_page",
         "sample_line",
         "sample_excerpt",
@@ -1160,6 +1347,13 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         [row for row in all_suspicious if row.get("classification") == "live_remaining"],
         suspicious_fields,
     )
+    live_rows = [row for row in all_suspicious if row.get("classification") == "live_remaining"]
+    for bucket, filename in LIVE_BUCKET_OUTPUTS:
+        write_tsv(
+            output_dir / filename,
+            [row for row in live_rows if row.get("live_evidence_bucket") == bucket],
+            suspicious_fields,
+        )
     write_tsv(output_dir / "residual_real_suspicious_tokens.tsv", [], suspicious_fields)
     write_tsv(
         output_dir / "stale_or_already_corrected_suspicious_tokens.tsv",
@@ -1288,6 +1482,10 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'sample_google_adoptions_for_manual_review.tsv'}`",
             f"- `{output_dir / 'top_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'live_remaining_suspicious_tokens.tsv'}`",
+            f"- `{output_dir / 'live_validator_only_residue.tsv'}`",
+            f"- `{output_dir / 'live_review_queue_candidates.tsv'}`",
+            f"- `{output_dir / 'live_google_supported_candidates.tsv'}`",
+            f"- `{output_dir / 'live_policy_or_false_positive.tsv'}`",
             f"- `{output_dir / 'manual_review_only_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'sanskrit_or_indic_policy_suspicious_tokens.tsv'}`",
             f"- `{output_dir / 'citation_or_siglum_suspicious_tokens.tsv'}`",
@@ -1305,10 +1503,12 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             "## Cross-Volume Top Risk Categories",
             "",
             "1. Live remaining suspicious-token rows are the only validator/review rows that still occur at their corrected-text page or line.",
-            "2. Watchdog rows and Sanskrit review suggestions should be reviewed before promoting any family-specific rule.",
-            "3. Low-confidence Google adoptions and possible missed good Google readings are reviewer-facing diagnostics, not a reason to loosen Google adoption.",
-            "4. Stale/already-corrected rows, German/prose false positives, citations/sigla, and Sanskrit/Indic policy cases are separated from live OCR candidates.",
-            "5. Any promoted text correction should remain exact, source-supported, and test-backed.",
+            "2. The live suggestion field is heuristic validator/canonicalisation output, not OCR-witness evidence.",
+            "3. Only Google-supported rows and clearly source-supported review-queue rows should be considered for OCR-rule promotion.",
+            "4. Watchdog rows and Sanskrit review suggestions should be reviewed before promoting any family-specific rule.",
+            "5. Low-confidence Google adoptions and possible missed good Google readings are reviewer-facing diagnostics, not a reason to loosen Google adoption.",
+            "6. Stale/already-corrected rows, German/prose false positives, citations/sigla, and Sanskrit/Indic policy cases are separated from live OCR candidates.",
+            "7. Any promoted text correction should remain exact, source-supported, and test-backed.",
             "",
         ]
     )
