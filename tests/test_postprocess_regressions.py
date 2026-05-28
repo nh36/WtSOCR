@@ -313,6 +313,45 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual("yes", live["ch'a"]["review_queue_withheld_match"])
         self.assertEqual("yes", live["ch'a"]["validator_only"])
 
+    def test_production_qa_possible_missed_google_drops_resolved_title_row(self) -> None:
+        report_module = self.load_report_module()
+        source = {
+            "page": "2",
+            "line": "3",
+            "base_token": "Mahavyutpatti",
+            "alternate_token": "Mahāvyutpatti",
+            "base_key": "mahavyutpatti",
+            "alternate_key": "mahavyutpatti",
+            "base_line": "Title Mahavyutpatti",
+            "alternate_line": "Title Mahāvyutpatti",
+        }
+        unresolved_text = "page one\n\fline one\nline two\nTitle Mahavyutpatti"
+        ambiguous_text = "page one\n\fline one\nline two\nTitle Mahavyutpatti and Mahāvyutpatti"
+        resolved_text = "page one\n\fline one\nline two\nTitle Mahāvyutpatti"
+
+        unresolved = report_module.possible_missed_google_reading_row(
+            "fixture",
+            Path("unresolved.tsv"),
+            source,
+            unresolved_text,
+        )
+        ambiguous = report_module.possible_missed_google_reading_row(
+            "fixture",
+            Path("unresolved.tsv"),
+            source,
+            ambiguous_text,
+        )
+        resolved = report_module.possible_missed_google_reading_row(
+            "fixture",
+            Path("unresolved.tsv"),
+            source,
+            resolved_text,
+        )
+
+        self.assertIsNotNone(unresolved)
+        self.assertIsNotNone(ambiguous)
+        self.assertIsNone(resolved)
+
     def run_postprocess_fixture(
         self,
         merged_text: str,
@@ -321,6 +360,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         alternate_merged_text: str | None = None,
         alternate_google_vision: bool = False,
         merge_only: bool = False,
+        label: str = "fixture",
     ) -> tuple[dict[str, object], str, list[dict[str, str]]]:
         td = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, td, ignore_errors=True)
@@ -337,7 +377,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             merged=merged,
             audit=None,
             outdir=outdir,
-            label="fixture",
+            label=label,
             trusted_min_freq=2,
             discover_max_edit=2,
             discover_max_rare_freq=3,
@@ -2049,6 +2089,63 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Prajnāpāramitā", "Prajñāpāramitā", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("śrävaka", "śrāvaka", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("śästras", "śāstras", "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_google_supported_sanskrit_title_promotions_apply_in_title_context(self) -> None:
+        page6 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 16)]
+        page6.append("begonnen, Exzerpte für das Wörterbuchprojekt aus der Mahavyutpatti auf der Grund-")
+        page6.extend(["lage der Ausgaben.", "filler 18"])
+        page6.append("arbeitung der Mahävyutpatti zu Ende geführt.")
+        page10 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 58)]
+        page10.append("Einträge der Mahävyutpatti (Mvy) und der sGra-sbyor bam-po gis-pa (sGra) werden")
+        page17 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 19)]
+        page17.append("Bye brag tu rtogs par byed pa / Mahävyutpatti.")
+        page17.extend(f"filler {idx}" for idx in range(20, 27))
+        page17.append("Chos mchog: Rigs pa'i thigs pa'i rgya cher 'grel pa / Dharmottara: Nyayabindutika.")
+        merged_text = "\f".join(["ཀ་ ka", *[""] * 4, "\n".join(page6), *[""] * 3, "\n".join(page10), *[""] * 6, "\n".join(page17)])
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_1_34")
+
+        self.assertIn("aus der Mahāvyutpatti auf der Grund-", corrected)
+        self.assertIn("arbeitung der Mahāvyutpatti zu Ende geführt.", corrected)
+        self.assertIn("Einträge der Mahāvyutpatti (Mvy)", corrected)
+        self.assertIn("Bye brag tu rtogs par byed pa / Mahāvyutpatti.", corrected)
+        self.assertIn("Dharmottara: Nyāyabinduṭīkā.", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Mahavyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
+        self.assertIn(("Mahävyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
+        self.assertIn(("Nyayabindutika", "Nyāyabinduṭīkā", "sanskrit_google_title_allowlist"), reasons)
+        google_title_changes = [
+            row for row in changes if row["reason"] == "sanskrit_google_title_allowlist"
+        ]
+        self.assertEqual(
+            {("6", "16"), ("6", "19"), ("10", "58"), ("17", "19"), ("17", "27")},
+            {(row["page"], row["line"]) for row in google_title_changes},
+        )
+
+    def test_google_supported_sanskrit_title_promotions_need_title_context(self) -> None:
+        merged_text = (
+            "\f" * 5
+            + "ཀ་ ka\n"
+            + "\n".join(f"filler {idx}" for idx in range(2, 16))
+            + "\nDies ist ein deutscher Satz mit Mahavyutpatti und Mahävyutpatti als Zeichenfolge.\n"
+            + "Auch Nyayabindutika steht hier ohne Titelkontext.\n"
+            "Mädchen und Mahärger bleiben unverändert.\n"
+            "nyaya und tika werden nicht allgemein normalisiert.\n"
+            "\fExzerpte für das Wörterbuchprojekt aus der Mahavyutpatti (Mvy), aber auf falscher Seite.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_1_34")
+
+        self.assertIn("Mahavyutpatti", corrected)
+        self.assertIn("Mahävyutpatti", corrected)
+        self.assertIn("Nyayabindutika", corrected)
+        self.assertIn("Mahavyutpatti (Mvy), aber auf falscher Seite", corrected)
+        self.assertIn("Mädchen und Mahärger", corrected)
+        self.assertIn("nyaya und tika", corrected)
+        self.assertNotIn("Mahāvyutpatti", corrected)
+        self.assertNotIn("Nyāyabinduṭīkā", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("Mahavyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
+        self.assertNotIn(("Mahävyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
+        self.assertNotIn(("Nyayabindutika", "Nyāyabinduṭīkā", "sanskrit_google_title_allowlist"), reasons)
 
     def test_reviewed_sanskrit_promotions_do_not_broaden_confusables(self) -> None:
         merged_text = "སྐད skt. Männer Größe ch'a Irāgheit śrävaka\n"

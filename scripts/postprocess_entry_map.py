@@ -248,6 +248,13 @@ SANSKRIT_ENDING_RE = re.compile(
     re.IGNORECASE,
 )
 SANSKRIT_LEX_CUE_RE = re.compile(r"\bLex\.", re.IGNORECASE)
+SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON = "sanskrit_google_title_allowlist"
+SANSKRIT_GOOGLE_TITLE_CONTEXT_RE = re.compile(
+    r"(?<!\w)(?:Mvy|sGra|Dagy|Lex\.|Ed\.|Exzerpte|W[oö]rterbuchprojekt|Dharmottara|"
+    r"Rigs pa'i thigs pa'i|Bye brag tu rtogs par byed pa|rtogs par byed pa|"
+    r"rgya cher 'grel)(?!\w)",
+    re.IGNORECASE,
+)
 SANSKRIT_ISVARA_FAMILY_REASON = "sanskrit_isvara_family_recovery"
 SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES = {
     "IS$varas": "Īśvaras",
@@ -559,8 +566,83 @@ def load_sanskrit_promoted_overrides(path: Path) -> dict[str, str]:
     return overrides
 
 
+def normalized_override_volume_label(label: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", (label or "").lower()).strip("_")
+
+
+def promoted_override_evidence_tags(row: dict[str, str]) -> set[str]:
+    return {
+        tag.strip()
+        for tag in (row.get("evidence") or "").split(",")
+        if tag.strip()
+    }
+
+
+def promoted_override_row_source_key(row: dict[str, str]) -> str:
+    src = unicodedata.normalize("NFC", (row.get("from_token") or "").strip())
+    dst = unicodedata.normalize("NFC", (row.get("to_token") or "").strip())
+    if not src or not dst or src == dst:
+        return ""
+    decision = (row.get("decision") or "promote").strip().lower()
+    if decision and decision != "promote":
+        return ""
+    return src.lower()
+
+
+def load_sanskrit_promoted_override_keys_by_evidence(path: Path, evidence_tag: str) -> set[str]:
+    """Return promoted override source keys whose TSV evidence contains a tag."""
+    keys: set[str] = set()
+    if not path.exists():
+        return keys
+    try:
+        with path.open("r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f, delimiter="\t")
+            for row in reader:
+                src_key = promoted_override_row_source_key(row)
+                if not src_key:
+                    continue
+                if evidence_tag in promoted_override_evidence_tags(row):
+                    keys.add(src_key)
+    except OSError:
+        return set()
+    return keys
+
+
+def load_sanskrit_promoted_override_locations_by_evidence(
+    path: Path,
+    evidence_tag: str,
+) -> dict[str, set[tuple[str, int, int]]]:
+    locations: dict[str, set[tuple[str, int, int]]] = defaultdict(set)
+    if not path.exists():
+        return {}
+    try:
+        with path.open("r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f, delimiter="\t")
+            for row in reader:
+                src_key = promoted_override_row_source_key(row)
+                if not src_key or evidence_tag not in promoted_override_evidence_tags(row):
+                    continue
+                for match in re.finditer(r"([A-Za-z0-9_-]+):(\d+):(\d+)", row.get("example_ref") or ""):
+                    label = normalized_override_volume_label(match.group(1))
+                    page = int(match.group(2))
+                    line = int(match.group(3))
+                    if label and page > 0 and line > 0:
+                        locations[src_key].add((label, page, line))
+    except OSError:
+        return {}
+    return dict(locations)
+
+
 SANSKRIT_PROMOTED_OVERRIDES_PATH = Path(__file__).resolve().parents[1] / "data" / "sanskrit_promote_overrides.tsv"
 SANSKRIT_PROMOTED_TIER_A_OVERRIDES = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
+SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    "google_unresolved_sanskrit_title",
+)
+SANSKRIT_GOOGLE_TITLE_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    "google_unresolved_sanskrit_title",
+)
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
     **SANSKRIT_PROMOTED_TIER_A_OVERRIDES,
@@ -6744,6 +6826,55 @@ def line_has_singleton_sanskrit_gate(line_text: str, zone: str) -> bool:
     return False
 
 
+def line_has_google_title_override_context(token: str, line_text: str, context_window: str, context_score: int) -> bool:
+    """Gate exact Google-supported title promotions to title/bibliographic contexts."""
+    del context_score
+    if SANSKRIT_GOOGLE_TITLE_CONTEXT_RE.search(context_window):
+        return True
+    token_key = sanskrit_safe_normalize_token(token).lower()
+    if (
+        ("/" in line_text or ":" in line_text)
+        and (
+            "mahavyutpatti" in token_key
+            or "nyayabindutika" in token_key
+            or "nyāyabinduṭīkā" in token_key
+        )
+    ):
+        return True
+    return False
+
+
+def google_title_override_location_allowed(token: str, volume_label: str, page: int, line: int) -> bool:
+    token_key = unicodedata.normalize("NFC", token).lower()
+    locations = SANSKRIT_GOOGLE_TITLE_OVERRIDE_LOCATIONS.get(token_key)
+    if not locations:
+        return False
+    label = normalized_override_volume_label(volume_label)
+    return (label, page, line) in locations
+
+
+def google_title_override_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+) -> bool:
+    return google_title_override_location_allowed(
+        token,
+        volume_label,
+        page,
+        line,
+    ) and line_has_google_title_override_context(
+        token,
+        line_text,
+        context_window,
+        context_score,
+    )
+
+
 def sanskrit_isvara_family_rewrite(token: str, line_text: str, zone: str) -> str | None:
     replacement = SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES.get(token)
     if replacement is None:
@@ -6870,6 +7001,7 @@ def build_sanskrit_context_scores(
 def apply_sanskrit_normalization(
     corrected_text: str,
     line_infos: list[LineInfo],
+    label: str = "",
 ) -> tuple[str, list[list[str]], list[list[str]], list[list[str]], int]:
     pages = [page.split("\n") for page in corrected_text.split("\f")]
     info_by_key = {(li.page, li.line): li for li in line_infos}
@@ -6957,6 +7089,7 @@ def apply_sanskrit_normalization(
             entry_id = str(info.entry_id) if info is not None else "0"
             ctx = context_scores.get((page_idx, line_idx), 0)
             updated_line = line
+            context_window = "\n".join(lines[max(0, line_idx - 4) : min(len(lines), line_idx + 3)])
 
             # Handle the known split citation form "Rästrapa-\nlapariprcch...":
             # normalize across the break to avoid duplicate-prefix rewrites.
@@ -7028,6 +7161,7 @@ def apply_sanskrit_normalization(
                 tok = m.group(0)
                 isvara_rewrite = sanskrit_isvara_family_rewrite(tok, updated_line, zone)
                 explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok.lower())
+                explicit_override_is_google_title = tok.lower() in SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS
                 if (
                     isvara_rewrite is None
                     and explicit_override is None
@@ -7061,8 +7195,22 @@ def apply_sanskrit_normalization(
                     replacement = isvara_rewrite
                     reason = SANSKRIT_ISVARA_FAMILY_REASON
                 elif explicit_override:
+                    if explicit_override_is_google_title and not google_title_override_allowed(
+                        tok,
+                        label,
+                        page_idx,
+                        line_idx,
+                        updated_line,
+                        context_window,
+                        ctx,
+                    ):
+                        return tok
                     replacement, _ = apply_sanskrit_override_chain(tok)
-                    reason = "sanskrit_high_freq_allowlist"
+                    reason = (
+                        SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON
+                        if explicit_override_is_google_title
+                        else "sanskrit_high_freq_allowlist"
+                    )
 
                 if replacement == tok and safe_norm != tok:
                     # Umlaut-only rewrites need clear Sanskrit signal.
@@ -7106,6 +7254,7 @@ def apply_sanskrit_normalization(
 
                 auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason in {
                     "sanskrit_high_freq_allowlist",
+                    SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON,
                     SANSKRIT_ISVARA_FAMILY_REASON,
                 }
                 if (
@@ -7366,6 +7515,7 @@ def run_one(
             apply_sanskrit_normalization(
                 corrected_text=corrected_text,
                 line_infos=line_infos,
+                label=label,
             )
         )
         change_rows.extend(sanskrit_change_rows)

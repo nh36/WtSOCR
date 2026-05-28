@@ -479,6 +479,41 @@ def corrected_presence_for_row(
     return corrected_tokens[token], "global"
 
 
+def corrected_line_text_for_row(corrected_text: str, row: dict[str, str]) -> str | None:
+    page = normalized_numeric_key(row.get("sample_page") or row.get("page"))
+    line = normalized_numeric_key(row.get("sample_line") or row.get("line"))
+    if not page or not line:
+        return None
+    target_line = int(line)
+    for page_index, page_text in enumerate((corrected_text or "").split("\f"), start=1):
+        current_page = str(page_index)
+        page_line = 0
+        for raw_line in page_text.splitlines():
+            marker = PAGE_MARKER_RE.match(raw_line)
+            if marker:
+                current_page = str(int(marker.group(1)))
+                page_line = 0
+                continue
+            page_line += 1
+            if current_page == page and page_line == target_line:
+                return raw_line
+    return None
+
+
+def corrected_line_resolves_google_candidate(corrected_text: str, row: dict[str, str]) -> bool:
+    corrected_line = corrected_line_text_for_row(corrected_text, row)
+    if corrected_line is None:
+        return False
+    tokens = corrected_token_counter(corrected_line)
+    base_token = normalize_report_token(row.get("base_token", ""))
+    alternate_token = normalize_report_token(row.get("alternate_token", ""))
+    if base_token and tokens[base_token]:
+        return False
+    if alternate_token and tokens[alternate_token]:
+        return True
+    return bool(base_token)
+
+
 def applied_from_token_counter(changes: list[dict[str, str]], adoptions: list[dict[str, str]]) -> Counter[str]:
     tokens: Counter[str] = Counter()
     for row in changes:
@@ -766,10 +801,13 @@ def possible_missed_google_reading_row(
     volume: str,
     source_file: Path,
     row: dict[str, str],
+    corrected_text: str = "",
 ) -> dict[str, str] | None:
     base_token = normalize_report_token(row.get("base_token", ""))
     alternate_token = normalize_report_token(row.get("alternate_token", ""))
     if not base_token or not alternate_token or base_token == alternate_token:
+        return None
+    if corrected_text and corrected_line_resolves_google_candidate(corrected_text, row):
         return None
     base_key = row.get("base_key", "")
     alternate_key = row.get("alternate_key", "")
@@ -1087,7 +1125,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         possible_missed_google_rows = [
             row
             for row in (
-                possible_missed_google_reading_row(spec.display, unresolved_path, source)
+                possible_missed_google_reading_row(spec.display, unresolved_path, source, corrected_text)
                 for source in unresolved
             )
             if row is not None

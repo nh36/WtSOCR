@@ -74,6 +74,8 @@ promote	madhuracärumaijusvarah	madhuracārumaijusvarah	4	safe_char_map,translit
 promote	Madhyamakjävatära	Madhyamakjāvatāra	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:733:112
 promote	Madhyamakävatäratikä	Madhyamakāvatāratikā	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:848:156
 promote	Madhyamika-Mahäcärya	Madhyamika-Mahācārya	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:736:21
+promote	Mahavyutpatti	Mahāvyutpatti	4	google_unresolved_sanskrit_title,mvy_context	wts_1_34:6:16
+promote	Mahävyutpatti	Mahāvyutpatti	4	google_unresolved_sanskrit_title,mvy_context	wts_1_34:6:19;wts_1_34:10:58;wts_1_34:17:19
 promote	mahäsattvah	mahāsattvah	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:198:46
 promote	Mädhyamika-Kommentar	Mādhyamika-Kommentar	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:123:61
 promote	Mädhyamika-Svätantrika	Mādhyamika-Svātantrika	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:608:40
@@ -83,6 +85,7 @@ promote	Mätsaryaki	Mātsaryaki	4	safe_char_map,translit_only,singleton_safe_cha
 promote	naddhahastapädah	naddhahastapādah	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:1288:82
 promote	nidhyäyatı	nidhyāyati	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:536:70
 promote	niväsänusmrtijnänabalam	nivāsānusmrtijnānabalam	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:746:220
+promote	Nyayabindutika	Nyāyabinduṭīkā	4	google_unresolved_sanskrit_title,title_context	wts_1_34:17:27
 promote	nänäbuddhaksetrasamnipatitäh	nānābuddhaksetrasamnipatitāh	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:175:58
 promote	nänätvakäya	nānātvakāya	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_1_34:1109:4
 promote	nänätvasamjnä	nānātvasamjnā	4	safe_char_map,translit_only,singleton_safe_char_map_promote	wts_35_51:158:30
