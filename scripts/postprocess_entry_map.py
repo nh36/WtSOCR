@@ -256,6 +256,19 @@ SANSKRIT_GOOGLE_TITLE_CONTEXT_RE = re.compile(
     r"rgya cher 'grel)(?!\w)",
     re.IGNORECASE,
 )
+SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG = "prajnaparamita_sutra_full_title_normalization"
+SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON = "sanskrit_prajnaparamita_sutra_title_allowlist"
+SANSKRIT_PRAJNAPARAMITA_TITLE_CONTEXT_RE = re.compile(
+    r"(?:"
+    r"Praj(?:n|ñ|nap)[aā]p[aā]ramit[aā](?:s[uū]tra|s[iī]itra|s[ūu]rtra|s[āa]tra|fs[ūu]tras?)"
+    r"|praj(?:n|ñ)[aā]p[aā]ramit[aā](?:s[uū]tra|s[iī]itra|s[āa]tra|fs[ūu]tras?)"
+    r"|Hunderttausender-Praj(?:n|ñ)[aā]p[aā]ramit[aā]"
+    r"|[SŚ]atas[aā]hasrik[aā]praj(?:n|ñ)[aā]p[aā]ramit[aā]"
+    r"|Acavim[śs]atikasahasrik"
+    r"|Debm\s+\d+|Nel\s+\d+|1SK|ISK|Lesung"
+    r")",
+    re.IGNORECASE,
+)
 SANSKRIT_ISVARA_FAMILY_REASON = "sanskrit_isvara_family_recovery"
 SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES = {
     "IS$varas": "Īśvaras",
@@ -643,6 +656,14 @@ SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_ev
 SANSKRIT_GOOGLE_TITLE_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence(
     SANSKRIT_PROMOTED_OVERRIDES_PATH,
     "google_unresolved_sanskrit_title",
+)
+SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG,
+)
+SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG,
 )
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
@@ -6876,6 +6897,56 @@ def google_title_override_allowed(
     )
 
 
+def line_has_prajnaparamita_title_override_context(
+    token: str,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+) -> bool:
+    """Gate exact Prajnaparamita-sutra full-title promotions to reviewed title contexts."""
+    del token, context_score
+    return bool(
+        SANSKRIT_PRAJNAPARAMITA_TITLE_CONTEXT_RE.search(line_text)
+        or SANSKRIT_PRAJNAPARAMITA_TITLE_CONTEXT_RE.search(context_window)
+    )
+
+
+def prajnaparamita_title_override_location_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+) -> bool:
+    token_key = unicodedata.normalize("NFC", token).lower()
+    locations = SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_LOCATIONS.get(token_key)
+    if not locations:
+        return False
+    label = normalized_override_volume_label(volume_label)
+    return (label, page, line) in locations
+
+
+def prajnaparamita_title_override_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+) -> bool:
+    return prajnaparamita_title_override_location_allowed(
+        token,
+        volume_label,
+        page,
+        line,
+    ) and line_has_prajnaparamita_title_override_context(
+        token,
+        line_text,
+        context_window,
+        context_score,
+    )
+
+
 def sanskrit_isvara_family_rewrite(token: str, line_text: str, zone: str) -> str | None:
     replacement = SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES.get(token)
     if replacement is None:
@@ -7161,8 +7232,12 @@ def apply_sanskrit_normalization(
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
                 isvara_rewrite = sanskrit_isvara_family_rewrite(tok, updated_line, zone)
-                explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok.lower())
-                explicit_override_is_google_title = tok.lower() in SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS
+                tok_key = unicodedata.normalize("NFC", tok).lower()
+                explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok_key)
+                explicit_override_is_google_title = tok_key in SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS
+                explicit_override_is_prajnaparamita_title = (
+                    tok_key in SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_KEYS
+                )
                 if (
                     isvara_rewrite is None
                     and explicit_override is None
@@ -7206,12 +7281,23 @@ def apply_sanskrit_normalization(
                         ctx,
                     ):
                         return tok
+                    if explicit_override_is_prajnaparamita_title and not prajnaparamita_title_override_allowed(
+                        tok,
+                        label,
+                        page_idx,
+                        line_idx,
+                        updated_line,
+                        context_window,
+                        ctx,
+                    ):
+                        return tok
                     replacement, _ = apply_sanskrit_override_chain(tok)
-                    reason = (
-                        SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON
-                        if explicit_override_is_google_title
-                        else "sanskrit_high_freq_allowlist"
-                    )
+                    if explicit_override_is_google_title:
+                        reason = SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON
+                    elif explicit_override_is_prajnaparamita_title:
+                        reason = SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON
+                    else:
+                        reason = "sanskrit_high_freq_allowlist"
 
                 if replacement == tok and safe_norm != tok:
                     # Umlaut-only rewrites need clear Sanskrit signal.
@@ -7256,6 +7342,7 @@ def apply_sanskrit_normalization(
                 auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason in {
                     "sanskrit_high_freq_allowlist",
                     SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON,
+                    SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON,
                     SANSKRIT_ISVARA_FAMILY_REASON,
                 }
                 if (

@@ -2306,6 +2306,146 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("Mahäsamnipäta", "Mahāsamnipāta", "sanskrit_google_title_allowlist"), reasons)
         self.assertNotIn(("Mahäsamäja", "Mahāsamāja", "sanskrit_google_title_allowlist"), reasons)
 
+    def test_prajnaparamita_sutra_full_title_promotions_apply_in_reviewed_context(self) -> None:
+        def make_page(lines: dict[int, str]) -> str:
+            page_lines = ["ཀ་ ka"]
+            for idx in range(2, max(lines) + 1):
+                page_lines.append(lines.get(idx, f"filler {idx}"))
+            return "\n".join(page_lines)
+
+        page444 = make_page(
+            {
+                10: "Satasāhasrikāprajnāpāramitā-Lesung bereit-",
+                14: "Prajnāpāramitāsūtra, das der Vater für Glin",
+                80: "Satasāhasrikāprajnāpāramitāsātra.",
+                82: '"Prajnāpāramitāsūtra" (Debm 546); ne',
+                85: "Hunderttausender-Prajnāpāramitāsūrtra, die",
+            }
+        )
+        page492 = make_page({56: "Acavimśatikasahasrikä[prajnāpāramitāsūtra]"})
+        merged_text = "\f".join(["ཀ་ ka", *[""] * 442, page444, *[""] * 47, page492])
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_8_b")
+
+        self.assertIn("Śatasāhasrikāprajñāpāramitā-Lesung bereit-", corrected)
+        self.assertIn("Prajñāpāramitāsūtra, das der Vater für Glin", corrected)
+        self.assertIn("Śatasāhasrikāprajñāpāramitāsūtra.", corrected)
+        self.assertIn('"Prajñāpāramitāsūtra" (Debm 546); ne', corrected)
+        self.assertIn("Hunderttausender-Prajñāpāramitāsūtra, die", corrected)
+        self.assertIn("Acavimśatikasahasrikä[prajñāpāramitāsūtra]", corrected)
+
+        title_changes = [
+            row for row in changes if row["reason"] == "sanskrit_prajnaparamita_sutra_title_allowlist"
+        ]
+        self.assertEqual(
+            {("444", "10"), ("444", "14"), ("444", "80"), ("444", "82"), ("444", "85"), ("492", "56")},
+            {(row["page"], row["line"]) for row in title_changes},
+        )
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            (
+                "Hunderttausender-Prajnāpāramitāsūrtra",
+                "Hunderttausender-Prajñāpāramitāsūtra",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+        self.assertIn(
+            (
+                "Satasāhasrikāprajnāpāramitāsātra",
+                "Śatasāhasrikāprajñāpāramitāsūtra",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+
+        page699 = make_page({76: '"tragenden des Prajnāpāramitāfsūtras] ein"'})
+        _, corrected, changes = self.run_postprocess_fixture(
+            "\f".join(["ཀ་ ka", *[""] * 697, page699]),
+            label="wts_1_34",
+        )
+        self.assertIn('"tragenden des Prajñāpāramitāsūtras] ein"', corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            (
+                "Prajnāpāramitāfsūtras",
+                "Prajñāpāramitāsūtras",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+
+        page1031 = make_page({69: '"hasrikä[prajnāparamitāsiitra]" (Nel 12a5); lo'})
+        _, corrected, changes = self.run_postprocess_fixture(
+            "\f".join(["ཀ་ ka", *[""] * 1029, page1031]),
+            label="wts_35_51",
+        )
+        self.assertIn('"hasrikä[prajñāpāramitāsūtra]" (Nel 12a5); lo', corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            (
+                "prajnāparamitāsiitra",
+                "prajñāpāramitāsūtra",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+
+        page129 = make_page({20: "es im Prajnapāramitāsiitra, es seien Kopf-"})
+        _, corrected, changes = self.run_postprocess_fixture(
+            "\f".join(["ཀ་ ka", *[""] * 127, page129]),
+            label="wts_9_m",
+        )
+        self.assertIn("es im Prajñāpāramitāsūtra, es seien Kopf-", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            (
+                "Prajnapāramitāsiitra",
+                "Prajñāpāramitāsūtra",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+
+    def test_prajnaparamita_sutra_full_title_promotions_need_reviewed_context(self) -> None:
+        merged_text = (
+            "Deutscher Satz mit jnana, Satasāhasrikā, Prajnāpāramitāsūtra und Prajnāpāramitāfsūtras.\n"
+            "Unverwandte Zeichenfolgen wie Prajnapāramitāsiitrax, siitra, sūrtra, sātra und fsūtras bleiben.\n"
+            "\f" * 443
+            + "ཀ་ ka\n"
+            + "\n".join(f"filler {idx}" for idx in range(2, 86))
+            + "\nHunderttausender-Prajnāpāramitāsūrtra mit Titelkontext auf falscher Seite.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_8_b")
+
+        self.assertIn("jnana, Satasāhasrikā, Prajnāpāramitāsūtra", corrected)
+        self.assertIn("Prajnāpāramitāfsūtras", corrected)
+        self.assertIn("Prajnapāramitāsiitrax", corrected)
+        self.assertIn("siitra, sūrtra, sātra und fsūtras", corrected)
+        self.assertIn("Hunderttausender-Prajnāpāramitāsūrtra mit Titelkontext auf falscher Seite", corrected)
+        self.assertNotIn("jñana", corrected)
+        self.assertNotIn("Śatasāhasrikā, Prajñāpāramitāsūtra", corrected)
+        self.assertNotIn("Prajñāpāramitāsūtras", corrected)
+        self.assertNotIn("Prajñāpāramitāsiitrax", corrected)
+        self.assertNotIn("Hunderttausender-Prajñāpāramitāsūtra", corrected)
+        self.assertNotIn("sūtra und sūtras", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(
+            (
+                "Hunderttausender-Prajnāpāramitāsūrtra",
+                "Hunderttausender-Prajñāpāramitāsūtra",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+        self.assertNotIn(
+            (
+                "Prajnāpāramitāfsūtras",
+                "Prajñāpāramitāsūtras",
+                "sanskrit_prajnaparamita_sutra_title_allowlist",
+            ),
+            reasons,
+        )
+
     def test_reviewed_sanskrit_promotions_do_not_broaden_confusables(self) -> None:
         merged_text = "སྐད skt. Männer Größe ch'a Irāgheit śrävaka\n"
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
