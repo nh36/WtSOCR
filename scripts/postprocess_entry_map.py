@@ -251,6 +251,7 @@ SANSKRIT_LEX_CUE_RE = re.compile(r"\bLex\.", re.IGNORECASE)
 SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON = "sanskrit_google_title_allowlist"
 SANSKRIT_GOOGLE_TITLE_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:Mvy|sGra|Dagy|Lex\.|Ed\.|Exzerpte|W[oö]rterbuchprojekt|Dharmottara|"
+    r"sahasrikä|sāhasrikā|1SK|ISK|Toh|Liy[1l]|Abschnitte erhalten|"
     r"Rigs pa'i thigs pa'i|Bye brag tu rtogs par byed pa|rtogs par byed pa|"
     r"rgya cher 'grel)(?!\w)",
     re.IGNORECASE,

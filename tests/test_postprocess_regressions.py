@@ -352,6 +352,94 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIsNotNone(ambiguous)
         self.assertIsNone(resolved)
 
+    def test_google_sanskrit_candidate_miner_scores_sanskrit_diacritic_context(self) -> None:
+        report_module = self.load_report_module()
+        source = {
+            "page": "12",
+            "line": "8",
+            "token_index": "4",
+            "base_token": "Prajnaparamita",
+            "alternate_token": "Prajñāpāramitā",
+            "base_key": "prajnaparamita",
+            "alternate_key": "prajnaparamita",
+            "reason": "token_diff",
+            "base_line": "Skt. title / Prajnaparamita in the bibliographic list",
+            "alternate_line": "Skt. title / Prajñāpāramitā in the bibliographic list",
+            "alignment_method": "token",
+        }
+
+        candidate = report_module.google_sanskrit_candidate_reading_row(
+            "fixture",
+            Path("unresolved.tsv"),
+            source,
+            "Skt. title / Prajnaparamita in the bibliographic list",
+        )
+
+        self.assertIsNotNone(candidate)
+        self.assertEqual("exact_promotion_candidate", candidate["suggested_action"])
+        self.assertGreaterEqual(int(candidate["candidate_score"]), 8)
+        self.assertIn("Sanskrit", candidate["score_explanation"])
+
+    def test_google_sanskrit_candidate_miner_excludes_noise(self) -> None:
+        report_module = self.load_report_module()
+        german_row = {
+            "base_token": "Mädchen",
+            "alternate_token": "Mādchen",
+            "base_key": "madchen",
+            "alternate_key": "madchen",
+            "base_line": "Dies ist ein deutscher Satz mit Mädchen.",
+            "alternate_line": "Dies ist ein deutscher Satz mit Mādchen.",
+        }
+        wylie_row = {
+            "base_token": "mkha'i",
+            "alternate_token": "mkhai",
+            "base_key": "mkhai",
+            "alternate_key": "mkhai",
+            "base_line": "Tibetan Wylie mkha'i in a gloss.",
+            "alternate_line": "Tibetan Wylie mkhai in a gloss.",
+        }
+        roman_row = {
+            "base_token": "XII",
+            "alternate_token": "XĪĪ",
+            "base_key": "xii",
+            "alternate_key": "xii",
+            "base_line": "Volume XII.",
+            "alternate_line": "Volume XĪĪ.",
+        }
+
+        for source in (german_row, wylie_row, roman_row):
+            candidate = report_module.google_sanskrit_candidate_reading_row(
+                "fixture",
+                Path("unresolved.tsv"),
+                source,
+                "",
+            )
+            if candidate is not None:
+                self.assertNotEqual("exact_promotion_candidate", candidate["suggested_action"])
+
+    def test_possible_missed_google_uses_general_sanskrit_candidate_miner(self) -> None:
+        report_module = self.load_report_module()
+        source = {
+            "page": "12",
+            "line": "8",
+            "base_token": "Prajnaparamita",
+            "alternate_token": "Prajñāpāramitā",
+            "base_key": "prajnaparamita",
+            "alternate_key": "prajnaparamita",
+            "base_line": "Skt. title / Prajnaparamita",
+            "alternate_line": "Skt. title / Prajñāpāramitā",
+        }
+
+        candidate = report_module.possible_missed_google_reading_row(
+            "fixture",
+            Path("unresolved.tsv"),
+            source,
+            "Skt. title / Prajnaparamita",
+        )
+
+        self.assertIsNotNone(candidate)
+        self.assertEqual("possible_missed_good_reading", candidate["bucket"])
+
     def run_postprocess_fixture(
         self,
         merged_text: str,
@@ -2146,6 +2234,77 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn(("Mahavyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
         self.assertNotIn(("Mahävyutpatti", "Mahāvyutpatti", "sanskrit_google_title_allowlist"), reasons)
         self.assertNotIn(("Nyayabindutika", "Nyāyabinduṭīkā", "sanskrit_google_title_allowlist"), reasons)
+
+    def test_google_supported_sanskrit_candidate_title_promotions_apply_in_reviewed_context(self) -> None:
+        page164 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 19)]
+        page164.append('"sahasrikä Prajiapäramitä" (1SK 1: 215,1,6);')
+        page177 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 78)]
+        page177.append("653, 1062) bzw. Mahäsamnipäta (vgl. Toh")
+        page177.extend(f"filler {idx}" for idx in range(79, 83))
+        page177.append('"Mahäsamnipäta gelesen hat" (Liyl 172b3);')
+        page177.extend(f"filler {idx}" for idx in range(84, 90))
+        page177.append('"Mahäsamäja sind neun Abschnitte erhalten"')
+        merged_text = "\f".join(
+            [
+                "ཀ་ ka",
+                *[""] * 162,
+                "\n".join(page164),
+                *[""] * 12,
+                "\n".join(page177),
+            ]
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_35_51")
+
+        self.assertIn('"sahasrikä Prajñāpāramitā" (1SK 1: 215,1,6);', corrected)
+        self.assertIn("653, 1062) bzw. Mahāsamnipāta (vgl. Toh", corrected)
+        self.assertIn('"Mahāsamnipāta gelesen hat" (Liyl 172b3);', corrected)
+        self.assertIn('"Mahāsamāja sind neun Abschnitte erhalten"', corrected)
+        google_title_changes = [
+            row for row in changes if row["reason"] == "sanskrit_google_title_allowlist"
+        ]
+        self.assertEqual(
+            {("164", "19"), ("177", "78"), ("177", "83"), ("177", "90")},
+            {(row["page"], row["line"]) for row in google_title_changes},
+        )
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("Prajiapäramitä", "Prajñāpāramitā", "sanskrit_google_title_allowlist"), reasons)
+        self.assertIn(("Mahäsamnipäta", "Mahāsamnipāta", "sanskrit_google_title_allowlist"), reasons)
+        self.assertIn(("Mahäsamäja", "Mahāsamāja", "sanskrit_google_title_allowlist"), reasons)
+
+    def test_google_supported_sanskrit_candidate_title_promotions_need_reviewed_context(self) -> None:
+        page164 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 19)]
+        page164.append("Dies ist deutscher Fließtext mit Prajiapäramitä ohne Titelkontext.")
+        page177 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 78)]
+        page177.append("Deutscher Satz mit Mahäsamnipäta und Mahäsamäja ohne Titelkontext.")
+        page178 = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 78)]
+        page178.append("653, 1062) bzw. Mahäsamnipäta (vgl. Toh")
+        merged_text = "\f".join(
+            [
+                "ཀ་ ka",
+                *[""] * 162,
+                "\n".join(page164),
+                *[""] * 12,
+                "\n".join(page177),
+                "\n".join(page178),
+                "སྐད skt. jnana bleibt jnana; Mädchen und Mahärger bleiben unverändert.",
+            ]
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_35_51")
+
+        self.assertIn("Prajiapäramitä ohne Titelkontext", corrected)
+        self.assertIn("Mahäsamnipäta und Mahäsamäja ohne Titelkontext", corrected)
+        self.assertIn("Mahäsamnipäta (vgl. Toh", corrected)
+        self.assertIn("jnana bleibt jnana", corrected)
+        self.assertIn("Mädchen und Mahärger", corrected)
+        self.assertNotIn("Prajñāpāramitā", corrected)
+        self.assertNotIn("Mahāsamnipāta", corrected)
+        self.assertNotIn("Mahāsamāja", corrected)
+        self.assertNotIn("jñana", corrected)
+        self.assertNotIn("Mādchen", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("Prajiapäramitä", "Prajñāpāramitā", "sanskrit_google_title_allowlist"), reasons)
+        self.assertNotIn(("Mahäsamnipäta", "Mahāsamnipāta", "sanskrit_google_title_allowlist"), reasons)
+        self.assertNotIn(("Mahäsamäja", "Mahāsamāja", "sanskrit_google_title_allowlist"), reasons)
 
     def test_reviewed_sanskrit_promotions_do_not_broaden_confusables(self) -> None:
         merged_text = "སྐད skt. Männer Größe ch'a Irāgheit śrävaka\n"

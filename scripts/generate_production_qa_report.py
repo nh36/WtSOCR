@@ -195,6 +195,58 @@ PAGE_MARKER_RE = re.compile(
 DIACRITIC_OR_CONFUSABLE_RE = re.compile(
     r"[āīūṛṝḷṅñṇṭḍśṣḥṃṁĀĪŪṚṜḶṄÑṆṬḌŚṢḤṂ$ı]"
 )
+SANSKRIT_DIACRITIC_CHARS = set("āīūṛṝḷṅñṇṭḍśṣḥṃṁĀĪŪṚṜḶṄÑṆṬḌŚṢḤṂ")
+SANSKRIT_DEGRADATION_CHARS = set("äã$ıÄÃ")
+SANSKRIT_CONTEXT_CUE_RE = re.compile(
+    r"(?:\b(?:skt\.?|sanskrit|mvy|lex\.?|dagy|sgra|title|s[ūu]tra|siitra|"
+    r"śāstra|śastra|shastra|t[īi]k[āa]|tika|vyutpatti|ny[āa]ya|"
+    r"praj[nñ]?|jñ[āa]|jn[āa]|vajra|bodhi|dharma|mah[āaä]|p[āaä]ram|"
+    r"mantra|tantra|ārya|arya|nāg|näg|garbha)\b|[/：:])",
+    re.IGNORECASE,
+)
+ROMAN_NUMERAL_TOKEN_RE = re.compile(r"(?i)^[ivxlcdm]+$")
+ALL_CAPS_SIGLUM_RE = re.compile(r"^[A-ZÄÖÜŚṢṬḌṆṄÑČŠŽ]{2,16}\.?$")
+TIBETAN_WYLIE_APOSTROPHE_RE = re.compile(r"(?i)^[a-z]+(?:'[a-z]+)+$")
+SANSKRIT_TOKEN_HINT_RE = re.compile(
+    r"(?:praj|pāram|päram|param|jñ|jn|mah[āaä]|vyutpatti|ny[āa]ya|"
+    r"ṭīk|tik|dharm|k[īi]rti|śr[āaä]v|sr[āaä]v|ś[āaä]str|s[ūu]tr|"
+    r"bodhi|vajra|garbha|nāg|näg|taks|takṣ|samnip|samnipa|saptotsad|"
+    r"d[ūu]ram|acala|par[āaä]kar|vṛnd|vrnd|tamal|apad|sahasrik)",
+    re.IGNORECASE,
+)
+TIBETAN_WYLIE_CANDIDATE_KEYS = {
+    "dan",
+    "dani",
+    "dari",
+    "den",
+    "dnul",
+    "gispa",
+    "gnan",
+    "gnari",
+    "gnis",
+    "gnispa",
+    "granas",
+    "graris",
+    "gtsan",
+    "gtsari",
+    "han",
+    "in",
+    "kyan",
+    "kyani",
+    "mkhai",
+    "nan",
+    "nani",
+    "nas",
+    "nin",
+    "nl",
+    "sam",
+    "sel",
+    "ses",
+    "sie",
+    "sin",
+    "snam",
+    "zin",
+}
 
 
 @dataclass(frozen=True)
@@ -797,7 +849,154 @@ def low_confidence_google_adoption_row(
     return google_review_row(volume, source_file, row, "low_confidence_google_adoption", "; ".join(evidence))
 
 
-def possible_missed_google_reading_row(
+def sanskrit_candidate_key(token: str) -> str:
+    folded = normalize_report_token(token).lower().translate(SANSKRIT_FAMILY_FOLD)
+    return re.sub(r"[^a-z0-9]+", "", folded)
+
+
+def levenshtein_limited(left: str, right: str, limit: int = 2) -> int:
+    if left == right:
+        return 0
+    if abs(len(left) - len(right)) > limit:
+        return limit + 1
+    previous = list(range(len(right) + 1))
+    for i, left_char in enumerate(left, 1):
+        current = [i]
+        row_min = i
+        for j, right_char in enumerate(right, 1):
+            cost = 0 if left_char == right_char else 1
+            value = min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + cost)
+            current.append(value)
+            row_min = min(row_min, value)
+        if row_min > limit:
+            return limit + 1
+        previous = current
+    return previous[-1]
+
+
+def google_sanskrit_keys_compatible(row: dict[str, str], base_token: str, alternate_token: str) -> tuple[bool, str]:
+    base_key = (row.get("base_key", "") or "").strip()
+    alternate_key = (row.get("alternate_key", "") or "").strip()
+    if base_key and alternate_key and base_key == alternate_key:
+        return True, "report keys match"
+
+    base_safe_key = sanskrit_candidate_key(base_key or base_token)
+    alternate_safe_key = sanskrit_candidate_key(alternate_key or alternate_token)
+    if base_safe_key and alternate_safe_key and base_safe_key == alternate_safe_key:
+        return True, "Sanskrit-safe keys match"
+    if base_safe_key and alternate_safe_key and levenshtein_limited(base_safe_key, alternate_safe_key, 2) <= 2:
+        return True, "Sanskrit-safe keys are within edit distance 2"
+    return False, "keys differ after Sanskrit-safe normalisation"
+
+
+def token_has_sanskrit_diacritic(token: str) -> bool:
+    return any(char in SANSKRIT_DIACRITIC_CHARS for char in token)
+
+
+def token_has_sanskrit_degradation(token: str) -> bool:
+    return any(char in SANSKRIT_DEGRADATION_CHARS for char in token)
+
+
+def sanskrit_token_quality(token: str) -> int:
+    lowered = token.lower()
+    score = 0
+    score += sum(2 for char in token if char in SANSKRIT_DIACRITIC_CHARS)
+    if "jñ" in lowered:
+        score += 3
+    score -= sum(2 for char in token if char in SANSKRIT_DEGRADATION_CHARS)
+    if "$" in token:
+        score -= 3
+    if ALL_CAPS_SIGLUM_RE.match(token) or ROMAN_NUMERAL_TOKEN_RE.match(token):
+        score -= 4
+    return score
+
+
+def alternate_repairs_sanskrit_damage(base_token: str, alternate_token: str) -> bool:
+    base_lower = base_token.lower()
+    alternate_lower = alternate_token.lower()
+    if "jn" in base_lower and "jñ" in alternate_lower:
+        return True
+    if token_has_sanskrit_degradation(base_token) and token_has_sanskrit_diacritic(alternate_token):
+        return True
+    if sanskrit_candidate_key(base_token) == sanskrit_candidate_key(alternate_token) and token_has_sanskrit_diacritic(
+        alternate_token
+    ):
+        return True
+    return False
+
+
+def token_has_sanskrit_candidate_hint(token: str) -> bool:
+    return bool(SANSKRIT_TOKEN_HINT_RE.search(token))
+
+
+def looks_like_tibetan_wylie_candidate(base_token: str, alternate_token: str) -> bool:
+    tokens = [base_token, alternate_token]
+    if any(TIBETAN_WYLIE_APOSTROPHE_RE.match(token) for token in tokens):
+        return True
+    if any(sanskrit_candidate_key(token) in TIBETAN_WYLIE_CANDIDATE_KEYS for token in tokens):
+        return True
+    if any("-" in token for token in tokens) and not any(token_has_sanskrit_candidate_hint(token) for token in tokens):
+        return True
+    return False
+
+
+def looks_like_bibliographic_name_noise(base_token: str, alternate_token: str) -> bool:
+    tokens = [base_token, alternate_token]
+    if any(ALL_CAPS_SIGLUM_RE.match(token) for token in tokens):
+        return True
+    if any(re.search(r"[ČŠŽčšž]", token) for token in tokens) and any(
+        token.replace(".", "").isupper() and len(token.replace(".", "")) >= 4 for token in tokens
+    ):
+        return True
+    return False
+
+
+def looks_like_short_bibliographic_abbreviation(token: str, row: dict[str, str]) -> bool:
+    token_s = normalize_report_token(token)
+    if not token_s or not token_s[0].isupper() or len(token_s) > 5:
+        return False
+    context = f"{row.get('base_line', '')} {row.get('alternate_line', '')}"
+    if re.search(r"\(\s*[^)]*\d+\s*,\s*\d+", context):
+        return True
+    return bool(re.search(r"\b(?:vgl\.|ed\.|lex\.|p\.|pp\.)\b", context, re.IGNORECASE))
+
+
+def has_sanskrit_candidate_context(row: dict[str, str], base_token: str, alternate_token: str) -> bool:
+    context = " ".join(
+        [
+            row.get("reason", ""),
+            row.get("base_line", ""),
+            row.get("alternate_line", ""),
+            base_token,
+            alternate_token,
+        ]
+    )
+    return bool(SANSKRIT_CONTEXT_CUE_RE.search(context) or looks_like_sanskrit_or_indic(base_token, alternate_token, context))
+
+
+def google_sanskrit_candidate_reject_reason(base_token: str, alternate_token: str, row: dict[str, str]) -> str:
+    context = " ".join([row.get("base_line", ""), row.get("alternate_line", "")])
+    contextual_sanskrit = has_sanskrit_candidate_context(row, base_token, alternate_token)
+    if ROMAN_NUMERAL_TOKEN_RE.match(base_token) or ROMAN_NUMERAL_TOKEN_RE.match(alternate_token):
+        return "Roman numeral or section marker"
+    if looks_like_bibliographic_name_noise(base_token, alternate_token):
+        return "bibliographic name or all-caps siglum"
+    if TIBETAN_WYLIE_APOSTROPHE_RE.match(base_token) or TIBETAN_WYLIE_APOSTROPHE_RE.match(alternate_token):
+        return "Tibetan/Wylie apostrophe token"
+    if looks_like_tibetan_wylie_candidate(base_token, alternate_token):
+        return "Tibetan/Wylie token pattern"
+    if looks_like_citation_or_siglum(base_token, row.get("reason", ""), context) and not contextual_sanskrit:
+        return "citation or siglum context"
+    if looks_like_german_or_prose(base_token, row.get("reason", ""), context) and not contextual_sanskrit:
+        return "German/prose token"
+    return ""
+
+
+def looks_like_google_sanskrit_candidate_noise(base_token: str, alternate_token: str, row: dict[str, str]) -> bool:
+    return bool(google_sanskrit_candidate_reject_reason(base_token, alternate_token, row))
+
+
+def google_sanskrit_candidate_reading_row(
     volume: str,
     source_file: Path,
     row: dict[str, str],
@@ -809,33 +1008,97 @@ def possible_missed_google_reading_row(
         return None
     if corrected_text and corrected_line_resolves_google_candidate(corrected_text, row):
         return None
-    base_key = row.get("base_key", "")
-    alternate_key = row.get("alternate_key", "")
-    if base_key and alternate_key and base_key != alternate_key:
+
+    keys_compatible, key_evidence = google_sanskrit_keys_compatible(row, base_token, alternate_token)
+    if not keys_compatible:
         return None
-    combined = " ".join(
-        [
-            base_token,
-            alternate_token,
-            row.get("base_line", ""),
-            row.get("alternate_line", ""),
-        ]
-    ).lower()
-    known_review_families = (
-        "mahavyutpatti",
-        "mahävyutpatti",
-        "mahāvyutpatti",
-        "nyayabindutika",
-        "nyāyabinduṭīkā",
-    )
-    if not any(family in combined for family in known_review_families):
+
+    alternate_has_diacritic = token_has_sanskrit_diacritic(alternate_token)
+    base_has_degradation = token_has_sanskrit_degradation(base_token)
+    repairs_damage = alternate_repairs_sanskrit_damage(base_token, alternate_token)
+    context_cue = has_sanskrit_candidate_context(row, base_token, alternate_token)
+    alternate_quality = sanskrit_token_quality(alternate_token)
+    base_quality = sanskrit_token_quality(base_token)
+    if not (alternate_has_diacritic or repairs_damage):
+        return None
+    if alternate_quality <= base_quality:
+        return None
+    if not (context_cue or base_has_degradation):
+        return None
+
+    score = 0
+    explanation: list[str] = []
+    score += 2
+    explanation.append(key_evidence)
+    if alternate_has_diacritic:
+        score += 3
+        explanation.append("alternate has Sanskrit diacritics")
+    if alternate_quality > base_quality:
+        score += 2
+        explanation.append(f"alternate quality {alternate_quality} > base quality {base_quality}")
+    if context_cue:
+        score += 2
+        explanation.append("Sanskrit/title/bibliographic context cue")
+    if base_has_degradation:
+        score += 1
+        explanation.append("base has likely OCR degradation")
+    if "jn" in base_token.lower() and "jñ" in alternate_token.lower():
+        score += 2
+        explanation.append("alternate repairs jn to jñ")
+    if repairs_damage:
+        score += 1
+        explanation.append("alternate repairs Sanskrit-like OCR damage")
+
+    reject_reason = google_sanskrit_candidate_reject_reason(base_token, alternate_token, row)
+    clear_sanskrit_token = token_has_sanskrit_candidate_hint(base_token) or token_has_sanskrit_candidate_hint(alternate_token)
+    short_bib_abbrev = looks_like_short_bibliographic_abbreviation(
+        base_token, row
+    ) or looks_like_short_bibliographic_abbreviation(alternate_token, row)
+    if reject_reason:
+        suggested_action = "reject"
+        explanation.append(f"rejected: {reject_reason}")
+    elif short_bib_abbrev:
+        suggested_action = "review_only"
+        explanation.append("short bibliographic abbreviation needs source review")
+    elif score >= 8 and context_cue and clear_sanskrit_token:
+        suggested_action = "exact_promotion_candidate"
+    else:
+        suggested_action = "review_only"
+    return {
+        "volume": volume,
+        "source_file": str(source_file),
+        "page": row.get("page", ""),
+        "line": row.get("line", ""),
+        "token_index": row.get("token_index", ""),
+        "base_token": row.get("base_token", ""),
+        "alternate_token": row.get("alternate_token", ""),
+        "base_key": row.get("base_key", ""),
+        "alternate_key": row.get("alternate_key", ""),
+        "reason": row.get("reason", ""),
+        "base_line": row.get("base_line", ""),
+        "alternate_line": row.get("alternate_line", ""),
+        "alignment_method": row.get("alignment_method", ""),
+        "candidate_score": str(score),
+        "score_explanation": "; ".join(explanation),
+        "suggested_action": suggested_action,
+    }
+
+
+def possible_missed_google_reading_row(
+    volume: str,
+    source_file: Path,
+    row: dict[str, str],
+    corrected_text: str = "",
+) -> dict[str, str] | None:
+    candidate = google_sanskrit_candidate_reading_row(volume, source_file, row, corrected_text)
+    if candidate is None or candidate.get("suggested_action") != "exact_promotion_candidate":
         return None
     return google_review_row(
         volume,
         source_file,
         row,
         "possible_missed_good_reading",
-        "known unresolved Sanskrit-family candidate; review source before promotion",
+        candidate["score_explanation"],
     )
 
 
@@ -1048,6 +1311,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     all_sanskrit_review_rows: list[dict[str, str]] = []
     all_low_google_adoptions: list[dict[str, str]] = []
     all_possible_missed_google_rows: list[dict[str, str]] = []
+    all_google_sanskrit_candidate_rows: list[dict[str, str]] = []
     report: list[str] = [
         "# Production Release-Candidate OCR QA Report",
         "",
@@ -1130,6 +1394,14 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             )
             if row is not None
         ]
+        google_sanskrit_candidate_rows = [
+            row
+            for row in (
+                google_sanskrit_candidate_reading_row(spec.display, unresolved_path, source, corrected_text)
+                for source in unresolved
+            )
+            if row is not None
+        ]
         suspicious = collect_suspicious_tokens(
             spec.display,
             validator_path,
@@ -1151,6 +1423,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         all_sanskrit_review_rows.extend(sanskrit_review_rows)
         all_low_google_adoptions.extend(low_google_adoptions)
         all_possible_missed_google_rows.extend(possible_missed_google_rows)
+        all_google_sanskrit_candidate_rows.extend(google_sanskrit_candidate_rows)
 
         report.extend(
             [
@@ -1184,6 +1457,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     ["sanskrit_review_suggestions", len(sanskrit_reviews)],
                     ["low_confidence_google_adoptions", len(low_google_adoptions)],
                     ["possible_missed_google_readings", len(possible_missed_google_rows)],
+                    ["google_sanskrit_candidate_readings", len(google_sanskrit_candidate_rows)],
                 ],
             )
         )
@@ -1223,9 +1497,40 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     ["sanskrit_review_suggestions", len(sanskrit_review_rows)],
                     ["low_confidence_google_adoptions", len(low_google_adoptions)],
                     ["possible_missed_google_readings", len(possible_missed_google_rows)],
+                    ["google_sanskrit_candidate_readings", len(google_sanskrit_candidate_rows)],
                 ],
             )
         )
+        if google_sanskrit_candidate_rows:
+            report.extend(["", "### Top Google-Supported Sanskrit Candidate Readings", ""])
+            report.extend(
+                md_table(
+                    [
+                        "action",
+                        "score",
+                        "page",
+                        "line",
+                        "base",
+                        "alternate",
+                        "score explanation",
+                    ],
+                    [
+                        [
+                            row.get("suggested_action", ""),
+                            row.get("candidate_score", ""),
+                            row.get("page", ""),
+                            row.get("line", ""),
+                            truncate(row.get("base_token", ""), 28),
+                            truncate(row.get("alternate_token", ""), 28),
+                            truncate(row.get("score_explanation", ""), 90),
+                        ]
+                        for row in sorted(
+                            google_sanskrit_candidate_rows,
+                            key=lambda item: -safe_int(item.get("candidate_score", "0")),
+                        )[:10]
+                    ],
+                )
+            )
         report.extend(["", "### Live Remaining Evidence Buckets", ""])
         report.extend(
             md_table(
@@ -1510,6 +1815,39 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     ]
     write_tsv(output_dir / "low_confidence_google_adoptions.tsv", all_low_google_adoptions, google_review_fields)
     write_tsv(output_dir / "possible_missed_google_readings.tsv", all_possible_missed_google_rows, google_review_fields)
+    google_sanskrit_candidate_fields = [
+        "volume",
+        "source_file",
+        "page",
+        "line",
+        "token_index",
+        "base_token",
+        "alternate_token",
+        "base_key",
+        "alternate_key",
+        "reason",
+        "base_line",
+        "alternate_line",
+        "alignment_method",
+        "candidate_score",
+        "score_explanation",
+        "suggested_action",
+    ]
+    all_google_sanskrit_candidate_rows.sort(
+        key=lambda row: (
+            -(safe_int(row.get("candidate_score", "0"))),
+            row.get("suggested_action", ""),
+            row.get("volume", ""),
+            safe_int(row.get("page", "")),
+            safe_int(row.get("line", "")),
+            row.get("base_token", ""),
+        )
+    )
+    write_tsv(
+        output_dir / "google_sanskrit_candidate_readings.tsv",
+        all_google_sanskrit_candidate_rows,
+        google_sanskrit_candidate_fields,
+    )
 
     report.extend(
         [
@@ -1533,6 +1871,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'all_sanskrit_review_suggestions.tsv'}`",
             f"- `{output_dir / 'low_confidence_google_adoptions.tsv'}`",
             f"- `{output_dir / 'possible_missed_google_readings.tsv'}`",
+            f"- `{output_dir / 'google_sanskrit_candidate_readings.tsv'}`",
             f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",
             "",
@@ -1544,7 +1883,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             "2. The live suggestion field is heuristic validator/canonicalisation output, not OCR-witness evidence.",
             "3. Only Google-supported rows and clearly source-supported review-queue rows should be considered for OCR-rule promotion.",
             "4. Watchdog rows and Sanskrit review suggestions should be reviewed before promoting any family-specific rule.",
-            "5. Low-confidence Google adoptions and possible missed good Google readings are reviewer-facing diagnostics, not a reason to loosen Google adoption.",
+            "5. Low-confidence Google adoptions, possible missed good Google readings, and Google-supported Sanskrit candidates are reviewer-facing diagnostics, not a reason to loosen Google adoption.",
             "6. Stale/already-corrected rows, German/prose false positives, citations/sigla, and Sanskrit/Indic policy cases are separated from live OCR candidates.",
             "7. Any promoted text correction should remain exact, source-supported, and test-backed.",
             "",
