@@ -267,9 +267,14 @@ SANSKRIT_GOOGLE_REVIEWED_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:Mvy|sGra|Dagy|Dagv|Digv|Lex\.|skt\.?|Sanskrit|Samv|Vdlk|"
     r"Bodhisattvastufe|N[äā]ga-König|Bez\.|npr\.?|Feuergott|Praj|"
     r"sahasrik|M[äā]ra|Ahaly[äā]|mallik[äā]|tam[äā]la|[ŚS]r[äā]vakas?|"
-    r"Steuermann|fu[ßs]los)(?!\w)|[=:]",
+    r"Steuermann|fu[ßs]los|pu[ṣs]p|v[ṛr]k[ṣs]|Bl[üu]tenbaum)(?!\w)|[=:]",
     re.IGNORECASE,
 )
+SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
+    "residual_sanskrit_damage_family",
+    "residual_sutra_title_normalization",
+    "residual_visarga_term_normalization",
+}
 SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
     "curated_sanskrit_proper_name",
     "curated_sanskrit_term",
@@ -278,12 +283,15 @@ SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
     "review_queue_sanskrit_jn_family",
     "review_queue_sanskrit_proper_name",
     "review_queue_sanskrit_term",
-}
+    "reviewed_sanskrit_title",
+} | SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS
 SANSKRIT_REVIEWED_CONTEXT_ALLOWLIST_REASON = "sanskrit_reviewed_context_allowlist"
 SANSKRIT_REVIEWED_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:Mvy|Lex\.|skt\.?|Sanskrit|Dagy|sGra|Toh|Samv|"
     r"J(?:n|ñ)[aā]nagarbha|Buddha|Bodhisattva|Vai[śs]v|"
-    r"[ŚS]r[äā]va|Feuergott|Mon-ir|stobs|dh[āa]tu|skandh|bala)(?!\w)",
+    r"[ŚS]r[äā]va|Feuergott|Mon-ir|stobs|dh[āa]tu|skandh|bala|"
+    r"paryanta|m[äā]rga|sa[ṃm]jñ|v[ṛr]k[ṣs]|pu[ṣs]pa|"
+    r"Ratnak[äāuū]t|[ĀA]ryaratna)(?!\w)",
     re.IGNORECASE,
 )
 SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG = "prajnaparamita_sutra_full_title_normalization"
@@ -734,6 +742,10 @@ SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_b
 SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence_tags(
     SANSKRIT_PROMOTED_OVERRIDES_PATH,
     SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS,
+)
+SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS,
 )
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
@@ -7097,6 +7109,22 @@ def line_has_reviewed_sanskrit_override_context(
     return False
 
 
+def line_has_residual_reviewed_sanskrit_override_context(
+    token: str,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+    zone: str,
+) -> bool:
+    del token, context_window, context_score, zone
+    return bool(
+        SANSKRIT_REVIEWED_CONTEXT_RE.search(line_text)
+        or SANSKRIT_MVY_CUE_RE.search(line_text)
+        or SANSKRIT_GENERAL_CUE_RE.search(line_text)
+        or SANSKRIT_LEX_CUE_RE.search(line_text)
+    )
+
+
 def reviewed_sanskrit_override_location_allowed(
     token: str,
     volume_label: str,
@@ -7121,6 +7149,20 @@ def reviewed_sanskrit_override_allowed(
     context_score: int,
     zone: str,
 ) -> bool:
+    token_key = unicodedata.normalize("NFC", token).lower()
+    if token_key in SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_OVERRIDE_KEYS:
+        return reviewed_sanskrit_override_location_allowed(
+            token,
+            volume_label,
+            page,
+            line,
+        ) or line_has_residual_reviewed_sanskrit_override_context(
+            token,
+            line_text,
+            context_window,
+            context_score,
+            zone,
+        )
     return reviewed_sanskrit_override_location_allowed(
         token,
         volume_label,

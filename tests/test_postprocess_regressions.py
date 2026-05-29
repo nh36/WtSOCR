@@ -2573,6 +2573,7 @@ class PostprocessRegressionTests(unittest.TestCase):
                             76: 'Lex. ta ma la\'i miṅ "Bez. für tamala" (Digv).',
                         }
                     ),
+                    211: make_page({8: 'win 2 puspavrksab "Blütenbaum" (Mvy'}),
                     229: make_page({69: 'Berührungspunkt mit dem Näga" (Vdlk-M'}),
                     233: make_page({88: 'Lex. rkaṅ — = apadal "fußlos" (8925); zon'}),
                     285: make_page({17: "tausend Armeen des Mära besiegt wurden"}),
@@ -2584,6 +2585,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("Lex. tamaḥ (Mvy 4552", corrected)
         self.assertIn("tamāla, Xanthochymus pictorus", corrected)
         self.assertIn('Bez. für tamāla" (Digv).', corrected)
+        self.assertIn('win 2 puṣpavṛkṣaḥ "Blütenbaum" (Mvy', corrected)
         self.assertIn('Berührungspunkt mit dem Nāga" (Vdlk-M', corrected)
         self.assertIn('= apadaḥ "fußlos" (8925);', corrected)
         self.assertIn("tausend Armeen des Māra besiegt wurden", corrected)
@@ -2593,6 +2595,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             ("tamab", "tamaḥ"),
             ("tamäla", "tamāla"),
             ("tamala", "tamāla"),
+            ("puspavrksab", "puṣpavṛkṣaḥ"),
             ("Näga", "Nāga"),
             ("apadal", "apadaḥ"),
             ("Mära", "Māra"),
@@ -2602,7 +2605,7 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_google_reviewed_sanskrit_large_batch_promotions_need_reviewed_location(self) -> None:
         merged_text = (
             "Lex. saptotsadah (Mvy 250), Dharmakirti: Nyaya, sahasrikä, Taksaka, "
-            "tamala, Näga, Srävakas und paräkarsayati stehen hier auf unreviewed page/line.\n"
+            "tamala, Näga, Srävakas, puspavrksab und paräkarsayati stehen hier auf unreviewed page/line.\n"
             "Auch jnana, Sata und siitra bleiben ohne allgemeine Reparatur.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_35_51")
@@ -2615,6 +2618,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "tamala",
             "Näga",
             "Srävakas",
+            "puspavrksab",
             "paräkarsayati",
             "jnana",
             "Sata",
@@ -2628,6 +2632,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("tamāla", corrected)
         self.assertNotIn("Nāga", corrected)
         self.assertNotIn("Śrāvakas", corrected)
+        self.assertNotIn("puṣpavṛkṣaḥ", corrected)
         self.assertNotIn("parākarṣayati", corrected)
         self.assertNotIn("jñana", corrected)
         self.assertNotIn("Śata", corrected)
@@ -2658,6 +2663,8 @@ class PostprocessRegressionTests(unittest.TestCase):
             "buddhajnanāadhyalambanatāyii": "buddhajñanāadhyalambanatāyii",
             "sarvatragäminipratipajjnanabalam": "sarvatragāminipratipajjñanabalam",
             "sarvatathāgatavajrābhisckajniā": "sarvatathāgatavajrābhisckajñiā",
+            "anantäparyantab": "anantāparyantaḥ",
+            "pratikäülasamjnä": "pratikūlasaṃjñā",
         }
         merged_text = "".join(
             f"སྐད skt. {source} = reviewed Sanskrit title/proper-name context.\n"
@@ -2674,15 +2681,16 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_reviewed_sanskrit_large_batch_promotions_do_not_broaden_rules(self) -> None:
         merged_text = (
             "Deutscher Satz mit jnana, Sata, siitra, Dharmakirti, sahasrikä, "
-            "Prajnāpāra, Taksaka, tamala und Näga.\n"
+            "Prajnāpāra, Taksaka, tamala, puspavrksab und Näga.\n"
             "Ähnliche Wörter: Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx, "
-            "mkha'i, ch'a und dzā.\n"
+            "anantäparyantab, pratikäülasamjnä, mkha'i, ch'a und dzā.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("jnana, Sata, siitra, Dharmakirti, sahasrikä", corrected)
-        self.assertIn("Prajnāpāra, Taksaka, tamala und Näga", corrected)
+        self.assertIn("Prajnāpāra, Taksaka, tamala, puspavrksab und Näga", corrected)
         self.assertIn("Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx", corrected)
+        self.assertIn("anantäparyantab, pratikäülasamjnä", corrected)
         self.assertIn("mkha'i, ch'a und dzā", corrected)
         self.assertNotIn("jñana", corrected)
         self.assertNotIn("Śata", corrected)
@@ -2692,9 +2700,12 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("Prajñāpāra", corrected)
         self.assertNotIn("Takṣaka", corrected)
         self.assertNotIn("tamāla", corrected)
+        self.assertNotIn("puṣpavṛkṣaḥ", corrected)
         self.assertNotIn("Nāga", corrected)
         self.assertNotIn("Prajñāpārax", corrected)
         self.assertNotIn("sarvajñatāpragbhārabx", corrected)
+        self.assertNotIn("anantāparyantaḥ", corrected)
+        self.assertNotIn("pratikūlasaṃjñā", corrected)
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertFalse(
             any(

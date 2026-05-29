@@ -211,9 +211,54 @@ SANSKRIT_TOKEN_HINT_RE = re.compile(
     r"(?:praj|pāram|päram|param|jñ|jn|mah[āaä]|vyutpatti|ny[āa]ya|"
     r"ṭīk|tik|dharm|k[īi]rti|śr[āaä]v|sr[āaä]v|ś[āaä]str|s[ūu]tr|"
     r"bodhi|vajra|garbha|nāg|näg|taks|takṣ|samnip|samnipa|saptotsad|"
-    r"d[ūu]ram|acala|par[āaä]kar|vṛnd|vrnd|tamal|apad|sahasrik)",
+    r"d[ūu]ram|acala|par[āaä]kar|vṛnd|vrnd|tamal|apad|sahasrik|"
+    r"paryant|m[āaä]rg|sa[ṃm]jñ|samjn|v[ṛr]k[ṣs]|pu[ṣs]p|ratnak)",
     re.IGNORECASE,
 )
+RESIDUAL_SANSKRIT_DAMAGE_FIELDS = [
+    "volume",
+    "source_file",
+    "page",
+    "line",
+    "token",
+    "candidate_family",
+    "proposed_target",
+    "context_excerpt",
+    "evidence",
+    "confidence",
+    "suggested_action",
+]
+RESIDUAL_STRONG_SANSKRIT_CONTEXT_RE = re.compile(
+    r"(?<!\w)(?:skt\.?|Sanskrit|Mvy|Lex\.?|Dagy|sGra|Toh|Samv|Dīp|Atisa|"
+    r"Buddha|Bodhisattva|Praj|J(?:n|ñ)[aā]|śr[āaä]va|sr[āaä]va|"
+    r"Vai[śs]v|M[äā]ra|N[äā]ga|Ratnak[äāuū]t|Bl[üu]tenbaum|"
+    r"Weg ohne Hindernisse|fu[ßs]los|Steuermann|Bez\.|npr\.?)(?!\w)",
+    re.IGNORECASE,
+)
+RESIDUAL_SUTRA_DAMAGE_RE = re.compile(
+    r"(?:siitra|s[ūu]rtra|s[āa]tra|fs[ūu]tras?|s[ūu]trta)", re.IGNORECASE
+)
+RESIDUAL_JN_DAMAGE_RE = re.compile(r"jn(?=[aāiīuūeoṛṝḷ])", re.IGNORECASE)
+RESIDUAL_FINAL_VISARGA_RE = re.compile(
+    r"^[A-Za-zāīūṛṝḷṅñṇṭḍśṣṃṁäÄüÜöÖāīūĀĪŪ]+[bl]$", re.IGNORECASE
+)
+RESIDUAL_PROMOTE_TOKEN_TARGETS = {
+    "anantäparyantab": "anantāparyantaḥ",
+    "pratikäülasamjnä": "pratikūlasaṃjñā",
+    "puspavrksab": "puṣpavṛkṣaḥ",
+}
+RESIDUAL_REVIEW_TOKEN_TARGETS = {
+    "Aryaratnakäta": "Āryaratnakūṭa",
+    "dnantaryamärgab": "ānantaryamārgaḥ",
+    "jnaurasab": "jinaurasaḥ",
+    "Käśy": "Kāśy",
+    "Käsy": "Kāśy",
+    "śinaväsika": "Śāṇavāsika",
+    "śosa-räpasya": "śoṣa-rūpasya",
+    "śrijhäna": "śrījñāna",
+    "ucchanganäam": "ucchanganāam",
+    "VisT": "VisṬ",
+}
 TIBETAN_WYLIE_CANDIDATE_KEYS = {
     "dan",
     "dani",
@@ -1102,6 +1147,170 @@ def possible_missed_google_reading_row(
     )
 
 
+def load_sanskrit_override_source_tokens(path: Path = Path("data/sanskrit_promote_overrides.tsv")) -> set[str]:
+    if not path.exists():
+        return set()
+    tokens: set[str] = set()
+    with path.open("r", encoding="utf-8", errors="replace", newline="") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        for row in reader:
+            source_token = normalize_report_token(row.get("from_token", ""))
+            if source_token:
+                tokens.add(source_token)
+    return tokens
+
+
+def residual_candidate_family(token: str) -> str:
+    token_l = normalize_report_token(token).lower()
+    if "praj" in token_l or "pāram" in token_l or "päram" in token_l:
+        return "Prajñā / Prajñāpāramitā"
+    if "jn" in token_l or "jñ" in token_l or "samjn" in token_l or "saṃjñ" in token_l:
+        return "jñāna / sarvajñatā / vijñāna"
+    if "srav" in token_l or "śrav" in token_l or "śrāv" in token_l:
+        return "śrāvaka / śrāva"
+    if any(fragment in token_l for fragment in ("näg", "nāg", "mār", "mär", "dharm", "kīrti", "taks", "takṣ")):
+        return "Sanskrit proper names and titles"
+    if RESIDUAL_SUTRA_DAMAGE_RE.search(token_l) or "sūtra" in token_l or "sutra" in token_l:
+        return "sūtra title families"
+    if RESIDUAL_FINAL_VISARGA_RE.search(token):
+        return "final-visarga Sanskrit terms"
+    if "mah" in token_l or "ratnak" in token_l or "ārya" in token_l or "arya" in token_l:
+        return "Mahā- / Ārya title families"
+    if any(fragment in token_l for fragment in ("bala", "dhātu", "dhatu", "skandha", "marga", "märga", "mārga")):
+        return "Buddhist technical compounds"
+    return "Sanskrit-like residual damage"
+
+
+def residual_candidate_has_strong_context(line: str, token: str) -> bool:
+    if RESIDUAL_STRONG_SANSKRIT_CONTEXT_RE.search(line or ""):
+        return True
+    if SANSKRIT_CONTEXT_CUE_RE.search(line or ""):
+        return True
+    if token_has_sanskrit_candidate_hint(token):
+        return True
+    return False
+
+
+def residual_token_has_damage(token: str) -> bool:
+    token_s = normalize_report_token(token)
+    if not token_s:
+        return False
+    if any(char in token_s for char in ("ä", "Ä", "ı", "$")):
+        return True
+    if RESIDUAL_JN_DAMAGE_RE.search(token_s):
+        return True
+    if RESIDUAL_FINAL_VISARGA_RE.search(token_s):
+        return True
+    return bool(RESIDUAL_SUTRA_DAMAGE_RE.search(token_s))
+
+
+def residual_candidate_evidence(
+    token: str,
+    review_tokens: set[str],
+    google_tokens: set[str],
+    override_tokens: set[str],
+    strong_context: bool,
+) -> str:
+    evidence: list[str] = []
+    if token in google_tokens:
+        evidence.append("google")
+    if token in review_tokens:
+        evidence.append("review_queue")
+    if token in override_tokens:
+        evidence.append("existing_override_family")
+    if token in RESIDUAL_PROMOTE_TOKEN_TARGETS or token in RESIDUAL_REVIEW_TOKEN_TARGETS or strong_context:
+        evidence.append("language_knowledge")
+    return " / ".join(evidence) if evidence else "unknown"
+
+
+def residual_candidate_suggested_action(token: str, confidence: str) -> str:
+    if token in RESIDUAL_PROMOTE_TOKEN_TARGETS:
+        return "promote"
+    if confidence in {"high", "medium"}:
+        return "review"
+    return "reject"
+
+
+def collect_residual_sanskrit_damage_candidates(
+    volume: str,
+    source_file: Path,
+    corrected_text: str,
+    review_tokens: set[str],
+    google_tokens: set[str],
+    override_tokens: set[str],
+) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for page_index, page_text in enumerate((corrected_text or "").split("\f"), start=1):
+        current_page = str(page_index)
+        page_line = 0
+        for raw_line in page_text.splitlines():
+            marker = PAGE_MARKER_RE.match(raw_line)
+            if marker:
+                current_page = str(int(marker.group(1)))
+                page_line = 0
+                continue
+            page_line += 1
+            for piece in re.split(r"\s+", raw_line):
+                token = normalize_report_token(piece)
+                if not token:
+                    continue
+                exact_known = token in RESIDUAL_PROMOTE_TOKEN_TARGETS or token in RESIDUAL_REVIEW_TOKEN_TARGETS
+                if not exact_known:
+                    if ROMAN_NUMERAL_TOKEN_RE.fullmatch(token) or ALL_CAPS_SIGLUM_RE.fullmatch(token):
+                        continue
+                    if TIBETAN_WYLIE_APOSTROPHE_RE.fullmatch(token):
+                        continue
+                    if looks_like_german_or_prose(token, "", raw_line) and not residual_candidate_has_strong_context(raw_line, token):
+                        continue
+                    if not residual_token_has_damage(token):
+                        continue
+                strong_context = residual_candidate_has_strong_context(raw_line, token)
+                if not exact_known and not strong_context:
+                    continue
+                key = (current_page, str(page_line), token)
+                if key in seen:
+                    continue
+                seen.add(key)
+                proposed_target = RESIDUAL_PROMOTE_TOKEN_TARGETS.get(token) or RESIDUAL_REVIEW_TOKEN_TARGETS.get(token, "")
+                evidence = residual_candidate_evidence(token, review_tokens, google_tokens, override_tokens, strong_context)
+                if token in RESIDUAL_PROMOTE_TOKEN_TARGETS:
+                    confidence = "high"
+                elif token in RESIDUAL_REVIEW_TOKEN_TARGETS:
+                    confidence = "medium"
+                elif strong_context and evidence != "unknown":
+                    confidence = "medium"
+                else:
+                    confidence = "low"
+                rows.append(
+                    {
+                        "volume": volume,
+                        "source_file": str(source_file),
+                        "page": current_page,
+                        "line": str(page_line),
+                        "token": token,
+                        "candidate_family": residual_candidate_family(token),
+                        "proposed_target": proposed_target,
+                        "context_excerpt": truncate(raw_line, 180),
+                        "evidence": evidence,
+                        "confidence": confidence,
+                        "suggested_action": residual_candidate_suggested_action(token, confidence),
+                    }
+                )
+    rows.sort(
+        key=lambda row: (
+            {"promote": 0, "review": 1, "reject": 2}.get(row.get("suggested_action", ""), 9),
+            {"high": 0, "medium": 1, "low": 2}.get(row.get("confidence", ""), 9),
+            row.get("candidate_family", ""),
+            row.get("volume", ""),
+            safe_int(row.get("page", "")),
+            safe_int(row.get("line", "")),
+            row.get("token", ""),
+        )
+    )
+    return rows
+
+
 def collect_suspicious_tokens(
     volume: str,
     validator_path: Path,
@@ -1312,6 +1521,8 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     all_low_google_adoptions: list[dict[str, str]] = []
     all_possible_missed_google_rows: list[dict[str, str]] = []
     all_google_sanskrit_candidate_rows: list[dict[str, str]] = []
+    all_residual_sanskrit_damage_rows: list[dict[str, str]] = []
+    override_tokens = load_sanskrit_override_source_tokens()
     report: list[str] = [
         "# Production Release-Candidate OCR QA Report",
         "",
@@ -1402,6 +1613,20 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             )
             if row is not None
         ]
+        review_token_index = {normalize_report_token(row.get("from_token", "")) for row in sanskrit_reviews}
+        review_token_index.update(normalize_report_token(row.get("to_token", "")) for row in sanskrit_reviews)
+        review_token_index.discard("")
+        google_token_index = {normalize_report_token(row.get("base_token", "")) for row in google_sanskrit_candidate_rows}
+        google_token_index.update(normalize_report_token(row.get("alternate_token", "")) for row in google_sanskrit_candidate_rows)
+        google_token_index.discard("")
+        residual_sanskrit_damage_rows = collect_residual_sanskrit_damage_candidates(
+            spec.display,
+            corrected,
+            corrected_text,
+            review_token_index,
+            google_token_index,
+            override_tokens,
+        )
         suspicious = collect_suspicious_tokens(
             spec.display,
             validator_path,
@@ -1424,6 +1649,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         all_low_google_adoptions.extend(low_google_adoptions)
         all_possible_missed_google_rows.extend(possible_missed_google_rows)
         all_google_sanskrit_candidate_rows.extend(google_sanskrit_candidate_rows)
+        all_residual_sanskrit_damage_rows.extend(residual_sanskrit_damage_rows)
 
         report.extend(
             [
@@ -1458,6 +1684,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     ["low_confidence_google_adoptions", len(low_google_adoptions)],
                     ["possible_missed_google_readings", len(possible_missed_google_rows)],
                     ["google_sanskrit_candidate_readings", len(google_sanskrit_candidate_rows)],
+                    ["residual_sanskrit_damage_candidates", len(residual_sanskrit_damage_rows)],
                 ],
             )
         )
@@ -1498,6 +1725,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                     ["low_confidence_google_adoptions", len(low_google_adoptions)],
                     ["possible_missed_google_readings", len(possible_missed_google_rows)],
                     ["google_sanskrit_candidate_readings", len(google_sanskrit_candidate_rows)],
+                    ["residual_sanskrit_damage_candidates", len(residual_sanskrit_damage_rows)],
                 ],
             )
         )
@@ -1527,6 +1755,47 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                         for row in sorted(
                             google_sanskrit_candidate_rows,
                             key=lambda item: -safe_int(item.get("candidate_score", "0")),
+                        )[:10]
+                    ],
+                )
+            )
+        if residual_sanskrit_damage_rows:
+            report.extend(["", "### Top Residual Sanskrit Damage Candidates", ""])
+            report.extend(
+                md_table(
+                    [
+                        "action",
+                        "confidence",
+                        "family",
+                        "page",
+                        "line",
+                        "token",
+                        "proposed",
+                        "evidence",
+                        "context",
+                    ],
+                    [
+                        [
+                            row.get("suggested_action", ""),
+                            row.get("confidence", ""),
+                            row.get("candidate_family", ""),
+                            row.get("page", ""),
+                            row.get("line", ""),
+                            truncate(row.get("token", ""), 28),
+                            truncate(row.get("proposed_target", ""), 28),
+                            row.get("evidence", ""),
+                            truncate(row.get("context_excerpt", ""), 90),
+                        ]
+                        for row in sorted(
+                            residual_sanskrit_damage_rows,
+                            key=lambda item: (
+                                item.get("suggested_action") != "promote",
+                                item.get("confidence") != "high",
+                                item.get("candidate_family", ""),
+                                safe_int(item.get("page", "")),
+                                safe_int(item.get("line", "")),
+                                item.get("token", ""),
+                            ),
                         )[:10]
                     ],
                 )
@@ -1848,6 +2117,22 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         all_google_sanskrit_candidate_rows,
         google_sanskrit_candidate_fields,
     )
+    all_residual_sanskrit_damage_rows.sort(
+        key=lambda row: (
+            row.get("suggested_action") != "promote",
+            row.get("confidence") != "high",
+            row.get("candidate_family", ""),
+            row.get("volume", ""),
+            safe_int(row.get("page", "")),
+            safe_int(row.get("line", "")),
+            row.get("token", ""),
+        )
+    )
+    write_tsv(
+        output_dir / "residual_sanskrit_damage_candidates.tsv",
+        all_residual_sanskrit_damage_rows,
+        RESIDUAL_SANSKRIT_DAMAGE_FIELDS,
+    )
 
     report.extend(
         [
@@ -1872,6 +2157,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'low_confidence_google_adoptions.tsv'}`",
             f"- `{output_dir / 'possible_missed_google_readings.tsv'}`",
             f"- `{output_dir / 'google_sanskrit_candidate_readings.tsv'}`",
+            f"- `{output_dir / 'residual_sanskrit_damage_candidates.tsv'}`",
             f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",
             "",
