@@ -2255,7 +2255,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_35_51")
 
-        self.assertIn('"sahasrikä Prajñāpāramitā" (1SK 1: 215,1,6);', corrected)
+        self.assertIn('"sāhasrikā Prajñāpāramitā" (1SK 1: 215,1,6);', corrected)
         self.assertIn("653, 1062) bzw. Mahāsamnipāta (vgl. Toh", corrected)
         self.assertIn('"Mahāsamnipāta gelesen hat" (Liyl 172b3);', corrected)
         self.assertIn('"Mahāsamāja sind neun Abschnitte erhalten"', corrected)
@@ -2458,6 +2458,254 @@ class PostprocessRegressionTests(unittest.TestCase):
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("śrävaka", "śrāvaka", "sanskrit_high_freq_allowlist"), reasons)
         self.assertNotIn(("Irāgheit", "lrāgheit", "initial_i_manual_context_review"), reasons)
+
+    def test_google_reviewed_sanskrit_large_batch_promotions_apply_in_reviewed_locations(self) -> None:
+        def make_page(lines: dict[int, str]) -> str:
+            page_lines = ["ཀ་ ka"]
+            for idx in range(2, max(lines) + 1):
+                page_lines.append(lines.get(idx, f"filler {idx}"))
+            return "\n".join(page_lines)
+
+        def make_volume(max_page: int, pages: dict[int, str]) -> str:
+            return "\f".join(pages.get(idx, "ཀ་ ka") for idx in range(1, max_page + 1))
+
+        _, corrected, changes = self.run_postprocess_fixture(
+            make_volume(
+                17,
+                {
+                    17: make_page(
+                        {
+                            24: "Dharmakirti: Nyaya-bindu-Prakarana in Sanskrit.",
+                        }
+                    )
+                },
+            ),
+            label="wts_1_34",
+        )
+        self.assertIn("Dharmakīrti: Nyaya-bindu-Prakarana in Sanskrit.", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("Dharmakirti", "Dharmakīrti", "sanskrit_google_reviewed_candidate_allowlist"),
+            reasons,
+        )
+
+        _, corrected, changes = self.run_postprocess_fixture(
+            make_volume(
+                217,
+                {
+                    18: make_page(
+                        {
+                            51: 'unheilstiftender Märas usw." (Samv 13.24a);',
+                            73: 'ste "die Srävakas Gautamas sind grausam und',
+                        }
+                    ),
+                    40: make_page({57: 'rakab "Steuermann" (Mvy 3853); grau pa\'ami'}),
+                    73: make_page(
+                        {
+                            20: "Lex. saptotsadah (Mvy 250).",
+                            69: "Nāga-König Taksaka mit sieben Schlangen-",
+                        }
+                    ),
+                    164: make_page(
+                        {
+                            9: "sich mit Ahalyä zu vergnügen, betrat Gau-",
+                            19: '"sahasrikä Prajiapäramitä" (1SK 1: 215,1,6);',
+                        }
+                    ),
+                    177: make_page(
+                        {
+                            8: "Lex. tshogs sa khyun'am = vrndah (Mvy",
+                            25: "meläpaka in einer Sanskrit-Liste",
+                            28: "upameläpaka und smasäna im Lex.",
+                            31: "meläpaka noch einmal im Sanskrit-Kontext",
+                            32: "[Bodhisattvastufe] Düramgamä, als Acalä ist",
+                            33: "upameläpaka erneut im Sanskrit-Kontext",
+                            74: "Lex. samnipätab (Mvy 9537, Abt. nad kyi",
+                        }
+                    ),
+                    217: make_page({25: 'paräkarsayati "er zieht weg" (Mvy 6747).'}),
+                },
+            ),
+            label="wts_35_51",
+        )
+        self.assertIn('unheilstiftender Māras usw." (Samv 13.24a);', corrected)
+        self.assertIn('ste "die Śrāvakas Gautamas sind grausam und', corrected)
+        self.assertIn('rakaḥ "Steuermann" (Mvy 3853);', corrected)
+        self.assertIn("Lex. saptotsadaḥ (Mvy 250).", corrected)
+        self.assertIn("Nāga-König Takṣaka mit sieben Schlangen-", corrected)
+        self.assertIn("sich mit Ahalyā zu vergnügen, betrat Gau-", corrected)
+        self.assertIn('"sāhasrikā Prajñāpāramitā" (1SK 1: 215,1,6);', corrected)
+        self.assertIn("= vṛndaḥ (Mvy", corrected)
+        self.assertIn("melāpaka in einer Sanskrit-Liste", corrected)
+        self.assertIn("upamelāpaka und śmaśāna im Lex.", corrected)
+        self.assertIn("[Bodhisattvastufe] Dūramgamā, als Acalā ist", corrected)
+        self.assertIn("Lex. samnipātaḥ (Mvy 9537", corrected)
+        self.assertIn('parākarṣayati "er zieht weg" (Mvy 6747).', corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for source, target in {
+            ("Märas", "Māras"),
+            ("Srävakas", "Śrāvakas"),
+            ("rakab", "rakaḥ"),
+            ("saptotsadah", "saptotsadaḥ"),
+            ("Taksaka", "Takṣaka"),
+            ("Ahalyä", "Ahalyā"),
+            ("sahasrikä", "sāhasrikā"),
+            ("vrndah", "vṛndaḥ"),
+            ("meläpaka", "melāpaka"),
+            ("upameläpaka", "upamelāpaka"),
+            ("smasäna", "śmaśāna"),
+            ("Düramgamä", "Dūramgamā"),
+            ("Acalä", "Acalā"),
+            ("samnipätab", "samnipātaḥ"),
+            ("paräkarsayati", "parākarṣayati"),
+        }:
+            self.assertIn((source, target, "sanskrit_google_reviewed_candidate_allowlist"), reasons)
+
+        _, corrected, changes = self.run_postprocess_fixture(
+            make_volume(
+                285,
+                {
+                    52: make_page({3: "den Baum namens mallikä, und auch für die"}),
+                    198: make_page(
+                        {
+                            32: "Lex. tamab (Mvy 4552, Abt. graris can gi",
+                            74: "tamäla, Xanthochymus pictorus",
+                            76: 'Lex. ta ma la\'i miṅ "Bez. für tamala" (Digv).',
+                        }
+                    ),
+                    229: make_page({69: 'Berührungspunkt mit dem Näga" (Vdlk-M'}),
+                    233: make_page({88: 'Lex. rkaṅ — = apadal "fußlos" (8925); zon'}),
+                    285: make_page({17: "tausend Armeen des Mära besiegt wurden"}),
+                },
+            ),
+            label="wts_9_m",
+        )
+        self.assertIn("den Baum namens mallikā, und auch für die", corrected)
+        self.assertIn("Lex. tamaḥ (Mvy 4552", corrected)
+        self.assertIn("tamāla, Xanthochymus pictorus", corrected)
+        self.assertIn('Bez. für tamāla" (Digv).', corrected)
+        self.assertIn('Berührungspunkt mit dem Nāga" (Vdlk-M', corrected)
+        self.assertIn('= apadaḥ "fußlos" (8925);', corrected)
+        self.assertIn("tausend Armeen des Māra besiegt wurden", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for source, target in {
+            ("mallikä", "mallikā"),
+            ("tamab", "tamaḥ"),
+            ("tamäla", "tamāla"),
+            ("tamala", "tamāla"),
+            ("Näga", "Nāga"),
+            ("apadal", "apadaḥ"),
+            ("Mära", "Māra"),
+        }:
+            self.assertIn((source, target, "sanskrit_google_reviewed_candidate_allowlist"), reasons)
+
+    def test_google_reviewed_sanskrit_large_batch_promotions_need_reviewed_location(self) -> None:
+        merged_text = (
+            "Lex. saptotsadah (Mvy 250), Dharmakirti: Nyaya, sahasrikä, Taksaka, "
+            "tamala, Näga, Srävakas und paräkarsayati stehen hier auf unreviewed page/line.\n"
+            "Auch jnana, Sata und siitra bleiben ohne allgemeine Reparatur.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_35_51")
+
+        for token in (
+            "saptotsadah",
+            "Dharmakirti",
+            "sahasrikä",
+            "Taksaka",
+            "tamala",
+            "Näga",
+            "Srävakas",
+            "paräkarsayati",
+            "jnana",
+            "Sata",
+            "siitra",
+        ):
+            self.assertIn(token, corrected)
+        self.assertNotIn("saptotsadaḥ", corrected)
+        self.assertNotIn("Dharmakīrti", corrected)
+        self.assertNotIn("sāhasrikā", corrected)
+        self.assertNotIn("Takṣaka", corrected)
+        self.assertNotIn("tamāla", corrected)
+        self.assertNotIn("Nāga", corrected)
+        self.assertNotIn("Śrāvakas", corrected)
+        self.assertNotIn("parākarṣayati", corrected)
+        self.assertNotIn("jñana", corrected)
+        self.assertNotIn("Śata", corrected)
+        self.assertNotIn("sūtra", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertFalse(
+            any(reason == "sanskrit_google_reviewed_candidate_allowlist" for _, _, reason in reasons)
+        )
+
+    def test_reviewed_sanskrit_large_batch_promotions_apply_in_context(self) -> None:
+        cases = {
+            "indriyaparāparajnānabalam": "indriyaparāparajñānabalam",
+            "Jnānagarbha": "Jñānagarbha",
+            "Prajnāpā": "Prajñāpā",
+            "Prajnāpāra": "Prajñāpāra",
+            "vādavidhijnena": "vādavidhijñena",
+            "sarvajnatāpragbhārab": "sarvajñatāpragbhārab",
+            "sarvajnatāprāgbhārab": "sarvajñatāprāgbhārab",
+            "navijnānadhātuh": "navijñānadhātuh",
+            "rvijnānadhātub": "rvijñānadhātub",
+            "parināmanavidkijnāh": "parināmanavidkijñāh",
+            "prabhā-mandala-vyaha-jnā": "prabhā-mandala-vyaha-jñā",
+            "śäntideva": "śāntideva",
+            "śräva": "śrāva",
+            "śväsayema": "śvāsayema",
+            "Vaiśvänara": "Vaiśvānara",
+            "ktijnānadarsanaskandhab": "ktijñānadarsanaskandhab",
+            "buddhajnanāadhyalambanatāyii": "buddhajñanāadhyalambanatāyii",
+            "sarvatragäminipratipajjnanabalam": "sarvatragāminipratipajjñanabalam",
+            "sarvatathāgatavajrābhisckajniā": "sarvatathāgatavajrābhisckajñiā",
+        }
+        merged_text = "".join(
+            f"སྐད skt. {source} = reviewed Sanskrit title/proper-name context.\n"
+            for source in cases
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        for target in cases.values():
+            self.assertIn(target, corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for source, target in cases.items():
+            self.assertIn((source, target, "sanskrit_reviewed_context_allowlist"), reasons)
+
+    def test_reviewed_sanskrit_large_batch_promotions_do_not_broaden_rules(self) -> None:
+        merged_text = (
+            "Deutscher Satz mit jnana, Sata, siitra, Dharmakirti, sahasrikä, "
+            "Prajnāpāra, Taksaka, tamala und Näga.\n"
+            "Ähnliche Wörter: Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx, "
+            "mkha'i, ch'a und dzā.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("jnana, Sata, siitra, Dharmakirti, sahasrikä", corrected)
+        self.assertIn("Prajnāpāra, Taksaka, tamala und Näga", corrected)
+        self.assertIn("Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx", corrected)
+        self.assertIn("mkha'i, ch'a und dzā", corrected)
+        self.assertNotIn("jñana", corrected)
+        self.assertNotIn("Śata", corrected)
+        self.assertNotIn("sūtra", corrected)
+        self.assertNotIn("Dharmakīrti", corrected)
+        self.assertNotIn("sāhasrikā", corrected)
+        self.assertNotIn("Prajñāpāra", corrected)
+        self.assertNotIn("Takṣaka", corrected)
+        self.assertNotIn("tamāla", corrected)
+        self.assertNotIn("Nāga", corrected)
+        self.assertNotIn("Prajñāpārax", corrected)
+        self.assertNotIn("sarvajñatāpragbhārabx", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertFalse(
+            any(
+                reason
+                in {
+                    "sanskrit_google_reviewed_candidate_allowlist",
+                    "sanskrit_reviewed_context_allowlist",
+                }
+                for _, _, reason in reasons
+            )
+        )
 
     def test_structural_quote_wrap_direct(self) -> None:
         merged_text = (

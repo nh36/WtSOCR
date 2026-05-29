@@ -256,6 +256,36 @@ SANSKRIT_GOOGLE_TITLE_CONTEXT_RE = re.compile(
     r"rgya cher 'grel)(?!\w)",
     re.IGNORECASE,
 )
+SANSKRIT_GOOGLE_REVIEWED_EVIDENCE_TAGS = {
+    "google_unresolved_sanskrit_diacritic",
+    "google_unresolved_sanskrit_proper_name",
+    "google_unresolved_sanskrit_term",
+    "google_unresolved_jn_jñ",
+}
+SANSKRIT_GOOGLE_REVIEWED_ALLOWLIST_REASON = "sanskrit_google_reviewed_candidate_allowlist"
+SANSKRIT_GOOGLE_REVIEWED_CONTEXT_RE = re.compile(
+    r"(?<!\w)(?:Mvy|sGra|Dagy|Dagv|Digv|Lex\.|skt\.?|Sanskrit|Samv|Vdlk|"
+    r"Bodhisattvastufe|N[äā]ga-König|Bez\.|npr\.?|Feuergott|Praj|"
+    r"sahasrik|M[äā]ra|Ahaly[äā]|mallik[äā]|tam[äā]la|[ŚS]r[äā]vakas?|"
+    r"Steuermann|fu[ßs]los)(?!\w)|[=:]",
+    re.IGNORECASE,
+)
+SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
+    "curated_sanskrit_proper_name",
+    "curated_sanskrit_term",
+    "prajna_jn_family_exact_context",
+    "review_queue_sanskrit_diacritic",
+    "review_queue_sanskrit_jn_family",
+    "review_queue_sanskrit_proper_name",
+    "review_queue_sanskrit_term",
+}
+SANSKRIT_REVIEWED_CONTEXT_ALLOWLIST_REASON = "sanskrit_reviewed_context_allowlist"
+SANSKRIT_REVIEWED_CONTEXT_RE = re.compile(
+    r"(?<!\w)(?:Mvy|Lex\.|skt\.?|Sanskrit|Dagy|sGra|Toh|Samv|"
+    r"J(?:n|ñ)[aā]nagarbha|Buddha|Bodhisattva|Vai[śs]v|"
+    r"[ŚS]r[äā]va|Feuergott|Mon-ir|stobs|dh[āa]tu|skandh|bala)(?!\w)",
+    re.IGNORECASE,
+)
 SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG = "prajnaparamita_sutra_full_title_normalization"
 SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON = "sanskrit_prajnaparamita_sutra_title_allowlist"
 SANSKRIT_PRAJNAPARAMITA_TITLE_CONTEXT_RE = re.compile(
@@ -647,6 +677,30 @@ def load_sanskrit_promoted_override_locations_by_evidence(
     return dict(locations)
 
 
+def load_sanskrit_promoted_override_keys_by_evidence_tags(
+    path: Path,
+    evidence_tags: set[str],
+) -> set[str]:
+    keys: set[str] = set()
+    for evidence_tag in evidence_tags:
+        keys.update(load_sanskrit_promoted_override_keys_by_evidence(path, evidence_tag))
+    return keys
+
+
+def load_sanskrit_promoted_override_locations_by_evidence_tags(
+    path: Path,
+    evidence_tags: set[str],
+) -> dict[str, set[tuple[str, int, int]]]:
+    locations: dict[str, set[tuple[str, int, int]]] = defaultdict(set)
+    for evidence_tag in evidence_tags:
+        for src_key, tag_locations in load_sanskrit_promoted_override_locations_by_evidence(
+            path,
+            evidence_tag,
+        ).items():
+            locations[src_key].update(tag_locations)
+    return dict(locations)
+
+
 SANSKRIT_PROMOTED_OVERRIDES_PATH = Path(__file__).resolve().parents[1] / "data" / "sanskrit_promote_overrides.tsv"
 SANSKRIT_PROMOTED_TIER_A_OVERRIDES = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
 SANSKRIT_GOOGLE_TITLE_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence(
@@ -664,6 +718,22 @@ SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_KEYS = load_sanskrit_promoted_override_ke
 SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence(
     SANSKRIT_PROMOTED_OVERRIDES_PATH,
     SANSKRIT_PRAJNAPARAMITA_TITLE_EVIDENCE_TAG,
+)
+SANSKRIT_GOOGLE_REVIEWED_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_GOOGLE_REVIEWED_EVIDENCE_TAGS,
+)
+SANSKRIT_GOOGLE_REVIEWED_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_GOOGLE_REVIEWED_EVIDENCE_TAGS,
+)
+SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS,
+)
+SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_locations_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS,
 )
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
@@ -6947,6 +7017,124 @@ def prajnaparamita_title_override_allowed(
     )
 
 
+def line_has_google_reviewed_override_context(
+    token: str,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+) -> bool:
+    if (
+        SANSKRIT_GOOGLE_REVIEWED_CONTEXT_RE.search(line_text)
+        or SANSKRIT_GOOGLE_REVIEWED_CONTEXT_RE.search(context_window)
+    ):
+        return True
+    if context_score >= 1 and sanskrit_token_signature_score(token) >= 1:
+        return True
+    if sanskrit_token_signature_score(token) >= 1 and any(
+        mark in line_text for mark in ('"', "'", "(", ")", "=", ":", ",", ";", "-", "/")
+    ):
+        return True
+    return False
+
+
+def google_reviewed_override_location_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+) -> bool:
+    token_key = unicodedata.normalize("NFC", token).lower()
+    locations = SANSKRIT_GOOGLE_REVIEWED_OVERRIDE_LOCATIONS.get(token_key)
+    if not locations:
+        return False
+    label = normalized_override_volume_label(volume_label)
+    return (label, page, line) in locations
+
+
+def google_reviewed_override_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+) -> bool:
+    return google_reviewed_override_location_allowed(
+        token,
+        volume_label,
+        page,
+        line,
+    ) and line_has_google_reviewed_override_context(
+        token,
+        line_text,
+        context_window,
+        context_score,
+    )
+
+
+def line_has_reviewed_sanskrit_override_context(
+    token: str,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+    zone: str,
+) -> bool:
+    if (
+        SANSKRIT_REVIEWED_CONTEXT_RE.search(line_text)
+        or SANSKRIT_REVIEWED_CONTEXT_RE.search(context_window)
+    ):
+        return True
+    if zone in {"german_prose_with_translit", "latin_other", "other"} and (
+        SANSKRIT_MVY_CUE_RE.search(line_text)
+        or SANSKRIT_GENERAL_CUE_RE.search(line_text)
+        or SANSKRIT_LEX_CUE_RE.search(line_text)
+        or CITATION_CUE_RE.search(line_text)
+        or "=" in line_text
+        or ":" in line_text
+    ):
+        return True
+    return False
+
+
+def reviewed_sanskrit_override_location_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+) -> bool:
+    token_key = unicodedata.normalize("NFC", token).lower()
+    locations = SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_LOCATIONS.get(token_key)
+    if not locations:
+        return False
+    label = normalized_override_volume_label(volume_label)
+    return (label, page, line) in locations
+
+
+def reviewed_sanskrit_override_allowed(
+    token: str,
+    volume_label: str,
+    page: int,
+    line: int,
+    line_text: str,
+    context_window: str,
+    context_score: int,
+    zone: str,
+) -> bool:
+    return reviewed_sanskrit_override_location_allowed(
+        token,
+        volume_label,
+        page,
+        line,
+    ) or line_has_reviewed_sanskrit_override_context(
+        token,
+        line_text,
+        context_window,
+        context_score,
+        zone,
+    )
+
+
 def sanskrit_isvara_family_rewrite(token: str, line_text: str, zone: str) -> str | None:
     replacement = SANSKRIT_ISVARA_FAMILY_EXACT_REWRITES.get(token)
     if replacement is None:
@@ -7238,6 +7426,8 @@ def apply_sanskrit_normalization(
                 explicit_override_is_prajnaparamita_title = (
                     tok_key in SANSKRIT_PRAJNAPARAMITA_TITLE_OVERRIDE_KEYS
                 )
+                explicit_override_is_google_reviewed = tok_key in SANSKRIT_GOOGLE_REVIEWED_OVERRIDE_KEYS
+                explicit_override_is_reviewed_context = tok_key in SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_KEYS
                 if (
                     isvara_rewrite is None
                     and explicit_override is None
@@ -7291,11 +7481,36 @@ def apply_sanskrit_normalization(
                         ctx,
                     ):
                         return tok
+                    if explicit_override_is_google_reviewed and not google_reviewed_override_allowed(
+                        tok,
+                        label,
+                        page_idx,
+                        line_idx,
+                        updated_line,
+                        context_window,
+                        ctx,
+                    ):
+                        return tok
+                    if explicit_override_is_reviewed_context and not reviewed_sanskrit_override_allowed(
+                        tok,
+                        label,
+                        page_idx,
+                        line_idx,
+                        updated_line,
+                        context_window,
+                        ctx,
+                        zone,
+                    ):
+                        return tok
                     replacement, _ = apply_sanskrit_override_chain(tok)
                     if explicit_override_is_google_title:
                         reason = SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON
                     elif explicit_override_is_prajnaparamita_title:
                         reason = SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON
+                    elif explicit_override_is_google_reviewed:
+                        reason = SANSKRIT_GOOGLE_REVIEWED_ALLOWLIST_REASON
+                    elif explicit_override_is_reviewed_context:
+                        reason = SANSKRIT_REVIEWED_CONTEXT_ALLOWLIST_REASON
                     else:
                         reason = "sanskrit_high_freq_allowlist"
 
@@ -7343,6 +7558,8 @@ def apply_sanskrit_normalization(
                     "sanskrit_high_freq_allowlist",
                     SANSKRIT_GOOGLE_TITLE_ALLOWLIST_REASON,
                     SANSKRIT_PRAJNAPARAMITA_TITLE_ALLOWLIST_REASON,
+                    SANSKRIT_GOOGLE_REVIEWED_ALLOWLIST_REASON,
+                    SANSKRIT_REVIEWED_CONTEXT_ALLOWLIST_REASON,
                     SANSKRIT_ISVARA_FAMILY_REASON,
                 }
                 if (
