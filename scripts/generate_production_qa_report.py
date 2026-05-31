@@ -228,6 +228,23 @@ RESIDUAL_SANSKRIT_DAMAGE_FIELDS = [
     "confidence",
     "suggested_action",
 ]
+RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS = [
+    "rank",
+    "family_key",
+    "reason_family",
+    "candidate_family",
+    "source_tokens",
+    "proposed_target",
+    "occurrences",
+    "volume_count",
+    "sample_refs",
+    "sample_contexts",
+    "evidence_summary",
+    "confidence_summary",
+    "suggested_action",
+    "ranking_reason",
+]
+RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT = 250
 RESIDUAL_STRONG_SANSKRIT_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:skt\.?|Sanskrit|Mvy|Lex\.?|Dagy|sGra|Toh|Samv|Dīp|Atisa|"
     r"Buddha|Bodhisattva|Praj|J(?:n|ñ)[aā]|śr[āaä]va|sr[āaä]va|"
@@ -1311,6 +1328,324 @@ def collect_residual_sanskrit_damage_candidates(
     return rows
 
 
+def residual_family_fold(token: str) -> str:
+    folded = normalize_report_token(token).casefold().replace("$", "s")
+    folded = folded.translate(SANSKRIT_FAMILY_FOLD)
+    folded = re.sub(r"[^a-z0-9]+", "", folded)
+    return folded or normalize_report_token(token).casefold()
+
+
+def residual_reason_family(token: str, candidate_family: str = "", proposed_target: str = "") -> str:
+    token_s = normalize_report_token(token)
+    token_l = token_s.casefold()
+    family_l = (candidate_family or "").casefold()
+    target_l = (proposed_target or "").casefold()
+    damage_flags: set[str] = set()
+    context_flags: set[str] = set()
+
+    if "$" in token_s:
+        damage_flags.add("dollar_ś")
+    if RESIDUAL_SUTRA_DAMAGE_RE.search(token_s) or "sutra" in token_l or "sūtra" in token_l:
+        damage_flags.add("sūtra_damage")
+    if RESIDUAL_JN_DAMAGE_RE.search(token_s) or "samjn" in token_l:
+        damage_flags.add("jn_jñ")
+    if RESIDUAL_FINAL_VISARGA_RE.search(token_s):
+        damage_flags.add("final_visarga")
+    if any(char in token_s for char in ("ä", "Ä", "ı")):
+        damage_flags.add("umlaut_macron")
+
+    if any(
+        fragment in token_l or fragment in target_l or fragment in family_l
+        for fragment in (
+            "ratnak",
+            "kāśy",
+            "käsy",
+            "kasy",
+            "śāṇav",
+            "śanav",
+            "śinav",
+            "jñāna",
+            "jnana",
+            "dharm",
+            "nāg",
+            "näg",
+            "takṣ",
+            "taks",
+            "visṭ",
+            "vist",
+            "proper name",
+        )
+    ):
+        context_flags.add("proper_name")
+    if any(
+        fragment in token_l or fragment in target_l or fragment in family_l
+        for fragment in (
+            "praj",
+            "pāram",
+            "päram",
+            "sūtra",
+            "sutra",
+            "mahā",
+            "mahä",
+            "mvy",
+            "title",
+            "ārya",
+            "arya",
+            "mārga",
+            "märga",
+        )
+    ):
+        context_flags.add("title_family")
+
+    if "sūtra_damage" in damage_flags:
+        return "sūtra_damage"
+    if damage_flags == {"dollar_ś"}:
+        return "dollar_ś"
+    if "proper_name" in context_flags and damage_flags.issubset({"umlaut_macron"}):
+        return "proper_name"
+    if "title_family" in context_flags and damage_flags.issubset({"umlaut_macron", "jn_jñ"}):
+        return "title_family"
+    if len(damage_flags) == 1:
+        return next(iter(damage_flags))
+    if damage_flags:
+        return "mixed_or_uncertain"
+    if "proper_name" in context_flags:
+        return "proper_name"
+    if "title_family" in context_flags:
+        return "title_family"
+    return "mixed_or_uncertain"
+
+
+def residual_counter_summary(counter: Counter[str], limit: int = 8) -> str:
+    if not counter:
+        return ""
+    pieces: list[str] = []
+    for value, count in counter.most_common(limit):
+        label = value or "(blank)"
+        pieces.append(f"{label} ({count})" if count > 1 else label)
+    remaining = len(counter) - limit
+    if remaining > 0:
+        pieces.append(f"+{remaining} more")
+    return "; ".join(pieces)
+
+
+def residual_evidence_parts(value: str) -> list[str]:
+    parts = [part.strip() for part in (value or "").split("/") if part.strip()]
+    return parts or ["unknown"]
+
+
+def residual_group_rank(group: dict[str, object]) -> tuple[int, int, int, str]:
+    evidence: Counter[str] = group["evidence"]  # type: ignore[assignment]
+    confidence: Counter[str] = group["confidence"]  # type: ignore[assignment]
+    suggested: Counter[str] = group["suggested"]  # type: ignore[assignment]
+    targets: Counter[str] = group["targets"]  # type: ignore[assignment]
+    occurrence_count = int(group["occurrences"])
+    reason_family = str(group["reason_family"])
+    has_target = bool(targets)
+    has_external_evidence = bool(
+        evidence.get("google", 0) or evidence.get("review_queue", 0) or evidence.get("existing_override_family", 0)
+    )
+
+    if suggested.get("promote", 0):
+        category = 0
+    elif has_external_evidence:
+        category = 1
+    elif has_target and occurrence_count >= 5 and (confidence.get("high", 0) or confidence.get("medium", 0)):
+        category = 2
+    elif has_target and reason_family != "mixed_or_uncertain":
+        category = 3
+    else:
+        category = 4
+    return (category, -occurrence_count, -len(group["volumes"]), str(group["family_key"]))
+
+
+def residual_group_ranking_reason(group: dict[str, object]) -> str:
+    evidence: Counter[str] = group["evidence"]  # type: ignore[assignment]
+    confidence: Counter[str] = group["confidence"]  # type: ignore[assignment]
+    suggested: Counter[str] = group["suggested"]  # type: ignore[assignment]
+    targets: Counter[str] = group["targets"]  # type: ignore[assignment]
+    occurrence_count = int(group["occurrences"])
+    reason_family = str(group["reason_family"])
+    has_target = bool(targets)
+    has_external_evidence = bool(
+        evidence.get("google", 0) or evidence.get("review_queue", 0) or evidence.get("existing_override_family", 0)
+    )
+    if suggested.get("promote", 0):
+        return "exact known promote row remains"
+    if has_external_evidence:
+        return "Google, review-queue, or existing-family supported"
+    if has_target and occurrence_count >= 5 and (confidence.get("high", 0) or confidence.get("medium", 0)):
+        return "recurring exact token with proposed target"
+    if has_target and reason_family != "mixed_or_uncertain":
+        return "single damage family with proposed target"
+    return "low-confidence or mixed/noisy residual"
+
+
+def residual_group_suggested_action(group: dict[str, object]) -> str:
+    suggested: Counter[str] = group["suggested"]  # type: ignore[assignment]
+    rank_category = residual_group_rank(group)[0]
+    if suggested.get("promote", 0):
+        return "promote"
+    if rank_category <= 3:
+        return "review"
+    return "reject"
+
+
+def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    groups: dict[tuple[str, str], dict[str, object]] = {}
+    for row in rows:
+        token = normalize_report_token(row.get("token", ""))
+        if not token:
+            continue
+        reason_family = residual_reason_family(
+            token,
+            row.get("candidate_family", ""),
+            row.get("proposed_target", ""),
+        )
+        family_key = f"{reason_family}:{residual_family_fold(token)}"
+        key = (reason_family, family_key)
+        if key not in groups:
+            groups[key] = {
+                "family_key": family_key,
+                "reason_family": reason_family,
+                "candidate_family": Counter(),
+                "tokens": Counter(),
+                "targets": Counter(),
+                "occurrences": 0,
+                "volumes": set(),
+                "refs": [],
+                "contexts": [],
+                "evidence": Counter(),
+                "confidence": Counter(),
+                "suggested": Counter(),
+            }
+        group = groups[key]
+        group["occurrences"] = int(group["occurrences"]) + 1
+        group["candidate_family"].update([row.get("candidate_family", "") or "(blank)"])  # type: ignore[index, union-attr]
+        group["tokens"].update([token])  # type: ignore[index, union-attr]
+        target = row.get("proposed_target", "")
+        if target:
+            group["targets"].update([target])  # type: ignore[index, union-attr]
+        group["volumes"].add(row.get("volume", "") or "(blank)")  # type: ignore[index, union-attr]
+        ref = f"{row.get('volume', '')}:p{row.get('page', '')}:l{row.get('line', '')}"
+        if ref not in group["refs"] and len(group["refs"]) < 5:  # type: ignore[arg-type]
+            group["refs"].append(ref)  # type: ignore[index, union-attr]
+        context = truncate(row.get("context_excerpt", ""), 160)
+        if context and context not in group["contexts"] and len(group["contexts"]) < 3:  # type: ignore[arg-type]
+            group["contexts"].append(context)  # type: ignore[index, union-attr]
+        group["evidence"].update(residual_evidence_parts(row.get("evidence", "")))  # type: ignore[index, union-attr]
+        group["confidence"].update([row.get("confidence", "") or "(blank)"])  # type: ignore[index, union-attr]
+        group["suggested"].update([row.get("suggested_action", "") or "(blank)"])  # type: ignore[index, union-attr]
+
+    sorted_groups = sorted(groups.values(), key=residual_group_rank)
+    output_rows: list[dict[str, str]] = []
+    for rank, group in enumerate(sorted_groups, start=1):
+        output_rows.append(
+            {
+                "rank": str(rank),
+                "family_key": str(group["family_key"]),
+                "reason_family": str(group["reason_family"]),
+                "candidate_family": residual_counter_summary(group["candidate_family"]),  # type: ignore[arg-type]
+                "source_tokens": residual_counter_summary(group["tokens"], limit=12),  # type: ignore[arg-type]
+                "proposed_target": residual_counter_summary(group["targets"], limit=6),  # type: ignore[arg-type]
+                "occurrences": str(group["occurrences"]),
+                "volume_count": str(len(group["volumes"])),  # type: ignore[arg-type]
+                "sample_refs": "; ".join(group["refs"]),  # type: ignore[arg-type]
+                "sample_contexts": " || ".join(group["contexts"]),  # type: ignore[arg-type]
+                "evidence_summary": residual_counter_summary(group["evidence"]),  # type: ignore[arg-type]
+                "confidence_summary": residual_counter_summary(group["confidence"]),  # type: ignore[arg-type]
+                "suggested_action": residual_group_suggested_action(group),
+                "ranking_reason": residual_group_ranking_reason(group),
+            }
+        )
+    return output_rows
+
+
+def residual_summary_markdown(
+    rows: list[dict[str, str]],
+    family_rows: list[dict[str, str]],
+    top_limit: int = 50,
+) -> list[str]:
+    reason_counts = Counter(row.get("reason_family", "") for row in family_rows)
+    action_counts = Counter(row.get("suggested_action", "") for row in family_rows)
+    confidence_counts: Counter[str] = Counter()
+    for row in family_rows:
+        for part in row.get("confidence_summary", "").split(";"):
+            label = part.strip().split(" (", 1)[0]
+            if label:
+                confidence_counts[label] += 1
+    lines = [
+        "# Residual Sanskrit Damage Summary",
+        "",
+        "This is a diagnostic grouping of `residual_sanskrit_damage_candidates.tsv`. It does not change corrected text and does not alter Google Vision adoption gates.",
+        "",
+        "## Counts",
+        "",
+    ]
+    lines.extend(
+        md_table(
+            ["metric", "count"],
+            [
+                ["raw residual rows", len(rows)],
+                ["grouped residual families", len(family_rows)],
+                ["top candidate rows written", min(len(family_rows), RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT)],
+            ],
+        )
+    )
+    lines.extend(["", "## Families By Reason", ""])
+    lines.extend(md_table(["reason_family", "groups"], reason_table(reason_counts)))
+    lines.extend(["", "## Families By Suggested Action", ""])
+    lines.extend(md_table(["suggested_action", "groups"], reason_table(action_counts)))
+    lines.extend(["", "## Families By Confidence Summary", ""])
+    lines.extend(md_table(["confidence", "groups"], reason_table(confidence_counts)))
+    lines.extend(["", f"## Top {min(top_limit, len(family_rows))} Grouped Candidates", ""])
+    lines.extend(
+        md_table(
+            [
+                "rank",
+                "action",
+                "reason_family",
+                "occurrences",
+                "volumes",
+                "source_tokens",
+                "proposed_target",
+                "evidence",
+                "confidence",
+                "sample_refs",
+                "ranking_reason",
+            ],
+            [
+                [
+                    row.get("rank", ""),
+                    row.get("suggested_action", ""),
+                    row.get("reason_family", ""),
+                    row.get("occurrences", ""),
+                    row.get("volume_count", ""),
+                    truncate(row.get("source_tokens", ""), 42),
+                    truncate(row.get("proposed_target", ""), 42),
+                    truncate(row.get("evidence_summary", ""), 42),
+                    truncate(row.get("confidence_summary", ""), 42),
+                    truncate(row.get("sample_refs", ""), 70),
+                    row.get("ranking_reason", ""),
+                ]
+                for row in family_rows[:top_limit]
+            ],
+        )
+    )
+    lines.extend(
+        [
+            "",
+            "## Interpretation Guardrails",
+            "",
+            "- `promote` means a known exact-promote diagnostic row still appears; it is not an automatic correction instruction.",
+            "- `review` means the group has enough support or recurrence to inspect manually.",
+            "- `reject` means the group is currently low-confidence, mixed, or noisy.",
+            "- Validator-only residue is not correction evidence.",
+        ]
+    )
+    return lines
+
+
 def collect_suspicious_tokens(
     volume: str,
     validator_path: Path,
@@ -2133,6 +2468,81 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         all_residual_sanskrit_damage_rows,
         RESIDUAL_SANSKRIT_DAMAGE_FIELDS,
     )
+    residual_sanskrit_damage_family_rows = group_residual_sanskrit_damage_rows(
+        all_residual_sanskrit_damage_rows
+    )
+    residual_sanskrit_damage_top_rows = residual_sanskrit_damage_family_rows[
+        :RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT
+    ]
+    write_tsv(
+        output_dir / "residual_sanskrit_damage_families.tsv",
+        residual_sanskrit_damage_family_rows,
+        RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS,
+    )
+    write_tsv(
+        output_dir / "residual_sanskrit_damage_top_candidates.tsv",
+        residual_sanskrit_damage_top_rows,
+        RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS,
+    )
+    (output_dir / "residual_sanskrit_damage_summary.md").write_text(
+        "\n".join(
+            residual_summary_markdown(
+                all_residual_sanskrit_damage_rows,
+                residual_sanskrit_damage_family_rows,
+            )
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    report.extend(
+        [
+            "",
+            "## Residual Sanskrit Damage Grouping",
+            "",
+        ]
+    )
+    report.extend(
+        md_table(
+            ["output", "rows"],
+            [
+                ["residual_sanskrit_damage_candidates.tsv", len(all_residual_sanskrit_damage_rows)],
+                ["residual_sanskrit_damage_families.tsv", len(residual_sanskrit_damage_family_rows)],
+                ["residual_sanskrit_damage_top_candidates.tsv", len(residual_sanskrit_damage_top_rows)],
+            ],
+        )
+    )
+    if residual_sanskrit_damage_family_rows:
+        report.extend(["", "### Top Grouped Residual Sanskrit Families", ""])
+        report.extend(
+            md_table(
+                [
+                    "rank",
+                    "action",
+                    "reason_family",
+                    "occurrences",
+                    "source_tokens",
+                    "proposed_target",
+                    "evidence",
+                    "confidence",
+                    "ranking_reason",
+                ],
+                [
+                    [
+                        row.get("rank", ""),
+                        row.get("suggested_action", ""),
+                        row.get("reason_family", ""),
+                        row.get("occurrences", ""),
+                        truncate(row.get("source_tokens", ""), 36),
+                        truncate(row.get("proposed_target", ""), 36),
+                        truncate(row.get("evidence_summary", ""), 36),
+                        truncate(row.get("confidence_summary", ""), 36),
+                        row.get("ranking_reason", ""),
+                    ]
+                    for row in residual_sanskrit_damage_family_rows[:20]
+                ],
+            )
+        )
 
     report.extend(
         [
@@ -2158,6 +2568,9 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'possible_missed_google_readings.tsv'}`",
             f"- `{output_dir / 'google_sanskrit_candidate_readings.tsv'}`",
             f"- `{output_dir / 'residual_sanskrit_damage_candidates.tsv'}`",
+            f"- `{output_dir / 'residual_sanskrit_damage_families.tsv'}`",
+            f"- `{output_dir / 'residual_sanskrit_damage_top_candidates.tsv'}`",
+            f"- `{output_dir / 'residual_sanskrit_damage_summary.md'}`",
             f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",
             "",
