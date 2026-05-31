@@ -245,6 +245,7 @@ RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS = [
     "ranking_reason",
 ]
 RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT = 250
+RESIDUAL_PROMOTABLE_CANDIDATE_FIELDS = RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS
 RESIDUAL_STRONG_SANSKRIT_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:skt\.?|Sanskrit|Mvy|Lex\.?|Dagy|sGra|Toh|Samv|Dīp|Atisa|"
     r"Buddha|Bodhisattva|Praj|J(?:n|ñ)[aā]|śr[āaä]va|sr[āaä]va|"
@@ -258,6 +259,20 @@ RESIDUAL_SUTRA_DAMAGE_RE = re.compile(
 RESIDUAL_JN_DAMAGE_RE = re.compile(r"jn(?=[aāiīuūeoṛṝḷ])", re.IGNORECASE)
 RESIDUAL_FINAL_VISARGA_RE = re.compile(
     r"^[A-Za-zāīūṛṝḷṅñṇṭḍśṣṃṁäÄüÜöÖāīūĀĪŪ]+[bl]$", re.IGNORECASE
+)
+RESIDUAL_MIXED_CASE_SIGLUM_RE = re.compile(
+    r"^[A-ZÄÖÜĀĪŪŚṢṬḌṆṄÑ][A-Za-zÄÖÜäöüāīūṛṝḷṅñṇṭḍśṣṃṁ]{1,6}[A-ZÄÖÜĀĪŪŚṢṬḌṆṄÑ]$"
+)
+RESIDUAL_CITATION_SIGLUM_KEYS = {
+    "kavyad",
+    "rag",
+    "tar",
+    "vist",
+}
+RESIDUAL_SIGLUM_CONTEXT_RE = re.compile(
+    r"(?:\[[^\]]{1,16}\]|\b(?:sigl|citation|bibliogr|vgl\.|ed\.|repr\.|t\.\s*\d|p\.\s*\d|"
+    r"VisT|Käsy|Käśy|Kāśy|Tär|Räg|Kävyäd)\b)",
+    re.IGNORECASE,
 )
 RESIDUAL_PROMOTE_TOKEN_TARGETS = {
     "anantäparyantab": "anantāparyantaḥ",
@@ -1335,7 +1350,34 @@ def residual_family_fold(token: str) -> str:
     return folded or normalize_report_token(token).casefold()
 
 
-def residual_reason_family(token: str, candidate_family: str = "", proposed_target: str = "") -> str:
+def residual_is_citation_or_siglum_token(
+    token: str,
+    candidate_family: str = "",
+    proposed_target: str = "",
+    context_excerpt: str = "",
+) -> bool:
+    token_s = normalize_report_token(token).strip("[](){}.,;:\"'")
+    if not token_s:
+        return False
+    folded = residual_family_fold(token_s)
+    context = context_excerpt or ""
+    if folded in RESIDUAL_CITATION_SIGLUM_KEYS:
+        return True
+    if ALL_CAPS_SIGLUM_RE.fullmatch(token_s) and len(token_s.rstrip(".")) <= 8:
+        return True
+    if RESIDUAL_MIXED_CASE_SIGLUM_RE.fullmatch(token_s):
+        return True
+    if folded in {"kasy", "kasyy"} and RESIDUAL_SIGLUM_CONTEXT_RE.search(context):
+        return True
+    return False
+
+
+def residual_reason_family(
+    token: str,
+    candidate_family: str = "",
+    proposed_target: str = "",
+    context_excerpt: str = "",
+) -> str:
     token_s = normalize_report_token(token)
     token_l = token_s.casefold()
     family_l = (candidate_family or "").casefold()
@@ -1343,6 +1385,8 @@ def residual_reason_family(token: str, candidate_family: str = "", proposed_targ
     damage_flags: set[str] = set()
     context_flags: set[str] = set()
 
+    if residual_is_citation_or_siglum_token(token_s, candidate_family, proposed_target, context_excerpt):
+        return "citation_or_siglum"
     if "$" in token_s:
         damage_flags.add("dollar_ś")
     if RESIDUAL_SUTRA_DAMAGE_RE.search(token_s) or "sutra" in token_l or "sūtra" in token_l:
@@ -1405,6 +1449,8 @@ def residual_reason_family(token: str, candidate_family: str = "", proposed_targ
         return "proper_name"
     if "title_family" in context_flags and damage_flags.issubset({"umlaut_macron", "jn_jñ"}):
         return "title_family"
+    if "final_visarga" in damage_flags and proposed_target and proposed_target.rstrip(".,;:)").endswith("ḥ"):
+        return "final_visarga"
     if len(damage_flags) == 1:
         return next(iter(damage_flags))
     if damage_flags:
@@ -1448,6 +1494,8 @@ def residual_group_rank(group: dict[str, object]) -> tuple[int, int, int, str]:
 
     if suggested.get("promote", 0):
         category = 0
+    elif reason_family == "citation_or_siglum":
+        category = 3 if has_target else 4
     elif has_external_evidence:
         category = 1
     elif has_target and occurrence_count >= 5 and (confidence.get("high", 0) or confidence.get("medium", 0)):
@@ -1472,6 +1520,8 @@ def residual_group_ranking_reason(group: dict[str, object]) -> str:
     )
     if suggested.get("promote", 0):
         return "exact known promote row remains"
+    if reason_family == "citation_or_siglum":
+        return "citation/siglum or bibliographic abbreviation; source-policy review only"
     if has_external_evidence:
         return "Google, review-queue, or existing-family supported"
     if has_target and occurrence_count >= 5 and (confidence.get("high", 0) or confidence.get("medium", 0)):
@@ -1501,6 +1551,7 @@ def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict
             token,
             row.get("candidate_family", ""),
             row.get("proposed_target", ""),
+            row.get("context_excerpt", ""),
         )
         family_key = f"{reason_family}:{residual_family_fold(token)}"
         key = (reason_family, family_key)
@@ -1561,9 +1612,90 @@ def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict
     return output_rows
 
 
+def residual_summary_labels(summary: str) -> list[str]:
+    labels: list[str] = []
+    for part in (summary or "").split(";"):
+        piece = part.strip()
+        if not piece or piece.startswith("+"):
+            continue
+        labels.append(piece.rsplit(" (", 1)[0].strip())
+    return labels
+
+
+def residual_group_has_external_or_strong_context(row: dict[str, str]) -> bool:
+    evidence = row.get("evidence_summary", "")
+    if any(label in evidence for label in ("google", "review_queue")):
+        return True
+    context_blob = " ".join(
+        [
+            row.get("sample_contexts", ""),
+            row.get("candidate_family", ""),
+            row.get("proposed_target", ""),
+        ]
+    )
+    return bool(
+        RESIDUAL_STRONG_SANSKRIT_CONTEXT_RE.search(context_blob)
+        or SANSKRIT_CONTEXT_CUE_RE.search(context_blob)
+    )
+
+
+def residual_group_is_specific_exact_token(row: dict[str, str]) -> bool:
+    tokens = residual_summary_labels(row.get("source_tokens", ""))
+    if not tokens:
+        return False
+    if len(tokens) > 4:
+        return False
+    for token in tokens:
+        cleaned = normalize_report_token(token)
+        if len(cleaned) < 3:
+            return False
+        if " " in cleaned or "/" in cleaned:
+            return False
+    return True
+
+
+def residual_group_is_tibetan_wylie_like(row: dict[str, str]) -> bool:
+    return any(
+        TIBETAN_WYLIE_APOSTROPHE_RE.fullmatch(normalize_report_token(token))
+        for token in residual_summary_labels(row.get("source_tokens", ""))
+    )
+
+
+def residual_group_is_obvious_german_or_prose(row: dict[str, str]) -> bool:
+    contexts = row.get("sample_contexts", "")
+    for token in residual_summary_labels(row.get("source_tokens", "")):
+        if looks_like_german_or_prose(token, "", contexts) and not residual_group_has_external_or_strong_context(row):
+            return True
+    return False
+
+
+def residual_group_is_promotable_candidate(row: dict[str, str]) -> bool:
+    if not row.get("proposed_target", "").strip():
+        return False
+    if row.get("reason_family") == "citation_or_siglum":
+        return False
+    if residual_group_is_obvious_german_or_prose(row):
+        return False
+    if residual_group_is_tibetan_wylie_like(row):
+        return False
+    if not residual_group_has_external_or_strong_context(row):
+        return False
+    if not residual_group_is_specific_exact_token(row):
+        return False
+    return True
+
+
+def residual_promotable_candidate_rows(family_rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    rows = [row.copy() for row in family_rows if residual_group_is_promotable_candidate(row)]
+    for rank, row in enumerate(rows, start=1):
+        row["rank"] = str(rank)
+    return rows
+
+
 def residual_summary_markdown(
     rows: list[dict[str, str]],
     family_rows: list[dict[str, str]],
+    promotable_rows: list[dict[str, str]] | None = None,
     top_limit: int = 50,
 ) -> list[str]:
     reason_counts = Counter(row.get("reason_family", "") for row in family_rows)
@@ -1589,6 +1721,7 @@ def residual_summary_markdown(
                 ["raw residual rows", len(rows)],
                 ["grouped residual families", len(family_rows)],
                 ["top candidate rows written", min(len(family_rows), RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT)],
+                ["promotable candidate groups", len(promotable_rows or [])],
             ],
         )
     )
@@ -1632,6 +1765,35 @@ def residual_summary_markdown(
             ],
         )
     )
+    if promotable_rows is not None:
+        lines.extend(["", f"## Promotable Candidate Queue ({len(promotable_rows)})", ""])
+        lines.extend(
+            md_table(
+                [
+                    "rank",
+                    "reason_family",
+                    "occurrences",
+                    "source_tokens",
+                    "proposed_target",
+                    "evidence",
+                    "confidence",
+                    "sample_refs",
+                ],
+                [
+                    [
+                        row.get("rank", ""),
+                        row.get("reason_family", ""),
+                        row.get("occurrences", ""),
+                        truncate(row.get("source_tokens", ""), 42),
+                        truncate(row.get("proposed_target", ""), 42),
+                        truncate(row.get("evidence_summary", ""), 42),
+                        truncate(row.get("confidence_summary", ""), 42),
+                        truncate(row.get("sample_refs", ""), 70),
+                    ]
+                    for row in promotable_rows[:top_limit]
+                ],
+            )
+        )
     lines.extend(
         [
             "",
@@ -1640,6 +1802,8 @@ def residual_summary_markdown(
             "- `promote` means a known exact-promote diagnostic row still appears; it is not an automatic correction instruction.",
             "- `review` means the group has enough support or recurrence to inspect manually.",
             "- `reject` means the group is currently low-confidence, mixed, or noisy.",
+            "- `residual_sanskrit_promotable_candidates.tsv` is the filtered queue from which an audited exact-token correction batch may be drawn.",
+            "- `citation_or_siglum` groups are bibliography/source-policy cases, not Sanskrit proper-name or title-family correction candidates.",
             "- Validator-only residue is not correction evidence.",
         ]
     )
@@ -2474,6 +2638,9 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
     residual_sanskrit_damage_top_rows = residual_sanskrit_damage_family_rows[
         :RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT
     ]
+    residual_sanskrit_promotable_rows = residual_promotable_candidate_rows(
+        residual_sanskrit_damage_family_rows
+    )
     write_tsv(
         output_dir / "residual_sanskrit_damage_families.tsv",
         residual_sanskrit_damage_family_rows,
@@ -2484,11 +2651,17 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
         residual_sanskrit_damage_top_rows,
         RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS,
     )
+    write_tsv(
+        output_dir / "residual_sanskrit_promotable_candidates.tsv",
+        residual_sanskrit_promotable_rows,
+        RESIDUAL_PROMOTABLE_CANDIDATE_FIELDS,
+    )
     (output_dir / "residual_sanskrit_damage_summary.md").write_text(
         "\n".join(
             residual_summary_markdown(
                 all_residual_sanskrit_damage_rows,
                 residual_sanskrit_damage_family_rows,
+                residual_sanskrit_promotable_rows,
             )
         )
         + "\n",
@@ -2509,6 +2682,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                 ["residual_sanskrit_damage_candidates.tsv", len(all_residual_sanskrit_damage_rows)],
                 ["residual_sanskrit_damage_families.tsv", len(residual_sanskrit_damage_family_rows)],
                 ["residual_sanskrit_damage_top_candidates.tsv", len(residual_sanskrit_damage_top_rows)],
+                ["residual_sanskrit_promotable_candidates.tsv", len(residual_sanskrit_promotable_rows)],
             ],
         )
     )
@@ -2543,6 +2717,42 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
                 ],
             )
         )
+    if residual_sanskrit_promotable_rows:
+        report.extend(["", "### Filtered Promotable Residual Candidates", ""])
+        report.extend(
+            md_table(
+                [
+                    "rank",
+                    "reason_family",
+                    "occurrences",
+                    "source_tokens",
+                    "proposed_target",
+                    "evidence",
+                    "confidence",
+                    "sample_refs",
+                ],
+                [
+                    [
+                        row.get("rank", ""),
+                        row.get("reason_family", ""),
+                        row.get("occurrences", ""),
+                        truncate(row.get("source_tokens", ""), 36),
+                        truncate(row.get("proposed_target", ""), 36),
+                        truncate(row.get("evidence_summary", ""), 36),
+                        truncate(row.get("confidence_summary", ""), 36),
+                        truncate(row.get("sample_refs", ""), 70),
+                    ]
+                    for row in residual_sanskrit_promotable_rows[:20]
+                ],
+            )
+        )
+        report.extend(
+            [
+                "",
+                "`residual_sanskrit_promotable_candidates.tsv` is the filtered queue for audited exact-token promotions. The broader top-candidates file remains a review and triage queue.",
+                "",
+            ]
+        )
 
     report.extend(
         [
@@ -2570,6 +2780,7 @@ def run(output_dir: Path, sample_size: int, seed: int, manifest_path: Path = MAN
             f"- `{output_dir / 'residual_sanskrit_damage_candidates.tsv'}`",
             f"- `{output_dir / 'residual_sanskrit_damage_families.tsv'}`",
             f"- `{output_dir / 'residual_sanskrit_damage_top_candidates.tsv'}`",
+            f"- `{output_dir / 'residual_sanskrit_promotable_candidates.tsv'}`",
             f"- `{output_dir / 'residual_sanskrit_damage_summary.md'}`",
             f"- `{output_dir / 'suspicious_token_classification_summary.tsv'}`",
             f"- `{output_dir / 'pages_with_many_changes.tsv'}`",

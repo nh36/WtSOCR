@@ -440,6 +440,62 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIsNotNone(candidate)
         self.assertEqual("possible_missed_good_reading", candidate["bucket"])
 
+    def test_residual_sanskrit_grouping_separates_sigla_from_prose_tokens(self) -> None:
+        report_module = self.load_report_module()
+
+        self.assertEqual(
+            "citation_or_siglum",
+            report_module.residual_reason_family("VisT", "proper name", "VisṬ", "Bibliography [VisT] 812"),
+        )
+        self.assertEqual(
+            "citation_or_siglum",
+            report_module.residual_reason_family("Käsy", "proper name", "Kāśy", "Käsy 91,15"),
+        )
+        self.assertNotEqual(
+            "citation_or_siglum",
+            report_module.residual_reason_family("Säulen", "", "", "deutsche Prosa mit Säulen [Käsy]"),
+        )
+
+        grouped = report_module.group_residual_sanskrit_damage_rows(
+            [
+                {
+                    "volume": "fixture",
+                    "page": "1",
+                    "line": "1",
+                    "token": "VisT",
+                    "candidate_family": "proper name",
+                    "proposed_target": "VisṬ",
+                    "context_excerpt": "Bibliography [VisT] 812",
+                    "evidence": "review_queue",
+                    "confidence": "medium",
+                    "suggested_action": "review",
+                }
+            ]
+        )
+
+        self.assertEqual("citation_or_siglum", grouped[0]["reason_family"])
+        self.assertFalse(report_module.residual_group_is_promotable_candidate(grouped[0]))
+
+        promotable = report_module.group_residual_sanskrit_damage_rows(
+            [
+                {
+                    "volume": "WtS 8-b",
+                    "page": "55",
+                    "line": "60",
+                    "token": "dnantaryamärgab",
+                    "candidate_family": "term_or_compound",
+                    "proposed_target": "ānantaryamārgaḥ",
+                    "context_excerpt": 'lam ≡ dnantaryamärgab "Weg ohne Hindernisse" (Mvy 1234).',
+                    "evidence": "review_queue",
+                    "confidence": "high",
+                    "suggested_action": "review",
+                }
+            ]
+        )
+
+        self.assertEqual("final_visarga", promotable[0]["reason_family"])
+        self.assertTrue(report_module.residual_group_is_promotable_candidate(promotable[0]))
+
     def run_postprocess_fixture(
         self,
         merged_text: str,
@@ -2665,6 +2721,11 @@ class PostprocessRegressionTests(unittest.TestCase):
             "sarvatathāgatavajrābhisckajniā": "sarvatathāgatavajrābhisckajñiā",
             "anantäparyantab": "anantāparyantaḥ",
             "pratikäülasamjnä": "pratikūlasaṃjñā",
+            "dnantaryamärgab": "ānantaryamārgaḥ",
+            "Aryaratnakäta": "Āryaratnakūṭa",
+            "śinaväsika": "Śāṇavāsika",
+            "śrijhäna": "śrījñāna",
+            "śosa-räpasya": "śoṣa-rūpasya",
         }
         merged_text = "".join(
             f"སྐད skt. {source} = reviewed Sanskrit title/proper-name context.\n"
@@ -2683,14 +2744,19 @@ class PostprocessRegressionTests(unittest.TestCase):
             "Deutscher Satz mit jnana, Sata, siitra, Dharmakirti, sahasrikä, "
             "Prajnāpāra, Taksaka, tamala, puspavrksab und Näga.\n"
             "Ähnliche Wörter: Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx, "
-            "anantäparyantab, pratikäülasamjnä, mkha'i, ch'a und dzā.\n"
+            "anantäparyantab, pratikäülasamjnä, dnantaryamärgab, Aryaratnakäta, "
+            "śinaväsika, śrijhäna, śosa-räpasya, VisT, Käsy, Käśy, mkha'i, ch'a und dzā.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("jnana, Sata, siitra, Dharmakirti, sahasrikä", corrected)
         self.assertIn("Prajnāpāra, Taksaka, tamala, puspavrksab und Näga", corrected)
         self.assertIn("Mädchen, Männer, Prajnāpārax, sarvajnatāpragbhārabx", corrected)
-        self.assertIn("anantäparyantab, pratikäülasamjnä", corrected)
+        self.assertIn(
+            "anantäparyantab, pratikäülasamjnä, dnantaryamärgab, Aryaratnakäta",
+            corrected,
+        )
+        self.assertIn("śinaväsika, śrijhäna, śosa-räpasya, VisT, Käsy, Käśy", corrected)
         self.assertIn("mkha'i, ch'a und dzā", corrected)
         self.assertNotIn("jñana", corrected)
         self.assertNotIn("Śata", corrected)
@@ -2706,6 +2772,13 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("sarvajñatāpragbhārabx", corrected)
         self.assertNotIn("anantāparyantaḥ", corrected)
         self.assertNotIn("pratikūlasaṃjñā", corrected)
+        self.assertNotIn("ānantaryamārgaḥ", corrected)
+        self.assertNotIn("Āryaratnakūṭa", corrected)
+        self.assertNotIn("Śāṇavāsika", corrected)
+        self.assertNotIn("śrījñāna", corrected)
+        self.assertNotIn("śoṣa-rūpasya", corrected)
+        self.assertNotIn("VisṬ", corrected)
+        self.assertNotIn("Kāśy", corrected)
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertFalse(
             any(
