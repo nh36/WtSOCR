@@ -496,6 +496,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual("final_visarga", promotable[0]["reason_family"])
         self.assertTrue(report_module.residual_group_is_promotable_candidate(promotable[0]))
 
+        reviewed = report_module.group_residual_sanskrit_damage_rows(
+            [
+                {
+                    "volume": "WtS 1-34",
+                    "page": "1007",
+                    "line": "104",
+                    "token": "jnaurasab",
+                    "candidate_family": "term_or_compound",
+                    "proposed_target": "jinaurasaḥ",
+                    "context_excerpt": "reviewed source line with jnaurasab",
+                    "evidence": "review_queue",
+                    "confidence": "high",
+                    "suggested_action": "review",
+                },
+                {
+                    "volume": "WtS 35-51",
+                    "page": "680",
+                    "line": "20",
+                    "token": "ucchanganäam",
+                    "candidate_family": "term_or_compound",
+                    "proposed_target": "ucchanganāam",
+                    "context_excerpt": "reviewed source line with ucchanganäam",
+                    "evidence": "review_queue",
+                    "confidence": "high",
+                    "suggested_action": "review",
+                },
+            ]
+        )
+
+        self.assertTrue(any(row["source_review_status"] == "source_reviewed_rejected" for row in reviewed))
+        self.assertTrue(any(row["source_review_status"] == "source_reviewed_deferred" for row in reviewed))
+        self.assertEqual([], report_module.residual_promotable_candidate_rows(reviewed))
+
     def run_postprocess_fixture(
         self,
         merged_text: str,
@@ -2738,6 +2771,32 @@ class PostprocessRegressionTests(unittest.TestCase):
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         for source, target in cases.items():
             self.assertIn((source, target, "sanskrit_reviewed_context_allowlist"), reasons)
+
+    def test_source_checked_local_sanskrit_phrase_promotes_only_reviewed_line(self) -> None:
+        page175_lines = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 48)]
+        page175_lines.append('Austrocknung (śoṣa-rūpasya maranasya)"')
+        merged_text = "\f".join(["ཀ་ ka", *[""] * 173, "\n".join(page175_lines)])
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_1_34")
+
+        self.assertIn('Austrocknung (śoṣa-rūpasya maraṇasya)"', corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("maranasya", "maraṇasya", "sanskrit_reviewed_context_allowlist"), reasons)
+        local_changes = [row for row in changes if row["from_token"] == "maranasya"]
+        self.assertEqual({("175", "48")}, {(row["page"], row["line"]) for row in local_changes})
+
+    def test_source_checked_local_sanskrit_phrase_requires_reviewed_location(self) -> None:
+        page174_lines = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 48)]
+        page174_lines.append('Austrocknung (śoṣa-rūpasya maranasya)"')
+        page175_lines = ["ཀ་ ka"] + [f"filler {idx}" for idx in range(2, 49)]
+        page175_lines.append('Austrocknung (śoṣa-rūpasya maranasya)"')
+        merged_text = "\f".join(
+            ["ཀ་ ka", *[""] * 172, "\n".join(page174_lines), "\n".join(page175_lines)]
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text, label="wts_1_34")
+
+        self.assertIn("maranasya", corrected)
+        self.assertNotIn("maraṇasya", corrected)
+        self.assertFalse(any(row["from_token"] == "maranasya" for row in changes))
 
     def test_reviewed_sanskrit_large_batch_promotions_do_not_broaden_rules(self) -> None:
         merged_text = (

@@ -275,6 +275,9 @@ SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
     "residual_sutra_title_normalization",
     "residual_visarga_term_normalization",
 }
+SANSKRIT_SOURCE_CHECKED_LOCAL_EVIDENCE_TAGS = {
+    "source_checked_local_sanskrit_phrase",
+}
 SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
     "curated_sanskrit_proper_name",
     "curated_sanskrit_term",
@@ -284,7 +287,7 @@ SANSKRIT_REVIEWED_CONTEXT_EVIDENCE_TAGS = {
     "review_queue_sanskrit_proper_name",
     "review_queue_sanskrit_term",
     "reviewed_sanskrit_title",
-} | SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS
+} | SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS | SANSKRIT_SOURCE_CHECKED_LOCAL_EVIDENCE_TAGS
 SANSKRIT_REVIEWED_CONTEXT_ALLOWLIST_REASON = "sanskrit_reviewed_context_allowlist"
 SANSKRIT_REVIEWED_CONTEXT_RE = re.compile(
     r"(?<!\w)(?:Mvy|Lex\.|skt\.?|Sanskrit|Dagy|sGra|Toh|Samv|"
@@ -746,6 +749,10 @@ SANSKRIT_REVIEWED_CONTEXT_OVERRIDE_LOCATIONS = load_sanskrit_promoted_override_l
 SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence_tags(
     SANSKRIT_PROMOTED_OVERRIDES_PATH,
     SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_EVIDENCE_TAGS,
+)
+SANSKRIT_SOURCE_CHECKED_LOCAL_OVERRIDE_KEYS = load_sanskrit_promoted_override_keys_by_evidence_tags(
+    SANSKRIT_PROMOTED_OVERRIDES_PATH,
+    SANSKRIT_SOURCE_CHECKED_LOCAL_EVIDENCE_TAGS,
 )
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
@@ -7150,6 +7157,13 @@ def reviewed_sanskrit_override_allowed(
     zone: str,
 ) -> bool:
     token_key = unicodedata.normalize("NFC", token).lower()
+    if token_key in SANSKRIT_SOURCE_CHECKED_LOCAL_OVERRIDE_KEYS:
+        return reviewed_sanskrit_override_location_allowed(
+            token,
+            volume_label,
+            page,
+            line,
+        )
     if token_key in SANSKRIT_RESIDUAL_REVIEWED_CONTEXT_OVERRIDE_KEYS:
         return reviewed_sanskrit_override_location_allowed(
             token,

@@ -242,6 +242,8 @@ RESIDUAL_SANSKRIT_DAMAGE_FAMILY_FIELDS = [
     "evidence_summary",
     "confidence_summary",
     "suggested_action",
+    "source_review_status",
+    "source_review_decision",
     "ranking_reason",
 ]
 RESIDUAL_SANSKRIT_DAMAGE_TOP_LIMIT = 250
@@ -290,6 +292,28 @@ RESIDUAL_REVIEW_TOKEN_TARGETS = {
     "śrijhäna": "śrījñāna",
     "ucchanganäam": "ucchanganāam",
     "VisT": "VisṬ",
+}
+RESIDUAL_SOURCE_REVIEW_DECISIONS = {
+    "jnaurasab": (
+        "source_reviewed_rejected",
+        "Source image supports yumrasab rather than jinaurasaḥ; do not promote as Sanskrit correction.",
+    ),
+    "ucchanganäam": (
+        "source_reviewed_deferred",
+        "Source image points to a fuller uncertain phrase, likely śatam ucchaṅgūnām bahulam nāmocyate; proposed ucchanganāam is under-normalized.",
+    ),
+    "VisT": (
+        "source_policy_deferred",
+        "Short bibliographic siglum; requires citation policy/source decision, not Sanskrit normalization.",
+    ),
+    "Käsy": (
+        "source_policy_deferred",
+        "Short bibliographic/citation form; requires citation policy/source decision, not Sanskrit normalization.",
+    ),
+    "Käśy": (
+        "source_policy_deferred",
+        "Short bibliographic/citation form; requires citation policy/source decision, not Sanskrit normalization.",
+    ),
 }
 TIBETAN_WYLIE_CANDIDATE_KEYS = {
     "dan",
@@ -1541,6 +1565,20 @@ def residual_group_suggested_action(group: dict[str, object]) -> str:
     return "reject"
 
 
+def residual_source_review_summary_for_tokens(tokens: Counter[str]) -> tuple[str, str]:
+    statuses: list[str] = []
+    decisions: list[str] = []
+    for token in tokens:
+        reviewed = RESIDUAL_SOURCE_REVIEW_DECISIONS.get(normalize_report_token(token))
+        if reviewed is None:
+            continue
+        status, decision = reviewed
+        if status not in statuses:
+            statuses.append(status)
+        decisions.append(f"{token}: {decision}")
+    return "; ".join(statuses), " | ".join(decisions)
+
+
 def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     groups: dict[tuple[str, str], dict[str, object]] = {}
     for row in rows:
@@ -1591,13 +1629,17 @@ def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict
     sorted_groups = sorted(groups.values(), key=residual_group_rank)
     output_rows: list[dict[str, str]] = []
     for rank, group in enumerate(sorted_groups, start=1):
+        source_tokens_summary = residual_counter_summary(group["tokens"], limit=12)  # type: ignore[arg-type]
+        source_review_status, source_review_decision = residual_source_review_summary_for_tokens(
+            group["tokens"]  # type: ignore[arg-type]
+        )
         output_rows.append(
             {
                 "rank": str(rank),
                 "family_key": str(group["family_key"]),
                 "reason_family": str(group["reason_family"]),
                 "candidate_family": residual_counter_summary(group["candidate_family"]),  # type: ignore[arg-type]
-                "source_tokens": residual_counter_summary(group["tokens"], limit=12),  # type: ignore[arg-type]
+                "source_tokens": source_tokens_summary,
                 "proposed_target": residual_counter_summary(group["targets"], limit=6),  # type: ignore[arg-type]
                 "occurrences": str(group["occurrences"]),
                 "volume_count": str(len(group["volumes"])),  # type: ignore[arg-type]
@@ -1606,6 +1648,8 @@ def group_residual_sanskrit_damage_rows(rows: list[dict[str, str]]) -> list[dict
                 "evidence_summary": residual_counter_summary(group["evidence"]),  # type: ignore[arg-type]
                 "confidence_summary": residual_counter_summary(group["confidence"]),  # type: ignore[arg-type]
                 "suggested_action": residual_group_suggested_action(group),
+                "source_review_status": source_review_status,
+                "source_review_decision": source_review_decision,
                 "ranking_reason": residual_group_ranking_reason(group),
             }
         )
@@ -1671,6 +1715,8 @@ def residual_group_is_obvious_german_or_prose(row: dict[str, str]) -> bool:
 
 def residual_group_is_promotable_candidate(row: dict[str, str]) -> bool:
     if not row.get("proposed_target", "").strip():
+        return False
+    if row.get("source_review_status", "").strip():
         return False
     if row.get("reason_family") == "citation_or_siglum":
         return False
