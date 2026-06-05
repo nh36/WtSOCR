@@ -2540,6 +2540,7 @@ def arbitrate_alternate_witness(
         page_delta = ""
         if base_page_no is not None and alternate_page_no is not None:
             page_delta = str(alternate_page_no - base_page_no)
+        has_page_shift = bool(page_delta and page_delta != "0")
         resynchronization_attribution = ""
         resynchronization_source = ""
         if alignment_method:
@@ -2549,6 +2550,7 @@ def arbitrate_alternate_witness(
                 last_recovered_rewrapped_page is not None
                 and base_page_no is not None
                 and base_page_no > last_recovered_rewrapped_page[0]
+                and has_page_shift
             ):
                 resynchronization_attribution = (
                     "downstream_after_recovered_rewrapped_fallback"
@@ -2557,7 +2559,7 @@ def arbitrate_alternate_witness(
                     f"recovered_rewrapped_base_page={last_recovered_rewrapped_page[0]};"
                     f"alternate_page={last_recovered_rewrapped_page[1]}"
                 )
-            elif page_delta and page_delta != "0":
+            elif has_page_shift:
                 resynchronization_attribution = "direct_offset_page_alignment"
             else:
                 resynchronization_attribution = "direct_page_alignment"

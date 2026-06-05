@@ -406,6 +406,23 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["alternate_witness_adoptions"], 1)
         self.assertEqual(result["alternate_witness_unresolved"], 0)
 
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="",
+            encoding="utf-8",
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(adoptions[0]["alignment_method"], "ordinary_page_alignment")
+        self.assertEqual(
+            adoptions[0]["alignment_attribution"],
+            "ordinary_page_alignment",
+        )
+        self.assertEqual(
+            adoptions[0]["resynchronization_attribution"],
+            "direct_offset_page_alignment",
+        )
+        self.assertEqual(adoptions[0]["base_to_alternate_page_delta"], "1")
+        self.assertEqual(adoptions[0]["alternate_page"], "2")
+
     def test_alternate_witness_scans_forward_across_rewrapped_page(self) -> None:
         merged_text = "ཞེས་ žes koṅ po\n\fཀོང་ koṅ po\n"
         alternate_merged_text = (
@@ -683,7 +700,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertGreaterEqual(float(adoptions[0]["canonical_overlap"]), 0.35)
         self.assertGreaterEqual(int(adoptions[0]["shared_canonical_tokens"]), 10)
 
-    def test_alternate_witness_marks_downstream_after_rewrapped_fallback(
+    def test_alternate_witness_same_page_after_rewrapped_fallback_is_not_downstream(
         self,
     ) -> None:
         merged_text = (
@@ -737,12 +754,74 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(
             rows_by_page["2"]["resynchronization_attribution"],
+            "direct_page_alignment",
+        )
+        self.assertEqual(rows_by_page["2"]["resynchronization_source"], "")
+        self.assertEqual(rows_by_page["2"]["base_to_alternate_page_delta"], "0")
+
+        shifted_merged_text = (
+            "ཀ་ ka alpha bravo charlie delta\n"
+            "ཁ་ kha echo foxtrot golf hotel\n"
+            "ག་ ga india juliet kilo lima\n"
+            "ང་ nga mike november oscar papa\n"
+            "ཞེས་ zes quebec romeo sierra tango\n"
+            "ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+            "\f"
+            "ཞེས་ žes shifted alpha bravo charlie delta\n"
+        )
+        shifted_alternate_merged_text = (
+            "=== page 001 ===\n"
+            "unrelated witness material alpha beta gamma\n"
+            "=== page 002 ===\n"
+            "ཀ་ ka alpha bravo charlie delta ཁ་ kha echo foxtrot golf hotel "
+            "ག་ ga india juliet kilo lima ང་ nga mike november oscar papa\n"
+            "ཞེས་ žes quebec romeo sierra tango ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+            "=== page 003 ===\n"
+            "ཞེས་ žes shifted alpha bravo charlie delta\n"
+        )
+
+        shifted_result, shifted_corrected, _ = self.run_postprocess_fixture(
+            shifted_merged_text,
+            alternate_merged_text=shifted_alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཞེས་ źes quebec", shifted_corrected)
+        self.assertIn("ཞེས་ źes shifted", shifted_corrected)
+        self.assertEqual(shifted_result["alternate_witness_adoptions"], 2)
+        self.assertEqual(shifted_result["alternate_witness_unresolved"], 0)
+
+        with Path(shifted_result["alternate_witness_adoptions_tsv"]).open(
+            newline="",
+            encoding="utf-8",
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        rows_by_page = {row["page"]: row for row in adoptions}
+        self.assertEqual(
+            rows_by_page["1"]["resynchronization_attribution"],
+            "direct_recovered_rewrapped_fallback",
+        )
+        self.assertEqual(rows_by_page["1"]["base_to_alternate_page_delta"], "1")
+        self.assertEqual(rows_by_page["1"]["alternate_page"], "2")
+        self.assertEqual(rows_by_page["2"]["alignment_method"], "ordinary_page_alignment")
+        self.assertEqual(
+            rows_by_page["2"]["alignment_attribution"],
+            "ordinary_page_alignment",
+        )
+        self.assertEqual(
+            rows_by_page["2"]["resynchronization_attribution"],
             "downstream_after_recovered_rewrapped_fallback",
         )
         self.assertEqual(
             rows_by_page["2"]["resynchronization_source"],
-            "recovered_rewrapped_base_page=1;alternate_page=1",
+            "recovered_rewrapped_base_page=1;alternate_page=2",
         )
+        self.assertEqual(rows_by_page["2"]["base_to_alternate_page_delta"], "1")
+        self.assertEqual(rows_by_page["2"]["alternate_page"], "3")
 
     def test_alternate_witness_rewrapped_fallback_keeps_base_line_text_with_noise(
         self,
