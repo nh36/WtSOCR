@@ -6,7 +6,8 @@ Date: 2026-06-04
 
 - Branch checked: `main`
 - Pre-diagnostics trusted baseline commit: `f35811e825cad284101aa5d98e0c25215de03bb2`
-- Current diagnostics commit under review: `ed14e57e801c3ffba62c4448552bcaae9ea5fa07`
+- Initial diagnostics commit: `ed14e57e801c3ffba62c4448552bcaae9ea5fa07`
+- Current refined diagnostics commit under review: `48153da78ce528ae4130abfe7ff4c7c11b2c48c4`
 - Latest trusted PR: PR #1, `nh36/loc-end-to-end-audit`, merged by commit `f35811e825`
 - Baseline regression check before diagnostics edits: `84 passed in 0.63s`
 - Post-diagnostics regression check: `85 passed in 0.55s`
@@ -58,10 +59,10 @@ Recorded attribution breakdown before refinement:
 
 Refined attribution breakdown:
 
-| Volume | Ordinary page alignment | Rewrapped page alignment | Recovered rewrapped fallback | Direct same/offset page | Downstream after fallback |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| `wts_1_34` | 7 | 145 | 5319 | 137 | 15 |
-| `wts_35_51` | 5 | 41 | 1271 | 46 | 0 |
+| Volume | Ordinary page alignment | Rewrapped page alignment | Recovered rewrapped fallback | Direct same-page alignment | Direct offset page alignment | Downstream after fallback |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `wts_1_34` | 7 | 145 | 5319 | 137 | 0 | 15 |
+| `wts_35_51` | 5 | 41 | 1271 | 46 | 0 | 0 |
 
 ## Known Caveats
 
