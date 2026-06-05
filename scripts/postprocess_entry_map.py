@@ -2472,6 +2472,10 @@ def arbitrate_alternate_witness(
     @dataclass(frozen=True)
     class AlignmentDiagnostics:
         alignment_method: str = ""
+        alignment_attribution: str = ""
+        resynchronization_attribution: str = ""
+        resynchronization_source: str = ""
+        base_to_alternate_page_delta: str = ""
         alternate_page: str = ""
         page_match_score: str = ""
         canonical_overlap: str = ""
@@ -2483,6 +2487,10 @@ def arbitrate_alternate_witness(
         def as_row(self) -> list[str]:
             return [
                 self.alignment_method,
+                self.alignment_attribution,
+                self.resynchronization_attribution,
+                self.resynchronization_source,
+                self.base_to_alternate_page_delta,
                 self.alternate_page,
                 self.page_match_score,
                 self.canonical_overlap,
@@ -2492,13 +2500,24 @@ def arbitrate_alternate_witness(
                 self.line_count_ratio,
             ]
 
+    def alignment_attribution_for_method(alignment_method: str) -> str:
+        if alignment_method == "recovered_rewrapped_page":
+            return "recovered_rewrapped_fallback"
+        if alignment_method == "rewrapped_page_alignment":
+            return "rewrapped_page_alignment"
+        if alignment_method in {"ordinary_page_alignment", "reordered_page_alignment"}:
+            return "ordinary_page_alignment"
+        return alignment_method
+
     def build_alignment_diagnostics(
         alignment_method: str,
         base_page: list[str],
         alternate_page: list[str],
         *,
+        base_page_no: int | None,
         alternate_page_no: int | None,
         page_match_score: float,
+        last_recovered_rewrapped_page: tuple[int, int] | None = None,
     ) -> AlignmentDiagnostics:
         base_nonempty_count = sum(1 for line in base_page if line.strip())
         alternate_nonempty_count = sum(
@@ -2518,8 +2537,36 @@ def arbitrate_alternate_witness(
             alternate_page,
             alternate_google_vision=alternate_google_vision,
         )
+        page_delta = ""
+        if base_page_no is not None and alternate_page_no is not None:
+            page_delta = str(alternate_page_no - base_page_no)
+        resynchronization_attribution = ""
+        resynchronization_source = ""
+        if alignment_method:
+            if alignment_method == "recovered_rewrapped_page":
+                resynchronization_attribution = "direct_recovered_rewrapped_fallback"
+            elif (
+                last_recovered_rewrapped_page is not None
+                and base_page_no is not None
+                and base_page_no > last_recovered_rewrapped_page[0]
+            ):
+                resynchronization_attribution = (
+                    "downstream_after_recovered_rewrapped_fallback"
+                )
+                resynchronization_source = (
+                    f"recovered_rewrapped_base_page={last_recovered_rewrapped_page[0]};"
+                    f"alternate_page={last_recovered_rewrapped_page[1]}"
+                )
+            elif page_delta and page_delta != "0":
+                resynchronization_attribution = "direct_offset_page_alignment"
+            else:
+                resynchronization_attribution = "direct_page_alignment"
         return AlignmentDiagnostics(
             alignment_method=alignment_method,
+            alignment_attribution=alignment_attribution_for_method(alignment_method),
+            resynchronization_attribution=resynchronization_attribution,
+            resynchronization_source=resynchronization_source,
+            base_to_alternate_page_delta=page_delta,
             alternate_page=str(alternate_page_no) if alternate_page_no is not None else "",
             page_match_score=f"{page_match_score:.3f}",
             canonical_overlap=f"{overlap:.3f}",
@@ -3025,6 +3072,7 @@ def arbitrate_alternate_witness(
     aligned_alternate_page_diagnostics: list[AlignmentDiagnostics] = []
     empty_alignment_diagnostics = AlignmentDiagnostics()
     alternate_page_idx = 0
+    last_recovered_rewrapped_page: tuple[int, int] | None = None
     for page_idx, base_page in enumerate(base_page_lines, start=1):
         matched_page_idx: int | None = None
         aligned_page: list[str] | None = None
@@ -3073,8 +3121,10 @@ def arbitrate_alternate_witness(
                         candidate_alignment_method,
                         base_page,
                         alternate_page_lines[search_idx],
+                        base_page_no=page_idx,
                         alternate_page_no=search_idx + 1,
                         page_match_score=candidate_score,
+                        last_recovered_rewrapped_page=last_recovered_rewrapped_page,
                     )
             elif reason is None:
                 reason = candidate_reason or "line_count_mismatch"
@@ -3102,6 +3152,8 @@ def arbitrate_alternate_witness(
                 alternate_page_idx += 1
             continue
         alternate_page_idx = matched_page_idx + 1
+        if matched_alignment_diagnostics.alignment_method == "recovered_rewrapped_page":
+            last_recovered_rewrapped_page = (page_idx, matched_page_idx + 1)
         aligned_alternate_pages.append(aligned_page)
         aligned_alternate_page_diagnostics.append(matched_alignment_diagnostics)
     rewritten_pages = [page[:] for page in base_page_lines]
@@ -7374,6 +7426,10 @@ def run_one(
             "base_line",
             "alternate_line",
             "alignment_method",
+            "alignment_attribution",
+            "resynchronization_attribution",
+            "resynchronization_source",
+            "base_to_alternate_page_delta",
             "alternate_page",
             "page_match_score",
             "canonical_overlap",

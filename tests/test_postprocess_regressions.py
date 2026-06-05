@@ -157,6 +157,13 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(adoptions[0]["base_token"], "žes")
         self.assertEqual(adoptions[0]["alternate_token"], "źes")
         self.assertEqual(adoptions[0]["reason"], "alternate_witness_strict_translit")
+        self.assertEqual(adoptions[0]["alignment_method"], "ordinary_page_alignment")
+        self.assertEqual(adoptions[0]["alignment_attribution"], "ordinary_page_alignment")
+        self.assertEqual(
+            adoptions[0]["resynchronization_attribution"],
+            "direct_page_alignment",
+        )
+        self.assertEqual(adoptions[0]["base_to_alternate_page_delta"], "0")
 
     def test_alternate_witness_logs_unresolved_unsafe_disagreement(self) -> None:
         merged_text = "ཀོང་ koṅ po\n"
@@ -662,10 +669,80 @@ class PostprocessRegressionTests(unittest.TestCase):
             "alternate_witness_google_loc_fricative_upgrade",
         )
         self.assertEqual(adoptions[0]["alignment_method"], "recovered_rewrapped_page")
+        self.assertEqual(
+            adoptions[0]["alignment_attribution"],
+            "recovered_rewrapped_fallback",
+        )
+        self.assertEqual(
+            adoptions[0]["resynchronization_attribution"],
+            "direct_recovered_rewrapped_fallback",
+        )
+        self.assertEqual(adoptions[0]["base_to_alternate_page_delta"], "0")
         self.assertEqual(adoptions[0]["alternate_page"], "1")
         self.assertGreaterEqual(float(adoptions[0]["page_match_score"]), 0.50)
         self.assertGreaterEqual(float(adoptions[0]["canonical_overlap"]), 0.35)
         self.assertGreaterEqual(int(adoptions[0]["shared_canonical_tokens"]), 10)
+
+    def test_alternate_witness_marks_downstream_after_rewrapped_fallback(
+        self,
+    ) -> None:
+        merged_text = (
+            "ཀ་ ka alpha bravo charlie delta\n"
+            "ཁ་ kha echo foxtrot golf hotel\n"
+            "ག་ ga india juliet kilo lima\n"
+            "ང་ nga mike november oscar papa\n"
+            "ཞེས་ zes quebec romeo sierra tango\n"
+            "ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+            "\f"
+            "ཞེས་ žes downstream alpha bravo charlie delta\n"
+        )
+        alternate_merged_text = (
+            "=== page 001 ===\n"
+            "ཀ་ ka alpha bravo charlie delta ཁ་ kha echo foxtrot golf hotel "
+            "ག་ ga india juliet kilo lima ང་ nga mike november oscar papa\n"
+            "ཞེས་ žes quebec romeo sierra tango ཅ་ ca uniform victor whiskey xray\n"
+            "ཆ་ cha yankee zulu amber beryl\n"
+            "ཇ་ ja cedar dahlia ember fern\n"
+            "=== page 002 ===\n"
+            "ཞེས་ žes downstream alpha bravo charlie delta\n"
+        )
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("ཞེས་ źes quebec", corrected)
+        self.assertIn("ཞེས་ źes downstream", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 2)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="",
+            encoding="utf-8",
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        rows_by_page = {row["page"]: row for row in adoptions}
+        self.assertEqual(
+            rows_by_page["1"]["resynchronization_attribution"],
+            "direct_recovered_rewrapped_fallback",
+        )
+        self.assertEqual(rows_by_page["2"]["alignment_method"], "ordinary_page_alignment")
+        self.assertEqual(
+            rows_by_page["2"]["alignment_attribution"],
+            "ordinary_page_alignment",
+        )
+        self.assertEqual(
+            rows_by_page["2"]["resynchronization_attribution"],
+            "downstream_after_recovered_rewrapped_fallback",
+        )
+        self.assertEqual(
+            rows_by_page["2"]["resynchronization_source"],
+            "recovered_rewrapped_base_page=1;alternate_page=1",
+        )
 
     def test_alternate_witness_rewrapped_fallback_keeps_base_line_text_with_noise(
         self,
