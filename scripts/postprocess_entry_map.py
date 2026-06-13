@@ -2188,6 +2188,14 @@ GOOGLE_LOC_VELAR_NASAL_UPGRADE_PAIRS = {
 
 GOOGLE_LOC_VELAR_NASAL_BLOCKING_CLUSTERS = ("dz", "j", "c")
 
+BLOCKED_ALTERNATE_WITNESS_TOKEN_PAIRS = {
+    ("dnos", "dños"): "blocked_alternate_witness_wrong_nasal_dnos",
+}
+
+
+def blocked_alternate_witness_reason(base_token: str, alternate_token: str) -> str | None:
+    return BLOCKED_ALTERNATE_WITNESS_TOKEN_PAIRS.get((base_token, alternate_token))
+
 
 def token_is_google_loc_nasal_upgrade(base_token: str, alternate_token: str) -> bool:
     if len(base_token) != len(alternate_token):
@@ -3196,13 +3204,28 @@ def arbitrate_alternate_witness(
                 rebuilt.append(base_line[cursor:start])
                 replacement = base_token
                 if base_token != alternate_token:
-                    reason = alternate_witness_reason(
+                    blocked_reason = blocked_alternate_witness_reason(base_token, alternate_token)
+                    if blocked_reason:
+                        unresolved_rows.append(
+                            [
+                                str(page_idx),
+                                str(line_idx),
+                                str(token_index),
+                                base_token,
+                                alternate_token,
+                                blocked_reason,
+                                distance_key(base_token),
+                                distance_key(alternate_token),
+                                base_line,
+                                alternate_line,
+                            ]
+                        )
+                    elif reason := alternate_witness_reason(
                         base_token,
                         alternate_token,
                         line_info=line_info,
                         line_text=base_line,
-                    )
-                    if reason:
+                    ):
                         if translit_context or reason in context_free_alternate_reasons:
                             replacement = alternate_token
                             adoption_rows.append(
@@ -4316,6 +4339,72 @@ def parse_entries(
 
 def page_lines_to_text(page_lines: list[list[str]]) -> str:
     return "\f".join("\n".join(lines) for lines in page_lines)
+
+
+def normalized_label_key(label: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
+
+
+REVIEWED_TIBETAN_EXACT_NORMALIZATIONS: dict[tuple[str, int, int, int, str], tuple[str, str]] = {
+    ("wts_9_m", 68, 2, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+    ("wts_9_m", 143, 10, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+    ("wts_9_m", 190, 77, 2, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+    ("wts_9_m", 381, 57, 8, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+}
+
+
+def apply_reviewed_tibetan_exact_normalizations(
+    corrected_text: str,
+    line_infos: list[LineInfo],
+    label: str,
+) -> tuple[str, list[list[str]], int]:
+    label_key = normalized_label_key(label)
+    if not any(key[0] == label_key for key in REVIEWED_TIBETAN_EXACT_NORMALIZATIONS):
+        return corrected_text, [], 0
+
+    pages = [page.split("\n") for page in corrected_text.split("\f")]
+    info_by_key = {(info.page, info.line): info for info in line_infos}
+    change_rows: list[list[str]] = []
+    applied = 0
+    for page_idx, page in enumerate(pages, start=1):
+        for line_idx, line in enumerate(page, start=1):
+            replacements = []
+            for token_index, (token, start, end) in enumerate(
+                extract_alternate_witness_tokens(line), start=1
+            ):
+                match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
+                    (label_key, page_idx, line_idx, token_index, token)
+                )
+                if match:
+                    to_token, reason = match
+                    replacements.append((start, end, token, to_token, reason))
+            if not replacements:
+                continue
+
+            original_line = line
+            for start, end, from_token, to_token, reason in sorted(
+                replacements, key=lambda row: row[0], reverse=True
+            ):
+                line = line[:start] + to_token + line[end:]
+                applied += 1
+                info = info_by_key.get((page_idx, line_idx))
+                change_rows.append(
+                    [
+                        str(page_idx),
+                        str(line_idx),
+                        str(info.entry_id if info else 0),
+                        info.zone if info else "",
+                        from_token,
+                        to_token,
+                        "reviewed_tibetan_exact",
+                        reason,
+                        "yes",
+                        original_line,
+                    ]
+                )
+            pages[page_idx - 1][line_idx - 1] = line
+
+    return page_lines_to_text(pages), change_rows, applied
 
 
 def normalize_form_feed_page_number_lines(text: str) -> str:
@@ -7211,6 +7300,8 @@ def run_one(
     alternate_adoption_rows: list[list[str]] = []
     alternate_unresolved_rows: list[list[str]] = []
     alternate_adoption_count = 0
+    reviewed_tibetan_change_rows: list[list[str]] = []
+    reviewed_tibetan_change_count = 0
     if alternate_merged is not None:
         alternate_witness = prepare_witness(
             alternate_merged.read_text(encoding="utf-8", errors="replace"),
@@ -7263,6 +7354,19 @@ def run_one(
             discovered=discovered,
         )
         change_rows = structural_change_rows + google_vision_change_rows + change_rows
+        corrected_text, reviewed_tibetan_change_rows, reviewed_tibetan_change_count = (
+            apply_reviewed_tibetan_exact_normalizations(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+                label=label,
+            )
+        )
+        change_rows.extend(reviewed_tibetan_change_rows)
+        if reviewed_tibetan_change_count:
+            entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(
+                corrected_text,
+                audit_by_line,
+            )
         corrected_text, citation_change_rows, citation_review_rows, citation_report_rows, citation_family_count = (
             apply_citation_name_normalization(
                 corrected_text=corrected_text,
@@ -7480,6 +7584,7 @@ def run_one(
         "tier_b_suggestions": len(review_rows),
         "citation_name_families": citation_family_count,
         "citation_name_changes": len(citation_change_rows),
+        "reviewed_tibetan_exact_changes": reviewed_tibetan_change_count,
         "sanskrit_families": sanskrit_family_count,
         "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_OVERRIDES),
         "sanskrit_changes": len(sanskrit_change_rows),
@@ -7605,6 +7710,7 @@ def main() -> int:
     print(f"tier_b_suggestions={result['tier_b_suggestions']}")
     print(f"citation_name_families={result['citation_name_families']}")
     print(f"citation_name_changes={result['citation_name_changes']}")
+    print(f"reviewed_tibetan_exact_changes={result['reviewed_tibetan_exact_changes']}")
     print(f"sanskrit_families={result['sanskrit_families']}")
     print(f"sanskrit_promoted_overrides_loaded={result['sanskrit_promoted_overrides_loaded']}")
     print(f"sanskrit_changes={result['sanskrit_changes']}")

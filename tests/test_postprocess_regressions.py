@@ -25,6 +25,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         alternate_merged_text: str | None = None,
         alternate_google_vision: bool = False,
         merge_only: bool = False,
+        label: str = "fixture",
     ) -> tuple[dict[str, object], str, list[dict[str, str]]]:
         td = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, td, ignore_errors=True)
@@ -41,7 +42,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             merged=merged,
             audit=None,
             outdir=outdir,
-            label="fixture",
+            label=label,
             trusted_min_freq=2,
             discover_max_edit=2,
             discover_max_rare_freq=3,
@@ -285,6 +286,102 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(unresolved[0]["base_token"], "gañdza")
         self.assertEqual(unresolved[0]["alternate_token"], "gaṅdza")
         self.assertEqual(unresolved[0]["reason"], "unsafe_token_disagreement")
+
+    def test_alternate_witness_blocks_bad_dnos_palatal_nasal(self) -> None:
+        merged_text = "དངོས་ dnos su gsal por ma ston par\n"
+        alternate_merged_text = "=== page 001 ===\nདངོས་ dños su gsal por ma ston par\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("dnos su", corrected)
+        self.assertNotIn("dños", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 0)
+        self.assertEqual(result["alternate_witness_unresolved"], 1)
+
+        with Path(result["alternate_witness_unresolved_tsv"]).open(
+            newline="", encoding="utf-8"
+        ) as f:
+            unresolved = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(unresolved), 1)
+        self.assertEqual(unresolved[0]["base_token"], "dnos")
+        self.assertEqual(unresolved[0]["alternate_token"], "dños")
+        self.assertEqual(
+            unresolved[0]["reason"],
+            "blocked_alternate_witness_wrong_nasal_dnos",
+        )
+
+    def test_alternate_witness_keeps_gna_khri_palatal_nasal_upgrade(self) -> None:
+        merged_text = "གཉ་ gNa-khri btsan-po\n"
+        alternate_merged_text = "=== page 001 ===\nགཉ་ gÑa-khri btsan-po\n"
+
+        result, corrected, _ = self.run_postprocess_fixture(
+            merged_text,
+            alternate_merged_text=alternate_merged_text,
+            alternate_google_vision=True,
+        )
+
+        self.assertIn("gÑa-khri", corrected)
+        self.assertEqual(result["alternate_witness_adoptions"], 1)
+        self.assertEqual(result["alternate_witness_unresolved"], 0)
+
+        with Path(result["alternate_witness_adoptions_tsv"]).open(
+            newline="", encoding="utf-8"
+        ) as f:
+            adoptions = list(csv.DictReader(f, delimiter="\t"))
+        self.assertEqual(len(adoptions), 1)
+        self.assertEqual(adoptions[0]["base_token"], "gNa-khri")
+        self.assertEqual(adoptions[0]["alternate_token"], "gÑa-khri")
+        self.assertEqual(
+            adoptions[0]["reason"],
+            "alternate_witness_google_loc_nasal_upgrade",
+        )
+
+    def test_reviewed_wts_9m_dnos_exact_local_normalization(self) -> None:
+        pages = ["placeholder\n"] * 67
+        pages.append("filler line\nLex. la sogs pa = dnos su gsal por ma ston par\n")
+        merged_text = "\f".join(pages)
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("dṅos su", corrected)
+        reviewed = [
+            row for row in changes if row["reason"] == "reviewed_tibetan_exact_dngos"
+        ]
+        self.assertEqual(len(reviewed), 1)
+        self.assertEqual(reviewed[0]["page"], "68")
+        self.assertEqual(reviewed[0]["line"], "2")
+        self.assertEqual(reviewed[0]["from_token"], "dnos")
+        self.assertEqual(reviewed[0]["to_token"], "dṅos")
+        self.assertEqual(reviewed[0]["tier"], "reviewed_tibetan_exact")
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
+    def test_reviewed_wts_9m_dnos_exact_does_not_apply_unreviewed_line(self) -> None:
+        pages = ["placeholder\n"] * 67
+        pages.append(
+            "filler line\n"
+            "another line\n"
+            "Lex. la sogs pa = dnos su gsal por ma ston par\n"
+        )
+        merged_text = "\f".join(pages)
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("dnos su", corrected)
+        self.assertNotIn("dṅos", corrected)
+        self.assertFalse(
+            [row for row in changes if row["reason"] == "reviewed_tibetan_exact_dngos"]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
     def test_alternate_witness_adopts_initial_i_to_l_translit_upgrade(self) -> None:
         merged_text = "ལྟ་བ་ Ita ba yin\n"
