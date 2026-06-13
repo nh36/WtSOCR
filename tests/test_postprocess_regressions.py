@@ -56,6 +56,21 @@ class PostprocessRegressionTests(unittest.TestCase):
             changes = list(csv.DictReader(f, delimiter="\t"))
         return result, corrected, changes
 
+    @staticmethod
+    def fixture_with_reviewed_lines(lines_by_page_line: dict[tuple[int, int], str]) -> str:
+        max_page = max(page for page, _ in lines_by_page_line)
+        pages: list[str] = []
+        for page in range(1, max_page + 1):
+            page_lines = ["placeholder"]
+            for (target_page, line), text in sorted(lines_by_page_line.items()):
+                if target_page != page:
+                    continue
+                while len(page_lines) < line:
+                    page_lines.append("filler line")
+                page_lines[line - 1] = text
+            pages.append("\n".join(page_lines))
+        return "\f".join(pages)
+
     def test_run_one_tolerates_malformed_ocr_bytes(self) -> None:
         td = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, td, ignore_errors=True)
@@ -380,6 +395,105 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertNotIn("dṅos", corrected)
         self.assertFalse(
             [row for row in changes if row["reason"] == "reviewed_tibetan_exact_dngos"]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
+    def test_reviewed_wts_8b_final_ng_exact_batch_normalization(self) -> None:
+        reviewed_lines = {
+            (69, 16): 'die sañ gsen mit dem Wollschopf [usw.]"',
+            (109, 71): 'tses dki? ~ te "Myañ Zan-snan war gegen-',
+            (150, 30): "(dPeD 185,6); bya de po ni khyim bya'i miñ",
+            (186, 65): "gtogs pai miñ).",
+            (212, 14): 'sañ Sari dari ~ dari sgum thun "Sari sar, kleine',
+            (232, 30): 'schein" (Tär 161,10); ~ dan / sa sho sañ son',
+            (269, 53): "Lex. bram zei bu (abw. Ms L bram zei du brtsi bæi miñ).",
+            (309, 57): '~ pa "Myañ und dBa\'s hielten eine Rede"',
+            (436, 53): 'er, Glanz" (Mvy 3038, Abt. od kyi miñ); gsal',
+            (464, 41): 'gen entstehen" (Siddh 17.8); den sañ gi bar',
+            (522, 60): 'Lex. lbu bæi miñ "Bez. für Schaum" (Dagy);',
+            (526, 92): '"früher waren sich Myañ und dBa\'s ähnlich',
+            (553, 75): 'pa dra nas "wenn man [Myañ] mit dBa\'s ver-',
+            (553, 76): "gleicht, scheint fiir Myañ die Gunst gerin-",
+            (564, 71): "(Rol 77,4,2); bod sgra ... phal cher miñ gi thog",
+            (572, 82): 'sañ ni ~i skad tsam mi sgrog par snan "dies',
+        }
+        merged_text = self.fixture_with_reviewed_lines(reviewed_lines)
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("saṅ gsen", corrected)
+        self.assertIn("Myaṅ Zan-snan", corrected)
+        self.assertIn("khyim bya'i miṅ", corrected)
+        self.assertIn("gtogs pai miṅ).", corrected)
+        reviewed = [
+            row for row in changes if row["reason"] == "reviewed_tibetan_exact_final_ng"
+        ]
+        self.assertEqual(len(reviewed), 16)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 16)
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+
+    def test_reviewed_wts_8b_final_ng_does_not_apply_unreviewed_line(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (69, 17): 'die sañ gsen mit dem Wollschopf [usw.]"',
+                (109, 72): 'tses dki? ~ te "Myañ Zan-snan war gegen-',
+                (150, 31): "(dPeD 185,6); bya de po ni khyim bya'i miñ",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("sañ gsen", corrected)
+        self.assertIn("Myañ Zan-snan", corrected)
+        self.assertIn("khyim bya'i miñ", corrected)
+        self.assertFalse(
+            [row for row in changes if row["reason"] == "reviewed_tibetan_exact_final_ng"]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
+    def test_reviewed_wts_9m_exact_local_cleanup_normalization(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (229, 33): 'gibt keinen Handelnden" (AA 3.9a); dnos',
+                (351, 41): "gNa-khri btsan-po an bis zu den drei spä-",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("AA 3.9a); dṅos", corrected)
+        self.assertIn("gÑa-khri btsan-po", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dnos", "dṅos", "reviewed_tibetan_exact_dngos"), reasons)
+        self.assertIn(("gNa-khri", "gÑa-khri", "reviewed_tibetan_exact_gna_khri"), reasons)
+
+    def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (233, 35): "med pa ltar gsnag ci dnos dan drios po",
+                (351, 42): "gNa-khri btsan-po an bis zu den drei spä-",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("dnos dan drios", corrected)
+        self.assertIn("gNa-khri btsan-po", corrected)
+        self.assertFalse(
+            [row for row in changes if row["tier"] == "reviewed_tibetan_exact"]
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 

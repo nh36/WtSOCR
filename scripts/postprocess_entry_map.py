@@ -4346,9 +4346,27 @@ def normalized_label_key(label: str) -> str:
 
 
 REVIEWED_TIBETAN_EXACT_NORMALIZATIONS: dict[tuple[str, int, int, int, str], tuple[str, str]] = {
+    ("wts_8_b", 69, 16, 2, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 109, 71, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 150, 30, 10, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 186, 65, 3, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 212, 14, 1, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 232, 30, 8, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 269, 53, 13, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 309, 57, 2, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 436, 53, 8, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 464, 41, 6, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 522, 60, 4, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 526, 92, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 553, 75, 6, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 553, 76, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 564, 71, 9, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
+    ("wts_8_b", 572, 82, 1, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
     ("wts_9_m", 68, 2, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
     ("wts_9_m", 143, 10, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
     ("wts_9_m", 190, 77, 2, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+    ("wts_9_m", 229, 33, 6, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
+    ("wts_9_m", 351, 41, 1, "gNa-khri"): ("gÑa-khri", "reviewed_tibetan_exact_gna_khri"),
     ("wts_9_m", 381, 57, 8, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
 }
 
