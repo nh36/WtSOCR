@@ -4345,30 +4345,55 @@ def normalized_label_key(label: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")
 
 
-REVIEWED_TIBETAN_EXACT_NORMALIZATIONS: dict[tuple[str, int, int, int, str], tuple[str, str]] = {
-    ("wts_8_b", 69, 16, 2, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 109, 71, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 150, 30, 10, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 186, 65, 3, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 212, 14, 1, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 232, 30, 8, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 269, 53, 13, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 309, 57, 2, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 436, 53, 8, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 464, 41, 6, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 522, 60, 4, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 526, 92, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 553, 75, 6, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 553, 76, 4, "Myañ"): ("Myaṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 564, 71, 9, "miñ"): ("miṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_8_b", 572, 82, 1, "sañ"): ("saṅ", "reviewed_tibetan_exact_final_ng"),
-    ("wts_9_m", 68, 2, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
-    ("wts_9_m", 143, 10, 5, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
-    ("wts_9_m", 190, 77, 2, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
-    ("wts_9_m", 229, 33, 6, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
-    ("wts_9_m", 351, 41, 1, "gNa-khri"): ("gÑa-khri", "reviewed_tibetan_exact_gna_khri"),
-    ("wts_9_m", 381, 57, 8, "dnos"): ("dṅos", "reviewed_tibetan_exact_dngos"),
-}
+REVIEWED_TIBETAN_EXACT_OVERRIDES_PATH = (
+    Path(__file__).resolve().parents[1] / "data" / "reviewed_tibetan_exact_overrides.tsv"
+)
+
+
+def load_reviewed_tibetan_exact_normalizations(
+    path: Path,
+) -> dict[tuple[str, int, int, int, str], tuple[str, str]]:
+    if not path.exists():
+        return {}
+
+    required_columns = {
+        "volume",
+        "page",
+        "line",
+        "token_index",
+        "from_token",
+        "to_token",
+        "reason",
+    }
+    rows: dict[tuple[str, int, int, int, str], tuple[str, str]] = {}
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        missing = required_columns - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(
+                f"{path} is missing reviewed Tibetan exact override columns: "
+                + ", ".join(sorted(missing))
+            )
+        for row in reader:
+            if not row or not row.get("volume"):
+                continue
+            key = (
+                normalized_label_key(row["volume"]),
+                int(row["page"]),
+                int(row["line"]),
+                int(row["token_index"]),
+                row["from_token"],
+            )
+            value = (row["to_token"], row["reason"])
+            if key in rows and rows[key] != value:
+                raise ValueError(f"Conflicting reviewed Tibetan exact override for {key}")
+            rows[key] = value
+    return rows
+
+
+REVIEWED_TIBETAN_EXACT_NORMALIZATIONS = load_reviewed_tibetan_exact_normalizations(
+    REVIEWED_TIBETAN_EXACT_OVERRIDES_PATH
+)
 
 
 def apply_reviewed_tibetan_exact_normalizations(

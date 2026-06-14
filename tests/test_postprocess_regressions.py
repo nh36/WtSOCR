@@ -398,6 +398,23 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_tibetan_exact_loader_reads_tsv(self) -> None:
+        tmpdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        path = Path(tmpdir) / "reviewed.tsv"
+        path.write_text(
+            "volume\tpage\tline\ttoken_index\tfrom_token\tto_token\treason\tevidence\treview_note\n"
+            "WtS 9-m\t12\t3\t4\tdnos\tdṅos\treviewed_tibetan_exact_dngos\ttest\tfixture\n",
+            encoding="utf-8",
+        )
+
+        rows = pem.load_reviewed_tibetan_exact_normalizations(path)
+
+        self.assertEqual(
+            rows[("wts_9_m", 12, 3, 4, "dnos")],
+            ("dṅos", "reviewed_tibetan_exact_dngos"),
+        )
+
     def test_reviewed_wts_8b_final_ng_exact_batch_normalization(self) -> None:
         reviewed_lines = {
             (69, 16): 'die sañ gsen mit dem Wollschopf [usw.]"',
@@ -452,6 +469,55 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("sañ gsen", corrected)
         self.assertIn("Myañ Zan-snan", corrected)
         self.assertIn("khyim bya'i miñ", corrected)
+        self.assertFalse(
+            [row for row in changes if row["reason"] == "reviewed_tibetan_exact_final_ng"]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
+    def test_reviewed_wts_9m_final_ng_exact_batch_normalization(self) -> None:
+        reviewed_lines = {
+            (57, 3): 'deri sañ chi na zer "Name für Großchina, es',
+            (66, 24): 'sgyit phab ste "Myañ Mañ-po-rje Zan-snan',
+            (258, 5): 'Bum-thañ verborgen ist" (Padm 353b3); ~',
+            (302, 40): 'Lex. ba lañ dkar zal dmar zal khra khra lta bu',
+            (351, 22): "dBus-gtsañ, den vier Hörnern, durchwan-",
+            (394, 14): 'was falsch gemacht hat" (NBT 205,19); añ',
+        }
+        merged_text = self.fixture_with_reviewed_lines(reviewed_lines)
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("deri saṅ chi", corrected)
+        self.assertIn('sgyit phab ste "Myaṅ Maṅ-po-rje', corrected)
+        self.assertIn("Bum-thaṅ verborgen", corrected)
+        self.assertIn("ba laṅ dkar", corrected)
+        self.assertIn("dBus-gtsaṅ", corrected)
+        self.assertIn("NBT 205,19); aṅ", corrected)
+        reviewed = [
+            row for row in changes if row["reason"] == "reviewed_tibetan_exact_final_ng"
+        ]
+        self.assertEqual(len(reviewed), 7)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+
+    def test_reviewed_wts_9m_final_ng_does_not_apply_unreviewed_line(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (57, 4): 'deri sañ chi na zer "Name für Großchina, es',
+                (66, 25): 'sgyit phab ste "Myañ Mañ-po-rje Zan-snan',
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("sañ chi", corrected)
+        self.assertIn("Myañ Mañ-po-rje", corrected)
         self.assertFalse(
             [row for row in changes if row["reason"] == "reviewed_tibetan_exact_final_ng"]
         )
