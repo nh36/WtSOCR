@@ -38,9 +38,9 @@ Representative WtS 9-m examples:
 - `gNa-khri -> gÑa-khri`
 - `dnos -> dṅos`
 
-Deferred or rejected:
+Deferred, rejected, or handled outside this Tibetan batch:
 
-- `Vi$T -> ViśT` remains a short bibliography/siglum/citation-policy case, not a Tibetan correction.
+- `Vi$T -> ViśT` remains a short bibliography/siglum/citation-policy case, not a Tibetan correction. Later source-list review resolves `ViśT` as the canonical siglum for `Viśeṣastavatīkā`.
 - `la'añń -> la'aṅń` remains deferred.
 - `dnos -> dños` is rejected; the reviewed correction is `dnos -> dṅos`.
 
@@ -71,7 +71,7 @@ The alternate-witness adoption and unresolved counts did not change. The watchdo
 
 ## Bucket Report Notes
 
-The regenerated WtS 9-m unresolved bucket report still marks `Vi$T -> ViśT` as a high-scoring promote candidate, but this is a siglum/citation-policy issue and was not promoted. The `la'añń -> la'aṅń` singleton also remains held.
+The regenerated WtS 9-m unresolved bucket report still marks `Vi$T -> ViśT` as a high-scoring promote candidate. This batch did not promote it because the batch scope was Tibetan final-ng cleanup; a later source-list review resolves the siglum separately as `ViśT`, not `VisṬ`. The `la'añń -> la'aṅń` singleton also remains held.
 
 ## Commands
 

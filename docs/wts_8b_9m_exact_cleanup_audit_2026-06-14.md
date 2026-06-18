@@ -131,8 +131,10 @@ WtS 9-m changed exactly 2 corrected-text lines:
 
 - WtS 8-b unresolved bucket rows are still diagnostic. No broad
   `sañ/Myañ/miñ -> saṅ/Myaṅ/miṅ` rule was added.
-- WtS 9-m `Vi$T -> ViśT` / `VisṬ` remains a citation-or-siglum policy case,
-  not a Sanskrit or Tibetan normalization candidate.
+- WtS 9-m `Vi$T -> ViśT` remained a citation-or-siglum policy case in this
+  cleanup pass, not a Sanskrit or Tibetan normalization candidate. Later
+  source-list review resolves `ViśT` as the canonical siglum and rejects
+  `VisṬ`.
 - No validator-only residue drove a correction.
 
 ## Verification

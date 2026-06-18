@@ -150,6 +150,10 @@ Top diagnostic promote candidates:
 | `wts_8_b` | `sañ` | `saṅ` | 5 | 4 |
 | `wts_9_m` | `Vi$T` | `ViśT` | 6 | 4 |
 
+Later source-list review resolves `ViśT` as the canonical siglum for
+`Viśeṣastavatīkā`; it is a citation-siglum normalization, not a Sanskrit or
+Tibetan OCR rule.
+
 Top hold examples include `$`/`Ś` citation-like forms, Tibetan nasal forms, and
 line/page alignment mismatches. They remain review material, not correction
 evidence.

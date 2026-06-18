@@ -108,7 +108,7 @@ as evidence for new OCR rules.
 | Volume | Unresolved confusable pairs | Promote-labeled bucket rows | Hold bucket rows | Release-freeze decision |
 |---|---:|---:|---:|---|
 | `wts_8_b` | 133 | 3 | 130 | `miñ -> miṅ`, `Myañ -> Myaṅ`, and `sañ -> saṅ` remain review diagnostics only. |
-| `wts_9_m` | 106 | 1 | 105 | `Vi$T -> ViśT` is citation/siglum-like and is not an OCR promotion candidate. |
+| `wts_9_m` | 106 | 1 | 105 | `Vi$T -> ViśT` is citation/siglum-like and was not an OCR promotion candidate in this release-freeze pass. Later source-list review resolves `ViśT` as the canonical siglum. |
 
 No further correction was promoted from these queues. They should be handled in
 a later source-review pass, not during release freeze.

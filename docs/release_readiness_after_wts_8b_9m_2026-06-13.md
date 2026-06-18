@@ -104,7 +104,7 @@ initial-I-to-l changes. No new high-volume rule was promoted here.
 | Volume | Unresolved confusable pairs | Promote-labeled bucket rows | Hold bucket rows | Notes |
 |---|---:|---:|---:|---|
 | `wts_8_b` | 133 | 3 | 130 | `miñ -> miṅ`, `Myañ -> Myaṅ`, and `sañ -> saṅ` are review diagnostics only until source/context checked. |
-| `wts_9_m` | 106 | 1 | 105 | `Vi$T -> ViśT` is a citation/siglum diagnostic only, not a Sanskrit or Tibetan normalization target. |
+| `wts_9_m` | 106 | 1 | 105 | `Vi$T -> ViśT` is a citation/siglum diagnostic only in this bundle, not a Sanskrit or Tibetan normalization target. Later source-list review resolves `ViśT` as the canonical siglum. |
 
 ## Manual Audit Sample
 
@@ -168,9 +168,10 @@ ad149ea3e2201841b82da6efe9b2c958d26443b16bef7e3d17a012e348dd1699  bucket_report.
 - WtS 9-m has 853 alternate-witness adoptions, mostly recovered-rewrapped
   fallback alignments. The current safeguards held, but final release sign-off
   should still sample the highest-density pages and top adoption reasons.
-- `Vi$T -> ViśT`, `miñ -> miṅ`, `Myañ -> Myaṅ`, and `sañ -> saṅ` are diagnostic
-  bucket rows only. They should not drive text changes without source/context
-  review.
+- `miñ -> miṅ`, `Myañ -> Myaṅ`, and `sañ -> saṅ` are diagnostic bucket
+  rows only. They should not drive text changes without source/context review.
+  `Vi$T -> ViśT` was diagnostic in this bundle, then later source-list review
+  resolved it as an exact citation-siglum normalization.
 - Google Vision remains an alternate witness, not an authority. Raw Google line
   replacement remains out of scope.
 

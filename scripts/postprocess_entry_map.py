@@ -1012,7 +1012,7 @@ CITATION_SIGLUM_CANONICAL_FALLBACK = {
     "SPS",
     "Śambh",
     "Vis",
-    "VisT",
+    "ViśT",
     "Xs",
     "Ys",
 }
@@ -1052,8 +1052,8 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     "lsdz": "Lśdz",
     "lsdz-k": "Lśdz-K",
     "lsdz-r": "Lśdz-R",
-    "vi$t": "VisT",
-    "vi$st": "VisT",
+    "vi$t": "ViśT",
+    "vi$st": "ViśT",
     "y$": "Ys",
     "ys$": "Ys",
     # Sa-skya pa chen po Kun dga' snying po (Bd. 1) siglum:
@@ -1062,9 +1062,10 @@ CITATION_SIGLUM_CONFUSABLE_MAP_FALLBACK = {
     "isk": "1SK",
     "1isk": "1SK",
     # Safe case-noise sigla variants seen in citation contexts.
-    "vist": "VisT",
-    "visst": "VisT",
-    "viist": "VisT",
+    "vist": "ViśT",
+    "visst": "ViśT",
+    "viist": "ViśT",
+    "viśt": "ViśT",
     "ys": "Ys",
     "gs-h": "Gs-H",
     # Additional high-confidence sigla OCR confusions (directionality
