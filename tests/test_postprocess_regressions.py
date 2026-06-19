@@ -543,10 +543,31 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("dnos", "dṅos", "reviewed_tibetan_exact_dngos"), reasons)
         self.assertIn(("gNa-khri", "gÑa-khri", "reviewed_tibetan_exact_gna_khri"), reasons)
 
+    def test_reviewed_tibetan_medium_cleanup_batch_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (12, 26): "Lex. ba ku (v.|. kku) la'am dnos su bZag (v..",
+                (15, 61): 'dern des Körpers bewegen sich nicht" (VisT',
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("la'am dṅos su bZag", corrected)
+        self.assertIn('(ViśT', corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dnos", "dṅos", "reviewed_tibetan_exact_dngos"), reasons)
+        self.assertIn(("VisT", "ViśT", "reviewed_siglum_exact_visht"), reasons)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
-                (233, 35): "med pa ltar gsnag ci dnos dan drios po",
+                (999, 1): "med pa ltar gsnag ci dnos dan drios po",
+                (999, 2): "German citation noise (VisT 1,1)",
                 (351, 42): "gNa-khri btsan-po an bis zu den drei spä-",
             }
         )
@@ -560,6 +581,9 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("gNa-khri btsan-po", corrected)
         self.assertFalse(
             [row for row in changes if row["tier"] == "reviewed_tibetan_exact"]
+        )
+        self.assertFalse(
+            [row for row in changes if row["reason"] == "reviewed_siglum_exact_visht"]
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 

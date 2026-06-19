@@ -108,3 +108,52 @@ wts_9_m	203	82	7	tshiñ	tshiṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_
 wts_9_m	59	9	2	vañ	vaṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	94	89	3	zañ	zaṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	182	28	8	zuñ	zuṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
+wts_8_b	12	26	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	41	69	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	100	74	11	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	101	78	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	132	11	4	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	152	21	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	235	59	3	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	243	59	4	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	245	13	8	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	272	16	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	281	9	6	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	298	68	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	306	41	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	339	38	7	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	399	4	2	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	410	36	3	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	448	18	3	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	449	39	5	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	467	58	2	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	468	13	6	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	469	26	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	535	68	2	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	547	9	8	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	559	73	4	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	574	18	6	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	26	29	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	103	78	9	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	139	5	3	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	142	2	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	233	35	4	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	255	87	5	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_9_m	394	51	5	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
+wts_8_b	15	61	7	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	79	6	7	VisST	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	135	51	7	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	192	4	5	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	236	82	6	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	243	86	5	VisST	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	309	83	7	ViST	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	93	76	5	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	144	46	8	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	163	43	6	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	198	26	8	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	231	33	6	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	235	21	6	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	240	45	6	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	320	38	7	ViśsT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	320	46	7	visT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_9_m	398	43	7	VisT	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
