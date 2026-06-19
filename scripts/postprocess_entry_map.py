@@ -504,11 +504,19 @@ SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES = {
 }
 
 
-def load_sanskrit_promoted_overrides(path: Path) -> dict[str, str]:
+def promoted_override_supports_case_fallback(src: str) -> bool:
+    """Return true for source tokens where folded lookup can safely reshape case."""
+    if not src:
+        return False
+    return src.islower() or src.isupper() or (src[0].isupper() and src[1:].islower())
+
+
+def load_sanskrit_promoted_overrides(path: Path) -> tuple[dict[str, str], dict[str, str]]:
     """Load promoted rare-pair Sanskrit overrides from a TSV file if present."""
-    overrides: dict[str, str] = {}
+    exact_overrides: dict[str, str] = {}
+    folded_candidates: dict[str, list[tuple[str, str]]] = {}
     if not path.exists():
-        return overrides
+        return exact_overrides, {}
     try:
         with path.open("r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f, delimiter="\t")
@@ -520,17 +528,30 @@ def load_sanskrit_promoted_overrides(path: Path) -> dict[str, str]:
                 decision = (row.get("decision") or "promote").strip().lower()
                 if decision and decision != "promote":
                     continue
-                overrides[src.lower()] = dst
+                exact_overrides[src] = dst
+                folded_candidates.setdefault(src.lower(), []).append((src, dst))
     except OSError:
-        return {}
-    return overrides
+        return {}, {}
+
+    folded_overrides: dict[str, str] = {}
+    for folded_src, pairs in folded_candidates.items():
+        if not all(promoted_override_supports_case_fallback(src) for src, _ in pairs):
+            continue
+        folded_targets = {dst.lower() for _, dst in pairs}
+        if len(folded_targets) != 1:
+            continue
+        folded_overrides[folded_src] = folded_targets.pop()
+    return exact_overrides, folded_overrides
 
 
 SANSKRIT_PROMOTED_OVERRIDES_PATH = Path(__file__).resolve().parents[1] / "data" / "sanskrit_promote_overrides.tsv"
-SANSKRIT_PROMOTED_TIER_A_OVERRIDES = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
+(
+    SANSKRIT_PROMOTED_TIER_A_EXACT_OVERRIDES,
+    SANSKRIT_PROMOTED_TIER_A_FOLDED_OVERRIDES,
+) = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
-    **SANSKRIT_PROMOTED_TIER_A_OVERRIDES,
+    **SANSKRIT_PROMOTED_TIER_A_FOLDED_OVERRIDES,
 }
 
 # Known dubious initial-I forms that should be queued for context review, not auto-applied.
@@ -6675,6 +6696,16 @@ def apply_case_shape(src: str, dst: str) -> str:
     return dst
 
 
+def lookup_sanskrit_tier_a_override(token: str) -> str | None:
+    exact_target = SANSKRIT_PROMOTED_TIER_A_EXACT_OVERRIDES.get(token)
+    if exact_target:
+        return exact_target
+    folded_target = SANSKRIT_TIER_A_OVERRIDES.get(token.lower())
+    if not folded_target:
+        return None
+    return apply_case_shape(token, folded_target)
+
+
 def apply_sanskrit_override_chain(token: str, max_hops: int = 4) -> tuple[str, bool]:
     """Apply promoted/high-frequency overrides transitively for multi-step OCR forms."""
     current = token
@@ -6685,10 +6716,10 @@ def apply_sanskrit_override_chain(token: str, max_hops: int = 4) -> tuple[str, b
         if key in seen:
             break
         seen.add(key)
-        target = SANSKRIT_TIER_A_OVERRIDES.get(key)
+        target = lookup_sanskrit_tier_a_override(current)
         if not target:
             break
-        nxt = apply_case_shape(current, target)
+        nxt = target
         if nxt == current:
             break
         current = nxt
@@ -7083,7 +7114,7 @@ def apply_sanskrit_normalization(
 
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
-                explicit_override = SANSKRIT_TIER_A_OVERRIDES.get(tok.lower())
+                explicit_override = lookup_sanskrit_tier_a_override(tok)
                 if explicit_override is None and not token_is_probable_sanskrit(tok, ctx, updated_line):
                     return tok
                 key = sanskrit_family_key(tok)
@@ -7630,7 +7661,7 @@ def run_one(
         "citation_name_changes": len(citation_change_rows),
         "reviewed_tibetan_exact_changes": reviewed_tibetan_change_count,
         "sanskrit_families": sanskrit_family_count,
-        "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_OVERRIDES),
+        "sanskrit_promoted_overrides_loaded": len(SANSKRIT_PROMOTED_TIER_A_EXACT_OVERRIDES),
         "sanskrit_changes": len(sanskrit_change_rows),
         "sanskrit_review_suggestions": len(sanskrit_review_rows),
         "stale_review_rows_removed": stale_review_rows_removed,

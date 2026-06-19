@@ -2118,6 +2118,69 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("mahämäyürividyäräjni", "mahāmāyūrīvidyārājñī", "sanskrit_high_freq_allowlist"), reasons)
         self.assertIn(("astäpadikrtadhüpayoga", "aṣṭapadīkṛtadhūpayoga", "sanskrit_high_freq_allowlist"), reasons)
 
+    def test_low_hanging_wts_8b_9m_sanskrit_overrides_are_exact(self) -> None:
+        cases = [
+            ("Prajnāpāramitā", "Prajñāpāramitā"),
+            ("sarvajnatāpragbhārab", "sarvajñatāpragbhārab"),
+            ("śrävaka", "śrāvaka"),
+            ("śäntideva", "śāntideva"),
+            ("indriyaparāparajnānabalam", "indriyaparāparajñānabalam"),
+            ("Prajnāpāra", "Prajñāpāra"),
+            ("śväsayema", "śvāsayema"),
+            ("sarvajnatāprāgbhārab", "sarvajñatāprāgbhārab"),
+            ("Satasāhasrikāprajnāpāramitā-Lesung", "Śatasāhasrikāprajñāpāramitā-Lesung"),
+            ("Prajnāpāramitāsūtra", "Prajñāpāramitāsūtra"),
+            ("prajnāpāramitāsūtra", "prajñāpāramitāsūtra"),
+            ("Satasāhasrikāprajnāpāramitāsātra", "Śatasāhasrikāprajñāpāramitāsūtra"),
+            ("Hunderttausender-Prajnāpāramitāsūrtra", "Hunderttausender-Prajñāpāramitāsūtra"),
+            ("Prajnaptisāstra", "Prajñaptisāstra"),
+            ("śrävakas", "śrāvakas"),
+            ("śrävasti", "śrāvasti"),
+            ("prajnāyate", "prajñāyate"),
+            ("Prajnapāramitāsiitra", "Prajñāpāramitāsūtra"),
+            ("rvijnānadhātub", "rvijñānadhātub"),
+            ("anantäparyantab", "anantāparyantab"),
+            ("Vaiśvänara", "Vaiśvānara"),
+            ("Jnānagarbha", "Jñānagarbha"),
+            ("śräva", "śrāva"),
+            ("buddhajnanāadhyalambanatāyii", "buddhajñanāadhyalambanatāyii"),
+            ("vādavidhijnena", "vādavidhijñena"),
+            ("Śästras", "Śāstras"),
+            ("śästras", "śāstras"),
+        ]
+        merged_text = "སྐད skt. " + " ".join(src for src, _ in cases) + "\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        for _, target in cases:
+            self.assertIn(target, corrected)
+
+        reasons = {(row["from_token"].lower(), row["to_token"].lower(), row["reason"]) for row in changes}
+        for source, target in cases:
+            self.assertIn((source.lower(), target.lower(), "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_promoted_sanskrit_overrides_preserve_exact_lowercase_forms(self) -> None:
+        merged_text = "སྐད skt. Acavimśatikasahasrikä[prajnāpāramitāsūtra]\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Acavimśatikasahasrikä[prajñāpāramitāsūtra]", corrected)
+        self.assertNotIn("Acavimśatikasahasrikä[Prajñāpāramitāsūtra]", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(
+            ("prajnāpāramitāsūtra", "prajñāpāramitāsūtra", "sanskrit_high_freq_allowlist"),
+            reasons,
+        )
+
+    def test_low_hanging_sanskrit_batch_does_not_add_broad_character_rules(self) -> None:
+        merged_text = (
+            "Eine deutsche Prosa mit Satafamilie, ajnana, xäy, foo-siitra, "
+            "bar-sūrtra, rvijnana, sraevaka und nichttitelhafter Lesung.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertEqual(corrected.strip(), merged_text.strip())
+        reasons = {row["reason"] for row in changes}
+        self.assertNotIn("sanskrit_high_freq_allowlist", reasons)
+
     def test_structural_quote_wrap_direct(self) -> None:
         merged_text = (
             "ཀོང་ koṅ\n"
