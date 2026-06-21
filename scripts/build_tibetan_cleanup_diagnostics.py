@@ -120,12 +120,17 @@ def looks_like_unregistered_siglum(token: str, context: str) -> bool:
 
 def registered_siglum_context_ok(clean: str, context: str, entries: list[SiglumEntry]) -> bool:
     registered_forms: set[str] = set()
+    registered_keys: set[str] = set()
     for entry in entries:
         registered_forms.add(entry.canon)
         registered_forms.update(entry.variants)
+        registered_keys.add(siglum_key(entry.canon))
+        registered_keys.update(siglum_key(variant) for variant in entry.variants)
     if clean in registered_forms:
         return True
     if "$" in clean:
+        return True
+    if siglum_key(clean) in registered_keys and SIGLUM_CONTEXT_RE.search(context):
         return True
     if not has_siglum_shape(clean):
         return False

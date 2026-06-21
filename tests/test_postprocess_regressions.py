@@ -1332,12 +1332,24 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_sigla_registry_load_smoke(self) -> None:
         self.assertTrue(pem.SIGLA_REGISTRY_PATH.exists())
         canonical, confusable = pem.load_sigla_registry(pem.SIGLA_REGISTRY_PATH)
+        self.assertIn("Bu-śz", canonical)
+        self.assertIn("Gś-H", canonical)
         self.assertIn("Liś", canonical)
         self.assertIn("ViśT", canonical)
+        self.assertIn("Yś", canonical)
+        self.assertNotIn("Bu-Sz", canonical)
+        self.assertNotIn("Gs-H", canonical)
         self.assertNotIn("VisT", canonical)
+        self.assertNotIn("Ys", canonical)
+        self.assertEqual(confusable.get("bu-$z"), "Bu-śz")
+        self.assertEqual(confusable.get("bu-sz"), "Bu-śz")
+        self.assertEqual(confusable.get("g$-h"), "Gś-H")
+        self.assertEqual(confusable.get("gs-h"), "Gś-H")
         self.assertEqual(confusable.get("lís"), "Liś")
         self.assertEqual(confusable.get("vi$t"), "ViśT")
         self.assertEqual(confusable.get("vist"), "ViśT")
+        self.assertEqual(confusable.get("y$"), "Yś")
+        self.assertEqual(confusable.get("ys"), "Yś")
 
     def test_citation_sigla_confusables_normalized(self) -> None:
         merged_text = (
@@ -1352,8 +1364,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("Lśdz-R", corrected)
         self.assertIn("ViśT", corrected)
         self.assertIn("Liś", corrected)
-        self.assertIn("Ys'", corrected)
-        self.assertIn("Ys", corrected)
+        self.assertIn("Yś'", corrected)
+        self.assertIn("Yś", corrected)
         self.assertNotIn("L$dz", corrected)
         self.assertNotIn("Vi$T", corrected)
         self.assertNotIn("Vi$ST", corrected)
@@ -1372,7 +1384,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Vis$T", "ViśT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Lis$", "Liś", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Y$", "Yś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Lis", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Lsdz", "Lśdz", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Lsdz-K", "Lśdz-K", "citation_siglum_confusable_map"), reasons)
@@ -1388,14 +1400,14 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
-        self.assertIn("(Ys 96c).", corrected)
-        self.assertIn("(Ys", corrected)
+        self.assertIn("(Yś 96c).", corrected)
+        self.assertIn("(Yś", corrected)
         self.assertIn("(Liś 17,10; KlonD 739,6;", corrected)
         self.assertNotIn("Y$", corrected)
         self.assertNotIn("Li$", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
-        self.assertIn(("Y$", "Ys", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Y$", "Yś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Li$", "Liś", "citation_siglum_confusable_map"), reasons)
 
     def test_citation_sigla_context_gate_keeps_lexical_lis(self) -> None:
@@ -1429,7 +1441,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("(Ps 7c)", corrected)
-        self.assertIn("(Bu-Sz 51,3)", corrected)
+        self.assertIn("(Bu-śz 51,3)", corrected)
         self.assertIn("(Vis 67b)", corrected)
         self.assertIn("(Vis 6b)", corrected)
         self.assertIn("(Śambh 5b6)", corrected)
@@ -1437,14 +1449,14 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("(RoINS 35,1)", corrected)
         self.assertIn("(Ins 29)", corrected)
         self.assertIn("(Gs 93a)", corrected)
-        self.assertIn("(Gs-H 481)", corrected)
-        self.assertIn("(Gs-H 74a)", corrected)
+        self.assertIn("(Gś-H 481)", corrected)
+        self.assertIn("(Gś-H 74a)", corrected)
         self.assertIn("(ViśT 228,30)", corrected)
         self.assertIn("(ViśT 142,4)", corrected)
         self.assertIn("(ViśT 158,23)", corrected)
         self.assertIn("(ViśT 210,6)", corrected)
-        self.assertIn("(Ys 80d)", corrected)
-        self.assertIn("(Gs-H 60d)", corrected)
+        self.assertIn("(Yś 80d)", corrected)
+        self.assertIn("(Gś-H 60d)", corrected)
         self.assertIn("(Liś 30,2)", corrected)
         self.assertIn("(1.śdz 69,2)", corrected)
         self.assertIn("(1SK 5a)", corrected)
@@ -1474,7 +1486,7 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(("P$", "Ps", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("Bu-$z", "Bu-Sz", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Bu-$z", "Bu-śz", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vi$", "Vis", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("Vis$", "Vis", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("$ambh", "Śambh", "citation_siglum_confusable_map"), reasons)
@@ -1482,14 +1494,14 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("RoIN$", "RoINS", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("In$", "Ins", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("G$", "Gs", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("G$-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("G$S-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$-H", "Gś-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("G$S-H", "Gś-H", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("ViST", "ViśT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("VisST", "ViśT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("VIST", "ViśT", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("VIiST", "ViśT", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("YS", "Ys", "citation_siglum_confusable_map"), reasons)
-        self.assertIn(("GS-H", "Gs-H", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("YS", "Yś", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("GS-H", "Gś-H", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("L1$", "Liś", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("ISK", "1SK", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("1ISK", "1SK", "citation_siglum_confusable_map"), reasons)
@@ -1509,7 +1521,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("Śambh", corrected)
         self.assertIn("RoINS", corrected)
         self.assertIn("(Ps Kolophon)", corrected)
-        self.assertIn("(Bu-Sz", corrected)
+        self.assertIn("(Bu-śz", corrected)
         self.assertIn("(Xs 68d)", corrected)
         self.assertNotIn("$Sambh", corrected)
         self.assertNotIn("RoIN$", corrected)
@@ -1524,7 +1536,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertTrue(
             any(
                 from_tok in {"Bu-$2", "Bu-$"}
-                and to_tok == "Bu-Sz"
+                and to_tok == "Bu-śz"
                 and reason == "citation_siglum_confusable_map"
                 for from_tok, to_tok, reason in reasons
             )

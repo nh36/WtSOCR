@@ -41,11 +41,15 @@ EXPLICIT_SOURCE_REVIEW_TOKENS = {
 }
 
 SIGLUM_POLICY_TOKENS = {
+    "Bu-śz",
+    "Bu-Sz",
     "Gś-H",
+    "G$-H",
     "GS-H",
     "Gs-H",
     "Yś",
     "Y$",
+    "Ys",
     "Lsdz-K",
     "Lsdz",
     "L$dz-K",
@@ -635,8 +639,13 @@ def manual_sampling_rows() -> list[list[str]]:
             "Already reviewed; no new correction work.",
         ],
         [
-            "Sigla families",
-            "`Liś`, `Gś-H`, `L$dz-K`, `Bu-$z`, `gZ1`, and related forms require bibliographic policy decisions.",
+            "Reviewed `$` sigla canonicals",
+            "`Bu-$z`/`Bu-Sz`, `G$-H`/`Gs-H`/`Gś-H`, and `Y$`/`Ys`/`Yś` are citation sigla whose reviewed canonicals preserve `ś`: `Bu-śz`, `Gś-H`, and `Yś`. Plain `Gs` remains a distinct siglum.",
+            "Normalize only through siglum registry/confusable-map context; no generic `$ -> ś` rule.",
+        ],
+        [
+            "Remaining sigla families",
+            "`L$dz-K` and related unresolved forms remain bibliographic-policy cases. `Li$ -> Liś` and `gZ1 -> gZi` follow existing registry policy.",
             "Siglum policy review, not Tibetan lexical cleanup.",
         ],
         [
@@ -744,7 +753,8 @@ def write_markdown(
             "- `dan -> daṅ`, `Ita -> lta`, `Iha -> lha`, `Ina -> lṅa`, and `Idan -> ldan` remain high-priority Google-gated families for sampling. They should not become source-independent global rules.",
             "- Rows already present in `data/reviewed_tibetan_exact_overrides.tsv` are marked as already reviewed rather than treated as a fresh promotion queue.",
             "- `$ -> ś` remains too broad as a Tibetan/Sanskrit cleanup rule. It belongs in targeted row review or siglum policy, not a generic character substitution.",
-            "- Sigla such as `Gś-H`, `Yś/Y$`, `Lsdz-K/L$dz-K`, `Bu-$z`, `Li$`, and `gZ1` are reported separately as bibliographic-policy cases.",
+            "- Reviewed `$` sigla families now prefer `ś`-bearing canonicals: `Bu-$z`/`Bu-Sz -> Bu-śz`, `G$-H`/`Gs-H`/`Gś-H -> Gś-H`, and `Y$`/`Ys`/`Yś -> Yś`. These are registry/context-gated siglum normalizations, not a generic `$ -> ś` rule.",
+            "- Remaining sigla families such as `Lsdz-K`/`L$dz-K` and other unresolved variants stay in bibliographic-policy review. `Li$ -> Liś` and `gZ1 -> gZi` remain existing registry decisions.",
             "- `la'añń` and similar nasal-looking rows require source-image review; no broad `ń -> ṅ` or `n -> ñ` repair is implied.",
             "- Residual Sanskrit low-confidence rows are intentionally outside this Tibetan tranche.",
         ]

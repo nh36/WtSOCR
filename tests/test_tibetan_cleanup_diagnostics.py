@@ -87,6 +87,40 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(info["canon"], "Lśdz")
         self.assertEqual(info["suggested_action"], "siglum_policy_review")
 
+    def test_reviewed_dollar_sigla_prefer_s_caron_canonical_forms(self) -> None:
+        examples = {
+            "Bu-$z": "Bu-śz",
+            "Bu-Sz": "Bu-śz",
+            "G$-H": "Gś-H",
+            "Gs-H": "Gś-H",
+            "Y$": "Yś",
+            "Ys": "Yś",
+        }
+
+        for token, expected in examples.items():
+            with self.subTest(token=token):
+                info = diag.classify_siglum_token(token, f"({token} 51,3)", self.registry)
+
+                self.assertIsNotNone(info)
+                self.assertEqual(info["canon"], expected)
+                self.assertEqual(info["suggested_action"], "siglum_policy_review")
+
+    def test_plain_ys_variant_needs_siglum_context(self) -> None:
+        info = diag.classify_siglum_token(
+            "Ys",
+            "Ys steht hier nur als Zeichenfolge in einem deutschen Satz.",
+            self.registry,
+        )
+
+        self.assertIsNone(info)
+
+    def test_plain_gs_siglum_remains_distinct_from_gs_h_family(self) -> None:
+        info = diag.classify_siglum_token("Gs", "(Gs 93a)", self.registry)
+
+        self.assertIsNotNone(info)
+        self.assertEqual(info["canon"], "Gs")
+        self.assertEqual(info["suggested_action"], "already_canonical_siglum")
+
     def test_siglum_google_row_is_not_tibetan_candidate(self) -> None:
         row = {
             "page": "52",
