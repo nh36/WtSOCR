@@ -15,6 +15,7 @@ import csv
 import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
+from datetime import date
 from pathlib import Path
 
 
@@ -668,6 +669,7 @@ def write_markdown(
     path: Path,
     tsv_path: Path | None,
     reviewed_overrides_path: Path | None,
+    report_date: str,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     action_counts = Counter(recommended_action(group) for group in groups)
@@ -696,9 +698,9 @@ def write_markdown(
     lines = [
         "# Tibetan Cleanup Residual Triage",
         "",
-        "Date: 2026-06-19",
+        f"Date: {report_date}",
         "",
-        "This report combines the regenerated WtS 8-b and WtS 9-m Tibetan cleanup diagnostics after the audited medium cleanup batch. It is a triage aid only: it does not add OCR correction heuristics and does not treat Google Vision as an authority.",
+        "This report combines the supplied WtS 8-b and WtS 9-m Tibetan cleanup diagnostics after the latest reviewed cleanup state. It is a triage aid only: it does not add OCR correction heuristics and does not treat Google Vision as an authority.",
         "",
         "Counts are normalized by residual family/pattern. When the same family appears in overlapping diagnostic queues, the per-volume count uses the strongest support count from those queues rather than summing inventories. This avoids treating grouped diagnostics and raw candidate rows as simple subtraction counts.",
         "",
@@ -774,6 +776,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-md", required=True, type=Path)
     parser.add_argument("--out-tsv", type=Path)
     parser.add_argument("--reviewed-overrides", type=Path)
+    parser.add_argument(
+        "--report-date",
+        default=date.today().isoformat(),
+        help="Date string to print in the markdown report. Defaults to today.",
+    )
     return parser.parse_args()
 
 
@@ -790,6 +797,7 @@ def main() -> None:
         args.out_md,
         args.out_tsv,
         args.reviewed_overrides,
+        args.report_date,
     )
 
 
