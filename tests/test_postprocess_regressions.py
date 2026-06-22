@@ -563,6 +563,121 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("dnos", "dṅos", "reviewed_tibetan_exact_dngos"), reasons)
         self.assertIn(("VisT", "ViśT", "reviewed_siglum_exact_visht"), reasons)
 
+    def test_reviewed_tibetan_initial_i_exact_cleanup_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (5, 4): "x Iha",
+                (6, 54): "a b c d e f Idan",
+                (7, 37): "a b c d Ita",
+                (7, 87): "x Ina",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("x lha", corrected)
+        self.assertIn("a b c d e f ldan", corrected)
+        self.assertIn("a b c d lta", corrected)
+        self.assertIn("x lṅa", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_initial_i_l_family"
+        ]
+        self.assertEqual(len(reviewed), 4)
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+
+    def test_reviewed_tibetan_initial_i_exact_does_not_apply_unreviewed_line(
+        self,
+    ) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (5, 5): "x Iha",
+                (6, 55): "a b c d e f Idan",
+                (7, 38): "a b c d Ita",
+                (7, 88): "x Ina",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("x Iha", corrected)
+        self.assertIn("a b c d e f Idan", corrected)
+        self.assertIn("a b c d Ita", corrected)
+        self.assertIn("x Ina", corrected)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_initial_i_l_family"
+            ]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
+    def test_reviewed_tibetan_residual_ng_and_google_candidate_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (15, 53): "a b c d e f g dań",
+                (232, 44): "a b c d e f kyan run",
+                (232, 51): "Ses a b c",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("a b c d e f g daṅ", corrected)
+        self.assertIn("a b c d e f kyaṅ ruṅ", corrected)
+        self.assertIn("śes a b c", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertIn(("dań", "daṅ", "reviewed_tibetan_exact_residual_ng"), reasons)
+        self.assertIn(
+            ("kyan", "kyaṅ", "reviewed_tibetan_exact_google_tibetan_candidate"),
+            reasons,
+        )
+        self.assertIn(
+            ("run", "ruṅ", "reviewed_tibetan_exact_google_tibetan_candidate"),
+            reasons,
+        )
+        self.assertIn(
+            ("Ses", "śes", "reviewed_tibetan_exact_google_tibetan_candidate"),
+            reasons,
+        )
+
+    def test_reviewed_tibetan_candidate_cleanup_does_not_apply_unreviewed_context(
+        self,
+    ) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (15, 54): "a b c d e f g dań",
+                (232, 45): "a b c d e f kyan run",
+                (232, 52): "Ses a b c",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("a b c d e f g dań", corrected)
+        self.assertIn("a b c d e f kyan run", corrected)
+        self.assertIn("Ses a b c", corrected)
+        self.assertFalse(
+            [row for row in changes if row["tier"] == "reviewed_tibetan_exact"]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
