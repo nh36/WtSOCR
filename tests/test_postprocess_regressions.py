@@ -678,6 +678,73 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_tibetan_residual_context_cleanup_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (229, 70): "a b c d e f rkani rjes",
+                (229, 87): "a b c d e f rkani khal rria",
+                (232, 21): "a b c d e zani ziri gi 'bul",
+                (233, 69): "a b c d e sriar gi Nlams",
+                (285, 67): "gtsani khul nina' ris dan bcas kyi",
+                (362, 53): "giun don ses / las rnams mthon Zin gtsari ba",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("a b c d e f rkaṅ rjes", corrected)
+        self.assertIn("a b c d e f rkaṅ khal rṅa", corrected)
+        self.assertIn("a b c d e zaṅ ziri gi 'bul", corrected)
+        self.assertIn("a b c d e sṅar gyi ñams", corrected)
+        self.assertIn("gtsaṅ khul mña' ris dan bcas kyi", corrected)
+        self.assertIn("gźun don ses / las rnams mthon źiṅ gtsaṅ ba", corrected)
+        reviewed_residual = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_residual_context_google"
+        ]
+        self.assertEqual(len(reviewed_residual), 10)
+        pairs = {(row["from_token"], row["to_token"]) for row in reviewed_residual}
+        self.assertIn(("sriar", "sṅar"), pairs)
+        self.assertIn(("gtsani", "gtsaṅ"), pairs)
+        self.assertIn(("nina", "mña"), pairs)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 12)
+
+    def test_reviewed_tibetan_residual_context_cleanup_is_line_gated(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (229, 71): "a b c d e f rkani rjes",
+                (229, 88): "a b c d e f rkani khal rria",
+                (232, 22): "a b c d e zani ziri gi 'bul",
+                (233, 70): "a b c d e sriar gi Nlams",
+                (285, 68): "gtsani khul nina' ris dan bcas kyi",
+                (362, 54): "giun don ses / las rnams mthon Zin gtsari ba",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("a b c d e f rkani rjes", corrected)
+        self.assertIn("a b c d e f rkani khal rria", corrected)
+        self.assertIn("a b c d e zani ziri gi 'bul", corrected)
+        self.assertIn("a b c d e sriar gi Nlams", corrected)
+        self.assertIn("gtsani khul nina' ris dan bcas kyi", corrected)
+        self.assertIn("giun don ses / las rnams mthon Zin gtsari ba", corrected)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_residual_context_google"
+            ]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
