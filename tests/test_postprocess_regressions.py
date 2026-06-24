@@ -867,6 +867,147 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
         self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_tibetan_second_ambitious_cleanup_wts8_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (21, 30): "te — gtsan ma'i mchod sbyin",
+                (31, 40): "blan dor 'od kyi snani ba ches gsal ba'i / —",
+                (52, 18): "sran beu nas bco lna' —",
+                (61, 60): "bar snani Kurzf. für bar gi snari ba.",
+                (64, 55): "de bcom ldan 'das kyi spyan sriar ma phyin",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("te — gtsaṅ ma'i mchod sbyin", corrected)
+        self.assertIn("blan dor 'od kyi snaṅ ba ches gsal ba'i / —", corrected)
+        self.assertIn("sran beu nas bco lṅa' —", corrected)
+        self.assertIn("bar snaṅ Kurzf. für bar gi snaṅ ba.", corrected)
+        self.assertIn("de bcom ldan 'das kyi spyan sṅar ma phyin", corrected)
+        reasons = {
+            row["reason"]
+            for row in changes
+            if row["reason"].startswith("reviewed_tibetan_exact_second_ambitious_")
+        }
+        self.assertEqual(
+            reasons,
+            {
+                "reviewed_tibetan_exact_second_ambitious_gtsang",
+                "reviewed_tibetan_exact_second_ambitious_lnga",
+                "reviewed_tibetan_exact_second_ambitious_snang",
+                "reviewed_tibetan_exact_second_ambitious_sngar",
+            },
+        )
+        self.assertEqual(
+            len(
+                [
+                    row
+                    for row in changes
+                    if row["reason"].startswith(
+                        "reviewed_tibetan_exact_second_ambitious_"
+                    )
+                ]
+            ),
+            6,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_tibetan_second_ambitious_cleanup_wts9_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (24, 67): "'dod chags — sogs / dug lna' dban ur 'gro",
+                (32, 18): "— es bya ba'i ri la drios grub mchog thob",
+                (75, 55): "gtsani ma' bris byugs la",
+                (104, 61): "3. Bez. für den Raum; —r snari dass.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("'dod chags — sogs / dug lṅa' dban ur 'gro", corrected)
+        self.assertIn("— es bya ba'i ri la dṅos grub mchog thob", corrected)
+        self.assertIn("gtsaṅ ma' bris byugs la", corrected)
+        self.assertIn("3. Bez. für den Raum; —r snaṅ dass.", corrected)
+        reasons = {
+            row["reason"]
+            for row in changes
+            if row["reason"].startswith("reviewed_tibetan_exact_second_ambitious_")
+        }
+        self.assertEqual(
+            reasons,
+            {
+                "reviewed_tibetan_exact_second_ambitious_dngos",
+                "reviewed_tibetan_exact_second_ambitious_gtsang",
+                "reviewed_tibetan_exact_second_ambitious_lnga",
+                "reviewed_tibetan_exact_second_ambitious_snang",
+            },
+        )
+        self.assertEqual(
+            len(
+                [
+                    row
+                    for row in changes
+                    if row["reason"].startswith(
+                        "reviewed_tibetan_exact_second_ambitious_"
+                    )
+                ]
+            ),
+            4,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+
+    def test_reviewed_tibetan_second_ambitious_cleanup_is_line_gated(self) -> None:
+        wts8_text = self.fixture_with_reviewed_lines(
+            {
+                (52, 19): "sran beu nas bco lna' —",
+                (64, 56): "de bcom ldan 'das kyi spyan sriar ma phyin",
+                (73, 38): "(Debn 217,5); —r sriar gyi srol de ka gzun",
+            }
+        )
+        wts9_text = self.fixture_with_reviewed_lines(
+            {
+                (24, 68): "'dod chags — sogs / dug lna' dban ur 'gro",
+                (32, 19): "— es bya ba'i ri la drios grub mchog thob",
+                (75, 56): "gtsani ma' bris byugs la",
+                (104, 60): "3. Bez. für den Raum; —r snari dass.",
+            }
+        )
+
+        wts8_result, wts8_corrected, wts8_changes = self.run_postprocess_fixture(
+            wts8_text,
+            label="wts_8_b",
+        )
+        wts9_result, wts9_corrected, wts9_changes = self.run_postprocess_fixture(
+            wts9_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("bco lna' —", wts8_corrected)
+        self.assertIn("spyan sriar ma phyin", wts8_corrected)
+        self.assertIn("—r sriar gyi srol", wts8_corrected)
+        self.assertIn("dug lna' dban", wts9_corrected)
+        self.assertIn("drios grub", wts9_corrected)
+        self.assertIn("gtsani ma' bris", wts9_corrected)
+        self.assertIn("—r snari dass.", wts9_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in wts8_changes + wts9_changes
+                if row["reason"].startswith(
+                    "reviewed_tibetan_exact_second_ambitious_"
+                )
+            ]
+        )
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
+        self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
