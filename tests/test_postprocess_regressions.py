@@ -745,6 +745,128 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_tibetan_ambitious_residual_cleanup_wts8_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (57, 43): "gañńs ti sei ~ byon",
+                (94, 7): "Lex. i khuñń nam bu ga",
+                (229, 12): 'Itar byuñń "welche sind jene',
+                (247, 16): "bytu) zul byed de dper na chu la bya ba bźiń",
+                (324, 47): "mo phag gi lo la sku khruñńs",
+                (340, 61): "gsañń ba on chen skye",
+                (370, 31): "1001); bañńs nas yar bton",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("gaṅs ti sei ~ byon", corrected)
+        self.assertIn("Lex. i khuṅ nam bu ga", corrected)
+        self.assertIn('ltar byuṅ "welche sind jene', corrected)
+        self.assertIn("dper na chu la bya ba bźiṅ", corrected)
+        self.assertIn("sku khruṅs", corrected)
+        self.assertIn("gsaṅ ba on chen", corrected)
+        self.assertIn("baṅs nas yar bton", corrected)
+        reviewed_ambitious = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_ambitious_residual_context"
+        ]
+        self.assertEqual(len(reviewed_ambitious), 8)
+        pairs = {(row["from_token"], row["to_token"]) for row in reviewed_ambitious}
+        self.assertIn(("Itar", "ltar"), pairs)
+        self.assertIn(("gañńs", "gaṅs"), pairs)
+        self.assertIn(("khuñń", "khuṅ"), pairs)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 8)
+
+    def test_reviewed_tibetan_ambitious_residual_cleanup_wts9_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (52, 67): "mes thugs dam biens pa' 'phro thams cad",
+                (178, 75): "beiden Brüder Khyun-po Mu-khyuñń-rgyan",
+                (198, 32): "Lex. tamab (Mvy 4552, Abt. graris can gi",
+                (232, 51): "śes rnam par Ses pa rdzas $// yod dam ~",
+                (233, 20): "śes tab — pa'i phun sum tshogs (metr.)",
+                (233, 35): "anidra)' (Ahs 1.5.23d); dṅos dan drios —",
+                (233, 74): "entsteht\" (KunK 55,10); yal ~ spraṅ por 'gro",
+                (285, 53): "(Tär 186,9); dpur rgyab kyi — źus nas",
+                (318, 32): "dari yid chad pa la'añń",
+                (343, 34): "Lex. Zin saam sa Zin (brDa); źinń sa (Dagy).",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("mes thugs dam bźens pa' 'phro", corrected)
+        self.assertIn("Mu-khyuṅ-rgyan", corrected)
+        self.assertIn("graṅs can gyi", corrected)
+        self.assertIn("śes rnam par śes pa rdzas $// yod", corrected)
+        self.assertIn("śes rab — pa'i", corrected)
+        self.assertIn("dṅos daṅ dṅos —", corrected)
+        self.assertIn("yul ~ spraṅ por", corrected)
+        self.assertIn("dpun rgyab kyi", corrected)
+        self.assertIn("daṅ yid chad pa la'aṅ", corrected)
+        self.assertIn("Lex. źiṅ sa'am sa źiṅ (brDa); źiṅ sa", corrected)
+        reviewed_ambitious = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_ambitious_residual_context"
+        ]
+        self.assertEqual(len(reviewed_ambitious), 16)
+        pairs = {(row["from_token"], row["to_token"]) for row in reviewed_ambitious}
+        self.assertIn(("biens", "bźens"), pairs)
+        self.assertIn(("Mu-khyuñń-rgyan", "Mu-khyuṅ-rgyan"), pairs)
+        self.assertIn(("la'añń", "la'aṅ"), pairs)
+        self.assertIn(("Zin", "źiṅ"), pairs)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 16)
+
+    def test_reviewed_tibetan_ambitious_residual_cleanup_is_line_gated(self) -> None:
+        wts8_text = self.fixture_with_reviewed_lines(
+            {
+                (57, 44): "gañńs ti sei ~ byon",
+                (229, 13): 'Itar byuñń "welche sind jene',
+                (340, 62): "gsañń ba on chen skye",
+            }
+        )
+        wts9_text = self.fixture_with_reviewed_lines(
+            {
+                (52, 68): "mes thugs dam biens pa' 'phro thams cad",
+                (233, 36): "anidra)' (Ahs 1.5.23d); dṅos dan drios —",
+                (343, 35): "Lex. Zin saam sa Zin (brDa); źinń sa (Dagy).",
+            }
+        )
+
+        wts8_result, wts8_corrected, wts8_changes = self.run_postprocess_fixture(
+            wts8_text,
+            label="wts_8_b",
+        )
+        wts9_result, wts9_corrected, wts9_changes = self.run_postprocess_fixture(
+            wts9_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("gañńs ti sei ~ byon", wts8_corrected)
+        self.assertIn('Itar byuñń "welche sind jene', wts8_corrected)
+        self.assertIn("gsañń ba on chen skye", wts8_corrected)
+        self.assertIn("biens pa' 'phro", wts9_corrected)
+        self.assertIn("dṅos dan drios", wts9_corrected)
+        self.assertIn("Zin saam sa Zin", wts9_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in wts8_changes + wts9_changes
+                if row["reason"] == "reviewed_tibetan_exact_ambitious_residual_context"
+            ]
+        )
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
+        self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {

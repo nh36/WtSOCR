@@ -63,7 +63,7 @@ wts_9_m	24	55	10	Matañ	Mataṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_
 wts_9_m	61	25	3	Mañ-mkhar	Maṅ-mkhar	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	227	44	4	Me-loñ	Me-loṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	125	82	6	Mri-dbañ-po	Mri-dbaṅ-po	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
-wts_9_m	178	75	4	Mu-khyuñń-rgyan	Mu-khyuṅń-rgyan	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
+wts_9_m	178	75	4	Mu-khyuñń-rgyan	Mu-khyuṅ-rgyan	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan proper-name cleanup reviewed in local context; no broad nasal repair rule
 wts_9_m	66	24	4	Myañ	Myaṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	272	69	7	Myañ	Myaṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	24	28	3	Mātañgarāja	Mātaṅgarāja	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
@@ -446,3 +446,26 @@ wts_9_m	233	69	8	Nlams	ñams	reviewed_tibetan_exact_residual_context_google	tibe
 wts_9_m	285	67	1	gtsani	gtsaṅ	reviewed_tibetan_exact_residual_context_google	tibetan_residual_context_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in full local context; no broad character rule
 wts_9_m	285	67	3	nina	mña	reviewed_tibetan_exact_residual_context_google	tibetan_residual_context_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in full local context; no broad character rule
 wts_9_m	362	53	1	giun	gźun	reviewed_tibetan_exact_residual_context_google	tibetan_residual_context_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in full local context; no broad character rule
+wts_8_b	57	43	1	gañńs	gaṅs	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	94	7	3	khuñń	khuṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	229	12	1	Itar	ltar	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad initial-I/l rule
+wts_8_b	229	12	2	byuñń	byuṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	247	16	11	bźiń	bźiṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	324	47	7	khruñńs	khruṅs	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	340	61	1	gsañń	gsaṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_8_b	370	31	2	bañńs	baṅs	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_9_m	52	67	4	biens	bźens	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in full local context; no broad character rule
+wts_9_m	198	32	6	graris	graṅs	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in lexicon context; no broad character rule
+wts_9_m	198	32	8	gi	gyi	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in lexicon context; no broad gi/gyi rule
+wts_9_m	232	51	4	Ses	śes	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in local context; no broad S/ś rule
+wts_9_m	233	20	2	tab	rab	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in śes-rab context; no broad t/r rule
+wts_9_m	233	35	5	dan	daṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in dṅos context; no broad dan/daṅ rule
+wts_9_m	233	35	6	drios	dṅos	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in dṅos context; no broad character rule
+wts_9_m	233	74	5	yal	yul	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in yul/spraṅ context; no broad a/u rule
+wts_9_m	285	53	4	dpur	dpun	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact Google-corroborated residual Tibetan reading reviewed in dpun-rgyab context; no broad r/n rule
+wts_9_m	318	32	1	dari	daṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad character rule
+wts_9_m	318	32	5	la'añń	la'aṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan reading reviewed in local context; no broad nasal repair rule
+wts_9_m	343	34	2	Zin	źiṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan lexicon-context cleanup; no broad Z/ź or n/ṅ rule
+wts_9_m	343	34	3	saam	sa'am	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan lexicon-context cleanup; no broad apostrophe rule
+wts_9_m	343	34	5	Zin	źiṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan lexicon-context cleanup; no broad Z/ź or n/ṅ rule
+wts_9_m	343	34	7	źinń	źiṅ	reviewed_tibetan_exact_ambitious_residual_context	tibetan_ambitious_residual_cleanup_20260622	Exact residual Tibetan lexicon-context cleanup; no broad nasal repair rule
