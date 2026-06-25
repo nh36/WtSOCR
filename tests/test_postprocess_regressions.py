@@ -398,6 +398,47 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_wts_9m_remaining_dnos_rows_are_exactly_gated(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (143, 10): "Lex. chos kyi sogs dnos po'i rigs tshon",
+                (190, 77): "sa' dnos gi tshig don gñis ka",
+                (381, 57): "drug gi rnam len gyi bya bas dnos su ma zin",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("sogs dṅos po'i", corrected)
+        self.assertIn("sa' dṅos gi", corrected)
+        self.assertIn("bas dṅos su", corrected)
+        self.assertNotIn("dños", corrected)
+        reviewed = [
+            row for row in changes if row["reason"] == "reviewed_tibetan_exact_dngos"
+        ]
+        self.assertEqual(len(reviewed), 3)
+        self.assertEqual(
+            {
+                (
+                    row["page"],
+                    row["line"],
+                    row["from_token"],
+                    row["to_token"],
+                    row["tier"],
+                )
+                for row in reviewed
+            },
+            {
+                ("143", "10", "dnos", "dṅos", "reviewed_tibetan_exact"),
+                ("190", "77", "dnos", "dṅos", "reviewed_tibetan_exact"),
+                ("381", "57", "dnos", "dṅos", "reviewed_tibetan_exact"),
+            },
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
     def test_reviewed_tibetan_exact_loader_reads_tsv(self) -> None:
         tmpdir = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
