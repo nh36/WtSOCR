@@ -886,6 +886,101 @@ TIBETAN_TRANSLIT_PHRASE_SAFE_REWRITE_PATTERNS = (
 )
 TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS = (
     (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bcas pa'i(?![{LATIN_CHARS}0-9])"),
+        "daṅ bcas pa'i",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bcas pas(?![{LATIN_CHARS}0-9])"),
+        "daṅ bcas pas",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bcas par(?![{LATIN_CHARS}0-9])"),
+        "daṅ bcas par",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bcas kyi(?![{LATIN_CHARS}0-9])"),
+        "daṅ bcas kyi",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bcas pa(?![{LATIN_CHARS}0-9])"),
+        "daṅ bcas pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bral ba'i(?![{LATIN_CHARS}0-9])"),
+        "daṅ bral ba'i",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bral bas(?![{LATIN_CHARS}0-9])"),
+        "daṅ bral bas",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bral bar(?![{LATIN_CHARS}0-9])"),
+        "daṅ bral bar",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan bral ba(?![{LATIN_CHARS}0-9])"),
+        "daṅ bral ba",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan 'dra(?![{LATIN_CHARS}0-9])"),
+        "daṅ 'dra",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ’dra(?![{LATIN_CHARS}0-9])"),
+        "daṅ ’dra",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan lhan cig(?![{LATIN_CHARS}0-9])"),
+        "daṅ lhan cig",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan mthun par(?![{LATIN_CHARS}0-9])"),
+        "daṅ mthun par",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan mthun pas(?![{LATIN_CHARS}0-9])"),
+        "daṅ mthun pas",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan mthun pa(?![{LATIN_CHARS}0-9])"),
+        "daṅ mthun pa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan mthunpa(?![{LATIN_CHARS}0-9])"),
+        "daṅ mthunpa",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pa'i(?![{LATIN_CHARS}0-9])"),
+        "daṅ ldan pa'i",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pas(?![{LATIN_CHARS}0-9])"),
+        "daṅ ldan pas",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan par(?![{LATIN_CHARS}0-9])"),
+        "daṅ ldan par",
+        "tibetan_translit_phrase_allowlist",
+    ),
+    (
         re.compile(rf"(?<![{LATIN_CHARS}0-9])skal ba dan ldan pa"),
         "skal ba daṅ ldan pa",
         "tibetan_translit_phrase_allowlist",

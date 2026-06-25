@@ -2568,6 +2568,79 @@ class PostprocessRegressionTests(unittest.TestCase):
             reasons,
         )
 
+    def test_tibetan_phrase_allowlist_rewrites_recurring_dan_phrase_families(self) -> None:
+        merged_text = (
+            "དང་ daṅ\n"
+            "khog phub dan bcas pa dan bcas par dan bcas pa'i dan bcas pas dan bcas kyi "
+            "dri ma dan bral ba dan bral ba'i dan bral bas dan bral bar "
+            "de dan 'dra ba de dan ’dra ba "
+            "dan lhan cig dan mthun pa dan mthun par dan mthun pas don dan mthunpa "
+            "dan ldan pa'i dan ldan pas dan ldan par\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "khog phub daṅ bcas pa daṅ bcas par daṅ bcas pa'i daṅ bcas pas daṅ bcas kyi "
+            "dri ma daṅ bral ba daṅ bral ba'i daṅ bral bas daṅ bral bar "
+            "de daṅ 'dra ba de daṅ ’dra ba "
+            "daṅ lhan cig daṅ mthun pa daṅ mthun par daṅ mthun pas don daṅ mthunpa "
+            "daṅ ldan pa'i daṅ ldan pas daṅ ldan par",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for from_token, to_token in [
+            ("dan bcas pa", "daṅ bcas pa"),
+            ("dan bcas par", "daṅ bcas par"),
+            ("dan bcas pa'i", "daṅ bcas pa'i"),
+            ("dan bcas pas", "daṅ bcas pas"),
+            ("dan bcas kyi", "daṅ bcas kyi"),
+            ("dan bral ba", "daṅ bral ba"),
+            ("dan bral ba'i", "daṅ bral ba'i"),
+            ("dan bral bas", "daṅ bral bas"),
+            ("dan bral bar", "daṅ bral bar"),
+            ("dan 'dra", "daṅ 'dra"),
+            ("dan ’dra", "daṅ ’dra"),
+            ("dan lhan cig", "daṅ lhan cig"),
+            ("dan mthun pa", "daṅ mthun pa"),
+            ("dan mthun par", "daṅ mthun par"),
+            ("dan mthun pas", "daṅ mthun pas"),
+            ("dan mthunpa", "daṅ mthunpa"),
+            ("dan ldan pa'i", "daṅ ldan pa'i"),
+            ("dan ldan pas", "daṅ ldan pas"),
+            ("dan ldan par", "daṅ ldan par"),
+        ]:
+            self.assertIn(
+                (from_token, to_token, "tibetan_translit_phrase_allowlist"),
+                reasons,
+            )
+
+    def test_tibetan_phrase_allowlist_does_not_rewrite_recurring_dan_families_in_plain_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "dan bcas pa dan bral ba dan 'dra ba dan lhan cig dan mthun pa dan ldan pa'i\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn(
+            "dan bcas pa dan bral ba dan 'dra ba dan lhan cig dan mthun pa dan ldan pa'i",
+            corrected,
+        )
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for from_token, to_token in [
+            ("dan bcas pa", "daṅ bcas pa"),
+            ("dan bral ba", "daṅ bral ba"),
+            ("dan 'dra", "daṅ 'dra"),
+            ("dan lhan cig", "daṅ lhan cig"),
+            ("dan mthun pa", "daṅ mthun pa"),
+            ("dan ldan pa'i", "daṅ ldan pa'i"),
+        ]:
+            self.assertNotIn(
+                (from_token, to_token, "tibetan_translit_phrase_allowlist"),
+                reasons,
+            )
+
     def test_tibetan_dang_phrase_override_rewrites_curated_phrase(self) -> None:
         merged_text = (
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can\n"
