@@ -2783,6 +2783,10 @@ class PostprocessRegressionTests(unittest.TestCase):
             ("Sarnsära", "Saṃsāra"),
             ("Sanisära", "Saṃsāra"),
             ("Samisära", "Saṃsāra"),
+            ("Samsara", "Saṃsāra"),
+            ("Samsāra", "Saṃsāra"),
+            ("desSamsära", "des Saṃsāra"),
+            ("Samskäras", "Saṃskāras"),
         ]
         merged_text = "སྐད skt. " + " ".join(src for src, _ in cases) + "\n"
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
@@ -2802,18 +2806,43 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_residual_error_sanskrit_overrides_do_not_add_broad_rules(self) -> None:
         merged_text = (
             "Eine deutsche Prosa mit Sakyamuni Nirvana Sämkhya "
-            "fooäbar und Nirvänafest Samsära Samsärafest Samskäras.\n"
+            "fooäbar und Nirvänafest Samsärafest Samskärasfest "
+            "desSamsärafest Samsarafest.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn(
             "Sakyamuni Nirvana Sämkhya fooäbar und Nirvänafest "
-            "Samsära Samsärafest Samskäras",
+            "Samsärafest Samskärasfest desSamsärafest Samsarafest",
             corrected,
         )
         reasons = {row["reason"] for row in changes}
         self.assertNotIn("sanskrit_high_freq_allowlist", reasons)
         self.assertNotIn("sanskrit_promoted_context_gate", reasons)
+
+    def test_samsara_samskara_terms_normalize_in_buddhist_term_context(self) -> None:
+        merged_text = (
+            "Samsära und Nirväna untrennbar eins werden.\n"
+            '"indem der Strom desSamsära zerstört wird,\n'
+            '"um\' bedeutet: Kontinuität der Samskäras"\n'
+            "die Ebene des Samsara überschritten.\n"
+            "die Ebene des Samsāra überschritten.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Saṃsāra und Nirvāṇa", corrected)
+        self.assertIn("Strom des Saṃsāra", corrected)
+        self.assertIn("Kontinuität der Saṃskāras", corrected)
+        self.assertIn("Ebene des Saṃsāra", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for source, target in [
+            ("Samsära", "Saṃsāra"),
+            ("desSamsära", "des Saṃsāra"),
+            ("Samskäras", "Saṃskāras"),
+            ("Samsara", "Saṃsāra"),
+            ("Samsāra", "Saṃsāra"),
+        ]:
+            self.assertIn((source, target, "sanskrit_promoted_context_gate"), reasons)
 
     def test_promoted_sanskrit_overrides_preserve_exact_lowercase_forms(self) -> None:
         merged_text = "སྐད skt. Acavimśatikasahasrikä[prajnāpāramitāsūtra]\n"

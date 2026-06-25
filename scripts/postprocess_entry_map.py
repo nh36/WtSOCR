@@ -144,6 +144,11 @@ CITATION_SIGLUM_ARTIFACT_CUE_RE = re.compile(
 )
 SANSKRIT_MVY_CUE_RE = re.compile(r"\(\s*Mvy\b", re.IGNORECASE)
 SANSKRIT_GENERAL_CUE_RE = re.compile(r"\b(?:skt|sanskrit|mahavyutpatti|mvy)\b\.?", re.IGNORECASE)
+SANSKRIT_BUDDHIST_TERM_CUE_RE = re.compile(
+    r"(?:\b(?:Sams(?:ä|a|ā)ra|Saṃsāra|Samsk(?:ä|a|ā)ras|Saṃskāras|"
+    r"Nirv(?:ä|a|ā)na|Nirvāṇa)\b|desSamsära)",
+    re.IGNORECASE,
+)
 CITATION_PAREN_RE = re.compile(r"\([^)\n]{0,120}\)")
 CITATION_PAREN_HINT_RE = re.compile(
     r"(?:\b(?:ed|hrsg|vol|bd|pp|pl|nr|no)\b|(?:1[6-9]\d{2}|20\d{2})(?:[a-z])?|\b\d{1,3}\b)",
@@ -538,7 +543,7 @@ def load_sanskrit_promoted_overrides(
                     for tag in (row.get("evidence") or "").split(",")
                     if tag.strip()
                 }
-                if "samsara_context" in evidence_tags:
+                if {"samsara_context", "samskara_context"} & evidence_tags:
                     context_gated_sources.add(src)
                     context_gated_sources.add(src.lower())
     except OSError:
@@ -6877,6 +6882,8 @@ def line_has_promoted_sanskrit_context_gate(line_text: str, zone: str) -> bool:
     if SANSKRIT_GENERAL_CUE_RE.search(line_text):
         return True
     if SANSKRIT_LEX_CUE_RE.search(line_text):
+        return True
+    if SANSKRIT_BUDDHIST_TERM_CUE_RE.search(line_text):
         return True
     return line_has_singleton_sanskrit_gate(line_text, zone)
 

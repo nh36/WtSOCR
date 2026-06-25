@@ -49,20 +49,41 @@ clear Buddhist/Sanskrit context.
 | `wts_9_m:47:43` | `Sarnsära` | `Saṃsāra` | promote |
 | `wts_9_m:10:56` | `Sanisära` | `Saṃsāra` | promote |
 | `wts_9_m:121:55` | `Samisära` | `Saṃsāra` | promote |
+| `wts_9_m:233:60` | `Samsara` | `Saṃsāra` | promote |
+| `policy:samsara_20260625` | `Samsāra` | `Saṃsāra` | promote |
 
 These are exact Sanskrit overrides tagged with
-`residual_deferred_family_audit_20260625` and `samsara_context`.
+`residual_deferred_family_audit_20260625` or
+`samsara_samskara_policy_audit_20260625`, plus `samsara_context`.
+
+Readable `Samsara` and `Samsāra` are now treated as normalisation candidates
+when the line context identifies the word as the Buddhist Sanskrit technical
+term. They are still not handled by broad character rules.
+
+## `Saṃskāra` And German-Spacing Rows
+
+The earlier deferrals for `Samskäras` and `desSamsära` were reviewed as exact
+rows rather than folded into the `Saṃsāra` family.
+
+| example ref | source token | target | decision |
+| --- | --- | --- | --- |
+| `wts_8_b:240:18` | `Samskäras` | `Saṃskāras` | promote |
+| `wts_8_b:296:38` | `desSamsära` | `des Saṃsāra` | promote |
+
+`Samskäras` belongs to the separate `Saṃskāra` family, and `desSamsära`
+combines German spacing with Sanskrit term normalisation. Both are now exact
+reviewed overrides with Buddhist/Sanskrit term context gating.
 
 ## Remaining Non-Actions
 
-The following are deliberately not actioned in this pass:
+The following remain deliberately unactioned:
 
-- `Samskäras`: this is a separate `Saṃskāra` family, not `Saṃsāra`.
-- `desSamsära`: this combines German spacing damage with Sanskrit term cleanup
-  and should be reviewed as a separate exact row if needed.
-- Broader spelling policy around already readable `Samsara`, `Samsāra`, or
-  `Saṃsāra` forms.
 - Any broad `ä -> ā`, `rn/ni/mi -> ṃ`, or embedded-Tibetan splitting rule.
+- Generic `Sams*` normalisation outside an exact reviewed source token.
+- Related compounds or nonce forms such as `Samsärafest`, `Samsarafest`,
+  `Samskärasfest`, and `desSamsärafest`, unless they are separately reviewed.
+- Any broader editorial Sanskrit spelling policy not represented by exact
+  reviewed override rows.
 
 ## Verification
 
@@ -73,4 +94,4 @@ python3 -m py_compile scripts/postprocess_entry_map.py
 python3 -m pytest tests/test_postprocess_regressions.py -q
 ```
 
-Result: `117 passed`.
+Result: `118 passed`.
