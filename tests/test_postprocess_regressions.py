@@ -1008,6 +1008,94 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
         self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_tibetan_residual_error_family_exact_rows(self) -> None:
+        wts8_text = self.fixture_with_reviewed_lines(
+            {
+                (464, 42): "du yan d ños rtags dan mtshan ma dagkyań ~",
+                (510, 63): "'dilta ste ... 'bras dan / phol mig dan / — da",
+            }
+        )
+        wts9_text = self.fixture_with_reviewed_lines(
+            {
+                (36, 50): "lba mo thams cad la / 'dilta ste spyan dan /",
+                (190, 74): "mam par 'byed pa gaṅ ze na / 'dilta ste... -r",
+                (333, 58): "ñas chos gdags pa rnam par bźag pa 'dilta ste",
+            }
+        )
+
+        wts8_result, wts8_corrected, wts8_changes = self.run_postprocess_fixture(
+            wts8_text,
+            label="wts_8_b",
+        )
+        wts9_result, wts9_corrected, wts9_changes = self.run_postprocess_fixture(
+            wts9_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("du yan d ños rtags dan mtshan ma dag kyaṅ ~", wts8_corrected)
+        self.assertIn("'di lta ste ... 'bras dan / phol mig dan / — da", wts8_corrected)
+        self.assertIn("lba mo thams cad la / 'di lta ste spyan dan /", wts9_corrected)
+        self.assertIn("mam par 'byed pa gaṅ ze na / 'di lta ste... -r", wts9_corrected)
+        self.assertIn("ñas chos gdags pa rnam par bźag pa 'di lta ste", wts9_corrected)
+
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in wts8_changes + wts9_changes
+        }
+        self.assertIn(
+            ("dagkyań", "dag kyaṅ", "reviewed_tibetan_exact_residual_spacing_ng"),
+            reasons,
+        )
+        self.assertIn(
+            ("dilta", "di lta", "reviewed_tibetan_exact_di_lta_spacing"),
+            reasons,
+        )
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 2)
+        self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 3)
+
+    def test_reviewed_tibetan_residual_error_family_is_line_gated(self) -> None:
+        wts8_text = self.fixture_with_reviewed_lines(
+            {
+                (464, 43): "du yan d ños rtags dan mtshan ma dagkyań ~",
+                (117, 77): "— kyis'diltabuga la ses \"wie konnten die Ti-",
+                (288, 17): "bdaggi btsun mo 'di ~ ñan pa 'diltabuszinna",
+                (510, 62): "lus kyi nad rnam pa 'diltabi 'di dag 'byun ba",
+            }
+        )
+        wts9_text = self.fixture_with_reviewed_lines(
+            {
+                (36, 51): "lba mo thams cad la / 'dilta ste spyan dan /",
+            }
+        )
+
+        wts8_result, wts8_corrected, wts8_changes = self.run_postprocess_fixture(
+            wts8_text,
+            label="wts_8_b",
+        )
+        wts9_result, wts9_corrected, wts9_changes = self.run_postprocess_fixture(
+            wts9_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("mtshan ma dagkyań ~", wts8_corrected)
+        self.assertIn("kyis'diltabuga la ses", wts8_corrected)
+        self.assertIn("'diltabuszinna", wts8_corrected)
+        self.assertIn("'diltabi 'di dag", wts8_corrected)
+        self.assertIn("'dilta ste spyan", wts9_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in wts8_changes + wts9_changes
+                if row["reason"]
+                in {
+                    "reviewed_tibetan_exact_residual_spacing_ng",
+                    "reviewed_tibetan_exact_di_lta_spacing",
+                }
+            ]
+        )
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
+        self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
@@ -2018,6 +2106,23 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("RoINSs", "RoINS", "citation_siglum_confusable_map"), reasons)
         self.assertIn(("BhuLlg", "BhuLg", "citation_siglum_confusable_map"), reasons)
 
+    def test_citation_sigla_do_not_uppercase_german_ins_before_sanskrit(self) -> None:
+        merged_text = (
+            "ཀོང་ koṅ\n"
+            "Er ging ins skt. Nirväna; siehe (In$ 29) und (Ins 30).\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("ins skt. Nirvāṇa", corrected)
+        self.assertIn("(Ins 29)", corrected)
+        self.assertIn("(Ins 30)", corrected)
+        self.assertNotIn("Ins skt. Nirvāṇa", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(("ins", "Ins", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("In$", "Ins", "citation_siglum_confusable_map"), reasons)
+        self.assertIn(("Nirväna", "Nirvāṇa", "sanskrit_high_freq_allowlist"), reasons)
+
     def test_sigla_standalone_allowlist_applies_on_base_citation_lines(self) -> None:
         self.assertTrue(
             pem.token_has_siglum_context(
@@ -2638,6 +2743,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         reasons = {(row["from_token"].lower(), row["to_token"].lower(), row["reason"]) for row in changes}
         for source, target in cases:
             self.assertIn((source.lower(), target.lower(), "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_residual_error_sanskrit_proper_name_and_term_overrides_are_exact(self) -> None:
+        cases = [
+            ("Säkyamuni", "Śākyamuni"),
+            ("Śäkyamuni", "Śākyamuni"),
+            ("Säkyamunis", "Śākyamunis"),
+            ("Säkyamunii", "Śākyamuni"),
+            ("Nirväna", "Nirvāṇa"),
+            ("Nirväru", "Nirvāṇa"),
+        ]
+        merged_text = "སྐད skt. " + " ".join(src for src, _ in cases) + "\n"
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        for _, target in cases:
+            self.assertIn(target, corrected)
+
+        reasons = {
+            (row["from_token"].lower(), row["to_token"].lower(), row["reason"])
+            for row in changes
+        }
+        for source, target in cases:
+            self.assertIn((source.lower(), target.lower(), "sanskrit_high_freq_allowlist"), reasons)
+
+    def test_residual_error_sanskrit_overrides_do_not_add_broad_rules(self) -> None:
+        merged_text = (
+            "Eine deutsche Prosa mit Sakyamuni Nirvana Sämkhya "
+            "fooäbar und Nirvänafest.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("Sakyamuni Nirvana Sämkhya fooäbar und Nirvänafest", corrected)
+        reasons = {row["reason"] for row in changes}
+        self.assertNotIn("sanskrit_high_freq_allowlist", reasons)
 
     def test_promoted_sanskrit_overrides_preserve_exact_lowercase_forms(self) -> None:
         merged_text = "སྐད skt. Acavimśatikasahasrikä[prajnāpāramitāsūtra]\n"

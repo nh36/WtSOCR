@@ -3731,6 +3731,10 @@ def match_citation_siglum(token: str) -> str | None:
     siglum = CITATION_SIGLUM_CASE_SENSITIVE_MAP.get(token)
     if siglum is not None:
         return siglum
+    if token == "ins":
+        # Lowercase "ins" is common German prose; require exact siglum case or
+        # an OCR artifact such as In$ before normalizing to Ins.
+        return None
     siglum = CITATION_SIGLUM_CANONICAL_BY_KEY.get(
         re.sub(r"[sś]+", "s", token.casefold())
     )

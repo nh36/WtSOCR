@@ -171,8 +171,12 @@ wts_8_b	342	35	3	kyań	kyaṅ	reviewed_tibetan_exact_residual_ng	tibetan_residua
 wts_8_b	398	7	10	źań	źaṅ	reviewed_tibetan_exact_residual_ng	tibetan_residual_ng_cleanup_20260621	Exact residual Tibetan final/nasal damage reviewed in local Tibetan context; no broad ń-to-ṅ rule
 wts_8_b	412	1	5	miń	miṅ	reviewed_tibetan_exact_residual_ng	tibetan_residual_ng_cleanup_20260621	Exact residual Tibetan final/nasal damage reviewed in local Tibetan context; no broad ń-to-ṅ rule
 wts_8_b	445	4	3	bźeńs	bźeṅs	reviewed_tibetan_exact_residual_ng	tibetan_residual_ng_cleanup_20260621	Exact residual Tibetan final/nasal damage reviewed in local Tibetan context; no broad ń-to-ṅ rule
-wts_8_b	464	42	9	dagkyań	dagkyaṅ	reviewed_tibetan_exact_residual_ng	tibetan_residual_ng_cleanup_20260621	Exact residual Tibetan final/nasal damage reviewed in local Tibetan context; no broad ń-to-ṅ rule
+wts_8_b	464	42	9	dagkyań	dag kyaṅ	reviewed_tibetan_exact_residual_spacing_ng	residual_error_family_research_20260624	Exact dag kyaṅ segmentation and nasal repair reviewed in local Tibetan context; no broad spacing or ń-to-ṅ rule
 wts_8_b	547	42	7	dań	daṅ	reviewed_tibetan_exact_residual_ng	tibetan_residual_ng_cleanup_20260621	Exact residual Tibetan final/nasal damage reviewed in local Tibetan context; no broad ń-to-ṅ rule
+wts_8_b	510	63	1	dilta	di lta	reviewed_tibetan_exact_di_lta_spacing	residual_error_family_research_20260624	Exact 'di lta segmentation reviewed in simple Tibetan context; embedded diltabu forms deferred
+wts_9_m	36	50	6	dilta	di lta	reviewed_tibetan_exact_di_lta_spacing	residual_error_family_research_20260624	Exact 'di lta segmentation reviewed in simple Tibetan context; embedded diltabu forms deferred
+wts_9_m	190	74	8	dilta	di lta	reviewed_tibetan_exact_di_lta_spacing	residual_error_family_research_20260624	Exact 'di lta segmentation reviewed in simple Tibetan context; embedded diltabu forms deferred
+wts_9_m	333	58	9	dilta	di lta	reviewed_tibetan_exact_di_lta_spacing	residual_error_family_research_20260624	Exact 'di lta segmentation reviewed in simple Tibetan context; embedded diltabu forms deferred
 wts_9_m	5	4	2	Iha	lha	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
 wts_9_m	5	33	5	Ihan	lhan	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
 wts_9_m	6	34	5	Iha	lha	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
