@@ -42,13 +42,18 @@ for other `$` families.
 
 ## Deferred Rows
 
-The embedded forms `'diltabuga`, `'diltabuszinna`, and `'diltabi` were not
-promoted in this pass. They may contain recoverable `'di lta...` material, but
-they need separate source/context review because the damage is embedded in a
-larger token.
+The embedded forms `'diltabuga`, `'diltabuszinna`, and `'diltabi` were deferred
+in this pass because they needed separate source/context review. That follow-up
+review was completed in
+`docs/residual_deferred_family_audit_2026-06-25.md`; the exact safe rows were
+promoted as row-gated `di lta bu` repairs, with no broad embedded-token
+splitting rule.
 
-The broader `Samsära` / `Samsāra` / `Saṃsāra` family is also deferred pending a
-separate convention and source-context decision.
+The broader `Samsära` / `Samsāra` / `Saṃsāra` family was also deferred here
+pending a separate convention and source-context decision. The follow-up review
+promoted only exact damaged `Saṃsāra` tokens in clear Buddhist/Sanskrit context.
+`Samskäras`, `desSamsära`, and broader already-readable spelling policy remain
+out of scope for that follow-up.
 
 ## Verification
 

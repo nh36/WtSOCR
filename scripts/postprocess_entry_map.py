@@ -511,12 +511,15 @@ def promoted_override_supports_case_fallback(src: str) -> bool:
     return src.islower() or src.isupper() or (src[0].isupper() and src[1:].islower())
 
 
-def load_sanskrit_promoted_overrides(path: Path) -> tuple[dict[str, str], dict[str, str]]:
+def load_sanskrit_promoted_overrides(
+    path: Path,
+) -> tuple[dict[str, str], dict[str, str], set[str]]:
     """Load promoted rare-pair Sanskrit overrides from a TSV file if present."""
     exact_overrides: dict[str, str] = {}
     folded_candidates: dict[str, list[tuple[str, str]]] = {}
+    context_gated_sources: set[str] = set()
     if not path.exists():
-        return exact_overrides, {}
+        return exact_overrides, {}, context_gated_sources
     try:
         with path.open("r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f, delimiter="\t")
@@ -530,8 +533,16 @@ def load_sanskrit_promoted_overrides(path: Path) -> tuple[dict[str, str], dict[s
                     continue
                 exact_overrides[src] = dst
                 folded_candidates.setdefault(src.lower(), []).append((src, dst))
+                evidence_tags = {
+                    tag.strip().lower()
+                    for tag in (row.get("evidence") or "").split(",")
+                    if tag.strip()
+                }
+                if "samsara_context" in evidence_tags:
+                    context_gated_sources.add(src)
+                    context_gated_sources.add(src.lower())
     except OSError:
-        return {}, {}
+        return {}, {}, set()
 
     folded_overrides: dict[str, str] = {}
     for folded_src, pairs in folded_candidates.items():
@@ -541,13 +552,14 @@ def load_sanskrit_promoted_overrides(path: Path) -> tuple[dict[str, str], dict[s
         if len(folded_targets) != 1:
             continue
         folded_overrides[folded_src] = folded_targets.pop()
-    return exact_overrides, folded_overrides
+    return exact_overrides, folded_overrides, context_gated_sources
 
 
 SANSKRIT_PROMOTED_OVERRIDES_PATH = Path(__file__).resolve().parents[1] / "data" / "sanskrit_promote_overrides.tsv"
 (
     SANSKRIT_PROMOTED_TIER_A_EXACT_OVERRIDES,
     SANSKRIT_PROMOTED_TIER_A_FOLDED_OVERRIDES,
+    SANSKRIT_CONTEXT_GATED_PROMOTED_OVERRIDES,
 ) = load_sanskrit_promoted_overrides(SANSKRIT_PROMOTED_OVERRIDES_PATH)
 SANSKRIT_TIER_A_OVERRIDES = {
     **SANSKRIT_HIGH_FREQ_TIER_A_OVERRIDES,
@@ -6714,6 +6726,10 @@ def lookup_sanskrit_tier_a_override(token: str) -> str | None:
     return apply_case_shape(token, folded_target)
 
 
+def sanskrit_override_requires_context(token: str) -> bool:
+    return token in SANSKRIT_CONTEXT_GATED_PROMOTED_OVERRIDES or token.lower() in SANSKRIT_CONTEXT_GATED_PROMOTED_OVERRIDES
+
+
 def apply_sanskrit_override_chain(token: str, max_hops: int = 4) -> tuple[str, bool]:
     """Apply promoted/high-frequency overrides transitively for multi-step OCR forms."""
     current = token
@@ -6853,6 +6869,16 @@ def line_has_singleton_sanskrit_gate(line_text: str, zone: str) -> bool:
     ):
         return True
     return False
+
+
+def line_has_promoted_sanskrit_context_gate(line_text: str, zone: str) -> bool:
+    if SANSKRIT_MVY_CUE_RE.search(line_text):
+        return True
+    if SANSKRIT_GENERAL_CUE_RE.search(line_text):
+        return True
+    if SANSKRIT_LEX_CUE_RE.search(line_text):
+        return True
+    return line_has_singleton_sanskrit_gate(line_text, zone)
 
 
 def sanskrit_token_quality(token: str) -> int:
@@ -7123,6 +7149,9 @@ def apply_sanskrit_normalization(
             def repl(m: re.Match[str]) -> str:
                 tok = m.group(0)
                 explicit_override = lookup_sanskrit_tier_a_override(tok)
+                explicit_override_requires_context = (
+                    explicit_override is not None and sanskrit_override_requires_context(tok)
+                )
                 if explicit_override is None and not token_is_probable_sanskrit(tok, ctx, updated_line):
                     return tok
                 key = sanskrit_family_key(tok)
@@ -7150,7 +7179,11 @@ def apply_sanskrit_normalization(
                 reason = ""
                 if explicit_override:
                     replacement, _ = apply_sanskrit_override_chain(tok)
-                    reason = "sanskrit_high_freq_allowlist"
+                    reason = (
+                        "sanskrit_promoted_context_allowlist"
+                        if explicit_override_requires_context
+                        else "sanskrit_high_freq_allowlist"
+                    )
 
                 if replacement == tok and safe_norm != tok:
                     # Umlaut-only rewrites need clear Sanskrit signal.
@@ -7189,6 +7222,13 @@ def apply_sanskrit_normalization(
                     return tok
 
                 auto_apply = ctx >= SANSKRIT_AUTO_CONTEXT_MIN or reason == "sanskrit_high_freq_allowlist"
+                if (
+                    not auto_apply
+                    and reason == "sanskrit_promoted_context_allowlist"
+                    and line_has_promoted_sanskrit_context_gate(updated_line, zone)
+                ):
+                    auto_apply = True
+                    reason = "sanskrit_promoted_context_gate"
                 if (
                     not auto_apply
                     and reason in {"sanskrit_jn_cluster_contextual", "sanskrit_jn_cluster_plus_allowlist"}
