@@ -1164,6 +1164,73 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 0)
         self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_bzhin_bzhugs_exact_rows_apply_only_on_reviewed_locations(self) -> None:
+        wts8_text = self.fixture_with_reviewed_lines(
+            {
+                (15, 65): "rlun gzun ste yani ma gul bar bZugs pas",
+                (50, 6): "bzugs pa die vier Gottheiten",
+            }
+        )
+        wts9_text = self.fixture_with_reviewed_lines(
+            {
+                (13, 72): "bans lare ba - 09 par / Zal bzugs tsbe na",
+                (49, 41): "rten gsum la sogs pa tshig don rnams la bZin nas",
+            }
+        )
+
+        wts8_result, wts8_corrected, wts8_changes = self.run_postprocess_fixture(
+            wts8_text,
+            label="wts_8_b",
+        )
+        wts9_result, wts9_corrected, wts9_changes = self.run_postprocess_fixture(
+            wts9_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("bar bźugs pas", wts8_corrected)
+        self.assertIn("bźugs pa die vier", wts8_corrected)
+        self.assertIn("Zal bźugs tsbe", wts9_corrected)
+        self.assertIn("la bźin nas", wts9_corrected)
+
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in wts8_changes + wts9_changes
+        }
+        self.assertIn(("bZugs", "bźugs", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
+        self.assertIn(("bzugs", "bźugs", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
+        self.assertIn(("bZin", "bźin", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 2)
+        self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 2)
+
+    def test_reviewed_bzhin_bzhugs_exact_rows_do_not_generalize(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (1, 1): "rlun gzun ste yani ma gul bar bZugs pas",
+                (1, 2): "sku gsum rnam par du bzugs pa",
+                (1, 3): "rten gsum la sogs pa tshig don rnams la bZin nas",
+                (1, 4): "(r. bZi) zhes bstan",
+                (1, 5): "bzi ba dang bźi ba",
+            }
+        )
+
+        _result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("bar bZugs pas", corrected)
+        self.assertIn("du bzugs pa", corrected)
+        self.assertIn("la bZin nas", corrected)
+        self.assertIn("(r. bZi) zhes bstan", corrected)
+        self.assertIn("bzi ba dang bźi ba", corrected)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_bzhin_bzhugs"
+            ]
+        )
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
