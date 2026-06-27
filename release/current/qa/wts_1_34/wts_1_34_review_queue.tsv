@@ -1,74 +1,83 @@
 page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
-27	88	4	example_tibetan_latin	MIsHO	MlsHO	B	confusable_context	0	Sa skya pandi ta Kun dga’ rgyal mtshan dpal bzaṅı po ༈ BSop nams RGYA MIsHO 1968-1969 [Ro]]
-707	9	8485	headword_line	ch’a	cha’	B	discover_medium_context	0	ཇི” ja Tee; chin. & ch’a (LAUTER 1916: 505 Nr.
-707	160	8493	example_tibetan_latin	ch’a	cha’	B	discover_medium_context	0	ཇ་འབིང་ Ja bin Teekanne, Teetopf; chin. 738 ch’a
-955	102	10400	headword_line	tshaṅs	tshans	B	discover_medium_context	0	ཏྟད་ལ་ཚངས་ stod la tshaṅs in säin rluṅ -
-1203	75	12485	headword_line	rtiṅ	rtin	B	discover_medium_context	0	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
-23	52	4	german_prose_with_translit	śrijhäna	śrijhāna	B	sanskrit_char_normalize	0	śrijhäna). 1. Teil: Einführung, Inhaltsverzeichnis, Namensglossar. 2. Teil: Textmaterialien.
-47	132	308	german_prose_with_translit	Käśasena	Kāśasena	B	sanskrit_char_normalize	0	la wa se na’i bu — „Käśasena, der Sohn des Lavasena“ (Tär 191,12).
-65	84	672	german_prose_with_translit	śrävakabhümi	śrāvakabhumi	B	sanskrit_char_normalize	0	„auch diejenigen, die die śrävakabhümi erlernen möchten, sollen eben diese Prajhäpära-
-73	18	748	german_prose	samvyavaharıkam	samvyavaharikam	B	sanskrit_char_normalize	0	Lex. samvyavaharıkam „im Verkehr üblich,
-74	34	770	german_prose_with_translit	mädbhi	mādbhi	B	sanskrit_char_normalize	0	mädbhi). — skt. samantäloka.
-86	140	1002	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	Wissen [und] die Befreiung der śrävakas und
-116	133	1406	latin_other	Nägabuddhi	Nāgabuddhi	B	sanskrit_char_normalize	0	skt. Nägabuddhi.
-148	114	1841	latin_other	adhyäsa	adhyāsa	B	sanskrit_char_normalize	0	7. [poet. t. t.] Übertragung. - skt. adhyäsa.
-177	33	2221	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	4.npr. ein śrävaka; skt. Tisya.
-184	30	2315	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	sans rgyas kyi — „Reliquien der Bodhisattvas, śrävakas und Pratyekabuddhas“ (1 171
-206	53	2620	german_prose_with_translit	Hutäśana	Hutāśana	B	sanskrit_char_normalize	0	bdag (metr.) „Sarasvati, Hutäśana und Prajapati“ (Suv 125,13, skt. 161,3); — 77/ myur
-212	202	2724	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	reichend [Bez. einer Stufe der śrävakas]“
-229	144	2972	german_prose_with_translit	Ha-śrı-har	Ha-śri-har	B	sanskrit_char_normalize	0	— ba „sie riefen das als Ha-śrı-har bekannte
-312	43	4249	german_prose_with_translit	saddhäatukausalya	saddhāatukausalya	B	sanskrit_char_normalize	0	handeln soll (für skt. saddhäatukausalya (!)
-353	198	4741	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	vor dem König der śäkyas“ (Glr 1,6); zol
-362	159	4836	german_prose_with_translit	kusaläbhyäsayogyatva	kusalābhyāsayogyatva	B	sanskrit_char_normalize	0	Gutes zu tun (skt. kusaläbhyäsayogyatva)
-383	113	5024	german_prose_with_translit	icchatä	icchatā	B	sanskrit_char_normalize	0	beweisen möchte (skt. siddhim icchatä)“
-409	40	5368	german_prose_with_translit	Apramänaśubhas	Apramānaśubhas	B	sanskrit_char_normalize	0	Apramänaśubhas, der Akanisthas [usw.]“
-413	55	5395	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	min „Bez. für śrävaka“ (brDa); dge slon
-487	124	6248	german_prose_with_translit	śrotaäpanna	śrotaāpanna	B	sanskrit_char_normalize	0	Grad eines śrotaäpanna erlangte“ (Tär 7,9).
-500	87	6403	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	1. npr. ein śrävaka, der Sohn des Buddha
-570	15	7137	german_prose_with_translit	śyämävati	śyāmāvati	B	sanskrit_char_normalize	0	Bhiruka; ¬~ can npr. śyämävati, die Tochter
-655	171	7948	german_prose_with_translit	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	1. Beiname Kämeśvaras, Kimadevas.
-674	40	8074	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	für śrävaka.
-700	136	8416	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	2. npr. ein Arhat bzw. śrävaka, einer der
-740	116	8766	german_prose_with_translit	buddhabhattäraka	buddhabhattāraka	B	sanskrit_char_normalize	0	Ehrwürdigen (für skt. buddhabhattäraka)
-757	107	8957	latin_other	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	Kämeśvaras.
-759	87	8972	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	„meine śrävakas, die aus der Ferne kommen“ (K1 ka 4763); ~ kyis gdul ba „einer,
-759	89	8972	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	der von einem śrävaka zu disziplinieren
-759	98	8972	german_prose_with_translit	Śrävakas	Śrāvakas	B	sanskrit_char_normalize	0	Heilsamen der Śrävakas“ (Käsy 113,7); gser
-759	100	8972	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	„das Goldglanzsütra, das die śrävakas nur
-759	112	8973	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	der śrävakas“ (K12 22843); ran reyal dan /
-759	114	8973	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	Pratyekabuddhas, śrävakas und Bodhi-
-759	140	8973	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	eines śrävaka oder die Stufe eines Pra-
-759	220	8977	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	der śrävakas und Pratyekabuddhas“ (Mil
-785	62	9197	german_prose_with_translit	Śrävaka	Śrāvaka	B	sanskrit_char_normalize	0	2. auch fe ba ’kbor npr. ein Śrävaka, skt.
-795	154	9313	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	2. Bez. für śrävaka oder Arhat.
-808	137	9373	german_prose_with_translit	śrävasti	śrāvasti	B	sanskrit_char_normalize	0	„Mahäkätyäyana gelangte nach śrävasti“
-808	143	9373	german_prose_with_translit	śrävasti	śrāvasti	B	sanskrit_char_normalize	0	datta in śrävasti“ (Debm 436); ~ nas ’phags
-808	145	9373	german_prose_with_translit	śänaväsika	śānavāsika	B	sanskrit_char_normalize	0	den edlen śänaväsika aus Srävasti ein“ (Tär
-822	86	9443	german_prose_with_translit	śästras	śāstras	B	sanskrit_char_normalize	0	bstan bcos „inhaltslose śästras“ (Bu
-831	208	9513	german_prose_with_translit	drädhya	drādhya	B	sanskrit_char_normalize	0	Teigopfer zur Annäherung (skt. drädhya)
-833	99	9528	german_prose_with_translit	khäditva	khāditva	B	sanskrit_char_normalize	0	ernährt wurde (skt. khäditva)“ (Bca 5.68c).
-854	67	9535	german_prose_with_translit	Prajnä-śataka	Prajñā-śataka	B	sanskrit_jn_cluster_contextual	0	— 1990: Hundert Strophen von der Lebensklugheit. Nägarjunas [!] Prajnä-śataka tibe-
-997	62	10839	german_prose_with_translit	sarvatragäminipratipajjnänabalam	sarvatragāminipratipajjñānabalam	B	sanskrit_jn_cluster_contextual	0	sarvatragäminipratipajjnänabalam (sGra
-1015	111	11095	german_prose_with_translit	adhigata-paramärtha	adhigata-paramārtha	B	sanskrit_char_normalize	0	heit erkannt (skt. adhigata-paramärtha)“
-1059	67	11633	german_prose_with_translit	śätaka	śātaka	B	sanskrit_char_normalize	0	sthülasätaka „grober śätaka|-Stoff]“ (Ak
-1059	170	11638	german_prose_with_translit	śästras	śāstras	B	sanskrit_char_normalize	0	sprechenden śästras“ (Padm 32855); sran
-1061	144	11668	german_prose_with_translit	vrddhängustha	vrddhāngustha	B	sanskrit_char_normalize	0	gesegnete große Zehe (skt. vrddhängustha)
-1063	158	11690	german_prose_with_translit	Udbhatasiddhasvämin	Udbhatasiddhasvāmin	B	sanskrit_char_normalize	0	"Dichter, skt. ""Udbhatasiddhasvämin."
-1096	28	11897	german_prose_with_translit	śuddhä	śuddhā	B	sanskrit_char_normalize	0	pa „von Schmutz rein sein, Präsens und Perfekt“ (Dagy); — pa = śuddhä „reine [Stim-
-1103	30	11933	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	drug — thabs cigtu „zusammen mit den sechzehn großen śrävakas“ (Liyl 17736); rigs —
-1115	41	12003	german_prose_with_translit	śraddhäbala	śraddhābala	B	sanskrit_char_normalize	0	śraddhäbala), gehört zu den !stobs Ina.
-1115	79	12007	latin_other	śraddhä	śraddhā	B	sanskrit_char_normalize	0	mams mhon par dga’ ba = abhiratih śraddhä-
-1140	54	12166	headword_line	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	དཱ་པཾ་ཀ་ར་ཤྲི་དྷཱ་ན་ di pam ka ra śrijnäna auch di
-1140	64	12166	german_prose_with_translit	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	„die von Atıśa Dipamkära[śrijnäna] tatsächlich erstellte [Abhandlung] zur Geomantie
-1154	63	12218	german_prose_with_translit	śankhapälas	śankhapālas	B	sanskrit_char_normalize	0	Sippe śankhapälas, die weiß wie ein Meeres-
-1166	12	12271	german_prose_with_translit	śmaSänasütra	śmaSānasutra	B	sanskrit_char_normalize	0	śmaSänasütra) zieht“ (Hev 1.2.20/9,8).
-1171	72	12305	german_prose_with_translit	śrävasti	śrāvasti	B	sanskrit_char_normalize	0	Zeit lebte in śrävasti Ärya Sänaväsika“ (Tär
-1177	47	12332	headword_line	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	དུ་ ཀྱི ནྣ ba Bez. für śrävaka.
-1227	73	12573	german_prose	tathätva	tathātva	B	sanskrit_char_normalize	0	Lex. tathätva (in Mvy 134).
-1232	17	12593	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	di Itar so sor rtog par byed de „da überlegte der śrävaka folgendermaßen“ (Prav 99,9);
-1264	93	12718	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	(metr.) „auch der große König der śäkyas,
-1270	84	12746	german_prose_with_translit	śästras	śāstras	B	sanskrit_char_normalize	0	[Arten von śästras] erwähnt: sinnlose, sinn-
-1272	43	12754	german_prose	krtärthah	krtārthah	B	sanskrit_char_normalize	0	Lex. krtärthah „Nutzen bewirkt habend“
-1273	24	12760	german_prose_with_translit	Amoghapäśahrdaya	Amoghapāśahrdaya	B	sanskrit_char_normalize	0	pa’i säin-po, skt. Amoghapäśahrdaya (Toh
-1273	94	12763	german_prose_with_translit	śästras	śāstras	B	sanskrit_char_normalize	0	bstan bcos „sinnlose, sinnwidrige und sinnvolle śästras“ (Bu 664,4); ston pa mnon sum
-1318	74	12967	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	bcom la’an „Buddha und auch für śrävaka,
+34	36	23	headword_line	siñha	siṅha	B	confusable_context	0	ཀ་ཀཱ་ཏ་སིངྷ ka ku ta siñha npr., Minister. — skt.
+98	141	1044	headword_line	źwa	ziṅ	B	discover_medium_context	0	ཀོང་ཞྭ་ koṅ źwa, die Kopfbedeckung von Män-
+327	85	4031	headword_line	Tmkhbrañń	Tmkhbraṅń	B	confusable_context	0	འ།ཁྲང་ག་ 'khran ga hart, fest; vgl. Tmkhbrañń ba.
+355	30	4285	german_prose_with_translit	Irāgheit	lrāgheit	B	initial_i_manual_context_review	0	"dan ni mi ~ dan (metr.) ""Irāgheit und Un-"
+707	7	7475	headword_line	ch'a	cha'	B	discover_medium_context	0	ཇ་ Tee; chin. % ch'a (LAUTER 1916: 505 Nr.
+707	111	7486	headword_line	ch'a	cha'	B	discover_medium_context	0	ཇ་འབིང་ ja biṅ Teekanne, Teetopf; chin. HR ch'a
+719	27	7559	headword_line	$RF	ŚRF	B	confusable_context	0	འཇབ་ཙེ tse Pinzette; von chin, $RF oha-tzu
+755	102	7900	german_prose_with_translit	ñwa	ṅwa	B	confusable_global_lexicon	0	Lex. ñwa = rkan pa'i byin pa'i ñwa Ita bu
+755	102	7900	german_prose_with_translit	ñwa	ṅwa	B	confusable_global_lexicon	0	Lex. ñwa = rkan pa'i byin pa'i ñwa Ita bu
+801	147	8510	headword_line	Igñid	lgṅid	B	initial_i_manual_context_review	0	གཉིད་ཀྱིས་ལོག་པ་ giid kyis log pa Igñid log.
+1067	144	10840	example_tibetan_latin	mkhai	mkha'i	B	discover_medium_context	0	Lex. nam mkhai - dan khan 0༩7 ~
+1240	6	11623	german_prose_with_translit	Irde'n	lrde'n	B	initial_i_manual_context_review	0	ag 'de'u kleiner Berg; vgl. Irde'n.
+15	37	7	german_prose_with_translit	Arya-astasähasrikä	Arya-astasāhasrikā	B	sanskrit_char_normalize	0	'Phags pa ses rab kyi pha rol tu phyin pa brgyad ston pa / Arya-astasähasrikä-
+15	44	7	german_prose_with_translit	Arya-vajracchedikā-nama-prajnapāramitā-mahāyāna-sūtra	Arya-vajracchedikā-nama-prajñapāramitā-mahāyāna-sūtra	B	sanskrit_jn_cluster_contextual	0	Arya-vajracchedikā-nama-prajnapāramitā-mahāyāna-sūtra. Ed.: Derge-Kanjur, śes
+17	51	8	german_prose_with_translit	Nitisāstra-Prajnādanda	Nitisāstra-Prajñādanda	B	sanskrit_jn_cluster_contextual	0	Klu sgrub: Lugs kyi bstan bcos Ses rab sdon po / Nägärjuna: Nitisāstra-Prajnādanda.
+18	33	8	german_prose_with_translit	Prajnāsataka-nama	Prajñāsataka-nama	B	sanskrit_jn_cluster_contextual	0	Klu sgrub: śes rab brgya pa es bya ba rab tu byed pa / Nägärjuna: Prajnāsataka-nama
+23	33	8	german_prose_with_translit	śrijhäna	śrijhāna	B	sanskrit_char_normalize	0	śrijhäna). 1. Teil: Einführung, Inhaltsverzeichnis, Namensglossar. 2. Teil: Textmaterialien.
+26	16	9	example_tibetan_latin	Prajnāsataka	Prajñāsataka	B	sanskrit_jn_cluster_contextual	0	Nägärjuna: Prajnadanda ༈ Camrseii 1919 [Pd], † Harin 2003 [Pd-H]; Prajnāsataka ! Harn
+27	73	9	german_prose_with_translit	Prajnāvarmans	Prajñāvarmans	B	sanskrit_jn_cluster_contextual	0	Visesastava mit Prajnāvarmans Kommentar. Nach dem tibetischen Tanjur hg. und übers.
+28	7	9	german_prose_with_translit	Prajnāvarman	Prajñāvarman	B	sanskrit_jn_cluster_contextual	0	śes 731) go cha [d. i. Prajnāvarman] 1 Schneiper 1993 [ViśT]
+28	58	9	german_prose_with_translit	Prajnāsenas	Prajñāsenas	B	sanskrit_jn_cluster_contextual	0	— 1988: Nachweis der Wiedergeburt. Prajnāsenas 'Jig rten pha rol sgrub pa. Ein früher tibetischer
+46	110	220	german_prose_with_translit	Käśa-Gras	Kāśa-Gras	B	sanskrit_char_normalize	0	"mam pa'o ""das sogenannte Käśa-Gras ist eine"
+47	97	237	german_prose_with_translit	Käśasena	Kāśasena	B	sanskrit_char_normalize	0	"la wa se na'i bu — ""Käśasena, der Sohn des La-"
+65	70	548	german_prose	paryaväptavya	paryavāptavya	B	sanskrit_char_normalize	0	"verstehen (paryaväptavya) und rezitieren!"""
+66	55	548	german_prose_with_translit	Prajnāparamitāhrdayasūtra	Prajñāparamitāhrdayasūtra	B	sanskrit_jn_cluster_contextual	0	Ärya bha ga ba ti pradziia pa ra mi tä hri da ya / Prajnāparamitāhrdayasūtra. Ed.: 511
+66	59	548	latin_other	Ārya-Kausikaprajnapāramitasūtra	Ārya-Kausikaprajñapāramitasūtra	B	sanskrit_jn_cluster_contextual	0	'Phags pa ses rab kyi pha rol tu phyin pa kau 47 ka / Ārya-Kausikaprajnapāramitasūtra.
+67	8	548	latin_other	Ārya-Astasahasrikāprajna	Ārya-Astasahasrikāprajña	B	sanskrit_jn_cluster_contextual	0	'grel pa gnad kyi zla ba'i 'od ces bya ba / Abhayākaragupta: Ārya-Astasahasrikāprajna-
+67	42	548	german_prose_with_translit	Prajnapāramita	Prajñapāramita	B	sanskrit_jn_cluster_contextual	0	Conze, Edward 1958: Astasähasrika Prajnapāramita. Trsl. into English. Calcutta: Asiatic Society,
+67	48	548	german_prose_with_translit	Prajnāpāramita	Prajñāpāramita	B	sanskrit_jn_cluster_contextual	0	Dur, Nalinaksha 1934: The Paficavimsatishasrikā Prajnāpāramita. Ed. with critical notes and in-
+73	13	620	german_prose	samvyavahärikam	samvyavahārikam	B	sanskrit_char_normalize	0	"Lex. samvyavahärikam ""im Verkehr üblich,"
+84	30	826	german_prose_with_translit	samudaya-jnānam	samudaya-jñānam	B	sanskrit_jn_cluster_contextual	0	"śes pa = samudaya-jnānam ""Wissen von der"
+87	33	887	german_prose_with_translit	Ajnäta	Ajñāta	B	sanskrit_jn_cluster_contextual	0	ko'u di nya = ājūanakaundinya (7. Ajnäta°)
+100	50	1077	german_prose_with_translit	Śatänika	Śatānika	B	sanskrit_char_normalize	0	"Śatänika König"" (Prav 5,25); ko'u sambi na"
+116	64	1276	german_prose	vatapta-nägaräja-pariprcchä	vatapta-nāgarāja-pariprcchā	B	sanskrit_char_normalize	0	vatapta-nägaräja-pariprcchä (Toh 156).
+128	148	1482	latin_other	prabhā-mandala-vyaha-jnā	prabhā-mandala-vyaha-jñā	B	sanskrit_jn_cluster_contextual	0	rgya = mahāt{s}prabhā-mandala-vyaha-jnā-
+175	48	2060	latin_other	śosa-räpasya	śosa-rāpasya	B	sanskrit_char_normalize	0	"Austrocknung (śosa-räpasya maranasya)"""
+262	20	3165	german_prose_with_translit	nānādhatujnanabalam	nānādhatujñanabalam	B	sanskrit_jn_cluster_contextual	0	"nānādhatujnanabalam ""Kraft des Wissens"
+266	33	3226	latin_other	Käśy	Kāśy	B	sanskrit_char_normalize	0	"len (skt. na mustim karisyati)"" (Käśy 229,"
+282	27	3433	german_prose_with_translit	Mäheśvara	Māheśvara	B	sanskrit_char_normalize	0	2. Beiname des Mäheśvara.
+409	32	4832	german_prose_with_translit	Apramänaśubhas	Apramānaśubhas	B	sanskrit_char_normalize	0	"Apramänaśubhas, der Akanisthas [usw.]"""
+474	86	5485	german_prose_with_translit	Prajnāpāramitāsūtras	Prajñāpāramitāsūtras	B	sanskrit_jn_cluster_contextual	0	2. Bez. des Prajnāpāramitāsūtras.
+511	85	5839	german_prose_with_translit	Astasahasrikāprajnāpāramitā	Astasahasrikāprajñāpāramitā	B	sanskrit_jn_cluster_contextual	0	das Astasahasrikāprajnāpāramitā-
+524	109	5905	german_prose_with_translit	Vägiśvaras	Vāgiśvaras	B	sanskrit_char_normalize	0	"Vägiśvaras zu vollenden suchte"" (Tär"
+552	44	6128	german_prose_with_translit	sarvajnatābhimukhah	sarvajñatābhimukhah	B	sanskrit_jn_cluster_contextual	0	"pa = sarvajnatābhimukhah ""der Allwissen-"
+570	10	6281	german_prose_with_translit	śyämävati	śyāmāvati	B	sanskrit_char_normalize	0	Bhiruka; - can npr. śyämävati, die Tochter
+570	13	6281	german_prose_with_translit	śyämavati	śyāmavati	B	sanskrit_char_normalize	0	"Mädchen śyämavati"" (Udr 38,36); khye'u -"
+574	8	6335	german_prose_with_translit	parināmanavidkijnāh	parināmanavidkijñāh	B	sanskrit_jn_cluster_contextual	0	cho ga Ses pa rnams = parināmanavidkijnāh
+575	99	6346	german_prose_with_translit	śusukkärakam	śusukkārakam	B	sanskrit_char_normalize	0	"kärakam (r. śusukkärakam) ""[beim Essen]"
+589	26	6422	german_prose_with_translit	Ārya-Saptasatikā-nāma-prajnāpāramitāmahāyānasūtra	Ārya-Saptasatikā-nāma-prajñāpāramitāmahāyānasūtra	B	sanskrit_jn_cluster_contextual	0	chen po'i mdo / Ārya-Saptasatikā-nāma-prajnāpāramitāmahāyānasūtra.
+615	152	6609	latin_other	jihvavijnānadhātuh	jihvavijñānadhātuh	B	sanskrit_jn_cluster_contextual	0	jihvādhātub, rasadhātuh, jihvavijnānadhātuh
+660	24	7027	german_prose_with_translit	śätänika	śātānika	B	sanskrit_char_normalize	0	"jüngste der drei Söhne des śätänika"" (Glr"
+663	76	7062	german_prose_with_translit	mahāprajnah	mahāprajñah	B	sanskrit_jn_cluster_contextual	0	"(Dagy); ses rab ~ ba = mahāprajnah ""sehr"
+666	34	7086	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	"(metr.) ""der große König der śäkyas, der"
+696	79	7351	german_prose	yajnopavitam	yajñopavitam	B	sanskrit_jn_cluster_contextual	0	"Göttern opfern"" (Dagy); yajnopavitam"
+699	76	7397	german_prose_with_translit	Prajnāpāramitāfsūtras	Prajñāpāramitāfsūtras	B	sanskrit_jn_cluster_contextual	0	"tragenden des Prajnāpāramitāfsūtras] ein"""
+808	112	8590	german_prose_with_translit	śänaväsika	śānavāsika	B	sanskrit_char_normalize	0	"den edlen śänaväsika aus śrävasti ein"" (Tär"
+838	38	8858	german_prose_with_translit	prajnāpāramitopadesasāstra	prajñāpāramitopadesasāstra	B	sanskrit_jn_cluster_contextual	0	prajnāpāramitopadesasāstra. Ed.: STCHERBATSKY/OBERMILEER 1929.
+842	89	8858	german_prose_with_translit	Āryavajracchedikānamaprajnāparamitāmahayānasātra	Āryavajracchedikānamaprajñāparamitāmahayānasātra	B	sanskrit_jn_cluster_contextual	0	chen po'i mdo / Āryavajracchedikānamaprajnāparamitāmahayānasātra.
+842	95	8858	german_prose_with_translit	Āryasaptasatikānāmaprajnāparamitāmahāyānasātra	Āryasaptasatikānāmaprajñāparamitāmahāyānasātra	B	sanskrit_jn_cluster_contextual	0	pa chen po'i mdo / Āryasaptasatikānāmaprajnāparamitāmahāyānasātra.
+843	28	8858	german_prose_with_translit	Āryasaptasatikānāmaprajnaparamitāmahāyanasātra	Āryasaptasatikānāmaprajñaparamitāmahāyanasātra	B	sanskrit_jn_cluster_contextual	0	pa chen po'i mdo / Āryasaptasatikānāmaprajnaparamitāmahāyanasātra.
+848	53	8858	german_prose_with_translit	Prajnāvarman	Prajñāvarman	B	sanskrit_jn_cluster_contextual	0	Prajnāvarman: Devätisayastotratikä. Abt. bsTod tshogs, ka 45a3--61a3;
+849	22	8858	german_prose_with_translit	Prajnāmoksa	Prajñāmoksa	B	sanskrit_jn_cluster_contextual	0	Ses rab thar pa: dBu ma'i man nag gi 'grel pa / Prajnāmoksa: Madhya-
+852	55	8858	german_prose_with_translit	Astādasasāhasrikā-prajnāpara	Astādasasāhasrikā-prajñāpara	B	sanskrit_jn_cluster_contextual	0	Conzt, Edward 1962-1974: The Gilgit manuscript of the Astādasasāhasrikā-prajnāpara-
+852	57	8858	german_prose_with_translit	Prajnāparamita	Prajñāparamita	B	sanskrit_jn_cluster_contextual	0	—— 1967: Materials for a dictionary of the Prajnāparamita literature. Tokyo: Suzuki
+852	59	8858	german_prose_with_translit	Prajnāpāramita	Prajñāpāramita	B	sanskrit_jn_cluster_contextual	0	— 1970: Astasähasrikä Prajnāpāramita. Trsl. into English. Calcutta: Asiatic Society
+852	61	8858	german_prose_with_translit	Prajnapāramita	Prajñapāramita	B	sanskrit_jn_cluster_contextual	0	—— 1974: Vajracchedika Prajnapāramita. Ed. and trsl. with introduction and glossary.
+854	57	8858	german_prose_with_translit	Prajnādanda	Prajñādanda	B	sanskrit_jn_cluster_contextual	0	"— 2003: ""Cry for help. The unidentified stanzas of Nägärjuna's Prajnādanda."" In:"
+856	22	8858	german_prose_with_translit	Prajnapāramitā	Prajñapāramitā	B	sanskrit_jn_cluster_contextual	0	Kimura, Takayasu 1986-1992: Paricavimsatisähasrikä Prajnapāramitā II-V. 3 Bde. 'To-
+860	41	8858	german_prose_with_translit	Prajnāvarmans	Prajñāvarmans	B	sanskrit_jn_cluster_contextual	0	stotra mit Prajnāvarmans Kommentar. Wien: ATBS (WSTB 81). [Dev, DevT]
+861	44	8858	german_prose_with_translit	Prajnāparamita	Prajñāparamita	B	sanskrit_jn_cluster_contextual	0	STCHERBATSKY, Th./OBERMILLER, E. 1929: Abhisamayālankāra- [!] Prajnāparamita- [1]
+861	62	8858	german_prose_with_translit	Prajnāsenas	Prajñāsenas	B	sanskrit_jn_cluster_contextual	0	— 1988: Nachweis der Wiedergeburt. Prajnāsenas 'Jig rten pha rol sgrub pa. Ein früher
+878	25	8977	german_prose	tvarä	tvarā	B	sanskrit_char_normalize	0	Lex. tvarä (Ak 295.26).
+900	150	9173	german_prose_with_translit	lokasamjnā	lokasamjñā	B	sanskrit_jn_cluster_contextual	0	"rten gyi tha sñad = lokasamjnā ""Bezeich-"
+953	149	9622	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"kyi bar du ""solange der Samisära noch nicht"
+963	67	9704	german_prose_with_translit	Prajnaptivādins	Prajñaptivādins	B	sanskrit_jn_cluster_contextual	0	Schule, die Prajnaptivādins.
+997	45	10012	german_prose_with_translit	sarvatragäminipratipajjnanabalam	sarvatragāminipratipajjñanabalam	B	sanskrit_jn_cluster_contextual	0	sarvatragäminipratipajjnanabalam (sGra
+1007	104	10116	german_prose_with_translit	jnaurasab	jñaurasab	B	sanskrit_jn_cluster_contextual	0	"jnaurasab ""Sohn des Buddha' |Bez. für"
+1015	146	10231	latin_other	Buddhajnānapāda	Buddhajñānapāda	B	sanskrit_jn_cluster_contextual	0	Vajrācārya Buddhajnānapāda zusammen
+1140	48	11225	german_prose_with_translit	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	"""die von Atisa Dipamkära[śrijnäna] tatsäch-"
+1156	25	11274	german_prose_with_translit	Śankapälaka	Śankapālaka	B	sanskrit_char_normalize	0	"Śankapälaka [sind Nägas]"" (Samv 17.40d);"
+1171	68	11349	german_prose_with_translit	śänaväsika	śānavāsika	B	sanskrit_char_normalize	0	"Zeit lebte in śrävasti Ärya śänaväsika"" (Tär"
+1206	87	11520	german_prose_with_translit	Prajnāpā	Prajñāpā	B	sanskrit_jn_cluster_contextual	0	"= ig rten 'di kun tu ston pa'o ""die Prajnāpā-"

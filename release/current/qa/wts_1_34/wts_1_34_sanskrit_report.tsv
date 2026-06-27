@@ -1,243 +1,415 @@
 family_key	canonical	family_total	variant_count	non_canonical_total	confidence	top_variants	example_line
-sadhya	sädhya	12	3	4	high	sädhya:8 | sadhya:3 | Sädhya:1	bltas nas ni (metr.) „den Körper des sädhya
-sraddha	śraddhä	5	4	3	high	śraddhä:2 | śraddha:1 | sräddha:1 | sraddhä:1	Lex. sraddhä „gläubiges Vertrauen, Glaube“ (Mvy 1933); dge ba’i rtsa ba — zer
-snan	snaṅ	26	2	2	high	snaṅ:24 | sñan:2	Lex. srog chags grog ma’! min du snaṅ „Rita ka
-bodhicaryavatara	Bodhicaryavatära	7	2	2	high	Bodhicaryavatära:5 | Bodhicaryavatara:2	Zi ba lha: Byan chub sems dpa’i spyod pa la jug pa / Säntideva: Bodhicaryavatära. Ed.:
-sravaka	śrävaka	12	2	1	high	śrävaka:11 | Śrävaka:1	4.npr. ein śrävaka; skt. Tisya.
-sravakas	śrävakas	10	2	1	high	śrävakas:9 | Śrävakas:1	Wissen [und] die Befreiung der śrävakas und
-nani	naṅi	4	2	1	high	naṅi:3 | nanı:1	Lex. khog Zugs = naṅi du Zugs pa lta bu „wie:
-sramana	śramana	4	2	1	high	śramana:3 | Śramana:1	cho ’phrul bstan pas „der śramana zeigte
-bodhisattvastufe	Bodhisattvastufe	3	2	1	high	Bodhisattvastufe:2 | Bodhisattva-Stufe:1	2. ~ pa eine Bodhisattvastufe.
-hasrihar	Ha-śri-har	3	2	1	high	Ha-śri-har:2 | Ha-śrı-har:1	das als Ha-śri-har bekannte Heer der Barbaren
-svasti	svastı	3	2	1	high	svastı:2 | svasti:1	(in Mvy 66, 584 usw.), svastı (Mvy 2747);
+prajnaparamita	Prajnāpāramitā	25	8	15	high	Prajnāpāramitā:10 | prajñāpāramitā:4 | Prajñāpāramitā:3 | Prajnāpāramita:2 | Prajnāparamita:2 | Prajnapāramita:2 | prajnāpāramitā:1 | Prajnapāramitā:1	prajñāpāramitā. Ed.: Derge-Kanjur, Ni khri, ka-ga.
+sadhya	sādhya	13	3	6	high	sādhya:7 | sadhya:5 | Sādhya:1	"bltas nas ni (metr.) ""den Körper des sadhya"
+snan	sñan	38	2	5	high	sñan:33 | snaṅ:5	"Lex. srog chags grog ma'i min du snaṅ ""ki ta ka"
+bsnal	bsṅal	20	2	4	high	bsṅal:16 | bsñal:4	(HrdB 131,1, skt. 98,20); 'di ni sdug bsṅal
+samadhi	Samādhi	31	2	3	high	Samādhi:28 | samādhi:3	Samādhi. - skt. mahavyūha.
+arya	Arya	9	2	3	high	Arya:6 | arya:3	"Lex. ka tyā ya na = ~ 'phags min ""Bez. für Arya"
+sraddha	śraddhā	5	3	3	high	śraddhā:2 | sraddhā:2 | śraddha:1	"Lex. sraddhā ""gläubiges Vertrauen, Glau-"
+upadhyaya	Upādhyāya	21	3	2	high	Upādhyāya:19 | Upādhyāya':1 | Upādhyaya:1	"g@igo cha ""der ind. Upādhyāya Kanakavarman,"
+sravaka	śrävaka	16	3	2	high	śrävaka:14 | śrāvaka:1 | Śrāvaka:1	4. npr. ein śrävaka; skt. Tisya.
+bodhicaryavatara	Bodhicaryavatāra	6	2	2	high	Bodhicaryavatāra:4 | Bodhicaryavatara:2	Zi ba lha: Byan chub sems dpa'i spyod pa la jug pa / Säntideva: Bodhicaryavatara. Ed.:
+sarthavaha	sārthavaha	4	3	2	high	sārthavaha:2 | sārthavāha:1 | Sārthavāha:1	führer (skt. sārthavaha), der es sich gutge-
+buddha	Buddha	15	2	1	high	Buddha:14 | Buddhā:1	"end"", einer der Vorzüge des Buddha (Mvy"
+tathagata	Tathāgata	10	2	1	high	Tathāgata:9 | tathāgata:1	Tathāgata in sehr naher Zeit ins Parinirväna
+vist	ViśT	10	2	1	high	ViśT:9 | ViśT':1	"chen] Vereinigung"" (ViśT 110,5)."
+tatha	tathā	7	2	1	high	tathā:6 | Tathā:1	de bzin gśegs pa'! bka' la Sin tu Zugs pa = tathā-
+badham	bādham	5	2	1	high	bādham:4 | badham:1	bor = bādham (Mvy 6776).
+laan	la'añ	5	2	1	high	la'añ:4 | la'añń:1	Lex. brgya sbyin chun ma la'añ (brDa, ähnl.
+siddhartha	Siddhārtha	5	2	1	high	Siddhārtha:4 | siddhartha:1	nes namens Siddhārtha, der ins Nirväna
+sravasti	śrävasti	5	2	1	high	śrävasti:4 | Srāvasti:1	"pham par mdzad ""in der Stadt śrävasti im"
+abhangig	abhāngig	4	2	1	high	abhāngig:3 | Abhāngig:1	Lex. rtswa dur ba (brDa), vielleicht abhāngig
+dharmakaya	Dharmakāya	4	2	1	high	Dharmakāya:3 | dharmakāya:1	sku (skt. dharmakāya), \no bo nid sku (skt.
+sramanas	śramanas	4	2	1	high	śramanas:3 | Śramanas:1	"sbyar = cin ""einige śramanas legen sich die"
+sriherukabhyudaya	Sriherukabhyudaya	4	2	1	high	Sriherukabhyudaya:3 | Sriherukābhyudaya:1	dPal khrag 'thun mnon par 'byun ba / Sriherukabhyudaya. Ed.: Derge-Kanjur, rGyud
+anuvidhanam	anuvidhānam	3	2	1	high	anuvidhānam:2 | anuvidhanam:1	ba = anuvidhānam (Mvy 7500).
+apana	apāna	3	2	1	high	apāna:2 | āpana:1	alkoholische Getränke (für skt. āpana) zu
+kasy	Kāśy	3	2	1	high	Kāśy:2 | Käśy:1	"len (skt. na mustim karisyati)"" (Käśy 229,"
+naga	Nāga	3	2	1	high	Nāga:2 | nāga:1	Lehrer; vgl. Tklu byan. ~ skt. Nāga-
+ravana	Rāvana	3	2	1	high	Rāvana:2 | rāvana:1	mermonat, skt. rāvana.
+samantaloka	Samantāloka	3	2	1	high	Samantāloka:2 | samantāloka:1	mādhi). — skt. samantāloka.
 svastika	Svastika	3	2	1	high	Svastika:2 | svastika:1	2. ein Glückssymbol.- skt. svastika.
-aksobhya	Aksobhya	5	2	2	medium	Aksobhya:3 | aksobhya:2	cyate „hundert aksobhya werden ein vivaha
-madhya	madhya	4	2	2	medium	madhya:2 | Madhya:2	ཀ་མ་ལ་གར་བྷ་ ka ma la gar bha npr., ein Madhya-
-adhyapayate	adhyapayate	2	2	1	medium	adhyäpayate:1 | adhyapayate:1	adhyäpayate „er unterrichtet den Veda“
-ayodhya	Ayodhya	2	2	1	medium	Ayodhyä:1 | Ayodhya:1	skt. Ayodhya.
-kalakalasampadvastu	käläkalasampadvastu	2	2	1	medium	käläkalasampadvastu:1 | Kaläkälasampadvastu:1	Vinaya, skt. Kaläkälasampadvastu.
-samtrasam	samträsam	2	2	1	medium	samträsam:1 | samtrasam:1	füllt (samtrasam apadyate)“ (K12 2b7, skt.
-sreyan	śreyan	2	2	1	medium	śreyän:1 | śreyan:1	8798); mchog tu — = śreyan „Oberst“ (Mvy
-arya	arya	6	2	3	low	arya:3 | Arya:3	ldan ’das la Zus pa „Arya Ananda fragte den Erhabenen“ (Liyl 174al); tshad med zas la kun
-prajna	prajna	3	2	2	low	prajnä:2 | prajna:1	sgrig „Wohnhaus und Arbeit usw. vorbereiten“ (Dagy); gdags pa’am - ba = prajnä-
-dharmakathikah	dharmakathikah	2	2	1	low	dharmakathikah:1 | dha-rmakathikah:1	dha-rmakathikah (Mvy 2763); sgrogs
-kalasvarah	kalasvarah	2	2	1	low	kalasvarah:1 | kala-svarah:1	Lex. kala-svarah „sanfter Laut“ (Mvy 2791);
-prajnaparamita	prajnäpäramita	2	2	1	low	prajnäpäramita:1 | Prajnäpäramitä:1	prajnäpäramita. Ed.: Derge-Kanjur, brGyad ston, ka 1b1-286a6. Skt.: Varpya 1960.
-prajnaparamitaratnagunasamcayagatha	Prajnäparamitä-Ratnagunasamcaya-gäthä	2	2	1	low	Prajnäparamitä-Ratnagunasamcaya-gäthä:1 | Prajnaparamitä-Ratnagunasamcaya-gäthä:1	— /CONZE, Edward 1960: Prajnaparamitä-Ratnagunasamcaya-gäthä. Sanskrit and Tibetan text
-sari	śarı	2	2	1	low	śarı:1 | sarı:1	Lex. sna ’dren pa (brDa); sne śarı pa lta bu
-sarthavahah	sarthavahah	2	2	1	low	särthavähah:1 | sarthavahah:1	Lex. särthavähah (Mvy 7362); tshon dpon
+tathagatasyantike	tathāgatasyāntike	3	2	1	high	tathāgatasyāntike:2 | tathāgatasyantike:1	tathāgatasyantike dustacittarudhirotpadakam
+prajna	Prajñā	14	4	9	medium	Prajñā:5 | Prajnā:5 | prajnā:3 | prajñā:1	commente par Heather Stoddard et Nicolas Tournadre. Arvillard: Editions Prajnā.
+aksobhya	Aksobhya	5	2	2	medium	Aksobhya:3 | aksobhya:2	"cyate ""hundert aksobhya werden ein viväha"
+bodhisattvastufe	Bodhisattvastufe	4	2	2	medium	Bodhisattvastufe:2 | Bodhisattva-Stufe:2	2, ~ pa eine Bodhisattvastufe.
+ajneya	ājñeyā	2	2	1	medium	ājñeyā:1 | äjneya:1	"Lex. —r bya ba = ājñeyā [vak] ""verständliche"
+asvajit	asvajit	2	2	1	medium	asvajit:1 | Aśvajit:1	"bstod pa dan ""das, was Aśvajit gesagt hatte,"
+avadharanam	avadhāranam	2	2	1	medium	avadhāranam:1 | avadharanam:1	"Lex. avadhāranam ""Einschränkung"" (Mvy"
+bhatab	bhātab	2	2	1	medium	bhātab:1 | bhatab:1	"Lex. 407 ba, skt. bhatab ""Soldat"" (Mvy 3743);"
+bhavitam	bhāvitam	2	2	1	medium	bhāvitam:1 | bhavitam:1	byas pa = bhavitam (Mvy 2321); 'gom rgyn =
+cakrika	cakrikā	2	2	1	medium	cakrikā:1 | cakrika:1	cakrika (Mvy 9344).
+gacchami	gacchāmi	2	2	1	medium	gacchāmi:1 | gacchämi:1	mchi'o = buddham śaranam gacchāmi dvi- nam Q
+kalakalasampadvastu	Kalākālasampadvastu	2	2	1	medium	kalakalasampadvastu:1 | Kalākālasampadvastu:1	Vinaya, skt. Kalākālasampadvastu.
+madah	mādah	2	2	1	medium	mādah:1 | madah:1	Lex. - pa = madah (Mvy 1969); - pa =
+mahesvara	Maheśvara	2	2	1	medium	Mäheśvara:1 | Maheśvara:1	2. Beiname des Mäheśvara.
+margasirsah	mārgasirsah	2	2	1	medium	mārgasirsah:1 | margasirsah:1	Lex. ~ mgo (¥, 1. om. mgo) = mārgasirsah
+maryadam	maryādam	2	2	1	medium	maryādam:1 | maryadam:1	"setz"" = maryādam vyavasthāpayanti (Mvy"
+parisvajanam	parisvajanam	2	2	1	medium	parisvajanam:1 | parisvaja-nam:1	L) = parisvajanam (Mvy 9389).
+prajnaptivadins	Prajñaptivādins	2	2	1	medium	Prajñaptivādins:1 | Prajnaptivādins:1	Schule, die Prajnaptivādins.
+prajnasataka	Prajñāśataka	2	2	1	medium	Prajñāśataka:1 | Prajnāsataka:1	Hann, Michael 1990: Hundert Strophen der Lebensklugheit. Nägarjunas [!] Prajñāśataka tibetisch
+protkhatam	protkhātam	2	2	1	medium	protkhātam:1 | protkhatam:1	ba'am ~ pa = protkhatam (Mvy 5338).
+samtrasam	samträsam	2	2	1	medium	samträsam:1 | samtrasam:1	"füllt (samtrasam äpadyate)"" (K12 2b7, skt."
+samudacarah	samudācarah	2	2	1	medium	samudācarah:1 | samudacarah:1	skt. samudācarah (Mvy 7431, nur Ms.L).
+sarasvati	Sarasvatī	2	2	1	medium	Sarasvatī:1 | Sarasvati:1	Sarasvati.
+siddharthah	siddhārthah	2	2	1	medium	siddhārthah:1 | siddharthah:1	"Lex. siddharthah (Mvy 49); rgyalbu — ""Prinz"
+srava	Śrāva	2	2	1	medium	śräva:1 | Śrāva:1	> ༽ klun 'od srun npr. der Śrāva-
+tattvadarsana	Tattvadarśana	2	2	1	medium	Tattvadarśana:1 | Tattvadarsana:1	te wie der große Kommentar *Tattvadarsana
+tiram	tīram	2	2	1	medium	tīram:1 | tiram:1	Lex. tīram (Mvy 4189); gram kha Zes 'byun
+tvam	tvam	2	2	1	medium	tvām:1 | tvam:1	"dich kennen (skt. tvām eva jhātum arhasi)"""
+upasika	upāsika	2	2	1	medium	upāsikā:1 | upāsika:1	saka, ~ ma Laienanhängerin, skt. upāsikā.
+utthapanam	utthāpanam	2	2	1	medium	utthāpanam:1 | utthapanam:1	bskyed pa) = utthapanam (Mvy 6432); — cig
+vedika	vedikā	2	2	1	medium	vedikā:1 | vedika:1	Lex. ~ (v. 1. kba dan) = vedikā (Mvy 4358);
+sutra	Sūtra	8	2	4	low	sūtra:4 | Sūtra:4	"dha'o zes gsuns ""Ortsname; in einem Sūtra"
+prajnaparamitaratnagunasamcayagatha	Prajnāpāramitā-Ratnagunasamcaya-gāthā	4	4	3	low	Prajnāpāramitā-Ratnagunasamcaya-gāthā:1 | Prajnāparamita-Ratnagunasamcaya-gāthā:1 | Prajnā-pāramitā-ratna-guna-samcaya-gāthā:1 | Prajna-paramitā-ratna-guna-samcaya-gāthā:1	— /CONZE, Edward 1960: Prajnāpāramitā-Ratnagunasamcaya-gāthā. Sanskrit and Tibetan text
+madhya	Madhya	5	2	2	low	Madhya:3 | madhya:2	ཀ་མ་ལ་གར་བྷ་ ka ma la gar bha npr., ein Madhya-
+panam	panam	4	2	2	low	pānam:2 | panam:2	Lex. btun ba, skt. panam (Mvy 5690); —
+satam	satām	4	3	2	low	satām:2 | śātam:1 | satam:1	rnams kyi'am ~ pa rnams kyi dmigs = satām
+asthanam	asthanam	3	3	2	low	āsthanam:1 | asthānam:1 | asthanam:1	Lex. āsthānt, asthānam (r. āsthanam) (Tshe
+sakyamuni	Śākyamuni	3	3	2	low	śäkyamuni:1 | Śākyamuni:1 | Sākyamuni:1	Śākyamuni. - für skt. mahakātyayana.
+snin	sñiñń	3	3	2	low	sñiñń:1 | sñiñ:1 | sñin:1	971); ~ dgos, ~ bya = byams pa'am sñiñń rje ~
+kala	kāla	3	2	1	low	kāla:2 | kalā:1	"ཀ་ལ་ ""ka la schwarz. - skt. kāla."
+magha	māgha	3	2	1	low	māgha:2 | maghā:1	Wintermonat (für skt. māgha) immer zwei
+nadi	nādi	3	2	1	low	nādi:2 | nadī:1	skt. nadī (Mvy 4168); ~ rabs med pa = chu ~
+adhyapayamasa	adhyāpayāmāsa	2	2	1	low	adhyāpayāmāsa:1 | adhyapayamāsa:1	"pa = adhyāpayāmāsa ""er hat unterrichtet"""
+advaidhikaram	advaidhikaram	2	2	1	low	advaidhikāram:1 | advaidhikaram:1	med = advayam etad advaidhikāram abhi-
+amamah	amamah	2	2	1	low	amamāh:1 | amamah:1	= amamah (Mvy 7795).
+aryasaptasatikanamaprajnaparamitamahayanasatra	Āryasaptasatikānāmaprajnāparamitāmahāyānasātra	2	2	1	low	Āryasaptasatikānāmaprajnāparamitāmahāyānasātra:1 | Āryasaptasatikānāmaprajnaparamitāmahāyanasātra:1	pa chen po'i mdo / Āryasaptasatikānāmaprajnāparamitāmahāyānasātra.
+asavarista	āsavārista	2	2	1	low	āsavārista:1 | āsavarista:1	"lauwarmen Likör (skt. āsavarista)"" (Ahs"
+balaka	bālāka	2	2	1	low	bālāka:1 | balāka:1	"licher Enten (skt. balāka Reiher)"" (HMrg"
+bhagirathi	bhāgirathi	2	2	1	low	bhāgirathi:1 | Bhāgirathi:1	Gangä; skt. bhāgirathi.
+bharya	bharya	2	2	1	low	bhāryā:1 | bharya:1	Lex. bharya, patni, darah, kalatram (Mvy
+bhuta	bhūta	2	2	1	low	bhūta:1 | Bhūta:1	(Dagy); - pa = bhūta (in Mvy 650, 2457);
+bodhisattvacaryavatarasamskara	Bodhisattvacaryāvatārasamskāra	2	2	1	low	Bodhisattvacaryāvatārasamskāra:1 | Bodhisattvacaryavatārasamskāra:1	Bodhisattvacaryāvatārasamskāra. Ed.: Derge-Tanjur, dBu ma, sa 1b1-90b5.
+catvarah	catvarah	2	2	1	low	catvārah:1 | catvarah:1	Lex. dge sbyon du byed pa'i ~ = catvārah
+dharmah	dharmah	2	2	1	low	dharmāh:1 | dharmah:1	Lex. sad dharmah (Mvy 9320).
+dosantaraskhalita	dosāntaraskhalita	2	2	1	low	dosāntaraskhalita:1 | dosāntara-skhalita:1	tshol = na ca paresam dosāntara-skhalita-
+durgandhah	durgandhah	2	2	1	low	durgandhāh:1 | durgandhah:1	"Lex. dri "" = durgandhah (Mvy 1895)."
+kalaratri	kālarātrī	2	2	1	low	kālarātrī:1 | Kālarātri:1	(Neb 85); vgl. dus mtshan ma. ~ skt. kālarātrī.
+karttikatyayikam	kārttikātyayikam	2	2	1	low	kārttikātyayikam:1 | karttikātyayikam:1	~ (v. l. chuñs ) la thal ba = karttikātyayikam
+krtva	krtvā	2	2	1	low	krtvā:1 | krtva:1	"(krtva)"" (Udr 33,32); ron (7 ... — pa ci Itar"
+madhyamakavataratika	Madhyamakāvatāra-tika	2	2	1	low	Madhyamakāvatāra-tika:1 | Madhyamakavatāratikā:1	dBu ma la 'jugpa'i 'grelbsad / Jayänanda: Madhyamakāvatāra-tika. Ed.: Derge-Tanjur,
+mnon	mñon	2	2	1	low	mñon:1 | mnoṅ:1	མངོན་པར་མགུ་ mnoṅ par mgu zufriedenstellen.
+nisadaputrah	nisādaputrah	2	2	1	low	nisādaputrah:1 | nisadāputrah:1	"stein"" (Dagy); -'am gtun bu = nisadāputrah,"
+nisiditva	nisiditva	2	2	1	low	nisiditvā:1 | nisiditva:1	"nisiditva)"" (Suv 59,4); Sin rtas = nas rkan pa"
+padatalam	pādatalam	2	2	1	low	pādatalam:1 | padatalam:1	Lex. padatalam (Mvy 4017); rkan 09 (brDa,
+parva	pārvā	2	2	1	low	pārvā:1 | pārva:1	ihn die gegnerische Sichtweise (skt. pārva-
+prasadah	prāsādah	2	2	1	low	prāsādah:1 | prasadah:1	"Lex. vesma ""Haus"" (Mvy 5513); prasadah"
+saranam	śaranam	2	2	1	low	śaranam:1 | saranam:1	mchi'o = buddham śaranam gacchāmi dvi- nam Q
+sarathi	Sārathi	2	2	1	low	sārathi:1 | Sārathi:1	2. npr. ein Buddha, skt. Sārathi.
+sarthavahah	sārthavāhah	2	2	1	low	sārthavāhah:1 | sārthavahah:1	Lex. sārthavahah (Mvy 7362); tshon dpon
+satanika	śätänika	2	2	1	low	śätänika:1 | Śatänika:1	"Śatänika König"" (Prav 5,25); ko'u sambi na"
+slesma	ślesma	2	2	1	low	ślesma:1 | slesmā:1	dan ~ skabs dan sbyar = slesmā (Mvy 4044);
+snam	sñam	2	2	1	low	sñam:1 | snam:1	"Lex. ~ ni... gyan skor e yin sñam ""dgye'o:"
+subhakrtsnab	subhakrtsnab	2	2	1	low	subhakrtsnab:1 | Subhakrtsnab:1	Lex. subhakrtsnab (Mvy 3096, Abt. bsam
+surya	sūrya	2	2	1	low	sūrya:1 | Sūrya:1	6. npr. ein Buddha, skt. Sūrya (Bhad 686).
+syamavati	śyämävati	2	2	1	low	śyämävati:1 | śyämavati:1	Bhiruka; - can npr. śyämävati, die Tochter
+vayanam	vāyanam	2	2	1	low	vāyanam:1 | vayanam:1	Lex. tagaram (Mvy 5791), vayanam (Mvy
 vidvant	Vidvant	2	2	1	low	vidvant:1 | Vidvant:1	4. npr. ein Buddha, skt. Vidvant.
-bodhisattva	Bodhisattva	139	1	0	none	Bodhisattva:139	Prajiäparämita|!]-Upadesa-Sästra. The work of Bodhisattva Maitreya. Fasc. I: Introduction,
-bodhisattvas	Bodhisattvas	75	1	0	none	Bodhisattvas:75	ten der Buddhas und Bodhisattvas. — für skt.
-smras	smras	25	1	0	none	smras:25	Lex. — pa =smras pa, bod pa, skt. ämantraya-
-rgyas	rgyas	21	1	0	none	rgyas:21	phra rgyas“ = anusayah (Mvy 2136); skabs
-upadhyaya	Upädhyäya	21	1	0	none	Upädhyäya:21	gigo cha „der ind. Upädhyäya Kanakavarman,
-sans	saṅs	18	1	0	none	saṅs:18	vajüah), ävit, sarvavit (Tshe 2b3); saṅs rgyas
-bsnal	bsṅal	17	1	0	none	bsṅal:17	(HrdB 131,1, skt. 98,20); ’di ni sdug bsṅal
-gnas	gnas	17	1	0	none	gnas:17	Lex. prasakhä (Mvy 4071); ma’i mnalgyi gnas
-bsad	bśad	12	1	0	none	bśad:12	22536, skt. 1: 3,18); mnon par bśad pa de’i
-sattva	sattva	11	1	0	none	sattva:11	sattva.
-vaisravana	Vaiśravana	11	1	0	none	Vaiśravana:11	Lex. rnam sras kyi bu „Vaiśravana“ (brDa); Ku-
-buddha	Buddha	10	1	0	none	Buddha:10	„ungetrübt von falschen Vorstellungen seiend“, einer der Vorzüge des Buddha (Mvy
-buddhas	Buddhas	10	1	0	none	Buddhas:10	ten der Buddhas und Bodhisattvas. — für skt.
-madhyadesa	Madhyadesa	10	1	0	none	Madhyadesa:10	klun —’i 'gram „in Madhyadesa, am Ufer
-gsegs	gśegs	9	1	0	none	gśegs:9	Lex. Zes sems can rnams la de bZin gśegs
-byas	byas	8	1	0	none	byas:8	(Mvy 8576); — ba = gan bar byas pa’i min
-gton	gtoṅ	8	1	0	none	gtoṅ:8	Lex. lcags skud brgyud gtoṅ rgyu’i ’phrin gyi źe
-rnam	rnam	8	1	0	none	rnam:8	khandaphullah (Mvy 9427); rnam par rgyal
-dban	dbaṅ	7	1	0	none	dbaṅ:7	471); mi śes pa —r byed pa’i dbaṅ po = ana-
-gsin	gśin	7	1	0	none	gśin:7	Lex. gśin 7767 min (brDa); ’chi bdag gśin rje
-madhyantika	Madhyäntika	7	1	0	none	Madhyäntika:7	de’i tshe „zu der Zeit, zu der Madhyäntika
-ston	stoṅ	7	1	0	none	stoṅ:7	Lex. ~ thams cad stoṅ pa ñid = sarva-
-tattvasamgraha	Tattvasamgraha	7	1	0	none	Tattvasamgraha:7	Tattvasamgraha des Yogatantra in Kosala“
-tsarya	tsarya	7	1	0	none	tsarya:7	ཀྱི་ kyi Kurzf. f. 1/5)/7 a tsarya ye ses dban po.
-bran	braṅ	6	1	0	none	braṅ:6	(Mvy 5512); rgyal po’: pho braṅ „Königspalast“ (brDa, Dagy).
-bsam	bsam	6	1	0	none	bsam:6	Lex. sudrsäb (Mvy 3104); bsam gtan bZi pa’i
-lsdz	Lśdz	6	1	0	none	Lśdz:6	91 kleinen Länder“ (Lśdz 15,6).
-madhyamaka	Madhyamaka	6	1	0	none	Madhyamaka:6	„Pramänavärttika sowie Madhyamaka und
-sattvas	sattvas	6	1	0	none	sattvas:6	sattvas, skt. samantacaksus) ; vgl. \kun
-sugs	śugs	6	1	0	none	śugs:6	Lex. glog śugs kyis sten thog tu bgrod byed
-artha	artha	5	1	0	none	artha:5	liche (skt. artha) und die Befreiung (skt.
+vyavahara	Vyavahāra	2	2	1	low	vyavahāra:1 | Vyavahāra:1	"Lex. vyavahāra ""Streitsache, Prozeß"" (Ak"
+bodhisattva	Bodhisattva	136	1	0	none	Bodhisattva:136	Prajhäparämita|!)-Upadesa-Sästra. The work of Bodhisattva Maitreya. Fasc. I: Introduction,
+gnis	gñis	97	1	0	none	gñis:97	SONAM ANGDU 1973: Tibeto-Sanskrit lexicographical materials. The Sgra sbyor bam po gñis pa, the
+bodhisattvas	Bodhisattvas	65	1	0	none	Bodhisattvas:65	ten der Buddhas und Bodhisattvas. ~ für skt.
+nams	ñams	39	1	0	none	ñams:39	501); dkes (r. dkos) thag can ni ñams thag pa
+chan	chaṅ	32	1	0	none	chaṅ:32	"Lex. chaṅ gis bzi ba'i Ze sa ""resp. von Ger-"
+samadhih	samādhih	29	1	0	none	samādhih:29	näma samādhih (Mvy 562).
+gner	gñer	27	1	0	none	gñer:27	Lex. dkon cog gi mchod pa'i gñer pa (brDa,
+mnam	mñam	22	1	0	none	mñam:22	Lex. skal ba mñam pa, skt. sahabhavyatā
+gnen	gñen	20	1	0	none	gñen:20	27,12, skt. vgl. Divy 479,9); bses gñen ~ bkur
+smras	smras	20	1	0	none	smras:20	Lex. — pa =smras pa, bod pa, skt. āmantraya-
+gnid	gñid	19	1	0	none	gñid:19	Lex. gñid khug pa'i tshe sin rtsa ma gul ba
+rgyas	rgyas	18	1	0	none	rgyas:18	"phra rgyas"" = anusayah (Mvy 2136); skabs"
+gnas	gnas	17	1	0	none	gnas:17	Lex. prasakhā (Mvy 4071); ma'i mnalgyi gnas
+mahasiddha	Mahāsiddha	15	1	0	none	Mahāsiddha:15	2. Beiname des Mahāsiddha Krsnapa.
+sattva	sattva	15	1	0	none	sattva:15	sattva.
+sravakas	śrävakas	14	1	0	none	śrävakas:14	Wissen [und] die Befreiung der śrävakas und
+sattvas	sattvas	12	1	0	none	sattvas:12	sattvas, skt. samantacaksus); vgl. \kun
+buddhas	Buddhas	11	1	0	none	Buddhas:11	ten der Buddhas und Bodhisattvas. ~ für skt.
+nagaraja	nāgarājā	11	1	0	none	nāgarājā:11	Lex. klu'irgyal po ~ = kambalo nāgarājā (Mvy
+bsnen	bsñen	10	1	0	none	bsñen:10	Lex. upādhyayah (Mvy 8727); bsñen rdzogs
+lsdz	Lśdz	9	1	0	none	Lśdz:9	"91 kleinen Länder"" (Lśdz 15,6)."
+madhyadesa	Madhyadesa	9	1	0	none	Madhyadesa:9	"klun ~i 'gram ""in Madhyadesa, am Ufer"
+snigs	sñigs	9	1	0	none	sñigs:9	"Lex. khu ba bton pa'i sñigs lta bu ""wie Boden-"
+byas	byas	8	1	0	none	byas:8	(Mvy 8576); — ba = gan bar byas pa'i min
+lans	laṅs	8	1	0	none	laṅs:8	Lex. ~ pa = laṅs zin pa de kho bos bsgrens pa
+rnog	rñog	8	1	0	none	rñog:8	Lex. ~ rñog pa, ~ rmya ba = than chad pa'am
+snad	sñad	8	1	0	none	sñad:8	Lex. rtsod pa'i gźi 'tshol baam sñad 'tshol
+vaisravana	Vaiśravana	8	1	0	none	Vaiśravana:8	3. npr. Vaiśravana.
+madhyantika	Madhyāntika	7	1	0	none	Madhyāntika:7	"de'i tshe ""zu der Zeit, zu der Madhyāntika"
+mahayanabuddhismus	Mahāyāna-Buddhismus	7	1	0	none	Mahāyāna-Buddhismus:7	Mahāyāna-Buddhismus. Nach den Handschriften und mit Hilfe der tibetischen und chinesi-
+nama	nāma	7	1	0	none	nāma:7	kāyakalisampramathano nāma samādhih
+snom	sñom	7	1	0	none	sñom:7	Lex. śal ba = rmos rgyab pa'i sul 'khod sñom
+sramana	śramana	7	1	0	none	śramana:7	tenden śramana etwa aus der Masse des Kasa-
+tattvasamgraha	Tattvasamgraha	7	1	0	none	Tattvasamgraha:7	"Tattvasamgraha des Yogatantra in Kosala"""
+tsarya	tsarya	7	1	0	none	tsarya:7	"ཀྱི་ ""kyi Kurzf. f. Ikyi a tsarya ye ses dban po."
+bsam	bsam	6	1	0	none	bsam:6	Lex. sudrsab (Mvy 3104); bsam gtan b&i pa'i
+gsin	gśin	6	1	0	none	gśin:6	Lex. gśin rje (brDa).
+madhyamaka	Madhyamaka	6	1	0	none	Madhyamaka:6	"""Pramänavärttika sowie Madhyamaka und"
+manjusri	Mañjuśrī	6	1	0	none	Mañjuśrī:6	"vis) ~ ma gnan bar ma byon ""weil Mañjuśrī"
+mnan	mñan	6	1	0	none	mñan:6	"Lex. mñan pa'i srub Sin ""Paddel des Boots-"
+mons	moṅs	6	1	0	none	moṅs:6	"Lex. kun 'gro = ñon moṅs kun gro la'an ""auch"
+rned	rñed	6	1	0	none	rñed:6	Lex. bskal pa tha ma'i tshe zas rñed pa tsam bkab
+sthanam	sthānam	6	1	0	none	sthānam:6	"gi gnas = ārsabham sthānam ""die vornehms-"
+sugs	śugs	6	1	0	none	śugs:6	"Lex. ~ mtho bo = skad śugs chen po ""laute"
+sutras	Sūtras	6	1	0	none	Sūtras:6	"— kyi tsbigs bcad rnams ""die in den Sūtras ge-"
+adhuna	adhunā	5	1	0	none	adhunā:5	= adhunā, sämpratam, idänim, etarhi, sadyah
 balam	balam	5	1	0	none	balam:5	Lex. balam (Mvy 7580).
-bzan	bzaṅ	5	1	0	none	bzaṅ:5	„vollkommenes Zeitalter“ = bskal bzaṅ gi
-dhisattva	dhisattva	5	1	0	none	dhisattva:5	dhisattva seine Anerkennung aus“ (HMrg
-dnos	dños	5	1	0	none	dños:5	Lex. — dgos = g.yar po’i dños po — bar bya
-gnis	gñis	5	1	0	none	gñis:5	Lex. gla dan bisas gñis gla cha’i don gcig
-gron	groṅ	5	1	0	none	groṅ:5	groṅ khyer ram - „Dörfer, Städte, Marktflecken (skt. nigama)“ (Suv 83,5); - daṅ / yul
-kyan	kyaṅ	5	1	0	none	kyaṅ:5	Lex. kha’i thab rtsod de gyod kyaṅ zer „juris-
+byan	byaṅ	5	1	0	none	byaṅ:5	ཁ་ཏོན་བྱང་བ kha ton byaṅ ba redegewandt.
+dhisattva	dhisattva	5	1	0	none	dhisattva:5	"dhisattva seine Anerkennung aus"" (HMrg"
+gnan	gñan	5	1	0	none	gñan:5	"Wassers"" (brDa); ~ gñan = ~ btsan po'am"
 ardhaparyanka	ardhaparyanka	4	1	0	none	ardhaparyanka:4	Bein, skt. ardhaparyanka.
-dhisattvas	dhisattvas	4	1	0	none	dhisattvas:4	dhisattvas vollbringen heilvolle Dharmas“
-dnul	dṅul	4	1	0	none	dṅul:4	Lex. ga pur daṅ (7/7/// rdo daṅ dṅul rdo’i naṅi
-dpan	dpaṅ	4	1	0	none	dpaṅ:4	Lex. che bi dan dpaṅ po ste don ni dpaṅ po
-etwas	etwas	4	1	0	none	etwas:4	Lex. kesapratigrahanam „etwas zum Aufnehmen der Haare“ (Mvy 8940); skra breg
-gram	gram	4	1	0	none	gram:4	Lex. kapolam (Mvy 3950); ’gram pa’i mkhur
-gsan	gsaṅ	4	1	0	none	gsaṅ:4	Lex. — ma = gsaṅ ba — ma „Geheimes; ver-
-indoaryan	Indo-Aryan	4	1	0	none	Indo-Aryan:4	TURNER 1966-1985 (Comparative dictionary of the Indo-Aryan languages).
-mahasattva	Mahäsattva	4	1	0	none	Mahäsattva:4	gzar nas - (metr.) „der Mahäsattva sprang
-mkhas	mkhas	4	1	0	none	mkhas:4	Lex. caturab (Mvy 2910); g.yer po ni mkhas
+artha	artha	4	1	0	none	artha:4	liche (skt. artha) und die Befreiung (skt.
+buddhapalita	Buddhapālita	4	1	0	none	Buddhapālita:4	"buddhi, der Schüler des Buddhapālita"" (Tär"
+dhisattvas	dhisattvas	4	1	0	none	dhisattvas:4	"dhisattvas vollbringen heilvolle Dharmas"""
+evam	evam	4	1	0	none	evam:4	(Mvy 9234); — na = evam hi (Mvy 5429).
+glan	glaṅ	4	1	0	none	glaṅ:4	གླུང་ཆེན་རྣ་བ་ glaṅ chen rna ba Bez. für Näga.
+gram	gram	4	1	0	none	gram:4	Lex. kapolam (Mvy 3950); 'gram pa'i mkhur
+gsegs	gśegs	4	1	0	none	gśegs:4	de bzin gśegs pa'! bka' la Sin tu Zugs pa = tathā-
+indoaryan	Indo-Aryan	4	1	0	none	Indo-Aryan:4	TuURNER 1966-1985 (Comparative dictionary of the Indo-Aryan languages).
+lsdzk	Lśdz-K	4	1	0	none	Lśdz-K:4	"Felshöhle"" (Lśdz-K 305,3)."
+mahasattva	Mahäsattva	4	1	0	none	Mahäsattva:4	"gzar nas - (metr.) ""der Mahäsattva sprang"
+mnen	mñen	4	1	0	none	mñen:4	Lex. rdo mñen od. ~ ein weicher Stein, Alabas-
 mvys	Mvy-S	4	1	0	none	Mvy-S:4	[Mvy-S]
-nams	ñams	4	1	0	none	ñams:4	Lex. - ni ñams pa (Liś 4,6); Rams pa’i min
-rdun	rduṅ	4	1	0	none	rduṅ:4	Lex. gan di’i the’u = gso sbyon ’dus par rduṅ
-sastras	śästras	4	1	0	none	śästras:4	bstan bcos „inhaltslose śästras“ (Bu
-spon	spoṅ	4	1	0	none	spoṅ:4	Lex. - mthon po dan ~ chen po spoṅ ba =
-sriherukabhyudaya	Sriherukäbhyudaya	4	1	0	none	Sriherukäbhyudaya:4	dPal khrag ’thun mnon par ’byun ba / Sriherukäbhyudaya. Ed.: Derge-Kanjur, rGyud
-srun	sruṅ	4	1	0	none	sruṅ:4	3724); sku srun Zrgyalpo’i sku sruṅ dmag mi
+rnam	rnam	4	1	0	none	rnam:4	khandaphullah (Mvy 9427); rnam par rgyal
+sakya	sākya	4	1	0	none	sākya:4	Lex. ~, go tam = gan ta ma'i zur chag sākya
+samadhib	samādhib	4	1	0	none	samādhib:4	näma samādhib (Mvy 567).
+sambh	Śambh	4	1	0	none	Śambh:4	"Sambhala zu gelangen"" (Śambh 5b6)."
+sardham	sārdham	4	1	0	none	sārdham:4	"thabs cig gam lhan ag = sārdham ""zu-"
+smra	smra	4	1	0	none	smra:4	smra ba = maithunabhāsanam (Mvy 8371);
+udbhatasiddhasvamin	Udbhatasiddhasvāmin	4	1	0	none	Udbhatasiddhasvāmin:4	mTho btsun grub rje [d. i. Udbhatasiddhasvāmin] | SCHNEIDER 1993 [Vis]
+vajrasattva	Vajrasattva	4	1	0	none	Vajrasattva:4	"Vajrasattva"" (Padm 30b1); ~ 'am 'og min"
+abhangige	abhāngige	3	1	0	none	abhāngige:3	"""abhāngige Form bzw. Materie"" (Mvy"
+abhidhanavisvalocana	Abhidhānavisvalocana	3	1	0	none	Abhidhānavisvalocana:3	Jamspai, Losang 1995: Tibeto-Sanskrit index to Abhidhānavisvalocana of Sridharasena. Narita:
 acharya	Acharya	3	1	0	none	Acharya:3	Studies in Indo-Asian Art and Culture (Acharya Raghu Vira Commemoration Volume). New
-amlah	amlah	3	1	0	none	amlah:3	Lex. amlah „sauer“ (Mvy 5711); bro kha la
-bcas	bcas	3	1	0	none	bcas:3	bcas pa, skt. sahabhavyatä (Mvy 6750).
-bodhisartva	Bodhisartva	3	1	0	none	Bodhisartva:3	„ein Bodhisartva, der Traurigkeit und Müdigkeit aufgegeben hat“ (gNas 32,4).
-bras	bras	3	1	0	none	bras:3	"vollen“ (Mvy 373); »""i ’bras bu = nisyanda-"
-bsal	bśal	3	1	0	none	bśal:3	Lex. ja sogs snod du — pa bśal bśal — „Tee
-bses	bśes	3	1	0	none	bśes:3	güen bśes kyi min); bu chun chun phru gu
-evam	evam	3	1	0	none	evam:3	(Mvy 9234); — na = evam hi (Mvy 5429).
-glan	glaṅ	3	1	0	none	glaṅ:3	གླང་བྲེས་ glaṅ bres Kuhstall.
-gnan	gnaṅ	3	1	0	none	gnaṅ:3	Lex. — gnaṅ ba = lam du ’gro ba’i — „Ergreifen der Sterne, um erfolgreich zu sein“
-gnen	gñen	3	1	0	none	gñen:3	bses gñen (brDa); 9/76/ bses (Dagy).
-gsog	gśog	3	1	0	none	gśog:3	Lex. -, ~ byed = gśog pa (brDa).
-khan	khaṅ	3	1	0	none	khaṅ:3	Lex. sṅa (¥, 1, ma) khaṅ = mädah (Mvy
-khrab	khrab	3	1	0	none	khrab:3	Lex. nartakab (Mvy 5008); gar ’khrab
-lgan	lgaṅ	3	1	0	none	lgaṅ:3	= gcin snod (Dagy); lgaṅ ba, Igan phug =
-madhyavyutpatti	Madhyavyutpatti	3	1	0	none	Madhyavyutpatti:3	sGra sbyor bam po gñis pa / Madhyavyutpatti. Ed.: Ismkawa 1990.
-mahallakah	mahallakah	3	1	0	none	mahallakah:3	Lex. mahallakah „großes Haus“ (Mvy 8375,
-mahasattvas	Mahäsattvas	3	1	0	none	Mahäsattvas:3	rnams su ’gro ba „die Häuser der Mahäsattvas
-mahayanabuddhismus	Mahäyäna-Buddhismus	3	1	0	none	Mahäyäna-Buddhismus:3	Poesie und Lehre des Mahäyäna-Buddhismus. Aus dem Sanskrit übersetzt. München: Diede-
+aghatayati	āghātayati	3	1	0	none	āghātayati:3	Lex. sems kyis — = cittam āghātayati (Mvy
+arsabham	ārsabham	3	1	0	none	ārsabham:3	"gi gnas = ārsabham sthānam ""die vornehms-"
+bcas	bcas	3	1	0	none	bcas:3	bcas pa, skt. sahabhavyatā (Mvy 6750).
+bras	bras	3	1	0	none	bras:3	"vollen"" (Mvy 373); -""i 'bras bu = nisyanda-"
+bsad	bśad	3	1	0	none	bśad:3	Lex. rlun g.yor can = - la bśad (Dagy).
+bsnel	bsñel	3	1	0	none	bsñel:3	Lex. than chad pa (Dagy); ~ pa = sku bsñel
+buddh	buddh	3	1	0	none	buddh:3	དཀན་མཆག་ཏ buddh. kanon. Textes (Mvy
+chun	chuṅ	3	1	0	none	chuṅ:3	མགོའུ་ཆུང་ mgo'n chuṅ ohne Kopf.
+dvag	dvag	3	1	0	none	dvag:3	"dvag tshad drug go ""die Kaste des Tathāgata"
+garbhah	garbhah	3	1	0	none	garbhah:3	Lex. garbhah (Mvy 4038, 5159); - gyi gnas
+gsog	gśog	3	1	0	none	gśog:3	Lex. =, ~ byed = gśog pa (brDa).
+hasrihar	Ha-śri-har	3	1	0	none	Ha-śri-har:3	das als Ha-śri-har bekannte Heer der Barbaren
+indrakilab	indrakilab	3	1	0	none	indrakilab:3	Lex. indrakilab (Mvy 5582); sgo glegs la
+khrab	khrab	3	1	0	none	khrab:3	Lex. nartakab (Mvy 5008); gar 'khrab
+lokadhatuh	lokadhātuh	3	1	0	none	lokadhātuh:3	"lokadhātuh ""der Weltbereich mit vier"
+madhyavyutpatti	Madhyavyutpatti	3	1	0	none	Madhyavyutpatti:3	sGra sbyor bam po gñis pa / Madhyavyutpatti. Ed.: Ismikawa 1990.
+mahabala	Mahābala	3	1	0	none	Mahābala:3	2. npr. zwei Buddhas, skt. Mahābala und
+mahasattvas	Mahäsattvas	3	1	0	none	Mahäsattvas:3	"rnams su 'gro ba ""die Häuser der Mahäsattvas"
 mandanam	mandanam	3	1	0	none	mandanam:3	mandanam (Mvy 6004).
-mnon	mṅon	3	1	0	none	mṅon:3	Lex. gsal bar gnas pa lta bu „wie: klar existieren“ (brDa); mṅon par gsal ba ste mṅon
+mkhas	mkhas	3	1	0	none	mkhas:3	Lex. caturab (Mvy 2910); g.yer po ni mkhas
+nana	nānā	3	1	0	none	nānā:3	Lex. kham ma bzas par kha mi gdan = nānā-
+paramartha	paramārtha	3	1	0	none	paramārtha:3	"dan — dan (metr.) ""endgültige (paramārtha)"
 paryanka	paryanka	3	1	0	none	paryanka:3	Beinen, Lotussitz, skt. paryanka; — phyed pa
-rgas	rgas	3	1	0	none	rgas:3	jarä (Mvy 1993); ~ ba = na so rgas pa „hohes Alter“ (Dagy); ~ śi = jaramaranam „Al-
-rkan	rkaṅ	3	1	0	none	rkaṅ:3	Lex. skas ’dzeg(s) sam rkaṅ stegs (Dagy).
-sambh	Śambh	3	1	0	none	Śambh:3	Sambhala zu gelangen“ (Śambh 5b6).
-sdon	sdoṅ	3	1	0	none	sdoṅ:3	Lex. Ijon sin sdoṅ bo daṅ yal ga „Stamm und
-smra	smra	3	1	0	none	smra:3	smra ba = maithunäbhäsanam (Mvy 8371);
-sravasti	śrävasti	3	1	0	none	śrävasti:3	„Mahäkätyäyana gelangte nach śrävasti“
-subs	śubs	3	1	0	none	śubs:3	Mönchsgewand“ (brDa); chos gos kyi śubs
-tattva	tattva	3	1	0	none	tattva:3	gzugs can dan (metr.) „ferner wird die Realität (skt. tattva) dargelegt: Sie ist rein, sie hat
-tsham	tsham	3	1	0	none	tsham:3	par 'tsham pa = anupürvagätrah „mit regelmäßigen Gliedern“ (Mvy 288); — sin tu
-unnatam	unnatam	3	1	0	none	unnatam:3	Lex. unnatam „aufragend, hoch; Erhöhung“ (Mvy 5275); sten „oben auf“ (Dagy);
-vajrasattva	Vajrasattva	3	1	0	none	Vajrasattva:3	Vajrasattva“ (Padm 30b1); - ‘am ’og min
+reyas	reyas	3	1	0	none	reyas:3	Lex. jinah (Mvy 12); sans reyas te bdud bzi
+rgas	rgas	3	1	0	none	rgas:3	"Jarä (Mvy 1993); ~ ba = na so rgas pa ""ho-"
+sans	saṅs	3	1	0	none	saṅs:3	Lex. saṅs rgyas kyi bka' dan mkhas pa'i bstan
+sarvadharmah	sarvadharmāh	3	1	0	none	sarvadharmāh:3	"med pa = amamāh sarvadharmāh ""ohne"
+sarvajnatva	sarvajñatva	3	1	0	none	sarvajñatva:3	für skt. sarvajñatva.
+sastras	śästras	3	1	0	none	śästras:3	"bstan bcos ""inhaltslose śästras"" (Bu"
+siddhasara	Siddhasāra	3	1	0	none	Siddhasāra:3	EMMERICK 1982 (The Siddhasāra of Ravigupta), Bd. 2.
+svasti	svasti	3	1	0	none	svasti:3	(in Mvy 66, 584 usw.), svasti (Mvy 2747);
+tada	tadā	3	1	0	none	tadā:3	"(skt. tadā tada) ist es das Merkmal"" (Pd-K"
+talam	talam	3	1	0	none	talam:3	Lex. talam (Mvy 6876); logs (brDa); phyogs
+tsaryas	tsaryas	3	1	0	none	tsaryas:3	bha ta ä tsaryas ... slar yaṅ lha ~ par byas
 visvabhuk	visvabhuk	3	1	0	none	visvabhuk:3	Lex. visvabhuk (Mvy 89); visvabhuk (sGra;
-vivartakalpah	vivartakalpah	3	1	0	none	vivartakalpah:3	vivartakalpah (Mvy 8280); kalpa’an — Zes
-abhyarhitam	abhyarhitam	2	1	0	none	abhyarhitam:2	Lex. - pa = abhyarhitam „geehrt, ehrwürdig“ (Mvy 6132).
-abhyasa	abhyäsa	2	1	0	none	abhyäsa:2	sind Anwendungen (skt. abhyäsa) nützlich“
-acchasura	acchasurä	2	1	0	none	acchasurä:2	(skt. gauda), klarer chan (skt. acchasurä),
-ajneya	äjneya	2	1	0	none	äjneya:2	Lex. -r bya ba = äjneya [vak] „verständliche
-asamantaparivartab	asamantaparivartab	2	1	0	none	asamantaparivartab:2	Lex. asamantaparivartab (Mvy 7941); thug
-ayaspindam	ayaspindam	2	1	0	none	ayaspindam:2	Lex. lcags kyi - = ayaspindam „Eisenklumpen“ (Mvy 9031).
-ayutab	ayutab	2	1	0	none	ayutab:2	Lex. mahan ayutab „eine Billion“ (Mvy
-ayutam	ayutam	2	1	0	none	ayutam:2	Lex. ayutam „zehntausend“ (Mvy 8054);
-bandhanam	bandhanam	2	1	0	none	bandhanam:2	Lex. - ba = bandhanam (Mvy 4261); ~ ba =
-bhagavams	bhagavams	2	1	0	none	bhagavams:2	sbyar ba btud = yena bhagavams tenänjalim
-bhatah	bhatah	2	1	0	none	bhatah:2	Lex. sor ba, skt. bhatah „Soldat“ (Mvy 3743);
+abhidhanavisvalocanam	Abhidhānavisvalocanam	2	1	0	none	Abhidhānavisvalocanam:2	— /Wayman, Alex 1992: Abhidhānavisvalocanam of Sridharasena. Narita: Naritasan Shinshoji
+abhidhavanti	abhidhāvanti	2	1	0	none	abhidhāvanti:2	"das Leiden zu (skt. abhidhāvanti)"" (Bca"
+abhyarhitam	abhyarhitam	2	1	0	none	abhyarhitam:2	"Lex. ~ pa = abhyarhitam ""geehrt, ehr-"
+abhyasa	abhyāsa	2	1	0	none	abhyāsa:2	"sind Anwendungen (skt. abhyāsa) nützlich"""
+acchasura	acchasurā	2	1	0	none	acchasurā:2	(skt. gauda), klarer chan (skt. acchasurā),
+adhyapayate	adhyapayate	2	1	0	none	adhyapayate:2	"adhyapayate ""er unterrichtet den Veda"""
+adibuddha	Ādibuddha	2	1	0	none	Ādibuddha:2	2. der Ādibuddha der rNin-ma-pa.
+aghatah	āghatah	2	1	0	none	āghatah:2	Lex. āghatah (Tshe 3a2), malicious feeling,
+ajhavihethanam	ājhāvihethanam	2	1	0	none	ājhāvihethanam:2	"pa = ājhāvihethanam ""Verletzung eines"
+akarsanam	ākarsanam	2	1	0	none	ākarsanam:2	Lex. - pa = ākarsanam (Mvy 4259); ~ bya =
+akhata	akhāta	2	1	0	none	akhāta:2	"Lex. akhāta, vgl. akhāta ""ein nicht gegrabe-"
+akrsti	ākrsti	2	1	0	none	ākrsti:2	"Lex. /dob — ""schnell begreifend"" = ākrsti-"
+amaravati	Amarāvati	2	1	0	none	Amarāvati:2	2. Bez. der Stadt Indras, skt. Amarāvati.
+amlah	amlah	2	1	0	none	amlah:2	"Lex. amlah ""sauer"" (Mvy 5711); bro kha la"
+anandah	anandah	2	1	0	none	anandah:2	Lex. anandah (Mvy 1040); ñan thos ~ (brDa);
+artarava	ārtarava	2	1	0	none	ārtarava:2	einem schmerzerfüllten Ruf (skt. ārtarava)
+arthasastra	arthasāstra	2	1	0	none	arthasāstra:2	[skt. *arthasāstra] will ich als große Quelle
+aryadeva	Aryadeva	2	1	0	none	Aryadeva:2	"grags pa gsum ni - byed yin no ""Aryadeva,"
+asyotpadad	asyotpādād	2	1	0	none	asyotpādād:2	phyir 'di ~ = asyotpādād idam utpadyate
+athatah	athātah	2	1	0	none	athātah:2	"""im Folgenden (skt. athātah) soll das Kapitel"
+avarana	āvarana	2	1	0	none	āvarana:2	"Verfinsterungen (skt. āvarana)"" (Ppu 33b);"
+avarjita	āvarjita	2	1	0	none	āvarjita:2	"stellt (für skt. āvarjita geneigt gemacht)"""
+ayodhya	Ayodhyā	2	1	0	none	Ayodhyā:2	skt. Ayodhyā.
+ayutab	ayutab	2	1	0	none	ayutab:2	"Lex. mahan ayutab ""eine Billion"" (Mvy"
+ayutam	ayutam	2	1	0	none	ayutam:2	"Lex. ayutam ""zehntausend"" (Mvy 8054);"
+bandhanam	bandhanam	2	1	0	none	bandhanam:2	Lex. ~ ba = bandhanam (Mvy 4261); - ba =
+bhagab	bhagab	2	1	0	none	bhagab:2	Lex. bhagab, synon. cha (Mvy 6510); bgo
+bhagavams	bhagavams	2	1	0	none	bhagavams:2	sbyar ba btud = yena bhagavams tenanjalim
 bhattacharya	Bhattacharya	2	1	0	none	Bhattacharya:2	troduction. Calcutta (Calcutta Oriental Series 28). (Repr. Calcutta: Bhattacharya 2000).
-bhedah	bhedah	2	1	0	none	bhedah:2	bye brag = bhedah (Mvy 2008); ~ pa’i ’du ses
+bhedah	bhedah	2	1	0	none	bhedah:2	bye brag = bhedah (Mvy 2008); ~ pa'i 'du ses
 bkram	bkram	2	1	0	none	bkram:2	sthali (Mvy 5277); ~ la ni bkram pa (Liś
-bodhisattvacaryavatarasamskara	Bodhisattvacaryavatärasamskära	2	1	0	none	Bodhisattvacaryavatärasamskära:2	Bodhisattvacaryavatärasamskära. Ed.: Derge-Tanjur, dBu ma, 47 1b1-90b5.
-brin	briṅ	2	1	0	none	briṅ:2	Lex. ston zla 'briṅ nam skar ma de dan ldan
-brkam	brkam	2	1	0	none	brkam:2	(Mvy 2202); — pa ni ’dod zen „brkam pa:
-bsnel	bsñel	2	1	0	none	bsñel:2	ni ~ ba (KlonD 733,3); - ba = sku bsñel
-bsnen	bsñen	2	1	0	none	bsñen:2	bsñen pa „einer, der sich der Tugend annähert“ (Dagy); - ma = upäsikä (Mvy 8725).
-btan	btaṅ	2	1	0	none	btaṅ:2	Lex. ’og rlun (Dagy); ¬~ btaṅ ba = 'og rlun
-buddh	buddh	2	1	0	none	buddh:2	དཀན་མཆག་ཏ buddh. kanon. Textes (Mvy
-buddham	buddham	2	1	0	none	buddham:2	mchi’o = buddham sSaranam gacchami dvi-
-buddhatvam	buddhatvam	2	1	0	none	buddhatvam:2	sans rgyas = 'thob pa = buddhatvam avapnoti
-byan	byaṅ	2	1	0	none	byaṅ:2	Lex. byaṅ chub sin la’an (brDa).
-bzun	bzuṅ	2	1	0	none	bzuṅ:2	Lex. phar btan ba tshur bzuṅ ba (brDa).
-caityam	caityam	2	1	0	none	caityam:2	Lex. stäpah, caityam (Mvy 6999 f.); mchod
-cittam	cittam	2	1	0	none	cittam:2	Lex. sems kyis — = cittam äghätayati (Mvy
-daurgandhya	daurgandhya	2	1	0	none	daurgandhya:2	Geruch (skt. daurgandhya)“ (Xs 970).
-dhyana	Dhyäna	2	1	0	none	Dhyäna:2	Dhyäna“ (Dagy).
-dhyaya	dhyäya	2	1	0	none	dhyäya:2	dhyäya zu werden“ (Nel 18a1); bslab pa ...
-dosah	dosah	2	1	0	none	dosah:2	Lex. fies pa, skt. dosah (Mvy 2629); apaksa-
-dvan	dvan	2	1	0	none	dvan:2	lebte“ (BhuGr 66,35); mi dvan du tsho chen
-dvaram	dvaram	2	1	0	none	dvaram:2	Lex. dvaram (Mvy 5566), mukha (in Mvy
-dvarasakhi	dvarasakhi	2	1	0	none	dvarasakhi:2	Lex. ~ (v. 1. sgo skyobs) = dvarasakhi (Mvy
-gamikah	gamikah	2	1	0	none	gamikah:2	Lex. gamikah (Mvy 8747).
-gandzi	gañdzi	2	1	0	none	gañdzi:2	Lex. gaśdzi ra’i (r. gañdzi ra’i) zur chag rtse
-gans	gañs	2	1	0	none	gañs:2	Lex. lam du gañs ’bab na - mi yod „wenn es
-garbhah	garbhah	2	1	0	none	garbhah:2	Lex. garbhah (Mvy 4038, 5159); ~ gyi gnas
-grans	grañs	2	1	0	none	grañs:2	Lex. ~ pa = grañs ka ~ zin pa „gezählt“
-grddhah	grddhah	2	1	0	none	grddhah:2	grddhah „gierig, heftig verlangend“ (Mvy
-gsam	gśam	2	1	0	none	gśam:2	Lex. chu pa’i ~ lta bu (brDa); gon gśam =
-gsun	gsuṅ	2	1	0	none	gsuṅ:2	gsuṅ dwaṅ len = ji Itar gsuṅ pa dwan bas khur
-gulmah	gulmah	2	1	0	none	gulmah:2	Lex. gulmah „Unterleibstumor“ (Mvy
-indrakilab	indrakilab	2	1	0	none	indrakilab:2	Lex. indrakilab (Mvy 5582); sgo glegs la
-jirnah	jirnah	2	1	0	none	jirnah:2	(Dagy); ~ po = jirnah (Mvy 7656), vrddhah
-kacakah	kacakah	2	1	0	none	kacakah:2	'chin) bu’am do zan = kacakah „Glas“ (Mvy
-kadarya	kadarya	2	1	0	none	kadarya:2	Lex. - pa = kadarya „Habsucht“ (Ak 272.
+brkam	brkam	2	1	0	none	brkam:2	"(Mvy 2202); — pa ni 'dod Zen ""brkam pa:"
+bsnegs	bsñegs	2	1	0	none	bsñegs:2	Lex. rjes su bsñegs pa'am rjes su 'bran ba'am
+buddhalocana	Buddhalocanā	2	1	0	none	Buddhalocanā:2	"Dame Buddhalocanā""* (Thgr 91,4)."
+buddham	buddham	2	1	0	none	buddham:2	mchi'o = buddham śaranam gacchāmi dvi- nam Q
+buddhatvam	buddhatvam	2	1	0	none	buddhatvam:2	sans rgyas ~ 'thob pa = buddhatvam avapnoti
+buddhavatamsaka	Buddhāvatamsaka	2	1	0	none	Buddhāvatamsaka:2	Sans rgyas phal po che ses bya ba Sin tu rgyas pa chen po'i mdo / Buddhāvatamsaka-
+bzan	bzaṅ	2	1	0	none	bzaṅ:2	ཀུན་ཏུ་བཟང་པོ་ kun tu bzaṅ po npr. skt. Samanta-
+caityam	caityam	2	1	0	none	caityam:2	Lex. stäpah, caityam (Mvy 6999 .); mchod
+caityanga	caityānga	2	1	0	none	caityānga:2	"stüpas"" (Dagy); ~ gyi 'khor sa = caityānga-"
+capodari	cāpodari	2	1	0	none	cāpodari:2	"wie der Haltegriff eines Bogens"" = cāpodari"
+chans	chaṅs	2	1	0	none	chaṅs:2	Lex. ~ (v. l. chaṅs) ston pa = riktamustib
+cittam	cittam	2	1	0	none	cittam:2	Lex. sems kyis — = cittam āghātayati (Mvy
+devadaru	devadāru	2	1	0	none	devadāru:2	skt. devadāru Pinus Deodora Roxb. (PW);
+dharmadhatuh	dharmadhātuh	2	1	0	none	dharmadhātuh:2	khams = dharmadhātuh (Mvy 2057, Abt.
+dharmamudra	dharmamudrā	2	1	0	none	dharmamudrā:2	dharmamudrā näma samādhih (Mvy 512).
+dharmapalas	Dharmapālas	2	1	0	none	Dharmapālas:2	Attribut der Dharmapālas (Neb 20).
+dharmasastra	dharmasāstra	2	1	0	none	dharmasāstra:2	Gesetzbücher (skt. dharmasāstra) [von]
+dhyana	Dhyāna	2	1	0	none	Dhyāna:2	"Dhyāna"" (Dagy)."
+dhyaya	dhyāya	2	1	0	none	dhyāya:2	"dhyāya zu werden"" (Nel 1831); bslab pa ..."
+dinakarab	dinakarab	2	1	0	none	dinakarab:2	Lex. ädityah (Mvy 3177), dinakarab (Mvy
+dnos	dños	2	1	0	none	dños:2	"offensichtlich"" (brDa); ~ tu = dños su ma yin"
+dosah	dosah	2	1	0	none	dosah:2	Lex. fies pa, skt. dosah (Mvy 2629); apaksä-
+dran	draṅ	2	1	0	none	draṅ:2	དྲང་པོ་ draṅ po
+ekakino	ekākino	2	1	0	none	ekākino:2	Lex. gcig pu dben pa'am ~ tu son ste = ekākino
+etwas	etwas	2	1	0	none	etwas:2	"ohne etwas übrig zu lassen"" (Mvy 8457)."
+gail	gāil	2	1	0	none	gāil:2	"Lex. "" bya = gāil bar bya ba'i don dan 'jig"
+gartah	gartah	2	1	0	none	gartah:2	"Lex. gartah ""Grube"" (Mvy 5125, 7106); bu"
+gaun	gāun	2	1	0	none	gāun:2	Lex. che mo = gāun dan mi sog ~
+grama	grāma	2	1	0	none	grāma:2	"hons dan ""Dörfer (skt. grāma), Städte,"
+grddhah	grddhah	2	1	0	none	grddhah:2	"grddhah ""gierig, heftig verlangend"" (Mvy"
+gtsan	gtsaṅ	2	1	0	none	gtsaṅ:2	gdan 'og tu btin nas gtsaṅ sbra mtshon par byed
+gulmah	gulmah	2	1	0	none	gulmah:2	"Lex. gulmah ""Unterleibstumor* (Mvy"
+idanim	idānīm	2	1	0	none	idānīm:2	= adhunā, sämpratam, idānīm, etarhi, sadyah
+jala	jāla	2	1	0	none	jāla:2	"sñi, skt. jala (r. jāla) ""Netz"" (Tshe 422); kog"
+jimata	jimāta	2	1	0	none	jimāta:2	"""indem er die Regenwolken (skt. jimāta)"
+jirnab	jirnab	2	1	0	none	jirnab:2	(Dagy); - po = jirnab (Mvy 7656), vrddhah
+jyesthah	jyesthah	2	1	0	none	jyesthah:2	bo'am ~ rabs = jyesthah (Mvy 2517).
+kadarya	kadarya	2	1	0	none	kadarya:2	"Lex. ~ pa & kadarya ""Habsucht"" (Ak 272."
 kalakalah	kalakalah	2	1	0	none	kalakalah:2	kalakalah (Mvy 2786); dar dir ku co (v.l. om.
-kalatram	kalatram	2	1	0	none	kalatram:2	Lex. bharya, patni, däräh, kalatram (Mvy
-kalpah	kalpah	2	1	0	none	kalpah:2	Lex. kalpah (Mvy 8290); ig paıı — =
-kamesvaras	Kämeśvaras	2	1	0	none	Kämeśvaras:2	1. Beiname Kämeśvaras, Kimadevas.
-karanam	karanam	2	1	0	none	karanam:2	Lex. karanam (Mvy 5395).
-kastam	kastam	2	1	0	none	kastam:2	Lex. vata hahä kastam (Mvy 6392); smre nag
-katham	katham	2	1	0	none	katham:2	Lex. katham „wie?“ (Mvy 5427).
-khani	khaṅi	2	1	0	none	khaṅi:2	Lex. khaṅi bzaṅ rin po che sogs „die Kostbarkeiten wie z. B. Palast usw.“ (Dagy).
-kharah	kharah	2	1	0	none	kharah:2	kharah „hart, rauh“ (Mvy 7489); ’khran ba
-kiyantah	kiyantah	2	1	0	none	kiyantah:2	Lex. kiyantah (Mvy 6968); ~ pa 22 grans - pa
-klun	kluṅ	2	1	0	none	kluṅ:2	Lex. chu kluṅ sgrol byed ko gru lta bu „wie:
-kubjah	kubjah	2	1	0	none	kubjah:2	kubjah „mit zwei Buckeln versehen“ (Mvy
-kumudvati	kumudvati	2	1	0	none	kumudvati:2	Lex. kumurvati (r. kumudvati) (Ishe 2b2); ku
-kuruvindah	kuruvindah	2	1	0	none	kuruvindah:2	Lex. kuruvindah = kuru pin da’am Za hie „kuruvindah entspr. — oder Blei“ (Mvy 5981); 77 ne
-lampakam	lampakam	2	1	0	none	lampakam:2	can = lampakam „ein Obergewand“ (Mvy
-lampatah	lampatah	2	1	0	none	lampatah:2	Lex. ghasmarab (Mvy 2203); lampatah (Mvy
-lons	loṅs	2	1	0	none	loṅs:2	darpitab (Mvy 7343); ~ pa = ran gi loṅs
-lsdzk	Lśdz-K	2	1	0	none	Lśdz-K:2	Mantras und des Geistes“ (Lśdz-K 302,3).
-lubdhah	lubdhah	2	1	0	none	lubdhah:2	Lex. lubdhah „begierig“ (Mvy 2205); ’dod
-madhyamakaprasangika	Madhyamaka-Präsangika	2	1	0	none	Madhyamaka-Präsangika:2	„Asvaghosa, ein Madhyamaka-Präsangika-
-madhyame	madhyame	2	1	0	none	madhyame:2	Lex. ~ (¥. 1. mthun) la = madhyame yäme
-madhyamika	Mädhyamika	2	1	0	none	Mädhyamika:2	gäcära) Edites er Chapitre XII (Mädhyamika) edit et traduit. Kyoto: Zinbun Ra-
-mandah	mandah	2	1	0	none	mandah:2	Lex. mandah (Mvy 5770).
-mangalam	mangalam	2	1	0	none	mangalam:2	Lex. Itas, skt. mangalam (Mvy 2744); dge
-navanatab	navanatab	2	1	0	none	navanatab:2	dma’ = anunnato 'navanatab (Mvy 6394);
-nilam	nilam	2	1	0	none	nilam:2	Lex. nilam (Mvy 1865); kha dog ~ (brDa,
-nivaranam	nivaranam	2	1	0	none	nivaranam:2	nivaranam (Mvy 6511); ~ pa = ma rig pas
+kalatram	kalatram	2	1	0	none	kalatram:2	Lex. bharya, patni, darah, kalatram (Mvy
+kalpah	kalpah	2	1	0	none	kalpah:2	Lex. kalpah (Mvy 8290); ig pai ~ =
+kalyana	Kalyāna	2	1	0	none	Kalyāna:2	3. npr. ein König, skt. Kalyāna.
+kalyanah	kalyanah	2	1	0	none	kalyanah:2	Lex. kalyanah (Mvy 3554, Abt. 'khor los
+kamadhatu	Kāmadhātu	2	1	0	none	Kāmadhātu:2	"pa ""vierter Götterbereich im Kāmadhātu"""
+kastam	kastam	2	1	0	none	kastam:2	Lex. vata haha kastam (Mvy 6392); smre rag
+katha	kathā	2	1	0	none	kathā:2	Lex. kathā (in Mvy 5091, 6272 usw.); Rag
+katham	katham	2	1	0	none	katham:2	"Lex. katham ""wie?"" (Mvy 5427)."
+kavya	Kāvya	2	1	0	none	Kāvya:2	der Asuras, skt. Usanas Kāvya, und Bez.
+kesah	kesah	2	1	0	none	kesah:2	Lex. kesah (Mvy 3938); — dkar ba
+khanub	khānub	2	1	0	none	khānub:2	"oder khyi'u kha"" = khānub (Mvy 6970)."
+kharasva	kharāsva	2	1	0	none	kharāsva:2	2. eine Pflanze, skt. kharāsva Celosia
+kinkinijalamukharah	kinkinijālamukharah	2	1	0	none	kinkinijālamukharah:2	"ka'i dra ba ~ ba = kinkinijālamukharah ""rö-"
+kintsu	kiñtsu	2	1	0	none	kiñtsu:2	ཀིཆྒྱུ་ལུ་ཀ་ Âg kiñtsu lu ka ein Tier. - skt. kiñculuka
+krpa	krpā	2	1	0	none	krpā:2	(v 1, om. ba) sin brise ba = krpā, daya
+krtartha	krtārtha	2	1	0	none	krtārtha:2	"krtārtha) sein und gehen"" (HMrg 54,20)."
+ksara	ksāra	2	1	0	none	ksāra:2	wird. - skt. ksāra Ātzkali, Salpeter, Natron,
+kubjab	kubjab	2	1	0	none	kubjab:2	"kubjab ""mit zwei Buckeln versehen"" (Mvy"
+kumarabhutah	kumārabhūtah	2	1	0	none	kumārabhūtah:2	Lex. varunamatih kumārabhūtah (Mvy 694,
+kumudvati	kumudvati	2	1	0	none	kumudvati:2	Wasserlilien. - für skt. kumudvati.
+kutuhalam	kutūhalam	2	1	0	none	kutūhalam:2	Lex. ~ nam liad mo = kutūhalam (Mvy
+labha	lābha	2	1	0	none	lābha:2	Gewinns (skt. lābha) und der Ehre Vater
+lampakam	lampakam	2	1	0	none	lampakam:2	"can = lampakam ""ein Obergewand"" (Mvy"
+lampatah	lampatah	2	1	0	none	lampatah:2	Lex. gbasmarah (Mvy 2203); lampatah (Mvy
+lins	liñs	2	1	0	none	liñs:2	"Lex. ~ pa = rhon pas ~ pa'am liñs pa ""vom"
+lubdhah	lubdhah	2	1	0	none	lubdhah:2	"Lex. lubdhah ""begierig* (Mvy 2205); 'dod"
+madhi	mādhi	2	1	0	none	mādhi:2	mādhi). — skt. samantāloka.
+madhyamakaprasangika	Madhyamaka-Prāsangika	2	1	0	none	Madhyamaka-Prāsangika:2	"""Asvaghosa, ein Madhyamaka-Prāsangika-"
+madhyame	madhyame	2	1	0	none	madhyame:2	Lex. ~ (v. [. mthun) la = madhyame yäme
+madhyamika	Mādhyamika	2	1	0	none	Mādhyamika:2	gäcära) Edir&s et Chapitre XII (Mādhyamika) Edite et traduit. Kyoto: Zinbun Ka-
+madyapanam	madyapānam	2	1	0	none	madyapānam:2	Lex. - ba = madyapānam (Mvy 2505); ~
+maghah	māghah	2	1	0	none	māghah:2	māghah (Mvy 8272).
+mahallakah	mahallakah	2	1	0	none	mahallakah:2	"Lex. mahallakah ""großes Haus"" (Mvy 8375,"
+mahasiddhas	Mahāsiddhas	2	1	0	none	Mahāsiddhas:2	Apr krisna pa Name eines ind. Mahāsiddhas.
+mandah	mandah	2	1	0	none	mandah:2	"Lex. mandah ""Brühe, Rahm"" (Mvy 5700);"
+maranamsikam	maranāmsikam	2	1	0	none	maranāmsikam:2	(Dagy); 'chi ba'i - pa = maranāmsikam
+nagabuddhi	Nāgabuddhi	2	1	0	none	Nāgabuddhi:2	skt. Nāgabuddhi.
+namo	nāmo	2	1	0	none	nāmo:2	bya'o = satam aksobhyānām vivaho nāmo-
+nasti	nāsti	2	1	0	none	nāsti:2	Lex. kalakalah (Mvy 2786); - med pa = nāsti
+niksepab	niksepab	2	1	0	none	niksepab:2	praksepab (Mvy 5122), niksepab (Mvy
+nilam	nilam	2	1	0	none	nilam:2	Lex. nilam (Mvy 1865); kha dog - (brDa,
+nipunah	nipunah	2	1	0	none	nipunah:2	Lex. - pa = daksah (Mvy 2911), nipunah
+nirbhayah	nirbhayah	2	1	0	none	nirbhayah:2	pa med pa = nirbhayah (Mvy 1822); mi ~ pa
+nirvedhabhagiyah	nirvedhabhāgiyah	2	1	0	none	nirvedhabhāgiyah:2	"mthun pa = nirvedhabhāgiyah ""zur geistigen"
+niryati	niryāti	2	1	0	none	niryāti:2	"Lex. - ba = niryāti ""er entkommt"" (Mvy"
+nivaranam	nivaranam	2	1	0	none	nivaranam:2	nivaranam (Mvy 6511); - pa = ma rig pas
+pada	pāda	2	1	0	none	pāda:2	4. der vierte Teil, ein Viertel. - skt. pāda.
+padabandhah	pādabandhah	2	1	0	none	pādabandhah:2	= pādabandhah (Mvy 4980); 'dzin ~ =
 padmam	padmam	2	1	0	none	padmam:2	7832), padmah (Mvy 7798), padmam (Mvy
-palityam	palityam	2	1	0	none	palityam:2	Lex. mgo — = palityam „Grauheit“ (Mvy
-panam	panam	2	1	0	none	panam:2	Lex. btun ba, skt. panam (Mvy 5690); —
-parasvadhikah	pärasvadhikah	2	1	0	none	pärasvadhikah:2	Lex. pärasvadhikah (Mvy 3732).
+palityam	palityam	2	1	0	none	palityam:2	"Lex. mgo — = palityam ""Grauheit"" (Mvy"
+paramparyena	pāramparyena	2	1	0	none	pāramparyena:2	"nas gcig tu Ze'am "" pa = pāramparyena (Mvy"
 parikalpitam	parikalpitam	2	1	0	none	parikalpitam:2	Lex. parikalpitam (Mvy 2119); kun brtags pa
-parvatah	parvatah	2	1	0	none	parvatah:2	(Dagy); ri - 2 himavan parvatah „das Himälaya-Gebirge“ (Mvy 5273).
-pesalah	pesalah	2	1	0	none	pesalah:2	= pesalah „schön“ (Mvy 2361).
-pihitam	pihitam	2	1	0	none	pihitam:2	„verborgen“, skt. pihitam „bedeckt, verhüllt“ (Mvy 5180); — pa £g.yogs pa’am khebs
-prakirnah	prakirnah	2	1	0	none	prakirnah:2	Lex. — pa = ’thor ba, skt. prakirnah (Mvy
-presitab	presitab	2	1	0	none	presitab:2	den Befehl zu etwas gibt“ (r. presitab „ausgesandt“?) (Mvy 9068).
-pulinam	pulinam	2	1	0	none	pulinam:2	Lex. pulinam (Mvy 7109); rgya mtsho°i
-raghuvamsa	Raghuvamsa	2	1	0	none	Raghuvamsa:2	ghu wam śa ces pa „das Kävyasästra Raghuvamsa“ (Tär 4,12); sian nag mkhan mtha’
-ranab	ranab	2	1	0	none	ranab:2	klistamanah (Mvy 2019); ~ pa = ranab (Mvy
-ratnakarah	ratnakarah	2	1	0	none	ratnakarah:2	Lex. ratnakarah (Mvy 660).
-ratnam	ratnam	2	1	0	none	ratnam:2	Lex. ratnam „Juwel“ (Mvy 6476); — la dkon
-raudrah	raudrah	2	1	0	none	raudrah:2	Lex. Ze gnag pa'am — = raudrah (Mvy 2947).
-rudhiram	rudhiram	2	1	0	none	rudhiram:2	Lex. rudhiram „Blut“ (Mvy 4033); sa yi ~
-saddha	saddha	2	1	0	none	saddha:2	(Mvy 4320); dam pa’i chos kyi ~ = saddha-
-sakyas	śäkyas	2	1	0	none	śäkyas:2	vor dem König der śäkyas“ (Glr 1,6); zol
-salilam	salilam	2	1	0	none	salilam:2	Lex. ’jo bag can nam - pa = salilam (Mvy
-samanubandhah	samanubandhah	2	1	0	none	samanubandhah:2	= ba = samanubandhah (Mvy 2167).
-samdhyabhasa	samdhyäbhasa	2	1	0	none	samdhyäbhasa:2	Sprache der Tantriker; skt. samdhyäbhasa.
-siddharthah	siddharthah	2	1	0	none	siddharthah:2	Lex. siddharthah (Mvy 49); rgyalbu — „Prinz
-skam	skam	2	1	0	none	skam:2	(Mvy 5341); skam par ¬~ = ucchusyate „es
-snani	snaṅi	2	1	0	none	snaṅi:2	Lex. ¬~ pa =däru — pa Zes snaṅi „erscheint
-span	spaṅ	2	1	0	none	spaṅ:2	Lex. khri ti sin spaṅ rtsi (gYu 293,16).
-sramanas	śramanas	2	1	0	none	śramanas:2	einschließlich der śramanas und Brah-
-sras	sras	2	1	0	none	sras:2	rgyal ba’i thugs kyi sras = jinaurasah (Mvy
-sridharasena	śridharasena	2	1	0	none	śridharasena:2	dPal ’dzin sde [d. i. śridharasena] | Jamspar/Wayman 1992 [Vloc]
-srijnana	śrijnäna	2	1	0	none	śrijnäna:2	དཱ་པཾ་ཀ་ར་ཤྲི་དྷཱ་ན་ di pam ka ra śrijnäna auch di
-srin	sriṅ	2	1	0	none	sriṅ:2	Lex. sriṅ mo’i Ze sa „resp. für Schwester“
-sten	steṅ	2	1	0	none	steṅ:2	Lex. - pa = Zin tha ba’i steṅ gi rtswa ram
-suci	śuci	2	1	0	none	śuci:2	Lex. śuci (Tshe 532); ’od kyi snan ba „Lichtschein“ (brDa).
+parvasadha	pārvasādha	2	1	0	none	pārvasādha:2	ein Naksatra, skt. pārvasādha.
+patah	patah	2	1	0	none	patah:2	(Dagy); dar ~ = patah (Mvy 6018); dar gyi
+pati	pāti	2	1	0	none	pāti:2	"fen"" (brDa, ähnl. Dagy); sman — = pāti-"
+pinayatakarnah	pināyatakarnah	2	1	0	none	pināyatakarnah:2	(Dagy); > stug cin rin ba = pināyatakarnah
+prafixe	Prāfixe	2	1	0	none	Prāfixe:2	"für skt. Prāfixe wie 4- ""hin"", sam- ""zusam-"
+prajnasenas	Prajnāsenas	2	1	0	none	Prajnāsenas:2	— 1988: Nachweis der Wiedergeburt. Prajnāsenas 'Jig rten pha rol sgrub pa. Ein früher tibetischer
+prajnavarman	Prajnāvarman	2	1	0	none	Prajnāvarman:2	śes 731) go cha [d. i. Prajnāvarman] 1 Schneiper 1993 [ViśT]
+prajnavarmans	Prajnāvarmans	2	1	0	none	Prajnāvarmans:2	Visesastava mit Prajnāvarmans Kommentar. Nach dem tibetischen Tanjur hg. und übers.
+prajnayate	prajnāyate	2	1	0	none	prajnāyate:2	"prajnāyate ""man weiß nicht einmal von"
+prasadapratibhodbhava	Prasādapratibhodbhava	2	1	0	none	Prasādapratibhodbhava:2	Ppu Mätrceta: Prasādapratibhodbhava (Satapancäsatka). Ed.: SHACKLETON Barney 1951.
+pratimoksasutrapaddhati	Pratimoksasūtrapaddhati	2	1	0	none	Pratimoksasūtrapaddhati:2	So so thar pa'i mdo'i gäun 'grel / Pratimoksasūtrapaddhati. Ed.: Derge-Tanjur, 'Dul ba,
+pulinam	pulinam	2	1	0	none	pulinam:2	Lex. pulinam (Mvy 7109); rgya mtsho'i
+rahu	Rāhu	2	1	0	none	Rāhu:2	2. N. von Buddhas, skt. Rāhu bzw. Rähula
+rahula	Rāhula	2	1	0	none	Rāhula:2	Säkyamuni, skt. Rāhula.
+raja	rāja	2	1	0	none	rāja:2	"rgyal pos — ""vom König ausgesucht"" = rāja-"
+rajatam	rajatam	2	1	0	none	rajatam:2	Lex. rajatam (Mvy 9540, Abt. nad kyi min);
+rajyam	rājyam	2	1	0	none	rājyam:2	Lex. rgyal po'i srid dam thabs = rājyam
+rans	rañs	2	1	0	none	rañs:2	Lex. yod par ~ lta bu yi ma rañs pa'i tshig
+ratnam	ratnam	2	1	0	none	ratnam:2	"Lex. ratnam ""Juwel"" (Mvy 6476); — la dkon"
+raudrah	raudrah	2	1	0	none	raudrah:2	Lex. Ze gnag pa'am ~ =raudrah (Mvy 2947).
+rudhiram	rudhiram	2	1	0	none	rudhiram:2	"Lex. rudhiram ""Blut"" (Mvy 4033); sa yi ~"
+saddha	saddha	2	1	0	none	saddha:2	(Mvy 4320); dam pa'i chos kyi ~ = saddha-
+sadhana	Sādhana	2	1	0	none	Sādhana:2	"Lex. ~ pa = ~ thabs - pa ""ein Sādhana voll-"
+sahabhavyata	sahabhavyatā	2	1	0	none	sahabhavyatā:2	bcas pa, skt. sahabhavyatā (Mvy 6750).
+salilam	salilam	2	1	0	none	salilam:2	Lex. 70 bag can nam = pa = salilam (Mvy
+samkhya	Sāmkhya	2	1	0	none	Sāmkhya:2	3. phil. t. t. im Sāmkhya, skt. ahamkara.
+sanavasika	śänaväsika	2	1	0	none	śänaväsika:2	"den edlen śänaväsika aus śrävasti ein"" (Tär"
+sartha	sārtha	2	1	0	none	sārtha:2	(skt. sārtha Karawane), die Lebewesen, die
+sarva	sarvā	2	1	0	none	sarvā:2	chod pa dan — thams cad daṅ bral ba = sarvā-
+sarvatobhadra	sarvatobhadrā	2	1	0	none	sarvatobhadrā:2	3, eine Pflanze. - skt. sarvatobhadrā Gmelina
+saryaparivesah	sāryaparivesah	2	1	0	none	sāryaparivesah:2	"= sāryaparivesah ""Hof um die Sonne"" (Mvy"
+sasanam	Sāsanam	2	1	0	none	Sāsanam:2	Lex. bsian pa'am - pa = Sāsanam (Mvy
+sesa	śesa	2	1	0	none	śesa:2	"= lhag ste Zes pa'i don, skt. śesa ""Rest"" (Ishe"
+siddhasvamin	siddhasvāmin	2	1	0	none	siddhasvāmin:2	siddhasvāmin: Visesastava. Ed.: SCHNEIDER 1993, pp. 52-73.
+skam	skam	2	1	0	none	skam:2	"(Mvy 5341); skam par - = ucchusyate ""es"
+snobs	sñobs	2	1	0	none	sñobs:2	Lex. ~ pa = lag pa sogs kyis sñobs pa'i bya ba
+snoms	sñoms	2	1	0	none	sñoms:2	"Lex. kha gan ~ che chun sñoms ""ein Bissen"
+sphare	Sphāre	2	1	0	none	Sphāre:2	2. Sphāre, Bereich.
+sran	sraṅ	2	1	0	none	sraṅ:2	"Lex. bźad gad chen po (brDa, Dagy). ldan (r. gdan) gñer ~ ... la sraṅ 0,3 ""für den"
+sras	sras	2	1	0	none	sras:2	rgyal ba' thugs kyi sras = jinaurasab (Mvy
+sravana	śravana	2	1	0	none	śravana:2	1. ein Mondhaus, skt. śravana.
+sridhana	śridhana	2	1	0	none	śridhana:2	"[""śridhana?] genannte Schatzmeister des in-"
+subs	śubs	2	1	0	none	śubs:2	Lex. sems can Zig gi śubs sam rus pa Zig ste che
+suci	śuci	2	1	0	none	śuci:2	"Lex. śuci (Ishe 532); 'od kyi snan ba ""Licht-"
 tagaram	tagaram	2	1	0	none	tagaram:2	Lex. tagaram (Mvy 5791), vayanam (Mvy
-talam	talam	2	1	0	none	talam:2	Lex. talam (Mvy 6876); logs (brDa); phyogs
-tsam	tsam	2	1	0	none	tsam:2	Lex. kayasamsargah (Mvy 9467); ~ tsam =
-tsaryas	tsaryas	2	1	0	none	tsaryas:2	bha ta ä tsaryas ... slar yari lha ༨ par byas
-tshab	tshab	2	1	0	none	tshab:2	Lex. yuvaraja (Mvy 3673); sku tshab „Stell-
+taishu	taishū	2	1	0	none	taishū:2	hon'yaku myögi taishū. Sanskrit-Tibetan-Mongolian dictionary of Buddhist terminology.
+tantram	tantram	2	1	0	none	tantram:2	Lex. srags kyi ~ &tantram (Mvy 4235); mdo
+tasmat	tasmāt	2	1	0	none	tasmāt:2	"etwas (für skt. tasmāt) fürchten"" (Bca"
+tathata	tathatā	2	1	0	none	tathatā:2	"tathatā ""die Soheit ist nur diese eine"" (Mvy"
+tattva	tattva	2	1	0	none	tattva:2	Lex. tattva (Ak 329.117); ham pa zes pa
+tavat	tāvat	2	1	0	none	tāvat:2	du erst einmal (skt. tāvat) hinausgehst,
+thin	thiṅ	2	1	0	none	thiṅ:2	ཐིང་ཡུག་ thiṅ yug eine hohe Zahl.
+tilottama	Tilottamā	2	1	0	none	Tilottamā:2	skt. Tilottamā, vgl. Ithig le'
+tsam	tsam	2	1	0	none	tsam:2	Lex. käyasamsargah (Mvy 9467); ~ tsam =
+tshab	tshab	2	1	0	none	tshab:2	"Lex. yuvaraja (Mvy 3673); sku tshab ""Stell-"
+tsham	tsham	2	1	0	none	tsham:2	nā (Mvy 5360); tho 'tsham pa = mtho 'tsham
+tvas	tvas	2	1	0	none	tvas:2	"tvas ein, damit sie das Land beschützten"""
+ulka	ulkā	2	1	0	none	ulkā:2	"(skt. ulkā) des Dharma angezündet"" (Suv"
+unnatam	unnatam	2	1	0	none	unnatam:2	unnatam (Mvy 5275); ~ ba = tunga (in Mvy
 upalaksanam	upalaksanam	2	1	0	none	upalaksanam:2	= upalaksanam (Mvy 7469).
-uttarottaram	uttarottaram	2	1	0	none	uttarottaram:2	Lex. uttarottaram „immer höher“ (Mvy
-vaisravanas	Vaiśravanas	2	1	0	none	Vaiśravanas:2	bran „Ort der Yaksas und Vaiśravanas
+upaya	upāya	2	1	0	none	upāya:2	Lex. ~ kyi pha rol tu phyin pa = upāya-
+utsavah	utsavah	2	1	0	none	utsavah:2	Lex. utsavah (Mvy 5679); thugs spro (brDa,
+vaisravanas	Vaiśravanas	2	1	0	none	Vaiśravanas:2	"bran ""Ort der Yaksas und Vaiśravanas"
 vajrasattvas	Vajrasattvas	2	1	0	none	Vajrasattvas:2	Vajrasattvas.
 varnab	varnab	2	1	0	none	varnab:2	Lex. varnab (Mvy 2015).
-vedam	vedam	2	1	0	none	vedam:2	(Mvy 6377); 779 byed — tu ug = vedam
-vicaksanah	vicaksanah	2	1	0	none	vicaksanah:2	muntern anderer geschickt sind“ (Bca (Mvy 2896), vicaksanah (Mvy 2894),
+varsabhvi	varsābhvi	2	1	0	none	varsābhvi:2	Lex. varsahvi (7. varsābhvi) (Ak 66.38);
+vicaksanah	vicaksanah	2	1	0	none	vicaksanah:2	(Mvy 2896), vicaksanah (Mvy 2894),
 vikasitam	vikasitam	2	1	0	none	vikasitam:2	vikasitam (Mvy 6234); me tog - ba
-vinasvaram	vinasvaram	2	1	0	none	vinasvaram:2	(Dagy); ’jig pa’i ~ can = vinasvaram „vergänglich“ (Mvy 7502).
+vinasvaram	vinasvaram	2	1	0	none	vinasvaram:2	"(Dagy); ig pa'i ~ can = vinasvaram ""ver-"
+vivartakalpah	vivartakalpah	2	1	0	none	vivartakalpah:2	vivartakalpah (Mvy 8280); kalpa'an — zes
 vrddhah	vrddhah	2	1	0	none	vrddhah:2	vrddhah (Mvy 7656).
-vyasapariprccha	vyäsapariprcchä	2	1	0	none	vyäsapariprcchä:2	pa = vyäsapariprcchä N. eines Textes (Mvy
-vyayah	vyayah	2	1	0	none	vyayah:2	(brDa); god pa = vyayah (Mvy 7231); ~ pa =
+vrttamalastuti	Vrttamālāstuti	2	1	0	none	Vrttamālāstuti:2	"HAHN, Michael 2008: ""The Sanskrit text of Jhānasrimitra's Vrttamālāstuti."" In:"
+yama	yāma	2	1	0	none	yāma:2	skt. yāma bzw. prahara; ~ phyed ein
+yana	yāna	2	1	0	none	yāna:2	Lex. - pa = yāna (Ak 194.18); son ba'am
+yatha	yathā	2	1	0	none	yathā:2	mgo ~ pa bin = tad yathā tālo mastaka-

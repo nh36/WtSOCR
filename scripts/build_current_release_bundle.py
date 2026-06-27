@@ -22,15 +22,15 @@ from typing import Iterable
 
 
 DEFAULT_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/postprocess_google_attribution_refined_qa_20260605T072002Z/wts_1_34",
-    "wts_35_51": "work/postprocess_google_attribution_refined_qa_20260605T072002Z/wts_35_51",
-    "wts_8_b": "work/tibetan_sigla_registry_cleanup_20260627T000000Z/wts_8_b",
-    "wts_9_m": "work/tibetan_sigla_registry_cleanup_20260627T000000Z/wts_9_m",
+    "wts_1_34": "work/current_release_four_volume_refresh_20260627T170423Z/wts_1_34",
+    "wts_35_51": "work/current_release_four_volume_refresh_20260627T170423Z/wts_35_51",
+    "wts_8_b": "work/current_release_four_volume_refresh_20260627T170423Z/wts_8_b",
+    "wts_9_m": "work/current_release_four_volume_refresh_20260627T170423Z/wts_9_m",
 }
 
 DEFAULT_DIAGNOSTIC_SOURCES: dict[str, str] = {
-    "wts_8_b": "work/tibetan_sigla_registry_cleanup_20260627T000000Z/tibetan_cleanup_diagnostics_wts_8_b",
-    "wts_9_m": "work/tibetan_sigla_registry_cleanup_20260627T000000Z/tibetan_cleanup_diagnostics_wts_9_m",
+    "wts_8_b": "work/current_release_four_volume_refresh_20260627T170423Z/tibetan_cleanup_diagnostics_wts_8_b",
+    "wts_9_m": "work/current_release_four_volume_refresh_20260627T170423Z/tibetan_cleanup_diagnostics_wts_9_m",
 }
 
 QA_SUFFIXES = (
@@ -319,8 +319,8 @@ def write_manifest(
             "",
             "```bash",
             "python3 scripts/build_current_release_bundle.py",
-            "python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_qa_packet_v6.py scripts/report_unresolved_buckets.py scripts/build_current_release_bundle.py",
-            "python3 -m pytest tests/test_postprocess_regressions.py -q",
+            "python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_tibetan_cleanup_diagnostics.py scripts/report_unresolved_buckets.py scripts/build_qa_packet_v6.py scripts/build_current_release_bundle.py",
+            "python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q",
             "```",
             "",
             "If QA artifacts become too large to keep expanded in Git, rebuild with:",

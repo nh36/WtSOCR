@@ -1,27 +1,38 @@
 page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
-246	1	1321	headword_line	phaṅ	phan	B	discover_medium_context	0	རྡོ་འཕང་ཀོང་ rdo 'phaṅ koṅ
-18	85	70	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	ste „die śrävakas Gautamas sind grausam und
-20	99	75	german_prose	sitacchatträ	sitacchattrā	B	sanskrit_char_normalize	0	für skt. sitacchatträ Anethum Sowa Roxb.
-28	55	103	german_prose_with_translit	śrävaka	śrāvaka	B	sanskrit_char_normalize	0	von einem śrävaka zu disziplinieren?“ (Prav
-49	82	214	german_prose	mmahäsattva	mmahāsattva	B	sanskrit_char_normalize	0	würdig, großes Wesen, skt. mmahäsattva; auch
-56	88	273	latin_other	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	bzw. Kämeśvaras.
-111	44	729	german_prose_with_translit	śrävakas	śrāvakas	B	sanskrit_char_normalize	0	glanzsütra, das alle śrävakas und Pratycka-
-115	58	753	german_prose_with_translit	śriläbha	śrilābha	B	sanskrit_char_normalize	0	der Ehrwürdige śriläbha“ (Tär 54,2).
-141	88	882	german_prose_with_translit	tadyathänusrūyate	tadyathānusrūyate	B	sanskrit_char_normalize	0	des gehört (skt. tadyathänusrūyate): der Bo-
-144	23	886	german_prose	evärtham	evārtham	B	sanskrit_char_normalize	0	Lex. don — 22 imam evärtham „eben diese Sache“ (in Mvy 6372).
-159	12	930	german_prose	asamjräisattva	asamjrāisattva	B	sanskrit_char_normalize	0	reich von Gottheiten, skt. asamjräisattva.
-196	38	1033	german_prose_with_translit	Kämäśoka	Kāmāśoka	B	sanskrit_char_normalize	0	ein König, skt. Kämäśoka.
-239	76	1239	german_prose_with_translit	śrävaka-Mönchen	śrāvaka-Mönchen	B	sanskrit_char_normalize	0	breya re mchod do „sie gewährten in Vajräsana je 500 śrävaka-Mönchen, in Nälan-
-301	29	1589	german_prose_with_translit	Buddhasöh	Buddhasoh	B	sanskrit_char_normalize	0	die Disziplin (skt. samvara) der Buddhasöh-
-390	12	1934	german_prose_with_translit	adhyätmagate	adhyātmagate	B	sanskrit_char_normalize	0	gehen (skt. adhyätmagate nabhijnä)“ (Käsy
-405	30	2010	latin_other	vyädhyavasthä	vyādhyavasthā	B	sanskrit_char_normalize	0	heitszustand (skt. vyädhyavasthä) usw. ge-
-436	24	2207	german_prose_with_translit	śrotaäpanna	śrotaāpanna	B	sanskrit_char_normalize	0	Stufen] vom śrotaäpanna bis zum Arhat als
-463	23	2285	german_prose	yathäsämarthyam	yathāsāmarthyam	B	sanskrit_char_normalize	0	(skt. yathäsämarthyam) will ich die Merk-
-549	68	2639	latin_other	śrotradhätuh	śrotradhātuh	B	sanskrit_char_normalize	0	mam par śes pa’i kbams = śrotradhätuh, sa-
-549	72	2639	german_prose_with_translit	śroträyatanamı	śrotrāyatanami	B	sanskrit_char_normalize	0	min); — ba’i skye mched = śroträyatanamı „das
-721	31	3560	german_prose_with_translit	śära	śāra	B	sanskrit_char_normalize	0	„er läßt viele tapfere (skt. śära) und heldenhafte Männer erscheinen“ (Rgs 20.36); —
-725	100	3597	german_prose_with_translit	Siddhaikavframahäta	Siddhaikavframahāta	B	sanskrit_char_normalize	0	ein buddh, Text, skt. Siddhaikavframahäta-
-843	6	4291	german_prose_with_translit	kärcikā	kārcikā	B	sanskrit_char_normalize	0	la sogs stobs skyed ciù (merr) „frühe Biestmilch, eingedickte Milch (skt. kärcikā), spä-
-901	13	4598	latin_other	Bnddhävatamsakanämamahävai	Bnddhāvatamsakanāmamahāvai	B	sanskrit_char_normalize	0	do, skt. Bnddhävatamsakanämamahävai-
-999	30	5262	german_prose_with_translit	śrävasti	śrāvasti	B	sanskrit_char_normalize	0	nitan 2/0// (7// — nas „Mahäkätyäyana gelangte letzten Endes nach śrävasti“ (Udr 44,13);
-1028	40	5443	german_prose_with_translit	cärnayitva	cārnayitva	B	sanskrit_char_normalize	0	(skt. cärnayitva) hat“ (Suv 46,11); — dan /
+21	23	73	headword_line	ishod	ishal	B	discover_medium_context	0	གདུགས་ཚོད་ gdugs ishod Mittagessen, Mittags-
+247	14	1427	german_prose_with_translit	Irdo'i	lrdo'i	B	initial_i_manual_context_review	0	NEN rdo yi säih po Irdo'i sin po.
+251	25	1460	german_prose_with_translit	Irgyu'i	lrgyu'i	B	initial_i_manual_context_review	0	Tchab nag und Irgyu'i bon.
+722	71	3582	example_tibetan_latin	dera-Iha	dera-lha	B	confusable_context	0	དཔའ་སྙ 3 ha npr. eine dera-Iha-
+771	39	3939	headword_line	l'spoñń	l'spoṅń	B	confusable_context	0	སྤངས་ 'spaṅs pf. zu l'spoñń.
+896	15	4642	headword_line	gyañńs	gyaṅńs	B	confusable_context	0	ཕར་འགྱང་ phar 'gaṅ auch phar 'gyañńs Auf-
+56	65	281	latin_other	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	bzw. Kämeśvaras.
+118	2	784	german_prose_with_translit	Astasāhasrikāprajnāpara	Astasāhasrikāprajñāpara	B	sanskrit_jn_cluster_contextual	0	haupten, es sei das Astasāhasrikāprajnāpara-
+158	34	974	german_prose_with_translit	pratikäülasamjnä	pratikāulasamjñā	B	sanskrit_jn_cluster_contextual	0	"pa — = āhāre pratikäülasamjnä ""beim Essen"
+159	26	977	latin_other	asamjnāsamāpattih	asamjñāsamāpattih	B	sanskrit_jn_cluster_contextual	0	"par 'jug pa = asamjnāsamāpattih ""Erlangung"
+173	78	1010	german_prose_with_translit	Prajnāpāramitā-Gelehrten	Prajñāpāramitā-Gelehrten	B	sanskrit_jn_cluster_contextual	0	"Prajnāpāramitā-Gelehrten"" (Nel 25b6 Gl.);"
+243	55	1386	german_prose_with_translit	Buddhajnānapāda	Buddhajñānapāda	B	sanskrit_jn_cluster_contextual	0	"""der große Vajrācārya Buddhajnānapāda zu-"
+244	48	1397	latin_other	sarvatathāgatavajrābhisckajniā	sarvatathāgatavajrābhisckajñiā	B	sanskrit_jn_cluster_contextual	0	phyag rgya = sarvatathāgatavajrābhisckajniā-
+301	24	1694	german_prose_with_translit	Buddhasöh	Buddhasoh	B	sanskrit_char_normalize	0	die Disziplin (skt. samvara) der Buddhasöh-
+371	21	1895	german_prose_with_translit	śrävaka-Mönchen	śrāvaka-Mönchen	B	sanskrit_char_normalize	0	jräsana je 500 śrävaka-Mönchen, in Nälan-
+371	31	1895	german_prose_with_translit	śri-Nälanda	śri-Nālanda	B	sanskrit_char_normalize	0	thek von śri-Nälanda, ein Kloster, in dem es
+378	11	1933	german_prose	Kämesvaras	Kāmesvaras	B	sanskrit_char_normalize	0	2. Beiname Märas bzw. Kämesvaras.
+549	60	2689	german_prose_with_translit	srotravijnānadhātuh	srotravijñānadhātuh	B	sanskrit_jn_cluster_contextual	0	"bdadhātub, srotravijnānadhātuh ""Bereich des"
+572	75	2842	german_prose_with_translit	ktijnānadarsanaskandhab	ktijñānadarsanaskandhab	B	sanskrit_jn_cluster_contextual	0	"ktijnānadarsanaskandhab ""die Gruppe 'Wis-"
+576	63	2859	german_prose_with_translit	vintlakasamjnä	vintlakasamjñā	B	sanskrit_jn_cluster_contextual	0	"vintlakasamjnä ""die Vorstellung einer blauen"
+587	44	2905	german_prose_with_translit	vyādhmātakasamjnā	vyādhmātakasamjñā	B	sanskrit_jn_cluster_contextual	0	"= vyādhmātakasamjnā ""Wahrnehmung eines"
+597	13	2940	german_prose_with_translit	caksurvijnānadhatuh	caksurvijñānadhatuh	B	sanskrit_jn_cluster_contextual	0	"— pa'i khams = caksurvijnānadhatuh ""Be-"
+597	18	2940	german_prose_with_translit	vijnānāhārah	vijñānāhārah	B	sanskrit_jn_cluster_contextual	0	"sGra 270); — pa'i zas = vijnānāhārah ""die"
+602	22	2977	german_prose_with_translit	vijnānānantyāyatanam	vijñānānantyāyatanam	B	sanskrit_jn_cluster_contextual	0	"mched = vijnānānantyāyatanam ""der Bereich"
+613	68	3022	german_prose_with_translit	navijnānadhātuh	navijñānadhātuh	B	sanskrit_jn_cluster_contextual	0	"navijnānadhātuh ""Bereich des Riechens, des"
+668	50	3249	german_prose_with_translit	kasamjnä	kasamjñā	B	sanskrit_jn_cluster_contextual	0	"kasamjnä ""die Wahrnehmung einer rot ange-"
+680	20	3303	german_prose_with_translit	ucchanganäam	ucchanganāam	B	sanskrit_char_normalize	0	bya'o = Satam ucchanganäam bahnlani nämo-
+867	14	4456	german_prose_with_translit	Prajnāparamitāsātra	Prajñāparamitāsātra	B	sanskrit_jn_cluster_contextual	0	Prajnāparamitāsātra, das der Vater für Glin
+897	6	4652	german_prose_with_translit	Prajnāpāramitāsātras	Prajñāpāramitāsātras	B	sanskrit_jn_cluster_contextual	0	die Prajnāpāramitāsātras; dein pa
+897	10	4652	german_prose_with_translit	Prajnāpāramitā-Gelehrten	Prajñāpāramitā-Gelehrten	B	sanskrit_jn_cluster_contextual	0	"der Prajnāpāramitā-Gelehrten"" (Nel 256);"
+897	19	4652	german_prose_with_translit	Prajnāpāramitāsūtras	Prajñāpāramitāsūtras	B	sanskrit_jn_cluster_contextual	0	Prajnāpāramitāsūtras kannten, an das obere
+899	65	4664	german_prose_with_translit	Prajnaptivādins	Prajñaptivādins	B	sanskrit_jn_cluster_contextual	0	"tiyas, die Prajnaptivādins und die Caitikas"""
+901	22	4669	german_prose_with_translit	Aryaratnakäta	Aryaratnakāta	B	sanskrit_char_normalize	0	Aryaratnakäta sind zusammengerechnet 49,
+1005	14	5329	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	deren zu bewirken, gibt es im Sanisära kein
+1031	69	5508	german_prose_with_translit	prajnāparamitāsiitra	prajñāparamitāsiitra	B	sanskrit_jn_cluster_contextual	0	"hasrikä[prajnāparamitāsiitra]"" (Nel 12a5); lo"
+1059	8	5659	german_prose_with_translit	paryastikäkrtäyäglänäya	paryastikākrtāyāglānāya	B	sanskrit_char_normalize	0	la chos mi bad = na paryastikäkrtäyäglänäya
+1078	83	5777	german_prose_with_translit	Yasahprajnā	Yasahprajñā	B	sanskrit_jn_cluster_contextual	0	"""die edlen Arhantis Yasahprajnā, Schya-su-ta"

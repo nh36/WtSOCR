@@ -1,50 +1,52 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/postprocess_google_attribution_refined_qa_20260605T072002Z/wts_35_51`
-- unresolved confusable pairs: `98`
-- promote candidates (conservative): `5`
-- hold candidates: `93`
+- run_dir: `work/current_release_four_volume_refresh_20260627T170423Z/wts_35_51`
+- unresolved confusable pairs: `177`
+- promote candidates (conservative): `8`
+- hold candidates: `169`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
 |---|---|---|---:|---:|---|
-|wts_35_51|$in|śin|15|5|-|
-|wts_35_51|Vi$|Viś|13|5|-|
-|wts_35_51|mañ|maṅ|8|4|-|
-|wts_35_51|rañ|raṅ|7|4|-|
-|wts_35_51|Vi$T|ViśT|6|4|-|
+|wts_35_51|$in|śin|17|6|-|
+|wts_35_51|moñs|moṅs|16|5|-|
+|wts_35_51|bañ|baṅ|11|5|-|
+|wts_35_51|la'añ|la'aṅ|9|4|-|
+|wts_35_51|Vi$|Viś|8|4|-|
+|wts_35_51|gsañ|gsaṅ|7|4|-|
+|wts_35_51|zañs|zaṅs|6|4|-|
+|wts_35_51|IhK|lhK|5|4|-|
 
 ## Top Hold Candidates
 |volume|from|to|unresolved|score|reason|
 |---|---|---|---:|---:|---|
-|wts_35_51|Y$|YŚ|33|3|other_char_map|
-|wts_35_51|P$|PŚ|24|2|other_char_map|
-|wts_35_51|G$-H|GŚ-H|18|2|other_char_map|
-|wts_35_51|pa’I|pa’l|5|3|-|
-|wts_35_51|Bu-$|Bu-ś|3|3|-|
+|wts_35_51|P$|PŚ|36|3|other_char_map|
+|wts_35_51|Y$|YŚ|27|3|other_char_map|
+|wts_35_51|G$-H|GŚ-H|7|1|other_char_map|
+|wts_35_51|Io|lo|5|3|-|
+|wts_35_51|Bu-$|Bu-ś|4|3|-|
+|wts_35_51|añ|aṅ|4|3|-|
+|wts_35_51|byuñń|byuṅń|4|3|-|
+|wts_35_51|gsuñs|gsuṅs|4|3|-|
+|wts_35_51|niñ|niṅ|4|3|-|
+|wts_35_51|riñs|riṅs|4|3|-|
+|wts_35_51|Ich'|lch'|4|2|-|
+|wts_35_51|yIn|yln|4|2|-|
 |wts_35_51|Ge-Iha|Ge-lha|3|3|-|
 |wts_35_51|Ih|lh|3|3|-|
-|wts_35_51|byanı|byani|3|2|-|
-|wts_35_51|$ambh|śambh|2|3|low_count|
-|wts_35_51|IhK|lhK|2|3|low_count|
-|wts_35_51|Ihgr|lhgr|2|3|low_count|
-|wts_35_51|ciñ|ciṅ|2|3|low_count|
-|wts_35_51|gNam-Iha|gNam-lha|2|3|low_count|
-|wts_35_51|gYu-Iha|gYu-lha|2|3|low_count|
-|wts_35_51|gsuñs|gsuṅs|2|3|low_count|
-|wts_35_51|lañ|laṅ|2|3|low_count|
-|wts_35_51|miñ|miṅ|2|3|low_count|
-|wts_35_51|poñ|poṅ|2|3|low_count|
-|wts_35_51|sañ|saṅ|2|3|low_count|
-|wts_35_51|yIn|yln|2|2|low_count|
-|wts_35_51|I’|l’|2|1|low_count|
-|wts_35_51|Samädhı|Samädhi|2|0|german_risk,low_count|
-|wts_35_51|samädhıh|samädhih|2|0|german_risk,low_count|
-|wts_35_51|Ihe|lhe|1|3|low_count|
-|wts_35_51|KIh|Klh|1|3|low_count|
+|wts_35_51|Ihgr|lhgr|3|3|-|
+|wts_35_51|geuñ|geuṅ|3|3|-|
+|wts_35_51|kluñ|kluṅ|3|3|-|
+|wts_35_51|phyuñń|phyuṅń|3|3|-|
+|wts_35_51|rañs|raṅs|3|3|-|
+|wts_35_51|sgañ|sgaṅ|3|3|-|
+|wts_35_51|snañń|snaṅń|3|3|-|
+|wts_35_51|dGa'-Idan|dGa'-ldan|3|2|-|
+|wts_35_51|r'Isa|r'lsa|3|2|-|
+|wts_35_51|Ki-kañ|Ki-kaṅ|2|3|low_count|
+|wts_35_51|Sañs|Saṅs|2|3|low_count|
 
 ## Residual Artifact Buckets
-- `wts_35_51:dotless_i_artifact`: `200` distinct tokens
 - `wts_35_51:initial_confusable_I`: `200` distinct tokens
-- `wts_35_51:umlaut_translit_candidate`: `200` distinct tokens
-- `wts_35_51:dollar_artifact`: `2` distinct tokens
+- `wts_35_51:umlaut_translit_candidate`: `157` distinct tokens
+- `wts_35_51:dollar_artifact`: `3` distinct tokens
