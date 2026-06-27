@@ -1,0 +1,240 @@
+source_queue	volume	page	line	from_token	proposed_target	reason	applied	context_excerpt	confidence	suggested_action
+review_queue	wts_8_b	55	60	dnantaryamärgab	dnantaryamārgab	sanskrit_char_normalize	0	"= .dnantaryamärgab ""Weg ohne Hindernisse"""	review	review
+review_queue	wts_8_b	130	72	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"er aus dem Sanisära vertrieben"" (Suv 60,#);"	review	review
+review_queue	wts_8_b	136	90	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"— barrigsso ""es ist angebracht, dem Sanisära"	review	review
+review_queue	wts_8_b	153	26	Sarnsära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"fängnis des Sarnsära"" (gZer 174,1); las dge"	review	review
+review_queue	wts_8_b	218	52	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"tendste im Sanisära ist!"" (Ppu 112b); boddn"	review	review
+review_queue	wts_8_b	238	18	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"den des Sanisära beseitigt"" (ThK 2: 525,3);"	review	review
+review_queue	wts_8_b	490	12	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	"(metr.) ""das Ergebnis ist, daß Sanisära und"	review	review
+review_queue	wts_8_b	517	27	Sanisära	Saṃsāra	sanskrit_promoted_context_allowlist	0	nis der schauerlichen Wüiste des Sanisära be-	review	review
+corrected_text_scan	wts_8_b	3	23	Pramäna		residual_sanskrit_like_damage		(Madhyamaka, Prajñāpāramitā, Vinaya, Abhidharma und Pramäna) und zahlreiche,	low	review
+corrected_text_scan	wts_8_b	5	29	Erzählstoffe		residual_sanskrit_like_damage		Buddhismus promoviert. Die Doktorarbeit Dre Erzählstoffe des Mālasarvāstivāda	low	review
+corrected_text_scan	wts_8_b	7	20	Erzählstoffe		residual_sanskrit_like_damage		Die Erzählstoffe des Mūlasarvāstivādavinaya, analysiert auf Grund der tibe-	low	review
+corrected_text_scan	wts_8_b	13	59	wärmenden		residual_sanskrit_like_damage		"Maksika, wärmenden Heilmitteln"" (Yś 45a);"	low	review
+corrected_text_scan	wts_8_b	15	30	Vanapäla		residual_sanskrit_like_damage		"Vanapäla, ein Sohn des Königs Dharmapāla"""	low	review
+corrected_text_scan	wts_8_b	16	24	romakäpah		residual_sanskrit_like_damage		Lex. romakäpah (Mvy 4052, 6836).	low	review
+corrected_text_scan	wts_8_b	19	19	Nähe		residual_sanskrit_like_damage		"""als der Bodhisattva in die Nähe von Bena-"	low	review
+corrected_text_scan	wts_8_b	20	66	Tär		residual_sanskrit_like_damage		"beherrscht Mu-ñañ"" (Tär 200,12)."	low	review
+corrected_text_scan	wts_8_b	23	28	gopälah		residual_sanskrit_like_damage		Lex. gopälah (Mvy 3827).	low	review
+corrected_text_scan	wts_8_b	24	22	mätulungam		residual_sanskrit_like_damage		Lex. mätulungam (Mvy 5810).	low	review
+corrected_text_scan	wts_8_b	26	6	sorgfältig		residual_sanskrit_like_damage		"klug, umsichtig und sorgfältig war"" (K1 ña"	low	review
+corrected_text_scan	wts_8_b	29	13	Vyäsa		residual_sanskrit_like_damage		Vyäsa dabei war, mit Käśisundarinandä un-	low	review
+corrected_text_scan	wts_8_b	29	13	Käśisundarinandä		residual_sanskrit_like_damage		Vyäsa dabei war, mit Käśisundarinandä un-	low	review
+corrected_text_scan	wts_8_b	30	43	Tär		residual_sanskrit_like_damage		"Auszeichnung"" (Tär 4,22); ~ gu yaṅ la zla"	low	review
+corrected_text_scan	wts_8_b	34	68	jävitam		residual_sanskrit_like_damage		Lex. jävitam (Mvy 4999); — rgyug pa =	low	review
+corrected_text_scan	wts_8_b	37	5	parisandavärikahb		residual_sanskrit_like_damage		Lex. parisandavärikahb (Mvy 9072).	low	review
+corrected_text_scan	wts_8_b	39	72	fäß		residual_sanskrit_like_damage		"fäß für chaṅ; ban ist chinesisch"" (brDa)."	low	review
+corrected_text_scan	wts_8_b	40	31	geschätzt		residual_sanskrit_like_damage		"geschätzt hatte"" (In5 W12); ~ ñid rjes 'baris"	low	review
+corrected_text_scan	wts_8_b	52	74	Tär		residual_sanskrit_like_damage		"Rundgang in Vajrāsana"" (Tär 28,21); vias"	low	review
+corrected_text_scan	wts_8_b	54	89	Umstände		residual_sanskrit_like_damage		"~ maṅ ba (metr.) ""schlechte Umstände und"	low	review
+corrected_text_scan	wts_8_b	56	73	vollständig		residual_sanskrit_like_damage		"vollständig gut erläutert"" (Mvy 1307)."	low	review
+corrected_text_scan	wts_8_b	56	73	erläutert		residual_sanskrit_like_damage		"vollständig gut erläutert"" (Mvy 1307)."	low	review
+corrected_text_scan	wts_8_b	61	10	antaroddänam		residual_sanskrit_like_damage		l.ex. antaroddänam (Mvy 1475).	low	review
+corrected_text_scan	wts_8_b	61	16	Zähnen		residual_sanskrit_like_damage		"ruht zwischen Yamas Zähnen"" (Gś-H 102b);"	low	review
+corrected_text_scan	wts_8_b	62	41	äntariksaväsinah		residual_sanskrit_like_damage		Lex. äntariksaväsinah (sGra 366; Mvy 3077,	low	review
+corrected_text_scan	wts_8_b	67	29	mahäväarsiki		residual_sanskrit_like_damage		Lex. mahäväarsiki (Mvy 6154).	low	review
+corrected_text_scan	wts_8_b	67	43	gemäß		residual_sanskrit_like_damage		Form (rāpadhātu) gemäß der Kosmologie	low	review
+corrected_text_scan	wts_8_b	72	59	präntah		residual_sanskrit_like_damage		"Lex. präntah ""Grenze"" (Mvy 2990, Abt. dben"	low	review
+corrected_text_scan	wts_8_b	73	64	Divyäka-		residual_sanskrit_like_damage		danta Avitarka, Vigatarāgadhvaja, Divyäka-	low	review
+corrected_text_scan	wts_8_b	75	21	Räjagrha		residual_sanskrit_like_damage		von Räjagrha, aufdem Berg Vimalasvabhāva,	low	review
+corrected_text_scan	wts_8_b	76	19	śäriputra		residual_sanskrit_like_damage		ni und der Mönch śäriputra teilten den See	low	review
+corrected_text_scan	wts_8_b	84	56	Gemälde		residual_sanskrit_like_damage		"wie ein farbiges Gemälde"" (Mvy 5214)."	low	review
+corrected_text_scan	wts_8_b	86	56	därika		residual_sanskrit_like_damage		pa grien bśes kyi min); därika (Mvy 3908,	low	review
+corrected_text_scan	wts_8_b	91	19	iksväkur		residual_sanskrit_like_damage		iksväkur näma raja (Mvy 3596).	low	review
+corrected_text_scan	wts_8_b	91	19	näma		residual_sanskrit_like_damage		iksväkur näma raja (Mvy 3596).	low	review
+corrected_text_scan	wts_8_b	91	40	Iksväku		residual_sanskrit_like_damage		"""Nachfahre des Iksväku"" (Mvy 79)."	low	review
+corrected_text_scan	wts_8_b	96	83	näri		residual_sanskrit_like_damage		Lex. str! (Mvy 8767); näri (Mvy 3921); md-	low	review
+corrected_text_scan	wts_8_b	96	84	trgrämah		residual_sanskrit_like_damage		trgrämah (Mvy 3922); skye dman (brDa,	low	review
+corrected_text_scan	wts_8_b	98	17	Tär		residual_sanskrit_like_damage		"ein Sthavira der Mahāsāmghika-Schule"" (Tär"	low	review
+corrected_text_scan	wts_8_b	104	41	lädikab		residual_sanskrit_like_damage		"Lex. lädikab ""Knabe"" (Mvy 4076); byis pa"	low	review
+corrected_text_scan	wts_8_b	108	23	saumilikä		residual_sanskrit_like_damage		Lex. saumilikä (Mvy 9175, Abt. gos /9// 92/?/	low	review
+corrected_text_scan	wts_8_b	108	47	vatsasalä		residual_sanskrit_like_damage		Lex. vatsasalä (Mvy 5618).	low	review
+corrected_text_scan	wts_8_b	108	58	tülapatikä		residual_sanskrit_like_damage		Lex. pati, tülapatikä (Mvy 5873 f., Abt.	low	review
+corrected_text_scan	wts_8_b	108	60	präväarah		residual_sanskrit_like_damage		"8983); präväarah (Mvy 9171, Abt. gos kyi gźi"" z"	low	review
+corrected_text_scan	wts_8_b	111	19	Säntaraksita		residual_sanskrit_like_damage		"(metr.) ""der Bodhisattva [Säntaraksita] und"	low	review
+corrected_text_scan	wts_8_b	111	39	Tär		residual_sanskrit_like_damage		"ativa ist Dharmasāntighosa"" (Tär 162,20)."	low	review
+corrected_text_scan	wts_8_b	112	7	verhält		residual_sanskrit_like_damage		"der sich falsch verhält"" (Gś-H 65a); — med"	low	review
+corrected_text_scan	wts_8_b	116	12	gleichmä-		residual_sanskrit_like_damage		"(brDa); bons che chun sñoms pa ""gleichmä-"	low	review
+corrected_text_scan	wts_8_b	119	33	mächtig		residual_sanskrit_like_damage		"mächtig, wanderten umher"" (Bu-śz 90,3);"	low	review
+corrected_text_scan	wts_8_b	127	69	Ländern		residual_sanskrit_like_damage		[Ländern] Kaschmir, 'Bru-śa und Zan-zun	low	review
+corrected_text_scan	wts_8_b	133	62	Kam-lä-śa		residual_sanskrit_like_damage		es den großen Gletscher Kam-lä-śa, den die	low	review
+corrected_text_scan	wts_8_b	137	9	Dunkelfärben		residual_sanskrit_like_damage		"dhyamikaranam ""das Dunkelfärben"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	149	78	Kriyä-		residual_sanskrit_like_damage		"ren Mancdlalas der Kriyä- und Caryātantras"""	low	review
+corrected_text_scan	wts_8_b	150	11	Tär		residual_sanskrit_like_damage		"und Caryātantras unter"" (Tär 154,16)."	low	review
+corrected_text_scan	wts_8_b	152	43	Kriyä-		residual_sanskrit_like_damage		"des Kriyä- und Caryātantra"" (Tär 82,20);"	low	review
+corrected_text_scan	wts_8_b	152	43	Tär		residual_sanskrit_like_damage		"des Kriyä- und Caryātantra"" (Tär 82,20);"	low	review
+corrected_text_scan	wts_8_b	152	53	$		residual_sanskrit_like_damage		"ist gekommen, heißt es"" (dPe 40,1); $ ra oṅ"	low	review
+corrected_text_scan	wts_8_b	154	19	Tär		residual_sanskrit_like_damage		"nungshūter, ein Hüter für die Tauben"" (Tär"	low	review
+corrected_text_scan	wts_8_b	164	20	Wächter		residual_sanskrit_like_damage		Wächter des nördlichen Tores von Sri Nā-	low	review
+corrected_text_scan	wts_8_b	166	21	Kräfte		residual_sanskrit_like_damage		zehn Kräfte eines Bodhisattva.	low	review
+corrected_text_scan	wts_8_b	169	21	vollständigen		residual_sanskrit_like_damage		Vajrāsana, an der Stelle der vollständigen Er-	low	review
+corrected_text_scan	wts_8_b	169	28	Verständnis		residual_sanskrit_like_damage		Verständnis und Unabhāngigkeit erlangt ha-	low	review
+corrected_text_scan	wts_8_b	171	66	häufig		residual_sanskrit_like_damage		skt. bodhisattva, häufig — sems dpa' chen po	low	review
+corrected_text_scan	wts_8_b	172	61	Anhänger		residual_sanskrit_like_damage		Mahāsattva mit einem Anhänger des Fahr-	low	review
+corrected_text_scan	wts_8_b	175	24	Schatzstätte		residual_sanskrit_like_damage		sich die Schatzstätte des Byani-bdag bKra-śis	low	review
+corrected_text_scan	wts_8_b	176	19	uttarä		residual_sanskrit_like_damage		Lex. uttarä dig (in Mvy 3025); rgyab phyogs	low	review
+corrected_text_scan	wts_8_b	177	28	aufgehäuft		residual_sanskrit_like_damage		"nördlichen Nische aufgehäuft war"" (Bu-śz"	low	review
+corrected_text_scan	wts_8_b	178	76	uttarapiirvä		residual_sanskrit_like_damage		Lex. uttarapiirvä (Mvy 8335).	low	review
+corrected_text_scan	wts_8_b	178	79	Iśäna		residual_sanskrit_like_damage		me des Gottes Iśäna.	low	review
+corrected_text_scan	wts_8_b	180	71	Dämonen		residual_sanskrit_like_damage		"Hexen (skt. dākinī) und Dämonen"" (Bca"	low	review
+corrected_text_scan	wts_8_b	183	11	Mahäyänastiträlamkära		residual_sanskrit_like_damage		den: Mahäyänastiträlamkära, Abhisamayā-	low	review
+corrected_text_scan	wts_8_b	185	78	Acärya		residual_sanskrit_like_damage		Acärya das Maitreyasādhana verfaßte, das	low	review
+corrected_text_scan	wts_8_b	185	79	Tär		residual_sanskrit_like_damage		"auf dem Māyājālatantra basiert"" (Tär 85,17)."	low	review
+corrected_text_scan	wts_8_b	186	32	Maiträyani		residual_sanskrit_like_damage		1. npr. Maiträyani, die Mutter des sravaka	low	review
+corrected_text_scan	wts_8_b	190	27	ksinäkrtya		residual_sanskrit_like_damage		"ksinäkrtya ""dreimal umkreist habend"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	197	78	$		residual_sanskrit_like_damage		bya ba = parimārjanam (Mvy 9421); yoris $//	low	review
+corrected_text_scan	wts_8_b	204	26	Torwärters		residual_sanskrit_like_damage		"chen Torwärters"" (K3 ña 22106); des de la"	low	review
+corrected_text_scan	wts_8_b	204	41	ständig		residual_sanskrit_like_damage		für die Schar der Bhūtas ständig Teigopfer	low	review
+corrected_text_scan	wts_8_b	204	47	Hände		residual_sanskrit_like_damage		"— no ""er gab ihr seine Hände"" (ViśT 156,3);"	low	review
+corrected_text_scan	wts_8_b	205	62	adät		residual_sanskrit_like_damage		Lex. legs so Zes bya ba — te = sādhukaram adät	low	review
+corrected_text_scan	wts_8_b	206	14	Zähne		residual_sanskrit_like_damage		"Zähne regelmäßig sind"" (Mvy 325)."	low	review
+corrected_text_scan	wts_8_b	206	14	regelmäßig		residual_sanskrit_like_damage		"Zähne regelmäßig sind"" (Mvy 325)."	low	review
+corrected_text_scan	wts_8_b	208	50	prächtig		residual_sanskrit_like_damage		"""würdig: schön oder prächtig"" (Liś 28,14)."	low	review
+corrected_text_scan	wts_8_b	209	13	dattvädanarn		residual_sanskrit_like_damage		l.ex. dattvädanarn (Mvy 8411, Abt. span ba'i	low	review
+corrected_text_scan	wts_8_b	213	36	erklären		residual_sanskrit_like_damage		"erklären würde"" (Dolt 46,15); — na mñam"	low	review
+corrected_text_scan	wts_8_b	213	59	bälah		residual_sanskrit_like_damage		Lex. bälah (Mvy 4075); bu chun ch dan ...	low	review
+corrected_text_scan	wts_8_b	214	35	Tär		residual_sanskrit_like_damage		"teste war Śiśu, er herrschte drei Jahre"" (Tär"	low	review
+corrected_text_scan	wts_8_b	217	70	äsit		residual_sanskrit_like_damage		nam — bar gyur = abhit, äsit (Mvy 8309);	low	review
+corrected_text_scan	wts_8_b	217	73	veränderlich		residual_sanskrit_like_damage		"mikab ""veränderlich"" (Mvy 7572); mchod"	low	review
+corrected_text_scan	wts_8_b	221	24	Umständen		residual_sanskrit_like_damage		"sen Umständen"" (Mvy 9209); byun ba = lo"	low	review
+corrected_text_scan	wts_8_b	222	79	Stinyatä		residual_sanskrit_like_damage		die Stinyatä, die der Sphāre gleicht, erkannt	low	review
+corrected_text_scan	wts_8_b	226	39	anväahindya		residual_sanskrit_like_damage		anväahindya (Mvy 5116).	low	review
+corrected_text_scan	wts_8_b	227	62	Sauträntika		residual_sanskrit_like_damage		len, Vaibhāsika und Sauträntika.	low	review
+corrected_text_scan	wts_8_b	231	4	Päninis		residual_sanskrit_like_damage		den zweiten Teil aus Päninis Sanskrit-	low	review
+corrected_text_scan	wts_8_b	232	30	Tär		residual_sanskrit_like_damage		"schein"" (Tär 161,10); ~ dan / sa sho saṅ son"	low	review
+corrected_text_scan	wts_8_b	232	72	gäun		residual_sanskrit_like_damage		"bhāpariprecha"" (Liy2 85); ~i gäun las mdo"	low	review
+corrected_text_scan	wts_8_b	232	75	Upäd-		residual_sanskrit_like_damage		malaprabhāpariprcchā [usw.] hat der Upäd-	low	review
+corrected_text_scan	wts_8_b	237	9	Plätze		residual_sanskrit_like_damage		"Plätze für die Übung des Vajrayāna anlegt"""	low	review
+corrected_text_scan	wts_8_b	240	18	Kontinuität		residual_sanskrit_like_damage		"um' [bedeutet]: Kontinuität der Saṃskāras"""	low	review
+corrected_text_scan	wts_8_b	240	38	Übeltäter		residual_sanskrit_like_damage		Übeltäter (skt. apakārin) zürnen, und sei er	low	review
+corrected_text_scan	wts_8_b	242	58	käritram		residual_sanskrit_like_damage		Lex. käritram (Mvy 6698, 7250) ; bya byed las	low	review
+corrected_text_scan	wts_8_b	242	84	kärakah		residual_sanskrit_like_damage		"Lex. kärakah ""Kasusfunktion"" (Mvy 4733,"	low	review
+corrected_text_scan	wts_8_b	243	37	o.ä		residual_sanskrit_like_damage		meist für skt. -kara, -kāra o.ä.	low	review
+corrected_text_scan	wts_8_b	244	36	Prädikat		residual_sanskrit_like_damage		"Lex. kriyapadam ""verbales Prädikat"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	249	11	allmählich		residual_sanskrit_like_damage		"ging allmählich nach dBus"" (Bu-śz 87,7);"	low	review
+corrected_text_scan	wts_8_b	251	56	Tamäla-		residual_sanskrit_like_damage		"par — śos Sig ""mach den Ort der Tamäla-"	low	review
+corrected_text_scan	wts_8_b	260	46	Felsdämonin		residual_sanskrit_like_damage		"einer Felsdämonin erklärt"" (Bu-śz 2,1); rtii"	low	review
+corrected_text_scan	wts_8_b	260	46	erklärt		residual_sanskrit_like_damage		"einer Felsdämonin erklärt"" (Bu-śz 2,1); rtii"	low	review
+corrected_text_scan	wts_8_b	261	70	$		residual_sanskrit_like_damage		"Brust"" (Mvy 8545); ///$ /53// bran ""Brust"""	low	review
+corrected_text_scan	wts_8_b	265	49	däasah		residual_sanskrit_like_damage		"Lex. däasah ""Diener"" (in Mvy 3830, nur Ms."	low	review
+corrected_text_scan	wts_8_b	268	53	brähmanah		residual_sanskrit_like_damage		Lex. brähmanah (Mvy 3858, sGra 292);	low	review
+corrected_text_scan	wts_8_b	269	6	mänavakah		residual_sanskrit_like_damage		andere], Studieren und Unterrichten, Ge- mänavakah (Mvy 3846).	low	review
+corrected_text_scan	wts_8_b	269	52	abrähmanyam		residual_sanskrit_like_damage		"Brahmanenjungen an"" (K12 26936). Lex. abrähmanyam (Mvy 2459, Abt. skyon"	low	review
+corrected_text_scan	wts_8_b	274	5	getäuscht		residual_sanskrit_like_damage		"sind, sind getäuscht"" (Glr 37,7); sunañ ba ~"	low	review
+corrected_text_scan	wts_8_b	274	12	lläpanam		residual_sanskrit_like_damage		"lläpanam ""die Täuschung von Toren"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	274	12	Täuschung		residual_sanskrit_like_damage		"lläpanam ""die Täuschung von Toren"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	276	66	Gemälde		residual_sanskrit_like_damage		"yab ""schön wie ein farbiges Gemälde"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	278	9	Ä-nanta		residual_sanskrit_like_damage		Ä-nanta aus 'Bru-śa [und andere] übersetz-	low	review
+corrected_text_scan	wts_8_b	288	73	swiä		residual_sanskrit_like_damage		bi mas rin chen ~ la / on āb hinn swiä hā	low	review
+corrected_text_scan	wts_8_b	289	72	Himälaya		residual_sanskrit_like_damage		"König floh in den Himälaya"" (Bu-śz 1,15);"	low	review
+corrected_text_scan	wts_8_b	298	45	Säkya		residual_sanskrit_like_damage		"chen Säkya bzañ-po und behielt ihn"" (Debm"	low	review
+corrected_text_scan	wts_8_b	301	86	äg		residual_sanskrit_like_damage		"gsum — pa äg yin la ""der Brahmane Rāgha-"	low	review
+corrected_text_scan	wts_8_b	302	60	Niruttarasä-		residual_sanskrit_like_damage		nen und Nāgārjuna verfaßten Niruttarasä-	low	review
+corrected_text_scan	wts_8_b	309	83	Kumära		residual_sanskrit_like_damage		"""diese nahm Kumära sich zur Frau"" (ViśT"	low	review
+corrected_text_scan	wts_8_b	314	15	glänzt		residual_sanskrit_like_damage		"""ein Weiser glänzt nicht unter Toren"" (Gś-H"	low	review
+corrected_text_scan	wts_8_b	319	56	ekägramati		residual_sanskrit_like_damage		Māras, BHSD s. v. ekägramati.	low	review
+corrected_text_scan	wts_8_b	320	61	ähnl		residual_sanskrit_like_damage		Lex.lcags mo byalola'ani (brDa, ähnl. Dagry).	low	review
+corrected_text_scan	wts_8_b	324	17	verständig		residual_sanskrit_like_damage		"man ""verständig"" (Mvy 2901, Abt. mkhas"	low	review
+corrected_text_scan	wts_8_b	324	24	Pändu		residual_sanskrit_like_damage		"Pändu und Vidura, die drei, geboren"" (ViśT"	low	review
+corrected_text_scan	wts_8_b	334	82	träger		residual_sanskrit_like_damage		träger [namens] Brag-śa vorgebrachte kur-	low	review
+corrected_text_scan	wts_8_b	336	72	bewältigen		residual_sanskrit_like_damage		"chuñi ba ""mit dem Geist nicht bewältigen,"	low	review
+corrected_text_scan	wts_8_b	339	82	Fähigkeiten		residual_sanskrit_like_damage		"Fähigkeiten"" (Mvy 1088)."	low	review
+corrected_text_scan	wts_8_b	348	40	selbständig		residual_sanskrit_like_damage		2. selbständig, unabhāngig sein.	low	review
+corrected_text_scan	wts_8_b	352	34	Sinnesfähigkeit		residual_sanskrit_like_damage		"""scharfe Sinnesfähigkeit"" (Mvy 1259, Abt."	low	review
+corrected_text_scan	wts_8_b	354	60	Sinnesfähigkeit		residual_sanskrit_like_damage		"""mittlere Sinnesfähigkeit"" (Mvy 1258, Abt."	low	review
+corrected_text_scan	wts_8_b	354	63	Sinnesfähigkeiten		residual_sanskrit_like_damage		"Sinnesfähigkeiten"" (Mvy 1256); 577: _"	low	review
+corrected_text_scan	wts_8_b	356	59	nesfähigkeiten		residual_sanskrit_like_damage		"nesfähigkeiten der Aktivität"" (ViśT 212,4)."	low	review
+corrected_text_scan	wts_8_b	356	59	Aktivität		residual_sanskrit_like_damage		"nesfähigkeiten der Aktivität"" (ViśT 212,4)."	low	review
+corrected_text_scan	wts_8_b	358	31	Tamäla		residual_sanskrit_like_damage		Baum Tamäla, skt. tamāla Xan-	low	review
+corrected_text_scan	wts_8_b	359	17	indrasarlaguhä		residual_sanskrit_like_damage		Lex. indrasarlaguhä (Mvy 4124, Abt. yul gyi	low	review
+corrected_text_scan	wts_8_b	360	72	Mahädeva		residual_sanskrit_like_damage		śiva bzw. Mahädeva, Mahesvara.	low	review
+corrected_text_scan	wts_8_b	360	83	Tär		residual_sanskrit_like_damage		"dhisten zwar, daß es lśvara sei"" (Tär 43,4);"	low	review
+corrected_text_scan	wts_8_b	362	59	vasitä		residual_sanskrit_like_damage		"Lex. vasitä ""Befähigung"" (in Mvy 771-780,"	low	review
+corrected_text_scan	wts_8_b	362	59	Befähigung		residual_sanskrit_like_damage		"Lex. vasitä ""Befähigung"" (in Mvy 771-780,"	low	review
+corrected_text_scan	wts_8_b	363	35	kärayati		residual_sanskrit_like_damage		"wur = rājyaisvaryadhipatyam kärayati ""er"	low	review
+corrected_text_scan	wts_8_b	363	53	fähig		residual_sanskrit_like_damage		"pa dan ""[der Bodhisattva] ist fähig zur Ver-"	low	review
+corrected_text_scan	wts_8_b	365	35	mächtigungen		residual_sanskrit_like_damage		"mächtigungen"" (Dol2 47,1); ~ dan ñams len"	low	review
+corrected_text_scan	wts_8_b	366	7	sarvakäyam		residual_sanskrit_like_damage		"= na sarvakäyam samava{r}dhāya ""wir wer-"	low	review
+corrected_text_scan	wts_8_b	371	69	kräuseln		residual_sanskrit_like_damage		"kräuseln"" (Mvy 237, Abt. skyes bu chen po'i"	low	review
+corrected_text_scan	wts_8_b	375	53	Tär		residual_sanskrit_like_damage		"*Sitābhyudaya verfaßt"" (Tär 133,18); kun"	low	review
+corrected_text_scan	wts_8_b	375	58	hävanäkrama		residual_sanskrit_like_damage		hävanäkrama, ein madhyamaka-prāsaṅgika-	low	review
+corrected_text_scan	wts_8_b	376	23	Anhänger		residual_sanskrit_like_damage		1. Mādhyamika, ein Anhänger der Lehre des	low	review
+corrected_text_scan	wts_8_b	376	57	vollständig		residual_sanskrit_like_damage		weils vollständig die Mūlamadhyamakakāri-	low	review
+corrected_text_scan	wts_8_b	379	68	Mäntel		residual_sanskrit_like_damage		"man po — daṅ bcas pa ""viele Mäntel aus Pelz"	low	review
+corrected_text_scan	wts_8_b	384	53	Hämorrhoiden		residual_sanskrit_like_damage		"brechen, Atemnot und Hämorrhoiden"" (Yś"	low	review
+corrected_text_scan	wts_8_b	387	19	Häuser		residual_sanskrit_like_damage		"manis su 'gro ba ""die Häuser der Mahāsattvas"	low	review
+corrected_text_scan	wts_8_b	387	88	vollständig		residual_sanskrit_like_damage		mittlere Kanal avadhāti) tritt vollständig in	low	review
+corrected_text_scan	wts_8_b	388	44	ebenmäßig		residual_sanskrit_like_damage		"ist, ebenmäßig ist"" (Mvy 369); mtha' dma'"	low	review
+corrected_text_scan	wts_8_b	388	68	allmählich		residual_sanskrit_like_damage		"te ""Atiśa ging allmählich nach dBus"" (Bu-śz;"	low	review
+corrected_text_scan	wts_8_b	391	53	litärische		residual_sanskrit_like_damage		litärische Kommandeur von gTsaṅ, lief mit	low	review
+corrected_text_scan	wts_8_b	394	8	Kälacakra		residual_sanskrit_like_damage		"les Mandala des Kälacakra"" (Śambh 4304);"	low	review
+corrected_text_scan	wts_8_b	398	36	Tär		residual_sanskrit_like_damage		"Lehrmeisters Buddhapālita"" (Tär 107,19)."	low	review
+corrected_text_scan	wts_8_b	398	71	Steinsäule		residual_sanskrit_like_damage		"Steinsäule von Lhasa geschrieben"" (Bu-śz;"	low	review
+corrected_text_scan	wts_8_b	400	51	Vyäkaranas		residual_sanskrit_like_damage		"Sūtras, Geyas, Vyäkaranas [usw.]"" (Samdhi"	low	review
+corrected_text_scan	wts_8_b	403	36	Zählen		residual_sanskrit_like_damage		Jahres in der Region śa-cu das Zählen des	low	review
+corrected_text_scan	wts_8_b	404	7	varsä		residual_sanskrit_like_damage		"Lex. varsä ""Regenzeit"" (Mvy 8254)."	low	review
+corrected_text_scan	wts_8_b	405	10	varsävastu		residual_sanskrit_like_damage		Lex. varsävastu (Mvy 9102).	low	review
+corrected_text_scan	wts_8_b	405	27	Gewänder		residual_sanskrit_like_damage		"Gewänder für die Regenzeit"" (Mvy 9064)."	low	review
+corrected_text_scan	wts_8_b	405	67	mrtavärsikah		residual_sanskrit_like_damage		Lex. mrtavärsikah (Mvy 9285).	low	review
+corrected_text_scan	wts_8_b	408	71	varsikävasah		residual_sanskrit_like_damage		Lex. varsikävasah (Mvy 5626).	low	review
+corrected_text_scan	wts_8_b	410	58	brahmä		residual_sanskrit_like_damage		brahmä hiranyagarbhah (Mvy 3115, Abit. ig	low	review
+corrected_text_scan	wts_8_b	412	19	Äcäryas		residual_sanskrit_like_damage		"ßen Äcäryas der Vaibhāsikas bekannt"" (Tär"	low	review
+corrected_text_scan	wts_8_b	412	19	Tär		residual_sanskrit_like_damage		"ßen Äcäryas der Vaibhāsikas bekannt"" (Tär"	low	review
+corrected_text_scan	wts_8_b	412	52	Veränderung		residual_sanskrit_like_damage		reinen Sphāre, die jenseits von Veränderung	low	review
+corrected_text_scan	wts_8_b	418	49	äbarbanam		residual_sanskrit_like_damage		Lex. äbarbanam (Mvy 8656).	low	review
+corrected_text_scan	wts_8_b	429	16	beschäftigend		residual_sanskrit_like_damage		"was beschäftigend"" (Mvy 1808); — do =vya-"	low	review
+corrected_text_scan	wts_8_b	430	5	Krän-		residual_sanskrit_like_damage		"--‹ ljon Sin dag las ... — par śog (mertr.) ""Krän-"	low	review
+corrected_text_scan	wts_8_b	431	45	trägt		residual_sanskrit_like_damage		linke Kanal trägt Akṣobhya (skt. akṣobhya-	low	review
+corrected_text_scan	wts_8_b	436	48	ädiptab		residual_sanskrit_like_damage		"Lex. ädiptab ""brennend"" (Mvy 5249); — ba"	low	review
+corrected_text_scan	wts_8_b	439	2	auffällig		residual_sanskrit_like_damage		anayayci 'bal le ba auffällig herabhāngend,	low	review
+corrected_text_scan	wts_8_b	448	13	upanäamayati		residual_sanskrit_like_damage		"Lex. upanäamayati ""er überreicht"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	451	14	läßt		residual_sanskrit_like_damage		"dbus chu rian Sar śar — (metr.) ""läßt man"	low	review
+corrected_text_scan	wts_8_b	451	81	valganä		residual_sanskrit_like_damage		Lex. valganä (Mvy 7559).	low	review
+corrected_text_scan	wts_8_b	452	17	Erzählung		residual_sanskrit_like_damage		"pa@'i gtam ""Erzählung, aufrichtige Rede"" (Liś"	low	review
+corrected_text_scan	wts_8_b	452	25	alitä		residual_sanskrit_like_damage		Lex. /alitä (Mvy 497, Abt. dbyans kyiyan lag	low	review
+corrected_text_scan	wts_8_b	461	89	läftt		residual_sanskrit_like_damage		"einem Tathāgata Blut austreten läftt"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	466	28	erwähnt		residual_sanskrit_like_damage		"wird nicht erwähnt"" (Mvy 6706)."	low	review
+corrected_text_scan	wts_8_b	469	61	Mära		residual_sanskrit_like_damage		"phrag drug gi ""khor daṅ ldan pa ""Mära, der mit"	low	review
+corrected_text_scan	wts_8_b	469	67	Häriti		residual_sanskrit_like_damage		"ma (metr.) ""Häriti, die Mutter der Bhūtas"""	low	review
+corrected_text_scan	wts_8_b	469	70	ständig		residual_sanskrit_like_damage		die Schar der Bhūtas ständig Teigopfer dar-	low	review
+corrected_text_scan	wts_8_b	469	74	-Dämonen		residual_sanskrit_like_damage		"sie den Bhūta- und Ucchusma[-Dämonen]"""	low	review
+corrected_text_scan	wts_8_b	475	66	rinatalaläta		residual_sanskrit_like_damage		"rinatalaläta ""mit wohlgewölbter Stirn"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	477	70	erzählt		residual_sanskrit_like_damage		Erscheinen des Aśoka usw erzählt, stimmt	low	review
+corrected_text_scan	wts_8_b	478	54	Fähigkeiten		residual_sanskrit_like_damage		"[abhāngigen] Fähigkeiten"" (brDa)."	low	review
+corrected_text_scan	wts_8_b	480	56	gleichmäßig		residual_sanskrit_like_damage		es gleichmäßig sein! mñam pa: i. S.v. ohne	low	review
+corrected_text_scan	wts_8_b	483	35	ständig		residual_sanskrit_like_damage		durch den Beistand der Dharmapālas ständig	low	review
+corrected_text_scan	wts_8_b	485	26	bäi		residual_sanskrit_like_damage		bkra śis lhun po bcas grwa sa chen po bäi	low	review
+corrected_text_scan	wts_8_b	485	72	sälivanam		residual_sanskrit_like_damage		Lex. sälivanam (Mvy 4220).	low	review
+corrected_text_scan	wts_8_b	486	20	Mahäbala		residual_sanskrit_like_damage		"stes die Essenz [der Dhārani] des Mahäbala"""	low	review
+corrected_text_scan	wts_8_b	492	56	Acavimśatikasahasrikä		residual_sanskrit_like_damage		Acavimśatikasahasrikä[prajñāpāramitāsūtra]	low	review
+corrected_text_scan	wts_8_b	498	75	nesfähigkeit		residual_sanskrit_like_damage		"nesfähigkeit"" (Mvy 1258, Abt. dban po'irim"	low	review
+corrected_text_scan	wts_8_b	501	70	Säen		residual_sanskrit_like_damage		"Säen [gewachsen] ist"" (Mvy 5310)."	low	review
+corrected_text_scan	wts_8_b	504	52	$		residual_sanskrit_like_damage		"Lex. tailam ""Sesamöl"" (Mvy 5785); $7///:), lta"	low	review
+corrected_text_scan	wts_8_b	514	70	zusammenhängend		residual_sanskrit_like_damage		"(Mvy 7232); sahita ""zusammenhängend, ko-"	low	review
+corrected_text_scan	wts_8_b	514	71	härent		residual_sanskrit_like_damage		"härent"" (Mvy 474, Abt. dbyans kyi yuoi lag"	low	review
+corrected_text_scan	wts_8_b	518	37	ätavakayaksah		residual_sanskrit_like_damage		Lex. ätavakayaksah (Mvy 3377, Abt. gnod	low	review
+corrected_text_scan	wts_8_b	526	92	ähnlich		residual_sanskrit_like_damage		"""früher waren sich Myaṅ und dBa's ähnlich"	low	review
+corrected_text_scan	wts_8_b	531	45	Käscabga-		residual_sanskrit_like_damage		"""312.9 sbad mar śe Butter- und Käscabga-"	low	review
+corrected_text_scan	wts_8_b	540	24	Behälter		residual_sanskrit_like_damage		"Subs sam — = kosah ""Behälter"" (Mvy 5537)."	low	review
+corrected_text_scan	wts_8_b	545	30	päräjika-		residual_sanskrit_like_damage		den päräjika- und samghāvasesa-Vergehen	low	review
+corrected_text_scan	wts_8_b	545	57	nähah		residual_sanskrit_like_damage		"nähah ""Umfang, Weite"" (Mvy 2686)."	low	review
+corrected_text_scan	wts_8_b	546	29	Sichaufblähen		residual_sanskrit_like_damage		"Lex. ādhmanab ""das Sichaufblähen"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	548	58	geläutert		residual_sanskrit_like_damage		"sbyar = uttaptah ""geläutert"" (Mvy 1816),"	low	review
+corrected_text_scan	wts_8_b	550	15	Käsyapa		residual_sanskrit_like_damage		"daṅ ldan pa ste ""wie Käsyapa hielt er alle as-"	low	review
+corrected_text_scan	wts_8_b	551	27	Gebäck		residual_sanskrit_like_damage		"Sa daṅ ~ ba ""Gebäck gemischt mit Fleisch"""	low	review
+corrected_text_scan	wts_8_b	552	51	Rämäyana		residual_sanskrit_like_damage		"faßßte Rämäyana"" (ViśT 240,10); dgra beon,"	low	review
+corrected_text_scan	wts_8_b	552	64	Schmäh-		residual_sanskrit_like_damage		"sñan drags ~ ba na ""er verfaßte ein Schmäh-"	low	review
+corrected_text_scan	wts_8_b	557	55	Daityäri		residual_sanskrit_like_damage		"sogs (metr.) ""Svayanibhū, Daityäri, Manma-"	low	review
+corrected_text_scan	wts_8_b	558	40	dänapatib		residual_sanskrit_like_damage		Lex. dänapatib (Mvy 2862); rgyu sbyor ba'i	low	review
+corrected_text_scan	wts_8_b	558	87	$		residual_sanskrit_like_damage		"im Himmel"" (ViśT 222,2); ~$ bsdus kyan"	low	review
+corrected_text_scan	wts_8_b	559	66	dänam		residual_sanskrit_like_damage		"Lex. dänam ""Freigebigkeit"" (Mvy 905, 925);"	low	review
+corrected_text_scan	wts_8_b	559	92	dänam		residual_sanskrit_like_damage		Lex. dänam (Mvy 5070, Abt. bram ze'i las	low	review
+corrected_text_scan	wts_8_b	562	44	botä		residual_sanskrit_like_damage		Lex. botä (Mvy 4252).	low	review
+corrected_text_scan	wts_8_b	565	64	Hämorrhoiden		residual_sanskrit_like_damage		"dung [behandelt man] Hämorrhoiden"" (Yś"	low	review
+corrected_text_scan	wts_8_b	565	92	gebräuch-		residual_sanskrit_like_damage		"Lex. — ba las byun ba = prāyogiki ""gebräuch-"	low	review
+corrected_text_scan	wts_8_b	569	5	$		residual_sanskrit_like_damage		Lex. yogab (Mvy 4402, Abt. //¿$ dari mtshan	low	review
+corrected_text_scan	wts_8_b	574	22	mäksikam		residual_sanskrit_like_damage		"Lex. mäksikam, madhu ""Honig"" (Mvy"	low	review
+corrected_text_scan	wts_8_b	577	60	chikkä		residual_sanskrit_like_damage		"4058); chikkä ""Niesen"" (Mvy 4057)."	low	review
+corrected_text_scan	wts_8_b	578	39	trächtige		residual_sanskrit_like_damage		"skyabs su ñer son ba (metr.) ""eine trächtige"	low	review
+corrected_text_scan	wts_8_b	580	77	äsivisab		residual_sanskrit_like_damage		äsivisab (Mvy	low	review
+corrected_text_scan	wts_8_b	581	27	nägamandalikah		residual_sanskrit_like_damage		Lex. nägamandalikah (Mvy 3765). Lex. jag snod (Mimi 540).	low	review

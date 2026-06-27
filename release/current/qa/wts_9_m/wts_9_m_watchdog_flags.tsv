@@ -1,0 +1,17 @@
+page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_excerpt
+7	12	2	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	der älteste der drei Söhne, starb 111] männ-
+15	28	5	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	"1111] als Mutter abstammen"" (Glr 45,4); —""i"
+31	53	112	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	4. gramm. t.t. zur Bez. des Neutrums 111]
+35	3	136	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	5. 111 Mutter-
+47	58	215	german_prose_with_translit	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	1111] nicht fest und die Verblendung usw. fes-
+62	9	281	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"ges so ""die Sthaviras aber spalteten sich 111"
+230	22	1032	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	"männlicher Nachfahren [mehr] hat"" (1111"
+237	13	1048	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	Nichtexistenz und Dunkelheit 111 der Bon-
+273	38	1190	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"sei garis ste ""die Schneeberge Phu-la ha-ri 111"
+318	41	1414	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	rer haben, die auch den Weg nicht kennen, 111
+329	70	1469	german_prose_with_translit	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	"— gi 0?705 ""ihr mGu aus Zogs, Bran aus ¥1111-"
+339	25	1516	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"wurde, fand er den Weg nicht"" (Tär 111,3);"
+363	15	1609	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"""Heiler, Heilkundiger, Mediziner, Arzt, 111"
+366	48	1630	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"re 111] Tal sMan-lun phyug-mo von ICi aus"""
+388	18	1747	german_prose_with_translit	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	""" ra npr. eine Gottheit 1111"
+166	80	751	german_prose	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"""Name und Form"", 1, $. ¥. Gei-"

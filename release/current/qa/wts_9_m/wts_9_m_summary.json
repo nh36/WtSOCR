@@ -1,0 +1,129 @@
+{
+  "pages": 401,
+  "total_lines_seen": 33664,
+  "non_empty_lines": 33664,
+  "entries_detected": 1791,
+  "translit_tokens_detected": 51687,
+  "validator_issues": 1554,
+  "uncaptured_tibetan_prefix_lines": 1028,
+  "zone_counts": {
+    "german_prose": 9129,
+    "german_prose_with_translit": 15034,
+    "latin_other": 4730,
+    "other": 1672,
+    "tibetan_only": 1124,
+    "headword_line": 1791,
+    "example_tibetan_latin": 113,
+    "tibetan_latin_mixed": 71
+  },
+  "structural_rewrite_count": 0,
+  "google_vision_mode": false,
+  "google_vision_rewrites": 0,
+  "alternate_witness_used": true,
+  "alternate_witness_path": "pdfs/WtS 9-m.vision.txt",
+  "alternate_google_vision_mode": true,
+  "merge_only": false,
+  "alternate_witness_adoptions": 842,
+  "alternate_witness_unresolved": 1134,
+  "trusted_lexicon_size": 299,
+  "discovered_patterns": 28,
+  "tier_a_applied": 1963,
+  "tier_b_suggestions": 12,
+  "citation_name_families": 4,
+  "citation_name_changes": 276,
+  "reviewed_tibetan_exact_changes": 274,
+  "sanskrit_families": 60,
+  "sanskrit_promoted_overrides_loaded": 272,
+  "sanskrit_changes": 89,
+  "sanskrit_review_suggestions": 10,
+  "stale_review_rows_removed": 1,
+  "watchdog_flagged_changes": 16,
+  "watchdog_flag_counts": {
+    "high_edit_distance_drift": 16
+  },
+  "discovered_confidence_counts": {
+    "medium": 28
+  },
+  "top_tier_a_reasons": [
+    [
+      "explicit_user_allowlist",
+      507
+    ],
+    [
+      "explicit_case_sensitive_allowlist",
+      254
+    ],
+    [
+      "citation_siglum_confusable_map",
+      241
+    ],
+    [
+      "confusable_dollar_to_sacute_shape_safe",
+      117
+    ],
+    [
+      "confusable_initial_I_to_l_marked_context",
+      92
+    ],
+    [
+      "reviewed_tibetan_exact_final_ng",
+      86
+    ],
+    [
+      "confusable_nya_coda_safe",
+      80
+    ],
+    [
+      "sanskrit_high_freq_allowlist",
+      74
+    ],
+    [
+      "german_dotless_i_safe_map",
+      57
+    ],
+    [
+      "confusable_initial_I_to_l_lexicon",
+      53
+    ],
+    [
+      "reviewed_tibetan_exact_bzhin_bzhugs",
+      53
+    ],
+    [
+      "confusable_hyphenated_I_to_l_translit",
+      48
+    ]
+  ],
+  "top_tier_b_reasons": [
+    [
+      "sanskrit_promoted_context_allowlist",
+      9
+    ],
+    [
+      "discover_medium_context",
+      1
+    ],
+    [
+      "confusable_context",
+      1
+    ],
+    [
+      "sanskrit_char_normalize",
+      1
+    ]
+  ],
+  "top_validator_issues": [
+    [
+      "invalid_translit_shape",
+      736
+    ],
+    [
+      "german_umlaut_in_translit_context",
+      736
+    ],
+    [
+      "confusable_char",
+      82
+    ]
+  ]
+}

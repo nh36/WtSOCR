@@ -1,0 +1,1135 @@
+page	line	token_index	base_token	alternate_token	reason	base_key	alternate_key	base_line	alternate_line
+2					unalignable_rewrapped_page	14	18	searched_alternate_pages=2-6	2:unalignable_rewrapped_page(14/18);3:unalignable_rewrapped_page(14/7);4:unalignable_rewrapped_page(14/36);5:unalignable_rewrapped_page(14/69);6:unalignable_rewrapped_page(14/85)
+4					unalignable_rewrapped_page	33	36	searched_alternate_pages=4-8	4:unalignable_rewrapped_page(33/36);5:unalignable_rewrapped_page(33/69);6:unalignable_rewrapped_page(33/85);7:unalignable_rewrapped_page(33/89);8:unalignable_rewrapped_page(33/96)
+9					unalignable_rewrapped_page	90	89	searched_alternate_pages=9-13	9:unalignable_rewrapped_page(90/89);10:unalignable_rewrapped_page(90/96);11:unalignable_rewrapped_page(90/93);12:unalignable_rewrapped_page(90/90);13:unalignable_rewrapped_page(90/92)
+11					unalignable_rewrapped_page	92	93	searched_alternate_pages=11-15	11:unalignable_rewrapped_page(92/93);12:unalignable_rewrapped_page(92/90);13:unalignable_rewrapped_page(92/92);14:unalignable_rewrapped_page(92/94);15:unalignable_rewrapped_page(92/90)
+16					unalignable_rewrapped_page	72	79	searched_alternate_pages=16-20	16:unalignable_rewrapped_page(72/79);17:unalignable_rewrapped_page(72/95);18:unalignable_rewrapped_page(72/83);19:unalignable_rewrapped_page(72/86);20:unalignable_rewrapped_page(72/84)
+17					unalignable_rewrapped_page	82	95	searched_alternate_pages=17-21	17:unalignable_rewrapped_page(82/95);18:unalignable_rewrapped_page(82/83);19:unalignable_rewrapped_page(82/86);20:unalignable_rewrapped_page(82/84);21:unalignable_rewrapped_page(82/86)
+19					unalignable_rewrapped_page	89	86	searched_alternate_pages=19-23	19:unalignable_rewrapped_page(89/86);20:unalignable_rewrapped_page(89/84);21:unalignable_rewrapped_page(89/86);22:unalignable_page_content(89/89);23:unalignable_rewrapped_page(89/90)
+21					unalignable_rewrapped_page	86	86	searched_alternate_pages=21-25	21:unalignable_rewrapped_page(86/86);22:unalignable_rewrapped_page(86/80);23:unalignable_rewrapped_page(86/90);24:unalignable_rewrapped_page(86/88);25:unalignable_rewrapped_page(86/93)
+23					unalignable_rewrapped_page	86	90	searched_alternate_pages=23-27	23:unalignable_rewrapped_page(86/90);24:unalignable_rewrapped_page(86/88);25:unalignable_rewrapped_page(86/93);26:unalignable_rewrapped_page(86/90);27:unalignable_rewrapped_page(86/86)
+24					unalignable_rewrapped_page	80	88	searched_alternate_pages=24-28	24:unalignable_rewrapped_page(80/88);25:unalignable_rewrapped_page(80/93);26:unalignable_rewrapped_page(80/90);27:unalignable_rewrapped_page(80/86);28:unalignable_rewrapped_page(80/89)
+25					unalignable_rewrapped_page	87	93	searched_alternate_pages=25-29	25:unalignable_rewrapped_page(87/93);26:unalignable_rewrapped_page(87/90);27:unalignable_rewrapped_page(87/86);28:unalignable_rewrapped_page(87/89);29:unalignable_rewrapped_page(87/89)
+26					unalignable_rewrapped_page	79	90	searched_alternate_pages=26-30	26:unalignable_rewrapped_page(79/90);27:unalignable_rewrapped_page(79/86);28:unalignable_rewrapped_page(79/89);29:unalignable_rewrapped_page(79/89);30:unalignable_rewrapped_page(79/89)
+27					unalignable_rewrapped_page	80	86	searched_alternate_pages=27-31	27:unalignable_rewrapped_page(80/86);28:unalignable_rewrapped_page(80/89);29:unalignable_rewrapped_page(80/89);30:unalignable_rewrapped_page(80/89);31:unalignable_rewrapped_page(80/91)
+29					unalignable_rewrapped_page	82	89	searched_alternate_pages=29-33	29:unalignable_rewrapped_page(82/89);30:unalignable_rewrapped_page(82/89);31:unalignable_rewrapped_page(82/91);32:unalignable_rewrapped_page(82/81);33:unalignable_rewrapped_page(82/91)
+30					unalignable_rewrapped_page	84	89	searched_alternate_pages=30-34	30:unalignable_rewrapped_page(84/89);31:unalignable_rewrapped_page(84/91);32:unalignable_rewrapped_page(84/81);33:unalignable_rewrapped_page(84/91);34:unalignable_rewrapped_page(84/89)
+31					unalignable_rewrapped_page	84	91	searched_alternate_pages=31-35	31:unalignable_rewrapped_page(84/91);32:unalignable_rewrapped_page(84/81);33:unalignable_rewrapped_page(84/91);34:unalignable_rewrapped_page(84/89);35:unalignable_rewrapped_page(84/83)
+32					unalignable_rewrapped_page	78	81	searched_alternate_pages=32-36	32:unalignable_rewrapped_page(78/81);33:unalignable_rewrapped_page(78/91);34:unalignable_rewrapped_page(78/89);35:unalignable_rewrapped_page(78/83);36:unalignable_rewrapped_page(78/86)
+33					unalignable_rewrapped_page	86	91	searched_alternate_pages=33-37	33:unalignable_rewrapped_page(86/91);34:unalignable_rewrapped_page(86/89);35:unalignable_rewrapped_page(86/83);36:unalignable_rewrapped_page(86/86);37:unalignable_rewrapped_page(86/92)
+34					unalignable_rewrapped_page	87	89	searched_alternate_pages=34-38	34:unalignable_rewrapped_page(87/89);35:unalignable_rewrapped_page(87/83);36:unalignable_rewrapped_page(87/86);37:unalignable_rewrapped_page(87/92);38:unalignable_rewrapped_page(87/89)
+35					unalignable_rewrapped_page	85	83	searched_alternate_pages=35-39	35:unalignable_rewrapped_page(85/83);36:unalignable_rewrapped_page(85/86);37:unalignable_rewrapped_page(85/92);38:unalignable_rewrapped_page(85/89);39:unalignable_rewrapped_page(85/83)
+36					unalignable_rewrapped_page	85	86	searched_alternate_pages=36-40	36:unalignable_rewrapped_page(85/86);37:unalignable_rewrapped_page(85/92);38:unalignable_rewrapped_page(85/89);39:unalignable_rewrapped_page(85/83);40:unalignable_rewrapped_page(85/84)
+38					unalignable_rewrapped_page	87	89	searched_alternate_pages=38-42	38:unalignable_rewrapped_page(87/89);39:unalignable_rewrapped_page(87/83);40:unalignable_rewrapped_page(87/84);41:unalignable_rewrapped_page(87/85);42:unalignable_rewrapped_page(87/92)
+39					unalignable_rewrapped_page	84	83	searched_alternate_pages=39-43	39:unalignable_rewrapped_page(84/83);40:unalignable_rewrapped_page(84/84);41:unalignable_rewrapped_page(84/85);42:unalignable_rewrapped_page(84/92);43:unalignable_rewrapped_page(84/83)
+40					unalignable_rewrapped_page	83	84	searched_alternate_pages=40-44	40:unalignable_rewrapped_page(83/84);41:unalignable_rewrapped_page(83/85);42:unalignable_rewrapped_page(83/92);43:unalignable_rewrapped_page(83/83);44:unalignable_rewrapped_page(83/89)
+43					unalignable_rewrapped_page	80	83	searched_alternate_pages=43-47	43:unalignable_rewrapped_page(80/83);44:unalignable_rewrapped_page(80/89);45:unalignable_rewrapped_page(80/81);46:unalignable_rewrapped_page(80/81);47:unalignable_rewrapped_page(80/90)
+44					unalignable_rewrapped_page	96	89	searched_alternate_pages=44-48	44:unalignable_rewrapped_page(96/89);45:unalignable_rewrapped_page(96/81);46:unalignable_page_content(96/96);47:unalignable_rewrapped_page(96/90);48:unalignable_rewrapped_page(96/85)
+46					unalignable_rewrapped_page	81	81	searched_alternate_pages=46-50	46:unalignable_rewrapped_page(81/81);47:unalignable_rewrapped_page(81/90);48:unalignable_rewrapped_page(81/85);49:unalignable_rewrapped_page(81/79);50:unalignable_rewrapped_page(81/99)
+51					unalignable_rewrapped_page	85	85	searched_alternate_pages=51-55	51:unalignable_rewrapped_page(85/85);52:unalignable_rewrapped_page(85/83);53:unalignable_rewrapped_page(85/89);54:unalignable_rewrapped_page(85/86);55:unalignable_rewrapped_page(85/81)
+53					unalignable_rewrapped_page	80	89	searched_alternate_pages=53-57	53:unalignable_rewrapped_page(80/89);54:unalignable_rewrapped_page(80/86);55:unalignable_rewrapped_page(80/81);56:unalignable_rewrapped_page(80/95);57:unalignable_rewrapped_page(80/90)
+54					unalignable_rewrapped_page	78	86	searched_alternate_pages=54-58	54:unalignable_rewrapped_page(78/86);55:unalignable_rewrapped_page(78/81);56:unalignable_rewrapped_page(78/95);57:unalignable_rewrapped_page(78/90);58:unalignable_rewrapped_page(78/90)
+55					unalignable_rewrapped_page	84	81	searched_alternate_pages=55-59	55:unalignable_rewrapped_page(84/81);56:unalignable_rewrapped_page(84/95);57:unalignable_rewrapped_page(84/90);58:unalignable_rewrapped_page(84/90);59:unalignable_rewrapped_page(84/86)
+57					unalignable_rewrapped_page	81	90	searched_alternate_pages=57-61	57:unalignable_rewrapped_page(81/90);58:unalignable_rewrapped_page(81/90);59:unalignable_rewrapped_page(81/86);60:unalignable_rewrapped_page(81/87);61:unalignable_rewrapped_page(81/87)
+64					unalignable_rewrapped_page	84	93	searched_alternate_pages=64-68	64:unalignable_rewrapped_page(84/93);65:unalignable_rewrapped_page(84/82);66:unalignable_rewrapped_page(84/80);67:unalignable_rewrapped_page(84/85);68:unalignable_rewrapped_page(84/87)
+65					unalignable_rewrapped_page	94	82	searched_alternate_pages=65-69	65:unalignable_rewrapped_page(94/82);66:unalignable_rewrapped_page(94/80);67:unalignable_rewrapped_page(94/85);68:unalignable_rewrapped_page(94/87);69:unalignable_rewrapped_page(94/84)
+66					unalignable_rewrapped_page	79	80	searched_alternate_pages=66-70	66:unalignable_rewrapped_page(79/80);67:unalignable_rewrapped_page(79/85);68:unalignable_rewrapped_page(79/87);69:unalignable_rewrapped_page(79/84);70:unalignable_rewrapped_page(79/90)
+67					unalignable_rewrapped_page	80	85	searched_alternate_pages=67-71	67:unalignable_rewrapped_page(80/85);68:unalignable_rewrapped_page(80/87);69:unalignable_rewrapped_page(80/84);70:unalignable_rewrapped_page(80/90);71:unalignable_rewrapped_page(80/93)
+69					unalignable_rewrapped_page	82	84	searched_alternate_pages=69-73	69:unalignable_rewrapped_page(82/84);70:unalignable_rewrapped_page(82/90);71:unalignable_rewrapped_page(82/93);72:unalignable_rewrapped_page(82/98);73:unalignable_rewrapped_page(82/103)
+70					unalignable_rewrapped_page	82	90	searched_alternate_pages=70-74	70:unalignable_rewrapped_page(82/90);71:unalignable_rewrapped_page(82/93);72:unalignable_rewrapped_page(82/98);73:unalignable_rewrapped_page(82/103);74:unalignable_rewrapped_page(82/79)
+73					unalignable_rewrapped_page	86	103	searched_alternate_pages=73-77	73:unalignable_rewrapped_page(86/103);74:unalignable_rewrapped_page(86/79);75:unalignable_rewrapped_page(86/92);76:unalignable_rewrapped_page(86/84);77:unalignable_rewrapped_page(86/92)
+74					unalignable_rewrapped_page	74	79	searched_alternate_pages=74-78	74:unalignable_rewrapped_page(74/79);75:unalignable_rewrapped_page(74/92);76:unalignable_rewrapped_page(74/84);77:unalignable_rewrapped_page(74/92);78:unalignable_rewrapped_page(74/87)
+75					unalignable_rewrapped_page	84	92	searched_alternate_pages=75-79	75:unalignable_rewrapped_page(84/92);76:unalignable_rewrapped_page(84/84);77:unalignable_rewrapped_page(84/92);78:unalignable_rewrapped_page(84/87);79:unalignable_rewrapped_page(84/89)
+77					unalignable_rewrapped_page	92	92	searched_alternate_pages=77-81	77:unalignable_rewrapped_page(92/92);78:unalignable_rewrapped_page(92/87);79:unalignable_rewrapped_page(92/89);80:unalignable_rewrapped_page(92/89);81:unalignable_rewrapped_page(92/81)
+78					unalignable_rewrapped_page	81	87	searched_alternate_pages=78-82	78:unalignable_rewrapped_page(81/87);79:unalignable_rewrapped_page(81/89);80:unalignable_rewrapped_page(81/89);81:unalignable_rewrapped_page(81/81);82:unalignable_rewrapped_page(81/87)
+81					unalignable_rewrapped_page	80	81	searched_alternate_pages=81-85	81:unalignable_rewrapped_page(80/81);82:unalignable_rewrapped_page(80/87);83:unalignable_rewrapped_page(80/87);84:unalignable_rewrapped_page(80/84);85:unalignable_rewrapped_page(80/81)
+83					unalignable_rewrapped_page	84	87	searched_alternate_pages=83-87	83:unalignable_rewrapped_page(84/87);84:unalignable_rewrapped_page(84/84);85:unalignable_rewrapped_page(84/81);86:unalignable_rewrapped_page(84/89);87:unalignable_rewrapped_page(84/89)
+84					unalignable_rewrapped_page	82	84	searched_alternate_pages=84-88	84:unalignable_rewrapped_page(82/84);85:unalignable_rewrapped_page(82/81);86:unalignable_rewrapped_page(82/89);87:unalignable_rewrapped_page(82/89);88:unalignable_rewrapped_page(82/78)
+85					unalignable_rewrapped_page	77	81	searched_alternate_pages=85-89	85:unalignable_rewrapped_page(77/81);86:unalignable_rewrapped_page(77/89);87:unalignable_rewrapped_page(77/89);88:unalignable_rewrapped_page(77/78);89:unalignable_rewrapped_page(77/78)
+86					unalignable_rewrapped_page	85	89	searched_alternate_pages=86-90	86:unalignable_rewrapped_page(85/89);87:unalignable_rewrapped_page(85/89);88:unalignable_rewrapped_page(85/78);89:unalignable_rewrapped_page(85/78);90:unalignable_rewrapped_page(85/90)
+89					unalignable_rewrapped_page	51	78	searched_alternate_pages=89-93	89:unalignable_rewrapped_page(51/78);90:unalignable_rewrapped_page(51/90);91:unalignable_rewrapped_page(51/87);92:unalignable_rewrapped_page(51/93);93:unalignable_rewrapped_page(51/93)
+90					unalignable_rewrapped_page	92	90	searched_alternate_pages=90-94	90:unalignable_rewrapped_page(92/90);91:unalignable_rewrapped_page(92/87);92:unalignable_rewrapped_page(92/93);93:unalignable_rewrapped_page(92/93);94:unalignable_rewrapped_page(92/94)
+92					unalignable_rewrapped_page	96	93	searched_alternate_pages=92-96	92:unalignable_rewrapped_page(96/93);93:unalignable_rewrapped_page(96/93);94:unalignable_rewrapped_page(96/94);95:unalignable_rewrapped_page(96/87);96:unalignable_rewrapped_page(96/89)
+93					unalignable_rewrapped_page	92	93	searched_alternate_pages=93-97	93:unalignable_rewrapped_page(92/93);94:unalignable_rewrapped_page(92/94);95:unalignable_rewrapped_page(92/87);96:unalignable_rewrapped_page(92/89);97:unalignable_rewrapped_page(92/89)
+94					unalignable_rewrapped_page	95	94	searched_alternate_pages=94-98	94:unalignable_rewrapped_page(95/94);95:unalignable_rewrapped_page(95/87);96:unalignable_rewrapped_page(95/89);97:unalignable_rewrapped_page(95/89);98:unalignable_rewrapped_page(95/88)
+95					unalignable_rewrapped_page	94	87	searched_alternate_pages=95-99	95:unalignable_rewrapped_page(94/87);96:unalignable_rewrapped_page(94/89);97:unalignable_rewrapped_page(94/89);98:unalignable_rewrapped_page(94/88);99:unalignable_rewrapped_page(94/83)
+96					unalignable_rewrapped_page	96	89	searched_alternate_pages=96-100	96:unalignable_rewrapped_page(96/89);97:unalignable_rewrapped_page(96/89);98:unalignable_rewrapped_page(96/88);99:unalignable_rewrapped_page(96/83);100:unalignable_rewrapped_page(96/84)
+97					unalignable_rewrapped_page	95	89	searched_alternate_pages=97-101	97:unalignable_rewrapped_page(95/89);98:unalignable_rewrapped_page(95/88);99:unalignable_rewrapped_page(95/83);100:unalignable_rewrapped_page(95/84);101:unalignable_rewrapped_page(95/86)
+99					unalignable_rewrapped_page	82	83	searched_alternate_pages=99-103	99:unalignable_rewrapped_page(82/83);100:unalignable_rewrapped_page(82/84);101:unalignable_rewrapped_page(82/86);102:unalignable_rewrapped_page(82/85);103:unalignable_rewrapped_page(82/87)
+101					unalignable_page_content	94	94	searched_alternate_pages=101-105	101:unalignable_page_content(94/94);102:unalignable_page_content(94/94);103:unalignable_rewrapped_page(94/87);104:unalignable_rewrapped_page(94/79);105:unalignable_rewrapped_page(94/82)
+103					unalignable_rewrapped_page	86	87	searched_alternate_pages=103-107	103:unalignable_rewrapped_page(86/87);104:unalignable_page_content(86/86);105:unalignable_rewrapped_page(86/82);106:unalignable_rewrapped_page(86/88);107:unalignable_rewrapped_page(86/90)
+106					unalignable_rewrapped_page	85	88	searched_alternate_pages=106-110	106:unalignable_rewrapped_page(85/88);107:unalignable_rewrapped_page(85/90);108:unalignable_rewrapped_page(85/89);109:unalignable_rewrapped_page(85/82);110:unalignable_rewrapped_page(85/82)
+107					unalignable_rewrapped_page	90	90	searched_alternate_pages=107-111	107:unalignable_rewrapped_page(90/90);108:unalignable_rewrapped_page(90/89);109:unalignable_rewrapped_page(90/82);110:unalignable_rewrapped_page(90/82);111:unalignable_rewrapped_page(90/77)
+108					unalignable_rewrapped_page	91	89	searched_alternate_pages=108-112	108:unalignable_rewrapped_page(91/89);109:unalignable_rewrapped_page(91/82);110:unalignable_rewrapped_page(91/82);111:unalignable_rewrapped_page(91/77);112:unalignable_rewrapped_page(91/83)
+111					unalignable_rewrapped_page	82	77	searched_alternate_pages=111-115	111:unalignable_rewrapped_page(82/77);112:unalignable_rewrapped_page(82/83);113:unalignable_rewrapped_page(82/86);114:unalignable_rewrapped_page(82/86);115:unalignable_rewrapped_page(82/86)
+114					unalignable_rewrapped_page	77	86	searched_alternate_pages=114-118	114:unalignable_rewrapped_page(77/86);115:unalignable_rewrapped_page(77/86);116:unalignable_rewrapped_page(77/85);117:unalignable_rewrapped_page(77/76);118:unalignable_rewrapped_page(77/78)
+115					unalignable_rewrapped_page	84	86	searched_alternate_pages=115-119	115:unalignable_rewrapped_page(84/86);116:unalignable_rewrapped_page(84/85);117:unalignable_rewrapped_page(84/76);118:unalignable_rewrapped_page(84/78);119:unalignable_rewrapped_page(84/83)
+116					unalignable_rewrapped_page	87	85	searched_alternate_pages=116-120	116:unalignable_rewrapped_page(87/85);117:unalignable_rewrapped_page(87/76);118:unalignable_rewrapped_page(87/78);119:unalignable_rewrapped_page(87/83);120:unalignable_rewrapped_page(87/89)
+118					unalignable_rewrapped_page	82	78	searched_alternate_pages=118-122	118:unalignable_rewrapped_page(82/78);119:unalignable_rewrapped_page(82/83);120:unalignable_rewrapped_page(82/89);121:unalignable_rewrapped_page(82/86);122:unalignable_rewrapped_page(82/82)
+122					unalignable_rewrapped_page	72	82	searched_alternate_pages=122-126	122:unalignable_rewrapped_page(72/82);123:unalignable_rewrapped_page(72/84);124:unalignable_rewrapped_page(72/71);125:unalignable_rewrapped_page(72/85);126:unalignable_rewrapped_page(72/85)
+124					unalignable_rewrapped_page	72	71	searched_alternate_pages=124-128	124:unalignable_rewrapped_page(72/71);125:unalignable_rewrapped_page(72/85);126:unalignable_rewrapped_page(72/85);127:unalignable_rewrapped_page(72/78);128:unalignable_rewrapped_page(72/78)
+127					unalignable_rewrapped_page	89	78	searched_alternate_pages=127-131	127:unalignable_rewrapped_page(89/78);128:unalignable_rewrapped_page(89/78);129:unalignable_rewrapped_page(89/86);130:unalignable_rewrapped_page(89/73);131:unalignable_rewrapped_page(89/83)
+129					unalignable_rewrapped_page	89	86	searched_alternate_pages=129-133	129:unalignable_rewrapped_page(89/86);130:unalignable_rewrapped_page(89/73);131:unalignable_rewrapped_page(89/83);132:unalignable_rewrapped_page(89/85);133:unalignable_rewrapped_page(89/89)
+132					unalignable_rewrapped_page	84	85	searched_alternate_pages=132-136	132:unalignable_rewrapped_page(84/85);133:unalignable_rewrapped_page(84/89);134:unalignable_page_content(84/84);135:unalignable_rewrapped_page(84/71);136:unalignable_rewrapped_page(84/88)
+134					unalignable_rewrapped_page	78	75	searched_alternate_pages=134-138	134:unalignable_rewrapped_page(78/75);135:unalignable_rewrapped_page(78/71);136:unalignable_rewrapped_page(78/88);137:unalignable_rewrapped_page(78/82);138:unalignable_rewrapped_page(78/89)
+139					unalignable_rewrapped_page	85	89	searched_alternate_pages=139-143	139:unalignable_rewrapped_page(85/89);140:unalignable_rewrapped_page(85/87);141:unalignable_rewrapped_page(85/90);142:unalignable_rewrapped_page(85/79);143:unalignable_rewrapped_page(85/81)
+140					unalignable_rewrapped_page	86	87	searched_alternate_pages=140-144	140:unalignable_rewrapped_page(86/87);141:unalignable_rewrapped_page(86/90);142:unalignable_page_content(86/86);143:unalignable_rewrapped_page(86/81);144:unalignable_rewrapped_page(86/82)
+147					unalignable_rewrapped_page	94	93	searched_alternate_pages=147-151	147:unalignable_rewrapped_page(94/93);148:unalignable_rewrapped_page(94/92);149:unalignable_rewrapped_page(94/78);150:unalignable_rewrapped_page(94/76);151:unalignable_rewrapped_page(94/73)
+148					unalignable_rewrapped_page	94	92	searched_alternate_pages=148-152	148:unalignable_rewrapped_page(94/92);149:unalignable_rewrapped_page(94/78);150:unalignable_rewrapped_page(94/76);151:unalignable_rewrapped_page(94/73);152:unalignable_rewrapped_page(94/78)
+149					unalignable_rewrapped_page	77	78	searched_alternate_pages=149-153	149:unalignable_rewrapped_page(77/78);150:unalignable_rewrapped_page(77/76);151:unalignable_rewrapped_page(77/73);152:unalignable_rewrapped_page(77/78);153:unalignable_rewrapped_page(77/84)
+150					unalignable_rewrapped_page	80	76	searched_alternate_pages=150-154	150:unalignable_rewrapped_page(80/76);151:unalignable_page_content(80/80);152:unalignable_rewrapped_page(80/78);153:unalignable_rewrapped_page(80/84);154:unalignable_page_content(80/80)
+151					unalignable_rewrapped_page	76	73	searched_alternate_pages=151-155	151:unalignable_rewrapped_page(76/73);152:unalignable_rewrapped_page(76/78);153:unalignable_rewrapped_page(76/84);154:unalignable_rewrapped_page(76/67);155:unalignable_rewrapped_page(76/72)
+152					unalignable_rewrapped_page	77	78	searched_alternate_pages=152-156	152:unalignable_rewrapped_page(77/78);153:unalignable_rewrapped_page(77/84);154:unalignable_rewrapped_page(77/67);155:unalignable_rewrapped_page(77/72);156:unalignable_rewrapped_page(77/84)
+153					unalignable_rewrapped_page	84	84	searched_alternate_pages=153-157	153:unalignable_rewrapped_page(84/84);154:unalignable_rewrapped_page(84/67);155:unalignable_rewrapped_page(84/72);156:unalignable_rewrapped_page(84/84);157:unalignable_rewrapped_page(84/85)
+155					unalignable_rewrapped_page	73	72	searched_alternate_pages=155-159	155:unalignable_rewrapped_page(73/72);156:unalignable_rewrapped_page(73/84);157:unalignable_rewrapped_page(73/85);158:unalignable_rewrapped_page(73/72);159:unalignable_rewrapped_page(73/68)
+157					unalignable_rewrapped_page	87	85	searched_alternate_pages=157-161	157:unalignable_rewrapped_page(87/85);158:unalignable_rewrapped_page(87/72);159:unalignable_rewrapped_page(87/68);160:unalignable_rewrapped_page(87/74);161:unalignable_rewrapped_page(87/76)
+158					unalignable_rewrapped_page	67	72	searched_alternate_pages=158-162	158:unalignable_rewrapped_page(67/72);159:unalignable_rewrapped_page(67/68);160:unalignable_rewrapped_page(67/74);161:unalignable_rewrapped_page(67/76);162:unalignable_rewrapped_page(67/85)
+162					unalignable_rewrapped_page	78	85	searched_alternate_pages=162-166	162:unalignable_rewrapped_page(78/85);163:unalignable_rewrapped_page(78/89);164:unalignable_rewrapped_page(78/92);165:unalignable_rewrapped_page(78/79);166:unalignable_rewrapped_page(78/80)
+163					unalignable_rewrapped_page	98	89	searched_alternate_pages=163-167	163:unalignable_rewrapped_page(98/89);164:unalignable_rewrapped_page(98/92);165:unalignable_rewrapped_page(98/79);166:unalignable_rewrapped_page(98/80);167:unalignable_rewrapped_page(98/85)
+164					unalignable_rewrapped_page	95	92	searched_alternate_pages=164-168	164:unalignable_rewrapped_page(95/92);165:unalignable_rewrapped_page(95/79);166:unalignable_rewrapped_page(95/80);167:unalignable_page_content(95/95);168:unalignable_rewrapped_page(95/84)
+170					unalignable_rewrapped_page	84	85	searched_alternate_pages=170-174	170:unalignable_rewrapped_page(84/85);171:unalignable_rewrapped_page(84/95);172:unalignable_rewrapped_page(84/97);173:unalignable_rewrapped_page(84/93);174:unalignable_rewrapped_page(84/87)
+172					unalignable_rewrapped_page	101	97	searched_alternate_pages=172-176	172:unalignable_rewrapped_page(101/97);173:unalignable_rewrapped_page(101/93);174:unalignable_rewrapped_page(101/87);175:unalignable_rewrapped_page(101/73);176:unalignable_rewrapped_page(101/80)
+174					unalignable_rewrapped_page	89	87	searched_alternate_pages=174-178	174:unalignable_rewrapped_page(89/87);175:unalignable_rewrapped_page(89/73);176:unalignable_rewrapped_page(89/80);177:unalignable_rewrapped_page(89/91);178:unalignable_rewrapped_page(89/87)
+175					unalignable_rewrapped_page	85	73	searched_alternate_pages=175-179	175:unalignable_rewrapped_page(85/73);176:unalignable_rewrapped_page(85/80);177:unalignable_rewrapped_page(85/91);178:unalignable_rewrapped_page(85/87);179:unalignable_rewrapped_page(85/92)
+177					unalignable_rewrapped_page	81	91	searched_alternate_pages=177-181	177:unalignable_rewrapped_page(81/91);178:unalignable_rewrapped_page(81/87);179:unalignable_rewrapped_page(81/92);180:unalignable_rewrapped_page(81/91);181:unalignable_rewrapped_page(81/91)
+179					unalignable_rewrapped_page	85	92	searched_alternate_pages=179-183	179:unalignable_rewrapped_page(85/92);180:unalignable_rewrapped_page(85/91);181:unalignable_rewrapped_page(85/91);182:unalignable_rewrapped_page(85/85);183:unalignable_rewrapped_page(85/93)
+180					unalignable_rewrapped_page	78	91	searched_alternate_pages=180-184	180:unalignable_rewrapped_page(78/91);181:unalignable_rewrapped_page(78/91);182:unalignable_rewrapped_page(78/85);183:unalignable_rewrapped_page(78/93);184:unalignable_rewrapped_page(78/81)
+182					unalignable_rewrapped_page	73	85	searched_alternate_pages=182-186	182:unalignable_rewrapped_page(73/85);183:unalignable_rewrapped_page(73/93);184:unalignable_rewrapped_page(73/81);185:unalignable_rewrapped_page(73/84);186:unalignable_rewrapped_page(73/90)
+184					unalignable_rewrapped_page	79	81	searched_alternate_pages=184-188	184:unalignable_rewrapped_page(79/81);185:unalignable_rewrapped_page(79/84);186:unalignable_rewrapped_page(79/90);187:unalignable_rewrapped_page(79/88);188:unalignable_rewrapped_page(79/77)
+186					unalignable_rewrapped_page	90	90	searched_alternate_pages=186-190	186:unalignable_rewrapped_page(90/90);187:unalignable_rewrapped_page(90/88);188:unalignable_rewrapped_page(90/77);189:unalignable_rewrapped_page(90/89);190:unalignable_rewrapped_page(90/81)
+188					unalignable_rewrapped_page	78	77	searched_alternate_pages=188-192	188:unalignable_rewrapped_page(78/77);189:unalignable_rewrapped_page(78/89);190:unalignable_rewrapped_page(78/81);191:unalignable_rewrapped_page(78/87);192:unalignable_rewrapped_page(78/81)
+189					unalignable_rewrapped_page	82	89	searched_alternate_pages=189-193	189:unalignable_rewrapped_page(82/89);190:unalignable_rewrapped_page(82/81);191:unalignable_rewrapped_page(82/87);192:unalignable_rewrapped_page(82/81);193:unalignable_rewrapped_page(82/82)
+191					unalignable_rewrapped_page	87	87	searched_alternate_pages=191-195	191:unalignable_rewrapped_page(87/87);192:unalignable_rewrapped_page(87/81);193:unalignable_page_content(87/87);194:unalignable_rewrapped_page(87/91);195:unalignable_rewrapped_page(87/83)
+192					unalignable_rewrapped_page	77	81	searched_alternate_pages=192-196	192:unalignable_rewrapped_page(77/81);193:unalignable_rewrapped_page(77/82);194:unalignable_rewrapped_page(77/91);195:unalignable_rewrapped_page(77/83);196:unalignable_rewrapped_page(77/88)
+193					unalignable_rewrapped_page	70	82	searched_alternate_pages=193-197	193:unalignable_rewrapped_page(70/82);194:unalignable_rewrapped_page(70/91);195:unalignable_rewrapped_page(70/83);196:unalignable_rewrapped_page(70/88);197:unalignable_rewrapped_page(70/91)
+199					unalignable_rewrapped_page	84	81	searched_alternate_pages=199-203	199:unalignable_rewrapped_page(84/81);200:unalignable_rewrapped_page(84/84);201:unalignable_rewrapped_page(84/98);202:unalignable_rewrapped_page(84/92);203:unalignable_rewrapped_page(84/90)
+201					unalignable_rewrapped_page	81	98	searched_alternate_pages=201-205	201:unalignable_rewrapped_page(81/98);202:unalignable_rewrapped_page(81/92);203:unalignable_rewrapped_page(81/90);204:unalignable_rewrapped_page(81/78);205:unalignable_rewrapped_page(81/95)
+202					unalignable_rewrapped_page	79	92	searched_alternate_pages=202-206	202:unalignable_rewrapped_page(79/92);203:unalignable_rewrapped_page(79/90);204:unalignable_rewrapped_page(79/78);205:unalignable_rewrapped_page(79/95);206:unalignable_rewrapped_page(79/90)
+204					unalignable_rewrapped_page	95	78	searched_alternate_pages=204-208	204:unalignable_rewrapped_page(95/78);205:unalignable_rewrapped_page(95/95);206:unalignable_rewrapped_page(95/90);207:unalignable_rewrapped_page(95/85);208:unalignable_rewrapped_page(95/94)
+205					unalignable_rewrapped_page	95	95	searched_alternate_pages=205-209	205:unalignable_rewrapped_page(95/95);206:unalignable_rewrapped_page(95/90);207:unalignable_rewrapped_page(95/85);208:unalignable_rewrapped_page(95/94);209:unalignable_rewrapped_page(95/82)
+206					unalignable_rewrapped_page	96	90	searched_alternate_pages=206-210	206:unalignable_rewrapped_page(96/90);207:unalignable_rewrapped_page(96/85);208:unalignable_rewrapped_page(96/94);209:unalignable_rewrapped_page(96/82);210:unalignable_rewrapped_page(96/92)
+207					unalignable_rewrapped_page	88	85	searched_alternate_pages=207-211	207:unalignable_rewrapped_page(88/85);208:unalignable_rewrapped_page(88/94);209:unalignable_rewrapped_page(88/82);210:unalignable_rewrapped_page(88/92);211:unalignable_rewrapped_page(88/91)
+210					unalignable_rewrapped_page	93	92	searched_alternate_pages=210-214	210:unalignable_rewrapped_page(93/92);211:unalignable_rewrapped_page(93/91);212:unalignable_rewrapped_page(93/87);213:unalignable_rewrapped_page(93/83);214:unalignable_rewrapped_page(93/83)
+215					unalignable_rewrapped_page	89	81	searched_alternate_pages=215-219	215:unalignable_rewrapped_page(89/81);216:unalignable_rewrapped_page(89/90);217:unalignable_rewrapped_page(89/72);218:unalignable_rewrapped_page(89/77);219:unalignable_rewrapped_page(89/76)
+216					unalignable_rewrapped_page	87	90	searched_alternate_pages=216-220	216:unalignable_rewrapped_page(87/90);217:unalignable_rewrapped_page(87/72);218:unalignable_rewrapped_page(87/77);219:unalignable_rewrapped_page(87/76);220:unalignable_rewrapped_page(87/87)
+217					unalignable_rewrapped_page	78	72	searched_alternate_pages=217-221	217:unalignable_rewrapped_page(78/72);218:unalignable_rewrapped_page(78/77);219:unalignable_rewrapped_page(78/76);220:unalignable_rewrapped_page(78/87);221:unalignable_rewrapped_page(78/83)
+220					unalignable_rewrapped_page	85	87	searched_alternate_pages=220-224	220:unalignable_rewrapped_page(85/87);221:unalignable_rewrapped_page(85/83);222:unalignable_rewrapped_page(85/77);223:unalignable_rewrapped_page(85/76);224:unalignable_rewrapped_page(85/77)
+222					unalignable_rewrapped_page	73	77	searched_alternate_pages=222-226	222:unalignable_rewrapped_page(73/77);223:unalignable_rewrapped_page(73/76);224:unalignable_rewrapped_page(73/77);225:unalignable_rewrapped_page(73/77);226:unalignable_rewrapped_page(73/89)
+225					unalignable_rewrapped_page	84	77	searched_alternate_pages=225-229	225:unalignable_rewrapped_page(84/77);226:unalignable_rewrapped_page(84/89);227:unalignable_rewrapped_page(84/79);228:unalignable_rewrapped_page(84/85);229:unalignable_rewrapped_page(84/92)
+226					unalignable_rewrapped_page	90	89	searched_alternate_pages=226-230	226:unalignable_rewrapped_page(90/89);227:unalignable_rewrapped_page(90/79);228:unalignable_rewrapped_page(90/85);229:unalignable_rewrapped_page(90/92);230:unalignable_rewrapped_page(90/92)
+228					unalignable_rewrapped_page	87	85	searched_alternate_pages=228-232	228:unalignable_rewrapped_page(87/85);229:unalignable_rewrapped_page(87/92);230:unalignable_rewrapped_page(87/92);231:unalignable_rewrapped_page(87/95);232:unalignable_rewrapped_page(87/96)
+235					unalignable_rewrapped_page	84	84	searched_alternate_pages=235-239	235:unalignable_rewrapped_page(84/84);236:unalignable_rewrapped_page(84/86);237:unalignable_rewrapped_page(84/80);238:unalignable_rewrapped_page(84/89);239:unalignable_rewrapped_page(84/80)
+238					unalignable_rewrapped_page	90	89	searched_alternate_pages=238-242	238:unalignable_rewrapped_page(90/89);239:unalignable_rewrapped_page(90/80);240:unalignable_rewrapped_page(90/85);241:unalignable_rewrapped_page(90/80);242:unalignable_rewrapped_page(90/94)
+239					unalignable_rewrapped_page	84	80	searched_alternate_pages=239-243	239:unalignable_rewrapped_page(84/80);240:unalignable_rewrapped_page(84/85);241:unalignable_rewrapped_page(84/80);242:unalignable_rewrapped_page(84/94);243:unalignable_rewrapped_page(84/89)
+241					unalignable_rewrapped_page	78	80	searched_alternate_pages=241-245	241:unalignable_rewrapped_page(78/80);242:unalignable_rewrapped_page(78/94);243:unalignable_rewrapped_page(78/89);244:unalignable_rewrapped_page(78/87);245:unalignable_rewrapped_page(78/94)
+243					unalignable_rewrapped_page	97	89	searched_alternate_pages=243-247	243:unalignable_rewrapped_page(97/89);244:unalignable_rewrapped_page(97/87);245:unalignable_rewrapped_page(97/94);246:unalignable_rewrapped_page(97/91);247:unalignable_rewrapped_page(97/96)
+244					unalignable_rewrapped_page	95	87	searched_alternate_pages=244-248	244:unalignable_rewrapped_page(95/87);245:unalignable_rewrapped_page(95/94);246:unalignable_rewrapped_page(95/91);247:unalignable_rewrapped_page(95/96);248:unalignable_rewrapped_page(95/94)
+246					unalignable_rewrapped_page	93	91	searched_alternate_pages=246-250	246:unalignable_rewrapped_page(93/91);247:unalignable_rewrapped_page(93/96);248:unalignable_rewrapped_page(93/94);249:unalignable_rewrapped_page(93/83);250:unalignable_rewrapped_page(93/80)
+248					unalignable_rewrapped_page	85	94	searched_alternate_pages=248-252	248:unalignable_rewrapped_page(85/94);249:unalignable_rewrapped_page(85/83);250:unalignable_rewrapped_page(85/80);251:unalignable_rewrapped_page(85/82);252:unalignable_rewrapped_page(85/79)
+249					unalignable_rewrapped_page	76	83	searched_alternate_pages=249-253	249:unalignable_rewrapped_page(76/83);250:unalignable_rewrapped_page(76/80);251:unalignable_rewrapped_page(76/82);252:unalignable_rewrapped_page(76/79);253:unalignable_rewrapped_page(76/76)
+250					unalignable_rewrapped_page	79	80	searched_alternate_pages=250-254	250:unalignable_rewrapped_page(79/80);251:unalignable_rewrapped_page(79/82);252:unalignable_rewrapped_page(79/79);253:unalignable_rewrapped_page(79/76);254:unalignable_rewrapped_page(79/89)
+253					unalignable_rewrapped_page	75	76	searched_alternate_pages=253-257	253:unalignable_rewrapped_page(75/76);254:unalignable_rewrapped_page(75/89);255:unalignable_rewrapped_page(75/92);256:unalignable_rewrapped_page(75/90);257:unalignable_rewrapped_page(75/88)
+255					unalignable_rewrapped_page	96	92	searched_alternate_pages=255-259	255:unalignable_rewrapped_page(96/92);256:unalignable_rewrapped_page(96/90);257:unalignable_rewrapped_page(96/88);258:unalignable_rewrapped_page(96/90);259:unalignable_rewrapped_page(96/81)
+256					unalignable_rewrapped_page	89	90	searched_alternate_pages=256-260	256:unalignable_rewrapped_page(89/90);257:unalignable_rewrapped_page(89/88);258:unalignable_rewrapped_page(89/90);259:unalignable_rewrapped_page(89/81);260:unalignable_rewrapped_page(89/89)
+258					unalignable_rewrapped_page	85	90	searched_alternate_pages=258-262	258:unalignable_rewrapped_page(85/90);259:unalignable_rewrapped_page(85/81);260:unalignable_rewrapped_page(85/89);261:unalignable_rewrapped_page(85/81);262:unalignable_rewrapped_page(85/80)
+260					unalignable_rewrapped_page	86	89	searched_alternate_pages=260-264	260:unalignable_rewrapped_page(86/89);261:unalignable_rewrapped_page(86/81);262:unalignable_rewrapped_page(86/80);263:unalignable_rewrapped_page(86/93);264:unalignable_rewrapped_page(86/83)
+263					unalignable_rewrapped_page	96	93	searched_alternate_pages=263-267	263:unalignable_rewrapped_page(96/93);264:unalignable_rewrapped_page(96/83);265:unalignable_rewrapped_page(96/85);266:unalignable_rewrapped_page(96/88);267:unalignable_page_content(96/96)
+266					unalignable_rewrapped_page	92	88	searched_alternate_pages=266-270	266:unalignable_rewrapped_page(92/88);267:unalignable_rewrapped_page(92/86);268:unalignable_rewrapped_page(92/92);269:unalignable_rewrapped_page(92/85);270:unalignable_rewrapped_page(92/86)
+270					unalignable_rewrapped_page	82	86	searched_alternate_pages=270-274	270:unalignable_rewrapped_page(82/86);271:unalignable_page_content(82/82);272:unalignable_rewrapped_page(82/86);273:unalignable_rewrapped_page(82/85);274:unalignable_rewrapped_page(82/82)
+273					unalignable_rewrapped_page	80	85	searched_alternate_pages=273-277	273:unalignable_rewrapped_page(80/85);274:unalignable_rewrapped_page(80/82);275:unalignable_rewrapped_page(80/85);276:unalignable_rewrapped_page(80/88);277:unalignable_rewrapped_page(80/94)
+278					unalignable_rewrapped_page	56	84	searched_alternate_pages=278-282	278:unalignable_rewrapped_page(56/84);279:unalignable_rewrapped_page(56/74);280:unalignable_rewrapped_page(56/91);281:unalignable_rewrapped_page(56/72);282:unalignable_rewrapped_page(56/86)
+283					unalignable_rewrapped_page	79	78	searched_alternate_pages=283-287	283:unalignable_rewrapped_page(79/78);284:unalignable_page_content(79/79);285:unalignable_rewrapped_page(79/89);286:unalignable_rewrapped_page(79/92);287:unalignable_rewrapped_page(79/92)
+284					unalignable_rewrapped_page	80	72	searched_alternate_pages=284-288	284:unalignable_rewrapped_page(80/72);285:unalignable_rewrapped_page(80/89);286:unalignable_rewrapped_page(80/92);287:unalignable_rewrapped_page(80/92);288:unalignable_rewrapped_page(80/77)
+287					unalignable_rewrapped_page	89	92	searched_alternate_pages=287-291	287:unalignable_rewrapped_page(89/92);288:unalignable_rewrapped_page(89/77);289:unalignable_rewrapped_page(89/83);290:unalignable_rewrapped_page(89/91);291:unalignable_rewrapped_page(89/85)
+288					unalignable_rewrapped_page	75	77	searched_alternate_pages=288-292	288:unalignable_rewrapped_page(75/77);289:unalignable_rewrapped_page(75/83);290:unalignable_rewrapped_page(75/91);291:unalignable_rewrapped_page(75/85);292:unalignable_rewrapped_page(75/84)
+290					unalignable_rewrapped_page	88	91	searched_alternate_pages=290-294	290:unalignable_rewrapped_page(88/91);291:unalignable_rewrapped_page(88/85);292:unalignable_rewrapped_page(88/84);293:unalignable_rewrapped_page(88/82);294:unalignable_rewrapped_page(88/86)
+291					unalignable_rewrapped_page	85	85	searched_alternate_pages=291-295	291:unalignable_rewrapped_page(85/85);292:unalignable_rewrapped_page(85/84);293:unalignable_rewrapped_page(85/82);294:unalignable_rewrapped_page(85/86);295:unalignable_rewrapped_page(85/88)
+292					unalignable_rewrapped_page	88	84	searched_alternate_pages=292-296	292:unalignable_rewrapped_page(88/84);293:unalignable_rewrapped_page(88/82);294:unalignable_rewrapped_page(88/86);295:unalignable_rewrapped_page(88/88);296:unalignable_rewrapped_page(88/89)
+296					unalignable_rewrapped_page	93	89	searched_alternate_pages=296-300	296:unalignable_rewrapped_page(93/89);297:unalignable_rewrapped_page(93/85);298:unalignable_rewrapped_page(93/97);299:unalignable_rewrapped_page(93/83);300:unalignable_rewrapped_page(93/87)
+300					unalignable_rewrapped_page	89	87	searched_alternate_pages=300-304	300:unalignable_rewrapped_page(89/87);301:unalignable_rewrapped_page(89/93);302:unalignable_rewrapped_page(89/86);303:unalignable_page_content(89/89);304:unalignable_rewrapped_page(89/84)
+301					unalignable_rewrapped_page	93	93	searched_alternate_pages=301-305	301:unalignable_rewrapped_page(93/93);302:unalignable_rewrapped_page(93/86);303:unalignable_rewrapped_page(93/83);304:unalignable_rewrapped_page(93/84);305:unalignable_rewrapped_page(93/89)
+302					unalignable_rewrapped_page	78	86	searched_alternate_pages=302-306	302:unalignable_rewrapped_page(78/86);303:unalignable_rewrapped_page(78/83);304:unalignable_rewrapped_page(78/84);305:unalignable_rewrapped_page(78/89);306:unalignable_rewrapped_page(78/82)
+303					unalignable_rewrapped_page	76	83	searched_alternate_pages=303-307	303:unalignable_rewrapped_page(76/83);304:unalignable_rewrapped_page(76/84);305:unalignable_rewrapped_page(76/89);306:unalignable_rewrapped_page(76/82);307:unalignable_rewrapped_page(76/85)
+305					unalignable_rewrapped_page	91	89	searched_alternate_pages=305-309	305:unalignable_rewrapped_page(91/89);306:unalignable_rewrapped_page(91/82);307:unalignable_rewrapped_page(91/85);308:unalignable_rewrapped_page(91/84);309:unalignable_rewrapped_page(91/81)
+308					unalignable_rewrapped_page	77	84	searched_alternate_pages=308-312	308:unalignable_rewrapped_page(77/84);309:unalignable_rewrapped_page(77/81);310:unalignable_rewrapped_page(77/90);311:unalignable_rewrapped_page(77/79);312:unalignable_rewrapped_page(77/91)
+316					unalignable_rewrapped_page	83	93	searched_alternate_pages=316-320	316:unalignable_rewrapped_page(83/93);317:unalignable_rewrapped_page(83/82);318:unalignable_rewrapped_page(83/83);319:unalignable_rewrapped_page(83/86);320:unalignable_rewrapped_page(83/87)
+317					unalignable_rewrapped_page	80	82	searched_alternate_pages=317-321	317:unalignable_rewrapped_page(80/82);318:unalignable_rewrapped_page(80/83);319:unalignable_rewrapped_page(80/86);320:unalignable_rewrapped_page(80/87);321:unalignable_rewrapped_page(80/83)
+320					unalignable_rewrapped_page	88	87	searched_alternate_pages=320-324	320:unalignable_rewrapped_page(88/87);321:unalignable_rewrapped_page(88/83);322:unalignable_rewrapped_page(88/86);323:unalignable_rewrapped_page(88/80);324:unalignable_rewrapped_page(88/100)
+323					unalignable_rewrapped_page	81	80	searched_alternate_pages=323-327	323:unalignable_rewrapped_page(81/80);324:unalignable_rewrapped_page(81/100);325:unalignable_rewrapped_page(81/89);326:unalignable_rewrapped_page(81/89);327:unalignable_rewrapped_page(81/85)
+324					unalignable_rewrapped_page	97	100	searched_alternate_pages=324-328	324:unalignable_rewrapped_page(97/100);325:unalignable_rewrapped_page(97/89);326:unalignable_rewrapped_page(97/89);327:unalignable_rewrapped_page(97/85);328:unalignable_rewrapped_page(97/83)
+325					unalignable_rewrapped_page	84	89	searched_alternate_pages=325-329	325:unalignable_rewrapped_page(84/89);326:unalignable_rewrapped_page(84/89);327:unalignable_rewrapped_page(84/85);328:unalignable_rewrapped_page(84/83);329:unalignable_rewrapped_page(84/83)
+329					unalignable_rewrapped_page	72	83	searched_alternate_pages=329-333	329:unalignable_rewrapped_page(72/83);330:unalignable_rewrapped_page(72/87);331:unalignable_rewrapped_page(72/84);332:unalignable_rewrapped_page(72/84);333:unalignable_rewrapped_page(72/85)
+330					unalignable_rewrapped_page	77	87	searched_alternate_pages=330-334	330:unalignable_rewrapped_page(77/87);331:unalignable_rewrapped_page(77/84);332:unalignable_rewrapped_page(77/84);333:unalignable_rewrapped_page(77/85);334:unalignable_rewrapped_page(77/91)
+331					unalignable_rewrapped_page	75	84	searched_alternate_pages=331-335	331:unalignable_rewrapped_page(75/84);332:unalignable_rewrapped_page(75/84);333:unalignable_rewrapped_page(75/85);334:unalignable_rewrapped_page(75/91);335:unalignable_rewrapped_page(75/85)
+332					unalignable_rewrapped_page	80	84	searched_alternate_pages=332-336	332:unalignable_rewrapped_page(80/84);333:unalignable_rewrapped_page(80/85);334:unalignable_rewrapped_page(80/91);335:unalignable_rewrapped_page(80/85);336:unalignable_rewrapped_page(80/88)
+340					unalignable_rewrapped_page	81	77	searched_alternate_pages=340-344	340:unalignable_rewrapped_page(81/77);341:unalignable_rewrapped_page(81/97);342:unalignable_rewrapped_page(81/87);343:unalignable_rewrapped_page(81/84);344:unalignable_rewrapped_page(81/86)
+342					unalignable_rewrapped_page	78	87	searched_alternate_pages=342-346	342:unalignable_rewrapped_page(78/87);343:unalignable_rewrapped_page(78/84);344:unalignable_rewrapped_page(78/86);345:unalignable_rewrapped_page(78/78);346:unalignable_rewrapped_page(78/86)
+343					unalignable_rewrapped_page	81	84	searched_alternate_pages=343-347	343:unalignable_rewrapped_page(81/84);344:unalignable_rewrapped_page(81/86);345:unalignable_rewrapped_page(81/78);346:unalignable_rewrapped_page(81/86);347:unalignable_rewrapped_page(81/82)
+347					unalignable_rewrapped_page	80	82	searched_alternate_pages=347-351	347:unalignable_rewrapped_page(80/82);348:unalignable_rewrapped_page(80/78);349:unalignable_rewrapped_page(80/91);350:unalignable_rewrapped_page(80/89);351:unalignable_rewrapped_page(80/94)
+348					unalignable_rewrapped_page	84	78	searched_alternate_pages=348-352	348:unalignable_rewrapped_page(84/78);349:unalignable_rewrapped_page(84/91);350:unalignable_rewrapped_page(84/89);351:unalignable_rewrapped_page(84/94);352:unalignable_rewrapped_page(84/95)
+349					unalignable_rewrapped_page	83	91	searched_alternate_pages=349-353	349:unalignable_rewrapped_page(83/91);350:unalignable_rewrapped_page(83/89);351:unalignable_rewrapped_page(83/94);352:unalignable_rewrapped_page(83/95);353:unalignable_rewrapped_page(83/83)
+351					unalignable_rewrapped_page	93	94	searched_alternate_pages=351-355	351:unalignable_rewrapped_page(93/94);352:unalignable_rewrapped_page(93/95);353:unalignable_rewrapped_page(93/83);354:unalignable_rewrapped_page(93/90);355:unalignable_rewrapped_page(93/85)
+354					unalignable_rewrapped_page	85	90	searched_alternate_pages=354-358	354:unalignable_rewrapped_page(85/90);355:unalignable_rewrapped_page(85/85);356:unalignable_rewrapped_page(85/96);357:unalignable_rewrapped_page(85/98);358:unalignable_rewrapped_page(85/95)
+358					unalignable_rewrapped_page	84	95	searched_alternate_pages=358-362	358:unalignable_rewrapped_page(84/95);359:unalignable_rewrapped_page(84/81);360:unalignable_rewrapped_page(84/72);361:unalignable_rewrapped_page(84/85);362:unalignable_rewrapped_page(84/94)
+359					unalignable_rewrapped_page	75	81	searched_alternate_pages=359-363	359:unalignable_rewrapped_page(75/81);360:unalignable_rewrapped_page(75/72);361:unalignable_rewrapped_page(75/85);362:unalignable_rewrapped_page(75/94);363:unalignable_rewrapped_page(75/88)
+360					unalignable_rewrapped_page	82	72	searched_alternate_pages=360-364	360:unalignable_rewrapped_page(82/72);361:unalignable_rewrapped_page(82/85);362:unalignable_rewrapped_page(82/94);363:unalignable_rewrapped_page(82/88);364:unalignable_rewrapped_page(82/83)
+361					unalignable_rewrapped_page	81	85	searched_alternate_pages=361-365	361:unalignable_rewrapped_page(81/85);362:unalignable_rewrapped_page(81/94);363:unalignable_rewrapped_page(81/88);364:unalignable_rewrapped_page(81/83);365:unalignable_rewrapped_page(81/82)
+363					unalignable_rewrapped_page	87	88	searched_alternate_pages=363-367	363:unalignable_rewrapped_page(87/88);364:unalignable_rewrapped_page(87/83);365:unalignable_rewrapped_page(87/82);366:unalignable_rewrapped_page(87/82);367:unalignable_rewrapped_page(87/82)
+365					unalignable_rewrapped_page	82	82	searched_alternate_pages=365-369	365:unalignable_rewrapped_page(82/82);366:unalignable_rewrapped_page(82/82);367:unalignable_rewrapped_page(82/82);368:unalignable_rewrapped_page(82/96);369:unalignable_rewrapped_page(82/89)
+368					unalignable_rewrapped_page	89	96	searched_alternate_pages=368-372	368:unalignable_rewrapped_page(89/96);369:unalignable_rewrapped_page(89/89);370:unalignable_rewrapped_page(89/85);371:unalignable_rewrapped_page(89/87);372:unalignable_rewrapped_page(89/77)
+372					unalignable_rewrapped_page	76	77	searched_alternate_pages=372-376	372:unalignable_rewrapped_page(76/77);373:unalignable_rewrapped_page(76/86);374:unalignable_rewrapped_page(76/89);375:unalignable_rewrapped_page(76/83);376:unalignable_rewrapped_page(76/81)
+373					unalignable_rewrapped_page	82	86	searched_alternate_pages=373-377	373:unalignable_rewrapped_page(82/86);374:unalignable_rewrapped_page(82/89);375:unalignable_rewrapped_page(82/83);376:unalignable_rewrapped_page(82/81);377:unalignable_rewrapped_page(82/82)
+374					unalignable_rewrapped_page	96	89	searched_alternate_pages=374-378	374:unalignable_rewrapped_page(96/89);375:unalignable_rewrapped_page(96/83);376:unalignable_rewrapped_page(96/81);377:unalignable_rewrapped_page(96/82);378:unalignable_rewrapped_page(96/78)
+375					unalignable_rewrapped_page	80	83	searched_alternate_pages=375-379	375:unalignable_rewrapped_page(80/83);376:unalignable_rewrapped_page(80/81);377:unalignable_rewrapped_page(80/82);378:unalignable_rewrapped_page(80/78);379:unalignable_rewrapped_page(80/89)
+377					unalignable_rewrapped_page	86	82	searched_alternate_pages=377-381	377:unalignable_rewrapped_page(86/82);378:unalignable_rewrapped_page(86/78);379:unalignable_rewrapped_page(86/89);380:unalignable_rewrapped_page(86/91);381:unalignable_rewrapped_page(86/86)
+384					unalignable_rewrapped_page	75	78	searched_alternate_pages=384-388	384:unalignable_rewrapped_page(75/78);385:unalignable_rewrapped_page(75/89);386:unalignable_rewrapped_page(75/94);387:unalignable_rewrapped_page(75/82);388:unalignable_rewrapped_page(75/84)
+385					unalignable_rewrapped_page	80	89	searched_alternate_pages=385-389	385:unalignable_rewrapped_page(80/89);386:unalignable_rewrapped_page(80/94);387:unalignable_rewrapped_page(80/82);388:unalignable_rewrapped_page(80/84);389:unalignable_rewrapped_page(80/82)
+386					unalignable_rewrapped_page	92	94	searched_alternate_pages=386-390	386:unalignable_rewrapped_page(92/94);387:unalignable_rewrapped_page(92/82);388:unalignable_rewrapped_page(92/84);389:unalignable_rewrapped_page(92/82);390:unalignable_rewrapped_page(92/89)
+390					unalignable_rewrapped_page	93	89	searched_alternate_pages=390-394	390:unalignable_rewrapped_page(93/89);391:unalignable_rewrapped_page(93/95);392:unalignable_rewrapped_page(93/97);393:unalignable_rewrapped_page(93/87);394:unalignable_rewrapped_page(93/94)
+393					unalignable_rewrapped_page	82	87	searched_alternate_pages=393-397	393:unalignable_rewrapped_page(82/87);394:unalignable_rewrapped_page(82/94);395:unalignable_rewrapped_page(82/79);396:unalignable_rewrapped_page(82/82);397:unalignable_rewrapped_page(82/92)
+394					unalignable_rewrapped_page	96	94	searched_alternate_pages=394-398	394:unalignable_rewrapped_page(96/94);395:unalignable_rewrapped_page(96/79);396:unalignable_rewrapped_page(96/82);397:unalignable_rewrapped_page(96/92);398:unalignable_rewrapped_page(96/96)
+395					unalignable_rewrapped_page	79	79	searched_alternate_pages=395-399	395:unalignable_rewrapped_page(79/79);396:unalignable_rewrapped_page(79/82);397:unalignable_rewrapped_page(79/92);398:unalignable_rewrapped_page(79/96);399:unalignable_rewrapped_page(79/96)
+396					unalignable_rewrapped_page	82	82	searched_alternate_pages=396-400	396:unalignable_rewrapped_page(82/82);397:unalignable_rewrapped_page(82/92);398:unalignable_rewrapped_page(82/96);399:unalignable_rewrapped_page(82/96);400:unalignable_rewrapped_page(82/90)
+397					unalignable_rewrapped_page	94	92	searched_alternate_pages=397-401	397:unalignable_rewrapped_page(94/92);398:unalignable_rewrapped_page(94/96);399:unalignable_rewrapped_page(94/96);400:unalignable_rewrapped_page(94/90);401:unalignable_rewrapped_page(94/74)
+399					unalignable_rewrapped_page	90	96	searched_alternate_pages=399-401	399:unalignable_rewrapped_page(90/96);400:unalignable_rewrapped_page(90/90);401:unalignable_rewrapped_page(90/74)
+401					unalignable_rewrapped_page	72	74	searched_alternate_pages=401-401	401:unalignable_rewrapped_page(72/74)
+1	7				token_count_mismatch	2	3	Thomas ©. Höllmann	Thomas O. Höllmann
+1	10				token_count_mismatch	2	1	ma smros	masmros
+3	4	4	Muntcanu	Munteanu	non_translit_context	muntcanu	munteanu	sens unterzogen (Phillip Muntcanu) und Hinweise in Einzelfragen gegeben haben	sens unterzogen (Phillip Munteanu) und Hinweise in Einzelfragen gegeben haben
+3	6	10	Wūrth	Würth	unsafe_token_disagreement	wurth	wurth	Gudrun Melzer, Charles Ramble, Veronika Ronge, Roland Steiner, Isabella Wūrth-	Gudrun Melzer, Charles Ramble, Veronika Ronge, Roland Steiner, Isabella Würth-
+52	1				token_count_mismatch	5	4	ae mä li ka buddhi	mā li ka buddhi
+52	2	3	Sin	sin	unsafe_token_disagreement	sin	sin	"chag dan Sin de'i me tog la'ani ""Lehnwort für"	chag dan sin de'i me tog la'an „Lehnwort für
+52	2	7	la'ani	la'an	unsafe_token_disagreement	laani	laan	"chag dan Sin de'i me tog la'ani ""Lehnwort für"	chag dan sin de'i me tog la'an „Lehnwort für
+52	3	4	mallikä	mallikā	non_translit_context	mallika	mallika	den Baum namens mallikä, und auch für die	den Baum namens mallikā, und auch für die
+52	6				token_count_mismatch	10	9	Lex. ma lika= phren ba ste legs sbyar 02// skad	Lex.ma lika phren ba ste legs sbyar gyi skad
+52	9	3	Mālikabuddhi	Mälikabuddhi	non_translit_context	malikabuddhi	malikabuddhi	Lehrer, skt. Mālikabuddhi.	Lehrer, skt. Mälikabuddhi.
+52	11				token_count_mismatch	5	6	"ber der Turuskas ermordeten Mālikabucddhi"""	ber der Turuşkas ermordeten Mälikabuddhi“
+52	13				token_count_mismatch	8	10	མ་ལུས་པ་ ma lus pa auch ma lus ohne Rest,	Nyʊw ma lus pa auch ma lus ohne Rest,
+52	16	5	skyori	skyon	unsafe_token_disagreement	skyori	skyon	skye bo ma lus skyori byed pa'i / royal po	skye bo ma lus skyon byed pa'i / rgyal po
+52	16	8	royal	rgyal	unsafe_token_disagreement	royal	rgyal	skye bo ma lus skyori byed pa'i / royal po	skye bo ma lus skyon byed pa'i / rgyal po
+52	17	7	alle	allesamt	non_translit_context	alle	allesamt	"(metr.) ""der König, der die Menschen alle-"	(metr.) „der König, der die Menschen allesamt
+52	18				token_count_mismatch	7	6	"sanit beschützt"" (P$ 34b); khamis gsum — las"	"beschützt"" (Ps 34b); khams gsum ~ las"
+52	19				token_count_mismatch	9	8	"yari dag 'da' bar 'gyur (metr.) ""er wird voll-"	yan dag 'da' bar 'gyur (metr.) „er wird
+52	20	1	ständig	vollständig	non_translit_context	standig	vollstandig	ständig über die drei Weltbereiche hinausge-	vollständig über die drei Weltbereiche hinausge-
+52	21				token_count_mismatch	9	8	"langen"" (Rgs 32.4b); sa chen po —r gnod par"	langen“ (Rgs 32.4b); sa chen po ~rgnod par
+52	22	4	ci	cin	unsafe_token_disagreement	ci	cin	"sdo ba med ci ... legs par phab ste ""er hat"	sdo ba med cin legs par phab ste „er hat
+52	25	10	rioms	noms	unsafe_token_disagreement	rioms	noms	chu yi phun po bdud rtsi yis / —r ni rioms	chu yi phun po bdud rtsi yis / ~r ni noms
+52	28				token_count_mismatch	8	9	"los"" (K841(2) 203b3); luskun ma lus khyab /"	los“ (K841 (2) 203b3); lus kun ma lus khyab /
+52	31				token_count_mismatch	7	6	"ne Ausnahme erfüllen"" (Ahs 1.1.1b); kbo bo"	ne Ausnahme erfüllen“ (Ahs 1.1.1b); khobo
+52	32				token_count_mismatch	9	10	sems can gyl igrten dan / snod kyi ig rten	sems can gyi jig rten dan / snod kyi 'jig rten
+52	35	3	VisT	VisṬ	non_translit_context	vist	vist	"vorgebracht habe"" (VisT' 112,20); rnam par"	vorgebracht habe“ (VisṬ 112,20); rnam par
+52	36				token_count_mismatch	6	8	"dbyeba — ...sesbya (metr.) ""man muß diese"	dbye ba ... ses bya (metr.) „man muß diese
+52	39				token_count_mismatch	9	8	"bde bsig (metr.) ""wenn man das Heil der Le-"	bde bsig (metr.) „wenn man das Heil der
+52	40	1	bewesen	Lebewesen	non_translit_context	bewesen	lebewesen	bewesen im ganzen endlosen Luftraum zer-	Lebewesen im ganzen endlosen Luftraum zer-
+52	41				token_count_mismatch	9	8	"stört hat"" (Bca 4,106); serns can 0// khams"	"stört hat"" (Bca 4.10c); sems can gyi khams"
+52	42				token_count_mismatch	6	7	"— ?¿// las bsiiigs pa ""solche, die schlechter"	~ 'di las bsñigs pa „solche, die schlechter
+52	45				token_count_mismatch	3	4	མ་ལུས་པ་ ma lus pa	2377 ma lus pa
+52	46	2	15635	156a5	unsafe_token_disagreement	15635	156a5	(T3940 15635); byan chub ses dpa' rgyal	(T3940 156a5); byan chub sems dpa' rgyal
+52	46	5	ses	sems	unsafe_token_disagreement	ses	sems	(T3940 15635); byan chub ses dpa' rgyal	(T3940 156a5); byan chub sems dpa' rgyal
+52	47				token_count_mismatch	9	8	"po'i 'khor —s Ita bar gyur pa ""der Bodhisat-"	po'i 'khor ~s lta bar gyur pa „der
+52	48	1	tva	Bodhisattva	non_translit_context	tva	bodhisattva	tva, der vom ganzen Gefolge des Königs ge-	Bodhisattva, der vom ganzen Gefolge des Königs ge-
+52	49	1	schen	sehen	non_translit_context	schen	sehen	"schen wurde"" (HMrg 59,9); kun chub par"	"sehen wurde"" (HMṛg 59,9); kun chub par"
+52	49	3	HMrg	HMṛg	non_translit_context	hmrg	hmrg	"schen wurde"" (HMrg 59,9); kun chub par"	"sehen wurde"" (HMṛg 59,9); kun chub par"
+52	50				token_count_mismatch	8	7	"byed pa ni —r 'dzin pa'o ""völlig verstehen"	byed pa ni 'dzin pa'o „völlig verstehen
+52	52				token_count_mismatch	10	9	'gro ba ma lus bdag gis nam par g.yobar bya	'gro ba malus bdag gis rnam par g.yobar lya
+52	53				token_count_mismatch	7	6	"(metr.) ""ich werde alle Lebewesen in Bewe-"	(metr.) „ich werde alle Lebewesen in
+52	54	1	gung	Bewegung	unsafe_token_disagreement	gung	bewegung	"gung versetzen!"" (Lokn 130,25); bla na med"	"Bewegung versetzen!"" (Lokn 130,25); bla na med"
+52	55				token_count_mismatch	7	8	"pa' yon tan —i'byun gnas ""der Ursprungs-"	pa'i yon tan 'i 'byun gnas „der Ursprungsort
+52	56				token_count_mismatch	5	4	"ort aller unübertroffenen Vorzüge"" (T3491"	aller unübertroffenen Vorzüge“ (T3491
+52	57	4	Zabs	źabs	unsafe_token_disagreement	zabs	zabs	146b4); khyod kyi Zabs rdul Ihun ba yis /	146b4); khyod kyi źabs rdul lhun ba yis /
+52	58				token_count_mismatch	9	10	"༡ ñes pa dag ni ma lus bkrus ""weil der"	ñies pa dag ni ma lus bkrus (metr.) „weil der
+52	63	7	165	des	non_translit_context	165	des	"alle mehr erfreut als die Gestalt (165 Mondes"""	"alle mehr erfreut als die Gestalt des Mondes"""
+52	64	1	Vnist	Vmst	unsafe_token_disagreement	vnist	vmst	(Vnist 1073); gein kha srüi ba'i nad skyes ma	(Vmst 107a); gcin kha sri ba'i nad skyes ma
+52	64	2	1073	107a	unsafe_token_disagreement	1073	107a	(Vnist 1073); gein kha srüi ba'i nad skyes ma	(Vmst 107a); gcin kha sri ba'i nad skyes ma
+52	64	3	gein	gcin	unsafe_token_disagreement	gein	gcin	(Vnist 1073); gein kha srüi ba'i nad skyes ma	(Vmst 107a); gcin kha sri ba'i nad skyes ma
+52	64	5	srüi	sri	unsafe_token_disagreement	srui	sri	(Vnist 1073); gein kha srüi ba'i nad skyes ma	(Vmst 107a); gcin kha sri ba'i nad skyes ma
+52	65	7	entstande	entstandenen	non_translit_context	entstande	entstandenen	"lus 'joms (metr.) ""es besiegt alle entstande-"	lus joms (metr.) „es besiegt alle entstandenen
+52	66				token_count_mismatch	5	4	"nen Harnwegserkrankungen"" (Y$ 90); yab"	Harnwegserkrankungen“ (Yś 9d); yab
+52	67	4	biens	bźens	unsafe_token_disagreement	biens	bzens	mes thugs dam biens pa' 'phro thams cad	mes thugs dam bźens pa'i 'phro thams cad
+52	67	5	pa	pa'i	unsafe_token_disagreement	pa	pai	mes thugs dam biens pa' 'phro thams cad	mes thugs dam bźens pa'i 'phro thams cad
+52	68	1	kyani	kyan	non_translit_context	kyani	kyan	"kyani — bzens ""[die Errichtung von Vihäras],"	kyan biens [die Errichtung von Viharas],
+52	68	2	bzens	biens	non_translit_context	bzens	biens	"kyani — bzens ""[die Errichtung von Vihäras],"	kyan biens [die Errichtung von Viharas],
+52	68	6	Vihäras	Viharas	non_translit_context	viharas	viharas	"kyani — bzens ""[die Errichtung von Vihäras],"	kyan biens [die Errichtung von Viharas],
+52	71	4	tsbes	tshes	unsafe_token_disagreement	tsbes	tshes	"tig"" (Nel 11b1);tsbes ben'i riin / bod kyi rgyal"	"tig"" (Nel 11b1); tshes bcu'i niin / bod kyi rgyal"
+52	71	5	ben'i	bcu'i	unsafe_token_disagreement	beni	bcui	"tig"" (Nel 11b1);tsbes ben'i riin / bod kyi rgyal"	"tig"" (Nel 11b1); tshes bcu'i niin / bod kyi rgyal"
+52	71	6	riin	niin	unsafe_token_disagreement	riin	niin	"tig"" (Nel 11b1);tsbes ben'i riin / bod kyi rgyal"	"tig"" (Nel 11b1); tshes bcu'i niin / bod kyi rgyal"
+52	74	4	29053	290b3	unsafe_token_disagreement	29053	290b3	"le Minister"" (Padm 29053); bod du byon nas"	"le Minister"" (Padm 290b3); bod du byon nas"
+52	75				token_count_mismatch	10	9	"de dag —r bsgyur te ""er ging nach Tibet und"	de dag bsgyur te er ging nach Tibet und
+52	76	5	2838	28a8	non_translit_context	2838	28a8	"übersetzte diese restlos"" (Debm 2838); ma"	übersetzte diese restlos“ (Debm 28a8); ma
+52	77	2	gnani	gnan	unsafe_token_disagreement	gnani	gnan	"lus gnani ba thugs la btags (metr.) ""alles, was"	lus gnan ba thugs la btags (metr.),,alles, was
+52	79	7	cha	chu	non_translit_context	cha	chu	"nis bewahrt"" (Glr 59,17); bum cha — Ind nas"	"nis bewahrt"" (Glr 59,17); bum chu - lud nas"
+52	79	8	Ind	lud	non_translit_context	ind	lud	"nis bewahrt"" (Glr 59,17); bum cha — Ind nas"	"nis bewahrt"" (Glr 59,17); bum chu - lud nas"
+52	81	7	tsbig	tshig	unsafe_token_disagreement	tsbig	tshig	85,2); de dag thams cad tsbig don — thugs la	85,2); de dag thams cad tshig don thugs la
+52	82	1	bzugs	bźugs	non_translit_context	bzugs	bzugs	"bzugs so ""all diese hatte er sich dem Wortlaut"	bźugs so all diese hatte er sich dem Wortlaut
+52	84	6	mi	ni	unsafe_token_disagreement	mi	ni	95,10); 'gro ba'i don mi ma lus mdzad (metr.)	95,10); 'gro ba'i don ni ma lus mdzad (metr.)
+52	86	7	srun	sruṅ	non_translit_context	srun	srun	"Lebewesen!"" (Vdk-M 161,13); ma lus srun"	"Lebewesen!"" (Vdk-M 161,13); ma lus sruṅ"
+52	87	8	beschüt	beschützen	non_translit_context	beschut	beschutzen	"bai don du (metr.) ""um alle zu beschüt-"	bai don du (metr.) „um alle zu beschützen“
+52	88				token_count_mismatch	9	8	"zen"" (TsonNth 5,2163); rdo rje theg pa'i sa"	(TsonNth 5,21b3); rdo rje theg pa’i sa
+52	89				token_count_mismatch	8	7	"lam —r sbyaris Sin ""er praktizierte die Stufen"	lamr sbyans sin er praktizierte die Stufen
+52	90	4	Vajrayāna	Vajrayana	non_translit_context	vajrayana	vajrayana	"und Pfade des Vajrayāna vollständig"" (KTh"	"und Pfade des Vajrayana vollständig"" (KTh"
+68	2	5	dnos	dños	blocked_alternate_witness_wrong_nasal_dnos	dnos	dnos	Lex. la sogs pa = dnos su gsal por ma ston par	Lex. la sogs pa = dños su gsal por ma ston par
+143	10	5	dnos	dños	blocked_alternate_witness_wrong_nasal_dnos	dnos	dnos	_ la gser gym ... sogs dnos po' rigs tshon	_ la gser gym ... sogs dños po' rigs tshon
+159	1				token_count_mismatch	3	5	མིག་འཛེར་ཅན་ mig dzer can	Âª¤¤¤¤ð“ mig 'dzer can
+159	2	1	IaERs	33	unsafe_token_disagreement	iaers	33	IaERs ' mig 'dzer can jmd. mit einer	33 mig 'dzer can jmd. mit einer
+159	4				token_count_mismatch	8	9	Lex. mig 'dzer (v. I. mdzer) can = aksisantrah	Lex. mig 'dzer (v. 1. mdzer) can akşiśantraḥ
+159	6				token_count_mismatch	4	6	sr migrdzi Tmiggirdzi ma.	mig rdzi mig gi rdzi ma.
+159	7	1	ITaR	mig	non_translit_context	itar	mig	ITaR migZar blind.	migħar blind.
+159	7	2	migZar	ar	non_translit_context	migzar	ar	ITaR migZar blind.	migħar blind.
+159	8				token_count_mismatch	7	3	"Lex.mig la skyon can ""mit einem Augenfch-"	Dowza mig yans
+159	9	1	ler	3	unsafe_token_disagreement	ler	3	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	2	brDa	miggzugs	unsafe_token_disagreement	brda	miggzugs	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	3	mag	Bez	unsafe_token_disagreement	mag	bez	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	4	0	für	unsafe_token_disagreement	0	fur	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	5	ba	die	unsafe_token_disagreement	ba	die	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	6	blind	Sonne	unsafe_token_disagreement	blind	sonne	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	9	7	Dagy	vgl	unsafe_token_disagreement	dagy	vgl	"ler"" (brDa); mag /0)? ba ""blind"" (Dagy)."	3 miggzugs Bez. für die Sonne, vgl.
+159	10				token_count_mismatch	5	1	sei mg ziba eine Augenkrankheit.	gsal
+159	11				token_count_mismatch	9	2	"Lex. mig rab rib pa Ita bu ""wie: verdunkeltes"	byed dass.
+159	12				token_count_mismatch	3	4	"Auge"" (brDa, Dagy)."	auch SCHUH 2012: 1521;
+159	13				token_count_mismatch	2	0	mar miezur.	~
+159	14				token_count_mismatch	2	8	SS 8	Lex. ni ma'i min (Dagy); ~ gsal byed = ni
+159	15				token_count_mismatch	2	3	1. Augenvinkel.	ma'i min (brDa).
+159	16				token_count_mismatch	9	8	~ dkar ba'i zer gyis 'phrog byed gtsug gi zla	Î¶¶¶♬ mig gzugs zla Bez. für den Mo-
+159	17				token_count_mismatch	9	7	bar 'od kyi zer ni skyens byed kyan (metr.)	nat ↑nag pa zla ba; vgl. SCHUH
+159	18				token_count_mismatch	6	2	"""die Augenwinkel (skt. apānga), die durch"	2012:1521.
+159	19				token_count_mismatch	6	13	ihre weißen Strahlen sogar die Lichtstrahlen	Lex. mig la skyon can „mit einem Augenfe- §5 mig gzugs gsal byed
+159	20				token_count_mismatch	6	7	"des Mondes auf Haras Haupt beschämen"""	"ler"" (brDa); mig lon ba „blind“ (Dagy)."
+159	21				token_count_mismatch	2	4	(Megh 46b).	mig ziba cine Augenkrankheit.
+159	22				token_count_mismatch	2	9	2. Seitenblick.	Lex. mig rab rib pa lta bu „,wie: verdunkeltes
+159	23				token_count_mismatch	8	3	"kay gi zer dan 'dra ba'i — (metr.) ""Sei-"	"Auge"" (brDa, Dagy)."
+159	24				token_count_mismatch	5	2	"ienblicke wie Eisennägel"" (Vmst 1103); —"	mig zur.
+159	25				token_count_mismatch	8	2	kira mo' sgril mtshams / gion pa'i gdon la	1. Augenwinkel.
+159	26				token_count_mismatch	6	9	"bltas byuri (metr.) ""mit Seitenblicken aus"	-dkar ba'i zer gyis 'phrog byed gtsug gi zla
+159	27				token_count_mismatch	6	9	den Winkeln ihrer leuchtenden [Augen] be-	ba't 'od kyi zer ni skyens byed kyan (metr.)
+159	28	1	trachtete	die	non_translit_context	trachtete	die	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	28	2	sie	Augenwinkel	non_translit_context	sie	augenwinkel	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	28	3	mein	skt	non_translit_context	mein	skt	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	28	4	junges	apanga	non_translit_context	junges	apanga	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	28	5	Gesicht	die	non_translit_context	gesicht	die	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	28	6	Glu	durch	non_translit_context	glu	durch	"trachtete sie mein junges Gesicht"" (Glu"	,,die Augenwinkel (skt. apanga), die durch
+159	29				token_count_mismatch	1	6	220).	ihre weißen Strahlen sogar die Lichtstrahlen
+159	30				token_count_mismatch	3	6	Lex.katäksah (Mvy 7175).	des Mondes auf Haras Haupt beschämen“
+159	31				token_count_mismatch	5	2	aa སླ་པོ་ magzlumpo jmd. miteiner Mißbil-	(Megh 46b).
+159	32				token_count_mismatch	3	2	dung der Augen.	2. Seitenblick.
+159	33				token_count_mismatch	6	0	"Lex. aksäksah ""ein achsenförmiges Auge be-"	~
+159	34				token_count_mismatch	7	0	"sitzend"" (Mvy 8914); migril po ""rundes Au-"	~
+159	35				token_count_mismatch	2	8	"ge"" (brDa)."	lag gi zer dan 'dra ba'i (metr.) „Sei-
+159	36				token_count_mismatch	2	5	མིག་ཡངས་ mg yaṅs	tenblicke wie Eisennägel“ (Vmst 110a);
+159	37	1	am	khra	non_translit_context	am	khra	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	2	ap	mo'i	non_translit_context	ap	moi	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	3	miggzugs	sgril	non_translit_context	miggzugs	sgril	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	4	Bez	mtshams	non_translit_context	bez	mtshams	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	5	für	gźon	non_translit_context	fur	gzon	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	6	die	pa'i	non_translit_context	die	pai	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	7	Sonne	gdon	non_translit_context	sonne	gdon	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	37	8	vgl	la	non_translit_context	vgl	la	am ap miggzugs Bez. für die Sonne, vgl.	khra mo'i sgril mtshams / gźon pa'i gdon la
+159	38				token_count_mismatch	3	6	ག་གཟུག auauch ScHun ~ gsal	bltas byun (metr.) „mit Seitenblicken aus
+159	39	1	byed	Dqqzqvqvv	non_translit_context	byed	dqqzqvqvv	byed dass.	Dqqzqvqvv§5'
+159	39	2	dass	5	non_translit_context	dass	5	byed dass.	Dqqzqvqvv§5'
+159	40				token_count_mismatch	8	2	Lex. sau ma' min (Dagy); — gsal byed = mi	Imig gzugs.
+159	41				token_count_mismatch	3	6	ma' min (brDa).	mig bzan Beiname Māras bzw. des
+159	42				token_count_mismatch	9	1	Am: az mig gzugs zla Bez. für den Mo-	Liebesgottes.
+159	43				token_count_mismatch	1	6	"ག་གཟུགས་ཟླ་ ""888"	Lex.bdud dga'rab dban phyugla'an,,auch für
+159	44				token_count_mismatch	7	6	nat Tnag pa zla ba; vgl. 50111711	"Māra, den Herrn großer Freuden"" (brDa,"
+159	45	1	2012	ähnl	non_translit_context	2012	ahnl	2012: 1521.	ähnl. Dagy).
+159	45	2	1521	Dagy	non_translit_context	1521	dagy	2012: 1521.	ähnl. Dagy).
+159	46				token_count_mismatch	4	7	མིག་གཟུགས་གསལ་བྱེད་ vs gruß gsal byed	290350595 mig bzaṅ bdag po npr. ein
+159	47				token_count_mismatch	2	3	mig gzugs.	König der Schlangendämo-
+159	48				token_count_mismatch	8	1	མིག་བཟང་ mig bzaṅ Beiname Māras bzw. des ༈1 * 1 _ _	nen.
+159	49				token_count_mismatch	1	6	Liebesgottes.	Lex. sunetrādhipatiḥ (Mvy 3429, Abt. Ito
+159	50				token_count_mismatch	7	6	"Lex. bdud dga'rab dbani phyugla'an ""auch für"	phye chen po'i dban po'i min).
+159	51				token_count_mismatch	6	7	"Mära, den Herrn großer Freuden"" (brDa,"	24055592 mig bzan rin dga' npr. ein
+159	52				token_count_mismatch	2	3	ähnl. Dagy).	König der Gandharvas.
+159	53				token_count_mismatch	6	3	མེག་བཟང་བདག་པོ་ mig bzaṅ bdag po npr. cin	Lex. pramuditapralambasunayanaḥ (Mvy
+159	54				token_count_mismatch	3	7	König der Schlangendämo-	3386, Abt. dri za'i dbaṅ po'i min).
+159	55				token_count_mismatch	1	13	nen.	den Winkeln ihrer leuchtenden [Augen] be- 25 mig ya Beiname des Gottes Vaiśra-
+159	56	1	Lex	trachtete	non_translit_context	lex	trachtete	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	56	2	sunetrādhipatib	sie	non_translit_context	sunetradhipatib	sie	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	56	3	Mvy	mein	non_translit_context	mvy	mein	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	56	4	3429	junges	non_translit_context	3429	junges	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	56	5	Abt	Gesicht	non_translit_context	abt	gesicht	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	56	6	lto	Glu	non_translit_context	lto	glu	Lex. sunetrādhipatib (Mvy 3429, Abt. lto	trachtete sie mein junges Gesicht“ (Glu
+159	57				token_count_mismatch	6	1	'phye chen po'i dban po' min).	22c).
+159	58				token_count_mismatch	6	3	མིག་བཟང་རིང་དགའ་ nng bzaṅ riṅ dga' npr. ein	Lex.katākṣaḥ (Mvy 7175).
+159	59				token_count_mismatch	3	7	König der Gandharvas.	53 m² zlumpo jmd. mit einer Mißbil-
+159	60				token_count_mismatch	1	3	(Mvy	dung der Augen.
+159	61				token_count_mismatch	2	6	Lex. pramnditapralambasunayanah	Lex. aksākṣaḥ,,ein achsenförmiges Auge be-
+159	62				token_count_mismatch	7	8	3386, Abt. dri za'i dban po'i min).	"sitzend“ (Mvy 8914); migril po „rundes Auge"" (brDa)."
+159	63				token_count_mismatch	7	0	Amur mig ya Beiname des Gottes Vaisra-	
+159	64	1	vami	155	non_translit_context	vami	155	vami.	155
+159	65				token_count_mismatch	5	1	Lex. rruun sras la'an (brDa).	vana.
+159	66				token_count_mismatch	2	5	མིག་ཡངས་ ng yanis.	Lex. rnam sras la'an (brDa).
+159	67				token_count_mismatch	4	2	1. Bez. für Garuda.	¤ mg yans.
+159	68				token_count_mismatch	5	4	Lex. bya khyur (brDa, Dagy).	1. Bez. für Garuda.
+159	69	1	2	Lex	non_translit_context	2	lex	2. Beiname des Gottes Siva.	Lex. bya khyun (brDa, Dagy).
+159	69	2	Beiname	bya	non_translit_context	beiname	bya	2. Beiname des Gottes Siva.	Lex. bya khyun (brDa, Dagy).
+159	69	3	des	khyun	non_translit_context	des	khyun	2. Beiname des Gottes Siva.	Lex. bya khyun (brDa, Dagy).
+159	69	4	Gottes	brDa	non_translit_context	gottes	brda	2. Beiname des Gottes Siva.	Lex. bya khyun (brDa, Dagy).
+159	69	5	Siva	Dagy	non_translit_context	siva	dagy	2. Beiname des Gottes Siva.	Lex. bya khyun (brDa, Dagy).
+159	70				token_count_mismatch	6	5	Lex. dbari phyugchela'an (brDa); dbari phyug	2. Beiname des Gottes Siva.
+159	71				token_count_mismatch	2	6	la (Dagy).	Lex.dban phyug chela'an (brDa); dbar phyug
+159	72				token_count_mismatch	1	2	155	la (Dagy).
+190	77	2	dnos	dños	blocked_alternate_witness_wrong_nasal_dnos	dnos	dnos	sa' dnos gi tsbig don griis ka — la soxs	sa' dños gi tsbig don griis ka — la soxs
+197	1				token_count_mismatch	3	2	gan mun pa	mun pa
+197	3	3	HMrg	HMṛg	non_translit_context	hmrg	hmrg	"Wesen erleuchtet"" (HMrg 52,26); bod kyi"	"Wesen erleuchtet"" (HMṛg 52,26); bod kyi"
+197	4	1	rgal	rgyal	unsafe_token_disagreement	rgal	rgyal	"rgal khans — Ita bu la (metr.) ""im tibe-"	rgyal khams lta bu la (metr.) im tibe-
+197	4	2	khans	khams	unsafe_token_disagreement	khans	khams	"rgal khans — Ita bu la (metr.) ""im tibe-"	rgyal khams lta bu la (metr.) im tibe-
+197	6	2	VaNth	VaiNth	non_translit_context	vanth	vainth	"ist"" (VaNth 176,4); dge sdig snari mun ..."	"ist"" (VaiNth 176,4); dge sdig snan mun"
+197	6	7	snari	snan	non_translit_context	snari	snan	"ist"" (VaNth 176,4); dge sdig snari mun ..."	"ist"" (VaiNth 176,4); dge sdig snan mun"
+197	7	1	4	la	non_translit_context	4	la	"[4 6025 (metr.) ""Tugend und Sünde, Licht"	la sogs (metr.) Tugend und Sünde, Licht
+197	7	2	6025	sogs	non_translit_context	6025	sogs	"[4 6025 (metr.) ""Tugend und Sünde, Licht"	la sogs (metr.) Tugend und Sünde, Licht
+197	9				token_count_mismatch	9	8	"gti mug mun Itar gtibs pa yis (metr.) ""Ver-"	gti mug mun ltar gtibs pa yis (metr.)
+197	10	1	blendung	Verblendung	non_translit_context	blendung	verblendung	blendung sammelt sich in dir wie Finster-	„Verblendung sammelt sich in dir wie Finster-
+197	11	1	ns	nis	unsafe_token_disagreement	ns	nis	"ns"" (bKth 328,1); )7/ ma' 'od zer bsgribs"	nis (bKth 328,1); ni ma'i 'od zer bsgribs
+197	11	5	7	ni	unsafe_token_disagreement	7	ni	"ns"" (bKth 328,1); )7/ ma' 'od zer bsgribs"	nis (bKth 328,1); ni ma'i 'od zer bsgribs
+197	11	6	ma	ma'i	unsafe_token_disagreement	ma	mai	"ns"" (bKth 328,1); )7/ ma' 'od zer bsgribs"	nis (bKth 328,1); ni ma'i 'od zer bsgribs
+197	14				token_count_mismatch	9	10	(Glr 36,10); dper na ñi ma'i 'od kyils) ~	(Glr 36,10); dper na ñi ma'i 'od kyi(s)
+197	15				token_count_mismatch	8	7	"bem pm bZin du ""wie zum Beispiel das"	bcom bzin du wie zum Beispiel das
+197	17				token_count_mismatch	9	10	773); ñi zla'i od gzis ig rten rgud pa'i ~	77,3); rii zla'i 'od gzis jig rten rgud pa'i ~
+197	18	6	Dunkel	Dunkelheit	non_translit_context	dunkel	dunkelheit	"joms (metr.) ""sie beseitigen die Dunkel-"	joms (metr.) „sie beseitigen die Dunkelheit
+197	19				token_count_mismatch	8	7	heit des Niedergangs 11] der Welt mit den	des Niedergangs in der Welt mit den
+197	21				token_count_mismatch	8	9	53221); mun snan med par yoris la khyab	522,1); mun snaṅ med par yoras la khyab
+197	24	6	ñi	ni	unsafe_token_disagreement	ni	ni	mun gyi mkhar / gsal ba ñi ma'i kha 'od	mun gyi mkhar gsal ba ni ma'i kha 'od
+197	27				token_count_mismatch	9	11	"69,238); ~?/ 5907 zur gsum ... Zig byun no ""es"	60,28); ~'i sgoṅ zur gsum zig byun no „es pa
+197	30	1	rib	grib	non_translit_context	rib	grib	"'rib (metr.) ""nach der finsteren Dunkelheit"	'grib (metr.) „nach der finsteren Dunkelheit
+197	32				token_count_mismatch	8	7	"des"" (Gesar 230,39); 'dzam glin — bsgyur ba'i"	"des"" (Gesar 230,39); 'dzam glin - bsgyurba'i"
+197	33	1	dog	dbog	non_translit_context	dog	dbog	"dog ""ich kann die Welt verdunkeln"" (Sumpa"	"dbog ich kann die Welt verdunkeln"" (Sumpa"
+197	34	1	246	12426	non_translit_context	246	12426	246).	12426).
+197	35	2	andhakārah	andhakarah	non_translit_context	andhakarah	andhakarah	"Lex. andhakārah ""Finsternis"" (Mvy 1876);"	"Lex. andhakarah „Finsternis"" (Mvy 1876);"
+197	36	1	010	snan	non_translit_context	010	snan	"010 /777 cha med ""ohne Helligkeit"" (brDa);"	snan ba'i cha med „ohne Helligkeit“ (brDa);
+197	36	2	777	ba'i	non_translit_context	777	bai	"010 /777 cha med ""ohne Helligkeit"" (brDa);"	snan ba'i cha med „ohne Helligkeit“ (brDa);
+197	37	1	man	snan	unsafe_token_disagreement	man	snan	"man bai cha med srod dus lta bu la ""wie"	snan bai cha med srod dus lta bu la „wie
+197	39	1	Li	Liś	non_translit_context	li	lis	~ (Li 15,10).	~ (Liś 15,10).
+197	41	1	unnachtet	umnachtet	non_translit_context	unnachtet	umnachtet	unnachtet, töricht; vgl. Idman pa.	umnachtet, töricht; vgl. Idmun pa.
+197	41	4	Idman	Idmun	non_translit_context	idman	idmun	unnachtet, töricht; vgl. Idman pa.	umnachtet, töricht; vgl. Idmun pa.
+197	42	1	lan	dzin	unsafe_token_disagreement	lan	dzin	lan la gnas Sin mi mkhas blun rmons —	dzin la gnas sin mi mkhas blun rmons
+197	42	4	Sin	sin	unsafe_token_disagreement	sin	sin	lan la gnas Sin mi mkhas blun rmons —	dzin la gnas sin mi mkhas blun rmons
+197	43	1	bäin	báin	non_translit_context	bain	báin	"bäin (metr.) ""[Lebewesen] sind auf das Neh-"	báin (metr.), [Lebewesen] sind auf das Neh-
+197	48				token_count_mismatch	2	3	མུན་པ་ mun pa	554 mun pa
+197	52	3	5637	56a7	unsafe_token_disagreement	5637	56a7	"mengedrängt"" (K60 5637) ; las dan rion moris"	"mengedrängt"" (K60 56a7); las dan non mons"
+197	52	6	rion	non	unsafe_token_disagreement	rion	non	"mengedrängt"" (K60 5637) ; las dan rion moris"	"mengedrängt"" (K60 56a7); las dan non mons"
+197	52	7	moris	mons	unsafe_token_disagreement	moris	mons	"mengedrängt"" (K60 5637) ; las dan rion moris"	"mengedrängt"" (K60 56a7); las dan non mons"
+197	53	1	pai	pa'i	unsafe_token_disagreement	pai	pai	pai — dan / rab rib kyi lin tog gis mig khebs	pa'i dan rab rib kyi lin tog gis mig khebs
+197	54	2	yañ	yan	unsafe_token_disagreement	yan	yan	"pa yañ ""auch wenn seine Augen von der Au-"	pa yan „auch wenn seine Augen von der Au-
+197	57	1	Käsy	Kasy	unsafe_token_disagreement	kasy	kasy	(Käsy 124,5); tbos pa gti mug mn sel sgron	(Kasy 124,5); thos pa gti mug mun sel sgron
+197	57	4	tbos	thos	unsafe_token_disagreement	tbos	thos	(Käsy 124,5); tbos pa gti mug mn sel sgron	(Kasy 124,5); thos pa gti mug mun sel sgron
+197	57	8	mn	mun	unsafe_token_disagreement	mn	mun	(Käsy 124,5); tbos pa gti mug mn sel sgron	(Kasy 124,5); thos pa gti mug mun sel sgron
+197	60	2	122al	122a1	non_translit_context	122al	122a1	(T4150 122al); mm nas —r 'gro bar 'gyur	(T4150 122a1); mun nas ~r 'gro bar 'gyur
+197	60	3	mm	mun	non_translit_context	mm	mun	(T4150 122al); mm nas —r 'gro bar 'gyur	(T4150 122a1); mun nas ~r 'gro bar 'gyur
+197	61				token_count_mismatch	7	10	"(metr.) ""er wandert von Finsternis zu Fin-"	(metr.) „er wandert von Finsternis zu Finsternis“ (Udr 21,2);
+197	62				token_count_mismatch	9	5	"sternis"" (Udr 21,2); — 'dra bas sems non nas"	'dra bas sems non nas
+197	64	7	ar	gyur	non_translit_context	ar	gyur	"nis überwältigt ist"" (Siddh 20.15); —r ar"	nis überwältigt ist“ (Siddh 20.15); ~r gyur
+197	65				token_count_mismatch	9	10	pa' jigrten la / khyod kyis $es rab snari bar	pa'i jig rten la / khyod kyis śes rab snan bar
+197	68	4	šonu	non	unsafe_token_disagreement	šonu	non	"lassen"" (Ppu 108c); šonu mons ses bya'i sgrib"	lassen“ (Ppu 108c); non mons ses bya'i sgrib
+197	69				token_count_mismatch	9	10	"pa yi / —"" gien po ston pa /7/// (metr.) ""die"	pa yi/~'i gñen po stoṅ pa ñid (metr.) „die
+197	72	5	Zig	zig	non_translit_context	zig	zig	"Erkennenden"" (Bca 9.54b); gan Zig Jigs run"	"Erkennenden"" (Bca 9.54b); gan zig 'jigs run"
+197	72	6	Jigs	jigs	non_translit_context	jigs	jigs	"Erkennenden"" (Bca 9.54b); gan Zig Jigs run"	"Erkennenden"" (Bca 9.54b); gan zig 'jigs run"
+197	73	8	res	nes	unsafe_token_disagreement	res	nes	gti mug —s / blo yi mig ni res par bkag pa	gti mug ~s / blo yi mig ni nes par bkag pa
+197	76	5	173	17a	unsafe_token_disagreement	173	17a	"blendung behindert ist"" (Vmst 173); bdag"	"blendung behindert ist"" (Vmst 17a); bdag"
+197	77	1	Ryan	kyan	unsafe_token_disagreement	ryan	kyan	Ryan... nani gi — yan dag res par 'gags pa	kyan nan gi yan dag nes par 'gags pa
+197	77	2	nani	nan	unsafe_token_disagreement	nani	nan	Ryan... nani gi — yan dag res par 'gags pa	kyan nan gi yan dag nes par 'gags pa
+197	77	6	res	nes	unsafe_token_disagreement	res	nes	Ryan... nani gi — yan dag res par 'gags pa	kyan nan gi yan dag nes par 'gags pa
+197	80	3	1223	122a	non_translit_context	1223	122a	"den"" (Vmst 1223); gdul bya'i blo yi — sel"	"den"" (Vmst 122a); gdul bya'i blo yi ~ sel"
+197	81	7	Dunkel	Dunkelheit	unsafe_token_disagreement	dunkel	dunkelheit	"mdzad pa (metr.) ""er beseitigt die Dunkel-"	mdzad pa (metr.) „er beseitigt die Dunkelheit
+197	82				token_count_mismatch	7	6	"heit im Geist der zu Bezähmenden"" (Nigu"	im Geist der zu Bezähmenden“ (Nigu
+197	83	8	ran	rian	unsafe_token_disagreement	ran	rian	"38,2); thub pa ""dis ni mya ran mun bsal nas"	38,2); thub pa 'dis ni mya rian mun bsal nas
+197	84				token_count_mismatch	6	5	"(metr.) ""nachdem dieser Weise die Dunkel-"	(metr.) „nachdem dieser Weise die
+197	85	1	heit	Dunkelheit	non_translit_context	heit	dunkelheit	"heit des Leidens beseitigt hatte"" (Bu 803,4);"	"Dunkelheit des Leidens beseitigt hatte"" (Bu 803,4);"
+197	86				token_count_mismatch	9	11	—rgnas pa'ilta ba ran pa 'dzin pa mari po'an	~r gnas pa'i lta ba nan pa 'dzin pa mañ po'añ
+197	87	1	yari	yan	unsafe_token_disagreement	yari	yan	"yari dag pa' lam la bkod ""er brachte viele"	yan dag pa'i lam la bkod „er brachte viele
+197	87	3	pa	pa'i	unsafe_token_disagreement	pa	pai	"yari dag pa' lam la bkod ""er brachte viele"	yan dag pa'i lam la bkod „er brachte viele
+197	90	3	Debni	Debi	unsafe_token_disagreement	debni	debi	"ten Pfad"" (Debni 423,7); phrag dog dan ra"	ten Pfad“ (Debi 423,7); phrag dog daṅ na
+197	90	9	ra	na	unsafe_token_disagreement	ra	na	"ten Pfad"" (Debni 423,7); phrag dog dan ra"	ten Pfad“ (Debi 423,7); phrag dog daṅ na
+197	91	2	gi	gyi	unsafe_token_disagreement	gi	gyi	rgyal gi — chen pos blo yi mig bsgribs pas	rgyal gyi ~ chen pos blo yi mig bsgribs pas
+198	1				token_count_mismatch	3	4	མུན་པ་ཅན་ mun pa can	2232 mun pa can
+198	3				token_count_mismatch	8	7	"mun sel bla ma rje (metr.) ""der ehrwürdi-"	mun sel bla ma rje (metr.) „der
+198	4	1	ge	ehrwürdige	non_translit_context	ge	ehrwurdige	ge geistliche Lehrer, der die Finsternis der	ehrwürdige geistliche Lehrer, der die Finsternis der
+198	5	3	Gansri	Gaṅsri	non_translit_context	gansri	gansri	"Unwissenheit beseitigt"" (Gansri 446,1); mi"	"Unwissenheit beseitigt"" (Gaṅsri 446,1); mi"
+198	7	2	zZin	zin	non_translit_context	zzin	zin	"bcom zZin ""alles finstere Verhalten der sünd-"	bcom zin,,alles finstere Verhalten der sünd-
+198	9				token_count_mismatch	13	12	6); yi ge ka Ita bu gcig sam 6©$ pas kyari ka	6); yi ge ka lta bu gcig tsam ses pas kyan ka
+198	10				token_count_mismatch	9	10	"mi Ses pa' — saris ""auch wenn man nur einen"	mi ses pa'i ~ sarıs „auch wenn man nur einen
+198	11	5	15	ist	unsafe_token_disagreement	15	ist	Buchstaben wie ka kennt, 15[ die Dunkelheit	Buchstaben wie ka kennt, ist die Dunkelheit
+198	12	6	besci	besei	non_translit_context	besci	besei	hinsichtlich der Unkenntnis von ka besci-	hinsichtlich der Unkenntnis von ka besei-
+198	13	6	bZugs	bźugs	unsafe_token_disagreement	bzugs	bzugs	"tigt"" (PhB 11: 102,2); bZugs ni mun gi yul"	"tigt"" (PhB 11: 102,2); bźugs ni mun gyi yul"
+198	13	9	gi	gyi	unsafe_token_disagreement	gi	gyi	"tigt"" (PhB 11: 102,2); bZugs ni mun gi yul"	"tigt"" (PhB 11: 102,2); bźugs ni mun gyi yul"
+198	14	2	bźngs	bźugs	unsafe_token_disagreement	bzngs	bzugs	"na bźngs ""was seinen Aufenthalt angeht, so"	na bźugs „was seinen Aufenthalt angeht, so
+198	17	3	Mimil	Mim1	non_translit_context	mimil	mim1	"Lex. — ""töricht"" (Mimil 275)."	"Lex. „töricht"" (Mim1 275)."
+198	19	1	Sciun	SCHUH	non_translit_context	sciun	schuh	Sciun 2012: 1522.	SCHUH 2012: 1522.
+198	20	5	prakrti	prakṛti	non_translit_context	prakrti	prakrti	4. eine Konstituente der prakrti, ein Kon-	4. eine Konstituente der prakṛti, ein Kon-
+198	21				token_count_mismatch	6	7	zept der indischen Sāmkhya-Lehre, skt. ta-	zept der indischen Sārņkhya-Lehre, skt. ta-
+198	23	7	dari	dan	unsafe_token_disagreement	dari	dan	skyes bu 'di ni sin stobs dari / rdul dan / —'i	skyes bu 'di ni sin stobs dan / rdul dan / ~'i
+198	24				token_count_mismatch	9	11	"gzugs can gyi / ran bZin 'dila jugpa na ""wenn"	gzugs can gyi/ran bźin 'di la 'jug pa na „wenn
+198	25				token_count_mismatch	9	10	der parusa in die prakrti eintritt, die die Ge-	der purușa in die prakṛti eintritt, die die Ge-
+198	26	8	VisT	VisṬ	non_translit_context	vist	vist	"stalt von sattva, rajas und tamas hat"" (VisT"	stalt von sattva, rajas und tamas hat“ (VisṬ
+198	27	3	siñ	siin	unsafe_token_disagreement	sin	siin	134,4); siñ stobs rdul dari ~ Zes / bya ba'i	134,4); siin stobs rdul dan źes / bya bai
+198	27	6	dari	dan	unsafe_token_disagreement	dari	dan	134,4); siñ stobs rdul dari ~ Zes / bya ba'i	134,4); siin stobs rdul dan źes / bya bai
+198	27	7	Zes	źes	unsafe_token_disagreement	zes	zes	134,4); siñ stobs rdul dari ~ Zes / bya ba'i	134,4); siin stobs rdul dan źes / bya bai
+198	27	9	ba'i	bai	unsafe_token_disagreement	bai	bai	134,4); siñ stobs rdul dari ~ Zes / bya ba'i	134,4); siin stobs rdul dan źes / bya bai
+198	28	3	myiam	mriam	unsafe_token_disagreement	myiam	mriam	yon tan myiam gnas ni / gtso bo Zes byar rab	yon tan mriam gnas ni/gtso bo źes byar rab
+198	28	8	Zes	źes	unsafe_token_disagreement	zes	zes	yon tan myiam gnas ni / gtso bo Zes byar rab	yon tan mriam gnas ni/gtso bo źes byar rab
+198	31	5	9.1273	9.127a	non_translit_context	9.1273	9.127a	"Zustand 'Urmaterie' genannt"" (Bca 9.1273)."	Zustand, Urmaterie' genannt“ (Bca 9.127a).
+198	32	2	tamab	tamaḥ	unsafe_token_disagreement	tamab	tamah	Lex. tamab (Mvy 4552, Abt. graris can gi	Lex. tamaḥ (Mvy 4552, Abt. grañas can gyi
+198	32	6	graris	grañas	unsafe_token_disagreement	graris	granas	Lex. tamab (Mvy 4552, Abt. graris can gi	Lex. tamaḥ (Mvy 4552, Abt. grañas can gyi
+198	32	8	gi	gyi	unsafe_token_disagreement	gi	gyi	Lex. tamab (Mvy 4552, Abt. graris can gi	Lex. tamaḥ (Mvy 4552, Abt. grañas can gyi
+198	33				token_count_mismatch	2	4	gZunlas'byun ba).	gźun las 'byun ba).
+198	34				token_count_mismatch	3	4	མུན་པ་ཅན་ mun pa can.	32432 mun pa can.
+198	37	4	Rähu	Rahu	non_translit_context	rahu	rahu	2. Bez. für Rähu, den Mondknoten Tsgra	2. Bez. für Rahu, den Mondknoten Isgra
+198	37	7	Tsgra	Isgra	non_translit_context	tsgra	isgra	2. Bez. für Rähu, den Mondknoten Tsgra	2. Bez. für Rahu, den Mondknoten Isgra
+198	38	3	Schun	SCHUH	non_translit_context	schun	schuh	gcan, vgl. Schun 2012: 1522.	gcan; vgl. SCHUH 2012: 1522.
+198	39	3	gean	gcan	unsafe_token_disagreement	gean	gcan	Lex. sgra gean la'ari (brDa, ähnl. Dagy).	Lex. sgra gcan la'an (brDa, ähnl. Dagy).
+198	39	4	la'ari	la'an	unsafe_token_disagreement	laari	laan	Lex. sgra gean la'ari (brDa, ähnl. Dagy).	Lex. sgra gcan la'an (brDa, ähnl. Dagy).
+198	40				token_count_mismatch	7	8	མུན་པ་དང་བྲལ་བ་ mun pa dari bral ba npr. ein	45550 mun pa dañ bral ba npr. ein
+198	43				token_count_mismatch	4	5	"མུན་པ་ཟེར་ལྡན་་ "" mun pa zer ldan"	59ś mun pa zer ldan
+198	44	6	Leichenstātte	Leichenstätte	unsafe_token_disagreement	leichenstatte	leichenstatte	མུན་པ་དྲག་པོ་ mun pa drag po die Leichenstātte	... mun pa drag po die Leichenstätte
+198	45	4	Ghorindin	Ghorāndha	non_translit_context	ghorindin	ghorandha	im Südwesten, skt. Ghorindin-	im Südwesten, skt. Ghorāndha-
+198	46	3	Tdur	dur	unsafe_token_disagreement	tdur	dur	kāra, vgl. Tdur khrod brgyad.	kāra, vgl. ↑dur khrod brgyad.
+198	47	3	broyad	brgyad	unsafe_token_disagreement	broyad	brgyad	dur khrod broyad kyis broyan pa ste / ... ~	dur khrod brgyad kyis brgyan pa ste /... ~
+198	47	5	broyan	brgyan	unsafe_token_disagreement	broyan	brgyan	dur khrod broyad kyis broyan pa ste / ... ~	dur khrod brgyad kyis brgyan pa ste /... ~
+198	50	2	Ghorāndhakāra	Ghorandhakāra	non_translit_context	ghorandhakara	ghorandhakara	"sten Ghorāndhakāra [usw.]"" (Samv 17.37e)."	"sten Ghorandhakāra [usw.]"" (Samv 17.37c)."
+198	50	5	17.37e	17.37c	non_translit_context	17.37e	17.37c	"sten Ghorāndhakāra [usw.]"" (Samv 17.37e)."	"sten Ghorandhakāra [usw.]"" (Samv 17.37c)."
+198	51				token_count_mismatch	7	8	མུན་པ་ནག་པོ་ mun pa nag po npr. cin Dü-	z mun pa nag po npr. ein Dä-
+198	52	5	rpyal	rgyal	non_translit_context	rpyal	rgyal	mon, Vater des Grib-bdag rpyal-	mon, Vater des Grib-bdag rgyal-
+198	54				token_count_mismatch	5	7	མུན་པ་བྲལ་ munpa bral npr. ein Buddha.	4 mun pa bral npr. ein Buddha.
+198	56				token_count_mismatch	7	8	མུན་པ་མ་ mun pa ma Bez. für Abend und	2922 mun pa ma Bez. für Abend und
+198	58	2	denn	dgun	unsafe_token_disagreement	denn	dgun	"Lex. denn mo'am mtshan mo ""Abend oder"	Lex. dgun mo'am mtshan mo „Abend oder
+198	59				token_count_mismatch	5	6	"Nacht"" (brDa); mtshban mo (Dagy)."	"Nacht"" (brDa); mtshan mo (Dagy). 4242929"
+198	60	6	Tin	Fin	unsafe_token_disagreement	tin	fin	མུན་པ་མུན་ནག་ mun pa mun nag dunkle Tin-	mun pa mun nag dunkle Fin-
+198	62	7	güis	grīis	unsafe_token_disagreement	guis	griis	ni ma dan zla ba ... 'di güis kyi 'od dag nam	ñi ma daṅ zla ba 'di grīis kyi 'od dag riams
+198	62	11	nam	riams	unsafe_token_disagreement	nam	riams	ni ma dan zla ba ... 'di güis kyi 'od dag nam	ñi ma daṅ zla ba 'di grīis kyi 'od dag riams
+198	63	8	derir	derar	unsafe_token_disagreement	derir	derar	"su mi myon ba'i — ""Sonne und Mond, derir-"	su mi myon ba'i ,,Sonne und Mond, derar-
+198	67	6	kyani	kyaṅ	non_translit_context	kyani	kyan	"mas — kun / med par gyur kyani (metr.) ""wie"	mas -kun / med par gyur kyaṅ (metr.) „wie
+198	68	7	Tinster	Finster	non_translit_context	tinster	finster	durch eine Laterne die ganze dunkle Tinster-	durch eine Laterne die ganze dunkle Finster-
+198	69	3	Käsy	Käśy	non_translit_context	kasy	kasy	"nis verschwindet"" (Käsy 104,9); thugs je"	"nis verschwindet"" (Käśy 104,9); thugs rje'i"
+198	69	7	je	rje'i	non_translit_context	je	rjei	"nis verschwindet"" (Käsy 104,9); thugs je"	"nis verschwindet"" (Käśy 104,9); thugs rje'i"
+198	70				token_count_mismatch	8	9	"'od zer dag gis mun pa'i /////?/ nagbsal ""durch"	'od zer dag gis mun pa'i mun nagbsal „durch
+198	73	4	cin	ein	unsafe_token_disagreement	cin	ein	མུན་པ་འཛིན་ mun pa 'dzin cin Baum, skt.	mun pa 'dzin ein Baum, skt.
+198	74	1	tamäla	tamāla	non_translit_context	tamala	tamala	tamäla, Xanthochymus pictorus	tamāla, Xanthochymus pictorius
+198	74	3	pictorus	pictorius	non_translit_context	pictorus	pictorius	tamäla, Xanthochymus pictorus	tamāla, Xanthochymus pictorius
+198	76	3	må	ma	unsafe_token_disagreement	må	ma	"Lex. ta må la'i miñ ""Bez. für tamala"" (Digv)."	Lex. ta ma la'i min „Bez. für tamāla“ (Dagv).
+198	76	5	miñ	min	unsafe_token_disagreement	min	min	"Lex. ta må la'i miñ ""Bez. für tamala"" (Digv)."	Lex. ta ma la'i min „Bez. für tamāla“ (Dagv).
+198	76	8	tamala	tamāla	unsafe_token_disagreement	tamala	tamala	"Lex. ta må la'i miñ ""Bez. für tamala"" (Digv)."	Lex. ta ma la'i min „Bez. für tamāla“ (Dagv).
+198	76	9	Digv	Dagv	unsafe_token_disagreement	digv	dagv	"Lex. ta må la'i miñ ""Bez. für tamala"" (Digv)."	Lex. ta ma la'i min „Bez. für tamāla“ (Dagv).
+198	77				token_count_mismatch	6	7	མུན་པ་ཟེར་ལྡན་ནག་པོ་ mun pa zer ldan nag po	ZZZZZZ mun pa zer ldan nag po
+198	79				token_count_mismatch	1	2	Bon-po.	Bon-po. 194
+211	1				token_count_mismatch	3	2	མི་ Ay me tog	me tog
+211	3				token_count_mismatch	5	6	"Blüten, usw."" (JB & 814,3)."	"Blüten, usw."" (JB 6: 814,3)."
+211	4				token_count_mismatch	6	7	"Lex. puspam ""Blüte"" (Mvy 6235 u.ö.); —"	"Lex. puspam „Blüte"" (Mvy 6235 u. ö.);"
+211	6				token_count_mismatch	5	6	"Digy); ~ & dog pa ""Blütenbündel"" = sta-"	Dagy); ~gi dog pa „Blütenbündel“ ≈ sta-
+211	7	1	nbakam	mbakam	non_translit_context	nbakam	mbakam	"nbakam ""Bund, Büschel"" (Mvy 6182); —"	mbakam „Bund, Büschel“ (Mvy 6182);
+211	8	1	win	gi	non_translit_context	win	gi	"win 2 puspavrksab ""Blütenbaum"" (Mvy"	gi sin puspavykṣaḥ „Blütenbaum“ (Mvy
+211	8	2	2	sin	non_translit_context	2	sin	"win 2 puspavrksab ""Blütenbaum"" (Mvy"	gi sin puspavykṣaḥ „Blütenbaum“ (Mvy
+211	8	3	puspavrksab	puspavykṣaḥ	non_translit_context	puspavrksab	puspavyksah	"win 2 puspavrksab ""Blütenbaum"" (Mvy"	gi sin puspavykṣaḥ „Blütenbaum“ (Mvy
+211	9	1	4750	4200	non_translit_context	4750	4200	4750).	4200).
+211	11	1	007	Sm	unsafe_token_disagreement	007	sm	007 dan 'bras bu — nags tshal ji sried pa / de	Sm dan 'bras bu nags tshal ji sred pa / de
+211	11	8	sried	sred	unsafe_token_disagreement	sried	sred	007 dan 'bras bu — nags tshal ji sried pa / de	Sm dan 'bras bu nags tshal ji sred pa / de
+211	12				token_count_mismatch	9	10	"dagthams cad sa las yari dag 'byun (metr.) ""so"	day thams cad sa las yan dag 'byun (metr.),,so
+211	13	1	vide	viele	non_translit_context	vide	viele	vide Bäume, Früchte, Blumen und Haine es	viele Bäume, Früchte, Blumen und Haine es
+211	14				token_count_mismatch	8	9	auch gibt, sicalle sind aus der Erde entstan-	auch gibt, sie alle sind aus der Erde entstan-
+211	15	3	28.32	28.3a	unsafe_token_disagreement	28.32	28.3a	"den"" (Rgs 28.32); — gi bla re chen pos ""mit"	den“ (Rgs 28.3a); ~gi bla re chen pos „mit
+211	17	1	14563	145b3	unsafe_token_disagreement	14563	145b3	14563); gari gä'i chu rgyun la / — mams mi	145b3); gan ga'i chu rgyun la / mams ni
+211	17	2	gari	gan	unsafe_token_disagreement	gari	gan	14563); gari gä'i chu rgyun la / — mams mi	145b3); gan ga'i chu rgyun la / mams ni
+211	17	3	gä'i	ga'i	unsafe_token_disagreement	gai	gai	14563); gari gä'i chu rgyun la / — mams mi	145b3); gan ga'i chu rgyun la / mams ni
+211	17	8	mi	ni	unsafe_token_disagreement	mi	ni	14563); gari gä'i chu rgyun la / — mams mi	145b3); gan ga'i chu rgyun la / mams ni
+211	19	1	203	Ganga	non_translit_context	203	ganga	"(203 Blumen wachsen"" (Suv 14,5); — gidri"	"Ganga Blumen wachsen"" (Suv 14,5); ~gidri"
+211	20	10	bryan	brgyan	unsafe_token_disagreement	bryan	brgyan	im pa mam pa sna tshogs kyis rab tu bryan	im pa mam pa sna tshogs kyis rab tu brgyan
+211	21				token_count_mismatch	8	9	"pwrsa phyogs Zig ""eine Stelle, die mit allerlei"	pa't sa phyogs zig „eine Stelle, die mit allerlei
+211	23				token_count_mismatch	9	10	"war"" (Suv 154,9); -kokaste pad ma Zes bya"	"war"" (Suv 154,9); koka ste pad ma źes bya"
+211	24				token_count_mismatch	7	8	"baitha tshig ""die Koka-Blume ist eine Be-"	bai tha tshig „die Koka-Blume ist eine Be-
+211	25				token_count_mismatch	6	7	"zeichnung für Lotus"" (T4115 194a2); — 9/ ///"	"zeichnung für Lotus"" (T4115 194a2); ~ gi ni"
+211	26	1	men	mgo	non_translit_context	men	mgo	"men loogs bin (metr.) ""wie ein Strauf3 von"	mgo leogs bźin (metr.) „wie ein Strauß von
+211	26	2	loogs	leogs	non_translit_context	loogs	leogs	"men loogs bin (metr.) ""wie ein Strauf3 von"	mgo leogs bźin (metr.) „wie ein Strauß von
+211	26	3	bin	bźin	non_translit_context	bin	bzin	"men loogs bin (metr.) ""wie ein Strauf3 von"	mgo leogs bźin (metr.) „wie ein Strauß von
+211	26	7	Strauf3	Strauß	non_translit_context	strauf3	straus	"men loogs bin (metr.) ""wie ein Strauf3 von"	mgo leogs bźin (metr.) „wie ein Strauß von
+211	27	1	blumen	Elumen	unsafe_token_disagreement	blumen	elumen	"blumen"" (GS-H 163); saris rgyas gser thub"	"Elumen"" (Gś-H 16a); sans rgyas gser thub"
+211	27	3	163	16a	unsafe_token_disagreement	163	16a	"blumen"" (GS-H 163); saris rgyas gser thub"	"Elumen"" (Gś-H 16a); sans rgyas gser thub"
+211	27	4	saris	sans	unsafe_token_disagreement	saris	sans	"blumen"" (GS-H 163); saris rgyas gser thub"	"Elumen"" (Gś-H 16a); sans rgyas gser thub"
+211	29	1	Kanakaniuni	Kanakamuni	non_translit_context	kanakaniuni	kanakamuni	Kanakaniuni in die Welt kam, erblühten die	Kanakamuni in die Welt kam, erblühten die
+211	30	1	blumen	Blumen	unsafe_token_disagreement	blumen	blumen	"blumen"" (Glr 68,5); — sad kyis nam ""khyer"	"Blumen"" (Glr 68,5); sad kyis nam 'khyer"
+211	31				token_count_mismatch	8	9	"es pamed (metr.) ""es ist nicht sicher, wann"	ries pa med (metr.) „es ist nicht sicher, wann
+211	32				token_count_mismatch	6	7	"dieBlumen von Frost befallen werden"" (Glr"	die Blumen von Frost befallen werden“ (Glr
+211	33	1	136	156	unsafe_token_disagreement	136	156	"136,15); ~ ""thur btani ༡10 ""sie sandte ihn zum"	156,15); 'thur btan no „sie sandte ihn zum
+211	33	4	btani	btan	unsafe_token_disagreement	btani	btan	"136,15); ~ ""thur btani ༡10 ""sie sandte ihn zum"	156,15); 'thur btan no „sie sandte ihn zum
+211	33	5	10	no	unsafe_token_disagreement	10	no	"136,15); ~ ""thur btani ༡10 ""sie sandte ihn zum"	156,15); 'thur btan no „sie sandte ihn zum
+211	35	1	Phai	plus	unsafe_token_disagreement	phai	plus	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"	plus po'i dbus nas byi la źig byun ste „einmal
+211	35	2	00	po'i	unsafe_token_disagreement	00	poi	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"	plus po'i dbus nas byi la źig byun ste „einmal
+211	35	7	Zig	źig	unsafe_token_disagreement	zig	zig	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"	plus po'i dbus nas byi la źig byun ste „einmal
+211	35	8	byuri	byun	unsafe_token_disagreement	byuri	byun	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"	plus po'i dbus nas byi la źig byun ste „einmal
+211	35	10	ein	einmal	unsafe_token_disagreement	ein	einmal	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"	plus po'i dbus nas byi la źig byun ste „einmal
+211	36				token_count_mismatch	7	6	mal kam aus der Mitte eines Blumenhaufens	kam aus der Mitte eines Blumenhaufens
+211	37	4	Tär	Tār	non_translit_context	tar	tar	"eine Katze hervor"" (Tär 63,14); nags kyi —"	eine Katze hervor“ (Tār 63,14); nags kyi
+211	38	1	mans	rnams	non_translit_context	mans	rnams	"mans kyari 'dud par gyur ""auch die Blumen"	rnams kyan 'dud par gyur „auch die Blumen
+211	38	2	kyari	kyan	non_translit_context	kyari	kyan	"mans kyari 'dud par gyur ""auch die Blumen"	rnams kyan 'dud par gyur „auch die Blumen
+211	39	7	Tär	Tār	non_translit_context	tar	tar	"des Waldes verneigten sich [vor ihm]"" (Tär"	des Waldes verneigten sich [vor ihm]“ (Tār
+211	40	5	po	pola	unsafe_token_disagreement	po	pola	104,15); ~ padma'i sin po la / brdzuste skye	104,15); padma'i sin pola / brdzus te skye
+211	40	6	la	brdzus	unsafe_token_disagreement	la	brdzus	104,15); ~ padma'i sin po la / brdzuste skye	104,15); padma'i sin pola / brdzus te skye
+211	40	7	brdzuste	te	unsafe_token_disagreement	brdzuste	te	104,15); ~ padma'i sin po la / brdzuste skye	104,15); padma'i sin pola / brdzus te skye
+211	41	4	$og	sog	unsafe_token_disagreement	sog	sog	"ba len par $og (metr.) ""möge ich die über-"	ba len par sog (metr.) möge ich die über-
+211	43				token_count_mismatch	6	7	"blume annehmen!"" (Räg 63,28); ndumna —"	"blume annehmen!"" (Rag 63,28); mdun na ~"
+211	44	1	02	klon	non_translit_context	02	klon	"02? royas 077 (metr.) ""vorne breitet sich cine"	klon rgyas sin (metr.) „vorne breitet sich eine
+211	44	2	royas	rgyas	non_translit_context	royas	rgyas	"02? royas 077 (metr.) ""vorne breitet sich cine"	klon rgyas sin (metr.) „vorne breitet sich eine
+211	44	3	077	sin	non_translit_context	077	sin	"02? royas 077 (metr.) ""vorne breitet sich cine"	klon rgyas sin (metr.) „vorne breitet sich eine
+211	44	8	cine	eine	non_translit_context	cine	eine	"02? royas 077 (metr.) ""vorne breitet sich cine"	klon rgyas sin (metr.) „vorne breitet sich eine
+211	45	5	Vdk-M	Vḍk-M	non_translit_context	vdkm	vdkm	"Fläche mit Blumen aus"" (Vdk-M 132,36); ka"	Fläche mit Blumen aus“ (Vḍk-M 132,36); ka
+211	46	1	4	ta	unsafe_token_disagreement	4	ta	[4 72 yi (077 khyer du / skyed mos tshal gyi	ta ra yi groṅ khyer du / skyed mos tshal gyi
+211	46	2	72	ra	unsafe_token_disagreement	72	ra	[4 72 yi (077 khyer du / skyed mos tshal gyi	ta ra yi groṅ khyer du / skyed mos tshal gyi
+211	46	4	077	groṅ	unsafe_token_disagreement	077	gron	[4 72 yi (077 khyer du / skyed mos tshal gyi	ta ra yi groṅ khyer du / skyed mos tshal gyi
+211	48				token_count_mismatch	2	3	མེ་ཏོག་ me tog	25 me tog
+211	49	7	vermeh	vermehren	non_translit_context	vermeh	vermehren	"— rgyas (metr.) ""in der Stadt Katara vermeh-"	~ rgyas (metr.) „in der Stadt Katara vermehren
+211	50				token_count_mismatch	7	6	"ren sich die Blumen des Gartens"" (TsonNth"	sich die Blumen des Gartens“ (TsonNth
+211	51	3	Zi	zin	unsafe_token_disagreement	zi	zin	5,11a4); Zi khams dpag med kyi / dbu ma —	5,11a4); zin khams dpag med kyi / dbu ma
+211	52	3	Zinn	zin	unsafe_token_disagreement	zinn	zin	"bkod pa'i Zinn (metr.) ""ein Gebiet mit Blumen"	bkod pa'i zin (metr.) „ein Gebiet mit Blumen
+211	53	7	Sphā	Sphä	non_translit_context	spha	spha	bepflanzt in der Mitte der zahllosen Sphā-	bepflanzt in der Mitte der zahllosen Sphä-
+211	54	10	chn	chu	unsafe_token_disagreement	chn	chu	"ren"" (gZi 4: 257,6); — mdzes pa'i glin la chn"	"ren"" (gZi 4: 257,6); ~ mdzes pa'i glin la chu"
+211	55	4	pbub	phub	unsafe_token_disagreement	pbub	phub	"dar gyi gur pbub ste ""in dem Park mit den"	dar gyi gur phub ste „in dem Park mit den
+211	59				token_count_mismatch	9	10	byari chub kyi yan lag bdun gyi — gisphyug pa	byan chub kyi yan lag bdun gyi ~gis phyug pa
+211	61				token_count_mismatch	7	8	"tungsglieder"" (Prav 82,2); sna /// nl 0)// —"	"tungsglieder"" (Prav 82,2); sna ni til gyi -"
+211	62	1	mtsbuns	mtshuns	non_translit_context	mtsbuns	mtshuns	"mtsbuns (metr.) ""die Nase gleicht einer Se-"	mtshuns (metr.),,die Nase gleicht einer Se-
+211	63	2	Samiv	Samv	unsafe_token_disagreement	samiv	samv	"samblüte"" (Samiv 31.30); byan chub kyi yan"	"samblüte"" (Samv 31.3c); byan chub kyi yan"
+211	63	3	31.30	31.3c	unsafe_token_disagreement	31.30	31.3c	"samblüte"" (Samiv 31.30); byan chub kyi yan"	"samblüte"" (Samv 31.3c); byan chub kyi yan"
+211	66	3	drul	dul	unsafe_token_disagreement	drul	dul	"gser dan drul gyi don rtse'i ~ 7//// (metr.) ""ich"	gser dan dul gyi don rtse'i ~ 'bul (metr.) „ich
+211	66	7	7	bul	unsafe_token_disagreement	7	bul	"gser dan drul gyi don rtse'i ~ 7//// (metr.) ""ich"	gser dan dul gyi don rtse'i ~ 'bul (metr.) „ich
+211	68	3	27766	277b6	non_translit_context	27766	277b6	"münzen"" (Padm 27766); tsbems rrul — dmar"	"münzen"" (Padm 277b6); tshems rriil ~ dmar"
+211	68	4	tsbems	tshems	non_translit_context	tsbems	tshems	"münzen"" (Padm 27766); tsbems rrul — dmar"	"münzen"" (Padm 277b6); tshems rriil ~ dmar"
+211	68	5	rrul	rriil	non_translit_context	rrul	rriil	"münzen"" (Padm 27766); tsbems rrul — dmar"	"münzen"" (Padm 277b6); tshems rriil ~ dmar"
+211	69				token_count_mismatch	9	8	"po 'dra ba ni (metr.) ""das Zahnfleisch ist ei-"	po 'dra ba ni (metr.) „das Zahnfleisch ist
+211	70	1	ner	einer	unsafe_token_disagreement	ner	einer	"ner roten Blüte gleich"" (bKth 354,4); Ihag"	einer roten Blüte gleich“ (bKth 354,4); lhag
+211	71	3	kbrun	khrun	unsafe_token_disagreement	kbrun	khrun	"mthon gi — 'kbrun bar sog ""möge die Blüte"	mthon gi ~ 'khrun bar śog „möge die Blüte
+211	72	2	Vipa$yanä	Vipaśyanā	unsafe_token_disagreement	vipasyana	vipasyana	"der Vipa$yanä entstehen"" (Mil 125,17); nor"	der Vipaśyanā entstehen“ (Mil 125,17); nor
+211	74	2	bZin	bźin	unsafe_token_disagreement	bzin	bzin	"pa bZin (metr.) ""es war so, als ob die Erde als"	pa bźin (metr.) „es war so, als ob die Erde als
+211	76	6	a	ja	unsafe_token_disagreement	a	ja	"trug"" (ThK 2: 532,5); a' sprin — tho lo lo"	"trug"" (ThK 2: 532,5); 'ja' sprin ~ tho lo lo"
+211	77				token_count_mismatch	6	5	"(metr.) ""Blumen aus Regenbogen und Wol-"	(metr.) „Blumen aus Regenbogen und
+211	78	1	ken	Wolken	unsafe_token_disagreement	ken	wolken	"ken tho lo lo"" (MPh 5: 685,4); ma mchu zar"	"Wolken tho lo lo"" (MPh 5: 685,4); ma mchu Zar"
+211	78	11	zar	Zar	unsafe_token_disagreement	zar	zar	"ken tho lo lo"" (MPh 5: 685,4); ma mchu zar"	"Wolken tho lo lo"" (MPh 5: 685,4); ma mchu Zar"
+211	79	1	ma	ma'i	unsafe_token_disagreement	ma	mai	"ma' — 'dra ba ""ihre Unterlippe gleicht einer"	ma'i 'dra ba „ihre Unterlippe gleicht einer
+211	84				token_count_mismatch	8	9	"— ka ra bira'i phren ba ""ein Kranz aus"	ka ra bi ra'i phren ba „ein Kranz aus
+211	85	1	Karavira-Blüten	Karavīra-Blüten	unsafe_token_disagreement	karavirabluten	karavirabluten	"Karavira-Blüten"" (Ki ga 26766); Iha rdzas"	Karavīra-Blüten“ (K1 ga 267b6); lha rdzas
+211	85	2	Ki	K1	unsafe_token_disagreement	ki	k1	"Karavira-Blüten"" (Ki ga 26766); Iha rdzas"	Karavīra-Blüten“ (K1 ga 267b6); lha rdzas
+211	85	4	26766	267b6	unsafe_token_disagreement	26766	267b6	"Karavira-Blüten"" (Ki ga 26766); Iha rdzas"	Karavīra-Blüten“ (K1 ga 267b6); lha rdzas
+211	86				token_count_mismatch	8	7	"kyi — ge sa ra ""die Kesara-Blüte als Op-"	kyi ge sa ra „die Kesara-Blüte als
+211	87	1	fergabe	Opfergabe	unsafe_token_disagreement	fergabe	opfergabe	"fergabe für die Götter"" (K9 ka 735); rdzin"	Opfergabe für die Götter“ (K9 ka 7a5); rdziṅ
+211	87	7	735	7a5	unsafe_token_disagreement	735	7a5	"fergabe für die Götter"" (K9 ka 735); rdzin"	Opfergabe für die Götter“ (K9 ka 7a5); rdziṅ
+211	88	9	mn	mu	unsafe_token_disagreement	mn	mu	— ud pa la dan / pad ma dan / ku mn da	ud pa la dan / pad ma dan / ku mu da
+211	89	1	07	dan	unsafe_token_disagreement	07	dan	"(07)? / pad ma dkar pos mdzes par gyur pa ""die"	dan / pad ma dkar pos mdzes par gyur pa ,,die
+211	91				token_count_mismatch	5	6	Kumuda- und Pundarika-Blüten schön wa-	Kumuda- und Puṇḍarīka-Blüten schön wa-
+211	93				token_count_mismatch	9	10	"dan — kunm da 'dra ba ""die Farbe der Kno-"	dan ku mu da 'dra ba „,die Farbe der Kno-
+229	1				token_count_mismatch	1	2	མེད་ med	25 med
+229	2				token_count_mismatch	9	7	"bka' drin chen pos ma khyab pa — de ""des-"	bka' drin chen pos ma khyab pa
+229	3				token_count_mismatch	8	9	halb gab es niemanden, der nicht von sei-	de „deshalb gab es niemanden, der nicht von sei-
+229	11	1	sta	sha	unsafe_token_disagreement	sta	sha	"sta na yi ge myed pa yari ""auch die Schrift,"	sha na yi ge myed pa yan,,auch die Schrift,
+229	11	7	yari	yan	unsafe_token_disagreement	yari	yan	"sta na yi ge myed pa yari ""auch die Schrift,"	sha na yi ge myed pa yan,,auch die Schrift,
+229	13	5	Sin	sin	non_translit_context	sin	sin	(PT1287 452); myin ses Sin / 'don pa myed	(PT1287 452); myin ses sin / 'don pa myed
+229	14	1	pargur	par	unsafe_token_disagreement	pargur	par	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	2	nas	gyur	unsafe_token_disagreement	nas	gyur	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	3	es	nas	unsafe_token_disagreement	es	nas	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	4	gab	es	unsafe_token_disagreement	gab	es	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	5	niemanden	gab	unsafe_token_disagreement	niemanden	gab	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	6	der	niemanden	unsafe_token_disagreement	der	niemanden	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	7	den	der	unsafe_token_disagreement	den	der	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	14	8	Na	den	unsafe_token_disagreement	na	den	"pargur nas ""es gab niemanden, der den Na-"	par gyur nas „es gab niemanden, der den
+229	15	1	men	Namen	non_translit_context	men	namen	"men kannte und rezitierte"" (Liy2 71); ig"	Namen kannte und rezitierte“ (Liy2 71); jig
+229	15	7	ig	jig	non_translit_context	ig	jig	"men kannte und rezitierte"" (Liy2 71); ig"	Namen kannte und rezitierte“ (Liy2 71); jig
+229	16	4	ig	jig	unsafe_token_disagreement	ig	jig	"rten 'di — do / ig rten pha rol — do ""diese"	rten 'di ~ do / jig rten pha rol do,,diese
+229	18	3	ña	na	unsafe_token_disagreement	na	na	"nicht"" (K1 ña 26147); ""di na byed pa tshor"	nicht“ (K1 na 261a7); 'di na byed pa tshor
+229	18	4	26147	261a7	unsafe_token_disagreement	26147	261a7	"nicht"" (K1 ña 26147); ""di na byed pa tshor"	nicht“ (K1 na 261a7); 'di na byed pa tshor
+229	23				token_count_mismatch	9	10	"lasai khams la ni — pa'i sa dmigs la ""dabei"	la sa'i khams la ni ~ pa'i sa dmigs la „dabei
+229	26	4	bZin	bźin	unsafe_token_disagreement	bzin	bzin	"du ni ran bZin — (metr.) ""in der absolu-"	du ni ran bźin (metr.) in der absolu-
+229	28	7	yur	gyur	unsafe_token_disagreement	yur	gyur	(K107 174b5); de — pas na bde — 'yur	(K107 174b5); de pas na bde 'gyur
+229	29				token_count_mismatch	7	8	"(metr.) ""wenn esdasnicht gäbe, gäbe es kei-"	(metr.) „wenn es das nicht gäbe, gäbe es
+229	30	1	ne	keine	unsafe_token_disagreement	ne	keine	"ne Wonne"" (Hev 2.2.42a); ""di la the tsbom"	"keine Wonne"" (Hev 2.2.42a); 'di la the tshom"
+229	30	8	tsbom	tshom	unsafe_token_disagreement	tsbom	tshom	"ne Wonne"" (Hev 2.2.42a); ""di la the tsbom"	"keine Wonne"" (Hev 2.2.42a); 'di la the tshom"
+229	32	5	nid	ñid	non_translit_context	nid	nid	"(Mvup 2.33d); byed po — nid dar (metr.) ""es"	(Mvup 2.33d); byed po~ ñid daṅ (metr.) „,es
+229	32	6	dar	daṅ	non_translit_context	dar	dan	"(Mvup 2.33d); byed po — nid dar (metr.) ""es"	(Mvup 2.33d); byed po~ ñid daṅ (metr.) „,es
+229	33	6	dnos	dṅos	non_translit_context	dnos	dnos	"gibt keinen Handelnden"" (AA 3.9a); dnos"	gibt keinen Handelnden“ (AA 3.9a); dṅos
+229	34	3	gur	gyur	unsafe_token_disagreement	gur	gyur	"po ~ par gur kyan ni (metr.) ""obwohl es"	po par gyur kyan ni (metr.) „obwohl es
+229	35				token_count_mismatch	5	7	"dasin Wirklichkeit nicht gibt"" (Bca8.111c);"	"das in Wirklichkeit nicht gibt"" (Bea 8.111c);"
+229	36				token_count_mismatch	9	8	"dos po la skyon — mod kyi ""auch wenn ci-"	dṅos po la skyon mod kyi „auch wenn
+229	37	1	ne	eine	non_translit_context	ne	eine	"ne wirkliche Sache ohne Fehler ist"" (NBT"	eine wirkliche Sache ohne Fehler ist“ (NBȚ
+229	37	7	NBT	NB	non_translit_context	nbt	nb	"ne wirkliche Sache ohne Fehler ist"" (NBT"	eine wirkliche Sache ohne Fehler ist“ (NBȚ
+229	38	7	Sir	sin	unsafe_token_disagreement	sir	sin	204,16); chi bdag yid kyi Sir rta 'bras — Sog	204, 16); 'chi bdag yid kyi sin rta 'bras ~ sog
+229	38	10	Sog	sog	unsafe_token_disagreement	sog	sog	204,16); chi bdag yid kyi Sir rta 'bras — Sog	204, 16); 'chi bdag yid kyi sin rta 'bras ~ sog
+229	41				token_count_mismatch	10	11	"pa [7 gole sos dal gyi lori — pas ""weil man"	pa la go le sos dal gyi lon pas,,weil man
+229	43	6	ñe	ne	unsafe_token_disagreement	ne	ne	"enden"" (dPe 30,3); tin ñe 'dzin la 'byur 'jug"	"enden"" (dPe 30,3); tin ne 'dzin la 'byun 'jug"
+229	43	9	byur	byun	unsafe_token_disagreement	byur	byun	"enden"" (dPe 30,3); tin ñe 'dzin la 'byur 'jug"	"enden"" (dPe 30,3); tin ne 'dzin la 'byun 'jug"
+229	44				token_count_mismatch	8	7	"-pa'o ""daher gibt es kein Aus- und Eintre-"	~pa'o „daher gibt es kein Aus- und
+229	45	1	ten	Eintreten	non_translit_context	ten	eintreten	"ten in die meditative Versenkung"" (VaiNth"	"Eintreten in die meditative Versenkung"" (VaiNth"
+229	46				token_count_mismatch	9	11	203,5); ba bzed lassadmi bdun du bsad pa	203,5); sba bźed las sad mi bdun du bśad pa ~
+229	48				token_count_mismatch	1	2	མེད་ med	25 med
+229	49	3	sBa-bZed	sBa-bźzed	non_translit_context	sbabzed	sbabzzed	"do ""im sBa-bZed steht nichts von sieben sad"	do im sBa-bźzed steht nichts von sieben sad
+229	50				token_count_mismatch	10	9	"mi"" (Nel Gl. 10b1); Zig as — la ""dann ist er"	mi“ (Nel Gl. 10b1); źig nasla „dann ist er
+229	51	6	Bu-$z	Bu-Sz	non_translit_context	busz	busz	"zerfallen und war nicht mehr"" (Bu-$z 65,2);"	zerfallen und war nicht mehr“ (Bu-Sz 65,2);
+229	52				token_count_mismatch	11	9	spyir rgya gar gyi Ings la ... ben 0/7/6 bskor	spyir rgya gar gyi lugs la... bcu gñis bskor
+229	56	5	Zin	źiṅ	unsafe_token_disagreement	zin	zin	"5b9); de'i gon na Zin la so nam — ""davor"	5b9); de'i gon na źiṅ la so nam ~ „davor
+229	58	2	byl'u	byi'u	unsafe_token_disagreement	bylu	byiu	"mkhan byl'u ""then ma gcig kyan — ""es gab"	mkhan byi'u 'then ma gcig kyan „es gab
+229	59	4	Jahmes	lahmes	non_translit_context	jahmes	lahmes	nicht einmal ein Jahmes Vögelchen, um mich	nicht einmal ein lahmes Vögelchen, um mich
+229	60	8	pa	pa’i	unsafe_token_disagreement	pa	pai	"zu empfangen"" (Mil 76,15); dgos pa — pa'"	"zu empfangen"" (Mil 76,15); dgos pa ~ pa’i"
+229	61	3	b$ad	bśad	unsafe_token_disagreement	bsad	bsad	"phyir ma b$ad do ""da keine Notwendigkeit"	phyir ma bśad do da keine Notwendigkeit
+229	63	1	Tär	Tar	unsafe_token_disagreement	tar	tar	(Tär 22,22); na' skye rabs rnam thar 'byun	(Tar 22,22); na'i skye rabs rnam thar 'byun
+229	63	4	na	na'i	unsafe_token_disagreement	na	nai	(Tär 22,22); na' skye rabs rnam thar 'byun	(Tar 22,22); na'i skye rabs rnam thar 'byun
+229	66	9	Sid	Siddha	unsafe_token_disagreement	sid	siddha	"khyod las — pas ""da es außer dir keinen Sid-"	khyod las ~ pas „da es außer dir keinen Siddha
+229	67				token_count_mismatch	9	8	"dha gibt"" (dPyGlu 102,2); klu dan thnug sa —"	"gibt"" (dPyGlu 102,2); klu dan thug sa ~"
+229	69	4	Näga	Nāga	non_translit_context	naga	naga	"Berührungspunkt mit dem Näga"" (Vdlk-M"	Berührungspunkt mit dem Nāga“ (Vek-M
+229	69	5	Vdlk-M	Vek-M	non_translit_context	vdlkm	vekm	"Berührungspunkt mit dem Näga"" (Vdlk-M"	Berührungspunkt mit dem Nāga“ (Vek-M
+229	70	7	rkani	rkaṅ	unsafe_token_disagreement	rkani	rkan	140,10); sa 'bol sten na rkani rjes — na 'chi	140,10); sa 'bol steṅ na rkaṅ rjes na 'chi
+229	76	6	sari	san	non_translit_context	sari	san	"Dienern"" (BhuGr 16,23); den sari beu gsum"	"Dienern"" (BhuGr 16,23); den san bcu gsum"
+229	76	7	beu	bcu	non_translit_context	beu	bcu	"Dienern"" (BhuGr 16,23); den sari beu gsum"	"Dienern"" (BhuGr 16,23); den san bcu gsum"
+229	77				token_count_mismatch	7	8	"tsam las — ""heutzutage gibt es nicht mehrals"	tsam las ~ „heutzutage gibt es nicht mehr als
+229	78	7	7	phul	unsafe_token_disagreement	7	phul	"13"" (Dzam 42,22); bskul tshig ?//7/// — yari"	13“ ('Dzam 42,22); bskul tshig 'phul ~ yan
+229	78	8	yari	yan	unsafe_token_disagreement	yari	yan	"13"" (Dzam 42,22); bskul tshig ?//7/// — yari"	13“ ('Dzam 42,22); bskul tshig 'phul ~ yan
+229	79				token_count_mismatch	8	7	"ng yod (metr.) ""der Imperativ hat kein Prä-"	jug yod (metr.) „der Imperativ hat kein
+229	80	1	fix	Präfix	non_translit_context	fix	prafix	"fix, aber ein zweites Suffix"" (rTjBy 5,100);"	"Präfix, aber ein zweites Suffix"" (rTjBy 5,100);"
+229	83	7	rañ	ran	unsafe_token_disagreement	ran	ran	"(r. na tsho) zug gzer la rañ bZin ~ ""die Qualen"	(r. na tsho) zug gzer la ran bźin ~,,die Qualen
+229	83	8	bZin	bźin	unsafe_token_disagreement	bzin	bzin	"(r. na tsho) zug gzer la rañ bZin ~ ""die Qualen"	(r. na tsho) zug gzer la ran bźin ~,,die Qualen
+229	84	7	Akhri	Akhr1	non_translit_context	akhri	akhr1	"in der Jugend sind ohne Eigennatur"" (Akhri"	in der Jugend sind ohne Eigennatur“ (Akhr1
+229	87	7	rkani	rkaṅ	unsafe_token_disagreement	rkani	rkan	"gibt keine Spur"" (gZer 652,1); rkani khal rria"	"gibt keine Spur"" (gZer 652,1); rkaṅ khal rṅa"
+229	87	9	rria	rṅa	unsafe_token_disagreement	rria	rna	"gibt keine Spur"" (gZer 652,1); rkani khal rria"	"gibt keine Spur"" (gZer 652,1); rkaṅ khal rṅa"
+229	88	8	Last	Lasttier	non_translit_context	last	lasttier	"mon dag pas bzan ba — (metr.) ""kein Last-"	mon dag pas bzan ba (metr.) „kein Lasttier
+229	89				token_count_mismatch	10	9	"tier ist besser als das Kamel"" (gZi 4: 440,4);"	ist besser als das Kamel“ (gZi 4: 440,4);
+229	92				token_count_mismatch	9	10	"gans — na sen tshants} cila bca' ""wo soll der"	gans na sen tshan{s} cila bca' „wo soll der
+232	1				token_count_mismatch	1	2	མེད་ med	25 med
+232	2				token_count_mismatch	7	8	"$ina'an mya han byed pa — (metr.) ""man"	śi na'an mya nan byed pa (metr.) „man
+232	4	3	mams	rnams	unsafe_token_disagreement	mams	rnams	"skrag pa mams ni 'igs — Sog (metr.) ""mö-"	skrag pa rnams ni 'jigs śog (metr.) „mögen
+232	4	5	igs	jigs	unsafe_token_disagreement	igs	jigs	"skrag pa mams ni 'igs — Sog (metr.) ""mö-"	skrag pa rnams ni 'jigs śog (metr.) „mögen
+232	4	6	Sog	śog	unsafe_token_disagreement	sog	sog	"skrag pa mams ni 'igs — Sog (metr.) ""mö-"	skrag pa rnams ni 'jigs śog (metr.) „mögen
+232	4	8	mö	mögen	unsafe_token_disagreement	mo	mogen	"skrag pa mams ni 'igs — Sog (metr.) ""mö-"	skrag pa rnams ni 'jigs śog (metr.) „mögen
+232	5				token_count_mismatch	6	5	"gen die Furchtsamen furchtlos sein"" (Bca"	die Furchtsamen furchtlos sein“ (Bea
+232	6				token_count_mismatch	8	7	"10.222); 'brel — smra ba manis na ""wenn man"	10.22a); 'brel smraba maris na „wenn man
+232	8	5	yañ	yan	unsafe_token_disagreement	yan	yan	"8,5); gan dan yañ 'khon ~ par gyur te ""er"	8,5); gan dan yan 'khon par gyur te „cr
+232	8	10	er	cr	unsafe_token_disagreement	er	cr	"8,5); gan dan yañ 'khon ~ par gyur te ""er"	8,5); gan dan yan 'khon par gyur te „cr
+232	9				token_count_mismatch	6	8	"grollte niemandem"" (Nel 1233); nalg glis"	"grollte niemandem"" (Nel 12a3); na [g g]is"
+232	10				token_count_mismatch	9	8	"ston pa — pas sanis rgyas nas ""er erreichte, oh-"	ston pa~pas saris rgyas nas „er erreichte,
+232	11	1	ne	ohne	non_translit_context	ne	ohne	"ne mit Worten zu lehren, dlie Buddhaschaft"""	"ohne mit Worten zu lehren, die Buddhaschaft"""
+232	11	6	dlie	die	non_translit_context	dlie	die	"ne mit Worten zu lehren, dlie Buddhaschaft"""	"ohne mit Worten zu lehren, die Buddhaschaft"""
+232	12	9	dari	dan	unsafe_token_disagreement	dari	dan	(Bu 776,3); de pho bo yin pa dari / ries — du	(Bu 776,3); de pho bo yin pa dan /nes du
+232	12	10	ries	nes	unsafe_token_disagreement	ries	nes	(Bu 776,3); de pho bo yin pa dari / ries — du	(Bu 776,3); de pho bo yin pa dan /nes du
+232	13				token_count_mismatch	9	10	"ma Sesnas ""da er nicht wußte, daß dieser sein"	ma ses nas „da er nicht wußte, daß dieser sein
+232	15				token_count_mismatch	8	9	334); bod //¿ /)/// dpa' ba dan brtul phod pa ...	3a4); bod Ita bu'i dpa'ba dan brtul phod pa ...
+232	16				token_count_mismatch	10	9	"dus swan byun ba — ces grags so ""es ist be-"	dus su'an byun ba ~ ces grags so „es ist
+232	17	1	kannt	bekannt	non_translit_context	kannt	bekannt	kannt, daß es zu keiner Zeit jemanden gab,	bekannt, daß es zu keiner Zeit jemanden gab,
+232	19	2	959	9b9	unsafe_token_disagreement	959	9b9	(Debm 959); gsari dgos — pas bsad par bya ste	(Debm 9b9); gsan dgos ~pas bśad par bya ste
+232	19	3	gsari	gsan	unsafe_token_disagreement	gsari	gsan	(Debm 959); gsari dgos — pas bsad par bya ste	(Debm 9b9); gsan dgos ~pas bśad par bya ste
+232	21	6	zani	zaṅ	non_translit_context	zani	zan	"heimlichen habe"" (Mil 27,8); zani ziri gi 'bul"	heimlichen habe“ (Mil 27,8); zaṅ ziỶı gi 'bul
+232	21	7	ziri	zi	non_translit_context	ziri	zi	"heimlichen habe"" (Mil 27,8); zani ziri gi 'bul"	heimlichen habe“ (Mil 27,8); zaṅ ziỶı gi 'bul
+232	22				token_count_mismatch	8	7	"ba ~ ?7/77 ""auch wenn sie keine Reichtümer"	ba run „auch wenn sie keine Reichtümer
+232	23				token_count_mismatch	8	9	"zu geben haben"" (Mil 100,27); ¢ // kyari kyag"	"zu geben haben"" (Mil 100,27); 'on kyan kyag"
+232	24	1	Dyuri	byun	non_translit_context	dyuri	byun	"""Dyuri — ""aber der Fall tritt nicht ein"" (Dol2"	'byun „aber der Fall tritt nicht ein“ (Dol2
+232	25				token_count_mismatch	7	8	"81,9); chosni 'tsheba — payin (metr.) ""dieser"	81,9); chos ni 'tsheba ~ payin (metr.) „dieser
+232	27				token_count_mismatch	9	10	"ta'! min gis'bod pa — pas ""weil man sie nicht"	ta'i min gis 'bod pa pas „weil man sie nicht
+232	28	4	Tär	Tar	non_translit_context	tar	tar	"als 'Panclitas' bezeichnete"" (Tär 48,2); ras"	"als,Panclitas bezeichnete"" (Tar 48,2); nas"
+232	28	7	ras	nas	non_translit_context	ras	nas	"als 'Panclitas' bezeichnete"" (Tär 48,2); ras"	"als,Panclitas bezeichnete"" (Tar 48,2); nas"
+232	29				token_count_mismatch	6	7	"kyan khonla'dzem — ""ich aber achtete nicht"	kyan khon la'dzem „ich aber achtete nicht
+232	30	3	KunK	Kun	unsafe_token_disagreement	kunk	kun	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	4	56	K	unsafe_token_disagreement	56	k	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	5	22	56	unsafe_token_disagreement	22	56	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	6	chi	22	unsafe_token_disagreement	chi	22	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	7	tshe	chi	unsafe_token_disagreement	tshe	chi	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	8	yi	tshe	unsafe_token_disagreement	yi	tshe	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	9	779	yi	unsafe_token_disagreement	779	yi	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	30	10	dzin	rig'dzin	unsafe_token_disagreement	dzin	rigdzin	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"	"auf sie"" (Kun K 56,22); 'chi ~tshe yi rig'dzin"
+232	31				token_count_mismatch	6	7	"thob ""er wird Unsterblichkeit erlangen, d.h."	thob er wird Unsterblichkeit erlangen, d. h.
+232	33	1	Tisc-Pr	Tise-Pr	non_translit_context	tiscpr	tisepr	"(Tisc-Pr 69,2); de bzin 'gal — ""[dagegen]"	(Tise-Pr 69,2); de bźin 'gal „[dagegen]
+232	33	5	bzin	bźin	non_translit_context	bzin	bzin	"(Tisc-Pr 69,2); de bzin 'gal — ""[dagegen]"	(Tise-Pr 69,2); de bźin 'gal „[dagegen]
+232	35				token_count_mismatch	10	9	(Wadd 135 36); 9.3/0 — gi khral rigs sogs la	(Wadd 135 36); g.yo gyi khral rigs sogs la
+232	36	6	unverän	unveränderten	unsafe_token_disagreement	unveran	unveranderten	"bkod pa ""Weisungen bezüglich der unverän-"	bkod pa „Weisungen bezüglich der unveränderten
+232	37				token_count_mismatch	6	5	"derten Abgabeleistung usw."" (MTH3/5/23"	Abgabeleistung usw.“ (MTH3/5/23
+232	40				token_count_mismatch	7	8	7. inyod —, yod dam — ob etw. vorhanden	7. in yod ~, yod dam - ob etw. vorhanden
+232	42	1	ig	jig	unsafe_token_disagreement	ig	jig	"ig rten pha rol yod dam — cig gu ""gibt es"	jig rten pha rol yod dam ~ cig gu „gibt es
+232	44	3	srion	snon	non_translit_context	srion	snon	tha 176b1); srion 'jug yod dam — kyan run	tha 176b1); snon 'jug yod dam ~ kyaṅ ruṅ
+232	44	7	kyan	kyaṅ	non_translit_context	kyan	kyan	tha 176b1); srion 'jug yod dam — kyan run	tha 176b1); snon 'jug yod dam ~ kyaṅ ruṅ
+232	44	8	run	ruṅ	non_translit_context	run	run	tha 176b1); srion 'jug yod dam — kyan run	tha 176b1); snon 'jug yod dam ~ kyaṅ ruṅ
+232	45				token_count_mismatch	6	5	"(metr.) ""ungeachtet dessen, ob Präfixe vor-"	(metr.) „ungeachtet dessen, ob Präfixe
+232	46				token_count_mismatch	8	9	"handen sind oder nicht"" (Scp 25.1); de la"	"vorhanden sind oder nicht"" (Sep 25.1); de la 228"
+232	47				token_count_mismatch	1	2	མེད་ med	5 med
+232	48				token_count_mismatch	10	11	tshig la sogs pa yod dam — the tshom za bi	the tshom za bải tshig la sogs pa yod dam
+232	50	8	kmi	kun	non_translit_context	kmi	kun	"Wörter usw. gibt oder nicht"" (NB 3.97); kmi"	Wörter usw. gibt oder nicht“ (NB 3.97); kun
+232	51	1	Ses	śes	unsafe_token_disagreement	ses	ses	"Ses rnam par Ses pa rdzas $// yod dam ~ ""gibt"	śes rnam par ses pa rdzas su yod dam ~ „gibt
+232	51	4	Ses	ses	unsafe_token_disagreement	ses	ses	"Ses rnam par Ses pa rdzas $// yod dam ~ ""gibt"	śes rnam par ses pa rdzas su yod dam ~ „gibt
+232	51	7	$	su	unsafe_token_disagreement	s	su	"Ses rnam par Ses pa rdzas $// yod dam ~ ""gibt"	śes rnam par ses pa rdzas su yod dam ~ „gibt
+232	52	3	Speicherbewufßtsein	Speicherbewußtsein	non_translit_context	speicherbewufstsein	speicherbewustsein	es das Speicherbewufßtsein als reale Substanz,	es das Speicherbewußtsein als reale Substanz
+232	53	3	Tär	Tār	unsafe_token_disagreement	tar	tar	"oder nicht?"" (Tär 89,20); sriin nas sa tsha yall"	"oder nicht?"" (Tār 89,20); sriin nas sa tsha yod"
+232	53	10	yall	yod	unsafe_token_disagreement	yall	yod	"oder nicht?"" (Tär 89,20); sriin nas sa tsha yall"	"oder nicht?"" (Tār 89,20); sriin nas sa tsha yod"
+232	54	3	bies	bźes	unsafe_token_disagreement	bies	bzes	"— / dbu mna' bies rogs gnari dari (metr.) ""ich"	~/ dbu mna' bźes rogs gnaṅ daṅ (metr.) „ich
+232	54	5	gnari	gnaṅ	unsafe_token_disagreement	gnari	gnan	"— / dbu mna' bies rogs gnari dari (metr.) ""ich"	~/ dbu mna' bźes rogs gnaṅ daṅ (metr.) „ich
+232	54	6	dari	daṅ	unsafe_token_disagreement	dari	dan	"— / dbu mna' bies rogs gnari dari (metr.) ""ich"	~/ dbu mna' bźes rogs gnaṅ daṅ (metr.) „ich
+232	57	6	bau	bea	unsafe_token_disagreement	bau	bea	(Glu 27c); snar gyi dam bau' ba'i tshig chad	(Glu 27c); snar gyi dam bea' ba'i tshig chad
+232	58	4	bZin	bźin	unsafe_token_disagreement	bzin	bzin	"rdo (r. mdo) bZin yod — ""ob die Worte des"	rdo (r. mdo) bźin yod ,,ob die Worte des
+232	61	5	gar	gan	unsafe_token_disagreement	gar	gan	102,27); deb mtshan gar yod — deb la thugs	102,27); deb mtshan gan yod - deb la thugs
+232	62	1	Zib	zib	unsafe_token_disagreement	zib	zib	"Zib dan ""ob irgendeine Anmerkung im Buch"	zib dan „ob irgendeine Anmerkung im Buch
+232	64	7	340	a46	non_translit_context	340	a46	"Buch geprüft werden"" (MTH3/5/30 340);"	Buch geprüft werden“ (MTH3/5/30 a46);
+232	65	1	Zib	źib	unsafe_token_disagreement	zib	zib	"Zib cha Zu rgyu yod — cha ma rtogs Zes ""ob"	źib cha źu rgyu yod cha ma rtogs źes „,,ob
+232	65	3	Zu	źu	unsafe_token_disagreement	zu	zu	"Zib cha Zu rgyu yod — cha ma rtogs Zes ""ob"	źib cha źu rgyu yod cha ma rtogs źes „,,ob
+232	65	9	Zes	źes	unsafe_token_disagreement	zes	zes	"Zib cha Zu rgyu yod — cha ma rtogs Zes ""ob"	źib cha źu rgyu yod cha ma rtogs źes „,,ob
+232	68	3	mi	ni	unsafe_token_disagreement	mi	ni	"a49); gdon mi yod — rtags pa yin ""das ist ein"	a49); gdon ni yod ~rtags pa yin „das ist ein
+232	69	5	Diimon	Dämon	non_translit_context	diimon	damon	Zeichen dafür, ob ein Diimon [die Krankheit	Zeichen dafür, ob ein Dämon [die Krankheit
+232	72	7	nun	min	non_translit_context	nun	min	ohne ... ohne, nicht ... und nicht; yod nun ...	ohne ohne, nicht... und nicht; yod min ..,
+232	74				token_count_mismatch	9	10	dga' mgur spyod par byed pa de /¿¡ bu yai	dga' mgur spyod par byed pa de la bu yan
+232	75				token_count_mismatch	7	6	"— bu mo yan — nas ""nachdem ihre Ausko-"	bu mo yan ~ nas „nachdem ihre
+232	76	1	stung	Auskostung	non_translit_context	stung	auskostung	stung der Liebesfreuden ohne einen Sohn	Auskostung der Liebesfreuden ohne einen Sohn
+232	78	5	gZi	gźicin	non_translit_context	gzi	gzicin	(Prav 39,9); kun gZi — cin spros — pa / skyeba	(Prav 39,9); kun gźicin spros~pa / skye ba
+232	78	6	cin	spros	non_translit_context	cin	spros	(Prav 39,9); kun gZi — cin spros — pa / skyeba	(Prav 39,9); kun gźicin spros~pa / skye ba
+232	78	7	spros	pa	non_translit_context	spros	pa	(Prav 39,9); kun gZi — cin spros — pa / skyeba	(Prav 39,9); kun gźicin spros~pa / skye ba
+232	78	8	pa	skye	non_translit_context	pa	skye	(Prav 39,9); kun gZi — cin spros — pa / skyeba	(Prav 39,9); kun gźicin spros~pa / skye ba
+232	78	9	skyeba	ba	non_translit_context	skyeba	ba	(Prav 39,9); kun gZi — cin spros — pa / skyeba	(Prav 39,9); kun gźicin spros~pa / skye ba
+232	79	1	ci	cin	unsafe_token_disagreement	ci	cin	— ci 'byun — la ... chos kyi 'khor lo (metr.)	cin 'byun la ... chos kyi 'khor lo (metr.)
+232	80	5	11	in	non_translit_context	11	in	"""das Rad der Lehre, 11] der es weder die"	,,das Rad der Lehre, in der es weder die
+232	83	6	21247	212a7	non_translit_context	21247	212a7	"hen noch Werden gibt"" (K95 21247); ""dot"	hen noch Werden gibt“ (K95 212a7); 'doț
+232	83	7	dot	do	non_translit_context	dot	do	"hen noch Werden gibt"" (K95 21247); ""dot"	hen noch Werden gibt“ (K95 212a7); 'doț
+232	84	6	sdani	sdan	non_translit_context	sdani	sdan	(r. 'dod) chags yod min sdani — rmons paal	(r. 'dod) chags yod min sdan - rmons paan
+232	84	8	paal	paan	non_translit_context	paal	paan	(r. 'dod) chags yod min sdani — rmons paal	(r. 'dod) chags yod min sdan - rmons paan
+232	86	1	Haft	Haß	non_translit_context	haft	has	"Haft, noch Verblendung"" (VinUp 60,14):"	"Haß, noch Verblendung"" (VinUp 60,14);"
+232	87	8	ding	dmigs	unsafe_token_disagreement	ding	dmigs	'dod chags — cin chags bral — / dbu mar ding	'dod chags ~ cin chags bral ~ / dbu mar dmigs
+232	91	6	1.8.35	1.8.35a	non_translit_context	1.8.35	1.8.35a	"[zwischen den beiden] wahr"" (Hev 1.8.35.);"	[zwischen den beiden] wahr“ (Hev 1.8.35a);
+232	92	10	dañ	dan	unsafe_token_disagreement	dan	dan	gan du skye ba ~ pa dan 'chi ba ~ pa dañ	gan du skye ba pa dan 'chi ba pa dan
+233	1				token_count_mismatch	1	2	མེད་ med	25 med
+233	2				token_count_mismatch	11	10	'byun ba — pa de ni 'gro bas thob par na mi	'byun bapa de ni 'gro bas thob par na mi
+233	6				token_count_mismatch	10	9	"kann"" (ViST 218,6); nad kyis gduris na 0/7/¢/"	"kann"" (VisȚ 218,6); nad kyis gduris na gñid ~"
+233	7				token_count_mismatch	6	7	"bdeba — (metr.) ""wenn man von Krankheit"	bde ba~ (metr.) „wenn man von Krankheit
+233	13	9	graris	grañas	unsafe_token_disagreement	graris	granas	"als ein Fels ist"" (PT1287 519); bskal pa graris"	"als ein Fels ist"" (PT1287 519); bskal pa grañas"
+233	14				token_count_mismatch	5	6	"myed pa'isdig ""die Verfehlungen unzähliger"	myed pa'i sdig „die Verfehlungen unzähliger
+233	15				token_count_mismatch	6	7	"Weltzeitalter"" (Liy2 49); khyim — par nirab"	"Weltzeitalter"" (Liy2 49); khyim ~ par ni rab"
+233	16				token_count_mismatch	8	7	"tu byun (metr.) ""[ich] bin in die Hauslosig-"	tu byun (metr.) „[ich] bin in die
+233	17	1	keit	Hauslosigkeit	unsafe_token_disagreement	keit	hauslosigkeit	"keit fortgezogen"" (Anav 1: 50,5); phun po"	"Hauslosigkeit fortgezogen"" (Anav 1: 50,5); phuṅ po"
+233	18	2	blag	bdag	non_translit_context	blag	bdag	"Ina blag — par ston pa ""er lehrt, daß die fünf"	Ina bdag ~ par ston pa „er lehrt, daß die fünf
+233	19				token_count_mismatch	6	7	"Gruppendie Ichlosigkeit sind"" (Prav 81,23);"	Gruppen die Ichlosigkeit sind“ (Prav 81,23);
+233	20	1	$es	ses	unsafe_token_disagreement	ses	ses	"$es tab — pa'i phun sum tshogs (metr.) ""die"	ses rab ~ pa'i phun sum tshogs (metr.) „die
+233	20	2	tab	rab	unsafe_token_disagreement	tab	rab	"$es tab — pa'i phun sum tshogs (metr.) ""die"	ses rab ~ pa'i phun sum tshogs (metr.) „die
+233	22	2	103	10a	unsafe_token_disagreement	103	10a	(Ps 103); dei sman de ni don — pa yin no	(Ps 10a); de'i sman de ni don pa yin no
+233	22	3	dei	de'i	unsafe_token_disagreement	dei	dei	(Ps 103); dei sman de ni don — pa yin no	(Ps 10a); de'i sman de ni don pa yin no
+233	23				token_count_mismatch	5	6	"""so sind dessen Arzneimittelnutzlos"" (Käsy"	,,so sind dessen Arzneimittel nutzlos“ (Kāśy
+233	24	5	ch	chu	unsafe_token_disagreement	ch	chu	"185,11); rdul — pa'i / ch (metr.) ""unver-"	185,11); rdul pa'i / chu (metr.) „unver-
+233	25	4	1153	115a	non_translit_context	1153	115a	"schmutztes Wasser"" (Pd-K 1153); dri — ..."	"schmutztes Wasser"" (Pd-K 115a); dri~"
+233	26	2	dü	du	non_translit_context	du	du	"bai dü rya (metr.) ""ein makelloser Vaiclürya"""	"bai du rya (metr.) „ein makelloser Vaichurya"""
+233	26	7	Vaiclürya	Vaichurya	non_translit_context	vaiclurya	vaichurya	"bai dü rya (metr.) ""ein makelloser Vaiclürya"""	"bai du rya (metr.) „ein makelloser Vaichurya"""
+233	29	2	thari	than	unsafe_token_disagreement	thari	than	"rin thari — pa' rin chen gyi / gter (metr.) ""ein"	rin than pa'i rin chen gyi/gter (metr.) „ein
+233	29	3	pa	pa'i	unsafe_token_disagreement	pa	pai	"rin thari — pa' rin chen gyi / gter (metr.) ""ein"	rin than pa'i rin chen gyi/gter (metr.) „ein
+233	31				token_count_mismatch	7	6	"178.5); skyabs — gan (metr.) ""er, der oh-"	178.5); skyabs gaṅ (metr.) „er, der
+233	32	1	ne	ohne	non_translit_context	ne	ohne	"ne Zuflucht sein wird"" (Saniv 5.31b); ma"	"ohne Zuflucht sein wird"" (Samv 5.31b); ma"
+233	32	5	Saniv	Samv	non_translit_context	saniv	samv	"ne Zuflucht sein wird"" (Saniv 5.31b); ma"	"ohne Zuflucht sein wird"" (Samv 5.31b); ma"
+233	33				token_count_mismatch	8	7	"hei 'o ma ... grüd — la phan (metr.) ""Büf-"	he'i 'o ma grid la phan (metr.)
+233	34	1	felmilch	Büffelmilch	non_translit_context	felmilch	buffelmilch	felmilch ist gesund bei Schlaflosigkeit (skt.	„Büffelmilch ist gesund bei Schlaflosigkeit (skt.
+233	35	4	dnos	dños	blocked_alternate_witness_wrong_nasal_dnos	dnos	dnos	anidra)' (Ahs 1.5.23d); dnos dan drios —	"anidra)"" (Ahs 1.5.23d); dños dan dños ~"
+233	35	6	drios	dños	non_translit_context	drios	dnos	anidra)' (Ahs 1.5.23d); dnos dan drios —	"anidra)"" (Ahs 1.5.23d); dños dan dños ~"
+233	36				token_count_mismatch	8	7	"rnam spans pas (metr.) ""von Sein und Nicht-"	rnam spans pas (metr.) „von Sein und
+233	37	1	sein	Nichtsein	non_translit_context	sein	nichtsein	"sein frei (skt. vinirmukta)"" (Mvup 4.78c);"	"Nichtsein frei (skt. vinirmukta)"" (Mvup 4.78c);"
+233	38	9	$es	ses	unsafe_token_disagreement	ses	ses	chos kha na ma tho'ba — pa yin par $es pas	chos kha na ma tho'ba ~ pa yin par ses pas
+233	40	3	Vi$T	VisṬ	unsafe_token_disagreement	vist	vist	"fehlerlos war"" (Vi$T 78,15); phan — grien ni"	"fehlerlos war"" (VisṬ 78,15); phan ~ grien ni"
+233	42	1	833	83a	unsafe_token_disagreement	833	83a	833); khyod ni rgyu — bZin du byams (metr.)	83a); khyod ni rgyu ~ bźin du byams (metr.)
+233	42	5	bZin	bźin	unsafe_token_disagreement	bzin	bzin	833); khyod ni rgyu — bZin du byams (metr.)	83a); khyod ni rgyu ~ bźin du byams (metr.)
+233	44	8	ar	nar	unsafe_token_disagreement	ar	nar	"freundlich"" (Ppu 11b); sbyin la sogs la ar"	"freundlich"" (Ppu 11b); sbyin la sogs la nar"
+233	46	5	Zum	źum	non_translit_context	zum	zum	"sein"" (AA 3.4a); sku Zum — (metr.) ""sem"	sein“ (AA 3.4a); sku źum (metr.) „sein
+233	46	7	sem	sein	non_translit_context	sem	sein	"sein"" (AA 3.4a); sku Zum — (metr.) ""sem"	sein“ (AA 3.4a); sku źum (metr.) „sein
+233	48				token_count_mismatch	1	2	མེད་ med	25 med
+233	50	2	mi	ni	unsafe_token_disagreement	mi	ni	"ba mi mig — pa'o ""ein Blinder ist jemand"	ba ni mig pa'o „ein Blinder ist jemand
+233	51	2	Schvermögen	Sehvermögen	non_translit_context	schvermogen	sehvermogen	"ohne Schvermögen"" (T3805 17052); skyon"	"ohne Sehvermögen"" (T3805 170b2); skyon"
+233	51	4	17052	170b2	non_translit_context	17052	170b2	"ohne Schvermögen"" (T3805 17052); skyon"	"ohne Sehvermögen"" (T3805 170b2); skyon"
+233	52				token_count_mismatch	7	9	"— ///$ can khyod (metr.) ""du mit makel-"	ge pa lus can khyod (metr.) „du mit makel-
+233	53	4	1.87	1.87a	non_translit_context	1.87	1.87a	"losem Körper!"" (Kävyäd 1.87); dar ka —"	"losem Körper!"" (Kävyäd 1.87a); dan ka"
+233	53	5	dar	dan	non_translit_context	dar	dan	"losem Körper!"" (Kävyäd 1.87); dar ka —"	"losem Körper!"" (Kävyäd 1.87a); dan ka"
+233	54				token_count_mismatch	6	5	"chab ... 'joms (metr.) ""das beseitigt Appe-"	chabjoms (metr.) „das beseitigt Appe-
+233	56	1	has	thas	non_translit_context	has	thas	"has — gsun ""alle Taten im konventionellen"	'thas ~gsun „alle Taten im konventionellen
+233	58	1	0	gtin	unsafe_token_disagreement	0	gtin	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	2	7	mtha	unsafe_token_disagreement	7	mtha	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	3	mtha	pa	unsafe_token_disagreement	mtha	pa	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	4	pa	khor	unsafe_token_disagreement	pa	khor	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	5	khor	ba'i	unsafe_token_disagreement	khor	bai	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	6	ba'irgya	rgya	unsafe_token_disagreement	bairgya	rgya	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	58	9	aus	us	unsafe_token_disagreement	aus	us	"0///7 mtha' — pa 'khor ba'irgya mtsho nas ""aus"	gtin mtha' -pa 'khor ba'i rgya mtsho nas,,us
+233	60	2	Sanisära	Samsara	unsafe_token_disagreement	sanisara	samsara	"des Sanisära"" (Nigu 47,2); gtsug lag (khani) ..."	"des Samsara"" (Nigu 47,2); gtsug lag (khan) ..."
+233	60	8	khani	khan	unsafe_token_disagreement	khani	khan	"des Sanisära"" (Nigu 47,2); gtsug lag (khani) ..."	"des Samsara"" (Nigu 47,2); gtsug lag (khan) ..."
+233	61				token_count_mismatch	9	8	"dpe dan 'gran zla — pa bZens ""er erbaute den"	dpe dan 'gran zla bźens „er erbaute den
+233	62	1	Vihära	Vihara	non_translit_context	vihara	vihara	Vihära, der beispiellos und konkurrenzlos	Vihara, der beispiellos und konkurrenzlos
+233	63	3	1137	11a7	unsafe_token_disagreement	1137	11a7	"war"" (Nel 1137) ; Jam pa ""thus na zug rim —"	war“ (Nel 11a7); 'jam pa 'thuns na zug rṅu
+233	63	4	Jam	jam	unsafe_token_disagreement	jam	jam	"war"" (Nel 1137) ; Jam pa ""thus na zug rim —"	war“ (Nel 11a7); 'jam pa 'thuns na zug rṅu
+233	63	6	thus	thuns	unsafe_token_disagreement	thus	thuns	"war"" (Nel 1137) ; Jam pa ""thus na zug rim —"	war“ (Nel 11a7); 'jam pa 'thuns na zug rṅu
+233	63	9	rim	rṅu	unsafe_token_disagreement	rim	rnu	"war"" (Nel 1137) ; Jam pa ""thus na zug rim —"	war“ (Nel 11a7); 'jam pa 'thuns na zug rṅu
+233	65	5	yani	yan	non_translit_context	yani	yan	"ohne Schmerz"" (Padm 62b1); yani dag pa'i"	"ohne Schmerz"" (Padm 62b1); yan dag pa'i"
+233	66	3	yani	yan	non_translit_context	yani	yan	"skyon — par yani 'jug ""wir treten aber in völli-"	skyon ~ par yan 'jug,,wir treten aber in völli-
+233	67				token_count_mismatch	8	7	"ge Fehlerlosigkeit ein"" (sBa 60,14); ''gran gyi"	Fehlerlosigkeit ein“ (sBa 60,14); 'gran gyi
+233	68				token_count_mismatch	7	8	"do — cig'orbayin ""es komnit einer, der kon-"	do ~ cig'on bayin „es kommt einer, der kon-
+233	69	6	sriar	snar	non_translit_context	sriar	snar	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"	"kurrenzlos ist"" (Mil 95,33); snar gyi ñams"
+233	69	7	gi	gyi	non_translit_context	gi	gyi	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"	"kurrenzlos ist"" (Mil 95,33); snar gyi ñams"
+233	69	8	Nlams	ñams	non_translit_context	nlams	nams	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"	"kurrenzlos ist"" (Mil 95,33); snar gyi ñams"
+233	70	1	mams	mnams	unsafe_token_disagreement	mams	mnams	"mams bden — du skyons la ""bewahre deine"	mnams bden du skyons la „bewahre deine
+233	72				token_count_mismatch	6	8	"dächtnis]!"" (Doll 32,2); dgos — rgyudlaskye"	"dächtnis]!"" (Dol1 32,2); dgos~rgyud la skye"
+233	74	5	yal	yul	non_translit_context	yal	yul	"entsteht"" (KunK 55,10); yal ~ spran por 'gro"	"entsteht"" (KunK 55,10); yul spraṅ por 'gro"
+233	74	6	spran	spraṅ	non_translit_context	spran	spran	"entsteht"" (KunK 55,10); yal ~ spran por 'gro"	"entsteht"" (KunK 55,10); yul spraṅ por 'gro"
+233	75				token_count_mismatch	7	6	"(metr.) ""er wird heimatlos und zum Bett-"	(metr.) „er wird heimatlos und zum
+233	76	1	ler	Bettler	unsafe_token_disagreement	ler	bettler	"ler"" (Vedk-M 114,3); ?/)77༡)/ — jo bo chen po"	"Bettler"" (Volk-M 114,3); mñīam ~ jo bo chen po"
+233	76	2	Vedk-M	Volk-M	unsafe_token_disagreement	vedkm	volkm	"ler"" (Vedk-M 114,3); ?/)77༡)/ — jo bo chen po"	"Bettler"" (Volk-M 114,3); mñīam ~ jo bo chen po"
+233	76	5	77	mñīam	unsafe_token_disagreement	77	mniam	"ler"" (Vedk-M 114,3); ?/)77༡)/ — jo bo chen po"	"Bettler"" (Volk-M 114,3); mñīam ~ jo bo chen po"
+233	77				token_count_mismatch	9	11	"dpalldan a ti sa'idus su ""zur Zeit des unver-"	dpal ldan a ti sa'i dus su „zur Zeit des unver-
+233	78	4	dpal-Idan	dpal-ldan	non_translit_context	dpalidan	dpalldan	"gleichlichen Jo-bo chen-po dpal-Idan Atisa"""	gleichlichen Jo-bo chen-po dpal-ldan Atiśa“
+233	78	5	Atisa	Atiśa	non_translit_context	atisa	atisa	"gleichlichen Jo-bo chen-po dpal-Idan Atisa"""	gleichlichen Jo-bo chen-po dpal-ldan Atiśa“
+233	81	2	kyani	kyan	non_translit_context	kyani	kyan	"ces kyani bya (metr.) ""aber a bezeichnet man"	ces kyan bya (metr.) „aber a bezeichnet man
+233	85	2	571	gZi	unsafe_token_disagreement	571	gzi	"tiges"" (¡571 4: 491,5); khyed dpa' — ge 'don"	"tiges"" (gZi 4: 491,5); khyed dpa' ~ge 'don"
+233	87	1	9835	98a5	non_translit_context	9835	98a5	9835).	98a5).
+233	88	2	rkari	rkan	non_translit_context	rkari	rkan	"Lex. rkari — = apadal ""fußlos"" (8925); zon"	"≈ Lex. rkan apadaḥ „fußlos"" (8925); non"
+233	88	3	apadal	apadaḥ	non_translit_context	apadal	apadah	"Lex. rkari — = apadal ""fußlos"" (8925); zon"	"≈ Lex. rkan apadaḥ „fußlos"" (8925); non"
+233	88	6	zon	non	non_translit_context	zon	non	"Lex. rkari — = apadal ""fußlos"" (8925); zon"	"≈ Lex. rkan apadaḥ „fußlos"" (8925); non"
+233	89	4	nilhklesaly	nihkleśaḥ	unsafe_token_disagreement	nilhklesaly	nihklesah	"mons pa — pa = nilhklesaly ""jmd. ohne Be-"	mons pa pa nihkleśaḥ „jmd. ohne Be-
+233	90	6	aniipa	anupa	unsafe_token_disagreement	aniipa	anupa	"fleckungen"" (Mvy 1076); dpe — pa = aniipa-"	"fleckungen"" (Mvy 1076); dpe pa≈ anupa-"
+233	91	1	mab	mah	non_translit_context	mab	mah	"mab ""der Unvergleichliche"" (Mvy 68); bag"	"mah der Unvergleichliche"" (Mvy 68); bag"
+233	92				token_count_mismatch	4	5	"— pa'ignas = pramādasthānam ""Zustand der"	~ pa'i gnas ≈ pramādasthānam „Zustand der
+285	1				token_count_mismatch	1	2	དམག་ 'dmag	5 'dmag
+285	4	3	gi	gyi	unsafe_token_disagreement	gi	gyi	"bzan ... gsum gi —is / se cu phab ""das Heer"	bzaṅ ... gsum gyi ~is / se cu phab „das Heer
+285	5	5	Khri-bzan	Khri-bzaṅ	non_translit_context	khribzan	khribzan	der drei, des Ministers Khri-bzan [usw.],	der drei, des Ministers Khri-bzaṅ [usw.],
+285	6	4	58212	S8212	unsafe_token_disagreement	58212	s8212	"nahm Se-cu ein"" (58212 22); lo beu grüs kyi"	"nahm Se-cu ein"" (S8212 22); lo bcu gris kyi"
+285	6	7	beu	bcu	unsafe_token_disagreement	beu	bcu	"nahm Se-cu ein"" (58212 22); lo beu grüs kyi"	"nahm Se-cu ein"" (S8212 22); lo bcu gris kyi"
+285	6	8	grüs	gris	unsafe_token_disagreement	grus	gris	"nahm Se-cu ein"" (58212 22); lo beu grüs kyi"	"nahm Se-cu ein"" (S8212 22); lo bcu gris kyi"
+285	7	9	gi	gyi	unsafe_token_disagreement	gi	gyi	bar du bkye ba las / rgyal po gsum gi —	bar du bkye ba las / rgyal po gsum gyi ~
+285	11				token_count_mismatch	8	7	"mari po dari Idan no ""dieser besitzt zahlrei-"	man po dan ldan no „dieser besitzt
+285	12	1	che	zahlreiche	unsafe_token_disagreement	che	zahlreiche	"che Heere"" (Prav 12,21); royal po de yan lag"	"zahlreiche Heere"" (Prav 12,21); rgyal po de yan lag"
+285	12	6	royal	rgyal	unsafe_token_disagreement	royal	rgyal	"che Heere"" (Prav 12,21); royal po de yan lag"	"zahlreiche Heere"" (Prav 12,21); rgyal po de yan lag"
+285	13	1	bä	bii	non_translit_context	ba	bii	"bä pa'i ~ bsogs te ""[wenn] der König ein"	bii pa'i bsogs te [wenn] der König ein
+285	15	1	bdud	baud	unsafe_token_disagreement	bdud	baud	bdud kyi — 'bum phrag bco broyad btul ba'i	baud kyi 'bum phrag bco brgyad btul ba'i
+285	15	6	broyad	brgyad	unsafe_token_disagreement	broyad	brgyad	bdud kyi — 'bum phrag bco broyad btul ba'i	baud kyi 'bum phrag bco brgyad btul ba'i
+285	17	4	Mära	Māra	non_translit_context	mara	mara	"tausend Armeen des Mära besiegt wurden"""	tausend Armeen des Māra besiegt wurden“
+285	18				token_count_mismatch	8	7	(Liyl 172b5); phren ba — la sogs bZin brdlzun	(Liy1 172b5); phren bala sogs báin brdzun
+285	20	5	Bca	Bea	non_translit_context	bca	bea	"eine Truppe [von Ameisen ]"" (Bca 8.101b);"	"eine Truppe [von Ameisen]"" (Bea 8.101b);"
+285	21	10	geig	gcig	unsafe_token_disagreement	geig	gcig	— yon ba la srod la bya gton gi mi geig byun	~ yon ba la srod la bya gton gi mi gcig byun
+285	22	5	kommit	kommt	non_translit_context	kommit	kommt	"na ""wenn ein Mensch kommit, der cine War-"	na,,wenn ein Mensch kommt, der eine War-
+285	22	7	cine	eine	non_translit_context	cine	eine	"na ""wenn ein Mensch kommit, der cine War-"	na,,wenn ein Mensch kommt, der eine War-
+285	24				token_count_mismatch	9	10	"(dPe 68,2); 'o na — gis dbroggo ""dann muß"	(dPe 68,2); 'o na gis dbrog go „dann muß
+285	27	2	beur	bcur	non_translit_context	beur	bcur	"sen beur bros pa' ""weil das tibetische Heer"	sen bcur bros pa'i „weil das tibetische Heer
+285	27	4	pa	pa'i	non_translit_context	pa	pai	"sen beur bros pa' ""weil das tibetische Heer"	sen bcur bros pa'i „weil das tibetische Heer
+285	28	8	$en	Śen	unsafe_token_disagreement	sen	sen	kam, floh der Kaiser Tha'i dzun nach $en-	kam, floh der Kaiser Tha'i dzun nach Śen-
+285	29	3	1132	11a2	unsafe_token_disagreement	1132	11a2	"bcu"" (Debm 1132); ~ gi phyag phyi dañ Zabs"	bcu“ (Debm 11a2); ~ gi phyag phyi dan źabs
+285	29	7	dañ	dan	unsafe_token_disagreement	dan	dan	"bcu"" (Debm 1132); ~ gi phyag phyi dañ Zabs"	bcu“ (Debm 11a2); ~ gi phyag phyi dan źabs
+285	29	8	Zabs	źabs	unsafe_token_disagreement	zabs	zabs	"bcu"" (Debm 1132); ~ gi phyag phyi dañ Zabs"	bcu“ (Debm 11a2); ~ gi phyag phyi dan źabs
+285	30	2	cufi	cun	unsafe_token_disagreement	cufi	cun	"rtogs cufi ma 'grub ""er hatte die Betreuung"	rtogs cun ma grub „er hatte die Betreuung
+285	33	4	In	lu	unsafe_token_disagreement	in	lu	— bskur nas / thu In hun gi yul joms su btani	~bskur nas / thu lu hun gyi yul 'joms su btan
+285	33	6	gi	gyi	unsafe_token_disagreement	gi	gyi	— bskur nas / thu In hun gi yul joms su btani	~bskur nas / thu lu hun gyi yul 'joms su btan
+285	33	10	btani	btan	unsafe_token_disagreement	btani	btan	— bskur nas / thu In hun gi yul joms su btani	~bskur nas / thu lu hun gyi yul 'joms su btan
+285	37	1	hab	thab	unsafe_token_disagreement	hab	thab	hab tu 'oris pas / bod kyi — phyir bros so	'thab tu 'oris pas / bod kyi ~ phyir bros so
+285	38	8	kämp	kämpfen	non_translit_context	kamp	kampfen	"""sie kamen, um mit den Tibetern zu kämp-"	„sie kamen, um mit den Tibetern zu kämpfen,
+285	39	1	fen	da	non_translit_context	fen	da	"fen, daflüchtete das tibetische Heer zurück"""	da flüchtete das tibetische Heer zurück“
+285	39	2	daflüchtete	flüchtete	non_translit_context	dafluchtete	fluchtete	"fen, daflüchtete das tibetische Heer zurück"""	da flüchtete das tibetische Heer zurück“
+285	40	6	tsbe'i	tshe'i	unsafe_token_disagreement	tsbei	tshei	(Glr 187,25); khon gi tsbe'i mtha' la hor —	(Glr 187,25); khon gi tshe'i mtha' la hor~
+285	41				token_count_mismatch	8	7	"bod du Ihags ""am Ende seines Lebens ka-"	bod du lhags „am Ende seines Lebens
+285	42	1	men	kamen	non_translit_context	men	kamen	"men die Truppen der Hor nach Tibet"" (Debn"	kamen die Truppen der Hor nach Tibet“ (Debn
+285	43	8	Itar	ltar	unsafe_token_disagreement	itar	ltar	452,4); bya rog ... — phyogs la mda' Itar son	452,4); bya rog. ~ phyogs la mda' ltar son
+285	44				token_count_mismatch	9	8	"bas ""eine Krähe flog wie ein Pfeil in Rich-"	bas „eine Krähe flog wie ein Pfeil in
+285	45	1	tung	Richtung	unsafe_token_disagreement	tung	richtung	"tung des Heeres"" (SākNth 112,2); bar snani"	"Richtung des Heeres"" (SäkNth 112,2); bar snan"
+285	45	4	SākNth	SäkNth	unsafe_token_disagreement	saknth	saknth	"tung des Heeres"" (SākNth 112,2); bar snani"	"Richtung des Heeres"" (SäkNth 112,2); bar snan"
+285	45	8	snani	snan	unsafe_token_disagreement	snani	snan	"tung des Heeres"" (SākNth 112,2); bar snani"	"Richtung des Heeres"" (SäkNth 112,2); bar snan"
+285	46	6	lhuri	lhun	unsafe_token_disagreement	lhuri	lhun	"gi — thams cad sa la lhuri nas ""alle Hec-"	gi~ thams cad sa la lhun nas „alle Hee-
+285	46	9	Hec	Hee	unsafe_token_disagreement	hec	hee	"gi — thams cad sa la lhuri nas ""alle Hec-"	gi~ thams cad sa la lhun nas „alle Hee-
+285	48				token_count_mismatch	1	2	དམག་ 'dmag	5 'dmag
+285	51	2	bZir	bźir	non_translit_context	bzir	bzir	"lan bZir Ihuns ""inmitten des Heeres schlug"	lan bźir lhuns inmitten des Heeres schlug
+285	51	3	Ihuns	lhuns	non_translit_context	ihuns	lhuns	"lan bZir Ihuns ""inmitten des Heeres schlug"	lan bźir lhuns inmitten des Heeres schlug
+285	53	1	Tär	Tar	unsafe_token_disagreement	tar	tar	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"	(Tar 186,9); dpun rgyab kyi~ źus nas „nach-
+285	53	4	dpur	dpun	unsafe_token_disagreement	dpur	dpun	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"	(Tar 186,9); dpun rgyab kyi~ źus nas „nach-
+285	53	7	Zus	źus	unsafe_token_disagreement	zus	zus	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"	(Tar 186,9); dpun rgyab kyi~ źus nas „nach-
+285	55	3	Bhulg	BhuLg	non_translit_context	bhulg	bhulg	"beten habe"" (Bhulg 108,1); 'bri gun pas /"	"beten habe"" (BhuLg 108,1); 'bri gun pas /"
+285	56	4	si	sī	unsafe_token_disagreement	si	si	kla klo ka si kā ra te ha 477 har du grags pa'i	kla klo ka sī kā ra te ha sri har du grags pa'i
+285	56	9	477	sri	unsafe_token_disagreement	477	sri	kla klo ka si kā ra te ha 477 har du grags pa'i	kla klo ka sī kā ra te ha sri har du grags pa'i
+285	59	7	chei	che'i	unsafe_token_disagreement	chei	chei	"Kaschgar herbei"" (Dzam 13,19); kha chei"	"Kaschgar herbei"" (""Dzam 13,19); kha che'i"
+285	60	2	rgyii	rgyu'i	unsafe_token_disagreement	rgyii	rgyui	"— yon rgyii gtam chol de ""das Gerücht, die"	yon rgyu'i gtam chol de „das Gerücht, die
+285	62	5	dgra	dgradkyil	unsafe_token_disagreement	dgra	dgradkyil	1: 279,4); spun dgra — dkyilgri dzin gi dnag	1: 279,4); spun dgradkyil gri 'dziṅ gi dmag
+285	62	6	dkyilgri	gri	unsafe_token_disagreement	dkyilgri	gri	1: 279,4); spun dgra — dkyilgri dzin gi dnag	1: 279,4); spun dgradkyil gri 'dziṅ gi dmag
+285	62	9	dnag	dmag	unsafe_token_disagreement	dnag	dmag	1: 279,4); spun dgra — dkyilgri dzin gi dnag	1: 279,4); spun dgradkyil gri 'dziṅ gi dmag
+285	63	2	broya	brgya	unsafe_token_disagreement	broya	brgya	"mi broya lhag tsam bsad ""der Bruder kämpfte"	mi brgya lhag tsam bsad,,der Bruder kämpfte
+285	66	2	MTH3	MTH-3	unsafe_token_disagreement	mth3	mth3	"tete"" (MTH3/3/1 15); thai ji pho lha bas"	"tete"" (MTH-3/3/1 15); tha'i ji pho lha bas"
+285	66	6	thai	tha'i	unsafe_token_disagreement	thai	thai	"tete"" (MTH3/3/1 15); thai ji pho lha bas"	"tete"" (MTH-3/3/1 15); tha'i ji pho lha bas"
+285	67	1	gtsani	gtsan	unsafe_token_disagreement	gtsani	gtsan	gtsani khul nina' ris dan bcas kyi — bskul	gtsan khul mña' ris dan bcas kyi bskul
+285	67	3	nina	mña	unsafe_token_disagreement	nina	mna	gtsani khul nina' ris dan bcas kyi — bskul	gtsan khul mña' ris dan bcas kyi bskul
+285	68				token_count_mismatch	7	6	"nas ""Tha'i-ji Pho-Iha-ba hat Truppen im Ge-"	nas „Tha’i-ji Pho-lha-ba hat Truppen im
+285	69	1	biet	Gebiet	unsafe_token_disagreement	biet	gebiet	"biet von gTsañ und mNa'-ris ausgehoben"""	"Gebiet von gTsan und mNa'-ris ausgehoben"""
+285	69	3	gTsañ	gTsan	unsafe_token_disagreement	gtsan	gtsan	"biet von gTsañ und mNa'-ris ausgehoben"""	"Gebiet von gTsan und mNa'-ris ausgehoben"""
+285	71				token_count_mismatch	8	7	"bcas dbus par ño log ""der militärische Kom-"	bcas dbus par no log „der militärische
+285	72	1	mandeur	Kommandeur	non_translit_context	mandeur	kommandeur	mandeur lief mit seinen Truppen aus IHo zu	Kommandeur lief mit seinen Truppen aus Ho zu
+285	72	7	IHo	Ho	non_translit_context	iho	ho	mandeur lief mit seinen Truppen aus IHo zu	Kommandeur lief mit seinen Truppen aus Ho zu
+285	74				token_count_mismatch	8	7	"gor — gi dgra gnod khoris su ""im Zusammen-"	gor~gi dgra gnod khoris su „im
+285	75	1	hang	Zusammenhang	unsafe_token_disagreement	hang	zusammenhang	hang mit den feindlichen Zerstörungen der	Zusammenhang mit den feindlichen Zerstörungen der
+285	76	8	deu	dgu	non_translit_context	deu	dgu	"Gor-[kha]-Truppen"" (MTH3/5/21 7); deu"	Gor-[kha]-Truppen“ (MTH3/5/21 7); dgu
+285	77	5	bla'i	bla’i	unsafe_token_disagreement	blai	blai	khri dgu 'bum sgra bla'i — / go cha rgyan cha	khri dgu 'bum sgra bla’i ~ / go cha rgyan cha
+285	81	7	Aufscher	Aufseher	non_translit_context	aufscher	aufseher	"göttliche Armee gab es je einen Aufscher"""	"göttliche Armee gab es je einen Aufseher"""
+285	85	2	2232	22a2	unsafe_token_disagreement	2232	22a2	(Sumpa 2232); gtsug na 'od dkar gis go deb	(Sumpa 22a2); gtsug na 'od dkar gis go deb
+285	86				token_count_mismatch	7	8	"'brin po'inari biiin — bsdus byas nas ""gTsug-"	'brin po'i nan báin - bsdus byas nas „gTsug-
+285	90				token_count_mismatch	7	6	Lex. mkha' — chu — rkan — rta dinag Ita	Lex. mkha' rkan ~rta dmag lta
+285	92	1	110	rie	unsafe_token_disagreement	110	rie	"110"" (brDa); yan lag /)2/""/ dpun gi nani tshan"	rie“ (brDa); yan lag bźi'i dpuṅ gi nan tshan
+285	92	5	2	bźi'i	unsafe_token_disagreement	2	bzii	"110"" (brDa); yan lag /)2/""/ dpun gi nani tshan"	rie“ (brDa); yan lag bźi'i dpuṅ gi nan tshan
+285	92	8	nani	nan	unsafe_token_disagreement	nani	nan	"110"" (brDa); yan lag /)2/""/ dpun gi nani tshan"	rie“ (brDa); yan lag bźi'i dpuṅ gi nan tshan
+285	93				token_count_mismatch	5	6	"""eine Abteilung der viergliedrigen Armee"""	"„eine Abteilung der viergliedrigen Armee"" chu"
+337	1				token_count_mismatch	1	3	རྨིག་ rmig	mig Irmig pa.
+337	2				token_count_mismatch	0	1	༤ . .	mig
+337	3				token_count_mismatch	4	2	Any mug Irmig pa.	migsga Pferdesattel.
+337	4				token_count_mismatch	2	16	རྨིག་སྒ་ rmigsga Pferdesattel.	"Lex. rmig pa 'dra ba'i rta sga źig „ein Pferdesattel, der einem Huf ähnelt"" (brDa); rta"
+337	5				token_count_mismatch	10	0	"Lex. rmig pa ""dra ba'i rta sga Zig ""ein Pfer-"	
+337	6				token_count_mismatch	7	6	"desattel, der einem Huf ähnelt"" (brDa); rta"	"sga'i bye brag „ein Pferdesattel"" (Dagy)."
+337	7				token_count_mismatch	6	3	"sga'l bye brag ""ein Pferdesattel"" (Dagy)."	mig leags Hufeisen.
+337	8				token_count_mismatch	2	9	རྨིག་ལྕགས་ rmiglcags Hufeisen.	Lex.de'i lcags la'an „auf für: dessen (d. h. des
+337	9				token_count_mismatch	9	8	"Lex. dei lcags la'an ""auf für: dessen (d.h. des"	"Hufs) Eisen"" (brDa); rta drel gyi rmig par"
+337	10	1	Hufs	rgyag	unsafe_token_disagreement	hufs	rgyag	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	2	Eisen	byed	unsafe_token_disagreement	eisen	byed	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	3	brDa	das	unsafe_token_disagreement	brda	das	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	4	rta	was	unsafe_token_disagreement	rta	was	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	5	drel	am	unsafe_token_disagreement	drel	am	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	6	gi	Huf	unsafe_token_disagreement	gi	huf	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	7	rinig	eines	unsafe_token_disagreement	rinig	eines	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	10	8	par	Pferdes	unsafe_token_disagreement	par	pferdes	"Hufs) Eisen"" (brDa); rta drel gi rinig par"	rgyag byed „[das, was] am Huf eines Pferdes
+337	11				token_count_mismatch	8	5	"rgag byed ""[das, was] am Huf eines Pferdes"	oder Maultiers angebracht wird“ (Dagy).
+337	12				token_count_mismatch	4	6	"oder Maultiersangebracht wird"" (Dagy)."	Ermig rjes alttib. rmyig rjes Hufspur,
+337	13				token_count_mismatch	6	1	རིག་རྗེས་ rmig rjes alttib. rmyig rjes Hufspur,	Hufabdruck.
+337	14				token_count_mismatch	1	8	Hufabdruck.	myig rjes nį myis myį mthon (metr.) „[ihre]
+337	15				token_count_mismatch	8	6	"rmyig rjes ni myis myi mthon (metr.) ""[ihre]"	Hufspuren können von Menschen nicht er-
+337	16				token_count_mismatch	6	7	Hufspuren können von Menschen nicht er-	blickt werden“ (PT1287 490); 'broṅ gi ~ śar
+337	17				token_count_mismatch	7	11	"blickt werden"" (PT1287 490); 'bron gi — Sar"	gyis dod pa cig 'dug pa'i rjes bcad nas phebs pas
+337	18				token_count_mismatch	10	8	gs dod pa cig 'dugpa'i rjes bcad nas phebs pas	„Sie gingen los, indem sie den Hufspuren der
+337	19				token_count_mismatch	8	6	"""sie gingen los, indem sie den Hufspuren der"	wilden Yaks folgten, die deutlich ausgeprägt
+337	20				token_count_mismatch	6	4	wilden Yaks folgten, die deutlich ausgeprägt	"waren"" (Sdr 364,6)."
+337	21				token_count_mismatch	4	6	"waren"" (847 364,6)."	mig pa auch rmig Huf, Klaue.
+337	22				token_count_mismatch	6	10	རིག་པ་ rmig pa auch rmig Huf, Klaue.	gal te mod la chas na rta rnams kyirmid (r.
+337	23				token_count_mismatch	9	10	galte mod la chas na rta rnams kyirmid (7,	rmig) pa dub pas 'then bar 'gyur źin „wenn wir
+337	24				token_count_mismatch	10	6	"rmig) pa dub pas then bar 'gyur Zin ""wenn wir"	sofort weiterziehen, werden die Hufe der
+337	25	1	sofort	Pferde	non_translit_context	sofort	pferde	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	25	2	weiterziehen	vor	non_translit_context	weiterziehen	vor	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	25	3	werden	Erschöpfung	non_translit_context	werden	erschopfung	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	25	4	die	lahmen	non_translit_context	die	lahmen	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	25	5	Hufe	K1	non_translit_context	hufe	k1	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	25	6	der	kha	non_translit_context	der	kha	sofort weiterziehen, werden die Hufe der	"Pferde vor Erschöpfung lahmen"" (K1 kha"
+337	26				token_count_mismatch	6	8	"Pferde vor Erschöpfung lahmen"" (Ki kha"	136a3); rta rnams kyi-las kun nas 'byun ba'i
+337	27				token_count_mismatch	9	6	13633); rta rnams kyi — las kun nas 'byurt ba'i	rdul „Staub, den die Pferdehufe erzeugten“
+337	28				token_count_mismatch	6	9	"rdul ""Staub, den die Pferdehufe erzeugten"""	(HMrg 51,4); ri dags rnams kyi rnam par
+337	29				token_count_mismatch	9	8	(HMrg 51,4); ri dags rnams kyi — mam par	bkod pas „das Aufsetzen der Hufe der Gazel-
+337	30				token_count_mismatch	8	0	"bkod pas ""das Aufsetzen der Hufe der Gazel-"	-
+337	31				token_count_mismatch	8	0	"len"" (HMrg 51,11); — ... rdul 'brad par byed"	~
+337	32				token_count_mismatch	7	2	"cin ""mit seinen Hufen scharrte [der Herden-"	rmig rtsa
+337	33				token_count_mismatch	8	2	"führer] den Staub auf"" (HMrg 55,29); myur"	ba glan
+337	34				token_count_mismatch	6	7	"'gro'ilus nirnam parrin rmams —""irwa rnams"	bźi'i nan du / rin chen sna lṅa
+337	35				token_count_mismatch	7	16	"nes par 'dred pas (metr.) ""die Spitzen (?)"	blug pa de (metr.) „in vier Hufe eines Ochsen schütte man die fünf Arten von Kostbar-
+337	36				token_count_mismatch	6	0	der Hufe der langgliedrigen Pferde rutschen	
+337	37	1	aus	keiten	non_translit_context	aus	keiten	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	2	Lokn	Vḍk-M	non_translit_context	lokn	vdkm	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	3	124	123	non_translit_context	124	123	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	4	4	33	non_translit_context	4	33	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	5	$	i	non_translit_context	s	i	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	6	beud	og	non_translit_context	beud	og	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	7	pa'i	gi	non_translit_context	pai	gi	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	8	klu	sa	non_translit_context	klu	sa	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	37	9	metr	brkos	non_translit_context	metr	brkos	"aus"" (Lokn 124,4); ~$ beud pa'i klu (metr.)"	"keiten"" (Vḍk-M 123,33); ~'i 'og gi sa brkos"
+337	38				token_count_mismatch	7	10	"""die Nägas, die von [Garudas] Klauen zer-"	la / der rten byas te „man soll ihre von Erde
+337	39				token_count_mismatch	5	6	"schnitten worden waren"" (Kävyäd 1.73c);"	sauber ausgekratzten Hufe als Stütze neh-
+337	40	1	rta	men	unsafe_token_disagreement	rta	men	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	2	dan	MigTo	unsafe_token_disagreement	dan	migto	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	3	rkyan	224	unsafe_token_disagreement	rkyan	224	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	4	gi	15	unsafe_token_disagreement	gi	15	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	5	s	od	unsafe_token_disagreement	s	od	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	6	ni	kyi	unsafe_token_disagreement	ni	kyi	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	7	metr	mi	unsafe_token_disagreement	metr	mi	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	8	der	bo	unsafe_token_disagreement	der	bo	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	40	9	Hufeines	sum	unsafe_token_disagreement	hufeines	sum	"rta dan rkyan gi —s ni (metr.) ""der Hufeines"	"men"" (MigTo 224,15); 'od kyi mi bo sum"
+337	41				token_count_mismatch	7	10	"Pferdes und eines Kiangs"" (Velk-M 123,29);"	bra drug cu ni / smig (r. rmig) gi rta po
+337	42				token_count_mismatch	2	12	རྨིག་རྩ་ rmig risa	"re re źon (metr.) „360 Lichtmenschen, jeweils ein behuftes Pferd reitend"" (mDzodG"
+337	43				token_count_mismatch	9	0	"ba glan — //2/""/ nan du / rin chen sna ha"	
+337	44				token_count_mismatch	8	15	"blugpa de (metr.) ""in vier Hufe eines Och-"	52,17); ~'i mgo nas sa blans „mit der Hufspitze aufgenommene Erde“ (Hipp 163,22);
+337	45				token_count_mismatch	8	0	sen schütte man die fünf Arten von Kostbar-	
+337	46				token_count_mismatch	9	1	"keiten"" (Vdk-M 123,33); —'7 'og gi sa brkos"	de
+337	47				token_count_mismatch	10	8	"la / der rten byas te ""man soll ihre von Erde"	gsum ~'i nan gsum yin (metr.) „jene drei
+337	48				token_count_mismatch	6	7	sauber ausgekratzten Hufe als Stütze neh-	"sind die drei schlechten unter den Hufen"""
+337	49				token_count_mismatch	9	3	"men"" (MigTo 224,15); 'od kyi mi bo sum"	(Gesar 305,20).
+337	50				token_count_mismatch	10	7	bryya drug cu ni / smig (r. rmig) gi rta po	"Lex. khurah,,Huf, Klaue"" (Mvy 5329); rta'i"
+337	51				token_count_mismatch	7	8	"re re Zon (metr.) ""360 Lichtmenschen, je-"	"rkan pa'i rmig pa „Huf des Pferdefuẞes"""
+337	52				token_count_mismatch	6	8	"weils 0111 behuftes Pferd reitend"" (mDzodG"	(brDa);rkan bźi phyugs kyi rmigpa „der Huf
+337	53				token_count_mismatch	8	4	"52,17); ~-?/ mgonas sa blans ""mit der Huf-"	"des vierfüßigen Viehs"" (Dagy)."
+337	54				token_count_mismatch	6	0	"spitze aufgenommene Erde"" (Hipp 163,22);"	¶
+337	55				token_count_mismatch	8	2	"de gsuom —' man gsum yin (metr.) ""jene drei"	ger Tiere.
+337	56				token_count_mismatch	7	5	"sind die drei schlechten unter den Hufen"""	mig pa kha brag „gespaltener
+337	57				token_count_mismatch	3	4	(Gesar 305,20).	"Huf"", ein Kennzeichen paarhufi-"
+337	58				token_count_mismatch	7	10	"Lex. khural"" ""Huf, Klaue"" (Mvy 5329); rta'i"	Lex. ba glan dan luggi rkan rmig lta bu „wie:
+337	59	1	rkan	Hufe	unsafe_token_disagreement	rkan	hufe	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	2	pa'i	der	unsafe_token_disagreement	pai	der	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	3	rmig	Rinder	unsafe_token_disagreement	rmig	rinder	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	4	pa	und	unsafe_token_disagreement	pa	und	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	5	Huf	Schafe	unsafe_token_disagreement	huf	schafe	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	6	des	brDa	unsafe_token_disagreement	des	brda	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	59	7	Pferdefußes	gnag	unsafe_token_disagreement	pferdefuses	gnag	"rkan pa'i rmig pa ""Huf des Pferdefußes"""	"Hufe der Rinder und Schafe"" (brDa); gnag"
+337	60				token_count_mismatch	7	10	"(brDa);rkanbzi phyugs kyi rmigpa ""der Huf"	phyugs dan rwa lug sogs kyi rmig pa dum bu
+337	61				token_count_mismatch	4	7	"des vierfüßigen Viehs"" (Dagy)."	gnis pa „die zweigeteilten Hufe des Vichs,
+337	62				token_count_mismatch	1	6	a .	"der Ziegen und Schafe usw."" (Dagy)."
+337	63				token_count_mismatch	5	7	"རྨེག་པ་ཁ་བྲག་ rmig pa kha brag ""gespaltener"	35 mig pa can Bez. für Pferd.
+337	64				token_count_mismatch	3	7	"Huf"", ein Kennzeichenpaarhufh-"	Lex. rta'i min la'an (brDa, ähnl. Dagy).
+337	65				token_count_mismatch	2	14	ger Tiere.	"len"" (HMrg 51,11); ~ ... rdul 'brad par byed mig pa goig pa „mit einein"
+337	66				token_count_mismatch	10	7	"Lex. ba glan dan luggi rkan rmig Ita bu ""wie:"	cin,,mit seinen Hufen scharrte [der Herden-
+337	67				token_count_mismatch	7	8	"Hufe der Rinder und Schafe"" (brDa); grag"	führer] den Staub auf“ (HMṛg 55,29); myur
+337	68				token_count_mismatch	10	9	phyugs dan rwa lug sogs kyi rmig pa dum bu	'gro'i lus ni rnam par rin rnams ~'irwa rnams
+337	69	1	griis	nes	non_translit_context	griis	nes	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	2	pa	par	non_translit_context	pa	par	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	3	die	dred	non_translit_context	die	dred	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	4	zweigeteilten	pas	non_translit_context	zweigeteilten	pas	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	5	Hufe	metr	non_translit_context	hufe	metr	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	6	des	die	non_translit_context	des	die	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	69	7	Vichs	Spitzen	non_translit_context	vichs	spitzen	"griis pa ""die zweigeteilten Hufe des Vichs,"	nes par 'dred pas (metr.) „die Spitzen (?)
+337	70				token_count_mismatch	6	4	"der Ziegen und Schafe usw."" (Dagy)."	"Huf"", Bez. für Einhufer."
+337	71				token_count_mismatch	6	11	རྨིག་པ་ཅན་ rmig pa can Bez. für Pferd.	"~'i'o ma tsha (metr.) „die Milch von Einhufern wärmt"" (Ahs 1.5.27d)."
+337	72				token_count_mismatch	7	0	Lex. rta'i min la'ani (brDa, ähnl. Dagy).	
+337	73				token_count_mismatch	6	2	"rmig pa geig pa ""mit eincin"	ÂªÂ·
+337	74				token_count_mismatch	1	10	a ༤	der Hufe der langgliedrigen Pferde rutschen mig pa'irtse \rmig rtse.
+337	75				token_count_mismatch	0	9	་པ་གཅིག་པ་	"aus"" (Lokn 124,4); ~s bead pa'i klu (metr.)"
+337	76				token_count_mismatch	4	7	"རྨ གཱ ག Huf"", Bez. für Einhufer."	„die Nāgas, die von [Garuḍas] Klauen zer-
+337	77				token_count_mismatch	8	13	"~"" 'o ma tsha (metr.) ""die Milch von Einhu-"	"schnitten worden waren"" (Kavyad 1.73c); mig rtsa eine Ader bzw. Vene im Be-"
+337	78				token_count_mismatch	4	10	"fern wärmt"" (Ahs 1.5.27d)."	rta daṅ rkyan gi~s ni (metr.) „der Huf eines
+337	79				token_count_mismatch	2	7	རྨིག་པའི་རྩེ rmigpa'irtse Irmigrtse.	"Pferdes und eines Kiangs"" (Velk-M 123,29);"
+337	80				token_count_mismatch	6	1	རྨེ་ག་རྩ་ ༡༡༩༩ ༡༩༠༩ eine Ader bzw. Vene im Be-	333
+337	82	5	Zig	źig	unsafe_token_disagreement	zig	zig	Lex. mtshan ma'i rtsa Zig (brDa, Dagy).	Lex. mtshan ma'i rtsa źig (brDa, Dagy).
+362	3	4	SākNth	SakNth	non_translit_context	saknth	saknth	"hörten sofort auf"" (SākNth 221,7)."	"hörten sofort auf"" (SakNth 221,7)."
+362	4	2	bead	bcad	unsafe_token_disagreement	bead	bcad	"Lex. bead mtsbams thun geig Ita bu ""wie:"	Lex. bcad mtshams thun gcig lta bu „wie:
+362	4	3	mtsbams	mtshams	unsafe_token_disagreement	mtsbams	mtshams	"Lex. bead mtsbams thun geig Ita bu ""wie:"	Lex. bcad mtshams thun gcig lta bu „wie:
+362	4	5	geig	gcig	unsafe_token_disagreement	geig	gcig	"Lex. bead mtsbams thun geig Ita bu ""wie:"	Lex. bcad mtshams thun gcig lta bu „wie:
+362	6				token_count_mismatch	6	7	"gpithun tshad ""eine Dosis an Heilmitteln"""	"gyi thun tshad „eine Dosis an Heilmitteln"""
+362	10	3	smmar	sman	unsafe_token_disagreement	smmar	sman	"zinlöffel"" (brDa); smmar blug byed kyi thur"	"zinlöffel"" (brDa); sman blug byed kyi thur"
+362	14				token_count_mismatch	6	7	"— khar dor mig bkru (metr.) ""medizinische"	5555 ~khar dor mig bkru (metr.) „medizinische
+362	17				token_count_mismatch	5	6	སྨན་སྣར་བླུགས་པ་ sman snar blugs pa medizini-	INS sman snar blugs pa medizini-
+362	19	2	rnanis	rnams	unsafe_token_disagreement	rnanis	rnams	las rnanis Ina ni ..bkru sman dani / — dani /	las rnams lṅa ni ... bkru sman dan / ~ daṅ /
+362	19	7	dani	dan	unsafe_token_disagreement	dani	dan	las rnanis Ina ni ..bkru sman dani / — dani /	las rnams lṅa ni ... bkru sman dan / ~ daṅ /
+362	19	8	dani	daṅ	unsafe_token_disagreement	dani	dan	las rnanis Ina ni ..bkru sman dani / — dani /	las rnams lṅa ni ... bkru sman dan / ~ daṅ /
+362	20	8	rnams	mams	unsafe_token_disagreement	rnams	mams	"bkru sman drag po mas btan ba ... rnams ""die"	bkru sman drag po mas btan ba ...mams „die
+362	21	2	Behandlungsmerhoden	Behandlungsmethoden	non_translit_context	behandlungsmerhoden	behandlungsmethoden	fünf Behandlungsmerhoden sind: Abführ-	fünf Behandlungsmethoden sind: Abführ-
+362	24	1	man	sman	unsafe_token_disagreement	man	sman	སྨན་པ་ man pa Kurzf. sman.	可 sman pa Kurzf. sman.
+362	26				token_count_mismatch	10	9	$ nad ni bsal ba'i phyir / mi Zig la mi	~s nad ni bsal ba'i phyirmi źig la ni
+362	27	3	btar	btan	unsafe_token_disagreement	btar	btan	"bkru sman btar ba las (metr.) ""wenn ein"	bkru sman btan ba las (metr.) „wenn ein
+362	30	1	Käsy	Kāśy	unsafe_token_disagreement	kasy	kasy	(Käsy 98,1); — ... nad cig gis btab nas / nad	(Kāśy 98,1); nad cig gis btab nas / nad
+362	31	7	cin	ein	unsafe_token_disagreement	cin	ein	"de gso mi nus na ""wenn cin Arzt von einer"	de gso mi nus na „wenn ein Arzt von einer
+362	33	4	Käsy	Kāśy	non_translit_context	kasy	kasy	"nicht heilen kann"" (Käsy 185,9); nad sos —"	nicht heilen kann“ (Kāśy 185,9); nad sos
+362	36	7	khanis	khams	unsafe_token_disagreement	khanis	khams	(Pd-K 50b); — / gso bar byed pa khanis la	(Pd-K 50b); / gso bar byed pa khams la
+362	38	1	broyad	brgyad	unsafe_token_disagreement	broyad	brgyad	broyad kyi rgyud dan Idan pa Zig byun bar	brgyad kyi rgyud dan ldan pa źig byun bar
+362	38	7	Zig	źig	unsafe_token_disagreement	zig	zig	broyad kyi rgyud dan Idan pa Zig byun bar	brgyad kyi rgyud dan ldan pa źig byun bar
+362	39	1	00	gyur	non_translit_context	00	gyur	"00/// to ""er war ein Arzt, cin Heiler, der sich"	gyur to „er war ein Arzt, ein Heiler, der sich
+362	39	7	cin	ein	non_translit_context	cin	ein	"00/// to ""er war ein Arzt, cin Heiler, der sich"	gyur to „er war ein Arzt, ein Heiler, der sich
+362	42				token_count_mismatch	2	3	སྨན་པ་ sman pa	197 sman pa
+362	43	5	Ayur	Ãyur	non_translit_context	ayur	ayur	der Überlieferung des achtgliedrigen Ayur-	der Überlieferung des achtgliedrigen Ãyur-
+362	46	2	dari	dan	non_translit_context	dari	dan	"pa dari ""was die Fachgebiete des Arztes an-"	pa dan ,,was die Fachgebiete des Arztes an-
+362	50	2	pa	pa'i	unsafe_token_disagreement	pa	pai	"nad pa' gan du ''gro bar chas pa na ""wenn"	nad pa'i gan du 'gro bar chas pa na „wenn
+362	51				token_count_mismatch	8	9	der Arzt sich aufden Weg zu einem Kranken	der Arzt sich auf den Weg zu einem Kranken
+362	52	5	mikhas	mkhas	unsafe_token_disagreement	mikhas	mkhas	"gemacht hat"" (Siddh 4.23); — mikhas stegs"	"gemacht hat"" (Siddh 4.23); mkhas stegs"
+362	53	1	giun	gźun	unsafe_token_disagreement	giun	gzun	giun don ses / las rnams mthon Zin gtsari ba	gźun don ses / las rnams mthon źiṅ gtsaṅ ba
+362	53	7	Zin	źiṅ	unsafe_token_disagreement	zin	zin	giun don ses / las rnams mthon Zin gtsari ba	gźun don ses / las rnams mthon źiṅ gtsaṅ ba
+362	53	8	gtsari	gtsaṅ	unsafe_token_disagreement	gtsari	gtsan	giun don ses / las rnams mthon Zin gtsari ba	gźun don ses / las rnams mthon źiṅ gtsaṅ ba
+362	55	8	01	ei	non_translit_context	01	ei	die Lehrinhalte von seinem Lehrer, er ist 01-	die Lehrinhalte von seinem Lehrer, er ist ei-
+362	57	2	1.1.27	1.1.27c	non_translit_context	1.1.27	1.1.27c	"(Ahs 1.1.27); san brrias spari (metr.) ""man"	(Ahs 1.1.27c); sman brñas spaṅ (metr.) „man
+362	57	3	san	sman	non_translit_context	san	sman	"(Ahs 1.1.27); san brrias spari (metr.) ""man"	(Ahs 1.1.27c); sman brñas spaṅ (metr.) „man
+362	57	4	brrias	brñas	non_translit_context	brrias	brnas	"(Ahs 1.1.27); san brrias spari (metr.) ""man"	(Ahs 1.1.27c); sman brñas spaṅ (metr.) „man
+362	57	5	spari	spaṅ	non_translit_context	spari	span	"(Ahs 1.1.27); san brrias spari (metr.) ""man"	(Ahs 1.1.27c); sman brñas spaṅ (metr.) „man
+362	60	1	lba'i	lha'i	unsafe_token_disagreement	lbai	lhai	"lba'i ~ tha skar gñis bkug ste ""sie rief die"	lha'i tha skar gñis bkug ste „sie rief die
+362	61	6	As$vins	Asvins	non_translit_context	assvins	asvins	Ärzte der Götter, die beiden As$vins her-	Ärzte der Götter, die beiden Asvins her-
+362	62	2	ViST	Vis	unsafe_token_disagreement	vist	vis	"bei"" (ViST 226,36); gso dpyad mi ses pa /"	bei“ (VisȚ 226,36); gso dpyad mi śes pa /
+362	63				token_count_mismatch	7	8	"de Ita ////'¡ — span (metr.) ""der die Behand-"	de Ita bu'i - span (metr.) „der die Behand-
+362	64	1	lungsmethhoden	lungsmethoden	non_translit_context	lungsmethhoden	lungsmethoden	lungsmethhoden nicht kennt, einen derart-	lungsmethoden nicht kennt, einen derarti-
+362	64	5	derart	derarti	non_translit_context	derart	derarti	lungsmethhoden nicht kennt, einen derart-	lungsmethoden nicht kennt, einen derarti-
+362	66				token_count_mismatch	9	10	"—""INag manarnna .. nad pa sos par ga la 'gur"	~'inag mañan na... nad pa sos par ga la 'gyur
+362	70	9	breya	brgya	unsafe_token_disagreement	breya	brgya	par (r. pas?) rab mchod pa'i / sbyor ba breya	par (r. pas?) rab mchod pa'i / sbyor ba brgya
+362	72	4	Yogasataka	Yogaśataka	non_translit_context	yogasataka	yogasataka	nehmen und im Yogasataka, das die kundi-	nehmen und im Yogaśataka, das die kundi-
+362	73	3	schr	sehr	non_translit_context	schr	sehr	"gen Ärzte schr verchren, zusammenfügen"""	"gen Ärzte sehr verehren, zusammenfügen"""
+362	73	4	verchren	verehren	non_translit_context	verchren	verehren	"gen Ärzte schr verchren, zusammenfügen"""	"gen Ärzte sehr verehren, zusammenfügen"""
+362	74	2	Ic	1c	unsafe_token_disagreement	ic	1c	(Yś Ic); ~ mkhas pa'i snan rkyal na sman	(Ys 1c); mkhas pa'i sman rkyal na sman
+362	74	5	snan	sman	unsafe_token_disagreement	snan	sman	(Yś Ic); ~ mkhas pa'i snan rkyal na sman	(Ys 1c); mkhas pa'i sman rkyal na sman
+362	75	1	00	gyi	unsafe_token_disagreement	00	gyi	"00// bye brag sna tshogs yod pa ""in dem Me-"	gyi bye brag sna tshogs yod pa „in dem Me-
+362	77	7	sari	san	non_translit_context	sari	san	"es vielerlei Medizin"" (dPe 40,18); sari — byun"	es vielerlei Medizin“ (dPe 40,18); san ~ byun
+362	78				token_count_mismatch	8	9	"tsa na / mai risa mirtogs pas ""wenn morgen"	tsa na na'i rtsa mi rtogs pas „wenn morgen
+362	80				token_count_mismatch	9	7	"fühlen"" (GIr 97,21); — dan mo ma rnams kyis"	fühlen“ (Glr‍97,21); ~ dan momarnams kyis
+362	81	1	kyani	kyan	unsafe_token_disagreement	kyani	kyan	"kyani mi ""tsbo bar lun bstan ""auch die Ärzte"	kyan mi 'tsho bar lun bstan „auch die Ärzte
+362	81	3	tsbo	tsho	unsafe_token_disagreement	tsbo	tsho	"kyani mi ""tsbo bar lun bstan ""auch die Ärzte"	kyan mi 'tsho bar lun bstan „auch die Ärzte
+362	83	9	m	ni	non_translit_context	m	ni	"er nicht genesen werde"" (Mil 31,4); bdag m"	er nicht genesen werde“ (Mil 31,4); bdag ni
+362	84	7	950	gso	unsafe_token_disagreement	950	gso	— ste / nad dan dug mtha' dag 950 bar byed do	~ste / nad dan dug mtha' dag gso bar byed do
+362	86	2	Tär	Tar	unsafe_token_disagreement	tar	tar	"Vergiftung"" (Tär 80,11); — sman gi par bu"	"Vergiftung"" (Tar 80,11); ~sman gyi par bu"
+362	86	6	gi	gyi	unsafe_token_disagreement	gi	gyi	"Vergiftung"" (Tär 80,11); — sman gi par bu"	"Vergiftung"" (Tar 80,11); ~sman gyi par bu"
+381	57	8	dnos	dños	blocked_alternate_witness_wrong_nasal_dnos	dnos	dnos	drug gi iamis len gyi bya bas dnos su ma zin	drug gi iamis len gyi bya bas dños su ma zin

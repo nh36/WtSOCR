@@ -1,0 +1,13 @@
+page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
+39	14	162	headword_line	dzā	dza	B	discover_medium_context	0	མ་མོ་ཨི་ཀ་ཛཱ་ཏེ་ ma mo e ka dzā ti npr. eine
+100	10	409	tibetan_latin_mixed	EvERDING	EvERDlNG	B	confusable_context	0	dungen (EvERDING 2008: ༦111),
+10	56	3	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"— stonskyi bar du ""solange der Sanisära noch"
+18	49	25	german_prose_with_translit	śinaväsika	śinavāsika	B	sanskrit_char_normalize	0	dha luden den edlen śinaväsika aus Śrāvastī
+47	43	214	german_prose_with_translit	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	sich im Gefängnis des Sarnsära zu freu-
+48	34	218	german_prose	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	burten, Sarnsära.
+121	55	507	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	dha, bei der er weder an den Samisära gebun-
+171	43	771	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"""man ist. den ganzen Samisära lang nicht dem"
+233	60	1032	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"des Sanisära"" (Nigu 47,2); gtsug lag (khani) ..."
+268	39	1158	german_prose	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"(metr.) ""der Samisära 157 bis hin zum Nir-"
+271	51	1181	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"der Wüste des unerträglichen Sanisära l.eid"""
+271	54	1181	german_prose	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	ser großen Wildnis der Wüste des Sarnsära

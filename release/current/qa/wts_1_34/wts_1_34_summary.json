@@ -1,0 +1,128 @@
+{
+  "pages": 1352,
+  "total_lines_seen": 240015,
+  "non_empty_lines": 178435,
+  "entries_detected": 13096,
+  "translit_tokens_detected": 302158,
+  "validator_issues": 22931,
+  "uncaptured_tibetan_prefix_lines": 5462,
+  "zone_counts": {
+    "german_prose_with_translit": 84083,
+    "german_prose": 44256,
+    "latin_other": 20771,
+    "other": 9455,
+    "tibetan_latin_mixed": 660,
+    "example_tibetan_latin": 1293,
+    "headword_line": 13096,
+    "tibetan_only": 4821
+  },
+  "structural_rewrite_count": 7617,
+  "google_vision_mode": false,
+  "google_vision_rewrites": 0,
+  "alternate_witness_used": true,
+  "alternate_witness_path": "pdfs/WtS 1-34.vision.txt",
+  "alternate_google_vision_mode": true,
+  "merge_only": false,
+  "alternate_witness_adoptions": 5471,
+  "alternate_witness_unresolved": 3232,
+  "trusted_lexicon_size": 1179,
+  "discovered_patterns": 53,
+  "tier_a_applied": 25292,
+  "tier_b_suggestions": 73,
+  "citation_name_families": 51,
+  "citation_name_changes": 1841,
+  "sanskrit_families": 242,
+  "sanskrit_promoted_overrides_loaded": 231,
+  "sanskrit_changes": 437,
+  "sanskrit_review_suggestions": 68,
+  "stale_review_rows_removed": 21,
+  "watchdog_flagged_changes": 367,
+  "watchdog_flag_counts": {
+    "high_edit_distance_drift": 367
+  },
+  "discovered_confidence_counts": {
+    "medium": 53
+  },
+  "top_tier_a_reasons": [
+    [
+      "structural_german_quote_hyphen_wrap_direct",
+      7617
+    ],
+    [
+      "explicit_user_allowlist",
+      3791
+    ],
+    [
+      "explicit_case_sensitive_allowlist",
+      2813
+    ],
+    [
+      "confusable_dotless_i_to_i_translit_shape",
+      2202
+    ],
+    [
+      "confusable_dotless_i_to_i_lexicon",
+      1286
+    ],
+    [
+      "citation_siglum_confusable_map",
+      1260
+    ],
+    [
+      "confusable_dotless_i_to_i_safe_char_map",
+      906
+    ],
+    [
+      "confusable_dollar_to_sacute_shape_safe",
+      707
+    ],
+    [
+      "german_dotless_i_safe_map",
+      704
+    ],
+    [
+      "confusable_initial_I_to_l_marked_context",
+      525
+    ],
+    [
+      "confusable_dollar_to_sacute_lexicon",
+      323
+    ],
+    [
+      "confusable_initial_I_to_l_lexicon",
+      322
+    ]
+  ],
+  "top_tier_b_reasons": [
+    [
+      "sanskrit_char_normalize",
+      64
+    ],
+    [
+      "discover_medium_context",
+      4
+    ],
+    [
+      "sanskrit_jn_cluster_contextual",
+      4
+    ],
+    [
+      "confusable_context",
+      1
+    ]
+  ],
+  "top_validator_issues": [
+    [
+      "confusable_char",
+      10505
+    ],
+    [
+      "invalid_translit_shape",
+      6213
+    ],
+    [
+      "german_umlaut_in_translit_context",
+      6213
+    ]
+  ]
+}

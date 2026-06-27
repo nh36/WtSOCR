@@ -1,0 +1,35 @@
+page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_excerpt
+12	14	3	german_prose_with_translit	6111	ein	A	german_numeric_function_word_confusion	high_edit_distance_drift	kkulah entstanden; ist 6111 Baum oder eine
+15	21	29	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	Nr. 111.
+54	2	246	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	bener Konsonant, z.B. die Negation ma 111
+62	3	281	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	te er sich nicht, weil ein Göttersohn 111] Luft-
+98	32	474	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	hen) und sogar die Herrschaft zur Hälfte 111-
+142	53	679	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	parvata, 111] Kanon Kukkutapäidaparvata, d.i.
+148	20	727	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	der 111 der Abenddämmerung eine Warnung
+159	24	812	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"rram (metr.) ""was sich Krähe und Eule 111"
+163	47	843	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	111] Norden, und auch der nördliche Konti-
+202	48	1089	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	die Furcht, 1111 Morast des Gewöhnlichen zu
+205	45	1099	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	(111) vollständig und vertraue ihm die versie-
+258	51	1410	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	bdag 111 Nal und Lo ro (Neb 227).
+260	4	1427	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"[der Weg] zu Ende"" (Tär 111,2); — mi grüüs"
+260	39	1429	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	wurde der Minister Brag-Sar 111 das Amt ein-
+262	12	1439	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"tal cin ""eine Taube, die auf einem Balken 111"
+309	34	1613	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	3. 111 Kollokationen wierkyen — zum Anlaß
+313	6	1621	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"""111 ein goldenes Gefäß schüttete man aller-"
+350	67	1837	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"""was 111] Großen und Ganzen die Residenzen"
+387	88	2124	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	mittlere Kanal avadhāti) tritt vollständig 111
+389	31	2126	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	zwischen, 111, zur Mitte, verkürzt für ldbus
+394	79	2163	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	samkeit meditieren wollte, hielt er sich 1111
+421	29	2339	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"gcad ""die vornehmen Herren entschieden 111"
+426	33	2364	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	Mönch, der in der Nähe sitzt, nicht 1111[ Was-
+496	34	2673	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"Lex. mdo khams kyi chu bo Zig ""ein Fluß 111"
+512	81	2743	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"phyag .... dra bas — pa ""die Hand, [deren ] 111 -"
+522	78	2795	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	"hetzte seine Hunde auf 1111] und lief davon"""
+536	33	2856	other	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	wehrmethoden nicht anwenden, sollen sie 111
+551	83	2920	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"(metr.) ""die anderen [Partikeln] werden 111"
+570	49	3013	german_prose_with_translit	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"du ""111 Tibet, in sBra-stod-tshal östlich vom"
+578	45	3088	german_prose_with_translit	©111	ein	A	german_numeric_function_word_confusion	high_edit_distance_drift	"""eine Katze drang in ihren Körper ©111"
+117	77	592	german_prose_with_translit	kyis'diltabuga	kyis 'di lta bu ga	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	"— kyis'diltabuga la ses ""wie konnten die Ti-"
+288	17	1536	latin_other	diltabuszinna	di lta bu źin na	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	bdaggi btsun mo 'di ~ ñan pa 'diltabuszinna
+510	62	2733	latin_other	diltabi	di lta bu'i	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	lus kyi nad rnam pa 'diltabi 'di dag 'byun ba
+460	73	2513	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"(brDa); dan dbyi ba'i don la'ani ""auch 1. $. v."

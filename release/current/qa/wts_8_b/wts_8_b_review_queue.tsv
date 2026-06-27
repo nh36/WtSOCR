@@ -1,0 +1,11 @@
+page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
+337	23	1755	headword_line	bandha	buddha	B	discover_medium_context	0	བྷ་ཏ་ཧོར་ bha ta hor auch 'bandha hor npr. ein
+338	7	1763	headword_line	bhanga	bhadra	B	discover_medium_context	0	བྷང་གེ་ bhani ge Hanf, skt. bhanga; vgl. LAUTER
+55	60	250	german_prose	dnantaryamärgab	dnantaryamārgab	B	sanskrit_char_normalize	0	"= .dnantaryamärgab ""Weg ohne Hindernisse"""
+130	72	646	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"er aus dem Sanisära vertrieben"" (Suv 60,#);"
+136	90	663	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"— barrigsso ""es ist angebracht, dem Sanisära"
+153	26	756	german_prose_with_translit	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"fängnis des Sarnsära"" (gZer 174,1); las dge"
+218	52	1179	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"tendste im Sanisära ist!"" (Ppu 112b); boddn"
+238	18	1272	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"den des Sanisära beseitigt"" (ThK 2: 525,3);"
+490	12	2653	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"(metr.) ""das Ergebnis ist, daß Sanisära und"
+517	27	2763	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	nis der schauerlichen Wüiste des Sanisära be-
