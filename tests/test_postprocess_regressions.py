@@ -604,6 +604,117 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("dnos", "dṅos", "reviewed_tibetan_exact_dngos"), reasons)
         self.assertIn(("VisT", "ViśT", "reviewed_siglum_exact_visht"), reasons)
 
+    def test_reviewed_sigla_registry_cleanup_examples_wts_8b(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (15, 10): 'als Lehnwort [im Tibetischen] ba dan" (Lis',
+                (49, 77): 'dBus-gtsañ mit den vier Hörnern" (Sambh',
+                (83, 34): 'boren wurde, hat noch keinen Zahn" (Bu-Sz',
+                (124, 23): 'phie, der Mantras und des Geistes" (Lsdz-K',
+                (384, 53): 'brechen, Atemnot und Hämorrhoiden" (Ys',
+                (388, 68): 'te "Atiśa ging allmählich nach dBus" (Bu-S;',
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("(Liś", corrected)
+        self.assertIn("(Śambh", corrected)
+        self.assertIn("(Bu-śz", corrected)
+        self.assertIn("(Lśdz-K", corrected)
+        self.assertIn("(Yś", corrected)
+        self.assertIn("(Bu-śz;", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_siglum_exact_registry_canonicalization"
+        ]
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+        self.assertEqual(
+            {
+                (row["from_token"], row["to_token"])
+                for row in reviewed
+            },
+            {
+                ("Lis", "Liś"),
+                ("Sambh", "Śambh"),
+                ("Bu-Sz", "Bu-śz"),
+                ("Lsdz-K", "Lśdz-K"),
+                ("Ys", "Yś"),
+                ("Bu-S", "Bu-śz"),
+            },
+        )
+
+    def test_reviewed_sigla_registry_cleanup_examples_wts_9m(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (25, 81): 'Untergangs nicht zu unterscheiden" (GS-H',
+                (276, 67): 'ist instabil, Jugend vergeht schnell" (Gs-H',
+                (316, 27): 'ter gekommen sei, sei er ein Gott" (Bu-$z',
+                (340, 22): "(brDa); blun po (TTC); - ni blun po (Lis",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("(Gś-H", corrected)
+        self.assertIn("(Bu-śz", corrected)
+        self.assertIn("(Liś", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_siglum_exact_registry_canonicalization"
+        ]
+        self.assertEqual(len(reviewed), 4)
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+        self.assertEqual(
+            {
+                (row["from_token"], row["to_token"])
+                for row in reviewed
+            },
+            {
+                ("GS-H", "Gś-H"),
+                ("Gs-H", "Gś-H"),
+                ("Bu-$z", "Bu-śz"),
+                ("Lis", "Liś"),
+            },
+        )
+
+    def test_reviewed_sigla_registry_cleanup_does_not_apply_unreviewed_context(
+        self,
+    ) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (15, 11): "plain lexical lis gzi AA_LIS_LY",
+                (25, 82): "plain text Bu-Sz GS-H Ys Sambh Lsdz-K Bu-$z",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_8_b",
+        )
+
+        self.assertIn("plain lexical lis gzi AA_LIS_LY", corrected)
+        self.assertIn("plain text Bu-Sz GS-H Ys Sambh Lsdz-K Bu-$z", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_siglum_exact_registry_canonicalization"
+            ]
+        )
+
     def test_reviewed_tibetan_initial_i_exact_cleanup_examples(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
