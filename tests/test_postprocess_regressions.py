@@ -962,6 +962,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("śes rab — pa'i", corrected)
         self.assertIn("dṅos daṅ dṅos —", corrected)
         self.assertIn("yul ~ spraṅ por", corrected)
+        self.assertIn("(Tār 186,9); dpun rgyab kyi", corrected)
         self.assertIn("dpun rgyab kyi", corrected)
         self.assertIn("daṅ yid chad pa la'aṅ", corrected)
         self.assertIn("Lex. źiṅ sa'am sa źiṅ (brDa); źiṅ sa", corrected)
@@ -976,7 +977,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("Mu-khyuñń-rgyan", "Mu-khyuṅ-rgyan"), pairs)
         self.assertIn(("la'añń", "la'aṅ"), pairs)
         self.assertIn(("Zin", "źiṅ"), pairs)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 16)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 17)
 
     def test_reviewed_tibetan_ambitious_residual_cleanup_is_line_gated(self) -> None:
         wts8_text = self.fixture_with_reviewed_lines(
@@ -1298,7 +1299,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_9_m",
         )
 
-        self.assertIn("bar bźugs pas", wts8_corrected)
+        self.assertIn("ste yaṅ ma gul bar bźugs pas", wts8_corrected)
         self.assertIn("bźugs pa die vier", wts8_corrected)
         self.assertIn("Zal bźugs tsbe", wts9_corrected)
         self.assertIn("la bźin nas", wts9_corrected)
@@ -1310,7 +1311,8 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn(("bZugs", "bźugs", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
         self.assertIn(("bzugs", "bźugs", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
         self.assertIn(("bZin", "bźin", "reviewed_tibetan_exact_bzhin_bzhugs"), reasons)
-        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 2)
+        self.assertIn(("yani", "yaṅ", "reviewed_tibetan_exact_yang"), reasons)
+        self.assertEqual(wts8_result["reviewed_tibetan_exact_changes"], 3)
         self.assertEqual(wts9_result["reviewed_tibetan_exact_changes"], 2)
 
     def test_reviewed_bzhin_bzhugs_exact_rows_do_not_generalize(self) -> None:
@@ -1329,7 +1331,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_9_m",
         )
 
-        self.assertIn("bar bZugs pas", corrected)
+        self.assertIn("ste yani ma gul bar bZugs pas", corrected)
         self.assertIn("du bzugs pa", corrected)
         self.assertIn("la bZin nas", corrected)
         self.assertIn("(r. bZi) zhes bstan", corrected)
@@ -1339,6 +1341,46 @@ class PostprocessRegressionTests(unittest.TestCase):
                 row
                 for row in changes
                 if row["reason"] == "reviewed_tibetan_exact_bzhin_bzhugs"
+            ]
+        )
+
+    def test_reviewed_tar_siglum_exact_rows_apply_only_on_reviewed_locations(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (229, 63): "Tär 160,9; dpun rgyab kyi",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("Tār 160,9; dpun rgyab kyi", corrected)
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+        }
+        self.assertIn(("Tär", "Tār", "reviewed_siglum_exact_tar"), reasons)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
+        unreviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (229, 64): "Tär 160,9; dpun rgyab kyi",
+            }
+        )
+
+        _result, unreviewed_corrected, unreviewed_changes = self.run_postprocess_fixture(
+            unreviewed_text,
+            label="wts_9_m",
+        )
+
+        self.assertIn("Tär 160,9; dpun rgyab kyi", unreviewed_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in unreviewed_changes
+                if row["reason"] == "reviewed_siglum_exact_tar"
             ]
         )
 
@@ -2761,7 +2803,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "khog phub daṅ bcas pa daṅ bcas par daṅ bcas pa'i daṅ bcas pas daṅ bcas kyi "
             "dri ma daṅ bral ba daṅ bral ba'i daṅ bral bas daṅ bral bar "
             "de daṅ 'dra ba de daṅ ’dra ba "
-            "daṅ lhan cig daṅ mthun pa daṅ mthun par daṅ mthun pas don daṅ mthunpa "
+            "daṅ lhan cig daṅ mthun pa daṅ mthun par daṅ mthun pas don daṅ mthun pa "
             "daṅ ldan pa'i daṅ ldan pas daṅ ldan par",
             corrected,
         )
@@ -2783,7 +2825,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             ("dan mthun pa", "daṅ mthun pa"),
             ("dan mthun par", "daṅ mthun par"),
             ("dan mthun pas", "daṅ mthun pas"),
-            ("dan mthunpa", "daṅ mthunpa"),
+            ("dan mthunpa", "daṅ mthun pa"),
             ("dan ldan pa'i", "daṅ ldan pa'i"),
             ("dan ldan pas", "daṅ ldan pas"),
             ("dan ldan par", "daṅ ldan par"),
@@ -2819,20 +2861,72 @@ class PostprocessRegressionTests(unittest.TestCase):
                 reasons,
             )
 
+    def test_tibetan_phrase_allowlist_rewrites_ting_nge_dzin_variants(self) -> None:
+        merged_text = (
+            "ཏིང་ངེ་འཛིན་ tiṅ ṅe 'dzin\n"
+            "bar chad med pa' tin rre 'dzin la skyes.\n"
+            "ston pas tin ne 'dzin rnam gsum.\n"
+            "chub sems dpa'i tin ñe 'dzin gyi min.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("bar chad med pa' tiṅ ṅe 'dzin la skyes.", corrected)
+        self.assertIn("ston pas tiṅ ṅe 'dzin rnam gsum.", corrected)
+        self.assertIn("chub sems dpa'i tiṅ ṅe 'dzin gyi min.", corrected)
+
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        for from_token in ("tin rre 'dzin", "tin ne 'dzin", "tin ñe 'dzin"):
+            self.assertIn(
+                (
+                    from_token,
+                    "tiṅ ṅe 'dzin",
+                    "tibetan_translit_ting_nge_dzin_phrase",
+                ),
+                reasons,
+            )
+
+    def test_tibetan_phrase_allowlist_does_not_rewrite_ting_nge_dzin_in_plain_prose(self) -> None:
+        merged_text = (
+            "Dies ist rein deutsche Prosa ohne tibetischen Kopf.\n"
+            "Ein Beispiel tin ne 'dzin bleibt hier unverändert.\n"
+        )
+        _, corrected, changes = self.run_postprocess_fixture(merged_text)
+
+        self.assertIn("tin ne 'dzin bleibt hier unverändert", corrected)
+        reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
+        self.assertNotIn(
+            (
+                "tin ne 'dzin",
+                "tiṅ ṅe 'dzin",
+                "tibetan_translit_ting_nge_dzin_phrase",
+            ),
+            reasons,
+        )
+
     def test_tibetan_dang_phrase_override_rewrites_curated_phrase(self) -> None:
         merged_text = (
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can\n"
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun\n"
+            "གང་དང་ཡང་ gan dan yani \\gan yan.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("kun snan daṅ pa can, auch kun", corrected)
+        self.assertIn("གང་དང་ཡང་ gan daṅ yaṅ \\gan yaṅ.", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(
             (
                 "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun",
                 "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can, auch kun",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+        self.assertIn(
+            (
+                "གང་དང་ཡང་ gan dan yani \\gan yan.",
+                "གང་དང་ཡང་ gan daṅ yaṅ \\gan yaṅ.",
                 "tibetan_dang_phrase_override",
             ),
             reasons,

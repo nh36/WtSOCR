@@ -196,6 +196,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 54	77	248	german_prose_with_translit	daf$	dafś	A	confusable_dollar_to_sacute_shape_safe	1	"die Gefahr, daf$ Hindernisse auftreten"" (Mil"
 54	83	248	german_prose_with_translit	oñ	oṅ	A	confusable_nya_coda_safe	1	"pa cig oñ ""wenn er auch ein wenig aufge-"
 54	89	248	german_prose_with_translit	mañ	maṅ	A	confusable_nya_coda_safe	1	"~ mañ ba (metr.) ""schlechte Umstände und"
+55	57	250	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"Lex. ""tin ne 'dzin = ānantaryasamādhib"
 55	62	250	german_prose_with_translit	giien	gñen	A	explicit_user_allowlist	1	ran gi No skal @yi span bya'i dhos giien byed
 56	27	255	german_prose_with_translit	$on	śon	A	confusable_dollar_to_sacute_shape_safe	1	"mitsam Son ba dan ""har ba mi $on ba: dazwi-"
 56	55	260	german_prose_with_translit	cines	eines	A	german_dotless_i_safe_map	1	"Lex. khani pa'i ~ ""mittleres Stockwerk cines"
@@ -481,6 +482,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 132	24	653	german_prose_with_translit	$id	śid	A	confusable_dollar_to_sacute_shape_safe	1	"$id[-Zeremonie] herbei"" (ThK 2: 411,3); de"
 132	56	653	german_prose_with_translit	$es	śes	A	explicit_user_allowlist	1	"rgyas pa(r) — gZun las $es (metr.) ""ausführlich"
 132	66	653	german_prose_with_translit	miiam	mñam	A	explicit_user_allowlist	1	(Kävyäd 1.40c); sbyar ba rab dan miiam nid
+132	69	653	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	tin ne 'dzin / yon tan 'di ben ~i / lam gi
 132	84	653	german_prose_with_translit	yañ	yaṅ	A	explicit_user_allowlist	1	yañ / rin chen badirya gcig de kun zil 0375
 133	18	654	latin_other	mañ	maṅ	A	confusable_nya_coda_safe	1	rin po che mañ po di lta ste / nor b u dag dañ /
 133	18	654	latin_other	dañ	daṅ	A	explicit_user_allowlist	1	rin po che mañ po di lta ste / nor b u dag dañ /
@@ -552,6 +554,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 153	57	762	latin_other	$es	śes	A	explicit_user_allowlist	1	de ni me lon ye $es gzugs ...
 153	61	762	german_prose_with_translit	$es	śes	A	explicit_user_allowlist	1	chos dbyins Sin tu mam dag ste ... ye $es
 153	64	762	german_prose_with_translit	dañ	daṅ	A	explicit_user_allowlist	1	"heit"" (Samiv 4.13c); so sor rtog pa'! ye ses dañ"
+153	77	764	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Lex. — Zes bya ba'i tin ne 'dzin = kāryakaro
 154	34	770	german_prose_with_translit	nañ	naṅ	A	explicit_user_allowlist	1	"Lex. du nañ gi bal Ita bu rtswa ""Gras, wie"
 154	34	770	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"Lex. du nañ gi bal Ita bu rtswa ""Gras, wie"
 154	64	775	german_prose_with_translit	Ihun	lhun	A	confusable_initial_I_to_l_marked_context	1	"rdzogs chen — Ihun rdzogs de (metr.) ""die"
@@ -598,6 +601,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 165	21	854	german_prose_with_translit	dga'	dga’	A	explicit_user_allowlist	1	"po bstan la mnon dga' ba (metr.) ""die We-"
 165	46	854	german_prose_with_translit	broyud	brgyud	A	explicit_user_allowlist	1	"dha"" (T3491 14537); bskal bar broyud nas"
 165	52	855	german_prose_with_translit	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	(VaiNth 137,1); bcom Idan 'das ni dan por
+166	40	863	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Lex. — Zes bya ba'i tin ne 'dzin = bodhyanga-
 166	79	866	latin_other	bsnal	bsṅal	A	explicit_user_allowlist	1	gan gyi sdug bsnal 'khur bar mi bzod do
 167	18	867	german_prose_with_translit	rmams	rnams	A	explicit_user_allowlist	1	"las dan po pa lturi ba byun ba rmams ""Neu-"
 167	85	872	latin_other	Iha	lha	A	explicit_case_sensitive_allowlist	1	myi yons kyis mtshan yani / 'phrul gi Iha —r
@@ -613,6 +617,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 170	41	891	german_prose_with_translit	Ye-$es	Ye-śes	A	confusable_dollar_to_sacute_name_anchor	1	ris die drei namens IHa Bla-ma Ye-$es 'od,
 170	45	892	german_prose_with_translit	IHa	lHa	A	confusable_initial_I_to_l_lexicon	1	"rtse rdzon du grags pa dan ""der Ort, wo IHa-"
 170	53	894	latin_other	dga'	dga’	A	explicit_user_allowlist	1	kyi rnam par 'byed pa, brtson 'grus, dga' ba,
+170	54	894	german_prose_with_translit	tin ñe 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Sin tu sbyanis pa, tin ñe 'dzin und mñam pa'i
 170	59	894	german_prose_with_translit	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	den tin 'dzin — gi / yon tan Idan Zin yon
 170	80	894	german_prose_with_translit	dga'	dga’	A	explicit_user_allowlist	1	Mvy 989-995); dga' ba yañ dag byari chub ky!
 170	80	894	german_prose_with_translit	yañ	yaṅ	A	explicit_user_allowlist	1	Mvy 989-995); dga' ba yañ dag byari chub ky!
@@ -690,6 +695,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 189	59	1022	latin_other	Ita	lta	A	explicit_case_sensitive_allowlist	1	"rens pa'i Ita staris — pas rens ""er starrte auf"
 189	69	1022	german_prose_with_translit	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	"wurde festgelegt"" (Padm 293b2); 'od Idan gyi"
 190	9	1023	german_prose_with_translit	nañ	naṅ	A	explicit_user_allowlist	1	"'dod sbyar gyi nañ tshon ~ ""die Parteien ha-"
+190	35	1023	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	tin ne 'dzin ... chab srid ma bZes pa'i bar du
 190	66	1024	german_prose_with_translit	rmams	rnams	A	explicit_user_allowlist	1	(Tär 8,7); glegs bam rmams kyis bud sin —
 190	69	1024	german_prose_with_translit	giier	gñer	A	explicit_user_allowlist	1	"'phel dan / giier pa lon ba griis kyis — ""der"
 190	69	1024	german_prose_with_translit	griis	gñis	A	explicit_user_allowlist	1	"'phel dan / giier pa lon ba griis kyis — ""der"
@@ -1217,6 +1223,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 346	53	1810	latin_other	broyud	brgyud	A	explicit_user_allowlist	1	rgyal po mthon ldan dge bæi broyud
 346	72	1810	german_prose_with_translit	Indrāni	lndrāni	A	confusable_initial_I_to_l_marked_context	1	1. die Gattin Indras, skt. Indrāni.
 348	15	1818	latin_other	Iha	lha	A	explicit_case_sensitive_allowlist	1	dran pa nam mkhas — Iha khan biens so
+348	35	1821	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	97,17); 'khor bzan tin ne 'dzin la — pa 'byun
 348	44	1823	headword_line	Idaṅ	ldaṅ	A	confusable_initial_I_to_l_strong_context	1	དབང་དང་ལྡན་པར་གྱུར་པ་ ddbaṅ Idaṅ par ur
 348	56	1824	german_prose_with_translit	$lo	ślo	A	confusable_dollar_to_sacute_shape_safe	1	"rtsis pa'i $lo ka ston yodpacig""[der Text] um-"
 348	67	1825	latin_other	dga'	dga’	A	explicit_user_allowlist	1	'di ni sbyin pa la dga' ba'i — pas bslu bar
@@ -1247,6 +1254,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 355	60	1861	latin_other	Iha	lha	A	explicit_case_sensitive_allowlist	1	1123); Iha danklu dan Iha min —'i gtsuggi nor
 355	64	1861	latin_other	rmams	rnams	A	explicit_user_allowlist	1	783,1); mi yi ~ rgyal blon che rmams kyi /
 356	51	1865	german_prose_with_translit	biin	bźin	A	explicit_user_allowlist	1	"dan / ©$ biin med rnams gso ba dan ""die"
+356	77	1865	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	pa', brtson 'grus kyi, dran pa'i, tin ne 'dzin
 356	79	1865	german_prose_with_translit	$espa'i	śespa'i	A	confusable_dollar_to_sacute_shape_safe	1	kun $espa'i, kun 606 pa dar: ldan pa' und sog
 357	6	1866	latin_other	Ina'o	lna'o	A	confusable_initial_I_to_l_marked_context	1	dban po Ina'o / yid dban brtsis pas drug dan
 357	27	1869	latin_other	Ita	lta	A	explicit_case_sensitive_allowlist	1	po di Ita ste / mig gi ... rna bæi ... sna'i
@@ -1256,6 +1264,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 358	4	1878	german_prose_with_translit	dañ	daṅ	A	explicit_user_allowlist	1	de las ~ dañ / rgyal ba'i zla ba Zes bya
 358	16	1882	german_prose_with_translit	Iha	lha	A	explicit_case_sensitive_allowlist	1	Lex. Iha ma yin gyi min (brDa); Iha ma yin
 358	16	1882	german_prose_with_translit	Iha	lha	A	explicit_case_sensitive_allowlist	1	Lex. Iha ma yin gyi min (brDa); Iha ma yin
+358	43	1889	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Lex. — ces bya ba'i tin ne 'dzin = indraketur
 359	55	1901	latin_other	miiam	mñam	A	explicit_user_allowlist	1	— dan skal ba che / 'di dag cha ni miiam
 360	54	1909	german_prose_with_translit	dPal-Idan	dPal-ldan	A	explicit_user_allowlist	1	"te ""der große Yogin dPal-Idan dGon-pa-ba"
 360	72	1909	german_prose_with_translit	$iva	śiva	A	confusable_dollar_to_sacute_shape_safe	1	$iva bzw. Mahädeva, Mahesvara.
@@ -1314,6 +1323,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 373	36	2008	latin_other	dan 'dra	daṅ 'dra	A	tibetan_translit_phrase_allowlist	1	"ausstrecken"" (MTH3/3/34 28); — dan 'dra"
 373	37	2008	latin_other	griis	gñis	A	explicit_user_allowlist	1	"miam gyi griis skal dgon pa'i ""[ihm steht]"
 373	66	2009	german_prose_with_translit	Ide-brtsan	lde-brtsan	A	confusable_hyphenated_I_to_l_translit	1	"gnan ste ""der König Khri-sroñ Ide-brtsan hat"
+373	74	2009	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	bkas / ban de myan tin ne 'dzin / — gtsigs
 374	52	2017	german_prose_with_translit	dBu-Ide	dBu-lde	A	confusable_hyphenated_I_to_l_translit	1	die Festungen 12 sind, sind es mit dBu-Ide
 375	11	2021	german_prose_with_translit	yañ	yaṅ	A	explicit_user_allowlist	1	"dir yañ jug kyan snan ""Höhe der Macht,"
 375	20	2026	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	Lex. rtsa ba'i bla ma Ita bu (brDa, ähnl.
@@ -1554,6 +1564,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 446	60	2445	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"bitas pa Ita bu ""wie: mit glotzenden Augen"
 446	62	2445	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"bgrad de bita ba Ita bu ""wie: mit stieren-"
 447	5	2445	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"Lex. ri mo 'bur dod Ita bu ""wie: 0111 Bild, das"
+447	14	2446	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	ban de tin ne 'dzin ... Zo Sa chen po — —
 447	25	2446	german_prose_with_translit	$a	śa	A	confusable_dollar_to_sacute_lexicon	1	"naninas Z0$a— — barnams ""diejenigen unter"
 448	5	2448	latin_other	Iha	lha	A	explicit_case_sensitive_allowlist	1	di... Iha gsen srid pa gsum la mchod par —
 448	50	2449	german_prose_with_translit	Brag-$a	Brag-śa	A	confusable_dollar_to_sacute_shape_safe	1	von mir, Brag-$a, vorgebrachten kurzen Ein-
@@ -1597,6 +1608,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 458	41	2498	german_prose_with_translit	Ikogma'inaddo	lkogma'inaddo	A	confusable_initial_I_to_l_marked_context	1	"Ikogma'inaddo cog 'byon bar byed do ""[die-"
 458	65	2499	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"Lex. — nas = mtha' breal nas Ita bu ""wie: die"
 458	70	2499	latin_other	Ita	lta	A	explicit_case_sensitive_allowlist	1	"rgya cher brdal ba Ita bu ""wie: weit verbreitet"
+458	80	2499	german_prose_with_translit	tin rre 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"Feinde töten solle"" (Viś 66); tin rre 'dzin la"
+459	3	2500	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"Leerheit"" (Tär 177,15); tin ne 'dzin la — nas"
 459	51	2504	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"gis — ba'am spin gyis — ba Ita bu ""wie: mit"
 459	78	2504	german_prose_with_translit	nañ	naṅ	A	explicit_user_allowlist	1	"auf Siegellack"" (Mil 103,23); nañ rten 'ga'yod"
 460	6	2506	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	Lex. dam bag Ita bu skabs 'dir sbyar byed
@@ -1622,6 +1635,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 465	39	2525	german_prose_with_translit	rmams	rnams	A	explicit_user_allowlist	1	"mehr"" (Bca 9.15b); 'gro rmams dam chos —"
 465	61	2525	latin_other	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	sgyu ma' sems Idan pa la / bsod nams da
 465	89	2525	german_prose_with_translit	$o'i	śo'i	A	confusable_dollar_to_sacute_shape_safe	1	"sung hervorgeht"" (In11 9); bka' $o'i tshigs las"
+466	59	2527	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	'khor bzan tin ne 'dzin la dban thob Pa -
 466	80	2527	german_prose_with_translit	Ihad	lhad	A	confusable_initial_I_to_l_marked_context	1	"gsar Ihad med ""ohne neue Vermi-"
 467	3	2528	german_prose_with_translit	dañ	daṅ	A	explicit_user_allowlist	1	(K841(2) 205al); khyed ran gi gdur dañ rigs
 467	11	2528	german_prose_with_translit	broyad	brgyad	A	explicit_user_allowlist	1	"4// rtsa broyad ""28 Lagerstätten mit Edel-"
@@ -2023,6 +2037,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 15	10	27	german_prose_with_translit	Lis	Liś	reviewed_tibetan_exact	reviewed_siglum_exact_registry_canonicalization	yes	"als Lehnwort [im Tibetischen] ba dan"" (Lis"
 15	61	37	german_prose	VisT	ViśT	reviewed_tibetan_exact	reviewed_siglum_exact_visht	yes	"dern des Körpers bewegen sich nicht"" (VisT"
 15	65	37	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	rlun gzun ste — yani ma 'gul bar ... bZugs pas
+15	65	37	latin_other	yani	yaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_yang	yes	rlun gzun ste — yani ma 'gul bar ... bZugs pas
 21	30	76	german_prose_with_translit	gtsan	gtsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_gtsang	yes	"te — gtsan ma'i mchod sbyin ""ein gomedha,"
 21	63	77	german_prose_with_translit	Lis	Liś	reviewed_tibetan_exact	reviewed_siglum_exact_registry_canonicalization	yes	"lun bon dar ban klar ni — ""Ochse"" (Lis"
 27	80	120	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	sku yi bZugs tshugs ... srrar dan mi 'dra ba ~s

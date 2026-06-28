@@ -5207,7 +5207,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 65	11	302	german_prose_with_translit			none	4	3	0	0	"bo —s bskyed pa'i ku co chen po ""das von vie-"
 65	12	302	german_prose			none	0	2	0	0	"len Menschen verursachte laute Geschrei"""
 65	13	302	german_prose_with_translit			none	2	1	0	0	(T3856 13622); bsod nams — mid kyis ni ...
-65	14	302	latin_other			none	2	0	0	0	"bar chad med pa' tin ne 'dzin (metr.) ""durch"
+65	14	302	latin_other			none	4	0	0	0	"bar chad med pa' tiṅ ṅe 'dzin (metr.) ""durch"
 65	15	302	german_prose_with_translit			none	2	2	0	0	zahlreiche Verdienste [entsteht] die unge-
 65	16	302	german_prose			none	0	1	0	0	"hinderte Konzentration"" (AA 5.38a); sdig"
 65	17	302	latin_other			none	3	0	0	0	"pa ~ ñe bar bsgrubs (metr.) ""ich habe viele"
@@ -9372,7 +9372,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 114	12	472	latin_other			none	4	0	0	0	phun po ba = asamasamaparicaskandhah
 114	13	472	latin_other			none	1	0	0	0	(sGra 18).
 114	14	472	german_prose_with_translit			none	1	1	0	0	2. ein Samādhi.
-114	15	472	german_prose_with_translit			none	3	3	0	0	Lex. — Zes bya ba'i tin ne 'dzin ‰ asamasamaä
+114	15	472	german_prose_with_translit			none	5	3	0	0	Lex. — Zes bya ba'i tiṅ ṅe 'dzin ‰ asamasamaä
 114	16	472	german_prose_with_translit			none	4	2	0	0	nāma samādhih (Mvy 587, Abt. śes rab kyi
 114	17	472	latin_other			none	6	0	0	0	pha rol tu phyin pa'i nan nas 'bywi ba'i tin ne
 114	18	472	latin_other			none	2	0	0	0	"""dzin gyi min)."
@@ -10252,7 +10252,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 124	66	519	german_prose_with_translit			none	4	2	0	0	Lex. mi 'pham (v.l. pham) pa Zes byaba'itii
 124	67	519	german_prose_with_translit			none	2	1	0	0	ne 'dzin = ajeyo nama samādhih (Mvy 548,
 124	68	519	german_prose_with_translit			none	5	2	0	0	Abt. Sesrab kyipha roltu phyin pa'i na nas
-124	69	519	latin_other			none	3	0	0	0	byun ba'i tin ne 'dzin gi min).
+124	69	519	latin_other			none	5	0	0	0	byun ba'i tiṅ ṅe 'dzin gi min).
 124	70	519	other			none	0	0	0	0	120
 124	71	519	german_prose			none	0	1	0	0	sprochene Worte.
 124	72	519	german_prose			none	0	3	0	0	Lex. prativäni (Mvy 5239).
@@ -11273,7 +11273,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 136	68	592	german_prose_with_translit			none	3	1	0	0	Lex. nam mkha'i min la'an (brDa); nam
 136	69	592	german_prose_with_translit			none	1	1	0	0	mkha' (Dagy).
 136	70	592	german_prose_with_translit			none	1	1	0	0	5. ein Samādhi.
-136	71	592	german_prose_with_translit			none	3	2	0	0	Lex. — Zes bya ba'i tin ne 'dzin
+136	71	592	german_prose_with_translit			none	5	2	0	0	Lex. — Zes bya ba'i tiṅ ṅe 'dzin
 136	72	592	german_prose_with_translit			none	1	2	0	0	näma samādhib (Mvy 554).
 136	73	592	german_prose_with_translit			none	1	4	0	0	6. dieachte Stufe auf dem Weg eines Bodhi-
 136	74	592	other			none	0	0	0	0	ammjyo
@@ -17550,9 +17550,9 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 211	34	930	german_prose_with_translit			none	2	2	0	0	"Blumenpflücken"" (Tär 61,20); lan cig — gi"
 211	35	930	german_prose_with_translit			none	6	1	0	0	"Phai 00? dbus nas byi la źig byuri ste ""ein-"
 211	36	930	german_prose			none	0	4	0	0	mal kam aus der Mitte eines Blumenhaufens
-211	37	930	german_prose_with_translit			none	1	3	0	0	"eine Katze hervor"" (Tär 63,14); nags kyi —"
+211	37	930	german_prose_with_translit			none	2	2	0	0	"eine Katze hervor"" (Tār 63,14); nags kyi —"
 211	38	930	german_prose			none	0	3	0	0	"mans kyari 'dud par gyur ""auch die Blumen"
-211	39	930	german_prose			none	0	3	0	0	"des Waldes verneigten sich [vor ihm]"" (Tär"
+211	39	930	german_prose_with_translit			none	1	2	0	0	"des Waldes verneigten sich [vor ihm]"" (Tār"
 211	40	930	latin_other			none	4	0	0	0	104,15); ~ padma’i sin po la / brdzuste skye
 211	41	930	german_prose_with_translit			none	2	3	0	0	"ba len par śog (metr.) ""möge ich die über-"
 211	42	930	german_prose			none	0	6	0	0	natürliche Geburt im Inneren einer Lotus-
@@ -18822,7 +18822,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 226	73	1019	headword_line	མེ་ལོང་བཀོད་པ་	bkod pa	medium	3	1	0	0	མེ་ལོང་བཀོད་པ་ me lori bkod pa ein Samidhi,
 226	74	1019	latin_other			none	1	0	0	0	skt. ādarsavyriha.
 226	75	1019	german_prose_with_translit			none	3	1	0	0	de nas sans rgyas rin chen sin pos — 706 bu
-226	76	1019	german_prose_with_translit			none	5	1	0	0	"ba'i tin ñe 'dzin la srioms par Zugs nas ""dann"
+226	76	1019	german_prose_with_translit			none	6	1	0	0	"ba'i tiṅ ṅe 'dzin la srioms par Zugs nas ""dann"
 226	77	1019	german_prose_with_translit			none	2	3	0	0	trat der Buddha Ratnagarbha in eine mediti-
 226	78	1019	german_prose_with_translit			none	1	3	0	0	tive Versenkung ein, bezeichnet als ddirsi-
 226	79	1019	german_prose			none	0	1	0	0	"vyriha"" (Bu 702,6)."
@@ -19046,7 +19046,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 229	40	1032	german_prose_with_translit			none	2	2	0	0	"Frucht bleiben!"" (Lokn 194,26); chos sgrub"
 229	41	1032	latin_other			none	2	0	0	0	"pa [7 gole sos dal gyi lori — pas ""weil man"
 229	42	1032	german_prose			none	0	5	0	0	keine Zeit hat, die Lehre gemächlich zu voll-
-229	43	1032	latin_other			none	3	0	0	0	"enden"" (dPe 30,3); tin ñe 'dzin la 'byur 'jug"
+229	43	1032	latin_other			none	4	0	0	0	"enden"" (dPe 30,3); tiṅ ṅe 'dzin la 'byur 'jug"
 229	44	1032	german_prose_with_translit			none	1	3	0	0	"-pa'o ""daher gibt es kein Aus- und Eintre-"
 229	45	1032	german_prose_with_translit			none	1	3	0	0	"ten in die meditative Versenkung"" (VaiNth"
 229	46	1032	latin_other			none	4	0	0	0	203,5); ba bzed lassadmi bdun du bsad pa
@@ -19066,7 +19066,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 229	60	1032	german_prose_with_translit			none	4	2	0	0	"zu empfangen"" (Mil 76,15); dgos pa — pa'"
 229	61	1032	german_prose_with_translit			none	3	1	0	0	"phyir ma bśad do ""da keine Notwendigkeit"
 229	62	1032	german_prose			none	0	2	0	0	"vorhanden ist, werde ich sie nicht erzählen"""
-229	63	1032	german_prose_with_translit			none	2	1	0	0	(Tär 22,22); na' skye rabs rnam thar 'byun
+229	63	1032	latin_other			none	3	0	0	0	(Tār 22,22); na' skye rabs rnam thar 'byun
 229	64	1032	german_prose			none	0	3	0	0	"— sin ""eine Geschichte meiner Vorgebur-"
 229	65	1032	german_prose_with_translit			none	1	1	0	0	"ten gibt es nicht"" (KunK 24,30); grub thob"
 229	66	1032	german_prose_with_translit			none	2	2	0	0	"khyod las — pas ""da es außer dir keinen Sid-"
@@ -19310,7 +19310,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 232	25	1032	latin_other			none	1	0	0	0	"81,9); chosni 'tsheba — payin (metr.) ""dieser"
 232	26	1032	german_prose_with_translit			none	2	2	0	0	"Dharma ist ungefährlich"" (Tär 15,5); pandi"
 232	27	1032	latin_other			none	3	0	0	0	"ta'! min gis'bod pa — pas ""weil man sie nicht"
-232	28	1032	german_prose_with_translit			none	1	2	0	0	"als 'Panclitas' bezeichnete"" (Tär 48,2); ras"
+232	28	1032	german_prose_with_translit			none	2	1	0	0	"als 'Panclitas' bezeichnete"" (Tār 48,2); ras"
 232	29	1032	latin_other			none	1	0	0	0	"kyan khonla'dzem — ""ich aber achtete nicht"
 232	30	1032	german_prose_with_translit			none	2	1	0	0	"auf sie"" (KunK 56,22); 'chi — tshe yi 779 'dzin"
 232	31	1032	german_prose_with_translit			none	2	1	0	0	"thob ""er wird Unsterblichkeit erlangen, d.h."
@@ -19335,7 +19335,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 232	50	1032	german_prose			none	0	2	0	0	"Wörter usw. gibt oder nicht"" (NB 3.97); kmi"
 232	51	1032	latin_other			none	4	0	0	0	"śes rnam par śes pa rdzas $// yod dam ~ ""gibt"
 232	52	1032	german_prose_with_translit			none	1	3	0	0	es das Speicherbewufßtsein als reale Substanz,
-232	53	1032	german_prose_with_translit			none	3	2	0	0	"oder nicht?"" (Tär 89,20); sriin nas sa tsha yall"
+232	53	1032	german_prose_with_translit			none	4	1	0	0	"oder nicht?"" (Tār 89,20); sriin nas sa tsha yall"
 232	54	1032	latin_other			none	2	0	0	0	"— / dbu mna' bies rogs gnari dari (metr.) ""ich"
 232	55	1032	german_prose			none	0	3	0	0	bitte dich, schwöre feierlich, ob dein Herz
 232	56	1032	german_prose_with_translit			none	1	2	0	0	wahre Zuneigung zu mir hegt oder nicht!
@@ -19439,8 +19439,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 233	62	1032	german_prose			none	0	3	0	0	Vihära, der beispiellos und konkurrenzlos
 233	63	1032	german_prose_with_translit			none	3	3	0	0	"war"" (Nel 1137) ; Jam pa ""thus na zug rim —"
 233	64	1032	german_prose_with_translit			none	1	2	0	0	"pa'o ""wenn man Lauwarmes trinkt, ist man"
-233	65	1032	german_prose_with_translit			none	1	3	0	0	"ohne Schmerz"" (Padm 62b1); yani dag pa'i"
-233	66	1032	german_prose			none	0	2	0	0	"skyon — par yani 'jug ""wir treten aber in völli-"
+233	65	1032	german_prose_with_translit			none	2	3	0	0	"ohne Schmerz"" (Padm 62b1); yaṅ dag pa'i"
+233	66	1032	german_prose_with_translit			none	1	2	0	0	"skyon — par yaṅ 'jug ""wir treten aber in völli-"
 233	67	1032	german_prose_with_translit			none	1	2	0	0	"ge Fehlerlosigkeit ein"" (sBa 60,14); ''gran gyi"
 233	68	1032	german_prose_with_translit			none	1	2	0	0	"do — cig'orbayin ""es komnit einer, der kon-"
 233	69	1032	german_prose_with_translit			none	3	2	0	0	"kurrenzlos ist"" (Mil 95,33); sṅar gyi ñams"
@@ -22779,7 +22779,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 272	53	1186	german_prose_with_translit			none	1	3	0	0	— po dass. bzw. ein Bewohner dieser Ge-
 272	54	1186	german_prose			none	0	4	0	0	gend, wird auch als Beiname verwendet, vgl.
 272	55	1186	german_prose_with_translit			none	1	1	0	0	Ian po.
-272	56	1186	latin_other			none	4	0	0	0	ban de — tin ne 'dzin / dbu sun gtsigs
+272	56	1186	latin_other			none	6	0	0	0	ban de — tiṅ ṅe 'dzin / dbu sun gtsigs
 272	57	1186	german_prose_with_translit			none	2	3	0	0	"g.yun drun du gnan ba ""dem Mönch Myan"
 272	58	1186	german_prose_with_translit			none	2	3	0	0	Tiri-ne-'dzin wurde für ewig ein dbu-simi-
 272	59	1186	german_prose_with_translit			none	1	4	0	0	"Dokument gewährt"" (In5 W2); sion ~ dba's"
@@ -23838,7 +23838,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 285	50	1266	german_prose_with_translit			none	6	1	0	0	407,1); — gi dbus su thog chen po bstud mar
 285	51	1266	german_prose_with_translit			none	1	2	0	0	"lan bZir lhuns ""inmitten des Heeres schlug"
 285	52	1266	german_prose			none	0	4	0	0	"ein großer Blitz nacheinander viermal ein"""
-285	53	1266	german_prose_with_translit			none	4	1	0	0	"(Tär 186,9); dpun rgyab kyi — źus nas ""nach-"
+285	53	1266	latin_other			none	5	0	0	0	"(Tār 186,9); dpun rgyab kyi — źus nas ""nach-"
 285	54	1266	german_prose_with_translit			none	1	3	0	0	dem ich das Militär zur Unterstützung er-
 285	55	1266	latin_other			none	1	0	0	0	"beten habe"" (Bhulg 108,1); 'bri gun pas /"
 285	56	1266	latin_other			none	5	0	0	0	kla klo ka si kā ra te ha 477 har du grags pa'i
@@ -30332,7 +30332,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 362	83	1608	german_prose_with_translit			none	1	1	0	0	"er nicht genesen werde"" (Mil 31,4); bdag m"
 362	84	1608	latin_other			none	3	0	0	0	— ste / nad dan dug mtha' dag 950 bar byed do
 362	85	1608	german_prose_with_translit			none	1	3	0	0	"""ich bin Arzt und heile jede Krankheit und"
-362	86	1608	german_prose_with_translit			none	2	1	0	0	"Vergiftung"" (Tär 80,11); — sman gi par bu"
+362	86	1608	latin_other			none	3	0	0	0	"Vergiftung"" (Tār 80,11); — sman gi par bu"
 362	87	1608	german_prose			none	0	6	0	0	"'drar (metr.) ""[das Grab für] für einen Arzt"
 363	1	1609	headword_line	སྨན་པའི་རྒྱལ་པོ་	pa'i rgyal po	high	3	0	0	0	སྨན་པའི་རྒྱལ་པོ་ sman pa'i rgyal po
 363	2	1609	german_prose			none	0	4	0	0	sollte wie ein kleines Gefäß für Medizin aus-

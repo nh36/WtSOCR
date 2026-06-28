@@ -5142,7 +5142,7 @@ tshad med pa'o "viele Menschen' bedeutet
 bo —s bskyed pa'i ku co chen po "das von vie-
 len Menschen verursachte laute Geschrei"
 (T3856 13622); bsod nams — mid kyis ni ...
-bar chad med pa' tin ne 'dzin (metr.) "durch
+bar chad med pa' tiṅ ṅe 'dzin (metr.) "durch
 zahlreiche Verdienste [entsteht] die unge-
 hinderte Konzentration" (AA 5.38a); sdig
 pa ~ ñe bar bsgrubs (metr.) "ich habe viele
@@ -9258,7 +9258,7 @@ Lex. asamasamahb (Mvy 6379, 2529); —'i
 phun po ba = asamasamaparicaskandhah
 (sGra 18).
 2. ein Samādhi.
-Lex. — Zes bya ba'i tin ne 'dzin ‰ asamasamaä
+Lex. — Zes bya ba'i tiṅ ṅe 'dzin ‰ asamasamaä
 nāma samādhih (Mvy 587, Abt. śes rab kyi
 pha rol tu phyin pa'i nan nas 'bywi ba'i tin ne
 "dzin gyi min).
@@ -10128,7 +10128,7 @@ Imipham skra'i la ba can.
 Lex. mi 'pham (v.l. pham) pa Zes byaba'itii
 ne 'dzin = ajeyo nama samādhih (Mvy 548,
 Abt. Sesrab kyipha roltu phyin pa'i na nas
-byun ba'i tin ne 'dzin gi min).
+byun ba'i tiṅ ṅe 'dzin gi min).
 120
 sprochene Worte.
 Lex. prativäni (Mvy 5239).mi bo
@@ -11137,7 +11137,7 @@ Lex. ri (brDa, Dagy).
 Lex. nam mkha'i min la'an (brDa); nam
 mkha' (Dagy).
 5. ein Samādhi.
-Lex. — Zes bya ba'i tin ne 'dzin
+Lex. — Zes bya ba'i tiṅ ṅe 'dzin
 näma samādhib (Mvy 554).
 6. dieachte Stufe auf dem Weg eines Bodhi-
 ammjyo
@@ -17339,9 +17339,9 @@ dieBlumen von Frost befallen werden" (Glr
 Blumenpflücken" (Tär 61,20); lan cig — gi
 Phai 00? dbus nas byi la źig byuri ste "ein-
 mal kam aus der Mitte eines Blumenhaufens
-eine Katze hervor" (Tär 63,14); nags kyi —
+eine Katze hervor" (Tār 63,14); nags kyi —
 mans kyari 'dud par gyur "auch die Blumen
-des Waldes verneigten sich [vor ihm]" (Tär
+des Waldes verneigten sich [vor ihm]" (Tār
 104,15); ~ padma’i sin po la / brdzuste skye
 ba len par śog (metr.) "möge ich die über-
 natürliche Geburt im Inneren einer Lotus-
@@ -18596,7 +18596,7 @@ tungen usw. zeigt z.B. der [Käyylädarsi"
 མེ་ལོང་བཀོད་པ་ me lori bkod pa ein Samidhi,
 skt. ādarsavyriha.
 de nas sans rgyas rin chen sin pos — 706 bu
-ba'i tin ñe 'dzin la srioms par Zugs nas "dann
+ba'i tiṅ ṅe 'dzin la srioms par Zugs nas "dann
 trat der Buddha Ratnagarbha in eine mediti-
 tive Versenkung ein, bezeichnet als ddirsi-
 vyriha" (Bu 702,6).
@@ -18817,7 +18817,7 @@ ne wirkliche Sache ohne Fehler ist" (NBT
 Frucht bleiben!" (Lokn 194,26); chos sgrub
 pa [7 gole sos dal gyi lori — pas "weil man
 keine Zeit hat, die Lehre gemächlich zu voll-
-enden" (dPe 30,3); tin ñe 'dzin la 'byur 'jug
+enden" (dPe 30,3); tiṅ ṅe 'dzin la 'byur 'jug
 -pa'o "daher gibt es kein Aus- und Eintre-
 ten in die meditative Versenkung" (VaiNth
 203,5); ba bzed lassadmi bdun du bsad pa
@@ -18837,7 +18837,7 @@ nicht einmal ein Jahmes Vögelchen, um mich
 zu empfangen" (Mil 76,15); dgos pa — pa'
 phyir ma bśad do "da keine Notwendigkeit
 vorhanden ist, werde ich sie nicht erzählen"
-(Tär 22,22); na' skye rabs rnam thar 'byun
+(Tār 22,22); na' skye rabs rnam thar 'byun
 — sin "eine Geschichte meiner Vorgebur-
 ten gibt es nicht" (KunK 24,30); grub thob
 khyod las — pas "da es außer dir keinen Sid-
@@ -19078,7 +19078,7 @@ zu geben haben" (Mil 100,27); ¢ // kyari kyag
 81,9); chosni 'tsheba — payin (metr.) "dieser
 Dharma ist ungefährlich" (Tär 15,5); pandi
 ta'! min gis'bod pa — pas "weil man sie nicht
-als 'Panclitas' bezeichnete" (Tär 48,2); ras
+als 'Panclitas' bezeichnete" (Tār 48,2); ras
 kyan khonla'dzem — "ich aber achtete nicht
 auf sie" (KunK 56,22); 'chi — tshe yi 779 'dzin
 thob "er wird Unsterblichkeit erlangen, d.h.
@@ -19103,7 +19103,7 @@ phyir ro "es ist zweifelhaft, ob es bei ihnen
 Wörter usw. gibt oder nicht" (NB 3.97); kmi
 śes rnam par śes pa rdzas $// yod dam ~ "gibt
 es das Speicherbewufßtsein als reale Substanz,
-oder nicht?" (Tär 89,20); sriin nas sa tsha yall
+oder nicht?" (Tār 89,20); sriin nas sa tsha yall
 — / dbu mna' bies rogs gnari dari (metr.) "ich
 bitte dich, schwöre feierlich, ob dein Herz
 wahre Zuneigung zu mir hegt oder nicht!
@@ -19206,8 +19206,8 @@ dpe dan 'gran zla — pa bZens "er erbaute den
 Vihära, der beispiellos und konkurrenzlos
 war" (Nel 1137) ; Jam pa "thus na zug rim —
 pa'o "wenn man Lauwarmes trinkt, ist man
-ohne Schmerz" (Padm 62b1); yani dag pa'i
-skyon — par yani 'jug "wir treten aber in völli-
+ohne Schmerz" (Padm 62b1); yaṅ dag pa'i
+skyon — par yaṅ 'jug "wir treten aber in völli-
 ge Fehlerlosigkeit ein" (sBa 60,14); ''gran gyi
 do — cig'orbayin "es komnit einer, der kon-
 kurrenzlos ist" (Mil 95,33); sṅar gyi ñams
@@ -22507,7 +22507,7 @@ z 'myan npr. eine Gegend bzw. ein Klan;
 — po dass. bzw. ein Bewohner dieser Ge-
 gend, wird auch als Beiname verwendet, vgl.
 Ian po.
-ban de — tin ne 'dzin / dbu sun gtsigs
+ban de — tiṅ ṅe 'dzin / dbu sun gtsigs
 g.yun drun du gnan ba "dem Mönch Myan
 Tiri-ne-'dzin wurde für ewig ein dbu-simi-
 Dokument gewährt" (In5 W2); sion ~ dba's
@@ -23553,7 +23553,7 @@ re im Luftraum stürzten auf die Erde" (Sdr
 407,1); — gi dbus su thog chen po bstud mar
 lan bZir lhuns "inmitten des Heeres schlug
 ein großer Blitz nacheinander viermal ein"
-(Tär 186,9); dpun rgyab kyi — źus nas "nach-
+(Tār 186,9); dpun rgyab kyi — źus nas "nach-
 dem ich das Militär zur Unterstützung er-
 beten habe" (Bhulg 108,1); 'bri gun pas /
 kla klo ka si kā ra te ha 477 har du grags pa'i
@@ -29970,7 +29970,7 @@ und Wahrsagerinnen prophezeiten ihm, daß
 er nicht genesen werde" (Mil 31,4); bdag m
 — ste / nad dan dug mtha' dag 950 bar byed do
 "ich bin Arzt und heile jede Krankheit und
-Vergiftung" (Tär 80,11); — sman gi par bu
+Vergiftung" (Tār 80,11); — sman gi par bu
 'drar (metr.) "[das Grab für] für einen Arztསྨན་པའི་རྒྱལ་པོ་ sman pa'i rgyal po
 sollte wie ein kleines Gefäß für Medizin aus-
 schen" (Vdk-M 147,13); bstan gror ~ '/ lhag

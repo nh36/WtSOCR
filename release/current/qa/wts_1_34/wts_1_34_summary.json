@@ -3,14 +3,14 @@
   "total_lines_seen": 180208,
   "non_empty_lines": 180208,
   "entries_detected": 12014,
-  "translit_tokens_detected": 303670,
-  "validator_issues": 17070,
+  "translit_tokens_detected": 304174,
+  "validator_issues": 9365,
   "uncaptured_tibetan_prefix_lines": 3004,
   "zone_counts": {
-    "german_prose_with_translit": 87085,
-    "german_prose": 47036,
-    "latin_other": 22504,
-    "other": 8020,
+    "german_prose_with_translit": 87102,
+    "german_prose": 47020,
+    "latin_other": 22510,
+    "other": 8013,
     "tibetan_only": 3128,
     "headword_line": 12014,
     "example_tibetan_latin": 296,
@@ -27,11 +27,11 @@
   "alternate_witness_unresolved": 3322,
   "trusted_lexicon_size": 1347,
   "discovered_patterns": 51,
-  "tier_a_applied": 11953,
+  "tier_a_applied": 12025,
   "tier_b_suggestions": 82,
   "citation_name_families": 52,
   "citation_name_changes": 2020,
-  "reviewed_tibetan_exact_changes": 0,
+  "reviewed_tibetan_exact_changes": 1,
   "sanskrit_families": 414,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_changes": 401,
@@ -126,16 +126,16 @@
   ],
   "top_validator_issues": [
     [
-      "confusable_char",
-      8572
-    ],
-    [
       "invalid_translit_shape",
       4249
     ],
     [
       "german_umlaut_in_translit_context",
       4249
+    ],
+    [
+      "confusable_char",
+      867
     ]
   ]
 }

@@ -1,11 +1,11 @@
 decision	volume	unresolved_hits	validator_hits	applied_hits	score	rewrite_class	has_translit_cue	german_risk	from_token	to_token
-promote	wts_1_34	46	56	10	6	safe_char_map	1	0	$in	śin
 promote	wts_1_34	25	25	0	6	safe_char_map	1	0	Vi$	Viś
 promote	wts_1_34	21	21	0	5	safe_char_map	1	0	$ambh	śambh
-promote	wts_1_34	17	18	1	5	safe_char_map	1	0	bañ	baṅ
+promote	wts_1_34	16	17	1	5	safe_char_map	1	0	bañ	baṅ
 promote	wts_1_34	8	8	0	4	safe_char_map	1	0	Ihgr	lhgr
 promote	wts_1_34	7	7	0	4	safe_char_map	1	0	rañs	raṅs
 promote	wts_1_34	6	6	0	4	safe_char_map	1	0	la'añ	la'aṅ
+promote	wts_1_34	5	5	0	4	safe_char_map	1	0	Iśvara	lśvara
 hold	wts_1_34	100	100	0	3	other_char_map	1	0	Y$	YŚ
 hold	wts_1_34	56	56	0	3	other_char_map	1	0	P$	PŚ
 hold	wts_1_34	37	37	0	3	other_char_map	1	0	G$	GŚ
@@ -20,7 +20,6 @@ hold	wts_1_34	3	3	0	3	safe_char_map	1	0	Jañ	Jaṅ
 hold	wts_1_34	3	3	0	3	safe_char_map	1	0	Sañs	Saṅs
 hold	wts_1_34	3	3	0	3	safe_char_map	1	0	na'añ	na'aṅ
 hold	wts_1_34	3	3	0	2	safe_char_map	0	0	d'Indologie	d'lndologie
-hold	wts_1_34	3	3	0	2	safe_char_map	0	0	mTIshur	mTlshur
 hold	wts_1_34	3	3	0	1	safe_char_map	0	0	BA'I	BA'l
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	Bla-brañ	Bla-braṅ
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	Duñk	Duṅk
@@ -32,12 +31,9 @@ hold	wts_1_34	2	2	0	3	safe_char_map	1	0	byuñń	byuṅń
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	dByañs	dByaṅs
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	dmañs	dmaṅs
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	gTsañ-po	gTsaṅ-po
-hold	wts_1_34	2	3	1	3	safe_char_map	1	0	giñ	giṅ
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	liñs	liṅs
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	pañ	paṅ
 hold	wts_1_34	2	2	0	3	safe_char_map	1	0	rLun-Iha	rLun-lha
-hold	wts_1_34	2	3	1	3	safe_char_map	1	0	rtsañ	rtsaṅ
-hold	wts_1_34	2	11	9	3	safe_char_map	1	0	ñwa	ṅwa
 hold	wts_1_34	2	2	0	2	safe_char_map	0	0	GIsh	Glsh
 hold	wts_1_34	2	2	0	2	safe_char_map	0	0	Io	lo
 hold	wts_1_34	2	2	0	2	safe_char_map	0	0	Mig'Io	Mig'lo
@@ -57,9 +53,10 @@ hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Ge-Iha	Ge-lha
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Gle-luñ	Gle-luṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Gliñ	Gliṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Guñ-thañ	Guṅ-thaṅ
-hold	wts_1_34	1	2	1	3	safe_char_map	1	0	Hañ	Haṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	I-Tsing's	l-Tsing's
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	I-tsing's	l-tsing's
+hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Iśvaras	lśvaras
+hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Iśvari	lśvari
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	KIh	Klh
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Karañ	Karaṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Khañ-chen-pa	Khaṅ-chen-pa
@@ -103,6 +100,7 @@ hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gIsañ	glsaṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gSañń	gSaṅń
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gTsañ-phrug	gTsaṅ-phrug
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gYuñ	gYuṅ
+hold	wts_1_34	1	2	1	3	safe_char_map	1	0	giñ	giṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gliñ-pa	gliṅ-pa
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	gsuñńs	gsuṅńs
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	guñń	guṅń
@@ -112,10 +110,8 @@ hold	wts_1_34	1	1	0	3	safe_char_map	1	0	hrañ	hraṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	iñ	iṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	iñń	iṅń
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	kbruñńs	kbruṅńs
-hold	wts_1_34	1	2	1	3	safe_char_map	1	0	khañń	khaṅń
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	khruñńs	khruṅńs
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	kiañ	kiaṅ
-hold	wts_1_34	1	4	3	3	safe_char_map	1	0	koñ	koṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	kurañga	kuraṅga
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	kwañ	kwaṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	kyañń	kyaṅń
@@ -131,6 +127,7 @@ hold	wts_1_34	1	1	0	3	safe_char_map	1	0	rMug-sañs	rMug-saṅs
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	rañ-šar	raṅ-šar
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	rlnñ	rlnṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	rnoñs	rnoṅs
+hold	wts_1_34	1	2	1	3	safe_char_map	1	0	rtsañ	rtsaṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	sKre-Iho	sKre-lho
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	sMan-Iha	sMan-lha
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	sPu-rañs	sPu-raṅs
@@ -154,6 +151,7 @@ hold	wts_1_34	1	1	0	3	safe_char_map	1	0	ñwam	ṅwam
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Ārya-lañ	Ārya-laṅ
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Śañkhapālas	Śaṅkhapālas
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	Śeg-sañ	Śeg-saṅ
+hold	wts_1_34	1	1	0	3	safe_char_map	1	0	śugs-Idan	śugs-ldan
 hold	wts_1_34	1	1	0	3	safe_char_map	1	0	źañ	źaṅ
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	Ba'I	Ba'l
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	I'India	l'lndia
@@ -181,7 +179,6 @@ hold	wts_1_34	1	1	0	2	safe_char_map	1	0	VIDYĀBHŪṢAṢA	VlDYĀBHŪṢAṢA
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	d'Indo	d'lndo
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	g'Isug-gtor	g'lsug-gtor
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	gIsan'	glsan'
-hold	wts_1_34	1	1	0	2	safe_char_map	0	0	m'TIshur	m'Tlshur
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	mIshur	mlshur
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	r'Isa-ri	r'lsa-ri
 hold	wts_1_34	1	1	0	2	safe_char_map	0	0	rIsa-ri'i	rlsa-ri'i

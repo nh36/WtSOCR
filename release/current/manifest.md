@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-06-27T17:18:13Z`
-Source/code commit observed while building this bundle: `3df36c17d653eabdc879ba022b4a09eff5524dca`
+Generated UTC: `2026-06-28T07:58:28Z`
+Source/code commit observed while building this bundle: `1e3ff0da04a89602341a1e179859bc0dba43dada`
 
 This directory is the tracked best-current deployable etext snapshot.
 The large production outputs under `work/` are local artifacts and are
@@ -15,17 +15,17 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260627T170423Z/wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260627T170423Z/wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260627T170423Z/wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260627T170423Z/wts_9_m` |
+| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_1_34` |
+| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_35_51` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260627T170423Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260627T170423Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Corrected Text
 

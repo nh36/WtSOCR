@@ -962,8 +962,23 @@ TIBETAN_TRANSLIT_DIRECT_PHRASE_SAFE_REWRITE_PATTERNS = (
     ),
     (
         re.compile(rf"(?<![{LATIN_CHARS}0-9])dan mthunpa(?![{LATIN_CHARS}0-9])"),
-        "daṅ mthunpa",
+        "daṅ mthun pa",
         "tibetan_translit_phrase_allowlist",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])tin rre 'dzin(?![{LATIN_CHARS}0-9])"),
+        "tiṅ ṅe 'dzin",
+        "tibetan_translit_ting_nge_dzin_phrase",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])tin ne 'dzin(?![{LATIN_CHARS}0-9])"),
+        "tiṅ ṅe 'dzin",
+        "tibetan_translit_ting_nge_dzin_phrase",
+    ),
+    (
+        re.compile(rf"(?<![{LATIN_CHARS}0-9])tin ñe 'dzin(?![{LATIN_CHARS}0-9])"),
+        "tiṅ ṅe 'dzin",
+        "tibetan_translit_ting_nge_dzin_phrase",
     ),
     (
         re.compile(rf"(?<![{LATIN_CHARS}0-9])dan ldan pa'i(?![{LATIN_CHARS}0-9])"),

@@ -678,3 +678,24 @@ wts_9_m	297	25	5	Gs-H	Gś-H	reviewed_siglum_exact_registry_canonicalization	tibe
 wts_9_m	316	27	8	Bu-$z	Bu-śz	reviewed_siglum_exact_registry_canonicalization	tibetan_sigla_registry_cleanup_20260627	Exact reviewed registry-backed citation siglum normalization; no broad siglum or $-to-ś rule
 wts_9_m	340	22	8	Lis	Liś	reviewed_siglum_exact_registry_canonicalization	tibetan_sigla_registry_cleanup_20260627	Exact reviewed registry-backed citation siglum normalization; no broad siglum or $-to-ś rule
 wts_9_m	386	72	7	Lis	Liś	reviewed_siglum_exact_registry_canonicalization	tibetan_sigla_registry_cleanup_20260627	Exact reviewed registry-backed citation siglum normalization; no broad siglum or $-to-ś rule
+wts_8_b	15	65	4	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_9_m	233	65	5	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_9_m	233	66	3	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_35_51	164	27	9	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_35_51	177	85	6	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_35_51	217	76	6	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_35_51	217	76	7	yani	yaṅ	reviewed_tibetan_exact_yang	user_reported_yani_yang_20260628	Exact reviewed yaṅ correction in Tibetan context; no broad yani rule
+wts_1_34	10	50	3	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	18	74	2	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	90	54	2	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	177	15	4	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	177	91	1	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	217	54	3	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_35_51	217	93	5	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	211	37	4	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	211	39	7	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	229	63	1	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	232	28	4	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	232	53	3	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	285	53	1	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_9_m	362	86	2	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule

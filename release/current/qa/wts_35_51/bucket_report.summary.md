@@ -1,14 +1,13 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/current_release_four_volume_refresh_20260627T170423Z/wts_35_51`
+- run_dir: `work/current_release_four_volume_refresh_20260628T075036Z/wts_35_51`
 - unresolved confusable pairs: `177`
-- promote candidates (conservative): `8`
-- hold candidates: `169`
+- promote candidates (conservative): `7`
+- hold candidates: `170`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
 |---|---|---|---:|---:|---|
-|wts_35_51|$in|śin|17|6|-|
 |wts_35_51|moñs|moṅs|16|5|-|
 |wts_35_51|bañ|baṅ|11|5|-|
 |wts_35_51|la'añ|la'aṅ|9|4|-|
@@ -38,13 +37,13 @@
 |wts_35_51|geuñ|geuṅ|3|3|-|
 |wts_35_51|kluñ|kluṅ|3|3|-|
 |wts_35_51|phyuñń|phyuṅń|3|3|-|
-|wts_35_51|rañs|raṅs|3|3|-|
 |wts_35_51|sgañ|sgaṅ|3|3|-|
 |wts_35_51|snañń|snaṅń|3|3|-|
-|wts_35_51|dGa'-Idan|dGa'-ldan|3|2|-|
 |wts_35_51|r'Isa|r'lsa|3|2|-|
+|wts_35_51|Iśvara|lśvara|2|3|low_count|
 |wts_35_51|Ki-kañ|Ki-kaṅ|2|3|low_count|
 |wts_35_51|Sañs|Saṅs|2|3|low_count|
+|wts_35_51|beañ|beaṅ|2|3|low_count|
 
 ## Residual Artifact Buckets
 - `wts_35_51:initial_confusable_I`: `200` distinct tokens

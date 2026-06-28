@@ -197,6 +197,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 64	22	294	german_prose_with_translit	mañ	maṅ	A	confusable_to_headword	1	Lex. phyir Zi sems paam mañ du sems (v.).
 64	39	298	german_prose_with_translit	mañ	maṅ	A	confusable_to_headword	1	Lex. sna tshogs mañ po (brDa).
 64	49	301	latin_other	rmams	rnams	A	explicit_user_allowlist	1	"— stod pyogs su 'don pa rmams ""viele chi-"
+65	14	302	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"bar chad med pa' tin ne 'dzin (metr.) ""durch"
 65	22	302	german_prose_with_translit	dan bral ba'i	daṅ bral ba'i	A	tibetan_translit_phrase_allowlist	1	"dan bral ba'i gdun ba — rnams (metr.) ""die"
 65	70	303	german_prose_with_translit	yañ	yaṅ	A	explicit_user_allowlist	1	"der yañ rten byin rlabs can ~ yod ""auch gibt"
 65	76	303	german_prose_with_translit	nañ	naṅ	A	explicit_user_allowlist	1	"fel"" (KTh 1: 276,4); nañ rten khyad par can"
@@ -383,6 +384,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 113	41	469	latin_other	dga'	dga’	A	explicit_user_allowlist	1	dam chos dga' ston cher baas pa' / — bdag gis
 113	71	470	german_prose_with_translit	miiam	mñam	A	explicit_user_allowlist	1	(HMrg 51,9); miiam pa sbyor ba mi mriam
 114	2	471	headword_line	མེ་མཉམ་པ་དང་་ mmi pa dan	མེ་མཉམ་པ་དང་་ mmi pa daṅ	A	tibetan_dang_phrase_override	1	མེ་མཉམ་པ་དང་་ mmi pa dan
+114	15	472	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Lex. — Zes bya ba'i tin ne 'dzin ‰ asamasamaä
 114	28	472	latin_other	Ita	lta	A	explicit_case_sensitive_allowlist	1	"bdag Ita geig pus te por gsol (metr.) ""ich sage"
 114	47	473	german_prose	siian	sñan	A	explicit_user_allowlist	1	"mi siian smra ""ohne zu hören spre-"
 114	60	473	german_prose_with_translit	$varas	śvaras	A	confusable_dollar_to_sacute_shape_safe	1	$varas, skt. Mitrayogin?
@@ -418,6 +420,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 124	27	516	german_prose_with_translit	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	dga' Idan byams pa glin npr. ein Tempel in
 124	29	516	german_prose_with_translit	dga'	dga’	A	explicit_user_allowlist	1	"— du luri bstan ""im Mi-phyed thugs-rje dga'-"
 124	30	516	german_prose_with_translit	Idan	ldan	A	confusable_initial_I_to_l_lexicon	1	Idan byams-pa-glin wurde die überlieferte
+124	69	519	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	byun ba'i tin ne 'dzin gi min).
 125	39	522	latin_other	dbañ	dbaṅ	A	confusable_nya_coda_safe	1	mi yi dbañ po ... sers / tshar gcad nus pa ma
 125	47	523	german_prose_with_translit	dga'	dga’	A	explicit_user_allowlist	1	"gefühl haben"" (Ps 96d); — dga' byed gos sred"
 125	61	523	latin_other	rmams	rnams	A	explicit_user_allowlist	1	ral can rmams la yani sdar byed pa' / ~
@@ -462,6 +465,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 136	8	590	german_prose_with_translit	$äkya	śäkya	A	confusable_dollar_to_sacute_shape_safe	1	"das Reich schr glücklich"" (Nel 3b7); $äkya"
 136	13	590	german_prose_with_translit	Iha'iyuldu	lha'iyuldu	A	confusable_initial_I_to_l_marked_context	1	"schenwelt"" (Nel 934); des Iha'iyuldu ... sku"
 136	62	592	german_prose_with_translit	broyad	brgyad	A	explicit_user_allowlist	1	285, Abt. dpe byad bzari po broyad cwi min).
+136	71	592	german_prose_with_translit	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	Lex. — Zes bya ba'i tin ne 'dzin
 136	92	592	latin_other	mañ	maṅ	A	confusable_nya_coda_safe	1	thugs ka nas mi g.ya (r. g.yo) ba mañ po spros
 137	39	596	german_prose_with_translit	broyud	brgyud	A	explicit_user_allowlist	1	rgal broyud — beu güüis kyii bar du / rgyal sa
 137	44	597	latin_other	broyad	brgyad	A	explicit_user_allowlist	1	mkhan — broyad la jo bo kham pa zer ba
@@ -753,6 +757,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 226	39	1018	latin_other	biin	bźin	A	explicit_user_allowlist	1	snan srid — g.ya' dag pa biin du gsal ba yin
 226	61	1018	latin_other	siian	sñan	A	explicit_user_allowlist	1	siian chhags — las... rnam par bcad pa steda
 226	68	1018	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"pa ston pa — Ita bu'am ""in den Lehrtexten"
+226	76	1019	german_prose_with_translit	tin ñe 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"ba'i tin ñe 'dzin la srioms par Zugs nas ""dann"
 226	89	1021	latin_other	Ita	lta	A	explicit_case_sensitive_allowlist	1	me lori ye ses, me lor Ita ba
 227	4	1022	latin_other	$es	śes	A	explicit_user_allowlist	1	byaii chub sems 'di'i ye ses ... me lon ye $es
 227	13	1022	german_prose_with_translit	$es	śes	A	explicit_user_allowlist	1	(Hev 2.4.46a); me lon lta bu ... ye $es 'di dag
@@ -765,6 +770,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 228	54	1030	german_prose_with_translit	Iha	lha	A	explicit_case_sensitive_allowlist	1	"(brDa); me la gnas pa'i Iha ""eine Gottheit,"
 228	57	1030	latin_other	Iha	lha	A	explicit_case_sensitive_allowlist	1	me Iha 'dul byed kyi kl
 228	70	1031	german_prose_with_translit	Iho'i	lho'i	A	confusable_initial_I_to_l_marked_context	1	"Lex. Sar Iho'i phyogs ""südöstl. Richtung"""
+229	43	1032	latin_other	tin ñe 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	"enden"" (dPe 30,3); tin ñe 'dzin la 'byur 'jug"
 229	61	1032	german_prose_with_translit	b$ad	bśad	A	confusable_dollar_to_sacute_shape_safe	1	"phyir ma b$ad do ""da keine Notwendigkeit"
 229	83	1032	german_prose_with_translit	rañ	raṅ	A	confusable_nya_coda_safe	1	"(r. na tsho) zug gzer la rañ bZin ~ ""die Qualen"
 230	8	1032	latin_other	$es	śes	A	explicit_user_allowlist	1	"tshal ba ni mi $es paam — pa ""mi 'tshal ba:"
@@ -930,6 +936,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 272	11	1184	german_prose_with_translit	Ita	lta	A	explicit_case_sensitive_allowlist	1	"igs gnas Ita bu ""wie: wasserlose Einöde in"
 272	24	1186	german_prose_with_translit	nañ	naṅ	A	explicit_user_allowlist	1	"Lex. rdzab don nañ gi mi gtsan lta bu ""wie: das"
 272	40	1186	german_prose_with_translit	myañ	myaṅ	A	confusable_nya_coda_safe	1	JF myañ fut. zu Imyon schmecken, spüren;
+272	56	1186	latin_other	tin ne 'dzin	tiṅ ṅe 'dzin	A	tibetan_translit_ting_nge_dzin_phrase	1	ban de — tin ne 'dzin / dbu sun gtsigs
 273	2	1187	german_prose_with_translit	Myañ	Myaṅ	A	confusable_to_headword	1	"sid ma thub ste ""Myañ war nicht imstande"
 273	15	1187	latin_other	dan ldan par	daṅ ldan par	A	tibetan_translit_phrase_allowlist	1	~~ tsha dkar royan sbrum dan ldan par gyur
 273	30	1190	headword_line	gTsañ	gTsaṅ	A	explicit_user_allowlist	1	རྐྱང་སྟོད myanl stod npr. eine Region in gTsañ,
@@ -1454,6 +1461,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 206	84	918	latin_other	sroñ-btsan	sroṅ-btsan	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"boren; man nannte ihn Khri-lde sroñ-btsan"""
 210	55	930	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"2.1.5b); chu sin sie ma'i — bZin (metr.) ""er"
 211	35	930	german_prose_with_translit	Zig	źig	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"Phai 00? dbus nas byi la Zig byuri ste ""ein-"
+211	37	930	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"eine Katze hervor"" (Tär 63,14); nags kyi —"
+211	39	930	german_prose	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"des Waldes verneigten sich [vor ihm]"" (Tär"
 211	74	930	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"pa bZin (metr.) ""es war so, als ob die Erde als"
 215	14	955	german_prose_with_translit	mdañs-can	mdaṅs-can	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Wede] Me-tog mdañs-can ist unangefoch-
 225	43	1012	german_prose_with_translit	dbañ-rgyal	dbaṅ-rgyal	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	'bebs, Khyuni-rgod dbañ-rgyal und Ra-'dra
@@ -1462,6 +1471,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 229	26	1032	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"du ni ran bZin — (metr.) ""in der absolu-"
 229	33	1032	german_prose	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"gibt keinen Handelnden"" (AA 3.9a); dnos"
 229	56	1032	german_prose_with_translit	Zin	źiṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"5b9); de'i gon na Zin la so nam — ""davor"
+229	63	1032	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	(Tär 22,22); na' skye rabs rnam thar 'byun
 229	70	1032	latin_other	rkani	rkaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	140,10); sa 'bol steṅ na rkani rjes — na 'chi
 229	83	1032	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"(r. na tsho) zug gzer la raṅ bZin ~ ""die Qualen"
 229	87	1032	german_prose_with_translit	rria	rṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	"gibt keine Spur"" (gZer 652,1); rkani khal rria"
@@ -1469,10 +1479,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 231	33	1032	german_prose	VisT	ViśT	reviewed_tibetan_exact	reviewed_siglum_exact_visht	yes	"beiden sich [sexuell] vereinigt haben"" (VisT"
 231	89	1032	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"lichkeit"" (K113 67bl); de yi ran bZin nam"
 232	21	1032	german_prose_with_translit	zani	zaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	"heimlichen habe"" (Mil 27,8); zani ziri gi 'bul"
+232	28	1032	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"als 'Panclitas' bezeichnete"" (Tär 48,2); ras"
 232	44	1032	latin_other	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	tha 176b1); srion 'jug yod dam — kyan run
 232	44	1032	latin_other	kyan	kyaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	tha 176b1); srion 'jug yod dam — kyan run
 232	51	1032	german_prose_with_translit	Ses	śes	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	"Ses rnam par Ses pa rdzas $// yod dam ~ ""gibt"
 232	51	1032	german_prose_with_translit	Ses	śes	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"Ses rnam par Ses pa rdzas $// yod dam ~ ""gibt"
+232	53	1032	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"oder nicht?"" (Tär 89,20); sriin nas sa tsha yall"
 232	58	1032	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"rdo (r. mdo) bZin yod — ""ob die Worte des"
 232	65	1032	german_prose_with_translit	Zes	źes	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"Zib cha Zu rgyu yod — cha ma rtogs Zes ""ob"
 232	65	1032	german_prose_with_translit	Zu	źu	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"Zib cha Zu rgyu yod — cha ma rtogs Zes ""ob"
@@ -1483,6 +1495,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 233	35	1032	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	anidra)' (Ahs 1.5.23d); dnos dan drios —
 233	42	1032	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	833); khyod ni rgyu — bZin du byams (metr.)
 233	46	1032	german_prose_with_translit	Zum	źum	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"sein"" (AA 3.4a); sku Zum — (metr.) ""sem"
+233	65	1032	german_prose_with_translit	yani	yaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_yang	yes	"ohne Schmerz"" (Padm 62b1); yani dag pa'i"
+233	66	1032	german_prose	yani	yaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_yang	yes	"skyon — par yani 'jug ""wir treten aber in völli-"
 233	69	1032	german_prose_with_translit	Nlams	ñams	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"
 233	69	1032	german_prose_with_translit	gi	gyi	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"
 233	69	1032	german_prose_with_translit	sriar	sṅar	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	"kurrenzlos ist"" (Mil 95,33); sriar gi Nlams"
@@ -1522,6 +1536,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 285	29	1266	german_prose_with_translit	Zabs	źabs	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"bcu"" (Debm 1132); ~ gi phyag phyi daṅ Zabs"
 285	53	1266	german_prose_with_translit	Zus	źus	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"
 285	53	1266	german_prose_with_translit	dpur	dpun	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"
+285	53	1266	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"(Tär 186,9); dpur rgyab kyi — Zus nas ""nach-"
 285	67	1266	latin_other	nina	mña	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	gtsani khul nina' ris daṅ bcas kyi — bskul
 285	67	1266	latin_other	gtsani	gtsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	gtsani khul nina' ris daṅ bcas kyi — bskul
 286	75	1266	german_prose_with_translit	Keñ-śi	Keṅ-śi	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"mee nach Keñ-śi führen würden"" (Inl $54);"
@@ -1577,6 +1592,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 362	53	1608	german_prose_with_translit	gtsari	gtsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	giun don ses / las rnams mthon Zin gtsari ba
 362	53	1608	german_prose_with_translit	Zin	źiṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_google_tibetan_candidate	yes	giun don ses / las rnams mthon Zin gtsari ba
 362	53	1608	german_prose_with_translit	giun	gźun	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_context_google	yes	giun don ses / las rnams mthon Zin gtsari ba
+362	86	1608	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"Vergiftung"" (Tär 80,11); — sman gi par bu"
 368	34	1640	german_prose_with_translit	snani	snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_snang	yes	than la chwi rgyun g.yo ba Itar snani ba'i geugs
 371	45	1652	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"Lex. ~, smin dbrag = mdzod spu la'añ ""auch"
 371	78	1655	latin_other	snari	snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_snang	yes	gtsug) ni — yi / bar du snari bar gyur pa na
