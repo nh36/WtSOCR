@@ -1,0 +1,2 @@
+source_queue	volume	page	line	token_index	source_token	proposed_target	tibetan_witness	candidate_family	context_excerpt	evidence	confidence	suggested_action	score	score_explanation
+corrected_text_scan	wts_8_b	450	43	2	gan	gaṅ	གང	tibetan_script_ng_witness	"འབེན་གང་ ""ben gan Schußweite."	tibetan_script_witness	high	exact_promotion_candidate	98	Latin n conflicts with same-line Tibetan-script ང witness; review exact rows rather than applying a broad n->ṅ rule.

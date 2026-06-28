@@ -2,6 +2,7 @@ import importlib.util
 import sys
 import unittest
 from pathlib import Path
+from typing import cast
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,6 +140,39 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(candidate["candidate_family"], "citation_or_siglum")
         self.assertEqual(candidate["proposed_target"], "ViśT")
         self.assertEqual(candidate["suggested_action"], "siglum_policy_review")
+
+    def test_tibetan_script_ng_witness_identifies_gang_and_dang(self) -> None:
+        line = "གང་དང་ཡང་ gan dan yani \\gan yan."
+        gan = diag.classify_tibetan_script_ng_token("gan", line)
+        dan = diag.classify_tibetan_script_ng_token("dan", line)
+
+        self.assertIsNotNone(gan)
+        self.assertIsNotNone(dan)
+        gan = cast(dict[str, str], gan)
+        dan = cast(dict[str, str], dan)
+        self.assertEqual(gan["proposed_target"], "gaṅ")
+        self.assertEqual(gan["tibetan_witness"], "གང")
+        self.assertEqual(dan["proposed_target"], "daṅ")
+        self.assertEqual(dan["tibetan_witness"], "དང")
+
+    def test_tibetan_script_ng_witness_handles_prefixed_t_and_suppresses_unwitnessed(self) -> None:
+        line = "གང་དང་གང་ gan dan gan Tgan Igan gan."
+        tgan = diag.classify_tibetan_script_ng_token("Tgan", line)
+        igan = diag.classify_tibetan_script_ng_token("Igan", line)
+
+        self.assertIsNotNone(tgan)
+        tgan = cast(dict[str, str], tgan)
+        self.assertEqual(tgan["proposed_target"], "Tgaṅ")
+        self.assertIsNotNone(igan)
+        igan = cast(dict[str, str], igan)
+        self.assertEqual(igan["proposed_target"], "Igaṅ")
+        self.assertIsNone(
+            diag.classify_tibetan_script_ng_token(
+                "ldan",
+                "ཆུ་དང་ལྡན་པ་ chu dan ldan pa",
+            )
+        )
+        self.assertIsNone(diag.classify_tibetan_script_ng_token("gan", "German gan dan without script"))
 
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")

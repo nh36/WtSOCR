@@ -39,6 +39,17 @@ SANSKRIT_CONTEXT_RE = re.compile(
 )
 SIGLUM_CONTEXT_RE = re.compile(r"(?:\(|\)|,|;|:|\bms\.|\bmss\.|\bsource\b|\bvol\.|\bp\.|\bfol\.|\bDagy\b|\bToh\b|\bMvy\b|\bLex\.)", re.IGNORECASE)
 SIGLUM_TOKEN_RE = re.compile(r"^[A-ZĀŚṢṬḌṆa-zāśṣṭḍṇ]{1,7}\$?[A-ZŚṢṬḌṆa-zāśṣṭḍṇ]{0,4}$")
+TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
+    "གང": "gaṅ",
+    "དང": "daṅ",
+    "ཡང": "yaṅ",
+    "ལྔ": "lṅa",
+    "སྣང": "snaṅ",
+    "སྔར": "sṅar",
+    "གཙང": "gtsaṅ",
+    "ནང": "naṅ",
+    "རང": "raṅ",
+}
 
 
 @dataclass(frozen=True)
@@ -217,6 +228,47 @@ def is_sanskrit_context(line: str) -> bool:
     if SANSKRIT_CONTEXT_RE.search(line):
         return True
     return bool(SANSKRIT_DIACRITIC_RE.search(line) and not is_tibetan_context(line))
+
+
+def latin_n_source_for_ng_target(target: str) -> str:
+    return target.replace("ṅ", "n").replace("Ṅ", "N")
+
+
+def candidate_target_for_ng_witness_token(token: str, target: str) -> str | None:
+    source = latin_n_source_for_ng_target(target)
+    if token == source:
+        return target
+    for prefix in ("T", "\\", "I"):
+        if token.startswith(prefix) and token[len(prefix) :] == source:
+            return f"{prefix}{target}"
+    return None
+
+
+def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str] | None:
+    clean = stripped_token(token)
+    if not clean or is_german_prose(context):
+        return None
+    if not TIBETAN_SCRIPT_RE.search(context):
+        return None
+    for tibetan_witness, target in TIBETAN_SCRIPT_NG_WITNESS_FORMS.items():
+        if tibetan_witness not in context:
+            continue
+        proposed = candidate_target_for_ng_witness_token(clean, target)
+        if proposed and proposed != clean:
+            return {
+                "candidate_family": "tibetan_script_ng_witness",
+                "proposed_target": proposed,
+                "tibetan_witness": tibetan_witness,
+                "evidence": "tibetan_script_witness",
+                "confidence": "high",
+                "suggested_action": "exact_promotion_candidate",
+                "score": "98",
+                "score_explanation": (
+                    "Latin n conflicts with same-line Tibetan-script ང witness; "
+                    "review exact rows rather than applying a broad n->ṅ rule."
+                ),
+            }
+    return None
 
 
 def ref(volume: str, page: str | int, line: str | int) -> str:
@@ -477,6 +529,41 @@ def build_orthography_candidates(run_dir: Path, volume: str, registry: dict[str,
     return rows
 
 
+def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[str, str]]:
+    corrected = find_one(run_dir, "_corrected_full.txt")
+    if not corrected:
+        return []
+    rows: list[dict[str, str]] = []
+    for page, line_no, line in iter_corrected_lines(corrected):
+        if not line:
+            continue
+        for token_index, match in enumerate(TOKEN_RE.finditer(line), start=1):
+            tok = stripped_token(match.group(0))
+            token_class = classify_tibetan_script_ng_token(tok, line)
+            if not token_class:
+                continue
+            rows.append(
+                {
+                    "source_queue": "corrected_text_scan",
+                    "volume": volume,
+                    "page": str(page),
+                    "line": str(line_no),
+                    "token_index": str(token_index),
+                    "source_token": tok,
+                    "proposed_target": token_class["proposed_target"],
+                    "tibetan_witness": token_class["tibetan_witness"],
+                    "candidate_family": token_class["candidate_family"],
+                    "context_excerpt": line,
+                    "evidence": token_class["evidence"],
+                    "confidence": token_class["confidence"],
+                    "suggested_action": token_class["suggested_action"],
+                    "score": token_class["score"],
+                    "score_explanation": token_class["score_explanation"],
+                }
+            )
+    return rows
+
+
 def build_sigla_candidates(run_dir: Path, volume: str, registry: dict[str, list[SiglumEntry]]) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     corrected = find_one(run_dir, "_corrected_full.txt")
@@ -722,6 +809,7 @@ def write_summary(out_dir: Path, counts: dict[str, int], family_rows: list[dict[
             "",
             "- `tibetan_google_candidate_readings.tsv` contains unresolved Google-witness disagreements that may deserve manual review.",
             "- `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.",
+            "- `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.",
             "- `sigla_variant_candidates.tsv` separates bibliography/siglum policy cases from Tibetan and Sanskrit normalisation.",
             "- `residual_sanskrit_low_confidence_candidates.tsv` is a small exploratory queue for Sanskrit-like residue outside the previous Sanskrit watch list.",
             "- Promotion should happen only in a later audited batch, using exact tokens and context gates.",
@@ -743,6 +831,7 @@ def main() -> None:
 
     google_rows: list[dict[str, str]] = []
     orthography_rows: list[dict[str, str]] = []
+    script_ng_rows: list[dict[str, str]] = []
     sigla_rows: list[dict[str, str]] = []
     sanskrit_rows: list[dict[str, str]] = []
     adoption_rows: list[dict[str, str]] = []
@@ -751,6 +840,7 @@ def main() -> None:
         volume = volume_label(run)
         google_rows.extend(build_google_candidates(run, volume, registry))
         orthography_rows.extend(build_orthography_candidates(run, volume, registry))
+        script_ng_rows.extend(build_script_ng_witness_candidates(run, volume))
         sigla_rows.extend(build_sigla_candidates(run, volume, registry))
         sanskrit_rows.extend(build_sanskrit_low_confidence(run, volume))
         adoption_rows.extend(build_adoption_patterns(run, volume))
@@ -785,6 +875,23 @@ def main() -> None:
         "token",
         "candidate_family",
         "proposed_target",
+        "context_excerpt",
+        "evidence",
+        "confidence",
+        "suggested_action",
+        "score",
+        "score_explanation",
+    ]
+    script_ng_fields = [
+        "source_queue",
+        "volume",
+        "page",
+        "line",
+        "token_index",
+        "source_token",
+        "proposed_target",
+        "tibetan_witness",
+        "candidate_family",
         "context_excerpt",
         "evidence",
         "confidence",
@@ -842,9 +949,10 @@ def main() -> None:
         "sample_contexts",
     ]
 
-    family_rows = build_variant_families(google_rows + orthography_rows + sigla_rows)
+    family_rows = build_variant_families(google_rows + orthography_rows + script_ng_rows + sigla_rows)
     write_tsv(out_dir / "tibetan_google_candidate_readings.tsv", google_rows, google_fields)
     write_tsv(out_dir / "tibetan_orthography_damage_candidates.tsv", orthography_rows, orthography_fields)
+    write_tsv(out_dir / "tibetan_script_ng_witness_candidates.tsv", script_ng_rows, script_ng_fields)
     write_tsv(out_dir / "sigla_variant_candidates.tsv", sigla_rows, sigla_fields)
     write_tsv(out_dir / "residual_sanskrit_low_confidence_candidates.tsv", sanskrit_rows, sanskrit_fields)
     write_tsv(out_dir / "tibetan_variant_families.tsv", family_rows, family_fields)
@@ -855,6 +963,7 @@ def main() -> None:
         {
             "tibetan_google_candidate_readings.tsv": len(google_rows),
             "tibetan_orthography_damage_candidates.tsv": len(orthography_rows),
+            "tibetan_script_ng_witness_candidates.tsv": len(script_ng_rows),
             "sigla_variant_candidates.tsv": len(sigla_rows),
             "residual_sanskrit_low_confidence_candidates.tsv": len(sanskrit_rows),
             "tibetan_variant_families.tsv": len(family_rows),

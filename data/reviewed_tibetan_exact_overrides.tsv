@@ -699,3 +699,6 @@ wts_9_m	232	28	4	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20
 wts_9_m	232	53	3	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
 wts_9_m	285	53	1	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
 wts_9_m	362	86	2	Tär	Tār	reviewed_siglum_exact_tar	user_reported_tar_siglum_20260628	Exact citation siglum normalization to Tār; no broad ä-to-ā rule
+wts_1_34	338	85	1	gan	gaṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_20260628	Exact page-line-token backed by Tibetan-script གང/ཡང; no broad n-to-ṅ rule
+wts_1_34	338	85	4	gan	gaṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_20260628	Exact page-line-token backed by Tibetan-script གང/ཡང; no broad n-to-ṅ rule
+wts_1_34	338	85	5	yan	yaṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_20260628	Exact page-line-token backed by Tibetan-script ཡང; no broad n-to-ṅ rule

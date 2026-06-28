@@ -1,0 +1,393 @@
+volume	page	line	token	candidate_family	proposed_target	context_excerpt	evidence	confidence	suggested_action	score	score_explanation
+wts_35_51	2	49	broń	loc_nasal_damage	broṅ	"broń ru ~ cig tu beng ""sie steckte es in das"	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	9	82	$	dollar_ś	ś	1: 388,3); Zan Zun gi yul nas ... $/07/ mehed	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	15	4	dnos	dngos_family	dṅos	"seermächtigung der Lehre"" (Tär 5,7); — dnos"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	34	70	dbañń	loc_nasal_damage	dbañṅ	"ces dbañń phyuggi bu Zig ""Kumära, Jan mukha,"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	37	81	$	dollar_ś	ś	"mlvi gnas $// ""am Ort des großen Dämons"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	41	66	$	dollar_ś	ś	~ dan gźan 0)7/$ tha mi dad par geig pa las	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	41	70	dnos	dngos_family	dṅos	"gi dnos po dan ""so etwas wie 'dieser ist mein"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	43	86	$	dollar_ś	ś	299,1); — ni dgra bo'i don $/7/?) — (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	43	93	dnos	dngos_family	dṅos	'brel ba yi / dnos po — la'an 'jug pa mthon	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	44	25	nań	loc_nasal_damage	naṅ	"Lex. rkyen bźťi nań tshan bdag po' rkyen ""ei~"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	45	29	dnos	dngos_family	dṅos	བདག་གེ་དངོས་པོ bdag gi dnos po.	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	45	37	dnos	dngos_family	dṅos	dnos po.	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	46	17	$	dollar_ś	ś	"169,3); bud ned /7$ ... khrus bya ba — cin ""ei-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	47	86	dnos	dngos_family	dṅos	"dnos por bcom ldan ""das kyis la lar gsuns pa"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	48	1	dnos	dngos_family	dṅos	བདག་ཉིད་ཀྱི་དངོས bdag ñid kyi dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	48	28	$	dollar_ś	ś	"ren"" (Hev 2.3.44); ses rab — rab tu /?$/7:705"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	48	71	dnos	dngos_family	dṅos	བདག་ཉིད་ཀྱི་དངོས་པོ་ bdag nid kyi dnos po Bez.	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	49	30	$	dollar_ś	ś	"kenntnis"" (ViśT 190,27); sans rgyas dan 0/7/$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	49	76	$	dollar_ś	ś	12,5); rgyal po de ni — Zig lags 4©$ gda' bas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	52	65	$	dollar_ś	ś	sum cu rtsa 0/7/$ kyi mi).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	54	12	$	dollar_ś	ś	"khons $// dgos pa ""sie sind durch den Haus-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	54	83	$	dollar_ś	ś	(Mil 87,4); — pa dan / $77/37 vje chen po'i lami	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	55	55	$	dollar_ś	ś	"so $07 gzim khani ""die jeweiligen Schlafräu-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	55	73	$	dollar_ś	ś	"gren dud 977/$ kyi rje dan — pa' ""er fun-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	58	45	$	dollar_ś	ś	"pa'i ""bras bu ni / 'di la thog mar — $ te"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	60	31	chuñń	loc_nasal_damage	chuñṅ	"Kälte[krankheit]"" (Siddh 5.132); chuñń ma"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	65	27	$	dollar_ś	ś	"sems kyis bdag gi senis ©$ so stam du ""der"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	68	16	gsuñń	loc_nasal_damage	gsuñṅ	bka' mchid dam pa ~ gsuñń du gsol (metr.)	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	72	67	$	dollar_ś	ś	"phag la byan nos $5// gsegs ""jener geistliche"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	73	39	nań	loc_nasal_damage	naṅ	(Vdk-M 115,22); lab 'chin hor zla ~i nań	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	75	54	$	dollar_ś	ś	"$// ... kun nas rol bar byed (metr.) ""indem cs"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	75	89	snañń	loc_nasal_damage	snañṅ	"snañń srid kba yo bsñom pa'i phyir (metr.) ""um"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	78	42	$	dollar_ś	ś	"gibt"" (Rgs 28.4b); — 9/7/$5 yod de / dur 'dzi"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	78	81	$	dollar_ś	ś	"— 0$//07/ khon la yod ""er hat Wohlergehen,"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	80	4	bźeńs	loc_nasal_damage	bźeṅs	"~ lha khan bźeńs ""dBas erbaute den Din-ri-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	84	18	$	dollar_ś	ś	"28,14); — gyi phyogs $// Zal bltas te sku ""das so"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	86	49	$	dollar_ś	ś	"rgyas te thar pa'am Zi ba la $ so ""Buddha,"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	88	56	$	dollar_ś	ś	བདེ་ལེགས་ bde legs Glück, Wohlergehen; — $//	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	91	38	$	dollar_ś	ś	བདེན་གཉིས bbden \bden pa 9/7/$.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	93	62	$	dollar_ś	ś	"mtshams $// ni (metr.) ""im südöstlichen, süd-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	95	37	dnos	dngos_family	dṅos	"wohlgesinnt sind"" (Mil 39,3); zani zin gi dnos"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	95	47	$	dollar_ś	ś	"pa = nor rdzas dan yod pa'i don ""1, $, v. Reich-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	96	46	dnos	dngos_family	dṅos	"~~ kyi dnos grub des thob 'gyur (metr.) ""da-"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	98	71	rgyañń	loc_nasal_damage	rgyañṅ	(Vdk-M 119,31); lug rdzis ~ rgyañń gsum du	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	99	3	$	dollar_ś	ś	5348); —s $¢ 7750 = kāndena mahim vilikhati	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	110	22	$	dollar_ś	ś	gnod sbyin de 0?7/$ gnod sbyin gZan gyi —r son	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	113	75	dnos	dngos_family	dṅos	"dnos 027/ — yi ger bkod te ""er legte den wah-"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	117	3	$	dollar_ś	ś	"durch"" ($750 150); dbus U'}khams / — gsum"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	122	14	goń	loc_nasal_damage	goṅ	"ten"" (MTH3/5/9 5); goń bkod drag Zan su'i"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	123	36	$	dollar_ś	ś	"14b3); klu'i ~$ Zal Zzal byas te ""mit dem Lehm"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	123	78	$	dollar_ś	ś	"khe ""die Scheide macht $ ru ru. Verehrung"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	124	22	$	dollar_ś	ś	(Dagy); 'dan sin = $90 7 phred gtan dan 'khor	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	125	22	ñañń	loc_nasal_damage	ñañṅ	"Lex. ñañń ser ram ńur ba'i min ""Bez. für gelbe"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	125	22	ńur	loc_nasal_damage	ṅur	"Lex. ñañń ser ram ńur ba'i min ""Bez. für gelbe"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	131	63	$	dollar_ś	ś	"Lex. 'dam smyug ma'i nani 07 $0/00 ""Löwe im"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	134	14	$	dollar_ś	ś	dag dan sa 077/$ las kyan rab — nas (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	136	21	$	dollar_ś	ś	"blon chun khri blon lṅa beu nas / de $??¿ ""das"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	137	85	$	dollar_ś	ś	und 24); po ti gtad nas — la //0$ ... gsuns	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	138	19	$	dollar_ś	ś	(brDa); — dag = — 9?7/$ Zes 0/7/5 tsbig (Dagy);	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	138	45	$	dollar_ś	ś	"35]) 1) ///$ — la skra dan kha spu ...yod.do ""auf"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	139	7	$	dollar_ś	ś	"sehen [könnten]"" (Gś-H 1043); sku ~$ su Zig"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	139	60	$	dollar_ś	ś	"nem Penis!"" (KunK 53,11); rje ~$ pho bran"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	139	69	$	dollar_ś	ś	"samgiti"" (Vdk-M 160,19); las kyi rjes $// 'bran)"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	145	14	dbañń	loc_nasal_damage	dbañṅ	dbaṅ po daṅ / lce'i dbaṅ po daṅ / lus kyi dbañń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	151	7	$	dollar_ś	ś	"21.250); — yul sa rnam 0/7/$ bśad (metr.) ""es"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	157	22	$	dollar_ś	ś	man po yis / g.yens bar 07///7 /$/?0 khams kyis mi	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	157	53	$	dollar_ś	ś	"tümmel, ¦, $. v. nicht einsam"" (Dagy)."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	157	69	$	dollar_ś	ś	"$/7:0/775 pha ma'i — dan (metr.) ""er soll al-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	166	17	gźunń	loc_nasal_damage	gźunṅ	1: 488,4); shar phan gźunń 7?/// chu ma rnams	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	168	81	$	dollar_ś	ś	~$ rta bsrags ldan broyan te phul ba la	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	172	15	$	dollar_ś	ś	(PT1287 488); ji $) ... sdo ba'i dgra rnams	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	173	50	gsań	loc_nasal_damage	gsaṅ	gsań snags ... log rtog gi dri ma mtha dag	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	174	5	$	dollar_ś	ś	$ དྲ་རན dh. Text, skt. Vinayaprabha-	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	182	66	$	dollar_ś	ś	"det"" (MTH3/5/20 13); ri klons $// / dur —"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	185	23	$	dollar_ś	ś	"gro ba'i don te don ba'i bya byed ""1. $, ¥ ge-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	186	35	dnos	dngos_family	dṅos	(MTH3/3/17 3); dgos pa'i dnos zog gaṅ yin ~	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	188	54	$	dollar_ś	ś	137,21); 'dod pa'i khanis $// 'dod chags ran	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	192	23	$	dollar_ś	ś	do bdag phan tshun 0/7/$ mos — gi bris	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	194	14	$	dollar_ś	ś	ñan par ~ 7/9$ byed /7// ba'i sgra las geig tu	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	197	32	gZuń	loc_nasal_damage	gZuṅ	"འདོདབློ་ dodblo Wunsch gZuń ma rñed pas ""da ich keinen Text gefun-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	202	86	$	dollar_ś	ś	"འདོམས་ ""doms pf. und fur. །0(///$ lehren, un-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	203	6	$	dollar_ś	ś	"dros $// — par byed pa nams chwn gis ""wir"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	205	29	$	dollar_ś	ś	Lex. $/7/ ba / 'jam pa / 'bol ba (Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	207	43	rgyañń	loc_nasal_damage	rgyañṅ	de'i nari nas Zugs mar ~ ba Zig rgyañń nas gda'	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	207	61	$	dollar_ś	ś	$77/77 la mda' phog pa'i sdug bsial — ba cig	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	211	34	$	dollar_ś	ś	"(Dagy); dus $// — = kale prechanti ""sie fragen"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	214	49	dań	loc_nasal_damage	daṅ	191,17); ba ~ gñan dań thag bsrins la (metr.)	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	223	15	$	dollar_ś	ś	"pa'i gla bdal gla ‰$ snaṅ ""Gebühr für den"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	224	55	thuñń	loc_nasal_damage	thuñṅ	"Lex. mjal rdum = mjal ba thuñń thun tsam ""so-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	236	77	$	dollar_ś	ś	རྡོ་རྗེ་རྒྱ་གྲམ་ rdo rje rga gram = $3©6]47©112(61)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	241	3	gtsañń	loc_nasal_damage	gtsañṅ	"Mönchsgelübde ab"" (Bu-śz 104,12); gtsañń po"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	241	64	$	dollar_ś	ś	"bsrun ma mo bcu 077/$ ""die zwölf Ma-mo, die"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	248	43	bzuñń	loc_nasal_damage	bzuñṅ	ba ran phyis rgya cher skyed nas ~ gis bzuñń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	250	4	$	dollar_ś	ś	yon tan gyi min); rdo yi $/7//? po = mar gad	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	255	32	dnos	dngos_family	dṅos	dman pa'i dnos dan bral 'gyur Zin / gyen du	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	256	42	$	dollar_ś	ś	(Śambh 26b1); kwa ye ran la $)7//) brtse —	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	257	46	$	dollar_ś	ś	Lex. Idab Idob = miien pa'ani $7/ ba (Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	263	7	tshañń	loc_nasal_damage	tshañṅ	"ender"" (Gar 208,2); khyim la ~ su / tshañń"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	265	65	$	dollar_ś	ś	"kyi rdzu 'phrul 07// {$ ) mthu las so ""wir über-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	267	50	$	dollar_ś	ś	drin la lan 07//( $) ~ pa'i bu ni brgya las ga' daṅ	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	269	46	byuñń	loc_nasal_damage	byuñṅ	"byuñń na ""wenn es Nachbarn gibt, die beson-"	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	273	11	$	dollar_ś	ś	"tshugs $// spyod spyod ""sie begingen so vie-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	274	45	sań	loc_nasal_damage	saṅ	"rgya'i ba sań lha khan bzens ""um zu süh-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	274	49	bźeńs	loc_nasal_damage	bźeṅs	"(r. bsags) su ... lba khani bźeńs ""um das Töten"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	281	73	dnos	dngos_family	dṅos	min); bsdu ba'i dnos pos sems can thams cad	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	284	25	$	dollar_ś	ś	"che Gedanken"" (gZer 591,2); $ pa dad par"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	285	85	$	dollar_ś	ś	khams kyi dpon khag gi nani nas sde che 0$	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	291	3	$	dollar_ś	ś	1. ༈$706.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	306	27	sñiń	loc_nasal_damage	sñiṅ	"sñiń po bzlas te ""so spreche man, klatsche in"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	318	2	dnos	dngos_family	dṅos	བསྡུ་དངོས bsdu dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	318	54	dnos	dngos_family	dṅos	dnos Grundlage des Gewin-	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	319	57	$	dollar_ś	ś	"nahm sie ein"" (im $46); dge 'dun tshe 'das"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	321	38	sańghāta	loc_nasal_damage	saṅghāta	"Lex. sańghāta (Ak 60.13); tsha dmyal Zig ""ei-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	341	32	$	dollar_ś	ś	"Mit Bettina Zeisler: ""rJe-blas, pha-los and Other Compounds with Suffix ~$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	342	16	$	dollar_ś	ś	"""Tibetan Offierals in the $""""-Century South-eastern Part of the Empire"","	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	357	81	$	dollar_ś	ś	(Mil 67,2 ); ci ste ña ma $ ~ phyis nas rin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	359	35	ñuñń	loc_nasal_damage	ñuñṅ	"pas / ~ ba ñuñń Zin ""weil er sie von Krankhei-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	365	27	dnos	dngos_family	dṅos	(Prav 85,20); — nad med lons pa yi / dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	369	38	$	dollar_ś	ś	11,25); khyed 9)7/$ /7/¢/ — / dgra bcom pa gsod	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	371	34	$	dollar_ś	ś	dra (brDa); na landa = $¢ dus chos sde chen	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	373	35	sñiń	loc_nasal_damage	sñiṅ	(MTH3/5/30 b6); grams sñiń la babs na no	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	378	75	$	dollar_ś	ś	"gion nu ma ~$ bkal ba'i skud pas ""mit ci- ནག་མོ་ཁྲག་འཇག་ nag mo khrag 779 npr. eine"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	383	3	$	dollar_ś	ś	Lex. sin ~$ mched pa (Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	383	70	$	dollar_ś	ś	"schaft"" (Nel 237); 9/7/$ kyis yer pa nas 'dil"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	384	65	$	dollar_ś	ś	"(KunK 53,12); mi bren grog $/0/? ""dra ba'i — /"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	388	69	$	dollar_ś	ś	/7//7 fa khrag rus pa — rnams kyis yons $// gani	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	389	12	khañń	loc_nasal_damage	khañṅ	rgyal mo daṅ / slas dan / ~ ma mchis pa'i khañń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	394	12	$	dollar_ś	ś	(PT1287 195); de dran $7:0/7 rnams kyi —	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	394	30	$	dollar_ś	ś	gnas mchog fl śu //7/?/ / yul ni so 97/$ — gtogs	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	399	58	nań	loc_nasal_damage	naṅ	Lex. nań byan = khon du chud pa'am yaṅ dag	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	400	73	$	dollar_ś	ś	"Lex. — 0/7/$5 btind ni in gäis 'thud pa ""zwei"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	401	18	nań	loc_nasal_damage	naṅ	nań rme Sor ba'i sdig bsegs (r. bsags) su	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	407	42	$	dollar_ś	ś	"$77//7 la 'dus pa'i — (metr.) ""das Herz wurde"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	407	54	$	dollar_ś	ś	Krankheiten, vgl. SCHUH 2012: 1441 $. v. nad	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	409	10	bcań	loc_nasal_damage	bcaṅ	gźug pa'i phyir mchan khug bcań bar bya'o	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	421	42	$	dollar_ś	ś	(Dagy). ka' säin po, nam mkha' $/7//)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	438	38	dnos	dngos_family	dṅos	63,13); gun sa dga(') ldan pho bran — ... dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	442	75	$	dollar_ś	ś	(TsonNth 6,2433); kha zer la ?/9$ — 'gro ma	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	445	78	$	dollar_ś	ś	"ram pa sna tshogs $// kun du snani ""der Re-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	446	76	dgońs	loc_nasal_damage	dgoṅs	kyi dgońs pa yin kyan don la thob pa gźir	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	450	2	$	dollar_ś	ś	Lex. — chos drug = ye ©$ kyi mkha' 'gro ma —	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	459	68	$	dollar_ś	ś	4©$ rab pha rol phyin pa thos nas mi — ba	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	461	60	$	dollar_ś	ś	/$ ... yon tan geig rgyas brjod par ga la ~	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	462	53	brkyañń	loc_nasal_damage	brkyañṅ	"Nacken schlagen?"" (K6 tha 21877); brkyañń"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	466	7	bźeńs	loc_nasal_damage	bźeṅs	"khan bźeńs su gsol lo ""er gelobte als Stütze"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	468	58	$	dollar_ś	ś	pha ma 07/$ kyis bram ze'i khye'u pani nas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	470	66	$	dollar_ś	ś	"sie stimmig"" (Ppu 75b); rjes $// yi ran (w.l."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	472	80	$	dollar_ś	ś	"thams cad reg pa 1. $, ¥, berühren"" (brDa);"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	475	35	dnos	dngos_family	dṅos	"dnos po ""benötigte Gegenstände"" (brDa);"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	475	36	dnos	dngos_family	dṅos	"mkho ba'i dnos po dan dkor ""Gebrauchsge-"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	476	64	dnos	dngos_family	dṅos	Lex. rdzas dnos po la'an (brDa).	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	482	35	dnos	dngos_family	dṅos	Lex. rdzas kyi dnos po (brDa); gter gyi dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	482	35	dnos	dngos_family	dṅos	Lex. rdzas kyi dnos po (brDa); gter gyi dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	486	65	$	dollar_ś	ś	"ston rtsan gyis / g.yug du — ///?$ btab ""sTon-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	492	34	$	dollar_ś	ś	ran la sgos su sku 'gag 0079 ... $006 ... gan no	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	505	44	$	dollar_ś	ś	གནའ་བའ་སྲལ ggra / $༡⁄0	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	507	25	bźeńs	loc_nasal_damage	bźeṅs	"rten re bźeńs par mdzad ""sie ließen jeweils an"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	512	52	$	dollar_ś	ś	"gehalten werden"" (MTH3/5/19 15); 9)7/$ nas"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	516	54	$	dollar_ś	ś	thabs $// — pa ma yin nam / tha dad du —	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	517	49	$	dollar_ś	ś	231a7); sans rgyas $/0// la kun tu khebs par ~	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	517	73	$	dollar_ś	ś	daṅ bral bar — pas ///$ kyi gnas skabs 'di 'drar	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	519	48	$	dollar_ś	ś	9292); bran khan ni 'dug $¢ khani pa'am ~	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	520	14	$	dollar_ś	ś	ba dan Ins kyi — ni ///$ 7705 pa spanis kyan	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	520	21	$	dollar_ś	ś	/70$ spyod spans Ryan shon goms kyi dban gis	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	522	53	$	dollar_ś	ś	"folgende Frage"" (Bu 805,4); 0$//77 rgyan ..."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	531	41	dań	loc_nasal_damage	daṅ	kbri do re smyah zun dań / ~ sña do re	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	532	33	$	dollar_ś	ś	"ba = 'gyod pa mi bkur ba'am mi ©$ pa ""kein"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	532	81	$	dollar_ś	ś	"tsban Zig la 2//9$ nas — du by ""|dieser"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	534	7	$	dollar_ś	ś	"lichem entstehen"" (Hev 2.2.12a); ///$ skyem"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	534	93	$	dollar_ś	ś	(/7/// chn chan snod 0/7/$ 'thuns pas — med	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	553	22	dnos	dngos_family	dṅos	Lex. (777 ba — pa ni dri ba dnos su dran por mi	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	555	25	$	dollar_ś	ś	Lex. kun mkhyen ye ©$ te sans rgyas kho na	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	555	39	kyań	loc_nasal_damage	kyaṅ	chos klon chen po mtshoms bźed skad cig kyań	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	557	14	$	dollar_ś	ś	(Ahs 1.1.39c); rlun byun — ma ///$ khrag	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	560	30	dgoñńs	loc_nasal_damage	dgoñṅs	"geburten gibt es nicht"" (KunK 24,30); dgoñńs"	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	564	27	$	dollar_ś	ś	dam chos dan sgrub gsen 0)7/$5 / tshig dan —r	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	568	54	$	dollar_ś	ś	skad cig geig daṅ ldan pa'i ©$ rab kyis ~ thob	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	569	74	$	dollar_ś	ś	"Schaden bewirkt"" (Käsy 147,15); $/7/)7 rje rje"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	577	70	$	dollar_ś	ś	"ion mons — par ©$ byas nas (metr.) ""man"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	578	82	$	dollar_ś	ś	dankengänge; rnam rtog med pa' sems kyis $//	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	581	29	$	dollar_ś	ś	"Fa ri am rmam par bkram pa = vipra sku ///$ gser gyi mdog tat — (metr.) ""[der Bud-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	582	4	$	dollar_ś	ś	777 ༡// ///$ ni 'dar gyur cin / spu yan — bar ''gyur	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	591	56	$	dollar_ś	ś	ran ran 777? rnams sna tshogs $// / byan chub —r	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	594	75	dnos	dngos_family	dṅos	rig med / dnos po med cin kun gZi med (metr.)	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	595	79	$	dollar_ś	ś	du $ ~ nas gñis su med chos spyod (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	596	23	dnos	dngos_family	dṅos	tsam gyis / sgrub pos dnos grub thob 'gyur ba	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	596	65	$	dollar_ś	ś	"bco brgyad rnams $// bsad (metr.) ""Sinnesor-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	596	70	$	dollar_ś	ś	(Hev 2.3.35); mig gi dbani po'i rnam ©$ ni /	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	598	32	$	dollar_ś	ś	"chend verhalten"" (Rgs 1.24b); gZun ///0$ la / ji"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	601	27	$	dollar_ś	ś	Lex. //$ (brDa, Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	602	19	dnos	dngos_family	dṅos	dnos gZi 2 gzugs med khams kyi 0/7/5 pa'i	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	603	40	$	dollar_ś	ś	རྣམས་ 17774/77$	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	606	36	$	dollar_ś	ś	gnas རོ 40$ pa ran bzin du m gnas pa lta bu	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	613	53	$	dollar_ś	ś	"~$ bud = — khun gis phu ""debs pa ""durch die"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	618	41	$	dollar_ś	ś	sna gdon dan / gan gi rtsub (r. gtsug) mi $7/7/?	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	621	68	$	dollar_ś	ś	dass.; yo byad mkho dgu — $// in allem Nöui-	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	630	83	rñińn	loc_nasal_damage	rñiṅn	"rgya'i yig rñińn dag na ~ ""es steht in alten"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	632	13	dnos	dngos_family	dṅos	"du dnos su ~ ño ""Wunder erscheinen offen-"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	634	87	snañń	loc_nasal_damage	snañṅ	"Leerheit decken sich"" (gZi 4: 276,1); snañń Ins"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	637	27	yañń	loc_nasal_damage	yañṅ	"gdul bya'i ~ Itar yañń rje mi la'i thugs sras ""[er"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	638	8	bźeńs	loc_nasal_damage	bźeṅs	"kyi lha khani bźeńs ""Lan-'gro dKon-mchog"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	638	24	$	dollar_ś	ś	snan ©$ (r. Sas) = tshe 'di'i snani ba'i cha śas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	638	50	$	dollar_ś	ś	$?7777 sel khrab gyon npr. ein	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	638	62	dnos	dngos_family	dṅos	283b6); phyi ~~ kyi dnos po thanis cad dpe char	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	641	57	bzuñń	loc_nasal_damage	bzuñṅ	"lag pas chos gos ~ bzuñń nas ""sie halten mit der"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	646	36	$	dollar_ś	ś	Lex. rtswa $/?0 tshod cig sne'u (brDa); sne'n'i	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	646	45	$	dollar_ś	ś	"$ ༤༨༤ . > """	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	650	2	$	dollar_ś	ś	སྣད་ $//0	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	650	51	$	dollar_ś	ś	སྣད་ $/70/0	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	654	59	$	dollar_ś	ś	"$// rdzogs pa = paripāmasamkalpah ""jemand,"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	655	12	$	dollar_ś	ś	"mchi mas — pa'i $?7//7 gis ...smras pa ""mit von"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	660	12	$	dollar_ś	ś	345,6); phral khrims gtams sgrags pa'i ///$ sten	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	664	82	$	dollar_ś	ś	"~$ bdugs ma thag tn ""kaum daß er es mit"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	666	44	$	dollar_ś	ś	sum beu so 977/$5 nan nas mchog tu gyur	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	668	71	źiń	loc_nasal_damage	źiṅ	"źiń ""der Stengel schrumpft, schrumpft voll-"	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	668	91	$	dollar_ś	ś	21,29); ma sad ~$ kyan rnam par rig pa	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	669	6	dnos	dngos_family	dṅos	"dnos grub med (metr.) ""es gibt keinen Er-"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	669	14	$	dollar_ś	ś	"~$ grub nas ""nachdem er Vaisravana und"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	669	59	$	dollar_ś	ś	"li mkar pha ... $[i]n san kyi inkar — ""Bür-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	669	63	$	dollar_ś	ś	ga 277b2); kun dga'i ra ba — rnams la $7)/)7/5	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	670	37	$	dollar_ś	ś	"sicht bekamen"" (MTH3/5/ 10 45); 'di — 0/7/$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	678	24	$	dollar_ś	ś	gris kyis / glan chen — gos $// 'dzin (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	678	89	$	dollar_ś	ś	mdog gser (༣: 1. add. midog) 'dra ba = $/7~	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	679	60	$	dollar_ś	ś	"de dag 9/7/$ kyi — du rgyal bu ni (metr.) ""der"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	680	78	$	dollar_ś	ś	Lex. ///$ — dam mkiyind tsbad (brDa).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	689	21	$	dollar_ś	ś	pad ma ra ga dan / rdo'i $7/7? po la sogs pas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	689	69	gsuṅń	loc_nasal_damage	gsuṅṅ	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	690	45	sñiń	loc_nasal_damage	sñiṅ	པདྨའི་སྙིང་པོ་ padma''i sñiń po npr. cin Buddha.	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	692	72	$rT	dollar_ś	śrT	(Bu-śz 104,12); — Säkya $rT la sogs pa mikhas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	696	53	$	dollar_ś	ś	8/$ ... gro ba de dag sdug bsral thob (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	703	29	bźeńs	loc_nasal_damage	bźeṅs	"gis sku 'dra'i ~ man tsam bźeńs rjes ""nach-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	706	92	dnos	dngos_family	dṅos	"rgan po' dnos —s yid byun ste ""er ist infol-"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	708	72	$	dollar_ś	ś	"nimmt"" (MTH3/5/31 1); ph po so (r. ($)"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	711	38	brañń	loc_nasal_damage	brañṅ	"Lex. ba gam ste pho brañń gi sdins cha ""ba gam:"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	714	70	$	dollar_ś	ś	stens $// / — dan rdo rje dbyins kyi gtsug lag	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	718	25	$	dollar_ś	ś	"(ThK 2: 523,1); gzugs sku — ""tshbo 070$ (r."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	719	64	spañń	loc_nasal_damage	spañṅ	(Tär I 37,19); spañń po (r. ~ po) mdzod cig Jg	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	720	24	$	dollar_ś	ś	"unermeßlich sind"" (Padm 4b3); phug ... — $//"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	720	68	$	dollar_ś	ś	skye bo blo — ba la / 'dina bde skyiid 07/$ yod	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	734	37	$	dollar_ś	ś	mkhan po Zus te bsien par rdzogs te dge $/0/)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	737	33	$	dollar_ś	ś	rgyal rtse yon $76/7 {5} du ~ gźis nas 'bru phul	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	737	37	'dpuṅń	loc_nasal_damage	'dpuṅṅ	དཔུང་ 'dpuṅń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	743	22	bźeńs	loc_nasal_damage	bźeṅs	lag (khan) ... slad kyis gtsug lag khaṅ bźeńs	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	743	59	gtsań	loc_nasal_damage	gtsaṅ	"Beispiel nimmt"" (KunK 16,12); gtsań gtsaṅ"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	750	70	$	dollar_ś	ś	"Wa'-tsan-kun führte sie an"" ($8212 4); 'di"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	754	24	$	dollar_ś	ś	"zahlen"" (Ini $51); stsan dphya' nas dan /"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	760	10	$	dollar_ś	ś	— gitshes brgyad skar ma rgyal gyi dus $// sku	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	762	10	$	dollar_ś	ś	དཔྲལ་བ་ dpralba Kurzf. dpral $ (171); ~~ ?/ /)/7/09$	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	762	10	$	dollar_ś	ś	དཔྲལ་བ་ dpralba Kurzf. dpral $ (171); ~~ ?/ /)/7/09$	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	763	4	gnañń	loc_nasal_damage	gnañṅ	ci thabs kyis kyan myi ~ myi bźes par gnañń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	764	31	$	dollar_ś	ś	"nesen"" (In1 $32); de'' mthus khams kyi royal"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	765	31	$	dollar_ś	ś	$¢ dge'i mira' 'og gi char ... — ka thog pa ...	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	770	30	$	dollar_ś	ś	Lex. /// /' 77 /$/ / be do / thog dkar mgo deu	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	771	39	l'spoñń	loc_nasal_damage	l'spoñṅ	སྤངས་ 'spaṅs pf. zu l'spoñń.	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	771	72	dnos	dngos_family	dṅos	"ten] gehalten"" (Suv 27,7); drros po dan dnos"	language_knowledge	medium	review	70	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	782	38	$	dollar_ś	ś	di lta du 'di lta ste ... rdo'i $?7//7 po dan / —	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	782	64	$	dollar_ś	ś	ston ye ses yon tan 0/7/$ kyis mor luns bzun ste	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	783	72	dnos	dngos_family	dṅos	— pa' dnos po med pa'am phun por gyur pa	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	784	70	$	dollar_ś	ś	phyogs de'i mi ~ bdun thog brdib(s) nas $ ba	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	789	72	dnos	dngos_family	dṅos	Lex. khan pa'i bzo dbyibs Itar brtsigs pa'i dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	796	38	$	dollar_ś	ś	"Lex. pa = gnan ba'i don la'ani ""auch [. $. v."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	797	13	$	dollar_ś	ś	po'i dbus su mi 7/9$5 — pa yis / smra ba'i	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	807	1	dnos	dngos_family	dṅos	སྨད་དངོས་ spyad dnos	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	809	55	phyuñń	loc_nasal_damage	phyuñṅ	"pa'i sugs kyi ~ phyuñń nas ""aus der Kraft des"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	810	84	$	dollar_ś	ś	"0/7/$ kyi rund — ""Dombhi-Heruka brachte"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	815	46	$	dollar_ś	ś	bcom ldan ma / Zal gcig phyag 0/7/$ — (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	816	66	gźunń	loc_nasal_damage	gźunṅ	"nen gering"" (""Dzam 38,12); mdo snags gźunń"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	817	22	brań	loc_nasal_damage	braṅ	bäugs pa'i pho brań sa ~r ñi Su rtsa geig bäugs	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	817	32	brdzañńs	loc_nasal_damage	brdzañṅs	pa gdan dren pa la sa skya pa ~s brdzañńs	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	820	61	$	dollar_ś	ś	Lex. $/07//'/ '/)/// ba'am spyir thob tu beug pa	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	820	70	$	dollar_ś	ś	"$0?/ spyi dam re sprad nas ""den dud-chun[-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	826	11	gźuń	loc_nasal_damage	gźuṅ	སྤྱི་གཞུང་ spyi gźuń Regierung.	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	827	5	byuñń	loc_nasal_damage	byuñṅ	ko ba bin ba'i sin po la sprin (r. ~) byuñń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	828	50	$	dollar_ś	ś	༄ DDInG $, VII).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	829	8	byuñń	loc_nasal_damage	byuñṅ	"ma chod byuñń ""erstens war ich unsicher, wie"	orthography_scan	low	review	25	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	831	20	$	dollar_ś	ś	"pe der Weisheit!"" (K95 172a1); de ///$ kyi las"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	831	65	byuñń	loc_nasal_damage	byuñṅ	pho mo'i dban po dod de 'khrig pa ~ pa byuñń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	833	57	$	dollar_ś	ś	"སཿ $ Vaters"" (Nel 666"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	841	23	$	dollar_ś	ś	"khag so $0 7 spyi dam re — nas ""den als Diener"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	842	25	'$	dollar_ś	'ś	སྤྲས་ spras pf. zu ། '$/077/ schmücken, verzieren;	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	846	67	$	dollar_ś	ś	Maray $/?77// gi myu gu Bez. für Regen	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	846	74	$	dollar_ś	ś	— ... $?7/? mo ma la ya can 07/7 khyim thab	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	849	37	$	dollar_ś	ś	1464 $. v. sprin las rnam rgyal.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	851	67	sań	loc_nasal_damage	saṅ	gtsug lag khani bźa sań gre ma na spruld pa g	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	854	64	$	dollar_ś	ś	Paar, wird der Sohn Ye-śes $11111-])(), eine In-	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	855	58	dnos	dngos_family	dṅos	la la dnos la la — am thugs rgyud geig par wei	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	857	72	$	dollar_ś	ś	"verbreitend"" (Vmst 73b); 50///$ ma — ༡༩༩"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	860	5	$	dollar_ś	ś	"""SCHRS MO la an (b Da) ; $ gi: , j"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	862	54	$	dollar_ś	ś	"'phro bar chug cig ""setz ©$ fort!"""	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	867	71	gtsań	loc_nasal_damage	gtsaṅ	gtsań po de la ñes gyod med par ~r thon par	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	868	32	$	dollar_ś	ś	yan lag brgyad pa' $/7/)7 po bsdus pa slob	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	869	64	$	dollar_ś	ś	myan tsen cun dan / — po mu gsen /7/$5 m	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	872	13	$	dollar_ś	ś	(#Z41-Sn 100,33); — 0/7/$5 kyi dkar dinar yin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	885	16	snañń	loc_nasal_damage	snañṅ	"tshe Zes pa'an snañń ""Behälter phad go oder Be-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	890	5	$	dollar_ś	ś	"khyu ba 077/$ ... — snad cin smas pa ""zwei"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	890	74	$	dollar_ś	ś	Ze sdan la 7//9$ par gzigs = anyonyavivāda-	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	892	68	$	dollar_ś	ś	"ma ben 0/7/$ thog smad beu 0/7/5 — (metr.) ""er"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	895	55	źiń	loc_nasal_damage	źiṅ	pa rgyus pas sbrel ba ~ (b)rkyans źiń tshur	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	896	15	'gyañńs	loc_nasal_damage	'gyañṅs	ཕར་འགྱང་ phar 'gaṅ auch phar 'gyañńs Auf-	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	900	25	$	dollar_ś	ś	85,11); — gyis ma 4©$ 'ga' Zig gis śes na'an ...	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	901	60	$	dollar_ś	ś	Lex. phas bsu (v.l. $//) ba = pratyudyanam	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	904	14	duń	loc_nasal_damage	duṅ	"duń du rde'n ljañ gu'am / ser po ... blugs ""in"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	907	80	$	dollar_ś	ś	"$77//7 nas 'dud (metr.) ""ich verneige mich von"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	908	69	gtsañń	loc_nasal_damage	gtsañṅ	"bzo bkod gad gtsañń bgyis ""erledigt die not-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	912	44	$	dollar_ś	ś	Lex. ///$ kyi min (brDa, Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	914	34	$	dollar_ś	ś	(Scdr 216,4); $/0//?/ rgyan ... nor bu dan beas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	914	73	$	dollar_ś	ś	de bag yans su ($)00 — /)(/7 phru ma brdzi	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	915	9	gtsań	loc_nasal_damage	gtsaṅ	~ skyems daṅ bsos gtsań gis / kon tse 'dod	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	918	57	$	dollar_ś	ś	pbun sum tshogs 2 bkra $ pa lta bu (Dagy).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	935	45	$	dollar_ś	ś	ru / {?}//77$ chun tsbad las ma phod (metr.)	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	937	19	$	dollar_ś	ś	rga yan chad ji la man chad $/0// mkhar gyi	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	941	33	brań	loc_nasal_damage	braṅ	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	949	78	$	dollar_ś	ś	"an ihn nicht heran"" (Rgs 5.9d); rjes $// mthun"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	955	36	$	dollar_ś	ś	"meinem Penis"" (KunK 33,12); chos royal 07//$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	959	41	$	dollar_ś	ś	171,21); bstan pa'i ?7)) Ings Sar phyogs $// yod	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	960	50	$	dollar_ś	ś	"$07/?) thag fie / bkol bde / — dmar ""sie sind"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	962	70	$	dollar_ś	ś	"Sucandra!"" (Śambh 4462); ~$ gsuns pa'igsan"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	967	16	kyañń	loc_nasal_damage	kyañṅ	'tshol na / dud de ni pyag kyañń 'tshal (metr.)	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	967	53	$	dollar_ś	ś	"einzigartigen Arzt"" (Ahs 1.1.1d); phyag ""$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	969	66	dnos	dngos_family	dṅos	"dnos byon rmam pas — gnani ba la ""sprul sku"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	972	4	$	dollar_ś	ś	bdag gis phyag ma (v.). —) blans nas $// ...	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	974	52	$	dollar_ś	ś	Lex. gos kyi bye brag (brDa); phyani [$ = gos	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	975	18	$	dollar_ś	ś	2: 353,3); Zal dkar (7//($) rta kha phyir bskor	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	978	9	dnos	dngos_family	dṅos	(Mvup 3.83a); — sun srid kyi dnos po thams	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	980	38	$	dollar_ś	ś	de 9/7/$ phyi de nin par 'phral (r. dpral) 775	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	982	44	nań	loc_nasal_damage	naṅ	nen überall, für phyi nań gaṅ sar.	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	987	17	$	dollar_ś	ś	de yi slob ma tshul /]/))77//$ 'bum — ste ... sgo	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	987	42	$	dollar_ś	ś	"196d); ""dir bdag mi yi ///$ thob nas / —r smon"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	988	25	$	dollar_ś	ś	Lex. — Sos = $?7/7 ma ma yin rjes ma'ami phyi	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	989	50	$	dollar_ś	ś	"Lex. $/)?7/77 po'am phyir /7/// phyin pa ""Better"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	991	59	$	dollar_ś	ś	"ben!"" (Rgs 3 1. 100) war du yons $// tshol la —"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	991	83	dnos	dngos_family	dṅos	"Garten weilt"" (Megh 70); — gyits} dnos po"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	992	32	$	dollar_ś	ś	— dbyin cir 07///7 {$ ) sa mchogt{s} nas mthar	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	998	16	$	dollar_ś	ś	DENE phyin sari Nchin $:7/7.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	998	33	$	dollar_ś	ś	"ces pa'i don te ""dto rgyab mi phyid sbyon: i. $, v."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	999	54	$	dollar_ś	ś	"men war"" (Debm 2235); bred nas nags $// —"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1001	71	$	dollar_ś	ś	"rgyani $7777 pa yin no ""mit der vollkommenen"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1004	4	$	dollar_ś	ś	— yani / sems can dinyal ba rnamis $// ... gnas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1006	5	$	dollar_ś	ś	Zo $ chen po phul ba'i ~ / bka drin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1007	36	'gyañńs	loc_nasal_damage	'gyañṅs	"Lex. phar 'gyañńs su btan ba ""hinausgescho-"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1007	72	luñń	loc_nasal_damage	luñṅ	"50,13); ~ zlog pa'i luñń rig mtshon cha dan ""die"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1019	20	phyuñń	loc_nasal_damage	phyuñṅ	mi Zig kha drag po Zig gi sar yul phyuñń nas 'gro	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1023	35	phyuñń	loc_nasal_damage	phyuñṅ	phyun, phyun phyuñń.	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1026	13	$	dollar_ś	ś	"rgyal sar — ba'i dus tsbod $77/75 sam ""ist es"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1027	82	$	dollar_ś	ś	yani rus pa' dra ba las / ©$ rab mtshon gyis	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1034	26	$	dollar_ś	ś	"open"" (ebd. $, v. phyo sans)."	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1034	42	$	dollar_ś	ś	526); dpe geig gtsigs sa ma dan — $// ... bäag	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1034	80	$	dollar_ś	ś	"$// rkyan phyag ston mdzad ""er vollzog tau-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1034	84	$	dollar_ś	ś	"pa mams la gñis — $// ja chan bsams nas ""den"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1037	5	$	dollar_ś	ś	"nag — $// ..thub bstan rnam rgyal ""in der Re-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1037	12	$	dollar_ś	ś	(MTH3/5/17 12); $)7/ mo ru 'tsbams ~ su sku	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1038	49	$	dollar_ś	ś	ཕྱོགས་ '//73'09$	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1041	38	$	dollar_ś	ś	"Lex. phyogs $7//777 byed ñi ma'i min ""Bez. für"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1046	25	$	dollar_ś	ś	lo ?10///$ bsres pa Niog ༡700) po dag yod pa la	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1048	57	nań	loc_nasal_damage	naṅ	phyi nań snod bend gaṅ yan ma bsrid pa'i shon	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1049	20	$	dollar_ś	ś	$?/:077 Zen (v. gen) balthod can gyis phya dan emäx: pl 7: 0707) Lohan ofen 2	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1049	53	$	dollar_ś	ś	"med"" (gZer 755,5); 07/5 bsos pa ///($?) — dmu"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1054	84	$	dollar_ś	ś	"rtsa sum ci rtsa 0/7/$ po 'di mans ""abhedyi,"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1055	75	$	dollar_ś	ś	(ThK 2: 533,6); bskal chen bye ba $/0/? — dpag	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1056	35	$	dollar_ś	ś	83b7); ston gsum breya — ben yi rdul $/70/	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1061	89	$	dollar_ś	ś	8); dge rgyim Ü}phran bu las chos 027/$ sogs	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1064	8	$	dollar_ś	ś	"tsbon — re $/?/7 thog 'gro [lan 'dug pafs] ""von"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1064	16	$	dollar_ś	ś	2010: 143 $. ¥, pratse).	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1064	26	dnos	dngos_family	dṅos	"65,16); dnos po — de rnams thugs kyis btani ""er"	language_knowledge	high	exact_promotion_candidate	95	Exact Tibetan lexical repair; Google dños target is rejected.
+wts_35_51	1066	61	gañń	loc_nasal_damage	gañṅ	kbyad par du chos gañń la gaṅ gi bka' babs dan	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1068	30	$	dollar_ś	ś	Otsban ra' stani (r. stern) die... $/77 /?0 7 kba gru	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1069	46	$	dollar_ś	ś	ma mo ni khra $ 'tshal / 'ur prug ni thali	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1074	14	$	dollar_ś	ś	"khrims $?7/?? po ""was die Kette seiner Inkarna-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1077	72	$	dollar_ś	ś	Ibo phyogs ryal po — / $/0// indog ser po ... ral	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1078	45	$	dollar_ś	ś	— thugs rje chen pos $7//? rje'Tthugs kyis mthon	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1082	81	$	dollar_ś	ś	འཕགས་ཡུལ་ ''phags Kurzf. für '/)/?(70$6 pa'	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1084	7	loñń	loc_nasal_damage	loñṅ	"ihn töten"" (PT1287 511); pho loñń ... thag gus"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1084	20	$	dollar_ś	ś	"thog gis (977 phyogs $// — bas ""indem man"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1085	45	guñń	loc_nasal_damage	guñṅ	"lde bla guñń rgyal ni ti tse ganis rum du ""phanste"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1089	38	chuń	loc_nasal_damage	chuṅ	phar po und 'phar chuń ñu magisch erzeugt	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1093	35	$	dollar_ś	ś	2. addieren; vgl Schun 2012: 1477, $. v. phul	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1095	24	phuń	loc_nasal_damage	phuṅ	"phuń ~ ba ñid du bya (metr.) ""wenn sie sich"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1096	46	$	dollar_ś	ś	kyan Idem rgyan nem nur yid 0/7/$ man po	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1101	12	mtshañń	loc_nasal_damage	mtshañṅ	"Lex. tshanis ra (r. mtshañń ra) ""Gesäß"" (Dagy);"	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1101	50	$	dollar_ś	ś	"$// myani Zes pa la rgyal sa — pa yin no ""da-"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1101	52	$	dollar_ś	ś	(Debm 1233); a khu shar gyi khani 07/$ — pa'i	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1102	75	źiń	loc_nasal_damage	źiṅ	khye'n ...chos gos kyi grwa nas 'jus te de ~ źiń	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1107	20	$	dollar_ś	ś	Scnun 2012: 1477 $. ¥, 'phyis pa.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1107	28	$	dollar_ś	ś	"Lex. — pa = nor ba'i don bya byed ""1. $, v. sich"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1108	8	goń	loc_nasal_damage	goṅ	220); goń po (Mim2 220); rkan pa gñis khums	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1108	50	$	dollar_ś	ś	"bu ""wie 1, $, ¥, sich bewegen"" (Dagy); — ba"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1112	35	$	dollar_ś	ś	"$00)/5 dga’ la nam phug ph ""diese Reden"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1114	58	$	dollar_ś	ś	de Itar 'gren dud 0/7/$ la / — gis kyi bka' drin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1115	1	$	dollar_ś	ś	"འཕྲས་ ""//7¢/$"	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1115	14	rkañń	loc_nasal_damage	rkañṅ	Lex. phras te ñal, ~ te ñal 2 rkañń lag brkyans	orthography_scan	medium	review	55	LOC-style acute-n appears in a Tibetan transliteration context.
+wts_35_51	1115	24	$	dollar_ś	ś	1478 $. ¥, 'phri ba.	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_35_51	1126	35	$	dollar_ś	ś	ldan 'das kyi spyan $?7/7)ˆ dam tshig bcas nas	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.

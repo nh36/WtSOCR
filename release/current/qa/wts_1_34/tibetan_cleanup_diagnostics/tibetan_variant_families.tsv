@@ -1,0 +1,770 @@
+family_key	candidate_family	source_tokens	proposed_targets	occurrence_count	volume_count	sample_refs	sample_contexts	evidence_summary	confidence_summary	suggested_action
+dollar_ś:s:s	dollar_ś	$ (902)	ś (902)	902	1	wts_1_34:1108:101; wts_1_34:1145:38; wts_1_34:12:42; wts_1_34:14:83; wts_1_34:18:78	Lex. //¿$ tha dad la ’du ses gcig pa dag dper || 10.35d); ri $; sar bas — med pa / in mtshan || Akhri 7 709$ ldan nams brgyud kyi rnam thar rin chen phrin |[!] ba. Ed.: A-tri thun-tsham 1967,	orthography_scan:900, google_unresolved_plus_orthography_scan:2	medium:902	review
+dngos_family:dnos:dṅos	dngos_family	dnos (232)	dṅos (232)	232	1	wts_1_34:107:52; wts_1_34:110:130; wts_1_34:147:135; wts_1_34:156:68; wts_1_34:170:15	Hevajra“ (Hev 1.2.3); kye yi rdo rje’i dnos || lus dnos bar la — zer „[den Text] vom Anfang || 404,3); dnos 92: mdo don yı ger — te tshig don	language_knowledge:194, google_blocked_wrong_target_plus_language_knowledge:37, google_unresolved_plus_language_knowledge:1	high:164, medium:68	exact_promotion_candidate
+unknown:lis:lis	unknown	Lis (153), Li$ (42), lis (6)	Liś (201)	201	1	wts_1_34:99:192; wts_1_34:190:75; wts_1_34:224:51; wts_1_34:224:99; wts_1_34:227:85	kocht und mit Asa foetida gewürzt ist“ (Lis || „mager, dünn: [jmd.] in schlechter Verfassung, mit wenig Fleisch oder skem pa“ (Lis || Lex. skri Zig = thon Zig „schicke“ (Lis			siglum_policy_review
+unknown:rol:rol	unknown	rol (145)	Rol (145)	145	1	wts_1_34:12:32; wts_1_34:15:41; wts_1_34:15:128; wts_1_34:16:51; wts_1_34:18:138	AA Byams pa: Ses rab kyi pha rol tu phyin pa’i man nag gi bstan bcos mṅon par rtogs pa’i || Prajfäsena: ’Jig rten pha rol sgrub pa. Ed.: STEINKELLNER 1988. || ’Phags pa rgya cher rol pa / Ärya-lalitavistara-nama-mahäyänasütra.Ed.: Derge-Kan-			siglum_policy_review
+unknown:vist:vist	unknown	VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1)	ViśT (98)	98	1	wts_1_34:21:28; wts_1_34:69:95; wts_1_34:78:84; wts_1_34:106:88; wts_1_34:162:97	VisT Ses rab go cha: ’Phags pa’i bstod pa’i rgya cher bsad pa / Prajhävarman: Visesastavatika. || wurde sie wegen ihnen sehr besorgt“ (VisT || hatte eine Tochter namens Kunti“ (VisT			siglum_policy_review
+unknown:ins:ins	unknown	ins (85), INS (1)	Ins (86)	86	1	wts_1_34:5:24; wts_1_34:21:89; wts_1_34:23:119; wts_1_34:26:90; wts_1_34:36:58	ren Textes handelt es sich um kanonische Werke, die aus indischen Sprachen ins Tibeti- || und schwarzen 131))111 hg. und ins Deutsche übertragen. Aus dem Anhang zu den Abh. 4. || tischen Texte mit dem Kommentar ins Deutsche übers. Heidelberg: Carl Winter’s Universi-			siglum_policy_review
+tibetan_script_ng_witness:gan:gaṅ	tibetan_script_ng_witness	gan (68)	gaṅ (68)	68	1	wts_1_34:70:37; wts_1_34:125:145; wts_1_34:125:145; wts_1_34:129:88; wts_1_34:200:182	ཀུན་ཏུ་གང་བ་ kun tn gan ba ganz voll sein, völlig || དཀུ་གང་ dku gan, alttib. auch 7/5// gan Hinter-	tibetan_script_witness:68	high:68	exact_promotion_candidate
+unknown:lsdz-k:lsdz-k	unknown	Lsdz-K (33), L$dz-K (13)	Lśdz-K (46)	46	1	wts_1_34:138:96; wts_1_34:359:129; wts_1_34:545:122; wts_1_34:566:121; wts_1_34:624:59	Herz des Königs eingezogen war“ (Lsdz-K || Liste ist oben dargelegt worden“ (Lsdz-K || wurden leibhaftig herbeigerufen“ (Lsdz-K			siglum_policy_review
+unknown:ys:ys	unknown	Y$ (23), Ys (16)	Yś (39)	39	1	wts_1_34:21:40; wts_1_34:329:120; wts_1_34:392:29; wts_1_34:620:21; wts_1_34:620:25	Ys Klu sgrub: sByor ba brgya pa / Nāgārjuna: Yogasataka. Ed.: Finuiozar 1979. || [u. a.] helfen bei allen Durchfällen“ (Ys || drei [Myrobalanen-]Früchte gekocht“ (Ys			siglum_policy_review
+unknown:gs:gs	unknown	gs (24), G$ (3), Gś (2)	Gs (29)	29	1	wts_1_34:75:76; wts_1_34:111:165; wts_1_34:158:178; wts_1_34:163:175; wts_1_34:209:198	55,25); 'khrig pa ni gs kyis güis sbyor ba es || gzugs sbrul gs ... bris (metr.) „man zeichnet || — gs nas drub (7. drug) pa’i bar (metr.) „von			siglum_policy_review
+unknown:gzi:gzi	unknown	gzi (28)	gZi (28)	28	1	wts_1_34:14:132; wts_1_34:29:18; wts_1_34:152:3; wts_1_34:152:4; wts_1_34:195:53	'Dus pa rin po che’i rgyud dri ma med pa gzi brjid rab tu ’bar ba’i mdo. Ed.: TiBETan || TiBETAn Bonpo MONASTIC CENTRE 1965: ’Dus pa rin po che’i rgyud dri ma med pa gzi brjid rab tu || Lex. kha dog ’od can gzi brjid can lta bu „wie			siglum_policy_review
+unknown:lsdz:lsdz	unknown	Lsdz (16), L$dz (10)	Lśdz (26)	26	1	wts_1_34:227:79; wts_1_34:637:144; wts_1_34:875:157; wts_1_34:1293:16; wts_1_34:12:21	las kyis — nas „sie sind aufgrund ihres Karmas [von Verdiensten] entfernt“ (Lsdz || auf seinen Scheitel, als er da saß“ (Lsdz || Oberfläche des Ozeans der klu“ (Lsdz			siglum_policy_review
+tibetan_script_ng_witness:snan:snaṅ	tibetan_script_ng_witness	snan (22)	snaṅ (22)	22	1	wts_1_34:71:137; wts_1_34:73:209; wts_1_34:73:209; wts_1_34:81:45; wts_1_34:81:67	ཀུན་ཏུ་ཆེར་སྣང་ kun tu cher snan eine Blume. || ཀུན་ཏུ་སྣང་བ་ kun tu snan ba; vgl. kun snan.	tibetan_script_witness:22	high:22	exact_promotion_candidate
+tibetan_script_ng_witness:yan:yaṅ	tibetan_script_ng_witness	yan (18)	yaṅ (18)	18	1	wts_1_34:57:207; wts_1_34:58:3; wts_1_34:159:183; wts_1_34:253:208; wts_1_34:340:181	ཀུ་ཡང་ ku yan, ku yans \gu yanis. || ཀུ་ཡང་སེ་བ་ ku yaṅ se ba \gu yan se ba. || རྐང་ཡང་ཧོར་ rkan yan hor ein Volksstamm (?).	tibetan_script_witness:18	high:18	exact_promotion_candidate
+unknown:bu-sz:bu-sz	unknown	Bu-Sz (16)	Bu-śz (16)	16	1	wts_1_34:35:151; wts_1_34:600:142; wts_1_34:603:33; wts_1_34:686:207; wts_1_34:759:212	881,4/Bu-Sz 16,3). || Öffnung mit einem Felsblock“* (Bu-Sz || „er floh mit eintausend Soldaten“ (Bu-Sz			siglum_policy_review
+dotless_i:gzı:gzi	dotless_i	gZı (13), gzı (1)	gZi (13), gzi (1)	14	1	wts_1_34:50:92; wts_1_34:150:34; wts_1_34:250:16; wts_1_34:254:134; wts_1_34:386:96	Hagel, Blitzschläge, —“ (gZı 2: 64,3). || führt werden“ (gZı 3: 71,5). || vierreihige Balustrade* (gZı 3: 47,5); ~	orthography_scan:14	medium:14	review
+unknown:gs-h:gs-h	unknown	GS-H (5), G$-H (4), Gs-H (3)	Gś-H (12)	12	1	wts_1_34:915:16; wts_1_34:1016:13; wts_1_34:1058:39; wts_1_34:1062:70; wts_1_34:1068:107	gierden nach“ (G$-H 406); ~ bdag nid la / || ist kurz, das Wissen mannigfach“ (Gs-H || werden?“ (G$-H 84a); klu mo = ba gdug			siglum_policy_review
+tibetan_script_ng_witness:ran:raṅ	tibetan_script_ng_witness	ran (11)	raṅ (11)	11	1	wts_1_34:52:135; wts_1_34:52:166; wts_1_34:107:152; wts_1_34:274:45; wts_1_34:277:20	ཀརྨ་པ ་རང་བྱུང་རྡོ་རྗེ་ karma pa ran byun rdo ne der 3. || ཀརྨ་རང་བྱུང་རྡོ་རྗེ་ karma ran byun rdo nie (TTC) || ཀྱོ་རང་ kyo ran Elefantenhaken.	tibetan_script_witness:11	high:11	exact_promotion_candidate
+unknown:ps:ps	unknown	P$ (8), PS (2), Pś (1)	Ps (11)	11	1	wts_1_34:968:205; wts_1_34:1107:30; wts_1_34:1149:10; wts_1_34:1149:10; wts_1_34:310:118	muß sich nach dem Wind richten“ (PS || Freude‘“ (P$ Kolophon); byan chub mchog || nimmt“ (P$ 216); ~ kyan bdud rtsi nid du			siglum_policy_review
+citation_or_siglum:taic:taic	citation_or_siglum	TAIC (10)	TAIC (10)	10	1	wts_1_34:857:25; wts_1_34:857:28; wts_1_34:857:31; wts_1_34:857:36; wts_1_34:857:39	Delhi: TAIC (618 3,1-12). [LC] || hbyun. Pt. 4 (ja). New Delhi: TAIC (SPS 9,4). [PTs] || rian Si-tu. New Delhi: TAIC (SPS 38).	siglum_shape:10	policy:10	already_canonical_siglum
+citation_or_siglum:tär:tar	citation_or_siglum	Tär (10)	Tār (10)	10	1	wts_1_34:240:73; wts_1_34:288:3; wts_1_34:288:123; wts_1_34:860:18; wts_1_34:1088:80	„er steckte eine Perle in den Mund“ (Tär || Mehrung eures Wohlstands“ (Tär 10,2). || (Tär 160,7); ~ skye ’phro chad pa yin (metr.)	siglum_shape:10	policy:10	already_canonical_siglum
+dotless_i:garı:gari	dotless_i	garı (9)	gari (9)	9	1	wts_1_34:167:88; wts_1_34:212:71; wts_1_34:336:53; wts_1_34:336:154; wts_1_34:337:159	bewesen“ (KTh 1: 428,6); —’i garı za(g) dam || Laien verloren den Glauben“ (Liy2 60); garı || གང་ garı	orthography_scan:9	medium:6, low:3	review
+dotless_i:kyanı:kyani	dotless_i	kyanı (9)	kyani (9)	9	1	wts_1_34:341:7; wts_1_34:418:42; wts_1_34:419:41; wts_1_34:499:109; wts_1_34:781:98	zeigen“ (Mil 29,11); gan gis kyanı ... yig skyel || (Vdk 2: 367,3); re Zig sdod ~ bsams kyanı || denen es gut geht“ (Ppu 104b); ’gums kyanı	orthography_scan:9	low:5, medium:4	review
+dotless_i:mıgto:migto	dotless_i	MıgTo (9)	MigTo (9)	9	1	wts_1_34:112:18; wts_1_34:112:189; wts_1_34:121:94; wts_1_34:125:56; wts_1_34:204:19	durchzuführen“ (MıgTo 214,7). || Nägas aus Teig herstellen“ (MıgTo 302,16). || (MıgTo 85,16).	orthography_scan:9	low:8, medium:1	review
+dotless_i:sın:sin	dotless_i	sın (5), śın (3), Sın (1)	sin (5), śin (3), Sin (1)	9	1	wts_1_34:89:132; wts_1_34:103:90; wts_1_34:157:124; wts_1_34:211:107; wts_1_34:293:203	seinem Gemüt“ (Megh 33); — sın (skt. keta- || sersucht“ (Vdk 2: 341,6); — śın gi phun || Lex. rkan thun = ljon śın „Baum“ (brDa, ähnl.	orthography_scan:9	medium:6, low:3	review
+dotless_i:yıg:yig	dotless_i	yıg (9)	yig (9)	9	1	wts_1_34:58:10; wts_1_34:147:127; wts_1_34:346:47; wts_1_34:631:118; wts_1_34:704:84	Lex. 77. ku yıg word directly spoken by || ken niedergelegt“ (Tär 181,10); gras yıg spyı || གན་ཡིག་ gan yıg Privatvertrag.	orthography_scan:9	medium:5, low:4	review
+unknown:sambh:sambh	unknown	Sambh (9)	Śambh (9)	9	1	wts_1_34:51:84; wts_1_34:268:111; wts_1_34:409:173; wts_1_34:718:135; wts_1_34:1036:77	hunderttausend Kärsäpana wert“ (Sambh || ste „er soll soviel er will aufladen“ (Sambh || „er spendete noch je zehn Millionen Goldstücke an die Mönchsgemeinden“ (Sambh			siglum_policy_review
+citation_or_siglum:bzin:bzin	citation_or_siglum	bZin (8)	bZin (8)	8	1	wts_1_34:288:141; wts_1_34:1084:78; wts_1_34:1100:82; wts_1_34:1126:76; wts_1_34:1145:2	~$ ~ dbyun ba bZin du bstan par „er lehrte, || — kyi srol lam (b)siion med gnas bZin „so sind || kann“ (Bca 7.200); yul — dus — ran bZin gsum	siglum_shape:8	policy:8	already_canonical_siglum
+dotless_i:rsı:rsi	dotless_i	Rsı (8)	Rsi (8)	8	1	wts_1_34:71:21; wts_1_34:206:59; wts_1_34:299:117; wts_1_34:508:150; wts_1_34:525:10	4. Weiser, Seher (Rsı). || 3.npr. ein Rsı. || für einen Rsı.	orthography_scan:8	low:8	review
+dotless_i:yanı:yani	dotless_i	yanı (8)	yani (8)	8	1	wts_1_34:147:180; wts_1_34:375:27; wts_1_34:580:113; wts_1_34:581:86; wts_1_34:710:105	lassen worden“ (MTH3/5/31 29); — ’di yanı || gehen]“ (Glu 36d); ’bri stag rin gsum yanı || keine Augen hat?“ (Ps 90d); bsod nams yanı	orthography_scan:8	low:5, medium:3	review
+dotless_i:yı:yi	dotless_i	yı (8)	yi (8)	8	1	wts_1_34:91:19; wts_1_34:194:9; wts_1_34:214:101; wts_1_34:447:133; wts_1_34:494:158	(asthini), keine anderen“ (Bca 8.42a); mi yı || Lex. — gri yı min (Bon 24,8). || Speise findet“ (K12 132a1); drı Zim — yı /	orthography_scan:8	medium:8	review
+dotless_i:zın:zin	dotless_i	Zın (6), zın (2)	Zin (6), zin (2)	8	1	wts_1_34:108:3; wts_1_34:110:148; wts_1_34:515:64; wts_1_34:516:173; wts_1_34:531:202	gen Bäume [mit Wasser]“ (Nägn 19,19); Zın || (Ahs 1.5.12a); mar min ... — ... sbyon Zın || Zın (metr.) „getränkt mit dessen eigenem	orthography_scan:8	low:6, medium:2	review
+dotless_i:ı:i	dotless_i	ı (8)	i (8)	8	1	wts_1_34:20:75; wts_1_34:412:49; wts_1_34:587:9; wts_1_34:604:99; wts_1_34:694:79	"ı Vis || [König] Kalyäna, [d. ı.] Mi-la rme-ba-can“ || zun cha ~ (Dagy); con Zu = »""ı min (ITC);"	orthography_scan:8	low:5, medium:3	review
+unknown:gz1:gzi	unknown	gZ1 (8)	gZi (8)	8	1	wts_1_34:358:151; wts_1_34:491:23; wts_1_34:668:79; wts_1_34:719:24; wts_1_34:941:162	(onom.)“ (gZ1 2: 64,2). || Vögel und Spatzen“ (gZ1 2: 119,4). || Ritual des gtor-ma-Opfers“ (gZ1 3: 576,2).			siglum_policy_review
+unknown:sps:sps	unknown	$PS (7), ŚPS (1)	SPS (8)	8	1	wts_1_34:857:43; wts_1_34:857:43; wts_1_34:25:52; wts_1_34:25:57; wts_1_34:25:60	of Prof. Raghu Vira. New Delhi: TAIC ($PS 100). [KID, KlonD] || New Delhi: IAIC ($PS 38).			siglum_policy_review
+dotless_i:meır:meir	dotless_i	meır (7)	meir (7)	7	1	wts_1_34:722:120; wts_1_34:753:80; wts_1_34:816:177; wts_1_34:818:217; wts_1_34:909:175	(meır.) „für euch bezahle ich diesen || (meır.) „je zwei [Kapitel] über Geistes- || (Liyi 1857); -r smra Zin (meır.) „sie	orthography_scan:7	low:6, medium:1	review
+citation_or_siglum:vdk:vdk	citation_or_siglum	Vdk (6)	Vḍk (6)	6	1	wts_1_34:238:9; wts_1_34:240:78; wts_1_34:288:126; wts_1_34:648:121; wts_1_34:1108:78	khan chen sogs ... — pa la (metr.) „sie haben einen großen Tempel usw. geschaffen“ (Vdk 2: || (Vdk 2: 341,4); Ra gzugs ~ mig (metr.) „die || 339,1); ~ bu mo dag (metr.) „die vier Mädchen“ (Vdk 2: 395,1); rgyal mo yan ~ btsas	siglum_shape:6	policy:6	already_canonical_siglum
+citation_or_siglum:vist:vist	citation_or_siglum	VisT (5), Vi$T (1)	ViśT (6)	6	1	wts_1_34:860:47; wts_1_34:1088:60; wts_1_34:1100:79; wts_1_34:1145:45; wts_1_34:1149:47	jur hg. und übers. Bonn: Indica-et-Tibetica-Verl. (Indica et Tibetica 23). [Vis, VisT] || gunsten] dieser [Götter] bemühen“ (VisT || ihn aus!‘, und da spuckte sie ihn aus“ (VisT	sigla_registry:6	policy:6	siglum_policy_review
+dotless_i:eın:ein	dotless_i	eın (6)	ein (6)	6	1	wts_1_34:87:20; wts_1_34:88:43; wts_1_34:89:167; wts_1_34:99:174; wts_1_34:222:96	ཀུན་ལེན་ kun len npr. eın Weiser, der die sino-ti- || ཀུན་གསོད་ kun gsod eın Dämon. || ཀེ་བང་ ke ban, auch ke wan npr. eın chinesischer	orthography_scan:6	medium:6	review
+dotless_i:sıe:sie	dotless_i	sıe (6)	sie (6)	6	1	wts_1_34:104:59; wts_1_34:227:67; wts_1_34:264:48; wts_1_34:264:97; wts_1_34:381:154	sie beschützen, werden sıe sterben“ || sind‘, denn sıe haben den sinnlichen Be- || „er gab ihr seinen Metallbecher, sıe stülpte	orthography_scan:6	low:6	review
+dotless_i:ım:im	dotless_i	ım (6)	im (6)	6	1	wts_1_34:52:93; wts_1_34:210:73; wts_1_34:678:23; wts_1_34:714:161; wts_1_34:819:80	ཀྨརྨ་ཌཱཀི་ karma däki eine Göttin ım Gefolge des || Königs war ım Lustgarten“ (Liyl 175a2); || ཧད དཱ einer der sechs ım Tibeti-	orthography_scan:6	medium:5, low:1	review
+google_tibetan_diacritic_disagreement:zes:źes	google_tibetan_diacritic_disagreement	Zes (6)	źes (6)	6	1	wts_1_34:240:59; wts_1_34:589:36; wts_1_34:589:40; wts_1_34:589:44; wts_1_34:1171:33	241,17); Zes bdag gi ~ yis tshig ’di zer (metr.) || ’Phags pa $es rab kyi pha rol tu phyin pa bdun brgya pa Zes bya ba theg pa || ’Phags pa khyim bdag drag $ul can gyis Zus pa Zes bya ba theg pa chen po’i	google_unresolved_tibetan_context:6	medium:6	review
+dotless_i:glın:glin	dotless_i	glın (5)	glin (5)	5	1	wts_1_34:212:184; wts_1_34:396:124; wts_1_34:396:170; wts_1_34:515:161; wts_1_34:1099:97	glın legs kar 777 — „ich werde im südlichen || 1. 1glın 1.	orthography_scan:5	low:5	review
+dotless_i:gsarı:gsari	dotless_i	gsarı (5)	gsari (5)	5	1	wts_1_34:126:76; wts_1_34:372:151; wts_1_34:449:109; wts_1_34:634:1; wts_1_34:916:16	voller Reichtümer waren“ (sBa 88,3); gsarı || glsah“ hochberühmt“ (Nel 1803); gsarı || erreicht werden!“ (ViśT 202,7); gsarı srags	orthography_scan:5	low:4, medium:1	review
+dotless_i:gzı-sn:gzi-sn	dotless_i	gZı-Sn (5)	gZi-Sn (5)	5	1	wts_1_34:182:74; wts_1_34:195:8; wts_1_34:254:42; wts_1_34:811:145; wts_1_34:1326:81	(gZı-Sn 214,33). || (gZı-Sn 74,7). || glättet“ (gZı-Sn 92,12).	orthography_scan:5	medium:5	review
+dotless_i:säın:säin	dotless_i	säın (5)	säin (5)	5	1	wts_1_34:154:145; wts_1_34:160:150; wts_1_34:197:38; wts_1_34:225:5; wts_1_34:356:14	pa mit Gift ermordet“ (Nel 304); säın khar || (Gir 189,28); säın thub — la sor son (metr.) || la ni bdag skyabs mchi / ji srid säın po byañ	orthography_scan:5	medium:3, low:2	review
+tibetan_script_ng_witness:gtsan:gtsaṅ	tibetan_script_ng_witness	gtsan (5)	gtsaṅ (5)	5	1	wts_1_34:433:146; wts_1_34:542:127; wts_1_34:913:156; wts_1_34:914:73; wts_1_34:914:73	འགད་གཙང་ 977 gtsan sorgfältig. || ངོས་གཙང་བ་ nos gtsan ba Klarheit. || རྟ་གཙང་ rta gtsan auch rta yi gtsani ma das ve-	tibetan_script_witness:5	high:5	exact_promotion_candidate
+citation_or_siglum:käsy:kasy	citation_or_siglum	Käsy (3), Kä$y (1)	Kāśy (4)	4	1	wts_1_34:288:212; wts_1_34:967:108; wts_1_34:1122:13; wts_1_34:1149:19	su skyo ba med do „er ist dadurch nicht ermüdet, daß er alle Lasten trägt“ (Käsy || (Käsy 113,7); glog dan sprin Ita bu / 'dus || boren ist“ (Kä$y 126,22); ched du bya ba	siglum_shape:4	policy:4	already_canonical_siglum
+dollar_ś:ss:ss	dollar_ś	$$ (4)	śś (4)	4	1	wts_1_34:589:38; wts_1_34:35:140; wts_1_34:589:38; wts_1_34:690:27	Ed.: Derge-Kanjur, $$ rab sna tshogs, ka 148a1-174a1. || (1118 11); ye ses $$ bsgyur te kva chur gtan la	orthography_scan:3, google_unresolved_plus_orthography_scan:1	medium:4	review
+dotless_i:cın:cin	dotless_i	cın (4)	cin (4)	4	1	wts_1_34:77:55; wts_1_34:236:179; wts_1_34:336:195; wts_1_34:582:161	span spos pu 4¢/ ... cha miams ... — cın (metr.) || wird“ (Bca 8.178b); ri dags mo ... — cın yanıs || cın „er hatte [schon immer] gut für alles	orthography_scan:4	low:3, medium:1	review
+dotless_i:mıg:mig	dotless_i	mıg (4)	mig (4)	4	1	wts_1_34:74:78; wts_1_34:644:103; wts_1_34:652:213; wts_1_34:757:21	tn mıg. || mıg (Dagy). || Lex. mıg sgyu (Dagy).	orthography_scan:4	medium:3, low:1	review
+dotless_i:nanı:nani	dotless_i	nanı (4)	nani (4)	4	1	wts_1_34:233:146; wts_1_34:526:44; wts_1_34:802:182; wts_1_34:823:107	chen, bei der tbun sgom in nanı sgom gipfelt; || ga le byas (7. byed) gdams nag ster bas nanı || Alter von zwölf Jahren“ (Glr 12,13); nanı	orthography_scan:4	low:4	review
+dotless_i:rı:ri	dotless_i	rı (4)	ri (4)	4	1	wts_1_34:151:95; wts_1_34:337:185; wts_1_34:477:176; wts_1_34:584:34	vollständig“ (Glr 63,15); rin cen — sogs ... rı || Lex. gans rı ti se (Dagy). || sehr schwer zu gehen“ (KTh 1: 40,2); rı rab	orthography_scan:4	low:2, medium:2	review
+dotless_i:tıg:tig	dotless_i	tıg (4)	tig (4)	4	1	wts_1_34:338:21; wts_1_34:338:21; wts_1_34:686:61; wts_1_34:821:43	Lex. gan 97:77 gtan tıg tıg „wie es gewiß ist“ || Lex. mu tıg (Dagy).	orthography_scan:4	low:2, medium:2	review
+google_tibetan_diacritic_disagreement:zig:źig	google_tibetan_diacritic_disagreement	Zig (4)	źig (4)	4	1	wts_1_34:288:111; wts_1_34:695:128; wts_1_34:1122:37; wts_1_34:1213:4	sein“ (Siddh 29.12); ~ ... bzan po Zig btsas || des sa phyogs dben pa ... Zig tu ... = de bsgrens || bzan po Zig btsas nas „die edle Gemahlin	google_unresolved_tibetan_context:4	medium:4	review
+google_tibetan_diacritic_disagreement:zugs:źugs	google_tibetan_diacritic_disagreement	Zugs (4)	źugs (4)	4	1	wts_1_34:1088:40; wts_1_34:1108:39; wts_1_34:1213:17; wts_1_34:1213:38	bdag gis rkan gis ser skya’i gZir Zugs te — || — rgya re lj rgyal sar Zugs nas „am Anfang, nachdem der chinesische Herrscher || tshe ... tin ne 'dzin la sioms par Zugs so „dann	google_unresolved_tibetan_context:4	medium:4	review
+tibetan_script_ng_witness:nan:naṅ	tibetan_script_ng_witness	nan (4)	naṅ (4)	4	1	wts_1_34:650:40; wts_1_34:713:153; wts_1_34:714:144; wts_1_34:945:41	ཆ་མིག་ནང་སྲེས་ངར་།་ཀྱན་ chu mig nan skyes dar || ཛ་ནང་། jo nan eine Lehrtradition des tib. || ཇ་ཨ་ནང་ Jo mo nan npr. eine Einsiedelei und	tibetan_script_witness:4	high:4	exact_promotion_candidate
+tibetan_script_ng_witness:snar:sṅar	tibetan_script_ng_witness	snar (4)	sṅar (4)	4	1	wts_1_34:568:1; wts_1_34:568:33; wts_1_34:568:46; wts_1_34:568:60	སྔར་འགྱར་ snar ’gyur || སྔར་འགྱ་ར་ snar 'gyur früher übersetzt, vgl. Isa || སྔར་ཐམས་པ་ 5777 thams pa auch snar 'thams pa	tibetan_script_witness:4	high:4	exact_promotion_candidate
+citation_or_siglum:sel:sel	citation_or_siglum	sel (3)	śel (3)	3	1	wts_1_34:648:62; wts_1_34:648:71; wts_1_34:1088:94	Gewässer; sel cu Gletscherfluß. || Fluß“ (PT1287 469); sel cu ltag ’og güis kyi || den mehr“ (MigTo 244,12); — sel gyi cog bzi	siglum_shape:3	policy:3	already_canonical_siglum
+dollar_ś:ses:ses	dollar_ś	$es (3)	śes (3)	3	1	wts_1_34:589:36; wts_1_34:1108:63; wts_1_34:1171:15	’Phags pa $es rab kyi pha rol tu phyin pa bdun brgya pa Zes bya ba theg pa || bdun gyis / grum a tsarya ye $es rgyal mtshan la || chi ba’i — kyi Zags pas zin par $es par bya’o	google_unresolved_plus_orthography_scan:3	medium:3	review
+dotless_i:'drıl:'dril	dotless_i	'drıl (3)	'dril (3)	3	1	wts_1_34:1325:51; wts_1_34:1326:1; wts_1_34:1326:54	Bar 'drıl	orthography_scan:3	low:3	review
+dotless_i:byanı:byani	dotless_i	byanı (3)	byani (3)	3	1	wts_1_34:752:59; wts_1_34:778:149; wts_1_34:786:139	Gras oder Holz“ (11748 12355); byanı chub || Tag und Nacht“ (Suv 56,11); byanı chub || Scham der Nonnen“ (Ki ga 87al); byanı	orthography_scan:3	low:3	review
+dotless_i:rıgs:rigs	dotless_i	rıgs (3)	rigs (3)	3	1	wts_1_34:611:208; wts_1_34:705:232; wts_1_34:1062:165	Lex. sman rıgs sig (Dagy). || Ritual beauftragte“ (dPe 45,21); rıgs ran || Erkenntnis höher bist“ (KunK 17,14); rıgs	orthography_scan:3	low:2, medium:1	review
+dotless_i:rın:rin	dotless_i	rın (3)	rin (3)	3	1	wts_1_34:129:184; wts_1_34:507:149; wts_1_34:1035:173	pen“ (Liś 23,4; ähnl. KlonD 738,2); — rın = || Fackel in der Hand hielt“ (Prav 33,18); rın || hinausgezögert wurde“ (Prav 149,22); rın	orthography_scan:3	low:3	review
+dotless_i:samädhıh:samädhih	dotless_i	samädhıh (3)	samädhih (3)	3	1	wts_1_34:148:136; wts_1_34:148:142; wts_1_34:404:64	näma samädhıh (Mvy 592). || näma samädhıh (Mvy 613). || näma samädhıh (Mvy 567).	orthography_scan:3	low:3	review
+dotless_i:sarı:sari	dotless_i	sarı (3)	sari (3)	3	1	wts_1_34:559:185; wts_1_34:775:1; wts_1_34:1236:1	རྔ་གཤང་ rna gan auch 7774 sarı, rha sans Trom- || ཉི་སང་པད་ ;77 sarı pad || དེང་སང་ den sarı	orthography_scan:3	medium:3	review
+dotless_i:sgarı:sgari	dotless_i	sgarı (3)	sgari (3)	3	1	wts_1_34:489:95; wts_1_34:489:99; wts_1_34:489:102	སྒང་བུ་ ?sgarı bu Tgan bu 1. || སྒང་གཤགས་ sgarı 9$579$ (zw.) Kiste. || སྒང་གཤོངས་ sgarı gsons	orthography_scan:3	medium:3	review
+dotless_i:srı:sri	dotless_i	srı (3)	sri (3)	3	1	wts_1_34:594:35; wts_1_34:597:94; wts_1_34:655:48	གཅིན་སྲི་ gein srı || གཅོང་སྲི་ gcon srı 6111 Dämon. || SN chu srı.	orthography_scan:3	medium:2, low:1	review
+dotless_i:tıla:tila	dotless_i	TıLa (3)	TiLa (3)	3	1	wts_1_34:20:98; wts_1_34:91:47; wts_1_34:850:13	TıLa2 || (TıLa 14,10).	orthography_scan:3	low:3	review
+dotless_i:vaınth:vainth	dotless_i	VaıNth (3)	VaiNth (3)	3	1	wts_1_34:91:122; wts_1_34:757:180; wts_1_34:851:5	dpal bses-gnien“ (VaıNth 69,6); brag dmar — || unsere Waden“ (VaıNth 107,3). || VaıNth	orthography_scan:3	medium:3	review
+dotless_i:yarı:yari	dotless_i	yarı (3)	yari (3)	3	1	wts_1_34:218:200; wts_1_34:656:152; wts_1_34:878:96	wurde unschuldig abgeurteilt“ (Nel 433); yarı || nicht verachten“ (KanL 33a); lus - yarı / || yu-Butter“ (Ch75/12/5B 1); bran mo yarı	orthography_scan:3	low:3	review
+dotless_i:yañı:yañi	dotless_i	yañı (3)	yañi (3)	3	1	wts_1_34:108:140; wts_1_34:177:131; wts_1_34:994:145	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn. || — gnam gan yod pa yañı Ai ma gchig gi ’od la || gen rab mi bo ~ yañı / gfien la rgyab log da	orthography_scan:3	medium:3	review
+dotless_i:ımp:imp	dotless_i	ımp (3)	imp (3)	3	1	wts_1_34:188:137; wts_1_34:825:15; wts_1_34:946:123	„ımp.“ (Dagy). || སྙུངས་ sänns ımp. zu [1577//77 verkleinern, ver- || HAN stims ımp. zu †577777 etw. auflösen.	orthography_scan:3	medium:2, low:1	review
+dotless_i:ın:in	dotless_i	ın (3)	in (3)	3	1	wts_1_34:5:38; wts_1_34:82:183; wts_1_34:110:127	Dieses einheimische Wörterbuch war zwar 1954 ın China nachgedruckt worden, es war || Lex. samutthäpakah (Mvy 4683, ın der Abt. || gZag bar ༡ zer „ın einem Lehrtext nennt man	orthography_scan:3	medium:2, low:1	review
+citation_or_siglum:116:lis	citation_or_siglum	116 (2)	Liś (2)	2	1	wts_1_34:238:29; wts_1_34:1108:32	(116 26,1); — bya = gsar du — par bya „neu || Lex. thog ma „das Erste“ (Dagy); je ni — (116	sigla_registry:2	policy:2	already_canonical_siglum
+citation_or_siglum:bzugs:bzugs	citation_or_siglum	bZugs (2)	bZugs (2)	2	1	wts_1_34:648:192; wts_1_34:862:70	29); dpal -’i sgom grwa na bZugs pa „die in || bZugs so. Dharamsala. [Bb33, Bb45]	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:gs:gs	citation_or_siglum	G$ (2)	Gs (2)	2	1	wts_1_34:288:13; wts_1_34:648:13	ra la smros (metr.) „du sag mir!“ (G$ 41); - || sind wie Wasserblasen“ (G$ 62); ~ gyi mig	sigla_registry:2	policy:2	siglum_policy_review
+citation_or_siglum:gzan:gzan	citation_or_siglum	gZan (2)	gZan (2)	2	1	wts_1_34:1171:25; wts_1_34:1213:4	lich [zugleich]“ (Ahs 1.5.2c); bZur ba gZan / || ein“ (Anav 1: 51,19); — dus gZan Zig na gZon	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:gzon:gzon	citation_or_siglum	gZon (2)	gZon (2)	2	1	wts_1_34:1122:10; wts_1_34:1213:4	(K95 29b3); rgyal po’i btsun mo — las gZon || ein“ (Anav 1: 51,19); — dus gZan Zig na gZon	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:gzun:gzun	citation_or_siglum	gZun (2)	gZun (2)	2	1	wts_1_34:589:27; wts_1_34:648:135	Pan chen blo gros legs bzan: ’Dul ba gZun ’grel. Ed.: SERMEY LIBRARY || Flüsse“ (gZi 2: 175,2); ro -°i gZun la bor te	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:hmrg:hmrg	citation_or_siglum	HMrg (2)	HMrg (2)	2	1	wts_1_34:1122:70; wts_1_34:1149:62	(HMrg 59,27); san dnags —’i rgyan ldan || Himmel trennt Wasser von Gift“ (HMrg	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:ipl:ipl	citation_or_siglum	IPL (2)	IPL (2)	2	1	wts_1_34:695:147; wts_1_34:1173:44	(IPL 1: 414,1); rma yul dun gi ~ da... || Schnitzer aus Nepal auf“ (IPL 1: 210,2);	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:ismeo:ismeo	citation_or_siglum	ISMEO (2)	ISMEO (2)	2	1	wts_1_34:862:102; wts_1_34:862:107	with introduction and English summary. Roma: ISMEO (Minor Buddhist Texts 2, || ing two minor chronicles. Roma: ISMEO (SOR 24). [Debmgs]	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:kunk:kunk	citation_or_siglum	KunK (2)	KunK (2)	2	1	wts_1_34:1088:12; wts_1_34:1173:41	man diesen Morgen gegessen hat“ (KunK || reszeit dazu aufgefordert werden“ (KunK	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:kävyäd:kavyad	citation_or_siglum	Kävyäd (2)	Kāvyād (2)	2	1	wts_1_34:240:55; wts_1_34:1122:72	yi rlun (metr.) „der Wind aus dem vorzüglichsten Mund der Geliebten“ (Kävyäd || gestattetes Gedicht“ (Kävyäd 1.19c); skyes	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:lokesh:lokesh	citation_or_siglum	LOkesH (1), LokEsH (1)	LOkesH (1), LokEsH (1)	2	1	wts_1_34:835:39; wts_1_34:857:23	rung nur noch in Ausnahmefällen Wörterbücher wie die von LOkesH (1181) 1959- || LokEsH CHANDRA 1959-1961: Tibetan-Sanskrit dictionary. Based on a close compara-	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:nbt:nbt	citation_or_siglum	NBT (2)	NBT (2)	2	1	wts_1_34:859:113; wts_1_34:1100:84	(Bibliotheca Buddhica 8) [Repr. d. Ausg. St. Petersburg, 1904]. [NB, NBT] || Ort, Zeit und Wesen entfernt sind“ (NBT	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:nyäyabindu:nyayabindu	citation_or_siglum	Nyäyabindu (2)	Nyāyabindu (2)	2	1	wts_1_34:857:87; wts_1_34:859:7	ti’s Nyäyabindu. Patna: K. 1? Jayaswal Research Institute (Tibetan Sanskrit Works || — 1970: Indices verborum, Sanscrit-Tibetan and Tibetan-Sanscrit to the Nyäyabindu	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:nägn:nagn	citation_or_siglum	Nägn (2)	Nāgn (2)	2	1	wts_1_34:288:16; wts_1_34:1171:55	gehst du selbst zu ihm“ (Nägn 47,9); ~ Ikog || khrus kyi — ni grub pa (metr.) „die Zeit deines Brautbades ıst erreicht“ (Nägn 91,5); ’o	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:r:r	citation_or_siglum	R (2)	R (2)	2	1	wts_1_34:859:65; wts_1_34:859:70	RıcARD, Matthieu et al. 1994: The life of Shabkar. The autobiography ofa Tibetan Yogin. || RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:s:s	citation_or_siglum	$ (1), S (1)	S (2)	2	1	wts_1_34:288:141; wts_1_34:862:79	~$ ~ dbyun ba bZin du bstan par „er lehrte, || of the Sıddha Tilopa.“ In: East and West 43 (1993), pp. 185-198.	siglum_shape:2	policy:2	already_canonical_siglum
+citation_or_siglum:tas:tashi	citation_or_siglum	Tas (2)	TASHI (2)	2	1	wts_1_34:862:14; wts_1_34:862:21	Tasıı vorjı 1973: Snan [!] srid mdzod phug gi rtsa ba dan [!] spyi don gyı gsun [!] pod || Tasıı TSERING 1980: ’Dzam glin rgyas par bsad pa thag rin gsal bar mthon byed dur-	siglum_shape:2	policy:2	already_canonical_siglum
+dollar_ś:'s:'s	dollar_ś	'$ (2)	'ś (2)	2	1	wts_1_34:514:93; wts_1_34:515:97	བསློངས་ bsgons pf. zu †'$9077 rundmachen. || བརྒྱུར་ bsgyur pf. und fut. zu ༈ '$97///7-.	orthography_scan:2	medium:2	review
+dotless_i:alttıb:alttib	dotless_i	alttıb (2)	alttib (2)	2	1	wts_1_34:583:101; wts_1_34:618:11	"""ca alttıb. für Ichu. || & :cha alttıb. auch ca."	orthography_scan:2	low:2	review
+dotless_i:apı:api	dotless_i	apı (2)	api (2)	2	1	wts_1_34:181:56; wts_1_34:711:67	apı nirvyapeksäh)“ (Bca 6.121b); vol sgeg || auf irgendeine Weise (skt. katham cid apı)	orthography_scan:2	low:1, medium:1	review
+dotless_i:atı:ati	dotless_i	atı (1), Atı (1)	ati (1), Ati (1)	2	1	wts_1_34:663:74; wts_1_34:839:8	Lex. mahat (in Mvy 1063, 1406 u. ö.); atı? || Atı H	orthography_scan:2	low:2	review
+dotless_i:atınth:atinth	dotless_i	AtıNth (2)	AtiNth (2)	2	1	wts_1_34:13:7; wts_1_34:839:10	AtıNth	orthography_scan:2	medium:2	review
+dotless_i:avabhäsayantı:avabhäsayanti	dotless_i	avabhäsayantı (2)	avabhäsayanti (2)	2	1	wts_1_34:74:20; wts_1_34:177:156	tet (avabhäsayantı)“ (K12 43a2, skt. 37,27); || und Wirkung erleuchtet (avabhäsayantı)“	orthography_scan:2	low:2	review
+dotless_i:brıs:bris	dotless_i	brıs (2)	bris (2)	2	1	wts_1_34:556:191; wts_1_34:850:131	མངོན་བྲིས་ mnon brıs pf. zeichnen. || zin brıs.	orthography_scan:2	medium:1, low:1	review
+dotless_i:chın:chin	dotless_i	chın (2)	chin (2)	2	1	wts_1_34:53:87; wts_1_34:97:46	ཀི་ཀང་ 'ki kan Beiname des Rähu. -- vgl. chın. || ཀོང་ཅོ་ kon co, auch kon jo chın. Titel für Prinzes-	orthography_scan:2	medium:2	review
+dotless_i:dalaı:dalai	dotless_i	Dalaı (2)	Dalai (2)	2	1	wts_1_34:182:189; wts_1_34:688:8	Dalaı Lama od. Königs. || Dalaı Lama“ (Dagy).	orthography_scan:2	low:1, medium:1	review
+dotless_i:dolanjı:dolanji	dotless_i	Dolanjı (2)	Dolanji (2)	2	1	wts_1_34:32:120; wts_1_34:866:201	Tibetan Bonpo Monastic Centre (Dolanjı)	orthography_scan:2	low:2	review
+dotless_i:dınar:dinar	dotless_i	dınar (2)	dinar (2)	2	1	wts_1_34:751:209; wts_1_34:909:191	ལྗོན་ ljon auch //0/7 dınar Kupfer. || 2: 216,2); ~ dınar ro sten 7:09 (metr.) „eine	orthography_scan:2	medium:1, low:1	review
+dotless_i:gzrı:gzri	dotless_i	gzrı (2)	gzri (2)	2	1	wts_1_34:247:125; wts_1_34:922:186	gzrı min).	orthography_scan:2	medium:2	review
+dotless_i:hım-:him-	dotless_i	Hım- (2)	Him- (2)	2	1	wts_1_34:76:179; wts_1_34:420:48	— ’gyur (metr.) „weil [ich] in allen vier Hım- || edlen Arhantis Yasahprajhä usw. am Hım-	orthography_scan:2	low:2	review
+dotless_i:inı:ini	dotless_i	Inı (2)	Ini (2)	2	1	wts_1_34:727:11; wts_1_34:812:40	leben“ (Inı2 W53); mi ~ pa bäis bsnens pa || den alten Wegen“ (Inı2 W41); gtsug lag	orthography_scan:2	low:1, medium:1	review
+dotless_i:ivı:ivi	dotless_i	Ivı (2)	Ivi (2)	2	1	wts_1_34:29:65; wts_1_34:863:59	Ivı	orthography_scan:2	low:2	review
+dotless_i:kyıi:kyii	dotless_i	kyıi (2)	kyii (2)	2	1	wts_1_34:271:69; wts_1_34:1295:20	verbreitet“ (5751 35b3); rab rıb kyıi lin tog || Schicht“ (MTH3/3/2 5); drag {g}Zan kyıi ro	orthography_scan:2	medium:2	review
+dotless_i:käsıkä:käsikä	dotless_i	Käsıkä (2)	Käsikä (2)	2	1	wts_1_34:45:56; wts_1_34:47:3	Jambudvipa sind Käsıkä, Kalasa und Ma- || heißt es: ‚In Jambudvipa sind Käsıkä, Kalasa	orthography_scan:2	low:2	review
+dotless_i:lorı:lori	dotless_i	lorı (2)	lori (2)	2	1	wts_1_34:14:49; wts_1_34:738:112	snod beud kun gsal me lorı (verf. 1830). Ohne weiteren Zusatz bezeichnet das Kürzel || lorı » eine Schuld zurückzahlen.	orthography_scan:2	low:2	review
+dotless_i:m.i.vı:m.i.vi	dotless_i	M.I.vı (2)	M.I.vi (2)	2	1	wts_1_34:694:15; wts_1_34:844:102	M.I.vı.2a	orthography_scan:2	low:2	review
+dotless_i:mın:min	dotless_i	mın (2)	min (2)	2	1	wts_1_34:282:74; wts_1_34:651:126	Lex. mig 97 mın (Dagy). || mın (Dagy).	orthography_scan:2	medium:2	review
+dotless_i:nımmt:nimmt	dotless_i	nımmt (2)	nimmt (2)	2	1	wts_1_34:577:206; wts_1_34:771:146	nımmt der Arme Zuflucht beim Vor- || „am Morgen nımmt er ein Bad“ (gZi 2:	orthography_scan:2	low:1, medium:1	review
+dotless_i:pagına:pagina	dotless_i	pagına (2)	pagina (2)	2	1	wts_1_34:31:264; wts_1_34:866:83	pagına, paginae; Seite, Seiten	orthography_scan:2	low:2	review
+dotless_i:reıs:reis	dotless_i	Reıs (2)	Reis (2)	2	1	wts_1_34:551:49; wts_1_34:649:165	1. ein Reıs. || 1. Reıs.	orthography_scan:2	low:2	review
+dotless_i:rıb:rib	dotless_i	rıb (2)	rib (2)	2	1	wts_1_34:194:13; wts_1_34:271:69	rıb. || verbreitet“ (5751 35b3); rab rıb kyıi lin tog	orthography_scan:2	low:1, medium:1	review
+dotless_i:rıl:ril	dotless_i	rıl (2)	ril (2)	2	1	wts_1_34:532:175; wts_1_34:532:222	ངུར་རིལ་ nur rıl || ངུར་རིལ་ nur rıl Wildente, Möwe.	orthography_scan:2	medium:2	review
+dotless_i:scı:sci	dotless_i	scı (1), Scı (1)	sci (1), Sci (1)	2	1	wts_1_34:817:183; wts_1_34:942:133	ich dich rufe und es dir bekanntmache, scı || (Scı1U11 2012: 1397).	orthography_scan:2	low:2	review
+dotless_i:seın:sein	dotless_i	seın (2)	sein (2)	2	1	wts_1_34:245:42; wts_1_34:955:172	hören, gehorsam seın. || Atem seın.	orthography_scan:2	low:2	review
+dotless_i:skı:ski	dotless_i	skı (2)	ski (2)	2	1	wts_1_34:733:127; wts_1_34:753:28	Weltzeitalter einleiten (für skı. puskarä- || Vergeßlichkeit (skı. musitasmrti), Zer-	orthography_scan:2	low:2	review
+dotless_i:snanı:snani	dotless_i	snanı (2)	snani (2)	2	1	wts_1_34:82:166; wts_1_34:716:16	ཀུན་སྣང་ kun snanı || མཇལ་རྩང་ mjal snanı Vision.	orthography_scan:2	medium:2	review
+dotless_i:spyı:spyi	dotless_i	spyı (2)	spyi (2)	2	1	wts_1_34:147:127; wts_1_34:346:200	ken niedergelegt“ (Tär 181,10); gras yıg spyı || des spyı dpon“ (Gesar 186,20).	orthography_scan:2	low:2	review
+dotless_i:tcı:tci	dotless_i	Tcı (2)	Tci (2)	2	1	wts_1_34:580:175; wts_1_34:586:41	ཅི་ཞིག་འདྲ་ ci Zig ’dra Tcı ’dra. || Tcı cog, 10 cog.	orthography_scan:2	medium:1, low:1	review
+dotless_i:türkısch:türkisch	dotless_i	türkısch (2)	türkisch (2)	2	1	wts_1_34:590:39; wts_1_34:866:220	türk. türkısch || türkısch	orthography_scan:2	low:2	review
+dotless_i:tı:ti	dotless_i	Tı (2)	Ti (2)	2	1	wts_1_34:848:21; wts_1_34:848:23	Tı112 || Tı113	orthography_scan:2	low:2	review
+dotless_i:tıb:tib	dotless_i	Tıb (1), tıb (1)	Tib (1), tib (1)	2	1	wts_1_34:842:67; wts_1_34:1134:65	54 (IOL Tıb N 1924); Faksimile, p. 55, Fig. 6. || 3. npr. ein tıb. Herrscher.	orthography_scan:2	low:2	review
+dotless_i:tılal:tilal	dotless_i	TıLal (2)	TiLal (2)	2	1	wts_1_34:20:96; wts_1_34:850:11	TıLal	orthography_scan:2	low:2	review
+dotless_i:xlıv:xliv	dotless_i	xlıv (2)	xliv (2)	2	1	wts_1_34:23:70; wts_1_34:857:58	xlıv	orthography_scan:2	low:2	review
+dotless_i:yıb:yib	dotless_i	yıb (2)	yib (2)	2	1	wts_1_34:176:15; wts_1_34:634:220	སྐམ་ཡིབ་ skam yıb dünn, mager. || ~ yıb byas „ich bat um Unterkunft im	orthography_scan:2	medium:1, low:1	review
+dotless_i:yıs:yis	dotless_i	yıs (2)	yis (2)	2	1	wts_1_34:641:95; wts_1_34:1193:100	entwässerter Milch“ (T1748 12833); ~ yıs || er 999 Söhne hatte“ (Liyl 17536); — yıs ...	orthography_scan:2	low:2	review
+dotless_i:zıg:zig	dotless_i	zıg (1), Zıg (1)	zig (1), Zig (1)	2	1	wts_1_34:580:53; wts_1_34:711:181	ཅ ཞག €/ zıg || Saṃsāra [bestehen]“ (MSg 7,24); re Zıg ~	orthography_scan:2	medium:1, low:1	review
+dotless_i:ı.s.v:i.s.v	dotless_i	ı.S.v (2)	i.S.v (2)	2	1	wts_1_34:735:52; wts_1_34:806:130	don „ı.S.v. durch das Locheisen gezogen“ || kyan 'byun „ı.S.v. Ehe vermitteln, erscheint	orthography_scan:2	low:2	review
+dotless_i:ınan:inan	dotless_i	ınan (2)	inan (2)	2	1	wts_1_34:801:67; wts_1_34:899:37	Zin ’gro (metr.) „ınan soll nur ein Joch weit || „ınan soll zahlreiche Wasseropfer und drei-	orthography_scan:2	low:2	review
+dotless_i:ıns:ins	dotless_i	ıns (2)	ins (2)	2	1	wts_1_34:134:157; wts_1_34:970:123	"reiste ıns ’""A-Za-Land; unterdessen erschien || der ıns Tibetische übersetzten"	orthography_scan:2	low:2	review
+dotless_i:ıst:ist	dotless_i	ıst (2)	ist (2)	2	1	wts_1_34:329:111; wts_1_34:705:121	.. ༡ Zin ger (metr.) „Galle ıst abführend || für den das Wort das Höchste ıst“ (Mvy	orthography_scan:2	medium:1, low:1	review
+google_tibetan_diacritic_disagreement:1:gñis	google_tibetan_diacritic_disagreement	1 (2)	gñis (2)	2	1	wts_1_34:967:125; wts_1_34:967:125	tshul kbrims ༡༨ (v. 1. Ita) ba 72/// (v. 1, gud)	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:bkah-than-sde-ina:bkah-than-sde-lṅa	google_tibetan_diacritic_disagreement	Bkah-than-sde-Ina (2)	Bkah-than-sde-lṅa (2)	2	1	wts_1_34:857:52; wts_1_34:857:55	— 1982: Bkah-than-sde-Ina. Dgah-Idan-phun-tshogs-glin [!] edition. Reproduced || — 1982a: Bkah-than-sde-Ina. Zhö edition. Reproduced from the collection of Prof.	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:bzan-po’i:bzaṅ-po'i	google_tibetan_diacritic_disagreement	bzan-po’i (2)	bzaṅ-po'i (2)	2	1	wts_1_34:589:116; wts_1_34:860:98	Werksammlungen Kun-tu bzan-po’i dgons-pa zan-thal, Ka-dag ran-byun ran-Sar || bzan-po’i dgons-pa zan-thal, Ka-dag ran-byun ran-Sar und mKha’-’gro gsan-ba ye-	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:gfäis:gñis	google_tibetan_diacritic_disagreement	gfäis (2)	gñis (2)	2	1	wts_1_34:695:72; wts_1_34:1173:94	dge ’dun sde gfäis spyan drans nas ... = gsol || 24,6); stigs ma’i — ’dir rgyal ba gfäis pa byon	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:in:ñin	google_tibetan_diacritic_disagreement	in (2)	ñin (2)	2	1	wts_1_34:1145:38; wts_1_34:1149:40	10.35d); ri $; sar bas — med pa / in mtshan || 10.35d); r2 si $ar bas — med pa / in mtshan	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:ze:ñe	google_tibetan_diacritic_disagreement	ze (2)	ñe (2)	2	1	wts_1_34:1108:45; wts_1_34:1149:44	men“ (Liy2 32); ze sdes — kho nar tshogs bsdu || wurde“ (Ahs 1.3.52a); — gis ze bar bcom pas	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:zu:źu	google_tibetan_diacritic_disagreement	Zu (2)	źu (2)	2	1	wts_1_34:1088:27; wts_1_34:1213:82	(MTH3/5/13 5); — ... dur sgrub Zu ma dgos || Zu (metr.) „in diesem [Leben] ist nichts gewiß, gewähre mir daher Gewißheit danach“	google_unresolved_tibetan_context:2	medium:2	review
+google_tibetan_diacritic_disagreement:zus:źus	google_tibetan_diacritic_disagreement	Zus (2)	źus (2)	2	1	wts_1_34:589:40; wts_1_34:1100:28	’Phags pa khyim bdag drag $ul can gyis Zus pa Zes bya ba theg pa chen po’i || Lex. Zus dag byas pa’i yi ge la’anı „korrigierter	google_unresolved_tibetan_context:2	medium:2	review
+unknown:isk:1sk	unknown	ISK (2)	1SK (2)	2	1	wts_1_34:852:53; wts_1_34:907:78	1-15). [Rol, ISK]) || (ISK 1: 214,3,4); sRye ’gro kun gyi spyi bos ~			siglum_policy_review
+citation_or_siglum:1181:chandra	citation_or_siglum	1181 (1)	CHANDRA (1)	1	1	wts_1_34:835:39	rung nur noch in Ausnahmefällen Wörterbücher wie die von LOkesH (1181) 1959-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:118:rin	citation_or_siglum	118 (1)	RIN (1)	1	1	wts_1_34:859:54	[20 RjE 118 cHeNn 1982: mDo smad chos ’byun. Kan su’u: Mi rigs dpe skrun khan.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:1985:a	citation_or_siglum	1985 (1)	A (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:1:kth	citation_or_siglum	1 (1)	KTh (1)	1	1	wts_1_34:1084:8	hen läßt“ (KTh 1: 282,3); — skye Ius blans	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:1:p	citation_or_siglum	1 (1)	P (1)	1	1	wts_1_34:857:87	ti’s Nyäyabindu. Patna: K. 1? Jayaswal Research Institute (Tibetan Sanskrit Works	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:20:rdo	citation_or_siglum	20 (1)	RDO (1)	1	1	wts_1_34:859:54	[20 RjE 118 cHeNn 1982: mDo smad chos ’byun. Kan su’u: Mi rigs dpe skrun khan.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:330:ys	citation_or_siglum	330 (1)	Yś (1)	1	1	wts_1_34:240:64	(¥ 330); skyu ... -r beug „er steckte den	sigla_registry:1	policy:1	already_canonical_siglum
+citation_or_siglum:477:bsad	citation_or_siglum	477 (1)	bśad (1)	1	1	wts_1_34:1173:12	rim bZin — ni drug tu ༡477 (metr.) „begin-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:521:gzi	citation_or_siglum	521 (1)	gZi (1)	1	1	wts_1_34:862:61	brjid rab tu 'bar ba’i mdo (Randtitel: gZi brjid). 12 vols. [Dolanji]. [521]	sigla_registry:1	policy:1	already_canonical_siglum
+citation_or_siglum:618:sps	citation_or_siglum	618 (1)	SPS (1)	1	1	wts_1_34:857:25	Delhi: TAIC (618 3,1-12). [LC]	sigla_registry:1	policy:1	already_canonical_siglum
+citation_or_siglum:a:a	citation_or_siglum	A (1)	A (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:aa:aa	citation_or_siglum	AA (1)	AA (1)	1	1	wts_1_34:12:32	AA Byams pa: Ses rab kyi pha rol tu phyin pa’i man nag gi bstan bcos mnon par rtogs pa’i	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ba:ba	citation_or_siglum	ba (1)	bā (1)	1	1	wts_1_34:648:99	verweilen“ (Bca 9.163c); ba ra na si Zes bya	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:beud:beud	citation_or_siglum	BeuD (1)	BeuD (1)	1	1	wts_1_34:695:141	(BeuD 223,3).	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bhukkh:bhukkh	citation_or_siglum	BhuKkh (1)	BhuKkh (1)	1	1	wts_1_34:1088:22	an, außer wenn einer umzieht“ (BhuKkh	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bisära:bisara	citation_or_siglum	bisära (1)	bisāra (1)	1	1	wts_1_34:1213:7	bisära auf“ (Prav 8,22); — skad cig de nid la	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bonpo:foundation	citation_or_siglum	Bonpo (1)	FOUNDATION (1)	1	1	wts_1_34:862:51	Tıreran Bonpo Founvarion 1966: The Tibetan classical textbook. ©.O. [Bon]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bsad:bsad	citation_or_siglum	b$ad (1)	bśad (1)	1	1	wts_1_34:1171:36	yin par b$ad (metr.) „dies wird von den Gelehrten als Zeitmaß für die Unterteilung er-	siglum_shape:1	policy:1	siglum_policy_review
+citation_or_siglum:bus:bue	citation_or_siglum	Bus (1)	BUE (1)	1	1	wts_1_34:857:19	Lo Bus, Erberto 1981: „Statuary metals in Tibet and the Himälayas: History, tradition	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bzan:bzan	citation_or_siglum	BZAN (1)	BZAN (1)	1	1	wts_1_34:1100:47	jonctif (sKAL BZAN ’GYUR MED 1992: 97), no-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bzi:bzi	citation_or_siglum	bZi (1)	bZi (1)	1	1	wts_1_34:648:127	(KTh 1: 449,5); chu bZi ’dus pa’i mgo bo la	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bzir:bzir	citation_or_siglum	bZir (1)	bZir (1)	1	1	wts_1_34:648:80	bZir Zugs pa’i sems can rnams „die Lebewesen, die in die vier Ströme eingetreten	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:bzur:bzur	citation_or_siglum	bZur (1)	bZur (1)	1	1	wts_1_34:1171:25	lich [zugleich]“ (Ahs 1.5.2c); bZur ba gZan /	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:card:card	citation_or_siglum	cARD (1)	cARD (1)	1	1	wts_1_34:859:65	RıcARD, Matthieu et al. 1994: The life of Shabkar. The autobiography ofa Tibetan Yogin.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:charoson:charoson	citation_or_siglum	cHaroson (1)	cHaroson (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:chenn:chenn	citation_or_siglum	cHeNn (1)	cHeNn (1)	1	1	wts_1_34:859:54	[20 RjE 118 cHeNn 1982: mDo smad chos ’byun. Kan su’u: Mi rigs dpe skrun khan.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:dacyas:dagyab	citation_or_siglum	Dacyas (1)	DAGYAB (1)	1	1	wts_1_34:860:90	—— /Dacyas, Loden Sherab 1978: Urkunden, Erlasse und Sendschreiben aus dem Besitz	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:demieville:demieville	citation_or_siglum	DEMIEVILLE (1)	DEMIEVILLE (1)	1	1	wts_1_34:974:12	DEMIEVILLE, Paul 1952: Le conczle de Lhasa. Une controverse sur le quietisme entre bouddhistes	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:devt:devt	citation_or_siglum	DevT (1)	DevT (1)	1	1	wts_1_34:860:54	stotra mit Prajnävarmans Kommentar. Wien: ATBS (WSTB 81). [Dev, DevT]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:devätisaya:devatisaya	citation_or_siglum	Devätisaya (1)	Devātiśaya (1)	1	1	wts_1_34:860:53	— 2014: Eine buddhistische Kritik der indischen Götter. Samkarasvämins Devätisaya-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:dnul:dnul	citation_or_siglum	dNul (1)	dNul (1)	1	1	wts_1_34:589:48	dNul chu Dharmabhadra (1772-1851). Ed.: CHAMPA OSER 1973-1981.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:dorje:dorje	citation_or_siglum	DoRJe (1)	DoRJe (1)	1	1	wts_1_34:859:106	Sanje DoRJe 1973-1977: »Nying ma’i rgyud ben bdun. Collected Nyıng-ma pa tantras of	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:dyaghüsana:a	citation_or_siglum	DyAgHüsana (1)	A (1)	1	1	wts_1_34:12:40	Amarakosa. Ed.: ViıDyAgHüsana 1911; zitiert nach Seite und Strophe,	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:e:e	citation_or_siglum	E (1)	E (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:gangä:ganga	citation_or_siglum	gangä (1)	gangā (1)	1	1	wts_1_34:648:111	(VaiNth 208,1); ~ gangä „der Fluß Gangä“	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:gegenmudräs:gegenmudras	citation_or_siglum	Gegenmudräs (1)	Gegenmudrās (1)	1	1	wts_1_34:1126:29	maya) mittels Mudräs und Gegenmudräs“	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:gäcära:gacara	citation_or_siglum	gäcära (1)	gācāra (1)	1	1	wts_1_34:695:23	gäcära) Edites er Chapitre XII (Mädhyamika) edit et traduit. Kyoto: Zinbun Ra-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:haag:haag	citation_or_siglum	HaAG (1)	HaAG (1)	1	1	wts_1_34:857:3	ıHaAG PA TSHE RIN 1983: Myan yul stod smad bar gsum 07// no mtshar gtam gyi legs bsad	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:habe:sambh	citation_or_siglum	habe (1)	Śambh (1)	1	1	wts_1_34:268:112	38b4); gian skyon ran gi ༡༨“ (metr.) „ich habe	sigla_registry:1	policy:1	siglum_policy_review
+citation_or_siglum:hann:hahn	citation_or_siglum	Hann (1)	HAHN (1)	1	1	wts_1_34:1100:57	nalisierte Sätze aneinander (vgl. Hann 1996:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:hill:hill	citation_or_siglum	HiLL (1)	HiLL (1)	1	1	wts_1_34:240:10	HiLL, Nathan, „Personalpronomina in der Lebensbeschreibung des Mi la ras pa, Kapitel III“.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:hugh:e	citation_or_siglum	Hugh (1)	E (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:i:i	citation_or_siglum	I (1)	I (1)	1	1	wts_1_34:835:58	btags eingeordnet. Im Übrigen gelten die bereits in Faszikel I, pp. xv sowie xx-xxi	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:idanim:bhugr	citation_or_siglum	idanim (1)	BhuGr (1)	1	1	wts_1_34:1084:60	adhunä, sämpratam, idanim, etarhi, sadyah	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:iimeo:iimeo	citation_or_siglum	IIMEO (1)	IIMEO (1)	1	1	wts_1_34:859:84	Bu ston rnam thar. Roma: IIMEO(SOR 34).	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ikhur:kriechbaum	citation_or_siglum	Ikhur (1)	KRIECHBAUM (1)	1	1	wts_1_34:268:212	Taraxacum, Ikhur mon (vgl.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ini12:in12	citation_or_siglum	Ini12 (1)	In12 (1)	1	1	wts_1_34:1108:41	den Thron bestiegen hatte“ (Ini12 E21); —	sigla_registry:1	policy:1	already_canonical_siglum
+citation_or_siglum:itn:itn	citation_or_siglum	ITN (1)	ITN (1)	1	1	wts_1_34:862:12	Publications, pp. 50-56. [ITN 1924]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:jatakamäla:jatakamala	citation_or_siglum	Jatakamäla (1)	Jātakamālā (1)	1	1	wts_1_34:695:15	HANISCH, Albrecht 2005: Äryasäras Jatakamäla 1-15. Marburg: Indica-et-Tibetica-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:jtaraxacum:jtaraxacum	citation_or_siglum	JTaraxacum (1)	JTaraxacum (1)	1	1	wts_1_34:268:199	JTaraxacum, Ikhbur mon (vgl. KLETTER/	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:kletter:kletter	citation_or_siglum	KLETTER (1)	KLETTER (1)	1	1	wts_1_34:268:199	JTaraxacum, Ikhbur mon (vgl. KLETTER/	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:koshabhasya:koshabhasya	citation_or_siglum	Koshabhasya (1)	Koshabhāṣya (1)	1	1	wts_1_34:859:42	PRADHAN, P 1967: Abhidharm- [!] Koshabhasya of Vasubandhu. Patna: K. P Jayaswal	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:kth:kth	citation_or_siglum	KTh (1)	KTh (1)	1	1	wts_1_34:1084:8	hen läßt“ (KTh 1: 282,3); — skye Ius blans	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ligern:ligeti	citation_or_siglum	Ligern (1)	LIGETI (1)	1	1	wts_1_34:857:11	Ligern, Louis 1984 (ed.): Tibetan and Buddhist studies commemorating the 200th anni-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:lmaeda:lmaeda	citation_or_siglum	lmaeDa (1)	lmaeDa (1)	1	1	wts_1_34:857:74	—— /lmaeDa, Yoshiro 1978: Choix de documents tibetains conserves a la Bibliotheqne	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:lo:lo	citation_or_siglum	Lo (1)	LO (1)	1	1	wts_1_34:857:19	Lo Bus, Erberto 1981: „Statuary metals in Tibet and the Himälayas: History, tradition	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:lokkesh:lokkesh	citation_or_siglum	LOKkESH (1)	LOKkESH (1)	1	1	wts_1_34:857:62	LOKkESH CHANDRA 1982b: Biography of Atisa and his disciple bBrom-ston. Old Tashilhun-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:maam:maam	citation_or_siglum	mAam (1)	mAam (1)	1	1	wts_1_34:695:48	del 69,1); ~ chu Zen mAam pa’o (metr.) „der	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:macdonald:macdonald	citation_or_siglum	MACDONALD (1)	MACDONALD (1)	1	1	wts_1_34:589:61	Ms., Fonds Pelliot Tibetain. Ed.: MACDONALD/IMAEDA 1978-79, t. 2,	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:macdoonald:macdoonald	citation_or_siglum	MACDOoNALD (1)	MACDOoNALD (1)	1	1	wts_1_34:857:69	MACDOoNALD, Ariane 1971: „Une lecture des Pelliot Tibetain 1286, 1287, 1038, 1047, et	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:marhews:marhews	citation_or_siglum	MarHews (1)	MarHews (1)	1	1	wts_1_34:857:94	MarHews, Robert H. 2000: Mathews’ Chinese-English dictionary. A Chinese-English	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:mars:mathes	citation_or_siglum	Mars (1)	MATHES (1)	1	1	wts_1_34:857:90	Mars, Klaus-Dieter 1996: Unterscheidung der Gegebenheiten von ihrem wahren We-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ma’i:rnying	citation_or_siglum	ma’i (1)	rNying (1)	1	1	wts_1_34:859:106	Sanje DoRJe 1973-1977: »Nying ma’i rgyud ben bdun. Collected Nyıng-ma pa tantras of	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:mckay:mckay	citation_or_siglum	McKay (1)	McKay (1)	1	1	wts_1_34:857:109	McKay, Alex 2002: „The drowning of Lama Sengchen Kyabying. A preliminary enquiry from British sources.“ In: Tibet, past and present: Tibetan studies I. Proceed-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:migto:migto	citation_or_siglum	MigTo (1)	MigTo (1)	1	1	wts_1_34:1145:78	getragen werden“ (MigTo 99,1); 577/77 — mig	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:mimari:mimari	citation_or_siglum	MIMARI (1)	MIMARI (1)	1	1	wts_1_34:695:21	MIMARI, Katsumi 1982: Blo gsal grub mtha’. Chapitres IX (Vaibhäsika) et XI (Yo-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:misra:misra	citation_or_siglum	Misra (1)	Miśra (1)	1	1	wts_1_34:859:103	the sub-commentary entitled Äloka of Durveka Misra. Baroda: Oriental Institute	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:mudräs:mudras	citation_or_siglum	Mudräs (1)	Mudrās (1)	1	1	wts_1_34:1126:29	maya) mittels Mudräs und Gegenmudräs“	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:mädhyamika:madhyamika	citation_or_siglum	Mädhyamika (1)	Mādhyamika (1)	1	1	wts_1_34:695:23	gäcära) Edites er Chapitre XII (Mädhyamika) edit et traduit. Kyoto: Zinbun Ra-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:nirväna:nirva	citation_or_siglum	Nirväna (1)	Nirvā (1)	1	1	wts_1_34:695:10	— 2012: „Mnyam dka(r) and Dharmakirti’s Praise of the Buddha’s Nirväna. Mis-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:oaw:oaw	citation_or_siglum	OAW (1)	OAW (1)	1	1	wts_1_34:860:50	wehr des Todes. Wien: OAW (Denkschriften der phil.-hist. Kl. 394, Beiträge zur	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:oxapa:okada	citation_or_siglum	Oxapa (1)	OKADA (1)	1	1	wts_1_34:859:20	Oxapa, Yukihiro 1990: Nägärjuna’s Ratnävali. Vol. 2: Die Ratnävalitikä des Ajitamitra.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:pa:pada	citation_or_siglum	pa (1)	paḍā (1)	1	1	wts_1_34:238:38	Lex. ¬~ pa =däru — pa Zes snanı „erscheint	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:pa:vagbha	citation_or_siglum	pa (1)	Vāgbha (1)	1	1	wts_1_34:12:36	Ahs Pha gol: Yan lag breyad pa’i sin po bsdus pa / Vägbhata: Astängahrdayasambhitä. Teilw.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:panclung:panclung	citation_or_siglum	PancLung (1)	PancLung (1)	1	1	wts_1_34:859:27	PancLung, Jampa L. 1981: Die Erzählstoffe des Mülasärvastiväda-Vinaya analysiert auf	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:pasang:pasang	citation_or_siglum	Pasang (1)	PASANG (1)	1	1	wts_1_34:859:36	Pasang Yontan Arya 1998: Dictionary of Tibetan materia medica. Delhi: Motilal Banar-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:pp:pp	citation_or_siglum	pp (1)	PP (1)	1	1	wts_1_34:240:11	ZAS 36 (2007), pp. 277-287.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:press:press	citation_or_siglum	Press (1)	PRESS (1)	1	1	wts_1_34:862:68	TIBETAN CULTURAL PrINTING Press 1973: Sems dpa’ chen po dkon mchog rgyal mtshan	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:printing:printing	citation_or_siglum	PrINTING (1)	PrINTING (1)	1	1	wts_1_34:862:68	TIBETAN CULTURAL PrINTING Press 1973: Sems dpa’ chen po dkon mchog rgyal mtshan	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ps:ps	citation_or_siglum	P$ (1)	Ps (1)	1	1	wts_1_34:1149:10	nimmt“ (P$ 216); ~ kyan bdud rtsi nid du	sigla_registry:1	policy:1	siglum_policy_review
+citation_or_siglum:ratnävt:ratnavt	citation_or_siglum	RatnävT (1)	RatnāvṬ (1)	1	1	wts_1_34:859:21	Bonn: Indica-et-Tibetica-Verl. (Indica et Tibetica 19). [RatnävT]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:reran:bonpo	citation_or_siglum	reran (1)	BONPO (1)	1	1	wts_1_34:862:51	Tıreran Bonpo Founvarion 1966: The Tibetan classical textbook. ©.O. [Bon]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:reynoros:reynolds	citation_or_siglum	Reynoros (1)	REYNOLDS (1)	1	1	wts_1_34:859:61	"Reynoros, John 1970: O rgyan gu ru padma ""byun gnas kyi skyes rabs rnam par thar"	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:rigzin:rigzin	citation_or_siglum	RIGzIN (1)	RIGzIN (1)	1	1	wts_1_34:862:89	TsEPAK RIGzIN 2003: Nanı don rig pa’i min tshig bod dbyin san sbyar. Tibetan-English	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:rin:rin	citation_or_siglum	RIN (1)	RIN (1)	1	1	wts_1_34:857:3	ıHaAG PA TSHE RIN 1983: Myan yul stod smad bar gsum 07// no mtshar gtam gyi legs bsad	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:rje:rje	citation_or_siglum	RjE (1)	RjE (1)	1	1	wts_1_34:859:54	[20 RjE 118 cHeNn 1982: mDo smad chos ’byun. Kan su’u: Mi rigs dpe skrun khan.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:roerich:roerich	citation_or_siglum	RoERICH (1)	RoERICH (1)	1	1	wts_1_34:859:73	RoERICH, George N. 1949-1953: The Blue Annals. 2 pts. Calcutta: Asiatic Society	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:rus:rus	citation_or_siglum	Rus (1)	RUS (1)	1	1	wts_1_34:859:95	Rus PA’I RGYAN CAN 1989: rNal ’byor gyi dban phyug chen po mi la ras pa’! rnam mgur.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:russ:ruegg	citation_or_siglum	Russ (1)	RUEGG (1)	1	1	wts_1_34:859:83	Russ, David Seyfort 1966: The life of Bu ston rin po che. With the Tibetan text of the	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:räg:rag	citation_or_siglum	Räg (1)	Rāg (1)	1	1	wts_1_34:860:95	St. Augustin: VGH Wissenschaftsverlag (BZF 1). [Räg]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:sa:sa	citation_or_siglum	Sa (1)	śa (1)	1	1	wts_1_34:288:58	nern“ (KunK 29,18); ~ mmams chu ka la Sa	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:sanje:sanje	citation_or_siglum	Sanje (1)	SANJE (1)	1	1	wts_1_34:859:106	Sanje DoRJe 1973-1977: »Nying ma’i rgyud ben bdun. Collected Nyıng-ma pa tantras of	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:satkaya:satkaya	citation_or_siglum	satkaya (1)	satkāya (1)	1	1	wts_1_34:1122:64	sku —r ma ’dzin par „ohne ihn als wirklichen Körper (skt. satkaya) anzusehen“ (K12	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:scharee:scharee	citation_or_siglum	SCHAREE (1)	SCHAREE (1)	1	1	wts_1_34:860:3	SCHAREE, Hartmut 1977: Grammatical literature. Wiesbaden: Harrassowitz (A history	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:scharpe:scharpe	citation_or_siglum	ScHArPE (1)	ScHArPE (1)	1	1	wts_1_34:860:6	ScHArPE£, Adriaan 1958: Kalidäsa-Lexicon. Vol. 1, pt. 3. Brugge: De Tempel (Werken,	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ses:ses	citation_or_siglum	$es (1)	śes (1)	1	1	wts_1_34:1126:48	te“ (Tär 144,18); — bsrun ma $es (metr.) „ich	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:sig:sig	citation_or_siglum	Sig (1)	śig (1)	1	1	wts_1_34:1100:77	in Aufruhr“ (Siddh 1.22); skyugs Sig ces smras	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:skal:skal	citation_or_siglum	sKAL (1)	sKAL (1)	1	1	wts_1_34:1100:47	jonctif (sKAL BZAN ’GYUR MED 1992: 97), no-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:sps:sps	citation_or_siglum	$PS (1)	SPS (1)	1	1	wts_1_34:857:43	of Prof. Raghu Vira. New Delhi: TAIC ($PS 100). [KID, KlonD]	sigla_registry:1	policy:1	siglum_policy_review
+citation_or_siglum:t:t	citation_or_siglum	T (1)	T (1)	1	1	wts_1_34:862:51	Tıreran Bonpo Founvarion 1966: The Tibetan classical textbook. ©.O. [Bon]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:taraxacum:kletter	citation_or_siglum	Taraxacum (1)	KLETTER (1)	1	1	wts_1_34:268:212	Taraxacum, Ikhur mon (vgl.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tareuchi:tareuchi	citation_or_siglum	TAREUCHI (1)	TAREUCHI (1)	1	1	wts_1_34:521:16	1978-79, t. 2, pl. 578 (Faksimile); IMAEDA/TAREUCHI 1990, t.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:taseigang:taseigang	citation_or_siglum	TASEIGANG (1)	TASEIGANG (1)	1	1	wts_1_34:862:28	TASHI YANGPHEL TASEIGANG 1970: Shangs pa gser ’phreng. A golden rosary of lives of	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:taugt:taube	citation_or_siglum	Taugt (1)	TAUBE (1)	1	1	wts_1_34:862:33	Taugt, Manfred 1966: Tibetische Handschriften und Blockdrucke. Wiesbaden: Steiner	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:taxeuchi:takeuchi	citation_or_siglum	Taxeuchi (1)	TAKEUCHI (1)	1	1	wts_1_34:862:6	Taxeuchi, Tsuguhito 2003: „Military administration and military duties in Tibetanruled Central Asia (8th-9th century).“ In: Tibet and her neighbours. A history. Ed.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:textbook:o	citation_or_siglum	textbook (1)	O (1)	1	1	wts_1_34:862:51	Tıreran Bonpo Founvarion 1966: The Tibetan classical textbook. ©.O. [Bon]	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tromas:thomas	citation_or_siglum	Tromas (1)	THOMAS (1)	1	1	wts_1_34:862:42	Tromas, Frederick W. 1935-1963: Tibetan literary texts and documents concerning Chi-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tseng:tseng	citation_or_siglum	Tseng (1)	TSENG (1)	1	1	wts_1_34:862:85	Tseng, Te-ming 2005: Sino-tibetische Divinationskalkulation (Nag-rtsis), dargestellt an-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tsepak:tsepak	citation_or_siglum	TsEPAK (1)	TsEPAK (1)	1	1	wts_1_34:862:89	TsEPAK RIGzIN 2003: Nanı don rig pa’i min tshig bod dbyin san sbyar. Tibetan-English	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tseral:tseral	citation_or_siglum	TseraL (1)	TseraL (1)	1	1	wts_1_34:862:93	TseraL TAIKHANG 1972: The Vaidürya dkar po of Sde-srid Sans-rgyas-rgya-mtsho. The	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tsuva:tsuda	citation_or_siglum	Tsuva (1)	TSUDA (1)	1	1	wts_1_34:862:98	Tsuva, Shinichi 1974: The Samvarodaya-Tantra. Selected chapters. Tokyo: Hokuseido.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:tucc:tucci	citation_or_siglum	Tucc (1)	TUCCI (1)	1	1	wts_1_34:862:101	Tuccı, Giuseppe 1958: First Bhavanakrama of Kamalasila. Sanskrit and Tibetan texts	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:un:lin	citation_or_siglum	un (1)	LIN (1)	1	1	wts_1_34:857:15	un Shen-yu 2005: Mi pham’s Systematisierung von gTo-Ritnalen. Halle: IITBS (BZF	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:upädhyäya:upadhyaya	citation_or_siglum	Upädhyäya (1)	Upadhyāya (1)	1	1	wts_1_34:1108:67	um, ihr Upädhyäya zu werden“ (Nel 1717);	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:vaibhäsika:vaibhasika	citation_or_siglum	Vaibhäsika (1)	Vaibhāṣika (1)	1	1	wts_1_34:695:21	MIMARI, Katsumi 1982: Blo gsal grub mtha’. Chapitres IX (Vaibhäsika) et XI (Yo-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:vaidürya:vaidurya	citation_or_siglum	Vaidürya (1)	Vaiḍurya (1)	1	1	wts_1_34:862:93	TseraL TAIKHANG 1972: The Vaidürya dkar po of Sde-srid Sans-rgyas-rgya-mtsho. The	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ville:ville	citation_or_siglum	VIlle (1)	VIlle (1)	1	1	wts_1_34:974:13	de ’Inde et de la Chine au VIlle siecle de l’ere chretienne. Paris: Imprimerie nationale de	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:vocel:vocel	citation_or_siglum	VoceL (1)	VoceL (1)	1	1	wts_1_34:12:37	Ed.: VoceL 1965. Exzp.: H. Uebach.	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:vorj:dorji	citation_or_siglum	vorj (1)	DORJI (1)	1	1	wts_1_34:862:14	Tasıı vorjı 1973: Snan [!] srid mdzod phug gi rtsa ba dan [!] spyi don gyı gsun [!] pod	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:ws:ws	citation_or_siglum	WS (1)	WS (1)	1	1	wts_1_34:835:22	Die erste Lieferung des „Wörterbuchs der tibetischen Schriftsprache“ (WS) wurde 1111	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:yasas:yasas	citation_or_siglum	Yasas (1)	Yaśas (1)	1	1	wts_1_34:1108:44	der Minister Yasas, Herr und Diener, zusam-	siglum_shape:1	policy:1	already_canonical_siglum
+citation_or_siglum:öobermiller:obermiller	citation_or_siglum	ÖOBERMILLER (1)	OBERMILLER (1)	1	1	wts_1_34:859:3	ÖOBERMILLER, Eugen 1931-32: History of Buddhism (Chos-hbyung) by Bu-ston. Trans-	siglum_shape:1	policy:1	already_canonical_siglum
+dollar_ś:-s:-s	dollar_ś	-$ (1)	-ś (1)	1	1	wts_1_34:104:189	ཀྱི་ 'kyi (nach -d, -b, -$), gi (nach -g und -n), gi	orthography_scan:1	medium:1	review
+dollar_ś:jhänasrimitra’s:jhänasrimitra’s	dollar_ś	Jhäna$rimitra’s (1)	Jhänaśrimitra’s (1)	1	1	wts_1_34:521:23	HAHN, Michael 2008: „The Sanskrit text of Jhäna$rimitra’s Vrttamälästuti.“ In:	google_unresolved_plus_orthography_scan:1	medium:1	review
+dollar_ś:sar:sar	dollar_ś	$ar (1)	śar (1)	1	1	wts_1_34:1149:40	10.35d); r2 si $ar bas — med pa / in mtshan	google_unresolved_plus_orthography_scan:1	medium:1	review
+dollar_ś:set:set	dollar_ś	$ET (1)	śET (1)	1	1	wts_1_34:712:105	"chin. $ET"" chü-ts# schwarze Hirsg; vgl. 'TMP"	orthography_scan:1	medium:1	review
+dollar_ś:sig:sig	dollar_ś	$ig (1)	śig (1)	1	1	wts_1_34:648:84	sta nas chu Ihun bzed gan lon(s) $ig „hole aus	google_unresolved_plus_orthography_scan:1	medium:1	review
+dollar_ś:srt:srt	dollar_ś	$RT (1)	śRT (1)	1	1	wts_1_34:719:37	GERT 75 tse Pinzette; von chin. $RT* chia-tzu	orthography_scan:1	medium:1	review
+dollar_ś:sul:sul	dollar_ś	$ul (1)	śul (1)	1	1	wts_1_34:589:40	’Phags pa khyim bdag drag $ul can gyis Zus pa Zes bya ba theg pa chen po’i	google_unresolved_plus_orthography_scan:1	medium:1	review
+dollar_ś:ye-ses:ye-ses	dollar_ś	Ye-$es (1)	Ye-śes (1)	1	1	wts_1_34:1108:66	den Grum Äcärya Ye-$es rgyal-mtshan dar-	google_unresolved_plus_orthography_scan:1	medium:1	review
+dotless_i:'ganı:'gani	dotless_i	'ganı (1)	'gani (1)	1	1	wts_1_34:338:80	གང་དག་ 'ganı dag sauber.	orthography_scan:1	medium:1	review
+dotless_i:abnımmt:abnimmt	dotless_i	abnımmt (1)	abnimmt (1)	1	1	wts_1_34:781:26	abnımmt“ (Ahs 1.3.8b).	orthography_scan:1	low:1	review
+dotless_i:adlıger:adliger	dotless_i	Adlıger (1)	Adliger (1)	1	1	wts_1_34:185:48	2. Adlıger, Adel.	orthography_scan:1	low:1	review
+dotless_i:admın:admin	dotless_i	admın (1)	admin (1)	1	1	wts_1_34:30:62	admın.	orthography_scan:1	low:1	review
+dotless_i:agnıvesa:agnivesa	dotless_i	Agnıveśa (1)	Agniveśa (1)	1	1	wts_1_34:119:100	than la gnas dan me bZin ’jug / — „Dhanvantari, Agnıveśa, Bhäradväja [u. a.]“ (K841(2)	orthography_scan:1	medium:1	review
+dotless_i:ajıta:ajita	dotless_i	Ajıta (1)	Ajita (1)	1	1	wts_1_34:224:27	rers Ajıta; skt. Kesakambala.	orthography_scan:1	low:1	review
+dotless_i:allwıssend:allwissend	dotless_i	allwıssend (1)	allwissend (1)	1	1	wts_1_34:996:130	1. allwıssend, Allwissender.	orthography_scan:1	low:1	review
+dotless_i:andıast:andiast	dotless_i	Andıast (1)	Andiast (1)	1	1	wts_1_34:865:132	bzw. Andıast)	orthography_scan:1	low:1	review
+dotless_i:annımmt:annimmt	dotless_i	annımmt (1)	annimmt (1)	1	1	wts_1_34:215:21	annımmt“ (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:anı-:ani-	dotless_i	anı- (1)	ani- (1)	1	1	wts_1_34:743:182	wird gewiß irgendeine Gunst (skt. anı-	orthography_scan:1	low:1	review
+dotless_i:ardhatrayodasasatänı:ardhatrayodasasatäni	dotless_i	ardhatrayodasasatänı (1)	ardhatrayodasasatäni (1)	1	1	wts_1_34:951:64	broya Ina ben = ardhatrayodasasatänı „1250“	orthography_scan:1	low:1	review
+dotless_i:arı:ari	dotless_i	Arı (1)	Ari (1)	1	1	wts_1_34:1195:47	gener Arı“ (Käsy 149,26); rmam grans —s	orthography_scan:1	low:1	review
+dotless_i:arıver:ariver	dotless_i	arıver (1)	ariver (1)	1	1	wts_1_34:34:80	Lex. n. of arıver (SCD).	orthography_scan:1	low:1	review
+dotless_i:atıbäalakah:atibäalakah	dotless_i	atıbäalakah (1)	atibäalakah (1)	1	1	wts_1_34:667:173	atıbäalakah „sehr jung“ (Mvy 8780).	orthography_scan:1	low:1	review
+dotless_i:atıh:atih	dotless_i	AtıH (1)	AtiH (1)	1	1	wts_1_34:13:5	AtıH	orthography_scan:1	low:1	review
+dotless_i:avavırthä:avavirthä	dotless_i	avavırthä (1)	avavirthä (1)	1	1	wts_1_34:79:205	Lex. avavırthä (r. ävyta) „bedeckt“ (Tshe	orthography_scan:1	medium:1	review
+dotless_i:axillarıs:axillaris	dotless_i	axillarıs (1)	axillaris (1)	1	1	wts_1_34:823:120	spondia axillarıs (PASANG 1998: 76).	orthography_scan:1	low:1	review
+dotless_i:aın:ain	dotless_i	Aın (1)	Ain (1)	1	1	wts_1_34:779:60	ཉིན་རེ་ Aın re 1/7//7.	orthography_scan:1	medium:1	review
+dotless_i:balabhadrıkä:balabhadrikä	dotless_i	balabhadrıkä (1)	balabhadrikä (1)	1	1	wts_1_34:961:149	Lex. balabhadrıkä (Ak 123.150); bhadrabalä	orthography_scan:1	low:1	review
+dotless_i:bannı:banni	dotless_i	bannı (1)	banni (1)	1	1	wts_1_34:68:99	sbyor bannı ... — „die Yoga-Abschnitte [sind]:	orthography_scan:1	low:1	review
+dotless_i:baunı:bauni	dotless_i	Baunı (1)	Bauni (1)	1	1	wts_1_34:948:106	1. Bez. für Baunı.	orthography_scan:1	low:1	review
+dotless_i:bekannıgeben:bekannigeben	dotless_i	bekannıgeben (1)	bekannigeben (1)	1	1	wts_1_34:1327:47	Glockenläuten bekannıgeben, be-	orthography_scan:1	low:1	review
+dotless_i:besıedeln:besiedeln	dotless_i	besıedeln (1)	besiedeln (1)	1	1	wts_1_34:147:148	5. besıedeln, sich niederlassen.	orthography_scan:1	low:1	review
+dotless_i:bhrämayantı:bhrämayanti	dotless_i	bhrämayantı (1)	bhrämayanti (1)	1	1	wts_1_34:324:98	~ pa = bhrämayantı (Mvy 5108).	orthography_scan:1	low:1	review
+dotless_i:blı-:bli-	dotless_i	blı- (1)	bli- (1)	1	1	wts_1_34:339:17	’gro (metr.) „man soll ein Joch weit blı-	orthography_scan:1	low:1	review
+dotless_i:bon-gottheıt:bon-gottheit	dotless_i	Bon-Gottheıt (1)	Bon-Gottheit (1)	1	1	wts_1_34:56:166	N. einer Bon-Gottheıt.	orthography_scan:1	medium:1	review
+dotless_i:brahmakäyıkah:brahmakäyikah	dotless_i	brahmakäyıkah (1)	brahmakäyikah (1)	1	1	wts_1_34:1109:5	nah tad yathä devä brahmakäyıkah prathamä-	orthography_scan:1	medium:1	review
+dotless_i:byıs:byis	dotless_i	byıs (1)	byis (1)	1	1	wts_1_34:531:193	Klagelaut ausstoßen“ (T4113 30624); byıs	orthography_scan:1	low:1	review
+dotless_i:bzı:bzi	dotless_i	bZı (1)	bZi (1)	1	1	wts_1_34:260:213	(Mvy 2284, Abt. zas bZı°i min).	orthography_scan:1	low:1	review
+dotless_i:bıda:bida	dotless_i	bıDa (1)	biDa (1)	1	1	wts_1_34:558:140	mähend“ (bıDa). རྡུད	orthography_scan:1	medium:1	review
+dotless_i:chandikävarıkah:chandikävarikah	dotless_i	chandikävarıkah (1)	chandikävarikah (1)	1	1	wts_1_34:491:201	(+. 1. om. chun) bsrun ba = chandikävarıkah	orthography_scan:1	low:1	review
+dotless_i:chanı:chani	dotless_i	chanı (1)	chani (1)	1	1	wts_1_34:1072:115	15,6); kbo bos chanı ~ sam / kun don zos sam	orthography_scan:1	low:1	review
+dotless_i:chürıkä:chürikä	dotless_i	chürıkä (1)	chürikä (1)	1	1	wts_1_34:644:19	Lex. chürıkä (Mvy 6091); Sastri (Ak	orthography_scan:1	low:1	review
+dotless_i:chıbs:chibs	dotless_i	chıbs (1)	chibs (1)	1	1	wts_1_34:640:131	ཆེབས་དཔོན་ chibs dpon alttib. chıbs pon Ver-	orthography_scan:1	medium:1	review
+dotless_i:chıl:chil	dotless_i	chıl (1)	chil (1)	1	1	wts_1_34:641:1	ཆེལ་ཆེལ་ chıl chil	orthography_scan:1	medium:1	review
+dotless_i:corydalıs:corydalis	dotless_i	Corydalıs (1)	Corydalis (1)	1	1	wts_1_34:461:102	eine Art Corydalıs, synon. chu	orthography_scan:1	low:1	review
+dotless_i:cı:ci	dotless_i	cı (1)	ci (1)	1	1	wts_1_34:649:208	Lex. ~ cı stag mo (gYu 292,2).	orthography_scan:1	low:1	review
+dotless_i:d.ı:d.i	dotless_i	d.ı (1)	d.i (1)	1	1	wts_1_34:857:81	MALALASEKERA, George [d.ı. Gunapa a] 1983: Dictionary of Pali proper names. 2 vols.	orthography_scan:1	low:1	review
+dotless_i:dafı:dafi	dotless_i	dafı (1)	dafi (1)	1	1	wts_1_34:1005:212	wegs vom Fleisch ab!“ (Tär 159,4); sgo dafı	orthography_scan:1	low:1	review
+dotless_i:danı:dani	dotless_i	danı (1)	dani (1)	1	1	wts_1_34:708:167	handelt“ (Ps 18b); ~ smras bzin byed danı	orthography_scan:1	low:1	review
+dotless_i:darsın:darsin	dotless_i	darsın (1)	darsin (1)	1	1	wts_1_34:1066:227	darsın.	orthography_scan:1	low:1	review
+dotless_i:desayısyamah:desayisyamah	dotless_i	desayısyamah (1)	desayisyamah (1)	1	1	wts_1_34:131:20	desayısyamah „mit umwickeltem Kopf wer-	orthography_scan:1	low:1	review
+dotless_i:devadarı:devadari	dotless_i	devadarı (1)	devadari (1)	1	1	wts_1_34:990:73	skt. devadarı Pinus Deodora Roxb. (PW);	orthography_scan:1	low:1	review
+dotless_i:devadärıh:devadärih	dotless_i	devadärıh (1)	devadärih (1)	1	1	wts_1_34:990:91	Lex. devadärıh (Mvy 4205); gsom sin	orthography_scan:1	low:1	review
+dotless_i:dga’-idan-pı:dga’-idan-pi	dotless_i	dGa’-Idan-pı (1)	dGa’-Idan-pi (1)	1	1	wts_1_34:255:118	Herrscher der dGa’-Idan-pı* (Bhulg	orthography_scan:1	low:1	review
+dotless_i:dharmavasıtä:dharmavasitä	dotless_i	dharmavasıtä (1)	dharmavasitä (1)	1	1	wts_1_34:681:96	Lex. dharmavasıtä (Mvy 777, Abt. byan	orthography_scan:1	low:1	review
+dotless_i:dominı:domini	dotless_i	Dominı (1)	Domini (1)	1	1	wts_1_34:864:102	anno Dominı	orthography_scan:1	low:1	review
+dotless_i:dreı:drei	dotless_i	dreı (1)	drei (1)	1	1	wts_1_34:225:82	„man muß in die Breite dreı Maßeinheiten,	orthography_scan:1	low:1	review
+dotless_i:drı:dri	dotless_i	drı (1)	dri (1)	1	1	wts_1_34:214:101	Speise findet“ (K12 132a1); drı Zim — yı /	orthography_scan:1	medium:1	review
+dotless_i:dväparayıga:dväparayiga	dotless_i	dväparayıga (1)	dväparayiga (1)	1	1	wts_1_34:804:42	Zeitalter, skt. dväparayıga, vgl. SCHUH	orthography_scan:1	low:1	review
+dotless_i:dıean:diean	dotless_i	dıean (1)	diean (1)	1	1	wts_1_34:219:80	Krüppel vor, dıean Hals, Gliedern und Sin-	orthography_scan:1	low:1	review
+dotless_i:dınan:dinan	dotless_i	dınan (1)	dinan (1)	1	1	wts_1_34:926:222	dınan par » herabsehen auf.	orthography_scan:1	low:1	review
+dotless_i:dınas:dinas	dotless_i	dınas (1)	dinas (1)	1	1	wts_1_34:908:115	als es gewogen wurde“ (Glr 198,19); dınas	orthography_scan:1	low:1	review
+dotless_i:dır:dir	dotless_i	dır (1)	dir (1)	1	1	wts_1_34:289:189	(metr.) „bei dır selbst gibt es viel Unreines“	orthography_scan:1	low:1	review
+dotless_i:dıvin:divin	dotless_i	dıvin (1)	divin (1)	1	1	wts_1_34:275:54	2. [dıvin.] eine Kalkulation.	orthography_scan:1	low:1	review
+dotless_i:einınal:eininal	dotless_i	einınal (1)	eininal (1)	1	1	wts_1_34:878:55	einınal ein bißchen daran denkst“ (gZer	orthography_scan:1	medium:1	review
+dotless_i:ekäkıino:ekäkiino	dotless_i	ekäkıino (1)	ekäkiino (1)	1	1	wts_1_34:593:120	tu son ste = ekäkıino rahogatäh „einzelne, die	orthography_scan:1	low:1	review
+dotless_i:ekäntaklıstäh:ekäntaklistäh	dotless_i	ekäntaklıstäh (1)	ekäntaklistäh (1)	1	1	wts_1_34:80:42	ni... — can = ime sattva ... ekäntaklıstäh „diese Wesen sind ganz befleckt“ (in Mvy 184);	orthography_scan:1	low:1	review
+dotless_i:erkır:erkir	dotless_i	ErKır (1)	ErKir (1)	1	1	wts_1_34:928:57	ErKır® acichtio རེ	orthography_scan:1	medium:1	review
+dotless_i:erıstata:eristata	dotless_i	erıstata (1)	eristata (1)	1	1	wts_1_34:911:44	erıstata Lin. (PW).	orthography_scan:1	low:1	review
+dotless_i:eı-:ei-	dotless_i	eı- (1)	ei- (1)	1	1	wts_1_34:1297:18	Unterwelt gehst, werde ich dich wie mit eı-	orthography_scan:1	low:1	review
+dotless_i:eınem:einem	dotless_i	eınem (1)	einem (1)	1	1	wts_1_34:234:33	usw. in eınem Gefäß schwenken, reinigend	orthography_scan:1	low:1	review
+dotless_i:eıs:eis	dotless_i	Eıs (1)	Eis (1)	1	1	wts_1_34:633:151	ཆཌ་རྱོཉ།། chab rom Eıs.	orthography_scan:1	medium:1	review
+dotless_i:fascıculus:fasciculus	dotless_i	fascıculus (1)	fasciculus (1)	1	1	wts_1_34:31:77	fascıculus; Faszikel	orthography_scan:1	low:1	review
+dotless_i:feıgn:feign	dotless_i	feıgn (1)	feign (1)	1	1	wts_1_34:237:194	mix, invent, feıgn (Lıi/CoBLm 1987: 376)?	orthography_scan:1	low:1	review
+dotless_i:fgecır:fgecir	dotless_i	fgecır (1)	fgecir (1)	1	1	wts_1_34:604:79	auspressen, vgl. fgecır.	orthography_scan:1	low:1	review
+dotless_i:flüssıger:flüssiger	dotless_i	flüssıger (1)	flüssiger (1)	1	1	wts_1_34:232:84	„wenn man eine in flüssıger Butter [zubereitete] Abkochung getrunken hat“ (¥	orthography_scan:1	low:1	review
+dotless_i:folıum:folium	dotless_i	folıum (1)	folium (1)	1	1	wts_1_34:31:81	folıum, folia; Blatt, Blätter	orthography_scan:1	low:1	review
+dotless_i:führı:führi	dotless_i	führı (1)	führi (1)	1	1	wts_1_34:753:170	führı“ (Nel 25b1); imam thar ’di / dkar	orthography_scan:1	medium:1	review
+dotless_i:g.yanı:g.yani	dotless_i	g.yanı (1)	g.yani (1)	1	1	wts_1_34:948:71	frißt“ (8Zi 2: 337,2); jo ru sod ~ g.yanı sbye	orthography_scan:1	low:1	review
+dotless_i:g.yı:g.yi	dotless_i	g.yı (1)	g.yi (1)	1	1	wts_1_34:505:48	Lex. gcan gzan g.yı (TTC).	orthography_scan:1	medium:1	review
+dotless_i:gananägatı:gananägati	dotless_i	gananägatı (1)	gananägati (1)	1	1	wts_1_34:424:128	gananägatı“ (Mvy 7970).	orthography_scan:1	low:1	review
+dotless_i:ganapatı:ganapati	dotless_i	Ganapatı (1)	Ganapati (1)	1	1	wts_1_34:263:6	2. Beiname des Ganapatı.	orthography_scan:1	low:1	review
+dotless_i:gansrı:gansri	dotless_i	Gansrı (1)	Gansri (1)	1	1	wts_1_34:840:95	Gansrı	orthography_scan:1	low:1	review
+dotless_i:ganı:gani	dotless_i	ganı (1)	gani (1)	1	1	wts_1_34:337:99	"ART ""gan ga \ganı gä."	orthography_scan:1	low:1	review
+dotless_i:ganıs:ganis	dotless_i	ganıs (1)	ganis (1)	1	1	wts_1_34:714:51	ཇོ་མོ་གངས་ jo mo ganıs	orthography_scan:1	medium:1	review
+dotless_i:gisarı:gisari	dotless_i	gIsarı (1)	gIsari (1)	1	1	wts_1_34:650:26	„in gIsarı sind Byan und Chu-mig, diese	orthography_scan:1	low:1	review
+dotless_i:glu-’brın:glu-’brin	dotless_i	Glu-’brın (1)	Glu-’brin (1)	1	1	wts_1_34:115:15	men, das sind Glu-rab bzan-do-re, Glu-’brın	orthography_scan:1	medium:1	review
+dotless_i:gnanı:gnani	dotless_i	gnanı (1)	gnani (1)	1	1	wts_1_34:743:56	ENTER rjes gnanı	orthography_scan:1	low:1	review
+dotless_i:gnañı:gnañi	dotless_i	gnañı (1)	gnañi (1)	1	1	wts_1_34:1204:79	bka’ stsal pa / — ... gnañı ño „[der Buddha]	orthography_scan:1	medium:1	review
+dotless_i:gnädıg:gnädig	dotless_i	gnädıg (1)	gnädig (1)	1	1	wts_1_34:140:115	„das ist sehr gnädıg“ (Tson Nth 5,11b3).	orthography_scan:1	medium:1	review
+dotless_i:grıg:grig	dotless_i	grıg (1)	grig (1)	1	1	wts_1_34:577:104	grıg y	orthography_scan:1	low:1	review
+dotless_i:grıl:gril	dotless_i	grıl (1)	gril (1)	1	1	wts_1_34:639:110	ཆིག་དྲིལ་ chig dril Tchig grıl.	orthography_scan:1	medium:1	review
+dotless_i:gsanı:gsani	dotless_i	gsanı (1)	gsani (1)	1	1	wts_1_34:431:190	schmücken“, sprechen; mgrin gsanı	orthography_scan:1	low:1	review
+dotless_i:gsın:gsin	dotless_i	gsın (1)	gsin (1)	1	1	wts_1_34:243:188	noch nicht ergeben“ (MTH3/3/9 6); gsın	orthography_scan:1	medium:1	review
+dotless_i:gsıs:gsis	dotless_i	gśıs (1)	gśis (1)	1	1	wts_1_34:403:192	yin pa’i gśıs „sie waren enge Vertraute für	orthography_scan:1	low:1	review
+dotless_i:gyıl:gyil	dotless_i	gyıl (1)	gyil (1)	1	1	wts_1_34:1002:97	an“ (Vdk-M 151,24); gser gyıl ~ Itar che Zin	orthography_scan:1	low:1	review
+dotless_i:gzıgs:gzigs	dotless_i	gzıgs (1)	gzigs (1)	1	1	wts_1_34:607:9	Pflanze, synon. spyan gzıgs	orthography_scan:1	medium:1	review
+dotless_i:gäıi:gäii	dotless_i	gäıi (1)	gäii (1)	1	1	wts_1_34:392:61	für Anteil“ (brDa); gla rnan gyi than gäıi	orthography_scan:1	medium:1	review
+dotless_i:gäıs:gäis	dotless_i	gäıs (1)	gäis (1)	1	1	wts_1_34:1034:195	Aśoka!“ (Tär 21,1); sron dus kyi mchod gäıs	orthography_scan:1	medium:1	review
+dotless_i:gıs:gis	dotless_i	gıs (1)	gis (1)	1	1	wts_1_34:773:217	sich fortbewegen“ (Suv 113,13); ~ rlun gıs	orthography_scan:1	medium:1	review
+dotless_i:ha-sarı:ha-sari	dotless_i	Ha-śarı (1)	Ha-śari (1)	1	1	wts_1_34:378:101	kri mi-dmar, Ro-kri mi-dmar, Ha-śarı mi-	orthography_scan:1	low:1	review
+dotless_i:hamısch:hamisch	dotless_i	HamıscH (1)	HamiscH (1)	1	1	wts_1_34:849:159	hu 1b1-135a7. Skt. teilw.: HamıscH 2005.	orthography_scan:1	low:1	review
+dotless_i:harita-kapısa:harita-kapisa	dotless_i	harita-kapısa (1)	harita-kapisa (1)	1	1	wts_1_34:121:37	ge sar — ser (metr.) „weißgelbe (abw. skt. harita-kapısa gelbbraune) Staubfäden“ (Megh	orthography_scan:1	low:1	review
+dotless_i:haıt:hait	dotless_i	haıt (1)	hait (1)	1	1	wts_1_34:773:196	» haıt.	orthography_scan:1	low:1	review
+dotless_i:hetudäyıka:hetudäyika	dotless_i	hetudäyıka (1)	hetudäyika (1)	1	1	wts_1_34:483:7	„hetudäyıka [u. a. sind] diese 32 Kanäle“	orthography_scan:1	low:1	review
+dotless_i:heıt:heit	dotless_i	heıt (1)	heit (1)	1	1	wts_1_34:765:78	༄ heıt.	orthography_scan:1	medium:1	review
+dotless_i:horıinger:horiinger	dotless_i	HorıInGer (1)	HoriInGer (1)	1	1	wts_1_34:67:89	HorıInGer, Marcel 1982-90: Le congres du lac Anavatapta. Vies de saints bouddhiques. Extraits du	orthography_scan:1	medium:1	review
+dotless_i:hwa-sarı:hwa-sari	dotless_i	Hwa-śarı (1)	Hwa-śari (1)	1	1	wts_1_34:1305:74	nas „[Hwa-śarı Mahäyäna] sagt: ‚Man wird	orthography_scan:1	medium:1	review
+dotless_i:hänıib:häniib	dotless_i	hänıib (1)	häniib (1)	1	1	wts_1_34:761:114	„zerfallen“ (Mvy 9129), hänıib „Abnahme,	orthography_scan:1	low:1	review
+dotless_i:häufı-:häufi-	dotless_i	häufı- (1)	häufi- (1)	1	1	wts_1_34:50:19	ཀམ་མེ་ཀེམ་མེ་ kam me kem me (skem pa?) häufı-	orthography_scan:1	medium:1	review
+dotless_i:hımmlı-:himmli-	dotless_i	hımmlı- (1)	himmli- (1)	1	1	wts_1_34:1320:104	1. „Geruchesser“, Bez. einer Klasse hımmlı-	orthography_scan:1	low:1	review
+dotless_i:hımälaya-gebirge:himälaya-gebirge	dotless_i	Hımälaya-Gebirge (1)	Himälaya-Gebirge (1)	1	1	wts_1_34:249:213	das Hımälaya-Gebirge“ (ViśT 206,7); ri -	orthography_scan:1	low:1	review
+dotless_i:hımälaya:himälaya	dotless_i	Hımälaya (1)	Himälaya (1)	1	1	wts_1_34:342:50	Gletscher, Bez. des Hımälaya; -’	orthography_scan:1	medium:1	review
+dotless_i:hınzu-:hinzu-	dotless_i	hınzu- (1)	hinzu- (1)	1	1	wts_1_34:237:37	anbinden, aufstecken, aufsetzen, hınzu-	orthography_scan:1	low:1	review
+dotless_i:icanı:icani	dotless_i	ICanı (1)	ICani (1)	1	1	wts_1_34:25:19	ICanı skya Ye śes bstan pa’i sgron me, Rol pa’i rdo rje | NGAWANG GELEK DEMO 1969-1971 [ThK 1:	orthography_scan:1	medium:1	review
+dotless_i:icıbs:icibs	dotless_i	Icıbs (1)	Icibs (1)	1	1	wts_1_34:615:78	""" Icıbs SC utz, eire."	orthography_scan:1	low:1	review
+dotless_i:idın:idin	dotless_i	Idın (1)	Idin (1)	1	1	wts_1_34:452:46	འགྲོ་ལྡིང་ gro Idın.	orthography_scan:1	medium:1	review
+dotless_i:igın:igin	dotless_i	Igın (1)	Igin (1)	1	1	wts_1_34:54:115	ཀིན་ kin 111 alttib. Texten für Igın.	orthography_scan:1	medium:1	review
+dotless_i:ijanı:ijani	dotless_i	IJanı (1)	IJani (1)	1	1	wts_1_34:718:135	IJanı gehört und Tibetisch spricht“ (Sambh	orthography_scan:1	low:1	review
+dotless_i:imthanı:imthani	dotless_i	Imthanı (1)	Imthani (1)	1	1	wts_1_34:1054:131	མཁའང་ mtha'an Imthanı.	orthography_scan:1	medium:1	review
+dotless_i:inarı:inari	dotless_i	Inarı (1)	Inari (1)	1	1	wts_1_34:45:162	Silber; Kurzf. für tkapala, Inarı mchod ka //.	orthography_scan:1	low:1	review
+dotless_i:indo-iranıan:indo-iranian	dotless_i	Indo-Iranıan (1)	Indo-Iranian (1)	1	1	wts_1_34:31:110	Indo-Iranıan Journal	orthography_scan:1	low:1	review
+dotless_i:iserıng:isering	dotless_i	IserınG (1)	IserinG (1)	1	1	wts_1_34:38:78	(Emer/ IserınG 1979: 463; Dunk).	orthography_scan:1	low:1	review
+dotless_i:ishuımama:ishuimama	dotless_i	Ishuımama (1)	Ishuimama (1)	1	1	wts_1_34:837:47	Ausgabe Ishuımama/FuKuDaA 1989) zu mchog.	orthography_scan:1	low:1	review
+dotless_i:iskyın:iskyin	dotless_i	Iskyın (1)	Iskyin (1)	1	1	wts_1_34:199:21	སྐྱིང་གོར་ skyin gor Iskyın 9077	orthography_scan:1	medium:1	review
+dotless_i:itenı:iteni	dotless_i	Itenı (1)	Iteni (1)	1	1	wts_1_34:930:168	ལྟང་ལྟེང་ ktan Itenı	orthography_scan:1	medium:1	review
+dotless_i:ixıu:ixiu	dotless_i	Ixıu (1)	Ixiu (1)	1	1	wts_1_34:32:250	Ixıu	orthography_scan:1	low:1	review
+dotless_i:ixıv:ixiv	dotless_i	Ixıv (1)	Ixiv (1)	1	1	wts_1_34:867:59	Ixıv	orthography_scan:1	low:1	review
+dotless_i:jaimıni:jaimini	dotless_i	Jaimıni (1)	Jaimini (1)	1	1	wts_1_34:472:34	Jaimıni.	orthography_scan:1	low:1	review
+dotless_i:jamghäcärıka:jamghäcärika	dotless_i	jamghäcärıka (1)	jamghäcärika (1)	1	1	wts_1_34:156:52	jamghäcärıka).	orthography_scan:1	low:1	review
+dotless_i:jarıl:jaril	dotless_i	jarıl (1)	jaril (1)	1	1	wts_1_34:708:1	ཇ་རིལ་ jarıl	orthography_scan:1	medium:1	review
+dotless_i:jınd:jind	dotless_i	jınd (1)	jind (1)	1	1	wts_1_34:865:148	jınd.	orthography_scan:1	low:1	review
+dotless_i:jındm:jindm	dotless_i	jındm (1)	jindm (1)	1	1	wts_1_34:747:180	jındm. richtend.	orthography_scan:1	low:1	review
+dotless_i:kakanı:kakani	dotless_i	kakanı (1)	kakani (1)	1	1	wts_1_34:33:72	— skt. kakanı.	orthography_scan:1	low:1	review
+dotless_i:kakerıya:kakeriya	dotless_i	Kakerıya (1)	Kakeriya (1)	1	1	wts_1_34:34:88	senden Bäumen ... [darunter] Kakerıya“ (K45	orthography_scan:1	low:1	review
+dotless_i:kalagnı:kalagni	dotless_i	kalagnı (1)	kalagni (1)	1	1	wts_1_34:44:62	kalagnı.	orthography_scan:1	low:1	review
+dotless_i:kalyanamiıtra:kalyanamiitra	dotless_i	kalyanamiıtra (1)	kalyanamiitra (1)	1	1	wts_1_34:414:66	geistliche Lehrer, skt. kalyanamiıtra.	orthography_scan:1	low:1	review
+dotless_i:kaläcıkah:kaläcikah	dotless_i	kaläcıkah (1)	kaläcikah (1)	1	1	wts_1_34:253:105	Lex. kaläcıkah (Mvy 8958); thur ma’am	orthography_scan:1	medium:1	review
+dotless_i:kalı:kali	dotless_i	kalı (1)	kali (1)	1	1	wts_1_34:45:187	sonanten. — skt. kalı.	orthography_scan:1	low:1	review
+dotless_i:kalıdasa:kalidasa	dotless_i	kalıdasa (1)	kalidasa (1)	1	1	wts_1_34:46:4	kalıdasa.	orthography_scan:1	low:1	review
+dotless_i:kalıkä-pflanze:kalikä-pflanze	dotless_i	Kalıkä-Pflanze (1)	Kalikä-Pflanze (1)	1	1	wts_1_34:45:205	Stengel der Kalıkä-Pflanze immer mehr	orthography_scan:1	low:1	review
+dotless_i:kamacandıra:kamacandira	dotless_i	kamacandıra (1)	kamacandira (1)	1	1	wts_1_34:40:222	diens. — skt. kamacandıra.	orthography_scan:1	low:1	review
+dotless_i:kamsärı:kamsäri	dotless_i	Kamsärı (1)	Kamsäri (1)	1	1	wts_1_34:315:206	skt. Kamsärı.	orthography_scan:1	low:1	review
+dotless_i:kanı:kani	dotless_i	kanı (1)	kani (1)	1	1	wts_1_34:802:157	140,20); sgo srun kin kanı ~ te „die zwei Kinkan-Torwächter“ (IDe] 125,16); ned ~ gyon	orthography_scan:1	low:1	review
+dotless_i:karkatıkä:karkatikä	dotless_i	karkatıkä (1)	karkatikä (1)	1	1	wts_1_34:51:147	karkatıkä = shin po (Mvy 6239).	orthography_scan:1	low:1	review
+dotless_i:karnıka:karnika	dotless_i	karnıka (1)	karnika (1)	1	1	wts_1_34:52:28	schmuck. - skt. karnıka.	orthography_scan:1	low:1	review
+dotless_i:karnıkära:karnikära	dotless_i	Karnıkära (1)	Karnikära (1)	1	1	wts_1_34:52:45	Karnıkära [u.a.] ist vorzüglich zur Beseiti-	orthography_scan:1	low:1	review
+dotless_i:kastärıkändam:kastärikändam	dotless_i	kastärıkändam (1)	kastärikändam (1)	1	1	wts_1_34:392:175	Lex. kastärıkändam (Mvy 5832), mrgama-	orthography_scan:1	low:1	review
+dotless_i:kasısunda-:kasisunda-	dotless_i	kasısunda- (1)	kasisunda- (1)	1	1	wts_1_34:47:41	Kurtisane. — skt. kasısunda-	orthography_scan:1	low:1	review
+dotless_i:katarı:katari	dotless_i	katarı (1)	katari (1)	1	1	wts_1_34:36:101	ཀ་ཏ་རུ་ katarı	orthography_scan:1	medium:1	review
+dotless_i:katı:kati	dotless_i	Katı (1)	Kati (1)	1	1	wts_1_34:37:39	katyäyani Nachfahrin des Katı.	orthography_scan:1	low:1	review
+dotless_i:kelı:keli	dotless_i	kelı (1)	keli (1)	1	1	wts_1_34:104:141	oder Scherzwort (KlonD 736,1); krida, kelı,	orthography_scan:1	low:1	review
+dotless_i:kinıhi:kinihi	dotless_i	kinıhi (1)	kinihi (1)	1	1	wts_1_34:53:150	ཀི་ནིའི་ ki 7777 eine Heilpflanze. — skt. kinıhi	orthography_scan:1	medium:1	review
+dotless_i:konımt:konimt	dotless_i	konımt (1)	konimt (1)	1	1	wts_1_34:871:148	wenn es korrumpiert ist, konımt es nur als	orthography_scan:1	low:1	review
+dotless_i:koınmt:koinmt	dotless_i	koınmt (1)	koinmt (1)	1	1	wts_1_34:787:183	„Padmävati koınmt vor Scham zitternd	orthography_scan:1	low:1	review
+dotless_i:krı:kri	dotless_i	krı (1)	kri (1)	1	1	wts_1_34:108:54	ཀྲི་ཀྲི་ £©)7 krı	orthography_scan:1	medium:1	review
+dotless_i:ksatrıya:ksatriya	dotless_i	Ksatrıya (1)	Ksatriya (1)	1	1	wts_1_34:472:21	Ksatrıya.	orthography_scan:1	low:1	review
+dotless_i:kusälı:kusäli	dotless_i	kusälı (1)	kusäli (1)	1	1	wts_1_34:60:127	kriyogmtha’ dag gsan pa’i brgyud pani / kusälı	orthography_scan:1	medium:1	review
+dotless_i:kyın:kyin	dotless_i	kyın (1)	kyin (1)	1	1	wts_1_34:324:125	kyın cha „wir wandern in den schlechten	orthography_scan:1	low:1	review
+dotless_i:käcalın-:käcalin-	dotless_i	käcalın- (1)	käcalin- (1)	1	1	wts_1_34:42:44	sehr weicher Stoff. ~ zu skt. käcalın-	orthography_scan:1	low:1	review
+dotless_i:käncı:känci	dotless_i	käncı (1)	känci (1)	1	1	wts_1_34:48:121	MR kaiitsi ein Ort in Südindien. - skt. käncı.	orthography_scan:1	medium:1	review
+dotless_i:kärıka-vyäakhyäna:kärika-vyäakhyäna	dotless_i	kärıka-vyäakhyäna (1)	kärika-vyäakhyäna (1)	1	1	wts_1_34:19:182	kärıka-vyäakhyäna. Ed.: Derge-Tanjur, ’Dul ba, su 162b3-246a7.	orthography_scan:1	medium:1	review
+dotless_i:käsıjäta:käsijäta	dotless_i	käsıjäta (1)	käsijäta (1)	1	1	wts_1_34:47:38	mane. -- skt. käsıjäta.	orthography_scan:1	low:1	review
+dotless_i:käsıka:käsika	dotless_i	käsıka (1)	käsika (1)	1	1	wts_1_34:46:206	Lex. käsıka° (Mvy 9176); yul gyi min ste mdo	orthography_scan:1	low:1	review
+dotless_i:künımern:künimern	dotless_i	künımern (1)	künimern (1)	1	1	wts_1_34:757:133	"""X fa ra in: ~ byed, mdzad sich künımern"	orthography_scan:1	medium:1	review
+dotless_i:kıerter:kierter	dotless_i	KıErter (1)	KiErter (1)	1	1	wts_1_34:113:52	tidea (Schrenk) C. B. Clarke (KıErter/	orthography_scan:1	low:1	review
+dotless_i:kılikıläyitam:kilikiläyitam	dotless_i	kılikıläyitam (1)	kilikiläyitam (1)	1	1	wts_1_34:55:100	dar dir ku co) ca co =kılikıläyitam (Mvy 2787);	orthography_scan:1	low:1	review
+dotless_i:kılätah:kilätah	dotless_i	kılätah (1)	kilätah (1)	1	1	wts_1_34:662:70	Lex. kılätah (Mvy 5691).	orthography_scan:1	low:1	review
+dotless_i:kımsuka-bau-:kimsuka-bau-	dotless_i	Kımsuka-Bau- (1)	Kimsuka-Bau- (1)	1	1	wts_1_34:54:79	erfolgt, schütte man Alkali des Kımsuka-Bau-	orthography_scan:1	low:1	review
+dotless_i:kımura:kimura	dotless_i	KımurA (1)	KimurA (1)	1	1	wts_1_34:66:84	(Ergänze beim bestehenden Eintrag:) Skt. 1: Durr 1934; 2-5: KımurA 1986-1992.	orthography_scan:1	low:1	review
+dotless_i:kın:kin	dotless_i	Kın (1)	Kin (1)	1	1	wts_1_34:93:63	Kın	orthography_scan:1	low:1	review
+dotless_i:lalıtäsana:lalitäsana	dotless_i	lalıtäsana (1)	lalitäsana (1)	1	1	wts_1_34:226:26	lalıtäsana.	orthography_scan:1	low:1	review
+dotless_i:landı:landi	dotless_i	landı (1)	landi (1)	1	1	wts_1_34:45:150	ag kä landı ırrt. für Ika lindi.	orthography_scan:1	low:1	review
+dotless_i:landıa:landia	dotless_i	landıa (1)	landia (1)	1	1	wts_1_34:222:121	landıa corymbosa Linn. u. a. (Meul 571 [.);	orthography_scan:1	low:1	review
+dotless_i:litatıiv:litatiiv	dotless_i	litatıiv (1)	litatiiv (1)	1	1	wts_1_34:34:118	litatıiv] gut, wenn es luftig ist“ (gYu 297,1);	orthography_scan:1	low:1	review
+dotless_i:lvın:lvin	dotless_i	lvın (1)	lvin (1)	1	1	wts_1_34:864:37	lvın	orthography_scan:1	low:1	review
+dotless_i:läßı:läßi	dotless_i	läßı (1)	läßi (1)	1	1	wts_1_34:133:139	läßı“ (Ps 25b); mes po’i — las ’da’ bar bya ba	orthography_scan:1	low:1	review
+dotless_i:lıi:lii	dotless_i	Lıi (1)	Lii (1)	1	1	wts_1_34:237:194	mix, invent, feıgn (Lıi/CoBLm 1987: 376)?	orthography_scan:1	low:1	review
+dotless_i:lın:lin	dotless_i	Lın (1)	Lin (1)	1	1	wts_1_34:226:156	eines Gelübdes unterbrochen wurde (Lın	orthography_scan:1	low:1	review
+dotless_i:lıpta:lipta	dotless_i	lıpta (1)	lipta (1)	1	1	wts_1_34:364:42	Unreinem beschmiert (skt. lıpta) ist, nicht	orthography_scan:1	low:1	review
+dotless_i:macponaaıp:macponaaip	dotless_i	MacponaAıp (1)	MacponaAip (1)	1	1	wts_1_34:839:161	MAs 1935-1963, pt. 2, pp. 53 f. (Nr. 10), MacponaAıp 1971, pp.	orthography_scan:1	low:1	review
+dotless_i:macponaıd:macponaid	dotless_i	MacponaıD (1)	MacponaiD (1)	1	1	wts_1_34:137:9	vgl. TLTD 2: 53 £. (Nr. 10), MacponaıD 1971: 251-255.	orthography_scan:1	low:1	review
+dotless_i:mahlın:mahlin	dotless_i	mahlın (1)	mahlin (1)	1	1	wts_1_34:1121:104	mahlın.	orthography_scan:1	low:1	review
+dotless_i:mahämandalıkab:mahämandalikab	dotless_i	mahämandalıkab (1)	mahämandalikab (1)	1	1	wts_1_34:129:101	Lex. mahämandalıkab (Mvy 3355).	orthography_scan:1	low:1	review
+dotless_i:mahıkaä:mahikaä	dotless_i	mahıkaä (1)	mahikaä (1)	1	1	wts_1_34:266:180	Lex. mahıkaä (Mvy 1872); na bun te smug pa	orthography_scan:1	low:1	review
+dotless_i:meicho-fukyü-kaı:meicho-fukyü-kai	dotless_i	Meicho-Fukyü-Kaı (1)	Meicho-Fukyü-Kai (1)	1	1	wts_1_34:28:65	kyo: Meicho-Fukyü-Kaı, 1977]. [Käsy]	orthography_scan:1	low:1	review
+dotless_i:miınma:miinma	dotless_i	miınma (1)	miinma (1)	1	1	wts_1_34:812:96	INN miınma.	orthography_scan:1	low:1	review
+dotless_i:myın:myin	dotless_i	myın (1)	myin (1)	1	1	wts_1_34:595:160	myın myi rlag par „damit der Titel ‚König,	orthography_scan:1	low:1	review
+dotless_i:mädhı:mädhi	dotless_i	mädhı (1)	mädhi (1)	1	1	wts_1_34:1060:201	mädhı.	orthography_scan:1	low:1	review
+dotless_i:männlıchen:männlichen	dotless_i	männlıchen (1)	männlichen (1)	1	1	wts_1_34:131:177	Lex. pho mtshan gyi tog „Spitze des männlıchen Gliedes“ (116 31,12, brDa, Dagy); pho	orthography_scan:1	medium:1	review
+dotless_i:männlıcher:männlicher	dotless_i	männlıcher (1)	männlicher (1)	1	1	wts_1_34:301:210	>’ tshogs rnams dan „ihr Scharen männlıcher und weiblicher zornvoller Gottheiten“	orthography_scan:1	medium:1	review
+dotless_i:mülıya:müliya	dotless_i	mülıya (1)	müliya (1)	1	1	wts_1_34:616:167	mülıya (h) im Sanskrit.	orthography_scan:1	low:1	review
+dotless_i:nagajıhvika:nagajihvika	dotless_i	nagajıhvika (1)	nagajihvika (1)	1	1	wts_1_34:112:153	Lex. nagajıhvika (Ak 247.108b).	orthography_scan:1	low:1	review
+dotless_i:nahekonımen:nahekonimen	dotless_i	nahekonımen (1)	nahekonimen (1)	1	1	wts_1_34:722:64	nahekonımen, verstecken“ (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:nalıstischen:nalistischen	dotless_i	nalıstischen (1)	nalistischen (1)	1	1	wts_1_34:916:119	nalıstischen Sichtweisen.	orthography_scan:1	low:1	review
+dotless_i:nam-mkha’ı:nam-mkha’i	dotless_i	nam-mkha’ı (1)	nam-mkha’i (1)	1	1	wts_1_34:6:46	des tibetisch-tibetischen Wörterbuches des Khyun-sprul ’Jigs-med nam-mkha’ı	orthography_scan:1	medium:1	review
+dotless_i:nañı:nañi	dotless_i	nañı (1)	nañi (1)	1	1	wts_1_34:139:25	(IsKh 1: 96,5); rgyal po ran 97 — de’i nañı nas	orthography_scan:1	medium:1	review
+dotless_i:nepalensıs:nepalensis	dotless_i	nepalensıs (1)	nepalensis (1)	1	1	wts_1_34:99:74	zia nepalensıs (Kunze) Kitam. (KLETTER/	orthography_scan:1	low:1	review
+dotless_i:nirmädayısyämah:nirmädayisyämah	dotless_i	nirmädayısyämah (1)	nirmädayisyämah (1)	1	1	wts_1_34:153:36	lhun bzed mi — = pätram nirmädayısyämah	orthography_scan:1	low:1	review
+dotless_i:nisadäsıla:nisadäsila	dotless_i	nisadäsıla (1)	nisadäsila (1)	1	1	wts_1_34:683:121	gtun gyi 97/ = nisadäsıla (Mvy 7515); - dan	orthography_scan:1	low:1	review
+dotless_i:nonıs:nonis	dotless_i	nonıs (1)	nonis (1)	1	1	wts_1_34:967:52	(Ahs 1.2.38c); ~ bas mi nonıs ranı bZin pas	orthography_scan:1	low:1	review
+dotless_i:noınmen:noinmen	dotless_i	noınmen (1)	noinmen (1)	1	1	wts_1_34:749:28	noınmen hatten, war seine Stimme	orthography_scan:1	low:1	review
+dotless_i:nıcht:nicht	dotless_i	nıcht (1)	nicht (1)	1	1	wts_1_34:303:71	nıcht“ (gZer 745,2).	orthography_scan:1	medium:1	review
+dotless_i:nıchten:nichten	dotless_i	nıchten (1)	nichten (1)	1	1	wts_1_34:71:200	nıchten; vgl. Tkun ’joms.	orthography_scan:1	low:1	review
+dotless_i:nıcıta:nicita	dotless_i	nıcıta (1)	nicita (1)	1	1	wts_1_34:536:83	nıcıta) lagen“ (HMrg 56,1).	orthography_scan:1	low:1	review
+dotless_i:nıdana:nidana	dotless_i	nıdana (1)	nidana (1)	1	1	wts_1_34:398:122	skt. nıdana.	orthography_scan:1	low:1	review
+dotless_i:nıen:nien	dotless_i	nıen (1)	nien (1)	1	1	wts_1_34:387:133	nıen für Laien.	orthography_scan:1	low:1	review
+dotless_i:nıgrum:nigrum	dotless_i	nıgrum (1)	nigrum (1)	1	1	wts_1_34:42:33	(PW), Solanum nıgrum Linn. (MAcki 62).	orthography_scan:1	low:1	review
+dotless_i:nıivaraka:niivaraka	dotless_i	nıivaraka (1)	niivaraka (1)	1	1	wts_1_34:793:174	wehrt die üblen Taten ab (skt. nıivaraka)“	orthography_scan:1	low:1	review
+dotless_i:nımittam:nimittam	dotless_i	nımittam (1)	nimittam (1)	1	1	wts_1_34:483:96	Lex. nımittam (in Mvy 7626); don gan Zig	orthography_scan:1	low:1	review
+dotless_i:nımm:nimm	dotless_i	nımm (1)	nimm (1)	1	1	wts_1_34:262:108	skt. āprcchasva nımm Abschied!)“ (Megh	orthography_scan:1	low:1	review
+dotless_i:nınth:ninth	dotless_i	nınth (1)	ninth (1)	1	1	wts_1_34:240:26	nınth century“. In: AOH 36 (1982[1983]), pp. 545-548.	orthography_scan:1	medium:1	review
+dotless_i:nıpidana:nipidana	dotless_i	nıpidana (1)	nipidana (1)	1	1	wts_1_34:599:111	[Hand] gehalten (für skt. nıpidana) hat,	orthography_scan:1	low:1	review
+dotless_i:nırakäsa:nirakäsa	dotless_i	nırakäsa (1)	nirakäsa (1)	1	1	wts_1_34:173:92	hat keine Möglichkeit (für skt. nırakäsa	orthography_scan:1	low:1	review
+dotless_i:nırmänakaya:nirmänakaya	dotless_i	nırmänakaya (1)	nirmänakaya (1)	1	1	wts_1_34:187:39	nırmänakaya), \ons spyod rdzogs pa’i sku (skt.	orthography_scan:1	medium:1	review
+dotless_i:nıs:nis	dotless_i	nıs (1)	nis (1)	1	1	wts_1_34:260:23	nıs“ (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:nısädah:nisädah	dotless_i	nısädah (1)	nisädah (1)	1	1	wts_1_34:320:114	Lex. nısädah (Mvy 5034).	orthography_scan:1	low:1	review
+dotless_i:nıtıv:nitiv	dotless_i	nıtıv (1)	nitiv (1)	1	1	wts_1_34:1332:23	nıtıv“ (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:offıcinalıs:officinalis	dotless_i	offıcinalıs (1)	officinalis (1)	1	1	wts_1_34:95:121	für skt. kolavalli Pothos offıcinalıs,	orthography_scan:1	medium:1	review
+dotless_i:orı:ori	dotless_i	Orı (1)	Ori (1)	1	1	wts_1_34:757:44	YNIT fa mo gyur npr. ein Orı.	orthography_scan:1	low:1	review
+dotless_i:oyı:oyi	dotless_i	oyı (1)	oyi (1)	1	1	wts_1_34:955:221	Scheitel zeigen“ (Samv 9.62); glog oyı skad	orthography_scan:1	low:1	review
+dotless_i:padivaliadı:padivaliadi	dotless_i	padivaliadı (1)	padivaliadi (1)	1	1	wts_1_34:1035:188	verzögert (pkt. padivaliadı) es sich also?“	orthography_scan:1	low:1	review
+dotless_i:pagıiniert:pagiiniert	dotless_i	pagıiniert (1)	pagiiniert (1)	1	1	wts_1_34:31:93	getrennt pagıiniert	orthography_scan:1	low:1	review
+dotless_i:pandı:pandi	dotless_i	pandı (1)	pandi (1)	1	1	wts_1_34:375:171	der Reihe aufgestanden“ (Mil 33,16); pandı	orthography_scan:1	low:1	review
+dotless_i:papageı:papagei	dotless_i	Papageı (1)	Papagei (1)	1	1	wts_1_34:170:89	2. Papageı.	orthography_scan:1	low:1	review
+dotless_i:parimärjayatı:parimärjayati	dotless_i	parimärjayatı (1)	parimärjayati (1)	1	1	wts_1_34:72:11	drasüryan ... päninä parämrsati parimärjayatı	orthography_scan:1	low:1	review
+dotless_i:parisphärayatı:parisphärayati	dotless_i	parisphärayatı (1)	parisphärayati (1)	1	1	wts_1_34:70:186	Lex. kun tn rgyas par byed = parisphärayatı	orthography_scan:1	medium:1	review
+dotless_i:parı-:pari-	dotless_i	parı- (1)	pari- (1)	1	1	wts_1_34:76:15	Geist wird, wenn man ihm nachspürt (parı-	orthography_scan:1	low:1	review
+dotless_i:parıbbäsä:paribbäsä	dotless_i	parıbbäsä (1)	paribbäsä (1)	1	1	wts_1_34:1071:62	= parıbbäsä „Rede, Worte; Tadel, Vorwurf,	orthography_scan:1	low:1	review
+dotless_i:parıghätana:parighätana	dotless_i	parıghätana (1)	parighätana (1)	1	1	wts_1_34:68:106	Lex. parıghätana (Tshe 3b3).	orthography_scan:1	medium:1	review
+dotless_i:parıpärna:paripärna	dotless_i	parıpärna (1)	paripärna (1)	1	1	wts_1_34:995:84	ia khri ~”0 „es sind ganze (skt. parıpärna)	orthography_scan:1	medium:1	review
+dotless_i:parıpürna-sukla-:paripürna-sukla-	dotless_i	parıpürna-Sukla- (1)	paripürna-Sukla- (1)	1	1	wts_1_34:122:192	chos — yons su rdzogs pa = parıpürna-Sukla-	orthography_scan:1	medium:1	review
+dotless_i:parısrävanam:parisrävanam	dotless_i	parısrävanam (1)	parisrävanam (1)	1	1	wts_1_34:650:160	Lex. parısrävanam (Mvy 9020); ~ gru gsum	orthography_scan:1	low:1	review
+dotless_i:prajäpatı:prajäpati	dotless_i	Prajäpatı (1)	Prajäpati (1)	1	1	wts_1_34:248:144	2. Bez. des Prajäpatı.	orthography_scan:1	low:1	review
+dotless_i:prajüapäramıta:prajüapäramita	dotless_i	prajüapäramıta (1)	prajüapäramita (1)	1	1	wts_1_34:29:77	Vaipva, Paraśuräma L. 1960: Astasahasrika prajüapäramıta. With Haribhadra’s commentary cal-	orthography_scan:1	medium:1	review
+dotless_i:proportionıert:proportioniert	dotless_i	proportionıert (1)	proportioniert (1)	1	1	wts_1_34:651:91	proportionıert.	orthography_scan:1	low:1	review
+dotless_i:pändaravasıni:pändaravasini	dotless_i	pändaravasıni (1)	pändaravasini (1)	1	1	wts_1_34:364:71	Lex. pändaravasıni (Mvy 4279).	orthography_scan:1	low:1	review
+dotless_i:päniyavarıkab:päniyavarikab	dotless_i	päniyavarıkab (1)	päniyavarikab (1)	1	1	wts_1_34:661:210	Lex. päniyavarıkab (Mvy 9070).	orthography_scan:1	low:1	review
+dotless_i:päramıtä:päramitä	dotless_i	päramıtä (1)	päramitä (1)	1	1	wts_1_34:951:71	päramıtä (Mvy 1326).	orthography_scan:1	low:1	review
+dotless_i:rakaparı:rakapari	dotless_i	rakaparı (1)	rakapari (1)	1	1	wts_1_34:34:22	‚rakaparı, kakapari‘. Vimala[mitra] würdigte	orthography_scan:1	low:1	review
+dotless_i:raktarajı:raktaraji	dotless_i	raktarajı (1)	raktaraji (1)	1	1	wts_1_34:292:154	heit; skt. raktarajı „excroissance	orthography_scan:1	low:1	review
+dotless_i:ranı:rani	dotless_i	ranı (1)	rani (1)	1	1	wts_1_34:967:52	(Ahs 1.2.38c); ~ bas mi nonıs ranı bZin pas	orthography_scan:1	low:1	review
+dotless_i:rasayananı:rasayanani	dotless_i	rasayananı (1)	rasayanani (1)	1	1	wts_1_34:383:42	„vollkommene Elixiere (skt. rasayananı	orthography_scan:1	low:1	review
+dotless_i:ratnäkarasäntı:ratnäkarasänti	dotless_i	Ratnäkarasäntı (1)	Ratnäkarasänti (1)	1	1	wts_1_34:849:45	snan ba’i rgyan / Ratnäkarasäntı: Sätrasamuccayabhäsyaratnalokalam-	orthography_scan:1	medium:1	review
+dotless_i:rayıkä:rayikä	dotless_i	rayıkä (1)	rayikä (1)	1	1	wts_1_34:189:185	rayıkä Brassica Juncea (1055. u.a. (Meul 595 f.).	orthography_scan:1	low:1	review
+dotless_i:ria-mgrın:ria-mgrin	dotless_i	rIa-mgrın (1)	rIa-mgrin (1)	1	1	wts_1_34:527:136	rIa-mgrın“ (Sumpa 9a6).	orthography_scan:1	low:1	review
+dotless_i:risa-rı'ı:risa-ri'i	dotless_i	rIsa-rı'ı (1)	rIsa-ri'i (1)	1	1	wts_1_34:1098:87	"rIsa-rı'ı thugs-ka“ (""Dzam 36,14)."	orthography_scan:1	medium:1	review
+dotless_i:risa-rı:risa-ri	dotless_i	rIsa-rı (1)	rIsa-ri (1)	1	1	wts_1_34:889:221	Tälern um den Berg rIsa-rı (Neb	orthography_scan:1	low:1	review
+dotless_i:rmanıs:rmanis	dotless_i	rmanıs (1)	rmanis (1)	1	1	wts_1_34:878:102	Ochsen bändigt“ (Udr 20,18); mi rmanıs	orthography_scan:1	low:1	review
+dotless_i:royarı:royari	dotless_i	royarı (1)	royari (1)	1	1	wts_1_34:466:88	ART royarı bu Holztäfelchen für Rituale,	orthography_scan:1	low:1	review
+dotless_i:ryı:ryi	dotless_i	Ryı (1)	Ryi (1)	1	1	wts_1_34:911:158	(skt. väjivara)“ (HMrg 51,3); ~ mmams Ryı	orthography_scan:1	low:1	review
+dotless_i:räjıka:räjika	dotless_i	räjıka (1)	räjika (1)	1	1	wts_1_34:189:201	Lex. —’ (v. 1. ske tse’i) ’bru = räjıka (Mvy	orthography_scan:1	medium:1	review
+dotless_i:rüın:rüin	dotless_i	rüın (1)	rüin (1)	1	1	wts_1_34:192:92	2); rüın ma bka’ gter gyi — las 'byun „es	orthography_scan:1	low:1	review
+dotless_i:rıcharoson:richaroson	dotless_i	RıcHaroson (1)	RicHaroson (1)	1	1	wts_1_34:859:70	RıcHaroson, Hugh E. 1985: A corpus ofearly Tibetan inscriptions. [London:] Hertford:	orthography_scan:1	low:1	review
+dotless_i:rıchharpson:richharpson	dotless_i	RıcHharpson (1)	RicHharpson (1)	1	1	wts_1_34:24:56	Inschriften \ Lv/’Cosum 1987 [In1-13], | RıcHharpson 1985 [In14]	orthography_scan:1	low:1	review
+dotless_i:rıg:rig	dotless_i	rıg (1)	rig (1)	1	1	wts_1_34:640:163	bzo rıg ~ / sgar //0 „Handwerker, Reiter	orthography_scan:1	low:1	review
+dotless_i:rına:rina	dotless_i	rına (1)	rina (1)	1	1	wts_1_34:716:171	Schwanz in die Höhe“ (PT1064 F1,1); rına	orthography_scan:1	low:1	review
+dotless_i:rıs:ris	dotless_i	rıs (1)	ris (1)	1	1	wts_1_34:188:90	སྐུད་རིས་ skud rıs Stickerei.	orthography_scan:1	medium:1	review
+dotless_i:r’isa-rı:r’isa-ri	dotless_i	r’Isa-rı (1)	r’Isa-ri (1)	1	1	wts_1_34:987:188	khyim ’ga’ re „dort, in der r’Isa-rı dkyil-	orthography_scan:1	medium:1	review
+dotless_i:samcarı:samcari	dotless_i	samcarı (1)	samcari (1)	1	1	wts_1_34:83:104	Lex. samcarı (r. samcäri) „sich ergehend,	orthography_scan:1	low:1	review
+dotless_i:samdhävatı:samdhävati	dotless_i	samdhävatı (1)	samdhävati (1)	1	1	wts_1_34:71:65	men (samdhävatı)“ (K14 2456).	orthography_scan:1	low:1	review
+dotless_i:samgrahın:samgrahin	dotless_i	samgrahın (1)	samgrahin (1)	1	1	wts_1_34:597:121	Butter beseitigt Durchfall (skt. samgrahın	orthography_scan:1	low:1	review
+dotless_i:samkramanakänı:samkramanakäni	dotless_i	samkramanakänı (1)	samkramanakäni (1)	1	1	wts_1_34:976:163	Lex. samkramanakänı (Mvy 5585).	orthography_scan:1	low:1	review
+dotless_i:samprakäsayısyati:samprakäsayisyati	dotless_i	samprakäsayısyati (1)	samprakäsayisyati (1)	1	1	wts_1_34:442:101	vistarena samprakäsayısyati „er wird es aus-	orthography_scan:1	low:1	review
+dotless_i:samsarıtvä:samsaritvä	dotless_i	samsarıtvä (1)	samsaritvä (1)	1	1	wts_1_34:319:91	Lex. ~ nas = samsarıtvä „im Saṃsāra um-	orthography_scan:1	medium:1	review
+dotless_i:samvyavaharıkam:samvyavaharikam	dotless_i	samvyavaharıkam (1)	samvyavaharikam (1)	1	1	wts_1_34:73:18	Lex. samvyavaharıkam „im Verkehr üblich,	orthography_scan:1	low:1	review
+dotless_i:samädhiı:samädhii	dotless_i	Samädhiı (1)	Samädhii (1)	1	1	wts_1_34:743:201	2. ein Samädhiı.	orthography_scan:1	low:1	review
+dotless_i:samädhı:samädhi	dotless_i	Samädhı (1)	Samädhi (1)	1	1	wts_1_34:678:69	rab tu ’byed pa Bez. eines Samädhı.	orthography_scan:1	medium:1	review
+dotless_i:samädäpayatı:samädäpayati	dotless_i	samädäpayatı (1)	samädäpayati (1)	1	1	wts_1_34:733:193	Lex. yar dag par ’dzin du ~ = samädäpayatı	orthography_scan:1	medium:1	review
+dotless_i:samäpattı:samäpatti	dotless_i	samäpattı (1)	samäpatti (1)	1	1	wts_1_34:803:80	Hemmnis der Versenkung (samäpattı), vgl.	orthography_scan:1	low:1	review
+dotless_i:sarasvatı:sarasvati	dotless_i	Sarasvatı (1)	Sarasvati (1)	1	1	wts_1_34:526:132	Sarasvatı.	orthography_scan:1	low:1	review
+dotless_i:sarıt:sarit	dotless_i	sarıt (1)	sarit (1)	1	1	wts_1_34:647:186	Lex. alpa sarıt (Ak 69.48); ~ (v. 1. bran) =	orthography_scan:1	low:1	review
+dotless_i:satıvus:sativus	dotless_i	satıvus (1)	sativus (1)	1	1	wts_1_34:61:100	satıvus Linn. (Das 433).	orthography_scan:1	low:1	review
+dotless_i:saımv:saimv	dotless_i	Saımv (1)	Saimv (1)	1	1	wts_1_34:847:115	Saımv	orthography_scan:1	low:1	review
+dotless_i:sa’ı:sa’i	dotless_i	śa’ı (1)	śa’i (1)	1	1	wts_1_34:105:4	goldener Behälter“ (Suv 155,16); bru śa’ı yi	orthography_scan:1	medium:1	review
+dotless_i:schatzkanımer:schatzkanimer	dotless_i	Schatzkanımer (1)	Schatzkanimer (1)	1	1	wts_1_34:807:192	Schatzkanımer“ (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:schlagarıig:schlagariig	dotless_i	schlagarıig (1)	schlagariig (1)	1	1	wts_1_34:878:12	ich mich schlagarıig an mein früheres	orthography_scan:1	low:1	review
+dotless_i:sdarı:sdari	dotless_i	sdarı (1)	sdari (1)	1	1	wts_1_34:731:1	འཇིགས་སྡང་ Jigs sdarı	orthography_scan:1	medium:1	review
+dotless_i:skyıbs:skyibs	dotless_i	skyıbs (1)	skyibs (1)	1	1	wts_1_34:200:58	skyıbs.	orthography_scan:1	low:1	review
+dotless_i:skyıl:skyil	dotless_i	skyıl (1)	skyil (1)	1	1	wts_1_34:281:78	seligkeit erfüllt“ (Dol1 35,8); skyıl kruns	orthography_scan:1	low:1	review
+dotless_i:skyın:skyin	dotless_i	skyın (1)	skyin (1)	1	1	wts_1_34:656:57	begeben in; skyın ¬ ersetzen.	orthography_scan:1	low:1	review
+dotless_i:sman-ıı:sman-ii	dotless_i	sMan-ıı (1)	sMan-ii (1)	1	1	wts_1_34:86:34	von sMan-ıı, inthronisiert 1464.	orthography_scan:1	medium:1	review
+dotless_i:smıra:smira	dotless_i	smıra (1)	smira (1)	1	1	wts_1_34:916:60	PIE rag smıra	orthography_scan:1	low:1	review
+dotless_i:snañı:snañi	dotless_i	snañı (1)	snañi (1)	1	1	wts_1_34:1013:63	51,25); - gi rten sgrol ma’i snañı brüan „ein	orthography_scan:1	medium:1	review
+dotless_i:spanıen:spanien	dotless_i	SpanıEn (1)	SpaniEn (1)	1	1	wts_1_34:846:136	Ed.: SpanıEn/IMAEDA 1979, pl. 331-349,	orthography_scan:1	low:1	review
+dotless_i:spyıl:spyil	dotless_i	spyıl (1)	spyil (1)	1	1	wts_1_34:575:173	seine Redegewandtheit“ (Udr 23,20); spyıl	orthography_scan:1	medium:1	review
+dotless_i:srın:srin	dotless_i	srın (1)	srin (1)	1	1	wts_1_34:655:82	ཆུ་ཨུན chu srın.	orthography_scan:1	medium:1	review
+dotless_i:stag-rı:stag-ri	dotless_i	sTag-rı (1)	sTag-ri (1)	1	1	wts_1_34:943:171	Daher wurde er bekannt als sTag-rı gAan-	orthography_scan:1	low:1	review
+dotless_i:steyasamväsıkah:steyasamväsikah	dotless_i	steyasamväsıkah (1)	steyasamväsikah (1)	1	1	wts_1_34:160:192	Lex. steyasamväsıkah (Mvy 8756).	orthography_scan:1	low:1	review
+dotless_i:svastı:svasti	dotless_i	svastı (1)	svasti (1)	1	1	wts_1_34:414:40	(brDa); dge (v. 1. bde) legs = svastı (Mvy	orthography_scan:1	medium:1	review
+dotless_i:svämıtra:svämitra	dotless_i	śvämıtra (1)	śvämitra (1)	1	1	wts_1_34:62:133	śvämıtra.	orthography_scan:1	low:1	review
+dotless_i:swa-na’ı:swa-na’i	dotless_i	śwa-na’ı (1)	śwa-na’i (1)	1	1	wts_1_34:1158:26	gsan-sgrub śwa-na’ı Zal-can (Neb 60).	orthography_scan:1	low:1	review
+dotless_i:säkyamunı:säkyamuni	dotless_i	Säkyamunı (1)	Säkyamuni (1)	1	1	wts_1_34:879:247	als Säkyamunı.	orthography_scan:1	low:1	review
+dotless_i:särıva:säriva	dotless_i	särıva (1)	säriva (1)	1	1	wts_1_34:1000:90	(skt. särıva) [u.a] beseitigen [Störungen	orthography_scan:1	low:1	review
+dotless_i:sıg:sig	dotless_i	Sıg (1)	Sig (1)	1	1	wts_1_34:1036:95	(Nägn 82,18); kye bram ze vnams = Sıg „o	orthography_scan:1	low:1	review
+dotless_i:sıkkim:sikkim	dotless_i	Sıkkim (1)	Sikkim (1)	1	1	wts_1_34:751:104	ons Sıkkim.	orthography_scan:1	low:1	review
+dotless_i:sıl:sil	dotless_i	sıl (1)	sil (1)	1	1	wts_1_34:714:161	ཇོ་ཉོ།སེལ་སིལ་ jo mo sıl sil npr. ein Berg ım	orthography_scan:1	medium:1	review
+dotless_i:sıman:siman	dotless_i	sıman (1)	siman (1)	1	1	wts_1_34:45:156	Lex. sıman Zig (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:sınan:sinan	dotless_i	sınan (1)	sinan (1)	1	1	wts_1_34:751:125	Territorium errichten“ (Liyl 17566); sınan	orthography_scan:1	low:1	review
+dotless_i:sır:sir	dotless_i	sır (1)	sir (1)	1	1	wts_1_34:698:119	ich verberge es nicht“ (VinUp 35,20); sır	orthography_scan:1	low:1	review
+dotless_i:sıs:sis	dotless_i	sıs (1)	sis (1)	1	1	wts_1_34:940:186	Bam ltons Oberfläche; ~ sıs auf.	orthography_scan:1	low:1	review
+dotless_i:sıtz:sitz	dotless_i	sıtz (1)	sitz (1)	1	1	wts_1_34:159:163	sıtz Vierbeiner sind“, Nomade.	orthography_scan:1	low:1	review
+dotless_i:sı’i:si’i	dotless_i	śı’i (1)	śi’i (1)	1	1	wts_1_34:47:32	dar ram ... yul ka śı’i ras phran „Seide oder ...	orthography_scan:1	medium:1	review
+dotless_i:takrı:takri	dotless_i	takrı (1)	takri (1)	1	1	wts_1_34:152:161	takrı.	orthography_scan:1	low:1	review
+dotless_i:tandız:tandiz	dotless_i	tandız (1)	tandiz (1)	1	1	wts_1_34:870:73	eine Pflanze, Amaranth, skt. tandız.	orthography_scan:1	medium:1	review
+dotless_i:tanrtrı-:tanrtri-	dotless_i	tanrtrı- (1)	tanrtri- (1)	1	1	wts_1_34:1187:68	cher Gottheiten, skt. Kälarätri; die tanrtrı-	orthography_scan:1	medium:1	review
+dotless_i:taraksıta:taraksita	dotless_i	taraksıta (1)	taraksita (1)	1	1	wts_1_34:1209:93	taraksıta] leicht an den Kopf getreten“ (sBa	orthography_scan:1	low:1	review
+dotless_i:tarıkägama:tarikägama	dotless_i	tarıkägama (1)	tarikägama (1)	1	1	wts_1_34:1333:94	tarıkägama!‘“ (Prav 259,12); gal te dge slon	orthography_scan:1	medium:1	review
+dotless_i:tatksanıkä:tatksanikä	dotless_i	tatksanıkä (1)	tatksanikä (1)	1	1	wts_1_34:989:11	Lex. ~ (¥, ¦, phrad) pa = tatksanıkä (Mvy	orthography_scan:1	medium:1	review
+dotless_i:tbkrı:tbkri	dotless_i	tbkrı (1)	tbkri (1)	1	1	wts_1_34:224:44	ken; vgl. tbkrı.	orthography_scan:1	low:1	review
+dotless_i:tbrkyanı:tbrkyani	dotless_i	tbrkyanı (1)	tbrkyani (1)	1	1	wts_1_34:226:70	tbrkyanı.	orthography_scan:1	low:1	review
+dotless_i:tcıg:tcig	dotless_i	Tcıg (1)	Tcig (1)	1	1	wts_1_34:592:175	གཅིག་ཅར་ geig car Tcıg car.	orthography_scan:1	medium:1	review
+dotless_i:teıl:teil	dotless_i	Teıl (1)	Teil (1)	1	1	wts_1_34:178:216	1. Teıl, Anteil, Portion.	orthography_scan:1	low:1	review
+dotless_i:tganı:tgani	dotless_i	Tganı (1)	Tgani (1)	1	1	wts_1_34:338:83	གང་དག་ 4927? dag Tganı 3.	orthography_scan:1	medium:1	review
+dotless_i:tirınkrückstände:tirinkrückstände	dotless_i	TIrınkrückstände (1)	TIrinkrückstände (1)	1	1	wts_1_34:191:97	TIrınkrückstände zu trinken“ (Padm	orthography_scan:1	low:1	review
+dotless_i:tkyı:tkyi	dotless_i	tkyı (1)	tkyi (1)	1	1	wts_1_34:106:135	det; vgl. tkyı 4.	orthography_scan:1	low:1	review
+dotless_i:trisatakärıkävyakhyana:trisatakärikävyakhyana	dotless_i	Trisatakärıkävyakhyana (1)	Trisatakärikävyakhyana (1)	1	1	wts_1_34:849:149	deva: Trisatakärıkävyakhyana. Abt. ’Dul ba, su 162b3-264a7.	orthography_scan:1	medium:1	review
+dotless_i:träyantıka:träyantika	dotless_i	träyantıka (1)	träyantika (1)	1	1	wts_1_34:880:212	ཏཱ་ཡ་ནྡི tra ya nti eine Pflanze, skt. träyantıka	orthography_scan:1	medium:1	review
+dotless_i:trıkändakah:trikändakah	dotless_i	trıkändakah (1)	trikändakah (1)	1	1	wts_1_34:1164:19	Lex. trıkändakah „aus drei Abschnitten bestehend“ (Mvy 6716); thod pa — lta bu „wie:	orthography_scan:1	medium:1	review
+dotless_i:trıpathı:tripathi	dotless_i	TrıpatHı (1)	TripatHi (1)	1	1	wts_1_34:843:55	Vaipya/TrıpatHı 1987.	orthography_scan:1	medium:1	review
+dotless_i:trıtt:tritt	dotless_i	trıtt (1)	tritt (1)	1	1	wts_1_34:965:143	danken gezähmt hat, trıtt man geradlinig	orthography_scan:1	low:1	review
+dotless_i:turmalın:turmalin	dotless_i	Turmalın (1)	Turmalin (1)	1	1	wts_1_34:1295:85	2. ein Mineral, Antimon bzw. Turmalın.	orthography_scan:1	low:1	review
+dotless_i:tusıtäh:tusitäh	dotless_i	tusıtäh (1)	tusitäh (1)	1	1	wts_1_34:403:185	Lex. tusıtäh (Mvy 3081); ’dod lha’i gnas bzi	orthography_scan:1	medium:1	review
+dotless_i:tärakalı:tärakali	dotless_i	tärakalı (1)	tärakali (1)	1	1	wts_1_34:508:102	tärakalı „Retter“ (Mvy 416).	orthography_scan:1	low:1	review
+dotless_i:tärısch:tärisch	dotless_i	tärısch (1)	tärisch (1)	1	1	wts_1_34:458:12	tärısch, heldenhaft.	orthography_scan:1	low:1	review
+dotless_i:täyın:täyin	dotless_i	täyın (1)	täyin (1)	1	1	wts_1_34:220:44	Bodhisattvas und eines Buddha (täyın)“	orthography_scan:1	low:1	review
+dotless_i:törıchten:törichten	dotless_i	törıchten (1)	törichten (1)	1	1	wts_1_34:208:151	Wohlwollen auf diesen törıchten Men-	orthography_scan:1	low:1	review
+dotless_i:tüsnimbhavenadhiväsayatı:tüsnimbhavenadhiväsayati	dotless_i	tüsnimbhavenadhiväsayatı (1)	tüsnimbhavenadhiväsayati (1)	1	1	wts_1_34:575:198	pas gnan = tüsnimbhavenadhiväsayatı (7.	orthography_scan:1	low:1	review
+dotless_i:unıher:uniher	dotless_i	unıher (1)	uniher (1)	1	1	wts_1_34:705:219	galoppierend unıher“ (Hipp 216,17).	orthography_scan:1	low:1	review
+dotless_i:upacaratı:upacarati	dotless_i	upacaratı (1)	upacarati (1)	1	1	wts_1_34:787:158	Hinterlist begegnet (skt. upacaratı) er	orthography_scan:1	low:1	review
+dotless_i:upanämayısyamah:upanämayisyamah	dotless_i	upanämayısyamah (1)	upanämayisyamah (1)	1	1	wts_1_34:601:123	pätram upanämayısyamah „solange die Zeit	orthography_scan:1	low:1	review
+dotless_i:vadımandala:vadimandala	dotless_i	vadımandala (1)	vadimandala (1)	1	1	wts_1_34:458:169	Diskussionsrunde (skt. vadımandala) ein!“	orthography_scan:1	low:1	review
+dotless_i:vajrakartarı:vajrakartari	dotless_i	vajrakartarı (1)	vajrakartari (1)	1	1	wts_1_34:378:54	Vajra-Messers (skt. vajrakartarı)“ (Hev	orthography_scan:1	low:1	review
+dotless_i:vajrapänıs:vajrapänis	dotless_i	Vajrapänıs (1)	Vajrapänis (1)	1	1	wts_1_34:1058:176	Vajrapänıs.	orthography_scan:1	low:1	review
+dotless_i:varıdhäräab:varidhäräab	dotless_i	varıdhäräab (1)	varidhäräab (1)	1	1	wts_1_34:374:4	rgyun = Sitalä varıdhäräab „kühle Wasserströme“ (in Mvy 214).	orthography_scan:1	medium:1	review
+dotless_i:varıiae:variiae	dotless_i	varıiae (1)	variiae (1)	1	1	wts_1_34:866:255	varia lectio, varıiae lectiones; Lesart(en)	orthography_scan:1	low:1	review
+dotless_i:vedıkä:vedikä	dotless_i	vedıkä (1)	vedikä (1)	1	1	wts_1_34:242:97	Lex. vedıkä „Opferbank, Umzäunung“	orthography_scan:1	low:1	review
+dotless_i:veranlaßı:veranlaßi	dotless_i	veranlaßı (1)	veranlaßi (1)	1	1	wts_1_34:907:46	zu trinken veranlaßı“ (brDa); ~ pa = 'thun	orthography_scan:1	medium:1	review
+dotless_i:viharatı:viharati	dotless_i	viharatı (1)	viharati (1)	1	1	wts_1_34:207:40	äkasänantyäyatanam upasampadya viharatı	orthography_scan:1	low:1	review
+dotless_i:vrajamı:vrajami	dotless_i	vrajamı (1)	vrajami (1)	1	1	wts_1_34:423:91	(skt. vrajamı) schnellen Schrittes“ (HMrg	orthography_scan:1	low:1	review
+dotless_i:vyajıhma:vyajihma	dotless_i	vyajıhma (1)	vyajihma (1)	1	1	wts_1_34:70:6	ist (vyajıhma)“ (Nägn 22,3).	orthography_scan:1	low:1	review
+dotless_i:vyalumpantı:vyalumpanti	dotless_i	vyalumpantı (1)	vyalumpanti (1)	1	1	wts_1_34:81:102	Wassertropfen ihn benetzen (vyalumpantı)“	orthography_scan:1	low:1	review
+dotless_i:väkkalı-:väkkali-	dotless_i	väkkalı- (1)	väkkali- (1)	1	1	wts_1_34:524:114	Lex. - Zes bya ba’i tin ne ’dzin = väkkalı-	orthography_scan:1	medium:1	review
+dotless_i:vämıni:vämini	dotless_i	vämıni (1)	vämini (1)	1	1	wts_1_34:1016:80	Körper, skt. vämıni.	orthography_scan:1	low:1	review
+dotless_i:värıdharä:väridharä	dotless_i	värıdharä (1)	väridharä (1)	1	1	wts_1_34:644:176	värıdharä „Wasserstrom“ (in Mvy 226),	orthography_scan:1	low:1	review
+dotless_i:värıvaha:värivaha	dotless_i	värıvaha (1)	värivaha (1)	1	1	wts_1_34:643:125	Lex. värıvaha (Ak 21.74).	orthography_scan:1	low:1	review
+dotless_i:värıyantra:väriyantra	dotless_i	värıyantra (1)	väriyantra (1)	1	1	wts_1_34:652:28	värıyantra), 1111 Wasser spielen“ (Yś 102b).	orthography_scan:1	low:1	review
+dotless_i:vıkn:vikn	dotless_i	Vıkn (1)	Vikn (1)	1	1	wts_1_34:851:11	Vıkn	orthography_scan:1	low:1	review
+dotless_i:vıpyasmüsana:vipyasmüsana	dotless_i	VıpyAsmüsana (1)	VipyAsmüsana (1)	1	1	wts_1_34:21:60	Amarasimha | VıpyAsmüsana 1911 [Ak]	orthography_scan:1	low:1	review
+dotless_i:vıpädika:vipädika	dotless_i	vıpädika (1)	vipädika (1)	1	1	wts_1_34:436:11	‚zerstörte Füße‘ (skt. vıpädika) springen an	orthography_scan:1	low:1	review
+dotless_i:vıs:vis	dotless_i	Vıs (1)	Vis (1)	1	1	wts_1_34:1011:79	Vollkommenheit deiner Askese!“ (Vıs	orthography_scan:1	low:1	review
+dotless_i:vıst:vist	dotless_i	VısT (1)	VisT (1)	1	1	wts_1_34:1151:39	sein Opfer veranstalten will“ (VısT 202,7);	orthography_scan:1	low:1	review
+dotless_i:vıwvashüsana:viwvashüsana	dotless_i	VıwvAsHüsana (1)	ViwvAsHüsana (1)	1	1	wts_1_34:22:66	’Chi med sen ge [d. 1, Amara] ! VıwvAsHüsana 1911 [Ak]	orthography_scan:1	low:1	review
+dotless_i:weıh:weih	dotless_i	weıh (1)	weih (1)	1	1	wts_1_34:1158:72	weıh eines Hirsches nicht ergattert“ (Gesar	orthography_scan:1	low:1	review
+dotless_i:weınen:weinen	dotless_i	weınen (1)	weinen (1)	1	1	wts_1_34:533:5	weınen.	orthography_scan:1	low:1	review
+dotless_i:weıteifern:weiteifern	dotless_i	weıteifern (1)	weiteifern (1)	1	1	wts_1_34:1063:146	„1.S.v. weıteifern, Perfekt und Präsens (?)“	orthography_scan:1	low:1	review
+dotless_i:weıß:weiß	dotless_i	weıß (1)	weiß (1)	1	1	wts_1_34:57:32	Knochen war [weıß] wie Schnee und Kumu-	orthography_scan:1	low:1	review
+dotless_i:wiıe:wiie	dotless_i	wiıe (1)	wiie (1)	1	1	wts_1_34:8:74	wiıe ta, tha, da, na, śa behandelt.	orthography_scan:1	medium:1	review
+dotless_i:wvııe:wviie	dotless_i	WvııE (1)	WviiE (1)	1	1	wts_1_34:185:212	1966: 9, Anm. 2 und WvııE 1962: 139,	orthography_scan:1	low:1	review
+dotless_i:wıdmete:widmete	dotless_i	wıdmete (1)	widmete (1)	1	1	wts_1_34:83:39	tion wıdmete, wurde er als Asket berühmt“	orthography_scan:1	low:1	review
+dotless_i:wıeder:wieder	dotless_i	wıeder (1)	wieder (1)	1	1	wts_1_34:221:13	wo Gaben verteilt werden, immer wıeder	orthography_scan:1	low:1	review
+dotless_i:wıedergeboren:wiedergeboren	dotless_i	wıedergeboren (1)	wiedergeboren (1)	1	1	wts_1_34:203:155	in einem hohen Stand wıedergeboren	orthography_scan:1	low:1	review
+dotless_i:wıiederverkörperung:wiiederverkörperung	dotless_i	Wıiederverkörperung (1)	Wiiederverkörperung (1)	1	1	wts_1_34:1028:225	po yis (metr.) „die Wıiederverkörperung	orthography_scan:1	low:1	review
+dotless_i:wınn:winn	dotless_i	wınn (1)	winn (1)	1	1	wts_1_34:270:34	wınn.	orthography_scan:1	low:1	review
+dotless_i:wırd:wird	dotless_i	wırd (1)	wird (1)	1	1	wts_1_34:112:25	hen wırd; vgl. Kvaerne 1975: 53.	orthography_scan:1	low:1	review
+dotless_i:xlvıni:xlvini	dotless_i	xlvıni (1)	xlvini (1)	1	1	wts_1_34:25:68	xlvıni	orthography_scan:1	low:1	review
+dotless_i:xlı:xli	dotless_i	xlı (1)	xli (1)	1	1	wts_1_34:21:101	xlı	orthography_scan:1	low:1	review
+dotless_i:yantıg:yantig	dotless_i	yantıg (1)	yantig (1)	1	1	wts_1_34:821:49	yantıg (Dagy).	orthography_scan:1	medium:1	review
+dotless_i:yanıs:yanis	dotless_i	yanıs (1)	yanis (1)	1	1	wts_1_34:236:179	wird“ (Bca 8.178b); ri dags mo ... — cın yanıs	orthography_scan:1	low:1	review
+dotless_i:yarıg:yarig	dotless_i	yarıg (1)	yarig (1)	1	1	wts_1_34:466:19	རྒྱང་ག ད &yarıg go	orthography_scan:1	medium:1	review
+dotless_i:yıd:yid	dotless_i	yıd (1)	yid (1)	1	1	wts_1_34:1157:3	དུང་ངེ་ dun ne anhaftend, sich sehnend; in yıd	orthography_scan:1	medium:1	review
+dotless_i:yırhons:yirhons	dotless_i	yırhons (1)	yirhons (1)	1	1	wts_1_34:1068:1	SIRN WEN yırhons yans	orthography_scan:1	low:1	review
+dotless_i:yırvg:yirvg	dotless_i	yırvg (1)	yirvg (1)	1	1	wts_1_34:325:56	SU) yırvg	orthography_scan:1	low:1	review
+dotless_i:yısün:yisün	dotless_i	Yısün (1)	Yisün (1)	1	1	wts_1_34:64:121	Yısün Temür.	orthography_scan:1	low:1	review
+dotless_i:zeylanıca:zeylanica	dotless_i	zeylanıca (1)	zeylanica (1)	1	1	wts_1_34:108:212	Plumbago zeylanıca Linn. (Macri 1988: 43,	orthography_scan:1	low:1	review
+dotless_i:ziniıscher:ziniischer	dotless_i	ziniıscher (1)	ziniischer (1)	1	1	wts_1_34:1001:135	ziniıscher Asche und Moxibustion“ (Ahs	orthography_scan:1	low:1	review
+dotless_i:zjihvänirlekhanıka:zjihvänirlekhanika	dotless_i	zjihvänirlekhanıka (1)	zjihvänirlekhanika (1)	1	1	wts_1_34:616:192	(v. 1. gZar) zjihvänirlekhanıka (Mvy 8974).	orthography_scan:1	medium:1	review
+dotless_i:zornıg:zornig	dotless_i	zornıg (1)	zornig (1)	1	1	wts_1_34:62:118	war sie zornıg“ (K841(2) 20622).	orthography_scan:1	low:1	review
+dotless_i:zweı:zwei	dotless_i	zweı (1)	zwei (1)	1	1	wts_1_34:271:173	zweı“ (Sumpa 14635).	orthography_scan:1	low:1	review
+dotless_i:zı:zi	dotless_i	Zı (1)	Zi (1)	1	1	wts_1_34:586:209	"ཅང"" con 27 auch cun Zi, con Zu, gcon Zı ein"	orthography_scan:1	medium:1	review
+dotless_i:zıegel:ziegel	dotless_i	zıegel (1)	ziegel (1)	1	1	wts_1_34:1179:78	zıegel* (Debm 2936).	orthography_scan:1	low:1	review
+dotless_i:zıert:ziert	dotless_i	zıert (1)	ziert (1)	1	1	wts_1_34:329:65	zıert“ (MTH3/5/27 23).	orthography_scan:1	medium:1	review
+dotless_i:zıl:zil	dotless_i	zıl (1)	zil (1)	1	1	wts_1_34:295:151	synon. ston zıl, vgl. KLETTER/KRIECH-	orthography_scan:1	low:1	review
+dotless_i:äghätayatı:äghätayati	dotless_i	äghätayatı (1)	äghätayati (1)	1	1	wts_1_34:81:24	hatred for (BHSD 5. v. äghätayatı).	orthography_scan:1	low:1	review
+dotless_i:äkhyayıka:äkhyayika	dotless_i	äkhyayıka (1)	äkhyayika (1)	1	1	wts_1_34:887:44	(skt. äkhyayıka) gekennzeichnet“ (Kävyäd	orthography_scan:1	medium:1	review
+dotless_i:älokıtah:älokitah	dotless_i	älokıtah (1)	älokitah (1)	1	1	wts_1_34:72:122	Lex. synon. mdun du lta ba, skt. älokıtah	orthography_scan:1	low:1	review
+dotless_i:äramıkah:äramikah	dotless_i	äramıkah (1)	äramikah (1)	1	1	wts_1_34:64:72	Lex. äramıkah (Mvy 3843).	orthography_scan:1	low:1	review
+dotless_i:ärägayatı:ärägayati	dotless_i	ärägayatı (1)	ärägayati (1)	1	1	wts_1_34:87:141	thob par byed = ajhäm ärägayatı (Mvy 7602),	orthography_scan:1	medium:1	review
+dotless_i:äsavarısta:äsavarista	dotless_i	äsavarısta (1)	äsavarista (1)	1	1	wts_1_34:455:166	bya (metr.) „man trinke alten und lauwarmen Likör (skt. äsavarısta)“ (Ahs	orthography_scan:1	low:1	review
+dotless_i:äsavärısta:äsavärista	dotless_i	äsavärısta (1)	äsavärista (1)	1	1	wts_1_34:218:173	lauwarmen Likör (skt. äsavärısta)“ (Ahs	orthography_scan:1	low:1	review
+dotless_i:äspharanakasamädhiıh:äspharanakasamädhiih	dotless_i	äspharanakasamädhiıh (1)	äspharanakasamädhiih (1)	1	1	wts_1_34:305:82	Lex. äspharanakasamädhiıh „alles durchdrin-	orthography_scan:1	medium:1	review
+dotless_i:ätatäyın:ätatäyin	dotless_i	ätatäyın (1)	ätatäyin (1)	1	1	wts_1_34:79:217	Lex. ätatäyın „mit bewaffneter Hand jmds.	orthography_scan:1	low:1	review
+dotless_i:ävısaya:ävisaya	dotless_i	ävısaya (1)	ävisaya (1)	1	1	wts_1_34:62:23	Lex. ävısaya (?),vyoma (Tshe 321); nam mkha’	orthography_scan:1	medium:1	review
+dotless_i:öffncı:öffnci	dotless_i	öffncı (1)	öffnci (1)	1	1	wts_1_34:893:103	18); klu pi = 690 phye „er öffncı das Tor	orthography_scan:1	medium:1	review
+dotless_i:ıdent:ident	dotless_i	ıdent (1)	ident (1)	1	1	wts_1_34:866:1	11, ıdent.	orthography_scan:1	low:1	review
+dotless_i:ıhar:ihar	dotless_i	ıhar (1)	ihar (1)	1	1	wts_1_34:998:53	AR ıhar	orthography_scan:1	low:1	review
+dotless_i:ıhi:ihi	dotless_i	ıhi (1)	ihi (1)	1	1	wts_1_34:1001:188	ཀྲི ıhi Ziffer 40.	orthography_scan:1	medium:1	review
+dotless_i:ıihäpy:iihäpy	dotless_i	ıihäpy (1)	iihäpy (1)	1	1	wts_1_34:212:192	’mutropapannah / tatas cyuta ıihäpy upapa-	orthography_scan:1	low:1	review
+dotless_i:ıkan:ikan	dotless_i	ıkan (1)	ikan (1)	1	1	wts_1_34:156:167	རྐང་གཉིས་ ıkan 97/5	orthography_scan:1	medium:1	review
+dotless_i:ıl:il	dotless_i	ıl (1)	il (1)	1	1	wts_1_34:31:125	Istituto Italiano per ıl Medio ed Estremo Oriente (Rom)	orthography_scan:1	low:1	review
+dotless_i:ıma:ima	dotless_i	ıma (1)	ima (1)	1	1	wts_1_34:897:80	» med par ston log tn ’gro ıma myon bas „weil	orthography_scan:1	low:1	review
+dotless_i:ımam:imam	dotless_i	ımam (1)	imam (1)	1	1	wts_1_34:916:207	"62,13); ~ ""di ımam gsum 0:77) byun yaṅ"	orthography_scan:1	low:1	review
+dotless_i:ımwälzen:imwälzen	dotless_i	ımwälzen (1)	imwälzen (1)	1	1	wts_1_34:357:9	Lex. ’gyur log tu ’jug pa „ımwälzen“ (brDa);	orthography_scan:1	low:1	review
+dotless_i:ına:ina	dotless_i	ına (1)	ina (1)	1	1	wts_1_34:941:54	los; ına ~ ohne Rücksicht.	orthography_scan:1	low:1	review
+dotless_i:ındans:indans	dotless_i	ındans (1)	indans (1)	1	1	wts_1_34:969:143	wo“ (Mil 102,22); ran ındans ’gag med gan	orthography_scan:1	low:1	review
+dotless_i:ındem:indem	dotless_i	ındem (1)	indem (1)	1	1	wts_1_34:1196:75	zuns te „ındem der geistliche Lehrer selbst	orthography_scan:1	low:1	review
+dotless_i:ınit:init	dotless_i	ınit (1)	init (1)	1	1	wts_1_34:757:9	rnams „ein Gefolge ınit Mönchen, Schülern	orthography_scan:1	low:1	review
+dotless_i:ınıga:iniga	dotless_i	ınıga (1)	iniga (1)	1	1	wts_1_34:886:150	BHSD 5. ¥. ınıga.	orthography_scan:1	low:1	review
+dotless_i:ırrt:irrt	dotless_i	ırrt (1)	irrt (1)	1	1	wts_1_34:45:150	ag kä landı ırrt. für Ika lindi.	orthography_scan:1	low:1	review
+dotless_i:ısa:isa	dotless_i	ısa (1)	isa (1)	1	1	wts_1_34:881:195	ma-bu-ga-Bienen kommen“ (K686 ısa 36a	orthography_scan:1	low:1	review
+dotless_i:ıt:it	dotless_i	ıt (1)	it (1)	1	1	wts_1_34:160:185	right to ıt” (BHSD).	orthography_scan:1	low:1	review
+dotless_i:ıyarı:iyari	dotless_i	ıyarı (1)	iyari (1)	1	1	wts_1_34:464:144	རྒྱ་རུ་ ıyarı Antilopenhorn.	orthography_scan:1	medium:1	review
+dotless_i:’drıl:’dril	dotless_i	’drıl (1)	’dril (1)	1	1	wts_1_34:1327:1	Bar ’drıl	orthography_scan:1	low:1	review
+dotless_i:’nuparıksiptam:’nupariksiptam	dotless_i	’nuparıksiptam (1)	’nupariksiptam (1)	1	1	wts_1_34:79:45	umgeben (samantato ’nuparıksiptam) von	orthography_scan:1	low:1	review
+dotless_i:’ognı:’ogni	dotless_i	’ognı (1)	’ogni (1)	1	1	wts_1_34:565:192	’ognı ~”/ gon ’og (Liś 24,16).	orthography_scan:1	low:1	review
+dotless_i:’oyın:’oyin	dotless_i	’oyın (1)	’oyin (1)	1	1	wts_1_34:441:56	འགྱིང་སྟངས་ ’oyın stans Hochmut.	orthography_scan:1	medium:1	review
+dotless_i:’säı:’säi	dotless_i	’säı (1)	’säi (1)	1	1	wts_1_34:818:140	3 ’säı npr. ein Ortsname.	orthography_scan:1	medium:1	review
+google_tibetan_diacritic_disagreement:2a:źa	google_tibetan_diacritic_disagreement	2a (1)	źa (1)	1	1	wts_1_34:288:157	Lex. rtswa snon po gsar du skyes pa’am 2a lu	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:47:ñaṅ	google_tibetan_diacritic_disagreement	47 (1)	ñaṅ (1)	1	1	wts_1_34:1199:102	(MSg 75,15); — gzigs pa’i 47? tshul ganı la yod	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:5779:sñeg	google_tibetan_diacritic_disagreement	5779 (1)	sñeg (1)	1	1	wts_1_34:240:91	rul) dri pha le kbyi lam süog (r. 5779)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:76:ñe	google_tibetan_diacritic_disagreement	76 (1)	ñe (1)	1	1	wts_1_34:1171:39	༡76 bar gyur gyis „weil jetzt die Zeit zu kämp-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:77:daṅ	google_tibetan_diacritic_disagreement	77 (1)	daṅ (1)	1	1	wts_1_34:1213:48	ein!“ (Lokn 120,15); ya — phar phyin pa (77?	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:7:ñi	google_tibetan_diacritic_disagreement	7 (1)	ñi (1)	1	1	wts_1_34:1213:84	(Glu 58); — /7/ ma phyed na 'gum par 'gyur	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:biens:bźeṅs	google_tibetan_diacritic_disagreement	biens (1)	bźeṅs (1)	1	1	wts_1_34:695:50	(gZer 764,2); khri 'phan dgu pa’i ~ biens	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bkra-sis-rgyal-mtshan:bkra-sis-rgyal-mtshan	google_tibetan_diacritic_disagreement	bkra-Sis-rgyal-mtshan (1)	bkra-śis-rgyal-mtshan (1)	1	1	wts_1_34:862:64	the doctrines of the Bon tradition. By Sar-rdza bkra-Sis-rgyal-mtshan. Reproduced	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:blo-bzan:blo-bzaṅ	google_tibetan_diacritic_disagreement	Blo-bzan (1)	Blo-bzaṅ (1)	1	1	wts_1_34:862:86	hand des Werkes dPag-bsam ljon-sin von Blo-bzan tshul-khrims rgya-mtsho. Halle:	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:btan:btaṅ	google_tibetan_diacritic_disagreement	btan (1)	btaṅ (1)	1	1	wts_1_34:1213:90	„nachdem man dann den Paß Chag überquert hat“ (gNas 2,21); — ... gtanı rag btanı no	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bzan:bzaṅ	google_tibetan_diacritic_disagreement	bzan (1)	bzaṅ (1)	1	1	wts_1_34:589:27	Pan chen blo gros legs bzan: ’Dul ba gZun ’grel. Ed.: SERMEY LIBRARY	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bzi:bźi	google_tibetan_diacritic_disagreement	bZi (1)	bźi (1)	1	1	wts_1_34:1213:54	beu rtsa bZi dan / lo gya brgyad thal te „danach	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bzin:bźin	google_tibetan_diacritic_disagreement	bZin (1)	bźin (1)	1	1	wts_1_34:1173:38	sgyur bZin nam zla — kyi bskul tsbe „während wir tausendfach wohlklingende Gesän-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bzugs:bźugs	google_tibetan_diacritic_disagreement	bZugs (1)	bźugs (1)	1	1	wts_1_34:859:62	pa rgyas par bkod pa padma bka’i than yig ces bya ba bZugs so. Darjeeling/Varanası.	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bäi:bźi	google_tibetan_diacritic_disagreement	bäi (1)	bźi (1)	1	1	wts_1_34:1173:74	bäi brgya dan / lo (gya) brgyad snar ’das so	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:bäugs:bźugs	google_tibetan_diacritic_disagreement	bäugs (1)	bźugs (1)	1	1	wts_1_34:1171:71	'phags pa Sa na’i gos can bäugs te „zu jener	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:cin:ciñ	google_tibetan_diacritic_disagreement	cin (1)	ciñ (1)	1	1	wts_1_34:695:46	dem Stüpa“ (MTH3/5/32 12); ~ brtsig cin	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:fies:ñes	google_tibetan_diacritic_disagreement	fies (1)	ñes (1)	1	1	wts_1_34:288:101	Mädchen“ (Suv 100,18); bud med kyi fies pa	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gdon:gdoṅ	google_tibetan_diacritic_disagreement	gdon (1)	gdoṅ (1)	1	1	wts_1_34:1122:56	den“ (Mvup 1.1b); —’i bu yi gdon la (metr.)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gdun:gduṅ	google_tibetan_diacritic_disagreement	gdun (1)	gduṅ (1)	1	1	wts_1_34:288:49	dem Nachbarn“ (Glr 97,22); ~ gi gdun „dei-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gian:gźan	google_tibetan_diacritic_disagreement	gian (1)	gźan (1)	1	1	wts_1_34:1088:78	— thor bu gian dag brjod par bya ste „nun	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gsis:gsis	google_tibetan_diacritic_disagreement	gsis (1)	gśis (1)	1	1	wts_1_34:695:108	nas » rnams sprad byun gsis „weil dem ver-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gtan:gtaṅ	google_tibetan_diacritic_disagreement	gtan (1)	gtaṅ (1)	1	1	wts_1_34:1213:90	„nachdem man dann den Paß Chag überquert hat“ (gNas 2,21); — ... gtanı rag btanı no	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gzir:gźir	google_tibetan_diacritic_disagreement	gZir (1)	gźir (1)	1	1	wts_1_34:1088:40	bdag gis rkan gis ser skya’i gZir Zugs te —	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gäis:gźis	google_tibetan_diacritic_disagreement	gäis (1)	gźis (1)	1	1	wts_1_34:1088:30	28); — bzuns rdzon gäis sogs byas rjes	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:gäun:gźuṅ	google_tibetan_diacritic_disagreement	gäun (1)	gźuṅ (1)	1	1	wts_1_34:1100:29	Buchstabe“ (brDa); yi ge’i dag byed kyi gäun	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:güen:gñen	google_tibetan_diacritic_disagreement	güen (1)	gñen (1)	1	1	wts_1_34:288:136	güen bses kyi min); bu chun chun phru gu	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:güis:gñis	google_tibetan_diacritic_disagreement	güis (1)	gñis (1)	1	1	wts_1_34:648:71	Fluß“ (PT1287 469); sel cu ltag ’og güis kyi	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:idan:idaṅ	google_tibetan_diacritic_disagreement	Idan (1)	Idaṅ (1)	1	1	wts_1_34:1108:37	kho nar viel zu früh; vgl. Idan por.	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ie:ñe	google_tibetan_diacritic_disagreement	ie (1)	ñe (1)	1	1	wts_1_34:1145:42	wurde“ (Ahs 1.3.52a); — gis ie bar bcom pas	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ii:ñi	google_tibetan_diacritic_disagreement	ii (1)	ñi (1)	1	1	wts_1_34:695:120	Lex. ii ma’i min la’an (Dagy).	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:iten:iteṅ	google_tibetan_diacritic_disagreement	Iten (1)	Iteṅ (1)	1	1	wts_1_34:1108:57	na / non mons pa ko chu Itan Iten tsam las	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ka:ñid	google_tibetan_diacritic_disagreement	ka (1)	ñid (1)	1	1	wts_1_34:1199:59	དེ་ཁ་ de kha tde ka.	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:kamalasila:kamalasīla	google_tibetan_diacritic_disagreement	Kamalasila (1)	Kamalaśīla (1)	1	1	wts_1_34:862:101	Tuccı, Giuseppe 1958: First Bhavanakrama of Kamalasila. Sanskrit and Tibetan texts	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:kyan:kyaṅ	google_tibetan_diacritic_disagreement	kyan (1)	kyaṅ (1)	1	1	wts_1_34:1088:64	kyan mjal bar mdzod (metr.) „darum, König, laß mich jetzt [mit ihnen] zusammen-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:käsy:käsy	google_tibetan_diacritic_disagreement	Käsy (1)	Käśy (1)	1	1	wts_1_34:648:82	sind“ (Käsy 219,20); - dan rdzin dan	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:la:raṅ	google_tibetan_diacritic_disagreement	la (1)	raṅ (1)	1	1	wts_1_34:967:50	2.11.14b); rnam kun ¡7/ ma la mi ༨ (metr.)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ljon-sin:ljon-siṅ	google_tibetan_diacritic_disagreement	ljon-sin (1)	ljon-śiṅ (1)	1	1	wts_1_34:862:86	hand des Werkes dPag-bsam ljon-sin von Blo-bzan tshul-khrims rgya-mtsho. Halle:	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:man:mñan	google_tibetan_diacritic_disagreement	man (1)	mñan (1)	1	1	wts_1_34:1171:70	baren“ (Mil 75,1); — de’i tsbe man yod na	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:mi:bźin	google_tibetan_diacritic_disagreement	mi (1)	bźin (1)	1	1	wts_1_34:967:50	2.11.14b); rnam kun ¡7/ ma la mi ༨ (metr.)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:müam:mñam	google_tibetan_diacritic_disagreement	müam (1)	mñam (1)	1	1	wts_1_34:1149:28	müam 'thuns na — rmams thub (metr.) „wenn	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:nairandzana’i:nairañdzana'i	google_tibetan_diacritic_disagreement	nairandzana’i (1)	nairañdzana'i (1)	1	1	wts_1_34:648:88	Fluß“ (Srkk 126.1); ~ nairandzana’i ’gram	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:nan:naṅ	google_tibetan_diacritic_disagreement	Nan (1)	Naṅ (1)	1	1	wts_1_34:862:89	TsEPAK RIGzIN 2003: Nanı don rig pa’i min tshig bod dbyin san sbyar. Tibetan-English	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:no:ṅo	google_tibetan_diacritic_disagreement	no (1)	ṅo (1)	1	1	wts_1_34:1213:90	„nachdem man dann den Paß Chag überquert hat“ (gNas 2,21); — ... gtanı rag btanı no	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:nus:daṅ	google_tibetan_diacritic_disagreement	nus (1)	daṅ (1)	1	1	wts_1_34:268:145	1.2.38d); ~ ni ’khur bar mi nus kyan (metr.)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:pa:ñan	google_tibetan_diacritic_disagreement	pa (1)	ñan (1)	1	1	wts_1_34:268:188	Dagy); ~ drogs pa = gcig tn bsdebs pa „zu-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:pa’i:sñiṅ	google_tibetan_diacritic_disagreement	pa’i (1)	sñiṅ (1)	1	1	wts_1_34:12:36	Ahs Pha gol: Yan lag breyad pa’i sin po bsdus pa / Vägbhata: Astängahrdayasambhitä. Teilw.	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ra:ña	google_tibetan_diacritic_disagreement	Ra (1)	ña (1)	1	1	wts_1_34:240:78	(Vdk 2: 341,4); Ra gzugs ~ mig (metr.) „die	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:rain:rñin	google_tibetan_diacritic_disagreement	rain (1)	rñin (1)	1	1	wts_1_34:1173:20	nas rain ba’i dab ma „die im Winter verwelkten Blütenblätter* (HMrg 56,17); char pa’i	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ran-sar:ran-sar	google_tibetan_diacritic_disagreement	ran-Sar (1)	ran-śar (1)	1	1	wts_1_34:589:116	Werksammlungen Kun-tu bzan-po’i dgons-pa zan-thal, Ka-dag ran-byun ran-Sar	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ran-sar:rañ-sar	google_tibetan_diacritic_disagreement	ran-Sar (1)	rañ-śar (1)	1	1	wts_1_34:860:98	bzan-po’i dgons-pa zan-thal, Ka-dag ran-byun ran-Sar und mKha’-’gro gsan-ba ye-	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:rma:rṅa	google_tibetan_diacritic_disagreement	rma (1)	rṅa (1)	1	1	wts_1_34:1122:19	(Pd-K 243c); nas ni chos kyi rma chen ~	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:san:sñan	google_tibetan_diacritic_disagreement	san (1)	sñan (1)	1	1	wts_1_34:1122:70	(HMrg 59,27); san dnags —’i rgyan ldan	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:sar-rdza:sar-rdza	google_tibetan_diacritic_disagreement	Sar-rdza (1)	Śar-rdza (1)	1	1	wts_1_34:862:64	the doctrines of the Bon tradition. By Sar-rdza bkra-Sis-rgyal-mtshan. Reproduced	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ses-kyi:ses-kyi	google_tibetan_diacritic_disagreement	Ses-kyi (1)	śes-kyi (1)	1	1	wts_1_34:860:99	Ses-kyi rgyud. Stuttgart: Steiner (VOHD 11,9).	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:siion:sñon	google_tibetan_diacritic_disagreement	siion (1)	sñon (1)	1	1	wts_1_34:1084:78	— kyi srol lam (b)siion med gnas bZin „so sind	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:sioms:sñoms	google_tibetan_diacritic_disagreement	sioms (1)	sñoms (1)	1	1	wts_1_34:1213:17	tshe ... tin ne 'dzin la sioms par Zugs so „dann	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:snoms:sṅoms	google_tibetan_diacritic_disagreement	snoms (1)	sṅoms (1)	1	1	wts_1_34:1213:38	snoms Zugs nas (metr.) „nachdem man dann	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:sod:sod	google_tibetan_diacritic_disagreement	Sod (1)	śod (1)	1	1	wts_1_34:1213:62	nam Sod kyi bye ma ne’u gsin du bsgyur ba dan	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:stigs:sñigs	google_tibetan_diacritic_disagreement	stigs (1)	sñigs (1)	1	1	wts_1_34:1173:94	24,6); stigs ma’i — ’dir rgyal ba gfäis pa byon	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:säin:sñiñ	google_tibetan_diacritic_disagreement	säin (1)	sñiñ (1)	1	1	wts_1_34:1080:4	rje säin po’i phyi’i nam par thar pa nes don rgya mtsho. Ed.: SOLMSDORF	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:süan:sñan	google_tibetan_diacritic_disagreement	süan (1)	sñan (1)	1	1	wts_1_34:1100:61	untreu“ (131 518); bka’ phrin süan pa — /	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:süigs:sñigs	google_tibetan_diacritic_disagreement	süigs (1)	sñigs (1)	1	1	wts_1_34:1173:90	64,11); ma ’ons süigs ma’i — ... phyi nanı 'jigs	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:süog:sñog	google_tibetan_diacritic_disagreement	süog (1)	sñog (1)	1	1	wts_1_34:240:91	rul) dri pha le kbyi lam süog (r. 5779)	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ya:yaṅ	google_tibetan_diacritic_disagreement	ya (1)	yaṅ (1)	1	1	wts_1_34:1213:48	ein!“ (Lokn 120,15); ya — phar phyin pa (77?	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:yaßi:yasi	google_tibetan_diacritic_disagreement	yaßi (1)	yaśi (1)	1	1	wts_1_34:1108:42	rgyal po sa nu dan / a ma ca yaßi rje gol	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zabs:źabs	google_tibetan_diacritic_disagreement	Zabs (1)	źabs (1)	1	1	wts_1_34:974:9	thog pa chen po tshe dban nor bu’i Zabs kyi rnam thar mdor bsdus dad pa’i	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zags:źags	google_tibetan_diacritic_disagreement	Zags (1)	źags (1)	1	1	wts_1_34:1171:15	chi ba’i — kyi Zags pas zin par $es par bya’o	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:ze:źe	google_tibetan_diacritic_disagreement	Ze (1)	źe (1)	1	1	wts_1_34:1171:58	gnas Ze na „nun, wenn man fragt, wieviel Zeit	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zi:źi	google_tibetan_diacritic_disagreement	Zi (1)	źi (1)	1	1	wts_1_34:862:72	—— 1986: Zab chos Zi khro dgons pa ran grol las bar do thos grol gyi skor. Dharamsala.	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zib:źib	google_tibetan_diacritic_disagreement	Zib (1)	źib (1)	1	1	wts_1_34:1173:45	dbyar — thig tshags sogs la’an Zib ’jug byed	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zin:źin	google_tibetan_diacritic_disagreement	Zin (1)	źin (1)	1	1	wts_1_34:1171:93	gtam rgyun no mtshar che Zin ya mtshan pa’i	google_unresolved_tibetan_context:1	medium:1	review
+google_tibetan_diacritic_disagreement:zin:źiṅ	google_tibetan_diacritic_disagreement	Zin (1)	źiṅ (1)	1	1	wts_1_34:695:93	༡ kyi sa Zin „ein Gebiet, welches als Finan-	google_unresolved_tibetan_context:1	medium:1	review
+gña_khri_family:gna-khri:gña-khri	gña_khri_family	gNa-khri (1)	gÑa-khri (1)	1	1	wts_1_34:570:180	die fünf; in Tibet ist es gNa-khri btsan-po“	language_knowledge:1	high:1	exact_promotion_candidate
+tibetan_script_ng_witness:dan:daṅ	tibetan_script_ng_witness	dan (1)	daṅ (1)	1	1	wts_1_34:543:114	དངན་འཐེན་ dan ’then Unterschlagung, Verun-	tibetan_script_witness:1	high:1	exact_promotion_candidate
+tibetan_script_ng_witness:tdan:tdaṅ	tibetan_script_ng_witness	Tdan (1)	Tdaṅ (1)	1	1	wts_1_34:1111:20	དང་ལ་ ?daṅ la erstens, anfangs; vgl. Tdan po 2,	tibetan_script_witness:1	high:1	exact_promotion_candidate
+unknown:bsad:bsad	unknown	b$ad (1)	bśad (1)	1	1	wts_1_34:1171:36	yin par b$ad (metr.) „dies wird von den Gelehrten als Zeitmaß für die Unterteilung er-			siglum_policy_review
+unknown:g7i-sn:gzi-sn	unknown	g7i-Sn (1)	gZi-Sn (1)	1	1	wts_1_34:448:106	Entstehen für Vergehen“ (g7i-Sn 26,22).			siglum_policy_review
+unknown:g7zi-sn:gzi-sn	unknown	g7Zi-Sn (1)	gZi-Sn (1)	1	1	wts_1_34:155:16	pa’i smran gis — pa ste (metr.) „eine Erklärung mit Wahrheitsworten“ (g7Zi-Sn 66,3).			siglum_policy_review
+unknown:gz1-sn:gzi-sn	unknown	gZ1-Sn (1)	gZi-Sn (1)	1	1	wts_1_34:139:104	der Zwang stark werden“ (gZ1-Sn 82,18).			siglum_policy_review
+unknown:inl2:in12	unknown	Inl2 (1)	In12 (1)	1	1	wts_1_34:805:93	verwandt waren“ (Inl2 E33); rje gu ge...			siglum_policy_review
+unknown:l5dz-k:lsdz-k	unknown	L5dz-K (1)	Lśdz-K (1)	1	1	wts_1_34:156:32	worden“ (L5dz-K 250,27).			siglum_policy_review
+unknown:roins:roins	unknown	RoIN$ (1)	RoINS (1)	1	1	wts_1_34:847:98	RoIN$			siglum_policy_review
+unknown:ssambh:sambh	unknown	$Sambh (1)	Śambh (1)	1	1	wts_1_34:18:106	$Sambh			siglum_policy_review
+unknown:ttj740:itj740	unknown	TTJ740 (1)	ITJ740 (1)	1	1	wts_1_34:366:65	hervorgeht“ (TTJ740 334).			siglum_policy_review
+unknown:vis:vis	unknown	Viś (1)	Vis (1)	1	1	wts_1_34:1100:79	ihn aus!‘, und da spuckte sie ihn aus“ (VisT			siglum_policy_review
+unknown:visst:vist	unknown	VisST (1)	ViśT (1)	1	1	wts_1_34:1103:41	rgyas pa — phrad nas „sie trafen Vyäsa“ (VisST			siglum_policy_review

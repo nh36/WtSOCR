@@ -1384,6 +1384,53 @@ class PostprocessRegressionTests(unittest.TestCase):
             ]
         )
 
+    def test_reviewed_script_ng_witness_rows_apply_only_on_reviewed_locations(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (338, 85): "གང་དང་ཡང་ gan daṅ yaṅ gan yan.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("གང་དང་ཡང་ gaṅ daṅ yaṅ gaṅ yaṅ.", corrected)
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+        }
+        self.assertIn(
+            ("gan", "gaṅ", "reviewed_tibetan_exact_script_ng_witness"),
+            reasons,
+        )
+        self.assertIn(
+            ("yan", "yaṅ", "reviewed_tibetan_exact_script_ng_witness"),
+            reasons,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
+        unreviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (338, 86): "གང་དང་ཡང་ gan daṅ yaṅ gan yan.",
+            }
+        )
+
+        _result, unreviewed_corrected, unreviewed_changes = self.run_postprocess_fixture(
+            unreviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("གང་དང་ཡང་ gan daṅ yaṅ gan yan.", unreviewed_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in unreviewed_changes
+                if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            ]
+        )
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {
@@ -2907,12 +2954,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         merged_text = (
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan daṅ pa can\n"
             "ཀུན་སྣང་དང་པ་ཅན་ kun snan dan pa can, auch kun\n"
+            "གང་དང་གང་ gan dan gan Tgan gan.\n"
             "གང་དང་ཡང་ gan dan yani \\gan yan.\n"
+            "གང་དང་གང་ gar daṅ gaṅ Tgari gan.\n"
+            "གང་དང་ཡང་ gaṅ daṅ yaṅ Igari yani.\n"
         )
         _, corrected, changes = self.run_postprocess_fixture(merged_text)
 
         self.assertIn("kun snan daṅ pa can, auch kun", corrected)
-        self.assertIn("གང་དང་ཡང་ gan daṅ yaṅ \\gan yaṅ.", corrected)
+        self.assertIn("གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.", corrected)
+        self.assertIn("གང་དང་ཡང་ gaṅ daṅ yaṅ \\gaṅ yaṅ.", corrected)
+        self.assertIn("གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.", corrected)
+        self.assertIn("གང་དང་ཡང་ gaṅ daṅ yaṅ lgaṅ yaṅ.", corrected)
 
         reasons = {(row["from_token"], row["to_token"], row["reason"]) for row in changes}
         self.assertIn(
@@ -2925,8 +2978,32 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn(
             (
+                "གང་དང་གང་ gan dan gan Tgan gan.",
+                "གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+        self.assertIn(
+            (
                 "གང་དང་ཡང་ gan dan yani \\gan yan.",
-                "གང་དང་ཡང་ gan daṅ yaṅ \\gan yaṅ.",
+                "གང་དང་ཡང་ gaṅ daṅ yaṅ \\gaṅ yaṅ.",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+        self.assertIn(
+            (
+                "གང་དང་གང་ gar daṅ gaṅ Tgari gan.",
+                "གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.",
+                "tibetan_dang_phrase_override",
+            ),
+            reasons,
+        )
+        self.assertIn(
+            (
+                "གང་དང་ཡང་ gaṅ daṅ yaṅ Igari yani.",
+                "གང་དང་ཡང་ gaṅ daṅ yaṅ Igaṅ yaṅ.",
                 "tibetan_dang_phrase_override",
             ),
             reasons,

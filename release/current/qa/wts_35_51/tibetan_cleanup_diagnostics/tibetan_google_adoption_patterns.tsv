@@ -1,0 +1,314 @@
+reason	base_token	alternate_token	count	volume_count	sample_refs	sample_contexts
+alternate_witness_google_loc_nasal_upgrade	dan	daṅ	211	1	wts_35_51:1:60; wts_35_51:2:51; wts_35_51:7:47; wts_35_51:11:14; wts_35_51:11:81	"bcom ldan ""das kyis ... mdzes pa nid dan / ~' || dur 09 chu — rdol ba dan (metr.) ""unter- || nicht"" (Bca 5.92b); srin gyi kba — Ita bu dan"
+alternate_witness_initial_i_to_l_translit	Ita	lta	93	1	wts_35_51:1:12; wts_35_51:2:72; wts_35_51:7:5; wts_35_51:10:6; wts_35_51:11:32	"dus = dpyid ka'i dus Ita bu'am mig la'ani yid || Lex. chu tsha po'am dron 'jam Ita bu ""wie: || (Dagy); skas kyi — ban rim Ita bu (brDa);"
+alternate_witness_initial_i_to_l_translit	Iha	lha	45	1	wts_35_51:9:40; wts_35_51:19:18; wts_35_51:20:88; wts_35_51:23:28; wts_35_51:24:62	"po yan Iha sar zla geig Ihag tsam — par || (Padm 28922); Iha srin — rnams dam la dogs || Lex. Iha gdugs dkar mo la'an ""auch für die"
+alternate_witness_google_loc_nasal_upgrade	bzan	bzaṅ	25	1	wts_35_51:2:26; wts_35_51:19:71; wts_35_51:22:65; wts_35_51:47:37; wts_35_51:50:3	Lex. 72 ti sukmel ka ko la / — bzan po gsum || bzan ba ... mgo — Ita bu dan Idan pa äg || bzan shin gi — ba sel byed pa'i / vtogs brjod
+alternate_witness_google_loc_nasal_upgrade	dban	dbaṅ	24	1	wts_35_51:10:39; wts_35_51:11:34; wts_35_51:51:54; wts_35_51:63:47; wts_35_51:63:77	"zuladen"" (Mil 27,24); rag dban chos kyi rgyal || po gtsah pa dban phyug grag —r bskos || mo ran gi dban ris ~ sa yul tshans ma rje ñid"
+alternate_witness_google_loc_nasal_upgrade	nid	ñid	18	1	wts_35_51:1:60; wts_35_51:10:72; wts_35_51:47:33; wts_35_51:50:50; wts_35_51:51:30	"bcom ldan ""das kyis ... mdzes pa nid dan / ~' || war"" (Dol3 32,3); chos rje nid byañ sems legs || nid kyis ni ~ gro bar 'gyur (metr.) ""ich will"
+alternate_witness_google_loc_velar_nasal_upgrade	dañ	daṅ	16	1	wts_35_51:11:54; wts_35_51:60:10; wts_35_51:73:81; wts_35_51:77:61; wts_35_51:84:44	"~r spun ba sogs spar kha'i skyon kun dañ || hin"" (Udr 6,36); ~ dan / phye ma dañ / || 'khor lo rin po che dañ ... dnag dpon rin po che"
+alternate_witness_google_loc_nasal_upgrade	kyan	kyaṅ	15	1	wts_35_51:2:32; wts_35_51:78:26; wts_35_51:90:63; wts_35_51:97:61; wts_35_51:126:50	"chen po dag kyan gsol bar mdzad ""er nahm || nan nas kyan / nam Zar bde Zin skyid par || tä"" (Räg 69,8); — par skad cig kyan grub pa"
+alternate_witness_citation_siglum	Lis	Liś	14	1	wts_35_51:1:31; wts_35_51:17:6; wts_35_51:68:11; wts_35_51:98:87; wts_35_51:107:5	"(Dagy); — pi pi lin du don dan (Lis 37,13); || gebeten oder bitten"" (Lis 19,14). || (Lis 26,8); gi lin — zrta mchog brun ""Ex-"
+alternate_witness_google_loc_nasal_upgrade	ran	raṅ	14	1	wts_35_51:16:14; wts_35_51:46:50; wts_35_51:47:37; wts_35_51:73:35; wts_35_51:74:65	"38b6); thos pa dga' la ma grun mo ran cig || Lex. bdag ran bzin gyis ug pa ""selbst mit || ni ran bZin skal ba bzan po — ""char ba thob"
+alternate_witness_google_loc_nasal_upgrade	ston	stoṅ	14	1	wts_35_51:19:81; wts_35_51:55:5; wts_35_51:67:59; wts_35_51:71:39; wts_35_51:80:37	"ston po de da ... phul ba dan ""dann über- || Lex. ston pa Aid dan chos kyi — dan gan || 2a2); bum pa ston phrag beu sñed dri bzay,"
+alternate_witness_google_loc_fricative_upgrade	gsegs	gśegs	13	1	wts_35_51:50:75; wts_35_51:52:64; wts_35_51:85:52; wts_35_51:85:52; wts_35_51:85:52	gal te de bäin gsegs pas sems can gan la la 7/9 || 163, Abt. de bzin gsegs pa'i tgs rje chen po || bar gsegs, bde gsegs, bder gsegs
+alternate_witness_initial_i_to_l_translit	Idan	ldan	12	1	wts_35_51:9:63; wts_35_51:21:33; wts_35_51:22:68; wts_35_51:30:14; wts_35_51:47:86	"bcom Idan ""das kyi sku ... mi'i yul du ~ || Essen!"" (K1 kha 12b3); gal te has bcom Idan || tigt"" (ThK 2: 533,2); mos Idan — sel shyes su"
+alternate_witness_google_loc_fricative_upgrade	bzin	bźin	11	1	wts_35_51:46:50; wts_35_51:50:76; wts_35_51:52:64; wts_35_51:115:43; wts_35_51:121:82	"Lex. bdag ran bzin gyis ug pa ""selbst mit || bkrol bar gyur na de ñid de bzin g$egs pa'i ~ || 163, Abt. de bzin gsegs pa'i tgs rje chen po"
+alternate_witness_initial_i_to_l_translit	Iha'i	lha'i	11	1	wts_35_51:63:46; wts_35_51:68:3; wts_35_51:68:8; wts_35_51:88:6; wts_35_51:145:28	"Lex. 'dod Iha'i gzan 'phrul dbani byed kyi bdag || dan rtsi ni de joms byed sman no / Iha'i btun || byed kyi rdzas te Iha'i — sogs ""Substanz, die"
+alternate_witness_google_loc_nasal_upgrade	gan	gaṅ	10	1	wts_35_51:14:58; wts_35_51:27:39; wts_35_51:52:20; wts_35_51:138:72; wts_35_51:145:22	"jo lugs kyi gdam(s) skor rgyun gan bäugs tshani || 172,27); yi dags skom gyis — pa gan (metr.) || 5); mchod gäis ... — ""dzin bZin bdag pa gan"
+alternate_witness_google_loc_fricative_upgrade	zig	źig	10	1	wts_35_51:15:82; wts_35_51:38:66; wts_35_51:59:28; wts_35_51:128:9; wts_35_51:151:22	"mtshams la yi ge dan thog gi 'bru bkod ba zig || hören"" (Suv 71,14); gal te ... spo ba zig tu || rlum gis — nas rgya mtsho chen po\i klon zig tu"
+alternate_witness_google_loc_nasal_upgrade	byun	byuṅ	10	1	wts_35_51:16:8; wts_35_51:39:54; wts_35_51:47:79; wts_35_51:73:8; wts_35_51:87:78	"de la... slob ma yan man du byun — ""er || 76,4); —""i bu Zig ... chos rtol $es su byun ""ein || de... vab tu byun nas ..."
+alternate_witness_google_loc_nasal_upgrade	man	maṅ	10	1	wts_35_51:23:21; wts_35_51:85:67; wts_35_51:129:19; wts_35_51:129:26; wts_35_51:139:92	120,4); tshani man ka bzi — brgyad de (metr.) || mtsho ... bde gsegs ñi ma'i 'od zer man po || Lex. — rgyu = man po nani nas — rgyn Ita bu
+alternate_witness_google_loc_nasal_upgrade	nan	naṅ	9	1	wts_35_51:24:13; wts_35_51:55:66; wts_35_51:78:26; wts_35_51:129:26; wts_35_51:131:52	dur dan / nan / bum than la yod pa' — || — skye bo nan du gdun bas bsreg ldan pa ... (7? || nan nas kyan / nam Zar bde Zin skyid par
+alternate_witness_initial_i_to_l_translit	Ina	lṅa	9	1	wts_35_51:63:76; wts_35_51:64:11; wts_35_51:71:39; wts_35_51:71:54; wts_35_51:127:68	"བདུད་ལྔ་པ་ bdud Ina pa Beiname Kämadevas. || Richtung des 'dre Ina, bdud gcod, lus chad || Ina ston Ina broya rtsa — mams la ""mit ei-"
+alternate_witness_google_loc_fricative_upgrade	bsad	bśad	8	1	wts_35_51:4:41; wts_35_51:17:3; wts_35_51:108:25; wts_35_51:117:36; wts_35_51:136:39	"bstan pa gtad par bsad do ""es wird gesagt, daß || Lex. — pa zsmras pa'am bsad pa ""gesagt oder || ba la phyi nas 'gro Zin chos mi bsad = na"
+alternate_witness_google_loc_nasal_upgrade	gron	groṅ	8	1	wts_35_51:20:57; wts_35_51:81:26; wts_35_51:98:36; wts_35_51:112:14; wts_35_51:145:27	"bdun na gron khyer ... dog sas non par 'gyur || dan gron skor ya man tsam yod cin ""das vom || (K841(7) 21666); lba min gron khyer ... gźu"
+alternate_witness_google_loc_fricative_upgrade	sin	śin	7	1	wts_35_51:1:46; wts_35_51:4:75; wts_35_51:55:58; wts_35_51:133:17; wts_35_51:145:19	(KTh 1: 36,1); na tshod yar yar 'dzegs sin man || gtsug lag khani chen po'i mjug la — sin... bka's || sin sdon 'thab / khyim — la gcon nad 'on
+alternate_witness_google_loc_fricative_upgrade	ses	śes	7	1	wts_35_51:1:63; wts_35_51:15:43; wts_35_51:138:75; wts_35_51:156:43; wts_35_51:158:21	"Lex. ~am tshod ses pa zmätrajiiah ""das rech- || verbreitet"" (dPe 15,2); ci yin ni ma ses / pha || srid pa — las gan mi ses so ""eine andere Exi-"
+alternate_witness_google_loc_nasal_upgrade	rkan	rkaṅ	7	1	wts_35_51:6:58; wts_35_51:126:35; wts_35_51:163:25; wts_35_51:207:66; wts_35_51:216:57	Lex. rkan pa (\/ 1. om. pa) ༡77 — = na viksi- || ba'i phren ba ... rkan pa(s) — rmami bskyod || 14235); rkan glin yin zer mi yi rkan du —
+alternate_witness_google_loc_nasal_upgrade	yan	yaṅ	7	1	wts_35_51:9:40; wts_35_51:39:4; wts_35_51:133:22; wts_35_51:140:91; wts_35_51:148:85	po yan Iha sar zla geig Ihag tsam — par || ru ka dan / bhi ru ka giis / yan blon po'i || ni — gyur cin / spu yan mam par ldan bar
+alternate_witness_initial_i_to_l_translit	Ihag	lhag	7	1	wts_35_51:9:40; wts_35_51:27:32; wts_35_51:78:58; wts_35_51:143:28; wts_35_51:143:34	"po yan Iha sar zla geig Ihag tsam — par || 'dod chags kyis Ihag par — par gyur nas ""sie || (Mil 133,30); — kyi bad gad Ihag ge Ibag"
+alternate_witness_google_loc_nasal_upgrade	cin	ciṅ	7	1	wts_35_51:55:42; wts_35_51:79:35; wts_35_51:81:26; wts_35_51:94:73; wts_35_51:171:41	"gun du ma mdzad cin ""er hatte viele Wer- || 4,190); dge 'phrog cin / ~i srog kyani joms || dan gron skor ya man tsam yod cin ""das vom"
+alternate_witness_google_loc_nasal_upgrade	rdzon	rdzoṅ	7	1	wts_35_51:81:23; wts_35_51:101:51; wts_35_51:140:14; wts_35_51:151:51; wts_35_51:155:9	"བདེ་ཆེན་རྫོང་ bde chen rdzoṅ npr. ein rdzon in || rgyal khab tu rdzon mda' byed pa ""die gegen- || Gebiet"" (MTH3/3/1 7); rdzon thog — gis"
+alternate_witness_citation_siglum	Li$	Liś	6	1	wts_35_51:4:57; wts_35_51:20:71; wts_35_51:57:76; wts_35_51:90:84; wts_35_51:166:84	"dig pa einen Dummen"" (Li$ 35,14); 'dod pa || Lex. — mi ni ma (Li$ 27,5); /7/ ma (brDa, || (KlonD 741,5, Li$ 27,6)."
+alternate_witness_google_loc_nasal_upgrade	bzun	bzuṅ	6	1	wts_35_51:9:27; wts_35_51:11:42; wts_35_51:14:87; wts_35_51:142:40; wts_35_51:146:42	"bsñen rdzogs byas te / ~i brtul Zugs bzun no || kah thog gi — bzun ste gdul bya Sin tu che ba || su bzun la bstan pa spel cig ""sei ihnen mit"
+alternate_witness_google_loc_nasal_upgrade	man	mañ	6	1	wts_35_51:10:20; wts_35_51:61:8; wts_35_51:131:72; wts_35_51:154:14; wts_35_51:157:26	gser gyi phye ma man du bskur nas pandi ta || 'brum nag las stsogs pa / nad kyi sna man du || mkhan, 'dem byed = man po nari nas dam na
+alternate_witness_google_loc_nasal_upgrade	gnan	gnaṅ	6	1	wts_35_51:14:16; wts_35_51:14:49; wts_35_51:167:71; wts_35_51:222:67; wts_35_51:232:48	"pa dan / chos man po gnan ste ""er gewährte || gs — zin pa'am gnan ba Ita bu ""wie: ein Rat- || cin slad rol tu mchi bar ci gnan ""erlaubst du,"
+alternate_witness_google_loc_nasal_upgrade	dan	dañ	6	1	wts_35_51:17:68; wts_35_51:71:86; wts_35_51:107:9; wts_35_51:161:42; wts_35_51:176:3	"klirren"" (Glr 154,12); mgal rgyan dan / sian || dan fer spyod — b$ams ""man stellt ein weißes || Wort für: vor"" (Dagy); drun dan ne ba ""Nä-"
+alternate_witness_google_loc_nasal_upgrade	snan	snaṅ	6	1	wts_35_51:100:22; wts_35_51:116:64; wts_35_51:117:24; wts_35_51:123:19; wts_35_51:216:73	"Ina'o / mi 'dra ba snan ""Sohn des Liebesgot- || dan 'do med pa ces pa'an snan ""charakterlo- || gres rkan rgyas par phyes pa'an yod pa snan no"
+alternate_witness_google_loc_nasal_upgrade	span	spaṅ	6	1	wts_35_51:126:75; wts_35_51:157:2; wts_35_51:157:9; wts_35_51:157:35; wts_35_51:182:67	"de' sten du karten gi span leb ... dei sten du || bde skyid gřñis yod de / ~ thams cad span pa || Übung"" (Mvup 4.74); — kun tu span bar bya"
+alternate_witness_citation_siglum	Y$	Yś	5	1	wts_35_51:2:48; wts_35_51:59:78; wts_35_51:118:77; wts_35_51:190:13; wts_35_51:199:74	"trunken, besiegt es Verschiedenes"" (Y$ 236); || hat"" (Y$ 71c); dus gsum 'bras kyi dud pas || der Galle"" (Y$ 97c); lo tsā gsum po ... yi dwags"
+alternate_witness_initial_i_to_l_translit	Itos	ltos	5	1	wts_35_51:6:49; wts_35_51:115:25; wts_35_51:116:68; wts_35_51:162:36; wts_35_51:172:83	"thag zer ba der Itos sig ""Strick zum Festbin- || nañ tshan te der Itos sig ""das Wort des Bud- || ste der Itos (brDa); 'do med mi = sin po med"
+alternate_witness_google_loc_nasal_upgrade	dun	duṅ	5	1	wts_35_51:7:31; wts_35_51:164:52; wts_35_51:166:3; wts_35_51:181:92; wts_35_51:229:76	"wie sbug chal, sil ñan, dun und rgya glin usw. || pa la kbon mams na la dun dun byed — bsam || che]"" (Myan 150,21); kbon rmamis ra la dun"
+alternate_witness_google_loc_nasal_upgrade	rin	riṅ	5	1	wts_35_51:9:52; wts_35_51:9:71; wts_35_51:23:73; wts_35_51:199:77; wts_35_51:203:56	"Sin tu rin po nas nam mkha'i phyogs su ~ || la chu mig rin mo ba — ""als buddhistischer || rin srel dan / 'ja' la sogs pa'i rtags mi 'byon"
+alternate_witness_initial_i_to_l_translit	Ihun	lhun	5	1	wts_35_51:11:48; wts_35_51:98:8; wts_35_51:204:21; wts_35_51:225:15; wts_35_51:234:23	"hatte"" (K'Th 1: 517,1); gsen rgyal ba Ihun || 480); — broyud pas khyod Ihun bar bya'o ""ich || Lex. Ihun bzed kyi nan du zas kyi lhag"
+alternate_witness_google_loc_nasal_upgrade	na	ña	5	1	wts_35_51:19:46; wts_35_51:19:63; wts_35_51:131:72; wts_35_51:159:56; wts_35_51:164:52	~ ña rgyal brüas na che / ñan pa'i mi || (Ki na 7065); bdag gis thog mar — kyis mi / || mkhan, 'dem byed = man po nari nas dam na
+alternate_witness_google_loc_nasal_upgrade	gdun	gduṅ	5	1	wts_35_51:24:49; wts_35_51:24:68; wts_35_51:24:71; wts_35_51:24:83; wts_35_51:199:86	"yab mes 'phags rigs ñi ma yi / gdun rgyud chos || (""Dzam 21,23); gdon (r. gdun) brgyud bstan || Lex. gdun reynd zrusrigs rgynd (brDa);gdun"
+alternate_witness_google_loc_nasal_upgrade	min	miṅ	5	1	wts_35_51:24:61; wts_35_51:51:19; wts_35_51:123:70; wts_35_51:156:50; wts_35_51:167:38	"sras gtsan mai — la rigs rus kyi min so sor || chen"" (Prav 88,19); ~i skye bo la min sku || Lex. 'dag pas Zal Zal bya ba'i min (brDa)."
+alternate_witness_initial_i_to_l_translit	Ihan	lhan	5	1	wts_35_51:55:32; wts_35_51:81:55; wts_35_51:193:75; wts_35_51:200:43; wts_35_51:219:76	Ihan cig miam sbyor Zin / dga' ba gfis || 88,3); thog mar — Ihan skyes kyi dban dan || mdzes dga' mo dan Ihan cig ... ~i bde ba rjes
+alternate_witness_google_loc_nasal_upgrade	bran	braṅ	5	1	wts_35_51:55:38; wts_35_51:81:63; wts_35_51:115:7; wts_35_51:210:74; wts_35_51:229:38	kyi pho bran na ... yum chen bdag med Iha mo || 1: 202,5); pho bran / — gi srags bzla ba dan || za ma tog ... rgyal po'i pho bran gi sten du
+alternate_witness_initial_i_to_l_translit	Iho	lho	5	1	wts_35_51:59:21; wts_35_51:87:23; wts_35_51:154:45; wts_35_51:157:42; wts_35_51:161:9	"(Akhr2 81,13); spyan lam sul rin Sar Iho yans || Iho yi phyogs su byun ba mi... — stag bu || mtha' bZi Iho bal kun — ""sie unterwarfen al-"
+alternate_witness_google_loc_nasal_upgrade	khan	khaṅ	5	1	wts_35_51:68:81; wts_35_51:155:9; wts_35_51:164:16; wts_35_51:166:27; wts_35_51:168:12	"khan 2/9 biens ""er errichtete im Süden Nā- || rdzon khan gal che Zig ral ñams chag de || konnte"" (dPe 70,1); Iha khan zig na mi źig"
+alternate_witness_google_loc_nasal_upgrade	bsnal	bsṅal	5	1	wts_35_51:83:12; wts_35_51:85:66; wts_35_51:137:20; wts_35_51:156:55; wts_35_51:157:76	"'gro ba drug po dag tu bde ba dan sdug bsnal || Vollendung"" (Käsy 61,4); sdug bsnal rgya || bsnal kun byun ba / — ni sdug bsnal kun 'gog"
+alternate_witness_google_loc_fricative_upgrade	gsin	gśin	5	1	wts_35_51:124:6; wts_35_51:124:7; wts_35_51:162:8; wts_35_51:182:51; wts_35_51:205:39	"(Dagy); gsin por dmigs pa'i dge sgrub (TTC); || — pa = gsin por sems 'phren ba'am chags ses || le befindet"" (Siddh 26.87); mies gsin pa'an"
+alternate_witness_google_loc_nasal_upgrade	phun	phuṅ	5	1	wts_35_51:138:69; wts_35_51:156:11; wts_35_51:156:55; wts_35_51:156:58; wts_35_51:156:58	"derbar"" (Pd-K 154d); sdug bsnal gyi phun po || das Bewußtsein"" (Käsy 91,9); — kyi phun po || sdug bsnal gsum gyi min); — kyi phun po ="
+alternate_witness_google_loc_fricative_upgrade	gsed	gśed	4	1	wts_35_51:4:17; wts_35_51:39:1; wts_35_51:81:58; wts_35_51:201:81	0477 rje gsed la sogs pa' rgyud spyan 'dren par || གདོན་གཤེད་ཁྲ་བོ་ gdon gsed khra bo || gsin rje gsed dan — la mna' briies pa yin
+alternate_witness_google_loc_nasal_upgrade	run	ruṅ	4	1	wts_35_51:15:62; wts_35_51:18:69; wts_35_51:207:19; wts_35_51:221:53	ldem rgyanis mi run tshul smra dgos rgyur ~~ || 80,4); gcan gzan ma run ba ~i sems dan Idan || kha cig ni ... bzani bzan — run gi Itas than
+alternate_witness_citation_siglum	Lsdz-K	Lśdz-K	4	1	wts_35_51:15:88; wts_35_51:38:14; wts_35_51:115:22; wts_35_51:117:27	"Ohr"" (Lsdz-K 320,11); tbon chog khrig ger || Herz des Königs eingezogen war"" (Lsdz-K || gans-brag geholt hat"" (Lsdz-K 335,25)."
+alternate_witness_citation_siglum	Gs-H	Gś-H	4	1	wts_35_51:18:15; wts_35_51:77:75; wts_35_51:132:20; wts_35_51:225:2	"kommen, Schaden zuzufügen"" (Gs-H 74b). || nicht und fühlt sich nicht wohl"" (Gs-H 48c); || nen hohen Status verlieren"" (Gs-H 60d);"
+alternate_witness_google_loc_nasal_upgrade	gdon	gdoṅ	4	1	wts_35_51:24:68; wts_35_51:84:33; wts_35_51:108:20; wts_35_51:162:43	"(""Dzam 21,23); gdon (r. gdun) brgyud bstan || ñid pa'i dgon gnas dga' ba gdon nam ~ du || tu ma yin — du Ita bu sa rol tn'am gdon"
+alternate_witness_citation_siglum	P$	Ps	4	1	wts_35_51:39:3; wts_35_51:98:16; wts_35_51:152:26; wts_35_51:205:66	"heit besiegt werden"" (P$ 81d); des — bar he || ne Sehne ist?"" (P$ 17d); dper na mia' (r. —) || stellen"" (P$ 2d); gan 7/9 — spyod sans rgyas"
+alternate_witness_google_loc_nasal_upgrade	sten	steṅ	4	1	wts_35_51:46:61; wts_35_51:115:7; wts_35_51:229:43; wts_35_51:243:77	kyis ... sa sten bskyan ba dan ... gsol (metr.) || za ma tog ... rgyal po'i pho bran gi sten du || sten na / Sel gyi bya khyun 9409 pa — (metr.)
+alternate_witness_google_loc_nasal_upgrade	spon	spoṅ	4	1	wts_35_51:47:70; wts_35_51:78:43; wts_35_51:157:3; wts_35_51:204:68	"spans Sin glan yani ... spon ba la yari dag par || thams cad span pa 'am / spon ba Sin tu rgya || 'am / spon ba Sin tu rgya che ba'o (metr.) ""es"
+alternate_witness_google_loc_velar_nasal_upgrade	yañ	yaṅ	4	1	wts_35_51:50:70; wts_35_51:143:74; wts_35_51:172:34; wts_35_51:204:83	(Bca 8.178d); di ni na'irta'o Zes zer Zih / yañ || 1.2.28); dgun smad dus su lhag par yañ / cho || 353,3); bdud dpun tshan cher ~ grogs su / yañ
+alternate_witness_google_loc_fricative_upgrade	bsams	bśams	4	1	wts_35_51:58:56; wts_35_51:159:71; wts_35_51:169:14; wts_35_51:169:26	(brDa); — ba = bsams pa / ston pa ... sgrig || gi dge 'dun gyi gon du stan bsams pa nid la ~ || ben; Möglichkeit; mdun ma bsams pla-
+alternate_witness_google_loc_velar_nasal_upgrade	gañ	gaṅ	4	1	wts_35_51:59:77; wts_35_51:138:58; wts_35_51:201:55; wts_35_51:205:21	"rung mit sin tsha und cu gañ [11, 3.] gemacht || verschafft hat"" (Ps 44a); gañ Zig dkon pa'i || ~ gañ tsam pa'i phyl'i (metr.) ""vom Funda-"
+alternate_witness_google_loc_nasal_upgrade	gon	goṅ	4	1	wts_35_51:90:39; wts_35_51:121:73; wts_35_51:162:71; wts_35_51:223:4	"na gon ma sku tshe rin ba las lhag pa med || pheld ...thugs gon mdzad de ""kurzgesagt, die || [hierzu] vor"" (MTH3/5/30 347); gon ma na"
+alternate_witness_google_loc_fricative_upgrade	sa	śa	4	1	wts_35_51:139:63; wts_35_51:146:81; wts_35_51:225:1; wts_35_51:225:89	"18,1); kai la sa ༡// phren mdzes ༡//// ons —r || Nötige von selbst ein"" (TsonNth 5,1326); sa || རྡུལ་ཁྲོད་ཀྱི་ཤ rdul khrod kyi sa"
+alternate_witness_google_loc_nasal_upgrade	chun	chuṅ	4	1	wts_35_51:161:56; wts_35_51:194:78; wts_35_51:232:76; wts_35_51:242:19	"ces pa ... Zig sälh las chun ur — ""ein Arhat || འདོད་པ་ཆུང་བ་ 'dod pa chuṅ ba V'dod chun. || Lex. gtun bu'am rdo kon chen chun ""Stößel"
+alternate_witness_citation_siglum	gZ1	gZi	4	1	wts_35_51:198:62; wts_35_51:204:90; wts_35_51:206:67; wts_35_51:216:80	"und 'phra men"" (gZ1 2: 296,3). || Schiffe ankern [hier]"" (gZ1 1: 451,1). || nach unten fließt"" (gZ1 1: 505,6); $a la spyod"
+alternate_witness_google_loc_nasal_upgrade	glin	gliṅ	3	1	wts_35_51:7:31; wts_35_51:163:25; wts_35_51:232:79	wie sbug chal, sil ñan, dun und rgya glin usw. || 14235); rkan glin yin zer mi yi rkan du — || རྡོ་གླིང་ rdo gliṅ Kurzf. für rdo rje glin npr. der
+alternate_witness_google_loc_nasal_upgrade	srun	sruṅ	3	1	wts_35_51:24:69; wts_35_51:222:43; wts_35_51:243:10	"(1. bsten) pa' srun ma ""die Schützer, die man || — bar srun Zwa nag 'tsho rdzon gun [bcas] || mams kyi 6709 srun phyir / rdo rje sems dpas"
+alternate_witness_google_loc_nasal_upgrade	rkyan	rkyaṅ	3	1	wts_35_51:36:4; wts_35_51:136:52; wts_35_51:145:44	"bsñen mi dgos / ~ byas pa rkyan pas chog go || tsbig la / sa rkyan sbyar bas 'ihus pa'an yod || (metr.) ""was drittens die rkyan pa betrifft,"
+alternate_witness_google_loc_fricative_upgrade	zes	źes	3	1	wts_35_51:40:74; wts_35_51:67:30; wts_35_51:137:44	"dpyani bar bya'o / zes pas dei nani due chn blugs || dug ni sel ba' phyir / — zes ni de la bya'o || gsum rgyal zes bya (metr.) ""[dieser Mantra]"
+alternate_witness_google_loc_nasal_upgrade	myon	myoṅ	3	1	wts_35_51:47:67; wts_35_51:156:73; wts_35_51:193:76	"(Liyl 18063); tsbor ba dag / — gcig pus myon || rjes su kbrid / sta ma'i ñams myon ~ ni / || su myon Zin 'dug pa na ""als er dabei war, mit"
+alternate_witness_google_loc_nasal_upgrade	dpun	dpuṅ	3	1	wts_35_51:61:59; wts_35_51:172:34; wts_35_51:180:7	"55,27); — dpun gäom phyir stobs kyi pha rol || 353,3); bdud dpun tshan cher ~ grogs su / yañ || mthar bskrod dpun dmag — kyi ""die Regie-"
+alternate_witness_google_loc_nasal_upgrade	ni	ñi	3	1	wts_35_51:64:47; wts_35_51:85:35; wts_35_51:225:25	"བདུད་ཉི་ bdud ni divin. Bez. für eine Gruppe || 'Wohlgefühl'"" (Mvy 2069, Abt. dban po ni || cad ni zer gyi ?77//7 (r. —) tsam du Ilhags"
+alternate_witness_google_loc_velar_nasal_upgrade	nañ	naṅ	3	1	wts_35_51:67:86; wts_35_51:175:40; wts_35_51:199:64	"rus chags byun na / nañ la khogt{s} sman || folgsleute"" (MigTo 81,3); gris nag nañ phrad || dem Köcher"" (HMrg 52,3); rgya mtsho'i nañ"
+alternate_witness_google_loc_nasal_upgrade	bsnal	bsñal	3	1	wts_35_51:84:79; wts_35_51:85:2; wts_35_51:138:69	"མིད་པྲ་ Dde ba dan sdug bsnal thamis cad la || བདེ་བ་དང་སྡུག་བསྔལ་བ་ bbde ba sdug bsnal ba || derbar"" (Pd-K 154d); sdug bsnal gyi phun po"
+alternate_witness_google_loc_nasal_upgrade	mnon	mṅon	3	1	wts_35_51:90:35; wts_35_51:152:41; wts_35_51:204:35	"chos ñid kyi ~ pa mnon sum du mthon ""sie || pa mnon sum du — glegs te bdag gi lag tn || gnas mams mnon par mi dga' na de la dor"
+alternate_witness_google_loc_nasal_upgrade	btan	btaṅ	3	1	wts_35_51:95:28; wts_35_51:223:44; wts_35_51:246:60	"'bras bcas te / skye bo kun la btan sems kyis || tn ruska gru btan nas by bas gru man po — || glu ... btan nas ""man soll einen Stüpa er-"
+alternate_witness_google_loc_nasal_upgrade	ran	rañ	3	1	wts_35_51:129:9; wts_35_51:143:30; wts_35_51:146:80	"skye bo ""di la ... nor 'dzin 'di m ran ñid || biin gSegs pa mies byed yin / ran don yani || royu ran gis 'byun ba ni ""so stellte sich das"
+alternate_witness_citation_cleanup	Doll	Dol1	3	1	wts_35_51:147:74; wts_35_51:171:67; wts_35_51:182:3	"mir diskutieren"" (Doll 50,2); dkon mchog || derjenigen, welche bezähmt werden"" (Doll || lionen schaffe"" (Doll 40,8); de' lan — 1shul"
+alternate_witness_google_loc_nasal_upgrade	zin	ziṅ	3	1	wts_35_51:157:26; wts_35_51:157:28; wts_35_51:176:12	"Lex. mi man po 'dus pa'! zan zin ""das Ge- || kommen sind"" (brDa); zan zin ste dben pa || klum ya gsum / zin po rje khri par sum gyis /"
+alternate_witness_google_loc_nasal_upgrade	sdan	sdaṅ	3	1	wts_35_51:181:68; wts_35_51:189:73; wts_35_51:216:78	"sems dpa' la nam par sdan Zin skur ba — pa || sems dan / ze sdan dan / gti mug dan ""gieri- || ñams chun la sdan pa / ñams chen la ~ pa ""du"
+alternate_witness_google_loc_fricative_upgrade	si	śi	3	1	wts_35_51:193:74; wts_35_51:200:38; wts_35_51:206:22	"bens ist das Verlangen"" (VisT 128,38); ka si || 164,9); rga si dan / myanan dan / sure stags || si dan —r brtsis nas (metr.) ""nachdem man"
+alternate_witness_google_loc_nasal_upgrade	sen	seṅ	2	1	wts_35_51:2:60; wts_35_51:154:35	"sen ge mams kyi zas yin no ""was es hier an fri- || sen lden gi phur bu de thal bar son bana — bar"
+alternate_witness_google_loc_nasal_upgrade	gdans	gdaṅs	2	1	wts_35_51:7:9; wts_35_51:7:38	"Lex. gdans can gyi kun dga' rwa ba ""mit Stan- || གདངས་ ""gdans pf. zu 1'gdan aufreißen, 6[[-"
+alternate_witness_google_loc_nasal_upgrade	bon	boṅ	2	1	wts_35_51:7:50; wts_35_51:140:9	"tho phyir sa pha bon / kha phyir — pa manis || tra"" (Rtdz-K 44,7); rta bon sgrog 'grol gyi"
+alternate_witness_google_loc_fricative_upgrade	sul	śul	2	1	wts_35_51:7:73; wts_35_51:245:72	"bdag — gi kun dga' ra ba'i sul du ""auf dem || gtags (1, btags) pa'i {b}sul ""die leere Stelle, wo"
+alternate_witness_google_loc_nasal_upgrade	gton	gtoṅ	2	1	wts_35_51:9:76; wts_35_51:152:83	"27,21); klu gtor gton ba la dge slon /7/ ma || pa 'di ru gton ran gi lo rgyns ""die eigene Ge-"
+alternate_witness_google_loc_nasal_upgrade	khyun	khyuṅ	2	1	wts_35_51:10:36; wts_35_51:242:2	"167,2); gdon gyi phag tu khyun po jo sras — || རྡརྗེ་བྱ་ཁྱུང་ rdo rje bya khyun ""Vajragaruda"", ein"
+alternate_witness_google_loc_nasal_upgrade	mna	mṅa	2	1	wts_35_51:11:45; wts_35_51:183:5	"1:428,1); —rsku skyer mna' gsol phyin ""nach- || 65,2); Zin khams mna' ris bskos la — pa dan"
+alternate_witness_google_loc_nasal_upgrade	glan	glaṅ	2	1	wts_35_51:15:79; wts_35_51:219:29	"dan glan po Ita bu 'dra ba Zig —o ""der Pe- || Lex. anadvan (Ak 234.59 f.); glan po (brDa)."
+alternate_witness_google_loc_nasal_upgrade	brdzans	brdzaṅs	2	1	wts_35_51:16:11; wts_35_51:115:11	"gdan sa la brdzans — ""er entsandte wohl || Zig brdzans pa las ""da er einige Lehrer, Ver-"
+alternate_witness_strict_translit	žes	źes	2	1	wts_35_51:16:29; wts_35_51:169:64	"žes bka' mchid ~ (metr.) ""er wurde vom || Lex. sa bhā äh žes pa'i rgya gar skad nas"
+alternate_witness_citation_siglum	Vi$	Vis	2	1	wts_35_51:16:31; wts_35_51:190:66	"(Vi$ 67b); snon pha roltu phyin pa drug po dag || gefunden hast"" (Vi$ 60c); thams cad mkhyen"
+alternate_witness_google_loc_nasal_upgrade	kon	koṅ	2	1	wts_35_51:19:21; wts_35_51:232:76	"807 yul / dwags po kon po an po gsum gyi || Lex. gtun bu'am rdo kon chen chun ""Stößel"
+alternate_witness_citation_siglum	PS	Ps	2	1	wts_35_51:19:77; wts_35_51:193:38	"bedrängt"" (PS 7c); dpag tsbad broya pa'i ~ || (PS 26c); ran rgyal dera bcom nid la 'dod"
+alternate_witness_initial_i_to_l_translit	Iham	lham	2	1	wts_35_51:20:77; wts_35_51:112:57	"— Iham dan ldan pa ni (metr.) ""mit einem || smad du ~~ Iham tsam la khrims geig chags ""im"
+alternate_witness_google_loc_fricative_upgrade	bzi	bźi	2	1	wts_35_51:23:21; wts_35_51:228:41	120,4); tshani man ka bzi — brgyad de (metr.) || Lex. sa chu me rlun bźťi rdul bzi dan gzugs
+alternate_witness_google_loc_nasal_upgrade	gtsan	gtsaṅ	2	1	wts_35_51:24:61; wts_35_51:50:67	sras gtsan mai — la rigs rus kyi min so sor || mi gtsan gzugs mi mi bzad pa / di la ci phyir
+alternate_witness_google_loc_nasal_upgrade	nan	nañ	2	1	wts_35_51:27:4; wts_35_51:131:70	"Träumen"" (Glu 336); Sa Jam mal sa nan || Lex. — pa = man po nan nas gcig — pa ""aus"
+alternate_witness_google_loc_nasal_upgrade	rdzin	rdziṅ	2	1	wts_35_51:27:16; wts_35_51:128:51	St mes — pas ch bsil ba ༡76 ¢ pa'iphyir rdzin || 8.680); rdzin bu rnams kyi — la khyad par
+alternate_witness_google_loc_nasal_upgrade	bzans	bzaṅs	2	1	wts_35_51:47:12; wts_35_51:124:71	"— lus kyani khrus byas te / dar ldan gos bzans || dab chags kyi rgyal po 'dab bzans ""Suparna"
+alternate_witness_google_loc_nasal_upgrade	gan	gañ	2	1	wts_35_51:50:75; wts_35_51:150:73	"gal te de bäin gsegs pas sems can gan la la 7/9 || Dharma"" (Prav 94,12); ~ gan yani ñon moñs"
+alternate_witness_google_loc_nasal_upgrade	mdun	mduṅ	2	1	wts_35_51:58:8; wts_35_51:181:2	"202,8); blon po rnams kyis inda' rtse mdun || Iha'i dkor mdun ran — dan ""göttliche Gerät-"
+alternate_witness_google_loc_nasal_upgrade	phren	phreṅ	2	1	wts_35_51:59:66; wts_35_51:240:57	"Rauch"" (Siddh 16.17); — pa Iha bsos phren || plsyogs las rnam rgyal gyi rig ma'i skye 'phren /"
+alternate_witness_google_loc_nasal_upgrade	mthon	mthoṅ	2	1	wts_35_51:60:75; wts_35_51:90:35	"02// ni brduns pa rnams mthon nas (metr.) || chos ñid kyi ~ pa mnon sum du mthon ""sie"
+alternate_witness_google_loc_fricative_upgrade	su	śu	2	1	wts_35_51:71:52; wts_35_51:191:80	"ben Tiere"" (VisT 248,18); znam pa /7/ su ~ || ñon mons ñi su la sogs pa'o ""Befleckung der"
+alternate_witness_google_loc_nasal_upgrade	bgran	bgraṅ	2	1	wts_35_51:73:48; wts_35_51:74:69	nas bgran ba'i / — gnam lor Sar ba (metr.) || lo nas bgran ba' / bdun pa gnam lor sar ba
+alternate_witness_google_loc_fricative_upgrade	bsin	bśin	2	1	wts_35_51:74:57; wts_35_51:171:46	"bsin (7. 077?) po la — / brten la rab tu gnas pa || 41,6); gson 07// Iha gsol / bsin gyi tri — ""für"
+alternate_witness_google_loc_fricative_upgrade	sod	śod	2	1	wts_35_51:81:25; wts_35_51:203:23	"der sde pa skyid sod pas bzun ba'i stod lun — || lich"" (MTTH3/5/24 3 1); rtse sod spyi khyab las"
+alternate_witness_google_loc_nasal_upgrade	cin	ciñ	2	1	wts_35_51:81:53; wts_35_51:204:18	"sogs pa bsgyur cin ""er übersetzte [Texte zu] || (MTH3/5/17 17); g.yab cin — na spyan ma"
+alternate_witness_google_loc_nasal_upgrade	mna	mña	2	1	wts_35_51:81:58; wts_35_51:139:77	"gsin rje gsed dan — la mna' briies pa yin || sde srid chen po gtsan pas mna' ""bans btsugs"
+alternate_witness_google_loc_nasal_upgrade	nams	ñams	2	1	wts_35_51:83:80; wts_35_51:123:74	"nams rtogs mthar phyin pa' slob ma broyad || nams dga' yan — ma brdun ""auch wenn man"
+alternate_witness_google_loc_nasal_upgrade	pa'an	pa'aṅ	2	1	wts_35_51:87:65; wts_35_51:124:75	"Lex. dge ba bde sbyin Zes pa'an ""Gutes, auch || jung bion pa'an zer ""'nkha' ldin oder khyii"
+alternate_witness_google_loc_nasal_upgrade	byan	byaṅ	2	1	wts_35_51:97:58; wts_35_51:138:85	"མདན་མ་ mdan ma auch mdan ma byan khra || lHlimmel und Erde"" (Samdhi 120,32); byan"
+alternate_witness_google_loc_nasal_upgrade	ken	keṅ	2	1	wts_35_51:98:54; wts_35_51:207:64	"schossen"" (Nel 156); la la ken rus la la — || (Glr 163,1); ///$ la bltas na ken rus — (metr.)"
+alternate_witness_citation_siglum	Kunk	KunK	2	1	wts_35_51:101:22; wts_35_51:148:49	(Kunk 57,5). || (Kunk 45,6); zla ba — phar 'gro / rtinma'izla
+alternate_witness_google_loc_nasal_upgrade	sprins	spriñs	2	1	wts_35_51:101:42; wts_35_51:209:15	"brag tu gtsan mda' rdzon sdod ... la sprins || gäis su sprins pa ""ein in zweifacher Aus-"
+alternate_witness_google_loc_nasal_upgrade	ne	ñe	2	1	wts_35_51:107:9; wts_35_51:143:67	"Wort für: vor"" (Dagy); drun dan ne ba ""Nä- || ne du' nan — du bde bar bäugs Sig ""le-"
+alternate_witness_google_loc_nasal_upgrade	dran	draṅ	2	1	wts_35_51:107:93; wts_35_51:119:65	"dran gsum ""khar ba — btsugs ... ma gtogs ""ab- || des 'chi khar mkhan po dran sron — dan phrad"
+alternate_witness_google_loc_nasal_upgrade	yan	yañ	2	1	wts_35_51:123:74; wts_35_51:163:11	"nams dga' yan — ma brdun ""auch wenn man || yan ma ñes par zil pa khrol le ~ pas ""er hatte"
+alternate_witness_google_loc_nasal_upgrade	brdun	brduṅ	2	1	wts_35_51:123:74; wts_35_51:229:38	"nams dga' yan — ma brdun ""auch wenn man || 1.5.90); srin mo bran brdun rkan — dan"
+alternate_witness_google_loc_nasal_upgrade	tshon	tshoṅ	2	1	wts_35_51:127:68; wts_35_51:139:36	"tshon pa myi Ina breya Zig / rgyal po de' || gen ist"" (Nel 25b34); ñas tshon pa ~ rnams"
+alternate_witness_google_loc_nasal_upgrade	spans	spaṅs	2	1	wts_35_51:128:55; wts_35_51:219:43	51,20); — mi spans our (7)] ... chu ni dag pa || las geig /// nag pa mams dan / — rmams spans
+alternate_witness_google_loc_fricative_upgrade	ze	źe	2	1	wts_35_51:136:18; wts_35_51:189:73	"ba'i ze sa ""resp. für gestorben"" (Dagy). || sems dan / ze sdan dan / gti mug dan ""gieri-"
+alternate_witness_google_loc_nasal_upgrade	no	ño	2	1	wts_35_51:142:31; wts_35_51:205:21	"pa che ba ... yani — by no ""zu dieser Zeit || chos brgyad kyi ~ dan gañ zag gi no 'dzin bral"
+alternate_witness_google_loc_nasal_upgrade	zan	zaṅ	2	1	wts_35_51:157:26; wts_35_51:157:28	"Lex. mi man po 'dus pa'! zan zin ""das Ge- || kommen sind"" (brDa); zan zin ste dben pa"
+alternate_witness_google_loc_nasal_upgrade	dnos	dṅos	2	1	wts_35_51:158:3; wts_35_51:237:65	"rgyas dnos kyi — gyis ... bsten pas ""er verehrte || ba — chen pos dnos su rjes su bzun 2//] ""der"
+alternate_witness_google_loc_nasal_upgrade	spran	spraṅ	2	1	wts_35_51:164:38; wts_35_51:217:65	spran mo Zig la snin tshim bya mi dgos — || (mDzodG 66,7); spran zas med dbyug pa'i
+alternate_witness_google_loc_nasal_upgrade	lun	luṅ	2	1	wts_35_51:172:85; wts_35_51:172:88	"dort"" (Udr 36,16); —' lun nas bsad pa'i || 138,15); amkhan po la — lun sde bäi ... thob"
+alternate_witness_google_loc_nasal_upgrade	zun	zuṅ	2	1	wts_35_51:182:23; wts_35_51:210:74	657,4); Sag kha — na rgyal kha zun (metr.) || mgar yul zun pbo bran sa —r bka' stsal nas
+alternate_witness_google_loc_nasal_upgrade	chan	chaṅ	2	1	wts_35_51:182:91; wts_35_51:217:73	"paii chan sa chen po Zig byed cin yod ""es gab || slob dpon la zur nas kyan chan — man rab"
+alternate_witness_google_loc_nasal_upgrade	lan	laṅ	2	1	wts_35_51:189:35; wts_35_51:191:74	"la ba lan la sogs par sgro ""dogs pa ni rjes bsgrub || ~~"" ba = ba'i mchog gam nub ba lan spyod"
+alternate_witness_initial_i_to_l_translit	Iha'i	lha’i	2	1	wts_35_51:194:88; wts_35_51:229:60	"de dag —""i Iha'i ris bdun po de dag tu ... gźal || la la Zig ni Iha'i cag par — bo (metr.) ""einige"
+alternate_witness_google_loc_fricative_upgrade	bzag	bźag	2	1	wts_35_51:210:32; wts_35_51:231:68	"rus sbal diros sarn de'i skogs pa bzag{s} / med || pa de tsho sin — la bcol bzag (metr.) ""überlaß"
+alternate_witness_google_loc_fricative_upgrade	bsus	bśus	2	1	wts_35_51:210:44; wts_35_51:210:46	"འདྲ་བཤུས་ 'dra bsus Kopie. || da mtshuns par dpe bsus pa ""Kopie, die wie"
+alternate_witness_google_loc_nasal_upgrade	dbyans	dbyaṅs	2	1	wts_35_51:242:12; wts_35_51:243:68	རྗེ་དབྲངས་ཀྱེ་དབང་ཕྱག་མ་ rdo rje dbyans kyi || rdo rje gsun dbyans
+alternate_witness_google_loc_nasal_upgrade	rlans	rlañs	1	1	wts_35_51:1:65	"Lex. drod las byun ba'i rlans pa ""aus Wärme"
+alternate_witness_google_loc_fricative_upgrade	gser	gśer	1	1	wts_35_51:2:2	དྲོད་གཤེར་ drod gser
+alternate_witness_google_loc_nasal_upgrade	gandza	gañdza	1	1	wts_35_51:4:1	དྷརྨ་གྫ་ dharma gandza
+alternate_witness_google_loc_fricative_upgrade	bzed	bźed	1	1	wts_35_51:4:18	"bzed pa la ""als er aus der buddhistischen Bi-"
+alternate_witness_google_loc_nasal_upgrade	gdan	gdaṅ	1	1	wts_35_51:6:70	bya pho gdan khar 'dzegs pa ni khyim bya skas
+alternate_witness_google_loc_velar_nasal_upgrade	sñuñ	sṅuṅ	1	1	wts_35_51:7:65	pa'am / drag pa / sñuñ gZi ~ pa (TTC).
+alternate_witness_google_loc_nasal_upgrade	phan	phaṅ	1	1	wts_35_51:9:20	"khri 'phan gdeg (metr.) ""wenn man [die Re-"
+alternate_witness_google_loc_nasal_upgrade	slon	sloñ	1	1	wts_35_51:9:76	27,21); klu gtor gton ba la dge slon /7/ ma
+alternate_witness_google_loc_fricative_upgrade	sā	śā	1	1	wts_35_51:10:13	lba sā kya mu ni ra mo che nas ~ la... glo 'bur
+alternate_witness_google_loc_nasal_upgrade	sna	sṅa	1	1	wts_35_51:11:9	gdan du sna lo'i zla 12 tshes mjug la 'byor nas
+alternate_witness_google_loc_nasal_upgrade	dBan-phyug-grags	dBañ-phyug-grags	1	1	wts_35_51:11:36	"dBan-phyug-grags als Abt eingesetzt hatte"""
+alternate_witness_google_loc_fricative_upgrade	gsen	gśen	1	1	wts_35_51:11:48	"hatte"" (K'Th 1: 517,1); gsen rgyal ba Ihun"
+alternate_witness_initial_i_to_l_translit	Ihun-grub	lhun-grub	1	1	wts_35_51:11:50	"nas ""gSen rGyal-ba Ihun-grub setzte ihn als"
+alternate_witness_citation_siglum	ISK	1SK	1	1	wts_35_51:14:75	"gen basierte"" (ISK 1: 214,3,1); — ma rdzogs"
+alternate_witness_google_loc_nasal_upgrade	bsnol	bsñol	1	1	wts_35_51:15:66	moñs) hrag pa'i skabs su skyes pas mgo bsnol
+alternate_witness_google_loc_nasal_upgrade	ba'an	ba'aṅ	1	1	wts_35_51:15:67	"ba'an dka' por bda' (r. —) ""weil der Stolz"
+alternate_witness_google_loc_nasal_upgrade	nes	ñes	1	1	wts_35_51:15:70	400,1); mi de güis ni ... bram ze gya nes gnis
+alternate_witness_google_loc_nasal_upgrade	gnis	gñis	1	1	wts_35_51:15:70	400,1); mi de güis ni ... bram ze gya nes gnis
+alternate_witness_google_loc_nasal_upgrade	grun	gruṅ	1	1	wts_35_51:16:14	38b6); thos pa dga' la ma grun mo ran cig
+alternate_witness_google_loc_fricative_upgrade	bzugs	bźugs	1	1	wts_35_51:16:26	Sig na bzugs par / 'dir dral gyi siian du — ste
+alternate_witness_google_loc_fricative_upgrade	sig	śig	1	1	wts_35_51:17:12	"pa dañ 'dins dgos na thins sig ""eine Matte aus-"
+alternate_witness_google_loc_nasal_upgrade	runs	ruṅs	1	1	wts_35_51:19:5	"""Fehler"" (Mvy 7310); ma runs pa'am —'am"
+alternate_witness_google_loc_velar_nasal_upgrade	oñs	oṅs	1	1	wts_35_51:19:13	"po 'tshogs pas / mi Sa ... zar oñs pa ""vie-"
+alternate_witness_google_loc_velar_nasal_upgrade	gduñ	gduṅ	1	1	wts_35_51:20:20	(Bca 2.192); dkar po'i ~ kyis ñi mai gduñ
+alternate_witness_google_loc_nasal_upgrade	run	ruñ	1	1	wts_35_51:20:24	"han du mi run bas ""ferner ist es unange-"
+alternate_witness_google_loc_fricative_upgrade	sis	śis	1	1	wts_35_51:20:30	"buddha'i dbu — nas ... bkra sis (metr.) ""der"
+alternate_witness_google_loc_nasal_upgrade	smyan	smyaṅ	1	1	wts_35_51:23:26	lcam dan — ma smyan (r. rmyait) 'dug pas
+alternate_witness_google_loc_nasal_upgrade	grons	groñs	1	1	wts_35_51:23:72	(Gar 207,16); grons pa'i tshe na / — dan /
+alternate_witness_strict_translit	bźeńs	bźeṅs	1	1	wts_35_51:24:22	"mar pa yab sras kyi ~ bźeńs nas ""nachdem er"
+alternate_witness_google_loc_nasal_upgrade	rlans	rlaṅs	1	1	wts_35_51:24:65	bod spyi'irgyal po mdzad pa rlans kyi — ...pho
+alternate_witness_google_loc_fricative_upgrade	zin	źin	1	1	wts_35_51:27:23	(Ahs 1.3.36c); tsha zin tshas — isha bar Idan
+alternate_witness_google_loc_velar_nasal_upgrade	ñul	ṅul	1	1	wts_35_51:30:70	"Lex. drod ñul ni bloi ~ Ita ba ""die Wär-"
+alternate_witness_initial_i_to_l_translit	Iha-mo	lha-mo	1	1	wts_35_51:35:38	pa'i Iha-mo gdon-dmar-ma, d. i. Rig-pa'i lha-
+alternate_witness_google_loc_nasal_upgrade	pon	poṅ	1	1	wts_35_51:36:81	"pon nag sen gis / bgyis so ""am Anfang ver-"
+alternate_witness_initial_i_to_l_translit	Ita	lta’i	1	1	wts_35_51:50:42	"sung eines Selbst"" (Käsy 139,17); bdag Ita'"
+alternate_witness_google_loc_nasal_upgrade	beins	beiñs	1	1	wts_35_51:50:43	"mdud pas beins ""durch die Auffassung eines"
+alternate_witness_google_loc_nasal_upgrade	brnan	brñan	1	1	wts_35_51:52:45	"skyems kyis brnan la (metr.) ""den gestaltlo-"
+alternate_witness_google_loc_velar_nasal_upgrade	druñ	druṅ	1	1	wts_35_51:52:48	"opfern"" (Vdk-M 144,36); rje druñ khams"
+alternate_witness_google_loc_nasal_upgrade	rens	reṅs	1	1	wts_35_51:55:28	mal 'byor las rens par byed pa la sogs pa ...
+alternate_witness_google_loc_fricative_upgrade	sug	śug	1	1	wts_35_51:60:22	Lex. $ug pa (brDa); sug pa la (Dagy).
+alternate_witness_google_loc_nasal_upgrade	sbyon	sbyoṅ	1	1	wts_35_51:65:26	— di sñam du sems te / dge sbyon gau ta ma'i
+alternate_witness_google_loc_nasal_upgrade	ner	ñer	1	1	wts_35_51:65:77	gehört zu den b$an pa ner gcig (Neb 93).
+alternate_witness_initial_i_to_l_translit	Iba'i	lha'i	1	1	wts_35_51:68:42	Lex. Iba'i min (Dagy); Iha spyl'i min (brDa).
+alternate_witness_google_loc_nasal_upgrade	myin	myiṅ	1	1	wts_35_51:71:18	5); bod chen po'i lo'i myin ni skyid rtag lo
+alternate_witness_citation_siglum	Ys	Yś	1	1	wts_35_51:77:84	"körper"" (Ys 24d); ma — ba tsam na kbo ~"
+alternate_witness_google_loc_nasal_upgrade	min	miñ	1	1	wts_35_51:78:14	Lex. — ba = sim pa' min ham Ins — ...
+alternate_witness_initial_i_to_l_translit	Ibag	lhag	1	1	wts_35_51:78:58	(Mil 133,30); — kyi bad gad Ihag ge Ibag
+alternate_witness_google_loc_fricative_upgrade	bzens	bźens	1	1	wts_35_51:80:3	dbas kyis / din ri'i Iha khani bzens / dar gyis /
+alternate_witness_google_loc_nasal_upgrade	sTod-lun	sTod-luṅ	1	1	wts_35_51:81:28	"sTod-lun bDe-chen-rdzon"" (""Dzam 22,10)."
+alternate_witness_google_loc_nasal_upgrade	tshan	tshaṅ	1	1	wts_35_51:83:39	"sras kyi thugs rjes tshan ma bde bar gnas ""es"
+alternate_witness_google_loc_nasal_upgrade	nam	ñam	1	1	wts_35_51:84:33	ñid pa'i dgon gnas dga' ba gdon nam ~ du
+alternate_witness_google_loc_nasal_upgrade	mnon	mñon	1	1	wts_35_51:84:80	mnon par dea' ba med pa ein Samä-
+alternate_witness_google_loc_velar_nasal_upgrade	ñas	ṅas	1	1	wts_35_51:85:46	"ñas khyed kyi rgyal por ""di bskos kyi / phyir"
+alternate_witness_google_loc_nasal_upgrade	la'an	la'aṅ	1	1	wts_35_51:88:47	Lex. mam syas kyi gter la'an (biDa, ähnl.
+alternate_witness_google_loc_nasal_upgrade	gsuns	gsuñs	1	1	wts_35_51:89:71	"gnas pa khyod ñid gsuns (metr.) ""du sollst"
+alternate_witness_google_loc_fricative_upgrade	swa	śwa	1	1	wts_35_51:90:58	"swa ba ri yin zer ba'an — par 'dug ""auch"
+alternate_witness_google_loc_fricative_upgrade	zal	źal	1	1	wts_35_51:95:32	"bo dhi satva'i zal chems gdog (r. —) ""[ich]"
+alternate_witness_google_loc_nasal_upgrade	klun	kluṅ	1	1	wts_35_51:97:44	lus, dban than und klun rta, vgl. TsenG 2005:
+alternate_witness_google_loc_velar_nasal_upgrade	sña	sṅa	1	1	wts_35_51:97:66	gfüis kyis ni jo ru khri la 'khod pa'i sña Itas su
+alternate_witness_google_loc_nasal_upgrade	don	doṅ	1	1	wts_35_51:98:5	(PT1287 476); gser gyi ni don ral na 0.༡///?7/
+alternate_witness_google_loc_nasal_upgrade	rgyan	rgyaṅ	1	1	wts_35_51:98:89	= — 'phans pa (brDa); — gnam rgyan du
+alternate_witness_google_loc_nasal_upgrade	pancasara	pañcasara	1	1	wts_35_51:100:19	Lex. pancasara (Ak 8.20); — pa = 'dod Iha'
+alternate_witness_initial_i_to_l_translit	Iha	lha'i	1	1	wts_35_51:100:19	Lex. pancasara (Ak 8.20); — pa = 'dod Iha'
+alternate_witness_google_loc_nasal_upgrade	bduns	bduñs	1	1	wts_35_51:100:55	phyag dan po la gu bduns / gñis pa la ~~ sbyar
+alternate_witness_initial_i_to_l_translit	Inas	lṅas	1	1	wts_35_51:101:8	"Lex. dar sna Inas breyan pa'! mda' ""Pfeil, der"
+alternate_witness_google_loc_fricative_upgrade	subs	śubs	1	1	wts_35_51:101:23	"Lex. mda' snod mda'i subs ""Behälter, Hülle"
+alternate_witness_google_loc_nasal_upgrade	btin	btiṅ	1	1	wts_35_51:107:63	"— du pha gu'i steh du rtswa btin ba la ""nach-"
+alternate_witness_google_loc_nasal_upgrade	nos	ños	1	1	wts_35_51:108:23	"du = gdon du'am ñe ba'i nos ""vor oder in"
+alternate_witness_google_loc_nasal_upgrade	rnoms	rṅoms	1	1	wts_35_51:116:30	"rta ="" lo tog rnoms grab(s) 'dug (metr.) ""die"
+alternate_witness_google_loc_nasal_upgrade	gans	gaṅs	1	1	wts_35_51:117:21	"kam po gans kyi rwa ba ""der höchst heili-"
+alternate_witness_google_loc_nasal_upgrade	bsen	bseṅ	1	1	wts_35_51:118:35	(Siddh 22.7); skya bo bsen bsen po Zes bya
+alternate_witness_google_loc_fricative_upgrade	osatukam	ośatukam	1	1	wts_35_51:123:60	Lex. osatukam (Mvy 9364); bul tog dan tshil
+alternate_witness_google_loc_nasal_upgrade	nur	ṅur	1	1	wts_35_51:125:23	"Gans oder Ente"" (brDa); bya nur pa (Dagy)."
+alternate_witness_initial_i_to_l_translit	Ihwan	lhwam	1	1	wts_35_51:126:62	"pad Ihwan las sa (x. su) 'dab legs skyes ""aus"
+alternate_witness_initial_i_to_l_translit	Ihags	lhags	1	1	wts_35_51:127:17	འདབ་མ་ལྷགས་ dab ma Ihags ein Baum.
+alternate_witness_google_loc_fricative_upgrade	gsog	gśog	1	1	wts_35_51:127:54	འདབ་གཤོག་ 'dab gsog Flügel, Feder.
+alternate_witness_google_loc_nasal_upgrade	byin	byiṅ	1	1	wts_35_51:128:68	mi khom gnas kyi — du mi byin bar (metr.)
+alternate_witness_google_loc_nasal_upgrade	yans	yañs	1	1	wts_35_51:131:54	"Lex. dam than yans pa ""große Schlammfli-"
+alternate_witness_google_loc_nasal_upgrade	sran	sraṅ	1	1	wts_35_51:131:66	འ མ་སྲང་རྒྱལ་པོ་ 'dam sran rgyal po npr. cine
+alternate_witness_google_loc_nasal_upgrade	nan	ñan	1	1	wts_35_51:132:79	Lex. jus gtogs med pa Ita bwam mya nan las
+alternate_witness_google_loc_nasal_upgrade	ldan	ldaṅ	1	1	wts_35_51:133:22	ni — gyur cin / spu yan mam par ldan bar
+alternate_witness_google_loc_nasal_upgrade	gZu-bzan	gZu-bzaṅ	1	1	wts_35_51:136:8	"sein Sohn gZu-bzan"" (Tär 9,4); de kha zas"
+alternate_witness_google_loc_nasal_upgrade	dgons	dgoṅs	1	1	wts_35_51:136:29	bu dam pa sku gSegs pa' dgons rdzogs kyi
+alternate_witness_citation_siglum	GS-H	Gś-H	1	1	wts_35_51:139:7	"sehen [könnten]"" (GS-H 1043); sku ~$ su Zig"
+alternate_witness_google_loc_fricative_upgrade	bses	bśes	1	1	wts_35_51:140:18	sgrub gnas ~ rnams dge ba'i bses gñen ... nas
+alternate_witness_citation_siglum	g71-Sn	gZi-Sn	1	1	wts_35_51:140:34	"ins Dasein"" (g71-Sn 66,24); de Itar 'gyur nas"
+alternate_witness_google_loc_fricative_upgrade	se	śe	1	1	wts_35_51:143:4	"ergangen"" (MTH3/5/16 19); se ru ""di kha"
+alternate_witness_google_loc_nasal_upgrade	gans	gañs	1	1	wts_35_51:143:49	|: 397,3); gans ri mtsho gsum — la (metr.)
+alternate_witness_google_loc_fricative_upgrade	bsa	bśa	1	1	wts_35_51:145:4	"kyi bgo bsa' byas pa ni ""daß dieser mir auf"
+alternate_witness_google_loc_nasal_upgrade	gron	groñ	1	1	wts_35_51:145:27	gron /70// kor geig pa gan Ze na / — / gron
+alternate_witness_google_loc_nasal_upgrade	ned	ñed	1	1	wts_35_51:148:81	yul pa —s ned ma smad la ga' ma ran byas
+alternate_witness_hyphenated_initial_i_to_l_translit	dGa-Idan	dGa-ldan	1	1	wts_35_51:149:7	wurde diesem gYan-than-pa dGa-Idan phun-
+alternate_witness_google_loc_fricative_upgrade	sel	śel	1	1	wts_35_51:149:14	sel dkar chos sde'i mchod (r. chos) gZis sman
+alternate_witness_google_loc_fricative_upgrade	sor	śor	1	1	wts_35_51:149:33	"glücklich"" (Glr 63,7); ~ gñis ka'i dun ma sor"
+alternate_witness_google_loc_nasal_upgrade	slon	sloṅ	1	1	wts_35_51:150:23	"det"" (Lokn 162,6); — lha'i gtsug gi nor bu slon"
+alternate_witness_google_loc_fricative_upgrade	zus	źus	1	1	wts_35_51:150:62	"gtan — bla dpon la zus tshe ""wenn man diese"
+alternate_witness_google_loc_fricative_upgrade	zan	źan	1	1	wts_35_51:151:29	54,8); di dag la drag {b}zan {b}su thad nas
+alternate_witness_google_loc_nasal_upgrade	snad	sñad	1	1	wts_35_51:151:34	5); dud chun phran yod 'di dag la'an snad
+alternate_witness_google_loc_nasal_upgrade	bzuns	bzuñs	1	1	wts_35_51:151:42	"— sprod mtshams nas bzuns ""beginnend mit"
+alternate_witness_citation_cleanup	mDz0dG	mDzodG	1	1	wts_35_51:151:84	"kundig sind"" (mDz0dG 55,15); skye chi dan"
+alternate_witness_google_loc_fricative_upgrade	sākya'i	śākya'i	1	1	wts_35_51:152:56	ni gro ba'i don du sākya'i tog gyur gan (metr.)
+alternate_witness_google_loc_velar_nasal_upgrade	kyañ	kyaṅ	1	1	wts_35_51:152:78	"ston las kyañ thug ""nun rückt auch die Ern-"
+alternate_witness_google_loc_nasal_upgrade	bskon	bskoṅ	1	1	wts_35_51:154:14	man po'i — ba la khrom dbani 5095 re ba bskon
+alternate_witness_initial_i_to_l_translit	Ina'i	lṅa'i	1	1	wts_35_51:154:21	"bei"" (Magy 537); 'bru gsum 'bru Ina'i 'phro"
+alternate_witness_google_loc_nasal_upgrade	lden	ldeṅ	1	1	wts_35_51:154:35	sen lden gi phur bu de thal bar son bana — bar
+alternate_witness_initial_i_to_l_translit	Ina	lṅa’i	1	1	wts_35_51:156:58	"kyi phun po = phun po Ina' nani tshan ""einer"
+alternate_witness_google_loc_nasal_upgrade	sans	saṅs	1	1	wts_35_51:158:2	"das Wild [zu haben]"" (dPe 238,11); de la sans"
+alternate_witness_initial_i_to_l_translit	Ina'i	lna'i	1	1	wts_35_51:158:52	"phun po = phun po Ina'i nan tshan ""eine der"
+alternate_witness_google_loc_nasal_upgrade	son	soṅ	1	1	wts_35_51:159:56	"den"" (Ki na 1135); fer son nas / skyil mo"
+alternate_witness_google_loc_nasal_upgrade	srin	sriṅ	1	1	wts_35_51:161:83	"na"" (In12 E18); na '¡ srin mo Zig kyan / zin"
+alternate_witness_google_loc_nasal_upgrade	pa'an	pa'añ	1	1	wts_35_51:162:8	"le befindet"" (Siddh 26.87); mies gsin pa'an"
+alternate_witness_google_loc_fricative_upgrade	son	śon	1	1	wts_35_51:162:11	"70,32); al sa son tsami geig — pall sar ""an"
+alternate_witness_initial_i_to_l_translit	Iha'i	lṅa'i	1	1	wts_35_51:162:16	(Padm 8063); dbus na ja' tsbon sna Iha'i gur
+alternate_witness_google_loc_nasal_upgrade	yon	yoṅ	1	1	wts_35_51:163:64	ñi ma zla ba'i bskor phyogs / nor yon bsam
+alternate_witness_google_loc_nasal_upgrade	nal	ñal	1	1	wts_35_51:163:89	'bebs mal na nal Zin — pa de la Iha'i bu de dag
+alternate_witness_google_loc_nasal_upgrade	snin	sñiñ	1	1	wts_35_51:164:38	spran mo Zig la snin tshim bya mi dgos —
+alternate_witness_google_loc_velar_nasal_upgrade	sañ	saṅ	1	1	wts_35_51:164:65	1: 297,3); den sañ phal ches ... nom chos su
+alternate_witness_google_loc_nasal_upgrade	khuns	khuṅs	1	1	wts_35_51:166:5	(KunK 26,8); yig cha la ma bkod pa dan khuns
+alternate_witness_google_loc_nasal_upgrade	skyon	skyoṅ	1	1	wts_35_51:166:24	"(MTH3/5/13 4); ""dzin skyon dka' bar yod"
+alternate_witness_google_loc_nasal_upgrade	gsin	gsiñ	1	1	wts_35_51:166:59	ne'u gsin mmanis ni glogs / — dag m brtib bo
+alternate_witness_google_loc_fricative_upgrade	sid	śid	1	1	wts_35_51:171:11	འདུར་ཤེད་ dur sid Totenzeremonie.
+alternate_witness_google_loc_nasal_upgrade	mons	moṅs	1	1	wts_35_51:171:61	"ren"" (Glr 23,14); chos ñon mons ~ ba thabs"
+alternate_witness_google_loc_nasal_upgrade	nis	ñis	1	1	wts_35_51:175:10	ba la slob ma nis ston brgyad breya tsam —
+alternate_witness_google_loc_nasal_upgrade	sans	sañs	1	1	wts_35_51:175:12	"mengekommen"" (Debm 2062); sans rgyas"
+alternate_witness_initial_i_to_l_translit	Ihar	lhar	1	1	wts_35_51:175:67	40,3); de 0/7/5 dan — pa las Ihar bcas dan /
+alternate_witness_google_loc_fricative_upgrade	gzen	gźen	1	1	wts_35_51:181:75	"bgyid la gzen skul — (metr.) ""du drängst die"
+alternate_witness_google_loc_fricative_upgrade	bzen	bźen	1	1	wts_35_51:181:77	"bzen (r. gźen) skul ~ mkhas $in (metr.) ""die,"
+alternate_witness_google_loc_fricative_upgrade	sags	śags	1	1	wts_35_51:181:86	"den"" (Debm 3939); chos kyi brtsod pa'! sags"
+alternate_witness_google_loc_nasal_upgrade	kan	kaṅ	1	1	wts_35_51:182:17	(MTH3/5/27 27); gśsin rje ki kan dmar nag
+alternate_witness_google_loc_fricative_upgrade	bsol	bśol	1	1	wts_35_51:182:93	"prägt wurden"" (Mil 131,28); bsol — pa dan"
+alternate_witness_google_loc_nasal_upgrade	gduns	gduṅs	1	1	wts_35_51:189:71	"Ihag par gduns par gyur nas ""sie wurden von"
+alternate_witness_google_loc_nasal_upgrade	lin	liñ	1	1	wts_35_51:190:26	ma ti 'gu lin sogs / dug Ina'i dban gyur gro
+alternate_witness_initial_i_to_l_translit	Ina'i	lṅa’i	1	1	wts_35_51:190:26	ma ti 'gu lin sogs / dug Ina'i dban gyur gro
+alternate_witness_google_loc_nasal_upgrade	non	ñon	1	1	wts_35_51:191:84	"pa' non mons ""Befleckungen, die auf der"
+alternate_witness_google_loc_nasal_upgrade	brduns	brduṅs	1	1	wts_35_51:193:1	འདོད་བརྡུངས་ [( brduns
+alternate_witness_initial_i_to_l_translit	Ihun	lhuṅ	1	1	wts_35_51:193:48	"— nid Ihun bgyis (metr.) ""du hast das Ver-"
+alternate_witness_google_loc_fricative_upgrade	zen	źen	1	1	wts_35_51:195:30	འདོད་པ་ལ་ཞེན་པ་ 'dod pa la zen pa auch 'dod Zen
+alternate_witness_google_loc_nasal_upgrade	bsgyins	bsgyiṅs	1	1	wts_35_51:199:5	can ches cher 'dar ba'i ~i rnam par bsgyins
+alternate_witness_google_loc_fricative_upgrade	bsos	bśos	1	1	wts_35_51:199:14	skyems dan bsos gtsan gis / kon tse — ...
+alternate_witness_google_loc_nasal_upgrade	khun	khuṅ	1	1	wts_35_51:199:77	"sel"" (dPe 266,16); gser khun gtin rin nas gser"
+alternate_witness_google_loc_nasal_upgrade	gtin	gtiṅ	1	1	wts_35_51:199:77	"sel"" (dPe 266,16); gser khun gtin rin nas gser"
+alternate_witness_google_loc_nasal_upgrade	bcins	bciṅs	1	1	wts_35_51:199:80	ma yin rnams la bcins pa dan / brdeg / mig
+alternate_witness_google_loc_nasal_upgrade	khon	khoṅ	1	1	wts_35_51:199:83	"wurden"" (Glr 133,23); khon gsum gyi Sed na"
+alternate_witness_citation_siglum	Bhukkh	BhuKkh	1	1	wts_35_51:201:8	"ten sollen"" (Bhukkh 136,14); ñams pa sor"
+alternate_witness_google_loc_nasal_upgrade	btun	btuṅ	1	1	wts_35_51:201:14	Lex. — pa = bza' btun (TTC).
+alternate_witness_google_loc_velar_nasal_upgrade	khañ	khaṅ	1	1	wts_35_51:201:41	"fe [ragt]"" (K1 kha 3 132); gtsug lag khañ nas ~"
+alternate_witness_google_loc_nasal_upgrade	rna	rṅa	1	1	wts_35_51:201:66	"30,4); sp med rna ma — dgu (metr.) ""einer"
+alternate_witness_google_loc_nasal_upgrade	nag	ñag	1	1	wts_35_51:203:29	"~~ rgyu = gdam nag — mkhan gyis — rgyu ""ei-"
+alternate_witness_google_loc_nasal_upgrade	mtshuns	mtshuṅs	1	1	wts_35_51:203:79	nub phyogs bram ze — mtshuns (metr.)
+alternate_witness_google_loc_nasal_upgrade	brin	briṅ	1	1	wts_35_51:204:75	Zani lon fa 'brin du bro — — ba...
+alternate_witness_google_loc_nasal_upgrade	gnan	gnañ	1	1	wts_35_51:204:76	"bdun gyis de Itar dbu sun / gnan 770 ""Ari-"
+alternate_witness_google_loc_nasal_upgrade	namsu	ñamsu	1	1	wts_35_51:205:46	bka' lun dan — bar rje blas dka['] dgu namsu
+alternate_witness_hyphenated_initial_i_to_l_translit	Ide-brtsan	lde-brtsan	1	1	wts_35_51:205:51	"myi — ste ""Khri-sron Ide-brtsan persönlich"
+alternate_witness_google_loc_nasal_upgrade	sbran	sbraṅ	1	1	wts_35_51:205:57	"ga sbran bu dan 'dra' ste ""deine Soldaten"
+alternate_witness_google_loc_fricative_upgrade	bKth-Z	bKth-Ź	1	1	wts_35_51:206:40	"klarem Wasser"" (bKth-Z 597,6); ci yañ mi"
+alternate_witness_google_loc_fricative_upgrade	sa'i	śa'i	1	1	wts_35_51:206:44	"ähnlich war"" (Glr 163,12); ku sa'i rtse mo"
+alternate_witness_google_loc_velar_nasal_upgrade	rañ	raṅ	1	1	wts_35_51:206:91	"nicht gibt"" (Glr 51,13); da rañ bla mas khyod"
+alternate_witness_google_loc_velar_nasal_upgrade	sñom	sṅom	1	1	wts_35_51:209:39	"sñom pa ""gleich in Höhe und Menge usw."""
+alternate_witness_google_loc_fricative_upgrade	bsegs	bśegs	1	1	wts_35_51:217:39	dmag dpon byas pa'i sdig bsegs (r. bsags) su
+alternate_witness_google_loc_fricative_upgrade	bsags	bśags	1	1	wts_35_51:217:39	dmag dpon byas pa'i sdig bsegs (r. bsags) su
+alternate_witness_google_loc_nasal_upgrade	phrin	phriṅ	1	1	wts_35_51:218:12	thun tshad kyan dan po sale 'od 'phrin skor
+alternate_witness_citation_siglum	L$dz-K	Lśdz-K	1	1	wts_35_51:218:22	"führte"" (L$dz-K 204,19)."
+alternate_witness_google_loc_nasal_upgrade	rlun	rluṅ	1	1	wts_35_51:221:63	rtsa ~~ rlun 'chun thig le ran dban thob (metr.)
+alternate_witness_google_loc_nasal_upgrade	rDar-rdzon	rDar-rdzoṅ	1	1	wts_35_51:222:68	Eingabe] beim rDar-rdzon wurde dir ein Er-
+alternate_witness_google_loc_nasal_upgrade	zans	zaṅs	1	1	wts_35_51:223:23	30,12); — gser dl zans ... bru'i ba mdzod
+alternate_witness_initial_i_to_l_translit	Ilhags	lhags	1	1	wts_35_51:225:25	cad ni zer gyi ?77//7 (r. —) tsam du Ilhags
+alternate_witness_google_loc_nasal_upgrade	chin	chiṅ	1	1	wts_35_51:228:59	"chin dañ ~pa dag / bgyid pa (metr.) ""Wei-"
+alternate_witness_google_loc_nasal_upgrade	snar	sṅar	1	1	wts_35_51:237:15	snar ra lo ston pa'i bla ma — la dgons rtags Zus
+alternate_witness_google_loc_nasal_upgrade	sron	sroṅ	1	1	wts_35_51:241:56	"Zal no me sron (g)nas kyi (r. kye) "" bka'"
+alternate_witness_google_loc_nasal_upgrade	kon-bstun	koṅ-bstun	1	1	wts_35_51:241:77	btsun bde-mo bzw. Kon-po'i kon-bstun de-
+alternate_witness_google_loc_nasal_upgrade	dbyins	dbyiṅs	1	1	wts_35_51:242:16	རྡོ་རྗེ་དབྱིངས་ rdo rje dbyins.
+alternate_witness_google_loc_nasal_upgrade	bzens	bzeṅs	1	1	wts_35_51:242:24	pre 'dun 7750 dan — kyi gtsug lag khani bzens
+alternate_witness_google_loc_velar_nasal_upgrade	mñon	mṅon	1	1	wts_35_51:243:13	"schützen"" (Hev 2.4.90d); + rten mñon par"
+alternate_witness_google_loc_nasal_upgrade	gsun	gsuṅ	1	1	wts_35_51:243:68	rdo rje gsun dbyans
+alternate_witness_google_loc_nasal_upgrade	krun	kruṅ	1	1	wts_35_51:243:75	rdo rje'i skyil krun eine Sitzhal-
+alternate_witness_google_loc_fricative_upgrade	patrasaileya	patraśaileya	1	1	wts_35_51:245:59	"(metr.) ""rdo dreg lo ma (skt. patrasaileya),"
