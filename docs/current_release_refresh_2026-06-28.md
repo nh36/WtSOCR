@@ -1,3 +1,5 @@
+> Historical audit record. This file is not the current to-do list. See `docs/STATUS.md` for the current operational status.
+
 # Current Release Refresh - 2026-06-28
 
 ## Scope
@@ -8,7 +10,7 @@ not add broad OCR heuristics, and keeps base OCR authoritative.
 
 Local output root:
 
-`work/current_release_four_volume_refresh_20260628T075036Z`
+`work/current_release_four_volume_refresh_20260628T193714Z`
 
 ## Promoted Cleanup
 
@@ -22,25 +24,30 @@ The refresh includes these reviewed corrections:
 - Existing `dan mthunpa` phrase override tightened to `daṅ mthun pa`.
 - Tibetan-context `tin rre/ne/ñe 'dzin -> tiṅ ṅe 'dzin` phrase repair.
 - Exact reviewed `Tär -> Tār` siglum rows.
+- Exact reviewed Initial-I/l rows, including forms such as `Ina -> lṅa`,
+  `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
+- Exact reviewed same-line Tibetan-script `ང` witness rows, including
+  `ran -> raṅ`, `snar -> sṅar`, and the reviewed `gan dan yan` phrase as
+  `gaṅ daṅ yaṅ`.
 
-All are exact or context-gated rows; no broad `ä -> ā`, nasal, or Google-gate
-change was introduced.
+All are exact or context-gated rows; no broad `ä -> ā`, `I -> l`, `n -> ṅ`,
+nasal, or Google-gate change was introduced.
 
 ## Postprocess Counts
 
 | Volume | Entries | Non-empty lines | Validator issues | Google adoptions | Google unresolved | Citation changes | Reviewed Tibetan exact changes | Sanskrit changes | Sanskrit review suggestions |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `wts_1_34` | 13097 | 178435 | 13255 | 5470 | 3266 | 2069 | 3 | 675 | 39 |
-| `wts_35_51` | 6148 | 91855 | 4522 | 1168 | 1895 | 919 | 10 | 149 | 31 |
-| `wts_8_b` | 3125 | 48290 | 2344 | 3 | 900 | 459 | 171 | 72 | 8 |
-| `wts_9_m` | 1791 | 33664 | 1554 | 842 | 1134 | 276 | 283 | 89 | 10 |
+| `wts_1_34` | 13122 | 178435 | 13259 | 5470 | 3266 | 2069 | 914 | 675 | 39 |
+| `wts_35_51` | 6148 | 91855 | 4519 | 1168 | 1895 | 919 | 445 | 149 | 31 |
+| `wts_8_b` | 3126 | 48290 | 2344 | 3 | 900 | 459 | 373 | 72 | 8 |
+| `wts_9_m` | 1792 | 33664 | 1554 | 842 | 1134 | 276 | 394 | 89 | 10 |
 
 ## Bucket Reports
 
 | Volume | Unresolved pairs | Promote | Hold |
 | --- | ---: | ---: | ---: |
-| `wts_1_34` | 203 | 10 | 193 |
-| `wts_35_51` | 177 | 7 | 170 |
+| `wts_1_34` | 205 | 10 | 195 |
+| `wts_35_51` | 176 | 7 | 169 |
 | `wts_8_b` | 125 | 0 | 125 |
 | `wts_9_m` | 38 | 0 | 38 |
 
@@ -53,10 +60,14 @@ Tibetan-script `ང` witness.
 
 | Volume | Candidate rows |
 | --- | ---: |
-| `wts_1_34` | 134 |
-| `wts_35_51` | 15 |
-| `wts_8_b` | 1 |
-| `wts_9_m` | 2 |
+| `wts_1_34` | 3 |
+| `wts_35_51` | 3 |
+| `wts_8_b` | 0 |
+| `wts_9_m` | 0 |
+
+The exact Initial-I/l residual diagnostic is exhausted in this bundle:
+`tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the
+header for all four volumes.
 
 ## Verification
 
@@ -67,9 +78,9 @@ python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_tibetan_cle
 python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q
 ```
 
-Result before rebuilding `release/current`:
+Result after rebuilding `release/current`:
 
-`145 passed, 6 subtests passed in 1.77s`
+`151 passed, 14 subtests passed`
 
 ## Deployment Note
 

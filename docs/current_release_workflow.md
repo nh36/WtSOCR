@@ -10,8 +10,9 @@ ignored by Git, so every accepted cleanup pass should end by rebuilding
 
 The 2026-06-28 refresh deploys the current override tables into
 `release/current` for all four volumes, including the latest exact
-user-reported Tibetan and siglum cleanup. Earlier tracked bundles were useful
-QA snapshots, but this bundle is the repository's best current etext target.
+user-reported Tibetan, siglum, Initial-I/l, and Tibetan-script `ང` witness
+cleanup. Earlier tracked bundles were useful QA snapshots, but this bundle is
+the repository's best current etext target.
 
 ## Current Sources
 
@@ -19,17 +20,19 @@ The current bundle is built from these trusted local outputs:
 
 | Volume | Local output directory |
 | --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_9_m` |
+| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34` |
+| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_35_51` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_9_m` |
 
-The WtS 8-b and WtS 9-m Tibetan cleanup diagnostics are copied from:
+The Tibetan cleanup diagnostics are copied from:
 
 | Volume | Local diagnostics directory |
 | --- | --- |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_9_m` |
 
 These `work/` paths are local, unversioned artifacts. They are recorded here so
 the accepted bundle can be reproduced on this machine; the tracked deployment

@@ -22,17 +22,17 @@ from typing import Iterable
 
 
 DEFAULT_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/current_release_four_volume_refresh_20260628T075036Z/wts_1_34",
-    "wts_35_51": "work/current_release_four_volume_refresh_20260628T075036Z/wts_35_51",
-    "wts_8_b": "work/current_release_four_volume_refresh_20260628T075036Z/wts_8_b",
-    "wts_9_m": "work/current_release_four_volume_refresh_20260628T075036Z/wts_9_m",
+    "wts_1_34": "work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34",
+    "wts_35_51": "work/current_release_four_volume_refresh_20260628T193714Z/wts_35_51",
+    "wts_8_b": "work/current_release_four_volume_refresh_20260628T193714Z/wts_8_b",
+    "wts_9_m": "work/current_release_four_volume_refresh_20260628T193714Z/wts_9_m",
 }
 
 DEFAULT_DIAGNOSTIC_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_1_34",
-    "wts_35_51": "work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_35_51",
-    "wts_8_b": "work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_8_b",
-    "wts_9_m": "work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_9_m",
+    "wts_1_34": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_1_34",
+    "wts_35_51": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_35_51",
+    "wts_8_b": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_8_b",
+    "wts_9_m": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_9_m",
 }
 
 QA_SUFFIXES = (
@@ -276,6 +276,8 @@ def write_manifest(
         f"Source/code commit observed while building this bundle: `{commit}`",
         "",
         "This directory is the tracked best-current deployable etext snapshot.",
+        "`release/current/manifest.md` is an inventory and reproducibility file",
+        "for this snapshot; it is not the project to-do list.",
         "The large production outputs under `work/` are local artifacts and are",
         "not versioned in the repository.",
         "",
@@ -321,7 +323,7 @@ def write_manifest(
             "",
             "```bash",
             "python3 scripts/build_current_release_bundle.py",
-            "python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_tibetan_cleanup_diagnostics.py scripts/report_unresolved_buckets.py scripts/build_qa_packet_v6.py scripts/build_current_release_bundle.py",
+            "python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py",
             "python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q",
             "```",
             "",

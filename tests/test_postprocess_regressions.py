@@ -743,6 +743,45 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 4)
         self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
 
+    def test_reviewed_tibetan_initial_i_residual_batch_examples(self) -> None:
+        merged_text = self.fixture_with_reviewed_lines(
+            {
+                (13, 80): "a b c d e f g h Ina",
+                (20, 85): "Itar",
+                (59, 64): "a b c d Ipags",
+                (75, 72): "a b Ius",
+                (167, 43): "Ikog",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            merged_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("a b c d e f g h lṅa", corrected)
+        self.assertIn("ltar", corrected)
+        self.assertIn("a b c d lpags", corrected)
+        self.assertIn("a b lus", corrected)
+        self.assertIn("lkog", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_initial_i_l_family"
+        ]
+        self.assertEqual(
+            {(row["from_token"], row["to_token"]) for row in reviewed},
+            {
+                ("Ina", "lṅa"),
+                ("Itar", "ltar"),
+                ("Ipags", "lpags"),
+                ("Ius", "lus"),
+                ("Ikog", "lkog"),
+            },
+        )
+        self.assertEqual({row["tier"] for row in reviewed}, {"reviewed_tibetan_exact"})
+
     def test_reviewed_tibetan_initial_i_exact_does_not_apply_unreviewed_line(
         self,
     ) -> None:
@@ -1427,6 +1466,57 @@ class PostprocessRegressionTests(unittest.TestCase):
             [
                 row
                 for row in unreviewed_changes
+                if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            ]
+        )
+
+    def test_reviewed_script_ng_residual_rows_apply_only_when_reviewed(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (52, 135): "a b ran",
+                (568, 1): "snar",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("a b raṅ", corrected)
+        self.assertIn("sṅar", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(
+            {(row["from_token"], row["to_token"]) for row in reviewed},
+            {
+                ("ran", "raṅ"),
+                ("snar", "sṅar"),
+            },
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
+
+        deferred_text = self.fixture_with_reviewed_lines(
+            {
+                (543, 114): "dan 'then",
+                (1111, 20): "a b c d e Tdan",
+            }
+        )
+
+        _result, deferred_corrected, deferred_changes = self.run_postprocess_fixture(
+            deferred_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("dan 'then", deferred_corrected)
+        self.assertIn("a b c d e Tdan", deferred_corrected)
+        self.assertFalse(
+            [
+                row
+                for row in deferred_changes
                 if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
             ]
         )

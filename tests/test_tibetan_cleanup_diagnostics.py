@@ -2,6 +2,7 @@ import importlib.util
 import sys
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import cast
 
 
@@ -173,6 +174,60 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             )
         )
         self.assertIsNone(diag.classify_tibetan_script_ng_token("gan", "German gan dan without script"))
+
+    def test_initial_i_residual_forms_are_exact_candidates_in_tibetan_context(self) -> None:
+        context = "Tib. lta ltas ltar ldan lha lṅa lus lkog lpags bka' la'i"
+        examples = {
+            "Ita": "lta",
+            "Itar": "ltar",
+            "Itas": "ltas",
+            "Ipags": "lpags",
+            "Ius": "lus",
+            "Ikog": "lkog",
+            "Ina": "lṅa",
+            "Idan": "ldan",
+        }
+        for token, expected in examples.items():
+            with self.subTest(token=token):
+                info = diag.classify_tibetan_initial_i_token(token, context)
+                self.assertIsNotNone(info)
+                info = cast(dict[str, str], info)
+                self.assertEqual(info["proposed_target"], expected)
+                self.assertEqual(info["candidate_family"], "initial_i_to_l")
+                self.assertEqual(info["suggested_action"], "exact_promotion_candidate")
+
+    def test_initial_i_residual_scan_is_not_broad_i_rule(self) -> None:
+        self.assertIsNone(diag.classify_tibetan_initial_i_token("Ita", "Der Ita und die Lesung ist deutsch."))
+        self.assertIsNone(diag.classify_tibetan_initial_i_token("Ita", "Sanskrit sūtra Prajñā Śākyamuni"))
+        self.assertIsNone(diag.classify_tibetan_initial_i_token("Ixyz", "Tib. bka' la'i"))
+
+    def test_initial_i_scan_uses_postprocess_token_indexes(self) -> None:
+        with TemporaryDirectory() as tmp:
+            run_dir = Path(tmp)
+            (run_dir / "fake_corrected_full.txt").write_text(
+                "(IsKh 2: 230,5); ji Itar 'dam las skyes pa'i ~\n",
+                encoding="utf-8",
+            )
+
+            rows = diag.build_initial_i_candidates(run_dir, "fake", self.registry)
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["source_token"], "Itar")
+        self.assertEqual(rows[0]["token_index"], "6")
+
+    def test_script_ng_scan_uses_postprocess_token_indexes(self) -> None:
+        with TemporaryDirectory() as tmp:
+            run_dir = Path(tmp)
+            (run_dir / "fake_corrected_full.txt").write_text(
+                "རང་ (Dagy 12,3) ran\n",
+                encoding="utf-8",
+            )
+
+            rows = diag.build_script_ng_witness_candidates(run_dir, "fake")
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["source_token"], "ran")
+        self.assertEqual(rows[0]["token_index"], "4")
 
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")
