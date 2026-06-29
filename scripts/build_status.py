@@ -12,6 +12,7 @@ import argparse
 import csv
 import json
 import re
+import subprocess
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -56,12 +57,19 @@ HISTORICAL_NOTE = (
     "> Historical audit record. This file is not the current to-do list. "
     "See `docs/STATUS.md` for the current operational status."
 )
+REQUIRED_QA_FILES = [
+    "{volume}_summary.json",
+    "{volume}_changes.tsv",
+    "bucket_report.summary.md",
+    "bucket_report.artifact_tokens.tsv",
+]
 
 
 @dataclass
 class ReleaseStats:
     manifest_generated_utc: str
     manifest_source_commit: str
+    manifest_volumes: list[str]
     volumes: dict[str, dict[str, int | str]]
     reason_counts: Counter[str]
     pair_counts: Counter[tuple[str, str]]
@@ -81,18 +89,35 @@ def as_int(value: str | int | None) -> int:
     return int(value.replace(",", ""))
 
 
-def parse_manifest() -> tuple[str, str]:
+def parse_manifest() -> tuple[str, str, list[str]]:
     manifest = RELEASE / "manifest.md"
     text = manifest.read_text(encoding="utf-8") if manifest.exists() else ""
     generated = "unknown"
     source_commit = "unknown"
+    manifest_volumes: list[str] = []
     m = re.search(r"Generated UTC:\s*`([^`]+)`", text)
     if m:
         generated = m.group(1)
     m = re.search(r"Source/code commit observed while building this bundle:\s*`([^`]+)`", text)
     if m:
         source_commit = m.group(1)
-    return generated, source_commit
+    in_source_outputs = False
+    for line in text.splitlines():
+        if line == "## Source Outputs":
+            in_source_outputs = True
+            continue
+        if in_source_outputs and line.startswith("## "):
+            break
+        m = re.match(r"\| `([^`]+)` \| `", line)
+        if m and m.group(1).startswith("wts_"):
+            manifest_volumes.append(m.group(1))
+    if not manifest_volumes:
+        text_dir = RELEASE / "text"
+        manifest_volumes = sorted(
+            path.name.removesuffix("_corrected_full.txt")
+            for path in text_dir.glob("*_corrected_full.txt")
+        )
+    return generated, source_commit, manifest_volumes
 
 
 def parse_bucket_summary(path: Path) -> dict[str, int]:
@@ -124,7 +149,7 @@ def iter_tsv(path: Path) -> Iterable[dict[str, str]]:
 
 
 def read_release_stats() -> ReleaseStats:
-    generated, source_commit = parse_manifest()
+    generated, source_commit, manifest_volumes = parse_manifest()
     volumes: dict[str, dict[str, int | str]] = {}
     reason_counts: Counter[str] = Counter()
     pair_counts: Counter[tuple[str, str]] = Counter()
@@ -179,6 +204,7 @@ def read_release_stats() -> ReleaseStats:
     return ReleaseStats(
         manifest_generated_utc=generated,
         manifest_source_commit=source_commit,
+        manifest_volumes=manifest_volumes,
         volumes=volumes,
         reason_counts=reason_counts,
         pair_counts=pair_counts,
@@ -348,6 +374,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             final_ng_residual,
             "broad ń->ṅ;broad n->ṅ",
             "Many exact final-ṅ repairs are applied; remaining nasal-looking tokens still require context or Tibetan-script witness support.",
+        ),
+        row(
+            "final_ng_deferred_source_review",
+            "final_ng",
+            "source-sensitive final-ng candidates",
+            "source-checked Tibetan forms",
+            "source_review_queue",
+            "deferred",
+            "none",
+            "none",
+            "none",
+            "docs/tibetan_initial_i_ng_cleanup_2026-06-28.md;release/current/qa/*/tibetan_cleanup_diagnostics",
+            0,
+            final_ng_residual,
+            "broad ń->ṅ;broad n->ṅ;abbreviation/noisy contexts",
+            "Deferred rows remain review evidence only. They must not be promoted without source/context confirmation.",
         ),
         row(
             "final_ng_yang",
@@ -526,6 +568,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "Sanskrit cleanups are exact/context-gated; remaining Sanskrit review suggestions need source/context checking.",
         ),
         row(
+            "sanskrit_source_check_queue",
+            "sanskrit",
+            "Sanskrit review suggestions",
+            "source-checked Sanskrit forms",
+            "source_review_queue",
+            "needs_source_check",
+            "none",
+            "none",
+            "release/current/qa/*/*_sanskrit_report.tsv",
+            "release/current/qa",
+            0,
+            total(stats, "sanskrit_review_suggestions"),
+            "German prose;Tibetan/Wylie;unreviewed broad jn->jñ or ä->ā",
+            "Residual Sanskrit suggestions are a source-check queue, not applied correction evidence.",
+        ),
+        row(
             "sigla_bu_sz",
             "sigla",
             "Bu-Sz / Bu-$z variants",
@@ -700,6 +758,38 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "unknown",
             "unanchored token replacements",
             "Context-memory repairs are represented separately from broad character families.",
+        ),
+        row(
+            "residual_bucket_promote_candidates",
+            "residual_queue",
+            "bucket promote candidates",
+            "candidate exact/context promotions",
+            "review_queue",
+            "promote_candidate",
+            "none",
+            "none",
+            "release/current/qa/*/bucket_report.summary.md",
+            "release/current/qa",
+            0,
+            total(stats, "bucket_promote_rows"),
+            "unreviewed token-level buckets",
+            "Promote candidates are residual review targets only until accepted into code or override TSVs.",
+        ),
+        row(
+            "dated_cleanup_reports",
+            "documentation",
+            "dated cleanup reports",
+            "historical audit records",
+            "documentation_only",
+            "historical_only",
+            "none",
+            "none",
+            "none",
+            "docs/*_2026-*.md",
+            0,
+            0,
+            "current operational status",
+            "Dated cleanup reports are historical records. `docs/STATUS.md` is the current operational status.",
         ),
         row(
             "generic_dollar_to_sacute",
@@ -900,38 +990,117 @@ def reason_code_represented(reason: str, exact: set[str], prefixes: list[str]) -
     return reason in exact or any(reason.startswith(prefix) for prefix in prefixes)
 
 
-def warning_messages(stats: ReleaseStats, rows: list[dict[str, str]]) -> list[str]:
+def dirty_release_status_paths() -> list[str]:
+    try:
+        result = subprocess.run(
+            [
+                "git",
+                "status",
+                "--porcelain",
+                "--",
+                "release/current",
+                "docs/STATUS.md",
+                "data/correction_families.tsv",
+            ],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+    except OSError:
+        return ["git status could not be executed"]
+    if result.returncode != 0:
+        return [result.stderr.strip() or "git status failed"]
+    return [line.strip() for line in result.stdout.splitlines() if line.strip()]
+
+
+def validation_messages(
+    stats: ReleaseStats,
+    rows: list[dict[str, str]],
+    status_text: str,
+) -> tuple[list[str], list[str]]:
+    failures: list[str] = []
     warnings: list[str] = []
     represented, prefixes = represented_reason_codes(rows)
     missing = sorted(
         reason for reason in stats.reason_counts if not reason_code_represented(reason, represented, prefixes)
     )
     if missing:
-        warnings.append(
+        failures.append(
             "reason codes in release/current changes not represented in data/correction_families.tsv: "
             + ", ".join(missing)
         )
 
-    family_ids = {item["family_id"] for item in rows}
-    if len(family_ids) != len(rows):
-        warnings.append("duplicate family_id values found in data/correction_families.tsv")
+    seen_ids: set[str] = set()
+    duplicate_ids: set[str] = set()
+    for item in rows:
+        family_id = item["family_id"]
+        if family_id in seen_ids:
+            duplicate_ids.add(family_id)
+        seen_ids.add(family_id)
+        if item["status"] not in ALLOWED_STATUSES:
+            failures.append(f"{family_id} has unsupported status {item['status']}")
+    if duplicate_ids:
+        failures.append("duplicate family_id values found: " + ", ".join(sorted(duplicate_ids)))
 
-    status_text = build_status_markdown(stats, rows)
+    manifest_set = set(stats.manifest_volumes)
+    status_set = set(VOLUME_ORDER)
+    extra_manifest = sorted(manifest_set - status_set)
+    missing_manifest = [volume for volume in VOLUME_ORDER if volume not in manifest_set]
+    if extra_manifest:
+        failures.append(
+            "volumes in release/current/manifest.md are missing from the Volume Status table: "
+            + ", ".join(extra_manifest)
+        )
+    if missing_manifest:
+        failures.append(
+            "volumes in the Volume Status table are missing from release/current/manifest.md: "
+            + ", ".join(missing_manifest)
+        )
+
+    for volume in VOLUME_ORDER:
+        text_path = RELEASE / "text" / f"{volume}_corrected_full.txt"
+        if not text_path.is_file():
+            failures.append(f"{volume} is missing release text {text_path.relative_to(ROOT)}")
+        qa_dir = QA_ROOT / volume
+        for template in REQUIRED_QA_FILES:
+            qa_path = qa_dir / template.format(volume=volume)
+            if not qa_path.is_file():
+                failures.append(f"{volume} is missing required QA file {qa_path.relative_to(ROOT)}")
+
     for item in rows:
         family_id = item["family_id"]
         if family_id not in status_text:
-            warnings.append(f"family {family_id} is not represented in docs/STATUS.md")
+            failures.append(f"family {family_id} is not represented in docs/STATUS.md")
+        applied = item.get("applied_count_current_release", "")
         residual = item.get("residual_count_current_release", "")
+        try:
+            applied_int = int(applied)
+        except ValueError:
+            applied_int = 0
         try:
             residual_int = int(residual)
         except ValueError:
             residual_int = 0
-        if item["status"] == "applied" and residual_int >= 25 and item["scope"] in {"exact_token", "row_gated", "row_or_registry_gated"}:
-            warnings.append(
-                f"{family_id} is marked applied but has high residual count {residual_int}; "
-                "consider partially_applied if that residual is the same family"
+        if item["status"] == "unsafe_broad_rule" and applied_int != 0:
+            failures.append(f"{family_id} is an unsafe broad rule but has applied count {applied_int}")
+        if item["status"] == "applied" and residual_int > 0 and item["scope"] == "exact_token":
+            explanation = " ".join(
+                [
+                    item.get("negative_controls", ""),
+                    item.get("notes", ""),
+                ]
             )
-    return warnings
+            if not re.search(r"false positive|noise", explanation, flags=re.IGNORECASE):
+                failures.append(
+                    f"{family_id} is marked applied for an exact-token family but has residual count {residual_int}"
+                )
+        if item["status"] == "partially_applied" and residual_int >= 1000:
+            warnings.append(
+                f"{family_id} remains partially applied with large residual count {residual_int}; review recommended"
+            )
+    return failures, warnings
 
 
 def add_historical_notes() -> None:
@@ -963,10 +1132,19 @@ def main() -> int:
     family_rows = build_family_rows(stats)
     tsv_text = write_tsv(family_rows)
     status_text = build_status_markdown(stats, family_rows)
-    warnings = warning_messages(stats, family_rows)
+    failures, warnings = validation_messages(stats, family_rows, status_text)
 
     if args.check:
         failed = False
+        dirty_paths = dirty_release_status_paths()
+        if dirty_paths:
+            print(
+                "release/status inputs are dirty; commit or discard them before release check:",
+                file=sys.stderr,
+            )
+            for path in dirty_paths:
+                print(f"  {path}", file=sys.stderr)
+            failed = True
         expected = {
             STATUS_PATH: status_text,
             FAMILIES_PATH: tsv_text,
@@ -976,10 +1154,17 @@ def main() -> int:
             if current != generated:
                 print(f"{path.relative_to(ROOT)} is not up to date", file=sys.stderr)
                 failed = True
+        for message in failures:
+            print(f"error: {message}", file=sys.stderr)
+            failed = True
         for message in warnings:
             print(f"warning: {message}", file=sys.stderr)
         return 1 if failed else 0
 
+    if failures:
+        for message in failures:
+            print(f"error: {message}", file=sys.stderr)
+        return 1
     STATUS_PATH.write_text(status_text, encoding="utf-8")
     FAMILIES_PATH.write_text(tsv_text, encoding="utf-8")
     add_historical_notes()
