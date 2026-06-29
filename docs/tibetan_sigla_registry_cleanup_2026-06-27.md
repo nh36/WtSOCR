@@ -1,3 +1,5 @@
+> Historical audit record. This file is not the current to-do list. See `docs/STATUS.md` for the current operational status.
+
 # Tibetan Sigla Registry Cleanup
 
 Date: 2026-06-27

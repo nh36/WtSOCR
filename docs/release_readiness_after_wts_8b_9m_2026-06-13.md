@@ -1,3 +1,5 @@
+> Historical audit record. This file is not the current to-do list. See `docs/STATUS.md` for the current operational status.
+
 # WtS 8-b / WtS 9-m Release-Readiness Handoff
 
 Date: 2026-06-13

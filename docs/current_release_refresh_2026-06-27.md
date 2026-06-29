@@ -1,3 +1,5 @@
+> Historical audit record. This file is not the current to-do list. See `docs/STATUS.md` for the current operational status.
+
 # Current Release Refresh 2026-06-27
 
 This pass refreshes the tracked `release/current` bundle from a fresh
