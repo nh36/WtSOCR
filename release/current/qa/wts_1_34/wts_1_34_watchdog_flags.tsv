@@ -323,46 +323,46 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 1303	75	12896	german_prose	1111	im	A	german_numeric_function_word_confusion	high_edit_distance_drift	cir eine große Schlacht mit Chinesen“ (1111
 1334	42	13029	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	sechsten derer, die 111 dem großen König-
 82	158	944	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ber“, 1, $. v. Hervorbringer, Er-
-166	43	2136	headword_line	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	རྐྱན་དྲུག་ rkyen drug die sechs Qualitäten 1, $. v.
-192	71	2429	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	1. Kreis, in übertr. Bed. auch 1. $. v. Kranz,
-196	114	2497	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. skyabs su brten pa’i don „1, $. v. sich an
-220	147	2854	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i min „1. $. v. immer wieder machen oder
-236	54	3061	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	= yun rin du gsos pa’i don „1, $. ¥ lange Zeit
-253	120	3305	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	sicht nach unten waschend‘“, 1. $. v. alle Er-
-361	176	4825	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	zieht, sind es drei; 1. $. v. substrahieren“
-440	156	5741	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. yun rin ’gyans pa’i don „1, $. ¥. lange
-505	62	6500	latin_other	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ste gcer bu’i don „sgren mo, 1, $. ¥. nackt“
-510	129	6577	german_prose	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	nur eines, 1, $. ¥. kaum möglich“ (Dagy);
-579	4	7218	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Maß ist vorhanden, oder 1. $. v. sicher“
-595	68	7337	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	’dul ba’i don „1. $. v. zu einem Bündel
-598	65	7358	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i don „1. $. v. veranlassen, den Stolz aufzugeben und verringert haben“ (brDa).
-601	84	7372	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa’i don la’an „auch 1, $. ¥, sich an etwas
-604	85	7395	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. Wasser usw. herauspressen, in allen
-619	22	7537	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. ungewiß und nicht wissen“ (Dagy);
-630	197	7647	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	chad pa mthud pa’i don „1. $. v. Schnur
-630	206	7648	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. smras pa’am thag chad pa’i don „1. $. v.
-631	10	7649	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	lta bu „1. $. v. abgemacht, wie: vereinbart“
-633	106	7681	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	chud mi za ba „1. $. v. nicht vergeuden,
-633	134	7681	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	(brDa); mna’ ’og gi don „1. $. v. unter der
-634	104	7683	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. lhan cig pa’i don „1. $. v. gemeinsam“
-639	32	7743	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. eins“ (Dagy).
-661	120	7983	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	(Vkhums pa’am „1. $. v. zusammengekommen und zusammengezogen“ (brDa).
-667	166	8046	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i don „1. $. v. groß“ (Dagy); ~ lei = lei
-667	172	8046	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	1, $. v. sehr schnell“ (Dagy); gZon ~ pa =
-672	100	8065	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	la „1. $. v. die eigene Natur erfassen und für
-699	146	8413	latin_other	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa = sbas pa’am gan ba’i don „1, $. v.
-706	136	8485	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	oder erscheint auch 1, $. v. gegessen“
-746	163	8833	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	’dra ba’i don „1. $. v. ähnlich“ (Dagy); chos
-757	152	8960	latin_other	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	tshags byas pa’i don „1, $. ¥ versorgen“
-766	148	9000	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. ~ ba = mtshan ’dru ba’i don „1. $. v.
-808	17	9368	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ka’i don »1, $. v. körperlicher Zustand“
-815	34	9405	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. klan ka tsbol ba’i don „1, $. v. Streit
-893	13	9794	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Pfand einsetzen, 1, $. v. als Ersatz für die
-991	71	10767	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	then „1. $. v. direkt, geradewegs“ (brDa);
-1050	140	11510	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"dem Sanskrit auch für “anta 1. $. v. ""antar"
-1064	48	11694	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	geburtsbereiche, 1, $. v. Herkunft, eine
-1066	15	11713	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	5. schen, wahrnehmen 1, $. v. erleiden,
-1075	119	11837	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa’i bya tshig „1, $. v. finden und in die
-1101	100	11931	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	halb, 1. $. v. mit einer Hälfte zusammen wä-
-1317	18	12952	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	mit dem Geruch Aufzunehmende, 1. $. v. das
-539	174	6853	german_prose	vridakäaryam	vṛddhakāryam	A	sanskrit_high_freq_allowlist	high_edit_distance_drift	vridakäaryam) soll man aufgeben“ (Hev
+166	43	2138	headword_line	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	རྐྱན་དྲུག་ rkyen drug die sechs Qualitäten 1, $. v.
+192	71	2431	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	1. Kreis, in übertr. Bed. auch 1. $. v. Kranz,
+196	114	2499	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. skyabs su brten pa’i don „1, $. v. sich an
+220	147	2856	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i min „1. $. v. immer wieder machen oder
+236	54	3063	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	= yun rin du gsos pa’i don „1, $. ¥ lange Zeit
+253	120	3307	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	sicht nach unten waschend‘“, 1. $. v. alle Er-
+361	176	4840	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	zieht, sind es drei; 1. $. v. substrahieren“
+440	156	5757	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. yun rin ’gyans pa’i don „1, $. ¥. lange
+505	62	6516	latin_other	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ste gcer bu’i don „sgren mo, 1, $. ¥. nackt“
+510	129	6593	german_prose	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	nur eines, 1, $. ¥. kaum möglich“ (Dagy);
+579	4	7235	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Maß ist vorhanden, oder 1. $. v. sicher“
+595	68	7355	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	’dul ba’i don „1. $. v. zu einem Bündel
+598	65	7376	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i don „1. $. v. veranlassen, den Stolz aufzugeben und verringert haben“ (brDa).
+601	84	7390	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa’i don la’an „auch 1, $. ¥, sich an etwas
+604	85	7413	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. Wasser usw. herauspressen, in allen
+619	22	7555	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. ungewiß und nicht wissen“ (Dagy);
+630	197	7665	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	chad pa mthud pa’i don „1. $. v. Schnur
+630	206	7666	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. smras pa’am thag chad pa’i don „1. $. v.
+631	10	7667	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	lta bu „1. $. v. abgemacht, wie: vereinbart“
+633	106	7700	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	chud mi za ba „1. $. v. nicht vergeuden,
+633	134	7700	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	(brDa); mna’ ’og gi don „1. $. v. unter der
+634	104	7702	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. lhan cig pa’i don „1. $. v. gemeinsam“
+639	32	7762	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	„1. $. v. eins“ (Dagy).
+661	120	8002	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	(Vkhums pa’am „1. $. v. zusammengekommen und zusammengezogen“ (brDa).
+667	166	8065	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ba’i don „1. $. v. groß“ (Dagy); ~ lei = lei
+667	172	8065	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	1, $. v. sehr schnell“ (Dagy); gZon ~ pa =
+672	100	8084	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	la „1. $. v. die eigene Natur erfassen und für
+699	146	8432	latin_other	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa = sbas pa’am gan ba’i don „1, $. v.
+706	136	8504	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	oder erscheint auch 1, $. v. gegessen“
+746	163	8856	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	’dra ba’i don „1. $. v. ähnlich“ (Dagy); chos
+757	152	8983	latin_other	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	tshags byas pa’i don „1, $. ¥ versorgen“
+766	148	9024	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. ~ ba = mtshan ’dru ba’i don „1. $. v.
+808	17	9393	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	ka’i don »1, $. v. körperlicher Zustand“
+815	34	9430	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Lex. klan ka tsbol ba’i don „1, $. v. Streit
+893	13	9819	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	Pfand einsetzen, 1, $. v. als Ersatz für die
+991	71	10792	latin_other	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	then „1. $. v. direkt, geradewegs“ (brDa);
+1050	140	11535	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"dem Sanskrit auch für “anta 1. $. v. ""antar"
+1064	48	11719	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	geburtsbereiche, 1, $. v. Herkunft, eine
+1066	15	11738	german_prose	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	5. schen, wahrnehmen 1, $. v. erleiden,
+1075	119	11862	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	pa’i bya tshig „1, $. v. finden und in die
+1101	100	11956	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	halb, 1. $. v. mit einer Hälfte zusammen wä-
+1317	18	12977	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	mit dem Geruch Aufzunehmende, 1. $. v. das
+539	174	6869	german_prose	vridakäaryam	vṛddhakāryam	A	sanskrit_high_freq_allowlist	high_edit_distance_drift	vridakäaryam) soll man aufgeben“ (Hev

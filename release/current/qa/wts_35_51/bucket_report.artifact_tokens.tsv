@@ -2,11 +2,10 @@ bucket	token	count
 wts_35_51:dollar_artifact	$	474
 wts_35_51:dollar_artifact	g$	1
 wts_35_51:dollar_artifact	$rT	1
-wts_35_51:initial_confusable_I	Itar	326
-wts_35_51:initial_confusable_I	Ina	229
+wts_35_51:initial_confusable_I	Itar	130
 wts_35_51:initial_confusable_I	Ins	83
+wts_35_51:initial_confusable_I	Ina	73
 wts_35_51:initial_confusable_I	Inneren	41
-wts_35_51:initial_confusable_I	Ipags	39
 wts_35_51:initial_confusable_I	Ich	38
 wts_35_51:initial_confusable_I	Indien	37
 wts_35_51:initial_confusable_I	Indras	35
@@ -16,8 +15,6 @@ wts_35_51:initial_confusable_I	Ira	30
 wts_35_51:initial_confusable_I	Itun	29
 wts_35_51:initial_confusable_I	Irnam	28
 wts_35_51:initial_confusable_I	Inhalt	27
-wts_35_51:initial_confusable_I	Ius	25
-wts_35_51:initial_confusable_I	Itas	23
 wts_35_51:initial_confusable_I	Idog	21
 wts_35_51:initial_confusable_I	Idum	20
 wts_35_51:initial_confusable_I	ITC	19
@@ -32,10 +29,10 @@ wts_35_51:initial_confusable_I	Ite	16
 wts_35_51:initial_confusable_I	Irmam	16
 wts_35_51:initial_confusable_I	Itag	15
 wts_35_51:initial_confusable_I	Innere	15
+wts_35_51:initial_confusable_I	Ipags	15
 wts_35_51:initial_confusable_I	Inneres	14
 wts_35_51:initial_confusable_I	IPL	13
 wts_35_51:initial_confusable_I	Ings	12
-wts_35_51:initial_confusable_I	Ikog	12
 wts_35_51:initial_confusable_I	Idin	12
 wts_35_51:initial_confusable_I	Idon	11
 wts_35_51:initial_confusable_I	Indra	10
@@ -53,6 +50,7 @@ wts_35_51:initial_confusable_I	Int	8
 wts_35_51:initial_confusable_I	Idab	8
 wts_35_51:initial_confusable_I	International	8
 wts_35_51:initial_confusable_I	Indica	8
+wts_35_51:initial_confusable_I	Ius	7
 wts_35_51:initial_confusable_I	Ibdag	7
 wts_35_51:initial_confusable_I	IsonNth	7
 wts_35_51:initial_confusable_I	Inl	7
@@ -64,6 +62,7 @@ wts_35_51:initial_confusable_I	Interesse	6
 wts_35_51:initial_confusable_I	Ibde	6
 wts_35_51:initial_confusable_I	Ibo	6
 wts_35_51:initial_confusable_I	IDeKh	6
+wts_35_51:initial_confusable_I	Ikog	6
 wts_35_51:initial_confusable_I	Inzest	6
 wts_35_51:initial_confusable_I	Instrument	6
 wts_35_51:initial_confusable_I	IsKh	6
@@ -115,6 +114,7 @@ wts_35_51:initial_confusable_I	Igdan	3
 wts_35_51:initial_confusable_I	Icam	3
 wts_35_51:initial_confusable_I	Insignien	3
 wts_35_51:initial_confusable_I	Isha	3
+wts_35_51:initial_confusable_I	Itas	3
 wts_35_51:initial_confusable_I	Ichlosigkeit	3
 wts_35_51:initial_confusable_I	Item	3
 wts_35_51:initial_confusable_I	Ire	3

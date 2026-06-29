@@ -1,9 +1,11 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-06-28T09:50:24Z`
-Source/code commit observed while building this bundle: `cf66f05dd6a06e8f80d654825568c923e1d4b4b2`
+Generated UTC: `2026-06-29T21:59:11Z`
+Source/code commit observed while building this bundle: `237daeb2591928cc8612b336604324b469c469f5`
 
 This directory is the tracked best-current deployable etext snapshot.
+`release/current/manifest.md` is an inventory and reproducibility file
+for this snapshot; it is not the project to-do list.
 The large production outputs under `work/` are local artifacts and are
 not versioned in the repository.
 
@@ -15,19 +17,19 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/wts_9_m` |
+| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34` |
+| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_35_51` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T075036Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Corrected Text
 
@@ -38,6 +40,7 @@ the latest trusted corrected text and compact QA artifacts into
 
 ## QA Artifacts
 
+- `qa/current_release_four_volume_refresh_20260628T193714Z/checksums.sha256`
 - `qa/wts_1_34/bucket_report.artifact_tokens.tsv`
 - `qa/wts_1_34/bucket_report.summary.md`
 - `qa/wts_1_34/bucket_report.unresolved_pairs.tsv`
@@ -46,6 +49,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
+- `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_orthography_damage_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv`
@@ -68,6 +72,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
+- `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_orthography_damage_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv`
@@ -90,6 +95,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
+- `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_orthography_damage_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv`
@@ -112,6 +118,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
+- `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_orthography_damage_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv`
@@ -136,7 +143,7 @@ the latest trusted corrected text and compact QA artifacts into
 
 ```bash
 python3 scripts/build_current_release_bundle.py
-python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_tibetan_cleanup_diagnostics.py scripts/report_unresolved_buckets.py scripts/build_qa_packet_v6.py scripts/build_current_release_bundle.py
+python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py
 python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q
 ```
 

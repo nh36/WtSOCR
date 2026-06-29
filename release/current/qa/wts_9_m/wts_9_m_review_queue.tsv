@@ -6,8 +6,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 47	43	214	german_prose_with_translit	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	sich im Gefängnis des Sarnsära zu freu-
 48	34	218	german_prose	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	burten, Sarnsära.
 121	55	507	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	dha, bei der er weder an den Samisära gebun-
-171	43	771	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"""man ist. den ganzen Samisära lang nicht dem"
-233	60	1032	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"des Sanisära"" (Nigu 47,2); gtsug lag (khani) ..."
-268	39	1158	german_prose	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"(metr.) ""der Samisära 157 bis hin zum Nir-"
-271	51	1181	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"der Wüste des unerträglichen Sanisära l.eid"""
-271	54	1181	german_prose	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	ser großen Wildnis der Wüste des Sarnsära
+171	43	772	german_prose_with_translit	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"""man ist. den ganzen Samisära lang nicht dem"
+233	60	1033	german_prose_with_translit	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"des Sanisära"" (Nigu 47,2); gtsug lag (khani) ..."
+268	39	1159	german_prose	Samisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"(metr.) ""der Samisära 157 bis hin zum Nir-"
+271	51	1182	german_prose	Sanisära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	"der Wüste des unerträglichen Sanisära l.eid"""
+271	54	1182	german_prose	Sarnsära	Saṃsāra	B	sanskrit_promoted_context_allowlist	0	ser großen Wildnis der Wüste des Sarnsära

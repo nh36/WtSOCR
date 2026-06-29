@@ -1,8 +1,8 @@
 bucket	token	count
 wts_8_b:dollar_artifact	$	244
 wts_8_b:dollar_artifact	$rT	1
-wts_8_b:initial_confusable_I	Ina	143
-wts_8_b:initial_confusable_I	Itar	137
+wts_8_b:initial_confusable_I	Itar	56
+wts_8_b:initial_confusable_I	Ina	44
 wts_8_b:initial_confusable_I	Indien	37
 wts_8_b:initial_confusable_I	Ice	20
 wts_8_b:initial_confusable_I	Inhalt	18
@@ -12,17 +12,14 @@ wts_8_b:initial_confusable_I	ITJ	13
 wts_8_b:initial_confusable_I	Indra	13
 wts_8_b:initial_confusable_I	Ini	12
 wts_8_b:initial_confusable_I	Indras	12
-wts_8_b:initial_confusable_I	Ikog	11
 wts_8_b:initial_confusable_I	Intelligenz	11
 wts_8_b:initial_confusable_I	Insekt	11
 wts_8_b:initial_confusable_I	Ich	11
-wts_8_b:initial_confusable_I	Ipags	10
 wts_8_b:initial_confusable_I	Instrument	9
 wts_8_b:initial_confusable_I	Inl	8
 wts_8_b:initial_confusable_I	Inneren	8
 wts_8_b:initial_confusable_I	Inkarnation	8
 wts_8_b:initial_confusable_I	Iba	7
-wts_8_b:initial_confusable_I	Ius	7
 wts_8_b:initial_confusable_I	IPL	7
 wts_8_b:initial_confusable_I	Ite	7
 wts_8_b:initial_confusable_I	Innere	6
@@ -37,12 +34,12 @@ wts_8_b:initial_confusable_I	Ibu	5
 wts_8_b:initial_confusable_I	Itabu	5
 wts_8_b:initial_confusable_I	Ibya	5
 wts_8_b:initial_confusable_I	Ins	5
+wts_8_b:initial_confusable_I	Ipags	5
 wts_8_b:initial_confusable_I	International	4
 wts_8_b:initial_confusable_I	Ing	4
 wts_8_b:initial_confusable_I	Ihr	4
 wts_8_b:initial_confusable_I	Instru-	4
 wts_8_b:initial_confusable_I	Ingwer	4
-wts_8_b:initial_confusable_I	Itas	4
 wts_8_b:initial_confusable_I	Ihn	4
 wts_8_b:initial_confusable_I	Inzest	4
 wts_8_b:initial_confusable_I	Ibyin	4
@@ -64,6 +61,7 @@ wts_8_b:initial_confusable_I	Isbyin	3
 wts_8_b:initial_confusable_I	Instrumental	3
 wts_8_b:initial_confusable_I	Imp	3
 wts_8_b:initial_confusable_I	Iblo	3
+wts_8_b:initial_confusable_I	Ikog	3
 wts_8_b:initial_confusable_I	Idin	3
 wts_8_b:initial_confusable_I	Isbed	3
 wts_8_b:initial_confusable_I	Inneres	3
@@ -93,6 +91,7 @@ wts_8_b:initial_confusable_I	ICags-po-ri	2
 wts_8_b:initial_confusable_I	Ibro	2
 wts_8_b:initial_confusable_I	Ibla	2
 wts_8_b:initial_confusable_I	Iblare	2
+wts_8_b:initial_confusable_I	Ius	2
 wts_8_b:initial_confusable_I	Ikugs	2
 wts_8_b:initial_confusable_I	Idom-bu	2
 wts_8_b:initial_confusable_I	Idban	2
@@ -201,6 +200,7 @@ wts_8_b:initial_confusable_I	Ibye	1
 wts_8_b:initial_confusable_I	Iye	1
 wts_8_b:initial_confusable_I	Imdzad	1
 wts_8_b:initial_confusable_I	Instr	1
+wts_8_b:initial_confusable_I	Istan	1
 wts_8_b:umlaut_translit_candidate	Ortsveränderung	8
 wts_8_b:umlaut_translit_candidate	Amtsträger	7
 wts_8_b:umlaut_translit_candidate	abwärts	6

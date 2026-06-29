@@ -1465,7 +1465,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 417	50	2143	german_prose_with_translit	Währungseinheit	german_umlaut_in_translit_context	Währungseinheit	"Lex. gser 20 7 skar ma ""die Währungseinheit"
 418	3	2144	german_prose_with_translit	bängs	invalid_translit_shape	bängs	gzugs ... Zigrgya gar yulnas — las gsegs te bängs
 418	3	2144	german_prose_with_translit	bängs	german_umlaut_in_translit_context	bängs	gzugs ... Zigrgya gar yulnas — las gsegs te bängs
-418	93	2145	german_prose_with_translit	L$dz	confusable_char	Lśdz	"lischem Charakter"" (L$dz 7,5); — Itar yons"
+418	93	2145	german_prose_with_translit	L$dz	confusable_char	Lśdz	"lischem Charakter"" (L$dz 7,5); — ltar yons"
 419	4	2146	german_prose_with_translit	L$dz	confusable_char	Lśdz	"sind"" (L$dz 120,2); — gan ba'i wer ma bsans"
 421	12	2157	german_prose_with_translit	Bewußtseins	invalid_translit_shape	Bewußtseins	und den Bereich des Bewußtseins nicht als
 421	12	2157	german_prose_with_translit	Bewußtseins	german_umlaut_in_translit_context	Bewußtseins	und den Bereich des Bewußtseins nicht als
@@ -2388,7 +2388,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 636	12	3141	latin_other	Schlangenkönig	german_umlaut_in_translit_context	Schlangenkönig	Schlangenkönig.
 636	23	3143	german_prose_with_translit	Schlangenkönig	invalid_translit_shape	Schlangenkönig	mtshan npr. ein Schlangenkönig.
 636	23	3143	german_prose_with_translit	Schlangenkönig	german_umlaut_in_translit_context	Schlangenkönig	mtshan npr. ein Schlangenkönig.
-637	27	3158	german_prose_with_translit	yañń	confusable_char	yaṅń	"gdul bya'i ~ Itar yañń rje mi la'i thugs sras ""[er"
+637	27	3158	latin_other	yañń	confusable_char	yaṅń	"gdul bya'i ~ ltar yañń rje mi la'i thugs sras ""[er"
 638	3	3161	latin_other	draufgängerisch	invalid_translit_shape	draufgängerisch	gelassen, draufgängerisch.
 638	3	3161	latin_other	draufgängerisch	german_umlaut_in_translit_context	draufgängerisch	gelassen, draufgängerisch.
 638	6	3161	german_prose_with_translit	Li$	confusable_char	Liś	ni = (Li$ 23,13, KlohAD 740,6).
@@ -2536,8 +2536,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 663	83	3241	german_prose_with_translit	Führungskräfte	invalid_translit_shape	Führungskräfte	lichen Lehrer usw., an alle Führungskräfte
 663	83	3241	german_prose_with_translit	Führungskräfte	german_umlaut_in_translit_context	Führungskräfte	lichen Lehrer usw., an alle Führungskräfte
 663	84	3241	latin_other	zuñ	confusable_char	zuṅ	"gesandt"" (MTH3/3/2 6); dge legs tshogs zuñ"
-663	88	3241	german_prose_with_translit	sätstsba	invalid_translit_shape	sätstsba	"sätstsba brkos phor nas bton — Itar ""wie Vo-"
-663	88	3241	german_prose_with_translit	sätstsba	german_umlaut_in_translit_context	sätstsba	"sätstsba brkos phor nas bton — Itar ""wie Vo-"
+663	88	3241	german_prose_with_translit	sätstsba	invalid_translit_shape	sätstsba	"sätstsba brkos phor nas bton — ltar ""wie Vo-"
+663	88	3241	german_prose_with_translit	sätstsba	german_umlaut_in_translit_context	sätstsba	"sätstsba brkos phor nas bton — ltar ""wie Vo-"
 664	7	3242	german_prose_with_translit	jüngerer	invalid_translit_shape	jüngerer	für, daß mein jüngerer Bruder von [7601] ge-
 664	7	3242	german_prose_with_translit	jüngerer	german_umlaut_in_translit_context	jüngerer	für, daß mein jüngerer Bruder von [7601] ge-
 664	42	3243	german_prose_with_translit	Führung	invalid_translit_shape	Führung	mit seinen Nachkommen die Führung über-
@@ -3610,10 +3610,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 916	34	4765	german_prose_with_translit	Länge	german_umlaut_in_translit_context	Länge	Länge eines Fingers.
 916	39	4767	headword_line	Unglück	invalid_translit_shape	Unglück	ཕུན་ཆག་ pbun chag Unglück.
 916	39	4767	headword_line	Unglück	german_umlaut_in_translit_context	Unglück	ཕུན་ཆག་ pbun chag Unglück.
-916	52	4773	headword_line	dGa'-Idan	confusable_char	dGa'-ldan	ཕུན་ཆགསཀླ glin npr. das Kloster dGa'-Idan
-916	56	4773	german_prose_with_translit	dGa'-Idan	confusable_char	dGa'-ldan	dGa'-Idan phun-tshogs-glin führte er ein
 916	60	4773	german_prose_with_translit	dGa'-Ian	confusable_char	dGa'-lan	tshal, nahe dem [Kloster dGa'-Ian] phunf[-
-916	63	4773	latin_other	dGa'-Idan	confusable_char	dGa'-ldan	"lugs dge lugs pa yin ""dGa'-Idan phun-tshogs-"
 917	78	4779	german_prose_with_translit	Erklärung	invalid_translit_shape	Erklärung	ne gefällige Erklärung usw. entworfen wur-
 917	78	4779	german_prose_with_translit	Erklärung	german_umlaut_in_translit_context	Erklärung	ne gefällige Erklärung usw. entworfen wur-
 918	5	4780	german_prose_with_translit	hängt	invalid_translit_shape	hängt	"(metr.) ""deine Vollkommenheit hängt al-"
@@ -4141,7 +4138,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 1050	13	5615	german_prose_with_translit	Förderung	german_umlaut_in_translit_context	Förderung	— gugs pa Zeremonie zur Förderung
 1050	76	5619	german_prose_with_translit	höhung	invalid_translit_shape	höhung	höhung der Verpflichtungen zu den chine-
 1050	76	5619	german_prose_with_translit	höhung	german_umlaut_in_translit_context	höhung	höhung der Verpflichtungen zu den chine-
-1051	5	5620	german_prose_with_translit	zuñ	confusable_char	zuṅ	pa gźwi chan zwis (v.l. zuñ) Itar phra ba 2
+1051	5	5620	latin_other	zuñ	confusable_char	zuṅ	pa gźwi chan zwis (v.l. zuñ) ltar phra ba 2
 1051	11	5620	german_prose_with_translit	ungefähr	invalid_translit_shape	ungefähr	genau und ungefähr; skir za — zartes Alter;
 1051	11	5620	german_prose_with_translit	ungefähr	german_umlaut_in_translit_context	ungefähr	genau und ungefähr; skir za — zartes Alter;
 1051	21	5620	german_prose_with_translit	Vi$	confusable_char	Viś	"einen Körper in andere Körper"" (Vi$ 52b);"

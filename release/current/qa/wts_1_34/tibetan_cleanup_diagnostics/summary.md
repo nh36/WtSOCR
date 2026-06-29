@@ -6,10 +6,11 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 357
 - `tibetan_orthography_damage_candidates.tsv`: 1801
-- `tibetan_script_ng_witness_candidates.tsv`: 134
+- `tibetan_script_ng_witness_candidates.tsv`: 3
+- `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 775
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
-- `tibetan_variant_families.tsv`: 769
+- `tibetan_variant_families.tsv`: 765
 - `tibetan_google_adoption_patterns.tsv`: 633
 
 ## Top Candidate Families
@@ -22,20 +23,20 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | rol (145) | Rol (145) | 145 | siglum_policy_review |
 | unknown | VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1) | ViśT (98) | 98 | siglum_policy_review |
 | unknown | ins (85), INS (1) | Ins (86) | 86 | siglum_policy_review |
-| tibetan_script_ng_witness | gan (68) | gaṅ (68) | 68 | exact_promotion_candidate |
 | unknown | Lsdz-K (33), L$dz-K (13) | Lśdz-K (46) | 46 | siglum_policy_review |
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
 | unknown | gs (24), G$ (3), Gś (2) | Gs (29) | 29 | siglum_policy_review |
 | unknown | gzi (28) | gZi (28) | 28 | siglum_policy_review |
 | unknown | Lsdz (16), L$dz (10) | Lśdz (26) | 26 | siglum_policy_review |
-| tibetan_script_ng_witness | snan (22) | snaṅ (22) | 22 | exact_promotion_candidate |
-| tibetan_script_ng_witness | yan (18) | yaṅ (18) | 18 | exact_promotion_candidate |
 | unknown | Bu-Sz (16) | Bu-śz (16) | 16 | siglum_policy_review |
 | dotless_i | gZı (13), gzı (1) | gZi (13), gzi (1) | 14 | review |
 | unknown | GS-H (5), G$-H (4), Gs-H (3) | Gś-H (12) | 12 | siglum_policy_review |
-| tibetan_script_ng_witness | ran (11) | raṅ (11) | 11 | exact_promotion_candidate |
 | unknown | P$ (8), PS (2), Pś (1) | Ps (11) | 11 | siglum_policy_review |
 | citation_or_siglum | TAIC (10) | TAIC (10) | 10 | already_canonical_siglum |
+| citation_or_siglum | Tär (10) | Tār (10) | 10 | already_canonical_siglum |
+| dotless_i | garı (9) | gari (9) | 9 | review |
+| dotless_i | kyanı (9) | kyani (9) | 9 | review |
+| dotless_i | MıgTo (9) | MigTo (9) | 9 | review |
 
 ## Top Google Adoption Patterns
 
@@ -62,6 +63,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 - `tibetan_google_candidate_readings.tsv` contains unresolved Google-witness disagreements that may deserve manual review.
 - `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.
 - `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.
+- `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.
 - `sigla_variant_candidates.tsv` separates bibliography/siglum policy cases from Tibetan and Sanskrit normalisation.
 - `residual_sanskrit_low_confidence_candidates.tsv` is a small exploratory queue for Sanskrit-like residue outside the previous Sanskrit watch list.
 - Promotion should happen only in a later audited batch, using exact tokens and context gates.

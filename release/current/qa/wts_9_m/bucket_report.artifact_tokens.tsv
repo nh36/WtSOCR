@@ -2,17 +2,15 @@ bucket	token	count
 wts_9_m:dollar_artifact	$	207
 wts_9_m:dollar_artifact	MS$	1
 wts_9_m:dollar_artifact	$$	1
-wts_9_m:initial_confusable_I	Itar	97
-wts_9_m:initial_confusable_I	Ina	54
+wts_9_m:initial_confusable_I	Itar	39
 wts_9_m:initial_confusable_I	Indien	20
+wts_9_m:initial_confusable_I	Ina	19
 wts_9_m:initial_confusable_I	Irma	13
 wts_9_m:initial_confusable_I	Ima	12
 wts_9_m:initial_confusable_I	Ins	11
 wts_9_m:initial_confusable_I	Ice	10
 wts_9_m:initial_confusable_I	Indras	10
 wts_9_m:initial_confusable_I	Inhalt	10
-wts_9_m:initial_confusable_I	Itas	10
-wts_9_m:initial_confusable_I	Ipags	9
 wts_9_m:initial_confusable_I	Ich	9
 wts_9_m:initial_confusable_I	Ismin	7
 wts_9_m:initial_confusable_I	Iba	7
@@ -42,7 +40,6 @@ wts_9_m:initial_confusable_I	Ini	4
 wts_9_m:initial_confusable_I	Imun	4
 wts_9_m:initial_confusable_I	Imand	4
 wts_9_m:initial_confusable_I	Ismra	4
-wts_9_m:initial_confusable_I	Ius	3
 wts_9_m:initial_confusable_I	IPL	3
 wts_9_m:initial_confusable_I	Imar	3
 wts_9_m:initial_confusable_I	Isvaras	3
@@ -52,6 +49,8 @@ wts_9_m:initial_confusable_I	Innern	3
 wts_9_m:initial_confusable_I	Iman	3
 wts_9_m:initial_confusable_I	Ian	3
 wts_9_m:initial_confusable_I	Innere	3
+wts_9_m:initial_confusable_I	Itas	3
+wts_9_m:initial_confusable_I	Ipags	3
 wts_9_m:initial_confusable_I	Itabu	3
 wts_9_m:initial_confusable_I	Inneren	3
 wts_9_m:initial_confusable_I	Insckt	3
@@ -202,6 +201,7 @@ wts_9_m:initial_confusable_I	ISvaras	1
 wts_9_m:initial_confusable_I	Idman	1
 wts_9_m:initial_confusable_I	Ivaras	1
 wts_9_m:initial_confusable_I	Imus	1
+wts_9_m:initial_confusable_I	Isnrubs	1
 wts_9_m:umlaut_translit_candidate	Bewußtsein	10
 wts_9_m:umlaut_translit_candidate	mütterlicherseits	8
 wts_9_m:umlaut_translit_candidate	Entschluß	8

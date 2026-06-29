@@ -32,4 +32,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 117	77	592	german_prose_with_translit	kyis'diltabuga	kyis 'di lta bu ga	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	"— kyis'diltabuga la ses ""wie konnten die Ti-"
 288	17	1536	latin_other	diltabuszinna	di lta bu źin na	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	bdaggi btsun mo 'di ~ ñan pa 'diltabuszinna
 510	62	2733	latin_other	diltabi	di lta bu'i	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_bu_spacing	high_edit_distance_drift	lus kyi nad rnam pa 'diltabi 'di dag 'byun ba
-460	73	2513	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"(brDa); dan dbyi ba'i don la'ani ""auch 1. $. v."
+460	73	2514	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"(brDa); dan dbyi ba'i don la'ani ""auch 1. $. v."

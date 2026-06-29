@@ -14,7 +14,7 @@ wts_1_34:dotless_i_artifact	yı	15
 wts_1_34:dotless_i_artifact	ı	14
 wts_1_34:dotless_i_artifact	sıe	14
 wts_1_34:dotless_i_artifact	Rsı	11
-wts_1_34:dotless_i_artifact	yanı	11
+wts_1_34:dotless_i_artifact	yanı	10
 wts_1_34:dotless_i_artifact	yıg	9
 wts_1_34:dotless_i_artifact	MıgTo	9
 wts_1_34:dotless_i_artifact	garı	9
@@ -65,7 +65,6 @@ wts_1_34:dotless_i_artifact	Dolanjı	2
 wts_1_34:dotless_i_artifact	Käsıkä	2
 wts_1_34:dotless_i_artifact	chın	2
 wts_1_34:dotless_i_artifact	avabhäsayantı	2
-wts_1_34:dotless_i_artifact	snanı	2
 wts_1_34:dotless_i_artifact	läßı	2
 wts_1_34:dotless_i_artifact	spyı	2
 wts_1_34:dotless_i_artifact	yıb	2
@@ -79,7 +78,6 @@ wts_1_34:dotless_i_artifact	kyıi	2
 wts_1_34:dotless_i_artifact	mın	2
 wts_1_34:dotless_i_artifact	ındem	2
 wts_1_34:dotless_i_artifact	ıst	2
-wts_1_34:dotless_i_artifact	ganı	2
 wts_1_34:dotless_i_artifact	VısT	2
 wts_1_34:dotless_i_artifact	cı	2
 wts_1_34:dotless_i_artifact	sıl	2
@@ -194,6 +192,7 @@ wts_1_34:dotless_i_artifact	ekäntaklıstäh	1
 wts_1_34:dotless_i_artifact	weı-	1
 wts_1_34:dotless_i_artifact	äghätayatı	1
 wts_1_34:dotless_i_artifact	vyalumpantı	1
+wts_1_34:dotless_i_artifact	snaṅı	1
 wts_1_34:dotless_i_artifact	wıdmete	1
 wts_1_34:dotless_i_artifact	samcarı	1
 wts_1_34:dotless_i_artifact	sMan-ıı	1
@@ -209,14 +208,13 @@ wts_1_34:dotless_i_artifact	zeylanıca	1
 wts_1_34:dotless_i_artifact	wırd	1
 wts_1_34:dotless_i_artifact	nagajıhvika	1
 wts_1_34:dotless_i_artifact	KıErter	1
-wts_1_34:initial_confusable_I	Itar	610
-wts_1_34:initial_confusable_I	Ina	457
+wts_1_34:dotless_i_artifact	Glu-’brın	1
+wts_1_34:initial_confusable_I	Itar	267
+wts_1_34:initial_confusable_I	Ina	164
 wts_1_34:initial_confusable_I	Inhalt	79
 wts_1_34:initial_confusable_I	Ice	77
 wts_1_34:initial_confusable_I	Indien	75
 wts_1_34:initial_confusable_I	Ishe	74
-wts_1_34:initial_confusable_I	Ius	72
-wts_1_34:initial_confusable_I	Itas	72
 wts_1_34:initial_confusable_I	Ito	62
 wts_1_34:initial_confusable_I	IMAEDA	60
 wts_1_34:initial_confusable_I	Ich	57
@@ -231,14 +229,14 @@ wts_1_34:initial_confusable_I	Itun	45
 wts_1_34:initial_confusable_I	Itag	43
 wts_1_34:initial_confusable_I	Ite	41
 wts_1_34:initial_confusable_I	Indica	39
-wts_1_34:initial_confusable_I	Ipags	37
-wts_1_34:initial_confusable_I	Ikog	36
 wts_1_34:initial_confusable_I	IsonNth	34
 wts_1_34:initial_confusable_I	Ini	33
 wts_1_34:initial_confusable_I	Inneren	32
 wts_1_34:initial_confusable_I	Ikugs	32
+wts_1_34:initial_confusable_I	Itas	30
 wts_1_34:initial_confusable_I	Ikun	29
 wts_1_34:initial_confusable_I	Innere	29
+wts_1_34:initial_confusable_I	Ius	29
 wts_1_34:initial_confusable_I	ITC	27
 wts_1_34:initial_confusable_I	Index	25
 wts_1_34:initial_confusable_I	Insel	24
@@ -252,6 +250,7 @@ wts_1_34:initial_confusable_I	Institut	17
 wts_1_34:initial_confusable_I	Iugs	17
 wts_1_34:initial_confusable_I	Indica-et-Tibetica-Verl	16
 wts_1_34:initial_confusable_I	IAIC	16
+wts_1_34:initial_confusable_I	Ipags	16
 wts_1_34:initial_confusable_I	IOL	16
 wts_1_34:initial_confusable_I	Ide	15
 wts_1_34:initial_confusable_I	IsKh	15
@@ -261,6 +260,7 @@ wts_1_34:initial_confusable_I	Interesse	14
 wts_1_34:initial_confusable_I	ISMEO	14
 wts_1_34:initial_confusable_I	International	14
 wts_1_34:initial_confusable_I	Instrument	14
+wts_1_34:initial_confusable_I	Ikog	14
 wts_1_34:initial_confusable_I	Irrtum	14
 wts_1_34:initial_confusable_I	Imnon	14
 wts_1_34:initial_confusable_I	Iten	13

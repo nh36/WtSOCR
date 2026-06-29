@@ -1,9 +1,9 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/current_release_four_volume_refresh_20260628T075036Z/wts_1_34`
-- unresolved confusable pairs: `203`
+- run_dir: `work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34`
+- unresolved confusable pairs: `205`
 - promote candidates (conservative): `10`
-- hold candidates: `193`
+- hold candidates: `195`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|

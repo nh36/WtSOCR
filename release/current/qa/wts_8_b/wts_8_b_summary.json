@@ -2,19 +2,19 @@
   "pages": 585,
   "total_lines_seen": 48290,
   "non_empty_lines": 48290,
-  "entries_detected": 3125,
-  "translit_tokens_detected": 76913,
+  "entries_detected": 3126,
+  "translit_tokens_detected": 76999,
   "validator_issues": 2344,
-  "uncaptured_tibetan_prefix_lines": 1134,
+  "uncaptured_tibetan_prefix_lines": 1133,
   "zone_counts": {
-    "german_prose": 12625,
-    "german_prose_with_translit": 22259,
-    "latin_other": 6442,
+    "german_prose": 12624,
+    "german_prose_with_translit": 22163,
+    "latin_other": 6539,
     "other": 2372,
-    "headword_line": 3125,
-    "tibetan_only": 1249,
-    "example_tibetan_latin": 145,
-    "tibetan_latin_mixed": 73
+    "headword_line": 3126,
+    "tibetan_only": 1248,
+    "example_tibetan_latin": 143,
+    "tibetan_latin_mixed": 75
   },
   "structural_rewrite_count": 0,
   "google_vision_mode": false,
@@ -27,11 +27,11 @@
   "alternate_witness_unresolved": 900,
   "trusted_lexicon_size": 465,
   "discovered_patterns": 38,
-  "tier_a_applied": 2735,
+  "tier_a_applied": 2937,
   "tier_b_suggestions": 10,
   "citation_name_families": 2,
   "citation_name_changes": 459,
-  "reviewed_tibetan_exact_changes": 171,
+  "reviewed_tibetan_exact_changes": 373,
   "sanskrit_families": 82,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_changes": 72,
@@ -56,6 +56,10 @@
     [
       "citation_siglum_confusable_map",
       389
+    ],
+    [
+      "reviewed_tibetan_exact_initial_i_l_family",
+      201
     ],
     [
       "confusable_dollar_to_sacute_shape_safe",
@@ -88,10 +92,6 @@
     [
       "sanskrit_high_freq_allowlist",
       59
-    ],
-    [
-      "reviewed_tibetan_exact_bzhin_bzhugs",
-      52
     ]
   ],
   "top_tier_b_reasons": [

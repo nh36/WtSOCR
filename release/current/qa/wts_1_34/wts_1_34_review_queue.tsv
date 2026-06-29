@@ -9,37 +9,37 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 65	84	672	german_prose_with_translit	śrävakabhümi	śrāvakabhumi	B	sanskrit_char_normalize	0	„auch diejenigen, die die śrävakabhümi erlernen möchten, sollen eben diese Prajhäpära-
 73	18	748	german_prose	samvyavaharıkam	samvyavaharikam	B	sanskrit_char_normalize	0	Lex. samvyavaharıkam „im Verkehr üblich,
 74	34	770	german_prose_with_translit	mädbhi	mādbhi	B	sanskrit_char_normalize	0	mädbhi). — skt. samantäloka.
-116	133	1407	latin_other	Nägabuddhi	Nāgabuddhi	B	sanskrit_char_normalize	0	skt. Nägabuddhi.
-148	114	1842	latin_other	adhyäsa	adhyāsa	B	sanskrit_char_normalize	0	7. [poet. t. t.] Übertragung. - skt. adhyäsa.
-206	53	2621	german_prose_with_translit	Hutäśana	Hutāśana	B	sanskrit_char_normalize	0	bdag (metr.) „Sarasvati, Hutäśana und Prajapati“ (Suv 125,13, skt. 161,3); — 77/ myur
-229	144	2973	german_prose_with_translit	Ha-śrı-har	Ha-śri-har	B	sanskrit_char_normalize	0	— ba „sie riefen das als Ha-śrı-har bekannte
-312	43	4250	german_prose_with_translit	saddhäatukausalya	saddhāatukausalya	B	sanskrit_char_normalize	0	handeln soll (für skt. saddhäatukausalya (!)
-353	198	4742	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	vor dem König der śäkyas“ (Glr 1,6); zol
-362	159	4837	german_prose_with_translit	kusaläbhyäsayogyatva	kusalābhyāsayogyatva	B	sanskrit_char_normalize	0	Gutes zu tun (skt. kusaläbhyäsayogyatva)
-383	113	5025	german_prose_with_translit	icchatä	icchatā	B	sanskrit_char_normalize	0	beweisen möchte (skt. siddhim icchatä)“
-409	40	5369	german_prose_with_translit	Apramänaśubhas	Apramānaśubhas	B	sanskrit_char_normalize	0	Apramänaśubhas, der Akanisthas [usw.]“
-487	124	6249	german_prose_with_translit	śrotaäpanna	śrotaāpanna	B	sanskrit_char_normalize	0	Grad eines śrotaäpanna erlangte“ (Tär 7,9).
-570	15	7138	german_prose_with_translit	śyämävati	śyāmāvati	B	sanskrit_char_normalize	0	Bhiruka; ¬~ can npr. śyämävati, die Tochter
-655	171	7949	german_prose_with_translit	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	1. Beiname Kämeśvaras, Kimadevas.
-740	116	8767	german_prose_with_translit	buddhabhattäraka	buddhabhattāraka	B	sanskrit_char_normalize	0	Ehrwürdigen (für skt. buddhabhattäraka)
-757	107	8958	latin_other	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	Kämeśvaras.
-808	145	9374	german_prose_with_translit	śänaväsika	śānavāsika	B	sanskrit_char_normalize	0	den edlen śänaväsika aus Srävasti ein“ (Tär
-831	208	9514	german_prose_with_translit	drädhya	drādhya	B	sanskrit_char_normalize	0	Teigopfer zur Annäherung (skt. drädhya)
-833	99	9529	german_prose_with_translit	khäditva	khāditva	B	sanskrit_char_normalize	0	ernährt wurde (skt. khäditva)“ (Bca 5.68c).
-854	67	9536	german_prose_with_translit	Prajnä-śataka	Prajñā-śataka	B	sanskrit_jn_cluster_contextual	0	— 1990: Hundert Strophen von der Lebensklugheit. Nägarjunas [!] Prajnä-śataka tibe-
-997	62	10840	german_prose_with_translit	sarvatragäminipratipajjnänabalam	sarvatragāminipratipajjñānabalam	B	sanskrit_jn_cluster_contextual	0	sarvatragäminipratipajjnänabalam (sGra
-1015	111	11096	german_prose_with_translit	adhigata-paramärtha	adhigata-paramārtha	B	sanskrit_char_normalize	0	heit erkannt (skt. adhigata-paramärtha)“
-1059	67	11634	german_prose_with_translit	śätaka	śātaka	B	sanskrit_char_normalize	0	sthülasätaka „grober śätaka|-Stoff]“ (Ak
-1061	144	11669	german_prose_with_translit	vrddhängustha	vrddhāngustha	B	sanskrit_char_normalize	0	gesegnete große Zehe (skt. vrddhängustha)
-1063	158	11691	german_prose_with_translit	Udbhatasiddhasvämin	Udbhatasiddhasvāmin	B	sanskrit_char_normalize	0	"Dichter, skt. ""Udbhatasiddhasvämin."
-1096	28	11898	german_prose_with_translit	śuddhä	śuddhā	B	sanskrit_char_normalize	0	pa „von Schmutz rein sein, Präsens und Perfekt“ (Dagy); — pa = śuddhä „reine [Stim-
-1115	41	12004	german_prose_with_translit	śraddhäbala	śraddhābala	B	sanskrit_char_normalize	0	śraddhäbala), gehört zu den !stobs Ina.
-1115	79	12008	latin_other	śraddhä	śraddhā	B	sanskrit_char_normalize	0	mams mhon par dga’ ba = abhiratih śraddhä-
-1140	54	12167	headword_line	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	དཱ་པཾ་ཀ་ར་ཤྲི་དྷཱ་ན་ di pam ka ra śrijnäna auch di
-1140	64	12167	german_prose_with_translit	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	„die von Atıśa Dipamkära[śrijnäna] tatsächlich erstellte [Abhandlung] zur Geomantie
-1154	63	12219	german_prose_with_translit	śankhapälas	śankhapālas	B	sanskrit_char_normalize	0	Sippe śankhapälas, die weiß wie ein Meeres-
-1166	12	12272	german_prose_with_translit	śmaSänasütra	śmaSānasutra	B	sanskrit_char_normalize	0	śmaSänasütra) zieht“ (Hev 1.2.20/9,8).
-1227	73	12574	german_prose	tathätva	tathātva	B	sanskrit_char_normalize	0	Lex. tathätva (in Mvy 134).
-1264	93	12719	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	(metr.) „auch der große König der śäkyas,
-1272	43	12755	german_prose	krtärthah	krtārthah	B	sanskrit_char_normalize	0	Lex. krtärthah „Nutzen bewirkt habend“
-1273	24	12761	german_prose_with_translit	Amoghapäśahrdaya	Amoghapāśahrdaya	B	sanskrit_char_normalize	0	pa’i säin-po, skt. Amoghapäśahrdaya (Toh
+116	133	1408	latin_other	Nägabuddhi	Nāgabuddhi	B	sanskrit_char_normalize	0	skt. Nägabuddhi.
+148	114	1844	latin_other	adhyäsa	adhyāsa	B	sanskrit_char_normalize	0	7. [poet. t. t.] Übertragung. - skt. adhyäsa.
+206	53	2623	german_prose_with_translit	Hutäśana	Hutāśana	B	sanskrit_char_normalize	0	bdag (metr.) „Sarasvati, Hutäśana und Prajapati“ (Suv 125,13, skt. 161,3); — 77/ myur
+229	144	2975	german_prose_with_translit	Ha-śrı-har	Ha-śri-har	B	sanskrit_char_normalize	0	— ba „sie riefen das als Ha-śrı-har bekannte
+312	43	4252	german_prose_with_translit	saddhäatukausalya	saddhāatukausalya	B	sanskrit_char_normalize	0	handeln soll (für skt. saddhäatukausalya (!)
+353	198	4757	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	vor dem König der śäkyas“ (Glr 1,6); zol
+362	159	4852	german_prose_with_translit	kusaläbhyäsayogyatva	kusalābhyāsayogyatva	B	sanskrit_char_normalize	0	Gutes zu tun (skt. kusaläbhyäsayogyatva)
+383	113	5040	german_prose_with_translit	icchatä	icchatā	B	sanskrit_char_normalize	0	beweisen möchte (skt. siddhim icchatä)“
+409	40	5385	german_prose_with_translit	Apramänaśubhas	Apramānaśubhas	B	sanskrit_char_normalize	0	Apramänaśubhas, der Akanisthas [usw.]“
+487	124	6265	german_prose_with_translit	śrotaäpanna	śrotaāpanna	B	sanskrit_char_normalize	0	Grad eines śrotaäpanna erlangte“ (Tär 7,9).
+570	15	7155	german_prose_with_translit	śyämävati	śyāmāvati	B	sanskrit_char_normalize	0	Bhiruka; ¬~ can npr. śyämävati, die Tochter
+655	171	7968	german_prose_with_translit	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	1. Beiname Kämeśvaras, Kimadevas.
+740	116	8790	german_prose_with_translit	buddhabhattäraka	buddhabhattāraka	B	sanskrit_char_normalize	0	Ehrwürdigen (für skt. buddhabhattäraka)
+757	107	8981	latin_other	Kämeśvaras	Kāmeśvaras	B	sanskrit_char_normalize	0	Kämeśvaras.
+808	145	9399	german_prose_with_translit	śänaväsika	śānavāsika	B	sanskrit_char_normalize	0	den edlen śänaväsika aus Srävasti ein“ (Tär
+831	208	9539	german_prose_with_translit	drädhya	drādhya	B	sanskrit_char_normalize	0	Teigopfer zur Annäherung (skt. drädhya)
+833	99	9554	german_prose_with_translit	khäditva	khāditva	B	sanskrit_char_normalize	0	ernährt wurde (skt. khäditva)“ (Bca 5.68c).
+854	67	9561	german_prose_with_translit	Prajnä-śataka	Prajñā-śataka	B	sanskrit_jn_cluster_contextual	0	— 1990: Hundert Strophen von der Lebensklugheit. Nägarjunas [!] Prajnä-śataka tibe-
+997	62	10865	german_prose_with_translit	sarvatragäminipratipajjnänabalam	sarvatragāminipratipajjñānabalam	B	sanskrit_jn_cluster_contextual	0	sarvatragäminipratipajjnänabalam (sGra
+1015	111	11121	german_prose_with_translit	adhigata-paramärtha	adhigata-paramārtha	B	sanskrit_char_normalize	0	heit erkannt (skt. adhigata-paramärtha)“
+1059	67	11659	german_prose_with_translit	śätaka	śātaka	B	sanskrit_char_normalize	0	sthülasätaka „grober śätaka|-Stoff]“ (Ak
+1061	144	11694	german_prose_with_translit	vrddhängustha	vrddhāngustha	B	sanskrit_char_normalize	0	gesegnete große Zehe (skt. vrddhängustha)
+1063	158	11716	german_prose_with_translit	Udbhatasiddhasvämin	Udbhatasiddhasvāmin	B	sanskrit_char_normalize	0	"Dichter, skt. ""Udbhatasiddhasvämin."
+1096	28	11923	german_prose_with_translit	śuddhä	śuddhā	B	sanskrit_char_normalize	0	pa „von Schmutz rein sein, Präsens und Perfekt“ (Dagy); — pa = śuddhä „reine [Stim-
+1115	41	12029	german_prose_with_translit	śraddhäbala	śraddhābala	B	sanskrit_char_normalize	0	śraddhäbala), gehört zu den !stobs Ina.
+1115	79	12033	latin_other	śraddhä	śraddhā	B	sanskrit_char_normalize	0	mams mhon par dga’ ba = abhiratih śraddhä-
+1140	54	12192	headword_line	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	དཱ་པཾ་ཀ་ར་ཤྲི་དྷཱ་ན་ di pam ka ra śrijnäna auch di
+1140	64	12192	german_prose_with_translit	śrijnäna	śrijñāna	B	sanskrit_jn_cluster_contextual	0	„die von Atıśa Dipamkära[śrijnäna] tatsächlich erstellte [Abhandlung] zur Geomantie
+1154	63	12244	german_prose_with_translit	śankhapälas	śankhapālas	B	sanskrit_char_normalize	0	Sippe śankhapälas, die weiß wie ein Meeres-
+1166	12	12297	german_prose_with_translit	śmaSänasütra	śmaSānasutra	B	sanskrit_char_normalize	0	śmaSänasütra) zieht“ (Hev 1.2.20/9,8).
+1227	73	12599	german_prose	tathätva	tathātva	B	sanskrit_char_normalize	0	Lex. tathätva (in Mvy 134).
+1264	93	12744	german_prose_with_translit	śäkyas	śākyas	B	sanskrit_char_normalize	0	(metr.) „auch der große König der śäkyas,
+1272	43	12780	german_prose	krtärthah	krtārthah	B	sanskrit_char_normalize	0	Lex. krtärthah „Nutzen bewirkt habend“
+1273	24	12786	german_prose_with_translit	Amoghapäśahrdaya	Amoghapāśahrdaya	B	sanskrit_char_normalize	0	pa’i säin-po, skt. Amoghapäśahrdaya (Toh
