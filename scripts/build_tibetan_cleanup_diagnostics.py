@@ -265,6 +265,125 @@ REFERENCE_MARKER_PREFIX_TARGETS = {
     "I": "↑",
 }
 
+REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS = {
+    "T": "↑",
+    "I": "↑",
+    "\\": "↑",
+    "/": "↑",
+}
+
+REFERENCE_MARKER_PREFIX_FAMILIES = {
+    "T": "ocr_prefix_T_upward_marker_candidate",
+    "I": "ocr_prefix_I_upward_marker_candidate",
+    "\\": "ocr_prefix_backslash_marker_candidate",
+    "/": "ocr_prefix_slash_marker_candidate",
+}
+
+REFERENCE_MARKER_WORD_CHARS = (
+    "0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňßı$'’.-"
+)
+REFERENCE_MARKER_TOKEN_RE = re.compile(
+    rf"↑²|[↑↓↟↡↥↧⇧⇩⬆⬇]|[\\/][{REFERENCE_MARKER_WORD_CHARS}]+|[TI][{REFERENCE_MARKER_WORD_CHARS}]+|[\\/TI]"
+)
+REFERENCE_MARKER_NEARBY_TOKEN_RE = re.compile(
+    rf"↑²|[↑↓↟↡↥↧⇧⇩⬆⬇]|[{REFERENCE_MARKER_WORD_CHARS}]+|[\\/TI]"
+)
+REFERENCE_MARKER_ARROW_RE = re.compile(r"↑²|[↑↓↟↡↥↧⇧⇩⬆⬇]")
+UP_ARROW_MARKERS = {"↑", "↑²", "↟", "↥", "⇧", "⬆"}
+DOWN_ARROW_MARKERS = {"↓", "↡", "↧", "⇩", "⬇"}
+ROMAN_NUMERAL_RE = re.compile(r"^[IVXLCDM]+$")
+CROSS_REFERENCE_RE = re.compile(r"\b(?:vgl|cf|siehe|s)\.|\~|[①-⑳]|\b[0-9]+[.)]", re.IGNORECASE)
+REFERENCE_MARKER_CORE_FALSE_POSITIVES = {
+    "Ich",
+    "Im",
+    "In",
+    "Indien",
+    "Ingwer",
+    "Inhalt",
+    "International",
+    "Ist",
+    "Tafel",
+    "Text",
+    "Tibet",
+    "Tib",
+}
+REFERENCE_MARKER_KNOWN_ATTACHED_FORMS = {
+    "bka",
+    "bka'",
+    "chos",
+    "dan",
+    "dge",
+    "dngos",
+    "dṅos",
+    "gan",
+    "gandi",
+    "gani",
+    "ganı",
+    "gnas",
+    "gzugs",
+    "gtsa",
+    "gtsan",
+    "lha",
+    "ldan",
+    "lta",
+    "ltar",
+    "nan",
+    "nas",
+    "pa'i",
+    "ran",
+    "rang",
+    "rgyal",
+    "sgra",
+    "sna",
+    "snan",
+    "snar",
+    "sngar",
+    "tdans",
+    "tsnan",
+    "yan",
+    "yang",
+}
+REFERENCE_MARKER_ATTACHED_ASCII_RE = re.compile(r"^[A-Za-zı'’.-]{2,32}$")
+REFERENCE_MARKER_ATTACHED_DIACRITIC_RE = re.compile(
+    r"[À-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]"
+)
+REFERENCE_MARKER_ATTACHED_NONMARKER_PREFIXES = (
+    "ath",
+    "hang",
+    "hub",
+    "ibet",
+    "llum",
+    "ext",
+    "eil",
+    "eilung",
+    "heorie",
+    "in",
+    "ndien",
+    "ngwer",
+    "nhalt",
+    "nternational",
+    "son",
+    "song",
+)
+REFERENCE_MARKER_ATTACHED_STRONG_CUE_RE = re.compile(
+    r"(?:"
+    r"^|[-'’]"
+    r")("
+    r"bka|bzh|brg|bts|bst|chos|dby|dge|dgo|dng|dpa|dpy|gan|gand|gnas|gny|"
+    r"gts|gz|ld|lha|lt|mch|mgo|mkh|mng|pa'i|rgy|rje|sgra|sgr|sna|sng|snar|"
+    r"spy|spr|tsh|tsn|yan"
+    r")|(?:'[ai])$",
+    re.IGNORECASE,
+)
+REFERENCE_MARKER_WYLIE_CUE_RE = re.compile(
+    r"^(?:"
+    r"ganı?|dan|nan|snan|tsnan|sna|dngos|dṅos|gnas|chos|rgyal|bka'|bka|dge|lha|"
+    r"ltar|lta|ldan|rang|ran|yang|yan|gtsan|gtsa|sngar|snar|pa'i|kyi|gi|gis|nas|"
+    r".*(?:kh|tsh|ts|ph|th|dz|rdz|rgy|bzh|gz|mkh|dng|gny|gñ|mng|mṅ|ng|ṅ|ny|ñ).*"
+    r")$",
+    re.IGNORECASE,
+)
+
 
 def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, str] | None:
     source = latin_n_source_for_ng_target(target)
@@ -353,6 +472,195 @@ def classify_tibetan_initial_i_token(token: str, context: str) -> dict[str, str]
 
 def ref(volume: str, page: str | int, line: str | int) -> str:
     return f"{volume}:{page}:{line}"
+
+
+def bool_text(value: bool) -> str:
+    return "1" if value else "0"
+
+
+def load_line_zones(run_dir: Path) -> dict[tuple[str, str], dict[str, str]]:
+    path = find_one(run_dir, "_line_zones.tsv")
+    if not path:
+        return {}
+    rows: dict[tuple[str, str], dict[str, str]] = {}
+    for row in read_tsv(path):
+        page = str(row.get("page", "")).strip()
+        line = str(row.get("line", "")).strip()
+        if page and line:
+            rows[(page, line)] = row
+    return rows
+
+
+def normalized_attached_marker_token(token: str) -> str:
+    return stripped_token(token).replace("ı", "i")
+
+
+def reference_marker_context_flags(context: str, zone_row: dict[str, str] | None) -> dict[str, str]:
+    zone = zone_row or {}
+    line_text = norm_text(context)
+    headword_latin = norm_text(zone.get("headword_latin", ""))
+    zone_name = zone.get("zone", "")
+    translit_count = int(zone.get("translit_token_count") or 0)
+    near_tibetan_script = bool(TIBETAN_SCRIPT_RE.search(line_text))
+    near_transliteration = bool(
+        translit_count
+        or is_tibetan_context(line_text)
+        or REFERENCE_MARKER_WYLIE_CUE_RE.search(line_text)
+    )
+    near_vgl = bool(CROSS_REFERENCE_RE.search(line_text))
+    near_headword = bool(
+        zone_name == "headword_latin"
+        or (headword_latin and headword_latin in line_text)
+    )
+    return {
+        "zone": zone_name,
+        "near_tibetan_script": bool_text(near_tibetan_script),
+        "near_transliteration": bool_text(near_transliteration),
+        "near_vgl": bool_text(near_vgl),
+        "near_headword": bool_text(near_headword),
+    }
+
+
+def reference_marker_context_type(row: dict[str, str]) -> str:
+    parts: list[str] = []
+    if row.get("near_headword") == "1":
+        parts.append("headword")
+    if row.get("near_vgl") == "1":
+        parts.append("cross_reference")
+    if row.get("near_tibetan_script") == "1":
+        parts.append("tibetan_script")
+    if row.get("near_transliteration") == "1":
+        parts.append("transliteration")
+    return "+".join(parts) if parts else "other"
+
+
+def looks_like_reference_marker_attached_wylie(token: str, context: str) -> bool:
+    clean = stripped_token(token)
+    if not clean:
+        return False
+    folded = normalized_attached_marker_token(clean)
+    folded_lower = folded.lower()
+    if len(folded) > 32 or folded in REFERENCE_MARKER_CORE_FALSE_POSITIVES:
+        return False
+    if ROMAN_NUMERAL_RE.fullmatch(folded) or re.search(r"\d", folded):
+        return False
+    if folded_lower in REFERENCE_MARKER_KNOWN_ATTACHED_FORMS:
+        return True
+    if not is_tibetan_context(context) and not TIBETAN_SCRIPT_RE.search(context):
+        return False
+    if not REFERENCE_MARKER_ATTACHED_ASCII_RE.fullmatch(folded):
+        return False
+    if REFERENCE_MARKER_ATTACHED_DIACRITIC_RE.search(folded):
+        return False
+    if folded != folded_lower:
+        return False
+    if folded_lower.startswith(("a", "e", "i", "o", "u")):
+        return False
+    if folded_lower.startswith(REFERENCE_MARKER_ATTACHED_NONMARKER_PREFIXES):
+        return False
+    if SANSKRIT_CONTEXT_RE.search(context) and SANSKRIT_DIACRITIC_RE.search(folded):
+        return False
+    return bool(REFERENCE_MARKER_ATTACHED_STRONG_CUE_RE.search(folded_lower))
+
+
+def reference_marker_false_positive_note(
+    token: str,
+    context: str,
+    registry: dict[str, list[SiglumEntry]],
+) -> str:
+    clean = stripped_token(token)
+    if clean in REFERENCE_MARKER_CORE_FALSE_POSITIVES:
+        return "German prose/control token, not a reference-marker candidate."
+    if ROMAN_NUMERAL_RE.fullmatch(clean):
+        return "Roman numeral/control token, not a reference-marker candidate."
+    if classify_siglum_token(clean, context, registry):
+        return "Registered siglum/control token, not a reference-marker candidate."
+    return ""
+
+
+def next_reference_marker_context_token(line: str, end_pos: int) -> str:
+    match = REFERENCE_MARKER_NEARBY_TOKEN_RE.search(line, end_pos)
+    return stripped_token(match.group(0)) if match else ""
+
+
+def classify_reference_marker_token(
+    token: str,
+    next_token: str,
+    context: str,
+    zone_row: dict[str, str] | None,
+    registry: dict[str, list[SiglumEntry]],
+) -> dict[str, str] | None:
+    clean = stripped_token(token)
+    if not clean:
+        return None
+    flags = reference_marker_context_flags(context, zone_row)
+    has_relevant_context = any(
+        flags[key] == "1"
+        for key in ["near_tibetan_script", "near_transliteration", "near_vgl", "near_headword"]
+    )
+
+    if REFERENCE_MARKER_ARROW_RE.fullmatch(clean):
+        direction = "downward" if clean in DOWN_ARROW_MARKERS else "upward" if clean in UP_ARROW_MARKERS else "unknown"
+        attached_token = next_token if looks_like_reference_marker_attached_wylie(next_token, context) else ""
+        family = (
+            "actual_downward_marker"
+            if direction == "downward"
+            else "actual_upward_marker"
+            if direction == "upward"
+            else "possible_downward_marker_candidate"
+        )
+        return {
+            "suspected_marker_source": clean,
+            "suspected_marker_target": clean,
+            "suspected_direction": direction,
+            "attached_token": attached_token,
+            "normalized_attached_token_candidate": normalized_attached_marker_token(attached_token),
+            **flags,
+            "candidate_family": family,
+            "confidence": "control",
+            "suggested_action": "already_normalized",
+            "notes": "Existing Unicode reference marker; included as a diagnostic control.",
+        }
+
+    prefix = clean[:1]
+    if prefix in REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS and len(clean) > 1:
+        attached_token = clean[1:]
+        false_positive_note = reference_marker_false_positive_note(clean, context, registry)
+        if false_positive_note:
+            return None
+        if looks_like_reference_marker_attached_wylie(attached_token, context) and has_relevant_context:
+            return {
+                "suspected_marker_source": prefix,
+                "suspected_marker_target": REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS[prefix],
+                "suspected_direction": "upward",
+                "attached_token": attached_token,
+                "normalized_attached_token_candidate": normalized_attached_marker_token(attached_token),
+                **flags,
+                "candidate_family": REFERENCE_MARKER_PREFIX_FAMILIES[prefix],
+                "confidence": "high" if flags["near_tibetan_script"] == "1" or flags["near_headword"] == "1" else "medium",
+                "suggested_action": "source_image_review_needed",
+                "notes": "Likely OCR substitute for an upward reference marker before Wylie-looking text; exact correction requires source-image review.",
+            }
+        return None
+
+    if clean in REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS and has_relevant_context:
+        false_positive_note = reference_marker_false_positive_note(clean, context, registry)
+        if false_positive_note:
+            return None
+        if looks_like_reference_marker_attached_wylie(next_token, context):
+            return {
+                "suspected_marker_source": clean,
+                "suspected_marker_target": REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS[clean],
+                "suspected_direction": "upward",
+                "attached_token": next_token,
+                "normalized_attached_token_candidate": normalized_attached_marker_token(next_token),
+                **flags,
+                "candidate_family": "standalone_marker_candidate",
+                "confidence": "medium",
+                "suggested_action": "source_image_review_needed",
+                "notes": "Standalone marker-like glyph near Wylie-looking text; exact correction requires source-image review.",
+            }
+    return None
 
 
 def classify_tibetan_token(token: str, context: str) -> dict[str, str] | None:
@@ -648,6 +956,114 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
     return rows
 
 
+def build_reference_marker_candidates(
+    run_dir: Path,
+    volume: str,
+    registry: dict[str, list[SiglumEntry]],
+) -> list[dict[str, str]]:
+    corrected = find_one(run_dir, "_corrected_full.txt")
+    if not corrected:
+        return []
+    zones = load_line_zones(run_dir)
+    rows: list[dict[str, str]] = []
+    for page, line_no, line in iter_corrected_lines(corrected):
+        if not line:
+            continue
+        matches = list(REFERENCE_MARKER_TOKEN_RE.finditer(line))
+        for token_index, match in enumerate(matches, start=1):
+            tok = stripped_token(match.group(0))
+            next_tok = next_reference_marker_context_token(line, match.end())
+            token_class = classify_reference_marker_token(
+                tok,
+                next_tok,
+                line,
+                zones.get((str(page), str(line_no))),
+                registry,
+            )
+            if not token_class:
+                continue
+            rows.append(
+                {
+                    "volume": volume,
+                    "page": str(page),
+                    "line": str(line_no),
+                    "token_index": str(token_index),
+                    "source_file": corrected.name,
+                    "source_queue": "corrected_text_scan",
+                    "source_token": tok,
+                    **token_class,
+                    "context_excerpt": line,
+                }
+            )
+    return rows
+
+
+def build_reference_marker_token_families(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    groups: dict[tuple[str, ...], dict[str, object]] = {}
+    for row in rows:
+        context_type = reference_marker_context_type(row)
+        key = (
+            row.get("candidate_family", ""),
+            row.get("suspected_marker_source", ""),
+            row.get("suspected_marker_target", ""),
+            row.get("suspected_direction", ""),
+            row.get("attached_token", ""),
+            row.get("normalized_attached_token_candidate", ""),
+            context_type,
+            row.get("suggested_action", ""),
+            row.get("confidence", ""),
+        )
+        stats = groups.setdefault(
+            key,
+            {
+                "count": 0,
+                "volumes": set(),
+                "refs": [],
+                "contexts": [],
+                "notes": Counter(),
+            },
+        )
+        stats["count"] = int(stats["count"]) + 1
+        cast_set = stats["volumes"]
+        if isinstance(cast_set, set):
+            cast_set.add(row.get("volume", ""))
+        cast_refs = stats["refs"]
+        if isinstance(cast_refs, list) and len(cast_refs) < 8:
+            cast_refs.append(ref(row.get("volume", ""), row.get("page", ""), row.get("line", "")))
+        cast_contexts = stats["contexts"]
+        if isinstance(cast_contexts, list) and len(cast_contexts) < 3:
+            cast_contexts.append(row.get("context_excerpt", ""))
+        cast_notes = stats["notes"]
+        if isinstance(cast_notes, Counter):
+            cast_notes[row.get("notes", "")] += 1
+
+    family_rows: list[dict[str, str]] = []
+    for key, stats in sorted(groups.items(), key=lambda item: (-int(item[1]["count"]), item[0])):
+        notes = stats["notes"] if isinstance(stats["notes"], Counter) else Counter()
+        volumes = stats["volumes"] if isinstance(stats["volumes"], set) else set()
+        refs = stats["refs"] if isinstance(stats["refs"], list) else []
+        contexts = stats["contexts"] if isinstance(stats["contexts"], list) else []
+        family_rows.append(
+            {
+                "candidate_family": key[0],
+                "suspected_marker_source": key[1],
+                "suspected_marker_target": key[2],
+                "suspected_direction": key[3],
+                "attached_token": key[4],
+                "normalized_attached_token_candidate": key[5],
+                "context_type": key[6],
+                "suggested_action": key[7],
+                "confidence": key[8],
+                "count": str(stats["count"]),
+                "volume_count": str(len({v for v in volumes if v})),
+                "sample_refs": ";".join(str(v) for v in refs),
+                "sample_contexts": " || ".join(str(v) for v in contexts),
+                "notes": "; ".join(note for note, _count in notes.most_common(3) if note),
+            }
+        )
+    return family_rows
+
+
 def build_initial_i_candidates(run_dir: Path, volume: str, registry: dict[str, list[SiglumEntry]]) -> list[dict[str, str]]:
     corrected = find_one(run_dir, "_corrected_full.txt")
     if not corrected:
@@ -933,6 +1349,7 @@ def write_summary(out_dir: Path, counts: dict[str, int], family_rows: list[dict[
             "- `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.",
             "- `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.",
             "- `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.",
+            "- `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\\`) near Tibetan/Wylie contexts. It is diagnostic only; it is not a broad marker-normalisation rule.",
             "- `sigla_variant_candidates.tsv` separates bibliography/siglum policy cases from Tibetan and Sanskrit normalisation.",
             "- `residual_sanskrit_low_confidence_candidates.tsv` is a small exploratory queue for Sanskrit-like residue outside the previous Sanskrit watch list.",
             "- Promotion should happen only in a later audited batch, using exact tokens and context gates.",
@@ -955,6 +1372,7 @@ def main() -> None:
     google_rows: list[dict[str, str]] = []
     orthography_rows: list[dict[str, str]] = []
     script_ng_rows: list[dict[str, str]] = []
+    reference_marker_rows: list[dict[str, str]] = []
     initial_i_rows: list[dict[str, str]] = []
     sigla_rows: list[dict[str, str]] = []
     sanskrit_rows: list[dict[str, str]] = []
@@ -965,6 +1383,7 @@ def main() -> None:
         google_rows.extend(build_google_candidates(run, volume, registry))
         orthography_rows.extend(build_orthography_candidates(run, volume, registry))
         script_ng_rows.extend(build_script_ng_witness_candidates(run, volume))
+        reference_marker_rows.extend(build_reference_marker_candidates(run, volume, registry))
         initial_i_rows.extend(build_initial_i_candidates(run, volume, registry))
         sigla_rows.extend(build_sigla_candidates(run, volume, registry))
         sanskrit_rows.extend(build_sanskrit_low_confidence(run, volume))
@@ -1028,6 +1447,30 @@ def main() -> None:
         "score",
         "score_explanation",
     ]
+    reference_marker_fields = [
+        "volume",
+        "page",
+        "line",
+        "token_index",
+        "source_file",
+        "source_queue",
+        "source_token",
+        "suspected_marker_source",
+        "suspected_marker_target",
+        "suspected_direction",
+        "attached_token",
+        "normalized_attached_token_candidate",
+        "context_excerpt",
+        "zone",
+        "near_tibetan_script",
+        "near_transliteration",
+        "near_vgl",
+        "near_headword",
+        "candidate_family",
+        "confidence",
+        "suggested_action",
+        "notes",
+    ]
     initial_i_fields = [
         "source_queue",
         "volume",
@@ -1084,6 +1527,22 @@ def main() -> None:
         "confidence_summary",
         "suggested_action",
     ]
+    reference_marker_family_fields = [
+        "candidate_family",
+        "suspected_marker_source",
+        "suspected_marker_target",
+        "suspected_direction",
+        "attached_token",
+        "normalized_attached_token_candidate",
+        "context_type",
+        "suggested_action",
+        "confidence",
+        "count",
+        "volume_count",
+        "sample_refs",
+        "sample_contexts",
+        "notes",
+    ]
     adoption_fields = [
         "reason",
         "base_token",
@@ -1095,9 +1554,16 @@ def main() -> None:
     ]
 
     family_rows = build_variant_families(google_rows + orthography_rows + script_ng_rows + initial_i_rows + sigla_rows)
+    reference_marker_family_rows = build_reference_marker_token_families(reference_marker_rows)
     write_tsv(out_dir / "tibetan_google_candidate_readings.tsv", google_rows, google_fields)
     write_tsv(out_dir / "tibetan_orthography_damage_candidates.tsv", orthography_rows, orthography_fields)
     write_tsv(out_dir / "tibetan_script_ng_witness_candidates.tsv", script_ng_rows, script_ng_fields)
+    write_tsv(out_dir / "reference_marker_candidates.tsv", reference_marker_rows, reference_marker_fields)
+    write_tsv(
+        out_dir / "reference_marker_token_families.tsv",
+        reference_marker_family_rows,
+        reference_marker_family_fields,
+    )
     write_tsv(out_dir / "tibetan_initial_i_residual_candidates.tsv", initial_i_rows, initial_i_fields)
     write_tsv(out_dir / "sigla_variant_candidates.tsv", sigla_rows, sigla_fields)
     write_tsv(out_dir / "residual_sanskrit_low_confidence_candidates.tsv", sanskrit_rows, sanskrit_fields)
@@ -1110,6 +1576,8 @@ def main() -> None:
             "tibetan_google_candidate_readings.tsv": len(google_rows),
             "tibetan_orthography_damage_candidates.tsv": len(orthography_rows),
             "tibetan_script_ng_witness_candidates.tsv": len(script_ng_rows),
+            "reference_marker_candidates.tsv": len(reference_marker_rows),
+            "reference_marker_token_families.tsv": len(reference_marker_family_rows),
             "tibetan_initial_i_residual_candidates.tsv": len(initial_i_rows),
             "sigla_variant_candidates.tsv": len(sigla_rows),
             "residual_sanskrit_low_confidence_candidates.tsv": len(sanskrit_rows),

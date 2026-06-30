@@ -237,6 +237,7 @@ def read_release_stats() -> ReleaseStats:
             "script_ng_witness_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_script_ng_witness_candidates.tsv"
             ),
+            "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
             ),
@@ -370,6 +371,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     final_ng_residual = residual_chars(stats, "ñńň")
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
+    reference_marker_residual = total(stats, "reference_marker_candidates")
     sanskrit_low_confidence_residual = total(stats, "sanskrit_low_confidence_candidates")
     dngos_exact_residual = total(stats, "dngos_family_exact_orthography_candidates")
     dngos_google_witness_residual = total(stats, "dngos_family_google_witness_candidates")
@@ -493,6 +495,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             script_ng_witness_residual,
             "broad ń->ṅ;broad n->ṅ;broad T/I/\\->↑ marker rule;unverified witness-only contexts",
             "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual; marker-attached rows remain in this queue after reference-marker separation.",
+        ),
+        row(
+            "reference_marker_diagnostics",
+            "reference_marker",
+            "T/I/slash/backslash/actual arrows near Tibetan/Wylie context",
+            "↑/↓ reference markers",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "none",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
+            0,
+            reference_marker_residual,
+            "broad T->↑;broad I->↑;broad /->↑;broad \\->↑;broad n->ṅ",
+            "Diagnostic inventory for actual markers and likely OCR substitutes; exact corrections require source-image page-line-token review.",
         ),
         row(
             "dngos_exact_dnos_to_dngos",
@@ -1025,6 +1043,7 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
     initial_i_residual = residual_bucket(stats, "initial_confusable_I")
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     final_ng_residual = residual_chars(stats, "ñńň")
+    reference_marker_residual = total(stats, "reference_marker_candidates")
     dngos_blocked_wrong_nasal = total(stats, "dngos_family_blocked_wrong_nasal_witness")
     dngos_context_diagnostic = total(stats, "dngos_family_context_diagnostic_candidates")
     return [
@@ -1103,6 +1122,14 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "diagnostic only",
             "Review witness rows; separate reference markers first, then promote only exact accepted cases.",
             f'{per_volume_count_text(stats, "script_ng_witness_candidates")}; marker-attached rows remain part of this queue.',
+        ],
+        [
+            "Reference-marker OCR diagnostics",
+            reference_marker_residual,
+            "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
+            "diagnostic only",
+            "Source-image review likely marker rows; do not apply broad T/I/slash/backslash -> ↑.",
+            f'{per_volume_count_text(stats, "reference_marker_candidates")}; actual ↑/↓ rows are controls, not correction evidence.',
         ],
         [
             "Formal Sanskrit source-check queue",
@@ -1188,6 +1215,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     )
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
+    reference_marker_residual = total(stats, "reference_marker_candidates")
     initial_i_exact_sentence = (
         "The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes."
         if initial_i_exact_residual == 0
@@ -1258,6 +1286,8 @@ The initial-`I` family is intentionally mixed:
 
 The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
 
+Reference-marker diagnostics are diagnostic only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan/Wylie contexts. No broad marker normalisation rule exists; exact changes require source-image page-line-token review.
+
 Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
 
 Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. Validator-only rows are diagnostics, not correction evidence.
@@ -1272,13 +1302,14 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
-2. Review siglum policy candidates separately from Tibetan lexical corrections.
-3. Review the script-ng witness diagnostic queue.
-4. Review formal Sanskrit source-check suggestions.
-5. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
-6. Treat validator-only rows as diagnostics, not correction evidence.
-7. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
+1. Review reference-marker OCR diagnostics and promote only source-confirmed exact page/line/token rows; keep broad marker rules forbidden.
+2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
+3. Review siglum policy candidates separately from Tibetan lexical corrections.
+4. Review the script-ng witness diagnostic queue after marker separation.
+5. Review formal Sanskrit source-check suggestions.
+6. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
+7. Treat validator-only rows as diagnostics, not correction evidence.
+8. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
 """
 
 

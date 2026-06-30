@@ -192,6 +192,44 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         )
         self.assertIsNone(diag.classify_tibetan_script_ng_token("gan", "German gan dan without script"))
 
+    def test_reference_marker_diagnostic_classifies_actual_and_prefixed_markers(self) -> None:
+        with TemporaryDirectory() as tmp:
+            run_dir = Path(tmp)
+            (run_dir / "fake_corrected_full.txt").write_text(
+                "གང་ ↑ gan Tgan Igan /gan \\gan Tganı vgl. bka'\n",
+                encoding="utf-8",
+            )
+
+            rows = diag.build_reference_marker_candidates(run_dir, "fake", self.registry)
+
+        by_token = {row["source_token"]: row for row in rows}
+        for token in ["↑", "Tgan", "Igan", "/gan", "\\gan", "Tganı"]:
+            with self.subTest(token=token):
+                self.assertIn(token, by_token)
+        self.assertEqual(by_token["↑"]["candidate_family"], "actual_upward_marker")
+        self.assertEqual(by_token["↑"]["suggested_action"], "already_normalized")
+        self.assertEqual(by_token["↑"]["attached_token"], "gan")
+        self.assertEqual(by_token["Tgan"]["candidate_family"], "ocr_prefix_T_upward_marker_candidate")
+        self.assertEqual(by_token["Igan"]["candidate_family"], "ocr_prefix_I_upward_marker_candidate")
+        self.assertEqual(by_token["/gan"]["candidate_family"], "ocr_prefix_slash_marker_candidate")
+        self.assertEqual(by_token["\\gan"]["candidate_family"], "ocr_prefix_backslash_marker_candidate")
+        self.assertEqual(by_token["Tganı"]["normalized_attached_token_candidate"], "gani")
+        self.assertEqual(by_token["Tgan"]["suggested_action"], "source_image_review_needed")
+
+        families = diag.build_reference_marker_token_families(rows)
+        self.assertTrue(any(row["suspected_marker_source"] == "/" for row in families))
+
+    def test_reference_marker_controls_are_not_promotion_candidates(self) -> None:
+        info = diag.classify_reference_marker_token(
+            "International",
+            "",
+            "International Inhalt der Text",
+            None,
+            self.registry,
+        )
+
+        self.assertIsNone(info)
+
     def test_initial_i_residual_forms_are_exact_candidates_in_tibetan_context(self) -> None:
         context = "Tib. lta ltas ltar ldan lha lṅa lus lkog lpags bka' la'i"
         examples = {

@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-06-30T15:19:08Z`
-Source/code commit observed while building this bundle: `40bedf133fee70c6d57ef21fad1008923a53aced`
+Generated UTC: `2026-06-30T21:43:19Z`
+Source/code commit observed while building this bundle: `021e2fd4316e350a47d6cc62d6fbd8335888ccfb`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -44,6 +44,8 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_1_34/bucket_report.artifact_tokens.tsv`
 - `qa/wts_1_34/bucket_report.summary.md`
 - `qa/wts_1_34/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_1_34/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
+- `qa/wts_1_34/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/summary.md`
@@ -67,6 +69,8 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_35_51/bucket_report.artifact_tokens.tsv`
 - `qa/wts_35_51/bucket_report.summary.md`
 - `qa/wts_35_51/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_35_51/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
+- `qa/wts_35_51/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/summary.md`
@@ -90,6 +94,8 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_8_b/bucket_report.artifact_tokens.tsv`
 - `qa/wts_8_b/bucket_report.summary.md`
 - `qa/wts_8_b/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_8_b/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
+- `qa/wts_8_b/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/summary.md`
@@ -113,6 +119,8 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_9_m/bucket_report.artifact_tokens.tsv`
 - `qa/wts_9_m/bucket_report.summary.md`
 - `qa/wts_9_m/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_9_m/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
+- `qa/wts_9_m/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/summary.md`
