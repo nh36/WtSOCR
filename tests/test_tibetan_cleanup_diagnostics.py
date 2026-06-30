@@ -152,21 +152,38 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         gan = cast(dict[str, str], gan)
         dan = cast(dict[str, str], dan)
         self.assertEqual(gan["proposed_target"], "gaṅ")
+        self.assertEqual(gan["reference_marker_source"], "")
+        self.assertEqual(gan["reference_marker_target"], "")
+        self.assertEqual(gan["base_source_token"], "gan")
+        self.assertEqual(gan["base_proposed_target"], "gaṅ")
         self.assertEqual(gan["tibetan_witness"], "གང")
         self.assertEqual(dan["proposed_target"], "daṅ")
         self.assertEqual(dan["tibetan_witness"], "དང")
 
     def test_tibetan_script_ng_witness_handles_prefixed_t_and_suppresses_unwitnessed(self) -> None:
-        line = "གང་དང་གང་ gan dan gan Tgan Igan gan."
+        line = "གང་དང་གང་ gan dan gan Tgan Igan \\gan gan."
         tgan = diag.classify_tibetan_script_ng_token("Tgan", line)
         igan = diag.classify_tibetan_script_ng_token("Igan", line)
+        slash_gan = diag.classify_tibetan_script_ng_token("\\gan", line)
 
         self.assertIsNotNone(tgan)
         tgan = cast(dict[str, str], tgan)
-        self.assertEqual(tgan["proposed_target"], "Tgaṅ")
+        self.assertEqual(tgan["proposed_target"], "↑ gaṅ")
+        self.assertEqual(tgan["reference_marker_source"], "T")
+        self.assertEqual(tgan["reference_marker_target"], "↑")
+        self.assertEqual(tgan["base_source_token"], "gan")
+        self.assertEqual(tgan["base_proposed_target"], "gaṅ")
+        self.assertEqual(tgan["evidence"], "tibetan_script_witness_with_reference_marker")
         self.assertIsNotNone(igan)
         igan = cast(dict[str, str], igan)
-        self.assertEqual(igan["proposed_target"], "Igaṅ")
+        self.assertEqual(igan["proposed_target"], "↑ gaṅ")
+        self.assertEqual(igan["reference_marker_source"], "I")
+        self.assertEqual(igan["reference_marker_target"], "↑")
+        self.assertIsNotNone(slash_gan)
+        slash_gan = cast(dict[str, str], slash_gan)
+        self.assertEqual(slash_gan["proposed_target"], "↑ gaṅ")
+        self.assertEqual(slash_gan["reference_marker_source"], "\\")
+        self.assertEqual(slash_gan["reference_marker_target"], "↑")
         self.assertIsNone(
             diag.classify_tibetan_script_ng_token(
                 "ldan",

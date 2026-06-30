@@ -4572,12 +4572,23 @@ def apply_reviewed_tibetan_exact_normalizations(
             for token_index, (token, start, end) in enumerate(
                 extract_alternate_witness_tokens(line), start=1
             ):
+                match_token = token
+                match_end = end
                 match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
-                    (label_key, page_idx, line_idx, token_index, token)
+                    (label_key, page_idx, line_idx, token_index, match_token)
                 )
+                if not match and line[end : end + 1] == "ı":
+                    extended_token = f"{token}ı"
+                    extended_match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
+                        (label_key, page_idx, line_idx, token_index, extended_token)
+                    )
+                    if extended_match:
+                        match = extended_match
+                        match_token = extended_token
+                        match_end = end + 1
                 if match:
                     to_token, reason = match
-                    replacements.append((start, end, token, to_token, reason))
+                    replacements.append((start, match_end, match_token, to_token, reason))
             if not replacements:
                 continue
 

@@ -491,8 +491,8 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv",
             0,
             script_ng_witness_residual,
-            "broad ń->ṅ;broad n->ṅ;unverified witness-only contexts",
-            "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual.",
+            "broad ń->ṅ;broad n->ṅ;broad T/I/\\->↑ marker rule;unverified witness-only contexts",
+            "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual; marker-attached rows remain in this queue after reference-marker separation.",
         ),
         row(
             "dngos_exact_dnos_to_dngos",
@@ -1101,8 +1101,8 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             total(stats, "script_ng_witness_candidates"),
             "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv",
             "diagnostic only",
-            "Review witness rows; promote only exact accepted cases.",
-            per_volume_count_text(stats, "script_ng_witness_candidates"),
+            "Review witness rows; separate reference markers first, then promote only exact accepted cases.",
+            f'{per_volume_count_text(stats, "script_ng_witness_candidates")}; marker-attached rows remain part of this queue.',
         ],
         [
             "Formal Sanskrit source-check queue",
@@ -1255,7 +1255,7 @@ The initial-`I` family is intentionally mixed:
 - Reviewed exact Initial-I/l rows have been applied, including forms such as `Ina -> lṅa`, `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
 - No generic `I -> l` rule exists, and no global unconstrained `Itar -> ltar` rule exists.
 
-The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current 6-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). The witness queue is diagnostic only until reviewed exact rows are accepted.
+The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
 
 Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
 

@@ -259,13 +259,42 @@ def latin_n_source_for_ng_target(target: str) -> str:
     return target.replace("ṅ", "n").replace("Ṅ", "N")
 
 
-def candidate_target_for_ng_witness_token(token: str, target: str) -> str | None:
+REFERENCE_MARKER_PREFIX_TARGETS = {
+    "T": "↑",
+    "\\": "↑",
+    "I": "↑",
+}
+
+
+def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, str] | None:
     source = latin_n_source_for_ng_target(target)
     if token == source:
-        return target
-    for prefix in ("T", "\\", "I"):
+        return {
+            "proposed_target": target,
+            "reference_marker_source": "",
+            "reference_marker_target": "",
+            "base_source_token": source,
+            "base_proposed_target": target,
+            "evidence": "tibetan_script_witness",
+            "score_explanation": (
+                "Latin n conflicts with same-line Tibetan-script ང witness; "
+                "review exact rows rather than applying a broad n->ṅ rule."
+            ),
+        }
+    for prefix, marker in REFERENCE_MARKER_PREFIX_TARGETS.items():
         if token.startswith(prefix) and token[len(prefix) :] == source:
-            return f"{prefix}{target}"
+            return {
+                "proposed_target": f"{marker} {target}",
+                "reference_marker_source": prefix,
+                "reference_marker_target": marker,
+                "base_source_token": source,
+                "base_proposed_target": target,
+                "evidence": "tibetan_script_witness_with_reference_marker",
+                "score_explanation": (
+                    "OCR reference-marker prefix is separated before exact n->ṅ review; "
+                    "review exact rows rather than applying a broad marker or n->ṅ rule."
+                ),
+            }
     return None
 
 
@@ -279,19 +308,20 @@ def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str]
         if tibetan_witness not in context:
             continue
         proposed = candidate_target_for_ng_witness_token(clean, target)
-        if proposed and proposed != clean:
+        if proposed and proposed["proposed_target"] != clean:
             return {
                 "candidate_family": "tibetan_script_ng_witness",
-                "proposed_target": proposed,
+                "proposed_target": proposed["proposed_target"],
+                "reference_marker_source": proposed["reference_marker_source"],
+                "reference_marker_target": proposed["reference_marker_target"],
+                "base_source_token": proposed["base_source_token"],
+                "base_proposed_target": proposed["base_proposed_target"],
                 "tibetan_witness": tibetan_witness,
-                "evidence": "tibetan_script_witness",
+                "evidence": proposed["evidence"],
                 "confidence": "high",
                 "suggested_action": "exact_promotion_candidate",
                 "score": "98",
-                "score_explanation": (
-                    "Latin n conflicts with same-line Tibetan-script ང witness; "
-                    "review exact rows rather than applying a broad n->ṅ rule."
-                ),
+                "score_explanation": proposed["score_explanation"],
             }
     return None
 
@@ -601,6 +631,10 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
                     "token_index": str(token_index),
                     "source_token": tok,
                     "proposed_target": token_class["proposed_target"],
+                    "reference_marker_source": token_class["reference_marker_source"],
+                    "reference_marker_target": token_class["reference_marker_target"],
+                    "base_source_token": token_class["base_source_token"],
+                    "base_proposed_target": token_class["base_proposed_target"],
                     "tibetan_witness": token_class["tibetan_witness"],
                     "candidate_family": token_class["candidate_family"],
                     "context_excerpt": line,
@@ -981,6 +1015,10 @@ def main() -> None:
         "token_index",
         "source_token",
         "proposed_target",
+        "reference_marker_source",
+        "reference_marker_target",
+        "base_source_token",
+        "base_proposed_target",
         "tibetan_witness",
         "candidate_family",
         "context_excerpt",

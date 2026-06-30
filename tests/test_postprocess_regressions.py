@@ -1470,6 +1470,29 @@ class PostprocessRegressionTests(unittest.TestCase):
             ]
         )
 
+    def test_reviewed_exact_can_consume_keyed_dotless_i_suffix(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (338, 83): "གང་དག་ 4927? dag Tganı 3.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("གང་དག་ 4927? dag ↑ gaṅ 3.", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 1)
+        self.assertEqual(reviewed[0]["from_token"], "Tganı")
+        self.assertEqual(reviewed[0]["to_token"], "↑ gaṅ")
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
     def test_reviewed_script_ng_residual_rows_apply_only_when_reviewed(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {
@@ -1502,7 +1525,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         deferred_text = self.fixture_with_reviewed_lines(
             {
                 (543, 114): "dan 'then",
-                (1111, 20): "a b c d e Tdan",
+                (1111, 21): "a b c d e Tdan",
             }
         )
 
