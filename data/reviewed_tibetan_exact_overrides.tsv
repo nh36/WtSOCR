@@ -4186,3 +4186,4 @@ wts_35_51	969	66	1	dnos	dṅos	reviewed_tibetan_exact_dngos	dngos_family_cleanup
 wts_35_51	978	9	6	dnos	dṅos	reviewed_tibetan_exact_dngos	dngos_family_cleanup_20260630	Exact page-line-token reviewed from current dngos_family diagnostics; no broad dnos-to-dṅos rule.
 wts_35_51	991	83	6	dnos	dṅos	reviewed_tibetan_exact_dngos	dngos_family_cleanup_20260630	Exact page-line-token reviewed from current dngos_family diagnostics; no broad dnos-to-dṅos rule.
 wts_35_51	1064	26	3	dnos	dṅos	reviewed_tibetan_exact_dngos	dngos_family_cleanup_20260630	Exact page-line-token reviewed from current dngos_family diagnostics; no broad dnos-to-dṅos rule.
+wts_1_34	504	23	9	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260630	Exact page-line-token reviewed from current Initial-I/l residual diagnostic; no broad I-to-l or Itar-to-ltar rule.

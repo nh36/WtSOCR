@@ -1,2 +1,1 @@
 source_queue	volume	page	line	token_index	source_token	proposed_target	candidate_family	context_excerpt	evidence	confidence	suggested_action	score	score_explanation
-corrected_text_scan	wts_1_34	504	23	9	Itar	ltar	initial_i_to_l	med pa’i dṅos po rnams kyaṅ dos po Itar ~	language_knowledge	high	exact_promotion_candidate	92	Exact known initial-I/l-family OCR damage in Tibetan context; review exact rows rather than applying a broad I->l rule.

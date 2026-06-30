@@ -16,14 +16,14 @@
   "merge_only": false,
   "non_empty_lines": 178435,
   "pages": 1352,
-  "reviewed_tibetan_exact_changes": 1108,
+  "reviewed_tibetan_exact_changes": 1109,
   "sanskrit_changes": 675,
   "sanskrit_families": 242,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_review_suggestions": 39,
   "stale_review_rows_removed": 21,
   "structural_rewrite_count": 7617,
-  "tier_a_applied": 27138,
+  "tier_a_applied": 27139,
   "tier_b_suggestions": 44,
   "top_tier_a_reasons": [
     [
@@ -56,7 +56,7 @@
     ],
     [
       "reviewed_tibetan_exact_initial_i_l_family",
-      764
+      765
     ],
     [
       "confusable_dollar_to_sacute_shape_safe",
