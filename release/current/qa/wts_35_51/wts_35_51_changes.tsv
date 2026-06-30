@@ -6271,3 +6271,43 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1080	32	5780	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	"ler"", Bez. für Mahäsattva."
 1081	16	5790	german_prose	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	traf den Lehrer Nägärjuna, Äryadeva, Cand-
 1081	27	5790	german_prose_with_translit	arya	ārya	A	sanskrit_high_freq_allowlist	1	"dpon chen po arya de wa ""Äryadeva, der gro-"
+15	4	51	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"seermächtigung der Lehre"" (Tär 5,7); — dnos"
+41	70	182	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"gi dnos po dan ""so etwas wie 'dieser ist mein"
+43	93	186	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	'brel ba yi / dnos po — la'an 'jug pa mthon
+45	29	196	headword_line	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	བདག་གེ་དངོས་པོ bdag gi dnos po.
+45	37	196	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	dnos po.
+47	86	215	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"dnos por bcom ldan ""das kyis la lar gsuns pa"
+48	1	216	headword_line	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	བདག་ཉིད་ཀྱི་དངོས bdag ñid kyi dnos
+48	71	218	headword_line	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	བདག་ཉིད་ཀྱི་དངོས་པོ་ bdag nid kyi dnos po Bez.
+95	37	625	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"wohlgesinnt sind"" (Mil 39,3); zani zin gi dnos"
+96	46	633	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"~~ kyi dnos grub des thob 'gyur (metr.) ""da-"
+113	75	764	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"dnos 027/ — yi ger bkod te ""er legte den wah-"
+186	35	1050	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	(MTH3/3/17 3); dgos pa'i dnos zog gaṅ yin ~
+255	32	1480	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	dman pa'i dnos dan bral 'gyur Zin / gyen du
+281	73	1617	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	min); bsdu ba'i dnos pos sems can thams cad
+318	2	1772	headword_line	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	བསྡུ་དངོས bsdu dnos
+318	54	1777	german_prose	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	dnos Grundlage des Gewin-
+365	27	1870	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	(Prav 85,20); — nad med lons pa yi / dnos
+438	38	2269	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	63,13); gun sa dga(') ldan pho bran — ... dnos
+475	35	2387	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"dnos po ""benötigte Gegenstände"" (brDa);"
+475	36	2387	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"mkho ba'i dnos po dan dkor ""Gebrauchsge-"
+476	64	2396	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. rdzas dnos po la'an (brDa).
+482	35	2435	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. rdzas kyi dnos po (brDa); gter gyi dnos
+482	35	2435	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. rdzas kyi dnos po (brDa); gter gyi dnos
+553	22	2731	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. (777 ba — pa ni dri ba dnos su dran por mi
+594	75	2938	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	rig med / dnos po med cin kun gZi med (metr.)
+596	23	2940	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	tsam gyis / sgrub pos dnos grub thob 'gyur ba
+602	19	2977	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	dnos gZi 2 gzugs med khams kyi 0/7/5 pa'i
+632	13	3126	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"du dnos su ~ ño ""Wunder erscheinen offen-"
+638	62	3167	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	283b6); phyi ~~ kyi dnos po thanis cad dpe char
+669	6	3249	german_prose	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"dnos grub med (metr.) ""es gibt keinen Er-"
+706	92	3478	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"rgan po' dnos —s yid byun ste ""er ist infol-"
+771	72	3940	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"ten] gehalten"" (Suv 27,7); drros po dan dnos"
+783	72	3988	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	— pa' dnos po med pa'am phun por gyur pa
+789	72	4021	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. khan pa'i bzo dbyibs ltar brtsigs pa'i dnos
+807	1	4123	headword_line	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	སྨད་དངོས་ spyad dnos
+855	58	4405	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	la la dnos la la — am thugs rgyud geig par wei
+969	66	5111	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"dnos byon rmam pas — gnani ba la ""sprul sku"
+978	9	5182	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	(Mvup 3.83a); — sun srid kyi dnos po thams
+991	83	5272	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"Garten weilt"" (Megh 70); — gyits} dnos po"
+1064	26	5677	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"65,16); dnos po — de rnams thugs kyis btani ""er"

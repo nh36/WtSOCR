@@ -5,7 +5,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 ## Row Counts
 
 - `tibetan_google_candidate_readings.tsv`: 83
-- `tibetan_orthography_damage_candidates.tsv`: 392
+- `tibetan_orthography_damage_candidates.tsv`: 352
 - `tibetan_script_ng_witness_candidates.tsv`: 3
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 285
@@ -19,7 +19,6 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 |---|---|---|---:|---|
 | dollar_ś | $ (261) | ś (261) | 261 | review |
 | unknown | rol (92) | Rol (92) | 92 | siglum_policy_review |
-| dngos_family | dnos (42) | dṅos (42) | 42 | exact_promotion_candidate |
 | unknown | ins (42) | Ins (42) | 42 | siglum_policy_review |
 | unknown | Lis (33), Li$ (6), lis (3) | Liś (42) | 42 | siglum_policy_review |
 | unknown | VisT (19), ViST (7), VisṬ (1) | ViśT (27) | 27 | siglum_policy_review |
@@ -37,6 +36,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | citation_or_siglum | Tär (4) | Tār (4) | 4 | already_canonical_siglum |
 | loc_nasal_damage | byuñń (4) | byuñṅ (4) | 4 | review |
 | unknown | gZ1 (4) | gZi (4) | 4 | siglum_policy_review |
+| loc_nasal_damage | dbañń (3) | dbañṅ (3) | 3 | review |
 
 ## Top Google Adoption Patterns
 

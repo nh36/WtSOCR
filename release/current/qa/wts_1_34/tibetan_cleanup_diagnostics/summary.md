@@ -5,12 +5,12 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 ## Row Counts
 
 - `tibetan_google_candidate_readings.tsv`: 357
-- `tibetan_orthography_damage_candidates.tsv`: 1801
+- `tibetan_orthography_damage_candidates.tsv`: 1607
 - `tibetan_script_ng_witness_candidates.tsv`: 3
-- `tibetan_initial_i_residual_candidates.tsv`: 0
+- `tibetan_initial_i_residual_candidates.tsv`: 1
 - `sigla_variant_candidates.tsv`: 775
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
-- `tibetan_variant_families.tsv`: 765
+- `tibetan_variant_families.tsv`: 766
 - `tibetan_google_adoption_patterns.tsv`: 633
 
 ## Top Candidate Families
@@ -18,13 +18,13 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | Family | Sources | Targets | Count | Action |
 |---|---|---|---:|---|
 | dollar_ś | $ (902) | ś (902) | 902 | review |
-| dngos_family | dnos (232) | dṅos (232) | 232 | exact_promotion_candidate |
 | unknown | Lis (153), Li$ (42), lis (6) | Liś (201) | 201 | siglum_policy_review |
 | unknown | rol (145) | Rol (145) | 145 | siglum_policy_review |
 | unknown | VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1) | ViśT (98) | 98 | siglum_policy_review |
 | unknown | ins (85), INS (1) | Ins (86) | 86 | siglum_policy_review |
 | unknown | Lsdz-K (33), L$dz-K (13) | Lśdz-K (46) | 46 | siglum_policy_review |
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
+| dngos_family | dnos (38) | dṅos (38) | 38 | exact_promotion_candidate |
 | unknown | gs (24), G$ (3), Gś (2) | Gs (29) | 29 | siglum_policy_review |
 | unknown | gzi (28) | gZi (28) | 28 | siglum_policy_review |
 | unknown | Lsdz (16), L$dz (10) | Lśdz (26) | 26 | siglum_policy_review |

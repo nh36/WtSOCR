@@ -164,6 +164,31 @@ def diagnostic_variant_family_count(path: Path, family: str, source_token: str) 
     return total_count
 
 
+def dngos_exact_orthography_count(path: Path) -> int:
+    return sum(
+        1
+        for row in iter_tsv(path)
+        if (row.get("candidate_family") or "").strip() == "dngos_family"
+        and (row.get("token") or "").strip() == "dnos"
+        and (row.get("proposed_target") or "").strip() == "dṅos"
+    )
+
+
+def dngos_google_witness_count(path: Path, reason: str | None = None) -> int:
+    count = 0
+    for row in iter_tsv(path):
+        if (row.get("candidate_family") or "").strip() != "dngos_family":
+            continue
+        if (row.get("base_token") or "").strip() != "dnos":
+            continue
+        if (row.get("proposed_target") or "").strip() != "dṅos":
+            continue
+        if reason is not None and (row.get("reason") or "").strip() != reason:
+            continue
+        count += 1
+    return count
+
+
 def read_release_stats() -> ReleaseStats:
     generated, source_commit, manifest_volumes = parse_manifest()
     volumes: dict[str, dict[str, int | str]] = {}
@@ -221,7 +246,21 @@ def read_release_stats() -> ReleaseStats:
                 "dngos_family",
                 "dnos",
             ),
+            "dngos_family_exact_orthography_candidates": dngos_exact_orthography_count(
+                diagnostic_dir / "tibetan_orthography_damage_candidates.tsv"
+            ),
+            "dngos_family_google_witness_candidates": dngos_google_witness_count(
+                diagnostic_dir / "tibetan_google_candidate_readings.tsv"
+            ),
+            "dngos_family_blocked_wrong_nasal_witness": dngos_google_witness_count(
+                diagnostic_dir / "tibetan_google_candidate_readings.tsv",
+                "blocked_alternate_witness_wrong_nasal_dnos",
+            ),
         }
+        diagnostic_counts["dngos_family_context_diagnostic_candidates"] = (
+            diagnostic_counts["dngos_family_google_witness_candidates"]
+            - diagnostic_counts["dngos_family_blocked_wrong_nasal_witness"]
+        )
 
         volumes[volume] = {
             "entries": as_int(summary.get("entries_detected")),
@@ -332,6 +371,15 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
     sanskrit_low_confidence_residual = total(stats, "sanskrit_low_confidence_candidates")
+    dngos_exact_residual = total(stats, "dngos_family_exact_orthography_candidates")
+    dngos_google_witness_residual = total(stats, "dngos_family_google_witness_candidates")
+    dngos_blocked_wrong_nasal = total(stats, "dngos_family_blocked_wrong_nasal_witness")
+    dngos_context_diagnostic = total(stats, "dngos_family_context_diagnostic_candidates")
+    initial_i_exact_note = (
+        "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket."
+        if initial_i_exact_residual == 0
+        else f"Current exact Initial-I/l residual diagnostics contain {initial_i_exact_residual} candidate row(s); this is not the broader initial_confusable_I artifact bucket."
+    )
 
     rows = [
         row(
@@ -445,6 +493,29 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             script_ng_witness_residual,
             "broad ń->ṅ;broad n->ṅ;unverified witness-only contexts",
             "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual.",
+        ),
+        row(
+            "dngos_exact_dnos_to_dngos",
+            "final_ng",
+            "dnos",
+            "dṅos",
+            "page_line_token",
+            "partially_applied",
+            pair_volume_text(stats, "dnos", "dṅos"),
+            "reviewed_tibetan_exact_dngos;blocked_alternate_witness_wrong_nasal_dnos",
+            "data/reviewed_tibetan_exact_overrides.tsv;scripts/postprocess_entry_map.py",
+            "release/current/qa/*/*_changes.tsv;release/current/qa/*/tibetan_cleanup_diagnostics",
+            reason_sum(stats, "reviewed_tibetan_exact_dngos"),
+            dngos_exact_residual + dngos_google_witness_residual,
+            "broad dnos->dṅos;broad nasal rule;dnos->dños witness",
+            (
+                "Reviewed exact dnos->dṅos rows are applied by page/line/token; "
+                f"exact orthography diagnostic residual rows={dngos_exact_residual}; "
+                f"remaining witness diagnostics={dngos_google_witness_residual} "
+                f"({dngos_blocked_wrong_nasal} blocked dnos->dños, "
+                f"{dngos_context_diagnostic} context diagnostics). "
+                "No broad dnos->dṅos rule exists."
+            ),
         ),
         row(
             "final_ng_yang",
@@ -588,7 +659,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             0,
             initial_i_exact_residual,
             "initial_confusable_I artifact bucket;German/prose controls",
-            "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket.",
+            initial_i_exact_note,
         ),
         row(
             "initial_I_context_gated_ldan_family",
@@ -604,7 +675,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             reason_sum(stats, "confusable_initial_I_to_l_", "reviewed_tibetan_exact_initial_i_l_family", "confusable_hyphenated_I_to_l_translit"),
             initial_i_residual,
             "Inhalt;Indien;Ich;Ingwer;International",
-            "Initial-I/l exact diagnostics are exhausted, and reviewed rows such as Ina->lṅa, Itar->ltar, Ipags->lpags, Ius->lus, and Ikog->lkog are applied; the broader initial_confusable_I diagnostic bucket remains.",
+            f"{initial_i_exact_note} Reviewed rows such as Ina->lṅa, Itar->ltar, Ipags->lpags, Ius->lus, and Ikog->lkog are applied; the broader initial_confusable_I diagnostic bucket remains.",
         ),
         row(
             "initial_I_Itar_ltar",
@@ -952,15 +1023,22 @@ def per_volume_count_text(stats: ReleaseStats, key: str) -> str:
 def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
     dollar_residual = residual_chars(stats, "$")
     initial_i_residual = residual_bucket(stats, "initial_confusable_I")
+    initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     final_ng_residual = residual_chars(stats, "ñńň")
+    dngos_blocked_wrong_nasal = total(stats, "dngos_family_blocked_wrong_nasal_witness")
+    dngos_context_diagnostic = total(stats, "dngos_family_context_diagnostic_candidates")
     return [
         [
             "Exact Initial-I/l residual diagnostic",
-            total(stats, "initial_i_exact_residual_candidates"),
+            initial_i_exact_residual,
             "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv",
-            "exhausted diagnostic",
-            "No action unless a later release artifact repopulates it.",
-            "Separate from broader initial_confusable_I warnings.",
+            "exhausted diagnostic" if initial_i_exact_residual == 0 else "diagnostic residual",
+            "No action unless a later release artifact repopulates it."
+            if initial_i_exact_residual == 0
+            else "Review only in a dedicated Initial-I pass; do not apply broad I -> l.",
+            "Separate from broader initial_confusable_I warnings."
+            if initial_i_exact_residual == 0
+            else "Exposed by current release diagnostics; not processed in the dngos_family pass.",
         ],
         [
             "initial_confusable_I artifact bucket",
@@ -979,12 +1057,20 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "Includes Ina -> lṅa, Itar -> ltar, Ipags -> lpags, Ius -> lus, and Ikog -> lkog; no global Itar -> ltar.",
         ],
         [
-            "dngos_family dnos -> dṅos candidates",
-            total(stats, "dngos_family_dnos_candidates"),
-            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv",
-            "promote candidate",
-            "Review first in the next cleanup pass.",
-            "High-count exact-promotion candidate family.",
+            "dngos_family exact orthography residual",
+            total(stats, "dngos_family_exact_orthography_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_orthography_damage_candidates.tsv",
+            "exhausted exact queue",
+            "No action unless a later release artifact repopulates it.",
+            "This release promoted reviewed exact dnos -> dṅos rows; no broad rule.",
+        ],
+        [
+            "dngos_family Google-witness diagnostic residual",
+            total(stats, "dngos_family_google_witness_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv",
+            "diagnostic only; broad rule forbidden",
+            "Review only if promoted to exact page/line/token rows; keep dnos -> dños blocked.",
+            f"{dngos_blocked_wrong_nasal} blocked dnos -> dños pairs; {dngos_context_diagnostic} context diagnostics.",
         ],
         [
             "Guarded $ -> ś residuals",
@@ -1100,6 +1186,12 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
         ],
         remaining_work_rows(stats),
     )
+    initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
+    initial_i_exact_sentence = (
+        "The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes."
+        if initial_i_exact_residual == 0
+        else f"The exact Initial-I/l residual diagnostic currently has {initial_i_exact_residual} candidate row(s); keep these for a dedicated Initial-I pass, separate from dngos_family release changes."
+    )
 
     return f"""# WtS OCR Current Status
 
@@ -1158,7 +1250,7 @@ The initial-`I` family is intentionally mixed:
 
 - `Ita`, `Iha`, `Ihan`, `Iho`, and `Itos` are applied by explicit case-sensitive rules.
 - Some initial-`I` forms are corrected by lexicon, marked-context, strong-context, headword, hyphenated, or reviewed exact gates.
-- The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes.
+- {initial_i_exact_sentence}
 - The broader `initial_confusable_I` artifact bucket is not the same thing. It is a warning/diagnostic bucket and may include controls, bibliographic/prose tokens, and unreviewed cases.
 - Reviewed exact Initial-I/l rows have been applied, including forms such as `Ina -> lṅa`, `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
 - No generic `I -> l` rule exists, and no global unconstrained `Itar -> ltar` rule exists.
@@ -1179,13 +1271,13 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review exact `dnos -> dṅos` / `dngos_family` candidates, because they are high-count and appear to be exact-promotion candidates in the diagnostics.
-2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
-3. Review siglum policy candidates separately from Tibetan lexical corrections.
-4. Review the script-ng witness diagnostic queue.
-5. Review formal Sanskrit source-check suggestions.
-6. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
-7. Treat validator-only rows as diagnostics, not correction evidence.
+1. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
+2. Review siglum policy candidates separately from Tibetan lexical corrections.
+3. Review the script-ng witness diagnostic queue.
+4. Review formal Sanskrit source-check suggestions.
+5. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
+6. Treat validator-only rows as diagnostics, not correction evidence.
+7. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
 """
 
 

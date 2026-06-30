@@ -1,49 +1,30 @@
 {
-  "pages": 1352,
-  "total_lines_seen": 240015,
-  "non_empty_lines": 178435,
-  "entries_detected": 13122,
-  "translit_tokens_detected": 303520,
-  "validator_issues": 13259,
-  "uncaptured_tibetan_prefix_lines": 5436,
-  "zone_counts": {
-    "german_prose_with_translit": 83896,
-    "german_prose": 44228,
-    "latin_other": 21000,
-    "other": 9441,
-    "tibetan_latin_mixed": 659,
-    "example_tibetan_latin": 1290,
-    "headword_line": 13122,
-    "tibetan_only": 4799
-  },
-  "structural_rewrite_count": 7617,
-  "google_vision_mode": false,
-  "google_vision_rewrites": 0,
-  "alternate_witness_used": true,
-  "alternate_witness_path": "pdfs/WtS 1-34.vision.txt",
   "alternate_google_vision_mode": true,
-  "merge_only": false,
   "alternate_witness_adoptions": 5470,
+  "alternate_witness_path": "pdfs/WtS 1-34.vision.txt",
   "alternate_witness_unresolved": 3266,
-  "trusted_lexicon_size": 1179,
-  "discovered_patterns": 53,
-  "tier_a_applied": 26944,
-  "tier_b_suggestions": 44,
-  "citation_name_families": 51,
+  "alternate_witness_used": true,
   "citation_name_changes": 2069,
-  "reviewed_tibetan_exact_changes": 914,
-  "sanskrit_families": 242,
-  "sanskrit_promoted_overrides_loaded": 272,
-  "sanskrit_changes": 675,
-  "sanskrit_review_suggestions": 39,
-  "stale_review_rows_removed": 21,
-  "watchdog_flagged_changes": 367,
-  "watchdog_flag_counts": {
-    "high_edit_distance_drift": 367
-  },
+  "citation_name_families": 51,
   "discovered_confidence_counts": {
     "medium": 53
   },
+  "discovered_patterns": 53,
+  "entries_detected": 13122,
+  "google_vision_mode": false,
+  "google_vision_rewrites": 0,
+  "merge_only": false,
+  "non_empty_lines": 178435,
+  "pages": 1352,
+  "reviewed_tibetan_exact_changes": 1108,
+  "sanskrit_changes": 675,
+  "sanskrit_families": 242,
+  "sanskrit_promoted_overrides_loaded": 272,
+  "sanskrit_review_suggestions": 39,
+  "stale_review_rows_removed": 21,
+  "structural_rewrite_count": 7617,
+  "tier_a_applied": 27138,
+  "tier_b_suggestions": 44,
   "top_tier_a_reasons": [
     [
       "structural_german_quote_hyphen_wrap_direct",
@@ -125,5 +106,24 @@
       "confusable_char",
       833
     ]
-  ]
+  ],
+  "total_lines_seen": 240015,
+  "translit_tokens_detected": 303520,
+  "trusted_lexicon_size": 1179,
+  "uncaptured_tibetan_prefix_lines": 5436,
+  "validator_issues": 13259,
+  "watchdog_flag_counts": {
+    "high_edit_distance_drift": 367
+  },
+  "watchdog_flagged_changes": 367,
+  "zone_counts": {
+    "example_tibetan_latin": 1290,
+    "german_prose": 44228,
+    "german_prose_with_translit": 83896,
+    "headword_line": 13122,
+    "latin_other": 21000,
+    "other": 9441,
+    "tibetan_latin_mixed": 659,
+    "tibetan_only": 4799
+  }
 }
