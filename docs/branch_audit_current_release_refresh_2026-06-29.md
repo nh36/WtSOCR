@@ -1,6 +1,6 @@
 # Branch Audit: current-release-refresh
 
-> Historical audit record. This file is not the current to-do list. See `docs/STATUS.md` for the current operational status.
+> Merge-readiness note for `codex-current-release-refresh`. For current OCR/correction status, see `docs/STATUS.md`.
 
 Branch under review: `codex-current-release-refresh`
 
@@ -24,7 +24,7 @@ This branch is not merely documentation. It accepts reviewed OCR/correction chan
 | `237daeb259` | Promote initial-I and script-ng release cleanup | OCR/correction behavior; tests/tooling; release/current regeneration | yes | Promotes reviewed exact/context-gated Initial-I and script-ng cleanup without broad `I -> l` or `n -> ṅ` rules. |
 | `b9e05093c8` | Rebuild current release snapshot | release/current regeneration | yes | Commits the coherent four-volume `release/current` snapshot generated from accepted code and override tables. |
 | `5b86c183cc` | Harden current release status checks | status-check hardening; status/consolidation | yes | Makes `scripts/build_status.py --check` fail on stale generated status, hidden correction families, duplicate IDs, missing release/QA evidence, misleading applied labels, unsafe broad-rule applications, and dirty release/status paths. |
-| current final merge-readiness pass | Clarify current release merge readiness | status/consolidation; documentation/history note | yes | Regenerates current status/ledger from committed release artifacts and refreshes this audit. The exact hash is the branch head reported by `git log main..HEAD` after commit. |
+| `67b1c6d6e8` | Clarify current release merge readiness | status/consolidation; documentation/history note | yes | Clarifies current remaining work, diagnostic queues, Initial-I status, Sanskrit queues, final-ng/script-ng distinction, and merge-readiness status. |
 
 ## Authority Order
 
