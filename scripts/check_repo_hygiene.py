@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import ast
 import fnmatch
+import json
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -54,6 +56,8 @@ PROJECT_LOCAL_IMPORTS = {
     "tests",
 }
 
+ZERO_SHA = "0" * 40
+
 NARRATIVE_REPORT_ERROR = (
     "Do not add new narrative audit/report files by default. "
     "Update data/correction_families.tsv and docs/STATUS.md instead, "
@@ -95,6 +99,56 @@ def find_merge_base() -> tuple[str | None, str | None]:
         if result.returncode == 0 and base:
             return base, ref
     return None, None
+
+
+def current_branch() -> str | None:
+    result = run_git(["branch", "--show-current"])
+    branch = result.stdout.strip()
+    if result.returncode == 0 and branch:
+        return branch
+    return None
+
+
+def is_main_context() -> bool:
+    return (
+        os.environ.get("GITHUB_REF") == "refs/heads/main"
+        or os.environ.get("GITHUB_REF_NAME") == "main"
+        or current_branch() == "main"
+    )
+
+
+def github_main_push_range() -> tuple[str, str] | None:
+    if os.environ.get("GITHUB_EVENT_NAME") != "push":
+        return None
+    if not is_main_context():
+        return None
+    event_path = os.environ.get("GITHUB_EVENT_PATH")
+    if not event_path:
+        return None
+
+    try:
+        event = json.loads(Path(event_path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    if event.get("ref") not in {None, "refs/heads/main"}:
+        return None
+
+    before = event.get("before")
+    after = event.get("after") or os.environ.get("GITHUB_SHA")
+    if not before or not after or before == ZERO_SHA:
+        return None
+    return before, after
+
+
+def local_main_parent_range() -> tuple[str, str] | None:
+    if not is_main_context():
+        return None
+    head = run_git(["rev-parse", "--verify", "HEAD"])
+    parent = run_git(["rev-parse", "--verify", "HEAD^"])
+    if head.returncode == 0 and parent.returncode == 0:
+        return parent.stdout.strip(), head.stdout.strip()
+    return None
 
 
 def parse_name_status(output: str, source: str) -> list[FileChange]:
@@ -143,18 +197,42 @@ def collect_changes() -> tuple[list[FileChange], list[str]]:
     notes: list[str] = []
     used_branch_diff = False
 
-    base, ref = find_merge_base()
-    if base:
-        result = run_git(["diff", "--name-status", f"{base}...HEAD"])
+    github_range = github_main_push_range()
+    local_main_range = None if github_range else local_main_parent_range()
+
+    if github_range:
+        before, after = github_range
+        result = run_git(["diff", "--name-status", f"{before}..{after}"])
         if result.returncode == 0:
-            notes.append(f"Compared branch changes against merge base with {ref}.")
-            for change in parse_name_status(result.stdout, f"{ref} merge-base"):
+            notes.append("Compared main push changes using the GitHub event before/after range.")
+            for change in parse_name_status(result.stdout, "GitHub main push range"):
                 changes[change.path] = change
             used_branch_diff = True
         else:
-            notes.append("Could not read branch diff; falling back to tracked files.")
+            notes.append("Could not read GitHub push range; falling back to tracked files.")
+    elif local_main_range:
+        before, after = local_main_range
+        result = run_git(["diff", "--name-status", f"{before}..{after}"])
+        if result.returncode == 0:
+            notes.append("Compared main changes against HEAD^..HEAD.")
+            for change in parse_name_status(result.stdout, "local main parent range"):
+                changes[change.path] = change
+            used_branch_diff = True
+        else:
+            notes.append("Could not read local main range; falling back to tracked files.")
     else:
-        notes.append("Could not find merge base with main; falling back to tracked files.")
+        base, ref = find_merge_base()
+        if base:
+            result = run_git(["diff", "--name-status", f"{base}...HEAD"])
+            if result.returncode == 0:
+                notes.append(f"Compared branch changes against merge base with {ref}.")
+                for change in parse_name_status(result.stdout, f"{ref} merge-base"):
+                    changes[change.path] = change
+                used_branch_diff = True
+            else:
+                notes.append("Could not read branch diff; falling back to tracked files.")
+        else:
+            notes.append("Could not find merge base with main; falling back to tracked files.")
 
     if not used_branch_diff:
         result = run_git(["ls-files"])
@@ -170,7 +248,6 @@ def collect_changes() -> tuple[list[FileChange], list[str]]:
                 changes[change.path] = change
 
     return sorted(changes.values(), key=lambda item: item.path), notes
-
 
 def matches_any(path: str, patterns: tuple[str, ...]) -> bool:
     return any(fnmatch.fnmatch(path, pattern) for pattern in patterns)
