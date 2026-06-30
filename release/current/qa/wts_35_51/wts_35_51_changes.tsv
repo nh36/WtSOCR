@@ -6311,3 +6311,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 978	9	5182	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	(Mvup 3.83a); — sun srid kyi dnos po thams
 991	83	5272	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"Garten weilt"" (Megh 70); — gyits} dnos po"
 1064	26	5677	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"65,16); dnos po — de rnams thugs kyis btani ""er"
+398	40	2036	headword_line	Tnan	↑² naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ནང་པར་ naṅ par vgl. ↑² naṅ.
+636	10	3140	headword_line	Isnan	↑ snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་བ་མེད་པ་ snaṅ ba med pa ↑ snaṅ med.
+636	50	3152	headword_line	Tsnan	↑ snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.

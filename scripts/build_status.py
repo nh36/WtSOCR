@@ -1187,6 +1187,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
         remaining_work_rows(stats),
     )
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
+    script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
     initial_i_exact_sentence = (
         "The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes."
         if initial_i_exact_residual == 0

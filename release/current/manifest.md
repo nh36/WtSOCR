@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-06-30T11:37:51Z`
-Source/code commit observed while building this bundle: `fb8bc866103f7777340b040c776193c2cf3fbe23`
+Generated UTC: `2026-06-30T15:19:08Z`
+Source/code commit observed while building this bundle: `40bedf133fee70c6d57ef21fad1008923a53aced`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -17,8 +17,8 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/initial_i_residual_cleanup_20260630T113256Z/wts_1_34` |
-| `wts_35_51` | `work/dngos_family_cleanup_20260630T101926Z/wts_35_51` |
+| `wts_1_34` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/wts_1_34_release_exact_preserve2` |
+| `wts_35_51` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/wts_35_51_release_exact_preserve2` |
 | `wts_8_b` | `work/dngos_family_cleanup_20260630T101926Z/wts_8_b` |
 | `wts_9_m` | `work/dngos_family_cleanup_20260630T101926Z/wts_9_m` |
 
@@ -26,8 +26,8 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/initial_i_residual_cleanup_20260630T113256Z/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/dngos_family_cleanup_20260630T101926Z/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_1_34` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/tibetan_cleanup_diagnostics_wts_1_34_release_exact_preserve2` |
+| `wts_35_51` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/tibetan_cleanup_diagnostics_wts_35_51_release_exact_preserve2` |
 | `wts_8_b` | `work/dngos_family_cleanup_20260630T101926Z/tibetan_cleanup_diagnostics_wts_8_b` |
 | `wts_9_m` | `work/dngos_family_cleanup_20260630T101926Z/tibetan_cleanup_diagnostics_wts_9_m` |
 

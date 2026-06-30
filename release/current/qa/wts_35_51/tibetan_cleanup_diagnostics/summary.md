@@ -6,11 +6,11 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 83
 - `tibetan_orthography_damage_candidates.tsv`: 352
-- `tibetan_script_ng_witness_candidates.tsv`: 3
+- `tibetan_script_ng_witness_candidates.tsv`: 0
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 285
 - `residual_sanskrit_low_confidence_candidates.tsv`: 663
-- `tibetan_variant_families.tsv`: 148
+- `tibetan_variant_families.tsv`: 145
 - `tibetan_google_adoption_patterns.tsv`: 313
 
 ## Top Candidate Families

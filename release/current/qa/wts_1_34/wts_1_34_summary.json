@@ -16,7 +16,7 @@
   "merge_only": false,
   "non_empty_lines": 178435,
   "pages": 1352,
-  "reviewed_tibetan_exact_changes": 1109,
+  "reviewed_tibetan_exact_changes": 1111,
   "sanskrit_changes": 675,
   "sanskrit_families": 242,
   "sanskrit_promoted_overrides_loaded": 272,
@@ -73,6 +73,10 @@
     [
       "sanskrit_high_freq_allowlist",
       402
+    ],
+    [
+      "reviewed_tibetan_exact_script_ng_witness",
+      2
     ]
   ],
   "top_tier_b_reasons": [
