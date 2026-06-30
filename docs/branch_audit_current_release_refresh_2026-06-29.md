@@ -8,37 +8,46 @@ Base branch: `main`
 
 Audit date: 2026-06-29
 
+Last updated: 2026-06-30
+
+## Scope
+
+This branch is not merely documentation. It accepts reviewed OCR/correction changes, diagnostics/tests, and a rebuilt `release/current` bundle, then adds status and check machinery that describes the current deployable snapshot.
+
 ## Commits Ahead Of `main`
 
 | Commit | Subject | Classification | Merge? | Notes |
 | --- | --- | --- | --- | --- |
 | `cf66f05dd6` | refresh current release | OCR/correction behavior; release/current regeneration | yes | Establishes a tracked four-volume current release snapshot from the then-current correction layer. |
-| `37ae97affe` | Add Tibetan script ng witness sweep | OCR/correction behavior; tests/tooling; release/current regeneration | yes | Adds reviewed Tibetan script-`ṅ` witness cleanup support and related diagnostics/tests. |
-| `eceb3a2803` | Consolidate current OCR correction status | status/consolidation only; documentation/history note | yes, after refresh | Adds the first current-status consolidation layer; it should be regenerated after the final committed release snapshot. |
+| `37ae97affe` | Add Tibetan script ng witness sweep | OCR/correction behavior; tests/tooling | yes | Adds Tibetan script-`ṅ` witness diagnostics and related support/tests. |
+| `eceb3a2803` | Consolidate current OCR correction status | status/consolidation; documentation/history note | yes | Adds the generated current-status consolidation layer and historical-report banners. |
+| `237daeb259` | Promote initial-I and script-ng release cleanup | OCR/correction behavior; tests/tooling; release/current regeneration | yes | Promotes reviewed exact/context-gated Initial-I and script-ng cleanup without broad `I -> l` or `n -> ṅ` rules. |
+| `b9e05093c8` | Rebuild current release snapshot | release/current regeneration | yes | Commits the coherent four-volume `release/current` snapshot generated from accepted code and override tables. |
+| `5b86c183cc` | Harden current release status checks | status-check hardening; status/consolidation | yes | Makes `scripts/build_status.py --check` fail on stale generated status, hidden correction families, duplicate IDs, missing release/QA evidence, misleading applied labels, unsafe broad-rule applications, and dirty release/status paths. |
+| current final merge-readiness pass | Clarify current release merge readiness | status/consolidation; documentation/history note | yes | Regenerates current status/ledger from committed release artifacts and refreshes this audit. The exact hash is the branch head reported by `git log main..HEAD` after commit. |
 
-## Working Tree At Audit
+## Authority Order
 
-The branch had important unstaged changes at audit time, including:
+- `docs/STATUS.md` is the human operational status.
+- `data/correction_families.tsv` is the machine-readable correction-family status ledger.
+- `release/current` is the current deployable text snapshot and QA evidence.
+- Code plus override TSVs are the implementation source for applied behavior.
+- Dated cleanup reports are historical audit records only.
 
-- `data/reviewed_tibetan_exact_overrides.tsv`
-- `release/current/**`
-- `scripts/build_current_release_bundle.py`
-- `scripts/build_tibetan_cleanup_diagnostics.py`
-- `tests/test_postprocess_regressions.py`
-- `tests/test_tibetan_cleanup_diagnostics.py`
-- `docs/current_release_refresh_2026-06-28.md`
-- `docs/current_release_workflow.md`
-- `docs/tibetan_initial_i_ng_cleanup_2026-06-28.md`
+## Merge Strategy
 
-These changes are not disposable scratch work. They represent accepted current-release cleanup inputs, diagnostics, tests, and generated release artifacts, and should be committed or regenerated into a coherent branch state before merge.
+The branch has already been published for review, so this audit preserves the visible stack instead of rewriting it locally. If the repository owner chooses a squash merge, the branch naturally groups into:
+
+1. Apply reviewed Tibetan cleanup and diagnostics.
+2. Rebuild current release snapshot.
+3. Add current status ledger, release checks, and merge-readiness clarity.
 
 ## Merge Readiness Requirement
 
 Before this branch is merge-ready, the final committed state must have:
 
 - a committed `release/current` snapshot generated from accepted code and override tables;
-- a regenerated `docs/STATUS.md`;
-- a regenerated `data/correction_families.tsv`;
+- regenerated `docs/STATUS.md` and `data/correction_families.tsv` from the committed release artifacts;
 - historical banners on major dated cleanup reports;
 - a clean working tree;
 - passing status, compile, and regression checks.

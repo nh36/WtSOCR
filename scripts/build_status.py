@@ -51,6 +51,7 @@ ALLOWED_STATUSES = {
     "false_positive_or_noise",
     "needs_source_check",
     "promote_candidate",
+    "diagnostic_only",
     "historical_only",
 }
 HISTORICAL_NOTE = (
@@ -148,6 +149,21 @@ def iter_tsv(path: Path) -> Iterable[dict[str, str]]:
         yield from csv.DictReader(fh, delimiter="\t")
 
 
+def tsv_row_count(path: Path) -> int:
+    return sum(1 for _ in iter_tsv(path))
+
+
+def diagnostic_variant_family_count(path: Path, family: str, source_token: str) -> int:
+    total_count = 0
+    for row in iter_tsv(path):
+        if (row.get("candidate_family") or "").strip() != family:
+            continue
+        source_tokens = (row.get("source_tokens") or "").strip()
+        if source_tokens == source_token or source_tokens.startswith(f"{source_token} "):
+            total_count += as_int(row.get("occurrence_count"))
+    return total_count
+
+
 def read_release_stats() -> ReleaseStats:
     generated, source_commit, manifest_volumes = parse_manifest()
     volumes: dict[str, dict[str, int | str]] = {}
@@ -188,6 +204,25 @@ def read_release_stats() -> ReleaseStats:
             if bucket:
                 residual_buckets[bucket] += count
 
+        diagnostic_dir = vol_dir / "tibetan_cleanup_diagnostics"
+        diagnostic_counts = {
+            "initial_i_exact_residual_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_initial_i_residual_candidates.tsv"
+            ),
+            "script_ng_witness_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_script_ng_witness_candidates.tsv"
+            ),
+            "sanskrit_low_confidence_candidates": tsv_row_count(
+                diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
+            ),
+            "sigla_variant_candidates": tsv_row_count(diagnostic_dir / "sigla_variant_candidates.tsv"),
+            "dngos_family_dnos_candidates": diagnostic_variant_family_count(
+                diagnostic_dir / "tibetan_variant_families.tsv",
+                "dngos_family",
+                "dnos",
+            ),
+        }
+
         volumes[volume] = {
             "entries": as_int(summary.get("entries_detected")),
             "non_empty_lines": as_int(summary.get("non_empty_lines")),
@@ -199,6 +234,7 @@ def read_release_stats() -> ReleaseStats:
             "sanskrit_changes": as_int(summary.get("sanskrit_changes")),
             "sanskrit_review_suggestions": as_int(summary.get("sanskrit_review_suggestions")),
             **bucket_counts,
+            **diagnostic_counts,
         }
 
     return ReleaseStats(
@@ -293,6 +329,9 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     initial_i_residual = residual_bucket(stats, "initial_confusable_I")
     dotless_residual = residual_chars(stats, "ı")
     final_ng_residual = residual_chars(stats, "ñńň")
+    initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
+    script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
+    sanskrit_low_confidence_residual = total(stats, "sanskrit_low_confidence_candidates")
 
     rows = [
         row(
@@ -389,7 +428,23 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             0,
             final_ng_residual,
             "broad ń->ṅ;broad n->ṅ;abbreviation/noisy contexts",
-            "Deferred rows remain review evidence only. They must not be promoted without source/context confirmation.",
+            "Deferred final-ng source-review rows remain separate from the script-ng witness diagnostic queue.",
+        ),
+        row(
+            "final_ng_script_witness_diagnostic_queue",
+            "final_ng",
+            "script-ng witness diagnostic candidates",
+            "source-checked Tibetan-script evidence",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "none",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv",
+            0,
+            script_ng_witness_residual,
+            "broad ń->ṅ;broad n->ṅ;unverified witness-only contexts",
+            "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual.",
         ),
         row(
             "final_ng_yang",
@@ -520,6 +575,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "Explicit case-sensitive allowlist token.",
         ),
         row(
+            "initial_I_exact_residual_diagnostic",
+            "I_to_l",
+            "reviewed Initial-I/l residual diagnostic",
+            "no remaining exact candidate rows",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "none",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv",
+            0,
+            initial_i_exact_residual,
+            "initial_confusable_I artifact bucket;German/prose controls",
+            "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket.",
+        ),
+        row(
             "initial_I_context_gated_ldan_family",
             "I_to_l",
             "Idan and related marked-context initial-I tokens",
@@ -533,7 +604,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             reason_sum(stats, "confusable_initial_I_to_l_", "reviewed_tibetan_exact_initial_i_l_family", "confusable_hyphenated_I_to_l_translit"),
             initial_i_residual,
             "Inhalt;Indien;Ich;Ingwer;International",
-            "Some initial-I forms are corrected by lexicon, marked, strong-context, or reviewed exact gates; residual initial_confusable_I buckets remain.",
+            "Initial-I/l exact diagnostics are exhausted, and reviewed rows such as Ina->lṅa, Itar->ltar, Ipags->lpags, Ius->lus, and Ikog->lkog are applied; the broader initial_confusable_I diagnostic bucket remains.",
         ),
         row(
             "initial_I_Itar_ltar",
@@ -549,7 +620,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             pair_count(stats, "Itar", "ltar"),
             residual_token(stats, "Itar"),
             "Inhalt;Indien;Ich;Ingwer",
-            "At least one exact reviewed row is applied, but large residual bucket counts mean broad/global Itar to ltar is not proven.",
+            "Reviewed exact Itar->ltar rows are applied, but residual Itar remains; no global unconstrained Itar->ltar rule exists.",
         ),
         row(
             "sanskrit_normalisations",
@@ -582,6 +653,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             total(stats, "sanskrit_review_suggestions"),
             "German prose;Tibetan/Wylie;unreviewed broad jn->jñ or ä->ā",
             "Residual Sanskrit suggestions are a source-check queue, not applied correction evidence.",
+        ),
+        row(
+            "residual_sanskrit_low_confidence_diagnostic",
+            "sanskrit",
+            "low-confidence Sanskrit-like residual diagnostics",
+            "sampled/promoted formal review rows",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "none",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv",
+            0,
+            sanskrit_low_confidence_residual,
+            "German prose;Tibetan/Wylie;bibliographic names",
+            "Exploratory diagnostic only; keep separate from the formal Sanskrit source-check queue.",
         ),
         row(
             "sigla_bu_sz",
@@ -858,6 +945,114 @@ def markdown_table(headers: list[str], rows: Iterable[Iterable[str | int]]) -> s
     return "\n".join(out)
 
 
+def per_volume_count_text(stats: ReleaseStats, key: str) -> str:
+    return ", ".join(f"{volume}: {stats.volumes[volume][key]}" for volume in VOLUME_ORDER)
+
+
+def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
+    dollar_residual = residual_chars(stats, "$")
+    initial_i_residual = residual_bucket(stats, "initial_confusable_I")
+    final_ng_residual = residual_chars(stats, "ñńň")
+    return [
+        [
+            "Exact Initial-I/l residual diagnostic",
+            total(stats, "initial_i_exact_residual_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv",
+            "exhausted diagnostic",
+            "No action unless a later release artifact repopulates it.",
+            "Separate from broader initial_confusable_I warnings.",
+        ],
+        [
+            "initial_confusable_I artifact bucket",
+            initial_i_residual,
+            "release/current/qa/*/bucket_report.artifact_tokens.tsv",
+            "warning/diagnostic",
+            "Review sampled token families only; do not apply broad I -> l.",
+            "May include controls, bibliographic/prose tokens, and unreviewed cases.",
+        ],
+        [
+            "Reviewed exact Initial-I/l rows",
+            reason_sum(stats, "reviewed_tibetan_exact_initial_i_l_family"),
+            "release/current/qa/*/*_changes.tsv",
+            "already applied",
+            "No current residual queue for the exact diagnostic.",
+            "Includes Ina -> lṅa, Itar -> ltar, Ipags -> lpags, Ius -> lus, and Ikog -> lkog; no global Itar -> ltar.",
+        ],
+        [
+            "dngos_family dnos -> dṅos candidates",
+            total(stats, "dngos_family_dnos_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_variant_families.tsv",
+            "promote candidate",
+            "Review first in the next cleanup pass.",
+            "High-count exact-promotion candidate family.",
+        ],
+        [
+            "Guarded $ -> ś residuals",
+            dollar_residual,
+            "release/current/qa/*/bucket_report.artifact_tokens.tsv",
+            "partially applied; broad rule forbidden",
+            "Review exact/context candidates only.",
+            "Siglum policy is a separate queue.",
+        ],
+        [
+            "Siglum policy diagnostics",
+            total(stats, "sigla_variant_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv",
+            "exploratory diagnostic",
+            "Review separately from Tibetan lexical corrections.",
+            "Named sigla normalisations are already applied separately.",
+        ],
+        [
+            "Final-ng deferred source review",
+            final_ng_residual,
+            "release/current/qa/*/bucket_report.artifact_tokens.tsv",
+            "deferred source review",
+            "Check source/context before promotion.",
+            "Separate from script-ng witness diagnostics.",
+        ],
+        [
+            "Script-ng witness diagnostic queue",
+            total(stats, "script_ng_witness_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv",
+            "diagnostic only",
+            "Review witness rows; promote only exact accepted cases.",
+            per_volume_count_text(stats, "script_ng_witness_candidates"),
+        ],
+        [
+            "Formal Sanskrit source-check queue",
+            total(stats, "sanskrit_review_suggestions"),
+            "release/current/qa/*/*_summary.json and Sanskrit report TSVs",
+            "needs source check",
+            "Review source/context suggestions.",
+            "Do not collapse with low-confidence residual diagnostics.",
+        ],
+        [
+            "Residual Sanskrit low-confidence diagnostic",
+            total(stats, "sanskrit_low_confidence_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv",
+            "exploratory diagnostic",
+            "Sample before promoting into a formal queue.",
+            "Not applied correction evidence.",
+        ],
+        [
+            "Validator-only diagnostics",
+            total(stats, "validator_issues"),
+            "release/current/qa/*/*_validator_issues.tsv",
+            "false-positive/noise diagnostic",
+            "Treat as diagnostics unless independently confirmed.",
+            "Not OCR-witness evidence by themselves.",
+        ],
+        [
+            "Bucket promote candidates",
+            total(stats, "bucket_promote_rows"),
+            "release/current/qa/*/bucket_report.summary.md",
+            "promote candidate",
+            "Promote only after explicit review.",
+            "Current residual queue, not applied behavior.",
+        ],
+    ]
+
+
 def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]) -> str:
     volume_rows = []
     for volume in VOLUME_ORDER:
@@ -894,6 +1089,18 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
             ]
         )
 
+    remaining_table = markdown_table(
+        [
+            "Queue / family",
+            "Current count",
+            "Where counted",
+            "Status",
+            "Next action",
+            "Notes",
+        ],
+        remaining_work_rows(stats),
+    )
+
     return f"""# WtS OCR Current Status
 
 Generated by `python3 scripts/build_status.py` from checked-in release artifacts.
@@ -912,6 +1119,7 @@ Generated by `python3 scripts/build_status.py` from checked-in release artifacts
 - `release/current/manifest.md` is a release/file inventory, not the project to-do list.
 - `release/current/qa` is current evidence for the deployed snapshot.
 - Dated cleanup reports in `docs/` are historical audit records. They may contain statements that were true when written but are now superseded.
+- Historical reports preserve old counts and old decisions. They should not be used for current counts. Use `docs/STATUS.md`, `data/correction_families.tsv`, and `release/current/qa` for current status.
 - `docs/STATUS.md` is the current human operational overview.
 - `data/correction_families.tsv` is the small machine-readable correction-family status table.
 - Code and override TSVs are the implementation source for applied behavior.
@@ -949,24 +1157,35 @@ Generated by `python3 scripts/build_status.py` from checked-in release artifacts
 The initial-`I` family is intentionally mixed:
 
 - `Ita`, `Iha`, `Ihan`, `Iho`, and `Itos` are applied by explicit case-sensitive rules.
-- Some initial-`I` forms are corrected by lexicon, marked-context, strong-context, or reviewed exact gates.
-- At least one exact reviewed `Itar -> ltar` row has been applied.
-- Large residual `initial_confusable_I` bucket counts remain in current bucket reports, so broad/global `Itar -> ltar` is not proven as fully applied.
-- Generic `I -> l` remains forbidden.
+- Some initial-`I` forms are corrected by lexicon, marked-context, strong-context, headword, hyphenated, or reviewed exact gates.
+- The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes.
+- The broader `initial_confusable_I` artifact bucket is not the same thing. It is a warning/diagnostic bucket and may include controls, bibliographic/prose tokens, and unreviewed cases.
+- Reviewed exact Initial-I/l rows have been applied, including forms such as `Ina -> lṅa`, `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
+- No generic `I -> l` rule exists, and no global unconstrained `Itar -> ltar` rule exists.
 
-## Current Open Questions
+The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current 6-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). The witness queue is diagnostic only until reviewed exact rows are accepted.
 
-- Which high-frequency residual `initial_confusable_I` tokens are safe for promotion?
-- Which residual `$` tokens are true `ś` errors versus warnings/noise?
-- Which validator issues are real OCR errors versus German/prose false positives?
-- Which Sanskrit review suggestions still need source checking?
+Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
+
+Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. Validator-only rows are diagnostics, not correction evidence.
+
+## Current Remaining Work
+
+{remaining_table}
 
 ## Next Recommended Work
 
-Do not start new OCR cleanup until this status pass is committed and reviewed.
-The next cleanup pass should use this file and `data/correction_families.tsv` as
-the starting point, then focus on one residual audit at a time with corrected-text
-diffs, QA counts, and source/context evidence.
+The next cleanup pass should not be a broad OCR pass. Work one residual queue at a time.
+
+Recommended order:
+
+1. Review exact `dnos -> dṅos` / `dngos_family` candidates, because they are high-count and appear to be exact-promotion candidates in the diagnostics.
+2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
+3. Review siglum policy candidates separately from Tibetan lexical corrections.
+4. Review the script-ng witness diagnostic queue.
+5. Review formal Sanskrit source-check suggestions.
+6. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
+7. Treat validator-only rows as diagnostics, not correction evidence.
 """
 
 
