@@ -1,0 +1,33 @@
+name: repo-hygiene
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Repository hygiene
+        run: python3 scripts/check_repo_hygiene.py
+
+      - name: Status is current
+        run: python3 scripts/build_status.py --check
+
+      - name: Compile scripts
+        run: |
+          python3 -m py_compile scripts/build_status.py
+          python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py
+
+      - name: Tests
+        run: python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q
