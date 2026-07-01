@@ -5170,6 +5170,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1049	35	5613	german_prose_with_translit	Itas	ltas	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"Lex. mo Itas la'an ""auch für Wahrsagen und rried (metr.) ""bei [der Relation] phya milam"
 1049	38	5613	example_tibetan_latin	Itas	ltas	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"Lex. — ni mo pa dan Itas mikhan ""phywa: ཕྱུ་འདབས་པ་ phywa 'debs po"
 1051	5	5620	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	pa gźwi chan zwis (v.l. zuñ) Itar phra ba 2
+1055	86	5646	german_prose_with_translit	/ tshogs	↑ tshogs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	"Lex. tsban pa / tshogs pa ""Gruppe, Ansamm-"
 1056	46	5647	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	rtags tsam 'dzin pa' Ina broya — gsum ste
 1058	55	5656	german_prose_with_translit	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(Nägn 239,17); Ipags pa 'phrag pa g.yon pa la
 1059	69	5667	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"[ihn] zu treffen"" (Liyl 181al); Zug Ina nas /"

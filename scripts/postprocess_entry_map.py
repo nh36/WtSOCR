@@ -4573,6 +4573,18 @@ def reviewed_tibetan_exact_match_options(
                 continue
             options.append((f"{prefix}{token}{suffix}", prefix_start, end + len(suffix)))
 
+    whitespace_start = start
+    while whitespace_start > 0 and line[whitespace_start - 1].isspace():
+        whitespace_start -= 1
+    if whitespace_start < start and whitespace_start > 0:
+        prefix_start = whitespace_start - 1
+        if line[prefix_start] in {"/", "\\"} and prefix_has_left_boundary(prefix_start):
+            prefix = line[prefix_start: start]
+            for suffix in suffixes:
+                if suffix and line[end : end + len(suffix)] != suffix:
+                    continue
+                options.append((f"{prefix}{token}{suffix}", prefix_start, end + len(suffix)))
+
     for suffix in suffixes:
         if suffix and line[end : end + len(suffix)] != suffix:
             continue

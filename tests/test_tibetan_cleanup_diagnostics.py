@@ -1,6 +1,7 @@
 import importlib.util
 import sys
 import unittest
+from collections import defaultdict
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import cast
@@ -56,17 +57,24 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         referenced_headwords: list[tuple[int, str, str]] | None = None,
         current_known: bool = True,
         near_vgl: str = "1",
+        near_headword: str = "0",
+        near_transliteration: str = "1",
+        confidence: str = "high",
         candidate_family: str = "ocr_prefix_I_reference_marker_candidate",
+        attached_token: str | None = None,
     ) -> object:
         volume = "fake"
         page = "1"
         line = "1"
         current = self._lemma(current_ordinal, current_headword, "current")
         lemma_by_entry = {(volume, "current"): current} if current_known else {}
-        lemma_index: dict[str, list[object]] = {}
+        lemma_index: dict[str, list[object]] = defaultdict(list)
         for ordinal, headword, entry_id in referenced_headwords or []:
             lemma = self._lemma(ordinal, headword, entry_id)
-            lemma_index.setdefault(promoter.normalize_key(headword), []).append(lemma)
+            promoter.add_lemma_aliases(lemma_index, lemma)
+        attached_value = (
+            attached_token if attached_token is not None else source_token[1:] if len(source_token) > 1 else ""
+        )
         line_zones = {(volume, page, line): {"entry_id": "current"}}
         row = {
             "volume": volume,
@@ -75,13 +83,13 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             "token_index": "2",
             "source_token": source_token,
             "suspected_marker_source": source_token[0] if source_token else "",
-            "attached_token": source_token[1:] if len(source_token) > 1 else "",
+            "attached_token": attached_value,
             "context_excerpt": context,
             "candidate_family": candidate_family,
             "near_vgl": near_vgl,
-            "near_transliteration": "1",
-            "near_headword": "0",
-            "confidence": "high",
+            "near_transliteration": near_transliteration,
+            "near_headword": near_headword,
+            "confidence": confidence,
         }
         return promoter.decide_candidate(
             row,
@@ -334,7 +342,6 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             source_token="Ispros",
             context="vgl. Ispros bral.",
             referenced_headwords=[
-                (9, "spros", "spros_short"),
                 (10, "spros bral", "spros_bral"),
             ],
         )
@@ -342,6 +349,98 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(decision.decision, "promote")
         self.assertEqual(decision.referenced_lemma_candidate, "spros bral")
         self.assertEqual(decision.referenced_lemma, "spros bral")
+
+    def test_lemma_order_reference_marker_defers_conflicting_shorter_match(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            referenced_headwords=[
+                (9, "spros", "spros_short"),
+                (10, "spros bral", "spros_bral"),
+            ],
+        )
+
+        self.assertEqual(decision.decision, "defer")
+        self.assertEqual(decision.defer_reason, "ambiguous_referenced_lemma")
+
+    def test_lemma_order_reference_marker_uses_hyphen_space_alias(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Irgya",
+            context="Lex. Irgya sran.",
+            current_ordinal=10,
+            referenced_headwords=[(20, "rgya-sran", "rgya_sran")],
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.referenced_lemma_candidate, "rgya sran")
+        self.assertEqual(decision.referenced_lemma, "rgya-sran")
+        self.assertIn("hyphen_to_space", decision.lemma_alias_basis)
+        self.assertEqual(decision.marker_target, "↓")
+
+    def test_lemma_order_reference_marker_tries_safe_final_particle_cutoff(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Ichos",
+            context="vgl. Ichos kyi rgyal po.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "chos", "chos")],
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.referenced_lemma_candidate, "chos")
+        self.assertIn("final_particle_cutoff:kyi", decision.lemma_alias_basis)
+        self.assertEqual(decision.replacement_target, "↑ chos")
+
+    def test_lemma_order_reference_marker_promotes_slash_only_with_reference_context(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="/",
+            attached_token="chos",
+            context="vgl. / chos sku.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "chos sku", "chos_sku")],
+            candidate_family="standalone_marker_candidate",
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.source_token, "/ chos")
+        self.assertEqual(decision.replacement_target, "↑ chos")
+
+    def test_lemma_order_reference_marker_does_not_promote_slash_from_near_vgl_only(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="/",
+            attached_token="chos",
+            context="bad kan dan / chos sku",
+            current_ordinal=20,
+            referenced_headwords=[(10, "chos sku", "chos_sku")],
+            near_vgl="1",
+            candidate_family="standalone_marker_candidate",
+        )
+
+        self.assertEqual(decision.decision, "defer")
+        self.assertEqual(decision.defer_reason, "slash_punctuation_context")
+
+    def test_lemma_order_reference_marker_defers_grammatical_label_context(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Irgyob",
+            context="imp. Irgyob schlagen, stoßen, werfen; als",
+            current_ordinal=10,
+            referenced_headwords=[(30, "rgyob", "rgyob")],
+        )
+
+        self.assertEqual(decision.decision, "defer")
+        self.assertEqual(decision.defer_reason, "ordinary_example_context")
+
+    def test_lemma_order_reference_marker_defers_ambiguous_slash_occurrence(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="/",
+            attached_token="chos",
+            context="vgl. / chos sku; / chos sku.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "chos sku", "chos_sku")],
+            candidate_family="standalone_marker_candidate",
+        )
+
+        self.assertEqual(decision.decision, "defer")
+        self.assertEqual(decision.defer_reason, "exact_source_token_ambiguous")
 
     def test_lemma_order_reference_marker_defers_uncertain_lemma_lookup(self) -> None:
         missing = self._reference_marker_decision(

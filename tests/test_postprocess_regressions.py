@@ -1525,6 +1525,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
 
+    def test_reviewed_reference_marker_match_options_include_spaced_marker(self) -> None:
+        line = "vgl. / chos sku und \\ bka"
+        chos_start = line.index("chos")
+        chos_end = chos_start + len("chos")
+        chos_options = pem.reviewed_tibetan_exact_match_options(line, "chos", chos_start, chos_end)
+
+        self.assertIn(("/ chos", line.index("/"), chos_end), chos_options)
+
+        bka_start = line.index("bka")
+        bka_end = bka_start + len("bka")
+        bka_options = pem.reviewed_tibetan_exact_match_options(line, "bka", bka_start, bka_end)
+
+        self.assertIn(("\\ bka", line.index("\\"), bka_end), bka_options)
+
     def test_reviewed_reference_marker_rows_do_not_create_broad_marker_rules(self) -> None:
         unreviewed_text = self.fixture_with_reviewed_lines(
             {
