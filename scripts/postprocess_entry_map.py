@@ -4577,15 +4577,19 @@ def apply_reviewed_tibetan_exact_normalizations(
                 match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
                     (label_key, page_idx, line_idx, token_index, match_token)
                 )
-                if not match and line[end : end + 1] == "ı":
-                    extended_token = f"{token}ı"
-                    extended_match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
-                        (label_key, page_idx, line_idx, token_index, extended_token)
-                    )
-                    if extended_match:
-                        match = extended_match
-                        match_token = extended_token
-                        match_end = end + 1
+                if not match:
+                    for suffix in ("ı", "'", "’"):
+                        if line[end : end + len(suffix)] != suffix:
+                            continue
+                        extended_token = f"{token}{suffix}"
+                        extended_match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
+                            (label_key, page_idx, line_idx, token_index, extended_token)
+                        )
+                        if extended_match:
+                            match = extended_match
+                            match_token = extended_token
+                            match_end = end + len(suffix)
+                            break
                 if match:
                     to_token, reason = match
                     replacements.append((start, match_end, match_token, to_token, reason))

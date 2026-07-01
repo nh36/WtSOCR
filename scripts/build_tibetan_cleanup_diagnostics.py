@@ -266,17 +266,17 @@ REFERENCE_MARKER_PREFIX_TARGETS = {
 }
 
 REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS = {
-    "T": "↑",
-    "I": "↑",
-    "\\": "↑",
-    "/": "↑",
+    "T": "↑/↓",
+    "I": "↑/↓",
+    "\\": "↑/↓",
+    "/": "↑/↓",
 }
 
 REFERENCE_MARKER_PREFIX_FAMILIES = {
-    "T": "ocr_prefix_T_upward_marker_candidate",
-    "I": "ocr_prefix_I_upward_marker_candidate",
-    "\\": "ocr_prefix_backslash_marker_candidate",
-    "/": "ocr_prefix_slash_marker_candidate",
+    "T": "ocr_prefix_T_reference_marker_candidate",
+    "I": "ocr_prefix_I_reference_marker_candidate",
+    "\\": "ocr_prefix_backslash_reference_marker_candidate",
+    "/": "ocr_prefix_slash_reference_marker_candidate",
 }
 
 REFERENCE_MARKER_WORD_CHARS = (
@@ -375,7 +375,7 @@ REFERENCE_MARKER_ATTACHED_STRONG_CUE_RE = re.compile(
     r")|(?:'[ai])$",
     re.IGNORECASE,
 )
-REFERENCE_MARKER_WYLIE_CUE_RE = re.compile(
+REFERENCE_MARKER_TRANSLITERATION_CUE_RE = re.compile(
     r"^(?:"
     r"ganı?|dan|nan|snan|tsnan|sna|dngos|dṅos|gnas|chos|rgyal|bka'|bka|dge|lha|"
     r"ltar|lta|ldan|rang|ran|yang|yan|gtsan|gtsa|sngar|snar|pa'i|kyi|gi|gis|nas|"
@@ -505,7 +505,7 @@ def reference_marker_context_flags(context: str, zone_row: dict[str, str] | None
     near_transliteration = bool(
         translit_count
         or is_tibetan_context(line_text)
-        or REFERENCE_MARKER_WYLIE_CUE_RE.search(line_text)
+        or REFERENCE_MARKER_TRANSLITERATION_CUE_RE.search(line_text)
     )
     near_vgl = bool(CROSS_REFERENCE_RE.search(line_text))
     near_headword = bool(
@@ -534,7 +534,7 @@ def reference_marker_context_type(row: dict[str, str]) -> str:
     return "+".join(parts) if parts else "other"
 
 
-def looks_like_reference_marker_attached_wylie(token: str, context: str) -> bool:
+def looks_like_reference_marker_attached_transliteration(token: str, context: str) -> bool:
     clean = stripped_token(token)
     if not clean:
         return False
@@ -601,7 +601,9 @@ def classify_reference_marker_token(
 
     if REFERENCE_MARKER_ARROW_RE.fullmatch(clean):
         direction = "downward" if clean in DOWN_ARROW_MARKERS else "upward" if clean in UP_ARROW_MARKERS else "unknown"
-        attached_token = next_token if looks_like_reference_marker_attached_wylie(next_token, context) else ""
+        attached_token = (
+            next_token if looks_like_reference_marker_attached_transliteration(next_token, context) else ""
+        )
         family = (
             "actual_downward_marker"
             if direction == "downward"
@@ -628,18 +630,21 @@ def classify_reference_marker_token(
         false_positive_note = reference_marker_false_positive_note(clean, context, registry)
         if false_positive_note:
             return None
-        if looks_like_reference_marker_attached_wylie(attached_token, context) and has_relevant_context:
+        if (
+            looks_like_reference_marker_attached_transliteration(attached_token, context)
+            and has_relevant_context
+        ):
             return {
                 "suspected_marker_source": prefix,
                 "suspected_marker_target": REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS[prefix],
-                "suspected_direction": "upward",
+                "suspected_direction": "direction_needs_review",
                 "attached_token": attached_token,
                 "normalized_attached_token_candidate": normalized_attached_marker_token(attached_token),
                 **flags,
                 "candidate_family": REFERENCE_MARKER_PREFIX_FAMILIES[prefix],
                 "confidence": "high" if flags["near_tibetan_script"] == "1" or flags["near_headword"] == "1" else "medium",
-                "suggested_action": "source_image_review_needed",
-                "notes": "Likely OCR substitute for an upward reference marker before Wylie-looking text; exact correction requires source-image review.",
+                "suggested_action": "exact_review_candidate",
+                "notes": "Possible OCR substitute for a reference marker before Tibetan transliteration-looking text; exact correction requires page-line-token review and confirmed direction.",
             }
         return None
 
@@ -647,18 +652,18 @@ def classify_reference_marker_token(
         false_positive_note = reference_marker_false_positive_note(clean, context, registry)
         if false_positive_note:
             return None
-        if looks_like_reference_marker_attached_wylie(next_token, context):
+        if looks_like_reference_marker_attached_transliteration(next_token, context):
             return {
                 "suspected_marker_source": clean,
                 "suspected_marker_target": REFERENCE_MARKER_DIAGNOSTIC_PREFIX_TARGETS[clean],
-                "suspected_direction": "upward",
+                "suspected_direction": "direction_needs_review",
                 "attached_token": next_token,
                 "normalized_attached_token_candidate": normalized_attached_marker_token(next_token),
                 **flags,
                 "candidate_family": "standalone_marker_candidate",
                 "confidence": "medium",
-                "suggested_action": "source_image_review_needed",
-                "notes": "Standalone marker-like glyph near Wylie-looking text; exact correction requires source-image review.",
+                "suggested_action": "exact_review_candidate",
+                "notes": "Standalone marker-like glyph near Tibetan transliteration-looking text; exact correction requires page-line-token review and confirmed direction.",
             }
     return None
 
@@ -1349,7 +1354,7 @@ def write_summary(out_dir: Path, counts: dict[str, int], family_rows: list[dict[
             "- `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.",
             "- `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.",
             "- `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.",
-            "- `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\\`) near Tibetan/Wylie contexts. It is diagnostic only; it is not a broad marker-normalisation rule.",
+            "- `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\\`) near Tibetan transliteration contexts. It is diagnostic only; it is not a broad marker-normalisation rule.",
             "- `sigla_variant_candidates.tsv` separates bibliography/siglum policy cases from Tibetan and Sanskrit normalisation.",
             "- `residual_sanskrit_low_confidence_candidates.tsv` is a small exploratory queue for Sanskrit-like residue outside the previous Sanskrit watch list.",
             "- Promotion should happen only in a later audited batch, using exact tokens and context gates.",

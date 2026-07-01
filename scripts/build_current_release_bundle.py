@@ -22,17 +22,17 @@ from typing import Iterable
 
 
 DEFAULT_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34",
-    "wts_35_51": "work/current_release_four_volume_refresh_20260628T193714Z/wts_35_51",
-    "wts_8_b": "work/current_release_four_volume_refresh_20260628T193714Z/wts_8_b",
-    "wts_9_m": "work/current_release_four_volume_refresh_20260628T193714Z/wts_9_m",
+    "wts_1_34": "work/reference_marker_exact_cleanup_20260701T005035/wts_1_34",
+    "wts_35_51": "work/reference_marker_exact_cleanup_20260701T005035/wts_35_51",
+    "wts_8_b": "work/reference_marker_exact_cleanup_20260701T005035/wts_8_b",
+    "wts_9_m": "work/reference_marker_exact_cleanup_20260701T005035/wts_9_m",
 }
 
 DEFAULT_DIAGNOSTIC_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_1_34",
-    "wts_35_51": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_35_51",
-    "wts_8_b": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_8_b",
-    "wts_9_m": "work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_9_m",
+    "wts_1_34": "work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_1_34",
+    "wts_35_51": "work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_35_51",
+    "wts_8_b": "work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_8_b",
+    "wts_9_m": "work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_9_m",
 }
 
 QA_SUFFIXES = (

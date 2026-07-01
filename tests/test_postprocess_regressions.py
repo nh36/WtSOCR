@@ -1423,6 +1423,95 @@ class PostprocessRegressionTests(unittest.TestCase):
             ]
         )
 
+    def test_reviewed_reference_marker_rows_apply_only_on_reviewed_locations(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (38, 13): "nna?) (Tshe 1b2); — = Ispros bral (Bon 18,13);",
+                (380, 33): "གྲིམ་པོ་ grim po klug, geschickt; vgl. Isgrim po.",
+                (674, 179): "Geschlechtsorgan, vgl. Ichos 'byun 3.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("— = ↓ spros bral", corrected)
+        self.assertIn("vgl. ↓ sgrim po.", corrected)
+        self.assertIn("vgl. ↑ chos 'byun 3.", corrected)
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+        }
+        self.assertIn(
+            ("Ispros", "↓ spros", "reviewed_tibetan_exact_reference_marker"),
+            reasons,
+        )
+        self.assertIn(
+            ("Isgrim", "↓ sgrim", "reviewed_tibetan_exact_reference_marker"),
+            reasons,
+        )
+        self.assertIn(
+            ("Ichos", "↑ chos", "reviewed_tibetan_exact_reference_marker"),
+            reasons,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
+    def test_reviewed_reference_marker_row_can_consume_keyed_apostrophe_suffix(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (176, 10): "men, 1, 5, v. unterworfen werden; vgl. Tbka'",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_35_51",
+        )
+
+        self.assertIn("vgl. ↑ bka'", corrected)
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+        }
+        self.assertIn(
+            ("Tbka'", "↑ bka'", "reviewed_tibetan_exact_reference_marker"),
+            reasons,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
+    def test_reviewed_reference_marker_rows_do_not_create_broad_marker_rules(self) -> None:
+        unreviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (38, 14): "nna?) (Tshe 1b2); — = Ispros bral remains unreviewed.",
+                (327, 128): "འཁང་ག་ 'khran ga hart, fest; vgl. Tmkhran ba remains unreviewed.",
+                (200, 20): "gser-Idan mThon-ba don-Idan śugs-Idan stay compounds.",
+                (201, 21): "/gan \\gan Igan Tgan stay diagnostic only.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            unreviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("— = Ispros bral remains unreviewed.", corrected)
+        self.assertIn("vgl. Tmkhran ba remains unreviewed.", corrected)
+        self.assertIn(
+            "gser-Idan mThon-ba don-Idan śugs-Idan stay compounds.",
+            corrected,
+        )
+        self.assertIn("/gan \\gan Igan Tgan stay diagnostic only.", corrected)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+            ]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_script_ng_witness_rows_apply_only_on_reviewed_locations(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {

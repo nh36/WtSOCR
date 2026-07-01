@@ -499,18 +499,18 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         row(
             "reference_marker_diagnostics",
             "reference_marker",
-            "T/I/slash/backslash/actual arrows near Tibetan/Wylie context",
+            "T/I/slash/backslash/actual arrows near Tibetan transliteration context",
             "↑/↓ reference markers",
-            "diagnostic_queue",
-            "diagnostic_only",
-            "none",
-            "none",
-            "none",
-            "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
-            0,
+            "page_line_token;diagnostic_queue",
+            "partially_applied",
+            "reviewed_tibetan_exact_reference_marker",
+            "data/reviewed_tibetan_exact_overrides.tsv;scripts/postprocess_entry_map.py",
+            "exact reviewed rows only; no broad marker rule",
+            "release/current/qa/*/*_changes.tsv;release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
+            reason_sum(stats, "reviewed_tibetan_exact_reference_marker"),
             reference_marker_residual,
-            "broad T->↑;broad I->↑;broad /->↑;broad \\->↑;broad n->ṅ",
-            "Diagnostic inventory for actual markers and likely OCR substitutes; exact corrections require source-image page-line-token review.",
+            "broad T->↑/↓;broad I->↑/↓;broad /->↑/↓;broad \\->↑/↓;broad n->ṅ",
+            "Reviewed reference-marker rows are exact page-line-token corrections with confirmed direction; remaining rows are diagnostic only.",
         ),
         row(
             "dngos_exact_dnos_to_dngos",
@@ -724,7 +724,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "docs/sanskrit_large_batch_cleanup_2026-05-28.md;release/current/qa",
             all_sanskrit,
             total(stats, "sanskrit_review_suggestions"),
-            "German prose;Tibetan/Wylie;unreviewed broad jn->jñ or ä->ā",
+            "German prose;Tibetan transliteration;unreviewed broad jn->jñ or ä->ā",
             "Sanskrit cleanups are exact/context-gated; remaining Sanskrit review suggestions need source/context checking.",
         ),
         row(
@@ -740,7 +740,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "release/current/qa",
             0,
             total(stats, "sanskrit_review_suggestions"),
-            "German prose;Tibetan/Wylie;unreviewed broad jn->jñ or ä->ā",
+            "German prose;Tibetan transliteration;unreviewed broad jn->jñ or ä->ā",
             "Residual Sanskrit suggestions are a source-check queue, not applied correction evidence.",
         ),
         row(
@@ -756,7 +756,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "release/current/qa/*/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv",
             0,
             sanskrit_low_confidence_residual,
-            "German prose;Tibetan/Wylie;bibliographic names",
+            "German prose;Tibetan transliteration;bibliographic names",
             "Exploratory diagnostic only; keep separate from the formal Sanskrit source-check queue.",
         ),
         row(
@@ -1012,7 +1012,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "docs/STATUS.md;release/current/qa",
             0,
             total(stats, "validator_issues"),
-            "German/prose false positives;valid Tibetan/Wylie;sigla",
+            "German/prose false positives;valid Tibetan transliteration;sigla",
             "Validator-only rows are diagnostics. They are not OCR-witness evidence by themselves.",
         ),
     ]
@@ -1127,8 +1127,8 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "Reference-marker OCR diagnostics",
             reference_marker_residual,
             "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
-            "diagnostic only",
-            "Source-image review likely marker rows; do not apply broad T/I/slash/backslash -> ↑.",
+            "partially applied; broad rules forbidden",
+            "Promote only reviewed page/line/token rows with confirmed ↑/↓ direction; do not apply broad T/I/slash/backslash -> ↑/↓.",
             f'{per_volume_count_text(stats, "reference_marker_candidates")}; actual ↑/↓ rows are controls, not correction evidence.',
         ],
         [
@@ -1286,7 +1286,7 @@ The initial-`I` family is intentionally mixed:
 
 The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
 
-Reference-marker diagnostics are diagnostic only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan/Wylie contexts. No broad marker normalisation rule exists; exact changes require source-image page-line-token review.
+Reference-marker cleanup is exact/page-line-token only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan transliteration contexts. No broad marker normalisation rule exists; exact changes require confirmed `↑` or `↓` direction from context, source, or entry order.
 
 Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
 
@@ -1302,7 +1302,7 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review reference-marker OCR diagnostics and promote only source-confirmed exact page/line/token rows; keep broad marker rules forbidden.
+1. Review reference-marker OCR diagnostics and promote only exact page/line/token rows with confirmed `↑` or `↓` direction; keep broad marker rules forbidden.
 2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
 3. Review siglum policy candidates separately from Tibetan lexical corrections.
 4. Review the script-ng witness diagnostic queue after marker separation.
