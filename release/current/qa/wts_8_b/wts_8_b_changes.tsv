@@ -2936,3 +2936,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 553	44	2924	german_prose_with_translit	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	"ba lṅa broya la ... 'tsho ba ""Nägärjuna ge-"
 557	11	2945	latin_other	Prajnāpāramitā	Prajñāpāramitā	A	sanskrit_high_freq_allowlist	1	"'dodla ""wenn er diese Prajnāpāramitā geben"
 565	44	2994	german_prose_with_translit	Ajnāpayitavya	Ajñāpayitavya	A	sanskrit_jn_cluster_context_gate	1	"nen (skt. Ajnāpayitavya)"" (Suv 59,16); chos"
+264	24	1459	german_prose_with_translit	Tsprad	↓ sprad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	mühen; vgl. Tsprad sprad.
+405	52	2232	german_prose_with_translit	Idbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	nat, vgl. Idbyar zla tha chun.
+476	52	2594	german_prose_with_translit	Tspyon	↑ spyon	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tspyon.
+584	6	3125	german_prose_with_translit	Tsgron	↑ sgron	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tsgron.

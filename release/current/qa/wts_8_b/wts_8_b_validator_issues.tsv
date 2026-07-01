@@ -57,8 +57,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 12	67	6	german_prose_with_translit	Brüstung	german_umlaut_in_translit_context	Brüstung	lon, auch Balustrade, Brüstung.
 13	7	7	german_prose_with_translit	Brüstung	invalid_translit_shape	Brüstung	"""Brüstung"" (Mvy 5524);bgore 'am — ni thog"
 13	7	7	german_prose_with_translit	Brüstung	german_umlaut_in_translit_context	Brüstung	"""Brüstung"" (Mvy 5524);bgore 'am — ni thog"
-13	59	14	german_prose_with_translit	Y$	confusable_char	YŚ	"Maksika, wärmenden Heilmitteln"" (Y$ 45a);"
-13	62	14	latin_other	Y$	confusable_char	YŚ	"treibt es Herzkrankheiten"" (Y$ 68c)."
 14	70	26	german_prose_with_translit	Säulenbehangs	invalid_translit_shape	Säulenbehangs	"der Mittel[teil] eines Säulenbehangs"" (Vdk"
 14	70	26	german_prose_with_translit	Säulenbehangs	german_umlaut_in_translit_context	Säulenbehangs	"der Mittel[teil] eines Säulenbehangs"" (Vdk"
 14	74	26	german_prose_with_translit	aufgehängt	invalid_translit_shape	aufgehängt	"[wurden aufgehängt]"" (Vdk-M 151,7); dar"
@@ -69,14 +67,12 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 14	78	26	german_prose_with_translit	Gehänge	german_umlaut_in_translit_context	Gehänge	"sind Banner, Gehänge, Schirm [usw.]"" (gZer"
 15	28	32	german_prose_with_translit	päla'i	invalid_translit_shape	päla'i	de'irjessu —Zesbyabargyal po dharma päla'i
 15	28	32	german_prose_with_translit	päla'i	german_umlaut_in_translit_context	päla'i	de'irjessu —Zesbyabargyal po dharma päla'i
-15	54	37	latin_other	Vi$	confusable_char	Viś	"wegten sich"" (Vi$ 6); rrinbs geig 'thuns pas —"
 16	8	40	german_prose_with_translit	Bevölkerung	invalid_translit_shape	Bevölkerung	lokale indische Bevölkerung ausüben; von
 16	8	40	german_prose_with_translit	Bevölkerung	german_umlaut_in_translit_context	Bevölkerung	lokale indische Bevölkerung ausüben; von
 16	25	44	headword_line	Hautöffnung	invalid_translit_shape	Hautöffnung	བ་སྤུའི་བུ་ག་ ba spu'ibuga kleine Hautöffnung,
 16	25	44	headword_line	Hautöffnung	german_umlaut_in_translit_context	Hautöffnung	བ་སྤུའི་བུ་ག་ ba spu'ibuga kleine Hautöffnung,
 17	23	47	german_prose_with_translit	bemängelt	invalid_translit_shape	bemängelt	"wird bemängelt"" (Ahs 1.5.42a)."
 17	23	47	german_prose_with_translit	bemängelt	german_umlaut_in_translit_context	bemängelt	"wird bemängelt"" (Ahs 1.5.42a)."
-18	25	54	german_prose_with_translit	Y$	confusable_char	YŚ	"treibt Herzkrankheiten und Gifte"" (Y$ 68)."
 18	33	56	german_prose_with_translit	Meeresschneckengehäuse	invalid_translit_shape	Meeresschneckengehäuse	Lotus, ein Meeresschneckengehäuse [usw.]
 18	33	56	german_prose_with_translit	Meeresschneckengehäuse	german_umlaut_in_translit_context	Meeresschneckengehäuse	Lotus, ein Meeresschneckengehäuse [usw.]
 19	72	68	german_prose_with_translit	Schädigungen	invalid_translit_shape	Schädigungen	von Heilmitteln beseitigt alle Schädigungen
@@ -91,8 +87,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 23	56	100	german_prose_with_translit	jüngere	german_umlaut_in_translit_context	jüngere	"klu mes chen po'i chun po ""der jüngere Bru-"
 24	22	103	german_prose_with_translit	mätulungam	invalid_translit_shape	mätulungam	Lex. mätulungam (Mvy 5810).
 24	22	103	german_prose_with_translit	mätulungam	german_umlaut_in_translit_context	mätulungam	Lex. mätulungam (Mvy 5810).
-24	53	104	german_prose_with_translit	Y$	confusable_char	YŚ	"Schleim trinken"" (Y$ 3c); don ka dan ni sle"
-24	60	104	latin_other	Y$	confusable_char	YŚ	"terschmalz schnell gekocht hat"" (Y$ 42a);"
 25	13	106	german_prose_with_translit	Rankengewächse	invalid_translit_shape	Rankengewächse	Wurzeln dieser Rankengewächse beseitigen
 25	13	106	german_prose_with_translit	Rankengewächse	german_umlaut_in_translit_context	Rankengewächse	Wurzeln dieser Rankengewächse beseitigen
 25	68	113	german_prose_with_translit	Laienanhänger	invalid_translit_shape	Laienanhänger	ein buddh. Laienanhänger, skt. *Ba-
@@ -150,7 +144,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 35	51	168	latin_other	Nachrichtenüberbringer	german_umlaut_in_translit_context	Nachrichtenüberbringer	"Nachrichtenüberbringer"" (brDa); bya ma"
 36	26	174	german_prose_with_translit	Nachrichtenüberbringer	invalid_translit_shape	Nachrichtenüberbringer	"Nachrichtenüberbringer"" (brDa); bani chen"
 36	26	174	german_prose_with_translit	Nachrichtenüberbringer	german_umlaut_in_translit_context	Nachrichtenüberbringer	"Nachrichtenüberbringer"" (brDa); bani chen"
-38	71	182	latin_other	Y$	confusable_char	YŚ	"tel"" (Y$ 1003)."
 39	9	183	german_prose_with_translit	Vatsa-König	invalid_translit_shape	Vatsa-König	"pa ""der Vatsa-König Udayana oder Udayana"
 39	9	183	german_prose_with_translit	Vatsa-König	german_umlaut_in_translit_context	Vatsa-König	"pa ""der Vatsa-König Udayana oder Udayana"
 39	41	184	german_prose_with_translit	hängend	invalid_translit_shape	hängend	tel hängend tragen (Neb 10).
@@ -160,7 +153,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 40	29	194	latin_other	tiñ	confusable_char	tiṅ	"~ tiñ ne dzin kyis ñam drod zin nas ""nach-"
 40	34	194	german_prose_with_translit	Anhänger	invalid_translit_shape	Anhänger	pflogenheiten der Anhänger und Unterta-
 40	34	194	german_prose_with_translit	Anhänger	german_umlaut_in_translit_context	Anhänger	pflogenheiten der Anhänger und Unterta-
-41	8	196	latin_other	L$dz-K	confusable_char	Lśdz-K	(L$dz-K 257,26).
 41	32	201	german_prose_with_translit	gNanñ	confusable_char	gNanṅ	"kha phu dan / ~ rnams gyes ""von gNanñ-"
 41	33	201	german_prose_with_translit	Luñ	confusable_char	Luṅ	khan ausgehend sind rDzi'i skyer-lun, Luñ
 41	44	202	german_prose_with_translit	lha-khañ	confusable_char	lha-khaṅ	"lhakhan ""Ban-pa Drug-ral lha-khañ, gegrün-"
@@ -176,7 +168,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 42	55	208	german_prose_with_translit	Angehörigen	german_umlaut_in_translit_context	Angehörigen	[von den Angehörigen] so gut wie möglich
 43	64	212	german_prose_with_translit	Öffnung	invalid_translit_shape	Öffnung	"pai chu ""Wasser, das aus der Öffnung eines"
 43	64	212	german_prose_with_translit	Öffnung	german_umlaut_in_translit_context	Öffnung	"pai chu ""Wasser, das aus der Öffnung eines"
-44	21	212	latin_other	L$dz	confusable_char	Lśdz	"da saf3"" (L$dz 34,3); reyu lons spyod char ba"
 44	86	212	german_prose_with_translit	Entzündung	invalid_translit_shape	Entzündung	"""wenn eine Entzündung das Herz befallen"
 44	86	212	german_prose_with_translit	Entzündung	german_umlaut_in_translit_context	Entzündung	"""wenn eine Entzündung das Herz befallen"
 46	24	212	latin_other	Überlieferung	invalid_translit_shape	Überlieferung	2. Überlieferung.
@@ -319,8 +310,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 75	48	365	german_prose_with_translit	Jüngeren	german_umlaut_in_translit_context	Jüngeren	"des Jüngeren Bruders des Königs Vijayasata"""
 76	19	368	german_prose_with_translit	śäriputra	invalid_translit_shape	śäriputra	ni und der Mönch śäriputra teilten den See
 76	19	368	german_prose_with_translit	śäriputra	german_umlaut_in_translit_context	śäriputra	ni und der Mönch śäriputra teilten den See
-76	53	369	german_prose_with_translit	Vaiśvänara	invalid_translit_shape	Vaiśvänara	"me) zer ""der Scher Vaiśvänara, dessen Sohn"
-76	53	369	german_prose_with_translit	Vaiśvänara	german_umlaut_in_translit_context	Vaiśvänara	"me) zer ""der Scher Vaiśvänara, dessen Sohn"
 77	65	377	german_prose_with_translit	glückbringenden	invalid_translit_shape	glückbringenden	"bsrel ""was die glückbringenden Mondorte"
 77	65	377	german_prose_with_translit	glückbringenden	german_umlaut_in_translit_context	glückbringenden	"bsrel ""was die glückbringenden Mondorte"
 78	4	379	german_prose_with_translit	ßen'	invalid_translit_shape	ßen'	ßen', bengalische Quitte (skt. bilva), Blei-
@@ -358,7 +347,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 82	14	383	german_prose_with_translit	Körperöffnungen	german_umlaut_in_translit_context	Körperöffnungen	"— bidag min (metr.) ""die Körperöffnungen"
 82	36	386	headword_line	Öffnung	invalid_translit_shape	Öffnung	བུ་གུ་ 'bu gu Löchlein, schr kleine Öffnung
 82	36	386	headword_line	Öffnung	german_umlaut_in_translit_context	Öffnung	བུ་གུ་ 'bu gu Löchlein, schr kleine Öffnung
-82	46	387	german_prose_with_translit	L$dz	confusable_char	Lśdz	"und eine Behandlung gebeten"" (L$dz 132,2)."
 83	63	392	german_prose_with_translit	Führung	invalid_translit_shape	Führung	beiden Gebrüder Bu-churi, die die Führung
 83	63	392	german_prose_with_translit	Führung	german_umlaut_in_translit_context	Führung	beiden Gebrüder Bu-churi, die die Führung
 83	67	392	german_prose_with_translit	TIshe-brtan	confusable_char	Tlshe-brtan	"chun TIshe-brtan rdo-rje, die beiden"" (Dol3"
@@ -370,19 +358,14 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 84	14	392	german_prose_with_translit	Hauptschüler	german_umlaut_in_translit_context	Hauptschüler	geistigen Söhne, die Hauptschüler und auch
 84	47	393	german_prose_with_translit	Verkörperung	invalid_translit_shape	Verkörperung	"""die Verkörperung des Bu-ston Rin-po-che,"
 84	47	393	german_prose_with_translit	Verkörperung	german_umlaut_in_translit_context	Verkörperung	"""die Verkörperung des Bu-ston Rin-po-che,"
-85	67	396	german_prose_with_translit	Vi$	confusable_char	Viś	"ter Märas"" (Vi$ 6c); rigs kyi bu dan rigs kyi"
-86	46	396	latin_other	riñ-btsun	confusable_char	riṅ-btsun	"bZan-bza' riñ-btsun"" (L$dz 140,2); ~i skye"
-86	46	396	latin_other	L$dz	confusable_char	Lśdz	"bZan-bza' riñ-btsun"" (L$dz 140,2); ~i skye"
+86	46	396	latin_other	riñ-btsun	confusable_char	riṅ-btsun	"bZan-bza' riñ-btsun"" (Lśdz 140,2); ~i skye"
 89	41	412	latin_other	$rT	confusable_char	śrT	"bu yan rgyal pos gu $rT gnan nas ""nachdem"
 89	55	414	headword_line	Ergänzungswerk	invalid_translit_shape	Ergänzungswerk	བུ་ཡིག་ bu yig Ergänzungswerk bzw. Kom-
 89	55	414	headword_line	Ergänzungswerk	german_umlaut_in_translit_context	Ergänzungswerk	བུ་ཡིག་ bu yig Ergänzungswerk bzw. Kom-
-90	34	414	german_prose_with_translit	Y$	confusable_char	YŚ	"[mischen und] trinken"" (Y$ 67); — dgu(n)"
 90	46	415	german_prose_with_translit	Süßen'	invalid_translit_shape	Süßen'	"nig sind die 'drei Süßen'"" (PhB suppl. 66,4);"
 90	46	415	german_prose_with_translit	Süßen'	german_umlaut_in_translit_context	Süßen'	"nig sind die 'drei Süßen'"" (PhB suppl. 66,4);"
 90	71	415	german_prose_with_translit	Verdauungswärme	invalid_translit_shape	Verdauungswärme	"Verdauungswärme"" (Ahs 1.5.73a)."
 90	71	415	german_prose_with_translit	Verdauungswärme	german_umlaut_in_translit_context	Verdauungswärme	"Verdauungswärme"" (Ahs 1.5.73a)."
-91	36	422	german_prose_with_translit	Śäkyamuni	invalid_translit_shape	Śäkyamuni	1. Beiname des Buddha Śäkyamuni; —'i rigs
-91	36	422	german_prose_with_translit	Śäkyamuni	german_umlaut_in_translit_context	Śäkyamuni	1. Beiname des Buddha Śäkyamuni; —'i rigs
 91	46	424	german_prose_with_translit	Jüngere	invalid_translit_shape	Jüngere	"""der Jüngere wurde als König gewählt, dieser"
 91	46	424	german_prose_with_translit	Jüngere	german_umlaut_in_translit_context	Jüngere	"""der Jüngere wurde als König gewählt, dieser"
 91	47	424	german_prose_with_translit	Sin-pa'i-Itens	confusable_char	Sin-pa'i-ltens	"heißt Bu-ram Sin-pa'i-Itens"" (Debm 339)."
@@ -453,7 +436,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 104	23	510	german_prose_with_translit	angezün	invalid_translit_shape	angezün	niemals jemand eine Butterlampe angezün-
 104	23	510	german_prose_with_translit	angezün	german_umlaut_in_translit_context	angezün	niemals jemand eine Butterlampe angezün-
 105	39	523	german_prose_with_translit	tsbo-Inra	confusable_char	tsbo-lnra	am südlichen Ufer des rMa-chu, die tsbo-Inra
-105	45	523	latin_other	Li$	confusable_char	Liś	pa (TTC); pe no mi 'dzin pa (Li$ 16,5); ben
 106	26	531	german_prose_with_translit	Füllung	invalid_translit_shape	Füllung	"mit Füllung"" (TTC)."
 106	26	531	german_prose_with_translit	Füllung	german_umlaut_in_translit_context	Füllung	"mit Füllung"" (TTC)."
 106	49	532	german_prose_with_translit	beñ	confusable_char	beṅ	Der ben auch beñ chen.
@@ -471,7 +453,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 110	42	556	german_prose_with_translit	hänger	german_umlaut_in_translit_context	hänger	hänger, eine dort ansässige Schule; — e der
 111	45	557	german_prose_with_translit	Einströmungen	invalid_translit_shape	Einströmungen	"Kontakt [und] hartnäckige Einströmungen"""
 111	45	557	german_prose_with_translit	Einströmungen	german_umlaut_in_translit_context	Einströmungen	"Kontakt [und] hartnäckige Einströmungen"""
-113	18	565	german_prose_with_translit	Y$	confusable_char	YŚ	"und weißem Eisenhut"" (Y$ 113); — ... sbyar"
 114	29	578	german_prose_with_translit	Abwärtsstreben	invalid_translit_shape	Abwärtsstreben	Abwärtsstreben größer ist als das Aufwärts-
 114	29	578	german_prose_with_translit	Abwärtsstreben	german_umlaut_in_translit_context	Abwärtsstreben	Abwärtsstreben größer ist als das Aufwärts-
 114	29	578	german_prose_with_translit	Aufwärts	invalid_translit_shape	Aufwärts	Abwärtsstreben größer ist als das Aufwärts-
@@ -516,7 +497,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 126	50	631	german_prose_with_translit	Täuschungen	german_umlaut_in_translit_context	Täuschungen	"""khrul snari — du grol lo ""Täuschungen lösen"
 126	52	631	german_prose_with_translit	Längsfaden	invalid_translit_shape	Längsfaden	"— dkyus thag chod do ""der Längsfaden"
 126	52	631	german_prose_with_translit	Längsfaden	german_umlaut_in_translit_context	Längsfaden	"— dkyus thag chod do ""der Längsfaden"
-127	14	632	latin_other	L$dz-K	confusable_char	Lśdz-K	"diert wurden"" (L$dz-K 279,10)."
 127	17	634	german_prose_with_translit	Anhänger	invalid_translit_shape	Anhänger	1. Anhänger bzw. Lehrer oder Geistlicher
 127	17	634	german_prose_with_translit	Anhänger	german_umlaut_in_translit_context	Anhänger	1. Anhänger bzw. Lehrer oder Geistlicher
 128	18	638	german_prose_with_translit	anhängt	invalid_translit_shape	anhängt	Religion anhängt.
@@ -532,8 +512,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 130	79	646	german_prose_with_translit	dränge	invalid_translit_shape	dränge	"gibt, wenn ich den Lehrer [dazu] dränge"""
 130	79	646	german_prose_with_translit	dränge	german_umlaut_in_translit_context	dränge	"gibt, wenn ich den Lehrer [dazu] dränge"""
 131	36	649	german_prose_with_translit	Bol-gañs	confusable_char	Bol-gaṅs	im Sommer in Bol-gañs von mTsho-bgo, da-
-132	35	653	latin_other	rückwärts	invalid_translit_shape	rückwärts	"rückwärts"" (Lsdz-K 261,12); dera bdud sde"
-132	35	653	latin_other	rückwärts	german_umlaut_in_translit_context	rückwärts	"rückwärts"" (Lsdz-K 261,12); dera bdud sde"
+132	35	653	latin_other	rückwärts	invalid_translit_shape	rückwärts	"rückwärts"" (Lśdz-K 261,12); dera bdud sde"
+132	35	653	latin_other	rückwärts	german_umlaut_in_translit_context	rückwärts	"rückwärts"" (Lśdz-K 261,12); dera bdud sde"
 132	60	653	german_prose_with_translit	Ergänzungen	invalid_translit_shape	Ergänzungen	seine [beiden] Ergänzungen, wie z.B. gYa'-
 132	60	653	german_prose_with_translit	Ergänzungen	german_umlaut_in_translit_context	Ergänzungen	seine [beiden] Ergänzungen, wie z.B. gYa'-
 132	73	653	german_prose_with_translit	Übertragung	invalid_translit_shape	Übertragung	heit, Kraftfülle, Anmut und Übertragung:
@@ -556,7 +536,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 137	76	664	german_prose_with_translit	Bedeutungsveränderung	invalid_translit_shape	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
 137	76	664	german_prose_with_translit	Bedeutungsveränderung	german_umlaut_in_translit_context	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
 138	19	665	german_prose_with_translit	I'estungsgraben	confusable_char	l'estungsgraben	"brko bar —'o ""ich will den I'estungsgraben"
-138	53	666	german_prose_with_translit	YS$	confusable_char	YŚ	"gasataka zusammenfügen"" (YS$ 1d); ran dan"
 138	65	666	german_prose_with_translit	umhängen	invalid_translit_shape	umhängen	"""ich willeuch Kränze umhängen"" (Tär 12,9);"
 138	65	666	german_prose_with_translit	umhängen	german_umlaut_in_translit_context	umhängen	"""ich willeuch Kränze umhängen"" (Tär 12,9);"
 138	85	666	latin_other	wertschät	invalid_translit_shape	wertschät	Erleuchtungsgedanken soll man wertschät-
@@ -581,7 +560,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 144	18	692	headword_line	Geflügelhänd	invalid_translit_shape	Geflügelhänd	བྱ་གག་འཚོང་བ་ bya gag 'tsboṅ ba Geflügelhänd-
 144	18	692	headword_line	Geflügelhänd	german_umlaut_in_translit_context	Geflügelhänd	བྱ་གག་འཚོང་བ་ bya gag 'tsboṅ ba Geflügelhänd-
 144	50	697	german_prose_with_translit	zañs	confusable_char	zaṅs	"(dPe 42,14); zañs chen po bya dgar byin ""ich"
-146	39	708	german_prose_with_translit	Li$	confusable_char	Liś	bya rkon ni (Li$ 19,2; KlonD 740,4).
 146	85	711	german_prose_with_translit	händigung	invalid_translit_shape	händigung	händigung von Weideentgelt zu erheben ha-
 146	85	711	german_prose_with_translit	händigung	german_umlaut_in_translit_context	händigung	händigung von Weideentgelt zu erheben ha-
 147	76	722	headword_line	Vogelfänger	invalid_translit_shape	Vogelfänger	བྱ་འཆོར་ bya 'chor Vogelfänger.
@@ -596,7 +574,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 149	68	743	german_prose_with_translit	Fensteröffnung	german_umlaut_in_translit_context	Fensteröffnung	"Fensteröffnung"" (Nel 1534)."
 150	40	749	german_prose_with_translit	Monatsfluß	invalid_translit_shape	Monatsfluß	Pflanze, die den Monatsfluß lindert,
 150	40	749	german_prose_with_translit	Monatsfluß	german_umlaut_in_translit_context	Monatsfluß	Pflanze, die den Monatsfluß lindert,
-150	69	750	latin_other	P$	confusable_char	PŚ	"nicht tun darf"" (P$ 26a); rgyu dan gnas dan"
 151	19	751	german_prose_with_translit	Übertragung	invalid_translit_shape	Übertragung	"""aus der Übertragung der Tätigkeit der Au-"
 151	19	751	german_prose_with_translit	Übertragung	german_umlaut_in_translit_context	Übertragung	"""aus der Übertragung der Tätigkeit der Au-"
 151	87	753	german_prose_with_translit	Vorgänge	invalid_translit_shape	Vorgänge	für Vorgänge oder Handlungen.
@@ -650,8 +627,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 163	43	842	german_prose_with_translit	Tür'	german_umlaut_in_translit_context	Tür'	'südliche Tür' und die 'nördliche Tür', heißt
 164	39	852	german_prose_with_translit	Möngke	invalid_translit_shape	Möngke	"bu mon gor ""Prinz Mon-gor (d.i. Möngke),"
 164	39	852	german_prose_with_translit	Möngke	german_umlaut_in_translit_context	Möngke	"bu mon gor ""Prinz Mon-gor (d.i. Möngke),"
-165	12	854	german_prose_with_translit	śrävaka	invalid_translit_shape	śrävaka	śrävaka, eines Pratyekabuddha und eines un-
-165	12	854	german_prose_with_translit	śrävaka	german_umlaut_in_translit_context	śrävaka	śrävaka, eines Pratyekabuddha und eines un-
 165	29	854	german_prose_with_translit	Wiederverkörperung	invalid_translit_shape	Wiederverkörperung	in einer Wiederverkörperung nach der ande-
 165	29	854	german_prose_with_translit	Wiederverkörperung	german_umlaut_in_translit_context	Wiederverkörperung	in einer Wiederverkörperung nach der ande-
 166	63	866	german_prose_with_translit	Buddhasöhne	invalid_translit_shape	Buddhasöhne	"ist, werden sie Buddhasöhne genannt"" (Bea"
@@ -677,12 +652,10 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 172	44	904	german_prose_with_translit	Laienanhänger	german_umlaut_in_translit_context	Laienanhänger	"große Laienanhänger Vimalakirti"" (K841 (2)"
 172	53	905	german_prose_with_translit	Übung	invalid_translit_shape	Übung	Weg des Schens und der Übung bleiben, [bil-
 172	53	905	german_prose_with_translit	Übung	german_umlaut_in_translit_context	Übung	Weg des Schens und der Übung bleiben, [bil-
-172	61	905	german_prose_with_translit	Anhänger	invalid_translit_shape	Anhänger	Mahäsattva mit einem Anhänger des Fahr-
-172	61	905	german_prose_with_translit	Anhänger	german_umlaut_in_translit_context	Anhänger	Mahäsattva mit einem Anhänger des Fahr-
+172	61	905	german_prose_with_translit	Anhänger	invalid_translit_shape	Anhänger	Mahāsattva mit einem Anhänger des Fahr-
+172	61	905	german_prose_with_translit	Anhänger	german_umlaut_in_translit_context	Anhänger	Mahāsattva mit einem Anhänger des Fahr-
 173	70	907	german_prose_with_translit	Jätaka-Abteilung	invalid_translit_shape	Jätaka-Abteilung	"spyod pa ston pa ste ""die Jätaka-Abteilung"
 173	70	907	german_prose_with_translit	Jätaka-Abteilung	german_umlaut_in_translit_context	Jätaka-Abteilung	"spyod pa ston pa ste ""die Jätaka-Abteilung"
-174	12	910	german_prose_with_translit	śäntideva	invalid_translit_shape	śäntideva	Dichters śäntideva, skt. Bodhisattvacaryaāva-
-174	12	910	german_prose_with_translit	śäntideva	german_umlaut_in_translit_context	śäntideva	Dichters śäntideva, skt. Bodhisattvacaryaāva-
 174	74	917	german_prose_with_translit	Byañ-tharñ	confusable_char	Byaṅ-tharṅ	"~ gran bas ""weil die Byañ-tharñ kalt ist"" (sBa"
 175	32	925	german_prose_with_translit	bdud-Dämon	invalid_translit_shape	bdud-Dämon	schwarzer bdud-Dämon (Neb
 175	32	925	german_prose_with_translit	bdud-Dämon	german_umlaut_in_translit_context	bdud-Dämon	schwarzer bdud-Dämon (Neb
@@ -728,7 +701,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 188	73	1020	latin_other	Säulenbehang	german_umlaut_in_translit_context	Säulenbehang	"— pa'i ka 'phan ""Säulenbehang aus vielfarbi-"
 189	20	1021	german_prose_with_translit	Empfängern	invalid_translit_shape	Empfängern	tus] von Empfängern der Opfer[gaben] ge-
 189	20	1021	german_prose_with_translit	Empfängern	german_umlaut_in_translit_context	Empfängern	tus] von Empfängern der Opfer[gaben] ge-
-189	54	1022	latin_other	G$-H	confusable_char	GŚ-H	"stellt hat"" (G$-H 76a); sdig pa rnam pa du"
 190	3	1023	german_prose_with_translit	Ge-Ihavon	confusable_char	Ge-lhavon	Ge-Ihavon der abhāngigen Bauernschaft all-
 191	18	1024	german_prose_with_translit	verrückt'	invalid_translit_shape	verrückt'	sie sagten: 'Die Geistlichen sind verrückt',
 191	18	1024	german_prose_with_translit	verrückt'	german_umlaut_in_translit_context	verrückt'	sie sagten: 'Die Geistlichen sind verrückt',
@@ -736,25 +708,20 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 192	4	1025	latin_other	verjüngt	german_umlaut_in_translit_context	verjüngt	"erangenommen hatte, verjüngt hatte"" (ViśT"
 192	12	1025	german_prose_with_translit	grüngemach	invalid_translit_shape	grüngemach	Wildnis mit von grünem Gras grüngemach-
 192	12	1025	german_prose_with_translit	grüngemach	german_umlaut_in_translit_context	grüngemach	Wildnis mit von grünem Gras grüngemach-
-192	20	1025	latin_other	Y$	confusable_char	YŚ	"fen' [usw.] pulverisiere man"" (Y$ 72d); bi ma"
 192	40	1025	german_prose_with_translit	Übung	invalid_translit_shape	Übung	ben die Erinnerung zum Ort der Übung ge-
 192	40	1025	german_prose_with_translit	Übung	german_umlaut_in_translit_context	Übung	ben die Erinnerung zum Ort der Übung ge-
 193	8	1027	german_prose_with_translit	gehängt	invalid_translit_shape	gehängt	"Brust gehängt (skt. nivesita)"" (HMrg 51,3);"
 193	8	1027	german_prose_with_translit	gehängt	german_umlaut_in_translit_context	gehängt	"Brust gehängt (skt. nivesita)"" (HMrg 51,3);"
 193	42	1027	german_prose_with_translit	Bedeutungsveränderung	invalid_translit_shape	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
 193	42	1027	german_prose_with_translit	Bedeutungsveränderung	german_umlaut_in_translit_context	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
-193	82	1028	german_prose_with_translit	Y$	confusable_char	YŚ	"Kuhurin zerrieben"" (Y$ 68c); mi geig la ran"
 193	89	1028	german_prose_with_translit	verschlängen	invalid_translit_shape	verschlängen	"verschlängen"" (VaiNth 34,6); chags pa yid la"
 193	89	1028	german_prose_with_translit	verschlängen	german_umlaut_in_translit_context	verschlängen	"verschlängen"" (VaiNth 34,6); chags pa yid la"
-194	22	1029	german_prose_with_translit	L$dz	confusable_char	Lśdz	"und eine Behandlung gebeten"" (L$dz 132,2);"
-194	54	1033	german_prose_with_translit	śrävaka	invalid_translit_shape	śrävaka	"""für den śrävaka gibt es acht [Stufen]: die"
-194	54	1033	german_prose_with_translit	śrävaka	german_umlaut_in_translit_context	śrävaka	"""für den śrävaka gibt es acht [Stufen]: die"
 195	37	1036	german_prose_with_translit	drückungen	invalid_translit_shape	drückungen	"drückungen auszuüben"" (MTH3/5/13 7);"
 195	37	1036	german_prose_with_translit	drückungen	german_umlaut_in_translit_context	drückungen	"drückungen auszuüben"" (MTH3/5/13 7);"
 196	2	1040	german_prose_with_translit	Seitesprünge	invalid_translit_shape	Seitesprünge	"(metr.) ""die Männer begehen Seitesprünge"""
 196	2	1040	german_prose_with_translit	Seitesprünge	german_umlaut_in_translit_context	Seitesprünge	"(metr.) ""die Männer begehen Seitesprünge"""
-196	21	1043	german_prose_with_translit	mütterlicherseits	invalid_translit_shape	mütterlicherseits	ten des Onkels mütterlicherseits; vgl. SchuH
-196	21	1043	german_prose_with_translit	mütterlicherseits	german_umlaut_in_translit_context	mütterlicherseits	ten des Onkels mütterlicherseits; vgl. SchuH
+196	21	1043	german_prose_with_translit	mütterlicherseits	invalid_translit_shape	mütterlicherseits	ten des Onkels mütterlicherseits; vgl. SCHUH
+196	21	1043	german_prose_with_translit	mütterlicherseits	german_umlaut_in_translit_context	mütterlicherseits	ten des Onkels mütterlicherseits; vgl. SCHUH
 196	23	1043	german_prose_with_translit	Eheschließung	invalid_translit_shape	Eheschließung	"Zan tshan naṅ sdeb ~ te ""die Eheschließung"
 196	23	1043	german_prose_with_translit	Eheschließung	german_umlaut_in_translit_context	Eheschließung	"Zan tshan naṅ sdeb ~ te ""die Eheschließung"
 196	36	1047	german_prose_with_translit	Eheschließung	invalid_translit_shape	Eheschließung	"ma bu nan sdeb — ""die Eheschließung von"
@@ -766,8 +733,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 198	5	1054	german_prose_with_translit	Mäuscteufel'	german_umlaut_in_translit_context	Mäuscteufel'	"nen Hals wie ein 'Mäuscteufel', ein Wiesel"""
 198	21	1055	german_prose_with_translit	ßung	invalid_translit_shape	ßung	ßung innerhalb der Verwandtschaft väterli-
 198	21	1055	german_prose_with_translit	ßung	german_umlaut_in_translit_context	ßung	ßung innerhalb der Verwandtschaft väterli-
-200	22	1077	german_prose_with_translit	Y$	confusable_char	YŚ	"Schleim trinken"" (Y$ 3a); — ... dernams phye"
-200	26	1077	german_prose_with_translit	YS$	confusable_char	YŚ	"ger Butter zubereitet"" (YS$ 60a)."
 201	30	1080	german_prose_with_translit	Öffnungen	invalid_translit_shape	Öffnungen	ten an den beiden Stüpas zwei Öffnungen
 201	30	1080	german_prose_with_translit	Öffnungen	german_umlaut_in_translit_context	Öffnungen	ten an den beiden Stüpas zwei Öffnungen
 201	40	1080	german_prose_with_translit	Räucherung	invalid_translit_shape	Räucherung	"--- bdug (metr.) ""eine Räucherung mit Kat-"
@@ -792,7 +757,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 204	67	1099	german_prose_with_translit	Überlieferung	german_umlaut_in_translit_context	Überlieferung	dem Siegel der Überlieferung für einen Ein-
 204	74	1099	german_prose_with_translit	Öffnung	invalid_translit_shape	Öffnung	busrohr mit einer verschlossenen Öffnung
 204	74	1099	german_prose_with_translit	Öffnung	german_umlaut_in_translit_context	Öffnung	busrohr mit einer verschlossenen Öffnung
-205	3	1099	latin_other	L$dz-K	confusable_char	Lśdz-K	"""ro"" (L$dz-K 304,33); zasni beud can dragtu"
 205	46	1099	german_prose_with_translit	Lehrübertragung	invalid_translit_shape	Lehrübertragung	"gelte Lehrübertragung an!"" (VaiNth 201,4);"
 205	46	1099	german_prose_with_translit	Lehrübertragung	german_umlaut_in_translit_context	Lehrübertragung	"gelte Lehrübertragung an!"" (VaiNth 201,4);"
 207	23	1109	german_prose_with_translit	entschließen	invalid_translit_shape	entschließen	5. sich zu etw. entschließen, sich einen Ge-
@@ -816,8 +780,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 209	66	1134	german_prose_with_translit	Ermächtigungen	german_umlaut_in_translit_context	Ermächtigungen	eine Abfolge von Ermächtigungen (skt. a-
 210	13	1135	german_prose_with_translit	Überlieferung	invalid_translit_shape	Überlieferung	im Besitz. einer segensreichen Überlieferung
 210	13	1135	german_prose_with_translit	Überlieferung	german_umlaut_in_translit_context	Überlieferung	im Besitz. einer segensreichen Überlieferung
-210	16	1135	german_prose_with_translit	Segensübermittlung	invalid_translit_shape	Segensübermittlung	"ße Segensübermittlung"" (Doll 26,7); srur"
-210	16	1135	german_prose_with_translit	Segensübermittlung	german_umlaut_in_translit_context	Segensübermittlung	"ße Segensübermittlung"" (Doll 26,7); srur"
+210	16	1135	german_prose_with_translit	Segensübermittlung	invalid_translit_shape	Segensübermittlung	"ße Segensübermittlung"" (Dol1 26,7); srur"
+210	16	1135	german_prose_with_translit	Segensübermittlung	german_umlaut_in_translit_context	Segensübermittlung	"ße Segensübermittlung"" (Dol1 26,7); srur"
 210	33	1135	german_prose_with_translit	Buddhakör	invalid_translit_shape	Buddhakör	"— (metr.) ""der Segen, die drei Buddhakör-"
 210	33	1135	german_prose_with_translit	Buddhakör	german_umlaut_in_translit_context	Buddhakör	"— (metr.) ""der Segen, die drei Buddhakör-"
 210	50	1136	german_prose_with_translit	rungsgegenstände	invalid_translit_shape	rungsgegenstände	rungsgegenstände, insbesondere die ocker-
@@ -852,7 +816,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 213	23	1157	latin_other	wären'	german_umlaut_in_translit_context	wären'	"wären'"" (dPe 170,21); phyed skeul dus mi —"
 213	56	1158	german_prose_with_translit	mütterlicherseits	invalid_translit_shape	mütterlicherseits	"keln mütterlicherseits gibt"" (Nagdel 72,1);"
 213	56	1158	german_prose_with_translit	mütterlicherseits	german_umlaut_in_translit_context	mütterlicherseits	"keln mütterlicherseits gibt"" (Nagdel 72,1);"
-213	66	1158	german_prose_with_translit	Li$	confusable_char	Liś	"kann"" (Dagy); bus pa mi — (Li$ 20,1)."
 213	77	1158	german_prose_with_translit	Ich'	confusable_char	lch'	"""der Tor, der [die Existenz von] 'Ich' und"
 214	21	1159	german_prose_with_translit	gsuñs	confusable_char	gsuṅs	Lex. so so skye bo ... ~ zes mtsho {7 ka gsuñs
 214	27	1159	german_prose_with_translit	Iageshālfte	confusable_char	lageshālfte	"chen karana, die einer ""Iageshālfte zugeord-"
@@ -866,19 +829,16 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 216	82	1175	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	1. [Dinge, ohne Ortsveränderung] erschei-
 216	82	1175	german_prose_with_translit	Ortsveränderung	german_umlaut_in_translit_context	Ortsveränderung	1. [Dinge, ohne Ortsveränderung] erschei-
 217	59	1177	german_prose_with_translit	I'els	confusable_char	l'els	te den I'els um; darunter kam blaue Tonerde
-217	60	1177	german_prose_with_translit	L$dz-K	confusable_char	Lśdz-K	"zum Vorschein"" (L$dz-K 291,34); rta la sgal"
 217	76	1177	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	2. [Dinge, mit Ortsveränderung] erschei-
 217	76	1177	german_prose_with_translit	Ortsveränderung	german_umlaut_in_translit_context	Ortsveränderung	2. [Dinge, mit Ortsveränderung] erschei-
 218	28	1178	german_prose_with_translit	sätstsba	invalid_translit_shape	sätstsba	"sätstsba ""Votivbilder, die aus einem Model"
 218	28	1178	german_prose_with_translit	sätstsba	german_umlaut_in_translit_context	sätstsba	"sätstsba ""Votivbilder, die aus einem Model"
 218	34	1178	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	3. [Lebewesen, ohne Ortsveränderung] er-
 218	34	1178	german_prose_with_translit	Ortsveränderung	german_umlaut_in_translit_context	Ortsveränderung	3. [Lebewesen, ohne Ortsveränderung] er-
-218	46	1178	german_prose_with_translit	Vi$T	confusable_char	ViśT	"Brahmanen namens Kapila"" (Vi$T 210,3); ¢"
 218	72	1179	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	4. [Lebewesen, mit Ortsveränderung] er-
 218	72	1179	german_prose_with_translit	Ortsveränderung	german_umlaut_in_translit_context	Ortsveränderung	4. [Lebewesen, mit Ortsveränderung] er-
 219	6	1180	german_prose_with_translit	Lokalbevölkerung	invalid_translit_shape	Lokalbevölkerung	"""die Lokalbevölkerung kam, um zu schau-"
 219	6	1180	german_prose_with_translit	Lokalbevölkerung	german_umlaut_in_translit_context	Lokalbevölkerung	"""die Lokalbevölkerung kam, um zu schau-"
-219	38	1180	latin_other	L$dz-K	confusable_char	Lśdz-K	"um Unterweisungen usw."" (L$dz-K 294,12);"
 219	93	1181	latin_other	Buddhakörper	invalid_translit_shape	Buddhakörper	"standene Buddhakörper"" (gZi 3: 129,1)."
 219	93	1181	latin_other	Buddhakörper	german_umlaut_in_translit_context	Buddhakörper	"standene Buddhakörper"" (gZi 3: 129,1)."
 220	88	1183	german_prose_with_translit	Schmähungen	invalid_translit_shape	Schmähungen	"flüssegab es nichtsals Schmähungen"" (KTh"
@@ -889,13 +849,11 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 222	41	1185	german_prose_with_translit	Überlieferungen	german_umlaut_in_translit_context	Überlieferungen	"lichen Überlieferungen hervorgegangen ist"""
 222	79	1186	german_prose_with_translit	Stinyatä	invalid_translit_shape	Stinyatä	die Stinyatä, die der Sphāre gleicht, erkannt
 222	79	1186	german_prose_with_translit	Stinyatä	german_umlaut_in_translit_context	Stinyatä	die Stinyatä, die der Sphāre gleicht, erkannt
-223	4	1188	german_prose_with_translit	L$dz-K	confusable_char	Lśdz-K	"der"" (L$dz-K 243,17)."
 223	8	1188	german_prose_with_translit	tatsächliche	invalid_translit_shape	tatsächliche	nach Art eines Hilfsverbs die tatsächliche
 223	8	1188	german_prose_with_translit	tatsächliche	german_umlaut_in_translit_context	tatsächliche	nach Art eines Hilfsverbs die tatsächliche
 223	41	1188	german_prose_with_translit	Laienanhänger	invalid_translit_shape	Laienanhänger	Laienanhänger mußten zu den Andersgläu-
 223	41	1188	german_prose_with_translit	Laienanhänger	german_umlaut_in_translit_context	Laienanhänger	Laienanhänger mußten zu den Andersgläu-
 223	61	1189	latin_other	Ihgr	confusable_char	lhgr	"dern"" (Ihgr 80,1); 57?/7///0 ma'i don pa kha"
-223	89	1189	latin_other	L$dz	confusable_char	Lśdz	"wurden"" (L$dz 192,2); 7a /?// mo nun pas ma"
 224	57	1194	latin_other	Belästigungen	invalid_translit_shape	Belästigungen	"Belästigungen"" (MTH3/5/27 3)."
 224	57	1194	latin_other	Belästigungen	german_umlaut_in_translit_context	Belästigungen	"Belästigungen"" (MTH3/5/27 3)."
 225	12	1197	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	1. Unglück, Mißgeschick.
@@ -904,15 +862,14 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 225	14	1197	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	"Unglück des einen dem anderen aufgeladen"""
 225	16	1197	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	"Lex. miya han ""Unglück"" (Mimi 161; Mim2"
 225	16	1197	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	"Lex. miya han ""Unglück"" (Mimi 161; Mim2"
-225	23	1197	german_prose_with_translit	Li$	confusable_char	Liś	"den"" (Dagy); — ni mya nan (Li$ 8,9, KlohnD"
 225	46	1199	german_prose_with_translit	Unglückseligen	invalid_translit_shape	Unglückseligen	"""wir Unglückseligen sind vom König be-"
 225	46	1199	german_prose_with_translit	Unglückseligen	german_umlaut_in_translit_context	Unglückseligen	"""wir Unglückseligen sind vom König be-"
 225	48	1200	headword_line	Unglück	invalid_translit_shape	Unglück	བྱུར་ཆགས་ byur chags Unglück, Katastrophe.
 225	48	1200	headword_line	Unglück	german_umlaut_in_translit_context	Unglück	བྱུར་ཆགས་ byur chags Unglück, Katastrophe.
 225	50	1200	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	"durch Unglück entstanden ist"" (Dagy)."
 225	50	1200	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	"durch Unglück entstanden ist"" (Dagy)."
-225	70	1202	german_prose_with_translit	Eheschließung	invalid_translit_shape	Eheschließung	Eheschließung; vgl. SchuH 2012: 1494.
-225	70	1202	german_prose_with_translit	Eheschließung	german_umlaut_in_translit_context	Eheschließung	Eheschließung; vgl. SchuH 2012: 1494.
+225	70	1202	german_prose_with_translit	Eheschließung	invalid_translit_shape	Eheschließung	Eheschließung; vgl. SCHUH 2012: 1494.
+225	70	1202	german_prose_with_translit	Eheschließung	german_umlaut_in_translit_context	Eheschließung	Eheschließung; vgl. SCHUH 2012: 1494.
 225	73	1202	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	"'Zusammentreffen von Unglück"" (Nagdel"
 225	73	1202	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	"'Zusammentreffen von Unglück"" (Nagdel"
 226	5	1204	german_prose_with_translit	angehäuft	invalid_translit_shape	angehäuft	"Lex. spur ba ""angehäuft"" (Mim2 295); —r"
@@ -928,7 +885,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 227	71	1219	german_prose_with_translit	Sañs	confusable_char	Saṅs	"nach übernahm er Bye-phug in Sañs"" (Bu-śz"
 228	6	1222	german_prose_with_translit	Gangä	invalid_translit_shape	Gangä	len Stüpas wie Sand an der Gangä sind zehn-
 228	6	1222	german_prose_with_translit	Gangä	german_umlaut_in_translit_context	Gangä	len Stüpas wie Sand an der Gangä sind zehn-
-228	48	1223	latin_other	$Sambh	confusable_char	Śambh	"gemeinden"" ($Sambh 21b3); bskalchen — stoni"
 229	62	1229	german_prose_with_translit	Änderung'	invalid_translit_shape	Änderung'	"der Änderung'"" (MigTo 268,2)."
 229	62	1229	german_prose_with_translit	Änderung'	german_umlaut_in_translit_context	Änderung'	"der Änderung'"" (MigTo 268,2)."
 229	65	1229	latin_other	Ermächtigungen	invalid_translit_shape	Ermächtigungen	undzwanzig allgemeine Ermächtigungen,
@@ -971,10 +927,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 235	7	1265	german_prose_with_translit	hältst	german_umlaut_in_translit_context	hältst	"an diese Abmachung hältst"" (HMrg 52,11);"
 235	36	1266	german_prose_with_translit	rungsgeschäfte	invalid_translit_shape	rungsgeschäfte	rungsgeschäfte nahmen die beiden Minister
 235	36	1266	german_prose_with_translit	rungsgeschäfte	german_umlaut_in_translit_context	rungsgeschäfte	rungsgeschäfte nahmen die beiden Minister
-236	2	1268	german_prose_with_translit	P$	confusable_char	PŚ	"noch als Diener anderer fungieren"" (P$ 8b);"
 236	5	1268	german_prose_with_translit	terstützer'	invalid_translit_shape	terstützer'	terstützer' [bezeichnet] einen Unterstützer
 236	5	1268	german_prose_with_translit	terstützer'	german_umlaut_in_translit_context	terstützer'	terstützer' [bezeichnet] einen Unterstützer
-236	10	1268	german_prose_with_translit	G$S-H	confusable_char	GŚ-H	"seine Tugenden als Boten"" (G$S-H 7b); gari"
 237	8	1270	german_prose_with_translit	ungewöhnlichen	invalid_translit_shape	ungewöhnlichen	man die ungewöhnlichen [Plätze] als heilige
 237	8	1270	german_prose_with_translit	ungewöhnlichen	german_umlaut_in_translit_context	ungewöhnlichen	man die ungewöhnlichen [Plätze] als heilige
 237	9	1270	german_prose_with_translit	Übung	invalid_translit_shape	Übung	"Plätze für die Übung des Vajrayāna anlegt"""
@@ -983,8 +937,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 237	93	1271	german_prose_with_translit	verängstigt	german_umlaut_in_translit_context	verängstigt	und Kraft verängstigt er die übelwollenden
 238	26	1272	german_prose_with_translit	Bedeutungsveränderung	invalid_translit_shape	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
 238	26	1272	german_prose_with_translit	Bedeutungsveränderung	german_umlaut_in_translit_context	Bedeutungsveränderung	8. Hilfsverb ohne Bedeutungsveränderung.
-238	40	1272	german_prose_with_translit	P$	confusable_char	PŚ	"holt er die Fische heraus"" (P$ 86c); de yis"
-239	27	1274	latin_other	Y$	confusable_char	YŚ	"seitigt dessen Krankheiten"" (Y$ 45d); rroms"
 239	39	1274	german_prose_with_translit	Erzählung	invalid_translit_shape	Erzählung	"(metr.) ""die Erzählung vom guten Weltzeit-"
 239	39	1274	german_prose_with_translit	Erzählung	german_umlaut_in_translit_context	Erzählung	"(metr.) ""die Erzählung vom guten Weltzeit-"
 239	57	1275	german_prose_with_translit	Hungersnöte	invalid_translit_shape	Hungersnöte	"Hungersnöte"" (mDzod4G 64,14); rab tu bde"
@@ -1105,7 +1057,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 262	35	1441	german_prose_with_translit	Brañ-gi	confusable_char	Braṅ-gi	"wurde, gründete er Brañ-gi chu-bskor-gnas"""
 262	44	1442	latin_other	Schlangenkönig	invalid_translit_shape	Schlangenkönig	Schlangenkönig.
 262	44	1442	latin_other	Schlangenkönig	german_umlaut_in_translit_context	Schlangenkönig	Schlangenkönig.
-262	47	1442	german_prose_with_translit	P$	confusable_char	PŚ	"kann man Schaden nehmen"" (P$ 78c); rtsa"
 262	53	1442	german_prose_with_translit	Schlangenkönigs	invalid_translit_shape	Schlangenkönigs	"Schlangenkönigs"" (Udr 29,2); —' khrag ni"
 262	53	1442	german_prose_with_translit	Schlangenkönigs	german_umlaut_in_translit_context	Schlangenkönigs	"Schlangenkönigs"" (Udr 29,2); —' khrag ni"
 262	59	1442	latin_other	Schlangenkönig	invalid_translit_shape	Schlangenkönig	"po ""Schlangenkönig"" (brDa); kKlu royal la"
@@ -1114,7 +1065,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 263	61	1456	german_prose_with_translit	Rüstung	german_umlaut_in_translit_context	Rüstung	"Lex.go cha'am go cha'i me lori ""Rüstung oder"
 263	62	1456	german_prose_with_translit	Rüstung	invalid_translit_shape	Rüstung	"Spiegel der Rüstung"" (brDa)."
 263	62	1456	german_prose_with_translit	Rüstung	german_umlaut_in_translit_context	Rüstung	"Spiegel der Rüstung"" (brDa)."
-265	10	1460	german_prose_with_translit	P$	confusable_char	PŚ	"Einklang mit dem Befehl bringt"" (P$ 25a);"
 265	21	1460	german_prose_with_translit	ungezähmte	invalid_translit_shape	ungezähmte	"""respektlose Diener und ungezähmte Pfer-"
 265	21	1460	german_prose_with_translit	ungezähmte	german_umlaut_in_translit_context	ungezähmte	"""respektlose Diener und ungezähmte Pfer-"
 265	56	1461	german_prose_with_translit	geringfü	invalid_translit_shape	geringfü	"""bran vgl. Tphran minder, klein, geringfü-"
@@ -1128,7 +1078,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 267	63	1468	german_prose_with_translit	Vedängas	german_umlaut_in_translit_context	Vedängas	Brahmanen, der in den Vedas und Vedängas
 268	49	1470	german_prose_with_translit	gemüts	invalid_translit_shape	gemüts	sind zwei elende Brahmanen, die gemüts-
 268	49	1470	german_prose_with_translit	gemüts	german_umlaut_in_translit_context	gemüts	sind zwei elende Brahmanen, die gemüts-
-268	64	1470	latin_other	Li$	confusable_char	Liś	"ze"" (Li$ 33,16)."
 269	52	1474	german_prose_with_translit	abrähmanyam	invalid_translit_shape	abrähmanyam	"Brahmanenjungen an"" (K12 26936). Lex. abrähmanyam (Mvy 2459, Abt. skyon"
 269	52	1474	german_prose_with_translit	abrähmanyam	german_umlaut_in_translit_context	abrähmanyam	"Brahmanenjungen an"" (K12 26936). Lex. abrähmanyam (Mvy 2459, Abt. skyon"
 270	84	1476	german_prose_with_translit	Auflösung	invalid_translit_shape	Auflösung	"= vislesah ""Auflösung"" (Mvy 2569); /)// Idarr"
@@ -1149,13 +1098,11 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 272	40	1478	german_prose_with_translit	Tongefäßen	german_umlaut_in_translit_context	Tongefäßen	Tongefäßen, Schöpflöffeln und Geräten ei-
 273	14	1478	german_prose_with_translit	Erzählung	invalid_translit_shape	Erzählung	Zusammenstellung der Erzählung soll kurz-
 273	14	1478	german_prose_with_translit	Erzählung	german_umlaut_in_translit_context	Erzählung	Zusammenstellung der Erzählung soll kurz-
-273	65	1479	latin_other	Y$	confusable_char	YŚ	[Krankheiten]* (Y$ 61b).
 273	71	1480	german_prose_with_translit	Verfügung	invalid_translit_shape	Verfügung	"te namens Vrksapurt zur Verfügung gestellt"""
 273	71	1480	german_prose_with_translit	Verfügung	german_umlaut_in_translit_context	Verfügung	"te namens Vrksapurt zur Verfügung gestellt"""
 274	5	1480	german_prose_with_translit	sunañ	confusable_char	sunaṅ	"sind, sind getäuscht"" (Glr 37,7); sunañ ba ~"
 274	12	1480	german_prose_with_translit	Täuschung	invalid_translit_shape	Täuschung	"lläpanam ""die Täuschung von Toren"" (Mvy"
 274	12	1480	german_prose_with_translit	Täuschung	german_umlaut_in_translit_context	Täuschung	"lläpanam ""die Täuschung von Toren"" (Mvy"
-274	65	1482	latin_other	Li$	confusable_char	Liś	byin pa (Li$ 6,14); brims pa = wyedpa'ani ster
 274	74	1483	german_prose_with_translit	hängter	invalid_translit_shape	hängter	"hängter"" (KI kha 2837); rgyal ba'i Zabs ?:/"
 274	74	1483	german_prose_with_translit	hängter	german_umlaut_in_translit_context	hängter	"hängter"" (KI kha 2837); rgyal ba'i Zabs ?:/"
 275	59	1483	german_prose_with_translit	Schriftstück	invalid_translit_shape	Schriftstück	verfassen; — pa Geschriebenes, Schriftstück,
@@ -1170,7 +1117,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 277	14	1488	german_prose_with_translit	Schriftstüick	german_umlaut_in_translit_context	Schriftstüick	klaren Aussage, daß dieses Schriftstüick un- 5 ( Fr ); a:
 277	22	1488	german_prose_with_translit	Überlegungen	invalid_translit_shape	Überlegungen	er Überlegungen den Wortlaut der Vertrags-
 277	22	1488	german_prose_with_translit	Überlegungen	german_umlaut_in_translit_context	Überlegungen	er Überlegungen den Wortlaut der Vertrags-
-277	32	1489	latin_other	Li$	confusable_char	Liś	"pa ""hungrig sein"" (Li$ 30,15); — ba tsha ba ="
 278	25	1492	latin_other	Io	confusable_char	lo	— Io 'brin porgyal sum sregs is / en kar
 278	50	1493	german_prose_with_translit	ursprüngliche	invalid_translit_shape	ursprüngliche	"Lex. rtsa ba' khuns ""ursprüngliche Quelle"""
 278	50	1493	german_prose_with_translit	ursprüngliche	german_umlaut_in_translit_context	ursprüngliche	"Lex. rtsa ba' khuns ""ursprüngliche Quelle"""
@@ -1190,7 +1136,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 284	8	1515	german_prose_with_translit	Fingernägel	german_umlaut_in_translit_context	Fingernägel	don'bregpa'i 'das ,,1. 5, ¥, Haare, Fingernägel,
 284	15	1515	german_prose_with_translit	Fingernägel	invalid_translit_shape	Fingernägel	Haare, Fingernägel, Holz usw. geschnitten
 284	15	1515	german_prose_with_translit	Fingernägel	german_umlaut_in_translit_context	Fingernägel	Haare, Fingernägel, Holz usw. geschnitten
-284	17	1515	latin_other	Li$	confusable_char	Liś	"pa ""abschneiden"" (Li$ 22,6); 'bregs pa= — zin"
 284	60	1523	headword_line	äng	invalid_translit_shape	äng	བྲེ * bred pf. zu U'bred sich fürchten, sich äng-
 284	60	1523	headword_line	äng	german_umlaut_in_translit_context	äng	བྲེ * bred pf. zu U'bred sich fürchten, sich äng-
 284	65	1523	latin_other	ängstigten	invalid_translit_shape	ängstigten	"""manche gingen, da sie sich ängstigten, ins"
@@ -1232,7 +1177,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 289	77	1546	german_prose_with_translit	Felshöhle	invalid_translit_shape	Felshöhle	"hen war, ging er in die Felshöhle"" (sBa 54,3);"
 289	77	1546	german_prose_with_translit	Felshöhle	german_umlaut_in_translit_context	Felshöhle	"hen war, ging er in die Felshöhle"" (sBa 54,3);"
 290	47	1546	german_prose_with_translit	Yab-Iha	confusable_char	Yab-lha	hen des breiten Himmels lebenden Yab-Iha
-291	78	1546	german_prose_with_translit	Vi$T	confusable_char	ViśT	"zu genießen"" (Vi$T 228,6); bdag gi red dan"
 291	89	1546	german_prose_with_translit	Auslösung	invalid_translit_shape	Auslösung	"Auslösung bringt!"" (Glr 198,22)."
 291	89	1546	german_prose_with_translit	Auslösung	german_umlaut_in_translit_context	Auslösung	"Auslösung bringt!"" (Glr 198,22)."
 292	5	1546	german_prose_with_translit	ruñ	confusable_char	ruṅ	"""passend, erträglich"" (Dagy); ~ = ruñ gi lta"
@@ -1252,7 +1196,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 294	54	1555	german_prose_with_translit	lJañ-yul	confusable_char	lJaṅ-yul	"""danach ging er nach lJañ-yul als geistli-"
 295	17	1558	latin_other	Hungersnöte	invalid_translit_shape	Hungersnöte	"Hungersnöte"" (mDzodG 64,14)."
 295	17	1558	latin_other	Hungersnöte	german_umlaut_in_translit_context	Hungersnöte	"Hungersnöte"" (mDzodG 64,14)."
-295	43	1562	german_prose_with_translit	Li$	confusable_char	Liś	"""bla mthan ni: außen und innen"" (Li$ 6,12)."
 296	20	1565	german_prose_with_translit	führer'	invalid_translit_shape	führer'	führer', der allerhöchste vollkommene Bud-
 296	20	1565	german_prose_with_translit	führer'	german_umlaut_in_translit_context	führer'	führer', der allerhöchste vollkommene Bud-
 296	26	1565	german_prose_with_translit	Verkörperung	invalid_translit_shape	Verkörperung	durch nur eine Verkörperung von der voll-
@@ -1285,10 +1228,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 300	13	1581	german_prose_with_translit	Führung	german_umlaut_in_translit_context	Führung	"geistliche Führung zu bitten"" (Glu 17a); sku"
 300	20	1581	german_prose_with_translit	Gefäng	invalid_translit_shape	Gefäng	"du bzun yodpa kun bton te ""die im Gefäng-"
 300	20	1581	german_prose_with_translit	Gefäng	german_umlaut_in_translit_context	Gefäng	"du bzun yodpa kun bton te ""die im Gefäng-"
-300	24	1581	german_prose_with_translit	$Sambh	confusable_char	Śambh	"welen als ihren geistlichen Lehrer"" ($Sambh"
 300	61	1582	german_prose_with_translit	Überlieferungs	invalid_translit_shape	Überlieferungs	"""die geistlichen Lehrer der Überlieferungs-"
 300	61	1582	german_prose_with_translit	Überlieferungs	german_umlaut_in_translit_context	Überlieferungs	"""die geistlichen Lehrer der Überlieferungs-"
-300	70	1582	german_prose_with_translit	L$dz	confusable_char	Lśdz	"aus gTam-Sul gewann seine Gunst"" (L$dz_K"
 300	80	1582	german_prose_with_translit	skiañ	confusable_char	skiaṅ	"Lex. ~ sprul skiañ zer ""es heißt auch geist-"
 300	88	1582	german_prose_with_translit	Trübungen	invalid_translit_shape	Trübungen	Trübungen aufgrund der Befleckungen auf-
 300	88	1582	german_prose_with_translit	Trübungen	german_umlaut_in_translit_context	Trübungen	Trübungen aufgrund der Befleckungen auf-
@@ -1305,10 +1246,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 304	71	1602	german_prose_with_translit	hängende	invalid_translit_shape	hängende	ter Seide soll man die hängende Dekoration
 304	71	1602	german_prose_with_translit	hängende	german_umlaut_in_translit_context	hängende	ter Seide soll man die hängende Dekoration
 307	12	1609	german_prose_with_translit	IhK	confusable_char	lhK	(IhK 2: 526,4); sdom pa thams cad ni — Zin
-308	15	1612	german_prose_with_translit	Vi$T'	confusable_char	ViśT'	"deva seinen Bogen"" (Vi$T' 86,6); de as ras"
 308	52	1613	german_prose_with_translit	mächtigung	invalid_translit_shape	mächtigung	"mächtigung"" (Mil 109,10); ras yo byad —"
 308	52	1613	german_prose_with_translit	mächtigung	german_umlaut_in_translit_context	mächtigung	"mächtigung"" (Mil 109,10); ras yo byad —"
-309	9	1613	german_prose_with_translit	Y$	confusable_char	YŚ	"endlosen Tantras nehmen"" (Y$ 1b); lta na"
 309	92	1614	german_prose_with_translit	Gyim-śañ	confusable_char	Gyim-śaṅ	mit der chinesischen Prinzessin Gyim-śañ
 310	12	1615	german_prose_with_translit	Überlegungen	invalid_translit_shape	Überlegungen	von Überlegungen, die aufgrund von Vor-
 310	12	1615	german_prose_with_translit	Überlegungen	german_umlaut_in_translit_context	Überlegungen	von Überlegungen, die aufgrund von Vor-
@@ -1330,13 +1269,10 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 312	25	1621	german_prose_with_translit	Nasenspülung	german_umlaut_in_translit_context	Nasenspülung	geben; snar — pa Nasenspülung; vgl. Yldugs,
 312	38	1621	latin_other	Nasenspülungen	invalid_translit_shape	Nasenspülungen	"sche Nasenspülungen [usw.]"" (Siddh 30.1);"
 312	38	1621	latin_other	Nasenspülungen	german_umlaut_in_translit_context	Nasenspülungen	"sche Nasenspülungen [usw.]"" (Siddh 30.1);"
-313	45	1622	german_prose_with_translit	P$	confusable_char	PŚ	"zu trinken gibt"" (P$ 91a); de la ni chu bskol te"
 313	60	1622	german_prose_with_translit	hineingiefßen	invalid_translit_shape	hineingiefßen	"Lex. blugs pa lta bu ""wie: hineingiefßen"""
 313	60	1622	german_prose_with_translit	hineingiefßen	german_umlaut_in_translit_context	hineingiefßen	"Lex. blugs pa lta bu ""wie: hineingiefßen"""
 313	61	1622	german_prose_with_translit	eingießen	invalid_translit_shape	eingießen	"(brDa); ja sogs — pa ""Tee usw. eingießen"""
 313	61	1622	german_prose_with_translit	eingießen	german_umlaut_in_translit_context	eingießen	"(brDa); ja sogs — pa ""Tee usw. eingießen"""
-314	37	1623	latin_other	Li$	confusable_char	Liś	— (Li$ 17,1); rman po ni — (Li$ 18,13).
-314	37	1623	latin_other	Li$	confusable_char	Liś	— (Li$ 17,1); rman po ni — (Li$ 18,13).
 315	7	1624	german_prose_with_translit	Störungen	invalid_translit_shape	Störungen	besten Heilmittel für Störungen des Gei-
 315	7	1624	german_prose_with_translit	Störungen	german_umlaut_in_translit_context	Störungen	besten Heilmittel für Störungen des Gei-
 315	80	1624	german_prose_with_translit	Überlegung	invalid_translit_shape	Überlegung	2. Gedanken, Denken, Überlegung, Ge-
@@ -1345,7 +1281,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 316	22	1624	german_prose_with_translit	Überlegung	german_umlaut_in_translit_context	Überlegung	ne Spende, soweit die eigene Überlegung
 316	54	1625	german_prose_with_translit	ungetrübte	invalid_translit_shape	ungetrübte	"(metr.) ""der ungetrübte Dharmadhāty, wel-"
 316	54	1625	german_prose_with_translit	ungetrübte	german_umlaut_in_translit_context	ungetrübte	"(metr.) ""der ungetrübte Dharmadhāty, wel-"
-317	20	1626	latin_other	L$dz	confusable_char	Lśdz	"jlu-Tochter"" (L$dz 140,2)."
 317	25	1627	latin_other	Ängstlichkeit	invalid_translit_shape	Ängstlichkeit	Ängstlichkeit.
 317	25	1627	latin_other	Ängstlichkeit	german_umlaut_in_translit_context	Ängstlichkeit	Ängstlichkeit.
 317	30	1627	latin_other	Ängstlichkeit	invalid_translit_shape	Ängstlichkeit	es aufgrund meiner Ängstlichkeit nicht ge-
@@ -1360,7 +1295,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 322	63	1670	headword_line	ungestüm	german_umlaut_in_translit_context	ungestüm	བློ་དྲེད་པོ་ blo dred po unbelehrbar, ungestüm;
 323	16	1674	german_prose_with_translit	unglücklich	invalid_translit_shape	unglücklich	Freude; blo mibdeba unglücklich, unbehag-
 323	16	1674	german_prose_with_translit	unglücklich	german_umlaut_in_translit_context	unglücklich	Freude; blo mibdeba unglücklich, unbehag-
-324	24	1677	german_prose_with_translit	Vi$T	confusable_char	ViśT	"Pändu und Vidura, die drei, geboren"" (Vi$T"
 325	53	1683	german_prose_with_translit	Entzündung	invalid_translit_shape	Entzündung	"babs na ""wenn eine Entzündung beim Pferd"
 325	53	1683	german_prose_with_translit	Entzündung	german_umlaut_in_translit_context	Entzündung	"babs na ""wenn eine Entzündung beim Pferd"
 325	76	1684	latin_other	ssünlamda'	invalid_translit_shape	ssünlamda'	du ssünlamda' phogpai sdugbsnal'drabacig
@@ -1483,7 +1417,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 347	69	1817	german_prose_with_translit	ungünstig	german_umlaut_in_translit_context	ungünstig	seine Zeichen günstig oder ungünstig? was
 347	86	1817	german_prose_with_translit	väterlicherseits	invalid_translit_shape	väterlicherseits	väterlicherseits Gaumenbutter geben, ist es
 347	86	1817	german_prose_with_translit	väterlicherseits	german_umlaut_in_translit_context	väterlicherseits	väterlicherseits Gaumenbutter geben, ist es
-348	11	1818	latin_other	Li$	confusable_char	Liś	(Li$ 23,11); — che ba'am skal pa che ba'am
 349	36	1826	german_prose_with_translit	Bedrängnisse	invalid_translit_shape	Bedrängnisse	wenn Bedrängnisse gekommen sind, nicht
 349	36	1826	german_prose_with_translit	Bedrängnisse	german_umlaut_in_translit_context	Bedrängnisse	wenn Bedrängnisse gekommen sind, nicht
 350	79	1837	german_prose_with_translit	jüngere	invalid_translit_shape	jüngere	"pas ""die jüngere Gemahlin bat einen Brah-"
@@ -1596,7 +1529,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 379	32	2057	latin_other	SIINER'	confusable_char	SllNER'	SIINER' dbu mdzad.
 380	12	2063	german_prose_with_translit	Füllung	invalid_translit_shape	Füllung	Füllung] des Kopfes [einer Statue] und an
 380	12	2063	german_prose_with_translit	Füllung	german_umlaut_in_translit_context	Füllung	Füllung] des Kopfes [einer Statue] und an
-380	30	2065	german_prose_with_translit	L$dz	confusable_char	Lśdz	"nichtete Bon traf den König"" (L$dz 272,6)."
 381	16	2070	german_prose_with_translit	Höhlung	invalid_translit_shape	Höhlung	bohren; die Handflächen zu einer Höhlung
 381	16	2070	german_prose_with_translit	Höhlung	german_umlaut_in_translit_context	Höhlung	bohren; die Handflächen zu einer Höhlung
 381	29	2072	latin_other	Darmblähungen	invalid_translit_shape	Darmblähungen	kha'i — Darmblähungen.
@@ -1609,9 +1541,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 383	3	2086	latin_other	Bewußtsem	german_umlaut_in_translit_context	Bewußtsem	Bewußtsem kommen.
 383	6	2086	german_prose_with_translit	wußtsein	invalid_translit_shape	wußtsein	"wußtsein gekommen war, sprach er"" (Udr"
 383	6	2086	german_prose_with_translit	wußtsein	german_umlaut_in_translit_context	wußtsein	"wußtsein gekommen war, sprach er"" (Udr"
-383	72	2089	german_prose_with_translit	śväsayema	invalid_translit_shape	śväsayema	"śväsayema ""wir wollen die entmutigten Le-"
-383	72	2089	german_prose_with_translit	śväsayema	german_umlaut_in_translit_context	śväsayema	"śväsayema ""wir wollen die entmutigten Le-"
-385	19	2101	latin_other	Li$	confusable_char	Liś	la — (Li$ 2,7); dbus sam dkyil (TTC).
 386	8	2113	german_prose_with_translit	Täuschung	invalid_translit_shape	Täuschung	"das Übel von Täuschung und Armut gibt"""
 386	8	2113	german_prose_with_translit	Täuschung	german_umlaut_in_translit_context	Täuschung	"das Übel von Täuschung und Armut gibt"""
 386	73	2115	german_prose_with_translit	Machtübertragung	invalid_translit_shape	Machtübertragung	2. in ña' ~ Machtübertragung.
@@ -1654,7 +1583,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 397	69	2177	german_prose_with_translit	väterlicherseits	german_umlaut_in_translit_context	väterlicherseits	Verwandten väterlicherseits.
 398	54	2181	german_prose_with_translit	hwañ	confusable_char	hwaṅ	"rgyal po chen po rgya rje hwañ te ~ 0/7/5 ""der"
 398	64	2181	german_prose_with_translit	Ih	confusable_char	lh	"Onkel notwendig"" (In12 W38); bod kyi Ih."
-398	71	2181	german_prose_with_translit	Bu-$	confusable_char	Bu-ś	"Steinsäule von Lhasa geschrieben"" (Bu-$;"
 399	33	2188	german_prose_with_translit	eingefügt	invalid_translit_shape	eingefügt	gang] der Ermittlung eingefügt hatten, stell-
 399	33	2188	german_prose_with_translit	eingefügt	german_umlaut_in_translit_context	eingefügt	gang] der Ermittlung eingefügt hatten, stell-
 399	50	2189	german_prose_with_translit	Klängen	invalid_translit_shape	Klängen	erfreulichen Klängen ganz erfüllte 'Iirdhaar'
@@ -1725,7 +1653,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 419	21	2331	german_prose_with_translit	Auflösung	german_umlaut_in_translit_context	Auflösung	"""was [den gTo zur] Auflösung ihres Planes"
 420	21	2333	german_prose_with_translit	Verpflichtungserklärung	invalid_translit_shape	Verpflichtungserklärung	mer wirklich in der Verpflichtungserklärung . on
 420	21	2333	german_prose_with_translit	Verpflichtungserklärung	german_umlaut_in_translit_context	Verpflichtungserklärung	mer wirklich in der Verpflichtungserklärung . on
-420	35	2333	latin_other	Li$	confusable_char	Liś	"ben"" (brDa); — ni tsbon khan (Li$ 13,6)."
 421	76	2342	latin_other	bedrängt	invalid_translit_shape	bedrängt	"mtho ""tsham pa rnams la 7//9 ""bedrängt sein,"
 421	76	2342	latin_other	bedrängt	german_umlaut_in_translit_context	bedrängt	"mtho ""tsham pa rnams la 7//9 ""bedrängt sein,"
 422	14	2345	latin_other	geringschätzen	invalid_translit_shape	geringschätzen	wirren, geringschätzen, beschimp-
@@ -1736,7 +1663,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 424	25	2358	german_prose_with_translit	Öffnung	german_umlaut_in_translit_context	Öffnung	von der Öffnung nach unten kleiner werden
 425	60	2363	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	"spyan la phog (metr.) ""Unglück, Unsauberes"
 425	60	2363	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	"spyan la phog (metr.) ""Unglück, Unsauberes"
-426	45	2364	latin_other	Li$	confusable_char	Liś	nams pa (Li$ 12,16).
 427	43	2365	german_prose_with_translit	Käli'	invalid_translit_shape	Käli'	däsa, d.h. 'Untertan der Käli' oder 'Diener
 427	43	2365	german_prose_with_translit	Käli'	german_umlaut_in_translit_context	Käli'	däsa, d.h. 'Untertan der Käli' oder 'Diener
 427	44	2365	german_prose_with_translit	Käli'	invalid_translit_shape	Käli'	"der Käli' bekannt"" (Tär 62,11); rgyal blon —"
@@ -1786,7 +1712,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 436	7	2389	german_prose_with_translit	Jüngling	german_umlaut_in_translit_context	Jüngling	"los machender Jüngling"" (Bca 10.13d); seyes"
 437	3	2394	german_prose_with_translit	angeführt	invalid_translit_shape	angeführt	Gottheiten, angeführt von Tsi'u dmar-po
 437	3	2394	german_prose_with_translit	angeführt	german_umlaut_in_translit_context	angeführt	Gottheiten, angeführt von Tsi'u dmar-po
-437	34	2400	german_prose_with_translit	P$	confusable_char	PŚ	"pe nicht löschen"" (P$ 196)."
 439	4	2409	german_prose_with_translit	herunterhängen	invalid_translit_shape	herunterhängen	unordentlich oder zottelig herunterhängen.
 439	4	2409	german_prose_with_translit	herunterhängen	german_umlaut_in_translit_context	herunterhängen	unordentlich oder zottelig herunterhängen.
 441	19	2422	german_prose_with_translit	Öffnung	invalid_translit_shape	Öffnung	"der ein Loch, eine Öffnung bohrt"" (brDa);"
@@ -1853,7 +1778,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 452	14	2468	latin_other	Erzählung	german_umlaut_in_translit_context	Erzählung	"lo rgyus kyi gtam lta bu ""wie: Erzählung"""
 452	17	2468	german_prose_with_translit	Erzählung	invalid_translit_shape	Erzählung	"pa@'i gtam ""Erzählung, aufrichtige Rede"" (Liś"
 452	17	2468	german_prose_with_translit	Erzählung	german_umlaut_in_translit_context	Erzählung	"pa@'i gtam ""Erzählung, aufrichtige Rede"" (Liś"
-453	24	2473	german_prose_with_translit	Li$	confusable_char	Liś	(Dagy); — pa ni broyal ba (Li$ 19,2); — pa
 453	47	2476	german_prose_with_translit	Verköstigung	invalid_translit_shape	Verköstigung	"Tag wird eine Verköstigung verteilt"" (Ki ka"
 453	47	2476	german_prose_with_translit	Verköstigung	german_umlaut_in_translit_context	Verköstigung	"Tag wird eine Verköstigung verteilt"" (Ki ka"
 453	83	2476	german_prose_with_translit	Leseermächtigung	invalid_translit_shape	Leseermächtigung	dem vierfachen Gefolge Leseermächtigung
@@ -1866,7 +1790,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 456	51	2492	german_prose_with_translit	füllung	german_umlaut_in_translit_context	füllung	füllung und in Butter geröstetem Gersten.
 458	46	2500	german_prose_with_translit	geringfügige	invalid_translit_shape	geringfügige	"""dies reinigt und beseitigt geringfügige Er-"
 458	46	2500	german_prose_with_translit	geringfügige	german_umlaut_in_translit_context	geringfügige	"""dies reinigt und beseitigt geringfügige Er-"
-458	47	2500	latin_other	YS$	confusable_char	YŚ	"krankungen"" (YS$ 64cd)."
 458	57	2500	german_prose_with_translit	Gedankengänge	invalid_translit_shape	Gedankengänge	"schr ausufernden Gedankengänge"" (KTh 1:"
 458	57	2500	german_prose_with_translit	Gedankengänge	german_umlaut_in_translit_context	Gedankengänge	"schr ausufernden Gedankengänge"" (KTh 1:"
 458	67	2500	german_prose_with_translit	hinübergegangen	invalid_translit_shape	hinübergegangen	"'das pa'am mthar thug pa ""hinübergegangen"
@@ -1883,7 +1806,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 459	88	2505	german_prose_with_translit	Schriftsätze	german_umlaut_in_translit_context	Schriftsätze	mit Untersiegelung versehenen Schriftsätze
 460	46	2512	headword_line	byür	invalid_translit_shape	byür	འབྱིང་རྡུལ་ཆེ་ 'byür rdulche eine Zehnerpotenz;
 460	46	2512	headword_line	byür	german_umlaut_in_translit_context	byür	འབྱིང་རྡུལ་ཆེ་ 'byür rdulche eine Zehnerpotenz;
-461	23	2517	german_prose_with_translit	P$	confusable_char	PŚ	"Reiher holt die Fischeheraus"" (P$ 864); tshig"
 462	33	2522	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	1. [Dinge, ohne Ortsveränderung] erschei-
 462	33	2522	german_prose_with_translit	Ortsveränderung	german_umlaut_in_translit_context	Ortsveränderung	1. [Dinge, ohne Ortsveränderung] erschei-
 462	86	2523	german_prose_with_translit	Ortsveränderung	invalid_translit_shape	Ortsveränderung	[Dinge, mit Ortsveränderung] hervor-
@@ -1910,7 +1832,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 467	62	2530	headword_line	Störung	german_umlaut_in_translit_context	Störung	"འབྱུང་འབྲུགས་ 'khrugs ""Störung der Ele-"
 467	68	2530	german_prose_with_translit	Störungen	invalid_translit_shape	Störungen	tigt, die durch die Störungen der Elemente
 467	68	2530	german_prose_with_translit	Störungen	german_umlaut_in_translit_context	Störungen	tigt, die durch die Störungen der Elemente
-469	3	2540	german_prose_with_translit	P$	confusable_char	PŚ	"nehmen und der Befreiung"" (P$ 5b); khyod"
 471	40	2560	german_prose_with_translit	sätstsba	invalid_translit_shape	sätstsba	"bris (metr.) ""man schreibe auf fünf sätstsba"
 471	40	2560	german_prose_with_translit	sätstsba	german_umlaut_in_translit_context	sätstsba	"bris (metr.) ""man schreibe auf fünf sätstsba"
 473	50	2578	german_prose_with_translit	Jahrgänge	invalid_translit_shape	Jahrgänge	Elementes für die jeweiligen 60 Jahrgänge
@@ -1919,8 +1840,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 474	28	2580	german_prose_with_translit	Prüfung	german_umlaut_in_translit_context	Prüfung	"pa ""kundig in der Prüfung, im Erklären und"
 474	76	2581	german_prose_with_translit	Leseübertragungen	invalid_translit_shape	Leseübertragungen	"""er gewährte auch die Leseübertragungen zu"
 474	76	2581	german_prose_with_translit	Leseübertragungen	german_umlaut_in_translit_context	Leseübertragungen	"""er gewährte auch die Leseübertragungen zu"
-475	59	2586	latin_other	Li$	confusable_char	Liś	"pa: trennen"" (Li$ 23,7); — pa = mtshams"
-475	64	2587	german_prose_with_translit	Li$	confusable_char	Liś	"740,5); — ni mdzes pa ""schön"" (Li$ 23,7);"
 476	65	2594	german_prose_with_translit	Debñ	confusable_char	Debṅ	"gion dBus zu gehen"" (Debñ 227,3); ~ kbar"
 477	3	2595	german_prose_with_translit	Verkörperung	invalid_translit_shape	Verkörperung	"dgors nas ""er ahnte, daß eine Verkörperung"
 477	3	2595	german_prose_with_translit	Verkörperung	german_umlaut_in_translit_context	Verkörperung	"dgors nas ""er ahnte, daß eine Verkörperung"
@@ -1940,7 +1859,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 479	28	2610	latin_other	Entschlüssen	german_umlaut_in_translit_context	Entschlüssen	"tigen wahrhaftigen Entschlüssen reich sei"""
 479	44	2611	german_prose_with_translit	abwärts	invalid_translit_shape	abwärts	mit Räjagrha abwärts ging, dann kam Roru-
 479	44	2611	german_prose_with_translit	abwärts	german_umlaut_in_translit_context	abwärts	mit Räjagrha abwärts ging, dann kam Roru-
-479	58	2611	german_prose_with_translit	G$-H	confusable_char	GŚ-H	"der größte Reichtum"" (G$-H 410); gan zig"
 480	37	2618	headword_line	Täuschung	invalid_translit_shape	Täuschung	འབྱོར་འབྱིན་ 'byor 'byin Betrug, Täuschung.
 480	37	2618	headword_line	Täuschung	german_umlaut_in_translit_context	Täuschung	འབྱོར་འབྱིན་ 'byor 'byin Betrug, Täuschung.
 481	19	2625	german_prose_with_translit	Mangoblü	invalid_translit_shape	Mangoblü	[wenn] auf dem Kharjūra-Baum Mangoblü- Br 0 1. |
@@ -1976,14 +1894,12 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 488	78	2653	german_prose_with_translit	hängende	german_umlaut_in_translit_context	hängende	"hängende Früchte des Mangobaumes"" (Alis"
 489	4	2653	german_prose_with_translit	hängen	invalid_translit_shape	hängen	"an den Ästen hängen"" (HMrg 51,16); ka ta"
 489	4	2653	german_prose_with_translit	hängen	german_umlaut_in_translit_context	hängen	"an den Ästen hängen"" (HMrg 51,16); ka ta"
-489	51	2653	latin_other	P$	confusable_char	PŚ	"ternehmungen haben"" (P$ 65c); rmi lam de"
 490	52	2655	german_prose_with_translit	vergängliu	invalid_translit_shape	vergängliu	reifte (rnam par smin pa) und vergängliu
 490	52	2655	german_prose_with_translit	vergängliu	german_umlaut_in_translit_context	vergängliu	reifte (rnam par smin pa) und vergängliu
 490	64	2655	german_prose_with_translit	vergängliche	invalid_translit_shape	vergängliche	"vergängliche Resultate"" (T4362 2855), __ ',,"
 490	64	2655	german_prose_with_translit	vergängliche	german_umlaut_in_translit_context	vergängliche	"vergängliche Resultate"" (T4362 2855), __ ',,"
-491	40	2657	german_prose_with_translit	Y$	confusable_char	YŚ	"]Früchte gekocht"" (Y$ 56); hon 'bras gsum"
-492	56	2661	latin_other	Acavimśatikasahasrikä	invalid_translit_shape	Acavimśatikasahasrikä	Acavimśatikasahasrikä[prajnāpāramitāsūtra]
-492	56	2661	latin_other	Acavimśatikasahasrikä	german_umlaut_in_translit_context	Acavimśatikasahasrikä	Acavimśatikasahasrikä[prajnāpāramitāsūtra]
+492	56	2661	latin_other	Acavimśatikasahasrikä	invalid_translit_shape	Acavimśatikasahasrikä	Acavimśatikasahasrikä[prajñāpāramitāsūtra]
+492	56	2661	latin_other	Acavimśatikasahasrikä	german_umlaut_in_translit_context	Acavimśatikasahasrikä	Acavimśatikasahasrikä[prajñāpāramitāsūtra]
 492	58	2661	german_prose_with_translit	rañs	confusable_char	raṅs	(Nel 1235); dmar pu rañs pa bya bas / 'chin
 493	66	2665	german_prose_with_translit	jungvermählte	invalid_translit_shape	jungvermählte	eine jungvermählte Braut nicht schreiben
 493	66	2665	german_prose_with_translit	jungvermählte	german_umlaut_in_translit_context	jungvermählte	eine jungvermählte Braut nicht schreiben
@@ -2084,8 +2000,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 515	73	2756	latin_other	zusammenhängende	invalid_translit_shape	zusammenhängende	zusammenhängende, sinnlo-
 515	73	2756	latin_other	zusammenhängende	german_umlaut_in_translit_context	zusammenhängende	zusammenhängende, sinnlo-
 516	65	2763	german_prose_with_translit	lIHab-dpal-sgra	confusable_char	llHab-dpal-sgra	"""Bro lIHab-dpal-sgra erbaute den Tempel"
-516	69	2763	german_prose_with_translit	sa-thañ	confusable_char	sa-thaṅ	"sa-thañ [den Tempel] rMe-ru"" (Bu-5z 65.1):"
-516	79	2763	latin_other	L$dz-K	confusable_char	Lśdz-K	"hatte"" (L$dz-K 268,39)."
+516	69	2763	german_prose_with_translit	sa-thañ	confusable_char	sa-thaṅ	"sa-thañ [den Tempel] rMe-ru"" (Bu-śz 65.1):"
 517	42	2765	german_prose_with_translit	ungezähmtes	invalid_translit_shape	ungezähmtes	kein ungezähmtes Pferd! Es scheut und wird
 517	42	2765	german_prose_with_translit	ungezähmtes	german_umlaut_in_translit_context	ungezähmtes	kein ungezähmtes Pferd! Es scheut und wird
 517	72	2769	german_prose_with_translit	grünge	invalid_translit_shape	grünge	ner Wildnis mit von grünem Gras grünge-
@@ -2112,9 +2027,8 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 524	3	2800	german_prose_with_translit	Aufwärtsstreben	german_umlaut_in_translit_context	Aufwärtsstreben	"streben größer ist als das Aufwärtsstreben"""
 524	72	2804	german_prose_with_translit	Unglück	invalid_translit_shape	Unglück	wendung von Hexerei und Unglück sfällen
 524	72	2804	german_prose_with_translit	Unglück	german_umlaut_in_translit_context	Unglück	wendung von Hexerei und Unglück sfällen
-524	73	2804	german_prose_with_translit	glückbringend	invalid_translit_shape	glückbringend	"glückbringend"" (Vdk-M 144,2); pha rol byad"
-524	73	2804	german_prose_with_translit	glückbringend	german_umlaut_in_translit_context	glückbringend	"glückbringend"" (Vdk-M 144,2); pha rol byad"
-525	51	2807	german_prose_with_translit	YS$	confusable_char	YŚ	"gen die Vermehrung des Blutes"" (YS$ 50a);"
+524	73	2804	german_prose_with_translit	glückbringend	invalid_translit_shape	glückbringend	"glückbringend"" (Vdk-M 144,2); pha Rol byad"
+524	73	2804	german_prose_with_translit	glückbringend	german_umlaut_in_translit_context	glückbringend	"glückbringend"" (Vdk-M 144,2); pha Rol byad"
 526	54	2810	german_prose_with_translit	Achselhöhle	invalid_translit_shape	Achselhöhle	Haar und in der Achselhöhle* (Hev 2.7.44):
 526	54	2810	german_prose_with_translit	Achselhöhle	german_umlaut_in_translit_context	Achselhöhle	Haar und in der Achselhöhle* (Hev 2.7.44):
 526	60	2810	german_prose_with_translit	zusammengefaßßten	invalid_translit_shape	zusammengefaßßten	"(metr.) ""in die zusammengefaßßten verhor-"
@@ -2123,7 +2037,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 528	38	2815	german_prose_with_translit	Lotsäbas	german_umlaut_in_translit_context	Lotsäbas	dbari-po [und anderen] Lotsäbas, Pa, ;:
 529	54	2820	german_prose_with_translit	Säuglings	invalid_translit_shape	Säuglings	"Mund [des Säuglings]"" (gZer 611,4)."
 529	54	2820	german_prose_with_translit	Säuglings	german_umlaut_in_translit_context	Säuglings	"Mund [des Säuglings]"" (gZer 611,4)."
-530	69	2827	german_prose_with_translit	Li$	confusable_char	Liś	"Stein"" (Li$ 18,6)."
 530	73	2828	latin_other	sgañ	confusable_char	sgaṅ	mgar gyis than yaris cig la / sgañ (t. sbar)
 532	31	2836	latin_other	angezündet	invalid_translit_shape	angezündet	"angezündet hat"" (sBa 54,13); /us la me —"
 532	31	2836	latin_other	angezündet	german_umlaut_in_translit_context	angezündet	"angezündet hat"" (sBa 54,13); /us la me —"
@@ -2133,7 +2046,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 532	44	2836	german_prose_with_translit	angezün	german_umlaut_in_translit_context	angezün	Zeit der Dämmerung eine Lampe angezün-
 532	51	2836	german_prose_with_translit	angezüngeg	invalid_translit_shape	angezüngeg	"""das Feuer brennt, ich habe es angezüngeg"""
 532	51	2836	german_prose_with_translit	angezüngeg	german_umlaut_in_translit_context	angezüngeg	"""das Feuer brennt, ich habe es angezüngeg"""
-533	6	2836	latin_other	Li$	confusable_char	Liś	641); — du ni don du (Li$ 23,16).
 534	33	2845	headword_line	Gefängnis	invalid_translit_shape	Gefängnis	སྤལ་པ་ 'sbalba Gefängnis.
 534	33	2845	headword_line	Gefängnis	german_umlaut_in_translit_context	Gefängnis	སྤལ་པ་ 'sbalba Gefängnis.
 536	30	2857	german_prose_with_translit	gŚoñ-po	confusable_char	gŚoṅ-po	ten sich im verborgenen Land gŚoñ-po hoñ-
@@ -2167,9 +2079,7 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 540	66	2874	headword_line	Höhlung	german_umlaut_in_translit_context	Höhlung	སྦྲུབས་སྟོང་ ssbubs Hohlraum, Höhlung;
 543	58	2890	german_prose_with_translit	Huñ-tha'i-ji	confusable_char	Huṅ-tha'i-ji	Dalai Lama an dGa'-ldan Huñ-tha'i-ji.
 543	62	2890	german_prose_with_translit	Sañs-rgyas	confusable_char	Saṅs-rgyas	(d. h. Sañs-rgyas rgya-mtsho) und sBo-Sog-
-544	22	2893	latin_other	Li$	confusable_char	Liś	ni za ba (Li$ 17,7).
 545	78	2898	latin_other	skrañs	confusable_char	skraṅs	"pa"" (brDa); ~ pa = skrañs pa lta bu dan grod"
-546	3	2898	latin_other	Li$	confusable_char	Liś	(TTC); dbos pa ni — pa (Li$ 26,6); 'bos pa
 546	22	2899	latin_other	Blähungszuständen	invalid_translit_shape	Blähungszuständen	Blähungszuständen.
 546	22	2899	latin_other	Blähungszuständen	german_umlaut_in_translit_context	Blähungszuständen	Blähungszuständen.
 546	25	2899	german_prose_with_translit	Blähungen	invalid_translit_shape	Blähungen	"Blähungen und Katarrh"" (Ahs 1.5.68); — bZi"
@@ -2246,7 +2156,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 562	32	2981	german_prose_with_translit	Gerätschaft	german_umlaut_in_translit_context	Gerätschaft	"moprakaranam ""Gerätschaft für das Brand-"
 562	60	2984	german_prose_with_translit	aufwärts	invalid_translit_shape	aufwärts	Spachtel aufwärts verputzen, oder wie: kle-
 562	60	2984	german_prose_with_translit	aufwärts	german_umlaut_in_translit_context	aufwärts	Spachtel aufwärts verputzen, oder wie: kle-
-563	39	2985	latin_other	L$dz-K	confusable_char	Lśdz-K	(L$dz-K 261,4).
 564	85	2993	german_prose_with_translit	uneingeschränkt	invalid_translit_shape	uneingeschränkt	"higkeit, [das nennt man] uneingeschränkt"""
 564	85	2993	german_prose_with_translit	uneingeschränkt	german_umlaut_in_translit_context	uneingeschränkt	"higkeit, [das nennt man] uneingeschränkt"""
 565	46	2994	german_prose_with_translit	Anhänger	invalid_translit_shape	Anhänger	die Anhänger der buddhistischen Lehrekein
@@ -2255,7 +2164,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 566	33	2994	latin_other	dungsstücken	german_umlaut_in_translit_context	dungsstücken	"dungsstücken versorgt"" (sBa 53,13); khyod"
 566	45	2994	german_prose_with_translit	Durchführung	invalid_translit_shape	Durchführung	gut für die regelmäßige Durchführung re-
 566	45	2994	german_prose_with_translit	Durchführung	german_umlaut_in_translit_context	Durchführung	gut für die regelmäßige Durchführung re-
-566	87	2995	german_prose_with_translit	P$	confusable_char	PŚ	"Wunsch des Königs nicht erfüllen"" (P$ 333);"
 567	37	2996	german_prose_with_translit	Tötung	invalid_translit_shape	Tötung	ler Geschlechtsverkehr und rituelle Tötung
 567	37	2996	german_prose_with_translit	Tötung	german_umlaut_in_translit_context	Tötung	ler Geschlechtsverkehr und rituelle Tötung
 567	46	2996	german_prose_with_translit	Löwengebrüll	invalid_translit_shape	Löwengebrüll	das Löwengebrüll erschallen, daß Vereini-
@@ -2280,7 +2188,6 @@ page	line	entry_id	zone	token	issue	suggestion	line_excerpt
 568	82	3002	german_prose_with_translit	Erzählung	german_umlaut_in_translit_context	Erzählung	machten Erzählung soll kurzgefaßt nieder-
 568	88	3002	german_prose_with_translit	Längen	invalid_translit_shape	Längen	berechnet, indem man die Längen von Sonne
 568	88	3002	german_prose_with_translit	Längen	german_umlaut_in_translit_context	Längen	berechnet, indem man die Längen von Sonne
-569	24	3005	german_prose_with_translit	Y$	confusable_char	YŚ	"śataka zusammenfügen"" (Y$ 1)."
 569	40	3007	german_prose_with_translit	Ermächtigungen	invalid_translit_shape	Ermächtigungen	Ermächtigungen [des Kälacakra] vorausge-
 569	40	3007	german_prose_with_translit	Ermächtigungen	german_umlaut_in_translit_context	Ermächtigungen	Ermächtigungen [des Kälacakra] vorausge-
 569	51	3008	german_prose_with_translit	Übung	invalid_translit_shape	Übung	Übung, eine der zehn Kräfte

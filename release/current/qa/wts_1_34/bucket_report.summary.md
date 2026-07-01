@@ -1,15 +1,13 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/reference_marker_script_ng_cleanup_20260630T145127Z/wts_1_34_release_exact_preserve2`
-- unresolved confusable pairs: `205`
-- promote candidates (conservative): `10`
-- hold candidates: `195`
+- run_dir: `work/reference_marker_exact_cleanup_20260701T005035/wts_1_34`
+- unresolved confusable pairs: `189`
+- promote candidates (conservative): `8`
+- hold candidates: `181`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
 |---|---|---|---:|---:|---|
-|wts_1_34|$ambh|śambh|26|6|-|
-|wts_1_34|Vi$|Viś|26|6|-|
 |wts_1_34|mañ|maṅ|23|5|-|
 |wts_1_34|rañ|raṅ|11|5|-|
 |wts_1_34|miñ|miṅ|10|5|-|
@@ -22,10 +20,6 @@
 ## Top Hold Candidates
 |volume|from|to|unresolved|score|reason|
 |---|---|---|---:|---:|---|
-|wts_1_34|Y$|YŚ|67|3|other_char_map|
-|wts_1_34|P$|PŚ|54|3|other_char_map|
-|wts_1_34|G$|GŚ|44|3|other_char_map|
-|wts_1_34|G$-H|GŚ-H|13|2|other_char_map|
 |wts_1_34|drañs|draṅs|4|3|-|
 |wts_1_34|grañs|graṅs|4|3|-|
 |wts_1_34|P’Institut|P’lnstitut|4|2|-|
@@ -42,11 +36,15 @@
 |wts_1_34|mIshur|mlshur|3|2|-|
 |wts_1_34|BA’I|BA’l|3|1|-|
 |wts_1_34|PA’I|PA’l|3|1|-|
-|wts_1_34|$PS|ŚPS|3|0|other_char_map|
 |wts_1_34|samädhıh|samädhih|3|0|german_risk|
 |wts_1_34|Ihng|lhng|2|3|low_count|
 |wts_1_34|Yar-Iha|Yar-lha|2|3|low_count|
 |wts_1_34|ciñ|ciṅ|2|3|low_count|
+|wts_1_34|cuñs|cuṅs|2|3|low_count|
+|wts_1_34|dByañs|dByaṅs|2|3|low_count|
+|wts_1_34|dbyañs|dbyaṅs|2|3|low_count|
+|wts_1_34|rLun-Iha|rLun-lha|2|3|low_count|
+|wts_1_34|riñ|riṅ|2|3|low_count|
 
 ## Residual Artifact Buckets
 - `wts_1_34:dotless_i_artifact`: `200` distinct tokens

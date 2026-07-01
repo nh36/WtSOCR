@@ -366,3 +366,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 1101	100	11956	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	halb, 1. $. v. mit einer Hälfte zusammen wä-
 1317	18	12977	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	mit dem Geruch Aufzunehmende, 1. $. v. das
 539	174	6869	german_prose	vridakäaryam	vṛddhakāryam	A	sanskrit_high_freq_allowlist	high_edit_distance_drift	vridakäaryam) soll man aufgeben“ (Hev
+338	83	4588	tibetan_only	Tganı	↑ gaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	high_edit_distance_drift	གང་དག་ 4927? dag ↑ gaṅ 3.

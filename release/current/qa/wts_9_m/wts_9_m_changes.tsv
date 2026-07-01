@@ -2089,3 +2089,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 378	65	1702	german_prose_with_translit	dinjnänab	dinjñānab	A	sanskrit_jn_cluster_contextual	1	dinjnänab (Mvy 1126 Abt., ñan thos kyi yon
 380	59	1708	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	Mahäsattva, der stark durch Mitgefühl und
 394	82	1767	latin_other	vādavidhijnena	vādavidhijñena	A	sanskrit_high_freq_allowlist	1	"par bya ba = vādavidhijnena bhavitavyani ""es"
+57	22	262	german_prose_with_translit	Tdge	↑ dge	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ka; vgl. Tdge 'dun phal chen.
+160	51	725	german_prose_with_translit	Tspyan	↑ spyan	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	anschauen; vgl. Tspyan ras.
+382	76	1714	german_prose	Tlta	↑ lta	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Tlta 2.

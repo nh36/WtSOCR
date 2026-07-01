@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-06-30T21:43:19Z`
-Source/code commit observed while building this bundle: `021e2fd4316e350a47d6cc62d6fbd8335888ccfb`
+Generated UTC: `2026-07-01T00:04:22Z`
+Source/code commit observed while building this bundle: `b827deba2374c0b31b3d9d0fd8529000fa7d6273`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -17,19 +17,19 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/wts_1_34_release_exact_preserve2` |
-| `wts_35_51` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/wts_35_51_release_exact_preserve2` |
-| `wts_8_b` | `work/dngos_family_cleanup_20260630T101926Z/wts_8_b` |
-| `wts_9_m` | `work/dngos_family_cleanup_20260630T101926Z/wts_9_m` |
+| `wts_1_34` | `work/reference_marker_exact_cleanup_20260701T005035/wts_1_34` |
+| `wts_35_51` | `work/reference_marker_exact_cleanup_20260701T005035/wts_35_51` |
+| `wts_8_b` | `work/reference_marker_exact_cleanup_20260701T005035/wts_8_b` |
+| `wts_9_m` | `work/reference_marker_exact_cleanup_20260701T005035/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/tibetan_cleanup_diagnostics_wts_1_34_release_exact_preserve2` |
-| `wts_35_51` | `work/reference_marker_script_ng_cleanup_20260630T145127Z/tibetan_cleanup_diagnostics_wts_35_51_release_exact_preserve2` |
-| `wts_8_b` | `work/dngos_family_cleanup_20260630T101926Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/dngos_family_cleanup_20260630T101926Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Corrected Text
 
@@ -40,7 +40,6 @@ the latest trusted corrected text and compact QA artifacts into
 
 ## QA Artifacts
 
-- `qa/dngos_family_cleanup_20260630T101926Z/checksums.sha256`
 - `qa/wts_1_34/bucket_report.artifact_tokens.tsv`
 - `qa/wts_1_34/bucket_report.summary.md`
 - `qa/wts_1_34/bucket_report.unresolved_pairs.tsv`

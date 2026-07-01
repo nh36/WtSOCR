@@ -1,9 +1,9 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/dngos_family_cleanup_20260630T101926Z/wts_9_m`
-- unresolved confusable pairs: `38`
+- run_dir: `work/reference_marker_exact_cleanup_20260701T005035/wts_9_m`
+- unresolved confusable pairs: `31`
 - promote candidates (conservative): `0`
-- hold candidates: `38`
+- hold candidates: `31`
 
 ## Top Promote Candidates
 - none
@@ -11,12 +11,7 @@
 ## Top Hold Candidates
 |volume|from|to|unresolved|score|reason|
 |---|---|---|---:|---:|---|
-|wts_9_m|Y$|YŚ|9|1|other_char_map|
-|wts_9_m|P$|PŚ|7|1|other_char_map|
-|wts_9_m|Vi$|Viś|4|3|-|
 |wts_9_m|Io|lo|2|2|low_count|
-|wts_9_m|$ambh|śambh|1|3|low_count|
-|wts_9_m|Bu-$|Bu-ś|1|3|low_count|
 |wts_9_m|Iśvaras|lśvaras|1|3|low_count|
 |wts_9_m|Mu-Ihu|Mu-lhu|1|3|low_count|
 |wts_9_m|Siddha-I'rauen|Siddha-l'rauen|1|3|low_count|
@@ -36,6 +31,11 @@
 |wts_9_m|sTag-Iha|sTag-lha|1|3|low_count|
 |wts_9_m|sunañ|sunaṅ|1|3|low_count|
 |wts_9_m|ñd|ṅd|1|3|low_count|
+|wts_9_m|Bimba-I'rucht|Bimba-l'rucht|1|2|low_count|
+|wts_9_m|EvERDING|EvERDlNG|1|2|low_count|
+|wts_9_m|Ia|la|1|2|low_count|
+|wts_9_m|Ia'an|la'an|1|2|low_count|
+|wts_9_m|Ichs'|lchs'|1|2|low_count|
 
 ## Residual Artifact Buckets
 - `wts_9_m:initial_confusable_I`: `200` distinct tokens

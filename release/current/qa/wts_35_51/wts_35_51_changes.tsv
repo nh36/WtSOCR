@@ -6314,3 +6314,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 398	40	2036	headword_line	Tnan	↑² naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ནང་པར་ naṅ par vgl. ↑² naṅ.
 636	10	3140	headword_line	Isnan	↑ snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་བ་མེད་པ་ snaṅ ba med pa ↑ snaṅ med.
 636	50	3152	headword_line	Tsnan	↑ snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
+176	10	1017	german_prose_with_translit	Tbka'	↑ bka'	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	men, 1, 5, v. unterworfen werden; vgl. Tbka'
+282	9	1618	german_prose	Trgyan	↑ rgyan	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Trgyan sdud.
+413	57	2129	german_prose_with_translit	Tbka'	↑ bka'	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	en; in cp. intensiv, vgl. Tbka' nan, mgo nan.
+511	12	2567	german_prose	Ignas	↓ gnas	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Mögliche, vgl. Ignas min.
+511	55	2567	german_prose_with_translit	Ignas	↓ gnas	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	11. Lehrer, vgl. Ignas brtan 2.
+556	29	2754	german_prose_with_translit	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	4. Darlegung, vgl. Tchos kyi rnam grans.
+558	8	2761	german_prose	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	welt; vgl. Tchos bzan 4.
+853	3	4399	german_prose_with_translit	Isprul	↑ sprul	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	licher Lehrer; vgl. Isprul pa' sku.
+855	31	4404	example_tibetan_latin	Tsprul	↑ sprul	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	strahlen; vgl. Tsprul bkye. ༩).

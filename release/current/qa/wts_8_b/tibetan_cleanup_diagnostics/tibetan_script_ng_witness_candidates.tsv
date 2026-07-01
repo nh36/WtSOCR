@@ -1,1 +1,1 @@
-source_queue	volume	page	line	token_index	source_token	proposed_target	tibetan_witness	candidate_family	context_excerpt	evidence	confidence	suggested_action	score	score_explanation
+source_queue	volume	page	line	token_index	source_token	proposed_target	reference_marker_source	reference_marker_target	base_source_token	base_proposed_target	tibetan_witness	candidate_family	context_excerpt	evidence	confidence	suggested_action	score	score_explanation

@@ -70,3 +70,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 965	29	5081	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"Lex. dud pa'i don laṅ ""auch 1, $. v. sich ver-"
 992	37	5273	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	3. außenstehend, 1, $. ¥. nichtbuddhistisch;
 1112	14	6041	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"müssen"" (brDa); — ba zphralba'i don ""1. $. v."
+398	40	2036	headword_line	Tnan	↑² naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	high_edit_distance_drift	ནང་པར་ naṅ par vgl. ↑² naṅ.

@@ -7,6 +7,8 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 - `tibetan_google_candidate_readings.tsv`: 83
 - `tibetan_orthography_damage_candidates.tsv`: 352
 - `tibetan_script_ng_witness_candidates.tsv`: 0
+- `reference_marker_candidates.tsv`: 858
+- `reference_marker_token_families.tsv`: 354
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 285
 - `residual_sanskrit_low_confidence_candidates.tsv`: 663
@@ -64,6 +66,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 - `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.
 - `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.
 - `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.
+- `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\`) near Tibetan transliteration contexts. It is diagnostic only; it is not a broad marker-normalisation rule.
 - `sigla_variant_candidates.tsv` separates bibliography/siglum policy cases from Tibetan and Sanskrit normalisation.
 - `residual_sanskrit_low_confidence_candidates.tsv` is a small exploratory queue for Sanskrit-like residue outside the previous Sanskrit watch list.
 - Promotion should happen only in a later audited batch, using exact tokens and context gates.

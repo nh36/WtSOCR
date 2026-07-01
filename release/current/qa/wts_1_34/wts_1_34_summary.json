@@ -10,20 +10,20 @@
     "medium": 53
   },
   "discovered_patterns": 53,
-  "entries_detected": 13122,
+  "entries_detected": 13134,
   "google_vision_mode": false,
   "google_vision_rewrites": 0,
   "merge_only": false,
   "non_empty_lines": 178435,
   "pages": 1352,
-  "reviewed_tibetan_exact_changes": 1111,
+  "reviewed_tibetan_exact_changes": 1117,
   "sanskrit_changes": 675,
   "sanskrit_families": 242,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_review_suggestions": 39,
   "stale_review_rows_removed": 21,
   "structural_rewrite_count": 7617,
-  "tier_a_applied": 27139,
+  "tier_a_applied": 27147,
   "tier_b_suggestions": 44,
   "top_tier_a_reasons": [
     [
@@ -73,10 +73,6 @@
     [
       "sanskrit_high_freq_allowlist",
       402
-    ],
-    [
-      "reviewed_tibetan_exact_script_ng_witness",
-      2
     ]
   ],
   "top_tier_b_reasons": [
@@ -100,34 +96,34 @@
   "top_validator_issues": [
     [
       "invalid_translit_shape",
-      6213
+      5996
     ],
     [
       "german_umlaut_in_translit_context",
-      6213
+      5996
     ],
     [
       "confusable_char",
-      833
+      320
     ]
   ],
   "total_lines_seen": 240015,
-  "translit_tokens_detected": 303520,
+  "translit_tokens_detected": 304561,
   "trusted_lexicon_size": 1179,
-  "uncaptured_tibetan_prefix_lines": 5436,
-  "validator_issues": 13259,
+  "uncaptured_tibetan_prefix_lines": 5424,
+  "validator_issues": 12312,
   "watchdog_flag_counts": {
-    "high_edit_distance_drift": 367
+    "high_edit_distance_drift": 368
   },
-  "watchdog_flagged_changes": 367,
+  "watchdog_flagged_changes": 368,
   "zone_counts": {
-    "example_tibetan_latin": 1290,
-    "german_prose": 44228,
-    "german_prose_with_translit": 83896,
-    "headword_line": 13122,
-    "latin_other": 21000,
-    "other": 9441,
-    "tibetan_latin_mixed": 659,
-    "tibetan_only": 4799
+    "german_prose_with_translit": 84031,
+    "german_prose": 43908,
+    "latin_other": 21180,
+    "other": 9446,
+    "tibetan_latin_mixed": 663,
+    "example_tibetan_latin": 1288,
+    "headword_line": 13134,
+    "tibetan_only": 4785
   }
 }
