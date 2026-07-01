@@ -2940,3 +2940,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 405	52	2232	german_prose_with_translit	Idbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	nat, vgl. Idbyar zla tha chun.
 476	52	2594	german_prose_with_translit	Tspyon	↑ spyon	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tspyon.
 584	6	3125	german_prose_with_translit	Tsgron	↑ sgron	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tsgron.
+401	32	2196	headword_line	Tdbyans	↑ dbyaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱངས་ཅན་མ་ dbyaris can ma Tdbyans can.
+417	19	2318	headword_line	Tdbyig	↑ dbyig	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དྲ་ག་པ་གཅོད་པ་ dbyug pa gcod pa Tdbyig pa
+421	71	2342	headword_line	Idbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྤྱོ་ dbyen spyo auch dbyen co, pf. Idbyen
+422	13	2345	headword_line	Tdbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྨྱོས་ dbyen spyos pf. zu Tdbyen spyo ver-
+555	34	2935	german_prose_with_translit	Tspy	↑ spy	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	sbyi 'ur Verführer, Liebhaber, vgl. Tspy:

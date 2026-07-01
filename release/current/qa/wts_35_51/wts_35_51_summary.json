@@ -16,14 +16,14 @@
   "merge_only": false,
   "non_empty_lines": 91855,
   "pages": 1128,
-  "reviewed_tibetan_exact_changes": 497,
+  "reviewed_tibetan_exact_changes": 507,
   "sanskrit_changes": 149,
   "sanskrit_families": 177,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_review_suggestions": 31,
   "stale_review_rows_removed": 4,
   "structural_rewrite_count": 0,
-  "tier_a_applied": 6324,
+  "tier_a_applied": 6334,
   "tier_b_suggestions": 37,
   "top_tier_a_reasons": [
     [
@@ -116,7 +116,7 @@
     ]
   ],
   "total_lines_seen": 91855,
-  "translit_tokens_detected": 154192,
+  "translit_tokens_detected": 154195,
   "trusted_lexicon_size": 800,
   "uncaptured_tibetan_prefix_lines": 1872,
   "validator_issues": 4334,

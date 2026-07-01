@@ -1,6 +1,6 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/reference_marker_exact_cleanup_20260701T005035/wts_35_51`
+- run_dir: `work/reference_marker_lemma_order_20260701T072500Z/wts_35_51`
 - unresolved confusable pairs: `168`
 - promote candidates (conservative): `6`
 - hold candidates: `162`

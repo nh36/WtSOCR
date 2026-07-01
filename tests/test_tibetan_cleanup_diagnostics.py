@@ -15,11 +15,81 @@ diag = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = diag
 SPEC.loader.exec_module(diag)
 
+PROMOTER_PATH = ROOT / "scripts" / "promote_reference_marker_candidates.py"
+PROMOTER_SPEC = importlib.util.spec_from_file_location(
+    "promote_reference_marker_candidates",
+    PROMOTER_PATH,
+)
+if PROMOTER_SPEC is None or PROMOTER_SPEC.loader is None:
+    raise ImportError(f"Could not load promote_reference_marker_candidates module from {PROMOTER_PATH}")
+promoter = importlib.util.module_from_spec(PROMOTER_SPEC)
+sys.modules[PROMOTER_SPEC.name] = promoter
+PROMOTER_SPEC.loader.exec_module(promoter)
+
 
 class TibetanCleanupDiagnosticsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.registry = diag.load_sigla_registry(ROOT / "data" / "sigla_registry.tsv")
+
+    @staticmethod
+    def _lemma(ordinal: int, headword: str, entry_id: str) -> object:
+        return promoter.Lemma(
+            ordinal=ordinal,
+            volume="fake",
+            page=str(ordinal),
+            line="1",
+            entry_id=entry_id,
+            headword_tibetan="",
+            headword_transliteration=headword,
+            normalized_key=promoter.normalize_key(headword),
+            source="test",
+        )
+
+    def _reference_marker_decision(
+        self,
+        *,
+        source_token: str,
+        context: str,
+        current_ordinal: int = 20,
+        current_headword: str = "current",
+        referenced_headwords: list[tuple[int, str, str]] | None = None,
+        current_known: bool = True,
+        near_vgl: str = "1",
+        candidate_family: str = "ocr_prefix_I_reference_marker_candidate",
+    ) -> object:
+        volume = "fake"
+        page = "1"
+        line = "1"
+        current = self._lemma(current_ordinal, current_headword, "current")
+        lemma_by_entry = {(volume, "current"): current} if current_known else {}
+        lemma_index: dict[str, list[object]] = {}
+        for ordinal, headword, entry_id in referenced_headwords or []:
+            lemma = self._lemma(ordinal, headword, entry_id)
+            lemma_index.setdefault(promoter.normalize_key(headword), []).append(lemma)
+        line_zones = {(volume, page, line): {"entry_id": "current"}}
+        row = {
+            "volume": volume,
+            "page": page,
+            "line": line,
+            "token_index": "2",
+            "source_token": source_token,
+            "suspected_marker_source": source_token[0] if source_token else "",
+            "attached_token": source_token[1:] if len(source_token) > 1 else "",
+            "context_excerpt": context,
+            "candidate_family": candidate_family,
+            "near_vgl": near_vgl,
+            "near_transliteration": "1",
+            "near_headword": "0",
+            "confidence": "high",
+        }
+        return promoter.decide_candidate(
+            row,
+            line_zones,
+            lemma_by_entry,
+            lemma_index,
+            {(volume, page, line): context},
+        )
 
     def test_dnos_target_prefers_dngos_not_google_dnyos(self) -> None:
         row = {
@@ -231,6 +301,104 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         )
 
         self.assertIsNone(info)
+
+    def test_lemma_order_reference_marker_direction_uses_dictionary_order(self) -> None:
+        upward = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "spros bral", "spros")],
+        )
+
+        self.assertEqual(upward.decision, "promote")
+        self.assertEqual(upward.marker_target, "↑")
+        self.assertEqual(upward.referenced_lemma, "spros bral")
+        self.assertEqual(upward.direction_basis, "10 < 20")
+        self.assertEqual(upward.replacement_target, "↑ spros")
+
+        downward = self._reference_marker_decision(
+            source_token="Irgya",
+            context="Lex. Irgya sran.",
+            current_ordinal=10,
+            referenced_headwords=[(20, "rgya sran", "rgya")],
+        )
+
+        self.assertEqual(downward.decision, "promote")
+        self.assertEqual(downward.marker_target, "↓")
+        self.assertEqual(downward.referenced_lemma, "rgya sran")
+        self.assertEqual(downward.direction_basis, "20 > 10")
+        self.assertEqual(downward.replacement_target, "↓ rgya")
+
+    def test_lemma_order_reference_marker_prefers_longest_unique_match(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            referenced_headwords=[
+                (9, "spros", "spros_short"),
+                (10, "spros bral", "spros_bral"),
+            ],
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.referenced_lemma_candidate, "spros bral")
+        self.assertEqual(decision.referenced_lemma, "spros bral")
+
+    def test_lemma_order_reference_marker_defers_uncertain_lemma_lookup(self) -> None:
+        missing = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            referenced_headwords=[],
+        )
+        self.assertEqual(missing.decision, "defer")
+        self.assertEqual(missing.defer_reason, "no_referenced_lemma_match")
+
+        ambiguous = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            referenced_headwords=[
+                (10, "spros bral", "spros_a"),
+                (11, "spros bral", "spros_b"),
+            ],
+        )
+        self.assertEqual(ambiguous.decision, "defer")
+        self.assertEqual(ambiguous.defer_reason, "ambiguous_referenced_lemma")
+
+        unknown_current = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            current_known=False,
+            referenced_headwords=[(10, "spros bral", "spros")],
+        )
+        self.assertEqual(unknown_current.decision, "defer")
+        self.assertEqual(unknown_current.defer_reason, "unknown_current_lemma")
+
+    def test_lemma_order_reference_marker_defers_ldan_slash_and_superscript(self) -> None:
+        ldan = self._reference_marker_decision(
+            source_token="Idan",
+            context="Ka-dzi-li-ban [fließt] der Fluß gser-Idan",
+            referenced_headwords=[(10, "dan", "dan")],
+        )
+        self.assertEqual(ldan.decision, "defer")
+        self.assertEqual(ldan.defer_reason, "possible_ldan_not_marker")
+
+        slash = self._reference_marker_decision(
+            source_token="/",
+            context="dan / lha dan",
+            referenced_headwords=[(10, "lha", "lha")],
+            near_vgl="0",
+            candidate_family="standalone_marker_candidate",
+        )
+        self.assertEqual(slash.decision, "defer")
+        self.assertEqual(slash.defer_reason, "slash_punctuation_context")
+
+        superscript = self._reference_marker_decision(
+            source_token="↑²",
+            context="vgl. ↑² naṅ.",
+            referenced_headwords=[(10, "naṅ", "nang")],
+            candidate_family="actual_upward_marker",
+        )
+        self.assertEqual(superscript.decision, "defer")
+        self.assertEqual(superscript.defer_reason, "superscript_marker_unclear")
 
     def test_initial_i_residual_forms_are_exact_candidates_in_tibetan_context(self) -> None:
         context = "Tib. lta ltas ltar ldan lha lṅa lus lkog lpags bka' la'i"

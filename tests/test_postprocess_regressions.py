@@ -1481,6 +1481,50 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (139, 112): "one two \\bka’ still exact.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("one two ↓ bka’ still exact.", corrected)
+        reasons = {
+            (row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+        }
+        self.assertIn(
+            ("\\bka’", "↓ bka’", "reviewed_tibetan_exact_reference_marker"),
+            reasons,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
+        embedded_text = self.fixture_with_reviewed_lines(
+            {
+                (139, 112): "one two I\\bka’ embedded prefix should stay.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            embedded_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("one two I\\bka’ embedded prefix should stay.", corrected)
+        self.assertFalse(
+            [
+                row
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+            ]
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 0)
+
     def test_reviewed_reference_marker_rows_do_not_create_broad_marker_rules(self) -> None:
         unreviewed_text = self.fixture_with_reviewed_lines(
             {

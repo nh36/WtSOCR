@@ -6323,3 +6323,13 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 558	8	2761	german_prose	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	welt; vgl. Tchos bzan 4.
 853	3	4399	german_prose_with_translit	Isprul	↑ sprul	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	licher Lehrer; vgl. Isprul pa' sku.
 855	31	4404	example_tibetan_latin	Tsprul	↑ sprul	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	strahlen; vgl. Tsprul bkye. ༩).
+636	75	3154	headword_line	Inan	↑ naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	སྣང་མ་པ་ sna mapa Inan ma,
+729	12	3632	german_prose_with_translit	Idpal	↓ dpal	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Sri, Sridevi bzw. Laksmi; vgl. Idpal ldan lha
+733	5	3671	headword_line	Tdpal	↑ dpal	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དཔལ་སྒང་ dpal sgani Tdpal khan.
+804	46	4115	headword_line	Tspyan	↑ spyaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	སྤྲང་བ་ spyaṅ ba Tspyan po.
+817	50	4180	headword_line	Ispyi	↓ spyi	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	སྤྱི ?spyi Ispyi bo.
+820	13	4206	headword_line	Ispyir	↓ spyir	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	བཏང་ spyi btan Ispyir bian.
+826	35	4248	headword_line	Tspyi	↑ spyi	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	་ལ་བཀུར་ spyi la bkur Tspyi bkur.
+835	68	4307	headword_line	Tspyod	↑ spyod	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	སྤྱོད་པའི་རྒྱུད་ spyod pa'i rgyud Tspyod rgyud.
+839	75	4330	headword_line	Ispran	↓ spraṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	སྤྲང་ *sprah Kurzforn für Ispran po.
+1020	37	5448	headword_line	Tspyis	↑ spyis	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཕྱིས་བཙན་པོ་ phyis btsan po Tspyis brtsan pa.

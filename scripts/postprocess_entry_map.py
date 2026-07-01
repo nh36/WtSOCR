@@ -4553,6 +4553,34 @@ REVIEWED_TIBETAN_EXACT_NORMALIZATIONS = load_reviewed_tibetan_exact_normalizatio
 )
 
 
+def reviewed_tibetan_exact_match_options(
+    line: str, token: str, start: int, end: int
+) -> list[tuple[str, int, int]]:
+    options: list[tuple[str, int, int]] = []
+    suffixes = ["", "ı", "'", "’"]
+
+    def prefix_has_left_boundary(prefix_start: int) -> bool:
+        if prefix_start <= 0:
+            return True
+        previous = line[prefix_start - 1]
+        return not (previous.isalpha() or previous.isdigit() or previous in {"'", "’", "-", "_"})
+
+    if start > 0 and line[start - 1] in {"/", "\\"} and prefix_has_left_boundary(start - 1):
+        prefix_start = start - 1
+        prefix = line[prefix_start]
+        for suffix in suffixes:
+            if suffix and line[end : end + len(suffix)] != suffix:
+                continue
+            options.append((f"{prefix}{token}{suffix}", prefix_start, end + len(suffix)))
+
+    for suffix in suffixes:
+        if suffix and line[end : end + len(suffix)] != suffix:
+            continue
+        options.append((f"{token}{suffix}", start, end + len(suffix)))
+
+    return options
+
+
 def apply_reviewed_tibetan_exact_normalizations(
     corrected_text: str,
     line_infos: list[LineInfo],
@@ -4573,26 +4601,30 @@ def apply_reviewed_tibetan_exact_normalizations(
                 extract_alternate_witness_tokens(line), start=1
             ):
                 match_token = token
+                match_start = start
                 match_end = end
-                match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
-                    (label_key, page_idx, line_idx, token_index, match_token)
-                )
-                if not match:
-                    for suffix in ("ı", "'", "’"):
-                        if line[end : end + len(suffix)] != suffix:
-                            continue
-                        extended_token = f"{token}{suffix}"
-                        extended_match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
-                            (label_key, page_idx, line_idx, token_index, extended_token)
+                match = None
+                for candidate_token, candidate_start, candidate_end in (
+                    reviewed_tibetan_exact_match_options(line, token, start, end)
+                ):
+                    candidate_match = REVIEWED_TIBETAN_EXACT_NORMALIZATIONS.get(
+                        (
+                            label_key,
+                            page_idx,
+                            line_idx,
+                            token_index,
+                            candidate_token,
                         )
-                        if extended_match:
-                            match = extended_match
-                            match_token = extended_token
-                            match_end = end + len(suffix)
-                            break
+                    )
+                    if candidate_match:
+                        match = candidate_match
+                        match_token = candidate_token
+                        match_start = candidate_start
+                        match_end = candidate_end
+                        break
                 if match:
                     to_token, reason = match
-                    replacements.append((start, match_end, match_token, to_token, reason))
+                    replacements.append((match_start, match_end, match_token, to_token, reason))
             if not replacements:
                 continue
 

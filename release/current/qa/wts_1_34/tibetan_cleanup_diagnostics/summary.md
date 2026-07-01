@@ -8,7 +8,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 - `tibetan_orthography_damage_candidates.tsv`: 1606
 - `tibetan_script_ng_witness_candidates.tsv`: 1
 - `reference_marker_candidates.tsv`: 1189
-- `reference_marker_token_families.tsv`: 480
+- `reference_marker_token_families.tsv`: 486
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 775
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630

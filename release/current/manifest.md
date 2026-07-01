@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-07-01T00:04:22Z`
-Source/code commit observed while building this bundle: `b827deba2374c0b31b3d9d0fd8529000fa7d6273`
+Generated UTC: `2026-07-01T07:51:53Z`
+Source/code commit observed while building this bundle: `6c8b60262e307cd5e99c75ae820190384ad8a7de`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -17,19 +17,19 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_exact_cleanup_20260701T005035/wts_1_34` |
-| `wts_35_51` | `work/reference_marker_exact_cleanup_20260701T005035/wts_35_51` |
-| `wts_8_b` | `work/reference_marker_exact_cleanup_20260701T005035/wts_8_b` |
-| `wts_9_m` | `work/reference_marker_exact_cleanup_20260701T005035/wts_9_m` |
+| `wts_1_34` | `work/reference_marker_lemma_order_20260701T072500Z/wts_1_34` |
+| `wts_35_51` | `work/reference_marker_lemma_order_20260701T072500Z/wts_35_51` |
+| `wts_8_b` | `work/reference_marker_lemma_order_20260701T072500Z/wts_8_b` |
+| `wts_9_m` | `work/reference_marker_lemma_order_20260701T072500Z/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/reference_marker_exact_cleanup_20260701T005035/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `work/reference_marker_lemma_order_20260701T072500Z/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `work/reference_marker_lemma_order_20260701T072500Z/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `work/reference_marker_lemma_order_20260701T072500Z/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/reference_marker_lemma_order_20260701T072500Z/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Corrected Text
 

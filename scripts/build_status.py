@@ -510,7 +510,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             reason_sum(stats, "reviewed_tibetan_exact_reference_marker"),
             reference_marker_residual,
             "broad T->↑/↓;broad I->↑/↓;broad /->↑/↓;broad \\->↑/↓;broad n->ṅ",
-            "Reviewed reference-marker rows are exact page-line-token corrections with confirmed direction; remaining rows are diagnostic only.",
+            "Reviewed reference-marker rows are exact page-line-token corrections; direction is determined from lemma-order comparison where possible, remaining rows are diagnostic only, and superscripted marker numbers are not inferred automatically.",
         ),
         row(
             "dngos_exact_dnos_to_dngos",
@@ -1128,7 +1128,7 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             reference_marker_residual,
             "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
             "partially applied; broad rules forbidden",
-            "Promote only reviewed page/line/token rows with confirmed ↑/↓ direction; do not apply broad T/I/slash/backslash -> ↑/↓.",
+            "Promote only reviewed page/line/token rows with direction determined from lemma order where possible; do not apply broad T/I/slash/backslash -> ↑/↓ or infer superscript markers automatically.",
             f'{per_volume_count_text(stats, "reference_marker_candidates")}; actual ↑/↓ rows are controls, not correction evidence.',
         ],
         [
@@ -1286,7 +1286,7 @@ The initial-`I` family is intentionally mixed:
 
 The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
 
-Reference-marker cleanup is exact/page-line-token only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan transliteration contexts. No broad marker normalisation rule exists; exact changes require confirmed `↑` or `↓` direction from context, source, or entry order.
+Reference-marker cleanup is exact/page-line-token only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan transliteration contexts. No broad marker normalisation rule exists; exact changes use lemma-order comparison where possible to choose `↑` or `↓`, and superscripted marker numbers are not inferred automatically.
 
 Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
 
@@ -1302,7 +1302,7 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review reference-marker OCR diagnostics and promote only exact page/line/token rows with confirmed `↑` or `↓` direction; keep broad marker rules forbidden.
+1. Review reference-marker OCR diagnostics with lemma-order comparison and promote only exact page/line/token rows; keep broad marker rules and automatic superscript inference forbidden.
 2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
 3. Review siglum policy candidates separately from Tibetan lexical corrections.
 4. Review the script-ng witness diagnostic queue after marker separation.
