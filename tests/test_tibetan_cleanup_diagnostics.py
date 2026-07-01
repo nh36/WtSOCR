@@ -360,8 +360,10 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             ],
         )
 
-        self.assertEqual(decision.decision, "defer")
-        self.assertEqual(decision.defer_reason, "ambiguous_referenced_lemma")
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.referenced_lemma_candidate, "spros bral")
+        self.assertEqual(decision.referenced_lemma, "spros bral")
+        self.assertEqual(decision.replacement_target, "↑ spros")
 
     def test_lemma_order_reference_marker_uses_hyphen_space_alias(self) -> None:
         decision = self._reference_marker_decision(
@@ -451,16 +453,57 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(missing.decision, "defer")
         self.assertEqual(missing.defer_reason, "no_referenced_lemma_match")
 
-        ambiguous = self._reference_marker_decision(
+        ambiguous_up = self._reference_marker_decision(
             source_token="Ispros",
             context="vgl. Ispros bral.",
+            current_ordinal=20,
             referenced_headwords=[
                 (10, "spros bral", "spros_a"),
                 (11, "spros bral", "spros_b"),
             ],
         )
-        self.assertEqual(ambiguous.decision, "defer")
-        self.assertEqual(ambiguous.defer_reason, "ambiguous_referenced_lemma")
+        self.assertEqual(ambiguous_up.decision, "promote")
+        self.assertEqual(ambiguous_up.marker_target, "↑")
+        self.assertEqual(ambiguous_up.lemma_lookup_status, "ambiguous_same_direction_up")
+        self.assertEqual(ambiguous_up.referenced_lemma, "<ambiguous: same direction>")
+        self.assertEqual(ambiguous_up.referenced_lemma_match_count, "2")
+
+        ambiguous_down = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            current_ordinal=5,
+            referenced_headwords=[
+                (10, "spros bral", "spros_a"),
+                (11, "spros bral", "spros_b"),
+            ],
+        )
+        self.assertEqual(ambiguous_down.decision, "promote")
+        self.assertEqual(ambiguous_down.marker_target, "↓")
+        self.assertEqual(ambiguous_down.lemma_lookup_status, "ambiguous_same_direction_down")
+
+        crossing = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            current_ordinal=10,
+            referenced_headwords=[
+                (5, "spros bral", "spros_a"),
+                (15, "spros bral", "spros_b"),
+            ],
+        )
+        self.assertEqual(crossing.decision, "defer")
+        self.assertEqual(crossing.defer_reason, "ambiguous_crosses_current")
+
+        same = self._reference_marker_decision(
+            source_token="Ispros",
+            context="vgl. Ispros bral.",
+            current_ordinal=10,
+            referenced_headwords=[
+                (10, "spros bral", "spros_a"),
+                (15, "spros bral", "spros_b"),
+            ],
+        )
+        self.assertEqual(same.decision, "defer")
+        self.assertEqual(same.defer_reason, "same_lemma")
 
         unknown_current = self._reference_marker_decision(
             source_token="Ispros",
@@ -482,6 +525,7 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
 
         slash = self._reference_marker_decision(
             source_token="/",
+            attached_token="lha",
             context="dan / lha dan",
             referenced_headwords=[(10, "lha", "lha")],
             near_vgl="0",
@@ -498,6 +542,57 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         )
         self.assertEqual(superscript.decision, "defer")
         self.assertEqual(superscript.defer_reason, "superscript_marker_unclear")
+
+    def test_lemma_order_reference_marker_multi_slash_reference_can_promote(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="/",
+            attached_token="lta",
+            context="Lex. do // lta bu (brDa).",
+            current_ordinal=20,
+            referenced_headwords=[(10, "lta bu", "lta_bu")],
+            candidate_family="standalone_marker_candidate",
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.source_token, "/ lta")
+        self.assertEqual(decision.replacement_target, "↑ lta")
+
+    def test_lemma_order_reference_marker_uses_release_exact_token_indexes_for_dotless_i(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="/",
+            attached_token="rgya",
+            context="fooıbar Lex. / rgya.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "rgya", "rgya")],
+            candidate_family="standalone_marker_candidate",
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.source_token, "/ rgya")
+        self.assertEqual(decision.token_index, "4")
+
+    def test_lemma_order_reference_marker_promotes_tspyan_lookup_to_spyang(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Tspyan",
+            context="vgl. Tspyan.",
+            current_ordinal=20,
+            referenced_headwords=[(10, "spyaṅ", "spyang")],
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.replacement_target, "↑ spyaṅ")
+        self.assertIn("final_an_to_aṅ_lookup", decision.lemma_alias_basis)
+
+    def test_lemma_order_reference_marker_ispyi_uses_lemma_order(self) -> None:
+        decision = self._reference_marker_decision(
+            source_token="Ispyi",
+            context="vgl. Ispyi.",
+            current_ordinal=10,
+            referenced_headwords=[(20, "spyi", "spyi")],
+        )
+
+        self.assertEqual(decision.decision, "promote")
+        self.assertEqual(decision.replacement_target, "↓ spyi")
 
     def test_initial_i_residual_forms_are_exact_candidates_in_tibetan_context(self) -> None:
         context = "Tib. lta ltas ltar ldan lha lṅa lus lkog lpags bka' la'i"

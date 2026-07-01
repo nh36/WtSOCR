@@ -2215,6 +2215,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 262	39	1442	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	rdo 709 tu Ina ston / gron khyer — du sum
 262	51	1442	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"po grüd log pa'i lus bskyil ba Itar ""wie der"
 263	74	1457	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"Lex. sdod sa ""am bZugs sa dari 'dug sa'am 'du"
+264	24	1459	german_prose_with_translit	Tsprad	↓ sprad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	mühen; vgl. Tsprad sprad.
 264	77	1460	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"Ina braya' stsalto ""er gab die Burg sDur-ba"
 269	53	1474	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. bram zei bu (abw. Ms L bram zei du brtsi bæi miñ).
 272	16	1477	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"gen"" (Nagdel 24,1); mi dge dnos snari gi dri"
@@ -2242,6 +2243,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 320	76	1649	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	bram ze dran po'i — Ina broya tsam ni bstan
 323	51	1675	german_prose_with_translit	Ius	lus	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	— spyod lam Zi ba yis / Ius kyi phan pa
 324	47	1679	german_prose_with_translit	khruñńs	khruṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	"mo phag gi lo la sku khruñńs ""er hieß Blo"
+331	7	1728	german_prose_with_translit	/ tshabs	↑ tshabs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. ~ ba = rtab pa / tshabs pa (Dagy).
+331	15	1729	german_prose_with_translit	/ tshabs	↑ tshabs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. -ba=rtab pa / tshabs pa (Dagy).
 331	77	1730	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"0730); — khri blon Ina bcu nas ... ""das grori(s)"
 331	78	1731	headword_line	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"༡ ñer Ina son ""von den fünfzig kleinen"
 333	22	1736	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	mdo brtsan gyis khre khal Ina g.yar por 'tshalte
@@ -2249,6 +2252,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 336	74	1751	german_prose_with_translit	źigyoń	źigyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_ng	yes	"thugs bsun phyun ba źigyoń rgyu ~ ""eine Ver-"
 337	52	1756	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"Ina pa'i bu dag ""o ihr Söhne Kutsas, Vatsas,"
 338	21	1767	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"dar / — Ina yi kha nas dgab (metr.) ""man be-"
+339	22	1771	latin_other	/ tshos	↑ tshos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	pa = 'bags pa ste / skyon dan / tshos / tsbon /
 339	29	1772	german_prose_with_translit	bzugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	bzugs pa gestützt von; — tsbogs die Mächti-
 339	38	1772	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	(MSg 77,6); rta mgrin — gi dnos grub thob
 339	64	1773	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"gen"" (Gar 191,17); mchog gsum — du bZugs"
@@ -2263,6 +2267,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 348	21	1820	headword_line	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	དབང་ཐང་འགོ་བའི་ལྷ་ལྔ་ dbaṅ thaṅ 'go ba'i lha Ina
 350	66	1837	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	no bZugs pa'i bla brani rags pa tsam gi — na
 353	81	1857	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"fehl bringt"" (Ps 25a); kbyod khab bZugs na'ani"
+356	7	1863	headword_line	Tdpan	↑ dpaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབང་པོ་ ?dban po Tdpan.
 356	8	1864	headword_line	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	དབང་པོ་ལྔ་ dbari po Ina auch — po.
 357	4	1866	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	Lex. dban po Ina = mig gi dban po rna bai
 357	31	1869	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(K5 ta 53b2); phun po Ina dari — / skye mched
@@ -2291,19 +2296,26 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 398	49	2181	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	E28); ~ gi tshul kho na Itar / thugs Yi dam
 399	4	2183	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. dnos po phan tshun — 'dren Zes par
 400	75	2192	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	(Tär 57,20); dkyil 'Rkbor gyinub byari na bZugs
+401	32	2196	headword_line	Tdbyans	↑ dbyaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱངས་ཅན་མ་ dbyaris can ma Tdbyans can.
+403	6	2215	headword_line	Tdpya	↑ dpya	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱའ་ dbya' Tdpya.
 404	38	2223	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	gron khyer gi nari du — Ina broya byed du
 404	56	2224	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"""khor mtshams su bZugs pa dgag dbye bar du'o"
 405	38	2232	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"gire dogs — Itar 'khrugs nas ""ihr Hoffen und"
+405	52	2232	german_prose_with_translit	Idbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	nat, vgl. Idbyar zla tha chun.
 405	60	2232	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	dus tshod ni Ina ste / dgun gyi dus dan / dpyid
 406	4	2234	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	dus tshod ni Ina ste / dgun gyi dus daṅ /
 407	5	2238	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"zuzichen]"" (Mvy 9425); — su ma bZugs (¥. [."
 407	66	2245	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	dbyar tshul du bZugs pa
 408	34	2250	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	dustshod ni Ina ste / dgun gi dus dan / dpyid
+408	73	2255	headword_line	Tdbyar	↑ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱརད་ dbyard Tdbyar.
 409	43	2263	headword_line	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	དབྱི་ལླགས་ dbyi Ipags auch g.yi Ipags Luchsfell.
 409	43	2263	headword_line	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	དབྱི་ལླགས་ dbyi Ipags auch g.yi Ipags Luchsfell.
 410	36	2270	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	"Lex. rdzas dnos po ""Güter"" (brDa); nor rdzas"
 412	1	2292	german_prose_with_translit	miń	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_ng	yes	Lex. sa gźľi miń (brDa, Dagy).
+417	19	2318	headword_line	Tdbyig	↑ dbyig	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དྲ་ག་པ་གཅོད་པ་ dbyug pa gcod pa Tdbyig pa
 418	14	2328	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	pa'icheba — ba'iphyirdgrabcom pa Ina broya
+421	71	2342	headword_line	Idbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྤྱོ་ dbyen spyo auch dbyen co, pf. Idbyen
+422	13	2345	headword_line	Tdbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྨྱོས་ dbyen spyos pf. zu Tdbyen spyo ver-
 427	58	2365	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	rgyan rin po che rje — rer Ina daṅ bcas pa
 434	26	2382	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(Pd-K 130c); de Itar sdug bsrral gi phwi po
 435	86	2388	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	gser sbyans btso ma byi dor byas pa Itar / 'od
@@ -2334,8 +2346,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 468	13	2532	german_prose_with_translit	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	Lex. 'byun ba las 'gur dnos po kun la'ani
 468	47	2538	headword_line	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	འབྱུང་ལྔ་ 'byuṅ Ina.
 469	26	2539	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	dnos grub — {m}khrot'i} ba'i tshogs (metr.)
+473	71	2578	headword_line	Tdbye	↑ dbye	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	འབྱེད་ 'byed pf. imp. Tphye, fut. Tdbye; vgl.
 474	29	2579	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"im Rezitieren"" (T4144 17535); gtan tshigs Itar"
 475	71	2587	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"bar ma chad par 'khor ba Itar ""wie sich ci-"
+476	52	2593	german_prose_with_translit	Tspyon	↑ spyon	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tspyon.
 481	4	2623	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"der kho nar — bar 'gyur bar ji Itar ses ""wie"
 484	27	2632	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(MTH3/5/20 25); 'bru rnam pa Ina ni / nas
 487	45	2648	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	~ sum broya na drug daṅ / nos 'dzin Ina ston
@@ -2394,6 +2408,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 553	75	2924	german_prose_with_translit	Myañ	Myaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"pa dra nas ""wenn man [Myañ] mit dBa's ver-"
 553	76	2924	german_prose_with_translit	Myañ	Myaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	gleicht, scheint fiir Myañ die Gunst gerin-
 555	12	2933	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	~ naṅ gsal Itar ... rau kyani rtsa chu mñam
+555	34	2934	german_prose_with_translit	Tspy	↑ spy	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	sbyi 'ur Verführer, Liebhaber, vgl. Tspy:
 557	29	2944	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"Itar rgyab gnon — pa yin pas ""entsprechend"
 559	73	2955	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	nams bya ba'i dnos po = dānamayam punya-
 563	30	2984	german_prose_with_translit	Itas	ltas	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	spur ~ bæi dus su ... Itas khyad par can
@@ -2404,7 +2419,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 573	55	3038	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"tsher ma'i Sin las — Itar (metr.) ""wie Ho-"
 574	3	3039	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"sdug bsñal thu ba Itar ""wie die Schmerzen,"
 574	18	3039	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	skalbzan skani (r. rkani) drug dnos grub —r ci
+574	51	3045	german_prose_with_translit	/ dbyug	↑ dbyug	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. bya khu byug gam /0/?// dbyug (brDa); bya
 581	49	3108	german_prose	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	Ipags (Dagy).
+581	61	3108	german_prose_with_translit	/ rgyun	↑ rgyun	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. — ba = geig geig gi rjes $// rgyun chags
+584	6	3124	german_prose_with_translit	Tsgron	↑ sgron	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tsgron.
 11	43	1	german_prose_with_translit	VisT'	ViśT'	A	citation_siglum_confusable_map	1	"erschrak die Wunschkuh"" (VisT' 172,25); —"
 13	59	14	german_prose_with_translit	Y$	Yś	A	citation_siglum_confusable_map	1	"Maksika, wärmenden Heilmitteln"" (Y$ 45a);"
 13	62	14	latin_other	Y$	Yś	A	citation_siglum_confusable_map	1	"treibt es Herzkrankheiten"" (Y$ 68c)."
@@ -2936,12 +2954,3 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 553	44	2924	german_prose_with_translit	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	"ba lṅa broya la ... 'tsho ba ""Nägärjuna ge-"
 557	11	2945	latin_other	Prajnāpāramitā	Prajñāpāramitā	A	sanskrit_high_freq_allowlist	1	"'dodla ""wenn er diese Prajnāpāramitā geben"
 565	44	2994	german_prose_with_translit	Ajnāpayitavya	Ajñāpayitavya	A	sanskrit_jn_cluster_context_gate	1	"nen (skt. Ajnāpayitavya)"" (Suv 59,16); chos"
-264	24	1459	german_prose_with_translit	Tsprad	↓ sprad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	mühen; vgl. Tsprad sprad.
-405	52	2232	german_prose_with_translit	Idbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	nat, vgl. Idbyar zla tha chun.
-476	52	2594	german_prose_with_translit	Tspyon	↑ spyon	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tspyon.
-584	6	3125	german_prose_with_translit	Tsgron	↑ sgron	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	vgl. Tsgron.
-401	32	2196	headword_line	Tdbyans	↑ dbyaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱངས་ཅན་མ་ dbyaris can ma Tdbyans can.
-417	19	2318	headword_line	Tdbyig	↑ dbyig	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དྲ་ག་པ་གཅོད་པ་ dbyug pa gcod pa Tdbyig pa
-421	71	2342	headword_line	Idbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྤྱོ་ dbyen spyo auch dbyen co, pf. Idbyen
-422	13	2345	headword_line	Tdbyen	↑ dbyen	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	དབྱེན་སྨྱོས་ dbyen spyos pf. zu Tdbyen spyo ver-
-555	34	2935	german_prose_with_translit	Tspy	↑ spy	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	sbyi 'ur Verführer, Liebhaber, vgl. Tspy:

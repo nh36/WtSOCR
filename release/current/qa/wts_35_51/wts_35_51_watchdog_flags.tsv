@@ -56,6 +56,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 1044	42	5575	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"2. die ""spätere Position"", skt. uttarapaksa; 111"
 1081	7	5790	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	"Gottheiten persönlich traf"" (Tär 111,9)."
 1126	48	6140	german_prose	111	in	A	german_numeric_function_word_confusion	high_edit_distance_drift	1. 111 ~~ byed den Verlust preisen (vgl. BIALEK
+398	40	2036	headword_line	Tnan	↑² naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	high_edit_distance_drift	ནང་པར་ naṅ par vgl. Tnan.
 5	12	25	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"Lex. — pa &btags pa'i don bya tshig ""1. $. v. be-"
 223	11	1222	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"'byun ""1. $. v. bedecken, Präsens von brdal ba,"
 309	49	1741	german_prose	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"""1. $. v. mit dem Stock usw. schlagen, Futur"""
@@ -70,4 +71,3 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	watchdog_flags	line_exce
 965	29	5081	german_prose_with_translit	1, $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"Lex. dud pa'i don laṅ ""auch 1, $. v. sich ver-"
 992	37	5273	german_prose_with_translit	1, $.	i.S.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	3. außenstehend, 1, $. ¥. nichtbuddhistisch;
 1112	14	6041	german_prose_with_translit	1. $. v.	i.S.v.	A	citation_isv_dollar_abbrev_map	high_edit_distance_drift	"müssen"" (brDa); — ba zphralba'i don ""1. $. v."
-398	40	2036	headword_line	Tnan	↑² naṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	high_edit_distance_drift	ནང་པར་ naṅ par vgl. ↑² naṅ.

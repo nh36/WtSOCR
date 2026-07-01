@@ -33,6 +33,10 @@ TOKEN_RE = re.compile(
     r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňıß$]+"
     r"(?:['’.$-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňıß$]+)*"
 )
+EXACT_OVERRIDE_TOKEN_RE = re.compile(
+    r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+"
+    r"(?:['’.$-][0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+)*"
+)
 TRAILING_SUFFIXES = ("ı", "'", "’")
 REFERENCE_CONTEXT_RE = re.compile(
     r"\b(vgl|Lex|unter|cf)\.|\bs\.\s*v\.|\b(v|V)\.\s|[=~]",
@@ -74,7 +78,8 @@ HARD_NEGATIVE_REASONS = {
     "ordinary_example_context",
     "false_positive_control",
     "no_referenced_lemma_match",
-    "ambiguous_referenced_lemma",
+    "ambiguous_crosses_current",
+    "ambiguous_replacement_target",
     "unknown_current_lemma",
     "same_lemma",
     "exact_source_token_not_found",
@@ -115,6 +120,7 @@ class LookupResult:
     alias_basis: str
     lemma: Lemma | None
     status: str
+    matches: tuple[LemmaAlias, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -135,6 +141,11 @@ class CandidateDecision:
     referenced_lemma: str
     referenced_lemma_ordinal: str
     referenced_lemma_ref: str
+    referenced_lemma_match_count: str
+    referenced_lemma_ordinal_min: str
+    referenced_lemma_ordinal_max: str
+    matched_lemma_ordinals: str
+    direction_resolution: str
     lemma_lookup_status: str
     referenced_lemma_lookup_key: str
     referenced_lemma_alias_matched: str
@@ -144,6 +155,7 @@ class CandidateDecision:
     direction_basis: str
     replacement_target: str
     candidate_family: str
+    similar_to_promoted_family: str
     context_excerpt: str
     near_vgl: str
     near_headword: str
@@ -156,6 +168,27 @@ class CandidateDecision:
     positive_evidence: str
     negative_evidence: str
     tier: str
+
+
+NEAR_MISS_FIELDS = [
+    "volume",
+    "page",
+    "line",
+    "token_index",
+    "source_token",
+    "attached_token",
+    "current_lemma",
+    "current_lemma_ordinal",
+    "referenced_lemma_candidate",
+    "matched_lemma_ordinals",
+    "direction_resolution",
+    "candidate_family",
+    "context_excerpt",
+    "score",
+    "defer_reason",
+    "decision_notes",
+    "suggested_target",
+]
 
 
 def repo_root() -> Path:
@@ -371,9 +404,14 @@ def split_marker(row: dict[str, str]) -> tuple[str, str, str]:
     return suspected, row.get("attached_token", ""), "unknown"
 
 
-def line_occurrence_for_source(source_token: str, line: str) -> tuple[int | None, str]:
-    matches = list(TOKEN_RE.finditer(line))
-    occurrences: list[int] = []
+def extract_exact_override_tokens(line: str) -> list[tuple[str, int, int]]:
+    return [(m.group(0), m.start(), m.end()) for m in EXACT_OVERRIDE_TOKEN_RE.finditer(line)]
+
+
+def exact_override_match_options(
+    line: str, token: str, start: int, end: int
+) -> list[tuple[str, int, int]]:
+    options: list[tuple[str, int, int]] = []
 
     def prefix_has_left_boundary(prefix_start: int) -> bool:
         if prefix_start <= 0:
@@ -381,33 +419,39 @@ def line_occurrence_for_source(source_token: str, line: str) -> tuple[int | None
         previous = line[prefix_start - 1]
         return not (previous.isalpha() or previous.isdigit() or previous in {"'", "’", "-", "_"})
 
-    def append_standalone_marker_options(
-        candidates: list[tuple[str, int, int]],
-        token_start: int,
-    ) -> None:
-        whitespace_start = token_start
-        while whitespace_start > 0 and line[whitespace_start - 1].isspace():
-            whitespace_start -= 1
-        if whitespace_start == token_start or whitespace_start <= 0:
-            return
-        prefix_start = whitespace_start - 1
-        if line[prefix_start] not in {"/", "\\"} or not prefix_has_left_boundary(prefix_start):
-            return
-        for _candidate, _candidate_start, candidate_end in list(candidates):
-            candidates.append((line[prefix_start:candidate_end], prefix_start, candidate_end))
+    if start > 0 and line[start - 1] in {"/", "\\"} and prefix_has_left_boundary(start - 1):
+        prefix_start = start - 1
+        prefix = line[prefix_start]
+        for suffix in ("", *TRAILING_SUFFIXES):
+            if suffix and line[end : end + len(suffix)] != suffix:
+                continue
+            options.append((f"{prefix}{token}{suffix}", prefix_start, end + len(suffix)))
 
-    for index, match in enumerate(matches, start=1):
-        token = match.group(0)
-        start = match.start()
-        end = match.end()
-        candidates = [(token, start, end)]
-        for suffix in TRAILING_SUFFIXES:
-            if line[end : end + len(suffix)] == suffix:
-                candidates.append((f"{token}{suffix}", start, end + len(suffix)))
-        if start > 0 and line[start - 1] in {"/", "\\"} and prefix_has_left_boundary(start - 1):
-            for candidate, candidate_start, candidate_end in list(candidates):
-                candidates.append((f"{line[start - 1]}{candidate}", candidate_start - 1, candidate_end))
-        append_standalone_marker_options(candidates, start)
+    whitespace_start = start
+    while whitespace_start > 0 and line[whitespace_start - 1].isspace():
+        whitespace_start -= 1
+    if whitespace_start < start and whitespace_start > 0:
+        prefix_start = whitespace_start - 1
+        if line[prefix_start] in {"/", "\\"} and prefix_has_left_boundary(prefix_start):
+            prefix = line[prefix_start:start]
+            for suffix in ("", *TRAILING_SUFFIXES):
+                if suffix and line[end : end + len(suffix)] != suffix:
+                    continue
+                options.append((f"{prefix}{token}{suffix}", prefix_start, end + len(suffix)))
+
+    for suffix in ("", *TRAILING_SUFFIXES):
+        if suffix and line[end : end + len(suffix)] != suffix:
+            continue
+        options.append((f"{token}{suffix}", start, end + len(suffix)))
+
+    return options
+
+
+def line_occurrence_for_source(source_token: str, line: str) -> tuple[int | None, str]:
+    occurrences: list[int] = []
+
+    for index, (token, start, end) in enumerate(extract_exact_override_tokens(line), start=1):
+        candidates = exact_override_match_options(line, token, start, end)
         if any(candidate == source_token for candidate, _start, _end in candidates):
             occurrences.append(index)
     if len(occurrences) == 1:
@@ -419,25 +463,27 @@ def line_occurrence_for_source(source_token: str, line: str) -> tuple[int | None
 
 def exact_source_for_marker_occurrence(
     source_token: str, marker_source: str, attached_token: str, line: str, split_kind: str
-) -> str:
+) -> tuple[str, str]:
     if split_kind != "standalone" or marker_source not in {"/", "\\"} or not attached_token:
-        return source_token
+        return source_token, "candidate"
 
     attached_key = normalize_key(attached_token)
-    matches: list[str] = []
-    for match in TOKEN_RE.finditer(line):
-        if normalize_key(match.group(0)) != attached_key:
+    matches: set[str] = set()
+    for token, start, end in extract_exact_override_tokens(line):
+        if normalize_key(token) != attached_key:
             continue
-        whitespace_start = match.start()
-        while whitespace_start > 0 and line[whitespace_start - 1].isspace():
-            whitespace_start -= 1
-        if whitespace_start == match.start() or whitespace_start <= 0:
-            continue
-        prefix_start = whitespace_start - 1
-        if line[prefix_start] == marker_source:
-            matches.append(line[prefix_start : match.end()])
-    unique = sorted(set(matches))
-    return unique[0] if len(unique) == 1 else source_token
+        for candidate, _candidate_start, _candidate_end in exact_override_match_options(
+            line, token, start, end
+        ):
+            if candidate.startswith(f"{marker_source} ") and normalize_key(
+                candidate.split(maxsplit=1)[1]
+            ) == attached_key:
+                matches.add(candidate)
+    if len(matches) == 1:
+        return next(iter(matches)), "unique"
+    if not matches:
+        return source_token, "not_found"
+    return source_token, "ambiguous"
 
 
 def transliteration_tokens_after_source(
@@ -461,8 +507,6 @@ def transliteration_tokens_after_source(
 def lookup_longest_unique(
     tokens: list[str], lemma_index: dict[str, list[LemmaAlias]]
 ) -> LookupResult:
-    ambiguous: LookupResult | None = None
-    unique_matches: list[tuple[int, str, str, str, LemmaAlias]] = []
     for length in range(min(6, len(tokens)), 0, -1):
         phrase_tokens = tokens[:length]
         phrase = " ".join(phrase_tokens)
@@ -473,44 +517,31 @@ def lookup_longest_unique(
         for key, variant_basis in phrase_lookup_variants(phrase_tokens, cutoff_basis=cutoff_basis).items():
             for alias in lemma_index.get(key, []):
                 matched.setdefault(alias.lemma.ordinal, (key, variant_basis, alias))
-        if len(matched) == 1:
-            key, variant_basis, alias = next(iter(matched.values()))
-            unique_matches.append((length, phrase, key, variant_basis, alias))
-        if len(matched) > 1:
-            key, variant_basis, alias = next(iter(matched.values()))
-            ambiguous = LookupResult(
+        if not matched:
+            continue
+
+        ordered = [value for _ordinal, value in sorted(matched.items())]
+        key, variant_basis, alias = ordered[0]
+        matches = tuple(value[2] for value in ordered)
+        if len(ordered) == 1:
+            return LookupResult(
                 candidate=phrase,
                 lookup_key=key,
                 alias_matched=alias.alias,
                 alias_basis=f"{variant_basis}|{alias.basis}",
-                lemma=None,
-                status="ambiguous_match",
+                lemma=alias.lemma,
+                status="unique_match",
+                matches=matches,
             )
-
-    if unique_matches:
-        chosen = unique_matches[0]
-        chosen_alias = chosen[4]
-        for _length, phrase, key, variant_basis, alias in unique_matches[1:]:
-            if alias.lemma.ordinal != chosen_alias.lemma.ordinal:
-                return LookupResult(
-                    candidate=chosen[1],
-                    lookup_key=chosen[2],
-                    alias_matched=chosen_alias.alias,
-                    alias_basis=f"{chosen[3]}|{chosen_alias.basis}; conflicts_with:{phrase}",
-                    lemma=None,
-                    status="ambiguous_match",
-                )
         return LookupResult(
-            candidate=chosen[1],
-            lookup_key=chosen[2],
-            alias_matched=chosen_alias.alias,
-            alias_basis=f"{chosen[3]}|{chosen_alias.basis}",
-            lemma=chosen_alias.lemma,
-            status="unique_match",
+            candidate=phrase,
+            lookup_key=key,
+            alias_matched=alias.alias,
+            alias_basis=f"{variant_basis}|{alias.basis}",
+            lemma=None,
+            status="ambiguous_match",
+            matches=matches,
         )
-
-    if ambiguous is not None:
-        return ambiguous
     return LookupResult(
         candidate=" ".join(tokens[: min(6, len(tokens))]),
         lookup_key="",
@@ -518,6 +549,7 @@ def lookup_longest_unique(
         alias_basis="",
         lemma=None,
         status="no_match",
+        matches=(),
     )
 
 
@@ -537,8 +569,6 @@ def context_type(row: dict[str, str], split_kind: str) -> str:
         return "reference_list_context"
     if row.get("candidate_family", "").startswith("ocr_prefix_") and row.get("confidence") == "high":
         return "attached_high_confidence_context"
-    if row.get("source_token") == "/" and context.count("/") >= 2:
-        return "slash_running_example_context"
     if split_kind == "standalone" and row.get("source_token") == "/":
         return "slash_standalone_uncued_context"
     return "ordinary_context"
@@ -549,6 +579,7 @@ def context_is_reference_like(row: dict[str, str], kind: str = "") -> bool:
         "reference_cue",
         "near_actual_marker_control",
         "headword_transliteration_context",
+        "reference_list_context",
     }:
         return True
     context = row.get("context_excerpt", "")
@@ -564,13 +595,28 @@ def slash_context_is_promotable(row: dict[str, str], kind: str) -> bool:
     context = row.get("context_excerpt", "")
     if METRIC_CONTEXT_RE.search(context):
         return False
-    if context.count("/") >= 2:
+    if GRAMMATICAL_LABEL_CONTEXT_RE.search(context):
         return False
     if kind == "near_actual_marker_control":
         return True
-    if kind != "reference_cue":
+    if STRONG_SLASH_CONTEXT_RE.search(context) or "=" in context:
+        return True
+    return False
+
+
+def repeated_slash_separator_context(context: str) -> bool:
+    if STRONG_SLASH_CONTEXT_RE.search(context) or "=" in context or "↑" in context or "↓" in context:
         return False
-    return bool(STRONG_SLASH_CONTEXT_RE.search(context))
+    if context.count("/") < 2:
+        return False
+    return bool(
+        re.search(
+            r"\b[A-Za-zÀ-ÖØ-öø-ÿĀ-ž'’.-]+\s*/\s+"
+            r"[A-Za-zÀ-ÖØ-öø-ÿĀ-ž'’.-]+\s*/\s+"
+            r"[A-Za-zÀ-ÖØ-öø-ÿĀ-ž'’.-]+",
+            context,
+        )
+    )
 
 
 def looks_like_ldan_not_marker(source_token: str, attached_token: str, context: str) -> bool:
@@ -585,7 +631,9 @@ def looks_like_slash_punctuation(row: dict[str, str], split_kind: str, kind: str
     if row.get("source_token") != "/" and not row.get("source_token", "").startswith("/"):
         return False
     context = row.get("context_excerpt", "")
-    if context.count("/") >= 2:
+    if METRIC_CONTEXT_RE.search(context) or GRAMMATICAL_LABEL_CONTEXT_RE.search(context):
+        return True
+    if repeated_slash_separator_context(context):
         return True
     if split_kind == "standalone" and not slash_context_is_promotable(row, kind):
         return True
@@ -602,6 +650,7 @@ def score_decision(
     split_kind: str,
     marker_source: str,
     hard_negative: str,
+    similar_to_promoted_family: str,
 ) -> tuple[int, str, str]:
     score = 0
     positive: list[str] = []
@@ -609,6 +658,9 @@ def score_decision(
     if lookup_status == "unique_match":
         score += 50
         positive.append("unique_referenced_lemma_match")
+    if lookup_status in {"ambiguous_same_direction_up", "ambiguous_same_direction_down"}:
+        score += 45
+        positive.append("ambiguous_referenced_lemma_same_direction")
     if current_known:
         score += 30
         positive.append("known_current_lemma")
@@ -627,13 +679,17 @@ def score_decision(
     if marker_source == "/" and reference_like and exact_unique:
         score += 10
         positive.append("slash_with_reference_context_and_unique_occurrence")
+    if similar_to_promoted_family:
+        score += 10
+        positive.append(similar_to_promoted_family)
 
     if hard_negative:
         penalty = {
             "possible_ldan_not_marker": 50,
             "slash_punctuation_context": 40,
             "false_positive_control": 40,
-            "ambiguous_referenced_lemma": 30,
+            "ambiguous_crosses_current": 30,
+            "ambiguous_replacement_target": 30,
             "unknown_current_lemma": 30,
             "exact_source_token_not_found": 30,
             "exact_source_token_ambiguous": 30,
@@ -651,13 +707,48 @@ def first_replacement_token(source_attached: str, referenced_lemma: str) -> str:
     return first or source_attached
 
 
+def reference_source_parts(source: str) -> tuple[str, str]:
+    if source.startswith("/ "):
+        return "/", source.split(maxsplit=1)[1].split()[0]
+    if source.startswith("\\ "):
+        return "\\", source.split(maxsplit=1)[1].split()[0]
+    if source and source[0] in MARKER_SOURCES:
+        attached = source[1:].split()[0] if len(source) > 1 else ""
+        return source[0], attached
+    return "", ""
+
+
+def load_promoted_reference_marker_patterns(root: Path) -> set[tuple[str, str]]:
+    path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
+    if not path.exists():
+        return set()
+    patterns: set[tuple[str, str]] = set()
+    for row in read_tsv(path):
+        if row.get("reason") != REFERENCE_MARKER_REASON:
+            continue
+        marker_source, attached = reference_source_parts(row.get("from_token", ""))
+        if marker_source and attached:
+            patterns.add((marker_source, normalize_key(attached)))
+    return patterns
+
+
+def promoted_family_similarity(
+    marker_source: str, attached_token: str, patterns: set[tuple[str, str]]
+) -> str:
+    if (marker_source, normalize_key(attached_token)) in patterns:
+        return "same_marker_attached_token_as_reviewed_row"
+    return ""
+
+
 def decide_candidate(
     row: dict[str, str],
     line_zones: dict[tuple[str, str, str], dict[str, str]],
     lemma_by_entry: dict[tuple[str, str], Lemma],
     lemma_index: dict[str, list[LemmaAlias]],
     release_lines: dict[tuple[str, str, str], str],
+    promoted_patterns: set[tuple[str, str]] | None = None,
 ) -> CandidateDecision:
+    promoted_patterns = promoted_patterns or set()
     volume = row["volume"]
     page = row["page"]
     line_no = row["line"]
@@ -683,6 +774,11 @@ def decide_candidate(
         "referenced_lemma": "",
         "referenced_lemma_ordinal": "",
         "referenced_lemma_ref": "",
+        "referenced_lemma_match_count": "",
+        "referenced_lemma_ordinal_min": "",
+        "referenced_lemma_ordinal_max": "",
+        "matched_lemma_ordinals": "",
+        "direction_resolution": "",
         "lemma_lookup_status": "",
         "referenced_lemma_lookup_key": "",
         "referenced_lemma_alias_matched": "",
@@ -692,6 +788,7 @@ def decide_candidate(
         "direction_basis": "",
         "replacement_target": "",
         "candidate_family": row.get("candidate_family", ""),
+        "similar_to_promoted_family": "",
         "context_excerpt": context,
         "near_vgl": row.get("near_vgl", ""),
         "near_headword": row.get("near_headword", ""),
@@ -731,6 +828,7 @@ def decide_candidate(
             hard_negative=values.get("defer_reason", "")
             if values.get("defer_reason", "") in HARD_NEGATIVE_REASONS
             else "",
+            similar_to_promoted_family=values.get("similar_to_promoted_family", ""),
         )
         if values.get("decision") == "promote" and score >= 100:
             values["tier"] = "A"
@@ -765,10 +863,17 @@ def decide_candidate(
             decision_notes="I appears to belong to ldan-like compound damage, not a reference marker.",
         )
 
-    tokens = transliteration_tokens_after_source(source_token, attached_token, line, split_kind)
-    exact_source_token = exact_source_for_marker_occurrence(
-        source_token, marker_source, attached_token or (tokens[0] if tokens else ""), line, split_kind
+    exact_source_token, exact_source_status = exact_source_for_marker_occurrence(
+        source_token, marker_source, attached_token, line, split_kind
     )
+    if split_kind == "standalone" and marker_source in {"/", "\\"} and exact_source_status != "unique":
+        return finish_with_score(
+            source_token=exact_source_token,
+            exact_occurrence_status=exact_source_status,
+            defer_reason=f"exact_source_token_{exact_source_status}",
+            decision_notes="Could not locate a unique marker plus right-hand token occurrence.",
+        )
+    tokens = transliteration_tokens_after_source(exact_source_token, attached_token, line, split_kind)
     token_index, token_status = line_occurrence_for_source(exact_source_token, line)
     if token_index is None:
         return finish_with_score(
@@ -802,6 +907,17 @@ def decide_candidate(
 
     lookup = lookup_longest_unique(tokens, lemma_index)
     referenced = lookup.lemma
+    match_ordinals = sorted({alias.lemma.ordinal for alias in lookup.matches})
+    match_lemmas = [alias.lemma for alias in lookup.matches]
+    match_fields = {
+        "referenced_lemma_match_count": str(len(match_ordinals)) if match_ordinals else "0",
+        "referenced_lemma_ordinal_min": str(match_ordinals[0]) if match_ordinals else "",
+        "referenced_lemma_ordinal_max": str(match_ordinals[-1]) if match_ordinals else "",
+        "matched_lemma_ordinals": ";".join(str(ordinal) for ordinal in match_ordinals),
+    }
+    similar_to_promoted = promoted_family_similarity(
+        marker_source, attached_token or (tokens[0] if tokens else ""), promoted_patterns
+    )
     common = {
         "token_index": str(token_index),
         "source_token": exact_source_token,
@@ -815,29 +931,34 @@ def decide_candidate(
         "referenced_lemma_lookup_key": lookup.lookup_key,
         "referenced_lemma_alias_matched": lookup.alias_matched,
         "lemma_alias_basis": lookup.alias_basis,
+        "similar_to_promoted_family": similar_to_promoted,
+        **match_fields,
     }
-    if referenced is None:
-        reason = (
-            "ambiguous_referenced_lemma"
-            if lookup.status == "ambiguous_match"
-            else "no_referenced_lemma_match"
-        )
+    if not match_ordinals:
         return finish_with_score(
             **common,
-            defer_reason=reason,
+            defer_reason="no_referenced_lemma_match",
             decision_notes="Referenced lemma lookup did not yield a unique match.",
         )
-    common.update(
-        {
-            "referenced_lemma_ordinal": str(referenced.ordinal),
-            "referenced_lemma_ref": referenced.ref,
-        }
-    )
-    if referenced.ordinal == current.ordinal:
+
+    if current.ordinal in match_ordinals:
         return finish_with_score(
             **common,
             defer_reason="same_lemma",
-            decision_notes="Referenced lemma resolves to the current lemma.",
+            decision_notes="One possible referenced lemma resolves to the current lemma.",
+        )
+    all_before = all(ordinal < current.ordinal for ordinal in match_ordinals)
+    all_after = all(ordinal > current.ordinal for ordinal in match_ordinals)
+    if not (all_before or all_after):
+        ambiguous_common = {
+            **common,
+            "lemma_lookup_status": "ambiguous_crosses_current",
+            "direction_resolution": "ambiguous_crosses_current",
+        }
+        return finish_with_score(
+            **ambiguous_common,
+            defer_reason="ambiguous_crosses_current",
+            decision_notes="Possible referenced lemmas occur on both sides of the current lemma.",
         )
     if looks_like_slash_punctuation(row, split_kind, kind):
         return finish_with_score(
@@ -852,16 +973,63 @@ def decide_candidate(
             decision_notes="Lemma match exists, but context is not clearly reference-like.",
         )
 
-    marker_target = "↑" if referenced.ordinal < current.ordinal else "↓"
-    replacement_first_token = first_replacement_token(attached_token, referenced.headword_transliteration)
+    marker_target = "↑" if all_before else "↓"
+    direction_resolution = "unique_up" if marker_target == "↑" else "unique_down"
+    if len(match_ordinals) > 1:
+        direction_resolution = (
+            "ambiguous_same_direction_up" if marker_target == "↑" else "ambiguous_same_direction_down"
+        )
+    replacement_tokens = {
+        first_replacement_token(attached_token, lemma.headword_transliteration) for lemma in match_lemmas
+    }
+    if len(replacement_tokens) != 1:
+        replacement_common = {
+            **common,
+            "lemma_lookup_status": direction_resolution if len(match_ordinals) > 1 else lookup.status,
+            "direction_resolution": direction_resolution,
+        }
+        return finish_with_score(
+            **replacement_common,
+            defer_reason="ambiguous_replacement_target",
+            decision_notes=(
+                "Lemma-order direction is clear, but possible referenced lemmas require "
+                "different local replacement tokens."
+            ),
+        )
+    replacement_first_token = next(iter(replacement_tokens))
+    display_referenced = referenced or match_lemmas[0]
+    common.update(
+        {
+            "referenced_lemma": (
+                display_referenced.headword_transliteration
+                if len(match_ordinals) == 1
+                else "<ambiguous: same direction>"
+            ),
+            "referenced_lemma_ordinal": (
+                str(display_referenced.ordinal)
+                if len(match_ordinals) == 1
+                else f"{match_ordinals[0]}-{match_ordinals[-1]}"
+            ),
+            "referenced_lemma_ref": (
+                display_referenced.ref
+                if len(match_ordinals) == 1
+                else "; ".join(lemma.ref for lemma in match_lemmas[:5])
+            ),
+            "lemma_lookup_status": direction_resolution if len(match_ordinals) > 1 else lookup.status,
+            "direction_resolution": direction_resolution,
+        }
+    )
+    ordinal_side = (
+        str(match_ordinals[0]) if len(match_ordinals) == 1 else f"{match_ordinals[0]}-{match_ordinals[-1]}"
+    )
     return finish_with_score(
         **common,
         marker_target=marker_target,
         replacement_target=f"{marker_target} {replacement_first_token}",
-        direction_basis=f"{referenced.ordinal} {'<' if referenced.ordinal < current.ordinal else '>'} {current.ordinal}",
+        direction_basis=f"{ordinal_side} {'<' if marker_target == '↑' else '>'} {current.ordinal}",
         decision="promote",
         decision_notes=(
-            "Tier A: unique referenced lemma and known current lemma; marker "
+            "Tier A: referenced lemma evidence and known current lemma; marker "
             "direction chosen from empirical lemma order."
         ),
     )
@@ -1035,6 +1203,151 @@ def write_reviewed_reference_marker_profile(root: Path, out_dir: Path) -> None:
     write_tsv(out_dir / "reviewed_reference_marker_feature_profile.tsv", rows, fields)
 
 
+def page_band(page: str) -> str:
+    try:
+        page_number = int(page)
+    except ValueError:
+        return "unknown"
+    start = (page_number // 50) * 50
+    return f"{start:04d}-{start + 49:04d}"
+
+
+def attached_or_referenced_token(source: str, target: str) -> str:
+    marker_source, attached = reference_source_parts(source)
+    if attached:
+        return attached
+    parts = target.split(maxsplit=1)
+    return parts[1].split()[0] if len(parts) > 1 and parts[1].split() else ""
+
+
+def promoted_family_row_key(row: dict[str, str]) -> tuple[str, str, str, str, str, str]:
+    source = row.get("from_token", "")
+    target = row.get("to_token", "")
+    marker_source, _attached = reference_source_parts(source)
+    if source.startswith("/ "):
+        candidate_family = "standalone_slash"
+    elif source.startswith("\\ "):
+        candidate_family = "standalone_backslash"
+    elif marker_source in {"I", "T"}:
+        candidate_family = f"attached_{marker_source}"
+    else:
+        candidate_family = "other"
+    direction = target[:1] if target[:1] in {"↑", "↓"} else ""
+    return (
+        marker_source,
+        attached_or_referenced_token(source, target),
+        target.split(maxsplit=1)[1].split()[0] if len(target.split(maxsplit=1)) > 1 else target,
+        page_band(row.get("page", "")),
+        direction,
+        candidate_family,
+    )
+
+
+def write_promoted_family_profile(root: Path, out_dir: Path) -> None:
+    path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
+    fields = [
+        "source_prefix",
+        "attached_or_referenced_token",
+        "target_token",
+        "volume_page_band",
+        "direction",
+        "candidate_family",
+        "count",
+        "sample_refs",
+    ]
+    if not path.exists():
+        write_tsv(out_dir / "promoted_family_profile.tsv", [], fields)
+        return
+
+    grouped: dict[tuple[str, str, str, str, str, str], list[str]] = defaultdict(list)
+    for row in read_tsv(path):
+        if row.get("reason") != REFERENCE_MARKER_REASON:
+            continue
+        grouped[promoted_family_row_key(row)].append(
+            f"{row.get('volume')} {row.get('page')}:{row.get('line')}:{row.get('token_index')}"
+        )
+
+    rows = []
+    for key, refs in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
+        rows.append(
+            {
+                "source_prefix": key[0],
+                "attached_or_referenced_token": key[1],
+                "target_token": key[2],
+                "volume_page_band": key[3],
+                "direction": key[4],
+                "candidate_family": key[5],
+                "count": str(len(refs)),
+                "sample_refs": "; ".join(refs[:8]),
+            }
+        )
+    write_tsv(out_dir / "promoted_family_profile.tsv", rows, fields)
+
+
+def suggested_target_for(decision: CandidateDecision) -> str:
+    if decision.replacement_target:
+        return decision.replacement_target
+    marker = decision.marker_target
+    if marker in {"↑", "↓"} and decision.attached_token:
+        return f"{marker} {decision.attached_token}"
+    if decision.direction_resolution == "ambiguous_same_direction_up" and decision.attached_token:
+        return f"↑ {decision.attached_token}"
+    if decision.direction_resolution == "ambiguous_same_direction_down" and decision.attached_token:
+        return f"↓ {decision.attached_token}"
+    return ""
+
+
+def near_miss_rows(deferred: list[CandidateDecision], limit: int) -> list[dict[str, str]]:
+    if limit <= 0:
+        return []
+
+    hard_excludes = {
+        "false_positive_control",
+        "possible_ldan_not_marker",
+        "slash_punctuation_context",
+        "ordinary_example_context",
+        "superscript_marker_unclear",
+    }
+
+    def as_int(value: str) -> int:
+        try:
+            return int(value)
+        except ValueError:
+            return 0
+
+    candidates = [
+        row
+        for row in deferred
+        if row.current_lemma_ordinal
+        and row.referenced_lemma_candidate
+        and row.exact_occurrence_status == "unique"
+        and as_int(row.referenced_lemma_match_count) > 0
+        and row.defer_reason not in hard_excludes
+    ]
+    candidates.sort(
+        key=lambda row: (
+            row.direction_resolution in {"ambiguous_same_direction_up", "ambiguous_same_direction_down"},
+            as_int(row.score),
+            as_int(row.referenced_lemma_match_count),
+        ),
+        reverse=True,
+    )
+    rows = []
+    for decision in candidates[:limit]:
+        row = decision_to_row(decision)
+        row["suggested_target"] = suggested_target_for(decision)
+        rows.append({field: row.get(field, "") for field in NEAR_MISS_FIELDS})
+    return rows
+
+
+def write_near_miss_rows(
+    out_dir: Path, deferred: list[CandidateDecision], limit: int
+) -> list[dict[str, str]]:
+    rows = near_miss_rows(deferred, limit)
+    write_tsv(out_dir / "near_miss_rows.tsv", rows, NEAR_MISS_FIELDS)
+    return rows
+
+
 def write_audit(
     out_dir: Path,
     root: Path,
@@ -1045,6 +1358,7 @@ def write_audit(
     *,
     applied: int,
     limit: int,
+    near_miss_limit: int,
 ) -> None:
     lemma_fields = [
         "lemma_ordinal",
@@ -1092,6 +1406,8 @@ def write_audit(
     )
     write_deferred_profile(out_dir, deferred)
     write_reviewed_reference_marker_profile(root, out_dir)
+    write_promoted_family_profile(root, out_dir)
+    near_misses = write_near_miss_rows(out_dir, deferred, near_miss_limit)
 
     marker_counts = Counter(row.marker_source for row in promotable)
     direction_counts = Counter(row.marker_target for row in promotable)
@@ -1114,6 +1430,7 @@ def write_audit(
         f"- Exact rows applied: {applied}",
         f"- Deferred rows: {len(deferred)}",
         f"- False-positive/control rows: {len(false_positive)}",
+        f"- Near-miss rows written: {len(near_misses)}",
         "",
         "## Promotable Marker Sources",
         "",
@@ -1142,8 +1459,16 @@ def run(args: argparse.Namespace) -> int:
     line_zones, lemma_by_entry, lemma_index, lemmas = load_line_zones(root)
     release_lines = load_release_lines(root)
     rows = load_reference_marker_rows(root)
+    promoted_patterns = load_promoted_reference_marker_patterns(root)
     decisions = [
-        decide_candidate(row, line_zones, lemma_by_entry, lemma_index, release_lines)
+        decide_candidate(
+            row,
+            line_zones,
+            lemma_by_entry,
+            lemma_index,
+            release_lines,
+            promoted_patterns=promoted_patterns,
+        )
         for row in rows
     ]
     promotable_all = [row for row in decisions if row.decision == "promote"]
@@ -1156,7 +1481,17 @@ def run(args: argparse.Namespace) -> int:
         override_path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
         applied = append_overrides(override_path, selected)
 
-    write_audit(out_dir, root, lemmas, selected, deferred, false_positive, applied=applied, limit=args.limit)
+    write_audit(
+        out_dir,
+        root,
+        lemmas,
+        selected,
+        deferred,
+        false_positive,
+        applied=applied,
+        limit=args.limit,
+        near_miss_limit=args.show_near_misses,
+    )
 
     print(f"audit_dir={out_dir}")
     print(f"lemmas_indexed={len(lemmas)}")
@@ -1192,6 +1527,12 @@ def main() -> int:
         "--profile-deferred",
         action="store_true",
         help="Accepted for explicit CLI clarity; deferred profiles are always written.",
+    )
+    parser.add_argument(
+        "--show-near-misses",
+        type=int,
+        default=0,
+        help="Write up to N high-scoring deferred near misses to near_miss_rows.tsv.",
     )
     return run(parser.parse_args())
 

@@ -1380,6 +1380,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 54	16	245	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	'byed las ma Sa ka Ina ni kar sa pa na'i //7/
 55	43	250	german_prose_with_translit	lna'i	lṅa'i	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_lnga	yes	Abt. mtsbams med pa lna'i min).
 57	3	260	german_prose_with_translit	sañ	saṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"deri sañ chi na zer ""Name für Großchina, es"
+57	22	262	german_prose_with_translit	Tdge	↑ dge	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ka; vgl. Tdge 'dun phal chen.
 57	81	267	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(Suv 164,15); zla ba skar ma Itar dkar ba'i /
 59	9	269	german_prose_with_translit	vañ	vaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"(brDa); vañ gi bu mo'i khyim thabs ""Gatte"
 60	50	271	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"zugefügt"" (MTH3/5/20 22); de Itar 'gram"
@@ -1471,6 +1472,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 150	61	644	german_prose_with_translit	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	gits} ma / gdan sga Ipags nam 'dzom (7, /5/)0)))
 152	26	660	german_prose	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	mig Ipags (Dagy).
 154	57	687	tibetan_only	Ipags	lpags	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	མེག་ལྤགས་ mg Ipags Augenlid
+160	51	724	german_prose_with_translit	Tspyan	↑ spyan	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	anschauen; vgl. Tspyan ras.
 160	54	724	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"mig gis lta bZin du ""während man mit dem"
 162	60	733	german_prose_with_translit	Cañ-keñ	Caṅ-keṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Jahr und in Großchina das erste Cañ-keñ-
 163	26	733	latin_other	tshañs	tshaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	196b2); tshañs pa'i gtso / ~ ni mgon btsun
@@ -1481,6 +1483,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 170	34	771	headword_line	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	མེན min alttib. myin, Kurzf. für Ina yin pa.
 171	63	771	latin_other	gźuń	gźuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_residual_ng	yes	"kommt"" (MTH3/5/20 27); gźuń ""bel snod"
 173	77	774	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	gal te raṅ bZin dri ria bas / 'di la ma chags legs
+175	58	787	german_prose_with_translit	/ rgyal	↑ rgyal	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. mi'ami / / rgyal po = ljon pa rta mgo can
 177	73	801	german_prose	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"identisch sind"" (gZer 916,2); 'bru sra Ina Ziri"
 178	75	802	german_prose_with_translit	Mu-khyuñń-rgyan	Mu-khyuṅ-rgyan	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	beiden Brüder Khyun-po Mu-khyuñń-rgyan
 179	2	803	german_prose_with_translit	Lsdz-K	Lśdz-K	reviewed_tibetan_exact	reviewed_siglum_exact_registry_canonicalization	yes	"und lHa-khyuni-rgyan eingeladen"" (Lsdz-K"
@@ -1500,6 +1503,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 190	74	849	latin_other	dilta	di lta	reviewed_tibetan_exact	reviewed_tibetan_exact_di_lta_spacing	yes	mam par 'byed pa gaṅ ze na / 'dilta ste... -r
 190	77	849	latin_other	dnos	dṅos	reviewed_tibetan_exact	reviewed_tibetan_exact_dngos	yes	sa' dnos gi tsbig don gñis ka — la soxs
 192	13	852	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"mkhar!"" (Padm 28643); de yi bañ so mu ra ri"
+194	14	861	german_prose_with_translit	/ gan	↑ gaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	"Lex. g.yo zol / gan gi ~$ rari nyid bslu ""be-"
 196	68	879	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	thogs pa yi/ mdun na — med pa bZin (meir.)
 196	79	879	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	—r g.yari sa cher khrid Itar gyur na (meir.)
 198	13	881	latin_other	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"tigt"" (PhB 11: 102,2); bZugs ni mun gi yul"
@@ -1524,6 +1528,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 206	53	918	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	(Suv 43,19); de ni — yi rari bZin te (meir.)
 206	84	918	latin_other	sroñ-btsan	sroṅ-btsan	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"boren; man nannte ihn Khri-lde sroñ-btsan"""
 206	94	918	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	yani khams la Ina yin te / keg Sin ji — (metr.)
+208	7	921	german_prose_with_translit	Trgya	↑ rgya	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Schun 2012: 1523; vgl. Trgya mtsho 2, T'me
 208	62	925	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"— phag mo' Zo 'thun Itar (metr.) ""[ist der"
 209	72	929	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"—s ag ishom tshur sreg pa Itar ""wie wenn ein"
 210	55	930	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"2.1.5b); chu sin sie ma'i — bZin (metr.) ""er"
@@ -1531,6 +1536,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 211	37	930	german_prose_with_translit	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"eine Katze hervor"" (Tär 63,14); nags kyi —"
 211	39	930	german_prose	Tär	Tār	reviewed_tibetan_exact	reviewed_siglum_exact_tar	yes	"des Waldes verneigten sich [vor ihm]"" (Tär"
 211	74	930	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"pa bZin (metr.) ""es war so, als ob die Erde als"
+212	15	931	german_prose	Iran	↑ raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	blut; vgl. Iran byun me tog.
 215	14	955	german_prose_with_translit	mdañs-can	mdaṅs-can	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Wede] Me-tog mdañs-can ist unangefoch-
 225	43	1012	german_prose_with_translit	dbañ-rgyal	dbaṅ-rgyal	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	'bebs, Khyuni-rgod dbañ-rgyal und Ra-'dra
 226	41	1018	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"ter Spiegel ist"" (gZer 657,1); — sbub pa bZin"
@@ -1585,6 +1591,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 246	76	1072	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	mthun gi bris daṅ 'dra 09)7/$5 'di don Itar Ii
 248	21	1073	german_prose_with_translit	Itas	ltas	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"— dari rmyi Itas las stsogs ste ""Wahrsagerei"
 249	33	1084	german_prose_with_translit	niñ	niṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. ppo mo ma niñ so so'i rtags kyi
+249	59	1084	german_prose_with_translit	Igan	↑ gaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. — ni... pho yi Igan ba'ii nad rnams la /
 249	67	1084	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	rdil (r. rdel) broya byed (r. phyed) Ina beu ...
 249	68	1084	german_prose_with_translit	Ina	lṅa	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"drel rgyab Ina beu de bkal nas ""mit 1500"
 252	42	1094	german_prose_with_translit	glañ	glaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(MigTo 103,17); mo yin na lcan ma glañ mi
@@ -1644,6 +1651,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 317	46	1409	german_prose_with_translit	bZugs	bźugs	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"bsgrubs nas bZugs so ""einige bleiben in der"
 318	32	1414	german_prose_with_translit	la'añń	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	"dari yid chad pa la'añń ""viel Glück und Leid er-"
 318	32	1414	german_prose_with_translit	dari	daṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_ambitious_residual_context	yes	"dari yid chad pa la'añń ""viel Glück und Leid er-"
+319	50	1416	german_prose_with_translit	/ lham	↑ lham	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. tha ga pa / lham mkhan ... rus gcig pa
 320	38	1423	german_prose_with_translit	ViśsT	ViśT	reviewed_tibetan_exact	reviewed_siglum_exact_visht	yes	"bar bcom pa ""vom Fluch überwältigt"" (ViśsT"
 320	46	1424	german_prose_with_translit	visT	ViśT	reviewed_tibetan_exact	reviewed_siglum_exact_visht	yes	"stet hat, will ich Dharma verfluchen"" (visT"
 322	70	1438	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	"le"" (T3897 11546); de Itar — daṅ / yi dwags"
@@ -1711,6 +1719,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 381	82	1711	latin_other	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	bden min na / de yirani gi ran bZin — (metr.)
 381	85	1711	latin_other	snari	snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_snang	yes	snari ba mi dinigs pa yin par ni sgra ma — kyani
 382	22	1712	german_prose_with_translit	snari	snaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_second_ambitious_snang	yes	"par mdzad snari yani ""auch wenn es scheint,"
+382	76	1713	german_prose	Tlta	↑ lta	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Tlta 2.
 386	72	1739	german_prose_with_translit	Lis	Liś	reviewed_tibetan_exact	reviewed_siglum_exact_registry_canonicalization	yes	"einstecken"" (Dagy); — nas ni beug nas (Lis"
 389	36	1753	german_prose_with_translit	bZin	bźin	reviewed_tibetan_exact	reviewed_tibetan_exact_bzhin_bzhugs	yes	"Lex. ses pa ran bZin du mi gnas pa ""nicht"
 390	45	1754	german_prose_with_translit	Itar	ltar	reviewed_tibetan_exact	reviewed_tibetan_exact_initial_i_l_family	yes	(Käsy 18,30); ji Itar na tshig b{s}kyal ba
@@ -2089,6 +2098,3 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 378	65	1702	german_prose_with_translit	dinjnänab	dinjñānab	A	sanskrit_jn_cluster_contextual	1	dinjnänab (Mvy 1126 Abt., ñan thos kyi yon
 380	59	1708	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	Mahäsattva, der stark durch Mitgefühl und
 394	82	1767	latin_other	vādavidhijnena	vādavidhijñena	A	sanskrit_high_freq_allowlist	1	"par bya ba = vādavidhijnena bhavitavyani ""es"
-57	22	262	german_prose_with_translit	Tdge	↑ dge	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ka; vgl. Tdge 'dun phal chen.
-160	51	725	german_prose_with_translit	Tspyan	↑ spyan	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	anschauen; vgl. Tspyan ras.
-382	76	1714	german_prose	Tlta	↑ lta	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Tlta 2.

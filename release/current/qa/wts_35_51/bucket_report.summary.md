@@ -1,9 +1,9 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/reference_marker_lemma_order_20260701T072500Z/wts_35_51`
-- unresolved confusable pairs: `168`
-- promote candidates (conservative): `6`
-- hold candidates: `162`
+- run_dir: `work/reference_marker_same_direction_clean_20260701T181007Z/wts_35_51`
+- unresolved confusable pairs: `176`
+- promote candidates (conservative): `7`
+- hold candidates: `169`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
@@ -11,6 +11,7 @@
 |wts_35_51|moñs|moṅs|16|5|-|
 |wts_35_51|bañ|baṅ|11|5|-|
 |wts_35_51|la'añ|la'aṅ|9|4|-|
+|wts_35_51|Vi$|Viś|8|4|-|
 |wts_35_51|gsañ|gsaṅ|7|4|-|
 |wts_35_51|zañs|zaṅs|6|4|-|
 |wts_35_51|IhK|lhK|5|4|-|
@@ -18,7 +19,11 @@
 ## Top Hold Candidates
 |volume|from|to|unresolved|score|reason|
 |---|---|---|---:|---:|---|
+|wts_35_51|P$|PŚ|36|3|other_char_map|
+|wts_35_51|Y$|YŚ|27|3|other_char_map|
+|wts_35_51|G$-H|GŚ-H|7|1|other_char_map|
 |wts_35_51|Io|lo|5|3|-|
+|wts_35_51|Bu-$|Bu-ś|4|3|-|
 |wts_35_51|añ|aṅ|4|3|-|
 |wts_35_51|byuñń|byuṅń|4|3|-|
 |wts_35_51|gsuñs|gsuṅs|4|3|-|
@@ -39,10 +44,6 @@
 |wts_35_51|Ki-kañ|Ki-kaṅ|2|3|low_count|
 |wts_35_51|Sañs|Saṅs|2|3|low_count|
 |wts_35_51|beañ|beaṅ|2|3|low_count|
-|wts_35_51|btuñ|btuṅ|2|3|low_count|
-|wts_35_51|bzuñń|bzuṅń|2|3|low_count|
-|wts_35_51|chañs|chaṅs|2|3|low_count|
-|wts_35_51|ciñ|ciṅ|2|3|low_count|
 
 ## Residual Artifact Buckets
 - `wts_35_51:initial_confusable_I`: `200` distinct tokens

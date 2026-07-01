@@ -14928,7 +14928,7 @@ byed dgu beu'i min).
 the'u ran dan / mi ma yin gyi — yod pa "dort
 liegt der Versammlungsort der the'z ran und
 mi ma yin" (Glr 110,14).
-འདེ་ 'de Ilde.
+འདེ་ 'de ↓ lde.
 འདེ་གུ་ ''degu gu.
 འདེགས་ auch 'deg, pf. Tbteg fut. Tgdeg
 imp. V'thegs.
@@ -24302,7 +24302,7 @@ la 'gran zla mi byed pa "nicht um eine Auf-
 gabe konkurrieren" (Dagy); — ba = mi 'dod
 pa'am phrag dog byed bzZin pa "nicht gern ha-
 bend oder aus Neid handelnd" (brDa); — ba
-= 'gran sems kyis gnod par byed pa / rje ba /
+= 'gran sems kyis gnod par byed pa ↑ rje ba /
 sdur ba / gton ba "Schaden aufgrund von Ri-
 valität zufügen; wechseln, vergleichen, ent-
 senden (?)" (Dagy).
@@ -51557,7 +51557,7 @@ Lex. memda'ignadla — ciglta bu "wie: richte
 das Gewehr auf das Ziel!" (brDa); — pa
 mdun — rgyu'am — bZin pa lta bu "wie: einen
 Speer werfen werden oder werfend" (brDa);
-— pa = rdeg pa / rgyag pa ... gzir ba sogs kyi
+— pa = rdeg pa ↑ rgyag pa ... gzir ba sogs kyi
 don te bsnun pa'i byed tshig "i.S. v. schlagen,
 stoßen, gießen, [Waffen auf jmdn.] richten;
 Präsens von bsnun pa" (Dagy).
@@ -58902,7 +58902,7 @@ sDe-dge, Osttibet.
 zla 5 tshes man — nas btegs te "ich bin an ei-
 nem Tag im fünften Monat von dPal-spunis
 aufgebrochen" (MTH3/3/31 5).
-དཔལ་བེ་ dpal be Tdpal gyi be'u.
+དཔལ་བེ་ dpal be ↑ dpal gyi be'u.
 དཔལ་བེའུ་ dpal bein Tdpalgyi be'n.
 དཔལ་བེའུའི་མཚན་ dpal be'u'i mishan Beiname
 Visnus.
@@ -60491,7 +60491,7 @@ scheleine" (Liś 21,15).
 dkar ser gyi — dan / mthin nag gi stod ral dan
 "ein hellgelbes Tuch und ein dunkelblaues
 Oberwand" (gZi 1: 485,4).
-དཔྱངས་ dpyaṅs pf. zu Idpyon aufhängen.
+དཔྱངས་ dpyaṅs pf. zu ↓ dpyoṅ aufhängen.
 de dag gis ... phren ba — Sin gdugs dan / rgyal
 mtshan bsgrens te "sie hängten Girlanden auf
 und richteten Sonnenschirme und Banner
@@ -60735,7 +60735,7 @@ Untersuchung von Material.དཔྱའ་ dpya'
 Lex. bsreg bead brdar ba gsum gyis brtag "Un-
 tersuchung durch brennen, schneiden und
 pulverisieren" (brDa).
-དཔྱའ་ dpya' Tdpya.
+དཔྱའ་ dpya' ↑ dpya.
 དཔྱས་ dpyas pf. zu T'dpya tadeln, schelten.
 Lex. — pa = 'phya smod byas pa "getadelt, ge-
 scholten" (Dagy).
@@ -60962,7 +60962,7 @@ dig" (Liś 5,10).
 mi ses rab rib dag / ~ ñi ma chen po yin
 (metr.) "die große Sonne, die die Dunkclheit
 des Nichtwissens vertreibt" (Bca 3.32b).
-དཔྱོང་ dpyoṅ pf. Tdpyans fur. Tdpyan imp.
+དཔྱོང་ dpyoṅ pf. Tdpyans fur. ↑ dpyaṅ imp.
 dpyons aufhängen.
 Lex. — dgos = dpyon par byed pa pos thur
 du dpyani nam dpyon dgos "jemand, der auf-
@@ -68004,7 +68004,7 @@ Lex. char pa (Dagy).
 Sad sprin gyi tog npr. ein Buddha.
 Lex. miegbadhvaja (Bhad 963A).
 AN ' ; 7
-ྤྲིན་གྱི་དུས་ sprin gyi dus Isprin dus.
+ྤྲིན་གྱི་དུས་ sprin gyi dus ↑ spriṅ dus.
 `
 སྤྲིན་ཀྱི་མདའ་ sprin gi mda' Bez. für Blitz-
 schlag oder Meteoriteneinschlag.
@@ -87223,7 +87223,7 @@ de'i sras kbri lde gtsug brtan te / des
 — "..biens "sein Sohn war Khri IDe-gtsug-
 brtan, er errichtete "Phan-than ka-med" (Bu
 881,4).
-འཕང་ཆམ།བོ་ phanmtho hoch: vgl. Tdpans mitho.
+འཕང་ཆམ།བོ་ phanmtho hoch: vgl. ↑ dpaṅs mitho.
 chu gter rlabs jies — gyes pa las byun ba'i / dbu
 ba (metr.) "das Meer, dessen Schaum durch
 das Brechen der furchtbar hohen Wellen ent-
