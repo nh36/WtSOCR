@@ -1,0 +1,9 @@
+volume	page	line	token_index	tibetan_syllable	source_latin_token	proposed_latin_target	accepted_form_count	competing_form_counts	alignment_category	evidence_type	confidence	suggested_action	context_excerpt	reason_for_deferral	accepted_total
+wts_9_m	89	2	12	བཏང	btan	btaṅ	10		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba abführendes	Other OCR damage remains on the aligned phrase.	10
+wts_9_m	158	18	4	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"མིག་གཙང་དགའ་འབྱུང་ mig gtsani dga’ ""byun npr."		32
+wts_9_m	156	57	3	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	མིག་མི་བཟང་ mig mi bzan.		34
+wts_9_m	199	73	4	དྲུང	drun	druṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"མུན་པའི་གཡུང་དྲུང་ mun pa g.yun drun ""Sva-"		2
+wts_9_m	330	13	2	གཡང	g.yan	g.yaṅ	1		competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	རྨ་གཡང་ནོར་ rma g.yan nor npr. eine Gegend.	Accepted dotted forms do not yet establish a dominant internal consensus.	1
+wts_9_m	225	80	2	ལོང	lon	loṅ	8	byiṅ:1; doṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	མི་ལོང་ me lon.		10
+wts_9_m	316	79	2	རྫིང	rdzin	rdziṅ	3		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དམུ་རྫིང dmu rdzin.		3
+wts_9_m	303	62	2	ཐང	than	thaṅ	27		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དམར་ཐང་ dmar than.		27

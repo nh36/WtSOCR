@@ -1,0 +1,64 @@
+volume	page	line	token_index	tibetan_syllable	source_latin_token	proposed_latin_target	accepted_form_count	competing_form_counts	alignment_category	evidence_type	confidence	suggested_action	context_excerpt	reason_for_deferral	accepted_total
+wts_8_b	330	74	1	བློང	blon	bloṅ	1		competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	བློང་ 'blon.	Accepted dotted forms do not yet establish a dominant internal consensus.	1
+wts_8_b	331	13	2	བློང	blon	bloṅ	1		competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	བྲོང་བློང་ bloṅ blon.	Accepted dotted forms do not yet establish a dominant internal consensus.	1
+wts_8_b	112	45	1	བོང	bon	boṅ	20	borṅ:1; bboṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"བོང་ར་ ""bon rgya"		22
+wts_8_b	115	52	1	བོང	bon	boṅ	20	borṅ:1; bboṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བོང་བུ་ལན་ ° bon bu lan tshwa eine Heilpflan-		22
+wts_8_b	115	66	1	བོང	bon	boṅ	20	borṅ:1; bboṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-		22
+wts_8_b	263	45	1	བྲང	bran	braṅ	23	byuṅ:1; thaṅ:1; byaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."		26
+wts_8_b	481	67	5	འབྲང	bran	braṅ	5		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	"kommt"" (dPeD 186,2). འབྲང་ས་ ""bran sa Tbran sa."	Other OCR damage remains on the aligned phrase.	5
+wts_8_b	263	45	2	བྲེང	bren	breṅ	8		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."		8
+wts_8_b	284	23	1	བྲེང	bren	breṅ	8		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	བྲེང་ ?bren npr. ein Ort.	Other OCR damage remains on the aligned phrase.	8
+wts_8_b	512	2	1	འབྲེང	bren	breṅ	7	briṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྲེང་ ""bren pf. P'breris folgen; vgl. 1'bran."		8
+wts_8_b	512	9	1	འབྲེང	bren	breṅ	7	briṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."		8
+wts_8_b	512	13	1	འབྲེང	bren	breṅ	7	briṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྲེང་ ""bren \bren."		8
+wts_8_b	498	1	1	འབྲིང	brin	briṅ	11		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྲིང་ངེ་བ་ ""'brin ne ba"		11
+wts_8_b	499	1	1	འབྲིང	brin	briṅ	11		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྲིང་ཚོ་ ""brin tsho"		11
+wts_8_b	279	2	9	བཏང	btan	btaṅ	10		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	und Butter und beräuchere [das Pferd] mit བྲུབས་བཏང་ brubs btan pf.		10
+wts_8_b	162	46	1	བྱང	byan	byaṅ	70	bbyaṅ:2; byuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"བྱང་ ""byan"		73
+wts_8_b	163	68	1	བྱང	byah	byaṅ	70	bbyaṅ:2; byuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"བྱང་བགྲོད་ byah bgrod ""der Lauf [der Sonne]"		73
+wts_8_b	165	48	1	བྱང	byan	byaṅ	70	bbyaṅ:2; byuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བྱང་ཆུབ་ཀྱི་སླིང་ * byan chub kyi sin		73
+wts_8_b	179	7	1	བྱང	byan	byaṅ	70	bbyaṅ:2; byuṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.	Other OCR damage remains on the aligned phrase.	73
+wts_8_b	476	21	1	འབྱོང	byon	byoṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱོང་ ""byon V'byan."		2
+wts_8_b	476	22	1	འབྱོང	byon	byoṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྱོང་ ®byon reinigen, vgl. Isbyon.		2
+wts_8_b	462	32	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྱུང་ byun.		32
+wts_8_b	463	48	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་ ""byun"		32
+wts_8_b	464	1	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་ ""byun"		32
+wts_8_b	466	1	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་ ""byun"		32
+wts_8_b	466	47	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་ཁུངས་ ""byun khuns"		32
+wts_8_b	469	46	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་པོ་ ""byun po"		32
+wts_8_b	470	1	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་པོ་ཅན་ ""byun po can"		32
+wts_8_b	470	23	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་པོ་འཛིན་བྱེད་ ""byun po 'dzin byed Bez. für"		32
+wts_8_b	470	46	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	"འབྱུང་པོའི་རྟེན་མ་ ""byun po'i rten ma auch '/))///3?"	Other OCR damage remains on the aligned phrase.	32
+wts_8_b	470	62	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་པོའི་བྱ་ ""byun po'i bya ""Vogel der '""byun-"		32
+wts_8_b	472	1	1	འབྱུང	byuh	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྱུང་བ་ཉིད་ byuh ba ñid		32
+wts_8_b	472	14	1	འབྱུང	byuh	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྱུང་བ་ཉིད་ byuh ba ñid.		32
+wts_8_b	473	1	1	འབྱུང	byun	byuṅ	31	Pbyuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབྱུང་ཚུལ་ ""byun tshul"		32
+wts_8_b	328	8	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བློ་བཟང་ blo bzan.		34
+wts_8_b	104	76	3	འཆང	chan	chaṅ	7		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བེ་ཅོན་འཆང་ be con 'chan.		7
+wts_8_b	580	45	2	འཆིང	chin	chiṅ	3		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ལ་འཆིང་ sbrul chin.		3
+wts_8_b	83	25	2	ཆུང	chuh	chuṅ	126	lṅa:1; ruṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བུ་ཆུང་ bu chuh auch ~ ñu.		128
+wts_8_b	529	25	2	ཆུང	chun	chuṅ	126	lṅa:1; ruṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྤག་ཆུང་ sbag chun.		128
+wts_8_b	341	35	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་ 'dban.		169
+wts_8_b	345	13	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་སྒྱུར ,"" dban sgyur pf. und fur. dban bsgyur"		169
+wts_8_b	352	41	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་པོ་ ""dban po"		169
+wts_8_b	356	1	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་པོ་ ""dban po"		169
+wts_8_b	356	7	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	དབང་པོ་ ?dban po ↑ dpaṅ.	Other OCR damage remains on the aligned phrase.	169
+wts_8_b	358	34	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་པོའི་བརྡ་སྤྲོད་ °་ dban po'i brda sprod		169
+wts_8_b	363	57	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	དབང་འབྱོར་ ?dban 'byor Macht, Pracht.	Other OCR damage remains on the aligned phrase.	169
+wts_8_b	363	67	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་མེ * dban med machtlos, ohne Macht,		169
+wts_8_b	432	24	3	དོང	don	doṅ	4		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབབ་ཆུའི་དོང་ ""bab chn'i don Quelle, Brunnen."		4
+wts_8_b	486	7	2	གང	gah	gaṅ	73		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྲས་གང་ 'bras gah eine Pflanze, Zypergras;		73
+wts_8_b	39	51	2	གླང	glah	glaṅ	9		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བན་གླང་མོ་ ban glah mo Ibal glari mo.		9
+wts_8_b	444	56	2	གླིང	glin	gliṅ	17	ciṅ:1; eliṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབུམ་གླིང་ ""bum glin npr. ein Meditationgk ol."		19
+wts_8_b	21	1	2	ལང	lan	laṅ	20		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"པ་ལང་ ""ba lan"		20
+wts_8_b	409	62	2	མོང	mon	moṅ	11		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབྱི་མོང་ 'dbyi mon.		11
+wts_8_b	409	73	2	མོང	mon	moṅ	11		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	དབྱི་མོང་ ?dbyi mon Tdbyi mo.	Other OCR damage remains on the aligned phrase.	11
+wts_8_b	142	39	2	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བྱ་རྐང་ bya rkan.		16
+wts_8_b	49	49	5	ཤིང	sih	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein	Accepted dotted forms do not yet establish a dominant internal consensus.	48
+wts_8_b	305	5	2	ཤིང	sin	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	བླ་ཤིང་ bla sin.	Accepted dotted forms do not yet establish a dominant internal consensus.	48
+wts_8_b	408	49	9	ཤིང	sin	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"	Accepted dotted forms do not yet establish a dominant internal consensus.	48
+wts_8_b	438	28	2	ཤིང	sin	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	"འབར་ཤིང་ ""bar sin Schwefel."	Accepted dotted forms do not yet establish a dominant internal consensus.	48
+wts_8_b	493	24	2	ཤིང	sin	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"	Accepted dotted forms do not yet establish a dominant internal consensus.	48
+wts_8_b	100	8	2	ཐང	than	thaṅ	27		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བུམ་ཐང་ bum than.		27
+wts_8_b	102	59	2	ཏིང	tin	tiṅ	1	dziṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	བུར་ཏིང་ bur tin.	Accepted dotted forms do not yet establish a dominant internal consensus.	2
+wts_8_b	433	23	2	ཚོང	tshon	tshoṅ	2	ishoṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	"འབྲམ།་ཚོང་ ""bam tshon Zwangskauf."	Accepted dotted forms do not yet establish a dominant internal consensus.	3

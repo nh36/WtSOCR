@@ -237,6 +237,9 @@ def read_release_stats() -> ReleaseStats:
             "script_ng_witness_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_script_ng_witness_candidates.tsv"
             ),
+            "final_ng_consensus_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_final_ng_consensus_candidates.tsv"
+            ),
             "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
@@ -495,6 +498,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             script_ng_witness_residual,
             "broad ń->ṅ;broad n->ṅ;broad T/I/\\->↑ marker rule;unverified witness-only contexts",
             "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual; marker-attached rows remain in this queue after reference-marker separation.",
+        ),
+        row(
+            "final_ng_corpus_consensus_diagnostic",
+            "final_ng",
+            "positionally aligned corpus final-nasal variants",
+            "dominant internally attested dotted forms",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv",
+            0,
+            total(stats, "final_ng_consensus_candidates"),
+            "generic n->ṅ;generic h->ṅ;same-line co-occurrence without alignment",
+            "Corpus-consensus candidates are diagnostic only and require exact-row review before promotion.",
         ),
         row(
             "reference_marker_diagnostics",
@@ -1122,6 +1141,14 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "diagnostic only",
             "Review witness rows; separate reference markers first, then promote only exact accepted cases.",
             f'{per_volume_count_text(stats, "script_ng_witness_candidates")}; marker-attached rows remain part of this queue.',
+        ],
+        [
+            "Corpus-consensus final-ng diagnostics",
+            total(stats, "final_ng_consensus_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv",
+            "diagnostic only",
+            "Rank exact positionally aligned families by dominant internal dotted spelling.",
+            f'{per_volume_count_text(stats, "final_ng_consensus_candidates")}; no automatic corrections.',
         ],
         [
             "Reference-marker OCR diagnostics",
