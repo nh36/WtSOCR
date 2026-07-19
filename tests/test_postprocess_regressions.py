@@ -2241,7 +2241,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཆང་།ཁང་ chan khaṅ Wirtshaus.", corrected)
         self.assertIn("སྟེང་ཁང་ sten khaṅ", corrected)
         self.assertIn("dud khaṅ Badehaus; vgl. [%//95 khan,", corrected)
-        self.assertIn("དྲི་བཟང་ཁང་ dri bzan khaṅ", corrected)
+        self.assertIn("དྲི་བཟང་ཁང་ dri bzaṅ khaṅ", corrected)
         self.assertIn("མཁན་ mkhan genuine agentive form.", corrected)
         reviewed = [
             row
@@ -2249,7 +2249,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "khan" and row["to_token"] == "khaṅ"
         ]
         self.assertEqual(len(reviewed), 4)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
     def test_reviewed_gong_rows_preserve_repetitions_and_neighbours(self) -> None:
         lines = {
@@ -2417,6 +2417,21 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("bal glaṅ no auch ban glaṅ mo", corrected)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
         self.assertEqual(changes[-1]["reason"], "reviewed_tibetan_exact_final_ng_echo")
+
+    def test_reviewed_bzang_rows_and_echo_preserve_genuine_bzan(self) -> None:
+        lines = {
+            (86, 60): "ཀུན་བཟང་མ་ kun bzan ma, auch kun bzan mo npr.",
+            (987, 88): "ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-",
+            (200, 1): "བཟན་ bzan genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun bzaṅ ma, auch kun bzaṅ mo", corrected)
+        self.assertIn("thags bzaṅ auch thag bzaṅ", corrected)
+        self.assertIn("བཟན་ bzan genuine distinct syllable.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        self.assertEqual(sum(row["to_token"] == "bzaṅ" for row in changes), 4)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

@@ -27753,3 +27753,39 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 395	69	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱེངས་ glan hrens Elefantenbulle.
 1275	1	12813	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་མགོ་གླང་སྙིང་ dom mgo glan sin
 393	183	5166	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གླང་ཐབས་ glaṅ thabs auch glan ’thab eine Er-
+76	112	815	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་བཟང་པོ་ kun tu bzan po npr. skt. Samanta-
+76	130	816	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་བཟང་པོའི་སྤྱོད་པ་ kun tu bzan po’i spyod pa,
+76	145	817	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་བཟང་མོ་ kun tu bzan mo npr. skt. Saman-
+82	32	930	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་བཟང་ kun nas bzan.
+86	1	992	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་བཟང་ kun bzan
+86	7	993	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་བཟང་ kun bzan.
+86	30	994	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་བཟང་རྒྱལ་མཚན་ kun bzan rgyal mtshan, auch
+86	55	996	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་བཟང་སྤྱོད་ kun bzan spyod Kurzf. f. !kun tu
+86	60	998	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་བཟང་མ་ kun bzan ma, auch kun bzan mo npr.
+86	64	999	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཀུན་བཟང་རྩེ "" kun bzan rtse, Kurzf. für lsne’u gdon"
+86	191	1013	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ལ་བཟང་ kun la bzan eine Pflanze. - für skt.
+126	166	1569	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོན་མཆོག་བཟང་པོ་ dkon mchog bzan po
+180	59	2263	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐལ་བ་བཟང་པོ་ skal ba bzan po auch skal ba bzani
+215	185	2773	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱེས་བཟང་ skyes bzan Geschenk, Gabe.
+222	118	2884	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྲ་བཟང་ skra bzan.
+364	163	4880	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གོས་བཟང་ gos bzan Seide, Brokat.
+432	5	5693	example_tibetan_latin	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	sdug ’dra bar so la mdzes (metr.) „blau und མགྲིན་བཟང་ mgrin bzan Bez. für Esel.
+453	194	5855	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འགོ་བཟང་ ’gro bzan Bez. des Buddha.
+563	209	7105	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྔ་སྡེ་བཟང་པོ་ lṅa sde bzan po die fünf ersten
+741	3	8808	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེ་རེགས་མ་བཟང་ rje rigs ma bzan die Gottheit
+875	113	9659	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzan po npr.
+961	136	10508	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོབས་བཟང་ stobs bzan.
+987	88	10743	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-
+1110	76	12013	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དང་བཟང་དབང་པོ་ daṅ bzan dbaṅ po Beiname
+1238	24	12650	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེད་དཔོན་བཟང་པོ་ ded dpon bzan po npr. ein Bo-
+1272	48	12795	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་བཟང་པོ་ don bzan po das richtige Ziel ver-
+1321	53	13028	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ dri bzan
+1321	96	13033	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ dri bzan auch dri bzans.
+1322	1	13034	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ཁང་ dri bzan khaṅ
+1322	71	13035	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ཁང་ dri bzan khaṅ Bez. für Lotus.
+1322	74	13036	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ཅན་ dri bzan can Bez. für Blume.
+1322	78	13037	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་ན་གི་ dri bzan na gi ein Duftstoff
+1322	88	13038	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་བུ་ dri bzan bu Bez. für Stier.
+1322	90	13039	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་བུ་མོ་ dri bzan bu mo auch 777 bzan bu
+86	60	998	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀུན་བཟང་མ་ kun bzaṅ ma, auch kun bzan mo npr.
+987	88	10743	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཐྲགས་བཟང་ thags bzaṅ auch thag bzan wohl-

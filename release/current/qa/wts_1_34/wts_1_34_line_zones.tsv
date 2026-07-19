@@ -9097,7 +9097,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 76	106	812	german_prose			none	0	1	0	0	verneige mich!“ (K95 8735).
 76	108	813	headword_line	ཀུན་ཏུ་གཟུང་བ་	tu	medium	2	0	0	0	ཀུན་ཏུ་གཟུང་བ་ kun tu gzun ba
 76	110	814	headword_line	ཀུན་ཏུ་གཟུང་བ་	tu	medium	5	0	0	0	ཀུན་ཏུ་གཟུང་བ་ kun tu gzun ba kun tu ’dzin pa.
-76	112	815	headword_line	ཀུན་ཏུ་བཟང་པོ་	tu bzan po	medium	3	1	0	0	ཀུན་ཏུ་བཟང་པོ་ kun tu bzan po npr. skt. Samanta-
+76	112	815	headword_line	ཀུན་ཏུ་བཟང་པོ་	tu bzan po	medium	3	1	0	0	ཀུན་ཏུ་བཟང་པོ་ kun tu bzaṅ po npr. skt. Samanta-
 76	113	815	german_prose_with_translit			none	1	2	0	0	bhadra; vgl. Ikun bzan.
 76	115	815	german_prose_with_translit			none	1	1	0	0	1. ein Bodhisattva.
 76	117	815	german_prose_with_translit			none	3	1	0	0	byan chub sems dpa’ ... — „der Bodhisattva
@@ -9108,7 +9108,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 76	125	815	german_prose_with_translit			none	4	2	0	0	’di ka sans rgyas — yin „dies ist der Buddha
 76	126	815	latin_other			none	2	0	0	0	Samantabhadra“ (Thgr 73,2).
 76	128	815	german_prose_with_translit			none	3	2	0	0	Lex. saṅs rgyas ... Sig (brDa).
-76	130	816	headword_line	ཀུན་ཏུ་བཟང་པོའི་སྤྱོད་པ་	tu bzan po’i spyod pa	high	5	0	0	0	ཀུན་ཏུ་བཟང་པོའི་སྤྱོད་པ་ kun tu bzan po’i spyod pa,
+76	130	816	headword_line	ཀུན་ཏུ་བཟང་པོའི་སྤྱོད་པ་	tu bzan po’i spyod pa	high	5	0	0	0	ཀུན་ཏུ་བཟང་པོའི་སྤྱོད་པ་ kun tu bzaṅ po’i spyod pa,
 76	131	816	german_prose			none	0	1	0	0	Kurzf. kun bzan spyod
 76	132	816	german_prose_with_translit			none	1	3	0	0	„Samantabhadra-Praxis“, Bez. eines Textes
 76	133	816	german_prose			none	0	4	0	0	und der in ihm beschriebenen religiösen
@@ -9120,7 +9120,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 76	140	816	latin_other			none	5	0	0	0	bzan spyod las gsuns pa yi / mchod pa rnam pa
 76	141	816	german_prose_with_translit			none	3	4	0	0	bdun dag kyan (metr.) „die siebenfache Verehrung, die in der Samantabhadracari ge-
 76	143	816	german_prose			none	0	1	0	0	"nannt 157"" (Bpp 29)."
-76	145	817	headword_line	ཀུན་ཏུ་བཟང་མོ་	tu bzan	medium	2	1	0	0	ཀུན་ཏུ་བཟང་མོ་ kun tu bzan mo npr. skt. Saman-
+76	145	817	headword_line	ཀུན་ཏུ་བཟང་མོ་	tu bzan	medium	2	1	0	0	ཀུན་ཏུ་བཟང་མོ་ kun tu bzaṅ mo npr. skt. Saman-
 76	147	817	latin_other			none	1	0	0	0	tabhadiri.
 76	148	817	german_prose			none	0	2	0	0	1. eine Däkini.
 76	149	817	latin_other			none	5	0	0	0	mkha’ ’gro ma ... kun du bzan mo la yaṅ gser
@@ -9977,7 +9977,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 82	28	929	german_prose			none	0	4	0	0	reicht drei Meilen weit, sein Vater ist Lag-
 82	29	929	german_prose			none	0	1	0	0	bzans“ (K94 14036).
 82	30	929	german_prose_with_translit			none	2	1	0	0	Lex. nikhiladarsin (Bhad 200).
-82	32	930	headword_line	ཀུན་ནས་བཟང་	nas bzan	medium	2	0	0	0	ཀུན་ནས་བཟང་ kun nas bzan.
+82	32	930	headword_line	ཀུན་ནས་བཟང་	nas bzan	medium	2	0	0	0	ཀུན་ནས་བཟང་ kun nas bzaṅ.
 82	34	930	german_prose_with_translit			none	1	2	0	0	1. Königspalast. - skt. sarvatobhadra eine be-
 82	35	930	german_prose			none	0	4	0	0	stimmte Tempelform; ... ein Gebäude mit
 82	36	930	german_prose_with_translit			none	1	1	0	0	durchlaufenden Gallerien ringsumher (PW).
@@ -10593,10 +10593,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 85	204	991	latin_other			none	2	0	0	0	bzw. kun nas gzigs pa.
 85	206	991	german_prose_with_translit			none	1	1	0	0	1. Buddha, Erleuchteter.
 85	207	991	latin_other			none	2	0	0	0	sans rgyas (brDa).
-86	1	992	headword_line	ཀུན་བཟང་	bzan	medium	1	0	0	0	ཀུན་བཟང་ kun bzan
+86	1	992	headword_line	ཀུན་བཟང་	bzan	medium	1	0	0	0	ཀུན་བཟང་ kun bzaṅ
 86	3	992	german_prose			none	0	3	0	0	2. Beiname des Mahesvara.
 86	5	992	german_prose_with_translit			none	4	2	0	0	Lex. dban phyug chen po (brDa).
-86	7	993	headword_line	ཀུན་བཟང་	bzan	medium	1	0	0	0	ཀུན་བཟང་ kun bzan.
+86	7	993	headword_line	ཀུན་བཟང་	bzan	medium	1	0	0	0	ཀུན་བཟང་ kun bzaṅ.
 86	9	993	german_prose_with_translit			none	3	1	0	0	1. npr. Kurzf. f. tkun tu bzan po, Ädibuddha
 86	10	993	german_prose_with_translit			none	1	1	0	0	der rNin-ma-pas, skt. Samantabhadra.
 86	12	993	latin_other			none	4	0	0	0	— bder gsegs kyis ... lun ’di bka’ stsal (metr.)
@@ -10610,7 +10610,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 86	25	993	latin_other			none	3	0	0	0	"94.35c); gambhärt, sarvatobhadä (7. ""bhadrä)"
 86	26	993	latin_other			none	1	0	0	0	(Tshe 4a1).
 86	28	993	latin_other			none	2	0	0	0	4. kun bzan rgyal mtshan.
-86	30	994	headword_line	ཀུན་བཟང་རྒྱལ་མཚན་	bzan rgyal mtshan	high	3	1	0	0	ཀུན་བཟང་རྒྱལ་མཚན་ kun bzan rgyal mtshan, auch
+86	30	994	headword_line	ཀུན་བཟང་རྒྱལ་མཚན་	bzan rgyal mtshan	high	3	1	0	0	ཀུན་བཟང་རྒྱལ་མཚན་ kun bzaṅ rgyal mtshan, auch
 86	32	994	german_prose			none	0	3	0	0	kun bzan npr. ein Bla-ma der
 86	33	994	german_prose			none	0	5	0	0	Bon-pos, aus dem Stamm der sGa, vierter Abt
 86	34	994	german_prose			none	0	1	0	0	von sMan-ıı, inthronisiert 1464.
@@ -10630,13 +10630,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 86	51	995	german_prose			none	0	7	0	0	eines Klosters in Rin-chen-brag, in dem Kar-
 86	52	995	german_prose_with_translit			none	5	2	0	0	ma bKra-śis chos-’phel die Biographie des
 86	53	995	latin_other			none	2	0	0	0	mKhyen-brtse dban-po schrieb (LP p. ¥1¥) .
-86	55	996	headword_line	ཀུན་བཟང་སྤྱོད་	bzan spyod	medium	3	1	0	0	ཀུན་བཟང་སྤྱོད་ kun bzan spyod Kurzf. f. !kun tu
+86	55	996	headword_line	ཀུན་བཟང་སྤྱོད་	bzan spyod	medium	3	1	0	0	ཀུན་བཟང་སྤྱོད་ kun bzaṅ spyod Kurzf. f. !kun tu
 86	56	996	latin_other			none	2	0	0	0	bzan po’i spyod pa.
 86	58	997	headword_line	ཀུན་རིག་པ་	pa	medium	1	0	0	0	ཀུན་རིག་པ་ kun rig pa
-86	60	998	headword_line	ཀུན་བཟང་མ་	bzan ma	medium	3	1	0	0	ཀུན་བཟང་མ་ kun bzan ma, auch kun bzan mo npr.
+86	60	998	headword_line	ཀུན་བཟང་མ་	bzan ma	medium	3	1	0	0	ཀུན་བཟང་མ་ kun bzaṅ ma, auch kun bzaṅ mo npr.
 86	61	998	german_prose			none	0	5	0	0	_ eine Gottheit im Gefolge des
 86	62	998	german_prose_with_translit			none	1	1	0	0	sNan-rje Gun-shon (Neb 215).
-86	64	999	headword_line	ཀུན་བཟང་རྩེ	bzan rtse	high	3	2	0	0	"ཀུན་བཟང་རྩེ "" kun bzan rtse, Kurzf. für lsne’u gdon"
+86	64	999	headword_line	ཀུན་བཟང་རྩེ	bzan rtse	high	3	2	0	0	"ཀུན་བཟང་རྩེ "" kun bzaṅ rtse, Kurzf. für lsne’u gdon"
 86	65	999	german_prose_with_translit			none	1	4	0	0	kun bzan rtse, N. einer Stadt, Ne-
 86	66	999	german_prose_with_translit			none	1	1	0	0	tung (HR Anm. 226).
 86	68	1000	headword_line	ཀུན་བཟོད་	bzod	medium	1	0	0	0	ཀུན་བཟོད་ kun bzod.
@@ -10724,7 +10724,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 86	186	1012	latin_other			none	1	0	0	0	tung hier unklar).
 86	188	1012	german_prose_with_translit			none	1	3	0	0	Lex. sarvabadesa (?) (Tshe 3b2), die Emen-
 86	189	1012	german_prose_with_translit			none	1	2	0	0	dation sarvavedas (LCsv) ist nicht glaubhaft.
-86	191	1013	headword_line	ཀུན་ལ་བཟང་	la bzan	medium	2	3	0	0	ཀུན་ལ་བཟང་ kun la bzan eine Pflanze. - für skt.
+86	191	1013	headword_line	ཀུན་ལ་བཟང་	la bzan	medium	2	3	0	0	ཀུན་ལ་བཟང་ kun la bzaṅ eine Pflanze. - für skt.
 86	193	1013	other			none	0	0	0	0	101
 86	195	1013	german_prose_with_translit			none	1	1	0	0	sarvatobhadra Azadirachta indica
 86	197	1013	german_prose			none	0	1	0	0	Juss. (PW).
@@ -16690,7 +16690,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 126	161	1566	german_prose			none	0	1	0	0	smrtitika (Toh 3987).
 126	163	1567	headword_line	ཀོན་མཆོག་ཏ་ལ་ལ།་	mchog ta la la	medium	4	2	0	0	ཀོན་མཆོག་ཏ་ལ་ལ།་ dkon mchog ta la la N. eines
 126	164	1568	headword_line	དཀན་མཆག་ཏ	buddh	high	2	1	0	0	དཀན་མཆག་ཏ buddh. kanon. Textes (Mvy
-126	166	1569	headword_line	དཀོན་མཆོག་བཟང་པོ་	mchog bzan po	medium	3	0	0	0	དཀོན་མཆོག་བཟང་པོ་ dkon mchog bzan po
+126	166	1569	headword_line	དཀོན་མཆོག་བཟང་པོ་	mchog bzan po	medium	3	0	0	0	དཀོན་མཆོག་བཟང་པོ་ dkon mchog bzaṅ po
 126	168	1569	german_prose_with_translit			none	1	2	0	0	1375). — skt. Ratnolka[ldhärani) (Toh 145,
 126	169	1569	other			none	0	0	0	0	847).
 126	171	1570	headword_line	དཀོན་མཆོག་བསྟན་པའི་སྒྲོན་མེ་	mchog bstan pa’i	high	3	0	0	0	དཀོན་མཆོག་བསྟན་པའི་སྒྲོན་མེ་ dkon mchog bstan pa’i
@@ -24572,7 +24572,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 180	55	2262	other			none	0	0	0	0	skt. *manoratha), nachdem er doch schon
 180	56	2262	german_prose			none	0	3	0	0	in deinen Händen war, wieder verworfen?“
 180	57	2262	german_prose			none	0	1	0	0	(Lokn 96,13).
-180	59	2263	headword_line	སྐལ་བ་བཟང་པོ་	skal ba bzan po	medium	7	1	0	0	སྐལ་བ་བཟང་པོ་ skal ba bzan po auch skal ba bzani
+180	59	2263	headword_line	སྐལ་བ་བཟང་པོ་	skal ba bzan po	medium	7	1	0	0	སྐལ་བ་བཟང་པོ་ skal ba bzaṅ po auch skal ba bzani
 180	60	2263	german_prose_with_translit			none	1	2	0	0	ba Kurzf. skal bzan gutes Schick-
 180	61	2263	german_prose			none	0	3	0	0	sal, Glück; begünstigt, gesegnet, glücklich,
 180	62	2263	german_prose			none	0	1	0	0	glückverheißend.
@@ -29930,7 +29930,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 215	180	2771	german_prose			none	0	1	0	0	Dagy).
 215	182	2772	headword_line	སྐྱེས་ཟླ་	skyes	medium	1	2	0	0	སྐྱེས་ཟླ་ skyes zla Tierkreiszeichen Krebs.
 215	183	2772	german_prose_with_translit			none	3	3	0	0	Lex. sdig pa’i khyim (brDa, ähnl. Dagy).
-215	185	2773	headword_line	སྐྱེས་བཟང་	skyes bzan	medium	2	2	0	0	སྐྱེས་བཟང་ skyes bzan Geschenk, Gabe.
+215	185	2773	headword_line	སྐྱེས་བཟང་	skyes bzan	medium	2	2	0	0	སྐྱེས་བཟང་ skyes bzaṅ Geschenk, Gabe.
 215	187	2773	german_prose_with_translit			none	4	1	0	0	Lex. lag btags sam ’bul ba (brDa); lag rtags
 215	188	2773	german_prose_with_translit			none	1	3	0	0	bzan po „schönes Geschenk“ (Dagy); — ster
 215	189	2773	german_prose			none	0	3	0	0	„ein Geschenk geben“ (Bon 24,21).
@@ -30991,7 +30991,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 222	113	2883	tibetan_only	སྐྲ་ཟིངས་		none	0	2	0	0	སྐྲ་ཟིངས་ skra zins Hochmut, Egoismus.
 222	115	2883	german_prose_with_translit			none	4	3	0	0	Lex. — Zes pa = na rgyal che ba (KlonD
 222	116	2883	other			none	0	0	0	0	733,1).
-222	118	2884	headword_line	སྐྲ་བཟང་	bzan	medium	1	0	0	0	སྐྲ་བཟང་ skra bzan.
+222	118	2884	headword_line	སྐྲ་བཟང་	bzan	medium	1	0	0	0	སྐྲ་བཟང་ skra bzaṅ.
 222	120	2884	german_prose			none	0	3	0	0	1. eine Heilpflanze; skt. parpata Olden-
 222	121	2884	german_prose			none	0	2	0	0	landıa corymbosa Linn. u. a. (Meul 571 [.);
 222	122	2884	german_prose_with_translit			none	1	2	0	0	vgl. Iskra lo.
@@ -51406,7 +51406,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 364	158	4878	other			none	0	0	0	0	ST,
 364	160	4878	tibetan_only	ག་		none	0	0	0	0	ག་ gau
 364	161	4879	headword_line	གོས་གྲཟོ་བ་	ba	medium	3	0	0	0	གོས་གྲཟོ་བ་ gos gzo ba \gos bzo ba.
-364	163	4880	headword_line	གོས་བཟང་	bzan	medium	1	2	0	0	གོས་བཟང་ gos bzan Seide, Brokat.
+364	163	4880	headword_line	གོས་བཟང་	bzan	medium	1	2	0	0	གོས་བཟང་ gos bzaṅ Seide, Brokat.
 364	164	4880	german_prose_with_translit			none	1	3	0	0	Lex. gos chen (brDa, Dagy).
 364	166	4881	headword_line	ཀྲོས ཀ་པྲོ་།	bzo ba	medium	3	1	0	0	"ཀྲོས ཀ་པྲོ་།"" gos bzo ba auch gos 920 ba."
 364	167	4881	tibetan_only	ག		none	0	0	0	0	ག IS 805 £
@@ -61308,7 +61308,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 431	197	5691	other			none	0	0	0	0	359
 432	1	5692	headword_line	མགྲིན་པ་ཁྲ་བོ་	mgrin pa khra bo	high	4	0	0	0	མགྲིན་པ་ཁྲ་བོ་ mgrin pa khra bo
 432	3	5693	headword_line	མགྲོན་	mgron	medium	1	0	0	0	མགྲོན་ mgron
-432	5	5693	example_tibetan_latin			none	5	4	0	0	sdug ’dra bar so la mdzes (metr.) „blau und མགྲིན་བཟང་ mgrin bzan Bez. für Esel.
+432	5	5693	example_tibetan_latin			none	5	4	0	0	sdug ’dra bar so la mdzes (metr.) „blau und མགྲིན་བཟང་ mgrin bzaṅ Bez. für Esel.
 432	7	5693	german_prose			none	0	6	0	0	schön wie der hübsche Hals eines Pfaus“
 432	8	5693	german_prose_with_translit			none	3	2	0	0	(Suv 36,12); ril ba spyi blugs kyi »r bskor Zin
 432	9	5693	german_prose_with_translit			none	2	3	0	0	bskor nas „man winde den Ball fest um den
@@ -64450,7 +64450,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 453	191	5854	tibetan_only	འགྲོ་ཞོར་		none	0	1	0	0	འགྲོ་ཞོར་ ”9?-0 Zor unterwegs.
 453	192	5854	german_prose_with_translit			none	2	3	0	0	~ lam bu’i säin thub (metr.) „die Geliebte,
 453	193	5854	german_prose			none	0	5	0	0	die auf dem Pfad unterwegs ist“ (Glu 4a).
-453	194	5855	headword_line	འགོ་བཟང་	bzan	medium	2	2	0	0	འགོ་བཟང་ ’gro bzan Bez. des Buddha.
+453	194	5855	headword_line	འགོ་བཟང་	bzan	medium	2	2	0	0	འགོ་བཟང་ ’gro bzaṅ Bez. des Buddha.
 453	195	5855	german_prose_with_translit			none	2	3	0	0	Lex. bde ’gro „Sugata“ (brDa, Dagy).
 453	197	5855	tibetan_only	འགྲོ་འོང་		none	0	0	0	0	འགྲོ་འོང་ ’gro 07.
 453	198	5855	german_prose			none	0	1	0	0	1. kommen und gehen.
@@ -80710,7 +80710,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 563	205	7104	latin_other			none	8	0	0	0	’u then gyi sa mkhar lṅa ldan gyi gron khyer
 563	206	7104	german_prose_with_translit			none	3	4	0	0	chen po „die Festung des Landes Khotan,
 563	207	7104	german_prose			none	0	4	0	0	die große Stadt lNa-ldan“ (Liyl 174a3).
-563	209	7105	headword_line	ལྔ་སྡེ་བཟང་པོ་	lṅa	high	3	2	0	0	ལྔ་སྡེ་བཟང་པོ་ lṅa sde bzan po die fünf ersten
+563	209	7105	headword_line	ལྔ་སྡེ་བཟང་པོ་	lṅa	high	3	2	0	0	ལྔ་སྡེ་བཟང་པོ་ lṅa sde bzaṅ po die fünf ersten
 563	210	7105	german_prose_with_translit			none	1	2	0	0	Schüler des Buddha.
 563	212	7105	german_prose_with_translit			none	5	2	0	0	"Lex. lṅa sde = bcom ldan ’das kyi ""khor ~ lta"
 563	213	7105	german_prose_with_translit			none	1	4	0	0	bu „wie: die 5 Schüler des Buddha, Ina sde
@@ -107748,7 +107748,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 740	224	8807	german_prose_with_translit			none	2	1	0	0	(brDa); dpon mo lta bu „wie: Gebieterin“
 740	225	8807	german_prose			none	0	1	0	0	(Dagy).
 741	1	8807	tibetan_latin_mixed	རྗེ་རེགས་མ་བཟང་		none	3	0	0	0	རྗེ་རེགས་མ་བཟང་ 776 rigs ma bzan
-741	3	8808	headword_line	རྗེ་རེགས་མ་བཟང་	rje rigs ma bzan	medium	4	2	0	0	རྗེ་རེགས་མ་བཟང་ rje rigs ma bzan die Gottheit
+741	3	8808	headword_line	རྗེ་རེགས་མ་བཟང་	rje rigs ma bzan	medium	4	2	0	0	རྗེ་རེགས་མ་བཟང་ rje rigs ma bzaṅ die Gottheit
 741	4	8808	latin_other			none	1	0	0	0	Vaisyabhadrä.
 741	6	8808	latin_other			none	5	0	0	0	176 rigs ma bzan mo’i tshul du sprul nas
 741	7	8808	german_prose_with_translit			none	1	3	0	0	„nachdem sie die Gestalt der Vaisyabhadrä
@@ -126248,7 +126248,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	107	9657	german_prose_with_translit			none	1	3	0	0	samatä näma samädhih (Mvy 615).
 875	109	9657	other			none	0	0	0	0	LS
 875	111	9658	headword_line	ཏིང་ངེ་འཛིན་་	dzin	high	1	0	0	0	ཏིང་ངེ་འཛིན་་”་ tin ne ’dzin ...
-875	113	9659	headword_line	ཏིང་ངེ་འཛིན་བཟང་པོ་	tiṅ ṅe dzin bzan po	high	5	0	0	0	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzan po npr.
+875	113	9659	headword_line	ཏིང་ངེ་འཛིན་བཟང་པོ་	tiṅ ṅe dzin bzan po	high	5	0	0	0	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
 875	114	9659	german_prose			none	0	2	0	0	ein Übersetzer.
 875	116	9659	latin_other			none	5	0	0	0	de’i geen po fan ~$ ... grog gi lha khan bzens
 875	117	9659	german_prose_with_translit			none	1	4	0	0	„sein älterer Bruder Nar Tin-ne-’dzin
@@ -139985,7 +139985,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 961	130	10507	headword_line	སྟོབས་རྩལ་	rtsal	high	1	2	0	0	སྟོབས་རྩལ་ stobs rtsal Kräfte messen, kämpfen.
 961	132	10507	german_prose_with_translit			none	5	1	0	0	Lex. ~ ba = nus mthn 'gyed pa'ami 'thab pa
 961	134	10507	german_prose_with_translit			none	5	1	0	0	"(brDa); ¬~ ba = dpa’ rtsal ""gran pa (Dagy)."
-961	136	10508	headword_line	སྟོབས་བཟང་	bzan	medium	1	0	0	0	སྟོབས་བཟང་ stobs bzan.
+961	136	10508	headword_line	སྟོབས་བཟང་	bzan	medium	1	0	0	0	སྟོབས་བཟང་ stobs bzaṅ.
 961	137	10508	german_prose			none	0	5	0	0	1. npr. der ältere Bruder Krsnas, Bala-
 961	138	10508	latin_other			none	1	0	0	0	bhadra.
 961	139	10508	latin_other			none	5	0	0	0	~ dkar ba’ dpun pa dag la 905 shon bkod par
@@ -143766,7 +143766,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 987	83	10742	german_prose_with_translit			none	1	3	0	0	3. (zw.) ein Feld, das Bewässerung erfor-
 987	84	10742	other			none	0	0	0	0	dert.
 987	86	10742	german_prose			none	0	3	0	0	Lex. Zin = (Dagy).
-987	88	10743	headword_line	ཐྲགས་བཟང་	thags bzan	high	4	1	0	0	ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-
+987	88	10743	headword_line	ཐྲགས་བཟང་	thags bzan	high	4	1	0	0	ཐྲགས་བཟང་ thags bzaṅ auch thag bzaṅ wohl-
 987	90	10743	german_prose			none	0	1	0	0	geordnet, schön aneinanderge-
 987	91	10743	german_prose			none	0	2	0	0	reiht, [Zähne] lückenlos.
 987	93	10743	german_prose_with_translit			none	5	1	0	0	kun dga’ bar byed pa ... tshems = ba Zes bya’o
@@ -160245,7 +160245,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1110	71	12011	headword_line	དང་བླངས་	daṅ	high	2	0	0	0	དང་བླངས་ daṅ blans 142) du blans.
 1110	73	12012	headword_line	དང་ཚུགས་	daṅ tshugs	high	2	0	0	0	དང་ཚུགས་ daṅ tshugs sogleich.
 1110	74	12012	german_prose_with_translit			none	3	1	0	0	Lex. de ma thag (TTC).
-1110	76	12013	headword_line	དང་བཟང་དབང་པོ་	daṅ bzan dbaṅ po	high	4	1	0	0	དང་བཟང་དབང་པོ་ daṅ bzan dbaṅ po Beiname
+1110	76	12013	headword_line	དང་བཟང་དབང་པོ་	daṅ bzan dbaṅ po	high	4	1	0	0	དང་བཟང་དབང་པོ་ daṅ bzaṅ dbaṅ po Beiname
 1110	77	12013	german_prose			none	0	3	0	0	bzw. Spitzname des 6. Dalai
 1110	78	12013	german_prose_with_translit			none	1	2	0	0	Lamas; vgl. ldan san.
 1110	80	12013	german_prose_with_translit			none	4	1	0	0	lha sa Zol du sdod dus / ’chal po — (metr.)
@@ -169954,7 +169954,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1238	18	12649	headword_line	དེད་དཔོན་དབྱངས་སྙན་	dbyans	medium	1	1	0	0	དེད་དཔོན་དབྱངས་སྙན་ ded dpon dbyans süan
 1238	20	12649	german_prose			none	0	4	0	0	Beiname von Märas Sohn.
 1238	22	12649	german_prose_with_translit			none	3	2	0	0	Lex. bdud kyi bu (brDa, Dagy).
-1238	24	12650	headword_line	དེད་དཔོན་བཟང་པོ་	bzan po	medium	3	1	0	0	དེད་དཔོན་བཟང་པོ་ ded dpon bzan po npr. ein Bo-
+1238	24	12650	headword_line	དེད་དཔོན་བཟང་པོ་	bzan po	medium	3	1	0	0	དེད་དཔོན་བཟང་པོ་ ded dpon bzaṅ po npr. ein Bo-
 1238	25	12650	latin_other			none	1	0	0	0	dhisattva.
 1238	27	12650	german_prose_with_translit			none	1	3	0	0	Lex. susārthavahab (Mvy 697, Abt. byan
 1238	28	12650	latin_other			none	5	0	0	0	chub sems dpa’ so so’i mtshan).
@@ -172648,7 +172648,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1272	43	12794	german_prose			none	0	3	0	0	Lex. krtärthah „Nutzen bewirkt habend“
 1272	44	12794	german_prose			none	0	3	0	0	(Mvy 7691, nur Ms.L).
 1272	46	12794	other			none	0	0	0	0	a.
-1272	48	12795	headword_line	དོན་བཟང་པོ་	bzan po	medium	2	2	0	0	དོན་བཟང་པོ་ don bzan po das richtige Ziel ver-
+1272	48	12795	headword_line	དོན་བཟང་པོ་	bzan po	medium	2	2	0	0	དོན་བཟང་པོ་ don bzaṅ po das richtige Ziel ver-
 1272	49	12795	other			none	0	0	0	0	folgend.
 1272	51	12795	german_prose_with_translit			none	1	2	0	0	Lex. svartham (Mvy 1284, sGra 142).
 1272	53	12796	headword_line	དོན་ཡོད་མཐོང་	mthon	high	1	0	0	0	དོན་ཡོད་མཐོང་ don yod mthon
@@ -176122,7 +176122,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1321	48	13027	german_prose_with_translit			none	5	5	0	0	Lex. bar do ba’am srid pa 'tshol ba po „jemand im Bar-do-Zustand oder jemand, der
 1321	50	13027	german_prose_with_translit			none	2	2	0	0	eine [neue] Existenz sucht“ (brDa); srid pa
 1321	51	13027	german_prose_with_translit			none	1	1	0	0	bar do ba (Dagy).
-1321	53	13028	headword_line	དྲི་བཟང་	bzan	medium	1	0	0	0	དྲི་བཟང་ dri bzan
+1321	53	13028	headword_line	དྲི་བཟང་	bzan	medium	1	0	0	0	དྲི་བཟང་ dri bzaṅ
 1321	55	13028	example_tibetan_latin	དྲི་ཟ་		none	1	2	0	0	དྲི་ཟ་ 8 @?7 za skyes Beiname Sarasvatis.
 1321	57	13028	german_prose_with_translit			none	4	2	0	0	Lex. lha mo dbyans can ma (Dagy).
 1321	59	13029	headword_line	དྲི་ཟ་མོ་	Gändhäri	high	1	2	0	0	དྲི་ཟ་མོ་ dri za mo npr. Gändhäri, die Gattin
@@ -176150,7 +176150,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1321	91	13032	other			none	0	0	0	0	tis.
 1321	93	13032	german_prose_with_translit			none	4	3	0	0	Lex. lha mo dbyans can ma (Dagy, ähnl.
 1321	94	13032	latin_other			none	1	0	0	0	brDa).
-1321	96	13033	headword_line	དྲི་བཟང་	bzan	medium	2	1	0	0	དྲི་བཟང་ dri bzan auch dri bzans.
+1321	96	13033	headword_line	དྲི་བཟང་	bzan	medium	2	1	0	0	དྲི་བཟང་ dri bzaṅ auch dri bzans.
 1321	98	13033	other			none	0	0	0	0	227
 1321	100	13033	german_prose			none	0	2	0	0	1. Duft, Wohlgeruch; wohlriechend, duf-
 1321	101	13033	latin_other			none	1	0	0	0	tend; — po dass., — /77/7 wohlriechend.
@@ -176159,7 +176159,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1321	105	13033	german_prose_with_translit			none	2	2	0	0	wohlriechend sind“ (Srkk 69.2); — kha ba’i
 1321	106	13033	latin_other			none	4	0	0	0	chu yis ni / bsil khan lus dan 'tsham byas
 1321	107	13033	german_prose_with_translit			none	2	5	0	0	pa (metr.) „ein mit wohlriechendem Schneewasser dem Körper angenehm gemachter
-1322	1	13034	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	0	0	0	དྲི་བཟང་ཁང་ dri bzan khaṅ
+1322	1	13034	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	0	0	0	དྲི་བཟང་ཁང་ dri bzaṅ khaṅ
 1322	3	13034	german_prose_with_translit			none	3	2	0	0	Pavillon“ (Ahs 1.3.34c); thub pa rnams kyi
 1322	4	13034	latin_other			none	5	0	0	0	sems ni tshim byed yid 'phrog gu gul phye
 1322	5	13034	german_prose_with_translit			none	1	8	0	0	ma’i dri bzans (metr.) „der betörende Wohlgeruch des Guggulu-Staubes, der den Geist
@@ -176208,21 +176208,21 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1322	66	13034	german_prose_with_translit			none	1	3	0	0	5. für skt. sugandha, die Ichneumonpflanze
 1322	67	13034	other			none	0	0	0	0	(PW).
 1322	69	13034	german_prose_with_translit			none	1	2	0	0	Lex. dri bzans = sugandhä (Ak 114.113).
-1322	71	13035	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	3	0	0	དྲི་བཟང་ཁང་ dri bzan khaṅ Bez. für Lotus.
+1322	71	13035	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	3	0	0	དྲི་བཟང་ཁང་ dri bzaṅ khaṅ Bez. für Lotus.
 1322	72	13035	german_prose_with_translit			none	2	2	0	0	Lex. padma spyi’i min (brDa, Dagy).
-1322	74	13036	headword_line	དྲི་བཟང་ཅན་	bzan can	medium	2	3	0	0	དྲི་བཟང་ཅན་ dri bzan can Bez. für Blume.
+1322	74	13036	headword_line	དྲི་བཟང་ཅན་	bzan can	medium	2	3	0	0	དྲི་བཟང་ཅན་ dri bzaṅ can Bez. für Blume.
 1322	75	13036	german_prose_with_translit			none	3	1	0	0	Lex. chu’i me tog spyi la’an (brDa); me tog
 1322	76	13036	german_prose			none	0	1	0	0	spyi min (Dagy).
-1322	78	13037	headword_line	དྲི་བཟང་ན་གི་	bzan na gi	medium	4	1	0	0	དྲི་བཟང་ན་གི་ dri bzan na gi ein Duftstoff
+1322	78	13037	headword_line	དྲི་བཟང་ན་གི་	bzan na gi	medium	4	1	0	0	དྲི་བཟང་ན་གི་ dri bzaṅ na gi ein Duftstoff
 1322	80	13037	german_prose			none	0	4	0	0	aus dem Operculum einer Mee-
 1322	82	13037	german_prose_with_translit			none	1	2	0	0	resschnecke, Räucherklaue; vgl. skt. nakha
 1322	83	13037	latin_other			none	1	0	0	0	bzw. nakhi.
 1322	85	13037	german_prose_with_translit			none	5	1	0	0	Lex. — nina khrab can gyi phyi’i rus pa’o „dri
 1322	86	13037	german_prose_with_translit			none	2	4	0	0	bzan na gi: äußere Schuppen des Panzerfi-
 1322	87	13037	german_prose			none	0	1	0	0	sches“ (KlonD 738,6).
-1322	88	13038	headword_line	དྲི་བཟང་བུ་	bzan	medium	1	3	0	0	དྲི་བཟང་བུ་ dri bzan bu Bez. für Stier.
+1322	88	13038	headword_line	དྲི་བཟང་བུ་	bzan	medium	1	3	0	0	དྲི་བཟང་བུ་ dri bzaṅ bu Bez. für Stier.
 1322	89	13038	german_prose_with_translit			none	2	2	0	0	Lex. glan gi min (brDa, Dagy).
-1322	90	13039	headword_line	དྲི་བཟང་བུ་མོ་	bzan	medium	2	1	0	0	དྲི་བཟང་བུ་མོ་ dri bzan bu mo auch 777 bzan bu
+1322	90	13039	headword_line	དྲི་བཟང་བུ་མོ་	bzan	medium	2	1	0	0	དྲི་བཟང་བུ་མོ་ dri bzaṅ bu mo auch 777 bzan bu
 1322	91	13039	german_prose_with_translit			none	1	3	0	0	ma Bez. für Kuh.
 1322	92	13039	german_prose_with_translit			none	3	2	0	0	Lex. ba lan mo (Dagy); dri bzan bu ma = ba
 1322	93	13039	latin_other			none	2	0	0	0	mo’i min (brDa).

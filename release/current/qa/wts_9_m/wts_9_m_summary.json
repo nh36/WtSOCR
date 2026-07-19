@@ -27,11 +27,11 @@
   "alternate_witness_unresolved": 1134,
   "trusted_lexicon_size": 299,
   "discovered_patterns": 28,
-  "tier_a_applied": 2101,
+  "tier_a_applied": 2102,
   "tier_b_suggestions": 12,
   "citation_name_families": 4,
   "citation_name_changes": 276,
-  "reviewed_tibetan_exact_changes": 405,
+  "reviewed_tibetan_exact_changes": 406,
   "sanskrit_families": 60,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_changes": 89,
@@ -92,6 +92,10 @@
     [
       "reviewed_tibetan_exact_bzhin_bzhugs",
       53
+    ],
+    [
+      "reviewed_tibetan_exact_final_ng_consensus",
+      1
     ]
   ],
   "top_tier_b_reasons": [

@@ -4894,3 +4894,42 @@ wts_1_34	1275	1	3	glan	glaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_8_b	39	51	2	glah	glaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_glang_consensus_batch_20260719	Frozen pre-pass exact Tibetan གླང alignment; accepted glaṅ count 9; source glah variant; damaged later cross-reference retained.
 wts_1_34	393	183	4	glan	glaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_glang_same_entry_echo_batch_20260719	Explicit same-entry repetition after auch; exact later token independently repeats the aligned གླང lemma.
 wts_8_b	68	56	6	glan	glaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_glang_same_entry_echo_batch_20260719	Explicit same-entry repetition after auch; exact later token independently repeats the aligned གླང lemma; neighbouring no/ban damage retained.
+wts_35_51	835	59	4	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	76	112	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	76	130	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	76	145	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	82	32	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	1	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	7	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	30	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	55	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	60	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	64	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	191	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	126	166	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	180	59	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	215	185	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	222	118	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	364	163	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	432	5	11	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	453	194	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	563	209	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	741	3	4	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	875	113	4	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	961	136	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	987	88	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1110	76	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1238	24	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1272	48	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1321	53	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1321	96	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	1	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	71	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	74	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	78	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	88	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	1322	90	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_8_b	328	8	2	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_9_m	156	57	3	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	Frozen exact Tibetan བཟང alignment at 3051b339; exact token only; genuine བཟན excluded.
+wts_1_34	86	60	6	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_bzang_same_entry_echo_batch_20260719	Explicit alternate after auch repeats the same བཟང element in kun bzaṅ mo.
+wts_1_34	987	88	5	bzan	bzaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_bzang_same_entry_echo_batch_20260719	Explicit alternate after auch repeats the same བཟང element in thag bzaṅ.

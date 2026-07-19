@@ -49,20 +49,27 @@ def validate(root: Path = ROOT) -> list[str]:
         ]
         tibetan = batch["tibetan_syllable"]
         active_pos = sum(row["tibetan_syllable"] == tibetan for row in positional)
-        active_echo = sum(row["tibetan_syllable"] == tibetan for row in echoes)
+        active_echo = sum(
+            row["tibetan_syllable"] == tibetan and row.get("active_queue", "yes") == "yes"
+            for row in echoes
+        )
         accepted_decisions = sum(
             row["tibetan_syllable"] == tibetan and row["decision"] == "accepted"
             for row in decisions
         )
         expected_pos = int(batch["positional_frozen_count"])
-        expected_echo = int(batch["echo_frozen_count"])
+        expected_echo = int(batch["echo_accepted_count"])
+        frozen_echo_candidates = int(batch["echo_candidate_frozen_count"])
         checks = {
             "positional overrides": (len(pos), expected_pos),
             "echo overrides": (len(echo), expected_echo),
             "release positional changes": (len(release_pos), expected_pos),
             "release echo changes": (len(release_echo), expected_echo),
             "positional queue delta": (expected_pos - active_pos, expected_pos),
-            "echo queue delta": (expected_echo - active_echo, expected_echo),
+            "echo queue delta": (
+                frozen_echo_candidates - active_echo,
+                frozen_echo_candidates,
+            ),
             "accepted echo decisions": (accepted_decisions, expected_echo),
         }
         for label, (actual, expected) in checks.items():
