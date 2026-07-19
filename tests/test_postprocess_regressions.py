@@ -1588,6 +1588,31 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
 
+    def test_reviewed_reference_marker_tbrgya_row_is_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (510, 77): "བརྒྱ་སྦྱིན་ braya sbyin Tbrgya byin 1.",
+                (510, 78): "An adjacent Tbrgya string stays unchanged.",
+                (518, 58): "བསྒྱུན་ bsgrun pf. und fut. zu Tsgrun wettei-",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("braya sbyin ↑ brgya byin 1.", corrected)
+        self.assertIn("An adjacent Tbrgya string stays unchanged.", corrected)
+        self.assertIn("zu Tsgrun wettei-", corrected)
+        marker_changes = [
+            (row["from_token"], row["to_token"])
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(marker_changes, [("Tbrgya", "↑ brgya")])
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {

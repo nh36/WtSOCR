@@ -22,17 +22,17 @@ from typing import Iterable
 
 
 DEFAULT_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/reference_marker_backslash_clean_20260719T180000Z/wts_1_34",
-    "wts_35_51": "work/reference_marker_backslash_clean_20260719T180000Z/wts_35_51",
-    "wts_8_b": "work/reference_marker_backslash_clean_20260719T180000Z/wts_8_b",
-    "wts_9_m": "work/reference_marker_backslash_clean_20260719T180000Z/wts_9_m",
+    "wts_1_34": "work/reference_marker_tbrgya_clean_20260719T190000Z/wts_1_34",
+    "wts_35_51": "work/reference_marker_tbrgya_clean_20260719T190000Z/wts_35_51",
+    "wts_8_b": "work/reference_marker_tbrgya_clean_20260719T190000Z/wts_8_b",
+    "wts_9_m": "work/reference_marker_tbrgya_clean_20260719T190000Z/wts_9_m",
 }
 
 DEFAULT_DIAGNOSTIC_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/reference_marker_backslash_clean_20260719T180000Z/tibetan_cleanup_diagnostics_wts_1_34",
-    "wts_35_51": "work/reference_marker_backslash_clean_20260719T180000Z/tibetan_cleanup_diagnostics_wts_35_51",
-    "wts_8_b": "work/reference_marker_backslash_clean_20260719T180000Z/tibetan_cleanup_diagnostics_wts_8_b",
-    "wts_9_m": "work/reference_marker_backslash_clean_20260719T180000Z/tibetan_cleanup_diagnostics_wts_9_m",
+    "wts_1_34": "work/reference_marker_tbrgya_clean_20260719T190000Z/tibetan_cleanup_diagnostics_wts_1_34",
+    "wts_35_51": "work/reference_marker_tbrgya_clean_20260719T190000Z/tibetan_cleanup_diagnostics_wts_35_51",
+    "wts_8_b": "work/reference_marker_tbrgya_clean_20260719T190000Z/tibetan_cleanup_diagnostics_wts_8_b",
+    "wts_9_m": "work/reference_marker_tbrgya_clean_20260719T190000Z/tibetan_cleanup_diagnostics_wts_9_m",
 }
 
 QA_SUFFIXES = (

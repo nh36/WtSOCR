@@ -27186,3 +27186,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 246	203	3202	headword_line	\tsha	↓ tsha	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	།བ་ད་ kha da \tsha kha da.
 600	173	7396	example_tibetan_latin	\dpyad	↓ dpyad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams \dpyad mishams.
 981	19	10671	german_prose_with_translit	\dbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	\dbyar zla tha chun; ~ bźi die jeweils letzten
+510	77	6590	headword_line	Tbrgya	↑ brgya	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	བརྒྱ་སྦྱིན་ braya sbyin Tbrgya byin 1.
