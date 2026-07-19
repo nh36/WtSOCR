@@ -6355,3 +6355,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 547	8	2685	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	མནོག་ཆུང་ mnog chuṅ Tninag chun.
 633	2	3131	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་ཆུང་ chun.
 1120	51	6102	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	འཕྲུལ་བུ་ཆུང་ bu chun npr. Neffe des
+425	6	2207	headword_line	goh	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri.
+1057	16	5650	tibetan_only	gon	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕྲག་གོང་ pbrag gon.

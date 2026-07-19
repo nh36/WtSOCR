@@ -2190,7 +2190,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_1_34",
         )
         self.assertIn("བཀའ་ཐང་ bka’ thaṅ alttib. bka’ tan", corrected)
-        self.assertIn("གོང་ཐང་ gon thaṅ Preis", corrected)
+        self.assertIn("གོང་ཐང་ goṅ thaṅ Preis", corrected)
         self.assertIn("ཐང་ཐང་གྱེར་མཁས་ thaṅ thaṅ gyer mkhas", corrected)
         self.assertIn("ཐང་ཐན་ thaṅ than sehr klein", corrected)
         self.assertIn("ཐྲང་དཀར་ than dkar auch than kar", corrected)
@@ -2202,7 +2202,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             and row["to_token"] == "thaṅ"
         ]
         self.assertEqual(len(reviewed), 5)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_thang_rows_preserve_later_damage(self) -> None:
         lines = {
@@ -2250,6 +2250,47 @@ class PostprocessRegressionTests(unittest.TestCase):
         ]
         self.assertEqual(len(reviewed), 4)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+
+    def test_reviewed_gong_rows_preserve_repetitions_and_neighbours(self) -> None:
+        lines = {
+            (360, 4): "གོང་གོང་ gon gon rund.",
+            (360, 20): "གོང་གཉའ་ gon £77° Nacken, Oberes.",
+            (360, 30): "གོང་ཐང་ gon thaṅ Preis, Wert.",
+            (360, 143): "གོང་པོ་ ’gon po Kragen; vgl. Igor ba.",
+            (361, 1): "གོང་མ་གོང་མ་ gon ma gon ma",
+            (361, 50): "གོང་མའི་གོང་མ་ gon ma’i gon ma auch gon ma",
+            (1116, 44): "དན་གོང་ dan gon auch dan kon Kugelbogen,",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གོང་གོང་ goṅ goṅ rund.", corrected)
+        self.assertIn("གོང་གཉའ་ goṅ £77°", corrected)
+        self.assertIn("གོང་ཐང་ goṅ thaṅ", corrected)
+        self.assertIn("གོང་པོ་ ’goṅ po", corrected)
+        self.assertIn("གོང་མ་གོང་མ་ goṅ ma goṅ ma", corrected)
+        self.assertIn("གོང་མའི་གོང་མ་ goṅ ma’i goṅ ma", corrected)
+        self.assertIn("དན་གོང་ dan goṅ auch dan kon", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["to_token"] == "goṅ"
+            and row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 10)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 10)
+
+    def test_reviewed_goh_variant_maps_to_gong(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(425, 6): "ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri."}
+            ),
+            label="wts_35_51",
+        )
+        self.assertIn("ནམ་གོང་ nam goṅ Bez.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["from_token"], "goh")
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

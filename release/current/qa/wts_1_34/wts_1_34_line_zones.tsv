@@ -44134,7 +44134,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 315	114	4297	german_prose_with_translit			none	2	1	0	0	muß getrennt hängen“ (brDa); gos sogs lcags
 315	115	4297	german_prose_with_translit			none	4	5	0	0	gzer la ~ ba lta bu „wie: Kleider usw. an einen Eisenhaken hängen“ (Dagy).
 315	118	4298	headword_line	འཁར་	khar	high	1	0	0	0	འཁར་ ®khar 1༡༡༡/0/077-.
-315	119	4299	headword_line	འཁར་གོང་	khar	high	2	0	0	0	འཁར་གོང་ 'khar gon Tkhar 907.
+315	119	4299	headword_line	འཁར་གོང་	khar goṅ Tkhar	high	2	0	0	0	འཁར་གོང་ 'khar goṅ Tkhar 907.
 315	120	4300	headword_line	འཁར་རྒྱག་	khar rgyug	high	4	2	0	0	འཁར་རྒྱག་ 'khar rgyug auch ’khar rgyugs Stock.
 315	122	4300	german_prose_with_translit			none	7	4	0	0	Lex. lag rten dbyug pa lta bu „wie: Armstütze, Stock“ (Dagy); chu sin gi mkhar ba =
 315	124	4300	german_prose_with_translit			none	3	1	0	0	smyug ma’ ’khar rgyugs „Gehstock aus
@@ -49145,7 +49145,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 350	9	4715	german_prose_with_translit			none	3	2	0	0	byug pa’i den san gi snod lta bu Zig „etwas
 350	10	4715	german_prose			none	0	2	0	0	wie die heutigen emaillierten Gefäße“
 350	12	4715	german_prose			none	0	1	0	0	(Dagy).
-350	14	4716	headword_line	གི་གོང་	gi	medium	3	3	0	0	གི་གོང་ gi gon eine Kalkulation; ~ khug pa ein
+350	14	4716	headword_line	གི་གོང་	gi goṅ	high	3	3	0	0	གི་གོང་ gi goṅ eine Kalkulation; ~ khug pa ein
 350	15	4716	german_prose			none	0	1	0	0	Kalkulationsschema.
 350	17	4716	latin_other			none	7	0	0	0	» bag ma’i rtsis kyi skor du mkho ba’i gto la
 350	18	4716	german_prose			none	0	6	0	0	„über die notwendigen gTo[-Rituale] bezüglich der gi-gon-Kalkulation zur Ehe-
@@ -50542,7 +50542,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 359	52	4815	german_prose			none	0	2	0	0	Namen sammelnd [umher] zu gehen“
 359	53	4815	german_prose_with_translit			none	3	1	0	0	(KTh 1: 479,1); dgon gog ’go ’dzin byun ba’i
 359	55	4815	other			none	0	0	0	0	222
-359	57	4815	tibetan_only	གོང་		none	0	0	0	0	གོང་ gon
+359	57	4815	tibetan_only	གོང་	goṅ	high	0	0	0	0	གོང་ goṅ
 359	59	4815	german_prose_with_translit			none	1	3	0	0	nal ba „die Schwierigkeiten, die sich durch
 359	60	4815	german_prose_with_translit			none	1	3	0	0	die Leitung des zerfallenen Klosters erge-
 359	61	4815	other			none	0	0	0	0	ben“ (MTH3/3/29 3).
@@ -50560,7 +50560,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 359	79	4816	german_prose_with_translit			none	1	2	0	0	dgos rigs „unnötiges wie z. B. zerfallene,
 359	80	4816	german_prose			none	0	1	0	0	nutzlose Häuser sollen abgerissen werden“
 359	82	4816	german_prose			none	0	1	0	0	(Wadd135h 9).
-359	84	4816	tibetan_only	གོང་		none	0	0	0	0	གོང་ gon.
+359	84	4816	tibetan_only	གོང་	goṅ	high	0	0	0	0	གོང་ goṅ.
 359	86	4816	german_prose_with_translit			none	2	1	0	0	1. Oberes; ~ du, ~ na oben, auf, vor.
 359	88	4816	german_prose_with_translit			none	2	1	0	0	sram bu ni ~ te dhul (metr.) „der oben silb-
 359	89	4816	german_prose_with_translit			none	3	1	0	0	rige Otter“ (PT1287 417); gtsug lag khan gi
@@ -50626,7 +50626,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 359	155	4816	german_prose_with_translit			none	3	3	0	0	Dwags-po ging“ (Debm 35b2); de’i - na Zin
 359	156	4816	german_prose_with_translit			none	5	2	0	0	la so nam med „davor gab es keinen Ackerbau“ (Glr 49,25); dbyig gen ma byon ~ du
 359	159	4816	other			none	0	0	0	0	223
-359	161	4816	tibetan_only	གོང་སྐོར་		none	0	0	0	0	གོང་སྐོར་ gon skor
+359	161	4816	tibetan_only	གོང་སྐོར་	goṅ	high	0	0	0	0	གོང་སྐོར་ goṅ skor
 359	163	4816	german_prose_with_translit			none	1	1	0	0	„bevor Vasubandhu kam“ (Tär 199,14); ~
 359	164	4816	german_prose_with_translit			none	2	4	0	0	bZin la rams bzo ar las „die Bau- und Repa-
 359	165	4816	german_prose_with_translit			none	1	2	0	0	raturarbeiten für die Wiederherstellung
@@ -50665,55 +50665,55 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 359	205	4816	german_prose			none	0	1	0	0	festgesetzt“ (Padm 24655).
 359	207	4816	german_prose_with_translit			none	2	5	0	0	Lex. ~ chen po = rin chen po „großer Wert“
 359	208	4816	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-359	210	4816	tibetan_only	གོང་སྐོར་		none	0	1	0	0	གོང་སྐོར་ gon skor Kragen.
+359	210	4816	tibetan_only	གོང་སྐོར་	goṅ	high	0	1	0	0	གོང་སྐོར་ goṅ skor Kragen.
 359	212	4816	german_prose_with_translit			none	1	3	0	0	~ mu khyud spel (metr.) „mit Kragen und
 359	213	4816	german_prose			none	0	1	0	0	Rändern“ (gZi 3: 758,2).
 360	1	4816	tibetan_only	གོང་གོང་		none	0	0	0	0	གོང་གོང་ on 907?
 360	2	4816	tibetan_only	གང་གང་		none	0	0	0	0	གང་གང་ gon ¿
-360	4	4816	tibetan_only	གོང་གོང་		none	0	0	0	0	གོང་གོང་ gon gon rund.
+360	4	4816	tibetan_only	གོང་གོང་	goṅ goṅ	high	0	0	0	0	གོང་གོང་ goṅ goṅ rund.
 360	6	4816	german_prose_with_translit			none	5	1	0	0	Lex. sgon ba ril ril dan gor ma la’an (brDa).
-360	8	4817	headword_line	གོང་རྒྱན་	rgyan	high	1	1	0	0	གོང་རྒྱན་ gon rgyan Kragenschmuck.
+360	8	4817	headword_line	གོང་རྒྱན་	goṅ rgyan	high	1	1	0	0	གོང་རྒྱན་ goṅ rgyan Kragenschmuck.
 360	10	4817	german_prose_with_translit			none	2	3	0	0	Lex. rgyan cha tshan „der ganze Schmuck“
 360	12	4817	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
-360	14	4817	tibetan_only	གོང་ཅུག་		none	0	2	0	0	གོང་ཅུག་ gon cug der Polarstern.
+360	14	4817	tibetan_only	གོང་ཅུག་	goṅ	high	0	2	0	0	གོང་ཅུག་ goṅ cug der Polarstern.
 360	16	4817	german_prose_with_translit			none	4	2	0	0	skar ma ~ dan / dgu tshigs „der Polarstern
 360	18	4817	german_prose_with_translit			none	1	3	0	0	und die Milchstraße“ (Siddh 4.6).
-360	20	4817	tibetan_only	གོང་གཉའ་		none	0	2	0	0	གོང་གཉའ་ gon £77° Nacken, Oberes.
+360	20	4817	tibetan_only	གོང་གཉའ་	goṅ	high	0	2	0	0	གོང་གཉའ་ goṅ £77° Nacken, Oberes.
 360	22	4817	german_prose_with_translit			none	5	1	0	0	Lex. güa’ gon (brDa); gäa’ ma’am sten ma
 360	23	4817	german_prose			none	0	4	0	0	„Nacken oder Oberes“ (Dagy).
-360	25	4818	headword_line	གོང་ཐག་	thag	high	1	1	0	0	གོང་ཐག་ gon thag Brustriemen.
+360	25	4818	headword_line	གོང་ཐག་	goṅ thag	high	1	1	0	0	གོང་ཐག་ goṅ thag Brustriemen.
 360	27	4818	german_prose_with_translit			none	3	4	0	0	lag pa rgyo yi - yin (metr.) „der Arm ist der
 360	28	4818	german_prose			none	0	4	0	0	Brustriemen fürs Bumsen“ (KunK 45,21).
-360	30	4819	headword_line	གོང་ཐང་	thaṅ	high	1	2	0	0	གོང་ཐང་ gon thaṅ Preis, Wert.
+360	30	4819	headword_line	གོང་ཐང་	goṅ thaṅ	high	1	2	0	0	གོང་ཐང་ goṅ thaṅ Preis, Wert.
 360	32	4819	german_prose_with_translit			none	1	2	0	0	> doyad kyis mi chod „den Wert kann man
 360	33	4819	german_prose_with_translit			none	1	2	0	0	nicht schätzen“ (Glr 73,18); rin po che gser
 360	34	4819	german_prose_with_translit			none	3	2	0	0	de - dan / rin than dpag in med cin „der
 360	35	4819	german_prose			none	0	6	0	0	Wert und der Preis des kostbaren Goldes
 360	36	4819	german_prose			none	0	2	0	0	sind unermeßlich“ (271 3: 700,6).
-360	38	4820	headword_line	གོང་འབཐུས་	thus	high	1	1	0	0	གོང་འབཐུས་ gon ’thus Repräsentant.
+360	38	4820	headword_line	གོང་འབཐུས་	goṅ thus	high	1	1	0	0	གོང་འབཐུས་ goṅ ’thus Repräsentant.
 360	40	4820	german_prose_with_translit			none	4	2	0	0	{m}tsho beu drug gi [go]ni ’thus „die Reprä-
 360	41	4820	german_prose_with_translit			none	1	2	0	0	sentanten der Tsho-beu-drug“ (Wadd135h
 360	42	4820	other			none	0	0	0	0	1).
 360	44	4820	german_prose_with_translit			none	2	1	0	0	Lex. gon gis go chod pa lta bu „wie: vom
 360	45	4820	german_prose_with_translit			none	1	2	0	0	Oberen befähigt“ (brDa).
-360	47	4821	headword_line	གོང་དྭ་བཀར་	du bkur	medium	2	0	0	0	གོང་དྭ་བཀར་ gon du bkur verehren.
+360	47	4821	headword_line	གོང་དྭ་བཀར་	goṅ du bkur	high	2	0	0	0	གོང་དྭ་བཀར་ goṅ du bkur verehren.
 360	49	4821	german_prose_with_translit			none	3	1	0	0	Lex. ~ ba = bla mar bkur ba „hoch ehren“
 360	50	4821	german_prose_with_translit			none	6	1	0	0	(brDa); spyi bor bkur ba lta bu „wie: verehren“ (Dagy); gon bkur dwans len = bka’
 360	52	4821	german_prose_with_translit			none	4	1	0	0	khrims spyi bor bkur te dwans len Zus pa lta
 360	53	4821	german_prose			none	0	4	0	0	bu „wie: das Gesetz auf dem Kopf tragend,
 360	54	4821	german_prose			none	0	1	0	0	klar annehmen“ (Dagy).
-360	56	4822	headword_line	གོང་ནས་གོང་ད་	nas	medium	2	0	0	0	གོང་ནས་གོང་ད་ gon nas gon du
+360	56	4822	headword_line	གོང་ནས་གོང་ད་	goṅ nas goṅ du	high	2	0	0	0	གོང་ནས་གོང་ད་ goṅ nas goṅ du
 360	57	4823	headword_line	གཀོང་དྲ་ཁུར་	du khur	high	4	1	0	0	གཀོང་དྲ་ཁུར་ gon du khur pf. zu gon du ’khur
 360	59	4823	german_prose			none	0	1	0	0	achten, fördern.
 360	61	4823	latin_other			none	4	0	0	0	’thon po rnams la ’gran sems med par ~
 360	62	4823	german_prose_with_translit			none	1	4	0	0	mkhas „geschickt, die Höheren ohne Kon-
 360	64	4823	german_prose			none	0	2	0	0	kurrenzdenken zu achten“ (KTh 1: 521,3).
-360	66	4824	headword_line	གོང་ད་འཁུར་	du khur	high	4	0	0	0	གོང་ད་འཁུར་ gon du ’khur pf. gon du khur ach-
+360	66	4824	headword_line	གོང་ད་འཁུར་	goṅ du khur	high	4	0	0	0	གོང་ད་འཁུར་ goṅ du ’khur pf. gon du khur ach-
 360	68	4824	german_prose			none	0	1	0	0	ten, fördern.
 360	70	4824	german_prose_with_translit			none	2	2	0	0	gZan gyis ¬~ ba „[Gebiete], in denen man
 360	71	4824	german_prose			none	0	3	0	0	von anderen gefördert wird“ (Vdk 2:
 360	72	4824	other			none	0	0	0	0	375,3).
-360	73	4825	headword_line	གོང་ད་ཕུད་	du phud	high	2	0	0	0	གོང་ད་ཕུད་ gon du phud.
+360	73	4825	headword_line	གོང་ད་ཕུད་	goṅ du phud	high	2	0	0	0	གོང་ད་ཕུད་ goṅ du phud.
 360	74	4825	german_prose_with_translit			none	1	1	0	0	1. freisprechen, entschuldigen.
 360	75	4825	german_prose_with_translit			none	3	1	0	0	grwa rigs ... bla ma’i brel ba - pa „Mönche,
 360	76	4825	german_prose_with_translit			none	1	4	0	0	die etwas in Verbindung mit dem geist-
@@ -50740,7 +50740,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	105	4828	tibetan_only	༄		none	0	2	0	0	༄ immer stärkerem Maße.
 360	107	4828	german_prose_with_translit			none	2	1	0	0	> phan bar ’gyur (metr.) „du wirst dich im-
 360	109	4828	other			none	0	0	0	0	224
-360	111	4828	tibetan_only	གོང་གནོན་		none	0	0	0	0	གོང་གནོན་ gon gnon
+360	111	4828	tibetan_only	གོང་གནོན་	goṅ	high	0	0	0	0	གོང་གནོན་ goṅ gnon
 360	113	4828	german_prose_with_translit			none	1	2	0	0	mer höher erheben“ (KanL 38b); u tra ya
 360	114	4828	german_prose_with_translit			none	1	4	0	0	nas = spobs lan glan pas „nachdem Udräyana ihm in immer stärkerem Maße redege-
 360	116	4828	german_prose			none	0	1	0	0	wandt geantwortet hatte“ (Udr 23,19);
@@ -50750,7 +50750,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	120	4828	german_prose			none	0	3	0	0	vollkommener als die andere“ (Bca 5.83b).
 360	122	4828	german_prose			none	0	3	0	0	Lex. uttarottaram „immer höher“ (Mvy
 360	123	4828	latin_other			none	5	0	0	0	6636); bla nas bla ru’am ya nas yar (brDa).
-360	125	4828	tibetan_only	གོང་གནོན་		none	0	2	0	0	གོང་གནོན་ gon gnon Führer, Anführer.
+360	125	4828	tibetan_only	གོང་གནོན་	goṅ	high	0	2	0	0	གོང་གནོན་ goṅ gnon Führer, Anführer.
 360	127	4828	latin_other			none	5	0	0	0	rgyal po gon na bZugs pa” (rt. pas) ~ snan
 360	128	4828	german_prose			none	0	3	0	0	„weil der König oben sitzt, erscheint er als
 360	129	4828	german_prose			none	0	1	0	0	Führer“ (871 2: 126,2).
@@ -50761,11 +50761,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	138	4828	german_prose			none	0	1	0	0	2. Krüppel.
 360	139	4828	german_prose_with_translit			none	4	1	0	0	Lex. ’phye bo ni ~ (Liś 11,11).
 360	141	4828	tibetan_only			none	0	0	0	0	- བླ
-360	143	4829	headword_line	གོང་པོ་	po	medium	2	3	0	0	གོང་པོ་ ’gon po Kragen; vgl. Igor ba.
+360	143	4829	headword_line	གོང་པོ་	goṅ po	high	2	3	0	0	གོང་པོ་ ’goṅ po Kragen; vgl. Igor ba.
 360	144	4829	german_prose_with_translit			none	2	2	0	0	Lex. gos kyi gon ba (Dagy).
-360	146	4829	tibetan_only	གོང་དཔོན་		none	0	2	0	0	གོང་དཔོན་ gon dpon höhergestellter Herr.
+360	146	4829	tibetan_only	གོང་དཔོན་	goṅ	high	0	2	0	0	གོང་དཔོན་ goṅ dpon höhergestellter Herr.
 360	148	4829	german_prose_with_translit			none	1	4	0	0	Lex. gral rim gon mai dpon po „höhergestellter Herr“ (Dagy).
-360	151	4830	headword_line	གོང་བ་	ba	medium	1	1	0	0	གོང་བ་ gon ba Kragen.
+360	151	4830	headword_line	གོང་བ་	goṅ ba	high	1	1	0	0	གོང་བ་ goṅ ba Kragen.
 360	153	4830	german_prose_with_translit			none	6	1	0	0	de’i ~ nas ... bzun la ’then cig „du mußt sie
 360	154	4830	german_prose_with_translit			none	1	2	0	0	ziehen, wobei du sie vom Kragen her faßt“
 360	155	4830	other			none	0	0	0	0	(617 89,24).
@@ -50819,7 +50819,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	215	4830	german_prose_with_translit			none	2	2	0	0	Rechtsbrief der früheren buddhistischen
 360	216	4830	german_prose			none	0	4	0	0	Würdenträger und weltlichen Machthaber“
 360	217	4830	latin_other			none	1	0	0	0	(MTH3/5/35 11); ~”7 gdan sa zuns „nimm
-361	1	4831	headword_line	གོང་མ་གོང་མ་	ma	medium	2	0	0	0	གོང་མ་གོང་མ་ gon ma gon ma
+361	1	4831	headword_line	གོང་མ་གོང་མ་	goṅ ma goṅ ma	high	2	0	0	0	གོང་མ་གོང་མ་ goṅ ma goṅ ma
 361	3	4831	german_prose_with_translit			none	2	4	0	0	den Sitz des Vorgängers ein!“ (Akhri
 361	4	4831	other			none	0	0	0	0	36,9).
 361	6	4831	german_prose_with_translit			none	3	5	0	0	Lex. sku ~ lta bu „wie: vorherige Inkarnation“ (brDa, ähnl. Dagy); - bZin = pürvavat
@@ -50855,11 +50855,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	45	4833	german_prose_with_translit			none	2	2	0	0	den Vogelfängern: ‚[Ihr] sollt [mir] ein
 361	46	4833	german_prose_with_translit			none	1	2	0	0	Rebhuhn schenken!““ (K3 Aa 187b1).
 361	48	4833	german_prose			none	0	2	0	0	Lex. kapinjalah (Mvy 4892).
-361	50	4834	headword_line	གོང་མའི་གོང་མ་	ma’i	high	3	1	0	0	གོང་མའི་གོང་མ་ gon ma’i gon ma auch gon ma
+361	50	4834	headword_line	གོང་མའི་གོང་མ་	goṅ ma’i goṅ ma	high	3	1	0	0	གོང་མའི་གོང་མ་ goṅ ma’i goṅ ma auch gon ma
 361	51	4834	german_prose_with_translit			none	1	1	0	0	gon ma immer höher.
 361	53	4834	latin_other			none	4	0	0	0	rnal ’byor pa yan ... gon ma gon ma rnams
 361	55	4834	german_prose_with_translit			none	2	2	0	0	kyis gnod (metr.) „auch [die Auffassung
-361	57	4834	tibetan_only	གོང་ལག་		none	0	0	0	0	གོང་ལག་ gon lag
+361	57	4834	tibetan_only	གོང་ལག་	goṅ	high	0	0	0	0	གོང་ལག་ goṅ lag
 361	59	4834	german_prose			none	0	4	0	0	der Yogins wird von den jeweils fortge-
 361	60	4834	german_prose			none	0	2	0	0	schritteneren entkräftigt“ (Bca 9.4b).
 361	61	4834	german_prose			none	0	2	0	0	Lex. uttarottaram (Mvy 6636).
@@ -50874,14 +50874,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	74	4835	german_prose_with_translit			none	2	4	0	0	ba’i don la „hinsichtlich des Vorfalls, daß
 361	75	4835	german_prose			none	0	6	0	0	einer namens A-li einen Mönch am Kragen
 361	76	4835	german_prose			none	0	1	0	0	gepackt hatte“ (Debm 39b3).
-361	78	4835	tibetan_only	གོང་ཡོལ་		none	0	1	0	0	གོང་ཡོལ་ gon yol Kragen.
+361	78	4835	tibetan_only	གོང་ཡོལ་	goṅ	high	0	1	0	0	གོང་ཡོལ་ goṅ yol Kragen.
 361	80	4835	german_prose			none	0	1	0	0	stod gos smad Sams - med „er hatte kein
 361	81	4835	german_prose			none	0	3	0	0	Obergewand, Untergewand [und] keinen
 361	82	4835	german_prose			none	0	1	0	0	Kragen“ (gZi 3: 713,5).
-361	84	4836	headword_line	གོང་ར་	ra	medium	1	1	0	0	གོང་ར་ gon ra Spitze.
+361	84	4836	headword_line	གོང་ར་	goṅ ra	high	1	1	0	0	གོང་ར་ goṅ ra Spitze.
 361	85	4836	german_prose_with_translit			none	2	2	0	0	lham gyi - (metr.) „die Stiefelspitze“
 361	86	4836	other			none	0	0	0	0	(PT1237 57).
-361	88	4837	headword_line	གོང་རོལ་ད་	du	medium	1	1	0	0	གོང་རོལ་ད་ gon rol du früher, bevor.
+361	88	4837	headword_line	གོང་རོལ་ད་	goṅ	high	1	1	0	0	གོང་རོལ་ད་ goṅ rol du früher, bevor.
 361	90	4837	german_prose_with_translit			none	5	5	0	0	rgyal po ma gsad pa’i ~ „bevor der König getötet worden war“ (Nel 1535); skye ba ’di yi
 361	92	4837	german_prose_with_translit			none	1	1	0	0	~ ... ne’u ler skyes (metr.) „vor dieser Ver-
 361	93	4837	german_prose_with_translit			none	2	1	0	0	körperung wurde ich als Manguste gebo-
@@ -50889,7 +50889,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	96	4838	headword_line	གཀོང་ལ་	la	medium	1	1	0	0	གཀོང་ལ་ gon la Dachmauer.
 361	98	4838	german_prose_with_translit			none	2	3	0	0	~7 kha ni (metr.) „die Vorderseite der
 361	99	4838	german_prose			none	0	2	0	0	Dachmauer“ (Vdk 2: 358,3).
-361	101	4838	tibetan_only	གོང་ལག་		none	0	1	0	0	གོང་ལག་ gon lag Kragen.
+361	101	4838	tibetan_only	གོང་ལག་	goṅ	high	0	1	0	0	གོང་ལག་ goṅ lag Kragen.
 361	103	4838	german_prose_with_translit			none	2	2	0	0	stag gzig gun gsum gyi > byas pa „der Kragen
 361	104	4838	german_prose			none	0	5	0	0	war aus Tiger-, Leoparden- und Luchsfell
 361	105	4838	latin_other			none	1	0	0	0	gemacht“ (Lśdz-K 226,16).
@@ -50899,7 +50899,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	113	4839	german_prose_with_translit			none	2	7	0	0	mgo 'phru ~ „Kopf mit dem Helm als Trophäe“ (Sumpa 7734); mgo lag - byas „Kopf
 361	115	4839	german_prose_with_translit			none	1	4	0	0	und Arme nahmen sie als Trophäe“ (Sumpa
 361	116	4839	other			none	0	0	0	0	80b1).
-361	118	4840	headword_line	གོང་ས་	sa	medium	4	1	0	0	གོང་ས་ gon sa auch ~ mchog, - skyabs mgon
+361	118	4840	headword_line	གོང་ས་	goṅ sa	high	4	1	0	0	གོང་ས་ goṅ sa auch ~ mchog, - skyabs mgon
 361	119	4840	german_prose_with_translit			none	2	5	0	0	chen po Erhabener, Titel des Dalai La-
 361	121	4840	latin_other			none	1	0	0	0	ma.
 361	123	4840	german_prose_with_translit			none	6	3	0	0	= rgyal dban thams cad mkhyen pa „der allwissende Gon-sa rgyal-dban [d. i. der 5.
@@ -51754,7 +51754,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 367	19	4911	german_prose			none	0	2	0	0	schmolzen zu verschiedenen Waren verar-
 367	21	4911	german_prose			none	0	4	0	0	beitet wird; auch für eine derartige Speise,
 367	23	4911	german_prose_with_translit			none	1	1	0	0	Brot“ (brDa).
-367	25	4912	headword_line	ཀྱིང་གོང་	gyin	medium	1	1	0	0	ཀྱིང་གོང་ gyin gon ruhig, besänftigt.
+367	25	4912	headword_line	ཀྱིང་གོང་	gyin goṅ	high	1	1	0	0	ཀྱིང་གོང་ gyin goṅ ruhig, besänftigt.
 367	26	4912	german_prose_with_translit			none	1	2	0	0	Lex. Zi ba (TIC).
 367	28	4913	headword_line	ཀྱིང་བག་ཅན་	gyin	medium	3	0	0	0	ཀྱིང་བག་ཅན་ gyin bag can \’gyin bag.
 367	29	4914	headword_line	ཀྱིན་	Tkyin	medium	1	0	0	0	ཀྱིན་ 'oyin Tkyin.
@@ -88256,7 +88256,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 612	16	7492	german_prose_with_translit			none	2	2	0	0	gnas po „mein Onkel mütterlicherseits, der
 612	17	7492	german_prose_with_translit			none	3	1	0	0	Grundherr von lCags-mkhar“ (Bhulg
 612	18	7492	other			none	0	0	0	0	94,11).
-612	20	7492	tibetan_only	ལྕགས་གོང་		none	0	1	0	0	ལྕགས་གོང་ lcags gon Eisenkugel.
+612	20	7492	tibetan_only	ལྕགས་གོང་	goṅ	high	0	1	0	0	ལྕགས་གོང་ lcags goṅ Eisenkugel.
 612	22	7492	german_prose_with_translit			none	2	2	0	0	Lex. lcags kyi gon bu ril po (Dagy); lcags ril
 612	23	7492	latin_other			none	1	0	0	0	ril (brDa).
 612	25	7493	headword_line	ལྕགས་གོས་	Rüstung	medium	1	3	0	0	ལྕགས་གོས་ lcags gos Bez. für Rüstung, Har-
@@ -89934,7 +89934,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 624	15	7606	headword_line	ཆག་གེ་བ་	ba ungleichmäßig	medium	2	0	0	0	ཆག་གེ་བ་ chag ge ba ungleichmäßig.
 624	17	7606	german_prose_with_translit			none	4	4	0	0	mi nag po gdon pa dmar - gcig „ein schwarzer Mann mit einem ungleichmäßig roten
 624	19	7606	german_prose			none	0	2	0	0	Gesicht“ (Dol3 25,8).
-624	21	7606	tibetan_only	ཆག་གོང་		none	0	4	0	0	ཆག་གོང་ chag gon ein Band an Sandaletten.
+624	21	7606	tibetan_only	ཆག་གོང་	goṅ	high	0	4	0	0	ཆག་གོང་ chag goṅ ein Band an Sandaletten.
 624	23	7606	german_prose_with_translit			none	1	2	0	0	chag nan ... » can (metr.) „eine Sandalette,
 624	24	7606	german_prose			none	0	4	0	0	die mit Bändern versehen ist“ (gZi 3:
 624	25	7606	other			none	0	0	0	0	759,5).
@@ -104879,7 +104879,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 720	212	8641	german_prose_with_translit			none	1	2	0	0	bstsal te „er gab ihm die Majughosa-
 720	213	8641	example_tibetan_latin			none	5	2	0	0	Weihe“ (Tär 176,5); po ta la’i rgyab phyogs ༨
 720	215	8641	other			none	0	0	0	0	371
-721	1	8642	headword_line	འཇམ་དྭབྱངས་གོང་མ་	dbyans	medium	2	1	0	0	འཇམ་དྭབྱངས་གོང་མ་ Jam dbyans gon ma
+721	1	8642	headword_line	འཇམ་དྭབྱངས་གོང་མ་	dbyans goṅ ma	high	2	1	0	0	འཇམ་དྭབྱངས་གོང་མ་ Jam dbyans goṅ ma
 721	3	8642	german_prose_with_translit			none	1	5	0	0	kyi bla ri „hinter dem Po-ta-la ist auch der
 721	4	8642	german_prose_with_translit			none	1	2	0	0	bla ri des Mafjughosa“ (gNas 4,17); rje
 721	5	8642	german_prose_with_translit			none	5	1	0	0	btsun Jam pa’i dbyans kyis ... dṅos grub ...
@@ -119155,7 +119155,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 815	103	9448	latin_other			none	4	0	0	0	> la sbad (r. sbas) kha yari ba dan (metr.)
 815	105	9448	german_prose			none	0	3	0	0	„unbeirrbar und offen über Geheimnisse
 815	106	9448	german_prose			none	0	2	0	0	[sprechen]“ (VaiNth 176,3).
-815	107	9449	headword_line	སྙན་གྱི་གོང་རྒྱན་	gyi	medium	2	0	0	0	སྙན་གྱི་གོང་རྒྱན་ san gyi gon rgyan.
+815	107	9449	headword_line	སྙན་གྱི་གོང་རྒྱན་	gyi goṅ rgyan	high	2	0	0	0	སྙན་གྱི་གོང་རྒྱན་ san gyi goṅ rgyan.
 815	109	9449	german_prose			none	0	3	0	0	1. Ohrschmuck, vgl. Isäan reyan.
 815	111	9449	tibetan_only	སྙན་གྲགས་		none	0	0	0	0	སྙན་གྲགས་ $/74/7 grags
 815	113	9449	german_prose			none	0	3	0	0	2, ein Mahäyänasütra, Avatamsakasütra.
@@ -145867,7 +145867,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 999	163	10899	headword_line	༡	mchog	medium	2	1	0	0	༡ mchog (IMP); ~ dinan pa Piptanthus
 999	164	10899	german_prose_with_translit			none	1	3	0	0	concolor Harrow (TMP); vgl. Ttha skar rdo
 999	165	10899	latin_other			none	1	0	0	0	rje.
-999	167	10900	headword_line	ཐལ་གོང་	thal	high	1	0	0	0	ཐལ་གོང་ thal gon
+999	167	10900	headword_line	ཐལ་གོང་	thal goṅ	high	1	0	0	0	ཐལ་གོང་ thal goṅ
 999	169	10901	headword_line	ཐལ་ཀ་མ་	thal ka ma	high	3	2	0	0	ཐལ་ཀ་མ་ thal ka ma eine Aschenfarbene.
 999	171	10901	latin_other			none	1	0	0	0	no yi bkrag sor » (metr.) „sie verlor ihre
 999	172	10901	german_prose_with_translit			none	1	3	0	0	Gesichtsfarbe und [wurde] eine Asche-
@@ -147347,7 +147347,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1010	28	11020	latin_other			none	5	0	0	0	32,3); ~ dgons pa zab mo’i rtsi beud kyis
 1010	29	11020	german_prose_with_translit			none	1	9	0	0	(metr.) „mit dem Elixier der tiefen Meditation über die Erzeugung des [Erleuch-
 1010	31	11020	latin_other			none	2	0	0	0	tungs]gedankens“ (ThK 2: 522,4).
-1010	33	11021	headword_line	ཐུགས་གོང་	thugs	high	1	0	0	0	ཐུགས་གོང་ thugs gon
+1010	33	11021	headword_line	ཐུགས་གོང་	thugs goṅ	high	1	0	0	0	ཐུགས་གོང་ thugs goṅ
 1010	35	11021	latin_other			none	1	0	0	0	mdzad (metr.) „er macht sich nur wenig
 1010	36	11021	german_prose_with_translit			none	1	1	0	0	Sorgen (skt. utsuka), indem er denkt:
 1010	37	11021	german_prose_with_translit			none	1	2	0	0	‚Welche Wesen verstehen sie?“ (Rgs
@@ -147455,7 +147455,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1010	171	11032	german_prose			none	0	5	0	0	Schatztextes und der Hellsicht“ (KTh |:
 1010	172	11032	other			none	0	0	0	0	440,5).
 1010	174	11033	headword_line	ཐུགས་འཁྲལ་	thugs khral	high	3	1	0	0	ཐུགས་འཁྲལ་ thugs ’khral Tthugs khral.
-1010	176	11034	headword_line	ཐུགས་གོང་	thugs	high	2	2	0	0	ཐུགས་གོང་ thugs gon Respekt oder Rang (2); ~
+1010	176	11034	headword_line	ཐུགས་གོང་	thugs goṅ	high	2	2	0	0	ཐུགས་གོང་ thugs goṅ Respekt oder Rang (2); ~
 1010	177	11034	german_prose_with_translit			none	1	1	0	0	mdzad respektieren.
 1010	178	11034	latin_other			none	6	0	0	0	zla gon gi bu tsha rgyud pheld ... - mdzad de
 1010	180	11034	german_prose			none	0	4	0	0	„die Nachkommen von Zla-gon werden
@@ -159868,7 +159868,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1105	100	11977	german_prose			none	0	5	0	0	rauhen Hals, Schnupfen, Schleim und Appe-
 1105	101	11977	german_prose_with_translit			none	2	2	0	0	tilosigkeit“ (Yś 26d); Zha’i Zal zas ... dwans
 1105	102	11977	german_prose_with_translit			none	3	4	0	0	kha ’dren pa „die Nahrung der Götter ist ap-
-1106	1	11978	headword_line	དང་གོང་	daṅ	high	1	0	0	0	དང་གོང་ daṅ gon
+1106	1	11978	headword_line	དང་གོང་	daṅ goṅ	high	1	0	0	0	དང་གོང་ daṅ goṅ
 1106	3	11978	other			none	0	0	0	0	petitanregend“ (271 3: 135,5).
 1106	5	11978	german_prose_with_translit			none	4	1	0	0	Lex. ˆ~ med pa = zas la ’dod pa med pa „keine
 1106	6	11978	german_prose_with_translit			none	2	2	0	0	Speise wünschend“ (brDa); dwan ga med pa
@@ -160681,7 +160681,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1116	39	12050	tibetan_only	དན ྲཾ		none	0	0	0	0	དན ྲཾ
 1116	41	12050	latin_other			none	2	0	0	0	communisL. (Pasang 1998: 97 5. v. dan
 1116	42	12050	latin_other			none	1	0	0	0	ta).
-1116	44	12051	headword_line	དན་གོང་	dan	medium	2	2	0	0	དན་གོང་ dan gon auch dan kon Kugelbogen,
+1116	44	12051	headword_line	དན་གོང་	dan goṅ	high	2	2	0	0	དན་གོང་ dan goṅ auch dan kon Kugelbogen,
 1116	45	12051	latin_other			none	1	0	0	0	chin. ## 3 tYan-kung.
 1116	47	12051	german_prose_with_translit			none	6	1	0	0	im 7:77 gyi dan kon gis rgyab tu bsnun pa las
 1116	48	12051	german_prose			none	0	5	0	0	„er schoß ihm mit dem Kugelbogen einen

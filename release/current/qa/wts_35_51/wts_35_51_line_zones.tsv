@@ -33895,7 +33895,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 425	3	2205	latin_other			none	1	0	0	0	"ternacht"" (brDa)."
 425	4	2206	headword_line	ནམ་གུང་ཅན་	guṅ can	high	3	2	0	0	ནམ་གུང་ཅན་ nam guṅ can Bez fūr Nacht.
 425	5	2206	german_prose_with_translit			none	2	2	0	0	Lex. mtshan mo (brDa, Dagy).
-425	6	2207	headword_line	ནམ་གོང་	Mondhaus sa	high	2	3	0	0	ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri.
+425	6	2207	headword_line	ནམ་གོང་	goṅ	high	2	3	0	0	ནམ་གོང་ nam goṅ Bez. für das Mondhaus sa ri.
 425	7	2207	german_prose_with_translit			none	5	1	0	0	Lex. sa ri skar ma (brDa); skar ma sa ri
 425	8	2207	german_prose			none	0	1	0	0	(Dagy).
 425	9	2208	headword_line	ནམ་གྱི་གུང་	gyi guṅ	high	2	1	0	0	ནམ་གྱི་གུང་ nam gyi guṅ Tnam gun.
@@ -86072,7 +86072,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1057	13	5649	german_prose_with_translit			none	1	3	0	0	"mtshuams ""Zwischenraum oder Abstand zwi-"
 1057	14	5649	german_prose_with_translit			none	1	2	0	0	"schen Bergen"" (brDa)."
 1057	15	5650	headword_line	ཕྲག་	phrag lphrag pa	high	3	0	0	0	ཕྲག་ 'phrag lphrag pa.
-1057	16	5650	tibetan_only	ཕྲག་གོང་		none	0	0	0	0	ཕྲག་གོང་ pbrag gon.
+1057	16	5650	tibetan_only	ཕྲག་གོང་	goṅ	high	0	0	0	0	ཕྲག་གོང་ pbrag goṅ.
 1057	17	5650	german_prose			none	0	3	0	0	1. auf bzw. über der Schulter.
 1057	18	5650	latin_other			none	4	0	0	0	gan dag la mgul med cin ///00 — la 'byar ba de
 1057	19	5650	german_prose			none	0	3	0	0	"dag ""diejenigen, die keinen Hals haben und"
