@@ -2969,3 +2969,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 529	25	2819	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྤག་ཆུང་ sbag chun.
 100	8	487	headword_line	than	thaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུམ་ཐང་ bum than.
 39	51	186	tibetan_only	glah	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བན་གླང་མོ་ ban glah mo Ibal glari mo.
+68	56	323	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བལ་གླང་མོ་ bal glaṅ no auch ban glan mo Ele-

@@ -2383,7 +2383,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.fixture_with_reviewed_lines(lines),
             label="wts_1_34",
         )
-        self.assertIn("གླང་ཐབས་ glaṅ thabs auch glan ’thab", corrected)
+        self.assertIn("གླང་ཐབས་ glaṅ thabs auch glaṅ ’thab", corrected)
         self.assertIn("གླང་འཐབ་ glaṅ ’thab †2/%7 thabs.", corrected)
         self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdon", corrected)
         self.assertIn("གླང་ཤིང་ glaṅ sin", corrected)
@@ -2393,8 +2393,8 @@ class PostprocessRegressionTests(unittest.TestCase):
             row for row in changes
             if row["from_token"] == "glan" and row["to_token"] == "glaṅ"
         ]
-        self.assertEqual(len(reviewed), 5)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_glah_variant_maps_to_glang(self) -> None:
         result, corrected, changes = self.run_postprocess_fixture(
@@ -2406,6 +2406,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("བན་གླང་མོ་ ban glaṅ mo Ibal glari mo.", corrected)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
         self.assertEqual(changes[-1]["from_token"], "glah")
+
+    def test_reviewed_glang_echo_preserves_neighbouring_damage(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(68, 56): "བལ་གླང་མོ་ bal glaṅ no auch ban glan mo Ele-"}
+            ),
+            label="wts_8_b",
+        )
+        self.assertIn("bal glaṅ no auch ban glaṅ mo", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["reason"], "reviewed_tibetan_exact_final_ng_echo")
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

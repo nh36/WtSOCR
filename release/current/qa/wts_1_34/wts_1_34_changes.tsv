@@ -27752,3 +27752,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 395	66	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱལ་ glan hrul Elefantenbulle.
 395	69	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱེངས་ glan hrens Elefantenbulle.
 1275	1	12813	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་མགོ་གླང་སྙིང་ dom mgo glan sin
+393	183	5166	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གླང་ཐབས་ glaṅ thabs auch glan ’thab eine Er-
