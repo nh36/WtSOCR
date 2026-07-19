@@ -2204,6 +2204,28 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 5)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
+    def test_reviewed_thang_rows_preserve_later_damage(self) -> None:
+        lines = {
+            (107, 3): "ཀྱས་ཐང་ལ་ kyus than la npr. Kloster in 2 1531",
+            (199, 164): "སྐྱིན་ཐང་ skyin than auch skyin dan, skyin 777",
+            (988, 197): "ཐང་ག་ than ga 1//77/7 ka 2,",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("kyus thaṅ la npr. Kloster in 2 1531", corrected)
+        self.assertIn("skyin thaṅ auch skyin dan, skyin 777", corrected)
+        self.assertIn("ཐང་ག་ thaṅ ga 1//77/7 ka 2,", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+        self.assertEqual(
+            sum(
+                row["from_token"] == "than" and row["to_token"] == "thaṅ"
+                for row in changes
+            ),
+            3,
+        )
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
