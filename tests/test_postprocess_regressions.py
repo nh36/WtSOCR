@@ -2451,6 +2451,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("དུན་ dun genuine distinct syllable.", corrected)
         self.assertEqual(sum(row["to_token"] == "duṅ" for row in changes), 5)
 
+    def test_reviewed_gling_rows_preserve_neighbouring_genuine_n(self) -> None:
+        lines = {
+            (945, 1): "སྟན་གླིང་པ་ stan glin pa",
+            (1067, 75): "མཐོང་སྨོན་གླིང་ mthon smon glin npr. ein Ort.",
+            (200, 1): "གླིན་ glin genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("stan gliṅ pa", corrected)
+        self.assertIn("mthon smon gliṅ", corrected)
+        self.assertIn("གླིན་ glin genuine distinct syllable.", corrected)
+        self.assertEqual(sum(row["to_token"] == "gliṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

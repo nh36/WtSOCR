@@ -27830,3 +27830,35 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1156	24	12264	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་སྐྱོང་ duṅ skyon auch dun skyons npr. ein
 1156	59	12267	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་ཁྲི་ duṅ khri auch dun khrid 0¢ ldan npr.
 1158	3	12275	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་ཕྱུར་ duṅ phyur auch dun 70/77///7ˆ eine hohe
+49	149	359	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀམ་པ་ཆེའི་གླིང་ kam pa tshe’i glin Name eines
+61	164	592	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་སྐྱོབ་གླིང་ kun skyob glin
+61	210	597	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་སྐྱོབ་གླིང་ kun skyob glin (SCD) wohl irtt. für
+62	26	603	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཁྱབ་གླིང་ kun khyab glin „Himmelsgarten“,
+92	180	1104	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོ་ཀ་ཐང་དམར་གླིང་ ko ka thaṅ dmar glin, auch ko
+113	203	1370	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་འབྲུག་ མཐུ་རྩལ་གླིང་ klu ’brug mthu rtsal glin N.
+156	42	1958	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་གླིང་ rkaṅ glin im Ritual gebrauchte Trompe-
+295	45	4005	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁྲི་གླིང་པ་ khri glin pa auch khri klin ba ein
+396	56	5195	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་དགྲ་ glin dgu
+396	97	5195	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་སྐོར་ glin skor Abschnitt.
+396	103	5195	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་ག་ glin ga 19.
+396	105	5196	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་དགྲ་ glin dgu eine Waffe der Asuras.
+396	110	5197	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་ལྡན་མ་ glin ldan ma
+396	112	5198	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་ལྡན་མ་ glin ldan ma Fluß.
+396	116	5198	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་སྣམ་ glin snam Stoffflicken.
+396	134	5199	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་བུ་ glin bu ein Blasinstrument.
+396	149	5200	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་མ་ glin ma Sandbank, Meeresufer.
+396	154	5200	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་མེ་ glin me Lampe, Leuchte.
+396	160	5201	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་འཛིན་ glin ’dzin Bez. für Erde.
+396	196	5204	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་བཞིའི་ལྟེ་བ་ glin bzi’i Ite ba 12///) bi Ite ba.
+396	200	5205	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླིང་བཞིའི་སློ་ glin bZi’i spo der Berg Meru.
+460	110	5938	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱ་གླིང་ reya glin
+644	55	7827	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་གླིང་ chu glin kleine Insel, Sandbank.
+714	126	8565	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཇོ་མོ་གླིང་གསུམ jo mo glin gsum Bez. für drei
+750	26	8913	tibetan_only	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྔགས་གླིང་ ljags glin Flöte.
+911	1	9974	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟ་མགྲིན་གླིང་ rta mgrin glin
+945	1	10347	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟན་གླིང་པ་ stan glin pa
+945	23	10348	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟན་གླིང་པ་ stan glin pa auch stan glins pa Filz-
+1067	75	11782	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་སྨོན་གླིང་ mthon smon glin npr. ein Ort.
+1131	52	12134	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་རྒྱས་ཆོས་གླིང་ dar rgyas chos glin
+1294	1	12882	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་པོ་གླིང་ drag po glin
+1294	9	12883	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་པོ་གླིང་ drag po glin Bez. des sechsten

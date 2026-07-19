@@ -6609,7 +6609,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 79	10	462	german_prose_with_translit			none	1	4	0	0	Gottheit im Gefolge des mGon-po lha-chen
 79	11	462	german_prose_with_translit			none	1	2	0	0	dpal-'bar jo-bo'i-lugs, heißt auch dPal-ldan
 79	12	462	german_prose_with_translit			none	1	1	0	0	lha-mo remati (Neb 53).
-79	13	463	headword_line	བདེ་གླིང་	bde gliṅ	high	4	3	0	0	བདེ་གླིང་ bde gliṅ Kurzf. für bde chen glin pa
+79	13	463	headword_line	བདེ་གླིང་	bde gliṅ	high	4	3	0	0	བདེ་གླིང་ bde gliṅ Kurzf. für bde chen gliṅ pa
 79	14	463	german_prose			none	0	2	0	0	npr. ein Bon-Lehrer.
 79	15	463	german_prose_with_translit			none	2	1	0	0	"chn sbrul — bltams ""im Wasser-Schlange[-"
 79	16	463	german_prose_with_translit			none	2	2	0	0	"Jahr] wurde bDe[-chen] glin[-pa] geboren"""
@@ -14890,7 +14890,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 176	57	1018	german_prose			none	0	5	0	0	tation und das Verhalten der Mönchsge-
 176	58	1018	german_prose			none	0	3	0	0	meinschaft des Klosters bSam-gtan-glin rein
 176	59	1018	german_prose			none	0	1	0	0	"sind"" (MTH3/5/25 3)."
-176	60	1019	headword_line	འདུས་གླིང་	Versammlungsgebiet	medium	1	0	0	0	"འདུས་གླིང་ ""dus glin Versammlungsgebiet."
+176	60	1019	headword_line	འདུས་གླིང་	Versammlungsgebiet	medium	1	0	0	0	"འདུས་གླིང་ ""dus gliṅ Versammlungsgebiet."
 176	61	1019	german_prose_with_translit			none	2	2	0	0	"sgo mkha' 'gro — (r)tswa'i ri ""der Gras-"
 176	62	1019	german_prose_with_translit			none	1	3	0	0	berg, das Versammlungsgebiet der Däkinis
 176	63	1019	german_prose_with_translit			none	1	3	0	0	"in [Zan-Zun] sGo[-pa]"" (Tise-Pr 70,19)."
