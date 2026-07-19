@@ -2121,6 +2121,32 @@ class PostprocessRegressionTests(unittest.TestCase):
                 self.assertEqual(reviewed[0]["to_token"], "dbaṅ")
                 self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_rkan_consensus_rows_are_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (155, 188): "རྐང་ཀོར་ rkan kor Fußschmuck, Fußring.",
+                (156, 201): "རྐང་གཉིས་ rkan 677/5 Mensch; — mchog, — dam",
+                (156, 202): "German and bibliographic rkan remain unchanged.",
+            }
+        )
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+        self.assertIn("rkaṅ kor", corrected)
+        self.assertIn("rkaṅ 677/5", corrected)
+        self.assertIn(
+            "German and bibliographic rkan remain unchanged.",
+            corrected,
+        )
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 2)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
