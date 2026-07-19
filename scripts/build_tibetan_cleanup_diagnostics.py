@@ -52,6 +52,9 @@ TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
     "གཙང": "gtsaṅ",
     "ནང": "naṅ",
     "རང": "raṅ",
+    "ཉངས": "ñaṅs",
+    "ཆུང": "chuṅ",
+    "སྒྲུང": "sgruṅ",
 }
 TIBETAN_INITIAL_I_FORMS = {
     "Ita": "lta",
@@ -950,6 +953,11 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
                     "base_proposed_target": token_class["base_proposed_target"],
                     "tibetan_witness": token_class["tibetan_witness"],
                     "candidate_family": token_class["candidate_family"],
+                    "review_category": (
+                        "reference_marker_and_final_ng"
+                        if token_class["reference_marker_source"]
+                        else "high_confidence_exact_final_ng"
+                    ),
                     "context_excerpt": line,
                     "evidence": token_class["evidence"],
                     "confidence": token_class["confidence"],
@@ -1445,6 +1453,7 @@ def main() -> None:
         "base_proposed_target",
         "tibetan_witness",
         "candidate_family",
+        "review_category",
         "context_excerpt",
         "evidence",
         "confidence",

@@ -238,6 +238,26 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(dan["proposed_target"], "daṅ")
         self.assertEqual(dan["tibetan_witness"], "དང")
 
+    def test_tibetan_script_ng_witness_identifies_chung_and_sgrung(self) -> None:
+        chun = diag.classify_tibetan_script_ng_token(
+            "chun",
+            "སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chun",
+        )
+        sgrun = diag.classify_tibetan_script_ng_token(
+            "sgrun",
+            "སྒྲུང་ sgrun Erzählung.",
+        )
+        non_ng_sgrun = diag.classify_tibetan_script_ng_token(
+            "Tsgrun",
+            "བསྒྱུན་ bsgrun pf. und fut. zu Tsgrun",
+        )
+
+        self.assertIsNotNone(chun)
+        self.assertIsNotNone(sgrun)
+        self.assertEqual(cast(dict[str, str], chun)["proposed_target"], "chuṅ")
+        self.assertEqual(cast(dict[str, str], sgrun)["proposed_target"], "sgruṅ")
+        self.assertIsNone(non_ng_sgrun)
+
     def test_tibetan_script_ng_witness_handles_prefixed_t_and_suppresses_unwitnessed(self) -> None:
         line = "གང་དང་གང་ gan dan gan Tgan Igan \\gan gan."
         tgan = diag.classify_tibetan_script_ng_token("Tgan", line)
@@ -647,6 +667,7 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["source_token"], "ran")
         self.assertEqual(rows[0]["token_index"], "4")
+        self.assertEqual(rows[0]["review_category"], "high_confidence_exact_final_ng")
 
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")
