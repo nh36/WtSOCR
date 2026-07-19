@@ -1514,6 +1514,37 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
+    def test_reviewed_reference_marker_tran_row_applies_only_at_exact_location(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (543, 138): "2. schlecht, vgl. Tran pa.",
+                (543, 139): "An adjacent Tran string stays unchanged.",
+                (758, 184): "ཉངས་ Hans Tran po remains deferred.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("vgl. ↓ raṅ pa.", corrected)
+        self.assertIn("An adjacent Tran string stays unchanged.", corrected)
+        self.assertIn("ཉངས་ Hans Tran po remains deferred.", corrected)
+        marker_changes = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"])
+                for row in marker_changes
+            ],
+            [("Tran", "↓ raṅ")],
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {

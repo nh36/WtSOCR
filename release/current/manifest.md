@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-07-19T14:51:53Z`
-Source/code commit observed while building this bundle: `7397901eb447fb45f8bad282af42f4cef9ad0e5e`
+Generated UTC: `2026-07-19T15:14:52Z`
+Source/code commit observed while building this bundle: `38c7bacc67b149c3f7a49bf677a6a1be9f21b5ce`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -17,19 +17,19 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_tchos_clean_20260719T160000Z/wts_1_34` |
-| `wts_35_51` | `work/reference_marker_tchos_clean_20260719T160000Z/wts_35_51` |
-| `wts_8_b` | `work/reference_marker_tchos_clean_20260719T160000Z/wts_8_b` |
-| `wts_9_m` | `work/reference_marker_tchos_clean_20260719T160000Z/wts_9_m` |
+| `wts_1_34` | `work/reference_marker_tran_clean_20260719T170000Z/wts_1_34` |
+| `wts_35_51` | `work/reference_marker_tran_clean_20260719T170000Z/wts_35_51` |
+| `wts_8_b` | `work/reference_marker_tran_clean_20260719T170000Z/wts_8_b` |
+| `wts_9_m` | `work/reference_marker_tran_clean_20260719T170000Z/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/reference_marker_tchos_clean_20260719T160000Z/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/reference_marker_tchos_clean_20260719T160000Z/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `work/reference_marker_tchos_clean_20260719T160000Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/reference_marker_tchos_clean_20260719T160000Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `work/reference_marker_tran_clean_20260719T170000Z/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `work/reference_marker_tran_clean_20260719T170000Z/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `work/reference_marker_tran_clean_20260719T170000Z/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `work/reference_marker_tran_clean_20260719T170000Z/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Corrected Text
 

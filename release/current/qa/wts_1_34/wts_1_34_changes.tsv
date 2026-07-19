@@ -27181,3 +27181,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 679	165	8202	headword_line	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཆོས་སྤྲིན་ chos sprin Tchos kyi sprin.
 679	166	8203	headword_line	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.
 680	118	8219	headword_line	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཆོས་བརིགས་ chos brtsigs Tchos rtsig.
+543	138	6898	german_prose_with_translit	Tran	↓ raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	2. schlecht, vgl. Tran pa.

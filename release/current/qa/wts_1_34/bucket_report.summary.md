@@ -1,6 +1,6 @@
 # Unresolved Bucket Report
 
-- run_dir: `/private/tmp/wtsocr-tchos-stage/wts_1_34`
+- run_dir: `/private/tmp/wtsocr-tran-stage/wts_1_34`
 - unresolved confusable pairs: `189`
 - promote candidates (conservative): `8`
 - hold candidates: `181`
