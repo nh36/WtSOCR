@@ -6,7 +6,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 12
 - `tibetan_orthography_damage_candidates.tsv`: 151
-- `tibetan_script_ng_witness_candidates.tsv`: 4
+- `tibetan_script_ng_witness_candidates.tsv`: 2
 - `reference_marker_candidates.tsv`: 457
 - `reference_marker_token_families.tsv`: 225
 - `tibetan_initial_i_residual_candidates.tsv`: 0
@@ -22,10 +22,10 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | dollar_ś | $ (146) | ś (146) | 146 | review |
 | unknown | rol (24) | Rol (24) | 24 | siglum_policy_review |
 | unknown | ins (23) | Ins (23) | 23 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (4) | chuṅ (4) | 4 | exact_promotion_candidate |
 | unknown | gs (4) | Gs (4) | 4 | siglum_policy_review |
 | unknown | gzi (3) | gZi (3) | 3 | siglum_policy_review |
 | dollar_ś | '$ (2) | 'ś (2) | 2 | review |
+| tibetan_script_ng_witness | chun (2) | chuṅ (2) | 2 | manual_alignment_review |
 | unknown | lis (2) | Liś (2) | 2 | siglum_policy_review |
 | citation_or_siglum | auf (1) | rGyud (1) | 1 | already_canonical_siglum |
 | citation_or_siglum | die (1) | P (1) | 1 | already_canonical_siglum |

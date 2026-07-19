@@ -40931,7 +40931,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 496	33	2674	other			none	0	0	0	0	41,19).
 496	34	2674	german_prose_with_translit			none	4	5	0	0	"Lex. mdo khams kyi chu bo Zig ""ein Fluß in"
 496	35	2674	german_prose_with_translit			none	1	1	0	0	"mDo-khams"" (Dagy)."
-496	36	2675	headword_line	འབྲི་ཆུང་དགོན་པ་	dgoṅ pa	high	2	1	0	0	འབྲི་ཆུང་དགོན་པ་ chun dgoṅ pa npr. ein
+496	36	2675	headword_line	འབྲི་ཆུང་དགོན་པ་	chuṅ dgoṅ pa	high	3	1	0	0	འབྲི་ཆུང་དགོན་པ་ chuṅ dgoṅ pa npr. ein
 496	37	2675	german_prose			none	0	4	0	0	Nonnenkloster östl. von Se-
 496	38	2675	latin_other			none	1	0	0	0	ra.
 496	39	2675	latin_other			none	5	0	0	0	se ra dan 'bras spuris sogs kyi rgyab ri'i nos
@@ -48051,7 +48051,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 581	23	3104	german_prose			none	0	1	0	0	(Dasy).
 581	24	3105	headword_line	སྤྲུལ་ཚོགས་ཅན་	sbrul tshogs can	high	3	2	0	0	སྤྲུལ་ཚོགས་ཅན་ sbrul tshogs can jmd., der eine
 581	25	3105	tibetan_only	༡༨༨		none	0	0	0	0	༡༨༨ . u. .
-581	26	3105	example_tibetan_latin			none	3	4	0	0	Schlange hält, Schlangenhalter སྦྲ་ཆུང་ sbre chun ein Gefäß, vgl. tbre chui.
+581	26	3105	example_tibetan_latin			none	4	4	0	0	Schlange hält, Schlangenhalter སྦྲ་ཆུང་ sbre chuṅ ein Gefäß, vgl. tbre chui.
 581	27	3105	german_prose			none	0	5	0	0	Lex. nägamandalikah (Mvy 3765). Lex. jag snod (Mimi 540).
 581	28	3105	german_prose_with_translit			none	3	3	0	0	"ay| "" sbrul Zags Schlangenschlinge Ne sbre mon Isremoni"
 581	29	3106	headword_line	ཞགས	ang	medium	2	1	0	0	ཞགས ang ge. Jar sbre mon \sre mon.

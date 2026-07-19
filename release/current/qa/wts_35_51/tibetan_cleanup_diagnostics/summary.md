@@ -6,7 +6,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 83
 - `tibetan_orthography_damage_candidates.tsv`: 352
-- `tibetan_script_ng_witness_candidates.tsv`: 12
+- `tibetan_script_ng_witness_candidates.tsv`: 8
 - `reference_marker_candidates.tsv`: 858
 - `reference_marker_token_families.tsv`: 355
 - `tibetan_initial_i_residual_candidates.tsv`: 0
@@ -24,11 +24,11 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | ins (42) | Ins (42) | 42 | siglum_policy_review |
 | unknown | Lis (33), Li$ (6), lis (3) | Liś (42) | 42 | siglum_policy_review |
 | unknown | VisT (19), ViST (7), VisṬ (1) | ViśT (27) | 27 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (12) | chuṅ (12) | 12 | manual_alignment_review |
 | unknown | Gs-H (10), GS-H (1) | Gś-H (11) | 11 | siglum_policy_review |
 | unknown | gs (9), g$ (1) | Gs (10) | 10 | siglum_policy_review |
 | unknown | Y$ (5), Ys (4), YŚ (1) | Yś (10) | 10 | siglum_policy_review |
 | unknown | Bu-Sz (9) | Bu-śz (9) | 9 | siglum_policy_review |
+| tibetan_script_ng_witness | chun (8) | chuṅ (8) | 8 | manual_alignment_review |
 | unknown | gzi (8) | gZi (8) | 8 | siglum_policy_review |
 | unknown | P$ (4), PS (3), ps (1) | Ps (8) | 8 | siglum_policy_review |
 | loc_nasal_damage | bźeńs (7) | bźeṅs (7) | 7 | review |

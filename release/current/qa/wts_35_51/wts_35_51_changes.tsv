@@ -6343,3 +6343,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1080	32	5780	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	"ler"", Bez. für Mahäsattva."
 1081	16	5790	german_prose	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	traf den Lehrer Nägärjuna, Äryadeva, Cand-
 1081	27	5790	german_prose_with_translit	arya	ārya	A	sanskrit_high_freq_allowlist	1	"dpon chen po arya de wa ""Äryadeva, der gro-"
+34	42	140	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	གདོང་ཆུང་ gdoṅ chun.
+226	35	1245	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-
+361	1	1834	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་གརཆུང་ na ga chun
+740	13	3742	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chun.

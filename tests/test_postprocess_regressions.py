@@ -1937,6 +1937,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 3)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
 
+    def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_35_51": {
+                (34, 42): "གདོང་ཆུང་ gdoṅ chun.",
+                (226, 35): "རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-",
+            },
+            "wts_8_b": {
+                (496, 36): "འབྲི་ཆུང་དགོན་པ་ chun dgoṅ pa npr. ein",
+            },
+            "wts_9_m": {
+                (279, 59): 'རྱོགས་ཆུང་ "myogs chun bescheiden, schwach,',
+            },
+        }
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                for line in lines.values():
+                    self.assertIn(line.replace("chun", "chuṅ"), corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+                    and row["from_token"] == "chun"
+                ]
+                self.assertEqual(len(reviewed), len(lines))
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    len(lines),
+                )
+
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(
             {

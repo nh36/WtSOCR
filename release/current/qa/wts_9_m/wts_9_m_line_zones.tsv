@@ -23346,7 +23346,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 279	56	1234	headword_line	རྱོགས་ཆུང་	Imyogs chuṅ	high	2	2	0	0	རྱོགས་ཆུང་ Imyogs chuṅ kleines Kind, vgl.
 279	57	1234	german_prose			none	0	1	0	0	Tmyog.
 279	58	1234	german_prose_with_translit			none	3	1	0	0	Lex. phru gu chi ba (brDa).
-279	59	1235	headword_line	རྱོགས་ཆུང་	myogs	medium	1	0	0	0	"རྱོགས་ཆུང་ ""myogs chun bescheiden, schwach,"
+279	59	1235	headword_line	རྱོགས་ཆུང་	myogs chuṅ	high	2	0	0	0	"རྱོགས་ཆུང་ ""myogs chuṅ bescheiden, schwach,"
 279	60	1235	german_prose_with_translit			none	2	1	0	0	vgl. Tsriogs ch ba.
 279	61	1235	german_prose_with_translit			none	5	1	0	0	Lex. sñogs chun yan (brDa); sriogs chun ba ste
 279	62	1235	german_prose_with_translit			none	1	1	0	0	bsñod chun (Dagy).

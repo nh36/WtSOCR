@@ -2808,7 +2808,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 34	39	138	german_prose			none	0	1	0	0	(Dagy).
 34	40	138	tibetan_only	༨༧ ༠༠		none	0	0	0	0	༨༧ ༠༠
 34	41	139	headword_line	གདོང་འདྲེ་	gdoṅ	high	1	0	0	0	གདོང་འདྲེ་ gdoṅ 'dre
-34	42	140	headword_line	གདོང་ཆུང་	gdoṅ	high	1	0	0	0	གདོང་ཆུང་ gdoṅ chun.
+34	42	140	headword_line	གདོང་ཆུང་	gdoṅ chuṅ	high	2	0	0	0	གདོང་ཆུང་ gdoṅ chuṅ.
 34	43	140	latin_other			none	1	0	0	0	1. engstirnig.
 34	44	140	latin_other			none	1	0	0	0	"kbrel med — ma byed par ""sei nicht unver-"
 34	45	140	german_prose_with_translit			none	1	3	0	0	"schämt und nicht engstirnig"" (Glr 106,27)."
@@ -19077,7 +19077,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 226	32	1243	german_prose			none	0	5	0	0	Frau, Frau in den besten Jahren.
 226	33	1243	german_prose_with_translit			none	2	2	0	0	Lex. bud med dar ma (brDa, Dagy).
 226	34	1244	headword_line	རྡུལ་ཕྲ་མོ་	rdul phra	high	2	0	0	0	རྡུལ་ཕྲ་མོ་ rdul phra mo
-226	35	1245	headword_line	རྡུལ་ཆུང་ངུ་	eiṅ	high	1	1	0	0	རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-
+226	35	1245	headword_line	རྡུལ་ཆུང་ངུ་	chuṅ	high	2	1	0	0	རྡུལ་ཆུང་ངུ་ chuṅ ru eiṅ sehr kleines Län-
 226	36	1245	latin_other			none	1	0	0	0	rdul.
 226	37	1245	german_prose			none	0	4	0	0	genmaß, der siebte Teil eines [/7/ zer
 226	38	1245	latin_other			none	4	0	0	0	"— bilun la ni /7/ zer gyi rdul 0079 go ""sieben"
@@ -28671,7 +28671,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	76	1833	german_prose_with_translit			none	1	1	0	0	"(Suv 80,22); btsod dar — bzun (metr.) ""man"
 360	77	1833	german_prose			none	0	6	0	0	nehme Krapp und die Blüte des Eisenholz-
 360	78	1833	german_prose_with_translit			none	1	1	0	0	"baums (skt. nāgakesara)"" (Samv 26.40b); —"
-361	1	1834	headword_line	ན་གརཆུང་	na	medium	1	0	0	0	ན་གརཆུང་ na ga chun
+361	1	1834	headword_line	ན་གརཆུང་	na	medium	2	0	0	0	ན་གརཆུང་ na ga chuṅ
 361	2	1834	german_prose_with_translit			none	1	3	0	0	"g@&i sran lam du ""auf dem Pfad aus Näga-"
 361	3	1834	german_prose			none	0	2	0	0	"Baum-Blüten"" (Lokn 44,12)."
 361	4	1834	german_prose_with_translit			none	3	1	0	0	"Lex. nā ga gle) sar zans khog dum bu 'dra ""nā"
@@ -60013,7 +60013,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 740	10	3741	german_prose			none	0	4	0	0	ärmellose Weste oder Bluse.
 740	11	3741	german_prose_with_translit			none	4	3	0	0	"Lex. dge slon ma'inu ma khebs ras ""ein Tuch,"
 740	12	3741	german_prose_with_translit			none	1	5	0	0	"das die Brüste der Nonne bedeckt"" (brDa)."
-740	13	3742	headword_line	དཔུང་ཆུང་	dpuṅ	high	1	1	0	0	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chun.
+740	13	3742	headword_line	དཔུང་ཆུང་	dpuṅ	high	2	1	0	0	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chuṅ.
 740	14	3743	headword_line	དཔུང་ཆེན་བཏེག་	dpuṅ	high	2	3	0	0	དཔུང་ཆེན་བཏེག་ dpuṅ chen bteg ein Heerla-
 740	15	3743	german_prose			none	0	2	0	0	ger aufschlagen, einen militäri-
 740	16	3743	german_prose			none	0	5	0	0	schen Stützpunkt einrichten; in den Krieg
