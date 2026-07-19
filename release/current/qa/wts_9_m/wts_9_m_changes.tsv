@@ -2099,3 +2099,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 380	59	1708	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	Mahäsattva, der stark durch Mitgefühl und
 394	82	1767	latin_other	vādavidhijnena	vādavidhijñena	A	sanskrit_high_freq_allowlist	1	"par bya ba = vādavidhijnena bhavitavyani ""es"
 279	59	1235	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	"རྱོགས་ཆུང་ ""myogs chun bescheiden, schwach,"
+303	62	1348	headword_line	than	thaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དམར་ཐང་ dmar than.

@@ -2177,6 +2177,33 @@ class PostprocessRegressionTests(unittest.TestCase):
                     expected_counts[label],
                 )
 
+    def test_reviewed_thang_consensus_rows_preserve_mixed_n_controls(self) -> None:
+        lines = {
+            (140, 14): "བཀའ་ཐང་ bka’ than alttib. bka’ tan Erlaß.",
+            (360, 30): "གོང་ཐང་ gon than Preis, Wert.",
+            (989, 131): "ཐང་ཐང་གྱེར་མཁས་ than than gyer mkhas Bez.",
+            (989, 136): "ཐང་ཐན་ than than sehr klein, mickrig.",
+            (988, 91): "ཐྲང་དཀར་ than dkar auch than kar.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("བཀའ་ཐང་ bka’ thaṅ alttib. bka’ tan", corrected)
+        self.assertIn("གོང་ཐང་ gon thaṅ Preis", corrected)
+        self.assertIn("ཐང་ཐང་གྱེར་མཁས་ thaṅ thaṅ gyer mkhas", corrected)
+        self.assertIn("ཐང་ཐན་ thaṅ than sehr klein", corrected)
+        self.assertIn("ཐྲང་དཀར་ than dkar auch than kar", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+            and row["from_token"] == "than"
+            and row["to_token"] == "thaṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
