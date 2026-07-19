@@ -6,7 +6,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 357
 - `tibetan_orthography_damage_candidates.tsv`: 1606
-- `tibetan_script_ng_witness_candidates.tsv`: 108
+- `tibetan_script_ng_witness_candidates.tsv`: 88
 - `reference_marker_candidates.tsv`: 1189
 - `reference_marker_token_families.tsv`: 488
 - `tibetan_initial_i_residual_candidates.tsv`: 0
@@ -22,9 +22,9 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | dollar_ś | $ (902) | ś (902) | 902 | review |
 | unknown | Lis (153), Li$ (42), lis (6) | Liś (201) | 201 | siglum_policy_review |
 | unknown | rol (145) | Rol (145) | 145 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (104) | chuṅ (104) | 104 | exact_promotion_candidate |
 | unknown | VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1) | ViśT (98) | 98 | siglum_policy_review |
 | unknown | ins (85), INS (1) | Ins (86) | 86 | siglum_policy_review |
+| tibetan_script_ng_witness | chun (84) | chuṅ (84) | 84 | exact_promotion_candidate |
 | unknown | Lsdz-K (33), L$dz-K (13) | Lśdz-K (46) | 46 | siglum_policy_review |
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
 | dngos_family | dnos (38) | dṅos (38) | 38 | exact_promotion_candidate |
