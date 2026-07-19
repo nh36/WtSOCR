@@ -38,6 +38,42 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertFalse(2 >= 3 * max(1, 2))
         self.assertTrue(6 >= 3 * max(1, 2))
 
+    def test_subjoined_ra_requires_r_in_consensus_target(self) -> None:
+        self.assertEqual(
+            consensus.syllable_identity_guard("ཐང", "thaṅ")[0],
+            "exact_same_tibetan_syllable",
+        )
+        self.assertEqual(
+            consensus.syllable_identity_guard("ཐྲང", "thaṅ")[0],
+            "consonantal_structure_mismatch",
+        )
+        self.assertEqual(
+            consensus.syllable_identity_guard("ཐྲང", "thraṅ")[0],
+            "exact_same_tibetan_syllable",
+        )
+
+    def test_later_citation_number_does_not_damage_headword_alignment(self) -> None:
+        line = "ཐང་ than npr. Kloster in 2 1531"
+        syllables, tail, tail_start = consensus.tibetan_syllables_and_tail(line)
+        latin = consensus.latin_headword_tokens(tail, len(syllables))
+        start = tail_start + latin[0][1]
+        end = start + len(latin[0][0])
+        self.assertEqual(
+            consensus.classify_damage_scope(line, tail_start, start, end),
+            "later_gloss_or_commentary",
+        )
+
+    def test_damage_before_aligned_phrase_remains_manual(self) -> None:
+        line = "ཐང་ ? than plain"
+        syllables, tail, tail_start = consensus.tibetan_syllables_and_tail(line)
+        latin = consensus.latin_headword_tokens(tail, len(syllables))
+        start = tail_start + latin[0][1]
+        end = start + len(latin[0][0])
+        self.assertEqual(
+            consensus.classify_damage_scope(line, tail_start, start, end),
+            "damage_before_latin_alignment",
+        )
+
     def test_builds_dban_candidate_from_internal_consensus(self) -> None:
         with TemporaryDirectory() as tmp:
             release = Path(tmp) / "release"
@@ -56,6 +92,37 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertEqual(rows[0]["source_latin_token"], "dban")
         self.assertEqual(rows[0]["proposed_latin_target"], "dbaṅ")
         self.assertEqual(rows[0]["alignment_category"], "dominant_internal_consensus")
+
+    def test_single_attestation_is_insufficient_not_competing(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            path = qa / "wts_1_34_line_zones.tsv"
+            path.write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tཐང་ thaṅ\n"
+                "1\t2\theadword_line\tཐང་ than\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_consensus_rows(release)
+        self.assertEqual(rows[0]["alignment_category"], "insufficient_consensus")
+
+    def test_subjoined_ra_bad_alignment_is_never_high_confidence(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            path = qa / "wts_1_34_line_zones.tsv"
+            path.write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tཐྲང་ thaṅ\n"
+                "1\t2\theadword_line\tཐྲང་ than\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_consensus_rows(release)
+        self.assertEqual(rows[0]["alignment_category"], "syllable_structure_mismatch")
+        self.assertNotEqual(rows[0]["confidence"], "high")
 
 
 if __name__ == "__main__":

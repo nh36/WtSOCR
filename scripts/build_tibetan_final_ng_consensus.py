@@ -20,6 +20,13 @@ POSTPROCESS_TOKEN_RE = re.compile(
 TIBETAN_BLOCK_RE = re.compile(r"[\u0F00-\u0FFF][\u0F00-\u0FFF\s]*")
 TIBETAN_SYLLABLE_RE = re.compile(r"[\u0F40-\u0FBC]+")
 SOURCE_FINALS = "nñńňh"
+VISIBLE_DAMAGE_RE = re.compile(r"[{}?¡£$%]|\d{2,}|SQ")
+SUBJOINED_CONSONANTS = {
+    "ྲ": "r",
+    "ྱ": "y",
+    "ླ": "l",
+    "ྭ": "w",
+}
 GERMAN_STOP_WORDS = {
     "auch", "bez", "die", "der", "das", "ein", "eine", "einer", "für",
     "kurzf", "lex", "macht", "npr", "oder", "und", "vgl",
@@ -95,6 +102,44 @@ def source_variant_for_target(source: str, target: str) -> bool:
     return source.lower().endswith(tuple(SOURCE_FINALS))
 
 
+def syllable_identity_guard(syllable: str, target: str) -> tuple[str, str]:
+    """Reject consensus targets that omit an explicit subjoined consonant."""
+    missing = [
+        latin
+        for tibetan, latin in SUBJOINED_CONSONANTS.items()
+        if tibetan in syllable and latin not in target.lower()
+    ]
+    if missing:
+        return (
+            "consonantal_structure_mismatch",
+            "Proposed target omits explicit Tibetan subjoined "
+            + ", ".join(missing)
+            + "; requires a syllable-specific analysis.",
+        )
+    return "exact_same_tibetan_syllable", ""
+
+
+def classify_damage_scope(
+    line: str,
+    tibetan_end: int,
+    latin_phrase_start: int,
+    latin_phrase_end: int,
+) -> str:
+    matches = list(VISIBLE_DAMAGE_RE.finditer(line))
+    if not matches:
+        return "none"
+    if any(match.start() < tibetan_end for match in matches):
+        return "tibetan_headword_overlap"
+    if any(
+        latin_phrase_start <= match.start() < latin_phrase_end
+        for match in matches
+    ):
+        return "latin_headword_overlap"
+    if any(match.start() < latin_phrase_start for match in matches):
+        return "damage_before_latin_alignment"
+    return "later_gloss_or_commentary"
+
+
 def collect_aligned_rows(
     release_root: Path,
 ) -> tuple[list[dict[str, str]], dict[str, Counter[str]]]:
@@ -113,6 +158,9 @@ def collect_aligned_rows(
             latin = latin_headword_tokens(tail, len(syllables))
             if len(latin) < len(syllables):
                 continue
+            latin_phrase_start = tail_start + latin[0][1]
+            last_token, last_start = latin[len(syllables) - 1]
+            latin_phrase_end = tail_start + last_start + len(last_token)
             for position, syllable in enumerate(syllables):
                 if not ends_in_tibetan_ng(syllable):
                     continue
@@ -140,6 +188,9 @@ def collect_aligned_rows(
                     "latin_token": token,
                     "context_excerpt": line,
                     "zone": row.get("zone", ""),
+                    "tibetan_end": str(tail_start),
+                    "latin_phrase_start": str(latin_phrase_start),
+                    "latin_phrase_end": str(latin_phrase_end),
                 }
                 aligned.append(aligned_row)
                 if "ṅ" in token.lower():
@@ -165,23 +216,47 @@ def build_consensus_rows(release_root: Path) -> list[dict[str, str]]:
             not competing
             or target_count >= 3 * sum(competing.values())
         )
-        damaged = bool(re.search(r"[{}?¡£$%]|\d{2,}|SQ", row["context_excerpt"]))
+        identity_status, identity_note = syllable_identity_guard(
+            row["tibetan_syllable"],
+            target,
+        )
+        damage_scope = classify_damage_scope(
+            row["context_excerpt"],
+            int(row["tibetan_end"]),
+            int(row["latin_phrase_start"]),
+            int(row["latin_phrase_end"]),
+        )
+        aligned_damage = damage_scope in {
+            "tibetan_headword_overlap",
+            "latin_headword_overlap",
+            "damage_before_latin_alignment",
+        }
         marker = source[:1] in {"T", "I", "\\", "/"}
         if marker:
             category = "marker_attached"
             confidence = "manual"
             action = "separate_marker_and_final_ng_review"
             deferred = "Reference-marker reconstruction requires independent evidence."
-        elif damaged:
+        elif identity_status == "consonantal_structure_mismatch":
+            category = "syllable_structure_mismatch"
+            confidence = "manual"
+            action = "syllable_specific_analysis"
+            deferred = identity_note
+        elif aligned_damage:
             category = "damaged_context"
             confidence = "manual"
             action = "manual_alignment_review"
-            deferred = "Other OCR damage remains on the aligned phrase."
+            deferred = "OCR damage overlaps or precedes the aligned headword phrase."
         elif dominant:
             category = "dominant_internal_consensus"
             confidence = "high"
             action = "exact_review_candidate"
             deferred = ""
+        elif target_count == 1 and not competing:
+            category = "insufficient_consensus"
+            confidence = "low"
+            action = "defer"
+            deferred = "Only one accepted aligned target attestation is available."
         else:
             category = "competing_latin_forms"
             confidence = "low"
@@ -202,6 +277,15 @@ def build_consensus_rows(release_root: Path) -> list[dict[str, str]]:
                 ),
                 "alignment_category": category,
                 "evidence_type": "positionally_aligned_corpus_consensus",
+                "syllable_identity_guard": identity_status,
+                "consensus_basis": (
+                    "strong_accepted_form_consensus"
+                    if dominant
+                    else "single_accepted_attestation"
+                    if target_count == 1 and not competing
+                    else "non_dominant_accepted_forms"
+                ),
+                "damage_scope": damage_scope,
                 "confidence": confidence,
                 "suggested_action": action,
                 "context_excerpt": row["context_excerpt"],
@@ -225,8 +309,8 @@ FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "source_latin_token", "proposed_latin_target", "accepted_form_count",
     "competing_form_counts", "alignment_category", "evidence_type",
-    "confidence", "suggested_action", "context_excerpt", "reason_for_deferral",
-    "accepted_total",
+    "syllable_identity_guard", "consensus_basis", "damage_scope", "confidence",
+    "suggested_action", "context_excerpt", "reason_for_deferral", "accepted_total",
 ]
 
 
