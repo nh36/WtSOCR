@@ -358,8 +358,22 @@ def build_family_rankings(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     )
 
 
-def build_same_entry_echo_rows(release_root: Path) -> list[dict[str, str]]:
+def build_same_entry_echo_rows(
+    release_root: Path,
+    decisions_path: Path | None = None,
+) -> list[dict[str, str]]:
     aligned, accepted = collect_aligned_rows(release_root)
+    if decisions_path is None:
+        decisions_path = Path("data/reviewed_final_ng_echo_decisions.tsv")
+    decisions = {}
+    if decisions_path.exists():
+        for decision in read_tsv(decisions_path):
+            key = (
+                decision["volume"], decision["page"], decision["line"],
+                decision["token_index"], decision["tibetan_syllable"],
+                decision["source_token"], decision["proposed_target"],
+            )
+            decisions[key] = decision
     echoes: list[dict[str, str]] = []
     seen: set[tuple[str, str, str, int]] = set()
     for row in aligned:
@@ -406,6 +420,13 @@ def build_same_entry_echo_rows(release_root: Path) -> list[dict[str, str]]:
                 category = "uncertain"
                 status = "defer"
                 reason = "No explicit entry-structure cue establishes lemma identity."
+            decision = decisions.get(
+                (
+                    row["volume"], row["page"], row["line"], str(token_index),
+                    row["tibetan_syllable"], source, target,
+                ),
+                {},
+            )
             echoes.append(
                 {
                     "volume": row["volume"],
@@ -422,6 +443,9 @@ def build_same_entry_echo_rows(release_root: Path) -> list[dict[str, str]]:
                     "evidence": "same_line_entry_structure_after_positional_alignment",
                     "review_status": status,
                     "reason": reason,
+                    "prior_decision": decision.get("decision", ""),
+                    "decision_rationale": decision.get("rationale", ""),
+                    "active_queue": "no" if decision.get("decision") else "yes",
                     "context_excerpt": line,
                 }
             )
@@ -454,7 +478,8 @@ ECHO_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "reviewed_canonical_target", "aligned_source_token",
     "additional_source_token", "context_between", "proposed_target",
-    "echo_category", "evidence", "review_status", "reason", "context_excerpt",
+    "echo_category", "evidence", "review_status", "reason", "prior_decision",
+    "decision_rationale", "active_queue", "context_excerpt",
 ]
 
 

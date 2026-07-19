@@ -1,0 +1,3 @@
+volume	page	line	token_index	tibetan_syllable	source_token	proposed_target	decision	echo_category	evidence	rationale	reviewing_batch	review_date	reconsideration_prerequisite
+wts_1_34	393	183	4	གླང	glan	glaṅ	accepted	explicit_same_lemma_repetition	same_line_entry_structure_after_positional_alignment	The expression after auch independently repeats the same གླང element.	tibetan_glang_same_entry_echo_batch_20260719	2026-07-19	
+wts_8_b	68	56	6	གླང	glan	glaṅ	accepted	explicit_same_lemma_repetition	same_line_entry_structure_after_positional_alignment	The alternate expression repeats གླང; neighbouring no and ban remain separately damaged.	tibetan_glang_same_entry_echo_batch_20260719	2026-07-19	
