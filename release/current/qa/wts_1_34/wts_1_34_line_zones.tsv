@@ -29306,8 +29306,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 211	201	2720	german_prose			none	0	3	0	0	— „[falls] chinesische Offiziere mit Solda-
 211	203	2720	german_prose			none	0	3	0	0	ten zum Transport von Geräten [unterwegs
 211	205	2720	german_prose			none	0	2	0	0	sind]“ (Wadd135n 25).
-212	1	2721	headword_line	སྐྱེལ་ཆང་	skyel	medium	1	0	0	0	སྐྱེལ་ཆང་ skyel chan
-212	3	2722	headword_line	སྐྱེལ་ཆང་	skyel	medium	1	1	0	0	སྐྱེལ་ཆང་ skyel chan Abschiedstrunk.
+212	1	2721	headword_line	སྐྱེལ་ཆང་	skyel	medium	1	0	0	0	སྐྱེལ་ཆང་ skyel chaṅ
+212	3	2722	headword_line	སྐྱེལ་ཆང་	skyel	medium	1	1	0	0	སྐྱེལ་ཆང་ skyel chaṅ Abschiedstrunk.
 212	5	2722	german_prose_with_translit			none	1	3	0	0	Lex. skyel ma’i chan „Bier zum Geleit“
 212	6	2722	german_prose			none	0	1	0	0	(Dagy).
 212	8	2723	headword_line	སྐྱེལ་དར་	skyel	medium	1	1	0	0	སྐྱེལ་དར་ skyel dar Abschiedsschal.
@@ -87951,7 +87951,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 610	23	7469	tibetan_latin_mixed			none	2	0	0	0	nad sogs ༡ zin pa „Krankheit usw. geheilt
 610	24	7469	german_prose			none	0	1	0	0	haben“ (Dagy).
 610	26	7470	headword_line	བཅོས་མ་	ma	medium	1	0	0	0	བཅོས་མ་ bcos ma
-610	28	7471	headword_line	ཁབཅོས་པའི་ཆང་	pa’i	high	1	1	0	0	ཁབཅོས་པའི་ཆང་ bcos pa’i chan ein alkoholisches
+610	28	7471	headword_line	ཁབཅོས་པའི་ཆང་	pa’i	high	1	1	0	0	ཁབཅོས་པའི་ཆང་ bcos pa’i chaṅ ein alkoholisches
 610	30	7471	german_prose			none	0	1	0	0	Getränk.
 610	32	7471	german_prose_with_translit			none	2	1	0	0	’bru’i chan dan / - „Alkoholisches aus
 610	33	7471	german_prose_with_translit			none	1	3	0	0	Getreide und bcos pa’i chan“ (Prav 130,5);
@@ -90525,26 +90525,26 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	36	7642	german_prose			none	0	2	0	0	schwere Schläfen“ (Vmst 114a).
 628	38	7642	german_prose			none	0	2	0	0	Lex. mada (Ak 199.37).
 628	40	7642	german_prose			none	0	1	0	0	SA ’chan Tcan.
-628	42	7643	headword_line	ཆང་ཀྱར་	kyur	medium	1	1	0	0	ཆང་ཀྱར་ chan kyur (zw.) anhäufen.
+628	42	7643	headword_line	ཆང་ཀྱར་	kyur	medium	1	1	0	0	ཆང་ཀྱར་ chaṅ kyur (zw.) anhäufen.
 628	43	7643	german_prose_with_translit			none	5	2	0	0	bde ba yun tun ~ byin ba dan „so daß das
 628	45	7643	german_prose_with_translit			none	1	2	0	0	Glück auf Dauer angehäuft werden konnte
 628	46	7643	german_prose			none	0	1	0	0	(?)“ (135 W41).
-628	48	7644	headword_line	ཆང་།ཁང་	khaṅ Wirtshaus	high	2	0	0	0	ཆང་།ཁང་ chan khaṅ Wirtshaus.
+628	48	7644	headword_line	ཆང་།ཁང་	khaṅ Wirtshaus	high	2	0	0	0	ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.
 628	50	7644	german_prose_with_translit			none	4	4	0	0	Lex. chan tshon sa’i khan pa „Haus, in dem
 628	51	7644	german_prose			none	0	1	0	0	chan verkauft wird“ (Dagy).
-628	53	7644	tibetan_only	ཆང་ཚུང་		none	0	0	0	0	ཆང་ཚུང་ chan chun
-628	55	7645	headword_line	ཆང་ཏྱིམ་	khyim Wirtshaus	high	2	0	0	0	ཆང་ཏྱིམ་ chan khyim Wirtshaus.
+628	53	7644	tibetan_only	ཆང་ཚུང་		none	0	0	0	0	ཆང་ཚུང་ chaṅ chun
+628	55	7645	headword_line	ཆང་ཏྱིམ་	khyim Wirtshaus	high	2	0	0	0	ཆང་ཏྱིམ་ chaṅ khyim Wirtshaus.
 628	56	7645	german_prose_with_translit			none	2	2	0	0	Lex. chan khan la (Dagy).
-628	58	7646	headword_line	ཆང་ཏུ་	khyu	high	2	2	0	0	ཆང་ཏུ་ chan khyu Bez. für Versammlung,
+628	58	7646	headword_line	ཆང་ཏུ་	khyu	high	2	2	0	0	ཆང་ཏུ་ chaṅ khyu Bez. für Versammlung,
 628	60	7646	german_prose			none	0	1	0	0	» Trinkrunde.
 628	62	7646	german_prose_with_translit			none	5	1	0	0	Lex. tshogs pa’i don (brDa); chan thun tshogs
 628	63	7646	german_prose_with_translit			none	1	4	0	0	pa „eine Gruppe von Alkoholtrinkern“
 628	64	7646	german_prose_with_translit			none	4	1	0	0	(Dagy); tshogs pa’am tshogs (TIC); - ni
 628	65	7646	latin_other			none	2	0	0	0	tshogs pa (116 5,10).
-628	67	7647	headword_line	ཆང་ཏྱེམ་	khyem	high	1	3	0	0	ཆང་ཏྱེམ་ chan khyem ein Behälter zum Ein-
+628	67	7647	headword_line	ཆང་ཏྱེམ་	khyem	high	1	3	0	0	ཆང་ཏྱེམ་ chaṅ khyem ein Behälter zum Ein-
 628	68	7647	german_prose			none	0	1	0	0	schenken von chan.
 628	70	7647	german_prose_with_translit			none	1	2	0	0	Lex. chan blugs snod cig (Dagy).
-628	72	7647	tibetan_only	ཆང་འགག་		none	0	1	0	0	ཆང་འགག་ chan ’gag auch chan ’gags.
+628	72	7647	tibetan_only	ཆང་འགག་		none	0	1	0	0	ཆང་འགག་ chaṅ ’gag auch chaṅ ’gags.
 628	74	7647	german_prose			none	0	2	0	0	1. Maische, Malzrückstände.
 628	76	7647	german_prose_with_translit			none	3	2	0	0	chan ’gags sban ma tsam Zig mar la Itun
 628	77	7647	latin_other			none	1	0	0	0	(metr.) „so viele fielen nach unten, wie es
@@ -90555,14 +90555,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	83	7647	other			none	0	0	0	0	(TTC).
 628	85	7647	german_prose			none	0	2	0	0	2. Gefäß für chan.
 628	87	7647	german_prose_with_translit			none	1	2	0	0	Lex. chan snod kyi min (Dagy).
-628	89	7648	headword_line	ཆང་རྒན་	rgan	high	1	0	0	0	ཆང་རྒན་ chan rgan.
+628	89	7648	headword_line	ཆང་རྒན་	rgan	high	1	0	0	0	ཆང་རྒན་ chaṅ rgan.
 628	91	7648	german_prose			none	0	1	0	0	1. Tchan 1.
 628	93	7648	german_prose			none	0	1	0	0	2. Alkoholiker.
 628	95	7648	german_prose_with_translit			none	3	3	0	0	Lex. chan sin tu ’thun ba’i mi „ein Mensch,
 628	96	7648	german_prose			none	0	2	0	0	der viel chan trinkt“ (Dagy).
 628	98	7649	headword_line	ང་ཅན	can	medium	1	2	0	0	"ང་ཅན"" chan can Weinbecher; vgl. chin. &"
 628	99	7649	german_prose			none	0	1	0	0	chan (LAUFER 1916: 523 Nr. 283).
-628	101	7649	headword_line	ཆང་ཆུང་	chuṅ	high	2	2	0	0	ཆང་ཆུང་ chan chuṅ auch chan ne chuṅ ne ein
+628	101	7649	headword_line	ཆང་ཆུང་	chuṅ	high	2	2	0	0	ཆང་ཆུང་ chaṅ chuṅ auch chaṅ ne chuṅ ne ein
 628	102	7649	other			none	0	0	0	0	wenig.
 628	104	7649	latin_other			none	2	0	0	0	ko mig (r. mog) gi chu chani ne chun ne tsam
 628	105	7649	german_prose			none	0	1	0	0	„nur klitzekleine Wasserpfützen“ (dPe
@@ -90570,8 +90570,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	108	7649	german_prose_with_translit			none	1	1	0	0	Lex. cun zad / chan ne chun ne (brDa); chun
 628	109	7649	german_prose_with_translit			none	1	1	0	0	nu’i don (Dagy).
 628	111	7649	other			none	0	0	0	0	200
-628	113	7650	headword_line	ཆང་ཆེམ་ཅན་	can	medium	1	0	0	0	ཆང་ཆེམ་ཅན་ chan chem can
-628	115	7651	headword_line	ཆང་ཆེམ་ཅན་	can	medium	1	3	0	0	ཆང་ཆེམ་ཅན་ chan chem can Bez. für Betrun-
+628	113	7650	headword_line	ཆང་ཆེམ་ཅན་	can	medium	1	0	0	0	ཆང་ཆེམ་ཅན་ chaṅ chem can
+628	115	7651	headword_line	ཆང་ཆེམ་ཅན་	can	medium	1	3	0	0	ཆང་ཆེམ་ཅན་ chaṅ chem can Bez. für Betrun-
 628	116	7651	other			none	0	0	0	0	kener.
 628	118	7651	german_prose_with_translit			none	2	2	0	0	Lex. ra ro ba’i mi (Dagy).
 628	120	7651	other			none	0	0	0	0	"BEN"" chan chems."
@@ -90582,7 +90582,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	129	7651	latin_other			none	4	0	0	0	zugetan“ (brDa); - can = chan la dga’
 628	130	7651	german_prose_with_translit			none	1	5	0	0	mkhan „einer, der dem Bier zugetan ist“
 628	132	7651	latin_other			none	1	0	0	0	(brDa).
-628	134	7652	headword_line	ཆང་ཐུབ་	thub	high	1	0	0	0	ཆང་ཐུབ་ chan thub.
+628	134	7652	headword_line	ཆང་ཐུབ་	thub	high	1	0	0	0	ཆང་ཐུབ་ chaṅ thub.
 628	136	7652	german_prose			none	0	4	0	0	1. Bez. für Person, Mensch.
 628	138	7652	german_prose_with_translit			none	1	2	0	0	Lex. gan zag (TTC); - ni gan zag (Lis
 628	139	7652	other			none	0	0	0	0	15,12).
@@ -90605,15 +90605,15 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	162	7652	german_prose			none	0	2	0	0	gnas = pänagosthikä (Ak 258.42).
 628	164	7653	headword_line	ཆང་དད་ཅན་ ར་འ	can	medium	1	3	0	0	ཆང་དད་ཅན་ ར་འ dad can Bez. für Alkoholi-
 628	166	7653	german_prose_with_translit			none	3	2	0	0	Lex. chan la dga’ ba’i min (Dagy).
-628	167	7653	tibetan_only	ཆང་དྲེགས་		none	0	0	0	0	ཆང་དྲེགས་ chan dregs betrunken.
+628	167	7653	tibetan_only	ཆང་དྲེགས་		none	0	0	0	0	ཆང་དྲེགས་ chaṅ dregs betrunken.
 628	169	7653	german_prose_with_translit			none	1	2	0	0	Lex. chan gis myos pa „von chan berauscht“
 628	171	7653	german_prose			none	0	1	0	0	(Dagy).
 628	173	7653	other			none	0	0	0	0	201
 628	175	7653	latin_other			none	1	0	0	0	SAU chan ba
-628	177	7653	tibetan_only	ཆང་འདོན་		none	0	2	0	0	ཆང་འདོན་ chan ’don Gefäß, um chan zu trin-
+628	177	7653	tibetan_only	ཆང་འདོན་		none	0	2	0	0	ཆང་འདོན་ chaṅ ’don Gefäß, um chaṅ zu trin-
 628	179	7653	other			none	0	0	0	0	ken.
 628	181	7653	german_prose_with_translit			none	1	2	0	0	Lex. chan ’thun snod (Dagy).
-628	183	7653	tibetan_only	ཆང་ནད་		none	0	2	0	0	ཆང་ནད་ chan nad Alkoholismus, Alkoholver-
+628	183	7653	tibetan_only	ཆང་ནད་		none	0	2	0	0	ཆང་ནད་ chaṅ nad Alkoholismus, Alkoholver-
 628	184	7653	latin_other			none	1	0	0	0	giftung.
 628	186	7653	latin_other			none	6	0	0	0	= kyi rkyen gyis bskam pa’i nad dan / rims
 628	187	7653	latin_other			none	4	0	0	0	dan / lud pa dan „Erkrankungen infolge
@@ -90625,16 +90625,16 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	193	7653	latin_other			none	3	0	0	0	ba dan ... sel byed yin (metr.) „kaltes
 628	194	7653	german_prose_with_translit			none	1	2	0	0	Wasser beseitigt Alkoholvergiftung und
 628	195	7653	german_prose			none	0	2	0	0	Benommenheit“ (Ahs 1.5.15c).
-628	197	7654	headword_line	ཆང་གནས་	Wirtshaus	high	1	1	0	0	ཆང་གནས་ chan gnas Wirtshaus, Schenke.
+628	197	7654	headword_line	ཆང་གནས་	Wirtshaus	high	1	1	0	0	ཆང་གནས་ chaṅ gnas Wirtshaus, Schenke.
 628	198	7654	german_prose_with_translit			none	2	2	0	0	Lex. chan khan gi min (Dagy).
-628	200	7654	tibetan_only	ཆང་སྣོད་		none	0	1	0	0	ཆང་སྣོད་ chan snod Bierkrug.
+628	200	7654	tibetan_only	ཆང་སྣོད་		none	0	1	0	0	ཆང་སྣོད་ chaṅ snod Bierkrug.
 628	202	7654	german_prose_with_translit			none	1	1	0	0	dnul chu ~ gfis ’thuns pas „als er zwei
 628	203	7654	german_prose			none	0	2	0	0	Bierkrüge Quecksilber getrunken hatte“
 628	204	7654	german_prose			none	0	1	0	0	(Tär 146,1).
-628	206	7655	headword_line	ཆང་པ་སྟོང་པ་	pa stoṅ pa	high	2	2	0	0	ཆང་པ་སྟོང་པ་ chan pa stoṅ pa mit leeren Hän-
+628	206	7655	headword_line	ཆང་པ་སྟོང་པ་	pa stoṅ pa	high	2	2	0	0	ཆང་པ་སྟོང་པ་ chaṅ pa stoṅ pa mit leeren Hän-
 628	207	7655	german_prose			none	0	1	0	0	den.
 628	208	7655	german_prose_with_translit			none	1	2	0	0	Lex. lag ston la (Dagy).
-628	209	7655	tibetan_only	ཆང་སྒགས་		none	0	3	0	0	ཆང་སྒགས་ chan spags TIsampa, die mit chan
+628	209	7655	tibetan_only	ཆང་སྒགས་		none	0	3	0	0	ཆང་སྒགས་ chaṅ spags TIsampa, die mit chaṅ
 628	210	7655	other			none	0	0	0	0	zubereitet wurde.
 628	212	7655	german_prose_with_translit			none	2	1	0	0	Lex. chan zas (brDa); chan gis spags pa’i zan
 628	213	7655	german_prose_with_translit			none	1	2	0	0	(Dagy); char lpags (r. spags) = bhaksana (Ak
@@ -90646,17 +90646,17 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	223	7655	german_prose_with_translit			none	2	3	0	0	SR chan ba Faust; vgl. Ichans pa 1.
 628	225	7655	latin_other			none	6	0	0	0	de yis ~ ston pa mthon nas ni / byis pa ... hu
 628	226	7655	german_prose_with_translit			none	1	2	0	0	ba (metr.) „wenn es aber die leere Faust
-629	1	7655	tibetan_only	ཆང་བན་		none	0	0	0	0	ཆང་བན་ chan ban
+629	1	7655	tibetan_only	ཆང་བན་		none	0	0	0	0	ཆང་བན་ chaṅ ban
 629	3	7655	german_prose			none	0	3	0	0	sieht, weint das Kind“ (VinUp 62,3).
 629	4	7655	german_prose_with_translit			none	1	2	0	0	Lex. ~ (v. I. chans) ston pa = riktamustih
 629	5	7655	german_prose			none	0	1	0	0	(Mvy 2831).
-629	7	7656	headword_line	ཆང་བན་	p’an	high	1	2	0	0	ཆང་བན་ chan ban Biergefäß; vgl. chin. ཏཱཾ p’an
+629	7	7656	headword_line	ཆང་བན་	p’an	high	1	2	0	0	ཆང་བན་ chaṅ ban Biergefäß; vgl. chin. ཏཱཾ p’an
 629	8	7656	german_prose_with_translit			none	1	3	0	0	Teller, & p’en bzw. Il wan Schüssel.
 629	10	7656	german_prose_with_translit			none	3	1	0	0	de la ~ (Gl. chan bu yin nam) ... sogs drans
 629	11	7656	german_prose			none	0	5	0	0	„darauf werden ein mit Bier gefülltes Gefäß
 629	12	7656	german_prose			none	0	2	0	0	(Gl. soll es nicht ein chan bu sein?) usw.
 629	13	7656	german_prose			none	0	1	0	0	gestellt“ (MigIo 243,27).
-629	15	7657	headword_line	ཆང་ཁ་	phyan	high	1	1	0	0	ཆང་ཁ་ chan bu auch chans bu, 'phyan bu
+629	15	7657	headword_line	ཆང་ཁ་	phyan	high	1	1	0	0	ཆང་ཁ་ chaṅ bu auch chans bu, 'phyan bu
 629	17	7657	german_prose_with_translit			none	1	3	0	0	> Teigklümpchen aus Tsampa, das mit
 629	18	7657	german_prose_with_translit			none	1	3	0	0	der Hand gerollt, zusammengepreßt und
 629	19	7657	german_prose			none	0	4	0	0	als Opfer dargebracht wird; ein Bissen
@@ -90688,14 +90688,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 629	52	7658	german_prose_with_translit			none	3	1	0	0	Lex. chan khan nam khrun rwa (brDa);
 629	53	7658	german_prose_with_translit			none	2	1	0	0	chan khan gi min (Dagy).
 629	55	7658	other			none	0	0	0	0	SANT chan rag
-629	57	7659	headword_line	ཆང་རྩི་	rtsi	high	1	1	0	0	ཆང་རྩི་ chan rtsi Bierhefe.
+629	57	7659	headword_line	ཆང་རྩི་	rtsi	high	1	1	0	0	ཆང་རྩི་ chaṅ rtsi Bierhefe.
 629	59	7659	german_prose			none	0	3	0	0	Lex. nagnahü (Ak 258.42); chan slon byed
 629	60	7659	german_prose_with_translit			none	2	3	0	0	kyi phabs „Hefe zum Gären von chan“
 629	62	7659	german_prose			none	0	1	0	0	(Dagy).
-629	64	7660	headword_line	ཆང་ཚང་	tshah Wirtshaus	high	2	1	0	0	ཆང་ཚང་ chan tshah Wirtshaus, Schenke.
+629	64	7660	headword_line	ཆང་ཚང་	tshah Wirtshaus	high	2	1	0	0	ཆང་ཚང་ chaṅ tshah Wirtshaus, Schenke.
 629	66	7660	german_prose_with_translit			none	2	2	0	0	Lex. chan khan (brDa, Dagy); ~ chan mal =
 629	67	7660	german_prose			none	0	2	0	0	sundäpäna (Ak 258.40).
-629	69	7661	headword_line	ཆང་འཚོང་	tshon	high	2	1	0	0	ཆང་འཚོང་ chan ’tshon auch chan tshon, char
+629	69	7661	headword_line	ཆང་འཚོང་	tshon	high	2	1	0	0	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
 629	71	7661	german_prose_with_translit			none	3	2	0	0	tshon ba Wirt, Schankwirt; ¬~ ba
 629	72	7661	german_prose			none	0	4	0	0	Verkauf von alkoholischen Getränken; -
 629	73	7661	german_prose_with_translit			none	3	2	0	0	ma auch chan tshon ma Wirtin.
@@ -90726,7 +90726,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 629	105	7662	german_prose_with_translit			none	1	1	0	0	chans bzuns ’chan bzun Zes pa’an snan „wie:
 629	106	7662	german_prose			none	0	3	0	0	Griff, hierfür erscheint auch ’chan zuns,
 629	107	7662	latin_other			none	1	0	0	0	chans bzuns, ’chan bzun“ (brDa).
-629	109	7663	headword_line	ཆང་རག་	chaṅ	high	1	2	0	0	ཆང་རག་ chan rag Arrak und chaṅ.
+629	109	7663	headword_line	ཆང་རག་	chaṅ	high	1	2	0	0	ཆང་རག་ chaṅ rag Arrak und chaṅ.
 629	111	7663	other			none	0	0	0	0	202
 629	113	7663	german_prose_with_translit			none	2	2	0	0	Lex. chan dan a rag (brDa, Dagy).
 629	115	7663	other			none	0	0	0	0	SAT chanrwa
@@ -90750,7 +90750,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 629	141	7663	german_prose_with_translit			none	2	1	0	0	bar bcud btsags pa „chan sins: Getreide usw.
 629	142	7663	german_prose_with_translit			none	1	3	0	0	einlegen und ungekocht [gären lassen], den
 629	143	7663	german_prose			none	0	1	0	0	Saft abtropfen lassen“ (dPeD 194,4).
-629	145	7664	headword_line	ཆང་ལྷས་	lhas Wirtshaus	high	2	1	0	0	ཆང་ལྷས་ chan lhas Wirtshaus, Biergarten.
+629	145	7664	headword_line	ཆང་ལྷས་	lhas Wirtshaus	high	2	1	0	0	ཆང་ལྷས་ chaṅ lhas Wirtshaus, Biergarten.
 629	147	7664	german_prose_with_translit			none	2	1	0	0	Lex. chan rwa (brDa); chan rwa’am chan
 629	149	7664	german_prose_with_translit			none	1	1	0	0	khan (Dagy).
 629	151	7665	headword_line	ཆང་ས	pa	medium	1	0	0	0	ཆང་ས” chans pa.
@@ -132088,7 +132088,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 911	126	9984	latin_other			none	4	0	0	0	~ dan / rta sbans man po rma (7?// 7 nan du
 911	127	9984	german_prose_with_translit			none	2	1	0	0	bsgyur (r. skyur) „wirf viele Peitschen und
 911	128	9984	german_prose			none	0	4	0	0	Pferdeäpfel in den rMa-chu!“ (Glr 20,16).
-911	130	9985	headword_line	རྟ་ཆང་	rta	high	1	2	0	0	རྟ་ཆང་ rta chan vergorene Stutenmilch, Ku-
+911	130	9985	headword_line	རྟ་ཆང་	rta	high	1	2	0	0	རྟ་ཆང་ rta chaṅ vergorene Stutenmilch, Ku-
 911	131	9985	german_prose			none	0	1	0	0	myss (Neb 344).
 911	133	9985	latin_other			none	2	0	0	0	BEN rta chas Reitausstattung.
 911	135	9985	german_prose_with_translit			none	5	1	0	0	Lex. rta’i sga la sogs mkho bya’i skor (brDa);

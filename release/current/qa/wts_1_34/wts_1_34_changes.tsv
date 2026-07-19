@@ -27862,3 +27862,39 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1131	52	12134	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་རྒྱས་ཆོས་གླིང་ dar rgyas chos glin
 1294	1	12882	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་པོ་གླིང་ drag po glin
 1294	9	12883	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་པོ་གླིང་ drag po glin Bez. des sechsten
+212	1	2721	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱེལ་ཆང་ skyel chan
+212	3	2722	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱེལ་ཆང་ skyel chan Abschiedstrunk.
+610	28	7471	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁབཅོས་པའི་ཆང་ bcos pa’i chan ein alkoholisches
+628	42	7643	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཀྱར་ chan kyur (zw.) anhäufen.
+628	48	7644	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་།ཁང་ chan khaṅ Wirtshaus.
+628	53	7644	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཚུང་ chan chun
+628	55	7645	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཏྱིམ་ chan khyim Wirtshaus.
+628	58	7646	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཏུ་ chan khyu Bez. für Versammlung,
+628	67	7647	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཏྱེམ་ chan khyem ein Behälter zum Ein-
+628	72	7647	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་འགག་ chan ’gag auch chan ’gags.
+628	89	7648	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་རྒན་ chan rgan.
+628	101	7649	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཆུང་ chan chuṅ auch chan ne chuṅ ne ein
+628	113	7650	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཆེམ་ཅན་ chan chem can
+628	115	7651	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཆེམ་ཅན་ chan chem can Bez. für Betrun-
+628	134	7652	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཐུབ་ chan thub.
+628	167	7653	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་དྲེགས་ chan dregs betrunken.
+628	177	7653	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་འདོན་ chan ’don Gefäß, um chan zu trin-
+628	183	7653	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ནད་ chan nad Alkoholismus, Alkoholver-
+628	197	7654	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་གནས་ chan gnas Wirtshaus, Schenke.
+628	200	7654	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་སྣོད་ chan snod Bierkrug.
+628	206	7655	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་པ་སྟོང་པ་ chan pa stoṅ pa mit leeren Hän-
+628	209	7655	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་སྒགས་ chan spags TIsampa, die mit chan
+629	1	7655	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་བན་ chan ban
+629	7	7656	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་བན་ chan ban Biergefäß; vgl. chin. ཏཱཾ p’an
+629	15	7657	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཁ་ chan bu auch chans bu, 'phyan bu
+629	57	7659	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་རྩི་ chan rtsi Bierhefe.
+629	64	7660	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཚང་ chan tshah Wirtshaus, Schenke.
+629	69	7661	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་འཚོང་ chan ’tshon auch chan tshon, char
+629	109	7663	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་རག་ chan rag Arrak und chaṅ.
+629	145	7664	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ལྷས་ chan lhas Wirtshaus, Biergarten.
+911	130	9985	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟ་ཆང་ rta chan vergorene Stutenmilch, Ku-
+628	72	7647	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འགག་ chaṅ ’gag auch chan ’gags.
+628	101	7649	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་ཆུང་ chaṅ chuṅ auch chan ne chuṅ ne ein
+628	177	7653	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འདོན་ chaṅ ’don Gefäß, um chan zu trin-
+628	209	7655	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་སྒགས་ chaṅ spags TIsampa, die mit chan
+629	69	7661	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འཚོང་ chaṅ ’tshon auch chan tshon, char

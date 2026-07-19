@@ -2238,7 +2238,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.fixture_with_reviewed_lines(lines),
             label="wts_1_34",
         )
-        self.assertIn("ཆང་།ཁང་ chan khaṅ Wirtshaus.", corrected)
+        self.assertIn("ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.", corrected)
         self.assertIn("སྟེང་ཁང་ sten khaṅ", corrected)
         self.assertIn("dud khaṅ Badehaus; vgl. [%//95 khan,", corrected)
         self.assertIn("དྲི་བཟང་ཁང་ dri bzaṅ khaṅ", corrected)
@@ -2249,7 +2249,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "khan" and row["to_token"] == "khaṅ"
         ]
         self.assertEqual(len(reviewed), 4)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_gong_rows_preserve_repetitions_and_neighbours(self) -> None:
         lines = {
@@ -2330,7 +2330,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_1_34",
         )
         self.assertIn("རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel", corrected)
-        self.assertIn("ཆང་པ་སྟོང་པ་ chan pa stoṅ pa", corrected)
+        self.assertIn("ཆང་པ་སྟོང་པ་ chaṅ pa stoṅ pa", corrected)
         self.assertIn("སྟོང་ 'stoṅ", corrected)
         self.assertIn("སྟོང་གཉེར་ stoṅ 97707ˆ", corrected)
         self.assertIn("སྟོང་གསུམ་ stoṅ gsum 1000),", corrected)
@@ -2340,7 +2340,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "ston" and row["to_token"] == "stoṅ"
         ]
         self.assertEqual(len(reviewed), 5)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_kong_rows_preserve_distinct_syllables(self) -> None:
         lines = {
@@ -2464,6 +2464,22 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("mthon smon gliṅ", corrected)
         self.assertIn("གླིན་ glin genuine distinct syllable.", corrected)
         self.assertEqual(sum(row["to_token"] == "gliṅ" for row in changes), 2)
+
+    def test_reviewed_chang_rows_preserve_stong_and_distinct_forms(self) -> None:
+        lines = {
+            (628, 206): "ཆང་པ་སྟོང་པ་ chan pa stoṅ pa",
+            (628, 72): "ཆང་འགག་ chan ’gag auch chan ’gags.",
+            (200, 1): "ཆན་ chan genuine distinct syllable.",
+            (201, 1): "འཆང་ ’chan separate prefixed family.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("chaṅ pa stoṅ pa", corrected)
+        self.assertIn("chaṅ ’gag auch chaṅ ’gags", corrected)
+        self.assertIn("ཆན་ chan genuine distinct syllable.", corrected)
+        self.assertIn("འཆང་ ’chan separate prefixed family.", corrected)
+        self.assertEqual(sum(row["to_token"] == "chaṅ" for row in changes), 3)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

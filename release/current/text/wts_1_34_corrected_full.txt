@@ -39636,9 +39636,9 @@ phogs rgya dpon dan dmag mi bcas brten char
 
 ten zum Transport von Geräten [unterwegs
 
-sind]“ (Wadd135n 25).སྐྱེལ་ཆང་ skyel chan
+sind]“ (Wadd135n 25).སྐྱེལ་ཆང་ skyel chaṅ
 
-སྐྱེལ་ཆང་ skyel chan Abschiedstrunk.
+སྐྱེལ་ཆང་ skyel chaṅ Abschiedstrunk.
 
 Lex. skyel ma’i chan „Bier zum Geleit“
 (Dagy).
@@ -118844,7 +118844,7 @@ haben“ (Dagy).
 
 བཅོས་མ་ bcos ma
 
-ཁབཅོས་པའི་ཆང་ bcos pa’i chan ein alkoholisches
+ཁབཅོས་པའི་ཆང་ bcos pa’i chaṅ ein alkoholisches
 
 Getränk.
 
@@ -122285,23 +122285,23 @@ Lex. mada (Ak 199.37).
 
 SA ’chan Tcan.
 
-ཆང་ཀྱར་ chan kyur (zw.) anhäufen.
+ཆང་ཀྱར་ chaṅ kyur (zw.) anhäufen.
 bde ba yun tun ~ byin ba dan „so daß das
 
 Glück auf Dauer angehäuft werden konnte
 (?)“ (135 W41).
 
-ཆང་།ཁང་ chan khaṅ Wirtshaus.
+ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.
 
 Lex. chan tshon sa’i khan pa „Haus, in dem
 chan verkauft wird“ (Dagy).
 
-ཆང་ཚུང་ chan chun
+ཆང་ཚུང་ chaṅ chun
 
-ཆང་ཏྱིམ་ chan khyim Wirtshaus.
+ཆང་ཏྱིམ་ chaṅ khyim Wirtshaus.
 Lex. chan khan la (Dagy).
 
-ཆང་ཏུ་ chan khyu Bez. für Versammlung,
+ཆང་ཏུ་ chaṅ khyu Bez. für Versammlung,
 
 » Trinkrunde.
 
@@ -122310,12 +122310,12 @@ pa „eine Gruppe von Alkoholtrinkern“
 (Dagy); tshogs pa’am tshogs (TIC); - ni
 tshogs pa (116 5,10).
 
-ཆང་ཏྱེམ་ chan khyem ein Behälter zum Ein-
+ཆང་ཏྱེམ་ chaṅ khyem ein Behälter zum Ein-
 schenken von chan.
 
 Lex. chan blugs snod cig (Dagy).
 
-ཆང་འགག་ chan ’gag auch chan ’gags.
+ཆང་འགག་ chaṅ ’gag auch chaṅ ’gags.
 
 1. Maische, Malzrückstände.
 
@@ -122332,7 +122332,7 @@ Lex. snod nan - „im Gefäß gärt chan“
 
 Lex. chan snod kyi min (Dagy).
 
-ཆང་རྒན་ chan rgan.
+ཆང་རྒན་ chaṅ rgan.
 
 1. Tchan 1.
 
@@ -122344,7 +122344,7 @@ der viel chan trinkt“ (Dagy).
 ང་ཅན" chan can Weinbecher; vgl. chin. &
 chan (LAUFER 1916: 523 Nr. 283).
 
-ཆང་ཆུང་ chan chuṅ auch chan ne chuṅ ne ein
+ཆང་ཆུང་ chaṅ chuṅ auch chaṅ ne chuṅ ne ein
 wenig.
 
 ko mig (r. mog) gi chu chani ne chun ne tsam
@@ -122356,9 +122356,9 @@ nu’i don (Dagy).
 
 200
 
-ཆང་ཆེམ་ཅན་ chan chem can
+ཆང་ཆེམ་ཅན་ chaṅ chem can
 
-ཆང་ཆེམ་ཅན་ chan chem can Bez. für Betrun-
+ཆང་ཆེམ་ཅན་ chaṅ chem can Bez. für Betrun-
 kener.
 
 Lex. ra ro ba’i mi (Dagy).
@@ -122377,7 +122377,7 @@ mkhan „einer, der dem Bier zugetan ist“
 
 (brDa).
 
-ཆང་ཐུབ་ chan thub.
+ཆང་ཐུབ་ chaṅ thub.
 
 1. Bez. für Person, Mensch.
 
@@ -122410,7 +122410,7 @@ gnas = pänagosthikä (Ak 258.42).
 ཆང་དད་ཅན་ ར་འ dad can Bez. für Alkoholi-
 
 Lex. chan la dga’ ba’i min (Dagy).
-ཆང་དྲེགས་ chan dregs betrunken.
+ཆང་དྲེགས་ chaṅ dregs betrunken.
 
 Lex. chan gis myos pa „von chan berauscht“
 
@@ -122420,13 +122420,13 @@ Lex. chan gis myos pa „von chan berauscht“
 
 SAU chan ba
 
-ཆང་འདོན་ chan ’don Gefäß, um chan zu trin-
+ཆང་འདོན་ chaṅ ’don Gefäß, um chaṅ zu trin-
 
 ken.
 
 Lex. chan ’thun snod (Dagy).
 
-ཆང་ནད་ chan nad Alkoholismus, Alkoholver-
+ཆང་ནད་ chaṅ nad Alkoholismus, Alkoholver-
 giftung.
 
 = kyi rkyen gyis bskam pa’i nad dan / rims
@@ -122440,19 +122440,19 @@ ba dan ... sel byed yin (metr.) „kaltes
 Wasser beseitigt Alkoholvergiftung und
 Benommenheit“ (Ahs 1.5.15c).
 
-ཆང་གནས་ chan gnas Wirtshaus, Schenke.
+ཆང་གནས་ chaṅ gnas Wirtshaus, Schenke.
 Lex. chan khan gi min (Dagy).
 
-ཆང་སྣོད་ chan snod Bierkrug.
+ཆང་སྣོད་ chaṅ snod Bierkrug.
 
 dnul chu ~ gfis ’thuns pas „als er zwei
 Bierkrüge Quecksilber getrunken hatte“
 (Tär 146,1).
 
-ཆང་པ་སྟོང་པ་ chan pa stoṅ pa mit leeren Hän-
+ཆང་པ་སྟོང་པ་ chaṅ pa stoṅ pa mit leeren Hän-
 den.
 Lex. lag ston la (Dagy).
-ཆང་སྒགས་ chan spags TIsampa, die mit chan
+ཆང་སྒགས་ chaṅ spags TIsampa, die mit chaṅ
 zubereitet wurde.
 
 Lex. chan zas (brDa); chan gis spags pa’i zan
@@ -122469,13 +122469,13 @@ rtsi „Hefe zum Gären von chan“ (Dagy).
 SR chan ba Faust; vgl. Ichans pa 1.
 
 de yis ~ ston pa mthon nas ni / byis pa ... hu
-ba (metr.) „wenn es aber die leere Faustཆང་བན་ chan ban
+ba (metr.) „wenn es aber die leere Faustཆང་བན་ chaṅ ban
 
 sieht, weint das Kind“ (VinUp 62,3).
 Lex. ~ (v. I. chans) ston pa = riktamustih
 (Mvy 2831).
 
-ཆང་བན་ chan ban Biergefäß; vgl. chin. ཏཱཾ p’an
+ཆང་བན་ chaṅ ban Biergefäß; vgl. chin. ཏཱཾ p’an
 Teller, & p’en bzw. Il wan Schüssel.
 
 de la ~ (Gl. chan bu yin nam) ... sogs drans
@@ -122483,7 +122483,7 @@ de la ~ (Gl. chan bu yin nam) ... sogs drans
 (Gl. soll es nicht ein chan bu sein?) usw.
 gestellt“ (MigIo 243,27).
 
-ཆང་ཁ་ chan bu auch chans bu, 'phyan bu
+ཆང་ཁ་ chaṅ bu auch chans bu, 'phyan bu
 
 > Teigklümpchen aus Tsampa, das mit
 der Hand gerollt, zusammengepreßt und
@@ -122525,19 +122525,19 @@ chan khan gi min (Dagy).
 
 SANT chan rag
 
-ཆང་རྩི་ chan rtsi Bierhefe.
+ཆང་རྩི་ chaṅ rtsi Bierhefe.
 
 Lex. nagnahü (Ak 258.42); chan slon byed
 kyi phabs „Hefe zum Gären von chan“
 
 (Dagy).
 
-ཆང་ཚང་ chan tshah Wirtshaus, Schenke.
+ཆང་ཚང་ chaṅ tshah Wirtshaus, Schenke.
 
 Lex. chan khan (brDa, Dagy); ~ chan mal =
 sundäpäna (Ak 258.40).
 
-ཆང་འཚོང་ chan ’tshon auch chan tshon, char
+ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
 
 tshon ba Wirt, Schankwirt; ¬~ ba
 Verkauf von alkoholischen Getränken; -
@@ -122577,7 +122577,7 @@ chans bzuns ’chan bzun Zes pa’an snan „wie:
 Griff, hierfür erscheint auch ’chan zuns,
 chans bzuns, ’chan bzun“ (brDa).
 
-ཆང་རག་ chan rag Arrak und chaṅ.
+ཆང་རག་ chaṅ rag Arrak und chaṅ.
 
 202
 
@@ -122613,7 +122613,7 @@ bar bcud btsags pa „chan sins: Getreide usw.
 einlegen und ungekocht [gären lassen], den
 Saft abtropfen lassen“ (dPeD 194,4).
 
-ཆང་ལྷས་ chan lhas Wirtshaus, Biergarten.
+ཆང་ལྷས་ chaṅ lhas Wirtshaus, Biergarten.
 
 Lex. chan rwa (brDa); chan rwa’am chan
 
@@ -177806,7 +177806,7 @@ Lex. bram ze (brDa, Dagy).
 bsgyur (r. skyur) „wirf viele Peitschen und
 Pferdeäpfel in den rMa-chu!“ (Glr 20,16).
 
-རྟ་ཆང་ rta chan vergorene Stutenmilch, Ku-
+རྟ་ཆང་ rta chaṅ vergorene Stutenmilch, Ku-
 myss (Neb 344).
 
 BEN rta chas Reitausstattung.
