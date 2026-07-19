@@ -1981,7 +1981,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("sge’u chuṅ", corrected)
         self.assertIn("sgruṅ Erzählung", corrected)
         self.assertIn("rha’u chuṅ", corrected)
-        self.assertIn("nam chuṅ dban po", corrected)
+        self.assertIn("nam chuṅ dbaṅ po", corrected)
         self.assertIn("mthon chuṅ ba", corrected)
         self.assertIn(
             "Unreviewed chun, sgrun, and rha’u stay unchanged.",
@@ -1995,7 +1995,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             },
             {("chun", "chuṅ"), ("sgrun", "sgruṅ")},
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_repeated_lemma_final_ng_batch_is_exact(self) -> None:
         reviewed_lines = {
@@ -2091,6 +2091,35 @@ class PostprocessRegressionTests(unittest.TestCase):
         ]
         self.assertEqual(len(reviewed), 6)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_dban_consensus_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (52, 81): "ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dban po",
+                (52, 82): "A bibliographic dban and unrelated prose dban stay unchanged.",
+            },
+            "wts_8_b": {
+                (352, 41): 'དབང་པོ་ "dban po',
+                (352, 42): "Plain dban without the reviewed row stays unchanged.",
+            },
+        }
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                self.assertIn("dbaṅ po", corrected)
+                self.assertIn("dban", corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+                ]
+                self.assertEqual(len(reviewed), 1)
+                self.assertEqual(reviewed[0]["from_token"], "dban")
+                self.assertEqual(reviewed[0]["to_token"], "dbaṅ")
+                self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

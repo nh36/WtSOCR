@@ -38,14 +38,6 @@ wts_8_b	104	76	3	འཆང	chan	chaṅ	7		dominant_internal_consensus	positional
 wts_8_b	580	45	2	འཆིང	chin	chiṅ	3		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ལ་འཆིང་ sbrul chin.		3
 wts_8_b	83	25	2	ཆུང	chuh	chuṅ	126	lṅa:1; ruṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བུ་ཆུང་ bu chuh auch ~ ñu.		128
 wts_8_b	529	25	2	ཆུང	chun	chuṅ	126	lṅa:1; ruṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྤག་ཆུང་ sbag chun.		128
-wts_8_b	341	35	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་ 'dban.		169
-wts_8_b	345	13	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་སྒྱུར ,"" dban sgyur pf. und fur. dban bsgyur"		169
-wts_8_b	352	41	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་པོ་ ""dban po"		169
-wts_8_b	356	1	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"དབང་པོ་ ""dban po"		169
-wts_8_b	356	7	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	དབང་པོ་ ?dban po ↑ dpaṅ.	Other OCR damage remains on the aligned phrase.	169
-wts_8_b	358	34	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་པོའི་བརྡ་སྤྲོད་ °་ dban po'i brda sprod		169
-wts_8_b	363	57	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	དབང་འབྱོར་ ?dban 'byor Macht, Pracht.	Other OCR damage remains on the aligned phrase.	169
-wts_8_b	363	67	1	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དབང་མེ * dban med machtlos, ohne Macht,		169
 wts_8_b	432	24	3	དོང	don	doṅ	4		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	"འབབ་ཆུའི་དོང་ ""bab chn'i don Quelle, Brunnen."		4
 wts_8_b	486	7	2	གང	gah	gaṅ	73		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འབྲས་གང་ 'bras gah eine Pflanze, Zypergras;		73
 wts_8_b	39	51	2	གླང	glah	glaṅ	9		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བན་གླང་མོ་ ban glah mo Ibal glari mo.		9

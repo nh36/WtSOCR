@@ -61,7 +61,7 @@ wts_1_34	904	108	1	བཏང	btan	btaṅ	10		dominant_internal_consensus	positio
 wts_1_34	904	111	1	བཏང	btan	btaṅ	10		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བཏང་གཏོར་ btan gtor besprengen.		10
 wts_1_34	905	36	1	བཏང	btan	btaṅ	10		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	བཏང་ཡས་ btan yas 7277? yas.	Other OCR damage remains on the aligned phrase.	10
 wts_1_34	905	37	1	བཏང	btan	btaṅ	10		damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	བཏང་རག་ btan rag 7977? rag.	Other OCR damage remains on the aligned phrase.	10
-wts_1_34	1221	14	3	བཏང	btan	btaṅ	10		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དེ་དབང་བཏང་ཚེ་ de dban btan tshe wenn man es		10
+wts_1_34	1221	14	3	བཏང	btan	btaṅ	10		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དེ་དབང་བཏང་ཚེ་ de dbaṅ btan tshe wenn man es		10
 wts_1_34	198	137	2	བུང	bun	buṅ	5	burṅ:1; zuṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun furcht-	Accepted dotted forms do not yet establish a dominant internal consensus.	7
 wts_1_34	54	134	2	བྱང	byan	byaṅ	70	bbyaṅ:2; byuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀིན་བྱང་དྷུ་ kin byan hü !kin jan hu.		73
 wts_1_34	116	112	2	བྱང	byan	byaṅ	70	bbyaṅ:2; byuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀླུའི་བྱང་ཆུབ་ klu’i byan chub npr. ein ind. buddh.		73
@@ -113,7 +113,7 @@ wts_1_34	741	3	4	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positiona
 wts_1_34	875	113	4	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzan po npr.		34
 wts_1_34	961	136	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟོབས་བཟང་ stobs bzan.		34
 wts_1_34	987	88	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-		34
-wts_1_34	1110	76	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དང་བཟང་དབང་པོ་ daṅ bzan dban po Beiname		34
+wts_1_34	1110	76	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དང་བཟང་དབང་པོ་ daṅ bzan dbaṅ po Beiname		34
 wts_1_34	1238	24	3	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དེད་དཔོན་བཟང་པོ་ ded dpon bzan po npr. ein Bo-		34
 wts_1_34	1272	48	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དོན་བཟང་པོ་ don bzan po das richtige Ziel ver-		34
 wts_1_34	1321	53	2	བཟང	bzan	bzaṅ	34		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དྲི་བཟང་ dri bzan		34
@@ -208,65 +208,6 @@ wts_1_34	921	57	2	ཅིང	cin	ciṅ	3		dominant_internal_consensus	positionall
 wts_1_34	921	117	2	ཅིང	cin	ciṅ	3		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྟེན་ཅིང་འབྲེལ་བར་* rten cin ’brel bar ...		3
 wts_1_34	1291	69	2	ཅིང	cin	ciṅ	3		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དྲག་ཅིང་རྩུབ་པ་ drag cin rtsub pa unzugänglich.		3
 wts_1_34	750	80	1	ལྗང	Dan	daṅ	1	ldaṅ:1; laṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	"ལྗང་ Dan ""jan."	Accepted dotted forms do not yet establish a dominant internal consensus.	3
-wts_1_34	40	127	4	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀ་བ་ཤཱཀྱ་དབང་ཕྱུག་ ka ba Sakya dban phyug, auch		169
-wts_1_34	52	81	4	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dban po		169
-wts_1_34	106	3	8	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	5 ཨ་ཙརྨ་ཡེ་ཤེས་དབང་པོ་ kyi a tsarya ye 4©$ dban po	Other OCR damage remains on the aligned phrase.	169
-wts_1_34	113	164	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀླུ་དབང་ klu dban „Herrscher der Nägas“.		169
-wts_1_34	114	218	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀླུ་ཡི ་དབང་ཕྱུག་ klu yi dban phyug.		169
-wts_1_34	116	54	4	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀླུའི་དེ་ཁྱུན་དབང་ klwi de khyum dban		169
-wts_1_34	129	110	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དཀྱིལ་འཁོར་དབང་ཕྱུག་ dkyil ’khor dban phyug Be-		169
-wts_1_34	141	199	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	བཀའ་དབང་ bka’ dban Ratgeber, Minister.		169
-wts_1_34	157	127	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འཐུང་དབང་པོ་ rkan ’thun dban po auch rkan		169
-wts_1_34	185	52	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྐུ་དབང་ sku dban resp. Gewalt, Macht; — btsan		169
-wts_1_34	208	65	4	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྐྱེ་བ་ལ་དབང་བ་ shye ba la dban ba die Macht über		169
-wts_1_34	265	154	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁཱ་བའི་དབང་པོ་ khu ba’i dban po Quecksilber.		169
-wts_1_34	297	175	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁྲིམས་བཟོའི་དབང་ཆ་ khrims bzo’i dban cha Le-		169
-wts_1_34	303	1	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁྲོམ་དབང་ khrom dban		169
-wts_1_34	303	3	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁྲོམ་དབང་ khrom dban Masseneinweihung,		169
-wts_1_34	334	190	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ག་བུར་དབང་པོ་ ga bur dban po.		169
-wts_1_34	344	1	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	གངས་རིའི་དབང་པོ་ gans ri’i dban po		169
-wts_1_34	390	79	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	གྲོས་དབང་ gros dban Berater.		169
-wts_1_34	418	108	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དགོས་དབང་ dgos dban absichtlich, aus Not.		169
-wts_1_34	453	45	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འགྲོ་ བའི་དབང་པོ་ ’gro ba’i dban po Bez. für		169
-wts_1_34	472	162	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྒྱལ་བའི་དབང་པོ་ ygyal ba’i dban po		169
-wts_1_34	473	130	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྒྱལ་དབང་ rgyal dban Titel hoher buddh.		169
-wts_1_34	524	130	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ངག་གི་དབང་ཕྱག་ nag gi dban phyug Beiname		169
-wts_1_34	525	80	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ངག་དབང་ལྷ་མོ་ nag dban lha mo Beiname der		169
-wts_1_34	548	172	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	མངའ་དབང་ mna’ dban Macht.		169
-wts_1_34	643	56	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	ཆུ་སྐྱེས་དབང་པོ་ chu skyes dban po ]5€1113111€	Other OCR damage remains on the aligned phrase.	169
-wts_1_34	646	158	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་འཐུང་དབང་པོ་ chu ’thun dban po Bez. für		169
-wts_1_34	654	195	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་ཤེལ་དབང་པོ་ chu śel dban po auch chu śel gyi		169
-wts_1_34	674	160	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆོས་ཀྱི་དབང་ཕྱག་ chos kyi dban phyug Bez. für		169
-wts_1_34	681	89	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆོས་ལ་དབང་བ་ chos la dban ba „Macht über		169
-wts_1_34	703	94	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འཆི་མེད་དབང་མོ་ ’chi med dban mo Beiname		169
-wts_1_34	725	159	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འཇིག་རྟེན་དབང་པོ་ ig rten dban po.		169
-wts_1_34	725	169	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འཇིག་རྟེན་དབང་ཕྱུག་ jig rten dban phyug.		169
-wts_1_34	725	202	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	འཇིག་རྟེན་དབང་མོ་ Be ven dban mo Beiname		169
-wts_1_34	760	107	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po		169
-wts_1_34	760	120	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po Bez. für		169
-wts_1_34	772	136	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཉི་མའི་དབང་པོ་ ni ma’i dban po Beiname Vis-		169
-wts_1_34	778	114	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཉིན་མོའི་དབང་ཕྱག་ min mo’i dban phyug		169
-wts_1_34	789	201	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཉེ་དབང་ ie dban auch ~ po.		169
-wts_1_34	817	89	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྙན་དབང་ san dban Gehör.		169
-wts_1_34	822	179	5	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dban		169
-wts_1_34	898	177	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	གཏོར་དབང་ gtor dban Schülerweihe mittels gtor		169
-wts_1_34	911	188	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྟ་ལྗང་དབང་པོ་ rta Ijan dban po.		169
-wts_1_34	912	63	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྟ་བདུན་དབང་པོ་ rta bdun dban po		169
-wts_1_34	912	118	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྟ་བདུན་དབང་པོ་ rta bdun dban po Bez. für		169
-wts_1_34	948	157	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་གི་དབང་པོ་ sten gi dban po Beiname Visnus.		169
-wts_1_34	950	126	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེས་དབང་ stes dban Fügung des Schicksals,		169
-wts_1_34	1020	83	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཐུབ་དབང་ thub dban auch thub pa’i dban po		169
-wts_1_34	1048	104	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཐོས་ལྡན་དབང་པོ་ thos ldan dban po		169
-wts_1_34	1048	195	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཐོས་དབང་ thos dban gelehrt.		169
-wts_1_34	1059	9	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	མཐུ་དབང་གི་ཆོ་ག་ mihn dban gi cho ga Schüler-		169
-wts_1_34	1063	98	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	མཐོ་དབང་ mtho dban.		169
-wts_1_34	1110	76	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དང་བཟང་དབང་པོ་ daṅ bzan dban po Beiname		169
-wts_1_34	1115	5	12	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	den Mönche“ (sBa 57,8); dad can gyi 774 དད་པའི་དབང་པོ་ dad pa’i dban po die Kraft	Other OCR damage remains on the aligned phrase.	169
-wts_1_34	1152	13	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུག་དབང་ dug dban vor Gift schützende Wei-		169
-wts_1_34	1156	51	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dban mo Beina-		169
-wts_1_34	1221	14	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དེ་དབང་བཏང་ཚེ་ de dban btan tshe wenn man es		169
-wts_1_34	1308	81	3	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དྲན་པའི་དབང་པོ་ dran pa’i dban po.		169
-wts_1_34	1309	28	2	དབང	dban	dbaṅ	164	ddbaṅ:3; dbdbaṅ:1; dbankhaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དྲན་དབང་ dran dban Bez. für Gelehrter.		169
 wts_1_34	1014	1	2	དབྱུང	dbyun	dbyuṅ	8		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyun bar byed		8
 wts_1_34	1338	49	2	དབྱུང	dbyun	dbyuṅ	8		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དྲུངས་དབྱུང་ druns dbyun auch drun dbyun fut.		8
 wts_1_34	407	109	1	དགུང	dgun	dguṅ	1		competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	དགུང་ཆར་ dgun char	Accepted dotted forms do not yet establish a dominant internal consensus.	1
@@ -343,7 +284,7 @@ wts_1_34	1155	93	1	དུང	dun	duṅ	2		dominant_internal_consensus	positional
 wts_1_34	1156	1	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་དཀར་རི་ཁྲོད་ dun dkar ri khrod		2
 wts_1_34	1156	24	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་སྐྱོང་ dun skyon auch dun skyons npr. ein		2
 wts_1_34	1156	49	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་གི་ལག་པ་ dun gi lag pa		2
-wts_1_34	1156	51	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dban mo Beina-		2
+wts_1_34	1156	51	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dbaṅ mo Beina-		2
 wts_1_34	1156	59	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་ཁྲི་ dun khri auch dun khrid 0¢ ldan npr.		2
 wts_1_34	1156	70	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་འཁྱིལ་བ་ dun ’khyil ba.		2
 wts_1_34	1156	93	1	དུང	dun	duṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དུང་གི་ལག་པ་ dun gi lagpa Beiname Visnus.		2
@@ -1101,7 +1042,7 @@ wts_1_34	157	78	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_interna
 wts_1_34	157	80	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་མཐིལ་ rkan mthil Fußsohle.		16
 wts_1_34	157	104	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་མཐིལ་སྐྱེས་ rkan mthil skyes, Kurzf. für rkan		16
 wts_1_34	157	112	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འབུང་ rkan ’thun auch rkan thun „Fußtrin-		16
-wts_1_34	157	127	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འཐུང་དབང་པོ་ rkan ’thun dban po auch rkan		16
+wts_1_34	157	127	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འཐུང་དབང་པོ་ rkan ’thun dbaṅ po auch rkan		16
 wts_1_34	157	135	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་དང་ཀིང་ rkan daṅ kin tkin kan.		16
 wts_1_34	157	136	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་དུང་ rkan dun.		16
 wts_1_34	157	155	1	རྐང	rkan	rkaṅ	14	rkaṅi:1; rkyaṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་དྲངས་ rkan drans pl. zu Irkan ’dren jmdm.		16
@@ -1289,7 +1230,7 @@ wts_1_34	821	208	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	damag
 wts_1_34	822	1	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་ནད་ sin nad	Accepted dotted forms do not yet establish a dominant internal consensus.	6
 wts_1_34	822	106	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་པོ་མཁྲེགས་ sin po mkhregs	Accepted dotted forms do not yet establish a dominant internal consensus.	6
 wts_1_34	822	171	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་པོ་མཆོག་ sin po mchog eine hohe Zahl.	Accepted dotted forms do not yet establish a dominant internal consensus.	6
-wts_1_34	822	179	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dban	Accepted dotted forms do not yet establish a dominant internal consensus.	6
+wts_1_34	822	179	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dbaṅ	Accepted dotted forms do not yet establish a dominant internal consensus.	6
 wts_1_34	823	44	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	སྙིང་མ་རིངས་པ་་ sin ma rins pa {5/7//) rin.	Other OCR damage remains on the aligned phrase.	6
 wts_1_34	824	42	1	སྙིང	sin	siṅ	3	sāiṅ:1; sñiṅ:1; stiṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	སྙིང་ཤེད་ sin sed Mut.	Accepted dotted forms do not yet establish a dominant internal consensus.	6
 wts_1_34	879	101	2	ཤིང	Sin	siṅ	30	Siṅ:17; ciṅ:1	competing_latin_forms	positionally_aligned_corpus_consensus	low	defer	ཏེའུ་ཤིང་ te’ Sin Stuhl, Sitzbank.	Accepted dotted forms do not yet establish a dominant internal consensus.	48
@@ -1315,7 +1256,7 @@ wts_1_34	190	198	1	སྐོང	skon	skoṅ	8	skyoṅ:2	damaged_context	position
 wts_1_34	190	209	1	སྐོང	skon	skoṅ	8	skyoṅ:2	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྐོང་ཚེ་ skon tshe (zw.) geflochtene Bambuskör-		10
 wts_1_34	241	159	2	སྐོང	skon	skoṅ	8	skyoṅ:2	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁ་སྐོང་ kba skon		10
 wts_1_34	241	195	2	སྐོང	skon	skoṅ	8	skyoṅ:2	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁ་སྐོང་ kha skon auch kha skons.		10
-wts_1_34	52	81	3	སྐྱོང	skyon	skyoṅ	14		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dban po		14
+wts_1_34	52	81	3	སྐྱོང	skyon	skyoṅ	14		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po		14
 wts_1_34	119	1	3	སྐྱོང	skyon	skyoṅ	14		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དཀའ་གྲོས་ སྐྱོང་ dka’ gros skyon		14
 wts_1_34	121	100	2	སྐྱོང	skyon	skyoṅ	14		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དཀར་སྐྱོང་ dkar skyon		14
 wts_1_34	123	114	3	སྐྱོང	skyon	skyoṅ	14		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དཀར་ཕྱོགས་སྐྱོང་བའི་་ dkar phyogs skyon ba’i ...		14
@@ -1413,7 +1354,7 @@ wts_1_34	948	143	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consen
 wts_1_34	948	145	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་གི་འཇིག་རྟེན་ sten gi ’jig rten Bez. für die		12
 wts_1_34	948	153	1	སྟེང	sten	steṅ	11	stoṅ:1	damaged_context	positionally_aligned_corpus_consensus	manual	manual_alignment_review	སྟེང་གི་ཐོག་ sten 07 thog Isten thog.	Other OCR damage remains on the aligned phrase.	12
 wts_1_34	948	154	1	སྟེང	steh	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyon Beiname		12
-wts_1_34	948	157	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་གི་དབང་པོ་ sten gi dban po Beiname Visnus.		12
+wts_1_34	948	157	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་གི་དབང་པོ་ sten gi dbaṅ po Beiname Visnus.		12
 wts_1_34	948	164	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་པ་ sten pa		12
 wts_1_34	948	166	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་དགག་ sten dgag auch sten gi dgag pa eine		12
 wts_1_34	948	197	1	སྟེང	sten	steṅ	11	stoṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes		12
@@ -1534,12 +1475,12 @@ wts_1_34	1151	77	2	ཐང	than	thaṅ	27		dominant_internal_consensus	positional
 wts_1_34	1247	42	3	ཐང	than	thaṅ	27		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	དོ་མོའི་ཐང་ do mo’i than npr. eine Gegend.		27
 wts_1_34	37	119	2	ཐུང	thun	thuṅ	8	tbuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཀ་ཐུང་ ka thun (ka).		9
 wts_1_34	157	78	2	ཐུང	thun	thuṅ	8	tbuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་ཐུང་ rkan thun Irkan 'thun.		9
-wts_1_34	157	127	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འཐུང་དབང་པོ་ rkan ’thun dban po auch rkan		2
+wts_1_34	157	127	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྐང་འཐུང་དབང་པོ་ rkan ’thun dbaṅ po auch rkan		2
 wts_1_34	292	129	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཁྲག་འཐུང་སྲིན་བུ་ khrag ’thun srin bu Blutegel.		2
 wts_1_34	401	56	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	གློག་འཐུང་ glog ’thun Bez. für Schildkröte.		2
 wts_1_34	463	187	3	འཐུང	thuh	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	རྒྱ་མཆོ་འཐུང་ rgya mtsho 'thuh Bez. für das		2
 wts_1_34	646	154	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་འཐུང་ཕོད་པ་ chu 'thun phod pa Bez. für		2
-wts_1_34	646	158	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་འཐུང་དབང་པོ་ chu ’thun dban po Bez. für		2
+wts_1_34	646	158	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་འཐུང་དབང་པོ་ chu ’thun dbaṅ po Bez. für		2
 wts_1_34	646	161	2	འཐུང	thun	thuṅ	2		dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཆུ་འཐུང་ཞོད་ chn ’thun ’od Bez. für Sonnen-		2
 wts_1_34	943	7	3	ཐུང	thun	thuṅ	8	tbuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	སྟག་བུ་ཐུང་ stag bu thun npr. ein Dämon.		9
 wts_1_34	955	38	2	ཐུང	thun	thuṅ	8	tbuṅ:1	dominant_internal_consensus	positionally_aligned_corpus_consensus	high	exact_review_candidate	ཏྟད་ཐུང་ stod thun ein Kleidungsstück, Bluse;		9

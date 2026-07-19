@@ -2956,3 +2956,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 565	44	2994	german_prose_with_translit	Ajnāpayitavya	Ajñāpayitavya	A	sanskrit_jn_cluster_context_gate	1	"nen (skt. Ajnāpayitavya)"" (Suv 59,16); chos"
 496	36	2675	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	འབྲི་ཆུང་དགོན་པ་ chun dgoṅ pa npr. ein
 581	26	3105	example_tibetan_latin	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	Schlange hält, Schlangenhalter སྦྲ་ཆུང་ sbre chun ein Gefäß, vgl. tbre chui.
+341	35	1777	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་ 'dban.
+345	13	1799	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་སྒྱུར ," dban sgyur pf. und fur. dban bsgyur
+352	41	1853	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ "dban po
+356	1	1862	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ "dban po
+356	7	1863	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ ?dban po ↑ dpaṅ.
+358	34	1886	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོའི་བརྡ་སྤྲོད་ °་ dban po'i brda sprod
+363	57	1935	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་འབྱོར་ ?dban 'byor Macht, Pracht.
+363	67	1937	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་མེ * dban med machtlos, ohne Macht,

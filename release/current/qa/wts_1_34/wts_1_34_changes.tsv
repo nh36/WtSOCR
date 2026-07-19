@@ -27302,3 +27302,62 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 823	5	9490	example_tibetan_latin	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྙིང་ཕོད་ཆུང་བ་ $?7/77 phod chun ba Feigling; vgl. སྙིང་བརྩེ་ säin brtse Liebe, Mitgefühl; - ba’; blo
 833	61	9567	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	བསྙོད་ཆུང་ £3/707 chun
 981	58	10672	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་ 77% chun )7?7// Ilcam
+40	127	155	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཀ་བ་ཤཱཀྱ་དབང་ཕྱུག་ ka ba Sakya dban phyug, auch
+52	81	411	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dban po
+106	3	1255	tibetan_latin_mixed	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	5 ཨ་ཙརྨ་ཡེ་ཤེས་དབང་པོ་ kyi a tsarya ye 4©$ dban po
+113	164	1367	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཀླུ་དབང་ klu dban „Herrscher der Nägas“.
+114	218	1385	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཀླུ་ཡི ་དབང་ཕྱུག་ klu yi dban phyug.
+116	54	1398	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཀླུའི་དེ་ཁྱུན་དབང་ klwi de khyum dban
+129	110	1615	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དཀྱིལ་འཁོར་དབང་ཕྱུག་ dkyil ’khor dban phyug Be-
+141	199	1767	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	བཀའ་དབང་ bka’ dban Ratgeber, Minister.
+157	127	1989	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྐང་འཐུང་དབང་པོ་ rkan ’thun dban po auch rkan
+185	52	2337	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྐུ་དབང་ sku dban resp. Gewalt, Macht; — btsan
+208	65	2657	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྐྱེ་བ་ལ་དབང་བ་ shye ba la dban ba die Macht über
+265	154	3512	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཁཱ་བའི་དབང་པོ་ khu ba’i dban po Quecksilber.
+297	175	4066	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཁྲིམས་བཟོའི་དབང་ཆ་ khrims bzo’i dban cha Le-
+303	1	4147	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཁྲོམ་དབང་ khrom dban
+303	3	4148	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཁྲོམ་དབང་ khrom dban Masseneinweihung,
+334	190	4545	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ག་བུར་དབང་པོ་ ga bur dban po.
+344	1	4643	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	གངས་རིའི་དབང་པོ་ gans ri’i dban po
+390	79	5129	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	གྲོས་དབང་ gros dban Berater.
+418	108	5493	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དགོས་དབང་ dgos dban absichtlich, aus Not.
+453	45	5841	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	འགྲོ་ བའི་དབང་པོ་ ’gro ba’i dban po Bez. für
+472	162	6134	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྒྱལ་བའི་དབང་པོ་ ygyal ba’i dban po
+473	130	6149	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྒྱལ་དབང་ rgyal dban Titel hoher buddh.
+524	130	6699	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ངག་གི་དབང་ཕྱག་ nag gi dban phyug Beiname
+525	80	6712	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ངག་དབང་ལྷ་མོ་ nag dban lha mo Beiname der
+548	172	6944	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	མངའ་དབང་ mna’ dban Macht.
+643	56	7814	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཆུ་སྐྱེས་དབང་པོ་ chu skyes dban po ]5€1113111€
+646	158	7859	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཆུ་འཐུང་དབང་པོ་ chu ’thun dban po Bez. für
+654	195	7970	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཆུ་ཤེལ་དབང་པོ་ chu śel dban po auch chu śel gyi
+674	160	8119	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཆོས་ཀྱི་དབང་ཕྱག་ chos kyi dban phyug Bez. für
+681	89	8234	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཆོས་ལ་དབང་བ་ chos la dban ba „Macht über
+703	94	8482	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	འཆི་མེད་དབང་མོ་ ’chi med dban mo Beiname
+725	159	8698	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	འཇིག་རྟེན་དབང་པོ་ ig rten dban po.
+725	169	8699	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	འཇིག་རྟེན་དབང་ཕྱུག་ jig rten dban phyug.
+725	202	8702	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	འཇིག་རྟེན་དབང་མོ་ Be ven dban mo Beiname
+760	107	9018	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po
+760	120	9019	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po Bez. für
+772	136	9104	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཉི་མའི་དབང་པོ་ ni ma’i dban po Beiname Vis-
+778	114	9163	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཉིན་མོའི་དབང་ཕྱག་ min mo’i dban phyug
+789	201	9292	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཉེ་དབང་ ie dban auch ~ po.
+817	89	9462	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྙན་དབང་ san dban Gehör.
+822	179	9487	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dban
+898	177	9879	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	གཏོར་དབང་ gtor dban Schülerweihe mittels gtor
+911	188	9988	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྟ་ལྗང་དབང་པོ་ rta Ijan dban po.
+912	63	9996	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྟ་བདུན་དབང་པོ་ rta bdun dban po
+912	118	10002	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	རྟ་བདུན་དབང་པོ་ rta bdun dban po Bez. für
+948	157	10375	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྟེང་གི་དབང་པོ་ sten gi dban po Beiname Visnus.
+950	126	10395	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	སྟེས་དབང་ stes dban Fügung des Schicksals,
+1020	83	11189	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཐུབ་དབང་ thub dban auch thub pa’i dban po
+1048	104	11525	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཐོས་ལྡན་དབང་པོ་ thos ldan dban po
+1048	195	11536	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	ཐོས་དབང་ thos dban gelehrt.
+1059	9	11670	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	མཐུ་དབང་གི་ཆོ་ག་ mihn dban gi cho ga Schüler-
+1063	98	11727	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	མཐོ་དབང་ mtho dban.
+1110	76	12013	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དང་བཟང་དབང་པོ་ daṅ bzan dban po Beiname
+1115	5	12038	example_tibetan_latin	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	den Mönche“ (sBa 57,8); dad can gyi 774 དད་པའི་དབང་པོ་ dad pa’i dban po die Kraft
+1152	13	12249	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དུག་དབང་ dug dban vor Gift schützende Wei-
+1156	51	12266	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dban mo Beina-
+1221	14	12581	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དེ་དབང་བཏང་ཚེ་ de dban btan tshe wenn man es
+1308	81	12953	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དྲན་པའི་དབང་པོ་ dran pa’i dban po.
+1309	28	12959	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དྲན་དབང་ dran dban Bez. für Gelehrter.
