@@ -2033,6 +2033,38 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 11)
 
+    def test_reviewed_manual_alignment_final_ng_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (337, 54): "གང་ག་ཆུང་ gar ga chun",
+            (551, 114): "མངོན་ཆུང་ mnon chun",
+            (657, 1): 'ཆུང་གྲས\" chun gras',
+            (827, 115): "སྙོམས་ཆུང་ säoms chun",
+            (1160, 32): "དུད་ཆུང་ dud chun Steuer zahlender Bauer,",
+            (1160, 33): "Unreviewed gar, mnon, and chun stay unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("gar ga chuṅ", corrected)
+        self.assertIn("mnon chuṅ", corrected)
+        self.assertIn('ཆུང་གྲས\" chuṅ gras', corrected)
+        self.assertIn("säoms chuṅ", corrected)
+        self.assertIn("dud chuṅ Steuer", corrected)
+        self.assertIn(
+            "Unreviewed gar, mnon, and chun stay unchanged.",
+            corrected,
+        )
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

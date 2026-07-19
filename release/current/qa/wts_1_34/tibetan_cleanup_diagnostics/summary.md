@@ -6,7 +6,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 357
 - `tibetan_orthography_damage_candidates.tsv`: 1606
-- `tibetan_script_ng_witness_candidates.tsv`: 26
+- `tibetan_script_ng_witness_candidates.tsv`: 10
 - `reference_marker_candidates.tsv`: 1189
 - `reference_marker_token_families.tsv`: 488
 - `tibetan_initial_i_residual_candidates.tsv`: 0
@@ -30,7 +30,6 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | gs (24), G$ (3), Gś (2) | Gs (29) | 29 | siglum_policy_review |
 | unknown | gzi (28) | gZi (28) | 28 | siglum_policy_review |
 | unknown | Lsdz (16), L$dz (10) | Lśdz (26) | 26 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (24) | chuṅ (24) | 24 | defer_unless_entry_alignment_confirmed |
 | unknown | Bu-Sz (16) | Bu-śz (16) | 16 | siglum_policy_review |
 | dotless_i | gZı (13), gzı (1) | gZi (13), gzi (1) | 14 | review |
 | unknown | GS-H (5), G$-H (4), Gs-H (3) | Gś-H (12) | 12 | siglum_policy_review |
@@ -39,6 +38,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | citation_or_siglum | Tär (10) | Tār (10) | 10 | already_canonical_siglum |
 | dotless_i | garı (9) | gari (9) | 9 | review |
 | dotless_i | kyanı (9) | kyani (9) | 9 | review |
+| dotless_i | MıgTo (9) | MigTo (9) | 9 | review |
 
 ## Top Google Adoption Patterns
 
