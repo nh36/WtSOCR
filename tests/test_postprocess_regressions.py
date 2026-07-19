@@ -2147,6 +2147,36 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 2)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
 
+    def test_reviewed_cross_volume_residual_chung_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_35_51": {
+                (361, 8): "ན་ག་ཆུང་ raga chun lṅa kha chun.",
+                (633, 2): "སྣང་ཆུང་ chun.",
+            },
+            "wts_8_b": {
+                (212, 42): "བྱིས་ཆུང་ 'byis chuṅ auch byis pa chun rn klei-",
+                (529, 25): "སྤག་ཆུང་ sbag chun.",
+            },
+        }
+        expected_counts = {"wts_35_51": 3, "wts_8_b": 2}
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                self.assertNotIn(" chun", corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+                ]
+                self.assertEqual(len(reviewed), expected_counts[label])
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    expected_counts[label],
+                )
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

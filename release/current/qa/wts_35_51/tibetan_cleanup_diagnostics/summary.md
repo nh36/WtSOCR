@@ -6,13 +6,13 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 83
 - `tibetan_orthography_damage_candidates.tsv`: 352
-- `tibetan_script_ng_witness_candidates.tsv`: 8
+- `tibetan_script_ng_witness_candidates.tsv`: 0
 - `reference_marker_candidates.tsv`: 858
 - `reference_marker_token_families.tsv`: 355
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 285
 - `residual_sanskrit_low_confidence_candidates.tsv`: 663
-- `tibetan_variant_families.tsv`: 146
+- `tibetan_variant_families.tsv`: 145
 - `tibetan_google_adoption_patterns.tsv`: 313
 
 ## Top Candidate Families
@@ -28,7 +28,6 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | gs (9), g$ (1) | Gs (10) | 10 | siglum_policy_review |
 | unknown | Y$ (5), Ys (4), YŚ (1) | Yś (10) | 10 | siglum_policy_review |
 | unknown | Bu-Sz (9) | Bu-śz (9) | 9 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (8) | chuṅ (8) | 8 | manual_alignment_review |
 | unknown | gzi (8) | gZi (8) | 8 | siglum_policy_review |
 | unknown | P$ (4), PS (3), ps (1) | Ps (8) | 8 | siglum_policy_review |
 | loc_nasal_damage | bźeńs (7) | bźeṅs (7) | 7 | review |
@@ -39,6 +38,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | citation_or_siglum | Tär (4) | Tār (4) | 4 | already_canonical_siglum |
 | loc_nasal_damage | byuñń (4) | byuñṅ (4) | 4 | review |
 | unknown | gZ1 (4) | gZi (4) | 4 | siglum_policy_review |
+| loc_nasal_damage | dbañń (3) | dbañṅ (3) | 3 | review |
 
 ## Top Google Adoption Patterns
 

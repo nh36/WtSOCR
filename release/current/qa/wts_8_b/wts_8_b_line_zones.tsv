@@ -17153,7 +17153,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 212	39	1154	tibetan_only	བྱིས་		none	0	2	0	0	བྱིས་ pf. zu 1°?/2//¿0 tilgen, wegwischen
 212	40	1154	german_prose			none	0	5	0	0	(einer Zahl auf dem Sandabakus); vgl.
 212	41	1154	german_prose_with_translit			none	1	1	0	0	ScHun 2012: 1493 s. v. byis pa.
-212	42	1155	headword_line	བྱིས་ཆུང་	byis chuṅ	high	4	1	0	0	བྱིས་ཆུང་ 'byis chuṅ auch byis pa chun rn klei-
+212	42	1155	headword_line	བྱིས་ཆུང་	byis chuṅ	high	5	1	0	0	བྱིས་ཆུང་ 'byis chuṅ auch byis pa chuṅ rn klei-
 212	43	1155	german_prose			none	0	1	0	0	nes Kind.
 212	44	1155	latin_other			none	3	0	0	0	rgan pos byis pa chun nu la saris royas no
 212	45	1155	german_prose_with_translit			none	2	3	0	0	"sprod pa lta bu ""wie wenn ein Alter ein"
@@ -43676,7 +43676,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 529	22	2819	german_prose			none	0	3	0	0	stellter Tisch, respektvoll für Tisch, chinesi-
 529	23	2819	german_prose_with_translit			none	2	2	0	0	scher Tisch, Mahjongg-Tisch, im Nag-sgron
 529	24	2819	german_prose_with_translit			none	2	1	0	0	"heißt es cog tse"" (brDa)."
-529	25	2819	tibetan_only	སྤག་ཆུང་		none	0	0	0	0	སྤག་ཆུང་ sbag chun.
+529	25	2819	headword_line	སྤག་ཆུང་	chuṅ	high	1	0	0	0	སྤག་ཆུང་ sbag chuṅ.
 529	26	2819	german_prose			none	0	1	0	0	1. kleiner Teeziegel.
 529	27	2819	german_prose_with_translit			none	1	3	0	0	"Lex. gru bZi chwi ram Ja sbag khag chun ""ein"
 529	28	2819	german_prose			none	0	3	0	0	kleines viereckiges Stück oder eine kleine

@@ -2965,3 +2965,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 363	57	1935	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་འབྱོར་ ?dban 'byor Macht, Pracht.
 363	67	1937	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་མེ * dban med machtlos, ohne Macht,
 142	39	678	headword_line	rkan	rkaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	བྱ་རྐང་ bya rkan.
+212	42	1155	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	བྱིས་ཆུང་ 'byis chuṅ auch byis pa chun rn klei-
+529	25	2819	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྤག་ཆུང་ sbag chun.

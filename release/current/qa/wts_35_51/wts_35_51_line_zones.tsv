@@ -28635,7 +28635,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 360	40	1828	tibetan_only	ནཱ་ག་གེ་སར་		none	0	0	0	0	ནཱ་ག་གེ་སར་ nd ga ge sar
 360	41	1828	german_prose			none	0	3	0	0	"Feuchtigkeit, die [beim Gehen] nachgibt"""
 360	42	1828	german_prose			none	0	1	0	0	(Dagy).
-360	43	1829	headword_line	ན་ཁ་ཆུང་	na kha chuṅ	high	5	1	0	0	ན་ཁ་ཆུང་ na kha chuṅ auch na ga chun, na gu
+360	43	1829	headword_line	ན་ཁ་ཆུང་	na kha chuṅ	high	6	1	0	0	ན་ཁ་ཆུང་ na kha chuṅ auch na ga chuṅ, na gu
 360	44	1829	german_prose			none	0	4	0	0	chun Blüte einer Hülsenfrucht, Pi-
 360	45	1829	german_prose_with_translit			none	1	2	0	0	sum sativum L., vgl. PasanG 1998: 118 s. v.
 360	46	1829	latin_other			none	1	0	0	0	na ga chun.
@@ -28678,7 +28678,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	5	1834	german_prose			none	0	4	0	0	ga ge sar sieht aus wie das Stück von einem
 361	6	1834	german_prose_with_translit			none	2	1	0	0	"Kupfertopf"" (gYu 294,4); na ga ke sar = na-"
 361	7	1834	german_prose			none	0	1	0	0	gakesara (Ak 102.65).
-361	8	1835	headword_line	ན་ག་ཆུང་	lṅa kha	high	2	0	0	0	ན་ག་ཆུང་ raga chun lṅa kha chun.
+361	8	1835	headword_line	ན་ག་ཆུང་	chuṅ lṅa kha chuṅ	high	4	0	0	0	ན་ག་ཆུང་ raga chuṅ lṅa kha chuṅ.
 361	9	1836	headword_line	ན་ག་པུངླ་	ma	medium	1	4	0	0	ན་ག་པུངླ་ ma ga puspa Bez. für den Blütenkelch
 361	10	1836	german_prose			none	0	4	0	0	des Baumes Bombax ceiba L., synon.
 361	11	1836	german_prose_with_translit			none	2	1	0	0	klu'i me tog, vgl. PasanG 1998: 118.
@@ -28723,7 +28723,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 361	50	1840	german_prose_with_translit			none	2	1	0	0	"Na-gu"" (PT1287 196); —s rta geig dan ja sig"
 361	51	1840	german_prose_with_translit			none	1	5	0	0	"geig phul ""Na-gu gab ihm ein Pferd und eine"
 361	52	1840	german_prose_with_translit			none	2	1	0	0	"Stange Ziegeltee"" (L$dz-K 294,9)."
-361	53	1841	headword_line	ན་གུ་ཆུང་	na	medium	4	0	0	0	ན་གུ་ཆུང་ na gu chuṅ lṅa kha chun.
+361	53	1841	headword_line	ན་གུ་ཆུང་	na	medium	5	0	0	0	ན་གུ་ཆུང་ na gu chuṅ lṅa kha chuṅ.
 361	54	1842	headword_line	ན་འགྱུ་	na	medium	1	0	0	0	ན་འགྱུ་ na
 361	55	1842	german_prose_with_translit			none	1	1	0	0	1. (zw.) eine Krankheit.
 361	56	1842	german_prose_with_translit			none	3	1	0	0	Lex. na tsha'l bye brag (brDa).
@@ -37365,7 +37365,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 465	38	2346	tibetan_only	ནེ་གུ་		none	0	0	0	0	ནེ་གུ་ ne gu schwarz.
 465	39	2346	german_prose_with_translit			none	1	1	0	0	Lex. nag po (TTC).
 465	40	2347	headword_line	ནེ་གྲོ་དྷ་	dha nya	high	3	0	0	0	ནེ་གྲོ་དྷ་ ne gro dha \nya gro dha.
-465	41	2348	headword_line	ནེ་ཆུང་	chuṅ	high	2	1	0	0	ནེ་ཆུང་ ne chuṅ npr. auch gSen-za ne'u chun-
+465	41	2348	headword_line	ནེ་ཆུང་	chuṅ	high	3	1	0	0	ནེ་ཆུང་ ne chuṅ npr. auch gSen-za ne'u chuṅ-
 465	42	2348	german_prose_with_translit			none	1	4	0	0	ma, eine Tochter des gSen-rab Mi-bo.
 465	43	2348	german_prose_with_translit			none	3	1	0	0	bu mo gen za — ma / yab la Sin tu skyo has pas
 465	44	2348	german_prose			none	0	3	0	0	"(metr.) ""als die Tochter gSen-za ne-chun-"
@@ -44247,7 +44247,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 547	5	2684	other			none	0	0	0	0	4. (zw.).
 547	6	2684	german_prose_with_translit			none	3	2	0	0	Lex. 9407? tshud (Dagy); — pa = 940/? tshud che
 547	7	2684	german_prose_with_translit			none	1	1	0	0	ba sogs (Dagy).
-547	8	2685	headword_line	མནོག་ཆུང་	chuṅ	high	1	1	0	0	མནོག་ཆུང་ mnog chuṅ Tninag chun.
+547	8	2685	headword_line	མནོག་ཆུང་	chuṅ	high	2	1	0	0	མནོག་ཆུང་ mnog chuṅ Tninag chuṅ.
 547	9	2686	headword_line	མནོག་པ་	pa	medium	1	0	0	0	མནོག་པ་ mnog pa
 547	10	2686	german_prose			none	0	1	0	0	Be
 547	11	2686	tibetan_only	མནོད་		none	0	2	0	0	མནོད་ mnod fut. zu Tnod entgegennehmen.
@@ -51310,7 +51310,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 632	90	3130	latin_other			none	3	0	0	0	"(brDa); snan nor = snani tshul gyi or ""aus"
 632	91	3130	german_prose			none	0	3	0	0	"einer Sichtweise"" (Dagy)."
 633	1	3131	headword_line	སྙང་ཆུང་	snaṅ chuṅ	high	2	0	0	0	སྙང་ཆུང་ snaṅ chuṅ
-633	2	3131	tibetan_only	སྣང་ཆུང་		none	0	0	0	0	སྣང་ཆུང་ chun.
+633	2	3131	headword_line	སྣང་ཆུང་	chuṅ	high	1	0	0	0	སྣང་ཆུང་ chuṅ.
 633	3	3131	latin_other			none	1	0	0	0	1. geringschätzig,
 633	4	3131	latin_other			none	3	0	0	0	grogs la giun han la gian (r. gien) la sna(h)
 633	5	3131	german_prose_with_translit			none	1	4	0	0	"chun ""rücksichtlos zu Freunden und gering-"
@@ -91245,7 +91245,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1120	48	6102	german_prose			none	0	2	0	0	für Taube.
 1120	49	6102	german_prose_with_translit			none	5	1	0	0	Lex. phug ron (brDa); — can = phug ron la
 1120	50	6102	german_prose			none	0	3	0	0	"""für Taube"" (Dagy)."
-1120	51	6102	tibetan_only	འཕྲུལ་བུ་ཆུང་		none	0	2	0	0	འཕྲུལ་བུ་ཆུང་ bu chun npr. Neffe des
+1120	51	6102	headword_line	འཕྲུལ་བུ་ཆུང་	chuṅ	high	1	2	0	0	འཕྲུལ་བུ་ཆུང་ bu chuṅ npr. Neffe des
 1120	52	6102	latin_other			none	1	0	0	0	Kon-tse.
 1120	53	6102	latin_other			none	6	0	0	0	kon tse'i tsba bo — la gab tsbe sum brgya drug
 1120	54	6102	german_prose_with_translit			none	2	2	0	0	"cu bstan ""er lehrte Phrul-bu-chun, den Nef-"

@@ -6,13 +6,13 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 12
 - `tibetan_orthography_damage_candidates.tsv`: 151
-- `tibetan_script_ng_witness_candidates.tsv`: 2
+- `tibetan_script_ng_witness_candidates.tsv`: 0
 - `reference_marker_candidates.tsv`: 457
 - `reference_marker_token_families.tsv`: 225
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 57
 - `residual_sanskrit_low_confidence_candidates.tsv`: 239
-- `tibetan_variant_families.tsv`: 24
+- `tibetan_variant_families.tsv`: 23
 - `tibetan_google_adoption_patterns.tsv`: 3
 
 ## Top Candidate Families
@@ -25,7 +25,6 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | gs (4) | Gs (4) | 4 | siglum_policy_review |
 | unknown | gzi (3) | gZi (3) | 3 | siglum_policy_review |
 | dollar_ś | '$ (2) | 'ś (2) | 2 | review |
-| tibetan_script_ng_witness | chun (2) | chuṅ (2) | 2 | manual_alignment_review |
 | unknown | lis (2) | Liś (2) | 2 | siglum_policy_review |
 | citation_or_siglum | auf (1) | rGyud (1) | 1 | already_canonical_siglum |
 | citation_or_siglum | die (1) | P (1) | 1 | already_canonical_siglum |
@@ -39,6 +38,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | citation_or_siglum | VaiNth (1) | VaiNth (1) | 1 | already_canonical_siglum |
 | dollar_ś | $rT (1) | śrT (1) | 1 | review |
 | google_tibetan_diacritic_disagreement | 1 (1) | snaṅ (1) | 1 | review |
+| google_tibetan_diacritic_disagreement | Blo-bzan (1) | Blo-bzaṅ (1) | 1 | review |
 
 ## Top Google Adoption Patterns
 
