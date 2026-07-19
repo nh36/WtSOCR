@@ -1982,7 +1982,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("sgruṅ Erzählung", corrected)
         self.assertIn("rha’u chuṅ", corrected)
         self.assertIn("nam chuṅ dbaṅ po", corrected)
-        self.assertIn("mthon chuṅ ba", corrected)
+        self.assertIn("mthoṅ chuṅ ba", corrected)
         self.assertIn(
             "Unreviewed chun, sgrun, and rha’u stay unchanged.",
             corrected,
@@ -1995,7 +1995,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             },
             {("chun", "chuṅ"), ("sgrun", "sgruṅ")},
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
 
     def test_reviewed_repeated_lemma_final_ng_batch_is_exact(self) -> None:
         reviewed_lines = {
@@ -2461,7 +2461,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("stan gliṅ pa", corrected)
-        self.assertIn("mthon smon gliṅ", corrected)
+        self.assertIn("mthoṅ smon gliṅ", corrected)
         self.assertIn("གླིན་ glin genuine distinct syllable.", corrected)
         self.assertEqual(sum(row["to_token"] == "gliṅ" for row in changes), 2)
 
@@ -2480,6 +2480,22 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཆན་ chan genuine distinct syllable.", corrected)
         self.assertIn("འཆང་ ’chan separate prefixed family.", corrected)
         self.assertEqual(sum(row["to_token"] == "chaṅ" for row in changes), 3)
+
+    def test_reviewed_mthong_rows_preserve_genuine_mthon_and_gling(self) -> None:
+        lines = {
+            (1067, 75): "མཐོང་སྨོན་གླིང་ mthon smon gliṅ npr. ein Ort.",
+            (1067, 100): "མཐོང་གཡེར་ mthon g.yer auch mthon yel,",
+            (1068, 8): "མཐོན་ཀ་ mthon ka.",
+            (1066, 121): "མཐོང་ཉམས་ mthon /74/775 Schverlust.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("mthoṅ smon gliṅ", corrected)
+        self.assertIn("mthoṅ g.yer auch mthoṅ yel", corrected)
+        self.assertIn("མཐོན་ཀ་ mthon ka.", corrected)
+        self.assertIn("mthoṅ /74/775 Schverlust.", corrected)
+        self.assertEqual(sum(row["to_token"] == "mthoṅ" for row in changes), 4)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

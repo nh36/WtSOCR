@@ -1,6 +1,5 @@
 tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_target	candidate_count	dominant_count	damaged_count	insufficient_count	competing_count	structure_mismatch_count	marker_attached_count	accepted_form_evidence	volumes
 ཤིང	sin	sin:36; Sin:20; sih:2	siṅ	58	0	0	0	58	0	0	30	wts_1_34;wts_35_51;wts_8_b
-མཐོང	mthon	mthon:31	mthoṅ	31	30	1	0	0	0	0	9	wts_1_34
 རིང	rin	rin:30	riṅ	30	30	0	0	0	0	0	17	wts_1_34
 ཁོང	khon	khon:28; Khon:1	khoṅ	29	0	1	0	28	0	0	1	wts_1_34
 གཏོང	gton	gton:28	gtoṅ	28	27	1	0	0	0	0	10	wts_1_34

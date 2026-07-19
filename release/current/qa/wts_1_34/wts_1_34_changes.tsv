@@ -27898,3 +27898,35 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 628	177	7653	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འདོན་ chaṅ ’don Gefäß, um chan zu trin-
 628	209	7655	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་སྒགས་ chaṅ spags TIsampa, die mit chan
 629	69	7661	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འཚོང་ chaṅ ’tshon auch chan tshon, char
+78	67	850	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་མཐོང་ kun mthon Spiegel.
+348	78	4701	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གར་མ་མཐོང་ཏུབ་ gar ma mthon khyab Bez. der
+746	181	8871	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་སུ་མཐོང་ rjes su mthon betrachten, erken-
+786	218	9264	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བར་མཐོང་ fie bar mthon sehen.
+1066	1	11752	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཀ་ mthon ka
+1066	30	11753	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཀ་ mthon ka \mthon ga.
+1066	32	11754	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བཀར་ mthon bkur Würde und Ehre; ~
+1066	73	11756	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཀགྲོལ་ mthon grol Freiwerdung durch
+1066	78	11757	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་གྲོལ་ཆེན་མོ་ mthon grol chen mo npr. ein
+1066	95	11759	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཆུང་བ་ mthon chuṅ ba geringes Anse-
+1066	121	11761	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཉམས་ mthon /74/775 Schverlust.
+1066	148	11763	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ལྡན་དགེ་བ་ mthon Ildan dge ba npr. ein
+1066	166	11765	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་སྣང་ mthon snaṅ Sicht, Achtung; Vision,
+1066	175	11766	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བ་དོན་ཡོད་ mthon ba don yod
+1066	211	11769	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཕྱོགས་ mthon phyogs Sichtweise.
+1066	215	11770	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་པ mthon ba.
+1066	225	11771	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བ་དོན་ཡོད་ mthon ba don yod npr. ein
+1067	1	11772	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བའི་སྐྱོད་ཡུལ་ mthon ba’i spyod yul
+1067	3	11773	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བའི་སྤྱོད་ཡུལ་ mthon ba’i spyod yul Blick-
+1067	33	11776	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་བར་བྱེད་པ་ mthon bar byed pa Bez. für
+1067	36	11777	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་པས་ཐོབ་པ་ mthon bas thob pa zur Er-
+1067	47	11779	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ཀྱེད་ mthon byed.
+1067	50	11780	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་གཡེར་ mthon g.yer
+1067	58	11781	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་མེད་ mthon med.
+1067	75	11782	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་སྨོན་གླིང་ mthon smon gliṅ npr. ein Ort.
+1067	94	11784	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་གཟོས་ mthon gzos Ehrung, Belohnung.
+1067	100	11785	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་གཡེར་ mthon g.yer auch mthon yel,
+1067	169	11787	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་ལེགས་སྐྱེས་ mthon legs skyes Beiname der
+1067	183	11789	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོང་སླེབས་ཀྱི་དཔོན་ mthon slebs kyi dpon jmd.
+1272	53	12796	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་ཡོད་མཐོང་ don yod mthon
+1272	100	12798	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་ཡོད་མཐོང་ don yod mthon.
+1067	100	11785	headword_line	mthon	mthoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མཐོང་གཡེར་ mthoṅ g.yer auch mthon yel,

@@ -9384,7 +9384,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 78	62	849	german_prose			none	0	6	0	0	Lex. änäyyah Bez. eines vedischen Ritualfeu-
 78	63	849	german_prose_with_translit			none	1	2	0	0	ers (Ishe 3b3), r. andyah (?) „Netz, Fischer-
 78	65	849	other			none	0	0	0	0	netz“.
-78	67	850	headword_line	ཀུན་མཐོང་	mthon	high	1	1	0	0	ཀུན་མཐོང་ kun mthon Spiegel.
+78	67	850	headword_line	ཀུན་མཐོང་	mthon	high	1	1	0	0	ཀུན་མཐོང་ kun mthoṅ Spiegel.
 78	68	850	german_prose_with_translit			none	2	3	0	0	Lex. ädarsa (Tshe 3b3); me lori (brDa, Dagy).
 78	70	851	headword_line	ཀུན་འཐོར་	thor	high	1	0	0	0	ཀུན་འཐོར་ kun ’thor (zw.).
 78	71	851	german_prose_with_translit			none	1	3	0	0	Lex. äsphota N. verschiedener Pflanzen
@@ -48869,7 +48869,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 348	73	4700	german_prose_with_translit			none	1	2	0	0	2. Beiname des Maheśvara.
 348	75	4700	german_prose_with_translit			none	5	2	0	0	Lex. dban phyug chen po (brDa); dban
 348	76	4700	german_prose_with_translit			none	1	1	0	0	phyug (Dagy).
-348	78	4701	headword_line	གར་མ་མཐོང་ཏུབ་	ma mthon khyab	high	3	2	0	0	གར་མ་མཐོང་ཏུབ་ gar ma mthon khyab Bez. der
+348	78	4701	headword_line	གར་མ་མཐོང་ཏུབ་	ma mthon khyab	high	3	2	0	0	གར་མ་མཐོང་ཏུབ་ gar ma mthoṅ khyab Bez. der
 348	80	4701	german_prose			none	0	3	0	0	tantrischen Partnerin bei
 348	81	4701	german_prose			none	0	1	0	0	Bon-Lehrern.
 348	83	4701	latin_other			none	4	0	0	0	> cha byad ni ... rgyan dan cha lugs mdzes
@@ -108693,7 +108693,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 746	176	8870	other			none	0	0	0	0	SWTF 5. v. anndbarma.
 746	178	8870	german_prose_with_translit			none	1	2	0	0	Lex. sad anudharmah (Mvy 9321).
 746	180	8870	tibetan_only			none	0	2	0	0	Ann ༦ „ hen A * >
-746	181	8871	headword_line	རྗེས་སུ་མཐོང་	su mthon	high	2	0	0	0	རྗེས་སུ་མཐོང་ rjes su mthon betrachten, erken-
+746	181	8871	headword_line	རྗེས་སུ་མཐོང་	su mthon	high	2	0	0	0	རྗེས་སུ་མཐོང་ rjes su mthoṅ betrachten, erken-
 746	182	8871	other			none	0	0	0	0	nen.
 746	184	8871	latin_other			none	4	0	0	0	byan chub sems dpa’ yari dag par rjes su ma
 746	185	8871	german_prose_with_translit			none	2	2	0	0	mthon „der Bodhisattva ist wahrhaft nicht
@@ -114852,7 +114852,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 786	214	9263	latin_other			none	5	0	0	0	’d’i yon tan phun sum tshogs pa rnams ni =
 786	215	9263	german_prose			none	0	1	0	0	te „man hat von seinen ausgezeichneten
 786	216	9263	german_prose			none	0	3	0	0	Qualitäten gehört“ (Lokn 54,22).
-786	218	9264	headword_line	ཉེ་བར་མཐོང་	mthon	high	1	0	0	0	ཉེ་བར་མཐོང་ fie bar mthon sehen.
+786	218	9264	headword_line	ཉེ་བར་མཐོང་	mthon	high	1	0	0	0	ཉེ་བར་མཐོང་ fie bar mthoṅ sehen.
 786	220	9264	german_prose_with_translit			none	5	2	0	0	di ~ ba ’di ni bdag yin te „der, den du hier
 786	221	9264	german_prose			none	0	1	0	0	siehst, bin ich“ (Lokn 164,9).
 786	223	9264	tibetan_latin_mixed	ཉེ་བར་དལ་བ་		none	2	0	0	0	ཉེ་བར་དལ་བ་ 776 bar dul ba Gemütsruhe.
@@ -156113,7 +156113,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1065	208	11751	latin_other			none	4	0	0	0	(ViśT 76,23); de gan gis ni / lan brgyar
 1065	209	11751	german_prose_with_translit			none	5	2	0	0	mthon dan gan Zig gis / daṅ por ~ ba de güis
 1065	210	11751	german_prose_with_translit			none	1	1	0	0	ka (metr.) „beide: die ihn hundertmal
-1066	1	11752	headword_line	མཐོང་ཀ་	mthon ka	high	2	0	0	0	མཐོང་ཀ་ mthon ka
+1066	1	11752	headword_line	མཐོང་ཀ་	mthon ka	high	2	0	0	0	མཐོང་ཀ་ mthoṅ ka
 1066	3	11752	german_prose			none	0	3	0	0	gesehen haben und die ihn zum ersten Mal
 1066	4	11752	german_prose_with_translit			none	2	1	0	0	gesehen haben“ (Ppu 53b); khyod las kyag
 1066	5	11752	german_prose_with_translit			none	2	4	0	0	Sob che ba ma ~ „einen noch unverschämteren als dich habe ich noch nicht gesehen“
@@ -156136,8 +156136,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	25	11752	german_prose			none	0	3	0	0	bösen Traum gehabt hat“ (Suv 5,2).
 1066	27	11752	german_prose_with_translit			none	1	4	0	0	6. Ansehen, Würde, in Imthon bkur,
 1066	28	11752	german_prose_with_translit			none	1	1	0	0	Imthon chun ba.
-1066	30	11753	headword_line	མཐོང་ཀ་	mthon ka mthon	high	3	0	0	0	མཐོང་ཀ་ mthon ka \mthon ga.
-1066	32	11754	headword_line	མཐོང་བཀར་	mthon bkur	high	2	3	0	0	མཐོང་བཀར་ mthon bkur Würde und Ehre; ~
+1066	30	11753	headword_line	མཐོང་ཀ་	mthon ka mthon	high	3	0	0	0	མཐོང་ཀ་ mthoṅ ka \mthon ga.
+1066	32	11754	headword_line	མཐོང་བཀར་	mthon bkur	high	2	3	0	0	མཐོང་བཀར་ mthoṅ bkur Würde und Ehre; ~
 1066	34	11754	german_prose_with_translit			none	1	3	0	0	che bar ’dzin in großen Ehren
 1066	36	11754	other			none	0	0	0	0	halten.
 1066	38	11754	german_prose_with_translit			none	4	1	0	0	mo la ’thon (7, mtbon) bkur mi yon „Würde
@@ -156165,10 +156165,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	68	11755	german_prose_with_translit			none	5	1	0	0	auch mthons ka“ (brDa); thon ’og = lus kyi
 1066	69	11755	german_prose_with_translit			none	2	3	0	0	thon ga’! ’og „unterhalb der Brust des
 1066	71	11755	german_prose_with_translit			none	1	1	0	0	Körpers“ (brDa).
-1066	73	11756	headword_line	མཐོང་ཀགྲོལ་	mthon	high	2	0	0	0	མཐོང་ཀགྲོལ་ mthon grol Freiwerdung durch
+1066	73	11756	headword_line	མཐོང་ཀགྲོལ་	mthon	high	2	0	0	0	མཐོང་ཀགྲོལ་ mthoṅ grol Freiwerdung durch
 1066	75	11756	german_prose			none	0	2	0	0	Sehen (SCHWIEGER 2009: 69, Nr.
 1066	76	11756	other			none	0	0	0	0	1678).
-1066	78	11757	headword_line	མཐོང་གྲོལ་ཆེན་མོ་	mthon	high	1	2	0	0	མཐོང་གྲོལ་ཆེན་མོ་ mthon grol chen mo npr. ein
+1066	78	11757	headword_line	མཐོང་གྲོལ་ཆེན་མོ་	mthon	high	1	2	0	0	མཐོང་གྲོལ་ཆེན་མོ་ mthoṅ grol chen mo npr. ein
 1066	80	11757	german_prose			none	0	1	0	0	Stüpa.
 1066	81	11757	latin_other			none	6	0	0	0	yum gyi dgons rdzogs la biens pa’i mchod
 1066	82	11757	example_tibetan_latin	༡		none	1	2	0	0	༡767 - „der Stüpa mThon-grol chen-mo,
@@ -156179,7 +156179,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	90	11758	german_prose_with_translit			none	3	2	0	0	Lex. ltad mo dan gäun lugs sogs la mthon
 1066	91	11758	german_prose_with_translit			none	2	2	0	0	snan man ba lta bu „wie: Schauspiele und
 1066	93	11758	german_prose			none	0	2	0	0	Texte usw. viel gesehen haben“ (Dagy).
-1066	95	11759	headword_line	མཐོང་ཆུང་བ་	mthon chuṅ ba geringes	high	4	1	0	0	མཐོང་ཆུང་བ་ mthon chuṅ ba geringes Anse-
+1066	95	11759	headword_line	མཐོང་ཆུང་བ་	mthon chuṅ ba geringes	high	4	1	0	0	མཐོང་ཆུང་བ་ mthoṅ chuṅ ba geringes Anse-
 1066	97	11759	latin_other			none	1	0	0	0	hen, Geringschätzung.
 1066	99	11759	german_prose_with_translit			none	3	1	0	0	yul mi rnams kyi ~$ „durch das geringe
 1066	100	11759	german_prose_with_translit			none	2	3	0	0	Ansehen bei der Bevölkerung“ (’Dzam
@@ -156197,7 +156197,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	115	11759	german_prose_with_translit			none	1	2	0	0	ba „sehr achten oder hochschätzen“
 1066	117	11759	german_prose			none	0	1	0	0	(Dagy).
 1066	119	11760	headword_line	མཐོང་ཉམས་	mthon	high	1	0	0	0	མཐོང་ཉམས་ mthon 777༡775
-1066	121	11761	headword_line	མཐོང་ཉམས་	mthon	high	1	1	0	0	མཐོང་ཉམས་ mthon /74/775 Schverlust.
+1066	121	11761	headword_line	མཐོང་ཉམས་	mthon	high	1	1	0	0	མཐོང་ཉམས་ mthoṅ /74/775 Schverlust.
 1066	123	11761	other			none	0	0	0	0	"mig ""bras rab rib - gsum (metr.) „drei"
 1066	124	11761	german_prose_with_translit			none	1	4	0	0	[Kapitel sind] auf die Pupillen, Dunkelheit
 1066	125	11761	german_prose			none	0	4	0	0	[vor den Augen] und Sehverlust [bezo-
@@ -156218,7 +156218,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	144	11762	german_prose			none	0	3	0	0	yod run „Männer oder Frauen, wo immer
 1066	145	11762	german_prose			none	0	2	0	0	sie sich aufhalten, und man sie sieht oder
 1066	146	11762	german_prose			none	0	3	0	0	von ihnen hört“ (Wadd135 20).
-1066	148	11763	headword_line	མཐོང་ལྡན་དགེ་བ་	mthon	high	3	2	0	0	མཐོང་ལྡན་དགེ་བ་ mthon Ildan dge ba npr. ein
+1066	148	11763	headword_line	མཐོང་ལྡན་དགེ་བ་	mthon	high	3	2	0	0	མཐོང་ལྡན་དགེ་བ་ mthoṅ Ildan dge ba npr. ein
 1066	150	11763	german_prose			none	0	2	0	0	ind. König, skt. Ksemadarsin.
 1066	152	11763	latin_other			none	6	0	0	0	rgyal po ~ ces kyan bya ba / ma skyes dgrar
 1066	153	11763	german_prose_with_translit			none	3	7	0	0	grags pa yan „der König aber, der Ksemadarśin genannt wurde, war auch als Ajäta-
@@ -156228,13 +156228,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	160	11764	headword_line	མཐོང་ན་དགའ་	mthoṅ na dga’	high	3	1	0	0	མཐོང་ན་དགའ་ mthoṅ na dga’ schön.
 1066	162	11764	german_prose_with_translit			none	2	3	0	0	Lex. gzugs mdzes la’an „schöne Gestalt“
 1066	164	11764	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-1066	166	11765	headword_line	མཐོང་སྣང་	mthon snaṅ	high	3	2	0	0	མཐོང་སྣང་ mthon snaṅ Sicht, Achtung; Vision,
+1066	166	11765	headword_line	མཐོང་སྣང་	mthon snaṅ	high	3	2	0	0	མཐོང་སྣང་ mthoṅ snaṅ Sicht, Achtung; Vision,
 1066	168	11765	tibetan_latin_mixed			none	4	0	0	0	Erscheinung; ༡༨ gi sprul pa dass.
 1066	170	11765	german_prose_with_translit			none	3	2	0	0	der phyogs bäi kha ru = gi sprul par byun te
 1066	171	11765	german_prose_with_translit			none	2	1	0	0	„dann entstand sie als Erscheinung, welche
 1066	172	11765	german_prose_with_translit			none	1	1	0	0	in allen vier Himmelsrichtungen [sichtbar]
 1066	173	11765	german_prose_with_translit			none	2	2	0	0	war“ (Glr 103,5); /ha sku sogs ~ sna tshogs
-1066	175	11766	headword_line	མཐོང་བ་དོན་ཡོད་	mthon ba	high	2	0	0	0	མཐོང་བ་དོན་ཡོད་ mthon ba don yod
+1066	175	11766	headword_line	མཐོང་བ་དོན་ཡོད་	mthon ba	high	2	0	0	0	མཐོང་བ་དོན་ཡོད་ mthoṅ ba don yod
 1066	177	11766	latin_other			none	6	0	0	0	byun ba rnams bsgoms pa’i rtags tsam yin
 1066	178	11766	german_prose_with_translit			none	1	4	0	0	„die vielfältigen Erscheinungen von Göt-
 1066	179	11766	german_prose			none	0	4	0	0	terbildern usw. sind nur ein Zeichen der
@@ -156260,22 +156260,22 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	207	11768	german_prose			none	0	5	0	0	Bewohner sind nicht in ein fremdes Land
 1066	208	11768	other			none	0	0	0	0	gereist, daher haben sie wenig gesehen“
 1066	209	11768	other			none	0	0	0	0	(271 4: 475,4).
-1066	211	11769	headword_line	མཐོང་ཕྱོགས་	mthon phyogs	high	2	1	0	0	མཐོང་ཕྱོགས་ mthon phyogs Sichtweise.
+1066	211	11769	headword_line	མཐོང་ཕྱོགས་	mthon phyogs	high	2	1	0	0	མཐོང་ཕྱོགས་ mthoṅ phyogs Sichtweise.
 1066	212	11769	german_prose_with_translit			none	3	4	0	0	Lex. mthon ba’i snan tsbul „Art des Be-
 1066	213	11769	german_prose			none	0	1	0	0	trachtens“ (Dagy).
-1066	215	11770	headword_line	མཐོང་པ	mthon ba	high	2	0	0	0	མཐོང་པ mthon ba.
+1066	215	11770	headword_line	མཐོང་པ	mthon ba	high	2	0	0	0	མཐོང་པ mthoṅ ba.
 1066	217	11770	german_prose			none	0	1	0	0	1. Imthon.
 1066	219	11770	german_prose			none	0	2	0	0	2. npr. ein Ksarriya.
 1066	221	11770	german_prose_with_translit			none	5	1	0	0	rgyal rigs = Zes bya ba ’byor ba phun sum
 1066	222	11770	german_prose_with_translit			none	3	3	0	0	tshogs pa cig „ein Ksatriya namens Darsana,
 1066	223	11770	german_prose			none	0	4	0	0	der überaus reich war“ (Tär 36,19).
-1066	225	11771	headword_line	མཐོང་བ་དོན་ཡོད་	mthon ba	high	2	1	0	0	མཐོང་བ་དོན་ཡོད་ mthon ba don yod npr. ein
+1066	225	11771	headword_line	མཐོང་བ་དོན་ཡོད་	mthon ba	high	2	1	0	0	མཐོང་བ་དོན་ཡོད་ mthoṅ ba don yod npr. ein
 1066	226	11771	german_prose_with_translit			none	1	1	0	0	Bodhisattva, skt. Amogha-
 1066	227	11771	other			none	0	0	0	0	darsın.
 1066	229	11771	german_prose			none	0	2	0	0	Lex. amoghadarsi (Mvy 717).
 1066	231	11771	other			none	0	0	0	0	363
-1067	1	11772	headword_line	མཐོང་བའི་སྐྱོད་ཡུལ་	mthon ba’i spyod yul	high	4	0	0	0	མཐོང་བའི་སྐྱོད་ཡུལ་ mthon ba’i spyod yul
-1067	3	11773	headword_line	མཐོང་བའི་སྤྱོད་ཡུལ་	mthon ba’i spyod yul	high	4	1	0	0	མཐོང་བའི་སྤྱོད་ཡུལ་ mthon ba’i spyod yul Blick-
+1067	1	11772	headword_line	མཐོང་བའི་སྐྱོད་ཡུལ་	mthon ba’i spyod yul	high	4	0	0	0	མཐོང་བའི་སྐྱོད་ཡུལ་ mthoṅ ba’i spyod yul
+1067	3	11773	headword_line	མཐོང་བའི་སྤྱོད་ཡུལ་	mthon ba’i spyod yul	high	4	1	0	0	མཐོང་བའི་སྤྱོད་ཡུལ་ mthoṅ ba’i spyod yul Blick-
 1067	4	11773	other			none	0	0	0	0	feld.
 1067	5	11773	latin_other			none	3	0	0	0	de rnams kyan = du ma gyur bas yid ’byun
 1067	6	11773	german_prose			none	0	2	0	0	Zin „jene aber waren betrübt, weil er nicht
@@ -156300,10 +156300,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	29	11775	latin_other			none	6	0	0	0	bsrabs pa’i sa / bsgom pa’i sa / ’dod chags dan
 1067	30	11775	latin_other			none	7	0	0	0	bral ba’i sa / byas pa rtogs pa’i sa / ran thos
 1067	31	11775	german_prose_with_translit			none	4	2	0	0	Ryi sa bcas dman pa sa brgyad (Dagy).
-1067	33	11776	headword_line	མཐོང་བར་བྱེད་པ་	mthon	high	3	2	0	0	མཐོང་བར་བྱེད་པ་ mthon bar byed pa Bez. für
+1067	33	11776	headword_line	མཐོང་བར་བྱེད་པ་	mthon	high	3	2	0	0	མཐོང་བར་བྱེད་པ་ mthoṅ bar byed pa Bez. für
 1067	34	11776	german_prose			none	0	1	0	0	Lehrer.
 1067	35	11776	german_prose			none	0	2	0	0	Lex. darsayita (Mvy 2765).
-1067	36	11777	headword_line	མཐོང་པས་ཐོབ་པ་	mthon	high	3	1	0	0	མཐོང་པས་ཐོབ་པ་ mthon bas thob pa zur Er-
+1067	36	11777	headword_line	མཐོང་པས་ཐོབ་པ་	mthon	high	3	1	0	0	མཐོང་པས་ཐོབ་པ་ mthoṅ bas thob pa zur Er-
 1067	37	11777	latin_other			none	1	0	0	0	kenntnis gelangt.
 1067	38	11777	german_prose_with_translit			none	1	3	0	0	Lex. drstipräptah (sGra 115; Mvy 1024).
 1067	39	11778	headword_line	མཐོང་བས་སྤང་བར་བྱ་བ་	mthon	high	2	0	0	0	མཐོང་བས་སྤང་བར་བྱ་བ་ mthon bas span bar bya
@@ -156311,14 +156311,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	42	11778	german_prose			none	0	2	0	0	Einsicht aufzugeben ist.
 1067	44	11778	german_prose			none	0	3	0	0	Lex. darsanaprahätauyab (Mvy 2150);
 1067	45	11778	german_prose			none	0	1	0	0	drggheyam (Mvy 7252).
-1067	47	11779	headword_line	མཐོང་ཀྱེད་	mthon byed	high	2	0	0	0	མཐོང་ཀྱེད་ mthon byed.
+1067	47	11779	headword_line	མཐོང་ཀྱེད་	mthon byed	high	2	0	0	0	མཐོང་ཀྱེད་ mthoṅ byed.
 1067	48	11779	german_prose			none	0	3	0	0	1. Bez. für Auge.
-1067	50	11780	headword_line	མཐོང་གཡེར་	mthon	high	1	0	0	0	མཐོང་གཡེར་ mthon g.yer
+1067	50	11780	headword_line	མཐོང་གཡེར་	mthon	high	1	0	0	0	མཐོང་གཡེར་ mthoṅ g.yer
 1067	52	11780	german_prose_with_translit			none	1	2	0	0	Lex. iksana (Ak 163.92); mig (brDa,
 1067	54	11780	german_prose			none	0	1	0	0	Dagy).
 1067	55	11780	german_prose			none	0	1	0	0	2. glänzend, strahlend.
 1067	56	11780	german_prose_with_translit			none	1	2	0	0	Lex. bhräjisnu (Ak 165.100).
-1067	58	11781	headword_line	མཐོང་མེད་	mthon	high	1	0	0	0	མཐོང་མེད་ mthon med.
+1067	58	11781	headword_line	མཐོང་མེད་	mthon	high	1	0	0	0	མཐོང་མེད་ mthoṅ med.
 1067	60	11781	german_prose			none	0	1	0	0	1. unvorhergesehen (Gefahr).
 1067	62	11781	german_prose_with_translit			none	2	1	0	0	Lex. ~ me dan chu la sogs ‰ adrstam vahni-
 1067	63	11781	german_prose			none	0	3	0	0	toyädi „eine unvorhergesehene Gefahr,
@@ -156328,7 +156328,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	69	11781	latin_other			none	1	0	0	0	(brDa).
 1067	71	11781	german_prose			none	0	3	0	0	3. Bez. für Neumond.
 1067	73	11781	german_prose_with_translit			none	1	1	0	0	Lex. gnam gan (brDa).
-1067	75	11782	headword_line	མཐོང་སྨོན་གླིང་	mthon	high	1	2	0	0	མཐོང་སྨོན་གླིང་ mthon smon gliṅ npr. ein Ort.
+1067	75	11782	headword_line	མཐོང་སྨོན་གླིང་	mthon	high	1	2	0	0	མཐོང་སྨོན་གླིང་ mthoṅ smon gliṅ npr. ein Ort.
 1067	77	11782	latin_other			none	4	0	0	0	chags pa’i sa de - (metr.) „dein Geburtsort
 1067	78	11782	german_prose_with_translit			none	1	2	0	0	ist mIhon-smon-glin“ (Gesar 198,3).
 1067	80	11782	german_prose_with_translit			none	3	3	0	0	Sarg mthon rtsa Vena cephalica, Bug-
@@ -156340,11 +156340,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	89	11783	headword_line	མཁོང་ཚུལ་	mthon tshul Meinung	high	3	1	0	0	མཁོང་ཚུལ་ mthon tshul Meinung, Ansicht,
 1067	91	11783	german_prose_with_translit			none	3	3	0	0	Lex. mthon ba’ snan tshul „Art des
 1067	92	11783	german_prose			none	0	2	0	0	Betrachtens“ (Dagy).
-1067	94	11784	headword_line	མཐོང་གཟོས་	mthon	high	3	0	0	0	མཐོང་གཟོས་ mthon gzos Ehrung, Belohnung.
+1067	94	11784	headword_line	མཐོང་གཟོས་	mthon	high	3	0	0	0	མཐོང་གཟོས་ mthoṅ gzos Ehrung, Belohnung.
 1067	96	11784	german_prose_with_translit			none	4	1	0	0	Lex. bkur ba’am gzigs bskyans gnan ba
 1067	97	11784	german_prose_with_translit			none	1	3	0	0	„ehren oder beachten“ (brDa, ähnl. Dagy);
 1067	98	11784	german_prose_with_translit			none	3	2	0	0	che mthon = chen por bkur ba’i - (Dagy).
-1067	100	11785	headword_line	མཐོང་གཡེར་	mthon	high	2	1	0	0	མཐོང་གཡེར་ mthon g.yer auch mthon yel,
+1067	100	11785	headword_line	མཐོང་གཡེར་	mthon	high	2	1	0	0	མཐོང་གཡེར་ mthoṅ g.yer auch mthoṅ yel,
 1067	101	11785	latin_other			none	1	0	0	0	mthon g.yel.
 1067	103	11785	german_prose			none	0	2	0	0	1. sich von etwas Visuellem ablenken
 1067	104	11785	german_prose			none	0	3	0	0	lassen, den Blick schweifen lassen; Aus-
@@ -156397,7 +156397,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	164	11785	german_prose			none	0	5	0	0	Weise des Sehens oder Betrachtens“
 1067	165	11785	german_prose_with_translit			none	3	1	0	0	(brDa); mthon tshul (Dagy).
 1067	167	11786	headword_line	མཐོངས་ཞཁོར་	mthons khor	high	2	0	0	0	མཐོངས་ཞཁོར་ mthons ’khor
-1067	169	11787	headword_line	མཐོང་ལེགས་སྐྱེས་	mthon	high	2	2	0	0	མཐོང་ལེགས་སྐྱེས་ mthon legs skyes Beiname der
+1067	169	11787	headword_line	མཐོང་ལེགས་སྐྱེས་	mthon	high	2	2	0	0	མཐོང་ལེགས་སྐྱེས་ mthoṅ legs skyes Beiname der
 1067	171	11787	german_prose			none	0	2	0	0	Gattin Indras.
 1067	173	11787	german_prose_with_translit			none	2	2	0	0	Lex. breya sbyin btsun mo (brDa, ähnl.
 1067	174	11787	german_prose			none	0	1	0	0	Dagy).
@@ -156406,7 +156406,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1067	179	11788	german_prose			none	0	2	0	0	med „die Distriktbeauftragten usw. sollen
 1067	180	11788	german_prose			none	0	5	0	0	nach Privilegien und Ansehen ohne Unter-
 1067	181	11788	latin_other			none	1	0	0	0	schied sein“ (BhuKkh 146,34).
-1067	183	11789	headword_line	མཐོང་སླེབས་ཀྱི་དཔོན་	mthon	high	2	0	0	0	མཐོང་སླེབས་ཀྱི་དཔོན་ mthon slebs kyi dpon jmd.
+1067	183	11789	headword_line	མཐོང་སླེབས་ཀྱི་དཔོན་	mthon	high	2	0	0	0	མཐོང་སླེབས་ཀྱི་དཔོན་ mthoṅ slebs kyi dpon jmd.
 1067	185	11789	german_prose_with_translit			none	1	1	0	0	der Anweisungen gibt.
 1067	187	11789	german_prose			none	0	3	0	0	Lex. prasästä (Mvy 3716).
 1067	189	11789	german_prose_with_translit			none	2	2	0	0	"IBAN"" 'mthons Öffnung, freier Raum; in"
@@ -172651,7 +172651,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1272	48	12795	headword_line	དོན་བཟང་པོ་	bzan po	medium	2	2	0	0	དོན་བཟང་པོ་ don bzaṅ po das richtige Ziel ver-
 1272	49	12795	other			none	0	0	0	0	folgend.
 1272	51	12795	german_prose_with_translit			none	1	2	0	0	Lex. svartham (Mvy 1284, sGra 142).
-1272	53	12796	headword_line	དོན་ཡོད་མཐོང་	mthon	high	1	0	0	0	དོན་ཡོད་མཐོང་ don yod mthon
+1272	53	12796	headword_line	དོན་ཡོད་མཐོང་	mthon	high	1	0	0	0	དོན་ཡོད་མཐོང་ don yod mthoṅ
 1272	55	12796	tibetan_only	དོན་ཡོད་		none	0	0	0	0	དོན་ཡོད་ don yod.
 1272	57	12796	tibetan_only	དོན་ཡོད་གྲུབ་པ		none	0	0	0	0	དོན་ཡོད་གྲུབ་པ
 1272	59	12796	other			none	0	0	0	0	1. sinnvoll.
@@ -172681,7 +172681,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1272	96	12797	german_prose_with_translit			none	1	2	0	0	geistliche Lehrer Don-yod rgyal-mtshan-pa
 1272	97	12797	german_prose_with_translit			none	2	3	0	0	war der Dharmalehrer des bZi-thog [bla-
 1272	98	12797	german_prose			none	0	1	0	0	bran]“ (Debm 2334).
-1272	100	12798	headword_line	དོན་ཡོད་མཐོང་	mthon	high	1	0	0	0	དོན་ཡོད་མཐོང་ don yod mthon.
+1272	100	12798	headword_line	དོན་ཡོད་མཐོང་	mthon	high	1	0	0	0	དོན་ཡོད་མཐོང་ don yod mthoṅ.
 1272	102	12798	other			none	0	0	0	0	184
 1272	104	12798	german_prose_with_translit			none	1	1	0	0	1. npr. ein Buddha.
 1272	106	12798	german_prose_with_translit			none	1	1	0	0	Lex. amoghadarsin (Bhad 60).
