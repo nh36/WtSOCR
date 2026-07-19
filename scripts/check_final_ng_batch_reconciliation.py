@@ -53,25 +53,42 @@ def validate(root: Path = ROOT) -> list[str]:
             row["tibetan_syllable"] == tibetan and row.get("active_queue", "yes") == "yes"
             for row in echoes
         )
-        accepted_decisions = sum(
-            row["tibetan_syllable"] == tibetan and row["decision"] == "accepted"
-            for row in decisions
+        decision_counts = Counter(
+            row["decision"] for row in decisions if row["tibetan_syllable"] == tibetan
         )
-        expected_pos = int(batch["positional_frozen_count"])
-        expected_echo = int(batch["echo_accepted_count"])
-        frozen_echo_candidates = int(batch["echo_candidate_frozen_count"])
-        checks = {
-            "positional overrides": (len(pos), expected_pos),
-            "echo overrides": (len(echo), expected_echo),
-            "release positional changes": (len(release_pos), expected_pos),
-            "release echo changes": (len(release_echo), expected_echo),
-            "positional queue delta": (expected_pos - active_pos, expected_pos),
-            "echo queue delta": (
-                frozen_echo_candidates - active_echo,
-                frozen_echo_candidates,
-            ),
-            "accepted echo decisions": (accepted_decisions, expected_echo),
+        frozen_pos = int(batch["frozen_positional_count"])
+        frozen_echo = int(batch["frozen_echo_candidate_count"])
+        current_echo_total = sum(row["tibetan_syllable"] == tibetan for row in echoes)
+        computed = {
+            "actual_positional_overrides": len(pos),
+            "echo_decisions_accepted": decision_counts["accepted"],
+            "echo_decisions_deferred": decision_counts["deferred"],
+            "echo_decisions_rejected": decision_counts["rejected"],
+            "echo_decisions_resolved_elsewhere": decision_counts["resolved_elsewhere"],
+            "echo_candidates_not_yet_reviewed": active_echo,
+            "positional_queue_delta": frozen_pos - active_pos,
+            "total_echo_diagnostic_delta": frozen_echo - current_echo_total,
+            "active_echo_queue_delta": frozen_echo - active_echo,
+            "total_overrides_added": len(pos) + len(echo),
         }
+        checks = {
+            field: (actual, int(batch[field])) for field, actual in computed.items()
+        }
+        checks.update(
+            {
+                "frozen positional arithmetic": (len(pos), frozen_pos),
+                "echo override/decision arithmetic": (
+                    len(echo),
+                    decision_counts["accepted"],
+                ),
+                "all frozen echoes reviewed": (
+                    sum(decision_counts.values()) + active_echo,
+                    frozen_echo,
+                ),
+                "release positional changes": (len(release_pos), len(pos)),
+                "release echo changes": (len(release_echo), len(echo)),
+            }
+        )
         for label, (actual, expected) in checks.items():
             if actual != expected:
                 errors.append(f"{batch['batch_id']}: {label}={actual}, expected {expected}")
@@ -79,6 +96,7 @@ def validate(root: Path = ROOT) -> list[str]:
             f"{batch['batch_id']}: positional={len(pos)} "
             f"{Counter((row['volume'], row['from_token']) for row in pos)}; "
             f"echoes={len(echo)} {Counter((row['volume'], row['from_token']) for row in echo)}; "
+            f"decisions={dict(decision_counts)}; active={active_echo}; "
             f"total={len(pos) + len(echo)}"
         )
     return errors
