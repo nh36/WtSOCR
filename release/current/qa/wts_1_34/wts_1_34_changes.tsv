@@ -27789,3 +27789,44 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1322	90	13039	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་བཟང་བུ་མོ་ dri bzan bu mo auch 777 bzan bu
 86	60	998	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀུན་བཟང་མ་ kun bzaṅ ma, auch kun bzan mo npr.
 987	88	10743	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཐྲགས་བཟང་ thags bzaṅ auch thag bzan wohl-
+114	95	1378	example_tibetan_latin	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	klag (7. glag) ba lam pa glu (7, klu) mes tshul ལླུ་མ་དུང་སྐྱང་མ་ klu mo dun skyon ma npr. eine
+124	33	1527	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo dun skyon ma npr.
+124	43	1527	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ དུང་ལོང་ dkar mo dun lon npr. ein Steig-
+157	136	1991	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་དུང་ rkaṅ dun.
+208	47	2652	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱེ་བ་ལྔ་པའི་དུང་ skye ba lṅa pa’i dun nach rechts
+499	106	6402	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒ་སྐྱེད་གློག་དུང་ sgra skyed glog dun
+1087	1	11906	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་དུང་ཀྱང་ da dun kyan
+1087	34	11907	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་དུང་ཀྱང་ da dun kyan Ida dun yan.
+1087	36	11908	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་དུང་གི་བར་དུ་ da dun gi bar du bis heute.
+1087	45	11909	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་དུང་དུ་ཡང་ da dun du yaṅ bis heute aber.
+1087	52	11910	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་དུང་ཡང་ da dun yaṅ auch da dun kyan noch
+1154	29	12258	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ 'dun.
+1154	56	12258	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ 'dun
+1155	52	12259	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་དཀར་ dun dkar
+1155	93	12259	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་དཀར་ dun dkar.
+1156	1	12260	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་དཀར་རི་ཁྲོད་ dun dkar ri khrod
+1156	24	12264	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་སྐྱོང་ dun skyon auch dun skyons npr. ein
+1156	49	12265	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་གི་ལག་པ་ dun gi lag pa
+1156	51	12266	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dbaṅ mo Beina-
+1156	59	12267	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཁྲི་ dun khri auch dun khrid 0¢ ldan npr.
+1156	70	12268	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་འཁྱིལ་བ་ dun ’khyil ba.
+1156	93	12270	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་གི་ལག་པ་ dun gi lagpa Beiname Visnus.
+1157	1	12270	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ངེ་ dun ne
+1157	3	12270	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ངེ་ dun ne anhaftend, sich sehnend; in yıd
+1157	25	12271	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཅན་མ་ dun can ma Beiname Täräs.
+1157	30	12271	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཆེན་ dun chen „große Meeresschnecke“,
+1157	58	12272	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཕུ་ dun phu
+1157	94	12272	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་པན་ dun pan ein Gefäß, vgl. chin. A%#
+1157	102	12273	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དུང་ཕུ་ dun phu ""Irompetenspieler, Bläser."
+1158	1	12274	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཕྱུར་ dun phyur
+1158	3	12275	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཕྱུར་ dun phyur auch dun 70/77///7ˆ eine hohe
+1158	24	12276	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་མིག་མ་ dun mig ma npr. eine Gottheit
+1158	30	12276	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་ཡལ་ dun yal spurlos.
+1158	38	12277	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་གཡས་འཁྱིལ་ dun g.yas ’khyil Kurzf. für
+1158	48	12278	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་རབ་གནས་པ་ dun rab gnas pa Bez. für
+1158	57	12279	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་རིང་ dun rin eine Langtrompete (Neb
+1158	67	12279	tibetan_only	dun	duṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་རྭ་ dun rwa Geweih eines Hirschs.
+1087	52	11910	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ད་དུང་ཡང་ da duṅ yaṅ auch da dun kyan noch
+1156	24	12264	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་སྐྱོང་ duṅ skyon auch dun skyons npr. ein
+1156	59	12267	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་ཁྲི་ duṅ khri auch dun khrid 0¢ ldan npr.
+1158	3	12275	headword_line	dun	duṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དུང་ཕྱུར་ duṅ phyur auch dun 70/77///7ˆ eine hohe

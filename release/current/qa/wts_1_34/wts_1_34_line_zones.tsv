@@ -14755,7 +14755,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 114	90	1378	german_prose_with_translit			none	3	4	0	0	Lex. sgra gean gyi ma „Mutter des Rähu“
 114	91	1378	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
 114	93	1378	tibetan_only	༢༨༩༧ ༢༨༤		none	0	0	0	0	༢༨༩༧ ༢༨༤
-114	95	1378	example_tibetan_latin			none	5	1	0	0	klag (7. glag) ba lam pa glu (7, klu) mes tshul ལླུ་མ་དུང་སྐྱང་མ་ klu mo dun skyon ma npr. eine
+114	95	1378	example_tibetan_latin			none	5	1	0	0	klag (7. glag) ba lam pa glu (7, klu) mes tshul ལླུ་མ་དུང་སྐྱང་མ་ klu mo duṅ skyon ma npr. eine
 114	97	1378	german_prose_with_translit			none	1	3	0	0	khrims ses rab „Glag Ba-lam-pa Klu-mes
 114	98	1378	german_prose_with_translit			none	2	2	0	0	TIshul-khrims śes-rab“ (Bu 896,2); des grum
 114	99	1378	german_prose_with_translit			none	2	2	0	0	la / des — la „dieser [lehrte] Grum, dieser
@@ -16285,13 +16285,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 124	27	1526	tibetan_only	དཀར་མོ་ སྟོང་ཤོང་	stoṅ	high	0	3	0	0	དཀར་མོ་ སྟོང་ཤོང་ dkar mo stoṅ Son npr. ein Zelt.
 124	29	1526	german_prose_with_translit			none	3	4	0	0	las gur — phub (metr.) „[für diese] Gelegenheit wurde das Zelt dKar-mo ston-śon auf-
 124	31	1526	german_prose			none	0	1	0	0	geschlagen“ (Gesar 288,6).
-124	33	1527	headword_line	དཀར་མོ་ དུང་སྐྱོང་མ་	skyon ma	medium	2	0	0	0	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo dun skyon ma npr.
+124	33	1527	headword_line	དཀར་མོ་ དུང་སྐྱོང་མ་	skyon ma	medium	2	0	0	0	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo duṅ skyon ma npr.
 124	34	1527	german_prose			none	0	3	0	0	eine Göttin (Bon).
 124	36	1527	latin_other			none	2	0	0	0	lha mo dkar mo dun (s)kyon mas / thams cad
 124	38	1527	german_prose_with_translit			none	3	2	0	0	kun la sku khrus gsol (metr.) „die Göttin
 124	40	1527	german_prose			none	0	2	0	0	dKar-mo dun-skyon-ma hat an allen [Plät-
 124	41	1527	german_prose			none	0	1	0	0	zen] gebadet“ (Gansri 470,2).
-124	43	1527	tibetan_only	དཀར་མོ་ དུང་ལོང་		none	0	2	0	0	དཀར་མོ་ དུང་ལོང་ dkar mo dun lon npr. ein Steig-
+124	43	1527	tibetan_only	དཀར་མོ་ དུང་ལོང་		none	0	2	0	0	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon npr. ein Steig-
 124	44	1527	german_prose			none	0	1	0	0	bügel.
 124	46	1527	german_prose_with_translit			none	1	6	0	0	yob chen — dan (metr.) „und der große Steigbügel dKar-mo dun-lon“ (Gesar 319,28).
 124	49	1527	tibetan_only	དཀར་མོ་ དྲུག་འགྱུར་		none	0	2	0	0	དཀར་མོ་ དྲུག་འགྱུར་ dkar mo drug 97///7 N. einer
@@ -21230,7 +21230,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 157	132	1989	german_prose_with_translit			none	5	2	0	0	Lex. rkan (’thun dban po = ljon Sin mchog
 157	133	1989	german_prose_with_translit			none	1	3	0	0	„bester Baum“ (brDa, ähnl. Dagy).
 157	135	1990	headword_line	རྐང་དང་ཀིང་	rkaṅ daṅ	high	2	0	0	0	རྐང་དང་ཀིང་ rkaṅ daṅ kin tkin kan.
-157	136	1991	headword_line	རྐང་དུང་	rkaṅ	high	1	0	0	0	རྐང་དུང་ rkaṅ dun.
+157	136	1991	headword_line	རྐང་དུང་	rkaṅ	high	1	0	0	0	རྐང་དུང་ rkaṅ duṅ.
 157	138	1991	german_prose			none	0	1	0	0	1. Oberschenkelknochen.
 157	140	1991	german_prose_with_translit			none	5	1	0	0	Lex. dpyi dan pus mo bar gyi rus pa ste brla
 157	141	1991	german_prose_with_translit			none	2	4	0	0	rkan yan zer „der Knochen zwischen Hüfte
@@ -28724,7 +28724,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 208	44	2651	example_tibetan_latin			none	3	2	0	0	'བྲ་རྒན་བ།ཅོད་ skye ba rgyun gcod eine Pflanze,
 208	45	2651	german_prose			none	0	1	0	0	2 Am synon. 1/6 han.
 208	46	2651	german_prose			none	0	2	0	0	Lex. — (Gl. brag spos) be ljan (gYu 293,15).
-208	47	2652	headword_line	སྐྱེ་བ་ལྔ་པའི་དུང་	skye ba lṅa pa’i	high	5	0	0	0	སྐྱེ་བ་ལྔ་པའི་དུང་ skye ba lṅa pa’i dun nach rechts
+208	47	2652	headword_line	སྐྱེ་བ་ལྔ་པའི་དུང་	skye ba lṅa pa’i	high	5	0	0	0	སྐྱེ་བ་ལྔ་པའི་དུང་ skye ba lṅa pa’i duṅ nach rechts
 208	48	2652	german_prose			none	0	1	0	0	drehende Meeresschnecke.
 208	50	2652	german_prose_with_translit			none	2	2	0	0	Lex. dun dkar g.yas ’khyil (brDa, Dagy).
 208	51	2653	headword_line	སྐྱེ་བ་མཆེད་	skye ba mched	medium	4	0	0	0	སྐྱེ་བ་མཆེད་ skye ba mched [5/07/© mched.
@@ -70959,7 +70959,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 499	101	6401	tibetan_only	སྒྲ་སྐད་		none	0	3	0	0	སྒྲ་སྐད་ 9༡༩ skad Sprache, Wort, Laut.
 499	103	6401	german_prose_with_translit			none	2	1	0	0	rna bo che yi ~ ’di yis ni „durch diesen [zu
 499	104	6401	german_prose_with_translit			none	1	3	0	0	den] Worten [des Dharma gewordenen]
-499	106	6402	headword_line	སྒ་སྐྱེད་གློག་དུང་	sgra skyed	medium	2	0	0	0	སྒ་སྐྱེད་གློག་དུང་ sgra skyed glog dun
+499	106	6402	headword_line	སྒ་སྐྱེད་གློག་དུང་	sgra skyed	medium	2	0	0	0	སྒ་སྐྱེད་གློག་དུང་ sgra skyed glog duṅ
 499	108	6402	german_prose_with_translit			none	1	4	0	0	Klang (skt. sabdanädi) der großen Trom-
 499	109	6402	german_prose			none	0	1	0	0	mel“ (Suv 20,22); srog chags rnams kyanı ...
 499	110	6402	latin_other			none	4	0	0	0	ran gi ris daṅ ’dra ba’i - rnams sna tshogs
@@ -158356,7 +158356,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1086	101	11905	latin_other			none	5	0	0	0	7.4d); — na’itshon yari ma zin rdzoṅ phru yan
 1086	102	11905	german_prose			none	0	3	0	0	cho chad „unser Handel ist jetzt weder beendet, noch reicht unser Proviant aus“ (dPe
 1086	104	11905	latin_other			none	3	0	0	0	70,15); glan dar mas chos snubs pa da du(n)
-1087	1	11906	headword_line	ད་དུང་ཀྱང་	kyan	medium	1	0	0	0	ད་དུང་ཀྱང་ da dun kyan
+1087	1	11906	headword_line	ད་དུང་ཀྱང་	kyan	medium	1	0	0	0	ད་དུང་ཀྱང་ da duṅ kyan
 1087	3	11906	german_prose_with_translit			none	2	5	0	0	ma thos sam „habt ihr noch immer nicht gehört, daß Glan-dar-ma die Lehre vernich-
 1087	5	11906	german_prose_with_translit			none	2	1	0	0	tet hat?“ (Nel 1537); — red na yan 'bebs
 1087	6	11906	other			none	0	0	0	0	„aber wenn sie euch jetzt noch finden, wer-
@@ -158382,19 +158382,19 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1087	29	11906	german_prose_with_translit			none	5	1	0	0	Lex. da lta’an yin zer ba lta bu (brDa); sron
 1087	30	11906	german_prose_with_translit			none	3	6	0	0	dus ma zad da lta’an lta bu „wie: die frühere Zeit ist nicht vorüber, auch jetzt noch“
 1087	33	11906	german_prose			none	0	1	0	0	(Dagy).
-1087	34	11907	headword_line	ད་དུང་ཀྱང་	kyan	medium	2	1	0	0	ད་དུང་ཀྱང་ da dun kyan Ida dun yan.
-1087	36	11908	headword_line	ད་དུང་གི་བར་དུ་	gi	medium	2	0	0	0	ད་དུང་གི་བར་དུ་ da dun gi bar du bis heute.
+1087	34	11907	headword_line	ད་དུང་ཀྱང་	kyan	medium	2	1	0	0	ད་དུང་ཀྱང་ da duṅ kyan Ida dun yan.
+1087	36	11908	headword_line	ད་དུང་གི་བར་དུ་	gi	medium	2	0	0	0	ད་དུང་གི་བར་དུ་ da duṅ gi bar du bis heute.
 1087	38	11908	latin_other			none	5	0	0	0	thog ma med pa’i dus can 'di / da dun bar du
 1087	39	11908	german_prose_with_translit			none	2	2	0	0	ma log go (metr.) „von anfanglosen Zeiten
 1087	40	11908	other			none	0	0	0	0	bis heute haben wir uns davon nicht abge-
 1087	41	11908	german_prose_with_translit			none	4	1	0	0	wandt“ (KanL 57d); rjes — tsar ma na mchis
 1087	42	11908	german_prose_with_translit			none	1	4	0	0	„es gibt bis heute in Tsar-ma eine Spur“ (Liyl
 1087	43	11908	other			none	0	0	0	0	17737).
-1087	45	11909	headword_line	ད་དུང་དུ་ཡང་	du yaṅ	high	2	0	0	0	ད་དུང་དུ་ཡང་ da dun du yaṅ bis heute aber.
+1087	45	11909	headword_line	ད་དུང་དུ་ཡང་	du yaṅ	high	2	0	0	0	ད་དུང་དུ་ཡང་ da duṅ du yaṅ bis heute aber.
 1087	47	11909	german_prose_with_translit			none	4	2	0	0	— btsun pa dag ... rüed pa man po rüed par
 1087	48	11909	german_prose_with_translit			none	1	3	0	0	gyur (metr.) „bis heute aber, ihr Edlen, habe ich viele Besitztümer erlangt“ (Anav 1:
 1087	50	11909	other			none	0	0	0	0	115,18).
-1087	52	11910	headword_line	ད་དུང་ཡང་	yaṅ	high	2	1	0	0	ད་དུང་ཡང་ da dun yaṅ auch da dun kyan noch
+1087	52	11910	headword_line	ད་དུང་ཡང་	yaṅ	high	2	1	0	0	ད་དུང་ཡང་ da duṅ yaṅ auch da duṅ kyan noch
 1087	54	11910	other			none	0	0	0	0	heute, nun wieder.
 1087	56	11910	german_prose_with_translit			none	2	6	0	0	— yul srun Zin byin gyis rlob „sie beschützen und segnen noch heute das Land“ (Liyl
 1087	58	11910	latin_other			none	4	0	0	0	174b5); da du[n] kyan bdag grier yaṅ dag cig
@@ -163424,7 +163424,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1154	25	12258	german_prose_with_translit			none	1	6	0	0	dugs khan: der Platz, an dem man im Winter
 1154	26	12258	german_prose			none	0	4	0	0	Feuer unter das Bett stellt“ (KlonD 725,4);
 1154	27	12258	latin_other			none	1	0	0	0	bsro khan (TTC).
-1154	29	12258	tibetan_only	དུང་		none	0	0	0	0	དུང་ 'dun.
+1154	29	12258	tibetan_only	དུང་		none	0	0	0	0	དུང་ 'duṅ.
 1154	31	12258	german_prose			none	0	4	0	0	1. Muschel, genauer: das Gehäuse einer
 1154	32	12258	german_prose			none	0	1	0	0	Meeresschnecke.
 1154	34	12258	latin_other			none	3	0	0	0	kun da zla ba kha ba - ltar dkar (metr.)
@@ -163446,7 +163446,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1154	51	12258	german_prose			none	0	6	0	0	„einer Muschel, einer Jasminblüte und dem
 1154	52	12258	german_prose_with_translit			none	2	2	0	0	Mond gleich“ (Mvup 4.40a); — dkar po la
 1154	54	12258	other			none	0	0	0	0	70
-1154	56	12258	tibetan_only	དུང་		none	0	0	0	0	དུང་ 'dun
+1154	56	12258	tibetan_only	དུང་		none	0	0	0	0	དུང་ 'duṅ
 1154	58	12258	german_prose_with_translit			none	3	5	0	0	ser por 'dzin pa „eine weiße Muschel für eine gelbe halten“ (NBT 8,10); — gi dum bu
 1154	60	12258	german_prose_with_translit			none	4	1	0	0	bZin ... so ni sar pa (metr.) „junge Zähne
 1154	61	12258	german_prose			none	0	2	0	0	wie Muschelstückchen“ (HMrg 54,13); dun
@@ -163529,7 +163529,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1155	47	12259	latin_other			none	4	0	0	0	(MTH3/3/34 21); dgon pa’i fie ’khor — sgras
 1155	48	12259	german_prose_with_translit			none	2	5	0	0	khyab sa’i „in der Nähe des Klosters, bis
 1155	50	12259	tibetan_only	དུང་		none	0	0	0	0	དུང་
-1155	52	12259	tibetan_only	དུང་དཀར་		none	0	0	0	0	དུང་དཀར་ dun dkar
+1155	52	12259	tibetan_only	དུང་དཀར་		none	0	0	0	0	དུང་དཀར་ duṅ dkar
 1155	54	12259	german_prose_with_translit			none	1	3	0	0	dahin, wo man den Laut des Muschelhorns
 1155	55	12259	german_prose_with_translit			none	3	1	0	0	hört“ (MTH3/3/34 27); sgra rgyal rkaṅ —
 1155	56	12259	german_prose_with_translit			none	3	7	0	0	gliṅ bu ma gSan daṅ (metr.) „die Könige der Töne: Trompete, Flöte, Trommel,
@@ -163559,7 +163559,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1155	87	12259	other			none	0	0	0	0	!dun ne, dun dun, duns, 'gdun 3.
 1155	89	12259	german_prose_with_translit			none	3	3	0	0	zas la dun pa cig ’dug „er war einer, der gerne
 1155	91	12259	german_prose			none	0	2	0	0	ißt“ (Gr 43,24).
-1155	93	12259	tibetan_only	དུང་དཀར་		none	0	0	0	0	དུང་དཀར་ dun dkar.
+1155	93	12259	tibetan_only	དུང་དཀར་		none	0	0	0	0	དུང་དཀར་ duṅ dkar.
 1155	95	12259	other			none	0	0	0	0	71
 1155	97	12259	german_prose			none	0	4	0	0	1. das Haus einer Meereschnecke.
 1155	99	12259	latin_other			none	5	0	0	0	’khyag ro ma (r. rom) la / ˆ~ g.yas su 'khyil
@@ -163570,7 +163570,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1155	106	12259	german_prose			none	0	5	0	0	Gehäuse eines Lebewesens; unter den grö-
 1155	107	12259	german_prose			none	0	2	0	0	ßeren gibt es solche, mit denen man blasen
 1155	108	12259	german_prose_with_translit			none	6	1	0	0	kann“ (Dagy); duṅ = rgya mtsho naṅ gi sems
-1156	1	12260	headword_line	དུང་དཀར་རི་ཁྲོད་	khrod	high	1	0	0	0	དུང་དཀར་རི་ཁྲོད་ dun dkar ri khrod
+1156	1	12260	headword_line	དུང་དཀར་རི་ཁྲོད་	khrod	high	1	0	0	0	དུང་དཀར་རི་ཁྲོད་ duṅ dkar ri khrod
 1156	3	12260	german_prose_with_translit			none	7	1	0	0	can Zig ste de’i rus pa la’an — g.yas ’khyil dan
 1156	4	12260	german_prose_with_translit			none	1	4	0	0	g.yon 'khyil zer „ein Lebewesen im Ozean,
 1156	5	12260	german_prose_with_translit			none	1	4	0	0	auch für dessen Gehäuse, heißt: nach rechts
@@ -163590,7 +163590,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1156	21	12262	tibetan_latin_mixed			none	1	0	0	0	KENT FON སེར་གྱི་རི་ dun dkarrirgyalgser
 1156	22	12263	headword_line	ཧུང་དཀར་རྩ་གུལ་ག	gyiri	medium	1	2	0	0	ཧུང་དཀར་རྩ་གུལ་ག gyiri npr. eine Lok-
 1156	23	12263	german_prose_with_translit			none	1	3	0	0	algottheit in mNa’-ri skor-gsum (Neb 228).
-1156	24	12264	headword_line	དུང་སྐྱོང་	skyon	medium	2	2	0	0	དུང་སྐྱོང་ dun skyon auch dun skyons npr. ein
+1156	24	12264	headword_line	དུང་སྐྱོང་	skyon	medium	2	2	0	0	དུང་སྐྱོང་ duṅ skyon auch duṅ skyons npr. ein
 1156	25	12264	german_prose			none	0	4	0	0	Nägakönig bzw. ein Begleiter der
 1156	27	12264	german_prose			none	0	2	0	0	Gottheit sTobs-po-che (Neb 478),
 1156	29	12264	german_prose_with_translit			none	3	2	0	0	rigs ldan dan ni — no (metr.) „Kulika und
@@ -163611,13 +163611,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1156	44	12264	german_prose			none	0	1	0	0	(Sumpa 79b4).
 1156	46	12264	german_prose_with_translit			none	4	2	0	0	Lex. klu’i rgyal po — = Sankhapälo nagaräjä
 1156	47	12264	german_prose			none	0	1	0	0	(Mvy 3227).
-1156	49	12265	headword_line	དུང་གི་ལག་པ་	gi	medium	2	0	0	0	དུང་གི་ལག་པ་ dun gi lag pa
-1156	51	12266	headword_line	དུང་སྐྱོངས་དབང་མོ་	skyons dbaṅ	high	2	1	0	0	དུང་སྐྱོངས་དབང་མོ་ dun ‚skyons dbaṅ mo Beina-
+1156	49	12265	headword_line	དུང་གི་ལག་པ་	gi	medium	2	0	0	0	དུང་གི་ལག་པ་ duṅ gi lag pa
+1156	51	12266	headword_line	དུང་སྐྱོངས་དབང་མོ་	skyons dbaṅ	high	2	1	0	0	དུང་སྐྱོངས་དབང་མོ་ duṅ ‚skyons dbaṅ mo Beina-
 1156	52	12266	german_prose			none	0	1	0	0	me Sridevis.
 1156	54	12266	german_prose_with_translit			none	4	2	0	0	Lex. dpal gyi lha mo’i mtshan (Dagy).
 1156	56	12266	german_prose_with_translit			none	1	6	0	0	SER dun khra ein Falke in der Residenz des
 1156	57	12266	german_prose			none	0	2	0	0	ICam-srin (Neb 90).
-1156	59	12267	headword_line	དུང་ཁྲི་	khri	high	3	1	0	0	དུང་ཁྲི་ dun khri auch dun khrid 0¢ ldan npr.
+1156	59	12267	headword_line	དུང་ཁྲི་	khri	high	3	1	0	0	དུང་ཁྲི་ duṅ khri auch duṅ khrid 0¢ ldan npr.
 1156	60	12267	german_prose			none	0	2	0	0	ein Minister.
 1156	62	12267	latin_other			none	4	0	0	0	gun gral gyi mgo nas blon rgan dun khrid ’od
 1156	63	12267	german_prose_with_translit			none	4	1	0	0	ldan gyi(s) na re „vom Anfang der mittleren
@@ -163625,7 +163625,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1156	65	12267	german_prose_with_translit			none	2	2	0	0	’od-Idan“ (Sumpa 10b6); der sleb pa dan /
 1156	66	12267	german_prose_with_translit			none	4	4	0	0	blon rgan —’i bsam pa la „als sie dort angekommen waren, dachte der alte Minister
 1156	68	12267	german_prose_with_translit			none	1	2	0	0	Dun-khri bei sich“ (Sumpa 15924).
-1156	70	12268	headword_line	དུང་འཁྱིལ་བ་	khyil ba	high	2	0	0	0	དུང་འཁྱིལ་བ་ dun ’khyil ba.
+1156	70	12268	headword_line	དུང་འཁྱིལ་བ་	khyil ba	high	2	0	0	0	དུང་འཁྱིལ་བ་ duṅ ’khyil ba.
 1156	71	12268	other			none	0	0	0	0	1. !'dun.
 1156	72	12268	german_prose			none	0	2	0	0	2. eine Genitalfistel.
 1156	73	12268	latin_other			none	4	0	0	0	nad g£i gsum 'dus pa las gyur pa’i min ni /
@@ -163641,13 +163641,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1156	89	12269	german_prose_with_translit			none	1	1	0	0	(metr.) „dieser Sankhacüda wurde vor dem
 1156	90	12269	german_prose			none	0	6	0	0	Schnabel des Herrn der Vögel [d.ı. Garuda]
 1156	91	12269	german_prose			none	0	1	0	0	bewahrt“ (Nägn 241,15).
-1156	93	12270	headword_line	དུང་གི་ལག་པ་	gi	medium	1	2	0	0	དུང་གི་ལག་པ་ dun gi lagpa Beiname Visnus.
+1156	93	12270	headword_line	དུང་གི་ལག་པ་	gi	medium	1	2	0	0	དུང་གི་ལག་པ་ duṅ gi lagpa Beiname Visnus.
 1156	95	12270	german_prose_with_translit			none	5	2	0	0	Lex. khyab 'jug gi min dug gi lag pa Zes pa’an
 1156	96	12270	german_prose			none	0	4	0	0	snan „Beiname Visnus; erscheint auch als dug
 1156	98	12270	german_prose_with_translit			none	4	1	0	0	gi lag pa (?)“ (brDa); khyab ’jug (Dagy).
 1156	100	12270	other			none	0	0	0	0	72
-1157	1	12270	tibetan_only	དུང་ངེ་		none	0	0	0	0	དུང་ངེ་ dun ne
-1157	3	12270	tibetan_only	དུང་ངེ་		none	0	1	0	0	དུང་ངེ་ dun ne anhaftend, sich sehnend; in yıd
+1157	1	12270	tibetan_only	དུང་ངེ་		none	0	0	0	0	དུང་ངེ་ duṅ ne
+1157	3	12270	tibetan_only	དུང་ངེ་		none	0	1	0	0	དུང་ངེ་ duṅ ne anhaftend, sich sehnend; in yıd
 1157	4	12270	german_prose_with_translit			none	2	1	0	0	— ba innige Liebe, Verlangen, — byed
 1157	5	12270	german_prose			none	0	2	0	0	klagen; vgl. 1’dun, Idun dun.
 1157	7	12270	latin_other			none	3	0	0	0	de’i rman rmen la — byas / gad mo ren ren pa
@@ -163665,10 +163665,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1157	21	12270	german_prose_with_translit			none	5	1	0	0	brise’am mthun pa’i sems kyi mmam 'gyur Zig
 1157	22	12270	german_prose			none	0	6	0	0	„ein Gefühl von Liebe oder Freundschaft“
 1157	23	12270	german_prose			none	0	1	0	0	(Dagy).
-1157	25	12271	headword_line	དུང་ཅན་མ་	can ma	medium	2	2	0	0	དུང་ཅན་མ་ dun can ma Beiname Täräs.
+1157	25	12271	headword_line	དུང་ཅན་མ་	can ma	medium	2	2	0	0	དུང་ཅན་མ་ duṅ can ma Beiname Täräs.
 1157	27	12271	german_prose_with_translit			none	7	1	0	0	Lex. sgrol ma dan (brDa); sgrol ma’i mtshan
 1157	28	12271	german_prose			none	0	1	0	0	(Dagy).
-1157	30	12271	tibetan_only	དུང་ཆེན་		none	0	3	0	0	དུང་ཆེན་ dun chen „große Meeresschnecke“,
+1157	30	12271	tibetan_only	དུང་ཆེན་		none	0	3	0	0	དུང་ཆེན་ duṅ chen „große Meeresschnecke“,
 1157	32	12271	german_prose_with_translit			none	1	3	0	0	eine Langtrompete, die bei bestimm-
 1157	33	12271	german_prose			none	0	5	0	0	ten Zeremonien oder dem Eintreffen eines
 1157	34	12271	german_prose			none	0	3	0	0	hohen Geistlichen im Kloster gespielt wird;
@@ -163687,7 +163687,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1157	52	12271	tibetan_only	དུང་ཐོད་ཅན་		none	0	0	0	0	དུང་ཐོད་ཅན་
 1157	54	12271	tibetan_only	དུང་ཐོད་བཅིངས་བློན་		none	0	0	0	0	དུང་ཐོད་བཅིངས་བློན་
 1157	56	12271	tibetan_only	དུང་དུང་		none	0	0	0	0	དུང་དུང་
-1157	58	12272	headword_line	དུང་ཕུ་	phu	high	1	0	0	0	དུང་ཕུ་ dun phu
+1157	58	12272	headword_line	དུང་ཕུ་	phu	high	1	0	0	0	དུང་ཕུ་ duṅ phu
 1157	60	12272	german_prose_with_translit			none	1	2	0	0	Lex. chu bäi sogs ’bul snod kyi dun chun nu
 1157	61	12272	german_prose			none	0	5	0	0	„kleine Meeresschnecke als Behälter für die
 1157	62	12272	german_prose			none	0	4	0	0	vier Arten von Wasser usw.“ (Dagy).
@@ -163713,15 +163713,15 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1157	89	12272	german_prose_with_translit			none	2	5	0	0	shon rjes bsdus pa’o „leidend, von Fieber gequält oder vorher und nachher zusammen
 1157	91	12272	german_prose_with_translit			none	4	2	0	0	(?)“ (brDa); mdza’ mthun sems „Gefühl von
 1157	92	12272	german_prose			none	0	4	0	0	Liebe und Freundschaft“ (Dagy).
-1157	94	12272	tibetan_only	དུང་པན་		none	0	4	0	0	དུང་པན་ dun pan ein Gefäß, vgl. chin. A%#
+1157	94	12272	tibetan_only	དུང་པན་		none	0	4	0	0	དུང་པན་ duṅ pan ein Gefäß, vgl. chin. A%#
 1157	96	12272	german_prose_with_translit			none	1	1	0	0	tung-p’an Bronzeschüssel.
 1157	98	12272	german_prose_with_translit			none	4	1	0	0	Lex. khrus snod de rgya nag skad nas byun
 1157	99	12272	german_prose_with_translit			none	1	3	0	0	„Waschgefäß, kommt aus dem Chinesischen“ (brDa).
-1157	102	12273	headword_line	དུང་ཕུ་	phu	high	1	2	0	0	"དུང་ཕུ་ dun phu ""Irompetenspieler, Bläser."
+1157	102	12273	headword_line	དུང་ཕུ་	phu	high	1	2	0	0	"དུང་ཕུ་ duṅ phu ""Irompetenspieler, Bläser."
 1157	104	12273	other			none	0	0	0	0	73
 1157	106	12273	german_prose_with_translit			none	5	1	0	0	Lex. dun gton mkhan dun phu btab pa (brDa).
-1158	1	12274	headword_line	དུང་ཕྱུར་	phyur	high	1	0	0	0	དུང་ཕྱུར་ dun phyur
-1158	3	12275	headword_line	དུང་ཕྱུར་	phyur	high	1	2	0	0	དུང་ཕྱུར་ dun phyur auch dun 70/77///7ˆ eine hohe
+1158	1	12274	headword_line	དུང་ཕྱུར་	phyur	high	1	0	0	0	དུང་ཕྱུར་ duṅ phyur
+1158	3	12275	headword_line	དུང་ཕྱུར་	phyur	high	1	2	0	0	དུང་ཕྱུར་ duṅ phyur auch duṅ 70/77///7ˆ eine hohe
 1158	4	12275	german_prose			none	0	3	0	0	Zahl, 100 Millionen, 10°, vgl. SCHUH
 1158	5	12275	other			none	0	0	0	0	2012: 1410.
 1158	7	12275	latin_other			none	6	0	0	0	bdud ’byun po — phraggsum dan bye ba phrag
@@ -163736,36 +163736,36 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1158	19	12275	german_prose_with_translit			none	6	3	0	0	8059); bye ba beu’i grans la „für 100 Millionen“ (Dagy); dun ’phyur = bye ba bcu tham
 1158	21	12275	german_prose_with_translit			none	2	1	0	0	pa ste / 100 000 000 „10 mal 10 Millionen“
 1158	22	12275	latin_other			none	1	0	0	0	(brDa).
-1158	24	12276	headword_line	དུང་མིག་མ་	ma	medium	1	2	0	0	དུང་མིག་མ་ dun mig ma npr. eine Gottheit
+1158	24	12276	headword_line	དུང་མིག་མ་	ma	medium	1	2	0	0	དུང་མིག་མ་ duṅ mig ma npr. eine Gottheit
 1158	25	12276	german_prose			none	0	3	0	0	im Gefolge von mGon-po traksad
 1158	26	12276	german_prose_with_translit			none	2	2	0	0	gsan-sgrub śwa-na’ı Zal-can (Neb 60).
 1158	28	12276	tibetan_only	དུང་ཞུ		none	0	0	0	0	དུང་ཞུ
-1158	30	12276	tibetan_only	དུང་ཡལ་		none	0	0	0	0	དུང་ཡལ་ dun yal spurlos.
+1158	30	12276	tibetan_only	དུང་ཡལ་		none	0	0	0	0	དུང་ཡལ་ duṅ yal spurlos.
 1158	32	12276	german_prose_with_translit			none	1	1	0	0	Lex. dun yal (r. yag) = bsul med pa’am
 1158	33	12276	latin_other			none	1	0	0	0	(brDa).
 1158	35	12276	german_prose_with_translit			none	1	4	0	0	dun Zu eine Kopfbedeckung von Bon-
 1158	36	12276	german_prose			none	0	2	0	0	Gottheiten (Neb 12).
-1158	38	12277	headword_line	དུང་གཡས་འཁྱིལ་	khyil	high	1	2	0	0	དུང་གཡས་འཁྱིལ་ dun g.yas ’khyil Kurzf. für
+1158	38	12277	headword_line	དུང་གཡས་འཁྱིལ་	khyil	high	1	2	0	0	དུང་གཡས་འཁྱིལ་ duṅ g.yas ’khyil Kurzf. für
 1158	40	12277	german_prose_with_translit			none	3	1	0	0	dun gyas su 'khyil ba das
 1158	41	12277	german_prose_with_translit			none	1	3	0	0	Haus einer nach rechts drehende Trompe-
 1158	42	12277	german_prose			none	0	3	0	0	tenschnecke, eines der acht Glückssymbole
 1158	43	12277	latin_other			none	4	0	0	0	(1bkra śis rdzas brgyad).
 1158	45	12277	german_prose_with_translit			none	3	2	0	0	Lex. dun g.yas su 'khyil ba = daksinävartasa-
 1158	46	12277	german_prose_with_translit			none	1	1	0	0	nkhah (Mvy 5991).
-1158	48	12278	headword_line	དུང་རབ་གནས་པ་	pa	medium	1	2	0	0	དུང་རབ་གནས་པ་ dun rab gnas pa Bez. für
+1158	48	12278	headword_line	དུང་རབ་གནས་པ་	pa	medium	1	2	0	0	དུང་རབ་གནས་པ་ duṅ rab gnas pa Bez. für
 1158	49	12278	german_prose_with_translit			none	1	2	0	0	Mondflecken, vgl. skt. sarikha-
 1158	50	12278	other			none	0	0	0	0	prastha.
 1158	52	12278	german_prose_with_translit			none	2	5	0	0	Lex. zla ba’i Sin rta „Wagen des Mondes“
 1158	53	12278	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
 1158	55	12278	tibetan_only	དུད་		none	0	0	0	0	དུད་ 'dud
-1158	57	12279	headword_line	དུང་རིང་	rin	medium	2	2	0	0	དུང་རིང་ dun rin eine Langtrompete (Neb
+1158	57	12279	headword_line	དུང་རིང་	rin	medium	2	2	0	0	དུང་རིང་ duṅ rin eine Langtrompete (Neb
 1158	58	12279	other			none	0	0	0	0	398).
 1158	60	12279	tibetan_only	དུང་རུ་		none	0	1	0	0	དུང་རུ་ @/// ru Antilopenhorn.
 1158	61	12279	latin_other			none	5	0	0	0	rtsog (r. gtsod) gi ~~ dmar po ’di / mchog dkar
 1158	63	12279	german_prose_with_translit			none	2	1	0	0	di la g.yari du len (metr.) „möge dieses rote
 1158	64	12279	german_prose			none	0	3	0	0	Antilopenhorn diesem Bogen Energie ver-
 1158	65	12279	other			none	0	0	0	0	leihen!“ (gZı 2: 70,1).
-1158	67	12279	tibetan_only	དུང་རྭ་		none	0	3	0	0	དུང་རྭ་ dun rwa Geweih eines Hirschs.
+1158	67	12279	tibetan_only	དུང་རྭ་		none	0	3	0	0	དུང་རྭ་ duṅ rwa Geweih eines Hirschs.
 1158	69	12279	german_prose_with_translit			none	3	3	0	0	stag Sar pas 'khor gsum bcin le des / sa pho chen
 1158	70	12279	german_prose_with_translit			none	3	2	0	0	— ma lon na „wenn sich ein junger Mann
 1158	71	12279	german_prose			none	0	4	0	0	die drei Waffenarten umbindet, aber das Ge-

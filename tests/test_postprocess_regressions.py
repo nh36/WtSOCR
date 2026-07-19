@@ -2433,6 +2433,24 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
         self.assertEqual(sum(row["to_token"] == "bzaṅ" for row in changes), 4)
 
+    def test_reviewed_dung_rows_preserve_neighbouring_final_n_families(self) -> None:
+        lines = {
+            (1087, 34): "ད་དུང་ཀྱང་ da dun kyan Ida dun yan.",
+            (1156, 24): "དུང་སྐྱོང་ dun skyon auch dun skyons npr.",
+            (1156, 70): "དུང་རིང་ dun rin",
+            (157, 136): "རྐང་དུང་ rkaṅ dun",
+            (200, 1): "དུན་ dun genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("da duṅ kyan Ida dun yan", corrected)
+        self.assertIn("duṅ skyon auch duṅ skyons", corrected)
+        self.assertIn("duṅ rin", corrected)
+        self.assertIn("rkaṅ duṅ", corrected)
+        self.assertIn("དུན་ dun genuine distinct syllable.", corrected)
+        self.assertEqual(sum(row["to_token"] == "duṅ" for row in changes), 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
