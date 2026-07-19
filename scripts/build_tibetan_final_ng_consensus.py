@@ -305,12 +305,72 @@ def build_consensus_rows(release_root: Path) -> list[dict[str, str]]:
     )
 
 
+def build_family_rankings(rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    grouped: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        grouped[
+            (
+                row["tibetan_syllable"],
+                nasal_skeleton(row["source_latin_token"]),
+                row["proposed_latin_target"],
+            )
+        ].append(row)
+    rankings: list[dict[str, str]] = []
+    for (syllable, normalized_source, target), family_rows in grouped.items():
+        categories = Counter(row["alignment_category"] for row in family_rows)
+        source_variants = Counter(row["source_latin_token"] for row in family_rows)
+        accepted_counts = sorted(
+            {int(row["accepted_form_count"]) for row in family_rows},
+            reverse=True,
+        )
+        rankings.append(
+            {
+                "tibetan_syllable": syllable,
+                "normalized_source_variant": normalized_source,
+                "source_variants_and_counts": "; ".join(
+                    f"{variant}:{count}"
+                    for variant, count in source_variants.most_common()
+                ),
+                "proposed_target": target,
+                "candidate_count": str(len(family_rows)),
+                "dominant_count": str(categories["dominant_internal_consensus"]),
+                "damaged_count": str(categories["damaged_context"]),
+                "insufficient_count": str(categories["insufficient_consensus"]),
+                "competing_count": str(categories["competing_latin_forms"]),
+                "structure_mismatch_count": str(
+                    categories["syllable_structure_mismatch"]
+                ),
+                "marker_attached_count": str(categories["marker_attached"]),
+                "accepted_form_evidence": "; ".join(map(str, accepted_counts)),
+                "volumes": ";".join(
+                    sorted({row["volume"] for row in family_rows})
+                ),
+            }
+        )
+    return sorted(
+        rankings,
+        key=lambda row: (
+            -int(row["candidate_count"]),
+            row["tibetan_syllable"],
+            row["normalized_source_variant"],
+            row["proposed_target"],
+        ),
+    )
+
+
 FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "source_latin_token", "proposed_latin_target", "accepted_form_count",
     "competing_form_counts", "alignment_category", "evidence_type",
     "syllable_identity_guard", "consensus_basis", "damage_scope", "confidence",
     "suggested_action", "context_excerpt", "reason_for_deferral", "accepted_total",
+]
+RANKING_FIELDS = [
+    "tibetan_syllable", "normalized_source_variant",
+    "source_variants_and_counts", "proposed_target", "candidate_count",
+    "dominant_count", "damaged_count", "insufficient_count",
+    "competing_count", "structure_mismatch_count", "marker_attached_count",
+    "accepted_form_evidence", "volumes",
 ]
 
 
@@ -324,11 +384,16 @@ def main() -> None:
     for row in rows:
         by_volume[row["volume"]].append(row)
     for volume in ["wts_1_34", "wts_35_51", "wts_8_b", "wts_9_m"]:
+        volume_out = args.out_root / f"tibetan_cleanup_diagnostics_{volume}"
         write_tsv(
-            args.out_root / f"tibetan_cleanup_diagnostics_{volume}"
-            / "tibetan_final_ng_consensus_candidates.tsv",
+            volume_out / "tibetan_final_ng_consensus_candidates.tsv",
             by_volume.get(volume, []),
             FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_family_rankings.tsv",
+            build_family_rankings(rows),
+            RANKING_FIELDS,
         )
     counts = Counter(row["alignment_category"] for row in rows)
     print(f"candidates={len(rows)}")

@@ -1,0 +1,168 @@
+tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_target	candidate_count	dominant_count	damaged_count	insufficient_count	competing_count	structure_mismatch_count	marker_attached_count	accepted_form_evidence	volumes
+ཤིང	sin	sin:36; Sin:20; sih:2	siṅ	58	0	0	0	58	0	0	30	wts_1_34;wts_35_51;wts_8_b
+གོང	gon	gon:45; goh:1	goṅ	46	45	1	0	0	0	0	8	wts_1_34;wts_35_51
+སྟོང	ston	ston:46	stoṅ	46	44	2	0	0	0	0	25	wts_1_34;wts_35_51
+ཀོང	kon	kon:45	koṅ	45	44	1	0	0	0	0	8	wts_1_34
+གླང	glan	glan:43; glah:1	glaṅ	44	44	0	0	0	0	0	9	wts_1_34;wts_8_b
+དུང	dun	dun:37	duṅ	37	37	0	0	0	0	0	2	wts_1_34
+བཟང	bzan	bzan:37	bzaṅ	37	37	0	0	0	0	0	34	wts_1_34;wts_35_51;wts_8_b;wts_9_m
+གླིང	glin	glin:34	gliṅ	34	34	0	0	0	0	0	17	wts_1_34;wts_35_51;wts_8_b
+ཆང	chan	chan:31	chaṅ	31	31	0	0	0	0	0	12	wts_1_34
+མཐོང	mthon	mthon:31	mthoṅ	31	30	1	0	0	0	0	9	wts_1_34
+རིང	rin	rin:30	riṅ	30	30	0	0	0	0	0	17	wts_1_34
+ཁོང	khon	khon:28; Khon:1	khoṅ	29	0	1	0	28	0	0	1	wts_1_34
+གཏོང	gton	gton:28	gtoṅ	28	27	1	0	0	0	0	10	wts_1_34
+སྐྱོང	skyon	skyon:27	skyoṅ	27	27	0	0	0	0	0	14	wts_1_34;wts_35_51
+འབྱུང	byun	byun:23; byuh:3	byuṅ	26	26	0	0	0	0	0	31	wts_1_34;wts_35_51;wts_8_b;wts_9_m
+སྟེང	sten	sten:23; steh:3	steṅ	26	25	1	0	0	0	0	11	wts_1_34;wts_35_51
+དྲུང	drun	drun:25	druṅ	25	25	0	0	0	0	0	2	wts_1_34;wts_9_m
+ཁུང	khun	khun:22	khuṅ	22	22	0	0	0	0	0	14	wts_1_34
+རྐྱང	rkyan	rkyan:22	rkyaṅ	22	22	0	0	0	0	0	3	wts_1_34
+ཀང	kan	kan:21	kaṅ	21	0	1	20	0	0	0	1	wts_1_34
+ཀློང	klon	klon:20	kloṅ	20	0	1	0	19	0	0	3	wts_1_34
+དོང	don	don:19	doṅ	19	19	0	0	0	0	0	4	wts_1_34;wts_8_b
+གུང	gun	gun:17; guh:1	guṅ	18	18	0	0	0	0	0	10	wts_1_34;wts_35_51
+བྱང	byan	byan:17; byah:1	byaṅ	18	17	1	0	0	0	0	70	wts_1_34;wts_35_51;wts_8_b
+སེང	sen	sen:15; seh:3	seṅ	18	18	0	0	0	0	0	11	wts_1_34
+སོང	son	son:18	soṅ	18	18	0	0	0	0	0	9	wts_1_34
+ཏིང	tin	tin:16	tiṅ	16	0	0	0	16	0	0	1	wts_1_34;wts_8_b
+ལིང	lin	lin:16	liṅ	16	16	0	0	0	0	0	5	wts_1_34
+གྲོང	gron	gron:15	groṅ	15	13	2	0	0	0	0	16	wts_1_34
+ཚང	tshan	tshan:13; tshah:2	tshaṅ	15	15	0	0	0	0	0	6	wts_1_34;wts_35_51
+ལུང	lun	lun:14; luh:1	luṅ	15	0	0	0	15	0	0	12	wts_1_34;wts_35_51
+སློང	slon	slon:15	sloṅ	15	0	0	0	15	0	0	1	wts_1_34
+གཏིང	gtin	gtin:14	gtiṅ	14	14	0	0	0	0	0	2	wts_1_34;wts_35_51
+བཏང	btan	btan:14	btaṅ	14	13	1	0	0	0	0	10	wts_1_34;wts_8_b;wts_9_m
+འཆིང	chin	chin:14	chiṅ	14	13	1	0	0	0	0	3	wts_1_34;wts_35_51;wts_8_b
+གྲང	gran	gran:13	graṅ	13	13	0	0	0	0	0	3	wts_1_34
+ཅང	can	can:13	caṅ	13	0	2	11	0	0	0	1	wts_1_34
+མང	man	man:13	maṅ	13	13	0	0	0	0	0	47	wts_1_34
+སྙིང	sin	sin:13	siṅ	13	0	0	0	13	0	0	3	wts_1_34
+གླེང	glen	glen:12	gleṅ	12	0	1	0	11	0	0	1	wts_1_34
+གློང	gron	gron:11	groṅ	11	0	0	0	0	11	0	1	wts_1_34
+ཕུང	phun	phun:9; phuh:2	phuṅ	11	11	0	0	0	0	0	29	wts_1_34;wts_35_51
+འཆང	chan	chan:10; chah:1	chaṅ	11	11	0	0	0	0	0	7	wts_1_34;wts_35_51;wts_8_b
+རྒྱང	rgyan	rgyan:10; rgyah:1	rgyaṅ	11	11	0	0	0	0	0	2	wts_1_34
+གཏང	gtan	gtan:10	gtaṅ	10	0	1	9	0	0	0	1	wts_1_34
+དགུང	dgun	dgun:10	dguṅ	10	0	1	9	0	0	0	1	wts_1_34;wts_35_51
+འཐུང	thun	thun:9; thuh:1	thuṅ	10	10	0	0	0	0	0	2	wts_1_34
+འབྲིང	brin	brin:9	briṅ	9	9	0	0	0	0	0	11	wts_1_34;wts_8_b
+ཀླུང	klun	klun:8	kluṅ	8	8	0	0	0	0	0	3	wts_1_34
+གྱོང	gyon	gyon:8	gyoṅ	8	0	0	8	0	0	0	1	wts_1_34
+བགྲང	bgran	bgran:8	bgraṅ	8	0	0	8	0	0	0	1	wts_1_34
+བྲང	bran	bran:7; brań:1	braṅ	8	8	0	0	0	0	0	23	wts_1_34;wts_35_51;wts_8_b
+ཀྱོང	gyon	gyon:7	gyoṅ	7	0	0	7	0	0	0	1	wts_1_34
+ཅིང	cin	cin:7	ciṅ	7	7	0	0	0	0	0	3	wts_1_34
+བྱུང	byun	byun:7	byuṅ	7	7	0	0	0	0	0	27	wts_1_34;wts_35_51
+ཞིང	zin	Zin:7	Ziṅ	7	7	0	0	0	0	0	7	wts_1_34;wts_35_51
+འཆེང	chin	chin:7	chiṅ	7	0	0	7	0	0	0	1	wts_1_34
+རྟིང	rtin	rtin:7	rtiṅ	7	0	0	7	0	0	0	1	wts_1_34
+ལོང	lon	lon:6; loh:1	loṅ	7	7	0	0	0	0	0	8	wts_1_34;wts_35_51;wts_9_m
+ཀིང	kin	kin:6	kiṅ	6	6	0	0	0	0	0	2	wts_1_34
+ཀླང	klun	klun:6	kluṅ	6	6	0	0	0	0	0	2	wts_1_34
+གདོང	gdon	gdon:6	gdoṅ	6	6	0	0	0	0	0	39	wts_1_34
+ཕྲེང	phren	phren:5; phreh:1	phreṅ	6	6	0	0	0	0	0	25	wts_1_34
+མོང	mon	mon:6	moṅ	6	5	1	0	0	0	0	11	wts_1_34;wts_8_b
+འབྲང	bran	bran:5; brah:1	braṅ	6	5	1	0	0	0	0	5	wts_1_34;wts_8_b
+རུང	run	run:6	ruṅ	6	0	0	6	0	0	0	1	wts_1_34
+ལྕང	lcan	lcan:6	lcaṅ	6	6	0	0	0	0	0	3	wts_1_34
+སང	san	san:6	saṅ	6	0	0	0	6	0	0	3	wts_1_34
+སྒང	sgan	sgan:6	sgaṅ	6	6	0	0	0	0	0	3	wts_1_34
+གསང	gsan	gsan:4; gsah:1	gsaṅ	5	5	0	0	0	0	0	3	wts_1_34
+ཐུང	thun	thun:5	thuṅ	5	5	0	0	0	0	0	8	wts_1_34
+དཔུང	dpun	dpun:5	dpuṅ	5	5	0	0	0	0	0	34	wts_1_34;wts_35_51
+བོང	bon	bon:5	boṅ	5	5	0	0	0	0	0	20	wts_1_34;wts_8_b
+མྱོང	myon	myon:5	myoṅ	5	5	0	0	0	0	0	5	wts_1_34
+འཕང	phan	phan:5	phaṅ	5	5	0	0	0	0	0	12	wts_1_34;wts_35_51
+ལང	lan	lan:5	laṅ	5	5	0	0	0	0	0	20	wts_1_34;wts_8_b
+སྲིང	srin	srin:5	sriṅ	5	5	0	0	0	0	0	8	wts_1_34
+ཀྱང	kyan	kyan:4	kyaṅ	4	0	0	0	4	0	0	3	wts_1_34
+ཀྲུང	krun	krun:4	kruṅ	4	4	0	0	0	0	0	2	wts_1_34
+ཀྲོང	kron	kron:4	kroṅ	4	0	0	4	0	0	0	1	wts_1_34
+མིང	min	min:4	miṅ	4	4	0	0	0	0	0	20	wts_1_34;wts_35_51
+ཞེང	zen	Zen:4	zeṅ	4	0	0	0	4	0	0	1	wts_1_34
+འཕྲེང	phren	phren:4	phreṅ	4	4	0	0	0	0	0	9	wts_1_34;wts_35_51
+འབྲེང	bren	bren:4	breṅ	4	4	0	0	0	0	0	7	wts_1_34;wts_8_b
+འོང	on	on:4	oṅ	4	4	0	0	0	0	0	6	wts_1_34
+རོང	ron	ron:4	roṅ	4	0	0	0	4	0	0	2	wts_1_34
+རླུང	rlun	rlun:4	rluṅ	4	4	0	0	0	0	0	2	wts_1_34
+སྐོང	skon	skon:4	skoṅ	4	4	0	0	0	0	0	8	wts_1_34
+སྡོང	sdon	sdon:4	sdoṅ	4	4	0	0	0	0	0	26	wts_1_34;wts_35_51
+སྤང	span	span:4	spaṅ	4	4	0	0	0	0	0	25	wts_1_34;wts_35_51
+སྲུང	srun	srun:4	sruṅ	4	4	0	0	0	0	0	6	wts_1_34
+གནང	gnan	gnan:3	gnaṅ	3	3	0	0	0	0	0	12	wts_1_34
+གསུང	gsun	gsun:3	gsuṅ	3	3	0	0	0	0	0	6	wts_1_34
+ཆུང	chun	chuh:3	chuṅ	3	3	0	0	0	0	0	127	wts_35_51;wts_8_b
+ཕྱུང	phyun	phyun:3	phyuṅ	3	0	0	0	3	0	0	4	wts_1_34
+བཀང	bkan	bkan:3	bkaṅ	3	3	0	0	0	0	0	3	wts_1_34
+བཟུང	bzun	bzun:3	bzuṅ	3	3	0	0	0	0	0	6	wts_1_34
+བླང	blan	blan:3	blaṅ	3	3	0	0	0	0	0	6	wts_1_34
+ཝང	wan	wan:3	waṅ	3	3	0	0	0	0	0	2	wts_1_34
+འགོང	gon	gon:3	goṅ	3	3	0	0	0	0	0	2	wts_1_34
+འཕྱང	phyan	phyan:3	phyaṅ	3	3	0	0	0	0	0	3	wts_1_34
+རྫོང	rdzon	rdzon:3	rdzoṅ	3	3	0	0	0	0	0	8	wts_1_34
+སྣང	snan	snah:3	snaṅ	3	3	0	0	0	0	0	73	wts_1_34;wts_35_51
+སྤོང	spon	spoh:2; spon:1	spoṅ	3	3	0	0	0	0	0	5	wts_1_34;wts_35_51
+སྤྱང	spyan	spyan:2; spyah:1	spyaṅ	3	3	0	0	0	0	0	5	wts_1_34
+སྦྱོང	sbyon	sbyon:3	sbyoṅ	3	3	0	0	0	0	0	6	wts_1_34
+ཁྱུང	khyun	khyun:2	khyuṅ	2	2	0	0	0	0	0	2	wts_1_34
+གང	gan	gah:2	gaṅ	2	2	0	0	0	0	0	73	wts_1_34;wts_8_b
+གདང	gdan	gdan:2	gdaṅ	2	0	0	0	2	0	0	9	wts_1_34
+གདུང	gdun	gdun:2	gduṅ	2	2	0	0	0	0	0	28	wts_1_34
+གཡང	g.yan	g.yan:2	g.yaṅ	2	0	0	2	0	0	0	1	wts_35_51;wts_9_m
+ཏང	tan	tan:2	taṅ	2	2	0	0	0	0	0	3	wts_1_34
+དབྱུང	dbyun	dbyun:2	dbyuṅ	2	2	0	0	0	0	0	8	wts_1_34
+ནང	nan	nah:2	naṅ	2	2	0	0	0	0	0	91	wts_35_51
+བང	ban	ban:2	baṅ	2	0	0	0	2	0	0	12	wts_1_34
+བསྲུང	bsrun	bsrun:2	bsruṅ	2	2	0	0	0	0	0	4	wts_1_34
+བྲེང	bren	bren:2	breṅ	2	1	1	0	0	0	0	8	wts_8_b
+བློང	blon	blon:2	bloṅ	2	0	0	2	0	0	0	1	wts_8_b
+མཇིང	mjin	mjin:2	mjiṅ	2	0	0	2	0	0	0	1	wts_1_34
+མདོང	mdon	mdon:2	mdoṅ	2	0	0	2	0	0	0	1	wts_1_34
+ཞང	zan	Zan:2	Zaṅ	2	0	0	2	0	0	0	1	wts_1_34
+འདིང	din	din:2	diṅ	2	0	0	2	0	0	0	1	wts_1_34
+འཕྱོང	phyon	phyon:2	phyoṅ	2	0	0	2	0	0	0	1	wts_35_51
+འབྱོང	byon	byon:2	byoṅ	2	2	0	0	0	0	0	2	wts_8_b
+འཚང	tshan	tshan:2	tshaṅ	2	0	0	0	2	0	0	1	wts_1_34
+ཡོང	yon	yon:2	yoṅ	2	2	0	0	0	0	0	2	wts_1_34
+ལྡིང	ldin	ldin:2	ldiṅ	2	2	0	0	0	0	0	8	wts_1_34
+ལྷུང	lhun	lhun:2	lhuṅ	2	2	0	0	0	0	0	3	wts_1_34
+ཤང	san	San:2	Saṅ	2	0	0	0	2	0	0	1	wts_1_34
+སྟང	stan	stan:2	staṅ	2	0	0	0	2	0	0	2	wts_1_34
+སྡང	sdan	sdan:2	sdaṅ	2	2	0	0	0	0	0	5	wts_1_34
+སྦྱང	sbyan	sbyan:2	sbyaṅ	2	2	0	0	0	0	0	7	wts_1_34
+སྲང	srun	srun:2	sruṅ	2	0	0	0	2	0	0	1	wts_1_34
+སྲོང	spon	spoh:1; spon:1	spoṅ	2	0	0	0	0	2	0	2	wts_1_34
+ཧང	han	han:2	haṅ	2	0	0	2	0	0	0	1	wts_1_34
+གཅུང	gcun	gcun:1	gcuṅ	1	0	0	1	0	0	0	1	wts_1_34
+གདེང	gden	gden:1	gdeṅ	1	1	0	0	0	0	0	8	wts_1_34
+གཞུང	gzun	gzun:1	gZuṅ	1	0	0	1	0	0	0	1	wts_1_34
+ཐྲང	than	than:1	thaṅ	1	0	0	0	0	1	0	1	wts_1_34
+དཔང	dpan	dpan:1	dpaṅ	1	1	0	0	0	0	0	9	wts_1_34
+ནིང	nin	nin:1	niṅ	1	0	0	0	1	0	0	1	wts_1_34
+པྲང	bran	bran:1	braṅ	1	0	0	1	0	0	0	1	wts_1_34
+ཕང	phan	phan:1	phaṅ	1	0	0	0	1	0	0	6	wts_1_34
+བབཟུང	bzun	bzun:1	bzuṅ	1	0	0	1	0	0	0	1	wts_1_34
+བསྐྱེང	bskyen	bskyen:1	bskyeṅ	1	0	0	1	0	0	0	1	wts_1_34
+བུང	bun	bun:1	buṅ	1	0	0	0	1	0	0	5	wts_1_34
+མཐང	mthon	mthon:1	mthoṅ	1	0	0	1	0	0	0	1	wts_1_34
+མདུང	mdun	mdun:1	mduṅ	1	1	0	0	0	0	0	15	wts_1_34
+མེང	min	min:1	miṅ	1	0	0	0	1	0	0	2	wts_1_34
+མྐྱོང	myon	myon:1	myoṅ	1	0	0	1	0	0	0	1	wts_1_34
+ཚོང	tshon	tshon:1	tshoṅ	1	0	0	0	1	0	0	2	wts_8_b
+འགང	gon	gon:1	goṅ	1	0	0	1	0	0	0	1	wts_1_34
+འཕོང	phon	phon:1	phoṅ	1	0	0	0	1	0	0	4	wts_1_34
+འཕྲང	phran	phran:1	phraṅ	1	0	0	0	1	0	0	3	wts_35_51
+ཡང	yan	yah:1	yaṅ	1	1	0	0	0	0	0	29	wts_35_51
+རྐྱོང	rkyon	rkyon:1	rkyoṅ	1	0	0	1	0	0	0	1	wts_1_34
+རྡུང	rdun	rdun:1	rduṅ	1	1	0	0	0	0	0	2	wts_1_34
+རྨང	rman	rman:1	rmaṅ	1	1	0	0	0	0	0	4	wts_1_34
+རྫིང	rdzin	rdzin:1	rdziṅ	1	1	0	0	0	0	0	3	wts_9_m
+རྱོང	myon	myon:1	myoṅ	1	0	0	0	1	0	0	2	wts_1_34
+ལྔང	ldan	ldan:1	ldaṅ	1	1	0	0	0	0	0	4	wts_1_34
+ལྗང	dan	Dan:1	daṅ	1	0	0	0	1	0	0	1	wts_1_34
+ལྡང	ldan	ldan:1	ldaṅ	1	1	0	0	0	0	0	3	wts_1_34
+སིང	sin	sin:1	siṅ	1	0	0	1	0	0	0	1	wts_1_34
+སྡིང	sdin	sdih:1	sdiṅ	1	0	0	1	0	0	0	1	wts_35_51
+སྡེང	sden	sden:1	sdeṅ	1	0	0	1	0	0	0	1	wts_1_34
+སྦྲང	sbran	sbran:1	sbraṅ	1	1	0	0	0	0	0	35	wts_1_34

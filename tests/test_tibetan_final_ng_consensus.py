@@ -124,6 +124,44 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertEqual(rows[0]["alignment_category"], "syllable_structure_mismatch")
         self.assertNotEqual(rows[0]["confidence"], "high")
 
+    def test_family_rankings_keep_tibetan_syllables_separate(self) -> None:
+        rows = [
+            {
+                "tibetan_syllable": "གོང",
+                "source_latin_token": "gon",
+                "proposed_latin_target": "goṅ",
+                "alignment_category": "dominant_internal_consensus",
+                "accepted_form_count": "8",
+                "volume": "wts_1_34",
+            },
+            {
+                "tibetan_syllable": "འགོང",
+                "source_latin_token": "gon",
+                "proposed_latin_target": "goṅ",
+                "alignment_category": "dominant_internal_consensus",
+                "accepted_form_count": "2",
+                "volume": "wts_1_34",
+            },
+            {
+                "tibetan_syllable": "གོང",
+                "source_latin_token": "goh",
+                "proposed_latin_target": "goṅ",
+                "alignment_category": "damaged_context",
+                "accepted_form_count": "8",
+                "volume": "wts_35_51",
+            },
+        ]
+        rankings = consensus.build_family_rankings(rows)
+        self.assertEqual(len(rankings), 2)
+        plain = next(row for row in rankings if row["tibetan_syllable"] == "གོང")
+        prefixed = next(
+            row for row in rankings if row["tibetan_syllable"] == "འགོང"
+        )
+        self.assertEqual(plain["candidate_count"], "2")
+        self.assertIn("gon:1", plain["source_variants_and_counts"])
+        self.assertIn("goh:1", plain["source_variants_and_counts"])
+        self.assertEqual(prefixed["candidate_count"], "1")
+
 
 if __name__ == "__main__":
     unittest.main()
