@@ -2370,6 +2370,43 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 5)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
+    def test_reviewed_glang_rows_preserve_neighbouring_damage_and_genuine_glan(self) -> None:
+        lines = {
+            (393, 183): "གླང་ཐབས་ glan thabs auch glan ’thab eine Er-",
+            (393, 191): "གླང་འཐབ་ glan ’thab †2/%7 thabs.",
+            (394, 196): "གླང་པོའི་གདོང་ glan po’i gdon Bez. für Ganesa.",
+            (395, 57): "གླང་ཤིང་ glan sin ein Baum, Gebirgsweide.",
+            (1275, 1): "དོམ་མགོ་གླང་སྙིང་ dom mgo glan sin",
+            (1171, 1): "གླན་ glan genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གླང་ཐབས་ glaṅ thabs auch glan ’thab", corrected)
+        self.assertIn("གླང་འཐབ་ glaṅ ’thab †2/%7 thabs.", corrected)
+        self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdon", corrected)
+        self.assertIn("གླང་ཤིང་ glaṅ sin", corrected)
+        self.assertIn("dom mgo glaṅ sin", corrected)
+        self.assertIn("གླན་ glan genuine distinct syllable.", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "glan" and row["to_token"] == "glaṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
+    def test_reviewed_glah_variant_maps_to_glang(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(39, 51): "བན་གླང་མོ་ ban glah mo Ibal glari mo."}
+            ),
+            label="wts_8_b",
+        )
+        self.assertIn("བན་གླང་མོ་ ban glaṅ mo Ibal glari mo.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["from_token"], "glah")
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

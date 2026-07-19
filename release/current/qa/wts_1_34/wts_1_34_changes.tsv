@@ -27709,3 +27709,46 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 690	104	8371	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆོད་ཀོང་ mchod kon
 690	143	8372	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆོད་ཀོང་ mchod kon Gefäß für eine Butter-
 1116	35	12050	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དན་ཀོང་ dan kon ldan gon.
+112	31	1341	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་གླང་ klu glan ein myth. Wesen; — dmar po „der
+393	80	5155	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ glan.
+393	103	5156	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཀྱིམ་ཅན་ glan khyim can
+393	110	5157	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཀྱིམ་ཅན་ glan khyim can der 4. Monat.
+393	113	5158	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་གི་ཟླ་བ་ glan gi zla ba das Tierkreiszeichen
+393	124	5159	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་ glan chen Elefant.
+393	153	5161	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་།ཁ་འབབ་ glan chen kha ’bab Bez. der
+393	162	5162	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་འགྲོས་མ་ glan chen ’gros ma Bez. für ei-
+393	167	5163	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་རྣ་བ་ glan chen rna ba Bez. für Näga.
+393	171	5163	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་མོ་ glan chen mo Elefantenkuh.
+393	174	5164	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཆེན་རྩ་ glan chen rtsi Bezoar.
+393	181	5165	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་འཇོམས་ glan ’joms Bez. für Löwe.
+393	183	5166	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཐབས་ glan thabs auch glan ’thab eine Er-
+393	191	5167	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་འཐབ་ glan ’thab †2/%7 thabs.
+393	193	5168	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་དར་མ་ glan dar ma npr. ein König.
+394	1	5168	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་འདེད་ glan ’ded
+394	3	5168	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་འདད་ glan ’ded Pflüger.
+394	6	5169	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་རྔལ་ glan rdul eine kleine Maßeinheit.
+394	43	5171	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ glan po.
+394	59	5172	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ཅན་ glan po can
+394	100	5173	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ཅན་ glan po can.
+394	110	5174	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ཆེ་ glan po che
+394	112	5175	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ཆེ་ glan po che.
+394	154	5176	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་ཆེན་པོ་ glan po chen po „großer Elefant“,
+394	170	5177	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་འཚེ་ཀྱེད་ glan po ’tshe byed Bez. für Lö-
+394	174	5178	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོ་གཡོ་མེད་ glan po g.yo med Bez. für Lö-
+394	180	5179	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པའ་དགྲ glan po’i dgra Bez. für Löwe.
+394	190	5181	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོའི་སྟོབས་ glan po’i stobs eine hohe Zahl.
+394	196	5182	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོའི་གདོང་ glan po’i gdon Bez. für Ganesa.
+394	206	5183	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་སྤྲ་སྐྱེས་ glan spu skyes weißes Dürvä-Gras.
+395	3	5184	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་བུ་ glan bu Elefantenkalb, -junges.
+395	11	5186	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་མ་ glan ma ein Baum, Gebirgsweide.
+395	29	5186	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་མོ་ glan mo Elefantenkuh.
+395	32	5186	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་དམར་ glan dmar Stier.
+395	35	5187	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་རྫི་ glan rdzi Elefantenwärter, -führer.
+395	43	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་གཡོགས་ glan g.yogs Elefantenwärter, -füh-
+395	50	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་རོག་ glan rog Elefantenwärter, -führer.
+395	54	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཤད་ glan Sad ausgewachsener Stier.
+395	57	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཤིང་ glan sin ein Baum, Gebirgsweide.
+395	63	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱང་ glan hran Stier.
+395	66	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱལ་ glan hrul Elefantenbulle.
+395	69	5187	tibetan_only	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་ཧྱེངས་ glan hrens Elefantenbulle.
+1275	1	12813	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་མགོ་གླང་སྙིང་ dom mgo glan sin
