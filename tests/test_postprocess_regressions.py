@@ -2292,6 +2292,30 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
         self.assertEqual(changes[-1]["from_token"], "goh")
 
+    def test_prefixed_agong_rows_preserve_apostrophe_style(self) -> None:
+        lines = {
+            (397, 112): "གླད་འགོང་ glud ’gon eine Zeremonie zu Neu-",
+            (439, 158): "འགོང་པོ་ ’gon po",
+            (470, 89): "རྒྱལ་འགོང་ rgyal 'gon eine Dämonenart.",
+            (439, 200): "འགང་པ gon po ein Damon; gon mo eine",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གླད་འགོང་ glud ’goṅ", corrected)
+        self.assertIn("འགོང་པོ་ ’goṅ po", corrected)
+        self.assertIn("རྒྱལ་འགོང་ rgyal 'goṅ", corrected)
+        self.assertIn("འགང་པ gon po ein Damon; gon mo", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"]
+            == "reviewed_tibetan_exact_prefixed_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 3)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

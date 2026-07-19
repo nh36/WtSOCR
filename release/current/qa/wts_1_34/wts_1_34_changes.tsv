@@ -27616,3 +27616,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1010	176	11034	headword_line	gon	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུགས་གོང་ thugs gon Respekt oder Rang (2); ~
 1106	1	11978	headword_line	gon	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དང་གོང་ daṅ gon
 1116	44	12051	headword_line	gon	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དན་གོང་ dan gon auch dan kon Kugelbogen,
+397	112	5210	tibetan_only	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	གླད་འགོང་ glud ’gon eine Zeremonie zu Neu-
+439	158	5754	headword_line	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	འགོང་པོ་ ’gon po
+470	89	6098	headword_line	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	རྒྱལ་འགོང་ rgyal ’gon eine Dämonenart.
