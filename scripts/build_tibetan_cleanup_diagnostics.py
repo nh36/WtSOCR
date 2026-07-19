@@ -1022,13 +1022,24 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
             if not token_class:
                 continue
             classified_matches.append((token_index, match, tok, token_class))
-        candidate_counts = Counter(
-            (
+        line_tokens = [
+            stripped_token(match.group(0))
+            for match in POSTPROCESS_TOKEN_RE.finditer(line)
+        ]
+        candidate_counts: Counter[tuple[str, str]] = Counter()
+        for _, _, _, token_class in classified_matches:
+            key = (
                 token_class["tibetan_witness"],
                 token_class["base_source_token"],
             )
-            for _, _, _, token_class in classified_matches
-        )
+            candidate_counts[key] = sum(
+                token
+                in {
+                    token_class["base_source_token"],
+                    token_class["base_proposed_target"],
+                }
+                for token in line_tokens
+            )
         for token_index, match, tok, token_class in classified_matches:
             alignment = script_ng_alignment_category(
                 line=line,

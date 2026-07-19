@@ -683,6 +683,7 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
                         "ཆུང་ chun auch chun\n",
                         "ཆུང་ unrelated text; later chun\n",
                         "བསྒྱུན་ bsgrun zu Tsgrun\n",
+                        "ཆུང་ chuṅ auch chun\n",
                     ]
                 ),
                 encoding="utf-8",
@@ -692,7 +693,8 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
                 "1\t1\theadword_line\n"
                 "2\t1\theadword_line\n"
                 "3\t1\tgerman_prose_with_translit\n"
-                "4\t1\theadword_line\n",
+                "4\t1\theadword_line\n"
+                "5\t1\theadword_line\n",
                 encoding="utf-8",
             )
 
@@ -714,6 +716,10 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             "same_line_unaligned",
         )
         self.assertNotIn("4", by_page)
+        self.assertEqual(
+            by_page["5"][0]["review_category"],
+            "repeated_same_lemma_alignment",
+        )
 
     def test_script_ng_does_not_introduce_generic_n_to_ng(self) -> None:
         self.assertIsNone(

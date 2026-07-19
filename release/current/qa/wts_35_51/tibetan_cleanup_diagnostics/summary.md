@@ -24,7 +24,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | ins (42) | Ins (42) | 42 | siglum_policy_review |
 | unknown | Lis (33), Li$ (6), lis (3) | Liś (42) | 42 | siglum_policy_review |
 | unknown | VisT (19), ViST (7), VisṬ (1) | ViśT (27) | 27 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (12) | chuṅ (12) | 12 | exact_promotion_candidate |
+| tibetan_script_ng_witness | chun (12) | chuṅ (12) | 12 | manual_alignment_review |
 | unknown | Gs-H (10), GS-H (1) | Gś-H (11) | 11 | siglum_policy_review |
 | unknown | gs (9), g$ (1) | Gs (10) | 10 | siglum_policy_review |
 | unknown | Y$ (5), Ys (4), YŚ (1) | Yś (10) | 10 | siglum_policy_review |
