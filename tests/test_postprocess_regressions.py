@@ -1924,7 +1924,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_1_34",
         )
 
-        self.assertIn("dkar chuṅ rin mo", corrected)
+        self.assertIn("dkar chuṅ riṅ mo", corrected)
         self.assertIn("kha sran chuṅ ṅu ein Getreide.", corrected)
         self.assertIn("dgun zla tha chuṅ", corrected)
         self.assertIn("An unreviewed prose chun and hu stay unchanged.", corrected)
@@ -1935,7 +1935,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             and row["from_token"] == "chun"
         ]
         self.assertEqual(len(reviewed), 3)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
     def test_reviewed_ngu_seed_is_exact_and_does_not_change_sran(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -2496,6 +2496,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("མཐོན་ཀ་ mthon ka.", corrected)
         self.assertIn("mthoṅ /74/775 Schverlust.", corrected)
         self.assertEqual(sum(row["to_token"] == "mthoṅ" for row in changes), 4)
+
+    def test_reviewed_ring_rows_preserve_dung_and_genuine_rin(self) -> None:
+        lines = {
+            (1158, 57): "དུང་རིང་ duṅ rin eine Langtrompete",
+            (43, 158): "ཀ་རིང་ ka rin",
+            (86, 117): "ཀུན་རིན་ kun rin",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དུང་རིང་ duṅ riṅ", corrected)
+        self.assertIn("ཀ་རིང་ ka riṅ", corrected)
+        self.assertIn("ཀུན་རིན་ kun rin", corrected)
+        self.assertEqual(sum(row["to_token"] == "riṅ" for row in changes), 2)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
