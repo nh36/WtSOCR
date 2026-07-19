@@ -132178,7 +132178,7 @@ Lex. phal skad ma yin pa chos kyi skad
 „nicht gewöhnliche Sprache, Schriftsprache“ (brDa); chos tshig (Dagy).
 
 
-ཆོས་སྐུ་ chos sku Tchos kyi sku.
+ཆོས་སྐུ་ chos sku ↑ chos kyi sku.
 
 ཆོས་སྐོར་ chos skor Lehrzyklus.
 
@@ -132432,7 +132432,7 @@ gsum = rnam sbyar / bla gos / than gos gsum
 „bdun pa: Obergewand, jetzt als Mönchsgewand bekannt“ (KlonD 726,1).
 
 
-ཆོས་གྲགས་ chos grags Tchos kyi grags pa.
+ཆོས་གྲགས་ chos grags ↑ chos kyi grags pa.
 
 ENT chos grwa auch chos gra Klosterschule,
 
@@ -133176,8 +133176,8 @@ byed cin „von [seiner] tugendhaften Gattin
 (skt. dharmacärınt) und der Königstochter
 verehrt“ (Nägn 180,13).
 
-ཆོས་སྤྲིན་ chos sprin Tchos kyi sprin.
-ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.
+ཆོས་སྤྲིན་ chos sprin ↑ chos kyi sprin.
+ཆོས་ཕུང་ chos phun ↑ chos kyi phuṅ po.
 
 297
 
@@ -133349,7 +133349,7 @@ Lex. chos rwa la’an „auch für: Klosterhof“
 
 (brDa).
 
-ཆོས་བརིགས་ chos brtsigs Tchos rtsig.
+ཆོས་བརིགས་ chos brtsigs ↑ chos rtsig.
 
 ཆས་མྔ་རྫ་མས།། chos mtshams Pause, Unterbre-
 chung des Gebets, der Lehre

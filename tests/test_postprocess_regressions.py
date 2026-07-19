@@ -1481,6 +1481,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_reference_marker_tchos_family_applies_only_on_exact_rows(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (675, 44): "ཆོས་སྐུ་ chos sku Tchos kyi sku.",
+                (676, 93): "ཆོས་གྲགས་ chos grags Tchos kyi grags pa.",
+                (679, 165): "ཆོས་སྤྲིན་ chos sprin Tchos kyi sprin.",
+                (679, 166): "ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.",
+                (680, 118): "ཆོས་བརིགས་ chos brtsigs Tchos rtsig.",
+                (680, 119): "Tchos on an adjacent unreviewed line stays unchanged.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertEqual(corrected.count("↑ chos"), 5)
+        self.assertIn("Tchos on an adjacent unreviewed line stays unchanged.", corrected)
+        marker_changes = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(len(marker_changes), 5)
+        self.assertTrue(
+            all(
+                (row["from_token"], row["to_token"]) == ("Tchos", "↑ chos")
+                for row in marker_changes
+            )
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {

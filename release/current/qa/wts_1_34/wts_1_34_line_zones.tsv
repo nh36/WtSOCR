@@ -97850,7 +97850,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 675	38	8134	latin_other			none	1	0	0	0	Schriftsprache.
 675	40	8134	german_prose_with_translit			none	6	1	0	0	Lex. phal skad ma yin pa chos kyi skad
 675	41	8134	german_prose_with_translit			none	4	3	0	0	„nicht gewöhnliche Sprache, Schriftsprache“ (brDa); chos tshig (Dagy).
-675	44	8135	headword_line	ཆོས་སྐུ་	chos sku	medium	4	1	0	0	ཆོས་སྐུ་ chos sku Tchos kyi sku.
+675	44	8135	headword_line	ཆོས་སྐུ་	chos sku chos kyi sku	medium	5	0	0	0	ཆོས་སྐུ་ chos sku ↑ chos kyi sku.
 675	46	8136	headword_line	ཆོས་སྐོར་	chos	medium	2	0	0	0	ཆོས་སྐོར་ chos skor Lehrzyklus.
 675	48	8136	latin_other			none	5	0	0	0	lus med mkha’ ’gro’i ~ dgu yod pa las „es
 675	49	8136	german_prose_with_translit			none	1	2	0	0	gibt neun Zyklen von Lus-med-mkha’-
@@ -98055,7 +98055,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 676	88	8150	german_prose_with_translit			none	1	2	0	0	(Dagy); - gsum pa = traicivarikab (Mvy
 676	89	8150	latin_other			none	6	0	0	0	1129); bdun pa ni bla gos da lta - su grags pa
 676	90	8150	german_prose_with_translit			none	2	4	0	0	„bdun pa: Obergewand, jetzt als Mönchsgewand bekannt“ (KlonD 726,1).
-676	93	8151	headword_line	ཆོས་གྲགས་	chos	medium	3	1	0	0	ཆོས་གྲགས་ chos grags Tchos kyi grags pa.
+676	93	8151	headword_line	ཆོས་གྲགས་	chos	medium	4	0	0	0	ཆོས་གྲགས་ chos grags ↑ chos kyi grags pa.
 676	95	8151	german_prose_with_translit			none	2	2	0	0	ENT chos grwa auch chos gra Klosterschule,
 676	97	8151	german_prose_with_translit			none	1	1	0	0	Lehrstätte, Dharmakolleg.
 676	99	8151	latin_other			none	3	0	0	0	kam bcu’i chos gra’i slobs pon (7. slob dpon)
@@ -98601,8 +98601,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 679	161	8201	german_prose_with_translit			none	1	2	0	0	byed cin „von [seiner] tugendhaften Gattin
 679	162	8201	german_prose_with_translit			none	1	3	0	0	(skt. dharmacärınt) und der Königstochter
 679	163	8201	german_prose			none	0	1	0	0	verehrt“ (Nägn 180,13).
-679	165	8202	headword_line	ཆོས་སྤྲིན་	chos	medium	2	1	0	0	ཆོས་སྤྲིན་ chos sprin Tchos kyi sprin.
-679	166	8203	headword_line	ཆོས་ཕུང་	chos phun	high	5	1	0	0	ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.
+679	165	8202	headword_line	ཆོས་སྤྲིན་	chos	medium	3	0	0	0	ཆོས་སྤྲིན་ chos sprin ↑ chos kyi sprin.
+679	166	8203	headword_line	ཆོས་ཕུང་	chos phun chos kyi phuṅ po	high	6	0	0	0	ཆོས་ཕུང་ chos phun ↑ chos kyi phuṅ po.
 679	168	8203	other			none	0	0	0	0	297
 679	170	8204	headword_line	ཆོས ་དབྱིངས་	chos dbyins	medium	2	0	0	0	ཆོས ་དབྱིངས་ chos dbyins
 679	172	8204	german_prose_with_translit			none	2	4	0	0	EN'As' chos blon ein Minister, der seine Auf-
@@ -98737,7 +98737,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 680	112	8218	german_prose			none	0	4	0	0	dem die Mönche debattieren.
 680	114	8218	german_prose_with_translit			none	2	4	0	0	Lex. chos rwa la’an „auch für: Klosterhof“
 680	116	8218	latin_other			none	1	0	0	0	(brDa).
-680	118	8219	headword_line	ཆོས་བརིགས་	chos brtsigs	high	3	1	0	0	ཆོས་བརིགས་ chos brtsigs Tchos rtsig.
+680	118	8219	headword_line	ཆོས་བརིགས་	chos brtsigs chos rtsig	high	4	0	0	0	ཆོས་བརིགས་ chos brtsigs ↑ chos rtsig.
 680	120	8220	headword_line	ཆས་མྔ་རྫ་མས།།	chos mtshams	high	2	2	0	0	ཆས་མྔ་རྫ་མས།། chos mtshams Pause, Unterbre-
 680	121	8220	german_prose_with_translit			none	2	3	0	0	chung des Gebets, der Lehre
 680	122	8220	german_prose			none	0	3	0	0	oder der Debatte.
