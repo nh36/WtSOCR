@@ -94629,7 +94629,7 @@ yin (metr.) „[die Gattungen] läsya, chalita,
 Samyäa usw. sind zum Schauen“ (Kävyäd
 1.39).
 
-སྒེའུ་ཆུང་ sge’u chun
+སྒེའུ་ཆུང་ sge’u chuṅ
 
 es Kämeśvara.
 
@@ -97121,7 +97121,7 @@ sammelt“ (brDa).
 Lex. sa nas rdo - Sig „heb die Steine vom
 Boden auf!“ (brDa, Dagy).
 
-སྒྲུང་ sgrun Erzählung, Geschichtenerzähler.
+སྒྲུང་ sgruṅ Erzählung, Geschichtenerzähler.
 
 de’i rin la ~ ’debs byun no „zu seiner Zeit
 kam das Vortragen von Erzählungen auf“
@@ -108756,7 +108756,7 @@ Höhe“ (brDa).
 
 EAN’ ’rnams Tram 3.
 
-ཇྭའུ་ཆུང་ rha’u chun eine kleine Trommel, vgl.
+ཇྭའུ་ཆུང་ rha’u chuṅ eine kleine Trommel, vgl.
 Neb 19.
 
 ER’ 777// ba Fremdkörper.
@@ -128739,7 +128739,7 @@ Lex. chun nu nas ’grogs 7277 grogs po „ein
 Freund, mit dem man von Klein an
 befreundet ist“ (brDa).
 
-ཆུང་གླད་ chun glud ein Substitutsopfer für
+ཆུང་གླད་ chuṅ glud ein Substitutsopfer für
 ངར Kinder.
 
 sha mar ¬~ gton dgos so (metr.) „es ist früh
@@ -128751,7 +128751,7 @@ ein Substitutsopfer für Kinder durchzu-
 
 führen“ (Nagdel 42,10).
 
-ཆུང་ངུ་ chun ru auch chu nu, chu nu ma klein,
+ཆུང་ངུ་ chuṅ ru auch chu nu, chu nu ma klein,
 
 jung, gering; >’ chun sehr gering; sku
 chu nu nas, = nas, » Aid nas von Kindheit
@@ -128831,7 +128831,7 @@ Flüßchen macht großes Getöse“ (ThK 1:
 148,1); srin bu ~ man ba ’on „es kommen
 viele sehr kleine Würmchen“ (Hipp 215,2).
 
-ཆུང་ཆེས་པ་ chun ches pa sehr gering.
+ཆུང་ཆེས་པ་ chuṅ ches pa sehr gering.
 Lex. alpatamam (Mvy 2695).
 FTIR chun hun Schwalbe.
 Lex. khug rta (Dagy).
@@ -128847,13 +128847,13 @@ Ehe vereinbart wurde“ (Mil 31,21).
 bzi’i chun stag (r. ltag) jo sras chos skyabs
 kyis „der zweitjüngste der vier [Brüder],
 Jo-sras Chos-skyabs“ (Debm 28a2).
-ཆུང་ཐག་ chun thag klein, sehr klein.
+ཆུང་ཐག་ chuṅ thag klein, sehr klein.
 Lex. - ni chun ba’am chun śos (Be’uD
 208,1).
-ཆུང་ཐིག་ chun thig kleiner, sehr klein.
+ཆུང་ཐིག་ chuṅ thig kleiner, sehr klein.
 Lex. chun ba’am chun śos (TTC).
 
-ཆུང་འདྲིས་ chun ’dris langjährige Freundin.
+ཆུང་འདྲིས་ chuṅ ’dris langjährige Freundin.
 > byams pa’i rlun bskyed (r. skyod?) (metr.)
 
 „Gebetsfahnen meiner Geliebten, meiner
@@ -128868,14 +128868,14 @@ der befällt.
 und der gnod ’dre“ (MigTo 280,3).
 
 SAN chun ma
-ཆུང་པོ་གྲོགས་ chun po grogs Tchun grogs.
+ཆུང་པོ་གྲོགས་ chuṅ po grogs Tchun grogs.
 
-ཆུང་ཀྱེད་ chun byed Bez. für Feuer, Feuergott.
+ཆུང་ཀྱེད་ chuṅ byed Bez. für Feuer, Feuergott.
 
 Lex. krsann (Ak 15.49); me dan me //%
 la’an (brDa).
 
-ཆུང་མ་ chun ma Frau, Ehefrau.
+ཆུང་མ་ chuṅ ma Frau, Ehefrau.
 
 chan ’ishon gi ~$ smras pa „die Frau des
 Wirts sprach“ (K1 ga 83b4); ~ la bu ... Zig
@@ -128925,7 +128925,7 @@ khyim thabs mo la „für: Ehefrau“ (Dagy);
 mchis brah ni ~ (Liś 19,15, ähnl. Be’uD
 216,2, KlonD 728,6).
 
-ཆུང་མ་གསུམ་ཡོད་པ་ chun ma gsum yod pa auch
+ཆུང་མ་གསུམ་ཡོད་པ་ chuṅ ma gsum yod pa auch
 ” ” chun gsum yod pa Beiname
 Sivas.
 Lex. chun ma (v. 1. om. ma) gsum yod pa =
@@ -128941,12 +128941,12 @@ Lex. dman pa’am ma rabs (TTC).
 Lex. klu’i rgyal po - = kimcanako nägaräjä
 (Mvy 3259).
 
-ཆུང་ཤ་ chun sa Fleisch von Jungtieren.
+ཆུང་ཤ་ chuṅ sa Fleisch von Jungtieren.
 
 Lex. gZon Sa ste Sa’u "an zer „junges Fleisch,
 heißt auch sa’u“ (Dagy).
 
-ཆུང་ཤོས་ chun śos kleinster, jüngster.
+ཆུང་ཤོས་ chuṅ śos kleinster, jüngster.
 
 dmag brgya pa la bu gsum byun ba’i ~ „der
 jüngste der drei Söhne des Sätänika“ (Glr
@@ -128969,7 +128969,7 @@ du nan „drücke den chun sri in die Erde!“
 
 ཆུད་ :chud
 
-ཆུང་གསུམ་ཡོད་པ་ chun gsum yod pa Tchun ma
+ཆུང་གསུམ་ཡོད་པ་ chuṅ gsum yod pa Tchun ma
 ” gsum yod pa.
 SAN chuns alttib. auch cuns, pf. zu Tchun
 klein, jung, gering sein; - pa klein,
@@ -149382,7 +149382,7 @@ erfahrenen sollen sich hinten anschließen“
 med (metr.) „man soll den Schwächsten
 nicht so sehr quälen“ (Sumpa 176b4).
 
-ཉམ་ཆུང་དབང་པོ་ nam chun dban po
+ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po
 
 Lex. ’khos Zan gyi mi lta bu / dan spyod pa
 btsun po can la’ani „wie: schwacher Mensch
@@ -149395,7 +149395,7 @@ niedergedrückt, das heißt nams chun“
 
 (brDa).
 
-ཉམ་ཆུང་དབང་པོ་ nam chun dban po Bez. für
+ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po Bez. für
 
 Fliege, Biene.
 
@@ -160386,7 +160386,7 @@ durch Hören“, mündliche
 grub thob - „die mündliche Überlieferung
 der Siddhas“ (Magy 2b4).
 
-སྙན་ཁུང་ཆུང་ san khun chun unbeirrbar.
+སྙན་ཁུང་ཆུང་ san khun chuṅ unbeirrbar.
 > la sbad (r. sbas) kha yari ba dan (metr.)
 
 „unbeirrbar und offen über Geheimnisse
@@ -161483,7 +161483,7 @@ a un . .
 Lex. säin du bsags pa’! chu ser „m Herzen
 gesammeltes Serum“ (Dagy).
 en ༤ " ¢ . -- |
-སྙང་ཆུང་ Ant chun mutlos, verängstgt; vgl.
+སྙང་ཆུང་ Ant chuṅ mutlos, verängstgt; vgl.
 ༄ "¢ *,
 1677/77 phod chun ba.
 
@@ -162902,7 +162902,7 @@ Lex. ~ Sig & rjes su bda’ ba’ bskul tshig
 Lex. ~ sig & bu lon dos sig gam ~ Sig lta bu
 „wie: treibe die Schulden ein!“ (brDa).
 
-སྙོགས་ཆུང་བ་ süog chun ba bescheiden,
+སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
 
 schwach (?).
 
@@ -164423,7 +164423,7 @@ von Mund zu Mund geben, Futur und
 Perfekt“ (Dagy); - pa ni kha zas ster ba’ami
 zar bcug pa (Be’uD 212,2).
 
-བསྙོད་ཆུང་ bsüod chun (zw.) schwach, beschei-
+བསྙོད་ཆུང་ bsüod chuṅ (zw.) schwach, beschei-
 den.
 
 Lex. myogs chun = snogs chun ba ste -
@@ -169697,7 +169697,7 @@ Lex. lcon mo (brDa).
 Lex. dri za Zig (brDa).
 
 * “ Pe = " ༡, དར
-ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chun ma Beiname
+ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chuṅ ma Beiname
 ༣༅ ༢༨
 Sarasvatis.
 
@@ -182694,7 +182694,7 @@ byur yug ... sogs / de dag lha yi spyan la phog
 Lex. rmen nan ni - „schlechtes Vorzeichen“
 (Liś 20,4).
 
-ལྟས་ངན་ཆུང་བའི་བག་མ་ ltas man chun ba’i bag
+ལྟས་ངན་ཆུང་བའི་བག་མ་ ltas man chuṅ ba’i bag
 
 ma Bez. für die Braut,
 bei der für das Jahr der Entsendung das im
@@ -183900,7 +183900,7 @@ Fr sta re
 
 Lex. sin gcod byed (Dagy).
 
-སྟ་ཆུང་ sta chun Bez. für das Mondhaus gre
+སྟ་ཆུང་ sta chuṅ Bez. für das Mondhaus gre
 2
 
 (SCHUH 2012: 1396).
@@ -187507,7 +187507,7 @@ für ston ka’i zla ba.
 
 1. Herbstmond.
 ston sla 'brih po „mittlerer Herbstmonat“
-(PT1203 a8); ~ daṅ ’dra rab mdzes paསྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chun
+(PT1203 a8); ~ daṅ ’dra rab mdzes paསྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chuṅ
 
 (metr.) „sehr hübsch wie der Herbstmond“ (Srkk 93.3); ston ka’i zla ba’i mdans
 
@@ -187524,7 +187524,7 @@ Itar (metr.) „wie der makellose Herbstmond“ (Vmst 1120).
 
 1435).
 
-སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chun auch ston zla tha
+སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chuṅ auch ston zla tha
 chuns letzter Herbstmonat; vgl.
 auch SCHUH 2012: 1399,
 
@@ -187544,7 +187544,7 @@ Monat“ (brDa, ähnl. Dagy); ston zla tha
 chun (¥. 1, chuns) smin drug (Ms. L om.
 smin drug) = karttikah (Mvy 8269).
 
-སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་ ston zla tha chun la thal
+སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་ ston zla tha chuṅ la thal
 ba auch ston zla tha
 chuns la thal ba ein Vergehen.
 
@@ -193621,7 +193621,7 @@ Lex. ljon pa ser po than Sin / ~ Zes pa yaṅ no
 = pitadruh saralah pätikästham catha (Ak
 101.60).
 
-ཐང་ཆུང་ than chun npr. ein Ort.
+ཐང་ཆུང་ than chuṅ npr. ein Ort.
 
 ¬~ ba / ba Si / cha khrod / de kha real so kha
 la sogs pa Sin tu man no „viele [Nieder-
@@ -200901,7 +200901,7 @@ Lex. lag btags lta bu (brDa).
 biad gad ༨ bas „lachend gingen sie fort“
 (Mil 128,14).
 
-ཐེག་ཆུང་སྐྱེས་བུ་ theg chun skyes bu Anhänger
+ཐེག་ཆུང་སྐྱེས་བུ་ theg chuṅ skyes bu Anhänger
 
 des Hinayäna.
 
@@ -200977,7 +200977,7 @@ Lex. ekayänam (Mvy 1255).
 
 ཐེག་པ་ཆེན་པོ་ theg pa chen po
 
-ཐེག་པ་ཆུང་ངུ་ theg pa chun rin das Kleine Fahr-
+ཐེག་པ་ཆུང་ངུ་ theg pa chuṅ rin das Kleine Fahr-
 
 zeug, Bez. für die Hinayäna-
 Richtung des Buddhismus; ༨ pa ein
@@ -200998,7 +200998,7 @@ mmam par snaṅ mdzad bai ro tsa na’i glin na
 glih [wurde] Mahäyäna [gelehrt]“ (Nel
 1043).
 
-ཐེག་པ་ཆེ་ཆུང་ theg pa che chun Großes und
+ཐེག་པ་ཆེ་ཆུང་ theg pa che chuṅ Großes und
 
 Kleines Fahrzeug, Mahäyäna
 und Hinayäna.
@@ -201691,7 +201691,7 @@ dkar-po“ (Bu-śz 51,1); grnam - dkar po
 gsum ni „was die drei weißen the’s des
 Himmels angeht“ (mDzodG 66,6).
 
-295ཐེའུ་ཆུང་ the’u chun
+295ཐེའུ་ཆུང་ the’u chuṅ
 
 4, Kralle; vgl. Iunthe’s?
 
@@ -208369,7 +208369,7 @@ ausgestreckten Daumen“ (PhBNth 1:
 Lex. mthe bo = angustham (Mvy 3977);
 mthe bo, ~ = sor moi thu bo „der
 
-མཐེབ་ཆུང་ mtbeb chun
+མཐེབ་ཆུང་ mtbeb chuṅ
 
 Hauptfinger“ (brDa); inthe bo, ~ = rkan lag
 gi mtheb chen (Dagy).
@@ -209380,7 +209380,7 @@ snan man ba lta bu „wie: Schauspiele und
 
 Texte usw. viel gesehen haben“ (Dagy).
 
-མཐོང་ཆུང་བ་ mthon chun ba geringes Anse-
+མཐོང་ཆུང་བ་ mthon chuṅ ba geringes Anse-
 
 hen, Geringschätzung.
 
@@ -235625,7 +235625,7 @@ wie Träume und Gandharvenstädte“ (Thgr
 stadt geworden“ ("’Dzam 21,27).
 Lex. gandharvanagaram (Mvy 2819).
 
-དྲི་ཟའི་ན་ཆུང་ dri za’i na chun Beiname Sarasva-
+དྲི་ཟའི་ན་ཆུང་ dri za’i na chuṅ Beiname Sarasva-
 
 tis.
 

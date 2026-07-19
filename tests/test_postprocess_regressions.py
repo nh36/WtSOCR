@@ -1963,6 +1963,40 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(reviewed[0]["to_token"], "ṅu")
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_direct_unique_final_ng_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (491, 157): "སྒེའུ་ཆུང་ sge’u chun",
+            (503, 71): "སྒྲུང་ sgrun Erzählung, Geschichtenerzähler.",
+            (561, 22): "ཇྭའུ་ཆུང་ rha’u chun eine kleine Trommel, vgl.",
+            (760, 107): "ཉམ་ཆུང་དབང་པོ་ nam chun dban po",
+            (1066, 95): "མཐོང་ཆུང་བ་ mthon chun ba geringes Anse-",
+            (1066, 96): "Unreviewed chun, sgrun, and rha’u stay unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("sge’u chuṅ", corrected)
+        self.assertIn("sgruṅ Erzählung", corrected)
+        self.assertIn("rha’u chuṅ", corrected)
+        self.assertIn("nam chuṅ dban po", corrected)
+        self.assertIn("mthon chuṅ ba", corrected)
+        self.assertIn(
+            "Unreviewed chun, sgrun, and rha’u stay unchanged.",
+            corrected,
+        )
+        self.assertEqual(
+            {
+                (row["from_token"], row["to_token"])
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            },
+            {("chun", "chuṅ"), ("sgrun", "sgruṅ")},
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

@@ -6,13 +6,13 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 357
 - `tibetan_orthography_damage_candidates.tsv`: 1606
-- `tibetan_script_ng_witness_candidates.tsv`: 87
+- `tibetan_script_ng_witness_candidates.tsv`: 51
 - `reference_marker_candidates.tsv`: 1189
 - `reference_marker_token_families.tsv`: 488
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 775
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
-- `tibetan_variant_families.tsv`: 764
+- `tibetan_variant_families.tsv`: 763
 - `tibetan_google_adoption_patterns.tsv`: 633
 
 ## Top Candidate Families
@@ -24,7 +24,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | rol (145) | Rol (145) | 145 | siglum_policy_review |
 | unknown | VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1) | ViśT (98) | 98 | siglum_policy_review |
 | unknown | ins (85), INS (1) | Ins (86) | 86 | siglum_policy_review |
-| tibetan_script_ng_witness | chun (84) | chuṅ (84) | 84 | exact_promotion_candidate |
+| tibetan_script_ng_witness | chun (49) | chuṅ (49) | 49 | manual_alignment_review |
 | unknown | Lsdz-K (33), L$dz-K (13) | Lśdz-K (46) | 46 | siglum_policy_review |
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
 | dngos_family | dnos (38) | dṅos (38) | 38 | exact_promotion_candidate |

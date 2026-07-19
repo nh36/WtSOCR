@@ -69762,7 +69762,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 491	153	6316	german_prose_with_translit			none	2	2	0	0	yin (metr.) „[die Gattungen] läsya, chalita,
 491	154	6316	german_prose			none	0	4	0	0	Samyäa usw. sind zum Schauen“ (Kävyäd
 491	155	6316	other			none	0	0	0	0	1.39).
-491	157	6317	headword_line	སྒེའུ་ཆུང་	sge’u	high	1	0	0	0	སྒེའུ་ཆུང་ sge’u chun
+491	157	6317	headword_line	སྒེའུ་ཆུང་	sge’u chuṅ	high	2	0	0	0	སྒེའུ་ཆུང་ sge’u chuṅ
 491	159	6317	latin_other			none	1	0	0	0	es Kämeśvara.
 491	161	6317	german_prose_with_translit			none	5	1	0	0	Lex. ’dod lha bdud dga’ rab dban phyug
 491	162	6317	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
@@ -71526,7 +71526,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 503	66	6486	headword_line	སྒྲུགས་	sgrugs	medium	2	1	0	0	སྒྲུགས་ sgrugs imp. zu sgrug aufheben.
 503	68	6486	german_prose_with_translit			none	3	4	0	0	Lex. sa nas rdo - Sig „heb die Steine vom
 503	69	6486	german_prose_with_translit			none	1	2	0	0	Boden auf!“ (brDa, Dagy).
-503	71	6487	headword_line	སྒྲུང་	sgrun Erzählung	medium	2	1	0	0	སྒྲུང་ sgrun Erzählung, Geschichtenerzähler.
+503	71	6487	headword_line	སྒྲུང་	sgruṅ Erzählung	high	2	1	0	0	སྒྲུང་ sgruṅ Erzählung, Geschichtenerzähler.
 503	73	6487	german_prose_with_translit			none	2	2	0	0	de’i rin la ~ ’debs byun no „zu seiner Zeit
 503	74	6487	german_prose_with_translit			none	1	3	0	0	kam das Vortragen von Erzählungen auf“
 503	75	6487	german_prose_with_translit			none	3	2	0	0	(Nel 2b7); bon dan ~ gi gtam rgyud „die
@@ -80245,7 +80245,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 561	16	7088	german_prose_with_translit			none	6	6	0	0	= gtos che ba la’an „auch für großes Ausmaß“ (brDa); ~ su = ’phan du „in der
 561	18	7088	german_prose_with_translit			none	1	1	0	0	Höhe“ (brDa).
 561	20	7088	german_prose_with_translit			none	1	1	0	0	EAN’ ’rnams Tram 3.
-561	22	7089	headword_line	ཇྭའུ་ཆུང་	rha’u	high	1	3	0	0	ཇྭའུ་ཆུང་ rha’u chun eine kleine Trommel, vgl.
+561	22	7089	headword_line	ཇྭའུ་ཆུང་	rha’u chuṅ	high	2	3	0	0	ཇྭའུ་ཆུང་ rha’u chuṅ eine kleine Trommel, vgl.
 561	23	7089	german_prose			none	0	1	0	0	Neb 19.
 561	25	7089	german_prose_with_translit			none	2	1	0	0	ER’ 777// ba Fremdkörper.
 561	27	7089	german_prose_with_translit			none	5	2	0	0	> khon na yod pa’i rma la ni „die Wunde,
@@ -95165,14 +95165,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 657	42	7988	german_prose_with_translit			none	2	2	0	0	Lex. chun nu nas ’grogs 7277 grogs po „ein
 657	43	7988	german_prose			none	0	6	0	0	Freund, mit dem man von Klein an
 657	44	7988	german_prose_with_translit			none	1	1	0	0	befreundet ist“ (brDa).
-657	46	7989	headword_line	ཆུང་གླད་	Substitutsopfer	high	1	2	0	0	ཆུང་གླད་ chun glud ein Substitutsopfer für
+657	46	7989	headword_line	ཆུང་གླད་	chuṅ	high	2	2	0	0	ཆུང་གླད་ chuṅ glud ein Substitutsopfer für
 657	47	7989	tibetan_only	ངར		none	0	1	0	0	ངར Kinder.
 657	49	7989	german_prose_with_translit			none	3	2	0	0	sha mar ¬~ gton dgos so (metr.) „es ist früh
 657	50	7989	german_prose_with_translit			none	1	3	0	0	ein Substitutsopfer für Kinder durchzu-
 657	52	7989	other			none	0	0	0	0	256
 657	54	7989	tibetan_only	ཆུང་ངུ་		none	0	0	0	0	ཆུང་ངུ་ chun nu
 657	56	7989	german_prose			none	0	2	0	0	führen“ (Nagdel 42,10).
-657	58	7990	headword_line	ཆུང་ངུ་	ma	medium	1	1	0	0	ཆུང་ངུ་ chun ru auch chu nu, chu nu ma klein,
+657	58	7990	headword_line	ཆུང་ངུ་	chuṅ	high	2	1	0	0	ཆུང་ངུ་ chuṅ ru auch chu nu, chu nu ma klein,
 657	60	7990	latin_other			none	4	0	0	0	jung, gering; >’ chun sehr gering; sku
 657	61	7990	german_prose_with_translit			none	4	2	0	0	chu nu nas, = nas, » Aid nas von Kindheit
 657	62	7990	german_prose			none	0	2	0	0	an, von klein auf.
@@ -95239,7 +95239,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 659	6	7990	german_prose_with_translit			none	1	3	0	0	Flüßchen macht großes Getöse“ (ThK 1:
 659	7	7990	latin_other			none	1	0	0	0	148,1); srin bu ~ man ba ’on „es kommen
 659	8	7990	german_prose			none	0	2	0	0	viele sehr kleine Würmchen“ (Hipp 215,2).
-659	10	7991	headword_line	ཆུང་ཆེས་པ་	pa	medium	2	0	0	0	ཆུང་ཆེས་པ་ chun ches pa sehr gering.
+659	10	7991	headword_line	ཆུང་ཆེས་པ་	chuṅ	high	3	0	0	0	ཆུང་ཆེས་པ་ chuṅ ches pa sehr gering.
 659	11	7991	german_prose			none	0	2	0	0	Lex. alpatamam (Mvy 2695).
 659	12	7991	german_prose			none	0	1	0	0	FTIR chun hun Schwalbe.
 659	13	7991	german_prose_with_translit			none	2	2	0	0	Lex. khug rta (Dagy).
@@ -95252,12 +95252,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 659	23	7991	latin_other			none	2	0	0	0	bzi’i chun stag (r. ltag) jo sras chos skyabs
 659	24	7991	german_prose_with_translit			none	2	3	0	0	kyis „der zweitjüngste der vier [Brüder],
 659	25	7991	german_prose			none	0	3	0	0	Jo-sras Chos-skyabs“ (Debm 28a2).
-659	26	7992	headword_line	ཆུང་ཐག་	thag	high	1	0	0	0	ཆུང་ཐག་ chun thag klein, sehr klein.
+659	26	7992	headword_line	ཆུང་ཐག་	chuṅ thag	high	2	0	0	0	ཆུང་ཐག་ chuṅ thag klein, sehr klein.
 659	27	7992	german_prose_with_translit			none	4	1	0	0	Lex. - ni chun ba’am chun śos (Be’uD
 659	28	7992	other			none	0	0	0	0	208,1).
-659	29	7993	headword_line	ཆུང་ཐིག་	thig	high	1	0	0	0	ཆུང་ཐིག་ chun thig kleiner, sehr klein.
+659	29	7993	headword_line	ཆུང་ཐིག་	chuṅ thig	high	2	0	0	0	ཆུང་ཐིག་ chuṅ thig kleiner, sehr klein.
 659	30	7993	german_prose_with_translit			none	2	1	0	0	Lex. chun ba’am chun śos (TTC).
-659	32	7994	headword_line	ཆུང་འདྲིས་	langjährige	medium	1	1	0	0	ཆུང་འདྲིས་ chun ’dris langjährige Freundin.
+659	32	7994	headword_line	ཆུང་འདྲིས་	chuṅ	high	2	1	0	0	ཆུང་འདྲིས་ chuṅ ’dris langjährige Freundin.
 659	33	7994	latin_other			none	2	0	0	0	> byams pa’i rlun bskyed (r. skyod?) (metr.)
 659	35	7994	german_prose_with_translit			none	1	1	0	0	„Gebetsfahnen meiner Geliebten, meiner
 659	36	7994	german_prose_with_translit			none	1	2	0	0	langjährigen Freundin“ (Glu 12).
@@ -95267,11 +95267,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 659	43	7994	german_prose			none	0	1	0	0	’dre „alle ’dre, der rotgesichtige chun ’dre
 659	44	7994	german_prose			none	0	3	0	0	und der gnod ’dre“ (MigTo 280,3).
 659	46	7994	latin_other			none	1	0	0	0	SAN chun ma
-659	47	7995	headword_line	ཆུང་པོ་གྲོགས་	po	medium	1	1	0	0	ཆུང་པོ་གྲོགས་ chun po grogs Tchun grogs.
-659	49	7996	headword_line	ཆུང་ཀྱེད་	byed	medium	1	4	0	0	ཆུང་ཀྱེད་ chun byed Bez. für Feuer, Feuergott.
+659	47	7995	headword_line	ཆུང་པོ་གྲོགས་	chuṅ po	high	2	1	0	0	ཆུང་པོ་གྲོགས་ chuṅ po grogs Tchun grogs.
+659	49	7996	headword_line	ཆུང་ཀྱེད་	chuṅ byed	high	2	4	0	0	ཆུང་ཀྱེད་ chuṅ byed Bez. für Feuer, Feuergott.
 659	51	7996	german_prose_with_translit			none	1	2	0	0	Lex. krsann (Ak 15.49); me dan me //%
 659	52	7996	latin_other			none	2	0	0	0	la’an (brDa).
-659	54	7997	headword_line	ཆུང་མ་	ma	medium	1	2	0	0	ཆུང་མ་ chun ma Frau, Ehefrau.
+659	54	7997	headword_line	ཆུང་མ་	chuṅ ma	high	2	2	0	0	ཆུང་མ་ chuṅ ma Frau, Ehefrau.
 659	56	7997	german_prose_with_translit			none	3	3	0	0	chan ’ishon gi ~$ smras pa „die Frau des
 659	57	7997	german_prose_with_translit			none	2	2	0	0	Wirts sprach“ (K1 ga 83b4); ~ la bu ... Zig
 659	58	7997	german_prose_with_translit			none	2	5	0	0	btsas nas „die Frau gebar einen Sohn“ (Prav
@@ -95318,7 +95318,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 660	6	7998	german_prose_with_translit			none	3	3	0	0	khyim thabs mo la „für: Ehefrau“ (Dagy);
 660	7	7998	german_prose_with_translit			none	4	1	0	0	mchis brah ni ~ (Liś 19,15, ähnl. Be’uD
 660	8	7998	german_prose			none	0	1	0	0	216,2, KlonD 728,6).
-660	10	7999	headword_line	ཆུང་མ་གསུམ་ཡོད་པ་	ma	medium	2	1	0	0	ཆུང་མ་གསུམ་ཡོད་པ་ chun ma gsum yod pa auch
+660	10	7999	headword_line	ཆུང་མ་གསུམ་ཡོད་པ་	chuṅ ma	high	3	1	0	0	ཆུང་མ་གསུམ་ཡོད་པ་ chuṅ ma gsum yod pa auch
 660	11	7999	german_prose_with_translit			none	1	1	0	0	” ” chun gsum yod pa Beiname
 660	12	7999	german_prose			none	0	1	0	0	Sivas.
 660	13	7999	german_prose_with_translit			none	3	1	0	0	Lex. chun ma (v. 1. om. ma) gsum yod pa =
@@ -95329,10 +95329,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 660	21	8000	headword_line	ཆུང་ཐད་པ་	chuṅ	high	2	2	0	0	ཆུང་ཐད་པ་ chuṅ zad pa npr. ein Nägakönig.
 660	23	8000	german_prose_with_translit			none	3	2	0	0	Lex. klu’i rgyal po - = kimcanako nägaräjä
 660	24	8000	german_prose			none	0	1	0	0	(Mvy 3259).
-660	26	8001	headword_line	ཆུང་ཤ་	sa	medium	2	2	0	0	ཆུང་ཤ་ chun sa Fleisch von Jungtieren.
+660	26	8001	headword_line	ཆུང་ཤ་	chuṅ sa	high	3	2	0	0	ཆུང་ཤ་ chuṅ sa Fleisch von Jungtieren.
 660	28	8001	german_prose_with_translit			none	4	3	0	0	"Lex. gZon Sa ste Sa’u ""an zer „junges Fleisch,"
 660	29	8001	german_prose_with_translit			none	1	3	0	0	heißt auch sa’u“ (Dagy).
-660	31	8002	headword_line	ཆུང་ཤོས་	śos	high	2	0	0	0	ཆུང་ཤོས་ chun śos kleinster, jüngster.
+660	31	8002	headword_line	ཆུང་ཤོས་	chuṅ śos	high	3	0	0	0	ཆུང་ཤོས་ chuṅ śos kleinster, jüngster.
 660	33	8002	german_prose_with_translit			none	4	1	0	0	dmag brgya pa la bu gsum byun ba’i ~ „der
 660	34	8002	german_prose_with_translit			none	1	5	0	0	jüngste der drei Söhne des Sätänika“ (Glr
 660	35	8002	other			none	0	0	0	0	46,11).
@@ -95349,7 +95349,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 660	49	8002	german_prose			none	0	5	0	0	‚Zubinden des Mauls‘ des chun sri“ (MigTo
 660	50	8002	other			none	0	0	0	0	225,21).
 660	52	8002	tibetan_only	ཆུད་		none	0	0	0	0	ཆུད་ :chud
-660	54	8003	headword_line	ཆུང་གསུམ་ཡོད་པ་	pa	medium	2	1	0	0	ཆུང་གསུམ་ཡོད་པ་ chun gsum yod pa Tchun ma
+660	54	8003	headword_line	ཆུང་གསུམ་ཡོད་པ་	chuṅ	high	3	1	0	0	ཆུང་གསུམ་ཡོད་པ་ chuṅ gsum yod pa Tchun ma
 660	55	8003	latin_other			none	1	0	0	0	” gsum yod pa.
 660	56	8003	german_prose			none	0	3	0	0	SAN chuns alttib. auch cuns, pf. zu Tchun
 660	57	8003	latin_other			none	3	0	0	0	klein, jung, gering sein; - pa klein,
@@ -110858,7 +110858,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 760	103	9017	german_prose_with_translit			none	1	2	0	0	(Gesar 191,12); Aams chun brdar 47 byed ru
 760	104	9017	german_prose			none	0	2	0	0	med (metr.) „man soll den Schwächsten
 760	105	9017	german_prose_with_translit			none	1	2	0	0	nicht so sehr quälen“ (Sumpa 176b4).
-760	107	9018	headword_line	ཉམ་ཆུང་དབང་པོ་	dban po	medium	2	0	0	0	ཉམ་ཆུང་དབང་པོ་ nam chun dban po
+760	107	9018	headword_line	ཉམ་ཆུང་དབང་པོ་	chuṅ dban po	high	3	0	0	0	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po
 760	109	9018	german_prose_with_translit			none	5	2	0	0	Lex. ’khos Zan gyi mi lta bu / dan spyod pa
 760	110	9018	german_prose_with_translit			none	4	1	0	0	btsun po can la’ani „wie: schwacher Mensch
 760	111	9018	german_prose_with_translit			none	1	5	0	0	und auch für jemanden mit einem strengen
@@ -110868,7 +110868,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 760	115	9018	german_prose			none	0	6	0	0	„Körper und Geist sind von Leid
 760	116	9018	german_prose			none	0	3	0	0	niedergedrückt, das heißt nams chun“
 760	118	9018	latin_other			none	1	0	0	0	(brDa).
-760	120	9019	headword_line	ཉམ་ཆུང་དབང་པོ་	dban po	medium	2	2	0	0	ཉམ་ཆུང་དབང་པོ་ nam chun dban po Bez. für
+760	120	9019	headword_line	ཉམ་ཆུང་དབང་པོ་	chuṅ dban po	high	3	2	0	0	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dban po Bez. für
 760	122	9019	german_prose			none	0	2	0	0	Fliege, Biene.
 760	124	9019	german_prose_with_translit			none	3	3	0	0	Lex. sbran bu’i min (brDa, ähnl. Dagy).
 760	126	9020	headword_line	ཉམ་ཉེས་	gyar	medium	1	3	0	0	ཉམ་ཉེས་ üam fies Schaden; ~ 'gyar Schaden
@@ -119151,7 +119151,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 815	97	9447	latin_other			none	1	0	0	0	Überlieferung.
 815	99	9447	german_prose_with_translit			none	2	2	0	0	grub thob - „die mündliche Überlieferung
 815	100	9447	german_prose_with_translit			none	1	2	0	0	der Siddhas“ (Magy 2b4).
-815	102	9448	headword_line	སྙན་ཁུང་ཆུང་	khun	high	1	0	0	0	སྙན་ཁུང་ཆུང་ san khun chun unbeirrbar.
+815	102	9448	headword_line	སྙན་ཁུང་ཆུང་	khun chuṅ	high	2	0	0	0	སྙན་ཁུང་ཆུང་ san khun chuṅ unbeirrbar.
 815	103	9448	latin_other			none	4	0	0	0	> la sbad (r. sbas) kha yari ba dan (metr.)
 815	105	9448	german_prose			none	0	3	0	0	„unbeirrbar und offen über Geheimnisse
 815	106	9448	german_prose			none	0	2	0	0	[sprechen]“ (VaiNth 176,3).
@@ -119975,7 +119975,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 820	92	9472	german_prose_with_translit			none	2	3	0	0	Lex. säin du bsags pa’! chu ser „m Herzen
 820	93	9472	german_prose			none	0	2	0	0	gesammeltes Serum“ (Dagy).
 820	94	9472	tibetan_only			none	0	0	0	0	"en ༤ "" ¢ . -- |"
-820	95	9473	headword_line	སྙང་ཆུང་	verängstgt	medium	1	2	0	0	སྙང་ཆུང་ Ant chun mutlos, verängstgt; vgl.
+820	95	9473	headword_line	སྙང་ཆུང་	chuṅ	high	2	2	0	0	སྙང་ཆུང་ Ant chuṅ mutlos, verängstgt; vgl.
 820	96	9473	tibetan_only	༄		none	0	0	0	0	"༄ ""¢ *,"
 820	97	9473	latin_other			none	2	0	0	0	1677/77 phod chun ba.
 820	99	9473	german_prose_with_translit			none	5	2	0	0	Lex. spa na na (r. ran) Zum po la dbus par
@@ -121029,7 +121029,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 826	168	9515	german_prose			none	0	1	0	0	2. [Schulden] eintreiben.
 826	170	9515	german_prose_with_translit			none	1	2	0	0	Lex. ~ sig & bu lon dos sig gam ~ Sig lta bu
 826	171	9515	german_prose_with_translit			none	1	3	0	0	„wie: treibe die Schulden ein!“ (brDa).
-826	173	9516	headword_line	སྙོགས་ཆུང་བ་	ba	medium	1	1	0	0	སྙོགས་ཆུང་བ་ süog chun ba bescheiden,
+826	173	9516	headword_line	སྙོགས་ཆུང་བ་	chuṅ ba	high	2	1	0	0	སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
 826	175	9516	other			none	0	0	0	0	schwach (?).
 826	177	9516	german_prose_with_translit			none	1	3	0	0	Lex. myogs chun ‰ ¬ ste bsüod chun (Dagy).
 826	179	9517	headword_line	སྙོང་།ཁ་	kha	high	1	2	0	0	སྙོང་།ཁ་ sion kha eine 690-/257707-0201711617 (Neb
@@ -122146,7 +122146,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 833	105	9567	german_prose			none	0	6	0	0	von Mund zu Mund geben, Futur und
 833	106	9567	german_prose_with_translit			none	4	2	0	0	Perfekt“ (Dagy); - pa ni kha zas ster ba’ami
 833	107	9567	latin_other			none	2	0	0	0	zar bcug pa (Be’uD 212,2).
-833	109	9568	headword_line	བསྙོད་ཆུང་	bsüod	medium	1	0	0	0	བསྙོད་ཆུང་ bsüod chun (zw.) schwach, beschei-
+833	109	9568	headword_line	བསྙོད་ཆུང་	bsüod chuṅ	high	2	0	0	0	བསྙོད་ཆུང་ bsüod chuṅ (zw.) schwach, beschei-
 833	110	9568	german_prose			none	0	1	0	0	den.
 833	112	9568	german_prose_with_translit			none	2	1	0	0	Lex. myogs chun = snogs chun ba ste -
 833	114	9568	german_prose			none	0	1	0	0	(Dagy).
@@ -125807,7 +125807,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 872	169	9616	german_prose_with_translit			none	1	1	0	0	4. npr. ein Gandharva.
 872	170	9616	german_prose_with_translit			none	1	2	0	0	Lex. dri za Zig (brDa).
 872	172	9616	tibetan_only			none	0	1	0	0	"* “ Pe = "" ༡, དར"
-872	173	9617	headword_line	ཏམ་བུ་རའེ་ཆུང་མ་	ra’i	high	2	1	0	0	ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chun ma Beiname
+872	173	9617	headword_line	ཏམ་བུ་རའེ་ཆུང་མ་	ra’i chuṅ ma	high	3	1	0	0	ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chuṅ ma Beiname
 872	174	9617	tibetan_only	༣༅ ༢༨		none	0	0	0	0	༣༅ ༢༨
 872	175	9617	german_prose			none	0	1	0	0	Sarasvatis.
 872	177	9617	german_prose_with_translit			none	4	1	0	0	Lex. dbyans can lha mo (brDa).
@@ -135762,7 +135762,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 933	137	10266	other			none	0	0	0	0	(gZi-Sn 46,34).
 933	139	10266	german_prose_with_translit			none	1	2	0	0	Lex. rmen nan ni - „schlechtes Vorzeichen“
 933	140	10266	latin_other			none	1	0	0	0	(Liś 20,4).
-933	142	10267	headword_line	ལྟས་ངན་ཆུང་བའི་བག་མ་	ba’i	high	1	0	0	0	ལྟས་ངན་ཆུང་བའི་བག་མ་ ltas man chun ba’i bag
+933	142	10267	headword_line	ལྟས་ངན་ཆུང་བའི་བག་མ་	chuṅ ba’i	high	2	0	0	0	ལྟས་ངན་ཆུང་བའི་བག་མ་ ltas man chuṅ ba’i bag
 933	144	10267	german_prose_with_translit			none	1	4	0	0	ma Bez. für die Braut,
 933	145	10267	german_prose_with_translit			none	1	8	0	0	bei der für das Jahr der Entsendung das im
 933	146	10267	german_prose_with_translit			none	2	2	0	0	Rahmen der skeg rtsis festgelegte dgu mig
@@ -136637,7 +136637,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 941	173	10316	german_prose			none	0	1	0	0	Fr sta re
 941	175	10316	tibetan_only	སྟ་གྲི་		none	0	1	0	0	སྟ་གྲི་ sta gri Axt.
 941	177	10316	german_prose			none	0	2	0	0	Lex. sin gcod byed (Dagy).
-941	179	10317	headword_line	སྟ་ཆུང་	Mondhaus	high	1	3	0	0	སྟ་ཆུང་ sta chun Bez. für das Mondhaus gre
+941	179	10317	headword_line	སྟ་ཆུང་	chuṅ	high	2	3	0	0	སྟ་ཆུང་ sta chuṅ Bez. für das Mondhaus gre
 941	180	10317	other			none	0	0	0	0	2
 941	182	10317	other			none	0	0	0	0	(SCHUH 2012: 1396).
 941	184	10317	other			none	0	0	0	0	a ..
@@ -139388,7 +139388,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 957	220	10461	german_prose			none	0	1	0	0	1. Herbstmond.
 957	221	10461	german_prose_with_translit			none	1	1	0	0	ston sla 'brih po „mittlerer Herbstmonat“
 957	222	10461	latin_other			none	3	0	0	0	(PT1203 a8); ~ daṅ ’dra rab mdzes pa
-958	1	10462	headword_line	སྟོན་ཟླ་ཐ་ཆུང་	tha	high	1	0	0	0	སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chun
+958	1	10462	headword_line	སྟོན་ཟླ་ཐ་ཆུང་	tha chuṅ	high	2	0	0	0	སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chuṅ
 958	3	10462	german_prose_with_translit			none	3	4	0	0	(metr.) „sehr hübsch wie der Herbstmond“ (Srkk 93.3); ston ka’i zla ba’i mdans
 958	5	10462	german_prose_with_translit			none	1	4	0	0	¢¢ ba (metr.) „[Täräs] Glanz ist wie der
 958	6	10462	german_prose			none	0	3	0	0	des Herbstmondes“ (Mvup 4,293); ~ ...dag
@@ -139398,7 +139398,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 958	12	10462	german_prose			none	0	1	0	0	2. Herbstmonat.
 958	14	10462	german_prose_with_translit			none	2	3	0	0	¬~ dan po „der erste Herbstmonat“ (Debm
 958	16	10462	other			none	0	0	0	0	1435).
-958	18	10463	headword_line	སྟོན་ཟླ་ཐ་ཆུང་	tha	high	2	1	0	0	སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chun auch ston zla tha
+958	18	10463	headword_line	སྟོན་ཟླ་ཐ་ཆུང་	tha chuṅ	high	3	1	0	0	སྟོན་ཟླ་ཐ་ཆུང་ ston zla tha chuṅ auch ston zla tha
 958	19	10463	german_prose			none	0	2	0	0	chuns letzter Herbstmonat; vgl.
 958	20	10463	german_prose			none	0	1	0	0	auch SCHUH 2012: 1399,
 958	22	10463	latin_other			none	5	0	0	0	khyi lo’i sol bor ba’i ston zla tha chuns yan
@@ -139414,7 +139414,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 958	34	10463	german_prose_with_translit			none	2	3	0	0	Monat“ (brDa, ähnl. Dagy); ston zla tha
 958	35	10463	german_prose			none	0	2	0	0	chun (¥. 1, chuns) smin drug (Ms. L om.
 958	36	10463	german_prose			none	0	1	0	0	smin drug) = karttikah (Mvy 8269).
-958	38	10464	headword_line	སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་	tha	high	3	0	0	0	སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་ ston zla tha chun la thal
+958	38	10464	headword_line	སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་	tha chuṅ la thal	high	4	0	0	0	སྟོན་ཟླ་ཐ་ཆུང་ལ་ཐལ་བ་ ston zla tha chuṅ la thal
 958	39	10464	german_prose_with_translit			none	2	1	0	0	ba auch ston zla tha
 958	40	10464	german_prose_with_translit			none	3	2	0	0	chuns la thal ba ein Vergehen.
 958	42	10464	german_prose_with_translit			none	4	1	0	0	Lex. ston zla tha chun (v. ]. chuns) la thal ba
@@ -144116,7 +144116,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 989	88	10769	german_prose_with_translit			none	5	3	0	0	Lex. ljon pa ser po than Sin / ~ Zes pa yaṅ no
 989	89	10769	german_prose			none	0	2	0	0	= pitadruh saralah pätikästham catha (Ak
 989	90	10769	other			none	0	0	0	0	101.60).
-989	92	10770	headword_line	ཐང་ཆུང་	than	high	1	2	0	0	ཐང་ཆུང་ than chun npr. ein Ort.
+989	92	10770	headword_line	ཐང་ཆུང་	than chuṅ	high	2	2	0	0	ཐང་ཆུང་ than chuṅ npr. ein Ort.
 989	94	10770	german_prose_with_translit			none	7	1	0	0	¬~ ba / ba Si / cha khrod / de kha real so kha
 989	95	10770	german_prose_with_translit			none	3	2	0	0	la sogs pa Sin tu man no „viele [Nieder-
 989	96	10770	german_prose_with_translit			none	3	1	0	0	lassungen wie] Than-chun, Ba-śi, Cha-
@@ -149703,7 +149703,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1024	83	11245	headword_line	ཐྲེག་གེ་སོང་	theg	high	1	2	0	0	ཐྲེག་གེ་སོང་ theg ge son fortgehen; vgl. Ithegs.
 1024	85	11245	tibetan_latin_mixed			none	1	0	0	0	biad gad ༨ bas „lachend gingen sie fort“
 1024	86	11245	german_prose			none	0	1	0	0	(Mil 128,14).
-1024	88	11246	headword_line	ཐེག་ཆུང་སྐྱེས་བུ་	theg	high	3	0	0	0	ཐེག་ཆུང་སྐྱེས་བུ་ theg chun skyes bu Anhänger
+1024	88	11246	headword_line	ཐེག་ཆུང་སྐྱེས་བུ་	theg chuṅ skyes	high	4	0	0	0	ཐེག་ཆུང་སྐྱེས་བུ་ theg chuṅ skyes bu Anhänger
 1024	90	11246	german_prose			none	0	2	0	0	des Hinayäna.
 1024	92	11246	german_prose_with_translit			none	2	3	0	0	Lex. fan thos „Hörer“ (brDa); Aan ran
 1024	93	11246	german_prose_with_translit			none	1	3	0	0	„Srävaka und Pratyekabuddha“ (Dagy).
@@ -149760,7 +149760,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1024	158	11251	german_prose_with_translit			none	2	1	0	0	tung des Mahāyāna-Buddhismus,
 1024	160	11251	german_prose			none	0	3	0	0	Lex. ekayänam (Mvy 1255).
 1024	162	11252	headword_line	ཐེག་པ་ཆེན་པོ་	theg pa	high	3	1	0	0	ཐེག་པ་ཆེན་པོ་ theg pa chen po
-1024	164	11253	headword_line	ཐེག་པ་ཆུང་ངུ་	theg pa	high	3	3	0	0	ཐེག་པ་ཆུང་ངུ་ theg pa chun rin das Kleine Fahr-
+1024	164	11253	headword_line	ཐེག་པ་ཆུང་ངུ་	theg pa chuṅ rin	high	4	3	0	0	ཐེག་པ་ཆུང་ངུ་ theg pa chuṅ rin das Kleine Fahr-
 1024	166	11253	german_prose			none	0	4	0	0	zeug, Bez. für die Hinayäna-
 1024	167	11253	example_tibetan_latin			none	3	2	0	0	Richtung des Buddhismus; ༨ pa ein
 1024	168	11253	german_prose_with_translit			none	1	2	0	0	Anhänger des Hinayäna.
@@ -149774,7 +149774,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1024	181	11254	german_prose_with_translit			none	2	1	0	0	» „im rNam-par snan-mdzad Vairocana’i-
 1024	182	11254	german_prose			none	0	2	0	0	glih [wurde] Mahäyäna [gelehrt]“ (Nel
 1024	183	11254	other			none	0	0	0	0	1043).
-1024	185	11255	headword_line	ཐེག་པ་ཆེ་ཆུང་	theg pa	high	2	2	0	0	ཐེག་པ་ཆེ་ཆུང་ theg pa che chun Großes und
+1024	185	11255	headword_line	ཐེག་པ་ཆེ་ཆུང་	theg pa	high	3	2	0	0	ཐེག་པ་ཆེ་ཆུང་ theg pa che chuṅ Großes und
 1024	187	11255	german_prose			none	0	3	0	0	Kleines Fahrzeug, Mahäyäna
 1024	188	11255	german_prose			none	0	2	0	0	und Hinayäna.
 1024	190	11255	latin_other			none	6	0	0	0	~ las byun ba’i rgya gar gyi skad las bod kyi
@@ -150292,7 +150292,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1027	219	11302	german_prose_with_translit			none	2	3	0	0	gsum ni „was die drei weißen the’s des
 1027	220	11302	german_prose_with_translit			none	2	1	0	0	Himmels angeht“ (mDzodG 66,6).
 1027	222	11302	other			none	0	0	0	0	295
-1028	1	11303	headword_line	ཐེའུ་ཆུང་	the’u	high	1	0	0	0	ཐེའུ་ཆུང་ the’u chun
+1028	1	11303	headword_line	ཐེའུ་ཆུང་	the’u chuṅ	high	2	0	0	0	ཐེའུ་ཆུང་ the’u chuṅ
 1028	3	11303	german_prose_with_translit			none	1	2	0	0	4, Kralle; vgl. Iunthe’s?
 1028	5	11303	german_prose_with_translit			none	3	1	0	0	stod gos las su - phran skyes „aus dem
 1028	6	11303	german_prose			none	0	2	0	0	Obergewand wuchsen kleine Krallen (?)“
@@ -155372,7 +155372,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1061	163	11708	other			none	0	0	0	0	393,5).
 1061	165	11708	german_prose_with_translit			none	3	2	0	0	Lex. mthe bo = angustham (Mvy 3977);
 1061	166	11708	german_prose_with_translit			none	4	1	0	0	mthe bo, ~ = sor moi thu bo „der
-1061	168	11709	headword_line	མཐེབ་ཆུང་	mtbeb	medium	1	0	0	0	མཐེབ་ཆུང་ mtbeb chun
+1061	168	11709	headword_line	མཐེབ་ཆུང་	mtbeb chuṅ	high	2	0	0	0	མཐེབ་ཆུང་ mtbeb chuṅ
 1061	170	11709	latin_other			none	4	0	0	0	Hauptfinger“ (brDa); inthe bo, ~ = rkan lag
 1061	171	11709	german_prose_with_translit			none	2	2	0	0	gi mtheb chen (Dagy).
 1061	173	11709	german_prose_with_translit			none	1	2	0	0	SEAT mtheb auch ~ mo Daumen.
@@ -156179,7 +156179,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1066	90	11758	german_prose_with_translit			none	3	2	0	0	Lex. ltad mo dan gäun lugs sogs la mthon
 1066	91	11758	german_prose_with_translit			none	2	2	0	0	snan man ba lta bu „wie: Schauspiele und
 1066	93	11758	german_prose			none	0	2	0	0	Texte usw. viel gesehen haben“ (Dagy).
-1066	95	11759	headword_line	མཐོང་ཆུང་བ་	mthon	high	3	1	0	0	མཐོང་ཆུང་བ་ mthon chun ba geringes Anse-
+1066	95	11759	headword_line	མཐོང་ཆུང་བ་	mthon chuṅ ba geringes	high	4	1	0	0	མཐོང་ཆུང་བ་ mthon chuṅ ba geringes Anse-
 1066	97	11759	latin_other			none	1	0	0	0	hen, Geringschätzung.
 1066	99	11759	german_prose_with_translit			none	3	1	0	0	yul mi rnams kyi ~$ „durch das geringe
 1066	100	11759	german_prose_with_translit			none	2	3	0	0	Ansehen bei der Bevölkerung“ (’Dzam
@@ -176146,7 +176146,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1321	84	13031	german_prose_with_translit			none	2	4	0	0	237,5); den sari — daṅ 'dra bar son yod „heutzutage ist [sNe’u-rdzon] wie eine Geister-
 1321	86	13031	latin_other			none	1	0	0	0	"stadt geworden“ (""’Dzam 21,27)."
 1321	87	13031	german_prose_with_translit			none	1	2	0	0	Lex. gandharvanagaram (Mvy 2819).
-1321	89	13032	headword_line	དྲི་ཟའི་ན་ཆུང་	za’i na	high	2	2	0	0	དྲི་ཟའི་ན་ཆུང་ dri za’i na chun Beiname Sarasva-
+1321	89	13032	headword_line	དྲི་ཟའི་ན་ཆུང་	za’i na chuṅ	high	3	2	0	0	དྲི་ཟའི་ན་ཆུང་ dri za’i na chuṅ Beiname Sarasva-
 1321	91	13032	other			none	0	0	0	0	tis.
 1321	93	13032	german_prose_with_translit			none	4	3	0	0	Lex. lha mo dbyans can ma (Dagy, ähnl.
 1321	94	13032	latin_other			none	1	0	0	0	brDa).
