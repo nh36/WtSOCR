@@ -1925,7 +1925,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
 
         self.assertIn("dkar chuṅ rin mo", corrected)
-        self.assertIn("kha sran chuṅ hu ein Getreide.", corrected)
+        self.assertIn("kha sran chuṅ ṅu ein Getreide.", corrected)
         self.assertIn("dgun zla tha chuṅ", corrected)
         self.assertIn("An unreviewed prose chun and hu stay unchanged.", corrected)
         reviewed = [
@@ -1935,7 +1935,33 @@ class PostprocessRegressionTests(unittest.TestCase):
             and row["from_token"] == "chun"
         ]
         self.assertEqual(len(reviewed), 3)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+
+    def test_reviewed_ngu_seed_is_exact_and_does_not_change_sran(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (256, 61): "།ཁ་སཱན་ཆུང་ངུ་ kha sran chuṅ hu ein Getreide.",
+                (256, 62): "An unrelated hu stays unchanged.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("kha sran chuṅ ṅu ein Getreide.", corrected)
+        self.assertIn("An unrelated hu stays unchanged.", corrected)
+        self.assertNotIn("kha srān", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            and row["from_token"] == "hu"
+        ]
+        self.assertEqual(len(reviewed), 1)
+        self.assertEqual(reviewed[0]["to_token"], "ṅu")
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

@@ -55,6 +55,10 @@ TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
     "ཉངས": "ñaṅs",
     "ཆུང": "chuṅ",
     "སྒྲུང": "sgruṅ",
+    "ངུ": "ṅu",
+}
+TIBETAN_SCRIPT_NG_WITNESS_SOURCE_FORMS = {
+    "ṅu": "hu",
 }
 SCRIPT_NG_DAMAGED_CONTEXT_RE = re.compile(r"[{}?¡£]|\bSQ\b")
 TIBETAN_INITIAL_I_FORMS = {
@@ -390,7 +394,10 @@ REFERENCE_MARKER_TRANSLITERATION_CUE_RE = re.compile(
 
 
 def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, str] | None:
-    source = latin_n_source_for_ng_target(target)
+    source = TIBETAN_SCRIPT_NG_WITNESS_SOURCE_FORMS.get(
+        target,
+        latin_n_source_for_ng_target(target),
+    )
     if token == source:
         return {
             "proposed_target": target,
@@ -400,8 +407,8 @@ def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, 
             "base_proposed_target": target,
             "evidence": "tibetan_script_witness",
             "score_explanation": (
-                "Latin n conflicts with same-line Tibetan-script ང witness; "
-                "review exact rows rather than applying a broad n->ṅ rule."
+                "Latin token conflicts with a directly aligned Tibetan-script ང witness; "
+                "review exact rows rather than applying a broad character rule."
             ),
         }
     for prefix, marker in REFERENCE_MARKER_PREFIX_TARGETS.items():

@@ -1,0 +1,2 @@
+volume	page	line	current_tibetan_ocr	current_latin_ocr	proposed_alternatives	feature_to_inspect	reason_internal_evidence_insufficient
+wts_1_34	256	61	།ཁ་སཱན་ཆུང་ངུ་	kha sran chuṅ ṅu	kha srān chuṅ ṅu; kha sān chuṅ ṅu; retain kha sran chuṅ ṅu	Whether the Tibetan grain-name syllable has a subjoined r and whether the Latin vowel bears a macron	The checked-in parallel རྒྱ་སཱན་ rgya sran repeats the same Tibetan/Latin disagreement; no independent srān or sān attestation resolves it.

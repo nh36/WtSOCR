@@ -257,6 +257,12 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
         self.assertEqual(cast(dict[str, str], chun)["proposed_target"], "chuṅ")
         self.assertEqual(cast(dict[str, str], sgrun)["proposed_target"], "sgruṅ")
         self.assertIsNone(non_ng_sgrun)
+        ngu = diag.classify_tibetan_script_ng_token(
+            "hu",
+            "ངུ་ hu",
+        )
+        self.assertIsNotNone(ngu)
+        self.assertEqual(cast(dict[str, str], ngu)["proposed_target"], "ṅu")
 
     def test_tibetan_script_ng_witness_handles_prefixed_t_and_suppresses_unwitnessed(self) -> None:
         line = "གང་དང་གང་ gan dan gan Tgan Igan \\gan gan."
