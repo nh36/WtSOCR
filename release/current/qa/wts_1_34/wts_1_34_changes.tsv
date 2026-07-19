@@ -27182,3 +27182,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 679	166	8203	headword_line	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.
 680	118	8219	headword_line	Tchos	↑ chos	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཆོས་བརིགས་ chos brtsigs Tchos rtsig.
 543	138	6898	german_prose_with_translit	Tran	↓ raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	2. schlecht, vgl. Tran pa.
+155	92	1942	headword_line	\mkhar	↓ mkhar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	མཀར་བུ་ mkar bu \mkhar bu.
+246	203	3202	headword_line	\tsha	↓ tsha	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	།བ་ད་ kha da \tsha kha da.
+600	173	7396	example_tibetan_latin	\dpyad	↓ dpyad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams \dpyad mishams.
+981	19	10671	german_prose_with_translit	\dbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	\dbyar zla tha chun; ~ bźi die jeweils letzten

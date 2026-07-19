@@ -1545,6 +1545,49 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_reference_marker_backslash_residual_family_is_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (155, 92): "མཀར་བུ་ mkar bu \\mkhar bu.",
+                (246, 203): "།བ་ད་ kha da \\tsha kha da.",
+                (600, 173): (
+                    "Lex. kham gan gi tshod du bcad pa’i zas sogs "
+                    "བཅད་མཆམས་ bcad mtshams \\dpyad mishams."
+                ),
+                (981, 19): "\\dbyar zla tha chun; ~ bźi die jeweils letzten",
+                (488, 114): "རྒྱང་ rgyon pf. \\brgyans fut. \\brgyan imp.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        for expected in [
+            "mkar bu ↓ mkhar bu.",
+            "kha da ↓ tsha kha da.",
+            "bcad mtshams ↓ dpyad mishams.",
+            "↓ dbyar zla tha chun",
+        ]:
+            self.assertIn(expected, corrected)
+        self.assertIn("pf. \\brgyans fut. \\brgyan imp.", corrected)
+        marker_changes = [
+            (row["from_token"], row["to_token"])
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(
+            marker_changes,
+            [
+                ("\\mkhar", "↓ mkhar"),
+                ("\\tsha", "↓ tsha"),
+                ("\\dpyad", "↓ dpyad"),
+                ("\\dbyar", "↓ dbyar"),
+            ],
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {

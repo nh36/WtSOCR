@@ -20879,7 +20879,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 155	87	1941	german_prose_with_translit			none	1	2	0	0	Buch, einen Dharma-Iext, gelesen haben“
 155	88	1941	latin_other			none	5	0	0	0	(brDa); — pa = gsun rab bklag bya — zin pa
 155	89	1941	german_prose_with_translit			none	1	2	0	0	„zu rezitierende [bzw.] rezitierte Lehrdarlegung“ (Bon 22,16).
-155	92	1942	headword_line	མཀར་བུ་	mkar	medium	2	0	0	0	མཀར་བུ་ mkar bu \mkhar bu.
+155	92	1942	headword_line	མཀར་བུ་	mkar	medium	2	0	0	0	མཀར་བུ་ mkar bu ↓ mkhar bu.
 155	93	1943	headword_line	རྐ་	rka Bewässerungskanal	high	2	0	0	0	རྐ་ rka Bewässerungskanal.
 155	95	1943	german_prose_with_translit			none	4	6	0	0	Lex. chu’i — sie yur ba’i min „Bez. für Wasserkanal, Kanal“ (Dagy); — ’go = yur ba’i rtsa
 155	97	1943	german_prose_with_translit			none	3	2	0	0	ba „Anfang eines Wassergrabens“ (brDa,
@@ -34457,7 +34457,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 246	199	3201	german_prose			none	0	1	0	0	Lex. gcor „ausbreiten, zerstreuen = -
 246	200	3201	german_prose_with_translit			none	6	1	0	0	"ba’am ""khyar ba „kha ’thor ba oder ab-"
 246	201	3201	german_prose			none	0	1	0	0	schweifen“ (Dagy).
-246	203	3202	headword_line	།བ་ད་	kha	high	3	0	0	0	།བ་ད་ kha da \tsha kha da.
+246	203	3202	headword_line	།བ་ད་	kha	high	3	0	0	0	།བ་ད་ kha da ↓ tsha kha da.
 246	205	3203	headword_line	།ཁ་ད་ཆད་	kha	high	2	1	0	0	།ཁ་ད་ཆད་ kha da chad ausgeglichen, deckungs-
 246	207	3203	other			none	0	0	0	0	gleich.
 246	209	3203	latin_other			none	3	0	0	0	snah dan stoh pa - (metr.) „Erscheinung
@@ -86372,7 +86372,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 600	169	7396	latin_other			none	6	0	0	0	’phros = kham du bcad pa’i ’phro lta bu „wie:
 600	170	7396	german_prose			none	0	3	0	0	Reste dessen, was in Stücke geschnitten
 600	171	7396	german_prose			none	0	1	0	0	wurde“ (Dagy).
-600	173	7396	example_tibetan_latin			none	8	1	0	0	Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams \dpyad mishams.
+600	173	7396	example_tibetan_latin			none	8	1	0	0	Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams ↓ dpyad mishams.
 600	175	7396	german_prose			none	0	4	0	0	„Speise usw., die als Mundvoll bemessen
 600	176	7396	german_prose			none	0	2	0	0	ist“ (Dagy).
 600	178	7396	german_prose_with_translit			none	2	3	0	0	Sch bcad khra Urteil, Entscheidung; vgl.
@@ -142691,7 +142691,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 981	16	10671	german_prose			none	0	3	0	0	letzter, allerletzter; auch in den
 981	17	10671	german_prose_with_translit			none	2	1	0	0	Monatsbezeichnungen Tdgan zla tha chun,
 981	18	10671	german_prose_with_translit			none	3	1	0	0	Iston zla tha chun, \dpyid zla tha chun,
-981	19	10671	german_prose_with_translit			none	3	1	0	0	\dbyar zla tha chun; ~ bźi die jeweils letzten
+981	19	10671	german_prose_with_translit			none	3	1	0	0	↓ dbyar zla tha chun; ~ bźi die jeweils letzten
 981	20	10671	german_prose			none	0	4	0	0	Monate der vier Jahreszeiten, vgl. SCHUH
 981	21	10671	other			none	0	0	0	0	2012: 1401.
 981	23	10671	latin_other			none	4	0	0	0	kho mo’i bu sdug tha chuns de ga re (metr.)
