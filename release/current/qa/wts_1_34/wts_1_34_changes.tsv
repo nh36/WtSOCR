@@ -27187,3 +27187,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 600	173	7396	example_tibetan_latin	\dpyad	↓ dpyad	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams \dpyad mishams.
 981	19	10671	german_prose_with_translit	\dbyar	↓ dbyar	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	\dbyar zla tha chun; ~ bźi die jeweils letzten
 510	77	6590	headword_line	Tbrgya	↑ brgya	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	བརྒྱ་སྦྱིན་ braya sbyin Tbrgya byin 1.
+758	184	9007	headword_line	Tran	↓ raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཉངས་ Hans Tran po.
+758	184	9007	headword_line	Hans	ñaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཉངས་ Hans Tran po.
+981	19	10671	german_prose_with_translit	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	↓ dbyar zla tha chun; ~ bźi die jeweils letzten

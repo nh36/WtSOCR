@@ -1,6 +1,6 @@
 # Unresolved Bucket Report
 
-- run_dir: `/private/tmp/wtsocr-tbrgya-stage/wts_1_34`
+- run_dir: `work/final_ng_seed_clean_20260719T210000Z/wts_1_34`
 - unresolved confusable pairs: `189`
 - promote candidates (conservative): `8`
 - hold candidates: `181`

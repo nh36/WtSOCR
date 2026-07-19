@@ -1519,7 +1519,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             {
                 (543, 138): "2. schlecht, vgl. Tran pa.",
                 (543, 139): "An adjacent Tran string stays unchanged.",
-                (758, 184): "ཉངས་ Hans Tran po remains deferred.",
+                (758, 184): "ཉངས་ Hans Tran po.",
             }
         )
 
@@ -1530,7 +1530,7 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertIn("vgl. ↓ raṅ pa.", corrected)
         self.assertIn("An adjacent Tran string stays unchanged.", corrected)
-        self.assertIn("ཉངས་ Hans Tran po remains deferred.", corrected)
+        self.assertIn("ཉངས་ ñaṅs ↓ raṅ po.", corrected)
         marker_changes = [
             row
             for row in changes
@@ -1541,9 +1541,9 @@ class PostprocessRegressionTests(unittest.TestCase):
                 (row["from_token"], row["to_token"])
                 for row in marker_changes
             ],
-            [("Tran", "↓ raṅ")],
+            [("Tran", "↓ raṅ"), ("Tran", "↓ raṅ")],
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
 
     def test_reviewed_reference_marker_backslash_residual_family_is_exact(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -1568,7 +1568,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "mkar bu ↓ mkhar bu.",
             "kha da ↓ tsha kha da.",
             "bcad mtshams ↓ dpyad mishams.",
-            "↓ dbyar zla tha chun",
+            "↓ dbyar zla tha chuṅ",
         ]:
             self.assertIn(expected, corrected)
         self.assertIn("pf. \\brgyans fut. \\brgyan imp.", corrected)
@@ -1586,7 +1586,7 @@ class PostprocessRegressionTests(unittest.TestCase):
                 ("\\dbyar", "↓ dbyar"),
             ],
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
     def test_reviewed_reference_marker_tbrgya_row_is_exact(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -1822,6 +1822,63 @@ class PostprocessRegressionTests(unittest.TestCase):
                 if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
             ]
         )
+
+    def test_reviewed_tibetan_script_final_ng_seed_rows_are_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (758, 184): "ཉངས་ Hans Tran po.",
+                (981, 19): "↓ dbyar zla tha chun; ~ bźi die jeweils letzten",
+                (981, 18): "Iston zla tha chun, \\dpyid zla tha chun,",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("ཉངས་ ñaṅs ↓ raṅ po.", corrected)
+        self.assertIn(
+            "↓ dbyar zla tha chuṅ; ~ bźi die jeweils letzten",
+            corrected,
+        )
+        self.assertIn("Iston zla tha chun, \\dpyid zla tha chun,", corrected)
+        reviewed = {
+            (row["page"], row["line"], row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+            if row["tier"] == "reviewed_tibetan_exact"
+        }
+        self.assertIn(
+            (
+                "758",
+                "184",
+                "Hans",
+                "ñaṅs",
+                "reviewed_tibetan_exact_script_ng_witness",
+            ),
+            reviewed,
+        )
+        self.assertIn(
+            (
+                "758",
+                "184",
+                "Tran",
+                "↓ raṅ",
+                "reviewed_tibetan_exact_reference_marker",
+            ),
+            reviewed,
+        )
+        self.assertIn(
+            (
+                "981",
+                "19",
+                "chun",
+                "chuṅ",
+                "reviewed_tibetan_exact_final_ng",
+            ),
+            reviewed,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
 
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(

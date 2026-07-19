@@ -110565,7 +110565,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 758	180	9006	german_prose_with_translit			none	4	1	0	0	~$ / rgyun mi ’chad kyi lha khan bzens „Nah
 758	181	9006	german_prose_with_translit			none	2	1	0	0	Sri-u-tso erbaut den rGyun-mi-'chad-
 758	182	9006	german_prose			none	0	2	0	0	Tempel“ (Nel 1332).
-758	184	9007	headword_line	ཉངས་	po	medium	1	2	0	0	ཉངས་ Hans Tran po.
+758	184	9007	headword_line	ཉངས་	ñaṅs raṅ po	high	3	0	0	0	ཉངས་ ñaṅs ↓ raṅ po.
 758	186	9007	german_prose_with_translit			none	1	4	0	0	"""an pf. und fur. l'mfan imp. Ion"
 758	187	9007	german_prose_with_translit			none	2	2	0	0	zuhören, gehorchen, aushorchen; cz dgos
 758	188	9007	latin_other			none	1	0	0	0	» pa gehorsam.
@@ -142691,7 +142691,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 981	16	10671	german_prose			none	0	3	0	0	letzter, allerletzter; auch in den
 981	17	10671	german_prose_with_translit			none	2	1	0	0	Monatsbezeichnungen Tdgan zla tha chun,
 981	18	10671	german_prose_with_translit			none	3	1	0	0	Iston zla tha chun, \dpyid zla tha chun,
-981	19	10671	german_prose_with_translit			none	3	1	0	0	↓ dbyar zla tha chun; ~ bźi die jeweils letzten
+981	19	10671	german_prose_with_translit			none	4	1	0	0	↓ dbyar zla tha chuṅ; ~ bźi die jeweils letzten
 981	20	10671	german_prose			none	0	4	0	0	Monate der vier Jahreszeiten, vgl. SCHUH
 981	21	10671	other			none	0	0	0	0	2012: 1401.
 981	23	10671	latin_other			none	4	0	0	0	kho mo’i bu sdug tha chuns de ga re (metr.)
