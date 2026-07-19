@@ -6212,8 +6212,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 56	110	488	latin_other			none	1	0	0	0	ku ba.
 56	112	488	german_prose			none	0	3	0	0	Lex. katutumbi „eine wilde Gurkenart (pw)“
 56	113	488	latin_other			none	1	0	0	0	(Ishe 2b2).
-56	115	489	headword_line	ཀུ་བ་ཆུང་བ་	ba	medium	2	0	0	0	ཀུ་བ་ཆུང་བ་ ku ba chun ba
-56	117	490	headword_line	ཀུ་བ་ཆུང་བ་	ba	medium	2	3	0	0	ཀུ་བ་ཆུང་བ་ ku ba chun ba Bilva-Baum und Bilva-
+56	115	489	headword_line	ཀུ་བ་ཆུང་བ་	ba chuṅ ba	high	3	0	0	0	ཀུ་བ་ཆུང་བ་ ku ba chuṅ ba
+56	117	490	headword_line	ཀུ་བ་ཆུང་བ་	ba chuṅ ba	high	3	3	0	0	ཀུ་བ་ཆུང་བ་ ku ba chuṅ ba Bilva-Baum und Bilva-
 56	119	490	german_prose			none	0	1	0	0	Frucht.
 56	120	490	german_prose_with_translit			none	3	2	0	0	Lex. bil ba’i Sin sdon dan ’bras bu (brDa).
 56	122	491	headword_line	ཀུ་བ་ན་	ba	medium	2	4	0	0	ཀུ་བ་ན་ ku ba ༡7 N. eines Vihära in Jalandhara. —
@@ -6835,7 +6835,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 60	97	572	latin_other			none	2	0	0	0	1. tugendhaft, Tugendhafter.
 60	98	572	latin_other			none	9	0	0	0	tshon pa de tsho’i nan na ku su lu dge ba can
 60	99	572	latin_other			none	4	0	0	0	bya ba rnal ’byor pa cig bZugs „unter diesen
-60	101	573	headword_line	ཀུ་ས་ལི་ཆུང་བ་	sa	medium	2	0	0	0	ཀུ་ས་ལི་ཆུང་བ་ ku sa li chun ba
+60	101	573	headword_line	ཀུ་ས་ལི་ཆུང་བ་	sa	medium	3	0	0	0	ཀུ་ས་ལི་ཆུང་བ་ ku sa li chuṅ ba
 60	103	573	german_prose_with_translit			none	1	3	0	0	Kaufleuten weilte ein Kusulu, Tugendhafter
 60	104	573	german_prose			none	0	2	0	0	genannter Yogin“ (AtiNth 109,19).
 60	106	573	german_prose_with_translit			none	5	1	0	0	Lex. dge ba can (brDa); ri sul dge byed min
@@ -12696,7 +12696,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 99	82	1205	german_prose_with_translit			none	1	3	0	0	eingeteilt; sie wächst in Tälern, schmeckt
 99	83	1205	german_prose			none	0	2	0	0	bitter, wirkt kühlend und stillt durch ihre
 99	84	1205	german_prose			none	0	3	0	0	Wirkkraft den Blutfluß“ (TTC).
-99	86	1206	headword_line	ཀོན་པ་གབ་ཆུང་	pa	medium	1	2	0	0	ཀོན་པ་གབ་ཆུང་ kon pa gab chun eine Heilpflanze,
+99	86	1206	headword_line	ཀོན་པ་གབ་ཆུང་	pa	medium	2	2	0	0	ཀོན་པ་གབ་ཆུང་ kon pa gab chuṅ eine Heilpflanze,
 99	87	1206	german_prose_with_translit			none	2	1	0	0	synon. khrog chun pa; kleine Art
 99	88	1206	german_prose_with_translit			none	1	1	0	0	der !kon pa gab skye.
 99	90	1207	headword_line	ཀོན་པ་གབ་ཆེན་	pa	medium	1	3	0	0	ཀོན་པ་གབ་ཆེན་ kon pa gab chen eine Heilpflanze,
@@ -14693,7 +14693,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 114	2	1371	german_prose_with_translit			none	1	2	0	0	Lex. nägadatta (Bhad 58).
 114	4	1372	headword_line	ཀླུ་སྦྲལ་འོད་ཁྱུང་	sbrul	medium	3	0	0	0	ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 114	6	1372	other			none	0	0	0	0	chun.
-114	8	1373	headword_line	ཀླུ་སྒྲུལ་འོད་ཆུང་	sbrul	medium	2	1	0	0	ཀླུ་སྒྲུལ་འོད་ཆུང་ klu sbrul ’od chun auch klu sbrul
+114	8	1373	headword_line	ཀླུ་སྒྲུལ་འོད་ཆུང་	sbrul	medium	3	1	0	0	ཀླུ་སྒྲུལ་འོད་ཆུང་ klu sbrul ’od chuṅ auch klu sbrul
 114	10	1373	latin_other			none	3	0	0	0	’od khyun, klu phrug ’od khyun
 114	12	1373	german_prose_with_translit			none	1	4	0	0	npr. der himmlische jüngere Bruder des Ge-
 114	13	1373	other			none	0	0	0	0	sar.
@@ -14726,7 +14726,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 114	50	1375	german_prose_with_translit			none	2	2	0	0	Klu-mes Tshul-khrims śes-rab usw., die zehn
 114	51	1375	german_prose_with_translit			none	2	3	0	0	[wichtigsten ] Männer von dBus und gTsan“
 114	52	1375	latin_other			none	1	0	0	0	(ThK 2: 526,4).
-114	54	1376	headword_line	ཀླུ་མེས་འབྲོམ་ཆུང་པ་	pa	medium	1	1	0	0	ཀླུ་མེས་འབྲོམ་ཆུང་པ་ klu mes 'brom chun pa npr. ein
+114	54	1376	headword_line	ཀླུ་མེས་འབྲོམ་ཆུང་པ་	chuṅ pa	high	2	1	0	0	ཀླུ་མེས་འབྲོམ་ཆུང་པ་ klu mes 'brom chuṅ pa npr. ein
 114	56	1376	german_prose			none	0	2	0	0	Mönch aus Yer-pa.
 114	58	1376	german_prose_with_translit			none	5	1	0	0	yer pa’i dge bses — la brten nas „unterstützt
 114	59	1376	german_prose_with_translit			none	1	3	0	0	von dGe-bśes Klu-mes ’Brom-chun-pa aus

@@ -27190,3 +27190,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 758	184	9007	headword_line	Tran	↓ raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_reference_marker	yes	ཉངས་ Hans Tran po.
 758	184	9007	headword_line	Hans	ñaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཉངས་ Hans Tran po.
 981	19	10671	german_prose_with_translit	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	↓ dbyar zla tha chun; ~ bźi die jeweils letzten
+56	115	489	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀུ་བ་ཆུང་བ་ ku ba chun ba
+56	117	490	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀུ་བ་ཆུང་བ་ ku ba chun ba Bilva-Baum und Bilva-
+60	101	573	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀུ་ས་ལི་ཆུང་བ་ ku sa li chun ba
+99	86	1206	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀོན་པ་གབ་ཆུང་ kon pa gab chun eine Heilpflanze,
+114	8	1373	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀླུ་སྒྲུལ་འོད་ཆུང་ klu sbrul ’od chun auch klu sbrul
+114	54	1376	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ཀླུ་མེས་འབྲོམ་ཆུང་པ་ klu mes 'brom chun pa npr. ein
