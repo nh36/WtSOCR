@@ -2065,6 +2065,33 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 5)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
+    def test_reviewed_damaged_context_final_ng_tokens_are_independent(self) -> None:
+        reviewed_lines = {
+            (491, 208): "SQ ཆུང་ 'sge’n chun }'sge’n.",
+            (659, 3): "ཆུང་ཆུང་ chun chun klein, sehr klein.",
+            (659, 22): "ཆུང་སྟག་ chun /¡7£ zweitjüngster.",
+            (823, 1): "སྙིང་ཕོད་ཆུང་བ་ 4?7//7 phod chun ba",
+            (981, 58): "ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་ 77% chun )7?7// Ilcam",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("'sge’n chuṅ }'sge’n", corrected)
+        self.assertIn("chuṅ chuṅ klein", corrected)
+        self.assertIn("chuṅ /¡7£", corrected)
+        self.assertIn("4?7//7 phod chuṅ ba", corrected)
+        self.assertIn("77% chuṅ )7?7// Ilcam", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

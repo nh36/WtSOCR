@@ -69796,7 +69796,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 491	204	6321	headword_line	སྒེའུ་	sge’u	high	1	1	0	0	སྒེའུ་ ?sge’u Zwiebel.
 491	205	6321	german_prose_with_translit			none	1	1	0	0	Lex. btson (TIC).
 491	207	6321	other			none	0	0	0	0	gums ” 15)? 41,2
-491	208	6321	tibetan_latin_mixed			none	2	0	0	0	SQ ཆུང་ 'sge’n chun }'sge’n.
+491	208	6321	tibetan_latin_mixed			none	3	0	0	0	SQ ཆུང་ 'sge’n chuṅ }'sge’n.
 491	210	6321	other			none	0	0	0	0	467
 492	1	6321	other			none	0	0	0	0	EN
 492	2	6321	german_prose			none	0	1	0	0	N
@@ -95234,7 +95234,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 658	25	7990	german_prose_with_translit			none	1	8	0	0	Cüppers, Franz-Karl Ehrhard, Sebastian Eicher, Adelheid Mette, Frank Müller-
 658	26	7990	german_prose_with_translit			none	1	10	0	0	Witte, Jampa L. Panglung, Dieter Schuh, Roland Steiner und Helga Uebach).
 659	1	7990	other			none	0	0	0	0	SNET chun chun
-659	3	7990	tibetan_only	ཆུང་ཆུང་		none	0	0	0	0	ཆུང་ཆུང་ chun chun klein, sehr klein.
+659	3	7990	headword_line	ཆུང་ཆུང་	chuṅ chuṅ	high	2	0	0	0	ཆུང་ཆུང་ chuṅ chuṅ klein, sehr klein.
 659	5	7990	german_prose_with_translit			none	1	1	0	0	chu phran - ca co che (metr.) „ein kleines
 659	6	7990	german_prose_with_translit			none	1	3	0	0	Flüßchen macht großes Getöse“ (ThK 1:
 659	7	7990	latin_other			none	1	0	0	0	148,1); srin bu ~ man ba ’on „es kommen
@@ -95248,7 +95248,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 659	18	7991	latin_other			none	2	0	0	0	pas / mo ran mna’ mar bsu „dieser Junge
 659	19	7991	german_prose_with_translit			none	1	2	0	0	soll mDzes-se zur Braut nehmen, da eine
 659	20	7991	german_prose			none	0	2	0	0	Ehe vereinbart wurde“ (Mil 31,21).
-659	22	7991	tibetan_latin_mixed	ཆུང་སྟག་		none	1	0	0	0	ཆུང་སྟག་ chun /¡7£ zweitjüngster.
+659	22	7991	headword_line	ཆུང་སྟག་	chuṅ	high	2	0	0	0	ཆུང་སྟག་ chuṅ /¡7£ zweitjüngster.
 659	23	7991	latin_other			none	2	0	0	0	bzi’i chun stag (r. ltag) jo sras chos skyabs
 659	24	7991	german_prose_with_translit			none	2	3	0	0	kyis „der zweitjüngste der vier [Brüder],
 659	25	7991	german_prose			none	0	3	0	0	Jo-sras Chos-skyabs“ (Debm 28a2).
@@ -120415,9 +120415,9 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 822	219	9490	german_prose			none	0	2	0	0	Elemente besänftigt“ (gZi-Sn 34,17).
 822	221	9490	german_prose_with_translit			none	3	2	0	0	Lex. ~ thebs & yid ches pa (brDa, Dagy).
 822	223	9490	other			none	0	0	0	0	557
-823	1	9490	tibetan_latin_mixed	སྙིང་ཕོད་ཆུང་བ་		none	2	0	0	0	སྙིང་ཕོད་ཆུང་བ་ 4?7//7 phod chun ba
+823	1	9490	tibetan_latin_mixed	སྙིང་ཕོད་ཆུང་བ་		none	3	0	0	0	སྙིང་ཕོད་ཆུང་བ་ 4?7//7 phod chuṅ ba
 823	3	9490	tibetan_latin_mixed	སྙིང་ཚོམ་པ་		none	2	0	0	0	སྙིང་ཚོམ་པ་ $?7/༡7 tsbom pa
-823	5	9490	example_tibetan_latin	སྙིང་ཕོད་ཆུང་བ་		none	5	4	0	0	སྙིང་ཕོད་ཆུང་བ་ $?7/77 phod chun ba Feigling; vgl. སྙིང་བརྩེ་ säin brtse Liebe, Mitgefühl; - ba’; blo
+823	5	9490	example_tibetan_latin	སྙིང་ཕོད་ཆུང་བ་		none	6	4	0	0	སྙིང་ཕོད་ཆུང་བ་ $?7/77 phod chuṅ ba Feigling; vgl. སྙིང་བརྩེ་ säin brtse Liebe, Mitgefühl; - ba’; blo
 823	7	9490	latin_other			none	1	0	0	0	tsnin chun.
 823	9	9490	latin_other			none	2	0	0	0	~$ ... dgra ru lans (metr.) „weil sie Feiglinge
 823	10	9490	german_prose			none	0	3	0	0	sind, erheben sie sich als Feinde“ (971 2:
@@ -122112,7 +122112,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 833	56	9567	german_prose_with_translit			none	2	2	0	0	rgyal po = te „der König erinnert sich
 833	57	9567	latin_other			none	1	0	0	0	wieder“ (Bu-śz 35,10).
 833	59	9567	other			none	0	0	0	0	578
-833	61	9567	tibetan_only	བསྙོད་ཆུང་		none	0	0	0	0	བསྙོད་ཆུང་ £3/707 chun
+833	61	9567	tibetan_latin_mixed	བསྙོད་ཆུང་		none	1	0	0	0	བསྙོད་ཆུང་ £3/707 chuṅ
 833	63	9567	german_prose			none	0	1	0	0	Sn ~ ~ m ~
 833	64	9567	tibetan_only	བྱངས		none	0	4	0	0	བྱངས £377©$ auch 9?70$, ses, pf. zu Isie an-
 833	65	9567	other			none	0	0	0	0	lehnen.
@@ -142725,7 +142725,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 981	52	10671	german_prose_with_translit			none	1	4	0	0	Jahreszeit] und jüngerer Bruder“ (Dagy).
 981	54	10671	other			none	0	0	0	0	204
 981	56	10672	headword_line	ཐ་སྙད་	tha	high	1	0	0	0	ཐ་སྙད་ tha sad
-981	58	10672	tibetan_only	ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་		none	0	1	0	0	ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་ 77% chun )7?7// Ilcam
+981	58	10672	example_tibetan_latin	ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་		none	1	1	0	0	ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་ 77% chuṅ )7?7// Ilcam
 981	60	10672	latin_other			none	1	0	0	0	than mo sman en
 981	61	10672	german_prose_with_translit			none	1	3	0	0	dmu-Herrscher, der bei den dmu-mdos-
 981	62	10672	german_prose_with_translit			none	1	2	0	0	Zeremonien angerufen wird (Neb 282).
