@@ -14331,7 +14331,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 111	158	1337	german_prose			none	0	2	0	0	eine noch bei keinem dagewesene schlimme
 111	159	1337	german_prose_with_translit			none	4	1	0	0	Krankheit befiel“ (Dol4 7,21); — ni pho mo’i
 111	161	1337	other			none	0	0	0	0	145
-111	163	1338	headword_line	ཀླུ་ཁང་	khan	high	1	0	0	0	ཀླུ་ཁང་ klu khan
+111	163	1338	headword_line	ཀླུ་ཁང་	khaṅ	high	1	0	0	0	ཀླུ་ཁང་ klu khaṅ
 111	165	1338	latin_other			none	1	0	0	0	gzugs sbrul gs ... bris (metr.) „man zeichnet
 111	166	1338	german_prose_with_translit			none	1	5	0	0	die Nägas als zwei Schlangen von männli-
 111	167	1338	german_prose			none	0	3	0	0	cher und weiblicher Gestalt“ (Vdk 2: 362,5);
@@ -17001,7 +17001,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 128	147	1606	german_prose			none	0	5	0	0	Mandala wird als Essenz bezeichnet“ (Hev
 128	148	1606	other			none	0	0	0	0	2.3.273).
 128	150	1606	tibetan_latin_mixed	དཀྱིལ་དཀྲུང་		none	2	0	0	0	དཀྱིལ་དཀྲུང་ 497 dkrun \skyil krun.
-128	152	1607	headword_line	དཀྱིལ་ཁང་གྲ་ཚང་	dkyil khan	high	3	3	0	0	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khan gra tshan N. eines der
+128	152	1607	headword_line	དཀྱིལ་ཁང་གྲ་ཚང་	dkyil khaṅ	high	3	3	0	0	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khaṅ gra tshan N. eines der
 128	154	1607	german_prose			none	0	1	0	0	drei Mönchsquartiere (grwa
 128	156	1607	german_prose_with_translit			none	3	3	0	0	tshan) des Klosters bKra-Sis lhun-po (WrYLie
 128	157	1607	german_prose			none	0	1	0	0	1962: 137, Anm. 200).
@@ -32485,13 +32485,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 231	193	3004	german_prose			none	0	1	0	0	(Padm 28335).
 231	195	3005	headword_line	བསྐོར་	bskor	medium	2	3	0	0	བསྐོར་ ’bskor Kreis, Schar, Zyklus; vgl. † 560༡;
 231	197	3005	german_prose_with_translit			none	3	3	0	0	yon bdag — re’i bdag byas te „sie beherrschten einzelne Scharen von Gabenspendern“
-232	1	3006	headword_line	བསྐོར་ཁང་	bskor khan	high	2	0	0	0	བསྐོར་ཁང་ bskor khan
+232	1	3006	headword_line	བསྐོར་ཁང་	bskor khaṅ	high	2	0	0	0	བསྐོར་ཁང་ bskor khaṅ
 232	3	3006	german_prose_with_translit			none	4	1	0	0	(Nel 24a3); by ba lo / sogs pa’ min gis rtags
 232	5	3006	german_prose_with_translit			none	4	1	0	0	pa’i bcu 9?7/$ — du 7757 ba „die Berechnung
 232	6	3006	german_prose			none	0	4	0	0	nach dem Zwölfjahreszyklus, der durch das
 232	7	3006	german_prose			none	0	4	0	0	Jahr der Ratte usw. gekennzeichnet ist“
 232	8	3006	german_prose			none	0	1	0	0	(Debm 5b9).
-232	10	3007	headword_line	བསྐོར་ཁང་	bskor khan	high	2	3	0	0	བསྐོར་ཁང་ bskor khan Gebäude für rituelle Um-
+232	10	3007	headword_line	བསྐོར་ཁང་	bskor khaṅ	high	2	3	0	0	བསྐོར་ཁང་ bskor khaṅ Gebäude für rituelle Um-
 232	12	3007	latin_other			none	1	0	0	0	kreisungen.
 232	14	3007	german_prose_with_translit			none	5	2	0	0	— brag la brko ba la ... brkos te „das aus dem
 232	15	3007	german_prose_with_translit			none	2	1	0	0	Felsen herauszuschlagende bskor khan
@@ -36036,12 +36036,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 257	91	3383	headword_line	།བག་བསུན་	khag bsun	high	2	1	0	0	།བག་བསུན་ khag bsun Mühsal.
 257	93	3383	german_prose_with_translit			none	4	6	0	0	’bam tshon tshan che ba’i ~ „die Mühsal eines Zwangskaufs von großem Ausmaß“
 257	95	3383	other			none	0	0	0	0	(MTH3/5/3 5).
-257	97	3384	headword_line	།ཁང་ ར་བ་	khan	high	2	2	0	0	།ཁང་ ར་བ་ khan dkar ba Bewohner von
+257	97	3384	headword_line	།ཁང་ ར་བ་	khaṅ	high	2	2	0	0	།ཁང་ ར་བ་ khaṅ dkar ba Bewohner von
 257	98	3385	headword_line	དཀ	Khan-dkar	high	1	0	0	0	དཀ Khan-dkar.
 257	100	3385	german_prose_with_translit			none	3	5	0	0	~$ khams byas śiṅ „die Männer von Khandkar machten Schwierigkeiten“ (Doli
 257	102	3385	other			none	0	0	0	0	12,16).
 257	104	3385	latin_other			none	2	0	0	0	FOIER khan khun.
-257	106	3386	headword_line	ཁང་ཀྱིམ་	khan khyim	high	2	0	0	0	ཁང་ཀྱིམ་ khan khyim
+257	106	3386	headword_line	ཁང་ཀྱིམ་	khaṅ khyim	high	2	0	0	0	ཁང་ཀྱིམ་ khaṅ khyim
 257	108	3386	german_prose			none	0	1	0	0	1. Bodenloch.
 257	110	3386	german_prose_with_translit			none	1	3	0	0	=» man la (metr.) „die Bodenlöcher sind
 257	111	3386	german_prose			none	0	1	0	0	zahlreich“ (Vdk 2: 348,6).
@@ -36049,7 +36049,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 257	115	3386	latin_other			none	5	0	0	0	khan gsar rgyag bgyis pa’i khan khuns sten
 257	116	3386	german_prose			none	0	4	0	0	sod „die oberen und unteren Zimmer des
 257	117	3386	german_prose			none	0	2	0	0	neu errichteten Gebäudes“ (Wadd135h 13).
-257	119	3387	headword_line	ཁང་ཀྱིམ་	khan khyim	high	2	1	0	0	ཁང་ཀྱིམ་ khan khyim Haus.
+257	119	3387	headword_line	ཁང་ཀྱིམ་	khaṅ khyim	high	2	1	0	0	ཁང་ཀྱིམ་ khaṅ khyim Haus.
 257	121	3387	german_prose_with_translit			none	1	4	0	0	lha’i ~ mams kyan „auch die Häuser der
 257	122	3387	german_prose_with_translit			none	4	2	0	0	Götter“ (Suv 56,17); khyim bdag ... ~ dan sa
 257	123	3387	german_prose_with_translit			none	6	1	0	0	de yan yon du phul nas „der Hausherr
@@ -36059,39 +36059,39 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 257	127	3387	german_prose			none	0	3	0	0	Lex. gharam (Mvy 5518); pariganab (Mvy
 257	128	3387	latin_other			none	3	0	0	0	7511); gzim khan nam nan la’an „Wohnung
 257	129	3387	german_prose_with_translit			none	1	4	0	0	oder Haus“ (brDa, ähnl. Dagy).
-257	131	3388	headword_line	ཁང་ཆེན་	khan	high	1	5	0	0	ཁང་ཆེན་ khan chen großes Haus, Palast, Tem-
+257	131	3388	headword_line	ཁང་ཆེན་	khaṅ	high	1	5	0	0	ཁང་ཆེན་ khaṅ chen großes Haus, Palast, Tem-
 257	132	3388	other			none	0	0	0	0	pel.
 257	133	3388	german_prose			none	0	4	0	0	Lex. mahallakah „großes Haus“ (Mvy 8375,
 257	134	3388	german_prose_with_translit			none	5	1	0	0	Abt. dge ’dun lhag ma ben gsum dan ma nes
 257	135	3388	german_prose_with_translit			none	3	2	0	0	pa gfüs); gisug lag khan „Vihära“ (brDa,
 257	136	3388	german_prose			none	0	1	0	0	Dagy).
-257	138	3389	headword_line	ཁང་མཆོག་	khan mchog	high	2	1	0	0	ཁང་མཆོག་ khan mchog Königspalast.
+257	138	3389	headword_line	ཁང་མཆོག་	khaṅ mchog	high	2	1	0	0	ཁང་མཆོག་ khaṅ mchog Königspalast.
 257	140	3389	german_prose_with_translit			none	3	5	0	0	"gser gyi ~ ""bar ba yid ’on ba (metr.) „goldene Paläste, die strahlend und schön sind“"
 257	142	3389	german_prose			none	0	1	0	0	(VinUp 59,14).
 257	144	3389	german_prose_with_translit			none	3	2	0	0	Lex. rgyal po’i pho bran „Königspalast“
 257	145	3389	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
-257	147	3390	headword_line	ཁང་གཉེར་	khan	high	1	2	0	0	ཁང་གཉེར་ khan güer Hausverwalter.
+257	147	3390	headword_line	ཁང་གཉེར་	khaṅ	high	1	2	0	0	ཁང་གཉེར་ khaṅ güer Hausverwalter.
 257	149	3390	german_prose_with_translit			none	2	3	0	0	khan gla ... ~ nas bsdu len „die Miete ist
 257	150	3390	german_prose			none	0	1	0	0	vom Hausverwalter einzuziehen“
 257	151	3390	german_prose			none	0	1	0	0	(Wadd135h 19).
-257	153	3391	headword_line	ཁང་སྟེང་	khan	high	1	2	0	0	ཁང་སྟེང་ khan steh Obergeschoß, Dachterasse.
+257	153	3391	headword_line	ཁང་སྟེང་	khaṅ	high	1	2	0	0	ཁང་སྟེང་ khaṅ steh Obergeschoß, Dachterasse.
 257	155	3391	german_prose_with_translit			none	2	3	0	0	~ gi yol khan „Lagerraum im Obergeschoß“
 257	156	3391	german_prose			none	0	1	0	0	(Prav 152,16).
 257	158	3391	german_prose			none	0	4	0	0	Lex. talakoparii „auf dem Dach“ (Mvy
 257	159	3391	other			none	0	0	0	0	9351).
-257	161	3392	headword_line	ཁང་པ་	khan pa	high	2	0	0	0	ཁང་པ་ khan pa
-257	163	3393	headword_line	ཁང་ཐོག་	khan thog	high	2	1	0	0	ཁང་ཐོག་ khan thog Dachgeschoß, oberes
+257	161	3392	headword_line	ཁང་པ་	khaṅ pa	high	2	0	0	0	ཁང་པ་ khaṅ pa
+257	163	3393	headword_line	ཁང་ཐོག་	khaṅ thog	high	2	1	0	0	ཁང་ཐོག་ khaṅ thog Dachgeschoß, oberes
 257	164	3393	german_prose			none	0	1	0	0	Stockwerk.
 257	166	3393	german_prose_with_translit			none	5	1	0	0	Lex. khan pa’i rtse thog gam sten thog
 257	167	3393	german_prose			none	0	3	0	0	„Dachgeschoß oder oberes Stockwerk“
 257	168	3393	german_prose_with_translit			none	1	2	0	0	(Dagy, ähnl. brDa).
-257	170	3394	headword_line	ཁང་དས་སླེབས་སྐབས་	khan	high	1	1	0	0	ཁང་དས་སླེབས་སྐབས་ khan dus slebs skabs Fäl-
+257	170	3394	headword_line	ཁང་དས་སླེབས་སྐབས་	khaṅ	high	1	1	0	0	ཁང་དས་སླེབས་སྐབས་ khaṅ dus slebs skabs Fäl-
 257	172	3394	latin_other			none	1	0	0	0	ligkeitstermin.
 257	174	3394	latin_other			none	4	0	0	0	lo lo ~ khan gla skar li tsam chad med. ...
 257	175	3394	german_prose			none	0	5	0	0	bsdu len „die Miete ist jährlich zum Fällig-
 257	176	3394	german_prose_with_translit			none	2	3	0	0	keitstermin ohne den geringsten Abzug
 257	177	3394	german_prose			none	0	1	0	0	einzuziehen“ (Wadd135h 18).
-257	179	3395	headword_line	།ཁང་པ་	khan pa	high	2	4	0	0	།ཁང་པ་ khan pa Haus, Gebäude, Palast, Innen-
+257	179	3395	headword_line	།ཁང་པ་	khaṅ pa	high	2	4	0	0	།ཁང་པ་ khaṅ pa Haus, Gebäude, Palast, Innen-
 257	180	3395	german_prose_with_translit			none	1	1	0	0	raum, Halle, Wohnung.
 257	182	3395	german_prose_with_translit			none	3	3	0	0	khyim mam ~ ’am khan phran „ein Haus,
 257	183	3395	german_prose_with_translit			none	1	5	0	0	eine Wohnung oder eine Hütte“ (Käsy
@@ -36119,7 +36119,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 257	207	3395	german_prose_with_translit			none	2	2	0	0	mal du „im Übersetzungshaus, auf der
 257	208	3395	german_prose_with_translit			none	1	1	0	0	Schlafstätte“ (sBa 64,9); lcags kyi ~ sgo med
 257	209	3395	german_prose_with_translit			none	1	5	0	0	pa „ein eisernes Haus ohne Tür“ (Glr
-258	1	3396	headword_line	ཁང་པའི་བྱེའུ་	khan pa’i bye’u	high	3	0	0	0	ཁང་པའི་བྱེའུ་ khan pa’i bye’u
+258	1	3396	headword_line	ཁང་པའི་བྱེའུ་	khaṅ pa’i bye’u	high	3	0	0	0	ཁང་པའི་བྱེའུ་ khaṅ pa’i bye’u
 258	3	3396	latin_other			none	2	0	0	0	37,15); khan gZis bzun ... rjes rnams kyi dpes
 258	4	3396	german_prose			none	0	13	0	0	„mit den Beispielen über die Folgen des Besitzes von Haus und Hof“ (Mil 114,10);
 258	6	3396	german_prose_with_translit			none	3	1	0	0	mchod sbyin gyi ~ brtsigs „er errichtete ein
@@ -36153,7 +36153,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 258	36	3396	german_prose_with_translit			none	1	2	0	0	Vaijayanta“ (Mvy 5498); gzim khan nam
 258	37	3396	german_prose_with_translit			none	2	2	0	0	nah „Wohnung oder Haus“ (brDa); gras
 258	38	3396	german_prose_with_translit			none	1	2	0	0	khani „Wohnhaus“ (Dagy).
-258	40	3397	headword_line	ཁང་པའི་ཏྱེའུ་	khan pa’i bye’u	high	3	3	0	0	ཁང་པའི་ཏྱེའུ་ khan pa’i bye’u ein Vogel, Sper-
+258	40	3397	headword_line	ཁང་པའི་ཏྱེའུ་	khaṅ pa’i bye’u	high	3	3	0	0	ཁང་པའི་ཏྱེའུ་ khaṅ pa’i bye’u ein Vogel, Sper-
 258	41	3397	latin_other			none	1	0	0	0	ling.
 258	43	3397	german_prose_with_translit			none	5	2	0	0	Lex. ka lan ta = bya Zig ste ~¢? zer / mchil
 258	45	3397	latin_other			none	2	0	0	0	pa’an zer (brDa).
@@ -36169,24 +36169,24 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 258	60	3399	other			none	0	0	0	0	530,6).
 258	62	3399	german_prose_with_translit			none	2	2	0	0	Lex. khan pa chun chun „sehr kleines Haus“
 258	63	3399	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
-258	65	3400	headword_line	ཁང་བུའི་ད་བ་	khan bu’i du ba	high	4	2	0	0	ཁང་བུའི་ད་བ་ khan bu’i du ba ein Heilmittel.
+258	65	3400	headword_line	ཁང་བུའི་ད་བ་	khaṅ bu’i du ba	high	4	2	0	0	ཁང་བུའི་ད་བ་ khaṅ bu’i du ba ein Heilmittel.
 258	67	3400	latin_other			none	2	0	0	0	"=... dug rnams ""phro bar ’gyur (metr.) „khan"
 258	68	3400	german_prose_with_translit			none	4	1	0	0	bu’i du ba (skt. ägäradhüma) vertreibt Gif-
 258	69	3400	other			none	0	0	0	0	te“ (¥ 68a).
-258	71	3401	headword_line	ཁང་མིག་	khan	high	1	2	0	0	ཁང་མིག་ khan mig Raum, Zimmer.
+258	71	3401	headword_line	ཁང་མིག་	khaṅ	high	1	2	0	0	ཁང་མིག་ khaṅ mig Raum, Zimmer.
 258	73	3401	german_prose_with_translit			none	3	2	0	0	~ gi naṅ 97 phyogs kun „alle Innenseiten des
 258	74	3401	german_prose			none	0	1	0	0	Raumes“ (NBT 74,10).
 258	76	3401	german_prose_with_translit			none	3	5	0	0	Lex. khan Sag mig tu bcad pa „in Räume ein-
 258	77	3401	german_prose_with_translit			none	4	2	0	0	geteiltes Haus“ (brDa); khan pa’i nani gi Sag
 258	78	3401	german_prose			none	0	4	0	0	re „die einzelnen Räume im Hausinneren“
 258	80	3401	german_prose			none	0	1	0	0	(Dagy).
-258	82	3402	headword_line	ཁང་མོ་ཆེ་	khan	high	1	3	0	0	ཁང་མོ་ཆེ་ khan mo che großes Haus, Ver-
+258	82	3402	headword_line	ཁང་མོ་ཆེ་	khaṅ	high	1	3	0	0	ཁང་མོ་ཆེ་ khaṅ mo che großes Haus, Ver-
 258	84	3402	latin_other			none	1	0	0	0	sammlungshaus.
 258	86	3402	german_prose_with_translit			none	2	3	0	0	Lex. khan chen nam rwa ba che „großes
 258	87	3402	german_prose_with_translit			none	2	3	0	0	Haus oder große Einzäunung“ (brDa); mi
 258	88	3402	german_prose_with_translit			none	6	2	0	0	man du ra lta bu’i khan pa „ein Haus wie
 258	89	3402	german_prose			none	0	5	0	0	ein Hof für viele Leute“ (Dagy).
-258	91	3403	headword_line	།ཁང་རྨང་	khan	high	1	2	0	0	།ཁང་རྨང་ khan rman Grundmauer, Funda-
+258	91	3403	headword_line	།ཁང་རྨང་	khaṅ	high	1	2	0	0	།ཁང་རྨང་ khaṅ rman Grundmauer, Funda-
 258	93	3403	other			none	0	0	0	0	ment.
 258	95	3403	german_prose_with_translit			none	3	4	0	0	de rnams khan pa’i rman sba ’o (metr.) „jene verstecke man am Fundament des Hau-
 258	97	3403	german_prose			none	0	1	0	0	ses“ (Vdk 2: 351,4).
@@ -36199,8 +36199,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 258	109	3404	german_prose_with_translit			none	2	5	0	0	rtsa ba „Mauer für das Fundament des
 258	110	3404	german_prose			none	0	4	0	0	Hauses und seine Grundmauer“ (Dagy).
 258	112	3404	tibetan_only	།		none	0	0	0	0	།
-258	114	3405	headword_line	ཁང་བརྩེགས་	khan brtsegs	high	2	0	0	0	ཁང་བརྩེགས་ khan brtsegs
-258	116	3406	headword_line	ཁང་བརྩེགས་	khan brtsegs	high	2	2	0	0	ཁང་བརྩེགས་ khan brtsegs mehrstöckiges Ge-
+258	114	3405	headword_line	ཁང་བརྩེགས་	khaṅ brtsegs	high	2	0	0	0	ཁང་བརྩེགས་ khaṅ brtsegs
+258	116	3406	headword_line	ཁང་བརྩེགས་	khaṅ brtsegs	high	2	2	0	0	ཁང་བརྩེགས་ khaṅ brtsegs mehrstöckiges Ge-
 258	118	3406	german_prose_with_translit			none	1	3	0	0	bäude, Palast; Dachpavillon, Pa-
 258	119	3406	other			none	0	0	0	0	lastempore.
 258	121	3406	latin_other			none	6	0	0	0	khan pa’am ... khan pa brtsegs pa’am / bsil
@@ -36218,13 +36218,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 258	134	3406	german_prose			none	0	4	0	0	von Göttinnen auf schönen Palastem-
 258	135	3406	german_prose			none	0	1	0	0	poren“ (Bca 10.14c).
 258	137	3406	german_prose			none	0	7	0	0	Lex. kütagaram „Haus mit Spitztonnendach; Dachpavillon“ (Mvy 5502).
-258	140	3407	headword_line	།ཁང་ཆན་	khan tshan Unterabteilung	high	3	1	0	0	།ཁང་ཆན་ khan tshan Unterabteilung von grwa
+258	140	3407	headword_line	།ཁང་ཆན་	khaṅ tshan Unterabteilung	high	3	1	0	0	།ཁང་ཆན་ khaṅ tshan Unterabteilung von grwa
 258	142	3407	german_prose_with_translit			none	3	2	0	0	tshan, khan tshan ist unterteilt in mi
 258	143	3407	latin_other			none	1	0	0	0	tshan.
 258	145	3407	german_prose_with_translit			none	2	1	0	0	nor € wam chos sde ... ~ bco brgyad sogs „das
 258	146	3407	german_prose_with_translit			none	1	3	0	0	Kloster Nor-e-wam mit achtzehn khan
 258	147	3407	latin_other			none	1	0	0	0	tshan usw.“ (gNas 21,22).
-258	149	3408	headword_line	།ཁང་བཟངས་	khan bzaṅs	high	4	1	0	0	།ཁང་བཟངས་ khan bzaṅs auch khaṅ bzaṅ
+258	149	3408	headword_line	།ཁང་བཟངས་	khaṅ bzaṅs	high	4	1	0	0	།ཁང་བཟངས་ khaṅ bzaṅs auch khaṅ bzaṅ
 258	151	3408	german_prose			none	0	3	0	0	Prachtbau, Palast, Residenz.
 258	153	3408	german_prose_with_translit			none	7	2	0	0	chos daṅ mthun pa’i - kyi ka rten „die Säu-
 258	154	3408	german_prose			none	0	2	0	0	lensockel eines normgerechten Palastes“
@@ -36259,7 +36259,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 258	189	3409	other			none	0	0	0	0	(1PL 1: 595,3).
 258	191	3409	german_prose_with_translit			none	1	2	0	0	Lex. ~ (v. 1. khan bzan) = prasadah „Palast“
 258	192	3409	german_prose_with_translit			none	5	3	0	0	(Mvy 5512); rgyal po’: pho braṅ „Königspalast“ (brDa, Dagy).
-258	195	3410	headword_line	ཁང་རོ་	khan	high	1	1	0	0	ཁང་རོ་ khan ro Ruine.
+258	195	3410	headword_line	ཁང་རོ་	khaṅ	high	1	1	0	0	ཁང་རོ་ khaṅ ro Ruine.
 258	197	3410	latin_other			none	3	0	0	0	~ 2/9 ’dug pa ... mkhar las byed „dort gab es
 258	198	3410	german_prose			none	0	5	0	0	eine Ruine; er führte die Bautätigkeit
 258	199	3410	german_prose			none	0	1	0	0	durch“ (Mil 29,7).
@@ -41881,7 +41881,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 297	57	4046	german_prose_with_translit			none	5	1	0	0	zähmt“ (Akhr2 79,16); rig pa rtse gcig tu
 297	58	4046	german_prose_with_translit			none	3	2	0	0	khrims kyis sgrims „das Wissen konzentriert
 297	60	4046	german_prose_with_translit			none	1	1	0	0	beherrschen“ (Akhr2 80,7).
-297	62	4047	headword_line	ཁྲིམས་།ཁང་	khrims khan Gerichtshof	high	3	0	0	0	ཁྲིམས་།ཁང་ khrims khan Gerichtshof.
+297	62	4047	headword_line	ཁྲིམས་།ཁང་	khrims khaṅ Gerichtshof	high	3	0	0	0	ཁྲིམས་།ཁང་ khrims khaṅ Gerichtshof.
 297	63	4047	german_prose_with_translit			none	5	2	0	0	Lex. khrims kyis Zib ’jug byed pa’i las khuns
 297	65	4047	german_prose			none	0	5	0	0	„Büro, in dem rechtlich genau geprüft
 297	67	4047	german_prose			none	0	1	0	0	wird“ (Dagy).
@@ -49619,7 +49619,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 353	19	4751	german_prose_with_translit			none	1	3	0	0	wollzelt oder Filzzelt“ (brDa, Dagy).
 353	21	4751	german_prose			none	0	1	0	0	"Ira"" gur kum \gur gum."
 353	23	4751	tibetan_only	༄		none	0	0	0	0	༄
-353	25	4752	headword_line	གུར་།ཁང་	khan	high	1	2	0	0	གུར་།ཁང་ gur khan ein Zelt.
+353	25	4752	headword_line	གུར་།ཁང་	khaṅ	high	1	2	0	0	གུར་།ཁང་ gur khaṅ ein Zelt.
 353	27	4752	other			none	0	0	0	0	€
 353	29	4752	german_prose_with_translit			none	3	2	0	0	» bde gnas bon gyi dbyins „das ‚Zelthaus‘,
 353	30	4752	german_prose			none	0	7	0	0	der glückliche Ort, der Bereich des Bon“
@@ -55177,10 +55177,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 390	210	5135	german_prose_with_translit			none	1	5	0	0	grwar slob güüer pa „jmd. der im Bereich des
 390	211	5135	german_prose			none	0	5	0	0	Klosters lebt oder in der Klosterschule stu-
 390	212	5135	latin_other			none	4	0	0	0	diert“ (brDa); - pa = chos rwar gnas pa’i
-391	1	5136	headword_line	གླུ་།ཁང་	khan	high	1	0	0	0	གླུ་།ཁང་ grwa khan
+391	1	5136	headword_line	གླུ་།ཁང་	khaṅ	high	1	0	0	0	གླུ་།ཁང་ grwa khaṅ
 391	3	5136	german_prose_with_translit			none	2	5	0	0	slob güüer ba lta bu „wie: der im Bereich des
 391	4	5136	german_prose			none	0	3	0	0	Klosters weilende Student“ (Dagy).
-391	6	5137	headword_line	གྲུ་།ཁང་	khan	high	2	2	0	0	གྲུ་།ཁང་ grwa khan auch gra khan Mönchsun-
+391	6	5137	headword_line	གྲུ་།ཁང་	khaṅ	high	2	2	0	0	གྲུ་།ཁང་ grwa khaṅ auch gra khan Mönchsun-
 391	7	5137	other			none	0	0	0	0	terkunft.
 391	9	5137	german_prose_with_translit			none	3	4	0	0	~ gi dkar khun na „am Fenster der Mönchs-
 391	10	5137	german_prose			none	0	1	0	0	unterkunft“ (Tär 127,22).
@@ -55938,7 +55938,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 395	189	5192	tibetan_only	གླས་		none	0	0	0	0	གླས་ ’glas umziehen.
 395	191	5192	german_prose_with_translit			none	4	1	0	0	Lex. ~ pa = spos pa’am (brDa); ~ pa = sdod
 395	192	5192	latin_other			none	2	0	0	0	sa spos pa (TIC).
-395	194	5193	headword_line	གླས་།ཁང་	khan	high	1	1	0	0	གླས་།ཁང་ glas khan Tgla sgan.
+395	194	5193	headword_line	གླས་།ཁང་	khaṅ	high	1	1	0	0	གླས་།ཁང་ glas khaṅ Tgla sgan.
 395	196	5194	headword_line	གླས་གང་	gaṅ	high	1	0	0	0	གླས་གང་ glas gaṅ [9/% sgan.
 396	1	5194	tibetan_only	༨		none	0	0	0	0	༨ “ °
 396	2	5194	german_prose			none	0	1	0	0	AN glin
@@ -59427,7 +59427,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 419	151	5510	german_prose_with_translit			none	2	2	0	0	~ la rgol (metr.) „die Tausendschaften
 419	152	5510	german_prose			none	0	5	0	0	kämpfen gegen die äußeren Feinde“ (Nel
 419	154	5510	other			none	0	0	0	0	335
-419	156	5511	headword_line	དྭག་།ཁང་	khan	high	1	0	0	0	དྭག་།ཁང་ dera khan
+419	156	5511	headword_line	དྭག་།ཁང་	khaṅ	high	1	0	0	0	དྭག་།ཁང་ dera khaṅ
 419	158	5511	german_prose_with_translit			none	1	1	0	0	5b1); ~$ ’jigs te myur du bros te „aus Furcht
 419	159	5511	german_prose			none	0	3	0	0	vor dem Feind floh ich schnell“ (Mil
 419	160	5511	german_prose_with_translit			none	4	1	0	0	48,27); ma thub pa’i ~ du mi ’dug „er ist
@@ -59470,7 +59470,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 419	198	5511	german_prose_with_translit			none	3	2	0	0	dan nan gi - bo „äußerer und innerer
 419	199	5511	german_prose_with_translit			none	1	2	0	0	Feind“ (Dagy); ~ zon = - yon ba’i dogs zon
 419	200	5511	german_prose			none	0	3	0	0	„vor Feinden auf der Hut sein“ (TTC).
-419	202	5512	headword_line	དྲག་།ཁང་	dgra khan	high	2	1	0	0	དྲག་།ཁང་ dgra khan Wachtturm.
+419	202	5512	headword_line	དྲག་།ཁང་	dgra khaṅ	high	2	1	0	0	དྲག་།ཁང་ dgra khaṅ Wachtturm.
 419	204	5512	german_prose_with_translit			none	1	3	0	0	Lex. - nam ba gam = attälah (Mvy 5523).
 420	1	5513	headword_line	དྲག་བགེགས་	dgra	medium	1	0	0	0	དྲག་བགེགས་ dgra bgegs
 420	3	5514	headword_line	དྲག་བགེགས་	dgra	medium	1	3	0	0	དྲག་བགེགས་ dgra bgegs ein Dämon, zerstörer-
@@ -66970,7 +66970,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 470	29	6091	german_prose_with_translit			none	1	4	0	0	innerungsfeier an den Sieg“ (Dagy).
 470	31	6091	german_prose			none	0	2	0	0	2. Gewinn, Profit.
 470	32	6091	german_prose_with_translit			none	1	2	0	0	Lex. khe bzan (Dagy).
-470	34	6092	headword_line	རྒྱལ་།ཁང་	rgyal khan	high	2	2	0	0	རྒྱལ་།ཁང་ rgyal khan Königspalast, Residenz.
+470	34	6092	headword_line	རྒྱལ་།ཁང་	rgyal khaṅ	high	2	2	0	0	རྒྱལ་།ཁང་ rgyal khaṅ Königspalast, Residenz.
 470	35	6092	german_prose_with_translit			none	5	1	0	0	Lex. rgyal po’i pho bran nam bran sa (brDa,
 470	36	6092	german_prose			none	0	1	0	0	Dagy).
 470	38	6093	headword_line	རྒྱལ་།ཁབ་	rgyal khab rgyal po’i khab	high	5	0	0	0	རྒྱལ་།ཁབ་ rgyal khab ↓ rgyal po’i khab.
@@ -71658,7 +71658,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 504	28	6492	german_prose_with_translit			none	4	2	0	0	rtsod pas ~ pa bkod pa „wenn man in Bezug
 504	29	6492	german_prose			none	0	6	0	0	auf einen Gegenstand in einem Disput ein
 504	30	6492	german_prose			none	0	2	0	0	Argument anführt“ (NB 3.47).
-504	32	6493	headword_line	སྒྲུབ་།ཁང་	sgrub khan Meditationshaus	high	3	0	0	0	སྒྲུབ་།ཁང་ sgrub khan Meditationshaus.
+504	32	6493	headword_line	སྒྲུབ་།ཁང་	sgrub khaṅ Meditationshaus	high	3	0	0	0	སྒྲུབ་།ཁང་ sgrub khaṅ Meditationshaus.
 504	34	6493	german_prose_with_translit			none	3	4	0	0	ran gi » gi nub byan nam „oder im Nordwesten des eigenen Meditationshauses“
 504	36	6493	latin_other			none	3	0	0	0	(Rtdz-K 29,22); mi 2 ~ du bsdod rtsis ’dug
 504	37	6493	german_prose			none	0	2	0	0	kyan „zwei Personen beabsichtigen sich im
@@ -72578,7 +72578,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 510	16	6577	other			none	0	0	0	0	(KLETTER/KRIECHBAUM 2001: 246).
 510	18	6578	headword_line	བྱྱར་བྱིན་སྐྱེས་	byin skyes	medium	2	3	0	0	བྱྱར་བྱིན་སྐྱེས་ broya byin skyes Bez. für Krähe.
 510	19	6578	german_prose_with_translit			none	2	2	0	0	Lex. bya rog (brDa, Dagy).
-510	21	6579	headword_line	བྒན་བིན་།ཁང་ང།	byin khan pa	high	3	2	0	0	བྒན་བིན་།ཁང་ང། breya byin khan pa Bez. für
+510	21	6579	headword_line	བྒན་བིན་།ཁང་ང།	byin khaṅ pa	high	3	2	0	0	བྒན་བིན་།ཁང་ང། breya byin khaṅ pa Bez. für
 510	22	6579	tibetan_only	གྱ བྱ		none	0	1	0	0	གྱ བྱ r Meru.
 510	23	6579	german_prose_with_translit			none	1	3	0	0	Lex. ri rab zer (brDa, ähnl. Dagy).
 510	25	6580	headword_line	བྱྱ་བྱིན་དང་	brgya byin	high	3	0	0	0	བྱྱ་བྱིན་དང་ brgya byin dun nach rechts ge-
@@ -90529,7 +90529,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	43	7643	german_prose_with_translit			none	5	2	0	0	bde ba yun tun ~ byin ba dan „so daß das
 628	45	7643	german_prose_with_translit			none	1	2	0	0	Glück auf Dauer angehäuft werden konnte
 628	46	7643	german_prose			none	0	1	0	0	(?)“ (135 W41).
-628	48	7644	headword_line	ཆང་།ཁང་	khan Wirtshaus	high	2	0	0	0	ཆང་།ཁང་ chan khan Wirtshaus.
+628	48	7644	headword_line	ཆང་།ཁང་	khaṅ Wirtshaus	high	2	0	0	0	ཆང་།ཁང་ chan khaṅ Wirtshaus.
 628	50	7644	german_prose_with_translit			none	4	4	0	0	Lex. chan tshon sa’i khan pa „Haus, in dem
 628	51	7644	german_prose			none	0	1	0	0	chan verkauft wird“ (Dagy).
 628	53	7644	tibetan_only	ཆང་ཚུང་		none	0	0	0	0	ཆང་ཚུང་ chan chun
@@ -91240,7 +91240,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 632	132	7698	german_prose_with_translit			none	3	3	0	0	sam chab kha Flußufer; vgl. Ichu bo’ kha.
 632	134	7698	german_prose_with_translit			none	5	5	0	0	rje blon yons -r bsu ba la phyin pas „der König und seine Minister gingen zum Fluß-
 632	136	7698	german_prose_with_translit			none	1	1	0	0	ufer, um ihn zu empfangen“ (sBa 56,13).
-632	138	7699	headword_line	ཆབ་།ཁང་	khan	high	1	2	0	0	ཆབ་།ཁང་ chab khan Badehaus, Toilette.
+632	138	7699	headword_line	ཆབ་།ཁང་	khaṅ	high	1	2	0	0	ཆབ་།ཁང་ chab khaṅ Badehaus, Toilette.
 632	140	7699	german_prose_with_translit			none	5	1	0	0	Lex. snam phyis ni ~ nam phyi sa khan
 632	141	7699	german_prose			none	0	1	0	0	(KlonD 727,6).
 632	143	7700	headword_line	ཆཁྲ་།ཁང་	khun	high	1	2	0	0	ཆཁྲ་།ཁང་ chab khun Abfluß, Toilette.
@@ -92953,7 +92953,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 643	99	7818	german_prose_with_translit			none	7	1	0	0	(Dagy); ~ tsha ba = pho mtshan rtse kha tsha
 643	100	7818	german_prose_with_translit			none	2	4	0	0	ba lta bu „wie: die Spitze des Penis brennt“
 643	102	7818	latin_other			none	1	0	0	0	(brDa).
-643	103	7819	headword_line	ཆུ་།ཁང་	khan	high	3	3	0	0	ཆུ་།ཁང་ chu khan auch chu yi khan pa Bez. für
+643	103	7819	headword_line	ཆུ་།ཁང་	khaṅ	high	3	3	0	0	ཆུ་།ཁང་ chu khaṅ auch chu yi khan pa Bez. für
 643	104	7819	german_prose			none	0	1	0	0	” Badehaus.
 643	106	7819	german_prose_with_translit			none	4	1	0	0	chu yi khan pa ni ... u Sir chu ’bab bya
 643	108	7819	german_prose_with_translit			none	2	2	0	0	(metr.) „was das Badehaus angeht, so lasse
@@ -94316,7 +94316,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 651	207	7927	german_prose			none	0	2	0	0	Feuer, Feuergott.
 651	208	7927	german_prose_with_translit			none	2	2	0	0	Lex. krpitayoni (Ak 15.48); me dan me lha
 651	209	7927	latin_other			none	2	0	0	0	la’an (brDa).
-651	211	7928	headword_line	ཆུ་ཡེ་ཁང་པ་	khan pa	high	3	1	0	0	ཆུ་ཡེ་ཁང་པ་ chu yi khan pa Tchn khan.
+651	211	7928	headword_line	ཆུ་ཡེ་ཁང་པ་	khaṅ pa	high	3	1	0	0	ཆུ་ཡེ་ཁང་པ་ chu yi khaṅ pa Tchn khan.
 651	213	7928	other			none	0	0	0	0	245
 652	1	7928	tibetan_latin_mixed	ཆུ་ཡི་འཁོར་		none	1	0	0	0	ཆུ་ཡི་འཁོར་ chu ༡/7 ’khor
 652	2	7929	headword_line	ཆུ་ཡཡི་འཁོར་	khor	high	1	1	0	0	ཆུ་ཡཡི་འཁོར་ chn yi ’khor Wasserwirbel; kleiner
@@ -98915,7 +98915,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 681	145	8239	latin_other			none	5	0	0	0	> du sku gSegs pas ~ sku gśegs su grags „weil er
 681	146	8239	german_prose			none	0	5	0	0	in Chos-lun verstarb, ist er als Chos-lun
 681	147	8239	german_prose			none	0	1	0	0	sku-gsegs bekannt“ (Debm 2612).
-681	149	8240	headword_line	ཆོས་སེམས་ཁང་བུ་	chos sems khan	high	3	2	0	0	ཆོས་སེམས་ཁང་བུ་ chos sems khan bu Bez. für
+681	149	8240	headword_line	ཆོས་སེམས་ཁང་བུ་	chos sems khaṅ	high	3	2	0	0	ཆོས་སེམས་ཁང་བུ་ chos sems khaṅ bu Bez. für
 681	151	8240	german_prose			none	0	1	0	0	Bergeinsiedelei.
 681	153	8240	german_prose_with_translit			none	2	2	0	0	Lex. ri khrod kyi min (Dagy).
 681	155	8241	headword_line	ཆོས་སོ་སོ་ཡང་དག་པར་རིག་པ་	chos so so yaṅ	high	4	0	0	0	ཆོས་སོ་སོ་ཡང་དག་པར་རིག་པ་ chos so so yaṅ dag
@@ -120399,7 +120399,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 822	195	9488	example_tibetan_latin			none	3	1	0	0	= gser gyis bris pa geig „ein sin po ༡/7 ge drug
 822	196	9488	german_prose_with_translit			none	1	3	0	0	ma in Gold geschrieben“ (Nel 735).
 822	198	9488	other			none	0	0	0	0	NT wi. . . :÷
-822	200	9489	headword_line	སྙང་པོའ་།ཁང་པ་	sh po’i khan pa	high	4	2	0	0	སྙང་པོའ་།ཁང་པ་ sh po’i khan pa Bez. für
+822	200	9489	headword_line	སྙང་པོའ་།ཁང་པ་	sh po’i khaṅ pa	high	4	2	0	0	སྙང་པོའ་།ཁང་པ་ sh po’i khaṅ pa Bez. für
 822	202	9489	german_prose			none	0	1	0	0	Einsiedelei.
 822	204	9489	german_prose_with_translit			none	2	2	0	0	Lex. ri khrod la’an (Dagy).
 822	206	9489	tibetan_only			none	0	0	0	0	en ༡ ༢ ¢
@@ -125856,7 +125856,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 873	18	9622	other			none	0	0	0	0	(MTH3/3/16 1).
 873	20	9622	german_prose_with_translit			none	2	3	0	0	Lex. rgya nag go sa Zig „ein chinesischer
 873	21	9622	latin_other			none	2	0	0	0	Rang“ (brDa).
-873	23	9623	headword_line	ཏར་།ཁང་	khan	high	1	1	0	0	ཏར་།ཁང་ tar khan 'Telegrafenamt.
+873	23	9623	headword_line	ཏར་།ཁང་	khaṅ	high	1	1	0	0	ཏར་།ཁང་ tar khaṅ 'Telegrafenamt.
 873	24	9623	german_prose_with_translit			none	4	1	0	0	Lex. lcags skud brda’i khan pa (brDa).
 873	26	9623	example_tibetan_latin			none	1	1	0	0	(ཁ།་ 'tal auch ~ mar direkt, ungehindert, ge-
 873	27	9623	german_prose			none	0	2	0	0	radewegs, unmittelbar danach; vgl. Y?rol,
@@ -133615,7 +133615,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 920	207	10143	latin_other			none	4	0	0	0	2: 395,1); bla mas ~ man po la kha btags
 920	208	10143	german_prose_with_translit			none	2	2	0	0	phul nas „der geistliche Lehrer hat vielen
 920	209	10143	german_prose_with_translit			none	1	1	0	0	Verehrungsgegenständen Zeremonialschals
-921	1	10144	headword_line	རྟེན་ཁང་	rten khan	high	2	0	0	0	རྟེན་ཁང་ rten khan
+921	1	10144	headword_line	རྟེན་ཁང་	rten khaṅ	high	2	0	0	0	རྟེན་ཁང་ rten khaṅ
 921	3	10144	latin_other			none	2	0	0	0	dargereicht“ (TsonNth 6,1853); - byin can
 921	4	10144	german_prose_with_translit			none	1	1	0	0	man du yod „es gibt viele geweihte Statuen“
 921	5	10144	latin_other			none	5	0	0	0	(gNas 41,13); ~ yod pa’! lha khan du bskyal
@@ -134050,7 +134050,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 923	120	10178	other			none	0	0	0	0	3. verstehen.
 923	122	10178	german_prose_with_translit			none	3	3	0	0	chos =» par dka’ Zin „der Dharma ist
 923	123	10178	german_prose			none	0	1	0	0	schwierig zu verstehen“ (sBa 62,10).
-923	125	10179	headword_line	རྟོག་ཁང་	rtog khan	high	4	4	0	0	རྟོག་ཁང་ rtog khan auch rdog khan ein Ort, an
+923	125	10179	headword_line	རྟོག་ཁང་	rtog khaṅ	high	4	4	0	0	རྟོག་ཁང་ rtog khaṅ auch rdog khan ein Ort, an
 923	127	10179	german_prose_with_translit			none	1	1	0	0	em gewöhnlich Nichtbuddhisten
 923	128	10179	german_prose			none	0	2	0	0	debattieren; vgl. BHSD 186.
 923	130	10179	german_prose_with_translit			none	3	2	0	0	Lex. rtog (v. !. rdog) khan = kutühalasälä
@@ -137764,10 +137764,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 948	104	10368	headword_line	སྟེང་སྐྱེས་	skyes	medium	1	0	0	0	སྟེང་སྐྱེས་ sten skyes.
 948	106	10368	german_prose			none	0	3	0	0	1. Bez. für Baunı.
 948	107	10368	german_prose_with_translit			none	1	3	0	0	Lex. Jon sin (brDa, Dagy).
-948	109	10369	headword_line	སྟེང་ཁང་	khan	high	1	0	0	0	སྟེང་ཁང་ sten khan
+948	109	10369	headword_line	སྟེང་ཁང་	khaṅ	high	1	0	0	0	སྟེང་ཁང་ sten khaṅ
 948	111	10369	german_prose			none	0	2	0	0	2. ein Distrikt.
 948	112	10369	german_prose_with_translit			none	2	2	0	0	Lex. bod kyi yul zig (Dagy).
-948	114	10370	headword_line	སྟེང་ཁང་	khan	high	3	1	0	0	སྟེང་ཁང་ sten khan auch sten gi khan oberes
+948	114	10370	headword_line	སྟེང་ཁང་	khaṅ	high	3	1	0	0	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes
 948	116	10370	german_prose			none	0	1	0	0	Stockwerk.
 948	118	10370	german_prose_with_translit			none	4	1	0	0	~ gi khan bzans kyi gZir gtogs pa „das obere
 948	119	10370	german_prose			none	0	5	0	0	Stockwerk des Palastes [wörtl.: zur Fläche
@@ -163093,7 +163093,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1149	95	12232	german_prose			none	0	2	0	0	Wind hinausgetrieben“ (Gesar 240,35).
 1149	97	12232	german_prose_with_translit			none	3	2	0	0	Lex. visam (Mvy 7145); ’tsho khams la gnod
 1149	98	12232	german_prose_with_translit			none	2	4	0	0	pa’irdzas „eine Substanz, die der Gesundheit
-1150	1	12233	headword_line	དུག་ཁང་	khan	high	1	0	0	0	དུག་ཁང་ dug khan
+1150	1	12233	headword_line	དུག་ཁང་	khaṅ	high	1	0	0	0	དུག་ཁང་ dug khaṅ
 1150	3	12233	german_prose_with_translit			none	2	2	0	0	schadet“ (Dagy); — 7// ba = - Zi bar byed pa
 1150	4	12233	german_prose_with_translit			none	1	3	0	0	„etwas, das Gift neutralisiert“ (brDa, Dagy).
 1150	5	12233	latin_other			none	1	0	0	0	2. Vergiftung, — ginad, — nad dass.; ~ med
@@ -163831,7 +163831,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1159	48	12282	latin_other			none	3	0	0	0	skyid gson 'bar ros mishon — drug ... sems can
 1159	49	12282	german_prose_with_translit			none	1	5	0	0	„die Tiere der sechs Familien, angeführt von
 1159	50	12282	other			none	0	0	0	0	sKyid-gson ’bar-ro“ (MTH3/5/30 all).
-1159	51	12283	headword_line	དུད་ཁང་	khan	high	2	2	0	0	དུད་ཁང་ dud khan Badehaus; vgl. [%//95 khan,
+1159	51	12283	headword_line	དུད་ཁང་	khaṅ	high	2	2	0	0	དུད་ཁང་ dud khaṅ Badehaus; vgl. [%//95 khan,
 1159	52	12283	latin_other			none	1	0	0	0	!dul khan.
 1159	54	12283	german_prose_with_translit			none	7	5	0	0	Lex. khrus khan ste dug khan Zes snan „Badehaus, heißt auch dug khan“ (brDa); dug khan
 1159	56	12283	german_prose_with_translit			none	3	1	0	0	ste khrus khan (Dagy).
@@ -164270,12 +164270,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1164	103	12304	german_prose_with_translit			none	1	2	0	0	Sam dur kha Todesfall.
 1164	105	12304	german_prose_with_translit			none	4	1	0	0	rta sbrul 47 na — ral (metr.) „wenn ein rta-
 1164	106	12304	german_prose_with_translit			none	2	2	0	0	oder sbrul{-Jahrgänger] gestorben ist, wer-
-1165	1	12305	headword_line	དུར་ཁང་	khan	high	1	0	0	0	དུར་ཁང་ dur khan
+1165	1	12305	headword_line	དུར་ཁང་	khaṅ	high	1	0	0	0	དུར་ཁང་ dur khaṅ
 1165	3	12305	german_prose			none	0	3	0	0	den sich viele Todesfälle ergeben“ (Nagdel
 1165	4	12305	latin_other			none	2	0	0	0	71,1); bud med śi na — sdom (metr.) „wenn
 1165	5	12305	german_prose			none	0	3	0	0	die Frau gestorben 150, ergeben sich viele To-
 1165	6	12305	german_prose			none	0	2	0	0	desfälle“ (Nagdel 75,4).
-1165	8	12306	headword_line	དུར་ཁང་	khan	high	1	2	0	0	དུར་ཁང་ dur khan Leichenhaus, Mausoleum.
+1165	8	12306	headword_line	དུར་ཁང་	khaṅ	high	1	2	0	0	དུར་ཁང་ dur khaṅ Leichenhaus, Mausoleum.
 1165	9	12306	latin_other			none	3	0	0	0	— brgyad cu lde’u mig bi / sogs kyi man
 1165	11	12306	german_prose_with_translit			none	2	3	0	0	nag Zal las śes (metr.) „sie sind aus den
 1165	12	12306	german_prose_with_translit			none	1	3	0	0	mündlichen Unterweisungen zu den achtzig
@@ -164658,7 +164658,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1169	97	12337	german_prose_with_translit			none	2	5	0	0	ldan pa (metr.) „der von mir Erblickte, dessen Glanz gemildert 156“ (Lokn 46,7); ’dod
 1169	99	12337	latin_other			none	7	0	0	0	chags la sogs pa’i gñen po yin pa’i phyir —
 1169	100	12337	german_prose_with_translit			none	1	2	0	0	ba’o „es kontrolliert [die Menschen], weil es
-1170	1	12338	headword_line	དུལ་ཁང་	khan	high	1	0	0	0	དུལ་ཁང་ dul khan
+1170	1	12338	headword_line	དུལ་ཁང་	khaṅ	high	1	0	0	0	དུལ་ཁང་ dul khaṅ
 1170	3	12338	german_prose			none	0	5	0	0	das Gegenmittel zur Begierde usw. ist“ (Bu
 1170	4	12338	latin_other			none	4	0	0	0	652,2); rin mo rin mo nas dban po — ba brjid
 1170	5	12338	german_prose_with_translit			none	5	1	0	0	daṅ ldan pa ’on ba ’di ni „der da aus weiter
@@ -164669,7 +164669,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1170	11	12338	german_prose_with_translit			none	3	3	0	0	Lex. — ba =vinita (Mvy 456, Abt. dbyans kyi
 1170	12	12338	german_prose_with_translit			none	5	1	0	0	yan lag drug cu’i min); damah „Selbstbeherrschung“ (Mvy 1615); sbyans pa’am ¬ ba =
 1170	14	12338	german_prose_with_translit			none	1	1	0	0	sudhautam (Mvy 2598).
-1170	16	12339	headword_line	དུལ་ཁང་	khan	high	2	3	0	0	དུལ་ཁང་ dul khan Badehaus, vgl. Tdud khan.
+1170	16	12339	headword_line	དུལ་ཁང་	khaṅ	high	2	3	0	0	དུལ་ཁང་ dul khaṅ Badehaus, vgl. Tdud khan.
 1170	17	12339	german_prose_with_translit			none	2	3	0	0	Lex. khrus khan „Badehaus“ (Dagy).
 1170	19	12339	tibetan_only	དུལ་འགྲོ་		none	0	3	0	0	དུལ་འགྲོ་ @// '27:0 Bez. für Feuer.
 1170	20	12339	german_prose_with_translit			none	2	3	0	0	Lex. me’i min (Dagy, ähnl. brDa).
@@ -170431,7 +170431,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1244	39	12685	german_prose			none	0	5	0	0	dem Kopf einen Knoten tragend“ (Dagy);
 1244	40	12685	german_prose_with_translit			none	3	1	0	0	mgo do ger can = mgo skra rgyan can „mit
 1244	41	12685	german_prose_with_translit			none	1	4	0	0	einem Haarschmuck auf dem Kopf“ (brDa).
-1244	43	12686	headword_line	དོ་ཁང་	khan	high	1	1	0	0	དོ་ཁང་ do khan Lagerhalle.
+1244	43	12686	headword_line	དོ་ཁང་	khaṅ	high	1	1	0	0	དོ་ཁང་ do khaṅ Lagerhalle.
 1244	44	12686	german_prose_with_translit			none	4	2	0	0	Lex. do po ’jog sa’i khan pa (Dagy).
 1244	45	12687	headword_line	དོ་ཁུར་	khur	high	1	3	0	0	དོ་ཁུར་ do khur auch do '50////7 Aufsicht, Auf-
 1244	47	12687	german_prose_with_translit			none	1	1	0	0	merksamkeit, Verantwortung.
@@ -175980,7 +175980,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1319	71	13013	german_prose			none	0	1	0	0	Gruß.
 1319	73	13013	german_prose			none	0	3	0	0	Lex. dri smad (r. smed) = änandana (Ak
 1319	74	13013	other			none	0	0	0	0	290.7).
-1319	76	13014	headword_line	དྲི་གཙང་ཁང་	gtsari khan	high	2	4	0	0	དྲི་གཙང་ཁང་ dri gtsari khan ein Raum in einem
+1319	76	13014	headword_line	དྲི་གཙང་ཁང་	gtsari khaṅ	high	2	4	0	0	དྲི་གཙང་ཁང་ dri gtsari khaṅ ein Raum in einem
 1319	78	13014	german_prose_with_translit			none	1	1	0	0	buddh. Tempel.
 1319	80	13014	german_prose_with_translit			none	5	4	0	0	mchod rten ’di — gi nani na bäugs te „dieser Stüpa befindet sich in der Gandhakugi“
 1319	82	13014	german_prose_with_translit			none	6	1	0	0	(Liyl 177b3); rdo rje’i gdan gyi gandho la ste /
@@ -176016,7 +176016,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1320	17	13021	headword_line	དྲི་འཛིན་སྐྱེས་	dzin skyes	high	2	3	0	0	དྲི་འཛིན་སྐྱེས་ dri ’dzin skyes Bez. für ein oran-
 1320	19	13021	german_prose			none	0	2	0	0	gerotes Pulver, Mennige.
 1320	21	13021	german_prose_with_translit			none	2	2	0	0	Lex. // khri’i min (brDa, Dagy).
-1320	23	13022	headword_line	དྲི་འཛིན་ཁང་	dzin khan	high	2	2	0	0	དྲི་འཛིན་ཁང་ dri ’dzin khan ein Tempel.
+1320	23	13022	headword_line	དྲི་འཛིན་ཁང་	dzin khaṅ	high	2	2	0	0	དྲི་འཛིན་ཁང་ dri ’dzin khaṅ ein Tempel.
 1320	24	13022	german_prose_with_translit			none	5	2	0	0	Lex. lha khan (brDa); dri gtsari khan (Dagy).
 1320	26	13022	example_tibetan_latin	དྲི་ཞིམ་		none	1	1	0	0	དྲི་ཞིམ་ dri 2//7 1⁄7 Zim pa.
 1320	28	13022	tibetan_only			none	0	0	0	0	a ༨ + «^ .. .
@@ -176159,7 +176159,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1321	105	13033	german_prose_with_translit			none	2	2	0	0	wohlriechend sind“ (Srkk 69.2); — kha ba’i
 1321	106	13033	latin_other			none	4	0	0	0	chu yis ni / bsil khan lus dan 'tsham byas
 1321	107	13033	german_prose_with_translit			none	2	5	0	0	pa (metr.) „ein mit wohlriechendem Schneewasser dem Körper angenehm gemachter
-1322	1	13034	headword_line	དྲི་བཟང་ཁང་	bzan khan	high	2	0	0	0	དྲི་བཟང་ཁང་ dri bzan khan
+1322	1	13034	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	0	0	0	དྲི་བཟང་ཁང་ dri bzan khaṅ
 1322	3	13034	german_prose_with_translit			none	3	2	0	0	Pavillon“ (Ahs 1.3.34c); thub pa rnams kyi
 1322	4	13034	latin_other			none	5	0	0	0	sems ni tshim byed yid 'phrog gu gul phye
 1322	5	13034	german_prose_with_translit			none	1	8	0	0	ma’i dri bzans (metr.) „der betörende Wohlgeruch des Guggulu-Staubes, der den Geist
@@ -176208,7 +176208,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1322	66	13034	german_prose_with_translit			none	1	3	0	0	5. für skt. sugandha, die Ichneumonpflanze
 1322	67	13034	other			none	0	0	0	0	(PW).
 1322	69	13034	german_prose_with_translit			none	1	2	0	0	Lex. dri bzans = sugandhä (Ak 114.113).
-1322	71	13035	headword_line	དྲི་བཟང་ཁང་	bzan khan	high	2	3	0	0	དྲི་བཟང་ཁང་ dri bzan khan Bez. für Lotus.
+1322	71	13035	headword_line	དྲི་བཟང་ཁང་	bzan khaṅ	high	2	3	0	0	དྲི་བཟང་ཁང་ dri bzan khaṅ Bez. für Lotus.
 1322	72	13035	german_prose_with_translit			none	2	2	0	0	Lex. padma spyi’i min (brDa, Dagy).
 1322	74	13036	headword_line	དྲི་བཟང་ཅན་	bzan can	medium	2	3	0	0	དྲི་བཟང་ཅན་ dri bzan can Bez. für Blume.
 1322	75	13036	german_prose_with_translit			none	3	1	0	0	Lex. chu’i me tog spyi la’an (brDa); me tog
@@ -176564,7 +176564,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1327	27	13052	german_prose_with_translit			none	3	2	0	0	Glocke usw.“ (2CK 1: 165,5,4); la la Zig ni
 1327	28	13052	german_prose_with_translit			none	4	6	0	0	khon ma — chen sgrog go „einige ließen Zimbeln und große Glocken erklingen“ (81 3:
 1327	30	13052	other			none	0	0	0	0	7,4).
-1327	32	13053	headword_line	དྲིལ་ཁང་	khan Gerichtshof	high	2	0	0	0	དྲིལ་ཁང་ dril khan Gerichtshof.
+1327	32	13053	headword_line	དྲིལ་ཁང་	khaṅ Gerichtshof	high	2	0	0	0	དྲིལ་ཁང་ dril khaṅ Gerichtshof.
 1327	33	13053	german_prose_with_translit			none	4	3	0	0	Lex. khrims khan lta bu (brDa, ähnl. Dagy).
 1327	35	13054	headword_line	དྲིལ་སྒྲུབ་	sgrub	medium	1	0	0	0	དྲིལ་སྒྲུབ་ dril sgrub.
 1327	37	13054	other			none	0	0	0	0	1. verbinden.

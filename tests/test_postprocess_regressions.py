@@ -2226,6 +2226,31 @@ class PostprocessRegressionTests(unittest.TestCase):
             3,
         )
 
+    def test_reviewed_khang_rows_preserve_neighbouring_n_families(self) -> None:
+        lines = {
+            (628, 48): "ཆང་།ཁང་ chan khan Wirtshaus.",
+            (948, 109): "སྟེང་ཁང་ sten khan",
+            (1159, 51): "དུད་ཁང་ dud khan Badehaus; vgl. [%//95 khan,",
+            (1322, 1): "དྲི་བཟང་ཁང་ dri bzan khan",
+            (600, 1): "མཁན་ mkhan genuine agentive form.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("ཆང་།ཁང་ chan khaṅ Wirtshaus.", corrected)
+        self.assertIn("སྟེང་ཁང་ sten khaṅ", corrected)
+        self.assertIn("dud khaṅ Badehaus; vgl. [%//95 khan,", corrected)
+        self.assertIn("དྲི་བཟང་ཁང་ dri bzan khaṅ", corrected)
+        self.assertIn("མཁན་ mkhan genuine agentive form.", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["from_token"] == "khan" and row["to_token"] == "khaṅ"
+        ]
+        self.assertEqual(len(reviewed), 4)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
