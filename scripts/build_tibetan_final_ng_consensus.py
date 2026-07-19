@@ -358,6 +358,84 @@ def build_family_rankings(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     )
 
 
+def build_same_entry_echo_rows(release_root: Path) -> list[dict[str, str]]:
+    aligned, accepted = collect_aligned_rows(release_root)
+    echoes: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str, int]] = set()
+    for row in aligned:
+        forms = accepted.get(row["tibetan_syllable"], Counter())
+        if not forms:
+            continue
+        target, _count = forms.most_common(1)[0]
+        line = row["context_excerpt"]
+        aligned_index = int(row["token_index"])
+        matches = list(POSTPROCESS_TOKEN_RE.finditer(line))
+        for token_index, match in enumerate(matches, start=1):
+            if token_index <= aligned_index:
+                continue
+            source = match.group(0)
+            if not source_variant_for_target(source, target):
+                continue
+            key = (row["volume"], row["page"], row["line"], token_index)
+            if key in seen:
+                continue
+            seen.add(key)
+            aligned_match = matches[aligned_index - 1]
+            between = line[aligned_match.end():match.start()]
+            if source[:1] in {"T", "I", "\\", "/"}:
+                category = "marker_attached"
+                status = "defer"
+                reason = "Marker reconstruction requires independent evidence."
+            elif VISIBLE_DAMAGE_RE.search(between) or VISIBLE_DAMAGE_RE.search(source):
+                category = "damaged_reference"
+                status = "defer"
+                reason = "Damage obscures the relationship to the aligned lemma."
+            elif re.search(r"\bauch\b", between, re.IGNORECASE):
+                category = "explicit_same_lemma_repetition"
+                status = "manual_review"
+                reason = "The entry explicitly repeats an alternate form after auch."
+            elif re.search(r"\bvgl\.|\bKurzf\.", between, re.IGNORECASE):
+                category = "cross_reference_probable"
+                status = "manual_review"
+                reason = "Cross-reference language suggests, but does not prove, identity."
+            elif re.search(r"[,()~]", between):
+                category = "alternate_form_same_lemma"
+                status = "manual_review"
+                reason = "Entry punctuation suggests an alternate form of the same lemma."
+            else:
+                category = "uncertain"
+                status = "defer"
+                reason = "No explicit entry-structure cue establishes lemma identity."
+            echoes.append(
+                {
+                    "volume": row["volume"],
+                    "page": row["page"],
+                    "line": row["line"],
+                    "token_index": str(token_index),
+                    "tibetan_syllable": row["tibetan_syllable"],
+                    "reviewed_canonical_target": target,
+                    "aligned_source_token": row["latin_token"],
+                    "additional_source_token": source,
+                    "context_between": between,
+                    "proposed_target": target,
+                    "echo_category": category,
+                    "evidence": "same_line_entry_structure_after_positional_alignment",
+                    "review_status": status,
+                    "reason": reason,
+                    "context_excerpt": line,
+                }
+            )
+    return sorted(
+        echoes,
+        key=lambda row: (
+            row["volume"],
+            int(row["page"]),
+            int(row["line"]),
+            int(row["token_index"]),
+        ),
+    )
+
+
 FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "source_latin_token", "proposed_latin_target", "accepted_form_count",
@@ -372,6 +450,12 @@ RANKING_FIELDS = [
     "competing_count", "structure_mismatch_count", "marker_attached_count",
     "accepted_form_evidence", "volumes",
 ]
+ECHO_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "reviewed_canonical_target", "aligned_source_token",
+    "additional_source_token", "context_between", "proposed_target",
+    "echo_category", "evidence", "review_status", "reason", "context_excerpt",
+]
 
 
 def main() -> None:
@@ -380,6 +464,7 @@ def main() -> None:
     parser.add_argument("--out-root", type=Path, required=True)
     args = parser.parse_args()
     rows = build_consensus_rows(args.release_root)
+    echo_rows = build_same_entry_echo_rows(args.release_root)
     by_volume: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:
         by_volume[row["volume"]].append(row)
@@ -394,6 +479,11 @@ def main() -> None:
             volume_out / "tibetan_final_ng_family_rankings.tsv",
             build_family_rankings(rows),
             RANKING_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_same_entry_echo_candidates.tsv",
+            [row for row in echo_rows if row["volume"] == volume],
+            ECHO_FIELDS,
         )
     counts = Counter(row["alignment_category"] for row in rows)
     print(f"candidates={len(rows)}")

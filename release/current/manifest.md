@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-07-19T20:06:54Z`
-Source/code commit observed while building this bundle: `cc7a5fbeaa1752d1e95b3b049566ece8d0862080`
+Generated UTC: `2026-07-19T20:17:31Z`
+Source/code commit observed while building this bundle: `6322c7255cfba2fcfaf678cec656e65496ed5f12`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -50,6 +50,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_final_ng_family_rankings.tsv`
+- `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
@@ -77,6 +78,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_final_ng_family_rankings.tsv`
+- `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
@@ -104,6 +106,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_final_ng_family_rankings.tsv`
+- `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`
@@ -131,6 +134,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/summary.md`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_final_ng_family_rankings.tsv`
+- `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_google_adoption_patterns.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/tibetan_initial_i_residual_candidates.tsv`

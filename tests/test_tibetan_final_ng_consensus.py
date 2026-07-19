@@ -162,6 +162,22 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertIn("goh:1", plain["source_variants_and_counts"])
         self.assertEqual(prefixed["candidate_count"], "1")
 
+    def test_same_entry_echo_detects_explicit_repetition(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tགླང་ཐབས་ glaṅ thabs\n"
+                "1\t2\theadword_line\tགླང་ཐབས་ glan thabs auch glan ’thab\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_same_entry_echo_rows(release)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["additional_source_token"], "glan")
+        self.assertEqual(rows[0]["echo_category"], "explicit_same_lemma_repetition")
+
 
 if __name__ == "__main__":
     unittest.main()
