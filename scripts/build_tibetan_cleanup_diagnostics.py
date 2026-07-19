@@ -56,6 +56,7 @@ TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
     "ཆུང": "chuṅ",
     "སྒྲུང": "sgruṅ",
 }
+SCRIPT_NG_DAMAGED_CONTEXT_RE = re.compile(r"[{}?¡£]|\bSQ\b")
 TIBETAN_INITIAL_I_FORMS = {
     "Ita": "lta",
     "Itar": "ltar",
@@ -420,6 +421,22 @@ def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, 
     return None
 
 
+def tibetan_witness_occurrences(context: str, witness: str) -> list[tuple[int, int]]:
+    """Find complete Tibetan syllable witnesses, excluding longer-form substrings."""
+    spans: list[tuple[int, int]] = []
+    start = 0
+    while True:
+        index = context.find(witness, start)
+        if index < 0:
+            break
+        end = index + len(witness)
+        following = context[end : end + 1]
+        if not following or following in {"་", "།", " ", "\t"}:
+            spans.append((index, end))
+        start = index + 1
+    return spans
+
+
 def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str] | None:
     clean = stripped_token(token)
     if not clean or is_german_prose(context):
@@ -427,7 +444,7 @@ def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str]
     if not TIBETAN_SCRIPT_RE.search(context):
         return None
     for tibetan_witness, target in TIBETAN_SCRIPT_NG_WITNESS_FORMS.items():
-        if tibetan_witness not in context:
+        if not tibetan_witness_occurrences(context, tibetan_witness):
             continue
         proposed = candidate_target_for_ng_witness_token(clean, target)
         if proposed and proposed["proposed_target"] != clean:
@@ -470,7 +487,7 @@ def script_ng_alignment_category(
         }
 
     witness = token_class["tibetan_witness"]
-    witness_count = line.count(witness)
+    witness_count = len(tibetan_witness_occurrences(line, witness))
     if witness_count != 1:
         return {
             "review_category": "damaged_or_competing_context",
@@ -492,6 +509,18 @@ def script_ng_alignment_category(
             "score_explanation": (
                 "One Tibetan witness co-occurs with repeated Latin candidates; "
                 "each repetition must be aligned independently."
+            ),
+        }
+
+    if SCRIPT_NG_DAMAGED_CONTEXT_RE.search(line):
+        return {
+            "review_category": "damaged_or_competing_context",
+            "confidence": "low",
+            "suggested_action": "defer",
+            "score": "20",
+            "score_explanation": (
+                "The candidate phrase contains additional OCR damage, so the "
+                "final-nasal alignment is not promoted automatically."
             ),
         }
 

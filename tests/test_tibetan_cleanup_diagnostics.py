@@ -734,6 +734,31 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
                 "ཆུང་ random",
             )
         )
+        self.assertIsNone(
+            diag.classify_tibetan_script_ng_token(
+                "dan",
+                "དངན་འཐེན་ dan ’then",
+            )
+        )
+
+    def test_script_ng_damaged_phrase_is_deferred(self) -> None:
+        with TemporaryDirectory() as tmp:
+            run_dir = Path(tmp)
+            (run_dir / "fake_corrected_full.txt").write_text(
+                "ཆུང་སྟག་ chun /¡7£ zweitjüngster.\n",
+                encoding="utf-8",
+            )
+            (run_dir / "fake_line_zones.tsv").write_text(
+                "page\tline\tzone\n1\t1\theadword_line\n",
+                encoding="utf-8",
+            )
+            rows = diag.build_script_ng_witness_candidates(run_dir, "fake")
+
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(
+            rows[0]["review_category"],
+            "damaged_or_competing_context",
+        )
 
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")
