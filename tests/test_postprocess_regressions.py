@@ -2342,6 +2342,34 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 5)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
 
+    def test_reviewed_kong_rows_preserve_distinct_syllables(self) -> None:
+        lines = {
+            (97, 19): "ཀོང་ཀོང་ kon kon ausgehöhlt.",
+            (97, 111): "ཀོང་རྗེ་བྲང་དཀར་ kon rje bran dkar",
+            (98, 118): "ཀོང་ཙེ་ kon tse auch koṅ rtse, koṅ tshe.",
+            (98, 104): "901,3). ཀོང་མོ་ 'kon mo tiefe Höhle.",
+            (200, 1): "ཀོན་པ་ kon pa Bedeutung unklar.",
+            (201, 1): "ཁོང་ khon pron. 3. pers.",
+            (202, 1): "རྐོང་ rkon po.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("ཀོང་ཀོང་ koṅ koṅ", corrected)
+        self.assertIn("ཀོང་རྗེ་བྲང་དཀར་ koṅ rje bran dkar", corrected)
+        self.assertIn("ཀོང་ཙེ་ koṅ tse auch koṅ rtse, koṅ tshe.", corrected)
+        self.assertIn("901,3). ཀོང་མོ་ 'koṅ mo", corrected)
+        self.assertIn("ཀོན་པ་ kon pa", corrected)
+        self.assertIn("ཁོང་ khon", corrected)
+        self.assertIn("རྐོང་ rkon", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "kon" and row["to_token"] == "koṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

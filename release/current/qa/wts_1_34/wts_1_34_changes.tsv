@@ -27664,3 +27664,48 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1265	66	12761	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa ston pa nid ei-
 1277	13	12824	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa ston pa nid
 1333	52	13065	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུག་སྟོང་ drug ston sechstausend.
+54	168	454	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིམ་ཤེང་ཀོང་ཅོ་ kim śen kon co, auch kim sen khon
+87	30	1020	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཤེང་ཀོང་ཇོ་ kun sen kon jo \wun sin kon jo.
+96	165	1164	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཀོང་ ""kon"
+96	214	1168	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ 'kon ausgehöhlt, holprig, vgl. Ikon kon;
+97	5	1169	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཀ་ན་ kon ka na, auch kon ku na npr. ein Land
+97	18	1170	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཀྭ་ན་ kon ku na 1]/©60/7 ka na.
+97	19	1170	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཀོང་ kon kon ausgehöhlt, löchrig, holprig.
+97	19	1170	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཀོང་ kon kon ausgehöhlt, löchrig, holprig.
+97	25	1170	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་སྐྲ་ kon skra die Haartracht von Kon-po.
+97	41	1171	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཅན་ kon can eine Speise.
+97	46	1171	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཅོ་ kon co, auch kon jo chın. Titel für Prinzes-
+97	56	1172	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་རྗེ་དཀར་པོ་ kon rje dkar po
+97	75	1172	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཆས་ kon chas die Tracht von Kon-po.
+97	78	1172	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཆུ་ kon chu N. eines Flusses.
+97	87	1172	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཇོ་ kon jo !kon co.
+97	88	1173	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་རྗེ་དཀར་དམར་ kon rje dkar dmar der weiße
+97	98	1174	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་རྗེ་དཀར་པོ་ kon rje dkar po, auch rkon rje dkar
+97	111	1175	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་རྗེ་བྲང་དཀར་ kon rje bran dkar
+97	141	1176	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་རྣ་ kon ma eine Art Ohrschmuck.
+97	158	1177	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་པོ་ 'kon po Opferschale; vgl. Ikon bu.
+98	23	1184	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་པོ་བུ་ཆུ་ kon po bu chu npr. der Bu-chu-Tem-
+98	43	1185	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་པོ་བོན་རི་ kon po bon ri npr. ein Berg.
+98	48	1186	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་པོ་བྲག་གསུམ་ kon po brag gsum rdzoṅ npr. ein
+98	51	1186	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་མོ་ 'kon mo
+98	60	1186	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་སྤྲེལ་ kon sprel eine aus Kon-po stammende
+98	104	1188	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	901,3). ཀོང་མོ་ 'kon mo tiefe Höhle.
+98	106	1189	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་པོ་ལོ་ གསར་ kon po lo gsar Kon-po-Neujahr.
+98	114	1189	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཀོང་མོ་ ""kon mo Frau oder Mädchen aus Kon-po."
+98	118	1190	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཙེ་ kon tse auch koṅ rtse, koṅ tshe.
+98	161	1191	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་བཙུན་དེ་མོ་ kon btsun de mo, auch rkon btsun
+98	167	1192	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཡུལ་ kon yul
+98	193	1194	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཞྭ་ kon Zwa, die Kopfbedeckung von Män-
+98	199	1194	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཞག་ kon Zag, „die Tage von Kon [-p o] “ ein
+98	221	1195	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཡུལ་ kon yul kon po.
+99	1	1196	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཡུལ་བྲེ་སྣ་ kon yul bre sna
+99	3	1197	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཡུལ་བྲེ་སྣ་ kon yul bre sna, alte Schreibung
+99	10	1198	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ལི་ kon li eine Heilpflanze, synon. ga dur
+99	16	1198	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ལུང་ kon lun ein bestimmtes Jahr.
+99	21	1198	tibetan_only	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ཤེང་ kon sen eine Region in der Nähe von
+99	38	1200	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ kon lha kon bisun rgya la
+99	38	1200	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ kon lha kon bisun rgya la
+99	41	1201	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀོང་ལྷམ་ kon lham, das Schuhwerk von Frauen
+690	104	8371	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆོད་ཀོང་ mchod kon
+690	143	8372	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆོད་ཀོང་ mchod kon Gefäß für eine Butter-
+1116	35	12050	headword_line	kon	koṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དན་ཀོང་ dan kon ldan gon.
