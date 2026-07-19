@@ -661,13 +661,73 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
                 "རང་ (Dagy 12,3) ran\n",
                 encoding="utf-8",
             )
+            (run_dir / "fake_line_zones.tsv").write_text(
+                "page\tline\tzone\n1\t1\theadword_line\n",
+                encoding="utf-8",
+            )
 
             rows = diag.build_script_ng_witness_candidates(run_dir, "fake")
 
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["source_token"], "ran")
         self.assertEqual(rows[0]["token_index"], "4")
-        self.assertEqual(rows[0]["review_category"], "high_confidence_exact_final_ng")
+        self.assertEqual(rows[0]["review_category"], "direct_unique_alignment")
+
+    def test_script_ng_alignment_categories_are_conservative(self) -> None:
+        with TemporaryDirectory() as tmp:
+            run_dir = Path(tmp)
+            (run_dir / "fake_corrected_full.txt").write_text(
+                "\f".join(
+                    [
+                        "ཆུང་ chun\n",
+                        "ཆུང་ chun auch chun\n",
+                        "ཆུང་ unrelated text; later chun\n",
+                        "བསྒྱུན་ bsgrun zu Tsgrun\n",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            (run_dir / "fake_line_zones.tsv").write_text(
+                "page\tline\tzone\n"
+                "1\t1\theadword_line\n"
+                "2\t1\theadword_line\n"
+                "3\t1\tgerman_prose_with_translit\n"
+                "4\t1\theadword_line\n",
+                encoding="utf-8",
+            )
+
+            rows = diag.build_script_ng_witness_candidates(run_dir, "fake")
+
+        by_page = {}
+        for row in rows:
+            by_page.setdefault(row["page"], []).append(row)
+        self.assertEqual(
+            by_page["1"][0]["review_category"],
+            "direct_unique_alignment",
+        )
+        self.assertEqual(
+            {row["review_category"] for row in by_page["2"]},
+            {"repeated_same_lemma_alignment"},
+        )
+        self.assertEqual(
+            by_page["3"][0]["review_category"],
+            "same_line_unaligned",
+        )
+        self.assertNotIn("4", by_page)
+
+    def test_script_ng_does_not_introduce_generic_n_to_ng(self) -> None:
+        self.assertIsNone(
+            diag.classify_tibetan_script_ng_token(
+                "chun",
+                "བསྒྱུན་ bsgrun zu Tsgrun",
+            )
+        )
+        self.assertIsNone(
+            diag.classify_tibetan_script_ng_token(
+                "random",
+                "ཆུང་ random",
+            )
+        )
 
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")
