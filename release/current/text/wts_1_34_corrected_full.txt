@@ -22404,7 +22404,7 @@ eine Schutzgottheit, beglei-
 tet von bDud-rgyal dpa’-bo thod-’phren-can
 (Neb 87).
 
-དཀར་མོ་ སྟོང་ཤོང་ dkar mo ston Son npr. ein Zelt.
+དཀར་མོ་ སྟོང་ཤོང་ dkar mo stoṅ Son npr. ein Zelt.
 
 las gur — phub (metr.) „[für diese] Gelegenheit wurde das Zelt dKar-mo ston-śon auf-
 
@@ -28845,7 +28845,7 @@ Lex. brtan pa Zes pa’i skar ma „der Stern, der
 ‚fest‘ genannt wird“ (brDa); skar ma?i bye
 brag Zig „eine Art Stern“ (Dagy).
 
-རྐང་སྟོང་སྐྱེལ་ rkaṅ ston skyel vergeblich, umsonst
+རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel vergeblich, umsonst
 gehen.
 
 slon ba po man pos — bar ’gyur „viele Bettler
@@ -35340,7 +35340,7 @@ Lex. mgo’i rten nam mgo’i yu ba „Stütze für
 den Kopf oder Stiel für den Kopf“ (brDa);
 mjin pa „Hals“ (Dagy).
 
-སྐེ་སྟོང་ ske ston ohne Halsschmuck.
+སྐེ་སྟོང་ ske stoṅ ohne Halsschmuck.
 
 Lex. ske rgyan med pa „ohne Halsschmuck“
 (brDa; ähnl. Dagy).
@@ -78809,7 +78809,7 @@ Daseinsformen“ (brDa); dge ba’i chos
 
 318
 
-དགེ་སྟོང་ dge ston
+དགེ་སྟོང་ dge stoṅ
 
 དགེ་བསྙེན་ dge bsnien.
 
@@ -78855,7 +78855,7 @@ GROVE 1967a: 130).
 bon sgo, das Fahrzeug der dge bsüen ge-
 lehrt“ (271 3: 503,6).
 
-དགེ་སྟོང་ dge ston Kompensationszahlung.
+དགེ་སྟོང་ dge stoṅ Kompensationszahlung.
 
 rkun ma ... bsad pa la / nag chad ~ med „es
 gibt keine Bestrafung und keine Kompen-
@@ -98840,9 +98840,9 @@ Zeremonialschal.
 Lex. kha btags mjal dar Zig (brDa, ähnl.
 Dagy).
 
-བརྒྱད་སྟོང་པ་ bregyad ston pa
+བརྒྱད་སྟོང་པ་ bregyad stoṅ pa
 
-བརྒྱད་སྟོང་པ་ brgyad ston pa ein buddhist. Text,
+བརྒྱད་སྟོང་པ་ brgyad stoṅ pa ein buddhist. Text,
 das Astasahasrikäprajnäpäramitä-
 sätra.
 
@@ -122449,7 +122449,7 @@ dnul chu ~ gfis ’thuns pas „als er zwei
 Bierkrüge Quecksilber getrunken hatte“
 (Tär 146,1).
 
-ཆང་པ་སྟོང་པ་ chan pa ston pa mit leeren Hän-
+ཆང་པ་སྟོང་པ་ chan pa stoṅ pa mit leeren Hän-
 den.
 Lex. lag ston la (Dagy).
 ཆང་སྒགས་ chan spags TIsampa, die mit chan
@@ -124749,7 +124749,7 @@ besiegt werden“ (Vdk 2: 352,4).
 Lex. mtha’ gcig tu chod (brDa); gcig gis go
 chod pa „einer genügt“ (Dagy).
 
-ཆིག་སྟོང་ chig ston eintausend.
+ཆིག་སྟོང་ chig stoṅ eintausend.
 
 tshigs bcad rnams ni ¬~ dan / de bźin broya
 phrag bźi dag dan / bdun cu risa bdun
@@ -130345,7 +130345,7 @@ Lex. mahä?® (in Mvy 17 u. ö.), jyesthah
 Dagy); + gyur pa = mahadbhatā (Mvy
 1919); ~ pa = mahattamam (Mvy 2698).
 
-ཆེན་པོ་སྟོང་པ་ཉིད་ chen po ston pa nid die große
+ཆེན་པོ་སྟོང་པ་ཉིད་ chen po stoṅ pa nid die große
 Leere.
 Lex. mahäsünyata (Mvy 938; sGra 201).
 
@@ -134693,7 +134693,7 @@ Ganesa.
 Lex. ekadanta (Ak 11.33); tshogs bdag glani
 sna’i min (brDa, Dagy).
 
-མཆེ་བ་སྟོང་ལྔན་ mche ba ston ldan ein Fisch.
+མཆེ་བ་སྟོང་ལྔན་ mche ba stoṅ ldan ein Fisch.
 Lex. na Zig la’an (brDa); 777 rgyal po’i min
 „Bez. für den König der Fische“ (Dagy).
 
@@ -148484,7 +148484,7 @@ zas ha Sa kho nas ’tsho ba’i mi ste tai lo pa lta
 bu „ein sich nur von Fisch ernährender
 Mensch, wie Tailopa“ (Dagy).
 
-ཉ་སྟོང་ fa ston Neumond; Vollmond.
+ཉ་སྟོང་ fa stoṅ Neumond; Vollmond.
 
 Lex. tshes bco lṅa daṅ gnam gaṅ la’aṅ „Vollmond und Neumond“ (brDa, ähnl. Dagy);
 
@@ -150722,7 +150722,7 @@ Dagy).
 77/ ma’i dkyil ’khor gan tshe ’od kyi dra ba
 ’gyid (r. ’gyed) (metr.) „wenn die Sonnen-
 
-ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa ston pa
+ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa stoṅ pa
 
 von rIsan-bod“ (PT1287 200); skye dgu’r
 tsbe lo ~ thub pa na „als die Lebenszeit der
@@ -185909,7 +185909,7 @@ vgl. LAUTER 1916: 450, Nr. 2.
 Lex. cun zad dam chun ba (brDa, Dagy);
 chun ba (TTC).
 
-སྟོང་ 'ston
+སྟོང་ 'stoṅ
 
 be = | . .
 ངཿ 'ston auch ~ po tausend; sehr viele; ༡༨ -
@@ -186035,7 +186035,7 @@ päramıtä (Mvy 1326).
 
 {1
 
-སྟོང་ ’ston pf. \'storis.
+སྟོང་ ’stoṅ pf. \'storis.
 
 1. leer, wüst, öde, ohne etw. sein, land-
 flüchtig sein; - par mdzad leeren.
@@ -186220,9 +186220,9 @@ günstige sgor, wie gtsan und ston usw., bis
 zum Rang (?) eines Zan lon gewährt“ (In5
 27).
 
-སྟོང་ ’ston Ython.
+སྟོང་ ’stoṅ Ython.
 
-སྟོང་གྲོགས་ ston grogs
+སྟོང་གྲོགས་ stoṅ grogs
 
 Kur 6 7 རཱ
 BR 'ston eine Frucht.
@@ -186232,7 +186232,7 @@ mon gyi Sin 'bras ~ kha dog legs pa klyyer nas
 
 Mon“ (BhuGr 48,8).
 
-སྟོང་སྐུད་ ston skud Seidenfransen.
+སྟོང་སྐུད་ stoṅ skud Seidenfransen.
 
 dar nag ber chen ... = nag po'i ()dzar lo’i
 breyan (metr.) „ein Mantel aus schwarzer
@@ -186240,7 +186240,7 @@ Seide, der mit Quasten aus schwarzen Sei-
 denfransen geschmückt war“ (Sumpa
 1933).
 
-སྟོང་བསྐལ་ ston bskal Weltzeitalter der Leer-
+སྟོང་བསྐལ་ stoṅ bskal Weltzeitalter der Leer-
 heit, in dem die Welt der Erschei-
 nungen nicht existiert.
 
@@ -186261,7 +186261,7 @@ Lex. sar phyogs rgyal po „König des Ostens“
 (brDa); ston khun = tün kus daṅ ’dra
 
 (TTC).
-སྟོང་འཁོར་ ston ’khor „Tausendschaft“, Land-
+སྟོང་འཁོར་ stoṅ ’khor „Tausendschaft“, Land-
 kreis.
 
 dkar nag = tshoṅ (r. tshaṅ) „alle Landkreise
@@ -186269,17 +186269,17 @@ von dKar-nag“ (Gesar 182,5); dkar nag ~
 tsho gral gon (metr.) „die obere Reihe der
 Landkreise von dKar-nag“ (Gesar 191,10).
 
-སྟོང་འཁྱིལ་མ་ ston ’khyil ma npr. cine tan-
+སྟོང་འཁྱིལ་མ་ stoṅ ’khyil ma npr. cine tan-
 
 trische Gottheit.
 
 Lex. sahasrävartä (Mvy 4294).
 
-སྟོང་གྲོགས་ ston grogs 4570715 grogS.
+སྟོང་གྲོགས་ stoṅ grogs 4570715 grogS.
 
 154
 
-སྟོང་སྒྲ་ ston sgra
+སྟོང་སྒྲ་ stoṅ sgra
 
 རྟོང་སྒྲ་ stoṅ sgra schallender Laut.
 
@@ -186309,7 +186309,7 @@ soll man rezitieren“ (Nagdel 74,16).
 Lex. ston chen mos (v. |. po) rab tu ’joms pa
 > mahäsahasrapramardanam (Mvy 1395).
 
-སྟོང་མཆོད་ ston mchod Tausendopfer.
+སྟོང་མཆོད་ stoṅ mchod Tausendopfer.
 
 ra che’! ~ kyi ’bru „an [Opfer]getreide für
 das Tausendopfer in Ra-mo-che“ (MIH
@@ -186333,14 +186333,14 @@ zögern folgendes Lied“ (Sumpa 7446).
 
 ༢༩༡
 
-སྟོང་ཉིད་ ston nid [6702 2.
+སྟོང་ཉིད་ stoṅ nid [6702 2.
 
 སྟོང་གཉིས་པ་བར་མ་ ston 07/5 pa bar ma ein
 Weltbereich.
 Lex. -7 ig rten gyi kbams = dvisähasro
 madhyamo lokadhätuh (Mvy 3043).
 
-སྟོང་གཉེར་ ston 97707ˆ Verwalter für das Tau-
+སྟོང་གཉེར་ stoṅ 97707ˆ Verwalter für das Tau-
 sendopfer.
 > dan lag g.yog gad pa sogs la „Verwalter für
 das Tausendopfer, Diener und Kehrer
@@ -186350,14 +186350,14 @@ dan = bcas la sprod dgos „man muß den Dienern eines Thronhalters und dem Verw
 ter der Tausendopfer [folgendes] geben“
 (MTH3/3/42 12).
 
-སྟོང་སྟེགས་ ston $77005 für nichts und wieder
+སྟོང་སྟེགས་ stoṅ $77005 für nichts und wieder
 
 nichts nachlaufen.
 
 Lex. rdzun tshig gi rjes su ’ded pa po „einer,
 der einer Lüge nachjagt“ (brDa).
 
-སྟོང་མཐའ་ ston mtha’ Bez. für den Neumond,
+སྟོང་མཐའ་ stoṅ mtha’ Bez. für den Neumond,
 den 30. Tag im Monat.
 
 Lex. gnam gan (brDa, Dagy).
@@ -186373,14 +186373,14 @@ Lex. pban ’dogs pa’am grogs por bya ba
 sTon-bdud dmar-po, identisch mit bDud-
 rje ston-bdud? (Neb 275).
 
-སྟོང་བདད་ཚེ་བད་ "ston bdnd tsbe bdag eine
+སྟོང་བདད་ཚེ་བད་ "stoṅ bdnd tsbe bdag eine
 » Gottheit (SCHWIEGER
 1985: XIII, Nr. 258).
 
-སྟོང་སྡེ་ ston sde Tausendschaft, Tausend-
+སྟོང་སྡེ་ stoṅ sde Tausendschaft, Tausend-
 schaftsdistrikt.
 
-bla nas ~$ btsig phar „er wird wieder vonསྟོང་པ་ ston pa
+bla nas ~$ btsig phar „er wird wieder vonསྟོང་པ་ stoṅ pa
 
 oben durch den Tausendschaftsdistrikt
 aufgebaut“ (1315 4); "7 gle’u thogsla „sie
@@ -186408,14 +186408,14 @@ gnis (Neb 226).
 སྟོང་དཔོཿ དྲ་ག་ཝལཱ་་ $5077 dpon dgra lha eine zorn-
 > ནད 5 volle Gottheit (Neb 333).
 
-སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་ ston dpon dgra lha reyal
+སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་ stoṅ dpon dgra lha reyal
 
 eine Gottheit, gehört mit
 
 rDo-rje legs-pa u.a. zu „the four orders of
 treasure-guards“ (Neb 154 f.).
 
-སྟོང་སྤྱི་ཕུད་ ston spyi phud ein Weltbereich.
+སྟོང་སྤྱི་ཕུད་ stoṅ spyi phud ein Weltbereich.
 
 Lex. ~ kyi ig rten gyi khams & sähasracädiko
 lokadhätuh (Mvy 3042); ston dan po’i ’jig
@@ -186423,14 +186423,14 @@ rten gyl khams (Dagy); ~ bdag po = sten gi
 phyogs skyon „der Schützer des Zenits (?)“
 (brDa).
 
-སྟོང་ཕྲག་ ston phrag V'ston.
+སྟོང་ཕྲག་ stoṅ phrag V'ston.
 
-སྟོང་འྲོ་བ་ ston ’phro ba Bez. für Sonne.
+སྟོང་འྲོ་བ་ stoṅ ’phro ba Bez. für Sonne.
 Lex. ni ma’i min (brDa, Dagy).
 
 156
 
-སྟོང་སང་ ston san
+སྟོང་སང་ stoṅ san
 
 vv.
 
@@ -186444,7 +186444,7 @@ rgyal khams ... ’di „dieses tbetische Königreich, das fünf kleine Tausends
 
 [u.a.], insgesamt 47 umfaßste“ (Nel 2b1).
 
-སྟོང་འབྱམ་ ston ’byam Inhaltsloses.
+སྟོང་འབྱམ་ stoṅ ’byam Inhaltsloses.
 
 la la ~ lhags pa 'gam „manche schlucken so
 etwas Inhaltsloses wie Wind“ (dPe 317,3).
@@ -186477,7 +186477,7 @@ Zig „eine Meditation vor der Reinigung der
 
 Kanäle“ (Dagy).
 
-སྟོང་ལམ་ ston lam Kreuzung.
+སྟོང་ལམ་ stoṅ lam Kreuzung.
 
 » phrag gan chod „entscheide, wo die
 Kreuzung ist!“ (sBa 65,11).
@@ -186501,7 +186501,7 @@ absolute Leere“ (Dagy); - ne = mi med
 khan pa - he lta bu „wie: menschenloses
 Haus, absolut leer“ (brDa).
 
-སྟོང་གསུམ་ ston gsum dreitausend bzw. 1000),
+སྟོང་གསུམ་ stoṅ gsum dreitausend bzw. 1000),
 >
 
 eine Milliarde; auch - ’jig rten,
@@ -186562,7 +186562,7 @@ ri vab 77/ zla daṅ bcas pa bye ba phrag breya
 
 den“ (Dagy).
 
-སྟོང་གསུམ་རྒྱལ་བ་ ston gsum rgyal ba npr. ein sa
+སྟོང་གསུམ་རྒྱལ་བ་ stoṅ gsum rgyal ba npr. ein sa
 ༄ སཱ
 bdag (SCHUH 2012: 1398).
 
@@ -229952,7 +229952,7 @@ de’i — gcig gi thog tu bsgom na ji ltar sgom
 Bedeutung meditiere, wie sollte ich meditie-
 ren?“ (sBa 63,7).
 
-དོན་སྟོང་ don ston ohne Nutzen.
+དོན་སྟོང་ don stoṅ ohne Nutzen.
 
 ma 'khod na / skyes bu’i ’gro — pa red „wenn
 man es nicht tut, ist es ohne Nutzen für die
@@ -230098,7 +230098,7 @@ Wahrheit nehme man die Essenz“ (K841(2)
 20437); kun rdzob — dbye ba las (metr.)
 „wenn man relative und absolute Wahrheit
 unterscheidet“ (Hev 1.8.28c); kun rdzob kun
-da lta bu ste / — bde ba’i gzugs can maདོན་དམ་པ་སྟོང་་ don dam pa ston ...
+da lta bu ste / — bde ba’i gzugs can maདོན་དམ་པ་སྟོང་་ don dam pa stoṅ ...
 
 (metr.) „der konventionellen Wirklichkeit
 nach ist sie wie ein Jasmin, der absoluten
@@ -230163,7 +230163,7 @@ Zustand und auch für das Wahre“ (Dagy); —
 pa’i bden pa = paramārthasatyam (Mvy 6544,
 sGra 256).
 
-དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa ston pa nid ei-
+དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa stoṅ pa nid ei-
 
 ne der 18 Leerheiten.
 
@@ -231358,7 +231358,7 @@ hosen, und auch kurze Hosen“ (brDa); dor
 ma’i mthons sam dbyins „Öffnung oder Mitte der Hose“ (Dagy).
 
 
-དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa ston pa nid
+དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa stoṅ pa nid
 absolute Leerheit, eine
 der 18 Leerheiten.
 
@@ -236825,7 +236825,7 @@ drug tn bgos pa’i cha (Dagy).
 
 དྲུག་སྡེ་ drug sde
 
-དྲུག་སྟོང་ drug ston sechstausend.
+དྲུག་སྟོང་ drug stoṅ sechstausend.
 
 dge slon — po 'di dag ni ... de bZin gsegs pa ...
 ’gyur ro „diese sechstausend Mönche werden

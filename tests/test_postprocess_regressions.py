@@ -2316,6 +2316,32 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertEqual(len(reviewed), 3)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
 
+    def test_reviewed_stong_rows_exclude_genuine_ston(self) -> None:
+        lines = {
+            (157, 58): "རྐང་སྟོང་སྐྱེལ་ rkaṅ ston skyel",
+            (628, 206): "ཆང་པ་སྟོང་པ་ chan pa ston pa",
+            (950, 164): "སྟོང་ 'ston",
+            (952, 171): "སྟོང་གཉེར་ ston 97707ˆ",
+            (953, 122): "སྟོང་གསུམ་ ston gsum 1000),",
+            (200, 1): "དགའ་སྟོན་ dga’ ston Freudenfest.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel", corrected)
+        self.assertIn("ཆང་པ་སྟོང་པ་ chan pa stoṅ pa", corrected)
+        self.assertIn("སྟོང་ 'stoṅ", corrected)
+        self.assertIn("སྟོང་གཉེར་ stoṅ 97707ˆ", corrected)
+        self.assertIn("སྟོང་གསུམ་ stoṅ gsum 1000),", corrected)
+        self.assertIn("དགའ་སྟོན་ dga’ ston Freudenfest.", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "ston" and row["to_token"] == "stoṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

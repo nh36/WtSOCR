@@ -27619,3 +27619,48 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 397	112	5210	tibetan_only	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	གླད་འགོང་ glud ’gon eine Zeremonie zu Neu-
 439	158	5754	headword_line	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	འགོང་པོ་ ’gon po
 470	89	6098	headword_line	gon	goṅ	A	reviewed_tibetan_exact_prefixed_final_ng_consensus	1	རྒྱལ་འགོང་ rgyal ’gon eine Dämonenart.
+124	27	1526	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ སྟོང་ཤོང་ dkar mo ston Son npr. ein Zelt.
+157	58	1982	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་སྟོང་སྐྱེལ་ rkaṅ ston skyel vergeblich, umsonst
+189	151	2405	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐེ་སྟོང་ ske ston ohne Halsschmuck.
+409	58	5387	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དགེ་སྟོང་ dge ston
+409	104	5389	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དགེ་སྟོང་ dge ston Kompensationszahlung.
+511	106	6600	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྒྱད་སྟོང་པ་ bregyad ston pa
+511	108	6601	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྒྱད་སྟོང་པ་ brgyad ston pa ein buddhist. Text,
+628	206	7655	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་པ་སྟོང་པ་ chan pa ston pa mit leeren Hän-
+639	95	7777	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆིག་སྟོང་ chig ston eintausend.
+666	139	8068	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆེན་པོ་སྟོང་པ་ཉིད་ chen po ston pa nid die große
+686	151	8304	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆེ་བ་སྟོང་ལྔན་ mche ba ston ldan ein Fisch.
+756	87	8981	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉ་སྟོང་ fa ston Neumond; Vollmond.
+769	60	9061	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa ston pa
+950	164	10397	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ 'ston
+951	77	10398	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ ’ston pf. \'storis.
+952	51	10398	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ ’ston Ython.
+952	53	10398	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་གྲོགས་ ston grogs
+952	63	10398	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སྐུད་ ston skud Seidenfransen.
+952	71	10399	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་བསྐལ་ ston bskal Weltzeitalter der Leer-
+952	92	10400	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་འཁོར་ ston ’khor „Tausendschaft“, Land-
+952	100	10401	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་འཁྱིལ་མ་ ston ’khyil ma npr. cine tan-
+952	106	10401	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་གྲོགས་ ston grogs 4570715 grogS.
+952	110	10402	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སྒྲ་ ston sgra
+952	140	10405	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་མཆོད་ ston mchod Tausendopfer.
+952	164	10405	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ཉིད་ ston nid [6702 2.
+952	171	10405	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་གཉེར་ ston 97707ˆ Verwalter für das Tau-
+952	181	10405	example_tibetan_latin	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སྟེགས་ ston $77005 für nichts und wieder
+952	188	10406	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་མཐའ་ ston mtha’ Bez. für den Neumond,
+952	204	10408	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"སྟོང་བདད་ཚེ་བད་ ""ston bdnd tsbe bdag eine"
+952	208	10408	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སྡེ་ ston sde Tausendschaft, Tausend-
+953	1	10409	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་པ་ ston pa
+953	29	10412	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་ ston dpon dgra lha reyal
+953	36	10413	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སྤྱི་ཕུད་ ston spyi phud ein Weltbereich.
+953	44	10414	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ཕྲག་ ston phrag V'ston.
+953	46	10415	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་འྲོ་བ་ ston ’phro ba Bez. für Sonne.
+953	51	10415	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་སང་ ston san
+953	65	10416	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་འབྱམ་ ston ’byam Inhaltsloses.
+953	98	10420	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་ལམ་ ston lam Kreuzung.
+953	122	10423	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་གསུམ་ ston gsum dreitausend bzw. 1000),
+953	183	10424	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོང་གསུམ་རྒྱལ་བ་ ston gsum rgyal ba npr. ein sa
+1263	71	12754	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་སྟོང་ don ston ohne Nutzen.
+1265	1	12759	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་དམ་པ་སྟོང་་ don dam pa ston ...
+1265	66	12761	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa ston pa nid ei-
+1277	13	12824	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa ston pa nid
+1333	52	13065	tibetan_only	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུག་སྟོང་ drug ston sechstausend.

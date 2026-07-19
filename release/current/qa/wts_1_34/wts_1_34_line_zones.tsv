@@ -16282,7 +16282,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 124	23	1526	german_prose			none	0	2	0	0	eine Schutzgottheit, beglei-
 124	24	1526	german_prose_with_translit			none	4	1	0	0	tet von bDud-rgyal dpa’-bo thod-’phren-can
 124	25	1526	german_prose			none	0	1	0	0	(Neb 87).
-124	27	1526	tibetan_only	དཀར་མོ་ སྟོང་ཤོང་		none	0	3	0	0	དཀར་མོ་ སྟོང་ཤོང་ dkar mo ston Son npr. ein Zelt.
+124	27	1526	tibetan_only	དཀར་མོ་ སྟོང་ཤོང་	stoṅ	high	0	3	0	0	དཀར་མོ་ སྟོང་ཤོང་ dkar mo stoṅ Son npr. ein Zelt.
 124	29	1526	german_prose_with_translit			none	3	4	0	0	las gur — phub (metr.) „[für diese] Gelegenheit wurde das Zelt dKar-mo ston-śon auf-
 124	31	1526	german_prose			none	0	1	0	0	geschlagen“ (Gesar 288,6).
 124	33	1527	headword_line	དཀར་མོ་ དུང་སྐྱོང་མ་	skyon ma	medium	2	0	0	0	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo dun skyon ma npr.
@@ -21170,7 +21170,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 157	54	1981	german_prose_with_translit			none	4	5	0	0	Lex. brtan pa Zes pa’i skar ma „der Stern, der
 157	55	1981	latin_other			none	2	0	0	0	‚fest‘ genannt wird“ (brDa); skar ma?i bye
 157	56	1981	german_prose			none	0	5	0	0	brag Zig „eine Art Stern“ (Dagy).
-157	58	1982	headword_line	རྐང་སྟོང་སྐྱེལ་	rkaṅ	high	2	1	0	0	རྐང་སྟོང་སྐྱེལ་ rkaṅ ston skyel vergeblich, umsonst
+157	58	1982	headword_line	རྐང་སྟོང་སྐྱེལ་	rkaṅ stoṅ skyel	high	2	1	0	0	རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel vergeblich, umsonst
 157	59	1982	other			none	0	0	0	0	gehen.
 157	61	1982	german_prose_with_translit			none	2	1	0	0	slon ba po man pos — bar ’gyur „viele Bettler
 157	62	1982	german_prose			none	0	1	0	0	werden umsonst gehen“ (Tär 129,12).
@@ -26043,7 +26043,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 189	147	2405	german_prose_with_translit			none	4	3	0	0	Lex. mgo’i rten nam mgo’i yu ba „Stütze für
 189	148	2405	german_prose_with_translit			none	1	7	0	0	den Kopf oder Stiel für den Kopf“ (brDa);
 189	149	2405	german_prose_with_translit			none	1	2	0	0	mjin pa „Hals“ (Dagy).
-189	151	2405	tibetan_only	སྐེ་སྟོང་		none	0	2	0	0	སྐེ་སྟོང་ ske ston ohne Halsschmuck.
+189	151	2405	tibetan_only	སྐེ་སྟོང་	stoṅ	high	0	2	0	0	སྐེ་སྟོང་ ske stoṅ ohne Halsschmuck.
 189	153	2405	german_prose_with_translit			none	2	3	0	0	Lex. ske rgyan med pa „ohne Halsschmuck“
 189	154	2405	german_prose_with_translit			none	1	2	0	0	(brDa; ähnl. Dagy).
 189	156	2405	other			none	0	0	0	0	291
@@ -58010,7 +58010,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 409	52	5386	german_prose_with_translit			none	4	1	0	0	Daseinsformen“ (brDa); dge ba’i chos
 409	54	5386	german_prose			none	0	1	0	0	(Dagy).
 409	56	5386	other			none	0	0	0	0	318
-409	58	5387	headword_line	དགེ་སྟོང་	dge	medium	1	0	0	0	དགེ་སྟོང་ dge ston
+409	58	5387	headword_line	དགེ་སྟོང་	dge stoṅ	high	1	0	0	0	དགེ་སྟོང་ dge stoṅ
 409	60	5388	headword_line	དགེ་བསྙེན་	dge bsnien	medium	2	0	0	0	དགེ་བསྙེན་ dge bsnien.
 409	62	5388	german_prose_with_translit			none	2	2	0	0	1. buddh. Laie, Laienanhänger, skt. upä-
 409	63	5388	latin_other			none	2	0	0	0	saka; ~ ma Laienanhängerin, skt. upasika.
@@ -58045,7 +58045,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 409	100	5388	german_prose_with_translit			none	3	1	0	0	~ theg pa’i bon sgor bstan „ [4165] wird als
 409	101	5388	german_prose_with_translit			none	1	4	0	0	bon sgo, das Fahrzeug der dge bsüen ge-
 409	102	5388	other			none	0	0	0	0	lehrt“ (271 3: 503,6).
-409	104	5389	headword_line	དགེ་སྟོང་	dge	medium	2	0	0	0	དགེ་སྟོང་ dge ston Kompensationszahlung.
+409	104	5389	headword_line	དགེ་སྟོང་	dge stoṅ Kompensationszahlung	high	2	0	0	0	དགེ་སྟོང་ dge stoṅ Kompensationszahlung.
 409	106	5389	latin_other			none	4	0	0	0	rkun ma ... bsad pa la / nag chad ~ med „es
 409	107	5389	german_prose_with_translit			none	1	2	0	0	gibt keine Bestrafung und keine Kompen-
 409	109	5390	headword_line	དགེ་འདུན་	dge	medium	1	0	0	0	དགེ་འདུན་ dge ’dun
@@ -72789,8 +72789,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 511	101	6599	german_prose			none	0	1	0	0	Zeremonialschal.
 511	103	6599	german_prose_with_translit			none	3	3	0	0	Lex. kha btags mjal dar Zig (brDa, ähnl.
 511	104	6599	german_prose			none	0	1	0	0	Dagy).
-511	106	6600	headword_line	བརྒྱད་སྟོང་པ་	bregyad	medium	2	0	0	0	བརྒྱད་སྟོང་པ་ bregyad ston pa
-511	108	6601	headword_line	བརྒྱད་སྟོང་པ་	brgyad	high	3	2	0	0	བརྒྱད་སྟོང་པ་ brgyad ston pa ein buddhist. Text,
+511	106	6600	headword_line	བརྒྱད་སྟོང་པ་	bregyad stoṅ pa	high	2	0	0	0	བརྒྱད་སྟོང་པ་ bregyad stoṅ pa
+511	108	6601	headword_line	བརྒྱད་སྟོང་པ་	brgyad stoṅ pa	high	3	2	0	0	བརྒྱད་སྟོང་པ་ brgyad stoṅ pa ein buddhist. Text,
 511	109	6601	german_prose			none	0	2	0	0	das Astasahasrikäprajnäpäramitä-
 511	110	6601	german_prose			none	0	1	0	0	sätra.
 511	112	6601	german_prose_with_translit			none	1	2	0	0	¬ bklags pas „weil ich das Astasähasrikäpra-
@@ -90631,7 +90631,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 628	202	7654	german_prose_with_translit			none	1	1	0	0	dnul chu ~ gfis ’thuns pas „als er zwei
 628	203	7654	german_prose			none	0	2	0	0	Bierkrüge Quecksilber getrunken hatte“
 628	204	7654	german_prose			none	0	1	0	0	(Tär 146,1).
-628	206	7655	headword_line	ཆང་པ་སྟོང་པ་	pa	medium	2	2	0	0	ཆང་པ་སྟོང་པ་ chan pa ston pa mit leeren Hän-
+628	206	7655	headword_line	ཆང་པ་སྟོང་པ་	pa stoṅ pa	high	2	2	0	0	ཆང་པ་སྟོང་པ་ chan pa stoṅ pa mit leeren Hän-
 628	207	7655	german_prose			none	0	1	0	0	den.
 628	208	7655	german_prose_with_translit			none	1	2	0	0	Lex. lag ston la (Dagy).
 628	209	7655	tibetan_only	ཆང་སྒགས་		none	0	3	0	0	ཆང་སྒགས་ chan spags TIsampa, die mit chan
@@ -92307,7 +92307,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 639	90	7777	german_prose			none	0	1	0	0	besiegt werden“ (Vdk 2: 352,4).
 639	92	7777	german_prose_with_translit			none	5	1	0	0	Lex. mtha’ gcig tu chod (brDa); gcig gis go
 639	93	7777	german_prose_with_translit			none	1	3	0	0	chod pa „einer genügt“ (Dagy).
-639	95	7777	tibetan_only	ཆིག་སྟོང་		none	0	0	0	0	ཆིག་སྟོང་ chig ston eintausend.
+639	95	7777	tibetan_only	ཆིག་སྟོང་	stoṅ	high	0	0	0	0	ཆིག་སྟོང་ chig stoṅ eintausend.
 639	97	7777	latin_other			none	5	0	0	0	tshigs bcad rnams ni ¬~ dan / de bźin broya
 639	98	7777	latin_other			none	5	0	0	0	phrag bźi dag dan / bdun cu risa bdun
 639	99	7777	latin_other			none	1	0	0	0	(metr.) „1477 Strophen“ (NBT 221,8).
@@ -96395,7 +96395,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 666	135	8067	german_prose_with_translit			none	2	2	0	0	„ältester“ (Mvy 9352); che ba (brDa,
 666	136	8067	german_prose_with_translit			none	2	2	0	0	Dagy); + gyur pa = mahadbhatā (Mvy
 666	137	8067	german_prose_with_translit			none	1	1	0	0	1919); ~ pa = mahattamam (Mvy 2698).
-666	139	8068	headword_line	ཆེན་པོ་སྟོང་པ་ཉིད་	po	medium	2	3	0	0	ཆེན་པོ་སྟོང་པ་ཉིད་ chen po ston pa nid die große
+666	139	8068	headword_line	ཆེན་པོ་སྟོང་པ་ཉིད་	po stoṅ pa	high	2	3	0	0	ཆེན་པོ་སྟོང་པ་ཉིད་ chen po stoṅ pa nid die große
 666	140	8068	german_prose			none	0	1	0	0	Leere.
 666	141	8068	german_prose_with_translit			none	2	2	0	0	Lex. mahäsünyata (Mvy 938; sGra 201).
 666	143	8069	headword_line	ཆེན་པོ་	pho	high	2	2	0	0	ཆེན་པོ་ chen pho Tchen po.
@@ -99751,7 +99751,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 686	146	8303	german_prose			none	0	1	0	0	Ganesa.
 686	148	8303	german_prose_with_translit			none	2	2	0	0	Lex. ekadanta (Ak 11.33); tshogs bdag glani
 686	149	8303	german_prose_with_translit			none	2	1	0	0	sna’i min (brDa, Dagy).
-686	151	8304	headword_line	མཆེ་བ་སྟོང་ལྔན་	mche ba	medium	3	2	0	0	མཆེ་བ་སྟོང་ལྔན་ mche ba ston ldan ein Fisch.
+686	151	8304	headword_line	མཆེ་བ་སྟོང་ལྔན་	mche ba stoṅ ldan	high	3	2	0	0	མཆེ་བ་སྟོང་ལྔན་ mche ba stoṅ ldan ein Fisch.
 686	152	8304	german_prose_with_translit			none	5	2	0	0	Lex. na Zig la’an (brDa); 777 rgyal po’i min
 686	153	8304	german_prose			none	0	7	0	0	„Bez. für den König der Fische“ (Dagy).
 686	155	8305	headword_line	མཆེ་བ་སྟོབས་ལྔན་	mche ba	medium	3	0	0	0	མཆེ་བ་སྟོབས་ལྔན་ mche ba stobs ldan.
@@ -110201,7 +110201,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 756	83	8981	latin_other			none	9	0	0	0	zas ha Sa kho nas ’tsho ba’i mi ste tai lo pa lta
 756	84	8981	german_prose			none	0	4	0	0	bu „ein sich nur von Fisch ernährender
 756	85	8981	german_prose			none	0	3	0	0	Mensch, wie Tailopa“ (Dagy).
-756	87	8981	tibetan_only	ཉ་སྟོང་		none	0	2	0	0	ཉ་སྟོང་ fa ston Neumond; Vollmond.
+756	87	8981	tibetan_only	ཉ་སྟོང་	stoṅ	high	0	2	0	0	ཉ་སྟོང་ fa stoṅ Neumond; Vollmond.
 756	89	8981	german_prose_with_translit			none	6	6	0	0	Lex. tshes bco lṅa daṅ gnam gaṅ la’aṅ „Vollmond und Neumond“ (brDa, ähnl. Dagy);
 756	91	8981	german_prose_with_translit			none	2	3	0	0	774 si ni ~ „Voll- und Neumond“ (Be’uD
 756	92	8981	other			none	0	0	0	0	2173).
@@ -111888,7 +111888,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 769	56	9060	german_prose			none	0	1	0	0	1. Sonnenscheibe.
 769	57	9060	latin_other			none	6	0	0	0	77/ ma’i dkyil ’khor gan tshe ’od kyi dra ba
 769	58	9060	german_prose			none	0	2	0	0	’gyid (r. ’gyed) (metr.) „wenn die Sonnen-
-769	60	9061	headword_line	ཉི་ཁྲི་ལྔ་སྟོང་པ་	khri lṅa	high	3	0	0	0	ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa ston pa
+769	60	9061	headword_line	ཉི་ཁྲི་ལྔ་སྟོང་པ་	khri lṅa stoṅ pa	high	3	0	0	0	ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa stoṅ pa
 769	62	9061	german_prose_with_translit			none	1	1	0	0	von rIsan-bod“ (PT1287 200); skye dgu’r
 769	63	9061	german_prose_with_translit			none	5	4	0	0	tsbe lo ~ thub pa na „als die Lebenszeit der
 769	64	9061	german_prose			none	0	3	0	0	Menschen 20000 Jahre betrug“ (Prav
@@ -138140,7 +138140,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 950	159	10397	german_prose			none	0	2	0	0	vgl. LAUTER 1916: 450, Nr. 2.
 950	161	10397	german_prose_with_translit			none	2	2	0	0	Lex. cun zad dam chun ba (brDa, Dagy);
 950	162	10397	latin_other			none	1	0	0	0	chun ba (TTC).
-950	164	10397	tibetan_only	སྟོང་		none	0	0	0	0	སྟོང་ 'ston
+950	164	10397	tibetan_only	སྟོང་	stoṅ	high	0	0	0	0	སྟོང་ 'stoṅ
 950	166	10397	other			none	0	0	0	0	be = | . .
 950	167	10398	headword_line	ངཿ	po	medium	1	1	0	0	ངཿ 'ston auch ~ po tausend; sehr viele; ༡༨ -
 950	169	10398	latin_other			none	2	0	0	0	tausendfach; ~ phrag beu po zehntausend;
@@ -138254,7 +138254,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 951	71	10398	german_prose			none	0	2	0	0	päramıtä (Mvy 1326).
 951	73	10398	other			none	0	0	0	0	!
 951	75	10398	other			none	0	0	0	0	{1
-951	77	10398	tibetan_only	སྟོང་		none	0	0	0	0	སྟོང་ ’ston pf. \'storis.
+951	77	10398	tibetan_only	སྟོང་	stoṅ	high	0	0	0	0	སྟོང་ ’stoṅ pf. \'storis.
 951	79	10398	german_prose			none	0	3	0	0	1. leer, wüst, öde, ohne etw. sein, land-
 951	80	10398	german_prose_with_translit			none	1	1	0	0	flüchtig sein; - par mdzad leeren.
 951	82	10398	latin_other			none	3	0	0	0	"gron ~ las kyi ""khrul ’kbor ’dra bar (metr.)"
@@ -138419,20 +138419,20 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	47	10398	german_prose_with_translit			none	1	2	0	0	günstige sgor, wie gtsan und ston usw., bis
 952	48	10398	german_prose_with_translit			none	1	4	0	0	zum Rang (?) eines Zan lon gewährt“ (In5
 952	49	10398	other			none	0	0	0	0	27).
-952	51	10398	tibetan_only	སྟོང་		none	0	1	0	0	སྟོང་ ’ston Ython.
-952	53	10398	tibetan_only	སྟོང་གྲོགས་		none	0	0	0	0	སྟོང་གྲོགས་ ston grogs
+952	51	10398	tibetan_only	སྟོང་	stoṅ	high	0	1	0	0	སྟོང་ ’stoṅ Ython.
+952	53	10398	tibetan_only	སྟོང་གྲོགས་	stoṅ	high	0	0	0	0	སྟོང་གྲོགས་ stoṅ grogs
 952	55	10398	tibetan_only			none	0	1	0	0	Kur 6 7 རཱ
 952	56	10398	german_prose			none	0	2	0	0	BR 'ston eine Frucht.
 952	58	10398	german_prose_with_translit			none	4	1	0	0	mon gyi Sin 'bras ~ kha dog legs pa klyyer nas
 952	59	10398	german_prose			none	0	4	0	0	„nimm schön gefärbte stor-Früchte der
 952	61	10398	german_prose_with_translit			none	1	1	0	0	Mon“ (BhuGr 48,8).
-952	63	10398	tibetan_only	སྟོང་སྐུད་		none	0	1	0	0	སྟོང་སྐུད་ ston skud Seidenfransen.
+952	63	10398	tibetan_only	སྟོང་སྐུད་	stoṅ	high	0	1	0	0	སྟོང་སྐུད་ stoṅ skud Seidenfransen.
 952	65	10398	german_prose_with_translit			none	3	1	0	0	dar nag ber chen ... = nag po'i ()dzar lo’i
 952	66	10398	german_prose			none	0	2	0	0	breyan (metr.) „ein Mantel aus schwarzer
 952	67	10398	german_prose			none	0	5	0	0	Seide, der mit Quasten aus schwarzen Sei-
 952	68	10398	german_prose			none	0	3	0	0	denfransen geschmückt war“ (Sumpa
 952	69	10398	other			none	0	0	0	0	1933).
-952	71	10399	headword_line	སྟོང་བསྐལ་	bskal	medium	1	3	0	0	སྟོང་བསྐལ་ ston bskal Weltzeitalter der Leer-
+952	71	10399	headword_line	སྟོང་བསྐལ་	stoṅ bskal	high	1	3	0	0	སྟོང་བསྐལ་ stoṅ bskal Weltzeitalter der Leer-
 952	72	10399	german_prose			none	0	7	0	0	heit, in dem die Welt der Erschei-
 952	73	10399	latin_other			none	1	0	0	0	nungen nicht existiert.
 952	75	10399	german_prose_with_translit			none	3	2	0	0	Lex. bskal pa ‰ spyir dus kyi min das ches (r.
@@ -138449,18 +138449,18 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	88	10399	german_prose_with_translit			none	3	4	0	0	Lex. sar phyogs rgyal po „König des Ostens“
 952	89	10399	german_prose_with_translit			none	3	1	0	0	(brDa); ston khun = tün kus daṅ ’dra
 952	91	10399	other			none	0	0	0	0	(TTC).
-952	92	10400	headword_line	སྟོང་འཁོར་	khor	high	1	2	0	0	སྟོང་འཁོར་ ston ’khor „Tausendschaft“, Land-
+952	92	10400	headword_line	སྟོང་འཁོར་	stoṅ khor	high	1	2	0	0	སྟོང་འཁོར་ stoṅ ’khor „Tausendschaft“, Land-
 952	93	10400	other			none	0	0	0	0	kreis.
 952	95	10400	german_prose_with_translit			none	2	1	0	0	dkar nag = tshoṅ (r. tshaṅ) „alle Landkreise
 952	96	10400	german_prose			none	0	2	0	0	von dKar-nag“ (Gesar 182,5); dkar nag ~
 952	97	10400	german_prose_with_translit			none	1	3	0	0	tsho gral gon (metr.) „die obere Reihe der
 952	98	10400	german_prose			none	0	3	0	0	Landkreise von dKar-nag“ (Gesar 191,10).
-952	100	10401	headword_line	སྟོང་འཁྱིལ་མ་	khyil ma	high	2	0	0	0	སྟོང་འཁྱིལ་མ་ ston ’khyil ma npr. cine tan-
+952	100	10401	headword_line	སྟོང་འཁྱིལ་མ་	stoṅ khyil ma	high	2	0	0	0	སྟོང་འཁྱིལ་མ་ stoṅ ’khyil ma npr. cine tan-
 952	102	10401	german_prose			none	0	1	0	0	trische Gottheit.
 952	104	10401	german_prose			none	0	3	0	0	Lex. sahasrävartä (Mvy 4294).
-952	106	10401	tibetan_only	སྟོང་གྲོགས་		none	0	0	0	0	སྟོང་གྲོགས་ ston grogs 4570715 grogS.
+952	106	10401	tibetan_only	སྟོང་གྲོགས་	stoṅ	high	0	0	0	0	སྟོང་གྲོགས་ stoṅ grogs 4570715 grogS.
 952	108	10401	other			none	0	0	0	0	154
-952	110	10402	headword_line	སྟོང་སྒྲ་	sgra	medium	1	0	0	0	སྟོང་སྒྲ་ ston sgra
+952	110	10402	headword_line	སྟོང་སྒྲ་	stoṅ sgra	high	1	0	0	0	སྟོང་སྒྲ་ stoṅ sgra
 952	112	10403	headword_line	རྟོང་སྒྲ་	stoṅ sgra	high	2	1	0	0	རྟོང་སྒྲ་ stoṅ sgra schallender Laut.
 952	114	10403	german_prose_with_translit			none	1	1	0	0	jo rus g.yu bya’i rna bar Zal gtugs te ki ~ grags
 952	115	10403	german_prose_with_translit			none	1	2	0	0	pa gsum byas „Jo-ru legte seinen Mund auf
@@ -138483,7 +138483,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	135	10404	german_prose			none	0	2	0	0	soll man rezitieren“ (Nagdel 74,16).
 952	137	10404	german_prose_with_translit			none	3	2	0	0	Lex. ston chen mos (v. |. po) rab tu ’joms pa
 952	138	10404	german_prose			none	0	2	0	0	> mahäsahasrapramardanam (Mvy 1395).
-952	140	10405	headword_line	སྟོང་མཆོད་	mchod	medium	1	1	0	0	སྟོང་མཆོད་ ston mchod Tausendopfer.
+952	140	10405	headword_line	སྟོང་མཆོད་	stoṅ mchod	high	1	1	0	0	སྟོང་མཆོད་ stoṅ mchod Tausendopfer.
 952	142	10405	german_prose_with_translit			none	3	3	0	0	ra che’! ~ kyi ’bru „an [Opfer]getreide für
 952	143	10405	german_prose			none	0	4	0	0	das Tausendopfer in Ra-mo-che“ (MIH
 952	144	10405	german_prose			none	0	1	0	0	3/3/39 1); bsam yas ~ reyas ’brin bsdus „das
@@ -138502,12 +138502,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	158	10405	german_prose			none	0	3	0	0	zögern folgendes Lied“ (Sumpa 7446).
 952	160	10405	tibetan_only	སྟོང་སྡེ་		none	0	0	0	0	སྟོང་སྡེ་ stor sde
 952	162	10405	tibetan_only	༢༩༡		none	0	0	0	0	༢༩༡
-952	164	10405	tibetan_only	སྟོང་ཉིད་		none	0	0	0	0	སྟོང་ཉིད་ ston nid [6702 2.
+952	164	10405	tibetan_only	སྟོང་ཉིད་	stoṅ	high	0	0	0	0	སྟོང་ཉིད་ stoṅ nid [6702 2.
 952	166	10405	example_tibetan_latin	སྟོང་གཉིས་པ་བར་མ་		none	2	1	0	0	སྟོང་གཉིས་པ་བར་མ་ ston 07/5 pa bar ma ein
 952	167	10405	german_prose			none	0	1	0	0	Weltbereich.
 952	168	10405	german_prose_with_translit			none	2	2	0	0	Lex. -7 ig rten gyi kbams = dvisähasro
 952	169	10405	german_prose_with_translit			none	2	1	0	0	madhyamo lokadhätuh (Mvy 3043).
-952	171	10405	tibetan_only	སྟོང་གཉེར་		none	0	4	0	0	སྟོང་གཉེར་ ston 97707ˆ Verwalter für das Tau-
+952	171	10405	tibetan_only	སྟོང་གཉེར་	stoṅ	high	0	4	0	0	སྟོང་གཉེར་ stoṅ 97707ˆ Verwalter für das Tau-
 952	172	10405	other			none	0	0	0	0	sendopfer.
 952	173	10405	german_prose_with_translit			none	3	2	0	0	> dan lag g.yog gad pa sogs la „Verwalter für
 952	174	10405	german_prose			none	0	5	0	0	das Tausendopfer, Diener und Kehrer
@@ -138515,11 +138515,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	176	10405	german_prose_with_translit			none	4	7	0	0	dan = bcas la sprod dgos „man muß den Dienern eines Thronhalters und dem Verwal-
 952	178	10405	german_prose			none	0	2	0	0	ter der Tausendopfer [folgendes] geben“
 952	179	10405	other			none	0	0	0	0	(MTH3/3/42 12).
-952	181	10405	example_tibetan_latin	སྟོང་སྟེགས་		none	1	2	0	0	སྟོང་སྟེགས་ ston $77005 für nichts und wieder
+952	181	10405	example_tibetan_latin	སྟོང་སྟེགས་	stoṅ	high	1	2	0	0	སྟོང་སྟེགས་ stoṅ $77005 für nichts und wieder
 952	183	10405	latin_other			none	1	0	0	0	nichts nachlaufen.
 952	185	10405	german_prose_with_translit			none	6	2	0	0	Lex. rdzun tshig gi rjes su ’ded pa po „einer,
 952	186	10405	german_prose_with_translit			none	1	3	0	0	der einer Lüge nachjagt“ (brDa).
-952	188	10406	headword_line	སྟོང་མཐའ་	mtha’	high	1	4	0	0	སྟོང་མཐའ་ ston mtha’ Bez. für den Neumond,
+952	188	10406	headword_line	སྟོང་མཐའ་	stoṅ mtha’	high	1	4	0	0	སྟོང་མཐའ་ stoṅ mtha’ Bez. für den Neumond,
 952	189	10406	german_prose			none	0	4	0	0	den 30. Tag im Monat.
 952	191	10406	german_prose_with_translit			none	1	2	0	0	Lex. gnam gan (brDa, Dagy).
 952	193	10406	german_prose_with_translit			none	1	1	0	0	SEISIS TI ston gdags pa nützlich, behilf-
@@ -138530,13 +138530,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 952	200	10407	example_tibetan_latin			none	1	4	0	0	> ཧུ དཱ Gottheit der Bon po, auch
 952	201	10407	german_prose_with_translit			none	2	2	0	0	sTon-bdud dmar-po, identisch mit bDud-
 952	202	10407	german_prose_with_translit			none	2	1	0	0	rje ston-bdud? (Neb 275).
-952	204	10408	headword_line	སྟོང་བདད་ཚེ་བད་	bdnd tsbe bdag	high	3	1	0	0	"སྟོང་བདད་ཚེ་བད་ ""ston bdnd tsbe bdag eine"
+952	204	10408	headword_line	སྟོང་བདད་ཚེ་བད་	stoṅ bdnd tsbe bdag	high	3	1	0	0	"སྟོང་བདད་ཚེ་བད་ ""stoṅ bdnd tsbe bdag eine"
 952	205	10408	german_prose			none	0	1	0	0	» Gottheit (SCHWIEGER
 952	206	10408	german_prose			none	0	1	0	0	1985: XIII, Nr. 258).
-952	208	10408	tibetan_only	སྟོང་སྡེ་		none	0	2	0	0	སྟོང་སྡེ་ ston sde Tausendschaft, Tausend-
+952	208	10408	tibetan_only	སྟོང་སྡེ་	stoṅ	high	0	2	0	0	སྟོང་སྡེ་ stoṅ sde Tausendschaft, Tausend-
 952	209	10408	latin_other			none	1	0	0	0	schaftsdistrikt.
 952	211	10408	german_prose_with_translit			none	3	1	0	0	bla nas ~$ btsig phar „er wird wieder von
-953	1	10409	headword_line	སྟོང་པ་	pa	medium	1	0	0	0	སྟོང་པ་ ston pa
+953	1	10409	headword_line	སྟོང་པ་	stoṅ pa	high	1	0	0	0	སྟོང་པ་ stoṅ pa
 953	3	10409	german_prose_with_translit			none	1	1	0	0	oben durch den Tausendschaftsdistrikt
 953	4	10409	latin_other			none	2	0	0	0	"aufgebaut“ (1315 4); ""7 gle’u thogsla „sie"
 953	5	10409	german_prose			none	0	2	0	0	nahmen die kleinen, unbebauten Flächen
@@ -138557,21 +138557,21 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	24	10411	german_prose			none	0	1	0	0	gnis (Neb 226).
 953	26	10411	example_tibetan_latin	སྟོང་དཔོཿ དྲ་ག་ཝལཱ་་		none	2	1	0	0	སྟོང་དཔོཿ དྲ་ག་ཝལཱ་་ $5077 dpon dgra lha eine zorn-
 953	27	10411	tibetan_only			none	0	2	0	0	> ནད 5 volle Gottheit (Neb 333).
-953	29	10412	headword_line	སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་	dgra lha	high	2	0	0	0	སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་ ston dpon dgra lha reyal
+953	29	10412	headword_line	སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་	stoṅ	high	2	0	0	0	སྟོང་དཔོན་དགྲ་ལྷ་རྒྱལ་ stoṅ dpon dgra lha reyal
 953	31	10412	german_prose			none	0	4	0	0	eine Gottheit, gehört mit
 953	33	10412	german_prose_with_translit			none	2	1	0	0	rDo-rje legs-pa u.a. zu „the four orders of
 953	34	10412	german_prose			none	0	1	0	0	treasure-guards“ (Neb 154 f.).
-953	36	10413	headword_line	སྟོང་སྤྱི་ཕུད་	spyi phud	high	2	2	0	0	སྟོང་སྤྱི་ཕུད་ ston spyi phud ein Weltbereich.
+953	36	10413	headword_line	སྟོང་སྤྱི་ཕུད་	stoṅ spyi phud	high	2	2	0	0	སྟོང་སྤྱི་ཕུད་ stoṅ spyi phud ein Weltbereich.
 953	38	10413	german_prose_with_translit			none	4	2	0	0	Lex. ~ kyi ig rten gyi khams & sähasracädiko
 953	39	10413	german_prose_with_translit			none	3	1	0	0	lokadhätuh (Mvy 3042); ston dan po’i ’jig
 953	40	10413	german_prose_with_translit			none	5	1	0	0	rten gyl khams (Dagy); ~ bdag po = sten gi
 953	41	10413	german_prose_with_translit			none	2	3	0	0	phyogs skyon „der Schützer des Zenits (?)“
 953	42	10413	latin_other			none	1	0	0	0	(brDa).
-953	44	10414	headword_line	སྟོང་ཕྲག་	phrag V'ston	high	2	0	0	0	སྟོང་ཕྲག་ ston phrag V'ston.
-953	46	10415	headword_line	སྟོང་འྲོ་བ་	phro ba	high	2	3	0	0	སྟོང་འྲོ་བ་ ston ’phro ba Bez. für Sonne.
+953	44	10414	headword_line	སྟོང་ཕྲག་	stoṅ phrag V'ston	high	2	0	0	0	སྟོང་ཕྲག་ stoṅ phrag V'ston.
+953	46	10415	headword_line	སྟོང་འྲོ་བ་	stoṅ phro ba	high	2	3	0	0	སྟོང་འྲོ་བ་ stoṅ ’phro ba Bez. für Sonne.
 953	47	10415	german_prose_with_translit			none	3	2	0	0	Lex. ni ma’i min (brDa, Dagy).
 953	49	10415	other			none	0	0	0	0	156
-953	51	10415	tibetan_only	སྟོང་སང་		none	0	0	0	0	སྟོང་སང་ ston san
+953	51	10415	tibetan_only	སྟོང་སང་	stoṅ	high	0	0	0	0	སྟོང་སང་ stoṅ san
 953	53	10415	other			none	0	0	0	0	vv.
 953	55	10415	german_prose			none	0	1	0	0	ERIET ston bu chun kleine Tausendschaft.
 953	56	10415	tibetan_only	༄༣༄		none	0	0	0	0	༄༣༄
@@ -138580,7 +138580,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	60	10415	latin_other			none	6	0	0	0	lṅa ste / bzi beu rtsa bdun yod pa’i / bod kyi
 953	61	10415	german_prose_with_translit			none	2	4	0	0	rgyal khams ... ’di „dieses tbetische Königreich, das fünf kleine Tausendschaften
 953	63	10415	german_prose			none	0	2	0	0	[u.a.], insgesamt 47 umfaßste“ (Nel 2b1).
-953	65	10416	headword_line	སྟོང་འབྱམ་	byam Inhaltsloses	high	2	0	0	0	སྟོང་འབྱམ་ ston ’byam Inhaltsloses.
+953	65	10416	headword_line	སྟོང་འབྱམ་	stoṅ byam Inhaltsloses	high	2	0	0	0	སྟོང་འབྱམ་ stoṅ ’byam Inhaltsloses.
 953	67	10416	latin_other			none	5	0	0	0	la la ~ lhags pa 'gam „manche schlucken so
 953	68	10416	german_prose_with_translit			none	1	1	0	0	etwas Inhaltsloses wie Wind“ (dPe 317,3).
 953	70	10417	headword_line	སྟོང་ཐྲད་	stoṅ	high	1	0	0	0	སྟོང་ཐྲད་ stoṅ zad sinnlos.
@@ -138602,7 +138602,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	93	10419	german_prose_with_translit			none	5	1	0	0	Lex. rtsa lam sbyon ba’! son du bsgom bya
 953	94	10419	german_prose_with_translit			none	1	5	0	0	Zig „eine Meditation vor der Reinigung der
 953	96	10419	german_prose			none	0	2	0	0	Kanäle“ (Dagy).
-953	98	10420	headword_line	སྟོང་ལམ་	Kreuzung	medium	1	0	0	0	སྟོང་ལམ་ ston lam Kreuzung.
+953	98	10420	headword_line	སྟོང་ལམ་	stoṅ	high	1	0	0	0	སྟོང་ལམ་ stoṅ lam Kreuzung.
 953	100	10420	german_prose_with_translit			none	2	1	0	0	» phrag gan chod „entscheide, wo die
 953	101	10420	german_prose_with_translit			none	1	1	0	0	Kreuzung ist!“ (sBa 65,11).
 953	103	10420	german_prose			none	0	1	0	0	Kerr ” z ± u) ..
@@ -138617,7 +138617,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	118	10422	german_prose			none	0	2	0	0	absolute Leere“ (Dagy); - ne = mi med
 953	119	10422	latin_other			none	3	0	0	0	khan pa - he lta bu „wie: menschenloses
 953	120	10422	german_prose_with_translit			none	1	1	0	0	Haus, absolut leer“ (brDa).
-953	122	10423	headword_line	སྟོང་གསུམ་	bzw	medium	1	0	0	0	སྟོང་གསུམ་ ston gsum dreitausend bzw. 1000),
+953	122	10423	headword_line	སྟོང་གསུམ་	stoṅ	high	1	0	0	0	སྟོང་གསུམ་ stoṅ gsum dreitausend bzw. 1000),
 953	123	10423	other			none	0	0	0	0	>
 953	125	10423	german_prose_with_translit			none	1	3	0	0	eine Milliarde; auch - ’jig rten,
 953	126	10423	german_prose_with_translit			none	4	3	0	0	Kurzf. für ~ gyi ston chen po’ ig rten gyi
@@ -138667,7 +138667,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	177	10423	latin_other			none	4	0	0	0	ri vab 77/ zla daṅ bcas pa bye ba phrag breya
 953	178	10423	german_prose			none	0	9	0	0	„eine Milliarde [Welten] mit vier Kontinenten, Merubergen, Sonnen und Mon-
 953	181	10423	german_prose			none	0	2	0	0	den“ (Dagy).
-953	183	10424	headword_line	སྟོང་གསུམ་རྒྱལ་བ་	rgyal ba	high	3	1	0	0	སྟོང་གསུམ་རྒྱལ་བ་ ston gsum rgyal ba npr. ein sa
+953	183	10424	headword_line	སྟོང་གསུམ་རྒྱལ་བ་	stoṅ	high	3	1	0	0	སྟོང་གསུམ་རྒྱལ་བ་ stoṅ gsum rgyal ba npr. ein sa
 953	184	10424	tibetan_only	༄ སཱ		none	0	0	0	0	༄ སཱ
 953	185	10424	latin_other			none	1	0	0	0	bdag (SCHUH 2012: 1398).
 953	187	10424	tibetan_latin_mixed	སོང་ སྔལས་འཇི ་ཌེན་ཁང་ག་ཁོ།།		none	1	0	0	0	སོང་ སྔལས་འཇི ་ཌེན་ཁང་ག་ཁོ།། ston 05//?? ig rten
@@ -171940,7 +171940,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1263	67	12754	german_prose			none	0	2	0	0	„wenn ich über eine einzige systematische
 1263	68	12754	latin_other			none	1	0	0	0	Bedeutung meditiere, wie sollte ich meditie-
 1263	69	12754	other			none	0	0	0	0	ren?“ (sBa 63,7).
-1263	71	12754	tibetan_only	དོན་སྟོང་		none	0	2	0	0	དོན་སྟོང་ don ston ohne Nutzen.
+1263	71	12754	tibetan_only	དོན་སྟོང་	stoṅ	high	0	2	0	0	དོན་སྟོང་ don stoṅ ohne Nutzen.
 1263	73	12754	latin_other			none	5	0	0	0	ma 'khod na / skyes bu’i ’gro — pa red „wenn
 1263	74	12754	german_prose			none	0	5	0	0	man es nicht tut, ist es ohne Nutzen für die
 1263	75	12754	german_prose			none	0	2	0	0	Lebewesen“ (Gesar 344,5).
@@ -172054,7 +172054,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1264	106	12758	german_prose			none	0	2	0	0	„wenn man relative und absolute Wahrheit
 1264	107	12758	german_prose_with_translit			none	1	1	0	0	unterscheidet“ (Hev 1.8.28c); kun rdzob kun
 1264	108	12758	latin_other			none	6	0	0	0	da lta bu ste / — bde ba’i gzugs can ma
-1265	1	12759	headword_line	དོན་དམ་པ་སྟོང་་	pa	medium	1	0	0	0	དོན་དམ་པ་སྟོང་་ don dam pa ston ...
+1265	1	12759	headword_line	དོན་དམ་པ་སྟོང་་	pa stoṅ	high	1	0	0	0	དོན་དམ་པ་སྟོང་་ don dam pa stoṅ ...
 1265	3	12759	german_prose			none	0	2	0	0	(metr.) „der konventionellen Wirklichkeit
 1265	4	12759	german_prose			none	0	4	0	0	nach ist sie wie ein Jasmin, der absoluten
 1265	5	12759	german_prose_with_translit			none	1	3	0	0	Wirklichkeit nach ist sie eine schöngestal-
@@ -172112,7 +172112,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1265	62	12760	german_prose			none	0	7	0	0	Zustand und auch für das Wahre“ (Dagy); —
 1265	63	12760	german_prose_with_translit			none	4	1	0	0	pa’i bden pa = paramārthasatyam (Mvy 6544,
 1265	64	12760	latin_other			none	1	0	0	0	sGra 256).
-1265	66	12761	headword_line	དོན་དམ་པ་སྟོང་པ་ཉིད་	pa	medium	2	0	0	0	དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa ston pa nid ei-
+1265	66	12761	headword_line	དོན་དམ་པ་སྟོང་པ་ཉིད་	pa stoṅ pa	high	2	0	0	0	དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa stoṅ pa nid ei-
 1265	68	12761	german_prose			none	0	2	0	0	ne der 18 Leerheiten.
 1265	70	12761	german_prose_with_translit			none	1	3	0	0	Lex. paramäarthasünyatä (Mvy 939, Abt. ston
 1265	71	12761	german_prose_with_translit			none	4	1	0	0	pa Aid bco brgyad kyi min; sGra 202).
@@ -173001,7 +173001,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1277	8	12823	german_prose			none	0	3	0	0	Untergewand, wie: Herrenhosen, Damen-
 1277	9	12823	german_prose_with_translit			none	1	3	0	0	hosen, und auch kurze Hosen“ (brDa); dor
 1277	10	12823	german_prose_with_translit			none	4	5	0	0	ma’i mthons sam dbyins „Öffnung oder Mitte der Hose“ (Dagy).
-1277	13	12824	headword_line	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་	ba	medium	3	0	0	0	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa ston pa nid
+1277	13	12824	headword_line	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་	ba	medium	3	0	0	0	དོར་བ་མེད་པ་སྟོང་པ་ཉིད་ dor ba med pa stoṅ pa nid
 1277	14	12824	german_prose			none	0	2	0	0	absolute Leerheit, eine
 1277	15	12824	german_prose			none	0	2	0	0	der 18 Leerheiten.
 1277	17	12824	german_prose_with_translit			none	2	2	0	0	Lex. anavakarasünyatä (sGra 207; Mvy 944,
@@ -177063,7 +177063,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1333	47	13065	german_prose_with_translit			none	1	2	0	0	das man in sechs geteilt hat“ (brDa); dum bu
 1333	48	13065	german_prose_with_translit			none	1	1	0	0	drug tn bgos pa’i cha (Dagy).
 1333	50	13065	tibetan_only	དྲུག་སྡེ་		none	0	0	0	0	དྲུག་སྡེ་ drug sde
-1333	52	13065	tibetan_only	དྲུག་སྟོང་		none	0	0	0	0	དྲུག་སྟོང་ drug ston sechstausend.
+1333	52	13065	tibetan_only	དྲུག་སྟོང་	stoṅ	high	0	0	0	0	དྲུག་སྟོང་ drug stoṅ sechstausend.
 1333	54	13065	latin_other			none	5	0	0	0	dge slon — po 'di dag ni ... de bZin gsegs pa ...
 1333	55	13065	german_prose			none	0	1	0	0	’gyur ro „diese sechstausend Mönche werden
 1333	56	13065	german_prose_with_translit			none	1	4	0	0	zu den Tathägatas werden“ (K10 kha 2667);
