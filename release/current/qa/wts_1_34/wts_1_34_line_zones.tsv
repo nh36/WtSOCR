@@ -8406,7 +8406,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 72	28	736	german_prose			none	0	2	0	0	(sammoha) werden, sie wird nicht zu einer
 72	29	736	latin_other			none	1	0	0	0	Nicht-Verblendung (asammoha) werden“
 72	30	736	german_prose			none	0	1	0	0	(Prav 97,15).
-72	32	737	headword_line	ཀུན་ཏུ་གཏོང་བ་	tu	medium	2	0	0	0	ཀུན་ཏུ་གཏོང་བ་ kun tu gton ba geben.
+72	32	737	headword_line	ཀུན་ཏུ་གཏོང་བ་	tu	medium	2	0	0	0	ཀུན་ཏུ་གཏོང་བ་ kun tu gtoṅ ba geben.
 72	33	737	latin_other			none	4	0	0	0	sems can don la ... srog kyan kun tu gton
 72	34	737	german_prose			none	0	2	0	0	(metr.) „er würde sogar [sein] Leben zum
 72	35	737	german_prose			none	0	3	0	0	Wohle der Lebewesen geben (samtyajet)“
@@ -9291,7 +9291,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 77	151	839	tibetan_only	ཀུན་ཏུ་བསག་		none	0	1	0	0	ཀུན་ཏུ་བསག་ £: £ 850g P
 77	152	840	headword_line	ཀུན་ཏུ་བསུང་	tu bsun	medium	2	2	0	0	ཀུན་ཏུ་བསུང་ kun tu bsun eine Blume.
 77	154	840	german_prose_with_translit			none	1	2	0	0	Lex. samantagandhah (Mvy 6192).
-77	156	840	tibetan_only	ཀུན་གཏོང་		none	0	0	0	0	ཀུན་གཏོང་ kun gton.
+77	156	840	tibetan_only	ཀུན་གཏོང་		none	0	0	0	0	ཀུན་གཏོང་ kun gtoṅ.
 77	158	840	other			none	0	0	0	0	83
 77	160	841	headword_line	ཀུན་བརྟགས	brtags	high	1	0	0	0	"ཀུན་བརྟགས ""kun brtags"
 77	162	841	german_prose			none	0	1	0	0	1. Verzicht.
@@ -19454,7 +19454,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 146	100	1822	german_prose			none	0	5	0	0	oder Vater und Mutter achten, preisen oder
 146	101	1822	german_prose_with_translit			none	1	2	0	0	verehren“ (brDa, ähnl. Dagy).
 146	103	1822	other			none	0	0	0	0	208
-146	105	1823	headword_line	བཀུལ་གཏོང་	bkul	medium	1	0	0	0	བཀུལ་གཏོང་ bkul gton
+146	105	1823	headword_line	བཀུལ་གཏོང་	bkul	medium	1	0	0	0	བཀུལ་གཏོང་ bkul gtoṅ
 146	107	1823	example_tibetan_latin	བཀུལ་གཏོང་		none	1	2	0	0	བཀུལ་གཏོང་ Drul 502 Anforderung [von
 146	108	1823	german_prose_with_translit			none	1	2	0	0	Dienstleistungen oder Abgaben].
 146	110	1823	latin_other			none	4	0	0	0	dmag mi phyogs thon skabs rta ’ulgcig dan dos
@@ -26048,7 +26048,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 189	154	2405	german_prose_with_translit			none	1	2	0	0	(brDa; ähnl. Dagy).
 189	156	2405	other			none	0	0	0	0	291
 189	158	2405	tibetan_only	སྐེག་		none	0	0	0	0	སྐེག་ skeg
-189	160	2406	headword_line	སྐེ་མིག་ལ་གཏོང་	la	medium	1	2	0	0	སྐེ་མིག་ལ་གཏོང་ ske mig la gton „Abschneiden des
+189	160	2406	headword_line	སྐེ་མིག་ལ་གཏོང་	la	medium	1	2	0	0	སྐེ་མིག་ལ་གཏོང་ ske mig la gtoṅ „Abschneiden des
 189	161	2406	german_prose			none	0	5	0	0	Halses und Blenden der Augen
 189	162	2406	german_prose_with_translit			none	1	2	0	0	veranlassen“, eine schwere Strafe verhängen.
 189	164	2406	latin_other			none	5	0	0	0	bka’ tham ’di don tar la rtsi ’jogma byas tshe
@@ -32141,7 +32141,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 229	157	2976	german_prose_with_translit			none	5	1	0	0	’gul du bcug pa’am dran du byed pa „bewegen lassen oder jmdn. erinnern“ (brDa).
 229	160	2977	headword_line	བསྐུལ་འགྲོ་	bskul	medium	1	1	0	0	བསྐུལ་འགྲོ་ bskul 7970 Schiff.
 229	161	2977	german_prose_with_translit			none	1	2	0	0	Lex. gru gzins (brDa, Dagy).
-229	163	2978	headword_line	བསྐུལ་གཏོང་	bskul	medium	2	1	0	0	བསྐུལ་གཏོང་ bskul gton Anforderung; irrt. Tbkul
+229	163	2978	headword_line	བསྐུལ་གཏོང་	bskul	medium	2	1	0	0	བསྐུལ་གཏོང་ bskul gtoṅ Anforderung; irrt. Tbkul
 229	165	2978	latin_other			none	1	0	0	0	gton ; — byed Anweisungen erteilen.
 229	167	2978	german_prose_with_translit			none	3	1	0	0	dos rta — ... mi chog pa’i tham ga „ein
 229	168	2978	german_prose_with_translit			none	2	4	0	0	Rechtsbrief, der die Anforderung von Last-
@@ -129619,7 +129619,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 895	121	9852	other			none	0	0	0	0	anderer rauben wollen“ (TTC).
 895	122	9852	german_prose_with_translit			none	1	1	0	0	3, Beiname Iśvaras.
 895	123	9852	german_prose_with_translit			none	3	2	0	0	Lex. !ha dban phyug gi min (Dagy).
-895	125	9852	tibetan_only	གཏོང་		none	0	4	0	0	གཏོང་ gton pf. Ibtan fur. Tgtan imp. Ithonis.
+895	125	9852	tibetan_only	གཏོང་		none	0	4	0	0	གཏོང་ gtoṅ pf. Ibtan fur. Tgtan imp. Ithonis.
 895	126	9852	other			none	0	0	0	0	1. lassen, gehen lassen, aufgeben, verlassen;
 895	127	9852	german_prose			none	0	4	0	0	[Urin, Kot] ablassen, [Tränen] vergießen.
 895	128	9852	german_prose_with_translit			none	4	1	0	0	sems can rnams mi = ba dan „sie geben die
@@ -129645,7 +129645,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 895	148	9853	german_prose_with_translit			none	4	2	0	0	chu mdog sro la ~ ba (d)ka’ „der Urin hat
 895	149	9853	german_prose			none	0	7	0	0	eine grüne Farbe und das Ablassen ist
 895	151	9853	other			none	0	0	0	0	51
-895	153	9853	tibetan_only	གཏོང་		none	0	0	0	0	གཏོང་ gton
+895	153	9853	tibetan_only	གཏོང་		none	0	0	0	0	གཏོང་ gtoṅ
 895	155	9853	german_prose			none	0	1	0	0	schwierig“ (Hipp 185,12).
 895	157	9853	german_prose_with_translit			none	3	1	0	0	Lex. brtson pa mi ~ & aniksiptadhurah „jmd.,
 895	158	9853	german_prose			none	0	3	0	0	der seine Bürde nicht abwirft“ (Mvy 719);
@@ -129688,7 +129688,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 895	201	9853	latin_other			none	1	0	0	0	werden soll“ (MTH3/5/30 326); rde’u nad
 895	202	9853	german_prose_with_translit			none	4	2	0	0	khor ’bras - ba ste „Gallensteine und Ma-
 895	203	9853	latin_other			none	2	0	0	0	gengeschwüre schicken“ (mDzodG 63,19).
-896	1	9853	tibetan_only	གཏོང་		none	0	0	0	0	གཏོང་ gton
+896	1	9853	tibetan_only	གཏོང་		none	0	0	0	0	གཏོང་ gtoṅ
 896	3	9853	example_tibetan_latin			none	6	1	0	0	Lex. - ba & btan ma son na ༡༨ dgos lta bu
 896	4	9853	other			none	0	0	0	0	„wie: wenn etwas nicht gesandt wurde,
 896	5	9853	german_prose_with_translit			none	4	1	0	0	senden müssen“ (brDa); ~ ba ‰ btan ba’i
@@ -129780,7 +129780,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	103	9854	german_prose_with_translit			none	2	2	0	0	byas na mi ’thus pas „es ist nicht recht, daß
 896	104	9854	german_prose			none	0	4	0	0	für den privaten Viehbesitz Viehhüter-
 896	106	9854	german_prose			none	0	1	0	0	aufbürden“
-896	108	9855	headword_line	གཏོང་ཀྱོང་	gyon	medium	1	0	0	0	གཏོང་ཀྱོང་ gton gyon
+896	108	9855	headword_line	གཏོང་ཀྱོང་	gyon	medium	1	0	0	0	གཏོང་ཀྱོང་ gtoṅ gyon
 896	110	9855	german_prose			none	0	4	0	0	lagerplätze errichtet werden und [das Vieh]
 896	111	9855	latin_other			none	1	0	0	0	geweidet wird“ (MTH3/5/8 6); grub pa’i
 896	112	9855	german_prose_with_translit			none	5	4	0	0	mtha’ la rmod pa - (metr.) „die Lehrmeinung schmähen“ (Magy 5b8); Zags pa’!
@@ -129800,11 +129800,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	131	9855	german_prose_with_translit			none	3	2	0	0	Lex. dban byed - dan rjes su brise = krpä
 896	132	9855	german_prose			none	0	2	0	0	dayänukampä (Ak 51.193).
 896	134	9855	other			none	0	0	0	0	deinen
-896	136	9856	headword_line	གཏོང་ཀྱོང་	gyon	medium	1	1	0	0	གཏོང་ཀྱོང་ gton gyon Verlust.
+896	136	9856	headword_line	གཏོང་ཀྱོང་	gyon	medium	1	1	0	0	གཏོང་ཀྱོང་ gtoṅ gyon Verlust.
 896	138	9856	german_prose_with_translit			none	4	2	0	0	Hams thag khar ... » che ba „angesichts der
 896	139	9856	german_prose			none	0	4	0	0	Hilflosigkeit besteht der große Verlust“
 896	140	9856	other			none	0	0	0	0	(MTH3/5/20 15).
-896	142	9856	tibetan_only	གཏོང་སྒེ་		none	0	2	0	0	གཏོང་སྒེ་ gton sgo Unkosten, Ausgaben.
+896	142	9856	tibetan_only	གཏོང་སྒེ་		none	0	2	0	0	གཏོང་སྒེ་ gtoṅ sgo Unkosten, Ausgaben.
 896	144	9856	german_prose_with_translit			none	4	1	0	0	rtswa rin dan = sogs rgyas mi khebs pas „die
 896	145	9856	german_prose			none	0	4	0	0	Weidegebühr und die Unkosten usw.
 896	146	9856	other			none	0	0	0	0	wurden nicht abgedeckt“ (MTH3/5/15 6);
@@ -129817,7 +129817,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	154	9856	german_prose_with_translit			none	1	2	0	0	Getreide] aus dem Vorratsraum usw.
 896	155	9856	german_prose_with_translit			none	1	1	0	0	geben“ (Dagy); gton yon = - dan yon 'bab
 896	156	9856	german_prose			none	0	4	0	0	„Ausgabe und Einnahme“ (Dagy).
-896	158	9857	headword_line	གཏོང་ཐེབས་	thebs	high	1	2	0	0	གཏོང་ཐེབས་ gton thebs Ausgaben, Kapitalien
+896	158	9857	headword_line	གཏོང་ཐེབས་	thebs	high	1	2	0	0	གཏོང་ཐེབས་ gtoṅ thebs Ausgaben, Kapitalien
 896	160	9857	german_prose_with_translit			none	1	1	0	0	bzw. Finanzierungsgrundlage für
 896	161	9857	german_prose			none	0	2	0	0	die Ausgaben.
 896	162	9857	german_prose_with_translit			none	4	1	0	0	dge rgyun = fer mkho sgr[u]b byed „die
@@ -129832,7 +129832,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	174	9858	german_prose_with_translit			none	2	1	0	0	Fortführung der Opferdarreichung“
 896	175	9858	german_prose_with_translit			none	3	4	0	0	(MTH3/5/24 14); ~ sems can rnams „Lebewesen, die die Finanzierungsgrundlage für
 896	178	9858	german_prose			none	0	3	0	0	die Ausgaben sind“ (MTH3/5/25 11).
-896	180	9859	headword_line	གཏོང་དང་ལྡན་པ་	daṅ ldan pa	high	3	1	0	0	གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton
+896	180	9859	headword_line	གཏོང་དང་ལྡན་པ་	daṅ ldan pa	high	3	1	0	0	གཏོང་དང་ལྡན་པ་ gtoṅ daṅ ldan pa auch gtoṅ
 896	181	9859	german_prose_with_translit			none	4	1	0	0	ldan, gton ba dan Ildan pa
 896	182	9859	german_prose			none	0	1	0	0	freigebig, spendenfreudig, großzügig.
 896	184	9859	latin_other			none	3	0	0	0	gton ba daṅ ldan par 'gyur „sie werden spen-
@@ -129845,13 +129845,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	192	9859	latin_other			none	4	0	0	0	1.2.450); gton ldan sems sioms bden brtson
 896	193	9859	german_prose_with_translit			none	3	2	0	0	bzod dan ldan (metr.) „freigebig, gleichmütig, wahrheitsliebend und geduldig“
 896	195	9859	german_prose			none	0	1	0	0	(Ahs 1.4.36c).
-896	197	9859	tibetan_only	གཏོང་དེབ་		none	0	3	0	0	གཏོང་དེབ་ gton deb Buch über Ausgaben.
+896	197	9859	tibetan_only	གཏོང་དེབ་		none	0	3	0	0	གཏོང་དེབ་ gtoṅ deb Buch über Ausgaben.
 896	199	9859	german_prose_with_translit			none	2	2	0	0	~ sogs kyi nani dwan kha gsal mi ’dug „in den
 896	200	9859	german_prose			none	0	4	0	0	Büchern über die Ausgaben usw. liegt
 896	201	9859	latin_other			none	1	0	0	0	keine klare Formulierung [hierzu] vor“
 896	202	9859	other			none	0	0	0	0	(MTH3/5/30 a47).
-896	204	9860	headword_line	གཏོང་ལྡན་	ldan	medium	4	0	0	0	གཏོང་ལྡན་ gton ldan tgton dan ldan pa.
-896	206	9861	headword_line	གཏོང་ཕོགས་	phogs	high	1	1	0	0	གཏོང་ཕོགས་ gton phogs auszugebende Gehäl-
+896	204	9860	headword_line	གཏོང་ལྡན་	ldan	medium	4	0	0	0	གཏོང་ལྡན་ gtoṅ ldan tgton dan ldan pa.
+896	206	9861	headword_line	གཏོང་ཕོགས་	phogs	high	1	1	0	0	གཏོང་ཕོགས་ gtoṅ phogs auszugebende Gehäl-
 896	207	9861	german_prose_with_translit			none	1	3	0	0	ter, Gehalt für die Bestreitung
 896	208	9861	german_prose			none	0	2	0	0	der Unkosten.
 896	210	9861	latin_other			none	3	0	0	0	don ri khrod khag gi ~ dus sprod med pas
@@ -129863,8 +129863,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 896	216	9861	german_prose_with_translit			none	2	2	0	0	die Fortführung der Opferdarreichungen
 896	217	9861	german_prose			none	0	3	0	0	der Klöster verwendet werden muß“
 896	218	9861	other			none	0	0	0	0	(MTH3/5/31 19).
-897	1	9862	headword_line	གཏོང་ཁོད་	phod	high	1	0	0	0	གཏོང་ཁོད་ gton phod
-897	3	9863	headword_line	གཏོང་ཕོད་	phod	high	1	0	0	0	གཏོང་ཕོད་ gton phod freigebig.
+897	1	9862	headword_line	གཏོང་ཁོད་	phod	high	1	0	0	0	གཏོང་ཁོད་ gtoṅ phod
+897	3	9863	headword_line	གཏོང་ཕོད་	phod	high	1	0	0	0	གཏོང་ཕོད་ gtoṅ phod freigebig.
 897	5	9863	latin_other			none	2	0	0	0	gan zig =... de la... dpal grogs rnams ... rjes
 897	6	9863	german_prose_with_translit			none	1	2	0	0	su ’bran (metr.) „wer freigebig ist, dem
 897	7	9863	german_prose			none	0	4	0	0	folgen Glück und Freunde nach“ (Ps 503);
@@ -129879,7 +129879,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	17	9863	german_prose_with_translit			none	3	1	0	0	pa’t sbyin gton can (Dagy); giod kha chun
 897	18	9863	german_prose_with_translit			none	6	1	0	0	ba ni ’khos kha chun ba = chun ba (KlonD
 897	19	9863	other			none	0	0	0	0	733,6).
-897	21	9864	headword_line	གཏོང་བ་	ba	medium	1	0	0	0	གཏོང་བ་ gton ba.
+897	21	9864	headword_line	གཏོང་བ་	ba	medium	1	0	0	0	གཏོང་བ་ gtoṅ ba.
 897	22	9864	german_prose			none	0	1	0	0	1. Igton.
 897	23	9864	german_prose			none	0	1	0	0	2. Freigebigkeit.
 897	24	9864	german_prose_with_translit			none	5	2	0	0	Zes pa füd kyi nag ’di la / = khyad ’phags legs
@@ -129891,7 +129891,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	32	9865	german_prose			none	0	4	0	0	Freigebigkeit; eine der Trjes dran drug.
 897	33	9865	german_prose_with_translit			none	1	3	0	0	Lex. tyaganusmrtib (Mvy 1153, Abt. rjes su
 897	34	9865	latin_other			none	2	0	0	0	dran pa drug gi min).
-897	36	9866	headword_line	གཏོང་བ་དང་ལྡན་པ་	ba daṅ ldan pa	high	4	0	0	0	གཏོང་བ་དང་ལྡན་པ་ gton ba daṅ ldan pa 19/0/
+897	36	9866	headword_line	གཏོང་བ་དང་ལྡན་པ་	ba daṅ ldan pa	high	4	0	0	0	གཏོང་བ་དང་ལྡན་པ་ gtoṅ ba daṅ ldan pa 19/0/
 897	37	9866	latin_other			none	3	0	0	0	dan ldan pa
 897	39	9866	tibetan_only			none	0	0	0	0	vg = DL ” ༤. རི ༤
 897	40	9866	tibetan_only	གཏང་ བའ ནོར་		none	0	3	0	0	གཏང་ བའ ནོར་ gton ༼/¢'/7 nor Besitz der Frei-
@@ -129905,8 +129905,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	54	9866	german_prose_with_translit			none	1	3	0	0	Lex. tyägädhisthänam (Mvy 1582, Abt. byin
 897	55	9866	latin_other			none	3	0	0	0	gyis brlabs pa bi’ min).
 897	57	9866	other			none	0	0	0	0	54
-897	59	9866	tibetan_only	གཏོང་ཡོང་		none	0	0	0	0	གཏོང་ཡོང་ gton yon
-897	61	9867	headword_line	གཏོང་བྱེད་	byed	medium	1	2	0	0	གཏོང་བྱེད་ 'gton byed Ausgaben; hier: Lebens-
+897	59	9866	tibetan_only	གཏོང་ཡོང་		none	0	0	0	0	གཏོང་ཡོང་ gtoṅ yon
+897	61	9867	headword_line	གཏོང་བྱེད་	byed	medium	1	2	0	0	གཏོང་བྱེད་ 'gtoṅ byed Ausgaben; hier: Lebens-
 897	63	9867	other			none	0	0	0	0	unterhalt.
 897	65	9867	latin_other			none	6	0	0	0	phyir log ma 'byor bar = spyi sa nas btani rgyu
 897	66	9867	german_prose			none	0	3	0	0	„bis zu ihrer Rückkehr ist ihr
@@ -129917,12 +129917,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	73	9867	german_prose_with_translit			none	3	1	0	0	Lex. rlun dan rlun lha (brDa).
 897	74	9867	german_prose			none	0	2	0	0	2. Beiname Visnus.
 897	76	9867	german_prose_with_translit			none	2	1	0	0	Lex. khyab ?//¢ (brDa).
-897	78	9868	headword_line	གཏོང་མ་	ma	medium	1	1	0	0	གཏོང་མ་ gton ma Beute,
+897	78	9868	headword_line	གཏོང་མ་	ma	medium	1	1	0	0	གཏོང་མ་ gtoṅ ma Beute,
 897	80	9868	other			none	0	0	0	0	» med par ston log tn ’gro ıma myon bas „weil
 897	81	9868	german_prose_with_translit			none	1	4	0	0	es noch nie so war, daß man ohne Beute
 897	82	9868	german_prose			none	0	3	0	0	mit leeren [Händen] umkehrt“ (Gesar
 897	83	9868	other			none	0	0	0	0	224,8).
-897	85	9868	tibetan_only	གཏོང་གཞི་		none	0	4	0	0	གཏོང་གཞི་ gton 0277 Grundlage für die Bestrei-
+897	85	9868	tibetan_only	གཏོང་གཞི་		none	0	4	0	0	གཏོང་གཞི་ gtoṅ 0277 Grundlage für die Bestrei-
 897	87	9868	german_prose_with_translit			none	2	2	0	0	tung von Ausgaben, Aufstellung
 897	88	9868	german_prose_with_translit			none	1	3	0	0	über die Finanzgrundlage, Dienstleistung.
 897	90	9868	latin_other			none	4	0	0	0	gton bźi (7. gZi) ggams du bstan (r. gtan) ’khel
@@ -129943,17 +129943,17 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	105	9868	german_prose_with_translit			none	1	4	0	0	heiten [für den Unterhalt] der Amtsträger
 897	106	9868	german_prose_with_translit			none	1	2	0	0	eine vollständige Steuerfreistellung“ (MTH
 897	107	9868	other			none	0	0	0	0	3/5/25 14).
-897	109	9868	tibetan_only	གཏོང་ཡོང་		none	0	3	0	0	གཏོང་ཡོང་ gton yon Einnahmen und Aus-
+897	109	9868	tibetan_only	གཏོང་ཡོང་		none	0	3	0	0	གཏོང་ཡོང་ gtoṅ yon Einnahmen und Aus-
 897	111	9868	other			none	0	0	0	0	gaben.
 897	113	9868	german_prose_with_translit			none	2	2	0	0	bton (r. gton) yon ga ’dzol „die Einnahmen
-897	115	9868	tibetan_only	གཏོང་ ལུགས་		none	0	1	0	0	གཏོང་ ལུགས་ gton Iugs
+897	115	9868	tibetan_only	གཏོང་ ལུགས་		none	0	1	0	0	གཏོང་ ལུགས་ gtoṅ Iugs
 897	117	9868	german_prose			none	0	4	0	0	und Ausgaben sind unausgeglichen“
 897	118	9868	other			none	0	0	0	0	(MTH3/3/17 4);
 897	119	9868	german_prose_with_translit			none	1	2	0	0	Lex. gtor sgo dan yon 'bab (Dagy).
 897	121	9868	tibetan_only	༢		none	0	0	0	0	༢
 897	123	9869	headword_line	གཏོང་ལུགས་ ༠༠༩	Umrechnungsmethode	high	1	0	0	0	གཏོང་ལུགས་ ༠༠༩ lugs Umrechnungsmethode
 897	125	9869	other			none	0	0	0	0	(SCHUH 2012: 1392).
-897	127	9869	tibetan_only	གཏོང་ལེན་		none	0	1	0	0	གཏོང་ལེན་ gton len Übergabe, - /797/7/7 schik-
+897	127	9869	tibetan_only	གཏོང་ལེན་		none	0	1	0	0	གཏོང་ལེན་ gtoṅ len Übergabe, - /797/7/7 schik-
 897	129	9869	other			none	0	0	0	0	ken.
 897	131	9869	tibetan_latin_mixed			none	5	0	0	0	sems can rigs lshig 'jug tsam ... ༨ boyis mi
 897	132	9869	german_prose_with_translit			none	1	2	0	0	chog pa „es ist nicht erlaubt, daß irgend-
@@ -129970,7 +129970,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	146	9869	german_prose_with_translit			none	1	4	0	0	077 gan rgya „Vertrag für die Braut-
 897	147	9869	latin_other			none	2	0	0	0	vermittlung“ (brDa).
 897	149	9869	other			none	0	0	0	0	wo
-897	151	9870	headword_line	གཏོང་སེམས་	sems	medium	1	0	0	0	གཏོང་སེམས་ gton sems freigiebig.
+897	151	9870	headword_line	གཏོང་སེམས་	sems	medium	1	0	0	0	གཏོང་སེམས་ gtoṅ sems freigiebig.
 897	153	9870	german_prose_with_translit			none	3	2	0	0	Lex. sbyin par bya 'dod kyi sems (Dagy).
 897	155	9870	tibetan_only	གཏོད་		none	0	3	0	0	གཏོད་ 'gtod pf. und fur. Tgtad, imp. gtod.
 897	157	9870	german_prose			none	0	3	0	0	1. übergeben, übertragen, anvertrauen, zu-

@@ -27960,3 +27960,32 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1189	26	12468	headword_line	rin	riṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུས་རིང་ dus rin auch — po, — mo, dus yun riṅ
 1239	47	12662	headword_line	rin	riṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེའི་རིང་ལ་ de’i rin la
 1239	76	12671	headword_line	rin	riṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེའི་རིང་ལ་ de’i rin la zu seiner Zeit, während-
+72	32	737	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་གཏོང་བ་ kun tu gton ba geben.
+77	156	840	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་གཏོང་ kun gton.
+146	105	1823	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀུལ་གཏོང་ bkul gton
+189	160	2406	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐེ་མིག་ལ་གཏོང་ ske mig la gton „Abschneiden des
+229	163	2978	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བསྐུལ་གཏོང་ bskul gton Anforderung; irrt. Tbkul
+895	125	9852	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ gton pf. Ibtan fur. Tgtan imp. Ithonis.
+895	153	9853	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ gton
+896	1	9853	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ gton
+896	108	9855	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཀྱོང་ gton gyon
+896	136	9856	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཀྱོང་ gton gyon Verlust.
+896	142	9856	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་སྒེ་ gton sgo Unkosten, Ausgaben.
+896	158	9857	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཐེབས་ gton thebs Ausgaben, Kapitalien
+896	180	9859	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton
+896	180	9859	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton
+896	197	9859	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་དེབ་ gton deb Buch über Ausgaben.
+896	204	9860	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ལྡན་ gton ldan tgton dan ldan pa.
+896	206	9861	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཕོགས་ gton phogs auszugebende Gehäl-
+897	1	9862	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཁོད་ gton phod
+897	3	9863	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཕོད་ gton phod freigebig.
+897	21	9864	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་བ་ gton ba.
+897	36	9866	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་བ་དང་ལྡན་པ་ gton ba daṅ ldan pa 19/0/
+897	59	9866	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཡོང་ gton yon
+897	61	9867	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་བྱེད་ 'gton byed Ausgaben; hier: Lebens-
+897	78	9868	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་མ་ gton ma Beute,
+897	85	9868	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་གཞི་ gton 0277 Grundlage für die Bestrei-
+897	109	9868	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཡོང་ gton yon Einnahmen und Aus-
+897	115	9868	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ ལུགས་ gton Iugs
+897	127	9869	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ལེན་ gton len Übergabe, - /797/7/7 schik-
+897	151	9870	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་སེམས་ gton sems freigiebig.

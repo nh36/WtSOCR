@@ -2511,6 +2511,29 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཀུན་རིན་ kun rin", corrected)
         self.assertEqual(sum(row["to_token"] == "riṅ" for row in changes), 2)
 
+    def test_reviewed_gtong_rows_change_only_exact_tokens(self) -> None:
+        lines = {
+            (895, 125): "གཏོང་ gton pf. Ibtan fur. Tgtan imp. Ithonis.",
+            (896, 180): "གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton",
+            (896, 204): "གཏོང་ལྡན་ gton ldan tgton dan ldan pa.",
+            (897, 59): "གཏོང་ཡོང་ gton yon",
+            (897, 61): "གཏོང་བྱེད་ 'gton byed Ausgaben; hier: Lebens-",
+            (897, 85): "གཏོང་གཞི་ gton 0277 Grundlage für die Bestrei-",
+            (897, 40): "གཏང་ བའ ནོར་ gton ༼/¢'/7 nor Besitz der Frei-",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("གཏོང་ gtoṅ pf. Ibtan fur. Tgtan imp. Ithonis.", corrected)
+        self.assertIn("gtoṅ daṅ ldan pa auch gtoṅ", corrected)
+        self.assertIn("gtoṅ ldan tgton daṅ ldan pa.", corrected)
+        self.assertIn("གཏོང་ཡོང་ gtoṅ yon", corrected)
+        self.assertIn("གཏོང་བྱེད་ 'gtoṅ byed", corrected)
+        self.assertIn("གཏོང་གཞི་ gtoṅ 0277", corrected)
+        self.assertIn("གཏང་ བའ ནོར་ gton ༼/¢'/7 nor", corrected)
+        self.assertEqual(sum(row["to_token"] == "gtoṅ" for row in changes), 7)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

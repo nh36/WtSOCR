@@ -5107,3 +5107,32 @@ wts_1_34	1189	12	3	rin	riṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_r
 wts_1_34	1189	26	2	rin	riṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	Frozen exact Tibetan རིང alignment at 3051b339; genuine རིན excluded.
 wts_1_34	1239	47	2	rin	riṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	Frozen exact Tibetan རིང alignment at 3051b339; genuine རིན excluded.
 wts_1_34	1239	76	2	rin	riṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	Frozen exact Tibetan རིང alignment at 3051b339; genuine རིན excluded.
+wts_1_34	72	32	3	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	77	156	2	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	146	105	2	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	189	160	4	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	229	163	2	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	895	125	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	895	153	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	1	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	108	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	136	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	142	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	158	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	180	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	197	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	204	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	206	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	1	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	3	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	21	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	36	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	59	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	61	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	78	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	85	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	109	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	115	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	127	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	897	151	1	gton	gtoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	Frozen exact Tibetan གཏོང alignment at 04d8c1a; only the indexed gton token changes.
+wts_1_34	896	180	6	gton	gtoṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gtong_same_entry_echo_batch_20260720	The expression after auch independently repeats the same གཏོང element.
