@@ -382,6 +382,7 @@ def build_same_entry_echo_rows(
             continue
         target, _count = forms.most_common(1)[0]
         line = row["context_excerpt"]
+        tibetan_syllables, _tail, _tail_start = tibetan_syllables_and_tail(line)
         aligned_index = int(row["token_index"])
         matches = list(POSTPROCESS_TOKEN_RE.finditer(line))
         for token_index, match in enumerate(matches, start=1):
@@ -396,7 +397,20 @@ def build_same_entry_echo_rows(
             seen.add(key)
             aligned_match = matches[aligned_index - 1]
             between = line[aligned_match.end():match.start()]
-            if source[:1] in {"T", "I", "\\", "/"}:
+            if (
+                token_index <= len(tibetan_syllables)
+                and aligned_index <= len(tibetan_syllables)
+                and tibetan_syllables[aligned_index - 1] == row["tibetan_syllable"]
+                and tibetan_syllables[token_index - 1] == row["tibetan_syllable"]
+                and not VISIBLE_DAMAGE_RE.search(between)
+            ):
+                category = "direct_repeated_tibetan_alignment"
+                status = "manual_review"
+                reason = (
+                    "The Tibetan headword and Latin phrase repeat the same "
+                    "syllable in the same position and order."
+                )
+            elif source[:1] in {"T", "I", "\\", "/"}:
                 category = "marker_attached"
                 status = "defer"
                 reason = "Marker reconstruction requires independent evidence."

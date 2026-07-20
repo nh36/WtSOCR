@@ -178,6 +178,24 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertEqual(rows[0]["additional_source_token"], "glan")
         self.assertEqual(rows[0]["echo_category"], "explicit_same_lemma_repetition")
 
+    def test_same_entry_echo_detects_direct_repeated_tibetan_alignment(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tདྲུང་ druṅ\n"
+                "1\t2\theadword_line\tདྲུང་དྲུང་ drun drun\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_same_entry_echo_rows(release)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(
+            rows[0]["echo_category"],
+            "direct_repeated_tibetan_alignment",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
