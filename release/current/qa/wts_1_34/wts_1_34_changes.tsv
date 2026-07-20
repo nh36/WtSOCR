@@ -28015,3 +28015,13 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 948	154	10374	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyon Beiname
 970	114	10593	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྟན་སྐྱོང་སྡེ་དགུ་ bstan skyon sde deu eine
 1156	24	12264	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་སྐྱོང་ duṅ skyon auch duṅ skyons npr. ein
+68	108	673	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་རྗེས་འབྱུང་ kun rjes 'byun eine abführende
+74	160	776	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་འབྱུང་བ་ kun tn ’byun ba
+74	212	782	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་འབྱུང་བ་ kun tu ’byun ba entstehen, auftre-
+77	180	844	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་རྟོག་འབྱུང་ kun rtog ’byun Liebesverlangen,
+81	136	913	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་འབྱུང་བ་ kun nas ’byun ba entstehen; vgl.
+83	156	961	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་འབྱུང་བ་ kun ’byun ba
+83	162	963	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་འབྱུང་ kun 'byun.
+83	182	964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
+83	182	964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
+126	189	1573	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོན་མཆོག་འབྱུང་གནས་ dkon mchog ’byun gnas.

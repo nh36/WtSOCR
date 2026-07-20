@@ -6362,3 +6362,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 176	60	1019	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འདུས་གླིང་ ""dus glin Versammlungsgebiet."
 79	13	463	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བདེ་གླིང་ bde gliṅ Kurzf. für bde chen glin pa
 476	14	2389	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནོར་སྐྱོང་ nor skyon.
+85	38	532	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode
+87	67	549	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བདེ་འབྱུང་ bde 'byun.
+848	44	4383	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྤྲིན་འབྱུང་ sprin 'byun.

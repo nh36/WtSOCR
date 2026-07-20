@@ -2972,3 +2972,16 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 68	56	323	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བལ་གླང་མོ་ bal glaṅ no auch ban glan mo Ele-
 328	8	1700	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བློ་བཟང་ blo bzan.
 444	56	2430	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབུམ་གླིང་ ""bum glin npr. ein Meditationgk ol."
+462	32	2522	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ byun.
+463	48	2524	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+464	1	2525	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+466	1	2527	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+466	47	2528	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ཁུངས་ "byun khuns
+469	46	2542	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་ "byun po
+470	1	2543	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་ཅན་ "byun po can
+470	23	2548	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་འཛིན་བྱེད་ "byun po 'dzin byed Bez. für
+470	46	2553	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོའི་རྟེན་མ་ "byun po'i rten ma auch '/))///3?
+470	62	2556	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོའི་བྱ་ "byun po'i bya "Vogel der '"byun-
+472	1	2565	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་བ་ཉིད་ byuh ba ñid
+472	14	2566	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་བ་ཉིད་ byuh ba ñid.
+473	1	2576	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ཚུལ་ "byun tshul

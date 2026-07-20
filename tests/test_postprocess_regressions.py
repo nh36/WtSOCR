@@ -2550,6 +2550,33 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("སྐྱོན་བཀལ་ skyon bkal", corrected)
         self.assertEqual(sum(row["to_token"] == "skyoṅ" for row in changes), 1)
 
+    def test_reviewed_abyung_preserves_prefix_punctuation_and_unprefixed_byun(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (83, 162): "ཀུན་འབྱུང་ kun 'byun.",
+                (83, 182): "ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,",
+            },
+            "wts_35_51": {
+                (85, 38): "བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode",
+                (600, 5): "རྣམ་བྱུང་ mam byun.",
+            },
+            "wts_8_b": {
+                (463, 48): 'འབྱུང་ "byun',
+            },
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+            self.assertTrue(all(row["to_token"] == "byuṅ" for row in changes))
+        self.assertIn("kun 'byuṅ.", outputs["wts_1_34"])
+        self.assertIn("kun ’byuṅ ba, vgl. !kun tu ’byuṅ ba", outputs["wts_1_34"])
+        self.assertIn("bde ba'i byuṅ gnas", outputs["wts_35_51"])
+        self.assertIn("རྣམ་བྱུང་ mam byun.", outputs["wts_35_51"])
+        self.assertIn('འབྱུང་ "byuṅ', outputs["wts_8_b"])
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
