@@ -1,0 +1,149 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	180	6	གཏོང	gton	gtoṅ	echo	explicit_same_lemma_repetition	none	གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	544	15	4	གཏོང	gton	gtoṅ	echo	uncertain	uncertain	སྤོད་གཏོང་ sbod gtoṅ Yrbod gton.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	72	32	3	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་གཏོང་བ་ kun tu gton ba geben.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	77	156	2	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	ཀུན་གཏོང་ kun gton.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	146	105	2	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	བཀུལ་གཏོང་ bkul gton
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	189	160	4	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	སྐེ་མིག་ལ་གཏོང་ ske mig la gton „Abschneiden des
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	229	163	2	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	བསྐུལ་གཏོང་ bskul gton Anforderung; irrt. Tbkul
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	895	125	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ gton pf. Ibtan fur. Tgtan imp. Ithonis.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	895	153	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ gton
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	1	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ gton
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	108	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཀྱོང་ gton gyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	136	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཀྱོང་ gton gyon Verlust.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	142	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་སྒེ་ gton sgo Unkosten, Ausgaben.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	158	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཐེབས་ gton thebs Ausgaben, Kapitalien
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	180	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	197	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་དེབ་ gton deb Buch über Ausgaben.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	204	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ལྡན་ gton ldan tgton dan ldan pa.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	896	206	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཕོགས་ gton phogs auszugebende Gehäl-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	1	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཁོད་ gton phod
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	3	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཕོད་ gton phod freigebig.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	21	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་བ་ gton ba.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	36	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་བ་དང་ལྡན་པ་ gton ba daṅ ldan pa 19/0/
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	59	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཡོང་ gton yon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	61	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་བྱེད་ 'gton byed Ausgaben; hier: Lebens-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	78	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་མ་ gton ma Beute,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	85	1	གཏོང	gton	gtoṅ	positional	damaged_context	latin_headword_overlap	གཏོང་གཞི་ gton 0277 Grundlage für die Bestrei-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	109	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ཡོང་ gton yon Einnahmen und Aus-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	115	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ ལུགས་ gton Iugs
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	127	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་ལེན་ gton len Übergabe, - /797/7/7 schik-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	897	151	1	གཏོང	gton	gtoṅ	positional	dominant_internal_consensus	none	གཏོང་སེམས་ gton sems freigiebig.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	1	2	དྲུང	drun	druṅ	echo	uncertain	uncertain	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	49	2	དྲུང	drun	druṅ	echo	uncertain	uncertain	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	3	8	དྲུང	drun	druṅ	echo	cross_reference_probable	none	དྲུང་ན་ drun na bei, an, auf, vor; vgl. !'drun 1.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	140	100	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	བཀའ་དྲུང་ bka’ drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	140	124	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	བཀའ་དྲུང་ bka’ drun Sekretär des Kabinetts.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	304	87	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	མཁན་དྲུང་ mkhan drun ein Titel.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	461	148	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	རྒྱ་དྲུང་ rgya drun Beamte an den indischen
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	784	33	3	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	ཉེ་བ་དྲུང་པོ་ ie ba drun po enger Vertrauter,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1335	9	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ 'drun auch druns.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1335	55	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་དུ་ drun du
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1335	66	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ ’drun 1272 po.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	1	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	1	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	49	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1336	49	2	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་དྲུང་ drun drun
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	1	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ན་ drun na
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	3	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ན་ drun na bei, an, auf, vor; vgl. !'drun 1.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	38	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ན་མོ་ drun na mo Gefolge.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	44	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་གནས་ drun gnas Gefolge.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	48	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་པ་ drun pa.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	64	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་པོ་ 'drun po einer, der nahebei ist, Berater.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	89	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་འབྱིན་ drun 'byin pf. Idruns phyun fur.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	96	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་འཚོ་བ་ drun ’tsho ba Bez. für Arzt.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1337	100	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ཡིག་ drun yig Schreiber, Sekretär, Bez. ©1-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1338	1	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1338	3	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po Sekretär der
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1338	7	1	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	དྲུང་རམ་པ་ drun ram pa Titel eines Gelehrten.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_9_m	199	73	4	དྲུང	drun	druṅ	positional	dominant_internal_consensus	none	"མུན་པའི་གཡུང་དྲུང་ mun pa g.yun drun ""Sva-"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	83	182	7	འབྱུང	byun	byuṅ	echo	cross_reference_probable	none	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	410	2	7	འབྱུང	byun	byuṅ	echo	uncertain	uncertain	ནད་འབྱུང་ nad 'byuṅ pf. ]/7:7/7 byun eine Krank-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	1013	54	4	འབྱུང	byun	byuṅ	echo	uncertain	uncertain	ཕྱིར་འབྱུང་ ppbyir 'byuṅ Tphyir byun wieder
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	470	62	6	འབྱུང	byun	byuṅ	echo	uncertain	uncertain	"འབྱུང་པོའི་བྱ་ ""byun po'i bya ""Vogel der '""byun-"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_9_m	212	82	4	འབྱུང	byun	byuṅ	echo	uncertain	uncertain	་འབྱུང་གནས་ me tog gi 'byun gnas npr.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	68	108	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་རྗེས་འབྱུང་ kun rjes 'byun eine abführende
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	74	160	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་འབྱུང་བ་ kun tn ’byun ba
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	74	212	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་འབྱུང་བ་ kun tu ’byun ba entstehen, auftre-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	77	180	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་རྟོག་འབྱུང་ kun rtog ’byun Liebesverlangen,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	81	136	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་ནས་འབྱུང་བ་ kun nas ’byun ba entstehen; vgl.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	83	156	2	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་འབྱུང་བ་ kun ’byun ba
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	83	162	2	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་འབྱུང་ kun 'byun.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	83	182	2	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	126	189	3	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	དཀོན་མཆོག་འབྱུང་གནས་ dkon mchog ’byun gnas.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	85	38	3	འབྱུང	byuh	byuṅ	positional	dominant_internal_consensus	none	བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	87	67	2	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	བདེ་འབྱུང་ bde 'byun.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	848	44	2	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	སྤྲིན་འབྱུང་ sprin 'byun.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	462	32	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	འབྱུང་ byun.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	463	48	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་ ""byun"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	464	1	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་ ""byun"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	466	1	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་ ""byun"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	466	47	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་ཁུངས་ ""byun khuns"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	469	46	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་པོ་ ""byun po"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	470	1	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་པོ་ཅན་ ""byun po can"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	470	23	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་པོ་འཛིན་བྱེད་ ""byun po 'dzin byed Bez. für"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	470	46	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་པོའི་རྟེན་མ་ ""byun po'i rten ma auch '/))///3?"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	470	62	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་པོའི་བྱ་ ""byun po'i bya ""Vogel der '""byun-"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	472	1	1	འབྱུང	byuh	byuṅ	positional	dominant_internal_consensus	none	འབྱུང་བ་ཉིད་ byuh ba ñid
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	472	14	1	འབྱུང	byuh	byuṅ	positional	dominant_internal_consensus	none	འབྱུང་བ་ཉིད་ byuh ba ñid.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_8_b	473	1	1	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"འབྱུང་ཚུལ་ ""byun tshul"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_9_m	158	18	4	འབྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	"མིག་གཙང་དགའ་འབྱུང་ mig gtsani dga’ ""byun npr."
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	52	81	3	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	119	1	3	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	དཀའ་གྲོས་ སྐྱོང་ dka’ gros skyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	121	100	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	དཀར་སྐྱོང་ dkar skyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	123	114	3	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	དཀར་ཕྱོགས་སྐྱོང་བའི་་ dkar phyogs skyon ba’i ...
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	124	33	4	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo duṅ skyon ma npr.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	217	151	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་ skyon pf. ibskyans fur. Ibskyan imp.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	217	159	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་ skyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	1	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་དར་ skyon dar
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	16	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་དར་ skyon dar Verantwortung.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	25	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་བ་པོ་ skyon ba po.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	38	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་བྱེད་ skyon byed Ernährer.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	41	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་མ་ skyon ma Mutter.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	218	44	1	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྐྱོང་རབ་ skyon rab Betreuung.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	286	1	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཀྱུ་སྐྱོང་ khyu skyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	286	21	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཏུ་སྐྱོང་ khyu skyon Hirte.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	450	3	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཞྱགས་སྐྱོང་ ’grus skyon für skt. nipaka klug, be-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	596	149	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	གཅེས་སྐྱོང་ gces skyon sich liebevoll, rück-
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	675	51	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཆོས་སྐྱོང chos skyon
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	675	58	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཆོས་སྐྱོང་ chos skyon.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	675	102	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཆོས་སྐྱོང་ཆེན་མོ་ chos skyon chen mo
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	675	108	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཆོས་སྐྱོང་ཆེན་མོ་ chos skyon chen mo der große
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	675	121	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ཆོས་སྐྱོང་བའི་རྒྱལ་པོ་ chos skyon ba’i rgyal po
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	724	60	3	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	འཇིག་རྟེན་སྐྱོང་ ig rten skyon auch ~ ba Bez.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	154	4	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyon Beiname
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	970	114	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	བརྟན་སྐྱོང་སྡེ་དགུ་ bstan skyon sde deu eine
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1156	24	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	དུང་སྐྱོང་ duṅ skyon auch duṅ skyons npr. ein
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	476	14	2	སྐྱོང	skyon	skyoṅ	positional	dominant_internal_consensus	none	ནོར་སྐྱོང་ nor skyon.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	114	4	སྟེང	sten	steṅ	echo	explicit_same_lemma_repetition	none	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	143	5	སྟེང	sten	steṅ	echo	uncertain	uncertain	སྟེང་གི་དགག་པ་ sten gi dgag pa \sten dgag.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	166	4	སྟེང	sten	steṅ	echo	explicit_same_lemma_repetition	none	སྟེང་དགག་ sten dgag auch sten gi dgag pa eine
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	197	5	སྟེང	sten	steṅ	echo	cross_reference_probable	none	སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	949	2	3	སྟེང	sten	steṅ	echo	uncertain	uncertain	སྟེང་ཕུར་ steṅ phur \sten 'phur.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1239	41	6	སྟེང	sten	steṅ	echo	damaged_reference	damaged_reference	དེའི་སྟེང་དུ་ de’i 5/©7 du 17༦ sten.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	157	52	2	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	རྐང་སྟེང་བུ་ rkaṅ sten bu Bez. des Polarsterns.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	257	153	2	སྟེང	steh	steṅ	positional	dominant_internal_consensus	none	ཁང་སྟེང་ khaṅ steh Obergeschoß, Dachterasse.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	947	58	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ sten
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	947	115	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ sten
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	947	167	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ sten
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	1	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་རྐང་ཅན་ sten rkaṅ can
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	55	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	"སྟེང་སྐྱེས ""sten skyes"
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	93	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་རྐང་ཅན་ sten rkaṅ can achtfüßiger Löwe,
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	100	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་སྐས་ sten skas Treppe, Leiter.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	104	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་སྐྱེས་ sten skyes.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	109	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ཁང་ sten khaṅ
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	114	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	143	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་གི་དགག་པ་ sten gi dgag pa \sten dgag.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	145	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་གི་འཇིག་རྟེན་ sten gi ’jig rten Bez. für die
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	153	1	སྟེང	sten	steṅ	positional	damaged_context	latin_headword_overlap	སྟེང་གི་ཐོག་ sten 07 thog Isten thog.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	154	1	སྟེང	steh	steṅ	positional	dominant_internal_consensus	none	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyon Beiname
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	157	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་གི་དབང་པོ་ sten gi dbaṅ po Beiname Visnus.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	164	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་པ་ sten pa
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	166	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་དགག་ sten dgag auch sten gi dgag pa eine
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	197	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	217	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ད་མཐོན་པ་ sten du mthon pa Bez. für frisch
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	948	225	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་པ་ sten pa Wald.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	949	71	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་གཡོགས་ sten g.yogs auch steṅ g.yog.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	949	87	1	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	སྟེང་ཤོད་ sten sod oben und unten, der obere
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_1_34	1208	51	2	སྟེང	sten	steṅ	positional	dominant_internal_consensus	none	དེ་སྟེང་ de sten auch de stens, de stens su, Kurzf.
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	wts_35_51	680	12	2	སྟེང	steh	steṅ	positional	dominant_internal_consensus	none	"པང་སྟེང་ pani steh Ypani eine hohe Zahl, 10""."
