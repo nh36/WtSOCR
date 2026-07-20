@@ -6361,3 +6361,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 835	59	4305	example_tibetan_latin	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ur > | སྤྱོད་པ་བཟང་པོ་ spyod pa bzan po npr. ein Bud. dha.
 176	60	1019	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འདུས་གླིང་ ""dus glin Versammlungsgebiet."
 79	13	463	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བདེ་གླིང་ bde gliṅ Kurzf. für bde chen glin pa
+476	14	2389	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནོར་སྐྱོང་ nor skyon.

@@ -2115,11 +2115,15 @@ class PostprocessRegressionTests(unittest.TestCase):
                     row
                     for row in changes
                     if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+                    and row["from_token"] == "dban"
                 ]
                 self.assertEqual(len(reviewed), 1)
                 self.assertEqual(reviewed[0]["from_token"], "dban")
                 self.assertEqual(reviewed[0]["to_token"], "dbaṅ")
-                self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    2 if label == "wts_1_34" else 1,
+                )
 
     def test_reviewed_rkan_consensus_rows_are_exact(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -2445,7 +2449,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("da duṅ kyan Ida dun yan", corrected)
-        self.assertIn("duṅ skyon auch duṅ skyons", corrected)
+        self.assertIn("duṅ skyoṅ auch duṅ skyons", corrected)
         self.assertIn("duṅ rin", corrected)
         self.assertIn("rkaṅ duṅ", corrected)
         self.assertIn("དུན་ dun genuine distinct syllable.", corrected)
@@ -2533,6 +2537,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("གཏང་ བའ ནོར་ gton ༼/¢'/7 nor", corrected)
         self.assertEqual(sum(row["to_token"] == "gtoṅ" for row in changes), 7)
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+
+    def test_reviewed_skyong_preserves_genuine_skyon(self) -> None:
+        lines = {
+            (52, 81): "ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po",
+            (219, 37): "སྐྱོན་བཀལ་ skyon bkal pf. zu Iskyon 'gel tadeln.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("karma bstan skyoṅ dbaṅ po", corrected)
+        self.assertIn("སྐྱོན་བཀལ་ skyon bkal", corrected)
+        self.assertEqual(sum(row["to_token"] == "skyoṅ" for row in changes), 1)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

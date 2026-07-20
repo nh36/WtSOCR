@@ -7,3 +7,4 @@ tibetan_chang_20260719	3051b3394a49345a5202259f3466ef794177701b	ཆང	tibetan_c
 tibetan_mthong_20260719	3051b3394a49345a5202259f3466ef794177701b	མཐོང	tibetan_mthong_consensus_batch_20260719	31	31	tibetan_mthong_same_entry_echo_batch_20260719	2	1	1	0	0	0	31	1	2	32
 tibetan_ring_20260719	3051b3394a49345a5202259f3466ef794177701b	རིང	tibetan_ring_consensus_batch_20260719	30	30	tibetan_ring_same_entry_echo_batch_20260719	3	0	3	0	0	0	30	0	3	30
 tibetan_gtong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	གཏོང	tibetan_gtong_consensus_batch_20260720	28	28	tibetan_gtong_same_entry_echo_batch_20260720	2	1	1	0	0	0	28	1	2	29
+tibetan_skyong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྐྱོང	tibetan_skyong_consensus_batch_20260720	27	27	tibetan_skyong_same_entry_echo_batch_20260720	0	0	0	0	0	0	27	0	0	27

@@ -27989,3 +27989,29 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 897	115	9868	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ ལུགས་ gton Iugs
 897	127	9869	tibetan_only	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ལེན་ gton len Übergabe, - /797/7/7 schik-
 897	151	9870	headword_line	gton	gtoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་སེམས་ gton sems freigiebig.
+52	81	411	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po
+119	1	1444	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀའ་གྲོས་ སྐྱོང་ dka’ gros skyon
+121	100	1485	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་སྐྱོང་ dkar skyon
+123	114	1516	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་ཕྱོགས་སྐྱོང་བའི་་ dkar phyogs skyon ba’i ...
+124	33	1527	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ དུང་སྐྱོང་མ་ dkar mo duṅ skyon ma npr.
+217	151	2803	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་ skyon pf. ibskyans fur. Ibskyan imp.
+217	159	2804	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་ skyon
+218	1	2805	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་དར་ skyon dar
+218	16	2806	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་དར་ skyon dar Verantwortung.
+218	25	2807	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་བ་པོ་ skyon ba po.
+218	38	2808	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་བྱེད་ skyon byed Ernährer.
+218	41	2809	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་མ་ skyon ma Mutter.
+218	44	2810	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོང་རབ་ skyon rab Betreuung.
+286	1	3862	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀྱུ་སྐྱོང་ khyu skyon
+286	21	3863	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏུ་སྐྱོང་ khyu skyon Hirte.
+450	3	5810	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཞྱགས་སྐྱོང་ ’grus skyon für skt. nipaka klug, be-
+596	149	7373	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཅེས་སྐྱོང་ gces skyon sich liebevoll, rück-
+675	51	8137	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་སྐྱོང chos skyon
+675	58	8138	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་སྐྱོང་ chos skyon.
+675	102	8139	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་སྐྱོང་ཆེན་མོ་ chos skyon chen mo
+675	108	8140	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་སྐྱོང་ཆེན་མོ་ chos skyon chen mo der große
+675	121	8143	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་སྐྱོང་བའི་རྒྱལ་པོ་ chos skyon ba’i rgyal po
+724	60	8673	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཇིག་རྟེན་སྐྱོང་ ig rten skyon auch ~ ba Bez.
+948	154	10374	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyon Beiname
+970	114	10593	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྟན་སྐྱོང་སྡེ་དགུ་ bstan skyon sde deu eine
+1156	24	12264	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུང་སྐྱོང་ duṅ skyon auch duṅ skyons npr. ein

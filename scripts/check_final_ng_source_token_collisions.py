@@ -4,13 +4,16 @@
 from __future__ import annotations
 
 import csv
+import sys
 from collections import defaultdict
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 
 from postprocess_entry_map import extract_alternate_witness_tokens
 
 
-ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "data/final_ng_source_token_collision_controls.tsv"
 OVERRIDES = ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
 
