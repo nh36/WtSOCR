@@ -28025,3 +28025,31 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 83	182	964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
 83	182	964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,
 126	189	1573	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོན་མཆོག་འབྱུང་གནས་ dkon mchog ’byun gnas.
+157	52	1981	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་སྟེང་བུ་ rkaṅ sten bu Bez. des Polarsterns.
+257	153	3391	headword_line	steh	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁང་སྟེང་ khaṅ steh Obergeschoß, Dachterasse.
+947	58	10364	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ sten
+947	115	10364	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ sten
+947	167	10364	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ sten
+948	1	10365	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་རྐང་ཅན་ sten rkaṅ can
+948	55	10366	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་སྐྱེས "sten skyes
+948	93	10367	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་རྐང་ཅན་ sten rkaṅ can achtfüßiger Löwe,
+948	100	10367	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་སྐས་ sten skas Treppe, Leiter.
+948	104	10368	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་སྐྱེས་ sten skyes.
+948	109	10369	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ཁང་ sten khaṅ
+948	114	10370	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes
+948	114	10370	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes
+948	143	10372	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་དགག་པ་ sten gi dgag pa \sten dgag.
+948	145	10373	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་འཇིག་རྟེན་ sten gi ’jig rten Bez. für die
+948	153	10373	example_tibetan_latin	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་ཐོག་ sten 07 thog Isten thog.
+948	154	10374	headword_line	steh	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་ཕྱོགས་སྐྱོང་ steh gi phyogs skyoṅ Beiname
+948	157	10375	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གི་དབང་པོ་ sten gi dbaṅ po Beiname Visnus.
+948	164	10376	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་པ་ sten pa
+948	166	10377	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྟེང་དགག་ sten dgag auch sten gi dgag pa eine
+948	166	10377	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་དགག་ sten dgag auch sten gi dgag pa eine
+948	197	10378	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes
+948	197	10378	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes
+948	217	10380	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ད་མཐོན་པ་ sten du mthon pa Bez. für frisch
+948	225	10381	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་པ་ sten pa Wald.
+949	71	10388	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གཡོགས་ sten g.yogs auch steṅ g.yog.
+949	87	10388	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ཤོད་ sten sod oben und unten, der obere
+1208	51	12545	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་སྟེང་ de sten auch de stens, de stens su, Kurzf.

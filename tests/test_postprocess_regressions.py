@@ -2243,7 +2243,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_1_34",
         )
         self.assertIn("ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.", corrected)
-        self.assertIn("སྟེང་ཁང་ sten khaṅ", corrected)
+        self.assertIn("སྟེང་ཁང་ steṅ khaṅ", corrected)
         self.assertIn("dud khaṅ Badehaus; vgl. [%//95 khan,", corrected)
         self.assertIn("དྲི་བཟང་ཁང་ dri bzaṅ khaṅ", corrected)
         self.assertIn("མཁན་ mkhan genuine agentive form.", corrected)
@@ -2253,7 +2253,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "khan" and row["to_token"] == "khaṅ"
         ]
         self.assertEqual(len(reviewed), 4)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
 
     def test_reviewed_gong_rows_preserve_repetitions_and_neighbours(self) -> None:
         lines = {
@@ -2576,6 +2576,26 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("bde ba'i byuṅ gnas", outputs["wts_35_51"])
         self.assertIn("རྣམ་བྱུང་ mam byun.", outputs["wts_35_51"])
         self.assertIn('འབྱུང་ "byuṅ', outputs["wts_8_b"])
+
+    def test_reviewed_steng_rows_preserve_genuine_sten_and_neighbours(self) -> None:
+        lines = {
+            (948, 114): "སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes",
+            (948, 166): "སྟེང་དགག་ sten dgag auch sten gi dgag pa eine",
+            (948, 197): "སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes",
+            (948, 153): "སྟེང་གི་ཐོག་ sten 07 thog Isten thog.",
+            (949, 2): "སྟེང་ཕུར་ steṅ phur \\sten 'phur.",
+            (949, 128): "སྟེན་ sten pf. und fur. !bsten.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("steṅ khaṅ auch steṅ gi khan", corrected)
+        self.assertIn("steṅ dgag auch steṅ gi dgag pa", corrected)
+        self.assertIn("steṅ thog Kurzf. für steṅ gi thog", corrected)
+        self.assertIn("སྟེང་གི་ཐོག་ steṅ 07 thog Isten thog.", corrected)
+        self.assertIn("སྟེང་ཕུར་ steṅ phur \\sten 'phur.", corrected)
+        self.assertIn("སྟེན་ sten pf. und fur. !bsten.", corrected)
+        self.assertEqual(sum(row["to_token"] == "steṅ" for row in changes), 7)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
