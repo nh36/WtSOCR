@@ -10,3 +10,4 @@ tibetan_gtong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	གཏོང	tib
 tibetan_skyong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྐྱོང	tibetan_skyong_consensus_batch_20260720	27	27	tibetan_skyong_same_entry_echo_batch_20260720	0	0	0	0	0	0	27	0	0	27
 tibetan_abyung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	འབྱུང	tibetan_abyung_consensus_batch_20260720	26	26	tibetan_abyung_same_entry_echo_batch_20260720	5	1	4	0	0	0	26	1	5	27
 tibetan_steng_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྟེང	tibetan_steng_consensus_batch_20260720	26	26	tibetan_steng_same_entry_echo_batch_20260720	6	3	3	0	0	0	26	3	6	29
+tibetan_drung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	དྲུང	tibetan_drung_consensus_batch_20260720	25	25	tibetan_drung_same_entry_echo_batch_20260720	3	0	1	0	2	0	25	2	3	25

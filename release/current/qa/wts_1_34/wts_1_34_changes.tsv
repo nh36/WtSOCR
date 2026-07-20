@@ -28053,3 +28053,27 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 949	71	10388	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་གཡོགས་ sten g.yogs auch steṅ g.yog.
 949	87	10388	tibetan_only	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟེང་ཤོད་ sten sod oben und unten, der obere
 1208	51	12545	headword_line	sten	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་སྟེང་ de sten auch de stens, de stens su, Kurzf.
+140	100	1742	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་དྲུང་ bka’ drun
+140	124	1743	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་དྲུང་ bka’ drun Sekretär des Kabinetts.
+304	87	4160	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཁན་དྲུང་ mkhan drun ein Titel.
+461	148	5958	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱ་དྲུང་ rgya drun Beamte an den indischen
+784	33	9209	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བ་དྲུང་པོ་ ie ba drun po enger Vertrauter,
+1335	9	13071	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ 'drun auch druns.
+1335	55	13072	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་དུ་ drun du
+1335	66	13072	tibetan_latin_mixed	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ ’drun 1272 po.
+1336	1	13072	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་དྲུང་ drun drun
+1336	1	13072	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་དྲུང་ drun drun
+1336	49	13072	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་དྲུང་ drun drun
+1336	49	13072	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་དྲུང་ drun drun
+1337	1	13073	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ན་ drun na
+1337	3	13074	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ན་ drun na bei, an, auf, vor; vgl. !'drun 1.
+1337	38	13075	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ན་མོ་ drun na mo Gefolge.
+1337	44	13075	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་གནས་ drun gnas Gefolge.
+1337	48	13076	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་པ་ drun pa.
+1337	64	13077	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་པོ་ 'drun po einer, der nahebei ist, Berater.
+1337	89	13078	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་འབྱིན་ drun 'byin pf. Idruns phyun fur.
+1337	96	13079	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་འཚོ་བ་ drun ’tsho ba Bez. für Arzt.
+1337	100	13079	tibetan_only	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ཡིག་ drun yig Schreiber, Sekretär, Bez. ©1-
+1338	1	13080	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po
+1338	3	13081	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po Sekretär der
+1338	7	13082	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་རམ་པ་ drun ram pa Titel eines Gelehrten.

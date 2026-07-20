@@ -2597,6 +2597,25 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("སྟེན་ sten pf. und fur. !bsten.", corrected)
         self.assertEqual(sum(row["to_token"] == "steṅ" for row in changes), 7)
 
+    def test_reviewed_drung_repetitions_and_apostrophes_are_exact(self) -> None:
+        lines = {
+            (1335, 9): "དྲུང་ 'drun auch druns.",
+            (1335, 66): "དྲུང་ ’drun 1272 po.",
+            (1336, 1): "དྲུང་དྲུང་ drun drun",
+            (1336, 49): "དྲུང་དྲུང་ drun drun",
+            (1337, 3): "དྲུང་ན་ drun na bei, an, auf, vor; vgl. !'drun 1.",
+            (100, 1): "དྲུན་ drun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲུང་ 'druṅ auch druns.", corrected)
+        self.assertIn("དྲུང་ ’druṅ 1272 po.", corrected)
+        self.assertEqual(corrected.count("དྲུང་དྲུང་ druṅ druṅ"), 2)
+        self.assertIn("druṅ na bei, an, auf, vor; vgl. !'drun 1.", corrected)
+        self.assertIn("དྲུན་ drun synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "druṅ" for row in changes), 7)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
