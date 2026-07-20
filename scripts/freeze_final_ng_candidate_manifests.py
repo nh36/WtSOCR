@@ -17,6 +17,13 @@ FAMILIES = {
     "འབྱུང": ({"byun", "byuh"}, "byuṅ"),
     "སྟེང": ({"sten", "steh"}, "steṅ"),
     "དྲུང": ({"drun"}, "druṅ"),
+    "ཁུང": ({"khun"}, "khuṅ"),
+    "དོང": ({"don"}, "doṅ"),
+    "གུང": ({"gun", "guh"}, "guṅ"),
+    "བྱང": ({"byan", "byah"}, "byaṅ"),
+    "སེང": ({"sen", "seh"}, "seṅ"),
+    "སོང": ({"son"}, "soṅ"),
+    "ལིང": ({"lin"}, "liṅ"),
 }
 
 FIELDS = [
@@ -51,12 +58,23 @@ def main() -> None:
         type=Path,
         default=ROOT / "data/final_ng_exact_candidate_prepass_manifest.tsv",
     )
+    parser.add_argument(
+        "--tibetan-syllables",
+        help="Optional comma-separated subset of configured Tibetan syllables.",
+    )
     args = parser.parse_args()
+    selected = (
+        set(args.tibetan_syllables.split(","))
+        if args.tibetan_syllables
+        else set(FAMILIES)
+    )
 
     frozen: list[dict[str, str]] = []
     for row in read_rows("tibetan_final_ng_consensus_candidates.tsv"):
         family = FAMILIES.get(row["tibetan_syllable"])
         if not family:
+            continue
+        if row["tibetan_syllable"] not in selected:
             continue
         sources, target = family
         if (
@@ -87,6 +105,8 @@ def main() -> None:
     for row in read_rows("tibetan_final_ng_same_entry_echo_candidates.tsv"):
         family = FAMILIES.get(row["tibetan_syllable"])
         if not family:
+            continue
+        if row["tibetan_syllable"] not in selected:
             continue
         sources, target = family
         if (
@@ -129,7 +149,12 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, delimiter="\t")
         writer.writeheader()
         writer.writerows(frozen)
-    print(f"wrote {len(frozen)} rows to {args.output.relative_to(ROOT)}")
+    output_label = (
+        args.output.resolve().relative_to(ROOT)
+        if args.output.resolve().is_relative_to(ROOT)
+        else args.output
+    )
+    print(f"wrote {len(frozen)} rows to {output_label}")
 
 
 if __name__ == "__main__":
