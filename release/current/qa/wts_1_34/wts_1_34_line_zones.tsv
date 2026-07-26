@@ -108251,7 +108251,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 744	25	8834	german_prose			none	0	4	0	0	das Wort anderer nachsprechen“ (Dagy); -
 744	27	8834	latin_other			none	4	0	0	0	mdzod = skad lab pa’i rjes su lan zlos mdzod
 744	28	8834	german_prose_with_translit			none	1	2	0	0	„wiederhole das Gesagte!“ (brDa).
-744	30	8835	headword_line	རྗེས་བཟུང་	bzun	medium	3	0	0	0	རྗེས་བཟུང་ rjes bzun 1705 su bzun.
+744	30	8835	headword_line	རྗེས་བཟུང་	bzun	medium	3	0	0	0	རྗེས་བཟུང་ rjes bzuṅ 1705 su bzun.
 744	32	8835	example_tibetan_latin	རྗེས་བཟྲོད་		none	1	3	0	0	རྗེས་བཟྲོད་ 7765 bzod einer der 16 Abschnitte
 744	34	8835	german_prose_with_translit			none	1	1	0	0	des mthon lam.
 744	36	8835	german_prose_with_translit			none	3	1	0	0	Lex. mthon lam skad cig ben drug gi nari
@@ -130902,7 +130902,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 904	67	9910	german_prose			none	0	3	0	0	verweilen dort [äußerlich] gleichmütig (für
 904	68	9910	german_prose_with_translit			none	1	1	0	0	skt. aveksaka)“ (Käsy 154,21); ci slad du
 904	69	9910	german_prose_with_translit			none	5	2	0	0	khyod = mdzad „warum bist du da gleichgültig?“ (Udr 34,6); kun 9)/ (4) (m)thar ni -
-904	72	9911	headword_line	བཏང་བཟུང་	btan bzun	medium	2	0	0	0	བཏང་བཟུང་ btaṅ bzun
+904	72	9911	headword_line	བཏང་བཟུང་	btan bzun	medium	2	0	0	0	བཏང་བཟུང་ btaṅ bzuṅ
 904	74	9911	german_prose_with_translit			none	1	5	0	0	so (metr.) „zum Schluß von allem [meditiere man] über Gleichmut“ (Hev 1.3.1d);
 904	76	9911	german_prose_with_translit			none	2	4	0	0	sems can kun sfioms » (metr.) „allen Lebewesen gegenüber ausgeglichen sein ist
 904	78	9911	german_prose_with_translit			none	1	2	0	0	Gleichmut“ (Samv 13.6d); dinu rgod rnams
@@ -165695,7 +165695,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1183	19	12421	german_prose_with_translit			none	4	1	0	0	bdag lci ba daggits} Ze{s} sa’i — ’gro bas ’gro
 1183	20	12421	german_prose_with_translit			none	1	5	0	0	bar byed do „ich befolge die altmodische Gewohnheit der Ehrerbietung gegenüber den
 1183	22	12421	german_prose			none	0	2	0	0	Eltern“ (Lokn 110,21).
-1183	24	12422	headword_line	དུས་འདི་ནས་བཟུང་སྟེ་	nas bzun ste	medium	3	1	0	0	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzun ste von
+1183	24	12422	headword_line	དུས་འདི་ནས་བཟུང་སྟེ་	nas bzun ste	medium	3	1	0	0	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzuṅ ste von
 1183	26	12422	other			none	0	0	0	0	nunan.
 1183	28	12422	latin_other			none	5	0	0	0	— ji srid ’tsho’i bar du ... saṅs rgyas la skyabs
 1183	29	12422	german_prose_with_translit			none	3	2	0	0	su mchi’o „ich nehme von nun an, solange ich

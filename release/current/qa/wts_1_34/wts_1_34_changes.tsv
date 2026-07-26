@@ -28522,3 +28522,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 132	136	1699	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀང་ bkan pf. zu l’gens.
 132	156	1700	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀང་ bkan
 241	172	3132	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།ཁ་བཀང་ kba bkan pf. ergänzen, auffüllen.
+744	30	8973	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་བཟུང་ rjes bzun 1705 su bzun.
+904	72	10071	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་བཟུང་ btaṅ bzun
+1183	24	12620	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzun ste von
