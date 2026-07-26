@@ -28278,3 +28278,17 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 374	26	4985	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་རེག་ཅན་ gran reg can Bez. für Winter.
 374	36	4986	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་སེལ་ gran sel Bez. für Feuer, Feuergott.
 374	39	4987	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ལྷང་ངེར་སོང་ gran lhan ner soṅ \gren lhan
+41	143	184	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀ་མང་ ka man irrt. für \ka mad.
+51	40	392	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀར་པོ་མང་པོ་རྗེ་ kar po man po rje ehrender Beina-
+56	164	494	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀུ་བྱི་མང་སྐེ་ ku byi man ske, auch ku byi man ke
+56	164	494	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུ་བྱི་མང་སྐེ་ ku byi man ske, auch ku byi man ke
+159	73	2017	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་མང་ rkaṅ man.
+190	51	2415	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐེམ་པོ་སུལ་མང་ skem po sul man
+190	96	2417	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐེམ་པོ་སུལ་མང་ skem po sul man eine Art Myro-
+289	119	3919	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏོ་མང་ khyo man Prostituierte.
+487	172	6274	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱན་ལུགས་མང་བ་ rgyun lugs man ba oft be-
+649	210	7896	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་མང་ལྡན་པ་ chu man ldan pa Bez. für See,
+961	62	10503	tibetan_only	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོབས་མང་ stobs man Bez. für Eisen.
+994	143	10849	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁྲལས་མང་ thabs man sehr geschickt.
+1220	92	12578	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་བས་མང་དུ་སྤྱོད་པ་ de bas man du spyod pa ein
+1270	22	12786	tibetan_only	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་མང་ don man „viel Sinn, viele Gedanken“,

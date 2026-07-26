@@ -5461,3 +5461,19 @@ wts_1_34	374	19	1	gran	graṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_1_34	374	26	1	gran	graṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grang_consensus_batch_20260726	Frozen exact Tibetan གྲང alignment at 8d0f85b; genuine final-n forms excluded.
 wts_1_34	374	36	1	gran	graṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grang_consensus_batch_20260726	Frozen exact Tibetan གྲང alignment at 8d0f85b; genuine final-n forms excluded.
 wts_1_34	374	39	1	gran	graṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grang_consensus_batch_20260726	Frozen exact Tibetan གྲང alignment at 8d0f85b; genuine final-n forms excluded.
+wts_1_34	56	164	8	man	maṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_mang_same_entry_echo_batch_20260726	Explicit alternate independently repeats མང.
+wts_9_m	63	64	6	man	maṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_mang_same_entry_echo_batch_20260726	Explicit alternate independently repeats མང.
+wts_9_m	66	62	6	man	maṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_mang_same_entry_echo_batch_20260726	Explicit alternate independently repeats མང.
+wts_1_34	41	143	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	51	40	3	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	56	164	3	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	159	73	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	190	51	4	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	190	96	4	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	289	119	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	487	172	3	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	649	210	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	961	62	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	994	143	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	1220	92	3	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
+wts_1_34	1270	22	2	man	maṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	Frozen exact Tibetan མང alignment.
