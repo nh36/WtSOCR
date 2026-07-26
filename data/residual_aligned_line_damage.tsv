@@ -47,3 +47,4 @@ wts_1_34	194	167	sen echoes deferred	AN ང་སེང་པོ་ skya bo sen 
 wts_1_34	945	72	sen → seṅ	སྟབ་སེང་ stab seṅ \stabs sen.	\stabs sen	damaged_reference	The aligned seṅ token is secure; the backslash reference remains unresolved.	Keep the later sen deferred pending reference-marker analysis.
 wts_1_34	792	86	son → soṅ	ཉེར་སོང་ ner soṅ tie bar son.	tie bar son	damaged_reference	The aligned སོང / soṅ token is secure; the damaged later expression does not establish its son independently.	Keep the later son deferred pending a clean internal parallel.
 wts_1_34	350	60	lin → liṅ	གི་ལིང་པ་ gi liṅ pa 1,97// lin.	1,97// lin	damaged_reference	The aligned ལིང / liṅ token is secure; the damaged later token remains unresolved.	Keep the later lin deferred.
+wts_1_34	50	34	tshan → tshaṅ	ཀམ་ཚང་ kam tshaṅ \karma kam tshan.	\karma kam tshan	damaged_reference	Aligned tshaṅ secure; backslash reference unresolved.	Defer later tshan.

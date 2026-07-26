@@ -6371,3 +6371,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 699	55	3441	headword_line	guh	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
 458	57	2331	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནུབ་བྱང་ nub byan.
 505	1	2562	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"གནམ་ལྷ་བྱང་སྨན་་ ""་ gram lba byan sman"
+379	52	1947	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshan.
+401	45	2062	headword_line	tshah	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-

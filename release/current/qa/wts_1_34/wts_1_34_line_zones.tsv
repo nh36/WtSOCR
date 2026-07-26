@@ -5232,7 +5232,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 50	30	373	german_prose_with_translit			none	3	1	0	0	sa’i dbyibs kyi klryad par „Unterschiedlichkeit
 50	31	373	german_prose_with_translit			none	1	4	0	0	der Bodenform, ähnlich wie Erhebungen und
 50	32	373	german_prose			none	0	2	0	0	Senken“ (Dagy).
-50	34	374	headword_line	ཀམ་ཚང་	tshan	high	2	0	0	0	ཀམ་ཚང་ kam tshan \karma kam tshan.
+50	34	374	headword_line	ཀམ་ཚང་	tshan	high	2	0	0	0	ཀམ་ཚང་ kam tshaṅ \karma kam tshan.
 50	36	375	headword_line	ཀམ་ལཱ་ཤ་	la Sa	medium	3	4	0	0	ཀམ་ལཱ་ཤ་ kam la Sa ein großer Gletscher im We-
 50	37	375	german_prose_with_translit			none	1	1	0	0	sten von Ladakh.
 50	39	375	latin_other			none	6	0	0	0	nub du — ste kla klo dan rigs ldan pa rnams kyis
@@ -5561,7 +5561,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 52	65	408	other			none	0	0	0	0	rman.
 52	67	408	german_prose_with_translit			none	3	4	0	0	Lex. ’phrin las sam las „Tätigkeit oder Tat“
 52	68	408	german_prose			none	0	1	0	0	(Dagy).
-52	69	409	headword_line	ཀརྨ་ཀམ་ཚང་	tshan	high	1	3	0	0	ཀརྨ་ཀམ་ཚང་ karma kam tshan Bez. für |Karma
+52	69	409	headword_line	ཀརྨ་ཀམ་ཚང་	tshan	high	1	3	0	0	ཀརྨ་ཀམ་ཚང་ karma kam tshaṅ Bez. für |Karma
 52	70	409	latin_other			none	1	0	0	0	bKa’-brgyud.
 52	71	409	german_prose_with_translit			none	4	2	0	0	Lex. karma bka’ brgyud kyi mtshan gan Zig
 52	72	409	german_prose			none	0	1	0	0	(Dunk).
@@ -5978,7 +5978,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 54	210	458	german_prose_with_translit			none	1	2	0	0	chin. YEPf Chiang-hsi; vgl. vorherge-
 54	211	458	german_prose			none	0	1	0	0	henden Eintrag.
 54	213	459	headword_line	ཀིའུ་	ki’n lke’n	high	2	0	0	0	ཀིའུ་ ki’n lke’n.
-54	214	460	headword_line	ཀིའུ་ ཚང་	tshan ke’u tshan	high	3	0	0	0	ཀིའུ་ ཚང་ kin tshan \ke’u tshan.
+54	214	460	headword_line	ཀིའུ་ ཚང་	tshan ke’u tshan	high	3	0	0	0	ཀིའུ་ ཚང་ kin tshaṅ \ke’u tshan.
 54	215	461	headword_line	ཀིའུ་ཛུང་	ki’u dzun	high	2	4	0	0	ཀིའུ་ཛུང་ ki’u dzun N. des ersten Kaisers der
 54	217	461	latin_other			none	1	0	0	0	T’ang-Dynastie (reg. 618-627). — chin.
 54	218	461	latin_other			none	1	0	0	0	AH Kao-tsu.
@@ -10348,7 +10348,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 84	94	973	headword_line	ཀུན་གཙོར་	gtsor	high	1	1	0	0	ཀུན་གཙོར་ kun gtsor Kranz.
 84	95	973	german_prose_with_translit			none	1	5	0	0	Lex. äsida (7. äpida) (Tshe 4al), ein auf dem
 84	96	973	german_prose			none	0	2	0	0	Scheitel getragener Kranz (PW).
-84	98	974	headword_line	ཀུན་ཚང་མ་	tshan ma	high	2	3	0	0	ཀུན་ཚང་མ་ kun tshan ma npr. eine Däkini; gehört
+84	98	974	headword_line	ཀུན་ཚང་མ་	tshan ma	high	2	3	0	0	ཀུན་ཚང་མ་ kun tshaṅ ma npr. eine Däkini; gehört
 84	99	974	german_prose_with_translit			none	3	2	0	0	zu den rgyun med mkha’ ’gro fi Su
 84	100	974	german_prose			none	0	1	0	0	(Magy 431).
 84	101	974	example_tibetan_latin	ཀུན་འཚོ་		none	4	1	0	0	ཀུན་འཚོ་ kun 75/70, vgl. kun tu ’tsho ba pa.
@@ -11459,7 +11459,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 91	112	1084	german_prose			none	0	5	0	0	eine aus Türkisen, Korallen oder Glasperlen
 91	113	1084	german_prose_with_translit			none	1	3	0	0	usw. aufgefädelte Kette als Brustschmuck
 91	115	1084	german_prose			none	0	2	0	0	für Frauen“ (TTC).
-91	117	1085	headword_line	ཀེའུ་ ཚང་	ke’u tshan	high	2	0	0	0	ཀེའུ་ ཚང་ ke’u tshan.
+91	117	1085	headword_line	ཀེའུ་ ཚང་	ke’u tshan	high	2	0	0	0	ཀེའུ་ ཚང་ ke’u tshaṅ.
 91	118	1085	latin_other			none	1	0	0	0	1. Felshöhle.
 91	119	1085	latin_other			none	8	0	0	0	— dan po na dga’ rab rdo rje / bar pa la ’jam
 91	120	1085	german_prose			none	0	3	0	0	dpal bses gien „in der ersten Höhle [wohnt]
@@ -17001,7 +17001,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 128	147	1606	german_prose			none	0	5	0	0	Mandala wird als Essenz bezeichnet“ (Hev
 128	148	1606	other			none	0	0	0	0	2.3.273).
 128	150	1606	tibetan_latin_mixed	དཀྱིལ་དཀྲུང་		none	2	0	0	0	དཀྱིལ་དཀྲུང་ 497 dkrun \skyil krun.
-128	152	1607	headword_line	དཀྱིལ་ཁང་གྲ་ཚང་	dkyil khaṅ	high	3	3	0	0	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khaṅ gra tshan N. eines der
+128	152	1607	headword_line	དཀྱིལ་ཁང་གྲ་ཚང་	dkyil khaṅ	high	3	3	0	0	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khaṅ gra tshaṅ N. eines der
 128	154	1607	german_prose			none	0	1	0	0	drei Mönchsquartiere (grwa
 128	156	1607	german_prose_with_translit			none	3	3	0	0	tshan) des Klosters bKra-Sis lhun-po (WrYLie
 128	157	1607	german_prose			none	0	1	0	0	1962: 137, Anm. 200).
@@ -40051,7 +40051,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 285	75	3849	german_prose_with_translit			none	3	4	0	0	khyim btsun, ein Laienanhänger, der in der
 285	76	3849	german_prose_with_translit			none	1	1	0	0	Go-pa-ze'u genannten Familie geboren
 285	77	3849	latin_other			none	1	0	0	0	wurde“ (K'Th 1: 468,4).
-285	79	3850	headword_line	ཏྱིམ་ཚང་	khyim tshan	high	3	1	0	0	ཏྱིམ་ཚང་ khyim tshan Familie, Haushalt.
+285	79	3850	headword_line	ཏྱིམ་ཚང་	khyim tshan	high	3	1	0	0	ཏྱིམ་ཚང་ khyim tshaṅ Familie, Haushalt.
 285	81	3850	german_prose_with_translit			none	3	2	0	0	Lex. nan tshan nam mi tshan lta bu (Dagy).
 285	83	3851	headword_line	ཏྱིམ་མཆེས་	khyim mtshes	high	2	0	0	0	ཏྱིམ་མཆེས་ khyim mtshes.
 285	85	3851	german_prose			none	0	2	0	0	1. Nachbar, Dorfbewohner.
@@ -40577,7 +40577,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 288	176	3907	german_prose_with_translit			none	1	3	0	0	wurden auf der Spitze eines Lotusstengels
 288	177	3907	german_prose_with_translit			none	1	3	0	0	die fünf Khye’u-mched geboren“ (Padm
 288	178	3907	other			none	0	0	0	0	724).
-288	180	3908	headword_line	ཏྱེའུ་ཚང་	khye’u tshan	high	3	1	0	0	ཏྱེའུ་ཚང་ khye’u tshan frisch, neu, jung.
+288	180	3908	headword_line	ཏྱེའུ་ཚང་	khye’u tshan	high	3	1	0	0	ཏྱེའུ་ཚང་ khye’u tshaṅ frisch, neu, jung.
 288	182	3908	german_prose_with_translit			none	1	2	0	0	Lex. pratyagrah (Mvy 6935); gsar pa (TTC).
 288	184	3908	german_prose_with_translit			none	2	1	0	0	DANN khye’u sus auch khe’u sus kleine
 288	186	3908	german_prose			none	0	2	0	0	Mahlzeit, Imbiß.
@@ -54404,7 +54404,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 386	18	5075	german_prose			none	0	5	0	0	„[skt.] pipzlz steht für Ameise und zu einem
 386	19	5075	german_prose			none	0	1	0	0	derartigen schwarzen Heilmittel sagt man
 386	20	5075	german_prose			none	0	1	0	0	auch grog sman pi pi lin“ (1 16 37,11-13).
-386	22	5076	headword_line	གྲོག་ཚང་	tshan	high	1	1	0	0	གྲོག་ཚང་ grog tshan Ameisenhügel.
+386	22	5076	headword_line	གྲོག་ཚང་	tshan	high	1	1	0	0	གྲོག་ཚང་ grog tshaṅ Ameisenhügel.
 386	23	5076	german_prose_with_translit			none	3	2	0	0	Lex. srog chags grog ma’i tshan Zig (brDa).
 386	25	5076	tibetan_only	གློག་ཞིང་		none	0	2	0	0	གློག་ཞིང་ grog Zin Ameisenhügel.
 386	26	5076	german_prose_with_translit			none	2	2	0	0	Lex. grog ma’i tshan (Dagy).
@@ -82572,7 +82572,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 575	124	7219	german_prose_with_translit			none	4	1	0	0	Lex. mthar phyin pa (brDa).
 575	125	7219	german_prose			none	0	2	0	0	2. der Reihe nach.
 575	127	7219	german_prose_with_translit			none	2	1	0	0	Lex. rim gyis (brDa).
-575	129	7220	headword_line	ཅག་གེ་ཚང་བ་	tshan ba	high	3	1	0	0	ཅག་གེ་ཚང་བ་ cag ge tshan ba auch cag ger tshan
+575	129	7220	headword_line	ཅག་གེ་ཚང་བ་	tshan ba	high	3	1	0	0	ཅག་གེ་ཚང་བ་ cag ge tshaṅ ba auch cag ger tshaṅ
 575	130	7220	german_prose_with_translit			none	1	2	0	0	ba vollständig, endgültig.
 575	132	7220	german_prose_with_translit			none	5	4	0	0	Lex. rug ge tshan ba’am mthar son „vollständig oder ans Ende gelangt“ (brDa); cag
 575	134	7220	german_prose_with_translit			none	5	1	0	0	ger tshan ba = rug ge tshan ba lta bu (Dagy).
@@ -90692,7 +90692,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 629	59	7659	german_prose			none	0	3	0	0	Lex. nagnahü (Ak 258.42); chan slon byed
 629	60	7659	german_prose_with_translit			none	2	3	0	0	kyi phabs „Hefe zum Gären von chan“
 629	62	7659	german_prose			none	0	1	0	0	(Dagy).
-629	64	7660	headword_line	ཆང་ཚང་	tshah Wirtshaus	high	2	1	0	0	ཆང་ཚང་ chaṅ tshah Wirtshaus, Schenke.
+629	64	7660	headword_line	ཆང་ཚང་	tshah Wirtshaus	high	2	1	0	0	ཆང་ཚང་ chaṅ tshaṅ Wirtshaus, Schenke.
 629	66	7660	german_prose_with_translit			none	2	2	0	0	Lex. chan khan (brDa, Dagy); ~ chan mal =
 629	67	7660	german_prose			none	0	2	0	0	sundäpäna (Ak 258.40).
 629	69	7661	headword_line	ཆང་འཚོང་	tshon	high	2	1	0	0	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
@@ -117852,7 +117852,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 807	175	9403	german_prose_with_translit			none	1	3	0	0	Lex. don med (brDa, ähnl. Dagy).
 807	176	9403	other			none	0	0	0	0	2. dumm, unklug, stumpfsinnig.
 807	177	9403	german_prose_with_translit			none	2	2	0	0	Lex. mdo med (brDa, Dagy).
-807	179	9404	headword_line	གཉེར་ཚང་	tshan Güterverwaltungsamt	high	2	0	0	0	གཉེར་ཚང་ gier tshan Güterverwaltungsamt; -
+807	179	9404	headword_line	གཉེར་ཚང་	tshan Güterverwaltungsamt	high	2	0	0	0	གཉེར་ཚང་ gier tshaṅ Güterverwaltungsamt; -
 807	181	9404	german_prose			none	0	2	0	0	chen mo Hauptlagerhausverwalter.
 807	183	9404	german_prose_with_translit			none	4	3	0	0	~ du lag 'dzan Sin tu ches „so daß das
 807	184	9404	german_prose_with_translit			none	1	2	0	0	Güterverwaltungsamt an sehr großem
@@ -164008,7 +164008,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1161	62	12293	headword_line	དུད་མུར་བྱོལ་སོང་	byol	medium	1	1	0	0	དུད་མུར་བྱོལ་སོང་ dud mur byol soṅ Tier.
 1161	64	12293	german_prose_with_translit			none	2	4	0	0	— gi skad dan „die Sprache der Tiere“ (gZi 4:
 1161	65	12293	other			none	0	0	0	0	404,1).
-1161	67	12294	headword_line	དུད་ཚང་	tshan	high	2	1	0	0	དུད་ཚང་ dud tshan Familie, Haushalt.
+1161	67	12294	headword_line	དུད་ཚང་	tshan	high	2	1	0	0	དུད་ཚང་ dud tshaṅ Familie, Haushalt.
 1161	69	12294	german_prose_with_translit			none	2	3	0	0	Lex. mi tshan nam gron pa „Familie oder
 1161	70	12294	german_prose_with_translit			none	2	1	0	0	Dorfbewohner (?)“ (brDa); mi tshan nam
 1161	72	12294	german_prose_with_translit			none	2	1	0	0	khyim tshan (Dagy).
@@ -172580,7 +172580,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1271	56	12789	german_prose_with_translit			none	1	2	0	0	genen Anordnungen als Maßstab nimmt“
 1271	57	12789	other			none	0	0	0	0	(MTH3/5/30 38).
 1271	59	12789	german_prose_with_translit			none	7	6	0	0	Lex. dgos pa’i rtsa ba „Basis des Notwendigen“ (brDa); don gnad kyi säin po (Dagy).
-1271	62	12790	headword_line	དོན་ཚང་	tshan Erledigung	high	3	1	0	0	དོན་ཚང་ don tshan Erledigung einer Angele-
+1271	62	12790	headword_line	དོན་ཚང་	tshan Erledigung	high	3	1	0	0	དོན་ཚང་ don tshaṅ Erledigung einer Angele-
 1271	64	12790	german_prose_with_translit			none	1	3	0	0	genheit, Erfüllung einer Aufgabe.
 1271	66	12790	latin_other			none	4	0	0	0	sne slebs so sos rgyab gie[r] rgyas pa’i — byun
 1271	67	12790	german_prose_with_translit			none	4	2	0	0	na dan „durch die jeweiligen Führungskräfte wird sich aufgrund umfangreicher Unter-

@@ -2756,6 +2756,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ལིན་ lin synthetic genuine-final-n control.", corrected)
         self.assertEqual(sum(row["to_token"] == "liṅ" for row in changes), 2)
 
+    def test_reviewed_tshang_variants_preserve_final_n(self) -> None:
+        lines = {
+            (50, 34): "ཀམ་ཚང་ kam tshan \\karma kam tshan.",
+            (629, 64): "རྗེ་ཚང་ rje tshah",
+            (630, 1): "ཚན་ tshan synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kam tshaṅ \\karma kam tshan", corrected)
+        self.assertIn("rje tshaṅ", corrected)
+        self.assertIn("ཚན་ tshan synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "tshaṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

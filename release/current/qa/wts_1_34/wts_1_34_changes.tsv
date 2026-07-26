@@ -28235,3 +28235,18 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 386	12	5075	tibetan_only	lin	liṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi lin ein Heil-
 430	100	5659	headword_line	lin	liṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མགོ་ ལིང་ mgo lin
 1136	60	12179	tibetan_only	lin	liṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་ལིང་ dar lin eine Seide, Brokat; chin. 3.
+50	34	374	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀམ་ཚང་ kam tshan \karma kam tshan.
+52	69	409	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀརྨ་ཀམ་ཚང་ karma kam tshan Bez. für |Karma
+54	214	460	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིའུ་ ཚང་ kin tshan \ke’u tshan.
+84	98	974	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཚང་མ་ kun tshan ma npr. eine Däkini; gehört
+91	117	1085	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀེའུ་ ཚང་ ke’u tshan.
+128	152	1607	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khaṅ gra tshan N. eines der
+285	79	3850	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏྱིམ་ཚང་ khyim tshan Familie, Haushalt.
+288	180	3908	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏྱེའུ་ཚང་ khye’u tshan frisch, neu, jung.
+386	22	5076	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོག་ཚང་ grog tshan Ameisenhügel.
+575	129	7220	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཅག་གེ་ཚང་བ་ cag ge tshan ba auch cag ger tshan
+575	129	7220	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅག་གེ་ཚང་བ་ cag ge tshan ba auch cag ger tshan
+629	64	7660	headword_line	tshah	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆང་ཚང་ chaṅ tshah Wirtshaus, Schenke.
+807	179	9404	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཉེར་ཚང་ gier tshan Güterverwaltungsamt; -
+1161	67	12294	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུད་ཚང་ dud tshan Familie, Haushalt.
+1271	62	12790	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་ཚང་ don tshan Erledigung einer Angele-
