@@ -28379,3 +28379,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1100	10	11966	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
 1100	10	11966	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
 1168	60	12335	tibetan_only	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུར་ཞིང་ dur Zin Leichenacker.
+124	43	1527	tibetan_only	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon npr. ein Steig-
+358	128	4810	tibetan_only	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གོ་རེ་ལོང་ go re lon Diener, Kehrer.
+773	32	9115	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་མས་ལོང་བ་ Ai mas lon ba Bez. für Nacht-
+778	57	9155	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉིན་མོ་ལོང་བ་ iin mo lon ba Bez. für Eule.
+825	192	9512	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྣེ་མ་ལོང་བ་ sie ma lon ba taube, halbleere

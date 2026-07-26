@@ -5578,3 +5578,11 @@ wts_1_34	1168	60	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_z
 wts_35_51	260	68	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
 wts_1_34	784	200	6	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Explicit alternate repeats the same ཞིང element.
 wts_1_34	1100	10	7	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Kurzf. für transparently repeats the same ཞིང element.
+wts_1_34	124	43	4	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_1_34	358	128	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_1_34	773	32	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_1_34	778	57	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_1_34	825	192	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_35_51	157	51	2	loh	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment; reviewed h variant.
+wts_9_m	225	80	2	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
+wts_35_51	873	57	8	lon	loṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_long_same_entry_echo_batch_20260726	Explicit alternate repeats the same ལོང element.

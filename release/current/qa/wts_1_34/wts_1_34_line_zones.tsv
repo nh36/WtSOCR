@@ -16291,7 +16291,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 124	38	1527	german_prose_with_translit			none	3	2	0	0	kun la sku khrus gsol (metr.) „die Göttin
 124	40	1527	german_prose			none	0	2	0	0	dKar-mo dun-skyon-ma hat an allen [Plät-
 124	41	1527	german_prose			none	0	1	0	0	zen] gebadet“ (Gansri 470,2).
-124	43	1527	tibetan_only	དཀར་མོ་ དུང་ལོང་		none	0	2	0	0	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon npr. ein Steig-
+124	43	1527	tibetan_only	དཀར་མོ་ དུང་ལོང་		none	0	2	0	0	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ loṅ npr. ein Steig-
 124	44	1527	german_prose			none	0	1	0	0	bügel.
 124	46	1527	german_prose_with_translit			none	1	6	0	0	yob chen — dan (metr.) „und der große Steigbügel dKar-mo dun-lon“ (Gesar 319,28).
 124	49	1527	tibetan_only	དཀར་མོ་ དྲུག་འགྱུར་		none	0	2	0	0	དཀར་མོ་ དྲུག་འགྱུར་ dkar mo drug 97///7 N. einer
@@ -50446,7 +50446,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 358	122	4810	german_prose_with_translit			none	1	2	0	0	Spiel spielen“ (brDa, Dagy).
 358	124	4810	german_prose			none	0	1	0	0	3. waschen.
 358	126	4810	german_prose			none	0	1	0	0	Lex. ze reg (TTC).
-358	128	4810	tibetan_only	གོ་རེ་ལོང་		none	0	2	0	0	གོ་རེ་ལོང་ go re lon Diener, Kehrer.
+358	128	4810	tibetan_only	གོ་རེ་ལོང་		none	0	2	0	0	གོ་རེ་ལོང་ go re loṅ Diener, Kehrer.
 358	130	4810	german_prose_with_translit			none	2	2	0	0	Lex. - ni gad byed pa „go re lon: Kehrer“
 358	131	4810	latin_other			none	4	0	0	0	(Liś 30,3); mag gźug pa ste g.yog byed
 358	132	4810	german_prose			none	0	2	0	0	„Diener“ (Dagy); lag g.yog gam / g.yog byed
@@ -112515,7 +112515,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 773	27	9114	other			none	0	0	0	0	blume.
 773	29	9114	german_prose_with_translit			none	2	2	0	0	Lex. me tog padma’i min (brDa, ähnl.
 773	30	9114	german_prose			none	0	1	0	0	Dagy).
-773	32	9115	headword_line	ཉི་མས་ལོང་བ་	ba	medium	1	4	0	0	ཉི་མས་ལོང་བ་ Ai mas lon ba Bez. für Nacht-
+773	32	9115	headword_line	ཉི་མས་ལོང་བ་	ba	medium	1	4	0	0	ཉི་མས་ལོང་བ་ Ai mas loṅ ba Bez. für Nacht-
 773	34	9115	german_prose			none	0	1	0	0	vogel, Eule.
 773	36	9115	german_prose_with_translit			none	3	1	0	0	Lex. ’ug pa’i min nam srin bya (brDa); srin
 773	38	9115	german_prose_with_translit			none	3	1	0	0	bya spyi dan ’ug pa (Dagy).
@@ -113403,7 +113403,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 778	53	9154	german_prose			none	0	1	0	0	(Dagy).
 778	55	9154	tibetan_only	༤༽		none	0	0	0	0	༤༽ LTD INT un
 778	56	9154	tibetan_latin_mixed	ཉན མའ ནར་བ		none	1	0	0	0	ཉན མའ ནར་བ /7/༡7 mo’i nor bu
-778	57	9155	headword_line	ཉིན་མོ་ལོང་བ་	ba	medium	1	3	0	0	ཉིན་མོ་ལོང་བ་ iin mo lon ba Bez. für Eule.
+778	57	9155	headword_line	ཉིན་མོ་ལོང་བ་	ba	medium	1	3	0	0	ཉིན་མོ་ལོང་བ་ iin mo loṅ ba Bez. für Eule.
 778	58	9155	german_prose_with_translit			none	1	2	0	0	Lex. ’ug pa (Dagy).
 778	59	9155	german_prose			none	0	2	0	0	3 Eile Ian ir ‚1 >, »
 778	60	9155	example_tibetan_latin	ཉན་མའ་མགན་པ་		none	2	2	0	0	ཉན་མའ་མགན་པ་ /7ཿ༡ཿ ༡༡༡༠/ mgon po Bez. für
@@ -120882,7 +120882,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 825	188	9511	headword_line	སྣེ་མ་ལུས་ལྕེབས་	ma	medium	1	2	0	0	སྣེ་མ་ལུས་ལྕེབས་ sie ma lus lcebs ein Baum.
 825	189	9511	other			none	0	0	0	0	2}
 825	190	9511	german_prose_with_translit			none	1	3	0	0	Lex. sin Zig la (Dagy).
-825	192	9512	headword_line	སྣེ་མ་ལོང་བ་	ma	medium	2	0	0	0	སྣེ་མ་ལོང་བ་ sie ma lon ba taube, halbleere
+825	192	9512	headword_line	སྣེ་མ་ལོང་བ་	ma	medium	2	0	0	0	སྣེ་མ་ལོང་བ་ sie ma loṅ ba taube, halbleere
 825	193	9512	german_prose			none	0	1	0	0	Ähre.
 825	195	9512	german_prose_with_translit			none	5	1	0	0	Lex. sie ma phyed med pa’am ston pa lta bu
 825	196	9512	german_prose_with_translit			none	1	2	0	0	„wie: halbleere oder leere Ahre“ (brDa);

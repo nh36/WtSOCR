@@ -2938,6 +2938,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("lowercase zin control", corrected)
         self.assertEqual(sum(row["to_token"] == "Ziṅ" for row in changes), 2)
 
+    def test_reviewed_long_variants_are_exactly_gated(self) -> None:
+        lines = {
+            (124, 43): "དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon",
+            (1400, 4): "unrelated lon and loh control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("dkar mo duṅ loṅ", corrected)
+        self.assertIn("unrelated lon and loh control", corrected)
+        self.assertEqual(sum(row["to_token"] == "loṅ" for row in changes), 1)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

@@ -6382,3 +6382,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 941	33	4911	headword_line	brań	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
 600	5	2964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྣམ་བྱུང་ mam byun.
 260	68	1512	tibetan_only	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྡུམ་ཞིང་ ldum Zin.
+157	51	972	headword_line	loh	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འདུ་ལོང་ du loh Geschāftigkeit
+873	57	4501	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban lon
