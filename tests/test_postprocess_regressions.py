@@ -3165,6 +3165,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("kun nas laṅ ba", outputs["wts_1_34"])
         self.assertIn("མ་ལན་ ma lan", outputs["wts_9_m"])
 
+    def test_reviewed_myong_preserves_competing_ryong(self) -> None:
+        lines = {
+            (75, 96): "ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myon bar ’gyur ba",
+            (547, 14): "དངོས་རྱོང་ dinos myon persönliche Wahrnehmung",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun tu myoṅ bar", corrected)
+        self.assertIn("དངོས་རྱོང་ dinos myon", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

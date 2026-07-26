@@ -8936,7 +8936,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 75	90	788	german_prose_with_translit			none	3	2	0	0	dan ... ’dus „die Bodhisattvas Samantabhadra, Samantanetra [u.a.] versammelten sich“
 75	92	788	other			none	0	0	0	0	(RP 60,16).
 75	94	788	german_prose			none	0	2	0	0	Lex. samantanetrah (Mvy 675).
-75	96	789	headword_line	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་	tu myon	medium	4	0	0	0	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myon bar ’gyur ba
+75	96	789	headword_line	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་	tu myon	medium	4	0	0	0	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myoṅ bar ’gyur ba
 75	98	789	other			none	0	0	0	0	wahrnehmen, erfahren.
 75	100	789	german_prose_with_translit			none	1	1	0	0	Lex. kun tu myon bar ’gyur = samvedayati
 75	101	789	german_prose			none	0	1	0	0	(Mvy 7282).
@@ -11023,7 +11023,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 88	159	1041	german_prose_with_translit			none	3	1	0	0	ax kumbhi ra Tkum bi ra.
 88	161	1041	tibetan_only	ཀུའང་ཏུང་		none	0	4	0	0	ཀུའང་ཏུང་ kuan tun N. einer chinesischen Pro-
 88	162	1041	latin_other			none	1	0	0	0	vinz. - chin. fr Kuang-tung,
-88	164	1042	headword_line	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་	pyi	medium	2	0	0	0	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་ kus pyi or myon nag
+88	164	1042	headword_line	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་	pyi	medium	2	0	0	0	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་ kus pyi or myoṅ nag
 88	166	1042	german_prose_with_translit			none	6	2	0	0	ma hätsina ’am rgya nag po’i yul te / ’di la Zin
 88	167	1042	german_prose_with_translit			none	2	1	0	0	chen bcu gsum du grags mod ... — / ku’an si
 88	168	1042	german_prose			none	0	6	0	0	„hier, in Mahäcina oder dem Land der
@@ -11035,7 +11035,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 88	177	1043	german_prose_with_translit			none	2	1	0	0	— (Śambh 723), vgl. Tku’an tun.
 88	179	1044	headword_line	ཀུར་སྐྱེད་	skyed	medium	2	2	0	0	ཀུར་སྐྱེད་ kur skyed eine Heilpflanze, synon.
 88	180	1044	other			none	0	0	0	0	\hon len (MAURER 2001: 257).
-88	182	1045	headword_line	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་	pyi	medium	3	0	0	0	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myon nag \kus pa’i
+88	182	1045	headword_line	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་	pyi	medium	3	0	0	0	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myoṅ nag \kus pa’i
 88	184	1045	other			none	0	0	0	0	or myon nag.
 88	185	1045	german_prose_with_translit			none	1	1	0	0	pP kulmäsa \kol ma.
 88	187	1045	german_prose_with_translit			none	2	2	0	0	TOR” kusmanda ka, auch ku sma nda ka eine
@@ -11047,7 +11047,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 88	194	1045	german_prose_with_translit			none	1	3	0	0	Butter und gibt Zucker dazu“ (Yś 44a).
 88	195	1045	german_prose_with_translit			none	2	2	0	0	Lex. kusman ka (r. kusmanda ka) = kusmä-
 88	196	1045	german_prose			none	0	1	0	0	ndaka (Ak 124.154c).
-88	198	1046	headword_line	ཀུས་པའི་ཨོར་མྱོང་ནག་	pa’i	high	2	1	0	0	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myon nag N. ei-
+88	198	1046	headword_line	ཀུས་པའི་ཨོར་མྱོང་ནག་	pa’i	high	2	1	0	0	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myoṅ nag N. ei-
 88	199	1046	german_prose			none	0	1	0	0	nes Vihära.
 88	200	1046	latin_other			none	4	0	0	0	rgyal po bidzaya sanigramas kus pa’i (¥ 1. kur
 88	201	1046	latin_other			none	3	0	0	0	pyi, kus pyi) ’or myon nag gi gtsug lag khan
@@ -108987,7 +108987,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 748	109	8890	german_prose_with_translit			none	2	1	0	0	sein, verbunden sein“ (brDa, Dagy); - ba =
 748	110	8890	german_prose_with_translit			none	1	2	0	0	anusahitab (Mvy 2169); ~ ba = anusyätih
 748	112	8890	german_prose_with_translit			none	2	2	0	0	(Mvy 7505); - ba = anusangab (Mvy 9323).
-748	114	8891	headword_line	རྗེས་སུ་མྱོང་	su myon	medium	2	0	0	0	རྗེས་སུ་མྱོང་ rjes su myon auskosten.
+748	114	8891	headword_line	རྗེས་སུ་མྱོང་	su myon	medium	2	0	0	0	རྗེས་སུ་མྱོང་ rjes su myoṅ auskosten.
 748	115	8891	other			none	0	0	0	0	>
 748	117	8891	german_prose_with_translit			none	5	1	0	0	dran sron rgyas pa ... 'dod pa’i bde ba ~ Zin
 748	118	8891	german_prose_with_translit			none	2	5	0	0	’dug pa na „als der Seher Vyäsa dabei war,

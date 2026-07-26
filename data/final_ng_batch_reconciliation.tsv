@@ -50,3 +50,4 @@ tibetan_mong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མོང	tibetan
 tibetan_bong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བོང	tibetan_bong_consensus_batch_20260726	5	5	tibetan_bong_same_entry_echo_batch_20260726	2	2	0	0	0	0	5	2	2	7
 tibetan_aphang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕང	tibetan_aphang_consensus_batch_20260726	5	5	tibetan_aphang_same_entry_echo_batch_20260726	1	1	0	0	0	0	5	1	1	6
 tibetan_lang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ལང	tibetan_lang_consensus_batch_20260726	5	5	tibetan_lang_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5
+tibetan_myong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མྱོང	tibetan_myong_consensus_batch_20260726	5	5	tibetan_myong_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5

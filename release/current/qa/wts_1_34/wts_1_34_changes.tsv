@@ -28481,3 +28481,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 754	1	8951	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan
 754	23	8952	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan auch brjod
 754	150	8964	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་མི་ལང་ brjod mi lan Tbrjod kyis mi lan.
+75	96	789	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myon bar ’gyur ba
+88	164	1042	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་ kus pyi or myon nag
+88	182	1045	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myon nag \kus pa’i
+88	198	1046	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myon nag N. ei-
+748	114	8891	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་སུ་མྱོང་ rjes su myon auskosten.
