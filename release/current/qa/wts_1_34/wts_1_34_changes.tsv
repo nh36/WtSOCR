@@ -28358,3 +28358,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 403	162	5289	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དགའ་ལྡན་ཕོ་བྲང་ dga’ ldan pho bran
 593	173	7351	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཅིག་བྲང་ཕྲ་མོ་ gcig bran phra mo Sehnenteil
 1028	12	11305	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བེའུ་བྲང་ the’u brani auch the bran eine Gruppe
+582	106	7281	tibetan_only	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅིང་ cin
+583	1	7282	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅིང་ཕིང་ cin phin
+583	28	7283	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅིང་ཡྲིང་ cin phin ein Gewand.
+826	149	9514	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྙོད་ཅིང་སྟོབ་པ་ snod cin stob pa
+921	57	10146	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟེན་ཅིང་འབྲེལ་བར་*” rten cin ’brel bar ...
+921	117	10150	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟེན་ཅིང་འབྲེལ་བར་* rten cin ’brel bar ...
+1291	69	12876	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་ཅིང་རྩུབ་པ་ drag cin rtsub pa unzugänglich.

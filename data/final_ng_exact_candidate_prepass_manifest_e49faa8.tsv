@@ -1,0 +1,65 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	48	99	3	ཀིང	kin	kiṅ	echo	uncertain	uncertain	ཀང་ཀིང་ kan kin kin kan.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	18	5	ཀིང	kin	kiṅ	echo	explicit_same_lemma_repetition	none	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	18	8	ཀིང	kin	kiṅ	echo	explicit_same_lemma_repetition	none	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	70	8	ཀིང	kin	kiṅ	echo	explicit_same_lemma_repetition	none	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	48	99	2	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	ཀང་ཀིང་ kan kin kin kan.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	18	1	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	45	1	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	ཀིང་ཅང་ཧྭ་ kin can hu ¦/07/7 jan hü.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	47	1	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	ཀིང་ཤཾ་ kin Si, auch ken śi, ken śe, ker Sin — chin.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	54	70	1	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	157	135	3	ཀིང	kin	kiṅ	positional	dominant_internal_consensus	none	རྐང་དང་ཀིང་ rkaṅ daṅ kin tkin kan.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	642	61	2	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	ཆུ་ཀླང་བདག་པོ་ chu klun bdag po
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	642	75	2	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	ཆུ་ཀླང་ chu klun Fluß, Bach.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	642	114	2	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	ཆུ་ཀླང་མཚོ་ chu klun mtsho
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	642	118	2	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	ཆུ་ཀླང་མཆོ་ chu klun mtsho ein See in höheren
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	649	68	3	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	ཆུ་འབབ་ཀླང་ chu ’bab klun Bez. für Ozean.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1064	57	3	ཀླང	klun	kluṅ	positional	dominant_internal_consensus	none	མཐོ་རེས་ཀླང་ mtho ris klun.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	912	52	7	གདོང	gdon	gdoṅ	echo	explicit_same_lemma_repetition	none	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	914	71	5	གདོང	gdon	gdoṅ	echo	uncertain	uncertain	རྟ་ཡི་གདོང་ཅན་ rta ༡// gdon can Trta gdon can.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	425	11	5	གདོང	gdon	gdoṅ	echo	uncertain	uncertain	ནམ་གྱི་གདོང་ nam gyi gdoṅ Inam gdon.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	646	46	5	གདོང	gdon	gdoṅ	echo	explicit_same_lemma_repetition	none	སྣེ་གདོང་ sne gdoṅ auch sne'u gdon.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	649	10	4	གདོང	gdon	gdoṅ	echo	uncertain	uncertain	སྙེའུ་གདོང་ sne'u gdoṅ Tsne gdon.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	114	154	3	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	ཀླུ་སྨན་གདོང་དྲུག་ klu sman gdon drug npr. eine
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	322	177	3	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	འཁོར་ལོའི་གདོང་ ’khor lo’i gdon Bez. für Wild-
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	394	196	3	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	གླང་པོའི་གདོང་ glaṅ po’i gdon Bez. für Ganesa.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	912	52	2	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1275	9	2	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	དོམ་གདོང་མ་ dom gdon ma npr. eine Gottheit,
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1342	33	2	གདོང	gdon	gdoṅ	positional	dominant_internal_consensus	none	དྲེད་གདོང་མ་ dred gdon ma eine Gottheit, die
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	582	106	1	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	ཅིང་ cin
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	583	1	1	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	ཅིང་ཕིང་ cin phin
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	583	28	1	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	ཅིང་ཡྲིང་ cin phin ein Gewand.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	826	149	2	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	སྙོད་ཅིང་སྟོབ་པ་ snod cin stob pa
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	921	57	2	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	རྟེན་ཅིང་འབྲེལ་བར་*” rten cin ’brel bar ...
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	921	117	2	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	རྟེན་ཅིང་འབྲེལ་བར་* rten cin ’brel bar ...
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1291	69	2	ཅིང	cin	ciṅ	positional	dominant_internal_consensus	none	དྲག་ཅིང་རྩུབ་པ་ drag cin rtsub pa unzugänglich.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	600	12	6	བྱུང	byun	byuṅ	echo	uncertain	uncertain	རྣམ་བྱུང་ཆེན་པོ་ rnam byuṅ chen po lrnam 'byun rhen HO
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	52	135	4	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀརྨ་པ ་རང་བྱུང་རྡོ་རྗེ་ karma pa raṅ byun rdo ne der 3.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	52	166	3	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ཀརྨ་རང་བྱུང་རྡོ་རྗེ་ karma raṅ byun rdo nie (TTC)
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	571	177	2	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	སྔོན་བྱུང་ snon byun
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1086	17	3	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	ད་ལྟར་བྱུང་བ་ da ltar byun ba jetzt aufgetreten,
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1205	50	4	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	དེ་ལྟ་བུ་བྱུང་་ de lta bu byun ...
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1205	85	4	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	དེ་ལྟ་བུ་བྱུང་བ་ de lta bu byun ba.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	600	5	2	བྱུང	byun	byuṅ	positional	dominant_internal_consensus	none	རྣམ་བྱུང་ mam byun.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	784	200	6	ཞིང	Zin	Ziṅ	echo	explicit_same_lemma_repetition	none	ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin Bez. für
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1099	32	5	ཞིང	Zin	Ziṅ	echo	uncertain	uncertain	དག་པའི་ཞིང་ dag pa’i Zin \dag Zin.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1100	10	7	ཞིང	Zin	Ziṅ	echo	cross_reference_probable	none	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	1015	36	7	ཞིང	Zin	Ziṅ	echo	alternate_form_same_lemma	none	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	386	25	2	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	གློག་ཞིང་ grog Zin Ameisenhügel.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	779	45	2	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	ཉིན་ཞིང་ Hin Zin Thin.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	784	200	3	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin Bez. für
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1099	32	3	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	དག་པའི་ཞིང་ dag pa’i Zin \dag Zin.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1100	10	2	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	1168	60	2	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	དུར་ཞིང་ dur Zin Leichenacker.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	260	68	2	ཞིང	Zin	Ziṅ	positional	dominant_internal_consensus	none	ལྡུམ་ཞིང་ ldum Zin.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	870	21	7	ལོང	lon	loṅ	echo	uncertain	uncertain	ཕ་བང་ལོང་བུ་ pha baṅ loṅ bu \pha wan lon bu.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	873	57	8	ལོང	lon	loṅ	echo	explicit_same_lemma_repetition	none	ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban lon
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_9_m	227	46	3	ལོང	lon	loṅ	echo	uncertain	uncertain	མེ་ལོང་ ay me lon gzugs Spiegelbild.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_9_m	227	53	8	ལོང	lon	loṅ	echo	uncertain	uncertain	མི་ལོང་ཡེ་ཤེས་ me loṅ ye ses kurz fūr tne lon lta
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	124	43	4	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon npr. ein Steig-
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	358	128	3	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	གོ་རེ་ལོང་ go re lon Diener, Kehrer.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	773	32	3	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	ཉི་མས་ལོང་བ་ Ai mas lon ba Bez. für Nacht-
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	778	57	3	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	ཉིན་མོ་ལོང་བ་ iin mo lon ba Bez. für Eule.
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_1_34	825	192	3	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	སྣེ་མ་ལོང་བ་ sie ma lon ba taube, halbleere
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_35_51	157	51	2	ལོང	loh	loṅ	positional	dominant_internal_consensus	none	འདུ་ལོང་ du loh Geschāftigkeit
+e49faa867d537f7b81d20bb59886bc4972acde45	wts_9_m	225	80	2	ལོང	lon	loṅ	positional	dominant_internal_consensus	none	མི་ལོང་ me lon.
