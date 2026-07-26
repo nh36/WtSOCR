@@ -71254,8 +71254,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 501	105	6445	tibetan_only	པེ		none	0	2	0	0	པེ gerät, Radio.
 501	107	6445	german_prose_with_translit			none	4	1	0	0	Lex. skad sgra len pa’i ’phrul gyi yo chas
 501	108	6445	german_prose			none	0	1	0	0	(Dagy).
-501	110	6446	headword_line	གྒྨྲ་གསང་	sgra	medium	1	0	0	0	གྒྨྲ་གསང་ sgra gsan
-501	112	6447	headword_line	སྒྲ་གསང་	sgra	medium	1	2	0	0	སྒྲ་གསང་ sgra gsan Stimme, Geräusch.
+501	110	6446	headword_line	གྒྨྲ་གསང་	sgra	medium	1	0	0	0	གྒྨྲ་གསང་ sgra gsaṅ
+501	112	6447	headword_line	སྒྲ་གསང་	sgra	medium	1	2	0	0	སྒྲ་གསང་ sgra gsaṅ Stimme, Geräusch.
 501	114	6447	german_prose_with_translit			none	3	3	0	0	Lex. - mtho bo = skad Sugs chen po „laute
 501	115	6447	german_prose_with_translit			none	1	2	0	0	Stimme“ (Dagy, brDa).
 501	117	6448	headword_line	སྒྲགས	sgrags	medium	1	1	0	0	སྒྲགས sgrags Ibsgrags.
@@ -80066,7 +80066,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 559	205	7082	german_prose_with_translit			none	2	2	0	0	Lex. rna dan rol mo’i bye brag „eine
 559	206	7082	german_prose			none	0	4	0	0	Trommel und ein Musikinstrument“
 559	208	7082	german_prose			none	0	1	0	0	(Dagy).
-559	209	7082	tibetan_only	རྔ་གསང་		none	0	1	0	0	རྔ་གསང་ rna gsah Trommelton.
+559	209	7082	tibetan_only	རྔ་གསང་		none	0	1	0	0	རྔ་གསང་ rna gsaṅ Trommelton.
 559	211	7082	german_prose_with_translit			none	6	2	0	0	Lex. rna’i sgra chen po (brDa); rna’i sgra
 559	213	7082	german_prose_with_translit			none	1	1	0	0	skad la (Dagy).
 559	214	7082	tibetan_latin_mixed	རྔ་གསེབ་		none	1	0	0	0	རྔ་གསེབ་ 77? gseb Kamelhengst.
@@ -91486,7 +91486,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 634	37	7712	german_prose_with_translit			none	2	2	0	0	> dge chun de ru gdab (metr.) „Politiker mit
 634	38	7712	german_prose			none	0	3	0	0	minderer Tugend setze man dort bei“ (Vdk
 634	39	7712	other			none	0	0	0	0	2: 373,3).
-634	41	7712	tibetan_only	ཆབ་གསང་		none	0	3	0	0	ཆབ་གསང་ chab gsan Bez. für Urin.
+634	41	7712	tibetan_only	ཆབ་གསང་		none	0	3	0	0	ཆབ་གསང་ chab gsaṅ Bez. für Urin.
 634	42	7712	german_prose_with_translit			none	1	2	0	0	Lex. dri chu’i min (Dagy).
 634	44	7712	latin_other			none	2	0	0	0	SAN’ chabs V’chab.
 634	46	7713	headword_line	ཆབས་ཅིག་	cig	medium	1	1	0	0	ཆབས་ཅིག་ chabs cig auch chabs geig zusam-
@@ -104864,7 +104864,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 720	192	8639	german_prose			none	0	1	0	0	wendet“ (MigTo 252,24).
 720	194	8639	example_tibetan_latin			none	3	1	0	0	Lex. ༨༡༩ gyur pa = manjusrikumärabhütah
 720	195	8639	german_prose			none	0	1	0	0	(Mvy 650).
-720	197	8640	headword_line	འཇམ་དཔལ་གསང་གྒང་	dpal	medium	2	1	0	0	འཇམ་དཔལ་གསང་གྒང་ Jam dpal gsan rgynd npr.
+720	197	8640	headword_line	འཇམ་དཔལ་གསང་གྒང་	dpal	medium	2	1	0	0	འཇམ་དཔལ་གསང་གྒང་ Jam dpal gsaṅ rgynd npr.
 720	198	8640	tibetan_only	རྒྱད		none	0	3	0	0	རྒྱད ein Text (Padm 30866).
 720	200	8641	headword_line	འཇམ་དབངས་	dbyans	medium	2	1	0	0	འཇམ་དབངས་ jam dbyans auch ’jam pa’
 720	201	8641	latin_other			none	1	0	0	0	dbyans.

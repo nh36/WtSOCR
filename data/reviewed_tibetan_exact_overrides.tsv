@@ -5729,3 +5729,8 @@ wts_1_34	489	71	1	sgan	sgaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_1_34	489	90	1	sgan	sgaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_sgang_consensus_batch_20260726	Frozen exact Tibetan སྒང alignment; exact-row only.
 wts_1_34	489	114	1	sgan	sgaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_sgang_consensus_batch_20260726	Frozen exact Tibetan སྒང alignment; exact-row only.
 wts_1_34	1134	70	3	sgan	sgaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_sgang_consensus_batch_20260726	Frozen exact Tibetan སྒང alignment; exact-row only.
+wts_1_34	501	110	2	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
+wts_1_34	501	112	2	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
+wts_1_34	559	209	2	gsah	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
+wts_1_34	634	41	2	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
+wts_1_34	720	197	3	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
