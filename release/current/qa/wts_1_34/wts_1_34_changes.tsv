@@ -28537,3 +28537,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1160	80	12486	tibetan_only	sdon	sdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུད་སྡོང་ dud sdon Rauchsäule.
 698	204	8571	headword_line	span	spaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་སྤང་ ’chaṅ span Behalten von Gegen-
 1066	185	11952	headword_line	span	spaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཁོང་སྤང་ mthon span was auf dem Weg des
+190	198	2454	tibetan_only	skon	skoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐོང་ ’skon pf. 1/5/50/7$ herbeirufen.
+190	209	2455	headword_line	skon	skoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐོང་ཚེ་ skon tshe (zw.) geflochtene Bambuskör-
+241	159	3130	tibetan_only	skon	skoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་སྐོང་ kba skon
+241	195	3135	headword_line	skon	skoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་སྐོང་ kha skon auch kha skons.
