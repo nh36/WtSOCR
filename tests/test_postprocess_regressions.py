@@ -2941,51 +2941,51 @@ class PostprocessRegressionTests(unittest.TestCase):
     def test_reviewed_long_variants_are_exactly_gated(self) -> None:
         lines = {
             (124, 43): "དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon",
-            (1400, 4): "unrelated lon and loh control",
+            (255, 163): "ཁ་ལོན་ kha lon Zügel.",
         }
         _result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("dkar mo duṅ loṅ", corrected)
-        self.assertIn("unrelated lon and loh control", corrected)
+        self.assertIn("ཁ་ལོན་ kha lon", corrected)
         self.assertEqual(sum(row["to_token"] == "loṅ" for row in changes), 1)
 
     def test_reviewed_king_echoes_remain_exactly_gated(self) -> None:
         lines = {
             (54, 18): "ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin",
-            (1400, 5): "unreviewed kin control",
+            (54, 115): "ཀིན་ kin 111 alttib. Texten für Igın.",
         }
         _result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("kiṅ kan, auch kan kiṅ, kan dan kiṅ", corrected)
-        self.assertIn("unreviewed kin control", corrected)
+        self.assertIn("ཀིན་ kin", corrected)
         self.assertEqual(sum(row["to_token"] == "kiṅ" for row in changes), 3)
 
     def test_reviewed_klang_and_klung_share_no_broad_klun_rule(self) -> None:
         lines = {
             (115, 204): "ཀླུང་ klun",
             (642, 61): "ཆུ་ཀླང་བདག་པོ་ chu klun bdag po",
-            (1400, 6): "unreviewed klun control",
+            (115, 219): "ཀླུན་ཀ་ klun ka !klan ka.",
         }
         _result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("ཀླུང་ kluṅ", corrected)
         self.assertIn("chu kluṅ bdag po", corrected)
-        self.assertIn("unreviewed klun control", corrected)
+        self.assertIn("ཀླུན་ཀ་ klun ka", corrected)
         self.assertEqual(sum(row["to_token"] == "kluṅ" for row in changes), 2)
 
     def test_reviewed_gdong_rows_and_echoes_are_exactly_gated(self) -> None:
         lines = {
             (912, 52): "རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can",
-            (1400, 7): "unreviewed gdon control",
+            (525, 34): "ངག་གདོན་ nag gdon fut. zu nag ’don",
         }
         _result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn("rta gdoṅ can auch rta yi gdoṅ can", corrected)
-        self.assertIn("unreviewed gdon control", corrected)
+        self.assertIn("ངག་གདོན་ nag gdon", corrected)
         self.assertEqual(sum(row["to_token"] == "gdoṅ" for row in changes), 2)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
