@@ -47306,7 +47306,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 584	28	2888	german_prose_with_translit			none	5	2	0	0	"rna ba'i dban po sgra la — (metr.) ""der Hör-"
 584	29	2888	german_prose			none	0	4	0	0	"sinn prüft die Laute"" (Suv 42,20)."
 584	30	2888	german_prose			none	0	3	0	0	Lex. vicärana (Ak 36.135).
-584	31	2889	headword_line	རྣམ་པར་སྤང་	spaṅ	high	1	1	0	0	རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam span
+584	31	2889	headword_line	རྣམ་པར་སྤང་	spaṅ	high	1	1	0	0	རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam spaṅ
 584	32	2889	german_prose			none	0	2	0	0	fut. zu Irnam par spon aufgeben,
 584	33	2889	german_prose			none	0	1	0	0	von etw. ablassen.
 584	34	2889	latin_other			none	3	0	0	0	"du 'dzi rnam span bya (metr.) ""man lasse"
@@ -62216,7 +62216,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 766	87	3914	german_prose			none	0	2	0	0	und Unbekömmliches soll man nicht mei-
 766	88	3914	german_prose			none	0	2	0	0	"den"" (Hev 2.3.41b); ga par nes par cis mi —"
 766	89	3914	german_prose			none	0	4	0	0	"(metr.) ""den Kampfer [d. h. den Samen] soll"
-767	1	3914	tibetan_only	སྤང་		none	0	0	0	0	"སྤང་ ""span"
+767	1	3914	tibetan_only	སྤང་		none	0	0	0	0	སྤང་ "spaṅ
 767	2	3914	german_prose			none	0	1	0	0	"man keinesfalls loslassen [d. h. ejakulieren]"""
 767	3	3914	german_prose			none	0	2	0	0	"(Hev 2.4.27d); sman brüas — (metr.) ""man"
 767	4	3914	german_prose			none	0	6	0	0	muß [einen Patienten] meiden, der den Arzt
@@ -62263,7 +62263,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 767	45	3914	german_prose			none	0	3	0	0	"Leiche] nicht zu begraben"" (Nagdel 89,1);"
 767	46	3914	latin_other			none	2	0	0	0	nus mtbu bsam gtan g.yo 'khrug — (metr.)
 767	47	3914	other			none	0	0	0	0	418
-767	48	3914	tibetan_only	སྤང་		none	0	0	0	0	"སྤང་ ""span"
+767	48	3914	tibetan_only	སྤང་		none	0	0	0	0	སྤང་ "spaṅ
 767	49	3914	german_prose			none	0	4	0	0	"""Macht, Meditation und Illusion gibt man"
 767	50	3914	latin_other			none	3	0	0	0	"auf"" (gZer 1006,4); de' phyir gdod nas — bar"
 767	51	3914	german_prose_with_translit			none	2	2	0	0	"bya (metr.) ""daher muß man es von Anfang"
