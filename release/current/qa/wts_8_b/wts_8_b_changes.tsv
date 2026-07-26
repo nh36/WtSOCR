@@ -3016,3 +3016,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 115	66	586	tibetan_only	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-
 21	1	76	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"པ་ལང་ ""ba lan"
 83	25	392	headword_line	chuh	chuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུ་ཆུང་ bu chuh auch ~ ñu.
+307	24	1614	headword_line	blan	blaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བླང་དོར་ blaṅ dor auch blan dan dor ba annch-
