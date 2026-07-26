@@ -28477,3 +28477,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 265	26	3505	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུ་འཕང་ khu 'phan auch khu phans, khu ’bans
 357	33	4795	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
 357	33	4795	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
+82	57	933	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་ལང་བ་ kun nas lan ba
+754	1	8951	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan
+754	23	8952	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan auch brjod
+754	150	8964	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗོད་མི་ལང་ brjod mi lan Tbrjod kyis mi lan.

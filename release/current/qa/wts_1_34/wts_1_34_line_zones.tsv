@@ -9994,7 +9994,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 82	52	932	latin_other			none	4	0	0	0	bzan po nas — gyi bar min smos pa sum bcu
 82	53	932	german_prose_with_translit			none	2	1	0	0	„von *Bhadra bis *Samantaprabha werden
 82	55	932	other			none	0	0	0	0	92
-82	57	933	headword_line	ཀུན་ནས་ལང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ལང་བ་ kun nas lan ba
+82	57	933	headword_line	ཀུན་ནས་ལང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ལང་བ་ kun nas laṅ ba
 82	59	933	german_prose			none	0	4	0	0	dreißig Namen genannt“ (Deba 7,5); — Zes
 82	60	933	latin_other			none	8	0	0	0	pa’i brgyud rgyal po brgya tham pa yul gru
 82	61	933	german_prose_with_translit			none	1	1	0	0	72:77 du byun „genau hundert Könige aus
@@ -109876,7 +109876,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 753	208	8950	german_prose_with_translit			none	2	1	0	0	6706); sinra ba’am - pa = udirayati (Mvy
 753	209	8950	german_prose_with_translit			none	1	1	0	0	2779), bhäsate (Mvy 2767).
 753	210	8950	tibetan_only			none	0	2	0	0	2. ausdrücken, bezeichnen, benennen als; ༨
-754	1	8951	headword_line	བརྗོད་ཀྱིས་མི་ལང་	kyis	medium	1	0	0	0	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan
+754	1	8951	headword_line	བརྗོད་ཀྱིས་མི་ལང་	kyis	medium	1	0	0	0	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi laṅ
 754	3	8951	latin_other			none	2	0	0	0	pa Bezeichnung.
 754	5	8951	german_prose_with_translit			none	3	3	0	0	kha thabs ~ du myi [-])7 „das ist (?) nicht in
 754	6	8951	german_prose_with_translit			none	2	3	0	0	Worten auszudrücken“ (In6 3); bka’ mchid
@@ -109894,7 +109894,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 754	19	8951	latin_other			none	9	0	0	0	ka ta ka’i sgras ka ta ka’i ’bras bu = pa yin
 754	20	8951	german_prose			none	0	6	0	0	„Jas Wort Kataka bezeichnet die Kataka-
 754	21	8951	german_prose			none	0	2	0	0	Frucht“ (T4126 170b3).
-754	23	8952	headword_line	བརྗོད་ཀྱིས་མི་ལང་	kyis	medium	1	1	0	0	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan auch brjod
+754	23	8952	headword_line	བརྗོད་ཀྱིས་མི་ལང་	kyis	medium	1	1	0	0	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi laṅ auch brjod
 754	24	8952	german_prose			none	0	1	0	0	mi lan unaussprechlich.
 754	25	8952	german_prose_with_translit			none	1	4	0	0	de yi yon tan - „die Vorzüge des [Elixirs]
 754	26	8952	german_prose			none	0	3	0	0	sind unausprechlich“ (K841(2) 204b7).
@@ -109973,7 +109973,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 754	143	8963	headword_line	བརྗོད་ལེའུ་	le’u	high	1	0	0	0	བརྗོད་ལེའུ་ brjod le’u
 754	145	8963	latin_other			none	1	0	0	0	2. Beschreibung.
 754	147	8963	german_prose_with_translit			none	5	3	0	0	dṅos po gcig gi ~ (metr.) „Beschreibung eines einzelnen Gegenstandes“ (Lokn 40,9).
-754	150	8964	headword_line	བརྗོད་མི་ལང་	kyis	medium	1	1	0	0	བརྗོད་མི་ལང་ brjod mi lan Tbrjod kyis mi lan.
+754	150	8964	headword_line	བརྗོད་མི་ལང་	kyis	medium	1	1	0	0	བརྗོད་མི་ལང་ brjod mi laṅ Tbrjod kyis mi lan.
 754	152	8965	headword_line	བརྗོད་གཞི་	Thematik	high	1	1	0	0	བརྗོད་གཞི་ brjod gäi Thematik.
 754	153	8965	german_prose_with_translit			none	4	1	0	0	= rgyal po’i säan du gsol ba yis (meir.) „er
 754	154	8965	german_prose_with_translit			none	1	4	0	0	berichtete dem König über die Thematik“
