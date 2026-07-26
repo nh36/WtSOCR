@@ -28551,3 +28551,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 264	57	3518	headword_line	blan	blaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།ཁས་བླང་ khas blan fut. zu lkhas len verspre-
 767	82	9190	headword_line	blan	blaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉམས་སུ་བླང་ Hams su blan fur. zu lüams su
 1106	37	12170	headword_line	blan	blaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དང་དུ་བླང་ daṅ du blan fur. zu 1772 du len
+79	168	880	headword_line	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fe bar ’on ba
+79	221	889	headword_line	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’on ba herbei-
+82	42	935	headword_line	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་འོང་བ་ kun nas ’on ba ankommen, gelan-
+789	53	9432	tibetan_only	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བར་འོང་ fie bar ’on pf. fie bar ’ons kommen.

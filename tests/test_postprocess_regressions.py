@@ -3438,6 +3438,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("khas blaṅ fut.", corrected)
         self.assertIn("unreviewed blan control", corrected)
 
+    def test_reviewed_ong_preserves_apostrophe_and_unreviewed_on(self) -> None:
+        lines = {
+            (82, 42): "ཀུན་ནས་འོང་བ་ kun nas ’on ba",
+            (1, 1): "unreviewed on control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun nas ’oṅ ba", corrected)
+        self.assertIn("unreviewed on control", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

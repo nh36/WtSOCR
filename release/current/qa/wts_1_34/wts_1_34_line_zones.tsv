@@ -9610,7 +9610,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 79	163	875	german_prose_with_translit			none	1	4	0	0	(Tshe 3b1), bedeutet auch „Spott, Hohn“;
 79	164	875	german_prose_with_translit			none	2	1	0	0	kunnas dgod=bzadgad „Gelächter“ (brDa).
 79	166	875	other			none	0	0	0	0	87
-79	168	876	headword_line	ཀུན་ནས་ཉེ་བར་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fe bar ’on ba
+79	168	876	headword_line	ཀུན་ནས་ཉེ་བར་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fe bar ’oṅ ba
 79	170	877	headword_line	ཀུན་ནས་འགེབས་	nas	medium	1	3	0	0	ཀུན་ནས་འགེབས་ kun nas ’gebs für die Herrscher-
 79	171	877	german_prose			none	0	2	0	0	gattin bestimmter Palast; vgl.
 79	172	877	other			none	0	0	0	0	tkun ’gebs.
@@ -9644,7 +9644,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 79	217	884	german_prose			none	0	4	0	0	Lex. ätatäyın „mit bewaffneter Hand jmds.
 79	218	884	german_prose			none	0	2	0	0	Leben bedrohend, nach jmds. Leben trach-
 79	219	884	latin_other			none	1	0	0	0	tend“ (Tshe 3b2).
-79	221	885	headword_line	ཀུན་ནས་ཉེ་བར་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’on ba herbei-
+79	221	885	headword_line	ཀུན་ནས་ཉེ་བར་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’oṅ ba herbei-
 79	222	885	other			none	0	0	0	0	kommen.
 80	1	886	headword_line	ཀུན་ནས་ཉོན་མོངས་པ་	nas	medium	2	0	0	0	ཀུན་ནས་ཉོན་མོངས་པ་ kun nas ion mons pa
 80	3	886	latin_other			none	4	0	0	0	ig pa kun nas 776 bar ’ons pa la (metr.) „wenn
@@ -9984,7 +9984,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 82	37	930	german_prose_with_translit			none	4	4	0	0	Lex. rgyal po’i pho bran la’an „auch für: Palast
 82	38	930	german_prose_with_translit			none	1	2	0	0	des Königs“ (brDa).
 82	40	930	german_prose			none	0	2	0	0	2. vgl. Ikun bzan.
-82	42	931	headword_line	ཀུན་ནས་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་འོང་བ་ kun nas ’on ba ankommen, gelan-
+82	42	931	headword_line	ཀུན་ནས་འོང་བ་	nas	medium	2	0	0	0	ཀུན་ནས་འོང་བ་ kun nas ’oṅ ba ankommen, gelan-
 82	43	931	german_prose			none	0	1	0	0	gen zu.
 82	44	931	german_prose_with_translit			none	8	1	0	0	tshogs kyi bdag po de... nags de Rid du kun nas
 82	46	931	german_prose			none	0	4	0	0	’ons par gyur „der Herdenführer kam in den
@@ -115216,7 +115216,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 789	46	9286	german_prose			none	0	2	0	0	pantomimisch dar“ (Lokn 136,21).
 789	48	9286	tibetan_only	ཉེ་བར་གཟིགས་		none	0	0	0	0	ཉེ་བར་གཟིགས་ fie bar gzigs beobachten.
 789	50	9286	german_prose_with_translit			none	1	3	0	0	gZon nus - so „der Prinz hat [alles] beobachtet“ (Lokn 82,30).
-789	53	9286	tibetan_only	ཉེ་བར་འོང་		none	0	0	0	0	ཉེ་བར་འོང་ fie bar ’on pf. fie bar ’ons kommen.
+789	53	9286	tibetan_only	ཉེ་བར་འོང་		none	0	0	0	0	ཉེ་བར་འོང་ fie bar ’oṅ pf. fie bar ’ons kommen.
 789	55	9286	german_prose_with_translit			none	4	3	0	0	77 ltar /7/ ma gun gi dus la ~ ñam „ist die Zeit
 789	57	9286	other			none	0	0	0	0	496
 789	59	9286	tibetan_latin_mixed	ཉེ་བར་ལེན་པའི་་		none	1	0	0	0	ཉེ་བར་ལེན་པའི་་ 770 bar len pa’ ...
