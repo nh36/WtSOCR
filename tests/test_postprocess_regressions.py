@@ -3310,6 +3310,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed snah control", corrected)
         self.assertEqual(sum(row["to_token"] == "snaṅ" for row in changes), 1)
 
+    def test_reviewed_wang_preserves_attested_wan(self) -> None:
+        fixtures = {
+            "wts_1_34": {(90, 1): "ཀེ་ཝང་ ke wan"},
+            "wts_9_m": {(257, 66): "nos su — rla wan dan gre mon zer ba sogs"},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("ཀེ་ཝང་ ke waṅ", outputs["wts_1_34"])
+        self.assertIn("rla wan dan gre mon", outputs["wts_9_m"])
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
