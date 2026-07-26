@@ -5569,3 +5569,12 @@ wts_1_34	1086	17	3	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_1_34	1205	50	4	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
 wts_1_34	1205	85	4	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
 wts_35_51	600	5	2	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
+wts_1_34	386	25	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	779	45	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	784	200	3	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1099	32	3	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1100	10	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1168	60	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_35_51	260	68	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	784	200	6	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Explicit alternate repeats the same ཞིང element.
+wts_1_34	1100	10	7	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Kurzf. für transparently repeats the same ཞིང element.

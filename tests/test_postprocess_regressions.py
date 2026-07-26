@@ -2926,6 +2926,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed byun occurrence", corrected)
         self.assertEqual(sum(row["to_token"] == "byuṅ" for row in changes), 2)
 
+    def test_reviewed_zhing_preserves_case_and_lowercase_controls(self) -> None:
+        lines = {
+            (784, 200): "ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin",
+            (1400, 3): "unrelated lowercase zin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ie ba’i Ziṅ auch ne Ziṅ", corrected)
+        self.assertIn("lowercase zin control", corrected)
+        self.assertEqual(sum(row["to_token"] == "Ziṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

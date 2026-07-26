@@ -54406,7 +54406,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 386	20	5075	german_prose			none	0	1	0	0	auch grog sman pi pi lin“ (1 16 37,11-13).
 386	22	5076	headword_line	གྲོག་ཚང་	tshan	high	1	1	0	0	གྲོག་ཚང་ grog tshaṅ Ameisenhügel.
 386	23	5076	german_prose_with_translit			none	3	2	0	0	Lex. srog chags grog ma’i tshan Zig (brDa).
-386	25	5076	tibetan_only	གློག་ཞིང་		none	0	2	0	0	གློག་ཞིང་ grog Zin Ameisenhügel.
+386	25	5076	tibetan_only	གློག་ཞིང་		none	0	2	0	0	གློག་ཞིང་ grog Ziṅ Ameisenhügel.
 386	26	5076	german_prose_with_translit			none	2	2	0	0	Lex. grog ma’i tshan (Dagy).
 386	28	5077	headword_line	གྲོགས་	po	medium	1	4	0	0	གྲོགས་ grogs auch ~ po Freund, Gefährte, Hel-
 386	30	5077	german_prose_with_translit			none	2	1	0	0	fer; - mo Freundin; - po byed, ~ po
@@ -113553,7 +113553,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 779	40	9170	german_prose_with_translit			none	1	4	0	0	Monat; vgl. Triin Zag gi grans.
 779	42	9170	german_prose_with_translit			none	4	1	0	0	Lex. dus kyi zla ba (brDa); zla ba’i dus yun
 779	43	9170	german_prose			none	0	1	0	0	(Dagy).
-779	45	9171	headword_line	ཉིན་ཞིང་	Thin	high	1	2	0	0	ཉིན་ཞིང་ Hin Zin Thin.
+779	45	9171	headword_line	ཉིན་ཞིང་	Thin	high	1	2	0	0	ཉིན་ཞིང་ Hin Ziṅ Thin.
 779	46	9172	headword_line	ཉིན་བཞིན་	bzin	medium	1	2	0	0	ཉིན་བཞིན་ Ain bzin Täin
 779	47	9172	tibetan_only	ཉིན་ཟླ་བྲ་		none	0	1	0	0	ཉིན་ཟླ་བྲ་ iin zla za Til zla za
 779	49	9172	example_tibetan_latin	ཉིན་རངས་པ་		none	1	1	0	0	ཉིན་རངས་པ་ 77//7 rans pa Tagesanbruch.
@@ -114526,7 +114526,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 784	196	9227	german_prose			none	0	3	0	0	= sdig (metr.) „sekundäre Vergehen mit
 784	197	9227	german_prose			none	0	3	0	0	unmittelbaren Folgen, wie Bildnisse, Stü-
 784	198	9227	german_prose			none	0	5	0	0	pas und Tempel zu zerstören“ (Räg 60,11).
-784	200	9228	headword_line	ཉེ་བའི་ཞིང་	ba’i	high	1	5	0	0	ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin Bez. für
+784	200	9228	headword_line	ཉེ་བའི་ཞིང་	ba’i	high	1	5	0	0	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
 784	201	9228	latin_other			none	1	0	0	0	tantrische Versammlungsplätze;
 784	202	9228	other			none	0	0	0	0	skt. upaksetra.
 784	204	9228	german_prose_with_translit			none	3	2	0	0	jie Zin ku lu ta Zes brjod / de bzin arbu ta nid
@@ -159323,7 +159323,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1099	28	11956	german_prose_with_translit			none	1	3	0	0	po „weißer Kristall“ (Dagy).
 1099	30	11956	latin_other			none	3	0	0	0	any dag pa’isnan ba [749 snan.
 1099	31	11956	tibetan_only	དག་པའི་སྣང་བ་		none	0	0	0	0	དག་པའི་སྣང་བ་ dagp £
-1099	32	11957	headword_line	དག་པའི་ཞིང་	pa’i	high	1	2	0	0	དག་པའི་ཞིང་ dag pa’i Zin \dag Zin.
+1099	32	11957	headword_line	དག་པའི་ཞིང་	pa’i	high	1	2	0	0	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
 1099	34	11957	tibetan_only	དག་པར་བཅོས་		none	0	1	0	0	དག་པར་བཅོས་ dag par bcos gründlich verbes-
 1099	36	11957	other			none	0	0	0	0	sern.
 1099	38	11957	german_prose_with_translit			none	2	2	0	0	blo ldan 46 rab kyis — Sin Zus te / legs par gtan
@@ -159381,7 +159381,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1100	5	11965	german_prose_with_translit			none	4	3	0	0	sne’'u’i dpon dpan por mdzad nas — „sie bestimmten den Gouverneur von sNe’u zum
 1100	7	11965	german_prose_with_translit			none	1	3	0	0	Zeugen und bereinigten [die Angelegen-
 1100	8	11965	german_prose_with_translit			none	1	1	0	0	heit]“ (TsonNth 5,74b2).
-1100	10	11966	headword_line	དག་ཞིང་	pa’i	high	1	4	0	0	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
+1100	10	11966	headword_line	དག་ཞིང་	pa’i	high	1	4	0	0	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
 1100	11	11966	german_prose			none	0	5	0	0	Land, Bez. für einen Daseinsbereich
 1100	12	11966	german_prose_with_translit			none	2	2	0	0	mit der besten Voraussetzung zur Erlangung
 1100	14	11966	german_prose_with_translit			none	1	1	0	0	der Buddhaschaft.
@@ -164548,7 +164548,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1168	55	12334	german_prose_with_translit			none	1	6	0	0	des Monats, des Tages und der Tageszeit auf-
 1168	56	12334	german_prose			none	0	1	0	0	treten“ (Nagdel 62,9).
 1168	58	12335	headword_line	དུར་ཝ་	ba	medium	1	2	0	0	དུར་ཝ་ dür wa Tdur ba.
-1168	60	12335	tibetan_only	དུར་ཞིང་		none	0	2	0	0	དུར་ཞིང་ dur Zin Leichenacker.
+1168	60	12335	tibetan_only	དུར་ཞིང་		none	0	2	0	0	དུར་ཞིང་ dur Ziṅ Leichenacker.
 1168	62	12335	tibetan_only	དུར་ཞུགས་		none	0	0	0	0	དུར་ཞུགས་
 1168	64	12335	german_prose_with_translit			none	4	2	0	0	dur Sin (7, Zin) de la dur bya man po gnas
 1168	65	12335	german_prose			none	0	2	0	0	„auf jenem Leichenacker leben viele Geier“

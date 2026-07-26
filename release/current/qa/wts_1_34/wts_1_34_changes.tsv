@@ -28371,3 +28371,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1086	17	11901	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་ལྟར་བྱུང་བ་ da ltar byun ba jetzt aufgetreten,
 1205	50	12530	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ལྟ་བུ་བྱུང་་ de lta bu byun ...
 1205	85	12531	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ལྟ་བུ་བྱུང་བ་ de lta bu byun ba.
+386	25	5076	tibetan_only	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློག་ཞིང་ grog Zin Ameisenhügel.
+779	45	9171	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉིན་ཞིང་ Hin Zin Thin.
+784	200	9228	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin Bez. für
+784	200	9228	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin Bez. für
+1099	32	11957	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དག་པའི་ཞིང་ dag pa’i Zin \dag Zin.
+1100	10	11966	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
+1100	10	11966	headword_line	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དག་ཞིང་ dag Zin Kurzf. für dag pa’i Zin reines
+1168	60	12335	tibetan_only	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུར་ཞིང་ dur Zin Leichenacker.
