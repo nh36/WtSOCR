@@ -5734,3 +5734,10 @@ wts_1_34	501	112	2	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_1_34	559	209	2	gsah	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
 wts_1_34	634	41	2	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
 wts_1_34	720	197	3	gsan	gsaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gsang_consensus_batch_20260726	Frozen exact Tibetan གསང alignment; exact-row only.
+wts_1_34	784	143	3	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	Frozen exact Tibetan དཔུང alignment; exact-row only.
+wts_1_34	1294	70	2	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	Frozen exact Tibetan དཔུང alignment; exact-row only.
+wts_35_51	737	43	1	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	Frozen exact Tibetan དཔུང alignment; exact-row only.
+wts_35_51	738	54	1	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	Frozen exact Tibetan དཔུང alignment; exact-row only.
+wts_35_51	739	1	1	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	Frozen exact Tibetan དཔུང alignment; exact-row only.
+wts_35_51	739	47	4	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dpung_same_entry_echo_batch_20260726	Entry structure independently establishes the same Tibetan lemma.
+wts_35_51	740	75	4	dpun	dpuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dpung_same_entry_echo_batch_20260726	Entry structure independently establishes the same Tibetan lemma.

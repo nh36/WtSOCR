@@ -114487,7 +114487,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 784	139	9221	german_prose_with_translit			none	1	4	0	0	Os mS Ne 577 7777 rgyan ein Ohr-
 784	140	9221	other			none	0	0	0	0	DRAN schmuck.
 784	142	9221	german_prose_with_translit			none	2	2	0	0	Lex. rna rgyan gyi bye brag (Dagy).
-784	143	9222	headword_line	ཉེ་བའི་དཔུང་པ་	ba’i	high	2	1	0	0	ཉེ་བའི་དཔུང་པ་ fie ba’i dpun pa Ellbogen.
+784	143	9222	headword_line	ཉེ་བའི་དཔུང་པ་	ba’i	high	2	1	0	0	ཉེ་བའི་དཔུང་པ་ fie ba’i dpuṅ pa Ellbogen.
 784	145	9222	german_prose_with_translit			none	2	2	0	0	Lex. lag pa’i gru mo (brDa, Dagy).
 784	146	9222	example_tibetan_latin	ཉེ་བའི་མ་མ་		none	2	2	0	0	ཉེ་བའི་མ་མ་ fie /27?¡ ma ma Amme, Kinder-
 784	148	9222	german_prose			none	0	1	0	0	mädchen.
@@ -174014,7 +174014,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1294	65	12891	german_prose_with_translit			none	1	2	0	0	Gefolge der dMag-zor rgyal-mo,
 1294	67	12891	german_prose_with_translit			none	4	4	0	0	gehört zu den 'phrin las bZi’i lha mo (Neb 25,
 1294	68	12891	german_prose			none	0	1	0	0	Neb 27).
-1294	70	12891	tibetan_only	དྲག་དཔུང་		none	0	1	0	0	དྲག་དཔུང་ drag dpun Armee.
+1294	70	12891	tibetan_only	དྲག་དཔུང་		none	0	1	0	0	དྲག་དཔུང་ drag dpuṅ Armee.
 1294	71	12891	german_prose_with_translit			none	1	2	0	0	Lex. dmag gi dpun (Dagy).
 1294	73	12891	tibetan_only	དྲག་མོ་		none	0	0	0	0	དྲག་མོ་ drag mo.
 1294	75	12891	german_prose			none	0	1	0	0	1. wilde, zornvolle Frau.

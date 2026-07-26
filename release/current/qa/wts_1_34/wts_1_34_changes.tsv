@@ -28503,3 +28503,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 559	209	7082	tibetan_only	gsah	gsaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྔ་གསང་ rna gsah Trommelton.
 634	41	7712	tibetan_only	gsan	gsaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆབ་གསང་ chab gsan Bez. für Urin.
 720	197	8640	headword_line	gsan	gsaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཇམ་དཔལ་གསང་གྒང་ Jam dpal gsan rgynd npr.
+784	143	9222	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བའི་དཔུང་པ་ fie ba’i dpun pa Ellbogen.
+1294	70	12891	tibetan_only	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་དཔུང་ drag dpun Armee.

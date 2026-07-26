@@ -6392,3 +6392,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1121	34	6109	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren Tphren ba."
 1121	35	6110	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."
 1084	1	5815	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕང་ ""phan"
+737	43	3721	tibetan_only	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཔུང་ 'dpun.
+738	54	3723	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དཔུང་ ""dpun Ldpuṅ pa."
+739	1	3729	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དཔུང་གི་ཆུང་གི་་ "" dpun gi chuṅ gi"
+739	47	3736	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་མགོ་ dpuṅ mgo auch dpun pa'i mgo
+740	75	3751	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་པ་ dpuṅ pa auch dpun Arm, Oberarm,
