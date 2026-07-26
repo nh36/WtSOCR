@@ -5292,3 +5292,26 @@ wts_1_34	1252	93	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_s
 wts_1_34	1253	14	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
 wts_1_34	1253	41	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
 wts_1_34	1253	100	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
+wts_1_34	134	129	2	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	144	17	2	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	351	159	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	351	193	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	351	199	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	351	206	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	1	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	21	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	39	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	48	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	54	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	70	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	76	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	352	105	1	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	771	25	3	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	771	27	3	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	772	8	3	gun	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_35_51	699	55	3	guh	guṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	Frozen exact Tibetan གུང alignment at 0848355; genuine གུན is excluded.
+wts_1_34	134	129	6	gun	guṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gung_same_entry_echo_batch_20260726	The Kurzf. expression repeats bka’i guṅ as the same གུང element.
+wts_1_34	771	27	8	gun	guṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gung_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same གུང element; preceding reference damage is left unchanged.
+wts_1_34	772	8	7	gun	guṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gung_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same གུང element.
+wts_35_51	424	54	6	gun	guṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gung_same_entry_echo_batch_20260726	The alternate nam gyi gun independently repeats the same གུང element.
+wts_35_51	699	55	7	gun	guṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gung_same_entry_echo_batch_20260726	The later pu de gun rgyal repeats the complete name and the same གུང element; the damaged leading reference remains unchanged.

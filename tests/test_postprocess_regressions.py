@@ -2652,6 +2652,34 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("དོན་ don synthetic genuine-final-n control.", corrected)
         self.assertEqual(sum(row["to_token"] == "doṅ" for row in changes), 8)
 
+    def test_reviewed_gung_variants_and_echoes_are_exact(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (134, 129): "བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon",
+                (771, 25): "ཉི་མ་གུང་ ri ma gun Wii /7777 gun.",
+                (771, 27): "ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun",
+                (200, 1): "གུན་ gun synthetic genuine-final-n control.",
+            },
+            "wts_35_51": {
+                (699, 55): "པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:",
+            },
+        }
+        observed = []
+        for label, lines in fixtures.items():
+            _result, corrected, changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            observed.append(corrected)
+            if label == "wts_1_34":
+                self.assertIn("bka’ guṅ Kurzf. für bka’i guṅ blon", corrected)
+                self.assertIn("ri ma guṅ Wii /7777 gun.", corrected)
+                self.assertIn("fi ma guṅ pa auch /7/ ma’i guṅ", corrected)
+                self.assertIn("གུན་ gun synthetic genuine-final-n control.", corrected)
+            else:
+                self.assertIn("pu de guṅ rgyal Ispu de guṅ rgyal", corrected)
+            self.assertTrue(all(row["from_token"] in {"gun", "guh"} for row in changes))
+        self.assertEqual(sum(text.count("guṅ") for text in observed), 7)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

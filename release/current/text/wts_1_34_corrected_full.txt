@@ -24605,7 +24605,7 @@ bdud, 6. srin po, 7.ma mo, 8.gśin rje (T.N.).
 men mit den acht Abteilungen der gehorsa-
 men Gefolgschaft“ (Srid 2a5).
 
-བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+བཀའ་གུང་ bka’ guṅ Kurzf. für bka’i guṅ blon Mi-
 nister.
 
 mi dban — chen po nas rgyab bsnon bka’ dam
@@ -26080,7 +26080,7 @@ sung.
 Lex. slob ston gyi Ze sa (Dagy).
 བཀའ་བསྲུང་ bka’ bsrun tbka’ srun.
 
-བཀའི་གུང་བློན་ bka’i gun blon Ministerrat der zen-
+བཀའི་གུང་བློན་ bka’i guṅ blon Ministerrat der zen-
 
 traltib. Regierung; vgl. 1bka’ gun.
 
@@ -67151,7 +67151,7 @@ den- und Luchsfell gemacht“ (Lśdz-K
 Lex. ~ lpags = gcan gzan = gi pags pa „das
 Fell des Raubtieres Leopard“ (brDa, Dagy).
 
-གུང་བསྒྲིགས་ gun bsgrigs
+གུང་བསྒྲིགས་ guṅ bsgrigs
 
 SIR" ’gun Mitte, Zentralregion; Mittag, Tag;
 nam ~ Mitternacht; < la inmitten.
@@ -67185,23 +67185,23 @@ Lex. ~ ni dbus „gun: Mitte“ (Be’uD 222,4);
 777 ma’ ~ = madhyāhnah „Mittag“ (Mvy
 8248).
 
-གུང་འགྲིགས་ gun ’grigs passend, angemessen.
+གུང་འགྲིགས་ guṅ ’grigs passend, angemessen.
 
 Lex. las ka ~ pa red „die Arbeit ist in Ordnung“ (brDa); las don - son lta bu dan gun
 
 bsgrigs zin lta bu (Dagy).
 
-གུང་སྒྲིག་ gun sgrig pf. 1,9//77 bsgrigs in Einklang
+གུང་སྒྲིག་ guṅ sgrig pf. 1,9//77 bsgrigs in Einklang
 པི bringen.
 de dan ~ pa’i dban du byas te „gesetzt den
 
 Fall, daß es damit in Einklang gebracht
 wird“ (Tär 34,1).
 
-གུང་བསྒྲིགས་ gun bsgrigs pl. zu 197/77 sgrig in
+གུང་བསྒྲིགས་ guṅ bsgrigs pl. zu 197/77 sgrig in
 Einklang bringen.
 
-207གུང་ཐང་ gun thaṅ
+207གུང་ཐང་ guṅ thaṅ
 
 Lex. byed pa pos - pa yin „der Handelnde
 hat es geordnet“ (brDa); las don gun ’grigs
@@ -67221,7 +67221,7 @@ aus Gun-than“ (Debm 3231); ~ smad du
 khrid phyin nas „ich nahm [sie] nach Gunthan-smad mit“ (Mil 37,24).
 
 
-གུང་ཐུན་ gun thun Mittag; Mitternacht.
+གུང་ཐུན་ guṅ thun Mittag; Mitternacht.
 
 sha dro daṅ / gun dan / phyi dro daṅ /
 mtshan 7707 ... ~ dan / ~ gyi phyed dan „bei
@@ -67239,7 +67239,7 @@ Lex. ~ (¥. 1. mthun) la = madhyame yäme
 in phyed dan mtshan phyed kyi dus „Mittag
 und Mitternacht“ (Dagy).
 
-གུང་མཐུན་པ་ gun mthun pa in Übereinstim-
+གུང་མཐུན་པ་ guṅ mthun pa in Übereinstim-
 
 mung mit.
 
@@ -67248,13 +67248,13 @@ mung mit.
 indischen Werken niedergelegt“ (Tär
 181,10).
 
-གུང་བློན་ gun blon Innenminister.
+གུང་བློན་ guṅ blon Innenminister.
 
 chab pha rol tshu rol gyi / - „die gun blon,
 die diesseits und jenseits des Wassers [tätig
 sein sollen]“ (PT1287 257).
 
-གུང་གསེང་ gun gsen
+གུང་གསེང་ guṅ gsen
 
 Lex. nan blon la’an gun Zes rgya nag go sa
 „auch für Innenminister, die chin. Amtsbe-
@@ -67270,13 +67270,13 @@ ger“ (Hev 1.7.3c).
 Lex. madhyangulih (Mvy 3979); sor mo
 dkyil mdzub (brDa).
 
-གུང་བཙན་ gun btsan Regent.
+གུང་བཙན་ guṅ btsan Regent.
 
 ’dren med rgyal po’i ~ yin (metr.) „ich bin
 der Regent des unvergleichlichen Königs“
 (Sumpa 14133).
 
-གུང་ཚིགས་ gun tshigs auch dgun tshigs Mittag-
+གུང་ཚིགས་ guṅ tshigs auch dgun tshigs Mittag-
 ” essen, Mittagszeit.
 
 ~ ma yol ba „die Mittagszeit ist nicht vorü-
@@ -67305,7 +67305,7 @@ Tages, an dem das Rennen [stattfindet] “
 
 6
 
-གུང་གསེང་ gun gseh Urlaub, Freizeit.
+གུང་གསེང་ guṅ gseh Urlaub, Freizeit.
 
 Lex. las ka’i bar gsen gi nal gso „Ruhepause
 zwischen der Arbeit“ (Dagy).
@@ -151110,9 +151110,9 @@ Lex. fi ma’i ’od ’phro ba (Dagy); Ri ma
 (Mvy 4392); Ai ma’i khyim = ni ma’i khor
 yug (brDa).
 
-ཉི་མ་གུང་ ri ma gun Wii /7777 gun.
+ཉི་མ་གུང་ ri ma guṅ Wii /7777 gun.
 
-ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
+ཉི་མ་གུང་པ་ fi ma guṅ pa auch /7/ ma’i guṅ
 ” npr. ein buddh. Lehrer, skt.
 Madhyāntika oder Madhyandina (vgl.
 LAMOTTE 1958: 331 f.), sowie die mit ihm
@@ -151317,7 +151317,7 @@ siderische Periode der Sonne
 (SCHUH 2012: 1386).
 
 ༤ an -- ` ཚེ m. .
-ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
+ཉ་མའ་གུང་ rl ma’i guṅ auch fi ma guṅ.
 ༽
 
 1. Mittag.

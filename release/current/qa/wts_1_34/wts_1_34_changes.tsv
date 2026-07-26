@@ -28124,3 +28124,23 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1253	100	12721	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
 1254	1	12722	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་རྩེ་དགུ་བསྐོར་་ don rise dgu bskor ...
 1254	33	12723	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་རལ་ don ral Köcher.
+134	129	1697	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+134	129	1697	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+144	17	1801	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའི་གུང་བློན་ bka’i gun blon Ministerrat der zen-
+351	159	4733	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་བསྒྲིགས་ gun bsgrigs
+351	193	4734	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་འགྲིགས་ gun ’grigs passend, angemessen.
+351	199	4735	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་སྒྲིག་ gun sgrig pf. 1,9//77 bsgrigs in Einklang
+351	206	4737	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་བསྒྲིགས་ gun bsgrigs pl. zu 197/77 sgrig in
+352	1	4738	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་ཐང་ gun thaṅ
+352	21	4740	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་ཐུན་ gun thun Mittag; Mitternacht.
+352	39	4741	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་མཐུན་པ་ gun mthun pa in Übereinstim-
+352	48	4741	tibetan_only	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་བློན་ gun blon Innenminister.
+352	54	4741	tibetan_only	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་གསེང་ gun gsen
+352	70	4743	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་བཙན་ gun btsan Regent.
+352	76	4744	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་ཚིགས་ gun tshigs auch dgun tshigs Mittag-
+352	105	4746	tibetan_only	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གུང་གསེང་ gun gseh Urlaub, Freizeit.
+771	25	9074	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་མ་གུང་ ri ma gun Wii /7777 gun.
+771	27	9075	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
+771	27	9075	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
+772	8	9090	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
+772	8	9090	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
