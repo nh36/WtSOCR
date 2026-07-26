@@ -28393,3 +28393,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 54	70	447	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
 54	70	447	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
 157	135	1990	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་དང་ཀིང་ rkaṅ daṅ kin tkin kan.
+642	61	7800	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཀླང་བདག་པོ་ chu klun bdag po
+642	75	7800	tibetan_only	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཀླང་ chu klun Fluß, Bach.
+642	114	7803	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཀླང་མཚོ་ chu klun mtsho
+642	118	7804	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཀླང་མཆོ་ chu klun mtsho ein See in höheren
+649	68	7891	tibetan_only	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་འབབ་ཀླང་ chu ’bab klun Bez. für Ozean.
+1064	57	11735	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོ་རེས་ཀླང་ mtho ris klun.

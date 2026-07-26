@@ -2962,6 +2962,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed kin control", corrected)
         self.assertEqual(sum(row["to_token"] == "kiṅ" for row in changes), 3)
 
+    def test_reviewed_klang_and_klung_share_no_broad_klun_rule(self) -> None:
+        lines = {
+            (115, 204): "ཀླུང་ klun",
+            (642, 61): "ཆུ་ཀླང་བདག་པོ་ chu klun bdag po",
+            (1400, 6): "unreviewed klun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀླུང་ kluṅ", corrected)
+        self.assertIn("chu kluṅ bdag po", corrected)
+        self.assertIn("unreviewed klun control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kluṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

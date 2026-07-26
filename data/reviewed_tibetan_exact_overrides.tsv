@@ -5595,3 +5595,9 @@ wts_1_34	157	135	3	kin	kiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_k
 wts_1_34	54	18	5	kin	kiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_king_same_entry_echo_batch_20260726	Explicit alternate retains ཀིང.
 wts_1_34	54	18	8	kin	kiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_king_same_entry_echo_batch_20260726	Explicit alternate retains ཀིང.
 wts_1_34	54	70	8	kin	kiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_king_same_entry_echo_batch_20260726	Explicit alternate retains ཀིང.
+wts_1_34	642	61	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	642	75	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	642	114	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	642	118	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	649	68	3	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	1064	57	3	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
