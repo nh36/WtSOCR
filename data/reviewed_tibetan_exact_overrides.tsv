@@ -5655,3 +5655,11 @@ wts_1_34	756	62	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_35_51	191	47	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
 wts_8_b	580	45	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
 wts_1_34	704	60	5	chin	chiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_aching_same_entry_echo_batch_20260726	Explicit alternate repeats འཆིང.
+wts_1_34	39	188	2	phren	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	52	85	3	phren	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	54	191	3	phren	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	401	80	2	phren	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	424	158	2	phren	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	467	145	2	phreh	phreṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	Frozen exact Tibetan ཕྲེང alignment.
+wts_1_34	467	145	5	phren	phreṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_phreng_same_entry_echo_batch_20260726	Explicit alternate repeats ཕྲེང.
+wts_35_51	1074	47	5	phren	phreṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_phreng_same_entry_echo_batch_20260726	Explicit alternate repeats ཕྲེང.

@@ -28447,3 +28447,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 704	84	8503	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཡིག་ chin ༡/79 Tchins yıg.
 704	85	8503	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་སྔང་ chin san Tchin san.
 756	62	8980	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉ་འཆིང་པ་ a ’chin pa Bez. für Fischer, Fisch-
+39	188	144	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀ་ཕྲེང་ ka phren ('ka) „ka-Kranz“, alphabetische
+52	85	412	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀརྨ་ཐོད་ཕྲེང་རྩལ་ karma thod phren rtsal „Karma
+54	191	456	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླིམྨི་ལིའི་ཕྲེང་བ་ kimmi li phren ba eine Stadt in
+401	80	5254	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློག་ཕྲེང་ཅན་ glog phren can (zw.) Bez. für den
+424	158	5561	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བགྲང་ཕྲེང་འཛིན་ beran phren ’dzin Beiname des
+467	145	6056	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren Hals-
+467	145	6056	headword_line	phreh	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren Hals-

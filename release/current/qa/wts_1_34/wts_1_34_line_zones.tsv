@@ -3644,7 +3644,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 39	184	143	german_prose_with_translit			none	1	1	0	0	wurden Säulenumhüllungen aus Teppichen
 39	185	143	german_prose_with_translit			none	1	3	0	0	mit Drachenornament neu arrangiert“ (GTh
 39	186	143	other			none	0	0	0	0	4: 472,3).
-39	188	144	headword_line	ཀ་ཕྲེང་	ka phren ka	high	4	0	0	0	ཀ་ཕྲེང་ ka phren ('ka) „ka-Kranz“, alphabetische
+39	188	144	headword_line	ཀ་ཕྲེང་	ka phren ka	high	4	0	0	0	ཀ་ཕྲེང་ ka phreṅ ('ka) „ka-Kranz“, alphabetische
 39	189	144	german_prose			none	0	4	0	0	Reihenfolge, z. B. bei Gedichten, deren
 39	190	144	german_prose_with_translit			none	1	5	0	0	Verszeilen in der Reihenfolge des Alphabets
 39	191	144	german_prose_with_translit			none	2	1	0	0	beginnen; vgl. ka bstod.
@@ -5574,7 +5574,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 52	82	411	german_prose			none	0	4	0	0	N. eines Herrschers von
 52	83	411	german_prose_with_translit			none	1	2	0	0	glsari (reg. 1620-1642) (Dunk); vgl. sde pa
 52	84	411	latin_other			none	2	0	0	0	gtsari pa.
-52	85	412	headword_line	ཀརྨ་ཐོད་ཕྲེང་རྩལ་	thod phren rtsal	high	3	1	0	0	ཀརྨ་ཐོད་ཕྲེང་རྩལ་ karma thod phren rtsal „Karma
+52	85	412	headword_line	ཀརྨ་ཐོད་ཕྲེང་རྩལ་	thod phren rtsal	high	3	1	0	0	ཀརྨ་ཐོད་ཕྲེང་རྩལ་ karma thod phreṅ rtsal „Karma
 52	86	412	german_prose			none	0	3	0	0	[-Manifestation] mit Schädel-
 52	87	412	german_prose			none	0	2	0	0	krone, der Mächtige“.
 52	89	412	german_prose_with_translit			none	2	4	0	0	1. einer der ikhye’u mched Ina (Padm 833).
@@ -5962,7 +5962,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 54	187	454	german_prose_with_translit			none	1	3	0	0	des btsan-po aufgenommen“ (In12 E28); kim
 54	188	454	german_prose			none	0	2	0	0	Sin kon jo (Debm 10b4).
 54	190	455	headword_line	ཀིསྤི་ལ་ཀ་	la ka	medium	3	1	0	0	ཀིསྤི་ལ་ཀ་ kimpi la ka tkampi Iya ka.
-54	191	456	headword_line	ཀླིམྨི་ལིའི་ཕྲེང་བ་	phren ba	high	2	3	0	0	ཀླིམྨི་ལིའི་ཕྲེང་བ་ kimmi li phren ba eine Stadt in
+54	191	456	headword_line	ཀླིམྨི་ལིའི་ཕྲེང་བ་	phren ba	high	2	3	0	0	ཀླིམྨི་ལིའི་ཕྲེང་བ་ kimmi li phreṅ ba eine Stadt in
 54	193	456	german_prose			none	0	3	0	0	Indien. - vgl. Päli kimbila=kim-
 54	194	456	german_prose			none	0	1	0	0	milä (DPPN 2: 606).
 54	195	456	german_prose_with_translit			none	1	4	0	0	gron khyer — „die Stadt Kimmilämäla“ (Tär
@@ -56800,7 +56800,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 401	75	5252	german_prose_with_translit			none	3	1	0	0	nad lhog pa (brDa, Dagy).
 401	77	5253	headword_line	གློག་སྤྱང་དམར་པོ་	spyan	medium	2	2	0	0	གློག་སྤྱང་དམར་པོ་ glog spyan dmar po ein Hund.
 401	78	5253	german_prose_with_translit			none	2	3	0	0	Lex. khyi Zig (brDa, Dagy).
-401	80	5254	headword_line	གློག་ཕྲེང་ཅན་	phren can	high	2	3	0	0	གློག་ཕྲེང་ཅན་ glog phren can (zw.) Bez. für den
+401	80	5254	headword_line	གློག་ཕྲེང་ཅན་	phren can	high	2	3	0	0	གློག་ཕྲེང་ཅན་ glog phreṅ can (zw.) Bez. für den
 401	81	5254	german_prose			none	0	4	0	0	Rachen oder Vater Rähus.
 401	83	5254	german_prose_with_translit			none	6	1	0	0	Lex. sgra gcan gyi pha (brDa); sgra gcan gyi
 401	84	5254	german_prose_with_translit			none	1	1	0	0	kha (Dagy).
@@ -60211,7 +60211,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	152	5560	german_prose_with_translit			none	1	2	0	0	eine Gebetskette“ (Glr 115,25).
 424	154	5560	other			none	0	0	0	0	345
 424	156	5560	other			none	0	0	0	0	NAAN” berans
-424	158	5561	headword_line	བགྲང་ཕྲེང་འཛིན་	phren dzin	high	2	2	0	0	བགྲང་ཕྲེང་འཛིན་ beran phren ’dzin Beiname des
+424	158	5561	headword_line	བགྲང་ཕྲེང་འཛིན་	phren dzin	high	2	2	0	0	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
 424	160	5561	german_prose			none	0	1	0	0	Feuergottes.
 424	162	5561	german_prose_with_translit			none	2	2	0	0	Lex. me lha (brDa, Dagy).
 424	164	5562	headword_line	བགང་བྱ་	bya	medium	1	0	0	0	བགང་བྱ་ beran bya.
@@ -66581,7 +66581,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 467	141	6054	german_prose_with_translit			none	2	2	0	0	sa und da drag angefügt wird“ (Dagy).
 467	143	6055	headword_line	རྒྱན་གནས་	rgyan	high	1	3	0	0	རྒྱན་གནས་ rgyan gnas Bez. für Stirn.
 467	144	6055	german_prose_with_translit			none	2	2	0	0	Lex. dpral mgo (brDa, Dagy).
-467	145	6056	headword_line	རྒྱན་ཕྲེང་	rgyan phreh	high	4	2	0	0	རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren Hals-
+467	145	6056	headword_line	རྒྱན་ཕྲེང་	rgyan phreh	high	4	2	0	0	རྒྱན་ཕྲེང་ rgyan phreṅ auch rgyan ’phreṅ Hals-
 467	146	6056	other			none	0	0	0	0	kette.
 467	147	6056	german_prose_with_translit			none	1	3	0	0	Lex. ~ (v.1. ’phren) = härah (Mvy 6011).
 467	148	6057	headword_line	རྒྱན་བཞི་	rgyan bZi	high	3	3	0	0	རྒྱན་བཞི་ rgyan bZi auch rgyan 97/ Seide, Bro-

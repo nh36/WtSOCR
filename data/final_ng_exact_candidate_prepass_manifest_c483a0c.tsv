@@ -1,0 +1,99 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	501	110	2	གསང	gsan	gsaṅ	positional	dominant_internal_consensus	none	གྒྨྲ་གསང་ sgra gsan
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	501	112	2	གསང	gsan	gsaṅ	positional	dominant_internal_consensus	none	སྒྲ་གསང་ sgra gsan Stimme, Geräusch.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	559	209	2	གསང	gsah	gsaṅ	positional	dominant_internal_consensus	none	རྔ་གསང་ rna gsah Trommelton.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	634	41	2	གསང	gsan	gsaṅ	positional	dominant_internal_consensus	none	ཆབ་གསང་ chab gsan Bez. für Urin.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	720	197	3	གསང	gsan	gsaṅ	positional	dominant_internal_consensus	none	འཇམ་དཔལ་གསང་གྒང་ Jam dpal gsan rgynd npr.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	157	78	4	ཐུང	thun	thuṅ	echo	uncertain	uncertain	རྐང་ཐུང་ rkaṅ thun Irkan 'thun.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	37	119	2	ཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཀ་ཐུང་ ka thun (ka).
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	157	78	2	ཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	རྐང་ཐུང་ rkaṅ thun Irkan 'thun.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	943	7	3	ཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	སྟག་བུ་ཐུང་ stag bu thun npr. ein Dämon.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	955	38	2	ཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཏྟད་ཐུང་ stod thun ein Kleidungsstück, Bluse;
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1277	57	2	ཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	དོར་ཐུང་ dor thun kurzer Unterrock, kurze
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	739	47	4	དཔུང	dpun	dpuṅ	echo	explicit_same_lemma_repetition	none	དཔུང་མགོ་ dpuṅ mgo auch dpun pa'i mgo
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	740	75	4	དཔུང	dpun	dpuṅ	echo	explicit_same_lemma_repetition	none	དཔུང་པ་ dpuṅ pa auch dpun Arm, Oberarm,
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	784	143	3	དཔུང	dpun	dpuṅ	positional	dominant_internal_consensus	none	ཉེ་བའི་དཔུང་པ་ fie ba’i dpun pa Ellbogen.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1294	70	2	དཔུང	dpun	dpuṅ	positional	dominant_internal_consensus	none	དྲག་དཔུང་ drag dpun Armee.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	737	43	1	དཔུང	dpun	dpuṅ	positional	dominant_internal_consensus	none	དཔུང་ 'dpun.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	738	54	1	དཔུང	dpun	dpuṅ	positional	dominant_internal_consensus	none	"དཔུང་ ""dpun Ldpuṅ pa."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	739	1	1	དཔུང	dpun	dpuṅ	positional	dominant_internal_consensus	none	"དཔུང་གི་ཆུང་གི་་ "" dpun gi chuṅ gi"
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	467	145	5	ཕྲེང	phren	phreṅ	echo	explicit_same_lemma_repetition	none	རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren Hals-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	1074	47	5	ཕྲེང	phren	phreṅ	echo	explicit_same_lemma_repetition	none	ཕྲེང་བ་ཅན་ phreṅ ba can auch 'phren ba can.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	39	188	2	ཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	ཀ་ཕྲེང་ ka phren ('ka) „ka-Kranz“, alphabetische
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	52	85	3	ཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	ཀརྨ་ཐོད་ཕྲེང་རྩལ་ karma thod phren rtsal „Karma
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	54	191	3	ཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	ཀླིམྨི་ལིའི་ཕྲེང་བ་ kimmi li phren ba eine Stadt in
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	401	80	2	ཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	གློག་ཕྲེང་ཅན་ glog phren can (zw.) Bez. für den
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	424	158	2	ཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	བགྲང་ཕྲེང་འཛིན་ beran phren ’dzin Beiname des
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	467	145	2	ཕྲེང	phreh	phreṅ	positional	dominant_internal_consensus	none	རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren Hals-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	113	24	6	བོང	bon	boṅ	echo	cross_reference_probable	none	བོང་ང་ནག་པོ་ boṅ na nag po Kurzf. bon nag
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	113	38	6	བོང	bon	boṅ	echo	explicit_same_lemma_repetition	none	བོང་ང་དམར་པོ་ boṅ na dmar po auch bon ba
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	47	150	3	བོང	bon	boṅ	positional	dominant_internal_consensus	none	ཀག་ལ་བོང་ kag la bon
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	47	196	3	བོང	bon	boṅ	positional	dominant_internal_consensus	none	ཀག་ལ་བོང་ kag la bon der Nan-chao-Herrscher
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	112	45	1	བོང	bon	boṅ	positional	dominant_internal_consensus	none	"བོང་ར་ ""bon rgya"
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	115	52	1	བོང	bon	boṅ	positional	dominant_internal_consensus	none	བོང་བུ་ལན་ ° bon bu lan tshwa eine Heilpflan-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	115	66	1	བོང	bon	boṅ	positional	dominant_internal_consensus	none	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	284	19	3	བྲེང	bren	breṅ	echo	explicit_same_lemma_repetition	none	བྲེང་ 'breṅ auch 'bren Brauch, Gepflogenheit,
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	263	45	2	བྲེང	bren	breṅ	positional	dominant_internal_consensus	none	"བྲང་བྲེང་ ""braṅ bren Tdran dreṅ."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	284	23	1	བྲེང	bren	breṅ	positional	damaged_context	damage_before_latin_alignment	བྲེང་ ?bren npr. ein Ort.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1017	200	3	མོང	mon	moṅ	echo	uncertain	uncertain	"ཐུན་མོང་ EN"" thun mon chos."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_9_m	254	15	5	མོང	mon	moṅ	echo	explicit_same_lemma_repetition	none	མོང་གོལ་གན་ moṅ gol gan auch mon gor
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_9_m	254	24	4	མོང	mon	moṅ	echo	explicit_same_lemma_repetition	none	མོང་རྟུལ་ moṅ rtul auch mon brtul dumm,
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	269	32	2	མོང	mon	moṅ	positional	dominant_internal_consensus	none	ཁུར་མོང་ khur mon auch khur man eine Pflan-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1017	56	2	མོང	mon	moṅ	positional	dominant_internal_consensus	none	བུན་མོང་ tbun mon
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1017	118	2	མོང	mon	moṅ	positional	dominant_internal_consensus	none	བུན་མོང་ཆོས་ thun mon chos
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1017	212	2	མོང	mon	moṅ	positional	dominant_internal_consensus	none	ཐུན་མོང་ཀུད་མེད་ tbun mon bud med Bez. für
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	409	62	2	མོང	mon	moṅ	positional	dominant_internal_consensus	none	དབྱི་མོང་ 'dbyi mon.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	409	73	2	མོང	mon	moṅ	positional	damaged_context	damage_before_latin_alignment	དབྱི་མོང་ ?dbyi mon Tdbyi mo.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	75	96	3	མྱོང	myon	myoṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myon bar ’gyur ba
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	88	164	4	མྱོང	myon	myoṅ	positional	dominant_internal_consensus	none	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་ kus pyi or myon nag
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	88	182	4	མྱོང	myon	myoṅ	positional	dominant_internal_consensus	none	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myon nag \kus pa’i
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	88	198	4	མྱོང	myon	myoṅ	positional	dominant_internal_consensus	none	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myon nag N. ei-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	748	114	3	མྱོང	myon	myoṅ	positional	dominant_internal_consensus	none	རྗེས་སུ་མྱོང་ rjes su myon auskosten.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	357	33	5	འཕང	phan	phaṅ	echo	explicit_same_lemma_repetition	none	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	249	62	2	འཕང	phan	phaṅ	positional	dominant_internal_consensus	none	།ཁ་འཕང་ kha 'phan
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	249	112	2	འཕང	phan	phaṅ	positional	dominant_internal_consensus	none	།བ་འཕང་ ha 'phan Forderung.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	265	26	2	འཕང	phan	phaṅ	positional	dominant_internal_consensus	none	ཁུ་འཕང་ khu 'phan auch khu phans, khu ’bans
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	357	33	2	འཕང	phan	phaṅ	positional	dominant_internal_consensus	none	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	1084	1	1	འཕང	phan	phaṅ	positional	dominant_internal_consensus	none	"འཕང་ ""phan"
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	375	14	7	འཕྲེང	phren	phreṅ	echo	uncertain	uncertain	དབུ་འཕྲེང་བ་ dbu 'phreṅ ba l lbu ba'i 'phren ba.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1038	169	2	འཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	ཐོད་འཕྲེང་རྩལ་ thod ’phren rtsal npr. eine
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	1111	15	2	འཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	འཕྲང་འཕྲེང་ /phran phren Verlangen.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	1121	34	1	འཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	"འཕྲེང་ ""phren Tphren ba."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_35_51	1121	35	1	འཕྲེང	phren	phreṅ	positional	dominant_internal_consensus	none	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	743	147	5	འབྲང	bran	braṅ	echo	uncertain	uncertain	རྗེས་འབྲང་ rjes 'bran Irjes su 'bran.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	748	84	6	འབྲང	bran	braṅ	echo	uncertain	uncertain	རྫཾས་སུ་འབྲང་ rjes su bren Trjes su ’bran.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	75	1	3	འབྲང	bran	braṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་འབྲང་བ་ kun tu ’bran ba
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	669	8	2	འབྲང	brah	braṅ	positional	dominant_internal_consensus	none	ཆོ་འབྲང་ cho ’brah Gattung, Abstammung
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	743	147	2	འབྲང	bran	braṅ	positional	dominant_internal_consensus	none	རྗེས་འབྲང་ rjes 'bran Irjes su 'bran.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	919	1	2	འབྲང	bran	braṅ	positional	dominant_internal_consensus	none	རྟིང་འབྲང་བ་ yein ’bran ba
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	919	3	2	འབྲང	bran	braṅ	positional	dominant_internal_consensus	none	རྟིང་འབྲང་བ་ rtin ’bran ba Gefährte; vgl. !rtin
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	481	67	5	འབྲང	bran	braṅ	positional	damaged_context	tibetan_headword_overlap	"kommt"" (dPeD 186,2). འབྲང་ས་ ""bran sa Tbran sa."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	512	13	2	འབྲེང	bren	breṅ	echo	uncertain	uncertain	"འབྲེང་ ""bren \bren."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	512	33	4	འབྲེང	bren	breṅ	echo	explicit_same_lemma_repetition	none	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	611	19	2	འབྲེང	bren	breṅ	positional	dominant_internal_consensus	none	ལྕག་འབྲེང་ lcag ’bren Peitsche.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	512	2	1	འབྲེང	bren	breṅ	positional	dominant_internal_consensus	none	"འབྲེང་ ""bren pf. P'breris folgen; vgl. 1'bran."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	512	9	1	འབྲེང	bren	breṅ	positional	dominant_internal_consensus	none	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	512	13	1	འབྲེང	bren	breṅ	positional	dominant_internal_consensus	none	"འབྲེང་ ""bren \bren."
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	754	150	7	ལང	lan	laṅ	echo	uncertain	uncertain	བརྗོད་མི་ལང་ brjod mi lan Tbrjod kyis mi lan.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	82	57	3	ལང	lan	laṅ	positional	dominant_internal_consensus	none	ཀུན་ནས་ལང་བ་ kun nas lan ba
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	754	1	4	ལང	lan	laṅ	positional	dominant_internal_consensus	none	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	754	23	4	ལང	lan	laṅ	positional	dominant_internal_consensus	none	བརྗོད་ཀྱིས་མི་ལང་ brjod kyis mi lan auch brjod
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	754	150	3	ལང	lan	laṅ	positional	dominant_internal_consensus	none	བརྗོད་མི་ལང་ brjod mi lan Tbrjod kyis mi lan.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_8_b	21	1	2	ལང	lan	laṅ	positional	dominant_internal_consensus	none	"པ་ལང་ ""ba lan"
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	613	116	1	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ལྕང་དཀར་ lcan dkar ein Weidenbaum.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	613	146	1	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ལྕང་ཏི་ lcan ti eine Heilpflanze.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	613	154	1	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ལྕང་ནག་ lcan nag ein Weidenbaum.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	613	166	1	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ལྕང་ལོ་ཅན་ lcan lo can
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	613	187	1	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ལྕང་ལོ་ lcan lo.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	784	11	3	ལྕང	lcan	lcaṅ	positional	dominant_internal_consensus	none	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcan dkar eine
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	121	157	2	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་ dkar sgan rin chen phug pa
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	266	167	3	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	ཁུག་ཆོས་སྒང་བུ་ khug chos sgan bu eine Pflanze.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	489	71	1	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	སྒང་ sgan.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	489	90	1	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	སྒང་བུ་ 'sgan bu Hügel.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	489	114	1	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	སྒང་གསེབ་ sgan gseb ein Tier, Igel oder Sta-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	1134	70	3	སྒང	sgan	sgaṅ	positional	dominant_internal_consensus	none	དར་མ་སྒང་ dar ma sgan npr. ein Ort am gÑal-
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	222	9	4	སྲིང	srin	sriṅ	positional	dominant_internal_consensus	none	སྐྲ་ཅན་གྱི་སྲིང་མོ་ skra can gyi srin mo Beiname der
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	614	107	2	སྲིང	srin	sriṅ	positional	dominant_internal_consensus	none	ལྕམ་སྲིང་ lcam srin
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	614	115	2	སྲིང	srin	sriṅ	positional	dominant_internal_consensus	none	ལྕམ་སྲིང་ lcam srin.
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	832	159	2	སྲིང	srin	sriṅ	positional	dominant_internal_consensus	none	བརྙེན་སྲིང་ bsñen srin
+c483a0c2c4a5a055dc90cd95d2eca630785d8d44	wts_1_34	961	188	3	སྲིང	srin	sriṅ	positional	dominant_internal_consensus	none	སྟོབས་ལྷའི་སྲིང་མོ་ stobs lha’i srin mo Beiname
