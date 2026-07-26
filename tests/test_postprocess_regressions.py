@@ -3080,6 +3080,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("བྲན་ bran", corrected)
         self.assertIn("པྲང་ bran", corrected)
 
+    def test_reviewed_breng_preserves_question_mark_and_exact_gating(self) -> None:
+        lines = {
+            (284, 23): "བྲེང་ ?bren npr. ein Ort.",
+            (1400, 12): "unreviewed bren control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("བྲེང་ ?breṅ npr. ein Ort.", corrected)
+        self.assertIn("unreviewed bren control", corrected)
+        self.assertEqual(sum(row["to_token"] == "breṅ" for row in changes), 1)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

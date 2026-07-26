@@ -44,3 +44,4 @@ tibetan_phreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཕྲེང	ti
 tibetan_aphreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕྲེང	tibetan_aphreng_consensus_batch_20260726	4	4	tibetan_aphreng_same_entry_echo_batch_20260726	1	0	1	0	0	0	4	0	1	4
 tibetan_thung_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཐུང	tibetan_thung_consensus_batch_20260726	5	5	tibetan_thung_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5
 tibetan_abrang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འབྲང	tibetan_abrang_consensus_batch_20260726	6	6	tibetan_abrang_same_entry_echo_batch_20260726	2	0	2	0	0	0	6	0	2	6
+tibetan_breng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བྲེང	tibetan_breng_consensus_batch_20260726	2	2	tibetan_breng_same_entry_echo_batch_20260726	1	1	0	0	0	0	2	1	1	3

@@ -21575,7 +21575,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 263	42	1450	german_prose_with_translit			none	1	2	0	0	"Lex. chun rau tsam ""soviel wie ein wenig"""
 263	43	1450	german_prose_with_translit			none	5	1	0	0	"(brDa); run nu ma chad tsam pa la ""für: ge-"
 263	44	1450	german_prose_with_translit			none	1	2	0	0	"rade so wenig, daß es reicht"" (Dagy)."
-263	45	1451	headword_line	བྲང་བྲེང་	dreṅ	high	1	1	0	0	བྲང་བྲེང་ "braṅ bren Tdran dreṅ.
+263	45	1451	headword_line	བྲང་བྲེང་	dreṅ	high	1	1	0	0	བྲང་བྲེང་ "braṅ breṅ Tdran dreṅ.
 263	46	1452	headword_line	བྲང་ས་	braṅ sa	high	2	0	0	0	བྲང་ས་ braṅ sa
 263	47	1453	headword_line	བྲང་ཚ་	braṅ tsha	high	3	1	0	0	བྲང་ཚ་ braṅ tsha eine Magenkrankheit.
 263	48	1453	german_prose_with_translit			none	6	3	0	0	"Lex. pho ba'i ra tsha la'an ""auch für: Ma-"
@@ -23240,11 +23240,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 284	16	1515	german_prose			none	0	3	0	0	haben; Imp. von 'bregpa (Dagy);regspani —
 284	17	1515	latin_other			none	3	0	0	0	"pa ""abschneiden"" (Li$ 22,6); 'bregs pa= — zin"
 284	18	1515	german_prose_with_translit			none	3	2	0	0	"pa la'an ""auch für geschert haben"" (brDa)."
-284	19	1516	headword_line	བྲེང་	breṅ	high	1	3	0	0	བྲེང་ 'breṅ auch 'bren Brauch, Gepflogenheit,
+284	19	1516	headword_line	བྲེང་	breṅ	high	1	3	0	0	བྲེང་ 'breṅ auch 'breṅ Brauch, Gepflogenheit,
 284	20	1516	german_prose			none	0	1	0	0	Tradition.
 284	21	1516	german_prose_with_translit			none	1	1	0	0	Lex. run nam srol (TTC); 'bren = rgyun
 284	22	1516	other			none	0	0	0	0	(TTC).
-284	23	1516	tibetan_only	བྲེང་		none	0	2	0	0	བྲེང་ ?bren npr. ein Ort.
+284	23	1516	tibetan_only	བྲེང་		none	0	2	0	0	བྲེང་ ?breṅ npr. ein Ort.
 284	24	1516	german_prose_with_translit			none	3	1	0	0	blon chen po chun bzan gyis / dbyar 'dun —
 284	25	1516	german_prose_with_translit			none	1	4	0	0	"du bsduste ""der Großminister ['Bro] Chun-"
 284	26	1516	german_prose			none	0	5	0	0	bzan ['Or-man] rief den Sommerrat in Bren
