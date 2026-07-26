@@ -1,0 +1,95 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	109	16	2	ཀྲུང	krun	kruṅ	echo	uncertain	uncertain	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	200	51	2	ཀྲུང	krun	kruṅ	positional	dominant_internal_consensus	none	སྐྱིལ་ཀྲུང་ skyil krun
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	200	90	2	ཀྲུང	krun	kruṅ	positional	dominant_internal_consensus	none	སྐྱིལ་ཀྲུང་ skyil krun auch skyil mo dkrun, skyil mo
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	200	105	2	ཀྲུང	krun	kruṅ	positional	dominant_internal_consensus	none	སྐྱིལ་ཀྲུང་ skyil krun
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	200	161	3	ཀྲུང	krun	kruṅ	positional	dominant_internal_consensus	none	སྐྱིལ་མོ་ ཀྲུང་ skyil mo krun, skyil mo dkruṅ 76/597///
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	184	156	3	གནང	gnan	gnaṅ	positional	dominant_internal_consensus	none	སྐུ་ཕེབས་གནང་བ་ sku phebs gnan ba das Eintreten
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	704	78	3	གནང	gnan	gnaṅ	positional	dominant_internal_consensus	none	འཆེང་བླཟླམ་གནང་ 'chin bzlum gnan vermitteln,
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1060	216	3	གནང	gnan	gnaṅ	positional	dominant_internal_consensus	none	མཐུན་པར་གནང་བ་ mtbun par gnan ba Einwilli-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	804	213	4	གསུང	gsun	gsuṅ	echo	uncertain	uncertain	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	187	17	2	གསུང	gsun	gsuṅ	positional	dominant_internal_consensus	none	སྐུ་གསུང་ཐུགས་ sku gsun thugs resp. Körper, Rede
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	475	131	2	གསུང	gsun	gsuṅ	positional	dominant_internal_consensus	none	རྒྱལ་གསུང་རྗེས་འགྲོ་ rgyal gsun rjes ’gro ein Vo-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1020	111	3	གསུང	gsun	gsuṅ	positional	dominant_internal_consensus	none	ཐུབ་དབང་གསུང་སྐྱེས་ thub dbaṅ gsun skyes Bez.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	191	14	2	ཆུང	chuh	chuṅ	positional	dominant_internal_consensus	none	"འདོད་ཆུང་ ""dod chuh auch 'dod pa chuṅ ba ""klei-"
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	740	13	2	ཆུང	chuh	chuṅ	positional	dominant_internal_consensus	none	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chuṅ.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_8_b	83	25	2	ཆུང	chuh	chuṅ	positional	dominant_internal_consensus	none	བུ་ཆུང་ bu chuh auch ~ ñu.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	549	75	6	བཀང	bkan	bkaṅ	echo	explicit_same_lemma_repetition	none	རྣ་བཀང་ rma bkaṅ auch rna ga bkan, rma gru
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	550	4	3	བཀང	bkan	bkaṅ	echo	uncertain	uncertain	རྣག་བཀང་ na ga bkan Trna bkan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	550	4	5	བཀང	bkan	bkaṅ	echo	uncertain	uncertain	རྣག་བཀང་ na ga bkan Trna bkan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	550	9	5	བཀང	bkan	bkaṅ	echo	uncertain	uncertain	རྣ་གྲུ་བཀང་ rna gru bkaṅ Trna bkan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	132	136	1	བཀང	bkan	bkaṅ	positional	dominant_internal_consensus	none	བཀང་ bkan pf. zu l’gens.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	132	156	1	བཀང	bkan	bkaṅ	positional	dominant_internal_consensus	none	བཀང་ bkan
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	241	172	2	བཀང	bkan	bkaṅ	positional	dominant_internal_consensus	none	།ཁ་བཀང་ kba bkan pf. ergänzen, auffüllen.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	699	12	4	བཟུང	bzun	bzuṅ	echo	uncertain	uncertain	འཆང་བཟུང་ (9) bzun Tchan bzun.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	744	30	5	བཟུང	bzun	bzuṅ	echo	damaged_reference	damaged_reference	རྗེས་བཟུང་ rjes bzun 1705 su bzun.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	744	30	2	བཟུང	bzun	bzuṅ	positional	dominant_internal_consensus	none	རྗེས་བཟུང་ rjes bzun 1705 su bzun.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	904	72	2	བཟུང	bzun	bzuṅ	positional	dominant_internal_consensus	none	བཏང་བཟུང་ btaṅ bzun
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1183	24	4	བཟུང	bzun	bzuṅ	positional	dominant_internal_consensus	none	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzun ste von
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_8_b	307	24	4	བླང	blan	blaṅ	echo	explicit_same_lemma_repetition	none	བླང་དོར་ blaṅ dor auch blan dan dor ba annch-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	264	57	2	བླང	blan	blaṅ	positional	dominant_internal_consensus	none	།ཁས་བླང་ khas blan fut. zu lkhas len verspre-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	767	82	3	བླང	blan	blaṅ	positional	dominant_internal_consensus	none	ཉམས་སུ་བླང་ Hams su blan fur. zu lüams su
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1106	37	3	བླང	blan	blaṅ	positional	dominant_internal_consensus	none	དང་དུ་བླང་ daṅ du blan fur. zu 1772 du len
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	683	26	5	མིང	min	miṅ	echo	uncertain	uncertain	པད་མའི་མིང་ pad ma'i miṅ lpadma'i min.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	233	23	4	མིང	min	miṅ	positional	dominant_internal_consensus	none	བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi min Funktions-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	250	44	3	མིང	min	miṅ	positional	dominant_internal_consensus	none	ཁ་བའི་མིང་ཅན་ kha ba’! min can Kampfer.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	652	154	3	མིང	min	miṅ	positional	dominant_internal_consensus	none	ཆུ་ཡི་མིང་ཅན་ chu yi min can.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	872	31	2	མིང	min	miṅ	positional	dominant_internal_consensus	none	"ཕུ་མིང་ ""phba min Vater und Bruder."
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	90	1	2	ཝང	wan	waṅ	positional	dominant_internal_consensus	none	ཀེ་ཝང་ ke wan
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	90	7	2	ཝང	wan	waṅ	positional	dominant_internal_consensus	none	ཀེ་ཝང་ ke wan Tke ban.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	350	27	2	ཝང	wan	waṅ	positional	dominant_internal_consensus	none	གི་ཝང་ gi wan auch gi gwan, gi wam, gi han,
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	556	56	5	འཕྱང	phyan	phyaṅ	positional	dominant_internal_consensus	none	"མངོན་པར་རབ་ཏ་འཕྱང་ mnon par rab tu ""phyan"
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	661	47	2	འཕྱང	phyan	phyaṅ	positional	dominant_internal_consensus	none	ཆུན་འཕྱང་ chun ’phyan Gehänge.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	939	26	2	འཕྱང	phyan	phyaṅ	positional	dominant_internal_consensus	none	ཏྟོ་འཕྱང་ lto 'phyan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	79	168	5	འོང	on	oṅ	positional	dominant_internal_consensus	none	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fe bar ’on ba
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	79	221	5	འོང	on	oṅ	positional	dominant_internal_consensus	none	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’on ba herbei-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	82	42	3	འོང	on	oṅ	positional	dominant_internal_consensus	none	ཀུན་ནས་འོང་བ་ kun nas ’on ba ankommen, gelan-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	789	53	3	འོང	on	oṅ	positional	dominant_internal_consensus	none	ཉེ་བར་འོང་ fie bar ’on pf. fie bar ’ons kommen.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	428	32	7	རྫོང	rdzon	rdzoṅ	echo	cross_reference_probable	none	ནམ་རྫོང་ nam rdzoṅ Kurzf. für nam then rdzon
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	883	14	4	རྫོང	rdzon	rdzoṅ	echo	uncertain	uncertain	ཕག་རྫོང་ phagrdzon lphag ri rdzon.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	883	52	6	རྫོང	rdzon	rdzoṅ	echo	explicit_same_lemma_repetition	none	ཕག་རི་རྫོང་ phag ri rdzoṅ auch phag rdzon npr.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_8_b	495	44	5	རྫོང	rdzon	rdzoṅ	echo	uncertain	uncertain	ad ང་རྫོང་ ax 'bri gun rdzon gsar
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	970	150	3	རྫོང	rdzon	rdzoṅ	positional	dominant_internal_consensus	none	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr. ein Ort
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1275	43	2	རྫོང	rdzon	rdzoṅ	positional	dominant_internal_consensus	none	དོམ་རྫོང་ dom rdzon npr. ein Ort.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1282	30	2	རྫོང	rdzon	rdzoṅ	positional	dominant_internal_consensus	none	དཱ་རྫོང་ dwa rdzon npr. ein Dzong in lHo-brag.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	635	183	3	རླུང	rlun	rluṅ	positional	dominant_internal_consensus	none	ཆར་སྣེ་རླུང་།ྲིད་ char sne rlun khrid „Wind führt
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	636	179	3	རླུང	rlun	rluṅ	positional	dominant_internal_consensus	none	ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid „Wind führt
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	824	3	2	རླུང	rlun	rluṅ	positional	dominant_internal_consensus	none	སྙང་རླུང་ san rlun
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1348	98	2	རླུང	rlun	rluṅ	positional	dominant_internal_consensus	none	དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	720	15	4	སྐོང	skon	skoṅ	echo	uncertain	uncertain	དཔང་སྐོང་ dpaṅ skoṅ Ispan skon. དཔངས་ dpanhs Höhe, Dicke, ~ kyi tshad dass.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	768	27	5	སྐོང	skon	skoṅ	echo	explicit_same_lemma_repetition	none	སྤང་སྐོང་ spaṅ skoṅ auch dpan skon, — phyag
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	190	198	1	སྐོང	skon	skoṅ	positional	dominant_internal_consensus	none	སྐོང་ ’skon pf. 1/5/50/7$ herbeirufen.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	190	209	1	སྐོང	skon	skoṅ	positional	dominant_internal_consensus	none	སྐོང་ཚེ་ skon tshe (zw.) geflochtene Bambuskör-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	241	159	2	སྐོང	skon	skoṅ	positional	dominant_internal_consensus	none	ཁ་སྐོང་ kba skon
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	241	195	2	སྐོང	skon	skoṅ	positional	dominant_internal_consensus	none	ཁ་སྐོང་ kha skon auch kha skons.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	294	74	5	སྡོང	sdon	sdoṅ	echo	uncertain	uncertain	སྡོང་འཁོལ་ sdoṅ khol mar mes sdon 'khol
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	682	2	6	སྡོང	sdon	sdoṅ	echo	cross_reference_probable	none	པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdon po
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	696	19	2	སྡོང	sdon	sdoṅ	positional	dominant_internal_consensus	none	མཆོད་སྡོང་སྦྱིན་འཕྲོག་ mchod sdon sbyin phrog
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	707	130	2	སྡོང	sdon	sdoṅ	positional	dominant_internal_consensus	none	ཇ་སྡོང་ ja sdon Teestrauch.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1160	80	2	སྡོང	sdon	sdoṅ	positional	dominant_internal_consensus	none	དུད་སྡོང་ dud sdon Rauchsäule.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	294	65	1	སྡོང	sdon	sdoṅ	positional	dominant_internal_consensus	none	སྡོང་ 'sdon.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	404	16	2	སྣང	snah	snaṅ	positional	dominant_internal_consensus	none	དགའ་སྣང་ dga’ snah Glücksgefühl.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	636	50	1	སྣང	snah	snaṅ	positional	dominant_internal_consensus	none	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	1059	20	3	སྣང	snah	snaṅ	positional	dominant_internal_consensus	none	ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	584	31	6	སྤང	span	spaṅ	echo	cross_reference_probable	none	རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam span
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	599	27	5	སྤང	span	spaṅ	echo	uncertain	uncertain	རྣམ་སྤང་ rnam spaṅ Irmam par span.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	698	204	2	སྤང	span	spaṅ	positional	dominant_internal_consensus	none	འཆང་སྤང་ ’chaṅ span Behalten von Gegen-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	1066	185	2	སྤང	span	spaṅ	positional	dominant_internal_consensus	none	མཁོང་སྤང་ mthon span was auf dem Weg des
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	767	1	1	སྤང	span	spaṅ	positional	dominant_internal_consensus	none	"སྤང་ ""span"
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	767	48	1	སྤང	span	spaṅ	positional	dominant_internal_consensus	none	"སྤང་ ""span"
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	528	116	2	སྤོང	spoh	spoṅ	echo	uncertain	uncertain	& “་སྤོང་སྐྱེས་ nan spoh skyes Bez. für dürväa-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	528	128	2	སྤོང	spoh	spoṅ	positional	dominant_internal_consensus	none	ངན་སྤོང་འཛིན་ nan spoh ’dzin Bez. für Venus
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	795	124	4	སྤོང	spon	spoṅ	positional	dominant_internal_consensus	none	ཉེན་མོངས་པ་སྤོང་བ་ ion mons pa spon ba ein
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_35_51	539	29	3	སྤོང	spoh	spoṅ	positional	dominant_internal_consensus	none	"གནོད་སེམས་སྤོང་བ་ gnod ses spoh ba ""Aufge-"
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	584	152	4	སྤྱང	spyan	spyaṅ	echo	uncertain	uncertain	ཅེ་སྤྱང་ ce spyan \lce spyan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	616	95	7	སྤྱང	spyan	spyaṅ	echo	explicit_same_lemma_repetition	none	ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan, Ice
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	401	77	2	སྤྱང	spyan	spyaṅ	positional	dominant_internal_consensus	none	གློག་སྤྱང་དམར་པོ་ glog spyan dmar po ein Hund.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	584	152	2	སྤྱང	spyan	spyaṅ	positional	dominant_internal_consensus	none	ཅེ་སྤྱང་ ce spyan \lce spyan.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	616	95	2	སྤྱང	spyah	spyaṅ	positional	dominant_internal_consensus	none	ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan, Ice
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	84	53	2	སྦྱོང	sbyon	sbyoṅ	positional	dominant_internal_consensus	none	ཀུན་སྦྱོང་བ་ kun sbyon ba Reinigung.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	285	33	2	སྦྱོང	sbyon	sbyoṅ	positional	dominant_internal_consensus	none	ཁྱིམ་སྦྱོང་ khyim sbyon Bez. für Maus.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	413	59	8	སྦྱོང	sbyon	sbyoṅ	positional	dominant_internal_consensus	none	~ bcad rigs la „entsprechend der Zuteilung དགེ་སྦྱོང་ཆེ་ dge sbyon che „großer Asket“, Bei-
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	77	49	3	སྲུང	srun	sruṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་སྲུང་བ་ kun tu srun ba
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	128	80	2	སྲུང	srun	sruṅ	positional	dominant_internal_consensus	none	དཀོར་སྲུང་ dkor srun.
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	143	157	2	སྲུང	srun	sruṅ	positional	dominant_internal_consensus	none	བཀའ་སྲུང་ bka’ srun
+6387237406bd2cc16bf11724a177e4cc27f5977c	wts_1_34	143	191	2	སྲུང	srun	sruṅ	positional	dominant_internal_consensus	none	བཀའ་སྲུང་ bka’ srun auch bka’ bsrun.

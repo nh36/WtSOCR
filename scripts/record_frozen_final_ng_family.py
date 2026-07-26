@@ -24,12 +24,53 @@ def key(row: dict[str, str]) -> str:
     return f"{row['volume']}:{row['page']}:{row['line']}:{row['token_index']}"
 
 
+def validate_echo_decisions(
+    echoes: list[dict[str, str]],
+    *,
+    accepted: set[str],
+    deferred: set[str],
+    rejected: set[str],
+    resolved: set[str],
+) -> dict[str, str]:
+    frozen = {key(row) for row in echoes}
+    categories = {
+        "accepted": accepted,
+        "deferred": deferred,
+        "rejected": rejected,
+        "resolved_elsewhere": resolved,
+    }
+    supplied = set().union(*categories.values())
+    unknown = supplied - frozen
+    if unknown:
+        raise ValueError(f"echo keys are not frozen for this family: {sorted(unknown)}")
+    duplicates = {
+        row_key
+        for row_key in supplied
+        if sum(row_key in values for values in categories.values()) > 1
+    }
+    if duplicates:
+        raise ValueError(
+            f"echo keys have multiple decisions: {sorted(duplicates)}"
+        )
+    missing = frozen - supplied
+    if missing:
+        raise ValueError(
+            f"frozen echoes lack explicit decisions: {sorted(missing)}"
+        )
+    return {
+        row_key: decision
+        for decision, values in categories.items()
+        for row_key in values
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--syllable", required=True)
     parser.add_argument("--batch", required=True)
     parser.add_argument("--accept-echo", action="append", default=[])
+    parser.add_argument("--defer-echo", action="append", default=[])
     parser.add_argument("--reject-echo", action="append", default=[])
     parser.add_argument("--resolved-echo", action="append", default=[])
     args = parser.parse_args()
@@ -41,11 +82,19 @@ def main() -> None:
     positional = [row for row in rows if row["candidate_status"] == "positional"]
     echoes = [row for row in rows if row["candidate_status"] == "echo"]
     accepted = set(args.accept_echo)
+    deferred = set(args.defer_echo)
     rejected = set(args.reject_echo)
     resolved = set(args.resolved_echo)
-    unknown = (accepted | rejected | resolved) - {key(row) for row in echoes}
-    if unknown:
-        raise SystemExit(f"echo keys are not frozen for this family: {sorted(unknown)}")
+    try:
+        echo_decisions = validate_echo_decisions(
+            echoes,
+            accepted=accepted,
+            deferred=deferred,
+            rejected=rejected,
+            resolved=resolved,
+        )
+    except ValueError as error:
+        raise SystemExit(str(error)) from error
 
     positional_evidence = f"{args.batch}_consensus_batch_20260726"
     echo_evidence = f"{args.batch}_same_entry_echo_batch_20260726"
@@ -63,12 +112,7 @@ def main() -> None:
     counts = {"accepted": 0, "deferred": 0, "rejected": 0, "resolved_elsewhere": 0}
     for row in echoes:
         row_key = key(row)
-        decision = (
-            "accepted" if row_key in accepted
-            else "rejected" if row_key in rejected
-            else "resolved_elsewhere" if row_key in resolved
-            else "deferred"
-        )
+        decision = echo_decisions[row_key]
         counts[decision] += 1
         rationale = (
             "Entry structure independently establishes the same Tibetan lemma."
