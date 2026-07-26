@@ -8324,12 +8324,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 71	139	720	german_prose			none	0	3	0	0	Lex. samantasthülävalokanam (Mvy 6193,
 71	140	720	german_prose_with_translit			none	1	1	0	0	Abt. me tog rnams kyi min).
 71	142	721	headword_line	ཀུན་ཏུ་འཆགས་པ་	tu	medium	4	1	0	0	ཀུན་ཏུ་འཆགས་པ་ kun tu ’chags pa Tkun tu chags pa.
-71	143	722	headword_line	ཀུན་ཏུ་འཆང་	tu	medium	1	3	0	0	ཀུན་ཏུ་འཆང་ kun tu ’chan Geheimname des Pad-
+71	143	722	headword_line	ཀུན་ཏུ་འཆང་	tu	medium	1	3	0	0	ཀུན་ཏུ་འཆང་ kun tu ’chaṅ Geheimname des Pad-
 71	145	722	latin_other			none	2	0	0	0	masambhava; skt. *Samantadhara.
 71	147	722	german_prose_with_translit			none	4	1	0	0	gsaṅ mtshan kun du ’chan Zes yons su grags „er
 71	148	722	german_prose			none	0	4	0	0	ist unter dem geheimen Namen *Samanta-
 71	150	722	german_prose_with_translit			none	1	2	0	0	dhara hochberühmt“ (Padm 12323).
-71	152	723	headword_line	ཀུན་ཏུ་འཆང་ཆེན་	tu	medium	2	2	0	0	ཀུན་ཏུ་འཆང་ཆེན་ kun tu ’chan chen ein Buddha;
+71	152	723	headword_line	ཀུན་ཏུ་འཆང་ཆེན་	tu	medium	2	2	0	0	ཀུན་ཏུ་འཆང་ཆེན་ kun tu ’chaṅ chen ein Buddha;
 71	153	723	latin_other			none	1	0	0	0	"skt. ""Mahäsamantadhara."
 71	155	723	german_prose_with_translit			none	4	4	0	0	"sku gsum dbyer med — dan „""Mahäsamantadhara, die Untrennbarkeit des Trikäya“"
 71	157	723	german_prose			none	0	1	0	0	(Padm 30b1).
@@ -75838,7 +75838,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 532	199	6786	german_prose_with_translit			none	3	1	0	0	Lex. dge slon la’an (brDa).
 532	201	6787	headword_line	ངུར་སྨྲིག་ཅན་	can	medium	1	3	0	0	ངུར་སྨྲིག་ཅན་ nur smrig can Bez. für Mönch.
 532	203	6787	german_prose_with_translit			none	3	5	0	0	Lex. rab byun gi cha lugs can „die Ausstattung eines Mönchs habend“ (Dagy).
-532	205	6788	headword_line	ངུར་སྒྲིག་འཆང་བ་	ba	medium	1	2	0	0	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chan ba Bez. für
+532	205	6788	headword_line	ངུར་སྒྲིག་འཆང་བ་	ba	medium	1	2	0	0	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chaṅ ba Bez. für
 532	206	6788	german_prose			none	0	1	0	0	Mönch.
 532	207	6788	german_prose_with_translit			none	3	5	0	0	Lex. rab byun gi cha lugs can „die Ausstattung eines Mönchs habend“ (Dagy).
 532	209	6788	other			none	0	0	0	0	ON . .
@@ -101264,7 +101264,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 698	200	8442	german_prose_with_translit			none	1	2	0	0	zugeneigt sein oder halten“ (Liś 10,4); Zo
 698	201	8442	german_prose_with_translit			none	2	2	0	0	drug tu = (v. 1. bean ba Ms. L) = sadvarsani
 698	202	8442	german_prose_with_translit			none	1	2	0	0	„sechs Jahre lang“ (Mvy 8399).
-698	204	8442	tibetan_only	འཆང་སྤང་		none	0	3	0	0	འཆང་སྤང་ ’chan span Behalten von Gegen-
+698	204	8442	tibetan_only	འཆང་སྤང་		none	0	3	0	0	འཆང་སྤང་ ’chaṅ span Behalten von Gegen-
 698	206	8442	german_prose			none	0	5	0	0	ständen, ein Vergehen im Vinaya.
 698	208	8442	german_prose_with_translit			none	3	1	0	0	Lex. nag 'byams 22 » lta bu phyir bcos ma
 698	209	8442	german_prose_with_translit			none	5	1	0	0	byas par rgyun chags su ’byun ba’i Itun ba la
@@ -101273,15 +101273,15 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 698	212	8442	german_prose			none	0	3	0	0	welches nicht gesühnt ist und noch
 698	213	8442	german_prose			none	0	1	0	0	anhaftet wie ’chan span“ (Dagy).
 698	215	8442	other			none	0	0	0	0	327
-699	1	8442	tibetan_only	འཆང་མོ།		none	0	1	0	0	འཆང་མོ། chan mo འཆད་ Pchad འཆད་ཉན་ ’chad 722 འཆམ་དཔོན་ ’cham dpon
-699	3	8442	example_tibetan_latin	འཆང་ཆམོ།		none	1	7	0	0	འཆང་ཆམོ། 'chan mo (zw) Halbedelstein; für selbst getötet werden!“ (gZi 4: 491,5). འཆད་ཉན་ #¿¢ 774: Lehre und Studium, MEAN 'chab sems Wesentliches ver-
+699	1	8442	tibetan_only	འཆང་མོ།		none	0	1	0	0	འཆང་མོ། chaṅ mo འཆད་ Pchad འཆད་ཉན་ ’chad 722 འཆམ་དཔོན་ ’cham dpon
+699	3	8442	example_tibetan_latin	འཆང་ཆམོ།		none	1	7	0	0	འཆང་ཆམོ། 'chaṅ mo (zw) Halbedelstein; für selbst getötet werden!“ (gZi 4: 491,5). འཆད་ཉན་ #¿¢ 774: Lehre und Studium, MEAN 'chab sems Wesentliches ver-
 699	5	8442	german_prose			none	0	1	0	0	Imchin bu?
 699	7	8442	german_prose_with_translit			none	4	1	0	0	mdzo g.yan ~ ru rin la „der glückbringende
 699	8	8442	german_prose_with_translit			none	1	5	0	0	Yakochse mit langen Hörnern, die mit
 699	9	8442	german_prose			none	0	4	0	0	Halbedelsteinen verschen sind“ (Sumpa
 699	10	8442	other			none	0	0	0	0	14852).
 699	12	8442	example_tibetan_latin	འཆང་བཟུང་		none	2	1	0	0	འཆང་བཟུང་ (9) bzun Tchan bzun.
-699	13	8443	headword_line	འཆང་བྱ་བངས་	bzuns	medium	2	1	0	0	འཆང་བྱ་བངས་ 'chan bzuns Tchan bzun.
+699	13	8443	headword_line	འཆང་བྱ་བངས་	bzuns	medium	2	1	0	0	འཆང་བྱ་བངས་ 'chaṅ bzuns Tchan bzun.
 699	15	8443	german_prose_with_translit			none	2	1	0	0	REN’ 'chans festhalten, vgl. Y’chan.
 699	17	8443	german_prose_with_translit			none	2	1	0	0	¬ nas man po hu Zin 'dug „er hielt [mich]
 699	18	8443	german_prose			none	0	2	0	0	fest und weinte viel“ (Mil 119,29).
@@ -136350,7 +136350,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 940	9	10302	german_prose_with_translit			none	6	1	0	0	Ito ba“ (Liś 11,1), ~ la phyal dan (Liś 41,3).
 940	10	10302	german_prose			none	0	1	0	0	2. Verborgenes.
 940	12	10302	german_prose_with_translit			none	3	1	0	0	Lex. rum ni... phag (Liś 11,1).
-940	14	10303	headword_line	ཉོ་བ་འཆང་	ba	medium	2	1	0	0	ཉོ་བ་འཆང་ Ito ba ’chan ༈//0 ’phyan 3.
+940	14	10303	headword_line	ཉོ་བ་འཆང་	ba	medium	2	1	0	0	ཉོ་བ་འཆང་ Ito ba ’chaṅ ༈//0 ’phyan 3.
 940	16	10303	tibetan_only	ཏྟོ་འབབས་		none	0	3	0	0	ཏྟོ་འབབས་ //0 0753 Hausbesuche von Regie-
 940	18	10303	latin_other			none	2	0	0	0	rungsbeamten zur Verköstigung.
 940	20	10303	german_prose_with_translit			none	4	1	0	0	sbyin bdag la ma nes pa’i = rigs „die
@@ -152027,7 +152027,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1038	67	11444	german_prose_with_translit			none	4	2	0	0	Lex. mgo bo dkris pa „eingewickelter Kopf“
 1038	68	11444	latin_other			none	4	0	0	0	(brDa); dpral mtshams nas ’chin byed
 1038	69	11444	german_prose			none	0	1	0	0	(Dagy).
-1038	71	11445	headword_line	ཐོད་འཆང་	thod	high	1	2	0	0	ཐོད་འཆང་ thod ’chan Beiname Mahesvaras
+1038	71	11445	headword_line	ཐོད་འཆང་	thod	high	1	2	0	0	ཐོད་འཆང་ thod ’chaṅ Beiname Mahesvaras
 1038	73	11445	german_prose			none	0	1	0	0	bzw. Sivas.
 1038	75	11445	german_prose_with_translit			none	5	2	0	0	Lex. dban phyug chen po (brDa); dban
 1038	76	11445	german_prose_with_translit			none	1	1	0	0	phyug (Dagy).

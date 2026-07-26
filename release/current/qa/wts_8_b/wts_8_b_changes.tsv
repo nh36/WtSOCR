@@ -2992,3 +2992,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 175	62	930	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་ཕྱོགས་ 'byaṅ phyogs Kurzf. für byan gi
 177	50	944	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་སྨན་ byaṅ sman Kurzf. für byan /?/// mig
 179	7	957	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.
+104	76	516	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བེ་ཅོན་འཆང་ be con 'chan.

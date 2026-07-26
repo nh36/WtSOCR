@@ -28302,3 +28302,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 674	128	8116	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་ཀྱི་ཕུང་པོ་ chos kyi phun po auch chos phun
 679	166	8203	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་ཕུང་ chos phun ↑ chos kyi phuṅ po.
 1167	48	12325	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དུར་ཕུང་ dur phun ""Totenzeremonie, Bestat-"
+71	143	722	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་འཆང་ kun tu ’chan Geheimname des Pad-
+71	152	723	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་འཆང་ཆེན་ kun tu ’chan chen ein Buddha;
+532	205	6788	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chan ba Bez. für
+698	204	8442	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་སྤང་ ’chan span Behalten von Gegen-
+699	1	8442	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་མོ། chan mo འཆད་ Pchad འཆད་ཉན་ ’chad 722 འཆམ་དཔོན་ ’cham dpon
+699	3	8442	example_tibetan_latin	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་ཆམོ། 'chan mo (zw) Halbedelstein; für selbst getötet werden!“ (gZi 4: 491,5). འཆད་ཉན་ #¿¢ 774: Lehre und Studium, MEAN 'chab sems Wesentliches ver-
+699	13	8443	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་བྱ་བངས་ 'chan bzuns Tchan bzun.
+940	14	10303	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉོ་བ་འཆང་ Ito ba ’chan ༈//0 ’phyan 3.
+1038	71	11445	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐོད་འཆང་ thod ’chan Beiname Mahesvaras
