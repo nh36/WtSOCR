@@ -5640,3 +5640,18 @@ wts_1_34	1221	14	3	btan	btaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_8_b	279	2	9	btan	btaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_btang_consensus_batch_20260726	Frozen exact Tibetan བཏང alignment.
 wts_9_m	89	2	12	btan	btaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_btang_consensus_batch_20260726	Exact mas བཏང/btan alignment survives damaged context.
 wts_35_51	828	51	5	btan	btaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_btang_same_entry_echo_batch_20260726	Explicit alternate repeats བཏང.
+wts_1_34	190	7	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	703	150	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	703	205	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	1	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	27	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	41	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	43	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	60	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	75	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	84	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Exact initial འཆིང/chin aligned; later ༡/79 Tchins preserved.
+wts_1_34	704	85	1	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	756	62	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_35_51	191	47	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_8_b	580	45	2	chin	chiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	Frozen exact Tibetan འཆིང alignment.
+wts_1_34	704	60	5	chin	chiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_aching_same_entry_echo_batch_20260726	Explicit alternate repeats འཆིང.

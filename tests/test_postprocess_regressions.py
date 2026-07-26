@@ -3015,6 +3015,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed btan control", corrected)
         self.assertEqual(sum(row["to_token"] == "btaṅ" for row in changes), 1)
 
+    def test_reviewed_aching_preserves_damage_and_acheng_collision(self) -> None:
+        lines = {
+            (704, 84): "འཆིང་ཡིག་ chin ༡/79 Tchins yıg.",
+            (703, 193): "འཆེང་ཀྱིམ་ chin khyim.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("འཆིང་ཡིག་ chiṅ ༡/79 Tchins yıg.", corrected)
+        self.assertIn("འཆེང་ཀྱིམ་ chin khyim.", corrected)
+        self.assertEqual(sum(row["to_token"] == "chiṅ" for row in changes), 1)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

@@ -28434,3 +28434,16 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 905	36	9917	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་ཡས་ btan yas 7277? yas.
 905	37	9918	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་རག་ btan rag 7977? rag.
 1221	14	12581	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་དབང་བཏང་ཚེ་ de dbaṅ btan tshe wenn man es
+190	7	2412	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐེད་འཆིང་ sked chin Gürtel.
+703	150	8490	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ ’chin pf. Tbeins fur. bein imp. Tchins
+703	205	8494	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཐག་ ‚chin thag Seil, Fessel.
+704	1	8495	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཕུ་ chin phu
+704	27	8497	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་བ་སྦྱིན་ ‚chin ba sbyin Bez. für eine
+704	41	8499	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་བུ་ chin bu ↑ mchin bu.
+704	43	8500	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་བྱེད་ chin byed.
+704	60	8501	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འཆིང་ཀྱེད་མ་ chin byed ma auch ’chin byed pa
+704	60	8501	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཀྱེད་མ་ chin byed ma auch ’chin byed pa
+704	75	8502	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཀྲབ་ chin zab tief.
+704	84	8503	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་ཡིག་ chin ༡/79 Tchins yıg.
+704	85	8503	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆིང་སྔང་ chin san Tchin san.
+756	62	8980	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉ་འཆིང་པ་ a ’chin pa Bez. für Fischer, Fisch-

@@ -26094,7 +26094,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 190	3	2411	headword_line	སྐེགས་ཚོས་	tshos	high	1	1	0	0	སྐེགས་ཚོས་ skegs tshos Siegellack.
 190	4	2411	german_prose_with_translit			none	3	3	0	0	Lex. rgya skyegs tshos (brDa, ähnl. Dagy).
 190	6	2412	headword_line	སྐེད་	pa	medium	1	1	0	0	སྐེད་ sked Trked pa.
-190	7	2412	tibetan_only	སྐེད་འཆིང་		none	0	1	0	0	སྐེད་འཆིང་ sked chin Gürtel.
+190	7	2412	tibetan_only	སྐེད་འཆིང་		none	0	1	0	0	སྐེད་འཆིང་ sked chiṅ Gürtel.
 190	8	2412	german_prose_with_translit			none	1	2	0	0	Lex. ska rags (brDa); ske rags (Dagy).
 190	9	2413	headword_line	སྐེད་པ་	pa	medium	2	0	0	0	སྐེད་པ་ sked pa [?70767 pa.
 190	10	2413	tibetan_only	སྐེད་		none	0	1	0	0	སྐེད་ sked med Trked med.
@@ -102054,7 +102054,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 703	145	8489	german_prose_with_translit			none	2	2	0	0	Heilkunde“ (brDa); gso ?79 gi gZun „Werk
 703	146	8489	german_prose			none	0	3	0	0	über Heilkunde“ (Dagy).
 703	148	8490	headword_line	འཆི་བླས་	V’chi ba bslu ba	high	4	0	0	0	འཆི་བླས་ chi /$/¢ V’chi ba bslu ba.
-703	150	8490	tibetan_only	འཆིང་		none	0	3	0	0	འཆིང་ ’chin pf. Tbeins fur. bein imp. Tchins
+703	150	8490	tibetan_only	འཆིང་		none	0	3	0	0	འཆིང་ ’chiṅ pf. Tbeins fur. bein imp. Tchins
 703	151	8490	latin_other			none	1	0	0	0	binden, fesseln, ankertten; - ba
 703	152	8490	german_prose_with_translit			none	1	1	0	0	Bindung, Fessel.
 703	154	8490	latin_other			none	5	0	0	0	khyod ni ~ ba dam pa ... yin no „deine
@@ -102101,7 +102101,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 703	201	8493	german_prose_with_translit			none	2	2	0	0	legs spel » dper ’os pa daṅ „die zum Guten
 703	202	8493	german_prose_with_translit			none	2	1	0	0	führende Vereinbarung [gelang ihm]
 703	203	8493	german_prose_with_translit			none	1	1	0	0	beispielhaft“ (KTh 1: 302,6).
-703	205	8494	headword_line	འཆིང་ཐག་	thag	high	1	2	0	0	འཆིང་ཐག་ ‚chin thag Seil, Fessel.
+703	205	8494	headword_line	འཆིང་ཐག་	thag	high	1	2	0	0	འཆིང་ཐག་ ‚chiṅ thag Seil, Fessel.
 703	206	8494	german_prose_with_translit			none	1	2	0	0	Lex. nibandhana (Ak 212.90); ’chin byed
 703	207	8494	german_prose_with_translit			none	1	1	0	0	leags sgrog sogs (Dagy).
 703	209	8494	tibetan_only	འཆིང་གནས་		none	0	0	0	0	འཆིང་གནས་ (9777 gnas.
@@ -102110,7 +102110,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 703	215	8494	german_prose			none	0	3	0	0	2. Bez. für Taille.
 703	217	8494	german_prose_with_translit			none	2	2	0	0	Lex. /us kyirked pa (brDa, Dagy).
 703	219	8494	other			none	0	0	0	0	337
-704	1	8495	headword_line	འཆིང་ཕུ་	phu	high	1	0	0	0	འཆིང་ཕུ་ chin phu
+704	1	8495	headword_line	འཆིང་ཕུ་	phu	high	1	0	0	0	འཆིང་ཕུ་ chiṅ phu
 704	3	8495	german_prose_with_translit			none	1	2	0	0	RER 'chin phu ein Meditationskolleg.
 704	5	8495	latin_other			none	3	0	0	0	smra bcad sems chos kyi sgoms gra ben 9/7/$
 704	6	8495	german_prose_with_translit			none	4	6	0	0	ni / dbus na ~ „die zwölf Meditationskollegien des Schweigens und Dharmagedan-
@@ -102124,7 +102124,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 704	21	8496	headword_line	འཆེང་བ་ཀུན་ལྡན་	ba	medium	2	2	0	0	འཆེང་བ་ཀུན་ལྡན་ chin ba kun ldan Bez. für
 704	23	8496	german_prose			none	0	2	0	0	gewöhnlicher Mensch.
 704	25	8496	german_prose_with_translit			none	3	2	0	0	Lex. so skye tha mal pa’i min (Dagy).
-704	27	8497	headword_line	འཆིང་བ་སྦྱིན་	ba sbyin	medium	2	3	0	0	འཆིང་བ་སྦྱིན་ ‚chin ba sbyin Bez. für eine
+704	27	8497	headword_line	འཆིང་བ་སྦྱིན་	ba sbyin	medium	2	3	0	0	འཆིང་བ་སྦྱིན་ ‚chiṅ ba sbyin Bez. für eine
 704	29	8497	german_prose			none	0	2	0	0	faszinierende Frau, Prostituierte,
 704	31	8497	german_prose_with_translit			none	4	1	0	0	Lex. bud med ’dod ldan ma la’an (brDa);
 704	32	8497	latin_other			none	4	0	0	0	bud med ’dod ldan ma dan smad ’tshon
@@ -102133,8 +102133,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 704	36	8498	german_prose_with_translit			none	1	2	0	0	Gier, Haß, Verblendung.
 704	38	8498	german_prose			none	0	2	0	0	Lex. ’dod chags Ze sdan gti mug gsum
 704	39	8498	german_prose_with_translit			none	1	1	0	0	(brDa); ion mons dug gsum (Dagy).
-704	41	8499	headword_line	འཆིང་བུ་	mchin	medium	1	0	0	0	འཆིང་བུ་ chin bu ↑ mchin bu.
-704	43	8500	headword_line	འཆིང་བྱེད་	byed	medium	1	0	0	0	འཆིང་བྱེད་ chin byed.
+704	41	8499	headword_line	འཆིང་བུ་	mchin	medium	1	0	0	0	འཆིང་བུ་ chiṅ bu ↑ mchin bu.
+704	43	8500	headword_line	འཆིང་བྱེད་	byed	medium	1	0	0	0	འཆིང་བྱེད་ chiṅ byed.
 704	45	8500	german_prose_with_translit			none	1	3	0	0	1. „fesselnd“, Bez. für Schlinge, Lasso.
 704	47	8500	german_prose_with_translit			none	4	2	0	0	Lex. ¬ Zags pa / thag pas ’chin ba po’am 'chin
 704	48	8500	german_prose_with_translit			none	5	1	0	0	bar byed pa po (brDa); Zags pa’i min la’ani
@@ -102144,7 +102144,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 704	55	8500	german_prose			none	0	3	0	0	3, Bez, für Frau.
 704	57	8500	german_prose_with_translit			none	1	2	0	0	Lex. vadhü (Ak 140.2).
 704	59	8500	tibetan_only			none	0	1	0	0	N ± « པམ
-704	60	8501	headword_line	འཆིང་ཀྱེད་མ་	byed ma	medium	4	1	0	0	འཆིང་ཀྱེད་མ་ chin byed ma auch ’chin byed pa
+704	60	8501	headword_line	འཆིང་ཀྱེད་མ་	byed ma	medium	4	1	0	0	འཆིང་ཀྱེད་མ་ chiṅ byed ma auch ’chiṅ byed pa
 704	61	8501	german_prose			none	0	4	0	0	Bez. für eine faszinierende Frau,
 704	62	8501	german_prose			none	0	1	0	0	Prostituierte.
 704	64	8501	other			none	0	0	0	0	338
@@ -102154,14 +102154,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 704	70	8501	latin_other			none	1	0	0	0	(brDa).
 704	72	8502	headword_line	འཆེང་ཞགས་	Schlinge	medium	1	1	0	0	འཆེང་ཞགས་ chin Zags Schlinge.
 704	73	8502	german_prose_with_translit			none	1	3	0	0	Lex. Zags pa (Dagy).
-704	75	8502	tibetan_only	འཆིང་ཀྲབ་		none	0	0	0	0	འཆིང་ཀྲབ་ chin zab tief.
+704	75	8502	tibetan_only	འཆིང་ཀྲབ་		none	0	0	0	0	འཆིང་ཀྲབ་ chiṅ zab tief.
 704	76	8502	german_prose_with_translit			none	1	2	0	0	Lex. gtin zab pa’i don (Dagy).
 704	78	8503	headword_line	འཆེང་བླཟླམ་གནང་	bzlum	medium	1	0	0	0	འཆེང་བླཟླམ་གནང་ 'chin bzlum gnan vermitteln,
 704	80	8503	other			none	0	0	0	0	bar ’chin legs bzlum gnan bed pas „er wollte
 704	81	8503	german_prose			none	0	1	0	0	zwischen ihnen erfolgreich vermitteln“
 704	82	8503	german_prose			none	0	1	0	0	(KTh 1: 264,4).
-704	84	8503	tibetan_only	འཆིང་ཡིག་		none	0	1	0	0	འཆིང་ཡིག་ chin ༡/79 Tchins yıg.
-704	85	8503	tibetan_only	འཆིང་སྔང་		none	0	1	0	0	འཆིང་སྔང་ chin san Tchin san.
+704	84	8503	tibetan_only	འཆིང་ཡིག་		none	0	1	0	0	འཆིང་ཡིག་ chiṅ ༡/79 Tchins yıg.
+704	85	8503	tibetan_only	འཆིང་སྔང་		none	0	1	0	0	འཆིང་སྔང་ chiṅ san Tchin san.
 704	86	8503	other			none	0	0	0	0	RABEN ’chins tchins 1.
 704	88	8503	german_prose_with_translit			none	1	1	0	0	BERNER ’chins rgyud Strick.
 704	90	8503	german_prose_with_translit			none	5	2	0	0	» shon po’i gzu ba thogs nas „einen Pfosten
@@ -110182,7 +110182,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 756	59	8979	german_prose			none	0	2	0	0	fließendes Gewässer.
 756	60	8979	german_prose_with_translit			none	1	2	0	0	Lex. /7¢ leebs (r. leibs) can = saivalini „Fluß“
 756	61	8979	german_prose_with_translit			none	1	3	0	0	(Ak 68.44); bab chu (brDa, ähnl. Dagy).
-756	62	8980	headword_line	ཉ་འཆིང་པ་	pa	medium	1	4	0	0	ཉ་འཆིང་པ་ a ’chin pa Bez. für Fischer, Fisch-
+756	62	8980	headword_line	ཉ་འཆིང་པ་	pa	medium	1	4	0	0	ཉ་འཆིང་པ་ a ’chiṅ pa Bez. für Fischer, Fisch-
 756	63	8980	other			none	0	0	0	0	esser.
 756	64	8980	german_prose_with_translit			none	4	1	0	0	Lex. ña pa’am ia gsod mkhan nam Na yi zas
 756	66	8980	german_prose_with_translit			none	6	1	0	0	can (brDa); Aa pa ste 7747 zas can yaṅ
