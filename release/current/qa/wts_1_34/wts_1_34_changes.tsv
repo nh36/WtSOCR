@@ -28311,3 +28311,16 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 699	13	8443	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆང་བྱ་བངས་ 'chan bzuns Tchan bzun.
 940	14	10303	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉོ་བ་འཆང་ Ito ba ’chan ༈//0 ’phyan 3.
 1038	71	11445	headword_line	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐོད་འཆང་ thod ’chan Beiname Mahesvaras
+124	1	1523	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyan grags
+466	13	6034	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་བསྐྱར་ rgyan bskyur hinausschieben.
+466	37	6036	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་གྲགས་ཐོས་ rgyan grags thos Bez. für Gans.
+466	66	6039	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ངེ་བ་ rgyan ne ba weitläufig.
+466	78	6040	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod beisei-
+466	78	6040	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod beisei-
+466	85	6041	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྒྱང་ཕན་ rgyah phan auch rgyan pan, reyan
+466	85	6041	headword_line	rgyah	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཕན་ rgyah phan auch rgyan pan, reyan
+466	104	6042	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་མིག་ rgyan mig
+466	110	6043	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་མིག་ rgyan mig ein Auge, das in der Ferne
+466	117	6044	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཚེར་མ་ rgyan tsher ma ein Dornenstrauch.
+466	129	6045	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཤེལ་ rgyan śel Fernglas, Fernrohr.
+466	138	6046	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་སོ་ rgyan so Spionage; ¬~ ’dzugs ausspionie-

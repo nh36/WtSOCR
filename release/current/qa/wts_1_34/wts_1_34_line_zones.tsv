@@ -16263,7 +16263,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 123	223	1522	german_prose_with_translit			none	2	3	0	0	sang er nach der Weise von dKar-mo dgu-
 123	224	1522	german_prose_with_translit			none	1	1	0	0	’khyil“ (Gesar 256,13).
 123	226	1522	other			none	0	0	0	0	169
-124	1	1523	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyan	high	1	0	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyan grags
+124	1	1523	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyan	high	1	0	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyaṅ grags
 124	3	1524	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyani	high	1	1	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyani grags auch dkar
 124	4	1524	latin_other			none	1	0	0	0	mo brayan grags, dkar mo’i
 124	5	1524	german_prose_with_translit			none	2	2	0	0	rgyan grags N. eines Blasinstruments.
@@ -66332,7 +66332,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	8	6033	headword_line	རྒྱང་བཀྲག་	bkrag	medium	1	1	0	0	རྒྱང་བཀྲག་ rovar bkrag auffällig.
 466	10	6033	german_prose_with_translit			none	5	1	0	0	Lex. rin po’i sa nas mnon gsal can lta bu
 466	11	6033	german_prose			none	0	2	0	0	„wie: von fern offenkundig“ (Dagy).
-466	13	6034	headword_line	རྒྱང་བསྐྱར་	rgyan bskyur	high	2	0	0	0	རྒྱང་བསྐྱར་ rgyan bskyur hinausschieben.
+466	13	6034	headword_line	རྒྱང་བསྐྱར་	rgyan bskyur	high	2	0	0	0	རྒྱང་བསྐྱར་ rgyaṅ bskyur hinausschieben.
 466	15	6034	german_prose_with_translit			none	5	1	0	0	Lex. - ba = rin du spans pa’am btan ba
 466	17	6034	german_prose_with_translit			none	1	1	0	0	(brDa, 3111] Dagy).
 466	18	6034	tibetan_only			none	0	0	0	0	"""ཀིས་ཆོཿ ""reyan gis chod \reyan chod."
@@ -66348,7 +66348,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	33	6035	german_prose_with_translit			none	2	2	0	0	Spannen“ (Dagy); ~ kyi bZi char med pa =
 466	34	6035	german_prose			none	0	2	0	0	pädonakrosah „3/4 krosa“ (Mvy 6732); ~
 466	35	6035	latin_other			none	6	0	0	0	gcig = dom gan lṅa brgya tham pa (brDa).
-466	37	6036	headword_line	རྒྱང་གྲགས་ཐོས་	rgyan	high	2	3	0	0	རྒྱང་གྲགས་ཐོས་ rgyan grags thos Bez. für Gans.
+466	37	6036	headword_line	རྒྱང་གྲགས་ཐོས་	rgyan	high	2	3	0	0	རྒྱང་གྲགས་ཐོས་ rgyaṅ grags thos Bez. für Gans.
 466	38	6036	german_prose_with_translit			none	3	2	0	0	Lex. bya ku ru ra’! min (brDa, Dagy).
 466	39	6037	headword_line	རྒྱང་གྲགས་བཅུང་	rgyari	high	2	3	0	0	རྒྱང་གྲགས་བཅུང་ rgyari grags bzun Bez. für den
 466	40	6037	german_prose			none	0	3	0	0	` Weg eines Königs.
@@ -66369,7 +66369,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	62	6038	latin_other			none	1	0	0	0	richtig“ (dPeD 179,5); rgyan ne cog ge byas
 466	63	6038	latin_other			none	5	0	0	0	= thams cad rin du btan ba lta bu „wie: alles
 466	65	6038	latin_other			none	1	0	0	0	hinausgeschoben“ (brDa).
-466	66	6039	headword_line	རྒྱང་ངེ་བ་	rgyan	high	2	1	0	0	རྒྱང་ངེ་བ་ rgyan ne ba weitläufig.
+466	66	6039	headword_line	རྒྱང་ངེ་བ་	rgyan	high	2	1	0	0	རྒྱང་ངེ་བ་ rgyaṅ ne ba weitläufig.
 466	68	6039	german_prose_with_translit			none	3	2	0	0	sa le phyod de - „klar, leer und weitläufig“
 466	69	6039	latin_other			none	4	0	0	0	(gZi 4: 264,6); mdun so sno rgyan ner thon
 466	70	6039	german_prose_with_translit			none	1	3	0	0	nas „die Spitze ragte bläulich schimmernd
@@ -66378,12 +66378,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	74	6039	latin_other			none	7	0	0	0	yer te thon pa dan / rgyan chad du thon pa
 466	75	6039	german_prose			none	0	2	0	0	„inmitten von vielen hervorstechen, her-
 466	76	6039	german_prose			none	0	2	0	0	vorragen, von weitem herausragen“ (Dagy).
-466	78	6040	headword_line	རྒྱང་ཆོད་	rgyan	high	2	1	0	0	རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod beisei-
+466	78	6040	headword_line	རྒྱང་ཆོད་	rgyan	high	2	1	0	0	རྒྱང་ཆོད་ rgyaṅ chod auch rgyaṅ gis chod beisei-
 466	79	6040	german_prose			none	0	1	0	0	te legen, sich distanzieren.
 466	81	6040	german_prose_with_translit			none	3	1	0	0	Lex. rgyan chod, rgyan gis chod = logs su
 466	82	6040	german_prose_with_translit			none	3	1	0	0	dgar ba’i don „i.S. ¥. beiseite legen“ (brDa);
 466	83	6040	german_prose_with_translit			none	2	1	0	0	thag rin pos chod pa (Dagy).
-466	85	6041	headword_line	རྒྱང་ཕན་	rgyah phan	high	3	1	0	0	རྒྱང་ཕན་ rgyah phan auch rgyan pan, reyan
+466	85	6041	headword_line	རྒྱང་ཕན་	rgyah phan	high	3	1	0	0	རྒྱང་ཕན་ rgyaṅ phan auch rgyaṅ pan, reyan
 466	86	6041	latin_other			none	4	0	0	0	'phen \’jig rten rgyan phan.
 466	88	6041	german_prose			none	0	3	0	0	ART royarı bu Holztäfelchen für Rituale,
 466	89	6041	latin_other			none	1	0	0	0	„wooden tablets covered with pictures
@@ -66399,14 +66399,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	100	6041	german_prose			none	0	1	0	0	--- yo byad sogs „notwendige Artikel wie
 466	101	6041	german_prose_with_translit			none	2	3	0	0	nam mkha’, rgyah bu, Pfeil und Spindel“
 466	102	6041	german_prose			none	0	1	0	0	(MigTo 287,9).
-466	104	6042	headword_line	རྒྱང་མིག་	rgyan	high	1	0	0	0	རྒྱང་མིག་ rgyan mig
+466	104	6042	headword_line	རྒྱང་མིག་	rgyan	high	1	0	0	0	རྒྱང་མིག་ rgyaṅ mig
 466	106	6042	german_prose_with_translit			none	1	2	0	0	Lex. sin rgyan{s} bu „Holztäfelchen“
 466	107	6042	german_prose_with_translit			none	6	4	0	0	(brDa); mdos glud kyi rdzas śig „ein Material für mdos glud“ (Dagy).
-466	110	6043	headword_line	རྒྱང་མིག་	rgyan	high	1	6	0	0	རྒྱང་མིག་ rgyan mig ein Auge, das in der Ferne
+466	110	6043	headword_line	རྒྱང་མིག་	rgyan	high	1	6	0	0	རྒྱང་མིག་ rgyaṅ mig ein Auge, das in der Ferne
 466	111	6043	other			none	0	0	0	0	klar sieht; hellsichtig.
 466	113	6043	german_prose_with_translit			none	2	3	0	0	Lex. rin por mthon ba’i mig „Auge, das weit
 466	115	6043	german_prose			none	0	1	0	0	sieht“ (Dagy).
-466	117	6044	headword_line	རྒྱང་ཚེར་མ་	rgyan tsher ma	high	3	2	0	0	རྒྱང་ཚེར་མ་ rgyan tsher ma ein Dornenstrauch.
+466	117	6044	headword_line	རྒྱང་ཚེར་མ་	rgyan tsher ma	high	3	2	0	0	རྒྱང་ཚེར་མ་ rgyaṅ tsher ma ein Dornenstrauch.
 466	119	6044	latin_other			none	5	0	0	0	"di yi rdzas la / gla rtsi / gu gul ... -""i rtsa ba"
 466	120	6044	german_prose			none	0	5	0	0	„die Materalien dafür sind: Moschus, gu
 466	121	6044	german_prose			none	0	3	0	0	gul, Wurzeln eines Dornenstrauches
@@ -66414,12 +66414,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	124	6044	example_tibetan_latin	རྒྱང་རིང་ཆུ་ ༡		none	1	4	0	0	རྒྱང་རིང་ཆུ་ ༡797/4/77 rin chu Bez. für Fata Mor-
 466	125	6044	other			none	0	0	0	0	gana.
 466	127	6044	german_prose_with_translit			none	2	3	0	0	Lex. smig sgyu’i min (Dagy, ähnl. brDa).
-466	129	6045	headword_line	རྒྱང་ཤེལ་	rgyan śel Fernglas	high	3	1	0	0	རྒྱང་ཤེལ་ rgyan śel Fernglas, Fernrohr.
+466	129	6045	headword_line	རྒྱང་ཤེལ་	rgyan śel Fernglas	high	3	1	0	0	རྒྱང་ཤེལ་ rgyaṅ śel Fernglas, Fernrohr.
 466	131	6045	german_prose_with_translit			none	3	6	0	0	Lex. thag rin mthon byed sel mig „eine Brille, mit der man in weite Entfernung sehen
 466	133	6045	latin_other			none	5	0	0	0	kann“ (brDa); thag rin du lta byed kyi sel
 466	134	6045	german_prose_with_translit			none	1	5	0	0	dun „ein Fernglas, um in die Ferne zu
 466	136	6045	german_prose			none	0	1	0	0	sehen“ (Dagy).
-466	138	6046	headword_line	རྒྱང་སོ་	rgyan so	high	3	1	0	0	རྒྱང་སོ་ rgyan so Spionage; ¬~ ’dzugs ausspionie-
+466	138	6046	headword_line	རྒྱང་སོ་	rgyan so	high	3	1	0	0	རྒྱང་སོ་ rgyaṅ so Spionage; ¬~ ’dzugs ausspionie-
 466	140	6046	other			none	0	0	0	0	ren.
 466	142	6046	german_prose_with_translit			none	5	1	0	0	Lex. ~ bisugs pa = rin du so pa bisugs pa
 466	143	6046	german_prose_with_translit			none	5	1	0	0	(brDa); ~ bisugs pa = rgyan rin nas so Aul
