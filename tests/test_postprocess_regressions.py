@@ -3263,6 +3263,27 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed min control", corrected)
         self.assertEqual(sum(row["to_token"] == "miṅ" for row in changes), 1)
 
+    def test_reviewed_spong_is_tibetan_identity_gated(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (528, 128): "ངན་སྤོང་འཛིན་ nan spoh ’dzin Bez. für Venus",
+                (795, 124): "ཉེན་མོངས་པ་སྤོང་བ་ ion mons pa spon ba ein",
+                (528, 121): "ངན་སྲོང་བུ་ nan spoh bu Bez. für Venus bzw.",
+                (769, 151): "ཉལ་སྲོང་ nal spon Bez. für Weisheit.",
+                (1, 1): "unreviewed spoh spon control",
+            },
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(fixtures["wts_1_34"]),
+            label="wts_1_34",
+        )
+        self.assertIn("nan spoṅ ’dzin", corrected)
+        self.assertIn("ion mons pa spoṅ ba", corrected)
+        self.assertIn("ངན་སྲོང་བུ་ nan spoh bu", corrected)
+        self.assertIn("ཉལ་སྲོང་ nal spon", corrected)
+        self.assertIn("unreviewed spoh spon control", corrected)
+        self.assertEqual(sum(row["to_token"] == "spoṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
