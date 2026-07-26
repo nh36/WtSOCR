@@ -5339,3 +5339,23 @@ wts_1_34	592	148	2	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibet
 wts_1_34	1198	75	2	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
 wts_1_34	163	112	7	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_rkyang_same_entry_echo_batch_20260726	The alternate expression independently repeats the same རྐྱང element.
 wts_1_34	271	133	5	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_rkyang_same_entry_echo_batch_20260726	The alternate expression independently repeats the same རྐྱང element.
+wts_1_34	54	134	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	116	112	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	141	104	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	141	132	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	155	1	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	155	22	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	245	182	3	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	556	177	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	717	76	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	750	43	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	753	60	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_1_34	1027	147	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_35_51	458	57	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_35_51	505	1	3	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_8_b	162	46	1	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_8_b	163	68	1	byah	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_8_b	165	48	1	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_8_b	179	7	1	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
+wts_8_b	175	62	5	byan	byaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_byang_same_entry_echo_batch_20260726	The Kurzf. expansion independently repeats the same བྱང element.
+wts_8_b	177	50	5	byan	byaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_byang_same_entry_echo_batch_20260726	The Kurzf. expansion independently repeats the same བྱང element; following damage remains unchanged.

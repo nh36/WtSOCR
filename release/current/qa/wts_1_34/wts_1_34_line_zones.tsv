@@ -5921,7 +5921,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 54	130	449	german_prose_with_translit			none	2	1	0	0	Ching-chao-fu“ (Debm 11a3); pandi ta rnams
 54	131	449	german_prose_with_translit			none	1	2	0	0	kin can hur gdan drans „[er] lud die Panditas
 54	132	449	german_prose_with_translit			none	1	2	0	0	nach Ching-chao-fu ein“ (Debm 7b9).
-54	134	450	headword_line	ཀིན་བྱང་དྷུ་	byan	medium	1	1	0	0	ཀིན་བྱང་དྷུ་ kin byan hü !kin jan hu.
+54	134	450	headword_line	ཀིན་བྱང་དྷུ་	byan	medium	1	1	0	0	ཀིན་བྱང་དྷུ་ kin byaṅ hü !kin jan hu.
 54	135	451	headword_line	ཀིམ་པ་	pa	medium	1	3	0	0	ཀིམ་པ་ kim pa eine Pflanze. -- skt. kimpäka 1.
 54	137	451	german_prose			none	0	5	0	0	eine Gurke und ihre Frucht; 2. Strychnos
 54	138	451	other			none	0	0	0	0	nux vomica (pw).
@@ -15090,7 +15090,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 116	106	1405	german_prose			none	0	1	0	0	gegeben hatte“ (Debm 10a5).
 116	108	1405	other			none	0	0	0	0	154
 116	110	1405	tibetan_latin_mixed	ཀླུའི་བྱང་ཆུབ་		none	1	0	0	0	ཀླུའི་བྱང་ཆུབ་ “7 dban chub
-116	112	1406	headword_line	ཀླུའི་བྱང་ཆུབ་	klu’i byan	high	3	1	0	0	ཀླུའི་བྱང་ཆུབ་ klu’i byan chub npr. ein ind. buddh.
+116	112	1406	headword_line	ཀླུའི་བྱང་ཆུབ་	klu’i byan	high	3	1	0	0	ཀླུའི་བྱང་ཆུབ་ klu’i byaṅ chub npr. ein ind. buddh.
 116	113	1406	german_prose			none	0	3	0	0	Lehrer; vgl. 1kl» byan. — skt. Näga-
 116	114	1406	latin_other			none	1	0	0	0	bodhi.
 116	116	1406	german_prose_with_translit			none	5	6	0	0	bu ... slob dpon — bo „der Sohn ist der Lehrmeister Nägabodhi“ (Tär 68,21); na ga bo dhi
@@ -18655,7 +18655,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 141	100	1760	german_prose_with_translit			none	1	2	0	0	körper (sgyu lus), die Bewußtseinsübertra-
 141	101	1760	german_prose_with_translit			none	3	3	0	0	gung ('pho ba), den Traum (rmi lam), das
 141	102	1760	german_prose			none	0	4	0	0	Klare Licht (’od gsal), die innere Hitze (gtum
-141	104	1761	headword_line	བཀའ་བྱང་	bika’ byan	high	2	0	0	0	བཀའ་བྱང་ bika’ byan
+141	104	1761	headword_line	བཀའ་བྱང་	bika’ byan	high	2	0	0	0	བཀའ་བྱང་ bika’ byaṅ
 141	106	1761	german_prose			none	0	3	0	0	mo) und den Zwischenzustand (bar do) be-
 141	107	1761	german_prose			none	0	1	0	0	treffen; vgl. TORRICELLI 1993.
 141	109	1761	latin_other			none	3	0	0	0	slob dpon klu sgrub yab sras / lwa ba pa / nag
@@ -18677,7 +18677,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 141	128	1761	german_prose_with_translit			none	2	3	0	0	rNal-’byor śer-rdor, der für die Auslegung
 141	129	1761	german_prose_with_translit			none	1	5	0	0	der Schriften Dam-pa stabs-kha-ba, das sind
 141	130	1761	german_prose			none	0	2	0	0	die vier“ (Debm 2647).
-141	132	1762	headword_line	བཀའ་བྱང་	bka’ byan	high	2	1	0	0	བཀའ་བྱང་ bka’ byan Lehrschrift.
+141	132	1762	headword_line	བཀའ་བྱང་	bka’ byan	high	2	1	0	0	བཀའ་བྱང་ bka’ byaṅ Lehrschrift.
 141	134	1762	german_prose_with_translit			none	3	2	0	0	— mi la ma ston cig „zeige die Lehrschrift
 141	135	1762	german_prose_with_translit			none	1	2	0	0	nicht den Menschen!“ (Lśdz-K 320,11).
 141	137	1763	headword_line	བཀའ་བྲིས་	bka’	high	1	1	0	0	བཀའ་བྲིས་ bka’ bris Brief.
@@ -20813,7 +20813,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 154	201	1935	german_prose_with_translit			none	5	6	0	0	Lex. mdud ... bcins pa — „Knoten lösen, Fesseln lösen“ (Bon 22,15); ma — ba = ma bcad
 154	203	1935	latin_other			none	7	0	0	0	pa, ma phye ba, ma brduns pa, skt. aghattitah
 154	204	1935	german_prose			none	0	1	0	0	(Mvy 6629).
-155	1	1936	headword_line	བཀྲོལ་བྱང་	bkrol byan	medium	2	0	0	0	བཀྲོལ་བྱང་ bkrol byan
+155	1	1936	headword_line	བཀྲོལ་བྱང་	bkrol byan	medium	2	0	0	0	བཀྲོལ་བྱང་ bkrol byaṅ
 155	3	1936	german_prose_with_translit			none	1	3	0	0	2. erläutern, erklären, entschlüsseln, enthül-
 155	4	1936	other			none	0	0	0	0	len.
 155	6	1936	german_prose_with_translit			none	5	1	0	0	gan gis Ses rab kyi pha rol tu phyin pa 'di ...
@@ -20828,7 +20828,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 155	18	1936	german_prose_with_translit			none	2	3	0	0	Lex. dgons ... — „Bedeutung erklärt“ (Bon
 155	19	1936	german_prose_with_translit			none	1	3	0	0	22,15); gun don — „Erklärung des Sinns der
 155	20	1936	german_prose			none	0	2	0	0	Schriften“ (Bon 20,20).
-155	22	1937	headword_line	བཀྲོལ་བྱང་	bkrol byan	medium	2	1	0	0	བཀྲོལ་བྱང་ bkrol byan Kommentar.
+155	22	1937	headword_line	བཀྲོལ་བྱང་	bkrol byan	medium	2	1	0	0	བཀྲོལ་བྱང་ bkrol byaṅ Kommentar.
 155	24	1937	german_prose_with_translit			none	1	4	0	0	dpe dan cha lag ~~ rnams „das Buch und die
 155	25	1937	german_prose_with_translit			none	1	2	0	0	ergänzenden Kommentare“ (Lśdz-K 297,2).
 155	27	1938	headword_line	བཀྲོས་པ་	bkros pa	medium	2	1	0	0	བཀྲོས་པ་ bkros pa erklärt.
@@ -34303,7 +34303,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 245	177	3181	german_prose_with_translit			none	4	1	0	0	rgyun du ’don rgyn’i kha ’don „Rezitation
 245	178	3181	german_prose			none	0	5	0	0	von etwas, das wiederholt zu rezitieren ist“
 245	179	3181	german_prose_with_translit			none	2	4	0	0	(Dagy); - byed pa = svādhyayanam „Rezitieren für sich selbst“ (Mvy 910).
-245	182	3182	headword_line	ཁ་ཏོན་བྱང་བ	kha	high	3	0	0	0	ཁ་ཏོན་བྱང་བ kha ton byan ba redegewandt.
+245	182	3182	headword_line	ཁ་ཏོན་བྱང་བ	kha	high	3	0	0	0	ཁ་ཏོན་བྱང་བ kha ton byaṅ ba redegewandt.
 245	184	3182	german_prose			none	0	3	0	0	Lex. vacasä parijitab „redegewandt“ (Mvy
 245	185	3182	german_prose			none	0	1	0	0	2411, vgl. BHSD 322 s. ¥. parzjaya).
 245	187	3182	german_prose_with_translit			none	3	5	0	0	MIT kha twäm ga auch kha twam ka ein Ze-
@@ -79591,7 +79591,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 556	173	7044	latin_other			none	4	0	0	0	lha yi ’jig rten ~ mkha’ la son (metr.) „sie
 556	174	7044	german_prose_with_translit			none	2	4	0	0	ging in Richtung der Götterwelt zum Him-
 556	175	7044	german_prose			none	0	1	0	0	mel“ (Udr 15,16).
-556	177	7045	headword_line	མངོན་བྱང་	byan	medium	1	4	0	0	མངོན་བྱང་ mnon byan Bez. des Weges eines
+556	177	7045	headword_line	མངོན་བྱང་	byan	medium	1	4	0	0	མངོན་བྱང་ mnon byaṅ Bez. des Weges eines
 556	178	7045	latin_other			none	1	0	0	0	Bodhisattva.
 556	180	7045	german_prose_with_translit			none	3	1	0	0	Lex. bden bzi’i gnas lugs mnon sum du
 556	181	7045	german_prose_with_translit			none	4	5	0	0	mthon ba’i byan chub kyi lam „Bodhisattvaweg, auf dem man die Natur der vier Wahr-
@@ -104278,7 +104278,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 717	72	8597	german_prose_with_translit			none	1	5	0	0	la „Komet Encke bei einem der vier
 717	73	8597	german_prose			none	0	4	0	0	Planeten, der ein schlechtes Vorzeichen
 717	74	8597	german_prose			none	0	2	0	0	ist“ (Dagy).
-717	76	8598	headword_line	མཇུག་བྱང་	byan	medium	1	3	0	0	མཇུག་བྱང་ mjug byan Schlußwort in einem
+717	76	8598	headword_line	མཇུག་བྱང་	byan	medium	1	3	0	0	མཇུག་བྱང་ mjug byaṅ Schlußwort in einem
 717	77	8598	german_prose			none	0	1	0	0	Buch.
 717	79	8598	german_prose_with_translit			none	2	2	0	0	Lex. par byan smon tshig la’an „Segenswort
 717	80	8598	german_prose_with_translit			none	1	5	0	0	am Ende eines Blockdrucks“ (brDa, ähnl.
@@ -109266,7 +109266,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 750	40	8914	german_prose_with_translit			none	3	1	0	0	=... 50g5 kyis thams cad Ryi thngs ’dod grub
 750	41	8914	german_prose			none	0	4	0	0	par byas „ich erfüllte die Wünsche aller mit
 750	42	8914	german_prose			none	0	2	0	0	Schutzknoten [usw.]“ (Dol2 76,7).
-750	43	8915	headword_line	ལྔགས་བྱང་	byan	medium	1	0	0	0	ལྔགས་བྱང་ ljags byan (zw.).
+750	43	8915	headword_line	ལྔགས་བྱང་	byan	medium	1	0	0	0	ལྔགས་བྱང་ ljags byaṅ (zw.).
 750	44	8915	german_prose_with_translit			none	2	2	0	0	rgyal la... = gsol „sie reichten dem König
 750	46	8915	other			none	0	0	0	0	ljags byan dar“ (PT1042 13).
 750	48	8915	tibetan_only	ལྔགས་སྨིན་		none	0	1	0	0	ལྔགས་སྨིན་ ljags smin Speise.
@@ -109751,7 +109751,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 753	55	8948	headword_line	བརྗེང་པ་མེད་པ་	pa	medium	3	1	0	0	བརྗེང་པ་མེད་པ་ brjed pa med pa ein Samädhi.
 753	57	8948	german_prose_with_translit			none	5	2	0	0	Lex. ~ Zes bya ba’i tiṅ ṅe 'dzin = asam-
 753	58	8948	german_prose_with_translit			none	1	1	0	0	pramoso nama samädhih (Mvy 526).
-753	60	8949	headword_line	བརྗེད་བྱང་	byan	medium	1	1	0	0	བརྗེད་བྱང་ brjed byan Notizen.
+753	60	8949	headword_line	བརྗེད་བྱང་	byan	medium	1	1	0	0	བརྗེད་བྱང་ brjed byaṅ Notizen.
 753	62	8949	german_prose_with_translit			none	6	1	0	0	Lex. ma brjed pa’i phyir du bris pa’i tho yig
 753	63	8949	german_prose_with_translit			none	1	3	0	0	lta bu „wie: eine Liste, die geschrieben
 753	64	8949	german_prose_with_translit			none	2	1	0	0	wurde, damit man nichts vergißt“ (brDa);
@@ -150239,7 +150239,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1027	141	11297	headword_line	ཐྲེམ་བུ་	them	high	1	1	0	0	ཐྲེམ་བུ་ them bu Stöpsel.
 1027	143	11297	latin_other			none	2	0	0	0	khyod rna tsho ~$ char (r. byar?) le ¢ red
 1027	144	11297	german_prose_with_translit			none	1	4	0	0	„hast du deine Ohren mit Stöpseln verstopft?“ (Gesar 179,45),
-1027	147	11298	headword_line	ཐེམ་བྱང་	them byan	high	3	1	0	0	ཐེམ་བྱང་ them byan Register, Auflistung
+1027	147	11298	headword_line	ཐེམ་བྱང་	them byan	high	3	1	0	0	ཐེམ་བྱང་ them byaṅ Register, Auflistung
 1027	149	11298	german_prose			none	0	1	0	0	(SCHWIEGER 1995: 370), Katalog
 1027	150	11298	german_prose			none	0	2	0	0	(EVERDING 2008: 171); vgl. Ithem yıg.
 1027	152	11298	german_prose_with_translit			none	2	4	0	0	bon gyi ~ „die Register der Bon-po“ (Lśdz-

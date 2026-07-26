@@ -2986,3 +2986,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 472	14	2566	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་བ་ཉིད་ byuh ba ñid.
 473	1	2576	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ཚུལ་ "byun tshul
 432	24	2371	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབབ་ཆུའི་དོང་ ""bab chn'i don Quelle, Brunnen."
+162	46	833	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྱང་ ""byan"
+163	68	847	headword_line	byah	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྱང་བགྲོད་ byah bgrod ""der Lauf [der Sonne]"
+165	48	855	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྱང་ཆུབ་ཀྱི་སླིང་ * byan chub kyi sin
+175	62	930	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་ཕྱོགས་ 'byaṅ phyogs Kurzf. für byan gi
+177	50	944	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་སྨན་ byaṅ sman Kurzf. für byan /?/// mig
+179	7	957	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.
