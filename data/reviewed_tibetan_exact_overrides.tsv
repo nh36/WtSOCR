@@ -5269,3 +5269,26 @@ wts_1_34	962	9	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_k
 wts_1_34	176	149	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate after auch independently repeats the same ཁུང element.
 wts_1_34	346	127	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate after auch independently repeats the same ཁུང element.
 wts_1_34	934	122	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate lte ba khuṅ retains the same ཁུང element despite damage in the preceding token.
+wts_1_34	78	103	2	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	78	105	2	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	942	169	2	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1251	49	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1252	54	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1252	93	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	1	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	14	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	28	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	34	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	36	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	41	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	63	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	88	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	90	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1253	100	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1254	1	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1254	33	1	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_8_b	432	24	3	don	doṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	Frozen exact Tibetan དོང alignment at 0848355; genuine དོན is excluded.
+wts_1_34	1252	93	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
+wts_1_34	1253	14	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
+wts_1_34	1253	41	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.
+wts_1_34	1253	100	4	don	doṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_dong_same_entry_echo_batch_20260726	The alternate after auch independently repeats the same དོང element.

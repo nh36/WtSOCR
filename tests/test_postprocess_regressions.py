@@ -2634,6 +2634,24 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཁུན་ khun synthetic genuine-final-n control.", corrected)
         self.assertEqual(sum(row["to_token"] == "khuṅ" for row in changes), 7)
 
+    def test_reviewed_dong_rows_and_echoes_are_exact(self) -> None:
+        lines = {
+            (1252, 93): "དོང་ don ka auch don ga eine Pflanze.",
+            (1253, 14): "དོང་ཀྲ་ don kra auch don gra eine Art Ingwer.",
+            (1253, 41): "དོང་པ་ don pa auch don ba Rohr.",
+            (1253, 100): "དོང་ཙེ་ don tse auch don rtse eine Münze.",
+            (200, 1): "དོན་ don synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("doṅ ka auch doṅ ga", corrected)
+        self.assertIn("doṅ kra auch doṅ gra", corrected)
+        self.assertIn("doṅ pa auch doṅ ba", corrected)
+        self.assertIn("doṅ tse auch doṅ rtse", corrected)
+        self.assertIn("དོན་ don synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "doṅ" for row in changes), 8)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

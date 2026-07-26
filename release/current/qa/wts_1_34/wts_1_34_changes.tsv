@@ -28102,3 +28102,25 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 934	122	10270	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.
 935	20	10279	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྟེ་བ་ཁུང་ Ite ba khun 7//¢ khun.
 962	9	10515	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོར་ཁུང་ stor khun [།2/07 khun.
+78	103	853	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་དོང་ kun don
+78	105	853	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་དོང་ kun don eine Heilpflanze, Zwiebel,
+942	169	10329	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟག་དོང་ stag don auch stag gdon ein Köcher
+1251	49	12714	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ 'don
+1252	54	12715	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཀ་ don ka
+1252	93	12716	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དོང་ don ka auch don ga eine Pflanze, Cas-
+1252	93	12716	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ don ka auch don ga eine Pflanze, Cas-
+1253	1	12716	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཀྲ་ don kra
+1253	14	12717	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དོང་ཀྲ་ don kra auch don gra eine Art lngwer;
+1253	14	12717	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཀྲ་ don kra auch don gra eine Art lngwer;
+1253	28	12718	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་རྐ་ don rka Brunnen.
+1253	34	12718	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་གྲྭ་ don gra [@0:7 kra.
+1253	36	12718	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཆུ་ don chu Brunnenwasser.
+1253	41	12719	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དོང་པ་ don pa auch don ba Rohr; Köcher.
+1253	41	12719	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་པ་ don pa auch don ba Rohr; Köcher.
+1253	63	12719	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་སྤྲུགས་ don sprugs aufwühlen, i.S.v. aus-
+1253	88	12720	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་བ་ don ba 107 pa.
+1253	90	12720	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་བུ་ don bu Hülse, Röhrchen.
+1253	100	12721	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
+1253	100	12721	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
+1254	1	12722	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་རྩེ་དགུ་བསྐོར་་ don rise dgu bskor ...
+1254	33	12723	tibetan_only	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོང་རལ་ don ral Köcher.

@@ -9411,8 +9411,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 78	98	853	german_prose_with_translit			none	1	3	0	0	Lex. Boswellia (Jä); kundu = dri bzan po’: sin
 78	99	853	german_prose			none	0	4	0	0	Zig „ein wohlriechender Baum“ (Dagy).
 78	101	853	other			none	0	0	0	0	84
-78	103	853	tibetan_only	ཀུན་དོང་		none	0	0	0	0	ཀུན་དོང་ kun don
-78	105	853	tibetan_only	ཀུན་དོང་		none	0	3	0	0	ཀུན་དོང་ kun don eine Heilpflanze, Zwiebel,
+78	103	853	tibetan_only	ཀུན་དོང་		none	0	0	0	0	ཀུན་དོང་ kun doṅ
+78	105	853	tibetan_only	ཀུན་དོང་		none	0	3	0	0	ཀུན་དོང་ kun doṅ eine Heilpflanze, Zwiebel,
 78	106	853	german_prose_with_translit			none	1	1	0	0	Knoblauch, synon. \sgog skya (dGardor
 78	107	853	other			none	0	0	0	0	400).
 78	109	853	latin_other			none	5	0	0	0	— gikhu ba... snar blugs na yaṅ sna khrag 249
@@ -136808,7 +136808,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 942	163	10328	german_prose			none	0	3	0	0	Komet im Süden (SCHUH 2012: 1397).
 942	165	10329	headword_line	སྟག་སྒོ་	sgro	medium	1	4	0	0	སྟག་སྒོ་ stag sgro ein Attribut von Bon-Gott-
 942	167	10329	german_prose			none	0	1	0	0	heiten (Neb 20).
-942	169	10329	tibetan_only	སྟག་དོང་		none	0	3	0	0	སྟག་དོང་ stag don auch stag gdon ein Köcher
+942	169	10329	tibetan_only	སྟག་དོང་		none	0	3	0	0	སྟག་དོང་ stag doṅ auch stag gdon ein Köcher
 942	171	10329	german_prose			none	0	4	0	0	aus Tigerhaut, Attribut einer Gott-
 942	172	10329	german_prose			none	0	2	0	0	heit (Neb 8).
 942	174	10329	german_prose_with_translit			none	4	1	0	0	Lex. mda’i subs sam sag thag (brDa); mda’i
@@ -170974,7 +170974,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1251	45	12714	german_prose_with_translit			none	1	1	0	0	(Tär 188,9); gnas tshan ’jog ~~ mi ’dug pas „es
 1251	46	12714	german_prose_with_translit			none	1	2	0	0	besteht nicht die Befürchtung, daß ich dich
 1251	47	12714	german_prose			none	0	2	0	0	Unterkunft beziehen lasse“ (KunK 51,4); mi
-1251	49	12714	tibetan_only	དོང་		none	0	0	0	0	དོང་ 'don
+1251	49	12714	tibetan_only	དོང་		none	0	0	0	0	དོང་ 'doṅ
 1251	51	12714	german_prose_with_translit			none	8	1	0	0	theg tu — pa ni dgos pa ma yin no „er muß
 1251	52	12714	german_prose			none	0	3	0	0	nicht befürchten, sie nicht tragen zu kön-
 1251	53	12714	german_prose_with_translit			none	2	1	0	0	nen“ (Śambh 38b4); mnon Zen re — ... chos
@@ -171055,7 +171055,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1252	50	12714	latin_other			none	5	0	0	0	la / zabs su ’dom bcu’i — brus nas „entlang
 1252	51	12714	german_prose			none	0	5	0	0	des südlichen Walls wurde ein zehn Klafter
 1252	52	12714	german_prose			none	0	3	0	0	tiefer Graben gegraben“ (Glr 80,9); des bu
-1252	54	12715	headword_line	དོང་ཀ་	ka	medium	1	0	0	0	དོང་ཀ་ don ka
+1252	54	12715	headword_line	དོང་ཀ་	ka	medium	1	0	0	0	དོང་ཀ་ doṅ ka
 1252	56	12715	german_prose_with_translit			none	6	1	0	0	gcig pu de mi gtsani ba’i — der lhun bar mthon
 1252	57	12715	german_prose_with_translit			none	1	6	0	0	no „er sah, daß sein einziger Sohn in die Latrine gefallen war“ (TsKh 13: 418,2); ran id
 1252	59	12715	german_prose_with_translit			none	4	1	0	0	spu 6777/ — du mchons so „er sprang selbst in
@@ -171086,7 +171086,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1252	89	12715	german_prose_with_translit			none	4	2	0	0	khron pa lta bu’i chu — „ein Wasserschacht,
 1252	90	12715	german_prose_with_translit			none	1	4	0	0	z.B. ein Brunnen“ (Dagy); — du brubs ‰ —
 1252	91	12715	latin_other			none	2	0	0	0	du mnan pa (TTC).
-1252	93	12716	headword_line	དོང་	ka	medium	1	4	0	0	དོང་ don ka auch don ga eine Pflanze, Cas-
+1252	93	12716	headword_line	དོང་	ka	medium	1	4	0	0	དོང་ doṅ ka auch doṅ ga eine Pflanze, Cas-
 1252	95	12716	other			none	0	0	0	0	164
 1252	97	12716	german_prose_with_translit			none	1	2	0	0	sia fistula L. (Pasang 1998: 103), Indian
 1252	98	12716	other			none	0	0	0	0	liburnum (TMP).
@@ -171095,7 +171095,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1252	102	12716	german_prose_with_translit			none	1	2	0	0	eine in e ran [zubereitete] Abkochung aus
 1252	103	12716	german_prose_with_translit			none	4	1	0	0	ba Sa, sle tres und don ka (skt. caturangula)
 1252	104	12716	latin_other			none	1	0	0	0	getrunken hat“ (Yś 17a).
-1253	1	12716	tibetan_only	དོང་ཀྲ་		none	0	0	0	0	དོང་ཀྲ་ don kra
+1253	1	12716	tibetan_only	དོང་ཀྲ་		none	0	0	0	0	དོང་ཀྲ་ doṅ kra
 1253	3	12716	german_prose_with_translit			none	1	3	0	0	Lex. äragvadhah (Mvy 5826), karnikärah
 1253	4	12716	german_prose			none	0	3	0	0	(Mvy 5827), räjavrksah (Mvy 5828); — bsal
 1253	5	12716	german_prose_with_translit			none	1	2	0	0	sman „don ka: abführendes Heilmittel“ (gYu
@@ -171106,7 +171106,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1253	10	12716	german_prose_with_translit			none	4	1	0	0	rtswa’i bye brag (Dagy); don ga’i ’khor lo =
 1253	11	12716	german_prose_with_translit			none	4	3	0	0	rtswa tho gu can Zig gi 'bras bu „Frucht einer
 1253	12	12716	german_prose_with_translit			none	1	5	0	0	Pflanze, die Früchte trägt“ (brDa, Dagy).
-1253	14	12717	headword_line	དོང་ཀྲ་	lngwer	medium	1	3	0	0	དོང་ཀྲ་ don kra auch don gra eine Art lngwer;
+1253	14	12717	headword_line	དོང་ཀྲ་	lngwer	medium	1	3	0	0	དོང་ཀྲ་ doṅ kra auch doṅ gra eine Art lngwer;
 1253	16	12717	german_prose			none	0	2	0	0	don gra Alpinia officinarum Hance (PA-
 1253	18	12717	latin_other			none	3	0	0	0	sAnG 1998: 103), Zingiber officinale: ginger
 1253	19	12717	other			none	0	0	0	0	(TMP).
@@ -171115,15 +171115,15 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1253	23	12717	german_prose			none	0	3	0	0	kra [u.a.] mit Weißzucker, beseitigt Herz-
 1253	24	12717	german_prose_with_translit			none	1	2	0	0	und Milzkrankheiten“ (Hipp 193,20).
 1253	26	12717	german_prose			none	0	1	0	0	Lex. — sga (gYu 291,16).
-1253	28	12718	headword_line	དོང་རྐ་	rka	high	1	1	0	0	དོང་རྐ་ don rka Brunnen.
+1253	28	12718	headword_line	དོང་རྐ་	rka	high	1	1	0	0	དོང་རྐ་ doṅ rka Brunnen.
 1253	30	12718	german_prose_with_translit			none	4	2	0	0	Lex. khron pa lta bu „wie: Brunnen“ (brDa,
 1253	31	12718	german_prose			none	0	2	0	0	ähnl. Dagy).
 1253	33	12718	tibetan_latin_mixed	དོང་ག་		none	1	0	0	0	དོང་ག་ @༠7 9¢ 140: ka.
-1253	34	12718	tibetan_only	དོང་གྲྭ་		none	0	0	0	0	དོང་གྲྭ་ don gra [@0:7 kra.
-1253	36	12718	tibetan_only	དོང་ཆུ་		none	0	1	0	0	དོང་ཆུ་ don chu Brunnenwasser.
+1253	34	12718	tibetan_only	དོང་གྲྭ་		none	0	0	0	0	དོང་གྲྭ་ doṅ gra [@0:7 kra.
+1253	36	12718	tibetan_only	དོང་ཆུ་		none	0	1	0	0	དོང་ཆུ་ doṅ chu Brunnenwasser.
 1253	38	12718	german_prose_with_translit			none	2	2	0	0	Lex. khron chu lta bu „wie: Brunnenwasser“
 1253	39	12718	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-1253	41	12719	headword_line	དོང་པ་	pa	medium	2	3	0	0	དོང་པ་ don pa auch don ba Rohr; Köcher.
+1253	41	12719	headword_line	དོང་པ་	pa	medium	2	3	0	0	དོང་པ་ doṅ pa auch doṅ ba Rohr; Köcher.
 1253	43	12719	latin_other			none	6	0	0	0	byan chub sems dpa’ de ... don ba’i mda’ ni
 1253	44	12719	german_prose_with_translit			none	1	1	0	0	’don byed cin (metr.) „der Bodhisattva zog
 1253	45	12719	german_prose_with_translit			none	1	4	0	0	einen Pfeil aus dem Köcher (skt. saradhi)“
@@ -171141,7 +171141,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1253	59	12719	german_prose_with_translit			none	2	1	0	0	stag ral yan zer ro „don pa: Köcher; man
 1253	60	12719	german_prose_with_translit			none	3	2	0	0	nennt ihn auch sag thag oder stag ra!“ (Be’uD
 1253	61	12719	other			none	0	0	0	0	206,2).
-1253	63	12719	tibetan_only	དོང་སྤྲུགས་		none	0	2	0	0	དོང་སྤྲུགས་ don sprugs aufwühlen, i.S.v. aus-
+1253	63	12719	tibetan_only	དོང་སྤྲུགས་		none	0	2	0	0	དོང་སྤྲུགས་ doṅ sprugs aufwühlen, i.S.v. aus-
 1253	65	12719	other			none	0	0	0	0	merzen.
 1253	67	12719	german_prose_with_translit			none	3	3	0	0	’khor ba — „den Saṃsāra vom Grund her aufwühlen“ (dPe 221,21).
 1253	70	12719	german_prose_with_translit			none	3	2	0	0	Lex. gtin rtsa nas sprug sprug byas pa „von
@@ -171160,17 +171160,17 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1253	84	12719	german_prose_with_translit			none	1	6	0	0	Es gibt auch eine Unterweisung für das Auf-
 1253	85	12719	german_prose_with_translit			none	1	5	0	0	wühlen des Saṃsāra, welche den Sinn eines
 1253	86	12719	german_prose			none	0	2	0	0	alten Tantra ausdrückt“ (dPeD 193,1).
-1253	88	12720	headword_line	དོང་བ་	ba	medium	2	0	0	0	དོང་བ་ don ba 107 pa.
-1253	90	12720	tibetan_only	དོང་བུ་		none	0	2	0	0	དོང་བུ་ don bu Hülse, Röhrchen.
+1253	88	12720	headword_line	དོང་བ་	ba	medium	2	0	0	0	དོང་བ་ doṅ ba 107 pa.
+1253	90	12720	tibetan_only	དོང་བུ་		none	0	2	0	0	དོང་བུ་ doṅ bu Hülse, Röhrchen.
 1253	92	12720	latin_other			none	3	0	0	0	legs par dril nas gser gyi —r bcug ste „er rollte
 1253	93	12720	german_prose			none	0	4	0	0	[das Bild] gut zusammen und steckte es in
 1253	94	12720	german_prose			none	0	3	0	0	eine goldene Hülse“ (Udr 6,8).
 1253	96	12720	german_prose_with_translit			none	1	1	0	0	Lex. mig sman snod — = bhaisajyänijananä-
 1253	97	12720	german_prose			none	0	5	0	0	likä „Röhrchen für medizinische Augensalbe“ (Mvy 9014),
-1253	100	12721	headword_line	དོང་ཙེ་	tse	high	2	4	0	0	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
+1253	100	12721	headword_line	དོང་ཙེ་	tse	high	2	4	0	0	དོང་ཙེ་ doṅ tse auch doṅ rtse eine Münze, eine
 1253	102	12721	german_prose_with_translit			none	1	2	0	0	Bronzemünze, vgl. chin. 39 t’ung-tzu
 1253	103	12721	german_prose			none	0	1	0	0	(LAUFER 1916: 506, Nr. 218).
-1254	1	12722	headword_line	དོང་རྩེ་དགུ་བསྐོར་་	dgu bskor	medium	2	0	0	0	དོང་རྩེ་དགུ་བསྐོར་་ don rise dgu bskor ...
+1254	1	12722	headword_line	དོང་རྩེ་དགུ་བསྐོར་་	dgu bskor	medium	2	0	0	0	དོང་རྩེ་དགུ་བསྐོར་་ doṅ rise dgu bskor ...
 1254	3	12722	latin_other			none	6	0	0	0	rgyal pos gser gyi don rtse lṅa bskur nas
 1254	4	12722	german_prose			none	0	5	0	0	„der König gab ihm fünf Goldmünzen“ (Glr
 1254	5	12722	latin_other			none	5	0	0	0	72,23); pa na ni gser dnulgyi — da lta tan khar
@@ -171192,7 +171192,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1254	28	12723	german_prose_with_translit			none	1	4	0	0	ist, kann man den ‚gTo der Drehung von
 1254	30	12723	german_prose			none	0	3	0	0	neun Kupfermünzen‘ durchführen“ (MigTo
 1254	31	12723	other			none	0	0	0	0	301,5).
-1254	33	12723	tibetan_only	དོང་རལ་		none	0	1	0	0	དོང་རལ་ don ral Köcher.
+1254	33	12723	tibetan_only	དོང་རལ་		none	0	1	0	0	དོང་རལ་ doṅ ral Köcher.
 1254	35	12723	latin_other			none	7	0	0	0	gser gi ni — na g.yu’i ni mda’ chig ma ..
 1254	36	12723	latin_other			none	4	0	0	0	'phans na ni ral (r. don ral) yan stons (metr.)
 1254	37	12723	german_prose			none	0	3	0	0	„im goldenen Köcher gibt es einen einzigen
