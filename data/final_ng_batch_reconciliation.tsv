@@ -38,3 +38,4 @@ tibetan_king_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀིང	tibetan
 tibetan_klang_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀླང	tibetan_klang_consensus_batch_20260726	6	6	tibetan_klang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6
 tibetan_gdong_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	གདོང	tibetan_gdong_consensus_batch_20260726	6	6	tibetan_gdong_same_entry_echo_batch_20260726	5	2	3	0	0	0	6	2	5	8
 tibetan_grong_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	གྲོང	tibetan_grong_consensus_batch_20260726	15	15	tibetan_grong_same_entry_echo_batch_20260726	2	1	1	0	0	0	15	1	2	16
+tibetan_btang_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	བཏང	tibetan_btang_consensus_batch_20260726	14	14	tibetan_btang_same_entry_echo_batch_20260726	2	1	1	0	0	0	14	1	2	15

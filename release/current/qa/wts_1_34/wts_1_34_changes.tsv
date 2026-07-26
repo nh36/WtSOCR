@@ -28422,3 +28422,15 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 655	133	7976	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་སིན་གྲོང་ཀྱེར་ chu srin gron khyer Bez. des
 703	39	8475	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆི་མེད་གྲོང་གཙོ་ 'chi med gron 9750 Beiname
 1321	73	13031	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་ཟའི་གྲོང་ཁྱེར་ dri za’i gron khyer „Gandhar-
+901	155	9905	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་ btan
+902	1	9906	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་ btan
+902	55	9907	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་ btan
+904	21	9908	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་གཉོད་ btan gcod
+904	43	9909	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་གཅོད་ btan gcod auch gtan gcod Ergebnis;
+904	59	9910	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་སྩོམས་ btan som.
+904	72	9911	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་བཟུང་ btan bzun
+904	108	9912	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་སྙོམས་ཆེན་པོ་ btan sioms chen po Bez. für
+904	111	9913	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་གཏོར་ btan gtor besprengen.
+905	36	9917	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་ཡས་ btan yas 7277? yas.
+905	37	9918	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་རག་ btan rag 7977? rag.
+1221	14	12581	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་དབང་བཏང་ཚེ་ de dbaṅ btan tshe wenn man es

@@ -2108,3 +2108,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 66	62	313	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མང་པོས་བཀུར་བ་ maṅ pos bkur ba auch man lhur
 220	76	991	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མི་ཕུང་ me phuṅ auch me'i phun po, me yi pl
 225	80	1018	tibetan_only	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མི་ལོང་ me lon.
+89	2	393	example_tibetan_latin	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba abführendes

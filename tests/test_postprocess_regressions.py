@@ -3002,6 +3002,19 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
         self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 2)
 
+    def test_reviewed_btang_preserves_damaged_context(self) -> None:
+        lines = {
+            (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
+            (1400, 8): "unreviewed btan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_9_m"
+        )
+        self.assertIn("མས་བཏང་ mas btaṅ auch — ba", corrected)
+        self.assertIn("(Tir 106,8);", corrected)
+        self.assertIn("unreviewed btan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "btaṅ" for row in changes), 1)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
