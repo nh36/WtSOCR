@@ -28292,3 +28292,13 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 994	143	10849	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁྲལས་མང་ thabs man sehr geschickt.
 1220	92	12578	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་བས་མང་དུ་སྤྱོད་པ་ de bas man du spyod pa ein
 1270	22	12786	tibetan_only	man	maṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་མང་ don man „viel Sinn, viele Gedanken“,
+249	40	3241	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་ཕུང་ངེ་བ་ kha phun ne ba aufgehäuft; od zer
+284	206	3841	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁྱིམ་ཕུང་ khyim phun innerfamiliäre Streitig-
+291	9	3942	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་ཕུང་ཕུང་ khra phun phun rundum leuch-
+291	9	3942	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་ཕུང་ཕུང་ khra phun phun rundum leuch-
+571	206	7187	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྔོན་པོའི་ཕུང་པོ་ shon po’ phun po Bez. für
+652	113	7942	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ི་ཕུང་པོ་ chu yi phun po Bez. für Ozean,
+674	128	8116	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆོས་ཀྱི་ཕུང་པོ་ chos kyi phun po auch chos phun
+674	128	8116	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་ཀྱི་ཕུང་པོ་ chos kyi phun po auch chos phun
+679	166	8203	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆོས་ཕུང་ chos phun ↑ chos kyi phuṅ po.
+1167	48	12325	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དུར་ཕུང་ dur phun ""Totenzeremonie, Bestat-"

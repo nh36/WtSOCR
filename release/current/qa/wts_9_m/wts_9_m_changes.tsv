@@ -2106,3 +2106,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 40	20	174	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མ་ཚང་བྲ་ ma tshaṅ ba auch ma tshan, ma tshani
 63	64	291	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མང་དུ་ཐས་པ་ maṅ du thos pa auch man thos,
 66	62	313	headword_line	man	maṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མང་པོས་བཀུར་བ་ maṅ pos bkur ba auch man lhur
+220	76	991	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མི་ཕུང་ me phuṅ auch me'i phun po, me yi pl

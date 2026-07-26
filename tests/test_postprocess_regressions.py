@@ -1506,13 +1506,14 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["reason"] == "reviewed_tibetan_exact_reference_marker"
         ]
         self.assertEqual(len(marker_changes), 5)
+        self.assertIn("ཆོས་ཕུང་ chos phuṅ ↑ chos kyi phuṅ po.", corrected)
         self.assertTrue(
             all(
                 (row["from_token"], row["to_token"]) == ("Tchos", "↑ chos")
                 for row in marker_changes
             )
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_reference_marker_tran_row_applies_only_at_exact_location(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -2814,6 +2815,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("mo geod gtin 'byin auch", corrected)
         self.assertIn("unrelated gtin prose control", corrected)
         self.assertFalse(any(row["to_token"] == "gtiṅ" for row in changes))
+
+    def test_reviewed_phung_rows_preserve_final_n_control(self) -> None:
+        lines = {
+            (291, 9): "ཁ་ཕུང་ཕུང་ khra phun phun",
+            (292, 1): "ཕུན་ phun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("khra phuṅ phuṅ", corrected)
+        self.assertIn("ཕུན་ phun synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "phuṅ" for row in changes), 2)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {

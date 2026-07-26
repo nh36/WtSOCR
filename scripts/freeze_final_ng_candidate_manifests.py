@@ -29,6 +29,13 @@ FAMILIES = {
     "གཏིང": ({"gtin"}, "gtiṅ"),
     "གྲང": ({"gran"}, "graṅ"),
     "མང": ({"man"}, "maṅ"),
+    "ཕུང": ({"phun", "phuh"}, "phuṅ"),
+    "འཆང": ({"chan", "chah"}, "chaṅ"),
+    "རྒྱང": ({"rgyan", "rgyah"}, "rgyaṅ"),
+    "འཐུང": ({"thun", "thuh"}, "thuṅ"),
+    "འབྲིང": ({"brin"}, "briṅ"),
+    "ཀླུང": ({"klun"}, "kluṅ"),
+    "བྲང": ({"bran", "brań"}, "braṅ"),
 }
 
 FIELDS = [

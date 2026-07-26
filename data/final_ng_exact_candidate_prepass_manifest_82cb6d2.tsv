@@ -1,0 +1,83 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	56	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་ཆུ་ klun chu
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	94	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་ཆུ་ klun chn.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	169	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་རྟ་དགྲ་བཟློག་ klun rta dgra bzlog ein Ritual zur
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	182	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་ལྡན་ klun ldan Bergfluß, Wasserfall.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	185	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་ཚུགས་ klun tshugs npr. Ortsname, vgl. Irlun
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	191	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་བཞི་ klun bi Symboltiere für die vier Him-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	204	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་སེ་ klun se 72. junger Mann oder Mann über
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	115	209	1	ཀླུང	klun	kluṅ	positional	dominant_internal_consensus	none	ཀླུང་གསེར་གྱི་ཕྱེ་མ་ཅན་ klun gser gyi phye ma can
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	291	9	3	ཕུང	phun	phuṅ	echo	direct_repeated_tibetan_alignment	none	ཁ་ཕུང་ཕུང་ khra phun phun rundum leuch-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	652	111	4	ཕུང	phun	phuṅ	echo	uncertain	uncertain	"ཆུ་ཨི་ཕུང་ N"" chu yi phun po"
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	674	128	7	ཕུང	phun	phuṅ	echo	explicit_same_lemma_repetition	none	ཆོས་ཀྱི་ཕུང་པོ་ chos kyi phun po auch chos phun
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	910	31	4	ཕུང	phun	phuṅ	echo	explicit_same_lemma_repetition	none	ཕུང་འདྲེ་ phuṅ 'dre auch 'phun 'dre ein Dämon.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	913	68	5	ཕུང	phun	phuṅ	echo	explicit_same_lemma_repetition	none	ཕུང་གསུམ་པ་ phuṅ gsum pa auch phun sum pa
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_9_m	220	76	5	ཕུང	phun	phuṅ	echo	explicit_same_lemma_repetition	none	མི་ཕུང་ me phuṅ auch me'i phun po, me yi pl
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_9_m	237	35	5	ཕུང	phun	phuṅ	echo	uncertain	uncertain	མིའི་ཕུང་པོ་ me' phuṅ po Tme phun.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	249	40	2	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཁ་ཕུང་ངེ་བ་ kha phun ne ba aufgehäuft; od zer
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	284	206	2	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཁྱིམ་ཕུང་ khyim phun innerfamiliäre Streitig-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	291	9	2	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཁ་ཕུང་ཕུང་ khra phun phun rundum leuch-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	291	9	3	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཁ་ཕུང་ཕུང་ khra phun phun rundum leuch-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	571	206	3	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	སྔོན་པོའི་ཕུང་པོ་ shon po’ phun po Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	652	113	3	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཆུ་ི་ཕུང་པོ་ chu yi phun po Bez. für Ozean,
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	674	128	3	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཆོས་ཀྱི་ཕུང་པོ་ chos kyi phun po auch chos phun
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	679	166	2	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	ཆོས་ཕུང་ chos phun ↑ chos kyi phuṅ po.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1167	48	2	ཕུང	phun	phuṅ	positional	dominant_internal_consensus	none	"དུར་ཕུང་ dur phun ""Totenzeremonie, Bestat-"
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	884	19	2	ཕུང	phuh	phuṅ	positional	dominant_internal_consensus	none	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	913	27	1	ཕུང	phuh	phuṅ	positional	dominant_internal_consensus	none	ཕུང་གཞི་ 'phuh gźi Grundlage fūr das Verder-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	162	188	7	བྲང	bran	braṅ	echo	uncertain	uncertain	རྐོང་རྗེ་བྲང་དཀར་ rkon rje bran dkar tkon rje bran
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1028	12	5	བྲང	bran	braṅ	echo	explicit_same_lemma_repetition	none	བེའུ་བྲང་ the’u brani auch the bran eine Gruppe
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_8_b	263	25	4	བྲང	bran	braṅ	echo	explicit_same_lemma_repetition	none	བྲང་སྤད་ braṅ sprad auch bran phrad Grundla-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	49	157	4	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po rje bran mig can
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	49	206	4	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po re bran mig can ein
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	97	111	3	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	ཀོང་རྗེ་བྲང་དཀར་ koṅ rje bran dkar
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	162	188	3	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	རྐོང་རྗེ་བྲང་དཀར་ rkon rje bran dkar tkon rje bran
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	403	162	4	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	དགའ་ལྡན་ཕོ་བྲང་ dga’ ldan pho bran
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	593	173	2	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	གཅིག་བྲང་ཕྲ་མོ་ gcig bran phra mo Sehnenteil
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	941	33	2	བྲང	brań	braṅ	positional	dominant_internal_consensus	none	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_8_b	263	45	1	བྲང	bran	braṅ	positional	dominant_internal_consensus	none	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	71	143	3	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་འཆང་ kun tu ’chan Geheimname des Pad-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	71	152	3	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	ཀུན་ཏུ་འཆང་ཆེན་ kun tu ’chan chen ein Buddha;
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	532	205	3	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chan ba Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	698	204	1	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	འཆང་སྤང་ ’chan span Behalten von Gegen-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	699	1	1	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	འཆང་མོ། chan mo འཆད་ Pchad འཆད་ཉན་ ’chad 722 འཆམ་དཔོན་ ’cham dpon
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	699	3	1	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	འཆང་ཆམོ། 'chan mo (zw) Halbedelstein; für selbst getötet werden!“ (gZi 4: 491,5). འཆད་ཉན་ #¿¢ 774: Lehre und Studium, MEAN 'chab sems Wesentliches ver-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	699	13	1	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	འཆང་བྱ་བངས་ 'chan bzuns Tchan bzun.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	940	14	3	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	ཉོ་བ་འཆང་ Ito ba ’chan ༈//0 ’phyan 3.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1038	71	2	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	ཐོད་འཆང་ thod ’chan Beiname Mahesvaras
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_35_51	878	77	5	འཆང	chah	chaṅ	positional	dominant_internal_consensus	none	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chah"
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_8_b	104	76	3	འཆང	chan	chaṅ	positional	dominant_internal_consensus	none	བེ་ཅོན་འཆང་ be con 'chan.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1072	75	4	འཐུང	thun	thuṅ	echo	explicit_same_lemma_repetition	none	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	157	127	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	རྐང་འཐུང་དབང་པོ་ rkaṅ ’thun dbaṅ po auch rkan
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	292	129	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཁྲག་འཐུང་སྲིན་བུ་ khrag ’thun srin bu Blutegel.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	401	56	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	གློག་འཐུང་ glog ’thun Bez. für Schildkröte.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	463	187	3	འཐུང	thuh	thuṅ	positional	dominant_internal_consensus	none	རྒྱ་མཆོ་འཐུང་ rgya mtsho 'thuh Bez. für das
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	646	154	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཆུ་འཐུང་ཕོད་པ་ chu 'thun phod pa Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	646	158	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཆུ་འཐུང་དབང་པོ་ chu ’thun dbaṅ po Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	646	161	2	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	ཆུ་འཐུང་ཞོད་ chn ’thun ’od Bez. für Sonnen-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1072	1	1	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	འཐུང་གཅོད་ thun gcod
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1072	75	1	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1072	89	1	འཐུང	thun	thuṅ	positional	dominant_internal_consensus	none	འཐུང་ བྱེད་ 'thun byed.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	958	51	7	འབྲིང	brin	briṅ	echo	explicit_same_lemma_repetition	none	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	408	68	2	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	དགུན་འབྲིང་ dgun ’brin auch dgun zla 7777 po
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	408	103	3	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	དྭགན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	408	115	3	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	དགུན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po 779//77 rin.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	957	141	2	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	སྟོན་འབྲིང་ ston ’brin 1$70/7 zla '/7777 po.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	958	51	3	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1025	124	2	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	བྲེག་འབྲིང་སྐྱེས་བུ་ theg ’brin skyes bu Bez. für
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	1202	1	4	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	དེ་ཉིད་རྟོགས་འབྲིང་ de ñid rtogs ’brin
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_8_b	498	1	1	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	"འབྲིང་ངེ་བ་ ""'brin ne ba"
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_8_b	499	1	1	འབྲིང	brin	briṅ	positional	dominant_internal_consensus	none	"འབྲིང་ཚོ་ ""brin tsho"
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	78	4	རྒྱང	rgyan	rgyaṅ	echo	explicit_same_lemma_repetition	none	རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod beisei-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	85	4	རྒྱང	rgyan	rgyaṅ	echo	explicit_same_lemma_repetition	none	རྒྱང་ཕན་ rgyah phan auch rgyan pan, reyan
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	124	1	3	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyan grags
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	13	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་བསྐྱར་ rgyan bskyur hinausschieben.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	37	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་གྲགས་ཐོས་ rgyan grags thos Bez. für Gans.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	66	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་ངེ་བ་ rgyan ne ba weitläufig.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	78	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod beisei-
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	85	1	རྒྱང	rgyah	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་ཕན་ rgyah phan auch rgyan pan, reyan
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	104	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་མིག་ rgyan mig
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	110	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་མིག་ rgyan mig ein Auge, das in der Ferne
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	117	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་ཚེར་མ་ rgyan tsher ma ein Dornenstrauch.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	129	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་ཤེལ་ rgyan śel Fernglas, Fernrohr.
+82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	wts_1_34	466	138	1	རྒྱང	rgyan	rgyaṅ	positional	dominant_internal_consensus	none	རྒྱང་སོ་ rgyan so Spionage; ¬~ ’dzugs ausspionie-

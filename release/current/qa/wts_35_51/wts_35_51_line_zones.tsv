@@ -71918,7 +71918,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 884	16	4583	german_prose			none	0	1	0	0	1. Ipan.
 884	17	4583	german_prose			none	0	1	0	0	2. Seite.
 884	18	4583	german_prose			none	0	2	0	0	Lex. nos (Dagy).
-884	19	4584	headword_line	ཕང་ཕུང་	phani phuh	high	3	2	0	0	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
+884	19	4584	headword_line	ཕང་ཕུང་	phani phuh	high	3	2	0	0	ཕང་ཕུང་ phani phuṅ Haufen; ~ byed aufhäufen.
 884	20	4584	german_prose_with_translit			none	4	1	0	0	Lex. geig tn phun por gyur pa'i dbyibs kyi
 884	21	4584	german_prose_with_translit			none	2	1	0	0	"khyad par ""etwas Zusammengehäuftes, eine"
 884	22	4584	german_prose_with_translit			none	2	2	0	0	"Lorm"" (Dagy); — byas & spuns pa'ani phun"
@@ -74111,7 +74111,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 910	28	4727	german_prose_with_translit			none	1	4	0	0	rgod zwei, [u.a.] führten eine Armee von
 910	29	4727	german_prose			none	0	3	0	0	"3000 [Mann] an"" (Sumpa 14645)."
 910	30	4727	tibetan_only			none	0	0	0	0	_ ༤ རླ , ..
-910	31	4728	headword_line	ཕུང་འདྲེ་	phuṅ	high	2	3	0	0	ཕུང་འདྲེ་ phuṅ 'dre auch 'phun 'dre ein Dämon.
+910	31	4728	headword_line	ཕུང་འདྲེ་	phuṅ	high	2	3	0	0	ཕུང་འདྲེ་ phuṅ 'dre auch 'phuṅ 'dre ein Dämon.
 910	32	4728	german_prose_with_translit			none	6	1	0	0	$77//) du Zugs pa' sinyon pa de / van la
 910	33	4728	german_prose_with_translit			none	3	2	0	0	"gan gnod pa' spyod pa byed pa ""ein Ver-"
 910	34	4728	german_prose_with_translit			none	1	5	0	0	rückter, in dessen Herz der phun 'dre ein-
@@ -74363,7 +74363,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 913	24	4746	german_prose_with_translit			none	1	2	0	0	"rul po ""herzlose Menschen, die sich selbst"
 913	25	4746	german_prose_with_translit			none	1	3	0	0	"in ernsthaftes Verderbnis bringen"" (KTh 1:"
 913	26	4746	other			none	0	0	0	0	508,2).
-913	27	4747	headword_line	ཕུང་གཞི་	phuh gźi	high	3	3	0	0	ཕུང་གཞི་ 'phuh gźi Grundlage fūr das Verder-
+913	27	4747	headword_line	ཕུང་གཞི་	phuh gźi	high	3	3	0	0	ཕུང་གཞི་ 'phuṅ gźi Grundlage fūr das Verder-
 913	28	4747	other			none	0	0	0	0	ben,
 913	29	4747	latin_other			none	1	0	0	0	"—"" bu mo na mi 'dod (metr.) ""ich will keine"
 913	30	4747	german_prose			none	0	6	0	0	Tochter, [sie ist die] Grundlage für [künfti-
@@ -74404,7 +74404,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 913	65	4753	headword_line	ཕུང་སྲི་ལྟས་ངན་ཟློག་	phwi	high	2	1	0	0	ཕུང་སྲི་ལྟས་ངན་ཟློག་ phwi sri ltas ñaṅ zlog ein
 913	66	4753	german_prose			none	0	2	0	0	Ritual zur Schadensabwehr,
 913	67	4753	german_prose_with_translit			none	1	5	0	0	gehört zu den räksa mdos beu (Neb 391).
-913	68	4754	headword_line	ཕུང་གསུམ་པ་	phuṅ	high	4	1	0	0	ཕུང་གསུམ་པ་ phuṅ gsum pa auch phun sum pa
+913	68	4754	headword_line	ཕུང་གསུམ་པ་	phuṅ	high	4	1	0	0	ཕུང་གསུམ་པ་ phuṅ gsum pa auch phuṅ sum pa
 913	69	4754	german_prose			none	0	1	0	0	neutrale, dritte Person.
 913	70	4754	german_prose_with_translit			none	6	2	0	0	"Lex. phun sum pa, ~ = ñis su ma bsdus pa ""mit"
 913	71	4754	latin_other			none	2	0	0	0	"beidem nicht verbunden"" (brDa); phun sum"
