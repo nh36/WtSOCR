@@ -41055,7 +41055,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 497	79	2682	german_prose			none	0	2	0	0	"Pflanzen]"" (K841 (2) 20537); ran bZin rnam"
 497	80	2682	german_prose_with_translit			none	3	1	0	0	gsum ste / chun — chen po so sor blta (metr.)
 497	81	2682	german_prose_with_translit			none	1	4	0	0	"""die Konstitution ist dreifach, die geringe,"
-498	1	2683	headword_line	འབྲིང་ངེ་བ་	ba	medium	1	0	0	0	"འབྲིང་ངེ་བ་ ""'brin ne ba"
+498	1	2683	headword_line	འབྲིང་ངེ་བ་	ba	medium	1	0	0	0	འབྲིང་ངེ་བ་ "'briṅ ne ba
 498	2	2683	german_prose			none	0	2	0	0	mittlere und große soll man einzeln betrach-
 498	3	2683	german_prose_with_translit			none	2	1	0	0	"ten"" (Ahs 1.1.10); tsha dus su / stobs ch"
 498	4	2683	german_prose_with_translit			none	3	3	0	0	"lhag ma dag la — (metr.) ""die Kraft ist klein"
@@ -41142,7 +41142,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 498	85	2685	german_prose_with_translit			none	2	2	0	0	"gyi ""Dzans-pa; diese [Klöster] wurden als"
 498	86	2685	german_prose			none	0	4	0	0	"'Brih[-Gemeinden] berühmt"" (Nel 22b2)."
 498	87	2685	other			none	0	0	0	0	488
-499	1	2686	headword_line	འབྲིང་ཚོ་	tsho	high	1	0	0	0	"འབྲིང་ཚོ་ ""brin tsho"
+499	1	2686	headword_line	འབྲིང་ཚོ་	tsho	high	1	0	0	0	འབྲིང་ཚོ་ "briṅ tsho
 499	2	2687	headword_line	འབྲིང་ཚོ་	briṅ tsbo	high	3	2	0	0	"འབྲིང་ཚོ་ 'briṅ tsbo auch 'bri tsho ""Gemeinden"
 499	3	2687	german_prose			none	0	6	0	0	"des 'Brin [-ston]"", Bez. für eine Rei-"
 499	4	2687	german_prose			none	0	7	0	0	he von Klöstern, die von den Schülern des

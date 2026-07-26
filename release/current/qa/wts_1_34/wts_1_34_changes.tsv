@@ -28335,3 +28335,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1072	75	11843	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
 1072	75	11843	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
 1072	89	11844	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཐུང་ བྱེད་ 'thun byed.
+408	68	5371	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དགུན་འབྲིང་ dgun ’brin auch dgun zla 7777 po
+408	103	5374	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྭགན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po
+408	115	5375	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དགུན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po 779//77 rin.
+957	141	10458	tibetan_latin_mixed	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོན་འབྲིང་ ston ’brin 1$70/7 zla '/7777 po.
+958	51	10465	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
+958	51	10465	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
+1025	124	11266	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྲེག་འབྲིང་སྐྱེས་བུ་ theg ’brin skyes bu Bez. für
+1202	1	12515	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ཉིད་རྟོགས་འབྲིང་ de ñid rtogs ’brin

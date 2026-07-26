@@ -57872,7 +57872,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 408	62	5369	german_prose			none	0	1	0	0	Monat.
 408	64	5369	german_prose_with_translit			none	2	2	0	0	Lex. hor zla beu 977/$ pa (brDa, Dagy).
 408	66	5370	headword_line	དགན་དང་	dgun	medium	2	0	0	0	དགན་དང་ dgun dun \dgon dun.
-408	68	5371	headword_line	དགུན་འབྲིང་	dgun	medium	3	1	0	0	དགུན་འབྲིང་ dgun ’brin auch dgun zla 7777 po
+408	68	5371	headword_line	དགུན་འབྲིང་	dgun	medium	3	1	0	0	དགུན་འབྲིང་ dgun ’briṅ auch dgun zla 7777 po
 408	70	5371	german_prose			none	0	4	0	0	Bez. für den mittleren Wintermo-
 408	71	5371	german_prose			none	0	2	0	0	nat, den 11. Hor-Monat.
 408	73	5371	latin_other			none	5	0	0	0	pho bran lhan kar nas / 'brugi lo ’i dgun sla
@@ -57898,14 +57898,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 408	98	5373	german_prose			none	0	1	0	0	Mägha.
 408	100	5373	example_tibetan_latin			none	6	1	0	0	de las ༨ sogs / gsum ni byan du ’gro Zes bya
 408	101	5373	german_prose			none	0	1	0	0	(metr.) „diese drei [Jahreszeiten] begin-
-408	103	5374	headword_line	དྭགན་ཟླ་འབྲིང་པོ་	dgun	medium	2	0	0	0	དྭགན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po
+408	103	5374	headword_line	དྭགན་ཟླ་འབྲིང་པོ་	dgun	medium	2	0	0	0	དྭགན་ཟླ་འབྲིང་པོ་ dgun zla ’briṅ po
 408	105	5374	tibetan_latin_mixed			none	2	0	0	0	2 དགེ་རྒྱས་ dge rgyas
 408	107	5374	example_tibetan_latin			none	2	5	0	0	nend mit dem Monat Mägha werden die དགེ་ dge !dgye.
 408	109	5374	german_prose			none	0	5	0	0	nördliche Bahn der Sonne genannt“ (Ahs
 408	110	5374	other			none	0	0	0	0	1.3.2).
 408	112	5374	german_prose_with_translit			none	2	1	0	0	Lex. ~ (v. 1. chuns) mchu (+. ]. om. mchu) =
 408	113	5374	german_prose			none	0	2	0	0	mäghah (Mvy 8272).
-408	115	5375	headword_line	དགུན་ཟླ་འབྲིང་པོ་	dgun	medium	3	0	0	0	དགུན་ཟླ་འབྲིང་པོ་ dgun zla ’brin po 779//77 rin.
+408	115	5375	headword_line	དགུན་ཟླ་འབྲིང་པོ་	dgun	medium	3	0	0	0	དགུན་ཟླ་འབྲིང་པོ་ dgun zla ’briṅ po 779//77 rin.
 408	117	5376	headword_line	དགན་ཟླ་ར་བ་	dgun	medium	5	1	0	0	དགན་ཟླ་ར་བ་ dgun zla ra ba auch dgun rwa ba
 408	118	5376	german_prose			none	0	2	0	0	der 10. Hor-Monat.
 408	120	5376	latin_other			none	2	0	0	0	= sogs gAis 977/5 / rim bZin dus ni drug tu
@@ -139324,7 +139324,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 957	137	10458	german_prose			none	0	6	0	0	Ernteerträgen ist die Finanzmasse für die
 957	138	10458	german_prose			none	0	5	0	0	Opfer an [die Gottheit] mGon-po-gur zu
 957	139	10458	german_prose			none	0	1	0	0	überreichen“ (MTH3/5/30 a46).
-957	141	10458	tibetan_latin_mixed	སྟོན་འབྲིང་		none	1	0	0	0	སྟོན་འབྲིང་ ston ’brin 1$70/7 zla '/7777 po.
+957	141	10458	tibetan_latin_mixed	སྟོན་འབྲིང་		none	1	0	0	0	སྟོན་འབྲིང་ ston ’briṅ 1$70/7 zla '/7777 po.
 957	143	10458	tibetan_only	༤༧༩༡ ༠༽		none	0	0	0	0	༤༧༩༡ ༠༽
 957	145	10458	tibetan_only	ཏྟན་མན་		none	0	4	0	0	ཏྟན་མན་ ston min Bez. der Schule des chi-
 957	146	10458	german_prose			none	0	5	0	0	nesischen Mönchs Hwa-san, der die
@@ -139424,7 +139424,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 958	46	10464	german_prose_with_translit			none	1	2	0	0	wahre“ (Mvy 8412, Abt. span ba’i ltun byed
 958	48	10464	other			none	0	0	0	0	sum chi min).
 958	50	10464	other			none	0	0	0	0	6 ., .,
-958	51	10465	headword_line	སྟོན་ཟླ་འབྲིང་པོ་	po	medium	1	1	0	0	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
+958	51	10465	headword_line	སྟོན་ཟླ་འབྲིང་པོ་	po	medium	1	1	0	0	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’briṅ po auch ston 'briṅ,
 958	52	10465	german_prose_with_translit			none	1	2	0	0	alttib. auch ston sla ’brin po der
 958	54	10465	german_prose			none	0	3	0	0	mittlere Herbstmonat; vgl. auch SCHUH
 958	55	10465	other			none	0	0	0	0	2012: 1399,
@@ -149903,7 +149903,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1025	120	11265	german_prose			none	0	1	0	0	Maultier.
 1025	121	11265	german_prose_with_translit			none	4	1	0	0	Lex. dre’u la’an (brDa); drel gi min
 1025	122	11265	german_prose			none	0	1	0	0	(Dagy).
-1025	124	11266	headword_line	བྲེག་འབྲིང་སྐྱེས་བུ་	theg	high	2	2	0	0	བྲེག་འབྲིང་སྐྱེས་བུ་ theg ’brin skyes bu Bez. für
+1025	124	11266	headword_line	བྲེག་འབྲིང་སྐྱེས་བུ་	theg	high	2	2	0	0	བྲེག་འབྲིང་སྐྱེས་བུ་ theg ’briṅ skyes bu Bez. für
 1025	125	11266	latin_other			none	1	0	0	0	Pratyekabuddha.
 1025	127	11266	german_prose_with_translit			none	3	2	0	0	Lex. ran rgyal rtogs ’brinn ba „Pratyekabud-
 1025	129	11266	german_prose_with_translit			none	1	3	0	0	dhas von mittlerer Erkenntnis[fähigkeit]“
@@ -167216,7 +167216,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1201	96	12514	latin_other			none	5	0	0	0	12); thams cad mkhyen pa rje btsun blo bzan
 1201	97	12514	latin_other			none	6	0	0	0	bskal bzaṅ rgya mtsho — nas ... bka’ 409
 1201	99	12514	german_prose_with_translit			none	1	3	0	0	phebs par „von dem allwissenden ehrwürdi-
-1202	1	12515	headword_line	དེ་ཉིད་རྟོགས་འབྲིང་	de ñid rtogs	high	3	0	0	0	དེ་ཉིད་རྟོགས་འབྲིང་ de ñid rtogs ’brin
+1202	1	12515	headword_line	དེ་ཉིད་རྟོགས་འབྲིང་	de ñid rtogs	high	3	0	0	0	དེ་ཉིད་རྟོགས་འབྲིང་ de ñid rtogs ’briṅ
 1202	3	12515	german_prose			none	0	5	0	0	gen Herrn, dem [7. Dalai Lama] Blo-bzan
 1202	4	12515	german_prose_with_translit			none	3	2	0	0	bskal-bzaṅ rgya mtsho, kam das Befehls-
 1202	5	12515	german_prose_with_translit			none	2	1	0	0	schreiben“ (MTH3/5/24 12); rtul Sugs mkhar

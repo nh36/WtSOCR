@@ -2864,6 +2864,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཐུན་ thun synthetic", corrected)
         self.assertEqual(sum(row["to_token"] == "thuṅ" for row in changes), 2)
 
+    def test_reviewed_abring_echo_is_exactly_gated(self) -> None:
+        lines = {
+            (958, 51): "སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin",
+            (959, 1): "unrelated brin prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ston zla ’briṅ po auch ston 'briṅ", corrected)
+        self.assertIn("unrelated brin prose control", corrected)
+        self.assertEqual(sum(row["to_token"] == "briṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
