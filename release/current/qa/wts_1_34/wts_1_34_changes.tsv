@@ -28200,3 +28200,22 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 945	72	10353	tibetan_only	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟབ་སེང་ stab sen \stabs sen.
 1136	69	12180	tibetan_only	seh	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་སེང་ dar seh eine feine, dünne Seide.
 1300	56	12923	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲང་སེང་ངེ་བ་ dran sen ne ba geradlinig.
+165	180	2131	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱེན་ཁར་སོང་ rkyen khar son pf. sich mitreißen
+197	103	2519	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱབས་སུ་སོང་ skyabs su son
+197	105	2520	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱབས་སུ་སོང་ skyabs su son pf. zu Tskyabs su ’gro
+263	53	3464	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁར་སོང་ khar son
+263	105	3470	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁར་སོང་ khar son neulich.
+374	39	4987	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ལྷང་ངེར་སོང་ gran lhan ner son \gren lhan
+454	15	5858	tibetan_only	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འགྲོ་སོང་ ’gro son Ausgaben.
+529	3	6754	tibetan_only	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ངན་སོང་ nan son
+529	5	6754	example_tibetan_latin	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan son schlechter Daseins-, Wieder-
+571	122	7181	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྔོན་ད་སོང་ shon du son
+571	124	7182	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྔོན་ད་སོང་ shon du son pf. zuvorkommen.
+749	87	8902	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་ས་སོང་ res su son pf. zu Irjes s# ’gro
+789	137	9289	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཉེ་བར་སོང་ fie bar son auch ñer son, pf. zu Te
+789	137	9289	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བར་སོང་ fie bar son auch ñer son, pf. zu Te
+792	86	9320	tibetan_only	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེར་སོང་ ner son tie bar son.
+1021	1	11198	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son
+1021	3	11199	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son untrennbar
+1024	83	11245	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐྲེག་གེ་སོང་ theg ge son fortgehen; vgl. Ithegs.
+1161	62	12293	headword_line	son	soṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུད་མུར་བྱོལ་སོང་ dud mur byol son Tier.

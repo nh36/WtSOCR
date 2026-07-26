@@ -5379,3 +5379,22 @@ wts_1_34	1136	69	2	seh	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_s
 wts_1_34	1300	56	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
 wts_1_34	195	116	8	sen	seṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_seng_same_entry_echo_batch_20260726	The alternate expression independently repeats the first སེང element.
 wts_1_34	195	116	9	sen	seṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_seng_same_entry_echo_batch_20260726	The alternate expression independently repeats the second སེང element.
+wts_1_34	165	180	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	197	103	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	197	105	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	263	53	2	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	263	105	2	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	374	39	4	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	454	15	2	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	529	3	2	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	529	5	7	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	571	122	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	571	124	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	749	87	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	789	137	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	792	86	2	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	1021	1	4	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	1021	3	4	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	1024	83	3	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	1161	62	4	son	soṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	Frozen exact Tibetan སོང alignment at 0848355; genuine སོན is excluded.
+wts_1_34	789	137	6	son	soṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_song_same_entry_echo_batch_20260726	The alternate ñer soṅ independently repeats the same སོང element.

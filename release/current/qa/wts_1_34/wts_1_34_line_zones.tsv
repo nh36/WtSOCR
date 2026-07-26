@@ -22542,7 +22542,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 165	174	2130	german_prose			none	0	2	0	0	andere Nomina erzeugen“ (Bu 667,4).
 165	176	2130	german_prose			none	0	2	0	0	7. Ruhm, Ehre.
 165	178	2130	german_prose			none	0	1	0	0	Lex. min grags sam / skad grags (TTC).
-165	180	2131	headword_line	རྐྱེན་ཁར་སོང་	rkyen khar	high	2	1	0	0	རྐྱེན་ཁར་སོང་ rkyen khar son pf. sich mitreißen
+165	180	2131	headword_line	རྐྱེན་ཁར་སོང་	rkyen khar	high	2	1	0	0	རྐྱེན་ཁར་སོང་ rkyen khar soṅ pf. sich mitreißen
 165	182	2131	german_prose_with_translit			none	1	1	0	0	lassen, empfänglich sein für.
 165	184	2131	latin_other			none	7	0	0	0	le lo dan g.yen skyon gi rkyen khar ma son ba
 165	185	2131	german_prose_with_translit			none	2	3	0	0	„man soll nicht für Trägheit und Zerstreuung empfänglich sein“ (971 3: 704,6).
@@ -27285,8 +27285,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 197	98	2518	german_prose			none	0	4	0	0	die anderen Lehrer verlassen und bei dir,
 197	99	2518	german_prose			none	0	3	0	0	Erhabener, Zuflucht genommen“ (Vis 1b).
 197	101	2518	other			none	0	0	0	0	306
-197	103	2519	headword_line	སྐྱབས་སུ་སོང་	skyabs su	medium	2	0	0	0	སྐྱབས་སུ་སོང་ skyabs su son
-197	105	2520	headword_line	སྐྱབས་སུ་སོང་	skyabs su	medium	4	1	0	0	སྐྱབས་སུ་སོང་ skyabs su son pf. zu Tskyabs su ’gro
+197	103	2519	headword_line	སྐྱབས་སུ་སོང་	skyabs su	medium	2	0	0	0	སྐྱབས་སུ་སོང་ skyabs su soṅ
+197	105	2520	headword_line	སྐྱབས་སུ་སོང་	skyabs su	medium	4	1	0	0	སྐྱབས་སུ་སོང་ skyabs su soṅ pf. zu Tskyabs su ’gro
 197	106	2520	german_prose			none	0	3	0	0	Schutz suchen, Zuflucht nehmen.
 197	108	2520	german_prose_with_translit			none	6	2	0	0	tshans pa la sogs pa gZan dag la — ba „sie haben [361 anderen, Brahman usw. Zuflucht
 197	110	2520	latin_other			none	3	0	0	0	genommen“ (ViśT 84,8);sbrum ma’i ri dags
@@ -36952,7 +36952,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 263	48	3462	german_prose			none	0	2	0	0	Lex. samya (Mvy 5018).
 263	50	3463	headword_line	ཁར་གོ་སོལ་	khar	high	1	3	0	0	ཁར་གོ་སོལ་ khar go sol eine Gazelle, ein
 263	51	3463	german_prose			none	0	4	0	0	Hirsch oder Wildesel, vgl.
-263	53	3464	headword_line	ཁར་སོང་	khar	high	1	0	0	0	ཁར་སོང་ khar son
+263	53	3464	headword_line	ཁར་སོང་	khar	high	1	0	0	0	ཁར་སོང་ khar soṅ
 263	55	3464	other			none	0	0	0	0	EMMERICK 1983: 61-65.
 263	57	3464	german_prose_with_translit			none	3	2	0	0	~ gyi Sa ni... nad gZi gsum sel Zin „das
 263	58	3464	german_prose_with_translit			none	1	3	0	0	Fleisch des khar go sol beseitigt die drei
@@ -36987,7 +36987,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 263	101	3469	german_prose_with_translit			none	1	5	0	0	[in skt. khasarpana] ist ein Äquivalent für
 263	102	3469	german_prose			none	0	4	0	0	‚Preis der Speise‘“ (Tär 112,5).
 263	104	3469	latin_other			none	1	0	0	0	FINE khar sari [94 sari.
-263	105	3470	headword_line	ཁར་སོང་	khar	high	1	1	0	0	ཁར་སོང་ khar son neulich.
+263	105	3470	headword_line	ཁར་སོང་	khar	high	1	1	0	0	ཁར་སོང་ khar soṅ neulich.
 263	107	3470	latin_other			none	3	0	0	0	nos ... ~ zla $ tshes nan dpal spuns nas btegs
 263	109	3470	latin_other			none	1	0	0	0	rat khal
 263	111	3470	german_prose			none	0	6	0	0	te „ich bin neulich an einem Tag im fünften
@@ -52851,7 +52851,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 374	34	4986	german_prose_with_translit			none	3	3	0	0	Lex. na tsha Zig (brDa, Dagy).
 374	36	4986	tibetan_only	གྲང་སེལ་		none	0	4	0	0	གྲང་སེལ་ gran sel Bez. für Feuer, Feuergott.
 374	37	4986	german_prose_with_translit			none	3	2	0	0	Lex. me dan me lha (brDa, Dagy).
-374	39	4987	headword_line	གྲང་ལྷང་ངེར་སོང་	lhan	high	2	0	0	0	གྲང་ལྷང་ངེར་སོང་ gran lhan ner son \gren lhan
+374	39	4987	headword_line	གྲང་ལྷང་ངེར་སོང་	lhan	high	2	0	0	0	གྲང་ལྷང་ངེར་སོང་ gran lhan ner soṅ \gren lhan
 374	40	4987	other			none	0	0	0	0	ner son.
 374	42	4987	latin_other			none	2	0	0	0	sin gron (r. gran) lhan ner son yan ci byed
 374	44	4987	german_prose			none	0	1	0	0	med par bZugs „ihre Herzen erstarrten vor
@@ -64478,7 +64478,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 454	11	5858	german_prose			none	0	3	0	0	er ein wenig unterhalb der Erde, nachher
 454	12	5858	german_prose			none	0	5	0	0	war sein Verlauf oberhalb der Erde“ (Tär
 454	13	5858	other			none	0	0	0	0	110,13).
-454	15	5858	tibetan_only	འགྲོ་སོང་		none	0	1	0	0	འགྲོ་སོང་ ’gro son Ausgaben.
+454	15	5858	tibetan_only	འགྲོ་སོང་		none	0	1	0	0	འགྲོ་སོང་ ’gro soṅ Ausgaben.
 454	17	5858	german_prose_with_translit			none	3	3	0	0	Lex. za ’thun gi ~ lta bu „wie: Ausgaben für
 454	18	5858	german_prose_with_translit			none	2	3	0	0	Essen und Trinken“ (brDa); drul sogs kyi
 454	19	5858	german_prose			none	0	4	0	0	‘gro gron „Ausgabe von Geld usw.“ (Dagy).
@@ -75209,8 +75209,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 528	213	6754	german_prose_with_translit			none	1	3	0	0	in Nan-lam auf“ (Nel 2232); blon po han
 528	214	6754	german_prose_with_translit			none	2	2	0	0	lam rta ra klu gon (metr.) „der Minister
 529	1	6754	latin_other			none	2	0	0	0	KANN zan las rgyal
-529	3	6754	tibetan_only	ངན་སོང་		none	0	0	0	0	ངན་སོང་ nan son
-529	5	6754	example_tibetan_latin			none	1	4	0	0	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan son schlechter Daseins-, Wieder-
+529	3	6754	tibetan_only	ངན་སོང་		none	0	0	0	0	ངན་སོང་ nan soṅ
+529	5	6754	example_tibetan_latin			none	1	4	0	0	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan soṅ schlechter Daseins-, Wieder-
 529	7	6754	other			none	0	0	0	0	610,4).
 529	9	6755	headword_line	ངན་ལས་རྒྱལ་ ༡༩༩	las rgyal	high	2	3	0	0	ངན་ལས་རྒྱལ་ ༡༩༩ las rgyal Bez. für Venus
 529	11	6755	german_prose			none	0	1	0	0	bzw. Freitag.
@@ -81933,8 +81933,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 571	116	7180	german_prose			none	0	1	0	0	Brahman.
 571	118	7180	german_prose_with_translit			none	4	2	0	0	Lex. tshans pa la’an (brDa, Dagy).
 571	120	7180	other			none	0	0	0	0	SV
-571	122	7181	headword_line	སྔོན་ད་སོང་	shon du	medium	2	0	0	0	སྔོན་ད་སོང་ shon du son
-571	124	7182	headword_line	སྔོན་ད་སོང་	shon du	medium	2	0	0	0	སྔོན་ད་སོང་ shon du son pf. zuvorkommen.
+571	122	7181	headword_line	སྔོན་ད་སོང་	shon du	medium	2	0	0	0	སྔོན་ད་སོང་ shon du soṅ
+571	124	7182	headword_line	སྔོན་ད་སོང་	shon du	medium	2	0	0	0	སྔོན་ད་སོང་ shon du soṅ pf. zuvorkommen.
 571	126	7182	german_prose_with_translit			none	1	1	0	0	zla grags kyi ~ bas „weil er Candrakirti
 571	127	7182	german_prose			none	0	1	0	0	zuvorkam“ (Tär 118,20).
 571	129	7182	german_prose			none	0	1	0	0	"x "" NEN"" ""snon gnas rjes dran über-"
@@ -109136,7 +109136,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 749	83	8901	german_prose_with_translit			none	1	2	0	0	yab ni ... yum kyan - (metr.) „auch die
 749	84	8901	german_prose			none	0	5	0	0	Mutter ist dem Vater nachgefolgt“ (Lokn
 749	85	8901	other			none	0	0	0	0	150,19).
-749	87	8902	headword_line	རྗེས་ས་སོང་	su	medium	1	2	0	0	རྗེས་ས་སོང་ res su son pf. zu Irjes s# ’gro
+749	87	8902	headword_line	རྗེས་ས་སོང་	su	medium	1	2	0	0	རྗེས་ས་སོང་ res su soṅ pf. zu Irjes s# ’gro
 749	88	8902	tibetan_only	༽༅		none	0	0	0	0	༽༅
 749	90	8902	other			none	0	0	0	0	folgen.
 749	91	8902	latin_other			none	7	0	0	0	de ... chu’i rgyun de ñid kyi - ste „er folgte
@@ -115271,7 +115271,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 789	133	9288	german_prose			none	0	1	0	0	freudig [meinen] Körper wie es dir be-
 789	134	9288	german_prose			none	0	1	0	0	liebt!“ (Lokn 138,8).
 789	136	9288	tibetan_only	༥༥		none	0	0	0	0	༥༥ ~ ; - ` m
-789	137	9289	headword_line	ཉེ་བར་སོང་	ñer	high	1	3	0	0	ཉེ་བར་སོང་ fie bar son auch ñer son, pf. zu Te
+789	137	9289	headword_line	ཉེ་བར་སོང་	ñer	high	1	3	0	0	ཉེ་བར་སོང་ fie bar soṅ auch ñer soṅ, pf. zu Te
 789	139	9289	latin_other			none	1	0	0	0	bar ’gro kommen, hingehen, sich
 789	140	9289	german_prose_with_translit			none	1	3	0	0	nähern; skyabs su - Schutz suchen,
 789	141	9289	german_prose			none	0	1	0	0	Zuflucht nehmen.
@@ -115720,7 +115720,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 792	81	9320	tibetan_only	ཉེར་ལེན་		none	0	1	0	0	ཉེར་ལེན་ ner len Trie bar len.
 792	83	9320	tibetan_latin_mixed	ཉེར་ལེན་ཕུང་པོ་		none	3	0	0	0	ཉེར་ལེན་ཕུང་པོ་ 7707 len phun po 1/7¢ bar len pa’i
 792	84	9320	latin_other			none	3	0	0	0	” phun po lṅa.
-792	86	9320	tibetan_only	ཉེར་སོང་		none	0	0	0	0	ཉེར་སོང་ ner son tie bar son.
+792	86	9320	tibetan_only	ཉེར་སོང་		none	0	0	0	0	ཉེར་སོང་ ner soṅ tie bar son.
 792	87	9320	tibetan_latin_mixed	ཉེར་བསགས་		none	2	0	0	0	ཉེར་བསགས་ /707 bsags [776 bar bsags.
 792	89	9320	tibetan_only	ཉེལ་		none	0	2	0	0	ཉེལ་ el müde, erschöpft sein.
 792	91	9320	german_prose_with_translit			none	4	3	0	0	Lex. - ba < nal ba’am müel ba Zes ’thad
@@ -149163,8 +149163,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1020	215	11197	german_prose_with_translit			none	5	1	0	0	phu chu = nas / mtshan chu in du draṅs
 1020	216	11197	german_prose_with_translit			none	1	5	0	0	„nachdem er das Wasser am Talschluß gestaut hatte, leitete er das nachts [gestaute]
 1020	218	11197	german_prose			none	0	4	0	0	Wasser am Tag ab“ (Nel 546).
-1021	1	11198	headword_line	ཐུམ་རིལ་གྱིས་སོང་	thum	high	2	0	0	0	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son
-1021	3	11199	headword_line	ཐུམ་རིལ་གྱིས་སོང་	thum	high	2	0	0	0	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son untrennbar
+1021	1	11198	headword_line	ཐུམ་རིལ་གྱིས་སོང་	thum	high	2	0	0	0	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis soṅ
+1021	3	11199	headword_line	ཐུམ་རིལ་གྱིས་སོང་	thum	high	2	0	0	0	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis soṅ untrennbar
 1021	5	11199	other			none	0	0	0	0	vermischt.
 1021	7	11199	german_prose_with_translit			none	3	1	0	0	Lex. dbyer med du ’dres pa (TTC).
 1021	9	11200	headword_line	ཐུམ་གསུམ་པ་	thum	high	2	2	0	0	ཐུམ་གསུམ་པ་ thum gsum pa eine Heilpflanze,
@@ -149700,7 +149700,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1024	77	11243	german_prose_with_translit			none	2	1	0	0	"Ray ""theg \’thegs."
 1024	79	11244	headword_line	ཐེག་སྐྱེས་	theg skyes	high	2	1	0	0	ཐེག་སྐྱེས་ theg skyes Geschenk.
 1024	81	11244	german_prose_with_translit			none	3	1	0	0	Lex. lag btags lta bu (brDa).
-1024	83	11245	headword_line	ཐྲེག་གེ་སོང་	theg	high	1	2	0	0	ཐྲེག་གེ་སོང་ theg ge son fortgehen; vgl. Ithegs.
+1024	83	11245	headword_line	ཐྲེག་གེ་སོང་	theg	high	1	2	0	0	ཐྲེག་གེ་སོང་ theg ge soṅ fortgehen; vgl. Ithegs.
 1024	85	11245	tibetan_latin_mixed			none	1	0	0	0	biad gad ༨ bas „lachend gingen sie fort“
 1024	86	11245	german_prose			none	0	1	0	0	(Mil 128,14).
 1024	88	11246	headword_line	ཐེག་ཆུང་སྐྱེས་བུ་	theg chuṅ skyes	high	4	0	0	0	ཐེག་ཆུང་སྐྱེས་བུ་ theg chuṅ skyes bu Anhänger
@@ -164005,7 +164005,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1161	58	12292	german_prose_with_translit			none	2	4	0	0	zwei Haushalten ist es jetzt so, als ob ein ein-
 1161	59	12292	german_prose			none	0	6	0	0	zelner Mann mit [den Lasten] von elf Haus-
 1161	60	12292	german_prose			none	0	1	0	0	halten konfrontiert wäre“ (MTH3/5/26 31).
-1161	62	12293	headword_line	དུད་མུར་བྱོལ་སོང་	byol	medium	1	1	0	0	དུད་མུར་བྱོལ་སོང་ dud mur byol son Tier.
+1161	62	12293	headword_line	དུད་མུར་བྱོལ་སོང་	byol	medium	1	1	0	0	དུད་མུར་བྱོལ་སོང་ dud mur byol soṅ Tier.
 1161	64	12293	german_prose_with_translit			none	2	4	0	0	— gi skad dan „die Sprache der Tiere“ (gZi 4:
 1161	65	12293	other			none	0	0	0	0	404,1).
 1161	67	12294	headword_line	དུད་ཚང་	tshan	high	2	1	0	0	དུད་ཚང་ dud tshan Familie, Haushalt.
