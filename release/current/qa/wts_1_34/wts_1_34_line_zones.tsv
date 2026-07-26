@@ -30914,7 +30914,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 222	5	2873	german_prose_with_translit			none	3	2	0	0	Lex. ma skyes dgra (brDa, Dagy).
 222	6	2873	german_prose			none	0	3	0	0	3. npr. ein Asura, skt. Kesin.
 222	7	2873	german_prose_with_translit			none	2	1	0	0	Lex. lha min zig (brDa).
-222	9	2874	headword_line	སྐྲ་ཅན་གྱི་སྲིང་མོ་	can gyi	medium	2	2	0	0	སྐྲ་ཅན་གྱི་སྲིང་མོ་ skra can gyi srin mo Beiname der
+222	9	2874	headword_line	སྐྲ་ཅན་གྱི་སྲིང་མོ་	can gyi	medium	2	2	0	0	སྐྲ་ཅན་གྱི་སྲིང་མོ་ skra can gyi sriṅ mo Beiname der
 222	10	2874	german_prose			none	0	2	0	0	Göttin Umä.
 222	11	2874	german_prose_with_translit			none	1	3	0	0	Lex. /ha mo u mäh (brDa, Dagy).
 222	13	2875	headword_line	སྐྲ་ཅན་མ་	can ma	medium	2	3	0	0	སྐྲ་ཅན་མ་ skra can ma Beiname der Göttin [ 1713.
@@ -88623,13 +88623,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 614	102	7534	german_prose			none	0	4	0	0	Schwester und Gattin“ (Dagy); srin a che
 614	103	7534	german_prose_with_translit			none	2	1	0	0	bud med dan lcam sku gZogs „Schwester,
 614	105	7534	other			none	0	0	0	0	176
-614	107	7535	headword_line	ལྕམ་སྲིང་	lcam	medium	1	0	0	0	ལྕམ་སྲིང་ lcam srin
+614	107	7535	headword_line	ལྕམ་སྲིང་	lcam	medium	1	0	0	0	ལྕམ་སྲིང་ lcam sriṅ
 614	109	7535	german_prose_with_translit			none	2	3	0	0	Gattin und Dame“ (brDa); lcam = sku drag
 614	110	7535	german_prose_with_translit			none	3	3	0	0	gi chun ma „Gattin eines Adligen“ (brDa);
 614	111	7535	german_prose_with_translit			none	4	2	0	0	lcam = chun ma’i Zes sa (Dagy); ~ ni sriṅ mo
 614	112	7535	german_prose_with_translit			none	2	2	0	0	(KlonD 728,6); - las skyes = bhratrja „der
 614	113	7535	german_prose			none	0	4	0	0	Sohn des Bruders“ (Ak 149.36).
-614	115	7536	headword_line	ལྕམ་སྲིང་	lcam	medium	1	0	0	0	ལྕམ་སྲིང་ lcam srin.
+614	115	7536	headword_line	ལྕམ་སྲིང་	lcam	medium	1	0	0	0	ལྕམ་སྲིང་ lcam sriṅ.
 614	116	7536	german_prose			none	0	2	0	0	1. Schwester, Geschwister.
 614	117	7536	german_prose_with_translit			none	3	4	0	0	Lex. sriṅ mo’i Ze sa „resp. für Schwester“
 614	118	7536	german_prose_with_translit			none	2	2	0	0	(Dagy); spun ~ la’an „Geschwister“ (brDa).
@@ -122027,7 +122027,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 832	155	9560	german_prose_with_translit			none	2	3	0	0	las ~ „er ist von Rähulaprabha zum Mönch
 832	156	9560	german_prose			none	0	2	0	0	geweiht worden“ (Tär 53,10); dran sron Ina
 832	157	9560	example_tibetan_latin			none	2	4	0	0	breyas ༡༨ par Zugs pa la „als 500 Rsis die
-832	159	9561	headword_line	བརྙེན་སྲིང་	bsñen	high	1	0	0	0	བརྙེན་སྲིང་ bsñen srin
+832	159	9561	headword_line	བརྙེན་སྲིང་	bsñen	high	1	0	0	0	བརྙེན་སྲིང་ bsñen sriṅ
 832	161	9561	german_prose			none	0	2	0	0	höheren Mönchsgelübde ablegen wollten“
 832	162	9561	german_prose_with_translit			none	3	2	0	0	(Tär 6,21ä); lṅa breya po rnams .. = nas
 832	163	9561	german_prose_with_translit			none	4	1	0	0	dgra bcom pa la bkod pas „500 wurden zu
@@ -140026,7 +140026,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 961	182	10512	headword_line	སྟེབས་ལྷ་	lha Tstobs kyi lha	high	4	0	0	0	སྟེབས་ལྷ་ stobs lha Tstobs kyi lha.
 961	184	10512	german_prose			none	0	1	0	0	Sr
 961	186	10512	other			none	0	0	0	0	173
-961	188	10513	headword_line	སྟོབས་ལྷའི་སྲིང་མོ་	lha’i	high	1	1	0	0	སྟོབས་ལྷའི་སྲིང་མོ་ stobs lha’i srin mo Beiname
+961	188	10513	headword_line	སྟོབས་ལྷའི་སྲིང་མོ་	lha’i	high	1	1	0	0	སྟོབས་ལྷའི་སྲིང་མོ་ stobs lha’i sriṅ mo Beiname
 961	190	10513	german_prose			none	0	3	0	0	der Göttin Umä.
 961	192	10513	german_prose_with_translit			none	1	1	0	0	Lex. !ha mo u mab (brDa).
 961	194	10513	tibetan_only	༠༤ སས		none	0	0	0	0	༠༤ སས .

@@ -28505,3 +28505,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 720	197	8640	headword_line	gsan	gsaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཇམ་དཔལ་གསང་གྒང་ Jam dpal gsan rgynd npr.
 784	143	9222	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བའི་དཔུང་པ་ fie ba’i dpun pa Ellbogen.
 1294	70	12891	tibetan_only	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་དཔུང་ drag dpun Armee.
+222	9	2874	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྲ་ཅན་གྱི་སྲིང་མོ་ skra can gyi srin mo Beiname der
+614	107	7535	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕམ་སྲིང་ lcam srin
+614	115	7536	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕམ་སྲིང་ lcam srin.
+832	159	9561	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྙེན་སྲིང་ bsñen srin
+961	188	10513	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོབས་ལྷའི་སྲིང་མོ་ stobs lha’i srin mo Beiname
