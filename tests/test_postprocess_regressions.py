@@ -3284,6 +3284,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed spoh spon control", corrected)
         self.assertEqual(sum(row["to_token"] == "spoṅ" for row in changes), 2)
 
+    def test_reviewed_chuh_is_separate_from_reviewed_chun(self) -> None:
+        lines = {
+            (191, 14): "འདོད་ཆུང་ \"dod chuh auch 'dod pa chuṅ ba",
+            (34, 42): "གདོང་ཆུང་ gdoṅ chun.",
+            (1, 1): "unreviewed chuh control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("\"dod chuṅ auch 'dod pa chuṅ ba", corrected)
+        self.assertIn("གདོང་ཆུང་ gdoṅ chuṅ.", corrected)
+        self.assertIn("unreviewed chuh control", corrected)
+        self.assertEqual(sum(row["to_token"] == "chuṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

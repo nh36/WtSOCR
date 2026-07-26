@@ -16131,7 +16131,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 191	11	1069	headword_line	འདོད་ཆགས་བྲལ་	ba	medium	1	1	0	0	འདོད་ཆགས་བྲལ་ 'dod chags bral auch ~ ba
 191	12	1069	german_prose_with_translit			none	3	1	0	0	N] t'dod chags daṅ bral ba.
 191	13	1069	tibetan_only	༨		none	0	1	0	0	༨ ; Pi .
-191	14	1070	headword_line	འདོད་ཆུང་	pa chuṅ ba	high	3	1	0	0	"འདོད་ཆུང་ ""dod chuh auch 'dod pa chuṅ ba ""klei-"
+191	14	1070	headword_line	འདོད་ཆུང་	pa chuṅ ba	high	3	1	0	0	འདོད་ཆུང་ "dod chuṅ auch 'dod pa chuṅ ba "klei-
 191	15	1070	german_prose			none	0	2	0	0	ne Wünsche habend*, genügsam, be-
 191	16	1070	german_prose			none	0	2	0	0	scheiden; Genügsamkeit, Bescheidenheit.
 191	17	1070	german_prose_with_translit			none	4	1	0	0	bcom ldan 'das kyis 'dod pa chun ba'i bsnags
@@ -60013,7 +60013,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 740	10	3741	german_prose			none	0	4	0	0	ärmellose Weste oder Bluse.
 740	11	3741	german_prose_with_translit			none	4	3	0	0	"Lex. dge slon ma'inu ma khebs ras ""ein Tuch,"
 740	12	3741	german_prose_with_translit			none	1	5	0	0	"das die Brüste der Nonne bedeckt"" (brDa)."
-740	13	3742	headword_line	དཔུང་ཆུང་	dpuṅ	high	2	1	0	0	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chuṅ.
+740	13	3742	headword_line	དཔུང་ཆུང་	dpuṅ	high	2	1	0	0	དཔུང་ཆུང་ dpuṅ chuṅ Idpun bu chuṅ.
 740	14	3743	headword_line	དཔུང་ཆེན་བཏེག་	dpuṅ	high	2	3	0	0	དཔུང་ཆེན་བཏེག་ dpuṅ chen bteg ein Heerla-
 740	15	3743	german_prose			none	0	2	0	0	ger aufschlagen, einen militäri-
 740	16	3743	german_prose			none	0	5	0	0	schen Stützpunkt einrichten; in den Krieg
