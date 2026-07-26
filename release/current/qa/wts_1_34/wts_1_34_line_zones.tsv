@@ -56798,7 +56798,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 401	72	5252	other			none	0	0	0	0	172,17).
 401	74	5252	german_prose_with_translit			none	1	3	0	0	Lex. rajatam (Mvy 9540, Abt. nad kyi min);
 401	75	5252	german_prose_with_translit			none	3	1	0	0	nad lhog pa (brDa, Dagy).
-401	77	5253	headword_line	གློག་སྤྱང་དམར་པོ་	spyan	medium	2	2	0	0	གློག་སྤྱང་དམར་པོ་ glog spyan dmar po ein Hund.
+401	77	5253	headword_line	གློག་སྤྱང་དམར་པོ་	spyan	medium	2	2	0	0	གློག་སྤྱང་དམར་པོ་ glog spyaṅ dmar po ein Hund.
 401	78	5253	german_prose_with_translit			none	2	3	0	0	Lex. khyi Zig (brDa, Dagy).
 401	80	5254	headword_line	གློག་ཕྲེང་ཅན་	phren can	high	2	3	0	0	གློག་ཕྲེང་ཅན་ glog phreṅ can (zw.) Bez. für den
 401	81	5254	german_prose			none	0	4	0	0	Rachen oder Vater Rähus.
@@ -84098,7 +84098,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 584	147	7292	german_prose_with_translit			none	2	2	0	0	cena, ~© = tshig phrad „Partikel“ (Dagy).
 584	149	7292	german_prose_with_translit			none	2	1	0	0	Z'SR' ce can Ice spyan.
 584	150	7292	tibetan_only	ཅེ་ན་		none	0	0	0	0	ཅེ་ན་ cena }’ce.
-584	152	7293	headword_line	ཅེ་སྤྱང་	spyan	medium	2	0	0	0	ཅེ་སྤྱང་ ce spyan \lce spyan.
+584	152	7293	headword_line	ཅེ་སྤྱང་	spyan	medium	2	0	0	0	ཅེ་སྤྱང་ ce spyaṅ \lce spyan.
 584	154	7293	tibetan_only	ཅེས་		none	0	0	0	0	ཅེས་ ces
 584	156	7293	tibetan_only	༢༨ ༨		none	0	0	0	0	༢༨ ༨
 584	157	7293	other			none	0	0	0	0	ST cere starrend.
@@ -88943,7 +88943,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 616	90	7552	german_prose			none	0	2	0	0	Lispler zahlreich“ (Vdk 2: 340,4).
 616	92	7552	german_prose_with_translit			none	3	2	0	0	Lex. skad dig dig lta bu (brDa); Ice ldib pa =
 616	93	7552	latin_other			none	2	0	0	0	skad ldab ldib pa (brDa).
-616	95	7553	headword_line	ལྩེ་སྤྱང་	spyah	medium	3	2	0	0	ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan, Ice
+616	95	7553	headword_line	ལྩེ་སྤྱང་	spyah	medium	3	2	0	0	ལྩེ་སྤྱང་ lce spyaṅ auch ce can, ce spyaṅ, Ice
 616	97	7553	german_prose			none	0	1	0	0	spyans Schakal.
 616	99	7553	latin_other			none	5	0	0	0	= srin po mkha’ ’gro ma / de rnams ... za ba
 616	100	7553	german_prose_with_translit			none	2	1	0	0	dan ni ’ihun bar byed (metr.) „Schakale,

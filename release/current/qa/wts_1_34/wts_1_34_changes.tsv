@@ -28528,3 +28528,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 970	150	10777	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr. ein Ort
 1275	43	13025	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་རྫོང་ dom rdzon npr. ein Ort.
 1282	30	13054	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཱ་རྫོང་ dwa rdzon npr. ein Dzong in lHo-brag.
+401	77	5341	headword_line	spyan	spyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློག་སྤྱང་དམར་པོ་ glog spyan dmar po ein Hund.
+584	152	7391	headword_line	spyan	spyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅེ་སྤྱང་ ce spyan \lce spyan.
+616	95	7656	headword_line	spyan	spyaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan, Ice
+616	95	7656	headword_line	spyah	spyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan, Ice
