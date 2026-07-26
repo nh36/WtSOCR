@@ -3003,3 +3003,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 263	45	1451	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྲང་བྲེང་ ""braṅ bren Tdran dreṅ."
 284	19	1516	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྲེང་ 'breṅ auch 'bren Brauch, Gepflogenheit,
 284	23	1516	tibetan_only	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྲེང་ ?bren npr. ein Ort.
+512	2	2735	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren pf. P'breris folgen; vgl. 1'bran."
+512	9	2736	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."
+512	13	2736	tibetan_only	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren \bren."
+512	33	2740	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.

@@ -5681,3 +5681,8 @@ wts_8_b	481	67	5	bran	braṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_a
 wts_8_b	263	45	2	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_breng_consensus_batch_20260726	Frozen exact Tibetan བྲེང alignment; exact-row only.
 wts_8_b	284	23	1	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_breng_consensus_batch_20260726	Frozen exact Tibetan བྲེང alignment; exact-row only.
 wts_8_b	284	19	3	bren	breṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_breng_same_entry_echo_batch_20260726	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	611	19	2	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_abreng_consensus_batch_20260726	Frozen exact Tibetan འབྲེང alignment; exact-row only.
+wts_8_b	512	2	1	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_abreng_consensus_batch_20260726	Frozen exact Tibetan འབྲེང alignment; exact-row only.
+wts_8_b	512	9	1	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_abreng_consensus_batch_20260726	Frozen exact Tibetan འབྲེང alignment; exact-row only.
+wts_8_b	512	13	1	bren	breṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_abreng_consensus_batch_20260726	Frozen exact Tibetan འབྲེང alignment; exact-row only.
+wts_8_b	512	33	4	bren	breṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_abreng_same_entry_echo_batch_20260726	Entry structure independently establishes the same Tibetan lemma.

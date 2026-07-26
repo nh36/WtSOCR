@@ -3092,6 +3092,19 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed bren control", corrected)
         self.assertEqual(sum(row["to_token"] == "breṅ" for row in changes), 1)
 
+    def test_reviewed_breng_and_abreng_share_no_broad_bren_rule(self) -> None:
+        lines = {
+            (512, 33): "འབྲེང་པ་ 'breṅ pa auch 'bren ba",
+            (284, 23): "བྲེང་ ?bren npr. ein Ort.",
+            (1400, 13): "unreviewed bren control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("'breṅ pa auch 'breṅ ba", corrected)
+        self.assertIn("བྲེང་ ?breṅ", corrected)
+        self.assertIn("unreviewed bren control", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

@@ -42214,18 +42214,18 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 511	71	2734	german_prose			none	0	1	0	0	(Dapy).
 511	72	2734	other			none	0	0	0	0	501
 512	1	2734	latin_other			none	1	0	0	0	ade Phren
-512	2	2735	headword_line	འབྲེང་	P'breris	high	1	1	0	0	"འབྲེང་ ""bren pf. P'breris folgen; vgl. 1'bran."
+512	2	2735	headword_line	འབྲེང་	P'breris	high	1	1	0	0	འབྲེང་ "breṅ pf. P'breris folgen; vgl. 1'bran.
 512	3	2735	latin_other			none	1	0	0	0	ri dags mo 2/9 rjes bin 1705 bZin du —
 512	4	2735	german_prose_with_translit			none	1	2	0	0	"ño ""ein Gazellenweibchen folgte ihm auf"
 512	5	2735	german_prose_with_translit			none	3	4	0	0	"Schritt und Tritt"" (Ki na 137a1); de'i rjes su"
 512	6	2735	latin_other			none	2	0	0	0	"drum sin beud 'thun gi mi rnams — no ""dann"
 512	7	2735	german_prose			none	0	7	0	0	folgten die Menschen, die den Saft des Bau-
 512	8	2735	other			none	0	0	0	0	"mes drum siri trinken"" (gZ1 3: 94,5)."
-512	9	2736	headword_line	འབྲེང་	Ru-las-skyes	medium	1	2	0	0	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."
+512	9	2736	headword_line	འབྲེང་	Ru-las-skyes	medium	1	2	0	0	འབྲེང་ "breṅ npr. Vater des Ru-las-skyes.
 512	10	2736	german_prose_with_translit			none	5	1	0	0	"gsum du 'dzans pa — giburn las skyes yin ""als"
 512	11	2736	german_prose			none	0	6	0	0	drittes war der Weise Ru-las-skyes, der Sohn
 512	12	2736	german_prose			none	0	3	0	0	"des 'Breri"" (Nel 534)."
-512	13	2736	tibetan_only	འབྲེང་		none	0	0	0	0	"འབྲེང་ ""bren \bren."
+512	13	2736	tibetan_only	འབྲེང་		none	0	0	0	0	འབྲེང་ "breṅ \bren.
 512	14	2737	headword_line	འབྲེང་ལྕག་	breṅ	high	2	0	0	0	འབྲེང་ལྕག་ 'breṅ lcag Lederpeitsche.
 512	15	2737	latin_other			none	4	0	0	0	de la bdagpos — bzan posgäugnasbrabstsana
 512	16	2737	german_prose_with_translit			none	1	3	0	0	"""wennder Herr ihm mit einer guten Peitsche"
@@ -42245,7 +42245,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 512	30	2739	german_prose_with_translit			none	2	4	0	0	"bu la'an ""auch für so etwas wie: ein dünnes"
 512	31	2739	german_prose_with_translit			none	1	5	0	0	"Band oder eine Schnur aus Leder"" (brDa);"
 512	32	2739	german_prose_with_translit			none	1	2	0	0	"ko ba'i srad bu ""Lederriemen"" (Dagy)."
-512	33	2740	headword_line	འབྲེང་པ་	breṅ pa	high	3	2	0	0	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.
+512	33	2740	headword_line	འབྲེང་པ་	breṅ pa	high	3	2	0	0	འབྲེང་པ་ 'breṅ pa auch 'breṅ ba Lederriemen.
 512	34	2740	german_prose_with_translit			none	1	3	0	0	"Lex. ko ba'i srad bu ""Lederriemen"" (Dagy);"
 512	35	2740	german_prose_with_translit			none	1	1	0	0	"'bren (v.|. 'bran) ba = varatram ""Riemen"""
 512	36	2740	german_prose			none	0	1	0	0	(Mvy 9444).
