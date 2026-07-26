@@ -6397,3 +6397,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 739	1	3729	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དཔུང་གི་ཆུང་གི་་ "" dpun gi chuṅ gi"
 739	47	3736	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་མགོ་ dpuṅ mgo auch dpun pa'i mgo
 740	75	3751	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་པ་ dpuṅ pa auch dpun Arm, Oberarm,
+872	31	4499	headword_line	min	miṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཕུ་མིང་ ""phba min Vater und Bruder."

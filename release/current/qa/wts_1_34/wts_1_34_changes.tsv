@@ -28510,3 +28510,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 614	115	7536	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕམ་སྲིང་ lcam srin.
 832	159	9561	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྙེན་སྲིང་ bsñen srin
 961	188	10513	headword_line	srin	sriṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོབས་ལྷའི་སྲིང་མོ་ stobs lha’i srin mo Beiname
+233	23	3044	headword_line	min	miṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi min Funktions-
+250	44	3289	headword_line	min	miṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་བའི་མིང་ཅན་ kha ba’! min can Kampfer.
+652	154	8061	headword_line	min	miṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཡི་མིང་ཅན་ chu yi min can.

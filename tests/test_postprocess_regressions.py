@@ -3246,6 +3246,23 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("skra can gyi sriṅ mo", outputs["wts_1_34"])
         self.assertIn("བྲག་སྲིན་ brag srin", outputs["wts_8_b"])
 
+    def test_reviewed_ming_preserves_genuine_min(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (233, 23): "བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi min Funktions-",
+                (593, 186): "གཅིག་མིན་ gcig min oft; viel.",
+                (1, 1): "unreviewed min control",
+            },
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(fixtures["wts_1_34"]),
+            label="wts_1_34",
+        )
+        self.assertIn("bskos thob kyi miṅ Funktions-", corrected)
+        self.assertIn("གཅིག་མིན་ gcig min oft; viel.", corrected)
+        self.assertIn("unreviewed min control", corrected)
+        self.assertEqual(sum(row["to_token"] == "miṅ" for row in changes), 1)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

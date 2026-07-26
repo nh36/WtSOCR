@@ -32656,7 +32656,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 233	19	3014	german_prose			none	0	1	0	0	byis chun red (metr.) „dein und mein
 233	20	3014	german_prose			none	0	8	0	0	Schicksal ist das eines Falken und eines Vö-
 233	21	3014	german_prose			none	0	1	0	0	gelchens“ (Sumpa 7526).
-233	23	3015	headword_line	བསྐོས་ཐོབ་ཀྱི་མིང་	bskos thob kyi	high	3	1	0	0	བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi min Funktions-
+233	23	3015	headword_line	བསྐོས་ཐོབ་ཀྱི་མིང་	bskos thob kyi	high	3	1	0	0	བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi miṅ Funktions-
 233	24	3015	latin_other			none	1	0	0	0	bezeichnung.
 233	26	3015	latin_other			none	8	0	0	0	de dag phrin las phyogs gcig gi cha nas — btags
 233	28	3015	german_prose_with_translit			none	2	1	0	0	pa „die Funktionsbezeichnungen wurden
@@ -34955,7 +34955,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 250	41	3258	german_prose_with_translit			none	1	2	0	0	Lex. gans ri (brDa, Dagy).
 250	42	3259	headword_line	ཁ་བའི་ཕྱེ་མ་	kha ba’i phye ma	high	4	1	0	0	ཁ་བའི་ཕྱེ་མ་ kha ba’i phye ma Kampfer.
 250	43	3259	german_prose_with_translit			none	1	1	0	0	Lex. gatpur ram ga bur (brDa).
-250	44	3260	headword_line	ཁ་བའི་མིང་ཅན་	kha ba’	high	3	1	0	0	ཁ་བའི་མིང་ཅན་ kha ba’! min can Kampfer.
+250	44	3260	headword_line	ཁ་བའི་མིང་ཅན་	kha ba’	high	3	1	0	0	ཁ་བའི་མིང་ཅན་ kha ba’! miṅ can Kampfer.
 250	45	3260	german_prose_with_translit			none	1	1	0	0	Lex. gatpur ram ga bur (brDa).
 250	46	3261	headword_line	ཁ་བའི་འོད་	kha ba’i	high	2	2	0	0	ཁ་བའི་འོད་ kha ba’i ’od Mond, Mondlicht.
 250	47	3261	german_prose_with_translit			none	3	2	0	0	Lex. zla ba (brDa); zla ba’i ’od (Dagy).
@@ -94426,7 +94426,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 652	150	7943	other			none	0	0	0	0	geheuer.
 652	152	7943	german_prose_with_translit			none	3	1	0	0	Lex. chu srin la’an (brDa); chu srin gyi min
 652	153	7943	other			none	0	0	0	0	(1397).
-652	154	7944	headword_line	ཆུ་ཡི་མིང་ཅན་	can	medium	1	0	0	0	ཆུ་ཡི་མིང་ཅན་ chu yi min can.
+652	154	7944	headword_line	ཆུ་ཡི་མིང་ཅན་	can	medium	1	0	0	0	ཆུ་ཡི་མིང་ཅན་ chu yi miṅ can.
 652	155	7944	german_prose			none	0	3	0	0	1. Bez. für Schwan.
 652	156	7944	german_prose_with_translit			none	2	1	0	0	Lex. bZad la’an (brDa).
 652	158	7944	german_prose			none	0	3	0	0	2. Bez. für Varuna.
