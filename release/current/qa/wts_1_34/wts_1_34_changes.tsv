@@ -28545,3 +28545,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 200	90	2600	headword_line	krun	kruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱིལ་ཀྲུང་ skyil krun auch skyil mo dkrun, skyil mo
 200	105	2601	headword_line	krun	kruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱིལ་ཀྲུང་ skyil krun
 200	161	2604	headword_line	krun	kruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱིལ་མོ་ ཀྲུང་ skyil mo krun, skyil mo dkruṅ 76/597///
+187	17	2399	headword_line	gsun	gsuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐུ་གསུང་ཐུགས་ sku gsun thugs resp. Körper, Rede
+475	131	6269	headword_line	gsun	gsuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱལ་གསུང་རྗེས་འགྲོ་ rgyal gsun rjes ’gro ein Vo-
+1020	111	11378	headword_line	gsun	gsuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུབ་དབང་གསུང་སྐྱེས་ thub dbaṅ gsun skyes Bez.

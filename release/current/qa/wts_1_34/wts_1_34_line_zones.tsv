@@ -25632,7 +25632,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 187	12	2369	headword_line	སྐུ་སློག་	sku	medium	1	1	0	0	སྐུ་སློག་ sku slog Pelzmantel.
 187	14	2369	german_prose_with_translit			none	3	3	0	0	Lex. pags pa’i na bza’ „Gewand aus Fell“
 187	15	2369	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
-187	17	2370	headword_line	སྐུ་གསུང་ཐུགས་	sku	medium	2	2	0	0	སྐུ་གསུང་ཐུགས་ sku gsun thugs resp. Körper, Rede
+187	17	2370	headword_line	སྐུ་གསུང་ཐུགས་	sku	medium	2	2	0	0	སྐུ་གསུང་ཐུགས་ sku gsuṅ thugs resp. Körper, Rede
 187	18	2370	german_prose			none	0	2	0	0	und Geist.
 187	20	2370	german_prose_with_translit			none	4	1	0	0	gsan gsum ... — su phye ba las (metr.) „ein
 187	21	2370	german_prose			none	0	3	0	0	dreifaches Geheimnis, wegen der Unter-
@@ -67828,7 +67828,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 475	127	6176	latin_other			none	2	0	0	0	TAT rgyal sruh Landesverteidigung.
 475	128	6176	other			none	0	0	0	0	>
 475	129	6176	german_prose_with_translit			none	3	2	0	0	Lex. rgyal khab brtan srun (Dagy).
-475	131	6177	headword_line	རྒྱལ་གསུང་རྗེས་འགྲོ་	rgyal	high	1	2	0	0	རྒྱལ་གསུང་རྗེས་འགྲོ་ rgyal gsun rjes ’gro ein Vo-
+475	131	6177	headword_line	རྒྱལ་གསུང་རྗེས་འགྲོ་	rgyal	high	1	2	0	0	རྒྱལ་གསུང་རྗེས་འགྲོ་ rgyal gsuṅ rjes ’gro ein Vo-
 475	132	6177	latin_other			none	1	0	0	0	gel, Sperling.
 475	134	6177	german_prose_with_translit			none	5	1	0	0	Lex. bya ka la pin ka (brDa).
 475	136	6177	example_tibetan_latin	རྒྱས་ ༡		none	1	1	0	0	རྒྱས་ ༡9༡ pf. zu rgya.
@@ -149086,7 +149086,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1020	106	11189	german_prose_with_translit			none	5	1	0	0	Lex. sans rgyas (brDa); tbub pa’i dban po =
 1020	107	11189	german_prose			none	0	1	0	0	munindra (Ak 5.9).
 1020	109	11190	headword_line	ཐུབ་དབང་གསུང་སྐྱེས་	thub dbaṅ gsuṅ skyes	high	4	0	0	0	ཐུབ་དབང་གསུང་སྐྱེས་ thub dbaṅ gsuṅ skyes
-1020	111	11191	headword_line	ཐུབ་དབང་གསུང་སྐྱེས་	thub dbaṅ	high	3	1	0	0	ཐུབ་དབང་གསུང་སྐྱེས་ thub dbaṅ gsun skyes Bez.
+1020	111	11191	headword_line	ཐུབ་དབང་གསུང་སྐྱེས་	thub dbaṅ	high	3	1	0	0	ཐུབ་དབང་གསུང་སྐྱེས་ thub dbaṅ gsuṅ skyes Bez.
 1020	113	11191	german_prose			none	0	3	0	0	für Hörer, skt. Srävaka.
 1020	115	11191	german_prose_with_translit			none	3	3	0	0	Lex. ian thos kyi min (brDa, ähnl. Dagy).
 1020	117	11192	headword_line	ཐུབ་ཚོད་	thub tsbod	high	2	1	0	0	ཐུབ་ཚོད་ thub tsbod Machtdemonstration.
