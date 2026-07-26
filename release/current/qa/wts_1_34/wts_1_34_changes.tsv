@@ -28180,3 +28180,23 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 750	43	8915	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྔགས་བྱང་ ljags byan (zw.).
 753	60	8949	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བརྗེད་བྱང་ brjed byan Notizen.
 1027	147	11298	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐེམ་བྱང་ them byan Register, Auflistung
+64	130	653	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་དགའ་སེང་གེ་ kun dga’ sen ge ein Lama, Schü-
+124	78	1532	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་མོ་སེང་མགོ་ dkar mo sen mgo npr. eine gZe-
+127	15	1580	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོན་མཆོག་སེང་གེ་ dkon mchog sen ge npr. ein
+195	57	2476	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱ་སེང་ skya sen
+195	96	2478	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱ་སེང་ skya sen auch skya bsen.
+195	116	2480	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+195	116	2480	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+195	116	2480	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+195	116	2480	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+215	144	2766	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱེས་བུའི་སེང་གེ་ skyes bu’i sen ge „ein Mann wie
+217	62	2795	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོ་སེང་བ་ skyo sen ba traurig, verdrießlich.
+256	57	3360	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁ་སེང་ kha sen 1'kha san.
+287	97	3892	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུང་སེང་འདས་པ་ khyun sen ’dus pa achtfüßiger
+344	18	4643	tibetan_only	seh	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གངས་སེང་ gans seh Schneelöwe.
+406	163	5352	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་སེང་དྲུག་འགྱར་ dgu sen drug 'gyur eine Me-
+576	89	7234	headword_line	seh	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཅང་སེང་ can seh auch can se eine Gruppe von
+817	173	9465	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྙན་སེང་ sñan sen Eingabe, Petition.
+945	72	10353	tibetan_only	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟབ་སེང་ stab sen \stabs sen.
+1136	69	12180	tibetan_only	seh	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་སེང་ dar seh eine feine, dünne Seide.
+1300	56	12923	headword_line	sen	seṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲང་སེང་ངེ་བ་ dran sen ne ba geradlinig.

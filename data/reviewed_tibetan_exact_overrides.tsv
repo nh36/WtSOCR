@@ -5359,3 +5359,23 @@ wts_8_b	165	48	1	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_b
 wts_8_b	179	7	1	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	Frozen exact Tibetan བྱང alignment at 0848355; genuine བྱན is excluded.
 wts_8_b	175	62	5	byan	byaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_byang_same_entry_echo_batch_20260726	The Kurzf. expansion independently repeats the same བྱང element.
 wts_8_b	177	50	5	byan	byaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_byang_same_entry_echo_batch_20260726	The Kurzf. expansion independently repeats the same བྱང element; following damage remains unchanged.
+wts_1_34	64	130	3	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	124	78	3	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	127	15	3	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	195	57	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	195	96	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	195	116	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	195	116	3	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	215	144	3	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	217	62	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	256	57	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	287	97	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	344	18	2	seh	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	406	163	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	576	89	2	seh	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	817	173	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	945	72	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	1136	69	2	seh	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	1300	56	2	sen	seṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	Frozen exact Tibetan སེང alignment at 0848355; genuine སེན is excluded.
+wts_1_34	195	116	8	sen	seṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_seng_same_entry_echo_batch_20260726	The alternate expression independently repeats the first སེང element.
+wts_1_34	195	116	9	sen	seṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_seng_same_entry_echo_batch_20260726	The alternate expression independently repeats the second སེང element.
