@@ -3105,6 +3105,24 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("བྲེང་ ?breṅ", corrected)
         self.assertIn("unreviewed bren control", corrected)
 
+    def test_reviewed_mong_preserves_damage_and_genuine_mon(self) -> None:
+        fixtures = {
+            "wts_8_b": {
+                (409, 73): "དབྱི་མོང་ ?dbyi mon Tdbyi mo.",
+            },
+            "wts_9_m": {
+                (257, 1): 'མོན་ "mon',
+            },
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("དབྱི་མོང་ ?dbyi moṅ Tdbyi mo.", outputs["wts_8_b"])
+        self.assertIn('མོན་ "mon', outputs["wts_9_m"])
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

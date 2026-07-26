@@ -28466,3 +28466,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 919	1	10114	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟིང་འབྲང་བ་ yein ’bran ba
 919	3	10115	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟིང་འབྲང་བ་ rtin ’bran ba Gefährte; vgl. !rtin
 611	19	7482	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕག་འབྲེང་ lcag ’bren Peitsche.
+269	32	3575	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུར་མོང་ khur mon auch khur man eine Pflan-
+1017	56	11149	tibetan_only	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུན་མོང་ tbun mon
+1017	118	11157	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུན་མོང་ཆོས་ thun mon chos
+1017	212	11158	tibetan_only	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུན་མོང་ཀུད་མེད་ tbun mon bud med Bez. für

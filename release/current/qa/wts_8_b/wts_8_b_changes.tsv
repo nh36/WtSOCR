@@ -3007,3 +3007,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 512	9	2736	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."
 512	13	2736	tibetan_only	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren \bren."
 512	33	2740	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.
+409	62	2266	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ 'dbyi mon.
+409	73	2267	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ ?dbyi mon Tdbyi mo.
