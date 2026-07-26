@@ -141583,7 +141583,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 970	145	10594	german_prose			none	0	4	0	0	dem Indischen übersetzt wurden, heißt es
 970	146	10594	latin_other			none	5	0	0	0	bstan ’gyur“ (brDa); rgya giun gi bstan bcos
 970	147	10594	german_prose_with_translit			none	1	6	0	0	bod du ’zyur ro cog „die ins Tibetische übersetzten indischen Sästras“ (Dagy).
-970	150	10595	headword_line	བསྟན་རྒྱལ་རྫོང་	bstan rgyal rdzon	high	3	2	0	0	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr. ein Ort
+970	150	10595	headword_line	བསྟན་རྒྱལ་རྫོང་	bstan rgyal rdzon	high	3	2	0	0	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzoṅ npr. ein Ort
 970	152	10595	german_prose			none	0	4	0	0	zwischen Sikkim und Tibet
 970	154	10595	german_prose			none	0	1	0	0	(Neb 432).
 970	156	10596	headword_line	བསྟན་བཅོས་	bstan	medium	3	2	0	0	བསྟན་བཅོས་ bstan bcos auch bstan chos Lehr-
@@ -172866,7 +172866,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1275	37	12817	tibetan_only	མ་ཆེ		none	0	0	0	0	མ་ཆེ dom mo t1'dom.
 1275	39	12817	other			none	0	0	0	0	IK
 1275	41	12817	german_prose			none	0	1	0	0	N
-1275	43	12818	headword_line	དོམ་རྫོང་	rdzon	high	1	2	0	0	དོམ་རྫོང་ dom rdzon npr. ein Ort.
+1275	43	12818	headword_line	དོམ་རྫོང་	rdzon	high	1	2	0	0	དོམ་རྫོང་ dom rdzoṅ npr. ein Ort.
 1275	45	12818	german_prose_with_translit			none	6	2	0	0	© rgyan chen po’i sgrub phug ¬ Zes pa’i bya
 1275	46	12818	german_prose_with_translit			none	2	1	0	0	skyibs su Zabs rin sogs kyan med par gcig pur
 1275	47	12818	german_prose_with_translit			none	1	6	0	0	bzugs Sin „er lebte allein ohne Bedienstete usw. in dem Dom-rdzon genannten Fel-
@@ -173318,7 +173318,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1282	26	12846	german_prose_with_translit			none	1	1	0	0	min —r chags so „nun, ihr seid wie Waisenkin-
 1282	27	12846	german_prose_with_translit			none	2	2	0	0	der, deshalb seid ihr zum Namen dwa tsbo
 1282	28	12846	latin_other			none	1	0	0	0	gekommen“ (Bu-śz 77,1).
-1282	30	12847	headword_line	དཱ་རྫོང་	rdzon	high	3	2	0	0	དཱ་རྫོང་ dwa rdzon npr. ein Dzong in lHo-brag.
+1282	30	12847	headword_line	དཱ་རྫོང་	rdzon	high	3	2	0	0	དཱ་རྫོང་ dwa rdzoṅ npr. ein Dzong in lHo-brag.
 1282	32	12847	latin_other			none	4	0	0	0	ho brag — sogs rdzon khag 'ga’ re dan /
 1282	33	12847	latin_other			none	3	0	0	0	gron sde dan ’brog sde yan man po yod „dort
 1282	34	12847	german_prose_with_translit			none	2	1	0	0	gibt es einige Dzongs, wie lHo-brag Dwa-

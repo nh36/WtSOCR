@@ -28525,3 +28525,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 744	30	8973	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་བཟུང་ rjes bzun 1705 su bzun.
 904	72	10071	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཏང་བཟུང་ btaṅ bzun
 1183	24	12620	headword_line	bzun	bzuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzun ste von
+970	150	10777	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr. ein Ort
+1275	43	13025	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་རྫོང་ dom rdzon npr. ein Ort.
+1282	30	13054	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཱ་རྫོང་ dwa rdzon npr. ein Dzong in lHo-brag.
