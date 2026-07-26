@@ -28486,3 +28486,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 88	182	1045	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myon nag \kus pa’i
 88	198	1046	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myon nag N. ei-
 748	114	8891	headword_line	myon	myoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྗེས་སུ་མྱོང་ rjes su myon auskosten.
+613	116	7519	tibetan_only	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་དཀར་ lcan dkar ein Weidenbaum.
+613	146	7521	tibetan_only	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ཏི་ lcan ti eine Heilpflanze.
+613	154	7521	tibetan_only	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ནག་ lcan nag ein Weidenbaum.
+613	166	7522	headword_line	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ལོ་ཅན་ lcan lo can
+613	187	7524	headword_line	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ལོ་ lcan lo.
+784	11	9204	tibetan_only	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcan dkar eine

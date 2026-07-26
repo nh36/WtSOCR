@@ -88467,7 +88467,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 613	111	7519	german_prose			none	0	1	0	0	SANAN Icags slan
 613	113	7519	tibetan_only	ལྕགས་སྨང་		none	0	1	0	0	ལྕགས་སྨང་ lcags slan Eisenpfanne.
 613	114	7519	german_prose_with_translit			none	1	2	0	0	Lex. lcags kyi slan (Dagy).
-613	116	7519	tibetan_only	ལྕང་དཀར་		none	0	2	0	0	ལྕང་དཀར་ lcan dkar ein Weidenbaum.
+613	116	7519	tibetan_only	ལྕང་དཀར་		none	0	2	0	0	ལྕང་དཀར་ lcaṅ dkar ein Weidenbaum.
 613	118	7519	german_prose_with_translit			none	4	2	0	0	(Dean dkar ber ka la źon nas son bas „als er
 613	119	7519	german_prose			none	0	4	0	0	auf dem [magischen] Stock aus Weiden-
 613	120	7519	german_prose			none	0	1	0	0	holz davonritt“ (Gesar 250,11).
@@ -88489,20 +88489,20 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 613	142	7521	german_prose_with_translit			none	1	3	0	0	lta bu „wie: Blüte, bevor das Weidenblatt
 613	143	7521	german_prose_with_translit			none	4	1	0	0	sprießt“ (brDa); lcan lo ma skyes skabs kyi
 613	144	7521	german_prose_with_translit			none	1	1	0	0	me tog lta bu (Dagy).
-613	146	7521	tibetan_only	ལྕང་ཏི་		none	0	2	0	0	ལྕང་ཏི་ lcan ti eine Heilpflanze.
+613	146	7521	tibetan_only	ལྕང་ཏི་		none	0	2	0	0	ལྕང་ཏི་ lcaṅ ti eine Heilpflanze.
 613	148	7521	german_prose_with_translit			none	2	2	0	0	tun (Dcan {r}t{s}i Zes pa 777/// ’dra mo zer ba
 613	149	7521	german_prose			none	0	3	0	0	„die sogenannten tun- und lcan-ti-[Medi-
 613	150	7521	german_prose			none	0	2	0	0	zinpflanzen], von denen man sagt, daß sie
 613	151	7521	german_prose			none	0	1	0	0	[wertvoll] wie Silber seien“ (MTH3/3/33
 613	153	7521	other			none	0	0	0	0	1).
-613	154	7521	tibetan_only	ལྕང་ནག་		none	0	2	0	0	ལྕང་ནག་ lcan nag ein Weidenbaum.
+613	154	7521	tibetan_only	ལྕང་ནག་		none	0	2	0	0	ལྕང་ནག་ lcaṅ nag ein Weidenbaum.
 613	156	7521	german_prose_with_translit			none	2	3	0	0	Lex. sin Ican ma’i bye brag (brDa, Dagy).
 613	157	7521	german_prose_with_translit			none	1	3	0	0	Era lcan ma Weide, Weidenbaum.
 613	159	7521	latin_other			none	5	0	0	0	lcan gseb na skye ska’i tshan man po yod pa
 613	161	7521	german_prose_with_translit			none	1	2	0	0	la „es gab im Weidenhain viele EI-
 613	162	7521	latin_other			none	1	0	0	0	sternnester“ (dPe 58,12); rlun bskyed (7.
 613	164	7521	other			none	0	0	0	0	175
-613	166	7522	headword_line	ལྕང་ལོ་ཅན་	lo can	medium	2	0	0	0	ལྕང་ལོ་ཅན་ lcan lo can
+613	166	7522	headword_line	ལྕང་ལོ་ཅན་	lo can	medium	2	0	0	0	ལྕང་ལོ་ཅན་ lcaṅ lo can
 613	168	7522	latin_other			none	2	0	0	0	"skyod?) / -""i logs la btsugs yod (metr.)"
 613	169	7522	german_prose_with_translit			none	1	4	0	0	„Gebetsfahnen sind an einer Weide
 613	170	7522	german_prose_with_translit			none	2	1	0	0	aufgehängt“ (Glu 12b); - glan ma sogs mo
@@ -88516,7 +88516,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 613	182	7523	german_prose_with_translit			none	2	1	0	0	Lex. ~, lcan rags = lcan mas bskor ba’i rwa
 613	183	7523	german_prose_with_translit			none	2	3	0	0	ba ste glin ga „ein von Weiden umgebenes
 613	185	7523	german_prose			none	0	3	0	0	Gelände, Park“ (Dagy).
-613	187	7524	headword_line	ལྕང་ལོ་	lo	medium	1	0	0	0	ལྕང་ལོ་ lcan lo.
+613	187	7524	headword_line	ལྕང་ལོ་	lo	medium	1	0	0	0	ལྕང་ལོ་ lcaṅ lo.
 613	188	7524	german_prose			none	0	1	0	0	1. Weidenblatt.
 613	190	7524	german_prose_with_translit			none	3	3	0	0	Lex. sin lcan ma’i lo ma „Laub des
 613	191	7524	german_prose_with_translit			none	1	2	0	0	Weidenbaumes“ (brDa, Dagy).
@@ -114396,7 +114396,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 784	7	9204	german_prose			none	0	3	0	0	upapithas Godävari, Rämesvara, Devikotä
 784	8	9204	german_prose_with_translit			none	1	4	0	0	und Mälava wurden von den Gandharven
 784	9	9204	german_prose			none	0	2	0	0	übernommen“ (Padm 24b1).
-784	11	9204	tibetan_only	ཉེ་གནས་ལྕང་དཀར་		none	0	1	0	0	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcan dkar eine
+784	11	9204	tibetan_only	ཉེ་གནས་ལྕང་དཀར་		none	0	1	0	0	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcaṅ dkar eine
 784	12	9204	german_prose			none	0	4	0	0	. Gottheit im Gefolge des
 784	13	9204	german_prose_with_translit			none	1	1	0	0	gNan-rje gun-shon (Neb 215).
 784	15	9205	headword_line	ཉེ་པོ་	po	medium	1	1	0	0	ཉེ་པོ་ ie po nahe, Nähe.
