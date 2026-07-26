@@ -2680,6 +2680,22 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.assertTrue(all(row["from_token"] in {"gun", "guh"} for row in changes))
         self.assertEqual(sum(text.count("guṅ") for text in observed), 7)
 
+    def test_reviewed_rkyang_rows_repetitions_and_final_n_control(self) -> None:
+        lines = {
+            (163, 54): "རྐྱང་རྐྱང་ rkyan rkyan",
+            (163, 112): "རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con",
+            (271, 133): "ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.",
+            (164, 47): "རྐྱན་ rkyan Krug, Kanne.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("རྐྱང་རྐྱང་ rkyaṅ rkyaṅ", corrected)
+        self.assertIn("rkyaṅ ne co ne ba auch rkyaṅ ne con", corrected)
+        self.assertIn("kher rkyaṅ auch khe rkyaṅ", corrected)
+        self.assertIn("རྐྱན་ rkyan Krug, Kanne.", corrected)
+        self.assertEqual(sum(row["to_token"] == "rkyaṅ" for row in changes), 6)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

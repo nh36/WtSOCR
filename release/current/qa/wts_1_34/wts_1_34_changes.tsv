@@ -28144,3 +28144,27 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 771	27	9075	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
 772	8	9090	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
 772	8	9090	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
+163	54	2098	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་རྐྱང་ rkyan rkyan
+163	54	2098	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་རྐྱང་ rkyan rkyan
+163	99	2100	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་རྐྱང་ rkyan rkyan allein, ausschließlich, nur.
+163	99	2100	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་རྐྱང་ rkyan rkyan allein, ausschließlich, nur.
+163	106	2101	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba
+163	112	2102	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con
+163	112	2102	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con
+163	118	2103	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་བཅད་ rkyan bcad Gürtel.
+163	126	2105	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ཐང་ rkyan thaṅ.
+163	141	2106	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་དེད་ rkyan ded Konzentration.
+163	154	2107	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་འདེབས་ rkyan ’debs weite Ebene.
+163	157	2108	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ནུལ་ rkyan nul Iskyan nul.
+163	158	2109	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་པ་ rkyan pa.
+163	164	2110	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་པ་ rkyan pa
+164	1	2111	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་པ་ ’rkyan pa
+164	15	2112	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་པོ་ rkyan po kiang-farben; Pferd mit dem
+164	22	2113	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ཕུག་ rkyan phug Wassergefäß.
+164	31	2114	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་མ་ rkyan ma linker Hauptkanal bzw. linke
+164	35	2115	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་ཝོ་གཉའ་བ་ཅན་ rkyan wo gfia’ ba can eine Art
+164	44	2117	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐྱང་སེར་ rkyan ser erdfarben.
+271	133	3625	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.
+271	133	3625	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.
+592	148	7328	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཅིག་རྐྱང་ geig rkyan ganz allein, nur einer.
+1198	75	12498	headword_line	rkyan	rkyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲེ་རྐྱང་པ་ de rkyan pa einzig, nur.

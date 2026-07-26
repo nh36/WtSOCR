@@ -1,0 +1,27 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	54	2	རྐྱང	rkyan	rkyaṅ	echo	direct_repeated_tibetan_alignment	none	རྐྱང་རྐྱང་ rkyan rkyan
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	99	2	རྐྱང	rkyan	rkyaṅ	echo	direct_repeated_tibetan_alignment	none	རྐྱང་རྐྱང་ rkyan rkyan allein, ausschließlich, nur.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	112	7	རྐྱང	rkyan	rkyaṅ	echo	explicit_same_lemma_repetition	none	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	271	133	5	རྐྱང	rkyan	rkyaṅ	echo	explicit_same_lemma_repetition	none	ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	54	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་རྐྱང་ rkyan rkyan
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	54	2	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་རྐྱང་ rkyan rkyan
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	99	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་རྐྱང་ rkyan rkyan allein, ausschließlich, nur.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	99	2	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་རྐྱང་ rkyan rkyan allein, ausschließlich, nur.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	106	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	112	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	118	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་བཅད་ rkyan bcad Gürtel.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	126	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ཐང་ rkyan thaṅ.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	141	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་དེད་ rkyan ded Konzentration.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	154	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་འདེབས་ rkyan ’debs weite Ebene.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	157	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ནུལ་ rkyan nul Iskyan nul.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	158	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་པ་ rkyan pa.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	163	164	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་པ་ rkyan pa
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	1	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་པ་ ’rkyan pa
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	15	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་པོ་ rkyan po kiang-farben; Pferd mit dem
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	22	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ཕུག་ rkyan phug Wassergefäß.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	31	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་མ་ rkyan ma linker Hauptkanal bzw. linke
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	35	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་ཝོ་གཉའ་བ་ཅན་ rkyan wo gfia’ ba can eine Art
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	164	44	1	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	རྐྱང་སེར་ rkyan ser erdfarben.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	271	133	2	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	592	148	2	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	གཅིག་རྐྱང་ geig rkyan ganz allein, nur einer.
+db484b658f7ab04ebfbab008741065b62d49f5f4	wts_1_34	1198	75	2	རྐྱང	rkyan	rkyaṅ	positional	dominant_internal_consensus	none	དྲེ་རྐྱང་པ་ de rkyan pa einzig, nur.

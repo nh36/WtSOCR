@@ -14,3 +14,4 @@ tibetan_drung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	དྲུང	tib
 tibetan_khung_20260720	0848355ecd7399fbb36bcff65acc9b65e779f546	ཁུང	tibetan_khung_consensus_batch_20260720	22	22	tibetan_khung_same_entry_echo_batch_20260720	7	3	4	0	0	0	22	3	7	25
 tibetan_dong_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	དོང	tibetan_dong_consensus_batch_20260726	19	19	tibetan_dong_same_entry_echo_batch_20260726	4	4	0	0	0	0	19	4	4	23
 tibetan_gung_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	གུང	tibetan_gung_consensus_batch_20260726	18	18	tibetan_gung_same_entry_echo_batch_20260726	8	5	3	0	0	0	18	5	8	23
+tibetan_rkyang_20260726	db484b658f7ab04ebfbab008741065b62d49f5f4	རྐྱང	tibetan_rkyang_consensus_batch_20260726	22	22	tibetan_rkyang_same_entry_echo_batch_20260726	4	2	0	0	2	0	22	4	4	24
