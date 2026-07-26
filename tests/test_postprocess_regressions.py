@@ -3065,6 +3065,21 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("འཐུང་བ་ thuṅ ba", corrected)
         self.assertIn("ཐུན thun", corrected)
 
+    def test_reviewed_abrang_preserves_bran_collisions_and_tbran(self) -> None:
+        lines = {
+            (481, 67): '"kommt" (dPeD 186,2). འབྲང་ས་ "bran sa Tbran sa.',
+            (263, 45): "བྲང་ bran",
+            (264, 41): "བྲན་ bran",
+            (1400, 11): "པྲང་ bran insufficient control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn('འབྲང་ས་ "braṅ sa Tbran sa.', corrected)
+        self.assertIn("བྲང་ braṅ", corrected)
+        self.assertIn("བྲན་ bran", corrected)
+        self.assertIn("པྲང་ bran", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

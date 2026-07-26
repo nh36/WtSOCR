@@ -2999,3 +2999,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 263	45	1451	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."
 279	2	1494	example_tibetan_latin	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	und Butter und beräuchere [das Pferd] mit བྲུབས་བཏང་ brubs btan pf.
 580	45	3100	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལ་འཆིང་ sbrul chin.
+481	67	2628	example_tibetan_latin	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"kommt"" (dPeD 186,2). འབྲང་ས་ ""bran sa Tbran sa."

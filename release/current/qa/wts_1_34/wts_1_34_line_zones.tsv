@@ -8862,7 +8862,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 74	212	782	headword_line	ཀུན་ཏུ་འབྱུང་བ་	tu byun ba entstehen	high	4	0	0	0	ཀུན་ཏུ་འབྱུང་བ་ kun tu ’byuṅ ba entstehen, auftre-
 74	213	782	german_prose			none	0	2	0	0	ten, sich ergeben; vgl. Ikun 'byun
 74	214	782	latin_other			none	3	0	0	0	ba, kun nas ’byun ba.
-75	1	783	headword_line	ཀུན་ཏུ་འབྲང་བ་	tu	medium	2	0	0	0	ཀུན་ཏུ་འབྲང་བ་ kun tu ’bran ba
+75	1	783	headword_line	ཀུན་ཏུ་འབྲང་བ་	tu	medium	2	0	0	0	ཀུན་ཏུ་འབྲང་བ་ kun tu ’braṅ ba
 75	3	783	german_prose_with_translit			none	5	1	0	0	Itun ba phramo’i khrulpa — dag la ses bzin du
 75	4	783	german_prose			none	0	2	0	0	spyod par mi nus „sie sind unfähig, sich beim
 75	5	783	german_prose_with_translit			none	1	2	0	0	Auftreten von Täuschungen aufgrund klei-
@@ -96796,7 +96796,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 669	3	8082	german_prose			none	0	2	0	0	una cho babs Umstand, Lage.
 669	5	8082	german_prose_with_translit			none	3	1	0	0	Lex. cho legs fies kyi ’gro phyogs „Wendung
 669	6	8082	german_prose			none	0	4	0	0	zum Positiven oder Negativen“ (Dagy).
-669	8	8083	headword_line	ཆོ་འབྲང་	Gattung Abstammung	medium	2	0	0	0	ཆོ་འབྲང་ cho ’brah Gattung, Abstammung
+669	8	8083	headword_line	ཆོ་འབྲང་	Gattung Abstammung	medium	2	0	0	0	ཆོ་འབྲང་ cho ’braṅ Gattung, Abstammung
 669	9	8083	latin_other			none	1	0	0	0	mütterlicherseits.
 669	11	8083	german_prose_with_translit			none	4	1	0	0	cho yan do ma thugs dags / gyi - „auch seine
 669	12	8083	german_prose_with_translit			none	1	5	0	0	Gattung ist die Familie des exzellenten, des
@@ -108188,7 +108188,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 743	143	8824	german_prose_with_translit			none	1	3	0	0	dhistische Mönch selbst hielt die Gepflo-
 743	144	8824	german_prose_with_translit			none	1	3	0	0	genheiten der Anhänger und Untertanen
 743	145	8824	german_prose			none	0	3	0	0	ein“ (In5 W21).
-743	147	8825	headword_line	རྗེས་འབྲང་	su	medium	1	1	0	0	རྗེས་འབྲང་ rjes 'bran Irjes su 'bran.
+743	147	8825	headword_line	རྗེས་འབྲང་	su	medium	1	1	0	0	རྗེས་འབྲང་ rjes 'braṅ Irjes su 'bran.
 743	148	8825	tibetan_latin_mixed	རྗེས་འབྲངས་		none	1	0	0	0	རྗེས་འབྲངས་ rjes 'brans 1)70$ su 'brans.
 743	149	8826	headword_line	རྗེས་འབྲེལ་	su	medium	1	0	0	0	རྗེས་འབྲེལ་ rjes ’brel \rjes su 'brel.
 743	150	8827	headword_line	རྗེས་སྦྱོར་	sbyor	medium	1	0	0	0	རྗེས་སྦྱོར་ rjes sbyor nachfragen.
@@ -133266,8 +133266,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 918	200	10113	german_prose_with_translit			none	2	4	0	0	Lex. rjes ma la’an „auch für: später“
 918	202	10113	german_prose_with_translit			none	2	1	0	0	(brDa); rjes ma (Dagy).
 918	204	10113	other			none	0	0	0	0	93
-919	1	10114	headword_line	རྟིང་འབྲང་བ་	ba	medium	1	0	0	0	རྟིང་འབྲང་བ་ yein ’bran ba
-919	3	10115	headword_line	རྟིང་འབྲང་བ་	rtin	high	3	2	0	0	རྟིང་འབྲང་བ་ rtin ’bran ba Gefährte; vgl. !rtin
+919	1	10114	headword_line	རྟིང་འབྲང་བ་	ba	medium	1	0	0	0	རྟིང་འབྲང་བ་ yein ’braṅ ba
+919	3	10115	headword_line	རྟིང་འབྲང་བ་	rtin	high	3	2	0	0	རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
 919	5	10115	latin_other			none	1	0	0	0	du brans.
 919	7	10115	german_prose_with_translit			none	1	2	0	0	Lex. abhisara (Ak 207.71).
 919	8	10115	other			none	0	0	0	0	= ’.

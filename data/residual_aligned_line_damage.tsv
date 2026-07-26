@@ -53,3 +53,4 @@ wts_1_34	387	144	gron → groṅ	གྲོང་ཆོས་མ་གོས་�
 wts_1_34	703	39	gron → groṅ	འཆི་མེད་གྲོང་གཙོ་ 'chi med groṅ 9750 Beiname	9750	damaged_neighbour	Exact groṅ alignment is secure; later OCR damage is separate.	Retain for later lexical review.
 wts_9_m	89	2	btan → btaṅ	(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btaṅ auch — ba abführendes	Surrounding damaged headword context	damaged_context	Exact mas བཏང / btaṅ token is secure; surrounding damage remains.	Retain surrounding material for separate review.
 wts_1_34	704	84	chin → chiṅ	འཆིང་ཡིག་ chiṅ ༡/79 Tchins yıg.	༡/79 Tchins	damaged_reference	Exact initial འཆིང / chiṅ is secure; following reference damage is separate.	Retain damaged reference for later analysis.
+wts_8_b	481	67	bran → braṅ	"kommt"" (dPeD 186,2). འབྲང་ས་ ""braṅ sa Tbran sa."	Tbran sa	damaged_reference	Exact འབྲང / braṅ is secure; quoted Tbran reference remains unresolved.	Preserve Tbran for separate marker analysis.
