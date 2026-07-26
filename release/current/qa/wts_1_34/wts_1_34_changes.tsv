@@ -28406,3 +28406,19 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 912	52	9995	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
 1275	9	12815	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་གདོང་མ་ dom gdon ma npr. eine Gottheit,
 1342	33	13105	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲེད་གདོང་མ་ dred gdon ma eine Gottheit, die
+59	196	562	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུ་ཤའི་གྲོང་ཁྱེར་ ku Sa’i gron khyer (ku śa), auch ku
+386	149	5081	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་ gron auch ~ kha Dorf, Stadt, Haushalt.
+387	2	5083	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་སྐད་ gron skad Umgangssprache, Dialekt.
+387	144	5096	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa junges
+387	151	5097	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་དུ་འདྲེན་པ་ gron du ’dren pa
+387	161	5097	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་འཇུག་ gron ’jug auch grons ’jug Bewußt-
+388	1	5098	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་དད་ gron dud
+388	3	5099	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་དད་ gron dud Hauswesen, Haushalt.
+388	9	5100	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གྲོང་རྔལ་ gron rdal auch gron brdal Siedlung,
+388	9	5100	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་རྔལ་ gron rdal auch gron brdal Siedlung,
+388	40	5101	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་པ་ gron pa auch ’groṅ ba zum Dorf gehö-
+388	64	5103	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་དཔོན་ gron dpon Dorfvorsteher.
+388	115	5112	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲོང་གསེབ་ gron gseb Dorf.
+655	133	7976	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་སིན་གྲོང་ཀྱེར་ chu srin gron khyer Bez. des
+703	39	8475	tibetan_only	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆི་མེད་གྲོང་གཙོ་ 'chi med gron 9750 Beiname
+1321	73	13031	headword_line	gron	groṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲི་ཟའི་གྲོང་ཁྱེར་ dri za’i gron khyer „Gandhar-

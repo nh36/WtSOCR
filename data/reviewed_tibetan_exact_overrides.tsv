@@ -5609,3 +5609,19 @@ wts_1_34	1275	9	2	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_1_34	1342	33	2	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
 wts_1_34	912	52	7	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gdong_same_entry_echo_batch_20260726	Explicit alternate repeats the same གདོང element.
 wts_35_51	646	46	5	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gdong_same_entry_echo_batch_20260726	Explicit alternate repeats the same གདོང element.
+wts_1_34	59	196	3	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	386	149	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	387	2	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	387	144	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Exact aligned token; later 903 damage preserved.
+wts_1_34	387	151	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	387	161	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	1	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	3	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	9	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	40	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	64	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	115	1	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	655	133	3	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	703	39	3	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Exact aligned token; later 9750 damage preserved.
+wts_1_34	1321	73	3	gron	groṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	Frozen exact Tibetan གྲོང alignment.
+wts_1_34	388	9	4	gron	groṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_grong_same_entry_echo_batch_20260726	Explicit alternate repeats གྲོང.

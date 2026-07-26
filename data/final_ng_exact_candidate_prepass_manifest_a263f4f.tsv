@@ -1,0 +1,50 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	387	114	2	གྲོང	gron	groṅ	echo	uncertain	uncertain	"གྲོང་གི་ Saas"" gron gi gcan gzan Wächter,"
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	9	4	གྲོང	gron	groṅ	echo	explicit_same_lemma_repetition	none	གྲོང་རྔལ་ gron rdal auch gron brdal Siedlung,
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	59	196	3	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	ཀུ་ཤའི་གྲོང་ཁྱེར་ ku Sa’i gron khyer (ku śa), auch ku
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	386	149	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་ gron auch ~ kha Dorf, Stadt, Haushalt.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	387	2	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་སྐད་ gron skad Umgangssprache, Dialekt.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	387	144	1	གྲོང	gron	groṅ	positional	damaged_context	latin_headword_overlap	གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa junges
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	387	151	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་དུ་འདྲེན་པ་ gron du ’dren pa
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	387	161	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་འཇུག་ gron ’jug auch grons ’jug Bewußt-
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	1	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་དད་ gron dud
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	3	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་དད་ gron dud Hauswesen, Haushalt.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	9	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་རྔལ་ gron rdal auch gron brdal Siedlung,
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	40	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་པ་ gron pa auch ’groṅ ba zum Dorf gehö-
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	64	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་དཔོན་ gron dpon Dorfvorsteher.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	388	115	1	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	གྲོང་གསེབ་ gron gseb Dorf.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	655	133	3	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	ཆུ་སིན་གྲོང་ཀྱེར་ chu srin gron khyer Bez. des
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	703	39	3	གྲོང	gron	groṅ	positional	damaged_context	latin_headword_overlap	འཆི་མེད་གྲོང་གཙོ་ 'chi med gron 9750 Beiname
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	1321	73	3	གྲོང	gron	groṅ	positional	dominant_internal_consensus	none	དྲི་ཟའི་གྲོང་ཁྱེར་ dri za’i gron khyer „Gandhar-
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_35_51	820	13	2	བཏང	btan	btaṅ	echo	uncertain	uncertain	བཏང་ spyi btan ↓ spyir bian.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_35_51	828	51	5	བཏང	btan	btaṅ	echo	explicit_same_lemma_repetition	none	སྤྱིར་བཏང་ spyir btaṅ auch spyi btan.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	901	155	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་ btan
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	902	1	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་ btan
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	902	55	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་ btan
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	21	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་གཉོད་ btan gcod
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	43	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་གཅོད་ btan gcod auch gtan gcod Ergebnis;
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	59	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་སྩོམས་ btan som.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	72	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་བཟུང་ btan bzun
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	108	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་སྙོམས་ཆེན་པོ་ btan sioms chen po Bez. für
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	904	111	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་གཏོར་ btan gtor besprengen.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	905	36	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་ཡས་ btan yas 7277? yas.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	905	37	1	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	བཏང་རག་ btan rag 7977? rag.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	1221	14	3	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	དེ་དབང་བཏང་ཚེ་ de dbaṅ btan tshe wenn man es
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_8_b	279	2	9	བཏང	btan	btaṅ	positional	dominant_internal_consensus	none	und Butter und beräuchere [das Pferd] mit བྲུབས་བཏང་ brubs btan pf.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_9_m	89	2	12	བཏང	btan	btaṅ	positional	damaged_context	tibetan_headword_overlap	(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba abführendes
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	60	5	འཆིང	chin	chiṅ	echo	explicit_same_lemma_repetition	none	འཆིང་ཀྱེད་མ་ chin byed ma auch ’chin byed pa
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_9_m	119	38	4	འཆིང	chin	chiṅ	echo	uncertain	uncertain	མིའདྲེ་ཁ་འཆིང་ mi 'dre kha 'chin cin bei den
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	190	7	2	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	སྐེད་འཆིང་ sked chin Gürtel.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	703	150	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་ ’chin pf. Tbeins fur. bein imp. Tchins
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	703	205	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་ཐག་ ‚chin thag Seil, Fessel.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	1	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་ཕུ་ chin phu
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	27	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་བ་སྦྱིན་ ‚chin ba sbyin Bez. für eine
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	41	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་བུ་ chin bu ↑ mchin bu.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	43	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་བྱེད་ chin byed.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	60	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་ཀྱེད་མ་ chin byed ma auch ’chin byed pa
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	75	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་ཀྲབ་ chin zab tief.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	84	1	འཆིང	chin	chiṅ	positional	damaged_context	latin_headword_overlap	འཆིང་ཡིག་ chin ༡/79 Tchins yıg.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	704	85	1	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འཆིང་སྔང་ chin san Tchin san.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_1_34	756	62	2	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	ཉ་འཆིང་པ་ a ’chin pa Bez. für Fischer, Fisch-
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_35_51	191	47	2	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	འདོད་འཆིང་ 'dod chin.
+a263f4fa699ad05df15d6587e3d1a446dd96984a	wts_8_b	580	45	2	འཆིང	chin	chiṅ	positional	dominant_internal_consensus	none	ལ་འཆིང་ sbrul chin.

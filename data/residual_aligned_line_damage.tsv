@@ -49,3 +49,5 @@ wts_1_34	792	86	son → soṅ	ཉེར་སོང་ ner soṅ tie bar son.	ti
 wts_1_34	350	60	lin → liṅ	གི་ལིང་པ་ gi liṅ pa 1,97// lin.	1,97// lin	damaged_reference	The aligned ལིང / liṅ token is secure; the damaged later token remains unresolved.	Keep the later lin deferred.
 wts_1_34	50	34	tshan → tshaṅ	ཀམ་ཚང་ kam tshaṅ \karma kam tshan.	\karma kam tshan	damaged_reference	Aligned tshaṅ secure; backslash reference unresolved.	Defer later tshan.
 wts_1_34	162	188	bran echo deferred	རྐོང་རྗེ་བྲང་དཀར་ rkon rje braṅ dkar tkon rje bran	tkon rje bran	damaged_reference	Aligned braṅ secure; marker-attached later bran unresolved.	Defer later bran.
+wts_1_34	387	144	gron → groṅ	གྲོང་ཆོས་མ་གོས་པ་ groṅ chos ma 903 pa junges	903	damaged_neighbour	Exact groṅ alignment is secure; later OCR damage is separate.	Retain for later lexical review.
+wts_1_34	703	39	gron → groṅ	འཆི་མེད་གྲོང་གཙོ་ 'chi med groṅ 9750 Beiname	9750	damaged_neighbour	Exact groṅ alignment is secure; later OCR damage is separate.	Retain for later lexical review.

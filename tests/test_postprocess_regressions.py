@@ -2988,6 +2988,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ངག་གདོན་ nag gdon", corrected)
         self.assertEqual(sum(row["to_token"] == "gdoṅ" for row in changes), 2)
 
+    def test_reviewed_grong_preserves_damage_and_glong_collision(self) -> None:
+        lines = {
+            (387, 144): "གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa",
+            (703, 39): "འཆི་མེད་གྲོང་གཙོ་ 'chi med gron 9750",
+            (387, 86): "གློང་ཀྱེར་དགྲ་བོ་ gron khyer dgra bo",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("groṅ chos ma 903 pa", corrected)
+        self.assertIn("'chi med groṅ 9750", corrected)
+        self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
+        self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
