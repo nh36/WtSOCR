@@ -28077,3 +28077,28 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1338	1	13080	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po
 1338	3	13081	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་ཡིག་ཆེན་པོ་ drun yig chen po Sekretär der
 1338	7	13082	headword_line	drun	druṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲུང་རམ་པ་ drun ram pa Titel eines Gelehrten.
+110	77	1322	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླད་ཁུང་ klad khun Hirnschale.
+121	136	1486	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་ཁུང་ dkar khun \skar khun.
+176	149	2220	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar
+176	149	2220	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar
+257	53	3379	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁང་ཁུང་ kan khun
+267	30	3542	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུང་ khun Loch, Grube, Höhle, Mine.
+267	66	3544	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུང་བུ་ khun bu kleines Loch, Höhlung, Pore.
+267	87	3545	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུང་ཤེད་ khun sed Inneres.
+346	106	4675	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གབ་ཁུང་ gab khun
+346	127	4676	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གབ་ཁུང་ gab khun auch sgab khun Kniekehle.
+346	127	4676	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གབ་ཁུང་ gab khun auch sgab khun Kniekehle.
+399	55	5223	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློ་ཁུང་ glo khun
+399	107	5227	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློ་ཁུང་ glo khun Türöffnung, Guckloch.
+489	149	6294	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒབ་ཁུང་ sgab khun Tgab khun.
+493	91	6328	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒོ་ཁུང་ sgo khun Fenster.
+496	171	6371	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒྱིད་ཁུང་ sgyid khun Kniekehle.
+682	88	8251	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཆན་ཁུང་ mchan khun Achselhöhle, -grube.
+815	102	9448	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྙན་ཁུང་ཆུང་ san khun chuṅ unbeirrbar.
+898	108	9871	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོར་ཁུང་ 'gtor khun
+898	110	9872	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོར་ཁུང་ 'stor khun auch stor kbun Sammel-
+934	120	10269	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྟེ་ཁུང་ lte khun
+934	122	10270	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.
+934	122	10270	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.
+935	20	10279	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྟེ་བ་ཁུང་ Ite ba khun 7//¢ khun.
+962	9	10515	headword_line	khun	khuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོར་ཁུང་ stor khun [།2/07 khun.

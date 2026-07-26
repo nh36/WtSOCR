@@ -2616,6 +2616,24 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("དྲུན་ drun synthetic genuine-final-n control.", corrected)
         self.assertEqual(sum(row["to_token"] == "druṅ" for row in changes), 7)
 
+    def test_reviewed_khung_rows_preserve_damaged_references(self) -> None:
+        lines = {
+            (176, 149): "སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar",
+            (346, 127): "གབ་ཁུང་ gab khun auch sgab khun Kniekehle.",
+            (934, 122): "ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.",
+            (962, 9): "སྟོར་ཁུང་ stor khun [།2/07 khun.",
+            (200, 1): "ཁུན་ khun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skar khuṅ auch dkar khuṅ", corrected)
+        self.assertIn("gab khuṅ auch sgab khuṅ", corrected)
+        self.assertIn("lte khuṅ auch //¢ ba khuṅ", corrected)
+        self.assertIn("stor khuṅ [།2/07 khun.", corrected)
+        self.assertIn("ཁུན་ khun synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "khuṅ" for row in changes), 7)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

@@ -5244,3 +5244,28 @@ wts_1_34	1338	1	1	drun	druṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_
 wts_1_34	1338	3	1	drun	druṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_drung_consensus_batch_20260720	Frozen exact Tibetan དྲུང alignment at 04d8c1a; genuine དྲུན is excluded.
 wts_1_34	1338	7	1	drun	druṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_drung_consensus_batch_20260720	Frozen exact Tibetan དྲུང alignment at 04d8c1a; genuine དྲུན is excluded.
 wts_9_m	199	73	4	drun	druṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_drung_consensus_batch_20260720	Frozen exact Tibetan དྲུང alignment at 04d8c1a; genuine དྲུན is excluded.
+wts_1_34	110	77	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	121	136	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	176	149	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	257	53	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	267	30	1	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	267	66	1	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	267	87	1	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	346	106	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	346	127	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	399	55	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	399	107	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	489	149	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	493	91	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	496	171	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	682	88	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	815	102	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	898	108	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	898	110	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	934	120	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	934	122	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	935	20	3	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	962	9	2	khun	khuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	Frozen exact Tibetan ཁུང alignment at 0848355; only the indexed khun token changes.
+wts_1_34	176	149	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate after auch independently repeats the same ཁུང element.
+wts_1_34	346	127	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate after auch independently repeats the same ཁུང element.
+wts_1_34	934	122	5	khun	khuṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_khung_same_entry_echo_batch_20260720	The alternate lte ba khuṅ retains the same ཁུང element despite damage in the preceding token.
