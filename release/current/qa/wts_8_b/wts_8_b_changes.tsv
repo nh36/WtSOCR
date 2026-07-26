@@ -2995,3 +2995,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 104	76	516	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བེ་ཅོན་འཆང་ be con 'chan.
 498	1	2683	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲིང་ངེ་བ་ ""'brin ne ba"
 499	1	2686	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲིང་ཚོ་ ""brin tsho"
+263	25	1446	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྲང་སྤད་ braṅ sprad auch bran phrad Grundla-
+263	45	1451	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."

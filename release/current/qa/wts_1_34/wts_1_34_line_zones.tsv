@@ -5169,7 +5169,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 49	153	359	latin_other			none	4	0	0	0	glin phran mams la / gser glin dan / za ba’i glin
 49	154	359	latin_other			none	7	0	0	0	dan / — dan / ma la sa’i glin ... rnams na bstan
 49	155	359	german_prose_with_translit			none	1	4	0	0	pa yod do „auf den Inseln Suvarnadvipa, Za-ba,
-49	157	360	headword_line	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་	po rje	medium	3	0	0	0	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po rje bran mig can
+49	157	360	headword_line	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་	po rje	medium	3	0	0	0	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po rje braṅ mig can
 49	159	360	german_prose_with_translit			none	1	4	0	0	Kam-pa-tshe, Ma-la-sa ... war die Lehre vor-
 49	160	360	german_prose			none	0	1	0	0	handen“ (Nan 64,1,6).
 49	162	361	headword_line	ཀམ་པ་ལ་	pa la	medium	4	1	0	0	ཀམ་པ་ལ་ kam pa la; vgl. kam ba la. - skt. kamba-
@@ -5202,7 +5202,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 49	200	366	headword_line	ཀམ་པོ་གངས་ར་སྤམ་མཚོ་རྩེ་	po	medium	2	0	0	0	ཀམ་པོ་གངས་ར་སྤམ་མཚོ་རྩེ་ kam po gans ra spram
 49	202	366	german_prose_with_translit			none	2	2	0	0	mtsho rtse eine Lokal-
 49	204	366	german_prose_with_translit			none	1	3	0	0	gottheit von Li-thani (Neb 226).
-49	206	367	headword_line	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་	po	medium	2	1	0	0	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po re bran mig can ein
+49	206	367	headword_line	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་	po	medium	2	1	0	0	ཀམ་པོ་རྗེ་བྲང་མིག་ཅན་ kam po re braṅ mig can ein
 49	207	367	german_prose			none	0	1	0	0	kleines Land.
 49	208	367	german_prose_with_translit			none	6	3	0	0	yul phran dgn bcu rtsa gcig ni / — „die 91 kleinen Länder, [darunter] Kam-po-rje bran-
 49	210	367	latin_other			none	1	0	0	0	mig-can“ (Lśdz 15,6).
@@ -12389,7 +12389,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 97	106	1174	german_prose_with_translit			none	1	3	0	0	kar-po gewährtes Edikt“ (In7 2); rkon kar
 97	107	1174	latin_other			none	3	0	0	0	po’i rgyal por gZan myi gZug par // kar po man
 97	109	1174	other			none	0	0	0	0	122
-97	111	1175	headword_line	ཀོང་རྗེ་བྲང་དཀར་	koṅ rje	high	1	0	0	0	ཀོང་རྗེ་བྲང་དཀར་ koṅ rje bran dkar
+97	111	1175	headword_line	ཀོང་རྗེ་བྲང་དཀར་	koṅ rje	high	1	0	0	0	ཀོང་རྗེ་བྲང་དཀར་ koṅ rje braṅ dkar
 97	113	1175	latin_other			none	7	0	0	0	po rje’i bu tsa ’phel rgyud las stsald par gnan
 97	114	1175	german_prose_with_translit			none	1	1	0	0	„es wurde angeordnet, daß kein anderer zum
 97	115	1175	german_prose_with_translit			none	2	2	0	0	König rKon Kar-po eingesetzt werden darf
@@ -22071,7 +22071,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 162	183	2082	headword_line	རྐོང་རྗེ་དཀར་པོ་	rkon rje	high	5	0	0	0	རྐོང་རྗེ་དཀར་པོ་ rkon rje dkar po tkon rje dkar po.
 162	185	2083	headword_line	རྐོང་རྗེ་འི་དཀར་པོ་	rkon rje	high	4	0	0	0	རྐོང་རྗེ་འི་དཀར་པོ་ rkon rje ’i dkar po [077 rje dkar
 162	186	2083	latin_other			none	1	0	0	0	po.
-162	188	2084	headword_line	རྐོང་རྗེ་བྲང་དཀར་	rkon rje	high	3	0	0	0	རྐོང་རྗེ་བྲང་དཀར་ rkon rje bran dkar tkon rje bran
+162	188	2084	headword_line	རྐོང་རྗེ་བྲང་དཀར་	rkon rje	high	3	0	0	0	རྐོང་རྗེ་བྲང་དཀར་ rkon rje braṅ dkar tkon rje bran
 162	189	2084	other			none	0	0	0	0	dkar.
 162	191	2085	headword_line	རྐོང་པ་	rkon pa	high	3	1	0	0	རྐོང་པ་ rkon pa eine Hautkrankheit.
 162	193	2085	german_prose			none	0	2	0	0	Lex. nad (Bon 22,22).
@@ -57159,7 +57159,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 403	157	5287	german_prose			none	0	4	0	0	1. N. einer himmlischen Region.
 403	158	5288	headword_line	༡	gyi lha	high	6	0	0	0	༡ gyi lha rnams daṅ skal ba mham par skye
 403	160	5288	other			none	0	0	0	0	307
-403	162	5289	headword_line	དགའ་ལྡན་ཕོ་བྲང་	dga’ ldan pho	high	3	0	0	0	དགའ་ལྡན་ཕོ་བྲང་ dga’ ldan pho bran
+403	162	5289	headword_line	དགའ་ལྡན་ཕོ་བྲང་	dga’ ldan pho	high	3	0	0	0	དགའ་ལྡན་ཕོ་བྲང་ dga’ ldan pho braṅ
 403	164	5289	german_prose			none	0	3	0	0	bar ’gyur te „er wird in Gemeinschaft mit
 403	165	5289	german_prose			none	0	2	0	0	den Tusita-Göttern wiedergeboren wer-
 403	166	5289	german_prose_with_translit			none	2	2	0	0	den“ (K113 280b4); byan chub sems dpa’ ...
@@ -85202,7 +85202,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 593	167	7349	german_prose			none	0	1	0	0	gegenseitige Hilfe.
 593	169	7349	german_prose_with_translit			none	4	2	0	0	Lex. phan tshun grogs phan byed pa (Dagy).
 593	171	7350	headword_line	གཅིག་བུ་	gcig	medium	1	1	0	0	གཅིག་བུ་ gcig bu Tgcig pn.
-593	173	7351	headword_line	གཅིག་བྲང་ཕྲ་མོ་	gcig	medium	2	1	0	0	གཅིག་བྲང་ཕྲ་མོ་ gcig bran phra mo Sehnenteil
+593	173	7351	headword_line	གཅིག་བྲང་ཕྲ་མོ་	gcig	medium	2	1	0	0	གཅིག་བྲང་ཕྲ་མོ་ gcig braṅ phra mo Sehnenteil
 593	174	7351	german_prose			none	0	3	0	0	des Mittelfußes beim Pferd.
 593	175	7351	german_prose_with_translit			none	2	4	0	0	tshe’u tshe ~”7 / gnas „die Stelle der Fessel
 593	176	7351	german_prose			none	0	5	0	0	und des Sehnenteils des Mittelfußes“
@@ -150299,7 +150299,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1028	7	11303	other			none	0	0	0	0	(gZer 952,2).
 1028	9	11304	headword_line	ཐེའུ་ཆུང་	the’n chuṅ lmthe’u chuṅ	high	4	0	0	0	ཐེའུ་ཆུང་ the’n chuṅ lmthe’u chuṅ.
 1028	10	11304	other			none	0	0	0	0	>
-1028	12	11305	headword_line	བེའུ་བྲང་	the’u	high	2	3	0	0	བེའུ་བྲང་ the’u brani auch the bran eine Gruppe
+1028	12	11305	headword_line	བེའུ་བྲང་	the’u	high	2	3	0	0	བེའུ་བྲང་ the’u brani auch the braṅ eine Gruppe
 1028	13	11305	german_prose			none	0	2	0	0	schadenstiftender Gottheiten (Neb
 1028	14	11305	german_prose_with_translit			none	1	1	0	0	282); vgl. lthe’u ran.
 1028	16	11305	tibetan_only			none	0	0	0	0	= ༠༨ › . . . , ›

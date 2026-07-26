@@ -21555,7 +21555,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 263	22	1445	other			none	0	0	0	0	besitzer.
 263	23	1445	german_prose_with_translit			none	3	2	0	0	Lex. khan bdag (brDa, Dagy).
 263	24	1445	tibetan_only	༧		none	0	0	0	0	༧
-263	25	1446	headword_line	བྲང་སྤད་	braṅ	high	2	2	0	0	བྲང་སྤད་ braṅ sprad auch bran phrad Grundla-
+263	25	1446	headword_line	བྲང་སྤད་	braṅ	high	2	2	0	0	བྲང་སྤད་ braṅ sprad auch braṅ phrad Grundla-
 263	26	1446	german_prose			none	0	1	0	0	R
 263	27	1446	latin_other			none	1	0	0	0	ge, Anhaltspunkt.
 263	28	1446	latin_other			none	1	0	0	0	Alambhanam
@@ -21575,7 +21575,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 263	42	1450	german_prose_with_translit			none	1	2	0	0	"Lex. chun rau tsam ""soviel wie ein wenig"""
 263	43	1450	german_prose_with_translit			none	5	1	0	0	"(brDa); run nu ma chad tsam pa la ""für: ge-"
 263	44	1450	german_prose_with_translit			none	1	2	0	0	"rade so wenig, daß es reicht"" (Dagy)."
-263	45	1451	headword_line	བྲང་བྲེང་	dreṅ	high	1	1	0	0	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."
+263	45	1451	headword_line	བྲང་བྲེང་	dreṅ	high	1	1	0	0	བྲང་བྲེང་ "braṅ bren Tdran dreṅ.
 263	46	1452	headword_line	བྲང་ས་	braṅ sa	high	2	0	0	0	བྲང་ས་ braṅ sa
 263	47	1453	headword_line	བྲང་ཚ་	braṅ tsha	high	3	1	0	0	བྲང་ཚ་ braṅ tsha eine Magenkrankheit.
 263	48	1453	german_prose_with_translit			none	6	3	0	0	"Lex. pho ba'i ra tsha la'an ""auch für: Ma-"
