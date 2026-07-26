@@ -28492,3 +28492,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 613	166	7522	headword_line	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ལོ་ཅན་ lcan lo can
 613	187	7524	headword_line	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྕང་ལོ་ lcan lo.
 784	11	9204	tibetan_only	lcan	lcaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcan dkar eine
+121	157	1490	headword_line	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་ dkar sgan rin chen phug pa
+266	167	3534	headword_line	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུག་ཆོས་སྒང་བུ་ khug chos sgan bu eine Pflanze.
+489	71	6291	tibetan_only	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒང་ sgan.
+489	90	6292	tibetan_only	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒང་བུ་ 'sgan bu Hügel.
+489	114	6293	tibetan_only	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྒང་གསེབ་ sgan gseb ein Tier, Igel oder Sta-
+1134	70	12165	headword_line	sgan	sgaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དར་མ་སྒང་ dar ma sgan npr. ein Ort am gÑal-

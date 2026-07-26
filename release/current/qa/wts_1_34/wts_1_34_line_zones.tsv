@@ -15915,7 +15915,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 121	153	1489	german_prose_with_translit			none	5	3	0	0	Lex. tshil lta bu’i rdo dkar po „weißer Stein,
 121	154	1489	example_tibetan_latin			none	5	2	0	0	wie Fett“ (brDa); rdo ༡// bye brag dkar po Zig
 121	155	1489	german_prose			none	0	4	0	0	„eine weiße Steinart“ (Dagy).
-121	157	1490	headword_line	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་	rin	medium	3	1	0	0	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་ dkar sgan rin chen phug pa
+121	157	1490	headword_line	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་	rin	medium	3	1	0	0	དཀར་སྒང་རིན་ཆེན་ཕུག་པ་ dkar sgaṅ rin chen phug pa
 121	158	1490	german_prose			none	0	1	0	0	“ npr. Lokalgottheit (977
 121	159	1490	german_prose_with_translit			none	2	2	0	0	bdag) von gIsah-kha (Neb 226).
 121	161	1491	headword_line	དཀར་ཅི་	ka	medium	1	3	0	0	དཀར་ཅི་ dkar ci eine best. Stoffart; vgl. !ka ci.
@@ -37496,7 +37496,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 266	163	3533	german_prose_with_translit			none	3	3	0	0	Lex. sa cha ~ „Winkel, Ecke“ (brDa); khug
 266	164	3533	german_prose_with_translit			none	3	1	0	0	kyog, ~ = sa cha khug khug sogs „ruhiger Ort
 266	165	3533	german_prose			none	0	1	0	0	usw.“ (Dagy).
-266	167	3534	headword_line	ཁུག་ཆོས་སྒང་བུ་	khug chos	high	2	2	0	0	ཁུག་ཆོས་སྒང་བུ་ khug chos sgan bu eine Pflanze.
+266	167	3534	headword_line	ཁུག་ཆོས་སྒང་བུ་	khug chos	high	2	2	0	0	ཁུག་ཆོས་སྒང་བུ་ khug chos sgaṅ bu eine Pflanze.
 266	169	3534	latin_other			none	5	0	0	0	~ ... snag tshwa dan bsres nas „khug chos sgani
 266	170	3534	german_prose_with_translit			none	1	2	0	0	bu [u.a.] mische man mit Tusche“ (Rtdz-K
 266	171	3534	other			none	0	0	0	0	52,26).
@@ -69413,7 +69413,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 489	66	6291	german_prose			none	0	1	0	0	Gelbwurz.
 489	68	6291	german_prose			none	0	3	0	0	Lex. sman zig (Dagy); Iga ser = sman sga
 489	69	6291	latin_other			none	4	0	0	0	skya ~ sogs kyi min du snaṅ (brDa).
-489	71	6291	tibetan_only	སྒང་		none	0	0	0	0	སྒང་ sgan.
+489	71	6291	tibetan_only	སྒང་		none	0	0	0	0	སྒང་ sgaṅ.
 489	72	6291	german_prose_with_translit			none	2	1	0	0	1. Erhöhung, Hügelvorsprung, Rücken.
 489	73	6291	latin_other			none	3	0	0	0	smad mdo khams ~ gsum ste „unten [liegt]
 489	74	6291	german_prose_with_translit			none	2	2	0	0	mDo-khams mit drei Hügeln“ (Śambh
@@ -69427,7 +69427,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 489	85	6292	german_prose			none	0	1	0	0	Stachelschweins.
 489	87	6292	german_prose_with_translit			none	5	1	0	0	Lex. sems can gzer mo’am byi thur (brDa);
 489	88	6292	german_prose_with_translit			none	2	1	0	0	gzer mo?i sgro thur (Dagy).
-489	90	6292	tibetan_only	སྒང་བུ་		none	0	1	0	0	སྒང་བུ་ 'sgan bu Hügel.
+489	90	6292	tibetan_only	སྒང་བུ་		none	0	1	0	0	སྒང་བུ་ 'sgaṅ bu Hügel.
 489	92	6292	german_prose_with_translit			none	1	5	0	0	’gus no Zes bgyi ba’i ~ „der ’Gus-no genannte Hügel“ (Liyi 17953).
 489	95	6292	tibetan_only	སྒང་བུ་		none	0	1	0	0	སྒང་བུ་ ?sgarı bu Tgan bu 1.
 489	96	6293	headword_line	སྒང་ཤ་	sgaṅ	high	1	1	0	0	སྒང་ཤ་ sgaṅ 47 (zw.) Kiste.
@@ -69441,7 +69441,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 489	109	6293	german_prose_with_translit			none	3	1	0	0	dma’i don te ri?i ze dan 77 sul gäis lta bu
 489	110	6293	german_prose			none	0	4	0	0	„1.S.v. hoch und niedrig, wie: Berggrat und
 489	112	6293	german_prose			none	0	2	0	0	Schlucht“ (Dagy).
-489	114	6293	tibetan_only	སྒང་གསེབ་		none	0	5	0	0	སྒང་གསེབ་ sgan gseb ein Tier, Igel oder Sta-
+489	114	6293	tibetan_only	སྒང་གསེབ་		none	0	5	0	0	སྒང་གསེབ་ sgaṅ gseb ein Tier, Igel oder Sta-
 489	116	6293	other			none	0	0	0	0	chelschwein.
 489	118	6293	german_prose_with_translit			none	1	1	0	0	Lex. gze mo zer ba’i srog chags (TTC).
 489	120	6293	tibetan_only	སྒབ་		none	0	0	0	0	སྒབ་ 'sgab pf. 1,5597/96 fut. 1/7597/? verstecken.
@@ -162108,7 +162108,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1134	65	12164	german_prose			none	0	2	0	0	3. npr. ein tıb. Herrscher.
 1134	67	12164	latin_other			none	5	0	0	0	de’i śul du —s rgyal po byas te „nach jenem
 1134	68	12164	german_prose_with_translit			none	1	4	0	0	fungierte Dar-ma als König“ (Nel 434).
-1134	70	12165	headword_line	དར་མ་སྒང་	ma	medium	2	3	0	0	དར་མ་སྒང་ dar ma sgan npr. ein Ort am gÑal-
+1134	70	12165	headword_line	དར་མ་སྒང་	ma	medium	2	3	0	0	དར་མ་སྒང་ dar ma sgaṅ npr. ein Ort am gÑal-
 1134	72	12165	german_prose_with_translit			none	1	2	0	0	chu in lHo-kha (UesacH 1987:
 1134	73	12165	other			none	0	0	0	0	135).
 1134	75	12165	german_prose_with_translit			none	6	1	0	0	dban ston ye Ses kyis / — dan lhu btab „dBan-
