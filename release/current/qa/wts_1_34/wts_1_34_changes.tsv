@@ -28263,3 +28263,18 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 890	94	9813	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཚོལ་ gtin tshol einschätzen, prüfen, spio-
 890	102	9813	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཐབ་ gtin zab Tiefe; tief, tiefgründig.
 890	119	9813	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་རུམ་ gtin rum Tiefe.
+373	75	4978	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ 'gran kalt werden; - ba kalt, kühl, abge-
+373	123	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ ’gran auch kran es könnte sein; ein mo-
+373	154	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ཁར་ gran har klirrende Kälte.
+373	161	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་མོ་ gran mo
+373	163	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+373	163	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+373	163	4978	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+373	181	4979	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ནད་ gran nad eine Unterleibserkrankung,
+373	206	4981	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་བ་ཅན་ gran ba can Winter, Winterzeit.
+373	211	4981	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་མོ gran mo kalt, kühl.
+374	7	4983	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ཆཚལ་ gran tsbal „kühler Hain, Garten“,
+374	19	4984	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་གཞི་ gran gZi eine Krankheit.
+374	26	4985	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་རེག་ཅན་ gran reg can Bez. für Winter.
+374	36	4986	tibetan_only	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་སེལ་ gran sel Bez. für Feuer, Feuergott.
+374	39	4987	headword_line	gran	graṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གྲང་ལྷང་ངེར་སོང་ gran lhan ner soṅ \gren lhan

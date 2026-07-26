@@ -2770,6 +2770,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཚན་ tshan synthetic", corrected)
         self.assertEqual(sum(row["to_token"] == "tshaṅ" for row in changes), 2)
 
+    def test_reviewed_grang_cross_reference_is_exact(self) -> None:
+        lines = {
+            (373, 163): "གྲང་དུས་ gran dus Kurzf. für gran nar dus, gran",
+            (375, 1): "གྲན་ gran synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("graṅ dus Kurzf. für graṅ nar dus, graṅ", corrected)
+        self.assertIn("གྲན་ gran synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "graṅ" for row in changes), 3)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
