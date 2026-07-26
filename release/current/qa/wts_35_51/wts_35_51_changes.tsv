@@ -6405,3 +6405,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1059	20	5667	headword_line	snah	snaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
 549	75	2693	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྣ་བཀང་ rma bkaṅ auch rna ga bkan, rma gru
 883	52	4579	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕག་རི་རྫོང་ phag ri rdzoṅ auch phag rdzon npr.
+294	65	1659	tibetan_only	sdon	sdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྡོང་ 'sdon.
+682	2	3314	headword_line	sdon	sdoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdon po

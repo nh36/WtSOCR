@@ -24623,7 +24623,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 294	62	1657	german_prose_with_translit			none	2	1	0	0	"rativ"" (Dagy); — sig = sie bar ma bsdogs na"
 294	63	1657	latin_other			none	1	0	0	0	"~~ sig lta bu ""wie: wenn etwas nicht fertig"
 294	64	1657	german_prose_with_translit			none	2	2	0	0	"eingepackt ist, packe ein!"" (brDa)."
-294	65	1657	tibetan_only	སྡོང་		none	0	0	0	0	སྡོང་ 'sdon.
+294	65	1657	tibetan_only	སྡོང་		none	0	0	0	0	སྡོང་ 'sdoṅ.
 294	66	1657	german_prose_with_translit			none	1	4	0	0	1. incp. für Isdon po und Isdon bu.
 294	67	1657	german_prose			none	0	1	0	0	2. Gras.
 294	68	1657	german_prose_with_translit			none	2	2	0	0	"Lex. — dan rtswa = trmam arjunam ""Gras"""
@@ -55287,7 +55287,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 681	54	3308	german_prose			none	0	1	0	0	"gewand, keine Lotusmatte [u.a.]"" (gZi 3:"
 681	55	3308	other			none	0	0	0	0	713,5).
 682	1	3309	headword_line	པད་སྡོང་	sdoṅ	high	1	0	0	0	པད་སྡོང་ pad sdoṅ
-682	2	3310	headword_line	པད་སྡོང་	sdoṅ	high	3	2	0	0	པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdon po
+682	2	3310	headword_line	པད་སྡོང་	sdoṅ	high	3	2	0	0	པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdoṅ po
 682	3	3310	latin_other			none	1	0	0	0	Lotusstengel.
 682	4	3310	latin_other			none	8	0	0	0	'o ma can gyi rgya mtsho las / — rtse la
 682	5	3310	german_prose_with_translit			none	3	2	0	0	"khye'u mched Ira 'khruns (metr.) ""aus dem"

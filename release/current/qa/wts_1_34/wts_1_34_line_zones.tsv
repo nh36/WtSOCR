@@ -100802,7 +100802,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 696	13	8389	headword_line	མཆོད་སྔོང་ཅན་	mchod	medium	2	3	0	0	མཆོད་སྔོང་ཅན་ mchod sdon can Bez. für Was-
 696	15	8389	other			none	0	0	0	0	serente,
 696	17	8389	german_prose_with_translit			none	4	1	0	0	Lex. chu’i bya gag la’aṅ (brDa).
-696	19	8390	headword_line	མཆོད་སྡོང་སྦྱིན་འཕྲོག་	mchod	medium	3	0	0	0	མཆོད་སྡོང་སྦྱིན་འཕྲོག་ mchod sdon sbyin phrog
+696	19	8390	headword_line	མཆོད་སྡོང་སྦྱིན་འཕྲོག་	mchod	medium	3	0	0	0	མཆོད་སྡོང་སྦྱིན་འཕྲོག་ mchod sdoṅ sbyin phrog
 696	21	8390	german_prose			none	0	2	0	0	Beiname Mahesvaras.
 696	23	8390	german_prose_with_translit			none	4	2	0	0	Lex. dban phyug chen po (brDa).
 696	25	8391	headword_line	མཆོད་གནས་	mchod	medium	3	1	0	0	མཆོད་གནས་ mchod gnas auch mchod pa’i gnas
@@ -102638,7 +102638,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 707	126	8524	german_prose			none	0	2	0	0	ja ldon zes snan „Gefäß zum Teequirlen;
 707	127	8524	german_prose_with_translit			none	1	3	0	0	Butterfaß, heißt auch ja ldon“ (brDa); ja
 707	128	8524	german_prose_with_translit			none	2	1	0	0	srub snod de gsol mdon sogs (Dagy).
-707	130	8524	tibetan_only	ཇ་སྡོང་		none	0	1	0	0	ཇ་སྡོང་ ja sdon Teestrauch.
+707	130	8524	tibetan_only	ཇ་སྡོང་		none	0	1	0	0	ཇ་སྡོང་ ja sdoṅ Teestrauch.
 707	132	8524	german_prose_with_translit			none	5	4	0	0	Lex. ja’i lo ma can gyi Sin sdon (Dagy, ähnl.
 707	133	8524	latin_other			none	1	0	0	0	brDa).
 707	135	8524	tibetan_only	ཇ་ཡུན་		none	0	0	0	0	ཇ་ཡུན་ ja yun
@@ -163934,7 +163934,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1160	75	12289	german_prose_with_translit			none	1	6	0	0	dgu’ — „als er sich zum Götterberg Gyando begab, verehrte ihn sogar der Berg Sume-
 1160	77	12289	german_prose			none	0	1	0	0	ru, indem er sich seitlich verneigte“ (PT1286
 1160	78	12289	other			none	0	0	0	0	33).
-1160	80	12289	tibetan_only	དུད་སྡོང་		none	0	1	0	0	དུད་སྡོང་ dud sdon Rauchsäule.
+1160	80	12289	tibetan_only	དུད་སྡོང་		none	0	1	0	0	དུད་སྡོང་ dud sdoṅ Rauchsäule.
 1160	82	12289	german_prose_with_translit			none	5	1	0	0	’du ra chen po la ... — gis lho sprin ’gran le „auf
 1160	83	12289	german_prose_with_translit			none	1	2	0	0	dem großen Versammlungsgelände konkur-
 1160	84	12289	german_prose			none	0	5	0	0	rierten die Rauchsäulen mit den Wolken aus
