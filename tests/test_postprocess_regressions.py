@@ -3405,6 +3405,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("སྐོང་ཚེ་ skoṅ tshe", corrected)
         self.assertIn("unreviewed skon control", corrected)
 
+    def test_reviewed_krung_rejects_different_tibetan_echo(self) -> None:
+        lines = {
+            (200, 51): "སྐྱིལ་ཀྲུང་ skyil krun",
+            (109, 16): "ཀྲུང་ཀླང་ kruṅ krun \\khrun khrun.",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyil kruṅ", corrected)
+        self.assertIn("ཀྲུང་ཀླང་ kruṅ krun", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
