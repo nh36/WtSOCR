@@ -2794,6 +2794,27 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("མན་ man synthetic", corrected)
         self.assertEqual(sum(row["to_token"] == "maṅ" for row in changes), 2)
 
+    def test_reviewed_gting_row_does_not_promote_deferred_echo(self) -> None:
+        positive = {
+            (890, 1): "གཏིང་མཐའ་ gtin mtha’",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(positive), label="wts_1_34"
+        )
+        self.assertIn("གཏིང་མཐའ་ gtiṅ mtha’", corrected)
+        self.assertEqual(sum(row["to_token"] == "gtiṅ" for row in changes), 1)
+
+        deferred = {
+            (611, 8): "་གཅོད་གཏིང་འཕབྲིན་ mo geod gtin 'byin auch",
+            (612, 1): "unrelated gtin prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(deferred), label="wts_35_51"
+        )
+        self.assertIn("mo geod gtin 'byin auch", corrected)
+        self.assertIn("unrelated gtin prose control", corrected)
+        self.assertFalse(any(row["to_token"] == "gtiṅ" for row in changes))
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
