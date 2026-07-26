@@ -28470,3 +28470,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1017	56	11149	tibetan_only	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུན་མོང་ tbun mon
 1017	118	11157	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུན་མོང་ཆོས་ thun mon chos
 1017	212	11158	tibetan_only	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུན་མོང་ཀུད་མེད་ tbun mon bud med Bez. für
+47	150	312	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀག་ལ་བོང་ kag la bon
+47	196	319	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀག་ལ་བོང་ kag la bon der Nan-chao-Herrscher

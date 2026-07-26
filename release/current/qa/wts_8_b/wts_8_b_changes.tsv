@@ -3009,3 +3009,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 512	33	2740	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.
 409	62	2266	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ 'dbyi mon.
 409	73	2267	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ ?dbyi mon Tdbyi mo.
+112	45	563	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བོང་ར་ ""bon rgya"
+113	24	566	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བོང་ང་ནག་པོ་ boṅ na nag po Kurzf. bon nag
+113	38	567	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བོང་ང་དམར་པོ་ boṅ na dmar po auch bon ba
+115	52	584	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བོང་བུ་ལན་ ° bon bu lan tshwa eine Heilpflan-
+115	66	586	tibetan_only	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-
