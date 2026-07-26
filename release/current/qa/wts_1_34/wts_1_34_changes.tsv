@@ -28343,3 +28343,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 958	51	10465	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin,
 1025	124	11266	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྲེག་འབྲིང་སྐྱེས་བུ་ theg ’brin skyes bu Bez. für
 1202	1	12515	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ཉིད་རྟོགས་འབྲིང་ de ñid rtogs ’brin
+115	56	1389	tibetan_only	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་ཆུ་ klun chu
+115	94	1389	tibetan_only	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་ཆུ་ klun chn.
+115	169	1391	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་རྟ་དགྲ་བཟློག་ klun rta dgra bzlog ein Ritual zur
+115	182	1392	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་ལྡན་ klun ldan Bergfluß, Wasserfall.
+115	185	1393	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་ཚུགས་ klun tshugs npr. Ortsname, vgl. Irlun
+115	191	1394	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་བཞི་ klun bi Symboltiere für die vier Him-
+115	204	1394	example_tibetan_latin	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་སེ་ klun se 72. junger Mann oder Mann über
+115	209	1395	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུང་གསེར་གྱི་ཕྱེ་མ་ཅན་ klun gser gyi phye ma can
