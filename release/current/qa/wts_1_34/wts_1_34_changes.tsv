@@ -28324,3 +28324,14 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 466	117	6044	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཚེར་མ་ rgyan tsher ma ein Dornenstrauch.
 466	129	6045	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་ཤེལ་ rgyan śel Fernglas, Fernrohr.
 466	138	6046	headword_line	rgyan	rgyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱང་སོ་ rgyan so Spionage; ¬~ ’dzugs ausspionie-
+157	127	1989	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་འཐུང་དབང་པོ་ rkaṅ ’thun dbaṅ po auch rkan
+292	129	3966	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁྲག་འཐུང་སྲིན་བུ་ khrag ’thun srin bu Blutegel.
+401	56	5249	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གློག་འཐུང་ glog ’thun Bez. für Schildkröte.
+463	187	5985	headword_line	thuh	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྒྱ་མཆོ་འཐུང་ rgya mtsho 'thuh Bez. für das
+646	154	7858	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་འཐུང་ཕོད་པ་ chu 'thun phod pa Bez. für
+646	158	7859	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་འཐུང་དབང་པོ་ chu ’thun dbaṅ po Bez. für
+646	161	7860	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་འཐུང་ཞོད་ chn ’thun ’od Bez. für Sonnen-
+1072	1	11841	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཐུང་གཅོད་ thun gcod
+1072	75	11843	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
+1072	75	11843	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཐུང་གཉོད་ 'thun gcod auch 'thun bcod Bez. für
+1072	89	11844	headword_line	thun	thuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཐུང་ བྱེད་ 'thun byed.
