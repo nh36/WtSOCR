@@ -28559,3 +28559,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 636	179	7867	headword_line	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid „Wind führt
 824	3	9645	tibetan_only	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྙང་རླུང་ san rlun
 1348	98	13344	tibetan_only	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.
+77	49	829	headword_line	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་སྲུང་བ་ kun tu srun ba
+128	80	1628	tibetan_only	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོར་སྲུང་ dkor srun.
+143	157	1824	headword_line	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་སྲུང་ bka’ srun
+143	191	1825	headword_line	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་སྲུང་ bka’ srun auch bka’ bsrun.
