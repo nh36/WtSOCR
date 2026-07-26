@@ -4635,14 +4635,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 46	48	273	german_prose_with_translit			none	3	4	0	0	Zes bya ba’i 477? „gelbes Sandelholz oder der ‚in
 46	49	273	german_prose_with_translit			none	2	3	0	0	der Zeit entstandene‘ [Deutung von skt.
 46	50	273	german_prose			none	0	2	0	0	kaliya] Baum“ (Dagy).
-46	52	274	headword_line	ཀ་ལིང་	ka	medium	2	3	0	0	ཀ་ལིང་ ka lin, auch ka li ein Ort 111 rMa.
+46	52	274	headword_line	ཀ་ལིང་	ka	medium	2	3	0	0	ཀ་ལིང་ ka liṅ, auch ka li ein Ort 111 rMa.
 46	54	274	german_prose_with_translit			none	5	5	0	0	rma — lha khan than la ’dzoms „sie versammeln sich in der ‚Tempelebene‘ Ka-lin in rMa“
 46	56	274	german_prose_with_translit			none	5	2	0	0	(Gesar 179,22); rma ka li lha [khan] than la „in
-46	58	275	headword_line	ཀ་ལིང་འབུད་	ka	medium	1	0	0	0	ཀ་ལིང་འབུད་ ka lin ’bud
+46	58	275	headword_line	ཀ་ལིང་འབུད་	ka	medium	1	0	0	0	ཀ་ལིང་འབུད་ ka liṅ ’bud
 46	60	275	german_prose			none	0	5	0	0	der ‚ITempelebene‘ Ka-li in rMa“ (Gesar
 46	61	275	latin_other			none	4	0	0	0	190,8); rma — tsho drug 'du ra gyis (metr.)
 46	62	275	german_prose_with_translit			none	2	6	0	0	„haltet die Versammlung der sechzehn Abteilungen in Ka-lin in rMa ab!“ (Gesar 192,33).
-46	65	276	headword_line	ཀ་ལིང་ཀ་	ka	medium	5	1	0	0	ཀ་ལིང་ཀ་ ka lin ka, auch ka linika, ka lin ga, ka
+46	65	276	headword_line	ཀ་ལིང་ཀ་	ka	medium	5	1	0	0	ཀ་ལིང་ཀ་ ka liṅ ka, auch ka linika, ka lin ga, ka
 46	67	276	latin_other			none	2	0	0	0	linga. — skt. kalinga.
 46	68	276	german_prose			none	0	7	0	0	1. ein Volk und eine Region in Indien.
 46	69	276	german_prose_with_translit			none	2	1	0	0	— „.nisrin pos bzun bas tshando ha Zes btags
@@ -4671,12 +4671,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 46	93	276	german_prose			none	0	4	0	0	Frucht des Idug-mo-Aun-Baumes“ (Dagy).
 46	95	276	german_prose_with_translit			none	6	1	0	0	Lex. ka lin ga’i (v.l. ka’i) rgyal po = kalingaraja
 46	96	276	german_prose			none	0	1	0	0	(Mvy 3589).
-46	97	277	headword_line	ཀ་ལིང་འབུད་	ka	medium	1	1	0	0	ཀ་ལིང་འབུད་ ka lin ’bud Bed. unklar, vielleicht
+46	97	277	headword_line	ཀ་ལིང་འབུད་	ka	medium	1	1	0	0	ཀ་ལིང་འབུད་ ka liṅ ’bud Bed. unklar, vielleicht
 46	98	277	german_prose_with_translit			none	1	1	0	0	„den Kalinga-Kürbis blasen“.
 46	99	277	german_prose_with_translit			none	2	3	0	0	Lex. burku, phudke vielleicht für phutkrta „Ton
 46	101	277	german_prose_with_translit			none	1	2	0	0	von Blasinstrumenten“ (Ishe 231).
-46	103	278	headword_line	ཀ་ལིང་ཡ་ཀ་	ka	medium	3	0	0	0	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka
-46	105	279	headword_line	ཀ་ལིང་ཡ་ཀ་	ka	medium	5	1	0	0	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka Ika li ya ka.
+46	103	278	headword_line	ཀ་ལིང་ཡ་ཀ་	ka	medium	3	0	0	0	ཀ་ལིང་ཡ་ཀ་ ka liṅ ya ka
+46	105	279	headword_line	ཀ་ལིང་ཡ་ཀ་	ka	medium	5	1	0	0	ཀ་ལིང་ཡ་ཀ་ ka liṅ ya ka Ika li ya ka.
 46	107	280	headword_line	ཀཱ་ལིནྡའི་བུ་མོ་	ka linda’i	high	4	1	0	0	ཀཱ་ལིནྡའི་བུ་མོ་ ka linda’i bu mo, auch ka linda’i bu
 46	108	280	german_prose			none	0	5	0	0	mo „Tochter des Kälinda“, Bez. für
 46	109	280	german_prose			none	0	3	0	0	den Fluß Yamuna. - skt. kalindi.
@@ -45103,7 +45103,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 321	169	4384	headword_line	འཁོར་རོ་རོ	khor	high	1	3	0	0	འཁོར་རོ་རོ ’khor ro ro auch gor ro ro im Kreis.
 321	171	4384	german_prose_with_translit			none	2	1	0	0	Lex. gor ro ro = ~ (brDa); gor ro ro = mtha’
 321	172	4384	german_prose_with_translit			none	1	1	0	0	~ lta bu (Dagy).
-321	174	4385	headword_line	ཞཁོར་ལིང་	khor	high	1	0	0	0	ཞཁོར་ལིང་ ’khor lin kreisrund.
+321	174	4385	headword_line	ཞཁོར་ལིང་	khor	high	1	0	0	0	ཞཁོར་ལིང་ ’khor liṅ kreisrund.
 321	176	4385	german_prose_with_translit			none	5	3	0	0	skra ~ du byi ba la ni „wenn das Haar kreisrund ausgefallen ist“ (Siddh 26.121).
 321	179	4386	headword_line	འཁོར་ལ་	khor lo	high	2	4	0	0	འཁོར་ལ་ ’khor lo Rad, Kreis, Scheibe, Man-
 321	181	4386	german_prose			none	0	5	0	0	dala, auch die Cakras im Körper.
@@ -49180,7 +49180,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 350	54	4717	tibetan_only			none	0	1	0	0	A བྲ
 350	56	4717	other			none	0	0	0	0	«a
 350	58	4717	other			none	0	0	0	0	NZ
-350	60	4718	headword_line	གི་ལིང་པ་	gi	medium	2	0	0	0	གི་ལིང་པ་ gi lin pa 1,97// lin.
+350	60	4718	headword_line	གི་ལིང་པ་	gi	medium	2	0	0	0	གི་ལིང་པ་ gi liṅ pa 1,97// lin.
 350	61	4719	headword_line	གི་ཧང་	gi	medium	1	0	0	0	གི་ཧང་ gi han †9/ wan
 350	63	4719	german_prose_with_translit			none	2	3	0	0	& gin auch - pa Diener, Bediensteter, ~ pho
 350	65	4719	german_prose			none	0	2	0	0	Diener, ~ mo Dienerin.
@@ -49349,7 +49349,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 351	66	4725	german_prose			none	0	2	0	0	Hornkrone (?)“ (Tise 599,3).
 351	68	4725	german_prose_with_translit			none	1	2	0	0	ran: gu lin Beiname des Maheśvara.
 351	69	4725	german_prose_with_translit			none	4	2	0	0	Lex. dban phyug chen po (brDa).
-351	71	4725	tibetan_only	གུ་ལིང་དར་		none	0	3	0	0	གུ་ལིང་དར་ gu lin dar ein Seidenstoff oder
+351	71	4725	tibetan_only	གུ་ལིང་དར་		none	0	3	0	0	གུ་ལིང་དར་ gu liṅ dar ein Seidenstoff oder
 351	72	4725	german_prose			none	0	1	0	0	Brokat.
 351	74	4725	german_prose_with_translit			none	1	4	0	0	Lex. gos chen Zig (brDa, Dagy).
 351	76	4726	headword_line	གུ་ཤྲཱི	śri	high	2	2	0	0	གུ་ཤྲཱི gu śri ein Titel, Staatslehrer.
@@ -51676,7 +51676,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 366	109	4905	german_prose_with_translit			none	2	3	0	0	ma dgu (vgl. Neb 313, Srid 8b1).
 366	111	4906	headword_line	གྒྱམ་།བ་	gyam kha	high	2	1	0	0	གྒྱམ་།བ་ gyam kha Flußufer.
 366	113	4906	german_prose_with_translit			none	3	2	0	0	Lex. chu’i gram kha (brDa, Dagy).
-366	115	4906	tibetan_only	གྱི་ལིང་		none	0	0	0	0	གྱི་ལིང་ ai lin
+366	115	4906	tibetan_only	གྱི་ལིང་		none	0	0	0	0	གྱི་ལིང་ ai liṅ
 366	117	4906	german_prose_with_translit			none	1	4	0	0	nicht zu einer vollständigen Trennung [der
 366	118	4906	german_prose			none	0	1	0	0	Parteien] kommt“ (MTH3/5/30 a3).
 366	120	4906	german_prose			none	0	2	0	0	Lex. /hu - zer „Teilchen zerstreuen“
@@ -53479,10 +53479,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 379	200	5014	other			none	0	0	0	0	134,9).
 379	202	5014	german_prose_with_translit			none	1	6	0	0	Lex. äin dgun - „das Maß des Schattens ab
 379	203	5014	german_prose_with_translit			none	3	2	0	0	Mittag“ (brDa); grib ma’i tshod (Dagy).
-380	1	5014	tibetan_only	གྲིབ་ལིང་		none	0	0	0	0	གྲིབ་ལིང་ grib lin
+380	1	5014	tibetan_only	གྲིབ་ལིང་		none	0	0	0	0	གྲིབ་ལིང་ grib liṅ
 380	3	5014	german_prose			none	0	1	0	0	2. Sonnenuhr.
 380	5	5014	german_prose_with_translit			none	4	1	0	0	Lex. ni grib las dus tshod lta byed (TTC).
-380	7	5015	headword_line	གྲིབ་ལིང་	Augenkrankheit	high	1	1	0	0	གྲིབ་ལིང་ grib lin eine Augenkrankheit.
+380	7	5015	headword_line	གྲིབ་ལིང་	Augenkrankheit	high	1	1	0	0	གྲིབ་ལིང་ grib liṅ eine Augenkrankheit.
 380	9	5015	german_prose_with_translit			none	5	5	0	0	Lex. btsog pa mig gi lin tog „Unreinheit, Flecken auf dem Auge“ (brDa); grib kyis byun
 380	11	5015	latin_other			none	3	0	0	0	ba’i mig gi lin tog „durch Verunreinigung
 380	12	5015	german_prose_with_translit			none	1	4	0	0	entstandener Fleck auf dem Auge“ (Dagy).
@@ -54391,13 +54391,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 385	219	5075	latin_other			none	1	0	0	0	wa lun grog mo gser phyes ’gens sam „wollt
 385	221	5075	german_prose			none	0	5	0	0	ihr die Wa-lun-Schlucht mit Goldstaub fül-
 386	1	5075	other			none	0	0	0	0	vo
-386	3	5075	tibetan_only	གྲོག་སྨན་པི་པི་ལིང་		none	0	0	0	0	གྲོག་སྨན་པི་པི་ལིང་ grog sman pi pi lin
+386	3	5075	tibetan_only	གྲོག་སྨན་པི་པི་ལིང་		none	0	0	0	0	གྲོག་སྨན་པི་པི་ལིང་ grog sman pi pi liṅ
 386	5	5075	german_prose_with_translit			none	3	1	0	0	len?“ (Glr 168,28); -’i gser khral de dan
 386	6	5075	german_prose			none	0	6	0	0	gsum (metr.) „und mit dem Tribut des Gol-
 386	7	5075	german_prose			none	0	6	0	0	des von der Schlucht sind es drei“ (Sumpa
 386	8	5075	other			none	0	0	0	0	17736).
 386	10	5075	german_prose_with_translit			none	6	3	0	0	Lex. grog mo = g.yaṅ sa chu’i gad ’obs „Abhang, Steilufer“ (brDa); grog po (Dagy).
-386	12	5075	tibetan_only	གྲོག་སྨན་པི་པེ་ལིང་		none	0	2	0	0	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi lin ein Heil-
+386	12	5075	tibetan_only	གྲོག་སྨན་པི་པེ་ལིང་		none	0	2	0	0	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi liṅ ein Heil-
 386	14	5075	german_prose			none	0	1	0	0	mittel, vgl. pz pi lin.
 386	16	5075	german_prose_with_translit			none	5	2	0	0	Lex. pipili Zes pa grog ma la ’jug cin de dan
 386	17	5075	german_prose_with_translit			none	5	1	0	0	’dra ba’i sman nag po la - Zes pa la’an
@@ -61084,7 +61084,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 430	94	5658	german_prose_with_translit			none	2	3	0	0	[Mönche] zu sein“ (K1 ka 23756); dge
 430	95	5658	german_prose_with_translit			none	3	3	0	0	sbyon ~ ’di dag la „diese kahlköpfigen Sramanas“ (Prav 127,18); dge sbyon ~ ’di’i sten
 430	98	5658	other			none	0	0	0	0	356
-430	100	5659	headword_line	མགོ་ ལིང་	mgo	medium	1	0	0	0	མགོ་ ལིང་ mgo lin
+430	100	5659	headword_line	མགོ་ ལིང་	mgo	medium	1	0	0	0	མགོ་ ལིང་ mgo liṅ
 430	102	5659	latin_other			none	3	0	0	0	du sa spar mo re res gtor cig „jeder werfe auf
 430	103	5659	german_prose			none	0	5	0	0	die kahlköpfigen Mönche eine Handvoll
 430	104	5659	german_prose			none	0	2	0	0	Erde!“ (Udr 37,3).
@@ -162248,7 +162248,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1136	55	12178	german_prose_with_translit			none	1	2	0	0	bab „bestes Lebensalter“ (Dagy); skyes phran
 1136	56	12178	latin_other			none	2	0	0	0	ni — (Liś 22,4).
 1136	58	12179	headword_line	དར་ལའུ་	la’u	high	2	1	0	0	དར་ལའུ་ dar la’u Tdar la.
-1136	60	12179	tibetan_only	དར་ལིང་		none	0	3	0	0	དར་ལིང་ dar lin eine Seide, Brokat; chin. 3.
+1136	60	12179	tibetan_only	དར་ལིང་		none	0	3	0	0	དར་ལིང་ dar liṅ eine Seide, Brokat; chin. 3.
 1136	62	12179	german_prose_with_translit			none	1	2	0	0	ling Damast (vgl. LAURER 1916: 523,
 1136	63	12179	german_prose			none	0	1	0	0	Nr. 282).
 1136	65	12179	german_prose_with_translit			none	1	4	0	0	Lex. gos chen Zig (brDa, Dagy).

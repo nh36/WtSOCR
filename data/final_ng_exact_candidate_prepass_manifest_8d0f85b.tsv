@@ -1,0 +1,85 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_35_51	611	8	3	གཏིང	gtin	gtiṅ	echo	uncertain	uncertain	་གཅོད་གཏིང་འཕབྲིན་ mo geod gtin 'byin auch
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	322	61	3	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtin rdzogs ein
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	720	20	2	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	འཇམ་གཏིང་ངེར་ Jam gtin her ganz leise.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	889	220	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཀློ་ gtin klo Bez. für die kla klo 111 den
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	1	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་མཐའ་ gtin mtha’
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	3	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་མཐའ་ gtin mtha’ Ausmaß; ~~ med pa
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	17	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་རྡོ་ gtin rdo Anker.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	51	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཕྱིན་ gtin phyin beenden,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	58	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་མེད་ gtin med.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	74	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཚིག་ gtin tshig Spott.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	82	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཚུགས་ gtin tshugs fest verwurzelt sein,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	94	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཚོལ་ gtin tshol einschätzen, prüfen, spio-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	102	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་ཐབ་ gtin zab Tiefe; tief, tiefgründig.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	890	119	1	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	གཏིང་རུམ་ gtin rum Tiefe.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_35_51	611	55	12	གཏིང	gtin	gtiṅ	positional	dominant_internal_consensus	none	(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtin 'byin [7770
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	163	5	གྲང	gran	graṅ	echo	cross_reference_probable	none	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	163	8	གྲང	gran	graṅ	echo	cross_reference_probable	none	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	75	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ 'gran kalt werden; - ba kalt, kühl, abge-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	123	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ ’gran auch kran es könnte sein; ein mo-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	154	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ཁར་ gran har klirrende Kälte.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	161	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་མོ་ gran mo
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	163	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་དས་ gran dus Kurzf. für gran nar dus, gran
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	181	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ནད་ gran nad eine Unterleibserkrankung,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	206	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་བ་ཅན་ gran ba can Winter, Winterzeit.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	373	211	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་མོ gran mo kalt, kühl.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	374	7	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ཆཚལ་ gran tsbal „kühler Hain, Garten“,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	374	19	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་གཞི་ gran gZi eine Krankheit.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	374	26	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་རེག་ཅན་ gran reg can Bez. für Winter.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	374	36	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་སེལ་ gran sel Bez. für Feuer, Feuergott.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	374	39	1	གྲང	gran	graṅ	positional	dominant_internal_consensus	none	གྲང་ལྷང་ངེར་སོང་ gran lhan ner soṅ \gren lhan
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	56	164	8	མང	man	maṅ	echo	explicit_same_lemma_repetition	none	ཀུ་བྱི་མང་སྐེ་ ku byi man ske, auch ku byi man ke
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_9_m	63	64	6	མང	man	maṅ	echo	explicit_same_lemma_repetition	none	མང་དུ་ཐས་པ་ maṅ du thos pa auch man thos,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_9_m	66	62	6	མང	man	maṅ	echo	explicit_same_lemma_repetition	none	མང་པོས་བཀུར་བ་ maṅ pos bkur ba auch man lhur
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	41	143	2	མང	man	maṅ	positional	dominant_internal_consensus	none	ཀ་མང་ ka man irrt. für \ka mad.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	51	40	3	མང	man	maṅ	positional	dominant_internal_consensus	none	ཀར་པོ་མང་པོ་རྗེ་ kar po man po rje ehrender Beina-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	56	164	3	མང	man	maṅ	positional	dominant_internal_consensus	none	ཀུ་བྱི་མང་སྐེ་ ku byi man ske, auch ku byi man ke
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	159	73	2	མང	man	maṅ	positional	dominant_internal_consensus	none	རྐང་མང་ rkaṅ man.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	190	51	4	མང	man	maṅ	positional	dominant_internal_consensus	none	སྐེམ་པོ་སུལ་མང་ skem po sul man
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	190	96	4	མང	man	maṅ	positional	dominant_internal_consensus	none	སྐེམ་པོ་སུལ་མང་ skem po sul man eine Art Myro-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	289	119	2	མང	man	maṅ	positional	dominant_internal_consensus	none	ཏོ་མང་ khyo man Prostituierte.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	487	172	3	མང	man	maṅ	positional	dominant_internal_consensus	none	རྒྱན་ལུགས་མང་བ་ rgyun lugs man ba oft be-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	649	210	2	མང	man	maṅ	positional	dominant_internal_consensus	none	ཆུ་མང་ལྡན་པ་ chu man ldan pa Bez. für See,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	961	62	2	མང	man	maṅ	positional	dominant_internal_consensus	none	སྟོབས་མང་ stobs man Bez. für Eisen.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	994	143	2	མང	man	maṅ	positional	dominant_internal_consensus	none	ཁྲལས་མང་ thabs man sehr geschickt.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	1220	92	3	མང	man	maṅ	positional	dominant_internal_consensus	none	དེ་བས་མང་དུ་སྤྱོད་པ་ de bas man du spyod pa ein
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	1270	22	2	མང	man	maṅ	positional	dominant_internal_consensus	none	དོན་མང་ don man „viel Sinn, viele Gedanken“,
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	50	34	5	ཚང	tshan	tshaṅ	echo	uncertain	uncertain	ཀམ་ཚང་ kam tshan \karma kam tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	54	214	4	ཚང	tshan	tshaṅ	echo	uncertain	uncertain	ཀིའུ་ ཚང་ kin tshan \ke’u tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	575	129	8	ཚང	tshan	tshaṅ	echo	explicit_same_lemma_repetition	none	ཅག་གེ་ཚང་བ་ cag ge tshan ba auch cag ger tshan
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_35_51	379	52	7	ཚང	tshan	tshaṅ	echo	cross_reference_probable	none	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_9_m	40	20	6	ཚང	tshan	tshaṅ	echo	explicit_same_lemma_repetition	none	མ་ཚང་བྲ་ ma tshaṅ ba auch ma tshan, ma tshani
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	50	34	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཀམ་ཚང་ kam tshan \karma kam tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	52	69	3	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཀརྨ་ཀམ་ཚང་ karma kam tshan Bez. für |Karma
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	54	214	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཀིའུ་ ཚང་ kin tshan \ke’u tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	84	98	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཀུན་ཚང་མ་ kun tshan ma npr. eine Däkini; gehört
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	91	117	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཀེའུ་ ཚང་ ke’u tshan.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	128	152	4	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	དཀྱིལ་ཁང་གྲ་ཚང་ dkyil khaṅ gra tshan N. eines der
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	285	79	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཏྱིམ་ཚང་ khyim tshan Familie, Haushalt.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	288	180	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཏྱེའུ་ཚང་ khye’u tshan frisch, neu, jung.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	386	22	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	གྲོག་ཚང་ grog tshan Ameisenhügel.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	575	129	3	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	ཅག་གེ་ཚང་བ་ cag ge tshan ba auch cag ger tshan
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	629	64	2	ཚང	tshah	tshaṅ	positional	dominant_internal_consensus	none	ཆང་ཚང་ chaṅ tshah Wirtshaus, Schenke.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	807	179	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	གཉེར་ཚང་ gier tshan Güterverwaltungsamt; -
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	1161	67	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	དུད་ཚང་ dud tshan Familie, Haushalt.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	1271	62	2	ཚང	tshan	tshaṅ	positional	dominant_internal_consensus	none	དོན་ཚང་ don tshan Erledigung einer Angele-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_35_51	401	45	2	ཚང	tshah	tshaṅ	positional	dominant_internal_consensus	none	ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	65	8	ལིང	lin	liṅ	echo	explicit_same_lemma_repetition	none	ཀ་ལིང་ཀ་ ka lin ka, auch ka linika, ka lin ga, ka
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	350	60	6	ལིང	lin	liṅ	echo	damaged_reference	damaged_reference	གི་ལིང་པ་ gi lin pa 1,97// lin.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	52	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ ka lin, auch ka li ein Ort 111 rMa.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	58	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་འབུད་ ka lin ’bud
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	65	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཀ་ ka lin ka, auch ka linika, ka lin ga, ka
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	97	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་འབུད་ ka lin ’bud Bed. unklar, vielleicht
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	103	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	46	105	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka Ika li ya ka.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	321	174	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཞཁོར་ལིང་ ’khor lin kreisrund.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	350	60	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གི་ལིང་པ་ gi lin pa 1,97// lin.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	351	71	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གུ་ལིང་དར་ gu lin dar ein Seidenstoff oder
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	366	115	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྱི་ལིང་ ai lin
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	380	1	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲིབ་ལིང་ grib lin
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	380	7	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲིབ་ལིང་ grib lin eine Augenkrankheit.
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	386	3	5	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲོག་སྨན་པི་པི་ལིང་ grog sman pi pi lin
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	386	12	5	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi lin ein Heil-
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	430	100	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	མགོ་ ལིང་ mgo lin
+8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	wts_1_34	1136	60	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	དར་ལིང་ dar lin eine Seide, Brokat; chin. 3.

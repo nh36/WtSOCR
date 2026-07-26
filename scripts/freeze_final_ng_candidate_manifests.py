@@ -25,6 +25,10 @@ FAMILIES = {
     "སེང": ({"sen", "seh"}, "seṅ"),
     "སོང": ({"son"}, "soṅ"),
     "ལིང": ({"lin"}, "liṅ"),
+    "ཚང": ({"tshan", "tshah"}, "tshaṅ"),
+    "གཏིང": ({"gtin"}, "gtiṅ"),
+    "གྲང": ({"gran"}, "graṅ"),
+    "མང": ({"man"}, "maṅ"),
 }
 
 FIELDS = [
