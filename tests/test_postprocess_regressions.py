@@ -2950,6 +2950,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unrelated lon and loh control", corrected)
         self.assertEqual(sum(row["to_token"] == "loṅ" for row in changes), 1)
 
+    def test_reviewed_king_echoes_remain_exactly_gated(self) -> None:
+        lines = {
+            (54, 18): "ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin",
+            (1400, 5): "unreviewed kin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kiṅ kan, auch kan kiṅ, kan dan kiṅ", corrected)
+        self.assertIn("unreviewed kin control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kiṅ" for row in changes), 3)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

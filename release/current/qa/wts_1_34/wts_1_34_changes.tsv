@@ -28384,3 +28384,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 773	32	9115	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉི་མས་ལོང་བ་ Ai mas lon ba Bez. für Nacht-
 778	57	9155	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉིན་མོ་ལོང་བ་ iin mo lon ba Bez. für Eule.
 825	192	9512	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྣེ་མ་ལོང་བ་ sie ma lon ba taube, halbleere
+48	99	334	tibetan_only	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀང་ཀིང་ kan kin kin kan.
+54	18	444	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+54	18	444	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+54	18	444	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin, rkani
+54	45	445	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིང་ཅང་ཧྭ་ kin can hu ¦/07/7 jan hü.
+54	47	446	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིང་ཤཾ་ kin Si, auch ken śi, ken śe, ker Sin — chin.
+54	70	447	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
+54	70	447	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀིང་ཤུ་ཀ་ kin Su ka, auch ki su ka, kin ka, ken
+157	135	1990	headword_line	kin	kiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྐང་དང་ཀིང་ rkaṅ daṅ kin tkin kan.
