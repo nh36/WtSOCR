@@ -28563,3 +28563,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 128	80	1628	tibetan_only	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཀོར་སྲུང་ dkor srun.
 143	157	1824	headword_line	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་སྲུང་ bka’ srun
 143	191	1825	headword_line	srun	sruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་སྲུང་ bka’ srun auch bka’ bsrun.
+184	156	2356	headword_line	gnan	gnaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐུ་ཕེབས་གནང་བ་ sku phebs gnan ba das Eintreten
+704	78	8640	headword_line	gnan	gnaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཆེང་བླཟླམ་གནང་ 'chin bzlum gnan vermitteln,
+1060	216	11882	headword_line	gnan	gnaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐུན་པར་གནང་བ་ mtbun par gnan ba Einwilli-
