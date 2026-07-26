@@ -28519,3 +28519,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 90	1	1067	tibetan_only	wan	waṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀེ་ཝང་ ke wan
 90	7	1067	tibetan_only	wan	waṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀེ་ཝང་ ke wan Tke ban.
 350	27	4749	headword_line	wan	waṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གི་ཝང་ gi wan auch gi gwan, gi wam, gi han,
+132	136	1699	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀང་ bkan pf. zu l’gens.
+132	156	1700	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀང་ bkan
+241	172	3132	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།ཁ་བཀང་ kba bkan pf. ergänzen, auffüllen.
