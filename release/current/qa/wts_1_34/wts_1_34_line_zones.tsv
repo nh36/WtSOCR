@@ -3286,7 +3286,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 37	115	92	german_prose_with_translit			none	1	3	0	0	die vertikale Achse gezogen und ging weg ...
 37	116	92	german_prose			none	0	6	0	0	am frühen Morgen des nächsten Tages zeich-
 37	117	92	german_prose			none	0	3	0	0	nete er das Mandala“ (Bu 861,5).
-37	119	93	headword_line	ཀ་ཐུང་	ka thun ka	high	3	0	0	0	ཀ་ཐུང་ ka thun (ka).
+37	119	93	headword_line	ཀ་ཐུང་	ka thun ka	high	3	0	0	0	ཀ་ཐུང་ ka thuṅ (ka).
 37	120	93	german_prose			none	0	5	0	0	1. „kurze Säule“ im Gegensatz zu Ika rın,
 37	121	93	german_prose_with_translit			none	1	2	0	0	Säule in normaler Länge.
 37	122	93	german_prose			none	0	3	0	0	2. schmale, kurze Stoffbahnen, die quer in
@@ -21185,7 +21185,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 157	74	1983	other			none	0	0	0	0	114c).
 157	75	1983	german_prose_with_translit			none	2	6	0	0	Lex. rta med Zabs than „ohne Pferd, zu Fuß“
 157	76	1983	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-157	78	1984	headword_line	རྐང་ཐུང་	rkaṅ thun	high	3	1	0	0	རྐང་ཐུང་ rkaṅ thun Irkan 'thun.
+157	78	1984	headword_line	རྐང་ཐུང་	rkaṅ thun	high	3	1	0	0	རྐང་ཐུང་ rkaṅ thuṅ Irkan 'thun.
 157	80	1985	headword_line	རྐང་མཐིལ་	rkaṅ mthil	high	2	1	0	0	རྐང་མཐིལ་ rkaṅ mthil Fußsohle.
 157	81	1985	german_prose_with_translit			none	6	1	0	0	khyod kyi — gyi spu gser gyi kha dog can „das
 157	82	1985	german_prose_with_translit			none	1	3	0	0	goldfarbene Haar deiner Fußsohlen“ (K1 ra
@@ -136843,7 +136843,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 943	1	10330	latin_other			none	1	0	0	0	REIN stag bu thun
 943	3	10330	german_prose_with_translit			none	3	1	0	0	srin sin sna ma dan / (Gl. stag’u chun) zwa
 943	4	10330	german_prose_with_translit			none	1	5	0	0	„Maulbeeren, (Gl. stag’u chun) und Nesselpflanzen“ (MigTo 176,28).
-943	7	10331	headword_line	སྟག་བུ་ཐུང་	thun	high	1	2	0	0	སྟག་བུ་ཐུང་ stag bu thun npr. ein Dämon.
+943	7	10331	headword_line	སྟག་བུ་ཐུང་	thun	high	1	2	0	0	སྟག་བུ་ཐུང་ stag bu thuṅ npr. ein Dämon.
 943	8	10331	other			none	0	0	0	0	nr.
 943	10	10331	german_prose_with_translit			none	4	2	0	0	bdud kyi bu / ~ dan gzig bu thun „die Söhne
 943	11	10331	german_prose_with_translit			none	1	2	0	0	des Dämons, sTag-bu-thun and gZig-bu-
@@ -138889,7 +138889,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 955	34	10433	german_prose_with_translit			none	3	1	0	0	smug risi lta bu źig „ähnlich wie $7/7//9 rtsi“
 955	35	10433	german_prose			none	0	1	0	0	(Dagy).
 955	37	10433	other			none	0	0	0	0	v- . .
-955	38	10434	headword_line	ཏྟད་ཐུང་	thun	high	2	2	0	0	ཏྟད་ཐུང་ stod thun ein Kleidungsstück, Bluse;
+955	38	10434	headword_line	ཏྟད་ཐུང་	thun	high	2	2	0	0	ཏྟད་ཐུང་ stod thuṅ ein Kleidungsstück, Bluse;
 955	39	10434	german_prose			none	0	1	0	0	vgl. stod dum.
 955	41	10434	german_prose_with_translit			none	2	2	0	0	Lex. gos sig (brDa); gos kyi bye brag (Dagy).
 955	43	10434	tibetan_only	སྟོད་དམ་		none	0	3	0	0	སྟོད་དམ་ stod dum Hemd, Jacke; vgl. stod
@@ -173033,7 +173033,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1277	52	12826	latin_other			none	6	0	0	0	— ldan pa’i lus chun yan / tshan daṅ ldan pas
 1277	53	12826	german_prose			none	0	6	0	0	yon mi brüas (metr.) „obwohl ‚der Schreitende‘ körperlich klein ist, [kann] ihn Bali
 1277	55	12826	german_prose			none	0	1	0	0	niemals verachten“ (Ps 6c).
-1277	57	12827	headword_line	དོར་ཐུང་	thun	high	1	1	0	0	དོར་ཐུང་ dor thun kurzer Unterrock, kurze
+1277	57	12827	headword_line	དོར་ཐུང་	thun	high	1	1	0	0	དོར་ཐུང་ dor thuṅ kurzer Unterrock, kurze
 1277	59	12827	german_prose			none	0	3	0	0	Hose, Unterhose; vgl. aber skt. ca-
 1277	60	12827	german_prose_with_translit			none	1	2	0	0	lanikä f. silken fringes (MONIER-WILLIAMS
 1277	61	12827	other			none	0	0	0	0	1899: 391).
