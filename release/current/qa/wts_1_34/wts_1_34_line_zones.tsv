@@ -45168,7 +45168,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 322	55	4388	german_prose_with_translit			none	2	1	0	0	Lex. sbrul (brDa).
 322	57	4388	other			none	0	0	0	0	152
 322	59	4389	headword_line	ཞཁོར་ལོ་བྱེད་	khor lo byed	high	3	0	0	0	ཞཁོར་ལོ་བྱེད་ ’khor lo byed
-322	61	4390	headword_line	ཞཁོར་ལོ་གཏིང་རྫོགས་	khor lo	high	3	1	0	0	ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtin rdzogs ein
+322	61	4390	headword_line	ཞཁོར་ལོ་གཏིང་རྫོགས་	khor lo	high	3	1	0	0	ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtiṅ rdzogs ein
 322	62	4390	german_prose			none	0	1	0	0	Kalkulationsschema.
 322	63	4390	latin_other			none	7	0	0	0	~ pho ’'khor ni / khams mthun glan nas du
 322	64	4390	latin_other			none	3	0	0	0	lon sbub (metr.) „beim ’khor lo gtin rdzogs
@@ -104734,7 +104734,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 720	15	8621	tibetan_only	༡༨		none	0	1	0	0	༡༨ . n . N
 720	16	8621	example_tibetan_latin	འཇམ་མཉན་མ་		none	2	1	0	0	འཇམ་མཉན་མ་ jam 777770/7 ma junge Frau.
 720	18	8621	german_prose_with_translit			none	1	2	0	0	Lex. bud med 9207 nu ma (Dagy).
-720	20	8621	tibetan_only	འཇམ་གཏིང་ངེར་		none	0	1	0	0	འཇམ་གཏིང་ངེར་ Jam gtin her ganz leise.
+720	20	8621	tibetan_only	འཇམ་གཏིང་ངེར་		none	0	1	0	0	འཇམ་གཏིང་ངེར་ Jam gtiṅ her ganz leise.
 720	22	8621	latin_other			none	4	0	0	0	rdzon sgo de khrig ger bzun nas - raug (1,
 720	23	8621	german_prose_with_translit			none	1	1	0	0	sgug) yod pa’i „sie bezogen dann am
 720	24	8621	german_prose_with_translit			none	1	2	0	0	Burgtor ganz leise Stellung, um zu warten“
@@ -128663,11 +128663,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 889	216	9806	german_prose_with_translit			none	3	3	0	0	Lex. sems dan chn’i = sogs „Tiefe des
 889	217	9806	german_prose			none	0	4	0	0	Geistes, des Wassers usw.“ (Dagy); + ?7775 =
 889	218	9806	german_prose_with_translit			none	1	1	0	0	gambhira (Ak 64.29).
-889	220	9806	tibetan_only	གཏིང་ཀློ་		none	0	4	0	0	གཏིང་ཀློ་ gtin klo Bez. für die kla klo 111 den
+889	220	9806	tibetan_only	གཏིང་ཀློ་		none	0	4	0	0	གཏིང་ཀློ་ gtiṅ klo Bez. für die kla klo 111 den
 889	221	9806	german_prose			none	0	4	0	0	Tälern um den Berg rIsa-rı (Neb
 889	222	9806	other			none	0	0	0	0	406).
-890	1	9807	headword_line	གཏིང་མཐའ་	mtha’	high	1	0	0	0	གཏིང་མཐའ་ gtin mtha’
-890	3	9808	headword_line	གཏིང་མཐའ་	mtha’	high	2	1	0	0	གཏིང་མཐའ་ gtin mtha’ Ausmaß; ~~ med pa
+890	1	9807	headword_line	གཏིང་མཐའ་	mtha’	high	1	0	0	0	གཏིང་མཐའ་ gtiṅ mtha’
+890	3	9808	headword_line	གཏིང་མཐའ་	mtha’	high	2	1	0	0	གཏིང་མཐའ་ gtiṅ mtha’ Ausmaß; ~~ med pa
 890	5	9808	german_prose			none	0	2	0	0	unendlich tief; ~$ bis zum Ende.
 890	7	9808	german_prose_with_translit			none	4	1	0	0	rdzogs pa chen po’i = ga la spogs (r. dpog)
 890	8	9808	german_prose			none	0	4	0	0	(metr.) „wie könnte man das Ausmaß der
@@ -128677,7 +128677,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	12	9808	german_prose_with_translit			none	2	2	0	0	"Hölle“ (Glr 33,22); drros ""'dzin ~$ bskyed"
 890	13	9808	german_prose_with_translit			none	2	3	0	0	bskyed „diejenigen, die an den Phänomenen
 890	15	9808	german_prose			none	0	2	0	0	bis zum Ende festhalten“ (Magy 731),
-890	17	9809	headword_line	གཏིང་རྡོ་	rdo	high	1	1	0	0	གཏིང་རྡོ་ gtin rdo Anker.
+890	17	9809	headword_line	གཏིང་རྡོ་	rdo	high	1	1	0	0	གཏིང་རྡོ་ gtiṅ rdo Anker.
 890	19	9809	latin_other			none	5	0	0	0	~ btags nas mtsho yi gun du bskyur „es wird
 890	20	9809	german_prose			none	0	7	0	0	an einem Anker befestigt und in die Mitte
 890	21	9809	german_prose			none	0	3	0	0	eines Sees geworfen“ (MigTo 225,12); dkor
@@ -128703,11 +128703,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	47	9809	german_prose_with_translit			none	2	1	0	0	dpogs (r. dpog?) ma gyur pa (metr.) „die
 890	48	9809	german_prose			none	0	3	0	0	Worte, die Mahäkäsapya usw, nicht er-
 890	49	9809	german_prose			none	0	2	0	0	gründet hatte“ (Bca 9.51b).
-890	51	9810	headword_line	གཏིང་ཕྱིན་	phyin	high	1	0	0	0	གཏིང་ཕྱིན་ gtin phyin beenden,
+890	51	9810	headword_line	གཏིང་ཕྱིན་	phyin	high	1	0	0	0	གཏིང་ཕྱིན་ gtiṅ phyin beenden,
 890	52	9810	german_prose_with_translit			none	5	1	0	0	Lex. = pa ni dpyis byin pa (Liś 5,9).
 890	54	9810	other			none	0	0	0	0	40
 890	56	9810	tibetan_latin_mixed	གཏིང་རིང་		none	1	0	0	0	གཏིང་རིང་ 07/༡7 rin
-890	58	9810	tibetan_only	གཏིང་མེད་		none	0	0	0	0	གཏིང་མེད་ gtin med.
+890	58	9810	tibetan_only	གཏིང་མེད་		none	0	0	0	0	གཏིང་མེད་ gtiṅ med.
 890	60	9810	other			none	0	0	0	0	1, nicht tief.
 890	62	9810	german_prose_with_translit			none	2	2	0	0	Lex. agädha (Ak 64.29); - pa = zab mo med
 890	63	9810	latin_other			none	2	0	0	0	pa (brDa).
@@ -128717,12 +128717,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	69	9810	german_prose			none	0	3	0	0	Stumme und Debile, [diese] vier, bewahre
 890	70	9810	german_prose			none	0	2	0	0	man nicht auf einer Leichenstätte auf“
 890	72	9810	german_prose			none	0	1	0	0	(Vdk 2: 386,1).
-890	74	9811	headword_line	གཏིང་ཚིག་	tshig	high	1	1	0	0	གཏིང་ཚིག་ gtin tshig Spott.
+890	74	9811	headword_line	གཏིང་ཚིག་	tshig	high	1	1	0	0	གཏིང་ཚིག་ gtiṅ tshig Spott.
 890	76	9811	latin_other			none	4	0	0	0	gan ltar yaṅ cun zad - tu mdzad pas / de
 890	77	9811	german_prose_with_translit			none	2	2	0	0	geen po ’phags pas gsan te „als er ein wenig
 890	78	9811	german_prose			none	0	4	0	0	spottete, hörte das sein älterer Bruder
 890	80	9811	german_prose_with_translit			none	1	1	0	0	Aryälsanga]“ (Tär 93,18).
-890	82	9812	headword_line	གཏིང་ཚུགས་	tshugs	high	1	0	0	0	གཏིང་ཚུགས་ gtin tshugs fest verwurzelt sein,
+890	82	9812	headword_line	གཏིང་ཚུགས་	tshugs	high	1	0	0	0	གཏིང་ཚུགས་ gtiṅ tshugs fest verwurzelt sein,
 890	83	9812	tibetan_only	༽༄༅་		none	0	0	0	0	༽༄༅་
 890	85	9812	latin_other			none	1	0	0	0	feststehen.
 890	87	9812	german_prose_with_translit			none	5	1	0	0	Lex. - pa = rtsa ba bisugs pa’am tshugs
@@ -128730,12 +128730,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	89	9812	german_prose_with_translit			none	5	1	0	0	rtsa ba tshugs pa „glaubhaft sein oder sicher
 890	90	9812	german_prose_with_translit			none	1	2	0	0	feststehen, eine Grundlage gelegt haben“
 890	92	9812	german_prose			none	0	1	0	0	(Dagy).
-890	94	9813	headword_line	གཏིང་ཚོལ་	tshol	high	1	2	0	0	གཏིང་ཚོལ་ gtin tshol einschätzen, prüfen, spio-
+890	94	9813	headword_line	གཏིང་ཚོལ་	tshol	high	1	2	0	0	གཏིང་ཚོལ་ gtiṅ tshol einschätzen, prüfen, spio-
 890	96	9813	german_prose			none	0	1	0	0	nieren.
 890	98	9813	german_prose_with_translit			none	5	2	0	0	Lex. - ba = khog ishod len pa la’an „auch
 890	99	9813	german_prose_with_translit			none	2	4	0	0	für: das Innere ausspionieren“ (brDa); - ba
 890	100	9813	german_prose_with_translit			none	1	2	0	0	= 006 bgam pa „prüfen“ (Dagy).
-890	102	9813	tibetan_only	གཏིང་ཐབ་		none	0	2	0	0	གཏིང་ཐབ་ gtin zab Tiefe; tief, tiefgründig.
+890	102	9813	tibetan_only	གཏིང་ཐབ་		none	0	2	0	0	གཏིང་ཐབ་ gtiṅ zab Tiefe; tief, tiefgründig.
 890	104	9813	german_prose_with_translit			none	3	1	0	0	skyu = pa yan gal che ste „es ist zwar
 890	105	9813	german_prose			none	0	4	0	0	wichtig, daß der Schöpflöffel tief ist“ (dPe
 890	106	9813	latin_other			none	3	0	0	0	91,1); gZal yas khan / nos ~ ... ni tshad med
@@ -128747,7 +128747,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	113	9813	german_prose_with_translit			none	1	4	0	0	große Tiefe des Ozeans“ (brDa).
 890	115	9813	tibetan_only	གཏང་རང་		none	0	0	0	0	གཏང་རང་ 07//7 7777 107//?,
 890	117	9813	tibetan_only	གཏིང་རུམ་		none	0	0	0	0	གཏིང་རུམ་ 0/7/7 rum
-890	119	9813	tibetan_only	གཏིང་རུམ་		none	0	1	0	0	གཏིང་རུམ་ gtin rum Tiefe.
+890	119	9813	tibetan_only	གཏིང་རུམ་		none	0	1	0	0	གཏིང་རུམ་ gtiṅ rum Tiefe.
 890	121	9813	latin_other			none	5	0	0	0	mun pa’ smag rum dan / rgya mtsho’i ~ lta
 890	122	9813	german_prose_with_translit			none	2	3	0	0	bu yin te „das ist wie die tiefe Dunkelheit
 890	123	9813	german_prose			none	0	7	0	0	der Nacht und wie die Tiefe des Meeres“

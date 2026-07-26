@@ -28250,3 +28250,16 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 807	179	9404	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཉེར་ཚང་ gier tshan Güterverwaltungsamt; -
 1161	67	12294	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དུད་ཚང་ dud tshan Familie, Haushalt.
 1271	62	12790	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོན་ཚང་ don tshan Erledigung einer Angele-
+322	61	4390	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtin rdzogs ein
+720	20	8621	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཇམ་གཏིང་ངེར་ Jam gtin her ganz leise.
+889	220	9806	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཀློ་ gtin klo Bez. für die kla klo 111 den
+890	1	9807	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་མཐའ་ gtin mtha’
+890	3	9808	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་མཐའ་ gtin mtha’ Ausmaß; ~~ med pa
+890	17	9809	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་རྡོ་ gtin rdo Anker.
+890	51	9810	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཕྱིན་ gtin phyin beenden,
+890	58	9810	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་མེད་ gtin med.
+890	74	9811	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཚིག་ gtin tshig Spott.
+890	82	9812	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཚུགས་ gtin tshugs fest verwurzelt sein,
+890	94	9813	headword_line	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཚོལ་ gtin tshol einschätzen, prüfen, spio-
+890	102	9813	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་ཐབ་ gtin zab Tiefe; tief, tiefgründig.
+890	119	9813	tibetan_only	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏིང་རུམ་ gtin rum Tiefe.

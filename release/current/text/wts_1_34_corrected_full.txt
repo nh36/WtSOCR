@@ -61430,7 +61430,7 @@ Lex. sbrul (brDa).
 
 ཞཁོར་ལོ་བྱེད་ ’khor lo byed
 
-ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtin rdzogs ein
+ཞཁོར་ལོ་གཏིང་རྫོགས་ ’khor lo gtiṅ rdzogs ein
 Kalkulationsschema.
 ~ pho ’'khor ni / khams mthun glan nas du
 lon sbub (metr.) „beim ’khor lo gtin rdzogs
@@ -141272,7 +141272,7 @@ milde Rede und Gefühl“ (Dagy).
 
 Lex. bud med 9207 nu ma (Dagy).
 
-འཇམ་གཏིང་ངེར་ Jam gtin her ganz leise.
+འཇམ་གཏིང་ངེར་ Jam gtiṅ her ganz leise.
 
 rdzon sgo de khrig ger bzun nas - raug (1,
 sgug) yod pa’i „sie bezogen dann am
@@ -173486,11 +173486,11 @@ Lex. sems dan chn’i = sogs „Tiefe des
 Geistes, des Wassers usw.“ (Dagy); + ?7775 =
 gambhira (Ak 64.29).
 
-གཏིང་ཀློ་ gtin klo Bez. für die kla klo 111 den
+གཏིང་ཀློ་ gtiṅ klo Bez. für die kla klo 111 den
 Tälern um den Berg rIsa-rı (Neb
-406).གཏིང་མཐའ་ gtin mtha’
+406).གཏིང་མཐའ་ gtiṅ mtha’
 
-གཏིང་མཐའ་ gtin mtha’ Ausmaß; ~~ med pa
+གཏིང་མཐའ་ gtiṅ mtha’ Ausmaß; ~~ med pa
 
 unendlich tief; ~$ bis zum Ende.
 
@@ -173504,7 +173504,7 @@ bskyed „diejenigen, die an den Phänomenen
 
 bis zum Ende festhalten“ (Magy 731),
 
-གཏིང་རྡོ་ gtin rdo Anker.
+གཏིང་རྡོ་ gtiṅ rdo Anker.
 
 ~ btags nas mtsho yi gun du bskyur „es wird
 an einem Anker befestigt und in die Mitte
@@ -173538,14 +173538,14 @@ dpogs (r. dpog?) ma gyur pa (metr.) „die
 Worte, die Mahäkäsapya usw, nicht er-
 gründet hatte“ (Bca 9.51b).
 
-གཏིང་ཕྱིན་ gtin phyin beenden,
+གཏིང་ཕྱིན་ gtiṅ phyin beenden,
 Lex. = pa ni dpyis byin pa (Liś 5,9).
 
 40
 
 གཏིང་རིང་ 07/༡7 rin
 
-གཏིང་མེད་ gtin med.
+གཏིང་མེད་ gtiṅ med.
 
 1, nicht tief.
 
@@ -173561,7 +173561,7 @@ man nicht auf einer Leichenstätte auf“
 
 (Vdk 2: 386,1).
 
-གཏིང་ཚིག་ gtin tshig Spott.
+གཏིང་ཚིག་ gtiṅ tshig Spott.
 
 gan ltar yaṅ cun zad - tu mdzad pas / de
 geen po ’phags pas gsan te „als er ein wenig
@@ -173569,7 +173569,7 @@ spottete, hörte das sein älterer Bruder
 
 Aryälsanga]“ (Tär 93,18).
 
-གཏིང་ཚུགས་ gtin tshugs fest verwurzelt sein,
+གཏིང་ཚུགས་ gtiṅ tshugs fest verwurzelt sein,
 ༽༄༅་
 
 feststehen.
@@ -173581,7 +173581,7 @@ feststehen, eine Grundlage gelegt haben“
 
 (Dagy).
 
-གཏིང་ཚོལ་ gtin tshol einschätzen, prüfen, spio-
+གཏིང་ཚོལ་ gtiṅ tshol einschätzen, prüfen, spio-
 
 nieren.
 
@@ -173589,7 +173589,7 @@ Lex. - ba = khog ishod len pa la’an „auch
 für: das Innere ausspionieren“ (brDa); - ba
 = 006 bgam pa „prüfen“ (Dagy).
 
-གཏིང་ཐབ་ gtin zab Tiefe; tief, tiefgründig.
+གཏིང་ཐབ་ gtiṅ zab Tiefe; tief, tiefgründig.
 
 skyu = pa yan gal che ste „es ist zwar
 wichtig, daß der Schöpflöffel tief ist“ (dPe
@@ -173606,7 +173606,7 @@ große Tiefe des Ozeans“ (brDa).
 
 གཏིང་རུམ་ 0/7/7 rum
 
-གཏིང་རུམ་ gtin rum Tiefe.
+གཏིང་རུམ་ gtiṅ rum Tiefe.
 
 mun pa’ smag rum dan / rgya mtsho’i ~ lta
 bu yin te „das ist wie die tiefe Dunkelheit

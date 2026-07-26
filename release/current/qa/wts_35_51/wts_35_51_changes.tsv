@@ -6373,3 +6373,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 505	1	2562	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"གནམ་ལྷ་བྱང་སྨན་་ ""་ gram lba byan sman"
 379	52	1947	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshan.
 401	45	2062	headword_line	tshah	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-
+611	55	3017	tibetan_latin_mixed	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtin 'byin [7770
