@@ -123967,7 +123967,7 @@ thub pa’i bu = char sdod (Dagy); tsa ta ka =
 
 ~ (Dagy).
 
-ཆར་སྣེ་རླུང་།ྲིད་ char sne rlun khrid „Wind führt
+ཆར་སྣེ་རླུང་།ྲིད་ char sne rluṅ khrid „Wind führt
 ༄ zu Regen“, idiomatisch für
 etw., das zu Schlechtem führt.
 
@@ -124183,7 +124183,7 @@ thub pa’i bu = char sdod (Dagy); tsa ta ka =
 
 ~ (Dagy).
 
-ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid „Wind führt
+ཆར་སྣེ་རླུང་ཁྲིད་ char sne rluṅ khrid „Wind führt
 ༄ zu Regen“, idiomatisch für
 etw., das zu Schlechtem führt.
 
@@ -162283,7 +162283,7 @@ Lex. bde ba dan ldan par ’dod pa’i blo
 
 559a
 
-སྙང་རླུང་ san rlun
+སྙང་རླུང་ san rluṅ
 &-
 
 སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
@@ -238428,7 +238428,7 @@ Schönheit und Mäßigkeit“ (K3 cha 59a2).
 Lex. —'am tshod śes pa =mātrajñah „das rechte Maß [beim Essen] kennend“ (Mvy 2393).
 
 
-དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.
+དྲོད་རླུང་ drod rluṅ warme Brise, warmer Wind.
 
 Lex. drod las byun ba’i rlans pa „aus Wärme
 entstandener Dunst“ (Dagy).

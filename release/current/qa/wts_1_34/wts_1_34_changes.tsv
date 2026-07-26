@@ -28555,3 +28555,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 79	221	889	headword_line	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’on ba herbei-
 82	42	935	headword_line	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ནས་འོང་བ་ kun nas ’on ba ankommen, gelan-
 789	53	9432	tibetan_only	on	oṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཉེ་བར་འོང་ fie bar ’on pf. fie bar ’ons kommen.
+635	183	7847	headword_line	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆར་སྣེ་རླུང་།ྲིད་ char sne rlun khrid „Wind führt
+636	179	7867	headword_line	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid „Wind führt
+824	3	9645	tibetan_only	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྙང་རླུང་ san rlun
+1348	98	13344	tibetan_only	rlun	rluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.

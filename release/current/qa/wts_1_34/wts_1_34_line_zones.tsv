@@ -91752,7 +91752,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 635	178	7729	german_prose_with_translit			none	2	2	0	0	scheint auch als char ’dod bye’u“ (brDa);
 635	179	7729	german_prose_with_translit			none	5	1	0	0	thub pa’i bu = char sdod (Dagy); tsa ta ka =
 635	181	7729	german_prose			none	0	1	0	0	~ (Dagy).
-635	183	7730	headword_line	ཆར་སྣེ་རླུང་།ྲིད་	khrid	high	1	2	0	0	ཆར་སྣེ་རླུང་།ྲིད་ char sne rlun khrid „Wind führt
+635	183	7730	headword_line	ཆར་སྣེ་རླུང་།ྲིད་	khrid	high	1	2	0	0	ཆར་སྣེ་རླུང་།ྲིད་ char sne rluṅ khrid „Wind führt
 635	184	7730	tibetan_only	༄		none	0	4	0	0	༄ zu Regen“, idiomatisch für
 635	185	7730	german_prose			none	0	4	0	0	etw., das zu Schlechtem führt.
 635	187	7730	german_prose_with_translit			none	5	1	0	0	Lex. dgra dan gyod kyi sne khrid lta bu „wie:
@@ -91902,7 +91902,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 636	174	7749	german_prose_with_translit			none	2	2	0	0	scheint auch als char ’dod bye’u“ (brDa);
 636	175	7749	german_prose_with_translit			none	5	1	0	0	thub pa’i bu = char sdod (Dagy); tsa ta ka =
 636	177	7749	german_prose			none	0	1	0	0	~ (Dagy).
-636	179	7750	headword_line	ཆར་སྣེ་རླུང་ཁྲིད་	khrid	high	1	2	0	0	ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid „Wind führt
+636	179	7750	headword_line	ཆར་སྣེ་རླུང་ཁྲིད་	khrid	high	1	2	0	0	ཆར་སྣེ་རླུང་ཁྲིད་ char sne rluṅ khrid „Wind führt
 636	180	7750	tibetan_only	༄		none	0	4	0	0	༄ zu Regen“, idiomatisch für
 636	181	7750	german_prose			none	0	4	0	0	etw., das zu Schlechtem führt.
 636	183	7750	german_prose_with_translit			none	5	1	0	0	Lex. dgra dan gyod kyi sne khrid lta bu „wie:
@@ -120580,7 +120580,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 823	231	9497	german_prose_with_translit			none	1	2	0	0	[alle] glücklich sind“ (brDa).
 823	233	9497	other			none	0	0	0	0	559
 824	1	9497	other			none	0	0	0	0	a
-824	3	9497	tibetan_only	སྙང་རླུང་		none	0	0	0	0	སྙང་རླུང་ san rlun
+824	3	9497	tibetan_only	སྙང་རླུང་		none	0	0	0	0	སྙང་རླུང་ san rluṅ
 824	4	9497	other			none	0	0	0	0	&-
 824	6	9497	tibetan_only	སྙིང་རླང་		none	0	4	0	0	སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
 824	7	9498	headword_line	༄	wirrung	medium	2	0	0	0	༄ wirrung; = /dan deprimiert sein.
@@ -178267,7 +178267,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1348	92	13124	german_prose_with_translit			none	2	3	0	0	bsnags pa brjod nas „der Erhabene lobte die
 1348	93	13124	german_prose			none	0	4	0	0	Schönheit und Mäßigkeit“ (K3 cha 59a2).
 1348	95	13124	german_prose_with_translit			none	4	6	0	0	Lex. —'am tshod śes pa =mātrajñah „das rechte Maß [beim Essen] kennend“ (Mvy 2393).
-1348	98	13124	tibetan_only	དྲོད་རླུང་		none	0	2	0	0	དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.
+1348	98	13124	tibetan_only	དྲོད་རླུང་		none	0	2	0	0	དྲོད་རླུང་ drod rluṅ warme Brise, warmer Wind.
 1348	100	13124	german_prose_with_translit			none	3	2	0	0	Lex. drod las byun ba’i rlans pa „aus Wärme
 1348	101	13124	german_prose_with_translit			none	1	2	0	0	entstandener Dunst“ (Dagy).
 1348	103	13124	tibetan_only	དྲོད་ཤེས་		none	0	1	0	0	དྲོད་ཤེས་ drod 465 maßvoll, moderat.
