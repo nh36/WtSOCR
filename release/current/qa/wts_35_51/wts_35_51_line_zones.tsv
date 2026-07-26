@@ -90451,7 +90451,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1111	12	6028	german_prose_with_translit			none	5	1	0	0	Lex. g.yan sa — dan brag ri' g.yani sa 0// dog
 1111	13	6028	german_prose_with_translit			none	3	5	0	0	"sa ""enge Schlucht und enge Stelle bei Berg-"
 1111	14	6028	latin_other			none	1	0	0	0	"felsen"" (brDa)."
-1111	15	6029	headword_line	འཕྲང་འཕྲེང་	phran phren Verlangen	high	3	0	0	0	འཕྲང་འཕྲེང་ /phran phren Verlangen.
+1111	15	6029	headword_line	འཕྲང་འཕྲེང་	phran phren Verlangen	high	3	0	0	0	འཕྲང་འཕྲེང་ /phran phreṅ Verlangen.
 1111	16	6029	latin_other			none	5	0	0	0	"bdag rab tn byun nas 'khor la — med pa ""da"
 1111	17	6029	german_prose			none	0	2	0	0	ich ein Mönch geworden bin, habe ich kein
 1111	18	6029	german_prose_with_translit			none	1	1	0	0	"Verlangen nach Dienern"" (gZer 973,5)."
@@ -91313,8 +91313,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1121	31	6108	german_prose_with_translit			none	5	1	0	0	"po dan / — gi bon po rnams ""die phywa gsen,"
 1121	32	6108	german_prose_with_translit			none	2	2	0	0	sunañ gSen und 'phrul gen [genannten] Bon-
 1121	33	6108	latin_other			none	1	0	0	0	"po [usw.]"" (8213: 6,1)."
-1121	34	6109	headword_line	འཕྲེང་	phren Tphren ba	high	3	0	0	0	"འཕྲེང་ ""phren Tphren ba."
-1121	35	6110	headword_line	འཕྲེང་	phren	high	1	0	0	0	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."
+1121	34	6109	headword_line	འཕྲེང་	phren Tphren ba	high	3	0	0	0	འཕྲེང་ "phreṅ Tphren ba.
+1121	35	6110	headword_line	འཕྲེང་	phren	high	1	0	0	0	འཕྲེང་ "phreṅ sich sehnen, lieben; sich sorgen.
 1121	36	6110	german_prose_with_translit			none	4	1	0	0	yab yum 0/7/5 hy thugs la — bäin du ...bod du
 1121	37	6110	german_prose_with_translit			none	1	5	0	0	"chas so ""von den Eltern im Herzen geliebt,"
 1121	38	6110	german_prose			none	0	3	0	0	"reiste [Kon-jo| nach Tibet"" (Glr 96,20); yram"

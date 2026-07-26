@@ -6388,3 +6388,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 828	51	4265	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྤྱིར་བཏང་ spyir btaṅ auch spyi btan.
 191	47	1070	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འདོད་འཆིང་ 'dod chin.
 1074	47	5746	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕྲེང་བ་ཅན་ phreṅ ba can auch 'phren ba can.
+1111	15	6029	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཕྲང་འཕྲེང་ /phran phren Verlangen.
+1121	34	6109	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren Tphren ba."
+1121	35	6110	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."
