@@ -28472,3 +28472,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1017	212	11158	tibetan_only	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཐུན་མོང་ཀུད་མེད་ tbun mon bud med Bez. für
 47	150	312	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀག་ལ་བོང་ kag la bon
 47	196	319	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀག་ལ་བོང་ kag la bon der Nan-chao-Herrscher
+249	62	3242	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།ཁ་འཕང་ kha 'phan
+249	112	3247	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།བ་འཕང་ ha 'phan Forderung.
+265	26	3505	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཁུ་འཕང་ khu 'phan auch khu phans, khu ’bans
+357	33	4795	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
+357	33	4795	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-

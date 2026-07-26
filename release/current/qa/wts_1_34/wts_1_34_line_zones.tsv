@@ -34808,7 +34808,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 249	57	3241	german_prose_with_translit			none	5	2	0	0	Lex. - btan ba = kha ham pa chen po smras
 249	58	3241	latin_other			none	4	0	0	0	pa „sehr dreist reden“ (brDa); ~ btan ba, ~
 249	60	3241	other			none	0	0	0	0	18
-249	62	3242	headword_line	།ཁ་འཕང་	kha phan	high	2	0	0	0	།ཁ་འཕང་ kha 'phan
+249	62	3242	headword_line	།ཁ་འཕང་	kha phan	high	2	0	0	0	།ཁ་འཕང་ kha 'phaṅ
 249	64	3242	latin_other			none	6	0	0	0	bzlas pa = kha ham pa’am ’ur śob bsad pa lta
 249	66	3242	german_prose_with_translit			none	1	1	0	0	bu „wie: dreist oder angeberisch reden“
 249	67	3242	german_prose			none	0	1	0	0	(Dagy).
@@ -34840,7 +34840,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 249	107	3246	latin_other			none	2	0	0	0	rar kha phral getrennt.
 249	109	3246	german_prose_with_translit			none	4	3	0	0	Lex. kha so sor phral zin pa (Dagy, ähnl.
 249	110	3246	latin_other			none	1	0	0	0	brDa).
-249	112	3247	headword_line	།བ་འཕང་	phan Forderung	high	2	0	0	0	།བ་འཕང་ ha 'phan Forderung.
+249	112	3247	headword_line	།བ་འཕང་	phan Forderung	high	2	0	0	0	།བ་འཕང་ ha 'phaṅ Forderung.
 249	114	3247	latin_other			none	3	0	0	0	skan (7, rkan) ’gro lagts} 'don ji ltar yaṅ
 249	116	3248	headword_line	།བ་འཕངས་	kha phans	high	2	0	0	0	།བ་འཕངས་ kha 'phans
 249	118	3248	latin_other			none	4	0	0	0	’dzin bdag ge lhar - til sun tsam med par „es
@@ -37241,7 +37241,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 265	21	3503	german_prose			none	0	1	0	0	erzielen“ (Dagy).
 265	23	3504	headword_line	ཁུ་པ་	khu pa	high	2	1	0	0	ཁུ་པ་ khu pa brechen.
 265	24	3504	german_prose_with_translit			none	1	1	0	0	Lex. ’chag pa (TTC).
-265	26	3505	headword_line	ཁུ་འཕང་	khu phan	high	5	1	0	0	ཁུ་འཕང་ khu 'phan auch khu phans, khu ’bans
+265	26	3505	headword_line	ཁུ་འཕང་	khu phan	high	5	1	0	0	ཁུ་འཕང་ khu 'phaṅ auch khu phans, khu ’bans
 265	27	3505	german_prose			none	0	3	0	0	Schnee, Schneeflocken, Schnee-
 265	28	3505	other			none	0	0	0	0	schauer.
 265	30	3505	german_prose			none	0	2	0	0	char sprin ¬~ (metr.) „die Schneeflocken aus
@@ -50243,7 +50243,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 357	28	4794	german_prose_with_translit			none	4	2	0	0	bar ma do’i sems can gsal bar - Zin Zib par
 357	29	4794	german_prose			none	0	5	0	0	bsad do „die Lebewesen im Zwischenzustand wurden unterschieden und detailliert
 357	31	4794	german_prose			none	0	1	0	0	erklärt“ (gZer 268,6).
-357	33	4795	headword_line	གོ་འཕང་	phan	high	3	2	0	0	གོ་འཕང་ go 'phan auch ’go ’phan Rang, Stel-
+357	33	4795	headword_line	གོ་འཕང་	phan	high	3	2	0	0	གོ་འཕང་ go 'phaṅ auch ’go ’phaṅ Rang, Stel-
 357	34	4795	german_prose_with_translit			none	1	2	0	0	lung, Amt, Ebene.
 357	36	4795	german_prose_with_translit			none	1	2	0	0	~ thob kyan (metr.) „auch wenn sie einen
 357	37	4795	german_prose_with_translit			none	1	1	0	0	hohen Rang erreicht haben“ (Ps 676);
