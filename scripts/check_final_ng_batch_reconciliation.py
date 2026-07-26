@@ -22,6 +22,11 @@ def validate(root: Path = ROOT) -> list[str]:
     changes: list[dict[str, str]] = []
     positional: list[dict[str, str]] = []
     echoes: list[dict[str, str]] = []
+    frozen_rows: list[dict[str, str]] = []
+    for manifest in (root / "data").glob(
+        "final_ng_exact_candidate_prepass_manifest_*.tsv"
+    ):
+        frozen_rows.extend(read_tsv(manifest))
     for volume_dir in (root / "release/current/qa").glob("wts_*"):
         changes_path = volume_dir / f"{volume_dir.name}_changes.tsv"
         if changes_path.exists():
@@ -48,17 +53,39 @@ def validate(root: Path = ROOT) -> list[str]:
             in {(item["page"], item["line"], item["from_token"]) for item in echo}
         ]
         tibetan = batch["tibetan_syllable"]
+        frozen_echo_keys = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["source_token"], row["target"],
+            )
+            for row in frozen_rows
+            if row["frozen_prepass_sha"] == batch["frozen_prepass_sha"]
+            and row["tibetan_syllable"] == tibetan
+            and row["candidate_status"] == "echo"
+        }
+        current_frozen_echoes = [
+            row for row in echoes
+            if (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["additional_source_token"],
+                row["proposed_target"],
+            ) in frozen_echo_keys
+        ]
+        if not frozen_echo_keys:
+            current_frozen_echoes = [
+                row for row in echoes if row["tibetan_syllable"] == tibetan
+            ]
         active_pos = sum(row["tibetan_syllable"] == tibetan for row in positional)
         active_echo = sum(
-            row["tibetan_syllable"] == tibetan and row.get("active_queue", "yes") == "yes"
-            for row in echoes
+            row.get("active_queue", "yes") == "yes"
+            for row in current_frozen_echoes
         )
         decision_counts = Counter(
             row["decision"] for row in decisions if row["tibetan_syllable"] == tibetan
         )
         frozen_pos = int(batch["frozen_positional_count"])
         frozen_echo = int(batch["frozen_echo_candidate_count"])
-        current_echo_total = sum(row["tibetan_syllable"] == tibetan for row in echoes)
+        current_echo_total = len(current_frozen_echoes)
         computed = {
             "actual_positional_overrides": len(pos),
             "echo_decisions_accepted": decision_counts["accepted"],

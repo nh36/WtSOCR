@@ -28365,3 +28365,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 921	57	10146	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟེན་ཅིང་འབྲེལ་བར་*” rten cin ’brel bar ...
 921	117	10150	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟེན་ཅིང་འབྲེལ་བར་* rten cin ’brel bar ...
 1291	69	12876	headword_line	cin	ciṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲག་ཅིང་རྩུབ་པ་ drag cin rtsub pa unzugänglich.
+52	135	420	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀརྨ་པ ་རང་བྱུང་རྡོ་རྗེ་ karma pa raṅ byun rdo ne der 3.
+52	166	424	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀརྨ་རང་བྱུང་རྡོ་རྗེ་ karma raṅ byun rdo nie (TTC)
+571	177	7184	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྔོན་བྱུང་ snon byun
+1086	17	11901	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ད་ལྟར་བྱུང་བ་ da ltar byun ba jetzt aufgetreten,
+1205	50	12530	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ལྟ་བུ་བྱུང་་ de lta bu byun ...
+1205	85	12531	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དེ་ལྟ་བུ་བྱུང་བ་ de lta bu byun ba.

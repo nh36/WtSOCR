@@ -2575,7 +2575,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("kun 'byuṅ.", outputs["wts_1_34"])
         self.assertIn("kun ’byuṅ ba, vgl. !kun tu ’byuṅ ba", outputs["wts_1_34"])
         self.assertIn("bde ba'i byuṅ gnas", outputs["wts_35_51"])
-        self.assertIn("རྣམ་བྱུང་ mam byun.", outputs["wts_35_51"])
+        self.assertIn("རྣམ་བྱུང་ mam byuṅ.", outputs["wts_35_51"])
         self.assertIn('འབྱུང་ "byuṅ', outputs["wts_8_b"])
 
     def test_reviewed_steng_rows_preserve_genuine_sten_and_neighbours(self) -> None:
@@ -2911,6 +2911,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("ཅིང་ ciṅ", corrected)
         self.assertIn("unrelated cin prose control", corrected)
         self.assertEqual(sum(row["to_token"] == "ciṅ" for row in changes), 1)
+
+    def test_reviewed_byung_and_abyung_rows_share_no_broad_rule(self) -> None:
+        lines = {
+            (52, 135): "ཀརྨ་པ ་རང་བྱུང་རྡོ་རྗེ་ karma pa raṅ byun rdo ne",
+            (68, 108): "ཀུན་རྗེས་འབྱུང་ kun rjes 'byun",
+            (1400, 2): "unreviewed byun occurrence",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("raṅ byuṅ rdo ne", corrected)
+        self.assertIn("kun rjes 'byuṅ", corrected)
+        self.assertIn("unreviewed byun occurrence", corrected)
+        self.assertEqual(sum(row["to_token"] == "byuṅ" for row in changes), 2)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
