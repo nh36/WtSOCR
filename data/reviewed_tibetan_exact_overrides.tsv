@@ -5601,3 +5601,11 @@ wts_1_34	642	114	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_1_34	642	118	2	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
 wts_1_34	649	68	3	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
 wts_1_34	1064	57	3	klun	kluṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	Frozen exact Tibetan ཀླང alignment; separate from ཀླུང.
+wts_1_34	114	154	3	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	322	177	3	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	394	196	3	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	912	52	2	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	1275	9	2	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	1342	33	2	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_gdong_consensus_batch_20260726	Frozen exact Tibetan གདོང alignment.
+wts_1_34	912	52	7	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gdong_same_entry_echo_batch_20260726	Explicit alternate repeats the same གདོང element.
+wts_35_51	646	46	5	gdon	gdoṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_gdong_same_entry_echo_batch_20260726	Explicit alternate repeats the same གདོང element.

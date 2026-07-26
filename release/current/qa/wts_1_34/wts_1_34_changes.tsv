@@ -28399,3 +28399,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 642	118	7804	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་ཀླང་མཆོ་ chu klun mtsho ein See in höheren
 649	68	7891	tibetan_only	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཆུ་འབབ་ཀླང་ chu ’bab klun Bez. für Ozean.
 1064	57	11735	headword_line	klun	kluṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མཐོ་རེས་ཀླང་ mtho ris klun.
+114	154	1380	tibetan_only	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་སྨན་གདོང་དྲུག་ klu sman gdon drug npr. eine
+322	177	4400	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཁོར་ལོའི་གདོང་ ’khor lo’i gdon Bez. für Wild-
+394	196	5182	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གླང་པོའི་གདོང་ glaṅ po’i gdon Bez. für Ganesa.
+912	52	9995	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
+912	52	9995	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
+1275	9	12815	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དོམ་གདོང་མ་ dom gdon ma npr. eine Gottheit,
+1342	33	13105	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲེད་གདོང་མ་ dred gdon ma eine Gottheit, die

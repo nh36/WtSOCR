@@ -36,3 +36,4 @@ tibetan_zhing_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཞིང	tibeta
 tibetan_long_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ལོང	tibetan_long_consensus_batch_20260726	7	7	tibetan_long_same_entry_echo_batch_20260726	4	1	3	0	0	0	7	1	4	8
 tibetan_king_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀིང	tibetan_king_consensus_batch_20260726	6	6	tibetan_king_same_entry_echo_batch_20260726	4	3	1	0	0	0	6	3	4	9
 tibetan_klang_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀླང	tibetan_klang_consensus_batch_20260726	6	6	tibetan_klang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6
+tibetan_gdong_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	གདོང	tibetan_gdong_consensus_batch_20260726	6	6	tibetan_gdong_same_entry_echo_batch_20260726	5	2	3	0	0	0	6	2	5	8

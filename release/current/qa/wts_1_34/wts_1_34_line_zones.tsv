@@ -14796,7 +14796,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 114	149	1380	german_prose_with_translit			none	1	5	0	0	2. N. eines Wesens, das aus der Verbindung
 114	150	1380	german_prose_with_translit			none	1	3	0	0	eines klu mit einer sman-mo hervorgegangen
 114	152	1380	german_prose			none	0	2	0	0	ist (Neb 202).
-114	154	1380	tibetan_only	ཀླུ་སྨན་གདོང་དྲུག་		none	0	1	0	0	ཀླུ་སྨན་གདོང་དྲུག་ klu sman gdon drug npr. eine
+114	154	1380	tibetan_only	ཀླུ་སྨན་གདོང་དྲུག་		none	0	1	0	0	ཀླུ་སྨན་གདོང་དྲུག་ klu sman gdoṅ drug npr. eine
 114	155	1380	german_prose_with_translit			none	1	3	0	0	Gottheit; vgl. Ithan mo dgn.
 114	156	1380	german_prose_with_translit			none	1	1	0	0	— chu srin g.yarn 4 (7, gZi) khur „Klu-sman
 114	157	1380	german_prose			none	0	5	0	0	gdon-drug trägt die Haut eines Krokodils“
@@ -45254,7 +45254,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 322	174	4399	headword_line	འཁོར་ལོའི་འགྲིམ་འགྲལ་	khor lo’i	high	2	0	0	0	འཁོར་ལོའི་འགྲིམ་འགྲལ་ ’khor lo’i ’grim ’grul
 322	175	4399	tibetan_only	༽		none	0	1	0	0	༽ Zugverkehr.
 322	176	4399	german_prose_with_translit			none	2	2	0	0	"Lex. me ""khor sogs kyi ’grim ’grul (Dagy)."
-322	177	4400	headword_line	འཁོར་ལོའི་གདོང་	khor lo’i	high	2	3	0	0	འཁོར་ལོའི་གདོང་ ’khor lo’i gdon Bez. für Wild-
+322	177	4400	headword_line	འཁོར་ལོའི་གདོང་	khor lo’i	high	2	3	0	0	འཁོར་ལོའི་གདོང་ ’khor lo’i gdoṅ Bez. für Wild-
 322	178	4400	tibetan_only	པ པ་		none	0	0	0	0	པ པ་ schwein.
 322	180	4400	german_prose_with_translit			none	3	2	0	0	Lex. phag rgod (brDa, Dagy).
 322	182	4401	headword_line	ཞཁོར་ཁོའི་ཕྱག་	khor	high	2	3	0	0	ཞཁོར་ཁོའི་ཕྱག་ ’khor /6?/ phyag Bez. für Visnu.
@@ -55789,7 +55789,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 394	192	5181	german_prose_with_translit			none	5	2	0	0	Lex. man ’dzin phrag brgya na ~ Zes bya’o =
 394	193	5181	german_prose			none	0	4	0	0	Satam bahulanäm nägabalam nämocyate
 394	194	5181	german_prose			none	0	1	0	0	(Mvy 7963).
-394	196	5182	headword_line	གླང་པོའི་གདོང་	po’i	high	1	3	0	0	གླང་པོའི་གདོང་ glaṅ po’i gdon Bez. für Ganesa.
+394	196	5182	headword_line	གླང་པོའི་གདོང་	po’i	high	1	3	0	0	གླང་པོའི་གདོང་ glaṅ po’i gdoṅ Bez. für Ganesa.
 394	198	5182	german_prose_with_translit			none	7	2	0	0	Lex. dban phyug gi bu chen po tshogs bdag gi
 394	199	5182	german_prose			none	0	6	0	0	min „Name für Ganapati, den älteren Sohn
 394	201	5182	german_prose_with_translit			none	1	1	0	0	Sivas“ (brDa).
@@ -132192,7 +132192,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 912	48	9994	german_prose_with_translit			none	1	3	0	0	Anforderungen von Lastenpferden des
 912	49	9994	german_prose			none	0	4	0	0	Militärlagers und des Distriktes“ (MTH
 912	51	9994	other			none	0	0	0	0	3/5/26 33).
-912	52	9995	headword_line	རྟ་གདོང་ཉན་	rta	high	4	1	0	0	རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can.
+912	52	9995	headword_line	རྟ་གདོང་ཉན་	rta	high	4	1	0	0	རྟ་གདོང་ཉན་ rta gdoṅ can auch rta yi gdoṅ can.
 912	54	9995	german_prose			none	0	4	0	0	1. myth. Wesen im Gefolge Kuberas.
 912	56	9995	german_prose_with_translit			none	3	2	0	0	Lex. rta yi gdon can = turangavadana (Ak
 912	57	9995	other			none	0	0	0	0	19.66).
@@ -172843,7 +172843,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1275	4	12814	headword_line	མ་མགོ་ཀགྲང་སྲིང་	mgo	medium	2	2	0	0	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
 1275	6	12814	example_tibetan_latin			none	2	3	0	0	N གོ་གླ 3 rende dgra lha der Bon-po
 1275	7	12814	german_prose			none	0	1	0	0	(Neb 326).
-1275	9	12815	headword_line	དོམ་གདོང་མ་	ma	medium	1	2	0	0	དོམ་གདོང་མ་ dom gdon ma npr. eine Gottheit,
+1275	9	12815	headword_line	དོམ་གདོང་མ་	ma	medium	1	2	0	0	དོམ་གདོང་མ་ dom gdoṅ ma npr. eine Gottheit,
 1275	10	12815	german_prose_with_translit			none	1	3	0	0	gehört zu den gur lha bcu 97/5
 1275	11	12815	german_prose			none	0	1	0	0	(Neb 51).
 1275	13	12816	headword_line	དོམ་ནག་སྡིག་པའི་མགོ་བོ་ཅན་	pa’i	high	1	0	0	0	དོམ་ནག་སྡིག་པའི་མགོ་བོ་ཅན་ dom nag sdig pa’i
@@ -177750,7 +177750,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1342	28	13104	german_prose_with_translit			none	2	1	0	0	Lex. gcan gzan —’i pags pa (brDa); gcan gzan
 1342	29	13104	german_prose			none	0	1	0	0	zig (Dagy).
 1342	31	13104	example_tibetan_latin			none	2	5	0	0	gen Tlce spyaii ma breyad (Neb 271). དྲེད་ཟ་ dred za Bez. für Löwe.
-1342	33	13105	headword_line	དྲེད་གདོང་མ་	ma	medium	1	3	0	0	དྲེད་གདོང་མ་ dred gdon ma eine Gottheit, die
+1342	33	13105	headword_line	དྲེད་གདོང་མ་	ma	medium	1	3	0	0	དྲེད་གདོང་མ་ dred gdoṅ ma eine Gottheit, die
 1342	34	13105	german_prose			none	0	1	0	0	(Neb 51).
 1342	36	13106	headword_line	དྲེད་པ་	pa	medium	1	0	0	0	དྲེད་པ་ 'dred pa 1’dred 2.
 1342	38	13107	headword_line	དྲེད་པ་	pa	medium	2	0	0	0	དྲེད་པ་ ?dred pa hart, ungezähmt.

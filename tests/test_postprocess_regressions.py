@@ -2390,7 +2390,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn("གླང་ཐབས་ glaṅ thabs auch glaṅ ’thab", corrected)
         self.assertIn("གླང་འཐབ་ glaṅ ’thab †2/%7 thabs.", corrected)
-        self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdon", corrected)
+        self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdoṅ", corrected)
         self.assertIn("གླང་ཤིང་ glaṅ sin", corrected)
         self.assertIn("dom mgo glaṅ sin", corrected)
         self.assertIn("གླན་ glan genuine distinct syllable.", corrected)
@@ -2399,7 +2399,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "glan" and row["to_token"] == "glaṅ"
         ]
         self.assertEqual(len(reviewed), 6)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
 
     def test_reviewed_glah_variant_maps_to_glang(self) -> None:
         result, corrected, changes = self.run_postprocess_fixture(
@@ -2975,6 +2975,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("chu kluṅ bdag po", corrected)
         self.assertIn("unreviewed klun control", corrected)
         self.assertEqual(sum(row["to_token"] == "kluṅ" for row in changes), 2)
+
+    def test_reviewed_gdong_rows_and_echoes_are_exactly_gated(self) -> None:
+        lines = {
+            (912, 52): "རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can",
+            (1400, 7): "unreviewed gdon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rta gdoṅ can auch rta yi gdoṅ can", corrected)
+        self.assertIn("unreviewed gdon control", corrected)
+        self.assertEqual(sum(row["to_token"] == "gdoṅ" for row in changes), 2)
 
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
