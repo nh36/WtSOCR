@@ -777,6 +777,239 @@ def build_source_compatible_coverage_comparison(
     return comparison
 
 
+def collect_google_exact_target_witnesses(
+    release_root: Path,
+) -> set[tuple[str, str, str, str, str, str]]:
+    witnesses: set[tuple[str, str, str, str, str, str]] = set()
+    for volume_dir in sorted((release_root / "qa").glob("wts_*")):
+        path = volume_dir / f"{volume_dir.name}_alternate_witness_adoptions.tsv"
+        if not path.exists():
+            continue
+        for row in read_tsv(path):
+            witnesses.add(
+                (
+                    volume_dir.name,
+                    row.get("page", ""),
+                    row.get("line", ""),
+                    row.get("token_index", ""),
+                    row.get("base_token", ""),
+                    row.get("alternate_token", ""),
+                )
+            )
+    return witnesses
+
+
+def entry_series_cluster_count(rows: list[dict[str, str]]) -> int:
+    locations = sorted(
+        {
+            (row["volume"], int(row["page"]), int(row["line"]))
+            for row in rows
+        }
+    )
+    clusters = 0
+    previous: tuple[str, int, int] | None = None
+    in_cluster = False
+    for location in locations:
+        adjacent = (
+            previous is not None
+            and location[0] == previous[0]
+            and location[1] == previous[1]
+            and location[2] - previous[2] <= 3
+        )
+        if adjacent and not in_cluster:
+            clusters += 1
+            in_cluster = True
+        elif not adjacent:
+            in_cluster = False
+        previous = location
+    return clusters
+
+
+def build_insufficient_evidence_matrix(
+    release_root: Path,
+    compatible_rows: list[dict[str, str]] | None = None,
+    echo_rows: list[dict[str, str]] | None = None,
+    override_rows: list[dict[str, str]] | None = None,
+) -> list[dict[str, str]]:
+    """Expose independent evidence channels without converting them to a score."""
+    compatible_rows = (
+        compatible_rows
+        if compatible_rows is not None
+        else build_source_compatible_rows(release_root)
+    )
+    echo_rows = (
+        echo_rows
+        if echo_rows is not None
+        else build_same_entry_echo_rows(release_root)
+    )
+    if override_rows is None:
+        override_path = (
+            Path(__file__).resolve().parents[1]
+            / "data/reviewed_tibetan_exact_overrides.tsv"
+        )
+        override_rows = read_tsv(override_path) if override_path.exists() else []
+    override_keys = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["from_token"], row["to_token"],
+        )
+        for row in override_rows
+        if "final_ng" in row.get("reason", "")
+    }
+    reviewed_identities: set[tuple[str, str, str, str, str, str, str]] = set()
+    for manifest in (
+        Path(__file__).resolve().parents[1] / "data"
+    ).glob("final_ng_*prepass_manifest_*.tsv"):
+        for row in read_tsv(manifest):
+            identity_key = (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["source_token"], row["target"],
+            )
+            if identity_key in override_keys:
+                reviewed_identities.add(
+                    (
+                        row["volume"], row["page"], row["line"],
+                        row["token_index"], row["tibetan_syllable"],
+                        row["source_token"], row["target"],
+                    )
+                )
+    aligned, _accepted = collect_aligned_rows(release_root)
+    google = collect_google_exact_target_witnesses(release_root)
+    grouped: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+    for row in compatible_rows:
+        if (
+            row["source_compatible_category"]
+            != "source_compatible_insufficient_evidence"
+        ):
+            continue
+        grouped[
+            (
+                row["tibetan_syllable"],
+                row["source_latin_token"],
+                row["proposed_latin_target"],
+            )
+        ].append(row)
+
+    matrix: list[dict[str, str]] = []
+    for (syllable, source, target), family in grouped.items():
+        family_volumes = {row["volume"] for row in family}
+        anchors = [
+            row
+            for row in aligned
+            if row["tibetan_syllable"] == syllable
+            and row["latin_token"] == target
+        ]
+        same_volume = [row for row in anchors if row["volume"] in family_volumes]
+        other_volume = [row for row in anchors if row["volume"] not in family_volumes]
+        family_echoes = [
+            row
+            for row in echo_rows
+            if row["tibetan_syllable"] == syllable
+            and row["additional_source_token"] == source
+            and row["proposed_target"] == target
+        ]
+        echo_categories = Counter(row["echo_category"] for row in family_echoes)
+        prior_exact = {
+            identity[:4]
+            for identity in reviewed_identities
+            if identity[4:] == (syllable, source, target)
+        }
+        google_count = sum(
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                source, target,
+            ) in google
+            for row in family
+        )
+        channels = []
+        if anchors:
+            channels.append("compatible_dotted_anchor")
+        if echo_categories["explicit_same_lemma_repetition"]:
+            channels.append("explicit_same_entry_repetition")
+        if echo_categories["direct_repeated_tibetan_alignment"]:
+            channels.append("direct_repeated_tibetan_alignment")
+        if google_count:
+            channels.append("google_exact_target_witness")
+        if prior_exact:
+            channels.append("prior_reviewed_exact_occurrence")
+        if google_count or prior_exact:
+            tier = "independent_witness_review"
+        elif other_volume:
+            tier = "cross_volume_anchor_review"
+        elif (
+            echo_categories["explicit_same_lemma_repetition"]
+            or echo_categories["direct_repeated_tibetan_alignment"]
+        ):
+            tier = "entry_structure_review"
+        elif anchors:
+            tier = "single_anchor_recurrence_only"
+        else:
+            tier = "no_compatible_anchor"
+        matrix.append(
+            {
+                "tibetan_syllable": syllable,
+                "source_variant": source,
+                "source_signature": source_compatible_signature(source) or "",
+                "proposed_target": target,
+                "undotted_clean_row_count": str(len(family)),
+                "compatible_dotted_anchor_count": str(len(anchors)),
+                "same_volume_dotted_anchor_count": str(len(same_volume)),
+                "cross_volume_dotted_anchor_count": str(len(other_volume)),
+                "explicit_same_entry_repeat_count": str(
+                    echo_categories["explicit_same_lemma_repetition"]
+                ),
+                "direct_repeated_tibetan_alignment_count": str(
+                    echo_categories["direct_repeated_tibetan_alignment"]
+                ),
+                "probable_cross_reference_count": str(
+                    echo_categories["cross_reference_probable"]
+                ),
+                "google_exact_target_witness_count": str(google_count),
+                "prior_reviewed_exact_occurrence_count": str(len(prior_exact)),
+                "damaged_row_count": str(
+                    sum(
+                        row["source_compatible_category"]
+                        == "source_compatible_damaged_context"
+                        for row in compatible_rows
+                        if row["tibetan_syllable"] == syllable
+                        and row["source_latin_token"] == source
+                    )
+                ),
+                "marker_row_count": str(
+                    sum(
+                        row["source_compatible_category"]
+                        == "source_compatible_marker_attached"
+                        for row in compatible_rows
+                        if row["tibetan_syllable"] == syllable
+                        and row["source_latin_token"] == source
+                    )
+                ),
+                "tibetan_structure_status": family[0][
+                    "syllable_identity_guard"
+                ],
+                "entry_series_cluster_count": str(
+                    entry_series_cluster_count(family)
+                ),
+                "independent_evidence_channels": ";".join(channels),
+                "independent_evidence_channel_count": str(len(channels)),
+                "suggested_review_tier": tier,
+                "volumes": ";".join(sorted(family_volumes)),
+                "sample_contexts": " || ".join(
+                    row["context_excerpt"] for row in family[:3]
+                ),
+            }
+        )
+    return sorted(
+        matrix,
+        key=lambda row: (
+            -int(row["independent_evidence_channel_count"]),
+            -int(row["undotted_clean_row_count"]),
+            row["tibetan_syllable"],
+            row["source_variant"],
+        ),
+    )
+
+
 def build_same_entry_echo_rows(
     release_root: Path,
     decisions_path: Path | None = None,
@@ -958,6 +1191,19 @@ COVERAGE_COMPARISON_FIELDS = [
     "old_category", "new_category", "compatible_anchor_count",
     "context_excerpt",
 ]
+INSUFFICIENT_EVIDENCE_FIELDS = [
+    "tibetan_syllable", "source_variant", "source_signature",
+    "proposed_target", "undotted_clean_row_count",
+    "compatible_dotted_anchor_count", "same_volume_dotted_anchor_count",
+    "cross_volume_dotted_anchor_count", "explicit_same_entry_repeat_count",
+    "direct_repeated_tibetan_alignment_count",
+    "probable_cross_reference_count", "google_exact_target_witness_count",
+    "prior_reviewed_exact_occurrence_count", "damaged_row_count",
+    "marker_row_count", "tibetan_structure_status",
+    "entry_series_cluster_count", "independent_evidence_channels",
+    "independent_evidence_channel_count", "suggested_review_tier",
+    "volumes", "sample_contexts",
+]
 
 
 def main() -> None:
@@ -984,6 +1230,11 @@ def main() -> None:
     compatible_rows = build_source_compatible_rows(args.release_root)
     compatible_rankings = build_source_compatible_rankings(compatible_rows)
     echo_rows = build_same_entry_echo_rows(args.release_root)
+    insufficient_matrix = build_insufficient_evidence_matrix(
+        args.release_root,
+        compatible_rows=compatible_rows,
+        echo_rows=echo_rows,
+    )
     by_volume: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:
         by_volume[row["volume"]].append(row)
@@ -1030,6 +1281,11 @@ def main() -> None:
             volume_out / "tibetan_final_ng_source_compatible_reclassifications.tsv",
             build_source_compatible_reclassifications(compatible_rankings),
             SOURCE_COMPATIBLE_RANKING_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_insufficient_evidence_matrix.tsv",
+            insufficient_matrix,
+            INSUFFICIENT_EVIDENCE_FIELDS,
         )
     counts = Counter(row["alignment_category"] for row in rows)
     print(f"candidates={len(rows)}")

@@ -171,6 +171,65 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertEqual(audit["aligned_undotted_candidates_considered"], "3")
         self.assertEqual(audit["accounted_category_total"], "3")
 
+    def test_insufficient_matrix_counts_one_anchor_once(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tབང་ baṅ\n"
+                "1\t2\theadword_line\tབང་ ban\n"
+                "1\t3\theadword_line\tབང་ ban\n"
+                "1\t4\theadword_line\tབང་ ban\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_source_compatible_rows(release)
+            matrix = consensus.build_insufficient_evidence_matrix(
+                release,
+                compatible_rows=rows,
+                echo_rows=[],
+                override_rows=[],
+            )
+        row = next(item for item in matrix if item["source_variant"] == "ban")
+        self.assertEqual(row["undotted_clean_row_count"], "3")
+        self.assertEqual(row["compatible_dotted_anchor_count"], "1")
+        self.assertEqual(row["same_volume_dotted_anchor_count"], "1")
+        self.assertEqual(row["cross_volume_dotted_anchor_count"], "0")
+        self.assertEqual(
+            row["suggested_review_tier"], "single_anchor_recurrence_only"
+        )
+
+    def test_insufficient_matrix_identifies_cross_volume_anchor(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            for volume, line in (
+                ("wts_1_34", "བང་ ban"),
+                ("wts_35_51", "བང་ baṅ"),
+            ):
+                qa = release / "qa" / volume
+                qa.mkdir(parents=True)
+                (qa / f"{volume}_line_zones.tsv").write_text(
+                    "page\tline\tzone\tline_text\n"
+                    f"1\t1\theadword_line\t{line}\n",
+                    encoding="utf-8",
+                )
+            rows = consensus.build_source_compatible_rows(release)
+            matrix = consensus.build_insufficient_evidence_matrix(
+                release,
+                compatible_rows=rows,
+                echo_rows=[],
+                override_rows=[],
+            )
+        row = next(item for item in matrix if item["source_variant"] == "ban")
+        self.assertEqual(row["same_volume_dotted_anchor_count"], "0")
+        self.assertEqual(row["cross_volume_dotted_anchor_count"], "1")
+        self.assertEqual(
+            row["independent_evidence_channels"],
+            "compatible_dotted_anchor",
+        )
+        self.assertEqual(row["suggested_review_tier"], "cross_volume_anchor_review")
+
     def test_historical_frozen_manifests_use_exact_final_nasal_pairs(self) -> None:
         checked = 0
         for path in sorted((ROOT / "data").glob(

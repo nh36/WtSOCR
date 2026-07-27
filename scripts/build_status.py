@@ -247,6 +247,9 @@ def read_release_stats() -> ReleaseStats:
             "final_ng_same_entry_echo_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_final_ng_same_entry_echo_candidates.tsv"
             ),
+            "final_ng_insufficient_evidence_families": tsv_row_count(
+                diagnostic_dir / "tibetan_final_ng_insufficient_evidence_matrix.tsv"
+            ),
             "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
@@ -553,6 +556,25 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             total(stats, "final_ng_source_compatible_candidates"),
             "edit distance;case folding;different Latin stems;Latin-only replacement",
             "Parallel diagnostic preserves the complete case-sensitive source stem and changes only the final nasal glyph; exact-row review remains mandatory.",
+        ),
+        row(
+            "final_ng_insufficient_evidence_matrix",
+            "final_ng",
+            "source-compatible families below the two-anchor threshold",
+            "separate internal, cross-volume, entry, Google, and reviewed evidence channels",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+            0,
+            max(
+                as_int(item.get("final_ng_insufficient_evidence_families"))
+                for item in stats.volumes.values()
+            ),
+            "frequency-only promotion;duplicate evidence counting;one-anchor automatic correction",
+            "Evidence channels are reported separately; this matrix does not authorize corrections.",
         ),
         row(
             "reference_marker_diagnostics",
@@ -1204,6 +1226,17 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "diagnostic only",
             "Compare only case-sensitive dotted anchors with the identical pre-final Latin structure.",
             f'{per_volume_count_text(stats, "final_ng_source_compatible_candidates")}; parallel to the unchanged legacy consensus diagnostic.',
+        ],
+        [
+            "Final-ng insufficient-evidence matrix",
+            max(
+                as_int(item.get("final_ng_insufficient_evidence_families"))
+                for item in stats.volumes.values()
+            ),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+            "diagnostic only",
+            "Review independent evidence channels without treating recurrence as additional anchors.",
+            "One row per Tibetan syllable/source variant/target family; no automatic corrections.",
         ],
         [
             "Reference-marker OCR diagnostics",
