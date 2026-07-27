@@ -28,6 +28,13 @@ SUBJOINED_CONSONANTS = {
     "ླ": "l",
     "ྭ": "w",
 }
+LITERAL_TIBETAN_FEATURES = {
+    "ར": "r",
+    "ེ": "e",
+    "ི": "i",
+    "ོ": "o",
+    "ུ": "u",
+}
 GERMAN_STOP_WORDS = {
     "auch", "bez", "die", "der", "das", "ein", "eine", "einer", "für",
     "kurzf", "lex", "macht", "npr", "oder", "und", "vgl",
@@ -138,6 +145,31 @@ def syllable_identity_guard(syllable: str, target: str) -> tuple[str, str]:
             + "; requires a syllable-specific analysis.",
         )
     return "exact_same_tibetan_syllable", ""
+
+
+def source_compatible_identity_guard(
+    syllable: str,
+    target: str,
+) -> tuple[str, str]:
+    status, note = syllable_identity_guard(syllable, target)
+    if status != "exact_same_tibetan_syllable":
+        return status, note
+    missing = []
+    if "ྙ" in syllable and "ny" not in target.lower():
+        missing.append("ny")
+    missing.extend(
+        latin
+        for tibetan, latin in LITERAL_TIBETAN_FEATURES.items()
+        if tibetan in syllable and latin not in target.lower()
+    )
+    if missing:
+        return (
+            "consonantal_structure_mismatch",
+            "Proposed target omits an explicit Tibetan consonant or vowel feature: "
+            + ", ".join(missing)
+            + "; requires a syllable-specific analysis.",
+        )
+    return status, note
 
 
 def classify_damage_scope(
@@ -413,7 +445,7 @@ def build_source_compatible_rows(
             target_count = 0
         competing = Counter(compatible)
         competing.pop(target, None)
-        identity_status, identity_note = syllable_identity_guard(
+        identity_status, identity_note = source_compatible_identity_guard(
             old["tibetan_syllable"], target
         )
         exact_variant = source_compatible_pair(source, target)

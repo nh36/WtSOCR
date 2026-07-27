@@ -130,6 +130,18 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             consensus.syllable_identity_guard("ཐྲང", "thraṅ")[0],
             "exact_same_tibetan_syllable",
         )
+        self.assertEqual(
+            consensus.source_compatible_identity_guard("སྙིང", "siṅ")[0],
+            "consonantal_structure_mismatch",
+        )
+        self.assertEqual(
+            consensus.source_compatible_identity_guard("རྱོང", "myoṅ")[0],
+            "consonantal_structure_mismatch",
+        )
+        self.assertEqual(
+            consensus.source_compatible_identity_guard("མེང", "miṅ")[0],
+            "consonantal_structure_mismatch",
+        )
 
     def test_later_citation_number_does_not_damage_headword_alignment(self) -> None:
         line = "ཐང་ than npr. Kloster in 2 1531"
