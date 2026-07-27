@@ -5885,3 +5885,5 @@ wts_1_34	89	167	2	ban	baṅ	reviewed_tibetan_exact_final_ng_source_compatible	so
 wts_1_34	198	137	2	bun	buṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_bung_consensus_batch_20260727	Frozen exact Tibetan བུང alignment; exact-row only.
 wts_1_34	198	137	7	bun	buṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_bung_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
 wts_8_b	433	23	2	tshon	tshoṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_tshong_consensus_batch_20260727	Frozen exact Tibetan ཚོང alignment; exact-row only.
+wts_1_34	489	61	2	phon	phoṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_aphong_consensus_batch_20260727	Frozen exact Tibetan འཕོང alignment; exact-row only.
+wts_35_51	1100	46	6	phon	phoṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_aphong_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.

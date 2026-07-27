@@ -4,7 +4,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཤིང	Sin	Si<FINAL_NASAL>	Siṅ	20	competing_latin_forms:20	source_compatible_dominant_consensus:20	17		siṅ:30; ciṅ:1	0	wts_1_34;wts_35_51
 ལུང	lun	lu<FINAL_NASAL>	luṅ	14	competing_latin_forms:14	source_compatible_dominant_consensus:14	12		laṅ:3; haṅ:2; Tuṅ:1; beṅ:1	0	wts_1_34;wts_35_51
 ལུང	luh	lu<FINAL_NASAL>	luṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	12		laṅ:3; haṅ:2; Tuṅ:1; beṅ:1	0	wts_35_51
-འཕོང	phon	pho<FINAL_NASAL>	phoṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	4		skyeṅ:1; pboṅ:1	0	wts_1_34
 ཀློང	klon	klo<FINAL_NASAL>	kloṅ	20	competing_latin_forms:19; damaged_context:1	source_compatible_dominant_consensus:19; source_compatible_damaged_context:1	3		groṅ:2	1	wts_1_34
 སྙིང	sin	si<FINAL_NASAL>	siṅ	13	competing_latin_forms:13	source_compatible_structure_mismatch:13	3		sāiṅ:1; sñiṅ:1; stiṅ:1	0	wts_1_34
 སང	san	sa<FINAL_NASAL>	saṅ	6	competing_latin_forms:6	source_compatible_dominant_consensus:6	3		siṅ:1; sdaṅ:1	0	wts_1_34
