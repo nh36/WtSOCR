@@ -28726,3 +28726,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 629	69	7788	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
 629	69	7788	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
 680	127	8366	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem
+109	55	1331	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ངེ་ kron ne
+109	88	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ཀྲོང་ kron kron.
+109	88	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ཀྲོང་ kron kron.
+109	100	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ངེ་ kron ne auch kran ne aufgerichtet, auf-

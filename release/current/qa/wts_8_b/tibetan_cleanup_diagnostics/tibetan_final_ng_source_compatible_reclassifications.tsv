@@ -27,7 +27,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 འཆེང	chin	chi<FINAL_NASAL>	chiṅ		7	insufficient_consensus:7	source_compatible_structure_mismatch:7	1			0	wts_1_34
 རྟིང	rtin	rti<FINAL_NASAL>	rtiṅ		7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34
 རུང	run	ru<FINAL_NASAL>	ruṅ		6	insufficient_consensus:6	source_compatible_single_anchor:6	1			0	wts_1_34
-ཀྲོང	kron	kro<FINAL_NASAL>	kroṅ		4	insufficient_consensus:4	source_compatible_single_anchor:4	1			0	wts_1_34
 ཞེང	Zen	Ze<FINAL_NASAL>	Zeṅ		4	competing_latin_forms:4	source_compatible_single_anchor:4	1		zeṅ:1; Ziṅ:1; ziṅ:1	0	wts_1_34
 རང	rin	ri<FINAL_NASAL>	riṅ		4	not_emitted_by_legacy_global_target:4	source_compatible_structure_mismatch:4	1		raṅ:14	0	wts_1_34
 ཤང	sin	si<FINAL_NASAL>	siṅ		4	not_emitted_by_legacy_global_target:4	source_compatible_structure_mismatch:4	1		Saṅ:1	0	wts_1_34
@@ -115,7 +114,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 ཀྱང	Ryan	Rya<FINAL_NASAL>		Ryaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		kyaṅ:7; gyaṅ:1; byaṅ:1	0	wts_1_34
 ཀྱང	byun	byu<FINAL_NASAL>		byuṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		kyaṅ:7; gyaṅ:1; byaṅ:1	0	wts_1_34
 ཀྱང	khyun	khyu<FINAL_NASAL>		khyuṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		kyaṅ:7; gyaṅ:1; byaṅ:1	0	wts_1_34
-ཀྲོང	gron	gro<FINAL_NASAL>		groṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		kroṅ:1	0	wts_1_34
+ཀྲོང	gron	gro<FINAL_NASAL>		groṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		kroṅ:5	0	wts_1_34
 ཀླང	klon	klo<FINAL_NASAL>		kloṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		kluṅ:8	0	wts_1_34
 ཀླང	krun	kru<FINAL_NASAL>		kruṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		kluṅ:8	0	wts_1_34
 ཁང	Eingangsbereich	Eingangsbereic<FINAL_NASAL>		Eingangsbereicṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		khaṅ:89; kbaṅ:4	0	wts_1_34

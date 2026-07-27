@@ -116,3 +116,4 @@ source_compatible_shing_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཤི
 source_compatible_klong_20260727	652273e47f67e8d17a1988e4c3bc2e3641841125	ཀློང	source_compatible_klong_consensus_batch_20260727	19	19	source_compatible_klong_same_entry_echo_batch_20260727	1	0	1	0	0	0	19	0	1	19	1
 source_compatible_atshong_20260727	652273e47f67e8d17a1988e4c3bc2e3641841125	འཚོང	source_compatible_atshong_consensus_batch_20260727	3	3	source_compatible_atshong_same_entry_echo_batch_20260727	1	1	0	0	0	0	3	1	1	4	0
 source_compatible_sprang_20260727	652273e47f67e8d17a1988e4c3bc2e3641841125	སྤྲང	source_compatible_sprang_consensus_batch_20260727	1	1	source_compatible_sprang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+one_anchor_krong_20260727	63a9742b88eaf7345cf8225bb6d5b4ad770fbb5e	ཀྲོང	one_anchor_krong_consensus_batch_20260727	4	4	one_anchor_krong_same_entry_echo_batch_20260727	1	0	0	0	1	0	4	1	1	4	0

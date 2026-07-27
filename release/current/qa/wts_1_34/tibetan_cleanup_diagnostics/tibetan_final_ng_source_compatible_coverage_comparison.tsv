@@ -34,11 +34,11 @@ newly_discovered	wts_1_34	1076	34	3	འཐུང	den				source_compatible_struct
 newly_discovered	wts_1_34	108	1	1	ཀྱོང	kyon				source_compatible_no_anchor	0	ཀྱོང་ཀྱོང་ kyon kyon
 newly_discovered	wts_1_34	108	1	2	ཀྱོང	kyon				source_compatible_no_anchor	0	ཀྱོང་ཀྱོང་ kyon kyon
 newly_discovered	wts_1_34	108	17	1	ཀྱོང	kyon				source_compatible_no_anchor	0	ཀྱོང་བུ་ kyon bu ein Gerät, vgl. Ikyon mo.
-category_changed	wts_1_34	109	100	1	ཀྲོང	kron	kroṅ	kroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྲོང་ངེ་ kron ne auch kran ne aufgerichtet, auf-
+disappeared	wts_1_34	109	100	1	ཀྲོང	kron	kroṅ		source_compatible_insufficient_evidence			ཀྲོང་ངེ་ kron ne auch kran ne aufgerichtet, auf-
 newly_discovered	wts_1_34	109	16	2	ཀླང	krun				source_compatible_structure_mismatch	0	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
-category_changed	wts_1_34	109	55	1	ཀྲོང	kron	kroṅ	kroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྲོང་ངེ་ kron ne
-category_changed	wts_1_34	109	88	1	ཀྲོང	kron	kroṅ	kroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྲོང་ཀྲོང་ kron kron.
-category_changed	wts_1_34	109	88	2	ཀྲོང	kron	kroṅ	kroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྲོང་ཀྲོང་ kron kron.
+disappeared	wts_1_34	109	55	1	ཀྲོང	kron	kroṅ		source_compatible_insufficient_evidence			ཀྲོང་ངེ་ kron ne
+disappeared	wts_1_34	109	88	1	ཀྲོང	kron	kroṅ		source_compatible_insufficient_evidence			ཀྲོང་ཀྲོང་ kron kron.
+disappeared	wts_1_34	109	88	2	ཀྲོང	kron	kroṅ		source_compatible_insufficient_evidence			ཀྲོང་ཀྲོང་ kron kron.
 newly_discovered	wts_1_34	1090	74	4	བཟུང	von				source_compatible_structure_mismatch	0	ད་གཟོད་ནས་བཟུང་ dagzod nas bzuṅ von nun an.
 newly_discovered	wts_1_34	1090	89	2	ཡང	nun				source_compatible_structure_mismatch	0	ད་ཡང་ dayan nun; auch jetzt, auch jetzt noch;
 newly_discovered	wts_1_34	1091	18	2	རུང	noch				source_compatible_structure_mismatch	0	ད་རུང་ darun noch, dann, weiterhin, noch im-

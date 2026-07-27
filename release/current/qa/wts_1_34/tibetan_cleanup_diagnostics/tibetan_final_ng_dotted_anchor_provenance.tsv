@@ -169,6 +169,10 @@ wts_1_34	107	133	2	ཏང	taṅ	reviewed_exact_final_ng	tan	reviewed_tibetan_exa
 wts_1_34	107	152	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀྱོ་རང་ kyo raṅ Elefantenhaken.
 wts_1_34	108	140	2	གཡང	g.yaṅ	base_ocr_dotted	g.yaṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
 wts_1_34	109	16	1	ཀྲུང	kruṅ	google_adopted	krun	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
+wts_1_34	109	55	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ངེ་ kroṅ ne
+wts_1_34	109	88	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ཀྲོང་ kroṅ kroṅ.
+wts_1_34	109	88	2	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ཀྲོང་ kroṅ kroṅ.
+wts_1_34	109	100	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ངེ་ kroṅ ne auch kran ne aufgerichtet, auf-
 wts_1_34	109	191	5	སྡེང	sdeṅ	google_adopted	sden	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཀླ་ཀློ་ མི་སྐྱ་སྡེང་ kla klo mi skya sdeṅ N. eines Vol-
 wts_1_34	110	77	2	ཁུང	khuṅ	reviewed_exact_final_ng	khun	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	ཀླད་ཁུང་ klad khuṅ Hirnschale.
 wts_1_34	111	163	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	ཀླུ་ཁང་ klu khaṅ
