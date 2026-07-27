@@ -84452,7 +84452,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 586	210	7311	german_prose			none	0	2	0	0	Heilmittel, Kalkstein.
 586	212	7311	german_prose			none	0	2	0	0	con {b}Z2i ... bzan drug bu ram sbyar „con Zi
 586	214	7311	other			none	0	0	0	0	127
-587	1	7311	tibetan_only	ཅོང་རོང་		none	0	0	0	0	ཅོང་རོང་ con ron
+587	1	7311	tibetan_only	ཅོང་རོང་		none	0	0	0	0	ཅོང་རོང་ con roṅ
 587	3	7311	german_prose_with_translit			none	1	2	0	0	[usw.] und die sechs guten Dinge mische
 587	4	7311	german_prose			none	0	2	0	0	man mit bu ram“ (Hipp 230,17).
 587	6	7311	german_prose_with_translit			none	2	3	0	0	Lex. sman -’am cun Zi yaṅ zer (brDa); sman
@@ -84461,7 +84461,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 587	9	7311	german_prose			none	0	2	0	0	"zun cha ~ (Dagy); con Zu = »""ı min (ITC);"
 587	10	7311	german_prose_with_translit			none	2	2	0	0	gcon 27/ = rdo sman -'am cun Zi yahi (brDa);
 587	11	7311	german_prose			none	0	3	0	0	gcon Zi chu = Sailodakam (Mvy 5784).
-587	13	7312	headword_line	ཅྲོང་རོང་	roṅ	high	1	0	0	0	ཅྲོང་རོང་ con ron \gcon roṅ.
+587	13	7312	headword_line	ཅྲོང་རོང་	roṅ	high	1	0	0	0	ཅྲོང་རོང་ con roṅ \gcon roṅ.
 587	14	7312	tibetan_only	ཅོད་		none	0	1	0	0	ཅོད་ cod alttib. für \chod.
 587	16	7312	tibetan_only	ཅོད་པན་		none	0	2	0	0	ཅོད་པན་ €0¢ pan Krone, Haarknoten.
 587	18	7312	german_prose_with_translit			none	5	2	0	0	de la gdugs dan - dan thod „Schirm, Krone
@@ -85793,7 +85793,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 597	79	7378	german_prose_with_translit			none	2	1	0	0	Phag-ri“ (Wadd135h 1); /ha khan ~ che bar
 597	80	7378	german_prose_with_translit			none	1	8	0	0	bsam gzigs med pa „ohne den großen Verschleiß des Tempels zu berücksichtigen“
 597	82	7378	other			none	0	0	0	0	(MTH3/5/17 13).
-597	84	7378	tibetan_only	གཅོང་རོང་		none	0	2	0	0	གཅོང་རོང་ gcon ron auch con ron Schlucht,
+597	84	7378	tibetan_only	གཅོང་རོང་		none	0	2	0	0	གཅོང་རོང་ gcon roṅ auch con roṅ Schlucht,
 597	86	7378	german_prose_with_translit			none	1	1	0	0	Engpaß, Hohlweg.
 597	88	7378	german_prose_with_translit			none	2	3	0	0	Lex. g.yari sa „Abgrund“ (brDa, Dagy); con
 597	89	7378	latin_other			none	4	0	0	0	yans ni ’og tu ~ zab mo yod pa’i g.yari sa’o
@@ -136971,7 +136971,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 943	178	10336	german_prose_with_translit			none	1	2	0	0	wo die chinesische Festung namens Zi-lin
 943	179	10336	german_prose			none	0	2	0	0	liegt, befindet sich ein Berg namens sTag-
 943	180	10336	latin_other			none	1	0	0	0	11“ (Dzam 47,21).
-943	182	10336	tibetan_only	སྟག་རོང་		none	0	1	0	0	སྟག་རོང་ stag ron npr. cin Ort.
+943	182	10336	tibetan_only	སྟག་རོང་		none	0	1	0	0	སྟག་རོང་ stag roṅ npr. cin Ort.
 943	184	10336	tibetan_only	ཏྟ		none	0	0	0	0	ཏྟ
 943	186	10336	latin_other			none	3	0	0	0	'chan kheb (r. mchan khebs) stag ran (r. ron)
 943	187	10336	german_prose_with_translit			none	3	1	0	0	gzig ’phen dan „die Seitendeckung [bildet]

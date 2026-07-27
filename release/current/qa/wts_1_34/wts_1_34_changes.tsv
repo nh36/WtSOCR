@@ -28615,3 +28615,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 198	137	2579	headword_line	bun	buṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun furcht-
 198	137	2579	headword_line	bun	buṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun furcht-
 489	61	6385	headword_line	phon	phoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྒ་འཕོང་ sga ’phon hinterer Teil des Sattels.
+587	1	7413	tibetan_only	ron	roṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཅོང་རོང་ con ron
+587	13	7414	headword_line	ron	roṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཅྲོང་རོང་ con ron \gcon roṅ.
+597	84	7481	tibetan_only	ron	roṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གཅོང་རོང་ gcon ron auch con ron Schlucht,
+597	84	7481	tibetan_only	ron	roṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཅོང་རོང་ gcon ron auch con ron Schlucht,
+943	182	10508	tibetan_only	ron	roṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་རོང་ stag ron npr. cin Ort.
