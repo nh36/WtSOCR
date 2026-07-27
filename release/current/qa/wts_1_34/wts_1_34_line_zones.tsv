@@ -3107,7 +3107,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 36	74	59	headword_line	ཀ་ཏ་པུར་འཛག་	ka ta	medium	3	1	0	0	ཀ་ཏ་པུར་འཛག་ ka ta pur ’dzag „Kampfer trop-
 36	76	59	german_prose			none	0	1	0	0	fend“, meton. Mond.
 36	77	59	german_prose_with_translit			none	2	1	0	0	Lex. zla ba (brDa).
-36	79	60	headword_line	ཀ་ཏ་བང་ཀ་	Ra ta	medium	3	2	0	0	ཀ་ཏ་བང་ཀ་ Ra ta ban ka eine Heilpflanze. - skt.
+36	79	60	headword_line	ཀ་ཏ་བང་ཀ་	Ra ta	medium	3	2	0	0	ཀ་ཏ་བང་ཀ་ Ra ta baṅ ka eine Heilpflanze. - skt.
 36	80	60	german_prose			none	0	3	0	0	kapotavankä eine Arzneipflanze,
 36	81	60	german_prose			none	0	3	0	0	welche vorzüglich gegen den Blasenstein ge-
 36	82	60	german_prose			none	0	2	0	0	braucht wird (PW); synon. suvarcalä Ruta
@@ -11182,7 +11182,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 89	163	1057	german_prose_with_translit			none	2	1	0	0	Lex. tib. synon. rgyal mtshan, skt. ketub, skt.
 89	164	1057	german_prose_with_translit			none	3	1	0	0	synon. dhvaja (Ak 315.63a); rgyal mtshan
 89	165	1057	latin_other			none	1	0	0	0	(brDa).
-89	167	1057	tibetan_only	ཀེ་བང་		none	0	1	0	0	ཀེ་བང་ ke ban, auch ke wan npr. eın chinesischer
+89	167	1057	tibetan_only	ཀེ་བང་		none	0	1	0	0	ཀེ་བང་ ke baṅ, auch ke wan npr. eın chinesischer
 89	168	1057	german_prose			none	0	7	0	0	Mönch, Mitglied des Samgha bei der Or-
 89	169	1057	german_prose_with_translit			none	1	1	0	0	dination des dGons-pa rab-gsal.
 89	171	1057	german_prose_with_translit			none	6	1	0	0	ba yan tshon ’dus na rgya nag gi hwa Sari ke

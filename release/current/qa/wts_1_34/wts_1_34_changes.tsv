@@ -28610,3 +28610,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1152	1	12443	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དུག་ཕྱུང་ dug phyun
 1338	33	13309	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
 1338	33	13309	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
+36	79	60	headword_line	ban	baṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀ་ཏ་བང་ཀ་ Ra ta ban ka eine Heilpflanze. - skt.
+89	167	1062	tibetan_only	ban	baṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀེ་བང་ ke ban, auch ke wan npr. eın chinesischer
