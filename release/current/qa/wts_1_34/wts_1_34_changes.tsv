@@ -28622,3 +28622,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 943	182	10508	tibetan_only	ron	roṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་རོང་ stag ron npr. cin Ort.
 944	84	10518	tibetan_only	stan	staṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟང་ stan Ehemann.
 946	86	10535	headword_line	stan	staṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟི་སྟང་ sti stan \bsti stan.
+104	89	1253	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྱང་ཀྱོང་ kyan kyon uneben, wellig.
+710	175	8687	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཇི་ནས་ཀྱང་ JE nas kyan unbedingt; vgl. །€/ nas
+1087	1	12104	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ད་དུང་ཀྱང་ da duṅ kyan
+1087	34	12105	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ད་དུང་ཀྱང་ da duṅ kyan Ida dun yan.

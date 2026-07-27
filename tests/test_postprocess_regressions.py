@@ -2449,7 +2449,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
-        self.assertIn("da duṅ kyan Ida dun yan", corrected)
+        self.assertIn("da duṅ kyaṅ Ida dun yan", corrected)
         self.assertIn("duṅ skyoṅ auch duṅ skyons", corrected)
         self.assertIn("duṅ rin", corrected)
         self.assertIn("rkaṅ duṅ", corrected)

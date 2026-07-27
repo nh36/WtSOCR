@@ -13176,7 +13176,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 104	85	1230	german_prose			none	0	1	0	0	ist, darf er nicht gegenbeschuldigen; obwohl
 104	86	1230	german_prose			none	0	2	0	0	er geschlagen worden ist, darf er nicht zu-
 104	87	1230	german_prose			none	0	2	0	0	rückschlagen“ (Mvy 8709-8712).
-104	89	1231	headword_line	ཀྱང་ཀྱོང་	kyan kyon	medium	2	0	0	0	ཀྱང་ཀྱོང་ kyan kyon uneben, wellig.
+104	89	1231	headword_line	ཀྱང་ཀྱོང་	kyan kyon	medium	2	0	0	0	ཀྱང་ཀྱོང་ kyaṅ kyon uneben, wellig.
 104	90	1231	german_prose_with_translit			none	1	1	0	0	Lex. kon kon (brDa).
 104	91	1231	german_prose			none	0	1	0	0	DRAR kyan run sei es, daß ..., sei es, 4315; ob
 104	92	1231	german_prose			none	0	1	0	0	nun ... oder.
@@ -103172,7 +103172,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 710	170	8541	german_prose			none	0	1	0	0	begegnet?“ (Mil 110,5).
 710	172	8542	headword_line	ཇི་ནས་	nas	medium	1	0	0	0	ཇི་ནས་ // nas wie.
 710	173	8542	german_prose			none	0	2	0	0	Lex. yatha (Mvy 5403).
-710	175	8543	headword_line	ཇི་ནས་ཀྱང་	nas kyan unbedingt	medium	4	1	0	0	ཇི་ནས་ཀྱང་ JE nas kyan unbedingt; vgl. །€/ nas
+710	175	8543	headword_line	ཇི་ནས་ཀྱང་	nas kyan unbedingt	medium	4	1	0	0	ཇི་ནས་ཀྱང་ JE nas kyaṅ unbedingt; vgl. །€/ nas
 710	176	8543	german_prose			none	0	1	0	0	an.
 710	178	8543	latin_other			none	6	0	0	0	bdag gis dran sron de dka’ thub de las - g.yos
 710	179	8543	german_prose_with_translit			none	3	2	0	0	par gyur pa de Itar beyi’o „ich will dafür
@@ -158356,7 +158356,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1086	101	11905	latin_other			none	5	0	0	0	7.4d); — na’itshon yari ma zin rdzoṅ phru yan
 1086	102	11905	german_prose			none	0	3	0	0	cho chad „unser Handel ist jetzt weder beendet, noch reicht unser Proviant aus“ (dPe
 1086	104	11905	latin_other			none	3	0	0	0	70,15); glan dar mas chos snubs pa da du(n)
-1087	1	11906	headword_line	ད་དུང་ཀྱང་	kyan	medium	1	0	0	0	ད་དུང་ཀྱང་ da duṅ kyan
+1087	1	11906	headword_line	ད་དུང་ཀྱང་	kyan	medium	1	0	0	0	ད་དུང་ཀྱང་ da duṅ kyaṅ
 1087	3	11906	german_prose_with_translit			none	2	5	0	0	ma thos sam „habt ihr noch immer nicht gehört, daß Glan-dar-ma die Lehre vernich-
 1087	5	11906	german_prose_with_translit			none	2	1	0	0	tet hat?“ (Nel 1537); — red na yan 'bebs
 1087	6	11906	other			none	0	0	0	0	„aber wenn sie euch jetzt noch finden, wer-
@@ -158382,7 +158382,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1087	29	11906	german_prose_with_translit			none	5	1	0	0	Lex. da lta’an yin zer ba lta bu (brDa); sron
 1087	30	11906	german_prose_with_translit			none	3	6	0	0	dus ma zad da lta’an lta bu „wie: die frühere Zeit ist nicht vorüber, auch jetzt noch“
 1087	33	11906	german_prose			none	0	1	0	0	(Dagy).
-1087	34	11907	headword_line	ད་དུང་ཀྱང་	kyan	medium	2	1	0	0	ད་དུང་ཀྱང་ da duṅ kyan Ida dun yan.
+1087	34	11907	headword_line	ད་དུང་ཀྱང་	kyan	medium	2	1	0	0	ད་དུང་ཀྱང་ da duṅ kyaṅ Ida dun yan.
 1087	36	11908	headword_line	ད་དུང་གི་བར་དུ་	gi	medium	2	0	0	0	ད་དུང་གི་བར་དུ་ da duṅ gi bar du bis heute.
 1087	38	11908	latin_other			none	5	0	0	0	thog ma med pa’i dus can 'di / da dun bar du
 1087	39	11908	german_prose_with_translit			none	2	2	0	0	ma log go (metr.) „von anfanglosen Zeiten
