@@ -43,14 +43,6 @@ EXACT_TIBETAN_STEM_PREFIXES = {
     "ཁང": "kha",
     "སྤང": "spa",
 }
-KNOWN_SUSPICIOUS_ALIGNMENTS = {
-    ("ཆུང", "run"),
-    ("གླིང", "elin"),
-    ("ལྗང", "lan"),
-    ("ལྗང", "ldan"),
-    ("ལྗང", "Dan"),
-    ("ཁོང", "kbon"),
-}
 GERMAN_STOP_WORDS = {
     "auch", "bez", "die", "der", "das", "ein", "eine", "einer", "für",
     "kurzf", "lex", "macht", "npr", "oder", "und", "vgl",
@@ -205,12 +197,77 @@ def source_compatible_identity_guard(
         missing.append(f"vowel_{tibetan_vowel}")
     if missing:
         return (
-            "consonantal_structure_mismatch",
-            "Proposed target omits an explicit Tibetan consonant or vowel feature: "
+            "transcription_structure_requires_review",
+            "The target is not supported as a final-ng-only counterpart because "
+            "an explicit Tibetan consonant or vowel feature is not represented: "
             + ", ".join(missing)
-            + "; requires a syllable-specific analysis.",
+            + ". This does not by itself prove a bad alignment.",
         )
     return status, note
+
+
+def load_alignment_review_exceptions() -> dict[tuple[str, str], dict[str, str]]:
+    path = (
+        Path(__file__).resolve().parents[1]
+        / "data/final_ng_alignment_review_exceptions.tsv"
+    )
+    if not path.exists():
+        return {}
+    return {
+        (row["tibetan_syllable"], row["source_token"]): row
+        for row in read_tsv(path)
+    }
+
+
+def alignment_review_status(
+    syllable: str,
+    source: str,
+    supported_target: str,
+    *,
+    damage_scope: str = "none",
+    marker_attached: bool = False,
+) -> str:
+    """Describe review evidence modestly; this is not a transliteration model."""
+    if marker_attached or damage_scope in {
+        "tibetan_headword_overlap",
+        "latin_headword_overlap",
+        "damage_before_latin_alignment",
+    }:
+        return "marker_or_damage"
+    exception = load_alignment_review_exceptions().get((syllable, source))
+    if exception:
+        return exception["status"]
+    if len(source) > 12 or source.lower() in {
+        "noch", "dach", "wildschwein", "mannsh",
+    }:
+        return "obvious_gloss_or_alignment_noise"
+    if supported_target and source_compatible_pair(source, supported_target):
+        return "exact_source_signature_supported"
+    if supported_target:
+        return "source_variant_requires_manual_review"
+    return "unresolved"
+
+
+def zero_anchor_source_state(
+    syllable: str,
+    source: str,
+    supported_target: str,
+    rows: list[dict[str, str]],
+) -> str:
+    if supported_target:
+        return ""
+    statuses = {row.get("alignment_review_status", "") for row in rows}
+    if "marker_or_damage" in statuses:
+        return "marker_or_damage"
+    if "obvious_gloss_or_alignment_noise" in statuses:
+        return "obvious_alignment_or_gloss_noise"
+    if "known_multi_error_source" in statuses:
+        return "additional_nonfinal_ocr_damage_possible"
+    if "source_variant_requires_manual_review" in statuses:
+        return "additional_nonfinal_ocr_damage_possible"
+    if source and source[-1:] in SOURCE_FINALS:
+        return "no_anchor_clean_source_shape"
+    return "manual_unresolved"
 
 
 def classify_damage_scope(
@@ -315,6 +372,19 @@ def collect_anchor_provenance(
     root = Path(__file__).resolve().parents[1]
     exact_path = root / "data/reviewed_tibetan_exact_overrides.tsv"
     exact_rows = read_tsv(exact_path) if exact_path.exists() else []
+    verification_path = (
+        root / "data/final_ng_direct_base_anchor_verification.tsv"
+    )
+    verification_rows = (
+        read_tsv(verification_path) if verification_path.exists() else []
+    )
+    verification_by_key = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["dotted_token"],
+        ): row
+        for row in verification_rows
+    }
     exact_by_key: dict[tuple[str, ...], list[dict[str, str]]] = defaultdict(list)
     for row in exact_rows:
         exact_by_key[
@@ -360,6 +430,12 @@ def collect_anchor_provenance(
         changes = changes_by_line_target.get(
             (row["volume"], row["page"], row["line"], token), []
         )
+        verification = verification_by_key.get(
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                syllable, token,
+            )
+        )
         if exact:
             classification = "reviewed_exact_final_ng"
             reason = ";".join(sorted({item["reason"] for item in exact}))
@@ -391,10 +467,27 @@ def collect_anchor_provenance(
                 source_tokens = ";".join(
                     sorted({item.get("from_token", "") for item in changes})
                 )
-        else:
+        elif (
+            verification
+            and verification["verification_status"]
+            == "directly_verified_base_ocr"
+        ):
             classification = "base_ocr_dotted"
-            reason = "no_release_change_introduced_current_dotted_token"
-            evidence = "authoritative_base_ocr"
+            reason = verification["rationale"]
+            evidence = verification["evidence"]
+            source_tokens = token
+        else:
+            classification = "base_provenance_unverified"
+            reason = (
+                verification["rationale"]
+                if verification
+                else "No direct authoritative base-OCR verification is recorded."
+            )
+            evidence = (
+                verification["evidence"]
+                if verification
+                else "current_release_presence_only"
+            )
             source_tokens = token
         provenance.append(
             {
@@ -719,16 +812,21 @@ def build_source_compatible_rows(
             incompatible.pop(form, None)
         if compatible:
             target, target_count = compatible.most_common(1)[0]
-            hypothetical_target = ""
         else:
             target = ""
-            hypothetical_target = source[:-1] + "ṅ"
             target_count = 0
         competing = Counter(compatible)
         competing.pop(target, None)
-        identity_status, identity_note = source_compatible_identity_guard(
-            aligned_row["tibetan_syllable"], target or hypothetical_target
-        )
+        if target:
+            identity_status, identity_note = source_compatible_identity_guard(
+                aligned_row["tibetan_syllable"], target
+            )
+        else:
+            identity_status = "target_unresolved_no_anchor"
+            identity_note = (
+                "No compatible dotted target exists, so transcription structure "
+                "cannot be evaluated by the final-ng-only diagnostic."
+            )
         exact_variant = source_compatible_pair(source, target) if target else False
         old_category = old.get(
             "alignment_category", "not_emitted_by_legacy_global_target"
@@ -752,8 +850,11 @@ def build_source_compatible_rows(
             confidence = "manual"
             action = "separate_marker_and_final_ng_review"
             deferred = "Reference-marker reconstruction requires independent evidence."
-        elif identity_status == "consonantal_structure_mismatch":
-            category = "source_compatible_structure_mismatch"
+        elif identity_status in {
+            "consonantal_structure_mismatch",
+            "transcription_structure_requires_review",
+        }:
+            category = "source_compatible_not_final_ng_only"
             confidence = "manual"
             action = "syllable_specific_analysis"
             deferred = identity_note
@@ -768,7 +869,7 @@ def build_source_compatible_rows(
             action = "alignment_and_target_discovery"
             deferred = (
                 "No case-sensitive compatible dotted anchor is available; "
-                "the hypothetical target is not corpus-supported."
+                "this diagnostic establishes no canonical target."
             )
         elif not exact_variant or target_count == 1:
             category = "source_compatible_single_anchor"
@@ -797,7 +898,6 @@ def build_source_compatible_rows(
                 "source_latin_token": source,
                 "source_signature": signature or "",
                 "proposed_latin_target": target,
-                "hypothetical_target": hypothetical_target,
                 "compatible_accepted_target_count": str(target_count),
                 "compatible_competing_form_counts": format_counts(competing),
                 "incompatible_dotted_form_counts": format_counts(incompatible),
@@ -808,8 +908,12 @@ def build_source_compatible_rows(
                 "syllable_identity_guard": identity_status,
                 "confidence": confidence,
                 "suggested_action": action,
-                "alignment_plausibility": alignment_plausibility(
-                    aligned_row["tibetan_syllable"], source, target
+                "alignment_review_status": alignment_review_status(
+                    aligned_row["tibetan_syllable"],
+                    source,
+                    target,
+                    damage_scope=damage_scope,
+                    marker_attached=attached_marker,
                 ),
                 "context_excerpt": aligned_row["context_excerpt"].rstrip(),
                 "reason_for_deferral": deferred,
@@ -851,7 +955,6 @@ def build_source_compatible_rankings(
                 "source_variant": source,
                 "source_signature": signature,
                 "proposed_target": target,
-                "hypothetical_target": family_rows[0]["hypothetical_target"],
                 "candidate_count": str(len(family_rows)),
                 "old_categories": format_counts(
                     Counter(row["old_alignment_category"] for row in family_rows)
@@ -907,7 +1010,7 @@ def build_source_compatible_reclassifications(
         "insufficient_consensus": "source_compatible_insufficient_evidence",
         "competing_latin_forms": "source_compatible_competing_evidence",
         "damaged_context": "source_compatible_damaged_context",
-        "syllable_structure_mismatch": "source_compatible_structure_mismatch",
+        "syllable_structure_mismatch": "source_compatible_not_final_ng_only",
         "marker_attached": "source_compatible_marker_attached",
     }
     def changed(row: dict[str, str]) -> bool:
@@ -948,7 +1051,7 @@ def build_source_compatible_coverage_audit(
         "aligned_undotted_candidates_considered": len(rows),
         **anchor_counts,
         "identity_guard_excluded": categories[
-            "source_compatible_structure_mismatch"
+            "source_compatible_not_final_ng_only"
         ],
         "damaged": categories["source_compatible_damaged_context"],
         "marker_attached": categories["source_compatible_marker_attached"],
@@ -1054,6 +1157,367 @@ def build_anchor_count_change_audit(
     return rows
 
 
+def build_one_anchor_pilot_evidence_audit() -> list[dict[str, str]]:
+    """Separate family authorization from evidence actually present per row."""
+    root = Path(__file__).resolve().parents[1]
+    manifest_path = (
+        root
+        / "data/final_ng_source_compatible_one_anchor_pilot_prepass_manifest_63a9742.tsv"
+    )
+    if not manifest_path.exists():
+        return []
+    manifest = read_tsv(manifest_path)
+    positional = [row for row in manifest if row["candidate_status"] == "positional"]
+    echoes = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["source_token"], row["target"],
+        ): row
+        for row in manifest
+        if row["candidate_status"] == "echo"
+    }
+    family_identity = {
+        "ཀྲོང": "direct_repeated_tibetan_alignment",
+        "རྟིང": "explicit_same_entry_repetition;cross_reference_review",
+        "བགྲང": "explicit_same_entry_repetition;cross_reference_review",
+    }
+    audit: list[dict[str, str]] = []
+    for row in positional:
+        key = (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["source_token"], row["target"],
+        )
+        local = echoes.get(key)
+        audit.append(
+            {
+                "tibetan_syllable": row["tibetan_syllable"],
+                "volume": row["volume"],
+                "page": row["page"],
+                "line": row["line"],
+                "token_index": row["token_index"],
+                "source_token": row["source_token"],
+                "target": row["target"],
+                "family_target_evidence": (
+                    "current dotted anchor present; authoritative base OCR "
+                    "source unavailable for direct verification"
+                ),
+                "anchor_provenance_status": "base_provenance_unverified",
+                "family_identity_evidence": family_identity[
+                    row["tibetan_syllable"]
+                ],
+                "row_exact_tibetan_alignment": "reviewed_exact",
+                "row_damage_status": row["damage_category"],
+                "row_marker_status": "none",
+                "row_local_lemma_cue": (
+                    local["alignment_category"] if local else "none"
+                ),
+                "audit_decision": (
+                    "preserve_reviewed_correction_but_do_not_reuse_as_"
+                    "direct_base_anchor"
+                ),
+                "context_excerpt": row["context_excerpt"],
+            }
+        )
+    return audit
+
+
+def build_zero_anchor_variant_audit(
+    compatible_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    zero = [
+        row for row in compatible_rows
+        if row["source_compatible_category"] == "source_compatible_no_anchor"
+    ]
+    by_syllable: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in compatible_rows:
+        by_syllable[row["tibetan_syllable"]].append(row)
+    audit: list[dict[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+    for row in zero:
+        key = (row["tibetan_syllable"], row["source_latin_token"])
+        if key in seen:
+            continue
+        seen.add(key)
+        siblings = by_syllable[row["tibetan_syllable"]]
+        audit.append(
+            {
+                "tibetan_syllable": key[0],
+                "source_variant": key[1],
+                "source_state": zero_anchor_source_state(
+                    key[0], key[1], "", [item for item in zero if (
+                        item["tibetan_syllable"], item["source_latin_token"]
+                    ) == key]
+                ),
+                "supported_target": "",
+                "other_source_variants": ";".join(sorted({
+                    item["source_latin_token"] for item in siblings
+                    if item["source_latin_token"] != key[1]
+                })),
+                "same_tibetan_dotted_forms": next(
+                    (
+                        item["incompatible_dotted_form_counts"]
+                        for item in siblings
+                        if item["incompatible_dotted_form_counts"]
+                    ),
+                    "",
+                ),
+                "reviewed_canonical_target": load_alignment_review_exceptions()
+                .get(key, {}).get("reviewed_canonical_target", ""),
+                "review_evidence": load_alignment_review_exceptions()
+                .get(key, {}).get("evidence_type", ""),
+                "sample_context": row["context_excerpt"],
+            }
+        )
+    return sorted(audit, key=lambda row: (
+        row["source_state"], row["tibetan_syllable"], row["source_variant"]
+    ))
+
+
+def build_multi_error_transcription_review(
+    compatible_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    exceptions = load_alignment_review_exceptions()
+    rows: list[dict[str, str]] = []
+    for row in compatible_rows:
+        key = (row["tibetan_syllable"], row["source_latin_token"])
+        exception = exceptions.get(key)
+        if not exception or exception["status"] != "known_multi_error_source":
+            continue
+        rows.append(
+            {
+                "volume": row["volume"],
+                "page": row["page"],
+                "line": row["line"],
+                "token_index": row["token_index"],
+                "tibetan_syllable": key[0],
+                "source_token": key[1],
+                "reviewed_canonical_target": exception[
+                    "reviewed_canonical_target"
+                ],
+                "evidence_type": exception["evidence_type"],
+                "review_status": "resolved_by_exact_manual_multi_error"
+                if exception["reviewed_canonical_target"] else "manual_unresolved",
+                "rationale": exception["rationale"],
+                "context_excerpt": row["context_excerpt"],
+            }
+        )
+    root = Path(__file__).resolve().parents[1]
+    overrides_path = root / "data/reviewed_tibetan_exact_overrides.tsv"
+    if overrides_path.exists():
+        existing = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["source_token"],
+            )
+            for row in rows
+        }
+        for override in read_tsv(overrides_path):
+            if override.get("reason") != "reviewed_tibetan_exact_manual_multi_error":
+                continue
+            key = (
+                override["volume"], override["page"], override["line"],
+                override["token_index"], override["from_token"],
+            )
+            if key in existing:
+                continue
+            exception_key, exception = next(
+                (
+                    (key, value)
+                    for key, value in exceptions.items()
+                    if key[1] == override["from_token"]
+                    and value.get("reviewed_canonical_target")
+                    == override["to_token"]
+                ),
+                (("", ""), {}),
+            )
+            rows.append(
+                {
+                    "volume": override["volume"],
+                    "page": override["page"],
+                    "line": override["line"],
+                    "token_index": override["token_index"],
+                    "tibetan_syllable": exception_key[0],
+                    "source_token": override["from_token"],
+                    "reviewed_canonical_target": override["to_token"],
+                    "evidence_type": override["evidence"],
+                    "review_status": "resolved_by_exact_manual_multi_error",
+                    "rationale": exception.get("rationale", ""),
+                    "context_excerpt": override.get("review_note", ""),
+                }
+            )
+    return rows
+
+
+def build_legacy_mechanical_variant_audit(
+    compatible_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    for row in compatible_rows:
+        if row["source_compatible_category"] != "source_compatible_no_anchor":
+            continue
+        source = row["source_latin_token"]
+        mechanical = source[:-1] + "ṅ" if source else ""
+        priority = (
+            "malformed_internal_nasal"
+            if "ṅ" in source
+            else "long_or_gloss_like"
+            if len(source) > 8 or row["alignment_review_status"]
+            == "obvious_gloss_or_alignment_noise"
+            else "different_stem_or_multi_error"
+            if row["alignment_review_status"] in {
+                "known_multi_error_source",
+                "source_variant_requires_manual_review",
+            }
+            else "ordinary_manual_review"
+        )
+        rows.append(
+            {
+                "tibetan_syllable": row["tibetan_syllable"],
+                "source_variant": source,
+                "former_mechanical_variant_nonsemantic": mechanical,
+                "audit_priority": priority,
+                "alignment_review_status": row["alignment_review_status"],
+                "note": (
+                    "Mechanical string transformation only; not a proposed "
+                    "correction and not evidence of the canonical transcription."
+                ),
+                "context_excerpt": row["context_excerpt"],
+            }
+        )
+    priority_order = {
+        "malformed_internal_nasal": 0,
+        "long_or_gloss_like": 1,
+        "different_stem_or_multi_error": 2,
+        "ordinary_manual_review": 3,
+    }
+    return sorted(rows, key=lambda row: (
+        priority_order[row["audit_priority"]],
+        -len(row["source_variant"]),
+        row["tibetan_syllable"],
+    ))
+
+
+def build_focused_gzhung_ljang_variant_review(
+    release_root: Path,
+    compatible_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    focus = {"གཞུང", "ལྗང"}
+    rows: list[dict[str, str]] = []
+    provenance = collect_anchor_provenance(release_root)
+    provenance_by_key = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["current_dotted_token"],
+        ): row["provenance_class"]
+        for row in provenance
+    }
+    for row in compatible_rows:
+        if row["tibetan_syllable"] not in focus:
+            continue
+        disposition = "manual_unresolved"
+        if (
+            row["tibetan_syllable"] == "ལྗང"
+            and row["source_latin_token"] == "ldan"
+        ):
+            disposition = (
+                "final_ng_only_candidate_withheld_base_provenance_unverified"
+            )
+        elif row["proposed_latin_target"]:
+            disposition = "target_supported_but_row_not_authorized"
+        rows.append(
+            {
+                "record_type": "residual_source",
+                "volume": row["volume"],
+                "page": row["page"],
+                "line": row["line"],
+                "token_index": row["token_index"],
+                "tibetan_syllable": row["tibetan_syllable"],
+                "source_or_current_token": row["source_latin_token"],
+                "supported_target": row["proposed_latin_target"],
+                "provenance": "",
+                "disposition": disposition,
+                "context_excerpt": row["context_excerpt"],
+            }
+        )
+    aligned, _accepted = collect_aligned_rows(release_root)
+    for row in aligned:
+        if row["tibetan_syllable"] not in focus:
+            continue
+        token = row["latin_token"]
+        if not is_genuine_dotted_final_ng_anchor(
+            token, row["tibetan_syllable"]
+        ):
+            continue
+        key = (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], token,
+        )
+        rows.append(
+            {
+                "record_type": "current_dotted_form",
+                "volume": row["volume"],
+                "page": row["page"],
+                "line": row["line"],
+                "token_index": row["token_index"],
+                "tibetan_syllable": row["tibetan_syllable"],
+                "source_or_current_token": token,
+                "supported_target": token,
+                "provenance": provenance_by_key.get(key, "unknown"),
+                "disposition": (
+                    "explicit_user_correction"
+                    if provenance_by_key.get(key)
+                    == "reviewed_exact_final_ng"
+                    else "anchor_provenance_requires_direct_verification"
+                ),
+                "context_excerpt": row["context_excerpt"].rstrip(),
+            }
+        )
+    return sorted(rows, key=lambda row: (
+        row["tibetan_syllable"], row["record_type"], row["volume"],
+        int(row["page"]), int(row["line"]), int(row["token_index"]),
+    ))
+
+
+def validate_positional_echo_dual_identities() -> None:
+    """A positional/echo duplicate must be resolved, never double-applied."""
+    root = Path(__file__).resolve().parents[1]
+    decisions_path = root / "data/reviewed_final_ng_echo_decisions.tsv"
+    decisions = read_tsv(decisions_path) if decisions_path.exists() else []
+    decision_by_key = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["source_token"],
+            row["proposed_target"],
+        ): row
+        for row in decisions
+    }
+    for path in (root / "data").glob("*final_ng*manifest*.tsv"):
+        manifest = read_tsv(path)
+        positional = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["source_token"], row["target"],
+            )
+            for row in manifest
+            if row.get("candidate_status") == "positional"
+        }
+        echoes = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["source_token"], row["target"],
+            )
+            for row in manifest
+            if row.get("candidate_status") == "echo"
+        }
+        for key in positional & echoes:
+            decision = decision_by_key.get(key)
+            if not decision or decision["decision"] != "resolved_elsewhere":
+                raise ValueError(
+                    f"{path.name}: dual positional/echo identity {key} must "
+                    "be resolved_elsewhere"
+                )
+
+
 def entry_series_cluster_count(rows: list[dict[str, str]]) -> int:
     locations = sorted(
         {
@@ -1078,23 +1542,6 @@ def entry_series_cluster_count(rows: list[dict[str, str]]) -> int:
             in_cluster = False
         previous = location
     return clusters
-
-
-def alignment_plausibility(
-    syllable: str,
-    source: str,
-    supported_target: str,
-) -> str:
-    if (syllable, source) in KNOWN_SUSPICIOUS_ALIGNMENTS:
-        return "structurally_suspicious"
-    if (
-        len(source) > 12
-        or source.lower() in {"noch", "dach", "wildschwein"}
-    ):
-        return "gloss_or_alignment_noise"
-    if not supported_target:
-        return "plausible_requires_review"
-    return "plausible_requires_review"
 
 
 def build_insufficient_evidence_matrix(
@@ -1148,9 +1595,7 @@ def build_insufficient_evidence_matrix(
     aligned, _accepted = collect_aligned_rows(release_root)
     provenance = collect_anchor_provenance(release_root, aligned)
     google_evidence = collect_google_witness_evidence(release_root)
-    grouped: dict[
-        tuple[str, str, str, str], list[dict[str, str]]
-    ] = defaultdict(list)
+    grouped: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     for row in compatible_rows:
         if row["source_compatible_category"] not in {
             "source_compatible_single_anchor",
@@ -1162,12 +1607,11 @@ def build_insufficient_evidence_matrix(
                 row["tibetan_syllable"],
                 row["source_latin_token"],
                 row["proposed_latin_target"],
-                row["hypothetical_target"],
             )
         ].append(row)
 
     matrix: list[dict[str, str]] = []
-    for (syllable, source, target, hypothetical_target), family in grouped.items():
+    for (syllable, source, target), family in grouped.items():
         family_volumes = {row["volume"] for row in family}
         family_anchors = [
             row
@@ -1182,6 +1626,10 @@ def build_insufficient_evidence_matrix(
         raw_anchors = [
             row for row in family_anchors
             if row["provenance_class"] == "base_ocr_dotted"
+        ]
+        unverified_base_anchors = [
+            row for row in family_anchors
+            if row["provenance_class"] == "base_provenance_unverified"
         ]
         same_volume_raw = [
             row for row in raw_anchors if row["volume"] in family_volumes
@@ -1286,7 +1734,6 @@ def build_insufficient_evidence_matrix(
                 "source_variant": source,
                 "source_signature": source_compatible_signature(source) or "",
                 "supported_target": target,
-                "hypothetical_target": hypothetical_target,
                 "undotted_clean_row_count": str(len(family)),
                 "base_ocr_dotted_anchor_count": str(len(raw_anchors)),
                 "reviewed_exact_dotted_anchor_count": str(
@@ -1300,6 +1747,9 @@ def build_insufficient_evidence_matrix(
                 ),
                 "unknown_provenance_anchor_count": str(
                     provenance_counts["unknown"]
+                ),
+                "base_provenance_unverified_anchor_count": str(
+                    len(unverified_base_anchors)
                 ),
                 "same_volume_raw_anchor_count": str(len(same_volume_raw)),
                 "cross_volume_raw_anchor_count": str(len(cross_volume_raw)),
@@ -1347,8 +1797,14 @@ def build_insufficient_evidence_matrix(
                     "syllable_identity_guard"
                 ],
                 "entry_series_cluster_count": str(clusters),
-                "alignment_plausibility": alignment_plausibility(
-                    syllable, source, target
+                "alignment_review_status": family[0][
+                    "alignment_review_status"
+                ],
+                "zero_anchor_source_state": zero_anchor_source_state(
+                    syllable,
+                    source,
+                    target,
+                    family,
                 ),
                 "target_evidence_channels": ";".join(target_channels),
                 "lemma_identity_channels": ";".join(lemma_channels),
@@ -1534,16 +1990,15 @@ ECHO_FIELDS = [
 SOURCE_COMPATIBLE_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "source_latin_token", "source_signature", "proposed_latin_target",
-    "hypothetical_target",
     "compatible_accepted_target_count", "compatible_competing_form_counts",
     "incompatible_dotted_form_counts", "same_tibetan_dotted_evidence_total",
     "old_alignment_category", "source_compatible_category", "damage_scope",
     "syllable_identity_guard", "confidence", "suggested_action",
-    "alignment_plausibility", "context_excerpt", "reason_for_deferral",
+    "alignment_review_status", "context_excerpt", "reason_for_deferral",
 ]
 SOURCE_COMPATIBLE_RANKING_FIELDS = [
     "tibetan_syllable", "source_variant", "source_signature",
-    "proposed_target", "hypothetical_target", "candidate_count",
+    "proposed_target", "candidate_count",
     "old_categories", "new_categories",
     "compatible_accepted_target_count", "compatible_competing_forms",
     "incompatible_dotted_forms_excluded", "damage_count", "volumes",
@@ -1557,10 +2012,12 @@ COVERAGE_COMPARISON_FIELDS = [
 ]
 INSUFFICIENT_EVIDENCE_FIELDS = [
     "tibetan_syllable", "source_variant", "source_signature",
-    "supported_target", "hypothetical_target", "undotted_clean_row_count",
+    "supported_target", "undotted_clean_row_count",
     "base_ocr_dotted_anchor_count", "reviewed_exact_dotted_anchor_count",
     "google_adopted_anchor_count", "other_postprocess_anchor_count",
-    "unknown_provenance_anchor_count", "same_volume_raw_anchor_count",
+    "unknown_provenance_anchor_count",
+    "base_provenance_unverified_anchor_count",
+    "same_volume_raw_anchor_count",
     "cross_volume_raw_anchor_count", "explicit_same_entry_repeat_count",
     "direct_repeated_tibetan_alignment_count",
     "probable_cross_reference_count", "google_unresolved_exact_target_count",
@@ -1569,7 +2026,8 @@ INSUFFICIENT_EVIDENCE_FIELDS = [
     "prior_reviewed_same_tibetan_target_different_source_count",
     "damaged_row_count",
     "marker_row_count", "tibetan_structure_status",
-    "entry_series_cluster_count", "alignment_plausibility",
+    "entry_series_cluster_count", "alignment_review_status",
+    "zero_anchor_source_state",
     "target_evidence_channels", "lemma_identity_channels",
     "recurrence_context_channels", "circular_reviewed_anchor_count",
     "suggested_review_tier",
@@ -1591,6 +2049,34 @@ ANCHOR_COUNT_CHANGE_FIELDS = [
     "old_anchor_count", "new_anchor_count", "audit_conclusion",
     "context_excerpt",
 ]
+PILOT_EVIDENCE_AUDIT_FIELDS = [
+    "tibetan_syllable", "volume", "page", "line", "token_index",
+    "source_token", "target", "family_target_evidence",
+    "anchor_provenance_status", "family_identity_evidence",
+    "row_exact_tibetan_alignment", "row_damage_status", "row_marker_status",
+    "row_local_lemma_cue", "audit_decision", "context_excerpt",
+]
+ZERO_ANCHOR_VARIANT_AUDIT_FIELDS = [
+    "tibetan_syllable", "source_variant", "source_state",
+    "supported_target", "other_source_variants",
+    "same_tibetan_dotted_forms", "reviewed_canonical_target",
+    "review_evidence", "sample_context",
+]
+MULTI_ERROR_REVIEW_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "source_token", "reviewed_canonical_target", "evidence_type",
+    "review_status", "rationale", "context_excerpt",
+]
+LEGACY_MECHANICAL_AUDIT_FIELDS = [
+    "tibetan_syllable", "source_variant",
+    "former_mechanical_variant_nonsemantic", "audit_priority",
+    "alignment_review_status", "note", "context_excerpt",
+]
+FOCUSED_VARIANT_REVIEW_FIELDS = [
+    "record_type", "volume", "page", "line", "token_index",
+    "tibetan_syllable", "source_or_current_token", "supported_target",
+    "provenance", "disposition", "context_excerpt",
+]
 
 
 def main() -> None:
@@ -1598,6 +2084,7 @@ def main() -> None:
     parser.add_argument("--release-root", type=Path, default=Path("release/current"))
     parser.add_argument("--out-root", type=Path, required=True)
     args = parser.parse_args()
+    validate_positional_echo_dual_identities()
     baseline_path = Path(
         "data/final_ng_source_compatible_legacy_filtered_baseline_541f537.tsv"
     )
@@ -1650,6 +2137,33 @@ def main() -> None:
     )
     anchor_count_changes = build_anchor_count_change_audit(
         anchor_baseline_rows, compatible_rows
+    )
+    write_tsv(
+        Path("data/final_ng_one_anchor_pilot_evidence_audit.tsv"),
+        build_one_anchor_pilot_evidence_audit(),
+        PILOT_EVIDENCE_AUDIT_FIELDS,
+    )
+    write_tsv(
+        Path("data/final_ng_zero_anchor_variant_audit.tsv"),
+        build_zero_anchor_variant_audit(compatible_rows),
+        ZERO_ANCHOR_VARIANT_AUDIT_FIELDS,
+    )
+    write_tsv(
+        Path("data/final_ng_multi_error_transcription_review.tsv"),
+        build_multi_error_transcription_review(compatible_rows),
+        MULTI_ERROR_REVIEW_FIELDS,
+    )
+    write_tsv(
+        Path("data/final_ng_zero_anchor_legacy_mechanical_audit.tsv"),
+        build_legacy_mechanical_variant_audit(compatible_rows),
+        LEGACY_MECHANICAL_AUDIT_FIELDS,
+    )
+    write_tsv(
+        Path("data/final_ng_gzhung_ljang_variant_review.tsv"),
+        build_focused_gzhung_ljang_variant_review(
+            args.release_root, compatible_rows
+        ),
+        FOCUSED_VARIANT_REVIEW_FIELDS,
     )
     by_volume: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:

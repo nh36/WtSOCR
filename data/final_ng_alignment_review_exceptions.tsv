@@ -1,0 +1,7 @@
+tibetan_syllable	source_token	status	reviewed_canonical_target	evidence_type	rationale
+གཞུང	gzun	known_multi_error_source	gźuṅ	explicit_user_review	The aligned source has both a non-final OCR defect and a final-nasal defect; this is not a final-ng-only inference.
+ལྗང	Dan	known_multi_error_source	ldaṅ	explicit_user_review	The aligned source has both initial OCR damage and a final-nasal defect; this is not a final-ng-only inference.
+ཆུང	run	source_variant_requires_manual_review		manual_diagnostic_review	The source may be aligned to the lemma but cannot be resolved by final-nasal-only evidence.
+གླིང	elin	source_variant_requires_manual_review		manual_diagnostic_review	The source may contain additional non-final OCR damage.
+ལྗང	lan	source_variant_requires_manual_review		manual_diagnostic_review	The source requires separate review and must not be inferred from ldan or Dan.
+ཁོང	kbon	source_variant_requires_manual_review		manual_diagnostic_review	The source may contain additional non-final OCR damage.

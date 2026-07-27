@@ -107,7 +107,7 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             status, note = consensus.source_compatible_identity_guard(
                 syllable, target
             )
-            self.assertEqual(status, "consonantal_structure_mismatch")
+            self.assertEqual(status, "transcription_structure_requires_review")
             self.assertIn("stem_", note)
 
     def test_source_compatible_discovery_is_independent_of_legacy_target(self) -> None:
@@ -158,13 +158,13 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         row = next(item for item in rows if item["source_latin_token"] == "gsun")
         self.assertEqual(row["compatible_accepted_target_count"], "0")
         self.assertEqual(row["proposed_latin_target"], "")
-        self.assertEqual(row["hypothetical_target"], "gsuṅ")
+        self.assertNotIn("hypothetical_target", row)
         self.assertEqual(
             row["source_compatible_category"],
             "source_compatible_no_anchor",
         )
 
-    def test_base_anchor_provenance_requires_no_introducing_change(self) -> None:
+    def test_base_anchor_provenance_requires_direct_verification(self) -> None:
         with TemporaryDirectory() as tmp:
             release = Path(tmp) / "release"
             qa = release / "qa" / "wts_1_34"
@@ -176,7 +176,10 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             )
             provenance = consensus.collect_anchor_provenance(release)
         self.assertEqual(len(provenance), 1)
-        self.assertEqual(provenance[0]["provenance_class"], "base_ocr_dotted")
+        self.assertEqual(
+            provenance[0]["provenance_class"],
+            "base_provenance_unverified",
+        )
 
     def test_google_witness_evidence_includes_unresolved_and_candidate_rows(self) -> None:
         with TemporaryDirectory() as tmp:
@@ -200,19 +203,71 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             {("unresolved", "kroṅ"), ("candidate", "rtiṅ")},
         )
 
-    def test_alignment_plausibility_flags_known_noise_without_claiming_trust(self) -> None:
+    def test_alignment_review_status_uses_auditable_exceptions(self) -> None:
         self.assertEqual(
-            consensus.alignment_plausibility("ཆུང", "run", ""),
-            "structurally_suspicious",
+            consensus.alignment_review_status("ཆུང", "run", ""),
+            "source_variant_requires_manual_review",
         )
         self.assertEqual(
-            consensus.alignment_plausibility("གང", "Dach", ""),
-            "gloss_or_alignment_noise",
+            consensus.alignment_review_status("གང", "Dach", ""),
+            "obvious_gloss_or_alignment_noise",
         )
         self.assertEqual(
-            consensus.alignment_plausibility("ཀྲོང", "kron", "kroṅ"),
-            "plausible_requires_review",
+            consensus.alignment_review_status("ཀྲོང", "kron", "kroṅ"),
+            "exact_source_signature_supported",
         )
+        self.assertEqual(
+            consensus.alignment_review_status("ལྗང", "ldan", "ldaṅ"),
+            "exact_source_signature_supported",
+        )
+        self.assertEqual(
+            consensus.alignment_review_status("གཞུང", "gzun", ""),
+            "known_multi_error_source",
+        )
+        self.assertEqual(
+            consensus.alignment_review_status("ལྗང", "Dan", ""),
+            "known_multi_error_source",
+        )
+
+    def test_zero_anchor_rows_have_no_semantic_target(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tཁོང་ fooṅ\n"
+                "1\t2\theadword_line\tཁོང་ Khon\n",
+                encoding="utf-8",
+            )
+            row = consensus.build_source_compatible_rows(release)[0]
+        self.assertEqual(row["proposed_latin_target"], "")
+        self.assertNotIn("hypothetical_target", row)
+        self.assertEqual(
+            row["source_compatible_category"],
+            "source_compatible_no_anchor",
+        )
+        self.assertEqual(row["alignment_review_status"], "unresolved")
+
+    def test_pilot_anchor_provenance_is_not_inferred_from_current_release(self) -> None:
+        provenance = consensus.collect_anchor_provenance(ROOT / "release/current")
+        expected = {
+            ("wts_9_m", "302", "20", "2", "ཀྲོང", "kroṅ"),
+            ("wts_8_b", "252", "37", "3", "རྟིང", "rtiṅ"),
+            ("wts_8_b", "22", "12", "3", "བགྲང", "bgraṅ"),
+        }
+        observed = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["current_dotted_token"],
+            ): row["provenance_class"]
+            for row in provenance
+        }
+        for key in expected:
+            self.assertEqual(observed[key], "base_provenance_unverified")
+
+    def test_pilot_dual_positional_echo_identity_is_resolved_elsewhere(self) -> None:
+        consensus.validate_positional_echo_dual_identities()
 
     def test_echo_discovery_uses_later_tokens_compatible_target(self) -> None:
         with TemporaryDirectory() as tmp:
@@ -281,11 +336,13 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             )
         row = next(item for item in matrix if item["source_variant"] == "ban")
         self.assertEqual(row["undotted_clean_row_count"], "3")
-        self.assertEqual(row["base_ocr_dotted_anchor_count"], "1")
-        self.assertEqual(row["same_volume_raw_anchor_count"], "1")
+        self.assertEqual(row["base_ocr_dotted_anchor_count"], "0")
+        self.assertEqual(row["base_provenance_unverified_anchor_count"], "1")
+        self.assertEqual(row["same_volume_raw_anchor_count"], "0")
         self.assertEqual(row["cross_volume_raw_anchor_count"], "0")
         self.assertEqual(
-            row["suggested_review_tier"], "base_anchor_identity_review"
+            row["suggested_review_tier"],
+            "anchor_provenance_or_identity_review",
         )
 
     def test_insufficient_matrix_identifies_cross_volume_anchor(self) -> None:
@@ -311,12 +368,13 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             )
         row = next(item for item in matrix if item["source_variant"] == "ban")
         self.assertEqual(row["same_volume_raw_anchor_count"], "0")
-        self.assertEqual(row["cross_volume_raw_anchor_count"], "1")
+        self.assertEqual(row["cross_volume_raw_anchor_count"], "0")
+        self.assertEqual(row["base_provenance_unverified_anchor_count"], "1")
+        self.assertEqual(row["target_evidence_channels"], "")
         self.assertEqual(
-            row["target_evidence_channels"],
-            "base_ocr_dotted_anchor",
+            row["suggested_review_tier"],
+            "anchor_provenance_or_identity_review",
         )
-        self.assertEqual(row["suggested_review_tier"], "base_anchor_identity_review")
 
     def test_historical_frozen_manifests_use_exact_final_nasal_pairs(self) -> None:
         checked = 0
@@ -438,19 +496,19 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         )
         self.assertEqual(
             consensus.source_compatible_identity_guard("སྙིང", "siṅ")[0],
-            "consonantal_structure_mismatch",
+            "transcription_structure_requires_review",
         )
         self.assertEqual(
             consensus.source_compatible_identity_guard("རྱོང", "myoṅ")[0],
-            "consonantal_structure_mismatch",
+            "transcription_structure_requires_review",
         )
         self.assertEqual(
             consensus.source_compatible_identity_guard("མེང", "miṅ")[0],
-            "consonantal_structure_mismatch",
+            "transcription_structure_requires_review",
         )
         self.assertEqual(
             consensus.source_compatible_identity_guard("གདང", "gdoṅ")[0],
-            "consonantal_structure_mismatch",
+            "transcription_structure_requires_review",
         )
 
     def test_later_citation_number_does_not_damage_headword_alignment(self) -> None:

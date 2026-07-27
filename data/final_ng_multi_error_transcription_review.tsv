@@ -1,0 +1,3 @@
+volume	page	line	token_index	tibetan_syllable	source_token	reviewed_canonical_target	evidence_type	review_status	rationale	context_excerpt
+wts_1_34	111	3	2	གཞུང	gzun	gźuṅ	explicit_user_review	resolved_by_exact_manual_multi_error	The aligned source has both a non-final OCR defect and a final-nasal defect; this is not a final-ng-only inference.	Exact Tibetan གཞུང row; repairs non-final ź and final ṅ only at this page-line-token.
+wts_1_34	750	80	1	ལྗང	Dan	ldaṅ	explicit_user_review	resolved_by_exact_manual_multi_error	The aligned source has both initial OCR damage and a final-nasal defect; this is not a final-ng-only inference.	Exact Tibetan ལྗང row; repairs damaged initial cluster and final ṅ only at this page-line-token.

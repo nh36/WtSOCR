@@ -87,7 +87,7 @@ wts_1_34	82	198	2	སྣང	snaṅ	unknown	snanı	ambiguous_change_or_token_posi
 wts_1_34	83	1	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་སྣང་ཁྱབ་པ་ kun snaṅ khyab pa
 wts_1_34	83	3	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་སྣང་ཁྱབ་པ་ kun snaṅ khyab pa npr. eine Gott-
 wts_1_34	83	14	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་སྣང་དང་པ་ཅན་ kun snaṅ daṅ pa can, auch kun
-wts_1_34	83	14	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཀུན་སྣང་དང་པ་ཅན་ kun snaṅ daṅ pa can, auch kun
+wts_1_34	83	14	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཀུན་སྣང་དང་པ་ཅན་ kun snaṅ daṅ pa can, auch kun
 wts_1_34	83	23	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	"ཀུན་སྣང་འབར་བ་ kun snaṅ ""bar ba strahlendes"
 wts_1_34	83	156	2	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	ཀུན་འབྱུང་བ་ kun ’byuṅ ba
 wts_1_34	83	162	2	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	ཀུན་འབྱུང་ kun 'byuṅ.
@@ -167,7 +167,7 @@ wts_1_34	107	3	2	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exa
 wts_1_34	107	127	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཀྱིར་ཤིང་ kyer Siṅ Iskyer sin.
 wts_1_34	107	133	2	ཏང	taṅ	reviewed_exact_final_ng	tan	reviewed_tibetan_exact_final_ng_consensus	final_ng_tang_consensus_batch_20260727	ཀྱོ་།ཏང་ kyo taṅ auch kyo ba taṅ Eisenhaken, vgl.
 wts_1_34	107	152	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀྱོ་རང་ kyo raṅ Elefantenhaken.
-wts_1_34	108	140	2	གཡང	g.yaṅ	base_ocr_dotted	g.yaṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
+wts_1_34	108	140	2	གཡང	g.yaṅ	base_provenance_unverified	g.yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
 wts_1_34	109	16	1	ཀྲུང	kruṅ	google_adopted	krun	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
 wts_1_34	109	55	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ངེ་ kroṅ ne
 wts_1_34	109	88	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ཀྲོང་ kroṅ kroṅ.
@@ -320,7 +320,7 @@ wts_1_34	157	127	1	རྐང	rkaṅ	reviewed_exact_final_ng	rkan	reviewed_tibeta
 wts_1_34	157	127	2	འཐུང	thuṅ	reviewed_exact_final_ng	thun	reviewed_tibetan_exact_final_ng_consensus	tibetan_athung_consensus_batch_20260726	རྐང་འཐུང་དབང་པོ་ rkaṅ ’thuṅ dbaṅ po auch rkan
 wts_1_34	157	127	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	རྐང་འཐུང་དབང་པོ་ rkaṅ ’thuṅ dbaṅ po auch rkan
 wts_1_34	157	135	1	རྐང	rkaṅ	reviewed_exact_final_ng	rkan	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkang_consensus_batch_20260719	རྐང་དང་ཀིང་ rkaṅ daṅ kiṅ tkin kan.
-wts_1_34	157	135	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	རྐང་དང་ཀིང་ rkaṅ daṅ kiṅ tkin kan.
+wts_1_34	157	135	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྐང་དང་ཀིང་ rkaṅ daṅ kiṅ tkin kan.
 wts_1_34	157	135	3	ཀིང	kiṅ	reviewed_exact_final_ng	kin	reviewed_tibetan_exact_final_ng_consensus	tibetan_king_consensus_batch_20260726	རྐང་དང་ཀིང་ rkaṅ daṅ kiṅ tkin kan.
 wts_1_34	157	136	1	རྐང	rkaṅ	reviewed_exact_final_ng	rkan	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkang_consensus_batch_20260719	རྐང་དུང་ rkaṅ duṅ.
 wts_1_34	157	136	2	དུང	duṅ	reviewed_exact_final_ng	dun	reviewed_tibetan_exact_final_ng_consensus	tibetan_dung_consensus_batch_20260719	རྐང་དུང་ rkaṅ duṅ.
@@ -391,12 +391,12 @@ wts_1_34	164	44	1	རྐྱང	rkyaṅ	reviewed_exact_final_ng	rkyan	reviewed_ti
 wts_1_34	165	180	3	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	རྐྱེན་ཁར་སོང་ rkyen khar soṅ pf. sich mitreißen
 wts_1_34	166	60	2	དྲུང	druṅ	google_adopted	drun	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	རྐྱེན་དྲུང་ rkyen druṅ (zw.) Verwalter.
 wts_1_34	166	154	1	རྐྱོང	rkyoṅ	google_adopted	rkyon	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	རྐྱོང་གདན་ rkyoṅ gdan Sitz, Matte.
-wts_1_34	174	54	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	སྐབས་དང་སྦྱར་བ་ skabs daṅ sbyar ba
-wts_1_34	174	88	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	སྐབས་དང་སྦྱར་བ་ skabs daṅ sbyar ba der Gelegen-
+wts_1_34	174	54	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྐབས་དང་སྦྱར་བ་ skabs daṅ sbyar ba
+wts_1_34	174	88	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྐབས་དང་སྦྱར་བ་ skabs daṅ sbyar ba der Gelegen-
 wts_1_34	176	149	2	ཁུང	khuṅ	reviewed_exact_final_ng	khun	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	སྐར་ཁུང་ skar khuṅ auch dkar khuṅ, alttib. skar
 wts_1_34	177	61	2	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_repeated_lemma_batch_20260719	སྐར་ཆུང་ skar chuṅ auch dkar chuṅ vgl. 15527
-wts_1_34	179	174	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	སྐལ་བ་དང་བཅས་པ་ skal ba daṅ bcas pa Gemein-
-wts_1_34	179	180	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	སྐལ་བ་དང་ལྡན་པ་ skal ba daṅ ldan pa auch skal bar
+wts_1_34	179	174	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྐལ་བ་དང་བཅས་པ་ skal ba daṅ bcas pa Gemein-
+wts_1_34	179	180	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྐལ་བ་དང་ལྡན་པ་ skal ba daṅ ldan pa auch skal bar
 wts_1_34	180	59	3	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	སྐལ་བ་བཟང་པོ་ skal ba bzaṅ po auch skal ba bzani
 wts_1_34	184	156	3	གནང	gnaṅ	reviewed_exact_final_ng	gnan	reviewed_tibetan_exact_final_ng_consensus	tibetan_gnang_consensus_batch_20260726	སྐུ་ཕེབས་གནང་བ་ sku phebs gnaṅ ba das Eintreten
 wts_1_34	185	52	2	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	སྐུ་དབང་ sku dbaṅ resp. Gewalt, Macht; — btsan
@@ -586,9 +586,9 @@ wts_1_34	338	48	1	གང	gaṅ	reviewed_exact_final_ng	gan	reviewed_tibetan_exac
 wts_1_34	338	61	1	གང	gaṅ	reviewed_exact_final_ng	gan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	གང་ཐོབ་ gaṅ thob Gesamtbetrag.
 wts_1_34	338	68	1	གང	gaṅ	reviewed_exact_final_ng	gan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	གང་འཐད་པ་ gaṅ ’thad pa auch gaṅ thad in jeder
 wts_1_34	338	80	1	གང	gaṅ	reviewed_exact_final_ng	gan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	གང་དག་ 'gaṅı dag sauber.
-wts_1_34	338	84	1	གང	gaṅ	base_ocr_dotted	gaṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
-wts_1_34	338	84	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
-wts_1_34	338	84	3	གང	gaṅ	base_ocr_dotted	gaṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
+wts_1_34	338	84	1	གང	gaṅ	base_provenance_unverified	gaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
+wts_1_34	338	84	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
+wts_1_34	338	84	3	གང	gaṅ	base_provenance_unverified	gaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གང་དང་གང་ gaṅ daṅ gaṅ Tgaṅ gaṅ.
 wts_1_34	338	85	1	གང	gaṅ	reviewed_exact_final_ng	gan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_20260628	གང་དང་ཡང་ gaṅ daṅ yaṅ \gaṅ yaṅ.
 wts_1_34	338	85	2	དང	daṅ	other_postprocess	dan	tibetan_dang_witness_rewrite	A	གང་དང་ཡང་ gaṅ daṅ yaṅ \gaṅ yaṅ.
 wts_1_34	338	85	3	ཡང	yaṅ	unknown	yan;yanı	ambiguous_change_or_token_position		གང་དང་ཡང་ gaṅ daṅ yaṅ \gaṅ yaṅ.
@@ -1030,7 +1030,7 @@ wts_1_34	646	154	2	འཐུང	thuṅ	reviewed_exact_final_ng	thun	reviewed_tib
 wts_1_34	646	158	2	འཐུང	thuṅ	reviewed_exact_final_ng	thun	reviewed_tibetan_exact_final_ng_consensus	tibetan_athung_consensus_batch_20260726	ཆུ་འཐུང་དབང་པོ་ chu ’thuṅ dbaṅ po Bez. für
 wts_1_34	646	158	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	ཆུ་འཐུང་དབང་པོ་ chu ’thuṅ dbaṅ po Bez. für
 wts_1_34	646	161	2	འཐུང	thuṅ	reviewed_exact_final_ng	thun	reviewed_tibetan_exact_final_ng_consensus	tibetan_athung_consensus_batch_20260726	ཆུ་འཐུང་ཞོད་ chn ’thuṅ ’od Bez. für Sonnen-
-wts_1_34	646	172	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཆུ་དང་ལྡན་པ་ chu daṅ ldan pa mit Wasser
+wts_1_34	646	172	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཆུ་དང་ལྡན་པ་ chu daṅ ldan pa mit Wasser
 wts_1_34	649	68	3	ཀླང	kluṅ	reviewed_exact_final_ng	klun	reviewed_tibetan_exact_final_ng_consensus	tibetan_klang_consensus_batch_20260726	ཆུ་འབབ་ཀླང་ chu ’bab kluṅ Bez. für Ozean.
 wts_1_34	649	210	2	མང	maṅ	reviewed_exact_final_ng	man	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	ཆུ་མང་ལྡན་པ་ chu maṅ ldan pa Bez. für See,
 wts_1_34	650	48	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཆུ་མིག་རིང་མོ་ chu mig riṅ mo npr. ein Kloster
@@ -1083,7 +1083,7 @@ wts_1_34	675	102	2	སྐྱོང	skyoṅ	reviewed_exact_final_ng	skyon	reviewe
 wts_1_34	675	108	2	སྐྱོང	skyoṅ	reviewed_exact_final_ng	skyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_skyong_consensus_batch_20260720	ཆོས་སྐྱོང་ཆེན་མོ་ chos skyoṅ chen mo der große
 wts_1_34	675	121	2	སྐྱོང	skyoṅ	reviewed_exact_final_ng	skyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_skyong_consensus_batch_20260720	ཆོས་སྐྱོང་བའི་རྒྱལ་པོ་ chos skyoṅ ba’i rgyal po
 wts_1_34	677	95	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཆོས་ཅན་རིང་ chos can riṅ Bez. für Esel.
-wts_1_34	678	162	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཆོས་དང་ལྡན་པ་ chos daṅ ldan pa \chos ldan.
+wts_1_34	678	162	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཆོས་དང་ལྡན་པ་ chos daṅ ldan pa \chos ldan.
 wts_1_34	679	166	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	ཆོས་ཕུང་ chos phuṅ ↑ chos kyi phuṅ po.
 wts_1_34	680	1	3	ཀློང	kloṅ	reviewed_exact_final_ng	klon	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_klong_consensus_batch_20260727	ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins kloṅ du
 wts_1_34	680	127	2	འཚོང	tshoṅ	reviewed_exact_final_ng	tshon	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_atshong_consensus_batch_20260727	ཆོས་འཚོང་པ་ chos ’tshoṅ ba Handel mit dem
@@ -1218,7 +1218,7 @@ wts_1_34	872	48	1	ཏང	taṅ	reviewed_exact_final_ng	tan	reviewed_tibetan_exac
 wts_1_34	872	173	4	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_direct_unique_batch_20260719	ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chuṅ ma Beiname
 wts_1_34	873	23	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	ཏར་།ཁང་ tar khaṅ 'Telegrafenamt.
 wts_1_34	873	181	3	གྲོང	groṅ	google_adopted	gron	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཏི་མའི་གྲོང་ཀྱེར་ ti ma’i groṅ khyer Bez. für
-wts_1_34	875	113	1	ཏིང	tiṅ	base_ocr_dotted	tiṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
+wts_1_34	875	113	1	ཏིང	tiṅ	base_provenance_unverified	tiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
 wts_1_34	875	113	4	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
 wts_1_34	876	91	2	རྡུང	rduṅ	reviewed_exact_final_ng	rdun	reviewed_tibetan_exact_final_ng_consensus	final_ng_rdung_consensus_batch_20260727	ཏིལ་རྡུང་ tl rduṅ auch til brdun Sesam-
 wts_1_34	879	101	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཏེའུ་ཤིང་ te’ Siṅ Stuhl, Sitzbank.
@@ -1246,7 +1246,7 @@ wts_1_34	896	136	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tib
 wts_1_34	896	142	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་སྒེ་ gtoṅ sgo Unkosten, Ausgaben.
 wts_1_34	896	158	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་ཐེབས་ gtoṅ thebs Ausgaben, Kapitalien
 wts_1_34	896	180	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་དང་ལྡན་པ་ gtoṅ daṅ ldan pa auch gtoṅ
-wts_1_34	896	180	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	གཏོང་དང་ལྡན་པ་ gtoṅ daṅ ldan pa auch gtoṅ
+wts_1_34	896	180	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གཏོང་དང་ལྡན་པ་ gtoṅ daṅ ldan pa auch gtoṅ
 wts_1_34	896	197	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་དེབ་ gtoṅ deb Buch über Ausgaben.
 wts_1_34	896	204	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་ལྡན་ gtoṅ ldan tgton dan ldan pa.
 wts_1_34	896	206	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་ཕོགས་ gtoṅ phogs auszugebende Gehäl-
@@ -1254,7 +1254,7 @@ wts_1_34	897	1	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibet
 wts_1_34	897	3	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་ཕོད་ gtoṅ phod freigebig.
 wts_1_34	897	21	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་བ་ gtoṅ ba.
 wts_1_34	897	36	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་བ་དང་ལྡན་པ་ gtoṅ ba daṅ ldan pa 19/0/
-wts_1_34	897	36	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	གཏོང་བ་དང་ལྡན་པ་ gtoṅ ba daṅ ldan pa 19/0/
+wts_1_34	897	36	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གཏོང་བ་དང་ལྡན་པ་ gtoṅ ba daṅ ldan pa 19/0/
 wts_1_34	897	59	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་ཡོང་ gtoṅ yoṅ
 wts_1_34	897	59	2	ཡོང	yoṅ	reviewed_exact_final_ng	yon	reviewed_tibetan_exact_final_ng_consensus	final_ng_yong_consensus_batch_20260727	གཏོང་ཡོང་ gtoṅ yoṅ
 wts_1_34	897	61	1	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	གཏོང་བྱེད་ 'gtoṅ byed Ausgaben; hier: Lebens-
@@ -1415,7 +1415,7 @@ wts_1_34	961	188	3	སྲིང	sriṅ	reviewed_exact_final_ng	srin	reviewed_tib
 wts_1_34	962	9	2	ཁུང	khuṅ	reviewed_exact_final_ng	khun	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	སྟོར་ཁུང་ stor khuṅ [།2/07 khun.
 wts_1_34	970	114	2	སྐྱོང	skyoṅ	reviewed_exact_final_ng	skyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_skyong_consensus_batch_20260720	བརྟན་སྐྱོང་སྡེ་དགུ་ bstan skyoṅ sde deu eine
 wts_1_34	970	150	3	རྫོང	rdzoṅ	reviewed_exact_final_ng	rdzon	reviewed_tibetan_exact_final_ng_consensus	tibetan_rdzong_consensus_batch_20260726	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzoṅ npr. ein Ort
-wts_1_34	978	104	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	བསྟེན་པ་དང་བཅས་པ་ bsten pa daṅ beas pa
+wts_1_34	978	104	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བསྟེན་པ་དང་བཅས་པ་ bsten pa daṅ beas pa
 wts_1_34	978	148	3	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	བསྟེན་པ་དང་བཅས་པ་ bsten pa daṅ bcas pa betei-
 wts_1_34	986	111	2	བྲངས	zaṅs	google_adopted	zans	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཐྲག་བྲངས་ thag zaṅs Vthags bzaṅ.
 wts_1_34	986	112	2	བཟང	bzaṅ	google_adopted	bzan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཐག་བཟང་ thag bzaṅ [7725 bzaṅ.
@@ -1463,13 +1463,13 @@ wts_1_34	990	104	1	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_e
 wts_1_34	992	1	4	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཐན་མོ་རྔོ་རིང་ than mo rdo riṅ
 wts_1_34	992	7	4	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཐན་མོ་རྔོ་རིང་ than mo rdo riṅ npr. ein Ort bei
 wts_1_34	994	143	2	མང	maṅ	reviewed_exact_final_ng	man	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	ཁྲལས་མང་ thabs maṅ sehr geschickt.
-wts_1_34	997	40	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཐམས་ཅད་དང་ལྡན་པ་ thams cad daṅ ldan pa
+wts_1_34	997	40	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཐམས་ཅད་དང་ལྡན་པ་ thams cad daṅ ldan pa
 wts_1_34	999	167	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	ཐལ་གོང་ thal goṅ
 wts_1_34	1003	64	2	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	བྲིག་ཤིང་ thig siṅ
 wts_1_34	1003	107	2	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཐིག་ཤིང་ thig siṅ Meßstab,.
 wts_1_34	1010	33	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	ཐུགས་གོང་ thugs goṅ
 wts_1_34	1010	176	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	ཐུགས་གོང་ thugs goṅ Respekt oder Rang (2); ~
-wts_1_34	1012	185	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཐུགས་དང་འགལ་བ་ thugs daṅ ’gal ba Ver-
+wts_1_34	1012	185	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཐུགས་དང་འགལ་བ་ thugs daṅ ’gal ba Ver-
 wts_1_34	1013	1	3	སྐོང	skoṅ	google_adopted	skon	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཐུགས་དམ་སྐོང་ thugs dam skoṅ
 wts_1_34	1013	87	3	སྐོང	skoṅ	google_adopted	skon	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཐུགས་དམ་སྐོང་ thugs dam skoṅ fur. thugs dam
 wts_1_34	1013	176	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	བུགས་སྣང་ thugs snaṅ Aufmerksamkeit, Beach-
@@ -1498,7 +1498,7 @@ wts_1_34	1027	147	2	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibet
 wts_1_34	1028	1	2	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_direct_unique_batch_20260719	ཐེའུ་ཆུང་ the’u chuṅ
 wts_1_34	1028	9	2	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_repeated_lemma_batch_20260719	ཐེའུ་ཆུང་ the’n chuṅ lmthe’u chuṅ.
 wts_1_34	1028	67	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཐྲེའུ་རང་མགོ་ the’u raṅ mgo eine Heilpflanze,
-wts_1_34	1033	157	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	ཐོག་མ་དང་ཐ་མ་་་ thog ma daṅ tha ma ...
+wts_1_34	1033	157	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཐོག་མ་དང་ཐ་མ་་་ thog ma daṅ tha ma ...
 wts_1_34	1038	71	2	འཆང	chaṅ	reviewed_exact_final_ng	chan	reviewed_tibetan_exact_final_ng_consensus	tibetan_achang_consensus_batch_20260726	ཐོད་འཆང་ thod ’chaṅ Beiname Mahesvaras
 wts_1_34	1038	169	2	འཕྲེང	phreṅ	reviewed_exact_final_ng	phren	reviewed_tibetan_exact_final_ng_consensus	tibetan_aphreng_consensus_batch_20260726	ཐོད་འཕྲེང་རྩལ་ thod ’phreṅ rtsal npr. eine
 wts_1_34	1048	104	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	ཐོས་ལྡན་དབང་པོ་ thos ldan dbaṅ po
@@ -1566,7 +1566,7 @@ wts_1_34	1087	52	3	ཡང	yaṅ	reviewed_exact_final_ng	yan	reviewed_tibetan_exa
 wts_1_34	1090	55	2	ཡང	yaṅ	reviewed_exact_final_ng	yan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ད་ཡང་ da yaṅ
 wts_1_34	1092	1	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ད་ལམ་རིང་ da lam riṅ
 wts_1_34	1092	12	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ད་ལམ་རིང་ da lam riṅ heute nun.
-wts_1_34	1097	70	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དག་དང་ dag daṅ völlig rein.
+wts_1_34	1097	70	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དག་དང་ dag daṅ völlig rein.
 wts_1_34	1098	1	2	སྣང	snaṅ	google_adopted	snan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དག་སྣང་ dag snaṅ
 wts_1_34	1098	13	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	དག་སྣང་ dag snaṅ auch dag pa’i snaṅ ba.
 wts_1_34	1099	32	3	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
@@ -1579,15 +1579,15 @@ wts_1_34	1102	51	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exa
 wts_1_34	1103	1	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ
 wts_1_34	1103	52	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ
 wts_1_34	1104	51	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ
-wts_1_34	1105	52	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ག་ daṅ ga
+wts_1_34	1105	52	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ག་ daṅ ga
 wts_1_34	1105	80	1	དང	daṅ	unknown	dan	ambiguous_change_or_token_position		དང་ག་ daṅ ga auch daṅ ka, daṅ kha, dwaṅ ga,
-wts_1_34	1106	1	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་གོང་ daṅ goṅ
+wts_1_34	1106	1	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་གོང་ daṅ goṅ
 wts_1_34	1106	1	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	དང་གོང་ daṅ goṅ
 wts_1_34	1106	17	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དང་སྒྲོ daṅ sgro Adlerflaum.
-wts_1_34	1106	23	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ཐོག་ daṅ thog Anfang.
-wts_1_34	1106	30	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་དང་ daṅ daṅ immer höher ansteigen.
-wts_1_34	1106	30	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་དང་ daṅ daṅ immer höher ansteigen.
-wts_1_34	1106	37	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་དུ་བླང་ daṅ du blaṅ fur. zu 1772 du len
+wts_1_34	1106	23	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ཐོག་ daṅ thog Anfang.
+wts_1_34	1106	30	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་དང་ daṅ daṅ immer höher ansteigen.
+wts_1_34	1106	30	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་དང་ daṅ daṅ immer höher ansteigen.
+wts_1_34	1106	37	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་དུ་བླང་ daṅ du blaṅ fur. zu 1772 du len
 wts_1_34	1106	37	3	བླང	blaṅ	reviewed_exact_final_ng	blan	reviewed_tibetan_exact_final_ng_consensus	tibetan_blang_consensus_batch_20260726	དང་དུ་བླང་ daṅ du blaṅ fur. zu 1772 du len
 wts_1_34	1106	47	1	དང	daṅ	unknown	dan	ambiguous_change_or_token_position		དང་དུ་བླངས་ daṅ du blans auch daṅ blans, dwaṅ
 wts_1_34	1106	58	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དང་དུ་ལེན་ daṅ du len
@@ -1595,40 +1595,40 @@ wts_1_34	1107	1	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_n
 wts_1_34	1107	3	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དང་སྡོངས་ daṅ sdons in gnam gyi — eine Him-
 wts_1_34	1107	15	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དང་པོ་ daṅ po.
 wts_1_34	1107	56	1	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དང་པོ་ daṅ po
-wts_1_34	1108	1	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་ daṅ po
-wts_1_34	1108	54	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་ daṅ po
-wts_1_34	1109	1	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་དང་ཐ་་ daṅ po daṅ tha ...
-wts_1_34	1109	1	3	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་དང་ཐ་་ daṅ po daṅ tha ...
-wts_1_34	1109	21	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་ཤར་བ་ daṅ po 42)ˆ ba 111 skya rens — die
-wts_1_34	1109	27	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོ་གསལ་ daṅ po gsal Tagesanbruch, Mor-
-wts_1_34	1109	41	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོའི་ཕ་ daṅ po’i pha Beiname Visnus.
-wts_1_34	1109	44	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོའི་ལས་ daṅ po’i las Anfänger.
-wts_1_34	1109	53	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོར་ daṅ por
-wts_1_34	1109	55	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོའི་ཤཱ་ daṅ po’i swa „mit 4707 am Anfang“,
-wts_1_34	1109	62	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོའི་སངས་རྒྱས་ daṅ po’i sans rgyas Beiname
+wts_1_34	1108	1	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་ daṅ po
+wts_1_34	1108	54	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་ daṅ po
+wts_1_34	1109	1	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་དང་ཐ་་ daṅ po daṅ tha ...
+wts_1_34	1109	1	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་དང་ཐ་་ daṅ po daṅ tha ...
+wts_1_34	1109	21	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་ཤར་བ་ daṅ po 42)ˆ ba 111 skya rens — die
+wts_1_34	1109	27	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོ་གསལ་ daṅ po gsal Tagesanbruch, Mor-
+wts_1_34	1109	41	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོའི་ཕ་ daṅ po’i pha Beiname Visnus.
+wts_1_34	1109	44	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོའི་ལས་ daṅ po’i las Anfänger.
+wts_1_34	1109	53	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོར་ daṅ por
+wts_1_34	1109	55	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོའི་ཤཱ་ daṅ po’i swa „mit 4707 am Anfang“,
+wts_1_34	1109	62	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོའི་སངས་རྒྱས་ daṅ po’i sans rgyas Beiname
 wts_1_34	1109	67	1	དང	daṅ	other_postprocess	dan	tibetan_dang_witness_rewrite	A	དང་པོའི་ལྷ་ daṅ po’i lha.
-wts_1_34	1109	77	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་པོར་ daṅ por zu Beginn, zuerst, zunächst,
-wts_1_34	1110	1	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	"དང་བ་འཁུར་ལེན་ daṅ ba ""khur len"
-wts_1_34	1110	30	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བ་འཁུར་ལེན་ daṅ ba 'khur len annehmen.
-wts_1_34	1110	38	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བ་དྲོངས་ daṅ ba drons imp. zu daṅ ba ’dren
-wts_1_34	1110	45	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བ་འདྲེན་ daṅ ba ’dren imp. daṅ ba drons
-wts_1_34	1110	52	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ར་དུམ་གུ་” daṅ ra dum gu ...
-wts_1_34	1110	62	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བའི་འོད་ daṅ ba’i ’od ein Weltbereich.
-wts_1_34	1110	71	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བླངས་ daṅ blans 142) du blans.
-wts_1_34	1110	73	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ཚུགས་ daṅ tshugs sogleich.
-wts_1_34	1110	76	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་བཟང་དབང་པོ་ daṅ bzaṅ dbaṅ po Beiname
+wts_1_34	1109	77	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་པོར་ daṅ por zu Beginn, zuerst, zunächst,
+wts_1_34	1110	1	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"དང་བ་འཁུར་ལེན་ daṅ ba ""khur len"
+wts_1_34	1110	30	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བ་འཁུར་ལེན་ daṅ ba 'khur len annehmen.
+wts_1_34	1110	38	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བ་དྲོངས་ daṅ ba drons imp. zu daṅ ba ’dren
+wts_1_34	1110	45	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བ་འདྲེན་ daṅ ba ’dren imp. daṅ ba drons
+wts_1_34	1110	52	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ར་དུམ་གུ་” daṅ ra dum gu ...
+wts_1_34	1110	62	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བའི་འོད་ daṅ ba’i ’od ein Weltbereich.
+wts_1_34	1110	71	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བླངས་ daṅ blans 142) du blans.
+wts_1_34	1110	73	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ཚུགས་ daṅ tshugs sogleich.
+wts_1_34	1110	76	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་བཟང་དབང་པོ་ daṅ bzaṅ dbaṅ po Beiname
 wts_1_34	1110	76	2	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	དང་བཟང་དབང་པོ་ daṅ bzaṅ dbaṅ po Beiname
 wts_1_34	1110	76	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དང་བཟང་དབང་པོ་ daṅ bzaṅ dbaṅ po Beiname
-wts_1_34	1110	85	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་འོག་ daṅ ’og zweiter.
-wts_1_34	1111	1	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་རཱ་ daṅ rwa
-wts_1_34	1111	3	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་རྭ་ daṅ rwa auch daṅ ra Einzäunung, Um-
+wts_1_34	1110	85	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་འོག་ daṅ ’og zweiter.
+wts_1_34	1111	1	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་རཱ་ daṅ rwa
+wts_1_34	1111	3	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་རྭ་ daṅ rwa auch daṅ ra Einzäunung, Um-
 wts_1_34	1111	14	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ལ་ 'daṅ la Teich.
-wts_1_34	1111	20	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ལ་ ?daṅ la erstens, anfangs; vgl. ↑ daṅ po 2,
-wts_1_34	1111	25	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ལ་ཆེ་ daṅ la che es kann keine Rede davon
-wts_1_34	1111	32	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ལེན་ daṅ len 1427 du len.
-wts_1_34	1111	34	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་ཤ་བྱེད་ daṅ Sa byed sich ereifern, sich aufp-
-wts_1_34	1111	47	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་སང་ daṅ 527 Junggeselle; Frauenheld.
-wts_1_34	1111	56	1	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དང་སམ་ daṅ sam eine traditionelle Art des
+wts_1_34	1111	20	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ལ་ ?daṅ la erstens, anfangs; vgl. ↑ daṅ po 2,
+wts_1_34	1111	25	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ལ་ཆེ་ daṅ la che es kann keine Rede davon
+wts_1_34	1111	32	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ལེན་ daṅ len 1427 du len.
+wts_1_34	1111	34	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་ཤ་བྱེད་ daṅ Sa byed sich ereifern, sich aufp-
+wts_1_34	1111	47	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་སང་ daṅ 527 Junggeselle; Frauenheld.
+wts_1_34	1111	56	1	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དང་སམ་ daṅ sam eine traditionelle Art des
 wts_1_34	1115	5	12	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	den Mönche“ (sBa 57,8); dad can gyi 774 དད་པའི་དབང་པོ་ dad pa’i dbaṅ po die Kraft
 wts_1_34	1115	18	3	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དད་པ་དང་ལྡན་པ་ dad pa daṅ ldan pa [446 ldan.
 wts_1_34	1115	60	5	འབྲང	braṅ	google_adopted	bran	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དད་པས་རྗེས་སུ་འབྲང་བ་ dad pas rjes su 'braṅ ba
@@ -1643,7 +1643,7 @@ wts_1_34	1134	70	3	སྒང	sgaṅ	reviewed_exact_final_ng	sgan	reviewed_tibeta
 wts_1_34	1136	60	2	ལིང	liṅ	reviewed_exact_final_ng	lin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ling_consensus_batch_20260726	དར་ལིང་ dar liṅ eine Seide, Brokat; chin. 3.
 wts_1_34	1136	69	2	སེང	seṅ	reviewed_exact_final_ng	seh	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	དར་སེང་ dar seṅ eine feine, dünne Seide.
 wts_1_34	1137	36	2	རྐང	rkaṅ	reviewed_exact_final_ng	rkan	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkang_consensus_batch_20260719	དལ་རྐང་ dal rkaṅ Mittelpunktsgleichungen
-wts_1_34	1138	45	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དལ་དང་འབྱོར་བ་ dal daṅ 'byor ba \dal 77:07.
+wts_1_34	1138	45	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དལ་དང་འབྱོར་བ་ dal daṅ 'byor ba \dal 77:07.
 wts_1_34	1141	98	2	སང	saṅ	google_adopted	san	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དིང་སང་ din saṅ \den saṅ.
 wts_1_34	1143	11	4	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དུ་བ་མཇུག་རིང་ du ba mjug riṅ der Komet
 wts_1_34	1150	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུག་ཁང་ dug khaṅ
@@ -1692,7 +1692,7 @@ wts_1_34	1167	48	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibeta
 wts_1_34	1168	60	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	དུར་ཞིང་ dur Ziṅ Leichenacker.
 wts_1_34	1170	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ
 wts_1_34	1170	16	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ Badehaus, vgl. Tdud khan.
-wts_1_34	1181	79	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དུས་དང་དུས་སུ་ dus daṅ dus su \dus dus su.
+wts_1_34	1181	79	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དུས་དང་དུས་སུ་ dus daṅ dus su \dus dus su.
 wts_1_34	1183	24	4	བཟུང	bzuṅ	reviewed_exact_final_ng	bzun	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzung_consensus_batch_20260726	དུས་འདི་ནས་བཟུང་སྟེ་ dus ’di nas bzuṅ ste von
 wts_1_34	1189	12	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དུས་ཡུན་རིང་པོ་ dus yun riṅ po \dus rin.
 wts_1_34	1189	26	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དུས་རིང་ dus riṅ auch — po, — mo, dus yun riṅ
@@ -1703,9 +1703,9 @@ wts_1_34	1205	50	4	བྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tib
 wts_1_34	1205	85	4	བྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	དེ་ལྟ་བུ་བྱུང་བ་ de lta bu byuṅ ba.
 wts_1_34	1208	49	2	སྟེང	steṅ	google_adopted	sten	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དེ་སྟེང་ de steṅ
 wts_1_34	1208	51	2	སྟེང	steṅ	reviewed_exact_final_ng	sten	reviewed_tibetan_exact_final_ng_consensus	tibetan_steng_consensus_batch_20260720	དེ་སྟེང་ de steṅ auch de stens, de stens su, Kurzf.
-wts_1_34	1209	10	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དེ་དང་དེ་ de daṅ de Kurzf. de de dieser und je-
-wts_1_34	1209	54	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དེ་དང་འདྲ་བ་ de daṅ ’dra ba !de ’dra.
-wts_1_34	1209	56	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དེ་དང་མཚུངས་པ་ de daṅ mtshuns pa phil. 7, 1,
+wts_1_34	1209	10	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དེ་དང་དེ་ de daṅ de Kurzf. de de dieser und je-
+wts_1_34	1209	54	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དེ་དང་འདྲ་བ་ de daṅ ’dra ba !de ’dra.
+wts_1_34	1209	56	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དེ་དང་མཚུངས་པ་ de daṅ mtshuns pa phil. 7, 1,
 wts_1_34	1220	92	3	མང	maṅ	reviewed_exact_final_ng	man	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	དེ་བས་མང་དུ་སྤྱོད་པ་ de bas maṅ du spyod pa ein
 wts_1_34	1221	14	2	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དེ་དབང་བཏང་ཚེ་ de dbaṅ btaṅ tshe wenn man es
 wts_1_34	1221	14	3	བཏང	btaṅ	reviewed_exact_final_ng	btan	reviewed_tibetan_exact_final_ng_consensus	tibetan_btang_consensus_batch_20260726	དེ་དབང་བཏང་ཚེ་ de dbaṅ btaṅ tshe wenn man es
@@ -1715,7 +1715,7 @@ wts_1_34	1230	1	2	ཡང	yaṅ	reviewed_exact_final_ng	yan	reviewed_tibetan_exac
 wts_1_34	1230	51	2	ཡང	yaṅ	other_postprocess	yanı	explicit_user_allowlist	A	དེ་ཡང་ de yaṅ
 wts_1_34	1236	7	2	སང	saṅ	reviewed_exact_final_ng	san	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	དེང་སང་ den saṅ auch din saṅ, dus din saṅ
 wts_1_34	1238	24	3	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	དེད་དཔོན་བཟང་པོ་ ded dpon bzaṅ po npr. ein Bo-
-wts_1_34	1239	44	4	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དེའི་བསྟེན་པ་དང་བཅས་པ་ de’i bsten pa daṅ bcas pa
+wts_1_34	1239	44	4	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དེའི་བསྟེན་པ་དང་བཅས་པ་ de’i bsten pa daṅ bcas pa
 wts_1_34	1239	47	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དེའི་རིང་ལ་ de’i riṅ la
 wts_1_34	1239	76	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དེའི་རིང་ལ་ de’i riṅ la zu seiner Zeit, während-
 wts_1_34	1244	43	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དོ་ཁང་ do khaṅ Lagerhalle.
@@ -1736,8 +1736,8 @@ wts_1_34	1253	100	1	དོང	doṅ	reviewed_exact_final_ng	don	reviewed_tibetan
 wts_1_34	1254	1	1	དོང	doṅ	reviewed_exact_final_ng	don	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	དོང་རྩེ་དགུ་བསྐོར་་ doṅ rise dgu bskor ...
 wts_1_34	1254	33	1	དོང	doṅ	reviewed_exact_final_ng	don	reviewed_tibetan_exact_final_ng_consensus	tibetan_dong_consensus_batch_20260726	དོང་རལ་ doṅ ral Köcher.
 wts_1_34	1263	71	2	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	དོན་སྟོང་ don stoṅ ohne Nutzen.
-wts_1_34	1264	43	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དོན་དང་མཐུན་པ་ don daṅ mthun pa [077 mthun.
-wts_1_34	1264	45	2	དང	daṅ	base_ocr_dotted	daṅ	no_release_change_introduced_current_dotted_token	authoritative_base_ocr	དོན་དང་ལྡན་པ་ don daṅ ldan pa auch don ldan
+wts_1_34	1264	43	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དོན་དང་མཐུན་པ་ don daṅ mthun pa [077 mthun.
+wts_1_34	1264	45	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དོན་དང་ལྡན་པ་ don daṅ ldan pa auch don ldan
 wts_1_34	1265	1	4	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	དོན་དམ་པ་སྟོང་་ don dam pa stoṅ ...
 wts_1_34	1265	66	4	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	དོན་དམ་པ་སྟོང་པ་ཉིད་ don dam pa stoṅ pa nid ei-
 wts_1_34	1270	22	2	མང	maṅ	reviewed_exact_final_ng	man	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	དོན་མང་ don maṅ „viel Sinn, viele Gedanken“,

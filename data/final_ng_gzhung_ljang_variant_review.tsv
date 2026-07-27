@@ -1,0 +1,20 @@
+record_type	volume	page	line	token_index	tibetan_syllable	source_or_current_token	supported_target	provenance	disposition	context_excerpt
+current_dotted_form	wts_1_34	111	3	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	ཀླད་གཞུང་ klad gźuṅ Rückenmark.
+current_dotted_form	wts_8_b	128	43	2	གཞུང	gZuṅ	gZuṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
+residual_source	wts_1_34	300	171	2	གཞུང	gun			manual_unresolved	ཁྲེལ་གཞུང་ khrel gun \khrel.
+residual_source	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ		target_supported_but_row_not_authorized	སྤྱི་གཞུང་ spyi gźuń Regierung.
+current_dotted_form	wts_1_34	750	80	1	ལྗང	ldaṅ	ldaṅ	reviewed_exact_final_ng	explicit_user_correction	"ལྗང་ ldaṅ ""jan."
+current_dotted_form	wts_35_51	252	43	1	ལྗང	daṅ	daṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	ལྗང་ 'daṅ
+current_dotted_form	wts_35_51	938	25	2	ལྗང	ldaṅ	ldaṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	ཕོ་ལྗང་ pho ldaṅ npr. ein Kloster.
+current_dotted_form	wts_8_b	105	7	2	ལྗང	laṅ	laṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	བེ་ལྗང་རེ་རལ་ be laṅ re ral eine Pflanze, Dry-
+residual_source	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ		final_ng_only_candidate_withheld_base_provenance_unverified	ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
+residual_source	wts_1_34	506	34	2	ལྗང	han			manual_unresolved	སྒྲོ་ལྗང་ sgro han Papagei.
+residual_source	wts_1_34	750	88	1	ལྗང	han			manual_unresolved	ལྗང་ཁ་ han khn.
+residual_source	wts_1_34	750	101	1	ལྗང	han			manual_unresolved	ལྗང་ལྔོའི་བུ་ han sho’i bu
+residual_source	wts_1_34	750	127	1	ལྗང	lan	laṅ		target_supported_but_row_not_authorized	ལྗང་ལྔོའི་བུ་ lan sro’ bu npr. ein Rsi, Härita,
+residual_source	wts_1_34	750	176	1	ལྗང	ljan			manual_unresolved	ལྗང་ཚགས་ ljan tshags Sieb.
+residual_source	wts_1_34	750	181	1	ལྗང	han			manual_unresolved	ལྗང་ཡུལ་ han yul jan.
+residual_source	wts_1_34	750	187	1	ལྗང	han			manual_unresolved	ལྗང་ལོ་ han lo alttib. für t/can lo 2 Haarlocke.
+residual_source	wts_1_34	911	188	2	ལྗང	Ijan			manual_unresolved	རྟ་ལྗང་དབང་པོ་ rta Ijan dbaṅ po.
+residual_source	wts_1_34	1334	50	3	ལྗང	ljan			manual_unresolved	དྲུག་མར་ལྗང་ drug mar ljan
+residual_source	wts_1_34	1334	97	3	ལྗང	ljan			manual_unresolved	དྲུག་མར་ལྗང་ drug mar ljan Ocker; Laberitum
