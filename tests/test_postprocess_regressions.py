@@ -3529,6 +3529,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed ldan control", corrected)
         self.assertEqual(sum(row["to_token"] == "ldaṅ" for row in changes), 2)
 
+    def test_reviewed_yah_is_separate_from_yany_normalization(self) -> None:
+        lines = {
+            (283, 21): "སྡུམ་ཡང་ sdum yah eine Amtsbezeichnung",
+            (1, 1): "unreviewed yah control; yañ",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("sdum yaṅ eine Amtsbezeichnung", corrected)
+        self.assertIn("unreviewed yah control", corrected)
+        self.assertIn("yaṅ", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
