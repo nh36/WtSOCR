@@ -50,7 +50,22 @@ newly_discovered	wts_1_34	115	122	1	ང	klun		kluṅ		source_compatible_structur
 newly_discovered	wts_1_34	115	45	1	ང	klun		kluṅ		source_compatible_structure_mismatch	0	ང་ klun.
 newly_discovered	wts_1_34	1150	33	2	ཁང	kban		kbaṅ		source_compatible_structure_mismatch	4	དུག་ཁང་ dug kban \dugs khaṅ 1.
 newly_discovered	wts_1_34	1164	28	3	ངང	nan		naṅ		source_compatible_insufficient_evidence	0	དུམ་བུའི་ངང་ཚུལ་ dum bu’i nan tshul eine sinn-
+disappeared	wts_1_34	117	129	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་ klon.
+disappeared	wts_1_34	117	165	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་སྒོམ་ klon sgom
+disappeared	wts_1_34	117	172	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་དཀྱིལ་ klon dkyil Mitee.
+disappeared	wts_1_34	117	184	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་འཁོར་ klon ’khor Strudel, Welle.
+disappeared	wts_1_34	117	189	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་གི་མ་མོ་ klon gi ma mo Beiname der Srid-pa
+disappeared	wts_1_34	117	196	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་གྲམ་ klon grum eine Art Dachs.
+disappeared	wts_1_34	117	202	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་སྒོམ་ klon sgom die höchste von drei Medita-
+disappeared	wts_1_34	118	23	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་ཐང་ klon thaṅ N. einer Region in ’Dan
+disappeared	wts_1_34	118	29	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་དུ་གྱུར་པ་ klon du gyur pa.
 newly_discovered	wts_1_34	118	3	1	ཀླང	klon		kloṅ		source_compatible_structure_mismatch	0	ཀླང་ཆན་པ་” klon chen pa...
+disappeared	wts_1_34	118	40	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་རྡོལ་ klon rdol npr. ein Kloster in sKyid-śod,
+disappeared	wts_1_34	118	44	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་རྡོལ་བླ་མ་ klon rdol bla ma npr. der Gelehrte
+disappeared	wts_1_34	118	56	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			"ཀློང་ ""klon sde eine Abteilung der rDzogs-"
+disappeared	wts_1_34	118	64	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་བརྡོལ་ klon brdol „aus der Mitte hervorkom-
+disappeared	wts_1_34	118	74	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་པ་ klon pa Schmutz, Schlamm.
+disappeared	wts_1_34	118	77	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་ཡངས་ klon yans ausgedehnt, weitherzig.
 newly_discovered	wts_1_34	1192	38	3	ཆུང	run		ruṅ		source_compatible_insufficient_evidence	1	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur
 newly_discovered	wts_1_34	1227	42	3	ང	bźin		bźiṅ		source_compatible_structure_mismatch	0	"""Ras ་ཀྱི ང་ངེ་འཛྲིནྒ་ de bźin nid kyi tin ne"
 newly_discovered	wts_1_34	124	96	3	རྒྱང	igyan		igyaṅ		source_compatible_structure_mismatch	0	དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
@@ -297,6 +312,7 @@ newly_discovered	wts_1_34	629	69	2	འཚོང	tshon		tshoṅ		source_compatibl
 newly_discovered	wts_1_34	632	143	2	ཁང	khun		khuṅ		source_compatible_structure_mismatch	0	ཆཁྲ་།ཁང་ chab khun Abfluß, Toilette.
 newly_discovered	wts_1_34	639	140	2	སྔང	san		saṅ		source_compatible_insufficient_evidence	0	ཆེང་སྔང་ chin san auch ’chin san, phyin san
 newly_discovered	wts_1_34	642	121	1	པང	Daseinsbereichen		Daseinsbereicheṅ		source_compatible_structure_mismatch	0	པང Daseinsbereichen.
+disappeared	wts_1_34	642	135	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆུ་ཀློང་ chu klon Flußmitte.
 newly_discovered	wts_1_34	645	135	2	ཏང	tin		tiṅ		source_compatible_structure_mismatch	0	ཆུ་ཏང་རན chu tin ron npr. eine Nägini.
 newly_discovered	wts_1_34	645	205	4	བྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆུ་གཏེར་ལས་བྱང་ chu gter las byun.
 newly_discovered	wts_1_34	646	141	2	འབུང	thun		thuṅ		source_compatible_insufficient_evidence	0	ཆུ་འབུང་ chu ’thun.
@@ -308,6 +324,8 @@ newly_discovered	wts_1_34	655	124	3	གྲང	gron		groṅ		source_compatible_st
 newly_discovered	wts_1_34	655	165	3	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆུ་སིན་འབྱང་གནས་ chu srin ’byun gnas Bez. für
 newly_discovered	wts_1_34	665	57	2	སྙིང	shin		shiṅ		source_compatible_structure_mismatch	0	ཆེད་སྙིང་ ched shin
 newly_discovered	wts_1_34	674	176	3	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆས་ཀྱ་འབྱང་གནས་སྒེ་ chos kyi ’byun gnas sgo
+disappeared	wts_1_34	675	26	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་ཀློང་ chos klon Allwissenheit, Meister-
+disappeared	wts_1_34	680	1	3	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins klon du
 newly_discovered	wts_1_34	680	127	2	འཚོང	tshon		tshoṅ		source_compatible_dominant_consensus	2	ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem
 newly_discovered	wts_1_34	680	22	4	ང	klon		kloṅ		source_compatible_structure_mismatch	0	EN བེངས་ཀོང་ང་བཤགས་ chos dbyins klon du
 newly_discovered	wts_1_34	680	34	2	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆོས་འབྱང་ chos ’byun.
@@ -327,6 +345,7 @@ newly_discovered	wts_1_34	717	1	2	སྙིང	shin		shiṅ		source_compatible_s
 newly_discovered	wts_1_34	717	110	2	རང	rin		riṅ		source_compatible_structure_mismatch	1	མཇུག་རང་ mjug rin
 newly_discovered	wts_1_34	717	4	2	སྙང	sin		siṅ		source_compatible_structure_mismatch	0	"མཇུག་སྙང་ ming sin auch ""ug säin Herzstück"
 newly_discovered	wts_1_34	720	3	2	ལྔང	ljan		ljaṅ		source_compatible_insufficient_evidence	0	འཇམ་ལྔང་འདབ་ལྡན་ am ljan ’dab ldan Bez. für
+disappeared	wts_1_34	721	142	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			འཇའ་ཀློང་ཡེ་ཤེས་ ja’ klon ye śes ein ritueller
 newly_discovered	wts_1_34	724	164	3	རྐྱང	rgyan		rgyaṅ		source_compatible_insufficient_evidence	0	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
 newly_discovered	wts_1_34	724	212	3	རྐྱང	rgyan		rgyaṅ		source_compatible_insufficient_evidence	0	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
 newly_discovered	wts_1_34	743	75	2	གདང	gdun		gduṅ		source_compatible_structure_mismatch	0	རྗེས་གདང་ rjes gdun 1765 su gdun.

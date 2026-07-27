@@ -3002,6 +3002,26 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
         self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 2)
 
+    def test_reviewed_klong_withholds_damaged_row_and_preserves_collisions(
+        self,
+    ) -> None:
+        lines = {
+            (117, 129): "ཀློང་ klon.",
+            (675, 30): "ཆོས་ཀློང་རྙོག་ chos klon ?7709 aufgebracht sein.",
+            (387, 86): "གློང་ཀྱེར་དགྲ་བོ་ gron khyer dgra bo",
+            (387, 144): "གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa",
+            (1400, 14): "unreviewed klon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀློང་ kloṅ.", corrected)
+        self.assertIn("chos klon ?7709 aufgebracht sein.", corrected)
+        self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
+        self.assertIn("གྲོང་ཆོས་མ་གོས་པ་ groṅ", corrected)
+        self.assertIn("unreviewed klon control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kloṅ" for row in changes), 1)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
