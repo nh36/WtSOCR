@@ -3515,6 +3515,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("mnon ldaṅ respektvoll", corrected)
         self.assertIn("unreviewed ldan control", corrected)
 
+    def test_reviewed_ldang_ldan_is_independently_gated(self) -> None:
+        lines = {
+            (198, 102): "སྐྱི་ལྡང་ skyi ldan.",
+            (552, 158): "མངོན་ལྔང་ mnon ldan respektvoll",
+            (1, 1): "unreviewed ldan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyi ldaṅ.", corrected)
+        self.assertIn("mnon ldaṅ respektvoll", corrected)
+        self.assertIn("unreviewed ldan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "ldaṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
