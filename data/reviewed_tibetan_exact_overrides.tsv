@@ -5855,3 +5855,5 @@ wts_1_34	1303	22	3	lhun	lhuṅ	reviewed_tibetan_exact_final_ng_consensus	final_n
 wts_1_34	76	68	4	sdan	sdaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_sdang_consensus_batch_20260727	Frozen exact Tibetan སྡང alignment; exact-row only.
 wts_1_34	731	3	2	sdan	sdaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_sdang_consensus_batch_20260727	Frozen exact Tibetan སྡང alignment; exact-row only.
 wts_35_51	269	29	5	sdan	sdaṅ	reviewed_tibetan_exact_final_ng_echo	final_ng_sdang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	221	1	2	sbyan	sbyaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_sbyang_consensus_batch_20260727	Frozen exact Tibetan སྦྱང alignment; exact-row only.
+wts_1_34	221	19	2	sbyan	sbyaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_sbyang_consensus_batch_20260727	Frozen exact Tibetan སྦྱང alignment; exact-row only.
