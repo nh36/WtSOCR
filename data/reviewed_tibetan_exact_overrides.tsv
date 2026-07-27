@@ -6020,3 +6020,14 @@ wts_1_34	919	25	1	rtin	rtiṅ	reviewed_tibetan_exact_final_ng_source_compatible	
 wts_1_34	919	36	1	rtin	rtiṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_rting_consensus_batch_20260727	Frozen exact Tibetan རྟིང alignment; exact-row only.
 wts_1_34	1203	75	2	rtin	rtiṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_rting_consensus_batch_20260727	Frozen exact Tibetan རྟིང alignment; exact-row only.
 wts_1_34	918	174	6	rtin	rtiṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor_rting_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	219	44	2	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	219	127	3	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	424	82	1	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	424	141	1	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	424	178	1	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	424	188	1	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	547	174	2	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	560	16	2	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_bgrang_consensus_batch_20260727	Frozen exact Tibetan བགྲང alignment; exact-row only.
+wts_1_34	219	44	7	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor_bgrang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	424	178	4	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor_bgrang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	560	16	5	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor_bgrang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.

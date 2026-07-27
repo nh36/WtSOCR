@@ -3082,6 +3082,28 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed rtin control", corrected)
         self.assertEqual(sum(row["to_token"] == "rtiṅ" for row in changes), 3)
 
+    def test_one_anchor_bgrang_pilot_separates_echoes_and_source_variants(
+        self,
+    ) -> None:
+        lines = {
+            (219, 44): "སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran",
+            (219, 127): "སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.",
+            (424, 178): "བགྲང་ཡས་ bgran yas auch bgran yal eine hohe",
+            (547, 174): "མངན་བགྲང་ mnan bgran \\rnan bgran.",
+            (424, 1): "བགྲང་ beran",
+            (1400, 23): "unreviewed bgran control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyon bgraṅ Kurzf. für skyon du bgraṅ", corrected)
+        self.assertIn("skyon du bgraṅ ba Tskyon bgran.", corrected)
+        self.assertIn("bgraṅ yas auch bgraṅ yal", corrected)
+        self.assertIn("mnan bgraṅ \\rnan bgran.", corrected)
+        self.assertIn("བགྲང་ beran", corrected)
+        self.assertIn("unreviewed bgran control", corrected)
+        self.assertEqual(sum(row["to_token"] == "bgraṅ" for row in changes), 6)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

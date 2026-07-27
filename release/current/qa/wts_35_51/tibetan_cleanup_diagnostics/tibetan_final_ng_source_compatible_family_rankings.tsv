@@ -26,7 +26,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 དགུང	dgun	dgu<FINAL_NASAL>	dguṅ		10	insufficient_consensus:9; damaged_context:1	source_compatible_single_anchor:9; source_compatible_damaged_context:1	1			1	wts_1_34;wts_35_51
 སྒོང	sgon	sgo<FINAL_NASAL>	sgoṅ		10	not_emitted_by_legacy_global_target:10	source_compatible_single_anchor:9; source_compatible_damaged_context:1	1		skyoṅ:1	1	wts_1_34
 གྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ		8	insufficient_consensus:8	source_compatible_single_anchor:8	1			0	wts_1_34
-བགྲང	bgran	bgra<FINAL_NASAL>	bgraṅ		8	insufficient_consensus:8	source_compatible_single_anchor:8	1			0	wts_1_34
 ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ		7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34
 འཆེང	chin	chi<FINAL_NASAL>	chiṅ		7	insufficient_consensus:7	source_compatible_structure_mismatch:7	1			0	wts_1_34
 རུང	run	ru<FINAL_NASAL>	ruṅ		6	insufficient_consensus:6	source_compatible_single_anchor:6	1			0	wts_1_34
@@ -81,7 +80,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 ཤེང	sen	se<FINAL_NASAL>		seṅ	6	not_emitted_by_legacy_global_target:6	source_compatible_no_anchor:6	0		Siṅ:1; Seṅ:1	0	wts_1_34
 ཀྱོང	kyon	kyo<FINAL_NASAL>		kyoṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		gyoṅ:1	0	wts_1_34
 དང	dun	du<FINAL_NASAL>		duṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_structure_mismatch:5	0		daṅ:118; rkaṅ:1	0	wts_1_34
-བགྲང	beran	bera<FINAL_NASAL>		beraṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		bgraṅ:1	0	wts_1_34
+བགྲང	beran	bera<FINAL_NASAL>		beraṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		bgraṅ:9	0	wts_1_34
 ལྗང	han	ha<FINAL_NASAL>		haṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		daṅ:1; ldaṅ:1; laṅ:1	0	wts_1_34
 ཤང	Sin	Si<FINAL_NASAL>		Siṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_structure_mismatch:5	0		Saṅ:1; siṅ:1	0	wts_1_34
 སྔོང	sdon	sdo<FINAL_NASAL>		sdoṅ	5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		sbyoṅ:1	0	wts_1_34

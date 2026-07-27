@@ -159,8 +159,8 @@ newly_discovered	wts_1_34	195	114	2	སང	sen				source_compatible_structure_mi
 newly_discovered	wts_1_34	195	114	3	སང	sen				source_compatible_structure_mismatch	0	སྐྱ་སང་སང་པ་ skya sen sen po
 newly_discovered	wts_1_34	202	56	1	ང	skyun				source_compatible_structure_mismatch	0	ང་པོ་ skyun po Ahle, Pfriem, Stichel.
 newly_discovered	wts_1_34	207	100	2	སྔོང	sdon				source_compatible_no_anchor	0	སྐྱེ་སྔོང་ skye sdon ein Baum.
-category_changed	wts_1_34	219	127	3	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.
-category_changed	wts_1_34	219	44	2	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
+disappeared	wts_1_34	219	127	3	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.
+disappeared	wts_1_34	219	44	2	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
 newly_discovered	wts_1_34	226	146	1	བསླང	bskan				source_compatible_structure_mismatch	0	བསླང་ bskan fur. t'skon erfüllen; zufrieden-
 newly_discovered	wts_1_34	228	165	1	བསླང	bskun				source_compatible_structure_mismatch	0	བསླང་ bskun fut. zu tskun verbergen.
 category_changed	wts_1_34	230	39	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བསྐུལ་སློང་ bskul slon Anregung.
@@ -308,13 +308,13 @@ newly_discovered	wts_1_34	415	125	1	གོང	dgon				source_compatible_damaged_
 newly_discovered	wts_1_34	417	32	2	དང	dun				source_compatible_structure_mismatch	0	དགོན་དང་ dgon dun auch ~ can, dgun dun can
 newly_discovered	wts_1_34	424	1	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་ beran
 newly_discovered	wts_1_34	424	123	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
-category_changed	wts_1_34	424	141	1	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བགྲང་ཝྲེང་ bgran phren Gebetskette.
+disappeared	wts_1_34	424	141	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཝྲེང་ bgran phren Gebetskette.
 newly_discovered	wts_1_34	424	158	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
 newly_discovered	wts_1_34	424	173	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་གཞི་ beran gäi.
-category_changed	wts_1_34	424	178	1	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
-category_changed	wts_1_34	424	188	1	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བགྲང་ཡོལ་ bgran yol eine hohe Zahl.
+disappeared	wts_1_34	424	178	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
+disappeared	wts_1_34	424	188	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཡོལ་ bgran yol eine hohe Zahl.
 newly_discovered	wts_1_34	424	51	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་ beran
-category_changed	wts_1_34	424	82	1	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བགྲང་ bgran zählen, rechnen; ¬ du med uner-
+disappeared	wts_1_34	424	82	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ bgran zählen, rechnen; ¬ du med uner-
 category_changed	wts_1_34	425	104	2	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བཀགྲོ་གླེང་ bgro glen
 category_changed	wts_1_34	425	126	2	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བཀྲོ་གླེང་ bgro glen Unterhaltung, Diskussion.
 newly_discovered	wts_1_34	430	109	2	ལང	lin				source_compatible_structure_mismatch	0	མག་ལང་ go lin.
@@ -405,13 +405,13 @@ newly_discovered	wts_1_34	541	84	2	སང	srun				source_compatible_structure_mi
 newly_discovered	wts_1_34	544	136	2	གདང	gdun				source_compatible_structure_mismatch	0	དྱངུལ་གདང་བརརྐྱད་ dnul gdun brgyad eine Kal-
 newly_discovered	wts_1_34	544	163	2	སང	sran				source_compatible_no_anchor	0	དྭྱངལ་སང་ drul sran
 newly_discovered	wts_1_34	544	204	2	སང	sran				source_compatible_no_anchor	0	དྭངལ་སང་ dnul sran eine Währung.
-category_changed	wts_1_34	547	174	2	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	མངན་བགྲང་ mnan bgran \rnan bgran.
+disappeared	wts_1_34	547	174	2	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			མངན་བགྲང་ mnan bgran \rnan bgran.
 newly_discovered	wts_1_34	552	131	4	འོང	herbeikommen				source_compatible_structure_mismatch	0	མངོན་ང་འོང་ mnon du 07? herbeikommen.
 newly_discovered	wts_1_34	552	31	3	ཝང	ldan				source_compatible_no_anchor	0	མངོན་དྭ་ཝང་བ་ mnon du ldan ba ehrerbietiges
 newly_discovered	wts_1_34	552	37	3	ཕྱང	phyun				source_compatible_structure_mismatch	0	མངོན་ད་ཕྱང་ mnon du phyun pf. enthüllen,
 newly_discovered	wts_1_34	555	49	3	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	མངོན་པར་འབྱང་ mṅon par 'byun pf. Tmnon par
 newly_discovered	wts_1_34	558	165	2	ང	khan		khaṅ		source_compatible_single_anchor	1	རྔ་།ང་ rna khan 1,677¢ khan. Tungkuh.
-category_changed	wts_1_34	560	16	2	བགྲང	bgran	bgraṅ	bgraṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྔན་བགྲང་ rnan bgran auch mnan bgran [.
+disappeared	wts_1_34	560	16	2	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			རྔན་བགྲང་ rnan bgran auch mnan bgran [.
 category_changed	wts_1_34	569	95	3	ཤང	San	Saṅ	Saṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྔོ་གྲོ་ཤང་རྩེ་ sho gro San rtse eine Pflanze, Oro-
 newly_discovered	wts_1_34	571	227	2	བྱང	byun		byuṅ		source_compatible_structure_mismatch	1	སྔོན་བྱང་ shon byun auch ~ ba früher, früher
 newly_discovered	wts_1_34	575	168	2	ཀེང	ken				source_compatible_no_anchor	0	ཅང་ཀེང་ caṅ ken

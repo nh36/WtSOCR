@@ -30466,7 +30466,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 219	40	2822	german_prose			none	0	5	0	0	„durch die Lehre des Ha-San wurden die
 219	41	2822	german_prose			none	0	2	0	0	zehn religiösen Aktivitäten getadelt“ (sBa
 219	42	2822	other			none	0	0	0	0	62,4).
-219	44	2823	headword_line	སྐྱོན་བགྲང་	skyon	medium	3	2	0	0	སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
+219	44	2823	headword_line	སྐྱོན་བགྲང་	skyon	medium	3	2	0	0	སྐྱོན་བགྲང་ skyon bgraṅ Kurzf. für skyon du bgraṅ
 219	45	2823	latin_other			none	1	0	0	0	ba.
 219	46	2823	german_prose			none	0	2	0	0	1. Abscheu, Widerwille.
 219	48	2823	german_prose_with_translit			none	2	3	0	0	Lex. skyon du beran ba = jugupsä (Mvy
@@ -30525,7 +30525,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 219	121	2829	german_prose			none	0	1	0	0	Fehler anheften, d. h. tadeln.
 219	123	2829	german_prose_with_translit			none	6	1	0	0	’di ni mi ’thad pa yin no / Zes — pa dan „‚es
 219	125	2829	german_prose			none	0	3	0	0	ist unziemlich!“ tadelte er ihn“ (Prav 21,4).
-219	127	2830	headword_line	སྐྱོན་དུ་བགྲང་བ་	skyon du	medium	4	0	0	0	སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.
+219	127	2830	headword_line	སྐྱོན་དུ་བགྲང་བ་	skyon du	medium	4	0	0	0	སྐྱོན་དུ་བགྲང་བ་ skyon du bgraṅ ba Tskyon bgran.
 219	129	2831	headword_line	སྐྱོན་ནས་བརྗོད་	skyon nas	medium	3	1	0	0	སྐྱོན་ནས་བརྗོད་ skyon nas brjod Kurzf. skyon brjod
 219	130	2831	german_prose			none	0	3	0	0	Fehler aufzählen, tadeln; vgl.
 219	131	2831	other			none	0	0	0	0	!skyon bgran.
@@ -60153,7 +60153,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	78	5555	german_prose_with_translit			none	2	2	0	0	lam du byun ba skad - te „der Herrscher
 424	79	5555	german_prose			none	0	4	0	0	erklärte, daß es ihm im Traum erschienen
 424	80	5555	german_prose			none	0	1	0	0	sei“ (Bu 884,3).
-424	82	5556	headword_line	བགྲང་	du	medium	1	1	0	0	བགྲང་ bgran zählen, rechnen; ¬ du med uner-
+424	82	5556	headword_line	བགྲང་	du	medium	1	1	0	0	བགྲང་ bgraṅ zählen, rechnen; ¬ du med uner-
 424	83	5556	german_prose			none	0	2	0	0	meßlich, unzählbar.
 424	85	5556	german_prose_with_translit			none	2	2	0	0	mkhas par - ba gan „wer auch immer zu
 424	86	5556	german_prose			none	0	3	0	0	den Gelehrten gerechnet wird“ (Prav 19,
@@ -60198,7 +60198,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	136	5559	german_prose_with_translit			none	3	1	0	0	» las bsgres pa eine
 424	138	5559	german_prose			none	0	1	0	0	hohe Zahl.
 424	139	5559	german_prose_with_translit			none	1	2	0	0	Lex. asamkhyeyaparivartah (Mvy 7933).
-424	141	5560	headword_line	བགྲང་ཝྲེང་	phren Gebetskette	high	2	0	0	0	བགྲང་ཝྲེང་ bgran phren Gebetskette.
+424	141	5560	headword_line	བགྲང་ཝྲེང་	phren Gebetskette	high	2	0	0	0	བགྲང་ཝྲེང་ bgraṅ phren Gebetskette.
 424	143	5560	latin_other			none	4	0	0	0	~ bzin du ’khor ba ru / lan man yons su
 424	144	5560	german_prose_with_translit			none	3	3	0	0	’khor ba ni (metr.) „wie [die Glieder] einer
 424	145	5560	german_prose_with_translit			none	2	3	0	0	Gebetskette bist du viele Male im Wieder-
@@ -60223,14 +60223,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	174	5562	german_prose			none	0	1	0	0	1. Tbgran.
 424	175	5562	german_prose			none	0	1	0	0	2. Jahr.
 424	176	5562	german_prose_with_translit			none	1	2	0	0	Lex. lo (Dagy).
-424	178	5562	tibetan_only	བགྲང་ཡས་		none	0	2	0	0	བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
+424	178	5562	tibetan_only	བགྲང་ཡས་		none	0	2	0	0	བགྲང་ཡས་ bgraṅ yas auch bgraṅ yal eine hohe
 424	179	5562	german_prose			none	0	2	0	0	Zahl, unzählbar.
 424	181	5562	german_prose_with_translit			none	2	1	0	0	= bskal man 9077 nas „vor unzählig vielen
 424	182	5562	german_prose			none	0	1	0	0	Weltzeitaltern“ (MTH3/3/24 3).
 424	184	5562	german_prose_with_translit			none	2	1	0	0	Lex. bgran yal, - = bgran bar bya rgyu med
 424	185	5562	german_prose_with_translit			none	3	2	0	0	pa dan grans gnas sig (brDa, ähnl. Dagy); -
 424	186	5562	german_prose			none	0	1	0	0	(v. 1. yal) = havavah (Mvy 7781, 7909).
-424	188	5562	tibetan_only	བགྲང་ཡོལ་		none	0	2	0	0	བགྲང་ཡོལ་ bgran yol eine hohe Zahl.
+424	188	5562	tibetan_only	བགྲང་ཡོལ་		none	0	2	0	0	བགྲང་ཡོལ་ bgraṅ yol eine hohe Zahl.
 424	189	5562	german_prose			none	0	2	0	0	Lex. ameyam (Mvy 7816).
 424	191	5563	headword_line	བྲགྲང་ཡོལ་ལ་བབླེས་པ་	la bsgres pa	medium	3	0	0	0	བྲགྲང་ཡོལ་ལ་བབླེས་པ་ bgran yol la bsgres pa ei-
 424	192	5563	german_prose			none	0	1	0	0	ne hohe Zahl.
@@ -78264,7 +78264,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 547	168	6938	latin_other			none	1	0	0	0	NR mna’
 547	170	6938	tibetan_only	མངན་		none	0	1	0	0	མངན་ 77272777 Fehler.
 547	172	6938	german_prose			none	0	1	0	0	Lex. skyon (TTC).
-547	174	6938	tibetan_only	མངན་བགྲང་		none	0	0	0	0	མངན་བགྲང་ mnan bgran \rnan bgran.
+547	174	6938	tibetan_only	མངན་བགྲང་		none	0	0	0	0	མངན་བགྲང་ mnan bgraṅ \rnan bgran.
 547	175	6938	tibetan_only	མངན་བྲགངས་		none	0	0	0	0	མངན་བྲགངས་ mnan bgrans [.777777 bgrans.
 547	177	6938	latin_other			none	1	0	0	0	SER mna’.
 547	179	6938	german_prose			none	0	3	0	0	1. Macht; - räed Macht gewinnen, mei-
@@ -80081,7 +80081,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 560	12	7082	latin_other			none	3	0	0	0	gser phye - pa ’di bzes la (metr.) „nimm
 560	13	7082	german_prose_with_translit			none	1	4	0	0	diesen Goldstaub als Bezahlung an!“ (Padm
 560	14	7082	other			none	0	0	0	0	25736).
-560	16	7082	tibetan_only	རྔན་བགྲང་		none	0	1	0	0	རྔན་བགྲང་ rnan bgran auch mnan bgran [.
+560	16	7082	tibetan_only	རྔན་བགྲང་		none	0	1	0	0	རྔན་བགྲང་ rnan bgraṅ auch mnan bgraṅ [.
 560	17	7082	german_prose			none	0	1	0	0	rhan bgrans kritisieren.
 560	19	7082	latin_other			none	1	0	0	0	ran la ran ~ gin „sich selbst tadelnd“ (dPe
 560	20	7082	other			none	0	0	0	0	72,15).

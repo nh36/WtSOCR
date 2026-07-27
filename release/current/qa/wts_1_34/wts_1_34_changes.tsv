@@ -28738,3 +28738,14 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 919	25	10307	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་སོར་ rtin sor in Zukunft, später.
 919	36	10309	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་ལྷམ་ rtin lham Halbschuh.
 1203	75	12761	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
+219	44	2867	headword_line	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
+219	44	2867	headword_line	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
+219	127	2874	headword_line	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.
+424	82	5659	headword_line	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བགྲང་ bgran zählen, rechnen; ¬ du med uner-
+424	141	5663	headword_line	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བགྲང་ཝྲེང་ bgran phren Gebetskette.
+424	178	5665	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
+424	178	5665	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
+424	188	5665	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བགྲང་ཡོལ་ bgran yol eine hohe Zahl.
+547	174	7047	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	མངན་བགྲང་ mnan bgran \rnan bgran.
+560	16	7194	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྔན་བགྲང་ rnan bgran auch mnan bgran [.
+560	16	7194	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྔན་བགྲང་ rnan bgran auch mnan bgran [.
