@@ -109,20 +109,20 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
     ) -> None:
         path = (
             ROOT / "data"
-            / "final_ng_source_compatible_prepass_manifest_e7ada80.tsv"
+            / "final_ng_source_compatible_prepass_manifest_6e4614f.tsv"
         )
         with path.open(encoding="utf-8", newline="") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
         positional = [
             row for row in rows if row["candidate_status"] == "positional"
         ]
-        self.assertEqual(len(positional), 101)
+        self.assertEqual(len(positional), 100)
         self.assertEqual(
             {row["frozen_prepass_sha"] for row in rows},
-            {"e7ada80b5b44c271d4e4daabf035cfd00c62bbc1"},
+            {"6e4614fe49f72ec5926d1c24d02c0a09a24b2597"},
         )
         self.assertFalse(
-            {"ཀློང", "སྙིང", "རྱོང", "མེང"}
+            {"ཀློང", "སྙིང", "རྱོང", "མེང", "འཕྲང"}
             & {row["tibetan_syllable"] for row in rows}
         )
 

@@ -1,0 +1,125 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	583	77	4	ཀྱང	kyan	kyaṅ	echo	uncertain	none	ཅིས་ཀྱང་ cis Ryan Tcinas kyan.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	929	151	5	ཀྱང	kyan	kyaṅ	echo	uncertain	none	5 AS ཀྱང་ཉི་ དགོས་ lta smos kyan ci dgos auch
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	104	89	1	ཀྱང	kyan	kyaṅ	positional	source_compatible_dominant_consensus	none	ཀྱང་ཀྱོང་ kyan kyon uneben, wellig.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	710	175	3	ཀྱང	kyan	kyaṅ	positional	source_compatible_dominant_consensus	none	ཇི་ནས་ཀྱང་ JE nas kyan unbedingt; vgl. །€/ nas
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1087	1	3	ཀྱང	kyan	kyaṅ	positional	source_compatible_dominant_consensus	none	ད་དུང་ཀྱང་ da duṅ kyan
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1087	34	3	ཀྱང	kyan	kyaṅ	positional	source_compatible_dominant_consensus	none	ད་དུང་ཀྱང་ da duṅ kyan Ida dun yan.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	248	15	2	གདང	gdan	gdaṅ	positional	source_compatible_dominant_consensus	none	།ཁ་གདང་ kha gdan den Mund öffnen.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	268	206	2	གདང	gdan	gdaṅ	positional	source_compatible_dominant_consensus	none	ཁུར་གདང་ khur gdan Holzgestell für Lasten.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	491	175	3	ཕང	phan	phaṅ	positional	source_compatible_dominant_consensus	none	སྒེག་མོའི་ཕང་ sgeg mo’i phan Bez. für Himmel.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1338	33	5	ཕྱུང	phyun	phyuṅ	echo	explicit_same_lemma_repetition	none	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1015	179	3	ཕྱུང	phyun	phyuṅ	positional	source_compatible_dominant_consensus	none	ཐུགས་ཧུར་ཕྱུང་ thugs hur phyun erschrocken.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1152	1	2	ཕྱུང	phyun	phyuṅ	positional	source_compatible_dominant_consensus	none	དུག་ཕྱུང་ dug phyun
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1338	33	2	ཕྱུང	phyun	phyuṅ	positional	source_compatible_dominant_consensus	none	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	36	79	3	བང	ban	baṅ	positional	source_compatible_dominant_consensus	none	ཀ་ཏ་བང་ཀ་ Ra ta ban ka eine Heilpflanze. - skt.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	89	167	2	བང	ban	baṅ	positional	source_compatible_dominant_consensus	none	ཀེ་བང་ ke ban, auch ke wan npr. eın chinesischer
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	198	137	7	བུང	bun	buṅ	echo	explicit_same_lemma_repetition	none	སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun furcht-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	198	137	2	བུང	bun	buṅ	positional	source_compatible_dominant_consensus	none	སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun furcht-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	428	8	4	ཚོང	tshon	tshoṅ	echo	uncertain	none	ནམ་ཚོང་ nam tshoṅ Inam 'tshon.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	433	23	2	ཚོང	tshon	tshoṅ	positional	source_compatible_dominant_consensus	none	"འབྲམ།་ཚོང་ ""bam tshon Zwangskauf."
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	1100	46	6	འཕོང	phon	phoṅ	echo	explicit_same_lemma_repetition	none	འཕོང་གི་དཔོང་ས་ 'phoṅ gi dpoṅ sa auch 'phon gi
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	489	61	2	འཕོང	phon	phoṅ	positional	source_compatible_dominant_consensus	none	སྒ་འཕོང་ sga ’phon hinterer Teil des Sattels.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	597	84	5	རོང	ron	roṅ	echo	explicit_same_lemma_repetition	none	གཅོང་རོང་ gcon ron auch con ron Schlucht,
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	587	1	2	རོང	ron	roṅ	positional	source_compatible_dominant_consensus	none	ཅོང་རོང་ con ron
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	587	13	2	རོང	ron	roṅ	positional	source_compatible_dominant_consensus	none	ཅྲོང་རོང་ con ron \gcon roṅ.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	597	84	2	རོང	ron	roṅ	positional	source_compatible_dominant_consensus	none	གཅོང་རོང་ gcon ron auch con ron Schlucht,
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	943	182	2	རོང	ron	roṅ	positional	source_compatible_dominant_consensus	none	སྟག་རོང་ stag ron npr. cin Ort.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	498	28	5	ལུང	luh	luṅ	positional	source_compatible_dominant_consensus	none	གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	99	16	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	ཀོང་ལུང་ koṅ lun ein bestimmtes Jahr.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	143	52	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	བཀའ་ལུང་ bka’ lun
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	143	78	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	བཀའ་ལུང་ ba’ lun.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	593	190	5	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	གཅིག་ལས་འཕྲོས་པའི་ལུང་ gcig las ’phros pa’i lun
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	602	115	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	བཅལ་ལུང་པ་ beal lun pa
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	613	78	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	ལྷགས་ལུང་ lcags lun Eisengriff.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	666	193	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	ཆེན་ལུང་ chen lun der chinesische Kaiser 87 [£
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	681	143	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	ཆོས་ལུང་ chos lun npr. ein Ort.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	718	3	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	འཇག་ལུང་ ag lun Schlinge.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	894	73	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	གཏེར་ལུང་ gter lun Schatztext.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	943	173	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	སྟག་ལུང་ stag lun
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	943	201	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	སྟག་ལུང་ stag lun.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	955	131	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	སྟོད་ལུང་ stod lun auch stod luns npr. cin Ort,
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	727	35	2	ལུང	lun	luṅ	positional	source_compatible_dominant_consensus	none	དཔའ་ལུང་ dpa' lun.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	891	140	6	ཤིང	Sin	Siṅ	echo	explicit_same_lemma_repetition	none	གཏུན་ཤིང་ཅན་ gtun Sin can auch rtun Sin Bei-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	919	157	4	ཤིང	Sin	Siṅ	echo	uncertain	none	རྟན་ཤིང་ rtun Sin Tgtun Sin can.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	493	24	5	ཤིང	Sin	Siṅ	echo	uncertain	none	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	107	127	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ཀྱིར་ཤིང་ kyer Sin Iskyer sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	131	139	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དཀྲུགས་ཤིང་ drugs Sin Tdkrug śin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	211	115	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	སྐྱེར་ཤིང་ skyer Sin Tskyer pa.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	328	31	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	འཁྲི་ཤིང་ ’khri Sin auch ’khril sin Ranke,
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	367	59	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ཀྱིབ་ཤིང་པ་ gib Sin pa eine Pflanze, synon.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	404	99	3	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དགའ་བའི་ཤིང་རྟ་མ་ dga’ ba’i Sin rta ma göttliche
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	453	65	3	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	འགྲོ་བའི་ཤིང་རྟ་ ’gro ba’i Sin rta Beiname des
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	464	168	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	རྒྱ་ཤིང་བརྗོད་གསུམ་ rgya Sin brnod gsum Steuer-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	559	131	5	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	རྔ་ཡབ་ཅན་གྱི་ཤིང་ rna yab can gyi Sin Bez. für
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	654	60	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ཆུ་ཤིང་མ་ chu Sin ma
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	708	24	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ཇ་ཤིང་ ja Sin Teepflanze; Camella sinensis
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	879	101	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ཏེའུ་ཤིང་ te’ Sin Stuhl, Sitzbank.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	891	140	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	གཏུན་ཤིང་ཅན་ gtun Sin can auch rtun Sin Bei-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	919	157	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	རྟན་ཤིང་ rtun Sin Tgtun Sin can.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1127	94	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དམ་ཤིང་ dam Sin ein Stock, Attribut von Bon-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1300	48	2	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དྲང་ཤིང་ dran Sin Zepter.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1308	101	3	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དྲན་པའི་ཤིང་རྟ་ dran pa’i Sin rta Beiname Märas.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1315	24	3	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དྲི་ལྡན་ཤིང་ dri ldan Sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1323	11	3	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	དྲི་ཡི་ཤིང་རྟ་ dri yi Sin rta Bez. für Wind.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	444	17	4	ཤིང	Sin	Siṅ	positional	source_compatible_dominant_consensus	none	ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	49	49	5	ཤིང	sih	siṅ	echo	direct_repeated_tibetan_alignment	none	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	881	47	3	ཤིང	sih	siṅ	positional	source_compatible_dominant_consensus	none	ཕག་གི་ཤིང་རྟ་ phag gi sih rta
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	49	49	5	ཤིང	sih	siṅ	positional	source_compatible_dominant_consensus	none	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	107	127	4	ཤིང	sin	siṅ	echo	uncertain	none	ཀྱིར་ཤིང་ kyer Sin Iskyer sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	131	65	5	ཤིང	sin	siṅ	echo	explicit_same_lemma_repetition	none	དཀྲུག་ཤིང་ dkrug sin auch dkrugs sin „Quirls-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	328	31	5	ཤིང	sin	siṅ	echo	explicit_same_lemma_repetition	none	འཁྲི་ཤིང་ ’khri Sin auch ’khril sin Ranke,
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	329	48	4	ཤིང	sin	siṅ	echo	uncertain	none	འཁྲིལ་ཤིང་ khril sin V’ehri sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	752	76	7	ཤིང	sin	siṅ	echo	explicit_same_lemma_repetition	none	ལྗོན་ཤིང་ལྔམ་ར་ lion sin Idum ra auch bon sin
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	92	49	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཀེར་ཤིང་ ker sin 1kin %.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	115	26	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཀླུ་ཤིང་ kla sin eine Pflanze, „Näga-Baum“, ein
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	131	65	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	དཀྲུག་ཤིང་ dkrug sin auch dkrugs sin „Quirls-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	131	110	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	དཀྲུགས་ཤིང་ dkrugs sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	210	132	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	སྐྱེད་ཤིང་ skyed sin gezogener, gepflanzter Baum.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	218	130	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	སྐྱོད་བྱེད་ཤིང་ skyod byed sin Ruder.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	269	59	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཁུར་ཤིང་ khur sin hölzernes Tragegestell.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	282	1	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཁྱབ་འཇུག་ཤིང་རྟ་ khyab jug sin rta
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	293	196	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཁྲམ་ཤིང་ khram sin Kerbholz; ein Ritualge-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	295	114	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཁྲི་ཏི་ཤིང་ khri ti sin eine Pflanze.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	329	48	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	འཁྲིལ་ཤིང་ khril sin V’ehri sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	355	1	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གེལ་བའི་ཤིང་ gel ba’i sin
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	355	3	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གེལ་བའི་ཤིང་ gel ba’i sin ein Baum.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	395	57	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གླང་ཤིང་ glaṅ sin ein Baum, Gebirgsweide.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	398	35	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གླེགས་ཤིང་ glegs sin Buchdeckel aus Holz.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	508	125	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	སྒྲོལ་བའི་ཤིང་རྟ་ sgrol ba’i sin rta.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	526	143	3	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ངང་པའི་ཤིང་རྟ་ nan pa’i sin rta Beiname des
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	607	75	4	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	བཅུད་རོ་འཛིན་ཤིང་ beud ro ’dzin sin Bez. für
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	654	110	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཆུ་ཤིང་དཀར་པོ་ chu sin dkar po ein Baum.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	697	95	4	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	མཆོད་སྦྱིན་སྤོས་ཤིང་ mchod sbyin spos sin Bez.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	752	76	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ལྗོན་ཤིང་ལྔམ་ར་ lion sin Idum ra auch bon sin
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	801	30	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གཉའ་ཤིང་ giia’ sin Joch.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	891	121	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གཏུན་ཤིང་ gtun sin
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	891	130	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	གཏུན་ཤིང་ gtun sin Stößel, Keule.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	942	21	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	སྟ་ཤིང་ sta sin ein Heilmittel, vgl. Tca gan.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	946	64	4	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	སྟར་མོ་གེའི་ཤིང་ star mo ge’i sin Walnußbaum.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	990	70	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཐང་ཤིང་ thaṅ sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1003	64	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	བྲིག་ཤིང་ thig sin
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1003	107	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཐིག་ཤིང་ thig sin Meßstab,.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1020	131	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཐུབ་ཤིང་ thub sin Gnomon; vgl. SCHUH 2012:
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1022	16	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	ཐུར་ཤིང་ thur sin Gnomon; vgl. SCHUH 2012:
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1339	38	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	དྲུམ་ཤིང་ drum sin eine Pflanze, ein Baum.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	305	5	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	བླ་ཤིང་ bla sin.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	408	49	9	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	438	28	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	"འབར་ཤིང་ ""bar sin Schwefel."
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	493	24	2	ཤིང	sin	siṅ	positional	source_compatible_dominant_consensus	none	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	195	82	3	སང	san	saṅ	echo	direct_repeated_tibetan_alignment	none	སྐྱ་སང་སང་ skya sari san.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1181	92	5	སང	san	saṅ	echo	uncertain	none	དུས་དིང་སང་ dus din sa \den san.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1236	7	5	སང	san	saṅ	echo	explicit_same_lemma_repetition	none	དེང་སང་ den san auch din san, dus din san
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1236	7	8	སང	san	saṅ	echo	explicit_same_lemma_repetition	none	དེང་སང་ den san auch din san, dus din san
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1287	32	5	སང	san	saṅ	echo	explicit_same_lemma_repetition	none	དྭངས་སང་ dwans san auch dans san klar, un-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_35_51	1106	46	3	སང	san	saṅ	echo	uncertain	none	འཕྱིང་སང་ ''phyiṅ saṅ san.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_8_b	433	66	3	སང	san	saṅ	echo	uncertain	none	འབའརྒྱ་སང་ཤི་ཏ་ 'ba' rgya san Sita npr. ein Mi-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	195	82	3	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	སྐྱ་སང་སང་ skya sari san.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	256	15	2	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	།ཁ་སང་ 'kha san auch kha rtsan, kha sa, kha
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	775	30	2	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	ཉི་སང་པད་ Al san pad npr. eine Emanation
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	953	51	2	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	སྟོང་སང་ stoṅ san
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1236	7	2	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	དེང་སང་ den san auch din san, dus din san
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	1287	32	2	སང	san	saṅ	positional	source_compatible_dominant_consensus	none	དྭངས་སང་ dwans san auch dans san klar, un-
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	946	86	4	སྟང	stan	staṅ	echo	uncertain	none	སྟི་སྟང་ sti stan \bsti stan.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	944	84	1	སྟང	stan	staṅ	positional	source_compatible_dominant_consensus	none	སྟང་ stan Ehemann.
+6e4614fe49f72ec5926d1c24d02c0a09a24b2597	wts_1_34	946	86	2	སྟང	stan	staṅ	positional	source_compatible_dominant_consensus	none	སྟི་སྟང་ sti stan \bsti stan.
