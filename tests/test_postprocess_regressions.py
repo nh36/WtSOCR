@@ -3038,6 +3038,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed tshon tshoh control", corrected)
         self.assertEqual(sum(row["to_token"] == "tshoṅ" for row in changes), 4)
 
+    def test_reviewed_sprang_h_variant_is_exactly_gated(self) -> None:
+        lines = {
+            (839, 75): "སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.",
+            (900, 10): "unreviewed sprah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("སྤྲང་ *spraṅ Kurzforn für ↓ spraṅ po.", corrected)
+        self.assertIn("unreviewed sprah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "spraṅ" for row in changes), 1)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
