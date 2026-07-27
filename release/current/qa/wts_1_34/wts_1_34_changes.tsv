@@ -28594,3 +28594,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 221	19	2895	headword_line	sbyan	sbyaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྐྱོར་སྦྱང་ skyor sbyan wiederholen.
 144	15	1829	headword_line	bsrun	bsruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བཀའ་བསྲུང་ bka’ bsrun tbka’ srun.
 495	2	6440	headword_line	bsrun	bsruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྒ་བསྲུང་པ་ sgo bsrun ba
+113	66	1382	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་འདུལ་ཁྱུང་ཆེན་ཕུག་ klu ’dul khyun chen phug N.
+113	134	1385	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་ཕྲུག་འོད་ཁྱུང་ klu phrug ’od khyun \klu sbrul ’od
