@@ -3541,6 +3541,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed yah control", corrected)
         self.assertIn("yaṅ", corrected)
 
+    def test_reviewed_nah_is_exactly_gated(self) -> None:
+        lines = {
+            (400, 35): "ནང་འབབ་ nah bab eigener Grundherr",
+            (403, 25): "ནང་རིམ་ nah rim Rundweg in einem Gebäude.",
+            (1, 1): "unreviewed nah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("naṅ bab eigener Grundherr", corrected)
+        self.assertIn("naṅ rim Rundweg", corrected)
+        self.assertIn("unreviewed nah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "naṅ" for row in changes), 2)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

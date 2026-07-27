@@ -31964,7 +31964,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 400	32	2050	german_prose_with_translit			none	1	2	0	0	Lex. mantriparsadadhyaksah (Mvy 3678).
 400	33	2051	headword_line	ནང་བློན་སྦྱིན་	sbyin	medium	1	1	0	0	ནང་བློན་སྦྱིན་ nani blon sbyin Richter.
 400	34	2051	german_prose			none	0	2	0	0	Lex. drastr (Ak 191.5).
-400	35	2052	headword_line	ནང་འབབ་	Grundherr	high	1	0	0	0	ནང་འབབ་ nah bab eigener Grundherr
+400	35	2052	headword_line	ནང་འབབ་	Grundherr	high	1	0	0	0	ནང་འབབ་ naṅ bab eigener Grundherr
 400	36	2052	other			none	0	0	0	0	(SCHNEIDER 2012: XX).
 400	37	2053	headword_line	ནང་འབྱེད་	byed	medium	1	4	0	0	ནང་འབྱེད་ nar 'byed Bez. für Bad, Waschraum.
 400	38	2053	german_prose_with_translit			none	1	4	0	0	"Lex. khban chun min ""Bez. für kleines Haus"
@@ -32189,7 +32189,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 403	22	2080	latin_other			none	1	0	0	0	sophie.
 403	23	2080	german_prose_with_translit			none	3	1	0	0	Lex. span blani rig pa'am bslab pa gsum gyi don
 403	24	2080	latin_other			none	3	0	0	0	rtogs pa (brDa).
-403	25	2080	tibetan_only	ནང་རིམ་		none	0	4	0	0	ནང་རིམ་ nah rim Rundweg in einem Gebäude.
+403	25	2080	tibetan_only	ནང་རིམ་		none	0	4	0	0	ནང་རིམ་ naṅ rim Rundweg in einem Gebäude.
 403	26	2080	german_prose_with_translit			none	1	2	0	0	Lex. abhyantarapattikā (Mvy 4362).
 403	27	2081	headword_line	ནང་རུབ་	naṅ	high	1	3	0	0	ནང་རུབ་ naṅ rab Morgen und Abend.
 403	28	2081	german_prose_with_translit			none	4	5	0	0	"Lex. Zogs pa dan dgons mtha' ""Ende des Mor-"
