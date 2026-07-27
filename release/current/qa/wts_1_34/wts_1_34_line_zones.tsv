@@ -129905,7 +129905,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	54	9866	german_prose_with_translit			none	1	3	0	0	Lex. tyägädhisthänam (Mvy 1582, Abt. byin
 897	55	9866	latin_other			none	3	0	0	0	gyis brlabs pa bi’ min).
 897	57	9866	other			none	0	0	0	0	54
-897	59	9866	tibetan_only	གཏོང་ཡོང་		none	0	0	0	0	གཏོང་ཡོང་ gtoṅ yon
+897	59	9866	tibetan_only	གཏོང་ཡོང་		none	0	0	0	0	གཏོང་ཡོང་ gtoṅ yoṅ
 897	61	9867	headword_line	གཏོང་བྱེད་	byed	medium	1	2	0	0	གཏོང་བྱེད་ 'gtoṅ byed Ausgaben; hier: Lebens-
 897	63	9867	other			none	0	0	0	0	unterhalt.
 897	65	9867	latin_other			none	6	0	0	0	phyir log ma 'byor bar = spyi sa nas btani rgyu
@@ -129943,7 +129943,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 897	105	9868	german_prose_with_translit			none	1	4	0	0	heiten [für den Unterhalt] der Amtsträger
 897	106	9868	german_prose_with_translit			none	1	2	0	0	eine vollständige Steuerfreistellung“ (MTH
 897	107	9868	other			none	0	0	0	0	3/5/25 14).
-897	109	9868	tibetan_only	གཏོང་ཡོང་		none	0	3	0	0	གཏོང་ཡོང་ gtoṅ yon Einnahmen und Aus-
+897	109	9868	tibetan_only	གཏོང་ཡོང་		none	0	3	0	0	གཏོང་ཡོང་ gtoṅ yoṅ Einnahmen und Aus-
 897	111	9868	other			none	0	0	0	0	gaben.
 897	113	9868	german_prose_with_translit			none	2	2	0	0	bton (r. gton) yon ga ’dzol „die Einnahmen
 897	115	9868	tibetan_only	གཏོང་ ལུགས་		none	0	1	0	0	གཏོང་ ལུགས་ gtoṅ Iugs

@@ -2532,12 +2532,12 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("གཏོང་ gtoṅ pf. Ibtan fur. Tgtan imp. Ithonis.", corrected)
         self.assertIn("gtoṅ daṅ ldan pa auch gtoṅ", corrected)
         self.assertIn("gtoṅ ldan tgton daṅ ldan pa.", corrected)
-        self.assertIn("གཏོང་ཡོང་ gtoṅ yon", corrected)
+        self.assertIn("གཏོང་ཡོང་ gtoṅ yoṅ", corrected)
         self.assertIn("གཏོང་བྱེད་ 'gtoṅ byed", corrected)
         self.assertIn("གཏོང་གཞི་ gtoṅ 0277", corrected)
         self.assertIn("གཏང་ བའ ནོར་ gton ༼/¢'/7 nor", corrected)
         self.assertEqual(sum(row["to_token"] == "gtoṅ" for row in changes), 7)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 8)
 
     def test_reviewed_skyong_preserves_genuine_skyon(self) -> None:
         lines = {
