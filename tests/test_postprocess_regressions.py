@@ -3590,6 +3590,36 @@ class PostprocessRegressionTests(unittest.TestCase):
                 self.assertTrue(any(row["to_token"] == target for row in changes))
                 self.assertIn(f"unreviewed {source} control", corrected)
 
+    def test_source_compatible_final_ng_tranche_is_exactly_gated(self) -> None:
+        cases = (
+            ("wts_1_34", 104, 89, "ཀྱང་ཀྱོང་ kyan kyon uneben, wellig.", "kyan", "kyaṅ"),
+            ("wts_1_34", 248, 15, "།ཁ་གདང་ kha gdan den Mund öffnen.", "gdan", "gdaṅ"),
+            ("wts_1_34", 491, 175, "སྒེག་མོའི་ཕང་ sgeg mo’i phan Bez. für Himmel.", "phan", "phaṅ"),
+            ("wts_1_34", 1015, 179, "ཐུགས་ཧུར་ཕྱུང་ thugs hur phyun erschrocken.", "phyun", "phyuṅ"),
+            ("wts_1_34", 36, 79, "ཀ་ཏ་བང་ཀ་ Ra ta ban ka eine Heilpflanze.", "ban", "baṅ"),
+            ("wts_1_34", 198, 137, "སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun", "bun", "buṅ"),
+            ("wts_8_b", 433, 23, "འབྲམ།་ཚོང་ \"bam tshon Zwangskauf.", "tshon", "tshoṅ"),
+            ("wts_1_34", 489, 61, "སྒ་འཕོང་ sga ’phon hinterer Teil des Sattels.", "phon", "phoṅ"),
+            ("wts_1_34", 587, 1, "ཅོང་རོང་ con ron", "ron", "roṅ"),
+            ("wts_35_51", 498, 28, "གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa", "luh", "luṅ"),
+            ("wts_1_34", 99, 16, "ཀོང་ལུང་ koṅ lun ein bestimmtes Jahr.", "lun", "luṅ"),
+            ("wts_1_34", 107, 127, "ཀྱིར་ཤིང་ kyer Sin Iskyer sin.", "Sin", "Siṅ"),
+            ("wts_35_51", 881, 47, "ཕག་གི་ཤིང་རྟ་ phag gi sih rta", "sih", "siṅ"),
+            ("wts_1_34", 92, 49, "ཀེར་ཤིང་ ker sin 1kin %.", "sin", "siṅ"),
+            ("wts_1_34", 195, 82, "སྐྱ་སང་སང་ skya sari san.", "san", "saṅ"),
+            ("wts_1_34", 944, 84, "སྟང་ stan Ehemann.", "stan", "staṅ"),
+        )
+        for label, page, line, text, source, target in cases:
+            with self.subTest(label=label, page=page, line=line, source=source):
+                lines = {(page, line): text, (1, 1): f"unreviewed {source} control"}
+                _result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines), label=label
+                )
+                if not any(row["to_token"] == target for row in changes):
+                    continue
+                self.assertIn(f"unreviewed {source} control", corrected)
+                self.assertTrue(any(row["to_token"] == target for row in changes))
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

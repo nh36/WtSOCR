@@ -28603,3 +28603,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 872	48	9761	tibetan_only	tan	taṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏང་ཀུན་ tan kun eine Heilpflanze; chin. ER
 876	91	9827	headword_line	rdun	rduṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཏིལ་རྡུང་ tl rdun auch til brdun Sesam-
 258	91	3437	headword_line	rman	rmaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	།ཁང་རྨང་ khaṅ rman Grundmauer, Funda-
+248	15	3255	headword_line	gdan	gdaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	།ཁ་གདང་ kha gdan den Mund öffnen.
+268	206	3602	headword_line	gdan	gdaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁུར་གདང་ khur gdan Holzgestell für Lasten.
