@@ -28606,3 +28606,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 248	15	3255	headword_line	gdan	gdaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	།ཁ་གདང་ kha gdan den Mund öffnen.
 268	206	3602	headword_line	gdan	gdaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁུར་གདང་ khur gdan Holzgestell für Lasten.
 491	175	6414	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྒེག་མོའི་ཕང་ sgeg mo’i phan Bez. für Himmel.
+1015	179	11329	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཐུགས་ཧུར་ཕྱུང་ thugs hur phyun erschrocken.
+1152	1	12443	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དུག་ཕྱུང་ dug phyun
+1338	33	13309	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
+1338	33	13309	headword_line	phyun	phyuṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲུངས་ཕྱུང་ druns phyun auch drun phyun pf. zu
