@@ -107,6 +107,9 @@ def main() -> None:
         if row["tibetan_syllable"] == args.syllable
     ]
     positional = [row for row in rows if row["candidate_status"] == "positional"]
+    withheld = [
+        row for row in rows if row["candidate_status"] == "withheld_damage"
+    ]
     echoes = [row for row in rows if row["candidate_status"] == "echo"]
     accepted = set(args.accept_echo)
     deferred = set(args.defer_echo)
@@ -172,9 +175,11 @@ def main() -> None:
         str(len(positional)),
         str(counts["accepted"] + counts["resolved_elsewhere"]),
         str(len(echoes)), str(len(positional) + counts["accepted"]),
+        str(len(withheld)),
     ]])
     print(
         f"{args.syllable}: positional={len(positional)} "
+        f"withheld_damage={len(withheld)} "
         f"echoes={counts} overrides={len(positional) + counts['accepted']}"
     )
 

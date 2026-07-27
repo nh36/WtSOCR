@@ -38,18 +38,19 @@ def write_rows(path: Path, rows: list[dict[str, str]]) -> None:
 
 def build_frozen_rows(sha: str) -> list[dict[str, str]]:
     candidates = read_rows("tibetan_final_ng_source_compatible_candidates.tsv")
-    damaged_syllables = {
-        row["tibetan_syllable"]
-        for row in candidates
-        if row["source_compatible_category"]
-        == "source_compatible_damaged_context"
-    }
     positional = [
         row
         for row in candidates
         if row["source_compatible_category"]
         == "source_compatible_dominant_consensus"
-        and row["tibetan_syllable"] not in damaged_syllables
+    ]
+    eligible_syllables = {row["tibetan_syllable"] for row in positional}
+    withheld = [
+        row
+        for row in candidates
+        if row["source_compatible_category"]
+        == "source_compatible_damaged_context"
+        and row["tibetan_syllable"] in eligible_syllables
     ]
     targets: dict[tuple[str, str], set[str]] = defaultdict(set)
     for row in positional:
@@ -77,6 +78,23 @@ def build_frozen_rows(sha: str) -> list[dict[str, str]]:
         }
         for row in positional
     ]
+    frozen.extend(
+        {
+            "frozen_prepass_sha": sha,
+            "volume": row["volume"],
+            "page": row["page"],
+            "line": row["line"],
+            "token_index": row["token_index"],
+            "tibetan_syllable": row["tibetan_syllable"],
+            "source_token": row["source_latin_token"],
+            "target": row["proposed_latin_target"],
+            "candidate_status": "withheld_damage",
+            "alignment_category": row["source_compatible_category"],
+            "damage_category": row["damage_scope"],
+            "context_excerpt": row["context_excerpt"],
+        }
+        for row in withheld
+    )
     for row in read_rows("tibetan_final_ng_same_entry_echo_candidates.tsv"):
         key = (row["tibetan_syllable"], row["additional_source_token"])
         if key not in targets:
@@ -125,8 +143,12 @@ def main() -> None:
     rows = build_frozen_rows(args.sha)
     write_rows(args.output, rows)
     positional = sum(row["candidate_status"] == "positional" for row in rows)
+    withheld = sum(row["candidate_status"] == "withheld_damage" for row in rows)
     echoes = sum(row["candidate_status"] == "echo" for row in rows)
-    print(f"positional={positional} echoes={echoes} total={len(rows)}")
+    print(
+        f"positional={positional} withheld_damage={withheld} "
+        f"echoes={echoes} total={len(rows)}"
+    )
 
 
 if __name__ == "__main__":

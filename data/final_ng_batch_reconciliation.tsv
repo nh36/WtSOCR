@@ -1,115 +1,115 @@
-batch_id	frozen_prepass_sha	tibetan_syllable	positional_evidence	frozen_positional_count	actual_positional_overrides	echo_evidence	frozen_echo_candidate_count	echo_decisions_accepted	echo_decisions_deferred	echo_decisions_rejected	echo_decisions_resolved_elsewhere	echo_candidates_not_yet_reviewed	positional_queue_delta	total_echo_diagnostic_delta	active_echo_queue_delta	total_overrides_added
-tibetan_glang_20260719	6322c7255cfba2fcfaf678cec656e65496ed5f12	གླང	tibetan_glang_consensus_batch_20260719	44	44	tibetan_glang_same_entry_echo_batch_20260719	2	2	0	0	0	0	44	2	2	46
-tibetan_bzang_20260719	3051b3394a49345a5202259f3466ef794177701b	བཟང	tibetan_bzang_consensus_batch_20260719	37	37	tibetan_bzang_same_entry_echo_batch_20260719	5	2	2	1	0	0	37	2	5	39
-tibetan_dung_20260719	3051b3394a49345a5202259f3466ef794177701b	དུང	tibetan_dung_consensus_batch_20260719	37	37	tibetan_dung_same_entry_echo_batch_20260719	5	4	1	0	0	0	37	4	5	41
-tibetan_gling_20260719	3051b3394a49345a5202259f3466ef794177701b	གླིང	tibetan_gling_consensus_batch_20260719	34	34	tibetan_gling_same_entry_echo_batch_20260719	4	1	3	0	0	0	34	1	4	35
-tibetan_chang_20260719	3051b3394a49345a5202259f3466ef794177701b	ཆང	tibetan_chang_consensus_batch_20260719	31	31	tibetan_chang_same_entry_echo_batch_20260719	6	5	1	0	0	0	31	5	6	36
-tibetan_mthong_20260719	3051b3394a49345a5202259f3466ef794177701b	མཐོང	tibetan_mthong_consensus_batch_20260719	31	31	tibetan_mthong_same_entry_echo_batch_20260719	2	1	1	0	0	0	31	1	2	32
-tibetan_ring_20260719	3051b3394a49345a5202259f3466ef794177701b	རིང	tibetan_ring_consensus_batch_20260719	30	30	tibetan_ring_same_entry_echo_batch_20260719	3	0	3	0	0	0	30	0	3	30
-tibetan_gtong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	གཏོང	tibetan_gtong_consensus_batch_20260720	28	28	tibetan_gtong_same_entry_echo_batch_20260720	2	1	1	0	0	0	28	1	2	29
-tibetan_skyong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྐྱོང	tibetan_skyong_consensus_batch_20260720	27	27	tibetan_skyong_same_entry_echo_batch_20260720	0	0	0	0	0	0	27	0	0	27
-tibetan_abyung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	འབྱུང	tibetan_abyung_consensus_batch_20260720	26	26	tibetan_abyung_same_entry_echo_batch_20260720	5	1	4	0	0	0	26	1	5	27
-tibetan_steng_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྟེང	tibetan_steng_consensus_batch_20260720	26	26	tibetan_steng_same_entry_echo_batch_20260720	6	3	3	0	0	0	26	3	6	29
-tibetan_drung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	དྲུང	tibetan_drung_consensus_batch_20260720	25	25	tibetan_drung_same_entry_echo_batch_20260720	3	0	1	0	2	0	25	2	3	25
-tibetan_khung_20260720	0848355ecd7399fbb36bcff65acc9b65e779f546	ཁུང	tibetan_khung_consensus_batch_20260720	22	22	tibetan_khung_same_entry_echo_batch_20260720	7	3	4	0	0	0	22	3	7	25
-tibetan_dong_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	དོང	tibetan_dong_consensus_batch_20260726	19	19	tibetan_dong_same_entry_echo_batch_20260726	4	4	0	0	0	0	19	4	4	23
-tibetan_gung_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	གུང	tibetan_gung_consensus_batch_20260726	18	18	tibetan_gung_same_entry_echo_batch_20260726	8	5	3	0	0	0	18	5	8	23
-tibetan_rkyang_20260726	db484b658f7ab04ebfbab008741065b62d49f5f4	རྐྱང	tibetan_rkyang_consensus_batch_20260726	22	22	tibetan_rkyang_same_entry_echo_batch_20260726	4	2	0	0	2	0	22	4	4	24
-tibetan_byang_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	བྱང	tibetan_byang_consensus_batch_20260726	18	18	tibetan_byang_same_entry_echo_batch_20260726	3	2	1	0	0	0	18	2	3	20
-tibetan_seng_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	སེང	tibetan_seng_consensus_batch_20260726	18	18	tibetan_seng_same_entry_echo_batch_20260726	8	2	5	0	1	0	18	3	8	20
-tibetan_song_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	སོང	tibetan_song_consensus_batch_20260726	18	18	tibetan_song_same_entry_echo_batch_20260726	2	1	1	0	0	0	18	1	2	19
-tibetan_ling_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	ལིང	tibetan_ling_consensus_batch_20260726	16	16	tibetan_ling_same_entry_echo_batch_20260726	2	0	2	0	0	0	16	0	2	16
-tibetan_tshang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	ཚང	tibetan_tshang_consensus_batch_20260726	15	15	tibetan_tshang_same_entry_echo_batch_20260726	5	3	2	0	0	0	15	3	5	18
-tibetan_gting_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	གཏིང	tibetan_gting_consensus_batch_20260726	14	14	tibetan_gting_same_entry_echo_batch_20260726	1	0	1	0	0	0	14	0	1	14
-tibetan_grang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	གྲང	tibetan_grang_consensus_batch_20260726	13	13	tibetan_grang_same_entry_echo_batch_20260726	2	2	0	0	0	0	13	2	2	15
-tibetan_mang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	མང	tibetan_mang_consensus_batch_20260726	13	13	tibetan_mang_same_entry_echo_batch_20260726	3	3	0	0	0	0	13	3	3	16
-tibetan_phung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	ཕུང	tibetan_phung_consensus_batch_20260726	11	11	tibetan_phung_same_entry_echo_batch_20260726	7	4	2	0	1	0	11	5	7	15
-tibetan_achang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འཆང	tibetan_achang_consensus_batch_20260726	11	11	tibetan_achang_same_entry_echo_batch_20260726	0	0	0	0	0	0	11	0	0	11
-tibetan_rgyang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	རྒྱང	tibetan_rgyang_consensus_batch_20260726	11	11	tibetan_rgyang_same_entry_echo_batch_20260726	2	2	0	0	0	0	11	2	2	13
-tibetan_athung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འཐུང	tibetan_athung_consensus_batch_20260726	10	10	tibetan_athung_same_entry_echo_batch_20260726	1	1	0	0	0	0	10	1	1	11
-tibetan_abring_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འབྲིང	tibetan_abring_consensus_batch_20260726	9	9	tibetan_abring_same_entry_echo_batch_20260726	1	1	0	0	0	0	9	1	1	10
-tibetan_klung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	ཀླུང	tibetan_klung_consensus_batch_20260726	8	8	tibetan_klung_same_entry_echo_batch_20260726	0	0	0	0	0	0	8	0	0	8
-tibetan_brang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	བྲང	tibetan_brang_consensus_batch_20260726	8	8	tibetan_brang_same_entry_echo_batch_20260726	3	2	1	0	0	0	8	2	3	10
-tibetan_cing_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཅིང	tibetan_cing_consensus_batch_20260726	7	7	tibetan_cing_same_entry_echo_batch_20260726	0	0	0	0	0	0	7	0	0	7
-tibetan_byung_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	བྱུང	tibetan_byung_consensus_batch_20260726	7	7	tibetan_byung_same_entry_echo_batch_20260726	1	0	1	0	0	0	7	0	1	7
-tibetan_zhing_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཞིང	tibetan_zhing_consensus_batch_20260726	7	7	tibetan_zhing_same_entry_echo_batch_20260726	4	2	2	0	0	0	7	2	4	9
-tibetan_long_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ལོང	tibetan_long_consensus_batch_20260726	7	7	tibetan_long_same_entry_echo_batch_20260726	4	1	3	0	0	0	7	1	4	8
-tibetan_king_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀིང	tibetan_king_consensus_batch_20260726	6	6	tibetan_king_same_entry_echo_batch_20260726	4	3	1	0	0	0	6	3	4	9
-tibetan_klang_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀླང	tibetan_klang_consensus_batch_20260726	6	6	tibetan_klang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6
-tibetan_gdong_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	གདོང	tibetan_gdong_consensus_batch_20260726	6	6	tibetan_gdong_same_entry_echo_batch_20260726	5	2	3	0	0	0	6	2	5	8
-tibetan_grong_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	གྲོང	tibetan_grong_consensus_batch_20260726	15	15	tibetan_grong_same_entry_echo_batch_20260726	2	1	1	0	0	0	15	1	2	16
-tibetan_btang_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	བཏང	tibetan_btang_consensus_batch_20260726	14	14	tibetan_btang_same_entry_echo_batch_20260726	2	1	1	0	0	0	14	1	2	15
-tibetan_aching_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	འཆིང	tibetan_aching_consensus_batch_20260726	14	14	tibetan_aching_same_entry_echo_batch_20260726	2	1	1	0	0	0	14	1	2	15
-tibetan_phreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཕྲེང	tibetan_phreng_consensus_batch_20260726	6	6	tibetan_phreng_same_entry_echo_batch_20260726	2	2	0	0	0	0	6	2	2	8
-tibetan_aphreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕྲེང	tibetan_aphreng_consensus_batch_20260726	4	4	tibetan_aphreng_same_entry_echo_batch_20260726	1	0	1	0	0	0	4	0	1	4
-tibetan_thung_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཐུང	tibetan_thung_consensus_batch_20260726	5	5	tibetan_thung_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5
-tibetan_abrang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འབྲང	tibetan_abrang_consensus_batch_20260726	6	6	tibetan_abrang_same_entry_echo_batch_20260726	2	0	2	0	0	0	6	0	2	6
-tibetan_breng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བྲེང	tibetan_breng_consensus_batch_20260726	2	2	tibetan_breng_same_entry_echo_batch_20260726	1	1	0	0	0	0	2	1	1	3
-tibetan_abreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འབྲེང	tibetan_abreng_consensus_batch_20260726	4	4	tibetan_abreng_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5
-tibetan_mong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མོང	tibetan_mong_consensus_batch_20260726	6	6	tibetan_mong_same_entry_echo_batch_20260726	3	2	1	0	0	0	6	2	3	8
-tibetan_bong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བོང	tibetan_bong_consensus_batch_20260726	5	5	tibetan_bong_same_entry_echo_batch_20260726	2	2	0	0	0	0	5	2	2	7
-tibetan_aphang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕང	tibetan_aphang_consensus_batch_20260726	5	5	tibetan_aphang_same_entry_echo_batch_20260726	1	1	0	0	0	0	5	1	1	6
-tibetan_lang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ལང	tibetan_lang_consensus_batch_20260726	5	5	tibetan_lang_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5
-tibetan_myong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མྱོང	tibetan_myong_consensus_batch_20260726	5	5	tibetan_myong_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5
-tibetan_lcang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ལྕང	tibetan_lcang_consensus_batch_20260726	6	6	tibetan_lcang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6
-tibetan_sgang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	སྒང	tibetan_sgang_consensus_batch_20260726	6	6	tibetan_sgang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6
-tibetan_gsang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	གསང	tibetan_gsang_consensus_batch_20260726	5	5	tibetan_gsang_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5
-tibetan_dpung_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	དཔུང	tibetan_dpung_consensus_batch_20260726	5	5	tibetan_dpung_same_entry_echo_batch_20260726	2	2	0	0	0	0	5	2	2	7
-tibetan_sring_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	སྲིང	tibetan_sring_consensus_batch_20260726	5	5	tibetan_sring_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5
-tibetan_ming_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	མིང	tibetan_ming_consensus_batch_20260726	4	4	tibetan_ming_same_entry_echo_batch_20260726	1	0	1	0	0	0	4	0	1	4
-tibetan_spong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤོང	tibetan_spong_consensus_batch_20260726	3	3	tibetan_spong_same_entry_echo_batch_20260726	1	0	1	0	0	0	3	0	1	3
-tibetan_chuh_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཆུང	tibetan_chuh_consensus_batch_20260726	3	3	tibetan_chuh_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_snang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྣང	tibetan_snang_consensus_batch_20260726	3	3	tibetan_snang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_wang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཝང	tibetan_wang_consensus_batch_20260726	3	3	tibetan_wang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_bkang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བཀང	tibetan_bkang_consensus_batch_20260726	3	3	tibetan_bkang_same_entry_echo_batch_20260726	4	1	3	0	0	0	3	1	4	4
-tibetan_bzung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བཟུང	tibetan_bzung_consensus_batch_20260726	3	3	tibetan_bzung_same_entry_echo_batch_20260726	2	0	2	0	0	0	3	0	2	3
-tibetan_rdzong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	རྫོང	tibetan_rdzong_consensus_batch_20260726	3	3	tibetan_rdzong_same_entry_echo_batch_20260726	4	1	3	0	0	0	3	1	4	4
-tibetan_spyang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤྱང	tibetan_spyang_consensus_batch_20260726	3	3	tibetan_spyang_same_entry_echo_batch_20260726	2	1	1	0	0	0	3	1	2	4
-tibetan_sdong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྡོང	tibetan_sdong_consensus_batch_20260726	4	4	tibetan_sdong_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5
-tibetan_spang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤང	tibetan_spang_consensus_batch_20260726	4	4	tibetan_spang_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5
-tibetan_skong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྐོང	tibetan_skong_consensus_batch_20260726	4	4	tibetan_skong_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5
-tibetan_krung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཀྲུང	tibetan_krung_consensus_batch_20260726	4	4	tibetan_krung_same_entry_echo_batch_20260726	1	0	0	1	0	0	4	0	1	4
-tibetan_gsung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	གསུང	tibetan_gsung_consensus_batch_20260726	3	3	tibetan_gsung_same_entry_echo_batch_20260726	1	0	1	0	0	0	3	0	1	3
-tibetan_blang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བླང	tibetan_blang_consensus_batch_20260726	3	3	tibetan_blang_same_entry_echo_batch_20260726	1	1	0	0	0	0	3	1	1	4
-tibetan_ong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	འོང	tibetan_ong_consensus_batch_20260726	4	4	tibetan_ong_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4
-tibetan_rlung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	རླུང	tibetan_rlung_consensus_batch_20260726	4	4	tibetan_rlung_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4
-tibetan_srung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྲུང	tibetan_srung_consensus_batch_20260726	4	4	tibetan_srung_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4
-tibetan_gnang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	གནང	tibetan_gnang_consensus_batch_20260726	3	3	tibetan_gnang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_aphyang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	འཕྱང	tibetan_aphyang_consensus_batch_20260726	3	3	tibetan_aphyang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_sbyong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྦྱོང	tibetan_sbyong_consensus_batch_20260726	3	3	tibetan_sbyong_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3
-tibetan_lngang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྔང	tibetan_lngang_consensus_batch_20260727	1	1	tibetan_lngang_same_entry_echo_batch_20260727	1	0	0	1	0	0	1	0	1	1
-tibetan_ldang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྡང	tibetan_ldang_consensus_batch_20260727	1	1	tibetan_ldang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-tibetan_yang_h_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཡང	tibetan_yang_h_consensus_batch_20260727	1	1	tibetan_yang_h_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-final_ng_nang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ནང	final_ng_nang_consensus_batch_20260727	2	2	final_ng_nang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_gang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གང	final_ng_gang_consensus_batch_20260727	2	2	final_ng_gang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_sbrang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྦྲང	final_ng_sbrang_consensus_batch_20260727	1	1	final_ng_sbrang_same_entry_echo_batch_20260727	3	3	0	0	0	0	1	3	3	4
-final_ng_gdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གདུང	final_ng_gdung_consensus_batch_20260727	2	2	final_ng_gdung_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3
-final_ng_gdeng_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གདེང	final_ng_gdeng_consensus_batch_20260727	1	1	final_ng_gdeng_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2
-final_ng_mdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	མདུང	final_ng_mdung_consensus_batch_20260727	1	1	final_ng_mdung_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2
-final_ng_dpang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	དཔང	final_ng_dpang_consensus_batch_20260727	1	1	final_ng_dpang_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2
-final_ng_dbyung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	དབྱུང	final_ng_dbyung_consensus_batch_20260727	2	2	final_ng_dbyung_same_entry_echo_batch_20260727	2	1	1	0	0	0	2	1	2	3
-final_ng_yong_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཡོང	final_ng_yong_consensus_batch_20260727	2	2	final_ng_yong_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3
-final_ng_lhung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྷུང	final_ng_lhung_consensus_batch_20260727	2	2	final_ng_lhung_same_entry_echo_batch_20260727	1	0	1	0	0	0	2	0	1	2
-final_ng_sdang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྡང	final_ng_sdang_consensus_batch_20260727	2	2	final_ng_sdang_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3
-final_ng_sbyang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྦྱང	final_ng_sbyang_consensus_batch_20260727	2	2	final_ng_sbyang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_bsrung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	བསྲུང	final_ng_bsrung_consensus_batch_20260727	2	2	final_ng_bsrung_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_khyung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཁྱུང	final_ng_khyung_consensus_batch_20260727	2	2	final_ng_khyung_same_entry_echo_batch_20260727	2	2	0	0	0	0	2	2	2	4
-final_ng_abyong_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	འབྱོང	final_ng_abyong_consensus_batch_20260727	2	2	final_ng_abyong_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_lding_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྡིང	final_ng_lding_consensus_batch_20260727	2	2	final_ng_lding_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-final_ng_tang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཏང	final_ng_tang_consensus_batch_20260727	2	2	final_ng_tang_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3
-final_ng_rdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྡུང	final_ng_rdung_consensus_batch_20260727	1	1	final_ng_rdung_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-final_ng_rmang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྨང	final_ng_rmang_consensus_batch_20260727	1	1	final_ng_rmang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-final_ng_rdzing_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྫིང	final_ng_rdzing_consensus_batch_20260727	1	1	final_ng_rdzing_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-source_compatible_gdang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	གདང	source_compatible_gdang_consensus_batch_20260727	2	2	source_compatible_gdang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-source_compatible_phang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཕང	source_compatible_phang_consensus_batch_20260727	1	1	source_compatible_phang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1
-source_compatible_phyung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཕྱུང	source_compatible_phyung_consensus_batch_20260727	3	3	source_compatible_phyung_same_entry_echo_batch_20260727	1	1	0	0	0	0	3	1	1	4
-source_compatible_bang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	བང	source_compatible_bang_consensus_batch_20260727	2	2	source_compatible_bang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2
-source_compatible_bung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	བུང	source_compatible_bung_consensus_batch_20260727	1	1	source_compatible_bung_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2
-source_compatible_tshong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཚོང	source_compatible_tshong_consensus_batch_20260727	1	1	source_compatible_tshong_same_entry_echo_batch_20260727	1	0	1	0	0	0	1	0	1	1
-source_compatible_aphong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	འཕོང	source_compatible_aphong_consensus_batch_20260727	1	1	source_compatible_aphong_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2
-source_compatible_rong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	རོང	source_compatible_rong_consensus_batch_20260727	4	4	source_compatible_rong_same_entry_echo_batch_20260727	1	1	0	0	0	0	4	1	1	5
-source_compatible_stang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	སྟང	source_compatible_stang_consensus_batch_20260727	2	2	source_compatible_stang_same_entry_echo_batch_20260727	1	0	1	0	0	0	2	0	1	2
-source_compatible_kyang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཀྱང	source_compatible_kyang_consensus_batch_20260727	4	4	source_compatible_kyang_same_entry_echo_batch_20260727	2	0	2	0	0	0	4	0	2	4
-source_compatible_lung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ལུང	source_compatible_lung_consensus_batch_20260727	15	15	source_compatible_lung_same_entry_echo_batch_20260727	0	0	0	0	0	0	15	0	0	15
-source_compatible_sang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	སང	source_compatible_sang_consensus_batch_20260727	6	6	source_compatible_sang_same_entry_echo_batch_20260727	7	3	3	0	1	0	6	4	7	9
-source_compatible_shing_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཤིང	source_compatible_shing_consensus_batch_20260727	58	58	source_compatible_shing_same_entry_echo_batch_20260727	9	4	4	0	1	0	58	5	9	62
+batch_id	frozen_prepass_sha	tibetan_syllable	positional_evidence	frozen_positional_count	actual_positional_overrides	echo_evidence	frozen_echo_candidate_count	echo_decisions_accepted	echo_decisions_deferred	echo_decisions_rejected	echo_decisions_resolved_elsewhere	echo_candidates_not_yet_reviewed	positional_queue_delta	total_echo_diagnostic_delta	active_echo_queue_delta	total_overrides_added	frozen_withheld_damage_count
+tibetan_glang_20260719	6322c7255cfba2fcfaf678cec656e65496ed5f12	གླང	tibetan_glang_consensus_batch_20260719	44	44	tibetan_glang_same_entry_echo_batch_20260719	2	2	0	0	0	0	44	2	2	46	0
+tibetan_bzang_20260719	3051b3394a49345a5202259f3466ef794177701b	བཟང	tibetan_bzang_consensus_batch_20260719	37	37	tibetan_bzang_same_entry_echo_batch_20260719	5	2	2	1	0	0	37	2	5	39	0
+tibetan_dung_20260719	3051b3394a49345a5202259f3466ef794177701b	དུང	tibetan_dung_consensus_batch_20260719	37	37	tibetan_dung_same_entry_echo_batch_20260719	5	4	1	0	0	0	37	4	5	41	0
+tibetan_gling_20260719	3051b3394a49345a5202259f3466ef794177701b	གླིང	tibetan_gling_consensus_batch_20260719	34	34	tibetan_gling_same_entry_echo_batch_20260719	4	1	3	0	0	0	34	1	4	35	0
+tibetan_chang_20260719	3051b3394a49345a5202259f3466ef794177701b	ཆང	tibetan_chang_consensus_batch_20260719	31	31	tibetan_chang_same_entry_echo_batch_20260719	6	5	1	0	0	0	31	5	6	36	0
+tibetan_mthong_20260719	3051b3394a49345a5202259f3466ef794177701b	མཐོང	tibetan_mthong_consensus_batch_20260719	31	31	tibetan_mthong_same_entry_echo_batch_20260719	2	1	1	0	0	0	31	1	2	32	0
+tibetan_ring_20260719	3051b3394a49345a5202259f3466ef794177701b	རིང	tibetan_ring_consensus_batch_20260719	30	30	tibetan_ring_same_entry_echo_batch_20260719	3	0	3	0	0	0	30	0	3	30	0
+tibetan_gtong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	གཏོང	tibetan_gtong_consensus_batch_20260720	28	28	tibetan_gtong_same_entry_echo_batch_20260720	2	1	1	0	0	0	28	1	2	29	0
+tibetan_skyong_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྐྱོང	tibetan_skyong_consensus_batch_20260720	27	27	tibetan_skyong_same_entry_echo_batch_20260720	0	0	0	0	0	0	27	0	0	27	0
+tibetan_abyung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	འབྱུང	tibetan_abyung_consensus_batch_20260720	26	26	tibetan_abyung_same_entry_echo_batch_20260720	5	1	4	0	0	0	26	1	5	27	0
+tibetan_steng_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྟེང	tibetan_steng_consensus_batch_20260720	26	26	tibetan_steng_same_entry_echo_batch_20260720	6	3	3	0	0	0	26	3	6	29	0
+tibetan_drung_20260720	04d8c1a99743277a31460e050ff9a6f1ac5b2604	དྲུང	tibetan_drung_consensus_batch_20260720	25	25	tibetan_drung_same_entry_echo_batch_20260720	3	0	1	0	2	0	25	2	3	25	0
+tibetan_khung_20260720	0848355ecd7399fbb36bcff65acc9b65e779f546	ཁུང	tibetan_khung_consensus_batch_20260720	22	22	tibetan_khung_same_entry_echo_batch_20260720	7	3	4	0	0	0	22	3	7	25	0
+tibetan_dong_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	དོང	tibetan_dong_consensus_batch_20260726	19	19	tibetan_dong_same_entry_echo_batch_20260726	4	4	0	0	0	0	19	4	4	23	0
+tibetan_gung_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	གུང	tibetan_gung_consensus_batch_20260726	18	18	tibetan_gung_same_entry_echo_batch_20260726	8	5	3	0	0	0	18	5	8	23	0
+tibetan_rkyang_20260726	db484b658f7ab04ebfbab008741065b62d49f5f4	རྐྱང	tibetan_rkyang_consensus_batch_20260726	22	22	tibetan_rkyang_same_entry_echo_batch_20260726	4	2	0	0	2	0	22	4	4	24	0
+tibetan_byang_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	བྱང	tibetan_byang_consensus_batch_20260726	18	18	tibetan_byang_same_entry_echo_batch_20260726	3	2	1	0	0	0	18	2	3	20	0
+tibetan_seng_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	སེང	tibetan_seng_consensus_batch_20260726	18	18	tibetan_seng_same_entry_echo_batch_20260726	8	2	5	0	1	0	18	3	8	20	0
+tibetan_song_20260726	0848355ecd7399fbb36bcff65acc9b65e779f546	སོང	tibetan_song_consensus_batch_20260726	18	18	tibetan_song_same_entry_echo_batch_20260726	2	1	1	0	0	0	18	1	2	19	0
+tibetan_ling_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	ལིང	tibetan_ling_consensus_batch_20260726	16	16	tibetan_ling_same_entry_echo_batch_20260726	2	0	2	0	0	0	16	0	2	16	0
+tibetan_tshang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	ཚང	tibetan_tshang_consensus_batch_20260726	15	15	tibetan_tshang_same_entry_echo_batch_20260726	5	3	2	0	0	0	15	3	5	18	0
+tibetan_gting_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	གཏིང	tibetan_gting_consensus_batch_20260726	14	14	tibetan_gting_same_entry_echo_batch_20260726	1	0	1	0	0	0	14	0	1	14	0
+tibetan_grang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	གྲང	tibetan_grang_consensus_batch_20260726	13	13	tibetan_grang_same_entry_echo_batch_20260726	2	2	0	0	0	0	13	2	2	15	0
+tibetan_mang_20260726	8d0f85b4c1057199ffe2bcd88a1dd4ae8afc496b	མང	tibetan_mang_consensus_batch_20260726	13	13	tibetan_mang_same_entry_echo_batch_20260726	3	3	0	0	0	0	13	3	3	16	0
+tibetan_phung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	ཕུང	tibetan_phung_consensus_batch_20260726	11	11	tibetan_phung_same_entry_echo_batch_20260726	7	4	2	0	1	0	11	5	7	15	0
+tibetan_achang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འཆང	tibetan_achang_consensus_batch_20260726	11	11	tibetan_achang_same_entry_echo_batch_20260726	0	0	0	0	0	0	11	0	0	11	0
+tibetan_rgyang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	རྒྱང	tibetan_rgyang_consensus_batch_20260726	11	11	tibetan_rgyang_same_entry_echo_batch_20260726	2	2	0	0	0	0	11	2	2	13	0
+tibetan_athung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འཐུང	tibetan_athung_consensus_batch_20260726	10	10	tibetan_athung_same_entry_echo_batch_20260726	1	1	0	0	0	0	10	1	1	11	0
+tibetan_abring_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	འབྲིང	tibetan_abring_consensus_batch_20260726	9	9	tibetan_abring_same_entry_echo_batch_20260726	1	1	0	0	0	0	9	1	1	10	0
+tibetan_klung_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	ཀླུང	tibetan_klung_consensus_batch_20260726	8	8	tibetan_klung_same_entry_echo_batch_20260726	0	0	0	0	0	0	8	0	0	8	0
+tibetan_brang_20260726	82cb6d2b5ad6e57d2bc1b363706f73281caf3c9b	བྲང	tibetan_brang_consensus_batch_20260726	8	8	tibetan_brang_same_entry_echo_batch_20260726	3	2	1	0	0	0	8	2	3	10	0
+tibetan_cing_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཅིང	tibetan_cing_consensus_batch_20260726	7	7	tibetan_cing_same_entry_echo_batch_20260726	0	0	0	0	0	0	7	0	0	7	0
+tibetan_byung_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	བྱུང	tibetan_byung_consensus_batch_20260726	7	7	tibetan_byung_same_entry_echo_batch_20260726	1	0	1	0	0	0	7	0	1	7	0
+tibetan_zhing_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཞིང	tibetan_zhing_consensus_batch_20260726	7	7	tibetan_zhing_same_entry_echo_batch_20260726	4	2	2	0	0	0	7	2	4	9	0
+tibetan_long_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ལོང	tibetan_long_consensus_batch_20260726	7	7	tibetan_long_same_entry_echo_batch_20260726	4	1	3	0	0	0	7	1	4	8	0
+tibetan_king_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀིང	tibetan_king_consensus_batch_20260726	6	6	tibetan_king_same_entry_echo_batch_20260726	4	3	1	0	0	0	6	3	4	9	0
+tibetan_klang_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	ཀླང	tibetan_klang_consensus_batch_20260726	6	6	tibetan_klang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6	0
+tibetan_gdong_20260726	e49faa867d537f7b81d20bb59886bc4972acde45	གདོང	tibetan_gdong_consensus_batch_20260726	6	6	tibetan_gdong_same_entry_echo_batch_20260726	5	2	3	0	0	0	6	2	5	8	0
+tibetan_grong_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	གྲོང	tibetan_grong_consensus_batch_20260726	15	15	tibetan_grong_same_entry_echo_batch_20260726	2	1	1	0	0	0	15	1	2	16	0
+tibetan_btang_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	བཏང	tibetan_btang_consensus_batch_20260726	14	14	tibetan_btang_same_entry_echo_batch_20260726	2	1	1	0	0	0	14	1	2	15	0
+tibetan_aching_20260726	a263f4fa699ad05df15d6587e3d1a446dd96984a	འཆིང	tibetan_aching_consensus_batch_20260726	14	14	tibetan_aching_same_entry_echo_batch_20260726	2	1	1	0	0	0	14	1	2	15	0
+tibetan_phreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཕྲེང	tibetan_phreng_consensus_batch_20260726	6	6	tibetan_phreng_same_entry_echo_batch_20260726	2	2	0	0	0	0	6	2	2	8	0
+tibetan_aphreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕྲེང	tibetan_aphreng_consensus_batch_20260726	4	4	tibetan_aphreng_same_entry_echo_batch_20260726	1	0	1	0	0	0	4	0	1	4	0
+tibetan_thung_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ཐུང	tibetan_thung_consensus_batch_20260726	5	5	tibetan_thung_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5	0
+tibetan_abrang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འབྲང	tibetan_abrang_consensus_batch_20260726	6	6	tibetan_abrang_same_entry_echo_batch_20260726	2	0	2	0	0	0	6	0	2	6	0
+tibetan_breng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བྲེང	tibetan_breng_consensus_batch_20260726	2	2	tibetan_breng_same_entry_echo_batch_20260726	1	1	0	0	0	0	2	1	1	3	0
+tibetan_abreng_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འབྲེང	tibetan_abreng_consensus_batch_20260726	4	4	tibetan_abreng_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5	0
+tibetan_mong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མོང	tibetan_mong_consensus_batch_20260726	6	6	tibetan_mong_same_entry_echo_batch_20260726	3	2	1	0	0	0	6	2	3	8	0
+tibetan_bong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	བོང	tibetan_bong_consensus_batch_20260726	5	5	tibetan_bong_same_entry_echo_batch_20260726	2	2	0	0	0	0	5	2	2	7	0
+tibetan_aphang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	འཕང	tibetan_aphang_consensus_batch_20260726	5	5	tibetan_aphang_same_entry_echo_batch_20260726	1	1	0	0	0	0	5	1	1	6	0
+tibetan_lang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ལང	tibetan_lang_consensus_batch_20260726	5	5	tibetan_lang_same_entry_echo_batch_20260726	1	0	1	0	0	0	5	0	1	5	0
+tibetan_myong_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	མྱོང	tibetan_myong_consensus_batch_20260726	5	5	tibetan_myong_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5	0
+tibetan_lcang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	ལྕང	tibetan_lcang_consensus_batch_20260726	6	6	tibetan_lcang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6	0
+tibetan_sgang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	སྒང	tibetan_sgang_consensus_batch_20260726	6	6	tibetan_sgang_same_entry_echo_batch_20260726	0	0	0	0	0	0	6	0	0	6	0
+tibetan_gsang_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	གསང	tibetan_gsang_consensus_batch_20260726	5	5	tibetan_gsang_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5	0
+tibetan_dpung_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	དཔུང	tibetan_dpung_consensus_batch_20260726	5	5	tibetan_dpung_same_entry_echo_batch_20260726	2	2	0	0	0	0	5	2	2	7	0
+tibetan_sring_20260726	c483a0c2c4a5a055dc90cd95d2eca630785d8d44	སྲིང	tibetan_sring_consensus_batch_20260726	5	5	tibetan_sring_same_entry_echo_batch_20260726	0	0	0	0	0	0	5	0	0	5	0
+tibetan_ming_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	མིང	tibetan_ming_consensus_batch_20260726	4	4	tibetan_ming_same_entry_echo_batch_20260726	1	0	1	0	0	0	4	0	1	4	0
+tibetan_spong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤོང	tibetan_spong_consensus_batch_20260726	3	3	tibetan_spong_same_entry_echo_batch_20260726	1	0	1	0	0	0	3	0	1	3	0
+tibetan_chuh_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཆུང	tibetan_chuh_consensus_batch_20260726	3	3	tibetan_chuh_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_snang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྣང	tibetan_snang_consensus_batch_20260726	3	3	tibetan_snang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_wang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཝང	tibetan_wang_consensus_batch_20260726	3	3	tibetan_wang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_bkang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བཀང	tibetan_bkang_consensus_batch_20260726	3	3	tibetan_bkang_same_entry_echo_batch_20260726	4	1	3	0	0	0	3	1	4	4	0
+tibetan_bzung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བཟུང	tibetan_bzung_consensus_batch_20260726	3	3	tibetan_bzung_same_entry_echo_batch_20260726	2	0	2	0	0	0	3	0	2	3	0
+tibetan_rdzong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	རྫོང	tibetan_rdzong_consensus_batch_20260726	3	3	tibetan_rdzong_same_entry_echo_batch_20260726	4	1	3	0	0	0	3	1	4	4	0
+tibetan_spyang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤྱང	tibetan_spyang_consensus_batch_20260726	3	3	tibetan_spyang_same_entry_echo_batch_20260726	2	1	1	0	0	0	3	1	2	4	0
+tibetan_sdong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྡོང	tibetan_sdong_consensus_batch_20260726	4	4	tibetan_sdong_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5	0
+tibetan_spang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྤང	tibetan_spang_consensus_batch_20260726	4	4	tibetan_spang_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5	0
+tibetan_skong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྐོང	tibetan_skong_consensus_batch_20260726	4	4	tibetan_skong_same_entry_echo_batch_20260726	2	1	1	0	0	0	4	1	2	5	0
+tibetan_krung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	ཀྲུང	tibetan_krung_consensus_batch_20260726	4	4	tibetan_krung_same_entry_echo_batch_20260726	1	0	0	1	0	0	4	0	1	4	0
+tibetan_gsung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	གསུང	tibetan_gsung_consensus_batch_20260726	3	3	tibetan_gsung_same_entry_echo_batch_20260726	1	0	1	0	0	0	3	0	1	3	0
+tibetan_blang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	བླང	tibetan_blang_consensus_batch_20260726	3	3	tibetan_blang_same_entry_echo_batch_20260726	1	1	0	0	0	0	3	1	1	4	0
+tibetan_ong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	འོང	tibetan_ong_consensus_batch_20260726	4	4	tibetan_ong_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4	0
+tibetan_rlung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	རླུང	tibetan_rlung_consensus_batch_20260726	4	4	tibetan_rlung_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4	0
+tibetan_srung_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྲུང	tibetan_srung_consensus_batch_20260726	4	4	tibetan_srung_same_entry_echo_batch_20260726	0	0	0	0	0	0	4	0	0	4	0
+tibetan_gnang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	གནང	tibetan_gnang_consensus_batch_20260726	3	3	tibetan_gnang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_aphyang_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	འཕྱང	tibetan_aphyang_consensus_batch_20260726	3	3	tibetan_aphyang_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_sbyong_20260726	6387237406bd2cc16bf11724a177e4cc27f5977c	སྦྱོང	tibetan_sbyong_consensus_batch_20260726	3	3	tibetan_sbyong_same_entry_echo_batch_20260726	0	0	0	0	0	0	3	0	0	3	0
+tibetan_lngang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྔང	tibetan_lngang_consensus_batch_20260727	1	1	tibetan_lngang_same_entry_echo_batch_20260727	1	0	0	1	0	0	1	0	1	1	0
+tibetan_ldang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྡང	tibetan_ldang_consensus_batch_20260727	1	1	tibetan_ldang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+tibetan_yang_h_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཡང	tibetan_yang_h_consensus_batch_20260727	1	1	tibetan_yang_h_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+final_ng_nang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ནང	final_ng_nang_consensus_batch_20260727	2	2	final_ng_nang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_gang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གང	final_ng_gang_consensus_batch_20260727	2	2	final_ng_gang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_sbrang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྦྲང	final_ng_sbrang_consensus_batch_20260727	1	1	final_ng_sbrang_same_entry_echo_batch_20260727	3	3	0	0	0	0	1	3	3	4	0
+final_ng_gdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གདུང	final_ng_gdung_consensus_batch_20260727	2	2	final_ng_gdung_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3	0
+final_ng_gdeng_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	གདེང	final_ng_gdeng_consensus_batch_20260727	1	1	final_ng_gdeng_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2	0
+final_ng_mdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	མདུང	final_ng_mdung_consensus_batch_20260727	1	1	final_ng_mdung_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2	0
+final_ng_dpang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	དཔང	final_ng_dpang_consensus_batch_20260727	1	1	final_ng_dpang_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2	0
+final_ng_dbyung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	དབྱུང	final_ng_dbyung_consensus_batch_20260727	2	2	final_ng_dbyung_same_entry_echo_batch_20260727	2	1	1	0	0	0	2	1	2	3	0
+final_ng_yong_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཡོང	final_ng_yong_consensus_batch_20260727	2	2	final_ng_yong_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3	0
+final_ng_lhung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྷུང	final_ng_lhung_consensus_batch_20260727	2	2	final_ng_lhung_same_entry_echo_batch_20260727	1	0	1	0	0	0	2	0	1	2	0
+final_ng_sdang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྡང	final_ng_sdang_consensus_batch_20260727	2	2	final_ng_sdang_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3	0
+final_ng_sbyang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	སྦྱང	final_ng_sbyang_consensus_batch_20260727	2	2	final_ng_sbyang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_bsrung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	བསྲུང	final_ng_bsrung_consensus_batch_20260727	2	2	final_ng_bsrung_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_khyung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཁྱུང	final_ng_khyung_consensus_batch_20260727	2	2	final_ng_khyung_same_entry_echo_batch_20260727	2	2	0	0	0	0	2	2	2	4	0
+final_ng_abyong_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	འབྱོང	final_ng_abyong_consensus_batch_20260727	2	2	final_ng_abyong_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_lding_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ལྡིང	final_ng_lding_consensus_batch_20260727	2	2	final_ng_lding_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+final_ng_tang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	ཏང	final_ng_tang_consensus_batch_20260727	2	2	final_ng_tang_same_entry_echo_batch_20260727	1	1	0	0	0	0	2	1	1	3	0
+final_ng_rdung_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྡུང	final_ng_rdung_consensus_batch_20260727	1	1	final_ng_rdung_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+final_ng_rmang_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྨང	final_ng_rmang_consensus_batch_20260727	1	1	final_ng_rmang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+final_ng_rdzing_20260727	0b1ed02fc6b27e5af1ed879fd3fa0d596c0f8662	རྫིང	final_ng_rdzing_consensus_batch_20260727	1	1	final_ng_rdzing_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+source_compatible_gdang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	གདང	source_compatible_gdang_consensus_batch_20260727	2	2	source_compatible_gdang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+source_compatible_phang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཕང	source_compatible_phang_consensus_batch_20260727	1	1	source_compatible_phang_same_entry_echo_batch_20260727	0	0	0	0	0	0	1	0	0	1	0
+source_compatible_phyung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཕྱུང	source_compatible_phyung_consensus_batch_20260727	3	3	source_compatible_phyung_same_entry_echo_batch_20260727	1	1	0	0	0	0	3	1	1	4	0
+source_compatible_bang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	བང	source_compatible_bang_consensus_batch_20260727	2	2	source_compatible_bang_same_entry_echo_batch_20260727	0	0	0	0	0	0	2	0	0	2	0
+source_compatible_bung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	བུང	source_compatible_bung_consensus_batch_20260727	1	1	source_compatible_bung_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2	0
+source_compatible_tshong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཚོང	source_compatible_tshong_consensus_batch_20260727	1	1	source_compatible_tshong_same_entry_echo_batch_20260727	1	0	1	0	0	0	1	0	1	1	0
+source_compatible_aphong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	འཕོང	source_compatible_aphong_consensus_batch_20260727	1	1	source_compatible_aphong_same_entry_echo_batch_20260727	1	1	0	0	0	0	1	1	1	2	0
+source_compatible_rong_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	རོང	source_compatible_rong_consensus_batch_20260727	4	4	source_compatible_rong_same_entry_echo_batch_20260727	1	1	0	0	0	0	4	1	1	5	0
+source_compatible_stang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	སྟང	source_compatible_stang_consensus_batch_20260727	2	2	source_compatible_stang_same_entry_echo_batch_20260727	1	0	1	0	0	0	2	0	1	2	0
+source_compatible_kyang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཀྱང	source_compatible_kyang_consensus_batch_20260727	4	4	source_compatible_kyang_same_entry_echo_batch_20260727	2	0	2	0	0	0	4	0	2	4	0
+source_compatible_lung_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ལུང	source_compatible_lung_consensus_batch_20260727	15	15	source_compatible_lung_same_entry_echo_batch_20260727	0	0	0	0	0	0	15	0	0	15	0
+source_compatible_sang_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	སང	source_compatible_sang_consensus_batch_20260727	6	6	source_compatible_sang_same_entry_echo_batch_20260727	7	3	3	0	1	0	6	4	7	9	0
+source_compatible_shing_20260727	6e4614fe49f72ec5926d1c24d02c0a09a24b2597	ཤིང	source_compatible_shing_consensus_batch_20260727	58	58	source_compatible_shing_same_entry_echo_batch_20260727	9	4	4	0	1	0	58	5	9	62	0

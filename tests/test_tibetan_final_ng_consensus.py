@@ -211,6 +211,24 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             & {row["tibetan_syllable"] for row in rows}
         )
 
+    def test_mixed_source_compatible_freeze_keeps_damage_withheld(self) -> None:
+        path = (
+            ROOT / "data"
+            / "final_ng_source_compatible_prepass_manifest_652273e.tsv"
+        )
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        self.assertEqual(
+            sum(row["candidate_status"] == "positional" for row in rows), 23
+        )
+        withheld = [
+            row for row in rows
+            if row["candidate_status"] == "withheld_damage"
+        ]
+        self.assertEqual(len(withheld), 1)
+        self.assertEqual(withheld[0]["tibetan_syllable"], "ཀློང")
+        self.assertEqual((withheld[0]["page"], withheld[0]["line"]), ("675", "30"))
+
     def test_final_nasal_skeleton_is_narrow(self) -> None:
         self.assertTrue(consensus.source_variant_for_target("dban", "dbaṅ"))
         self.assertTrue(consensus.source_variant_for_target("chuñ", "chuṅ"))
