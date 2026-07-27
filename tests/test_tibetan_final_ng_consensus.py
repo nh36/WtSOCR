@@ -94,6 +94,28 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
                     checked += 1
         self.assertGreater(checked, 100)
 
+    def test_source_compatible_frozen_scope_excludes_mixed_and_bad_anchors(
+        self,
+    ) -> None:
+        path = (
+            ROOT / "data"
+            / "final_ng_source_compatible_prepass_manifest_e7ada80.tsv"
+        )
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        positional = [
+            row for row in rows if row["candidate_status"] == "positional"
+        ]
+        self.assertEqual(len(positional), 101)
+        self.assertEqual(
+            {row["frozen_prepass_sha"] for row in rows},
+            {"e7ada80b5b44c271d4e4daabf035cfd00c62bbc1"},
+        )
+        self.assertFalse(
+            {"ཀློང", "སྙིང", "རྱོང", "མེང"}
+            & {row["tibetan_syllable"] for row in rows}
+        )
+
     def test_final_nasal_skeleton_is_narrow(self) -> None:
         self.assertTrue(consensus.source_variant_for_target("dban", "dbaṅ"))
         self.assertTrue(consensus.source_variant_for_target("chuñ", "chuṅ"))
