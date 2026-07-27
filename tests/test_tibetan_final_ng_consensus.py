@@ -16,6 +16,22 @@ SPEC.loader.exec_module(consensus)
 
 
 class TibetanFinalNgConsensusTests(unittest.TestCase):
+    def test_genuine_dotted_anchor_requires_final_ng_coda(self) -> None:
+        for token in ("gsuṅ", "dpuṅ"):
+            self.assertTrue(
+                consensus.is_genuine_dotted_final_ng_anchor(token, "གསུང")
+            )
+        for token in ("gsuṅń", "dpuṅń", "gsuṅn", "gsuṅh"):
+            self.assertFalse(
+                consensus.is_genuine_dotted_final_ng_anchor(token, "གསུང")
+            )
+        self.assertTrue(
+            consensus.is_genuine_dotted_final_ng_anchor("ñaṅs", "ཉངས")
+        )
+        self.assertFalse(
+            consensus.is_genuine_dotted_final_ng_anchor("ñaṅ", "ཉངས")
+        )
+
     def test_source_compatible_signature_is_case_sensitive_and_exact(self) -> None:
         self.assertEqual(
             consensus.source_compatible_signature("ban"),
@@ -126,6 +142,78 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             "not_emitted_by_legacy_global_target",
         )
 
+    def test_malformed_internal_ng_is_not_a_compatible_anchor(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tགསུང་ gsuṅń\n"
+                "1\t2\theadword_line\tགསུང་ fooṅ\n"
+                "1\t3\theadword_line\tགསུང་ gsun\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_source_compatible_rows(release)
+        row = next(item for item in rows if item["source_latin_token"] == "gsun")
+        self.assertEqual(row["compatible_accepted_target_count"], "0")
+        self.assertEqual(row["proposed_latin_target"], "")
+        self.assertEqual(row["hypothetical_target"], "gsuṅ")
+        self.assertEqual(
+            row["source_compatible_category"],
+            "source_compatible_no_anchor",
+        )
+
+    def test_base_anchor_provenance_requires_no_introducing_change(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tབང་ baṅ\n",
+                encoding="utf-8",
+            )
+            provenance = consensus.collect_anchor_provenance(release)
+        self.assertEqual(len(provenance), 1)
+        self.assertEqual(provenance[0]["provenance_class"], "base_ocr_dotted")
+
+    def test_google_witness_evidence_includes_unresolved_and_candidate_rows(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            diagnostics = qa / "tibetan_cleanup_diagnostics"
+            diagnostics.mkdir(parents=True)
+            (qa / "wts_1_34_alternate_witness_unresolved.tsv").write_text(
+                "page\tline\ttoken_index\tbase_token\talternate_token\treason\n"
+                "1\t2\t3\tkron\tkroṅ\tunresolved\n",
+                encoding="utf-8",
+            )
+            (diagnostics / "tibetan_google_candidate_readings.tsv").write_text(
+                "page\tline\ttoken_index\tbase_token\talternate_token\treason\n"
+                "4\t5\t6\trtin\trtiṅ\tcandidate\n",
+                encoding="utf-8",
+            )
+            evidence = consensus.collect_google_witness_evidence(release)
+        self.assertEqual(
+            {(row["witness_status"], row["alternate_token"]) for row in evidence},
+            {("unresolved", "kroṅ"), ("candidate", "rtiṅ")},
+        )
+
+    def test_alignment_plausibility_flags_known_noise_without_claiming_trust(self) -> None:
+        self.assertEqual(
+            consensus.alignment_plausibility("ཆུང", "run", ""),
+            "structurally_suspicious",
+        )
+        self.assertEqual(
+            consensus.alignment_plausibility("གང", "Dach", ""),
+            "gloss_or_alignment_noise",
+        )
+        self.assertEqual(
+            consensus.alignment_plausibility("ཀྲོང", "kron", "kroṅ"),
+            "plausible_requires_review",
+        )
+
     def test_echo_discovery_uses_later_tokens_compatible_target(self) -> None:
         with TemporaryDirectory() as tmp:
             release = Path(tmp) / "release"
@@ -156,7 +244,7 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             {
                 "compatible_accepted_target_count": "1",
                 "source_compatible_category":
-                    "source_compatible_insufficient_evidence",
+                    "source_compatible_single_anchor",
             },
             {
                 "compatible_accepted_target_count": "0",
@@ -193,11 +281,11 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             )
         row = next(item for item in matrix if item["source_variant"] == "ban")
         self.assertEqual(row["undotted_clean_row_count"], "3")
-        self.assertEqual(row["compatible_dotted_anchor_count"], "1")
-        self.assertEqual(row["same_volume_dotted_anchor_count"], "1")
-        self.assertEqual(row["cross_volume_dotted_anchor_count"], "0")
+        self.assertEqual(row["base_ocr_dotted_anchor_count"], "1")
+        self.assertEqual(row["same_volume_raw_anchor_count"], "1")
+        self.assertEqual(row["cross_volume_raw_anchor_count"], "0")
         self.assertEqual(
-            row["suggested_review_tier"], "single_anchor_recurrence_only"
+            row["suggested_review_tier"], "base_anchor_identity_review"
         )
 
     def test_insufficient_matrix_identifies_cross_volume_anchor(self) -> None:
@@ -222,13 +310,13 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
                 override_rows=[],
             )
         row = next(item for item in matrix if item["source_variant"] == "ban")
-        self.assertEqual(row["same_volume_dotted_anchor_count"], "0")
-        self.assertEqual(row["cross_volume_dotted_anchor_count"], "1")
+        self.assertEqual(row["same_volume_raw_anchor_count"], "0")
+        self.assertEqual(row["cross_volume_raw_anchor_count"], "1")
         self.assertEqual(
-            row["independent_evidence_channels"],
-            "compatible_dotted_anchor",
+            row["target_evidence_channels"],
+            "base_ocr_dotted_anchor",
         )
-        self.assertEqual(row["suggested_review_tier"], "cross_volume_anchor_review")
+        self.assertEqual(row["suggested_review_tier"], "base_anchor_identity_review")
 
     def test_historical_frozen_manifests_use_exact_final_nasal_pairs(self) -> None:
         checked = 0
