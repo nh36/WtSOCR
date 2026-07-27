@@ -3025,3 +3025,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 476	21	2595	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྱོང་ ""byon V'byan."
 476	22	2596	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱོང་ ®byon reinigen, vgl. Isbyon.
 433	23	2381	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲམ།་ཚོང་ ""bam tshon Zwangskauf."
+49	49	232	headword_line	sih	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein
+305	5	1607	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བླ་ཤིང་ bla sin.
+408	49	2254	example_tibetan_latin	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"
+438	28	2412	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབར་ཤིང་ ""bar sin Schwefel."
+493	24	2667	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"

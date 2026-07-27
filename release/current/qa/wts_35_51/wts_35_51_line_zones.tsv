@@ -35549,7 +35549,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 444	14	2280	latin_other			none	5	0	0	0	yuns 'bru bdun la ni — geig go / — bdun la
 444	15	2280	german_prose_with_translit			none	3	2	0	0	"ni sor gcig go ""sieben yanis 'bru sind ein nas;"
 444	16	2280	german_prose_with_translit			none	1	4	0	0	"sieben nas sind ein Zoll"" (K95 7733)."
-444	17	2281	headword_line	ནས་ཀྱི་འཁྲི་ཤིང་	nas kyi khri	high	3	1	0	0	ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Sin.
+444	17	2281	headword_line	ནས་ཀྱི་འཁྲི་ཤིང་	nas kyi khri	high	3	1	0	0	ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Siṅ.
 444	18	2281	german_prose			none	0	3	0	0	1. ein Getreide, Erbse.
 444	19	2281	german_prose_with_translit			none	2	2	0	0	Lex. 'bru Zig (brDa); sran ma (TTC).
 444	20	2281	german_prose			none	0	1	0	0	2. Getreidehalm.
@@ -71704,7 +71704,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 881	44	4554	german_prose_with_translit			none	1	3	0	0	"""gYu-sgra hörte insgeheim auf den Lehrer"
 881	45	4554	german_prose_with_translit			none	2	2	0	0	"Vairocana"" (VaiNth 190,2); bod kyi blon po"
 881	46	4554	german_prose			none	0	1	0	0	2 or an
-881	47	4555	headword_line	ཕག་གི་ཤིང་རྟ་	phag gi	high	3	0	0	0	ཕག་གི་ཤིང་རྟ་ phag gi sih rta
+881	47	4555	headword_line	ཕག་གི་ཤིང་རྟ་	phag gi	high	3	0	0	0	ཕག་གི་ཤིང་རྟ་ phag gi siṅ rta
 881	48	4555	german_prose_with_translit			none	5	1	0	0	che ba Zigyod pas ma bsad par ~ tu ña ra byas
 881	49	4555	german_prose			none	0	5	0	0	"""da war ein großer tibetischer Minister, der"
 881	50	4555	german_prose			none	0	4	0	0	"ihn nicht tötete und heimlich für ihn sorgte"""

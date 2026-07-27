@@ -2391,7 +2391,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("གླང་ཐབས་ glaṅ thabs auch glaṅ ’thab", corrected)
         self.assertIn("གླང་འཐབ་ glaṅ ’thab †2/%7 thabs.", corrected)
         self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdoṅ", corrected)
-        self.assertIn("གླང་ཤིང་ glaṅ sin", corrected)
+        self.assertIn("གླང་ཤིང་ glaṅ siṅ", corrected)
         self.assertIn("dom mgo glaṅ sin", corrected)
         self.assertIn("གླན་ glan genuine distinct syllable.", corrected)
         reviewed = [
@@ -2399,7 +2399,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["from_token"] == "glan" and row["to_token"] == "glaṅ"
         ]
         self.assertEqual(len(reviewed), 6)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 8)
 
     def test_reviewed_glah_variant_maps_to_glang(self) -> None:
         result, corrected, changes = self.run_postprocess_fixture(

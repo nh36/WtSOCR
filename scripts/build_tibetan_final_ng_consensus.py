@@ -648,6 +648,7 @@ def build_same_entry_echo_rows(
     if decisions_path is None:
         decisions_path = Path("data/reviewed_final_ng_echo_decisions.tsv")
     decisions = {}
+    decisions_by_identity = {}
     if decisions_path.exists():
         for decision in read_tsv(decisions_path):
             key = (
@@ -656,6 +657,11 @@ def build_same_entry_echo_rows(
                 decision["source_token"], decision["proposed_target"],
             )
             decisions[key] = decision
+            identity_key = key[:-1]
+            if identity_key in decisions_by_identity:
+                decisions_by_identity[identity_key] = {}
+            else:
+                decisions_by_identity[identity_key] = decision
     echoes: list[dict[str, str]] = []
     seen: set[tuple[str, str, str, int]] = set()
     for row in aligned:
@@ -716,12 +722,13 @@ def build_same_entry_echo_rows(
                 category = "uncertain"
                 status = "defer"
                 reason = "No explicit entry-structure cue establishes lemma identity."
+            decision_key = (
+                row["volume"], row["page"], row["line"], str(token_index),
+                row["tibetan_syllable"], source, target,
+            )
             decision = decisions.get(
-                (
-                    row["volume"], row["page"], row["line"], str(token_index),
-                    row["tibetan_syllable"], source, target,
-                ),
-                {},
+                decision_key,
+                decisions_by_identity.get(decision_key[:-1], {}),
             )
             echoes.append(
                 {

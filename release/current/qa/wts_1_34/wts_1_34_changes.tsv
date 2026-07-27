@@ -28648,3 +28648,58 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1236	7	12861	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དེང་སང་ den san auch din san, dus din san
 1287	32	13080	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དྭངས་སང་ dwans san auch dans san klar, un-
 1287	32	13080	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྭངས་སང་ dwans san auch dans san klar, un-
+92	49	1105	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀེར་ཤིང་ ker sin 1kin %.
+107	127	1300	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྱིར་ཤིང་ kyer Sin Iskyer sin.
+115	26	1410	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀླུ་ཤིང་ kla sin eine Pflanze, „Näga-Baum“, ein
+131	65	1677	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཀྲུག་ཤིང་ dkrug sin auch dkrugs sin „Quirls-
+131	65	1677	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དཀྲུག་ཤིང་ dkrug sin auch dkrugs sin „Quirls-
+131	110	1679	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དཀྲུགས་ཤིང་ dkrugs sin.
+131	139	1680	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དཀྲུགས་ཤིང་ drugs Sin Tdkrug śin.
+210	132	2736	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱེད་ཤིང་ skyed sin gezogener, gepflanzter Baum.
+211	115	2751	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱེར་ཤིང་ skyer Sin Tskyer pa.
+218	130	2851	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱོད་བྱེད་ཤིང་ skyod byed sin Ruder.
+269	59	3617	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁུར་ཤིང་ khur sin hölzernes Tragegestell.
+282	1	3817	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁྱབ་འཇུག་ཤིང་རྟ་ khyab jug sin rta
+293	196	4024	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁྲམ་ཤིང་ khram sin Kerbholz; ein Ritualge-
+295	114	4050	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཁྲི་ཏི་ཤིང་ khri ti sin eine Pflanze.
+328	31	4518	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འཁྲི་ཤིང་ ’khri Sin auch ’khril sin Ranke,
+328	31	4518	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	འཁྲི་ཤིང་ ’khri Sin auch ’khril sin Ranke,
+329	48	4538	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	འཁྲིལ་ཤིང་ khril sin V’ehri sin.
+355	1	4813	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གེལ་བའི་ཤིང་ gel ba’i sin
+355	3	4814	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གེལ་བའི་ཤིང་ gel ba’i sin ein Baum.
+367	59	4976	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྱིབ་ཤིང་པ་ gib Sin pa eine Pflanze, synon.
+395	57	5270	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གླང་ཤིང་ glaṅ sin ein Baum, Gebirgsweide.
+398	35	5308	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གླེགས་ཤིང་ glegs sin Buchdeckel aus Holz.
+404	99	5402	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དགའ་བའི་ཤིང་རྟ་མ་ dga’ ba’i Sin rta ma göttliche
+453	65	5936	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	འགྲོ་བའི་ཤིང་རྟ་ ’gro ba’i Sin rta Beiname des
+464	168	6113	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྒྱ་ཤིང་བརྗོད་གསུམ་ rgya Sin brnod gsum Steuer-
+508	125	6661	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྒྲོལ་བའི་ཤིང་རྟ་ sgrol ba’i sin rta.
+526	143	6823	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ངང་པའི་ཤིང་རྟ་ nan pa’i sin rta Beiname des
+559	131	7181	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྔ་ཡབ་ཅན་གྱི་ཤིང་ rna yab can gyi Sin Bez. für
+607	75	7566	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བཅུད་རོ་འཛིན་ཤིང་ beud ro ’dzin sin Bez. für
+654	60	8090	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆུ་ཤིང་མ་ chu Sin ma
+654	110	8092	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆུ་ཤིང་དཀར་པོ་ chu sin dkar po ein Baum.
+697	95	8563	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	མཆོད་སྦྱིན་སྤོས་ཤིང་ mchod sbyin spos sin Bez.
+708	24	8672	tibetan_only	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཇ་ཤིང་ ja Sin Teepflanze; Camella sinensis
+752	76	9088	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ལྗོན་ཤིང་ལྔམ་ར་ lion sin Idum ra auch bon sin
+752	76	9088	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ལྗོན་ཤིང་ལྔམ་ར་ lion sin Idum ra auch bon sin
+801	30	9522	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཉའ་ཤིང་ giia’ sin Joch.
+879	101	9855	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཏེའུ་ཤིང་ te’ Sin Stuhl, Sitzbank.
+891	121	9980	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཏུན་ཤིང་ gtun sin
+891	130	9980	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཏུན་ཤིང་ gtun sin Stößel, Keule.
+891	140	9981	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གཏུན་ཤིང་ཅན་ gtun Sin can auch rtun Sin Bei-
+891	140	9981	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཏུན་ཤིང་ཅན་ gtun Sin can auch rtun Sin Bei-
+919	157	10306	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟན་ཤིང་ rtun Sin Tgtun Sin can.
+942	21	10497	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟ་ཤིང་ sta sin ein Heilmittel, vgl. Tca gan.
+946	64	10539	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟར་མོ་གེའི་ཤིང་ star mo ge’i sin Walnußbaum.
+990	70	10996	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཐང་ཤིང་ thaṅ sin.
+1003	64	11157	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བྲིག་ཤིང་ thig sin
+1003	107	11165	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཐིག་ཤིང་ thig sin Meßstab,.
+1020	131	11397	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཐུབ་ཤིང་ thub sin Gnomon; vgl. SCHUH 2012:
+1022	16	11423	headword_line	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཐུར་ཤིང་ thur sin Gnomon; vgl. SCHUH 2012:
+1127	94	12328	tibetan_only	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དམ་ཤིང་ dam Sin ein Stock, Attribut von Bon-
+1300	48	13153	tibetan_only	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲང་ཤིང་ dran Sin Zepter.
+1308	101	13186	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲན་པའི་ཤིང་རྟ་ dran pa’i Sin rta Beiname Märas.
+1315	24	13215	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲི་ལྡན་ཤིང་ dri ldan Sin.
+1323	11	13275	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲི་ཡི་ཤིང་རྟ་ dri yi Sin rta Bez. für Wind.
+1339	38	13326	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྲུམ་ཤིང་ drum sin eine Pflanze, ein Baum.

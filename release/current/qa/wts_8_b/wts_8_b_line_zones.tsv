@@ -3387,7 +3387,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 49	46	230	german_prose			none	0	4	0	0	"boyi — 'di lags ""es heißt, daß! man mit Straf-"
 49	47	230	german_prose			none	0	3	0	0	abgabe und Spannseil[-Strafe] belegt wird,
 49	48	230	german_prose_with_translit			none	1	2	0	0	"und so ist es"" (ITJ740 290)."
-49	49	231	headword_line	བའི་ཤིང་ཐོར་དོག་ཤིང་	ba'i siṅ thor	high	3	1	0	0	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein
+49	49	231	headword_line	བའི་ཤིང་ཐོར་དོག་ཤིང་	ba'i siṅ thor	high	3	1	0	0	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog siṅ npr. ein
 49	50	231	german_prose			none	0	2	0	0	legendarischer Vorfahr des
 49	51	231	german_prose_with_translit			none	3	3	0	0	Cinggis Qan, mong. Bai Singgor Dogsin,
 49	52	231	german_prose			none	0	6	0	0	Sohn des Qaidu Qan; nach Debm sind es
@@ -24984,7 +24984,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 305	2	1603	latin_other			none	3	0	0	0	"chi ba / — / sbal ti gsum skor gcig ""Khotan,"
 305	3	1603	german_prose_with_translit			none	1	5	0	0	"Bla-śa und Baltistan sind eine Dreiergruppe"""
 305	4	1603	latin_other			none	1	0	0	0	('Dzam 3,23).
-305	5	1603	tibetan_only	བླ་ཤིང་		none	0	0	0	0	བླ་ཤིང་ bla sin.
+305	5	1603	tibetan_only	བླ་ཤིང་		none	0	0	0	0	བླ་ཤིང་ bla siṅ.
 305	6	1603	german_prose			none	0	6	0	0	1. Baum bzw. Strauch, in dem die Lebens-
 305	7	1603	german_prose			none	0	2	0	0	kraft einer Person sitzt.
 305	8	1603	german_prose_with_translit			none	1	5	0	0	"Lex. bla gnas ba'i Sin zer ""bezeichnet das Ge-"
@@ -33609,7 +33609,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 408	46	2250	german_prose			none	0	6	0	0	"nes Schattens das Maß eines Fußes"" (Mvup"
 408	47	2250	other			none	0	0	0	0	1.279).
 408	48	2250	german_prose_with_translit			none	2	2	0	0	Lex. — chu stod =asādhah (Mvy 8265); dbyar
-408	49	2250	example_tibetan_latin			none	3	8	0	0	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"
+408	49	2250	example_tibetan_latin			none	3	8	0	0	brin zhorzlalnapa la'an "auch für den fünf ར་ཤིང dbyar siṅ Feuerholz für den Som-
 408	50	2250	tibetan_only	༩ ༡༩༩༩ ༦༠ དབྱར་ཤི		none	0	0	0	0	༩ ༡༩༩༩ ༦༠ དབྱར་ཤི
 408	51	2250	german_prose_with_translit			none	1	3	0	0	"ten bor Monat"" (brDa, ähnl. Dagy). mer"
 408	52	2251	headword_line	དབྱར་ཟླ་ར་བ་	dbyar	medium	4	1	0	0	དབྱར་ཟླ་ར་བ་ dbyar zla ra ba auch dbyar rwa
@@ -36037,7 +36037,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 438	25	2408	german_prose_with_translit			none	2	4	0	0	"{© des Tadelns oder Drohens"" (brDa); bka'"
 438	26	2408	german_prose_with_translit			none	4	2	0	0	"bkyon pa'am sdigs pa ""Tadel oder Drohung"""
 438	27	2408	german_prose			none	0	1	0	0	(Dagy).
-438	28	2408	tibetan_only	འབར་ཤིང་		none	0	1	0	0	"འབར་ཤིང་ ""bar sin Schwefel."
+438	28	2408	tibetan_only	འབར་ཤིང་		none	0	1	0	0	འབར་ཤིང་ "bar siṅ Schwefel.
 438	29	2408	german_prose_with_translit			none	2	4	0	0	"Lex. mu zila'ani ""auch für Schwefel"" (brDa);"
 438	30	2408	german_prose_with_translit			none	2	3	0	0	"rdzas gyi bye brag mu zila ""für ein Material,"
 438	31	2408	german_prose			none	0	2	0	0	"Schwefel"" (Dagy)."
@@ -40657,7 +40657,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 493	21	2663	german_prose_with_translit			none	1	2	0	0	"mi bcas byun bstun ""die gesamten Vorsteher"
 493	22	2663	german_prose			none	0	4	0	0	aller Mönche und Laien Sikkims haben sich
 493	23	2663	latin_other			none	1	0	0	0	"eingefunden"" (MTH3/3/21 6)."
-493	24	2663	tibetan_only	འབྲས་ཤིང་		none	0	2	0	0	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
+493	24	2663	tibetan_only	འབྲས་ཤིང་		none	0	2	0	0	འབྲས་ཤིང་ "bras siṅ Vbras bwi Sin,
 493	25	2664	headword_line	འབྲས་བཤད་	bsad	medium	1	0	0	0	འབྲས་བཤད་ 'bras bsad
 493	26	2664	german_prose			none	0	1	0	0	ge bzw. prognostische Bewer-
 493	27	2664	german_prose_with_translit			none	1	2	0	0	tung bestimmter zeitlicher Abschnitte; vgl.
