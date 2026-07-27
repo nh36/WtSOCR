@@ -147982,7 +147982,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1013	225	11094	latin_other			none	1	0	0	0	1. (zw.) Angelegenheiten.
 1013	226	11094	german_prose_with_translit			none	2	1	0	0	» che nas „die Angelegenheiten (?) wurden
 1013	227	11094	german_prose			none	0	4	0	0	groß (4. h. sie blühten)“ (Ini2 E30).
-1014	1	11095	headword_line	ཐུགས་དབྱུང་བར་བྱེད་	thugs dbyun	high	3	0	0	0	ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyun bar byed
+1014	1	11095	headword_line	ཐུགས་དབྱུང་བར་བྱེད་	thugs dbyun	high	3	0	0	0	ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyuṅ bar byed
 1014	3	11095	german_prose			none	0	1	0	0	2, ~ che sehr beschäftigt.
 1014	5	11095	german_prose_with_translit			none	2	2	0	0	bla ma mar pa = che „der geistliche Lehrer
 1014	6	11095	german_prose			none	0	4	0	0	Mar-pa ist sehr beschäftigt“ (Mil 71,21).
@@ -177452,7 +177452,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1338	45	13084	german_prose_with_translit			none	4	1	0	0	auch druns phyuns“ (brDa); drun phyun ba =
 1338	46	13084	german_prose_with_translit			none	7	2	0	0	"rtsa ba nas bton pa / ""das pa (Dagy); ¬ =zrtsa"
 1338	47	13084	german_prose_with_translit			none	3	1	0	0	ba bton pa „herausgezogene Wurzel“ (TTC).
-1338	49	13085	headword_line	དྲུངས་དབྱུང་	dbyun	medium	2	1	0	0	དྲུངས་དབྱུང་ druns dbyun auch drun dbyun fut.
+1338	49	13085	headword_line	དྲུངས་དབྱུང་	dbyun	medium	2	1	0	0	དྲུངས་དབྱུང་ druns dbyuṅ auch drun dbyuṅ fut.
 1338	50	13085	german_prose			none	0	2	0	0	zu Idrun ’byin vernichten, beseiti-
 1338	52	13085	other			none	0	0	0	0	gen.
 1338	53	13085	latin_other			none	5	0	0	0	ri dags dan / bya man po dag — ba’i phyir
