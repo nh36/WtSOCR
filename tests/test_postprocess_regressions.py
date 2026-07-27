@@ -3504,6 +3504,17 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("kun sbyoṅ ba Reinigung.", corrected)
         self.assertIn("unreviewed sbyon control", corrected)
 
+    def test_reviewed_lngang_ldan_is_exactly_gated(self) -> None:
+        lines = {
+            (552, 158): "མངོན་ལྔང་ mnon ldan respektvoll",
+            (1, 1): "unreviewed ldan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("mnon ldaṅ respektvoll", corrected)
+        self.assertIn("unreviewed ldan control", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {
