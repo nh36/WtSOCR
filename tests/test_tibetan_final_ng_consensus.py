@@ -29,6 +29,16 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertFalse(consensus.source_compatible_pair("ban", "buṅ"))
         self.assertFalse(consensus.source_compatible_pair("klon", "groṅ"))
         self.assertFalse(consensus.source_compatible_pair("khon", "kboṅ"))
+        self.assertTrue(
+            consensus.token_has_attached_marker(
+                "འཕྲང་འཕྲེང་ /phran phreṅ", 1
+            )
+        )
+        self.assertFalse(
+            consensus.token_has_attached_marker(
+                "འཕྲང་འཕྲེང་ ’phran phreṅ", 1
+            )
+        )
 
     def test_source_compatible_consensus_excludes_different_stems(self) -> None:
         with TemporaryDirectory() as tmp:

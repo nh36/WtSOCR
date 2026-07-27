@@ -193,6 +193,19 @@ def classify_damage_scope(
     return "later_gloss_or_commentary"
 
 
+def token_has_attached_marker(
+    line: str,
+    token_index: int,
+) -> bool:
+    matches = list(POSTPROCESS_TOKEN_RE.finditer(line))
+    if token_index < 1 or token_index > len(matches):
+        return False
+    match = matches[token_index - 1]
+    if match.group(0)[:1] in {"T", "I"}:
+        return True
+    return match.start() > 0 and line[match.start() - 1] in {"\\", "/"}
+
+
 def collect_aligned_rows(
     release_root: Path,
 ) -> tuple[list[dict[str, str]], dict[str, Counter[str]]]:
@@ -450,7 +463,10 @@ def build_source_compatible_rows(
         )
         exact_variant = source_compatible_pair(source, target)
         old_category = old["alignment_category"]
-        if old_category == "marker_attached":
+        attached_marker = token_has_attached_marker(
+            old["context_excerpt"], int(old["token_index"])
+        )
+        if old_category == "marker_attached" or attached_marker:
             category = "source_compatible_marker_attached"
             confidence = "manual"
             action = "separate_marker_and_final_ng_review"
