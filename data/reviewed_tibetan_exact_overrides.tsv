@@ -6003,3 +6003,7 @@ wts_1_34	642	135	2	klon	kloṅ	reviewed_tibetan_exact_final_ng_source_compatible
 wts_1_34	675	26	2	klon	kloṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_klong_consensus_batch_20260727	Frozen exact Tibetan ཀློང alignment; exact-row only.
 wts_1_34	680	1	3	klon	kloṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_klong_consensus_batch_20260727	Frozen exact Tibetan ཀློང alignment; exact-row only.
 wts_1_34	721	142	2	klon	kloṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_klong_consensus_batch_20260727	Frozen exact Tibetan ཀློང alignment; exact-row only.
+wts_1_34	476	154	2	tshoh	tshoṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_atshong_consensus_batch_20260727	Frozen exact Tibetan འཚོང alignment; exact-row only.
+wts_1_34	629	69	2	tshon	tshoṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_atshong_consensus_batch_20260727	Frozen exact Tibetan འཚོང alignment; exact-row only.
+wts_1_34	680	127	2	tshon	tshoṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_atshong_consensus_batch_20260727	Frozen exact Tibetan འཚོང alignment; exact-row only.
+wts_1_34	629	69	5	tshon	tshoṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_atshong_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.

@@ -3022,6 +3022,22 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed klon control", corrected)
         self.assertEqual(sum(row["to_token"] == "kloṅ" for row in changes), 1)
 
+    def test_reviewed_atshong_variants_and_echo_are_exactly_gated(self) -> None:
+        lines = {
+            (476, 154): "རྒྱས་འཚོང་བ་ rgyas ’tshoh ba ein mit Netzen",
+            (629, 69): "ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char",
+            (680, 127): "ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem",
+            (1400, 15): "unreviewed tshon tshoh control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rgyas ’tshoṅ ba ein mit Netzen", corrected)
+        self.assertIn("chaṅ ’tshoṅ auch chaṅ tshoṅ, char", corrected)
+        self.assertIn("chos ’tshoṅ ba Handel mit dem", corrected)
+        self.assertIn("unreviewed tshon tshoh control", corrected)
+        self.assertEqual(sum(row["to_token"] == "tshoṅ" for row in changes), 4)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

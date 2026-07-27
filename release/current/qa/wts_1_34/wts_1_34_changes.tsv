@@ -28722,3 +28722,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 675	26	8272	headword_line	klon	kloṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆོས་ཀློང་ chos klon Allwissenheit, Meister-
 680	1	8346	headword_line	klon	kloṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins klon du
 721	142	8797	headword_line	klon	kloṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	འཇའ་ཀློང་ཡེ་ཤེས་ ja’ klon ye śes ein ritueller
+476	154	6291	headword_line	tshoh	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྒྱས་འཚོང་བ་ rgyas ’tshoh ba ein mit Netzen
+629	69	7788	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
+629	69	7788	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
+680	127	8366	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem

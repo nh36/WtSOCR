@@ -237,7 +237,6 @@ newly_discovered	wts_1_34	453	27	3	ངང	nan		naṅ		source_compatible_insuffic
 newly_discovered	wts_1_34	464	15	3	དང	dun		duṅ		source_compatible_structure_mismatch	0	རྒྱ་མཚོའི་དང་ྲེང་ rgya mtsho’i dun phren Bez.
 newly_discovered	wts_1_34	466	168	2	ཤང	Sin		Siṅ		source_compatible_structure_mismatch	0	རྒྱངས ཤང་ rgyans Sin ein Werkzeug zum Be-
 newly_discovered	wts_1_34	476	123	2	བྱང	byun		byuṅ		source_compatible_structure_mismatch	1	རྒྱས་བྱང་མ་ reyas byun ma Beiname der Göttin
-newly_discovered	wts_1_34	476	154	2	འཚོང	tshoh		tshoṅ		source_compatible_dominant_consensus	2	རྒྱས་འཚོང་བ་ rgyas ’tshoh ba ein mit Netzen
 newly_discovered	wts_1_34	478	35	4	ལེང	phren		phreṅ		source_compatible_damaged_context	0	"’ རྭ་ལེང་ཅུ "" 7⁄97/// skar phren can Bez. für"
 newly_discovered	wts_1_34	48	50	1	ང	kan		kaṅ		source_compatible_insufficient_evidence	0	ང་ཀ་ནག་ག་ཀ་བཅཙན་ kan ka nag gi klu btsan eine
 newly_discovered	wts_1_34	488	105	1	རྒྱང	rgyon		rgyoṅ		source_compatible_structure_mismatch	0	རྒྱང་ rgyon
@@ -308,7 +307,6 @@ newly_discovered	wts_1_34	61	114	1	ང	kun		kuṅ		source_compatible_structure_m
 newly_discovered	wts_1_34	613	138	1	ང	lcan		lcaṅ		source_compatible_insufficient_evidence	0	ང་ར * lcan rüid Weidenkätzchen.
 newly_discovered	wts_1_34	615	137	1	ལྕང	lcun		lcuṅ		source_compatible_structure_mismatch	0	ལྕང་མོ་ lcun mo Fingerhut.
 newly_discovered	wts_1_34	628	98	1	ང	chan		chaṅ		source_compatible_insufficient_evidence	0	"ང་ཅན"" chan can Weinbecher; vgl. chin. &"
-newly_discovered	wts_1_34	629	69	2	འཚོང	tshon		tshoṅ		source_compatible_dominant_consensus	2	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
 newly_discovered	wts_1_34	632	143	2	ཁང	khun		khuṅ		source_compatible_structure_mismatch	0	ཆཁྲ་།ཁང་ chab khun Abfluß, Toilette.
 newly_discovered	wts_1_34	639	140	2	སྔང	san		saṅ		source_compatible_insufficient_evidence	0	ཆེང་སྔང་ chin san auch ’chin san, phyin san
 newly_discovered	wts_1_34	642	121	1	པང	Daseinsbereichen		Daseinsbereicheṅ		source_compatible_structure_mismatch	0	པང Daseinsbereichen.
@@ -326,7 +324,6 @@ newly_discovered	wts_1_34	665	57	2	སྙིང	shin		shiṅ		source_compatible_
 newly_discovered	wts_1_34	674	176	3	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆས་ཀྱ་འབྱང་གནས་སྒེ་ chos kyi ’byun gnas sgo
 disappeared	wts_1_34	675	26	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་ཀློང་ chos klon Allwissenheit, Meister-
 disappeared	wts_1_34	680	1	3	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins klon du
-newly_discovered	wts_1_34	680	127	2	འཚོང	tshon		tshoṅ		source_compatible_dominant_consensus	2	ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem
 newly_discovered	wts_1_34	680	22	4	ང	klon		kloṅ		source_compatible_structure_mismatch	0	EN བེངས་ཀོང་ང་བཤགས་ chos dbyins klon du
 newly_discovered	wts_1_34	680	34	2	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆོས་འབྱང་ chos ’byun.
 newly_discovered	wts_1_34	680	64	2	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	ཆོས་འབྱང་བྱིན་ chos ’byun byin.
