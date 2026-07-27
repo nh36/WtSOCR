@@ -28639,3 +28639,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 943	173	10510	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་ལུང་ stag lun
 943	201	10512	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་ལུང་ stag lun.
 955	131	10635	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟོད་ལུང་ stod lun auch stod luns npr. cin Ort,
+195	82	2511	headword_line	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྐྱ་སང་སང་ skya sari san.
+256	15	3393	headword_line	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	།ཁ་སང་ 'kha san auch kha rtsan, kha sa, kha
+775	30	9282	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཉི་སང་པད་ Al san pad npr. eine Emanation
+953	51	10613	headword_line	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟོང་སང་ stoṅ san
+1236	7	12861	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དེང་སང་ den san auch din san, dus din san
+1236	7	12861	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དེང་སང་ den san auch din san, dus din san
+1236	7	12861	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དེང་སང་ den san auch din san, dus din san
+1287	32	13080	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དྭངས་སང་ dwans san auch dans san klar, un-
+1287	32	13080	tibetan_only	san	saṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དྭངས་སང་ dwans san auch dans san klar, un-

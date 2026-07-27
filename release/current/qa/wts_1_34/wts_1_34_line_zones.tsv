@@ -26952,7 +26952,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 195	78	2476	german_prose			none	0	5	0	0	Abschnitt] von der Hälfte des ersten, drei-
 195	79	2476	latin_other			none	2	0	0	0	teiligen Abschnitts skya rens 677; so nach
 195	80	2476	german_prose_with_translit			none	2	2	0	0	dem [Vinaya]vibhanga“ (brDa).
-195	82	2477	headword_line	སྐྱ་སང་སང་	skya	medium	1	0	0	0	སྐྱ་སང་སང་ skya sari san.
+195	82	2477	headword_line	སྐྱ་སང་སང་	skya	medium	1	0	0	0	སྐྱ་སང་སང་ skya sari saṅ.
 195	84	2477	german_prose			none	0	1	0	0	1. weißlich.
 195	86	2477	german_prose_with_translit			none	4	2	0	0	Lex. mdog dkar śas che Zin gtsan ba’i snan
 195	87	2477	german_prose_with_translit			none	1	3	0	0	tshul „Aussehen, das farblich weitgehend
@@ -35825,7 +35825,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 256	10	3357	headword_line	།ཁ་བཤད་	kha bsad	high	2	1	0	0	།ཁ་བཤད་ kha bsad Reden.
 256	12	3357	german_prose_with_translit			none	3	2	0	0	» skam po’i mdzes tshon „schöne Beispiele
 256	13	3357	german_prose			none	0	1	0	0	leerer Reden“ (MTH3/3/35 24).
-256	15	3358	headword_line	།ཁ་སང་	kha	high	6	1	0	0	།ཁ་སང་ 'kha san auch kha rtsan, kha sa, kha
+256	15	3358	headword_line	།ཁ་སང་	kha	high	6	1	0	0	།ཁ་སང་ 'kha saṅ auch kha rtsan, kha sa, kha
 256	17	3358	german_prose_with_translit			none	1	1	0	0	sen, khar sari gestern, kürzlich.
 256	19	3358	german_prose_with_translit			none	3	4	0	0	» ri la phebs kyag „als du kürzlich in den
 256	20	3358	german_prose_with_translit			none	4	2	0	0	Bergen warst“ (Dol2 13,3); kha rtsari gi nas
@@ -112864,7 +112864,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 775	25	9130	german_prose			none	0	2	0	0	Tage“ (Gesar 260,10).
 775	27	9130	german_prose_with_translit			none	1	3	0	0	Lex. vimsati (Mvy 8088); güis beu ste 20
 775	28	9130	latin_other			none	1	0	0	0	(brDa).
-775	30	9130	tibetan_only	ཉི་སང་པད་		none	0	3	0	0	ཉི་སང་པད་ Al san pad npr. eine Emanation
+775	30	9130	tibetan_only	ཉི་སང་པད་		none	0	3	0	0	ཉི་སང་པད་ Al saṅ pad npr. eine Emanation
 775	31	9130	german_prose			none	0	2	0	0	Pehars (Neb 114, 118).
 775	33	9131	headword_line	ཉི་ལྷག་	lhag	high	1	3	0	0	ཉི་ལྷག་ fi lhag Sonne und Wind.
 775	35	9131	german_prose_with_translit			none	4	2	0	0	Lex. x gis brduns pa lta bu la’an „wie: von
@@ -138571,7 +138571,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	46	10415	headword_line	སྟོང་འྲོ་བ་	stoṅ phro ba	high	2	3	0	0	སྟོང་འྲོ་བ་ stoṅ ’phro ba Bez. für Sonne.
 953	47	10415	german_prose_with_translit			none	3	2	0	0	Lex. ni ma’i min (brDa, Dagy).
 953	49	10415	other			none	0	0	0	0	156
-953	51	10415	tibetan_only	སྟོང་སང་	stoṅ	high	0	0	0	0	སྟོང་སང་ stoṅ san
+953	51	10415	tibetan_only	སྟོང་སང་	stoṅ	high	0	0	0	0	སྟོང་སང་ stoṅ saṅ
 953	53	10415	other			none	0	0	0	0	vv.
 953	55	10415	german_prose			none	0	1	0	0	ERIET ston bu chun kleine Tausendschaft.
 953	56	10415	tibetan_only	༄༣༄		none	0	0	0	0	༄༣༄
@@ -169777,7 +169777,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1236	3	12643	german_prose_with_translit			none	1	3	0	0	Lex. den dus kyi mi rabs (Dagy).
 1236	4	12643	german_prose			none	0	1	0	0	2. jetziges Jahrzehnt.
 1236	5	12643	german_prose_with_translit			none	2	3	0	0	Lex. den dus kyi ... lo rabs (Dagy).
-1236	7	12643	tibetan_only	དེང་སང་		none	0	2	0	0	དེང་སང་ den san auch din san, dus din san
+1236	7	12643	tibetan_only	དེང་སང་		none	0	2	0	0	དེང་སང་ den saṅ auch din saṅ, dus din saṅ
 1236	9	12643	german_prose_with_translit			none	1	1	0	0	heutzutage, heute, gegenwärtig; — gi
 1236	10	12643	latin_other			none	4	0	0	0	bar du bis heute, — lo ’ga’i snon du vor eini-
 1236	11	12643	german_prose_with_translit			none	1	1	0	0	gen Jahren, — yari heute noch, din sari gi dus
@@ -173439,7 +173439,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1287	27	12852	german_prose_with_translit			none	3	3	0	0	Lex. dad pa gsum gyi nan tshan „gehört zu
 1287	28	12852	german_prose			none	0	5	0	0	den drei Arten von Glauben“ (Dagy).
 1287	30	12853	headword_line	དྭངས་མ་	ma	medium	2	1	0	0	དྭངས་མ་ dwans ma Tdans ma.
-1287	32	12853	tibetan_only	དྭངས་སང་		none	0	1	0	0	དྭངས་སང་ dwans san auch dans san klar, un-
+1287	32	12853	tibetan_only	དྭངས་སང་		none	0	1	0	0	དྭངས་སང་ dwans saṅ auch dans saṅ klar, un-
 1287	33	12853	german_prose			none	0	1	0	0	getrübt; klug, intelligent, geschickt
 1287	34	12853	german_prose			none	0	2	0	0	(vgl. Goldstein).
 1287	36	12853	latin_other			none	1	0	0	0	gti mug 'di ’od gsal du dans) san ne (metr.)

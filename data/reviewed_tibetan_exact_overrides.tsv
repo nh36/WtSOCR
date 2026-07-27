@@ -5913,3 +5913,12 @@ wts_1_34	943	173	2	lun	luṅ	reviewed_tibetan_exact_final_ng_source_compatible	s
 wts_1_34	943	201	2	lun	luṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_lung_consensus_batch_20260727	Frozen exact Tibetan ལུང alignment; exact-row only.
 wts_1_34	955	131	2	lun	luṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_lung_consensus_batch_20260727	Frozen exact Tibetan ལུང alignment; exact-row only.
 wts_35_51	727	35	2	lun	luṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_lung_consensus_batch_20260727	Frozen exact Tibetan ལུང alignment; exact-row only.
+wts_1_34	195	82	3	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	256	15	2	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	775	30	2	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	953	51	2	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	1236	7	2	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	1287	32	2	san	saṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	Frozen exact Tibetan སང alignment; exact-row only.
+wts_1_34	1236	7	5	san	saṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_sang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	1236	7	8	san	saṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_sang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	1287	32	5	san	saṅ	reviewed_tibetan_exact_final_ng_echo	source_compatible_sang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.

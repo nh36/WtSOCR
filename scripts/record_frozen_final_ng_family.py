@@ -169,7 +169,8 @@ def main() -> None:
         str(len(positional)), echo_evidence, str(len(echoes)),
         str(counts["accepted"]), str(counts["deferred"]),
         str(counts["rejected"]), str(counts["resolved_elsewhere"]), "0",
-        str(len(positional)), str(counts["accepted"]),
+        str(len(positional)),
+        str(counts["accepted"] + counts["resolved_elsewhere"]),
         str(len(echoes)), str(len(positional) + counts["accepted"]),
     ]])
     print(
