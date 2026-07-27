@@ -28626,3 +28626,16 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 710	175	8687	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཇི་ནས་ཀྱང་ JE nas kyan unbedingt; vgl. །€/ nas
 1087	1	12104	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ད་དུང་ཀྱང་ da duṅ kyan
 1087	34	12105	headword_line	kyan	kyaṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ད་དུང་ཀྱང་ da duṅ kyan Ida dun yan.
+99	16	1219	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀོང་ལུང་ koṅ lun ein bestimmtes Jahr.
+143	52	1820	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བཀའ་ལུང་ bka’ lun
+143	78	1822	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བཀའ་ལུང་ ba’ lun.
+593	190	7458	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཅིག་ལས་འཕྲོས་པའི་ལུང་ gcig las ’phros pa’i lun
+602	115	7525	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བཅལ་ལུང་པ་ beal lun pa
+613	78	7625	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ལྷགས་ལུང་ lcags lun Eisengriff.
+666	193	8205	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆེན་ལུང་ chen lun der chinesische Kaiser 87 [£
+681	143	8374	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཆོས་ལུང་ chos lun npr. ein Ort.
+718	3	8756	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	འཇག་ལུང་ ag lun Schlinge.
+894	73	10010	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གཏེར་ལུང་ gter lun Schatztext.
+943	173	10510	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་ལུང་ stag lun
+943	201	10512	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟག་ལུང་ stag lun.
+955	131	10635	tibetan_only	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྟོད་ལུང་ stod lun auch stod luns npr. cin Ort,

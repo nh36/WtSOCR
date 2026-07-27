@@ -12644,7 +12644,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 99	11	1198	german_prose_with_translit			none	1	2	0	0	mchog, Bergenia stracheyi (Hook. f. et
 99	13	1198	latin_other			none	2	0	0	0	Thoms.) Engl. (KLETTER/KRIECHBAUM 2001:
 99	14	1198	other			none	0	0	0	0	138).
-99	16	1198	tibetan_only	ཀོང་ལུང་	koṅ	high	0	2	0	0	ཀོང་ལུང་ koṅ lun ein bestimmtes Jahr.
+99	16	1198	tibetan_only	ཀོང་ལུང་	koṅ	high	0	2	0	0	ཀོང་ལུང་ koṅ luṅ ein bestimmtes Jahr.
 99	18	1198	german_prose_with_translit			none	3	2	0	0	— gi lo la „im kon lun [genannten] Jahr“
 99	19	1198	german_prose			none	0	1	0	0	(Debm 10b4).
 99	21	1198	tibetan_only	ཀོང་ཤེང་	koṅ	high	0	6	0	0	ཀོང་ཤེང་ koṅ sen eine Region in der Nähe von
@@ -18934,7 +18934,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 143	47	1789	german_prose_with_translit			none	4	3	0	0	Großtibets“ (In12 N5); bka’ chen po la gtogs
 143	48	1789	german_prose_with_translit			none	5	1	0	0	te phyi nan gnis la dban Zin chab srid ’dzin pa
 143	50	1789	other			none	0	0	0	0	202
-143	52	1790	headword_line	བཀའ་ལུང་	bka’	high	1	0	0	0	བཀའ་ལུང་ bka’ lun
+143	52	1790	headword_line	བཀའ་ལུང་	bka’	high	1	0	0	0	བཀའ་ལུང་ bka’ luṅ
 143	54	1790	german_prose_with_translit			none	3	8	0	0	ban de chen po dpal po yon tan „der am großen Rat beteiligte, in äußeren und inneren
 143	56	1790	german_prose_with_translit			none	1	3	0	0	[Angelegenheiten] mächtige, die Herrschaft
 143	57	1790	german_prose			none	0	2	0	0	innehabende große Ehrwürdige dPal-po
@@ -18952,7 +18952,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 143	73	1791	other			none	0	0	0	0	(PT1287 428).
 143	75	1791	german_prose_with_translit			none	3	5	0	0	Lex. (dr: lan lta bu’i Ze sa „resp. für 2. B. eine
 143	76	1791	german_prose			none	0	2	0	0	Frage beantworten“ (Dagy).
-143	78	1792	headword_line	བཀའ་ལུང་	ba’	high	1	0	0	0	བཀའ་ལུང་ ba’ lun.
+143	78	1792	headword_line	བཀའ་ལུང་	ba’	high	1	0	0	0	བཀའ་ལུང་ ba’ luṅ.
 143	80	1792	german_prose_with_translit			none	2	3	0	0	1. Anweisung, Weisung, Gebot, Befehl, Un-
 143	81	1792	latin_other			none	1	0	0	0	terweisung.
 143	83	1792	german_prose_with_translit			none	2	2	0	0	— daṅ ’dra bar „gemäß den Anweisungen
@@ -85215,7 +85215,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 593	186	7353	headword_line	གཅིག་མིན་	gcig	medium	1	0	0	0	གཅིག་མིན་ gcig min oft; viel.
 593	187	7353	german_prose			none	0	3	0	0	Lex. asakrt „mehr als einmal, oft“ (Ak
 593	188	7353	latin_other			none	2	0	0	0	365.19); man po „viel, zahlreich“ (brDa).
-593	190	7354	headword_line	གཅིག་ལས་འཕྲོས་པའི་ལུང་	gcig las phros pa’i	high	4	0	0	0	གཅིག་ལས་འཕྲོས་པའི་ལུང་ gcig las ’phros pa’i lun
+593	190	7354	headword_line	གཅིག་ལས་འཕྲོས་པའི་ལུང་	gcig las phros pa’i	high	4	0	0	0	གཅིག་ལས་འཕྲོས་པའི་ལུང་ gcig las ’phros pa’i luṅ
 593	191	7354	german_prose			none	0	4	0	0	Bez. für eine Gruppe
 593	193	7354	german_prose_with_translit			none	1	1	0	0	buddh. Texte.
 593	194	7354	german_prose			none	0	3	0	0	Lex. ekottarikägamah (Mvy 1421).
@@ -86643,7 +86643,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 602	111	7419	german_prose			none	0	1	0	0	werde zurückzahlen‘“ (dPe 38,18); bu lon
 602	112	7419	german_prose_with_translit			none	3	1	0	0	thams cad rgyal pos - ba’i (7. bas) „da der
 602	113	7419	german_prose			none	0	3	0	0	König alle Schulden bezahlte“ (Tär 203,5);
-602	115	7420	headword_line	བཅལ་ལུང་པ་	pa	medium	1	0	0	0	བཅལ་ལུང་པ་ beal lun pa
+602	115	7420	headword_line	བཅལ་ལུང་པ་	pa	medium	1	0	0	0	བཅལ་ལུང་པ་ beal luṅ pa
 602	117	7420	german_prose_with_translit			none	3	2	0	0	de nas bcags gsum - sa ru (metr.) „an der
 602	118	7420	german_prose			none	0	4	0	0	Stelle, die von dort drei Schritte gemessen
 602	119	7420	german_prose_with_translit			none	1	1	0	0	[legt]“ (Vdk 2: 385,5); chu mig nas ’dom
@@ -88443,7 +88443,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 613	73	7518	tibetan_only	ལྷྕགས་ལམ་		none	0	1	0	0	ལྷྕགས་ལམ་ lcags lam Eisenbahnlinie.
 613	75	7518	german_prose_with_translit			none	3	3	0	0	Lex. me ’khor gyi lam lta bu „wie: Weg für
 613	76	7518	german_prose			none	0	3	0	0	den Zug“ (Dagy).
-613	78	7519	headword_line	ལྷགས་ལུང་	Eisengriff	medium	1	0	0	0	ལྷགས་ལུང་ lcags lun Eisengriff.
+613	78	7519	headword_line	ལྷགས་ལུང་	Eisengriff	medium	1	0	0	0	ལྷགས་ལུང་ lcags luṅ Eisengriff.
 613	80	7519	german_prose_with_translit			none	3	1	0	0	Lex. lcags kyi bzun lun (brDa); lcags kyi lun
 613	81	7519	german_prose_with_translit			none	1	1	0	0	thag (Dagy).
 613	83	7519	tibetan_only	ལྕགས་ཁེབ་		none	0	1	0	0	ལྕགས་ཁེབ་ lcags leb Eisenblech.
@@ -96434,7 +96434,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 666	189	8070	latin_other			none	3	0	0	0	(KhB 4: 234,1); bgegs kyi dmag dpon ~ kha
 666	190	8070	german_prose_with_translit			none	1	4	0	0	tin Sag (metr.) „der große Kriegsherr der
 666	191	8070	german_prose_with_translit			none	1	2	0	0	bgegs-Dämonen Kha-tin-śag“ (Srid 114-5).
-666	193	8070	tibetan_only	ཆེན་ལུང་		none	0	3	0	0	ཆེན་ལུང་ chen lun der chinesische Kaiser 87 [£
+666	193	8070	tibetan_only	ཆེན་ལུང་		none	0	3	0	0	ཆེན་ལུང་ chen luṅ der chinesische Kaiser 87 [£
 666	195	8070	german_prose_with_translit			none	1	1	0	0	Ch’ien-lung (1711-1799, Regie-
 666	196	8070	latin_other			none	1	0	0	0	rungszeit 1735-1796).
 666	198	8070	german_prose_with_translit			none	3	1	0	0	Lex. gnam bskos - zer ba lta bu „wie: vom
@@ -98911,7 +98911,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 681	138	8238	german_prose			none	0	3	0	0	srun Schutz vor den Fehlern anderer bud-
 681	140	8238	german_prose_with_translit			none	1	1	0	0	dhistischer Schulen (SCHWIEGER 2009:
 681	141	8238	other			none	0	0	0	0	3€\711).
-681	143	8239	headword_line	ཆོས་ལུང་	chos	medium	1	2	0	0	ཆོས་ལུང་ chos lun npr. ein Ort.
+681	143	8239	headword_line	ཆོས་ལུང་	chos	medium	1	2	0	0	ཆོས་ལུང་ chos luṅ npr. ein Ort.
 681	145	8239	latin_other			none	5	0	0	0	> du sku gSegs pas ~ sku gśegs su grags „weil er
 681	146	8239	german_prose			none	0	5	0	0	in Chos-lun verstarb, ist er als Chos-lun
 681	147	8239	german_prose			none	0	1	0	0	sku-gsegs bekannt“ (Debm 2612).
@@ -104380,7 +104380,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 717	219	8610	german_prose			none	0	2	0	0	„108 Erdklumpen, Holzkohlestücke, jag-
 717	220	8610	german_prose_with_translit			none	2	1	0	0	ma|-Grashalme usw.]“ (MigTo 97,16).
 718	1	8610	tibetan_only	འཇག་ལུང་		none	0	0	0	0	འཇག་ལུང་ ¿9 lun
-718	3	8611	headword_line	འཇག་ལུང་	Schlinge	medium	1	0	0	0	འཇག་ལུང་ ag lun Schlinge.
+718	3	8611	headword_line	འཇག་ལུང་	Schlinge	medium	1	0	0	0	འཇག་ལུང་ ag luṅ Schlinge.
 718	5	8611	german_prose_with_translit			none	3	3	0	0	jras Zag pa de ~ bzos nas „ich knüpfte eine
 718	6	8611	german_prose_with_translit			none	1	4	0	0	Schlinge in den Strick“ (RunK 18,30).
 718	8	8611	tibetan_only	འཇགས་		none	0	1	0	0	འཇགས་ ”jags pf. 1’beags fur. །'9€765 anhaften,
@@ -129387,7 +129387,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 894	69	9848	german_prose_with_translit			none	2	1	0	0	Lex. gter nas byun ba’i gser diml sogs „aus
 894	70	9848	german_prose			none	0	3	0	0	Schätzen hervorgekommenes Gold, Silber
 894	71	9848	german_prose			none	0	1	0	0	usw.“ (Dagy).
-894	73	9848	tibetan_only	གཏེར་ལུང་		none	0	1	0	0	གཏེར་ལུང་ gter lun Schatztext.
+894	73	9848	tibetan_only	གཏེར་ལུང་		none	0	1	0	0	གཏེར་ལུང་ gter luṅ Schatztext.
 894	74	9848	other			none	0	0	0	0	a
 894	76	9848	latin_other			none	6	0	0	0	> dan thugs mkhyen 0/7/$ sbrags kyi sgo nas
 894	77	9848	german_prose_with_translit			none	1	4	0	0	„mit Hilfe der Verbindung der beiden,
@@ -136964,7 +136964,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 943	169	10336	german_prose_with_translit			none	1	1	0	0	gnan gzigs su grags „er sah auf dem sTag-
 943	170	10336	german_prose_with_translit			none	1	3	0	0	mo-ri in sKyid-śod ein Wildschaf stehen.
 943	171	10336	german_prose			none	0	2	0	0	Daher wurde er bekannt als sTag-rı gAan-
-943	173	10336	tibetan_only	སྟག་ལུང་		none	0	0	0	0	སྟག་ལུང་ stag lun
+943	173	10336	tibetan_only	སྟག་ལུང་		none	0	0	0	0	སྟག་ལུང་ stag luṅ
 943	175	10336	latin_other			none	2	0	0	0	gzigs“ (dPyGlu 23,12); zi lin zer ba’i roya
 943	176	10336	latin_other			none	4	0	0	0	mkhar yod pa de’i byan gi lun par ... = zer
 943	177	10336	german_prose_with_translit			none	2	4	0	0	ba’i ri yod pa „in dem Tal nördlich davon,
@@ -136984,7 +136984,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 943	196	10337	german_prose			none	0	3	0	0	Art Wermut (Artemisia); synon.
 943	197	10337	latin_other			none	2	0	0	0	mkhan pa (PASANG 1998: 85).
 943	199	10337	german_prose_with_translit			none	4	2	0	0	Lex. rtswa ’khan pa (brDa, Dagy).
-943	201	10337	tibetan_only	སྟག་ལུང་		none	0	0	0	0	སྟག་ལུང་ stag lun.
+943	201	10337	tibetan_only	སྟག་ལུང་		none	0	0	0	0	སྟག་ལུང་ stag luṅ.
 943	203	10337	other			none	0	0	0	0	137
 943	205	10337	german_prose			none	0	2	0	0	1. ein Klan.
 943	207	10337	german_prose_with_translit			none	2	1	0	0	bod kyi mi’u gdun drug... > ga zii gdum „die
@@ -138946,7 +138946,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 955	126	10441	other			none	0	0	0	0	(PASANG 1998: 87).
 955	128	10441	german_prose			none	0	1	0	0	Lex. ga dur.mi / li ga dur / = zer (9650
 955	129	10441	other			none	0	0	0	0	165,1).
-955	131	10441	tibetan_only	སྟོད་ལུང་		none	0	2	0	0	སྟོད་ལུང་ stod lun auch stod luns npr. cin Ort,
+955	131	10441	tibetan_only	སྟོད་ལུང་		none	0	2	0	0	སྟོད་ལུང་ stod luṅ auch stod luns npr. cin Ort,
 955	133	10441	german_prose_with_translit			none	1	3	0	0	Gegend nordwestlich von Lhasa.
 955	135	10441	latin_other			none	3	0	0	0	stod luns tsbun chad kyi skye ska g.yabs nas
 955	136	10441	german_prose			none	0	4	0	0	„es winkte die Elstern einschließlich der

@@ -40089,7 +40089,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 498	25	2521	german_prose_with_translit			none	1	1	0	0	"melssohn sBor-tha-che"" (Debm 1431)."
 498	26	2521	german_prose_with_translit			none	4	1	0	0	Lex. 'kbor bsgyur ram gon ma la'an (brDa,
 498	27	2521	german_prose			none	0	1	0	0	Dagy).
-498	28	2522	headword_line	གནམ་གྱི་བྱེ་མ་ལུང་པ་	gyi bye ma	medium	4	0	0	0	གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa
+498	28	2522	headword_line	གནམ་གྱི་བྱེ་མ་ལུང་པ་	gyi bye ma	medium	4	0	0	0	གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luṅ pa
 498	29	2522	german_prose			none	0	3	0	0	npr. ein Ort in sTod-lun.
 498	30	2522	german_prose_with_translit			none	2	1	0	0	"rgyalba'i 'byun gnas stodlun — ""der Geburts-"
 498	31	2522	german_prose			none	0	3	0	0	ort des Siegreichen war gNam-gyi bye-ma
@@ -59007,7 +59007,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 727	32	3623	german_prose			none	0	2	0	0	Mut, Tapferkeit.
 727	33	3623	german_prose_with_translit			none	6	1	0	0	"Lex. dpa' bo'i tshul du sems pa ""heldenhaftes"
 727	34	3623	german_prose			none	0	2	0	0	"Denken"" (Dagy)."
-727	35	3624	headword_line	དཔའ་ལུང་	dpa'	high	1	0	0	0	དཔའ་ལུང་ dpa' lun.
+727	35	3624	headword_line	དཔའ་ལུང་	dpa'	high	1	0	0	0	དཔའ་ལུང་ dpa' luṅ.
 727	36	3624	german_prose			none	0	1	0	0	1. Schwertgriff.
 727	37	3624	german_prose_with_translit			none	3	2	0	0	Lex. ral gri'i yu ba (brDa, Dagy).
 727	38	3625	headword_line	དཔལ་	dpal	medium	1	0	0	0	དཔལ་ dpal
