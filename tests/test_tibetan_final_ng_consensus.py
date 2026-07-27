@@ -336,6 +336,30 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
                     checked += 1
         self.assertGreater(checked, 100)
 
+    def test_one_anchor_pilot_freezes_only_authorized_exact_variants(self) -> None:
+        path = (
+            ROOT / "data"
+            / "final_ng_source_compatible_one_anchor_pilot_prepass_manifest_63a9742.tsv"
+        )
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        positional = [row for row in rows if row["candidate_status"] == "positional"]
+        self.assertEqual(len(positional), 19)
+        self.assertEqual(
+            {
+                (row["tibetan_syllable"], row["source_token"], row["target"])
+                for row in positional
+            },
+            {
+                ("ཀྲོང", "kron", "kroṅ"),
+                ("རྟིང", "rtin", "rtiṅ"),
+                ("བགྲང", "bgran", "bgraṅ"),
+            },
+        )
+        self.assertTrue(
+            all(row["anchor_provenance"] == "base_ocr_dotted" for row in rows)
+        )
+
     def test_source_compatible_frozen_scope_excludes_mixed_and_bad_anchors(
         self,
     ) -> None:
