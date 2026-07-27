@@ -6416,3 +6416,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 403	25	2083	tibetan_only	nah	naṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནང་རིམ་ nah rim Rundweg in einem Gebäude.
 24	46	83	headword_line	gdun	gduṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གདུང་བརྒྱུད་ gduṅ breynd auch gdun rgynd.
 30	68	117	headword_line	gden	gdeṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གདེང་ཚད་ gdeṅ tshad auch gden tsbod Zuver-
+105	33	715	headword_line	mdun	mduṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མདུང་རྩེ་ mduṅ rtse Kurzf. für mdun gi rtse,
