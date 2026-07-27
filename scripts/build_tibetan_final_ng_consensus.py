@@ -35,6 +35,14 @@ LITERAL_TIBETAN_FEATURES = {
     "ོ": "o",
     "ུ": "u",
 }
+LATIN_VOWEL_RE = re.compile(r"[aeiouāīūAEIOUĀĪŪ]")
+EXACT_TIBETAN_STEM_PREFIXES = {
+    # Conservative exclusion checks for observed alignments where the Latin
+    # token has an extra or missing consonantal feature.  This is deliberately
+    # not a general Tibetan transliterator.
+    "ཁང": "kha",
+    "སྤང": "spa",
+}
 GERMAN_STOP_WORDS = {
     "auch", "bez", "die", "der", "das", "ein", "eine", "einer", "für",
     "kurzf", "lex", "macht", "npr", "oder", "und", "vgl",
@@ -157,11 +165,29 @@ def source_compatible_identity_guard(
     missing = []
     if "ྙ" in syllable and "ny" not in target.lower():
         missing.append("ny")
+    required_prefix = EXACT_TIBETAN_STEM_PREFIXES.get(syllable)
+    if required_prefix and not target.lower().startswith(required_prefix):
+        missing.append(f"stem_{required_prefix}")
     missing.extend(
         latin
         for tibetan, latin in LITERAL_TIBETAN_FEATURES.items()
         if tibetan in syllable and latin not in target.lower()
     )
+    tibetan_vowel = next(
+        (
+            latin
+            for tibetan, latin in {
+                "ི": "i", "ུ": "u", "ེ": "e", "ོ": "o"
+            }.items()
+            if tibetan in syllable
+        ),
+        "a",
+    )
+    latin_vowels = LATIN_VOWEL_RE.findall(target)
+    if latin_vowels and latin_vowels[-1].lower().replace("ā", "a").replace(
+        "ī", "i"
+    ).replace("ū", "u") != tibetan_vowel:
+        missing.append(f"vowel_{tibetan_vowel}")
     if missing:
         return (
             "consonantal_structure_mismatch",
@@ -433,14 +459,30 @@ def format_counts(forms: Counter[str]) -> str:
 def build_source_compatible_rows(
     release_root: Path,
 ) -> list[dict[str, str]]:
-    """Reclassify existing residual rows using case-sensitive source anchors."""
-    _aligned, accepted = collect_aligned_rows(release_root)
+    """Classify every aligned undotted token independently of legacy targets."""
+    aligned, accepted = collect_aligned_rows(release_root)
     old_rows = build_consensus_rows(release_root)
+    old_by_key = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["source_latin_token"],
+        ): row
+        for row in old_rows
+    }
     compatible_rows: list[dict[str, str]] = []
-    for old in old_rows:
-        source = old["source_latin_token"]
+    for aligned_row in aligned:
+        source = aligned_row["latin_token"]
+        if not source or source[-1] not in SOURCE_FINALS:
+            continue
+        key = (
+            aligned_row["volume"], aligned_row["page"], aligned_row["line"],
+            aligned_row["token_index"], aligned_row["tibetan_syllable"], source,
+        )
+        old = old_by_key.get(key, {})
         signature = source_compatible_signature(source)
-        forms = accepted.get(old["tibetan_syllable"], Counter())
+        forms = accepted.get(aligned_row["tibetan_syllable"], Counter())
+        if not forms:
+            continue
         compatible = Counter(
             {
                 form: count
@@ -454,17 +496,30 @@ def build_source_compatible_rows(
         if compatible:
             target, target_count = compatible.most_common(1)[0]
         else:
-            target = old["proposed_latin_target"]
+            target = source[:-1] + "ṅ"
             target_count = 0
         competing = Counter(compatible)
         competing.pop(target, None)
         identity_status, identity_note = source_compatible_identity_guard(
-            old["tibetan_syllable"], target
+            aligned_row["tibetan_syllable"], target
         )
         exact_variant = source_compatible_pair(source, target)
-        old_category = old["alignment_category"]
+        old_category = old.get(
+            "alignment_category", "not_emitted_by_legacy_global_target"
+        )
+        damage_scope = classify_damage_scope(
+            aligned_row["context_excerpt"],
+            int(aligned_row["tibetan_end"]),
+            int(aligned_row["latin_phrase_start"]),
+            int(aligned_row["latin_phrase_end"]),
+        )
+        aligned_damage = damage_scope in {
+            "tibetan_headword_overlap",
+            "latin_headword_overlap",
+            "damage_before_latin_alignment",
+        }
         attached_marker = token_has_attached_marker(
-            old["context_excerpt"], int(old["token_index"])
+            aligned_row["context_excerpt"], int(aligned_row["token_index"])
         )
         if old_category == "marker_attached" or attached_marker:
             category = "source_compatible_marker_attached"
@@ -476,7 +531,7 @@ def build_source_compatible_rows(
             confidence = "manual"
             action = "syllable_specific_analysis"
             deferred = identity_note
-        elif old_category == "damaged_context":
+        elif aligned_damage:
             category = "source_compatible_damaged_context"
             confidence = "manual"
             action = "manual_alignment_review"
@@ -497,14 +552,14 @@ def build_source_compatible_rows(
             category = "source_compatible_dominant_consensus"
             confidence = "high"
             action = "exact_review_candidate"
-            deferred = ""
+            deferred = "none"
         compatible_rows.append(
             {
-                "volume": old["volume"],
-                "page": old["page"],
-                "line": old["line"],
-                "token_index": old["token_index"],
-                "tibetan_syllable": old["tibetan_syllable"],
+                "volume": aligned_row["volume"],
+                "page": aligned_row["page"],
+                "line": aligned_row["line"],
+                "token_index": aligned_row["token_index"],
+                "tibetan_syllable": aligned_row["tibetan_syllable"],
                 "source_latin_token": source,
                 "source_signature": signature or "",
                 "proposed_latin_target": target,
@@ -514,11 +569,11 @@ def build_source_compatible_rows(
                 "same_tibetan_dotted_evidence_total": str(sum(forms.values())),
                 "old_alignment_category": old_category,
                 "source_compatible_category": category,
-                "damage_scope": old["damage_scope"],
+                "damage_scope": damage_scope,
                 "syllable_identity_guard": identity_status,
                 "confidence": confidence,
                 "suggested_action": action,
-                "context_excerpt": old["context_excerpt"],
+                "context_excerpt": aligned_row["context_excerpt"].rstrip(),
                 "reason_for_deferral": deferred,
             }
         )
@@ -640,6 +695,88 @@ def build_source_compatible_reclassifications(
     ]
 
 
+def build_source_compatible_coverage_audit(
+    rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    categories = Counter(row["source_compatible_category"] for row in rows)
+    anchor_counts = Counter()
+    for row in rows:
+        count = int(row["compatible_accepted_target_count"])
+        anchor_counts["no_compatible_anchor" if count == 0 else
+                      "one_compatible_anchor" if count == 1 else
+                      "two_or_more_compatible_anchors"] += 1
+    metrics = {
+        "aligned_undotted_candidates_considered": len(rows),
+        **anchor_counts,
+        "identity_guard_excluded": categories[
+            "source_compatible_structure_mismatch"
+        ],
+        "damaged": categories["source_compatible_damaged_context"],
+        "marker_attached": categories["source_compatible_marker_attached"],
+        "dominant": categories["source_compatible_dominant_consensus"],
+        "insufficient": categories["source_compatible_insufficient_evidence"],
+        "competing": categories["source_compatible_competing_evidence"],
+        "accounted_category_total": sum(categories.values()),
+    }
+    if metrics["accounted_category_total"] != len(rows):
+        raise ValueError("Source-compatible coverage categories do not reconcile")
+    return [
+        {"metric": metric, "count": str(count)}
+        for metric, count in metrics.items()
+    ]
+
+
+def source_candidate_key(row: dict[str, str]) -> tuple[str, ...]:
+    return (
+        row["volume"], row["page"], row["line"], row["token_index"],
+        row["tibetan_syllable"], row["source_latin_token"],
+    )
+
+
+def build_source_compatible_coverage_comparison(
+    baseline: list[dict[str, str]],
+    current: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    before = {source_candidate_key(row): row for row in baseline}
+    after = {source_candidate_key(row): row for row in current}
+    comparison: list[dict[str, str]] = []
+    for key in sorted(set(before) | set(after)):
+        old = before.get(key)
+        new = after.get(key)
+        if old is None:
+            change = "newly_discovered"
+        elif new is None:
+            change = "disappeared"
+        elif old["proposed_latin_target"] != new["proposed_latin_target"]:
+            change = "target_changed"
+        elif old["source_compatible_category"] != new["source_compatible_category"]:
+            change = "category_changed"
+        else:
+            continue
+        exemplar = new or old
+        assert exemplar is not None
+        comparison.append(
+            {
+                "change_type": change,
+                "volume": exemplar["volume"],
+                "page": exemplar["page"],
+                "line": exemplar["line"],
+                "token_index": exemplar["token_index"],
+                "tibetan_syllable": exemplar["tibetan_syllable"],
+                "source_latin_token": exemplar["source_latin_token"],
+                "old_target": old["proposed_latin_target"] if old else "",
+                "new_target": new["proposed_latin_target"] if new else "",
+                "old_category": old["source_compatible_category"] if old else "",
+                "new_category": new["source_compatible_category"] if new else "",
+                "compatible_anchor_count": (
+                    new["compatible_accepted_target_count"] if new else ""
+                ),
+                "context_excerpt": exemplar["context_excerpt"],
+            }
+        )
+    return comparison
+
+
 def build_same_entry_echo_rows(
     release_root: Path,
     decisions_path: Path | None = None,
@@ -668,7 +805,6 @@ def build_same_entry_echo_rows(
         forms = accepted.get(row["tibetan_syllable"], Counter())
         if not forms:
             continue
-        target, _count = forms.most_common(1)[0]
         line = row["context_excerpt"]
         tibetan_syllables, _tail, _tail_start = tibetan_syllables_and_tail(line)
         aligned_index = int(row["token_index"])
@@ -677,15 +813,31 @@ def build_same_entry_echo_rows(
             if token_index <= aligned_index:
                 continue
             source = match.group(0)
-            if not source_variant_for_target(source, target):
+            compatible_targets = Counter(
+                {
+                    form: count
+                    for form, count in forms.items()
+                    if source_compatible_pair(source, form)
+                }
+            )
+            if not compatible_targets:
                 continue
+            target, _count = compatible_targets.most_common(1)[0]
+            compatible_target_competing = len(compatible_targets) > 1
             key = (row["volume"], row["page"], row["line"], token_index)
             if key in seen:
                 continue
             seen.add(key)
             aligned_match = matches[aligned_index - 1]
             between = line[aligned_match.end():match.start()]
-            if (
+            if compatible_target_competing:
+                category = "compatible_target_competing"
+                status = "manual_review"
+                reason = (
+                    "Multiple dotted targets compete within the exact "
+                    "case-sensitive source signature."
+                )
+            elif (
                 token_index <= len(tibetan_syllables)
                 and aligned_index <= len(tibetan_syllables)
                 and tibetan_syllables[aligned_index - 1] == row["tibetan_syllable"]
@@ -799,6 +951,13 @@ SOURCE_COMPATIBLE_RANKING_FIELDS = [
     "compatible_accepted_target_count", "compatible_competing_forms",
     "incompatible_dotted_forms_excluded", "damage_count", "volumes",
 ]
+COVERAGE_FIELDS = ["metric", "count"]
+COVERAGE_COMPARISON_FIELDS = [
+    "change_type", "volume", "page", "line", "token_index",
+    "tibetan_syllable", "source_latin_token", "old_target", "new_target",
+    "old_category", "new_category", "compatible_anchor_count",
+    "context_excerpt",
+]
 
 
 def main() -> None:
@@ -806,6 +965,21 @@ def main() -> None:
     parser.add_argument("--release-root", type=Path, default=Path("release/current"))
     parser.add_argument("--out-root", type=Path, required=True)
     args = parser.parse_args()
+    baseline_path = Path(
+        "data/final_ng_source_compatible_legacy_filtered_baseline_541f537.tsv"
+    )
+    if baseline_path.exists():
+        baseline_rows = read_tsv(baseline_path)
+    else:
+        baseline_rows = []
+        for path in sorted(
+            (args.release_root / "qa").glob(
+                "*/tibetan_cleanup_diagnostics/"
+                "tibetan_final_ng_source_compatible_candidates.tsv"
+            )
+        ):
+            baseline_rows.extend(read_tsv(path))
+        write_tsv(baseline_path, baseline_rows, SOURCE_COMPATIBLE_FIELDS)
     rows = build_consensus_rows(args.release_root)
     compatible_rows = build_source_compatible_rows(args.release_root)
     compatible_rankings = build_source_compatible_rankings(compatible_rows)
@@ -839,6 +1013,18 @@ def main() -> None:
             volume_out / "tibetan_final_ng_source_compatible_family_rankings.tsv",
             compatible_rankings,
             SOURCE_COMPATIBLE_RANKING_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_source_compatible_coverage.tsv",
+            build_source_compatible_coverage_audit(compatible_rows),
+            COVERAGE_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+            build_source_compatible_coverage_comparison(
+                baseline_rows, compatible_rows
+            ),
+            COVERAGE_COMPARISON_FIELDS,
         )
         write_tsv(
             volume_out / "tibetan_final_ng_source_compatible_reclassifications.tsv",

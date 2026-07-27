@@ -86,6 +86,91 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         )
         self.assertIn("groṅ:1", row["incompatible_dotted_form_counts"])
 
+    def test_source_compatible_guard_rejects_observed_bad_stems(self) -> None:
+        for syllable, target in (("ཁང", "kbaṅ"), ("སྤང", "spyaṅ")):
+            status, note = consensus.source_compatible_identity_guard(
+                syllable, target
+            )
+            self.assertEqual(status, "consonantal_structure_mismatch")
+            self.assertIn("stem_", note)
+
+    def test_source_compatible_discovery_is_independent_of_legacy_target(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            dotted = (
+                "1\t1\theadword_line\tབང་ fooṅ\n"
+                "1\t2\theadword_line\tབང་ fooṅ\n"
+                "1\t3\theadword_line\tབང་ fooṅ\n"
+                "1\t4\theadword_line\tབང་ fooṅ\n"
+                "1\t5\theadword_line\tབང་ fooṅ\n"
+                "1\t6\theadword_line\tབང་ baṅ\n"
+                "1\t7\theadword_line\tབང་ baṅ\n"
+                "1\t8\theadword_line\tབང་ ban\n"
+            )
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n" + dotted,
+                encoding="utf-8",
+            )
+            legacy = consensus.build_consensus_rows(release)
+            source_rows = consensus.build_source_compatible_rows(release)
+        self.assertFalse(any(row["source_latin_token"] == "ban" for row in legacy))
+        row = next(
+            row for row in source_rows if row["source_latin_token"] == "ban"
+        )
+        self.assertEqual(row["proposed_latin_target"], "baṅ")
+        self.assertEqual(row["compatible_accepted_target_count"], "2")
+        self.assertEqual(
+            row["old_alignment_category"],
+            "not_emitted_by_legacy_global_target",
+        )
+
+    def test_echo_discovery_uses_later_tokens_compatible_target(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tབང་ fooṅ\n"
+                "1\t2\theadword_line\tབང་ fooṅ\n"
+                "1\t3\theadword_line\tབང་ fooṅ\n"
+                "1\t4\theadword_line\tབང་ baṅ\n"
+                "1\t5\theadword_line\tབང་ baṅ\n"
+                "1\t6\theadword_line\tབང་ fooṅ auch ban\n",
+                encoding="utf-8",
+            )
+            echoes = consensus.build_same_entry_echo_rows(release)
+        row = next(row for row in echoes if row["additional_source_token"] == "ban")
+        self.assertEqual(row["proposed_target"], "baṅ")
+        self.assertEqual(row["echo_category"], "explicit_same_lemma_repetition")
+
+    def test_source_compatible_coverage_reconciles(self) -> None:
+        rows = [
+            {
+                "compatible_accepted_target_count": "2",
+                "source_compatible_category":
+                    "source_compatible_dominant_consensus",
+            },
+            {
+                "compatible_accepted_target_count": "1",
+                "source_compatible_category":
+                    "source_compatible_insufficient_evidence",
+            },
+            {
+                "compatible_accepted_target_count": "0",
+                "source_compatible_category":
+                    "source_compatible_structure_mismatch",
+            },
+        ]
+        audit = {
+            row["metric"]: row["count"]
+            for row in consensus.build_source_compatible_coverage_audit(rows)
+        }
+        self.assertEqual(audit["aligned_undotted_candidates_considered"], "3")
+        self.assertEqual(audit["accounted_category_total"], "3")
+
     def test_historical_frozen_manifests_use_exact_final_nasal_pairs(self) -> None:
         checked = 0
         for path in sorted((ROOT / "data").glob(
@@ -172,6 +257,10 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         )
         self.assertEqual(
             consensus.source_compatible_identity_guard("མེང", "miṅ")[0],
+            "consonantal_structure_mismatch",
+        )
+        self.assertEqual(
+            consensus.source_compatible_identity_guard("གདང", "gdoṅ")[0],
             "consonantal_structure_mismatch",
         )
 
