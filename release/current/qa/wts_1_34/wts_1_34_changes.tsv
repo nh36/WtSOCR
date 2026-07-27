@@ -28588,3 +28588,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 897	109	10033	headword_line	yon	yoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	གཏོང་ཡོང་ gtoṅ yon Einnahmen und Aus-
 1022	30	11412	headword_line	lhun	lhuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུར་ལྷུང་ thur lhun Bez. für Wasser.
 1303	22	13152	headword_line	lhun	lhuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhun ba ein Ort bei
+76	68	809	headword_line	sdan	sdaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀུན་ཏུ་ཞེ་སྡང་བ་ kun tu Ze sdan ba Haß.
+731	3	8865	tibetan_only	sdan	sdaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཇིགས་སྡང་ igs sdan auch ?//75 sdans jmdn.

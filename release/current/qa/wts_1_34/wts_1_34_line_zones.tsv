@@ -9068,7 +9068,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 76	63	807	german_prose			none	0	1	0	0	verzweifelt“ (VinUp 28,15).
 76	65	807	german_prose_with_translit			none	3	2	0	0	Lex. kun nas (v. 1. du) mi sum (7. Zum) = na
 76	66	807	german_prose			none	0	1	0	0	samliyate (Mvy 7273).
-76	68	808	headword_line	ཀུན་ཏུ་ཞེ་སྡང་བ་	tu	medium	2	2	0	0	ཀུན་ཏུ་ཞེ་སྡང་བ་ kun tu Ze sdan ba Haß.
+76	68	808	headword_line	ཀུན་ཏུ་ཞེ་སྡང་བ་	tu	medium	2	2	0	0	ཀུན་ཏུ་ཞེ་སྡང་བ་ kun tu Ze sdaṅ ba Haß.
 76	70	808	other			none	0	0	0	0	80
 76	72	808	latin_other			none	2	0	0	0	-r ’gyur gyi / — med par mi ’gyur ba... „[diese
 76	73	808	german_prose			none	0	3	0	0	Ansicht] wird zu Haß werden, sie wird nicht
@@ -106116,7 +106116,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 730	96	8722	german_prose			none	0	1	0	0	erregt“ (Dagy).
 730	98	8722	other			none	0	0	0	0	385
 731	1	8722	tibetan_only	འཇིགས་སྡང་		none	0	1	0	0	འཇིགས་སྡང་ Jigs sdarı
-731	3	8722	tibetan_only	འཇིགས་སྡང་		none	0	1	0	0	འཇིགས་སྡང་ igs sdan auch ?//75 sdans jmdn.
+731	3	8722	tibetan_only	འཇིགས་སྡང་		none	0	1	0	0	འཇིགས་སྡང་ igs sdaṅ auch ?//75 sdans jmdn.
 731	4	8722	other			none	0	0	0	0	erschrecken.
 731	5	8722	german_prose_with_translit			none	2	4	0	0	Lex. igs pa byin mkhan „einer, der Furcht
 731	6	8722	german_prose			none	0	1	0	0	erregt“ (Dagy).
