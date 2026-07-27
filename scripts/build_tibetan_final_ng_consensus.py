@@ -20,6 +20,7 @@ POSTPROCESS_TOKEN_RE = re.compile(
 TIBETAN_BLOCK_RE = re.compile(r"[\u0F00-\u0FFF][\u0F00-\u0FFF\s]*")
 TIBETAN_SYLLABLE_RE = re.compile(r"[\u0F40-\u0FBC]+")
 SOURCE_FINALS = "nñńňh"
+SOURCE_COMPATIBLE_FINALS = frozenset(SOURCE_FINALS + "ṅ")
 VISIBLE_DAMAGE_RE = re.compile(r"[{}?¡£$%]|\d{2,}|SQ")
 SUBJOINED_CONSONANTS = {
     "ྲ": "r",
@@ -92,6 +93,26 @@ def nasal_skeleton(token: str) -> str:
     if lower[-1:] in set(SOURCE_FINALS + "ṅ"):
         return lower[:-1] + "n"
     return lower
+
+
+def source_compatible_signature(token: str) -> str | None:
+    """Preserve the complete token except for a permitted final-nasal glyph."""
+    if not token or token[-1] not in SOURCE_COMPATIBLE_FINALS:
+        return None
+    return token[:-1] + "<FINAL_NASAL>"
+
+
+def source_compatible_pair(source: str, target: str) -> bool:
+    """Return true only when source and target differ at the final nasal."""
+    source_signature = source_compatible_signature(source)
+    target_signature = source_compatible_signature(target)
+    return (
+        source != target
+        and source_signature is not None
+        and source_signature == target_signature
+        and source[-1] in SOURCE_FINALS
+        and target.endswith("ṅ")
+    )
 
 
 def source_variant_for_target(source: str, target: str) -> bool:
@@ -358,6 +379,219 @@ def build_family_rankings(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     )
 
 
+def format_counts(forms: Counter[str]) -> str:
+    return "; ".join(
+        f"{form}:{count}" for form, count in forms.most_common()
+    )
+
+
+def build_source_compatible_rows(
+    release_root: Path,
+) -> list[dict[str, str]]:
+    """Reclassify existing residual rows using case-sensitive source anchors."""
+    _aligned, accepted = collect_aligned_rows(release_root)
+    old_rows = build_consensus_rows(release_root)
+    compatible_rows: list[dict[str, str]] = []
+    for old in old_rows:
+        source = old["source_latin_token"]
+        signature = source_compatible_signature(source)
+        forms = accepted.get(old["tibetan_syllable"], Counter())
+        compatible = Counter(
+            {
+                form: count
+                for form, count in forms.items()
+                if source_compatible_signature(form) == signature
+            }
+        )
+        incompatible = Counter(forms)
+        for form in compatible:
+            incompatible.pop(form, None)
+        if compatible:
+            target, target_count = compatible.most_common(1)[0]
+        else:
+            target = old["proposed_latin_target"]
+            target_count = 0
+        competing = Counter(compatible)
+        competing.pop(target, None)
+        identity_status, identity_note = syllable_identity_guard(
+            old["tibetan_syllable"], target
+        )
+        exact_variant = source_compatible_pair(source, target)
+        old_category = old["alignment_category"]
+        if old_category == "marker_attached":
+            category = "source_compatible_marker_attached"
+            confidence = "manual"
+            action = "separate_marker_and_final_ng_review"
+            deferred = "Reference-marker reconstruction requires independent evidence."
+        elif identity_status == "consonantal_structure_mismatch":
+            category = "source_compatible_structure_mismatch"
+            confidence = "manual"
+            action = "syllable_specific_analysis"
+            deferred = identity_note
+        elif old_category == "damaged_context":
+            category = "source_compatible_damaged_context"
+            confidence = "manual"
+            action = "manual_alignment_review"
+            deferred = "OCR damage overlaps or precedes the aligned headword phrase."
+        elif not exact_variant or target_count < 2:
+            category = "source_compatible_insufficient_evidence"
+            confidence = "low"
+            action = "defer"
+            deferred = (
+                "Fewer than two case-sensitive compatible dotted anchors are available."
+            )
+        elif competing:
+            category = "source_compatible_competing_evidence"
+            confidence = "low"
+            action = "defer"
+            deferred = "More than one dotted target competes within the exact source signature."
+        else:
+            category = "source_compatible_dominant_consensus"
+            confidence = "high"
+            action = "exact_review_candidate"
+            deferred = ""
+        compatible_rows.append(
+            {
+                "volume": old["volume"],
+                "page": old["page"],
+                "line": old["line"],
+                "token_index": old["token_index"],
+                "tibetan_syllable": old["tibetan_syllable"],
+                "source_latin_token": source,
+                "source_signature": signature or "",
+                "proposed_latin_target": target,
+                "compatible_accepted_target_count": str(target_count),
+                "compatible_competing_form_counts": format_counts(competing),
+                "incompatible_dotted_form_counts": format_counts(incompatible),
+                "same_tibetan_dotted_evidence_total": str(sum(forms.values())),
+                "old_alignment_category": old_category,
+                "source_compatible_category": category,
+                "damage_scope": old["damage_scope"],
+                "syllable_identity_guard": identity_status,
+                "confidence": confidence,
+                "suggested_action": action,
+                "context_excerpt": old["context_excerpt"],
+                "reason_for_deferral": deferred,
+            }
+        )
+    return sorted(
+        compatible_rows,
+        key=lambda row: (
+            row["proposed_latin_target"],
+            row["volume"],
+            int(row["page"]),
+            int(row["line"]),
+            int(row["token_index"]),
+        ),
+    )
+
+
+def build_source_compatible_rankings(
+    rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    grouped: dict[tuple[str, str, str, str], list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        grouped[
+            (
+                row["tibetan_syllable"],
+                row["source_latin_token"],
+                row["source_signature"],
+                row["proposed_latin_target"],
+            )
+        ].append(row)
+    rankings: list[dict[str, str]] = []
+    for (syllable, source, signature, target), family_rows in grouped.items():
+        categories = Counter(
+            row["source_compatible_category"] for row in family_rows
+        )
+        rankings.append(
+            {
+                "tibetan_syllable": syllable,
+                "source_variant": source,
+                "source_signature": signature,
+                "proposed_target": target,
+                "candidate_count": str(len(family_rows)),
+                "old_categories": format_counts(
+                    Counter(row["old_alignment_category"] for row in family_rows)
+                ),
+                "new_categories": format_counts(categories),
+                "compatible_accepted_target_count": max(
+                    (
+                        row["compatible_accepted_target_count"]
+                        for row in family_rows
+                    ),
+                    key=int,
+                ),
+                "compatible_competing_forms": next(
+                    (
+                        row["compatible_competing_form_counts"]
+                        for row in family_rows
+                        if row["compatible_competing_form_counts"]
+                    ),
+                    "",
+                ),
+                "incompatible_dotted_forms_excluded": next(
+                    (
+                        row["incompatible_dotted_form_counts"]
+                        for row in family_rows
+                        if row["incompatible_dotted_form_counts"]
+                    ),
+                    "",
+                ),
+                "damage_count": str(
+                    categories["source_compatible_damaged_context"]
+                ),
+                "volumes": ";".join(
+                    sorted({row["volume"] for row in family_rows})
+                ),
+            }
+        )
+    return sorted(
+        rankings,
+        key=lambda row: (
+            -int(row["compatible_accepted_target_count"]),
+            -int(row["candidate_count"]),
+            row["tibetan_syllable"],
+            row["source_variant"],
+        ),
+    )
+
+
+def build_source_compatible_reclassifications(
+    rankings: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    equivalent = {
+        "dominant_internal_consensus": "source_compatible_dominant_consensus",
+        "insufficient_consensus": "source_compatible_insufficient_evidence",
+        "competing_latin_forms": "source_compatible_competing_evidence",
+        "damaged_context": "source_compatible_damaged_context",
+        "syllable_structure_mismatch": "source_compatible_structure_mismatch",
+        "marker_attached": "source_compatible_marker_attached",
+    }
+    def changed(row: dict[str, str]) -> bool:
+        old = Counter(
+            dict(
+                item.rsplit(":", 1)
+                for item in row["old_categories"].split("; ")
+                if item
+            )
+        )
+        new = Counter(
+            dict(
+                item.rsplit(":", 1)
+                for item in row["new_categories"].split("; ")
+                if item
+            )
+        )
+        mapped = Counter({equivalent.get(key, key): value for key, value in old.items()})
+        return mapped != new
+    return [
+        row
+        for row in rankings
+        if changed(row)
+    ]
+
+
 def build_same_entry_echo_rows(
     release_root: Path,
     decisions_path: Path | None = None,
@@ -495,6 +729,21 @@ ECHO_FIELDS = [
     "echo_category", "evidence", "review_status", "reason", "prior_decision",
     "decision_rationale", "active_queue", "context_excerpt",
 ]
+SOURCE_COMPATIBLE_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "source_latin_token", "source_signature", "proposed_latin_target",
+    "compatible_accepted_target_count", "compatible_competing_form_counts",
+    "incompatible_dotted_form_counts", "same_tibetan_dotted_evidence_total",
+    "old_alignment_category", "source_compatible_category", "damage_scope",
+    "syllable_identity_guard", "confidence", "suggested_action",
+    "context_excerpt", "reason_for_deferral",
+]
+SOURCE_COMPATIBLE_RANKING_FIELDS = [
+    "tibetan_syllable", "source_variant", "source_signature",
+    "proposed_target", "candidate_count", "old_categories", "new_categories",
+    "compatible_accepted_target_count", "compatible_competing_forms",
+    "incompatible_dotted_forms_excluded", "damage_count", "volumes",
+]
 
 
 def main() -> None:
@@ -503,6 +752,8 @@ def main() -> None:
     parser.add_argument("--out-root", type=Path, required=True)
     args = parser.parse_args()
     rows = build_consensus_rows(args.release_root)
+    compatible_rows = build_source_compatible_rows(args.release_root)
+    compatible_rankings = build_source_compatible_rankings(compatible_rows)
     echo_rows = build_same_entry_echo_rows(args.release_root)
     by_volume: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in rows:
@@ -523,6 +774,21 @@ def main() -> None:
             volume_out / "tibetan_final_ng_same_entry_echo_candidates.tsv",
             [row for row in echo_rows if row["volume"] == volume],
             ECHO_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_source_compatible_candidates.tsv",
+            [row for row in compatible_rows if row["volume"] == volume],
+            SOURCE_COMPATIBLE_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_source_compatible_family_rankings.tsv",
+            compatible_rankings,
+            SOURCE_COMPATIBLE_RANKING_FIELDS,
+        )
+        write_tsv(
+            volume_out / "tibetan_final_ng_source_compatible_reclassifications.tsv",
+            build_source_compatible_reclassifications(compatible_rankings),
+            SOURCE_COMPATIBLE_RANKING_FIELDS,
         )
     counts = Counter(row["alignment_category"] for row in rows)
     print(f"candidates={len(rows)}")

@@ -1,0 +1,68 @@
+tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count	old_categories	new_categories	compatible_accepted_target_count	compatible_competing_forms	incompatible_dotted_forms_excluded	damage_count	volumes
+ཤིང	sin	si<FINAL_NASAL>	siṅ	36	competing_latin_forms:36	source_compatible_dominant_consensus:36	30		Siṅ:17; ciṅ:1	0	wts_1_34;wts_8_b
+ཤིང	sih	si<FINAL_NASAL>	siṅ	2	competing_latin_forms:2	source_compatible_dominant_consensus:2	30		Siṅ:17; ciṅ:1	0	wts_35_51;wts_8_b
+ཤིང	Sin	Si<FINAL_NASAL>	Siṅ	20	competing_latin_forms:20	source_compatible_dominant_consensus:20	17		siṅ:30; ciṅ:1	0	wts_1_34;wts_35_51
+ལུང	lun	lu<FINAL_NASAL>	luṅ	14	competing_latin_forms:14	source_compatible_dominant_consensus:14	12		laṅ:3; haṅ:2; Tuṅ:1; beṅ:1	0	wts_1_34;wts_35_51
+བང	ban	ba<FINAL_NASAL>	baṅ	2	competing_latin_forms:2	source_compatible_dominant_consensus:2	12		dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1	0	wts_1_34
+ལུང	luh	lu<FINAL_NASAL>	luṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	12		laṅ:3; haṅ:2; Tuṅ:1; beṅ:1	0	wts_35_51
+གདང	gdan	gda<FINAL_NASAL>	gdaṅ	2	competing_latin_forms:2	source_compatible_dominant_consensus:2	9		ggdaṅ:2; gdoṅ:2	0	wts_1_34
+ཕང	phan	pha<FINAL_NASAL>	phaṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	6		pbaṅ:1; pphaṅ:1; phyuṅ:1	0	wts_1_34
+བུང	bun	bu<FINAL_NASAL>	buṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	5		burṅ:1; zuṅ:1	0	wts_1_34
+ཕྱུང	phyun	phyu<FINAL_NASAL>	phyuṅ	3	competing_latin_forms:3	source_compatible_dominant_consensus:3	4		pyuṅ:1; phbyuṅ:1	0	wts_1_34
+འཕོང	phon	pho<FINAL_NASAL>	phoṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	4		skyeṅ:1; pboṅ:1	0	wts_1_34
+ཀློང	klon	klo<FINAL_NASAL>	kloṅ	20	competing_latin_forms:19; damaged_context:1	source_compatible_dominant_consensus:19; source_compatible_damaged_context:1	3		groṅ:2	1	wts_1_34
+སྙིང	sin	si<FINAL_NASAL>	siṅ	13	competing_latin_forms:13	source_compatible_dominant_consensus:13	3		sāiṅ:1; sñiṅ:1; stiṅ:1	0	wts_1_34
+སང	san	sa<FINAL_NASAL>	saṅ	6	competing_latin_forms:6	source_compatible_dominant_consensus:6	3		siṅ:1; sdaṅ:1	0	wts_1_34
+ཀྱང	kyan	kya<FINAL_NASAL>	kyaṅ	4	competing_latin_forms:4	source_compatible_dominant_consensus:4	3		gyaṅ:1; byaṅ:1	0	wts_1_34
+འཕྲང	phran	phra<FINAL_NASAL>	phraṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	3		phaṅ:2; plraṅ:1; siṅ:1	0	wts_35_51
+རོང	ron	ro<FINAL_NASAL>	roṅ	4	competing_latin_forms:4	source_compatible_dominant_consensus:4	2		doṅ:1	0	wts_1_34
+སྟང	stan	sta<FINAL_NASAL>	staṅ	2	competing_latin_forms:2	source_compatible_dominant_consensus:2	2		stoṅ:1; snaṅ:1	0	wts_1_34
+མེང	min	mi<FINAL_NASAL>	miṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	2		maṅ:1	0	wts_1_34
+ཚོང	tshon	tsho<FINAL_NASAL>	tshoṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	2		ishoṅ:1	0	wts_8_b
+རྱོང	myon	myo<FINAL_NASAL>	myoṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	2		mmyoṅ:1	0	wts_1_34
+སྲོང	spoh	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_structure_mismatch:1	2		sroṅ:1	0	wts_1_34
+སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_structure_mismatch:1	2		sroṅ:1	0	wts_1_34
+ཁོང	khon	kho<FINAL_NASAL>	khoṅ	28	competing_latin_forms:27; damaged_context:1	source_compatible_insufficient_evidence:27; source_compatible_damaged_context:1	1		kboṅ:1	1	wts_1_34
+ཀང	kan	ka<FINAL_NASAL>	kaṅ	21	insufficient_consensus:20; damaged_context:1	source_compatible_insufficient_evidence:20; source_compatible_damaged_context:1	1			1	wts_1_34
+ཏིང	tin	ti<FINAL_NASAL>	tiṅ	16	competing_latin_forms:16	source_compatible_insufficient_evidence:16	1		dziṅ:1	0	wts_1_34;wts_8_b
+སློང	slon	slo<FINAL_NASAL>	sloṅ	15	competing_latin_forms:15	source_compatible_insufficient_evidence:15	1		slonṅ:1	0	wts_1_34
+ཅང	can	ca<FINAL_NASAL>	caṅ	13	insufficient_consensus:11; damaged_context:2	source_compatible_insufficient_evidence:11; source_compatible_damaged_context:2	1			2	wts_1_34
+གླེང	glen	gle<FINAL_NASAL>	gleṅ	12	competing_latin_forms:11; damaged_context:1	source_compatible_insufficient_evidence:11; source_compatible_damaged_context:1	1		gliṅ:1	1	wts_1_34
+གློང	gron	gro<FINAL_NASAL>	groṅ	11	syllable_structure_mismatch:11	source_compatible_structure_mismatch:11	1			0	wts_1_34
+གཏང	gtan	gta<FINAL_NASAL>	gtaṅ	10	insufficient_consensus:9; damaged_context:1	source_compatible_insufficient_evidence:9; source_compatible_damaged_context:1	1			1	wts_1_34
+དགུང	dgun	dgu<FINAL_NASAL>	dguṅ	10	insufficient_consensus:9; damaged_context:1	source_compatible_insufficient_evidence:9; source_compatible_damaged_context:1	1			1	wts_1_34;wts_35_51
+གྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	8	insufficient_consensus:8	source_compatible_insufficient_evidence:8	1			0	wts_1_34
+བགྲང	bgran	bgra<FINAL_NASAL>	bgraṅ	8	insufficient_consensus:8	source_compatible_insufficient_evidence:8	1			0	wts_1_34
+ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	7	insufficient_consensus:7	source_compatible_insufficient_evidence:7	1			0	wts_1_34
+འཆེང	chin	chi<FINAL_NASAL>	chiṅ	7	insufficient_consensus:7	source_compatible_insufficient_evidence:7	1			0	wts_1_34
+རྟིང	rtin	rti<FINAL_NASAL>	rtiṅ	7	insufficient_consensus:7	source_compatible_insufficient_evidence:7	1			0	wts_1_34
+རུང	run	ru<FINAL_NASAL>	ruṅ	6	insufficient_consensus:6	source_compatible_insufficient_evidence:6	1			0	wts_1_34
+ཀྲོང	kron	kro<FINAL_NASAL>	kroṅ	4	insufficient_consensus:4	source_compatible_insufficient_evidence:4	1			0	wts_1_34
+ཞེང	Zen	Ze<FINAL_NASAL>	Zeṅ	4	competing_latin_forms:4	source_compatible_insufficient_evidence:4	1		zeṅ:1; Ziṅ:1; ziṅ:1	0	wts_1_34
+གཡང	g.yan	g.ya<FINAL_NASAL>	g.yaṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_35_51;wts_9_m
+བློང	blon	blo<FINAL_NASAL>	bloṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_8_b
+མཇིང	mjin	mji<FINAL_NASAL>	mjiṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_1_34
+མདོང	mdon	mdo<FINAL_NASAL>	mdoṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_1_34
+ཞང	Zan	Za<FINAL_NASAL>	Zaṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_1_34
+འདིང	din	di<FINAL_NASAL>	diṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_1_34
+འཕྱོང	phyon	phyo<FINAL_NASAL>	phyoṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_35_51
+འཚང	tshan	tsha<FINAL_NASAL>	tshaṅ	2	competing_latin_forms:2	source_compatible_insufficient_evidence:2	1		shaṅ:1	0	wts_1_34
+ཤང	San	Sa<FINAL_NASAL>	Saṅ	2	competing_latin_forms:2	source_compatible_insufficient_evidence:2	1		siṅ:1	0	wts_1_34
+སྲང	srun	sru<FINAL_NASAL>	sruṅ	2	competing_latin_forms:2	source_compatible_insufficient_evidence:2	1		ssdaṅ:1; seruṅ:1; sriṅ:1	0	wts_1_34
+ཧང	han	ha<FINAL_NASAL>	haṅ	2	insufficient_consensus:2	source_compatible_insufficient_evidence:2	1			0	wts_1_34
+གཅུང	gcun	gcu<FINAL_NASAL>	gcuṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+ཐྲང	than	tha<FINAL_NASAL>	thaṅ	1	syllable_structure_mismatch:1	source_compatible_structure_mismatch:1	1			0	wts_1_34
+ནིང	nin	ni<FINAL_NASAL>	niṅ	1	competing_latin_forms:1	source_compatible_insufficient_evidence:1	1		miṅ:1	0	wts_1_34
+པྲང	bran	bra<FINAL_NASAL>	braṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+བབཟུང	bzun	bzu<FINAL_NASAL>	bzuṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+བསྐྱེང	bskyen	bskye<FINAL_NASAL>	bskyeṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+མཐང	mthon	mtho<FINAL_NASAL>	mthoṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+མྐྱོང	myon	myo<FINAL_NASAL>	myoṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+འགང	gon	go<FINAL_NASAL>	goṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+རྐྱོང	rkyon	rkyo<FINAL_NASAL>	rkyoṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+སིང	sin	si<FINAL_NASAL>	siṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+སྡིང	sdih	sdi<FINAL_NASAL>	sdiṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_35_51
+སྡེང	sden	sde<FINAL_NASAL>	sdeṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	1			0	wts_1_34
+ཁོང	Khon	Kho<FINAL_NASAL>	khoṅ	1	competing_latin_forms:1	source_compatible_insufficient_evidence:1	0		khoṅ:1; kboṅ:1	0	wts_1_34
+གཞུང	gzun	gzu<FINAL_NASAL>	gZuṅ	1	insufficient_consensus:1	source_compatible_insufficient_evidence:1	0		gZuṅ:1	0	wts_1_34
+ལྗང	Dan	Da<FINAL_NASAL>	daṅ	1	competing_latin_forms:1	source_compatible_insufficient_evidence:1	0		daṅ:1; ldaṅ:1; laṅ:1	0	wts_1_34

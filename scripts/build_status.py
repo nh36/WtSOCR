@@ -240,6 +240,10 @@ def read_release_stats() -> ReleaseStats:
             "final_ng_consensus_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_final_ng_consensus_candidates.tsv"
             ),
+            "final_ng_source_compatible_candidates": tsv_row_count(
+                diagnostic_dir
+                / "tibetan_final_ng_source_compatible_candidates.tsv"
+            ),
             "final_ng_same_entry_echo_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_final_ng_same_entry_echo_candidates.tsv"
             ),
@@ -533,6 +537,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             total(stats, "final_ng_same_entry_echo_candidates"),
             "automatic echo promotion;historical or dialect variants;marker-attached forms;damaged references",
             "Same-entry echoes are diagnostic only; entry structure must independently establish that each later token repeats the aligned Tibetan lemma.",
+        ),
+        row(
+            "final_ng_source_compatible_diagnostic",
+            "final_ng",
+            "case-sensitive source-compatible final-nasal variants",
+            "at least two exact-signature dotted anchors for the same Tibetan syllable",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_source_compatible_candidates.tsv",
+            0,
+            total(stats, "final_ng_source_compatible_candidates"),
+            "edit distance;case folding;different Latin stems;Latin-only replacement",
+            "Parallel diagnostic preserves the complete case-sensitive source stem and changes only the final nasal glyph; exact-row review remains mandatory.",
         ),
         row(
             "reference_marker_diagnostics",
@@ -1176,6 +1196,14 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "diagnostic only",
             "Review explicit repetitions and alternate forms individually; never infer identity from spelling alone.",
             f'{per_volume_count_text(stats, "final_ng_same_entry_echo_candidates")}; no automatic corrections.',
+        ],
+        [
+            "Source-compatible final-ng diagnostics",
+            total(stats, "final_ng_source_compatible_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_source_compatible_candidates.tsv",
+            "diagnostic only",
+            "Compare only case-sensitive dotted anchors with the identical pre-final Latin structure.",
+            f'{per_volume_count_text(stats, "final_ng_source_compatible_candidates")}; parallel to the unchanged legacy consensus diagnostic.',
         ],
         [
             "Reference-marker OCR diagnostics",

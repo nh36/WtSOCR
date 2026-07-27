@@ -1,4 +1,5 @@
 import importlib.util
+import csv
 import sys
 import unittest
 from pathlib import Path
@@ -15,6 +16,84 @@ SPEC.loader.exec_module(consensus)
 
 
 class TibetanFinalNgConsensusTests(unittest.TestCase):
+    def test_source_compatible_signature_is_case_sensitive_and_exact(self) -> None:
+        self.assertEqual(
+            consensus.source_compatible_signature("ban"),
+            "ba<FINAL_NASAL>",
+        )
+        self.assertTrue(consensus.source_compatible_pair("ban", "baṅ"))
+        self.assertTrue(consensus.source_compatible_pair("bah", "baṅ"))
+        self.assertTrue(consensus.source_compatible_pair("Sin", "Siṅ"))
+        self.assertFalse(consensus.source_compatible_pair("Sin", "siṅ"))
+        self.assertFalse(consensus.source_compatible_pair("ban", "dbaṅ"))
+        self.assertFalse(consensus.source_compatible_pair("ban", "buṅ"))
+        self.assertFalse(consensus.source_compatible_pair("klon", "groṅ"))
+        self.assertFalse(consensus.source_compatible_pair("khon", "kboṅ"))
+
+    def test_source_compatible_consensus_excludes_different_stems(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tབང་ baṅ\n"
+                "1\t2\theadword_line\tབང་ baṅ\n"
+                "1\t3\theadword_line\tབང་ dbaṅ\n"
+                "1\t4\theadword_line\tབང་ buṅ\n"
+                "1\t5\theadword_line\tབང་ ban\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_source_compatible_rows(release)
+        row = next(item for item in rows if item["source_latin_token"] == "ban")
+        self.assertEqual(row["proposed_latin_target"], "baṅ")
+        self.assertEqual(row["compatible_accepted_target_count"], "2")
+        self.assertEqual(
+            row["source_compatible_category"],
+            "source_compatible_dominant_consensus",
+        )
+        self.assertIn("dbaṅ:1", row["incompatible_dotted_form_counts"])
+        self.assertIn("buṅ:1", row["incompatible_dotted_form_counts"])
+
+    def test_source_compatible_klong_does_not_compete_with_grong(self) -> None:
+        with TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tཀློང་ kloṅ\n"
+                "1\t2\theadword_line\tཀློང་ kloṅ\n"
+                "1\t3\theadword_line\tཀློང་ groṅ\n"
+                "1\t4\theadword_line\tཀློང་ klon\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_source_compatible_rows(release)
+        row = next(item for item in rows if item["source_latin_token"] == "klon")
+        self.assertEqual(
+            row["source_compatible_category"],
+            "source_compatible_dominant_consensus",
+        )
+        self.assertIn("groṅ:1", row["incompatible_dotted_form_counts"])
+
+    def test_historical_frozen_manifests_use_exact_final_nasal_pairs(self) -> None:
+        checked = 0
+        for path in sorted((ROOT / "data").glob(
+            "final_ng_exact_candidate_prepass_manifest_*.tsv"
+        )):
+            with path.open(encoding="utf-8", newline="") as handle:
+                for row in csv.DictReader(handle, delimiter="\t"):
+                    if row["candidate_status"] != "positional":
+                        continue
+                    self.assertTrue(
+                        consensus.source_compatible_pair(
+                            row["source_token"], row["target"]
+                        ),
+                        (path.name, row),
+                    )
+                    checked += 1
+        self.assertGreater(checked, 100)
+
     def test_final_nasal_skeleton_is_narrow(self) -> None:
         self.assertTrue(consensus.source_variant_for_target("dban", "dbaṅ"))
         self.assertTrue(consensus.source_variant_for_target("chuñ", "chuṅ"))
