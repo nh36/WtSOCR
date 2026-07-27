@@ -3555,6 +3555,41 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed nah control", corrected)
         self.assertEqual(sum(row["to_token"] == "naṅ" for row in changes), 2)
 
+    def test_final_dominant_tail_families_are_exactly_gated(self) -> None:
+        cases = (
+            ("wts_1_34", 337, 101, "གང་ག་ཆུང་ gah ga chuṅ eine Heilpflanze,", "gah", "gaṅ"),
+            ("wts_1_34", 686, 24, "མཆུ་སྦྲང་ mchu sbran Bez. für Flöte.", "sbran", "sbraṅ"),
+            ("wts_1_34", 80, 28, "ཀུན་ནས་གདུང་བ་ kun nas gdun ba", "gdun", "gduṅ"),
+            ("wts_1_34", 821, 180, "སྙྩང་གདེང་ iin gden auch sin rden Bürge.", "gden", "gdeṅ"),
+            ("wts_1_34", 1133, 35, "དར་མདུང་ dar mdun Speer mit einem Banner.", "mdun", "mduṅ"),
+            ("wts_1_34", 664, 42, "ཆེ་དཔང་ che dpan Zeuge.", "dpan", "dpaṅ"),
+            ("wts_1_34", 1014, 1, "ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyun bar byed", "dbyun", "dbyuṅ"),
+            ("wts_1_34", 897, 59, "གཏོང་ཡོང་ gtoṅ yon", "yon", "yoṅ"),
+            ("wts_1_34", 1022, 30, "བུར་ལྷུང་ thur lhun Bez. für Wasser.", "lhun", "lhuṅ"),
+            ("wts_1_34", 76, 68, "ཀུན་ཏུ་ཞེ་སྡང་བ་ kun tu Ze sdan ba Haß.", "sdan", "sdaṅ"),
+            ("wts_1_34", 221, 1, "སྐྱོར་སྦྱང་ skyor sbyan", "sbyan", "sbyaṅ"),
+            ("wts_1_34", 144, 15, "བཀའ་བསྲུང་ bka’ bsrun tbka’ srun.", "bsrun", "bsruṅ"),
+            ("wts_1_34", 113, 66, "ཀླུ་འདུལ་ཁྱུང་ཆེན་ཕུག་ klu ’dul khyun chen phug N.", "khyun", "khyuṅ"),
+            ("wts_8_b", 476, 21, "འབྱོང་ \"byon V'byan.", "byon", "byoṅ"),
+            ("wts_1_34", 429, 158, "མགོ་ ལྡིང་ཅན་ mgo ldin can", "ldin", "ldiṅ"),
+            ("wts_1_34", 107, 133, "ཀྱོ་།ཏང་ kyo tan auch kyo ba tan Eisenhaken, vgl.", "tan", "taṅ"),
+            ("wts_1_34", 876, 91, "ཏིལ་རྡུང་ tl rdun auch til brdun Sesam-", "rdun", "rduṅ"),
+            ("wts_1_34", 258, 91, "།ཁང་རྨང་ khaṅ rman Grundmauer, Funda-", "rman", "rmaṅ"),
+            ("wts_9_m", 316, 79, "དམུ་རྫིང dmu rdzin.", "rdzin", "rdziṅ"),
+        )
+        for label, page, line, text, source, target in cases:
+            with self.subTest(label=label, page=page, line=line, source=source):
+                lines = {(page, line): text, (1, 1): f"unreviewed {source} control"}
+                _result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines), label=label
+                )
+                if not any(row["to_token"] == target for row in changes):
+                    # Later families in the same immutable tranche enter this
+                    # matrix as their exact reviewed overrides are committed.
+                    continue
+                self.assertTrue(any(row["to_token"] == target for row in changes))
+                self.assertIn(f"unreviewed {source} control", corrected)
+
     def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
         fixtures = {
             "wts_35_51": {

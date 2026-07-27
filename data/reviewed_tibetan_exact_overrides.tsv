@@ -5829,3 +5829,5 @@ wts_1_34	198	102	2	ldan	ldaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_35_51	283	21	2	yah	yaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_yang_h_consensus_batch_20260727	Frozen exact Tibetan ཡང alignment; exact-row only.
 wts_35_51	400	35	1	nah	naṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_nang_consensus_batch_20260727	Frozen exact Tibetan ནང alignment; exact-row only.
 wts_35_51	403	25	1	nah	naṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_nang_consensus_batch_20260727	Frozen exact Tibetan ནང alignment; exact-row only.
+wts_1_34	337	101	1	gah	gaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_gang_consensus_batch_20260727	Frozen exact Tibetan གང alignment; exact-row only.
+wts_8_b	486	7	2	gah	gaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_gang_consensus_batch_20260727	Frozen exact Tibetan གང alignment; exact-row only.
