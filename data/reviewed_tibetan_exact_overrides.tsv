@@ -5875,3 +5875,4 @@ wts_1_34	258	91	2	rman	rmaṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng
 wts_9_m	316	79	2	rdzin	rdziṅ	reviewed_tibetan_exact_final_ng_consensus	final_ng_rdzing_consensus_batch_20260727	Frozen exact Tibetan རྫིང alignment; exact-row only.
 wts_1_34	248	15	2	gdan	gdaṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_gdang_consensus_batch_20260727	Frozen exact Tibetan གདང alignment; exact-row only.
 wts_1_34	268	206	2	gdan	gdaṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_gdang_consensus_batch_20260727	Frozen exact Tibetan གདང alignment; exact-row only.
+wts_1_34	491	175	3	phan	phaṅ	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_phang_consensus_batch_20260727	Frozen exact Tibetan ཕང alignment; exact-row only.
