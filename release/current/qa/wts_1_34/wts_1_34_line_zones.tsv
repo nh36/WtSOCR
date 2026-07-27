@@ -14213,7 +14213,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 110	216	1330	german_prose_with_translit			none	1	2	0	0	Lex. klad chun daṅ ’dra (Dagy).
 110	218	1330	other			none	0	0	0	0	143
 111	1	1330	tibetan_only	ཀླད་གཞུང་		none	0	0	0	0	ཀླད་གཞུང་ klad 92//2
-111	3	1330	tibetan_only	ཀླད་གཞུང་		none	0	1	0	0	ཀླད་གཞུང་ klad gzun Rückenmark.
+111	3	1330	tibetan_only	ཀླད་གཞུང་		none	0	1	0	0	ཀླད་གཞུང་ klad gźuṅ Rückenmark.
 111	5	1330	german_prose_with_translit			none	2	2	0	0	Lex. mgo’i klad nas g£u gu bar „vom Gehirn
 111	6	1330	german_prose_with_translit			none	2	1	0	0	bis zum Steißbein“ (brDa); mgo yi klad nas
 111	7	1330	german_prose			none	0	2	0	0	jug bar „vom Kopf bis zum Hintern“
@@ -109290,7 +109290,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 750	76	8917	latin_other			none	1	0	0	0	„weibliche gsen wurden zusammengerufen
 750	77	8917	german_prose_with_translit			none	2	1	0	0	und mtho dan ljags se hjags (?), sie sagten
 750	78	8917	other			none	0	0	0	0	wahr“ (PT1285 1,40 = 1,67).
-750	80	8918	headword_line	ལྗང་	Dan	medium	1	0	0	0	"ལྗང་ Dan ""jan."
+750	80	8918	headword_line	ལྗང་	Dan	medium	1	0	0	0	ལྗང་ ldaṅ "jan.
 750	81	8918	german_prose_with_translit			none	1	2	0	0	EN an Lan khn.
 750	83	8918	tibetan_only	ལྫང་དཀར་		none	0	2	0	0	ལྫང་དཀར་ ljan dkar grün-weiß, hellgrün.
 750	85	8918	german_prose_with_translit			none	4	1	0	0	Lex. kha dog - (brDa); ’di rnams kha dog gi

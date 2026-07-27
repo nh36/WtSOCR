@@ -3104,6 +3104,31 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed bgran control", corrected)
         self.assertEqual(sum(row["to_token"] == "bgraṅ" for row in changes), 6)
 
+    def test_user_reviewed_multi_error_transcriptions_are_exactly_gated(
+        self,
+    ) -> None:
+        lines = {
+            (111, 3): "ཀླད་གཞུང་ klad gzun Rückenmark.",
+            (750, 80): 'ལྗང་ Dan "jan.',
+            (750, 81): "unreviewed Dan gzun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀླད་གཞུང་ klad gźuṅ Rückenmark.", corrected)
+        self.assertIn('ལྗང་ ldaṅ "jan.', corrected)
+        self.assertIn("unreviewed Dan gzun control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                ("gzun", "gźuṅ", "reviewed_tibetan_exact_manual_multi_error"),
+                ("Dan", "ldaṅ", "reviewed_tibetan_exact_manual_multi_error"),
+            ],
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

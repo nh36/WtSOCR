@@ -44,7 +44,7 @@ category_changed	wts_1_34	1100	3	2	འཚང	tshan	tshaṅ	tshaṅ	source_compat
 target_changed	wts_1_34	1106	9	1	དང	dangon	dangoṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	དང་གོང་ dangon in thugs kyi — Brust.
 target_changed	wts_1_34	1106	9	2	གོང	in	iṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	དང་གོང་ dangon in thugs kyi — Brust.
 target_changed	wts_1_34	1109	35	1	ང	dan	daṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ང་པོའི་རྫལ་རྨན་ dan po’ rdul can Bez. für
-target_changed	wts_1_34	111	3	2	གཞུང	gzun	gzuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀླད་གཞུང་ klad gzun Rückenmark.
+disappeared	wts_1_34	111	3	2	གཞུང	gzun	gzuṅ		source_compatible_insufficient_evidence			ཀླད་གཞུང་ klad gzun Rückenmark.
 category_changed	wts_1_34	1117	21	3	ཞང	Zan	Zaṅ	Zaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
 target_changed	wts_1_34	114	4	4	ཁྱུང	kbyun	kbyuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 target_changed	wts_1_34	1140	87	2	རིང	Iderin	Ideriṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	དི་རིང་ dirin Iderin.
@@ -439,13 +439,13 @@ target_changed	wts_1_34	750	176	1	ལྗང	ljan	ljaṅ		source_compatible_insuf
 target_changed	wts_1_34	750	181	1	ལྗང	han	haṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ལྗང་ཡུལ་ han yul jan.
 target_changed	wts_1_34	750	187	1	ལྗང	han	haṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ལྗང་ལོ་ han lo alttib. für t/can lo 2 Haarlocke.
 target_changed	wts_1_34	750	192	1	ལྔང	lan	laṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ལྔང་སེར་ཅན་ lan ser can Bez. für Dürvä-Gras.
-target_changed	wts_1_34	750	80	1	ལྗང	Dan	Daṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"ལྗང་ Dan ""jan."
+disappeared	wts_1_34	750	80	1	ལྗང	Dan	Daṅ		source_compatible_insufficient_evidence			"ལྗང་ Dan ""jan."
 target_changed	wts_1_34	750	88	1	ལྗང	han	haṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ལྗང་ཁ་ han khn.
 category_changed	wts_1_34	769	45	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཉལ་སློང་ al slon Bez. für Weisheit.
 target_changed	wts_1_34	772	228	3	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ཉ མའ་ཤང་ ni ma’ Sin eine Pflanze.
 target_changed	wts_1_34	780	190	1	ཉུང	nun	nuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཉུང་ཀར་ nun kar [/7//77.4 kar.
 target_changed	wts_1_34	787	13	3	གདང	gdun	gduṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ཉེ་བར་གདང་བ་ fie bar gdun ba starke Schmer-
-category_changed	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ	ldaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
+category_changed	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ	ldaṅ	source_compatible_insufficient_evidence	source_compatible_dominant_consensus	2	ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
 category_changed	wts_1_34	80	126	3	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
 target_changed	wts_1_34	801	53	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
 target_changed	wts_1_34	814	160	1	སྙང	shan	shaṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
@@ -590,7 +590,7 @@ target_changed	wts_35_51	712	54	1	ཕྱིང	pyih	pyiṅ		source_compatible_in
 target_changed	wts_35_51	737	37	1	དཔུང	dpuṅń	dpuṅń		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དཔུང་ 'dpuṅń
 category_changed	wts_35_51	756	63	2	སྡིང	sdih	sdiṅ	sdiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དཔྱད་སྡིང་བཅུ་གསུམ་ dpyad sdih ben gsum eine
 target_changed	wts_35_51	813	40	1	རང	spyan	spyaṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	'རང་དྲང་ཅྲན་ spyan raṅ dran can
-target_changed	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	སྤྱི་གཞུང་ spyi gźuń Regierung.
+category_changed	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ	gźuṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྤྱི་གཞུང་ spyi gźuń Regierung.
 target_changed	wts_35_51	830	78	1	སྤྲོང	halten	halteṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	སྤྲོང་ ༡༠༧ halten, greifen.
 target_changed	wts_35_51	871	31	2	ལྤང	bon	boṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ཕ་ལྤང་ phpha bon.
 target_changed	wts_35_51	882	10	2	དོང	Wildschwein	Wildschweiṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ཕྲག་དོང་ phagrgod Wildschwein; wilder Eber,
