@@ -28596,3 +28596,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 495	2	6440	headword_line	bsrun	bsruṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྒ་བསྲུང་པ་ sgo bsrun ba
 113	66	1382	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་འདུལ་ཁྱུང་ཆེན་ཕུག་ klu ’dul khyun chen phug N.
 113	134	1385	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཀླུ་ཕྲུག་འོད་ཁྱུང་ klu phrug ’od khyun \klu sbrul ’od
+429	158	5725	headword_line	ldin	ldiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མགོ་ ལྡིང་ཅན་ mgo ldin can
+429	206	5731	headword_line	ldin	ldiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	མགོ་ལྡིང་ཅན་ mgo ldin can Bez. für Baum.

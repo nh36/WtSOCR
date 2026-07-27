@@ -82791,7 +82791,7 @@ Lex. - yon = mgo ’khor yon „man wird verwirrt“ (brDa); - yon = mgo rmons y
 
 bu (Dagy).
 
-མགོ་ ལྡིང་ཅན་ mgo ldin can
+མགོ་ ལྡིང་ཅན་ mgo ldiṅ can
 
 མགོ་འཐོམས་ mgo ’thoms pf. zu mgo ’thom ver-
 
@@ -82839,7 +82839,7 @@ no chen dan sne khrid lta bu „wie: Schutzherr und Anführer“ (Dagy).
 
 MR
 
-མགོ་ལྡིང་ཅན་ mgo ldin can Bez. für Baum.
+མགོ་ལྡིང་ཅན་ mgo ldiṅ can Bez. für Baum.
 
 Lex. //077 sin sdon bo dan yal ga la’an
 „Stamm und Zweig eines Baumes“ (brDa);
