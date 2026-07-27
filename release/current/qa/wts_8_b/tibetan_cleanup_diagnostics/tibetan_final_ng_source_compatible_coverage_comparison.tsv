@@ -78,7 +78,7 @@ disappeared	wts_1_34	118	74	1	ཀློང	klon	kloṅ		source_compatible_domina
 disappeared	wts_1_34	118	77	1	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཀློང་ཡངས་ klon yans ausgedehnt, weitherzig.
 category_changed	wts_1_34	1192	1	3	རུང	run	ruṅ	ruṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དུས་སུ་རུང་བ་ dus su run ba
 newly_discovered	wts_1_34	1192	38	3	ཆུང	run		ruṅ		source_compatible_single_anchor	1	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur
-category_changed	wts_1_34	1203	75	2	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
+disappeared	wts_1_34	1203	75	2	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
 newly_discovered	wts_1_34	1227	42	3	ང	bźin				source_compatible_structure_mismatch	0	"""Ras ་ཀྱི ང་ངེ་འཛྲིནྒ་ de bźin nid kyi tin ne"
 newly_discovered	wts_1_34	124	96	3	རྒྱང	igyan				source_compatible_structure_mismatch	0	དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
 newly_discovered	wts_1_34	1275	4	4	སྲིང	shin				source_compatible_structure_mismatch	0	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
@@ -146,7 +146,7 @@ newly_discovered	wts_1_34	152	191	2	དྲང	dran		draṅ		source_compatible_si
 newly_discovered	wts_1_34	155	207	1	ང	ykan				source_compatible_no_anchor	0	ང་སྙས།་ ykan skyes Bez. für Angehörige der un-
 newly_discovered	wts_1_34	157	112	2	འབུང	thun				source_compatible_no_anchor	0	རྐང་འབུང་ rkaṅ ’thun auch rkan thun „Fußtrin-
 newly_discovered	wts_1_34	157	177	1	རྐང	ran				source_compatible_no_anchor	0	རྐང་དྲུག་ ran ing ep
-category_changed	wts_1_34	157	25	2	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྐང་རྟིང་ rkaṅ rtin Ferse.
+disappeared	wts_1_34	157	25	2	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྐང་རྟིང་ rkaṅ rtin Ferse.
 newly_discovered	wts_1_34	162	157	1	ང	rkon				source_compatible_structure_mismatch	0	ང་བྲར་ rkon zor
 newly_discovered	wts_1_34	164	39	1	རྐྱང	Ryan				source_compatible_no_anchor	0	རྐྱང་ཟླ་ Ryan zla.
 category_changed	wts_1_34	166	136	1	རྐྱོང	rkyon	rkyoṅ	rkyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྐྱོང་ rkyon pf. Ibrkyans bzw. lbrkyan fut.
@@ -608,12 +608,12 @@ newly_discovered	wts_1_34	911	54	2	ངང	han		haṅ		source_compatible_single_a
 newly_discovered	wts_1_34	912	71	2	གདང	gdon		gdoṅ		source_compatible_structure_mismatch	2	རྟ་གདང་མ rta gdon me Bez. für das Feuer am
 newly_discovered	wts_1_34	914	71	3	གདོང	can				source_compatible_structure_mismatch	0	རྟ་ཡི་གདོང་ཅན་ rta ༡// gdon can Trta gdon can.
 newly_discovered	wts_1_34	916	84	2	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	རྟག་འབྱང་ rag 'byun Beiname Mahesvaras.
-category_changed	wts_1_34	918	166	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
-category_changed	wts_1_34	918	174	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
+disappeared	wts_1_34	918	166	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
+disappeared	wts_1_34	918	174	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
 newly_discovered	wts_1_34	919	1	1	རྟིང	yein				source_compatible_structure_mismatch	0	རྟིང་འབྲང་བ་ yein ’braṅ ba
-category_changed	wts_1_34	919	25	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་སོར་ rtin sor in Zukunft, später.
-category_changed	wts_1_34	919	3	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
-category_changed	wts_1_34	919	36	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་ལྷམ་ rtin lham Halbschuh.
+disappeared	wts_1_34	919	25	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་སོར་ rtin sor in Zukunft, später.
+disappeared	wts_1_34	919	3	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
+disappeared	wts_1_34	919	36	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་ལྷམ་ rtin lham Halbschuh.
 newly_discovered	wts_1_34	921	146	5	སྙིང	Irten				source_compatible_marker_attached	0	རྟེན་སྙིང་ rten $5/7//7 Irten ’brel süin po.
 newly_discovered	wts_1_34	921	165	2	མདང	mdun				source_compatible_structure_mismatch	0	རྟེན་མདང་ rten mdun Lanze für ein Medium
 newly_discovered	wts_1_34	922	9	2	འབྱང	byun		byuṅ		source_compatible_structure_mismatch	1	རྟེན་འབྱང་ rten ’byun.

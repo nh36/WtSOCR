@@ -21144,7 +21144,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 157	21	1974	latin_other			none	1	0	0	0	schers verteilt; rkar ton wurde durchge-
 157	22	1974	german_prose			none	0	1	0	0	führt“ (8750 220).
 157	24	1975	headword_line	རྐང་བཏེགས་	rkaṅ btegs rkan	high	3	0	0	0	རྐང་བཏེགས་ rkaṅ btegs \rkan stegs.
-157	25	1976	headword_line	རྐང་རྟིང་	rkaṅ rtin	high	2	1	0	0	རྐང་རྟིང་ rkaṅ rtin Ferse.
+157	25	1976	headword_line	རྐང་རྟིང་	rkaṅ rtin	high	2	1	0	0	རྐང་རྟིང་ rkaṅ rtiṅ Ferse.
 157	26	1976	german_prose_with_translit			none	6	2	0	0	Lex. rkan pa’i rtsa ba = rkan rtin (Dagy).
 157	27	1977	headword_line	རྐང་རྟེན་	rkaṅ rten	high	2	0	0	0	རྐང་རྟེན་ rkaṅ rten.
 157	28	1977	german_prose			none	0	3	0	0	1. Stiege, Schemel, Treppe.
@@ -133232,13 +133232,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 918	161	10109	german_prose_with_translit			none	5	1	0	0	Lex. imtshal lu ni ~ (Liś 27,13); rkan ~ po
 918	162	10109	german_prose_with_translit			none	3	1	0	0	(brDa); rta ~ la (Dagy).
 918	164	10109	german_prose			none	0	1	0	0	N
-918	166	10110	headword_line	རྟིང་སྐྱེས་	rtin skyes	high	5	1	0	0	རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
+918	166	10110	headword_line	རྟིང་སྐྱེས་	rtin skyes	high	5	1	0	0	རྟིང་སྐྱེས་ rtiṅ skyes Irtin nas skyes pa.
 918	168	10110	tibetan_only	༨		none	0	0	0	0	༨ .. > .
 918	169	10111	headword_line	རྟང་ད་འབྲངས་	du	medium	1	0	0	0	"རྟང་ད་འབྲངས་ ran du ""brans pf. folgen, nach-"
 918	170	10111	german_prose_with_translit			none	1	2	0	0	» folgen; vgl. Irtin ’bran ba.
 918	171	10111	german_prose_with_translit			none	4	2	0	0	Lex. ~ pa = rjes su ’branis pa (brDa, Dagy);
 918	172	10111	german_prose_with_translit			none	1	1	0	0	rtin ’bran = anupada (Ak 280.28).
-918	174	10112	headword_line	རྟིང་ནས་སྐྱེས་པ་	rtin nas skyes pa	high	6	1	0	0	རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
+918	174	10112	headword_line	རྟིང་ནས་སྐྱེས་པ་	rtin nas skyes pa	high	6	1	0	0	རྟིང་ནས་སྐྱེས་པ་ rtiṅ nas skyes pa auch rtiṅ skyes
 918	175	10112	german_prose_with_translit			none	1	4	0	0	Bez. für den jüngeren Bruder.
 918	176	10112	german_prose_with_translit			none	4	1	0	0	Lex. nu bo’am geun po’i min dan (brDa); nu
 918	177	10112	german_prose_with_translit			none	3	2	0	0	bo la (Dagy); rtin skyes = avaraja (Ak
@@ -133267,7 +133267,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 918	202	10113	german_prose_with_translit			none	2	1	0	0	(brDa); rjes ma (Dagy).
 918	204	10113	other			none	0	0	0	0	93
 919	1	10114	headword_line	རྟིང་འབྲང་བ་	ba	medium	1	0	0	0	རྟིང་འབྲང་བ་ yein ’braṅ ba
-919	3	10115	headword_line	རྟིང་འབྲང་བ་	rtin	high	3	2	0	0	རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
+919	3	10115	headword_line	རྟིང་འབྲང་བ་	rtin	high	3	2	0	0	རྟིང་འབྲང་བ་ rtiṅ ’braṅ ba Gefährte; vgl. !rtin
 919	5	10115	latin_other			none	1	0	0	0	du brans.
 919	7	10115	german_prose_with_translit			none	1	2	0	0	Lex. abhisara (Ak 207.71).
 919	8	10115	other			none	0	0	0	0	= ’.
@@ -133283,7 +133283,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 919	20	10116	german_prose_with_translit			none	2	6	0	0	Lex. carama (Ak 280.30); rjes ma „das Hintere“ (brDa); res sor „später“ (Dagy); ?77/7
 919	22	10116	german_prose_with_translit			none	3	2	0	0	= arväk (Ak 369.34); rtin nas ’on = rjes nas
 919	23	10116	german_prose_with_translit			none	1	1	0	0	yon „später kommen“ (brDa).
-919	25	10117	headword_line	རྟིང་སོར་	rtin	high	1	3	0	0	རྟིང་སོར་ rtin sor in Zukunft, später.
+919	25	10117	headword_line	རྟིང་སོར་	rtin	high	1	3	0	0	རྟིང་སོར་ rtiṅ sor in Zukunft, später.
 919	27	10118	headword_line	༡	tshab	high	4	0	0	0	༡ tshab mi pham pa skyel „wir werden dir
 919	28	10118	german_prose_with_translit			none	1	4	0	0	später Ersatz bringen, der nicht zu deinem
 919	29	10118	german_prose			none	0	2	0	0	Nachteil sein wird“ (Mil 129,30); yab mes
@@ -133291,7 +133291,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 919	31	10118	german_prose			none	0	4	0	0	Ahnen sind später reich geworden“ (Mil
 919	32	10118	german_prose_with_translit			none	1	3	0	0	33,1); sten (r. rein) sor 'bul mi thub „in Zukunft kann ich ihn dir nicht mehr über-
 919	34	10118	german_prose			none	0	1	0	0	geben“ (KunK 27,8).
-919	36	10119	headword_line	རྟིང་ལྷམ་	rtin lham	high	2	1	0	0	རྟིང་ལྷམ་ rtin lham Halbschuh.
+919	36	10119	headword_line	རྟིང་ལྷམ་	rtin lham	high	2	1	0	0	རྟིང་ལྷམ་ rtiṅ lham Halbschuh.
 919	38	10119	german_prose_with_translit			none	4	2	0	0	Lex. yu ba med pa’i lham lta bu „wie: Schuh
 919	39	10119	german_prose_with_translit			none	4	2	0	0	ohne Schaft“ (brDa); lham rtin bug can
 919	40	10119	german_prose			none	0	6	0	0	„Schuh mit Flicken auf der Sohle“ (Dagy).
@@ -167350,7 +167350,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1203	70	12524	german_prose			none	0	1	0	0	wie: soviel; soviel wie zahlenmäßig vorhan-
 1203	71	12524	german_prose			none	0	3	0	0	den ist“ (Dagy).
 1203	73	12524	german_prose			none	0	1	0	0	N
-1203	75	12525	headword_line	དེ་རྟིང་	de rtin	high	5	2	0	0	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
+1203	75	12525	headword_line	དེ་རྟིང་	de rtin	high	5	2	0	0	དེ་རྟིང་ de rtiṅ Kurzf. für de’i rtiṅ la dann, da-
 1203	77	12525	german_prose_with_translit			none	1	1	0	0	nach, vgl. !rtin 2.
 1203	79	12525	latin_other			none	3	0	0	0	— tal ru)i (7, ///?/) mkhar bsgyur nas „dann,
 1203	80	12525	german_prose_with_translit			none	2	1	0	0	nachdem er die Festung Ta’i-tu verlegt hat-

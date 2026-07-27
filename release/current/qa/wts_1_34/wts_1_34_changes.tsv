@@ -28730,3 +28730,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 109	88	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ཀྲོང་ kron kron.
 109	88	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ཀྲོང་ kron kron.
 109	100	1332	tibetan_only	kron	kroṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཀྲོང་ངེ་ kron ne auch kran ne aufgerichtet, auf-
+157	25	2016	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྐང་རྟིང་ rkaṅ rtin Ferse.
+918	166	10300	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
+918	174	10302	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
+918	174	10302	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
+919	3	10305	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
+919	25	10307	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་སོར་ rtin sor in Zukunft, später.
+919	36	10309	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྟིང་ལྷམ་ rtin lham Halbschuh.
+1203	75	12761	headword_line	rtin	rtiṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-

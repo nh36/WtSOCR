@@ -29,7 +29,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 བགྲང	bgran	bgra<FINAL_NASAL>	bgraṅ		8	insufficient_consensus:8	source_compatible_single_anchor:8	1			0	wts_1_34
 ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ		7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34
 འཆེང	chin	chi<FINAL_NASAL>	chiṅ		7	insufficient_consensus:7	source_compatible_structure_mismatch:7	1			0	wts_1_34
-རྟིང	rtin	rti<FINAL_NASAL>	rtiṅ		7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34
 རུང	run	ru<FINAL_NASAL>	ruṅ		6	insufficient_consensus:6	source_compatible_single_anchor:6	1			0	wts_1_34
 ཞེང	Zen	Ze<FINAL_NASAL>	Zeṅ		4	competing_latin_forms:4	source_compatible_single_anchor:4	1		zeṅ:1; Ziṅ:1; ziṅ:1	0	wts_1_34
 རང	rin	ri<FINAL_NASAL>	riṅ		4	not_emitted_by_legacy_global_target:4	source_compatible_structure_mismatch:4	1		raṅ:14	0	wts_1_34
@@ -248,7 +247,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	hypothetical_ta
 རྐང	ran	ra<FINAL_NASAL>		raṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkaṅ:105; rkyaṅ:1	0	wts_1_34
 རྐྱང	Ryan	Rya<FINAL_NASAL>		Ryaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkyaṅ:25; rkaṅ:1	0	wts_1_34
 རྒྱང	igyan	igya<FINAL_NASAL>		igyaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		rgyaṅ:13	0	wts_1_34
-རྟིང	yein	yei<FINAL_NASAL>		yeiṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		rtiṅ:1	0	wts_1_34
+རྟིང	yein	yei<FINAL_NASAL>		yeiṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		rtiṅ:8	0	wts_1_34
 རྨང	rlun	rlu<FINAL_NASAL>		rluṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		rmaṅ:5; maṅ:1	0	wts_1_34
 ལང	lin	li<FINAL_NASAL>		liṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_structure_mismatch:1	0		laṅ:25	0	wts_1_34
 ལེང	phren	phre<FINAL_NASAL>		phreṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		liṅ:1	1	wts_1_34

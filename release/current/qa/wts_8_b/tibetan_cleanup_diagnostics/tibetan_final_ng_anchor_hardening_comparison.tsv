@@ -57,7 +57,7 @@ category_changed	wts_1_34	117	23	4	སྡེང	sden	sdeṅ	sdeṅ	source_compat
 target_changed	wts_1_34	118	3	1	ཀླང	klon	kloṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ཀླང་ཆན་པ་” klon chen pa...
 category_changed	wts_1_34	1192	1	3	རུང	run	ruṅ	ruṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དུས་སུ་རུང་བ་ dus su run ba
 category_changed	wts_1_34	1192	38	3	ཆུང	run	ruṅ	ruṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur
-category_changed	wts_1_34	1203	75	2	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
+disappeared	wts_1_34	1203	75	2	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			དེ་རྟིང་ de rtin Kurzf. für de’i rtiṅ la dann, da-
 target_changed	wts_1_34	1227	42	3	ང	bźin	bźiṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	"""Ras ་ཀྱི ང་ངེ་འཛྲིནྒ་ de bźin nid kyi tin ne"
 target_changed	wts_1_34	124	96	3	རྒྱང	igyan	igyaṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
 target_changed	wts_1_34	1275	4	4	སྲིང	shin	shiṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
@@ -122,7 +122,7 @@ category_changed	wts_1_34	152	191	2	དྲང	dran	draṅ	draṅ	source_compatib
 target_changed	wts_1_34	155	207	1	ང	ykan	ykaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ང་སྙས།་ ykan skyes Bez. für Angehörige der un-
 target_changed	wts_1_34	157	112	2	འབུང	thun	thuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	རྐང་འབུང་ rkaṅ ’thun auch rkan thun „Fußtrin-
 target_changed	wts_1_34	157	177	1	རྐང	ran	raṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	རྐང་དྲུག་ ran ing ep
-category_changed	wts_1_34	157	25	2	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྐང་རྟིང་ rkaṅ rtin Ferse.
+disappeared	wts_1_34	157	25	2	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྐང་རྟིང་ rkaṅ rtin Ferse.
 target_changed	wts_1_34	162	157	1	ང	rkon	rkoṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	ང་བྲར་ rkon zor
 target_changed	wts_1_34	164	39	1	རྐྱང	Ryan	Ryaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	རྐྱང་ཟླ་ Ryan zla.
 category_changed	wts_1_34	166	136	1	རྐྱོང	rkyon	rkyoṅ	rkyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྐྱོང་ rkyon pf. Ibrkyans bzw. lbrkyan fut.
@@ -544,12 +544,12 @@ target_changed	wts_1_34	91	68	1	ཀེང	ken	keṅ		source_compatible_insuffici
 target_changed	wts_1_34	911	188	2	ལྗང	Ijan	Ijaṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	རྟ་ལྗང་དབང་པོ་ rta Ijan dbaṅ po.
 category_changed	wts_1_34	911	54	2	ངང	han	haṅ	haṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟ་ངང་པ་ rta han pa
 target_changed	wts_1_34	914	71	3	གདོང	can	caṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	རྟ་ཡི་གདོང་ཅན་ rta ༡// gdon can Trta gdon can.
-category_changed	wts_1_34	918	166	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
-category_changed	wts_1_34	918	174	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
+disappeared	wts_1_34	918	166	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་སྐྱེས་ rtin skyes Irtin nas skyes pa.
+disappeared	wts_1_34	918	174	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes
 target_changed	wts_1_34	919	1	1	རྟིང	yein	yeiṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	རྟིང་འབྲང་བ་ yein ’braṅ ba
-category_changed	wts_1_34	919	25	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་སོར་ rtin sor in Zukunft, später.
-category_changed	wts_1_34	919	3	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
-category_changed	wts_1_34	919	36	1	རྟིང	rtin	rtiṅ	rtiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྟིང་ལྷམ་ rtin lham Halbschuh.
+disappeared	wts_1_34	919	25	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་སོར་ rtin sor in Zukunft, später.
+disappeared	wts_1_34	919	3	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin
+disappeared	wts_1_34	919	36	1	རྟིང	rtin	rtiṅ		source_compatible_insufficient_evidence			རྟིང་ལྷམ་ rtin lham Halbschuh.
 target_changed	wts_1_34	921	146	5	སྙིང	Irten	Irteṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	རྟེན་སྙིང་ rten $5/7//7 Irten ’brel süin po.
 target_changed	wts_1_34	921	165	2	མདང	mdun	mduṅ		source_compatible_structure_mismatch	source_compatible_structure_mismatch	0	རྟེན་མདང་ rten mdun Lanze für ein Medium
 category_changed	wts_1_34	93	106	2	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀོ་གྱོང་ ko gyon hartes Leder.

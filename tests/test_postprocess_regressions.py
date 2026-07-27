@@ -3066,6 +3066,22 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed kron control", corrected)
         self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 3)
 
+    def test_one_anchor_rting_pilot_preserves_marker_attached_echo(self) -> None:
+        lines = {
+            (918, 174): "རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes",
+            (919, 3): "རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin",
+            (919, 1): "རྟིང་འབྲང་བ་ yein ’braṅ ba",
+            (1400, 22): "unreviewed rtin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rtiṅ nas skyes pa auch rtiṅ skyes", corrected)
+        self.assertIn("rtiṅ ’braṅ ba Gefährte; vgl. !rtin", corrected)
+        self.assertIn("རྟིང་འབྲང་བ་ yein", corrected)
+        self.assertIn("unreviewed rtin control", corrected)
+        self.assertEqual(sum(row["to_token"] == "rtiṅ" for row in changes), 3)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
