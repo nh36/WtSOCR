@@ -5,9 +5,12 @@ from __future__ import annotations
 
 import argparse
 import csv
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+REVIEW_DATE = date.today().isoformat()
+REVIEW_DATE_COMPACT = REVIEW_DATE.replace("-", "")
 
 
 def read(path: Path) -> list[dict[str, str]]:
@@ -64,6 +67,30 @@ def validate_echo_decisions(
     }
 
 
+def decision_audit_metadata(decision: str) -> tuple[str, str]:
+    metadata = {
+        "accepted": (
+            "Entry structure independently establishes the same Tibetan lemma.",
+            "none",
+        ),
+        "deferred": (
+            "Current evidence does not independently establish exact same-lemma identity.",
+            "independent_lemma_identity_not_established",
+        ),
+        "rejected": (
+            "Manual review establishes that the candidate is not an exact repetition "
+            "of this Tibetan lemma.",
+            "different_lemma_or_non_echo",
+        ),
+        "resolved_elsewhere": (
+            "This frozen echo identity is already handled by another reviewed exact "
+            "decision.",
+            "already_resolved_exact_identity",
+        ),
+    }
+    return metadata[decision]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
@@ -96,8 +123,8 @@ def main() -> None:
     except ValueError as error:
         raise SystemExit(str(error)) from error
 
-    positional_evidence = f"{args.batch}_consensus_batch_20260726"
-    echo_evidence = f"{args.batch}_same_entry_echo_batch_20260726"
+    positional_evidence = f"{args.batch}_consensus_batch_{REVIEW_DATE_COMPACT}"
+    echo_evidence = f"{args.batch}_same_entry_echo_batch_{REVIEW_DATE_COMPACT}"
     override_rows = [
         [
             row["volume"], row["page"], row["line"], row["token_index"],
@@ -114,18 +141,13 @@ def main() -> None:
         row_key = key(row)
         decision = echo_decisions[row_key]
         counts[decision] += 1
-        rationale = (
-            "Entry structure independently establishes the same Tibetan lemma."
-            if decision == "accepted"
-            else "Frozen echo lacks independent exact lemma identity."
-        )
+        rationale, reconsideration_reason = decision_audit_metadata(decision)
         decision_rows.append([
             row["volume"], row["page"], row["line"], row["token_index"],
             args.syllable, row["source_token"], row["target"], decision,
             row["alignment_category"],
             "same_line_entry_structure_after_positional_alignment",
-            rationale, echo_evidence, "2026-07-26",
-            "none" if decision == "accepted" else "Independent entry evidence",
+            rationale, echo_evidence, REVIEW_DATE, reconsideration_reason,
         ])
         if decision == "accepted":
             override_rows.append([
@@ -137,7 +159,7 @@ def main() -> None:
     append(ROOT / "data/reviewed_tibetan_exact_overrides.tsv", override_rows)
     append(ROOT / "data/reviewed_final_ng_echo_decisions.tsv", decision_rows)
     append(ROOT / "data/final_ng_batch_reconciliation.tsv", [[
-        f"{args.batch}_20260726", positional[0]["frozen_prepass_sha"],
+        f"{args.batch}_{REVIEW_DATE_COMPACT}", positional[0]["frozen_prepass_sha"],
         args.syllable, positional_evidence, str(len(positional)),
         str(len(positional)), echo_evidence, str(len(echoes)),
         str(counts["accepted"]), str(counts["deferred"]),

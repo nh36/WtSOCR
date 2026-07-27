@@ -1,6 +1,9 @@
 import unittest
 
-from scripts.record_frozen_final_ng_family import validate_echo_decisions
+from scripts.record_frozen_final_ng_family import (
+    decision_audit_metadata,
+    validate_echo_decisions,
+)
 
 
 def echo(token_index: str) -> dict[str, str]:
@@ -83,6 +86,38 @@ class ExplicitEchoDecisionTests(unittest.TestCase):
                 resolved=set(),
             ),
             {},
+        )
+
+    def test_decision_audit_metadata_is_state_specific(self) -> None:
+        self.assertEqual(
+            decision_audit_metadata("accepted"),
+            (
+                "Entry structure independently establishes the same Tibetan lemma.",
+                "none",
+            ),
+        )
+        self.assertEqual(
+            decision_audit_metadata("deferred"),
+            (
+                "Current evidence does not independently establish exact same-lemma identity.",
+                "independent_lemma_identity_not_established",
+            ),
+        )
+        self.assertEqual(
+            decision_audit_metadata("rejected"),
+            (
+                "Manual review establishes that the candidate is not an exact repetition "
+                "of this Tibetan lemma.",
+                "different_lemma_or_non_echo",
+            ),
+        )
+        self.assertEqual(
+            decision_audit_metadata("resolved_elsewhere"),
+            (
+                "This frozen echo identity is already handled by another reviewed exact "
+                "decision.",
+                "already_resolved_exact_identity",
+            ),
         )
 
 
