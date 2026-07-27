@@ -2111,3 +2111,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 89	2	393	example_tibetan_latin	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba abführendes
 254	15	1104	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མོང་གོལ་གན་ moṅ gol gan auch mon gor
 254	24	1105	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མོང་རྟུལ་ moṅ rtul auch mon brtul dumm,
+316	79	1408	headword_line	rdzin	rdziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དམུ་རྫིང dmu rdzin.
