@@ -21,10 +21,11 @@ def validate(root: Path = ROOT) -> list[str]:
     decisions = read_tsv(root / "data/reviewed_final_ng_echo_decisions.tsv")
     changes: list[dict[str, str]] = []
     positional: list[dict[str, str]] = []
+    source_compatible_positional: list[dict[str, str]] = []
     echoes: list[dict[str, str]] = []
     frozen_rows: list[dict[str, str]] = []
     for manifest in (root / "data").glob(
-        "final_ng_exact_candidate_prepass_manifest_*.tsv"
+        "final_ng_*prepass_manifest_*.tsv"
     ):
         frozen_rows.extend(read_tsv(manifest))
     for volume_dir in (root / "release/current/qa").glob("wts_*"):
@@ -33,6 +34,11 @@ def validate(root: Path = ROOT) -> list[str]:
             changes.extend(read_tsv(changes_path))
         diagnostic = volume_dir / "tibetan_cleanup_diagnostics"
         positional.extend(read_tsv(diagnostic / "tibetan_final_ng_consensus_candidates.tsv"))
+        source_path = (
+            diagnostic / "tibetan_final_ng_source_compatible_candidates.tsv"
+        )
+        if source_path.exists():
+            source_compatible_positional.extend(read_tsv(source_path))
         echoes.extend(read_tsv(diagnostic / "tibetan_final_ng_same_entry_echo_candidates.tsv"))
 
     errors: list[str] = []
@@ -41,7 +47,10 @@ def validate(root: Path = ROOT) -> list[str]:
         echo = [row for row in overrides if row["evidence"] == batch["echo_evidence"]]
         release_pos = [
             row for row in changes
-            if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+            if row["reason"] in {
+                "reviewed_tibetan_exact_final_ng_consensus",
+                "reviewed_tibetan_exact_final_ng_source_compatible",
+            }
             and row["to_token"] in {item["to_token"] for item in pos}
             and (row["page"], row["line"], row["from_token"])
             in {(item["page"], item["line"], item["from_token"]) for item in pos}
@@ -56,7 +65,7 @@ def validate(root: Path = ROOT) -> list[str]:
         frozen_echo_keys = {
             (
                 row["volume"], row["page"], row["line"], row["token_index"],
-                row["tibetan_syllable"], row["source_token"], row["target"],
+                row["tibetan_syllable"], row["source_token"],
             )
             for row in frozen_rows
             if row["frozen_prepass_sha"] == batch["frozen_prepass_sha"]
@@ -68,20 +77,40 @@ def validate(root: Path = ROOT) -> list[str]:
             if (
                 row["volume"], row["page"], row["line"], row["token_index"],
                 row["tibetan_syllable"], row["additional_source_token"],
-                row["proposed_target"],
             ) in frozen_echo_keys
         ]
         if not frozen_echo_keys:
             current_frozen_echoes = [
                 row for row in echoes if row["tibetan_syllable"] == tibetan
             ]
-        active_pos = sum(row["tibetan_syllable"] == tibetan for row in positional)
+        frozen_pos_keys = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["source_token"], row["target"],
+            )
+            for row in frozen_rows
+            if row["frozen_prepass_sha"] == batch["frozen_prepass_sha"]
+            and row["tibetan_syllable"] == tibetan
+            and row["candidate_status"] == "positional"
+        }
+        current_pos_keys = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["tibetan_syllable"], row["source_latin_token"],
+                row["proposed_latin_target"],
+            )
+            for row in positional + source_compatible_positional
+        }
+        active_pos = len(frozen_pos_keys & current_pos_keys)
         active_echo = sum(
             row.get("active_queue", "yes") == "yes"
             for row in current_frozen_echoes
         )
         decision_counts = Counter(
-            row["decision"] for row in decisions if row["tibetan_syllable"] == tibetan
+            row["decision"]
+            for row in decisions
+            if row["tibetan_syllable"] == tibetan
+            and row["reviewing_batch"] == batch["echo_evidence"]
         )
         frozen_pos = int(batch["frozen_positional_count"])
         frozen_echo = int(batch["frozen_echo_candidate_count"])

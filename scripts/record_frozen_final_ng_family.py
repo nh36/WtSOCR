@@ -125,11 +125,16 @@ def main() -> None:
 
     positional_evidence = f"{args.batch}_consensus_batch_{REVIEW_DATE_COMPACT}"
     echo_evidence = f"{args.batch}_same_entry_echo_batch_{REVIEW_DATE_COMPACT}"
+    positional_reason = (
+        "reviewed_tibetan_exact_final_ng_source_compatible"
+        if "source_compatible" in args.manifest.name
+        else "reviewed_tibetan_exact_final_ng_consensus"
+    )
     override_rows = [
         [
             row["volume"], row["page"], row["line"], row["token_index"],
             row["source_token"], row["target"],
-            "reviewed_tibetan_exact_final_ng_consensus",
+            positional_reason,
             positional_evidence,
             f"Frozen exact Tibetan {args.syllable} alignment; exact-row only.",
         ]
