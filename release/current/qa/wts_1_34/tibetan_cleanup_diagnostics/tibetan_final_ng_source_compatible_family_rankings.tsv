@@ -13,7 +13,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 རོང	ron	ro<FINAL_NASAL>	roṅ	4	competing_latin_forms:4	source_compatible_dominant_consensus:4	2		doṅ:1	0	wts_1_34
 སྟང	stan	sta<FINAL_NASAL>	staṅ	2	competing_latin_forms:2	source_compatible_dominant_consensus:2	2		stoṅ:1; snaṅ:1	0	wts_1_34
 མེང	min	mi<FINAL_NASAL>	miṅ	1	competing_latin_forms:1	source_compatible_structure_mismatch:1	2		maṅ:1	0	wts_1_34
-ཚོང	tshon	tsho<FINAL_NASAL>	tshoṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	2		ishoṅ:1	0	wts_8_b
 རྱོང	myon	myo<FINAL_NASAL>	myoṅ	1	competing_latin_forms:1	source_compatible_structure_mismatch:1	2		mmyoṅ:1	0	wts_1_34
 སྲོང	spoh	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_structure_mismatch:1	2		sroṅ:1	0	wts_1_34
 སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_structure_mismatch:1	2		sroṅ:1	0	wts_1_34

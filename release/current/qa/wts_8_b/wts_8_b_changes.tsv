@@ -3024,3 +3024,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 143	8	685	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁྱུང་ bya khyun cin myth. Vogel, skt. garuda.
 476	21	2595	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྱོང་ ""byon V'byan."
 476	22	2596	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱོང་ ®byon reinigen, vgl. Isbyon.
+433	23	2381	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲམ།་ཚོང་ ""bam tshon Zwangskauf."
