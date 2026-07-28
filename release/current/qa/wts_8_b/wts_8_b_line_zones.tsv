@@ -2534,7 +2534,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 39	39	184	german_prose_with_translit			none	2	5	0	0	"Lex. grwa pa la'an ""auch für Mönch"" (Dagy)."
 39	40	184	german_prose_with_translit			none	1	7	0	0	"az' ""ban ein Messer, das die Lepcha am Gür-"
 39	41	184	german_prose_with_translit			none	1	1	0	0	tel hängend tragen (Neb 10).
-39	42	184	tibetan_only	བན་ཆང་		none	0	0	0	0	"བན་ཆང་ ""ban chani"
+39	42	184	tibetan_only	བན་ཆང་		none	0	0	0	0	བན་ཆང་ "ban chaṅ
 39	43	185	headword_line	བན་གུར་དགོན་	dgon	medium	1	3	0	0	བན་གུར་དགོན་ ban gur dgon npr. ein Kloster in
 39	44	185	tibetan_only	གུ		none	0	0	0	0	གུ
 39	45	185	latin_other			none	1	0	0	0	A-mdo.
@@ -2862,7 +2862,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 43	34	211	german_prose			none	0	3	0	0	Kinder bekommen, kommen sie bei Bäumen
 43	35	211	german_prose			none	0	4	0	0	"in der Wildnis nieder (skt. prasityante)"" (Bca"
 43	36	211	other			none	0	0	0	0	8.76d).
-43	37	212	headword_line	བབ་ཚོལ་ཕྱར་ཡང་	tshol phyar	high	2	1	0	0	བབ་ཚོལ་ཕྱར་ཡང་ bab tshol phyar yani wunüber-
+43	37	212	headword_line	བབ་ཚོལ་ཕྱར་ཡང་	tshol phyar	high	2	1	0	0	བབ་ཚོལ་ཕྱར་ཡང་ bab tshol phyar yaṅ wunüber-
 43	38	212	german_prose			none	0	1	0	0	legt antworten; vgl. tbab col.
 43	39	212	german_prose_with_translit			none	3	2	0	0	"Lex. ma bsams par lan rgyag pa ""ohne nachge-"
 43	40	212	german_prose			none	0	3	0	0	"dacht zu haben eine Antwort geben"" (TTC)."
@@ -7363,7 +7363,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 96	92	459	german_prose_with_translit			none	2	1	0	0	"'dra ba'i skyes pa = stryanukrtipurusab ""ein"
 96	93	459	german_prose_with_translit			none	1	4	0	0	"Mann, der eine l'rau nachahmt"" (Mvy 8892)."
 97	1	459	other			none	0	0	0	0	en nn
-97	2	460	headword_line	བུད་མེད་རྐང་བརྡེག་་	rkani brdeg	high	2	0	0	0	བུད་མེད་རྐང་བརྡེག་་ bud med rkani brdeg
+97	2	460	headword_line	བུད་མེད་རྐང་བརྡེག་་	rkani brdeg	high	2	0	0	0	བུད་མེད་རྐང་བརྡེག་་ bud med rkaṅ brdeg
 97	3	460	german_prose			none	0	3	0	0	2. Frau 1. 5. v. Ehefrau, Gattin.
 97	4	460	latin_other			none	3	0	0	0	"gZan gyi — rtag tu span (metr.) ""man sollte"
 97	5	460	german_prose			none	0	3	0	0	"immer die Frauen anderer Männer meiden"""
@@ -11711,7 +11711,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 148	24	727	german_prose_with_translit			none	4	1	0	0	"schaft senden"" (brDa); 'phrin gton ba dan"
 148	25	727	german_prose_with_translit			none	3	3	0	0	"brda gton ba ""eine Botschaft senden und ein"
 148	26	727	german_prose			none	0	2	0	0	"Zeichen geben"" (Dagy)."
-148	27	728	headword_line	བྱ་བཏང་	bya btani	medium	3	0	0	0	བྱ་བཏང་ bya btani pf. zubya gtori.
+148	27	728	headword_line	བྱ་བཏང་	bya btani	medium	3	0	0	0	བྱ་བཏང་ bya btaṅ pf. zubya gtori.
 148	28	728	other			none	0	0	0	0	1. benachrichtigen.
 148	29	728	latin_other			none	2	0	0	0	"kun la / — yib cin 'bros su beug ""sie benach-"
 148	30	728	german_prose			none	0	2	0	0	richtigten alle und forderten sie auf, sich zu
@@ -21126,7 +21126,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 257	85	1400	german_prose_with_translit			none	1	2	0	0	"pa bZens ""er errichtete in Brag-dmar sGa-chu"
 257	86	1400	german_prose_with_translit			none	1	2	0	0	"Sar-sgo, Brag-dmar 'brin-bzan usw."" (Bu-śz"
 257	87	1400	other			none	0	0	0	0	16,2).
-258	1	1401	headword_line	བྲག་དམར་ཀེའུ་ཚང་	brag	medium	3	0	0	0	བྲག་དམར་ཀེའུ་ཚང་ brag dmar ke'u tshani
+258	1	1401	headword_line	བྲག་དམར་ཀེའུ་ཚང་	brag	medium	3	0	0	0	བྲག་དམར་ཀེའུ་ཚང་ brag dmar ke'u tshaṅ
 258	2	1402	headword_line	བྲག་ མཁར་ཀྲེའ་ཚང་	ke'utshan	high	1	0	0	0	བྲག་ མཁར་ཀྲེའ་ཚང་ bragdmar ke'utshan npr. 0111
 258	3	1402	latin_other			none	4	0	0	0	— gsam du mtsho rgyalgzim phug ... g sogs yod
 258	4	1402	german_prose_with_translit			none	1	2	0	0	"""unterhalb von Brag-dmar Ke'u-tshan [lie-"
@@ -25420,7 +25420,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 309	91	1614	german_prose_with_translit			none	2	1	0	0	"jo — pas ""Jan-tsha lha-dbon war verheiratet"
 309	92	1614	german_prose_with_translit			none	1	4	0	0	mit der chinesischen Prinzessin Gyim-śañ
 309	93	1614	german_prose_with_translit			none	1	1	0	0	"kon-jo"" (Bu-Sz 17,4); bod kyi drmag mis ..."
-310	1	1615	headword_line	བླངས་ཀྱང་	blaṅs kyani	high	2	0	0	0	བླངས་ཀྱང་ blaṅs kyani
+310	1	1615	headword_line	བླངས་ཀྱང་	blaṅs kyani	high	2	0	0	0	བླངས་ཀྱང་ blaṅs kyaṅ
 310	2	1615	german_prose_with_translit			none	3	1	0	0	"yu gur gyi yul thams cad — pas ""die tibeti-"
 310	3	1615	german_prose			none	0	5	0	0	schen Krieger nahmen das gesamte Land Yu-
 310	4	1615	german_prose_with_translit			none	1	2	0	0	"gur ein"" (Debm 9b5); dad nas spyi bor — te"
@@ -28527,7 +28527,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 347	39	1816	german_prose_with_translit			none	4	1	0	0	che chun grüis kyi — ... khri sron brtsan gyi rin
 347	40	1816	german_prose_with_translit			none	1	5	0	0	"las byun no ""die Vorrechte für die Großen"
 347	41	1816	other			none	0	0	0	0	337
-347	42	1817	headword_line	དབང་ཐང་	dbaṅ thani	high	2	0	0	0	དབང་ཐང་ dbaṅ thani
+347	42	1817	headword_line	དབང་ཐང་	dbaṅ thani	high	2	0	0	0	དབང་ཐང་ dbaṅ thaṅ
 347	43	1817	german_prose_with_translit			none	1	4	0	0	und Kleinen kamen in der Regierungszeit
 347	44	1817	german_prose_with_translit			none	1	1	0	0	"des Khri-sron-brtsan auf"" (PT1287 453);"
 347	45	1817	latin_other			none	5	0	0	0	dban dan chi ste jim pa chur beugpa bZin ste
@@ -40762,7 +40762,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 494	44	2665	german_prose_with_translit			none	4	1	0	0	"— spans ni myes tshig gam ma tshig ""sind"
 494	45	2665	german_prose			none	0	5	0	0	die Almen der Dris vom Feuer verbrannt
 494	46	2665	german_prose_with_translit			none	2	1	0	0	"oder nicht?"" (PT1287 2); — g.yag ra Ing bcas"
-494	47	2666	headword_line	འབྲེ ་རྐང་	rkani	high	1	0	0	0	"འབྲེ ་རྐང་ ""bri rkani"
+494	47	2666	headword_line	འབྲེ ་རྐང་	rkani	high	1	0	0	0	འབྲེ ་རྐང་ "bri rkaṅ
 494	48	2666	german_prose_with_translit			none	3	3	0	0	"kyirtsa za'i dgebed dar ""die Benutzun,, der"
 494	49	2666	tibetan_only			none	0	0	0	0	° -¿ . rs: ༨༽
 494	50	2666	german_prose			none	0	7	0	0	Weiden für Dris, Yaks, Ziegen und Schafe:
@@ -41623,7 +41623,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 504	80	2707	german_prose			none	0	6	0	0	die Kuh das Kalb geboren hatte, den Namen
 504	81	2707	german_prose			none	0	2	0	0	"'Bru-so-lo-fa"" (Liyl 175b4)."
 504	82	2707	other			none	0	0	0	0	494
-505	1	2707	tibetan_only	འབྲུ་གསང་		none	0	0	0	0	འབྲུ་གསང་ bru gsani
+505	1	2707	tibetan_only	འབྲུ་གསང་		none	0	0	0	0	འབྲུ་གསང་ bru gsaṅ
 505	2	2708	headword_line	འབྲུ་གསང་	gsaṅ	high	1	2	0	0	འབྲུ་གསང་ 'bru gsaṅ Getreide, Getreidesub-
 505	3	2708	other			none	0	0	0	0	stanz.
 505	4	2708	latin_other			none	2	0	0	0	~ chu bos bsdus pas mi yi 'dod pa tshim
@@ -47518,7 +47518,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 574	55	3047	german_prose			none	0	2	0	0	nerste der sieben Ozeane, skt.
 574	56	3047	german_prose_with_translit			none	1	1	0	0	madhurasāgara; vgl. SCHUH 2012: 1513.
 574	57	3047	german_prose			none	0	1	0	0	ein alkoholisches
-574	58	3048	headword_line	སྦྲང་རྩི་ཆང་	sbraṅ rtsi	high	2	0	0	0	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chani
+574	58	3048	headword_line	སྦྲང་རྩི་ཆང་	sbraṅ rtsi	high	2	0	0	0	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chaṅ
 574	59	3048	german_prose			none	0	3	0	0	Getränk aus Honig, Met.
 574	60	3048	german_prose			none	0	1	0	0	"— nirnimpabtun (metr.) ""alten Met sollman"
 574	61	3048	german_prose			none	0	1	0	0	"trinken"" (Ahs 1.3.45d)."

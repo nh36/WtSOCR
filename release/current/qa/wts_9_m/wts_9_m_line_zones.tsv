@@ -27629,7 +27629,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 330	60	1478	german_prose			none	0	3	0	0	4. npr. ein Text, skt. Avatamsakasitra.
 330	61	1478	german_prose_with_translit			none	2	1	0	0	Lex. rma ga chad = mdo san gi 0077 reyan
 330	62	1478	other			none	0	0	0	0	(TTC).
-330	63	1478	tibetan_only	རྨང་		none	0	2	0	0	རྨང་ 'rmani auch rmans, rmen Fundament,
+330	63	1478	tibetan_only	རྨང་		none	0	2	0	0	རྨང་ 'rmaṅ auch rmans, rmen Fundament,
 330	64	1478	german_prose			none	0	2	0	0	Grundmauer, Grundstein.
 330	65	1478	latin_other			none	7	0	0	0	gor ma dkar po dros ni / dbyi tshab kyi mchad
 330	66	1478	german_prose_with_translit			none	3	2	0	0	"pa i — du brtsigso ""eben diesen weißen Stein,"
@@ -27644,7 +27644,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 330	75	1478	german_prose			none	0	5	0	0	Grundstein des Tempels von bSam-yas Ieg-
 330	76	1478	german_prose_with_translit			none	1	4	0	0	te man im Tiger[-Jahr]* (Padm 24241); dbu
 330	77	1478	german_prose_with_translit			none	6	1	0	0	"rtse chen mo' — btin tsam na ""ungefähr"
-331	1	1478	tibetan_only	རྨང་		none	0	0	0	0	"རྨང་ ""rmani"
+331	1	1478	tibetan_only	རྨང་		none	0	0	0	0	རྨང་ "rmaṅ
 331	2	1478	german_prose			none	0	7	0	0	als der Grundstein für den großen Haupt-
 331	3	1478	german_prose_with_translit			none	2	1	0	0	"tempel gelegt wurde"" (Glr 170,12); ka ba"
 331	4	1479	headword_line	༡	ñer bź	high	5	0	0	0	"༡ ñer bźři sa ka riris drug ... yod pa'i ~ ""din"
@@ -27720,7 +27720,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 331	74	1481	german_prose			none	0	2	0	0	5. Essenz, Kern.
 331	75	1481	german_prose_with_translit			none	1	2	0	0	Lex. sun po (Dagy).
 332	1	1482	headword_line	རྨང་ལམ་	rmaṅ	high	1	0	0	0	རྨང་ལམ་ rmaṅ lam
-332	2	1482	tibetan_only	རྨང་ལམ་		none	0	1	0	0	རྨང་ལམ་ rmani lam Traum.
+332	2	1482	tibetan_only	རྨང་ལམ་		none	0	1	0	0	རྨང་ལམ་ rmaṅ lam Traum.
 332	3	1482	latin_other			none	5	0	0	0	mtshan mo'i ~ na glan po che geig la beibs
 332	4	1482	german_prose_with_translit			none	1	5	0	0	"nas ""in einem nächtlichen Traum ritt er einen"
 332	5	1482	german_prose_with_translit			none	1	1	0	0	"Elefanten"" (ThK 2: 527,6)."

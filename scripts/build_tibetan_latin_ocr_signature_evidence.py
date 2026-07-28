@@ -98,6 +98,7 @@ PACKET_FIELDS = [
     "operation_positions", "proposed_structural_role",
     "primitive_edit_sequence", "authorized_components",
     "missing_components", "compound_classification",
+    "exact_alternate_witness_status", "exact_alternate_witness_token",
     "domain", "context", "suggested_decision",
 ]
 BOUNDARY_FIELDS = [
@@ -311,6 +312,40 @@ def alternate_support() -> dict[str, Counter[str]]:
     return result
 
 
+def exact_alternate_support() -> dict[tuple[str, str, str, str, str], list[dict[str, str]]]:
+    result: dict[tuple[str, str, str, str, str], list[dict[str, str]]] = defaultdict(list)
+    for path in sorted((ROOT / "release/current/qa").glob(
+        "*/**/*alternate_witness_*.tsv"
+    )):
+        volume = path.parts[-2]
+        status = "adopted" if "adoptions" in path.name else "unresolved"
+        for row in read(path):
+            key = (
+                volume, row.get("page", ""), row.get("line", ""),
+                row.get("token_index", ""), row.get("base_token", ""),
+            )
+            result[key].append({
+                "status": status,
+                "token": row.get("alternate_token", ""),
+            })
+    for path in sorted((ROOT / "release/current/qa").glob(
+        "*/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv"
+    )):
+        for row in read(path):
+            key = (
+                row.get("volume", path.parts[-3]),
+                row.get("page", ""), row.get("line", ""),
+                row.get("token_index", ""), row.get("base_token", ""),
+            )
+            item = {
+                "status": "candidate",
+                "token": row.get("alternate_token", ""),
+            }
+            if item not in result[key]:
+                result[key].append(item)
+    return result
+
+
 def decisions() -> dict[str, dict[str, str]]:
     path = ROOT / "data/reviewed_tibetan_ocr_signature_decisions.tsv"
     return {row["signature"]: row for row in read(path)} if path.exists() else {}
@@ -385,6 +420,7 @@ def signature_applies_to_row(
 def build() -> dict[str, list[dict[str, str]]]:
     evidence, positives, negatives = reviewed_evidence()
     alternate = alternate_support()
+    exact_alternates = exact_alternate_support()
     outliers = read(ROOT / "data/tibetan_latin_transcription_outliers.tsv")
     canon_rows = read(ROOT / "data/tibetan_latin_canonical_syllables.tsv")
     canon_by_syllable = {r["tibetan_syllable"]: r for r in canon_rows}
@@ -871,6 +907,21 @@ def build() -> dict[str, list[dict[str, str]]]:
                     if signature == "REPLACE ni→ṅ"
                     else "single_edit_or_unclassified"
                 ),
+                "exact_alternate_witness_status": ";".join(
+                    witness["status"] for witness in exact_alternates.get((
+                        exact.get("volume", ""), exact.get("page", ""),
+                        exact.get("line", ""), exact.get("token_index", ""),
+                        exact.get("latin_token", row["current_source"]),
+                    ), [])
+                    if witness["token"] == row["canonical_target"]
+                ) or "none",
+                "exact_alternate_witness_token": ";".join(
+                    witness["token"] for witness in exact_alternates.get((
+                        exact.get("volume", ""), exact.get("page", ""),
+                        exact.get("line", ""), exact.get("token_index", ""),
+                        exact.get("latin_token", row["current_source"]),
+                    ), [])
+                ) or "none",
                 "domain": row["domain_breakdown"],
                 "context": exact.get(
                     "context_excerpt", row["sample_contexts"]

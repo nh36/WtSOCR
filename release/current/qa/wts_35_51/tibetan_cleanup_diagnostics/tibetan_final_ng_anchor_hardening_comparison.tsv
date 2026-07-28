@@ -50,6 +50,7 @@ target_changed	wts_1_34	1106	9	2	གོང	in	iṅ		source_compatible_structure_
 target_changed	wts_1_34	1109	35	1	ང	dan	daṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ང་པོའི་རྫལ་རྨན་ dan po’ rdul can Bez. für
 disappeared	wts_1_34	111	3	2	གཞུང	gzun	gzuṅ		source_compatible_insufficient_evidence			ཀླད་གཞུང་ klad gzun Rückenmark.
 disappeared	wts_1_34	1117	21	3	ཞང	Zan	Zaṅ		source_compatible_insufficient_evidence			དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
+newly_discovered	wts_1_34	112	114	3	སྙིང	säin				source_compatible_no_anchor	0	ཀླུ་སྒྲབ་སྙིང་པོ་ klu sgrub säin po
 category_changed	wts_1_34	113	33	2	གདང	gdon	gdoṅ	gdoṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	ཀླུ་གདང་མ་ལྔ་ klu gdon ma lṅa N. von fünf
 target_changed	wts_1_34	114	4	4	ཁྱུང	kbyun	kbyuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 target_changed	wts_1_34	1140	87	2	རིང	Iderin	Ideriṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	དི་རིང་ dirin Iderin.
@@ -124,6 +125,7 @@ disappeared	wts_1_34	1303	22	2	སྲོང	sron	sroṅ		source_compatible_insuf
 disappeared	wts_1_34	1303	3	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
 disappeared	wts_1_34	1303	3	2	སྲོང	sron	sroṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
 disappeared	wts_1_34	1303	37	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་གསུམ་ dran gsum die drei Wahrheiten, vgl.
+newly_discovered	wts_1_34	1323	1	3	སྙིང	säin				source_compatible_no_anchor	0	དྲི་ཡི་སྙིང་པོ་ dri yi säin po
 target_changed	wts_1_34	1334	50	3	ལྗང	ljan	ljaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan
 target_changed	wts_1_34	1334	97	3	ལྗང	ljan	ljaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan Ocker; Laberitum
 disappeared	wts_1_34	152	191	2	དྲང	dran	draṅ		source_compatible_insufficient_evidence			བཀྲིད་དྲང་ berid dran das Führen.
@@ -217,6 +219,7 @@ target_changed	wts_1_34	298	56	2	ཁྱུང	khrun	khruṅ		source_compatible_s
 target_changed	wts_1_34	298	94	1	ཁུང	khrun	khruṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁུང་ khrun resp. für chan.
 target_changed	wts_1_34	298	98	1	ཁྱུང	khrun	khruṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཁྱུང་ཏཁྱུང་ khrun khrun.
 target_changed	wts_1_34	300	171	2	གཞུང	gun	guṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁྲེལ་གཞུང་ khrel gun \khrel.
+newly_discovered	wts_1_34	306	72	3	སྣང	Glühwürmchen				source_compatible_no_anchor	0	མ།བའ་སྣང་ mkha’ snarn Glühwürmchen.
 target_changed	wts_1_34	310	54	3	མོང	dban	dbaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	མ།ཁའ་མོང་ངཔང་ལོ་ mkha’ spyod dban po Beina-
 target_changed	wts_1_34	311	97	2	སློང	sgon	sgoṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	མབར་སློང་ mkhar sgon
 target_changed	wts_1_34	322	186	2	དང	buddh	buddṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	T དང buddh. Gemeinde.
@@ -278,13 +281,15 @@ category_changed	wts_1_34	398	154	1	གླེང	glen	gleṅ	gleṅ	source_compa
 category_changed	wts_1_34	398	165	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་བསླངས་པ་ glen bslans pa eingeleitet.
 category_changed	wts_1_34	398	40	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་ glen sprechen, berichten, erklären.
 category_changed	wts_1_34	398	53	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་མོ་ glen mo
+newly_discovered	wts_1_34	399	136	2	སྙིང	säin				source_compatible_no_anchor	0	གློ་སྙིང་ལྡེག་ glo säin ldeg Herzklopfen.
 target_changed	wts_1_34	400	35	3	འདྲེང	drin	driṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གློ་བ་འདྲེང་ glo ba ’drin unloyal, untreu sein;
 target_changed	wts_1_34	401	107	1	གློང	glon	gloṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	གློང་ glon pf. !glons umrühren, aufwirbeln.
 category_changed	wts_1_34	401	171	2	ཧང	han	haṅ	haṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྷི་ཧང་ ghi han †£7 wan.
 target_changed	wts_1_34	405	55	3	དཔང	dban	dbaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དགའ་རབ་དཔང་རམྱག་ dga’ rab dban phyug
 disappeared	wts_1_34	407	109	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཆར་ dgun char
 disappeared	wts_1_34	407	136	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཆར་ dgun char Bez. für Regen.
-target_changed	wts_1_34	407	144	2	སྙིང	sh	sṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
+disappeared	wts_1_34	407	144	2	སྙིང	sh	sṅ		source_compatible_structure_mismatch			དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
+newly_discovered	wts_1_34	407	144	2	སྙིང	shäin				source_compatible_no_anchor	0	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
 disappeared	wts_1_34	407	161	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་མོ་ ” dgun mo
 disappeared	wts_1_34	407	168	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་གདགས་ dgun gdugs Mittagshitze.
 disappeared	wts_1_34	407	173	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་བདན་ dgun bdun sieben Tage, Woche.
@@ -292,6 +297,7 @@ disappeared	wts_1_34	407	186	1	དགུང	dgun	dguṅ		source_compatible_insuf
 disappeared	wts_1_34	407	191	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
 disappeared	wts_1_34	408	2	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
 target_changed	wts_1_34	408	66	2	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགན་དང་ dgun dun \dgon dun.
+newly_discovered	wts_1_34	412	101	3	སྙིང	säih				source_compatible_no_anchor	0	དགེ་བའི་སྙིང་པོ་ dge ba’i säih po ein myth.
 target_changed	wts_1_34	412	56	3	སྙིང	shin	shiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགེ་བའི་སྙིང་པོ་ dge ba’i shin po
 category_changed	wts_1_34	413	1	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas
 category_changed	wts_1_34	413	12	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas Beina- དགེ་སྦྱོང་ dge sbyon Mönch, Asket, skt.
@@ -317,7 +323,8 @@ category_changed	wts_1_34	430	158	2	ང	khan	khaṅ	khaṅ	source_compatible_ins
 category_changed	wts_1_34	432	14	7	རང	rin	riṅ	riṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	Hals des Wassergefäßes herum“ (Hev མགན རང་ mgrin rin.
 category_changed	wts_1_34	439	200	1	འགང	gon	goṅ	goṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	འགང་པ gon po ein Damon; gon mo eine
 target_changed	wts_1_34	441	20	4	འགྱངས	then	theṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	འགྱངས་འཐེན་ ”£9)/47?5£ ’then Aufschub, Verzöge-
-target_changed	wts_1_34	441	56	2	སྟངས	n	ṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	འགྱིང་སྟངས་ ’oyın stans Hochmut.
+disappeared	wts_1_34	441	56	2	སྟངས	n	ṅ		source_compatible_insufficient_evidence			འགྱིང་སྟངས་ ’oyın stans Hochmut.
+newly_discovered	wts_1_34	452	46	2	ལྡིང	Idın				source_compatible_marker_attached	0	འགྲོ་ལྡིང་ gro Idın.
 target_changed	wts_1_34	453	27	3	ངང	nan	naṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	འགྲོ་བའི་ངང་ཚུལ་ gro ba’i nan tshul Bez. für
 category_changed	wts_1_34	460	127	2	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྒྱ་ཅང་ raya can auch rgya can, rgya chan ein
 target_changed	wts_1_34	464	15	3	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	རྒྱ་མཚོའི་དང་ྲེང་ rgya mtsho’i dun phren Bez.
@@ -359,6 +366,7 @@ target_changed	wts_1_34	50	50	2	ཤེང	sen	seṅ		source_compatible_insuffici
 target_changed	wts_1_34	503	36	5	ཚོང	Tauschhan	Tauschhaṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	སྒྲིལ་ཉོ་སྒྲིལ་ཚོང་ sgril 770 sgril tshon Tauschhan-
 target_changed	wts_1_34	506	34	2	ལྗང	han	haṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	སྒྲོ་ལྗང་ sgro han Papagei.
 target_changed	wts_1_34	506	45	2	མངང	mdun	mduṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྒྲོ་མངང་ sgro mdun eine Waffe.
+newly_discovered	wts_1_34	507	23	3	གླེང	Gespräch				source_compatible_damaged_context	0	སློག་གླེང་ sgrog £/67? Gespräch, Unterhaltung.
 target_changed	wts_1_34	510	25	3	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བྱྱ་བྱིན་དང་ brgya byin dun nach rechts ge-
 target_changed	wts_1_34	525	174	1	ངང	nan	naṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ངང་སྐྱ་ nan skya isabellfarben, weißlich.
 target_changed	wts_1_34	525	215	1	ངང	nan	naṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ངང་འགྲོས་ nan ’gros Bez. eines rituellen Tan-
@@ -409,6 +417,7 @@ category_changed	wts_1_34	555	49	3	འབྱང	byun	byuṅ	byuṅ	source_compat
 category_changed	wts_1_34	558	165	2	ང	khan	khaṅ	khaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྔ་།ང་ rna khan 1,677¢ khan. Tungkuh.
 disappeared	wts_1_34	560	16	2	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			རྔན་བགྲང་ rnan bgran auch mnan bgran [.
 category_changed	wts_1_34	569	95	3	ཤང	San	Saṅ	Saṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྔོ་གྲོ་ཤང་རྩེ་ sho gro San rtse eine Pflanze, Oro-
+newly_discovered	wts_1_34	571	102	5	བཏང	vergegenwärtigen				source_compatible_damaged_context	0	སྔོན་ད་བཏང་ $?7077 du btaṅ vergegenwärtigen.
 category_changed	wts_1_34	571	227	2	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	སྔོན་བྱང་ shon byun auch ~ ba früher, früher
 target_changed	wts_1_34	575	168	2	ཀེང	ken	keṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཅང་ཀེང་ caṅ ken
 category_changed	wts_1_34	575	202	1	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཅང་ཀན་ can kan die chin. Regierungsdevise A
@@ -422,6 +431,7 @@ category_changed	wts_1_34	576	65	1	ཅང	can	caṅ	caṅ	source_compatible_insu
 category_changed	wts_1_34	576	89	1	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཅང་སེང་ can seṅ auch can se eine Gruppe von
 disappeared	wts_1_34	580	1	3	རུང	run	ruṅ		source_compatible_insufficient_evidence			ཅཾ་མ་རུང་ ci ma run
 disappeared	wts_1_34	580	41	3	རུང	run	ruṅ		source_compatible_insufficient_evidence			ཅི་མ་རུང་ ci ma run wenn doch nur!
+newly_discovered	wts_1_34	582	161	1	ཅིང	cın				source_compatible_no_anchor	0	ཅིང་ cın
 target_changed	wts_1_34	583	77	2	ཀྱང	Ryan	Ryaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཅིས་ཀྱང་ cis Ryan Tcinas kyan.
 category_changed	wts_1_34	584	106	2	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཅེ་ཅང་ ce can
 target_changed	wts_1_34	584	72	2	སྲིང	sin	siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཅུང་སྲིང་ cun sin eine Speise.
@@ -508,10 +518,15 @@ category_changed	wts_1_34	787	200	3	བྱང	byun	byuṅ	byuṅ	source_compatib
 category_changed	wts_1_34	793	196	2	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཉེས་བྱང་ fies byun Verbrechen.
 disappeared	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ		source_compatible_insufficient_evidence			ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
 disappeared	wts_1_34	80	126	3	དྲང	dran	draṅ		source_compatible_insufficient_evidence			ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
+newly_discovered	wts_1_34	80	48	3	རྙིང	räin				source_compatible_no_anchor	0	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
 target_changed	wts_1_34	801	53	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
+newly_discovered	wts_1_34	804	213	4	གསུང	gsun		gsuṅ		source_compatible_dominant_consensus	9	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+newly_discovered	wts_1_34	811	181	2	ཐང	than		thaṅ		source_compatible_dominant_consensus	92	མཉེས་ཐང་ möes than npr. eine Gegend.
 target_changed	wts_1_34	814	160	1	སྙང	shan	shaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
-target_changed	wts_1_34	817	219	4	ལྟོང	h	ṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
+disappeared	wts_1_34	817	219	4	ལྟོང	h	ṅ		source_compatible_structure_mismatch			སྙན་ལྟོང་ san //90/7 hören, erfahren.
+newly_discovered	wts_1_34	817	219	4	ལྟོང	hören				source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
 target_changed	wts_1_34	819	152	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ཀ་ snin ka Isnin ga.
+newly_discovered	wts_1_34	819	155	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་ཁམས་ཅན་ säin khams can.
 category_changed	wts_1_34	819	167	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་ཁམས་ཆེ་བ་ sin khams che ba unver-
 target_changed	wts_1_34	819	36	1	སྙིང	sun	suṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ sun.
 disappeared	wts_1_34	82	132	3	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
@@ -520,16 +535,23 @@ target_changed	wts_1_34	820	105	3	སྙིང	chn	chṅ		source_compatible_stru
 target_changed	wts_1_34	820	25	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་གི་ཡན་ལག་འགྲམས་ snin gi yan lag ’grams
 target_changed	wts_1_34	820	41	1	སྙིང	sun	suṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙིང་གློགས་ sun 07095 Herzensfreund, enger
 target_changed	wts_1_34	820	91	1	སྙང	sin	siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་ཆུ་ sin chu eine Herzkrankheit.
+newly_discovered	wts_1_34	821	1	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་རྗེ་བ་ säin rje ba
 category_changed	wts_1_34	821	116	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་སྟོབས་ཅན་ sin stobs can
+newly_discovered	wts_1_34	821	118	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་སྟོབས་ཅན་ säin stobs can Beiname Brah-
 target_changed	wts_1_34	821	169	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་འཐིབས་པ་ snin ’thibs pa verwirrt, betrübt.
 target_changed	wts_1_34	821	18	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙིང་རྗེའི་ལྷ་ snin 770/ //༡% Beiname Avalokite-
 target_changed	wts_1_34	821	186	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་གདོས་ snin gdos {.5/7//? sdos
 category_changed	wts_1_34	821	199	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་རྡེང་ sin rden 7577/77 gden.
 category_changed	wts_1_34	821	208	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་སྡོས་ sin sdos auch $77//77 gelos Mut, Aus-
+newly_discovered	wts_1_34	821	25	2	སྙང	säin				source_compatible_no_anchor	0	སྙང་2 säin fie treu, loyal sein, nahestehen.
 category_changed	wts_1_34	821	3	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་རྗེ་བ་ sin rje ba das Mitleiderregende, eine
+newly_discovered	wts_1_34	821	43	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་ཏིག་ säin tıg Essenz, etwas Essentielles;
+newly_discovered	wts_1_34	821	51	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་གཏམ་ säin gtam Ratschlag, vertrauliches,
+newly_discovered	wts_1_34	821	61	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་སྟོབས་ säin stobs
 category_changed	wts_1_34	821	87	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་སྟོབས་ sin stobs.
 category_changed	wts_1_34	822	1	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་ནད་ sin nad
 category_changed	wts_1_34	822	106	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་པོ་མཁྲེགས་ sin po mkhregs
+newly_discovered	wts_1_34	822	162	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་ཕུར་ säin phur
 category_changed	wts_1_34	822	171	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་པོ་མཆོག་ sin po mchog eine hohe Zahl.
 category_changed	wts_1_34	822	179	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dbaṅ
 target_changed	wts_1_34	822	191	1	སྙང	sin	siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་པ་ཡ་ག་དྲག་མ་ sin po yi ge drug ma der
@@ -537,14 +559,19 @@ target_changed	wts_1_34	822	200	1	སྙང	sh	sṅ		source_compatible_structure
 target_changed	wts_1_34	822	213	1	སྙིང	szin	sziṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ཕྲ་ང་ szin phur vollkommen, eindringlich
 target_changed	wts_1_34	822	213	3	ང	vollkommen	vollkommeṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ཕྲ་ང་ szin phur vollkommen, eindringlich
 target_changed	wts_1_34	822	9	1	སྙང	Min	Miṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་ནད་ Min nad Herzerkrankung, Herz-
+newly_discovered	wts_1_34	823	13	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་འཕྱོས་པ་ säin ’pbyos pa eine Herzkrank-
 target_changed	wts_1_34	823	135	1	སྙིང	sAin	sAiṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙིང་གཞོས་ཏེ་སྨྲ་བ་ sAin 970$ te smra ba vertrau-
+newly_discovered	wts_1_34	823	187	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་རུལ་པོ་ säin rul po herzloser Mensch.
 target_changed	wts_1_34	823	38	1	སྙང	sin	siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་མ་ sin ma (zw.) Blüten; vgl. Isie ma.
 category_changed	wts_1_34	823	44	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་མ་རིངས་པ་་ sin ma rins pa {5/7//) rin.
 target_changed	wts_1_34	823	49	3	སང	sen	seṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་རྩ་སང་བ་ SAN risa sen ba erleichtert, er-
+newly_discovered	wts_1_34	823	81	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་ཚིམ་ säin tshim.
 target_changed	wts_1_34	824	21	1	སྙིང	sAin	sAiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ལས་ sAin las Sorge.
 target_changed	wts_1_34	824	3	1	སྙང	san	saṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་རླུང་ san rluṅ
 target_changed	wts_1_34	824	32	1	སྙིང	sAin	sAiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ཤ་ sAin śa das Organ Herz.
 category_changed	wts_1_34	824	42	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་ཤེད་ sin sed Mut.
+newly_discovered	wts_1_34	824	46	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
+newly_discovered	wts_1_34	824	6	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
 target_changed	wts_1_34	826	38	1	སྙིང	sien	sieṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ 'sien auch $)76/75 pf. Ibsnens fur. Ibsäen
 target_changed	wts_1_34	833	169	3	འདེང	jmdn	jmdṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	བསྙོན་འདེང་ bsion 777) jmdn. wissentlich falsch
 disappeared	wts_1_34	87	155	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ kun slon
@@ -675,6 +702,7 @@ target_changed	wts_35_51	700	55	3	སྟེང	Dach	Dacṅ		source_compatible_st
 target_changed	wts_35_51	712	54	1	ཕྱིང	pyih	pyiṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཕྱིང་ pyih lphyin.
 target_changed	wts_35_51	737	37	1	དཔུང	dpuṅń	dpuṅń		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དཔུང་ 'dpuṅń
 category_changed	wts_35_51	756	63	2	སྡིང	sdih	sdiṅ	sdiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དཔྱད་སྡིང་བཅུ་གསུམ་ dpyad sdih ben gsum eine
+newly_discovered	wts_35_51	799	3	2	རང	Balken				source_compatible_no_anchor	0	སྤར་རང་ sporröt Balken einer Waage.
 category_changed	wts_35_51	803	40	1	སྤང	spyah	spyaṅ	spyaṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	སྤང་ཀི་ spyah ki auch spyan khu, spyan gu,
 target_changed	wts_35_51	813	40	1	རང	spyan	spyaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	'རང་དྲང་ཅྲན་ spyan raṅ dran can
 disappeared	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ		source_compatible_insufficient_evidence			སྤྱི་གཞུང་ spyi gźuń Regierung.
@@ -686,14 +714,17 @@ disappeared	wts_8_b	102	59	2	ཏིང	tin	tiṅ		source_compatible_insufficient
 category_changed	wts_8_b	177	42	1	ཀྱང	byan	byaṅ	byaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	"ཀྱང་མའི་ལྕགས་ ""byan ma'ilcags Eisenplatte."
 target_changed	wts_8_b	225	5	1	བང	byun	byuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"བང་སྔོང་ ""byun son Einkünfte und Ausgaben."
 target_changed	wts_8_b	225	5	2	སྔོང	son	soṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"བང་སྔོང་ ""byun son Einkünfte und Ausgaben."
-target_changed	wts_8_b	255	4	2	ཁུང	Felsh	Felsṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བྲཐ།ཁུང་ bragkburi Felshöhle, Felsspalte.
+disappeared	wts_8_b	255	4	2	ཁུང	Felsh	Felsṅ		source_compatible_structure_mismatch			བྲཐ།ཁུང་ bragkburi Felshöhle, Felsspalte.
 target_changed	wts_8_b	284	55	3	བྲེང	rennen	renneṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	བྲེངས་སེ་བྲེང་ brenssebreṅ onom. rennen,
 target_changed	wts_8_b	295	33	2	མཐང	mthan	mthaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	བླ་མཐང་ bla mthan.
+newly_discovered	wts_8_b	298	28	2	བྱང	Zweitseelentäfelchen				source_compatible_no_anchor	0	བླ་བྱང་ bbla Zweitseelentäfelchen, ein Tä-
 category_changed	wts_8_b	330	74	1	བློང	blon	bloṅ	bloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བློང་ 'blon.
 category_changed	wts_8_b	331	13	2	བློང	blon	bloṅ	bloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བྲོང་བློང་ bloṅ blon.
+newly_discovered	wts_8_b	375	17	3	འཕྲེང	phren		phreṅ		source_compatible_dominant_consensus	13	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
 target_changed	wts_8_b	422	19	2	བྲེང	entzweien	entzweieṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བྲེན་བྲེང་ dbyenbyed entzweien, spalten, tren-
+newly_discovered	wts_8_b	457	24	2	གོང	Handrücken				source_compatible_no_anchor	0	འབོལ་གོང་ ''bol Handrücken, Fußrücken.
 target_changed	wts_8_b	473	18	1	འབུང	byun	byuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"འབུང་བཞི་ ""byun bäi auch 'byun ba bäi die vier"
-target_changed	wts_9_m	102	60	2	གང	Mannsh	Mannsṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	མི་གང་ migari Mannshöhe, Klafter.
+disappeared	wts_9_m	102	60	2	གང	Mannsh	Mannsṅ		source_compatible_insufficient_evidence			མི་གང་ migari Mannshöhe, Klafter.
 target_changed	wts_9_m	252	19	2	རེངས	auchmoren	auchmoreṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	མོ་རེངས།་ morens auchmoren, mo hreris allein-
 target_changed	wts_9_m	292	12	2	འཕུང	dpun	dpuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དམག་འཕུང་ Tdmag dpun.
 target_changed	wts_9_m	31	1	2	ནིང	manin	maniṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"མ་ནིང་ཕྲ Em"" manin phrag dog ..."

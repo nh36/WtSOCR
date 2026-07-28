@@ -2,7 +2,7 @@ volume	page	line	token_index	tibetan_syllable	current_dotted_token	provenance_cl
 wts_35_51	1	50	2	འོང	oṅ	base_provenance_unverified	oṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ད་འོང་ drod 'oṅ auch drod 'oṅs, drod 'oṅs dus
 wts_35_51	6	45	1	གདང	gdaṅ	base_provenance_unverified	gdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གདང་བུ་ gdaṅ bu
 wts_35_51	6	52	1	གདང	gdaṅ	base_provenance_unverified	gdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གདང་ 'gdaṅ pf. Igdans aufreißen, öffnen, aus-
-wts_35_51	6	65	1	གདང	gdaṅ	unknown	gdañ	ambiguous_change_or_token_position		གདང་ཁ་ gdaṅ kha îgdaṅ ga.
+wts_35_51	6	65	1	གདང	gdaṅ	other_postprocess	gdañ	confusable_to_headword	A	གདང་ཁ་ gdaṅ kha îgdaṅ ga.
 wts_35_51	6	66	1	གདང	ggdaṅ	base_provenance_unverified	ggdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གདང་ག་ ggdaṅ ga khba Leitersprosse,
 wts_35_51	6	80	1	གདང	gdaṅ	base_provenance_unverified	gdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"གདང་བུ་ gdaṅ bu auch rdan bu ""Treppenstufe,"
 wts_35_51	7	1	1	གདང	gdaṅ	base_provenance_unverified	gdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གདང་ཡས་ gdaṅ yas
@@ -188,6 +188,7 @@ wts_35_51	105	25	1	མདུང	mduṅ	base_provenance_unverified	mduṅ	No dire
 wts_35_51	105	29	1	མདུང	mduṅ	base_provenance_unverified	mduṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མདུང་མོ་ mduṅ mo Speer.
 wts_35_51	105	33	1	མདུང	mduṅ	unknown	mdun	ambiguous_change_or_token_position		མདུང་རྩེ་ mduṅ rtse Kurzf. für mduṅ gi rtse,
 wts_35_51	109	39	2	ལྔང	ldaṅ	base_provenance_unverified	ldaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མདུན་ལྔང་ mdun ldaṅ aufgekommene Debat-
+wts_35_51	116	2	2	སྣང	snaṅ	reviewed_exact_final_ng	snani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	མདོ་སྣང་ mdo snaṅ
 wts_35_51	116	34	2	བྱང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མདོ་བྱང་ mdo byaṅ Notiz.
 wts_35_51	119	45	2	བཟང	bzaṅ	base_provenance_unverified	bzaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མདོག་བཟང་ mdog bzaṅ
 wts_35_51	119	77	2	བཟང	bzaṅ	base_provenance_unverified	bzaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མདོག་བཟང་ ndog bzaṅ farbig, bunt.
@@ -209,6 +210,7 @@ wts_35_51	127	28	3	ཤིང	Siṅ	base_provenance_unverified	Siṅ	No direct au
 wts_35_51	127	39	2	བཟངས	bzaṅs	base_provenance_unverified	bzaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདབ་བཟངས་ 'dab bzaṅs auch 'dab bzan.
 wts_35_51	131	53	2	རིང	riṅ	base_provenance_unverified	riṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདམ་རིང་ dam riṅ Moor.
 wts_35_51	131	62	2	སེང	seṅ	base_provenance_unverified	seṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདམ་སེང་ 'dam seṅ cin Löwe.
+wts_35_51	147	1	3	ཡང	yaṅ	reviewed_exact_final_ng	yani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	འདི་ལྟར་ཡང་ di ltar yaṅ
 wts_35_51	147	2	3	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདི་ལྟར་ཡང་ di ltar yaṅ und außerdem, ferner,
 wts_35_51	147	5	2	མཐོང	mthoṅ	base_provenance_unverified	mthoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདི་མཐོང་བ་ལ་ཡོད་པ་ 'di mthoṅ ba la yod pa
 wts_35_51	147	13	2	ངང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདེ་ངང་འདེ་སྲུང་ di daṅ 'diskad diese und jene
@@ -377,6 +379,7 @@ wts_35_51	365	14	3	བཟང	bzaṅ	base_provenance_unverified	bzaṅ	No direct 
 wts_35_51	366	1	3	འཕྲེང	phreṅ	base_provenance_unverified	phreṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་བཟའ་འཕྲེང་གསོལ་ na bza' phreṅ gsol
 wts_35_51	366	14	3	འཕྲེང	phreṅ	base_provenance_unverified	phreṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་བཟའ་འཕྲེང་གསོལ་ na bza' 'phreṅ gsol npr. ein
 wts_35_51	366	19	2	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་ཡང་ na yaṅ auch na'aṅ.
+wts_35_51	366	44	2	ཡང	yaṅ	reviewed_exact_final_ng	yani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ན་ཡང་ na yaṅ
 wts_35_51	367	1	2	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་ཡང་ na yaṅ
 wts_35_51	367	47	2	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་ཡང་ na yaṅ
 wts_35_51	368	54	3	སེང	seṅ	base_provenance_unverified	seṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ན་ར་སེང་ཧ་ na ra seṅ ha npr. eine Gottheit, ge-
@@ -634,6 +637,7 @@ wts_35_51	549	85	2	ཁུང	khuṅ	base_provenance_unverified	khuṅ	No direct 
 wts_35_51	549	85	3	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་ཁུང་ཆུང་ ma khuṅ chuṅ Bez. für jmdn. mit
 wts_35_51	550	9	3	བཀང	bkaṅ	base_provenance_unverified	bkaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་གྲུ་བཀང་ rna gru bkaṅ Trna bkan.
 wts_35_51	551	41	3	ཀློངས	kroṅs	base_provenance_unverified	kroṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་བ་ཀློངས་ rna ba kroṅs die Ohren aufstellen,
+wts_35_51	552	14	3	གསང	gsaṅ	reviewed_exact_final_ng	gsani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	རྣ་བ་གསང་བ་ ma ba gsaṅ ba jmd., der gut hört
 wts_35_51	552	38	2	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་སྦྲང་ rna sbraṅ
 wts_35_51	552	64	2	བྲང	braṅ	base_provenance_unverified	braṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་བྲང་ rna braṅ Irma sbran.
 wts_35_51	553	29	2	ལུང	laṅ	base_provenance_unverified	laṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣ་ལུང་ ma laṅ Ohrring, Ohrschmuck.
@@ -658,6 +662,8 @@ wts_35_51	581	61	3	དང	daṅ	base_provenance_unverified	daṅ	No direct autho
 wts_35_51	582	1	3	ལྡང	ldaṅ	base_provenance_unverified	ldaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣམ་པར་ལྡང་ rnam par ldaṅ
 wts_35_51	582	2	3	ལྡང	ldaṅ	base_provenance_unverified	ldaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣམ་པར་ལྡང་ mam par ldaṅ [Haare] sich sträu-
 wts_35_51	582	7	3	སང	sdaṅ	base_provenance_unverified	sdaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣམ་པར་སང་ man par sdaṅ hassen; — 'gyur es
+wts_35_51	582	14	3	སྣང	snaṅ	reviewed_exact_final_ng	snani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	རྣམ་པར་སྣང་བར་་ rnam par snaṅ bar
+wts_35_51	583	1	3	སྣང	snaṅ	reviewed_exact_final_ng	snani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	རྣམ་པར་སྣང་བྱེད་ rnam par snaṅ byed
 wts_35_51	583	15	3	སྣང	snaṅ	base_provenance_unverified	snaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣམ་པར་སྣང་མཛད་ mam par snaṅ mdzad Kurzf.
 wts_35_51	584	31	3	སྤང	spaṅ	unknown	span	ambiguous_change_or_token_position		རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam spaṅ
 wts_35_51	584	37	3	སྤངས	spaṅs	base_provenance_unverified	spaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྣམ་པར་སྤངས་ rnam par spaṅs Kurzf. mam
@@ -969,6 +975,8 @@ wts_35_51	801	40	4	ཤིང	Siṅ	base_provenance_unverified	Siṅ	No direct au
 wts_35_51	802	40	2	འཚོང	tsboṅ	base_provenance_unverified	tsboṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤོས་འཚོང་ spos 'tsboṅ
 wts_35_51	802	72	2	འཚོང	tsboṅ	base_provenance_unverified	tsboṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤོས་འཚོང་ spos 'tsboṅ auch spos tsbon Händ-
 wts_35_51	803	20	2	བཟང	bzaṅ	base_provenance_unverified	bzaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤོས་བཟང་ spos bzaṅ npr. von Buddhas.
+wts_35_51	803	38	1	སྤྱང	spyaṅ	reviewed_exact_final_ng	spyani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	སྤྱང་ཁ་ spyaṅ kha
+wts_35_51	803	77	1	སྤྱང	spyaṅ	reviewed_exact_final_ng	spyani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	སྤྱང་ཁ་ spyaṅ kha Wolfsmaul.
 wts_35_51	804	1	1	སྤྱང	spyaṅ	base_provenance_unverified	spyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤྱང་གྲུང་ spyaṅ grum
 wts_35_51	804	7	1	སྤྱང	spyaṅ	base_provenance_unverified	spyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤྱང་གྲུང་ spyaṅ gruṅ klug, aufgeweckt.
 wts_35_51	804	7	2	གྲུང	gruṅ	base_provenance_unverified	gruṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤྱང་གྲུང་ spyaṅ gruṅ klug, aufgeweckt.
@@ -1115,7 +1123,10 @@ wts_35_51	935	1	2	ཁྲེངས	kheṅs	base_provenance_unverified	kheṅs	No 
 wts_35_51	935	2	2	ཁེངས	kheṅs	base_provenance_unverified	kheṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕོ་ཁེངས་ pbo kheṅs hochmütig, stolz.
 wts_35_51	935	16	2	གྱོང	gyoṅ	base_provenance_unverified	gyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྲོ་གྱོང་བཟའ་ pho gyoṅ bza' npr. eine weibliche
 wts_35_51	938	25	2	ལྗང	ldaṅ	base_provenance_unverified	ldaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕོ་ལྗང་ pho ldaṅ npr. ein Kloster.
+wts_35_51	939	37	2	བྲང	braṅ	reviewed_exact_final_ng	brani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ཕྲོ་བྲང་ pho braṅ
 wts_35_51	939	47	2	པྲང	braṅ	base_provenance_unverified	braṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕོ་པྲང་ pbo braṅ altuib. auch po bran.
+wts_35_51	940	1	2	བྲང	braṅ	reviewed_exact_final_ng	brani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ཕོ་བྲང་འཁོར་ pho braṅ 'khor
+wts_35_51	940	47	2	བྲང	braṅ	reviewed_exact_final_ng	brani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ཕོ་བྲང་འཁོར་ pho braṅ 'khor
 wts_35_51	941	33	2	བྲང	braṅ	reviewed_exact_final_ng	brań	reviewed_tibetan_exact_final_ng_consensus	tibetan_brang_consensus_batch_20260726	ཕོ་བྲང་འཁོར་མེོ་ pho braṅ 'kbor mo Bez. für die
 wts_35_51	941	48	2	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕོ་དབང་ pho dbaṅ lpho'i dbaṅ po.
 wts_35_51	943	33	2	ཡོང	yoṅ	unknown	yon	ambiguous_change_or_token_position		ཕོ་ཡོང་བཟྲའ་ pho yoṅ bza' auch pho yoṅ gza',
@@ -1138,8 +1149,10 @@ wts_35_51	960	79	2	དང	daṅ	base_provenance_unverified	daṅ	No direct autho
 wts_35_51	964	50	2	ཕྲེང	phreṅ	base_provenance_unverified	phreṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཕྲེང་ phyag phreṅ Gebetskette.
 wts_35_51	965	1	2	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་དབང་ pbyag dbaṅ
 wts_35_51	965	2	2	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་དབང་ phyag dbaṅ Weihe, die mit der Hand
+wts_35_51	966	23	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ཕྱག་ཚང་ phyag tshaṅ.
 wts_35_51	966	35	2	ཚང	tshaṅ	base_provenance_unverified	tshaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཚང་འབྲིམ་པ་ phyag tshaṅ brim pa Ord-
-wts_35_51	966	42	3	མང	maṅ	base_provenance_unverified	maṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag
+wts_35_51	966	42	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	ཕྱག་ཚང་མང་བ་ phyag tshaṅ maṅ ba auch phyag
+wts_35_51	966	42	3	མང	maṅ	base_provenance_unverified	maṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཚང་མང་བ་ phyag tshaṅ maṅ ba auch phyag
 wts_35_51	971	9	2	ཤིང	siṅ	base_provenance_unverified	siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཤིང་ phyag siṅ Stock.
 wts_35_51	972	21	3	ང	siṅ	base_provenance_unverified	siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱགས་ཤི ང་ phya gs siṅ
 wts_35_51	972	40	2	བཟུང	bzuṅ	base_provenance_unverified	bzuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་བཟུང་ phyani bzuṅ
@@ -1255,6 +1268,7 @@ wts_35_51	1084	63	2	བྲང	thaṅ	base_provenance_unverified	thaṅ	No direct
 wts_35_51	1084	73	1	འཕང	Phaṅ	base_provenance_unverified	Phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕང་ཐང་ཀ་མེད་ Phaṅ thaṅ ka med npr. ein von
 wts_35_51	1084	73	2	ཐང	thaṅ	base_provenance_unverified	thaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕང་ཐང་ཀ་མེད་ Phaṅ thaṅ ka med npr. ein von
 wts_35_51	1085	1	1	འཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕང་མདའ་རུ་ phaṅ mda' ru
+wts_35_51	1085	2	1	འཕང	phaṅ	reviewed_exact_final_ng	phani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	འཕང་མདའ་རུ་ phaṅ mda ru | in Sch ußweite, in
 wts_35_51	1085	5	1	འཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕང་མདུང་ 'phaṅ mduṅ Wurfspeer.
 wts_35_51	1085	5	2	མདུང	mduṅ	base_provenance_unverified	mduṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕང་མདུང་ 'phaṅ mduṅ Wurfspeer.
 wts_35_51	1085	10	1	འཕྲང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕྲང་བྲ་ 'phaṅ ba.

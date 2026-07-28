@@ -28965,3 +28965,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 621	1	7726	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཆ་བཞག་པ་ cha bZag pa
 789	3	9470	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
 1014	148	11354	headword_line	bzag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
+82	106	943	headword_line	lani	laṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཀུན་ནས་ལང་བ་ kun nas lani ba sich erheben, her-
+251	98	3328	headword_line	sbyani	sbyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཁ་སྦྱང་པ་ kha sbyani pa auch kha byan ba rede-
+338	135	4649	headword_line	gani	gaṅ	A	reviewed_tibetan_exact_ocr_signature	1	གང་པོ་འབོད་ gani po ’bod Beiname des Sakra.
+901	53	10116	headword_line	btani	btaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བཏང་ btani
+1012	108	11306	headword_line	gsani	gsaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཐུགས་གཏེར་གསང་་ thugs gter gsani ...
+1028	12	11548	headword_line	brani	braṅ	A	reviewed_tibetan_exact_ocr_signature	1	བེའུ་བྲང་ the’u brani auch the braṅ eine Gruppe
