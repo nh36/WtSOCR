@@ -211,11 +211,7 @@ def main() -> None:
             "volume": row["volume"], "page": row["page"],
             "line": row["line"], "token_index": row["token_index"],
             "from_token": row["latin_token"], "to_token": args.target,
-            "reason": (
-                "reviewed_tibetan_exact_manual_multi_error"
-                if args.explicit_manual_review
-                else args.reason
-            ),
+            "reason": args.reason,
             "evidence": args.evidence,
             "review_note": (
                 f"Exact {args.tibetan} alignment; canonical target and "

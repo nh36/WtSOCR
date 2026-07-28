@@ -6467,3 +6467,17 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 972	40	5149	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་བཟུང་ phyani bzuṅ
 1108	42	6021	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon"
 1108	76	6025	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
+883	40	4585	headword_line	pbaṅ	phaṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕང་མཁན་ pbaṅ mkhan
+896	54	4662	headword_line	pbyin	phyin	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕར་ཕྱིན་ 'phar pbyin Kurzf. für [/)/7 vol ru
+901	31	4683	headword_line	pbas	phas	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕས་ཀྱི་རྒོལ་བ་ pbas kyi rgol ba. Kurzf. phas rgol
+905	39	4706	headword_line	pbu	phu	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུ་མོ་ pbu mo āltere Schwester.
+923	16	4821	headword_line	pbur	phur	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུར་ཚུགས་པ་ pbur tshugs pa eindringlich, kon-
+926	29	4835	headword_line	pbul	phul	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུལ་ཕྱིན་ pbul phyin auch phul du phyin pa
+951	18	4986	headword_line	pbon	phon	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕོན་པོ་ pbon po Tphon.
+953	1	5000	headword_line	pbor	phor	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕོར་ཤུབས་ pbor śubs
+974	11	5165	headword_line	pbyam	phyam	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten ""allgemei-"
+994	57	5307	headword_line	pbyiṅ	phyiṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱིང་དྲིལ་ pbyiṅ dril cine Rolle Filz.
+1064	18	5690	headword_line	pbran	phran	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲན་ཚེགས་ pbran tshegs.
+1066	13	5701	headword_line	pbrin	phrin	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲིན་བློན་ pbrin blon ein Minister; in bka'ii
+1068	44	5709	headword_line	pbru	phru	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲུ་རྟོག་ pbru rtog
+1076	29	5776	headword_line	pbag	phag	A	reviewed_tibetan_exact_manual_structural_ocr	1	འཕག་ pbag pf. V'phags.

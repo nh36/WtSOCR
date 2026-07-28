@@ -255,8 +255,21 @@ class FeatureCompositionTests(unittest.TestCase):
                 "canonical_teaching_status": "not_teaching_evidence",
                 "domain_context": "ordinary_tibetan_lexical_or_compound",
             }], feature_complete=True,
+            domain="ordinary_tibetan_lexical_or_compound",
         )
         self.assertEqual(channel, "nonadmissible_observation")
+        self.assertFalse(authorized)
+
+    def test_target_support_is_requested_domain_specific(self):
+        rows = [{
+            "tibetan_syllable": "བ", "latin_form": "ba",
+            "canonical_teaching_status": "independent_teaching_evidence",
+            "domain_context": "ordinary_tibetan_lexical_or_compound",
+        }]
+        _channel, authorized = role_model.target_support_channel(
+            "བ", "ba", rows, feature_complete=True,
+            domain="tibetan_proper_name",
+        )
         self.assertFalse(authorized)
 
     def test_compose_with_role_spans_covers_target(self):

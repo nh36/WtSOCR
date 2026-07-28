@@ -1,4 +1,5 @@
 reason	source_disposition	corrected_tibetan_roles	corrected_latin_spans	unaffected_source_may_teach	intentional_variant	target_establishment	rationale
+reviewed_tibetan_exact_manual_structural_ocr	feature_error_source	root_consonant	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the structurally isolated OCR edit; independently delimited unaffected source spans may remain evidence.
 reviewed_tibetan_exact_manual_multi_error	full_source_noncanonical	multiple	full_token	no	no	full_token	Explicit exact multi-error review rejects the observed source as a complete transcription.
 reviewed_tibetan_exact_transcription_integrity	feature_error_source	root_consonant	changed_spans	yes	no	feature_only	Only the reviewed root feature is corrected; unchanged source spans remain supporting evidence.
 reviewed_tibetan_exact_ocr_signature	feature_error_source	conditioned_feature	changed_spans	yes	no	derived_full_token	The exact changed span is reviewed as OCR under an independently established canonical target.

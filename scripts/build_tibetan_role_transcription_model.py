@@ -917,6 +917,7 @@ def target_support_channel(
     target: str,
     teaching_rows: list[dict[str, str]],
     *,
+    domain: str,
     feature_complete: bool,
 ) -> tuple[str, bool]:
     """Return the strongest admissible observation channel for a target.
@@ -930,13 +931,12 @@ def target_support_channel(
         row for row in teaching_rows
         if row["tibetan_syllable"] == syllable and row["latin_form"] == target
     ]
-    ordinary_matching = [
+    domain_matching = [
         row for row in matching
-        if row["domain_context"]
-        == "ordinary_tibetan_lexical_or_compound"
+        if row["domain_context"] == domain
     ]
     statuses = {
-        row["canonical_teaching_status"] for row in ordinary_matching
+        row["canonical_teaching_status"] for row in domain_matching
     }
     domains = {row["domain_context"] for row in matching}
     if "reviewed_full_target_teaching_evidence" in statuses:
@@ -1251,7 +1251,9 @@ def simulate_expansion_yields(
             ):
                 exact_strong += 1
             _channel, support_ok = target_support_channel(
-                syllable, predicted, teaching, feature_complete=True
+                syllable, predicted, teaching,
+                domain="ordinary_tibetan_lexical_or_compound",
+                feature_complete=True,
             )
             if support_ok:
                 newly_authoritative.add(syllable)
@@ -2000,7 +2002,9 @@ def build() -> tuple[list[dict[str, str]], ...]:
             and existing["canonical_forms"] != prediction
         )
         support_channel, support_ok = target_support_channel(
-            syllable, prediction, teaching, feature_complete=bool(prediction)
+            syllable, prediction, teaching,
+            domain="ordinary_tibetan_lexical_or_compound",
+            feature_complete=bool(prediction)
         ) if prediction else ("no_feature_target", False)
         if exact_canonical_conflict:
             status, authority, blocker = (
@@ -2041,6 +2045,14 @@ def build() -> tuple[list[dict[str, str]], ...]:
         })
 
     domain: list[dict[str, str]] = []
+    headword_damage_path = (
+        ROOT / "data/reviewed_tibetan_headword_ocr_decisions.tsv"
+    )
+    headword_damage = {
+        (row["volume"], row["page"], row["line"], row["token_index"])
+        for row in read(headword_damage_path)
+        if row["decision"] == "tibetan_headword_ocr_confirmed"
+    } if headword_damage_path.exists() else set()
     canonical_targets = {
         row["tibetan_syllable"]: row["canonical_forms"]
         for row in canonical
@@ -2049,6 +2061,11 @@ def build() -> tuple[list[dict[str, str]], ...]:
         domain_support: dict[str, set[str]] = defaultdict(set)
         domain_conflicts: dict[str, set[str]] = defaultdict(set)
         for item in teaching:
+            if (
+                item["volume"], item["page"], item["line"],
+                item["token_index"],
+            ) in headword_damage:
+                continue
             syllable = item["tibetan_syllable"]
             if item["latin_form"] != canonical_targets.get(syllable):
                 continue
@@ -2118,11 +2135,32 @@ def build() -> tuple[list[dict[str, str]], ...]:
         row["domain_compatibility"] = (
             ";".join(sorted(authorized_domains)) or "unresolved"
         )
+        domain_support = []
+        for authorized_domain in sorted(authorized_domains):
+            channel, supported = target_support_channel(
+                row["tibetan_syllable"],
+                row["feature_composed_target"],
+                teaching,
+                domain=authorized_domain,
+                feature_complete=bool(row["feature_composed_target"]),
+            )
+            domain_support.append(
+                f"{authorized_domain}={channel}"
+            )
+            if not supported:
+                authorized_domains.discard(authorized_domain)
+        row["domain_compatibility"] = (
+            ";".join(sorted(authorized_domains)) or "unresolved"
+        )
+        row["supporting_evidence_ids"] = ";".join(domain_support)
+        if row["composition_status"] == "feature_complete_unique":
+            row["correction_authority"] = (
+                "yes" if authorized_domains else "no"
+            )
         if (
-            row["correction_authority"] == "yes"
+            row["composition_status"] == "feature_complete_unique"
             and not authorized_domains
         ):
-            row["correction_authority"] = "no"
             row["blocker"] = "component_rule_domain_authority_unresolved"
 
     graph: list[dict[str, str]] = []
