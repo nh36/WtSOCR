@@ -66,7 +66,8 @@ DECISION_FIELDS = [
 QUEUE_FIELDS = [
     "tibetan_syllable", "current_source", "canonical_target",
     "canonical_confidence_tier", "occurrence_count", "edit_signatures",
-    "signature_statuses", "action_category", "domain_breakdown",
+    "signature_statuses", "action_category", "source_alignment_status",
+    "domain_breakdown",
     "damage_or_marker", "boundary_secure_occurrences",
     "condition_matching_occurrences", "condition_failing_occurrences",
     "canonical_evidence", "sample_contexts",
@@ -699,6 +700,10 @@ def build() -> dict[str, list[dict[str, str]]]:
             (failing_rows if failures else matching_rows).append(exact)
         if reviewed_echo_rows and not matching_rows:
             action = "historical_echo_decision_block"
+        elif row.get("source_alignment_status") == "gloss_alignment_noise":
+            action = "gloss_alignment_noise"
+        elif row.get("source_alignment_status") != "secure_transcription_outlier":
+            action = "alignment_or_damage"
         elif not safe_domain:
             action = "domain_risk"
         elif not clean:
@@ -725,6 +730,9 @@ def build() -> dict[str, list[dict[str, str]]]:
             "edit_signatures": row["edit_signatures"],
             "signature_statuses": ";".join(statuses),
             "action_category": action,
+            "source_alignment_status": row.get(
+                "source_alignment_status", "unresolved"
+            ),
             "domain_breakdown": row["domain_breakdown"],
             "damage_or_marker": row["damage_or_marker"],
             "boundary_secure_occurrences": str(len(boundary_secure)),

@@ -14,6 +14,27 @@ SPEC.loader.exec_module(integrity)
 
 
 class TibetanLatinIntegrityTests(unittest.TestCase):
+    def test_gloss_line_cannot_become_secure_transliteration_span(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            release = Path(tmp) / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\theadword_latin_confidence\tline_text\n"
+                "1\t1\ttibetan_only\tnone\tཁང་ Haus\n"
+                "1\t2\theadword_line\thigh\tཁང་ khaṅ Haus\n",
+                encoding="utf-8",
+            )
+            rows = integrity.collect_all_aligned(release)
+        by_line = {row["line"]: row for row in rows}
+        self.assertEqual(
+            by_line["1"]["headword_transliteration_span_status"],
+            "missing_transliteration",
+        )
+        self.assertEqual(
+            by_line["2"]["headword_transliteration_span_status"],
+            "secure_complete_span",
+        )
     def test_registry_parses_reviewed_and_ambiguous_rules(self) -> None:
         rows = integrity.load_registry()
         by_feature = {row["tibetan_feature"]: row for row in rows}

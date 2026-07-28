@@ -32,7 +32,7 @@ DIAGNOSTIC_FIELDS = [
     "known_feature_violation", "feature_coverage",
     "transcription_gateway_status", "transcription_exception_status",
     "transcription_exception_scope",
-    "alignment_confidence",
+    "alignment_confidence", "headword_transliteration_span_status",
     "token_start", "token_end", "preceding_character",
     "following_character", "token_boundary_status",
     "expected_high_confidence_features", "observed_features",
@@ -289,6 +289,21 @@ def collect_all_aligned(release_root: Path) -> list[dict[str, str]]:
             phrase_start = tail_start + latin[0][1]
             last_token, last_start = latin[len(syllables) - 1]
             phrase_end = tail_start + last_start + len(last_token)
+            if zone_row.get("headword_latin_confidence") == "high":
+                span_status = "secure_complete_span"
+            elif zone_row.get("headword_latin_confidence") == "medium":
+                span_status = "probable_span"
+            elif zone_row.get("zone") == "headword_line":
+                span_status = "ambiguous_span"
+            elif zone_row.get("zone") == "tibetan_only":
+                span_status = "missing_transliteration"
+            elif zone_row.get("zone") in {
+                "german_prose", "german_prose_with_translit",
+                "example_tibetan_latin",
+            }:
+                span_status = "gloss_intrusion"
+            else:
+                span_status = "ambiguous_span"
             for syllable, (token, relative_start) in zip(syllables, latin):
                 absolute_start = tail_start + relative_start
                 absolute_end = absolute_start + len(token)
@@ -310,11 +325,16 @@ def collect_all_aligned(release_root: Path) -> list[dict[str, str]]:
                     boundary = "combining_mark_boundary_issue"
                 else:
                     boundary = "token_boundary_secure"
+                core_start = absolute_start + len(token) - len(
+                    token.lstrip("'’")
+                )
+                core_end = absolute_end - (len(token) - len(token.rstrip("'’")))
                 token_index = next(
                     (
                         index for index, match in enumerate(
                             consensus.POSTPROCESS_TOKEN_RE.finditer(line), start=1
-                        ) if match.start() == absolute_start
+                        ) if match.start() == core_start
+                        and match.end() == core_end
                     ),
                     0,
                 )
@@ -334,6 +354,7 @@ def collect_all_aligned(release_root: Path) -> list[dict[str, str]]:
                     "following_character": following,
                     "token_boundary_status": boundary,
                     "zone": zone_row.get("zone", ""),
+                    "headword_transliteration_span_status": span_status,
                     "damage_scope": damage,
                     "marker_attached": (
                         "yes" if consensus.token_has_attached_marker(
@@ -370,9 +391,9 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             alignment_confidence = "marker_or_damage"
         elif override:
             alignment_confidence = "secure_reviewed_alignment"
-        elif row["zone"] in {"headword_line", "tibetan_only"}:
+        elif row["headword_transliteration_span_status"] == "secure_complete_span":
             alignment_confidence = "secure_positional_alignment"
-        elif row["zone"] in {"latin_other", "german_prose_with_translit"}:
+        elif row["headword_transliteration_span_status"] == "gloss_intrusion":
             alignment_confidence = "gloss_or_prose_noise"
         else:
             alignment_confidence = "probable_alignment"
@@ -394,6 +415,8 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             "transcription_exception_scope":
                 result["transcription_exception_scope"],
             "alignment_confidence": alignment_confidence,
+            "headword_transliteration_span_status":
+                row["headword_transliteration_span_status"],
             "token_start": row["token_start"],
             "token_end": row["token_end"],
             "preceding_character": row["preceding_character"],

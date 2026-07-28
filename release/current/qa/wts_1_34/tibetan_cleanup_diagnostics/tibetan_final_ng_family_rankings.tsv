@@ -5,17 +5,15 @@ tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_t
 གླེང	glen	glen:12	gleṅ	12	0	1	0	11	0	0	1	wts_1_34
 གློང	gron	gron:11	groṅ	11	0	0	0	0	11	0	1	wts_1_34
 ཀྱོང	gyon	gyon:7	gyoṅ	7	0	0	7	0	0	0	1	wts_1_34
-འཆེང	chin	chin:7	chiṅ	7	0	0	7	0	0	0	1	wts_1_34
 ཞེང	zen	Zen:4	zeṅ	4	0	0	0	4	0	0	1	wts_1_34
-ཁོང	khon	Khon:1; khon:1	khoṅ	2	1	1	0	0	0	0	28	wts_1_34
+འཆེང	chin	chin:3	chiṅ	3	0	0	3	0	0	0	1	wts_1_34
+ཁོང	khon	Khon:1; khon:1	khoṅ	2	1	1	0	0	0	0	26	wts_1_34
 གཡང	g.yan	g.yan:2	g.yaṅ	2	0	0	2	0	0	0	1	wts_35_51;wts_9_m
-དྲང	dran	dran:2	draṅ	2	0	2	0	0	0	0	44	wts_1_34
-བློང	blon	blon:2	bloṅ	2	0	0	2	0	0	0	1	wts_8_b
+དྲང	dran	dran:2	draṅ	2	0	2	0	0	0	0	43	wts_1_34
 མཇིང	mjin	mjin:2	mjiṅ	2	0	0	2	0	0	0	1	wts_1_34
 མདོང	mdon	mdon:2	mdoṅ	2	0	0	2	0	0	0	1	wts_1_34
-འདིང	din	din:2	diṅ	2	0	0	2	0	0	0	1	wts_1_34
 འཕྱོང	phyon	phyon:2	phyoṅ	2	0	0	2	0	0	0	1	wts_35_51
-འཚང	tshan	tshan:2	tshaṅ	2	0	0	0	2	0	0	1	wts_1_34
+འབྱང	byun	byun:2	byuṅ	2	0	0	2	0	0	0	1	wts_1_34
 ཤང	san	San:2	Saṅ	2	0	0	0	2	0	0	1	wts_1_34
 སྲང	srun	srun:2	sruṅ	2	0	0	0	2	0	0	1	wts_1_34
 ཧང	han	han:2	haṅ	2	0	0	2	0	0	0	1	wts_1_34
@@ -33,11 +31,9 @@ tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_t
 མཐང	mthon	mthon:1	mthoṅ	1	0	0	1	0	0	0	1	wts_1_34
 མེང	min	min:1	miṅ	1	0	0	0	1	0	0	2	wts_1_34
 མྐྱོང	myon	myon:1	myoṅ	1	0	0	1	0	0	0	1	wts_1_34
-འགང	gon	gon:1	goṅ	1	0	0	1	0	0	0	1	wts_1_34
-འཕྲང	phran	phran:1	phraṅ	1	0	0	0	1	0	0	3	wts_35_51
 རྐྱོང	rkyon	rkyon:1	rkyoṅ	1	0	0	1	0	0	0	1	wts_1_34
 རྱོང	myon	myon:1	myoṅ	1	0	0	0	1	0	0	2	wts_1_34
 སིང	sin	sin:1	siṅ	1	0	0	1	0	0	0	1	wts_1_34
-སྒོང	sgon	sgon:1	sgoṅ	1	0	1	0	0	0	0	10	wts_1_34
+སྒོང	sgon	sgon:1	sgoṅ	1	0	1	0	0	0	0	9	wts_1_34
 སྡིང	sdin	sdih:1	sdiṅ	1	0	0	1	0	0	0	1	wts_35_51
 སྡེང	sden	sden:1	sdeṅ	1	0	0	1	0	0	0	1	wts_1_34

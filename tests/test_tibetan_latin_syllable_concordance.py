@@ -58,6 +58,24 @@ class SyllableConcordanceTests(unittest.TestCase):
         )
         self.assertIn("supporting_but_derived", row["canonical_teaching_breakdown"])
 
+    def test_reviewed_ocr_source_is_preserved_but_cannot_teach(self) -> None:
+        row = next(
+            r for r in self.teaching
+            if r["tibetan_syllable"] == "ཀྱང"
+            and r["latin_form"] == "kyani"
+        )
+        self.assertEqual(row["provenance_class"], "historical_observation")
+        self.assertEqual(
+            row["canonical_teaching_status"], "not_teaching_evidence"
+        )
+
+    def test_observed_forms_are_distinct_from_credible_competitors(self) -> None:
+        row = next(r for r in self.canonical if r["tibetan_syllable"] == "ཁང")
+        self.assertIn("Bank", row["observed_other_forms"])
+        self.assertNotIn(
+            "Bank", row["credible_competing_transcriptions"].split(";")
+        )
+
     def test_provenance_is_reconstructed(self) -> None:
         self.assertTrue(any(
             "historical_google_adopted" in r["provenance_breakdown"]

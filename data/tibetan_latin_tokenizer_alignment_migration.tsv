@@ -1,0 +1,1048 @@
+volume	page	line	token_index	tibetan_syllable	old_token	current_token	migration_class	context_excerpt
+wts_1_34	33	23	1	ཀ	f		former_alignment_requires_review	ཀ་ × für lkha.
+wts_1_34	33	41	2	ྱུ	k	käkagnha	unicode_latin_token_extent_repaired	1 ྱུ käkagnha.
+wts_1_34	35	60	2	ག	g	gä	unicode_latin_token_extent_repaired	ཀ་ག་ ་ལ་ ka gä ni la ein Saphir - skt. kakanila
+wts_1_34	35	61	1	གན	kr	krähenblau	unicode_latin_token_extent_repaired	གན „krähenblau“.
+wts_1_34	35	153	4	ར	m	mä	unicode_latin_token_extent_repaired	ཅོག་ཀ་མཱ་ར་ ka cog ku mä ra, auch ska cogku mä
+wts_1_34	40	167	1	ཀ	k	kä	unicode_latin_token_extent_repaired	ཀ་མ ་ཙནྡྲ་ kä ma tsandra
+wts_1_34	40	220	1	ཀཱ	k	kä	unicode_latin_token_extent_repaired	ཀཱ་མ་ཙནྡྲ་ kä ma tsandra npr., König im Osten In-
+wts_1_34	41	132	1	ཀཱ	k	kä	unicode_latin_token_extent_repaired	ཀཱ་མ་ཨ་ཤོ་ཀ་ kä ma a so ka „Begierden-Asoka“,
+wts_1_34	45	1	1	ཀཱ	k	kä	unicode_latin_token_extent_repaired	ཀཱ་ལ་ཡཀྟ་ནག་པོ་ kä la yaksa nag po
+wts_1_34	47	37	0	ཛཱ	ta		former_fragment_or_gloss_alignment_removed	ཀཱ་ཤི་ཛཱ་ཏ་ ka sidzäta „in Käśi geboren“, ein Brah-
+wts_1_34	47	37	2	ཤི	sidz	sidzäta	unicode_latin_token_extent_repaired	ཀཱ་ཤི་ཛཱ་ཏ་ ka sidzäta „in Käśi geboren“, ein Brah-
+wts_1_34	47	37	3	ཛཱ	in	in	alignment_change_requires_review	ཀཱ་ཤི་ཛཱ་ཏ་ ka sidzäta „in Käśi geboren“, ein Brah-
+wts_1_34	47	37	4	ཏ		Käśi	newly_visible_unicode_token	ཀཱ་ཤི་ཛཱ་ཏ་ ka sidzäta „in Käśi geboren“, ein Brah-
+wts_1_34	47	141	3	ཀྭ	k	kä	unicode_latin_token_extent_repaired	ཀ་སཱི་ཀྭ་ར་ ka si kä ra die Stadt Kaschgar.
+wts_1_34	49	130	2	ཀྭར	k	kä	unicode_latin_token_extent_repaired	ཀམ་ཀྭར་ kam kä ra ein Land im Nordwesten In-
+wts_1_34	52	93	2	ཌཱཀི	d	däki	unicode_latin_token_extent_repaired	ཀྨརྨ་ཌཱཀི་ karma däki eine Göttin ım Gefolge des
+wts_1_34	54	134	3	དྷུ	h	hü	unicode_latin_token_extent_repaired	ཀིན་བྱང་དྷུ་ kin byaṅ hü !kin jan hu.
+wts_1_34	55	40	4	རཱ	r	rä	unicode_latin_token_extent_repaired	ཀུ་ཀྭ་ར་རཱ་ཛ་ ku ku ra rä dza ~ skt. kukkuraraja
+wts_1_34	55	129	0	རི	chter		former_fragment_or_gloss_alignment_removed	ཀུ་ཅོ་དི་རི་རི་ ku co diriri Hohngelächter, schallen-
+wts_1_34	55	129	4	རི	Hohngel	Hohngelächter	unicode_latin_token_extent_repaired	ཀུ་ཅོ་དི་རི་རི་ ku co diriri Hohngelächter, schallen-
+wts_1_34	55	129	5	རི		schallen	new_alignment_requires_review	ཀུ་ཅོ་དི་རི་རི་ ku co diriri Hohngelächter, schallen-
+wts_1_34	56	189	3	ནཱ	n	nä	unicode_latin_token_extent_repaired	ཀུ་མ་ནཱ་པ་ ku ma nä pa, auch ku ma nä ba -- für
+wts_1_34	56	204	2	མཱ	m	mä	unicode_latin_token_extent_repaired	ཀུ་མཱ་ར་ཏ་ ku mä ra ta ein Bhiksu der frühen
+wts_1_34	57	1	2	མཱ	m	mä	unicode_latin_token_extent_repaired	ཀུ་མཱ་ར་ཤྲཱི་ ku mä ra śri
+wts_1_34	57	9	2	མཱ	m	mä	unicode_latin_token_extent_repaired	"ཀུ་མཱ་ར་ ""ku mä ra Sri ein Pandita. — skt."
+wts_1_34	62	78	0	མཁྱེན	id		former_fragment_or_gloss_alignment_removed	ཀུན་མཁྱེན་ཉིད་ kun /777/7)/67 üid Allwissenheit. —
+wts_1_34	62	78	5	མཁྱེན		üid	newly_visible_unicode_token	ཀུན་མཁྱེན་ཉིད་ kun /777/7)/67 üid Allwissenheit. —
+wts_1_34	62	131	4	གཉེན	g	güen	unicode_latin_token_extent_repaired	ཀུན་གྱི་བཤེས་གཉེན་ kun gyi bses güen npr., Vi-
+wts_1_34	63	28	0	གྲུ	nders		former_fragment_or_gloss_alignment_removed	ཀུན་དག དོན་གྲུ 1486), N. des Gründers des
+wts_1_34	63	28	4	དོན	Gr	Gründers	unicode_latin_token_extent_repaired	ཀུན་དག དོན་གྲུ 1486), N. des Gründers des
+wts_1_34	63	28	5	གྲུ		des	new_alignment_requires_review	ཀུན་དག དོན་གྲུ 1486), N. des Gründers des
+wts_1_34	63	53	0	དགའ	ne		former_fragment_or_gloss_alignment_removed	ཀུན་དགའ་བའ་གླ Töne, erfreuliche Gespräche. —
+wts_1_34	63	53	1	ཀུན	T		former_alignment_requires_review	ཀུན་དགའ་བའ་གླ Töne, erfreuliche Gespräche. —
+wts_1_34	63	53	2	བའ	erfreuliche		former_alignment_requires_review	ཀུན་དགའ་བའ་གླ Töne, erfreuliche Gespräche. —
+wts_1_34	63	53	3	གླ	Gespr		former_alignment_requires_review	ཀུན་དགའ་བའ་གླ Töne, erfreuliche Gespräche. —
+wts_1_34	64	193	0	འགྲོ	berallhin		former_fragment_or_gloss_alignment_removed	ཀུན་འགྲོ་ kun 990 „überallhin gehend“, univer-
+wts_1_34	64	193	3	འགྲོ		überallhin	newly_visible_unicode_token	ཀུན་འགྲོ་ kun 990 „überallhin gehend“, univer-
+wts_1_34	68	92	3	འཇོམས	Zerst	Zerstörer	unicode_latin_token_extent_repaired	ཀུན་འཇོམས་ kun 7075 „Zerstörer“; vgl. Ikun tu
+wts_1_34	70	3	5	པ	v	völlig	unicode_latin_token_extent_repaired	ཀུན་ཏུ་འཁྱོག་པ་ kun tu 5769 pa völlig gebogen.
+wts_1_34	70	8	8	པ	aufgew	aufgewühlt	unicode_latin_token_extent_repaired	ཀུན་ཏུ་འཁྲུག་པ་ kun tn 7/7?7/9 pa aufgewühlt sein,
+wts_1_34	71	199	0	པ	berwinden		former_fragment_or_gloss_alignment_removed	ཀུན་ཏུ་འཇོམས་པ་ kun tu 7:07775 pa überwinden, ver-
+wts_1_34	71	199	6	པ		überwinden	newly_visible_unicode_token	ཀུན་ཏུ་འཇོམས་པ་ kun tu 7:07775 pa überwinden, ver-
+wts_1_34	72	15	5	པ	v	völlig	unicode_latin_token_extent_repaired	ཀུན་ཏུ་མཉམ་པ་ kun tu ?77777777 pa völlig gleich sein,
+wts_1_34	75	206	7	པ	Anh	Anhänger	unicode_latin_token_extent_repaired	ཀུན་ཏུ་འཚོ་བ་པ་ kun tn 75/70 ba pa Anhänger einer
+wts_1_34	77	128	4	པ	anh	anhäufen	unicode_latin_token_extent_repaired	ཀུན་ཏུ་གསོག་པ་ kun tu gsogpa anhäufen; vgl. !kun
+wts_1_34	80	48	0	བ	in		former_fragment_or_gloss_alignment_removed	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
+wts_1_34	80	48	3	རྙིང	r	räin	unicode_latin_token_extent_repaired	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
+wts_1_34	80	48	4	བ		ba	new_alignment_requires_review	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
+wts_1_34	82	106	3	ལང	lani	laṅ	unicode_latin_token_extent_repaired	ཀུན་ནས་ལང་བ་ kun nas laṅ ba sich erheben, her-
+wts_1_34	82	166	2	སྣང	snaṅ	snaṅı	dotless_i_token_merged_correctly	ཀུན་སྣང་ kun snaṅı
+wts_1_34	85	49	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	ཀུན་གཞི་ kun gäi
+wts_1_34	85	76	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	ཀུན་གཞི་ kun gäi.
+wts_1_34	94	133	4	གཞི	g	gäi	unicode_latin_token_extent_repaired	ཀོ་ལྤགས་ཀྱི་གཞི་ ko lpags kyi gäi einer der 17 gäi
+wts_1_34	95	19	0	ཏཱཱ	ra		former_fragment_or_gloss_alignment_removed	ཀོཿ བ་ཏཱཱ་ར་ ko batära \ko bi da ra.
+wts_1_34	95	19	2	བ	bat	batära	unicode_latin_token_extent_repaired	ཀོཿ བ་ཏཱཱ་ར་ ko batära \ko bi da ra.
+wts_1_34	95	19	3	ཏཱཱ	ko	ko	alignment_change_requires_review	ཀོཿ བ་ཏཱཱ་ར་ ko batära \ko bi da ra.
+wts_1_34	95	19	4	ར		bi	new_alignment_requires_review	ཀོཿ བ་ཏཱཱ་ར་ ko batära \ko bi da ra.
+wts_1_34	99	199	0	ངྲ	un		former_fragment_or_gloss_alignment_removed	ཀོས་ ངྲ་ £6$5 säun, auch kos smyun schmales
+wts_1_34	99	199	2	ཀོས	s		former_alignment_requires_review	ཀོས་ ངྲ་ £6$5 säun, auch kos smyun schmales
+wts_1_34	103	104	3	ཤོབ	unversch	unverschämt	unicode_latin_token_extent_repaired	ཀྱག་ཤོབ་ kyag 405 unverschämt.
+wts_1_34	104	113	0	པ	berschu		former_fragment_or_gloss_alignment_removed	ཀྱ་མས་པ་ kyams pa Überschuß, Rest.
+wts_1_34	104	113	3	པ		Überschuß	newly_visible_unicode_token	ཀྱ་མས་པ་ kyams pa Überschuß, Rest.
+wts_1_34	108	183	2	རཱ	r	rä	unicode_latin_token_extent_repaired	ཀཱྩ་རཱ་ཛ་ krsna rä dza auch krsna ra dza npr. ein
+wts_1_34	112	114	0	པོ	in		former_fragment_or_gloss_alignment_removed	ཀླུ་སྒྲབ་སྙིང་པོ་ klu sgrub säin po
+wts_1_34	112	114	3	སྙིང	s	säin	unicode_latin_token_extent_repaired	ཀླུ་སྒྲབ་སྙིང་པོ་ klu sgrub säin po
+wts_1_34	112	114	4	པོ		po	new_alignment_requires_review	ཀླུ་སྒྲབ་སྙིང་པོ་ klu sgrub säin po
+wts_1_34	114	188	6	རྟེན	N	Nägawelt	unicode_latin_token_extent_repaired	ཀླུ་ཡི་འཇིག་རྟེན་ klu yi 7:9 rten „Nägawelt“, Bez.
+wts_1_34	119	50	0	སྤྱོད	is		former_fragment_or_gloss_alignment_removed	དཀའ་གཉིས་སྤྱོད་ dka’ güis spyod
+wts_1_34	119	50	2	གཉིས	g	güis	unicode_latin_token_extent_repaired	དཀའ་གཉིས་སྤྱོད་ dka’ güis spyod
+wts_1_34	119	50	3	སྤྱོད		spyod	new_alignment_requires_review	དཀའ་གཉིས་སྤྱོད་ dka’ güis spyod
+wts_1_34	119	96	0	སྤྱོད	is		former_fragment_or_gloss_alignment_removed	དཀའ་གཉིས་སྤྱོད་ dka’ gäis spyod Name eines ind.
+wts_1_34	119	96	2	གཉིས	g	gäis	unicode_latin_token_extent_repaired	དཀའ་གཉིས་སྤྱོད་ dka’ gäis spyod Name eines ind.
+wts_1_34	119	96	3	སྤྱོད		spyod	new_alignment_requires_review	དཀའ་གཉིས་སྤྱོད་ dka’ gäis spyod Name eines ind.
+wts_1_34	123	143	3	འབབ	Flu	Fluß	unicode_latin_token_extent_repaired	དཀར་འབབ་ dkar 7/ Fluß.
+wts_1_34	125	3	0	འགྲོ	an		former_fragment_or_gloss_alignment_removed	དཀར་ལས་གཞན་འགྲོ་བ་ dkar las gäan ’gro ba Bez.
+wts_1_34	125	3	3	གཞན	g	gäan	unicode_latin_token_extent_repaired	དཀར་ལས་གཞན་འགྲོ་བ་ dkar las gäan ’gro ba Bez.
+wts_1_34	125	3	4	འགྲོ	gro	gro	alignment_change_requires_review	དཀར་ལས་གཞན་འགྲོ་བ་ dkar las gäan ’gro ba Bez.
+wts_1_34	125	3	5	བ		ba	new_alignment_requires_review	དཀར་ལས་གཞན་འགྲོ་བ་ dkar las gäan ’gro ba Bez.
+wts_1_34	125	7	2	ལུ	wei	weiß	unicode_latin_token_extent_repaired	དཀར་ལུ་ dkar / weiß; vgl. !dkar po.
+wts_1_34	126	178	0	དཀོན	dkon		former_fragment_or_gloss_alignment_removed	དཀོན་མཆོག་ ädkon mchog sprin N. eines
+wts_1_34	126	178	1	དཀོན		ädkon	newly_visible_unicode_token	དཀོན་མཆོག་ ädkon mchog sprin N. eines
+wts_1_34	127	72	2	གཉེར	g	güer	unicode_latin_token_extent_repaired	ཀོན་གཉེར་ dkon güer Verwalter eines Tempels,
+wts_1_34	150	129	3	རྩིས	gl	glückbringende	unicode_latin_token_extent_repaired	བཀྲ་རྩིས་ bkra ?7575 glückbringende Kalkulatio-
+wts_1_34	155	208	1	རྐ	geh	gehörig	unicode_latin_token_extent_repaired	རྐ gehörig
+wts_1_34	168	5	3	ཀྭམཱར	kum	kumära	unicode_latin_token_extent_repaired	སྐ་ཅོག་ཀྭམཱར་ ska cog kumära Tka cog kumära.
+wts_1_34	176	15	2	ཡིབ	y	yıb	dotless_i_token_merged_correctly	སྐམ་ཡིབ་ skam yıb dünn, mager.
+wts_1_34	176	59	5	དང	W	Wüste	unicode_latin_token_extent_repaired	མ་ས་ཚ་བ།དང་ skam sa tsba gdun Wüste.
+wts_1_34	179	133	0	པ	am		former_fragment_or_gloss_alignment_removed	སྐལ་བ་མཉམ་པ་ skal ba müam pa „gleicher Anteil,
+wts_1_34	179	133	3	མཉམ	m	müam	unicode_latin_token_extent_repaired	སྐལ་བ་མཉམ་པ་ skal ba müam pa „gleicher Anteil,
+wts_1_34	179	133	4	པ		pa	new_alignment_requires_review	སྐལ་བ་མཉམ་པ་ skal ba müam pa „gleicher Anteil,
+wts_1_34	180	109	3	མ	gl	glücklich	unicode_latin_token_extent_repaired	སྐལ་བཟང་མ་ skalbzan ma glücklich; vgl. Tskal ba
+wts_1_34	183	54	2	བརྙན	br	brüan	unicode_latin_token_extent_repaired	སྐུ་བརྙན་ sku brüan
+wts_1_34	188	90	2	རིས	r	rıs	dotless_i_token_merged_correctly	སྐུད་རིས་ skud rıs Stickerei.
+wts_1_34	198	94	4	འདང	Flu	Fluß	unicode_latin_token_extent_repaired	སྐྱི་འདང་ $5)/7 ’daṅ Fluß.
+wts_1_34	199	107	5	སྡུག	Gl	Glück	unicode_latin_token_extent_repaired	སྐྱིད་སྡུག་ $/75)/77 sdug Glück und Leid, Schicksal,
+wts_1_34	207	49	4	གཉིས	g	gäis	unicode_latin_token_extent_repaired	སྐྱེ་མཆེད་བཅུ་གཉིས་ skye mched bcu gäis die zwölf
+wts_1_34	207	140	3	བཞི	b	bäi	unicode_latin_token_extent_repaired	སྐྱེ་གནས་བཞི་ skye gnas bäi die vier Arten des Ent-
+wts_1_34	222	26	2	བརྙན	br	brüan	unicode_latin_token_extent_repaired	སྐྲ་བརྙན་ skra brüan auch skra brüen Toupet,
+wts_1_34	222	96	3	གཞར	e	eın	dotless_i_token_merged_correctly	སྐྲ་གཞར་ skra £227༡༡ eın Stäbchen zur Ohrreini-
+wts_1_34	230	140	2	གཞག	g	göag	unicode_latin_token_extent_repaired	བསྐོ་གཞག་ bsko göag Ernennungsbefugnis.
+wts_1_34	251	98	2	སྦྱང	sbyani	sbyaṅ	unicode_latin_token_extent_repaired	ཁ་སྦྱང་པ་ kha sbyaṅ pa auch kha byan ba rede-
+wts_1_34	257	85	2	མོ	kr	kräftig	unicode_latin_token_extent_repaired	།ཁག་མོ་ khagmo kräftig.
+wts_1_34	257	147	2	གཉེར	g	güer	unicode_latin_token_extent_repaired	ཁང་གཉེར་ khaṅ güer Hausverwalter.
+wts_1_34	259	207	3	རལ	Nadelbeh	Nadelbehälter	unicode_latin_token_extent_repaired	།ཁབ་རལ་ 5545 ral Nadelbehälter.
+wts_1_34	264	31	0	ཉན	an		former_fragment_or_gloss_alignment_removed	།ཁས་ཉན་ khas üan Tkha nan, \khas 77677.
+wts_1_34	264	31	2	ཉན		üan	newly_visible_unicode_token	།ཁས་ཉན་ khas üan Tkha nan, \khas 77677.
+wts_1_34	264	175	1	ཁཱ	kh	khä	unicode_latin_token_extent_repaired	ཁཱ་ཏ་ khä ta kleine Krähe.
+wts_1_34	269	41	0	བ	ger		former_fragment_or_gloss_alignment_removed	ཁུར་རྩ་ལ་བ་ khurrisal ba Lastträger.
+wts_1_34	269	41	1	ཁུར	khurrisal		former_alignment_requires_review	ཁུར་རྩ་ལ་བ་ khurrisal ba Lastträger.
+wts_1_34	269	41	2	རྩ	ba		former_alignment_requires_review	ཁུར་རྩ་ལ་བ་ khurrisal ba Lastträger.
+wts_1_34	269	41	3	ལ	Lasttr		former_alignment_requires_review	ཁུར་རྩ་ལ་བ་ khurrisal ba Lastträger.
+wts_1_34	279	48	2	ཁཱ	Kr	Krähe	unicode_latin_token_extent_repaired	ཁཱ་ 1£/‰:¿ Krähe.
+wts_1_34	279	142	1	པི	ringsch	ringschätzen	unicode_latin_token_extent_repaired	པི ringschätzen.
+wts_1_34	282	11	3	བཐའ	Ausma	Ausmaß	unicode_latin_token_extent_repaired	ཁྱབ་མ་བཐའ་ khyab mtha’ Ausmaß.
+wts_1_34	284	60	0	གཉིས	is		former_fragment_or_gloss_alignment_removed	ཀྱིམ་བཅུ་གཉིས་ khyim ༼7€/¢ gäis die 12 Tier-
+wts_1_34	284	60	1	ཀྱིམ	khyim		former_alignment_requires_review	ཀྱིམ་བཅུ་གཉིས་ khyim ༼7€/¢ gäis die 12 Tier-
+wts_1_34	284	60	3	བཅུ	g		former_alignment_requires_review	ཀྱིམ་བཅུ་གཉིས་ khyim ༼7€/¢ gäis die 12 Tier-
+wts_1_34	287	59	6	སྐྱེས	Morgend	Morgendämme	unicode_latin_token_extent_repaired	ཀུང་རྔོན་སྐྱེས་ khyun $7?0/7 skyes Morgendämme-
+wts_1_34	295	49	0	ས	an		former_fragment_or_gloss_alignment_removed	ཁྲི་སྙན་ས་ལེ་ khri süan sa le
+wts_1_34	295	49	2	སྙན	s	süan	unicode_latin_token_extent_repaired	ཁྲི་སྙན་ས་ལེ་ khri süan sa le
+wts_1_34	295	49	3	ས	sa	sa	alignment_change_requires_review	ཁྲི་སྙན་ས་ལེ་ khri süan sa le
+wts_1_34	295	49	4	ལེ		le	new_alignment_requires_review	ཁྲི་སྙན་ས་ལེ་ khri süan sa le
+wts_1_34	295	89	2	གཉན	g	güan	unicode_latin_token_extent_repaired	ཁྲི་གཉན་ khri güan Bez. für Wild, Antilope.
+wts_1_34	295	98	0	ས	an		former_fragment_or_gloss_alignment_removed	ཁྲི་སྙན་ས་ལེ་ khri süan sa le eine schwarzge-
+wts_1_34	295	98	2	སྙན	s	süan	unicode_latin_token_extent_repaired	ཁྲི་སྙན་ས་ལེ་ khri süan sa le eine schwarzge-
+wts_1_34	295	98	3	ས	sa	sa	alignment_change_requires_review	ཁྲི་སྙན་ས་ལེ་ khri süan sa le eine schwarzge-
+wts_1_34	295	98	4	ལེ		le	new_alignment_requires_review	ཁྲི་སྙན་ས་ལེ་ khri süan sa le eine schwarzge-
+wts_1_34	301	59	2	གཉེར	g	güer	unicode_latin_token_extent_repaired	ཁྲོ་གཉེར་ khro güer
+wts_1_34	305	113	4	སྐྱེས	R	Räksasa	unicode_latin_token_extent_repaired	མ།བའ་འགོ་ སྐྱེས་ mkha’ ’gro skyes Räksasa.
+wts_1_34	305	133	4	མ	D	Däkini	unicode_latin_token_extent_repaired	མ།བའ་འགྲོ་མ་ mkha’ ’gro ma Däkini.
+wts_1_34	306	69	3	གནས	G	Götterwohnsitz	unicode_latin_token_extent_repaired	མ།ཁའ་གནས་ mkha’ gnas Götterwohnsitz.
+wts_1_34	306	72	3	སྣང	Gl	Glühwürmchen	unicode_latin_token_extent_repaired	མ།བའ་སྣང་ mkha’ snarn Glühwürmchen.
+wts_1_34	310	66	3	འཕྲིང	Beh	Behälter	unicode_latin_token_extent_repaired	མ།བའ་འཕྲིང་ mkha’ ’phrih Behälter für Holz-
+wts_1_34	312	99	3	ཁལས	Baut	Bautätigkeit	unicode_latin_token_extent_repaired	མ།ར་ཁལས་ mkhar las Bautätigkeit, -werk.
+wts_1_34	312	109	3	སུང	W	Wächter	unicode_latin_token_extent_repaired	མ།ར་སུང་ mkhar sruh Wächter einer Festung.
+wts_1_34	317	147	2	འཁོགས	br	brüllen	unicode_latin_token_extent_repaired	འཁོགས་ 0798; brüllen.
+wts_1_34	328	70	0	ཅའ	la		former_fragment_or_gloss_alignment_removed	འྤའི་ཤིང་ཐོགས་མེད་ ཅའ sin thogs med Säla-
+wts_1_34	328	70	1	འྤའི	sin		former_alignment_requires_review	འྤའི་ཤིང་ཐོགས་མེད་ ཅའ sin thogs med Säla-
+wts_1_34	328	70	2	ཤིང	thogs		former_alignment_requires_review	འྤའི་ཤིང་ཐོགས་མེད་ ཅའ sin thogs med Säla-
+wts_1_34	328	70	3	ཐོགས	med		former_alignment_requires_review	འྤའི་ཤིང་ཐོགས་མེད་ ཅའ sin thogs med Säla-
+wts_1_34	328	70	4	མེད	S		former_alignment_requires_review	འྤའི་ཤིང་ཐོགས་མེད་ ཅའ sin thogs med Säla-
+wts_1_34	332	113	4	རོབ	T	Täuschung	unicode_latin_token_extent_repaired	འཁལ་རོབ་ ༡5/77// rdzob Täuschung.
+wts_1_34	336	53	1	གང	gar	garı	dotless_i_token_merged_correctly	གང་ garı
+wts_1_34	336	154	1	གང	gar	garı	dotless_i_token_merged_correctly	གང་ garı
+wts_1_34	337	111	2	ག	g	gä	unicode_latin_token_extent_repaired	གང་ག་ gaṅ gä auch gaṅ ga, ganga, gangä der
+wts_1_34	337	148	2	གཱ	g	gä	unicode_latin_token_extent_repaired	གང་གཱ་སྐྱེས་ gaṅ gä skyes.
+wts_1_34	337	159	2	གང	gar	garı	dotless_i_token_merged_correctly	གང་གང་ gar garı
+wts_1_34	337	172	0	བུ	i		former_fragment_or_gloss_alignment_removed	གང་གའི་བུ་ gaṅ gä’i bu Beiname des Kriegsgot-
+wts_1_34	337	172	2	གའི	g	gä’i	apostrophe_token_extent_repaired	གང་གའི་བུ་ gaṅ gä’i bu Beiname des Kriegsgot-
+wts_1_34	337	172	3	བུ		bu	new_alignment_requires_review	གང་གའི་བུ་ gaṅ gä’i bu Beiname des Kriegsgot-
+wts_1_34	338	80	1	གང	gaṅ	gaṅı	dotless_i_token_merged_correctly	གང་དག་ 'gaṅı dag sauber.
+wts_1_34	338	135	1	གང	gani	gaṅ	unicode_latin_token_extent_repaired	གང་པོ་འབོད་ gaṅ po ’bod Beiname des Sakra.
+wts_1_34	340	91	1	གང	gar	garı	dotless_i_token_merged_correctly	གང་ཟྲག་ garı zag Person, Mensch.
+wts_1_34	344	77	4	སྙིགས	M	Müll	unicode_latin_token_extent_repaired	གད་སྙིགས་ gad $577/9$ Müll, Schmutz, Abfall.
+wts_1_34	346	47	2	ཡིག	y	yıg	dotless_i_token_merged_correctly	གན་ཡིག་ gan yıg Privatvertrag.
+wts_1_34	347	133	3	ཁན	T	Tänzer	unicode_latin_token_extent_repaired	གར་མ།ཁན་ gar mkhan Tänzer, Schauspieler.
+wts_1_34	365	128	1	པི	Sinnest	Sinnestäuschung	unicode_latin_token_extent_repaired	པི Sinnestäuschung.
+wts_1_34	368	145	1	པཿ	gewi	gewiß	unicode_latin_token_extent_repaired	པཿ gewiß so sein.
+wts_1_34	381	170	0	རབ	hre		former_fragment_or_gloss_alignment_removed	གྲ་ཡི་རབ་ gru ༡// 745 Fähre, Boot.
+wts_1_34	381	170	3	ཡི	F	Fähre	unicode_latin_token_extent_repaired	གྲ་ཡི་རབ་ gru ༡// 745 Fähre, Boot.
+wts_1_34	381	170	4	རབ		Boot	new_alignment_requires_review	གྲ་ཡི་རབ་ gru ༡// 745 Fähre, Boot.
+wts_1_34	384	3	3	པ	zuverl	zuverlässig	unicode_latin_token_extent_repaired	གྲལ་བྲབ་པ་ grulthub pa zuverlässig.
+wts_1_34	387	88	6	བོ	F	Fürst	unicode_latin_token_extent_repaired	གློང་ཀྱེར་རྗེ་བོ་ 97-0/77 khyer rje bo Fürst, Landes-
+wts_1_34	395	141	1	ལ	k	kämpfen	unicode_latin_token_extent_repaired	ལ kämpfen.
+wts_1_34	395	183	3	གླས	kn	knüpfen	unicode_latin_token_extent_repaired	གླས་ 22/%; [166117613, knüpfen.
+wts_1_34	396	168	2	བཞི	b	bäi	unicode_latin_token_extent_repaired	གླིང་བཞི་ elin bäi.
+wts_1_34	398	118	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	གླེང་གཞི་ glen gäi.
+wts_1_34	399	136	0	ལྡེག	in		former_fragment_or_gloss_alignment_removed	གློ་སྙིང་ལྡེག་ glo säin ldeg Herzklopfen.
+wts_1_34	399	136	2	སྙིང	s	säin	unicode_latin_token_extent_repaired	གློ་སྙིང་ལྡེག་ glo säin ldeg Herzklopfen.
+wts_1_34	399	136	3	ལྡེག		ldeg	new_alignment_requires_review	གློ་སྙིང་ལྡེག་ glo säin ldeg Herzklopfen.
+wts_1_34	401	43	2	བརྙན	br	brüan	unicode_latin_token_extent_repaired	གློག་བརྙན་ glog brüan Film.
+wts_1_34	405	99	3	ངུ	K	Kämadeva	unicode_latin_token_extent_repaired	པ་ དཱ ངུ me des Kämadeva bzw.
+wts_1_34	407	144	2	སྙིང	sh	shäin	unicode_latin_token_extent_repaired	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
+wts_1_34	412	101	0	པོ	ih		former_fragment_or_gloss_alignment_removed	དགེ་བའི་སྙིང་པོ་ dge ba’i säih po ein myth.
+wts_1_34	412	101	3	སྙིང	s	säih	unicode_latin_token_extent_repaired	དགེ་བའི་སྙིང་པོ་ dge ba’i säih po ein myth.
+wts_1_34	412	101	4	པོ		po	new_alignment_requires_review	དགེ་བའི་སྙིང་པོ་ dge ba’i säih po ein myth.
+wts_1_34	424	173	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	བགྲང་གཞི་ beran gäi.
+wts_1_34	426	79	5	རྡོ	Ambo	Amboß	unicode_latin_token_extent_repaired	མགར་བའི་མེ་རྡོ་ mgar ba’i me ༡:70 Amboß.
+wts_1_34	426	86	4	རྔོ	Ambo	Amboß	unicode_latin_token_extent_repaired	མགར་བའི་འོག་རྔོ་ mgar ba’i ’ogrdo Amboß.
+wts_1_34	429	86	2	བརྙན	br	brüan	unicode_latin_token_extent_repaired	མགོ་བརྙན་ mgo brüan Büste, Maske.
+wts_1_34	433	78	0	རབ	enh		former_fragment_or_gloss_alignment_removed	འགག་སྡེད་ཏྱ་མཾ རབ sdod khyi mo Straßenhün-
+wts_1_34	433	78	1	འགག	sdod		former_alignment_requires_review	འགག་སྡེད་ཏྱ་མཾ རབ sdod khyi mo Straßenhün-
+wts_1_34	433	78	2	སྡེད	khyi		former_alignment_requires_review	འགག་སྡེད་ཏྱ་མཾ རབ sdod khyi mo Straßenhün-
+wts_1_34	433	78	3	ཏྱ	mo		former_alignment_requires_review	འགག་སྡེད་ཏྱ་མཾ རབ sdod khyi mo Straßenhün-
+wts_1_34	433	78	4	མཾ	Stra		former_alignment_requires_review	འགག་སྡེད་ཏྱ་མཾ རབ sdod khyi mo Straßenhün-
+wts_1_34	433	146	3	གཙང	sorgf	sorgfältig	unicode_latin_token_extent_repaired	འགད་གཙང་ 977 gtsaṅ sorgfältig.
+wts_1_34	438	38	3	ཁྲིད	F	Führer	unicode_latin_token_extent_repaired	འགོ་ཁྲིད་ 20 khrid Führer, Anführer, Leiter.
+wts_1_34	438	122	0	བང	tte		former_fragment_or_gloss_alignment_removed	འགོ་བང་ @ Hütte.
+wts_1_34	438	122	1	འགོ	H		former_alignment_requires_review	འགོ་བང་ @ Hütte.
+wts_1_34	438	205	0	འཛིན	chtigter		former_fragment_or_gloss_alignment_removed	འགོ་འཛིན་ 20 ?72/72 Bevollmächtigter, An-
+wts_1_34	438	205	4	འགོ	Bevollm	Bevollmächtigter	unicode_latin_token_extent_repaired	འགོ་འཛིན་ 20 ?72/72 Bevollmächtigter, An-
+wts_1_34	438	205	5	འཛིན		An	new_alignment_requires_review	འགོ་འཛིན་ 20 ?72/72 Bevollmächtigter, An-
+wts_1_34	441	56	1	འགྱིང	oy	oyın	dotless_i_token_merged_correctly	འགྱིང་སྟངས་ ’oyın stans Hochmut.
+wts_1_34	441	56	2	སྟངས	n		former_alignment_requires_review	འགྱིང་སྟངས་ ’oyın stans Hochmut.
+wts_1_34	441	56	3	སྟངས		stans	new_alignment_requires_review	འགྱིང་སྟངས་ ’oyın stans Hochmut.
+wts_1_34	442	176	4	བན	S	Sänger	unicode_latin_token_extent_repaired	འགྱར་བག་མ།བན་ 'gyur bag mkhan Sänger.
+wts_1_34	451	165	3	ས	Zahlungsempf	Zahlungsempfänger	unicode_latin_token_extent_repaired	འགྲོ་ཁང་ས་ 'gro khuns Zahlungsempfänger.
+wts_1_34	452	46	2	ལྡིང	Id	Idın	dotless_i_token_merged_correctly	འགྲོ་ལྡིང་ gro Idın.
+wts_1_34	455	97	0	རྒང	gar	garı	dotless_i_token_merged_correctly	རྒང་གཟུགས་ 7garı gzugs eine Antilope.
+wts_1_34	456	16	0	འགོ	lterer		former_fragment_or_gloss_alignment_removed	རྒན་འགོ་ rgan 90 Älterer, Höchster.
+wts_1_34	456	16	3	འགོ		Älterer	newly_visible_unicode_token	རྒན་འགོ་ rgan 90 Älterer, Höchster.
+wts_1_34	464	144	0	རྒྱ		ıyarı	newly_visible_unicode_token	རྒྱ་རུ་ ıyarı Antilopenhorn.
+wts_1_34	464	144	1	རྒྱ	yar		former_alignment_requires_review	རྒྱ་རུ་ ıyarı Antilopenhorn.
+wts_1_34	466	19	1	རྒྱང	yar		former_alignment_requires_review	རྒྱང་ག ད &yarıg go
+wts_1_34	466	19	2	ག	g		former_alignment_requires_review	རྒྱང་ག ད &yarıg go
+wts_1_34	466	19	3	ད	go		former_alignment_requires_review	རྒྱང་ག ད &yarıg go
+wts_1_34	483	18	3	ཨ	D	Dünndarm	unicode_latin_token_extent_repaired	རྒྱ་ཨ་ ༡9༡༧ ma Dünndarm.
+wts_1_34	489	95	1	སྒང	sgar	sgarı	dotless_i_token_merged_correctly	སྒང་བུ་ ?sgarı bu Tgan bu 1.
+wts_1_34	489	99	1	སྒང	sgar	sgarı	dotless_i_token_merged_correctly	སྒང་གཤགས་ sgarı 9$579$ (zw.) Kiste.
+wts_1_34	489	102	1	སྒང	sgar	sgarı	dotless_i_token_merged_correctly	སྒང་གཤོངས་ sgarı gsons
+wts_1_34	494	158	2	ཡི	y	yı	dotless_i_token_merged_correctly	སྒོ་ཡི་མེ་ཁོང་ sgo yı me lor Türblatt.
+wts_1_34	494	178	3	ཤག	T	Türriegel	unicode_latin_token_extent_repaired	སྒོ་ཤག་ sgo $£ Türriegel.
+wts_1_34	500	156	2	བརྙན	br	brüan	unicode_latin_token_extent_repaired	སྒྲ་བརྙན་ sgra brüan.
+wts_1_34	501	105	1	པེ	ger	gerät	unicode_latin_token_extent_repaired	པེ gerät, Radio.
+wts_1_34	507	23	3	གླེང	Gespr	Gespräch	unicode_latin_token_extent_repaired	སློག་གླེང་ sgrog £/67? Gespräch, Unterhaltung.
+wts_1_34	507	63	3	ཤཿ	Schl	Schlüssel	unicode_latin_token_extent_repaired	སྒྲོག་རུས་ ཤཿ rus Brustknochen, Schlüssel-
+wts_1_34	508	122	0	འྱ	chterinnen		former_fragment_or_gloss_alignment_removed	གཾ འྱ ཞ 9 Torwächterinnen des Man-
+wts_1_34	508	122	2	གཾ	Torw	Torwächterinnen	unicode_latin_token_extent_repaired	གཾ འྱ ཞ 9 Torwächterinnen des Man-
+wts_1_34	508	122	3	འྱ	des	des	alignment_change_requires_review	གཾ འྱ ཞ 9 Torwächterinnen des Man-
+wts_1_34	508	122	4	ཞ		Man	new_alignment_requires_review	གཾ འྱ ཞ 9 Torwächterinnen des Man-
+wts_1_34	508	170	2	ཏུ	K	Kärttikeya	unicode_latin_token_extent_repaired	Ta ཏུ Kärttikeya.
+wts_1_34	526	194	4	རིང	langm	langmütig	unicode_latin_token_extent_repaired	ཛང་རིང་ ༡7:77 rin langmütig, nachsichtig, weit-
+wts_1_34	532	175	2	རིལ	r	rıl	dotless_i_token_merged_correctly	ངུར་རིལ་ nur rıl
+wts_1_34	532	198	0	རྱ	r		former_fragment_or_gloss_alignment_removed	རྨུ རྱ für Mönch.
+wts_1_34	532	198	1	རྨུ	f		former_alignment_requires_review	རྨུ རྱ für Mönch.
+wts_1_34	532	222	2	རིལ	r	rıl	dotless_i_token_merged_correctly	ངུར་རིལ་ nur rıl Wildente, Möwe.
+wts_1_34	544	145	3	མདོང	Butterfa	Butterfaß	unicode_latin_token_extent_repaired	དྱངལ་མདོང་ @7/// mdon Butterfaß für Tee.
+wts_1_34	547	7	3	འབྲེལ	tats	tatsächlich	unicode_latin_token_extent_repaired	དངོས་འབྲེལ་ @/©0$ ’brel tatsächlich, in Wirk-
+wts_1_34	556	57	1	པ	herabh	herabhängen	unicode_latin_token_extent_repaired	པ་ herabhängen.
+wts_1_34	556	191	2	བྲིས	br	brıs	dotless_i_token_merged_correctly	མངོན་བྲིས་ mnon brıs pf. zeichnen.
+wts_1_34	561	140	2	ཆུ	Schwei	Schweiß	unicode_latin_token_extent_repaired	རྔལ་ཆུ་ rnulchu Schweiß.
+wts_1_34	561	147	3	ནག	Schwei	Schweiß	unicode_latin_token_extent_repaired	རྫུལ་ནག་ 777/// nag Schweiß.
+wts_1_34	565	194	3	ི	vorl	vorläufig	unicode_latin_token_extent_repaired	སྔ་འགྲོཨཊ་ི sta ’phros vorläufig, im Moment.
+wts_1_34	566	61	3	ཆོཊ	fr	früh	unicode_latin_token_extent_repaired	སྔ་་ཆོཊ 577 mo früh, früher.
+wts_1_34	567	34	3	པ	Anh	Anhänger	unicode_latin_token_extent_repaired	སྔགས་པ་ $7779$ pa Anhänger des Mantrayäna,
+wts_1_34	568	33	3	ར	fr	früher	unicode_latin_token_extent_repaired	སྔར་འགྱ་ར་ sṅar 'gyur früher übersetzt, vgl. Isa
+wts_1_34	570	206	4	ཆད	fr	früher	unicode_latin_token_extent_repaired	སྔོན་ཆད་ $?7077 chad früher, zuvor.
+wts_1_34	571	102	5	བཏང	vergegenw	vergegenwärtigen	unicode_latin_token_extent_repaired	སྔོན་ད་བཏང་ $?7077 du btaṅ vergegenwärtigen.
+wts_1_34	571	130	0	གན	rliche		former_fragment_or_gloss_alignment_removed	ན་གན མེ natürliche Fähigkeit, sich an
+wts_1_34	571	130	1	ན	nat	natürliche	unicode_latin_token_extent_repaired	ན་གན མེ natürliche Fähigkeit, sich an
+wts_1_34	571	130	2	གན	F	Fähigkeit	unicode_latin_token_extent_repaired	ན་གན མེ natürliche Fähigkeit, sich an
+wts_1_34	571	130	3	མེ		sich	new_alignment_requires_review	ན་གན མེ natürliche Fähigkeit, sich an
+wts_1_34	572	36	3	མ	fr	früher	unicode_latin_token_extent_repaired	སྔོན་མ་ $77077 ma früher.
+wts_1_34	572	63	3	མོ	gr	grün	unicode_latin_token_extent_repaired	སྔོན་མོ་ $77077 mo grün, blau.
+wts_1_34	572	212	3	གསོལ	Bes	Besänftigungsopfer	unicode_latin_token_extent_repaired	བརྔན་གསོལ་ 5777777 gsol Besänftigungsopfer.
+wts_1_34	576	18	5	གེ	z	zögerlich	unicode_latin_token_extent_repaired	ཅང་ངེ་ཅོག་གེ་ can he €09 ge zögerlich, unschlüs-
+wts_1_34	580	53	1	ཅ	z		former_alignment_requires_review	ཅ ཞག €/ zıg
+wts_1_34	580	53	2	ཞག	g		former_alignment_requires_review	ཅ ཞག €/ zıg
+wts_1_34	582	161	1	ཅིང	c	cın	dotless_i_token_merged_correctly	ཅིང་ cın
+wts_1_34	583	80	1	ཅས		ä	newly_visible_unicode_token	ཅས། ä cis na auch 775 na warum?
+wts_1_34	583	80	2	ཅས	cis		former_alignment_requires_review	ཅས། ä cis na auch 775 na warum?
+wts_1_34	591	48	2	ཞུ	L	Löwe	unicode_latin_token_extent_repaired	པ ཞུ iD Löwe.
+wts_1_34	594	35	2	སྲི	sr	srı	dotless_i_token_merged_correctly	གཅིན་སྲི་ gein srı
+wts_1_34	597	94	2	སྲི	sr	srı	dotless_i_token_merged_correctly	གཅོང་སྲི་ gcon srı 6111 Dämon.
+wts_1_34	598	163	2	བཞུགས	b	bäugs	unicode_latin_token_extent_repaired	བཅག་བཞུགས་ bcag bäugs
+wts_1_34	602	22	2	ཡིག	Verf	Verfügung	unicode_latin_token_extent_repaired	བཅའ་ཡིག་ bea’ ༡༩ Verfügung, Vorschrift,
+wts_1_34	602	96	5	པ	st	ständiger	unicode_latin_token_extent_repaired	བཅར་བཞགས་པ་ bcar £2//9$ pa ständiger Beglei-
+wts_1_34	605	8	2	བགཉའ	g	güis	unicode_latin_token_extent_repaired	ཁར་བགཉའ།'ཁཁཁ།'ཌེ།། beu güis bdag po Bez. für
+wts_1_34	605	23	0	འོང	is		former_fragment_or_gloss_alignment_removed	བཅུ་གཉིས་འོང་འཕྲོ་ beu güis ’od ’phro Bez. für
+wts_1_34	605	23	2	གཉིས	g	güis	unicode_latin_token_extent_repaired	བཅུ་གཉིས་འོང་འཕྲོ་ beu güis ’od ’phro Bez. für
+wts_1_34	605	23	3	འོང	od	od	alignment_change_requires_review	བཅུ་གཉིས་འོང་འཕྲོ་ beu güis ’od ’phro Bez. für
+wts_1_34	605	23	4	འཕྲོ		phro	new_alignment_requires_review	བཅུ་གཉིས་འོང་འཕྲོ་ beu güis ’od ’phro Bez. für
+wts_1_34	610	159	3	ཉྲ	k	künstlich	unicode_latin_token_extent_repaired	ཏཀྲ་དོར།ཉྲ།། bcos ma künstlich; Falschheit; - min
+wts_1_34	613	138	2	ར	r	rüid	unicode_latin_token_extent_repaired	ང་ར * lcan rüid Weidenkätzchen.
+wts_1_34	616	34	0	པ	is		former_fragment_or_gloss_alignment_removed	ལྕེ་གཉིས་པ་ lce gfüis pa.
+wts_1_34	616	34	2	གཉིས	gf	gfüis	unicode_latin_token_extent_repaired	ལྕེ་གཉིས་པ་ lce gfüis pa.
+wts_1_34	616	34	3	པ		pa	new_alignment_requires_review	ལྕེ་གཉིས་པ་ lce gfüis pa.
+wts_1_34	619	204	3	འཇོག	Glaubw	Glaubwürdigkeit	unicode_latin_token_extent_repaired	ཆ་འཇོག་ cha 769 Glaubwürdigkeit, Respekt.
+wts_1_34	621	64	3	ཌྱ	ungef	ungefähr	unicode_latin_token_extent_repaired	ཆ་འ།ཌྱ།” cha lam ungefähr, annähernd.
+wts_1_34	627	3	3	སྙོལ	D	Düngen	unicode_latin_token_extent_repaired	ཆགས་སྙོལ་ chags $5770/ Düngen.
+wts_1_34	631	118	2	ཡིག	y	yıg	dotless_i_token_merged_correctly	ཆད་ཡིག་ chad yıg Abkommen, Vertrag.
+wts_1_34	633	117	0	གཞུག	ug		former_fragment_or_gloss_alignment_removed	ཆབ་གཞུག་ 7 gäug
+wts_1_34	633	117	2	ཆབ	g		former_alignment_requires_review	ཆབ་གཞུག་ 7 gäug
+wts_1_34	634	1	2	གསང	gsar	gsarı	dotless_i_token_merged_correctly	ཆབ་གསང་ chab gsarı
+wts_1_34	639	201	3	མ	Fa	Faßreif	unicode_latin_token_extent_repaired	ཆེང་ས་མ།་ chins ma Faßreif.
+wts_1_34	641	1	1	ཆེལ	ch	chıl	dotless_i_token_merged_correctly	ཆེལ་ཆེལ་ chıl chil
+wts_1_34	641	1	2	ཆེལ	l		former_alignment_requires_review	ཆེལ་ཆེལ་ chıl chil
+wts_1_34	641	1	3	ཆེལ		chil	new_alignment_requires_review	ཆེལ་ཆེལ་ chıl chil
+wts_1_34	645	125	0	ཉལ	ul		former_fragment_or_gloss_alignment_removed	ཆུ་ཉལ་བ་ chu üul ba Bez. für ruhiges Ge-
+wts_1_34	645	125	2	ཉལ		üul	newly_visible_unicode_token	ཆུ་ཉལ་བ་ chu üul ba Bez. für ruhiges Ge-
+wts_1_34	650	30	2	ག	Muktin	Muktinätha	unicode_latin_token_extent_repaired	” ག 38 Muktinätha.
+wts_1_34	651	119	4	བསྙེན	bs	bsüen	unicode_latin_token_extent_repaired	ཆུ་བཞིའི་དགེ་བསྙེན་ chu bźi” dge bsüen eine
+wts_1_34	652	59	2	ཨ	y	yı	dotless_i_token_merged_correctly	ཆུ་ཨ་ངགས chu yı nogs \chn 77095.
+wts_1_34	652	181	2	དྭ	Wasserbl	Wasserbläschen	unicode_latin_token_extent_repaired	IR དྭ Wasserbläschen, weißer
+wts_1_34	652	209	0	བརྙན	an		former_fragment_or_gloss_alignment_removed	ཆུ་ཡི་གཟུགས་བརྙན་ chu ༡/༡ gzugs brüan Fata
+wts_1_34	652	209	3	གཟུགས	br	brüan	unicode_latin_token_extent_repaired	ཆུ་ཡི་གཟུགས་བརྙན་ chu ༡/༡ gzugs brüan Fata
+wts_1_34	652	209	4	བརྙན		Fata	new_alignment_requires_review	ཆུ་ཡི་གཟུགས་བརྙན་ chu ༡/༡ gzugs brüan Fata
+wts_1_34	655	82	2	ཨུན	sr	srın	dotless_i_token_merged_correctly	ཆུ་ཨུན chu srın.
+wts_1_34	659	22	3	སྟག	zweitj	zweitjüngster	unicode_latin_token_extent_repaired	ཆུང་སྟག་ chuṅ /¡7£ zweitjüngster.
+wts_1_34	661	26	1	ཀག	Strau	Strauß	unicode_latin_token_extent_repaired	ཀག Strauß, Quasten.
+wts_1_34	665	94	2	གཉེར	g	güer	unicode_latin_token_extent_repaired	ཆེད་གཉེར་ ched güer speziell.
+wts_1_34	675	162	3	མས	religi	religiöses	unicode_latin_token_extent_repaired	ཆས་།ཁྲ་མས། chos khrims religiöses Gesetz,
+wts_1_34	680	23	3	པ	S	Sündenbe	unicode_latin_token_extent_repaired	Be དུ པ bsags Sündenbe-
+wts_1_34	680	179	2	གཞིས	g	gäis	unicode_latin_token_extent_repaired	ཆོས་གཞིས་ chos gäis auch chos 92/, chos kyi 9775
+wts_1_34	680	210	2	བཞི	b	bäi	unicode_latin_token_extent_repaired	ཆོས་བཞི་ chos bäi.
+wts_1_34	700	190	3	ཅན	regelm	regelmäßig	unicode_latin_token_extent_repaired	འཆར་ཅན་ (047 can regelmäßig, gewohnheits-
+wts_1_34	701	12	3	དམིགས	routinem	routinemäßig	unicode_latin_token_extent_repaired	འཆར་དམིགས་ ¿947 dmigs routinemäßig und
+wts_1_34	703	89	4	གནས	G	Götterwelt	unicode_latin_token_extent_repaired	འཆེ་མེད་གནས་ ¿077 med gnas Götterwelt.
+wts_1_34	707	90	0	ན	el		former_fragment_or_gloss_alignment_removed	ཇ་ཀག།ཏྷ་ན་ ja gtun 'Teestößel.
+wts_1_34	707	90	1	ཇ	ja		former_alignment_requires_review	ཇ་ཀག།ཏྷ་ན་ ja gtun 'Teestößel.
+wts_1_34	707	90	2	ཀག	gtun		former_alignment_requires_review	ཇ་ཀག།ཏྷ་ན་ ja gtun 'Teestößel.
+wts_1_34	707	90	3	ཏྷ	Teest		former_alignment_requires_review	ཇ་ཀག།ཏྷ་ན་ ja gtun 'Teestößel.
+wts_1_34	708	1	1	ཇ	jar		former_alignment_requires_review	ཇ་རིལ་ jarıl
+wts_1_34	708	1	2	རིལ	l		former_alignment_requires_review	ཇ་རིལ་ jarıl
+wts_1_34	708	44	3	མ	Teekr	Teekrümel	unicode_latin_token_extent_repaired	ང་སེལ་མ་ ja silma Teekrümel.
+wts_1_34	709	64	0	སྟེད	ed		former_fragment_or_gloss_alignment_removed	ཇི་སྟེད་ཅིག་ // süed cig wieviel; zahlreich, viel.
+wts_1_34	709	64	1	ཇི	s	süed	unicode_latin_token_extent_repaired	ཇི་སྟེད་ཅིག་ // süed cig wieviel; zahlreich, viel.
+wts_1_34	709	64	2	སྟེད	cig	cig	alignment_change_requires_review	ཇི་སྟེད་ཅིག་ // süed cig wieviel; zahlreich, viel.
+wts_1_34	709	64	3	ཅིག		wieviel	new_alignment_requires_review	ཇི་སྟེད་ཅིག་ // süed cig wieviel; zahlreich, viel.
+wts_1_34	710	105	3	ཡང	yaṅ	yaṅı	dotless_i_token_merged_correctly	ཇི་ལྟར་ཡང་ ji ltar yaṅı
+wts_1_34	712	49	1	ཇིབས	j	jübs	unicode_latin_token_extent_repaired	ཇིབས་ jübs imp. zu }’jib saugen,
+wts_1_34	714	51	3	གངས	gaṅ	gaṅıs	dotless_i_token_merged_correctly	ཇོ་མོ་གངས་ jo mo gaṅıs
+wts_1_34	714	161	3	སེལ	s	sıl	dotless_i_token_merged_correctly	ཇོ་ཉོ།སེལ་སིལ་ jo mo sıl sil npr. ein Berg ım
+wts_1_34	714	161	4	སིལ	l		former_alignment_requires_review	ཇོ་ཉོ།སེལ་སིལ་ jo mo sıl sil npr. ein Berg ım
+wts_1_34	714	161	5	སིལ		sil	new_alignment_requires_review	ཇོ་ཉོ།སེལ་སིལ་ jo mo sıl sil npr. ein Berg ım
+wts_1_34	716	16	2	རྩང	snan	snanı	dotless_i_token_merged_correctly	མཇལ་རྩང་ mjal snanı Vision.
+wts_1_34	728	26	2	དེ	M	MÜNCHEN	unicode_latin_token_extent_repaired	P དེ MÜNCHEN
+wts_1_34	730	72	3	ཀྱ	T	Täräs	unicode_latin_token_extent_repaired	j རྒྱད ཀྱ name Täräs.
+wts_1_34	730	91	4	སྟ	f	fürchterlich	unicode_latin_token_extent_repaired	འཇིགས་འཇིགས་སྟ་ jigs ?/9$ lta fürchterlich.
+wts_1_34	731	1	2	སྡང	sdar	sdarı	dotless_i_token_merged_correctly	འཇིགས་སྡང་ Jigs sdarı
+wts_1_34	734	126	0	བྱད	nnliches		former_fragment_or_gloss_alignment_removed	འཇུག བྱད männliches Glied.
+wts_1_34	734	126	1	འཇུག	m	männliches	unicode_latin_token_extent_repaired	འཇུག བྱད männliches Glied.
+wts_1_34	734	126	2	བྱད		Glied	new_alignment_requires_review	འཇུག བྱད männliches Glied.
+wts_1_34	737	14	3	སྣོད	Beh	Behälter	unicode_latin_token_extent_repaired	འཇོག་སྣོད་ 709 snod Behälter.
+wts_1_34	740	160	4	མ	Ehrw	Ehrwürdige	unicode_latin_token_extent_repaired	རྗེ་བཙུན་མ་ ?76 btsun ma Ehrwürdige.
+wts_1_34	741	115	3	ཐུགས	Mitgef	Mitgefühl	unicode_latin_token_extent_repaired	རྗེའི་ཐུགས་ 1767 thugs Mitgefühl.
+wts_1_34	742	190	3	ཆོག	abschlie	abschließende	unicode_latin_token_extent_repaired	རྗེས་ཆོག་ 7705 chog abschließende Verrichtun-
+wts_1_34	744	195	1	རླ	k	kü	unicode_latin_token_extent_repaired	རླ ༢༡ ༧ ༨. +; kü
+wts_1_34	745	134	0	བརྩེ	hl		former_fragment_or_gloss_alignment_removed	རྗེས་སུ་སྙིང་བརྩེ་ 7765 su 5?7//] brtse Mitgefühl; vgl.
+wts_1_34	745	134	2	རྗེས	su		former_alignment_requires_review	རྗེས་སུ་སྙིང་བརྩེ་ 7765 su 5?7//] brtse Mitgefühl; vgl.
+wts_1_34	745	134	5	སུ	brtse		former_alignment_requires_review	རྗེས་སུ་སྙིང་བརྩེ་ 7765 su 5?7//] brtse Mitgefühl; vgl.
+wts_1_34	745	134	6	སྙིང	Mitgef		former_alignment_requires_review	རྗེས་སུ་སྙིང་བརྩེ་ 7765 su 5?7//] brtse Mitgefühl; vgl.
+wts_1_34	749	75	7	པ	gr	gründ	unicode_latin_token_extent_repaired	རྗེས་སུ་རབ་ཏ་རྟོག་པ་ rjes su rab tu 7709 pa gründ-
+wts_1_34	754	38	0	ཆེག	ge		former_fragment_or_gloss_alignment_removed	བརྗོད་ཉམས་ཆེག་ 0770 /7/77/5 tsbig Lüge.
+wts_1_34	754	38	5	བརྗོད	tsbig		former_alignment_requires_review	བརྗོད་ཉམས་ཆེག་ 0770 /7/77/5 tsbig Lüge.
+wts_1_34	754	38	6	ཉམས	L		former_alignment_requires_review	བརྗོད་ཉམས་ཆེག་ 0770 /7/77/5 tsbig Lüge.
+wts_1_34	754	152	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	བརྗོད་གཞི་ brjod gäi Thematik.
+wts_1_34	755	182	0	ཉ	a		former_fragment_or_gloss_alignment_removed	ཉ་ཁྲབ་ཅན་ ?üa khrab can Waage.
+wts_1_34	755	182	1	ཉ		üa	newly_visible_unicode_token	ཉ་ཁྲབ་ཅན་ ?üa khrab can Waage.
+wts_1_34	756	133	0	ཉ	a		former_fragment_or_gloss_alignment_removed	ཉ་པ་ 'üa pa Fischer.
+wts_1_34	756	133	1	ཉ		üa	newly_visible_unicode_token	ཉ་པ་ 'üa pa Fischer.
+wts_1_34	757	21	2	མིག	m	mıg	dotless_i_token_merged_correctly	ཉ་མིག་ fa mıg ein Fisch (SCHUH 2012: 1382).
+wts_1_34	757	105	5	ཚིགས	M	Märas	unicode_latin_token_extent_repaired	ཉ་ཡི་ཚིགས་ 74 7/ tshigs Beiname Märas bzw.
+wts_1_34	760	18	0	ཉབ	ab		former_fragment_or_gloss_alignment_removed	ཉབ་རིབ་ üab rib ein Baum.
+wts_1_34	760	18	1	ཉབ		üab	newly_visible_unicode_token	ཉབ་རིབ་ üab rib ein Baum.
+wts_1_34	760	126	0	ཉམ	am		former_fragment_or_gloss_alignment_removed	ཉམ་ཉེས་ üam fies Schaden; ~ 'gyar Schaden
+wts_1_34	760	126	1	ཉམ		üam	newly_visible_unicode_token	ཉམ་ཉེས་ üam fies Schaden; ~ 'gyar Schaden
+wts_1_34	766	126	3	བདེ	gl	glücklich	unicode_latin_token_extent_repaired	ཉམས་བདེ་ 7747775 bde glücklich; ~ bar byed
+wts_1_34	771	49	4	གཉྱས	g	güis	unicode_latin_token_extent_repaired	ཉཾ་མ་བཅུ་གཉྱས་ MI ma ben güis die zwölf natür-
+wts_1_34	773	7	0	རྟ	tl		former_fragment_or_gloss_alignment_removed	ཉ་མའ་ཤང་རྟ་ Al /77:7/ Sinrta Tütl ma’irta.
+wts_1_34	773	7	5	ཤང	T	Tütl	unicode_latin_token_extent_repaired	ཉ་མའ་ཤང་རྟ་ Al /77:7/ Sinrta Tütl ma’irta.
+wts_1_34	773	7	6	རྟ		ma’irta	newly_visible_unicode_token	ཉ་མའ་ཤང་རྟ་ Al /77:7/ Sinrta Tütl ma’irta.
+wts_1_34	773	134	0	ཉ	l		former_fragment_or_gloss_alignment_removed	"ཉ་འཛ "" äl ’dzin Bez. für Sonnenfinsternis."
+wts_1_34	773	134	1	ཉ		äl	newly_visible_unicode_token	"ཉ་འཛ "" äl ’dzin Bez. für Sonnenfinsternis."
+wts_1_34	775	3	0	ཉིང	in		former_fragment_or_gloss_alignment_removed	ཉིང་མཚམས་སྦྱོར་བ་ üin mtshams sbyor ba
+wts_1_34	775	3	1	ཉིང		üin	newly_visible_unicode_token	ཉིང་མཚམས་སྦྱོར་བ་ üin mtshams sbyor ba
+wts_1_34	775	5	0	འགྲལ	in		former_fragment_or_gloss_alignment_removed	tragen“ (Padm 4546); ci’u mkhar ~ rtsa bZi ཉིང་འགྲལ་ /7/77 '9?777 Täin grul.
+wts_1_34	775	5	12	ཉིང	T	Täin	unicode_latin_token_extent_repaired	tragen“ (Padm 4546); ci’u mkhar ~ rtsa bZi ཉིང་འགྲལ་ /7/77 '9?777 Täin grul.
+wts_1_34	775	5	13	འགྲལ		grul	new_alignment_requires_review	tragen“ (Padm 4546); ci’u mkhar ~ rtsa bZi ཉིང་འགྲལ་ /7/77 '9?777 Täin grul.
+wts_1_34	775	147	0	ཉང	in		former_fragment_or_gloss_alignment_removed	ཉང་ཐ་ 'äin śa Frischfleisch, Fleisch eines am
+wts_1_34	775	147	1	ཉང		äin	newly_visible_unicode_token	ཉང་ཐ་ 'äin śa Frischfleisch, Fleisch eines am
+wts_1_34	778	191	0	མཉམ	am		former_fragment_or_gloss_alignment_removed	ཉིན་མཚན་མཉམ་པ་ /7/༡7 mtsban müam pa Tag-
+wts_1_34	778	191	4	མཚན	m	müam	unicode_latin_token_extent_repaired	ཉིན་མཚན་མཉམ་པ་ /7/༡7 mtsban müam pa Tag-
+wts_1_34	778	191	5	མཉམ	pa	pa	alignment_change_requires_review	ཉིན་མཚན་མཉམ་པ་ /7/༡7 mtsban müam pa Tag-
+wts_1_34	778	191	6	པ		Tag	new_alignment_requires_review	ཉིན་མཚན་མཉམ་པ་ /7/༡7 mtsban müam pa Tag-
+wts_1_34	779	30	0	འདྲ	am		former_fragment_or_gloss_alignment_removed	ཉིན་ཞག་མཉམ་འདྲ་ fin Zag müam ’dra Tagund-
+wts_1_34	779	30	3	མཉམ	m	müam	unicode_latin_token_extent_repaired	ཉིན་ཞག་མཉམ་འདྲ་ fin Zag müam ’dra Tagund-
+wts_1_34	779	30	4	འདྲ		dra	new_alignment_requires_review	ཉིན་ཞག་མཉམ་འདྲ་ fin Zag müam ’dra Tagund-
+wts_1_34	779	60	1	ཉིན	A	Aın	dotless_i_token_merged_correctly	ཉིན་རེ་ Aın re 1/7//7.
+wts_1_34	779	60	2	རེ	n		former_alignment_requires_review	ཉིན་རེ་ Aın re 1/7//7.
+wts_1_34	779	60	3	རེ		re	new_alignment_requires_review	ཉིན་རེ་ Aın re 1/7//7.
+wts_1_34	780	192	4	འཁྱུགས	wohlgen	wohlgenährt	unicode_latin_token_extent_repaired	"ཉང་འཁྱུགས་ /7//77 ""khyags wohlgenährt, pohert,"
+wts_1_34	781	131	0	ཉངས	uns		former_fragment_or_gloss_alignment_removed	ཉངས་ äuns Senfkörner; Steckrübe; - kar
+wts_1_34	781	131	1	ཉངས		äuns	newly_visible_unicode_token	ཉངས་ äuns Senfkörner; Steckrübe; - kar
+wts_1_34	782	212	3	མགོན	Unterst	Unterstützung	unicode_latin_token_extent_repaired	ཉེ་མགོན་ 770 mgon Unterstützung; ༨ bgyid sich
+wts_1_34	783	82	2	སྙོམས	s	süoms	unicode_latin_token_extent_repaired	ཉེ་སྙོམས་ ne süoms gleich; - byed gleich be-
+wts_1_34	786	72	3	བསྟེ	bs	bsüen	unicode_latin_token_extent_repaired	"ཉེ་བར་བསྟེ ""ie bar bsüen auch fer bsfien sich"
+wts_1_34	786	223	5	བ	Gem	Gemütsruhe	unicode_latin_token_extent_repaired	ཉེ་བར་དལ་བ་ 776 bar dul ba Gemütsruhe.
+wts_1_34	788	70	0	ཉེ	e		former_fragment_or_gloss_alignment_removed	ཉེ་བར་མཚོན་ üe bar mtshon auch zer mtshon
+wts_1_34	788	70	1	ཉེ		üe	newly_visible_unicode_token	ཉེ་བར་མཚོན་ üe bar mtshon auch zer mtshon
+wts_1_34	789	1	0	བཞག	ag		former_fragment_or_gloss_alignment_removed	ཉེ་བར་བཞག་ ;‰ bar bäag
+wts_1_34	789	1	1	ཉེ	bar		former_alignment_requires_review	ཉེ་བར་བཞག་ ;‰ bar bäag
+wts_1_34	789	1	2	བར	b		former_alignment_requires_review	ཉེ་བར་བཞག་ ;‰ bar bäag
+wts_1_34	789	3	0	ཉེ	e		former_fragment_or_gloss_alignment_removed	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
+wts_1_34	789	3	1	ཉེ		üe	newly_visible_unicode_token	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
+wts_1_34	789	27	3	བཞགས	b	bäugs	unicode_latin_token_extent_repaired	ཉེ་བར་བཞགས་ fie bar bäugs sitzen.
+wts_1_34	789	121	5	སྐྱོད	genie	genießen	unicode_latin_token_extent_repaired	ཉེ་བར་ཁོངས་སྐྱོད་ 770 bar lons spyod genießen,
+wts_1_34	795	178	0	པ	de		former_fragment_or_gloss_alignment_removed	ཉབ་ཉོབ་པ་ 7705 705 pa müde, schwach, teil-
+wts_1_34	795	178	4	ཉོབ	m	müde	unicode_latin_token_extent_repaired	ཉབ་ཉོབ་པ་ 7705 705 pa müde, schwach, teil-
+wts_1_34	795	178	5	པ		schwach	new_alignment_requires_review	ཉབ་ཉོབ་པ་ 7705 705 pa müde, schwach, teil-
+wts_1_34	795	196	0	ཉཾར	berreif		former_fragment_or_gloss_alignment_removed	ཉཾར་ 2)767 überreif werden, faulen.
+wts_1_34	795	196	3	ཉཾར		überreif	newly_visible_unicode_token	ཉཾར་ 2)767 überreif werden, faulen.
+wts_1_34	796	79	0	སྙུན	na		former_fragment_or_gloss_alignment_removed	གཉགས་སྙུན་ཀཱ་མཱ་ར་ 97796 dznäna ku mä ra npr.
+wts_1_34	796	79	2	གཉགས	dzn		former_alignment_requires_review	གཉགས་སྙུན་ཀཱ་མཱ་ར་ 97796 dznäna ku mä ra npr.
+wts_1_34	796	79	3	ཀཱ	ku		former_alignment_requires_review	གཉགས་སྙུན་ཀཱ་མཱ་ར་ 97796 dznäna ku mä ra npr.
+wts_1_34	796	79	4	མཱ	m		former_alignment_requires_review	གཉགས་སྙུན་ཀཱ་མཱ་ར་ 97796 dznäna ku mä ra npr.
+wts_1_34	796	79	5	ར	ra		former_alignment_requires_review	གཉགས་སྙུན་ཀཱ་མཱ་ར་ 97796 dznäna ku mä ra npr.
+wts_1_34	797	42	0	བྱ	an		former_fragment_or_gloss_alignment_removed	གཉན་བྱ་ gäan bya ein Vogel, Moorhuhn (?).
+wts_1_34	797	42	1	གཉན	g	gäan	unicode_latin_token_extent_repaired	གཉན་བྱ་ gäan bya ein Vogel, Moorhuhn (?).
+wts_1_34	797	42	2	བྱ		bya	new_alignment_requires_review	གཉན་བྱ་ gäan bya ein Vogel, Moorhuhn (?).
+wts_1_34	797	48	0	ད	rt		former_fragment_or_gloss_alignment_removed	གཉིནྷ་པན་ད་། Gottheit, gehört zu den
+wts_1_34	797	48	2	པན	geh	gehört	unicode_latin_token_extent_repaired	གཉིནྷ་པན་ད་། Gottheit, gehört zu den
+wts_1_34	797	48	3	ད		zu	new_alignment_requires_review	གཉིནྷ་པན་ད་། Gottheit, gehört zu den
+wts_1_34	797	58	0	ཚ	an		former_fragment_or_gloss_alignment_removed	གཉན་ཚ་ güan tsha eine Antilope.
+wts_1_34	797	58	1	གཉན	g	güan	unicode_latin_token_extent_repaired	གཉན་ཚ་ güan tsha eine Antilope.
+wts_1_34	797	58	2	ཚ		tsha	new_alignment_requires_review	གཉན་ཚ་ güan tsha eine Antilope.
+wts_1_34	797	65	5	ས	gef	gefährlicher	unicode_latin_token_extent_repaired	གཉན་ས་ 6/74/7 sa gefährlicher Ori.
+wts_1_34	797	100	5	པ	entt	enttäuscht	unicode_latin_token_extent_repaired	གཉའ་ཆག་པ་ 9/7¢ chag pa enttäuscht, mutlos.
+wts_1_34	800	48	0	སྟག	a		former_fragment_or_gloss_alignment_removed	གཉའ་སྟག་ güa’ //79 Genick, Höheres.
+wts_1_34	800	48	1	གཉའ	g	güa	unicode_latin_token_extent_repaired	གཉའ་སྟག་ güa’ //79 Genick, Höheres.
+wts_1_34	800	48	3	སྟག		Genick	new_alignment_requires_review	གཉའ་སྟག་ güa’ //79 Genick, Höheres.
+wts_1_34	801	134	1	གཉིད	g	gäid	unicode_latin_token_extent_repaired	གཉིད་ gäid Schlaf; ~ du soṅ ba eingeschlafen.
+wts_1_34	801	180	7	པ	tr	träge	unicode_latin_token_extent_repaired	གཉིད་ཀྱི་སྙོམ་པ་ 0?7//7 kyi siom pa träge, faul.
+wts_1_34	801	193	4	འཐིབས	schl	schläfrig	unicode_latin_token_extent_repaired	གཉིད་འཐིབས་ 9/7// ’thibs schläfrig.
+wts_1_34	801	203	0	ལྡོག	id		former_fragment_or_gloss_alignment_removed	གཉིད་ལྡོག་ gäid ldog pf. und imp. {9/7// log
+wts_1_34	801	203	1	གཉིད	g	gäid	unicode_latin_token_extent_repaired	གཉིད་ལྡོག་ gäid ldog pf. und imp. {9/7// log
+wts_1_34	801	203	2	ལྡོག		ldog	new_alignment_requires_review	གཉིད་ལྡོག་ gäid ldog pf. und imp. {9/7// log
+wts_1_34	802	3	5	ཁྲོ	schl	schläfrig	unicode_latin_token_extent_repaired	གཉིད་ཁྲོ་ 0/77/7 bro schläfrig sein, einschlafen.
+wts_1_34	802	11	0	མི	id		former_fragment_or_gloss_alignment_removed	གཉིད་མི་སད་ gäid mi sad auch güid mi zad
+wts_1_34	802	11	1	གཉིད	g	gäid	unicode_latin_token_extent_repaired	གཉིད་མི་སད་ gäid mi sad auch güid mi zad
+wts_1_34	802	11	2	མི	mi	mi	alignment_change_requires_review	གཉིད་མི་སད་ gäid mi sad auch güid mi zad
+wts_1_34	802	11	3	སད		sad	new_alignment_requires_review	གཉིད་མི་སད་ gäid mi sad auch güid mi zad
+wts_1_34	802	23	0	མ	ld		former_fragment_or_gloss_alignment_removed	གཉད་མ་ gäld mo 146/7//7 mo.
+wts_1_34	802	23	1	གཉད	g	gäld	unicode_latin_token_extent_repaired	གཉད་མ་ gäld mo 146/7//7 mo.
+wts_1_34	802	23	2	མ		mo	new_alignment_requires_review	གཉད་མ་ gäld mo 146/7//7 mo.
+wts_1_34	802	116	1	གཉིས	gr	grüs	unicode_latin_token_extent_repaired	གཉིས་ grüs
+wts_1_34	803	1	0	ཀ	is		former_fragment_or_gloss_alignment_removed	གཉིས་ཀ་ güis ka
+wts_1_34	803	1	1	གཉིས	g	güis	unicode_latin_token_extent_repaired	གཉིས་ཀ་ güis ka
+wts_1_34	803	1	2	ཀ		ka	new_alignment_requires_review	གཉིས་ཀ་ güis ka
+wts_1_34	803	112	0	སྐྱེས	is		former_fragment_or_gloss_alignment_removed	གཉིས་སྐྱེས་ güis skyes.
+wts_1_34	803	112	1	གཉིས	g	güis	unicode_latin_token_extent_repaired	གཉིས་སྐྱེས་ güis skyes.
+wts_1_34	803	112	2	སྐྱེས		skyes	new_alignment_requires_review	གཉིས་སྐྱེས་ güis skyes.
+wts_1_34	803	163	0	སྐྱེས	is		former_fragment_or_gloss_alignment_removed	གཉིས་སྐྱེས་ས་བོན་ gäis $/97/05 sa bon Bez. für Ei.
+wts_1_34	803	163	1	གཉིས	g		former_alignment_requires_review	གཉིས་སྐྱེས་ས་བོན་ gäis $/97/05 sa bon Bez. für Ei.
+wts_1_34	803	163	5	ས	sa		former_alignment_requires_review	གཉིས་སྐྱེས་ས་བོན་ gäis $/97/05 sa bon Bez. für Ei.
+wts_1_34	803	163	6	བོན	bon		former_alignment_requires_review	གཉིས་སྐྱེས་ས་བོན་ gäis $/97/05 sa bon Bez. für Ei.
+wts_1_34	803	169	0	འགྱུར	is		former_fragment_or_gloss_alignment_removed	གཉས འགྱུར་ gäis ’'gyur doppelt.
+wts_1_34	803	169	1	གཉས	g	gäis	unicode_latin_token_extent_repaired	གཉས འགྱུར་ gäis ’'gyur doppelt.
+wts_1_34	803	169	2	འགྱུར		gyur	new_alignment_requires_review	གཉས འགྱུར་ gäis ’'gyur doppelt.
+wts_1_34	803	177	0	སྙོམས	is		former_fragment_or_gloss_alignment_removed	གཉིས་སྙོམས་པར་ཞུགས་ grüis sioms par Zugs
+wts_1_34	803	177	1	གཉིས	gr	grüis	unicode_latin_token_extent_repaired	གཉིས་སྙོམས་པར་ཞུགས་ grüis sioms par Zugs
+wts_1_34	803	177	2	སྙོམས	sioms	sioms	alignment_change_requires_review	གཉིས་སྙོམས་པར་ཞུགས་ grüis sioms par Zugs
+wts_1_34	803	177	3	པར	par	par	alignment_change_requires_review	གཉིས་སྙོམས་པར་ཞུགས་ grüis sioms par Zugs
+wts_1_34	803	177	4	ཞུགས		Zugs	new_alignment_requires_review	གཉིས་སྙོམས་པར་ཞུགས་ grüis sioms par Zugs
+wts_1_34	804	38	0	ལྡན	is		former_fragment_or_gloss_alignment_removed	གཉིས་ལྡན་དས་ güis ldan dus auch nis ldan dus,
+wts_1_34	804	38	1	གཉིས	g	güis	unicode_latin_token_extent_repaired	གཉིས་ལྡན་དས་ güis ldan dus auch nis ldan dus,
+wts_1_34	804	38	2	ལྡན	ldan	ldan	alignment_change_requires_review	གཉིས་ལྡན་དས་ güis ldan dus auch nis ldan dus,
+wts_1_34	804	38	3	དས		dus	new_alignment_requires_review	གཉིས་ལྡན་དས་ güis ldan dus auch nis ldan dus,
+wts_1_34	804	59	0	པ	is		former_fragment_or_gloss_alignment_removed	གཉས་པ་ 'güis pa Tpis.
+wts_1_34	804	59	1	གཉས	g	güis	unicode_latin_token_extent_repaired	གཉས་པ་ 'güis pa Tpis.
+wts_1_34	804	59	2	པ		pa	new_alignment_requires_review	གཉས་པ་ 'güis pa Tpis.
+wts_1_34	804	161	0	འཛིན	is		former_fragment_or_gloss_alignment_removed	གཉིས་འཛིན་ gäis 6277 6113115[150116 Ansicht.
+wts_1_34	804	161	1	གཉིས	g	gäis	unicode_latin_token_extent_repaired	གཉིས་འཛིན་ gäis 6277 6113115[150116 Ansicht.
+wts_1_34	804	161	5	འཛིན		Ansicht	new_alignment_requires_review	གཉིས་འཛིན་ gäis 6277 6113115[150116 Ansicht.
+wts_1_34	804	167	0	སུ	is		former_fragment_or_gloss_alignment_removed	གཉིས་སུ་མེད་པར་*” gfüis su med par ...
+wts_1_34	804	167	1	གཉིས	gf	gfüis	unicode_latin_token_extent_repaired	གཉིས་སུ་མེད་པར་*” gfüis su med par ...
+wts_1_34	804	167	2	སུ	su	su	alignment_change_requires_review	གཉིས་སུ་མེད་པར་*” gfüis su med par ...
+wts_1_34	804	167	3	མེད	med	med	alignment_change_requires_review	གཉིས་སུ་མེད་པར་*” gfüis su med par ...
+wts_1_34	804	167	4	པར		par	new_alignment_requires_review	གཉིས་སུ་མེད་པར་*” gfüis su med par ...
+wts_1_34	804	183	0	སུ	ls		former_fragment_or_gloss_alignment_removed	གཉིས་སུ་བལྟ་ güls su bita als Dualität, als ge-
+wts_1_34	804	183	1	གཉིས	g	güls	unicode_latin_token_extent_repaired	གཉིས་སུ་བལྟ་ güls su bita als Dualität, als ge-
+wts_1_34	804	183	2	སུ	su	su	alignment_change_requires_review	གཉིས་སུ་བལྟ་ güls su bita als Dualität, als ge-
+wts_1_34	804	183	3	བལྟ		bita	new_alignment_requires_review	གཉིས་སུ་བལྟ་ güls su bita als Dualität, als ge-
+wts_1_34	804	213	0	སུ	ls		former_fragment_or_gloss_alignment_removed	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	804	213	1	གཉིས	g	gäls	unicode_latin_token_extent_repaired	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	804	213	2	སུ	su	su	alignment_change_requires_review	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	804	213	3	མི	mi	mi	alignment_change_requires_review	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	804	213	4	གསུང	gsun	gsun	alignment_change_requires_review	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	804	213	5	བ		ba	new_alignment_requires_review	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+wts_1_34	805	4	0	མ	ng		former_fragment_or_gloss_alignment_removed	གཉུག་མ་ 'gfäng ima.
+wts_1_34	805	4	1	གཉུག	gf	gfäng	unicode_latin_token_extent_repaired	གཉུག་མ་ 'gfäng ima.
+wts_1_34	805	4	2	མ		ima	new_alignment_requires_review	གཉུག་མ་ 'gfäng ima.
+wts_1_34	805	37	0	ས	tte		former_fragment_or_gloss_alignment_removed	གཉག་མའི་ས་ 8/7//9 1777 sa Leichenstätte.
+wts_1_34	805	37	5	གཉག	sa		former_alignment_requires_review	གཉག་མའི་ས་ 8/7//9 1777 sa Leichenstätte.
+wts_1_34	805	37	6	མའི	Leichenst		former_alignment_requires_review	གཉག་མའི་ས་ 8/7//9 1777 sa Leichenstätte.
+wts_1_34	805	41	0	སེམས	ug		former_fragment_or_gloss_alignment_removed	གཉག་སེམས་ཕྲ་མོ་ gfüug sems phra mo subtiles
+wts_1_34	805	41	1	གཉག	gf	gfüug	unicode_latin_token_extent_repaired	གཉག་སེམས་ཕྲ་མོ་ gfüug sems phra mo subtiles
+wts_1_34	805	41	2	སེམས	sems	sems	alignment_change_requires_review	གཉག་སེམས་ཕྲ་མོ་ gfüug sems phra mo subtiles
+wts_1_34	805	41	3	ཕྲ	phra	phra	alignment_change_requires_review	གཉག་སེམས་ཕྲ་མོ་ gfüug sems phra mo subtiles
+wts_1_34	805	41	4	མོ		mo	new_alignment_requires_review	གཉག་སེམས་ཕྲ་མོ་ gfüug sems phra mo subtiles
+wts_1_34	805	51	0	པ	ngs		former_fragment_or_gloss_alignment_removed	གཉགས་པ་ güngs pa ein inneres Organ.
+wts_1_34	805	51	1	གཉགས	g	güngs	unicode_latin_token_extent_repaired	གཉགས་པ་ güngs pa ein inneres Organ.
+wts_1_34	805	51	2	པ		pa	new_alignment_requires_review	གཉགས་པ་ güngs pa ein inneres Organ.
+wts_1_34	805	157	0	ཀ	en		former_fragment_or_gloss_alignment_removed	གཉེན་ཀ་ gäen ka Heiratsvermitdler (J. P).
+wts_1_34	805	157	1	གཉེན	g	gäen	unicode_latin_token_extent_repaired	གཉེན་ཀ་ gäen ka Heiratsvermitdler (J. P).
+wts_1_34	805	157	2	ཀ		ka	new_alignment_requires_review	གཉེན་ཀ་ gäen ka Heiratsvermitdler (J. P).
+wts_1_34	806	110	0	བྱེད	en		former_fragment_or_gloss_alignment_removed	གཉེན་བྱེད་ güen byed
+wts_1_34	806	110	1	གཉེན	g	güen	unicode_latin_token_extent_repaired	གཉེན་བྱེད་ güen byed
+wts_1_34	806	110	2	བྱེད		byed	new_alignment_requires_review	གཉེན་བྱེད་ güen byed
+wts_1_34	806	158	4	ཟླ	Verwandtschaftsverh	Verwandtschaftsverhältnis	unicode_latin_token_extent_repaired	གཉེན་ཟླ་ 9/707 zla Verwandtschaftsverhältnis,
+wts_1_34	807	8	1	གཉིར	g	gäer	unicode_latin_token_extent_repaired	གཉིར་ 'gäer sich kümmern um, bemühen um,
+wts_1_34	807	95	0	ཁམས	er		former_fragment_or_gloss_alignment_removed	གཉེར་ཁམས་ gäer khams Bereich der 9770) (?).
+wts_1_34	807	95	1	གཉེར	g	gäer	unicode_latin_token_extent_repaired	གཉེར་ཁམས་ gäer khams Bereich der 9770) (?).
+wts_1_34	807	95	2	ཁམས		khams	new_alignment_requires_review	གཉེར་ཁམས་ gäer khams Bereich der 9770) (?).
+wts_1_34	807	194	0	ལས	er		former_fragment_or_gloss_alignment_removed	གཉེར་ལས་འཛིན་ güer las ’dzin Verwalter und
+wts_1_34	807	194	1	གཉེར	g	güer	unicode_latin_token_extent_repaired	གཉེར་ལས་འཛིན་ güer las ’dzin Verwalter und
+wts_1_34	807	194	2	ལས	las	las	alignment_change_requires_review	གཉེར་ལས་འཛིན་ güer las ’dzin Verwalter und
+wts_1_34	807	194	3	འཛིན		dzin	new_alignment_requires_review	གཉེར་ལས་འཛིན་ güer las ’dzin Verwalter und
+wts_1_34	808	109	0	ད	an		former_fragment_or_gloss_alignment_removed	མཉན་ད་ ཡོད་པ་ müan du yod pa
+wts_1_34	808	109	1	མཉན	m	müan	unicode_latin_token_extent_repaired	མཉན་ད་ ཡོད་པ་ müan du yod pa
+wts_1_34	808	109	2	ད	du	du	alignment_change_requires_review	མཉན་ད་ ཡོད་པ་ müan du yod pa
+wts_1_34	808	109	3	ཡོད	yod	yod	alignment_change_requires_review	མཉན་ད་ ཡོད་པ་ müan du yod pa
+wts_1_34	808	109	4	པ		pa	new_alignment_requires_review	མཉན་ད་ ཡོད་པ་ müan du yod pa
+wts_1_34	809	88	0	དཀའ	am		former_fragment_or_gloss_alignment_removed	མཉམ་དཀའ་ müam dka’ npr. Magadha (vgl.
+wts_1_34	809	88	1	མཉམ	m	müam	unicode_latin_token_extent_repaired	མཉམ་དཀའ་ müam dka’ npr. Magadha (vgl.
+wts_1_34	809	88	2	དཀའ		dka	new_alignment_requires_review	མཉམ་དཀའ་ müam dka’ npr. Magadha (vgl.
+wts_1_34	810	71	0	པར	am		former_fragment_or_gloss_alignment_removed	མཉམ་པར་བཞག་ mäam par biag pf. zu 1/7737/77
+wts_1_34	810	71	1	མཉམ	m	mäam	unicode_latin_token_extent_repaired	མཉམ་པར་བཞག་ mäam par biag pf. zu 1/7737/77
+wts_1_34	810	71	2	པར	par	par	alignment_change_requires_review	མཉམ་པར་བཞག་ mäam par biag pf. zu 1/7737/77
+wts_1_34	810	71	3	བཞག		biag	new_alignment_requires_review	མཉམ་པར་བཞག་ mäam par biag pf. zu 1/7737/77
+wts_1_34	810	128	0	པོ	am		former_fragment_or_gloss_alignment_removed	མཉམ་པོ་བདན་ müam po bdun auch ?7?/7:7/7/
+wts_1_34	810	128	1	མཉམ	m	müam	unicode_latin_token_extent_repaired	མཉམ་པོ་བདན་ müam po bdun auch ?7?/7:7/7/
+wts_1_34	810	128	2	པོ	po	po	alignment_change_requires_review	མཉམ་པོ་བདན་ müam po bdun auch ?7?/7:7/7/
+wts_1_34	810	128	3	བདན		bdun	new_alignment_requires_review	མཉམ་པོ་བདན་ müam po bdun auch ?7?/7:7/7/
+wts_1_34	810	142	0	འབྲེལ	am		former_fragment_or_gloss_alignment_removed	མཉམ་འབྲེལ་ müam ’brel gemeinsam.
+wts_1_34	810	142	1	མཉམ	m	müam	unicode_latin_token_extent_repaired	མཉམ་འབྲེལ་ müam ’brel gemeinsam.
+wts_1_34	810	142	2	འབྲེལ		brel	new_alignment_requires_review	མཉམ་འབྲེལ་ müam ’brel gemeinsam.
+wts_1_34	810	161	0	གཞག	am		former_fragment_or_gloss_alignment_removed	མཉམ་གཞག་ müam 02:79 1?77/7/77?7 par 0279.
+wts_1_34	810	161	1	མཉམ	m	müam	unicode_latin_token_extent_repaired	མཉམ་གཞག་ müam 02:79 1?77/7/77?7 par 0279.
+wts_1_34	810	161	9	གཞག		par	new_alignment_requires_review	མཉམ་གཞག་ müam 02:79 1?77/7/77?7 par 0279.
+wts_1_34	811	1	0	ལྕག	en		former_fragment_or_gloss_alignment_removed	མཉེན་ལྕག་ müen lcug
+wts_1_34	811	1	1	མཉེན	m	müen	unicode_latin_token_extent_repaired	མཉེན་ལྕག་ müen lcug
+wts_1_34	811	1	2	ལྕག		lcug	new_alignment_requires_review	མཉེན་ལྕག་ müen lcug
+wts_1_34	811	72	1	མཉེལ	m	müiel	unicode_latin_token_extent_repaired	མཉེལ་ müiel auch 0/70/ resp. erschöpft, müde,
+wts_1_34	811	155	1	མཉས	m	müles	unicode_latin_token_extent_repaired	"མཉས་ ""müles pf. zu Imfed reiben, einreiben,"
+wts_1_34	811	181	0	ཐང	es		former_fragment_or_gloss_alignment_removed	མཉེས་ཐང་ möes than npr. eine Gegend.
+wts_1_34	811	181	1	མཉེས	m	möes	unicode_latin_token_extent_repaired	མཉེས་ཐང་ möes than npr. eine Gegend.
+wts_1_34	811	181	2	ཐང		than	new_alignment_requires_review	མཉེས་ཐང་ möes than npr. eine Gegend.
+wts_1_34	811	184	6	པ	g	gütig	unicode_latin_token_extent_repaired	མཉེས་གཤིན་པ་ 777/705 047777 pa freundlich, gütig;
+wts_1_34	811	224	1	རྙབ	r	rüab	unicode_latin_token_extent_repaired	"རྙབ་ "" rüab rüab zusammenraffen; vgl."
+wts_1_34	812	172	1	རྙིབ	r	räib	unicode_latin_token_extent_repaired	རྙིབ་ räib Nachkommenschaft.
+wts_1_34	813	106	0	བཀར	ed		former_fragment_or_gloss_alignment_removed	རྙེད་བཀར rüed bkur
+wts_1_34	813	106	1	རྙེད	r	rüed	unicode_latin_token_extent_repaired	རྙེད་བཀར rüed bkur
+wts_1_34	813	106	2	བཀར		bkur	new_alignment_requires_review	རྙེད་བཀར rüed bkur
+wts_1_34	813	142	0	པར	ed		former_fragment_or_gloss_alignment_removed	རྙེད་པར་དཀའ་བ་ rüed par dka’ ba tried dka”.
+wts_1_34	813	142	1	རྙེད	r	rüed	unicode_latin_token_extent_repaired	རྙེད་པར་དཀའ་བ་ rüed par dka’ ba tried dka”.
+wts_1_34	813	142	2	པར	par	par	alignment_change_requires_review	རྙེད་པར་དཀའ་བ་ rüed par dka’ ba tried dka”.
+wts_1_34	813	142	3	དཀའ	dka	dka	alignment_change_requires_review	རྙེད་པར་དཀའ་བ་ rüed par dka’ ba tried dka”.
+wts_1_34	813	142	4	བ		ba	new_alignment_requires_review	རྙེད་པར་དཀའ་བ་ rüed par dka’ ba tried dka”.
+wts_1_34	814	74	1	རྙོབ	ri	riüob	unicode_latin_token_extent_repaired	རྙོབ་ riüob pf. Ibrüabs fur. !bräab imp. ?770/5
+wts_1_34	814	137	1	སྙགས	s	säags	unicode_latin_token_extent_repaired	སྙགས་ 'säags Schulden eintreiben; ༦1, 157709 2.
+wts_1_34	814	148	0	སྙིགས	igs		former_fragment_or_gloss_alignment_removed	སྙགས་སྙིགས་ $/7:795 säigs Schmutz, Ablagerung.
+wts_1_34	814	148	4	སྙགས	s	säigs	unicode_latin_token_extent_repaired	སྙགས་སྙིགས་ $/7:795 säigs Schmutz, Ablagerung.
+wts_1_34	814	148	5	སྙིགས		Schmutz	new_alignment_requires_review	སྙགས་སྙིགས་ $/7:795 säigs Schmutz, Ablagerung.
+wts_1_34	814	164	1	སྙད	s	säad	unicode_latin_token_extent_repaired	སྙད་ säad pf. und fur. 1/7577/7/,
+wts_1_34	815	10	0	དཀྲིས	ad		former_fragment_or_gloss_alignment_removed	སྙད་དཀྲིས་ süad dkris Entschuldigung, Vor-
+wts_1_34	815	10	1	སྙད	s	süad	unicode_latin_token_extent_repaired	སྙད་དཀྲིས་ süad dkris Entschuldigung, Vor-
+wts_1_34	815	10	2	དཀྲིས		dkris	new_alignment_requires_review	སྙད་དཀྲིས་ süad dkris Entschuldigung, Vor-
+wts_1_34	815	130	0	མགྲིན	an		former_fragment_or_gloss_alignment_removed	སྙན་མགྲིན་ süan mgrin Bez. für den weißen
+wts_1_34	815	130	1	སྙན	s	süan	unicode_latin_token_extent_repaired	སྙན་མགྲིན་ süan mgrin Bez. für den weißen
+wts_1_34	815	130	2	མགྲིན		mgrin	new_alignment_requires_review	སྙན་མགྲིན་ süan mgrin Bez. für den weißen
+wts_1_34	815	159	0	འགྱར	an		former_fragment_or_gloss_alignment_removed	སྙན་འགྱར་ säan ’gyur wohlklingend; - med pa
+wts_1_34	815	159	1	སྙན	s	säan	unicode_latin_token_extent_repaired	སྙན་འགྱར་ säan ’gyur wohlklingend; - med pa
+wts_1_34	815	159	2	འགྱར		gyur	new_alignment_requires_review	སྙན་འགྱར་ säan ’gyur wohlklingend; - med pa
+wts_1_34	816	103	0	ཆ	an		former_fragment_or_gloss_alignment_removed	སྙན་ཆ་ säan cha Ohrschmuck.
+wts_1_34	816	103	1	སྙན	s	säan	unicode_latin_token_extent_repaired	སྙན་ཆ་ säan cha Ohrschmuck.
+wts_1_34	816	103	2	ཆ		cha	new_alignment_requires_review	སྙན་ཆ་ säan cha Ohrschmuck.
+wts_1_34	816	108	0	འཇེབས	an		former_fragment_or_gloss_alignment_removed	སྙན་འཇེབས་ säan 70/25 wohlklingend, interes-
+wts_1_34	816	108	1	སྙན	s	säan	unicode_latin_token_extent_repaired	སྙན་འཇེབས་ säan 70/25 wohlklingend, interes-
+wts_1_34	816	108	4	འཇེབས		wohlklingend	new_alignment_requires_review	སྙན་འཇེབས་ säan 70/25 wohlklingend, interes-
+wts_1_34	816	136	0	དྭ	an		former_fragment_or_gloss_alignment_removed	སྩན་དྭ་གསོལ་ säan du gsol überbringen, be-
+wts_1_34	816	136	1	སྩན	s	säan	unicode_latin_token_extent_repaired	སྩན་དྭ་གསོལ་ säan du gsol überbringen, be-
+wts_1_34	816	136	2	དྭ	du	du	alignment_change_requires_review	སྩན་དྭ་གསོལ་ säan du gsol überbringen, be-
+wts_1_34	816	136	3	གསོལ		gsol	new_alignment_requires_review	སྩན་དྭ་གསོལ་ säan du gsol überbringen, be-
+wts_1_34	817	119	0	ཞེ	an		former_fragment_or_gloss_alignment_removed	སྙན་ཞེ་ säan Zu Eingabe, Ersuchen, Beschwer-
+wts_1_34	817	119	1	སྙན	s	säan	unicode_latin_token_extent_repaired	སྙན་ཞེ་ säan Zu Eingabe, Ersuchen, Beschwer-
+wts_1_34	817	119	2	ཞེ		Zu	new_alignment_requires_review	སྙན་ཞེ་ säan Zu Eingabe, Ersuchen, Beschwer-
+wts_1_34	817	180	3	སུ	schwerh	schwerhörig	unicode_latin_token_extent_repaired	སྙན་སུ་ 7༧༡༩ sra schwerhörig.
+wts_1_34	817	210	0	གསོལ	an		former_fragment_or_gloss_alignment_removed	སྙན་གསོལ་ säan gsol eine Audienz erbitten,
+wts_1_34	817	210	1	སྙན	s	säan	unicode_latin_token_extent_repaired	སྙན་གསོལ་ säan gsol eine Audienz erbitten,
+wts_1_34	817	210	2	གསོལ		gsol	new_alignment_requires_review	སྙན་གསོལ་ säan gsol eine Audienz erbitten,
+wts_1_34	817	219	4	ལྟོང	h	hören	unicode_latin_token_extent_repaired	སྙན་ལྟོང་ san //90/7 hören, erfahren.
+wts_1_34	818	121	3	གཤལ	Ohrl	Ohrläppchen	unicode_latin_token_extent_repaired	སྙལ་གཤལ་ 577:// gsal Ohrläppchen.
+wts_1_34	818	129	1	སྙ	s	säi	unicode_latin_token_extent_repaired	སྙ་ 'säi auch ~ po weich.
+wts_1_34	819	155	0	ཁམས	in		former_fragment_or_gloss_alignment_removed	སྙིང་ཁམས་ཅན་ säin khams can.
+wts_1_34	819	155	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་ཁམས་ཅན་ säin khams can.
+wts_1_34	819	155	2	ཁམས	khams	khams	alignment_change_requires_review	སྙིང་ཁམས་ཅན་ säin khams can.
+wts_1_34	819	155	3	ཅན		can	new_alignment_requires_review	སྙིང་ཁམས་ཅན་ säin khams can.
+wts_1_34	820	105	5	བ	ungl	unglücklich	unicode_latin_token_extent_repaired	སྙིང་ཁཆུ་བ་ $77/7 ’chn ba unglücklich, beküm-
+wts_1_34	821	1	0	རྗེ	in		former_fragment_or_gloss_alignment_removed	སྙིང་རྗེ་བ་ säin rje ba
+wts_1_34	821	1	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་རྗེ་བ་ säin rje ba
+wts_1_34	821	1	2	རྗེ	rje	rje	alignment_change_requires_review	སྙིང་རྗེ་བ་ säin rje ba
+wts_1_34	821	1	3	བ		ba	new_alignment_requires_review	སྙིང་རྗེ་བ་ säin rje ba
+wts_1_34	821	25	2	སྙང	s	säin	unicode_latin_token_extent_repaired	སྙང་2 säin fie treu, loyal sein, nahestehen.
+wts_1_34	821	43	0	ཏིག	in		former_fragment_or_gloss_alignment_removed	སྙིང་ཏིག་ säin tıg Essenz, etwas Essentielles;
+wts_1_34	821	43	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་ཏིག་ säin tıg Essenz, etwas Essentielles;
+wts_1_34	821	43	2	ཏིག		tıg	newly_visible_unicode_token	སྙིང་ཏིག་ säin tıg Essenz, etwas Essentielles;
+wts_1_34	821	51	0	གཏམ	in		former_fragment_or_gloss_alignment_removed	སྙིང་གཏམ་ säin gtam Ratschlag, vertrauliches,
+wts_1_34	821	51	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་གཏམ་ säin gtam Ratschlag, vertrauliches,
+wts_1_34	821	51	2	གཏམ		gtam	new_alignment_requires_review	སྙིང་གཏམ་ säin gtam Ratschlag, vertrauliches,
+wts_1_34	821	61	0	སྟོབས	in		former_fragment_or_gloss_alignment_removed	སྙིང་སྟོབས་ säin stobs
+wts_1_34	821	61	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་སྟོབས་ säin stobs
+wts_1_34	821	61	2	སྟོབས		stobs	new_alignment_requires_review	སྙིང་སྟོབས་ säin stobs
+wts_1_34	821	118	0	སྟོབས	in		former_fragment_or_gloss_alignment_removed	སྙིང་སྟོབས་ཅན་ säin stobs can Beiname Brah-
+wts_1_34	821	118	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་སྟོབས་ཅན་ säin stobs can Beiname Brah-
+wts_1_34	821	118	2	སྟོབས	stobs	stobs	alignment_change_requires_review	སྙིང་སྟོབས་ཅན་ säin stobs can Beiname Brah-
+wts_1_34	821	118	3	ཅན		can	new_alignment_requires_review	སྙིང་སྟོབས་ཅན་ säin stobs can Beiname Brah-
+wts_1_34	821	188	4	འདོད	m	mögen	unicode_latin_token_extent_repaired	སྙིང་འདོད་ 5?7/༡) ’dod mögen, Lust haben.
+wts_1_34	822	162	0	ཕུར	in		former_fragment_or_gloss_alignment_removed	སྙིང་ཕུར་ säin phur
+wts_1_34	822	162	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་ཕུར་ säin phur
+wts_1_34	822	162	2	ཕུར		phur	new_alignment_requires_review	སྙིང་ཕུར་ säin phur
+wts_1_34	823	13	0	འཕྱོས	in		former_fragment_or_gloss_alignment_removed	སྙིང་འཕྱོས་པ་ säin ’pbyos pa eine Herzkrank-
+wts_1_34	823	13	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་འཕྱོས་པ་ säin ’pbyos pa eine Herzkrank-
+wts_1_34	823	13	2	འཕྱོས	pbyos	pbyos	alignment_change_requires_review	སྙིང་འཕྱོས་པ་ säin ’pbyos pa eine Herzkrank-
+wts_1_34	823	13	3	པ		pa	new_alignment_requires_review	སྙིང་འཕྱོས་པ་ säin ’pbyos pa eine Herzkrank-
+wts_1_34	823	81	0	ཚིམ	in		former_fragment_or_gloss_alignment_removed	སྙིང་ཚིམ་ säin tshim.
+wts_1_34	823	81	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་ཚིམ་ säin tshim.
+wts_1_34	823	81	2	ཚིམ		tshim	new_alignment_requires_review	སྙིང་ཚིམ་ säin tshim.
+wts_1_34	823	187	0	རུལ	in		former_fragment_or_gloss_alignment_removed	སྙིང་རུལ་པོ་ säin rul po herzloser Mensch.
+wts_1_34	823	187	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་རུལ་པོ་ säin rul po herzloser Mensch.
+wts_1_34	823	187	2	རུལ	rul	rul	alignment_change_requires_review	སྙིང་རུལ་པོ་ säin rul po herzloser Mensch.
+wts_1_34	823	187	3	པོ		po	new_alignment_requires_review	སྙིང་རུལ་པོ་ säin rul po herzloser Mensch.
+wts_1_34	824	6	0	རླང	in		former_fragment_or_gloss_alignment_removed	སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
+wts_1_34	824	6	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
+wts_1_34	824	6	2	རླང		rlun	new_alignment_requires_review	སྙིང་རླང་ säin rlun Betrübnis, Ärger, Ver-
+wts_1_34	824	46	0	བསྲལ	in		former_fragment_or_gloss_alignment_removed	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
+wts_1_34	824	46	1	སྙིང	s	säin	unicode_latin_token_extent_repaired	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
+wts_1_34	824	46	2	བསྲལ	bsral	bsral	alignment_change_requires_review	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
+wts_1_34	824	46	3	ཅན		can	new_alignment_requires_review	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
+wts_1_34	824	65	0	མོ	id		former_fragment_or_gloss_alignment_removed	སྙད་མོ་ säid mo auch 0/7//7 mo Schwägerin.
+wts_1_34	824	65	1	སྙད	s	säid	unicode_latin_token_extent_repaired	སྙད་མོ་ säid mo auch 0/7//7 mo Schwägerin.
+wts_1_34	824	65	2	མོ		mo	new_alignment_requires_review	སྙད་མོ་ säid mo auch 0/7//7 mo Schwägerin.
+wts_1_34	824	75	0	པ	im		former_fragment_or_gloss_alignment_removed	སྙིམ་པ་ säim pa zwei Handvoll, - phyed eine
+wts_1_34	824	75	1	སྙིམ	s	säim	unicode_latin_token_extent_repaired	སྙིམ་པ་ säim pa zwei Handvoll, - phyed eine
+wts_1_34	824	75	2	པ		pa	new_alignment_requires_review	སྙིམ་པ་ säim pa zwei Handvoll, - phyed eine
+wts_1_34	824	165	0	བུ	un		former_fragment_or_gloss_alignment_removed	ཧུང་བུ་ säun bu
+wts_1_34	824	165	1	ཧུང	s	säun	unicode_latin_token_extent_repaired	ཧུང་བུ་ säun bu
+wts_1_34	824	165	2	བུ		bu	new_alignment_requires_review	ཧུང་བུ་ säun bu
+wts_1_34	824	167	0	བསྲིངས	ugs		former_fragment_or_gloss_alignment_removed	སྙུགས་བསྲིངས་ säugs bsrins auch /757//05 bsrins
+wts_1_34	824	167	1	སྙུགས	s	säugs	unicode_latin_token_extent_repaired	སྙུགས་བསྲིངས་ säugs bsrins auch /757//05 bsrins
+wts_1_34	824	167	2	བསྲིངས		bsrins	new_alignment_requires_review	སྙུགས་བསྲིངས་ säugs bsrins auch /757//05 bsrins
+wts_1_34	824	179	1	སྙུང	s	säun	unicode_latin_token_extent_repaired	སྙུང་ säun pf. Y'bsäuns fur. V'bsäun imp.
+wts_1_34	825	15	1	སྙུངས	s	sänns	unicode_latin_token_extent_repaired	སྙུངས་ sänns ımp. zu [1577//77 verkleinern, ver-
+wts_1_34	826	31	5	ཚད	L	Längenmaß	unicode_latin_token_extent_repaired	སྙེགས་པའི་ཚད་ $/760$ pa’i tsbad Längenmaß.
+wts_1_34	826	103	1	སྙེད	s	säed	unicode_latin_token_extent_repaired	སྙེད་ ’säed anlehnen; vgl. [5/70,
+wts_1_34	826	118	0	པ	ed		former_fragment_or_gloss_alignment_removed	སྙེད་པ་ 'süed pa Bez. für ein Schaf.
+wts_1_34	826	118	1	སྙེད	s	süed	unicode_latin_token_extent_repaired	སྙེད་པ་ 'süed pa Bez. für ein Schaf.
+wts_1_34	826	118	2	པ		pa	new_alignment_requires_review	སྙེད་པ་ 'süed pa Bez. für ein Schaf.
+wts_1_34	826	173	0	ཆུང	og		former_fragment_or_gloss_alignment_removed	སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
+wts_1_34	826	173	1	སྙོགས	s	süog	unicode_latin_token_extent_repaired	སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
+wts_1_34	826	173	2	ཆུང	chuṅ	chuṅ	unicode_latin_token_extent_repaired	སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
+wts_1_34	826	173	3	བ		ba	new_alignment_requires_review	སྙོགས་ཆུང་བ་ süog chuṅ ba bescheiden,
+wts_1_34	826	183	1	སྙོངས	s	säons	unicode_latin_token_extent_repaired	སྙོངས་ säons einreiben.
+wts_1_34	826	192	1	སྙེའོ	s	süe’o	apostrophe_token_extent_repaired	སྙེའོ་ süe’o Tsrie bo.
+wts_1_34	826	193	2	སྩེལ	bs	bsüel	unicode_latin_token_extent_repaired	སྩེལ་ $7¢/ \bsüel,
+wts_1_34	827	37	1	སྙོབས	M	Müdigkeit	unicode_latin_token_extent_repaired	སྙོབས་ £ ྫ { Müdigkeit; vgl.
+wts_1_34	827	53	5	བྱེད	gr	grübeln	unicode_latin_token_extent_repaired	སྙོམ་སྙོམ་བྱེད་ som $?70777 byed grübeln.
+wts_1_34	827	115	0	ཆུང	oms		former_fragment_or_gloss_alignment_removed	སྙོམས་ཆུང་ säoms chuṅ
+wts_1_34	827	115	1	སྙོམས	s	säoms	unicode_latin_token_extent_repaired	སྙོམས་ཆུང་ säoms chuṅ
+wts_1_34	827	115	2	ཆུང		chuṅ	newly_visible_unicode_token	སྙོམས་ཆུང་ säoms chuṅ
+wts_1_34	828	48	0	སྐྱི	a		former_fragment_or_gloss_alignment_removed	བརཉ་སྐྱི་ brüa skyi ausleihen; vgl. Triios, 11/775.
+wts_1_34	828	48	1	བརཉ	br	brüa	unicode_latin_token_extent_repaired	བརཉ་སྐྱི་ brüa skyi ausleihen; vgl. Triios, 11/775.
+wts_1_34	828	48	2	སྐྱི		skyi	new_alignment_requires_review	བརཉ་སྐྱི་ brüa skyi ausleihen; vgl. Triios, 11/775.
+wts_1_34	828	81	1	བྟྙན	br	brüan	unicode_latin_token_extent_repaired	བྟྙན་ brüan.
+wts_1_34	828	111	0	དཔར	ian		former_fragment_or_gloss_alignment_removed	བྟརན་དཔར་ brüian dpar Zeitschrift.
+wts_1_34	828	111	1	བྟརན	br	brüian	unicode_latin_token_extent_repaired	བྟརན་དཔར་ brüian dpar Zeitschrift.
+wts_1_34	828	111	2	དཔར		dpar	new_alignment_requires_review	བྟརན་དཔར་ brüian dpar Zeitschrift.
+wts_1_34	828	116	1	བྟརབ	br	brüab	unicode_latin_token_extent_repaired	བྟརབ་ brüab
+wts_1_34	828	175	0	སྨོད	as		former_fragment_or_gloss_alignment_removed	བྷརས་སྨོད་ brüas smod
+wts_1_34	828	175	1	བྷརས	br	brüas	unicode_latin_token_extent_repaired	བྷརས་སྨོད་ brüas smod
+wts_1_34	828	175	2	སྨོད		smod	new_alignment_requires_review	བྷརས་སྨོད་ brüas smod
+wts_1_34	828	197	0	བཅོས	as		former_fragment_or_gloss_alignment_removed	བྟརས་བཅོས་ brüas bcos auch brüas chos Ver-
+wts_1_34	828	197	1	བྟརས	br	brüas	unicode_latin_token_extent_repaired	བྟརས་བཅོས་ brüas bcos auch brüas chos Ver-
+wts_1_34	828	197	2	བཅོས		bcos	new_alignment_requires_review	བྟརས་བཅོས་ brüas bcos auch brüas chos Ver-
+wts_1_34	828	205	0	ཐབས	as		former_fragment_or_gloss_alignment_removed	བྷརས་ཐབས་ brüas thabs auch bräas stabs Miß-
+wts_1_34	828	205	1	བྷརས	br	brüas	unicode_latin_token_extent_repaired	བྷརས་ཐབས་ brüas thabs auch bräas stabs Miß-
+wts_1_34	828	205	2	ཐབས		thabs	new_alignment_requires_review	བྷརས་ཐབས་ brüas thabs auch bräas stabs Miß-
+wts_1_34	828	225	0	སྨོད	as		former_fragment_or_gloss_alignment_removed	བྟརས་སྨོད་ brüas smod Schmähung.
+wts_1_34	828	225	1	བྟརས	br	brüas	unicode_latin_token_extent_repaired	བྟརས་སྨོད་ brüas smod Schmähung.
+wts_1_34	828	225	2	སྨོད		smod	new_alignment_requires_review	བྟརས་སྨོད་ brüas smod Schmähung.
+wts_1_34	829	100	1	བརྙོག	br	brüog	unicode_latin_token_extent_repaired	བརྙོག་ !brüog pf. briüogs gierig sein, auf den
+wts_1_34	829	109	1	བརྙོགས	br	bräogs	unicode_latin_token_extent_repaired	བརྙོགས་ 'bräogs pf. zu Träog trübe machen.
+wts_1_34	829	113	1	བརྙོགས	br	brüogs	unicode_latin_token_extent_repaired	"བརྙོགས་ ""brüogs"
+wts_1_34	830	13	1	བསྙབ	bs	bsüab	unicode_latin_token_extent_repaired	བསྙབ་ !bsüab fur. zu ། 7775) schmatzen.
+wts_1_34	830	58	1	བསྙམས	bs	bsüams	unicode_latin_token_extent_repaired	བསྙམས་ bsüams pf. zu [$7707775 vereinheit-
+wts_1_34	830	110	1	བྟསལ	bs	bsäal	unicode_latin_token_extent_repaired	བྟསལ་ ?bsäal waschen.
+wts_1_34	830	163	1	བསྙིལ	bs	bsäil	unicode_latin_token_extent_repaired	བསྙིལ་ 'bsäil pf. und fur. zu [577//.
+wts_1_34	830	207	1	བསྙུག	bs	bsäug	unicode_latin_token_extent_repaired	བསྙུག་ bsäug pf. bsängs einreiben; vgl. [/77//9.
+wts_1_34	830	211	1	བསྙུགས	bs	bsängs	unicode_latin_token_extent_repaired	བསྙུགས་ bsängs pf. zu bsäug einreiben.
+wts_1_34	830	217	1	བསྟུང	bs	bsäun	unicode_latin_token_extent_repaired	བསྟུང་ 'bsäun fur. zu sinn verkleinern,
+wts_1_34	831	8	0	གདངས	un		former_fragment_or_gloss_alignment_removed	བསྙུང་གདངས་ bsüun gdans auch bsäun gäi
+wts_1_34	831	8	1	བསྙུང	bs	bsüun	unicode_latin_token_extent_repaired	བསྙུང་གདངས་ bsüun gdans auch bsäun gäi
+wts_1_34	831	8	2	གདངས		gdans	new_alignment_requires_review	བསྙུང་གདངས་ bsüun gdans auch bsäun gäi
+wts_1_34	831	59	1	བསྟན	bs	bsäun	unicode_latin_token_extent_repaired	བསྟན་ bsäun pf. und fur. zu [477//77 krank sein;
+wts_1_34	831	88	1	བསྟུལ	bs	bsäul	unicode_latin_token_extent_repaired	བསྟུལ་ bsäul.
+wts_1_34	831	131	1	བསྙེགས	bs	bsüegs	unicode_latin_token_extent_repaired	བསྙེགས་ bsüegs pf. zu 157709 folgen; za ~
+wts_1_34	831	169	0	པ	ens		former_fragment_or_gloss_alignment_removed	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	169	1	བསྙེངས	bs	bsüens	unicode_latin_token_extent_repaired	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	169	2	པ	pa	pa	alignment_change_requires_review	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	169	3	མི	mi	mi	alignment_change_requires_review	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	169	4	མངའ	ma	ma	alignment_change_requires_review	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	169	5	བ		ba	new_alignment_requires_review	བསྙེངས་པ་མི་མངའ་བ་ bsüens pa mi ma’ ba
+wts_1_34	831	187	1	བསྙེན	bs	bsüen	unicode_latin_token_extent_repaired	བསྙེན་ bsüen.
+wts_1_34	832	1	0	བཀར	en		former_fragment_or_gloss_alignment_removed	བསྟེན་བཀར་ bsüen bkur
+wts_1_34	832	1	1	བསྟེན	bs	bsüen	unicode_latin_token_extent_repaired	བསྟེན་བཀར་ bsüen bkur
+wts_1_34	832	1	2	བཀར		bkur	new_alignment_requires_review	བསྟེན་བཀར་ bsüen bkur
+wts_1_34	832	99	0	ཇོ	en		former_fragment_or_gloss_alignment_removed	བསྙེན་ཇོ་མོ་ bsüen jo mo eine weltliche Gottheit
+wts_1_34	832	99	1	བསྙེན	bs	bsüen	unicode_latin_token_extent_repaired	བསྙེན་ཇོ་མོ་ bsüen jo mo eine weltliche Gottheit
+wts_1_34	832	99	2	ཇོ	jo	jo	alignment_change_requires_review	བསྙེན་ཇོ་མོ་ bsüen jo mo eine weltliche Gottheit
+wts_1_34	832	99	3	མོ		mo	new_alignment_requires_review	བསྙེན་ཇོ་མོ་ bsüen jo mo eine weltliche Gottheit
+wts_1_34	832	107	0	པར	en		former_fragment_or_gloss_alignment_removed	བསྟེན་པར་རྫོགས་ bsüen par rdzogs
+wts_1_34	832	107	1	བསྟེན	bs	bsüen	unicode_latin_token_extent_repaired	བསྟེན་པར་རྫོགས་ bsüen par rdzogs
+wts_1_34	832	107	2	པར	par	par	alignment_change_requires_review	བསྟེན་པར་རྫོགས་ bsüen par rdzogs
+wts_1_34	832	107	3	རྫོགས		rdzogs	new_alignment_requires_review	བསྟེན་པར་རྫོགས་ bsüen par rdzogs
+wts_1_34	833	11	1	བསྙིམས	bs	bsüems	unicode_latin_token_extent_repaired	བསྙིམས་ bsüems pf. zu Tsiems stolz, hoch-
+wts_1_34	833	54	0	བསོས	iel		former_fragment_or_gloss_alignment_removed	བསྙེལ་བསོས་ bsüiel bsos sich erinnern.
+wts_1_34	833	54	1	བསྙེལ	bs	bsüiel	unicode_latin_token_extent_repaired	བསྙེལ་བསོས་ bsüiel bsos sich erinnern.
+wts_1_34	833	54	2	བསོས		bsos	new_alignment_requires_review	བསྙེལ་བསོས་ bsüiel bsos sich erinnern.
+wts_1_34	833	74	4	འབོག	Verr	Verrücktheit	unicode_latin_token_extent_repaired	བྙསོ་འབོག་ £6?70 ’bog Verrücktheit.
+wts_1_34	833	109	0	ཆུང	od		former_fragment_or_gloss_alignment_removed	བསྙོད་ཆུང་ bsüod chuṅ (zw.) schwach, beschei-
+wts_1_34	833	109	1	བསྙོད	bs	bsüod	unicode_latin_token_extent_repaired	བསྙོད་ཆུང་ bsüod chuṅ (zw.) schwach, beschei-
+wts_1_34	833	109	2	ཆུང		chuṅ	newly_visible_unicode_token	བསྙོད་ཆུང་ bsüod chuṅ (zw.) schwach, beschei-
+wts_1_34	833	190	1	བསྙོམ	bs	bsüom	unicode_latin_token_extent_repaired	བསྙོམ་ bsüom [75?7:7/?/,
+wts_1_34	833	199	1	བསྙོལ	bs	bsüol	unicode_latin_token_extent_repaired	བསྙོལ་ bsüol.
+wts_1_34	871	6	3	པཱ	p	pä	unicode_latin_token_extent_repaired	ཏ་མ་པཱ་ལ་ ta ma pä la npr. ein indischer Herr-
+wts_1_34	871	62	1	ཏཱ	t	tä	unicode_latin_token_extent_repaired	ཏཱ་ཞིན་ tä Zin Exzellenz; von chin. AA ta-jen,
+wts_1_34	871	73	1	ཏུ	t	tä	unicode_latin_token_extent_repaired	ཏུ་ར་ན་ཐ་ tä ra nä tha auch ta ra nd tha Bei-
+wts_1_34	871	73	3	ན	n	nä	unicode_latin_token_extent_repaired	ཏུ་ར་ན་ཐ་ tä ra nä tha auch ta ra nd tha Bei-
+wts_1_34	872	75	2	ཐཱ	th	thä	unicode_latin_token_extent_repaired	ཏདྷ་ཐཱ་ tadya thä nämlich; von ski. tadyatha.
+wts_1_34	874	126	3	ཏག	gewi	gewiß	unicode_latin_token_extent_repaired	"ཏྭག་ཏག་ ng ""8 gewiß, sicher, richtig."
+wts_1_34	877	150	2	རེ	st	ständig	unicode_latin_token_extent_repaired	ཏ་རེ་ /// re ständig.
+wts_1_34	881	97	7	ཧཱཾ	zerst	zerstörten	unicode_latin_token_extent_repaired	1. Bez. für die drei von ཧཱཾ] zerstörten
+wts_1_34	882	41	2	གཏག	sto	stoßen	unicode_latin_token_extent_repaired	གཏག་ 0579 stoßen, zerstampfen, schlagen.
+wts_1_34	884	210	3	འཇགས	st	ständig	unicode_latin_token_extent_repaired	"གཏན་འཇགས་ 0507 ""jags ständig, permanent,"
+wts_1_34	885	7	1	གཏན		sun	new_alignment_requires_review	གཏན་གཏན་ sun Ä
+wts_1_34	885	7	2	གཏན		Ä	newly_visible_unicode_token	གཏན་གཏན་ sun Ä
+wts_1_34	887	78	4	གཞི	g	gäi	unicode_latin_token_extent_repaired	གཏམ་གྱི་གླེང་གཞི་ gtam gyi glen gäi \gtam glen 2,
+wts_1_34	901	53	1	བཏང	btani	btaṅ	unicode_latin_token_extent_repaired	བཏང་ btaṅ
+wts_1_34	916	136	4	འཁོར	st	ständiger	unicode_latin_token_extent_repaired	རྟག་རེས་འཁོར་ rtag res 5770?) ständiger Wechsel,
+wts_1_34	917	163	4	པ	Insignientr	Insignienträger	unicode_latin_token_extent_repaired	རྟགས་ཐོགས་པ་ rtags //?09$ pa Insignienträger.
+wts_1_34	926	1	3	བཞི	b	bäi	unicode_latin_token_extent_repaired	རྟོན་པ་བཞི་ rton pa bäi
+wts_1_34	928	206	0	མ	igs		former_fragment_or_gloss_alignment_removed	ལྟ་བའི་སྙིགས་མ་ lta ba’i süigs ma die Degene-
+wts_1_34	928	206	3	སྙིགས	s	süigs	unicode_latin_token_extent_repaired	ལྟ་བའི་སྙིགས་མ་ lta ba’i süigs ma die Degene-
+wts_1_34	928	206	4	མ		ma	new_alignment_requires_review	ལྟ་བའི་སྙིགས་མ་ lta ba’i süigs ma die Degene-
+wts_1_34	930	63	3	སྒོ	Hintert	Hintertür	unicode_latin_token_extent_repaired	སྟག་སྒོ་ Itag 490 Hintertür.
+wts_1_34	930	168	2	ལྟེང	Iten	Itenı	dotless_i_token_merged_correctly	ལྟང་ལྟེང་ ktan Itenı
+wts_1_34	931	140	5	པོ	gef	gefüllt	unicode_latin_token_extent_repaired	ལྟམ་རྟམ་པོ་ //777) /57777 po voll, gefüllt vgl.
+wts_1_34	952	181	1	སྟོང	stoṅ		former_alignment_requires_review	སྟོང་སྟེགས་ stoṅ $77005 für nichts und wieder
+wts_1_34	952	181	3	སྟེགས	f		former_alignment_requires_review	སྟོང་སྟེགས་ stoṅ $77005 für nichts und wieder
+wts_1_34	981	107	0	གླུབ	ad		former_fragment_or_gloss_alignment_removed	ཐ་སྙད་གླུབ་པ་ tha säad sgrub pa
+wts_1_34	981	107	2	སྙད	s	säad	unicode_latin_token_extent_repaired	ཐ་སྙད་གླུབ་པ་ tha säad sgrub pa
+wts_1_34	981	107	3	གླུབ	sgrub	sgrub	alignment_change_requires_review	ཐ་སྙད་གླུབ་པ་ tha säad sgrub pa
+wts_1_34	981	107	4	པ		pa	new_alignment_requires_review	ཐ་སྙད་གླུབ་པ་ tha säad sgrub pa
+wts_1_34	1001	188	0	ཀྲི		ıhi	newly_visible_unicode_token	ཀྲི ıhi Ziffer 40.
+wts_1_34	1001	188	1	ཀྲི	hi		former_alignment_requires_review	ཀྲི ıhi Ziffer 40.
+wts_1_34	1011	42	3	ཆེས	gl	gläubig	unicode_latin_token_extent_repaired	ཐུགས་ཆེས་ [95 ches gläubig, vertrauens-
+wts_1_34	1012	89	4	སྙུང	ver	verärgert	unicode_latin_token_extent_repaired	ཐུགས་སྙུང་ thugs $77//7? verärgert.
+wts_1_34	1012	108	3	གསང	gsani	gsaṅ	unicode_latin_token_extent_repaired	ཐུགས་གཏེར་གསང་་ thugs gter gsaṅ ...
+wts_1_34	1014	223	0	ཅི	en		former_fragment_or_gloss_alignment_removed	ཅི ßen, sich erinnern.
+wts_1_34	1014	223	1	ཅི		ßen	newly_visible_unicode_token	ཅི ßen, sich erinnern.
+wts_1_34	1015	46	3	བཞགས	b	bäugs	unicode_latin_token_extent_repaired	ཐུགས་ལ་བཞགས་ 'thugs la bäugs sich einprägen.
+wts_1_34	1015	185	3	བཞུགས	b	bäugs	unicode_latin_token_extent_repaired	ཐུགས་ལ་བཞུགས་ 'thugs la bäugs in thugs la
+wts_1_34	1018	62	3	དརཱཧ	r	rähu	unicode_latin_token_extent_repaired	ཐུན་མཚམས་དརཱཧ་ thun mtshams rähu Methode
+wts_1_34	1028	12	2	བྲང	brani	braṅ	unicode_latin_token_extent_repaired	བེའུ་བྲང་ the’u braṅ auch the braṅ eine Gruppe
+wts_1_34	1036	193	3	བན	Pfl	Pflüger	unicode_latin_token_extent_repaired	ཐོང་མ།བན་ thon mkhan Pflüger.
+wts_1_34	1051	206	2	མཉམ	m	müam	unicode_latin_token_extent_repaired	མཐའ་མཉམ་ mtha’ müam Endlosigkeit.
+wts_1_34	1055	63	6	པོ	endg	endgül	unicode_latin_token_extent_repaired	མཐར་ཐུག་སྟིང་པོ་ mthar thug 4/7//) po „endgül-
+wts_1_34	1063	109	4	དམན	H	Höhe	unicode_latin_token_extent_repaired	མཐོ་དམན་ /77//70 dman Höhe; Größe.
+wts_1_34	1068	218	4	བྱེད	M	Mühle	unicode_latin_token_extent_repaired	འཐག་བྱེད་ 77:22 byed Mühle.
+wts_1_34	1070	88	3	ཊྲ	streits	streitsüchtiger	unicode_latin_token_extent_repaired	(༽ྲ་ཀྲབ་ཊྲ།་ hab mi streitsüchtiger Mensch;
+wts_1_34	1073	102	4	བ	Bl	Blütenstaub	unicode_latin_token_extent_repaired	འབུལ་བ་ 7/0/// ba Blütenstaub.
+wts_1_34	1076	61	3	མེད	vollst	vollständig	unicode_latin_token_extent_repaired	འཐོར་མེད་ 707 med vollständig.
+wts_1_34	1082	66	3	སྒོས	nachdr	nachdrücklich	unicode_latin_token_extent_repaired	ད་སྒོས་ 'da 6904 nachdrücklich, ausdrücklich.
+wts_1_34	1082	92	3	སྔ	fr	früher	unicode_latin_token_extent_repaired	ད་སྔ་ da $¢ früher.
+wts_1_34	1082	97	3	སྔོན	fr	früher	unicode_latin_token_extent_repaired	ད་སྔོན་ da 5077 früher.
+wts_1_34	1084	40	0	ཉིད	id		former_fragment_or_gloss_alignment_removed	ད་ལྟ་ཉིད དུ da lta üid du gerade jetzt.
+wts_1_34	1084	40	3	ཉིད		üid	newly_visible_unicode_token	ད་ལྟ་ཉིད དུ da lta üid du gerade jetzt.
+wts_1_34	1098	91	3	གསུ	K	Körpers	unicode_latin_token_extent_repaired	དག་པ་གསུ z.B. des Körpers, der Rede und
+wts_1_34	1135	72	0	ཞུ	cher		former_fragment_or_gloss_alignment_removed	དར་ཡུག་ ཞུ yug Seidentücher, ein Ballen Sei-
+wts_1_34	1135	72	1	དར	yug		former_alignment_requires_review	དར་ཡུག་ ཞུ yug Seidentücher, ein Ballen Sei-
+wts_1_34	1135	72	2	ཡུག	Seident		former_alignment_requires_review	དར་ཡུག་ ཞུ yug Seidentücher, ein Ballen Sei-
+wts_1_34	1142	31	2	ཀྲུ	k	kü	unicode_latin_token_extent_repaired	དུ་ཀྲུ་ལ་ du kü la auch du ku la, du gu la eine
+wts_1_34	1152	87	5	བ	Giftverk	Giftverkäufer	unicode_latin_token_extent_repaired	དུག་འཚོང་བ་ dug '/5/0/) ba Giftverkäufer.
+wts_1_34	1168	58	0	ཝ	r		former_fragment_or_gloss_alignment_removed	དུར་ཝ་ dür wa Tdur ba.
+wts_1_34	1168	58	1	དུར	d	dür	unicode_latin_token_extent_repaired	དུར་ཝ་ dür wa Tdur ba.
+wts_1_34	1168	58	2	ཝ		wa	new_alignment_requires_review	དུར་ཝ་ dür wa Tdur ba.
+wts_1_34	1169	21	2	ས	Leichenst	Leichenstätte	unicode_latin_token_extent_repaired	དུར་ས་ dursa Leichenstätte, Bestattungsort.
+wts_1_34	1176	35	0	མ	igs		former_fragment_or_gloss_alignment_removed	དུས་ཀྱི་སྙིགས་མ་ dus kyi süigs ma Degeneration
+wts_1_34	1176	35	3	སྙིགས	s	süigs	unicode_latin_token_extent_repaired	དུས་ཀྱི་སྙིགས་མ་ dus kyi süigs ma Degeneration
+wts_1_34	1176	35	4	མ		ma	new_alignment_requires_review	དུས་ཀྱི་སྙིགས་མ་ dus kyi süigs ma Degeneration
+wts_1_34	1180	91	3	ན	zeitgem	zeitgemäß	unicode_latin_token_extent_repaired	དུས་བ ན་ dus bstun zeitgemäß.
+wts_1_34	1182	33	0	ཉིན	in		former_fragment_or_gloss_alignment_removed	དུས དེ་ཉིན dus de äin an einem solchen Tag.
+wts_1_34	1182	33	3	ཉིན		äin	newly_visible_unicode_token	དུས དེ་ཉིན dus de äin an einem solchen Tag.
+wts_1_34	1187	1	0	མ	igs		former_fragment_or_gloss_alignment_removed	དུས་ཚོད་སྙིགས་མ་ dus tshod süigs ma
+wts_1_34	1187	1	3	སྙིགས	s	süigs	unicode_latin_token_extent_repaired	དུས་ཚོད་སྙིགས་མ་ dus tshod süigs ma
+wts_1_34	1187	1	4	མ		ma	new_alignment_requires_review	དུས་ཚོད་སྙིགས་མ་ dus tshod süigs ma
+wts_1_34	1188	86	0	སྲིན	i’i		former_fragment_or_gloss_alignment_removed	དུས་བཞིའི་སྲིན་ཕོ་མོ་ dus bäi’i srin pho ༡770 die
+wts_1_34	1188	86	1	དུས	dus		former_alignment_requires_review	དུས་བཞིའི་སྲིན་ཕོ་མོ་ dus bäi’i srin pho ༡770 die
+wts_1_34	1188	86	2	བཞིའི	b		former_alignment_requires_review	དུས་བཞིའི་སྲིན་ཕོ་མོ་ dus bäi’i srin pho ༡770 die
+wts_1_34	1188	86	3	ཕོ	srin		former_alignment_requires_review	དུས་བཞིའི་སྲིན་ཕོ་མོ་ dus bäi’i srin pho ༡770 die
+wts_1_34	1188	86	4	མོ	pho		former_alignment_requires_review	དུས་བཞིའི་སྲིན་ཕོ་མོ་ dus bäi’i srin pho ༡770 die
+wts_1_34	1225	3	3	ཞག	k	kürzlich	unicode_latin_token_extent_repaired	དེ་ཞག་ de 249 kürzlich.
+wts_1_34	1236	1	2	སང	sar	sarı	dotless_i_token_merged_correctly	དེང་སང་ den sarı
+wts_1_34	1238	18	4	སྙན	s	süan	unicode_latin_token_extent_repaired	དེད་དཔོན་དབྱངས་སྙན་ ded dpon dbyans süan
+wts_1_34	1239	23	2	གཞི	g	gäi	unicode_latin_token_extent_repaired	དེབ་གཞི་ deb gäi Grundbuch, Buch.
+wts_1_34	1244	22	2	ཀཱུ	k	kü	unicode_latin_token_extent_repaired	དོ་ཀཱུ་ལའི་རས་ do kü la’i ras eine Textilie; vgl.
+wts_1_34	1263	31	2	གཉིས	g	güis	unicode_latin_token_extent_repaired	"དོན་གཉིས་ ""don güis 1°76:7/."
+wts_1_34	1263	37	2	གཉ	S	Südosten	unicode_latin_token_extent_repaired	དན་གཉ a Südosten der tibetischen Pro-
+wts_1_34	1263	58	0	སྙིང	in		former_fragment_or_gloss_alignment_removed	དོན་སྙིང་ 470: säin Eingeweide; vgl. 1’don.
+wts_1_34	1263	58	2	དོན	s	säin	unicode_latin_token_extent_repaired	དོན་སྙིང་ 470: säin Eingeweide; vgl. 1’don.
+wts_1_34	1263	58	3	སྙིང		Eingeweide	new_alignment_requires_review	དོན་སྙིང་ 470: säin Eingeweide; vgl. 1’don.
+wts_1_34	1282	38	0	མསས	in		former_fragment_or_gloss_alignment_removed	'ཟིན་གྲི་སྲེང་འགྲ་མསས། dwa zin gyi säin 'grams
+wts_1_34	1282	38	4	འགྲ	s	säin	unicode_latin_token_extent_repaired	'ཟིན་གྲི་སྲེང་འགྲ་མསས། dwa zin gyi säin 'grams
+wts_1_34	1282	38	5	མསས		grams	new_alignment_requires_review	'ཟིན་གྲི་སྲེང་འགྲ་མསས། dwa zin gyi säin 'grams
+wts_1_34	1287	14	2	སྙིགས	s	säigs	unicode_latin_token_extent_repaired	དྭངས་སྙིགས་ dwans säigs Klarheit.
+wts_1_34	1292	3	3	གནོན	unterdr	unterdrücken	unicode_latin_token_extent_repaired	དྲག་གནོན་ drag 977077 unterdrücken.
+wts_1_34	1294	57	0	ནཱ	hus		former_fragment_or_gloss_alignment_removed	ག གཟུག ནཱ me Rähus.
+wts_1_34	1294	57	1	ག	me		former_alignment_requires_review	ག གཟུག ནཱ me Rähus.
+wts_1_34	1294	57	2	གཟུག	R		former_alignment_requires_review	ག གཟུག ནཱ me Rähus.
+wts_1_34	1294	107	3	ཅན	gro	großes	unicode_latin_token_extent_repaired	དྲག་རྩལ་ཅན་ dragrtsal can großes Ansehen ha-
+wts_1_34	1307	107	0	པ	ag		former_fragment_or_gloss_alignment_removed	དྲན་པ་ཉེ་བར་གཞག་པ་ dran pa ne bar göag pa
+wts_1_34	1307	107	5	གཞག	g	göag	unicode_latin_token_extent_repaired	དྲན་པ་ཉེ་བར་གཞག་པ་ dran pa ne bar göag pa
+wts_1_34	1307	107	6	པ		pa	new_alignment_requires_review	དྲན་པ་ཉེ་བར་གཞག་པ་ dran pa ne bar göag pa
+wts_1_34	1311	32	3	འཁོར	N	Nähmaschine	unicode_latin_token_extent_repaired	དྲས་འཁོར་ dras 007 Nähmaschine.
+wts_1_34	1320	36	0	ཏུག	uchern		former_fragment_or_gloss_alignment_removed	ཞི ཏུག Räuchern.
+wts_1_34	1320	36	1	ཞི	R		former_alignment_requires_review	ཞི ཏུག Räuchern.
+wts_1_34	1323	1	0	པོ	in		former_fragment_or_gloss_alignment_removed	དྲི་ཡི་སྙིང་པོ་ dri yi säin po
+wts_1_34	1323	1	3	སྙིང	s	säin	unicode_latin_token_extent_repaired	དྲི་ཡི་སྙིང་པོ་ dri yi säin po
+wts_1_34	1323	1	4	པོ		po	new_alignment_requires_review	དྲི་ཡི་སྙིང་པོ་ dri yi säin po
+wts_1_34	1323	3	7	པོ	wei	weißes	unicode_latin_token_extent_repaired	དྲི་ཡི་སྙིང་པོ་ dri yi 5?7/37 po weißes Sandelholz.
+wts_1_34	1324	6	4	འཇོག	abh	abhängig	unicode_latin_token_extent_repaired	དྲིང་འཇོག་ drin 7:09 abhängig sein; drin mi 709
+wts_1_34	1348	89	4	པ	ma	maßvoll	unicode_latin_token_extent_repaired	དྲོད་རིག་པ་ drod 779 pa maßvoll, moderat.
+wts_1_34	1348	103	3	ཤེས	ma	maßvoll	unicode_latin_token_extent_repaired	དྲོད་ཤེས་ drod 465 maßvoll, moderat.
+wts_35_51	5	47	2	གཞི	g	géi	unicode_latin_token_extent_repaired	གདགས་གཞི་ gdags géi
+wts_35_51	35	58	2	བཞི	b	bäi	unicode_latin_token_extent_repaired	གདོང་བཞི་ gdoṅ bäi.
+wts_35_51	50	16	5	པ	t	töricht	unicode_latin_token_extent_repaired	བདག་ཉིད་མ་ཤེས་པ་ bbdag nid ses pa töricht.
+wts_35_51	101	18	2	དོང	K	Köcher	unicode_latin_token_extent_repaired	མདའ་དོང་ mda'don Köcher.
+wts_35_51	102	37	3	པོ	Bogensch	Bogenschütze	unicode_latin_token_extent_repaired	མདའ་ཚན་པོ་ mda'tshan po Bogenschütze.
+wts_35_51	103	2	4	མོ	Flu	Flußfisch	unicode_latin_token_extent_repaired	མདའ་ཡི་རྔ་མོ་ mda'yirna mo cein Flußfisch.
+wts_35_51	103	19	2	ར	Bogenschie	Bogenschießstand	unicode_latin_token_extent_repaired	མདའ་ར་ mda'ra Bogenschießstand.
+wts_35_51	116	2	2	སྣང	snani	snaṅ	unicode_latin_token_extent_repaired	མདོ་སྣང་ mdo snaṅ
+wts_35_51	123	43	0	འབྱར	llige		former_fragment_or_gloss_alignment_removed	འདག་འབྱར་ ཡཾ völlige Abgeschieden-
+wts_35_51	123	43	1	འདག	v		former_alignment_requires_review	འདག་འབྱར་ ཡཾ völlige Abgeschieden-
+wts_35_51	123	43	2	ཡཾ	Abgeschieden		former_alignment_requires_review	འདག་འབྱར་ ཡཾ völlige Abgeschieden-
+wts_35_51	147	1	3	ཡང	yani	yaṅ	unicode_latin_token_extent_repaired	འདི་ལྟར་ཡང་ di ltar yaṅ
+wts_35_51	159	5	4	པ	unbewu	unbewußt	unicode_latin_token_extent_repaired	འདུ་ཤེས་མེད་པ་ Ses med pa unbewußt, Un-
+wts_35_51	209	30	2	མཉམ	m	müam	unicode_latin_token_extent_repaired	འདྲ་མཉམ་ 'dra müam.
+wts_35_51	213	40	4	བ	N	Näharbeit	unicode_latin_token_extent_repaired	འདྲུབས་སུ་བྱ་བ་ su bya ba Näharbeit,
+wts_35_51	240	29	0	སྦྱ	rt		former_fragment_or_gloss_alignment_removed	རྡརྔ་གནད སྦྱ Gottheit, gehört zu den [377/795
+wts_35_51	240	29	2	གནད	geh	gehört	unicode_latin_token_extent_repaired	རྡརྔ་གནད སྦྱ Gottheit, gehört zu den [377/795
+wts_35_51	240	29	3	སྦྱ		zu	new_alignment_requires_review	རྡརྔ་གནད སྦྱ Gottheit, gehört zu den [377/795
+wts_35_51	258	68	2	པོ	oberfl	oberflächlich	unicode_latin_token_extent_repaired	ལྗིང་པོ་ po oberflächlich.
+wts_35_51	282	31	2	དཔོན	Anf	Anführer	unicode_latin_token_extent_repaired	སྡུད་དཔོན་ dpon Anführer einer Heeres-
+wts_35_51	366	44	2	ཡང	yani	yaṅ	unicode_latin_token_extent_repaired	ན་ཡང་ na yaṅ
+wts_35_51	425	12	2	གྲུ	gr	grü	unicode_latin_token_extent_repaired	ནམ་གྲུ་ nam grü.
+wts_35_51	429	40	2	གཞུག	g	gäng	unicode_latin_token_extent_repaired	ནམ་གཞུག་ Inam gäng.
+wts_35_51	467	8	2	རམ	W	Wärme	unicode_latin_token_extent_repaired	ནེ་རམ་ nneram Wärme.
+wts_35_51	498	2	2	དེ	f	fü	unicode_latin_token_extent_repaired	"""དེ ངེ . 3, fü Dü"
+wts_35_51	498	2	3	ངེ	D	Dü	unicode_latin_token_extent_repaired	"""དེ ངེ . 3, fü Dü"
+wts_35_51	502	18	0	པྤ	r		former_fragment_or_gloss_alignment_removed	གནམ་པྤ für Schildkröte (?).
+wts_35_51	502	18	1	གནམ	f		former_alignment_requires_review	གནམ་པྤ für Schildkröte (?).
+wts_35_51	552	14	3	གསང	gsani	gsaṅ	unicode_latin_token_extent_repaired	རྣ་བ་གསང་བ་ ma ba gsaṅ ba jmd., der gut hört
+wts_35_51	553	40	2	གཤོག	Ohrl	Ohrläppchen	unicode_latin_token_extent_repaired	རྣ་གཤོག་ magfog Ohrläppchen.
+wts_35_51	578	9	3	ཉམས	v	völlig	unicode_latin_token_extent_repaired	རྣམ་པར་ཉམས་ mmam par völlig schwin-
+wts_35_51	582	14	3	སྣང	snani	snaṅ	unicode_latin_token_extent_repaired	རྣམ་པར་སྣང་བར་་ rnam par snaṅ bar
+wts_35_51	583	1	3	སྣང	snani	snaṅ	unicode_latin_token_extent_repaired	རྣམ་པར་སྣང་བྱེད་ rnam par snaṅ byed
+wts_35_51	626	46	2	རལ	Zerrei	Zerreißen	unicode_latin_token_extent_repaired	"སྣ་རལ་ snaral ""Zerreißen der Nase"", Bez. für"
+wts_35_51	638	2	0	ཅན	berm		former_fragment_or_gloss_alignment_removed	སྣང་གཡེལ་ཅན་ g.yel can übermütig, aus-
+wts_35_51	638	2	3	ཅན		übermütig	newly_visible_unicode_token	སྣང་གཡེལ་ཅན་ g.yel can übermütig, aus-
+wts_35_51	648	8	0	རལ	se		former_fragment_or_gloss_alignment_removed	སྟེ་རལ་ Gemüse, Gemüsesuppe.
+wts_35_51	648	8	1	སྟེ	Gem	Gemüse	unicode_latin_token_extent_repaired	སྟེ་རལ་ Gemüse, Gemüsesuppe.
+wts_35_51	648	8	2	རལ		Gemüsesuppe	newly_visible_unicode_token	སྟེ་རལ་ Gemüse, Gemüsesuppe.
+wts_35_51	732	68	0	པ	i		former_fragment_or_gloss_alignment_removed	དཔལ་མགོན་ཞལ་བཞི་པ་ dpal mgon Zal bäi pa
+wts_35_51	732	68	4	བཞི	b	bäi	unicode_latin_token_extent_repaired	དཔལ་མགོན་ཞལ་བཞི་པ་ dpal mgon Zal bäi pa
+wts_35_51	732	68	5	པ		pa	new_alignment_requires_review	དཔལ་མགོན་ཞལ་བཞི་པ་ dpal mgon Zal bäi pa
+wts_35_51	764	23	3	པ	eingesch	eingeschüchtert	unicode_latin_token_extent_repaired	སྤྲ་འཁུམ་པ་ sspa pa eingeschüchtert.
+wts_35_51	799	3	0	རང	t		former_fragment_or_gloss_alignment_removed	སྤར་རང་ sporröt Balken einer Waage.
+wts_35_51	799	3	1	སྤར	sporr	sporröt	unicode_latin_token_extent_repaired	སྤར་རང་ sporröt Balken einer Waage.
+wts_35_51	799	3	2	རང		Balken	new_alignment_requires_review	སྤར་རང་ sporröt Balken einer Waage.
+wts_35_51	803	38	1	སྤྱང	spyani	spyaṅ	unicode_latin_token_extent_repaired	སྤྱང་ཁ་ spyaṅ kha
+wts_35_51	803	77	1	སྤྱང	spyani	spyaṅ	unicode_latin_token_extent_repaired	སྤྱང་ཁ་ spyaṅ kha Wolfsmaul.
+wts_35_51	855	35	0	གཞུག	ug		former_fragment_or_gloss_alignment_removed	"ma mo dgu khri — (metr.) ""sie strahlt 90 000 སྤྲེ་གཞུག་ spregäug eine Pflanze, synon. Ire"
+wts_35_51	855	35	10	སྤྲེ	spreg		former_alignment_requires_review	"ma mo dgu khri — (metr.) ""sie strahlt 90 000 སྤྲེ་གཞུག་ spregäug eine Pflanze, synon. Ire"
+wts_35_51	860	29	2	མ	K	Kästchen	unicode_latin_token_extent_repaired	ག་མ་ Sprogma Kästchen.
+wts_35_51	861	16	2	འགྱང	Verz	Verzögerung	unicode_latin_token_extent_repaired	སྤྲོད་འགྱང་ ssprod Verzögerung der Über-
+wts_35_51	862	38	4	ྟ	mu	muß	unicode_latin_token_extent_repaired	"001112/22ྟ༦༧༢༠།18༠།ཿ muß erbracht werden"""
+wts_35_51	874	6	0	ཕ	vater		former_fragment_or_gloss_alignment_removed	པ་སི་ཕ། phayipha Großvater.
+wts_35_51	874	6	1	པ	phayipha		former_alignment_requires_review	པ་སི་ཕ། phayipha Großvater.
+wts_35_51	874	6	2	སི	Gro		former_alignment_requires_review	པ་སི་ཕ། phayipha Großvater.
+wts_35_51	878	13	0	ཏུ	berqueren		former_fragment_or_gloss_alignment_removed	ཕ་རོལ་ཏུ་སོན་ pharoltu son überqueren, bewäl-
+wts_35_51	878	13	3	ཏུ		überqueren	newly_visible_unicode_token	ཕ་རོལ་ཏུ་སོན་ pharoltu son überqueren, bewäl-
+wts_35_51	878	13	4	སོན	bew	bewäl	unicode_latin_token_extent_repaired	ཕ་རོལ་ཏུ་སོན་ pharoltu son überqueren, bewäl-
+wts_35_51	939	37	2	བྲང	brani	braṅ	unicode_latin_token_extent_repaired	ཕྲོ་བྲང་ pho braṅ
+wts_35_51	940	1	2	བྲང	brani	braṅ	unicode_latin_token_extent_repaired	ཕོ་བྲང་འཁོར་ pho braṅ 'khor
+wts_35_51	940	47	2	བྲང	brani	braṅ	unicode_latin_token_extent_repaired	ཕོ་བྲང་འཁོར་ pho braṅ 'khor
+wts_35_51	953	7	2	ཏེ	n	nützlich	unicode_latin_token_extent_repaired	ཕོལ་ཏེ་ pholte nützlich.
+wts_35_51	954	63	7	ཉ	m	müam	unicode_latin_token_extent_repaired	phyal) le ba ma yin pa'am ཉ/// müam pa 2 vi-
+wts_35_51	966	23	2	ཚང	tshani	tshaṅ	unicode_latin_token_extent_repaired	ཕྱག་ཚང་ phyag tshaṅ.
+wts_35_51	966	42	2	ཚང	tshani	tshaṅ	unicode_latin_token_extent_repaired	ཕྱག་ཚང་མང་བ་ phyag tshaṅ maṅ ba auch phyag
+wts_35_51	984	18	0	གསང	u		former_fragment_or_gloss_alignment_removed	ཕྱི་ནང་གསང་ pphyi nani Äußeres, Inneres
+wts_35_51	984	18	3	གསང		Äußeres	newly_visible_unicode_token	ཕྱི་ནང་གསང་ pphyi nani Äußeres, Inneres
+wts_35_51	984	78	3	དང	sp	spätere	unicode_latin_token_extent_repaired	"་ནརང་བ།དང་ pphyi nas ""spätere Pein"", Bez."
+wts_35_51	991	20	0	རིམ	u		former_fragment_or_gloss_alignment_removed	ཕྱི་རིམ་ phyirim äußerer Umgangs ~ mu kbyud
+wts_35_51	991	20	2	རིམ		äußerer	newly_visible_unicode_token	ཕྱི་རིམ་ phyirim äußerer Umgangs ~ mu kbyud
+wts_35_51	995	21	0	པ	t		former_fragment_or_gloss_alignment_removed	ཕྱེང་པ་པ phyöt pa pa auch 'phyin ba pa, phyins
+wts_35_51	995	21	1	ཕྱེང	phy	phyöt	unicode_latin_token_extent_repaired	ཕྱེང་པ་པ phyöt pa pa auch 'phyin ba pa, phyins
+wts_35_51	995	21	3	པ		pa	new_alignment_requires_review	ཕྱེང་པ་པ phyöt pa pa auch 'phyin ba pa, phyins
+wts_35_51	1011	35	2	ནུབ	Zur	Zurückweichen	unicode_latin_token_extent_repaired	ཕྱིར་ནུབ་ phyirnub Zurückweichen; — byed zu-
+wts_35_51	1015	24	0	པ	berm		former_fragment_or_gloss_alignment_removed	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
+wts_35_51	1015	24	4	པ		übermäßige	newly_visible_unicode_token	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
+wts_35_51	1020	39	3	གསུམ	sp	spätere	unicode_latin_token_extent_repaired	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
+wts_35_51	1085	2	1	འཕང	phani	phaṅ	unicode_latin_token_extent_repaired	འཕང་མདའ་རུ་ phaṅ mda ru | in Sch ußweite, in
+wts_8_b	16	25	4	ག	Haut	Hautöffnung	unicode_latin_token_extent_repaired	བ་སྤུའི་བུ་ག་ ba spu'ibuga kleine Hautöffnung,
+wts_8_b	20	34	1	བཱ	b	bä	unicode_latin_token_extent_repaired	བཱ་ལ་མི་ཏྲ་ bä la mi tra npr. ein Brahmane.
+wts_8_b	20	64	2	ཧན	B	Bälavahana	unicode_latin_token_extent_repaired	3 ཧན Bälavahana.
+wts_8_b	28	61	0	ཆེ	chtig		former_fragment_or_gloss_alignment_removed	བག་དྲོ་བྱིན་ཆེ ཟས byin che prächtig, glanz
+wts_8_b	28	61	1	བག	byin		former_alignment_requires_review	བག་དྲོ་བྱིན་ཆེ ཟས byin che prächtig, glanz
+wts_8_b	28	61	2	དྲོ	che		former_alignment_requires_review	བག་དྲོ་བྱིན་ཆེ ཟས byin che prächtig, glanz
+wts_8_b	28	61	3	བྱིན	pr		former_alignment_requires_review	བག་དྲོ་བྱིན་ཆེ ཟས byin che prächtig, glanz
+wts_8_b	28	61	4	ཟས	glanz		former_alignment_requires_review	བག་དྲོ་བྱིན་ཆེ ཟས byin che prächtig, glanz
+wts_8_b	28	67	2	ཕབ	tr	trösten	unicode_latin_token_extent_repaired	བག་ཕབ་ bagphab trösten, beruhigen.
+wts_8_b	31	42	2	གཞི	g	géi	unicode_latin_token_extent_repaired	བག་གཞི་ bag géi
+wts_8_b	39	42	2	ཆང	chani	chaṅ	unicode_latin_token_extent_repaired	"བན་ཆང་ ""ban chaṅ"
+wts_8_b	43	37	4	ཡང	yani	yaṅ	unicode_latin_token_extent_repaired	བབ་ཚོལ་ཕྱར་ཡང་ bab tshol phyar yaṅ wunüber-
+wts_8_b	69	27	2	འདབ	Wollb	Wollbüschel	unicode_latin_token_extent_repaired	བལ་འདབ་ bal'dab Wollbüschel.
+wts_8_b	71	69	1	བལྟིརྟ		balinta	new_alignment_requires_review	བལྟིརྟ་ཨཱ་ཙྨར་ balinta ä tsarya npr. Balintäcärya,
+wts_8_b	71	69	2	ཨཱ		ä	newly_visible_unicode_token	བལྟིརྟ་ཨཱ་ཙྨར་ balinta ä tsarya npr. Balintäcärya,
+wts_8_b	71	69	3	ཙྨར		tsarya	new_alignment_requires_review	བལྟིརྟ་ཨཱ་ཙྨར་ balinta ä tsarya npr. Balintäcärya,
+wts_8_b	73	7	0	བྲ	nglich		former_fragment_or_gloss_alignment_removed	བས་འཚལ་བྲ་ bas'tshalba vergänglich.
+wts_8_b	73	7	1	བས	bas'tshalba		former_alignment_requires_review	བས་འཚལ་བྲ་ bas'tshalba vergänglich.
+wts_8_b	73	7	2	འཚལ	verg		former_alignment_requires_review	བས་འཚལ་བྲ་ bas'tshalba vergänglich.
+wts_8_b	76	49	0	རའི	i		former_fragment_or_gloss_alignment_removed	པི་ཤ་ན་རའི་བྲ་ biswa na ræi bu npr. ein Seher,
+wts_8_b	76	49	1	པི	biswa		former_alignment_requires_review	པི་ཤ་ན་རའི་བྲ་ biswa na ræi bu npr. ein Seher,
+wts_8_b	76	49	2	ཤ	na		former_alignment_requires_review	པི་ཤ་ན་རའི་བྲ་ biswa na ræi bu npr. ein Seher,
+wts_8_b	76	49	3	ན	r		former_alignment_requires_review	པི་ཤ་ན་རའི་བྲ་ biswa na ræi bu npr. ein Seher,
+wts_8_b	76	49	4	བྲ	bu		former_alignment_requires_review	པི་ཤ་ན་རའི་བྲ་ biswa na ræi bu npr. ein Seher,
+wts_8_b	97	2	3	རྐང	rkani	rkaṅ	unicode_latin_token_extent_repaired	བུད་མེད་རྐང་བརྡེག་་ bud med rkaṅ brdeg
+wts_8_b	97	59	0	དམད	che		former_fragment_or_gloss_alignment_removed	གམད་དམད Flüche, die von Frauen aus-
+wts_8_b	97	59	1	གམད	Fl		former_alignment_requires_review	གམད་དམད Flüche, die von Frauen aus-
+wts_8_b	99	30	2	པ	Beeintr	Beeinträchtigung	unicode_latin_token_extent_repaired	བབས་པ།་ bubspa Beeinträchtigung, Schaden.
+wts_8_b	99	39	3	ཁན	T	Töpfer	unicode_latin_token_extent_repaired	བུམ་མ།ཁན་ bum mkhan Töpfer.
+wts_8_b	106	3	3	ཀ	T	Türkis	unicode_latin_token_extent_repaired	བེ་ཙ་ཀ་ be tsaka Türkis.
+wts_8_b	148	27	2	བཏང	btani	btaṅ	unicode_latin_token_extent_repaired	བྱ་བཏང་ bya btaṅ pf. zubya gtori.
+wts_8_b	155	3	2	འབོཿ	V	Vögelrufen	unicode_latin_token_extent_repaired	"བྱ་འབོཿ * bya'bod ""Vögelrufen"", eine magische"
+wts_8_b	177	64	4	མ	Goldm	Goldmünze	unicode_latin_token_extent_repaired	བྱང་ཞོ་ཚད་མ་ bbyaṅ ishad ma Goldmünze
+wts_8_b	185	30	0	འ	em		former_fragment_or_gloss_alignment_removed	པ་འ großem Wohlwollen und großem Mit-
+wts_8_b	185	30	1	པ	gro	großem	unicode_latin_token_extent_repaired	པ་འ großem Wohlwollen und großem Mit-
+wts_8_b	185	30	2	འ		Wohlwollen	new_alignment_requires_review	པ་འ großem Wohlwollen und großem Mit-
+wts_8_b	198	3	2	བདུད	M	Mäuseteufel	unicode_latin_token_extent_repaired	"བྱི་བདུད་ byibdud ""Mäuseteufel"", Wiesel."
+wts_8_b	206	9	4	བ	regelm	regelmäßig	unicode_latin_token_extent_repaired	བྱིན་གྱིས་ཕྲ་བ་ byin gyis plhraba regelmäßig.
+wts_8_b	209	15	2	གཞུག	g	gäug	unicode_latin_token_extent_repaired	བྱིན་གཞུག་ byin gäug eine Stelle oberhalb der
+wts_8_b	244	7	4	པ	pflichtbewu	pflichtbewußt	unicode_latin_token_extent_repaired	བྱེད་པ་བྱས་པ་ byed pa byaspa pflichtbewußt.
+wts_8_b	255	4	2	ཁུང	Felsh	Felshöhle	unicode_latin_token_extent_repaired	བྲཐ།ཁུང་ bragkburi Felshöhle, Felsspalte.
+wts_8_b	258	1	4	ཚང	tshani	tshaṅ	unicode_latin_token_extent_repaired	བྲག་དམར་ཀེའུ་ཚང་ brag dmar ke'u tshaṅ
+wts_8_b	289	16	2	པོ	Unterhaltungsk	Unterhaltungskünstler	unicode_latin_token_extent_repaired	བྲོད་པོ་ brodpo Unterhaltungskünstler.
+wts_8_b	298	28	2	བྱང	Zweitseelent	Zweitseelentäfelchen	unicode_latin_token_extent_repaired	བླ་བྱང་ bbla Zweitseelentäfelchen, ein Tä-
+wts_8_b	304	2	2	གཡུ	T	Türkis	unicode_latin_token_extent_repaired	བླ་གཡུ་ blag.yu Türkis mit der Lebenskraft ei-
+wts_8_b	310	1	2	ཀྱང	kyani	kyaṅ	unicode_latin_token_extent_repaired	བླངས་ཀྱང་ blaṅs kyaṅ
+wts_8_b	317	24	0	འལ	tig		former_fragment_or_gloss_alignment_removed	ལ འལ kleinmütig, mutlos, resigniert;
+wts_8_b	317	24	1	ལ	kleinm	kleinmütig	unicode_latin_token_extent_repaired	ལ འལ kleinmütig, mutlos, resigniert;
+wts_8_b	317	24	2	འལ		mutlos	new_alignment_requires_review	ལ འལ kleinmütig, mutlos, resigniert;
+wts_8_b	329	6	2	རབ	verst	verständig	unicode_latin_token_extent_repaired	བློ་རབ་ blorab verständig.
+wts_8_b	329	32	3	བཞུགས	b	böugs	unicode_latin_token_extent_repaired	བློ་ལ་བཞུགས་ blo la böugs im Gedächtnis be- ` Iilran
+wts_8_b	337	77	3	ཀ	B	Bär	unicode_latin_token_extent_repaired	བྷ་ལ་ཀ་ bhala ka Bär, skt. bhalluka.
+wts_8_b	347	42	2	ཐང	thani	thaṅ	unicode_latin_token_extent_repaired	དབང་ཐང་ dbaṅ thaṅ
+wts_8_b	359	35	3	གཞུ	g	gén	unicode_latin_token_extent_repaired	དབང་པོའི་གཞུ་ dbaṅ po'i gén auch dba po gén
+wts_8_b	362	17	0	བུ	hne		former_fragment_or_gloss_alignment_removed	"དཱ ཕྱུག བུ་གཉ den Söhne Isvaras"", Bez. für"
+wts_8_b	362	17	1	དཱ	den		former_alignment_requires_review	"དཱ ཕྱུག བུ་གཉ den Söhne Isvaras"", Bez. für"
+wts_8_b	362	17	2	ཕྱུག	S		former_alignment_requires_review	"དཱ ཕྱུག བུ་གཉ den Söhne Isvaras"", Bez. für"
+wts_8_b	362	17	3	གཉ	Isvaras		former_alignment_requires_review	"དཱ ཕྱུག བུ་གཉ den Söhne Isvaras"", Bez. für"
+wts_8_b	375	17	0	འཕྲེང	i		former_fragment_or_gloss_alignment_removed	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
+wts_8_b	375	17	2	བའི	b	bæi	unicode_latin_token_extent_repaired	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
+wts_8_b	375	17	3	འཕྲེང	phren	phren	alignment_change_requires_review	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
+wts_8_b	375	17	4	བ		ba	new_alignment_requires_review	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
+wts_8_b	376	44	0	བརྒྱ	i		former_fragment_or_gloss_alignment_removed	དབུ་མ་བཞི་བརྒྱ་་་ dbu ma bäi broya
+wts_8_b	376	44	3	བཞི	b	bäi	unicode_latin_token_extent_repaired	དབུ་མ་བཞི་བརྒྱ་་་ dbu ma bäi broya
+wts_8_b	376	44	4	བརྒྱ		broya	new_alignment_requires_review	དབུ་མ་བཞི་བརྒྱ་་་ dbu ma bäi broya
+wts_8_b	381	21	2	སྣ	N	Nüstern	unicode_latin_token_extent_repaired	དབུག་སྣ་ dbugsna Nüstern.
+wts_8_b	384	28	0	འབྱན	r		former_fragment_or_gloss_alignment_removed	དབུགས་འབྱན་བདག für den Gott des Windes.
+wts_8_b	384	28	1	དབུགས	f		former_alignment_requires_review	དབུགས་འབྱན་བདག für den Gott des Windes.
+wts_8_b	384	28	2	བདག	den		former_alignment_requires_review	དབུགས་འབྱན་བདག für den Gott des Windes.
+wts_8_b	405	7	3	གཞི	g	géi	unicode_latin_token_extent_repaired	རྲ་གྱི་གཞི་ dbyar gi géi npr. ein Abschnitt
+wts_8_b	405	25	0	སྤད	ra		former_fragment_or_gloss_alignment_removed	དབ གྱ ན སྤད eein Amt Vihära.
+wts_8_b	405	25	1	དབ	eein		former_alignment_requires_review	དབ གྱ ན སྤད eein Amt Vihära.
+wts_8_b	405	25	2	གྱ	Amt		former_alignment_requires_review	དབ གྱ ན སྤད eein Amt Vihära.
+wts_8_b	405	25	3	ན	Vih		former_alignment_requires_review	དབ གྱ ན སྤད eein Amt Vihära.
+wts_8_b	407	58	0	ཚུ	k		former_fragment_or_gloss_alignment_removed	དཱ ཚུ Varsäkära.
+wts_8_b	407	58	1	དཱ	Vars		former_alignment_requires_review	དཱ ཚུ Varsäkära.
+wts_8_b	410	40	1	དབྱིག	h	höchster	unicode_latin_token_extent_repaired	དབྱིག་ höchster.
+wts_8_b	457	24	2	གོང	Handr	Handrücken	unicode_latin_token_extent_repaired	འབོལ་གོང་ ''bol Handrücken, Fußrücken.
+wts_8_b	460	46	0	རྡུལ	r		former_fragment_or_gloss_alignment_removed	འབྱིང་རྡུལ་ཆེ་ 'byür rdulche eine Zehnerpotenz;
+wts_8_b	460	46	1	འབྱིང	by		former_alignment_requires_review	འབྱིང་རྡུལ་ཆེ་ 'byür rdulche eine Zehnerpotenz;
+wts_8_b	460	46	2	ཆེ	rdulche		former_alignment_requires_review	འབྱིང་རྡུལ་ཆེ་ 'byür rdulche eine Zehnerpotenz;
+wts_8_b	467	62	2	འབྲུགས	St	Störung	unicode_latin_token_extent_repaired	"འབྱུང་འབྲུགས་ 'khrugs ""Störung der Ele-"
+wts_8_b	472	32	4	བཞི	b	bäi	unicode_latin_token_extent_repaired	འབྱུང་བ་བཞི་ ba bi 1 ?/)༡////? bäi.
+wts_8_b	473	18	2	བཞི	b	bäi	unicode_latin_token_extent_repaired	"འབུང་བཞི་ ""byun bäi auch 'byun ba bäi die vier"
+wts_8_b	473	38	0	སྙོམས	oms		former_fragment_or_gloss_alignment_removed	"འབྱུང་བཞི་སྙོམས་ ''byuṅ süoms ""Ausgewo-"
+wts_8_b	473	38	2	བཞི	s	süoms	unicode_latin_token_extent_repaired	"འབྱུང་བཞི་སྙོམས་ ''byuṅ süoms ""Ausgewo-"
+wts_8_b	473	38	3	སྙོམས		Ausgewo	new_alignment_requires_review	"འབྱུང་བཞི་སྙོམས་ ''byuṅ süoms ""Ausgewo-"
+wts_8_b	494	47	2	རྐང	rkani	rkaṅ	unicode_latin_token_extent_repaired	"འབྲེ ་རྐང་ ""bri rkaṅ"
+wts_8_b	502	37	2	ལྔ	f	fünf	unicode_latin_token_extent_repaired	འབྲུ་ལྔ་ lṅa fünf Getreidearten, zumeist
+wts_8_b	503	1	2	གཉིས	g	güäls	unicode_latin_token_extent_repaired	"འ ་གཉིས་ ''bru güäls ""bru sna bdun"
+wts_8_b	505	1	2	གསང	gsani	gsaṅ	unicode_latin_token_extent_repaired	འབྲུ་གསང་ bru gsaṅ
+wts_8_b	520	19	2	ལྡ	K	König	unicode_latin_token_extent_repaired	"གཉན ལྡ "" tischer König."
+wts_8_b	527	84	2	གླིང	Rohrfl	Rohrflöte	unicode_latin_token_extent_repaired	སྤ་གླིང་ ssba Rohrflöte.
+wts_8_b	528	9	2	ཇ	B	Bündel	unicode_latin_token_extent_repaired	སྤ་ཇ་ sbaja Bündel.
+wts_8_b	534	33	2	པ	Gef	Gefängnis	unicode_latin_token_extent_repaired	སྤལ་པ་ 'sbalba Gefängnis.
+wts_8_b	574	58	3	ཆང	chani	chaṅ	unicode_latin_token_extent_repaired	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chaṅ
+wts_9_m	100	7	0	ཁ	ble		former_fragment_or_gloss_alignment_removed	མི་ཁ་ mikba üble Nachrede, vgl. SchwiEGer
+wts_9_m	100	7	2	ཁ		üble	newly_visible_unicode_token	མི་ཁ་ mikba üble Nachrede, vgl. SchwiEGer
+wts_9_m	102	60	2	གང	Mannsh	Mannshöhe	unicode_latin_token_extent_repaired	མི་གང་ migari Mannshöhe, Klafter.
+wts_9_m	102	70	2	གུ	k	kühn	unicode_latin_token_extent_repaired	མི་གུ་ 'migu kühn, unerschrocken.
+wts_9_m	130	78	2	ཚོགས	Bev	Bevölkerung	unicode_latin_token_extent_repaired	མི་ཚོགས་ mitsbogs Bevölkerung.
+wts_9_m	134	16	3	སེམས	B	Böswilligkeit	unicode_latin_token_extent_repaired	མི་བཟད་སེམས་ mibzad serns Böswilligkeit.
+wts_9_m	152	15	3	པ	cin	cinäugig	unicode_latin_token_extent_repaired	མིག་གཅིག་པ་ miggaig pa cinäugig,
+wts_9_m	159	46	2	གཟུགས	gru	gruß	unicode_latin_token_extent_repaired	མིག་གཟུགས་གསལ་བྱེད་ vs gruß gsal byed
+wts_9_m	160	47	0	པ	bung		former_fragment_or_gloss_alignment_removed	མིག་རབ་རིབ་པ་ migrabrib pa Augentrübung,
+wts_9_m	160	47	1	མིག	migrabrib		former_alignment_requires_review	མིག་རབ་རིབ་པ་ migrabrib pa Augentrübung,
+wts_9_m	160	47	2	རབ	pa		former_alignment_requires_review	མིག་རབ་རིབ་པ་ migrabrib pa Augentrübung,
+wts_9_m	160	47	3	རིབ	Augentr		former_alignment_requires_review	མིག་རབ་རིབ་པ་ migrabrib pa Augentrübung,
+wts_9_m	175	54	0	པོ	nigder		former_fragment_or_gloss_alignment_removed	"མའམ་ཅེའྲི་གལ་པོ་ manch rgyalpo ""Königder"
+wts_9_m	175	54	1	མའམ	manch		former_alignment_requires_review	"མའམ་ཅེའྲི་གལ་པོ་ manch rgyalpo ""Königder"
+wts_9_m	175	54	2	ཅེའྲི	rgyalpo		former_alignment_requires_review	"མའམ་ཅེའྲི་གལ་པོ་ manch rgyalpo ""Königder"
+wts_9_m	175	54	3	གལ	K		former_alignment_requires_review	"མའམ་ཅེའྲི་གལ་པོ་ manch rgyalpo ""Königder"
+wts_9_m	182	15	2	རྒྱུང	gem	gemäß	unicode_latin_token_extent_repaired	མུ་རྒྱུང་ Universum gemäß der Kos-
+wts_9_m	202	30	2	འདུག	Andersgl	Andersgläubiger	unicode_latin_token_extent_repaired	མུར་འདུག་ mur'dug Andersgläubiger.
+wts_9_m	214	79	3	མོ	Bl	Blütenstaub	unicode_latin_token_extent_repaired	ཏོག་ཐལ་མོ་ me togthalino Blütenstaub.
+wts_9_m	216	75	0	རེ	tenhonie		former_fragment_or_gloss_alignment_removed	།འཾག་རང་རེ་ metogsbranrtsi Blütenhonie.
+wts_9_m	216	75	1	འཾག	metogsbranrtsi		former_alignment_requires_review	།འཾག་རང་རེ་ metogsbranrtsi Blütenhonie.
+wts_9_m	216	75	2	རང	Bl		former_alignment_requires_review	།འཾག་རང་རེ་ metogsbranrtsi Blütenhonie.
+wts_9_m	216	84	0	མ	gerin		former_fragment_or_gloss_alignment_removed	མེ་ཏག་མ་ metogma Blumenträgerin.
+wts_9_m	216	84	1	མེ	metogma		former_alignment_requires_review	མེ་ཏག་མ་ metogma Blumenträgerin.
+wts_9_m	216	84	2	ཏག	Blumentr		former_alignment_requires_review	མེ་ཏག་མ་ metogma Blumenträgerin.
+wts_9_m	217	16	2	རྟི	Bl	Blütennektar	unicode_latin_token_extent_repaired	ིཏོག་རྟི metogrtsi Blütennektar, Blütensaft.
+wts_9_m	220	10	3	ཀཱ	k	kä	unicode_latin_token_extent_repaired	མེ་ན་ཀཱ་ me na kä.
+wts_9_m	220	17	0	མ	ltere		former_fragment_or_gloss_alignment_removed	"མ་ན་ཀྲའ་སྲང་མ་ mme na srih mo ""ältere"
+wts_9_m	220	17	5	མ		ältere	newly_visible_unicode_token	"མ་ན་ཀྲའ་སྲང་མ་ mme na srih mo ""ältere"
+wts_9_m	221	19	2	ཕྲོའུ	Feuergef	Feuergefäß	unicode_latin_token_extent_repaired	སི་ཕྲོའུ་ mephor Feuergefäß, Feuerpfanne.
+wts_9_m	224	41	2	ཡི	Veuergef	Veuergefäß	unicode_latin_token_extent_repaired	མེ་ཡི་སྟེགས་ meyistegs Veuergefäß, Feuerpfan-
+wts_9_m	225	2	2	ཡོག	Sch	Schürholz	unicode_latin_token_extent_repaired	མེ་ཡོག་ meyog Schürholz, 86©]11]7113]401],
+wts_9_m	251	8	2	སྨན	M	Mädchen	unicode_latin_token_extent_repaired	མོ་སྨན་ mosman Mädchen, Tochter.
+wts_9_m	252	26	0	ལ	na		former_fragment_or_gloss_alignment_removed	མོ་ལ་ཏཱ་ན་ molatäna \mau /¿¿ /¢7 na.
+wts_9_m	252	26	1	མོ	molat		former_fragment_or_gloss_alignment_removed	མོ་ལ་ཏཱ་ན་ molatäna \mau /¿¿ /¢7 na.
+wts_9_m	252	26	2	ཏཱ	mau		former_alignment_requires_review	མོ་ལ་ཏཱ་ན་ molatäna \mau /¿¿ /¢7 na.
+wts_9_m	252	26	4	ན	na		former_fragment_or_gloss_alignment_removed	མོ་ལ་ཏཱ་ན་ molatäna \mau /¿¿ /¢7 na.
+wts_9_m	253	29	3	པོ	bla	blaß	unicode_latin_token_extent_repaired	མོག་མོག་པོ་ mogmogpo auchmogmogpa blaß,
+wts_9_m	288	7	4	པ	Heerf	Heerführer	unicode_latin_token_extent_repaired	དམག་གི་འགོ་པ་ dmaggi 'go pa Heerführer.
+wts_9_m	288	14	4	པ	Heerf	Heerführer	unicode_latin_token_extent_repaired	དམག་གི་འདྲེན་པ་ dmaggi 'dren pa Heerführer.
+wts_9_m	319	35	2	གྲི	pl	plötzlicher	unicode_latin_token_extent_repaired	དམེ་གྲི་ dmegri plötzlicher Tod durch innerfa-
+wts_9_m	330	9	2	གཡང	Gl	Glück	unicode_latin_token_extent_repaired	རྨ་གཡང་ rmag.yan Glück.
+wts_9_m	330	63	1	རྨང	rmani	rmaṅ	unicode_latin_token_extent_repaired	རྨང་ 'rmaṅ auch rmans, rmen Fundament,
+wts_9_m	331	1	1	རྨང	rmani	rmaṅ	unicode_latin_token_extent_repaired	"རྨང་ ""rmaṅ"
+wts_9_m	332	2	1	རྨང	rmani	rmaṅ	unicode_latin_token_extent_repaired	རྨང་ལམ་ rmaṅ lam Traum.
+wts_9_m	340	13	4	བ	ersch	erschöpft	unicode_latin_token_extent_repaired	རྨུགས་ཤེས་སོང་བ་ rrmugs son ba erschöpft,
+wts_9_m	374	24	1	མ	Gro	Großer	unicode_latin_token_extent_repaired	མ་༥། Großer Bär.
+wts_9_m	375	17	4	གཞུག	g	gäug	unicode_latin_token_extent_repaired	སྤྲི་བ་དབུས་གཞུག་ sme ba dbus gäug neun Dia-
+wts_9_m	385	66	2	སྒྲོག	Federb	Federbüchse	unicode_latin_token_extent_repaired	ག་སྒྲོག་ smyugsgrog Federbüchse.

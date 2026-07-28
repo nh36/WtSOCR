@@ -34,6 +34,12 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
         self.assertEqual(
             consensus.latin_headword_tokens("pa’i gloss", 1)[0][0], "pa’i"
         )
+        self.assertEqual(
+            consensus.latin_headword_tokens("dga’ gloss", 1)[0][0], "dga’"
+        )
+        self.assertEqual(
+            consensus.latin_headword_tokens("’gro gloss", 1)[0][0], "’gro"
+        )
 
     def test_latin_headword_token_stops_before_punctuation(self) -> None:
         self.assertEqual(

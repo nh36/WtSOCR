@@ -45,7 +45,8 @@ CANONICAL_FIELDS = [
     "tibetan_syllable", "canonical_forms", "canonical_status",
     "canonical_confidence_tier",
     "evidence_class", "full_target_reviewed", "supporting_forms",
-    "supporting_volumes", "competing_forms", "competing_support",
+    "supporting_volumes", "observed_other_forms",
+    "credible_competing_transcriptions", "competing_forms", "competing_support",
     "independent_teaching_occurrences", "derived_occurrences",
     "historical_occurrences", "domain_breakdown", "feature_coverage",
     "rationale",
@@ -54,6 +55,7 @@ TEACHING_FIELDS = [
     "tibetan_syllable", "latin_form", "volume", "page", "line",
     "token_index", "provenance_class", "canonical_teaching_status",
     "correction_evidence_scope", "domain_context", "alignment_confidence",
+    "headword_transliteration_span_status",
     "context_excerpt",
 ]
 FEATURE_FIELDS = [
@@ -65,7 +67,8 @@ FEATURE_FIELDS = [
 OUTLIER_FIELDS = [
     "tibetan_syllable", "current_source", "canonical_forms",
     "outlier_category", "edit_script", "edit_signatures",
-    "canonical_evidence", "canonical_confidence_tier", "occurrence_count",
+    "canonical_evidence", "canonical_confidence_tier",
+    "source_alignment_status", "occurrence_count",
     "domain_breakdown", "damage_or_marker", "sample_contexts",
 ]
 CONFUSION_FIELDS = [
@@ -167,6 +170,12 @@ def provenance_for(
 ) -> tuple[str, str, str]:
     identity = (row["volume"], row["page"], row["line"], row["token_index"])
     full = identity + (row["latin_token"],)
+    if override and row["latin_token"] == override.get("from_token"):
+        return (
+            "reviewed_ocr_source_noncanonical",
+            "not_teaching_evidence",
+            correction_scope(override)[0],
+        )
     if full in superseded_targets:
         return "superseded", "superseded", "other"
     if full in superseding_full_targets:
@@ -328,7 +337,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 "secure_positional_alignment", "secure_reviewed_alignment",
             } or d["damage_scope"] not in {"none", "later_gloss_or_commentary"} \
                     or d["marker_attached"] == "yes" \
-                    or d["token_boundary_status"] != "token_boundary_secure":
+                    or d["token_boundary_status"] != "token_boundary_secure" \
+                    or d["known_feature_violation"] == "yes":
                 teaching_status = "not_teaching_evidence"
             provenance[provenance_class] += 1
             teaching[teaching_status] += 1
@@ -342,6 +352,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 "correction_evidence_scope": evidence_scope,
                 "domain_context": d["domain_context"],
                 "alignment_confidence": d["alignment_confidence"],
+                "headword_transliteration_span_status":
+                    d["headword_transliteration_span_status"],
                 "context_excerpt": r["context_excerpt"],
             })
         clean = [
@@ -434,6 +446,52 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             "sample_contexts": " || ".join(r["context_excerpt"] for r in rows[:3]),
         })
 
+    # Preserve historical source observations while preventing exact forms
+    # subsequently reviewed as OCR corruption from voting for themselves.
+    shadow_path = ROOT / "data/tibetan_latin_reviewed_source_dispositions.tsv"
+    teaching_keys = {
+        (
+            r["volume"], r["page"], r["line"], r["token_index"],
+            r["latin_form"],
+        )
+        for r in teaching_rows
+    }
+    if shadow_path.exists():
+        for disposition in integrity.read_tsv(shadow_path):
+            key = (
+                disposition["volume"], disposition["page"],
+                disposition["line"], disposition["token_index"],
+            )
+            historical_row = historical.get(key)
+            teaching_key = key + (disposition["observed_source"],)
+            if (
+                not historical_row
+                or historical_row.get("latin_form")
+                != disposition["observed_source"]
+                or teaching_key in teaching_keys
+            ):
+                continue
+            teaching_rows.append({
+                "tibetan_syllable": (
+                    disposition["tibetan_syllable"]
+                    or historical_row.get("tibetan_syllable", "")
+                ),
+                "latin_form": disposition["observed_source"],
+                "volume": disposition["volume"],
+                "page": disposition["page"],
+                "line": disposition["line"],
+                "token_index": disposition["token_index"],
+                "provenance_class": "historical_observation",
+                "canonical_teaching_status": "not_teaching_evidence",
+                "correction_evidence_scope": disposition["evidence_scope"],
+                "domain_context": "historical_observation",
+                "alignment_confidence": "historical_observation",
+                "headword_transliteration_span_status":
+                    "historical_observation",
+                "context_excerpt": historical_row.get("context_excerpt", ""),
+            })
+            teaching_keys.add(teaching_key)
+
     by_syllable: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in concordance:
         by_syllable[row["tibetan_syllable"]].append(row)
@@ -503,6 +561,9 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 [], "unresolved", "unresolved", "no_full_target_evidence"
             )
         competing = [r for r in eligible if r not in chosen]
+        credible_competing = [
+            r for r in credible if r not in chosen
+        ]
         canonical.append({
             "tibetan_syllable": syllable,
             "canonical_forms": ";".join(r["latin_form"] for r in chosen),
@@ -515,13 +576,22 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             "supporting_volumes": ";".join(sorted({
                 v for r in chosen for v in r["distinct_volumes"].split(";") if v
             })),
-            "competing_forms": ";".join(r["latin_form"] for r in competing),
+            "observed_other_forms": ";".join(
+                r["latin_form"] for r in competing
+            ),
+            "credible_competing_transcriptions": ";".join(
+                r["latin_form"] for r in credible_competing
+            ),
+            # Retained as a compatibility alias for downstream readers.
+            "competing_forms": ";".join(
+                r["latin_form"] for r in credible_competing
+            ),
             "competing_support": ";".join(
                 f"{r['latin_form']}:independent={r['independent_teaching_occurrences']},"
                 f"derived={int(r['current_clean_occurrences']) - int(r['independent_teaching_occurrences'])},"
                 f"historical={r['historical_baseline_occurrences']},"
                 f"domains={r['domain_breakdown']}"
-                for r in competing
+                for r in credible_competing
             ),
             "independent_teaching_occurrences": str(sum(
                 int(r["independent_teaching_occurrences"]) for r in chosen
@@ -567,6 +637,17 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         source = row["latin_form"]
         operations = edit_operations(source, target)
         category = edit_category(operations)
+        alignment_breakdown = row["alignment_breakdown"]
+        if int(row["current_clean_occurrences"]) > 0:
+            source_alignment_status = "secure_transcription_outlier"
+        elif "gloss_or_prose_noise:" in alignment_breakdown:
+            source_alignment_status = "gloss_alignment_noise"
+        elif "marker_or_damage:" in alignment_breakdown:
+            source_alignment_status = "boundary_or_damage"
+        elif "probable_alignment:" in alignment_breakdown:
+            source_alignment_status = "probable_transcription_outlier"
+        else:
+            source_alignment_status = "structurally_unaligned"
         if (
             len(operations) == 1
             and source[:-1] == target[:-1]
@@ -583,6 +664,7 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             ),
             "canonical_evidence": canon["evidence_class"],
             "canonical_confidence_tier": canon["canonical_confidence_tier"],
+            "source_alignment_status": source_alignment_status,
             "occurrence_count": row["current_clean_occurrences"],
             "domain_breakdown": row["domain_breakdown"],
             "damage_or_marker": (
@@ -590,6 +672,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             ),
             "sample_contexts": row["sample_contexts"],
         })
+        if source_alignment_status != "secure_transcription_outlier":
+            continue
         for operation in operations:
             signature = operation["signature"]
             confusion_groups[signature].add(row["tibetan_syllable"])

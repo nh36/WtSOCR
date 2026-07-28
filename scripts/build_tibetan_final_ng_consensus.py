@@ -162,12 +162,15 @@ def latin_headword_tokens(tail: str, limit: int) -> list[tuple[str, int]]:
     tokens: list[tuple[str, int]] = []
     for index, match in enumerate(LATIN_TOKEN_RE.finditer(tail), start=1):
         raw = match.group(0)
-        token = raw.strip(".-'’")
-        if not token:
+        # Apostrophes are corpus transcription graphemes in forms such as
+        # dga’ and ’gro.  Stripping them silently shortened the aligned token
+        # and made the adjacent apostrophe look like an uncertain boundary.
+        token = raw.strip(".-")
+        if not token or not token.strip("'’"):
             continue
         if token.lower() in GERMAN_STOP_WORDS:
             break
-        leading = len(raw) - len(raw.lstrip(".-'’"))
+        leading = len(raw) - len(raw.lstrip(".-"))
         tokens.append((token, match.start() + leading))
         if len(tokens) >= limit:
             break

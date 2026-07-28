@@ -1,0 +1,5 @@
+volume	page	line	token_index	tibetan_syllable	captured_token	adjacent_glyph	boundary_status	review_disposition	context_excerpt
+wts_35_51	740	35	2	གཉེན	g	ħ	adjacent_transliteration_glyph_uncaptured	retain_boundary_unsafe_manual_review	དཔུང་གཉེན་ dpuṅ għen Freund, Beschützer,
+wts_35_51	827	26	1	སྤྱིའི	spy	ř	adjacent_transliteration_glyph_uncaptured	retain_boundary_unsafe_manual_review	སྤྱིའི་ཚུགས་ spyři tshugs lspyi'n tshugs.
+wts_8_b	564	27	1	སྦྱོངས	sbyoṅ	ř	adjacent_transliteration_glyph_uncaptured	retain_boundary_unsafe_manual_review	སྦྱོངས་པོ་ sbyoṅřis po kraftlos.
+wts_8_b	576	1	2	རྩིའི	rts	ľ	adjacent_transliteration_glyph_uncaptured	retain_boundary_unsafe_manual_review	སྦྲང་རྩིའི་བདག་པོ་ sbraṅ rtsľi bdag po Bez. für Bienr
