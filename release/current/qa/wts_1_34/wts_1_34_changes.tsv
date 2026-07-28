@@ -28874,3 +28874,19 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1100	10	12195	headword_line	Ziṅ	źiṅ	A	reviewed_correction_supersession_bridge	1	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
 1100	10	12195	headword_line	Ziṅ	źiṅ	A	reviewed_correction_supersession_bridge	1	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
 1168	60	12580	headword_line	Ziṅ	źiṅ	A	reviewed_correction_supersession_bridge	1	དུར་ཞིང་ dur Ziṅ Leichenacker.
+82	132	947	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_echo	yes	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
+82	132	947	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
+82	157	948	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
+87	155	1033	tibetan_only	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་སློང་ kun slon
+87	195	1036	example_tibetan_latin	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
+88	1	1037	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་སློང་ཅན་ kun slon can
+88	8	1038	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
+230	39	3032	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	བསྐུལ་སློང་ bskul slon Anregung.
+256	80	3411	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
+413	26	5516	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
+414	106	5533	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགེ་སློང་ dge slon
+414	115	5534	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགེ་སློང་ dge slon.
+414	198	5536	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
+530	187	6880	tibetan_only	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ངར་སློང་ nar slon ermutigen, anspornen.
+769	45	9230	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཉལ་སློང་ al slon Bez. für Weisheit.
+1169	48	12582	tibetan_only	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དུར་སློང་ dur slon '[0[6112617611]101116,

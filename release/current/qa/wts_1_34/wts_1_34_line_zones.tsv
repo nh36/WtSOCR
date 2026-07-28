@@ -10048,7 +10048,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 82	127	942	latin_other			none	4	0	0	0	phyogs bzi dag ni — / de dagrnams la srun bar
 82	128	942	german_prose_with_translit			none	1	3	0	0	byed (metr.) „in den vier Himmelsrichtungen werden sie sie überall (samantena) be-
 82	130	942	german_prose			none	0	2	0	0	schützen“ (Suv 128,1, skt. 163,4).
-82	132	943	headword_line	ཀུན་ནས་སློང་བ་	nas	medium	2	1	0	0	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
+82	132	943	headword_line	ཀུན་ནས་སློང་བ་	nas	medium	2	1	0	0	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
 82	134	943	latin_other			none	1	0	0	0	1. hervorrufen, hervorbringen.
 82	136	943	latin_other			none	3	0	0	0	phyin ci log gis phyin ci log kun nas mi slon
 82	137	943	german_prose_with_translit			none	1	4	0	0	„etwas Verkehrtes ruft nicht etwas Verkehrtes hervor (na ... samutthäpayati)“ (K14
@@ -10066,7 +10066,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 82	153	943	german_prose			none	0	5	0	0	yogäni), sie gehören zu dem, was nicht Er-
 82	154	943	german_prose_with_translit			none	1	2	0	0	scheinungswelt ist (asamutthänaparyäpa-
 82	155	943	german_prose			none	0	2	0	0	nnäni)“ (K12 145a1, skt. 130,6).
-82	157	944	headword_line	ཀུན་ནས་སློང་བ་པོ་	nas	medium	3	2	0	0	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
+82	157	944	headword_line	ཀུན་ནས་སློང་བ་པོ་	nas	medium	3	2	0	0	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
 82	158	944	german_prose_with_translit			none	1	2	0	0	ber“, i.S.v. Hervorbringer, Er-
 82	160	944	german_prose			none	0	5	0	0	zeuger; erscheint als Begriff für die Seele.
 82	161	944	german_prose_with_translit			none	3	1	0	0	gzugs la slon ba po’am / — gan yari med „die
@@ -10873,7 +10873,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 87	151	1028	latin_other			none	6	0	0	0	srad mi ’byun ba dei tshe śes rab kyi pha rol tu
 87	152	1028	german_prose_with_translit			none	3	2	0	0	phyin pa Zes bya’o „wenn es keinen Begriff,
 87	153	1028	german_prose_with_translit			none	1	2	0	0	keine Benennung (samajnä), keine Bezeich-
-87	155	1028	tibetan_only	ཀུན་སློང་		none	0	0	0	0	ཀུན་སློང་ kun slon
+87	155	1028	tibetan_only	ཀུན་སློང་		none	0	0	0	0	ཀུན་སློང་ kun sloṅ
 87	157	1028	german_prose_with_translit			none	2	4	0	0	nung und keinen Ausdruck gibt, so heißt das
 87	158	1028	german_prose_with_translit			none	1	4	0	0	‚die Vollkommenheit der Weisheit‘“ (K12
 87	159	1028	other			none	0	0	0	0	10064, skt. 89,18).
@@ -10899,7 +10899,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 87	190	1031	german_prose_with_translit			none	1	2	0	0	2. Erklärung der Zufluchtnahme.
 87	192	1031	german_prose_with_translit			none	5	1	0	0	Lex. skyabs su ’gro ba’ii bśad pa „Darlegung
 87	193	1031	german_prose_with_translit			none	1	2	0	0	der Zufluchtnahme“ (brDa).
-87	195	1031	example_tibetan_latin	ཀུན་སློང་		none	1	3	0	0	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
+87	195	1031	example_tibetan_latin	ཀུན་སློང་		none	1	3	0	0	ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.
 87	197	1031	latin_other			none	1	0	0	0	1. Entstehung.
 87	199	1031	german_prose_with_translit			none	3	1	0	0	Lex. samurthana (r. samutthana) „Entstehung; Unternehmung usw.“ (Ishe 331).
 87	202	1031	german_prose_with_translit			none	1	4	0	0	2. bes. das Entstehen mit Hinblick auf Gei-
@@ -10910,11 +10910,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 87	208	1031	german_prose_with_translit			none	2	9	0	0	slon 977/$ so „das Hervorbringen von Gedanken; die ursächliche Motivation und die Mo-
 87	210	1031	german_prose_with_translit			none	1	3	0	0	tivation zur Zeit [der Tat]“ (brDa); ... yid ses
 87	212	1031	other			none	0	0	0	0	103
-88	1	1032	headword_line	ཀུན་སློང་ཅན་	can	medium	1	0	0	0	ཀུན་སློང་ཅན་ kun slon can
+88	1	1032	headword_line	ཀུན་སློང་ཅན་	can	medium	1	0	0	0	ཀུན་སློང་ཅན་ kun sloṅ can
 88	3	1032	other			none	0	0	0	0	«
 88	5	1032	german_prose_with_translit			none	3	3	0	0	kyi g.yo ba „eine Bewegung des Geistes
 88	6	1032	german_prose			none	0	1	0	0	(Dagy).
-88	8	1033	headword_line	ཀུན་སློང་ཅན་	can	medium	1	3	0	0	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
+88	8	1033	headword_line	ཀུན་སློང་ཅན་	can	medium	1	3	0	0	ཀུན་སློང་ཅན་ kun sloṅ can mit bösen Gedanken,
 88	9	1033	german_prose			none	0	1	0	0	schlechte Absichten habend, ver-
 88	11	1033	german_prose_with_translit			none	2	2	0	0	kürzt für kun slon nan pa can.
 88	13	1033	german_prose_with_translit			none	5	6	0	0	ser skya — kha cig gi(s) bar du dbyen bcos „einige Mönche und Laien, die böse Absichten
@@ -32195,7 +32195,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 230	33	2985	german_prose_with_translit			none	1	3	0	0	ativ mit der Anbindung eines einzelnen ~$
 230	34	2985	latin_other			none	1	0	0	0	genug“ (rTjBy 5,100).
 230	36	2985	german_prose_with_translit			none	3	4	0	0	Lex. skul byed kyi tshig „Wort der Aufforderung“ (Dagy).
-230	39	2986	headword_line	བསྐུལ་སློང་	bskul	medium	2	0	0	0	བསྐུལ་སློང་ bskul slon Anregung.
+230	39	2986	headword_line	བསྐུལ་སློང་	bskul	medium	2	0	0	0	བསྐུལ་སློང་ bskul sloṅ Anregung.
 230	41	2986	german_prose_with_translit			none	4	1	0	0	Lex. bya bar bskul ma byed pa „auffordern,
 230	42	2986	german_prose			none	0	2	0	0	zu handeln“ (Dagy).
 230	44	2987	headword_line	བསྐུས་	bskus	medium	1	1	0	0	བསྐུས་ bskus pf. zu !skud.
@@ -35870,7 +35870,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 256	74	3363	headword_line	ཁ་སློག་	kha	high	1	0	0	0	ཁ་སློག་ kha slog jmdn. anfallen, frech antwor-
 256	76	3363	other			none	0	0	0	0	ten.
 256	78	3363	german_prose			none	0	1	0	0	Lex. gyen log (TTC).
-256	80	3364	headword_line	ཁ་སློང་	kha	high	3	1	0	0	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
+256	80	3364	headword_line	ཁ་སློང་	kha	high	3	1	0	0	ཁ་སློང་ kha sloṅ pf. lkha bslans ergänzen.
 256	82	3364	german_prose_with_translit			none	3	3	0	0	Lex. ~ dgos = kha skon dgos „es muß ergänzt
 256	83	3364	german_prose_with_translit			none	1	1	0	0	werden“ (brDa, Dagy).
 256	85	3365	headword_line	།ཁ་གསག་	khba	high	3	3	0	0	།ཁ་གསག་ khba gsag auch kha bsag schöne Wor-
@@ -58376,7 +58376,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 413	21	5410	german_prose_with_translit			none	2	1	0	0	puspitaśuddhir nama samädhih (Mvy 584).
 413	23	5410	tibetan_latin_mixed	དགེ་བའི་བཞེས་གཉེན་		none	4	0	0	0	དགེ་བའི་བཞེས་གཉེན་ 42༩ ba’i bśes gñen \dge
 413	24	5410	other			none	0	0	0	0	ses.
-413	26	5411	headword_line	དགེ་བར་སློང་	dge	medium	1	3	0	0	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
+413	26	5411	headword_line	དགེ་བར་སློང་	dge	medium	1	3	0	0	དགེ་བར་སློང་ dge bar sloṅ Bez. für Rsi.
 413	27	5411	german_prose_with_translit			none	1	2	0	0	Lex. dran sron (brDa, Dagy).
 413	29	5412	headword_line	དགེ་བེད་	dge	medium	3	0	0	0	དགེ་བེད་ dge bed Benutzung, Nutzung.
 413	31	5412	german_prose_with_translit			none	6	7	0	0	g.yag ra lug bcas kyi rtsa za’i ~ dan „die Benutzung der Weiden für Yaks, Ziegen und
@@ -58597,12 +58597,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 414	102	5427	latin_other			none	5	0	0	0	gen bla ma ye śes rgyal mtshan nas skyons
 414	103	5427	german_prose			none	0	4	0	0	bzin „die Meditationsorte werden von dem
 414	104	5427	german_prose_with_translit			none	2	3	0	0	Tugendfreund, dem bla ma Ye-Ses rgyal-
-414	106	5428	headword_line	དགེ་སློང་	dge	medium	1	0	0	0	དགེ་སློང་ dge slon
+414	106	5428	headword_line	དགེ་སློང་	dge	medium	1	0	0	0	དགེ་སློང་ dge sloṅ
 414	108	5428	latin_other			none	1	0	0	0	mtshan, betreut“ (MTH3/5/30 318).
 414	110	5428	german_prose_with_translit			none	3	3	0	0	Lex. dge ba’i bśes gäen = kalyanamitra (in
 414	111	5428	german_prose_with_translit			none	4	1	0	0	Mvy 2380, 6828); dge ba’i bśes gen, ~ = dge
 414	112	5428	german_prose_with_translit			none	4	5	0	0	ba’i lam ston pa po „Lehrer des Tugendweges“ (Dagy, ähnl. brDa).
-414	115	5429	headword_line	དགེ་སློང་	dge	medium	1	0	0	0	དགེ་སློང་ dge slon.
+414	115	5429	headword_line	དགེ་སློང་	dge	medium	1	0	0	0	དགེ་སློང་ dge sloṅ.
 414	117	5429	german_prose_with_translit			none	2	2	0	0	1. Mönch, skt. bhiksu; ~ ma Nonne, skt.
 414	118	5429	latin_other			none	1	0	0	0	bhiksuni.
 414	120	5429	german_prose_with_translit			none	3	1	0	0	rgya’i » rin cen gyis blugs so „der chinesische
@@ -58675,7 +58675,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 414	193	5430	german_prose_with_translit			none	3	1	0	0	bhiksuni (Mvy 8718); ~ ma = bud med ~ gi
 414	194	5430	german_prose_with_translit			none	1	1	0	0	sdom ldan (Dagy).
 414	196	5430	german_prose_with_translit			none	1	1	0	0	Lex. dran sron (brDa).
-414	198	5431	headword_line	དགེ་སློང་ཆབ་རིལ་	dge	medium	1	2	0	0	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
+414	198	5431	headword_line	དགེ་སློང་ཆབ་རིལ་	dge	medium	1	2	0	0	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
 414	200	5431	german_prose_with_translit			none	1	1	0	0	Thlaspi arvense L., synon.
 414	201	5431	other			none	0	0	0	0	bre ga (KLETTER/KRIECHBAUM 2001: 38).
 414	203	5432	headword_line	དགེ་སློབ་མ་	dge	medium	2	3	0	0	དགེ་སློབ་མ་ dge slob ma eine Novizin, die wei-
@@ -75495,7 +75495,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 530	182	6767	german_prose_with_translit			none	1	1	0	0	"EI"" 7:47 so Pflock."
 530	184	6767	german_prose_with_translit			none	1	3	0	0	gnam lcags - dan „ein Pflock aus einem
 530	185	6767	german_prose			none	0	1	0	0	Meteoriten“ (gZer 813,3).
-530	187	6767	tibetan_only	ངར་སློང་		none	0	0	0	0	ངར་སློང་ nar slon ermutigen, anspornen.
+530	187	6767	tibetan_only	ངར་སློང་		none	0	0	0	0	ངར་སློང་ nar sloṅ ermutigen, anspornen.
 530	189	6767	german_prose_with_translit			none	3	2	0	0	Lex. nus pa slon ba lta bu „wie: Kraft
 530	190	6767	german_prose			none	0	1	0	0	aufwecken“ (Dagy).
 530	192	6767	german_prose_with_translit			none	1	4	0	0	Er nal müde, erschöpft sein; - ba Mü-
@@ -111878,7 +111878,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 769	41	9058	german_prose			none	0	1	0	0	gnon (metr.) „gehe nicht, gehe nicht und
 769	42	9058	german_prose			none	0	2	0	0	harre auf deinem Schlafplatz aus!“ (Mil
 769	43	9058	other			none	0	0	0	0	126,25).
-769	45	9059	headword_line	ཉལ་སློང་	Weisheit	medium	1	2	0	0	ཉལ་སློང་ al slon Bez. für Weisheit.
+769	45	9059	headword_line	ཉལ་སློང་	Weisheit	medium	1	2	0	0	ཉལ་སློང་ al sloṅ Bez. für Weisheit.
 769	47	9059	german_prose_with_translit			none	1	2	0	0	Lex, semus? (Ak 36.134); ses rab min (brDa,
 769	48	9059	german_prose			none	0	1	0	0	Dagy).
 769	50	9059	german_prose			none	0	1	0	0	” 1/7; Ziffer 38.
@@ -164614,7 +164614,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1169	44	12337	german_prose_with_translit			none	2	3	0	0	Preta einer Leichenstätte“ (brDa); dur khrod
 1169	45	12337	german_prose_with_translit			none	2	3	0	0	du gnas pa’i sri „sri[-Dämon], der auf der
 1169	46	12337	german_prose			none	0	2	0	0	Leichenstätte lebt“ (Dagy).
-1169	48	12337	tibetan_only	དུར་སློང་		none	0	0	0	0	དུར་སློང་ dur slon '[0[6112617611]101116,
+1169	48	12337	tibetan_only	དུར་སློང་		none	0	0	0	0	དུར་སློང་ dur sloṅ '[0[6112617611]101116,
 1169	50	12337	tibetan_only	དུལ་		none	0	0	0	0	དུལ་
 1169	52	12337	other			none	0	0	0	0	85
 1169	54	12337	tibetan_only	དུལ་		none	0	0	0	0	དུལ་ dul

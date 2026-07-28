@@ -3119,15 +3119,15 @@ wts_1_34	82	119	3	བཤད	bSad	insufficient_feature_coverage	yes						ordinary
 wts_1_34	82	119	4	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་བཤད་པ་ kun nas bSad pa darstellen; Dar-
 wts_1_34	82	125	1	ཀུན	N	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་ N kun nas su überall.
 wts_1_34	82	125	2	ནས	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་ N kun nas su überall.
-wts_1_34	82	132	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
-wts_1_34	82	132	2	ནས	nas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
-wts_1_34	82	132	3	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
-wts_1_34	82	132	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
-wts_1_34	82	157	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
-wts_1_34	82	157	2	ནས	nas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
-wts_1_34	82	157	3	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
-wts_1_34	82	157	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
-wts_1_34	82	157	5	པོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
+wts_1_34	82	132	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
+wts_1_34	82	132	2	ནས	nas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
+wts_1_34	82	132	3	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
+wts_1_34	82	132	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
+wts_1_34	82	157	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
+wts_1_34	82	157	2	ནས	nas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
+wts_1_34	82	157	3	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
+wts_1_34	82	157	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
+wts_1_34	82	157	5	པོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
 wts_1_34	82	166	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སྣང་ kun snaṅı
 wts_1_34	82	166	2	སྣང	snaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		snaṅ	reviewed_tibetan_exact_script_ng_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སྣང་ kun snaṅı
 wts_1_34	82	186	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་གནས་ kun gnas, vgl. Tkun tu gnas pa, [/©//
@@ -3389,21 +3389,21 @@ wts_1_34	87	89	3	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_
 wts_1_34	87	106	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ཤེས་པ་ kun ses pa
 wts_1_34	87	106	2	ཤེས	ses	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ཤེས་པ་ kun ses pa
 wts_1_34	87	106	3	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་ཤེས་པ་ kun ses pa
-wts_1_34	87	155	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ kun slon
-wts_1_34	87	155	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ kun slon
+wts_1_34	87	155	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ kun sloṅ
+wts_1_34	87	155	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ kun sloṅ
 wts_1_34	87	171	1	ཀུན	kun	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	ཀུན་ཤེས་མ་ kun śes ma npr. eine Däkini; gehört
 wts_1_34	87	171	2	ཤེས	śes	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	ཀུན་ཤེས་མ་ kun śes ma npr. eine Däkini; gehört
 wts_1_34	87	171	3	མ	ma	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	ཀུན་ཤེས་མ་ kun śes ma npr. eine Däkini; gehört
 wts_1_34	87	179	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་བཤད་ kun bśad, Kurzf. von Tkun tn bśad pa
 wts_1_34	87	179	2	བཤད	bśad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་བཤད་ kun bśad, Kurzf. von Tkun tn bśad pa
-wts_1_34	87	195	1	ཀུན	kun	insufficient_feature_coverage	yes						unclear	later_gloss_or_commentary	no	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
-wts_1_34	87	195	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			unclear	later_gloss_or_commentary	no	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
-wts_1_34	88	1	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can
-wts_1_34	88	1	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can
-wts_1_34	88	1	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can
-wts_1_34	88	8	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
-wts_1_34	88	8	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
-wts_1_34	88	8	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
+wts_1_34	87	195	1	ཀུན	kun	insufficient_feature_coverage	yes						unclear	later_gloss_or_commentary	no	ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.
+wts_1_34	87	195	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	unclear	later_gloss_or_commentary	no	ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.
+wts_1_34	88	1	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can
+wts_1_34	88	1	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can
+wts_1_34	88	1	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can
+wts_1_34	88	8	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can mit bösen Gedanken,
+wts_1_34	88	8	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can mit bösen Gedanken,
+wts_1_34	88	8	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་སློང་ཅན་ kun sloṅ can mit bösen Gedanken,
 wts_1_34	88	23	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་གསལ་ kun gsal.
 wts_1_34	88	23	2	གསལ	gsal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་གསལ་ kun gsal.
 wts_1_34	88	43	1	ཀུན	kun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀུན་གསོད་ kun gsod eın Dämon.
@@ -8494,8 +8494,8 @@ wts_1_34	230	15	1	བསླལ	bskul	insufficient_feature_coverage	yes						ordi
 wts_1_34	230	15	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསླལ་མ་ bskul ma Bitte, Aufforderung.
 wts_1_34	230	26	1	བསྐུལ	bskul	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་ཚིག་ bskul tshig gramm., Imperativ.
 wts_1_34	230	26	2	ཚིག	tshig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་ཚིག་ bskul tshig gramm., Imperativ.
-wts_1_34	230	39	1	བསྐུལ	bskul	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་སློང་ bskul slon Anregung.
-wts_1_34	230	39	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་སློང་ bskul slon Anregung.
+wts_1_34	230	39	1	བསྐུལ	bskul	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་སློང་ bskul sloṅ Anregung.
+wts_1_34	230	39	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	བསྐུལ་སློང་ bskul sloṅ Anregung.
 wts_1_34	230	44	1	བསྐུས	bskus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐུས་ bskus pf. zu !skud.
 wts_1_34	230	56	1	བསྐོ	bsko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐོ་ bsko
 wts_1_34	230	111	1	བསྐོ	bsko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བསྐོ་ མངགས་ bsko mnags
@@ -9325,8 +9325,8 @@ wts_1_34	256	61	3	ཆུང	chuṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ	
 wts_1_34	256	61	4	ངུ	ṅu	insufficient_feature_coverage	yes				ṅu	reviewed_tibetan_exact_script_ng_witness	ordinary_tibetan_lexical_or_compound	none	no	།ཁ་སཱན་ཆུང་ངུ་ kha sran chuṅ ṅu ein Getreide.
 wts_1_34	256	74	1	ཁ	kha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློག་ kha slog jmdn. anfallen, frech antwor-
 wts_1_34	256	74	2	སློག	slog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློག་ kha slog jmdn. anfallen, frech antwor-
-wts_1_34	256	80	1	ཁ	kha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
-wts_1_34	256	80	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
+wts_1_34	256	80	1	ཁ	kha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློང་ kha sloṅ pf. lkha bslans ergänzen.
+wts_1_34	256	80	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཁ་སློང་ kha sloṅ pf. lkha bslans ergänzen.
 wts_1_34	256	85	1	ཁ	khba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	།ཁ་གསག་ khba gsag auch kha bsag schöne Wor-
 wts_1_34	256	85	2	གསག	gsag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	།ཁ་གསག་ khba gsag auch kha bsag schöne Wor-
 wts_1_34	256	126	1	ཁ	kha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁ་གསོ་ kha gso Ergänzung, Erneuerung.
@@ -14618,9 +14618,9 @@ wts_1_34	413	23	2	དགེ	ba’i	marker_or_damage	yes						unclear	damage_befo
 wts_1_34	413	23	3	བའི	bśes	marker_or_damage	yes						unclear	damage_before_latin_alignment	no	དགེ་བའི་བཞེས་གཉེན་ 42༩ ba’i bśes gñen \dge
 wts_1_34	413	23	4	བཞེས	gñen	marker_or_damage	no	ཞ:ź		root_consonant:ཞ->ź			unclear	damage_before_latin_alignment	no	དགེ་བའི་བཞེས་གཉེན་ 42༩ ba’i bśes gñen \dge
 wts_1_34	413	23	5	གཉེན	dge	marker_or_damage	yes						unclear	damage_before_latin_alignment	yes	དགེ་བའི་བཞེས་གཉེན་ 42༩ ba’i bśes gñen \dge
-wts_1_34	413	26	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
-wts_1_34	413	26	2	བར	bar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
-wts_1_34	413	26	3	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
+wts_1_34	413	26	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar sloṅ Bez. für Rsi.
+wts_1_34	413	26	2	བར	bar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar sloṅ Bez. für Rsi.
+wts_1_34	413	26	3	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགེ་བར་སློང་ dge bar sloṅ Bez. für Rsi.
 wts_1_34	413	29	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བེད་ dge bed Benutzung, Nutzung.
 wts_1_34	413	29	2	བེད	bed	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་བེད་ dge bed Benutzung, Nutzung.
 wts_1_34	413	59	7	དགེ	dge	insufficient_feature_coverage	yes						unclear	none	no	~ bcad rigs la „entsprechend der Zuteilung དགེ་སྦྱོང་ཆེ་ dge sbyoṅ che „großer Asket“, Bei-
@@ -14662,17 +14662,17 @@ wts_1_34	414	55	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_
 wts_1_34	414	55	2	བཞེས	bses	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	དགེ་བཞེས་ dge bses
 wts_1_34	414	63	8	དགེ	dge	insufficient_feature_coverage	yes						unclear	none	no	dge lugs pa eine Schule des tibeti- དགེ་བཤེས་ dge bses Kurzf. für dge ba’i bses
 wts_1_34	414	63	9	བཤེས	bses	insufficient_feature_coverage	yes						unclear	none	no	dge lugs pa eine Schule des tibeti- དགེ་བཤེས་ dge bses Kurzf. für dge ba’i bses
-wts_1_34	414	106	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge slon
-wts_1_34	414	106	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge slon
-wts_1_34	414	115	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge slon.
-wts_1_34	414	115	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge slon.
+wts_1_34	414	106	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge sloṅ
+wts_1_34	414	106	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge sloṅ
+wts_1_34	414	115	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge sloṅ.
+wts_1_34	414	115	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ dge sloṅ.
 wts_1_34	414	158	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma
 wts_1_34	414	158	2	སློབ	slob	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma
 wts_1_34	414	158	3	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma
-wts_1_34	414	198	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
-wts_1_34	414	198	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
-wts_1_34	414	198	3	ཆབ	chab	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
-wts_1_34	414	198	4	རིལ	ril	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
+wts_1_34	414	198	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
+wts_1_34	414	198	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
+wts_1_34	414	198	3	ཆབ	chab	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
+wts_1_34	414	198	4	རིལ	ril	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
 wts_1_34	414	203	1	དགེ	dge	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma eine Novizin, die wei-
 wts_1_34	414	203	2	སློབ	slob	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma eine Novizin, die wei-
 wts_1_34	414	203	3	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགེ་སློབ་མ་ dge slob ma eine Novizin, die wei-
@@ -17975,8 +17975,8 @@ wts_1_34	530	150	2	འཛིན	dzin	insufficient_feature_coverage	yes						ordi
 wts_1_34	530	165	1	ངར	nar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངར་ཐན་ nar zan Teig aus Gerstenmehl, dem
 wts_1_34	530	165	2	ཐན	zan	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངར་ཐན་ nar zan Teig aus Gerstenmehl, dem
 wts_1_34	530	174	1	ངལ	nal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངལ་ nal
-wts_1_34	530	187	1	ངར	nar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངར་སློང་ nar slon ermutigen, anspornen.
-wts_1_34	530	187	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ངར་སློང་ nar slon ermutigen, anspornen.
+wts_1_34	530	187	1	ངར	nar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངར་སློང་ nar sloṅ ermutigen, anspornen.
+wts_1_34	530	187	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ངར་སློང་ nar sloṅ ermutigen, anspornen.
 wts_1_34	531	1	1	ངལ	nal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངལ་སྐྱེན་ nal skyen
 wts_1_34	531	1	2	སྐྱེན	skyen	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངལ་སྐྱེན་ nal skyen
 wts_1_34	531	22	1	ངལ	nal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངལ་སྐྱེན་ nal skyen auch nal rkyen.
@@ -25553,8 +25553,8 @@ wts_1_34	769	16	2	ཉལ	po	marker_or_damage	yes						unclear	damage_before_lati
 wts_1_34	769	16	3	པོ	Geschlechtsverkehr	marker_or_damage	yes						unclear	damage_before_latin_alignment	no	ཉལ་པོ་ /74/ po Geschlechtsverkehr, Beischlaf;
 wts_1_34	769	36	1	ཉལ	nal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉལ་ས་ nal sa Schlafplatz.
 wts_1_34	769	36	2	ས	sa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉལ་ས་ nal sa Schlafplatz.
-wts_1_34	769	45	1	ཉལ	al	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉལ་སློང་ al slon Bez. für Weisheit.
-wts_1_34	769	45	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཉལ་སློང་ al slon Bez. für Weisheit.
+wts_1_34	769	45	1	ཉལ	al	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉལ་སློང་ al sloṅ Bez. für Weisheit.
+wts_1_34	769	45	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཉལ་སློང་ al sloṅ Bez. für Weisheit.
 wts_1_34	769	53	1	ཉི	ri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཉི་དཀྱིལ་ ri dkyil Kurzf. für 777 ma’ dkyil
 wts_1_34	769	53	2	དཀྱིལ	dkyil	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཉི་དཀྱིལ་ ri dkyil Kurzf. für 777 ma’ dkyil
 wts_1_34	769	60	1	ཉི	ri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa stoṅ pa
@@ -35086,8 +35086,8 @@ wts_1_34	1169	21	1	དུར	dursa	insufficient_feature_coverage	yes						ordina
 wts_1_34	1169	21	2	ས	Leichenst	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ས་ dursa Leichenstätte, Bestattungsort.
 wts_1_34	1169	34	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་སྲི་ dur sri ein Dämon.
 wts_1_34	1169	34	2	སྲི	sri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་སྲི་ dur sri ein Dämon.
-wts_1_34	1169	48	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	དུར་སློང་ dur slon '[0[6112617611]101116,
-wts_1_34	1169	48	2	སློང	slon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	དུར་སློང་ dur slon '[0[6112617611]101116,
+wts_1_34	1169	48	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	དུར་སློང་ dur sloṅ '[0[6112617611]101116,
+wts_1_34	1169	48	2	སློང	sloṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	དུར་སློང་ dur sloṅ '[0[6112617611]101116,
 wts_1_34	1169	54	1	དུལ	dul	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུལ་ dul
 wts_1_34	1170	1	1	དུལ	dul	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུལ་ཁང་ dul khaṅ
 wts_1_34	1170	1	2	ཁང	khaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		khaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	དུལ་ཁང་ dul khaṅ

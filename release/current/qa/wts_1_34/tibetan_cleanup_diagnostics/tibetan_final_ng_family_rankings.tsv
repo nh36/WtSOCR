@@ -1,6 +1,5 @@
 tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_target	candidate_count	dominant_count	damaged_count	insufficient_count	competing_count	structure_mismatch_count	marker_attached_count	accepted_form_evidence	volumes
 ཀང	kan	kan:21	kaṅ	21	0	1	20	0	0	0	1	wts_1_34
-སློང	slon	slon:15	sloṅ	15	0	0	0	15	0	0	1	wts_1_34
 ཅང	can	can:13	caṅ	13	0	2	11	0	0	0	1	wts_1_34
 སྙིང	sin	sin:13	siṅ	13	0	0	0	13	0	0	3	wts_1_34
 གླེང	glen	glen:12	gleṅ	12	0	1	0	11	0	0	1	wts_1_34

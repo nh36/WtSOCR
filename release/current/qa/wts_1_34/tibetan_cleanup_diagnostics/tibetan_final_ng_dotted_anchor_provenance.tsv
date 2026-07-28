@@ -86,6 +86,8 @@ wts_1_34	81	136	3	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_t
 wts_1_34	82	32	3	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	ཀུན་ནས་བཟང་ kun nas bzaṅ.
 wts_1_34	82	42	3	འོང	oṅ	reviewed_exact_final_ng	on	reviewed_tibetan_exact_final_ng_consensus	tibetan_ong_consensus_batch_20260726	ཀུན་ནས་འོང་བ་ kun nas ’oṅ ba ankommen, gelan-
 wts_1_34	82	57	3	ལང	laṅ	reviewed_exact_final_ng	lan	reviewed_tibetan_exact_final_ng_consensus	tibetan_lang_consensus_batch_20260726	ཀུན་ནས་ལང་བ་ kun nas laṅ ba
+wts_1_34	82	132	3	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \kun sloṅ.
+wts_1_34	82	157	3	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་ནས་སློང་བ་པོ་ kun nas sloṅ ba po „der Erhe-
 wts_1_34	82	166	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	ཀུན་སྣང་ kun snaṅı
 wts_1_34	82	198	2	སྣང	snaṅ	unknown	snanı	ambiguous_change_or_token_position		ཀུན་སྣང་ kun snaṅ, vgl. ]/5//77 tu snaṅ ba, kun nas
 wts_1_34	83	1	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་སྣང་ཁྱབ་པ་ kun snaṅ khyab pa
@@ -107,6 +109,10 @@ wts_1_34	86	64	2	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_
 wts_1_34	86	191	3	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	ཀུན་ལ་བཟང་ kun la bzaṅ eine Pflanze. - für skt.
 wts_1_34	87	30	3	ཀོང	koṅ	reviewed_exact_final_ng	kon	reviewed_tibetan_exact_final_ng_consensus	tibetan_kong_consensus_batch_20260719	ཀུན་ཤེང་ཀོང་ཇོ་ kun sen koṅ jo \wun sin kon jo.
 wts_1_34	87	67	3	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exact_final_ng_consensus	tibetan_thang_consensus_clean_batch_20260719	ཀུན་ཤེས་ཐང་པོ་ kun ses thaṅ po ein Wahrsager und
+wts_1_34	87	155	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་སློང་ kun sloṅ
+wts_1_34	87	195	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.
+wts_1_34	88	1	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་སློང་ཅན་ kun sloṅ can
+wts_1_34	88	8	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཀུན་སློང་ཅན་ kun sloṅ can mit bösen Gedanken,
 wts_1_34	88	164	4	མྱོང	myoṅ	reviewed_exact_final_ng	myon	reviewed_tibetan_exact_final_ng_consensus	tibetan_myong_consensus_batch_20260726	ཀུས་ཕྱི་ཨོར་མྱོང་ནག་ kus pyi or myoṅ nag
 wts_1_34	88	182	4	མྱོང	myoṅ	reviewed_exact_final_ng	myon	reviewed_tibetan_exact_final_ng_consensus	tibetan_myong_consensus_batch_20260726	ཀུར་ཕྱི་ ཨོར་མྱོང་ནག་ kur pyi or myoṅ nag \kus pa’i
 wts_1_34	88	198	4	མྱོང	myoṅ	reviewed_exact_final_ng	myon	reviewed_tibetan_exact_final_ng_consensus	tibetan_myong_consensus_batch_20260726	ཀུས་པའི་ཨོར་མྱོང་ནག་ kus pa’i or myoṅ nag N. ei-
@@ -462,6 +468,7 @@ wts_1_34	228	26	3	བཟང	bzaṅ	google_adopted	bzan	alternate_witness_google_
 wts_1_34	228	88	2	བཟང	bzaṅ	google_adopted	bzan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	བསྐལ་བཟང་ bskal bzaṅ tbskal pa bzaṅ po.
 wts_1_34	229	61	2	དབང	dbaṅ	google_adopted	dban	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	བསྐུར་དབང་ bskur dbaṅ tantr. Einweihung, die es
 wts_1_34	229	163	2	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	བསྐུལ་གཏོང་ bskul gtoṅ Anforderung; irrt. Tbkul
+wts_1_34	230	39	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	བསྐུལ་སློང་ bskul sloṅ Anregung.
 wts_1_34	232	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	བསྐོར་ཁང་ bskor khaṅ
 wts_1_34	232	10	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	བསྐོར་ཁང་ bskor khaṅ Gebäude für rituelle Um-
 wts_1_34	232	78	2	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exact_final_ng_consensus	tibetan_thang_consensus_clean_batch_20260719	བསྐོལ་ཐང་ bskol thaṅ auch bskol ba’i than med.,
@@ -483,6 +490,7 @@ wts_1_34	253	208	2	ཡང	yaṅ	reviewed_exact_final_ng	yan	reviewed_tibetan_exa
 wts_1_34	256	15	2	སང	saṅ	reviewed_exact_final_ng	san	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_sang_consensus_batch_20260727	།ཁ་སང་ 'kha saṅ auch kha rtsan, kha sa, kha
 wts_1_34	256	57	2	སེང	seṅ	reviewed_exact_final_ng	sen	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	ཁ་སེང་ kha seṅ 1'kha san.
 wts_1_34	256	61	3	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	།ཁ་སཱན་ཆུང་ངུ་ kha sran chuṅ ṅu ein Getreide.
+wts_1_34	256	80	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཁ་སློང་ kha sloṅ pf. lkha bslans ergänzen.
 wts_1_34	257	53	2	ཁུང	khuṅ	reviewed_exact_final_ng	khun	reviewed_tibetan_exact_final_ng_consensus	tibetan_khung_consensus_batch_20260720	ཁང་ཁུང་ kan khuṅ
 wts_1_34	257	97	1	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	།ཁང་ ར་བ་ khaṅ dkar ba Bewohner von
 wts_1_34	257	106	1	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	ཁང་ཀྱིམ་ khaṅ khyim
@@ -859,7 +867,11 @@ wts_1_34	408	115	3	འབྲིང	briṅ	reviewed_exact_final_ng	brin	reviewed_
 wts_1_34	409	33	2	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	དགེ་ཆུང་ dge chuṅ Bez. der ersten Göttergrup-
 wts_1_34	409	58	2	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	དགེ་སྟོང་ dge stoṅ
 wts_1_34	409	104	2	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	དགེ་སྟོང་ dge stoṅ Kompensationszahlung.
+wts_1_34	413	26	3	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	དགེ་བར་སློང་ dge bar sloṅ Bez. für Rsi.
 wts_1_34	413	59	8	སྦྱོང	sbyoṅ	reviewed_exact_final_ng	sbyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_sbyong_consensus_batch_20260726	~ bcad rigs la „entsprechend der Zuteilung དགེ་སྦྱོང་ཆེ་ dge sbyoṅ che „großer Asket“, Bei-
+wts_1_34	414	106	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	དགེ་སློང་ dge sloṅ
+wts_1_34	414	115	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	དགེ་སློང་ dge sloṅ.
+wts_1_34	414	198	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	དགེ་སློང་ཆབ་རིལ་ dge sloṅ chab ril eine Pflanze,
 wts_1_34	418	108	2	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དགོས་དབང་ dgos dbaṅ absichtlich, aus Not.
 wts_1_34	419	156	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དྭག་།ཁང་ dera khaṅ
 wts_1_34	419	202	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དྲག་།ཁང་ dgra khaṅ Wachtturm.
@@ -946,6 +958,7 @@ wts_1_34	528	128	2	སྤོང	spoṅ	reviewed_exact_final_ng	spoh	reviewed_tib
 wts_1_34	528	182	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ངན་རིང་མ་ nan riṅ ma Beiname Umäs.
 wts_1_34	529	3	2	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	ངན་སོང་ nan soṅ
 wts_1_34	529	5	7	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan soṅ schlechter Daseins-, Wieder-
+wts_1_34	530	187	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ངར་སློང་ nar sloṅ ermutigen, anspornen.
 wts_1_34	532	205	3	འཆང	chaṅ	reviewed_exact_final_ng	chan	reviewed_tibetan_exact_final_ng_consensus	tibetan_achang_consensus_batch_20260726	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chaṅ ba Bez. für
 wts_1_34	542	127	2	གཙང	gtsaṅ	reviewed_exact_final_ng	gtsan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ངོས་གཙང་བ་ nos gtsaṅ ba Klarheit.
 wts_1_34	543	57	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དངངས་རིང་ dans riṅ
@@ -1203,6 +1216,7 @@ wts_1_34	760	107	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibeta
 wts_1_34	760	120	2	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_direct_unique_batch_20260719	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dbaṅ po Bez. für
 wts_1_34	760	120	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	ཉམ་ཆུང་དབང་པོ་ nam chuṅ dbaṅ po Bez. für
 wts_1_34	767	82	3	བླང	blaṅ	reviewed_exact_final_ng	blan	reviewed_tibetan_exact_final_ng_consensus	tibetan_blang_consensus_batch_20260726	ཉམས་སུ་བླང་ Hams su blaṅ fur. zu lüams su
+wts_1_34	769	45	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ཉལ་སློང་ al sloṅ Bez. für Weisheit.
 wts_1_34	769	60	4	སྟོང	stoṅ	reviewed_exact_final_ng	ston	reviewed_tibetan_exact_final_ng_consensus	tibetan_stong_consensus_batch_20260719	ཉི་ཁྲི་ལྔ་སྟོང་པ་ ri khri lṅa stoṅ pa
 wts_1_34	771	25	3	གུང	guṅ	reviewed_exact_final_ng	gun	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	ཉི་མ་གུང་ ri ma guṅ Wii /7777 gun.
 wts_1_34	771	27	3	གུང	guṅ	reviewed_exact_final_ng	gun	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	ཉི་མ་གུང་པ་ fi ma guṅ pa auch /7/ ma’i guṅ
@@ -1738,6 +1752,7 @@ wts_1_34	1165	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_ex
 wts_1_34	1165	8	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུར་ཁང་ dur khaṅ Leichenhaus, Mausoleum.
 wts_1_34	1167	48	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	"དུར་ཕུང་ dur phuṅ ""Totenzeremonie, Bestat-"
 wts_1_34	1168	60	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	དུར་ཞིང་ dur źiṅ Leichenacker.
+wts_1_34	1169	48	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	དུར་སློང་ dur sloṅ '[0[6112617611]101116,
 wts_1_34	1170	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ
 wts_1_34	1170	16	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ Badehaus, vgl. Tdud khan.
 wts_1_34	1181	79	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དུས་དང་དུས་སུ་ dus daṅ dus su \dus dus su.

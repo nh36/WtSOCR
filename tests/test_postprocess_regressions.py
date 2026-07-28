@@ -3259,6 +3259,26 @@ class PostprocessRegressionTests(unittest.TestCase):
             [row["to_token"] for row in changes], ["draṅ", "sroṅ"]
         )
 
+    def test_repeated_historical_slong_is_exactly_gated(self) -> None:
+        lines = {
+            (82, 132): "ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \\kun slon.",
+            (87, 195): "ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.",
+            (1400, 1): "unreviewed slon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \\kun sloṅ.",
+            corrected,
+        )
+        self.assertIn(
+            "ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.",
+            corrected,
+        )
+        self.assertIn("unreviewed slon control", corrected)
+        self.assertEqual([row["to_token"] for row in changes].count("sloṅ"), 3)
+
     def test_historical_witness_zhang_supersedes_bad_ascii_stem(self) -> None:
         lines = {
             (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",

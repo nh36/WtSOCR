@@ -58,7 +58,7 @@ target_changed	wts_1_34	115	122	1	ང	klun	kluṅ		source_compatible_structure_m
 target_changed	wts_1_34	115	45	1	ང	klun	kluṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ང་ klun.
 category_changed	wts_1_34	1150	33	2	ཁང	kban	kbaṅ	kbaṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	4	དུག་ཁང་ dug kban \dugs khaṅ 1.
 target_changed	wts_1_34	1164	28	3	ངང	nan	naṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དུམ་བུའི་ངང་ཚུལ་ dum bu’i nan tshul eine sinn-
-category_changed	wts_1_34	1169	48	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དུར་སློང་ dur slon '[0[6112617611]101116,
+disappeared	wts_1_34	1169	48	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			དུར་སློང་ dur slon '[0[6112617611]101116,
 category_changed	wts_1_34	117	23	4	སྡེང	sden	sdeṅ	sdeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀློ མི་སྐྱ་སྡེང་ klo mi skya sden npr. ein Volk.
 target_changed	wts_1_34	118	3	1	ཀླང	klon	kloṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཀླང་ཆན་པ་” klon chen pa...
 category_changed	wts_1_34	1192	1	3	རུང	run	ruṅ	ruṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དུས་སུ་རུང་བ་ dus su run ba
@@ -147,7 +147,7 @@ disappeared	wts_1_34	219	127	3	བགྲང	bgran	bgraṅ		source_compatible_ins
 disappeared	wts_1_34	219	44	2	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran
 target_changed	wts_1_34	226	146	1	བསླང	bskan	bskaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བསླང་ bskan fur. t'skon erfüllen; zufrieden-
 target_changed	wts_1_34	228	165	1	བསླང	bskun	bskuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བསླང་ bskun fut. zu tskun verbergen.
-category_changed	wts_1_34	230	39	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བསྐུལ་སློང་ bskul slon Anregung.
+disappeared	wts_1_34	230	39	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			བསྐུལ་སློང་ bskul slon Anregung.
 category_changed	wts_1_34	235	148	1	བསྐྱེང	bskyen	bskyeṅ	bskyeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བསྐྱེང་ bskyen beschämt sein; vgl. Iskyens.
 category_changed	wts_1_34	243	85	2	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	།ཐ་ཅང་ kha can \kha gcan.
 target_changed	wts_1_34	244	160	4	ཕྱང	phyun	phyuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
@@ -156,7 +156,7 @@ category_changed	wts_1_34	248	148	2	ནིང	nin	niṅ	niṅ	source_compatible_
 target_changed	wts_1_34	250	109	2	ཕྱང	byan	byaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	།ཁ་ཕྱང་བ་ kha byan ba
 category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
 target_changed	wts_1_34	256	35	4	སང	Ton	Toṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
-category_changed	wts_1_34	256	80	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
+disappeared	wts_1_34	256	80	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
 target_changed	wts_1_34	257	53	1	ཁང	kan	kaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཁང་ཁུང་ kan khuṅ
 target_changed	wts_1_34	258	106	1	བང	khan	khaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	།བང་རྩ་ * khan rtsa Fundament, Grundmauer.
 target_changed	wts_1_34	258	201	1	བང	khan	khaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	།བང་སྲངས་ khan sruns Haushälterin.
@@ -295,10 +295,10 @@ target_changed	wts_1_34	408	66	2	དང	dun	duṅ		source_compatible_structure_m
 target_changed	wts_1_34	412	56	3	སྙིང	shin	shiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགེ་བའི་སྙིང་པོ་ dge ba’i shin po
 category_changed	wts_1_34	413	1	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas
 category_changed	wts_1_34	413	12	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas Beina- དགེ་སྦྱོང་ dge sbyon Mönch, Asket, skt.
-category_changed	wts_1_34	413	26	3	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
-category_changed	wts_1_34	414	106	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགེ་སློང་ dge slon
-category_changed	wts_1_34	414	115	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགེ་སློང་ dge slon.
-category_changed	wts_1_34	414	198	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
+disappeared	wts_1_34	413	26	3	སློང	slon	sloṅ		source_compatible_insufficient_evidence			དགེ་བར་སློང་ dge bar slon Bez. für Rsi.
+disappeared	wts_1_34	414	106	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			དགེ་སློང་ dge slon
+disappeared	wts_1_34	414	115	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			དགེ་སློང་ dge slon.
+disappeared	wts_1_34	414	198	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			དགེ་སློང་ཆབ་རིལ་ dge slon chab ril eine Pflanze,
 target_changed	wts_1_34	415	125	1	གོང	dgon	dgoṅ		source_compatible_damaged_context	source_compatible_damaged_context	0	གོང་ཞྲག་ dgon 749 Nacht bzw. Tag und
 target_changed	wts_1_34	417	32	2	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགོན་དང་ dgon dun auch ~ can, dgun dun can
 target_changed	wts_1_34	424	1	1	བགྲང	beran	beraṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	བགྲང་ beran
@@ -385,7 +385,7 @@ category_changed	wts_1_34	53	116	2	ཀང	kan	kaṅ	kaṅ	source_compatible_insu
 category_changed	wts_1_34	53	46	2	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀི་ཀང་ 'ki kan
 category_changed	wts_1_34	53	87	2	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀི་ཀང་ 'ki kan Beiname des Rähu. -- vgl. chın.
 category_changed	wts_1_34	53	97	2	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀི་ཀང་ ki kan
-category_changed	wts_1_34	530	187	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ངར་སློང་ nar slon ermutigen, anspornen.
+disappeared	wts_1_34	530	187	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ངར་སློང་ nar slon ermutigen, anspornen.
 category_changed	wts_1_34	535	152	3	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ངེས་པར་བྱང་ nes par byun pf. zu Ines par ’byun
 target_changed	wts_1_34	535	160	3	འགྱང	byun	byuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"ངེས་པར་འགྱང་ nes par ""byun"
 category_changed	wts_1_34	535	178	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ངེས་པར་འབྱང་ nes par ’byun pf. Tnes par byun
@@ -498,7 +498,7 @@ target_changed	wts_1_34	750	192	1	ལྔང	lan	laṅ		source_compatible_insuffi
 disappeared	wts_1_34	750	80	1	ལྗང	Dan	Daṅ		source_compatible_insufficient_evidence			"ལྗང་ Dan ""jan."
 target_changed	wts_1_34	750	88	1	ལྗང	han	haṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ལྗང་ཁ་ han khn.
 category_changed	wts_1_34	769	151	2	སྲོང	spon	spoṅ	spoṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	ཉལ་སྲོང་ nal spon Bez. für Weisheit.
-category_changed	wts_1_34	769	45	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཉལ་སློང་ al slon Bez. für Weisheit.
+disappeared	wts_1_34	769	45	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཉལ་སློང་ al slon Bez. für Weisheit.
 category_changed	wts_1_34	77	104	3	སྲང	srun	sruṅ	sruṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ན་ཏུ་སྲང་བ kun tu srun ba sc > 3
 category_changed	wts_1_34	772	173	5	ཤང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	9 མའ་ཤང་ Al )72:7/ sin
 target_changed	wts_1_34	772	228	3	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཉ མའ་ཤང་ ni ma’ Sin eine Pflanze.
@@ -514,8 +514,8 @@ target_changed	wts_1_34	817	219	4	ལྟོང	h	ṅ		source_compatible_structur
 target_changed	wts_1_34	819	152	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ཀ་ snin ka Isnin ga.
 category_changed	wts_1_34	819	167	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་ཁམས་ཆེ་བ་ sin khams che ba unver-
 target_changed	wts_1_34	819	36	1	སྙིང	sun	suṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ sun.
-category_changed	wts_1_34	82	132	3	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
-category_changed	wts_1_34	82	157	3	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
+disappeared	wts_1_34	82	132	3	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \kun slon.
+disappeared	wts_1_34	82	157	3	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་ནས་སློང་བ་པོ་ kun nas slon ba po „der Erhe-
 target_changed	wts_1_34	820	105	3	སྙིང	chn	chṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙིང་ཁཆུ་བ་ $77/7 ’chn ba unglücklich, beküm-
 target_changed	wts_1_34	820	25	1	སྙིང	snin	sniṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་གི་ཡན་ལག་འགྲམས་ snin gi yan lag ’grams
 target_changed	wts_1_34	820	41	1	སྙིང	sun	suṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙིང་གློགས་ sun 07095 Herzensfreund, enger
@@ -547,8 +547,8 @@ target_changed	wts_1_34	824	32	1	སྙིང	sAin	sAiṅ		source_compatible_str
 category_changed	wts_1_34	824	42	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་ཤེད་ sin sed Mut.
 target_changed	wts_1_34	826	38	1	སྙིང	sien	sieṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙིང་ 'sien auch $)76/75 pf. Ibsnens fur. Ibsäen
 target_changed	wts_1_34	833	169	3	འདེང	jmdn	jmdṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	བསྙོན་འདེང་ bsion 777) jmdn. wissentlich falsch
-category_changed	wts_1_34	87	155	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ kun slon
-category_changed	wts_1_34	87	195	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
+disappeared	wts_1_34	87	155	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ kun slon
+disappeared	wts_1_34	87	195	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
 target_changed	wts_1_34	87	30	2	ཤེང	sen	seṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀུན་ཤེང་ཀོང་ཇོ་ kun sen koṅ jo \wun sin kon jo.
 target_changed	wts_1_34	873	53	2	གདང	gdun	gduṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཏལ་གདང་ tal gdun ein Balken.
 disappeared	wts_1_34	874	140	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ tin ein Gefäß, Schale; vgl. chin, SH ting
@@ -578,8 +578,8 @@ target_changed	wts_1_34	875	53	1	ཏིང	tun	tuṅ		source_compatible_structur
 disappeared	wts_1_34	876	11	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ཤོ་ tin so ZZ. Fluß.
 target_changed	wts_1_34	876	3	1	ཏང	tin	tiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཏང་ཤ་ tin so
 category_changed	wts_1_34	877	195	2	རང	rin	riṅ	riṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཏག་རང་ tig rin ein Laut.
-category_changed	wts_1_34	88	1	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ཅན་ kun slon can
-category_changed	wts_1_34	88	8	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
+disappeared	wts_1_34	88	1	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ཅན་ kun slon can
+disappeared	wts_1_34	88	8	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
 category_changed	wts_1_34	882	109	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་གཅཉོད་ gtan gcod
 category_changed	wts_1_34	882	160	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་གཅོད་ gtan gcod \btan gcod.
 category_changed	wts_1_34	882	164	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb

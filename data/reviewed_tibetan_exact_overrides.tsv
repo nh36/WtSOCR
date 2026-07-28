@@ -6168,3 +6168,19 @@ wts_35_51	1014	44	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	
 wts_35_51	1014	73	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
 wts_35_51	1015	19	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
 wts_35_51	1015	36	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_1_34	82	132	3	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	82	157	3	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	87	155	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	87	195	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	88	1	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	88	8	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	230	39	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	256	80	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	413	26	3	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	414	106	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	414	115	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	414	198	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	530	187	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	769	45	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	1169	48	2	slon	sloṅ	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	Frozen exact Tibetan སློང alignment; exact-row only.
+wts_1_34	82	132	7	slon	sloṅ	reviewed_tibetan_exact_final_ng_echo	repeated_historical_slong_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.

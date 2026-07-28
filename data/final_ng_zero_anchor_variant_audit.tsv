@@ -179,7 +179,7 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 སྲིང	sin	no_anchor_clean_source_shape		shin	sriṅ:13			ཅུང་སྲིང་ cun sin eine Speise.
 སླང	skun	no_anchor_clean_source_shape		span	slaṅ:1			ང་སླང་ skun skun verborgen, geheim.
 སླང	span	no_anchor_clean_source_shape		skun	slaṅ:1			གབ་སླང་ gab span [arch.] Gebälk, Abschluß-
-སློང	sgon	no_anchor_clean_source_shape		slon	sloṅ:1; slonṅ:1			མབར་སློང་ mkhar sgon
+སློང	sgon	no_anchor_clean_source_shape			sloṅ:16; slonṅ:1			མབར་སློང་ mkhar sgon
 གང	Mannsh	obvious_alignment_or_gloss_noise		gon;gun	gaṅ:75			མི་གང་ migari Mannshöhe, Klafter.
 དོང	Wildschwein	obvious_alignment_or_gloss_noise			doṅ:23			ཕྲག་དོང་ phagrgod Wildschwein; wilder Eber,
 པང	Daseinsbereichen	obvious_alignment_or_gloss_noise			paṅ:6			པང Daseinsbereichen.

@@ -15,7 +15,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		sroṅ:17	0	wts_1_34	insufficient_feature_coverage	0
 ཀང	kan	ka<FINAL_NASAL>	kaṅ	21	insufficient_consensus:20; damaged_context:1	source_compatible_single_anchor:20; source_compatible_damaged_context:1	1			1	wts_1_34	insufficient_feature_coverage	0
 འབྱང	byun	byu<FINAL_NASAL>	byuṅ	15	not_emitted_by_legacy_global_target:15	source_compatible_not_final_ng_only:15	1		byaṅ:1	0	wts_1_34	insufficient_feature_coverage	0
-སློང	slon	slo<FINAL_NASAL>	sloṅ	15	competing_latin_forms:15	source_compatible_single_anchor:15	1		slonṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 ཅང	can	ca<FINAL_NASAL>	caṅ	13	insufficient_consensus:11; damaged_context:2	source_compatible_single_anchor:11; source_compatible_damaged_context:2	1			2	wts_1_34	insufficient_feature_coverage	0
 བྱང	byun	byu<FINAL_NASAL>	byuṅ	13	not_emitted_by_legacy_global_target:13	source_compatible_not_final_ng_only:13	1		byaṅ:88; bbyaṅ:2	0	wts_1_34	insufficient_feature_coverage	0
 གླེང	glen	gle<FINAL_NASAL>	gleṅ	12	competing_latin_forms:11; damaged_context:1	source_compatible_single_anchor:11; source_compatible_damaged_context:1	1		gliṅ:1	1	wts_1_34	insufficient_feature_coverage	0
@@ -274,4 +273,4 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 སྲིང	sin	si<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		sriṅ:13	0	wts_1_34	target_unresolved_no_anchor	0
 སླང	skun	sku<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		slaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 སླང	span	spa<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		slaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-སློང	sgon	sgo<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		sloṅ:1; slonṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+སློང	sgon	sgo<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		sloṅ:16; slonṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
