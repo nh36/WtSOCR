@@ -2327,6 +2327,7 @@ identity:wts_1_34:801:30:2	unaffected_feature_from_reviewed_source	feature:pre_c
 identity:wts_1_34:801:53:3	role_unresolved	feature:suffix_coda::	wts_1_34:801:53:3	no
 identity:wts_1_34:807:179:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:807:179:2	yes
 identity:wts_1_34:807:179:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཚ:tsha	wts_1_34:807:179:2	yes
+identity:wts_1_34:811:181:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཐང:tha□	wts_1_34:811:181:2	yes
 identity:wts_1_34:815:102:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:815:102:2	yes
 identity:wts_1_34:815:102:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཁུ:khu	wts_1_34:815:102:2	yes
 identity:wts_1_34:815:102:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:815:102:3	yes
