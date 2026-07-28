@@ -2046,7 +2046,7 @@ SUB b→c	0	0	0	0	1	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;�
 SUB b→d	0	0	0	0	1	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
 SUB b→e	0	0	0	0	0	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
 SUB b→g	0	0	0	0	0	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
-SUB b→h	19	19	0	7	34	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
+SUB b→h	23	23	0	7	34	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
 SUB b→k	0	0	0	0	0	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
 SUB b→l	0	0	0	0	0	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba
 SUB b→m	0	0	0	0	2	0	504	0	3094	0	0	ཀབ=kab;ཀོབ=kob;ཀྱབ=khyab;ཀྱེད=byed;ཁ=ba;ཁ=bu;ཁ=kba;ཁ=khba

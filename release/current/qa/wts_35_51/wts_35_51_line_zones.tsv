@@ -32561,7 +32561,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 407	76	2100	german_prose_with_translit			none	2	3	0	0	Schwächung der Wärme des Verdauungsfeu-
 407	77	2100	german_prose			none	0	1	0	0	"ers hervor"" (Ahs 1.3.18c)."
 408	1	2101	headword_line	ནད་ཁོང་སྐེམས་པ་	khoṅ	high	2	0	0	0	ནད་ཁོང་སྐེམས་པ་ nad khoṅ skems pa
-408	2	2102	headword_line	ནད་ཁོང་སྐེམས་པ་	kboṅ	high	2	1	0	0	ནད་ཁོང་སྐེམས་པ་ nad kboṅ skems pa auch nad
+408	2	2102	headword_line	ནད་ཁོང་སྐེམས་པ་	kboṅ	high	2	1	0	0	ནད་ཁོང་སྐེམས་པ་ nad khoṅ skems pa auch nad
 408	3	2102	latin_other			none	3	0	0	0	khon skem pa Auszchrung,
 408	4	2102	german_prose			none	0	1	0	0	Schwindsucht.
 408	5	2102	german_prose_with_translit			none	2	1	0	0	Lex. nad khon skems (v.1. skem) pa = ksaya-
@@ -45480,7 +45480,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 561	88	2784	latin_other			none	3	0	0	0	ra klu gon gis / rnam par dag pa bon gyl kha
 561	89	2784	german_prose			none	0	2	0	0	"bzun 7775 (metr.) ""Ta-ra klu-gon ergriff Par-"
 561	90	2784	german_prose_with_translit			none	1	3	0	0	"tei für die reine Bon-Religion"" (bKth 610,4);"
-562	1	2785	headword_line	རྣམ་དག་ཁྲིམས་གླིང་	gliṅ	high	1	0	0	0	རྣམ་དག་ཁྲིམས་གླིང་ rnam dag kbrims gliṅ
+562	1	2785	headword_line	རྣམ་དག་ཁྲིམས་གླིང་	gliṅ	high	1	0	0	0	རྣམ་དག་ཁྲིམས་གླིང་ rnam dag khrims gliṅ
 562	2	2785	latin_other			none	2	0	0	0	"tschJul khrims — gos gon pas (metr.) ""sie tra-"
 562	3	2785	german_prose			none	0	5	0	0	"gen das Gewand einer reinen Moral"" (Glr"
 562	4	2785	latin_other			none	4	0	0	0	"24,24); lta ba — gi gZi gzun nas ""man legt"
@@ -79610,7 +79610,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 978	40	5184	german_prose_with_translit			none	3	4	0	0	"Lex. phyi ru skor ba bo ""einer, der außen um-"
 978	41	5184	latin_other			none	1	0	0	0	"kreist"" (brDa)."
 978	42	5185	headword_line	ཕྱི་དགྲ་	phyi dgra	high	2	0	0	0	ཕྱི་དགྲ་ phyi dgra
-978	43	5186	headword_line	ཕྱི་ཁུང་	phbyi kbuṅ	high	2	3	0	0	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
+978	43	5186	headword_line	ཕྱི་ཁུང་	phbyi kbuṅ	high	2	3	0	0	ཕྱི་ཁུང་ phbyi khuṅ Bau des Murmeltieres.
 978	44	5186	german_prose_with_translit			none	3	4	0	0	"Lex. phyi ba'itsban gi /0/)//)) bu ""Höhle für das"
 978	45	5186	german_prose			none	0	4	0	0	"Nest des Murmeltieres"" (Dagy)."
 978	46	5187	headword_line	ཕྱི་འཁོར་	phyi khor	high	2	2	0	0	ཕྱི་འཁོར་ phyi 'khor äußerer Umkreis.
@@ -80927,7 +80927,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 994	46	5291	german_prose_with_translit			none	5	1	0	0	"nas ...rgyal po'i drun die khrid de ""sie banden"
 994	47	5291	german_prose			none	0	5	0	0	ihm beide Hände auf den Rücken und führ-
 994	48	5291	german_prose			none	0	2	0	0	"ten ihn zum König"" (K3 ja 23161)."
-994	49	5292	headword_line	ཕྱིང་ཁུལ་	phyiṅ	high	1	5	0	0	ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.
+994	49	5292	headword_line	ཕྱིང་ཁུལ་	phyiṅ	high	1	5	0	0	ཕྱིང་ཁུལ་ phyiṅ khul eine Art Wolle oder Bilz.
 994	50	5292	other			none	0	0	0	0	8
 994	51	5292	german_prose_with_translit			none	4	3	0	0	"Lex. phyin ba lta bu'i kehn In spue ""Haarwolle,"
 994	52	5292	german_prose_with_translit			none	1	2	0	0	"ähnlich wie Filz"" (brDa)."
