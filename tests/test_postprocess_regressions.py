@@ -3245,6 +3245,20 @@ class PostprocessRegressionTests(unittest.TestCase):
             [row["to_token"] for row in changes].count("tiṅ"), 3
         )
 
+    def test_historical_witness_srong_preserves_other_source_shapes(self) -> None:
+        lines = {
+            (1300, 54): "དྲང་སྲོང་ dran sron",
+            (1400, 1): "unreviewed sron spoh spon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲང་སྲོང་ draṅ sroṅ", corrected)
+        self.assertIn("unreviewed sron spoh spon control", corrected)
+        self.assertCountEqual(
+            [row["to_token"] for row in changes], ["draṅ", "sroṅ"]
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
