@@ -411,6 +411,26 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             ROOT / "data/reviewed_correction_supersessions.tsv"
         )
     )
+    canonical_rows = list(iter_tsv(
+        ROOT / "data/tibetan_latin_canonical_syllables.tsv"
+    ))
+    canonical_authoritative = sum(
+        item.get("canonical_confidence_tier")
+        in {"canonical_reviewed", "canonical_independent_strong"}
+        for item in canonical_rows
+    )
+    canonical_non_authoritative = len(canonical_rows) - canonical_authoritative
+    transcription_outliers = list(iter_tsv(
+        ROOT / "data/tibetan_latin_transcription_outliers.tsv"
+    ))
+    confusion_signatures = list(iter_tsv(
+        ROOT / "data/tibetan_latin_ocr_confusion_signatures.tsv"
+    ))
+    authorized_signatures = sum(
+        item.get("authorization_status")
+        == "authorized_exact_tibetan_conditioned"
+        for item in confusion_signatures
+    )
     initial_i_exact_note = (
         "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket."
         if initial_i_exact_residual == 0
@@ -609,6 +629,38 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             integrity_mismatches,
             "historical presence without target integrity",
             f"Applied targets are backaudited honestly: {integrity_unresolved} have no known violation but incomplete feature/canonical coverage; blocked targets require exact review and supersession.",
+        ),
+        row(
+            "tibetan_latin_canonical_syllables",
+            "transcription_integrity",
+            "exact Tibetan syllable/Latin form concordance",
+            "non-circular provenance-aware teaching identities",
+            "canonical_registry",
+            "partially_applied",
+            "none",
+            "reviewed exact full targets; independent historical teaching rows",
+            "scripts/build_tibetan_latin_syllable_concordance.py;data/tibetan_latin_canonical_teaching_evidence.tsv",
+            "data/tibetan_latin_canonical_syllables.tsv",
+            canonical_authoritative,
+            canonical_non_authoritative,
+            "frequency-only voting;derived self-teaching;foreign-domain teaching",
+            "Only canonical_reviewed and canonical_independent_strong forms authorize propagation.",
+        ),
+        row(
+            "tibetan_latin_ocr_confusion_signatures",
+            "transcription_integrity",
+            "canonical-source edit operations",
+            "Unicode-normalized diagnostic edit scripts",
+            "diagnostic_queue",
+            "partially_applied",
+            "none",
+            "reviewed Tibetan-conditioned confusion signatures",
+            "scripts/build_tibetan_latin_syllable_concordance.py",
+            "data/tibetan_latin_ocr_confusion_signatures.tsv",
+            authorized_signatures,
+            len(confusion_signatures) - authorized_signatures,
+            "unconditioned Latin replacement;edit-distance authorization",
+            f"{len(transcription_outliers)} current canonical outlier form(s) are decomposed diagnostically.",
         ),
         row(
             "final_ng_insufficient_evidence_matrix",

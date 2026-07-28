@@ -18,14 +18,71 @@ sys.modules[SPEC.name] = integrity
 SPEC.loader.exec_module(integrity)
 
 
+def validate_authorization(
+    tibetan: str, sources: set[str], target: str,
+    explicit_manual_review: bool,
+) -> None:
+    if explicit_manual_review:
+        return
+    canonical_rows = integrity.read_tsv(
+        ROOT / "data/tibetan_latin_canonical_syllables.tsv"
+    )
+    canonical = next((
+        row for row in canonical_rows
+        if row["tibetan_syllable"] == tibetan
+        and target in row["canonical_forms"].split(";")
+        and row.get("canonical_confidence_tier") in {
+            "canonical_reviewed", "canonical_independent_strong"
+        }
+    ), None)
+    signatures = {
+        row["operation_signature"]
+        for row in integrity.read_tsv(
+            ROOT / "data/tibetan_latin_ocr_confusion_signatures.tsv"
+        )
+        if row["authorization_status"]
+        == "authorized_exact_tibetan_conditioned"
+    }
+    concordance_path = (
+        ROOT / "scripts/build_tibetan_latin_syllable_concordance.py"
+    )
+    spec = importlib.util.spec_from_file_location(
+        "canonical_engine_for_recorder", concordance_path
+    )
+    assert spec and spec.loader
+    canonical_engine = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = canonical_engine
+    spec.loader.exec_module(canonical_engine)
+    if canonical is None:
+        raise ValueError(
+            "Target is not canonical_reviewed or "
+            "canonical_independent_strong"
+        )
+    for source in sources:
+        operations = canonical_engine.edit_operations(source, target)
+        unsupported = [
+            op["signature"] for op in operations
+            if op["signature"] not in signatures
+        ]
+        if unsupported:
+            raise ValueError(
+                f"Unsupported confusion signatures for {source}: "
+                f"{unsupported}"
+            )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tibetan", required=True)
     parser.add_argument("--sources", required=True)
     parser.add_argument("--target", required=True)
     parser.add_argument("--evidence", required=True)
+    parser.add_argument("--explicit-manual-review", action="store_true")
     args = parser.parse_args()
     sources = set(args.sources.split(","))
+    validate_authorization(
+        args.tibetan, sources, args.target, args.explicit_manual_review
+    )
     aligned = integrity.collect_all_aligned(ROOT / "release/current")
     diagnostics = integrity.build_diagnostics(ROOT / "release/current")
     by_key = {
@@ -49,6 +106,8 @@ def main() -> None:
             continue
         if row["marker_attached"] == "yes":
             continue
+        if diagnostic["domain_context"] != "ordinary_tibetan_lexical_or_compound":
+            continue
         selected.append(row)
     if not selected:
         raise ValueError("No secure exact identities selected")
@@ -70,7 +129,11 @@ def main() -> None:
             "volume": row["volume"], "page": row["page"],
             "line": row["line"], "token_index": row["token_index"],
             "from_token": row["latin_token"], "to_token": args.target,
-            "reason": "reviewed_tibetan_exact_transcription_integrity",
+            "reason": (
+                "reviewed_tibetan_exact_manual_multi_error"
+                if args.explicit_manual_review
+                else "reviewed_tibetan_exact_transcription_integrity"
+            ),
             "evidence": args.evidence,
             "review_note": (
                 f"Exact {args.tibetan} alignment; reviewed root-feature repair "

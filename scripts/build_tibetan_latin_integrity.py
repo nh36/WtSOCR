@@ -30,6 +30,7 @@ DIAGNOSTIC_FIELDS = [
     "current_latin_token", "integrity_status", "integrity_pass",
     "known_feature_violation", "feature_coverage",
     "transcription_gateway_status", "transcription_exception_status",
+    "transcription_exception_scope",
     "alignment_confidence",
     "expected_high_confidence_features", "observed_features",
     "violated_rules", "canonical_full_target", "canonical_target_evidence",
@@ -41,6 +42,8 @@ BACKAUDIT_FIELDS = [
     "correction_batch", "target_integrity_status",
     "known_feature_violation", "feature_coverage",
     "transcription_gateway_status",
+    "transcription_exception_status", "transcription_exception_scope",
+    "blocked_reason",
     "violated_transcription_feature", "proposed_disposition",
     "context_excerpt",
 ]
@@ -117,12 +120,32 @@ def tibetan_roles(syllable: str) -> dict[str, str]:
     unresolved rather than being guessed.
     """
     roles = {
+        "prefix": "",
+        "superscript": "",
         "root_consonant": "",
+        "subjoined_consonant": "",
+        "vowel": "",
         "suffix_coda": "ང" if consensus.ends_in_tibetan_ng(syllable) else "",
+        "post_suffix": "",
         "orthographic_role_status": "partial",
     }
-    if "ཞ" in syllable:
-        roles["root_consonant"] = "ཞ"
+    reviewed_roots = [
+        feature for feature in ("ཞ", "ཉ", "ཤ") if feature in syllable
+    ]
+    if not reviewed_roots and syllable.startswith("ང"):
+        reviewed_roots.append("ང")
+    if len(reviewed_roots) == 1:
+        roles["root_consonant"] = reviewed_roots[0]
+    subjoined = [c for c in syllable if "\u0f90" <= c <= "\u0fbc"]
+    if len(subjoined) == 1:
+        roles["subjoined_consonant"] = subjoined[0]
+    vowels = [c for c in syllable if c in "ིེོུ"]
+    if len(vowels) <= 1:
+        roles["vowel"] = vowels[0] if vowels else "a"
+    if roles["root_consonant"] and len(subjoined) <= 1 and len(vowels) <= 1:
+        roles["orthographic_role_status"] = "resolved_reviewed_features"
+    else:
+        roles["orthographic_role_status"] = "orthographic_role_unresolved"
     return roles
 
 
@@ -181,12 +204,16 @@ def token_integrity(
     exception = exceptions.get((tibetan_syllable, latin_token))
     if not exception and latin_token.endswith("ṅ"):
         for final in "nñńňh":
-            exception = exceptions.get(
+            candidate_exception = exceptions.get(
                 (tibetan_syllable, latin_token[:-1] + final)
             )
-            if exception:
+            if candidate_exception and candidate_exception.get(
+                "exception_scope", "family_block"
+            ) in {"canonical_target_block", "family_block", "alignment_block"}:
+                exception = candidate_exception
                 break
     exception_status = exception["status"] if exception else ""
+    exception_scope = exception.get("exception_scope", "") if exception else ""
     exception_blocks = exception_status in {
         "known_multi_error_source",
         "source_variant_requires_manual_review",
@@ -236,6 +263,7 @@ def token_integrity(
         "feature_coverage": coverage,
         "transcription_gateway_status": gateway,
         "transcription_exception_status": exception_status,
+        "transcription_exception_scope": exception_scope,
         "expected": ";".join(expected),
         "observed": ";".join(observed),
         "violated": ";".join(violated),
@@ -336,6 +364,8 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             ),
             "transcription_exception_status":
                 result["transcription_exception_status"],
+            "transcription_exception_scope":
+                result["transcription_exception_scope"],
             "alignment_confidence": alignment_confidence,
             "expected_high_confidence_features": result["expected"],
             "observed_features": result["observed"],
@@ -402,6 +432,19 @@ def build_backaudit(
             "feature_coverage": check["feature_coverage"],
             "transcription_gateway_status":
                 check["transcription_gateway_status"],
+            "transcription_exception_status":
+                check["transcription_exception_status"],
+            "transcription_exception_scope":
+                check["transcription_exception_scope"],
+            "blocked_reason": (
+                "reviewed_exception"
+                if check["transcription_exception_status"]
+                else "canonical_mismatch"
+                if check["integrity_status"] == "canonical_syllable_mismatch"
+                else "genuine_feature_violation"
+                if check["known_feature_violation"] == "yes"
+                else ""
+            ),
             "violated_transcription_feature": check["violated"],
             "proposed_disposition": disposition,
             "context_excerpt": current["context_excerpt"],

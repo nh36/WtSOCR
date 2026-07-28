@@ -49,7 +49,9 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
 
     def test_final_ng_stem_gate_is_separate(self) -> None:
         self.assertEqual(
-            integrity.token_integrity("དྲང", "draṅ")["integrity_pass"], "yes"
+            integrity.token_integrity("དྲང", "draṅ")[
+                "transcription_gateway_status"
+            ], "unresolved"
         )
         self.assertEqual(
             integrity.token_integrity("དྲང", "dran")["integrity_status"],
@@ -57,10 +59,14 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
         )
 
     def test_reviewed_exception_overrides_missing_feature_coverage(self) -> None:
-        result = integrity.token_integrity("ཁོང", "kboṅ")
-        self.assertEqual(result["transcription_exception_status"],
-                         "source_variant_requires_manual_review")
+        result = integrity.token_integrity("ཁོང", "kbon")
+        self.assertEqual(
+            result["transcription_exception_status"],
+            "source_variant_requires_manual_review",
+        )
         self.assertEqual(result["transcription_gateway_status"], "blocked")
+        corrected = integrity.token_integrity("ཁོང", "kboṅ")
+        self.assertEqual(corrected["transcription_exception_status"], "")
 
     def test_bzhi_root_feature_family_is_exact_and_not_global(self) -> None:
         line = next(
@@ -92,7 +98,9 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
         roles = integrity.tibetan_roles("གཞུང")
         self.assertEqual(roles["root_consonant"], "ཞ")
         self.assertEqual(roles["suffix_coda"], "ང")
-        self.assertEqual(roles["orthographic_role_status"], "partial")
+        self.assertEqual(
+            roles["orthographic_role_status"], "resolved_reviewed_features"
+        )
 
     def test_supersession_validator_requires_effective_target(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
