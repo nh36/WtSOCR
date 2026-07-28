@@ -33,6 +33,7 @@ DIAGNOSTIC_FIELDS = [
     "transcription_gateway_status", "transcription_exception_status",
     "transcription_exception_scope",
     "alignment_confidence", "headword_transliteration_span_status",
+    "headword_domain_status", "headword_domain_evidence",
     "token_start", "token_end", "preceding_character",
     "following_character", "token_boundary_status",
     "expected_high_confidence_features", "observed_features",
@@ -162,16 +163,24 @@ def tibetan_roles(syllable: str) -> dict[str, str]:
 
 
 def classify_domain(zone: str, line: str) -> str:
+    return classify_headword_domain(zone, line)[0]
+
+
+def classify_headword_domain(
+    zone: str, line: str, token_end: int = 0,
+) -> tuple[str, str]:
     if zone in {"latin_other", "german_prose_with_translit"}:
-        return "bibliography_citation_or_prose"
+        return "bibliography_citation_or_prose", f"line_zone:{zone}"
     lowered = line.lower()
-    if "skt." in lowered or "skr." in lowered:
-        return "sanskrit_or_indic_transcription"
     if "npr." in lowered:
-        return "tibetan_proper_name"
+        return "tibetan_proper_name", "definition_label:npr"
+    if "skt." in lowered or "skr." in lowered:
+        # This remains conservative: a Sanskrit label blocks broad teaching,
+        # but the evidence field makes clear that it is a line-level label.
+        return "sanskrit_or_indic_transcription", "definition_label:skt_or_skr"
     if zone in {"headword_line", "tibetan_only"}:
-        return "ordinary_tibetan_lexical_or_compound"
-    return "unclear"
+        return "ordinary_tibetan_lexical_or_compound", f"line_zone:{zone}"
+    return "unclear", f"line_zone:{zone or 'missing'}"
 
 
 def token_integrity(
@@ -394,6 +403,9 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
         override = canonical.get(
             (row["volume"], row["page"], row["line"], row["token_index"])
         )
+        headword_domain, headword_domain_evidence = classify_headword_domain(
+            row["zone"], row["context_excerpt"], int(row["token_end"])
+        )
         if row["marker_attached"] == "yes" or row["damage_scope"] not in {
             "none", "later_gloss_or_commentary",
         }:
@@ -436,9 +448,9 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             "violated_rules": result["violated"],
             "canonical_full_target": override["to_token"] if override else "",
             "canonical_target_evidence": override["reason"] if override else "",
-            "domain_context": classify_domain(
-                row["zone"], row["context_excerpt"]
-            ),
+            "domain_context": headword_domain,
+            "headword_domain_status": headword_domain,
+            "headword_domain_evidence": headword_domain_evidence,
             "damage_scope": row["damage_scope"],
             "marker_attached": row["marker_attached"],
             "context_excerpt": row["context_excerpt"],

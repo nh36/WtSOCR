@@ -179,6 +179,17 @@ class SyllableConcordanceTests(unittest.TestCase):
             google["source_disposition"], "alternate_witness_source"
         )
 
+    def test_reviewed_source_is_not_a_current_clean_outlier(self) -> None:
+        source_rows = [
+            row for row in self.concordance
+            if row["tibetan_syllable"] == "ནིང"
+            and row["latin_form"] == "nin"
+        ]
+        self.assertTrue(source_rows)
+        self.assertTrue(all(
+            row["current_clean_occurrences"] == "0" for row in source_rows
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()

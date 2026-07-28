@@ -634,19 +634,51 @@ def build() -> tuple[list[dict[str, str]], ...]:
         })
 
     domain: list[dict[str, str]] = []
+    canonical_targets = {
+        row["tibetan_syllable"]: row["canonical_forms"]
+        for row in canonical
+    }
+    teaching = read(
+        ROOT / "data/tibetan_latin_canonical_teaching_evidence.tsv"
+    )
     for rule in rules.values():
+        domain_support: dict[str, set[str]] = defaultdict(set)
+        for item in teaching:
+            syllable = item["tibetan_syllable"]
+            if item["latin_form"] != canonical_targets.get(syllable):
+                continue
+            parse = parses.get(syllable, {})
+            role, feature = rule["tibetan_role"], rule["tibetan_feature"]
+            if parse.get(role) != feature:
+                continue
+            realization = rule["latin_realization"]
+            form = item["latin_form"]
+            if role in {"suffix_coda", "post_suffix"}:
+                matches = form.endswith(realization)
+            elif role == "prefix":
+                matches = form.startswith(realization)
+            else:
+                matches = realization in form
+            if matches:
+                domain_support[item["domain_context"]].add(syllable)
+        proper_count = len(domain_support["tibetan_proper_name"])
+        ordinary_count = len(
+            domain_support["ordinary_tibetan_lexical_or_compound"]
+        )
         domain.append({
             "rule_id": rule["rule_id"],
-            "ordinary_lexical_support": str(len(
-                [x for x in rule.get("strong_canonical_syllables", "").split(";")
-                 if x]
+            "ordinary_lexical_support": str(ordinary_count),
+            "proper_name_support": str(proper_count),
+            "sanskrit_foreign_support": str(len(
+                domain_support["sanskrit_or_indic_transcription"]
             )),
-            "proper_name_support": "0", "sanskrit_foreign_support": "0",
-            "unclear_support": "0", "conflicts": "",
-            "proper_name_compatible": "no",
+            "unclear_support": str(len(domain_support["unclear"])),
+            "conflicts": "",
+            "proper_name_compatible": "yes" if proper_count >= 3 else "no",
             "rationale": (
-                "Proper-name compatibility requires independent secure "
-                "proper-name evidence; ordinary lexical authority is not inherited."
+                "Proper-name compatibility requires the reviewed/strong exact "
+                "canonical realization in at least three independent proper-name "
+                "syllables; ordinary lexical authority is never inherited alone."
             ),
         })
 

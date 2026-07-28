@@ -368,7 +368,13 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 "context_excerpt": r["context_excerpt"],
             })
         clean = [
-            d for d in diags if d["alignment_confidence"] in {
+            d for r, d in zip(rows, diags)
+            if not (
+                override_by_key.get((
+                    r["volume"], r["page"], r["line"], r["token_index"]
+                ), {}).get("from_token") == r["latin_token"]
+            )
+            and d["alignment_confidence"] in {
                 "secure_positional_alignment", "secure_reviewed_alignment"
             } and d["damage_scope"] in {"none", "later_gloss_or_commentary"}
             and d["marker_attached"] == "no"

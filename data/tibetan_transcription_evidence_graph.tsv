@@ -455,6 +455,7 @@ identity:wts_1_34:123:114:3	reviewed_explicit_feature_evidence	feature:suffix_co
 identity:wts_1_34:123:114:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:སྐྱོ:skyo	wts_1_34:123:114:3	yes
 identity:wts_1_34:124:1:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:124:1:3	yes
 identity:wts_1_34:124:1:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རྒྱ:rgya	wts_1_34:124:1:3	yes
+identity:wts_1_34:124:3:3	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:རྒྱང:rgya□	wts_1_34:124:3:3	yes
 identity:wts_1_34:124:27:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:124:27:3	yes
 identity:wts_1_34:124:27:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:སྟོ:sto	wts_1_34:124:27:3	yes
 identity:wts_1_34:124:33:3	role_unresolved	feature:suffix_coda::	wts_1_34:124:33:3	no
@@ -898,6 +899,7 @@ identity:wts_1_34:245:182:3	reviewed_explicit_feature_evidence	feature:suffix_co
 identity:wts_1_34:245:182:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:བྱ:bya	wts_1_34:245:182:3	yes
 identity:wts_1_34:248:15:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:248:15:2	yes
 identity:wts_1_34:248:15:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:གད:gda	wts_1_34:248:15:2	yes
+identity:wts_1_34:248:148:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ནིང:ni□	wts_1_34:248:148:2	yes
 identity:wts_1_34:249:40:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:249:40:2	yes
 identity:wts_1_34:249:40:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཕུ:phu	wts_1_34:249:40:2	yes
 identity:wts_1_34:249:62:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:249:62:2	yes
@@ -1182,6 +1184,7 @@ identity:wts_1_34:339:144:1	role_unresolved	feature:suffix_coda::	wts_1_34:339:1
 identity:wts_1_34:339:162:1	role_unresolved	feature:suffix_coda::	wts_1_34:339:162:1	no
 identity:wts_1_34:339:164:1	role_unresolved	feature:suffix_coda::	wts_1_34:339:164:1	no
 identity:wts_1_34:339:169:1	role_unresolved	feature:suffix_coda::	wts_1_34:339:169:1	no
+identity:wts_1_34:340:15:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིག:□ig	wts_1_34:340:15:2	yes
 identity:wts_1_34:341:1:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:341:1:2	yes
 identity:wts_1_34:341:1:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རུ:ru	wts_1_34:341:1:2	yes
 identity:wts_1_34:341:47:1	role_unresolved	feature:suffix_coda::	wts_1_34:341:47:1	no
@@ -1614,6 +1617,7 @@ identity:wts_1_34:461:148:2	reviewed_explicit_feature_evidence	feature:suffix_co
 identity:wts_1_34:461:148:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:དྲུ:dru	wts_1_34:461:148:2	yes
 identity:wts_1_34:463:187:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:463:187:3	yes
 identity:wts_1_34:463:187:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:འཐུ:thu	wts_1_34:463:187:3	yes
+identity:wts_1_34:464:73:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིག:□ig	wts_1_34:464:73:2	yes
 identity:wts_1_34:464:168:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:464:168:2	yes
 identity:wts_1_34:464:168:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཤི:Si	wts_1_34:464:168:2	yes
 identity:wts_1_34:466:13:1	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:466:13:1	yes
@@ -1833,7 +1837,9 @@ identity:wts_1_34:580:1:3	reviewed_explicit_feature_evidence	feature:suffix_coda
 identity:wts_1_34:580:1:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རུ:ru	wts_1_34:580:1:3	yes
 identity:wts_1_34:580:41:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:580:41:3	yes
 identity:wts_1_34:580:41:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རུ:ru	wts_1_34:580:41:3	yes
+identity:wts_1_34:580:108:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིག:□ig	wts_1_34:580:108:2	yes
 identity:wts_1_34:580:108:3	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:གི:□tar	wts_1_34:580:108:3	yes
+identity:wts_1_34:580:169:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིག:□ig	wts_1_34:580:169:2	yes
 identity:wts_1_34:582:106:1	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:582:106:1	yes
 identity:wts_1_34:582:106:1	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཅི:ci	wts_1_34:582:106:1	yes
 identity:wts_1_34:583:1:1	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:583:1:1	yes
@@ -2546,6 +2552,7 @@ identity:wts_1_34:913:156:2	unaffected_feature_from_reviewed_source	feature:pre_
 identity:wts_1_34:914:73:2	role_unresolved	feature:suffix_coda::	wts_1_34:914:73:2	no
 identity:wts_1_34:914:105:3	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:914:105:3	yes
 identity:wts_1_34:914:105:3	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རྐ:rka	wts_1_34:914:105:3	yes
+identity:wts_1_34:915:108:3	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:གཞོན:g□on	wts_1_34:915:108:3	yes
 identity:wts_1_34:918:166:1	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:918:166:1	yes
 identity:wts_1_34:918:166:1	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:རྟི:rti	wts_1_34:918:166:1	yes
 identity:wts_1_34:918:174:1	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_1_34:918:174:1	yes
@@ -3625,6 +3632,7 @@ identity:wts_35_51:1015:19:2	reviewed_explicit_feature_evidence	feature:root_con
 identity:wts_35_51:1015:19:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིང:□iṅ	wts_35_51:1015:19:2	yes
 identity:wts_35_51:1015:36:2	reviewed_explicit_feature_evidence	feature:root_consonant:ཞ:ź	wts_35_51:1015:36:2	yes
 identity:wts_35_51:1015:36:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིང:□iṅ	wts_35_51:1015:36:2	yes
+identity:wts_35_51:1022:1:3	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:སྒང:sga□	wts_35_51:1022:1:3	yes
 identity:wts_35_51:1046:31:2	reviewed_explicit_feature_evidence	feature:root_consonant:ཞ:ź	wts_35_51:1046:31:2	yes
 identity:wts_35_51:1046:31:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:བཞི:b□i	wts_35_51:1046:31:2	yes
 identity:wts_35_51:1057:16:2	role_unresolved	feature:suffix_coda::	wts_35_51:1057:16:2	no
@@ -3726,6 +3734,7 @@ identity:wts_8_b:417:19:5	unaffected_feature_from_reviewed_source	feature:unsegm
 identity:wts_8_b:432:24:3	role_unresolved	feature:suffix_coda::	wts_8_b:432:24:3	no
 identity:wts_8_b:433:23:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_8_b:433:23:2	yes
 identity:wts_8_b:433:23:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཚོ:tsho	wts_8_b:433:23:2	yes
+identity:wts_8_b:434:12:2	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ཞིག:□ig	wts_8_b:434:12:2	yes
 identity:wts_8_b:436:81:5	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:ལྔ:□□a	wts_8_b:436:81:5	yes
 identity:wts_8_b:438:28:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_8_b:438:28:2	yes
 identity:wts_8_b:438:28:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཤི:si	wts_8_b:438:28:2	yes
@@ -3815,6 +3824,7 @@ identity:wts_9_m:225:80:2	reviewed_explicit_feature_evidence	feature:suffix_coda
 identity:wts_9_m:225:80:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ལོ:lo	wts_9_m:225:80:2	yes
 identity:wts_9_m:251:16:4	reviewed_explicit_feature_evidence	feature:root_consonant:ཞ:ź	wts_9_m:251:16:4	yes
 identity:wts_9_m:251:16:4	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:བཞི:b□i	wts_9_m:251:16:4	yes
+identity:wts_9_m:273:44:1	unaffected_feature_from_reviewed_source	feature:unsegmented_structural_unit:མྱང:mya□	wts_9_m:273:44:1	yes
 identity:wts_9_m:279:59:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_9_m:279:59:2	yes
 identity:wts_9_m:279:59:2	unaffected_feature_from_reviewed_source	feature:pre_coda_structural_unit:ཆུ:chu	wts_9_m:279:59:2	yes
 identity:wts_9_m:303:62:2	reviewed_explicit_feature_evidence	feature:suffix_coda:ང:ṅ	wts_9_m:303:62:2	yes

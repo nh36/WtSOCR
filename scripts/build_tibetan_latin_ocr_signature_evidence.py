@@ -377,7 +377,10 @@ def signature_applies_to_row(
         row.get("zone", ""), row.get("context_excerpt", "")
     )
     required_domain = signature_record.get("domain_condition", "")
-    if required_domain and domain != required_domain:
+    allowed_domains = {
+        item for item in required_domain.split(";") if item
+    }
+    if allowed_domains and domain not in allowed_domains:
         return False, "domain_mismatch"
     source = row.get("latin_token", "")
     source_pattern = signature_record.get("source_context_pattern", "")

@@ -142,8 +142,6 @@ def main() -> None:
             continue
         if row["token_boundary_status"] != "token_boundary_secure":
             continue
-        if diagnostic["domain_context"] != "ordinary_tibetan_lexical_or_compound":
-            continue
         selected.append(row)
     if not selected:
         raise ValueError("No secure exact identities selected")
