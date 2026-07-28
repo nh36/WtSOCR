@@ -3377,6 +3377,7 @@ wts_1_34	1027	147	2	byan	byaṅ	reviewed_tibetan_exact_final_ng_consensus	tibeta
 wts_1_34	1028	1	2	chun	chuṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_direct_unique_batch_20260719	Direct unique Tibetan ཆུང and Latin chun alignment; exact token only; neighboring discrepancies remain unchanged.
 wts_1_34	1028	9	2	chun	chuṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_repeated_lemma_batch_20260719	Repeated same-lemma entry structure independently identifies this exact chun as Tibetan ཆུང; damaged neighboring prefixes remain unchanged.
 wts_1_34	1028	9	4	chun	chuṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_repeated_lemma_batch_20260719	Repeated same-lemma entry structure independently identifies this exact chun as Tibetan ཆུང; damaged neighboring prefixes remain unchanged.
+wts_1_34	1028	12	2	brani	braṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact བྲང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_1_34	1028	12	5	bran	braṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_brang_same_entry_echo_batch_20260726	Explicit alternate repeats བྲང.
 wts_1_34	1028	19	5	ran	raṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_second_pass_20260628	Exact same-line Tibetan-script ང witness; no broad n-to-ṅ rule
 wts_1_34	1028	47	4	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
@@ -4867,6 +4868,9 @@ wts_35_51	928	81	1	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i
 wts_35_51	928	92	3	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	934	8	9	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	934	29	1	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
+wts_35_51	939	37	2	brani	braṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact བྲང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
+wts_35_51	940	1	2	brani	braṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact བྲང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
+wts_35_51	940	47	2	brani	braṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact བྲང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_35_51	941	33	2	brań	braṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_brang_consensus_batch_20260726	Frozen exact Tibetan བྲང alignment.
 wts_35_51	943	33	6	yon	yoṅ	reviewed_tibetan_exact_final_ng_echo	final_ng_yong_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
 wts_35_51	943	46	3	ran	raṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	Exact same-line Tibetan-script ང witness; no broad n-to-ṅ rule
