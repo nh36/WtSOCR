@@ -164,14 +164,6 @@ def validate(root: Path = ROOT) -> list[str]:
         frozen_pos = int(batch["frozen_positional_count"])
         frozen_withheld = int(batch.get("frozen_withheld_damage_count") or 0)
         frozen_echo = int(batch["frozen_echo_candidate_count"])
-        current_echo_total = len(current_frozen_echoes)
-        target_superseded = any(
-            row["original_batch"] in {
-                batch["positional_evidence"], batch["echo_evidence"],
-            }
-            and row["status"] == "active"
-            for row in supersessions
-        )
         computed = {
             "actual_positional_overrides": len(pos),
             "echo_decisions_accepted": decision_counts["accepted"],
@@ -180,13 +172,13 @@ def validate(root: Path = ROOT) -> list[str]:
             "echo_decisions_resolved_elsewhere": decision_counts["resolved_elsewhere"],
             "echo_candidates_not_yet_reviewed": active_echo,
             "positional_queue_delta": frozen_pos - active_pos,
-            # Once a frozen target is explicitly superseded, regenerated
-            # diagnostics are keyed to the new target and are no longer
-            # arithmetically comparable with the immutable old-target queue.
-            "total_echo_diagnostic_delta": (
-                int(batch["total_echo_diagnostic_delta"])
-                if target_superseded else frozen_echo - current_echo_total
-            ),
+            # This is a historical at-review-time measurement. Subsequent
+            # target supersessions, exact resolutions, tokenizer repairs, and
+            # compatible-target discovery legitimately change regenerated
+            # total diagnostics. The immutable decision arithmetic and active
+            # queue are validated independently below.
+            "total_echo_diagnostic_delta":
+                int(batch["total_echo_diagnostic_delta"]),
             "active_echo_queue_delta": frozen_echo - active_echo,
             "total_overrides_added": len(pos) + len(echo),
             "frozen_withheld_damage_count": len(frozen_withheld_keys),

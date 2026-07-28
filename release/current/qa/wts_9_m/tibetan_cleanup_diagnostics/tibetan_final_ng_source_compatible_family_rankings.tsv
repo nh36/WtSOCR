@@ -1,5 +1,4 @@
 tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count	old_categories	new_categories	compatible_accepted_target_count	compatible_competing_forms	incompatible_dotted_forms_excluded	damage_count	volumes	transcription_integrity_status	transcription_integrity_blocked_count
-ཐང	than	tha<FINAL_NASAL>	thaṅ	1	dominant_internal_consensus:1	source_compatible_dominant_consensus:1	92			0	wts_1_34	insufficient_feature_coverage	0
 དྲང	dran	dra<FINAL_NASAL>	draṅ	2	damaged_context:2	source_compatible_damaged_context:2	43		raṅ:1	2	wts_1_34	insufficient_feature_coverage	0
 ཁོང	khon	kho<FINAL_NASAL>	khoṅ	1	damaged_context:1	source_compatible_damaged_context:1	26		kboṅ:1	1	wts_1_34	insufficient_feature_coverage	0
 ཀློང	klon	klo<FINAL_NASAL>	kloṅ	1	damaged_context:1	source_compatible_damaged_context:1	22		groṅ:2	1	wts_1_34	insufficient_feature_coverage	0
@@ -14,8 +13,8 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 མེང	min	mi<FINAL_NASAL>	miṅ	1	competing_latin_forms:1	source_compatible_not_final_ng_only:1	2		maṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 རྱོང	myon	myo<FINAL_NASAL>	myoṅ	1	competing_latin_forms:1	source_compatible_not_final_ng_only:1	2		mmyoṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 སྤང	spyah	spya<FINAL_NASAL>	spyaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		spaṅ:28; sbaṅ:5; smaṅ:1	0	wts_35_51	insufficient_feature_coverage	0
-སྲོང	spoh	spo<FINAL_NASAL>	spoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		sroṅ:17	0	wts_1_34	insufficient_feature_coverage	0
-སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		sroṅ:17	0	wts_1_34	insufficient_feature_coverage	0
+སྲོང	spoh	spo<FINAL_NASAL>	spoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		sroṅ:17	0	wts_1_34	canonical_syllable_mismatch	0
+སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		sroṅ:17	0	wts_1_34	canonical_syllable_mismatch	0
 ཀང	kan	ka<FINAL_NASAL>	kaṅ	21	insufficient_consensus:20; damaged_context:1	source_compatible_single_anchor:20; source_compatible_damaged_context:1	1			1	wts_1_34	insufficient_feature_coverage	0
 ཅང	can	ca<FINAL_NASAL>	caṅ	13	insufficient_consensus:11; damaged_context:2	source_compatible_single_anchor:11; source_compatible_damaged_context:2	1			2	wts_1_34	insufficient_feature_coverage	0
 བྱང	byun	byu<FINAL_NASAL>	byuṅ	13	not_emitted_by_legacy_global_target:13	source_compatible_not_final_ng_only:13	1		byaṅ:81; bbyaṅ:2	0	wts_1_34	insufficient_feature_coverage	0
@@ -23,7 +22,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གློང	gron	gro<FINAL_NASAL>	groṅ	11	syllable_structure_mismatch:11	source_compatible_not_final_ng_only:11	1			0	wts_1_34	insufficient_feature_coverage	0
 ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34	insufficient_feature_coverage	0
 ཞེང	Zen	Ze<FINAL_NASAL>	Zeṅ	4	competing_latin_forms:4	source_compatible_single_anchor:4	1		zeṅ:1; Ziṅ:1; ziṅ:1	0	wts_1_34	reviewed_transcription_exception	0
-རང	rin	ri<FINAL_NASAL>	riṅ	4	not_emitted_by_legacy_global_target:4	source_compatible_not_final_ng_only:4	1		raṅ:14	0	wts_1_34	insufficient_feature_coverage	0
+རང	rin	ri<FINAL_NASAL>	riṅ	4	not_emitted_by_legacy_global_target:4	source_compatible_not_final_ng_only:4	1		raṅ:14	0	wts_1_34	canonical_syllable_mismatch	0
 ཤང	sin	si<FINAL_NASAL>	siṅ	4	not_emitted_by_legacy_global_target:4	source_compatible_not_final_ng_only:4	1		Saṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 ངང	han	ha<FINAL_NASAL>	haṅ	3	not_emitted_by_legacy_global_target:3	source_compatible_single_anchor:3	1		daṅ:2	0	wts_1_34	reviewed_transcription_exception	0
 བྲང	than	tha<FINAL_NASAL>	thaṅ	3	not_emitted_by_legacy_global_target:3	source_compatible_not_final_ng_only:3	1		braṅ:35; byuṅ:1; byaṅ:1	0	wts_1_34	canonical_syllable_mismatch	0
@@ -33,7 +32,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ང	khan	kha<FINAL_NASAL>	khaṅ	2	not_emitted_by_legacy_global_target:2	source_compatible_single_anchor:2	1		naṅ:3; boṅ:3; byaṅ:3; ldoṅ:2; byuṅ:2; gduṅ:1; ldiṅ:1; snaṅ:1; dpuṅ:1; phuṅ:1; siṅ:1; smyuṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 མཇིང	mjin	mji<FINAL_NASAL>	mjiṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34	insufficient_feature_coverage	0
 མདོང	mdon	mdo<FINAL_NASAL>	mdoṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34	insufficient_feature_coverage	0
-འཕྱོང	phyon	phyo<FINAL_NASAL>	phyoṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_35_51	insufficient_feature_coverage	0
 འབྱང	byun	byu<FINAL_NASAL>	byuṅ	2	insufficient_consensus:2	source_compatible_not_final_ng_only:2	1			0	wts_1_34	insufficient_feature_coverage	0
 ཤང	San	Sa<FINAL_NASAL>	Saṅ	2	competing_latin_forms:2	source_compatible_single_anchor:2	1		siṅ:1	0	wts_1_34	reviewed_transcription_exception	0
 སྲང	srun	sru<FINAL_NASAL>	sruṅ	2	competing_latin_forms:2	source_compatible_not_final_ng_only:2	1		ssdaṅ:1; seruṅ:1; sriṅ:1	0	wts_1_34	insufficient_feature_coverage	0
@@ -44,7 +42,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གླིང	elin	eli<FINAL_NASAL>	eliṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		gliṅ:51; ciṅ:1	0	wts_1_34	reviewed_transcription_exception	0
 ཆུང	run	ru<FINAL_NASAL>	ruṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		chuṅ:133	0	wts_1_34	reviewed_transcription_exception	0
 ཐྲང	than	tha<FINAL_NASAL>	thaṅ	1	syllable_structure_mismatch:1	source_compatible_not_final_ng_only:1	1			0	wts_1_34	insufficient_feature_coverage	0
-ནིང	nin	ni<FINAL_NASAL>	niṅ	1	competing_latin_forms:1	source_compatible_single_anchor:1	1		miṅ:1	0	wts_1_34	insufficient_feature_coverage	0
 པྲང	bran	bra<FINAL_NASAL>	braṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
 བབཟུང	bzun	bzu<FINAL_NASAL>	bzuṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
 བསྐྱེང	bskyen	bskye<FINAL_NASAL>	bskyeṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
@@ -54,16 +51,15 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 རྐྱོང	rkyon	rkyo<FINAL_NASAL>	rkyoṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
 རྣང	rnan	rna<FINAL_NASAL>	rnaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		maṅ:1	0	wts_35_51	insufficient_feature_coverage	0
 ལྗང	lan	la<FINAL_NASAL>	laṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		ldaṅ:3	0	wts_1_34	reviewed_transcription_exception	0
-སིང	sin	si<FINAL_NASAL>	siṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
 སྙིང	sñiń	sñi<FINAL_NASAL>	sñiṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	1		siṅ:3; sāiṅ:1; stiṅ:1	0	wts_35_51	insufficient_feature_coverage	0
-སྟང	ston	sto<FINAL_NASAL>	stoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	1		staṅ:4; snaṅ:1	0	wts_1_34	insufficient_feature_coverage	0
+སྟང	ston	sto<FINAL_NASAL>	stoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	1		staṅ:4; snaṅ:1	0	wts_1_34	canonical_syllable_mismatch	0
 སྡིང	sdih	sdi<FINAL_NASAL>	sdiṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_35_51	insufficient_feature_coverage	0
 སྡེང	sden	sde<FINAL_NASAL>	sdeṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34	insufficient_feature_coverage	0
 སྤྲང	smran	smra<FINAL_NASAL>	smraṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		sbraṅ:12; spraṅ:9; spyaṅ:1; sgaṅ:1	0	wts_9_m	insufficient_feature_coverage	0
 སྙིང	säin	säi<FINAL_NASAL>		15	not_emitted_by_legacy_global_target:15	source_compatible_no_anchor:15	0		siṅ:3; sāiṅ:1; sñiṅ:1; stiṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 ངང	nan	na<FINAL_NASAL>		14	not_emitted_by_legacy_global_target:14	source_compatible_no_anchor:14	0		daṅ:2; haṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 ཀེང	ken	ke<FINAL_NASAL>		12	not_emitted_by_legacy_global_target:12	source_compatible_no_anchor:12	0		koṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-ཏང	tin	ti<FINAL_NASAL>		12	not_emitted_by_legacy_global_target:12	source_compatible_no_anchor:12	0		taṅ:5	0	wts_1_34	target_unresolved_no_anchor	0
+ཏང	tin	ti<FINAL_NASAL>		12	not_emitted_by_legacy_global_target:12	source_compatible_no_anchor:12	0		taṅ:6	0	wts_1_34	target_unresolved_no_anchor	0
 ཀོང	gon	go<FINAL_NASAL>		8	not_emitted_by_legacy_global_target:8	source_compatible_no_anchor:8	0		koṅ:49; caṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 མཐང	mthan	mtha<FINAL_NASAL>		6	not_emitted_by_legacy_global_target:6	source_compatible_no_anchor:5; source_compatible_damaged_context:1	0		mthoṅ:1	1	wts_1_34;wts_8_b	target_unresolved_no_anchor	0
 ཤེང	sen	se<FINAL_NASAL>		6	not_emitted_by_legacy_global_target:6	source_compatible_no_anchor:6	0		Siṅ:1; Seṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
@@ -81,7 +77,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཁང	khrun	khru<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		khaṅ:89; kbaṅ:4	0	wts_1_34	target_unresolved_no_anchor	0
 ཁྱུང	khrun	khru<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		khyuṅ:4	0	wts_1_34	target_unresolved_no_anchor	0
 གཏང	gtin	gti<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		gtaṅ:10	0	wts_1_34	target_unresolved_no_anchor	0
-ཕྱང	phyun	phyu<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		phyaṅ:9; pyaṅ:1; pphyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+ཕྱང	phyun	phyu<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		phyaṅ:11; pyaṅ:1; pphyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 བང	khan	kha<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		baṅ:14; dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 ལྗང	ljan	lja<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		ldaṅ:3; laṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 སྙིང	sAin	sAi<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:2; source_compatible_damaged_context:1	0		siṅ:3; sāiṅ:1; sñiṅ:1; stiṅ:1	1	wts_1_34	target_unresolved_no_anchor	0
@@ -97,8 +93,8 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 བཏང	btun	btu<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		btaṅ:26	0	wts_1_34	target_unresolved_no_anchor	0
 བོང	thon	tho<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		boṅ:25; borṅ:1; bboṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 མདང	mdun	mdu<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		mdaṅ:2; indaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-རྐྱང	rgyan	rgya<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		rkyaṅ:24; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-རྒྱང	rgyon	rgyo<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		rgyaṅ:13	0	wts_1_34	target_unresolved_no_anchor	0
+རྐྱང	rgyan	rgya<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		rkyaṅ:26; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+རྒྱང	rgyon	rgyo<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		rgyaṅ:14	0	wts_1_34	target_unresolved_no_anchor	0
 སང	sran	sra<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		saṅ:9; siṅ:1; sdaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 སྔང	san	sa<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		sdaṅ:2	0	wts_1_34	target_unresolved_no_anchor	0
 སྙིང	sun	su<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:1; source_compatible_damaged_context:1	0		siṅ:3; sāiṅ:1; sñiṅ:1; stiṅ:1	1	wts_1_34	target_unresolved_no_anchor	0
@@ -165,20 +161,20 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཉུང	nun	nu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ñuṅ:4	0	wts_1_34	target_unresolved_no_anchor	0
 ཉུང	run	ru<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ñuṅ:4	0	wts_1_34	target_unresolved_no_anchor	0
 ཏིང	tun	tu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		tiṅ:17	0	wts_1_34	target_unresolved_no_anchor	0
-ཐང	Ithon	Itho<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		thaṅ:92	0	wts_1_34	target_unresolved_no_anchor	0
-ཐང	lhan	lha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:92	0	wts_1_34	target_unresolved_no_anchor	0
-ཐང	thin	thi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:92	0	wts_1_34	target_unresolved_no_anchor	0
-ཐང	thon	tho<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:92	0	wts_1_34	target_unresolved_no_anchor	0
+ཐང	Ithon	Itho<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		thaṅ:93	0	wts_1_34	target_unresolved_no_anchor	0
+ཐང	lhan	lha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:93	0	wts_1_34	target_unresolved_no_anchor	0
+ཐང	thin	thi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:93	0	wts_1_34	target_unresolved_no_anchor	0
+ཐང	thon	tho<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		thaṅ:93	0	wts_1_34	target_unresolved_no_anchor	0
 དང	buddh	budd<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		daṅ:109; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 དང	dangon	dango<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		daṅ:109; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 དཔང	dban	dba<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		dpaṅ:10	0	wts_1_34	target_unresolved_no_anchor	0
 དུང	drun	dru<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		duṅ:37	0	wts_1_34	target_unresolved_no_anchor	0
 དོང	Wildschwein	Wildschwei<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		doṅ:22	0	wts_35_51	target_unresolved_no_anchor	0
-ནིང	manin	mani<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		niṅ:1; miṅ:1	0	wts_9_m	target_unresolved_no_anchor	0
+ནིང	manin	mani<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		niṅ:2; miṅ:1	0	wts_9_m	target_unresolved_no_anchor	0
 པང	Daseinsbereichen	Daseinsbereiche<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		paṅ:6	0	wts_1_34	target_unresolved_no_anchor	0
-ཕང	pan	pa<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phaṅ:6; pbaṅ:1; pphaṅ:1; phyuṅ:1	0	wts_9_m	target_unresolved_no_anchor	0
+ཕང	pan	pa<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phaṅ:7; pbaṅ:1; pphaṅ:1; phyuṅ:1	0	wts_9_m	target_unresolved_no_anchor	0
 ཕུང	ph	p<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phuṅ:37; dpuṅ:2; pbuṅ:1	0	wts_35_51	target_unresolved_no_anchor	0
-ཕྱང	byan	bya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phyaṅ:9; pyaṅ:1; pphyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+ཕྱང	byan	bya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phyaṅ:11; pyaṅ:1; pphyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 ཕྱིང	pyih	pyi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		phyiṅ:14; ppyiṅ:1; pbyiṅ:1	0	wts_35_51	target_unresolved_no_anchor	0
 བང	Rhan	Rha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		baṅ:14; dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 བང	byun	byu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		baṅ:14; dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1	0	wts_8_b	target_unresolved_no_anchor	0
@@ -227,8 +223,8 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 རེངས	auchmoren	auchmore<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		reṅs:2	0	wts_9_m	target_unresolved_no_anchor	0
 རྐང	bran	bra<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkaṅ:107; rkyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 རྐང	ran	ra<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkaṅ:107; rkyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-རྐྱང	Ryan	Rya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkyaṅ:24; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-རྒྱང	igyan	igya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rgyaṅ:13	0	wts_1_34	target_unresolved_no_anchor	0
+རྐྱང	Ryan	Rya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkyaṅ:26; rkaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+རྒྱང	igyan	igya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rgyaṅ:14	0	wts_1_34	target_unresolved_no_anchor	0
 རྙིང	räin	räi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		riṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 རྟིང	yein	yei<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rtiṅ:8	0	wts_1_34	target_unresolved_no_anchor	0
 རྨང	rlun	rlu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rmaṅ:6; maṅ:1	0	wts_1_34	target_unresolved_no_anchor	0

@@ -154,7 +154,7 @@ category_changed	wts_1_34	235	148	1	བསྐྱེང	bskyen	bskyeṅ	bskyeṅ	
 category_changed	wts_1_34	243	85	2	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	།ཐ་ཅང་ kha can \kha gcan.
 target_changed	wts_1_34	244	160	4	ཕྱང	phyun	phyuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
 target_changed	wts_1_34	245	60	2	ཉུང	run	ruṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁ་ཉུང་ kha run wortkarg.
-category_changed	wts_1_34	248	148	2	ནིང	nin	niṅ	niṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ནིང་ kha nin letztes Jahr.
+disappeared	wts_1_34	248	148	2	ནིང	nin	niṅ		source_compatible_insufficient_evidence			ཁ་ནིང་ kha nin letztes Jahr.
 target_changed	wts_1_34	250	109	2	ཕྱང	byan	byaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	།ཁ་ཕྱང་བ་ kha byan ba
 category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
 target_changed	wts_1_34	256	35	4	སང	Ton	Toṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
@@ -195,7 +195,7 @@ disappeared	wts_1_34	277	11	1	ཁོང	khon	khoṅ		source_compatible_insuffici
 disappeared	wts_1_34	277	188	2	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཁོམ་ཏིང་ khom tin tiefsitzend.
 disappeared	wts_1_34	277	20	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
 disappeared	wts_1_34	277	28	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སིང་ khon sin I\khon sen Schlucht.
-category_changed	wts_1_34	277	28	2	སིང	sin	siṅ	siṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
+disappeared	wts_1_34	277	28	2	སིང	sin	siṅ		source_compatible_insufficient_evidence			ཁོང་སིང་ khon sin I\khon sen Schlucht.
 disappeared	wts_1_34	277	30	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སུབས་ khon subs Anhang, Ergänzung.
 target_changed	wts_1_34	277	35	1	ཁང	khon	khoṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	།ཁང་སང་ khon sen auch khon sin, khon gsen
 target_changed	wts_1_34	277	35	2	སང	sen	seṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	།ཁང་སང་ khon sen auch khon sin, khon gsen
@@ -521,7 +521,6 @@ disappeared	wts_1_34	80	126	3	དྲང	dran	draṅ		source_compatible_insuffici
 newly_discovered	wts_1_34	80	48	3	རྙིང	räin				source_compatible_no_anchor	0	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
 target_changed	wts_1_34	801	53	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
 newly_discovered	wts_1_34	804	213	4	གསུང	gsun		gsuṅ		source_compatible_dominant_consensus	9	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
-newly_discovered	wts_1_34	811	181	2	ཐང	than		thaṅ		source_compatible_dominant_consensus	92	མཉེས་ཐང་ möes than npr. eine Gegend.
 target_changed	wts_1_34	814	160	1	སྙང	shan	shaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
 disappeared	wts_1_34	817	219	4	ལྟོང	h	ṅ		source_compatible_structure_mismatch			སྙན་ལྟོང་ san //90/7 hören, erfahren.
 newly_discovered	wts_1_34	817	219	4	ལྟོང	hören				source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
@@ -686,8 +685,8 @@ target_changed	wts_1_34	992	66	2	ཁང	khun	khuṅ		source_compatible_structure
 target_changed	wts_1_34	999	202	2	ཀོང	gon	goṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 category_changed	wts_35_51	1050	12	2	གཡང	g.yan	g.yaṅ	g.yaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཕྱུ་གཡང་ phywa g.yan auch phya g.yari Glück;
 target_changed	wts_35_51	1084	2	1	འཕྲང	phan	phaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"འཕྲང་ ""phan fur. zu Uphen werfen, schleu-"
-category_changed	wts_35_51	1108	42	1	འཕྱོང	phyon	phyoṅ	phyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	"འཕྱོང་ ""phyon"
-category_changed	wts_35_51	1108	76	1	འཕྱོང	phyon	phyoṅ	phyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
+disappeared	wts_35_51	1108	42	1	འཕྱོང	phyon	phyoṅ		source_compatible_insufficient_evidence			"འཕྱོང་ ""phyon"
+disappeared	wts_35_51	1108	76	1	འཕྱོང	phyon	phyoṅ		source_compatible_insufficient_evidence			"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
 target_changed	wts_35_51	1111	15	1	འཕྲང	phran	phraṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	འཕྲང་འཕྲེང་ /phran phreṅ Verlangen.
 target_changed	wts_35_51	23	1	1	གདུང	odun	oduṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"གདུང་ ""odun"
 target_changed	wts_35_51	379	52	2	ཚང	ishah	ishaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.

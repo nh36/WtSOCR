@@ -74,21 +74,21 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 ཆུང	ch	no_anchor_clean_source_shape		run	chuṅ:133; ruṅ:1			སྟག་འུ་ཆུང་ stag u ch
 ཉུང	nun	no_anchor_clean_source_shape		run	ñuṅ:4			ཉུང་ཀར་ nun kar [/7//77.4 kar.
 ཉུང	run	no_anchor_clean_source_shape		nun	ñuṅ:4			ཁ་ཉུང་ kha run wortkarg.
-ཏང	tin	no_anchor_clean_source_shape			taṅ:5			ཆུ་ཏང་རན chu tin ron npr. eine Nägini.
+ཏང	tin	no_anchor_clean_source_shape			taṅ:6			ཆུ་ཏང་རན chu tin ron npr. eine Nägini.
 ཏིང	tun	no_anchor_clean_source_shape			tiṅ:17			ཏིང་ངེ་འཛིན་་ tun ne ’dzin ...
-ཐང	lhan	no_anchor_clean_source_shape		Ithon;than;thin;thon	thaṅ:92			ཐང་ཆོད་ lhan chod
-ཐང	thin	no_anchor_clean_source_shape		Ithon;lhan;than;thon	thaṅ:92			ཐང་ཤང་ thin sin ein blauer Farbstoff.
-ཐང	thon	no_anchor_clean_source_shape		Ithon;lhan;than;thin	thaṅ:92			ང་ཐང་ thon thon
+ཐང	lhan	no_anchor_clean_source_shape		Ithon;thin;thon	thaṅ:93			ཐང་ཆོད་ lhan chod
+ཐང	thin	no_anchor_clean_source_shape		Ithon;lhan;thon	thaṅ:93			ཐང་ཤང་ thin sin ein blauer Farbstoff.
+ཐང	thon	no_anchor_clean_source_shape		Ithon;lhan;thin	thaṅ:93			ང་ཐང་ thon thon
 དང	buddh	no_anchor_clean_source_shape		dangon;dun	daṅ:109; rkaṅ:1			T དང buddh. Gemeinde.
 དང	dangon	no_anchor_clean_source_shape		buddh;dun	daṅ:109; rkaṅ:1			དང་གོང་ dangon in thugs kyi — Brust.
 དང	dun	no_anchor_clean_source_shape		buddh;dangon	daṅ:109; rkaṅ:1			དགན་དང་ dgun dun \dgon dun.
 དཔང	dban	no_anchor_clean_source_shape			dpaṅ:10			དགའ་རབ་དཔང་རམྱག་ dga’ rab dban phyug
 དུང	drun	no_anchor_clean_source_shape			duṅ:37			ཐོག་དུང་ thog drun hoch und niedrig; Höhe.
-ནིང	manin	no_anchor_clean_source_shape		nin	niṅ:1; miṅ:1			"མ་ནིང་ཕྲ Em"" manin phrag dog ..."
-ཕང	pan	no_anchor_clean_source_shape			phaṅ:6; pbaṅ:1; pphaṅ:1; phyuṅ:1			"མ་ཕང་ ""ma pan feine Spindel."
+ནིང	manin	no_anchor_clean_source_shape			niṅ:2; miṅ:1			"མ་ནིང་ཕྲ Em"" manin phrag dog ..."
+ཕང	pan	no_anchor_clean_source_shape			phaṅ:7; pbaṅ:1; pphaṅ:1; phyuṅ:1			"མ་ཕང་ ""ma pan feine Spindel."
 ཕུང	ph	no_anchor_clean_source_shape			phuṅ:37; dpuṅ:2; pbuṅ:1			ཕུང་གཡོ་བ་ ph g.yoba Verleumdung, Intrige.
-ཕྱང	byan	no_anchor_clean_source_shape		phyun	phyaṅ:9; pyaṅ:1; pphyaṅ:1			།ཁ་ཕྱང་བ་ kha byan ba
-ཕྱང	phyun	no_anchor_clean_source_shape		byan	phyaṅ:9; pyaṅ:1; pphyaṅ:1			།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
+ཕྱང	byan	no_anchor_clean_source_shape		phyun	phyaṅ:11; pyaṅ:1; pphyaṅ:1			།ཁ་ཕྱང་བ་ kha byan ba
+ཕྱང	phyun	no_anchor_clean_source_shape		byan	phyaṅ:11; pyaṅ:1; pphyaṅ:1			།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
 ཕྱིང	pyih	no_anchor_clean_source_shape			phyiṅ:14; ppyiṅ:1; pbyiṅ:1			ཕྱིང་ pyih lphyin.
 བགྲང	beran	no_anchor_clean_source_shape			bgraṅ:9			བགྲང་ beran
 བང	Rhan	no_anchor_clean_source_shape		byun;khan;than;thun	baṅ:14; dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1			།བང་བྱུ་ Rhan bu Häuschen, kleine Behausung.
@@ -132,10 +132,10 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 རེངས	auchmoren	no_anchor_clean_source_shape			reṅs:2			མོ་རེངས།་ morens auchmoren, mo hreris allein-
 རྐང	bran	no_anchor_clean_source_shape		ran	rkaṅ:107; rkyaṅ:1			བའུ་བང་རྐང་གཅུག་ lhe u bran rkan geig ein für
 རྐང	ran	no_anchor_clean_source_shape		bran	rkaṅ:107; rkyaṅ:1			རྐང་དྲུག་ ran ing ep
-རྐྱང	Ryan	no_anchor_clean_source_shape		rgyan	rkyaṅ:24; rkaṅ:1			རྐྱང་ཟླ་ Ryan zla.
-རྐྱང	rgyan	no_anchor_clean_source_shape		Ryan	rkyaṅ:24; rkaṅ:1			འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
-རྒྱང	igyan	no_anchor_clean_source_shape		rgyon	rgyaṅ:13			དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
-རྒྱང	rgyon	no_anchor_clean_source_shape		igyan	rgyaṅ:13			རྒྱང་ rgyon
+རྐྱང	Ryan	no_anchor_clean_source_shape		rgyan	rkyaṅ:26; rkaṅ:1			རྐྱང་ཟླ་ Ryan zla.
+རྐྱང	rgyan	no_anchor_clean_source_shape		Ryan	rkyaṅ:26; rkaṅ:1			འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
+རྒྱང	igyan	no_anchor_clean_source_shape		rgyon	rgyaṅ:14			དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
+རྒྱང	rgyon	no_anchor_clean_source_shape		igyan	rgyaṅ:14			རྒྱང་ rgyon
 རྙིང	räin	no_anchor_clean_source_shape			riṅ:1			ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
 རྟིང	yein	no_anchor_clean_source_shape			rtiṅ:8			རྟིང་འབྲང་བ་ yein ’braṅ ba
 རྨང	rlun	no_anchor_clean_source_shape			rmaṅ:6; maṅ:1			ཐལ་རྨང་ thal rlun Sandsturm.

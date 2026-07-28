@@ -1010,7 +1010,8 @@ wts_35_51	884	3	1	ཕང	pphaṅ	base_provenance_unverified	pphaṅ	No direct au
 wts_35_51	884	8	1	ཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕང་སྟོད་ phaṅ stod Oberkörper.
 wts_35_51	884	12	1	ཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕང་མབྲོད།། phaṅ mthos äußerst hoch.
 wts_35_51	884	15	1	ཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕང་པ་ phaṅ pa.
-wts_35_51	884	19	2	ཕུང	phuṅ	reviewed_exact_final_ng	phuh	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	ཕང་ཕུང་ phani phuṅ Haufen; ~ byed aufhäufen.
+wts_35_51	884	19	1	ཕང	phaṅ	reviewed_exact_final_ng	phani	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_ni_ng_phang_20260728	ཕང་ཕུང་ phaṅ phuṅ Haufen; ~ byed aufhäufen.
+wts_35_51	884	19	2	ཕུང	phuṅ	reviewed_exact_final_ng	phuh	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	ཕང་ཕུང་ phaṅ phuṅ Haufen; ~ byed aufhäufen.
 wts_35_51	884	32	1	བངས	phaṅs	base_provenance_unverified	phaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བངས། phaṅs auch 'phans.
 wts_35_51	889	44	3	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕན་པ་དང་བདེ་བ་ phan pa daṅ bde ba lphan bde.
 wts_35_51	902	12	1	ཕྲིང	phiṅ	base_provenance_unverified	phiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྲིང་ཆང་ phiṅ chaṅ ein Mönchsschal, vgl. chin.
@@ -1086,7 +1087,9 @@ wts_35_51	966	42	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshani	reviewed_tibeta
 wts_35_51	966	42	3	མང	maṅ	base_provenance_unverified	maṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཚང་མང་བ་ phyag tshaṅ maṅ ba auch phyag
 wts_35_51	971	9	2	ཤིང	siṅ	base_provenance_unverified	siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱག་ཤིང་ phyag siṅ Stock.
 wts_35_51	972	21	3	ང	siṅ	base_provenance_unverified	siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱགས་ཤི ང་ phya gs siṅ
-wts_35_51	972	40	2	བཟུང	bzuṅ	base_provenance_unverified	bzuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་བཟུང་ phyani bzuṅ
+wts_35_51	972	28	1	ཕྱང	phyaṅ	reviewed_exact_final_ng	phyani	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_ni_ng_phyang_20260728	ཕྱང་ངེ་བ་ phyaṅ he ba herabhāngend.
+wts_35_51	972	40	1	ཕྱང	phyaṅ	reviewed_exact_final_ng	phyani	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_ni_ng_phyang_20260728	ཕྱང་བཟུང་ phyaṅ bzuṅ
+wts_35_51	972	40	2	བཟུང	bzuṅ	base_provenance_unverified	bzuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་བཟུང་ phyaṅ bzuṅ
 wts_35_51	972	48	1	ཕྱང	pphyaṅ	base_provenance_unverified	pphyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
 wts_35_51	972	49	1	ཕྱང	phyaṅ	base_provenance_unverified	phyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་ཕྱང་བ་ phyaṅ phyaṅ ba herabhāngend.
 wts_35_51	972	49	2	ཕྱང	phyaṅ	base_provenance_unverified	phyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱང་ཕྱང་བ་ phyaṅ phyaṅ ba herabhāngend.
@@ -1142,6 +1145,7 @@ wts_35_51	1016	28	2	འོང	oṅ	other_postprocess	oñ	confusable_to_headword	
 wts_35_51	1016	45	2	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྲེར་ཡང་ phbyir yaṅ wieder, wiederum.
 wts_35_51	1019	59	2	ཀྱང	kyaṅ	base_provenance_unverified	kyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིས་ཀྱང་མི་སྤོང་ phyis kyaṅ mi spoṅ nicht ablas-
 wts_35_51	1019	59	4	སྤོང	spoṅ	base_provenance_unverified	spoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིས་ཀྱང་མི་སྤོང་ phyis kyaṅ mi spoṅ nicht ablas-
+wts_35_51	1022	1	3	སྒང	sgaṅ	reviewed_exact_final_ng	sgani	reviewed_tibetan_exact_ocr_signature	feature_complete_stem_plus_conditioned_final_ni_ng_sgang_20260728	ཕྱུག་པོ་སྒང་དཀར་་ phyug po sgaṅ dkar
 wts_35_51	1023	34	2	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱུགས་ཆུང་ phyugs chuṅ auch phyugs cun, phyugs
 wts_35_51	1024	25	2	ཕྱུང	phyuṅ	base_provenance_unverified	phyuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱུགས་ཕྱུང་ phyugs phyuṅ Tphyngs ch.
 wts_35_51	1024	43	1	ཕྱུང	phbyuṅ	base_provenance_unverified	phbyuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱུང་ phbyuṅ
@@ -1212,6 +1216,8 @@ wts_35_51	1103	38	1	འཕྱང	phyaṅ	base_provenance_unverified	phyaṅ	No d
 wts_35_51	1106	23	1	འཕྱིང	phyiṅ	base_provenance_unverified	phyiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕྱིང་པ་ phyiṅ pa Tphyin pa.
 wts_35_51	1106	40	1	འཕྱིང	phyiṅ	base_provenance_unverified	phyiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕྱིང་ཡུལ་ phyiṅ yul npr. eine Region.
 wts_35_51	1106	46	2	སང	saṅ	base_provenance_unverified	saṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕྱིང་སང་ ''phyiṅ saṅ san.
+wts_35_51	1108	42	1	འཕྱོང	phyoṅ	reviewed_exact_final_ng	phyon	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_n_ng_aphyong_20260728	"འཕྱོང་ ""phyoṅ"
+wts_35_51	1108	76	1	འཕྱོང	phyoṅ	reviewed_exact_final_ng	phyon	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_n_ng_aphyong_20260728	"འཕྱོང་ ""phyoṅ auch 'phyons aufhängen, vgl."
 wts_35_51	1109	8	1	འཕྱོང	phyoṅ	base_provenance_unverified	phyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འཕྱོང་རྒྱས་ phyoṅ rgyas auch phyoṅs rgyas npr
 wts_35_51	1109	38	1	འཕྱོངས	phyoṅs	base_provenance_unverified	phyoṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"འཕྱོངས phyoṅs ] ' ""/)/3/0/?,"
 wts_35_51	1111	15	2	འཕྲེང	phreṅ	reviewed_exact_final_ng	phren	reviewed_tibetan_exact_final_ng_consensus	tibetan_aphreng_consensus_batch_20260726	འཕྲང་འཕྲེང་ /phran phreṅ Verlangen.
