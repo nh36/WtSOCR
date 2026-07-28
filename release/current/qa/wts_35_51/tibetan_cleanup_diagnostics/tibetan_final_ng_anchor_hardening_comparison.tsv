@@ -666,7 +666,7 @@ target_changed	wts_35_51	379	52	2	ཚང	ishah	ishaṅ		source_compatible_insuff
 target_changed	wts_35_51	421	41	10	སྙིང	sth	stṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"auch der Himmelsfluß"" (brDa); ha' chn bo ནམ་མཁའི་སྙིང་པོ nam mkha'i sth po auch nam"
 target_changed	wts_35_51	428	20	2	འཚོང	ishoh	ishoṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ནམ་འཚོང་ nam 'ishoh auch nam tsoṅ, nam
 category_changed	wts_35_51	499	11	2	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གནམ་དགུང་ gnam dgun.
-category_changed	wts_35_51	503	18	3	སྲོང	sroh	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_dominant_consensus	16	གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
+disappeared	wts_35_51	503	18	3	སྲོང	sroh	sroṅ		source_compatible_insufficient_evidence			གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
 category_changed	wts_35_51	554	22	1	རྣང	rnan	rnaṅ	rnaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	"རྣང་ ""rnan Bereich, Feld, Zwischenraum."
 target_changed	wts_35_51	689	69	2	གསུང	gsuṅń	gsuṅń		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana
 target_changed	wts_35_51	69	66	3	འབྲང	byun	byuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"བདད་རྩེའི་འབྲང་གནས་ bdud risi'i ""byun gnas"

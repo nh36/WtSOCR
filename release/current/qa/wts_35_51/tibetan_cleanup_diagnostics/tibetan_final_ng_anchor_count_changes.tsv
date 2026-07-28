@@ -1,4 +1,3 @@
 volume	page	line	token_index	tibetan_syllable	source_latin_token	old_target	new_supported_target	old_anchor_count	new_anchor_count	audit_conclusion	context_excerpt
-wts_35_51	503	18	3	སྲོང	sroh	sroṅ	sroṅ	1	16	valid_anchor_added	གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
 wts_35_51	689	69	2	གསུང	gsuṅń	gsuṅń		1	0	malformed_internal_ng_anchor_removed	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana
 wts_35_51	737	37	1	དཔུང	dpuṅń	dpuṅń		1	0	malformed_internal_ng_anchor_removed	དཔུང་ 'dpuṅń

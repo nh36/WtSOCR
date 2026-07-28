@@ -6428,3 +6428,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 881	47	4564	headword_line	sih	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཕག་གི་ཤིང་རྟ་ phag gi sih rta
 839	75	4339	headword_line	sprah	spraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.
 826	11	4252	headword_line	gźuń	gźuṅ	A	reviewed_same_tibetan_target_final_nasal_only	1	སྤྱི་གཞུང་ spyi gźuń Regierung.
+503	18	2556	tibetan_only	sroh	sroṅ	A	reviewed_same_tibetan_target_final_nasal_only	1	གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.

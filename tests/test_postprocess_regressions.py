@@ -3276,6 +3276,25 @@ class PostprocessRegressionTests(unittest.TestCase):
             [row["to_token"] for row in changes].count("Zaṅ"), 2
         )
 
+    def test_reviewed_srong_target_propagates_only_to_exact_sroh_row(self) -> None:
+        lines = {
+            (503, 18): "གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.",
+            (900, 1): "unreviewed sroh spoh spon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn(
+            "གནམ་རི་སྲོང་བཙན་ gnam ri sroṅ bisan Kurzf.",
+            corrected,
+        )
+        self.assertIn("unreviewed sroh spoh spon control", corrected)
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(
+            changes[0]["reason"],
+            "reviewed_same_tibetan_target_final_nasal_only",
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

@@ -603,6 +603,7 @@ wts_35_51	499	15	2	རྒྱང	rgyaṅ	other_postprocess	rgyañ	confusable_to_h
 wts_35_51	501	27	2	མཐོང	mthoṅ	base_provenance_unverified	mthoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གནམ་མཐོང་ gnam mthoṅ Lichthof.
 wts_35_51	501	39	2	འཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གནམ་འཕང་ gnam 'phaṅ
 wts_35_51	501	70	2	འཕང	phaṅ	base_provenance_unverified	phaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གནམ་འཕང་ gnam 'phaṅ auch gnam 'phans Hö-
+wts_35_51	503	18	3	སྲོང	sroṅ	reviewed_exact_final_ng	sroh	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	གནམ་རི་སྲོང་བཙན་ gnam ri sroṅ bisan Kurzf.
 wts_35_51	503	79	2	ལངས	laṅs	base_provenance_unverified	laṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གནམ་ལངས་པ་ gnam laṅs pa Tagesanbruch,
 wts_35_51	504	43	3	བྱང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	གནམ་ལྷ་བྱང་ཆུབ་ gnam lha byaṅ chub
 wts_35_51	505	1	3	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	"གནམ་ལྷ་བྱང་སྨན་་ ""་ gram lba byaṅ sman"
