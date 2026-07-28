@@ -143,40 +143,40 @@ newly_discovered	wts_1_34	267	52	1	ཁུང	Rhun				source_compatible_no_anchor
 newly_discovered	wts_1_34	269	66	2	བསླང	bslan		bslaṅ		source_compatible_single_anchor	1	ཁུར་བསླང་ངོ་ khur bslan no verbale Verstöße
 category_changed	wts_1_34	270	1	2	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁེ་ཀྱོང་ khe gyon
 category_changed	wts_1_34	270	3	2	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
-category_changed	wts_1_34	275	173	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
+disappeared	wts_1_34	275	173	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
 newly_discovered	wts_1_34	275	182	1	ཁོང	kbon		kboṅ		source_compatible_single_anchor	1	ཁོང་ kbon;
-category_changed	wts_1_34	276	1	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སྐེམ་པ་ khon skem pa
-category_changed	wts_1_34	276	105	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	།ཁོང་ཏ་ khon ta
-category_changed	wts_1_34	276	114	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ཏ་ khon ta pron. 3. pers.
-category_changed	wts_1_34	276	120	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་དྭ་སྐྱིལ་ khon du skyil 1skyil 3.
-category_changed	wts_1_34	276	121	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ད་བཅུག་ khon du bcug etw. hineingeben,
-category_changed	wts_1_34	276	131	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་དྲ་ཆུད་ khon du chud auch khons su chud
-category_changed	wts_1_34	276	157	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་མ་ khon ma
-category_changed	wts_1_34	276	169	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ནོང་ khon non [divin.] ein Jahrgang.
+disappeared	wts_1_34	276	1	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སྐེམ་པ་ khon skem pa
+disappeared	wts_1_34	276	105	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			།ཁོང་ཏ་ khon ta
+disappeared	wts_1_34	276	114	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ཏ་ khon ta pron. 3. pers.
+disappeared	wts_1_34	276	120	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་དྭ་སྐྱིལ་ khon du skyil 1skyil 3.
+disappeared	wts_1_34	276	121	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ད་བཅུག་ khon du bcug etw. hineingeben,
+disappeared	wts_1_34	276	131	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་དྲ་ཆུད་ khon du chud auch khons su chud
+disappeared	wts_1_34	276	157	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མ་ khon ma
+disappeared	wts_1_34	276	169	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ནོང་ khon non [divin.] ein Jahrgang.
 newly_discovered	wts_1_34	276	175	1	ཁོང	ikhon				source_compatible_no_anchor	0	ཁོང་པ་ ikhon pa 1'khon.
-category_changed	wts_1_34	276	177	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་པ་ ’khon pa das Innere, Körperinnere.
-category_changed	wts_1_34	276	192	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་འྲབས་ khon ’bras Abszeß, Tumor.
-category_changed	wts_1_34	276	206	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་མ་ khon ma auch kho ma eine Zimbel.
-category_changed	wts_1_34	276	32	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
-category_changed	wts_1_34	276	39	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
+disappeared	wts_1_34	276	177	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་པ་ ’khon pa das Innere, Körperinnere.
+disappeared	wts_1_34	276	192	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་འྲབས་ khon ’bras Abszeß, Tumor.
+disappeared	wts_1_34	276	206	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མ་ khon ma auch kho ma eine Zimbel.
+disappeared	wts_1_34	276	32	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
+disappeared	wts_1_34	276	39	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
 newly_discovered	wts_1_34	276	51	1	ཁང	khon				source_compatible_no_anchor	0	།ཁང་།ཁྲ་ khon khro auch khon khro ba Zorn,
-category_changed	wts_1_34	276	77	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ འཁྱལ་ khon 'khyul Tkhon khyul.
-category_changed	wts_1_34	276	79	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་གླུ་ khon glu Lockruf.
+disappeared	wts_1_34	276	77	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ འཁྱལ་ khon 'khyul Tkhon khyul.
+disappeared	wts_1_34	276	79	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་གླུ་ khon glu Lockruf.
 target_changed	wts_1_34	276	92	1	ཁོང	Khon	khoṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁོང་སྒྲིལ་ Khon sgril Fesseln.
-category_changed	wts_1_34	276	94	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་གཅོང་ khon gcon.
-category_changed	wts_1_34	277	1	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་མོ་ khon mo
-category_changed	wts_1_34	277	11	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
+disappeared	wts_1_34	276	94	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་གཅོང་ khon gcon.
+disappeared	wts_1_34	277	1	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མོ་ khon mo
+disappeared	wts_1_34	277	11	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
 category_changed	wts_1_34	277	188	2	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོམ་ཏིང་ khom tin tiefsitzend.
-category_changed	wts_1_34	277	20	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
-category_changed	wts_1_34	277	28	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སིང་ khon sin I\khon sen Schlucht.
-category_changed	wts_1_34	277	28	2	སིང	sin	siṅ	siṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སིང་ khon sin I\khon sen Schlucht.
-category_changed	wts_1_34	277	30	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སུབས་ khon subs Anhang, Ergänzung.
+disappeared	wts_1_34	277	20	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
+disappeared	wts_1_34	277	28	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སིང་ khon sin I\khon sen Schlucht.
+category_changed	wts_1_34	277	28	2	སིང	sin	siṅ	siṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
+disappeared	wts_1_34	277	30	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སུབས་ khon subs Anhang, Ergänzung.
 newly_discovered	wts_1_34	277	35	1	ཁང	khon				source_compatible_no_anchor	0	།ཁང་སང་ khon sen auch khon sin, khon gsen
 newly_discovered	wts_1_34	277	35	2	སང	sen				source_compatible_no_anchor	0	།ཁང་སང་ khon sen auch khon sin, khon gsen
-category_changed	wts_1_34	277	51	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སན་ khon sran geduldig.
-category_changed	wts_1_34	277	57	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་གསེང་ khon gsen Tkhon sen.
-category_changed	wts_1_34	277	65	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ལྷོད་ khon lhod geduldig.
-category_changed	wts_1_34	277	8	1	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་མོ་ khon mo wildes Yak.
+disappeared	wts_1_34	277	51	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སན་ khon sran geduldig.
+disappeared	wts_1_34	277	57	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་གསེང་ khon gsen Tkhon sen.
+disappeared	wts_1_34	277	65	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ལྷོད་ khon lhod geduldig.
+disappeared	wts_1_34	277	8	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མོ་ khon mo wildes Yak.
 newly_discovered	wts_1_34	280	44	3	འབུང	thun				source_compatible_no_anchor	0	ཁྱད་པར་འབུང་ khyad par ’thun Bez. für Mond.
 newly_discovered	wts_1_34	287	69	1	ཀྱང	khyun				source_compatible_no_anchor	0	ཀྱང་སྡེར་ khyun sder eine Heilpflanze.
 newly_discovered	wts_1_34	287	97	1	ཁུང	khyun				source_compatible_no_anchor	0	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
@@ -367,8 +367,8 @@ newly_discovered	wts_1_34	535	152	3	བྱང	byun		byuṅ		source_compatible_no
 newly_discovered	wts_1_34	535	160	3	འགྱང	byun				source_compatible_no_anchor	0	"ངེས་པར་འགྱང་ nes par ""byun"
 newly_discovered	wts_1_34	535	178	3	འབྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ངེས་པར་འབྱང་ nes par ’byun pf. Tnes par byun
 category_changed	wts_1_34	535	66	3	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
-category_changed	wts_1_34	54	164	2	ཤང	San	Saṅ	Saṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
-category_changed	wts_1_34	54	164	3	ཁོང	khon	khoṅ	khoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
+category_changed	wts_1_34	54	164	2	ཤང	San	Saṅ	Saṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིམ་ཤང ཁོང་ཅོ kim San khoṅ co, kim Sin kon co,
+disappeared	wts_1_34	54	164	3	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
 newly_discovered	wts_1_34	54	168	2	ཤེང	śen				source_compatible_no_anchor	0	ཀིམ་ཤེང་ཀོང་ཅོ་ kim śen koṅ co, auch kim sen khon
 category_changed	wts_1_34	54	18	2	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིང་ཀང་ kiṅ kan, auch kan kiṅ, kan dan kiṅ, rkani
 category_changed	wts_1_34	54	45	2	ཅང	can	caṅ	caṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིང་ཅང་ཧྭ་ kiṅ can hu ¦/07/7 jan hü.

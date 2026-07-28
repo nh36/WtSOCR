@@ -5943,7 +5943,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 54	159	451	other			none	0	0	0	0	43
 54	161	452	headword_line	ཀིའུ་ཛུང་	ki’u dzun	high	2	0	0	0	ཀིའུ་ཛུང་ ki’u dzun
 54	163	452	tibetan_only	༡༩༧		none	0	0	0	0	༡༩༧ 7 PER . . 2 .
-54	164	453	headword_line	ཀིམ་ཤང ཁོང་ཅོ	khon	high	1	2	0	0	ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
+54	164	453	headword_line	ཀིམ་ཤང ཁོང་ཅོ	khon	high	1	2	0	0	ཀིམ་ཤང ཁོང་ཅོ kim San khoṅ co, kim Sin kon co,
 54	166	453	german_prose			none	0	1	0	0	kim Sin kon jo \kim sen kon co.
 54	168	454	headword_line	ཀིམ་ཤེང་ཀོང་ཅོ་	śen koṅ	high	2	1	0	0	ཀིམ་ཤེང་ཀོང་ཅོ་ kim śen koṅ co, auch kim sen khon
 54	170	454	latin_other			none	1	0	0	0	co, kim 427 khon co, kim sin kon
@@ -38592,7 +38592,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 275	168	3662	german_prose_with_translit			none	4	3	0	0	Lex. - Sig = dgag par bya dgos na - Sig „wenn
 275	169	3662	german_prose			none	0	1	0	0	etwas verhindert werden muß, verhindere!“
 275	171	3662	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-275	173	3663	headword_line	ཁོང་	khon	high	4	1	0	0	ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
+275	173	3663	headword_line	ཁོང་	khon	high	4	1	0	0	ཁོང་ 'khoṅ auch khoṅ pa pron. 3. pers. sing.
 275	175	3663	other			none	0	0	0	0	er, 516, es.
 275	177	3663	german_prose_with_translit			none	2	6	0	0	bde skyid süan gsum - la yod „er hat Wohlergehen, Glück und Ansehen, die drei“
 275	180	3663	other			none	0	0	0	0	67
@@ -38634,7 +38634,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 275	228	3663	german_prose_with_translit			none	1	4	0	0	1.48); 977:7 bkag - myos (metr.) „unterdrückt man den Schlaf, ist man benom-
 275	230	3663	german_prose_with_translit			none	3	1	0	0	men“ (Ahs 1.4.13c); khyod kyi - nas lcags
 275	231	3663	latin_other			none	2	0	0	0	kyi gtun ... ’byun bar gyur cig „aus deinem
-276	1	3664	headword_line	ཁོང་སྐེམ་པ་	khon	high	2	0	0	0	ཁོང་སྐེམ་པ་ khon skem pa
+276	1	3664	headword_line	ཁོང་སྐེམ་པ་	khon	high	2	0	0	0	ཁོང་སྐེམ་པ་ khoṅ skem pa
 276	3	3664	german_prose			none	0	3	0	0	Inneren soll eine eiserne Keule hervorkom-
 276	4	3664	german_prose_with_translit			none	3	1	0	0	men“ (\/141' 98,5); bdag gi ~ na ci Zig yod
 276	5	3664	german_prose			none	0	2	0	0	(metr.) „was in meinem Inneren (skt. antar
@@ -38659,11 +38659,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	27	3664	german_prose_with_translit			none	2	2	0	0	leerer Rumpf“ (brDa); ~ myags Sin phyir
 276	28	3664	german_prose_with_translit			none	3	4	0	0	’dzag pa = antahpütir avasrutah „innen faulig, [außen] tropfend“ (Mvy 9138, Abt. dge
 276	30	3664	latin_other			none	4	0	0	0	sbyon gi skyon du brtsi ba’i min).
-276	32	3665	headword_line	ཁོང་སྐེམ་པ་	khon	high	4	1	0	0	ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
+276	32	3665	headword_line	ཁོང་སྐེམ་པ་	khon	high	4	1	0	0	ཁོང་སྐེམ་པ་ khoṅ skem pa auch khoṅ skems pa
 276	34	3665	german_prose_with_translit			none	2	1	0	0	eine Krankheit, Auszehrung.
 276	36	3665	german_prose_with_translit			none	2	1	0	0	Lex. nad khon skem (¥. |. skems) pa = ksaya-
 276	37	3665	german_prose_with_translit			none	1	1	0	0	vyadhih (Mvy 9502).
-276	39	3666	headword_line	ཁོང་ཀྱལ་	khon khyul	high	4	2	0	0	ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
+276	39	3666	headword_line	ཁོང་ཀྱལ་	khon khyul	high	4	2	0	0	ཁོང་ཀྱལ་ khoṅ khyul auch khoṅ ’khyul Aufge-
 276	40	3666	german_prose			none	0	2	0	0	schlossenheit, Geduld.
 276	42	3666	german_prose_with_translit			none	3	2	0	0	khon lhod bzun thub - che (metr.) „geduldig, verläßlich und sehr aufgeschlossen“
 276	44	3666	latin_other			none	4	0	0	0	(gZi 2: 494,1); khon ’khyul can / blan ba’i
@@ -38691,8 +38691,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	72	3668	german_prose_with_translit			none	2	2	0	0	Befleckung“ (Dagy); - ba = pratighab (Mvy
 276	73	3668	german_prose_with_translit			none	4	1	0	0	1945); mi khra khro can ni Ze sdan che
 276	74	3668	german_prose_with_translit			none	3	4	0	0	ba’am ~ tsha ba „hitziger Mensch: sehr gehässig oder sehr zornig“ (KlonD 735,4).
-276	77	3669	headword_line	ཁོང་ འཁྱལ་	khon khyul Tkhon khyul	high	4	0	0	0	ཁོང་ འཁྱལ་ khon 'khyul Tkhon khyul.
-276	79	3670	headword_line	ཁོང་གླུ་	khon	high	1	1	0	0	ཁོང་གླུ་ khon glu Lockruf.
+276	77	3669	headword_line	ཁོང་ འཁྱལ་	khon khyul Tkhon khyul	high	4	0	0	0	ཁོང་ འཁྱལ་ khoṅ 'khyul Tkhon khyul.
+276	79	3670	headword_line	ཁོང་གླུ་	khon	high	1	1	0	0	ཁོང་གླུ་ khoṅ glu Lockruf.
 276	81	3670	latin_other			none	3	0	0	0	7 don imams ma dpyad pa’i / ri dags
 276	83	3670	german_prose_with_translit			none	1	4	0	0	(metr.) „eine Gazelle, die die Bedeutungen
 276	85	3670	german_prose_with_translit			none	1	4	0	0	der Lockrufe nicht prüft“ (Ps 28c); rnon pa
@@ -38701,7 +38701,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	90	3670	german_prose			none	0	2	0	0	Wild“ (Ps 320).
 276	92	3671	headword_line	ཁོང་སྒྲིལ་	Khon sgril	high	2	1	0	0	ཁོང་སྒྲིལ་ Khon sgril Fesseln.
 276	93	3671	german_prose_with_translit			none	2	2	0	0	Lex. /cags sgrog (brDa, Dagy, TTC).
-276	94	3672	headword_line	ཁོང་གཅོང་	khon	high	1	0	0	0	ཁོང་གཅོང་ khon gcon.
+276	94	3672	headword_line	ཁོང་གཅོང་	khon	high	1	0	0	0	ཁོང་གཅོང་ khoṅ gcon.
 276	95	3672	german_prose_with_translit			none	1	1	0	0	1. Sorge, Beunruhigung.
 276	96	3672	german_prose_with_translit			none	3	1	0	0	Lex. sems khral yod pa (TTC).
 276	97	3672	german_prose_with_translit			none	1	1	0	0	2. eine innere Krankheit.
@@ -38710,25 +38710,25 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	100	3673	german_prose_with_translit			none	2	2	0	0	Lex. lcags thag (brDa, Dagy).
 276	101	3674	headword_line	ཁོང་སྙོམ་	khon	high	3	2	0	0	ཁོང་སྙོམ་ khon $770777 auch khon säom pa faul,
 276	103	3674	german_prose			none	0	1	0	0	nachlässig, mutlos.
-276	105	3675	headword_line	།ཁོང་ཏ་	khon ta	high	2	0	0	0	།ཁོང་ཏ་ khon ta
+276	105	3675	headword_line	།ཁོང་ཏ་	khon ta	high	2	0	0	0	།ཁོང་ཏ་ khoṅ ta
 276	107	3675	german_prose_with_translit			none	4	2	0	0	Lex. - pa = le lo can „faul“ (brDa, Dagy); -
 276	108	3675	german_prose_with_translit			none	6	2	0	0	pa = yid mi dga’ ba’am sgyid lug pa „freudlos oder nachlässig“ (Liś 14,7); ~ ni yid
 276	110	3675	german_prose_with_translit			none	4	1	0	0	Zum pa / sgyid lug pa / yid 47 ba / sro 47 ba
 276	111	3675	german_prose_with_translit			none	2	2	0	0	„khon shom: zaghaft, nachlässig, träge,
 276	112	3675	german_prose			none	0	1	0	0	mutlos“ (KlonD 740,2).
-276	114	3676	headword_line	ཁོང་ཏ་	khon ta	high	2	0	0	0	ཁོང་ཏ་ khon ta pron. 3. pers.
+276	114	3676	headword_line	ཁོང་ཏ་	khon ta	high	2	0	0	0	ཁོང་ཏ་ khoṅ ta pron. 3. pers.
 276	116	3676	latin_other			none	3	0	0	0	~ bdag myi dga’ na „wenn es ihnen selbst
 276	117	3676	german_prose_with_translit			none	2	3	0	0	nicht genehm ist“ (Ini N53); ~ ni bkyon
 276	118	3676	german_prose_with_translit			none	2	1	0	0	phab ste „sie wurden bestraft“ (1111 S20).
-276	120	3677	headword_line	ཁོང་དྭ་སྐྱིལ་	khon du skyil	high	4	0	0	0	ཁོང་དྭ་སྐྱིལ་ khon du skyil 1skyil 3.
-276	121	3678	headword_line	ཁོང་ད་བཅུག་	khon du	high	3	0	0	0	ཁོང་ད་བཅུག་ khon du bcug etw. hineingeben,
+276	120	3677	headword_line	ཁོང་དྭ་སྐྱིལ་	khon du skyil	high	4	0	0	0	ཁོང་དྭ་སྐྱིལ་ khoṅ du skyil 1skyil 3.
+276	121	3678	headword_line	ཁོང་ད་བཅུག་	khon du	high	3	0	0	0	ཁོང་ད་བཅུག་ khoṅ du bcug etw. hineingeben,
 276	123	3678	german_prose			none	0	3	0	0	sich etw. in den Kopf setzen.
 276	125	3678	german_prose_with_translit			none	1	2	0	0	skyin par - la „man gebe es als Ersatz hin-
 276	126	3678	german_prose_with_translit			none	4	1	0	0	ein“ (Siddh 26.55); bsam pa jig rten pa’ che
 276	127	3678	german_prose_with_translit			none	2	2	0	0	thabs ~ nas „sie hatten sich als Gedanken
 276	128	3678	german_prose_with_translit			none	1	5	0	0	nur das Erlangen von weltlich Großem in
 276	129	3678	german_prose			none	0	3	0	0	den Kopf gesetzt“ (Mil 120,17).
-276	131	3679	headword_line	ཁོང་དྲ་ཆུད་	khon du	high	4	1	0	0	ཁོང་དྲ་ཆུད་ khon du chud auch khons su chud
+276	131	3679	headword_line	ཁོང་དྲ་ཆུད་	khon du	high	4	1	0	0	ཁོང་དྲ་ཆུད་ khoṅ du chud auch khons su chud
 276	133	3679	tibetan_only	པི		none	0	1	0	0	པི sich einprägen, erkennen, verste-
 276	135	3679	german_prose_with_translit			none	2	3	0	0	hen, beherrschen; vgl. Iyid khon du chud,
 276	136	3679	latin_other			none	3	0	0	0	\sems khon du chud.
@@ -38749,7 +38749,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	153	3680	latin_other			none	1	0	0	0	yon tan thams cad - „ich beherrschte alle
 276	154	3680	german_prose			none	0	3	0	0	temporären Qualitäten“ (Glr 60,26); ned
 276	155	3680	latin_other			none	4	0	0	0	rnams kyan thugs dam gyi khons su chud (¥.
-276	157	3681	headword_line	ཁོང་མ་	khon ma	high	2	0	0	0	ཁོང་མ་ khon ma
+276	157	3681	headword_line	ཁོང་མ་	khon ma	high	2	0	0	0	ཁོང་མ་ khoṅ ma
 276	159	3681	german_prose_with_translit			none	3	2	0	0	1. tshud) par mdzod cig „schließe bitte auch
 276	160	3681	german_prose			none	0	5	0	0	uns in deine Meditation mit ein!“ (Mil
 276	161	3681	german_prose_with_translit			none	4	3	0	0	117,4); de kho na 77/¢ ~ par mdzad „er erkannte die wahre Wirklichkeit“ (Tär 73,18).
@@ -38757,12 +38757,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	164	3681	german_prose_with_translit			none	7	2	0	0	2903); ~ pa = thugs su chud pa „sich einprägen“ (brDa, Dagy); bdag med pa - pas =
 276	166	3681	german_prose_with_translit			none	1	2	0	0	nairatmyädhigamät „infolge des Verstehens
 276	167	3681	german_prose			none	0	5	0	0	der Nichtexistenz eines Selbst“ (Mvy 783).
-276	169	3682	headword_line	ཁོང་ནོང་	khon	high	2	1	0	0	ཁོང་ནོང་ khon non [divin.] ein Jahrgang.
+276	169	3682	headword_line	ཁོང་ནོང་	khon	high	2	1	0	0	ཁོང་ནོང་ khoṅ non [divin.] ein Jahrgang.
 276	171	3682	latin_other			none	5	0	0	0	dban than ni / srog gi mar son - lo (metr.)
 276	172	3682	german_prose_with_translit			none	2	6	0	0	„ist das dban than die Mutter des srog, heißt
 276	173	3682	german_prose_with_translit			none	2	2	0	0	der Jahrgang khon non“ (Nagdel 38,2).
 276	175	3683	headword_line	ཁོང་པ་	ikhon pa	high	3	0	0	0	ཁོང་པ་ ikhon pa 1'khon.
-276	177	3684	headword_line	ཁོང་པ་	khon pa	high	2	3	0	0	ཁོང་པ་ ’khon pa das Innere, Körperinnere.
+276	177	3684	headword_line	ཁོང་པ་	khon pa	high	2	3	0	0	ཁོང་པ་ ’khoṅ pa das Innere, Körperinnere.
 276	179	3684	latin_other			none	7	0	0	0	lus sin tu tsha ba dan / ~ tsha ba dan / skom
 276	180	3684	german_prose_with_translit			none	2	4	0	0	dad che ba dan „ein sehr heißer Körper, ein
 276	181	3684	german_prose_with_translit			none	1	4	0	0	heißes Inneres, großer Durst“ (Siddh 5.4);
@@ -38773,7 +38773,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	188	3684	german_prose_with_translit			none	2	4	0	0	Lex. nan can „das Innere“ (brDa, Dagy); -
 276	189	3684	german_prose_with_translit			none	7	2	0	0	khog pa ’dra ste „khon pa ist wie khog pa ‚das
 276	190	3684	german_prose			none	0	2	0	0	Körperinnere‘“ (Bon 28,6).
-276	192	3685	headword_line	ཁོང་འྲབས་	khon	high	1	2	0	0	ཁོང་འྲབས་ khon ’bras Abszeß, Tumor.
+276	192	3685	headword_line	ཁོང་འྲབས་	khon	high	1	2	0	0	ཁོང་འྲབས་ khoṅ ’bras Abszeß, Tumor.
 276	194	3685	latin_other			none	5	0	0	0	» dan / bad kan dan tshil rgyas pa’i nad
 276	195	3685	german_prose_with_translit			none	1	5	0	0	„Abszesse, Schleim und die Krankheit der
 276	196	3685	german_prose_with_translit			none	2	1	0	0	Fettleibigkeit“ (Siddh 2.5); ~ skran dan
@@ -38783,29 +38783,29 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 276	202	3685	german_prose_with_translit			none	5	1	0	0	Lex. khon lhog dan / - nad do „khon lhog
 276	203	3685	german_prose_with_translit			none	2	3	0	0	und khon ’bras sind Krankheiten“ (Bon
 276	204	3685	other			none	0	0	0	0	28,7).
-276	206	3686	headword_line	ཁོང་མ་	khon ma	high	4	3	0	0	ཁོང་མ་ khon ma auch kho ma eine Zimbel.
+276	206	3686	headword_line	ཁོང་མ་	khon ma	high	4	3	0	0	ཁོང་མ་ khoṅ ma auch kho ma eine Zimbel.
 276	208	3686	german_prose_with_translit			none	3	1	0	0	gan dan kho ma dril chen (metr.) „gsan,
-277	1	3687	headword_line	ཁོང་མོ་	khon	high	1	0	0	0	ཁོང་མོ་ khon mo
+277	1	3687	headword_line	ཁོང་མོ་	khon	high	1	0	0	0	ཁོང་མོ་ khoṅ mo
 277	3	3687	german_prose			none	0	4	0	0	Zimbel und große Glocke“ (gZi 2: 343,5);
 277	4	3687	german_prose_with_translit			none	4	3	0	0	la la Zig ni ~ dril chen sgrog go „einige ließen
 277	5	3687	german_prose_with_translit			none	1	4	0	0	Zimbeln und große Glocken erklingen“
 277	6	3687	other			none	0	0	0	0	(2713: 7,4).
-277	8	3688	headword_line	ཁོང་མོ་	khon	high	1	1	0	0	ཁོང་མོ་ khon mo wildes Yak.
+277	8	3688	headword_line	ཁོང་མོ་	khon	high	1	1	0	0	ཁོང་མོ་ khoṅ mo wildes Yak.
 277	9	3688	german_prose			none	0	2	0	0	Lex. ’bron (Bon 28,5).
-277	11	3689	headword_line	ཁོང་ཡངས་པ་	khon	high	2	0	0	0	ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
+277	11	3689	headword_line	ཁོང་ཡངས་པ་	khon	high	2	0	0	0	ཁོང་ཡངས་པ་ khoṅ yans pa weitherzig, aufge-
 277	13	3689	other			none	0	0	0	0	schlossen.
 277	15	3689	german_prose_with_translit			none	3	2	0	0	Lex. dkyil (r. dkyel) che ba ni - „großmütig:
 277	16	3689	latin_other			none	4	0	0	0	khon yans pa“ (Liś 25,16); gu yans pa „auf-
 277	17	3689	german_prose_with_translit			none	1	1	0	0	geschlossen“ (brDa, Dagy); klon yans =
 277	18	3689	german_prose_with_translit			none	2	1	0	0	khon yans pa (Dagy).
-277	20	3690	headword_line	ཁོང་རང་	khon raṅ	high	2	0	0	0	ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
+277	20	3690	headword_line	ཁོང་རང་	khon raṅ	high	2	0	0	0	ཁོང་རང་ khoṅ raṅ pron. 3. pers. er, sie, es
 277	21	3690	other			none	0	0	0	0	selbst.
 277	23	3690	german_prose_with_translit			none	1	1	0	0	ral gri » la gtad pas „er übergab ihm selbst
 277	24	3690	german_prose_with_translit			none	1	3	0	0	das Schwert“ (Tär 159,3); ~ bod du ’byon
 277	25	3690	german_prose_with_translit			none	2	3	0	0	khar yan „auch als er selbst nach Tibet
 277	26	3690	german_prose			none	0	1	0	0	kam“ (Tär 191,4).
-277	28	3691	headword_line	ཁོང་སིང་	khon	high	2	2	0	0	ཁོང་སིང་ khon sin I\khon sen Schlucht.
-277	30	3692	headword_line	ཁོང་སུབས་	khon	high	3	0	0	0	ཁོང་སུབས་ khon subs Anhang, Ergänzung.
+277	28	3691	headword_line	ཁོང་སིང་	khon	high	2	2	0	0	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
+277	30	3692	headword_line	ཁོང་སུབས་	khon	high	3	0	0	0	ཁོང་སུབས་ khoṅ subs Anhang, Ergänzung.
 277	31	3692	german_prose_with_translit			none	1	1	0	0	Lex. kha snon (ITC).
 277	33	3692	other			none	0	0	0	0	jan rn
 277	35	3693	headword_line	།ཁང་སང་	khon	high	3	1	0	0	།ཁང་སང་ khon sen auch khon sin, khon gsen
@@ -38820,16 +38820,16 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 277	47	3693	german_prose_with_translit			none	1	3	0	0	„leeres Inneres oder Hohlraum“ (brDa);
 277	48	3693	german_prose_with_translit			none	3	1	0	0	khon gsen = khon bar ston pa „leerer Innen-
 277	49	3693	german_prose			none	0	3	0	0	oder Zwischenraum“ (Dagy).
-277	51	3694	headword_line	ཁོང་སན་	khon	high	1	0	0	0	ཁོང་སན་ khon sran geduldig.
+277	51	3694	headword_line	ཁོང་སན་	khon	high	1	0	0	0	ཁོང་སན་ khoṅ sran geduldig.
 277	52	3694	german_prose_with_translit			none	3	3	0	0	Lex. bzod pa can (brDa, ähnl. Dagy).
 277	54	3694	other			none	0	0	0	0	70
 277	56	3695	headword_line	ཁོངས་	khons	high	1	0	0	0	ཁོངས་ khons
-277	57	3696	headword_line	ཁོང་གསེང་	khon	high	2	0	0	0	ཁོང་གསེང་ khon gsen Tkhon sen.
+277	57	3696	headword_line	ཁོང་གསེང་	khon	high	2	0	0	0	ཁོང་གསེང་ khoṅ gsen Tkhon sen.
 277	59	3697	headword_line	ཁོང་ལྷོག་	khon	high	2	1	0	0	ཁོང་ལྷོག་ khon //909 eine Krankheit.
 277	61	3697	german_prose_with_translit			none	4	1	0	0	Lex. ~ dan / khon 'bras nad do „khon lhog
 277	62	3697	german_prose_with_translit			none	2	3	0	0	und khon ’bras sind Krankheiten“ (Bon
 277	63	3697	other			none	0	0	0	0	28,7).
-277	65	3698	headword_line	ཁོང་ལྷོད་	khon lhod	high	2	0	0	0	ཁོང་ལྷོད་ khon lhod geduldig.
+277	65	3698	headword_line	ཁོང་ལྷོད་	khon lhod	high	2	0	0	0	ཁོང་ལྷོད་ khoṅ lhod geduldig.
 277	67	3698	german_prose_with_translit			none	2	1	0	0	kha dam ~ bzun thub (metr.) „diskret, geduldig, verläßlich“ (2271 2: 494,1).
 277	70	3699	headword_line	ཁོངས་	khons	high	2	3	0	0	ཁོངས་ 'khons imp. zu Y’gens füllen; vgl.
 277	71	3699	latin_other			none	1	0	0	0	T’khens.

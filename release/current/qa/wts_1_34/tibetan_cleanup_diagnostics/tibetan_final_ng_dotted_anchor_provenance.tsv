@@ -32,6 +32,7 @@ wts_1_34	54	45	1	ཀིང	kiṅ	reviewed_exact_final_ng	kin	reviewed_tibetan_ex
 wts_1_34	54	47	1	ཀིང	kiṅ	reviewed_exact_final_ng	kin	reviewed_tibetan_exact_final_ng_consensus	tibetan_king_consensus_batch_20260726	ཀིང་ཤཾ་ kiṅ Si, auch ken śi, ken śe, ker Sin — chin.
 wts_1_34	54	70	1	ཀིང	kiṅ	reviewed_exact_final_ng	kin	reviewed_tibetan_exact_final_ng_consensus	tibetan_king_consensus_batch_20260726	ཀིང་ཤུ་ཀ་ kiṅ Su ka, auch ki su ka, kiṅ ka, ken
 wts_1_34	54	134	2	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	ཀིན་བྱང་དྷུ་ kin byaṅ hü !kin jan hu.
+wts_1_34	54	164	3	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཀིམ་ཤང ཁོང་ཅོ kim San khoṅ co, kim Sin kon co,
 wts_1_34	54	168	3	ཀོང	koṅ	reviewed_exact_final_ng	kon	reviewed_tibetan_exact_final_ng_consensus	tibetan_kong_consensus_batch_20260719	ཀིམ་ཤེང་ཀོང་ཅོ་ kim śen koṅ co, auch kim sen khon
 wts_1_34	54	191	3	ཕྲེང	phreṅ	reviewed_exact_final_ng	phren	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	ཀླིམྨི་ལིའི་ཕྲེང་བ་ kimmi li phreṅ ba eine Stadt in
 wts_1_34	54	214	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshan	reviewed_tibetan_exact_final_ng_consensus	tibetan_tshang_consensus_batch_20260726	ཀིའུ་ ཚང་ kin tshaṅ \ke’u tshan.
@@ -523,7 +524,33 @@ wts_1_34	269	32	2	མོང	moṅ	reviewed_exact_final_ng	mon	reviewed_tibetan_e
 wts_1_34	269	59	2	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཁུར་ཤིང་ khur siṅ hölzernes Tragegestell.
 wts_1_34	271	133	2	རྐྱང	rkyaṅ	reviewed_exact_final_ng	rkyan	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	ཁེར་རྐྱང་ kher rkyaṅ auch khe rkyaṅ allein.
 wts_1_34	274	45	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཁོ་རང་ kho raṅ pron. 3. pers. sing. er, sie, es.
-wts_1_34	277	20	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
+wts_1_34	275	173	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ 'khoṅ auch khoṅ pa pron. 3. pers. sing.
+wts_1_34	276	1	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སྐེམ་པ་ khoṅ skem pa
+wts_1_34	276	32	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སྐེམ་པ་ khoṅ skem pa auch khoṅ skems pa
+wts_1_34	276	39	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ཀྱལ་ khoṅ khyul auch khoṅ ’khyul Aufge-
+wts_1_34	276	77	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ འཁྱལ་ khoṅ 'khyul Tkhon khyul.
+wts_1_34	276	79	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་གླུ་ khoṅ glu Lockruf.
+wts_1_34	276	94	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་གཅོང་ khoṅ gcon.
+wts_1_34	276	105	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	།ཁོང་ཏ་ khoṅ ta
+wts_1_34	276	114	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ཏ་ khoṅ ta pron. 3. pers.
+wts_1_34	276	120	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་དྭ་སྐྱིལ་ khoṅ du skyil 1skyil 3.
+wts_1_34	276	121	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ད་བཅུག་ khoṅ du bcug etw. hineingeben,
+wts_1_34	276	131	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་དྲ་ཆུད་ khoṅ du chud auch khons su chud
+wts_1_34	276	157	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་མ་ khoṅ ma
+wts_1_34	276	169	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ནོང་ khoṅ non [divin.] ein Jahrgang.
+wts_1_34	276	177	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་པ་ ’khoṅ pa das Innere, Körperinnere.
+wts_1_34	276	192	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་འྲབས་ khoṅ ’bras Abszeß, Tumor.
+wts_1_34	276	206	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་མ་ khoṅ ma auch kho ma eine Zimbel.
+wts_1_34	277	1	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་མོ་ khoṅ mo
+wts_1_34	277	8	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་མོ་ khoṅ mo wildes Yak.
+wts_1_34	277	11	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ཡངས་པ་ khoṅ yans pa weitherzig, aufge-
+wts_1_34	277	20	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་རང་ khoṅ raṅ pron. 3. pers. er, sie, es
+wts_1_34	277	20	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཁོང་རང་ khoṅ raṅ pron. 3. pers. er, sie, es
+wts_1_34	277	28	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
+wts_1_34	277	30	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སུབས་ khoṅ subs Anhang, Ergänzung.
+wts_1_34	277	51	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སན་ khoṅ sran geduldig.
+wts_1_34	277	57	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་གསེང་ khoṅ gsen Tkhon sen.
+wts_1_34	277	65	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ལྷོད་ khoṅ lhod geduldig.
 wts_1_34	282	1	3	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཁྱབ་འཇུག་ཤིང་རྟ་ khyab jug siṅ rta
 wts_1_34	284	206	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	ཁྱིམ་ཕུང་ khyim phuṅ innerfamiliäre Streitig-
 wts_1_34	285	33	2	སྦྱོང	sbyoṅ	reviewed_exact_final_ng	sbyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_sbyong_consensus_batch_20260726	ཁྱིམ་སྦྱོང་ khyim sbyoṅ Bez. für Maus.

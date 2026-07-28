@@ -3211,6 +3211,24 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("མེ་དྲན་པ་ mi dran pa", collision_text)
         self.assertFalse(collision_changes)
 
+    def test_historical_witness_khong_is_lowercase_exactly_gated(self) -> None:
+        lines = {
+            (276, 1): "ཁོང་གཏོགས་ khon gtogs",
+            (276, 99): "ཁོང་སྙིང་ khon $/7/77 Fisenkette.",
+            (1400, 1): "unreviewed khon Khon kbon ikhon",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཁོང་གཏོགས་ khoṅ gtogs", corrected)
+        self.assertIn("ཁོང་སྙིང་ khon $/7/77 Fisenkette.", corrected)
+        self.assertIn("unreviewed khon Khon kbon ikhon", corrected)
+        self.assertTrue(changes)
+        self.assertTrue(all(
+            row["reason"] == "reviewed_tibetan_exact_final_ng_historical_witness"
+            for row in changes
+        ))
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

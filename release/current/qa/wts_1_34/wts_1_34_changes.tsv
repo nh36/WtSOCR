@@ -28798,3 +28798,33 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1303	12	13189	headword_line	dran	draṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
 1303	22	13190	headword_line	dran	draṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
 1303	37	13190	tibetan_only	dran	draṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་གསུམ་ dran gsum die drei Wahrheiten, vgl.
+54	164	454	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
+275	173	3710	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
+275	173	3710	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
+276	1	3711	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སྐེམ་པ་ khon skem pa
+276	32	3712	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
+276	32	3712	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
+276	39	3713	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
+276	39	3713	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
+276	77	3716	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ འཁྱལ་ khon 'khyul Tkhon khyul.
+276	79	3717	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་གླུ་ khon glu Lockruf.
+276	94	3719	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་གཅོང་ khon gcon.
+276	105	3722	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	།ཁོང་ཏ་ khon ta
+276	114	3723	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ཏ་ khon ta pron. 3. pers.
+276	120	3724	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་དྭ་སྐྱིལ་ khon du skyil 1skyil 3.
+276	121	3725	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ད་བཅུག་ khon du bcug etw. hineingeben,
+276	131	3726	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་དྲ་ཆུད་ khon du chud auch khons su chud
+276	157	3728	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་མ་ khon ma
+276	169	3729	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ནོང་ khon non [divin.] ein Jahrgang.
+276	177	3731	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་པ་ ’khon pa das Innere, Körperinnere.
+276	192	3732	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་འྲབས་ khon ’bras Abszeß, Tumor.
+276	206	3733	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་མ་ khon ma auch kho ma eine Zimbel.
+277	1	3734	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་མོ་ khon mo
+277	8	3735	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་མོ་ khon mo wildes Yak.
+277	11	3736	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
+277	20	3737	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
+277	28	3738	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སིང་ khon sin I\khon sen Schlucht.
+277	30	3739	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སུབས་ khon subs Anhang, Ergänzung.
+277	51	3741	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སན་ khon sran geduldig.
+277	57	3743	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་གསེང་ khon gsen Tkhon sen.
+277	65	3745	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ལྷོད་ khon lhod geduldig.

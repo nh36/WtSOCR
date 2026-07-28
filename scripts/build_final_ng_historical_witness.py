@@ -381,7 +381,8 @@ def build_reviewed_target_audit() -> list[dict[str, str]]:
                         if clean and not competing else "withhold"
                     ),
                     "sample_contexts": " || ".join(
-                        row["context_excerpt"] for row in clean[:3]
+                        row["context_excerpt"]
+                        for row in (clean if clean else family)[:3]
                     ),
                 }
             )

@@ -17,8 +17,8 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 ཁུང	Rhun	no_anchor_clean_source_shape		Felsh;khrun;khyun	khuṅ:36; kbuṅ:1			ཁུང་ཉལ་ Rhun nal.
 ཁུང	khrun	no_anchor_clean_source_shape		Felsh;Rhun;khyun	khuṅ:36; kbuṅ:1			ཁུང་ khrun resp. für chan.
 ཁུང	khyun	no_anchor_clean_source_shape		Felsh;Rhun;khrun	khuṅ:36; kbuṅ:1			ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
-ཁོང	Khon	no_anchor_clean_source_shape		ikhon;kbon;khon	khoṅ:1; kboṅ:1			ཁོང་སྒྲིལ་ Khon sgril Fesseln.
-ཁོང	ikhon	no_anchor_clean_source_shape		Khon;kbon;khon	khoṅ:1; kboṅ:1			ཁོང་པ་ ikhon pa 1'khon.
+ཁོང	Khon	no_anchor_clean_source_shape		ikhon;kbon;khon	khoṅ:28; kboṅ:1			ཁོང་སྒྲིལ་ Khon sgril Fesseln.
+ཁོང	ikhon	no_anchor_clean_source_shape		Khon;kbon;khon	khoṅ:28; kboṅ:1			ཁོང་པ་ ikhon pa 1'khon.
 ཁྱུང	kbyun	no_anchor_clean_source_shape		khrun	khyuṅ:4			ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 ཁྱུང	khrun	no_anchor_clean_source_shape		kbyun	khyuṅ:4			ཁྱུང་ཁྱུང་ khrun khrun
 གང	gon	no_anchor_clean_source_shape		Mannsh;gun	gaṅ:75			གང་སྐར་ gon skor
