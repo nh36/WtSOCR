@@ -1908,8 +1908,8 @@ wts_8_b	128	23	2	མིང	miṅ	transcription_integrity_pass	yes	no	sufficient	
 wts_8_b	128	33	1	བོན	bon	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	"བོན་ཞྭ་ bon Zwa ""Bon-Hut"", Bez. für eine"
 wts_8_b	128	33	2	ཞྭ	Zwa	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	"བོན་ཞྭ་ bon Zwa ""Bon-Hut"", Bez. für eine"
 wts_8_b	128	39	1	བོར	bor	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བོར་ bor
-wts_8_b	128	43	1	བོན	bon	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
-wts_8_b	128	43	2	གཞུང	gZuṅ	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
+wts_8_b	128	43	1	བོན	bon	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བོན་གཞུང་ bon gźuṅ Text der Bon-po.
+wts_8_b	128	43	2	གཞུང	gźuṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź;ང:ṅ	ź;ṅ		gźuṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	བོན་གཞུང་ bon gźuṅ Text der Bon-po.
 wts_8_b	128	49	1	བྲོར	bon	canonical_syllable_mismatch	no	yes	none	blocked		secure_positional_alignment						tibetan_proper_name	none	no	བྲོར་རི་ bon ri npr. ein Berg; — chen po dass.,
 wts_8_b	128	49	2	རི	ri	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						tibetan_proper_name	none	no	བྲོར་རི་ bon ri npr. ein Berg; — chen po dass.,
 wts_8_b	128	63	1	བོན	bon	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						tibetan_proper_name	none	no	བོན་རི་མགོ་དགུ་ bon ri mgo den npr. eine loka-

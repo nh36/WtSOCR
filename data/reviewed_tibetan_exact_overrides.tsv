@@ -5083,6 +5083,7 @@ wts_8_b	124	23	7	Lsdz-K	Lśdz-K	reviewed_siglum_exact_registry_canonicalization	
 wts_8_b	125	55	3	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
 wts_8_b	126	70	8	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	127	49	9	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
+wts_8_b	128	43	2	gZuṅ	gźuṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_root_zha_integrity_gzhung_batch_20260728	Exact གཞུང alignment; reviewed root-feature repair and canonical full target; no Latin-wide substitution.
 wts_8_b	130	58	6	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	130	58	6	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	130	58	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule

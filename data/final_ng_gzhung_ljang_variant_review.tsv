@@ -1,7 +1,7 @@
 record_type	volume	page	line	token_index	tibetan_syllable	source_or_current_token	supported_target	provenance	disposition	context_excerpt
 current_dotted_form	wts_1_34	111	3	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	ཀླད་གཞུང་ klad gźuṅ Rückenmark.
 current_dotted_form	wts_35_51	826	11	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	སྤྱི་གཞུང་ spyi gźuṅ Regierung.
-current_dotted_form	wts_8_b	128	43	2	གཞུང	gZuṅ	gZuṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
+current_dotted_form	wts_8_b	128	43	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	བོན་གཞུང་ bon gźuṅ Text der Bon-po.
 residual_source	wts_1_34	300	171	2	གཞུང	gun			manual_unresolved	ཁྲེལ་གཞུང་ khrel gun \khrel.
 current_dotted_form	wts_1_34	80	116	3	ལྗང	ldaṅ	ldaṅ	reviewed_exact_final_ng	explicit_user_correction	ཀུན་ནས་ལྗང་བ་ kun nas ldaṅ ba; vgl. \kun nas lari
 current_dotted_form	wts_1_34	750	80	1	ལྗང	ldaṅ	ldaṅ	reviewed_exact_final_ng	explicit_user_correction	"ལྗང་ ldaṅ ""jan."

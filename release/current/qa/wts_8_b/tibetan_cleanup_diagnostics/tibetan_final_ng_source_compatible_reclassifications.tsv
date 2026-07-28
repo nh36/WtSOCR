@@ -125,7 +125,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གདུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gduṅ:30; voṅ:1; gdunṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 གདུང	odun	odu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gduṅ:30; voṅ:1; gdunṅ:1	0	wts_35_51	target_unresolved_no_anchor	0
 གདོང	can	ca<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gdoṅ:45; edoṅ:1; ggdoṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
-གཞུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gźuṅ:2; gZuṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+གཞུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gźuṅ:3	0	wts_1_34	target_unresolved_no_anchor	0
 གསུང	gsuṅń	gsuṅ<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gsuṅ:9	0	wts_35_51	target_unresolved_no_anchor	0
 གོང	dgon	dgo<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		goṅ:54	1	wts_1_34	target_unresolved_no_anchor	0
 གོང	in	i<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		goṅ:54	0	wts_1_34	target_unresolved_no_anchor	0

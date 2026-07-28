@@ -408,7 +408,6 @@ tibetan_syllable	current_source	canonical_forms	outlier_category	canonical_evide
 གཞི	gi	gźi	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
 གཞི	gāi	gźi	single_diacritic_confusion	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	མ་གཞི་ ma gāi Grundlage, Basis.
 གཞི	maj	gźi	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	བག་གཞི་ bbag maj
-གཞུང	gZuṅ	gźuṅ	single_diacritic_confusion	explicit_user_reviewed	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
 གཞུང	gun	gźuṅ	canonical_target_known_but_edit_unclassified	explicit_user_reviewed	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	ཁྲེལ་གཞུང་ khrel gun \khrel.
 གཞུང	lokale	gźuṅ	canonical_target_known_but_edit_unclassified	explicit_user_reviewed	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	དབུས་གཞུང་ ddbus lokale Regierung, Zen-
 གཟན	Fettgebackenes	gzan	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	སྣོག་གཟན་ snoggzan Fettgebackenes, Gebäck.

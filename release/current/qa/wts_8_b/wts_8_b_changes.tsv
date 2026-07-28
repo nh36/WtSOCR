@@ -3035,3 +3035,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 207	32	1114	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ནྲ་གྱིས་བརླབ་པ་བཞི་ byin gis brlab pa bzi
 468	40	2545	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྱུང་འགྱུར་བཞི་ 'byuṅ 'gyur bZi Bez. für die
 491	17	2664	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྲས་བུ་བཞི་ 'bras bu bzi die vier aufeinander-
+128	43	645	headword_line	gZuṅ	gźuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བོན་གཞུང་ bon gZuṅ Text der Bon-po.

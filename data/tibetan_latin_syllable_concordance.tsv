@@ -1587,9 +1587,8 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 གཞུག	gźng	1	1	wts_9_m	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	སྤྲར་གཞུག་ smrar gźng tadeln.
 གཞུག	ug	1	2	wts_1_34	1	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1;unclear:1	marker_or_damage:1;secure_positional_alignment:1	blocked:2		yes:2	"ཆབ་གཞུག་ 7 gäug || ma mo dgu khri — (metr.) ""sie strahlt 90 000 སྤྲེ་གཞུག་ spregäug eine Pflanze, synon. Ire"
 གཞུགས	gāugs	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	ནང་གཞུགས་ naṅ gāugs Fūllung [einer Statue].
-གཞུང	gZuṅ	1	1	wts_8_b	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
 གཞུང	gun	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	ཁྲེལ་གཞུང་ khrel gun \khrel.
-གཞུང	gźuṅ	2	0	wts_1_34;wts_35_51	2	2	2	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:2	secure_reviewed_alignment:2	pass:2	full_token_canonical_transcription	no:2	ཀླད་གཞུང་ klad gźuṅ Rückenmark. || སྤྱི་གཞུང་ spyi gźuṅ Regierung.
+གཞུང	gźuṅ	3	0	wts_1_34;wts_35_51;wts_8_b	3	3	2	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:3	secure_reviewed_alignment:3	pass:3	full_token_canonical_transcription;other_reviewed_feature	no:3	ཀླད་གཞུང་ klad gźuṅ Rückenmark. || སྤྱི་གཞུང་ spyi gźuṅ Regierung. || བོན་གཞུང་ bon gźuṅ Text der Bon-po.
 གཞུང	lokale	1	1	wts_8_b	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	དབུས་གཞུང་ ddbus lokale Regierung, Zen-
 གཞེ	dgon	0	1		0	0	0	0	0	0	0	0	unclear:1	probable_alignment:1	blocked:1		yes:1	*གཞེ་ dgon 927/ einsame Gegend; Kloster,
 གཞེ	nas	0	1		0	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1	marker_or_damage:1	blocked:1		yes:1	ད་ལྟ་གཞེ ནས da lta 97/ nas jetzt, von nun an.
