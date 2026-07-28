@@ -28947,3 +28947,14 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 715	66	8749	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཇོ་སུས་བཞི་ jo sras bZi Bez. für die vier Schüler
 921	198	10370	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྟེན་པ་བཞི་ rten pa bZi die vier Verhaltens-
 1188	79	12721	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དུས བཞི་ལྷ་མོ dus bZi lha mo auch dus kyi rgyal
+85	104	992	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gZi rnam par ses pa
+347	185	4743	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	གར་ཀྱི་ས་གཞི་ gar gyi sa gZi Schauspielbühne.
+374	19	5061	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	གྲང་གཞི་ graṅ gZi eine Krankheit.
+390	123	5220	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	གྲོས་གཞི་ gros gZi Beratungsgegenstand.
+404	105	5419	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དགའ་བའི་ས་གཞི་ dga’ ba’i sa gZi Bez. für Frau.
+416	140	5579	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དགོངས་གཞི་ dgons gZi Absicht, Plan.
+602	6	7547	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བཅའ་གཞི་ bca’ gZi Vorbereitung.
+701	28	8624	tibetan_only	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འཆར་གཞི་ char gZi Plan.
+891	109	10014	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	གཏན་གྱི་གཞི་ gtun gyi gZi unterer Mahlstein
+990	12	11027	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐང་གཞི་ thaṅ gZi Marktpreis; vgl. T'than 4.
+1046	27	11730	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐོབ་གཞི་ thob gZi Anspruch.

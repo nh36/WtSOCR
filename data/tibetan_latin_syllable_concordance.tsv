@@ -1285,7 +1285,7 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 གཏན	gran	6	6	wts_1_34	2	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:6	secure_positional_alignment:6	blocked:6		no:6	གཏན་ཚིག་ gran tshig || གཏན་ཚིགས་ gran tshigs || གཏན་ཡིག་ gran yig
 གཏན	gtan	34	34	wts_1_34;wts_35_51;wts_8_b	13	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:34	secure_positional_alignment:34	pass:34		no:34	བཀའ་གཏན་ bka’ gtan Herrscherurkunde, Privi- || འཁོར་གཏན་ ’khor gtan Türriegel. || རྒྱན་གཏན་ Du gtan fortwährend, routinemä-
 གཏན	gtsigs	0	1		0	0	0	0	0	0	1	0	unclear:1	marker_or_damage:1	blocked:1		no:1	གཏན་གཅེགས་ 076/7 gtsigs \gtan tshigs 1.
-གཏན	gtun	2	2	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:2	secure_positional_alignment:2	blocked:2		no:2	གཏན་ gtun Mörser, Stößel, Keule; vgl. 19///2 || གཏན་གྱི་གཞི་ gtun gyi gZi unterer Mahlstein
+གཏན	gtun	2	2	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:2	secure_positional_alignment:2	blocked:2		no:2	གཏན་ gtun Mörser, Stößel, Keule; vgl. 19///2 || གཏན་གྱི་གཞི་ gtun gyi gźi unterer Mahlstein
 གཏན	jags	0	1		0	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1	marker_or_damage:1	blocked:1		no:1	"གཏན་འཇགས་ 0507 ""jags ständig, permanent,"
 གཏན	ptan	0	1		0	0	0	0	0	0	0	0	unclear:1	probable_alignment:1	blocked:1		no:1	གཏན་ ’ptan 10/7/7 pa.
 གཏབ	gtib	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	གཏབ་ gtib 11, gtibs verdichten, zusammen-
@@ -1564,11 +1564,11 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 གཞི	Krankheit	0	1		0	0	0	0	0	0	1	0	unclear:1	marker_or_damage:1	blocked:1		yes:1	བསུང་གཞི་ 557//7? 977 resp. Krankheit.
 གཞི	Plan	0	1		0	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1	marker_or_damage:1	blocked:1		yes:1	ཐབས་གཞི་ thabs 97/ Plan, Strategie, Pro-
 གཞི	g	12	12	wts_1_34;wts_35_51;wts_8_b	11	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:11;tibetan_proper_name:1	secure_positional_alignment:12	blocked:12		yes:12	ཀུན་གཞི་ kun gäi || ཀུན་གཞི་ kun gäi. || ཀོ་ལྤགས་ཀྱི་གཞི་ ko lpags kyi gäi einer der 17 gäi
-གཞི	gZi	11	12	wts_1_34	11	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:11;unclear:1	probable_alignment:1;secure_positional_alignment:11	blocked:12		yes:12	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gZi rnam par ses pa || གར་ཀྱི་ས་གཞི་ gar gyi sa gZi Schauspielbühne. || གྲང་གཞི་ graṅ gZi eine Krankheit.
+གཞི	gZi	0	12		0	0	0	0	0	0	0	0	unclear:1	probable_alignment:1	blocked:1		yes:1	"gsum ""[Krankheits]typus, -bild und Behand- དབྱེ་གཞི་ dbye gZi Unterscheidungsgrundlage."
 གཞི	gi	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
 གཞི	gzi	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	བརྟེན་གཞི་ brten gzi Stütze, Grundlage.
 གཞི	gāi	1	1	wts_9_m	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	མ་གཞི་ ma gāi Grundlage, Basis.
-གཞི	gźi	7	7	wts_35_51;wts_9_m	7	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:7	secure_positional_alignment:7	pass:7		no:7	འདུལ་བ་གཞི་ 'dul ba gźi || ནད་གཞི nad gźi || གནས་གཞི་ gnas gźi
+གཞི	gźi	18	7	wts_1_34;wts_35_51;wts_9_m	18	11	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:18	secure_positional_alignment:7;secure_reviewed_alignment:11	pass:18	other_reviewed_feature	no:18	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa || གར་ཀྱི་ས་གཞི་ gar gyi sa gźi Schauspielbühne. || གྲང་གཞི་ graṅ gźi eine Krankheit.
 གཞི	maj	1	1	wts_8_b	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	བག་གཞི་ bbag maj
 གཞིག	gZ	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	རྗེས་གཞིག་ rjes gZ1g.
 གཞིགས	gZigs	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	"རྣམ་པར་འབུས་གཞིགས་པ་ rnam par ""bus gZigs pa"
@@ -12773,7 +12773,7 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 རྣམ	par	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	རྣམ་པར་བཅིངས་ ༡ par bcins pf. verbunden
 རྣམ	ram	2	2	wts_35_51	2	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:2	secure_positional_alignment:2	unresolved:2		no:2	རྣམ་སྐྲག་ ram skrag erschrocken sein. || རྣམ་བརྟགས་ ram brtags Irnam par brtags.
 རྣམ	rmam	8	8	wts_35_51	7	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:8	secure_positional_alignment:8	unresolved:8		no:8	རྣམ་བཅོམ་ rmam bcom || རྣམ་པ་ rmam pa || རྣམ་པར་དཀྲུག་པར་བྱེད་ rmam par dkrug par byed
-རྣམ	rnam	153	156	wts_1_34;wts_35_51;wts_8_b	51	0	0	0	0	0	2	0	ordinary_tibetan_lexical_or_compound:149;sanskrit_or_indic_transcription:1;tibetan_proper_name:4;unclear:2	marker_or_damage:2;probable_alignment:1;secure_positional_alignment:153	blocked:2;unresolved:154		no:156	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gZi rnam par ses pa || སྒྲིགས་རྣམ་གཞག་ sgrigs rnam 9779 Darstellung || ཆོས་ཀྱི་རྣམ་གྲངས་ chos kyi rnam grans Unter-
+རྣམ	rnam	153	156	wts_1_34;wts_35_51;wts_8_b	51	0	0	0	0	0	2	0	ordinary_tibetan_lexical_or_compound:149;sanskrit_or_indic_transcription:1;tibetan_proper_name:4;unclear:2	marker_or_damage:2;probable_alignment:1;secure_positional_alignment:153	blocked:2;unresolved:154		no:156	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa || སྒྲིགས་རྣམ་གཞག་ sgrigs rnam 9779 Darstellung || ཆོས་ཀྱི་རྣམ་གྲངས་ chos kyi rnam grans Unter-
 རྣམ	rnami	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	རྣམ་པ་ཅིར་ rnami pa cir wie auch immer.
 རྣམ	rrnam	3	3	wts_35_51	3	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:3	secure_positional_alignment:3	unresolved:3		no:3	རྣམ་རྟོག་ rrnam rtog par || རྣམ་པར་འཛིན་པ་ rrnam par 'dzin pa Bez. || རྣམ་བཞག་ rrnam biag par
 རྣམ	thar	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	འདས་རྗེས་ཀྱི་རྣམ་ཐར་ rjes kyi nam thar Be-
@@ -13898,7 +13898,7 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 ཤེས	ma	0	1		0	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1	marker_or_damage:1	blocked:1		no:1	དྲོད་ཤེས་ drod 465 maßvoll, moderat.
 ཤེས	med	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	འདུ་ཤེས་མེད་པ་ Ses med pa unbewußt, Un-
 ཤེས	pa	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	བདག་ཉིད་མ་ཤེས་པ་ bbdag nid ses pa töricht.
-ཤེས	ses	55	55	wts_1_34;wts_35_51;wts_8_b;wts_9_m	40	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:54;sanskrit_or_indic_transcription:1	secure_positional_alignment:55	unresolved:55		no:55	ཀ་ཆེན་ཡེ་ཤེས་” ka chen ye ses... || ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gZi rnam par ses pa || ཀུན་ཤེས་ kun ses Weiser.
+ཤེས	ses	55	55	wts_1_34;wts_35_51;wts_8_b;wts_9_m	40	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:54;sanskrit_or_indic_transcription:1	secure_positional_alignment:55	unresolved:55		no:55	ཀ་ཆེན་ཡེ་ཤེས་” ka chen ye ses... || ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa || ཀུན་ཤེས་ kun ses Weiser.
 ཤེས	sesrab	0	1		0	0	0	0	0	0	1	0	ordinary_tibetan_lexical_or_compound:1	marker_or_damage:1	blocked:1		no:1	ཀླན་ཡེ་ཤེས་ཤེས་རབ་ klan ye 46$ sesrab N. eines der
 ཤེས	sis	1	1	wts_8_b	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	"བླ་བྲང་བཀྲ་ཤེས་་ "" bla brar bkra sis"
 ཤེས	son	1	1	wts_9_m	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	unresolved:1		no:1	རྨུགས་ཤེས་སོང་བ་ rrmugs son ba erschöpft,

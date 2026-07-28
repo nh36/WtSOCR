@@ -10511,7 +10511,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 85	100	987	german_prose			none	0	3	0	0	nicht substanziell (wörtl.: nicht zu einer
 85	101	987	german_prose			none	0	3	0	0	Grundlage geworden) und haben das
 85	102	987	german_prose_with_translit			none	1	1	0	0	Nirvāṇa erreicht“ (VinUp 60,16).
-85	104	988	headword_line	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་	pa	medium	1	0	0	0	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gZi rnam par ses pa
+85	104	988	headword_line	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་	pa	medium	1	0	0	0	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa
 85	106	988	german_prose_with_translit			none	1	3	0	0	Lex. alala (r. älaya) „Wohnung, Grundlage“
 85	107	988	german_prose_with_translit			none	3	2	0	0	(Ishe 331); kun gyi gZi „Grundlage von allem“ (brDa).
 85	110	988	german_prose_with_translit			none	2	3	0	0	2. Kurzf. für kun gZi(’i) rnam par śes pa, Spei-
@@ -48800,7 +48800,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 347	179	4689	headword_line	གར་ཀྱི་རྒྱན་	gyi rgyan	high	2	3	0	0	གར་ཀྱི་རྒྱན་ gar gyi rgyan ein Mineral, Auripig-
 347	181	4689	other			none	0	0	0	0	ment.
 347	183	4689	german_prose_with_translit			none	3	2	0	0	Lex. ba bla’ min (brDa, Dagy).
-347	185	4690	headword_line	གར་ཀྱི་ས་གཞི་	gyi sa	medium	2	1	0	0	གར་ཀྱི་ས་གཞི་ gar gyi sa gZi Schauspielbühne.
+347	185	4690	headword_line	གར་ཀྱི་ས་གཞི་	gyi sa	medium	2	1	0	0	གར་ཀྱི་ས་གཞི་ gar gyi sa gźi Schauspielbühne.
 347	187	4690	german_prose_with_translit			none	3	1	0	0	»r gar mdzad gar tshogs kyis (metr.) „die
 347	188	4690	german_prose			none	0	5	0	0	Schauspieltruppe, die auf der Bühne das
 347	189	4690	german_prose			none	0	3	0	0	Schauspiel aufführt“ (Lokn 116,2).
@@ -52837,7 +52837,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 374	13	4983	latin_other			none	8	0	0	0	tshwa kha - zer ba ru thog pa’i bdag thob la
 374	14	4983	german_prose_with_translit			none	3	4	0	0	rten „ausgehend davon, daß der Granmtsham genannte Salzsee den Ru-thog-pa
 374	17	4983	german_prose			none	0	1	0	0	gehört“ (MTH3/5/27 1).
-374	19	4984	headword_line	གྲང་གཞི་	Krankheit	high	1	1	0	0	གྲང་གཞི་ graṅ gZi eine Krankheit.
+374	19	4984	headword_line	གྲང་གཞི་	Krankheit	high	1	1	0	0	གྲང་གཞི་ graṅ gźi eine Krankheit.
 374	21	4984	german_prose_with_translit			none	5	1	0	0	Lex. pho mtshan nas rnag ’dzags lta bu „wie:
 374	22	4984	german_prose_with_translit			none	1	3	0	0	eitriger Ausfluß aus dem Penis“ (brDa);
 374	23	4984	german_prose_with_translit			none	2	1	0	0	gran ba’ nad gZi „eine Kältekrankheit“
@@ -55105,7 +55105,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 390	118	5133	german_prose_with_translit			none	2	1	0	0	’thus mi „Parlamentsabgeordneter“ (Dagy);
 390	119	5133	latin_other			none	3	0	0	0	>» kyi lam srol = gros mol tshogs ’du’i ’gro
 390	120	5133	german_prose_with_translit			none	1	4	0	0	stans „der Ablauf einer beratenden Versammlung“ (Dagy).
-390	123	5134	headword_line	གྲོས་གཞི་	Beratungsgegenstand	medium	1	0	0	0	གྲོས་གཞི་ gros gZi Beratungsgegenstand.
+390	123	5134	headword_line	གྲོས་གཞི་	Beratungsgegenstand	medium	1	0	0	0	གྲོས་གཞི་ gros gźi Beratungsgegenstand.
 390	124	5134	german_prose_with_translit			none	2	3	0	0	Lex. gros mol gyi gäi rtsa (Dagy).
 390	126	5134	latin_other			none	2	0	0	0	NT gros ra Versammlungshalle.
 390	128	5134	german_prose_with_translit			none	4	2	0	0	rgyal po ... ~ pheb nas „der König erschien
@@ -57275,7 +57275,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 404	99	5310	headword_line	དགའ་བའི་ཤིང་རྟ་མ་	dga’ ba’i	high	4	2	0	0	དགའ་བའི་ཤིང་རྟ་མ་ dga’ ba’i Siṅ rta ma göttliche
 404	101	5310	german_prose			none	0	1	0	0	Hetäre.
 404	103	5310	german_prose_with_translit			none	4	2	0	0	Lex. lha'i’i smad tshon ma (brDa, Dagy).
-404	105	5311	headword_line	དགའ་བའི་ས་གཞི་	dga’ ba’i sa	high	3	3	0	0	དགའ་བའི་ས་གཞི་ dga’ ba’i sa gZi Bez. für Frau.
+404	105	5311	headword_line	དགའ་བའི་ས་གཞི་	dga’ ba’i sa	high	3	3	0	0	དགའ་བའི་ས་གཞི་ dga’ ba’i sa gźi Bez. für Frau.
 404	106	5311	german_prose_with_translit			none	1	2	0	0	Lex. bud med spyi (brDa, Dagy).
 404	108	5312	headword_line	དགའ་བར་རོལ་པ་	dga’	high	2	1	0	0	དགའ་བར་རོལ་པ་ dga’ bar rol pa Koitus.
 404	109	5312	german_prose_with_translit			none	4	1	0	0	Lex. ’khrig pa’ spyod pa (brDa).
@@ -58925,7 +58925,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 416	136	5470	german_prose			none	0	2	0	0	trag] zurücktreten darf“ (Wadd135 13).
 416	137	5470	german_prose_with_translit			none	2	3	0	0	Lex. gnan ba Zu rgyn „um Erlaubnis bitten“
 416	138	5470	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).
-416	140	5471	headword_line	དགོངས་གཞི་	dgons	medium	1	2	0	0	དགོངས་གཞི་ dgons gZi Absicht, Plan.
+416	140	5471	headword_line	དགོངས་གཞི་	dgons	medium	1	2	0	0	དགོངས་གཞི་ dgons gźi Absicht, Plan.
 416	142	5471	german_prose_with_translit			none	4	7	0	0	Lex. phugs kyi bsam blo’i süin po „die Essenz des Plans“ (Dagy).
 416	145	5472	headword_line	དགོངས་བཞེད་	dgons	medium	1	1	0	0	དགོངས་བཞེད་ dgons /2¢¢ Wunsch.
 416	146	5472	german_prose_with_translit			none	3	2	0	0	Lex. sems kyi ’dod pa (Dagy).
@@ -86567,7 +86567,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 602	1	7412	german_prose_with_translit			none	2	1	0	0	Asa bca’ rdzi
 602	3	7413	headword_line	བཅའ་རེ་	bca’ rdzi Feldhüter	high	3	0	0	0	བཅའ་རེ་ bca’ rdzi Feldhüter.
 602	4	7413	german_prose_with_translit			none	4	3	0	0	Lex. bza’ Zin lta mkhan (brDa, Dagy).
-602	6	7414	headword_line	བཅའ་གཞི་	bca’	high	2	0	0	0	བཅའ་གཞི་ bca’ gZi Vorbereitung.
+602	6	7414	headword_line	བཅའ་གཞི་	bca’	high	2	0	0	0	བཅའ་གཞི་ bca’ gźi Vorbereitung.
 602	7	7414	latin_other			none	1	0	0	0	sbyin sreg byed pa’i - byed par bsams (metr.)
 602	9	7414	german_prose_with_translit			none	1	2	0	0	„sie trafen die Vorbereitungen, um das
 602	10	7414	german_prose			none	0	3	0	0	Brandopfer durchzuführen“ (Padm 64b1);
@@ -101627,7 +101627,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 701	24	8456	german_prose_with_translit			none	1	1	0	0	hatte unvorstellbare Visionen“ (Akhri
 701	25	8456	latin_other			none	3	0	0	0	49,8); phyi nani gi ~ thams cad „alle inneren
 701	26	8456	german_prose_with_translit			none	1	3	0	0	und äußeren Eindrücke“ (Akhr2 89,14).
-701	28	8456	tibetan_only	འཆར་གཞི་		none	0	1	0	0	འཆར་གཞི་ char gZi Plan.
+701	28	8456	tibetan_only	འཆར་གཞི་		none	0	1	0	0	འཆར་གཞི་ char gźi Plan.
 701	30	8456	german_prose_with_translit			none	3	2	0	0	Lex. bya ba’i go rim lta bu „wie: die
 701	31	8456	german_prose			none	0	4	0	0	Reihenfolge der Arbeit“ (Dagy).
 701	33	8456	tibetan_only	འཆར་ཟྲིན་		none	0	3	0	0	འཆར་ཟྲིན་ 'char zin Entwurf eines Plans.
@@ -128912,7 +128912,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 891	105	9815	german_prose_with_translit			none	2	2	0	0	Lex. sman sogs rdun byed kyi kon bu „eine
 891	106	9815	german_prose_with_translit			none	1	3	0	0	Vertiefung, in der man Heilmittel usw.
 891	107	9815	german_prose			none	0	1	0	0	zerkleinert“ (Dagy).
-891	109	9816	headword_line	གཏན་གྱི་གཞི་	gyi	medium	1	1	0	0	གཏན་གྱི་གཞི་ gtun gyi gZi unterer Mahlstein
+891	109	9816	headword_line	གཏན་གྱི་གཞི་	gyi	medium	1	1	0	0	གཏན་གྱི་གཞི་ gtun gyi gźi unterer Mahlstein
 891	110	9816	german_prose			none	0	1	0	0	» Mörser.
 891	112	9816	german_prose_with_translit			none	1	5	0	0	> lta bu Zig go „[der Elefant] ist wie ein
 891	113	9816	german_prose			none	0	2	0	0	Mörser“ (MSg 11,27).
@@ -144218,7 +144218,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 990	7	10787	example_tibetan_latin			none	7	4	0	0	Lex. Zwa mo Zig (brDa); bla chen gyi Zwa’i ཐང་ཤ་ཆོད་པ་ thaṅ Sa chod pa entschlossen,
 990	9	10787	german_prose_with_translit			none	1	3	0	0	bye brag „die Kopfbedeckung eines großen
 990	10	10787	german_prose_with_translit			none	1	1	0	0	bla ma“ (Dagy).
-990	12	10788	headword_line	ཐང་གཞི་	thaṅ	high	2	2	0	0	ཐང་གཞི་ thaṅ gZi Marktpreis; vgl. T'than 4.
+990	12	10788	headword_line	ཐང་གཞི་	thaṅ	high	2	2	0	0	ཐང་གཞི་ thaṅ gźi Marktpreis; vgl. T'than 4.
 990	14	10788	german_prose_with_translit			none	1	1	0	0	"Lex. gla stans = gla rnan gi -""i ’gro stans"
 990	15	10788	german_prose_with_translit			none	1	3	0	0	„Grundlage zur Festsetzung des Lohnes“
 990	16	10788	german_prose_with_translit			none	5	1	0	0	"(Dagy); yaltban = yul lun so so’i -""i tshad la"
@@ -152754,7 +152754,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1046	22	11487	headword_line	བོབ་ཚེར་	thob tsbir	high	2	1	0	0	བོབ་ཚེར་ thob tsbir Anteil.
 1046	24	11487	german_prose_with_translit			none	2	1	0	0	Lex. byun ba’i res mo’am / byun rim
 1046	26	11487	other			none	0	0	0	0	(TTC).
-1046	27	11488	headword_line	ཐོབ་གཞི་	thob	high	1	1	0	0	ཐོབ་གཞི་ thob gZi Anspruch.
+1046	27	11488	headword_line	ཐོབ་གཞི་	thob	high	1	1	0	0	ཐོབ་གཞི་ thob gźi Anspruch.
 1046	29	11488	latin_other			none	2	0	0	0	phyin chad kyan ~ babs sbrel (7. ’brel) gan
 1046	30	11488	german_prose_with_translit			none	2	3	0	0	yan med nes la „indem auch für die
 1046	31	11488	german_prose			none	0	4	0	0	Zukunft mit Gewißheit überhaupt keine

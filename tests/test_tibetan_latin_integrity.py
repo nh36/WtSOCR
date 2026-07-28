@@ -77,6 +77,17 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
             unrelated["transcription_gateway_status"], "pass"
         )
 
+    def test_gzhi_root_feature_family_is_exact(self) -> None:
+        line = next(
+            row["line_text"]
+            for row in integrity.read_tsv(
+                ROOT / "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv"
+            )
+            if row["page"] == "85" and row["line"] == "104"
+        )
+        self.assertIn("kun gźi", line)
+        self.assertNotIn("kun gZi", line)
+
     def test_role_parser_does_not_claim_full_transliteration(self) -> None:
         roles = integrity.tibetan_roles("གཞུང")
         self.assertEqual(roles["root_consonant"], "ཞ")
