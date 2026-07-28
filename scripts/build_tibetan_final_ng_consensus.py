@@ -1595,6 +1595,28 @@ def build_insufficient_evidence_matrix(
     aligned, _accepted = collect_aligned_rows(release_root)
     provenance = collect_anchor_provenance(release_root, aligned)
     google_evidence = collect_google_witness_evidence(release_root)
+    root = Path(__file__).resolve().parents[1]
+    historical_path = root / "data/final_ng_historical_witness_audit.tsv"
+    historical_rows = read_tsv(historical_path) if historical_path.exists() else []
+    historical_by_family: dict[
+        tuple[str, str, str], list[dict[str, str]]
+    ] = defaultdict(list)
+    for historical_row in historical_rows:
+        historical_by_family[
+            (
+                historical_row["tibetan_syllable"],
+                historical_row["source_variant"],
+                historical_row["target"],
+            )
+        ].append(historical_row)
+    reviewed_path = root / "data/final_ng_reviewed_target_propagation.tsv"
+    reviewed_rows = read_tsv(reviewed_path) if reviewed_path.exists() else []
+    reviewed_by_family = {
+        (
+            row["tibetan_syllable"], row["source_variant"], row["target"],
+        ): row
+        for row in reviewed_rows
+    }
     grouped: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
     for row in compatible_rows:
         if row["source_compatible_category"] not in {
@@ -1612,6 +1634,19 @@ def build_insufficient_evidence_matrix(
 
     matrix: list[dict[str, str]] = []
     for (syllable, source, target), family in grouped.items():
+        historical_matches = historical_by_family.get(
+            (syllable, source, target), []
+        )
+        historical_anchor = next(
+            (
+                row for row in historical_matches
+                if row["historical_anchor_present"] == "yes"
+            ),
+            historical_matches[0] if historical_matches else {},
+        )
+        reviewed_target = reviewed_by_family.get(
+            (syllable, source, target), {}
+        )
         family_volumes = {row["volume"] for row in family}
         family_anchors = [
             row
@@ -1734,6 +1769,30 @@ def build_insufficient_evidence_matrix(
                 "source_variant": source,
                 "source_signature": source_compatible_signature(source) or "",
                 "supported_target": target,
+                "historical_baseline_sha": historical_anchor.get(
+                    "historical_baseline_sha", ""
+                ),
+                "historical_anchor_present": historical_anchor.get(
+                    "historical_anchor_present", ""
+                ),
+                "historical_anchor_location": (
+                    ":".join(
+                        historical_anchor.get(field, "")
+                        for field in (
+                            "historical_volume", "historical_page",
+                            "historical_line", "historical_token_index",
+                        )
+                    ).strip(":")
+                ),
+                "historical_anchor_provenance_class": historical_anchor.get(
+                    "historical_anchor_provenance_class", ""
+                ),
+                "historical_anchor_change_reason": historical_anchor.get(
+                    "historical_anchor_change_reason", ""
+                ),
+                "reviewed_same_tibetan_target_count": reviewed_target.get(
+                    "reviewed_same_tibetan_target_count", "0"
+                ),
                 "undotted_clean_row_count": str(len(family)),
                 "base_ocr_dotted_anchor_count": str(len(raw_anchors)),
                 "reviewed_exact_dotted_anchor_count": str(
@@ -2012,7 +2071,11 @@ COVERAGE_COMPARISON_FIELDS = [
 ]
 INSUFFICIENT_EVIDENCE_FIELDS = [
     "tibetan_syllable", "source_variant", "source_signature",
-    "supported_target", "undotted_clean_row_count",
+    "supported_target", "historical_baseline_sha",
+    "historical_anchor_present", "historical_anchor_location",
+    "historical_anchor_provenance_class",
+    "historical_anchor_change_reason",
+    "reviewed_same_tibetan_target_count", "undotted_clean_row_count",
     "base_ocr_dotted_anchor_count", "reviewed_exact_dotted_anchor_count",
     "google_adopted_anchor_count", "other_postprocess_anchor_count",
     "unknown_provenance_anchor_count",
