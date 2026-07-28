@@ -6035,3 +6035,49 @@ wts_1_34	111	3	2	gzun	gźuṅ	reviewed_tibetan_exact_manual_multi_error	explicit
 wts_1_34	750	80	1	Dan	ldaṅ	reviewed_tibetan_exact_manual_multi_error	explicit_user_review	Exact Tibetan ལྗང row; repairs damaged initial cluster and final ṅ only at this page-line-token.
 wts_35_51	826	11	2	gźuń	gźuṅ	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	Exact Tibetan གཞུང alignment; canonical gźuṅ is explicitly user-reviewed and this source differs only in the final nasal glyph.
 wts_1_34	80	116	3	ldan	ldaṅ	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	Exact Tibetan ལྗང alignment; canonical ldaṅ is explicitly user-reviewed and this source differs only in the final nasal glyph.
+wts_1_34	80	126	3	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	152	191	2	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	991	68	2	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1297	12	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	22	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	30	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	33	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	38	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	44	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	51	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	53	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	59	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	64	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	74	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1298	81	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1299	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1299	10	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1299	21	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1299	53	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	22	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	33	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	35	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	42	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	48	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	54	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	56	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1300	63	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1301	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	27	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	37	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	55	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	57	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	63	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	90	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1302	104	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1303	1	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1303	3	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1303	12	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1303	22	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1303	37	1	dran	draṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	Frozen exact Tibetan དྲང alignment; exact-row only.
+wts_1_34	1297	12	3	dran	draṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_drang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	1298	81	4	dran	draṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_drang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	1302	90	5	dran	draṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_drang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.

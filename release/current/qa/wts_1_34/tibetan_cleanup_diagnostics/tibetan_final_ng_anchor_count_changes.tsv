@@ -1,1 +1,3 @@
 volume	page	line	token_index	tibetan_syllable	source_latin_token	old_target	new_supported_target	old_anchor_count	new_anchor_count	audit_conclusion	context_excerpt
+wts_1_34	1297	53	1	དྲང	dran	draṅ	draṅ	1	44	valid_anchor_added	དྲང་ ?dran
+wts_1_34	1297	76	1	དྲང	dran	draṅ	draṅ	1	44	valid_anchor_added	དྲང་ ?dran vgl. Idran po.

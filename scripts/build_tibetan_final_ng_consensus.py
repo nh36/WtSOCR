@@ -1511,7 +1511,11 @@ def validate_positional_echo_dual_identities() -> None:
         }
         for key in positional & echoes:
             decision = decision_by_key.get(key)
-            if not decision or decision["decision"] != "resolved_elsewhere":
+            # Immutable tranche manifests intentionally include future
+            # families before their echo review has happened.  Enforce the
+            # no-double-application rule once a decision is recorded, while
+            # allowing an as-yet-unreviewed frozen identity to remain queued.
+            if decision and decision["decision"] != "resolved_elsewhere":
                 raise ValueError(
                     f"{path.name}: dual positional/echo identity {key} must "
                     "be resolved_elsewhere"

@@ -84,66 +84,25 @@ newly_discovered	wts_1_34	124	96	3	རྒྱང	igyan				source_compatible_no_an
 category_changed	wts_1_34	1275	1	4	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	དོམ་མགོ་གླང་སྙིང་ dom mgo glaṅ sin
 newly_discovered	wts_1_34	1275	4	4	སྲིང	shin				source_compatible_no_anchor	0	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
 category_changed	wts_1_34	128	89	2	སྲང	srun	sruṅ	sruṅ	source_compatible_insufficient_evidence	source_compatible_not_final_ng_only	1	དཀོར་སྲང་རྒྱལ་པོ་ dkor srun rgyal po Beiname der
-newly_discovered	wts_1_34	1297	12	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ 'dran auch ’dran fut. zu 1776.
-newly_discovered	wts_1_34	1297	53	1	དྲང	dran		draṅ		source_compatible_damaged_context	1	དྲང་ ?dran
-newly_discovered	wts_1_34	1297	76	1	དྲང	dran		draṅ		source_compatible_damaged_context	1	དྲང་ ?dran vgl. Idran po.
-newly_discovered	wts_1_34	1298	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་མཁན་ dran mkhan
-newly_discovered	wts_1_34	1298	22	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་མཁན་ dran mkhan Richter, Schlichter,
-newly_discovered	wts_1_34	1298	30	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་འཁྱོག་ dran 'khyog Bez. für Regenbogen.
-newly_discovered	wts_1_34	1298	33	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་འགྲོ་ dran 'gro Bez. für Pfeil.
-newly_discovered	wts_1_34	1298	38	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ངེས་ dran nes herzuleitende Bedeutung.
-newly_discovered	wts_1_34	1298	44	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ལྟང་ལྟང་ dran Itan Itan kerzengerade.
-newly_discovered	wts_1_34	1298	51	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་དོན་ dran don
-newly_discovered	wts_1_34	1298	53	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་བརྟན་ dran brtan aufrecht.
-newly_discovered	wts_1_34	1298	59	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ཐག་ dran thag gerade.
-newly_discovered	wts_1_34	1298	64	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ཐད་ dran thad geradeaus, gerade heraus.
-newly_discovered	wts_1_34	1298	74	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ཐིག་ dran thig geradlinig.
-newly_discovered	wts_1_34	1298	81	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་དོན་ dran don auch dran ba’i don vorläufi-
-newly_discovered	wts_1_34	1299	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་དྲེང་ dran dren
-newly_discovered	wts_1_34	1299	10	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་དྲེང་ dran dren auch bran bren Begierde,
-newly_discovered	wts_1_34	1299	21	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་པོ་ dran po vgl. 1’dran.
-newly_discovered	wts_1_34	1299	53	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་པོ་ dran po
-newly_discovered	wts_1_34	1300	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་པོར་གནོན་ dran por gnon
-newly_discovered	wts_1_34	1300	22	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་པོར་གནོན dran por gnon reglementieren.
-newly_discovered	wts_1_34	1300	33	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་བའི་དོན་ dran ba’i don Tdran don.
-newly_discovered	wts_1_34	1300	35	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་བའི་མི་བོ་ཆེ་ dran ba’i mi bo che npr. ein sa
-newly_discovered	wts_1_34	1300	42	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ཤན་ dran śan klar unterscheidend.
-newly_discovered	wts_1_34	1300	48	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་ཤིང་ dran Siṅ Zepter.
-newly_discovered	wts_1_34	1300	54	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-newly_discovered	wts_1_34	1300	54	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-newly_discovered	wts_1_34	1300	56	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སེང་ངེ་བ་ dran seṅ ne ba geradlinig.
-newly_discovered	wts_1_34	1300	63	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron.
-newly_discovered	wts_1_34	1300	63	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron.
-newly_discovered	wts_1_34	1301	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-newly_discovered	wts_1_34	1301	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-newly_discovered	wts_1_34	1302	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” dran sron gi gtor ...
-newly_discovered	wts_1_34	1302	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” dran sron gi gtor ...
-newly_discovered	wts_1_34	1302	104	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod Bez. für Almosen-
-newly_discovered	wts_1_34	1302	104	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod Bez. für Almosen-
-newly_discovered	wts_1_34	1302	27	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ dran sron gi gnas ldran sron
-newly_discovered	wts_1_34	1302	27	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ dran sron gi gnas ldran sron
-newly_discovered	wts_1_34	1302	37	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ dran sron rgyas pa ein Rsi, skt.
-newly_discovered	wts_1_34	1302	37	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ dran sron rgyas pa ein Rsi, skt.
-newly_discovered	wts_1_34	1302	55	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod
-newly_discovered	wts_1_34	1302	55	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod
-newly_discovered	wts_1_34	1302	57	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ dran sron chu Wasser aus einem Be-
-newly_discovered	wts_1_34	1302	57	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ dran sron chu Wasser aus einem Be-
-newly_discovered	wts_1_34	1302	63	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ dran sron chen po.
-newly_discovered	wts_1_34	1302	63	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ dran sron chen po.
-newly_discovered	wts_1_34	1302	90	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ dran sron gnas auch dran sron gi
-newly_discovered	wts_1_34	1302	90	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ dran sron gnas auch dran sron gi
-newly_discovered	wts_1_34	1303	1	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba
-newly_discovered	wts_1_34	1303	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba
-newly_discovered	wts_1_34	1303	12	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
-newly_discovered	wts_1_34	1303	12	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
-newly_discovered	wts_1_34	1303	22	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
-newly_discovered	wts_1_34	1303	22	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
-newly_discovered	wts_1_34	1303	3	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
-newly_discovered	wts_1_34	1303	3	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
-newly_discovered	wts_1_34	1303	37	1	དྲང	dran		draṅ		source_compatible_single_anchor	1	དྲང་གསུམ་ dran gsum die drei Wahrheiten, vgl.
+newly_discovered	wts_1_34	1297	53	1	དྲང	dran		draṅ		source_compatible_damaged_context	44	དྲང་ ?dran
+newly_discovered	wts_1_34	1297	76	1	དྲང	dran		draṅ		source_compatible_damaged_context	44	དྲང་ ?dran vgl. Idran po.
+newly_discovered	wts_1_34	1300	54	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron
+newly_discovered	wts_1_34	1300	63	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron.
+newly_discovered	wts_1_34	1301	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron
+newly_discovered	wts_1_34	1302	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” draṅ sron gi gtor ...
+newly_discovered	wts_1_34	1302	104	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ draṅ sron snod Bez. für Almosen-
+newly_discovered	wts_1_34	1302	27	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ draṅ sron gi gnas ldran sron
+newly_discovered	wts_1_34	1302	37	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ draṅ sron rgyas pa ein Rsi, skt.
+newly_discovered	wts_1_34	1302	55	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ draṅ sron snod
+newly_discovered	wts_1_34	1302	57	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ draṅ sron chu Wasser aus einem Be-
+newly_discovered	wts_1_34	1302	63	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ draṅ sron chen po.
+newly_discovered	wts_1_34	1302	90	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ draṅ sron gnas auch draṅ sron gi
+newly_discovered	wts_1_34	1303	1	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba
+newly_discovered	wts_1_34	1303	12	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ draṅ sron srin po npr. ein Berg.
+newly_discovered	wts_1_34	1303	22	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ draṅ sron lhuṅ ba ein Ort bei
+newly_discovered	wts_1_34	1303	3	2	སྲོང	sron		sroṅ		source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba Bez. für den
 newly_discovered	wts_1_34	1334	50	3	ལྗང	ljan				source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan
 newly_discovered	wts_1_34	1334	97	3	ལྗང	ljan				source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan Ocker; Laberitum
-newly_discovered	wts_1_34	152	191	2	དྲང	dran		draṅ		source_compatible_single_anchor	1	བཀྲིད་དྲང་ berid dran das Führen.
 newly_discovered	wts_1_34	155	207	1	ང	ykan				source_compatible_no_anchor	0	ང་སྙས།་ ykan skyes Bez. für Angehörige der un-
 newly_discovered	wts_1_34	157	112	2	འབུང	thun				source_compatible_no_anchor	0	རྐང་འབུང་ rkaṅ ’thun auch rkan thun „Fußtrin-
 newly_discovered	wts_1_34	157	177	1	རྐང	ran				source_compatible_no_anchor	0	རྐང་དྲུག་ ran ing ep
@@ -528,7 +487,6 @@ newly_discovered	wts_1_34	780	190	1	ཉུང	nun				source_compatible_no_anchor
 newly_discovered	wts_1_34	787	13	3	གདང	gdun				source_compatible_no_anchor	0	ཉེ་བར་གདང་བ་ fie bar gdun ba starke Schmer-
 newly_discovered	wts_1_34	787	200	3	བྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ཉེ་བར་བྱང་ fie bar byun hinausgehen.
 newly_discovered	wts_1_34	793	196	2	བྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ཉེས་བྱང་ fies byun Verbrechen.
-newly_discovered	wts_1_34	80	126	3	དྲང	dran		draṅ		source_compatible_single_anchor	1	ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
 newly_discovered	wts_1_34	801	53	2	ཤང	Sin				source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
 newly_discovered	wts_1_34	814	160	1	སྙང	shan				source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
 newly_discovered	wts_1_34	817	219	4	ལྟོང	h				source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
@@ -675,7 +633,6 @@ newly_discovered	wts_1_34	989	211	4	ཤང	sin		siṅ		source_compatible_not_fin
 newly_discovered	wts_1_34	989	216	1	བང	than				source_compatible_no_anchor	0	བང་ཉོ།། than mo eine Gruppe von Gottheiten.
 newly_discovered	wts_1_34	989	229	1	བྲང	than		thaṅ		source_compatible_not_final_ng_only	1	བྲང་ཞེ་ than Zu auch than Zwa eine Kopfbe-
 newly_discovered	wts_1_34	99	21	2	ཤེང	sen				source_compatible_no_anchor	0	ཀོང་ཤེང་ koṅ sen eine Region in der Nähe von
-newly_discovered	wts_1_34	991	68	2	དྲང	dran		draṅ		source_compatible_single_anchor	1	ཐད་དྲང་ tbad dran direkt, unmittelbar.
 newly_discovered	wts_1_34	992	66	2	ཁང	khun				source_compatible_no_anchor	0	ཁྲབ་།ཁང་ thab khun Feuerplatz, Herd.
 newly_discovered	wts_1_34	999	202	2	ཀོང	gon				source_compatible_no_anchor	0	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 category_changed	wts_35_51	1050	12	2	གཡང	g.yan	g.yaṅ	g.yaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཕྱུ་གཡང་ phywa g.yan auch phya g.yari Glück;

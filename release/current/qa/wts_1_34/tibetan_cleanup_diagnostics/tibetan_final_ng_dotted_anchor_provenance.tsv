@@ -76,6 +76,7 @@ wts_1_34	79	168	5	འོང	oṅ	reviewed_exact_final_ng	on	reviewed_tibetan_exa
 wts_1_34	79	221	5	འོང	oṅ	reviewed_exact_final_ng	on	reviewed_tibetan_exact_final_ng_consensus	tibetan_ong_consensus_batch_20260726	ཀུན་ནས་ཉེ་བར་འོང་བ་ kun nas fie bar ’oṅ ba herbei-
 wts_1_34	80	28	3	གདུང	gduṅ	reviewed_exact_final_ng	gdun	reviewed_tibetan_exact_final_ng_consensus	final_ng_gdung_consensus_batch_20260727	ཀུན་ནས་གདུང་བ་ kun nas gduṅ ba
 wts_1_34	80	116	3	ལྗང	ldaṅ	reviewed_exact_final_ng	ldan	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	ཀུན་ནས་ལྗང་བ་ kun nas ldaṅ ba; vgl. \kun nas lari
+wts_1_34	80	126	3	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	ཀུན་ནས་དྲང་པོ་ kun nas draṅ po (zw.). ;
 wts_1_34	80	130	3	གདུང	gduṅ	reviewed_exact_final_ng	gdun	reviewed_tibetan_exact_final_ng_consensus	final_ng_gdung_consensus_batch_20260727	ཀུན་ནས་གདུང་བ་ kun nas gduṅ ba gepeinigt wer- s. v. paryutthäna), rising all about, overwhel- hen.
 wts_1_34	81	45	3	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་ནས་སྣང་བ་ kun nas snaṅ ba scheinen, erschei-
 wts_1_34	81	67	3	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀུན་ནས་སྣང་བ ་འོད་ཟེར་ kun nas snaṅ ba ’od zer npr.
@@ -270,6 +271,7 @@ wts_1_34	143	191	2	སྲུང	sruṅ	reviewed_exact_final_ng	srun	reviewed_tib
 wts_1_34	144	15	2	བསྲུང	bsruṅ	reviewed_exact_final_ng	bsrun	reviewed_tibetan_exact_final_ng_consensus	final_ng_bsrung_consensus_batch_20260727	བཀའ་བསྲུང་ bka’ bsruṅ tbka’ srun.
 wts_1_34	144	17	2	གུང	guṅ	reviewed_exact_final_ng	gun	reviewed_tibetan_exact_final_ng_consensus	tibetan_gung_consensus_batch_20260726	བཀའི་གུང་བློན་ bka’i guṅ blon Ministerrat der zen-
 wts_1_34	146	105	2	གཏོང	gtoṅ	reviewed_exact_final_ng	gton	reviewed_tibetan_exact_final_ng_consensus	tibetan_gtong_consensus_batch_20260720	བཀུལ་གཏོང་ bkul gtoṅ
+wts_1_34	152	191	2	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	བཀྲིད་དྲང་ berid draṅ das Führen.
 wts_1_34	155	1	2	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	བཀྲོལ་བྱང་ bkrol byaṅ
 wts_1_34	155	22	2	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	བཀྲོལ་བྱང་ bkrol byaṅ Kommentar.
 wts_1_34	155	156	1	རྐང	rkaṅ	google_adopted	rkan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	རྐང་སྐྱེས་ rkaṅ skyes
@@ -1461,6 +1463,7 @@ wts_1_34	990	53	1	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_ex
 wts_1_34	990	70	1	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exact_final_ng_consensus	tibetan_thang_consensus_clean_batch_20260719	ཐང་ཤིང་ thaṅ siṅ.
 wts_1_34	990	70	2	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཐང་ཤིང་ thaṅ siṅ.
 wts_1_34	990	104	1	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exact_final_ng_consensus	tibetan_thang_consensus_clean_batch_20260719	ཐང་ཤྭ་ཐུ་ཧན་ thaṅ Su thu han ein chinesischer
+wts_1_34	991	68	2	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	ཐད་དྲང་ tbad draṅ direkt, unmittelbar.
 wts_1_34	992	1	4	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཐན་མོ་རྔོ་རིང་ than mo rdo riṅ
 wts_1_34	992	7	4	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཐན་མོ་རྔོ་རིང་ than mo rdo riṅ npr. ein Ort bei
 wts_1_34	994	143	2	མང	maṅ	reviewed_exact_final_ng	man	reviewed_tibetan_exact_final_ng_consensus	tibetan_mang_consensus_batch_20260726	ཁྲལས་མང་ thabs maṅ sehr geschickt.
@@ -1758,9 +1761,49 @@ wts_1_34	1291	69	2	ཅིང	ciṅ	reviewed_exact_final_ng	cin	reviewed_tibetan_
 wts_1_34	1294	1	3	གླིང	gliṅ	reviewed_exact_final_ng	glin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gling_consensus_batch_20260719	དྲག་པོ་གླིང་ drag po gliṅ
 wts_1_34	1294	9	3	གླིང	gliṅ	reviewed_exact_final_ng	glin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gling_consensus_batch_20260719	དྲག་པོ་གླིང་ drag po gliṅ Bez. des sechsten
 wts_1_34	1294	70	2	དཔུང	dpuṅ	reviewed_exact_final_ng	dpun	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	དྲག་དཔུང་ drag dpuṅ Armee.
-wts_1_34	1300	48	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	དྲང་ཤིང་ dran Siṅ Zepter.
-wts_1_34	1300	56	2	སེང	seṅ	reviewed_exact_final_ng	sen	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	དྲང་སེང་ངེ་བ་ dran seṅ ne ba geradlinig.
-wts_1_34	1303	22	3	ལྷུང	lhuṅ	reviewed_exact_final_ng	lhun	reviewed_tibetan_exact_final_ng_consensus	final_ng_lhung_consensus_batch_20260727	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
+wts_1_34	1297	12	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ 'draṅ auch ’draṅ fut. zu 1776.
+wts_1_34	1298	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་མཁན་ draṅ mkhan
+wts_1_34	1298	22	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་མཁན་ draṅ mkhan Richter, Schlichter,
+wts_1_34	1298	30	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་འཁྱོག་ draṅ 'khyog Bez. für Regenbogen.
+wts_1_34	1298	33	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་འགྲོ་ draṅ 'gro Bez. für Pfeil.
+wts_1_34	1298	38	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ངེས་ draṅ nes herzuleitende Bedeutung.
+wts_1_34	1298	44	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ལྟང་ལྟང་ draṅ Itan Itan kerzengerade.
+wts_1_34	1298	51	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་དོན་ draṅ don
+wts_1_34	1298	53	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་བརྟན་ draṅ brtan aufrecht.
+wts_1_34	1298	59	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ཐག་ draṅ thag gerade.
+wts_1_34	1298	64	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ཐད་ draṅ thad geradeaus, gerade heraus.
+wts_1_34	1298	74	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ཐིག་ draṅ thig geradlinig.
+wts_1_34	1298	81	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་དོན་ draṅ don auch draṅ ba’i don vorläufi-
+wts_1_34	1299	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་དྲེང་ draṅ dren
+wts_1_34	1299	10	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་དྲེང་ draṅ dren auch bran bren Begierde,
+wts_1_34	1299	21	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་པོ་ draṅ po vgl. 1’dran.
+wts_1_34	1299	53	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་པོ་ draṅ po
+wts_1_34	1300	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་པོར་གནོན་ draṅ por gnon
+wts_1_34	1300	22	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་པོར་གནོན draṅ por gnon reglementieren.
+wts_1_34	1300	33	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་བའི་དོན་ draṅ ba’i don Tdran don.
+wts_1_34	1300	35	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་བའི་མི་བོ་ཆེ་ draṅ ba’i mi bo che npr. ein sa
+wts_1_34	1300	42	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ཤན་ draṅ śan klar unterscheidend.
+wts_1_34	1300	48	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་ཤིང་ draṅ Siṅ Zepter.
+wts_1_34	1300	48	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	དྲང་ཤིང་ draṅ Siṅ Zepter.
+wts_1_34	1300	54	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ draṅ sron
+wts_1_34	1300	56	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སེང་ངེ་བ་ draṅ seṅ ne ba geradlinig.
+wts_1_34	1300	56	2	སེང	seṅ	reviewed_exact_final_ng	sen	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	དྲང་སེང་ངེ་བ་ draṅ seṅ ne ba geradlinig.
+wts_1_34	1300	63	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ draṅ sron.
+wts_1_34	1301	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ draṅ sron
+wts_1_34	1302	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་གི་གཏོར་” draṅ sron gi gtor ...
+wts_1_34	1302	27	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་གི་གནས་ draṅ sron gi gnas ldran sron
+wts_1_34	1302	37	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་རྒྱས་པ་ draṅ sron rgyas pa ein Rsi, skt.
+wts_1_34	1302	55	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་སྣོད་ draṅ sron snod
+wts_1_34	1302	57	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ཆུ་ draṅ sron chu Wasser aus einem Be-
+wts_1_34	1302	63	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ཆེན་པོ་ draṅ sron chen po.
+wts_1_34	1302	90	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་གནས་ draṅ sron gnas auch draṅ sron gi
+wts_1_34	1302	104	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་སྣོད་ draṅ sron snod Bez. für Almosen-
+wts_1_34	1303	1	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba
+wts_1_34	1303	3	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba Bez. für den
+wts_1_34	1303	12	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་སྲིན་པོ་ draṅ sron srin po npr. ein Berg.
+wts_1_34	1303	22	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་སྲོང་ལྷུང་བ་ draṅ sron lhuṅ ba ein Ort bei
+wts_1_34	1303	22	3	ལྷུང	lhuṅ	reviewed_exact_final_ng	lhun	reviewed_tibetan_exact_final_ng_consensus	final_ng_lhung_consensus_batch_20260727	དྲང་སྲོང་ལྷུང་བ་ draṅ sron lhuṅ ba ein Ort bei
+wts_1_34	1303	37	1	དྲང	draṅ	reviewed_exact_final_ng	dran	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_drang_consensus_batch_20260728	དྲང་གསུམ་ draṅ gsum die drei Wahrheiten, vgl.
 wts_1_34	1308	81	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དྲན་པའི་དབང་པོ་ dran pa’i dbaṅ po.
 wts_1_34	1308	101	3	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	དྲན་པའི་ཤིང་རྟ་ dran pa’i Siṅ rta Beiname Märas.
 wts_1_34	1309	28	2	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དྲན་དབང་ dran dbaṅ Bez. für Gelehrter.

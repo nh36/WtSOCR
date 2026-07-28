@@ -69,64 +69,64 @@ target_changed	wts_1_34	124	96	3	རྒྱང	igyan	igyaṅ		source_compatible_s
 category_changed	wts_1_34	1275	1	4	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	དོམ་མགོ་གླང་སྙིང་ dom mgo glaṅ sin
 target_changed	wts_1_34	1275	4	4	སྲིང	shin	shiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
 category_changed	wts_1_34	128	89	2	སྲང	srun	sruṅ	sruṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དཀོར་སྲང་རྒྱལ་པོ་ dkor srun rgyal po Beiname der
-category_changed	wts_1_34	1297	12	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ 'dran auch ’dran fut. zu 1776.
-category_changed	wts_1_34	1298	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་མཁན་ dran mkhan
-category_changed	wts_1_34	1298	22	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་མཁན་ dran mkhan Richter, Schlichter,
-category_changed	wts_1_34	1298	30	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་འཁྱོག་ dran 'khyog Bez. für Regenbogen.
-category_changed	wts_1_34	1298	33	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་འགྲོ་ dran 'gro Bez. für Pfeil.
-category_changed	wts_1_34	1298	38	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ངེས་ dran nes herzuleitende Bedeutung.
-category_changed	wts_1_34	1298	44	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ལྟང་ལྟང་ dran Itan Itan kerzengerade.
-category_changed	wts_1_34	1298	51	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་དོན་ dran don
-category_changed	wts_1_34	1298	53	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་བརྟན་ dran brtan aufrecht.
-category_changed	wts_1_34	1298	59	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ཐག་ dran thag gerade.
-category_changed	wts_1_34	1298	64	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ཐད་ dran thad geradeaus, gerade heraus.
-category_changed	wts_1_34	1298	74	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ཐིག་ dran thig geradlinig.
-category_changed	wts_1_34	1298	81	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་དོན་ dran don auch dran ba’i don vorläufi-
-category_changed	wts_1_34	1299	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་དྲེང་ dran dren
-category_changed	wts_1_34	1299	10	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་དྲེང་ dran dren auch bran bren Begierde,
-category_changed	wts_1_34	1299	21	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་པོ་ dran po vgl. 1’dran.
-category_changed	wts_1_34	1299	53	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་པོ་ dran po
-category_changed	wts_1_34	1300	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་པོར་གནོན་ dran por gnon
-category_changed	wts_1_34	1300	22	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་པོར་གནོན dran por gnon reglementieren.
-category_changed	wts_1_34	1300	33	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་བའི་དོན་ dran ba’i don Tdran don.
-category_changed	wts_1_34	1300	35	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་བའི་མི་བོ་ཆེ་ dran ba’i mi bo che npr. ein sa
-category_changed	wts_1_34	1300	42	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ཤན་ dran śan klar unterscheidend.
-category_changed	wts_1_34	1300	48	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་ཤིང་ dran Siṅ Zepter.
-category_changed	wts_1_34	1300	54	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-category_changed	wts_1_34	1300	54	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-category_changed	wts_1_34	1300	56	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སེང་ངེ་བ་ dran seṅ ne ba geradlinig.
-category_changed	wts_1_34	1300	63	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron.
-category_changed	wts_1_34	1300	63	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron.
-category_changed	wts_1_34	1301	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-category_changed	wts_1_34	1301	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ dran sron
-category_changed	wts_1_34	1302	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” dran sron gi gtor ...
-category_changed	wts_1_34	1302	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” dran sron gi gtor ...
-category_changed	wts_1_34	1302	104	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod Bez. für Almosen-
-category_changed	wts_1_34	1302	104	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod Bez. für Almosen-
-category_changed	wts_1_34	1302	27	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ dran sron gi gnas ldran sron
-category_changed	wts_1_34	1302	27	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ dran sron gi gnas ldran sron
-category_changed	wts_1_34	1302	37	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ dran sron rgyas pa ein Rsi, skt.
-category_changed	wts_1_34	1302	37	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ dran sron rgyas pa ein Rsi, skt.
-category_changed	wts_1_34	1302	55	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod
-category_changed	wts_1_34	1302	55	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ dran sron snod
-category_changed	wts_1_34	1302	57	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ dran sron chu Wasser aus einem Be-
-category_changed	wts_1_34	1302	57	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ dran sron chu Wasser aus einem Be-
-category_changed	wts_1_34	1302	63	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ dran sron chen po.
-category_changed	wts_1_34	1302	63	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ dran sron chen po.
-category_changed	wts_1_34	1302	90	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ dran sron gnas auch dran sron gi
-category_changed	wts_1_34	1302	90	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ dran sron gnas auch dran sron gi
-category_changed	wts_1_34	1303	1	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba
-category_changed	wts_1_34	1303	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba
-category_changed	wts_1_34	1303	12	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
-category_changed	wts_1_34	1303	12	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
-category_changed	wts_1_34	1303	22	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
-category_changed	wts_1_34	1303	22	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
-category_changed	wts_1_34	1303	3	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
-category_changed	wts_1_34	1303	3	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
-category_changed	wts_1_34	1303	37	1	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་གསུམ་ dran gsum die drei Wahrheiten, vgl.
+disappeared	wts_1_34	1297	12	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ 'dran auch ’dran fut. zu 1776.
+disappeared	wts_1_34	1298	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་མཁན་ dran mkhan
+disappeared	wts_1_34	1298	22	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་མཁན་ dran mkhan Richter, Schlichter,
+disappeared	wts_1_34	1298	30	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་འཁྱོག་ dran 'khyog Bez. für Regenbogen.
+disappeared	wts_1_34	1298	33	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་འགྲོ་ dran 'gro Bez. für Pfeil.
+disappeared	wts_1_34	1298	38	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ངེས་ dran nes herzuleitende Bedeutung.
+disappeared	wts_1_34	1298	44	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ལྟང་ལྟང་ dran Itan Itan kerzengerade.
+disappeared	wts_1_34	1298	51	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་དོན་ dran don
+disappeared	wts_1_34	1298	53	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་བརྟན་ dran brtan aufrecht.
+disappeared	wts_1_34	1298	59	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ཐག་ dran thag gerade.
+disappeared	wts_1_34	1298	64	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ཐད་ dran thad geradeaus, gerade heraus.
+disappeared	wts_1_34	1298	74	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ཐིག་ dran thig geradlinig.
+disappeared	wts_1_34	1298	81	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་དོན་ dran don auch dran ba’i don vorläufi-
+disappeared	wts_1_34	1299	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་དྲེང་ dran dren
+disappeared	wts_1_34	1299	10	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་དྲེང་ dran dren auch bran bren Begierde,
+disappeared	wts_1_34	1299	21	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་པོ་ dran po vgl. 1’dran.
+disappeared	wts_1_34	1299	53	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་པོ་ dran po
+disappeared	wts_1_34	1300	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་པོར་གནོན་ dran por gnon
+disappeared	wts_1_34	1300	22	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་པོར་གནོན dran por gnon reglementieren.
+disappeared	wts_1_34	1300	33	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་བའི་དོན་ dran ba’i don Tdran don.
+disappeared	wts_1_34	1300	35	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་བའི་མི་བོ་ཆེ་ dran ba’i mi bo che npr. ein sa
+disappeared	wts_1_34	1300	42	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ཤན་ dran śan klar unterscheidend.
+disappeared	wts_1_34	1300	48	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་ཤིང་ dran Siṅ Zepter.
+disappeared	wts_1_34	1300	54	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ dran sron
+category_changed	wts_1_34	1300	54	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron
+disappeared	wts_1_34	1300	56	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སེང་ངེ་བ་ dran seṅ ne ba geradlinig.
+disappeared	wts_1_34	1300	63	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ dran sron.
+category_changed	wts_1_34	1300	63	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron.
+disappeared	wts_1_34	1301	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ dran sron
+category_changed	wts_1_34	1301	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ draṅ sron
+disappeared	wts_1_34	1302	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་གི་གཏོར་” dran sron gi gtor ...
+category_changed	wts_1_34	1302	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གཏོར་” draṅ sron gi gtor ...
+disappeared	wts_1_34	1302	104	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྣོད་ dran sron snod Bez. für Almosen-
+category_changed	wts_1_34	1302	104	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ draṅ sron snod Bez. für Almosen-
+disappeared	wts_1_34	1302	27	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་གི་གནས་ dran sron gi gnas ldran sron
+category_changed	wts_1_34	1302	27	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གི་གནས་ draṅ sron gi gnas ldran sron
+disappeared	wts_1_34	1302	37	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་རྒྱས་པ་ dran sron rgyas pa ein Rsi, skt.
+category_changed	wts_1_34	1302	37	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་རྒྱས་པ་ draṅ sron rgyas pa ein Rsi, skt.
+disappeared	wts_1_34	1302	55	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྣོད་ dran sron snod
+category_changed	wts_1_34	1302	55	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྣོད་ draṅ sron snod
+disappeared	wts_1_34	1302	57	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ཆུ་ dran sron chu Wasser aus einem Be-
+category_changed	wts_1_34	1302	57	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆུ་ draṅ sron chu Wasser aus einem Be-
+disappeared	wts_1_34	1302	63	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ཆེན་པོ་ dran sron chen po.
+category_changed	wts_1_34	1302	63	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ཆེན་པོ་ draṅ sron chen po.
+disappeared	wts_1_34	1302	90	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་གནས་ dran sron gnas auch dran sron gi
+category_changed	wts_1_34	1302	90	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་གནས་ draṅ sron gnas auch draṅ sron gi
+disappeared	wts_1_34	1303	1	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba
+category_changed	wts_1_34	1303	1	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba
+disappeared	wts_1_34	1303	12	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྲིན་པོ་ dran sron srin po npr. ein Berg.
+category_changed	wts_1_34	1303	12	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྲིན་པོ་ draṅ sron srin po npr. ein Berg.
+disappeared	wts_1_34	1303	22	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་ལྷུང་བ་ dran sron lhuṅ ba ein Ort bei
+category_changed	wts_1_34	1303	22	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་ལྷུང་བ་ draṅ sron lhuṅ ba ein Ort bei
+disappeared	wts_1_34	1303	3	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་སྲོང་སྨྲ་བ་ dran sron smra ba Bez. für den
+category_changed	wts_1_34	1303	3	2	སྲོང	sron	sroṅ	sroṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba Bez. für den
+disappeared	wts_1_34	1303	37	1	དྲང	dran	draṅ		source_compatible_insufficient_evidence			དྲང་གསུམ་ dran gsum die drei Wahrheiten, vgl.
 target_changed	wts_1_34	1334	50	3	ལྗང	ljan	ljaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan
 target_changed	wts_1_34	1334	97	3	ལྗང	ljan	ljaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དྲུག་མར་ལྗང་ drug mar ljan Ocker; Laberitum
-category_changed	wts_1_34	152	191	2	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བཀྲིད་དྲང་ berid dran das Führen.
+disappeared	wts_1_34	152	191	2	དྲང	dran	draṅ		source_compatible_insufficient_evidence			བཀྲིད་དྲང་ berid dran das Führen.
 target_changed	wts_1_34	155	207	1	ང	ykan	ykaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ང་སྙས།་ ykan skyes Bez. für Angehörige der un-
 target_changed	wts_1_34	157	112	2	འབུང	thun	thuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	རྐང་འབུང་ rkaṅ ’thun auch rkan thun „Fußtrin-
 target_changed	wts_1_34	157	177	1	རྐང	ran	raṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	རྐང་དྲུག་ ran ing ep
@@ -507,7 +507,7 @@ target_changed	wts_1_34	787	13	3	གདང	gdun	gduṅ		source_compatible_struct
 category_changed	wts_1_34	787	200	3	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཉེ་བར་བྱང་ fie bar byun hinausgehen.
 category_changed	wts_1_34	793	196	2	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཉེས་བྱང་ fies byun Verbrechen.
 disappeared	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ		source_compatible_insufficient_evidence			ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
-category_changed	wts_1_34	80	126	3	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
+disappeared	wts_1_34	80	126	3	དྲང	dran	draṅ		source_compatible_insufficient_evidence			ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
 target_changed	wts_1_34	801	53	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
 target_changed	wts_1_34	814	160	1	སྙང	shan	shaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
 target_changed	wts_1_34	817	219	4	ལྟོང	h	ṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
@@ -654,7 +654,7 @@ category_changed	wts_1_34	989	211	4	ཤང	sin	siṅ	siṅ	source_compatible_str
 target_changed	wts_1_34	989	216	1	བང	than	thaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	བང་ཉོ།། than mo eine Gruppe von Gottheiten.
 category_changed	wts_1_34	989	229	1	བྲང	than	thaṅ	thaṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	བྲང་ཞེ་ than Zu auch than Zwa eine Kopfbe-
 target_changed	wts_1_34	99	21	2	ཤེང	sen	seṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀོང་ཤེང་ koṅ sen eine Region in der Nähe von
-category_changed	wts_1_34	991	68	2	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཐད་དྲང་ tbad dran direkt, unmittelbar.
+disappeared	wts_1_34	991	68	2	དྲང	dran	draṅ		source_compatible_insufficient_evidence			ཐད་དྲང་ tbad dran direkt, unmittelbar.
 target_changed	wts_1_34	992	66	2	ཁང	khun	khuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཁྲབ་།ཁང་ thab khun Feuerplatz, Herd.
 target_changed	wts_1_34	999	202	2	ཀོང	gon	goṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 category_changed	wts_35_51	1050	12	2	གཡང	g.yan	g.yaṅ	g.yaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཕྱུ་གཡང་ phywa g.yan auch phya g.yari Glück;

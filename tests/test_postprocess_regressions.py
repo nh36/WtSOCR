@@ -3182,6 +3182,35 @@ class PostprocessRegressionTests(unittest.TestCase):
             ],
         )
 
+    def test_historical_witness_drang_is_exactly_gated(self) -> None:
+        lines = {
+            (1298, 1): "དྲང་མཁན་ dran mkhan",
+            (1297, 53): "དྲང་ ?dran",
+            (1400, 1): "unreviewed dran control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲང་མཁན་ draṅ mkhan", corrected)
+        self.assertIn("དྲང་ ?dran", corrected)
+        self.assertIn("unreviewed dran control", corrected)
+        self.assertTrue(all(
+            row["reason"]
+            in {
+                "reviewed_tibetan_exact_final_ng_historical_witness",
+                "reviewed_tibetan_exact_final_ng_echo",
+            }
+            for row in changes
+        ))
+        collision = {
+            (118, 13): "མེ་དྲན་པ་ mi dran pa Erinnerungverlust",
+        }
+        _result, collision_text, collision_changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(collision), label="wts_9_m"
+        )
+        self.assertIn("མེ་དྲན་པ་ mi dran pa", collision_text)
+        self.assertFalse(collision_changes)
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

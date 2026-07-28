@@ -50,6 +50,7 @@ def validate(root: Path = ROOT) -> list[str]:
             if row["reason"] in {
                 "reviewed_tibetan_exact_final_ng_consensus",
                 "reviewed_tibetan_exact_final_ng_source_compatible",
+                "reviewed_tibetan_exact_final_ng_historical_witness",
             }
             and row["to_token"] in {item["to_token"] for item in pos}
             and (row["page"], row["line"], row["from_token"])
