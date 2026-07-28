@@ -39,7 +39,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 བློང	blon	blo<FINAL_NASAL>	bloṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_8_b
 མཇིང	mjin	mji<FINAL_NASAL>	mjiṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34
 མདོང	mdon	mdo<FINAL_NASAL>	mdoṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34
-ཞང	Zan	Za<FINAL_NASAL>	Zaṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34
 འདིང	din	di<FINAL_NASAL>	diṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_1_34
 འཕྱོང	phyon	phyo<FINAL_NASAL>	phyoṅ	2	insufficient_consensus:2	source_compatible_single_anchor:2	1			0	wts_35_51
 འཚང	tshan	tsha<FINAL_NASAL>	tshaṅ	2	competing_latin_forms:2	source_compatible_single_anchor:2	1		shaṅ:1	0	wts_1_34
@@ -216,7 +215,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཚང	ishah	isha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		tshaṅ:21; tsbaṅ:1	0	wts_35_51
 ཚོང	Tauschhan	Tauschha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		tshoṅ:3; ishoṅ:1	0	wts_1_34
 ཝང	ldan	lda<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		waṅ:5	0	wts_1_34
-ཞང	Zin	Zi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		Zaṅ:1	0	wts_1_34
+ཞང	Zin	Zi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		Zaṅ:3	0	wts_1_34
 འགང	gah	ga<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		goṅ:1	0	wts_1_34
 འགྱང	byun	byu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gaṅ:1	0	wts_1_34
 འགྱངས	then	the<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		gyaṅs:1	1	wts_1_34

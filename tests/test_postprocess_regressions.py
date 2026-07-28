@@ -3259,6 +3259,23 @@ class PostprocessRegressionTests(unittest.TestCase):
             [row["to_token"] for row in changes], ["draṅ", "sroṅ"]
         )
 
+    def test_historical_witness_zhang_preserves_source_case(self) -> None:
+        lines = {
+            (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",
+            (1400, 1): "unreviewed Zan zan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für",
+            corrected,
+        )
+        self.assertIn("unreviewed Zan zan control", corrected)
+        self.assertEqual(
+            [row["to_token"] for row in changes].count("Zaṅ"), 2
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

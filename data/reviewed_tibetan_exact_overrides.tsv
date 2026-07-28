@@ -6144,3 +6144,6 @@ wts_1_34	1303	3	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness
 wts_1_34	1303	12	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_srong_consensus_batch_20260728	Frozen exact Tibetan སྲོང alignment; exact-row only.
 wts_1_34	1303	22	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_srong_consensus_batch_20260728	Frozen exact Tibetan སྲོང alignment; exact-row only.
 wts_1_34	1302	90	6	sron	sroṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_srong_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	35	164	3	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
+wts_1_34	1117	21	3	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
+wts_1_34	35	164	7	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_zhang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.

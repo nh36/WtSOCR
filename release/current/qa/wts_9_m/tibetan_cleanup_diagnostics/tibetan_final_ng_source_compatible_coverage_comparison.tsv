@@ -49,7 +49,7 @@ newly_discovered	wts_1_34	1106	9	1	དང	dangon				source_compatible_no_anchor	
 newly_discovered	wts_1_34	1106	9	2	གོང	in				source_compatible_no_anchor	0	དང་གོང་ dangon in thugs kyi — Brust.
 newly_discovered	wts_1_34	1109	35	1	ང	dan				source_compatible_no_anchor	0	ང་པོའི་རྫལ་རྨན་ dan po’ rdul can Bez. für
 disappeared	wts_1_34	111	3	2	གཞུང	gzun	gZuṅ		source_compatible_insufficient_evidence			ཀླད་གཞུང་ klad gzun Rückenmark.
-category_changed	wts_1_34	1117	21	3	ཞང	Zan	Zaṅ	Zaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
+disappeared	wts_1_34	1117	21	3	ཞང	Zan	Zaṅ		source_compatible_insufficient_evidence			དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
 newly_discovered	wts_1_34	113	33	2	གདང	gdon		gdoṅ		source_compatible_not_final_ng_only	2	ཀླུ་གདང་མ་ལྔ་ klu gdon ma lṅa N. von fünf
 newly_discovered	wts_1_34	114	4	4	ཁྱུང	kbyun				source_compatible_no_anchor	0	ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 newly_discovered	wts_1_34	1140	87	2	རིང	Iderin				source_compatible_marker_attached	0	དི་རིང་ dirin Iderin.
@@ -187,7 +187,7 @@ newly_discovered	wts_1_34	339	136	4	བྱང	byun		byuṅ		source_compatible_no
 newly_discovered	wts_1_34	339	153	3	བྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	གང་མིན་བྱང་ gaṅ min byun Unheil.
 category_changed	wts_1_34	341	1	2	རུང	run	ruṅ	ruṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གང་རུང་ gar run
 newly_discovered	wts_1_34	346	145	2	སླང	span				source_compatible_no_anchor	0	གབ་སླང་ gab span [arch.] Gebälk, Abschluß-
-category_changed	wts_1_34	35	164	3	ཞང	Zan	Zaṅ	Zaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
+disappeared	wts_1_34	35	164	3	ཞང	Zan	Zaṅ		source_compatible_insufficient_evidence			ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
 category_changed	wts_1_34	350	61	2	ཧང	han	haṅ	haṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གི་ཧང་ gi han †9/ wan
 newly_discovered	wts_1_34	352	101	1	གང	gun				source_compatible_no_anchor	0	གང་ལོ་ gun lo Ydgun 2.
 newly_discovered	wts_1_34	352	8	1	གང	gun				source_compatible_no_anchor	0	གང་བྲང་ gun than npr. eine Gegend in mÑa’-

@@ -1,4 +1,5 @@
 volume	page	line	token_index	tibetan_syllable	current_dotted_token	provenance_class	source_token_or_tokens	correction_reason	correction_evidence	context_excerpt
+wts_1_34	35	164	3	ཞང	Zaṅ	reviewed_exact_final_ng	Zan	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
 wts_1_34	36	79	3	བང	baṅ	reviewed_exact_final_ng	ban	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_bang_consensus_batch_20260727	ཀ་ཏ་བང་ཀ་ Ra ta baṅ ka eine Heilpflanze. - skt.
 wts_1_34	37	119	2	ཐུང	thuṅ	reviewed_exact_final_ng	thun	reviewed_tibetan_exact_final_ng_consensus	tibetan_thung_consensus_batch_20260726	ཀ་ཐུང་ ka thuṅ (ka).
 wts_1_34	39	188	2	ཕྲེང	phreṅ	reviewed_exact_final_ng	phren	reviewed_tibetan_exact_final_ng_consensus	tibetan_phreng_consensus_batch_20260726	ཀ་ཕྲེང་ ka phreṅ ('ka) „ka-Kranz“, alphabetische
@@ -1680,6 +1681,7 @@ wts_1_34	1115	18	3	དང	daṅ	google_adopted	dan	alternate_witness_google_loc_
 wts_1_34	1115	60	5	འབྲང	braṅ	google_adopted	bran	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དད་པས་རྗེས་སུ་འབྲང་བ་ dad pas rjes su 'braṅ ba
 wts_1_34	1116	35	2	ཀོང	koṅ	reviewed_exact_final_ng	kon	reviewed_tibetan_exact_final_ng_consensus	tibetan_kong_consensus_batch_20260719	དན་ཀོང་ dan koṅ ldan gon.
 wts_1_34	1116	44	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	དན་གོང་ dan goṅ auch dan kon Kugelbogen,
+wts_1_34	1117	21	3	ཞང	Zaṅ	reviewed_exact_final_ng	Zan	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in
 wts_1_34	1123	85	3	རང	raṅ	google_adopted	ran	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དམ་པ་རང་གྲོལ་ dam pa raṅ grol npr. ein Bon-
 wts_1_34	1127	13	4	དྲཔང	dbaṅ	google_adopted	dban	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	མ་ཚིག་གྲི་དྲཔང་ཆོ། dam tsbig gi dbaṅ mo npr.
 wts_1_34	1127	94	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	དམ་ཤིང་ dam Siṅ ein Stock, Attribut von Bon-

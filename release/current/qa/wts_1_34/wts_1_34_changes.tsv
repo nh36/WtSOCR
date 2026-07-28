@@ -28860,3 +28860,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1303	3	13205	headword_line	sron	sroṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་སྲོང་སྨྲ་བ་ draṅ sron smra ba Bez. für den
 1303	12	13206	headword_line	sron	sroṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་སྲོང་སྲིན་པོ་ draṅ sron srin po npr. ein Berg.
 1303	22	13207	headword_line	sron	sroṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དྲང་སྲོང་ལྷུང་བ་ draṅ sron lhuṅ ba ein Ort bei
+35	164	46	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
+35	164	46	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
+1117	21	12290	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
