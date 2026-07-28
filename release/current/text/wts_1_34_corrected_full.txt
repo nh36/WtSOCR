@@ -16231,7 +16231,7 @@ Lex. ko ba’i phyi Sun gyi skyi’am / pags pa srab
 po „äußere Schicht des Leders oder dünne
 Tierhaut“ (TTC).
 
-ཀོ་ གྱོང་ ko gyon
+ཀོ་ གྱོང་ ko gyoṅ
 
 Lex. ko ba’i ca lag bzo mkhan „einer, der Lederwaren herstellt“ (TTC).
 
@@ -16240,7 +16240,7 @@ Lex. ko gru gton mkhan „Steuermann eines
 
 Lederboots“ (TTC).
 
-ཀོ་གྱོང་ ko gyon hartes Leder.
+ཀོ་གྱོང་ ko gyoṅ hartes Leder.
 Lex. ko krad (Bon 19,16).
 
 ཀོ་གྲུ་ ko gru, auch ko ru Boot aus Leder.
@@ -51434,7 +51434,7 @@ Lex. khe bzan gis thon pa’i bskyed (Dagy).
 Lex. khe bzan dan gyon gun (Dagy, ähnl.
 brDa).ཁེ་ཀྱོང་ khe gyon
 
-ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
+ཁེ་གྱོང་ khe gyoṅ Gewinn und Verlust.
 Lex. khe bzan dan gyon gun (Dagy).
 
 Far khergad Kirgise.
@@ -71013,13 +71013,13 @@ gras gyon gun Verlust.
 
 244
 
-གྱོང་རོལ་ gyon rol
+གྱོང་རོལ་ gyoṅ rol
 
 Lex. khe med - „ohne Gewinn, Verlust“
 
 (brDa); gyon 97 don (Dagy).
 
-གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
+གྱོང་ཀྱོང་ gyoṅ gyon hart, zäh, widerstandsfä-
 
 hig.
 Lex. bskams pa’i rens po’am mi gyoṅ po lta
@@ -71029,7 +71029,7 @@ bu „wie: zähes Leder und zäher Mensch“
 
 (Dagy).
 
-གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
+གྱོང་གླགས་པ་ gyoṅ grugs pa Bez. für die Speise
 
 des ersten Zeitalters.
 
@@ -71071,7 +71071,7 @@ Speise des ersten Zeitalters.
 
 Lex. sa Zag zer (brDa, ähnl. Dagy); gyon ral
 
-གྱོང་བཞིག་ gyon bsig
+གྱོང་བཞིག་ gyoṅ bsig
 
 ni sa Zag „gyon ral: ‚Erdfett‘“ (1 16 21,16); sa
 Zag ste bskal pa ya thog skabs sa steh nas raṅi
@@ -71082,7 +71082,7 @@ Speise für die Menschen geeignet war“
 
 (TTC).
 
-གྱོང་བཤིག་ gyon bśig Zerstörung.
+གྱོང་བཤིག་ gyoṅ bśig Zerstörung.
 
 mchod par ñam chag 975 gyon (bsig tu che ba
 ’dug pas „es besteht sehr [die Gefahr einer]

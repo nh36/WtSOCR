@@ -15,7 +15,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཅང	can	ca<FINAL_NASAL>	caṅ	13	insufficient_consensus:11; damaged_context:2	source_compatible_single_anchor:11; source_compatible_damaged_context:2	1			2	wts_1_34	insufficient_feature_coverage	0
 བྱང	byun	byu<FINAL_NASAL>	byuṅ	13	not_emitted_by_legacy_global_target:13	source_compatible_not_final_ng_only:13	1		byaṅ:88; bbyaṅ:2	0	wts_1_34	insufficient_feature_coverage	0
 གླེང	glen	gle<FINAL_NASAL>	gleṅ	12	competing_latin_forms:11; damaged_context:1	source_compatible_single_anchor:11; source_compatible_damaged_context:1	1		gliṅ:1	1	wts_1_34	insufficient_feature_coverage	0
-གྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	8	insufficient_consensus:8	source_compatible_single_anchor:8	1			0	wts_1_34	insufficient_feature_coverage	0
 ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34	insufficient_feature_coverage	0
 འཆེང	chin	chi<FINAL_NASAL>	chiṅ	7	insufficient_consensus:7	source_compatible_not_final_ng_only:7	1			0	wts_1_34	insufficient_feature_coverage	0
 རུང	run	ru<FINAL_NASAL>	ruṅ	6	insufficient_consensus:6	source_compatible_single_anchor:6	1			0	wts_1_34	insufficient_feature_coverage	0

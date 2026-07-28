@@ -166,7 +166,7 @@ target_changed	wts_1_34	261	3	2	ཤེང	sen	seṅ		source_compatible_insuffici
 target_changed	wts_1_34	267	52	1	ཁུང	Rhun	Rhuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁུང་ཉལ་ Rhun nal.
 category_changed	wts_1_34	269	66	2	བསླང	bslan	bslaṅ	bslaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁུར་བསླང་ངོ་ khur bslan no verbale Verstöße
 category_changed	wts_1_34	270	1	2	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁེ་ཀྱོང་ khe gyon
-category_changed	wts_1_34	270	3	2	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
+disappeared	wts_1_34	270	3	2	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
 disappeared	wts_1_34	275	173	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
 category_changed	wts_1_34	275	182	1	ཁོང	kbon	kboṅ	kboṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་ kbon;
 disappeared	wts_1_34	276	1	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སྐེམ་པ་ khon skem pa
@@ -241,14 +241,14 @@ target_changed	wts_1_34	361	63	1	ཀོང	gon	goṅ		source_compatible_insuffic
 target_changed	wts_1_34	361	71	1	ཀོང	gon	goṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀོང་རྩེ་ gon rtse Kragen.
 target_changed	wts_1_34	367	184	1	གྱང	gyun	gyuṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གྱང་རོ་ gyun ro hart, trocken; trockene Leiche.
 category_changed	wts_1_34	370	106	1	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྱོང་རོལ་ gyon rol auch gyon ral Bez. für die
-category_changed	wts_1_34	370	112	1	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་བཞིག་ gyon bsig
-category_changed	wts_1_34	370	123	1	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་བཤིག་ gyon bśig Zerstörung.
+disappeared	wts_1_34	370	112	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་བཞིག་ gyon bsig
+disappeared	wts_1_34	370	123	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་བཤིག་ gyon bśig Zerstörung.
 category_changed	wts_1_34	370	15	1	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྱོང་ gyon Verlust, Mangel; med. Austrock-
 category_changed	wts_1_34	370	28	1	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྱོང་བསྐར་ gyon bskur unberücksichtigt lassen,
-category_changed	wts_1_34	370	54	1	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་རོལ་ gyon rol
-category_changed	wts_1_34	370	60	1	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
-category_changed	wts_1_34	370	60	2	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
-category_changed	wts_1_34	370	70	1	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
+disappeared	wts_1_34	370	54	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་རོལ་ gyon rol
+disappeared	wts_1_34	370	60	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
+category_changed	wts_1_34	370	60	2	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྱོང་ཀྱོང་ gyoṅ gyon hart, zäh, widerstandsfä-
+disappeared	wts_1_34	370	70	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
 target_changed	wts_1_34	373	190	1	གླང	gran	graṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གླང་ཁྲ་ gran ba.
 target_changed	wts_1_34	374	1	1	གྲང	oran	oraṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	གྲང་ཚལ་ oran tshal
 target_changed	wts_1_34	374	32	1	གླང	gran	graṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གླང་རླང་ gran rlun eine Krankheit.
@@ -630,8 +630,8 @@ disappeared	wts_1_34	919	36	1	རྟིང	rtin	rtiṅ		source_compatible_insuff
 target_changed	wts_1_34	921	146	5	སྙིང	Irten	Irteṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	རྟེན་སྙིང་ rten $5/7//7 Irten ’brel süin po.
 target_changed	wts_1_34	921	165	2	མདང	mdun	mduṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	རྟེན་མདང་ rten mdun Lanze für ein Medium
 category_changed	wts_1_34	922	9	2	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	རྟེན་འབྱང་ rten ’byun.
-category_changed	wts_1_34	93	106	2	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀོ་གྱོང་ ko gyon hartes Leder.
-category_changed	wts_1_34	93	97	2	གྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀོ་ གྱོང་ ko gyon
+disappeared	wts_1_34	93	106	2	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			ཀོ་གྱོང་ ko gyon hartes Leder.
+disappeared	wts_1_34	93	97	2	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			ཀོ་ གྱོང་ ko gyon
 category_changed	wts_1_34	940	152	1	ལྟོང	lton	ltoṅ	ltoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ལྟོང་ lton Kerbe, Vertiefung, Nocke; mda’ ~
 category_changed	wts_1_34	940	176	1	ལྟོང	lton	ltoṅ	ltoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ལྟོང་གོམས་པ་ lton goms pa mit Pfeilen vertraut,
 category_changed	wts_1_34	940	178	1	ལྟོང	lton	ltoṅ	ltoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ལྟོང་ཅན་ lton can Bez. für Pfeil.

@@ -28916,3 +28916,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 495	118	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
 495	124	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་ཤུན་ sgon sun Eischale.
 495	130	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་སེར་ sgon ser Eigelb.
+93	97	1123	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀོ་ གྱོང་ ko gyon
+93	106	1124	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཀོ་གྱོང་ ko gyon hartes Leder.
+270	3	3645	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
+370	54	5022	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་རོལ་ gyon rol
+370	60	5023	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
+370	70	5024	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
+370	112	5027	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་བཞིག་ gyon bsig
+370	123	5028	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་བཤིག་ gyon bśig Zerstörung.

@@ -3661,10 +3661,10 @@ wts_1_34	93	62	1	ཀོ	ko	insufficient_feature_coverage	yes				lkog	reviewed_ti
 wts_1_34	93	62	2	སྐོ	sko	insufficient_feature_coverage	yes				lkog	reviewed_tibetan_exact_initial_i_l_family	ordinary_tibetan_lexical_or_compound	none	no	ཀོ་ སྐོ ko sko, auch kos ko, sko sko, o ko, 0 sko
 wts_1_34	93	89	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་སྐྱི ko skyi Außenseite des Leders, dünnes Le-
 wts_1_34	93	89	2	སྐྱི	skyi	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་སྐྱི ko skyi Außenseite des Leders, dünnes Le-
-wts_1_34	93	97	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་ གྱོང་ ko gyon
-wts_1_34	93	97	2	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀོ་ གྱོང་ ko gyon
-wts_1_34	93	106	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྱོང་ ko gyon hartes Leder.
-wts_1_34	93	106	2	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྱོང་ ko gyon hartes Leder.
+wts_1_34	93	97	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་ གྱོང་ ko gyoṅ
+wts_1_34	93	97	2	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀོ་ གྱོང་ ko gyoṅ
+wts_1_34	93	106	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྱོང་ ko gyoṅ hartes Leder.
+wts_1_34	93	106	2	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྱོང་ ko gyoṅ hartes Leder.
 wts_1_34	93	109	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྲུ་ ko gru, auch ko ru Boot aus Leder.
 wts_1_34	93	109	2	གྲུ	gru	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གྲུ་ ko gru, auch ko ru Boot aus Leder.
 wts_1_34	93	130	1	ཀོ	ko	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀོ་གླ་ ko gla Gebühr für eine Bootsfahrt.
@@ -9831,8 +9831,8 @@ wts_1_34	269	202	1	ཁེ	khe	insufficient_feature_coverage	yes						ordinary_ti
 wts_1_34	269	202	2	གུན	gun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་གུན་ khe gun Gewinn und Verlust.
 wts_1_34	270	1	1	ཁེ	khe	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་ཀྱོང་ khe gyon
 wts_1_34	270	1	2	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཁེ་ཀྱོང་ khe gyon
-wts_1_34	270	3	1	ཁེ	khe	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
-wts_1_34	270	3	2	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
+wts_1_34	270	3	1	ཁེ	khe	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་གྱོང་ khe gyoṅ Gewinn und Verlust.
+wts_1_34	270	3	2	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཁེ་གྱོང་ khe gyoṅ Gewinn und Verlust.
 wts_1_34	270	15	1	ཁེ	kbe	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
 wts_1_34	270	15	2	ཉེན	nen	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
 wts_1_34	270	28	1	ཁེགས	khegs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཁེགས་ khegs
@@ -13127,21 +13127,21 @@ wts_1_34	370	8	1	གྱོགས	gyogs	insufficient_feature_coverage	yes						or
 wts_1_34	370	15	1	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་ gyon Verlust, Mangel; med. Austrock-
 wts_1_34	370	28	1	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་བསྐར་ gyon bskur unberücksichtigt lassen,
 wts_1_34	370	28	2	བསྐར	bskur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་བསྐར་ gyon bskur unberücksichtigt lassen,
-wts_1_34	370	54	1	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་རོལ་ gyon rol
-wts_1_34	370	54	2	རོལ	rol	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་རོལ་ gyon rol
-wts_1_34	370	60	1	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
-wts_1_34	370	60	2	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
-wts_1_34	370	70	1	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
-wts_1_34	370	70	2	གླགས	grugs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
-wts_1_34	370	70	3	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
+wts_1_34	370	54	1	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གྱོང་རོལ་ gyoṅ rol
+wts_1_34	370	54	2	རོལ	rol	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་རོལ་ gyoṅ rol
+wts_1_34	370	60	1	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གྱོང་ཀྱོང་ gyoṅ gyon hart, zäh, widerstandsfä-
+wts_1_34	370	60	2	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་ཀྱོང་ gyoṅ gyon hart, zäh, widerstandsfä-
+wts_1_34	370	70	1	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyoṅ grugs pa Bez. für die Speise
+wts_1_34	370	70	2	གླགས	grugs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyoṅ grugs pa Bez. für die Speise
+wts_1_34	370	70	3	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་གླགས་པ་ gyoṅ grugs pa Bez. für die Speise
 wts_1_34	370	85	1	ཀྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་ཕོ་ gyoṅ po auch gyon ba hart, zäh, wider-
 wts_1_34	370	85	2	ཕོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་ཕོ་ gyoṅ po auch gyon ba hart, zäh, wider-
 wts_1_34	370	106	1	ཀྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་རོལ་ gyon rol auch gyon ral Bez. für die
 wts_1_34	370	106	2	རོལ	rol	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀྱོང་རོལ་ gyon rol auch gyon ral Bez. für die
-wts_1_34	370	112	1	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཞིག་ gyon bsig
-wts_1_34	370	112	2	བཞིག	bsig	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཞིག་ gyon bsig
-wts_1_34	370	123	1	གྱོང	gyon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཤིག་ gyon bśig Zerstörung.
-wts_1_34	370	123	2	བཤིག	bśig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཤིག་ gyon bśig Zerstörung.
+wts_1_34	370	112	1	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཞིག་ gyoṅ bsig
+wts_1_34	370	112	2	བཞིག	bsig	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཞིག་ gyoṅ bsig
+wts_1_34	370	123	1	གྱོང	gyoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gyoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཤིག་ gyoṅ bśig Zerstörung.
+wts_1_34	370	123	2	བཤིག	bśig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོང་བཤིག་ gyoṅ bśig Zerstörung.
 wts_1_34	371	1	1	གྱོན	gyon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོན་ཆས་ gyon chas
 wts_1_34	371	1	2	ཆས	chas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོན་ཆས་ gyon chas
 wts_1_34	371	31	1	གྱོན	gyon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྱོན་ཆས་ gyon chas Bekleidung, Kleider.

@@ -1,13 +1,13 @@
 metric	count
-aligned_undotted_candidates_considered	544
+aligned_undotted_candidates_considered	536
 no_compatible_anchor	334
-one_compatible_anchor	179
+one_compatible_anchor	171
 two_or_more_compatible_anchors	31
 identity_guard_excluded	87
 damaged	28
 marker_attached	10
 dominant	0
-single_anchor	107
+single_anchor	99
 no_anchor	308
 competing	0
-accounted_category_total	544
+accounted_category_total	536

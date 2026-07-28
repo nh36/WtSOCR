@@ -11762,12 +11762,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 93	93	1111	german_prose_with_translit			none	5	2	0	0	Lex. ko ba’i phyi Sun gyi skyi’am / pags pa srab
 93	94	1111	german_prose_with_translit			none	1	6	0	0	po „äußere Schicht des Leders oder dünne
 93	95	1111	german_prose			none	0	1	0	0	Tierhaut“ (TTC).
-93	97	1112	headword_line	ཀོ་ གྱོང་	gyon	medium	1	0	0	0	ཀོ་ གྱོང་ ko gyon
+93	97	1112	headword_line	ཀོ་ གྱོང་	gyon	medium	1	0	0	0	ཀོ་ གྱོང་ ko gyoṅ
 93	99	1112	german_prose_with_translit			none	2	4	0	0	Lex. ko ba’i ca lag bzo mkhan „einer, der Lederwaren herstellt“ (TTC).
 93	101	1112	german_prose_with_translit			none	1	2	0	0	2. Bootsführer; vgl. Iko gru.
 93	102	1112	german_prose_with_translit			none	1	3	0	0	Lex. ko gru gton mkhan „Steuermann eines
 93	104	1112	latin_other			none	1	0	0	0	Lederboots“ (TTC).
-93	106	1113	headword_line	ཀོ་གྱོང་	gyon	medium	1	1	0	0	ཀོ་གྱོང་ ko gyon hartes Leder.
+93	106	1113	headword_line	ཀོ་གྱོང་	gyon	medium	1	1	0	0	ཀོ་གྱོང་ ko gyoṅ hartes Leder.
 93	107	1113	german_prose			none	0	2	0	0	Lex. ko krad (Bon 19,16).
 93	109	1113	tibetan_only	ཀོ་གྲུ་		none	0	3	0	0	ཀོ་གྲུ་ ko gru, auch ko ru Boot aus Leder.
 93	111	1113	latin_other			none	4	0	0	0	—srgal bar bya ba’i ’bab stegs la ko gru’i ’bab
@@ -37990,7 +37990,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 269	204	3594	german_prose_with_translit			none	2	3	0	0	Lex. khe bzan dan gyon gun (Dagy, ähnl.
 269	205	3594	latin_other			none	1	0	0	0	brDa).
 270	1	3595	headword_line	ཁེ་ཀྱོང་	khe gyon	high	2	0	0	0	ཁེ་ཀྱོང་ khe gyon
-270	3	3596	headword_line	ཁེ་གྱོང་	khe gyon	high	2	3	0	0	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
+270	3	3596	headword_line	ཁེ་གྱོང་	khe gyon	high	2	3	0	0	ཁེ་གྱོང་ khe gyoṅ Gewinn und Verlust.
 270	4	3596	german_prose_with_translit			none	2	2	0	0	Lex. khe bzan dan gyon gun (Dagy).
 270	6	3596	german_prose_with_translit			none	1	2	0	0	Far khergad Kirgise.
 270	8	3596	german_prose_with_translit			none	3	1	0	0	= rgyal to re mdo snan gis mchid blans „der
@@ -52231,17 +52231,17 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 370	48	4950	german_prose_with_translit			none	1	2	0	0	Lex. gyon gi don (Dagy).
 370	50	4950	german_prose			none	0	1	0	0	gras gyon gun Verlust.
 370	52	4950	other			none	0	0	0	0	244
-370	54	4951	headword_line	གྱོང་རོལ་	gyon	medium	1	0	0	0	གྱོང་རོལ་ gyon rol
+370	54	4951	headword_line	གྱོང་རོལ་	gyon	medium	1	0	0	0	གྱོང་རོལ་ gyoṅ rol
 370	56	4951	german_prose_with_translit			none	1	4	0	0	Lex. khe med - „ohne Gewinn, Verlust“
 370	58	4951	german_prose_with_translit			none	1	1	0	0	(brDa); gyon 97 don (Dagy).
-370	60	4952	headword_line	གྱོང་ཀྱོང་	gyon gyon	medium	2	2	0	0	གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-
+370	60	4952	headword_line	གྱོང་ཀྱོང་	gyon gyon	medium	2	2	0	0	གྱོང་ཀྱོང་ gyoṅ gyon hart, zäh, widerstandsfä-
 370	62	4952	other			none	0	0	0	0	hig.
 370	63	4952	german_prose_with_translit			none	6	1	0	0	Lex. bskams pa’i rens po’am mi gyoṅ po lta
 370	64	4952	german_prose			none	0	2	0	0	bu „wie: hartgetrocknet oder zäher
 370	65	4952	german_prose_with_translit			none	6	1	0	0	Mensch“ (brDa); ko ba daṅ mi gyoṅ po lta
 370	66	4952	german_prose			none	0	5	0	0	bu „wie: zähes Leder und zäher Mensch“
 370	68	4952	german_prose			none	0	1	0	0	(Dagy).
-370	70	4953	headword_line	གྱོང་གླགས་པ་	gyon	medium	2	4	0	0	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
+370	70	4953	headword_line	གྱོང་གླགས་པ་	gyon	medium	2	4	0	0	གྱོང་གླགས་པ་ gyoṅ grugs pa Bez. für die Speise
 370	72	4953	german_prose			none	0	2	0	0	des ersten Zeitalters.
 370	74	4953	german_prose_with_translit			none	2	3	0	0	Lex. dum bur grugs pa’i sa „in Stückchen
 370	75	4953	german_prose_with_translit			none	1	2	0	0	zerbröckelte Tonerde“ (brDa); gyon drags
@@ -52272,7 +52272,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 370	106	4955	headword_line	ཀྱོང་རོལ་	gyon	medium	2	4	0	0	ཀྱོང་རོལ་ gyon rol auch gyon ral Bez. für die
 370	108	4955	german_prose			none	0	3	0	0	Speise des ersten Zeitalters.
 370	110	4955	german_prose_with_translit			none	2	4	0	0	Lex. sa Zag zer (brDa, ähnl. Dagy); gyon ral
-370	112	4956	headword_line	གྱོང་བཞིག་	gyon bsig	medium	2	0	0	0	གྱོང་བཞིག་ gyon bsig
+370	112	4956	headword_line	གྱོང་བཞིག་	gyon bsig	medium	2	0	0	0	གྱོང་བཞིག་ gyoṅ bsig
 370	114	4956	german_prose_with_translit			none	3	2	0	0	ni sa Zag „gyon ral: ‚Erdfett‘“ (1 16 21,16); sa
 370	115	4956	german_prose_with_translit			none	8	1	0	0	Zag ste bskal pa ya thog skabs sa steh nas raṅi
 370	116	4956	german_prose_with_translit			none	7	1	0	0	bźin gyis thon pa’i Zag rtsi 7777 7 zas su run ba
@@ -52280,7 +52280,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 370	118	4956	german_prose			none	0	4	0	0	von selbst erscheinende Essenz, die als
 370	119	4956	german_prose			none	0	5	0	0	Speise für die Menschen geeignet war“
 370	121	4956	other			none	0	0	0	0	(TTC).
-370	123	4957	headword_line	གྱོང་བཤིག་	gyon bśig Zerstörung	high	3	0	0	0	གྱོང་བཤིག་ gyon bśig Zerstörung.
+370	123	4957	headword_line	གྱོང་བཤིག་	gyon bśig Zerstörung	high	3	0	0	0	གྱོང་བཤིག་ gyoṅ bśig Zerstörung.
 370	125	4957	latin_other			none	4	0	0	0	mchod par ñam chag 975 gyon (bsig tu che ba
 370	126	4957	german_prose			none	0	3	0	0	’dug pas „es besteht sehr [die Gefahr einer]
 370	127	4957	german_prose_with_translit			none	1	2	0	0	Zerstörung der Opfer aufgrund [ihres]
