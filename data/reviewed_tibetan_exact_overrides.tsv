@@ -6090,6 +6090,7 @@ wts_9_m	272	30	5	Ita	lta	reviewed_tibetan_exact_initial_i_l_family	tibetan_initi
 wts_9_m	272	47	4	Ita	lta	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
 wts_9_m	272	69	7	Myañ	Myaṅ	reviewed_tibetan_exact_final_ng	wts9_unresolved_bucket_final_ng_context	Exact page-line-token reviewed; no broad final-ng rule
 wts_9_m	273	32	9	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
+wts_9_m	273	44	1	myani	myaṅ	reviewed_tibetan_exact_ocr_signature	feature_complete_stem_plus_conditioned_final_ni_ng_myang_20260728	Exact མྱང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_9_m	274	43	6	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
 wts_9_m	275	36	9	Ita	lta	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
 wts_9_m	275	49	7	Ita	lta	reviewed_tibetan_exact_initial_i_l_family	tibetan_initial_i_cleanup_20260621	Exact Google-corroborated initial-I/l-family OCR damage; impossible Tibetan initial form normalized without broad rule
