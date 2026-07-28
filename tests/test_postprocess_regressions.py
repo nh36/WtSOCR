@@ -3259,7 +3259,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             [row["to_token"] for row in changes], ["draṅ", "sroṅ"]
         )
 
-    def test_historical_witness_zhang_preserves_source_case(self) -> None:
+    def test_historical_witness_zhang_supersedes_bad_ascii_stem(self) -> None:
         lines = {
             (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",
             (1400, 1): "unreviewed Zan zan control",
@@ -3268,13 +3268,19 @@ class PostprocessRegressionTests(unittest.TestCase):
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
         self.assertIn(
-            "ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für",
+            "ཀ་ཅོག་ཞང་ ka cog źaṅ, auch ska cog źaṅ Kurzf. für",
             corrected,
         )
         self.assertIn("unreviewed Zan zan control", corrected)
         self.assertEqual(
-            [row["to_token"] for row in changes].count("Zaṅ"), 2
+            [row["to_token"] for row in changes].count("źaṅ"), 2
         )
+        anchor = {(398, 42): "གཞན་ཞང་ gźan Zaṅ"}
+        _result, anchor_text, anchor_changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(anchor), label="wts_8_b"
+        )
+        self.assertIn("གཞན་ཞང་ gźan źaṅ", anchor_text)
+        self.assertEqual(len(anchor_changes), 1)
 
     def test_reviewed_srong_target_propagates_only_to_exact_sroh_row(self) -> None:
         lines = {

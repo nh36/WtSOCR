@@ -28863,3 +28863,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 35	164	46	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
 35	164	46	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für
 1117	21	12290	headword_line	Zan	Zaṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
+35	164	46	headword_line	Zaṅ	źaṅ	A	reviewed_correction_supersession_bridge	1	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
+35	164	46	headword_line	Zaṅ	źaṅ	A	reviewed_correction_supersession_bridge	1	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
+1117	21	12290	headword_line	Zaṅ	źaṅ	A	reviewed_correction_supersession_bridge	1	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in

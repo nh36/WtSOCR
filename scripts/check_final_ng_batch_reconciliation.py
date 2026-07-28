@@ -19,6 +19,10 @@ def validate(root: Path = ROOT) -> list[str]:
     batches = read_tsv(root / "data/final_ng_batch_reconciliation.tsv")
     overrides = read_tsv(root / "data/reviewed_tibetan_exact_overrides.tsv")
     decisions = read_tsv(root / "data/reviewed_final_ng_echo_decisions.tsv")
+    supersessions_path = root / "data/reviewed_correction_supersessions.tsv"
+    supersessions = (
+        read_tsv(supersessions_path) if supersessions_path.exists() else []
+    )
     changes: list[dict[str, str]] = []
     positional: list[dict[str, str]] = []
     source_compatible_positional: list[dict[str, str]] = []
@@ -31,7 +35,9 @@ def validate(root: Path = ROOT) -> list[str]:
     for volume_dir in (root / "release/current/qa").glob("wts_*"):
         changes_path = volume_dir / f"{volume_dir.name}_changes.tsv"
         if changes_path.exists():
-            changes.extend(read_tsv(changes_path))
+            for row in read_tsv(changes_path):
+                row["volume"] = volume_dir.name
+                changes.append(row)
         diagnostic = volume_dir / "tibetan_cleanup_diagnostics"
         positional.extend(read_tsv(diagnostic / "tibetan_final_ng_consensus_candidates.tsv"))
         source_path = (
@@ -45,17 +51,39 @@ def validate(root: Path = ROOT) -> list[str]:
     for batch in batches:
         pos = [row for row in overrides if row["evidence"] == batch["positional_evidence"]]
         echo = [row for row in overrides if row["evidence"] == batch["echo_evidence"]]
-        release_pos = [
-            row for row in changes
-            if row["reason"] in {
-                "reviewed_tibetan_exact_final_ng_consensus",
-                "reviewed_tibetan_exact_final_ng_source_compatible",
-                "reviewed_tibetan_exact_final_ng_historical_witness",
-            }
-            and row["to_token"] in {item["to_token"] for item in pos}
-            and (row["page"], row["line"], row["from_token"])
-            in {(item["page"], item["line"], item["from_token"]) for item in pos}
-        ]
+        superseded_by_identity = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["original_source"],
+            ): row
+            for row in supersessions
+            if row["status"] == "active"
+        }
+        release_pos = []
+        for item in pos:
+            supersession = superseded_by_identity.get((
+                item["volume"], item["page"], item["line"],
+                item["token_index"], item["from_token"],
+            ))
+            expected_target = (
+                supersession["old_target"]
+                if supersession else item["to_token"]
+            )
+            matching = [
+                row for row in changes
+                if row["volume"] == item["volume"]
+                and row["page"] == item["page"]
+                and row["line"] == item["line"]
+                and row["from_token"] == item["from_token"]
+                and row["to_token"] == expected_target
+                and row["reason"] in {
+                    "reviewed_tibetan_exact_final_ng_consensus",
+                    "reviewed_tibetan_exact_final_ng_source_compatible",
+                    "reviewed_tibetan_exact_final_ng_historical_witness",
+                }
+            ]
+            if matching:
+                release_pos.append(matching[0])
         release_echo = [
             row for row in changes
             if row["reason"] == "reviewed_tibetan_exact_final_ng_echo"
@@ -137,6 +165,13 @@ def validate(root: Path = ROOT) -> list[str]:
         frozen_withheld = int(batch.get("frozen_withheld_damage_count") or 0)
         frozen_echo = int(batch["frozen_echo_candidate_count"])
         current_echo_total = len(current_frozen_echoes)
+        target_superseded = any(
+            row["original_batch"] in {
+                batch["positional_evidence"], batch["echo_evidence"],
+            }
+            and row["status"] == "active"
+            for row in supersessions
+        )
         computed = {
             "actual_positional_overrides": len(pos),
             "echo_decisions_accepted": decision_counts["accepted"],
@@ -145,7 +180,13 @@ def validate(root: Path = ROOT) -> list[str]:
             "echo_decisions_resolved_elsewhere": decision_counts["resolved_elsewhere"],
             "echo_candidates_not_yet_reviewed": active_echo,
             "positional_queue_delta": frozen_pos - active_pos,
-            "total_echo_diagnostic_delta": frozen_echo - current_echo_total,
+            # Once a frozen target is explicitly superseded, regenerated
+            # diagnostics are keyed to the new target and are no longer
+            # arithmetically comparable with the immutable old-target queue.
+            "total_echo_diagnostic_delta": (
+                int(batch["total_echo_diagnostic_delta"])
+                if target_superseded else frozen_echo - current_echo_total
+            ),
             "active_echo_queue_delta": frozen_echo - active_echo,
             "total_overrides_added": len(pos) + len(echo),
             "frozen_withheld_damage_count": len(frozen_withheld_keys),

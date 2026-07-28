@@ -112,9 +112,9 @@ wts_1_34	35	153	1	ཅོག	ka	insufficient_feature_coverage	yes						ordinary_t
 wts_1_34	35	153	2	ཀ	cog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅོག་ཀ་མཱ་ར་ ka cog ku mä ra, auch ska cogku mä
 wts_1_34	35	153	3	མཱ	ku	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅོག་ཀ་མཱ་ར་ ka cog ku mä ra, auch ska cogku mä
 wts_1_34	35	153	4	ར	m	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅོག་ཀ་མཱ་ར་ ka cog ku mä ra, auch ska cogku mä
-wts_1_34	35	164	1	ཀ	ka	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
-wts_1_34	35	164	2	ཅོག	cog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
-wts_1_34	35	164	3	ཞང	Zaṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog Zaṅ, auch ska cog Zaṅ Kurzf. für
+wts_1_34	35	164	1	ཀ	ka	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog źaṅ, auch ska cog źaṅ Kurzf. für
+wts_1_34	35	164	2	ཅོག	cog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog źaṅ, auch ska cog źaṅ Kurzf. für
+wts_1_34	35	164	3	ཞང	źaṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źaṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཅོག་ཞང་ ka cog źaṅ, auch ska cog źaṅ Kurzf. für
 wts_1_34	35	176	1	ཀ	ka	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཆ་ ka cha tka ca.
 wts_1_34	35	176	2	ཆ	cha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཆ་ ka cha tka ca.
 wts_1_34	35	177	1	ཀ	ka	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཀ་ཆུ་ ka chu Tkwa cu.
@@ -34211,10 +34211,10 @@ wts_1_34	1117	10	1	དན	dan	insufficient_feature_coverage	yes						ordinary_ti
 wts_1_34	1117	10	2	པོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དན་པོ་ dan po fest, verläßlich, standhaft.
 wts_1_34	1117	12	1	དན	dan	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་ཕག་ dan phag npr. ein Mönch.
 wts_1_34	1117	12	2	ཕག	phag	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་ཕག་ dan phag npr. ein Mönch.
-wts_1_34	1117	21	1	དན	dan	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in
-wts_1_34	1117	21	2	འབག	bag	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in
-wts_1_34	1117	21	3	ཞང	Zaṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in
-wts_1_34	1117	21	4	པོ	po	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag Zaṅ po npr. eine in
+wts_1_34	1117	21	1	དན	dan	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag źaṅ po npr. eine in
+wts_1_34	1117	21	2	འབག	bag	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag źaṅ po npr. eine in
+wts_1_34	1117	21	3	ཞང	źaṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źaṅ	reviewed_correction_supersession_bridge	tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag źaṅ po npr. eine in
+wts_1_34	1117	21	4	པོ	po	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དན་འབག་ཞང་པོ་ dan ’bag źaṅ po npr. eine in
 wts_1_34	1117	25	1	དན	dan	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དན་ཚིག་ dan tshig festes Versprechen.
 wts_1_34	1117	25	2	ཚིག	tshig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དན་ཚིག་ dan tshig festes Versprechen.
 wts_1_34	1117	30	1	དན	dan	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དན་རོག་ dan rog auch dan rogs, dan grogs ein

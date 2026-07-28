@@ -5664,8 +5664,8 @@ wts_8_b	398	1	1	དབོན	dbon	insufficient_feature_coverage	yes						ordinar
 wts_8_b	398	1	2	པོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་པོ་ dbon po
 wts_8_b	398	2	1	དབོན	dbon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་པོ་ dbon po.
 wts_8_b	398	2	2	པོ	po	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་པོ་ dbon po.
-wts_8_b	398	42	1	དབོན	dbon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་ཞང་ dbon Zaṅ Neffe und Onkel, auch
-wts_8_b	398	42	2	ཞང	Zaṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	དབོན་ཞང་ dbon Zaṅ Neffe und Onkel, auch
+wts_8_b	398	42	1	དབོན	dbon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་ཞང་ dbon źaṅ Neffe und Onkel, auch
+wts_8_b	398	42	2	ཞང	źaṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źaṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	དབོན་ཞང་ dbon źaṅ Neffe und Onkel, auch
 wts_8_b	398	45	1	དབོན	dbon	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་སྲས་ dbon sras
 wts_8_b	398	45	2	སྲས	sras	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོན་སྲས་ dbon sras
 wts_8_b	399	1	1	དབོར	dbor	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དབོར་ dbor

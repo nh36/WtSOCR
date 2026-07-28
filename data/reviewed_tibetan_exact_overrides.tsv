@@ -6144,7 +6144,11 @@ wts_1_34	1303	3	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness
 wts_1_34	1303	12	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_srong_consensus_batch_20260728	Frozen exact Tibetan སྲོང alignment; exact-row only.
 wts_1_34	1303	22	2	sron	sroṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_srong_consensus_batch_20260728	Frozen exact Tibetan སྲོང alignment; exact-row only.
 wts_1_34	1302	90	6	sron	sroṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_srong_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
-wts_1_34	35	164	3	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
-wts_1_34	1117	21	3	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
-wts_1_34	35	164	7	Zan	Zaṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_zhang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
+wts_1_34	35	164	3	Zan	źaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
+wts_1_34	1117	21	3	Zan	źaṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_zhang_consensus_batch_20260728	Frozen exact Tibetan ཞང alignment; exact-row only.
+wts_1_34	35	164	7	Zan	źaṅ	reviewed_tibetan_exact_final_ng_echo	historical_witness_zhang_same_entry_echo_batch_20260728	Entry structure independently establishes the same Tibetan lemma.
 wts_35_51	503	18	3	sroh	sroṅ	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	Exact Tibetan སྲོང alignment; reviewed sroṅ target is established by the historical-witness family and this source differs only in the final nasal glyph.
+wts_1_34	35	164	3	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞང identity; advances the already materialized obsolete target without a global Z-to-ź rule.
+wts_1_34	1117	21	3	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞང identity; advances the already materialized obsolete target without a global Z-to-ź rule.
+wts_1_34	35	164	7	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact reviewed ཞང echo; advances the already materialized obsolete target without a global Z-to-ź rule.
+wts_8_b	398	42	2	Zaṅ	źaṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact historical ཞང anchor fails reviewed root-consonant integrity; no global Z-to-ź rule.

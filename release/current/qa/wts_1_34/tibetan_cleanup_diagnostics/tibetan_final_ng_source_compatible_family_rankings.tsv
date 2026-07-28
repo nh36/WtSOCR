@@ -214,7 +214,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཚང	ishah	isha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		tshaṅ:21; tsbaṅ:1	0	wts_35_51	target_unresolved_no_anchor	0
 ཚོང	Tauschhan	Tauschha<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		tshoṅ:3; ishoṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 ཝང	ldan	lda<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		waṅ:5	0	wts_1_34	target_unresolved_no_anchor	0
-ཞང	Zin	Zi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		Zaṅ:3	0	wts_1_34	target_unresolved_no_anchor	0
+ཞང	Zin	Zi<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		źaṅ:3	0	wts_1_34	target_unresolved_no_anchor	0
 འགང	gah	ga<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		goṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 འགྱང	byun	byu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 འགྱངས	then	the<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		gyaṅs:1	1	wts_1_34	target_unresolved_no_anchor	0
