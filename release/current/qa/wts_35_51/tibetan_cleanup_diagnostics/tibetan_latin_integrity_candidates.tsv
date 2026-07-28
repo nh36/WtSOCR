@@ -8149,10 +8149,10 @@ wts_35_51	592	31	3	ཞོག	Zog	nonfinal_feature_mismatch	no	yes	partial	blocke
 wts_35_51	592	36	1	རྣམ	rnam	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་ rnam par biag
 wts_35_51	592	36	2	པར	par	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་ rnam par biag
 wts_35_51	592	36	3	བཞག	biag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་ rnam par biag
-wts_35_51	593	1	1	རྣམ	rnam	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
-wts_35_51	593	1	2	པར	par	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
-wts_35_51	593	1	3	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
-wts_35_51	593	1	4	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
+wts_35_51	593	1	1	རྣམ	rnam	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bźag pa
+wts_35_51	593	1	2	པར	par	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bźag pa
+wts_35_51	593	1	3	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bźag pa
+wts_35_51	593	1	4	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་བཞག་པ་་ rnam par bźag pa
 wts_35_51	593	44	1	རྣམ	rnam	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་གཟིགས་ rnam par gzigs
 wts_35_51	593	44	2	པར	par	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་གཟིགས་ rnam par gzigs
 wts_35_51	593	44	3	གཟིགས	gzigs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྣམ་པར་གཟིགས་ rnam par gzigs

@@ -21558,7 +21558,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 159	134	2023	german_prose			none	0	1	0	0	Dagy).
 159	136	2024	headword_line	རྐང་མཛེས་	rkaṅ mdzes	high	2	1	0	0	རྐང་མཛེས་ rkaṅ mdzes Asokabaum.
 159	138	2024	german_prose_with_translit			none	3	2	0	0	Lex. mya nan med pa’i śiṅ (brDa, Dagy).
-159	140	2025	headword_line	རྐང་བཞག་	rkaṅ bZag	high	2	1	0	0	རྐང་བཞག་ rkaṅ bZag Oberschenkel.
+159	140	2025	headword_line	རྐང་བཞག་	rkaṅ bZag	high	2	1	0	0	རྐང་བཞག་ rkaṅ bźag Oberschenkel.
 159	142	2025	german_prose_with_translit			none	4	2	0	0	Lex. rkan brla’i śa Zig (brDa).
 159	144	2026	headword_line	རྐང་བཞི་པ་	rkaṅ	high	2	1	0	0	རྐང་བཞི་པ་ rkaṅ //7/ pa Vierbeiner.
 159	146	2026	tibetan_latin_mixed			none	8	0	0	0	kho bo ni ... brgya byin gyis ༡ mams kyi rgyal
@@ -26209,7 +26209,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 190	156	2422	latin_other			none	1	0	0	0	linga-Kinn.
 190	157	2422	german_prose_with_translit			none	1	4	0	0	Lex. linga-jodah (Mvy 8855, nur Ms.L).
 190	159	2422	tibetan_only	སྐོངས་		none	0	0	0	0	སྐོངས་ skons
-190	161	2423	headword_line	སྐོ་ བཞག	bZag bsko	medium	2	0	0	0	སྐོ་ བཞག sko bZag \bsko biag.
+190	161	2423	headword_line	སྐོ་ བཞག	bZag bsko	medium	2	0	0	0	སྐོ་ བཞག sko bźag \bsko biag.
 190	163	2423	tibetan_only	སྐོགས་		none	0	2	0	0	སྐོགས་ skogs Hülle, Schale.
 190	165	2423	german_prose_with_translit			none	2	3	0	0	Lex. Sun pa’am yi ge — lta bu „wie: Hülle
 190	166	2423	german_prose_with_translit			none	1	4	0	0	oder Briefumschlag“ (brDa, ähnl. Dagy); —
@@ -32304,7 +32304,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 230	186	2997	headword_line	བསྐོངས་	bskons	medium	1	1	0	0	བསྐོངས་ bskons pf. zu 1’skon herbeirufen.
 230	188	2997	german_prose_with_translit			none	4	2	0	0	Lex. — pa = tshur ¬ zin pa (brDa, ähnl.
 230	189	2997	german_prose			none	0	1	0	0	Dagy).
-230	191	2998	headword_line	བསྐོད་བཞག་	bskod bzag	medium	2	0	0	0	བསྐོད་བཞག་ bskod ༼ bzag.
+230	191	2998	headword_line	བསྐོད་བཞག་	bskod bzag	medium	2	0	0	0	བསྐོད་བཞག་ bskod ༼ bźag.
 230	193	2998	german_prose_with_translit			none	1	1	0	0	ON& bskon pf. bzw. fut. zu !skon anziehen, be-
 230	194	2998	german_prose_with_translit			none	1	1	0	0	kleiden; go — Rüstung anlegen, rüsten.
 230	196	2998	german_prose_with_translit			none	4	1	0	0	des dpun gi tshogs yan lag bZi pa go — te „er
@@ -89662,7 +89662,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 620	209	7588	german_prose			none	0	2	0	0	Monat, Vollmondtag.
 620	211	7588	german_prose_with_translit			none	4	3	0	0	Lex. tshes bco lṅa la’an (brDa, ähnl. Dagy).
 620	213	7588	other			none	0	0	0	0	189
-621	1	7589	headword_line	ཆ་བཞག་པ་	bZag pa	medium	2	0	0	0	ཆ་བཞག་པ་ cha bZag pa
+621	1	7589	headword_line	ཆ་བཞག་པ་	bZag pa	medium	2	0	0	0	ཆ་བཞག་པ་ cha bźag pa
 621	3	7589	example_tibetan_latin	ཆ་བཞག་པ་		none	1	1	0	0	ཆ་བཞག་པ་ cha /22£ pa Vertrauen.
 621	5	7589	german_prose_with_translit			none	3	3	0	0	Lex. nes par yin du biag pa „als gewiß
 621	6	7589	german_prose_with_translit			none	4	2	0	0	hingestellt“ (brDa); brtsi ’jog byed pa „Vertrauen schenken“ (Dagy).
@@ -115182,7 +115182,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 788	221	9284	german_prose_with_translit			none	1	3	0	0	smrtyupasthānam „Konzentration der Auf-
 788	222	9284	german_prose			none	0	4	0	0	merksamkeit auf den Körper“ (Mvy 953).
 789	1	9284	tibetan_only	ཉེ་བར་བཞག་		none	0	1	0	0	ཉེ་བར་བཞག་ ;‰ bar bäag
-789	3	9285	headword_line	ཉེ་བར་བཞག་	bZag	medium	2	3	0	0	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
+789	3	9285	headword_line	ཉེ་བར་བཞག་	bZag	medium	2	3	0	0	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
 789	5	9285	german_prose			none	0	1	0	0	tie bar 709 zeigen, [Bezeich-
 789	7	9285	latin_other			none	2	0	0	0	nung] verleihen, anlegen, zurechtlegen; ’du
 789	8	9285	german_prose_with_translit			none	2	2	0	0	śes » an einer Vorstellung festhalten.
@@ -148084,7 +148084,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1014	144	11112	latin_other			none	5	0	0	0	jo nan pa’i bstan pa la - che ba „meine
 1014	145	11112	german_prose_with_translit			none	1	6	0	0	Anhaftung an die Lehre der Jo-nan-pa ist
 1014	146	11112	german_prose			none	0	2	0	0	groß“ (KTh 1: 384,1).
-1014	148	11113	headword_line	ཐུགས་བཞག་	thugs bzag	high	4	0	0	0	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
+1014	148	11113	headword_line	ཐུགས་བཞག་	thugs bzag	high	4	0	0	0	ཐུགས་བཞག་ thugs bźag 1//7//94 la bZag.
 1014	150	11114	headword_line	ཐུགས་ཐྲིན་	thugs	high	2	1	0	0	ཐུགས་ཐྲིན་ thugs zin Gunst gewinnen; ༡ pa
 1014	151	11114	tibetan_only	༽༅		none	0	0	0	0	༽༅ , ༢11
 1014	152	11114	latin_other			none	1	0	0	0	Einwilligung.

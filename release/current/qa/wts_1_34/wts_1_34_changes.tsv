@@ -28959,3 +28959,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 990	12	11027	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐང་གཞི་ thaṅ gZi Marktpreis; vgl. T'than 4.
 1046	27	11730	headword_line	gZi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐོབ་གཞི་ thob gZi Anspruch.
 966	178	10813	headword_line	gzi	gźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བརྟེན་གཞི་ brten gzi Stütze, Grundlage.
+159	140	2069	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྐང་བཞག་ rkaṅ bZag Oberschenkel.
+190	161	2470	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	སྐོ་ བཞག sko bZag \bsko biag.
+230	191	3046	headword_line	bzag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བསྐོད་བཞག་ bskod ༼ bzag.
+621	1	7726	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཆ་བཞག་པ་ cha bZag pa
+789	3	9470	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
+1014	148	11354	headword_line	bzag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.

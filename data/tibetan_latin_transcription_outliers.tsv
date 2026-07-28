@@ -1881,11 +1881,10 @@ tibetan_syllable	current_source	canonical_forms	outlier_category	canonical_evide
 བཙུན	bisun	btsun	single_diacritic_confusion	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ koṅ lha koṅ bisun rgya la
 བཙུན	ma	btsun	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	0	unclear:1	damage:1;marker:0	རྗེ་བཙུན་མ་ ?76 btsun ma Ehrwürdige.
 བཞག	ag	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	ཉེ་བར་བཞག་ ;‰ bar bäag
-བཞག	bZag	bźag	single_diacritic_confusion	independent_multi_context_canonical	6	ordinary_tibetan_lexical_or_compound:6;unclear:1	damage:1;marker:0	རྐང་བཞག་ rkaṅ bZag Oberschenkel. || སྐོ་ བཞག sko bZag \bsko biag. || ཆ་བཞག་པ་ cha bZag pa
+བཞག	bZag	bźag	single_diacritic_confusion	independent_multi_context_canonical	0	unclear:1	damage:1;marker:0	"her"" (Padm 18165); —' sems can gsal bar go བར་མ་བཞག་པ་ bar ma bZag pa."
 བཞག	bag	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	5	ordinary_tibetan_lexical_or_compound:5	damage:0;marker:0	བསྐོ་ བཞག་ bsko bag auch sko bZag, bskod bzag, || བསྐོས་བཞག་ bskos ༼ 3 bag. || རྗེས་ལ་བཞག་ rjes la bag pf. hinter sich lassen.
 བཞག	biag	bźag	single_diacritic_confusion	independent_multi_context_canonical	5	ordinary_tibetan_lexical_or_compound:5	damage:0;marker:0	དམ་བཞག་ dam biag. || དྲན་པ་ཉེར་བཞག་་ dran pa ner biag ... || རྣམ་པར་བཞག་ rnam par biag
 བཞག	bsig	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	བསྟན བཞག bstan bsig Bez. für einen Mönch,
-བཞག	bzag	bźag	single_diacritic_confusion	independent_multi_context_canonical	2	ordinary_tibetan_lexical_or_compound:2	damage:0;marker:0	བསྐོད་བཞག་ bskod ༼ bzag. || ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
 བཞག	pa	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1;unclear:1	damage:1;marker:0	ཆ་བཞག་པ་ cha /22£ pa Vertrauen. || མནང་བར་བཞག་པ་ bar bZag pa wohlge-
 བཞག	par	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	1	ordinary_tibetan_lexical_or_compound:1	damage:0;marker:0	མཉམ་པར་བཞག་ mäam par biag pf. zu 1/7737/77
 བཞག	tie	bźag	canonical_target_known_but_edit_unclassified	independent_multi_context_canonical	0	unclear:1	damage:1;marker:0	ཉེར་བཞག་ er //%4£ tie bar bZag.

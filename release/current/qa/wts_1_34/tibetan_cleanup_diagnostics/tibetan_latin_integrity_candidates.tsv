@@ -6131,8 +6131,8 @@ wts_1_34	159	131	1	རྐང	rkaṅ	transcription_integrity_pass	yes	no	sufficie
 wts_1_34	159	131	2	ཚེགས	tshegs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྐང་ཚེགས་ rkaṅ tshegs schlimmes Fußleiden.
 wts_1_34	159	136	1	རྐང	rkaṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		rkaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	རྐང་མཛེས་ rkaṅ mdzes Asokabaum.
 wts_1_34	159	136	2	མཛེས	mdzes	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྐང་མཛེས་ rkaṅ mdzes Asokabaum.
-wts_1_34	159	140	1	རྐང	rkaṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		rkaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞག་ rkaṅ bZag Oberschenkel.
-wts_1_34	159	140	2	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞག་ rkaṅ bZag Oberschenkel.
+wts_1_34	159	140	1	རྐང	rkaṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		rkaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞག་ rkaṅ bźag Oberschenkel.
+wts_1_34	159	140	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞག་ rkaṅ bźag Oberschenkel.
 wts_1_34	159	144	1	རྐང	rkaṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		rkaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞི་པ་ rkaṅ //7/ pa Vierbeiner.
 wts_1_34	159	144	3	བཞི	pa	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞི་པ་ rkaṅ //7/ pa Vierbeiner.
 wts_1_34	159	144	4	པ	Vierbeiner	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	རྐང་བཞི་པ་ rkaṅ //7/ pa Vierbeiner.
@@ -7199,8 +7199,8 @@ wts_1_34	190	150	2	ཅིག	cig	insufficient_feature_coverage	yes	no	sufficient
 wts_1_34	190	150	3	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ཅིག་པ་ sko cig pa jmd. mit einem [schmalen]
 wts_1_34	190	155	1	སྐོ	AST	canonical_syllable_mismatch	no	yes	none	blocked		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ AST sko da myun (zw.) einer mit einem
 wts_1_34	190	159	1	སྐོངས	skons	final_feature_mismatch_only	no	yes	partial	unresolved		secure_positional_alignment	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྐོངས་ skons
-wts_1_34	190	161	1	སྐོ	sko	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ བཞག sko bZag \bsko biag.
-wts_1_34	190	161	2	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ བཞག sko bZag \bsko biag.
+wts_1_34	190	161	1	སྐོ	sko	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ བཞག sko bźag \bsko biag.
+wts_1_34	190	161	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	སྐོ་ བཞག sko bźag \bsko biag.
 wts_1_34	190	163	1	སྐོགས	skogs	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	སྐོགས་ skogs Hülle, Schale.
 wts_1_34	190	198	1	སྐོང	skoṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		skoṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	སྐོང་ ’skoṅ pf. 1/5/50/7$ herbeirufen.
 wts_1_34	190	209	1	སྐོང	skoṅ	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ང:ṅ	ṅ		skoṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	སྐོང་ཚེ་ skoṅ tshe (zw.) geflochtene Bambuskör-
@@ -8513,8 +8513,8 @@ wts_1_34	230	165	1	བསྐོན	bskon	insufficient_feature_coverage	no	no	non
 wts_1_34	230	180	1	བསྐོ	bsko	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོ་ཡས་ bsko yas auch bsgo yas Bez. einer hohen
 wts_1_34	230	180	2	ཡས	yas	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོ་ཡས་ bsko yas auch bsgo yas Bez. einer hohen
 wts_1_34	230	186	1	བསྐོངས	bskons	final_feature_mismatch_only	no	yes	partial	unresolved		secure_positional_alignment	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	བསྐོངས་ bskons pf. zu 1’skon herbeirufen.
-wts_1_34	230	191	1	བསྐོད	bskod	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོད་བཞག་ bskod ༼ bzag.
-wts_1_34	230	191	2	བཞག	bzag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བསྐོད་བཞག་ bskod ༼ bzag.
+wts_1_34	230	191	1	བསྐོད	bskod	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོད་བཞག་ bskod ༼ bźag.
+wts_1_34	230	191	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	བསྐོད་བཞག་ bskod ༼ bźag.
 wts_1_34	231	1	1	བསྐོབ	bskob	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོབ་ bskob
 wts_1_34	231	9	1	བསྐོབ	bskob	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོབ་ bskob Tskobs.
 wts_1_34	231	11	1	བསྐོར	bskor	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བསྐོར་ 'bskor pf. bzw. fut. zu !skor.
@@ -20739,9 +20739,9 @@ wts_1_34	620	192	1	ཆ	cha	insufficient_feature_coverage	no	no	none	unresolved		
 wts_1_34	620	192	2	འཛིན	dzin	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཆ་འཛིན་ cha ’dzin.
 wts_1_34	620	208	1	ཆ	cha	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཆ་རྫོགས་ cha rdzogs Bez. für den 15. Tag im
 wts_1_34	620	208	2	རྫོགས	rdzogs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཆ་རྫོགས་ cha rdzogs Bez. für den 15. Tag im
-wts_1_34	621	1	1	ཆ	cha	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bZag pa
-wts_1_34	621	1	2	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bZag pa
-wts_1_34	621	1	3	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bZag pa
+wts_1_34	621	1	1	ཆ	cha	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bźag pa
+wts_1_34	621	1	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bźag pa
+wts_1_34	621	1	3	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཆ་བཞག་པ་ cha bźag pa
 wts_1_34	621	3	1	ཆ	cha	marker_or_damage	no	no	none	blocked		marker_or_damage						unclear	latin_headword_overlap	no	ཆ་བཞག་པ་ cha /22£ pa Vertrauen.
 wts_1_34	621	3	3	བཞག	pa	marker_or_damage	no	yes	partial	blocked		marker_or_damage	ཞ:ź		root_consonant:ཞ->ź			unclear	latin_headword_overlap	no	ཆ་བཞག་པ་ cha /22£ pa Vertrauen.
 wts_1_34	621	3	4	པ	Vertrauen	marker_or_damage	no	no	none	blocked		marker_or_damage						unclear	latin_headword_overlap	no	ཆ་བཞག་པ་ cha /22£ pa Vertrauen.
@@ -26531,9 +26531,9 @@ wts_1_34	788	201	4	གཞག	fur	marker_or_damage	no	yes	partial	blocked		marker
 wts_1_34	789	1	1	ཉེ	bar	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ ;‰ bar bäag
 wts_1_34	789	1	2	བར	b	canonical_syllable_mismatch	no	yes	none	blocked		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ ;‰ bar bäag
 wts_1_34	789	1	0	བཞག	ag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ ;‰ bar bäag
-wts_1_34	789	3	0	ཉེ	e	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
-wts_1_34	789	3	2	བར	bar	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
-wts_1_34	789	3	3	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bZag auch fer bZag pf. zu
+wts_1_34	789	3	0	ཉེ	e	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
+wts_1_34	789	3	2	བར	bar	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
+wts_1_34	789	3	3	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞག་ üe bar bźag auch fer bZag pf. zu
 wts_1_34	789	27	1	ཉེ	fie	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞགས་ fie bar bäugs sitzen.
 wts_1_34	789	27	2	བར	bar	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞགས་ fie bar bäugs sitzen.
 wts_1_34	789	27	3	བཞགས	b	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བར་བཞགས་ fie bar bäugs sitzen.
@@ -31749,8 +31749,8 @@ wts_1_34	1014	131	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	suff
 wts_1_34	1014	131	2	ཞིབ	Zib	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཞིབ་ thugs Zib Prüfung, Überprüfung.
 wts_1_34	1014	142	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཞེན་ thugs Zen Anhaftung.
 wts_1_34	1014	142	2	ཞེན	Zen	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཞེན་ thugs Zen Anhaftung.
-wts_1_34	1014	148	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
-wts_1_34	1014	148	2	བཞག	bzag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
+wts_1_34	1014	148	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཐུགས་བཞག་ thugs bźag 1//7//94 la bZag.
+wts_1_34	1014	148	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཐུགས་བཞག་ thugs bźag 1//7//94 la bZag.
 wts_1_34	1014	150	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཐྲིན་ thugs zin Gunst gewinnen; ༡ pa
 wts_1_34	1014	150	2	ཐྲིན	zin	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཐྲིན་ thugs zin Gunst gewinnen; ༡ pa
 wts_1_34	1014	162	1	ཐུགས	thugs	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	ཐུགས་ཡི་དམ་ thugs yi dam Tthugs dam.

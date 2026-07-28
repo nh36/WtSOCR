@@ -2262,8 +2262,8 @@ wts_8_b	157	36	1	བྱ	bya	insufficient_feature_coverage	yes	no	sufficient	pass
 wts_8_b	157	36	2	གཞུག	gZug	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བྱ་གཞུག bya gZug Bez. für das Mondhaus !byi
 wts_8_b	157	40	1	བྱ	bya	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་ཡུལ་ 'bya yul
 wts_8_b	157	40	2	ཡུལ	yul	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་ཡུལ་ 'bya yul
-wts_8_b	157	41	1	བྱ	bya	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་བཞག་ bya bZag.
-wts_8_b	157	41	2	བཞག	bZag	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བྱ་བཞག་ bya bZag.
+wts_8_b	157	41	1	བྱ	bya	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་བཞག་ bya bźag.
+wts_8_b	157	41	2	བཞག	bźag	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		bźag	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	བྱ་བཞག་ bya bźag.
 wts_8_b	157	62	1	བྱ	byagzan	canonical_syllable_mismatch	no	yes	none	blocked		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་གཟན་ byagzan Wild, Wildtiere.
 wts_8_b	157	62	2	གཟན	Wild	canonical_syllable_mismatch	no	yes	none	blocked		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་གཟན་ byagzan Wild, Wildtiere.
 wts_8_b	158	1	1	བྱ	bya	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བྱ་ཡུལ་ 'bya yul

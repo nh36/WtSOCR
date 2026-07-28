@@ -6446,3 +6446,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 742	16	3767	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
 990	12	5269	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱི་བཞི་ phyi bzi Zeuge.
 1046	31	5600	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-
+593	1	2942	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
