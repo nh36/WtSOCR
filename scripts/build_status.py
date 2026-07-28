@@ -250,6 +250,9 @@ def read_release_stats() -> ReleaseStats:
             "final_ng_insufficient_evidence_families": tsv_row_count(
                 diagnostic_dir / "tibetan_final_ng_insufficient_evidence_matrix.tsv"
             ),
+            "tibetan_latin_integrity_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_latin_integrity_candidates.tsv"
+            ),
             "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
@@ -390,6 +393,19 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     dngos_google_witness_residual = total(stats, "dngos_family_google_witness_candidates")
     dngos_blocked_wrong_nasal = total(stats, "dngos_family_blocked_wrong_nasal_witness")
     dngos_context_diagnostic = total(stats, "dngos_family_context_diagnostic_candidates")
+    integrity_backaudit = list(iter_tsv(
+        ROOT / "data/final_ng_transcription_integrity_backaudit.tsv"
+    ))
+    integrity_mismatches = sum(
+        item.get("proposed_disposition") != "pass"
+        for item in integrity_backaudit
+    )
+    superseded_count = sum(
+        item.get("status") == "active"
+        for item in iter_tsv(
+            ROOT / "data/reviewed_correction_supersessions.tsv"
+        )
+    )
     initial_i_exact_note = (
         "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket."
         if initial_i_exact_residual == 0
@@ -556,6 +572,38 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             total(stats, "final_ng_source_compatible_candidates"),
             "edit distance;case folding;different Latin stems;Latin-only replacement",
             "Parallel diagnostic preserves the complete case-sensitive source stem and changes only the final nasal glyph; exact-row review remains mandatory.",
+        ),
+        row(
+            "tibetan_latin_transcription_integrity",
+            "transcription_integrity",
+            "securely aligned Tibetan/Latin headword tokens",
+            "reviewed corpus-conditioned feature compatibility",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_latin_integrity.py;data/tibetan_latin_feature_registry.tsv",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_latin_integrity_candidates.tsv",
+            0,
+            total(stats, "tibetan_latin_integrity_candidates"),
+            "external transliteration standard;Latin-only replacement;edit distance",
+            "Integrity diagnostics are Tibetan-alignment-conditioned and do not invent complete targets from partial feature evidence.",
+        ),
+        row(
+            "final_ng_transcription_integrity_backaudit",
+            "transcription_integrity",
+            "applied exact final-ng targets",
+            "targets passing reviewed stem and coda features",
+            "diagnostic_queue",
+            "partially_applied",
+            "none",
+            "reviewed_correction_supersession",
+            "data/final_ng_transcription_integrity_backaudit.tsv;data/reviewed_correction_supersessions.tsv",
+            "data/final_ng_transcription_integrity_backaudit.tsv",
+            superseded_count,
+            integrity_mismatches,
+            "historical presence without target integrity",
+            "Applied targets are backaudited; high-confidence mismatches require an exact supersession and ambiguous features remain diagnostic.",
         ),
         row(
             "final_ng_insufficient_evidence_matrix",

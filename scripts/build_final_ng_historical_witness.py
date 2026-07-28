@@ -21,12 +21,22 @@ assert SPEC and SPEC.loader
 consensus = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = consensus
 SPEC.loader.exec_module(consensus)
+INTEGRITY_PATH = ROOT / "scripts/build_tibetan_latin_integrity.py"
+INTEGRITY_SPEC = importlib.util.spec_from_file_location(
+    "tibetan_latin_integrity", INTEGRITY_PATH
+)
+assert INTEGRITY_SPEC and INTEGRITY_SPEC.loader
+integrity = importlib.util.module_from_spec(INTEGRITY_SPEC)
+sys.modules[INTEGRITY_SPEC.name] = integrity
+INTEGRITY_SPEC.loader.exec_module(integrity)
 
 HISTORICAL_FIELDS = [
     "tibetan_syllable", "source_variant", "target",
     "historical_baseline_sha", "historical_anchor_present",
     "historical_volume", "historical_page", "historical_line",
     "historical_token_index", "historical_anchor_provenance_class",
+    "transcription_integrity_status", "transcription_integrity_pass",
+    "transcription_integrity_violations",
     "historical_anchor_change_reason", "historical_anchor_change_evidence",
     "historical_context", "current_candidate_count",
     "current_damage_count", "current_marker_count",
@@ -238,6 +248,9 @@ def build_historical_audit(ref: str) -> list[dict[str, str]]:
                     "historical_token_index": "",
                     "historical_anchor_provenance_class":
                         "not_present_at_historical_baseline",
+                    "transcription_integrity_status": "historical_anchor_absent",
+                    "transcription_integrity_pass": "no",
+                    "transcription_integrity_violations": "",
                     "historical_anchor_change_reason": "",
                     "historical_anchor_change_evidence": "",
                     "historical_context": "",
@@ -259,6 +272,7 @@ def build_historical_audit(ref: str) -> list[dict[str, str]]:
             classification, reason, evidence = classify_historical_anchor(
                 anchor, exact, google, changes
             )
+            integrity_result = integrity.token_integrity(syllable, target)
             audit.append(
                 {
                     "tibetan_syllable": syllable,
@@ -271,6 +285,12 @@ def build_historical_audit(ref: str) -> list[dict[str, str]]:
                     "historical_line": anchor["line"],
                     "historical_token_index": anchor["token_index"],
                     "historical_anchor_provenance_class": classification,
+                    "transcription_integrity_status":
+                        integrity_result["integrity_status"],
+                    "transcription_integrity_pass":
+                        integrity_result["integrity_pass"],
+                    "transcription_integrity_violations":
+                        integrity_result["violated"],
                     "historical_anchor_change_reason": reason,
                     "historical_anchor_change_evidence": evidence,
                     "historical_context": anchor["context_excerpt"],
@@ -340,6 +360,7 @@ def build_reviewed_target_audit() -> list[dict[str, str]]:
             and consensus.source_compatible_pair(source, target)
         }
         for target, records in targets.items():
+            target_integrity = integrity.token_integrity(syllable, target)
             clean = [
                 row for row in family
                 if row["damage_scope"] == "none"
@@ -378,7 +399,9 @@ def build_reviewed_target_audit() -> list[dict[str, str]]:
                     "conflicting_reviewed_targets": ";".join(competing),
                     "eligibility": (
                         "reviewed_same_tibetan_target_final_nasal_only"
-                        if clean and not competing else "withhold"
+                        if clean and not competing
+                        and target_integrity["integrity_pass"] == "yes"
+                        else "withhold"
                     ),
                     "sample_contexts": " || ".join(
                         row["context_excerpt"]

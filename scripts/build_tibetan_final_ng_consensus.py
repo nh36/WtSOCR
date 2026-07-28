@@ -47,6 +47,11 @@ GERMAN_STOP_WORDS = {
     "auch", "bez", "die", "der", "das", "ein", "eine", "einer", "für",
     "kurzf", "lex", "macht", "npr", "oder", "und", "vgl",
 }
+FEATURE_REGISTRY_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data/tibetan_latin_feature_registry.tsv"
+)
+_FEATURE_REGISTRY: list[dict[str, str]] | None = None
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -65,6 +70,42 @@ def write_tsv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None
         )
         writer.writeheader()
         writer.writerows(rows)
+
+
+def transcription_integrity_for_target(
+    tibetan_syllable: str, target: str,
+) -> tuple[str, str]:
+    """Apply only reviewed/high-confidence registry features to a target."""
+    global _FEATURE_REGISTRY
+    if _FEATURE_REGISTRY is None:
+        _FEATURE_REGISTRY = (
+            read_tsv(FEATURE_REGISTRY_PATH)
+            if FEATURE_REGISTRY_PATH.exists() else []
+        )
+    violations: list[str] = []
+    checked = False
+    for rule in _FEATURE_REGISTRY:
+        if (
+            rule["review_status"] not in {"reviewed", "high_confidence"}
+            or rule["confidence"] != "high"
+            or rule["tibetan_feature"] not in tibetan_syllable
+        ):
+            continue
+        if rule["feature_type"] == "suffix_coda":
+            continue  # The source-compatible diagnostic checks this separately.
+        checked = True
+        if rule["expected_latin_feature"] not in target:
+            violations.append(
+                f"{rule['feature_type']}:{rule['tibetan_feature']}->"
+                f"{rule['expected_latin_feature']}"
+            )
+    if violations:
+        return "nonfinal_feature_mismatch", ";".join(violations)
+    return (
+        "transcription_integrity_pass" if checked
+        else "insufficient_feature_coverage",
+        "",
+    )
 
 
 def tibetan_syllables_and_tail(line: str) -> tuple[list[str], str, int]:
@@ -845,6 +886,11 @@ def build_source_compatible_rows(
         attached_marker = token_has_attached_marker(
             aligned_row["context_excerpt"], int(aligned_row["token_index"])
         )
+        integrity_status, integrity_violations = (
+            transcription_integrity_for_target(
+                aligned_row["tibetan_syllable"], target
+            ) if target else ("target_unresolved_no_anchor", "")
+        )
         if old_category == "marker_attached" or attached_marker:
             category = "source_compatible_marker_attached"
             confidence = "manual"
@@ -863,6 +909,14 @@ def build_source_compatible_rows(
             confidence = "manual"
             action = "manual_alignment_review"
             deferred = "OCR damage overlaps or precedes the aligned headword phrase."
+        elif integrity_status == "nonfinal_feature_mismatch":
+            category = "source_compatible_transcription_integrity_blocked"
+            confidence = "manual"
+            action = "repair_or_resolve_stem_before_final_ng"
+            deferred = (
+                "Historical/current dotted target violates a reviewed "
+                f"transcription feature: {integrity_violations}."
+            )
         elif target_count == 0:
             category = "source_compatible_no_anchor"
             confidence = "diagnostic"
@@ -915,6 +969,8 @@ def build_source_compatible_rows(
                     damage_scope=damage_scope,
                     marker_attached=attached_marker,
                 ),
+                "transcription_integrity_status": integrity_status,
+                "transcription_integrity_violations": integrity_violations,
                 "context_excerpt": aligned_row["context_excerpt"].rstrip(),
                 "reason_for_deferral": deferred,
             }
@@ -988,6 +1044,16 @@ def build_source_compatible_rankings(
                 ),
                 "volumes": ";".join(
                     sorted({row["volume"] for row in family_rows})
+                ),
+                "transcription_integrity_status": ";".join(sorted({
+                    row.get("transcription_integrity_status", "")
+                    for row in family_rows
+                    if row.get("transcription_integrity_status")
+                })),
+                "transcription_integrity_blocked_count": str(
+                    categories[
+                        "source_compatible_transcription_integrity_blocked"
+                    ]
                 ),
             }
         )
@@ -2057,6 +2123,7 @@ SOURCE_COMPATIBLE_FIELDS = [
     "incompatible_dotted_form_counts", "same_tibetan_dotted_evidence_total",
     "old_alignment_category", "source_compatible_category", "damage_scope",
     "syllable_identity_guard", "confidence", "suggested_action",
+    "transcription_integrity_status", "transcription_integrity_violations",
     "alignment_review_status", "context_excerpt", "reason_for_deferral",
 ]
 SOURCE_COMPATIBLE_RANKING_FIELDS = [
@@ -2065,6 +2132,7 @@ SOURCE_COMPATIBLE_RANKING_FIELDS = [
     "old_categories", "new_categories",
     "compatible_accepted_target_count", "compatible_competing_forms",
     "incompatible_dotted_forms_excluded", "damage_count", "volumes",
+    "transcription_integrity_status", "transcription_integrity_blocked_count",
 ]
 COVERAGE_FIELDS = ["metric", "count"]
 COVERAGE_COMPARISON_FIELDS = [

@@ -115,7 +115,7 @@ newly_discovered	wts_1_34	244	160	4	ཕྱང	phyun				source_compatible_no_anch
 newly_discovered	wts_1_34	245	60	2	ཉུང	run				source_compatible_no_anchor	0	ཁ་ཉུང་ kha run wortkarg.
 category_changed	wts_1_34	248	148	2	ནིང	nin	niṅ	niṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ནིང་ kha nin letztes Jahr.
 newly_discovered	wts_1_34	250	109	2	ཕྱང	byan				source_compatible_no_anchor	0	།ཁ་ཕྱང་བ་ kha byan ba
-category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
+category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
 newly_discovered	wts_1_34	256	35	4	སང	Ton				source_compatible_marker_attached	0	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
 category_changed	wts_1_34	256	80	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
 newly_discovered	wts_1_34	257	53	1	ཁང	kan				source_compatible_no_anchor	0	ཁང་ཁུང་ kan khuṅ
@@ -409,10 +409,10 @@ newly_discovered	wts_1_34	645	205	4	བྱང	byun		byuṅ		source_compatible_no
 category_changed	wts_1_34	645	94	2	འཆེང	chin	chiṅ	chiṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཆ་འཆེང་ chu ’chin Bez. für Dach, chinesisches
 newly_discovered	wts_1_34	646	141	2	འབུང	thun				source_compatible_no_anchor	0	ཆུ་འབུང་ chu ’thun.
 newly_discovered	wts_1_34	649	103	2	འབྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ཆུ་འབྱང་ chu ’byun Bez. für die Zahl 54.
-category_changed	wts_1_34	651	56	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa
+category_changed	wts_1_34	651	56	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa
 newly_discovered	wts_1_34	651	78	2	ཞང	Zin				source_compatible_no_anchor	0	ཆུ ཞང་ chu Zin Reisfeld.
-category_changed	wts_1_34	651	81	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་ chu Zen Länge und Breite, Umfang.
-category_changed	wts_1_34	651	90	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa Umfang; wohl-
+category_changed	wts_1_34	651	81	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་ chu Zen Länge und Breite, Umfang.
+category_changed	wts_1_34	651	90	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa Umfang; wohl-
 newly_discovered	wts_1_34	654	115	2	ཤང	Sin				source_compatible_no_anchor	0	ཆུ་ཤང་ཆ cha Sin ma.
 newly_discovered	wts_1_34	654	51	2	ཤང	Sin				source_compatible_no_anchor	0	ཆུ་ཤང་ ch Sin.
 newly_discovered	wts_1_34	655	124	3	གྲང	gron				source_compatible_no_anchor	0	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer

@@ -60,9 +60,13 @@ def main() -> None:
             and row["target"] == target
             and row["historical_anchor_present"] == "yes"
             and row["historical_baseline_sha"] == BASELINE
+            and row.get("transcription_integrity_pass") == "yes"
         ]
         if not anchors:
-            raise ValueError(f"{syllable}: no historical witness")
+            raise ValueError(
+                f"{syllable}: no transcription-integrity-passing "
+                "historical witness"
+            )
         anchor = anchors[0]
         anchor_identity = (
             f"{anchor['historical_volume']}:{anchor['historical_page']}:"
