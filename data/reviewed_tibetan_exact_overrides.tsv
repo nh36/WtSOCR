@@ -998,6 +998,7 @@ wts_1_34	277	11	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness
 wts_1_34	277	20	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	Frozen exact Tibetan ཁོང alignment; exact-row only.
 wts_1_34	277	20	2	ran	raṅ	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	Exact same-line Tibetan-script ང witness; no broad n-to-ṅ rule
 wts_1_34	277	28	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	Frozen exact Tibetan ཁོང alignment; exact-row only.
+wts_1_34	277	28	2	sin	siṅ	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_n_ng_sing_20260728	Exact སིང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_1_34	277	30	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	Frozen exact Tibetan ཁོང alignment; exact-row only.
 wts_1_34	277	51	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	Frozen exact Tibetan ཁོང alignment; exact-row only.
 wts_1_34	277	57	1	khon	khoṅ	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	Frozen exact Tibetan ཁོང alignment; exact-row only.
