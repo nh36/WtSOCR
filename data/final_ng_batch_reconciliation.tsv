@@ -127,3 +127,4 @@ historical_witness_zhang_20260728	acfc246bb710861c9b5da6b205565bf1bd3a6734	ཞ�
 repeated_historical_slong_20260728	f4e461828d42b1cc141d7183da62d3760e9e1384	སློང	repeated_historical_slong_consensus_batch_20260728	15	15	repeated_historical_slong_same_entry_echo_batch_20260728	2	1	1	0	0	0	15	1	2	16	0
 repeated_historical_gtang_20260728	f4e461828d42b1cc141d7183da62d3760e9e1384	གཏང	repeated_historical_gtang_consensus_batch_20260728	9	9	repeated_historical_gtang_same_entry_echo_batch_20260728	0	0	0	0	0	0	9	0	0	9	1
 repeated_historical_dgung_20260728	f4e461828d42b1cc141d7183da62d3760e9e1384	དགུང	repeated_historical_dgung_consensus_batch_20260728	9	9	repeated_historical_dgung_same_entry_echo_batch_20260728	0	0	0	0	0	0	9	0	0	9	1
+repeated_historical_sgong_20260728	f4e461828d42b1cc141d7183da62d3760e9e1384	སྒོང	repeated_historical_sgong_consensus_batch_20260728	9	9	repeated_historical_sgong_same_entry_echo_batch_20260728	0	0	0	0	0	0	9	0	0	9	1

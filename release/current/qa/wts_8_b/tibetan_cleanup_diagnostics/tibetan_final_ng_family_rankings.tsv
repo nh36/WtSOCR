@@ -38,5 +38,6 @@ tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_t
 རྐྱོང	rkyon	rkyon:1	rkyoṅ	1	0	0	1	0	0	0	1	wts_1_34
 རྱོང	myon	myon:1	myoṅ	1	0	0	0	1	0	0	2	wts_1_34
 སིང	sin	sin:1	siṅ	1	0	0	1	0	0	0	1	wts_1_34
+སྒོང	sgon	sgon:1	sgoṅ	1	0	1	0	0	0	0	10	wts_1_34
 སྡིང	sdin	sdih:1	sdiṅ	1	0	0	1	0	0	0	1	wts_35_51
 སྡེང	sden	sden:1	sdeṅ	1	0	0	1	0	0	0	1	wts_1_34

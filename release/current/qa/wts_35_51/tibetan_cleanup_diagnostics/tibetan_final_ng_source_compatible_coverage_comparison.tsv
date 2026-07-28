@@ -306,16 +306,7 @@ newly_discovered	wts_1_34	488	114	1	རྒྱང	rgyon				source_compatible_no_a
 newly_discovered	wts_1_34	491	208	2	ཆུང	sge’n				source_compatible_damaged_context	0	SQ ཆུང་ 'sge’n chuṅ }'sge’n.
 newly_discovered	wts_1_34	493	73	3	ཁང	Eingangsbereich				source_compatible_damaged_context	0	གྒོ་ཁང་ $90 khan Eingangsbereich, Wachtturm.
 newly_discovered	wts_1_34	495	10	2	བསླང	bsruh				source_compatible_no_anchor	0	སྒོ་བསླང་བ་ sgo bsruh ba auch sgo bsruns Tsgo
-newly_discovered	wts_1_34	495	108	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་པྲི་ sgon pri Eidotter.
-newly_discovered	wts_1_34	495	114	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་བུ་ sgon bu Klumpen.
-newly_discovered	wts_1_34	495	118	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
-newly_discovered	wts_1_34	495	124	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་ཤུན་ sgon sun Eischale.
-newly_discovered	wts_1_34	495	130	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་སེར་ sgon ser Eigelb.
-newly_discovered	wts_1_34	495	67	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
-newly_discovered	wts_1_34	495	76	1	སྒོང	sgon		sgoṅ		source_compatible_damaged_context	1	སྒོང་ ?sgon ein Instrument; Ball.
-newly_discovered	wts_1_34	495	83	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
-newly_discovered	wts_1_34	495	92	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་སྐྲན་ sgon skran eine Krankheit.
-newly_discovered	wts_1_34	495	94	1	སྒོང	sgon		sgoṅ		source_compatible_single_anchor	1	སྒོང་ཆུ་ sgon chu Eiweiß.
+newly_discovered	wts_1_34	495	76	1	སྒོང	sgon		sgoṅ		source_compatible_damaged_context	10	སྒོང་ ?sgon ein Instrument; Ball.
 newly_discovered	wts_1_34	499	129	4	དང	dun				source_compatible_no_anchor	0	སྒྲ་སྐྱེད་ཀློག་དང་ ཡའ a skyed glog dun Lautspre-
 newly_discovered	wts_1_34	50	50	2	ཤེང	sen				source_compatible_no_anchor	0	ཀམ་ཤེང་ kam sen, auch skam sen, kham śen ein
 newly_discovered	wts_1_34	503	36	5	ཚོང	Tauschhan				source_compatible_marker_attached	0	སྒྲིལ་ཉོ་སྒྲིལ་ཚོང་ sgril 770 sgril tshon Tauschhan-

@@ -16999,26 +16999,26 @@ wts_1_34	495	36	2	གཅིག	gcig	insufficient_feature_coverage	yes						ordin
 wts_1_34	495	36	3	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོག་གཅིག་མ་ sgog gcig ma eine Art Knoblauch.
 wts_1_34	495	39	1	སྒོག	sgog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོག་པ་ sgog pa Knoblauch.
 wts_1_34	495	39	2	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོག་པ་ sgog pa Knoblauch.
-wts_1_34	495	67	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
+wts_1_34	495	67	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	སྒོང་ 'sgoṅ pf. Ibsgons fut. 1/5907 imp. Isgons
 wts_1_34	495	76	1	སྒོང	sgon	marker_or_damage	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	damage_before_latin_alignment	no	སྒོང་ ?sgon ein Instrument; Ball.
-wts_1_34	495	83	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
-wts_1_34	495	83	2	སྐྱེས	skyes	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
-wts_1_34	495	92	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྲན་ sgon skran eine Krankheit.
-wts_1_34	495	92	2	སྐྲན	skran	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྲན་ sgon skran eine Krankheit.
-wts_1_34	495	94	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཆུ་ sgon chu Eiweiß.
-wts_1_34	495	94	2	ཆུ	chu	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཆུ་ sgon chu Eiweiß.
+wts_1_34	495	83	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྱེས་ sgoṅ skyes aus dem Ei geboren, Bez.
+wts_1_34	495	83	2	སྐྱེས	skyes	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྱེས་ sgoṅ skyes aus dem Ei geboren, Bez.
+wts_1_34	495	92	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྲན་ sgoṅ skran eine Krankheit.
+wts_1_34	495	92	2	སྐྲན	skran	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སྐྲན་ sgoṅ skran eine Krankheit.
+wts_1_34	495	94	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཆུ་ sgoṅ chu Eiweiß.
+wts_1_34	495	94	2	ཆུ	chu	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཆུ་ sgoṅ chu Eiweiß.
 wts_1_34	495	106	1	གྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གྒོང་པྲི་ sgon pri
 wts_1_34	495	106	2	པྲི	pri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྒོང་པྲི་ sgon pri
-wts_1_34	495	108	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་པྲི་ sgon pri Eidotter.
-wts_1_34	495	108	2	པྲི	pri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་པྲི་ sgon pri Eidotter.
-wts_1_34	495	114	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་བུ་ sgon bu Klumpen.
-wts_1_34	495	114	2	བུ	bu	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་བུ་ sgon bu Klumpen.
-wts_1_34	495	118	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
-wts_1_34	495	118	2	རིལ	ril	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
-wts_1_34	495	124	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཤུན་ sgon sun Eischale.
-wts_1_34	495	124	2	ཤུན	sun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཤུན་ sgon sun Eischale.
-wts_1_34	495	130	1	སྒོང	sgon	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སེར་ sgon ser Eigelb.
-wts_1_34	495	130	2	སེར	ser	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སེར་ sgon ser Eigelb.
+wts_1_34	495	108	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་པྲི་ sgoṅ pri Eidotter.
+wts_1_34	495	108	2	པྲི	pri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་པྲི་ sgoṅ pri Eidotter.
+wts_1_34	495	114	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་བུ་ sgoṅ bu Klumpen.
+wts_1_34	495	114	2	བུ	bu	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་བུ་ sgoṅ bu Klumpen.
+wts_1_34	495	118	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་རིལ་ sgoṅ ril Klumpen, Kugel.
+wts_1_34	495	118	2	རིལ	ril	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་རིལ་ sgoṅ ril Klumpen, Kugel.
+wts_1_34	495	124	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཤུན་ sgoṅ sun Eischale.
+wts_1_34	495	124	2	ཤུན	sun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་ཤུན་ sgoṅ sun Eischale.
+wts_1_34	495	130	1	སྒོང	sgoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		sgoṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སེར་ sgoṅ ser Eigelb.
+wts_1_34	495	130	2	སེར	ser	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོང་སེར་ sgoṅ ser Eigelb.
 wts_1_34	495	138	1	སྒོམ	sgom	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོམ་ sgom pf. !bsgoms fur. \bsgom imp.
 wts_1_34	495	156	1	སྒོམ	sgom	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོམ་ཆེན་ sgom chen
 wts_1_34	495	156	2	ཆེན	chen	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	སྒོམ་ཆེན་ sgom chen

@@ -28907,3 +28907,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 407	186	5470	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགུང་གནམ་ dgun gnam Himmel.
 407	191	5471	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
 408	2	5473	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
+495	67	6463	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
+495	83	6464	headword_line	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
+495	92	6465	headword_line	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་སྐྲན་ sgon skran eine Krankheit.
+495	94	6465	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་ཆུ་ sgon chu Eiweiß.
+495	108	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་པྲི་ sgon pri Eidotter.
+495	114	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་བུ་ sgon bu Klumpen.
+495	118	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
+495	124	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་ཤུན་ sgon sun Eischale.
+495	130	6466	tibetan_only	sgon	sgoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	སྒོང་སེར་ sgon ser Eigelb.

@@ -70320,7 +70320,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 495	62	6349	german_prose			none	0	2	0	0	lauchwasser geschüttet oder gegossen wur-
 495	63	6349	latin_other			none	1	0	0	0	de“ (dPeD 186,5); sgog gtun = - sogs ’dul
 495	64	6349	german_prose_with_translit			none	2	5	0	0	byed kyi gtun khun „Mörser zum Zerstampfen von Knoblauch usw.“ (Dagy).
-495	67	6349	tibetan_only	སྒོང་		none	0	2	0	0	སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
+495	67	6349	tibetan_only	སྒོང་		none	0	2	0	0	སྒོང་ 'sgoṅ pf. Ibsgons fut. 1/5907 imp. Isgons
 495	68	6349	german_prose			none	0	1	0	0	rundmachen, zusammenballen.
 495	70	6349	example_tibetan_latin			none	5	1	0	0	Lex. -ba=- ༡7/ ril dan zas bsgons pa’i ~ ba
 495	71	6349	latin_other			none	4	0	0	0	(brDa); - ba = zan sogs dril ba’am brazis pa
@@ -70331,16 +70331,16 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 495	79	6349	german_prose_with_translit			none	1	4	0	0	das mit einem Ball spielte“ (gZer 165,3); la
 495	80	6349	german_prose_with_translit			none	4	1	0	0	la ni lha’i ~ bsgyur „einige spielten das sgon-
 495	81	6349	german_prose			none	0	3	0	0	[Instrument] der Götter“ (gZer 967,3).
-495	83	6350	headword_line	སྒོང་སྐྱེས་	skyes	medium	1	3	0	0	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
+495	83	6350	headword_line	སྒོང་སྐྱེས་	skyes	medium	1	3	0	0	སྒོང་སྐྱེས་ sgoṅ skyes aus dem Ei geboren, Bez.
 495	84	6350	german_prose			none	0	2	0	0	für Vogel.
 495	86	6350	latin_other			none	2	0	0	0	skye gnas bZi po rnams su ’gyur / ~ (metr.)
 495	87	6350	german_prose_with_translit			none	1	1	0	0	„man wird in vier Geburtsweisen geboren:
 495	88	6350	german_prose			none	0	2	0	0	[es gibt] Eigeborene [usw.]“ (Samv 2.2c).
 495	89	6350	german_prose_with_translit			none	6	1	0	0	Lex. sgo na las skyes pa dan bya spyi (brDa,
 495	90	6350	german_prose			none	0	2	0	0	ähnl. Dagy).
-495	92	6351	headword_line	སྒོང་སྐྲན་	Krankheit	high	1	1	0	0	སྒོང་སྐྲན་ sgon skran eine Krankheit.
+495	92	6351	headword_line	སྒོང་སྐྲན་	Krankheit	high	1	1	0	0	སྒོང་སྐྲན་ sgoṅ skran eine Krankheit.
 495	93	6351	german_prose_with_translit			none	3	3	0	0	Lex. na tsha Zig (brDa, Dagy).
-495	94	6351	tibetan_only	སྒོང་ཆུ་		none	0	1	0	0	སྒོང་ཆུ་ sgon chu Eiweiß.
+495	94	6351	tibetan_only	སྒོང་ཆུ་		none	0	1	0	0	སྒོང་ཆུ་ sgoṅ chu Eiweiß.
 495	95	6351	german_prose_with_translit			none	2	2	0	0	= dpa’ ba’i nar chur srid (metr.) „das Eiweiß
 495	97	6351	german_prose			none	0	5	0	0	taugt als Krafttrunk für die Helden“ (gZi-
 495	98	6351	german_prose			none	0	1	0	0	Sn 60,26).
@@ -70348,19 +70348,19 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 495	102	6352	german_prose_with_translit			none	3	3	0	0	Lex. ka la pin ga (brDa, ähnl. Dagy).
 495	104	6352	other			none	0	0	0	0	474
 495	106	6352	tibetan_only	གྒོང་པྲི་		none	0	0	0	0	གྒོང་པྲི་ sgon pri
-495	108	6352	tibetan_only	སྒོང་པྲི་		none	0	1	0	0	སྒོང་པྲི་ sgon pri Eidotter.
+495	108	6352	tibetan_only	སྒོང་པྲི་		none	0	1	0	0	སྒོང་པྲི་ sgoṅ pri Eidotter.
 495	110	6352	german_prose_with_translit			none	5	4	0	0	~ ’khra ba’ mkhar du srid (metr.) „der Eidotter taugt als Festung, um sich darin zu
 495	112	6352	other			none	0	0	0	0	verbergen“ (gZi-Sn 60,27).
-495	114	6352	tibetan_only	སྒོང་བུ་		none	0	1	0	0	སྒོང་བུ་ sgon bu Klumpen.
+495	114	6352	tibetan_only	སྒོང་བུ་		none	0	1	0	0	སྒོང་བུ་ sgoṅ bu Klumpen.
 495	116	6352	german_prose_with_translit			none	1	2	0	0	Lex. ril bu (brDa, Dagy).
-495	118	6352	tibetan_only	སྒོང་རིལ་		none	0	2	0	0	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
+495	118	6352	tibetan_only	སྒོང་རིལ་		none	0	2	0	0	སྒོང་རིལ་ sgoṅ ril Klumpen, Kugel.
 495	120	6352	german_prose_with_translit			none	4	1	0	0	Lex. ~ ril dan zas bsgons pa’i sgon ba
 495	121	6352	latin_other			none	4	0	0	0	(brDa); sgon ste ril por byas pa lta bu „sgon,
 495	122	6352	german_prose			none	0	1	0	0	wie: rund gemacht“ (Dagy).
-495	124	6352	tibetan_only	སྒོང་ཤུན་		none	0	1	0	0	སྒོང་ཤུན་ sgon sun Eischale.
+495	124	6352	tibetan_only	སྒོང་ཤུན་		none	0	1	0	0	སྒོང་ཤུན་ sgoṅ sun Eischale.
 495	126	6352	german_prose_with_translit			none	2	3	0	0	> skyob pa’i go ru srid (metr.) „die Eierschale taugt als bewahrende Rüstung“ (gZi-Sn
 495	128	6352	other			none	0	0	0	0	60,24).
-495	130	6352	tibetan_only	སྒོང་སེར་		none	0	1	0	0	སྒོང་སེར་ sgon ser Eigelb.
+495	130	6352	tibetan_only	སྒོང་སེར་		none	0	1	0	0	སྒོང་སེར་ sgoṅ ser Eigelb.
 495	131	6352	german_prose_with_translit			none	3	3	0	0	Lex. sgo na’i ser thig (brDa, ähnl. Dagy).
 495	133	6352	german_prose			none	0	2	0	0	SEN sgons imp. zu ?'sgon rund machen.
 495	135	6352	german_prose_with_translit			none	2	4	0	0	Lex. ~ Sig = ril ril gyis Sig (brDa, ähnl.

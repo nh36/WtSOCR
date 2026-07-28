@@ -345,15 +345,15 @@ target_changed	wts_1_34	488	114	1	རྒྱང	rgyon	rgyoṅ		source_compatible_
 target_changed	wts_1_34	491	208	2	ཆུང	sge’n	sge’ṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	SQ ཆུང་ 'sge’n chuṅ }'sge’n.
 target_changed	wts_1_34	493	73	3	ཁང	Eingangsbereich	Eingangsbereicṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	གྒོ་ཁང་ $90 khan Eingangsbereich, Wachtturm.
 target_changed	wts_1_34	495	10	2	བསླང	bsruh	bsruṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྒོ་བསླང་བ་ sgo bsruh ba auch sgo bsruns Tsgo
-category_changed	wts_1_34	495	108	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་པྲི་ sgon pri Eidotter.
-category_changed	wts_1_34	495	114	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་བུ་ sgon bu Klumpen.
-category_changed	wts_1_34	495	118	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་རིལ་ sgon ril Klumpen, Kugel.
-category_changed	wts_1_34	495	124	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་ཤུན་ sgon sun Eischale.
-category_changed	wts_1_34	495	130	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་སེར་ sgon ser Eigelb.
-category_changed	wts_1_34	495	67	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
-category_changed	wts_1_34	495	83	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
-category_changed	wts_1_34	495	92	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་སྐྲན་ sgon skran eine Krankheit.
-category_changed	wts_1_34	495	94	1	སྒོང	sgon	sgoṅ	sgoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྒོང་ཆུ་ sgon chu Eiweiß.
+disappeared	wts_1_34	495	108	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་པྲི་ sgon pri Eidotter.
+disappeared	wts_1_34	495	114	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་བུ་ sgon bu Klumpen.
+disappeared	wts_1_34	495	118	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་རིལ་ sgon ril Klumpen, Kugel.
+disappeared	wts_1_34	495	124	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་ཤུན་ sgon sun Eischale.
+disappeared	wts_1_34	495	130	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་སེར་ sgon ser Eigelb.
+disappeared	wts_1_34	495	67	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་ 'sgon pf. Ibsgons fut. 1/5907 imp. Isgons
+disappeared	wts_1_34	495	83	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་སྐྱེས་ sgon skyes aus dem Ei geboren, Bez.
+disappeared	wts_1_34	495	92	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་སྐྲན་ sgon skran eine Krankheit.
+disappeared	wts_1_34	495	94	1	སྒོང	sgon	sgoṅ		source_compatible_insufficient_evidence			སྒོང་ཆུ་ sgon chu Eiweiß.
 target_changed	wts_1_34	499	129	4	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྒྲ་སྐྱེད་ཀློག་དང་ ཡའ a skyed glog dun Lautspre-
 target_changed	wts_1_34	50	50	2	ཤེང	sen	seṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཀམ་ཤེང་ kam sen, auch skam sen, kham śen ein
 target_changed	wts_1_34	503	36	5	ཚོང	Tauschhan	Tauschhaṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	སྒྲིལ་ཉོ་སྒྲིལ་ཚོང་ sgril 770 sgril tshon Tauschhan-
