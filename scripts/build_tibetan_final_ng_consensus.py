@@ -51,6 +51,14 @@ FEATURE_REGISTRY_PATH = (
     Path(__file__).resolve().parents[1]
     / "data/tibetan_latin_feature_registry.tsv"
 )
+TRANSCRIPTION_EXCEPTIONS_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data/reviewed_tibetan_transcription_exceptions.tsv"
+)
+CANONICAL_SYLLABLES_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data/tibetan_latin_canonical_syllables.tsv"
+)
 _FEATURE_REGISTRY: list[dict[str, str]] | None = None
 
 
@@ -83,6 +91,35 @@ def transcription_integrity_for_target(
             if FEATURE_REGISTRY_PATH.exists() else []
         )
     violations: list[str] = []
+    exceptions = (
+        read_tsv(TRANSCRIPTION_EXCEPTIONS_PATH)
+        if TRANSCRIPTION_EXCEPTIONS_PATH.exists() else []
+    )
+    for row in exceptions:
+        if row["tibetan_syllable"] != tibetan_syllable:
+            continue
+        source = row["source_token"]
+        same_stem = (
+            target.endswith("ṅ") and source[-1:] in SOURCE_FINALS
+            and target[:-1] == source[:-1]
+        )
+        if (target == source or same_stem) and row["status"] in {
+            "known_multi_error_source", "source_variant_requires_manual_review",
+            "foreign_or_alternate_transcription",
+        }:
+            return "reviewed_transcription_exception", row["status"]
+    canonical = {
+        item
+        for row in (
+            read_tsv(CANONICAL_SYLLABLES_PATH)
+            if CANONICAL_SYLLABLES_PATH.exists() else []
+        )
+        if row.get("tibetan_syllable") == tibetan_syllable
+        and row.get("canonical_status") == "canonical"
+        for item in row.get("canonical_forms", "").split(";") if item
+    }
+    if canonical and target not in canonical:
+        return "canonical_syllable_mismatch", ";".join(sorted(canonical))
     checked = False
     for rule in _FEATURE_REGISTRY:
         if (
@@ -250,7 +287,7 @@ def source_compatible_identity_guard(
 def load_alignment_review_exceptions() -> dict[tuple[str, str], dict[str, str]]:
     path = (
         Path(__file__).resolve().parents[1]
-        / "data/final_ng_alignment_review_exceptions.tsv"
+        / "data/reviewed_tibetan_transcription_exceptions.tsv"
     )
     if not path.exists():
         return {}

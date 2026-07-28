@@ -397,7 +397,12 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         ROOT / "data/final_ng_transcription_integrity_backaudit.tsv"
     ))
     integrity_mismatches = sum(
-        item.get("proposed_disposition") != "pass"
+        item.get("proposed_disposition") in {"blocked", "superseded"}
+        for item in integrity_backaudit
+    )
+    integrity_unresolved = sum(
+        item.get("proposed_disposition")
+        == "no_known_violation_but_incomplete"
         for item in integrity_backaudit
     )
     superseded_count = sum(
@@ -587,7 +592,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             0,
             total(stats, "tibetan_latin_integrity_candidates"),
             "external transliteration standard;Latin-only replacement;edit distance",
-            "Integrity diagnostics are Tibetan-alignment-conditioned and do not invent complete targets from partial feature evidence.",
+            "Tri-state Gate 1 separates validated, blocked, and unresolved tokens; partial/absent feature coverage is never reported as a pass.",
         ),
         row(
             "final_ng_transcription_integrity_backaudit",
@@ -603,7 +608,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             superseded_count,
             integrity_mismatches,
             "historical presence without target integrity",
-            "Applied targets are backaudited; high-confidence mismatches require an exact supersession and ambiguous features remain diagnostic.",
+            f"Applied targets are backaudited honestly: {integrity_unresolved} have no known violation but incomplete feature/canonical coverage; blocked targets require exact review and supersession.",
         ),
         row(
             "final_ng_insufficient_evidence_matrix",

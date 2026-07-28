@@ -20,12 +20,17 @@ sys.modules[SPEC.name] = consensus
 SPEC.loader.exec_module(consensus)
 
 REGISTRY_PATH = ROOT / "data/tibetan_latin_feature_registry.tsv"
+EXCEPTIONS_PATH = ROOT / "data/reviewed_tibetan_transcription_exceptions.tsv"
 OVERRIDES_PATH = ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
 SUPERSESSIONS_PATH = ROOT / "data/reviewed_correction_supersessions.tsv"
+CANONICAL_PATH = ROOT / "data/tibetan_latin_canonical_syllables.tsv"
 
 DIAGNOSTIC_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "current_latin_token", "integrity_status", "integrity_pass",
+    "known_feature_violation", "feature_coverage",
+    "transcription_gateway_status", "transcription_exception_status",
+    "alignment_confidence",
     "expected_high_confidence_features", "observed_features",
     "violated_rules", "canonical_full_target", "canonical_target_evidence",
     "domain_context", "damage_scope", "marker_attached", "context_excerpt",
@@ -34,6 +39,8 @@ BACKAUDIT_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "original_source", "applied_target", "correction_reason",
     "correction_batch", "target_integrity_status",
+    "known_feature_violation", "feature_coverage",
+    "transcription_gateway_status",
     "violated_transcription_feature", "proposed_disposition",
     "context_excerpt",
 ]
@@ -77,6 +84,48 @@ def authoritative_rules(
     ]
 
 
+def load_exceptions(path: Path = EXCEPTIONS_PATH) -> dict[tuple[str, str], dict[str, str]]:
+    return {
+        (row["tibetan_syllable"], row["source_token"]): row
+        for row in read_tsv(path)
+    }
+
+
+def load_canonical_forms() -> dict[str, set[str]]:
+    global _CANONICAL_FORMS
+    if _CANONICAL_FORMS is not None:
+        return _CANONICAL_FORMS
+    forms: dict[str, set[str]] = {}
+    for row in read_tsv(CANONICAL_PATH):
+        if row.get("canonical_status") != "canonical":
+            continue
+        forms[row["tibetan_syllable"]] = {
+            item for item in row.get("canonical_forms", "").split(";") if item
+        }
+    _CANONICAL_FORMS = forms
+    return forms
+
+
+_CANONICAL_FORMS: dict[str, set[str]] | None = None
+
+
+def tibetan_roles(syllable: str) -> dict[str, str]:
+    """Return only conservative, directly observable orthographic roles.
+
+    This is deliberately not a transliterator.  It resolves suffix ང and the
+    reviewed root ཞ cases needed by authoritative rules; everything else stays
+    unresolved rather than being guessed.
+    """
+    roles = {
+        "root_consonant": "",
+        "suffix_coda": "ང" if consensus.ends_in_tibetan_ng(syllable) else "",
+        "orthographic_role_status": "partial",
+    }
+    if "ཞ" in syllable:
+        roles["root_consonant"] = "ཞ"
+    return roles
+
+
 def classify_domain(zone: str, line: str) -> str:
     if zone in {"latin_other", "german_prose_with_translit"}:
         return "bibliography_citation_or_prose"
@@ -94,20 +143,21 @@ def token_integrity(
     tibetan_syllable: str,
     latin_token: str,
     registry: list[dict[str, str]] | None = None,
+    *,
+    use_canonical: bool = True,
 ) -> dict[str, str]:
     expected: list[str] = []
     observed: list[str] = []
     violated: list[str] = []
     nonfinal_mismatch = False
     final_mismatch = False
+    roles = tibetan_roles(tibetan_syllable)
     for rule in authoritative_rules(registry):
         feature = rule["tibetan_feature"]
-        if feature not in tibetan_syllable:
-            continue
         latin_feature = rule["expected_latin_feature"]
         feature_type = rule["feature_type"]
         if feature_type == "suffix_coda":
-            if not consensus.ends_in_tibetan_ng(tibetan_syllable):
+            if roles["suffix_coda"] != feature:
                 continue
             expected.append(f"{feature}:{latin_feature}")
             if latin_token.endswith(latin_feature):
@@ -116,13 +166,45 @@ def token_integrity(
                 final_mismatch = True
                 violated.append(f"{feature_type}:{feature}->{latin_feature}")
             continue
+        if feature_type == "root_consonant":
+            if roles["root_consonant"] != feature:
+                continue
+        elif feature not in tibetan_syllable:
+            continue
         expected.append(f"{feature}:{latin_feature}")
         if latin_feature in latin_token:
             observed.append(latin_feature)
         else:
             nonfinal_mismatch = True
             violated.append(f"{feature_type}:{feature}->{latin_feature}")
-    if nonfinal_mismatch and final_mismatch:
+    exceptions = load_exceptions()
+    exception = exceptions.get((tibetan_syllable, latin_token))
+    if not exception and latin_token.endswith("ṅ"):
+        for final in "nñńňh":
+            exception = exceptions.get(
+                (tibetan_syllable, latin_token[:-1] + final)
+            )
+            if exception:
+                break
+    exception_status = exception["status"] if exception else ""
+    exception_blocks = exception_status in {
+        "known_multi_error_source",
+        "source_variant_requires_manual_review",
+        "foreign_or_alternate_transcription",
+        "obvious_gloss_or_alignment_noise",
+        "marker_or_damage",
+    }
+    canonical_forms = (
+        load_canonical_forms().get(tibetan_syllable, set())
+        if use_canonical else set()
+    )
+    canonical_match = latin_token in canonical_forms
+    canonical_mismatch = bool(canonical_forms) and not canonical_match
+    if exception_blocks:
+        status = "reviewed_transcription_exception"
+    elif canonical_mismatch and not (nonfinal_mismatch or final_mismatch):
+        status = "canonical_syllable_mismatch"
+    elif nonfinal_mismatch and final_mismatch:
         status = "multiple_feature_mismatches"
     elif nonfinal_mismatch:
         status = "nonfinal_feature_mismatch"
@@ -132,9 +214,28 @@ def token_integrity(
         status = "transcription_integrity_pass"
     else:
         status = "insufficient_feature_coverage"
+    known_violation = (
+        nonfinal_mismatch or final_mismatch or exception_blocks
+        or canonical_mismatch
+    )
+    if exception_blocks or nonfinal_mismatch:
+        gateway = "blocked"
+    elif canonical_match:
+        gateway = "pass"
+    elif canonical_mismatch:
+        gateway = "blocked"
+    else:
+        gateway = "unresolved"
+    coverage = (
+        "sufficient" if canonical_match else "partial" if expected else "none"
+    )
     return {
         "integrity_status": status,
-        "integrity_pass": "yes" if not nonfinal_mismatch else "no",
+        "integrity_pass": "yes" if gateway == "pass" else "no",
+        "known_feature_violation": "yes" if known_violation else "no",
+        "feature_coverage": coverage,
+        "transcription_gateway_status": gateway,
+        "transcription_exception_status": exception_status,
         "expected": ";".join(expected),
         "observed": ";".join(observed),
         "violated": ";".join(violated),
@@ -208,6 +309,18 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
         override = canonical.get(
             (row["volume"], row["page"], row["line"], row["token_index"])
         )
+        if row["marker_attached"] == "yes" or row["damage_scope"] not in {
+            "none", "later_gloss_or_commentary",
+        }:
+            alignment_confidence = "marker_or_damage"
+        elif override:
+            alignment_confidence = "secure_reviewed_alignment"
+        elif row["zone"] in {"headword_line", "tibetan_only"}:
+            alignment_confidence = "secure_positional_alignment"
+        elif row["zone"] in {"latin_other", "german_prose_with_translit"}:
+            alignment_confidence = "gloss_or_prose_noise"
+        else:
+            alignment_confidence = "probable_alignment"
         output.append({
             "volume": row["volume"], "page": row["page"],
             "line": row["line"], "token_index": row["token_index"],
@@ -215,6 +328,15 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             "current_latin_token": row["latin_token"],
             "integrity_status": status,
             "integrity_pass": result["integrity_pass"],
+            "known_feature_violation": result["known_feature_violation"],
+            "feature_coverage": result["feature_coverage"],
+            "transcription_gateway_status": (
+                "blocked" if status == "marker_or_damage"
+                else result["transcription_gateway_status"]
+            ),
+            "transcription_exception_status":
+                result["transcription_exception_status"],
+            "alignment_confidence": alignment_confidence,
             "expected_high_confidence_features": result["expected"],
             "observed_features": result["observed"],
             "violated_rules": result["violated"],
@@ -250,10 +372,23 @@ def build_backaudit(
         check = token_integrity(
             current["tibetan_syllable"], override["to_token"]
         )
-        disposition = (
-            "pass" if check["integrity_pass"] == "yes"
-            else "supersede_high_confidence_feature_mismatch"
+        superseded = any(
+            row["status"] == "active"
+            and row["volume"] == override["volume"]
+            and row["page"] == override["page"]
+            and row["line"] == override["line"]
+            and row["token_index"] == override["token_index"]
+            and row["old_target"] == override["to_token"]
+            for row in read_tsv(SUPERSESSIONS_PATH)
         )
+        if superseded:
+            disposition = "superseded"
+        elif check["transcription_gateway_status"] == "pass":
+            disposition = "validated"
+        elif check["transcription_gateway_status"] == "blocked":
+            disposition = "blocked"
+        else:
+            disposition = "no_known_violation_but_incomplete"
         rows.append({
             "volume": override["volume"], "page": override["page"],
             "line": override["line"], "token_index": override["token_index"],
@@ -263,6 +398,10 @@ def build_backaudit(
             "correction_reason": override["reason"],
             "correction_batch": override["evidence"],
             "target_integrity_status": check["integrity_status"],
+            "known_feature_violation": check["known_feature_violation"],
+            "feature_coverage": check["feature_coverage"],
+            "transcription_gateway_status":
+                check["transcription_gateway_status"],
             "violated_transcription_feature": check["violated"],
             "proposed_disposition": disposition,
             "context_excerpt": current["context_excerpt"],
@@ -322,8 +461,11 @@ def main() -> None:
         print(f"{status}={count}")
     print(
         "final_ng_targets="
-        f"{len(backaudit)} mismatches="
-        f"{sum(row['proposed_disposition'] != 'pass' for row in backaudit)}"
+        f"{len(backaudit)} validated="
+        f"{sum(row['proposed_disposition'] == 'validated' for row in backaudit)} "
+        f"unresolved={sum(row['proposed_disposition'] == 'no_known_violation_but_incomplete' for row in backaudit)} "
+        f"blocked={sum(row['proposed_disposition'] == 'blocked' for row in backaudit)} "
+        f"superseded={sum(row['proposed_disposition'] == 'superseded' for row in backaudit)}"
     )
 
 

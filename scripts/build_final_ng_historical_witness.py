@@ -36,6 +36,9 @@ HISTORICAL_FIELDS = [
     "historical_volume", "historical_page", "historical_line",
     "historical_token_index", "historical_anchor_provenance_class",
     "transcription_integrity_status", "transcription_integrity_pass",
+    "known_feature_violation", "feature_coverage",
+    "canonical_syllable_status", "transcription_exception_status",
+    "transcription_gateway_status",
     "transcription_integrity_violations",
     "historical_anchor_change_reason", "historical_anchor_change_evidence",
     "historical_context", "current_candidate_count",
@@ -250,6 +253,11 @@ def build_historical_audit(ref: str) -> list[dict[str, str]]:
                         "not_present_at_historical_baseline",
                     "transcription_integrity_status": "historical_anchor_absent",
                     "transcription_integrity_pass": "no",
+                    "known_feature_violation": "no",
+                    "feature_coverage": "none",
+                    "canonical_syllable_status": "unresolved",
+                    "transcription_exception_status": "",
+                    "transcription_gateway_status": "unresolved",
                     "transcription_integrity_violations": "",
                     "historical_anchor_change_reason": "",
                     "historical_anchor_change_evidence": "",
@@ -289,6 +297,14 @@ def build_historical_audit(ref: str) -> list[dict[str, str]]:
                         integrity_result["integrity_status"],
                     "transcription_integrity_pass":
                         integrity_result["integrity_pass"],
+                    "known_feature_violation":
+                        integrity_result["known_feature_violation"],
+                    "feature_coverage": integrity_result["feature_coverage"],
+                    "canonical_syllable_status": "unresolved",
+                    "transcription_exception_status":
+                        integrity_result["transcription_exception_status"],
+                    "transcription_gateway_status":
+                        integrity_result["transcription_gateway_status"],
                     "transcription_integrity_violations":
                         integrity_result["violated"],
                     "historical_anchor_change_reason": reason,
@@ -400,7 +416,8 @@ def build_reviewed_target_audit() -> list[dict[str, str]]:
                     "eligibility": (
                         "reviewed_same_tibetan_target_final_nasal_only"
                         if clean and not competing
-                        and target_integrity["integrity_pass"] == "yes"
+                        and target_integrity["transcription_gateway_status"]
+                        == "pass"
                         else "withhold"
                     ),
                     "sample_contexts": " || ".join(

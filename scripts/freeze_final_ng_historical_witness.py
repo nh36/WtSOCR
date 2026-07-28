@@ -78,7 +78,7 @@ def main() -> None:
             and row["target"] == target
             and row["historical_anchor_present"] == "yes"
             and row["historical_baseline_sha"] == BASELINE
-            and row.get("transcription_integrity_pass") == "yes"
+            and row.get("transcription_gateway_status") == "pass"
         ]
         if not anchors:
             raise ValueError(

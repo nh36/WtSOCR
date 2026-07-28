@@ -1,0 +1,5 @@
+tibetan_role	tibetan_feature	candidate_latin_realization	independent_canonical_syllables	supporting_volumes	reviewed_support	historical_support	counterexamples	counterexample_domains	likely_ocr_confusions	recommendation
+root_consonant	ཞ	ź	3		registry_seed				Z;z	promote
+root_consonant	ཉ	ñ	0		registry_seed				n	diagnostic_only
+root_consonant	ཤ	ś	0		registry_seed				S;s;$	ambiguous
+root_consonant	ང		0		registry_seed					diagnostic_only
