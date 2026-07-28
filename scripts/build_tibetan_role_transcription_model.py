@@ -839,7 +839,7 @@ def empirical_rule_qualifies(
     evidence_kinds = set(rule.get("evidence_kind", "").split(";"))
     residual = "single_unknown_residual_induction" in evidence_kinds
     return (
-        len(syllables) >= 3
+        len(syllables) >= (4 if residual else 3)
         and (len(syllables) >= 3 if residual else len(pairs) >= 2)
         and len(volumes) >= 2
         and len(clusters) >= 2
@@ -1080,7 +1080,7 @@ def build_residual_expansion(
             "secure_outliers_unlocked": "0",
             "final_ng_rows_unlocked": "0",
             "induction_status": status,
-            "blocker": "",
+            "blocker": "none",
         })
     for row in rows:
         alternatives = by_feature[
@@ -1173,6 +1173,22 @@ def residual_mapping_candidates(
             ),
         })
     return rows
+
+
+def merge_mapping_candidates(
+    contrast: list[dict[str, str]],
+    residual: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    """Prefer complete residual evidence when a historical rule ID overlaps."""
+    merged = {row["rule_id"]: row for row in contrast}
+    for row in residual:
+        existing = merged.get(row["rule_id"])
+        if (
+            not existing
+            or row["evidence_kind"] == "single_unknown_residual_induction"
+        ):
+            merged[row["rule_id"]] = row
+    return list(merged.values())
 
 
 def build_recent_correction_backaudit(
@@ -1329,7 +1345,7 @@ def build_unaffected_source_recovery(
                 blocker = "unexplained_source_tail"
         if not blocker and recovered:
             recovery_status = "role_specific_unaffected_evidence"
-            structural_unit = ""
+            structural_unit = "none"
             for role, feature, realization, rule_id in recovered:
                 recovered_evidence.append({
                     "volume": source["volume"], "page": source["page"],
@@ -1381,7 +1397,7 @@ def build_unaffected_source_recovery(
             "recovered_roles": ";".join(item[0] for item in recovered),
             "structural_unit": structural_unit,
             "mapping_dependencies": ";".join(dependencies),
-            "blocker": blocker,
+            "blocker": blocker or "none",
         })
     return audit, recovered_evidence
 
@@ -1403,6 +1419,13 @@ def compose(
     # erase that cluster-conditioned punctuation.
     if parse["prefix"] == "ག" and parse["root_consonant"] == "ཡ":
         return "", [], ["cluster:ག+ཡ:conditioned_separator_unresolved"]
+    if (
+        parse["root_consonant"] == "ཐ"
+        and parse["subjoined_consonants"]
+    ):
+        return "", [], [
+            "cluster:root_ཐ+subjoined:structural_realization_unresolved"
+        ]
     for role in ROLE_ORDER:
         feature = parse[role]
         if not feature:
@@ -1443,9 +1466,8 @@ def build() -> tuple[list[dict[str, str]], ...]:
         )
         for candidate in residual_mapping_candidates(expansion):
             residual_candidates_by_id[candidate["rule_id"]] = candidate
-        candidates = (
-            list(contrast_candidates)
-            + list(residual_candidates_by_id.values())
+        candidates = merge_mapping_candidates(
+            contrast_candidates, list(residual_candidates_by_id.values())
         )
         new_rules = authoritative_rules(candidates)
         if set(new_rules) == set(rules):
@@ -1464,8 +1486,8 @@ def build() -> tuple[list[dict[str, str]], ...]:
     contrast_candidates = contrastive_candidates(
         canonical, parses, feature_evidence
     )
-    candidates = (
-        list(contrast_candidates) + list(residual_candidates_by_id.values())
+    candidates = merge_mapping_candidates(
+        contrast_candidates, list(residual_candidates_by_id.values())
     )
     rules = authoritative_rules(candidates)
     teaching = read(
@@ -1488,7 +1510,7 @@ def build() -> tuple[list[dict[str, str]], ...]:
         if prediction == row["canonical_forms"]:
             status = "exact_reconstruction"
         elif prediction:
-            status = "wrong_reconstruction"
+            status = "known_canonical_conflict_blocked"
         elif parse["role_parse_status"] == "unsupported_orthographic_sign":
             status = "unsupported_orthographic_sign"
         elif held_out:
@@ -1511,7 +1533,7 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 "held_out_rule_insufficient" if held_out else "insufficient"
             ),
             "reconstruction_status": status,
-            "missing_roles": ";".join(missing),
+            "missing_roles": ";".join(missing) or "none",
         })
 
     concordance_by_syllable: dict[str, list[dict[str, str]]] = defaultdict(list)
@@ -1530,10 +1552,22 @@ def build() -> tuple[list[dict[str, str]], ...]:
             parses[syllable], rules, excluded_syllable=syllable,
             candidates=candidates,
         )
+        exact_canonical_conflict = bool(
+            prediction and existing
+            and existing["canonical_confidence_tier"] in {
+                "canonical_reviewed", "canonical_independent_strong"
+            }
+            and existing["canonical_forms"] != prediction
+        )
         support_channel, support_ok = target_support_channel(
             syllable, prediction, teaching, feature_complete=bool(prediction)
         ) if prediction else ("no_feature_target", False)
-        if prediction and support_ok:
+        if exact_canonical_conflict:
+            status, authority, blocker = (
+                "known_canonical_conflict", "no",
+                f"exact canonical {existing['canonical_forms']} != {prediction}",
+            )
+        elif prediction and support_ok:
             status, authority, blocker = (
                 "feature_complete_unique", "yes", "none",
             )

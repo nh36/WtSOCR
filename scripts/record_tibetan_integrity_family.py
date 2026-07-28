@@ -72,11 +72,20 @@ def validate_authorization(
     if canonical["canonical_confidence_tier"] == "canonical_feature_composed":
         if canonical.get("feature_leave_one_out_status") != "passed":
             raise ValueError("Feature-composed target lacks leave-one-out support")
-        authorised_features = {
+        historically_authorised_features = {
             row["rule_id"] for row in integrity.read_tsv(
                 ROOT / "data/reviewed_tibetan_feature_mapping_decisions.tsv"
             ) if row["decision"] == "A"
         }
+        currently_revalidated_features = {
+            row["rule_id"] for row in integrity.read_tsv(
+                ROOT / "data/tibetan_feature_mapping_revalidation.tsv"
+            ) if row["effective_authority"] == "yes"
+        }
+        authorised_features = (
+            historically_authorised_features
+            & currently_revalidated_features
+        )
         dependencies = {
             item for item in canonical.get(
                 "feature_dependency_rule_ids", ""

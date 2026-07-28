@@ -109,6 +109,28 @@ class FeatureCompositionTests(unittest.TestCase):
         self.assertEqual(target, "")
         self.assertIn("cluster:ག+ཡ:conditioned_separator_unresolved", missing)
 
+    def test_aspirated_root_subjoined_cluster_requires_unit_rule(self):
+        rules = {
+            ("root_consonant", "ཐ"): {
+                "latin_realization": "th", "rule_id": "TH",
+            },
+            ("subjoined_consonants", "ར"): {
+                "latin_realization": "r", "rule_id": "R",
+            },
+            ("vowel", "o"): {"latin_realization": "o", "rule_id": "O"},
+            ("suffix_coda", "བ"): {
+                "latin_realization": "b", "rule_id": "B",
+            },
+        }
+        target, _ids, missing = role_model.compose(
+            role_model.parse_tibetan_syllable("ཐྲོབ"), rules
+        )
+        self.assertEqual(target, "")
+        self.assertIn(
+            "cluster:root_ཐ+subjoined:structural_realization_unresolved",
+            missing,
+        )
+
     def test_feature_composed_edges_are_non_teaching(self):
         graph = [{
             "from_node": "feature_rule:R",
