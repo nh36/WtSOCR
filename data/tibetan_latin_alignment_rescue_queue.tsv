@@ -80,6 +80,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཁུལ	'chul	khul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁུལ་ 'chul zu erw. gehören,
 ཁུལ	Wehul	khul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁུལ་ Wehul.
 ཁུལ	’khrul	khul	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁུལ་ཡས་ /5/?7// ༡/7$ \’khrul yas.
+ཁེ	kbe	khe	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
 ཁེབ	leb	kheb	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ལྕགས་ཁེབ་ lcags leb Eisenblech.
 ཁོག	Rhog	khog	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁོག་པ་ Rhog pa.
 ཁོང	Inneres	khoṅ	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁོང་ 25/060/7 Inneres, Bauch; wird häufig bei der
@@ -103,6 +104,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཁྲག	Rhrag	khrag	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁྲག་འབབ་ Rhrag 'bab Bez. für den Fluß 51(3. || ཁྲག་ལས་གྱར་པ་ Rhrag las gyur pa Bez. für
 ཁྲལ	Kopfsteuer	khral	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ངོ་ཁྲལ་ ༡༠ khral Kopfsteuer.
 ཁྲིད	Führer	khrid	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འགོ་ཁྲིད་ 20 khrid Führer, Anführer, Leiter.
+ཁྲིམས	kbrims	khrims	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླན་ཤཱཀྱ་ཚུལ་ཁྲིམས་ klan sakya ishul kbrims N. || ཁྲིམས་སུ་བྱས་པ་ kbrims su byas pa Abma-
 ཁྲོ	Reichtum	khro	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཧུ་ཁྲོ་ <¢ bo Reichtum, Besitz.
 ཁྲོ	bo	khro	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ངོ་ཁྲོ་ཉི དཀུ་ no bo nid sku
 ཁྲོ	gebeugt	khro	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒར་ཁྲོ་ ༡97 po gebeugt, krumm.
@@ -333,6 +335,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 གྲས	grus	gras	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲས་པོ་ grus po auch grus pa dreijährig [von
 གྲི	Rasiermesser	gri	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྐྱི་གྲི skyi 977 Rasiermesser.
 གྲི	Ti	gri	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	2, fi mai dkyil ’khor Umlaufzeit der Sonne ཉི་གྲི་ fi 977 Ti khri.
+གྲི	gi	gri	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདྲག་གྲི་རན།། bdag gi ma npr. eine weibliche || བར་གྲི་གསའ་བྲེད་ bar gi gsal byed
 གྲི	gyi	gri	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྲེདྲ་གྲི་བཞྲོན་ར།། sprin gyi bion pa npr. ein Prinz
 གྲི	ori	gri	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲི་འདར་ ori ’dur
 གྲི	plötzlicher	gri	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དམེ་གྲི་ dmegri plötzlicher Tod durch innerfa-
@@ -559,6 +562,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཐོད	tod	thod	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པོ་ཀ་བདད་ཐོད་ངདཀའར་ pbo Klu bind tod dkar
 ཐོན	Yhon	thon	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐོན་ Yhon imp. zu !’don, auch Nf. zu pf.
 ཐོན	kor	thon	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐོན་ཀོར་ 7/00?7 kor །/060 kor.
+ཐོན	tbon	thon	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐོན་སྐོར་ tbon skor Ttho kor.
 ཐོན	zu	thon	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱིར་ཐོན་ imp. zu [/?/77//7 ""don her-"
 ཐོབ	erlangen	thob	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	Rat geben?“ (Lokn 96,29). ཉེ་བར་ཐོབ་ ༡76 bar thob erlangen.
 ཐོབ	gi	thob	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	nDemmegz ་རྗེས་ ཐོབ་པ་ bdag gi don rjes su thob
@@ -724,6 +728,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 དྲུང	po	druṅ	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲུང་པོ་ 42)7/2 po klug, gut; vgl. 1977/ 1.
 དྲུད	Ad	drud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲུད་ Ad Ä
 དྲེ	Ma	dre	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲེ Ma 'ཆྱན་ dredkyi mgocan einemamo aus
+དྲེ	de	dre	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲེ་རྐྱང་པ་ de rkyaṅ pa einzig, nur. || དྲེ་སྐབས་ de skabs
 དྲེ	dri	dre	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གཏམ་དྲེ་ gtam dri fur. zu [974/)? ’dri fragen. || དྲེ dri !777 ma. || དྲེ་ངད་ dri nad auch — pa Wohlgeruch, liebli-
 དྲེག	'dreg	dreg	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲེག་ 'dreg
 དྲེག	Gicht	dreg	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲེག་ 4462 Gicht, Rheuma, Rheumatismus;
@@ -811,19 +816,24 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཕབ	phug	phab	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བལ་ཡལ་གསེར་ཕབ།་ bal yul gser phug eine lo-
 ཕལ	dpal	phal	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕལ་གྱི་གྲ་བུ་ལུང་ dpal gyi gra bu laṅ npr eine
 ཕལ	pbal	phal	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕལ་སྐད་ pbal skad allgemeiner Sprachge- || ཕལ་ཆེན་ pbal chen.
+ཕས	pbas	phas	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕས་ཀྱི་དགྲ་ pbas kyi dgra Gegner, Feind.
 ཕུ	Taube	phu	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཏ་ཕུ་ ༩ phn Taube.
 ཕུ	cho	phu	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུ པ་ . 22); cho yari do ma thugs dags / gi cho —
+ཕུ	pbu	phu	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུ་ནུ་མོ་ pbu nu MO Schwester. || ཕུ་ཤུད་ pbu Sud
 ཕུག	plug	phug	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བྲག་ཕུག་ brag plug Kurzf. für brag gi plug pa,
 ཕུགས	phibs	phugs	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱ་ཕུགས་ 9༧ phugs †?:97/4 phibs.
 ཕུན	pbun	phun	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུན་ཆག་ pbun chag Unglück.
 ཕུར	'pur	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ 'pur fliegen lassen, steigen lassen.
 ཕུར	mi	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་མི་ ༼ mi alttib. prer my der Name eines
+ཕུར	pbur	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ཐོར་ pbur zor ein kleiner Ritualdolch aus
 ཕུར	vollkommen	phur	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྙང་ཕུར་ $?7/77 phur vollkommen, andringlic
 ཕུལ	Unterbreitung	phul	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཆར་ཕུལ་ 947 phul Unterbreitung eines
 ཕུལ	pul	phul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུལ་ pul
 ཕོག	pbog	phog	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོག་གསུམ་ pbog gsun
 ཕོད	chuṅ	phod	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྙིང་ཕོད་ཆུང་བ་ $?7/77 phod chuṅ ba Feigling; vgl. སྙིང་བརྩེ་ säin brtse Liebe, Mitgefühl; - ba’; blo
 ཕོད	pbod	phod	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོད་ཅན་ pbod can Vpbod || ཕོད་པ་ཅན་ pbod pa can unverschämt, frech.
+ཕོན	pbon	phon	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དམག་ཕོན་ dmag pbon Tdmag dpon.
+ཕོར	pbor	phor	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མ་མགའ་ཕོར་པ་ mu mgo pbor pa Bez. für eine
 ཕྱགས	rta	phyags	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྟན་གྱ་ཕྱགས་བཞལ་རཏ kyi Zal rta pa cin
 ཕྱང	yar	phyaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་ཡར་ ༼ yar Arbeit, Tun, Aktivität.
 ཕྱད	byed	phyad	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྟོན་པར་ ཕྱད་པ་ ston par byed pa Bez. für Lehrer
@@ -831,18 +841,22 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཕྱལ	flach	phyal	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱལ་ flach.
 ཕྱིན	ccad	phyin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིན་ཅད་ ༼ ccad chad.
 ཕྱིན	herbeikommen	phyin	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉེ་བར་ཕྱིན་ /76 bar phyin herbeikommen.
+ཕྱིན	pbyin	phyin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིན་བཅར་ pbyin bcar || ཕྱིན་སྤྲོད་ pbyin spyod || ཕྱིན་སྤྱོད་ pbyin spyod auch phyin chod, phyin
 ཕྱིན	ppbyin	phyin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིན་བཅར་ ppbyin bear folglich.
 ཕྱིན	pyin	phyin	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ད་ཕྱིན་ཆད་ da pyin ༩944 \da phyin chad. ད་ཕྲུག་ da phrug !dwa phrug.
 ཕྱིན	sbyin	phyin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཆུ་ཕྱིན་ chu sbyin „Wasser geben“.
 ཕྱིས	Zukunft	phyis	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིས་འབྱུང་ ༼ Zukunft; — du später; —
 ཕྱིས	pbyis	phyis	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིས་སྐྱེས་ pbyis skyes.
 ཕྱུར	Pr	phyur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱུར་ Pr) PD) པེ rab mig — mams (metr.) ""jene, bei denen"
+ཕྱེ	pbye	phye	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-
 ཕྱེད	mimi	phyed	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱེད་མ་ mimi ma einer der Kanäle im
 ཕྱོད	che	phyod	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱོད་ཆེ་ ༼ che effektiv, nützlich.
 ཕྲ	Vorzeichen	phra	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲ་ Vorzeichen; vgl. ། /))7/.
 ཕྲ	cn	phra	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	I ཕྲ cn
 ཕྲ	pa	phra	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མེ་ཕྲ་ mo pa
 ཕྲད	prad	phrad	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ྲད་ཕྲད་ prad prad in — gyis byed sich aufrich-
+ཕྲན	pbran	phran	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲན བུ pbran bu
+ཕྲིན	pbrin	phrin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ལས་ pbrin las
 ཕྲིན	ran	phrin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ངན་པ་ ran pa schlechter Bote, Un-
 ཕྲིན	yig	phrin	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ཡིག་ ༼ yig 1 ?7)/0)7)/ yig.
 ཕྲུམ	pbrum	phrum	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲུམ་སེར་ pbrum ser Molke. || ཕྲུམ་གསར་ pbrum gsar frische Butter.
@@ -1153,6 +1167,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 མཐུན	bsgrigs	mthun	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐུན་བསྒྲེགས་ 7777/7//77 bsgrigs pf. in Über-
 མཐུན	mtbun	mthun	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐུན་པར་གནང་བ་ mtbun par gnaṅ ba Einwilli- || མཐུན་ལམ་ mtbun lam Harmonie, Freund-
 མཐོ	dman	mtho	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐོ་དམན་ /77//70 dman Höhe; Größe.
+མཐོ	mtbo	mtho	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"མཐོ་ཁྱ་ྱ་ས།ས། mtbo btsams pf. zu Imtho ""tshams."
 མཐོང	Vorausschau	mthoṅ	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྔོན་མཐོང་ $77077 mthon Vorausschau, Vorher-
 མདང	mdon	mdaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཇ་མདང་ ja mdon auch ja ldon Butterfaß, um
 མདུང	mdu	mduṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མདུང་གི་རྩེ་ mdu gi rise Lmdun rise
@@ -1244,12 +1259,16 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཙུག	Isug	tsug	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མར་མོ་ཙུག ད་མ་ mar mo Isug da ma npr. eine als
 ཙེ	Tmigtsan	tse	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཙེ Tmigtsan gi mchodsbyin.
 ཙེ	Verhaltens	tse	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཙེ Verhaltens"", eine der !stobs beu"
+ཚག	tsbag	tshag	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐིགས་ཚག་ thigs tsbag auch thig tshags, thigs
+ཚགས	tsbags	tshags	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བུམ་ཚགས་གཅེའུ་ཅན་ bum tsbags gce'u can cine
 ཚང	ishah	tshaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 ཚང	tsbaṅ	tshaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མ་ཡི་ཚང་ཚུངས་ ma yi tsbaṅ tshuris auch ma yi
 ཚབ	ishab	tshab	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྐུ་ཚབ་ sku ishab resp.
+ཚར	tsbar	tshar	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུན་ཚར་ phun tsbar Fransen, Fadenenden.
 ཚིགས	Märas	tshigs	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉ་ཡི་ཚིགས་ 74 7/ tshigs Beiname Märas bzw.
 ཚུགས	i	tshugs	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྱིའི་ཚུགས་ spyři tshugs lspyi'n tshugs.
 ཚུལ	ishul	tshul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླན་ཤཱཀྱ་ཚུལ་ཁྲིམས་ klan sakya ishul kbrims N. || སྤྲོད་ཚུལ་ spyod ishul Kurzf. für spyod pa' tshul
+ཚུལ	tsbul	tshul	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འབྲེལ་ཚུལ་ 'brel tsbul Art und Weise der Ver-
 ཚོས	Tbag	tshos	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བག་ཚོས་ bagtshos Tbag chos.
 ཛ	N	dza	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཛ N np . ir.
 ཛུ	Ritual	dzu	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཛུ Ritual zur Änderung des Geschlech-
@@ -2015,6 +2034,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སྤྱོད	byed	spyod	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བསྐུལ་སྤྱོད་བྱེད་ ལབ spyod byed zu etw. deklarie-
 སྤྲུབས	'spubs	sbubs	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྲུབས་ 'spubs Höhlung.
 སྤྲོ	'spro	spro	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྲོ 'spro
+སྤྲོ	spo	spro	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མིང་སྤྲོ་ miṅ spo Namenswechsel; vgl. SCHUH
 སྦྱང	'sbyari	sbyaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྦྱང་ 'sbyari
 སྦྱང	Tchu	sbyaṅ	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཆུ་སྦྱང་ mchu $77//77 Tchu Aun.
 སྦྱང	sbyans	sbyaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྔོན་སྦྱང་ས་ shon sbyans Hang, Neigung.
@@ -2028,6 +2048,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སྦྱོར	Vereinigung	sbyor	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཉམ་སྦྱོར་ /77777/77 sbyor Vereinigung, Ver-
 སྦྱོར	i	sbyor	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྒྲའི་སྦྱོར་བ་ sgra”i sbyor ba [$9777 sbyor.
 སྦྱོར	pf	sbyor	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉམས་དང་སྦྱོར་ 77:77775 daṅ sbyor pf. und fur.
+སྦྲས	sbas	sbras	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉེར་སྦྲས་ fer sbas trie sbas. || རྟ་སྦྲས་ ra sbas npr. ein Arhat.
 སྨགས	sbags	smags	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀུན་ནས་སྨགས་པ་ kun nas sbags pa das Verlangen.
 སྨད	'smad	smad	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྨད་ 'smad || སྨད་ 'smad || སྨད་ 'smad
 སྨད	Ismad	smad	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྨད་ Ismad
