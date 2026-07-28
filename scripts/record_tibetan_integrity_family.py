@@ -87,6 +87,9 @@ def main() -> None:
     parser.add_argument("--sources", required=True)
     parser.add_argument("--target", required=True)
     parser.add_argument("--evidence", required=True)
+    parser.add_argument(
+        "--reason", default="reviewed_tibetan_exact_ocr_signature"
+    )
     parser.add_argument("--explicit-manual-review", action="store_true")
     args = parser.parse_args()
     sources = set(args.sources.split(","))
@@ -176,12 +179,12 @@ def main() -> None:
             "reason": (
                 "reviewed_tibetan_exact_manual_multi_error"
                 if args.explicit_manual_review
-                else "reviewed_tibetan_exact_transcription_integrity"
+                else args.reason
             ),
             "evidence": args.evidence,
             "review_note": (
-                f"Exact {args.tibetan} alignment; reviewed root-feature repair "
-                "and canonical full target; no Latin-wide substitution."
+                f"Exact {args.tibetan} alignment; canonical target and "
+                "conditioned reviewed OCR signature; no Latin-wide substitution."
             ),
         })
     rows.sort(key=lambda r: (

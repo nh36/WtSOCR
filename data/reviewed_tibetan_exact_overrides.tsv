@@ -5277,6 +5277,7 @@ wts_8_b	309	66	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_r
 wts_8_b	309	66	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	309	66	6	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
 wts_8_b	309	83	7	ViST	ViśT	reviewed_siglum_exact_visht	tibetan_medium_cleanup_20260619	Exact citation siglum for Viśeṣastavatīkā; no broad siglum rule
+wts_8_b	310	1	2	kyani	kyaṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact ཀྱང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_8_b	314	3	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	314	3	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	314	3	9	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
