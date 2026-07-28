@@ -5367,6 +5367,7 @@ wts_8_b	370	41	1	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_r
 wts_8_b	370	66	6	Bu-Sz	Bu-śz	reviewed_siglum_exact_registry_canonicalization	tibetan_sigla_registry_cleanup_20260627	Exact reviewed registry-backed citation siglum normalization; no broad siglum or $-to-ś rule
 wts_8_b	372	39	2	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_8_b	374	44	1	bzugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
+wts_8_b	375	17	3	phren	phreṅ	reviewed_tibetan_exact_ocr_signature	canonical_conditioned_final_n_signature_20260728	Exact འཕྲེང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_8_b	378	51	9	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
 wts_8_b	382	20	8	bzugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
 wts_8_b	383	60	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule

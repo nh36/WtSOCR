@@ -678,6 +678,37 @@ class TibetanFinalNgConsensusTests(unittest.TestCase):
             "direct_repeated_tibetan_alignment",
         )
 
+    def test_historical_echo_decision_survives_alignment_reclassification(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            release = root / "release"
+            qa = release / "qa" / "wts_1_34"
+            qa.mkdir(parents=True)
+            (qa / "wts_1_34_line_zones.tsv").write_text(
+                "page\tline\tzone\tline_text\n"
+                "1\t1\theadword_line\tགསུང་ gsuṅ\n"
+                "1\t2\theadword_line\tགསུང་ gsun\n",
+                encoding="utf-8",
+            )
+            decisions = root / "decisions.tsv"
+            decisions.write_text(
+                "volume\tpage\tline\ttoken_index\ttibetan_syllable\t"
+                "source_token\tproposed_target\tdecision\techo_category\t"
+                "evidence\trationale\treviewing_batch\treview_date\t"
+                "reconsideration_prerequisite\n"
+                "wts_1_34\t1\t2\t1\tགསུང\tgsun\tgsuṅ\tdeferred\t"
+                "uncertain\ttest\tIdentity not established.\ttest_batch\t"
+                "2026-07-28\tIndependent evidence\n",
+                encoding="utf-8",
+            )
+            rows = consensus.build_same_entry_echo_rows(release, decisions)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]["prior_decision"], "deferred")
+        self.assertEqual(rows[0]["active_queue"], "no")
+        self.assertEqual(
+            rows[0]["evidence"], "persistent_historical_echo_decision"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

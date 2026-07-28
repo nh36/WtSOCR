@@ -2122,6 +2122,57 @@ def build_same_entry_echo_rows(
                     "context_excerpt": line,
                 }
             )
+    emitted_identities = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["additional_source_token"],
+        )
+        for row in echoes
+    }
+    aligned_by_identity = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["tibetan_syllable"], row["latin_token"],
+        ): row
+        for row in aligned
+    }
+    for decision in decisions.values():
+        identity = (
+            decision["volume"], decision["page"], decision["line"],
+            decision["token_index"], decision["tibetan_syllable"],
+            decision["source_token"],
+        )
+        if identity in emitted_identities:
+            continue
+        aligned_row = aligned_by_identity.get(identity)
+        if not aligned_row:
+            continue
+        echoes.append({
+            "volume": decision["volume"],
+            "page": decision["page"],
+            "line": decision["line"],
+            "token_index": decision["token_index"],
+            "tibetan_syllable": decision["tibetan_syllable"],
+            "reviewed_canonical_target": decision["proposed_target"],
+            "aligned_source_token": aligned_row["latin_token"],
+            "additional_source_token": decision["source_token"],
+            "context_between": "",
+            "proposed_target": decision["proposed_target"],
+            "echo_category": decision["echo_category"],
+            "evidence": "persistent_historical_echo_decision",
+            "review_status": (
+                "accepted" if decision["decision"] == "accepted" else "defer"
+            ),
+            "reason": (
+                "A historical explicit echo decision remains authoritative "
+                "even when revised alignment discovery now treats the same "
+                "identity positionally."
+            ),
+            "prior_decision": decision["decision"],
+            "decision_rationale": decision["rationale"],
+            "active_queue": "no",
+            "context_excerpt": aligned_row["context_excerpt"],
+        })
     return sorted(
         echoes,
         key=lambda row: (

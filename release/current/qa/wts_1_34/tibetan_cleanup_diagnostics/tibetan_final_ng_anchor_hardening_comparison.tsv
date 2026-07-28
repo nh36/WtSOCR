@@ -720,7 +720,6 @@ target_changed	wts_8_b	295	33	2	མཐང	mthan	mthaṅ		source_compatible_insuf
 newly_discovered	wts_8_b	298	28	2	བྱང	Zweitseelentäfelchen				source_compatible_no_anchor	0	བླ་བྱང་ bbla Zweitseelentäfelchen, ein Tä-
 category_changed	wts_8_b	330	74	1	བློང	blon	bloṅ	bloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བློང་ 'blon.
 category_changed	wts_8_b	331	13	2	བློང	blon	bloṅ	bloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བྲོང་བློང་ bloṅ blon.
-newly_discovered	wts_8_b	375	17	3	འཕྲེང	phren		phreṅ		source_compatible_dominant_consensus	13	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
 target_changed	wts_8_b	422	19	2	བྲེང	entzweien	entzweieṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	བྲེན་བྲེང་ dbyenbyed entzweien, spalten, tren-
 newly_discovered	wts_8_b	457	24	2	གོང	Handrücken				source_compatible_no_anchor	0	འབོལ་གོང་ ''bol Handrücken, Fußrücken.
 target_changed	wts_8_b	473	18	1	འབུང	byun	byuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	"འབུང་བཞི་ ""byun bäi auch 'byun ba bäi die vier"

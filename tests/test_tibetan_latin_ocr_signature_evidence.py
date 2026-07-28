@@ -18,6 +18,13 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.generated = module.build()
+
+    def test_historical_echo_identity_is_not_reauthorised_positionally(self) -> None:
+        self.assertIn(
+            ("wts_1_34", "804", "213", "4"),
+            module.reviewed_echo_identity_keys(),
+        )
+
     def test_atomic_full_target_review_is_learning_evidence(self) -> None:
         operations = module.canonical.edit_operations("Zan", "źan")
         self.assertEqual(

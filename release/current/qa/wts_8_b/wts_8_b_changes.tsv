@@ -3047,3 +3047,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 494	47	2674	headword_line	rkani	rkaṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འབྲེ ་རྐང་ ""bri rkani"
 505	1	2715	tibetan_only	gsani	gsaṅ	A	reviewed_tibetan_exact_ocr_signature	1	འབྲུ་གསང་ bru gsani
 574	58	3058	headword_line	chani	chaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chani
+375	17	2032	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_ocr_signature	1	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i

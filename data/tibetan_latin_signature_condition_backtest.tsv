@@ -3,7 +3,7 @@ REPLACE ni→ṅ	35	30	identity_not_resolved:30	12	9	3	condition_or_boundary_mis
 SUB I→l	114	3178	domain_mismatch:11;identity_not_resolved:3166;insecure_token_boundary:1	0	37	8	condition_or_boundary_mismatch
 SUB Z→ź	59	110	domain_mismatch:2;identity_not_resolved:108	2	0	3	condition_or_boundary_mismatch
 SUB h→ṅ	43	2	domain_mismatch:1;source_position_mismatch:1	3	0	4	condition_or_boundary_mismatch
-SUB n→ṅ	1718	1917	domain_mismatch:111;identity_not_resolved:1708;insecure_token_boundary:1;source_position_mismatch:91;tibetan_role_mismatch:6	72	3	77	condition_or_boundary_mismatch
+SUB n→ṅ	1719	1917	domain_mismatch:111;identity_not_resolved:1708;insecure_token_boundary:1;source_position_mismatch:91;tibetan_role_mismatch:6	71	1	77	condition_or_boundary_mismatch
 SUB z→ź	16	20	identity_not_resolved:20	0	0	0	none
 SUB ñ→ṅ	0	102	identity_not_resolved:102	0	0	0	none
 SUB ń→ṅ	2	23	identity_not_resolved:23	0	0	0	none

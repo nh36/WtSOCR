@@ -3,7 +3,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 དྲང	dran	dra<FINAL_NASAL>	draṅ	2	damaged_context:2	source_compatible_damaged_context:2	44		raṅ:1	2	wts_1_34	insufficient_feature_coverage	0
 ཁོང	khon	kho<FINAL_NASAL>	khoṅ	1	damaged_context:1	source_compatible_damaged_context:1	28		kboṅ:1	1	wts_1_34	insufficient_feature_coverage	0
 ཀློང	klon	klo<FINAL_NASAL>	kloṅ	1	damaged_context:1	source_compatible_damaged_context:1	22		groṅ:2	1	wts_1_34	insufficient_feature_coverage	0
-འཕྲེང	phren	phre<FINAL_NASAL>	phreṅ	1	dominant_internal_consensus:1	source_compatible_dominant_consensus:1	13			0	wts_8_b	insufficient_feature_coverage	0
 གཏང	gtan	gta<FINAL_NASAL>	gtaṅ	1	damaged_context:1	source_compatible_damaged_context:1	10			1	wts_1_34	insufficient_feature_coverage	0
 དགུང	dgun	dgu<FINAL_NASAL>	dguṅ	1	damaged_context:1	source_compatible_damaged_context:1	10			1	wts_1_34	insufficient_feature_coverage	0
 སྒོང	sgon	sgo<FINAL_NASAL>	sgoṅ	1	damaged_context:1	source_compatible_damaged_context:1	10		skyoṅ:1	1	wts_1_34	insufficient_feature_coverage	0

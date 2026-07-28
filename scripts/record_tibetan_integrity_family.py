@@ -98,6 +98,7 @@ def main() -> None:
     )
     aligned = integrity.collect_all_aligned(ROOT / "release/current")
     diagnostics = integrity.build_diagnostics(ROOT / "release/current")
+    reviewed_echo_keys = signature_engine.reviewed_echo_identity_keys()
     by_key = {
         (r["volume"], r["page"], r["line"], r["token_index"]): r
         for r in diagnostics
@@ -110,6 +111,8 @@ def main() -> None:
         ):
             continue
         key = (row["volume"], row["page"], row["line"], row["token_index"])
+        if key in reviewed_echo_keys:
+            continue
         diagnostic = by_key[key]
         if diagnostic["alignment_confidence"] not in {
             "secure_positional_alignment", "secure_reviewed_alignment",

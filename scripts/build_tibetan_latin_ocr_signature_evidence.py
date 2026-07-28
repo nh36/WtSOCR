@@ -351,6 +351,14 @@ def decisions() -> dict[str, dict[str, str]]:
     return {row["signature"]: row for row in read(path)} if path.exists() else {}
 
 
+def reviewed_echo_identity_keys() -> set[tuple[str, str, str, str]]:
+    path = ROOT / "data/reviewed_final_ng_echo_decisions.tsv"
+    return {
+        (row["volume"], row["page"], row["line"], row["token_index"])
+        for row in read(path)
+    } if path.exists() else set()
+
+
 def signature_applies_to_row(
     signature_record: dict[str, str],
     row: dict[str, str],
@@ -421,6 +429,7 @@ def build() -> dict[str, list[dict[str, str]]]:
     evidence, positives, negatives = reviewed_evidence()
     alternate = alternate_support()
     exact_alternates = exact_alternate_support()
+    echo_identity_keys = reviewed_echo_identity_keys()
     outliers = read(ROOT / "data/tibetan_latin_transcription_outliers.tsv")
     canon_rows = read(ROOT / "data/tibetan_latin_canonical_syllables.tsv")
     canon_by_syllable = {r["tibetan_syllable"]: r for r in canon_rows}
@@ -658,7 +667,15 @@ def build() -> dict[str, list[dict[str, str]]]:
         ]
         matching_rows = []
         failing_rows = []
+        reviewed_echo_rows = []
         for exact in boundary_secure:
+            identity = (
+                exact["volume"], exact["page"], exact["line"],
+                exact["token_index"],
+            )
+            if identity in echo_identity_keys:
+                reviewed_echo_rows.append(exact)
+                continue
             failures = []
             for signature, status in zip(signatures, statuses):
                 if status not in authorized:
@@ -680,7 +697,9 @@ def build() -> dict[str, list[dict[str, str]]]:
                         "signature_not_authorized"
                     )
             (failing_rows if failures else matching_rows).append(exact)
-        if not safe_domain:
+        if reviewed_echo_rows and not matching_rows:
+            action = "historical_echo_decision_block"
+        elif not safe_domain:
             action = "domain_risk"
         elif not clean:
             action = "alignment_or_damage"
