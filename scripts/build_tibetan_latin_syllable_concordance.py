@@ -26,6 +26,9 @@ SPEC.loader.exec_module(integrity)
 
 BASELINE = "6322c7255cfba2fcfaf678cec656e65496ed5f12"
 SCOPE_PATH = ROOT / "data/reviewed_correction_evidence_scopes.tsv"
+FEATURE_COMPOSITION_PATH = (
+    ROOT / "data/tibetan_latin_feature_composition_queue.tsv"
+)
 CONCORDANCE_FIELDS = [
     "tibetan_syllable", "latin_form", "current_clean_occurrences",
     "historical_baseline_occurrences", "distinct_volumes",
@@ -49,7 +52,8 @@ CANONICAL_FIELDS = [
     "credible_competing_transcriptions", "competing_forms", "competing_support",
     "independent_teaching_occurrences", "derived_occurrences",
     "historical_occurrences", "domain_breakdown", "feature_coverage",
-    "rationale",
+    "feature_dependency_rule_ids", "feature_dependency_evidence_ids",
+    "feature_leave_one_out_status", "rationale",
 ]
 TEACHING_FIELDS = [
     "tibetan_syllable", "latin_form", "volume", "page", "line",
@@ -307,6 +311,13 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         and "explicit_user" in r.get("evidence", "")
     }
     historical = historical_identities()
+    feature_compositions = {
+        row["tibetan_syllable"]: row
+        for row in integrity.read_tsv(FEATURE_COMPOSITION_PATH)
+        if row.get("composition_status") == "feature_complete_unique"
+        and row.get("correction_authority") == "yes"
+        and row.get("leave_one_out_status") == "passed"
+    }
     historical_ledger_sets = baseline_ledgers()
     grouped: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in aligned:
@@ -560,6 +571,30 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             chosen, status, tier, evidence = (
                 [], "unresolved", "unresolved", "no_full_target_evidence"
             )
+        feature_composition = feature_compositions.get(syllable)
+        feature_target = (
+            feature_composition.get("feature_composed_target", "")
+            if feature_composition else ""
+        )
+        feature_rows = [
+            row for row in eligible if row["latin_form"] == feature_target
+        ]
+        credible_other = [
+            row for row in credible if row["latin_form"] != feature_target
+        ]
+        # Feature composition may strengthen a supported moderate/provisional
+        # form, but never resolves an already credible full-form competition
+        # and never creates an unattested canonical target.
+        if (
+            tier not in {"canonical_reviewed", "canonical_independent_strong"}
+            and status != "ambiguous"
+            and feature_target and len(feature_rows) == 1
+            and not credible_other
+        ):
+            chosen, status, tier, evidence = (
+                feature_rows, "canonical", "canonical_feature_composed",
+                "feature_complete_unique_non_circular",
+            )
         competing = [r for r in eligible if r not in chosen]
         credible_competing = [
             r for r in credible if r not in chosen
@@ -606,7 +641,26 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             "domain_breakdown": " || ".join(
                 r["domain_breakdown"] for r in chosen
             ),
-            "feature_coverage": "exact_canonical_route" if chosen else "unresolved",
+            "feature_coverage": (
+                "feature_complete_route"
+                if tier == "canonical_feature_composed"
+                else "exact_canonical_route" if chosen else "unresolved"
+            ),
+            "feature_dependency_rule_ids": (
+                feature_composition.get("component_rule_ids", "")
+                if tier == "canonical_feature_composed"
+                and feature_composition else ""
+            ),
+            "feature_dependency_evidence_ids": (
+                feature_composition.get("supporting_evidence_ids", "")
+                if tier == "canonical_feature_composed"
+                and feature_composition else ""
+            ),
+            "feature_leave_one_out_status": (
+                feature_composition.get("leave_one_out_status", "")
+                if tier == "canonical_feature_composed"
+                and feature_composition else ""
+            ),
             "rationale": (
                 "Canonical selection uses exact non-circular teaching identities, "
                 "domain-safe multi-volume/entry support, and quantitative "
@@ -617,7 +671,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
     canon_map = {
         r["tibetan_syllable"]: r for r in canonical
         if r["canonical_confidence_tier"] in {
-            "canonical_reviewed", "canonical_independent_strong"
+            "canonical_reviewed", "canonical_independent_strong",
+            "canonical_feature_composed",
         } and r["canonical_forms"]
     }
     outliers: list[dict[str, str]] = []

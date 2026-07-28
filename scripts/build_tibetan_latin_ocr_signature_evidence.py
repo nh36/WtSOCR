@@ -809,7 +809,10 @@ def build() -> dict[str, list[dict[str, str]]]:
             "competing_forms": canon.get("competing_forms", ""),
             "promotion_disposition": (
                 "canonical_now_authoritative"
-                if tier in {"canonical_reviewed", "canonical_independent_strong"}
+                if tier in {
+                    "canonical_reviewed", "canonical_independent_strong",
+                    "canonical_feature_composed",
+                }
                 and target in canon.get("canonical_forms", "").split(";")
                 else "retain_incomplete"
             ),

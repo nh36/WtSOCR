@@ -40,7 +40,8 @@ def validate_authorization(
         if row["tibetan_syllable"] == tibetan
         and target in row["canonical_forms"].split(";")
         and row.get("canonical_confidence_tier") in {
-            "canonical_reviewed", "canonical_independent_strong"
+            "canonical_reviewed", "canonical_independent_strong",
+            "canonical_feature_composed",
         }
     ), None)
     signatures = {
@@ -66,8 +67,25 @@ def validate_authorization(
     if canonical is None:
         raise ValueError(
             "Target is not canonical_reviewed or "
-            "canonical_independent_strong"
+            "canonical_independent_strong/canonical_feature_composed"
         )
+    if canonical["canonical_confidence_tier"] == "canonical_feature_composed":
+        if canonical.get("feature_leave_one_out_status") != "passed":
+            raise ValueError("Feature-composed target lacks leave-one-out support")
+        authorised_features = {
+            row["rule_id"] for row in integrity.read_tsv(
+                ROOT / "data/reviewed_tibetan_feature_mapping_decisions.tsv"
+            ) if row["decision"] == "A"
+        }
+        dependencies = {
+            item for item in canonical.get(
+                "feature_dependency_rule_ids", ""
+            ).split(";") if item
+        }
+        if not dependencies or not dependencies <= authorised_features:
+            raise ValueError(
+                "Feature-composed target has missing/deferred dependencies"
+            )
     for source in sources:
         operations = canonical_engine.edit_operations(source, target)
         unsupported = [

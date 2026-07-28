@@ -40,8 +40,12 @@ SOURCE_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "observed_source", "reviewed_target", "correction_reason",
     "correction_evidence", "evidence_scope", "source_disposition",
-    "target_teaching_disposition", "active_or_superseded",
+    "corrected_tibetan_roles", "corrected_latin_spans",
+    "unaffected_source_may_teach", "intentional_variant",
+    "target_establishment", "target_teaching_disposition",
+    "active_or_superseded",
 ]
+SOURCE_SCOPE_PATH = ROOT / "data/reviewed_correction_source_scopes.tsv"
 RECENT_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "observed_source", "reviewed_target", "canonical_target_tier",
@@ -108,6 +112,18 @@ def source_shadow(
     }
     historical = canonical.historical_identities()
     scopes = canonical.scope_registry()
+    source_scopes = {
+        row["reason"]: row for row in integrity.read_tsv(SOURCE_SCOPE_PATH)
+    }
+    missing = {
+        row["reason"] for row in integrity.read_tsv(integrity.OVERRIDES_PATH)
+        if row["reason"] not in source_scopes
+    }
+    if missing:
+        raise ValueError(
+            "Correction reasons lack persistent source-scope semantics: "
+            + ", ".join(sorted(missing))
+        )
     rows: list[dict[str, str]] = []
     for override in integrity.read_tsv(integrity.OVERRIDES_PATH):
         key = (
@@ -117,13 +133,7 @@ def source_shadow(
         aligned_row = aligned_by_key.get(key)
         historical_row = historical.get(key, {})
         scope = scopes.get(override["reason"], {})
-        source_disposition = (
-            "reviewed_correct_transcription"
-            if scope.get("evidence_scope") in {
-                "punctuation_only", "marker_only", "structural_only"
-            }
-            else "reviewed_ocr_source_noncanonical"
-        )
+        source_scope = source_scopes[override["reason"]]
         rows.append({
             "volume": override["volume"], "page": override["page"],
             "line": override["line"], "token_index": override["token_index"],
@@ -135,7 +145,14 @@ def source_shadow(
             "correction_reason": override["reason"],
             "correction_evidence": override.get("evidence", ""),
             "evidence_scope": scope.get("evidence_scope", "other"),
-            "source_disposition": source_disposition,
+            "source_disposition": source_scope["source_disposition"],
+            "corrected_tibetan_roles":
+                source_scope["corrected_tibetan_roles"],
+            "corrected_latin_spans": source_scope["corrected_latin_spans"],
+            "unaffected_source_may_teach":
+                source_scope["unaffected_source_may_teach"],
+            "intentional_variant": source_scope["intentional_variant"],
+            "target_establishment": source_scope["target_establishment"],
             "target_teaching_disposition": scope.get(
                 "canonical_teaching_status", "not_teaching_evidence"
             ),
@@ -154,6 +171,11 @@ def source_shadow(
             "correction_evidence": item["evidence"],
             "evidence_scope": "other",
             "source_disposition": "superseded_wrong_target",
+            "corrected_tibetan_roles": "multiple",
+            "corrected_latin_spans": "full_token",
+            "unaffected_source_may_teach": "no",
+            "intentional_variant": "no",
+            "target_establishment": "superseded",
             "target_teaching_disposition": "not_teaching_evidence",
             "active_or_superseded": "superseded",
         })
@@ -240,7 +262,10 @@ def recent_backaudit(
             in {"none", "later_gloss_or_commentary"}
             and diagnostic.get("marker_attached") == "no"
             and any(ok for ok, _reason in matches)
-            and tier in {"canonical_reviewed", "canonical_independent_strong"}
+            and tier in {
+                "canonical_reviewed", "canonical_independent_strong",
+                "canonical_feature_composed",
+            }
             and prior not in {"deferred", "rejected", "resolved_elsewhere"}
             and item["target_teaching_disposition"]
             != "independent_teaching_evidence"
@@ -402,7 +427,10 @@ def canonical_authority_migration() -> list[dict[str, str]]:
             delimiter="\t",
         )
     }
-    authoritative = {"canonical_reviewed", "canonical_independent_strong"}
+    authoritative = {
+        "canonical_reviewed", "canonical_independent_strong",
+        "canonical_feature_composed",
+    }
     rows = []
     for syllable in sorted(set(before) | set(after)):
         old, new = before.get(syllable, {}), after.get(syllable, {})
@@ -483,7 +511,10 @@ def final_ng_reconciliation(
         )
     }
     rows = []
-    authoritative = {"canonical_reviewed", "canonical_independent_strong"}
+    authoritative = {
+        "canonical_reviewed", "canonical_independent_strong",
+        "canonical_feature_composed",
+    }
     for item in final_rows:
         key = (
             item["volume"], item["page"], item["line"], item["token_index"]

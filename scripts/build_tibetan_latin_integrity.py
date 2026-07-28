@@ -91,10 +91,19 @@ def authoritative_rules(
 
 
 def load_exceptions(path: Path = EXCEPTIONS_PATH) -> dict[tuple[str, str], dict[str, str]]:
-    return {
+    global _EXCEPTIONS
+    if path == EXCEPTIONS_PATH and _EXCEPTIONS is not None:
+        return _EXCEPTIONS
+    result = {
         (row["tibetan_syllable"], row["source_token"]): row
         for row in read_tsv(path)
     }
+    if path == EXCEPTIONS_PATH:
+        _EXCEPTIONS = result
+    return result
+
+
+_EXCEPTIONS: dict[tuple[str, str], dict[str, str]] | None = None
 
 
 def load_canonical_forms() -> dict[str, set[str]]:

@@ -416,7 +416,10 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     ))
     canonical_authoritative = sum(
         item.get("canonical_confidence_tier")
-        in {"canonical_reviewed", "canonical_independent_strong"}
+        in {
+            "canonical_reviewed", "canonical_independent_strong",
+            "canonical_feature_composed",
+        }
         for item in canonical_rows
     )
     canonical_non_authoritative = len(canonical_rows) - canonical_authoritative
@@ -647,7 +650,8 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             canonical_authoritative,
             canonical_non_authoritative,
             "frequency-only voting;derived self-teaching;foreign-domain teaching",
-            "Only canonical_reviewed and canonical_independent_strong forms authorize propagation.",
+            "Only canonical_reviewed, canonical_independent_strong, and "
+            "non-teaching canonical_feature_composed forms authorize propagation.",
         ),
         row(
             "tibetan_latin_ocr_confusion_signatures",

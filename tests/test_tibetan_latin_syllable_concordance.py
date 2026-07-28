@@ -156,6 +156,29 @@ class SyllableConcordanceTests(unittest.TestCase):
                 r["to_token"] == "draṅ" for r in overrides
             ))
 
+    def test_source_scope_registry_is_feature_scoped(self) -> None:
+        rows = {
+            row["reason"]: row
+            for row in module.integrity.read_tsv(
+                ROOT / "data/reviewed_correction_source_scopes.tsv"
+            )
+        }
+        final_ng = rows["reviewed_tibetan_exact_final_ng"]
+        self.assertEqual(final_ng["source_disposition"], "feature_error_source")
+        self.assertEqual(final_ng["corrected_tibetan_roles"], "suffix_coda")
+        self.assertEqual(final_ng["unaffected_source_may_teach"], "yes")
+        zha = rows["reviewed_tibetan_exact_bzhin_bzhugs"]
+        self.assertEqual(zha["source_disposition"], "feature_error_source")
+        self.assertEqual(zha["corrected_tibetan_roles"], "root_consonant")
+        manual = rows["reviewed_tibetan_exact_manual_multi_error"]
+        self.assertEqual(
+            manual["source_disposition"], "full_source_noncanonical"
+        )
+        google = rows["reviewed_tibetan_exact_google_tibetan_candidate"]
+        self.assertEqual(
+            google["source_disposition"], "alternate_witness_source"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

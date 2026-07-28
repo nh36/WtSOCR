@@ -13,8 +13,8 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 གདེང	gdeṅ	1	provisional	0	0	gdeṅ	retain_incomplete
 གནང	gnaṅ	3	ambiguous	16	16		retain_incomplete
 གསང	gsaṅ	5	canonical_independent_moderate	3	2		retain_incomplete
-གྱོང	gyoṅ	8	provisional	0	0		retain_incomplete
-གྲོང	groṅ	15	canonical_independent_moderate	16	4		retain_incomplete
+གྱོང	gyoṅ	8	canonical_feature_composed	1	0		canonical_now_authoritative
+གྲོང	groṅ	15	canonical_feature_composed	16	4		canonical_now_authoritative
 ཏང	taṅ	2	provisional	0	0		retain_incomplete
 ཏིང	tiṅ	16	provisional	0	0		retain_incomplete
 དགུང	dguṅ	9	provisional	0	0		retain_incomplete
@@ -29,7 +29,7 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 ཕུང	phuṅ	11	ambiguous	29	27		retain_incomplete
 ཕྱུང	phyuṅ	3	canonical_independent_moderate	4	4		retain_incomplete
 བཀང	bkaṅ	3	canonical_independent_moderate	3	3		retain_incomplete
-བགྲང	bgraṅ	8	provisional	0	0		retain_incomplete
+བགྲང	bgraṅ	8	canonical_feature_composed	1	1		canonical_now_authoritative
 བང	baṅ	2	ambiguous	16	16		retain_incomplete
 བཟུང	bzuṅ	3	canonical_independent_moderate	6	4		retain_incomplete
 བསྲུང	bsruṅ	2	canonical_independent_moderate	4	2		retain_incomplete
@@ -40,7 +40,7 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 མདུང	mduṅ	1	canonical_independent_moderate	15	14		retain_incomplete
 ཚོང	tshoṅ	1	canonical_independent_moderate	2	2		retain_incomplete
 ཝང	waṅ	3	canonical_independent_moderate	2	2		retain_incomplete
-ཞིང	źiṅ	7	provisional	0	0		retain_incomplete
+ཞིང	źiṅ	7	canonical_feature_composed	0	0		canonical_now_authoritative
 འགོང	goṅ	3	provisional	0	0		retain_incomplete
 འཆང	chaṅ	11	canonical_independent_moderate	3	3		retain_incomplete
 འཆིང	chiṅ	14	provisional	0	0		retain_incomplete
@@ -49,30 +49,30 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 འཕོང	phoṅ	1	provisional	0	0	phoṅ	retain_incomplete
 འཕྱང	phyaṅ	3	provisional	0	0		retain_incomplete
 འཕྲེང	phreṅ	4	canonical_independent_moderate	3	2		retain_incomplete
-འབྱོང	byoṅ	2	unresolved	0	0		retain_incomplete
-འབྲང	braṅ	6	provisional	0	0		retain_incomplete
-འབྲིང	briṅ	9	canonical_independent_moderate	2	2		retain_incomplete
+འབྱོང	byoṅ	2	canonical_feature_composed	0	0		canonical_now_authoritative
+འབྲང	braṅ	6	canonical_feature_composed	0	0		canonical_now_authoritative
+འབྲིང	briṅ	9	canonical_feature_composed	2	2		canonical_now_authoritative
 འབྲེང	breṅ	4	provisional	0	0		retain_incomplete
 འཚོང	tshoṅ	3	provisional	0	0		retain_incomplete
 འོང	oṅ	4	canonical_independent_moderate	3	2		retain_incomplete
-ཡོང	yoṅ	2	canonical_independent_moderate	2	2		retain_incomplete
-རུང	ruṅ	6	provisional	0	0		retain_incomplete
-རོང	roṅ	4	provisional	0	0		retain_incomplete
+ཡོང	yoṅ	2	canonical_feature_composed	2	2		canonical_now_authoritative
+རུང	ruṅ	6	canonical_feature_composed	1	1		canonical_now_authoritative
+རོང	roṅ	4	canonical_feature_composed	2	1		canonical_now_authoritative
 རྐྱང	rkyaṅ	22	provisional	0	0		retain_incomplete
-རྒྱང	rgyaṅ	11	provisional	0	0		retain_incomplete
+རྒྱང	rgyaṅ	11	canonical_feature_composed	2	1		canonical_now_authoritative
 རྟིང	rtiṅ	7	provisional	0	0		retain_incomplete
 རྡུང	rduṅ	1	provisional	0	0	rduṅ	retain_incomplete
 རྫིང	rdziṅ	1	canonical_independent_moderate	3	3		retain_incomplete
 རྫོང	rdzoṅ	3	canonical_independent_moderate	8	3		retain_incomplete
-རླུང	rluṅ	4	canonical_independent_moderate	2	2		retain_incomplete
+རླུང	rluṅ	4	canonical_feature_composed	2	2		canonical_now_authoritative
 ལྔང	ldaṅ	1	canonical_independent_moderate	4	3		retain_incomplete
 ལྕང	lcaṅ	6	provisional	0	0		retain_incomplete
 ལྡང	ldaṅ	1	canonical_independent_moderate	3	3		retain_incomplete
 ལྷུང	lhuṅ	2	provisional	0	0		retain_incomplete
 སང	saṅ	6	canonical_independent_moderate	3	2		retain_incomplete
 སོང	soṅ	18	canonical_independent_moderate	9	9		retain_incomplete
-སྒང	sgaṅ	6	canonical_independent_moderate	3	2		retain_incomplete
-སྒོང	sgoṅ	9	provisional	0	0		retain_incomplete
+སྒང	sgaṅ	6	canonical_feature_composed	3	2		canonical_now_authoritative
+སྒོང	sgoṅ	9	canonical_feature_composed	1	1		canonical_now_authoritative
 སྟང	staṅ	2	provisional	0	0		retain_incomplete
 སྡང	sdaṅ	2	canonical_independent_moderate	5	5		retain_incomplete
 སྡོང	sdoṅ	4	canonical_independent_moderate	26	23		retain_incomplete
