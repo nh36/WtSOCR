@@ -506,7 +506,7 @@ target_changed	wts_1_34	780	190	1	ཉུང	nun	nuṅ		source_compatible_insuffi
 target_changed	wts_1_34	787	13	3	གདང	gdun	gduṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཉེ་བར་གདང་བ་ fie bar gdun ba starke Schmer-
 category_changed	wts_1_34	787	200	3	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཉེ་བར་བྱང་ fie bar byun hinausgehen.
 category_changed	wts_1_34	793	196	2	བྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཉེས་བྱང་ fies byun Verbrechen.
-category_changed	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ	ldaṅ	source_compatible_insufficient_evidence	source_compatible_dominant_consensus	2	ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
+disappeared	wts_1_34	80	116	3	ལྗང	ldan	ldaṅ		source_compatible_insufficient_evidence			ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari
 category_changed	wts_1_34	80	126	3	དྲང	dran	draṅ	draṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་ནས་དྲང་པོ་ kun nas dran po (zw.). ;
 target_changed	wts_1_34	801	53	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
 target_changed	wts_1_34	814	160	1	སྙང	shan	shaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,

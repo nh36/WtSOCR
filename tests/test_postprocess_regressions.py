@@ -3155,6 +3155,33 @@ class PostprocessRegressionTests(unittest.TestCase):
             ],
         )
 
+    def test_user_reviewed_ljang_ldan_variant_is_exactly_gated(self) -> None:
+        lines = {
+            (80, 116): "ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \\kun nas lari",
+            (80, 117): "unreviewed ldan lan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀུན་ནས་ལྗང་བ་ kun nas ldaṅ ba; vgl. \\kun nas lari",
+            corrected,
+        )
+        self.assertIn("unreviewed ldan lan control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                (
+                    "ldan",
+                    "ldaṅ",
+                    "reviewed_same_tibetan_target_final_nasal_only",
+                )
+            ],
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

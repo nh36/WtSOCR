@@ -146,8 +146,8 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 ལྔང	lan	no_anchor_clean_source_shape		ljan	ldaṅ:5; daṅ:1			ལྔང་སེར་ཅན་ lan ser can Bez. für Dürvä-Gras.
 ལྔང	ljan	no_anchor_clean_source_shape		lan	ldaṅ:5; daṅ:1			འཇམ་ལྔང་འདབ་ལྡན་ am ljan ’dab ldan Bez. für
 ལྕང	lcun	no_anchor_clean_source_shape			lcaṅ:9			ལྕང་མོ་ lcun mo Fingerhut.
-ལྗང	han	no_anchor_clean_source_shape		Ijan;lan;ldan;ljan	ldaṅ:2; daṅ:1; laṅ:1			སྒྲོ་ལྗང་ sgro han Papagei.
-ལྗང	ljan	no_anchor_clean_source_shape		Ijan;han;lan;ldan	ldaṅ:2; daṅ:1; laṅ:1			ལྗང་ཚགས་ ljan tshags Sieb.
+ལྗང	han	no_anchor_clean_source_shape		Ijan;lan;ljan	ldaṅ:3; daṅ:1; laṅ:1			སྒྲོ་ལྗང་ sgro han Papagei.
+ལྗང	ljan	no_anchor_clean_source_shape		Ijan;han;lan	ldaṅ:3; daṅ:1; laṅ:1			ལྗང་ཚགས་ ljan tshags Sieb.
 ལྤང	bon	no_anchor_clean_source_shape			lbaṅ:2; waṅ:1			ཕ་ལྤང་ phpha bon.
 ཤང	Sin	no_anchor_clean_source_shape		San;Sun;sin	Saṅ:1; siṅ:1			རྒྱངས ཤང་ rgyans Sin ein Werkzeug zum Be-
 ཤང	Sun	no_anchor_clean_source_shape		San;Sin;sin	Saṅ:1; siṅ:1			ཅང་འེ་ཤང་ can ’e Sun npr.

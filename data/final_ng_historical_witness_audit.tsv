@@ -10,7 +10,6 @@ tibetan_syllable	source_variant	target	historical_baseline_sha	historical_anchor
 ཁོང	khon	khoṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	408	1	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ནད་ཁོང་སྐེམས་པ་ nad khoṅ skems pa	28	1	0
 གཅུང	gcun	gcuṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	483	4	3	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ནོར་སྦྱིན་གཅུང་པོ་ nor sbyin gcuṅ po Beiname	1	0	0
 གཏང	gtan	gtaṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	1009	1	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ཕྱིར་གཏང་ phyir gtaṅ	10	1	0
-གཞུང	gźuń	gźuṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	no					not_present_at_historical_baseline				1	0	0
 གཡང	g.yan	g.yaṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_1_34	108	140	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.	2	0	0
 གྱོང	gyon	gyoṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	935	16	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ཕྲོ་གྱོང་བཟའ་ pho gyoṅ bza' npr. eine weibliche	8	0	0
 གླིང	elin	eliṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_9_m	175	1	3	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	མེའམ་ཅི་གླིང་ miam ci eliṅ	1	0	0
@@ -45,7 +44,6 @@ tibetan_syllable	source_variant	target	historical_baseline_sha	historical_anchor
 རྟིང	rtin	rtiṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_8_b	252	37	3	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	བྲ་ནག།་རྟིང་དཀར་ bra nag rtiṅ dkar Reittier ci-	0	0	0
 རྣང	rnan	rnaṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	554	32	1	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	རྣང་མ་ rnaṅ ma Quelle.	1	0	0
 ལྗང	lan	laṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_8_b	105	7	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	བེ་ལྗང་རེ་རལ་ be laṅ re ral eine Pflanze, Dry-	1	0	0
-ལྗང	ldan	ldaṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	938	25	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	ཕོ་ལྗང་ pho ldaṅ npr. ein Kloster.	1	0	0
 ལྟོང	lton	ltoṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_8_b	525	2	2	historical_pre_family_other_postprocess	confusable_initial_I_to_l_strong_context	A	རྦོད་ལྟོང་ལམ་ལྟར་་ rbod ltoṅ lam ltar	3	0	0
 ཤང	San	Saṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	80	1	4	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	བདེ་སྒྲོན་ཧ་ཤང་ bde sgron ha Saṅ	2	0	0
 སིང	sin	siṅ	6322c7255cfba2fcfaf678cec656e65496ed5f12	yes	wts_35_51	860	13	2	historical_pre_family_present_unattributed	none	checked_in_pre_family_campaign_witness	སྤྲེ་སིང་ངེ་བ་ spro siṅ ñe ba froh, freudig.	1	0	0

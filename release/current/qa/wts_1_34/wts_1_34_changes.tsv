@@ -28751,3 +28751,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 560	16	7194	tibetan_only	bgran	bgraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	རྔན་བགྲང་ rnan bgran auch mnan bgran [.
 111	3	1356	tibetan_only	gzun	gźuṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀླད་གཞུང་ klad gzun Rückenmark.
 750	80	9084	headword_line	Dan	ldaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	"ལྗང་ Dan ""jan."
+80	116	898	headword_line	ldan	ldaṅ	A	reviewed_same_tibetan_target_final_nasal_only	1	ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \kun nas lari

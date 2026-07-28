@@ -69,7 +69,18 @@ class FinalNgHistoricalWitnessTests(unittest.TestCase):
             if row["eligibility"]
             == "reviewed_same_tibetan_target_final_nasal_only"
         }
-        self.assertIn(("ལྗང", "ldan", "ldaṅ"), eligible)
+        ljang = ("ལྗང", "ldan", "ldaṅ")
+        if ljang not in eligible:
+            overrides = historical.consensus.read_tsv(
+                ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
+            )
+            self.assertTrue(any(
+                row["from_token"] == "ldan"
+                and row["to_token"] == "ldaṅ"
+                and row["reason"]
+                == "reviewed_same_tibetan_target_final_nasal_only"
+                for row in overrides
+            ))
         gzhung = ("གཞུང", "gźuń", "gźuṅ")
         if gzhung not in eligible:
             overrides = historical.consensus.read_tsv(

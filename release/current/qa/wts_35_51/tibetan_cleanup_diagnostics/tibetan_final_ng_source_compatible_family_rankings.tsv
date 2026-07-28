@@ -8,7 +8,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 མེང	min	mi<FINAL_NASAL>	miṅ	1	competing_latin_forms:1	source_compatible_not_final_ng_only:1	2		maṅ:1	0	wts_1_34
 འཕྲང	phan	pha<FINAL_NASAL>	phaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		phraṅ:3; plraṅ:1; siṅ:1	0	wts_35_51
 རྱོང	myon	myo<FINAL_NASAL>	myoṅ	1	competing_latin_forms:1	source_compatible_not_final_ng_only:1	2		mmyoṅ:1	0	wts_1_34
-ལྗང	ldan	lda<FINAL_NASAL>	ldaṅ	1	competing_latin_forms:1	source_compatible_dominant_consensus:1	2		daṅ:1; laṅ:1	0	wts_1_34
 སྤང	spyah	spya<FINAL_NASAL>	spyaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	2		spaṅ:29; sbaṅ:5; smaṅ:1	0	wts_35_51
 སྲོང	spoh	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_not_final_ng_only:1	2		sroṅ:1	0	wts_1_34
 སྲོང	spon	spo<FINAL_NASAL>	spoṅ	1	syllable_structure_mismatch:1	source_compatible_not_final_ng_only:1	2		sroṅ:1	0	wts_1_34
@@ -64,7 +63,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 འགང	gon	go<FINAL_NASAL>	goṅ	1	insufficient_consensus:1	source_compatible_not_final_ng_only:1	1			0	wts_1_34
 རྐྱོང	rkyon	rkyo<FINAL_NASAL>	rkyoṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34
 རྣང	rnan	rna<FINAL_NASAL>	rnaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		maṅ:2	0	wts_35_51
-ལྗང	lan	la<FINAL_NASAL>	laṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		ldaṅ:2; daṅ:1	0	wts_1_34
+ལྗང	lan	la<FINAL_NASAL>	laṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		ldaṅ:3; daṅ:1	0	wts_1_34
 སིང	sin	si<FINAL_NASAL>	siṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34
 སྙིང	sñiń	sñi<FINAL_NASAL>	sñiṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	1		siṅ:3; sāiṅ:1; stiṅ:1	0	wts_35_51
 སྟང	ston	sto<FINAL_NASAL>	stoṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_not_final_ng_only:1	1		staṅ:4; snaṅ:1	0	wts_1_34
@@ -81,7 +80,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཀྱོང	kyon	kyo<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		gyoṅ:1	0	wts_1_34
 དང	dun	du<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		daṅ:118; rkaṅ:1	0	wts_1_34
 བགྲང	beran	bera<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		bgraṅ:9	0	wts_1_34
-ལྗང	han	ha<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		ldaṅ:2; daṅ:1; laṅ:1	0	wts_1_34
+ལྗང	han	ha<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		ldaṅ:3; daṅ:1; laṅ:1	0	wts_1_34
 ཤང	Sin	Si<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		Saṅ:1; siṅ:1	0	wts_1_34
 སྔོང	sdon	sdo<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:5	0		sbyoṅ:1	0	wts_1_34
 སྙིང	snin	sni<FINAL_NASAL>		5	not_emitted_by_legacy_global_target:5	source_compatible_no_anchor:4; source_compatible_damaged_context:1	0		siṅ:3; sāiṅ:1; sñiṅ:1; stiṅ:1	1	wts_1_34
@@ -95,7 +94,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གཏང	gtin	gti<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		gtaṅ:1	0	wts_1_34
 ཕྱང	phyun	phyu<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		phyaṅ:9; pyaṅ:1; pphyaṅ:1	0	wts_1_34
 བང	khan	kha<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		baṅ:14; dbaṅ:4; bahṅ:1; buṅ:1; byaṅ:1; byiṅ:1	0	wts_1_34
-ལྗང	ljan	lja<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		ldaṅ:2; daṅ:1; laṅ:1	0	wts_1_34
+ལྗང	ljan	lja<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:3	0		ldaṅ:3; daṅ:1; laṅ:1	0	wts_1_34
 སྙིང	sAin	sAi<FINAL_NASAL>		3	not_emitted_by_legacy_global_target:3	source_compatible_no_anchor:2; source_compatible_damaged_context:1	0		siṅ:3; sāiṅ:1; sñiṅ:1; stiṅ:1	1	wts_1_34
 ཁང	khon	kho<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		khaṅ:89; kbaṅ:4	0	wts_1_34
 ཁང	khun	khu<FINAL_NASAL>		2	not_emitted_by_legacy_global_target:2	source_compatible_no_anchor:2	0		khaṅ:89; kbaṅ:4	0	wts_1_34
@@ -251,7 +250,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ལྔང	lan	la<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ldaṅ:5; daṅ:1	0	wts_1_34
 ལྔང	ljan	lja<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ldaṅ:5; daṅ:1	0	wts_1_34
 ལྕང	lcun	lcu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		lcaṅ:9	0	wts_1_34
-ལྗང	Ijan	Ija<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		ldaṅ:2; daṅ:1; laṅ:1	0	wts_1_34
+ལྗང	Ijan	Ija<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		ldaṅ:3; daṅ:1; laṅ:1	0	wts_1_34
 ལྟོང	Iton	Ito<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		koṅ:1; ltoṅ:1	0	wts_1_34
 ལྟོང	h	<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		koṅ:1; ltoṅ:1	1	wts_1_34
 ལྤང	bon	bo<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		lbaṅ:2; waṅ:1	0	wts_35_51
