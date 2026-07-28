@@ -4258,6 +4258,7 @@ wts_35_51	146	16	2	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i
 wts_35_51	146	90	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	146	90	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	146	90	6	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
+wts_35_51	147	1	3	yani	yaṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact ཡང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_35_51	148	70	6	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	149	83	3	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	149	84	4	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
@@ -4412,6 +4413,7 @@ wts_35_51	365	35	2	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i
 wts_35_51	365	54	3	Ipags	lpags	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	365	54	3	Ipags	lpags	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	365	54	5	Ipags	lpags	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
+wts_35_51	366	44	2	yani	yaṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact ཡང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_35_51	366	67	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	366	67	5	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_35_51	366	67	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
@@ -5006,6 +5008,7 @@ wts_8_b	41	57	2	snari	snaṅ	reviewed_tibetan_exact_second_ambitious_snang	tibet
 wts_8_b	41	58	5	snari	snaṅ	reviewed_tibetan_exact_second_ambitious_snang	tibetan_second_ambitious_cleanup_20260624	Exact reviewed Tibetan lexical cleanup in local context; no broad snari/snani repair rule
 wts_8_b	41	69	1	dnos	dṅos	reviewed_tibetan_exact_dngos	tibetan_medium_cleanup_20260619	Exact page-line-token reviewed from Tibetan diagnostics; dnos is dṅos, not dños
 wts_8_b	43	6	6	Lis	Liś	reviewed_siglum_exact_registry_canonicalization	tibetan_sigla_registry_cleanup_20260627	Exact reviewed registry-backed citation siglum normalization; no broad siglum or $-to-ś rule
+wts_8_b	43	37	4	yani	yaṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact ཡང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_8_b	44	19	4	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
 wts_8_b	45	28	7	gtsani	gtsaṅ	reviewed_tibetan_exact_second_ambitious_gtsang	tibetan_second_ambitious_cleanup_20260624	Exact reviewed Tibetan lexical cleanup in local context; no broad final-n/nasal repair rule
 wts_8_b	48	6	6	bZugs	bźugs	reviewed_tibetan_exact_bzhin_bzhugs	tibetan_bzhin_bzhugs_cleanup_20260626	Exact reviewed Tibetan ź-family cleanup in local context; no broad bZ/bz-to-ź rule
