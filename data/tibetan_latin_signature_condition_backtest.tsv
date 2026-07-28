@@ -1,5 +1,5 @@
 signature	condition_matching_reviewed_occurrences	condition_failing_reviewed_occurrences	reviewed_failure_reasons	residual_signature_occurrences	residual_condition_matches	residual_condition_failures	residual_failure_reasons
-REPLACE ni→ṅ	3	30	identity_not_resolved:30	45	42	3	condition_or_boundary_mismatch
+REPLACE ni→ṅ	4	30	identity_not_resolved:30	45	42	3	condition_or_boundary_mismatch
 SUB I→l	114	3178	domain_mismatch:11;identity_not_resolved:3166;insecure_token_boundary:1	0	37	8	condition_or_boundary_mismatch
 SUB Z→ź	59	110	domain_mismatch:2;identity_not_resolved:108	2	0	3	condition_or_boundary_mismatch
 SUB h→ṅ	43	2	domain_mismatch:1;source_position_mismatch:1	3	0	4	condition_or_boundary_mismatch

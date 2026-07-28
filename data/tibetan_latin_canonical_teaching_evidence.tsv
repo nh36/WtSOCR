@@ -4623,7 +4623,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 གང	dag	wts_1_34	338	83	2	historical_pre_campaign_unattributed	not_teaching_evidence	full_token_independent_canonical	unclear	marker_or_damage	གང་དག་ 4927? dag ↑ gaṅ 3.
 གང	ga	wts_1_34	337	95	2	historical_pre_campaign_unattributed	not_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	marker_or_damage	གང་ག་ 77 ga alles.
 གང	gad	wts_1_34	345	21	1	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	གང་མོ་ gad mo Lachen, Gelächter; ~$ ’debs
-གང	gani	wts_1_34	338	135	1	historical_other_postprocess	supporting_but_derived	other	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	གང་པོ་འབོད་ gani po ’bod Beiname des Sakra.
+གང	gani	wts_1_34	338	135	1	historical_other_postprocess	supporting_but_derived	other	ordinary_tibetan_lexical_or_compound	secure_reviewed_alignment	གང་པོ་འབོད་ gani po ’bod Beiname des Sakra.
 གང	gar	wts_1_34	337	54	1	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	གང་ག་ཆུང་ gar ga chuṅ
 གང	gar	wts_1_34	337	159	1	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	གང་གང་ gar garı
 གང	gar	wts_1_34	338	59	1	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	གང་ཐད་ gar thad \gaṅ ’thad pa.
