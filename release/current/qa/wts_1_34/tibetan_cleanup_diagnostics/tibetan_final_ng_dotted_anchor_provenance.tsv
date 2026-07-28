@@ -960,6 +960,7 @@ wts_1_34	529	3	2	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_ex
 wts_1_34	529	5	7	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan soṅ schlechter Daseins-, Wieder-
 wts_1_34	530	187	2	སློང	sloṅ	reviewed_exact_final_ng	slon	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_slong_consensus_batch_20260728	ངར་སློང་ nar sloṅ ermutigen, anspornen.
 wts_1_34	532	205	3	འཆང	chaṅ	reviewed_exact_final_ng	chan	reviewed_tibetan_exact_final_ng_consensus	tibetan_achang_consensus_batch_20260726	ངུར་སྒྲིག་འཆང་བ་ nur smrig ’chaṅ ba Bez. für
+wts_1_34	535	66	3	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
 wts_1_34	542	127	2	གཙང	gtsaṅ	reviewed_exact_final_ng	gtsan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ངོས་གཙང་བ་ nos gtsaṅ ba Klarheit.
 wts_1_34	543	57	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དངངས་རིང་ dans riṅ
 wts_1_34	543	107	2	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	དངངས་རིང་ dnans riṅ Furcht, Angst.
@@ -1019,6 +1020,7 @@ wts_1_34	614	107	2	སྲིང	sriṅ	reviewed_exact_final_ng	srin	reviewed_tib
 wts_1_34	614	115	2	སྲིང	sriṅ	reviewed_exact_final_ng	srin	reviewed_tibetan_exact_final_ng_consensus	tibetan_sring_consensus_batch_20260726	ལྕམ་སྲིང་ lcam sriṅ.
 wts_1_34	616	95	2	སྤྱང	spyaṅ	reviewed_exact_final_ng	spyah	reviewed_tibetan_exact_final_ng_consensus	tibetan_spyang_consensus_batch_20260726	ལྩེ་སྤྱང་ lce spyaṅ auch ce can, ce spyaṅ, Ice
 wts_1_34	624	21	2	གོང	goṅ	reviewed_exact_final_ng	gon	reviewed_tibetan_exact_final_ng_consensus	tibetan_gong_consensus_batch_20260719	ཆག་གོང་ chag goṅ ein Band an Sandaletten.
+wts_1_34	627	168	3	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
 wts_1_34	628	42	1	ཆང	chaṅ	reviewed_exact_final_ng	chan	reviewed_tibetan_exact_final_ng_consensus	tibetan_chang_consensus_batch_20260719	ཆང་ཀྱར་ chaṅ kyur (zw.) anhäufen.
 wts_1_34	628	48	1	ཆང	chaṅ	reviewed_exact_final_ng	chan	reviewed_tibetan_exact_final_ng_consensus	tibetan_chang_consensus_batch_20260719	ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.
 wts_1_34	628	48	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.
@@ -1282,6 +1284,13 @@ wts_1_34	875	205	3	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_
 wts_1_34	876	11	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ཤོ་ tiṅ so ZZ. Fluß.
 wts_1_34	876	91	2	རྡུང	rduṅ	reviewed_exact_final_ng	rdun	reviewed_tibetan_exact_final_ng_consensus	final_ng_rdung_consensus_batch_20260727	ཏིལ་རྡུང་ tl rduṅ auch til brdun Sesam-
 wts_1_34	879	101	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཏེའུ་ཤིང་ te’ Siṅ Stuhl, Sitzbank.
+wts_1_34	882	65	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་ gtaṅ fur. zu Igton.
+wts_1_34	882	109	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་གཅཉོད་ gtaṅ gcod
+wts_1_34	882	160	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་གཅོད་ gtaṅ gcod \btan gcod.
+wts_1_34	882	164	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་མདོས་ gtaṅ mdos ein Fadenkreuz (Neb
+wts_1_34	882	167	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་མ་ gtaṅ ma Sieg.
+wts_1_34	882	181	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་ཡས་ gtaṅ yas auch btan yas eine hohe
+wts_1_34	882	188	1	གཏང	gtaṅ	reviewed_exact_final_ng	gtan	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_gtang_consensus_batch_20260728	གཏང་རག་ gtaṅ rag auch btan rag Dankesgabe,
 wts_1_34	889	220	1	གཏིང	gtiṅ	reviewed_exact_final_ng	gtin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gting_consensus_batch_20260726	གཏིང་ཀློ་ gtiṅ klo Bez. für die kla klo 111 den
 wts_1_34	890	1	1	གཏིང	gtiṅ	reviewed_exact_final_ng	gtin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gting_consensus_batch_20260726	གཏིང་མཐའ་ gtiṅ mtha’
 wts_1_34	890	3	1	གཏིང	gtiṅ	reviewed_exact_final_ng	gtin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gting_consensus_batch_20260726	གཏིང་མཐའ་ gtiṅ mtha’ Ausmaß; ~~ med pa

@@ -76240,7 +76240,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 535	60	6806	example_tibetan_latin	ངེས་པར་མཉན་བྱ་		none	1	2	0	0	ངེས་པར་མཉན་བྱ་ nes par ༡7777772 bya Bez. für
 535	62	6806	german_prose_with_translit			none	1	1	0	0	Lehrsystem, Lehrmeinung.
 535	64	6806	german_prose_with_translit			none	3	1	0	0	Lex. grub mtha’ la’an (brDa).
-535	66	6807	headword_line	ངེས་པར་གཏང་བར་བྱཀྱི་	bgyi	medium	1	0	0	0	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
+535	66	6807	headword_line	ངེས་པར་གཏང་བར་བྱཀྱི་	bgyi	medium	1	0	0	0	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
 535	68	6807	german_prose			none	0	1	0	0	ignorieren.
 535	70	6807	latin_other			none	3	0	0	0	bka’ mchid ’di ni ~ (metr.) „ignoriere diese
 535	71	6807	german_prose_with_translit			none	1	1	0	0	Botschaft!“ (KanL 82d).
@@ -90448,7 +90448,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 627	163	7641	german_prose			none	0	1	0	0	AR Ichan
 627	165	7641	german_prose_with_translit			none	1	5	0	0	„nachdem der Arhat eine Erklärung für das
 627	166	7641	german_prose			none	0	2	0	0	Darlehen abgegeben hatte“ (Liy2 105).
-627	168	7642	headword_line	ཆགས་གསུམ་གཏང་བ་	ba	medium	1	1	0	0	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
+627	168	7642	headword_line	ཆགས་གསུམ་གཏང་བ་	ba	medium	1	1	0	0	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
 627	170	7642	german_prose_with_translit			none	1	1	0	0	Ritual, um Krankheiten
 627	172	7642	german_prose_with_translit			none	1	3	0	0	zu heilen, die von bdud-Dämonen verur-
 627	173	7642	german_prose			none	0	1	0	0	sacht wurden (Neb 521).
@@ -127352,7 +127352,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 882	61	9740	german_prose			none	0	3	0	0	sämghikas aber spalteten sich in die acht
 882	62	9740	german_prose			none	0	4	0	0	Schulen der Prajnaptivädins [usw.]“ (Tär
 882	63	9740	other			none	0	0	0	0	206,6).
-882	65	9740	tibetan_only	གཏང་		none	0	3	0	0	གཏང་ gtan fur. zu Igton.
+882	65	9740	tibetan_only	གཏང་		none	0	3	0	0	གཏང་ gtaṅ fur. zu Igton.
 882	67	9740	other			none	0	0	0	0	1. lassen, gehen lassen, aufgeben, verlassen.
 882	68	9740	example_tibetan_latin			none	5	1	0	0	chos ... nam du yan myi ༡༨ ma’ Zig par /207/70
 882	69	9740	german_prose_with_translit			none	1	1	0	0	„der Dharma wird niemals aufgegeben
@@ -127390,7 +127390,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 882	105	9740	german_prose_with_translit			none	1	2	0	0	unangemessen, wenn der Brief nicht sofort
 882	106	9740	german_prose_with_translit			none	1	1	0	0	abgeschickt wird“ (KTh 1: 278,6); sgo khral
 882	107	9740	german_prose_with_translit			none	4	2	0	0	do dam lo nas sbral rtse ~ don „Inhalt der
-882	109	9740	tibetan_only	གཏང་གཅཉོད་		none	0	0	0	0	གཏང་གཅཉོད་ gtan gcod
+882	109	9740	tibetan_only	གཏང་གཅཉོད་		none	0	0	0	0	གཏང་གཅཉོད་ gtaṅ gcod
 882	111	9740	german_prose_with_translit			none	1	2	0	0	Verfügung, welche gesandt wird von dem
 882	112	9740	german_prose_with_translit			none	1	3	0	0	Vorsteher der Zollstelle [namens] Lo“
 882	113	9740	german_prose_with_translit			none	3	2	0	0	(Wadd135p 2); phyogs der sman sgrub tu em
@@ -127433,11 +127433,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 882	155	9740	latin_other			none	6	0	0	0	gri’i brgyab nas las dinag brgya tsam chags /7//
 882	156	9740	german_prose_with_translit			none	3	4	0	0	du = nas „Gro-mus śi-bdud nag-po kämpfte und metzelte etwa 100 Söldner nieder“
 882	158	9740	german_prose			none	0	1	0	0	(Sumpa 8733).
-882	160	9741	headword_line	གཏང་གཅོད་	btan	medium	1	0	0	0	གཏང་གཅོད་ gtan gcod \btan gcod.
+882	160	9741	headword_line	གཏང་གཅོད་	btan	medium	1	0	0	0	གཏང་གཅོད་ gtaṅ gcod \btan gcod.
 882	162	9741	tibetan_only	ག ཏང་རག་		none	0	0	0	0	ག ཏང་རག་ 057/7 rag
-882	164	9742	headword_line	གཏང་མདོས་	mdos	medium	1	3	0	0	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
+882	164	9742	headword_line	གཏང་མདོས་	mdos	medium	1	3	0	0	གཏང་མདོས་ gtaṅ mdos ein Fadenkreuz (Neb
 882	165	9742	other			none	0	0	0	0	371).
-882	167	9743	headword_line	གཏང་མ་	ma	medium	1	1	0	0	གཏང་མ་ gtan ma Sieg.
+882	167	9743	headword_line	གཏང་མ་	ma	medium	1	1	0	0	གཏང་མ་ gtaṅ ma Sieg.
 882	169	9743	latin_other			none	1	0	0	0	glin nan la / da run = ci chod byed „016
 882	171	9743	german_prose			none	0	2	0	0	schlechten Glin müssen wir noch auf jeden
 882	173	9743	german_prose			none	0	3	0	0	Fall nach Kräften besiegen“ (Sumpa 1351 |
@@ -127445,12 +127445,12 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 882	176	9743	german_prose			none	0	5	0	0	teten über die Art und Weise, wie sie ihre
 882	177	9743	german_prose_with_translit			none	1	2	0	0	jeweiligen Siege errungen hatten“ (Sumpa
 882	179	9743	other			none	0	0	0	0	92b4). ,
-882	181	9744	headword_line	གཏང་ཡས་	btan	medium	1	2	0	0	གཏང་ཡས་ gtan yas auch btan yas eine hohe
+882	181	9744	headword_line	གཏང་ཡས་	btan	medium	1	2	0	0	གཏང་ཡས་ gtaṅ yas auch btan yas eine hohe
 882	182	9744	german_prose			none	0	3	0	0	Zahl; vgl. Igtad yas.
 882	184	9744	german_prose_with_translit			none	2	3	0	0	Lex. grans kyi = zer snan „so heißt eine
 882	185	9744	german_prose_with_translit			none	1	2	0	0	Zahl: gtan yas“ (brDa); nelub (Mvy 7892);
 882	186	9744	german_prose_with_translit			none	1	2	0	0	btan yas = grans Sig (Dagy).
-882	188	9745	headword_line	གཏང་རག་	btan	medium	1	2	0	0	གཏང་རག་ gtan rag auch btan rag Dankesgabe,
+882	188	9745	headword_line	གཏང་རག་	btan	medium	1	2	0	0	གཏང་རག་ gtaṅ rag auch btan rag Dankesgabe,
 882	189	9745	german_prose			none	0	2	0	0	-opfer, religiöses Dankesfest, -zere-
 882	190	9745	other			none	0	0	0	0	monie.
 882	192	9745	latin_other			none	8	0	0	0	khon tsho bla ma la ~ dan phyag phul nas

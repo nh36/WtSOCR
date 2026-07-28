@@ -28890,3 +28890,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 530	187	6880	tibetan_only	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ངར་སློང་ nar slon ermutigen, anspornen.
 769	45	9230	headword_line	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཉལ་སློང་ al slon Bez. für Weisheit.
 1169	48	12582	tibetan_only	slon	sloṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དུར་སློང་ dur slon '[0[6112617611]101116,
+535	66	6923	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
+627	168	7772	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
+882	65	9924	tibetan_only	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་ gtan fur. zu Igton.
+882	109	9924	tibetan_only	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་གཅཉོད་ gtan gcod
+882	160	9925	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་གཅོད་ gtan gcod \btan gcod.
+882	164	9926	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
+882	167	9927	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་མ་ gtan ma Sieg.
+882	181	9928	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་ཡས་ gtan yas auch btan yas eine hohe
+882	188	9929	headword_line	gtan	gtaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གཏང་རག་ gtan rag auch btan rag Dankesgabe,

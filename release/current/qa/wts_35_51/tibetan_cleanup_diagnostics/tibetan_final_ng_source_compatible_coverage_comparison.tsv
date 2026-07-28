@@ -351,7 +351,7 @@ disappeared	wts_1_34	530	187	2	སློང	slon	sloṅ		source_compatible_insuf
 newly_discovered	wts_1_34	535	152	3	བྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ངེས་པར་བྱང་ nes par byun pf. zu Ines par ’byun
 newly_discovered	wts_1_34	535	160	3	འགྱང	byun				source_compatible_no_anchor	0	"ངེས་པར་འགྱང་ nes par ""byun"
 newly_discovered	wts_1_34	535	178	3	འབྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ངེས་པར་འབྱང་ nes par ’byun pf. Tnes par byun
-category_changed	wts_1_34	535	66	3	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
+disappeared	wts_1_34	535	66	3	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
 category_changed	wts_1_34	54	164	2	ཤང	San	Saṅ	Saṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀིམ་ཤང ཁོང་ཅོ kim San khoṅ co, kim Sin kon co,
 disappeared	wts_1_34	54	164	3	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཀིམ་ཤང ཁོང་ཅོ kim San khon co, kim Sin kon co,
 newly_discovered	wts_1_34	54	168	2	ཤེང	śen				source_compatible_no_anchor	0	ཀིམ་ཤེང་ཀོང་ཅོ་ kim śen koṅ co, auch kim sen khon
@@ -398,7 +398,7 @@ newly_discovered	wts_1_34	613	138	1	ང	lcan				source_compatible_no_anchor	0	�
 newly_discovered	wts_1_34	615	137	1	ལྕང	lcun				source_compatible_no_anchor	0	ལྕང་མོ་ lcun mo Fingerhut.
 category_changed	wts_1_34	625	3	2	འདིང	din	diṅ	diṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆག་འདིང་ chag ’din
 category_changed	wts_1_34	625	9	2	འདིང	din	diṅ	diṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆག་འདིང་ chag ’din beraten, planen.
-category_changed	wts_1_34	627	168	3	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
+disappeared	wts_1_34	627	168	3	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
 newly_discovered	wts_1_34	628	98	1	ང	chan				source_compatible_no_anchor	0	"ང་ཅན"" chan can Weinbecher; vgl. chin. &"
 newly_discovered	wts_1_34	632	143	2	ཁང	khun				source_compatible_no_anchor	0	ཆཁྲ་།ཁང་ chab khun Abfluß, Toilette.
 newly_discovered	wts_1_34	639	140	2	སྔང	san				source_compatible_no_anchor	0	ཆེང་སྔང་ chin san auch ’chin san, phyin san
@@ -544,14 +544,14 @@ newly_discovered	wts_1_34	876	3	1	ཏང	tin				source_compatible_no_anchor	0	�
 newly_discovered	wts_1_34	877	195	2	རང	rin		riṅ		source_compatible_not_final_ng_only	1	ཏག་རང་ tig rin ein Laut.
 disappeared	wts_1_34	88	1	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ཅན་ kun slon can
 disappeared	wts_1_34	88	8	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཀུན་སློང་ཅན་ kun slon can mit bösen Gedanken,
-category_changed	wts_1_34	882	109	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་གཅཉོད་ gtan gcod
-category_changed	wts_1_34	882	160	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་གཅོད་ gtan gcod \btan gcod.
-category_changed	wts_1_34	882	164	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
-category_changed	wts_1_34	882	167	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་མ་ gtan ma Sieg.
-category_changed	wts_1_34	882	181	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་ཡས་ gtan yas auch btan yas eine hohe
-category_changed	wts_1_34	882	188	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་རག་ gtan rag auch btan rag Dankesgabe,
+disappeared	wts_1_34	882	109	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་གཅཉོད་ gtan gcod
+disappeared	wts_1_34	882	160	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་གཅོད་ gtan gcod \btan gcod.
+disappeared	wts_1_34	882	164	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
+disappeared	wts_1_34	882	167	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་མ་ gtan ma Sieg.
+disappeared	wts_1_34	882	181	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་ཡས་ gtan yas auch btan yas eine hohe
+disappeared	wts_1_34	882	188	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་རག་ gtan rag auch btan rag Dankesgabe,
 newly_discovered	wts_1_34	882	57	1	གཏང	gran				source_compatible_no_anchor	0	གཏང་ gran
-category_changed	wts_1_34	882	65	1	གཏང	gtan	gtaṅ	gtaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏང་ gtan fur. zu Igton.
+disappeared	wts_1_34	882	65	1	གཏང	gtan	gtaṅ		source_compatible_insufficient_evidence			གཏང་ gtan fur. zu Igton.
 category_changed	wts_1_34	887	205	3	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏམ་ད་གླེང་ gtam du glen 9777 glen.
 category_changed	wts_1_34	887	78	3	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གཏམ་གྱི་གླེང་གཞི་ gtam gyi glen gäi \gtam glen 2,
 newly_discovered	wts_1_34	887	80	3	འབྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	གཏམ་གྱི་འབྱང་གནས་ gtam gyi ’byun gnas Bez.

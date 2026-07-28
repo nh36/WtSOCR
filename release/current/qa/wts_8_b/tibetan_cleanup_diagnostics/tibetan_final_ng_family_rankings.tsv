@@ -4,7 +4,6 @@ tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_t
 སྙིང	sin	sin:13	siṅ	13	0	0	0	13	0	0	3	wts_1_34
 གླེང	glen	glen:12	gleṅ	12	0	1	0	11	0	0	1	wts_1_34
 གློང	gron	gron:11	groṅ	11	0	0	0	0	11	0	1	wts_1_34
-གཏང	gtan	gtan:10	gtaṅ	10	0	1	9	0	0	0	1	wts_1_34
 དགུང	dgun	dgun:10	dguṅ	10	0	1	9	0	0	0	1	wts_1_34;wts_35_51
 གྱོང	gyon	gyon:8	gyoṅ	8	0	0	8	0	0	0	1	wts_1_34
 ཀྱོང	gyon	gyon:7	gyoṅ	7	0	0	7	0	0	0	1	wts_1_34
@@ -25,6 +24,7 @@ tibetan_syllable	normalized_source_variant	source_variants_and_counts	proposed_t
 ཧང	han	han:2	haṅ	2	0	0	2	0	0	0	1	wts_1_34
 ཀློང	klon	klon:1	kloṅ	1	0	1	0	0	0	0	22	wts_1_34
 གཅུང	gcun	gcun:1	gcuṅ	1	0	0	1	0	0	0	1	wts_1_34
+གཏང	gtan	gtan:1	gtaṅ	1	0	1	0	0	0	0	10	wts_1_34
 ཐྲང	than	than:1	thaṅ	1	0	0	0	0	1	0	1	wts_1_34
 ནིང	nin	nin:1	niṅ	1	0	0	0	1	0	0	1	wts_1_34
 པྲང	bran	bran:1	braṅ	1	0	0	1	0	0	0	1	wts_1_34

@@ -18125,11 +18125,11 @@ wts_1_34	535	55	1	ངེས	nes	insufficient_feature_coverage	yes						ordinary_
 wts_1_34	535	55	2	པར	par	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་ཉལ་དས་ nes par Aal dus Bez. für
 wts_1_34	535	55	3	ཉལ	Aal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་ཉལ་དས་ nes par Aal dus Bez. für
 wts_1_34	535	55	4	དས	dus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་ཉལ་དས་ nes par Aal dus Bez. für
-wts_1_34	535	66	1	ངེས	nes	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
-wts_1_34	535	66	2	པར	par	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
-wts_1_34	535	66	3	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
-wts_1_34	535	66	4	བར	bar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
-wts_1_34	535	66	5	བྱཀྱི	bgyi	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtan bar bgyi fut.
+wts_1_34	535	66	1	ངེས	nes	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
+wts_1_34	535	66	2	པར	par	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
+wts_1_34	535	66	3	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
+wts_1_34	535	66	4	བར	bar	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
+wts_1_34	535	66	5	བྱཀྱི	bgyi	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་གཏང་བར་བྱཀྱི་ nes par gtaṅ bar bgyi fut.
 wts_1_34	535	73	1	ངེས	nes	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་རྟོག་ nes par rtog pf. Ines par brtags,
 wts_1_34	535	73	2	པར	par	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་རྟོག་ nes par rtog pf. Ines par brtags,
 wts_1_34	535	73	3	རྟོག	rtog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ངེས་པར་རྟོག་ nes par rtog pf. Ines par brtags,
@@ -20949,10 +20949,10 @@ wts_1_34	627	146	1	ཆགས	chags	insufficient_feature_coverage	yes						ordina
 wts_1_34	627	146	2	ལུགས	lugs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་ལུགས་ chags lugs Szenerie, Aussehen
 wts_1_34	627	159	1	ཆགས	chags	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་བཤད་ chags bsad (zw.) Erklärung, vgl.
 wts_1_34	627	159	2	བཤད	bsad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་བཤད་ chags bsad (zw.) Erklärung, vgl.
-wts_1_34	627	168	1	ཆགས	chags	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
-wts_1_34	627	168	2	གསུམ	gsum	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
-wts_1_34	627	168	3	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
-wts_1_34	627	168	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtan ba ein
+wts_1_34	627	168	1	ཆགས	chags	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
+wts_1_34	627	168	2	གསུམ	gsum	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
+wts_1_34	627	168	3	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
+wts_1_34	627	168	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆགས་གསུམ་གཏང་བ་ chags gsum gtaṅ ba ein
 wts_1_34	628	42	1	ཆང	chaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		chaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	ཆང་ཀྱར་ chaṅ kyur (zw.) anhäufen.
 wts_1_34	628	42	2	ཀྱར	kyur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཆང་ཀྱར་ chaṅ kyur (zw.) anhäufen.
 wts_1_34	628	48	1	ཆང	chaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		chaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.
@@ -28258,19 +28258,19 @@ wts_1_34	882	50	2	པར	par	insufficient_feature_coverage	yes						ordinary_tib
 wts_1_34	882	50	3	སྨྲ	smra	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏགས་པར་སྨྲ་བ་ glags par smra ba eine buddh.
 wts_1_34	882	50	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏགས་པར་སྨྲ་བ་ glags par smra ba eine buddh.
 wts_1_34	882	57	1	གཏང	gran	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་ gran
-wts_1_34	882	65	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་ gtan fur. zu Igton.
-wts_1_34	882	109	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅཉོད་ gtan gcod
-wts_1_34	882	109	2	གཅཉོད	gcod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅཉོད་ gtan gcod
-wts_1_34	882	160	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅོད་ gtan gcod \btan gcod.
-wts_1_34	882	160	2	གཅོད	gcod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅོད་ gtan gcod \btan gcod.
-wts_1_34	882	164	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
-wts_1_34	882	164	2	མདོས	mdos	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་མདོས་ gtan mdos ein Fadenkreuz (Neb
-wts_1_34	882	167	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་མ་ gtan ma Sieg.
-wts_1_34	882	167	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་མ་ gtan ma Sieg.
-wts_1_34	882	181	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་ཡས་ gtan yas auch btan yas eine hohe
-wts_1_34	882	181	2	ཡས	yas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་ཡས་ gtan yas auch btan yas eine hohe
-wts_1_34	882	188	1	གཏང	gtan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གཏང་རག་ gtan rag auch btan rag Dankesgabe,
-wts_1_34	882	188	2	རག	rag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་རག་ gtan rag auch btan rag Dankesgabe,
+wts_1_34	882	65	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་ gtaṅ fur. zu Igton.
+wts_1_34	882	109	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅཉོད་ gtaṅ gcod
+wts_1_34	882	109	2	གཅཉོད	gcod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅཉོད་ gtaṅ gcod
+wts_1_34	882	160	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅོད་ gtaṅ gcod \btan gcod.
+wts_1_34	882	160	2	གཅོད	gcod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་གཅོད་ gtaṅ gcod \btan gcod.
+wts_1_34	882	164	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་མདོས་ gtaṅ mdos ein Fadenkreuz (Neb
+wts_1_34	882	164	2	མདོས	mdos	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་མདོས་ gtaṅ mdos ein Fadenkreuz (Neb
+wts_1_34	882	167	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་མ་ gtaṅ ma Sieg.
+wts_1_34	882	167	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་མ་ gtaṅ ma Sieg.
+wts_1_34	882	181	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་ཡས་ gtaṅ yas auch btan yas eine hohe
+wts_1_34	882	181	2	ཡས	yas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་ཡས་ gtaṅ yas auch btan yas eine hohe
+wts_1_34	882	188	1	གཏང	gtaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gtaṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གཏང་རག་ gtaṅ rag auch btan rag Dankesgabe,
+wts_1_34	882	188	2	རག	rag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏང་རག་ gtaṅ rag auch btan rag Dankesgabe,
 wts_1_34	883	1	1	གཏད	gtad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏད་ 'gtad
 wts_1_34	883	3	1	གཏད	gtad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏད་ 'gtad pf. und fur. zu !gtod, pf. auch
 wts_1_34	883	54	1	གཏད	gtad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གཏད་ 'gtad

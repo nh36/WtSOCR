@@ -24,11 +24,11 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 གང	gon	no_anchor_clean_source_shape		Mannsh;gun	gaṅ:75			གང་སྐར་ gon skor
 གང	gun	no_anchor_clean_source_shape		Mannsh;gon	gaṅ:75			གང་བྲང་ gun than npr. eine Gegend in mÑa’-
 གཅུང	geun	no_anchor_clean_source_shape		gcun	gcuṅ:1			གཅུང་ geun
-གཏང	gran	no_anchor_clean_source_shape		gron;gtan;gtin;gton;gun	gtaṅ:1			གཏང་ gran
-གཏང	gron	no_anchor_clean_source_shape		gran;gtan;gtin;gton;gun	gtaṅ:1			གཏང་ཕགས་ gron phogs
-གཏང	gtin	no_anchor_clean_source_shape		gran;gron;gtan;gton;gun	gtaṅ:1			གཏང་ gtin Tiefe, Grund, Boden; ~ rin tief; ~
-གཏང	gton	no_anchor_clean_source_shape		gran;gron;gtan;gtin;gun	gtaṅ:1			གཏང་ བའ ནོར་ gton ༼/¢'/7 nor Besitz der Frei-
-གཏང	gun	no_anchor_clean_source_shape		gran;gron;gtan;gtin;gton	gtaṅ:1			གཏང་དཔག་ gun dpag fur. zu gti dpog_ er-
+གཏང	gran	no_anchor_clean_source_shape		gron;gtan;gtin;gton;gun	gtaṅ:10			གཏང་ gran
+གཏང	gron	no_anchor_clean_source_shape		gran;gtan;gtin;gton;gun	gtaṅ:10			གཏང་ཕགས་ gron phogs
+གཏང	gtin	no_anchor_clean_source_shape		gran;gron;gtan;gton;gun	gtaṅ:10			གཏང་ gtin Tiefe, Grund, Boden; ~ rin tief; ~
+གཏང	gton	no_anchor_clean_source_shape		gran;gron;gtan;gtin;gun	gtaṅ:10			གཏང་ བའ ནོར་ gton ༼/¢'/7 nor Besitz der Frei-
+གཏང	gun	no_anchor_clean_source_shape		gran;gron;gtan;gtin;gton	gtaṅ:10			གཏང་དཔག་ gun dpag fur. zu gti dpog_ er-
 གཏིང	gein	no_anchor_clean_source_shape			gtiṅ:16			གཏིང་ཀློ་ gein klo
 གཏོང	vernich	no_anchor_clean_source_shape			gtoṅ:38; Warnuṅ:1			ཏོར་ཁྲ་ཏག་ཏ་གཏོང་ gtor brlag du gton vernich-
 གདང	gdun	no_anchor_clean_source_shape		gdon	gdaṅ:11; ggdaṅ:2; gdoṅ:2			དྱངུལ་གདང་བརརྐྱད་ dnul gdun brgyad eine Kal-
