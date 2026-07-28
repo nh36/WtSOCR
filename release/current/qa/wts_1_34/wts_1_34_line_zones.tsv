@@ -48037,7 +48037,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 340	206	4620	german_prose			none	0	2	0	0	kann, das gibt es nirgendwo“ (Bca 9.13b);
 340	207	4620	german_prose_with_translit			none	4	1	0	0	gan dan yan ’khon med par gyur te „er grollte niemandem“ (Nel 1223); gan gis kyan ma
 340	209	4620	german_prose_with_translit			none	2	2	0	0	khyag nas „überhaupt niemand [konnte die
-341	1	4620	tibetan_only	གང་རུང་		none	0	0	0	0	གང་རུང་ gar run
+341	1	4620	tibetan_only	གང་རུང་		none	0	0	0	0	གང་རུང་ gar ruṅ
 341	3	4620	german_prose_with_translit			none	1	2	0	0	Statuen] hochheben“ (Glr 78,21); dgra gien
 341	4	4620	german_prose_with_translit			none	5	1	0	0	gan la’an chags sdaṅ gi rus thon pa „sie war
 341	5	4620	german_prose_with_translit			none	1	4	0	0	fähig, jeglichen Freunden Zuneigung und
@@ -83295,7 +83295,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 579	224	7259	headword_line	ཅི་ཕྱིར་	phyir	high	3	1	0	0	ཅི་ཕྱིར་ ci phyir auch ci yi phyir, 677 phyir
 579	226	7259	other			none	0	0	0	0	warum?
 579	228	7259	german_prose_with_translit			none	8	1	0	0	rgyal po bdag la ci’i phyir bka’ stsol „König,
-580	1	7260	headword_line	ཅཾ་མ་རུང་	ma	medium	1	0	0	0	ཅཾ་མ་རུང་ ci ma run
+580	1	7260	headword_line	ཅཾ་མ་རུང་	ma	medium	1	0	0	0	ཅཾ་མ་རུང་ ci ma ruṅ
 580	3	7260	german_prose_with_translit			none	2	2	0	0	warum sprichst du zu mir?“ (K1 ka 301a4);
 580	4	7260	latin_other			none	9	0	0	0	de ci’i phyir ze na ... bca’ ba brten pa°i phyir
 580	5	7260	german_prose_with_translit			none	4	6	0	0	ro „Warum das? Weil es von der Bestimmung abhängt“ (Prav 185,23); bdag gis ci’i
@@ -83331,7 +83331,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 580	37	7260	german_prose_with_translit			none	4	1	0	0	dan dgos pa gan gi don „1, S. ¥. welcher
 580	38	7260	german_prose			none	0	3	0	0	Grund und welche Notwendigkeit?“
 580	40	7260	german_prose			none	0	1	0	0	(Dagy).
-580	41	7261	headword_line	ཅི་མ་རུང་	ma	medium	1	0	0	0	ཅི་མ་རུང་ ci ma run wenn doch nur!
+580	41	7261	headword_line	ཅི་མ་རུང་	ma	medium	1	0	0	0	ཅི་མ་རུང་ ci ma ruṅ wenn doch nur!
 580	43	7261	latin_other			none	2	0	0	0	ie sbas gnas ’cha’ bar byed na - „wenn doch
 580	44	7261	german_prose			none	0	2	0	0	nur Upagupta sich [dort] niederließe!“
 580	45	7261	german_prose			none	0	1	0	0	(Tär 11,13).
@@ -106249,7 +106249,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 731	186	8728	german_prose_with_translit			none	3	2	0	0	Lex. ?¡95 su run ba = bhayänakab (Mvy
 731	187	8728	german_prose_with_translit			none	2	1	0	0	5041, Abt. gar thabs kyi nam grans kyii
 731	188	8728	other			none	0	0	0	0	min).
-731	190	8729	headword_line	འཇིགས་སུ་རུང་བ་	su	medium	2	0	0	0	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
+731	190	8729	headword_line	འཇིགས་སུ་རུང་བ་	su	medium	2	0	0	0	འཇིགས་སུ་རུང་བ་ gs su ruṅ ba [ ?/0$ run.
 731	192	8730	headword_line	འཇིང་	phyed	high	1	2	0	0	"འཇིང་ ""ir auch mjin Mitte; nam phyed ~"
 731	194	8730	german_prose			none	0	1	0	0	Mitternacht.
 731	196	8730	latin_other			none	4	0	0	0	"rgya mtsho ""chin (r. ») mans klon du ""khyil"
@@ -148665,7 +148665,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1018	14	11161	german_prose_with_translit			none	4	1	0	0	(brDa); thun geig gi yun tshod (Dagy).
 1018	16	11162	headword_line	ཐུན་ཚོད་ཅན་	thun tshod can	high	3	3	0	0	ཐུན་ཚོད་ཅན་ thun tshod can Bez. für Nacht.
 1018	18	11162	german_prose_with_translit			none	3	3	0	0	Lex. mtshan mo’i min (brDa, ähnl. Dagy).
-1018	20	11163	headword_line	ཐུན་ཚོད་དུ་རུང་བ་	thun tshod du	high	4	1	0	0	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
+1018	20	11163	headword_line	ཐུན་ཚོད་དུ་རུང་བ་	thun tshod du	high	4	1	0	0	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
 1018	22	11163	german_prose			none	0	1	0	0	Nachtwache betreffend“,
 1018	24	11163	german_prose			none	0	7	0	0	Bez. für eine Klasse von Heilmitteln (vgl.
 1018	26	11163	german_prose			none	0	1	0	0	SWTF s. + yämika); „to be applied at brief
@@ -166396,7 +166396,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1191	95	12476	german_prose_with_translit			none	2	2	0	0	des Herrschers Pho-lha tha’i-ji geschnitzt
 1191	96	12476	latin_other			none	3	0	0	0	wurden“ (gNas 21,7); de bud med kyi khed
 1191	97	12476	german_prose_with_translit			none	4	2	0	0	ma la yos bu’i — btags „sie wird [in Höhe]
-1192	1	12477	headword_line	དུས་སུ་རུང་བ་	su	medium	2	0	0	0	དུས་སུ་རུང་བ་ dus su run ba
+1192	1	12477	headword_line	དུས་སུ་རུང་བ་	su	medium	2	0	0	0	དུས་སུ་རུང་བ་ dus su ruṅ ba
 1192	3	12477	german_prose			none	0	5	0	0	des Unterleibs der Frau zur Hasenzeit be-
 1192	4	12477	german_prose_with_translit			none	3	1	0	0	festigt“ (MigTo 272,8); mtshan gyi — sgron
 1192	5	12477	german_prose_with_translit			none	2	2	0	0	me khyog (metr.) „nachts haltet die Lampe“

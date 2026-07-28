@@ -28924,3 +28924,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 370	70	5024	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་གླགས་པ་ gyon grugs pa Bez. für die Speise
 370	112	5027	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་བཞིག་ gyon bsig
 370	123	5028	headword_line	gyon	gyoṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གྱོང་བཤིག་ gyon bśig Zerstörung.
+341	1	4671	tibetan_only	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གང་རུང་ gar run
+580	1	7388	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཅཾ་མ་རུང་ ci ma run
+580	41	7389	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཅི་མ་རུང་ ci ma run wenn doch nur!
+731	190	8906	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
+1018	20	11404	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
+1192	1	12735	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དུས་སུ་རུང་བ་ dus su run ba

@@ -12095,8 +12095,8 @@ wts_1_34	340	152	2	ཟག	zag	insufficient_feature_coverage	yes						ordinary_ti
 wts_1_34	340	152	3	ཟླ	zla	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གང་ཟག་ཟླ་ཨེད་པ་ gaṅ zag zla med pa Beiname
 wts_1_34	340	152	4	ཨེད	med	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གང་ཟག་ཟླ་ཨེད་པ་ gaṅ zag zla med pa Beiname
 wts_1_34	340	152	5	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གང་ཟག་ཟླ་ཨེད་པ་ gaṅ zag zla med pa Beiname
-wts_1_34	341	1	1	གང	gar	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གང་རུང་ gar run
-wts_1_34	341	1	2	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གང་རུང་ gar run
+wts_1_34	341	1	1	གང	gar	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གང་རུང་ gar ruṅ
+wts_1_34	341	1	2	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གང་རུང་ gar ruṅ
 wts_1_34	341	47	1	གང	gaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		gaṅ	reviewed_tibetan_exact_script_ng_witness	ordinary_tibetan_lexical_or_compound	none	no	གང་ས་ gaṅ sa
 wts_1_34	341	47	2	ས	sa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གང་ས་ gaṅ sa
 wts_1_34	341	77	1	གང	gaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	གང་ལ་གང་ gaṅ la gaṅ jeweilig.
@@ -19598,12 +19598,12 @@ wts_1_34	579	219	1	ཅི	ci	insufficient_feature_coverage	yes						ordinary_tib
 wts_1_34	579	219	2	ཕོད	phod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཅི་ཕོད་ ci phod wie viele?
 wts_1_34	579	224	1	ཅི	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཅི་ཕྱིར་ ci phyir auch ci yi phyir, 677 phyir
 wts_1_34	579	224	2	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཅི་ཕྱིར་ ci phyir auch ci yi phyir, 677 phyir
-wts_1_34	580	1	1	ཅཾ	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma run
-wts_1_34	580	1	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma run
-wts_1_34	580	1	3	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma run
-wts_1_34	580	41	1	ཅི	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma run wenn doch nur!
-wts_1_34	580	41	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma run wenn doch nur!
-wts_1_34	580	41	3	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma run wenn doch nur!
+wts_1_34	580	1	1	ཅཾ	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma ruṅ
+wts_1_34	580	1	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma ruṅ
+wts_1_34	580	1	3	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཅཾ་མ་རུང་ ci ma ruṅ
+wts_1_34	580	41	1	ཅི	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma ruṅ wenn doch nur!
+wts_1_34	580	41	2	མ	ma	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma ruṅ wenn doch nur!
+wts_1_34	580	41	3	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཅི་མ་རུང་ ci ma ruṅ wenn doch nur!
 wts_1_34	580	49	1	ཅི	ci	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་སྨོས་ ci smos \lta ci smos, Ylta smos kyan ci
 wts_1_34	580	49	2	སྨོས	smos	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅི་སྨོས་ ci smos \lta ci smos, Ylta smos kyan ci
 wts_1_34	580	53	1	ཅ	z	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཅ ཞག €/ zıg
@@ -24383,10 +24383,10 @@ wts_1_34	731	111	1	འཇིགས	jigs	insufficient_feature_coverage	yes						o
 wts_1_34	731	111	2	མེད	med	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འཇིགས་མེད་ jigs med.
 wts_1_34	731	146	1	འཇིགས	jigs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འཇིགས་ར་ jigs ra Palisade.
 wts_1_34	731	146	2	ར	ra	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འཇིགས་ར་ jigs ra Palisade.
-wts_1_34	731	190	1	འཇིགས	gs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
-wts_1_34	731	190	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
-wts_1_34	731	190	3	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
-wts_1_34	731	190	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
+wts_1_34	731	190	1	འཇིགས	gs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su ruṅ ba [ ?/0$ run.
+wts_1_34	731	190	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su ruṅ ba [ ?/0$ run.
+wts_1_34	731	190	3	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su ruṅ ba [ ?/0$ run.
+wts_1_34	731	190	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	འཇིགས་སུ་རུང་བ་ gs su ruṅ ba [ ?/0$ run.
 wts_1_34	731	192	1	འཇིང	ir	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	"འཇིང་ ""ir auch mjin Mitte; nam phyed ~"
 wts_1_34	732	21	1	འཇབ	ib	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འཇབ་རྒྱབ་པ་ ib reyab pa ein rituelles Ver-
 wts_1_34	732	21	2	རྒྱབ	reyab	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འཇབ་རྒྱབ་པ་ ib reyab pa ein rituelles Ver-
@@ -31879,11 +31879,11 @@ wts_1_34	1018	1	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tib
 wts_1_34	1018	16	1	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་ཅན་ thun tshod can Bez. für Nacht.
 wts_1_34	1018	16	2	ཚོད	tshod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་ཅན་ thun tshod can Bez. für Nacht.
 wts_1_34	1018	16	3	ཅན	can	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་ཅན་ thun tshod can Bez. für Nacht.
-wts_1_34	1018	20	1	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
-wts_1_34	1018	20	2	ཚོད	tshod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
-wts_1_34	1018	20	3	དུ	du	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
-wts_1_34	1018	20	4	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
-wts_1_34	1018	20	5	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
+wts_1_34	1018	20	1	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
+wts_1_34	1018	20	2	ཚོད	tshod	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
+wts_1_34	1018	20	3	དུ	du	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
+wts_1_34	1018	20	4	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
+wts_1_34	1018	20	5	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du ruṅ ba „eine
 wts_1_34	1018	31	1	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་མཆམས་ thun mtshams.
 wts_1_34	1018	31	2	མཆམས	mtshams	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་མཆམས་ thun mtshams.
 wts_1_34	1018	53	1	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཐུན་མཚམས་སྟོབས་ thun mtshams stobs Bez. für
@@ -35535,10 +35535,10 @@ wts_1_34	1191	1	1	དུས	dus	insufficient_feature_coverage	yes						ordinary_
 wts_1_34	1191	1	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ dus su
 wts_1_34	1191	51	1	དུས	dus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ dus su
 wts_1_34	1191	51	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ dus su
-wts_1_34	1192	1	1	དུས	dus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su run ba
-wts_1_34	1192	1	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su run ba
-wts_1_34	1192	1	3	རུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su run ba
-wts_1_34	1192	1	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su run ba
+wts_1_34	1192	1	1	དུས	dus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su ruṅ ba
+wts_1_34	1192	1	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su ruṅ ba
+wts_1_34	1192	1	3	རུང	ruṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		ruṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su ruṅ ba
+wts_1_34	1192	1	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་རུང་བ་ dus su ruṅ ba
 wts_1_34	1192	38	1	དུས	dus	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur
 wts_1_34	1192	38	2	སུ	su	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur
 wts_1_34	1192	38	3	ཆུང	run	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དུས་སུ་ཆུང་བ་ dus su run ba zeitgemäß, zur

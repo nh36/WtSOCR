@@ -3333,6 +3333,18 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed gyon control", corrected)
         self.assertEqual([row["to_token"] for row in changes], ["gyoṅ"])
 
+    def test_repeated_historical_rung_defers_damaged_echo(self) -> None:
+        lines = {
+            (731, 190): "འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.",
+            (1400, 1): "unreviewed run control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("gs su ruṅ ba [ ?/0$ run.", corrected)
+        self.assertIn("unreviewed run control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["ruṅ"])
+
     def test_historical_witness_zhang_supersedes_bad_ascii_stem(self) -> None:
         lines = {
             (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",

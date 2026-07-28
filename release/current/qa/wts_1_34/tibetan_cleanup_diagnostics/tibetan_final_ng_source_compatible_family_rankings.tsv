@@ -24,7 +24,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གློང	gron	gro<FINAL_NASAL>	groṅ	11	syllable_structure_mismatch:11	source_compatible_not_final_ng_only:11	1			0	wts_1_34	insufficient_feature_coverage	0
 ཀྱོང	gyon	gyo<FINAL_NASAL>	gyoṅ	7	insufficient_consensus:7	source_compatible_single_anchor:7	1			0	wts_1_34	insufficient_feature_coverage	0
 འཆེང	chin	chi<FINAL_NASAL>	chiṅ	7	insufficient_consensus:7	source_compatible_not_final_ng_only:7	1			0	wts_1_34	insufficient_feature_coverage	0
-རུང	run	ru<FINAL_NASAL>	ruṅ	6	insufficient_consensus:6	source_compatible_single_anchor:6	1			0	wts_1_34	insufficient_feature_coverage	0
 ཞེང	Zen	Ze<FINAL_NASAL>	Zeṅ	4	competing_latin_forms:4	source_compatible_transcription_integrity_blocked:4	1		zeṅ:1; Ziṅ:1; ziṅ:1	0	wts_1_34	nonfinal_feature_mismatch	4
 རང	rin	ri<FINAL_NASAL>	riṅ	4	not_emitted_by_legacy_global_target:4	source_compatible_not_final_ng_only:4	1		raṅ:14	0	wts_1_34	insufficient_feature_coverage	0
 ཤང	sin	si<FINAL_NASAL>	siṅ	4	not_emitted_by_legacy_global_target:4	source_compatible_not_final_ng_only:4	1		Saṅ:1	0	wts_1_34	insufficient_feature_coverage	0
@@ -231,7 +230,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཡང	nun	nu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		yaṅ:30	0	wts_1_34	target_unresolved_no_anchor	0
 རང	spyan	spya<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		raṅ:14; riṅ:1	0	wts_35_51	target_unresolved_no_anchor	0
 རིང	Iderin	Ideri<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_marker_attached:1	0		riṅ:47	0	wts_1_34	target_unresolved_no_anchor	0
-རུང	noch	noc<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ruṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
+རུང	noch	noc<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		ruṅ:7	0	wts_1_34	target_unresolved_no_anchor	0
 རེངས	auchmoren	auchmore<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		reṅs:2	0	wts_9_m	target_unresolved_no_anchor	0
 རྐང	bran	bra<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkaṅ:105; rkyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
 རྐང	ran	ra<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		rkaṅ:105; rkyaṅ:1	0	wts_1_34	target_unresolved_no_anchor	0
