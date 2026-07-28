@@ -624,17 +624,16 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             confusion_evidence[signature].add("reviewed_feature_repair")
             confusion_types[signature] = operation["operation_type"]
 
+    decision_path = ROOT / "data/reviewed_tibetan_ocr_signature_decisions.tsv"
+    signature_decisions = {
+        row["signature"]: row for row in integrity.read_tsv(decision_path)
+    } if decision_path.exists() else {}
     confusions = [{
         "operation_signature": signature,
         "operation_type": confusion_types[signature],
-        "tibetan_role_context": (
-            "root_consonant:ཞ" if signature in {"SUB Z→ź", "SUB z→ź"}
-            else "suffix_coda:ང" if signature in {
-                "SUB n→ṅ", "SUB h→ṅ", "SUB ń→ṅ", "SUB ñ→ṅ", "SUB ň→ṅ",
-            }
-            else "confusable_initial:I_to_l" if signature == "SUB I→l"
-            else "unresolved"
-        ),
+        "tibetan_role_context": signature_decisions.get(
+            signature, {}
+        ).get("role_domain_condition", "unresolved"),
         "independent_tibetan_syllables": str(len(confusion_groups[signature])),
         "occurrences": str(confusion_occurrences[signature]),
         "domains": ";".join(
@@ -643,29 +642,16 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         "canonical_evidence_classes": ";".join(
             sorted(confusion_evidence[signature])
         ),
-        "reviewed_correction_support": (
-            "reviewed_root_ཞ_to_ź"
-            if signature in {"SUB Z→ź", "SUB z→ź"} else ""
-        ) or (
-            "reviewed_final_ང_to_ṅ"
-            if signature in {
-                "SUB n→ṅ", "SUB h→ṅ", "SUB ń→ṅ", "SUB ñ→ṅ", "SUB ň→ṅ",
-            } else ""
-        ) or (
-            "reviewed_initial_I_to_l"
-            if signature == "SUB I→l" else ""
-        ),
+        "reviewed_correction_support": signature_decisions.get(
+            signature, {}
+        ).get("evidence_summary", ""),
         "counterexamples": "",
         "collision_examples": "unrelated Latin Z/z excluded by Tibetan identity",
-        "authorization_status": (
-            "authorized_exact_tibetan_conditioned"
-            if signature in {
-                "SUB Z→ź", "SUB z→ź", "SUB n→ṅ", "SUB h→ṅ",
-                "SUB ń→ṅ", "SUB ñ→ṅ", "SUB ň→ṅ", "SUB I→l",
-            }
-            and len(confusion_groups[signature]) >= 2
-            else "diagnostic_only"
-        ),
+        "authorization_status": {
+            "A": "authorized_exact_tibetan_conditioned",
+            "D": "candidate_review", "R": "rejected",
+        }.get(signature_decisions.get(signature, {}).get("decision", ""),
+              "diagnostic_only"),
     } for signature in sorted(confusion_groups)]
 
     registry = integrity.load_registry()

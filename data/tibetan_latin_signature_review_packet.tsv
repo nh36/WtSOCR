@@ -1,0 +1,162 @@
+signature	expected_clean_yield	expected_syllable_yield	reviewed_support	alternate_witness_support	controls	tibetan_syllable	source	canonical_target	target_evidence	domain	context	suggested_decision
+SUB r→ṅ	35	15	0	12	858	གང	gar	gaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:11	གང་ garı || གང་ garı || གང་ག་ཆུང་ gar ga chuṅ	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	གསང	gsar	gsaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཆབ་གསང་ chab gsarı	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	གུང	gur	guṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གུང་འདབ་ gur ’dab Zeltplatz.	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	གླིང	glir	gliṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྤིན་གྲོལ་གླིང་ smin grol glir	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	ཆུང	chur	chuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	ཆུང་གནས་ chur gnas. || དབང་ཆུང་ dbaṅ chur schwach, machtlos, un-	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	བཟང	bzar	bzaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གནོད་སྦྱིན་གང་བཟང་ grod sbyin gaṅ bzar	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	བྱུང	byur	byuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བྱུང་རྒྱལ་ byur royal.	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	བྲང	brar	braṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"བླ་བྲང་བཀྲ་ཤེས་་ "" bla brar bkra sis"	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	མིང	mir	miṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	"མིང་གྲགས་ཆེ་བ་ mir grags che ba sehr berühmt, || མིང་འདི་ཞེས་བགྱི་བ་ mir di zes bgyi ba ""der so"	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	འབྱུང	byur	byuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:4	"འབྱུང་འཇུག་ byur jug. || འབྱུང་པོའི་དབང་པོ་ byur po'i dbaṅ po Beiname Sivas. || འབྱུང་བའི་གནས་ ""byur ba'i gnas ] '/)7///?? gnas."	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	ལོང	lor	loṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:4	"ཀྱིམ་གྱི་གོ་ རེ་ལོང་ khyim gyi go re lor Hausreini- || སྤྲིན་མགོ་མེ་ལོང་ sprin mgo me lor Bez. für den || བྱི་ལོང་ byi lor ""blinde Maus"", Maulwurf. Lex. — ba = serms la $ /?¿¿?/ rar med pa' —"	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	སེང	ser	seṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	སྟབས་སེང་ stabs ser auch stab ser ein Heil- || མཐུ་ཆེན་སེང་གེའི་ང་རོ་ mthu chen ser ge’ na ro	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	སྟོང	stor	stoṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྟོང་སྡེ་ stor sde	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	སྣང	snar	snaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྣང་གཤིན་པ་ snar gsin pa angenehm, schön.	manual_signature_review
+SUB r→ṅ	35	15	0	12	858	སྦྲང	sbrar	sbraṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	སྦྲང་མ་ sbrar ma Insekt, Biene, Fliege, Moski- || སྦྲང་ལྷག་ sbrar lhag Bienenwachs.	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ཀྱང	kyani	kyaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བླངས་ཀྱང་ blaṅs kyani	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	གང	gani	gaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གང་པོ་འབོད་ gani po ’bod Beiname des Sakra.	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	གསང	gsani	gsaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	ཐུགས་གཏེར་གསང་་ thugs gter gsani ... || རྣ་བ་གསང་བ་ ma ba gsani ba jmd., der gut hört || འབྲུ་གསང་ bru gsani	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ཆང	chani	chaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	"བན་ཆང་ ""ban chani || སྦྲང་རྩི་ཆང་ sbraṅ rtsi chani"	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ཐང	thani	thaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དབང་ཐང་ dbaṅ thani	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	བཏང	btani	btaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	བཏང་ btani || བྱ་བཏང་ bya btani pf. zubya gtori.	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	བྲང	brani	braṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:4	བེའུ་བྲང་ the’u brani auch the braṅ eine Gruppe || ཕྲོ་བྲང་ pho brani || ཕོ་བྲང་འཁོར་ pho brani 'khor	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ཚང	tshani	tshaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	ཕྱག་ཚང་ phyag tshani. || ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag || བྲག་དམར་ཀེའུ་ཚང་ brag dmar ke'u tshani	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	འཕང	phani	phaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ཡང	yani	yaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	འདི་ལྟར་ཡང་ di ltar yani || ན་ཡང་ na yani || བབ་ཚོལ་ཕྱར་ཡང་ bab tshol phyar yani wunüber-	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	རྐང	rkani	rkaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	"བུད་མེད་རྐང་བརྡེག་་ bud med rkani brdeg || འབྲེ ་རྐང་ ""bri rkani"	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	རྨང	rmani	rmaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	"རྨང་ 'rmani auch rmans, rmen Fundament, || རྨང་ ""rmani || རྨང་ལམ་ rmani lam Traum."	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	ལང	lani	laṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཀུན་ནས་ལང་བ་ kun nas lani ba sich erheben, her-	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	སྣང	snani	snaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	མདོ་སྣང་ mdo snani || རྣམ་པར་སྣང་བར་་ rnam par snani bar || རྣམ་པར་སྣང་བྱེད་ rnam par snani byed	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	སྤྱང	spyani	spyaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	སྤྱང་ཁ་ spyani kha || སྤྱང་ཁ་ spyani kha Wolfsmaul.	manual_signature_review
+REPLACE ni→ṅ	33	16	4	11	0	སྦྱང	sbyani	sbyaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁ་སྦྱང་པ་ kha sbyani pa auch kha byan ba rede-	manual_signature_review
+SUB b→h	30	30	0	41	709	ཁུང	kbuṅ	khuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཁུལ	kbul	khul	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཁྱད	kbyad	khyad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁྱད་གསོད་ kbyad gsod Kurzf. für khyad du	manual_signature_review
+SUB b→h	30	30	0	41	709	ཁྲོ	kbro	khro	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁྲོ་ལྔན་ kbro ldan Held.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐམས	tbams	thams	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐམས་ཤད་ tbams Sad Tthams cad.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐར	tbar	thar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐར་ན་ tbar nu eine Heilpflanze, Euphorbia	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐིག	tbig	thig	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྡོང་ཐིག་ sdoṅ tbig Docht.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐུ	tbu	thu	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐང་ཤུ་ཐུ་ཧན་ thaṅ Su tbu han	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐུང	tbuṅ	thuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱིར་ཐུང་གིས་ phyir tbuṅ gis vor kurzem.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐུབ	tbub	thub	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐུབ་ཆོད་ tbub chod.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཐུར	tbur	thur	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྤྲུབས་ཐུར་ sbubs tbur	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕན	pban	phan	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕན་མེད་ pban med nicht hilfreich, nutzlos.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕུལ	pbul	phul	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕུལ་ཕྱིན་ pbul phyin auch phul du phyin pa	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕོག	pbog	phog	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕོག་གསུམ་ pbog gsun	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕྱམ	pbyam	phyam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten ""allgemei-"	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕྱར	pbyar	phyar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱར་ཀ་ pbyar ka auch phyar kha L'phyar ka.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕྱིང	pbyiṅ	phyiṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱིང་དྲིལ་ pbyiṅ dril cine Rolle Filz.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕྱིས	pbyis	phyis	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱིས་སྐྱེས་ pbyis skyes.	manual_signature_review
+SUB b→h	30	30	0	41	709	ཕྱེ	pbye	phye	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-	manual_signature_review
+SUB b→h	30	30	0	41	709	མཁས	mkbas	mkhas	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྨྲ་མཁས་ smra mkbas.	manual_signature_review
+SUB u→a	26	21	0	4	559	ཀན	kun	kan	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཀན་ཏུ་རྒྱས་པར་བྱེད་པ་ kun tu rgyas par byed pa ver-	manual_signature_review
+SUB u→a	26	21	0	4	559	གདབ	gdub	gdab	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མགུལ་གདབ་ mgul gdub ein Halsschmuck.	manual_signature_review
+SUB u→a	26	21	0	4	559	གར	gur	gar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གར་ཏྱིམ་ gur khyim ein Zelt.	manual_signature_review
+SUB u→a	26	21	0	4	559	གསང	gsuṅ	gsaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བདྡེན་པ་གསང་བྲ་ bden pa gsuṅ ba Bez. für Bud-	manual_signature_review
+SUB u→a	26	21	0	4	559	གྲས	grus	gras	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གྲས་པོ་ grus po auch grus pa dreijährig [von	manual_signature_review
+SUB u→a	26	21	0	4	559	ཆང	chuṅ	chaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi	manual_signature_review
+SUB u→a	26	21	0	4	559	དང	dun	daṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:5	དགན་དང་ dgun dun \dgon dun. || དགོན་དང་ dgon dun auch ~ can, dgun dun can || རྒྱ་མཚོའི་དང་ྲེང་ rgya mtsho’i dun phren Bez.	manual_signature_review
+SUB u→a	26	21	0	4	559	ཕྱགས	phyugs	phyags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྒོ་ཕྱགས་ sgo phyugs Haustier.	manual_signature_review
+SUB u→a	26	21	0	4	559	བཏགས	btugs	btags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བཏགས་ btugs in khuns - auf einer Quelle	manual_signature_review
+SUB u→a	26	21	0	4	559	བཏང	btun	btaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	བཏང་ btun || བཏང་ btun fur. zu 1⁄7//0)//) trinken; ༡༨ ba Ge-	manual_signature_review
+SUB u→a	26	21	0	4	559	བསམ	bsum	bsam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	།ཁ་བསམ་ kha bsum pf. zu [/(0/4 sum schließen.	manual_signature_review
+SUB u→a	26	21	0	4	559	བསྐལ	bskul	bskal	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བུགས་དམ་བསྐལ་པ་ thugs dam bskul ba	manual_signature_review
+SUB u→a	26	21	0	4	559	མཁར	mkhur	mkhar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མཁར་འཛུམ་པ་ mkhur ’dzum pa ein wenig lä-	manual_signature_review
+SUB u→a	26	21	0	4	559	མགར	mgur	mgar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མགར་ཆུ་ mgur chun Grundlage, auf der die	manual_signature_review
+SUB u→a	26	21	0	4	559	མགལ	mgul	mgal	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མགལ་ཆུ་ mgul chu Halsschmuck.	manual_signature_review
+SUB u→a	26	21	0	4	559	འཁར	khur	khar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"འཁར་འཕྲའི་ ""khur ’khri Verantwortung."	manual_signature_review
+SUB u→a	26	21	0	4	559	རྡལ	rdul	rdal	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ལྩགས་རྡལ་ lcags rdul	manual_signature_review
+SUB u→a	26	21	0	4	559	སྐད	skud	skad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དངུལ་སྐད་ drul skud	manual_signature_review
+SUB u→a	26	21	0	4	559	སྐྲ	skru	skra	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྐྲ་ skru pf. \bskrus fut. \bskru imp. Iskrus.	manual_signature_review
+SUB u→a	26	21	0	4	559	སྒམ	sgum	sgam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"སྒམ་འབྱུ་ sgum ""hu pf. Isgum ’thus aufpicken,"	manual_signature_review
+SUB o→a	24	24	0	3	642	གང	gon	gaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གང་སྐར་ gon skor	manual_signature_review
+SUB o→a	24	24	0	3	642	གད	god	gad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གད་འདྲ་ god ’dre	manual_signature_review
+SUB o→a	24	24	0	3	642	གསར	gsor	gsar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མདའུ་གསར་ mach gsor temmeisen, Schnitz-	manual_signature_review
+SUB o→a	24	24	0	3	642	གྲང	gron	graṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer	manual_signature_review
+SUB o→a	24	24	0	3	642	གྲས	gros	gras	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བླ་གྲས་སམས་པ་ blo gros sems pa	manual_signature_review
+SUB o→a	24	24	0	3	642	ཐང	thon	thaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ང་ཐང་ thon thon	manual_signature_review
+SUB o→a	24	24	0	3	642	ཐར	thor	thar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐར་བུ་ :thor bu	manual_signature_review
+SUB o→a	24	24	0	3	642	དཔག	dpog	dpag	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གཏང་དཔག་ gtin dpog fur. gtin dpag ergründen.	manual_signature_review
+SUB o→a	24	24	0	3	642	དྲན	dron	dran	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དྲན་མ་ dron ma.	manual_signature_review
+SUB o→a	24	24	0	3	642	ནམས	noms	nams	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ནམས་ noms \snoms.	manual_signature_review
+SUB o→a	24	24	0	3	642	པགས	pogs	pags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྐས་པགས་ skas pogs stufenweise.	manual_signature_review
+SUB o→a	24	24	0	3	642	ཕྱགས	phyogs	phyags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མངན དུ་ཕྱགས mnon du phyogs.	manual_signature_review
+SUB o→a	24	24	0	3	642	བླན	blon	blan	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བླན་ཆེན་གུར་དཀར་ཕུག་ blon chen gur dkar phug	manual_signature_review
+SUB o→a	24	24	0	3	642	བླས	blos	blas	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བླས་འཇུན་ blos 'jun bewältigen, beherrschen,	manual_signature_review
+SUB o→a	24	24	0	3	642	ཚགས	tshogs	tshags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕུན་སུམ་ཚགས་པ phun sum tshogs pa Kurzf.	manual_signature_review
+SUB o→a	24	24	0	3	642	འཁར	khor	khar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གཏ་མུག་འཁར་ཡ་ gti mug khor lo Bez. für	manual_signature_review
+SUB o→a	24	24	0	3	642	འགག	gog	gag	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	རྣམ་འགག་ rnam gog	manual_signature_review
+SUB o→a	24	24	0	3	642	འཆམ	chom	cham	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འཆམ་བྱད་ ’chom byed übereinstimmen; vgl.	manual_signature_review
+SUB o→a	24	24	0	3	642	འཕྲད	phrod	phrad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འཕྲད་རྟན 'phrod rten	manual_signature_review
+SUB o→a	24	24	0	3	642	སྐས	skos	skas	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྐས་ skos imp. od. Nebenform zu !sko beauftra-	manual_signature_review
+DEL r	19	18	0	10	858	ཁབ	khrab	khab	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁབ་ཁྲིབ་ khrab khrib auch khrib khrib eine ho-	manual_signature_review
+DEL r	19	18	0	10	858	ཁུག	khrug	khug	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁུག་གིས་ khrug gis wirbelnd.	manual_signature_review
+DEL r	19	18	0	10	858	ཁུང	khrun	khuṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	ཁུང་ khrun resp. für chan. || ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.	manual_signature_review
+DEL r	19	18	0	10	858	ཁོམ	khrom	khom	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐང་ཁོམ་ thaṅ khrom \than phrom.	manual_signature_review
+DEL r	19	18	0	10	858	ཏེ	tre	te	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཏེ་མ་བུ་ཀ་ tre ma bu ka auch tre ma, tre ma bu	manual_signature_review
+DEL r	19	18	0	10	858	ཏོ	tro	to	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཏོ་པ་ཏི་ tro pa ti	manual_signature_review
+DEL r	19	18	0	10	858	དུག	drug	dug	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བྱཅུ་དུག་བདེ་བ་ beu drug bde ba „das sechzehnte	manual_signature_review
+DEL r	19	18	0	10	858	དོ	dro	do	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དགོང་དོ་ dgon dro Abend.	manual_signature_review
+DEL r	19	18	0	10	858	ཕྱེད	phryed	phyed	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	རྐེད་སྐབས་ཕྱེད་པ་ rked skabs phryed pa schmalhüf-	manual_signature_review
+DEL r	19	18	0	10	858	བཀལ	bkral	bkal	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བཀལ་ bkral	manual_signature_review
+DEL r	19	18	0	10	858	བམ	bram	bam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བམ།་ཟེའི་བུ་ bram ze'i bu Brahmanensohn. ScHuH 2012: 1496.	manual_signature_review
+DEL r	19	18	0	10	858	བེད	bred	bed	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བེད་ཤ་ཐོན་པ bred śa thon pa angstvoll, furcht-	manual_signature_review
+DEL r	19	18	0	10	858	བོང	borṅ	boṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བོང་ང་དཀར་པོ་ borṅ ra dkar po Kurzf. bori dkar	manual_signature_review
+DEL r	19	18	0	10	858	འབུམ	brum	bum	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དགུན་འབུམ་ dgun ’brum Weintraube.	manual_signature_review
+DEL r	19	18	0	10	858	རྨོག	rrmog	rmog	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	རྨོག་ཞྭ་ rrmog Helm.	manual_signature_review
+DEL r	19	18	0	10	858	སྐད	skrad	skad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཀཾ་སྐད་ ko skrad tko krad. ko mog gi ×.	manual_signature_review
+DEL r	19	18	0	10	858	སྒོམ	sgrom	sgom	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྒོམ་བུ་ sgrom bu Kästchen, Behälter.	manual_signature_review
+DEL r	19	18	0	10	858	སློ	sgro	sgo	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སློ་སྐུར་ sgro skur	manual_signature_review
+SUB ś→s	18	11	0	2	0	གཤེགས	gśegs	gsegs	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	ཀརྨ་པ་དེ་བཞིན་གཤེགས་པ ' karma pa de bZin gśegs pa || དེ་བཞིན་གཤེགས་པ་་ de bZin gśegs pa ... || བདེ་གཤེགས་ bde gśegs Tbde bar gśegs pa.	manual_signature_review
+SUB ś→s	18	11	0	2	0	གཤེད	gśed	gsed	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གདོན་གཤེད་ཁྲ་བོ་ gdon gśed khra bo	manual_signature_review
+SUB ś→s	18	11	0	2	0	གཤེར	gśer	gser	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དྲོད་གཤེར་ drod gśer	manual_signature_review
+SUB ś→s	18	11	0	2	0	བཤད	bśad	bsad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:2	ཀུན་བཤད་ kun bśad, Kurzf. von Tkun tn bśad pa || ཀྱོག་ཀྱོག་བཤད་པ་ kyog kyog bśad pa \kyog bśad.	manual_signature_review
+SUB ś→s	18	11	0	2	0	བཤིག	bśig	bsig	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	གྱོང་བཤིག་ gyoṅ bśig Zerstörung.	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤུགས	śugs	sugs	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཀརྨ་ཤུགས་ལྡན་ karma śugs ldan Emanation des	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤེད	śed	sed	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	ཁ་ཤེད་ kha śed eloquent, angeberisch. || ཁྲག་ཤེད་ khrag śed Blutdruck. || ཉེན་བུ་ཤེད་ nen bu śed stolz oder eingebildet	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤེལ	śel	sel	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:3	རྒྱང་ཤེལ་ rgyaṅ śel Fernglas, Fernrohr. || ཆུ་ཤེལ་དབང་པོ་ chu śel dbaṅ po auch chu śel gyi || ཆེ་ཤེལ་ che śel Lupe.	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤོག	śog	sog	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དུག་ཤོག་ dug śog Papier aus giftigen Pflanzen.	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤོད	śod	sod	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བཅུ་ཤོད་ bcu śod ein Recheninstrument.	manual_signature_review
+SUB ś→s	18	11	0	2	0	ཤོར	śor	sor	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཐོབ་ཤོར་ thob śor Verlust.	manual_signature_review
+SUB i→t	15	15	0	9	459	གཙེར	giser	gtser	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འགེལ་གཙེར་ gel giser	manual_signature_review
+SUB i→t	15	15	0	9	459	བཏེག	bieg	bteg	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བཏེག་ bieg	manual_signature_review
+SUB i→t	15	15	0	9	459	བཙལ	bisal	btsal	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁྲིམས་སུ་བཙལ་ khrims su bisal	manual_signature_review
+SUB i→t	15	15	0	9	459	བཙུན	bisun	btsun	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ koṅ lha koṅ bisun rgya la	manual_signature_review
+SUB i→t	15	15	0	9	459	བརྟགས	briags	brtags	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བརྟགས་ briags	manual_signature_review
+SUB i→t	15	15	0	9	459	བརྟུལ	briul	brtul	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་ khrus kyi briul zugs	manual_signature_review
+SUB i→t	15	15	0	9	459	བརྩོན	brison	brtson	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མངོན་པར་བརྩོན་པ་ mnon par brison pa An-	manual_signature_review
+SUB i→t	15	15	0	9	459	མཐའ	miha	mtha	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"གནམ་མཐའ་འག་ gram miha og ""unter dem"	manual_signature_review
+SUB i→t	15	15	0	9	459	ཚང	ishah	tshaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.	manual_signature_review
+SUB i→t	15	15	0	9	459	ཚབ	ishab	tshab	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྐུ་ཚབ་ sku ishab resp.	manual_signature_review
+SUB i→t	15	15	0	9	459	ཚུད	ishud	tshud	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ནང་ཚུད་ raṅ ishud innerhalb von, in.	manual_signature_review
+SUB i→t	15	15	0	9	459	རྟུལ	riul	rtul	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དབང་པོ་རྟུལ་ dbaṅ po riul	manual_signature_review
+SUB i→t	15	15	0	9	459	རྟོགས	riogs	rtogs	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མངོན་པར་རྟོགས་པ་ mnon par riogs pa ein-	manual_signature_review
+SUB i→t	15	15	0	9	459	རྩིས	risis	rtsis	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དམག་རྩིས་ dmag risis	manual_signature_review
+SUB i→t	15	15	0	9	459	རྩོམ	risom	rtsom	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཉེ་བར་ཡོངས་སུ་རྩོམ་ ie bar yons su risom ver-	manual_signature_review
+DEL b	13	13	0	1	709	ཁྱབ	khbyab	khyab	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	སྤྲི་ཁྱབ་མཁན་པོ་ spyi khbyab mkhan po eine	manual_signature_review
+DEL b	13	13	0	1	709	དུ	dbu	du	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i	manual_signature_review
+DEL b	13	13	0	1	709	བག	bbag	bag	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བག་གཞི་ bbag maj	manual_signature_review
+DEL b	13	13	0	1	709	བདུན	bbdun	bdun	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བདུན་བཅུ་ bbdun ben cu.	manual_signature_review
+DEL b	13	13	0	1	709	བུག	bbug	bug	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བུག་སྒོ་ bbug Loch, Eingang, Öffnung.	manual_signature_review
+DEL b	13	13	0	1	709	བུམ	bbum	bum	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བུམ་སྒྲུབ་ bbum sādhana mit einem Gefäß,	manual_signature_review
+DEL b	13	13	0	1	709	བོང	bboṅ	boṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བོང་ཆེ་ཆང་ bboṅ che \bons che (/)//7?.	manual_signature_review
+DEL b	13	13	0	1	709	བྲག	bbrag	brag	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བྲག་འགགས་ bbrag eng	manual_signature_review
+DEL b	13	13	0	1	709	བྲལ	bbral	bral	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བྲལ་ bbral fut. und imp. zu !'bral.	manual_signature_review
+DEL b	13	13	0	1	709	བླུག	bblug	blug	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བླུག་ bblug !blugs.	manual_signature_review
+DEL b	13	13	0	1	709	བླུགས	bblugs	blugs	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	"བླུགས་གཟར་ bblugs gzar auch gzar ""Gieß-"	manual_signature_review
+DEL b	13	13	0	1	709	འབུར	bbur	bur	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འབུར་འཇམ་ bbur jam unauffällig be-	manual_signature_review
+DEL b	13	13	0	1	709	འབོད	bbod	bod	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འབོད་སྒྲོག་ bbod sgrog auch 'bod cin Dä-	manual_signature_review
+DEL i	13	13	0	42	459	ཕྱམ	phyami	phyam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱམ་མེ་བ་ phyami me ba eben, flach.	manual_signature_review
+DEL i	13	13	0	42	459	བརྡ	brida	brda	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བརྡ་ཤེས་ཆེན་པོ་ brida ses chen po eine hohe Zahl.	manual_signature_review
+DEL i	13	13	0	42	459	བསད	bsiad	bsad	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བསད་ཡས་ bsiad yas „unaussprechlich“, eine	manual_signature_review
+DEL i	13	13	0	42	459	མགོན	migon	mgon	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	དཔལ་མགོན་ dpal migon.	manual_signature_review
+DEL i	13	13	0	42	459	མཐའ	mitha	mtha	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ནག་ཕྱོགས་མཐའ་ nag phyogs mitha' Bez. für den des Yama (Neb 85).	manual_signature_review
+DEL i	13	13	0	42	459	མཐར	imthar	mthar	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མཐར་འབྱིན་པ་ imthar 'byin pa beendend; vgl.	manual_signature_review
+DEL i	13	13	0	42	459	ཙནྡྲ	tsanidra	tsandra	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	བི་ག་མ་ཙནྡྲ་ bi ga ma tsanidra	manual_signature_review
+DEL i	13	13	0	42	459	ཙམ	tsami	tsam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕྱོགས་ཙམ་ phyogs tsami nur ein wenig, ein biß-	manual_signature_review
+DEL i	13	13	0	42	459	འདམ	dami	dam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	འདམ་རྩྭ་ 'dami rtswa Schilf.	manual_signature_review
+DEL i	13	13	0	42	459	རྐང	rkaṅi	rkaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	རྐང་སྐྱོབ་ rkaṅi skyob Schuh, Stiefel.	manual_signature_review
+DEL i	13	13	0	42	459	རྨ	rmia	rma	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	རྨ་སྲོལ་ rmia srol Wunde.	manual_signature_review
+DEL i	13	13	0	42	459	ལྕམ	lcami	lcam	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	ཕོ་ལྕམ་ pbo lcami	manual_signature_review
+DEL i	13	13	0	42	459	སྣང	snaṅi	snaṅ	independent_multi_context_canonical	ordinary_tibetan_lexical_or_compound:1	མཐའ་སྣང་ཆེན་པོ་ mtha’ snaṅi chen po eine hohe	manual_signature_review

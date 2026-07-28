@@ -424,11 +424,14 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         ROOT / "data/tibetan_latin_transcription_outliers.tsv"
     ))
     confusion_signatures = list(iter_tsv(
-        ROOT / "data/tibetan_latin_ocr_confusion_signatures.tsv"
+        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
     ))
     authorized_signatures = sum(
         item.get("authorization_status")
-        == "authorized_exact_tibetan_conditioned"
+        in {
+            "authorized", "authorized_role_conditioned",
+            "authorized_domain_conditioned",
+        }
         for item in confusion_signatures
     )
     initial_i_exact_note = (
@@ -655,12 +658,12 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "partially_applied",
             "none",
             "reviewed Tibetan-conditioned confusion signatures",
-            "scripts/build_tibetan_latin_syllable_concordance.py",
-            "data/tibetan_latin_ocr_confusion_signatures.tsv",
+            "scripts/build_tibetan_latin_syllable_concordance.py;scripts/build_tibetan_latin_ocr_signature_evidence.py;data/reviewed_tibetan_ocr_signature_decisions.tsv",
+            "data/tibetan_latin_ocr_signature_registry.tsv;data/tibetan_latin_authoritative_outlier_queue.tsv",
             authorized_signatures,
             len(confusion_signatures) - authorized_signatures,
             "unconditioned Latin replacement;edit-distance authorization",
-            f"{len(transcription_outliers)} current canonical outlier form(s) are decomposed diagnostically.",
+            f"{len(transcription_outliers)} current canonical outlier form(s) are decomposed; signature authority is learned from scoped reviewed evidence and persistent decisions.",
         ),
         row(
             "final_ng_insufficient_evidence_matrix",

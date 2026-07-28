@@ -38,10 +38,12 @@ def validate_authorization(
     signatures = {
         row["operation_signature"]
         for row in integrity.read_tsv(
-            ROOT / "data/tibetan_latin_ocr_confusion_signatures.tsv"
+            ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
         )
-        if row["authorization_status"]
-        == "authorized_exact_tibetan_conditioned"
+        if row["authorization_status"] in {
+            "authorized", "authorized_role_conditioned",
+            "authorized_domain_conditioned",
+        }
     }
     concordance_path = (
         ROOT / "scripts/build_tibetan_latin_syllable_concordance.py"
