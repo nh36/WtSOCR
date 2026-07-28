@@ -5825,7 +5825,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 70	22	410	german_prose_with_translit			none	2	2	0	0	Schlinge, Attribut von bdud-
 70	23	410	german_prose			none	0	2	0	0	Dämonen (Neb 18).
 70	24	410	tibetan_only			none	0	1	0	0	un: 57 a yipr 311༥: Ik: -
-70	25	411	headword_line	བདུད བཞི	bdud bZi	medium	3	2	0	0	བདུད བཞི bdud bZi die vier Märas: Skandha
+70	25	411	headword_line	བདུད བཞི	bdud bZi	medium	3	2	0	0	བདུད བཞི bdud bźi die vier Märas: Skandha
 70	26	411	german_prose_with_translit			none	1	1	0	0	Devaputramära (TsEPAK RIGDZIN 2003 s. v.).
 70	27	411	german_prose			none	0	3	0	0	mära, Klesamära, Mrtyupatimära,
 70	28	411	latin_other			none	5	0	0	0	byan chub sems dpa' ... ~ dag dan sa gñis
@@ -5849,7 +5849,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 70	46	412	latin_other			none	6	0	0	0	lha'i bwi bdud 'chi bdag gi —'o (brDa); ñon
 70	47	412	latin_other			none	7	0	0	0	mons pa'i bdud / 'chi bdag gi bdud / phun po'i
 70	48	412	german_prose_with_translit			none	4	1	0	0	bdud / lha'i bu'i bdud (Dagy).
-70	49	413	headword_line	བདུད་བཞི་བཅོམ་པ་	bdud bzi	medium	3	2	0	0	བདུད་བཞི་བཅོམ་པ་ bdud bzi bcom pa Bez. für
+70	49	413	headword_line	བདུད་བཞི་བཅོམ་པ་	bdud bzi	medium	3	2	0	0	བདུད་བཞི་བཅོམ་པ་ bdud bźi bcom pa Bez. für
 70	50	413	latin_other			none	1	0	0	0	Buddha.
 70	51	413	german_prose_with_translit			none	2	2	0	0	Lex. sans rgyas (brDa, Dagy).
 70	52	413	german_prose_with_translit			none	2	2	0	0	bdud zil gyis gron Bez. für
@@ -7674,7 +7674,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 92	29	592	german_prose_with_translit			none	1	4	0	0	"oder die Wahrheit beweisen"" (Dagy); bden"
 92	30	592	latin_other			none	5	0	0	0	"brdar ni dran po ""bden brdar: aufrichtg"""
 92	31	592	german_prose			none	0	1	0	0	(KlonD 741,5).
-92	32	593	headword_line	བདེན་པ་བཞི་	bden pa bZi	medium	4	3	0	0	བདེན་པ་བཞི་ bden pa bZi auch bden bäi die
+92	32	593	headword_line	བདེན་པ་བཞི་	bden pa bZi	medium	4	3	0	0	བདེན་པ་བཞི་ bden pa bźi auch bden bäi die
 92	33	593	german_prose			none	0	5	0	0	Vier Edlen Wahrheiten: das Leiden
 92	34	593	latin_other			none	2	0	0	0	(sdug bsṅal), seine Entstehung (kun byun),
 92	35	593	german_prose_with_translit			none	2	3	0	0	seine Aufhebung ('gog pa) und der Weg
@@ -24306,7 +24306,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 290	50	1638	german_prose_with_translit			none	2	4	0	0	"— dir gtogs pa'i sde che ba ""in der Nähe des"
 290	51	1638	german_prose			none	0	6	0	0	Landes Gha-hron [lebt] ein großer Klan, der
 290	52	1638	german_prose_with_translit			none	1	4	0	0	"zum Volk der Ja gehört"" (Sambh 1335)."
-290	53	1639	headword_line	སྡེ་ཚན་བཞི་པ	tshan bZi pa	high	4	1	0	0	སྡེ་ཚན་བཞི་པ sde tshan bZi pa Isde bźi
+290	53	1639	headword_line	སྡེ་ཚན་བཞི་པ	tshan bZi pa	high	4	1	0	0	སྡེ་ཚན་བཞི་པ sde tshan bźi pa Isde bźi
 290	54	1640	headword_line	སྡེ་ཚོགས་	tshogs	high	1	2	0	0	སྡེ་ཚོགས་ sde tshogs Gesellschaft, Verband,
 290	55	1640	german_prose			none	0	1	0	0	Verein.
 290	56	1640	german_prose_with_translit			none	4	1	0	0	"Lex. imiman po tshogs pa' sde ""Abteilung vie-"
@@ -24336,7 +24336,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 290	80	1643	headword_line	སྡེ་གཞོན་མ་	ma	medium	1	3	0	0	སྡེ་གཞོན་མ་ ssde ma Beiname der Göttin
 290	81	1643	german_prose			none	0	1	0	0	Umä.
 290	82	1643	german_prose_with_translit			none	2	3	0	0	Lex. !ba mo // mäb (brDa, Dagy).
-291	1	1644	headword_line	སྡེ་བཞི་	bzi	medium	1	0	0	0	སྡེ་བཞི་ sde bzi
+291	1	1644	headword_line	སྡེ་བཞི་	bzi	medium	1	0	0	0	སྡེ་བཞི་ sde bźi
 291	2	1645	headword_line	སྡེ་བཞི་	bźi	high	1	0	0	0	སྡེ་བཞི་ sde bźi.
 291	3	1645	tibetan_only			none	0	0	0	0	1. ༈$706.
 291	4	1645	german_prose_with_translit			none	2	4	0	0	2. Kurzf. für sde tshan bZi pa die vier Lebens-
@@ -60176,7 +60176,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 742	13	3758	german_prose_with_translit			none	2	5	0	0	"hab pa'i dus su ""als die fünf Pändavas mit"
 742	14	3758	german_prose			none	0	6	0	0	"den zwölf Armeen der Kauravas kämpften"""
 742	15	3758	german_prose			none	0	1	0	0	(Bu-Sz 1,11).
-742	16	3759	headword_line	དཔུང་བཞི་པ་	dpuṅ bZi pa	high	3	2	0	0	དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
+742	16	3759	headword_line	དཔུང་བཞི་པ་	dpuṅ bZi pa	high	3	2	0	0	དཔུང་བཞི་པ་ dpuṅ bźi pa Beiname Visnus.
 742	17	3759	german_prose_with_translit			none	2	2	0	0	Lex. khyab 'jug (brDa, Dagy).
 742	18	3760	headword_line	དཔུང་ཟོར་	dpuṅ	high	1	1	0	0	དཔུང་ཟོར་ dpuṅ zor magische Kraft.
 742	19	3760	latin_other			none	2	0	0	0	mgyogs ma khra mgos dpun zur (r. zor) dera
@@ -80555,7 +80555,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 990	9	5258	german_prose			none	0	3	0	0	Bußabgabe für den size mo beispielsweise
 990	10	5258	german_prose_with_translit			none	1	2	0	0	je ein phyi-mdzod-Zeremonialtuch zu spen-
 990	11	5258	german_prose			none	0	1	0	0	"den"" (MTH3/3/34 9)."
-990	12	5259	headword_line	ཕྱི་བཞི་	phyi bzi	high	2	1	0	0	ཕྱི་བཞི་ phyi bzi Zeuge.
+990	12	5259	headword_line	ཕྱི་བཞི་	phyi bzi	high	2	1	0	0	ཕྱི་བཞི་ phyi bźi Zeuge.
 990	13	5259	german_prose			none	0	1	0	0	Lex. bar dpan byed mikban (TTC).
 990	14	5259	other			none	0	0	0	0	a hg 7, ;
 990	15	5260	headword_line	ཕྱི་བཞིན་	phyi	high	2	2	0	0	ཕྱི་བཞིན་ phyi bin das Folgende; — rgyud mar
@@ -85183,7 +85183,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1046	28	5589	german_prose			none	0	1	0	0	"wenn man aus Parteilichkeit darauf vertraut"""
 1046	29	5589	german_prose			none	0	1	0	0	(Tär 185,1).
 1046	30	5589	tibetan_only	༨ ༤༨		none	0	0	0	0	༨ ༤༨ 2 , ` oo. .
-1046	31	5590	headword_line	ཕྱོགས་བཞི་	phyogs bZi	high	2	3	0	0	ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-
+1046	31	5590	headword_line	ཕྱོགས་བཞི་	phyogs bZi	high	2	3	0	0	ཕྱོགས་བཞི་ phyogs bźi die vier Seiten, Richtun-
 1046	32	5590	german_prose			none	0	3	0	0	gen, die vier Himimels- bzw. Haupt-
 1046	33	5590	latin_other			none	1	0	0	0	himmelsrichtungen.
 1046	34	5590	latin_other			none	5	0	0	0	"~r dge 'dun spyan 'dren pa'i pho ña ""Bo-"

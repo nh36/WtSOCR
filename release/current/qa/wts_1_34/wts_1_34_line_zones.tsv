@@ -3041,7 +3041,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 35	201	50	latin_other			none	2	0	0	0	kod ru thur (ka)
 35	203	50	german_prose_with_translit			none	1	5	0	0	N. einer Lokalgottheit in Byan-rgyud (Neb
 35	204	50	other			none	0	0	0	0	228).
-35	206	51	headword_line	ཀ་ཆེན་བཞི་	ka	medium	3	3	0	0	ཀ་ཆེན་བཞི་ ka chen bzi (ka) „die vier großen
+35	206	51	headword_line	ཀ་ཆེན་བཞི་	ka	medium	3	3	0	0	ཀ་ཆེན་བཞི་ ka chen bźi (ka) „die vier großen
 35	208	51	german_prose			none	0	5	0	0	Säulen“, Bez. für die besten Schüler
 35	210	51	german_prose_with_translit			none	1	7	0	0	großer Meister, z. B. des Mar-pa; vgl. ka chen 2.
 35	212	51	german_prose_with_translit			none	5	2	0	0	— zes pa / Sar gyi ka chen / dol gyi mtshur ston
@@ -3736,7 +3736,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 40	93	151	german_prose_with_translit			none	3	2	0	0	Hinayäna“ (Nel 1135); ska ba dpal brtsegs ... la
 40	94	151	german_prose_with_translit			none	2	1	0	0	gser phye bskur „er gab dem sKa-ba dPal-
 40	95	151	german_prose_with_translit			none	1	3	0	0	brtsegs ... Goldstaub mit“ (Padm 286b1).
-40	97	152	headword_line	ཀ་བ་བཞི་	ka ba bzi ka	medium	4	3	0	0	ཀ་བ་བཞི་ ka ba bzi (*ka) „die vier Säulen“, Bez.
+40	97	152	headword_line	ཀ་བ་བཞི་	ka ba bzi ka	medium	4	3	0	0	ཀ་བ་བཞི་ ka ba bźi (*ka) „die vier Säulen“, Bez.
 40	99	152	german_prose			none	0	5	0	0	für die besten Schüler großer Meister,
 40	101	152	german_prose_with_translit			none	2	4	0	0	z.B. des Klu-mes 'lshul-khrims śes-rab und
 40	103	152	german_prose_with_translit			none	2	3	0	0	des Sum-pa Ye-śes blo-gros: 1. rDog Byan-
@@ -15705,7 +15705,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 120	96	1476	german_prose_with_translit			none	4	1	0	0	chen po dka’ se ba „Unglück, sehr schwieriges
 120	97	1476	german_prose_with_translit			none	2	2	0	0	Tun, Schwierigkeit“ (brDa); — che = dka’
 120	98	1476	german_prose_with_translit			none	1	1	0	0	sdug che ba (Dagy).
-120	100	1477	headword_line	དཀའ་བཞི་དགོན་	dka’ bzi dgon	high	6	1	0	0	དཀའ་བཞི་དགོན་ dka’ bzi dgon auch mi fing dka’ bzi
+120	100	1477	headword_line	དཀའ་བཞི་དགོན་	dka’ bzi dgon	high	6	1	0	0	དཀའ་བཞི་དགོན་ dka’ bźi dgon auch mi fing dka’ bzi
 120	102	1477	german_prose_with_translit			none	1	3	0	0	dgon npr. Kloster der Sa-skya-pa.
 120	104	1477	german_prose_with_translit			none	4	1	0	0	mi ag gi yul yod pa der mi rag — sogs sa skya
 120	106	1477	german_prose_with_translit			none	5	2	0	0	pa dan ... dgon pa man po ... yod „im Lande
@@ -18880,7 +18880,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 142	186	1782	german_prose			none	0	2	0	0	‚ich war es nicht! er war es!‘ [sagend] neue
 142	187	1782	german_prose_with_translit			none	1	3	0	0	Einfälle produziert und durch eine Eingabe
 142	188	1782	german_prose			none	0	1	0	0	Urkunden erwirkt usw.“ (MTH3/5/30r 11).
-142	190	1783	headword_line	བཀའ་བཞི་པ་	bka’ bzi pa	high	3	2	0	0	བཀའ་བཞི་པ་ bka’ bzi pa „jemand, der vier Schrif-
+142	190	1783	headword_line	བཀའ་བཞི་པ་	bka’ bzi pa	high	3	2	0	0	བཀའ་བཞི་པ་ bka’ bźi pa „jemand, der vier Schrif-
 142	192	1783	german_prose			none	0	1	0	0	ten studiert hat“, ein akademischer
 142	193	1783	german_prose_with_translit			none	2	3	0	0	Titel (Jackson 2007); vgl. 1bka’ bcu pa.
 142	194	1783	german_prose_with_translit			none	6	1	0	0	de rjes mkhan po bka’ bzi ba (r. pa) grags gäon
@@ -45213,7 +45213,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 322	117	4392	german_prose_with_translit			none	2	2	0	0	ldan pa Beiname des
 322	118	4392	german_prose			none	0	1	0	0	Manjughosa.
 322	120	4392	german_prose_with_translit			none	3	2	0	0	Lex. Jam pa’i dbyans (brDa).
-322	122	4393	headword_line	འཁོར་ལོ་བཞི་	khor lo bzi	high	3	4	0	0	འཁོར་ལོ་བཞི་ ’khor lo bzi Bez. für die vier Vor-
+322	122	4393	headword_line	འཁོར་ལོ་བཞི་	khor lo bzi	high	3	4	0	0	འཁོར་ལོ་བཞི་ ’khor lo bźi Bez. für die vier Vor-
 322	123	4393	german_prose_with_translit			none	1	1	0	0	aussetzungen zur erfolgreichen
 322	124	4393	german_prose_with_translit			none	2	1	0	0	Ausübung des Dharma.
 322	126	4393	german_prose_with_translit			none	2	3	0	0	Lex. bses gen bsten pa sogs „sich an einen
@@ -53708,7 +53708,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 381	115	5027	german_prose_with_translit			none	6	1	0	0	btsug Zes pa ni gru rdziṅ gi phyar dar ram
 381	116	5027	german_prose			none	0	4	0	0	rlun g.yor „Segel setzen bedeutet: Segel des
 381	117	5027	german_prose			none	0	4	0	0	Bootes oder Windsegel“ (KlonD 726,4).
-381	119	5028	headword_line	གྲུ་བཞི་	bZi	medium	2	1	0	0	གྲུ་བཞི་ gru bZi auch ~ pa viereckig, quadra-
+381	119	5028	headword_line	གྲུ་བཞི་	bZi	medium	2	1	0	0	གྲུ་བཞི་ gru bźi auch ~ pa viereckig, quadra-
 381	120	5028	tibetan_only	པེ		none	0	1	0	0	པེ tisch.
 381	122	5028	latin_other			none	8	0	0	0	khan pa brisegs pa / - ka ba bZi daṅ ldan pa
 381	123	5028	german_prose_with_translit			none	1	3	0	0	/ cha kun in mAam pa „ein mehrstöckiges
@@ -56070,13 +56070,13 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 396	175	5201	german_prose_with_translit			none	3	3	0	0	glin phran „im chos ’khor von bSam-yas ist
 396	176	5201	german_prose			none	0	5	0	0	eine Kuppel mit drei Stockwerken, den glin
 396	177	5201	german_prose_with_translit			none	1	1	0	0	bZi und glin phran“ (gNas 7,3).
-396	178	5202	headword_line	ང་བཞི་ལྟེ་བ་	bZi	medium	3	3	0	0	ང་བཞི་ལྟེ་བ་ glin bZi Ite ba auch glin bZi’i Ite
+396	178	5202	headword_line	ང་བཞི་ལྟེ་བ་	bZi	medium	3	3	0	0	ང་བཞི་ལྟེ་བ་ glin bźi Ite ba auch glin bZi’i Ite
 396	180	5202	german_prose_with_translit			none	1	3	0	0	ba der Berg Meru.
 396	182	5202	other			none	0	0	0	0	239
 396	184	5202	german_prose_with_translit			none	5	2	0	0	Lex. ri rab lhun po (brDa); glin bzi’i Ite ba =
 396	185	5202	german_prose_with_translit			none	2	1	0	0	77 rab lhun po (Dagy).
 396	187	5202	other			none	0	0	0	0	229
-396	189	5203	headword_line	ང་བཞི་ཌྡེགས་པ་	bZi	medium	2	3	0	0	ང་བཞི་ཌྡེགས་པ་ glin bZi ldegs pa Bez. für Erde
+396	189	5203	headword_line	ང་བཞི་ཌྡེགས་པ་	bZi	medium	2	3	0	0	ང་བཞི་ཌྡེགས་པ་ glin bźi ldegs pa Bez. für Erde
 396	190	5203	latin_other			none	1	0	0	0	(mDzodG 51,18).
 396	192	5203	other			none	0	0	0	0	2
 396	194	5203	other			none	0	0	0	0	SAN
@@ -66584,7 +66584,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 467	145	6056	headword_line	རྒྱན་ཕྲེང་	rgyan phreh	high	4	2	0	0	རྒྱན་ཕྲེང་ rgyan phreṅ auch rgyan ’phreṅ Hals-
 467	146	6056	other			none	0	0	0	0	kette.
 467	147	6056	german_prose_with_translit			none	1	3	0	0	Lex. ~ (v.1. ’phren) = härah (Mvy 6011).
-467	148	6057	headword_line	རྒྱན་བཞི་	rgyan bZi	high	3	3	0	0	རྒྱན་བཞི་ rgyan bZi auch rgyan 97/ Seide, Bro-
+467	148	6057	headword_line	རྒྱན་བཞི་	rgyan bZi	high	3	3	0	0	རྒྱན་བཞི་ rgyan bźi auch rgyan 97/ Seide, Bro-
 467	149	6057	other			none	0	0	0	0	kat.
 467	150	6057	german_prose_with_translit			none	1	4	0	0	Lex. gos chen Zig (Dagy); rgyan gZi = gos
 467	151	6057	german_prose_with_translit			none	1	1	0	0	chen (brDa).
@@ -72624,7 +72624,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 510	90	6592	german_prose_with_translit			none	2	1	0	0	Lex. brgya sbyin (brDa).
 510	91	6592	german_prose			none	0	6	0	0	3. Bez. für den Vajra des Indra.
 510	92	6592	german_prose_with_translit			none	4	3	0	0	Lex. brgya sbyin rdo rje (brDa, ähnl. Dagy).
-510	94	6593	headword_line	བྱྱ་བཞི་	brgya bZi	high	2	3	0	0	བྱྱ་བཞི་ brgya bZi eine Zeremonie, um einen
+510	94	6593	headword_line	བྱྱ་བཞི་	brgya bZi	high	2	3	0	0	བྱྱ་བཞི་ brgya bźi eine Zeremonie, um einen
 510	95	6593	german_prose			none	0	4	0	0	Kranken zu heilen oder Gefahren
 510	96	6593	german_prose			none	0	1	0	0	abzuwenden (Neb 523 ff.).
 510	98	6593	german_prose_with_translit			none	1	3	0	0	= ser säin (metr.) „brGya-bzi und Ses-rab
@@ -87151,7 +87151,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 605	87	7439	german_prose_with_translit			none	4	3	0	0	Lex. al byed kyi bre beu Son ba’i ’bo la „für:
 605	88	7439	german_prose_with_translit			none	1	4	0	0	ein ’bo, in das beim Messen 10 bre passen“
 605	89	7439	german_prose			none	0	1	0	0	(Dagy).
-605	91	7440	headword_line	བཅུ་བཞི་སྟོན་	bZi	medium	1	3	0	0	བཅུ་བཞི་སྟོན་ beu bZi ston Festmahl am 14. Tag
+605	91	7440	headword_line	བཅུ་བཞི་སྟོན་	bZi	medium	1	3	0	0	བཅུ་བཞི་སྟོན་ beu bźi ston Festmahl am 14. Tag
 605	93	7440	german_prose_with_translit			none	1	1	0	0	des Monats.
 605	95	7440	german_prose			none	0	3	0	0	Lex. cäturdasikam (Mvy 5759).
 605	97	7440	tibetan_only	བཅུ་འོག་		none	0	3	0	0	བཅུ་འོག་ beu ’og Bez. der Unterwelt.
@@ -96033,10 +96033,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 664	104	8048	german_prose			none	0	4	0	0	Schwester und ältere Schwester, erscheint
 664	105	8048	german_prose_with_translit			none	1	5	0	0	auch als Bez. für Mädchen“ (brDa); srin
 664	107	8048	other			none	0	0	0	0	266
-664	109	8049	headword_line	ཆེ་བཞི་	bzi	medium	1	0	0	0	ཆེ་བཞི་ che bzi
+664	109	8049	headword_line	ཆེ་བཞི་	bzi	medium	1	0	0	0	ཆེ་བཞི་ che bźi
 664	111	8049	german_prose_with_translit			none	4	1	0	0	mo’i min (Dagy); ~ ni a che’am sriṅ mo (1 15
 664	112	8049	german_prose_with_translit			none	2	1	0	0	23,6); che Zi = bza’ zla’i min (TTC).
-664	114	8050	headword_line	ཆེ་བཞི་	bZi	medium	1	2	0	0	ཆེ་བཞི་ che bZi auch che gZi Zeuge.
+664	114	8050	headword_line	ཆེ་བཞི་	bZi	medium	1	2	0	0	ཆེ་བཞི་ che bźi auch che gZi Zeuge.
 664	115	8050	german_prose_with_translit			none	3	3	0	0	Lex. dpan po (brDa, ähnl. Dagy); dban por
 664	117	8050	latin_other			none	3	0	0	0	(v. 1. po) ’dris (v. 1. dris) pa’am ~ rmas pa =
 664	118	8050	german_prose_with_translit			none	2	2	0	0	säksiprstamänam (Mvy 6993); - ni bden
@@ -98768,7 +98768,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 680	155	8222	german_prose_with_translit			none	2	3	0	0	lam can „jmd., der den Dharma ausübt,
 680	156	8222	german_prose			none	0	3	0	0	oder jmd. mit heilvollen Gedanken, jmd.,
 680	158	8222	other			none	0	0	0	0	299
-680	160	8223	headword_line	ཆོས་བཞི་	chos bzi	medium	2	0	0	0	ཆོས་བཞི་ chos bzi
+680	160	8223	headword_line	ཆོས་བཞི་	chos bzi	medium	2	0	0	0	ཆོས་བཞི་ chos bźi
 680	162	8223	german_prose_with_translit			none	2	3	0	0	der den Dharma ausübt“ (brDa).
 680	164	8223	german_prose			none	0	4	0	0	2. Mönchstitel, der mit Privilegien verbun-
 680	165	8223	german_prose			none	0	4	0	0	den ist; auch Namensbestandteil.
@@ -103934,7 +103934,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 715	62	8572	german_prose_with_translit			none	3	1	0	0	gressiv“ (Mil 27,27); ~ kyi gter kha nas byun
 715	63	8572	german_prose_with_translit			none	1	4	0	0	ba „aus der Schatzmine des Jo-sras zum
 715	64	8572	german_prose			none	0	2	0	0	Vorschein gekommen“ (MigTo 191,27).
-715	66	8573	headword_line	ཇོ་སུས་བཞི་	bZi	medium	1	4	0	0	ཇོ་སུས་བཞི་ jo sras bZi Bez. für die vier Schüler
+715	66	8573	headword_line	ཇོ་སུས་བཞི་	bZi	medium	1	4	0	0	ཇོ་སུས་བཞི་ jo sras bźi Bez. für die vier Schüler
 715	68	8573	german_prose_with_translit			none	1	2	0	0	des Phya-pa Chos-kyi sen-ge.
 715	70	8573	latin_other			none	3	0	0	0	’khon jo sras rtse mo / rhog jo sras ra mo /
 715	71	8573	latin_other			none	3	0	0	0	khu jo sras ne tso / gfos jo sras dpal bZi la ~
@@ -133759,7 +133759,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 921	192	10158	german_prose			none	0	2	0	0	Juwelen [usw.]“ (ScpBy 47).
 921	194	10158	german_prose			none	0	3	0	0	3. Bez. für Wasser.
 921	196	10158	german_prose			none	0	2	0	0	Lex. vana (Ak 61.18).
-921	198	10159	headword_line	རྟེན་པ་བཞི་	rten pa bZi	high	3	2	0	0	རྟེན་པ་བཞི་ rten pa bZi die vier Verhaltens-
+921	198	10159	headword_line	རྟེན་པ་བཞི་	rten pa bZi	high	3	2	0	0	རྟེན་པ་བཞི་ rten pa bźi die vier Verhaltens-
 921	199	10159	german_prose			none	0	3	0	0	grundlagen eines Tarhägara; vgl.
 921	200	10159	german_prose			none	0	1	0	0	BHSD s. ¥. apäsrayana.
 921	202	10159	german_prose_with_translit			none	3	3	0	0	Lex. ~ daṅ ldan pa = caturapäsrayanah (Mvy
@@ -166136,7 +166136,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1188	75	12461	german_prose_with_translit			none	3	2	0	0	4. die vier Weltzeitalter: Irdzogs ldan gyi dus,
 1188	76	12461	german_prose_with_translit			none	4	1	0	0	gsum ldan gyi dus, 1973 ldan dus und !rtsod
 1188	77	12461	german_prose_with_translit			none	1	1	0	0	pa’i dus; vgl. SCHUH 2012: 1415.
-1188	79	12462	headword_line	དུས བཞི་ལྷ་མོ	bZi lha	high	4	1	0	0	དུས བཞི་ལྷ་མོ dus bZi lha mo auch dus kyi rgyal
+1188	79	12462	headword_line	དུས བཞི་ལྷ་མོ	bZi lha	high	4	1	0	0	དུས བཞི་ལྷ་མོ dus bźi lha mo auch dus kyi rgyal
 1188	81	12462	german_prose			none	0	4	0	0	mo die Gottheiten der Jahreszei-
 1188	82	12462	latin_other			none	4	0	0	0	ten: dPyid-kyi rgyal-mo, dByar-gyi rgyal-
 1188	83	12462	german_prose_with_translit			none	3	1	0	0	mo, sTon-gyi rgyal-mo und dGun-gyi rgyal-

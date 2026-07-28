@@ -154,7 +154,7 @@ target_changed	wts_1_34	244	160	4	ཕྱང	phyun	phyuṅ		source_compatible_str
 target_changed	wts_1_34	245	60	2	ཉུང	run	ruṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཁ་ཉུང་ kha run wortkarg.
 category_changed	wts_1_34	248	148	2	ནིང	nin	niṅ	niṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ནིང་ kha nin letztes Jahr.
 target_changed	wts_1_34	250	109	2	ཕྱང	byan	byaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	།ཁ་ཕྱང་བ་ kha byan ba
-category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
+category_changed	wts_1_34	253	1	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁ་ཞེང་ kha Zen rag kha bzla །ཁ་ཏའུར་ kha ’ur ཁ་ཡིག་ kha yig
 target_changed	wts_1_34	256	35	4	སང	Ton	Toṅ		source_compatible_marker_attached	source_compatible_marker_attached	0	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
 disappeared	wts_1_34	256	80	2	སློང	slon	sloṅ		source_compatible_insufficient_evidence			ཁ་སློང་ kha slon pf. lkha bslans ergänzen.
 target_changed	wts_1_34	257	53	1	ཁང	kan	kaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཁང་ཁུང་ kan khuṅ
@@ -271,8 +271,8 @@ category_changed	wts_1_34	392	201	2	ཤང	sin	siṅ	siṅ	source_compatible_str
 target_changed	wts_1_34	394	183	1	གྲུང	glan	glaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གྲུང་པོའི་རྒྱལ་པོ་ glan po’i rgyal po Bez. für den
 target_changed	wts_1_34	396	122	1	གླང	glin	gliṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	གླང་ཕྲན་ glin phran.
 category_changed	wts_1_34	396	168	1	གླིང	elin	eliṅ	eliṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླིང་བཞི་ elin bäi.
-target_changed	wts_1_34	396	178	1	ང	glin	gliṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ང་བཞི་ལྟེ་བ་ glin bZi Ite ba auch glin bZi’i Ite
-target_changed	wts_1_34	396	189	1	ང	glin	gliṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ང་བཞི་ཌྡེགས་པ་ glin bZi ldegs pa Bez. für Erde
+target_changed	wts_1_34	396	178	1	ང	glin	gliṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ང་བཞི་ལྟེ་བ་ glin bźi Ite ba auch glin bZi’i Ite
+target_changed	wts_1_34	396	189	1	ང	glin	gliṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ང་བཞི་ཌྡེགས་པ་ glin bźi ldegs pa Bez. für Erde
 category_changed	wts_1_34	398	118	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་གཞི་ glen gäi.
 category_changed	wts_1_34	398	154	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་བསླང་བ་ glen bslaṅ ba Einleitung.
 category_changed	wts_1_34	398	165	1	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གླེང་བསླངས་པ་ glen bslans pa eingeleitet.
@@ -446,10 +446,10 @@ category_changed	wts_1_34	645	205	4	བྱང	byun	byuṅ	byuṅ	source_compatib
 category_changed	wts_1_34	645	94	2	འཆེང	chin	chiṅ	chiṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཆ་འཆེང་ chu ’chin Bez. für Dach, chinesisches
 target_changed	wts_1_34	646	141	2	འབུང	thun	thuṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ཆུ་འབུང་ chu ’thun.
 category_changed	wts_1_34	649	103	2	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	ཆུ་འབྱང་ chu ’byun Bez. für die Zahl 54.
-category_changed	wts_1_34	651	56	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa
+category_changed	wts_1_34	651	56	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa
 target_changed	wts_1_34	651	78	2	ཞང	Zin	Ziṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཆུ ཞང་ chu Zin Reisfeld.
-category_changed	wts_1_34	651	81	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་ chu Zen Länge und Breite, Umfang.
-category_changed	wts_1_34	651	90	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_transcription_integrity_blocked	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa Umfang; wohl-
+category_changed	wts_1_34	651	81	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་ chu Zen Länge und Breite, Umfang.
+category_changed	wts_1_34	651	90	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa Umfang; wohl-
 target_changed	wts_1_34	654	115	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཆུ་ཤང་ཆ cha Sin ma.
 target_changed	wts_1_34	654	51	2	ཤང	Sin	Siṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཆུ་ཤང་ ch Sin.
 target_changed	wts_1_34	655	124	3	གྲང	gron	groṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer

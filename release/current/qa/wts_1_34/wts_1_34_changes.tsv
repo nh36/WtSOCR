@@ -28930,3 +28930,20 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 731	190	8906	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
 1018	20	11404	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	ཐུན་ཚོད་དུ་རུང་བ་ thun tshod du run ba „eine
 1192	1	12735	headword_line	run	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	དུས་སུ་རུང་བ་ dus su run ba
+35	206	51	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཀ་ཆེན་བཞི་ ka chen bzi (ka) „die vier großen
+40	97	152	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཀ་བ་བཞི་ ka ba bzi (*ka) „die vier Säulen“, Bez.
+120	100	1516	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དཀའ་བཞི་དགོན་ dka’ bzi dgon auch mi fing dka’ bzi
+142	190	1826	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བཀའ་བཞི་པ་ bka’ bzi pa „jemand, der vier Schrif-
+322	122	4442	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འཁོར་ལོ་བཞི་ ’khor lo bzi Bez. für die vier Vor-
+381	119	5107	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	གྲུ་བཞི་ gru bZi auch ~ pa viereckig, quadra-
+396	178	5308	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ང་བཞི་ལྟེ་བ་ glin bZi Ite ba auch glin bZi’i Ite
+396	189	5309	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ང་བཞི་ཌྡེགས་པ་ glin bZi ldegs pa Bez. für Erde
+467	148	6169	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྒྱན་བཞི་ rgyan bZi auch rgyan 97/ Seide, Bro-
+510	94	6715	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བྱྱ་བཞི་ brgya bZi eine Zeremonie, um einen
+605	91	7573	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བཅུ་བཞི་སྟོན་ beu bZi ston Festmahl am 14. Tag
+664	109	8213	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཆེ་བཞི་ che bzi
+664	114	8214	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཆེ་བཞི་ che bZi auch che gZi Zeuge.
+680	160	8388	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཆོས་བཞི་ chos bzi
+715	66	8749	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཇོ་སུས་བཞི་ jo sras bZi Bez. für die vier Schüler
+921	198	10370	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྟེན་པ་བཞི་ rten pa bZi die vier Verhaltens-
+1188	79	12721	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དུས བཞི་ལྷ་མོ dus bZi lha mo auch dus kyi rgyal

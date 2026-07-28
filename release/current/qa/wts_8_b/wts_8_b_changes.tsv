@@ -3032,3 +3032,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 493	24	2667	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
 102	59	504	tibetan_only	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	བུར་ཏིང་ bur tin.
 398	42	2186	headword_line	Zaṅ	źaṅ	A	reviewed_tibetan_exact_transcription_integrity	1	དབོན་ཞང་ dbon Zaṅ Neffe und Onkel, auch
+207	32	1114	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ནྲ་གྱིས་བརླབ་པ་བཞི་ byin gis brlab pa bzi
+468	40	2545	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྱུང་འགྱུར་བཞི་ 'byuṅ 'gyur bZi Bez. für die
+491	17	2664	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྲས་བུ་བཞི་ 'bras bu bzi die vier aufeinander-

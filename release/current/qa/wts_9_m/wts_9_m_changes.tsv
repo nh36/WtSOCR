@@ -2112,3 +2112,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 254	15	1104	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མོང་གོལ་གན་ moṅ gol gan auch mon gor
 254	24	1105	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མོང་རྟུལ་ moṅ rtul auch mon brtul dumm,
 316	79	1408	headword_line	rdzin	rdziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དམུ་རྫིང dmu rdzin.
+251	16	1093	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	མོ་བཙུན་རྩིས་བཞི་ mo btsun rtsis bZi ein Kalku-

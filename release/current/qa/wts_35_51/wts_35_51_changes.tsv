@@ -6438,3 +6438,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1015	19	5423	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
 1015	36	5425	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
 499	11	2532	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གནམ་དགུང་ gnam dgun.
+70	25	411	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདུད བཞི bdud bZi die vier Märas: Skandha
+70	49	413	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདུད་བཞི་བཅོམ་པ་ bdud bzi bcom pa Bez. für
+92	32	593	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདེན་པ་བཞི་ bden pa bZi auch bden bäi die
+290	53	1641	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	སྡེ་ཚན་བཞི་པ sde tshan bZi pa Isde bźi
+291	1	1646	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	སྡེ་བཞི་ sde bzi
+742	16	3767	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
+990	12	5269	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱི་བཞི་ phyi bzi Zeuge.
+1046	31	5600	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-

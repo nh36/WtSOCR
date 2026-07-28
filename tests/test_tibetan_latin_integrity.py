@@ -62,6 +62,21 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
                          "source_variant_requires_manual_review")
         self.assertEqual(result["transcription_gateway_status"], "blocked")
 
+    def test_bzhi_root_feature_family_is_exact_and_not_global(self) -> None:
+        line = next(
+            row["line_text"]
+            for row in integrity.read_tsv(
+                ROOT / "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv"
+            )
+            if row["page"] == "35" and row["line"] == "206"
+        )
+        self.assertIn("ka chen bźi", line)
+        self.assertNotIn("ka chen bzi", line)
+        unrelated = integrity.token_integrity("ཀ", "bZi")
+        self.assertNotEqual(
+            unrelated["transcription_gateway_status"], "pass"
+        )
+
     def test_role_parser_does_not_claim_full_transliteration(self) -> None:
         roles = integrity.tibetan_roles("གཞུང")
         self.assertEqual(roles["root_consonant"], "ཞ")
