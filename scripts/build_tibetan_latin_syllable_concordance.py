@@ -507,6 +507,41 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                     "historical_observation",
                 "context_excerpt": historical_row.get("context_excerpt", ""),
             })
+            # The concordance inventories observations, not only current
+            # release tokens.  Keep the reviewed historical source visible
+            # with zero current-clean weight so its immutable observation and
+            # non-teaching interpretation remain auditable together.
+            concordance.append({
+                "tibetan_syllable": (
+                    disposition["tibetan_syllable"]
+                    or historical_row.get("tibetan_syllable", "")
+                ),
+                "latin_form": disposition["observed_source"],
+                "current_clean_occurrences": "0",
+                "historical_baseline_occurrences": "1",
+                "distinct_volumes": "",
+                "distinct_entry_clusters": "0",
+                "reviewed_exact_occurrences": "1",
+                "explicit_user_reviewed_occurrences": "0",
+                "google_adopted_occurrences": "0",
+                "other_postprocess_occurrences": "0",
+                "superseded_occurrences": "0",
+                "damaged_occurrences": "0",
+                "marker_attached_occurrences": "0",
+                "domain_breakdown": "historical_observation:1",
+                "alignment_breakdown": "historical_observation:1",
+                "gateway_breakdown": "blocked:1",
+                "boundary_breakdown": "historical_observation:1",
+                "known_feature_violation_breakdown": "yes:1",
+                "correction_evidence_scope":
+                    f'{disposition["evidence_scope"]}:1',
+                "provenance_breakdown": "historical_observation:1",
+                "canonical_teaching_breakdown": "not_teaching_evidence:1",
+                "independent_teaching_occurrences": "0",
+                "independent_teaching_volumes": "",
+                "independent_teaching_clusters": "0",
+                "sample_contexts": historical_row.get("context_excerpt", ""),
+            })
             teaching_keys.add(teaching_key)
 
     by_syllable: dict[str, list[dict[str, str]]] = defaultdict(list)

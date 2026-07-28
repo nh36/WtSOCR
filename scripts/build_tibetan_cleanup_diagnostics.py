@@ -982,9 +982,21 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 def write_tsv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, delimiter="\t", fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(
+            f, delimiter="\t", fieldnames=fields, extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
-        writer.writerows(rows)
+        terminal_field = fields[-1]
+        for row in rows:
+            output_row = dict(row)
+            # A terminal empty field is serialized as a trailing tab, which
+            # fails repository whitespace validation and makes regenerated
+            # diagnostics appear malformed.  Preserve the audited absence
+            # explicitly instead.
+            if not output_row.get(terminal_field, ""):
+                output_row[terminal_field] = "none"
+            writer.writerow(output_row)
 
 
 def iter_corrected_lines(path: Path):
@@ -1327,6 +1339,15 @@ def build_google_candidates(run_dir: Path, volume: str, registry: dict[str, list
     for row in read_tsv(path) if path else []:
         candidate = classify_google_row(row, volume, registry)
         if candidate:
+            # Keep absent alignment provenance explicit.  Empty terminal TSV
+            # fields produce trailing-tab churn and obscure whether provenance
+            # was checked or merely unavailable.
+            for field in (
+                "alignment_method",
+                "alignment_attribution",
+                "resynchronization_attribution",
+            ):
+                candidate[field] = candidate.get(field, "") or "not_recorded"
             rows.append(candidate)
     return rows
 

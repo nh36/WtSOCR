@@ -28971,3 +28971,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 901	53	10116	headword_line	btani	btaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བཏང་ btani
 1012	108	11306	headword_line	gsani	gsaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཐུགས་གཏེར་གསང་་ thugs gter gsani ...
 1028	12	11548	headword_line	brani	braṅ	A	reviewed_tibetan_exact_ocr_signature	1	བེའུ་བྲང་ the’u brani auch the braṅ eine Gruppe
+124	3	1564	headword_line	rgyani	rgyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyani grags auch dkar
+248	148	3283	headword_line	nin	niṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཁ་ནིང་ kha nin letztes Jahr.
+340	15	4667	headword_line	Zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	གང་ཞིག་ gaṅ Zig auch gaṅ cig, gar (79.
+464	73	6116	headword_line	Zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	རྒྱ་ཞིག་ rgya Zig Schädelnaht.
+580	108	7395	headword_line	Zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir
+580	169	7396	headword_line	Zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir wozu?
+811	181	9615	headword_line	than	thaṅ	A	reviewed_tibetan_exact_ocr_signature	1	མཉེས་ཐང་ möes than npr. eine Gegend.
+915	108	10268	headword_line	gZon	gźon	A	reviewed_tibetan_exact_ocr_signature	1	རྟག་ཏུ་གཞོན་ནུ་ rtag tu gZon nu Beiname der

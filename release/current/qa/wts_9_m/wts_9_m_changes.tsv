@@ -2116,3 +2116,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 330	63	1479	tibetan_only	rmani	rmaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྨང་ 'rmani auch rmans, rmen Fundament,
 331	1	1479	tibetan_only	rmani	rmaṅ	A	reviewed_tibetan_exact_ocr_signature	1	"རྨང་ ""rmani"
 332	2	1483	tibetan_only	rmani	rmaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྨང་ལམ་ rmani lam Traum.
+273	44	1193	headword_line	myani	myaṅ	A	reviewed_tibetan_exact_ocr_signature	1	མྱང་རྩི་སྦྲས་ myani rtsi sbras

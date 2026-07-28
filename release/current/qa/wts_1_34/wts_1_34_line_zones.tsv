@@ -16264,7 +16264,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 123	224	1522	german_prose_with_translit			none	1	1	0	0	’khyil“ (Gesar 256,13).
 123	226	1522	other			none	0	0	0	0	169
 124	1	1523	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyan	high	1	0	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyaṅ grags
-124	3	1524	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyani	high	1	1	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyani grags auch dkar
+124	3	1524	headword_line	དཀར་མོ་ རྒྱང་གྲགས་	rgyani	high	1	1	0	0	དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyaṅ grags auch dkar
 124	4	1524	latin_other			none	1	0	0	0	mo brayan grags, dkar mo’i
 124	5	1524	german_prose_with_translit			none	2	2	0	0	rgyan grags N. eines Blasinstruments.
 124	7	1524	german_prose_with_translit			none	1	4	0	0	khrims dun — „das Horn des Gesetzes dKar-
@@ -34717,7 +34717,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 248	142	3233	german_prose_with_translit			none	2	3	0	0	Lex. bram ze’i min (brDa, ähnl. Dagy).
 248	144	3233	german_prose			none	0	3	0	0	2. Bez. des Prajäpatı.
 248	146	3233	german_prose_with_translit			none	4	3	0	0	Lex. skye dgu’i bdag po (brDa, ähnl. Dagy).
-248	148	3234	headword_line	ཁ་ནིང་	kha	high	1	1	0	0	ཁ་ནིང་ kha nin letztes Jahr.
+248	148	3234	headword_line	ཁ་ནིང་	kha	high	1	1	0	0	ཁ་ནིང་ kha niṅ letztes Jahr.
 248	150	3234	latin_other			none	3	0	0	0	> tsa na ... bisun pa gsum ’dir ’on(s?) „seit
 248	151	3234	german_prose			none	0	3	0	0	letztem Jahr sind drei Mönche hierher ge-
 248	152	3234	latin_other			none	3	0	0	0	kommen“ (sBa 84,6); ~ gi chos ’khyer byun
@@ -47881,7 +47881,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 340	10	4615	german_prose_with_translit			none	1	4	0	0	Hilfswort für beides eingesetzt, für ‚als‘
 340	11	4615	german_prose			none	0	2	0	0	und ‚da‘“ (Tär 34,7).
 340	13	4615	german_prose_with_translit			none	2	2	0	0	Lex. gan gi tshe =yada (Mvy 5426).
-340	15	4616	headword_line	གང་ཞིག་	gaṅ	high	3	2	0	0	གང་ཞིག་ gaṅ Zig auch gaṅ cig, gar (79.
+340	15	4616	headword_line	གང་ཞིག་	gaṅ	high	3	2	0	0	གང་ཞིག་ gaṅ źig auch gaṅ cig, gar (79.
 340	17	4616	german_prose			none	0	2	0	0	1. Indefinitpronomen: einer, irgendeiner,
 340	18	4616	german_prose			none	0	3	0	0	jemand; wird auch als Relativpronomen ge-
 340	19	4616	other			none	0	0	0	0	braucht.
@@ -66065,7 +66065,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 464	68	6003	headword_line	རྒྱ་འཇུགས་མ།ཞ་	rgya dzugs mkhan	high	3	1	0	0	རྒྱ་འཇུགས་མ།ཞ་ rgya ’dzugs mkhan Fallenstel-
 464	69	6003	german_prose			none	0	1	0	0	ler, Jäger.
 464	71	6003	german_prose_with_translit			none	2	3	0	0	Lex. rnon pa (brDa, ähnl. Dagy).
-464	73	6004	headword_line	རྒྱ་ཞིག་	rgya	high	1	2	0	0	རྒྱ་ཞིག་ rgya Zig Schädelnaht.
+464	73	6004	headword_line	རྒྱ་ཞིག་	rgya	high	1	2	0	0	རྒྱ་ཞིག་ rgya źig Schädelnaht.
 464	75	6004	german_prose_with_translit			none	4	2	0	0	Lex. thod pa’ srubs tshigs lta bu „wie: Spalte
 464	76	6004	german_prose_with_translit			none	1	4	0	0	des Schädels, die verbunden ist“ (brDa).
 464	78	6005	headword_line	རྒྱ་གཟྲེབ་	rgya	high	1	2	0	0	རྒྱ་གཟྲེབ་ rgya gzeb Netz, Fischernetz.
@@ -83377,7 +83377,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 580	103	7265	latin_other			none	4	0	0	0	mchog kyan / rgyud med g.yul nor ~ bya
 580	104	7265	german_prose			none	0	3	0	0	(metr.) „was nützt sogar der beste Bogen,
 580	106	7265	other			none	0	0	0	0	114
-580	108	7266	headword_line	ཅི་ཞིག་གི་ཕྱིར་	gi phyir	high	2	1	0	0	ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir
+580	108	7266	headword_line	ཅི་ཞིག་གི་ཕྱིར་	gi phyir	high	2	1	0	0	ཅི་ཞིག་གི་ཕྱིར་ ci źig gi phyir
 580	110	7266	german_prose			none	0	3	0	0	wenn die Sehne fehlt?“ (Ps 276); mig 977/5
 580	111	7266	latin_other			none	6	0	0	0	dan ni bral ba la / me lon gis ni - bya
 580	112	7266	german_prose			none	0	5	0	0	(metr.) „was nützt dem ein Spiegel, der
@@ -83431,7 +83431,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 580	165	7266	german_prose_with_translit			none	2	3	0	0	Zig „etwas“ (Dagy); ci Zig ltar = bsgrub dka’
 580	166	7266	latin_other			none	2	0	0	0	ba ’bad risol med par ’grub pa „schwere
 580	167	7266	german_prose_with_translit			none	2	1	0	0	Dinge mühelos erlangen“ (TTC).
-580	169	7267	headword_line	ཅི་ཞིག་གི་ཕྱིར་	gi phyir	high	2	1	0	0	ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir wozu?
+580	169	7267	headword_line	ཅི་ཞིག་གི་ཕྱིར་	gi phyir	high	2	1	0	0	ཅི་ཞིག་གི་ཕྱིར་ ci źig gi phyir wozu?
 580	170	7267	latin_other			none	2	0	0	0	~ / rig byed klag (v. 1. bklag 6. 1.) pa’ slad
 580	172	7267	german_prose_with_translit			none	1	6	0	0	du’o „Wozu? Um den Veda zu studieren!“
 580	173	7267	german_prose			none	0	1	0	0	(Prav 15,17).
@@ -118529,7 +118529,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 811	176	9427	tibetan_only	རྙབ་རྙབ་		none	0	0	0	0	རྙབ་རྙབ་ 7775 riab
 811	178	9427	german_prose_with_translit			none	2	1	0	0	Leder gegerbt haben“ (brDa); ~ pa = pags
 811	179	9427	german_prose_with_translit			none	3	1	0	0	pa sogs mie zin pa la (Dagy).
-811	181	9428	headword_line	མཉེས་ཐང་	than	high	1	3	0	0	མཉེས་ཐང་ möes than npr. eine Gegend.
+811	181	9428	headword_line	མཉེས་ཐང་	than	high	1	3	0	0	མཉེས་ཐང་ möes thaṅ npr. eine Gegend.
 811	182	9428	german_prose_with_translit			none	2	2	0	0	Lex. bod kyi yul 779 (Dagy).
 811	184	9428	example_tibetan_latin	མཉེས་གཤིན་པ་		none	1	2	0	0	མཉེས་གཤིན་པ་ 777/705 047777 pa freundlich, gütig;
 811	186	9428	german_prose			none	0	1	0	0	Freund.
@@ -132706,7 +132706,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 915	102	10054	german_prose			none	0	1	0	0	Visnus.
 915	104	10054	german_prose_with_translit			none	3	3	0	0	Lex. khyab jug dan (brDa, ähnl. Dagy).
 915	106	10055	headword_line	རྟག་ཏ་རྐྱོས་	rtag	high	4	0	0	0	རྟག་ཏ་རྐྱོས་ rtag tn myos \rtag myos.
-915	108	10056	headword_line	རྟག་ཏུ་གཞོན་ནུ་	rtag tu	high	2	2	0	0	རྟག་ཏུ་གཞོན་ནུ་ rtag tu gZon nu Beiname der
+915	108	10056	headword_line	རྟག་ཏུ་གཞོན་ནུ་	rtag tu	high	2	2	0	0	རྟག་ཏུ་གཞོན་ནུ་ rtag tu gźon nu Beiname der
 915	110	10056	german_prose			none	0	4	0	0	göttlichen Ärzte, der Asvins.
 915	112	10056	german_prose_with_translit			none	4	3	0	0	Lex. !ha’i sman pa dan (brDa, ähnl. Dagy).
 915	114	10057	headword_line	རྟག་ཏུ་བྲ་	rtag	high	1	0	0	0	རྟག་ཏུ་བྲ་ rtag tt za

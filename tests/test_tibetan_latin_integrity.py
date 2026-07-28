@@ -69,10 +69,18 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
         self.assertEqual(result["integrity_pass"], "no")
 
     def test_final_ng_stem_gate_is_separate(self) -> None:
+        # draṅ now has independently revalidated role mappings for its whole
+        # stem, so it passes Gate 1 for that reason—not merely because its
+        # final coda is correct.
         self.assertEqual(
             integrity.token_integrity("དྲང", "draṅ")[
                 "transcription_gateway_status"
-            ], "unresolved"
+            ], "pass"
+        )
+        self.assertEqual(
+            integrity.token_integrity("དྲང", "dxaṅ")[
+                "transcription_gateway_status"
+            ], "blocked"
         )
         self.assertEqual(
             integrity.token_integrity("དྲང", "dran")["integrity_status"],

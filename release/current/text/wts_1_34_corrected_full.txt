@@ -22380,7 +22380,7 @@ sang er nach der Weise von dKar-mo dgu-
 
 169དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyaṅ grags
 
-དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyani grags auch dkar
+དཀར་མོ་ རྒྱང་གྲགས་ dkar mo rgyaṅ grags auch dkar
 mo brayan grags, dkar mo’i
 rgyan grags N. eines Blasinstruments.
 
@@ -46864,7 +46864,7 @@ Lex. bram ze’i min (brDa, ähnl. Dagy).
 
 Lex. skye dgu’i bdag po (brDa, ähnl. Dagy).
 
-ཁ་ནིང་ kha nin letztes Jahr.
+ཁ་ནིང་ kha niṅ letztes Jahr.
 
 > tsa na ... bisun pa gsum ’dir ’on(s?) „seit
 letztem Jahr sind drei Mönche hierher ge-
@@ -65074,7 +65074,7 @@ und ‚da‘“ (Tär 34,7).
 
 Lex. gan gi tshe =yada (Mvy 5426).
 
-གང་ཞིག་ gaṅ Zig auch gaṅ cig, gar (79.
+གང་ཞིག་ gaṅ źig auch gaṅ cig, gar (79.
 
 1. Indefinitpronomen: einer, irgendeiner,
 jemand; wird auch als Relativpronomen ge-
@@ -89642,7 +89642,7 @@ ler, Jäger.
 
 Lex. rnon pa (brDa, ähnl. Dagy).
 
-རྒྱ་ཞིག་ rgya Zig Schädelnaht.
+རྒྱ་ཞིག་ rgya źig Schädelnaht.
 
 Lex. thod pa’ srubs tshigs lta bu „wie: Spalte
 des Schädels, die verbunden ist“ (brDa).
@@ -112928,7 +112928,7 @@ mchog kyan / rgyud med g.yul nor ~ bya
 
 114
 
-ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir
+ཅི་ཞིག་གི་ཕྱིར་ ci źig gi phyir
 
 wenn die Sehne fehlt?“ (Ps 276); mig 977/5
 dan ni bral ba la / me lon gis ni - bya
@@ -112989,7 +112989,7 @@ Zig „etwas“ (Dagy); ci Zig ltar = bsgrub dka’
 ba ’bad risol med par ’grub pa „schwere
 Dinge mühelos erlangen“ (TTC).
 
-ཅི་ཞིག་གི་ཕྱིར་ ci Zig gi phyir wozu?
+ཅི་ཞིག་གི་ཕྱིར་ ci źig gi phyir wozu?
 ~ / rig byed klag (v. 1. bklag 6. 1.) pa’ slad
 
 du’o „Wozu? Um den Veda zu studieren!“
@@ -159565,7 +159565,7 @@ Lex. ~ pa = pags ˆ~ zin pa lta bu „wie: das
 Leder gegerbt haben“ (brDa); ~ pa = pags
 pa sogs mie zin pa la (Dagy).
 
-མཉེས་ཐང་ möes than npr. eine Gegend.
+མཉེས་ཐང་ möes thaṅ npr. eine Gegend.
 Lex. bod kyi yul 779 (Dagy).
 
 མཉེས་གཤིན་པ་ 777/705 047777 pa freundlich, gütig;
@@ -178687,7 +178687,7 @@ Lex. khyab jug dan (brDa, ähnl. Dagy).
 
 རྟག་ཏ་རྐྱོས་ rtag tn myos \rtag myos.
 
-རྟག་ཏུ་གཞོན་ནུ་ rtag tu gZon nu Beiname der
+རྟག་ཏུ་གཞོན་ནུ་ rtag tu gźon nu Beiname der
 
 göttlichen Ärzte, der Asvins.
 
