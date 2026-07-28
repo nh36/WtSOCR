@@ -1,9 +1,9 @@
 signature	condition_matching_reviewed_occurrences	condition_failing_reviewed_occurrences	reviewed_failure_reasons	residual_signature_occurrences	residual_condition_matches	residual_condition_failures	residual_failure_reasons
-REPLACE ni→ṅ	38	36	identity_not_resolved:30;tibetan_role_mismatch:6	9	12	5	condition_or_boundary_mismatch
+REPLACE ni→ṅ	44	30	identity_not_resolved:30	9	12	5	condition_or_boundary_mismatch
 SUB I→l	115	3177	domain_mismatch:11;identity_not_resolved:3166	0	15	6	condition_or_boundary_mismatch
 SUB Z→ź	64	110	domain_mismatch:2;identity_not_resolved:108	1	19	28	condition_or_boundary_mismatch
-SUB h→ṅ	24	21	domain_mismatch:1;tibetan_role_mismatch:20	1	0	5	condition_or_boundary_mismatch
-SUB n→ṅ	1412	2229	domain_mismatch:35;identity_not_resolved:1712;tibetan_role_mismatch:482	67	173	160	condition_or_boundary_mismatch
+SUB h→ṅ	43	2	domain_mismatch:1;tibetan_role_mismatch:1	1	0	5	condition_or_boundary_mismatch
+SUB n→ṅ	1796	1845	domain_mismatch:35;identity_not_resolved:1712;tibetan_role_mismatch:98	67	173	160	condition_or_boundary_mismatch
 SUB z→ź	17	20	identity_not_resolved:20	0	2	0	none
 SUB ñ→ṅ	0	102	identity_not_resolved:102	0	0	0	none
 SUB ń→ṅ	2	23	identity_not_resolved:23	0	0	0	none

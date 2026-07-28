@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import csv
 import importlib.util
 import subprocess
@@ -152,7 +154,11 @@ def main() -> None:
             continue
         if row["token_boundary_status"] != "token_boundary_secure":
             continue
-        selected.append(row)
+        selected_row = dict(row)
+        selected_row["_alignment_confidence"] = diagnostic[
+            "alignment_confidence"
+        ]
+        selected.append(selected_row)
     if not selected:
         raise ValueError("No secure exact identities selected")
     if not args.explicit_manual_review:
@@ -288,8 +294,12 @@ def main() -> None:
                 + attribution["target_structural_role"]
             )
             versions.append(
-                matching[0].get("evidence_tier", "") if matching
-                else "explicit_manual_review"
+                hashlib.sha256(json.dumps(
+                    matching[0] if matching else {
+                        "authority": "explicit_manual_review"
+                    },
+                    sort_keys=True, ensure_ascii=False,
+                ).encode("utf-8")).hexdigest()[:16]
             )
         decision_rows.append({
             "volume": row["volume"], "page": row["page"],
@@ -306,12 +316,14 @@ def main() -> None:
             "ocr_signature_ids": ";".join(operation_ids),
             "edit_structural_attribution": ";".join(attributions),
             "signature_decision_version": ";".join(versions),
-            "gate0_alignment_status": "secure_positional_alignment",
+            "gate0_alignment_status": row["_alignment_confidence"],
             "token_boundary_status": row["token_boundary_status"],
             "domain": integrity.classify_domain(
                 row.get("zone", ""), row.get("context_excerpt", "")
             ),
-            "prior_decision_state": "none",
+            "prior_decision_state": (
+                "none_after_exact_decision_precedence_check"
+            ),
             "target_support_channel": canonical_row.get(
                 "evidence_class", ""
             ),

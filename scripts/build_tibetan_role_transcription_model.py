@@ -108,7 +108,8 @@ COMPOSITION_FIELDS = [
 DOMAIN_FIELDS = [
     "rule_id", "ordinary_lexical_support", "proper_name_support",
     "sanskrit_foreign_support", "unclear_support", "conflicts",
-    "proper_name_compatible", "rationale",
+    "ordinary_compatible", "proper_name_compatible",
+    "foreign_indic_status", "rationale",
 ]
 GRAPH_FIELDS = [
     "from_node", "from_node_type", "edge_type", "to_node",
@@ -172,7 +173,8 @@ CORRECTION_AUTHORITY_FIELDS = [
     "current_signature_authority", "current_structural_gate",
     "current_alignment_gate", "current_boundary_gate",
     "current_domain_gate", "current_prior_decision_gate",
-    "current_propagation_authority",
+    "current_propagation_authority", "signature_condition_results",
+    "current_prior_decision_record",
 ]
 EXPANSION_FIELDS = [
     "tibetan_role", "tibetan_feature", "structural_context",
@@ -1660,6 +1662,9 @@ def build_correction_authority_backaudit(
             "current_propagation_authority": (
                 "yes" if propagation else "no"
             ),
+            "signature_condition_results":
+                "pending_shared_signature_evaluator",
+            "current_prior_decision_record": "pending_exact_decision_lookup",
         })
     return rows
 
@@ -2074,9 +2079,20 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 value for values in domain_conflicts.values()
                 for value in values
             )),
+            "ordinary_compatible": (
+                "yes" if ordinary_count >= 3
+                and not domain_conflicts[
+                    "ordinary_tibetan_lexical_or_compound"
+                ] else "no"
+            ),
             "proper_name_compatible": (
                 "yes" if proper_count >= 3
                 and not domain_conflicts["tibetan_proper_name"] else "no"
+            ),
+            "foreign_indic_status": (
+                "diagnostic_only" if domain_support[
+                    "sanskrit_or_indic_transcription"
+                ] else "not_attested"
             ),
             "rationale": (
                 "Proper-name compatibility requires the reviewed/strong exact "
@@ -2089,14 +2105,16 @@ def build() -> tuple[list[dict[str, str]], ...]:
         component_ids = [
             item for item in row["component_rule_ids"].split(";") if item
         ]
-        authorized_domains = {
-            "ordinary_tibetan_lexical_or_compound"
-        } if component_ids else set()
-        if component_ids and all(
-            domain_by_rule.get(item, {}).get("proper_name_compatible") == "yes"
-            for item in component_ids
+        authorized_domains: set[str] = set()
+        for domain_name, compatibility_field in (
+            ("ordinary_tibetan_lexical_or_compound", "ordinary_compatible"),
+            ("tibetan_proper_name", "proper_name_compatible"),
         ):
-            authorized_domains.add("tibetan_proper_name")
+            if component_ids and all(
+                domain_by_rule.get(item, {}).get(compatibility_field) == "yes"
+                for item in component_ids
+            ):
+                authorized_domains.add(domain_name)
         row["domain_compatibility"] = (
             ";".join(sorted(authorized_domains)) or "unresolved"
         )
@@ -2514,6 +2532,9 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 "teaching_allowed": "no",
             }))
     validate_no_cycles(graph)
+    graph.sort(key=lambda row: tuple(
+        row.get(field, "") for field in GRAPH_FIELDS
+    ))
     return (
         parse_rows, feature_evidence, candidates, backtest, composition,
         domain, graph, sign_inventory, orthography_audit, revalidation,

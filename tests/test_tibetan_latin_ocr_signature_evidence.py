@@ -122,6 +122,13 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         self.assertFalse(applies)
         self.assertEqual(reason, "tibetan_role_mismatch")
 
+    def test_final_ng_local_role_gate_does_not_require_full_segmentation(self) -> None:
+        record = self._registry("SUB n→ṅ")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("གང", "gan"), "gaṅ"
+        )
+        self.assertTrue(applies, reason)
+
     def test_zha_condition_rejects_unrelated_tibetan(self) -> None:
         record = self._registry("SUB Z→ź")
         applies, reason = module.signature_applies_to_row(
@@ -236,6 +243,14 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
                 "domain_condition": "", "canonical_target_required": "yes",
                 "aligned_tibetan_required": "yes",
             })
+        with self.assertRaisesRegex(ValueError, "malformed forbidden"):
+            module.validate_signature_condition({
+                "signature": "BAD", "tibetan_role": "",
+                "source_position_type": "", "target_position_type": "",
+                "domain_condition": "", "canonical_target_required": "yes",
+                "aligned_tibetan_required": "yes",
+                "forbidden_tibetan_role_features": "root_consonant",
+            })
         with self.assertRaisesRegex(ValueError, "unknown source_position_type"):
             module.validate_signature_condition({
                 "signature": "BAD", "tibetan_role": "",
@@ -294,6 +309,16 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         )
         self.assertFalse(applies)
         self.assertEqual(reason, "tibetan_role_mismatch")
+
+    def test_conditioned_child_does_not_inherit_parent_evidence(self) -> None:
+        child = next(
+            row for row in self.generated["registry"]
+            if row["signature_id"] == "ROOT_KB_TO_KH"
+        )
+        self.assertEqual(child["conditioned_alternate_support"], "0")
+        self.assertGreater(
+            int(child["parent_operation_alternate_support"]), 0
+        )
 
     def test_historical_only_family_has_zero_active_yield(self) -> None:
         with (

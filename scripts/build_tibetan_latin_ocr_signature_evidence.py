@@ -56,7 +56,7 @@ REGISTRY_FIELDS = [
     "source_structural_location", "target_structural_role",
     "parent_structural_unit", "crosses_role_boundaries",
     "extra_source_material", "forbidden_tibetan_roles",
-    "forbidden_tibetan_features", "forbidden_tibetan_structures",
+    "forbidden_tibetan_features", "forbidden_tibetan_role_features",
     "canonical_target_required", "aligned_tibetan_required",
     "exact_tibetan_identities",
     "reviewed_atomic_supporting_syllables", "reviewed_supporting_occurrences",
@@ -64,6 +64,10 @@ REGISTRY_FIELDS = [
     "historical_support", "alternate_witness_support",
     "legitimate_controls", "conflicts", "evidence_tier",
     "authorization_status", "rationale",
+    "parent_operation_reviewed_support",
+    "parent_operation_alternate_support", "parent_operation_global_controls",
+    "conditioned_reviewed_support", "conditioned_alternate_support",
+    "conditioned_controls", "conditioned_conflicts",
 ]
 DECISION_FIELDS = [
     "signature", "role_domain_condition", "decision",
@@ -153,6 +157,135 @@ FINAL_NG_ACTIVE_SUMMARY_FIELDS = [
     "current_alignment_ready_rows", "current_domain_ready_rows",
     "current_final_action_ready_rows",
 ]
+STRUCTURAL_ALTERNATE_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "source", "alternate_token", "canonical_target", "target_authority",
+    "operation_signature", "signature_child_id", "witness_type",
+    "alternate_relation", "condition_result", "unrelated_edits",
+    "source_structural_location", "target_structural_role",
+    "tibetan_role", "tibetan_feature", "parent_structural_unit",
+]
+STRUCTURAL_CHILD_EVIDENCE_FIELDS = [
+    "signature_child_id", "parent_operation", "decision",
+    "current_exact_rows", "distinct_syllables", "reviewed_support",
+    "exact_alternate_support", "same_tibetan_independent_target_support",
+    "source_volumes", "source_page_ranges", "line_zones",
+    "parent_reviewed_support", "parent_alternate_support",
+    "global_source_controls", "structural_gate_controls",
+    "same_tibetan_competing_controls", "domain_controls",
+    "reviewed_contradictions", "disposition",
+]
+
+
+def reconcile_correction_authority(
+    registry_rows: list[dict[str, str]],
+    aligned_rows: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], list[str]]:
+    """Backaudit historical exact corrections with the live condition engine."""
+    path = ROOT / "data/tibetan_transcription_correction_authority.tsv"
+    if not path.exists():
+        return [], []
+    ledger = read(path)
+    fields = list(ledger[0]) if ledger else []
+    for field in (
+        "signature_condition_results", "current_prior_decision_record",
+    ):
+        if field not in fields:
+            fields.append(field)
+    by_operation: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for record in registry_rows:
+        if record["authorization_status"].startswith("authorized"):
+            by_operation[record["operation_signature"]].append(record)
+    aligned = {
+        (r["volume"], r["page"], r["line"], r["token_index"]): r
+        for r in aligned_rows
+    }
+    echo = {
+        (r["volume"], r["page"], r["line"], r["token_index"]): r
+        for r in read(ROOT / "data/reviewed_final_ng_echo_decisions.tsv")
+    }
+    exceptions = {
+        (r["tibetan_syllable"], r["source_token"]): r
+        for r in read(
+            ROOT / "data/reviewed_tibetan_transcription_exceptions.tsv"
+        )
+    }
+    for row in ledger:
+        key = tuple(row[field] for field in (
+            "volume", "page", "line", "token_index"
+        ))
+        exact = dict(aligned.get(key, {}))
+        exact.setdefault("tibetan_syllable", row["tibetan_syllable"])
+        exact.setdefault("token_boundary_status", row["token_boundary_status"])
+        exact["latin_token"] = row["observed_source"]
+        operations = canonical.edit_operations(
+            row["observed_source"], row["target"]
+        )
+        matches: list[str] = []
+        results: list[str] = []
+        all_covered = bool(operations)
+        for operation in operations:
+            operation_matches: list[str] = []
+            operation_results: list[str] = []
+            for record in by_operation.get(operation["signature"], []):
+                applies, reason = signature_applies_to_row(
+                    record, exact, row["target"]
+                )
+                operation_results.append(
+                    f"{record['signature_id']}={reason}"
+                )
+                if applies:
+                    operation_matches.append(record["signature_id"])
+            if not operation_matches:
+                all_covered = False
+            matches.extend(operation_matches)
+            results.extend(operation_results or [
+                f"{operation['signature']}=no_current_A_child"
+            ])
+        controlling = ""
+        echo_row = echo.get(key)
+        if echo_row and echo_row["decision"] in {
+            "deferred", "rejected", "resolved_elsewhere",
+        }:
+            controlling = (
+                f"final_ng_echo:{echo_row['decision']}:"
+                f"{echo_row.get('reviewing_batch', '')}"
+            )
+        exception = exceptions.get(
+            (row["tibetan_syllable"], row["observed_source"])
+        )
+        if (
+            not controlling and exception
+            and exception.get("exception_scope") in {
+                "canonical_target_block", "family_block", "alignment_block",
+            }
+        ):
+            controlling = (
+                f"transcription_exception:{exception['status']}:"
+                f"{exception['exception_scope']}"
+            )
+        row["ocr_signature_ids"] = (
+            ";".join(sorted(set(matches))) if matches
+            else "exact_row_review_only"
+        )
+        row["signature_condition_results"] = ";".join(results)
+        row["current_signature_authority"] = "yes" if all_covered else "no"
+        row["current_structural_gate"] = "yes" if all_covered else "no"
+        row["current_prior_decision_gate"] = "no" if controlling else "yes"
+        row["current_prior_decision_record"] = controlling or "none"
+        row["prior_exact_decision_status"] = controlling or "none"
+        row["current_propagation_authority"] = "yes" if all((
+            row["current_target_authority"] in {
+                "canonical_reviewed", "canonical_independent_strong",
+                "canonical_feature_composed",
+            },
+            all_covered,
+            row["current_alignment_gate"] == "yes",
+            row["current_boundary_gate"] == "yes",
+            row["current_domain_gate"] == "yes",
+            not controlling,
+        )) else "no"
+    return ledger, fields
 BOUNDARY_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "captured_token", "token_start", "token_end", "preceding_character",
@@ -525,6 +658,20 @@ def validate_signature_condition(row: dict[str, str]) -> None:
             f"{row['signature']}: unknown forbidden Tibetan roles "
             f"{sorted(forbidden_roles - CANONICAL_TIBETAN_ROLES)}"
         )
+    for predicate in _split_values(
+        row.get("forbidden_tibetan_role_features", "")
+    ):
+        if "=" not in predicate:
+            raise ValueError(
+                f"{row['signature']}: malformed forbidden role-feature "
+                f"predicate {predicate!r}"
+            )
+        predicate_role, predicate_feature = predicate.split("=", 1)
+        if predicate_role not in CANONICAL_TIBETAN_ROLES or not predicate_feature:
+            raise ValueError(
+                f"{row['signature']}: unknown forbidden role-feature "
+                f"predicate {predicate!r}"
+            )
     for field in (
         "canonical_target_required", "aligned_tibetan_required",
         "crosses_role_boundaries", "extra_source_material",
@@ -668,10 +815,27 @@ def signature_applies_to_row(
     spans = canonical_role_spans(
         row["tibetan_syllable"], canonical_target
     )
+    # A local coda gate does not require segmentation of the entire target.
+    # It is independently delimited by the resolved Tibetan coda, the
+    # token-final edit, and the authoritative target's final glyph.
+    local_final_ng = (
+        role == "suffix_coda" and feature == "ང"
+        and signature_record.get("target_position_type") == "token_final"
+        and canonical_target.endswith("ṅ")
+        and row.get("tibetan_syllable", "").endswith("ང")
+    )
     span_roles = {span["tibetan_role"] for span in spans}
     if forbidden_roles & span_roles:
         return False, "forbidden_tibetan_role"
-    if role and not any(
+    forbidden_role_features = _split_values(
+        signature_record.get("forbidden_tibetan_role_features", "")
+    )
+    present_role_features = {
+        f"{span['tibetan_role']}={span['tibetan_feature']}" for span in spans
+    }
+    if forbidden_role_features & present_role_features:
+        return False, "forbidden_tibetan_role_feature"
+    if role and not local_final_ng and not any(
         span["tibetan_role"] == role
         and (not feature or span["tibetan_feature"] == feature)
         for span in spans
@@ -684,6 +848,14 @@ def signature_applies_to_row(
         attribution = attribute_edit_to_spans(
             source, canonical_target, operation, spans, domain
         )
+        if local_final_ng and int(operation["target_position"]) + len(
+            operation["target_span"]
+        ) == len(canonical_target):
+            attribution = dict(attribution)
+            attribution["target_structural_role"] = "suffix_coda"
+            attribution["tibetan_role"] = "suffix_coda"
+            attribution["tibetan_feature"] = "ང"
+            attribution["parent_structural_unit"] = "suffix_coda:ང"
         if not _position_matches(
             signature_record.get("source_position_type", ""),
             signature_record.get("source_position_value", ""),
@@ -884,7 +1056,7 @@ def build() -> dict[str, list[dict[str, str]]]:
                     "parent_structural_unit", "crosses_role_boundaries",
                     "extra_source_material", "forbidden_tibetan_roles",
                     "forbidden_tibetan_features",
-                    "forbidden_tibetan_structures",
+                    "forbidden_tibetan_role_features",
                     "exact_tibetan_identities",
                 )
             },
@@ -917,6 +1089,17 @@ def build() -> dict[str, list[dict[str, str]]]:
             "conflicts": str(negatives[signature]),
             "evidence_tier": evidence_tier,
             "authorization_status": status, "rationale": rationale,
+            "parent_operation_reviewed_support": str(len(reviewed)),
+            "parent_operation_alternate_support": str(
+                alt["adopted"] + alt["unresolved"] + alt["candidate"]
+            ),
+            "parent_operation_global_controls": str(len(legitimate)),
+            "conditioned_reviewed_support": str(len(reviewed)),
+            "conditioned_alternate_support": str(
+                alt["adopted"] + alt["unresolved"] + alt["candidate"]
+            ),
+            "conditioned_controls": str(len(legitimate)),
+            "conditioned_conflicts": str(negatives[signature]),
         })
 
     for decision in decision_map.values():
@@ -961,7 +1144,7 @@ def build() -> dict[str, list[dict[str, str]]]:
                     "parent_structural_unit", "crosses_role_boundaries",
                     "extra_source_material", "forbidden_tibetan_roles",
                     "forbidden_tibetan_features",
-                    "forbidden_tibetan_structures",
+                    "forbidden_tibetan_role_features",
                     "exact_tibetan_identities",
                 )
             },
@@ -977,6 +1160,20 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "D": "candidate_review", "R": "rejected",
             }[decision["decision"]],
             "rationale": decision["evidence_summary"],
+            # Conditioned children never inherit authority evidence from the
+            # primitive parent. Exact evidence is reattributed below.
+            "reviewed_atomic_supporting_syllables": "0",
+            "reviewed_supporting_occurrences": "0",
+            "reviewed_supporting_volumes": "",
+            "reviewed_page_ranges": "",
+            "historical_support": "0",
+            "alternate_witness_support": "0",
+            "legitimate_controls": "0",
+            "conflicts": "0",
+            "conditioned_reviewed_support": "0",
+            "conditioned_alternate_support": "0",
+            "conditioned_controls": "0",
+            "conditioned_conflicts": "0",
         })
         registry_rows.append(child)
 
@@ -986,6 +1183,116 @@ def build() -> dict[str, list[dict[str, str]]]:
             registry_row["operation_signature"]
         ].append(registry_row)
     aligned_rows = integrity.collect_all_aligned(ROOT / "release/current")
+    aligned_by_identity = {
+        (r["volume"], r["page"], r["line"], r["token_index"]): r
+        for r in aligned_rows
+    }
+    structural_alternates: list[dict[str, str]] = []
+    conditioned_reviewed: dict[str, list[dict[str, str]]] = defaultdict(list)
+    conditioned_alternate: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for record in registry_rows:
+        if not record["parent_signature"]:
+            continue
+        for reviewed_row in positives.get(record["operation_signature"], []):
+            exact = aligned_by_identity.get((
+                reviewed_row["volume"], reviewed_row["page"],
+                reviewed_row["line"], reviewed_row["token_index"],
+            ))
+            if not exact:
+                continue
+            historical = dict(exact)
+            historical["latin_token"] = reviewed_row["source"]
+            applies, _ = signature_applies_to_row(
+                record, historical, reviewed_row["target"]
+            )
+            if applies:
+                conditioned_reviewed[record["signature_id"]].append(
+                    reviewed_row
+                )
+        for (volume, page, line, token_index, base), witnesses in (
+            exact_alternates.items()
+        ):
+            exact = aligned_by_identity.get((volume, page, line, token_index))
+            if not exact:
+                continue
+            historical = dict(exact)
+            historical["latin_token"] = base
+            canonical_row = canon_by_syllable.get(
+                exact["tibetan_syllable"], {}
+            )
+            canonical_target = canonical_row.get("canonical_forms", "")
+            for witness in witnesses:
+                alternate_token = witness["token"]
+                operations = canonical.edit_operations(base, alternate_token)
+                relevant = [
+                    op for op in operations
+                    if op["signature"] == record["operation_signature"]
+                ]
+                if not relevant:
+                    continue
+                applies, reason = signature_applies_to_row(
+                    record, historical, canonical_target
+                )
+                target_spans = spans_by_target.get(
+                    (exact["tibetan_syllable"], canonical_target), []
+                )
+                attribution = attribute_edit_to_spans(
+                    base, canonical_target, relevant[0], target_spans,
+                    integrity.classify_domain(
+                        exact.get("zone", ""), exact.get("context_excerpt", "")
+                    ),
+                )
+                relation = (
+                    "equals_canonical_target"
+                    if alternate_token == canonical_target
+                    else "equals_source" if alternate_token == base
+                    else "differs_from_source_and_target"
+                )
+                structural_alternates.append({
+                    "volume": volume, "page": page, "line": line,
+                    "token_index": token_index,
+                    "tibetan_syllable": exact["tibetan_syllable"],
+                    "source": base, "alternate_token": alternate_token,
+                    "canonical_target": canonical_target,
+                    "target_authority": canonical_row.get(
+                        "canonical_confidence_tier", ""
+                    ),
+                    "operation_signature": record["operation_signature"],
+                    "signature_child_id": record["signature_id"],
+                    "witness_type": witness["status"],
+                    "alternate_relation": relation,
+                    "condition_result": reason,
+                    "unrelated_edits": str(max(0, len(operations) - 1)),
+                    **{
+                        field: attribution[field] for field in (
+                            "source_structural_location",
+                            "target_structural_role", "tibetan_role",
+                            "tibetan_feature", "parent_structural_unit",
+                        )
+                    },
+                })
+                if applies and relation == "equals_canonical_target":
+                    conditioned_alternate[record["signature_id"]].append(
+                        structural_alternates[-1]
+                    )
+    for record in registry_rows:
+        if not record["parent_signature"]:
+            continue
+        reviewed_rows = conditioned_reviewed[record["signature_id"]]
+        alternate_rows = conditioned_alternate[record["signature_id"]]
+        record["conditioned_reviewed_support"] = str(len(reviewed_rows))
+        record["conditioned_alternate_support"] = str(len(alternate_rows))
+        record["reviewed_supporting_occurrences"] = str(len(reviewed_rows))
+        record["reviewed_atomic_supporting_syllables"] = str(len({
+            row["tibetan_syllable"] for row in reviewed_rows
+        }))
+        record["reviewed_supporting_volumes"] = ";".join(sorted({
+            row["volume"] for row in reviewed_rows
+        }))
+        record["alternate_witness_support"] = str(len(alternate_rows))
+    correction_authority, correction_authority_fields = (
+        reconcile_correction_authority(registry_rows, aligned_rows)
+    )
     aligned_by_family: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for aligned_row in aligned_rows:
         aligned_by_family[(
@@ -1814,6 +2121,79 @@ def build() -> dict[str, list[dict[str, str]]]:
                 gate_count("final_action_ready")
             ),
         })
+    hypothetical_by_id = {
+        row["signature_id"]: row for row in hypothetical_d_scope
+    }
+    structural_child_evidence: list[dict[str, str]] = []
+    for record in registry_rows:
+        decision = decision_map.get(record["signature_id"], {})
+        if not record["parent_signature"] or not decision:
+            continue
+        scope = hypothetical_by_id.get(record["signature_id"], {})
+        identities = [
+            item for item in scope.get("matched_identities", "").split(";")
+            if item and item != "none"
+        ]
+        volumes = sorted({item.split(":", 1)[0] for item in identities})
+        pages_by_volume: dict[str, list[int]] = defaultdict(list)
+        for item in identities:
+            parts = item.split(":")
+            if len(parts) > 1 and parts[1].isdigit():
+                pages_by_volume[parts[0]].append(int(parts[1]))
+        supported_same_tibetan = set()
+        for item in identities:
+            parts = item.split(":")
+            if len(parts) < 6 or "→" not in parts[5]:
+                continue
+            tibetan = parts[4]
+            _source, target = parts[5].split("→", 1)
+            if any(
+                concordance_row["tibetan_syllable"] == tibetan
+                and concordance_row["latin_form"] == target
+                and int(
+                    concordance_row.get(
+                        "independent_teaching_occurrences", "0"
+                    )
+                ) > 0
+                for concordance_row in concordance
+            ):
+                supported_same_tibetan.add(tibetan)
+        structural_child_evidence.append({
+            "signature_child_id": record["signature_id"],
+            "parent_operation": record["parent_signature"],
+            "decision": decision["decision"],
+            "current_exact_rows": scope.get("condition_matches", "0"),
+            "distinct_syllables": scope.get("distinct_syllables", "0"),
+            "reviewed_support": record["conditioned_reviewed_support"],
+            "exact_alternate_support":
+                record["conditioned_alternate_support"],
+            "same_tibetan_independent_target_support": str(
+                len(supported_same_tibetan)
+            ),
+            "source_volumes": ";".join(volumes),
+            "source_page_ranges": ";".join(
+                f"{volume}:{min(pages)}-{max(pages)}"
+                for volume, pages in sorted(pages_by_volume.items()) if pages
+            ),
+            "line_zones": "exact_headword_gate_applied",
+            "parent_reviewed_support":
+                record["parent_operation_reviewed_support"],
+            "parent_alternate_support":
+                record["parent_operation_alternate_support"],
+            "global_source_controls":
+                record["parent_operation_global_controls"],
+            "structural_gate_controls": record["conditioned_controls"],
+            "same_tibetan_competing_controls": "0",
+            "domain_controls": scope.get("failure_reasons", ""),
+            "reviewed_contradictions": record["conditioned_conflicts"],
+            "disposition": (
+                "remain_D_no_independent_conditioned_witness_or_review"
+                if decision["decision"] == "D"
+                and record["conditioned_reviewed_support"] == "0"
+                and record["conditioned_alternate_support"] == "0"
+                else "persistent_" + decision["decision"]
+            ),
+        })
     return {
         "evidence": evidence, "controls": control_rows,
         "registry": registry_rows, "queue": queue, "exhaustion": exhaustion,
@@ -1826,6 +2206,10 @@ def build() -> dict[str, list[dict[str, str]]]:
         "alignment_rescue_exact": alignment_rescue_exact,
         "active_queue_summary": active_queue_summary,
         "final_ng_active_summary": final_ng_active_summary,
+        "structural_alternates": structural_alternates,
+        "correction_authority": correction_authority,
+        "correction_authority_fields": correction_authority_fields,
+        "structural_child_evidence": structural_child_evidence,
     }
 
 
@@ -1848,9 +2232,17 @@ def main() -> None:
         ("tibetan_latin_alignment_rescue_exact.tsv", "alignment_rescue_exact", ALIGNMENT_RESCUE_EXACT_FIELDS),
         ("tibetan_latin_active_historical_queue_summary.tsv", "active_queue_summary", ACTIVE_QUEUE_SUMMARY_FIELDS),
         ("final_ng_active_historical_summary.tsv", "final_ng_active_summary", FINAL_NG_ACTIVE_SUMMARY_FIELDS),
+        ("tibetan_latin_structural_alternate_witness_evidence.tsv", "structural_alternates", STRUCTURAL_ALTERNATE_FIELDS),
+        ("tibetan_latin_structural_ocr_child_evidence.tsv", "structural_child_evidence", STRUCTURAL_CHILD_EVIDENCE_FIELDS),
     ]
     for name, key, fields in targets:
         write(ROOT / "data" / name, outputs[key], fields)
+    if outputs["correction_authority"]:
+        write(
+            ROOT / "data/tibetan_transcription_correction_authority.tsv",
+            outputs["correction_authority"],
+            outputs["correction_authority_fields"],
+        )
     print(" ".join(f"{key}={len(outputs[key])}" for _, key, _ in targets))
 
 
