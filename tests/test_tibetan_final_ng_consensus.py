@@ -16,6 +16,29 @@ SPEC.loader.exec_module(consensus)
 
 
 class TibetanFinalNgConsensusTests(unittest.TestCase):
+    def test_latin_headword_token_preserves_dotless_i(self) -> None:
+        self.assertEqual(
+            consensus.latin_headword_tokens("garı gloss", 1)[0][0], "garı"
+        )
+
+    def test_latin_headword_token_preserves_precomposed_and_combining_marks(self) -> None:
+        self.assertEqual(
+            consensus.latin_headword_tokens("gźuṅ gloss", 1)[0][0], "gźuṅ"
+        )
+        self.assertEqual(
+            consensus.latin_headword_tokens("gz\u0301uṅ gloss", 1)[0][0],
+            "gz\u0301uṅ",
+        )
+
+    def test_latin_headword_token_preserves_internal_apostrophe(self) -> None:
+        self.assertEqual(
+            consensus.latin_headword_tokens("pa’i gloss", 1)[0][0], "pa’i"
+        )
+
+    def test_latin_headword_token_stops_before_punctuation(self) -> None:
+        self.assertEqual(
+            consensus.latin_headword_tokens("gaṅ, gloss", 1)[0][0], "gaṅ"
+        )
     def test_genuine_dotted_anchor_requires_final_ng_coda(self) -> None:
         for token in ("gsuṅ", "dpuṅ"):
             self.assertTrue(

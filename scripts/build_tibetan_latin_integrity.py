@@ -7,6 +7,7 @@ import argparse
 import csv
 import importlib.util
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -32,6 +33,8 @@ DIAGNOSTIC_FIELDS = [
     "transcription_gateway_status", "transcription_exception_status",
     "transcription_exception_scope",
     "alignment_confidence",
+    "token_start", "token_end", "preceding_character",
+    "following_character", "token_boundary_status",
     "expected_high_confidence_features", "observed_features",
     "violated_rules", "canonical_full_target", "canonical_target_evidence",
     "domain_context", "damage_scope", "marker_attached", "context_excerpt",
@@ -288,6 +291,25 @@ def collect_all_aligned(release_root: Path) -> list[dict[str, str]]:
             phrase_end = tail_start + last_start + len(last_token)
             for syllable, (token, relative_start) in zip(syllables, latin):
                 absolute_start = tail_start + relative_start
+                absolute_end = absolute_start + len(token)
+                preceding = line[absolute_start - 1:absolute_start]
+                following = line[absolute_end:absolute_end + 1]
+                following_category = (
+                    unicodedata.category(following) if following else ""
+                )
+                preceding_category = (
+                    unicodedata.category(preceding) if preceding else ""
+                )
+                if following_category.startswith("M"):
+                    boundary = "combining_mark_boundary_issue"
+                elif following and following in "'’":
+                    boundary = "token_boundary_ambiguous"
+                elif following and following_category.startswith("L"):
+                    boundary = "adjacent_transliteration_glyph_uncaptured"
+                elif preceding and preceding_category.startswith("M"):
+                    boundary = "combining_mark_boundary_issue"
+                else:
+                    boundary = "token_boundary_secure"
                 token_index = next(
                     (
                         index for index, match in enumerate(
@@ -306,6 +328,11 @@ def collect_all_aligned(release_root: Path) -> list[dict[str, str]]:
                     "token_index": str(token_index),
                     "tibetan_syllable": syllable,
                     "latin_token": token,
+                    "token_start": str(absolute_start),
+                    "token_end": str(absolute_end),
+                    "preceding_character": preceding,
+                    "following_character": following,
+                    "token_boundary_status": boundary,
                     "zone": zone_row.get("zone", ""),
                     "damage_scope": damage,
                     "marker_attached": (
@@ -367,6 +394,11 @@ def build_diagnostics(release_root: Path) -> list[dict[str, str]]:
             "transcription_exception_scope":
                 result["transcription_exception_scope"],
             "alignment_confidence": alignment_confidence,
+            "token_start": row["token_start"],
+            "token_end": row["token_end"],
+            "preceding_character": row["preceding_character"],
+            "following_character": row["following_character"],
+            "token_boundary_status": row["token_boundary_status"],
             "expected_high_confidence_features": result["expected"],
             "observed_features": result["observed"],
             "violated_rules": result["violated"],

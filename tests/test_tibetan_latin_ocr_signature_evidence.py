@@ -15,6 +15,9 @@ SPEC.loader.exec_module(module)
 
 
 class OcrSignatureEvidenceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.generated = module.build()
     def test_atomic_full_target_review_is_learning_evidence(self) -> None:
         operations = module.canonical.edit_operations("Zan", "źan")
         self.assertEqual(
@@ -75,6 +78,81 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         ):
             self.assertEqual(reviewed[signature]["decision"], "A")
 
+    def _row(self, tibetan: str, source: str, **updates):
+        row = {
+            "tibetan_syllable": tibetan,
+            "latin_token": source,
+            "zone": "headword_line",
+            "context_excerpt": f"{tibetan} {source}",
+            "token_boundary_status": "token_boundary_secure",
+        }
+        row.update(updates)
+        return row
+
+    def _registry(self, signature: str):
+        return next(
+            row for row in self.generated["registry"]
+            if row["operation_signature"] == signature
+            and row["authorization_status"].startswith("authorized")
+        )
+
+    def test_final_n_condition_rejects_nonfinal_operation(self) -> None:
+        record = self._registry("SUB n→ṅ")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("གང", "gna"), "gṅa"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "source_position_mismatch")
+
+    def test_final_n_condition_requires_tibetan_coda_ng(self) -> None:
+        record = self._registry("SUB n→ṅ")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("དོན", "don"), "doṅ"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "tibetan_role_mismatch")
+
+    def test_zha_condition_rejects_unrelated_tibetan(self) -> None:
+        record = self._registry("SUB Z→ź")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("ཟ", "Za"), "źa"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "tibetan_role_mismatch")
+
+    def test_initial_i_condition_rejects_medial_i(self) -> None:
+        record = self._registry("SUB I→l")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("ལ", "aI"), "al"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "source_position_mismatch")
+
+    def test_authorized_status_cannot_bypass_boundary_or_domain(self) -> None:
+        record = self._registry("SUB n→ṅ")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row(
+                "གང", "gan",
+                token_boundary_status="adjacent_transliteration_glyph_uncaptured",
+            ), "gaṅ"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "insecure_token_boundary")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row(
+                "གང", "gan", zone="german_prose",
+                context_excerpt="German gan prose",
+            ), "gaṅ"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "domain_mismatch")
+
+    def test_compound_signature_decomposition_is_diagnostic(self) -> None:
+        self.assertEqual(
+            module.primitive_decomposition("kyani", "kyaṅ", "REPLACE ni→ṅ"),
+            ["SUB n→ṅ", "DEL token-final i after n"],
+        )
+
     def test_marker_edit_is_not_tibetan_signature_evidence(self) -> None:
         operations = module.canonical.edit_operations("Ses", "śes")
         self.assertEqual(
@@ -90,9 +168,8 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         self.assertEqual(operations, [])
 
     def test_generated_registry_uses_decisions_not_frequency(self) -> None:
-        outputs = module.build()
         registry = {
-            row["operation_signature"]: row for row in outputs["registry"]
+            row["operation_signature"]: row for row in self.generated["registry"]
         }
         self.assertEqual(
             registry["SUB n→ṅ"]["authorization_status"],

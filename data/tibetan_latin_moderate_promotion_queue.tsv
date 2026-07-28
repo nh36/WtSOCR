@@ -7,19 +7,19 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཀེར	ker	15	wts_1_34;wts_8_b		16		entry_cluster_independence	retain_moderate
 ཀོབ	kob	5	wts_1_34		5		single_volume	retain_moderate
 ཀོམ	kom	3	wts_1_34		3		single_volume	retain_moderate
-ཀོས	kos	4	wts_1_34		4	s	single_volume;credible_competing_form	retain_moderate
+ཀོས	kos	4	wts_1_34		4		single_volume	retain_moderate
 ཀོཿ	ko	3	wts_1_34		3	tal	single_volume;credible_competing_form	retain_moderate
 ཀྱབ	khyab	5	wts_1_34		5		single_volume	retain_moderate
 ཀྱམས	byams	2	wts_8_b		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 ཀྱར	kyur	2	wts_1_34		2	kyar	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཀྱིན	kyin	2	wts_1_34;wts_35_51		3	gyin;oyin	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
-ཀྱིམ	khyim	25	wts_1_34		26	Palast;gyim	single_volume;credible_competing_form	retain_moderate
+ཀྱིམ	khyim	24	wts_1_34		25	Palast;gyim	single_volume;credible_competing_form	retain_moderate
 ཀྱུད	khyud	2	wts_1_34;wts_9_m		2		fewer_than_3_independent_occurrences	retain_moderate
 ཀྱུས	kyus	4	wts_1_34		4		single_volume	retain_moderate
 ཀྱེད	byed	28	wts_1_34		29	Beiname;khyed;kyed	single_volume;credible_competing_form	retain_moderate
 ཀྱེར	khyer	12	wts_1_34		12	rje	single_volume;credible_competing_form	retain_moderate
 ཀྱོག	kyog	9	wts_1_34		9	gyog	single_volume;credible_competing_form	retain_moderate
-ཀྲུ	kru	3	wts_1_34		4	k	single_volume;credible_competing_form	retain_moderate
+ཀྲུ	kru	3	wts_1_34		4	kü	single_volume;credible_competing_form	retain_moderate
 ཀྲོ	gro	2	wts_1_34;wts_9_m		2	kro;tho	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 ཀླུང	kluṅ	2	wts_1_34;wts_35_51;wts_9_m		3		fewer_than_3_independent_occurrences	retain_moderate
 ཀློ	klo	7	wts_1_34		9		single_volume	retain_moderate
@@ -42,9 +42,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 གཅལ	gcal	2	wts_1_34;wts_35_51		3		fewer_than_3_independent_occurrences	retain_moderate
 གཅེར	gcer	3	wts_1_34		4	gceer;ger	single_volume;credible_competing_form	retain_moderate
 གཅོམ	gcom	3	wts_1_34		3		single_volume	retain_moderate
-གཉའ	giia	2	wts_1_34		2	Nacken;bcag;chag;chu;drag;g;ga;gfa;gfia;gia;laute;mdzad;po	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-གཉས	g	2	wts_1_34		2	byas;gnis;gyur;pa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-གཉིད	g	3	wts_1_34		3	bro;giid;god;griid;grūd;kyi;kyis;log;po;thibs;yar;yer	single_volume;credible_competing_form	retain_moderate
+གཉིད	gäid	3	wts_1_34		3	bro;giid;god;griid;grūd;kyi;kyis;log;po;thibs;yar;yer	single_volume;credible_competing_form	retain_moderate
 གཏགས	gtugs	4	wts_1_34		4	gcags;glags;gtags;gtigs	single_volume;credible_competing_form	retain_moderate
 གཏམས	gtams	6	wts_1_34		6	otams	single_volume;credible_competing_form	retain_moderate
 གཏི	gti	5	wts_1_34		5	gu	single_volume;credible_competing_form	retain_moderate
@@ -59,7 +57,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 གཡག	g.yag	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 གཡར	g.yar	3	wts_1_34		3	gyar	single_volume;credible_competing_form	retain_moderate
 གཡས	g.yas	2	wts_1_34		2	go	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-གཡུ	g.yu	2	wts_8_b;wts_9_m		3	T;gyu	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+གཡུ	g.yu	2	wts_8_b;wts_9_m		3	Türkis;gyu	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 གཤིས	gsis	3	wts_35_51		3	Wetter	single_volume;credible_competing_form	retain_moderate
 གཤོར	gsor	2	wts_8_b		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 གསག	gsag	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -105,7 +103,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཅར	car	4	wts_1_34		4		single_volume	retain_moderate
 ཅིར	cir	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
 ཆཁྲ	chab	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-ཆབ	chab	30	wts_1_34		33	g;tshab	single_volume;credible_competing_form	retain_moderate
+ཆབ	chab	30	wts_1_34		33	tshab	single_volume;credible_competing_form	retain_moderate
 ཆམ	cham	3	wts_1_34		3	chom;dmag;ma	single_volume;credible_competing_form	retain_moderate
 ཆི	chi	4	wts_1_34		4	chir;dme	single_volume;credible_competing_form	retain_moderate
 ཆིགས	tshigs	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -113,19 +111,18 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཆུས	chus	5	wts_1_34		5		single_volume	retain_moderate
 ཆེད	ched	18	wts_1_34		20		single_volume	retain_moderate
 ཆེམ	chem	10	wts_1_34		10	chems	single_volume;credible_competing_form	retain_moderate
-ཆེལ	chil	3	wts_1_34		3	ch;l	single_volume;credible_competing_form	retain_moderate
+ཆེལ	chil	4	wts_1_34		4	chıl	single_volume;credible_competing_form	retain_moderate
 ཆོ	cho	12	wts_1_34		13	SAN;choga;co;ga;mo;pa’i	single_volume;credible_competing_form	retain_moderate
 ཆོགས	chogs	3	wts_1_34		4	tshogs	single_volume;credible_competing_form	retain_moderate
 ཆོན	tshon	2	wts_1_34		2	chon	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཆོམ	chom	3	wts_1_34		3	rnom	single_volume;credible_competing_form	retain_moderate
 ཆྲེ	che	2	wts_35_51		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 ཇུས	jus	3	wts_1_34		3		single_volume	retain_moderate
-ཉབ	ab	2	wts_1_34		2	Hab;einige;nach;pa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཉེན	nen	7	wts_1_34		7	cen;hen;ien;ion;nien;non;ren;rien;ñen	single_volume;credible_competing_form	retain_moderate
 ཉོ	mo	5	wts_1_34		7	Ito;auchbyiu;konco;sgril	single_volume;credible_competing_form	retain_moderate
 ཉོན	ion	4	wts_1_34		4	ba’i;con;fon;nas;ron;ñon	single_volume;credible_competing_form	retain_moderate
 ཊམ	tam	2	wts_8_b;wts_9_m		2		fewer_than_3_independent_occurrences	retain_moderate
-ཏག	tig	2	wts_1_34		2	Blumentr;du;gewi;me;og;tug;tugnas;tung	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+ཏག	tig	2	wts_1_34		2	du;gewiß;me;og;tug;tugnas;tung	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཏའི	ta’i	4	wts_1_34		5	ta	single_volume;credible_competing_form	retain_moderate
 ཏུར	tur	2	wts_1_34;wts_35_51		2	khyur	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 ཏོན	ton	5	wts_1_34		5		single_volume	retain_moderate
@@ -148,12 +145,12 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཐྲེག	theg	6	wts_1_34		6		single_volume	retain_moderate
 ཐྲོག	thog	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 དཀུ	dku	11	wts_1_34		12	deu;sku	single_volume;credible_competing_form	retain_moderate
-དཀོན	dkon	17	wts_1_34		22	dgon	single_volume;credible_competing_form	retain_moderate
+དཀོན	dkon	16	wts_1_34		21	dgon;ädkon	single_volume;credible_competing_form	retain_moderate
 དཀོར	dkor	20	wts_1_34		22		single_volume	retain_moderate
 དཀྲུགས	dkrugs	5	wts_1_34		5	drugs	single_volume;credible_competing_form	retain_moderate
 དཀྲོག	dkrog	3	wts_1_34		3		single_volume	retain_moderate
+དགའ	kun	4	wts_1_34		4	Naksatras;ba;blo;da;dega;dga;dga'ba;mo;yal	single_volume;credible_competing_form	retain_moderate
 དགུའི	dgu’i	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-དགོའ	dga	2	wts_1_34		3	ba	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 དངོ	dno	4	wts_1_34		4		single_volume	retain_moderate
 དཔང	dpaṅ	9	wts_1_34;wts_35_51		9	bar;dban;dbyig;dpani	credible_competing_form	retain_moderate
 དཔའི	dpa'i	2	wts_8_b		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -164,7 +161,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 དཔྱང	dpyaṅ	4	wts_35_51		4	dpyasi	single_volume;credible_competing_form	retain_moderate
 དཔྱིད	dpyid	12	wts_35_51		13	zla	single_volume;credible_competing_form	retain_moderate
 དཔྲལ	dpral	7	wts_35_51		8		single_volume	retain_moderate
-དབའ	dba	6	wts_8_b		6	ddba;ddbal	single_volume;credible_competing_form	retain_moderate
 དབུབ	dbub	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 དབྱར	dbyar	30	wts_8_b		30		single_volume	retain_moderate
 དབྱིབས	dbyibs	2	wts_1_34;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
@@ -175,7 +171,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 དམུས	dmus	2	wts_35_51;wts_9_m		2	dinus;dmuspa	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 དམེགས	dmigs	2	wts_1_34;wts_9_m		2	Einsicht;dinigs	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 དམོད	dmod	7	wts_9_m		7		single_volume	retain_moderate
-དས	dus	11	wts_1_34		12	Last;Nacht;ldan	single_volume;credible_competing_form	retain_moderate
+དས	dus	12	wts_1_34		13	Last;Nacht	single_volume;credible_competing_form	retain_moderate
 དི	di	3	wts_1_34		4	Affen;dinya;dirin;diriri;pbun	single_volume;credible_competing_form	retain_moderate
 དིག	dig	5	wts_1_34		5	di	single_volume;credible_competing_form	retain_moderate
 དིར	dir	6	wts_1_34		6		single_volume	retain_moderate
@@ -188,7 +184,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 དོལ	dol	5	wts_1_34		6		single_volume	retain_moderate
 དོས	dos	19	wts_1_34		21		single_volume	retain_moderate
 དོཿ	don	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
-དྭ	du	9	wts_1_34		9	Wasserbl;an;are;da;dgu	single_volume;credible_competing_form	retain_moderate
+དྭ	du	10	wts_1_34		10	Wasserbläschen;are;da;dgu	single_volume;credible_competing_form	retain_moderate
 དྭག	dgra	4	wts_1_34		4	den;dera;dgn;dgu;drug	single_volume;credible_competing_form	retain_moderate
 དྭབུས	dbus	2	wts_8_b		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 དྱངུལ	dnul	3	wts_1_34		3		single_volume	retain_moderate
@@ -209,7 +205,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ནོལ	nol	2	wts_35_51		2	nolthabs	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 པཀྱི	paksi	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
 པང	paṅ	6	wts_35_51		6	Daseinsbereichen;Z;pani	single_volume;credible_competing_form	retain_moderate
-པའ	pa	2	wts_1_34;wts_9_m		2	gnas;gras;i;pa’i;po’i;rum	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 པུཏྲ	putra	2	wts_35_51		3	piutra	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 པུས	pus	7	wts_35_51		7		single_volume	retain_moderate
 པྲེ	pre	4	wts_35_51		7	Preta	single_volume;credible_competing_form	retain_moderate
@@ -268,10 +263,9 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 བཟྣོག	bzlog	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 བཟྲོ	bzo	3	wts_1_34		3		single_volume	retain_moderate
 བཟླས	bzlas	2	wts_35_51		2	Y;pa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-བའེ	ba	2	wts_1_34;wts_35_51		2	ba'i	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 བརྐོས	brkos	7	wts_1_34		7		single_volume	retain_moderate
 བརྒྱུར	bsgyur	14	wts_1_34		14	bseyur	single_volume;credible_competing_form	retain_moderate
-བརྙན	br	5	wts_1_34		5	an;briian;brtsen;brñan;brūan;bsnan;sku	single_volume;credible_competing_form	retain_moderate
+བརྙན	brüan	5	wts_1_34		5	Fata;briian;brtsen;brñan;brūan;bsnan;sku	single_volume;credible_competing_form	retain_moderate
 བརྡབས	brdabs	6	wts_35_51		6		single_volume	retain_moderate
 བརྡལ	brdal	2	wts_1_34;wts_35_51		3		fewer_than_3_independent_occurrences	retain_moderate
 བརྨ	bam	2	wts_8_b		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -298,7 +292,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 བསྒྲུབ	bsgrub	4	wts_1_34		4	fur	single_volume;credible_competing_form	retain_moderate
 བསྒྲུབས	bsgrubs	3	wts_1_34		3		single_volume	retain_moderate
 བསྔར	bsdur	2	wts_1_34		2	bsdum;pa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-བསྙིལ	bsñil	3	wts_35_51		3	bs;bsnil	single_volume;credible_competing_form	retain_moderate
+བསྙིལ	bsñil	3	wts_35_51		3	bsnil;bsäil	single_volume;credible_competing_form	retain_moderate
 བསྟེར	bster	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
 བསྡད	bsdad	3	wts_35_51		3		single_volume	retain_moderate
 བསྡུམས	bsdums	2	wts_35_51;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
@@ -356,9 +350,9 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 མཆོ	mtsho	3	wts_1_34		3		single_volume	retain_moderate
 མཆོན	mtshon	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 མཆོར	mchor	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-མཉན	miian	2	wts_1_34		2	Imilan;des;m;ma;man;mfian;mian;pf	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+མཉན	miian	2	wts_1_34		2	Imilan;des;ma;man;mfian;mian;müan;pf	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མཉེ	mie	2	wts_1_34		2	Massage	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-མཉེས	mies	2	wts_1_34;wts_8_b		2	m;pa	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+མཉེས	mies	2	wts_1_34;wts_8_b		2	möes;pa	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 མཐས	mthas	3	wts_1_34		3	imthas	single_volume;credible_competing_form	retain_moderate
 མཐུ	mthu	15	wts_1_34		17	mihn;mthn	single_volume;credible_competing_form	retain_moderate
 མཐུག	mthug	2	wts_1_34;wts_35_51		2	mthng	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
@@ -373,16 +367,15 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 མབྲེབ	mtheb	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 མཚུལ	mtshul	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
 མཚོའི	mtsho’i	11	wts_1_34		11		single_volume	retain_moderate
-མཛའ	mdza	4	wts_1_34		4	mjal	single_volume;credible_competing_form	retain_moderate
 མཛུབ	mdzub	2	wts_35_51		2	Mittelfinger	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མའེ	ma'i	2	wts_35_51		2	mo'i	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-མཱ	m	2	wts_1_34		4	ku;ma;mwa;mā;ta	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+མཱ	mä	2	wts_1_34		3	ku;ma;mwa;mā;ta	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མིཀ	mig	2	wts_9_m		2	beispielhaftes;mmg	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མིར	mer	3	wts_9_m		3	mir	single_volume;credible_competing_form	retain_moderate
 མེང	miṅ	2	wts_9_m		2	bud;ma;maṅ;med;min	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མེའམ	miam	2	wts_9_m		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 མེལ	mel	3	wts_9_m		3		single_volume	retain_moderate
-མཾ	mo	2	wts_1_34;wts_9_m		2	Stra;lcogs;mam	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+མཾ	mo	2	wts_1_34;wts_9_m		2	lcogs;mam	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 མྨུ	mya	2	wts_9_m		2	ra	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མྨྱོས	myos	2	wts_9_m		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 མྱ	mya	2	wts_9_m		2	Y	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
@@ -390,7 +383,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 མྱུ	myu	2	wts_8_b;wts_9_m		2	mya;myn	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 མྱོག	myog	2	wts_9_m		2	schmut	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 མྲེགས	mkhregs	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-ཚིམ	tshim	2	wts_1_34;wts_35_51		2	in	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 ཚུག	tshug	2	wts_1_34;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
 ཚོང	tshoṅ	2	wts_35_51;wts_8_b		2	Tauschhan;ishoṅ;tshod	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 ཚོན	tshon	2	wts_1_34;wts_8_b		2	gefārbter;tsbon	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
@@ -434,7 +426,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 འགྱུལ	grul	2	wts_1_34		2	sna	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 འགྱེལ	gyel	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 འགྱོད	gyod	2	wts_1_34;wts_9_m		2	eyod	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
-འགྲལ	grul	2	wts_1_34		3	in	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+འགྲལ	grul	2	wts_1_34		4		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 འགྲིག	grig	4	wts_1_34		4	pf	single_volume;credible_competing_form	retain_moderate
 འགྲིལ	gril	2	wts_35_51;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
 འགྲུལ	grul	2	wts_1_34		2	erul	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
@@ -443,27 +435,27 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 འཆ	chi	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 འཆག	chag	3	wts_1_34		3	pf	single_volume;credible_competing_form	retain_moderate
 འཆགས	chags	2	wts_1_34		2	Pchags;sa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+འཆའ	chal	2	wts_1_34		2	cha	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 འཆི	chi	27	wts_1_34;wts_35_51		32	INN;Substitutsopfer;ba;bdag	credible_competing_form	retain_moderate
 འཆེས	ches	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 འཆོར	chor	4	wts_8_b		4	cher	single_volume;credible_competing_form	retain_moderate
 འཆོལ	chol	4	wts_1_34		4		single_volume	retain_moderate
 འཇག	ag	5	wts_1_34		5	Ban;Jag;ig;iig;jag;jig	single_volume;credible_competing_form	retain_moderate
-འཇའ	ja	10	wts_1_34		11	Ernennung;a;al;ig	single_volume;credible_competing_form	retain_moderate
 འཇི	ji	2	wts_1_34;wts_9_m		2	dzin;ig	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 འཇུ	ju	2	wts_35_51;wts_8_b		2	Ju;Pin;drags;in;je;pf;u;zur	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 འཇུགས	dzugs	3	wts_1_34		3	ugs	single_volume;credible_competing_form	retain_moderate
 འཇྲིག	ig	2	wts_1_34;wts_9_m		2		fewer_than_3_independent_occurrences	retain_moderate
 འཐས	thas	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-འཐིབས	thibs	2	wts_1_34;wts_8_b		2	Trmugs;schl	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+འཐིབས	thibs	2	wts_1_34;wts_8_b		2	Trmugs;schläfrig	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 འཐུང	thuṅ	2	wts_1_34;wts_35_51;wts_8_b		2	ba;den;thuni	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 འཐུད	thud	2	wts_1_34;wts_9_m		2	hund	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 འཐུམ	thum	2	wts_1_34;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
 འཐུས	thus	4	wts_1_34		4		single_volume	retain_moderate
 འཐོན	thon	4	wts_1_34		5		single_volume	retain_moderate
-འདག	dag	8	wts_35_51		8	dug;v	single_volume;credible_competing_form	retain_moderate
+འདག	dag	8	wts_35_51		8	dug	single_volume;credible_competing_form	retain_moderate
 འདན	dun	11	wts_1_34		11	dan	single_volume;credible_competing_form	retain_moderate
 འདིར	dir	5	wts_35_51		5		single_volume	retain_moderate
-འདུག	dug	16	wts_35_51		16	Andersgl;dig;dung;durg	single_volume;credible_competing_form	retain_moderate
+འདུག	dug	16	wts_35_51		16	Andersgläubiger;dig;dung;durg	single_volume;credible_competing_form	retain_moderate
 འདྲན	dun	2	wts_35_51		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 འདྲལ	dral	3	wts_1_34		3	dril	single_volume;credible_competing_form	retain_moderate
 འདྲིན	drin	2	wts_9_m		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -483,7 +475,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 འཕྲེད	phred	7	wts_35_51		7		single_volume	retain_moderate
 འབགས	bags	2	wts_8_b		2	bogs	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 འབད	bad	3	wts_8_b		3		single_volume	retain_moderate
-འབའ	ba	5	wts_8_b		8	bargun	single_volume;credible_competing_form	retain_moderate
 འབེ	be	3	wts_8_b		3	ga	single_volume;credible_competing_form	retain_moderate
 འབེགས	bigs	2	wts_1_34;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
 འབེབ	beb	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -516,12 +507,12 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཡོང	yoṅ	2	wts_1_34;wts_35_51;wts_8_b		2		fewer_than_3_independent_occurrences	retain_moderate
 ཡོར	yor	2	wts_1_34;wts_9_m		3		fewer_than_3_independent_occurrences	retain_moderate
 རགས	rags	13	wts_1_34		14	rigs	single_volume;credible_competing_form	retain_moderate
-རང	raṅ	2	wts_1_34;wts_35_51;wts_8_b		14	Bl;Tphe;dauerhaft;dies;rin;riṅ;smig;spyan;t;tali;thams	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+རང	raṅ	2	wts_1_34;wts_35_51;wts_8_b		14	Balken;Tphe;dauerhaft;dies;rin;riṅ;smig;spyan;tali;thams	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 རའ	ral	2	wts_1_34;wts_8_b		2	Herold;N	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
-རཱ	rwa	5	wts_1_34		6	Ma;chien-men-p’ai;ma;nu;po;r;ra;rdun;rna;rta;rā	single_volume;credible_competing_form	retain_moderate
+རཱ	rwa	5	wts_1_34		6	Ma;chien-men-p’ai;ma;nu;po;ra;rdun;rna;rta;rä;rā	single_volume;credible_competing_form	retain_moderate
 རིའ	ril	2	wts_1_34;wts_8_b		2	Kot	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 རིའི	ri’i	4	wts_1_34		4	bdag;bu;dban	single_volume;credible_competing_form	retain_moderate
-རྐ	rka	9	wts_1_34		9	geh;karko;myur;rko	single_volume;credible_competing_form	retain_moderate
+རྐ	rka	9	wts_1_34		9	gehörig;karko;myur;rko	single_volume;credible_competing_form	retain_moderate
 རྐམ	rkam	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 རྐུན	rkun	6	wts_1_34		7	Dieb	single_volume;credible_competing_form	retain_moderate
 རྐེད	rked	8	wts_1_34		8		single_volume	retain_moderate
@@ -595,21 +586,21 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ལྷའི	lha'i	3	wts_35_51		3	lha’i	single_volume;credible_competing_form	retain_moderate
 ལྷོགས	lhogs	2	wts_35_51		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 ལྷྕགས	lcags	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-ཤག	Sag	2	wts_1_34		2	Sig;T;sag	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+ཤག	Sag	2	wts_1_34		2	Sig;Türriegel;sag	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཤམྦྷི	sambhi	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 ཤིལ	sil	2	wts_9_m		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 ཤུག	sug	2	wts_1_34		2	Sug;dpal;sung;śug	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཤུད	Sud	2	wts_35_51		2	Su;sud;śud	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 ཤེ	se	2	wts_1_34		4	Sa	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-ཤོབ	sob	2	wts_1_34;wts_35_51		2	unversch	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
-སང	saṅ	2	wts_1_34;wts_35_51		3	Junggeselle;Ton;rgya;sa;sar;sari;sdaṅ;sen;siṅ;spyi;sran;srid;srun	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+ཤོབ	sob	2	wts_1_34;wts_35_51		2	unverschämt	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+སང	saṅ	2	wts_1_34;wts_35_51		3	Junggeselle;Ton;rgya;sa;sari;sarı;sdaṅ;sen;siṅ;spyi;sran;srid;srun	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 སཱན	sran	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-སི	si	3	wts_1_34		4	Gro;cin;hen;mephor;pi;siddhi;sri;srid	single_volume;credible_competing_form	retain_moderate
+སི	si	3	wts_1_34		4	cin;hen;mephor;pi;siddhi;sri;srid	single_volume;credible_competing_form	retain_moderate
 སིམ	sim	4	wts_1_34		4		single_volume	retain_moderate
 སུད	sud	2	wts_1_34;wts_35_51		2	srad	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 སུས	sras	2	wts_1_34		3	Sohn;mmu;rnam;sus	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 སོང	soṅ	9	wts_1_34;wts_8_b		9	Me;ba;pphyi;sbyoṅ;sprod;stod	credible_competing_form	retain_moderate
-སོན	son	2	wts_1_34;wts_35_51		2	bew	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+སོན	son	2	wts_1_34;wts_35_51		2	bewäl	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 སྐན	skan	2	wts_1_34;wts_9_m		2		fewer_than_3_independent_occurrences	retain_moderate
 སྐུད	skud	13	wts_1_34		13		single_volume	retain_moderate
 སྐུམ	skum	4	wts_1_34		4	siam	single_volume;credible_competing_form	retain_moderate
@@ -623,7 +614,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 སྐོམ	skom	6	wts_1_34		7	sgom	single_volume;credible_competing_form	retain_moderate
 སྐོས	skos	4	wts_1_34		4		single_volume	retain_moderate
 སྐྱལ	skyal	2	wts_1_34		2	I	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-སྐྱི	skyi	14	wts_1_34		17	a;daṅ;skye;skyid;skyo	single_volume;credible_competing_form	retain_moderate
+སྐྱི	skyi	15	wts_1_34		18	daṅ;skye;skyid;skyo	single_volume;credible_competing_form	retain_moderate
 སྐྱུག	skyug	8	wts_1_34		8		single_volume	retain_moderate
 སྐྱུར	skyur	8	wts_1_34		10		single_volume	retain_moderate
 སྐྱེགས	skyegs	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
@@ -631,7 +622,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 སྐྱོན	skyon	24	wts_1_34		25	Baucherkrankung	single_volume;credible_competing_form	retain_moderate
 སྐྱོབས	skyobs	4	wts_1_34		4		single_volume	retain_moderate
 སྐྱོར	skyor	11	wts_1_34		11		single_volume	retain_moderate
-སྒང	sgaṅ	2	wts_1_34;wts_35_51;wts_8_b		3	gsons;sgani;sgar;sgari;sgart	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
+སྒང	sgaṅ	2	wts_1_34;wts_35_51;wts_8_b		3	gsons;sgani;sgar;sgari;sgart;sgarı	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 སྒབ	sgab	7	wts_1_34		8	sgrub	single_volume;credible_competing_form	retain_moderate
 སྒུར	sgur	4	wts_1_34		4		single_volume	retain_moderate
 སྒོར	sgor	9	wts_1_34		9		single_volume	retain_moderate
@@ -647,15 +638,15 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 སྔས	shas	2	wts_1_34;wts_8_b		3	snas;syas	fewer_than_3_independent_occurrences;credible_competing_form	retain_moderate
 སྔིག	sdig	6	wts_35_51		6	sdiglto	single_volume;credible_competing_form	retain_moderate
 སྔོམ	sdom	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate
-སྙང	snaṅ	2	wts_35_51		2	Ant;Min;SAN;phur;rag;rtsa;s;san;sdug;sh;shan;sin;snani	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
-སྙིང	siṅ	3	wts_35_51		3	Fisenkette;Irten;Mitgef;Ri;Sugs;bab;byed;chn;dags;dga;dod;gcus;in;kha;nas;phod;po;por;s;sAin;sh;shin;shit;sien;sin;snin;sth;stiṅ;sun;szin;sñiń;sñiṅ;sāiṅ;thag;thub;wahre	single_volume;credible_competing_form	retain_moderate
+སྙང	snaṅ	2	wts_35_51		2	Ant;Min;SAN;phur;rag;rtsa;san;sdug;sh;shan;sin;snani;säin	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
+སྙིང	siṅ	3	wts_35_51		3	Eingeweide;Fisenkette;Irten;Ri;Sugs;bab;byed;chn;dags;dga;dod;gcus;kha;nas;phod;po;por;sAin;shin;shit;shäin;sien;sin;snin;sth;stiṅ;sun;szin;säih;säin;sñiń;sñiṅ;sāiṅ;thag;thub;wahre	single_volume;credible_competing_form	retain_moderate
 སྙེ	sie	9	wts_1_34		9	ma	single_volume;credible_competing_form	retain_moderate
-སྟ	sta	18	wts_1_34		19	BT;Rad;f;lta;tshogs	single_volume;credible_competing_form	retain_moderate
+སྟ	sta	18	wts_1_34		19	BT;Rad;fürchterlich;lta;tshogs	single_volume;credible_competing_form	retain_moderate
 སྟེམ	snem	2	wts_35_51		2	stem	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 སྟེས	stes	4	wts_1_34		4		single_volume	retain_moderate
 སྟོ	sto	2	wts_1_34;wts_35_51		3		fewer_than_3_independent_occurrences	retain_moderate
 སྟོབ	stob	3	wts_1_34		3	pa	single_volume;credible_competing_form	retain_moderate
-སྡང	sdaṅ	5	wts_1_34;wts_35_51		5	sdar	credible_competing_form	retain_moderate
+སྡང	sdaṅ	5	wts_1_34;wts_35_51		5	sdarı	credible_competing_form	retain_moderate
 སྡད	sdud	2	wts_1_34		3	sdad	fewer_than_3_independent_occurrences;single_volume;credible_competing_form	retain_moderate
 སྡུམ	sdum	5	wts_35_51		5		single_volume	retain_moderate
 སྡེབས	sdebs	2	wts_1_34;wts_35_51		2		fewer_than_3_independent_occurrences	retain_moderate

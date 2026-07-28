@@ -12,8 +12,11 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 གདང	gdaṅ	2	ambiguous	13	12	gdon;gdun;silberner	retain_incomplete
 གདེང	gdeṅ	1	provisional	0	0	gdeṅ;lgdeṅs	retain_incomplete
 གནང	gnaṅ	3	ambiguous	16	16	Erlaubnis;gnari	retain_incomplete
+གོང	goṅ	46	canonical_independent_strong	54	6	Felsblock;Handrücken;Quarz;dgon;du;go;gorr;in;ma;med	canonical_now_authoritative
 གྱོང	gyoṅ	8	provisional	0	0	gyoṅ	retain_incomplete
+གྲང	graṅ	13	canonical_independent_strong	3	3	gron;gyad;oran;po	canonical_now_authoritative
 གྲོང	groṅ	15	canonical_independent_moderate	16	4	Dorf;Saas;goṅ;grorn;gtam	retain_incomplete
+ཅིང	ciṅ	7	canonical_independent_strong	3	3	cın;stob	canonical_now_authoritative
 ཏང	taṅ	2	provisional	0	0	Ibur;par;tani;tar;tari;taṅ;tin	retain_incomplete
 ཏིང	tiṅ	16	provisional	0	0	N;dziṅ;in;tiṅ;tun	retain_incomplete
 དགུང	dguṅ	9	provisional	0	0	dgun;dguṅ	retain_incomplete
@@ -29,29 +32,28 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 ཕྱུང	phyuṅ	3	canonical_independent_moderate	4	4	Ritus;phbyuṅ;pyuṅ	retain_incomplete
 བཀང	bkaṅ	3	canonical_independent_moderate	3	3	ga	retain_incomplete
 བགྲང	bgraṅ	8	provisional	0	0	beran;bgraṅ	retain_incomplete
-བང	baṅ	2	ambiguous	16	16	Rhan;allgemeine;bahṅ;bani;banral;banrim;bar;bari;bba;bla;buṅ;byaṅ;byiṅ;byun;dbarni;khan;than;thun;tte;u	retain_incomplete
+བང	baṅ	2	ambiguous	16	16	Rhan;allgemeine;bahṅ;bani;banral;banrim;bar;bari;bba;bla;buṅ;byaṅ;byiṅ;byun;dbarni;khan;than;thun;u	retain_incomplete
 བཟུང	bzuṅ	3	canonical_independent_moderate	6	4	Tchan;pf;ste;von	retain_incomplete
 བསྲུང	bsruṅ	2	canonical_independent_moderate	4	2		retain_incomplete
 བུང	buṅ	1	canonical_independent_moderate	5	5	bur;burṅ;zuṅ	retain_incomplete
-བྱང	byaṅ	18	ambiguous	72	66	Dyari;Zweitseelent;ar;bbyari;byad;byai;byani;byar;byari;byarni;byun;byuṅ;sbyor	retain_incomplete
+བྱང	byaṅ	18	ambiguous	72	66	Dyari;Zweitseelentäfelchen;ar;bbyari;byad;byai;byani;byar;byari;byarni;byun;byuṅ;sbyor	retain_incomplete
 བྲེང	breṅ	2	canonical_independent_moderate	8	8	brerr;byed;entzweien;phur;rennen	retain_incomplete
-མང	maṅ	13	ambiguous	49	42	Mer;mar;mari;mi;mmaṅ;mon;mo’i;zaay	retain_incomplete
 མདུང	mduṅ	1	canonical_independent_moderate	15	14	mdiuṅ;mdu;thogs	retain_incomplete
 ཚོང	tshoṅ	1	canonical_independent_moderate	2	2	Tauschhan;ishoṅ;tshod	retain_incomplete
 ཝང	waṅ	3	canonical_independent_moderate	2	2	ldan	retain_incomplete
 ཞིང	źiṅ	7	provisional	0	0	de;dod;fruchtbares;pa;źiṅ	retain_incomplete
 འགོང	goṅ	3	provisional	0	0	god;goṅ;pf	retain_incomplete
+འཆིང	chiṅ	14	canonical_independent_strong	3	3	kha	canonical_now_authoritative
 འཐུང	thuṅ	10	canonical_independent_moderate	2	2	ba;den;thuni	retain_incomplete
 འཕོང	phoṅ	1	canonical_independent_moderate	4	4	pboṅ;skyeṅ	retain_incomplete
 འཕྱང	phyaṅ	3	provisional	0	0	Rind;phyani;phyaṅ	retain_incomplete
 འབྱོང	byoṅ	2	canonical_independent_moderate	2	2		retain_incomplete
 འབྲེང	breṅ	4	canonical_independent_moderate	7	7	breri;briṅ;then	retain_incomplete
-འཚོང	tshoṅ	3	ambiguous	6	6	ba;ishoh	retain_incomplete
 ཡོང	yoṅ	2	canonical_independent_moderate	2	2		retain_incomplete
 རུང	ruṅ	6	provisional	0	0	noch;riri;ruṅ	retain_incomplete
 རོང	roṅ	4	provisional	0	0	doṅ;rori;roṅ	retain_incomplete
 རྐྱང	rkyaṅ	22	provisional	0	0	Ryan;myanl;rgyan;rkaṅ;rkyani;rkyaṅ	retain_incomplete
-རྒྱང	rgyaṅ	11	provisional	0	0	igyan;rgyani;rgyar;rgyari;rgyaṅ;rgyon;rovar;royari;yar	retain_incomplete
+རྒྱང	rgyaṅ	11	provisional	0	0	igyan;rgyani;rgyar;rgyari;rgyaṅ;rgyon;rovar;royari	retain_incomplete
 རྟིང	rtiṅ	7	provisional	0	0	rtiṅ;yein	retain_incomplete
 རྡུང	rduṅ	1	provisional	0	0	rdim;rduṅ	retain_incomplete
 རྫིང	rdziṅ	1	canonical_independent_moderate	3	3	bu	retain_incomplete
@@ -62,15 +64,17 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 ལྕང	lcaṅ	6	provisional	0	0	lcaṅ;lcun	retain_incomplete
 ལྡང	ldaṅ	1	canonical_independent_moderate	3	3	ldeṅ;mtho	retain_incomplete
 ལྷུང	lhuṅ	2	provisional	0	0	lhuṅ	retain_incomplete
-སང	saṅ	6	canonical_independent_moderate	3	2	Junggeselle;Ton;rgya;sa;sar;sari;sdaṅ;sen;siṅ;spyi;sran;srid;srun	retain_incomplete
+སང	saṅ	6	canonical_independent_moderate	3	2	Junggeselle;Ton;rgya;sa;sari;sarı;sdaṅ;sen;siṅ;spyi;sran;srid;srun	retain_incomplete
 སོང	soṅ	18	canonical_independent_moderate	9	9	Me;ba;pphyi;sbyoṅ;sprod;stod	retain_incomplete
 སྐོང	skoṅ	4	ambiguous	10	7		retain_incomplete
-སྒང	sgaṅ	6	canonical_independent_moderate	3	2	gsons;sgani;sgar;sgari;sgart	retain_incomplete
+སྒང	sgaṅ	6	canonical_independent_moderate	3	2	gsons;sgani;sgar;sgari;sgart;sgarı	retain_incomplete
 སྒོང	sgoṅ	9	provisional	0	0	sgon;sgoṅ;skyoṅ	retain_incomplete
 སྟང	staṅ	2	provisional	0	0	snaṅ;staṅ;ston;stoṅ	retain_incomplete
-སྡང	sdaṅ	2	canonical_independent_moderate	5	5	sdar	retain_incomplete
+སྟེང	steṅ	26	canonical_independent_strong	11	3	Dach;du;stoṅ	canonical_now_authoritative
+སྡང	sdaṅ	2	canonical_independent_moderate	5	5	sdarı	retain_incomplete
 སྤང	spaṅ	4	ambiguous	32	32	sbani;sbari;small;smaṅ;spyah;spyai;spyani	retain_incomplete
 སྤོང	spoṅ	3	canonical_independent_moderate	5	4	nan;spyod	retain_incomplete
 སྤྲང	spraṅ	1	ambiguous	20	20	gto;sbans;sgaṅ;smran;smraṅ;smyuṅ;spyaṅ	retain_incomplete
+སྦྲང	sbraṅ	1	canonical_independent_strong	35	32	sbrar	canonical_now_authoritative
 སྲོང	sroṅ	16	provisional	0	0	spoh;spon;spoṅ;sroṅ	retain_incomplete
 སློང	sloṅ	15	provisional	0	0	Tkhar;jmd;sgon;slonṅ;sloṅ	retain_incomplete

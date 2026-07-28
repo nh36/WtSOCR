@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -47,7 +48,10 @@ CONTROL_FIELDS = [
 REGISTRY_FIELDS = [
     "signature_id", "operation_signature", "operation_type",
     "source_sequence", "target_sequence",
-    "tibetan_role_condition", "applicable_domain",
+    "parent_signature", "tibetan_role", "tibetan_feature",
+    "source_position", "target_position", "source_context_pattern",
+    "target_context_pattern", "domain_condition",
+    "canonical_target_required", "exact_tibetan_required",
     "reviewed_atomic_supporting_syllables", "reviewed_supporting_occurrences",
     "reviewed_supporting_volumes", "reviewed_page_ranges",
     "historical_support", "alternate_witness_support",
@@ -63,7 +67,9 @@ QUEUE_FIELDS = [
     "tibetan_syllable", "current_source", "canonical_target",
     "canonical_confidence_tier", "occurrence_count", "edit_signatures",
     "signature_statuses", "action_category", "domain_breakdown",
-    "damage_or_marker", "canonical_evidence", "sample_contexts",
+    "damage_or_marker", "boundary_secure_occurrences",
+    "condition_matching_occurrences", "condition_failing_occurrences",
+    "canonical_evidence", "sample_contexts",
 ]
 EXHAUSTION_FIELDS = [
     "signature", "remaining_outlier_families", "remaining_outlier_rows",
@@ -83,9 +89,27 @@ MODERATE_FIELDS = [
 ]
 PACKET_FIELDS = [
     "signature", "expected_clean_yield", "expected_syllable_yield",
-    "reviewed_support", "alternate_witness_support", "controls",
+    "reviewed_support", "alternate_witness_support",
+    "global_source_controls", "gated_collision_controls",
+    "same_tibetan_competing_controls", "domain_controls",
     "tibetan_syllable", "source", "canonical_target", "target_evidence",
+    "volume", "page", "line", "token_index", "full_captured_source",
+    "preceding_character", "following_character", "boundary_status",
+    "operation_positions", "proposed_structural_role",
+    "primitive_edit_sequence", "authorized_components",
+    "missing_components", "compound_classification",
     "domain", "context", "suggested_decision",
+]
+BOUNDARY_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "captured_token", "token_start", "token_end", "preceding_character",
+    "following_character", "boundary_status", "context_excerpt",
+]
+CONDITION_BACKTEST_FIELDS = [
+    "signature", "condition_matching_reviewed_occurrences",
+    "condition_failing_reviewed_occurrences", "reviewed_failure_reasons",
+    "residual_signature_occurrences", "residual_condition_matches",
+    "residual_condition_failures", "residual_failure_reasons",
 ]
 
 
@@ -106,6 +130,19 @@ def split_signature(signature: str) -> tuple[str, str, str]:
     if signature.startswith("INS "):
         return "insertion", "", signature[4:]
     return "complex", signature, ""
+
+
+def primitive_decomposition(
+    source: str, target: str, operation_signature: str
+) -> list[str]:
+    """Decompose recognised compounds diagnostically, never authoritatively."""
+    if (
+        operation_signature == "REPLACE ni→ṅ"
+        and source.endswith("ni") and target.endswith("ṅ")
+        and source[:-2] == target[:-1]
+    ):
+        return ["SUB n→ṅ", "DEL token-final i after n"]
+    return [operation_signature]
 
 
 def applicable_operations(
@@ -279,6 +316,72 @@ def decisions() -> dict[str, dict[str, str]]:
     return {row["signature"]: row for row in read(path)} if path.exists() else {}
 
 
+def signature_applies_to_row(
+    signature_record: dict[str, str],
+    row: dict[str, str],
+    canonical_target: str,
+) -> tuple[bool, str]:
+    """Evaluate a persisted signature condition against one exact row."""
+    if row.get("token_boundary_status") != "token_boundary_secure":
+        return False, "insecure_token_boundary"
+    if (
+        signature_record.get("exact_tibetan_required") == "yes"
+        and not row.get("tibetan_syllable")
+    ):
+        return False, "exact_tibetan_missing"
+    domain = integrity.classify_domain(
+        row.get("zone", ""), row.get("context_excerpt", "")
+    )
+    required_domain = signature_record.get("domain_condition", "")
+    if required_domain and domain != required_domain:
+        return False, "domain_mismatch"
+    source = row.get("latin_token", "")
+    source_pattern = signature_record.get("source_context_pattern", "")
+    target_pattern = signature_record.get("target_context_pattern", "")
+    if source_pattern and not re.search(source_pattern, source):
+        return False, "source_context_mismatch"
+    if target_pattern and not re.search(target_pattern, canonical_target):
+        return False, "target_context_mismatch"
+    operations = canonical.edit_operations(source, canonical_target)
+    operation = next((
+        op for op in operations
+        if op["signature"] == signature_record.get("operation_signature")
+    ), None)
+    if operation is None:
+        return False, "signature_not_in_edit_script"
+    source_position = signature_record.get("source_position", "")
+    target_position = signature_record.get("target_position", "")
+    if source_position == "token_final" and (
+        int(operation["source_position"]) + len(operation["source_span"])
+        != len(source)
+    ):
+        return False, "source_position_mismatch"
+    if target_position == "token_final" and (
+        int(operation["target_position"]) + len(operation["target_span"])
+        != len(canonical_target)
+    ):
+        return False, "target_position_mismatch"
+    if source_position == "token_initial" and operation["source_position"] != "0":
+        return False, "source_position_mismatch"
+    if target_position == "token_initial" and operation["target_position"] != "0":
+        return False, "target_position_mismatch"
+    roles = integrity.tibetan_roles(row["tibetan_syllable"])
+    role = signature_record.get("tibetan_role", "")
+    feature = signature_record.get("tibetan_feature", "")
+    if role == "suffix_coda" and roles.get("suffix_coda") != feature:
+        return False, "tibetan_role_mismatch"
+    if role == "root_consonant" and roles.get("root_consonant") != feature:
+        return False, "tibetan_role_mismatch"
+    if role == "latin_initial_confusable" and operation["source_position"] != "0":
+        return False, "tibetan_role_mismatch"
+    if (
+        signature_record.get("canonical_target_required") == "yes"
+        and not canonical_target
+    ):
+        return False, "canonical_target_missing"
+    return True, "condition_match"
+
+
 def build() -> dict[str, list[dict[str, str]]]:
     evidence, positives, negatives = reviewed_evidence()
     alternate = alternate_support()
@@ -352,18 +455,19 @@ def build() -> dict[str, list[dict[str, str]]]:
             status = {
                 "A": (
                     "authorized_role_conditioned"
-                    if decision["role_domain_condition"]
-                    not in {"", "exact_tibetan_canonical_target"}
+                    if any(decision.get(field, "") for field in (
+                        "tibetan_role", "tibetan_feature", "source_position",
+                        "target_position", "source_context_pattern",
+                        "target_context_pattern", "domain_condition",
+                    ))
                     else "authorized"
                 ),
                 "D": "candidate_review", "R": "rejected",
             }[decision["decision"]]
             rationale = decision["evidence_summary"]
             evidence_tier = "persistent_reviewed_decision"
-            condition = decision["role_domain_condition"]
         else:
             status = "diagnostic_only"
-            condition = ""
             if len(syllables) >= 2 and len(reviewed) >= 3:
                 status = "candidate_review"
             rationale = (
@@ -378,8 +482,31 @@ def build() -> dict[str, list[dict[str, str]]]:
             "operation_signature": signature,
             "operation_type": op_type, "source_sequence": source,
             "target_sequence": target,
-            "tibetan_role_condition": condition,
-            "applicable_domain": "ordinary_tibetan_lexical_or_compound",
+            "parent_signature": decision.get("parent_signature", "")
+            if decision else "",
+            "tibetan_role": decision.get("tibetan_role", "")
+            if decision else "",
+            "tibetan_feature": decision.get("tibetan_feature", "")
+            if decision else "",
+            "source_position": decision.get("source_position", "")
+            if decision else "",
+            "target_position": decision.get("target_position", "")
+            if decision else "",
+            "source_context_pattern": decision.get(
+                "source_context_pattern", ""
+            ) if decision else "",
+            "target_context_pattern": decision.get(
+                "target_context_pattern", ""
+            ) if decision else "",
+            "domain_condition": decision.get(
+                "domain_condition", ""
+            ) if decision else "",
+            "canonical_target_required": decision.get(
+                "canonical_target_required", "yes"
+            ) if decision else "yes",
+            "exact_tibetan_required": decision.get(
+                "exact_tibetan_required", "yes"
+            ) if decision else "yes",
             "reviewed_atomic_supporting_syllables": str(len(syllables)),
             "reviewed_supporting_occurrences": str(len(reviewed)),
             "reviewed_supporting_volumes": ";".join(sorted({
@@ -405,17 +532,75 @@ def build() -> dict[str, list[dict[str, str]]]:
             "authorization_status": status, "rationale": rationale,
         })
 
-    registry_by_signature = {
-        row["operation_signature"]: row for row in registry_rows
-    }
+    for decision in decision_map.values():
+        parent = decision.get("parent_signature", "")
+        if not parent:
+            continue
+        base = next((
+            row for row in registry_rows
+            if row["operation_signature"] == parent
+        ), None)
+        if not base:
+            continue
+        child = dict(base)
+        child.update({
+            "signature_id": decision["signature"],
+            "parent_signature": parent,
+            "tibetan_role": decision.get("tibetan_role", ""),
+            "tibetan_feature": decision.get("tibetan_feature", ""),
+            "source_position": decision.get("source_position", ""),
+            "target_position": decision.get("target_position", ""),
+            "source_context_pattern": decision.get(
+                "source_context_pattern", ""
+            ),
+            "target_context_pattern": decision.get(
+                "target_context_pattern", ""
+            ),
+            "domain_condition": decision.get("domain_condition", ""),
+            "canonical_target_required": decision.get(
+                "canonical_target_required", "yes"
+            ),
+            "exact_tibetan_required": decision.get(
+                "exact_tibetan_required", "yes"
+            ),
+            "evidence_tier": "persistent_reviewed_conditioned_child",
+            "authorization_status": {
+                "A": "authorized_role_conditioned",
+                "D": "candidate_review", "R": "rejected",
+            }[decision["decision"]],
+            "rationale": decision["evidence_summary"],
+        })
+        registry_rows.append(child)
+
+    registry_by_signature: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for registry_row in registry_rows:
+        registry_by_signature[
+            registry_row["operation_signature"]
+        ].append(registry_row)
+    aligned_rows = integrity.collect_all_aligned(ROOT / "release/current")
+    aligned_by_family: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    for aligned_row in aligned_rows:
+        aligned_by_family[(
+            aligned_row["tibetan_syllable"], aligned_row["latin_token"]
+        )].append(aligned_row)
     queue: list[dict[str, str]] = []
     for row in outliers:
         signatures = [s for s in row["edit_signatures"].split(";") if s]
-        statuses = [
-            registry_by_signature.get(s, {}).get(
-                "authorization_status", "diagnostic_only"
-            ) for s in signatures
-        ]
+        statuses = []
+        for signature in signatures:
+            records = registry_by_signature.get(signature, [])
+            if any(
+                record["authorization_status"].startswith("authorized")
+                for record in records
+            ):
+                statuses.append("authorized_role_conditioned")
+            elif any(
+                record["authorization_status"] == "candidate_review"
+                for record in records
+            ):
+                statuses.append("candidate_review")
+            else:
+                statuses.append("diagnostic_only")
         safe_domain = (
             row["domain_breakdown"]
             and all(
@@ -428,12 +613,48 @@ def build() -> dict[str, list[dict[str, str]]]:
             "authorized", "authorized_role_conditioned",
             "authorized_domain_conditioned",
         }
+        exact_rows = aligned_by_family.get(
+            (row["tibetan_syllable"], row["current_source"]), []
+        )
+        boundary_secure = [
+            exact for exact in exact_rows
+            if exact["token_boundary_status"] == "token_boundary_secure"
+        ]
+        matching_rows = []
+        failing_rows = []
+        for exact in boundary_secure:
+            failures = []
+            for signature, status in zip(signatures, statuses):
+                if status not in authorized:
+                    failures.append("signature_not_authorized")
+                    continue
+                applicable_records = [
+                    record for record in registry_by_signature[signature]
+                    if record["authorization_status"].startswith("authorized")
+                ]
+                results = [
+                    signature_applies_to_row(
+                        record, exact, row["canonical_forms"]
+                    )
+                    for record in applicable_records
+                ]
+                if not any(applies for applies, _reason in results):
+                    failures.append(
+                        results[0][1] if results else
+                        "signature_not_authorized"
+                    )
+            (failing_rows if failures else matching_rows).append(exact)
         if not safe_domain:
             action = "domain_risk"
         elif not clean:
             action = "alignment_or_damage"
-        elif signatures and all(status in authorized for status in statuses):
+        elif (
+            signatures and all(status in authorized for status in statuses)
+            and matching_rows
+        ):
             action = "ready_all_edits_authorized"
+        elif signatures and all(status in authorized for status in statuses):
+            action = "alignment_or_damage"
         elif sum(status not in authorized for status in statuses) == 1:
             action = "one_signature_missing"
         elif signatures:
@@ -451,13 +672,19 @@ def build() -> dict[str, list[dict[str, str]]]:
             "action_category": action,
             "domain_breakdown": row["domain_breakdown"],
             "damage_or_marker": row["damage_or_marker"],
+            "boundary_secure_occurrences": str(len(boundary_secure)),
+            "condition_matching_occurrences": str(len(matching_rows)),
+            "condition_failing_occurrences": str(len(failing_rows)),
             "canonical_evidence": row["canonical_evidence"],
             "sample_contexts": row["sample_contexts"],
         })
 
     authorized_signatures = {
-        sig for sig, row in registry_by_signature.items()
-        if row["authorization_status"].startswith("authorized")
+        sig for sig, records in registry_by_signature.items()
+        if any(
+            row["authorization_status"].startswith("authorized")
+            for row in records
+        )
     }
     exhaustion: list[dict[str, str]] = []
     for signature in sorted(authorized_signatures):
@@ -569,12 +796,22 @@ def build() -> dict[str, list[dict[str, str]]]:
         examples[missing].append(row)
     packet: list[dict[str, str]] = []
     for signature, expected in yields.most_common(10):
-        reg = registry_by_signature.get(signature, {})
+        reg = next(iter(registry_by_signature.get(signature, [])), {})
         control = next(
             (r for r in control_rows if r["signature"] == signature), {}
         )
-        for row in examples[signature][:20]:
-            packet.append({
+        emitted = 0
+        for row in examples[signature]:
+            exact_examples = aligned_by_family.get(
+                (row["tibetan_syllable"], row["current_source"]), []
+            ) or [{}]
+            operations = canonical.edit_operations(
+                row["current_source"], row["canonical_target"]
+            )
+            for exact in exact_examples:
+                if emitted >= 20:
+                    break
+                packet.append({
                 "signature": signature, "expected_clean_yield": str(expected),
                 "expected_syllable_yield": str(len(syllable_yields[signature])),
                 "reviewed_support": reg.get(
@@ -583,21 +820,153 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "alternate_witness_support": reg.get(
                     "alternate_witness_support", "0"
                 ),
-                "controls": control.get(
+                "global_source_controls": control.get(
                     "legitimate_source_form_controls", "0"
                 ),
+                "gated_collision_controls": "0",
+                "same_tibetan_competing_controls": "0",
+                "domain_controls": control.get("foreign_domain_cases", "0"),
                 "tibetan_syllable": row["tibetan_syllable"],
                 "source": row["current_source"],
                 "canonical_target": row["canonical_target"],
                 "target_evidence": row["canonical_evidence"],
+                "volume": exact.get("volume", ""),
+                "page": exact.get("page", ""), "line": exact.get("line", ""),
+                "token_index": exact.get("token_index", ""),
+                "full_captured_source": exact.get(
+                    "latin_token", row["current_source"]
+                ),
+                "preceding_character": exact.get("preceding_character", ""),
+                "following_character": exact.get("following_character", ""),
+                "boundary_status": exact.get(
+                    "token_boundary_status", "unresolved"
+                ),
+                "operation_positions": ";".join(
+                    f"{op['signature']}@{op['source_position']}"
+                    for op in operations
+                ),
+                "proposed_structural_role": (
+                    "suffix_coda:ང;token_final"
+                    if row["canonical_target"].endswith("ṅ")
+                    and integrity.tibetan_roles(
+                        row["tibetan_syllable"]
+                    ).get("suffix_coda") == "ང"
+                    else "unresolved"
+                ),
+                "primitive_edit_sequence": ";".join(
+                    primitive_decomposition(
+                        row["current_source"], row["canonical_target"],
+                        signature,
+                    )
+                ),
+                "authorized_components": (
+                    "SUB n→ṅ" if signature == "REPLACE ni→ṅ" else "none"
+                ),
+                "missing_components": (
+                    "DEL token-final i after n"
+                    if signature == "REPLACE ni→ṅ" else "none"
+                ),
+                "compound_classification": (
+                    "atomic_ocr_segmentation_signature_and_diagnostic_composition"
+                    if signature == "REPLACE ni→ṅ"
+                    else "single_edit_or_unclassified"
+                ),
                 "domain": row["domain_breakdown"],
-                "context": row["sample_contexts"],
+                "context": exact.get(
+                    "context_excerpt", row["sample_contexts"]
+                ),
                 "suggested_decision": "manual_signature_review",
-            })
+                })
+                emitted += 1
+            if emitted >= 20:
+                break
+    boundary_audit = [
+        {
+            "volume": row["volume"], "page": row["page"],
+            "line": row["line"], "token_index": row["token_index"],
+            "tibetan_syllable": row["tibetan_syllable"],
+            "captured_token": row["latin_token"],
+            "token_start": row["token_start"], "token_end": row["token_end"],
+            "preceding_character": row["preceding_character"] or "none",
+            "following_character": row["following_character"] or "none",
+            "boundary_status": row["token_boundary_status"],
+            "context_excerpt": row["context_excerpt"],
+        }
+        for row in aligned_rows
+        if row["token_boundary_status"] != "token_boundary_secure"
+    ]
+    aligned_by_identity = {
+        (row["volume"], row["page"], row["line"], row["token_index"]): row
+        for row in aligned_rows
+    }
+    condition_backtest: list[dict[str, str]] = []
+    for signature in sorted(authorized_signatures):
+        records = [
+            record for record in registry_by_signature[signature]
+            if record["authorization_status"].startswith("authorized")
+        ]
+        reviewed_matches = reviewed_failures = 0
+        reviewed_reasons: Counter[str] = Counter()
+        for evidence_row in evidence:
+            if signature not in evidence_row["operation_signatures"].split(";"):
+                continue
+            exact = aligned_by_identity.get((
+                evidence_row["volume"], evidence_row["page"],
+                evidence_row["line"], evidence_row["token_index"],
+            ))
+            if not exact:
+                reviewed_failures += 1
+                reviewed_reasons["identity_not_resolved"] += 1
+                continue
+            exact = dict(exact)
+            exact["latin_token"] = evidence_row["source"]
+            results = [
+                signature_applies_to_row(
+                    record, exact, evidence_row["target"]
+                ) for record in records
+            ]
+            if any(match for match, _reason in results):
+                reviewed_matches += 1
+            else:
+                reviewed_failures += 1
+                reviewed_reasons[
+                    results[0][1] if results else "no_authorized_record"
+                ] += 1
+        residual = [
+            row for row in queue
+            if signature in row["edit_signatures"].split(";")
+        ]
+        residual_matches = sum(
+            int(row["condition_matching_occurrences"]) for row in residual
+        )
+        residual_failures = sum(
+            int(row["condition_failing_occurrences"]) for row in residual
+        )
+        condition_backtest.append({
+            "signature": signature,
+            "condition_matching_reviewed_occurrences": str(reviewed_matches),
+            "condition_failing_reviewed_occurrences": str(reviewed_failures),
+            "reviewed_failure_reasons": ";".join(
+                f"{key}:{value}" for key, value in sorted(
+                    reviewed_reasons.items()
+                )
+            ) or "none",
+            "residual_signature_occurrences": str(sum(
+                int(row["occurrence_count"]) for row in residual
+            )),
+            "residual_condition_matches": str(residual_matches),
+            "residual_condition_failures": str(residual_failures),
+            "residual_failure_reasons": (
+                "condition_or_boundary_mismatch"
+                if residual_failures else "none"
+            ),
+        })
     return {
         "evidence": evidence, "controls": control_rows,
         "registry": registry_rows, "queue": queue, "exhaustion": exhaustion,
         "incomplete": incomplete, "moderate": moderate, "packet": packet,
+        "boundary": boundary_audit,
+        "condition_backtest": condition_backtest,
     }
 
 
@@ -612,6 +981,8 @@ def main() -> None:
         ("tibetan_latin_incomplete_final_ng_canonical_audit.tsv", "incomplete", INCOMPLETE_FIELDS),
         ("tibetan_latin_moderate_promotion_queue.tsv", "moderate", MODERATE_FIELDS),
         ("tibetan_latin_signature_review_packet.tsv", "packet", PACKET_FIELDS),
+        ("tibetan_latin_token_boundary_audit.tsv", "boundary", BOUNDARY_FIELDS),
+        ("tibetan_latin_signature_condition_backtest.tsv", "condition_backtest", CONDITION_BACKTEST_FIELDS),
     ]
     for name, key, fields in targets:
         write(ROOT / "data" / name, outputs[key], fields)

@@ -33,7 +33,8 @@ CONCORDANCE_FIELDS = [
     "explicit_user_reviewed_occurrences", "google_adopted_occurrences",
     "other_postprocess_occurrences", "superseded_occurrences",
     "damaged_occurrences", "marker_attached_occurrences", "domain_breakdown",
-    "alignment_breakdown", "gateway_breakdown", "correction_evidence_scope",
+    "alignment_breakdown", "gateway_breakdown", "boundary_breakdown",
+    "correction_evidence_scope",
     "known_feature_violation_breakdown",
     "provenance_breakdown", "canonical_teaching_breakdown",
     "independent_teaching_occurrences", "independent_teaching_volumes",
@@ -326,7 +327,8 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             if d["alignment_confidence"] not in {
                 "secure_positional_alignment", "secure_reviewed_alignment",
             } or d["damage_scope"] not in {"none", "later_gloss_or_commentary"} \
-                    or d["marker_attached"] == "yes":
+                    or d["marker_attached"] == "yes" \
+                    or d["token_boundary_status"] != "token_boundary_secure":
                 teaching_status = "not_teaching_evidence"
             provenance[provenance_class] += 1
             teaching[teaching_status] += 1
@@ -347,10 +349,12 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 "secure_positional_alignment", "secure_reviewed_alignment"
             } and d["damage_scope"] in {"none", "later_gloss_or_commentary"}
             and d["marker_attached"] == "no"
+            and d["token_boundary_status"] == "token_boundary_secure"
         ]
         domains = Counter(d["domain_context"] for d in diags)
         alignments = Counter(d["alignment_confidence"] for d in diags)
         gateways = Counter(d["transcription_gateway_status"] for d in diags)
+        boundaries = Counter(d["token_boundary_status"] for d in diags)
         raw_checks = [
             integrity.token_integrity(
                 r["tibetan_syllable"], r["latin_token"], use_canonical=False
@@ -396,6 +400,9 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             "domain_breakdown": ";".join(f"{k}:{v}" for k, v in sorted(domains.items())),
             "alignment_breakdown": ";".join(f"{k}:{v}" for k, v in sorted(alignments.items())),
             "gateway_breakdown": ";".join(f"{k}:{v}" for k, v in sorted(gateways.items())),
+            "boundary_breakdown": ";".join(
+                f"{k}:{v}" for k, v in sorted(boundaries.items())
+            ),
             "known_feature_violation_breakdown": ";".join(
                 f"{k}:{v}" for k, v in sorted(Counter(
                     c["known_feature_violation"] for c in raw_checks
@@ -633,7 +640,15 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         "operation_type": confusion_types[signature],
         "tibetan_role_context": signature_decisions.get(
             signature, {}
-        ).get("role_domain_condition", "unresolved"),
+        ).get("tibetan_role", "unresolved")
+        + (
+            ":" + signature_decisions.get(signature, {}).get(
+                "tibetan_feature", ""
+            )
+            if signature_decisions.get(signature, {}).get(
+                "tibetan_feature", ""
+            ) else ""
+        ),
         "independent_tibetan_syllables": str(len(confusion_groups[signature])),
         "occurrences": str(confusion_occurrences[signature]),
         "domains": ";".join(

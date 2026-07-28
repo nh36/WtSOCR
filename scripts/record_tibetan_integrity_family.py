@@ -16,6 +16,14 @@ assert SPEC and SPEC.loader
 integrity = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = integrity
 SPEC.loader.exec_module(integrity)
+SIGNATURE_SCRIPT = ROOT / "scripts/build_tibetan_latin_ocr_signature_evidence.py"
+SIGNATURE_SPEC = importlib.util.spec_from_file_location(
+    "tibetan_ocr_signature_authorization", SIGNATURE_SCRIPT
+)
+assert SIGNATURE_SPEC and SIGNATURE_SPEC.loader
+signature_engine = importlib.util.module_from_spec(SIGNATURE_SPEC)
+sys.modules[SIGNATURE_SPEC.name] = signature_engine
+SIGNATURE_SPEC.loader.exec_module(signature_engine)
 
 
 def validate_authorization(
@@ -108,11 +116,45 @@ def main() -> None:
             continue
         if row["marker_attached"] == "yes":
             continue
+        if row["token_boundary_status"] != "token_boundary_secure":
+            continue
         if diagnostic["domain_context"] != "ordinary_tibetan_lexical_or_compound":
             continue
         selected.append(row)
     if not selected:
         raise ValueError("No secure exact identities selected")
+    if not args.explicit_manual_review:
+        registry: dict[str, list[dict[str, str]]] = {}
+        for registry_row in integrity.read_tsv(
+            ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+        ):
+            registry.setdefault(
+                registry_row["operation_signature"], []
+            ).append(registry_row)
+        for row in selected:
+            for operation in signature_engine.canonical.edit_operations(
+                row["latin_token"], args.target
+            ):
+                records = [
+                    record for record in registry[operation["signature"]]
+                    if record["authorization_status"] in {
+                        "authorized", "authorized_role_conditioned",
+                        "authorized_domain_conditioned",
+                    }
+                ]
+                results = [
+                    signature_engine.signature_applies_to_row(
+                        record, row, args.target
+                    ) for record in records
+                ]
+                if not any(applies for applies, _reason in results):
+                    reason = results[0][1] if results else "not_authorized"
+                    raise ValueError(
+                        f"Signature condition mismatch for "
+                        f"{operation['signature']} at {row['volume']} "
+                        f"{row['page']}:{row['line']} token "
+                        f"{row['token_index']}: {reason}"
+                    )
     path = integrity.OVERRIDES_PATH
     rows = integrity.read_tsv(path)
     fields = list(rows[0])

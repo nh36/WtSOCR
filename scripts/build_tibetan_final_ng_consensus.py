@@ -11,7 +11,8 @@ from pathlib import Path
 
 
 LATIN_TOKEN_RE = re.compile(
-    r"[A-Za-zĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷŃńŇň'’.-]+"
+    r"[A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷŃńŇň"
+    r"ČčŽžŠšǸǹı'’.\-\u0300-\u036f]+"
 )
 POSTPROCESS_TOKEN_RE = re.compile(
     r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß$]+"
