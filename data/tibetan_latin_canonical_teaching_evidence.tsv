@@ -15264,7 +15264,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 ཐང	tbari	wts_9_m	195	77	2	historical_pre_campaign_unattributed	foreign_domain	full_token_independent_canonical	tibetan_proper_name	secure_positional_alignment	མུན་ཐང་ mu tbari npr. ein See in Indien nahe
 ཐང	thahi	wts_8_b	145	61	3	historical_pre_campaign_unattributed	foreign_domain	full_token_independent_canonical	tibetan_proper_name	secure_positional_alignment	བྱ་རྒོད་ཐང་ནག་ bya rgod thahi nag npr. eine
 ཐང	than	wts_1_34	811	181	2	historical_pre_campaign_unattributed	foreign_domain	full_token_independent_canonical	tibetan_proper_name	secure_positional_alignment	མཉེས་ཐང་ möes than npr. eine Gegend.
-ཐང	thani	wts_8_b	347	42	2	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_positional_alignment	དབང་ཐང་ dbaṅ thani
+ཐང	thani	wts_8_b	347	42	2	historical_pre_campaign_unattributed	independent_teaching_evidence	full_token_independent_canonical	ordinary_tibetan_lexical_or_compound	secure_reviewed_alignment	དབང་ཐང་ dbaṅ thani
 ཐང	thaṅ	wts_1_34	87	67	3	historical_reviewed_exact	supporting_but_derived	feature_only_final_nasal	ordinary_tibetan_lexical_or_compound	secure_reviewed_alignment	ཀུན་ཤེས་ཐང་པོ་ kun ses thaṅ po ein Wahrsager und
 ཐང	thaṅ	wts_1_34	92	180	3	historical_reviewed_exact	supporting_but_derived	feature_only_final_nasal	ordinary_tibetan_lexical_or_compound	secure_reviewed_alignment	ཀོ་ཀ་ཐང་དམར་གླིང་ ko ka thaṅ dmar gliṅ, auch ko
 ཐང	thaṅ	wts_1_34	107	1	2	historical_reviewed_exact	supporting_but_derived	feature_only_final_nasal	ordinary_tibetan_lexical_or_compound	secure_reviewed_alignment	ཀྱུས་ཐང་ལ་ kyus thaṅ la
