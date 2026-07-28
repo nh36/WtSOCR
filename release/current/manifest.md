@@ -1,7 +1,7 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-07-28T10:40:47Z`
-Source/code commit observed while building this bundle: `02b475cca68c852d9119f9a343838320fde34977`
+Generated UTC: `2026-07-28T10:42:50Z`
+Source/code commit observed while building this bundle: `4e7025495a689aca71689fd70001bb6d5d114d60`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
