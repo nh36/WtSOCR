@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 QA_ROOT = ROOT / "release/current/qa"
 BASELINE = "6322c7255cfba2fcfaf678cec656e65496ed5f12"
-FAMILIES = {
+HISTORICAL_FAMILIES = {
     "དྲང": ("dran", "draṅ", "explicit_same_entry_repetition"),
     "ཁོང": ("khon", "khoṅ", "explicit_same_entry_repetition"),
     "ཏིང": (
@@ -20,6 +20,14 @@ FAMILIES = {
     ),
     "སྲོང": ("sron", "sroṅ", "explicit_same_entry_repetition"),
     "ཞང": ("Zan", "Zaṅ", "explicit_same_entry_repetition"),
+}
+REPEATED_POSITION_FAMILIES = {
+    "སློང": ("slon", "sloṅ", "repeated_exact_positions_historical_target"),
+    "གཏང": ("gtan", "gtaṅ", "repeated_exact_positions_historical_target"),
+    "དགུང": ("dgun", "dguṅ", "repeated_exact_positions_historical_target"),
+    "སྒོང": ("sgon", "sgoṅ", "repeated_exact_positions_historical_target"),
+    "གྱོང": ("gyon", "gyoṅ", "repeated_exact_positions_historical_target"),
+    "རུང": ("run", "ruṅ", "repeated_exact_positions_historical_target"),
 }
 FIELDS = [
     "frozen_prepass_sha", "historical_baseline_sha", "volume", "page",
@@ -47,12 +55,22 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sha", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--tier",
+        choices=("historical", "repeated-position"),
+        default="historical",
+    )
     args = parser.parse_args()
+    families = (
+        REPEATED_POSITION_FAMILIES
+        if args.tier == "repeated-position"
+        else HISTORICAL_FAMILIES
+    )
     candidates = read_rows("tibetan_final_ng_source_compatible_candidates.tsv")
     echoes = read_rows("tibetan_final_ng_same_entry_echo_candidates.tsv")
     historical = read_tsv(ROOT / "data/final_ng_historical_witness_audit.tsv")
     frozen: list[dict[str, str]] = []
-    for syllable, (source, target, identity_evidence) in FAMILIES.items():
+    for syllable, (source, target, identity_evidence) in families.items():
         anchors = [
             row for row in historical
             if row["tibetan_syllable"] == syllable
@@ -81,6 +99,16 @@ def main() -> None:
         ]
         if not family_rows:
             raise ValueError(f"{syllable}: no current candidates")
+        clean_rows = [
+            row for row in family_rows
+            if row["source_compatible_category"]
+            == "source_compatible_single_anchor"
+        ]
+        if args.tier == "repeated-position" and len(clean_rows) < 3:
+            raise ValueError(
+                f"{syllable}: repeated-position tier requires at least "
+                f"three clean identities, found {len(clean_rows)}"
+            )
         for row in family_rows:
             withheld = row["source_compatible_category"] in {
                 "source_compatible_damaged_context",
@@ -152,7 +180,7 @@ def main() -> None:
                     }
                 )
     frozen.sort(key=lambda row: (
-        list(FAMILIES).index(row["tibetan_syllable"]),
+        list(families).index(row["tibetan_syllable"]),
         row["candidate_status"], row["volume"], int(row["page"]),
         int(row["line"]), int(row["token_index"]),
     ))

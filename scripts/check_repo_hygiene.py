@@ -315,6 +315,7 @@ def stdlib_modules() -> set[str]:
         "glob",
         "hashlib",
         "importlib",
+        "io",
         "json",
         "os",
         "pathlib",
