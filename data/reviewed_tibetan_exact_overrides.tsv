@@ -637,6 +637,7 @@ wts_1_34	163	106	1	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibet
 wts_1_34	163	112	1	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
 wts_1_34	163	112	7	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_rkyang_same_entry_echo_batch_20260726	The alternate expression independently repeats the same རྐྱང element.
 wts_1_34	163	118	1	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
+wts_1_34	163	121	1	rkyani	rkyaṅ	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_ni_ng_rkyang_20260728	Exact རྐྱང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_1_34	163	126	1	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
 wts_1_34	163	126	2	than	thaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_thang_consensus_clean_batch_20260719	Positionally aligned exact Tibetan ཐང; accepted thaṅ count 27; no aligned damage; exact token only; neighboring forms unchanged.
 wts_1_34	163	141	1	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
@@ -2120,6 +2121,7 @@ wts_1_34	589	49	9	dnos	dṅos	reviewed_tibetan_exact_dngos	dngos_family_cleanup_
 wts_1_34	592	26	3	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	592	31	2	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	592	32	2	Ina	lṅa	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
+wts_1_34	592	101	2	rkyani	rkyaṅ	reviewed_tibetan_exact_ocr_signature	feature_composed_target_plus_conditioned_final_ni_ng_rkyang_20260728	Exact རྐྱང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_1_34	592	148	2	rkyan	rkyaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkyang_consensus_batch_20260726	Frozen exact Tibetan རྐྱང alignment at db484b6; genuine རྐྱན is excluded.
 wts_1_34	593	119	7	Ikog	lkog	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	593	173	2	bran	braṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_brang_consensus_batch_20260726	Frozen exact Tibetan བྲང alignment.

@@ -28980,3 +28980,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 811	181	9615	headword_line	than	thaṅ	A	reviewed_tibetan_exact_ocr_signature	1	མཉེས་ཐང་ möes than npr. eine Gegend.
 915	108	10268	headword_line	gZon	gźon	A	reviewed_tibetan_exact_ocr_signature	1	རྟག་ཏུ་གཞོན་ནུ་ rtag tu gZon nu Beiname der
 139	106	1769	headword_line	tani	taṅ	A	reviewed_tibetan_exact_ocr_signature	1	བཀའ་ཏང་ bka’ tani
+163	121	2148	headword_line	rkyani	rkyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྐྱང་ཆ་ rkyani cha allein.
+592	101	7459	headword_line	rkyani	rkyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	གཅིག་རྐྱང་ geig rkyani
