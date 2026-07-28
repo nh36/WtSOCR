@@ -128,11 +128,16 @@ def main() -> None:
 
     positional_evidence = f"{args.batch}_consensus_batch_{REVIEW_DATE_COMPACT}"
     echo_evidence = f"{args.batch}_same_entry_echo_batch_{REVIEW_DATE_COMPACT}"
-    positional_reason = (
-        "reviewed_tibetan_exact_final_ng_source_compatible"
-        if "source_compatible" in args.manifest.name
-        else "reviewed_tibetan_exact_final_ng_consensus"
-    )
+    if "historical_witness" in args.manifest.name:
+        positional_reason = (
+            "reviewed_tibetan_exact_final_ng_historical_witness"
+        )
+    elif "source_compatible" in args.manifest.name:
+        positional_reason = (
+            "reviewed_tibetan_exact_final_ng_source_compatible"
+        )
+    else:
+        positional_reason = "reviewed_tibetan_exact_final_ng_consensus"
     override_rows = [
         [
             row["volume"], row["page"], row["line"], row["token_index"],
