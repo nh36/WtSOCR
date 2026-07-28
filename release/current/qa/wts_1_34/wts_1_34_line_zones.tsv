@@ -144214,7 +144214,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 989	231	10785	german_prose			none	0	3	0	0	geistlichen Würdenträger (Neb 414).
 990	1	10785	other			none	0	0	0	0	BEN
 990	3	10786	headword_line	ཐང་གཞི་	than	high	1	0	0	0	ཐང་གཞི་ than 97/
-990	5	10787	headword_line	ཐང་ཤུ་ཐུ་ཧན་	thaṅ Su	high	2	0	0	0	ཐང་ཤུ་ཐུ་ཧན་ thaṅ Su tbu han
+990	5	10787	headword_line	ཐང་ཤུ་ཐུ་ཧན་	thaṅ Su	high	2	0	0	0	ཐང་ཤུ་ཐུ་ཧན་ thaṅ Su thu han
 990	7	10787	example_tibetan_latin			none	7	4	0	0	Lex. Zwa mo Zig (brDa); bla chen gyi Zwa’i ཐང་ཤ་ཆོད་པ་ thaṅ Sa chod pa entschlossen,
 990	9	10787	german_prose_with_translit			none	1	3	0	0	bye brag „die Kopfbedeckung eines großen
 990	10	10787	german_prose_with_translit			none	1	1	0	0	bla ma“ (Dagy).
@@ -145673,7 +145673,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 998	110	10890	german_prose_with_translit			none	2	1	0	0	lehrtexte rDor-gcod, Thar-mdo, Grwa-Ina
 998	111	10890	german_prose_with_translit			none	1	4	0	0	und sByon-rgyud sind zu rezitieren“
 998	113	10890	german_prose			none	0	1	0	0	(Nagdel 76,12).
-998	115	10891	headword_line	ཐར་ན་	Euphorbia	high	1	2	0	0	ཐར་ན་ tbar nu eine Heilpflanze, Euphorbia
+998	115	10891	headword_line	ཐར་ན་	Euphorbia	high	1	2	0	0	ཐར་ན་ thar nu eine Heilpflanze, Euphorbia
 998	116	10891	other			none	0	0	0	0	» wallichiana bzw. kansuensis (TMP)
 998	117	10891	german_prose_with_translit			none	2	1	0	0	bzw. Euphorbia nematocypha Hand.-
 998	118	10891	german_prose			none	0	1	0	0	Mazz. (PASANG 1998: 91).
@@ -154587,7 +154587,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1057	25	11648	german_prose			none	0	1	0	0	Grund gehen.
 1057	27	11648	german_prose_with_translit			none	4	4	0	0	"Lex. mthil rdol ba’i ""das tshig „den Grund"
 1057	28	11648	german_prose			none	0	2	0	0	durchbohren, Perfekt“ (Dagy).
-1057	30	11649	headword_line	མཐིལ་ཐོན་	mthil	high	1	2	0	0	མཐིལ་ཐོན་ mthil tbon auf den Grund
+1057	30	11649	headword_line	མཐིལ་ཐོན་	mthil	high	1	2	0	0	མཐིལ་ཐོན་ mthil thon auf den Grund
 1057	32	11649	latin_other			none	1	0	0	0	gelangen.
 1057	34	11649	german_prose_with_translit			none	6	1	0	0	Lex. gtin thon pa / ’di byed pa po daṅ ma
 1057	35	11649	german_prose_with_translit			none	2	2	0	0	’brel ba „auf den Grund gelangen, nicht

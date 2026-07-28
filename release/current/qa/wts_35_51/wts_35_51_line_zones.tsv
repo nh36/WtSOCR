@@ -24654,7 +24654,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 295	12	1661	german_prose_with_translit			none	1	1	0	0	gran po npr. eine
 295	13	1661	german_prose			none	0	4	0	0	Berggottheit im Gefolge des sNo-la g.yu-
 295	14	1661	german_prose_with_translit			none	1	1	0	0	rtse (Neb 214).
-295	15	1662	headword_line	སྡོང་ཐིག་	sdoṅ	high	1	1	0	0	སྡོང་ཐིག་ sdoṅ tbig Docht.
+295	15	1662	headword_line	སྡོང་ཐིག་	sdoṅ	high	1	1	0	0	སྡོང་ཐིག་ sdoṅ thig Docht.
 295	16	1662	german_prose			none	0	3	0	0	"— bcas par ""zusammen mit dem Docht"""
 295	17	1662	other			none	0	0	0	0	(MTH3/3/41 22).
 295	18	1663	headword_line	སྡོང་དུམ་	sdoṅ	high	1	1	0	0	སྡོང་དུམ་ sdoṅ dum Baumstumpf.
@@ -82024,7 +82024,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1009	12	5360	german_prose_with_translit			none	3	2	0	0	"Lex. — pa =phyimigbltas pa ""zurückgeblickt"
 1009	13	5360	german_prose			none	0	1	0	0	"haben"" (Dagy)."
 1009	14	5360	tibetan_only			none	0	0	0	0	"EN ༨ . """""
-1009	15	5361	headword_line	ཕྱིར་ཐུང་གིས་	phyir tbuṅ	high	2	0	0	0	ཕྱིར་ཐུང་གིས་ phyir tbuṅ gis vor kurzem.
+1009	15	5361	headword_line	ཕྱིར་ཐུང་གིས་	phyir tbuṅ	high	2	0	0	0	ཕྱིར་ཐུང་གིས་ phyir thuṅ gis vor kurzem.
 1009	16	5361	other			none	0	0	0	0	nos kyani — log reyn beas gani cir stabs 'grigs
 1009	17	5361	german_prose_with_translit			none	1	2	0	0	"byum ma son ""auf der anderen Seite hat sich"
 1009	18	5361	german_prose			none	0	1	0	0	vor kurzem wegen meiner Rückkehr keiner-

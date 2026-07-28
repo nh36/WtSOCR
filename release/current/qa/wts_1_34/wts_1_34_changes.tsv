@@ -28983,3 +28983,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 163	121	2148	headword_line	rkyani	rkyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྐྱང་ཆ་ rkyani cha allein.
 592	101	7459	headword_line	rkyani	rkyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	གཅིག་རྐྱང་ geig rkyani
 277	28	3740	headword_line	sin	siṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
+990	5	11027	headword_line	tbu	thu	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཐང་ཤུ་ཐུ་ཧན་ thaṅ Su tbu han
+998	115	11132	headword_line	tbar	thar	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཐར་ན་ tbar nu eine Heilpflanze, Euphorbia
+1057	30	11892	headword_line	tbon	thon	A	reviewed_tibetan_exact_manual_structural_ocr	1	མཐིལ་ཐོན་ mthil tbon auf den Grund
