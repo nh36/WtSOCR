@@ -155,6 +155,20 @@ class FeatureCompositionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             role_model.validate_no_cycles(graph)
 
+    def test_cycle_detection_rejects_non_teaching_dependency_cycle(self):
+        graph = [
+            {
+                "from_node": "target:X", "to_node": "rule:R",
+                "dependency_edge": "yes", "teaching_allowed": "no",
+            },
+            {
+                "from_node": "rule:R", "to_node": "target:X",
+                "dependency_edge": "yes", "teaching_allowed": "no",
+            },
+        ]
+        with self.assertRaises(ValueError):
+            role_model.validate_no_cycles(graph)
+
     def test_insertion_delta_is_not_complete_root_realization(self):
         operation = {
             "operation_type": "single_character_insertion",
@@ -243,6 +257,28 @@ class FeatureCompositionTests(unittest.TestCase):
         )
         self.assertEqual(channel, "nonadmissible_observation")
         self.assertFalse(authorized)
+
+    def test_compose_with_role_spans_covers_target(self):
+        rules = {
+            ("root_consonant", "ཁ"): {
+                "latin_realization": "kh", "rule_id": "KH",
+                "structural_context": "simple",
+            },
+            ("vowel", "a"): {
+                "latin_realization": "a", "rule_id": "A",
+                "structural_context": "simple",
+            },
+            ("suffix_coda", "ང"): {
+                "latin_realization": "ṅ", "rule_id": "NG",
+                "structural_context": "simple",
+            },
+        }
+        target, spans, missing = role_model.compose_with_role_spans(
+            role_model.parse_tibetan_syllable("ཁང"), rules
+        )
+        self.assertEqual(target, "khaṅ")
+        self.assertFalse(missing)
+        self.assertEqual("".join(span["target_span"] for span in spans), target)
 
 
 if __name__ == "__main__":

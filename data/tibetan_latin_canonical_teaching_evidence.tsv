@@ -66737,6 +66737,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 བཀང	bkan	wts_1_34	132	136	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀང་ bkan pf. zu l’gens.
 བཀང	bkan	wts_1_34	132	156	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀང་ bkan
 གུང	gun	wts_1_34	134	129	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+ཏང	tani	wts_1_34	139	106	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	བཀའ་ཏང་ bka’ tani
 དྲུང	drun	wts_1_34	140	100	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀའ་དྲུང་ bka’ drun
 དྲུང	drun	wts_1_34	140	124	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀའ་དྲུང་ bka’ drun Sekretär des Kabinetts.
 བྱང	byan	wts_1_34	141	104	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	བཀའ་བྱང་ bika’ byan
@@ -66769,6 +66770,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 རྐྱང	rkyan	wts_1_34	163	106	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba
 རྐྱང	rkyan	wts_1_34	163	112	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con
 རྐྱང	rkyan	wts_1_34	163	118	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་བཅད་ rkyan bcad Gürtel.
+རྐྱང	rkyani	wts_1_34	163	121	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	རྐྱང་ཆ་ rkyani cha allein.
 རྐྱང	rkyan	wts_1_34	163	126	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་ཐང་ rkyan thaṅ.
 རྐྱང	rkyan	wts_1_34	163	141	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་དེད་ rkyan ded Konzentration.
 རྐྱང	rkyan	wts_1_34	163	154	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	རྐྱང་འདེབས་ rkyan ’debs weite Ebene.
@@ -66880,6 +66882,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 ཁོང	khon	wts_1_34	277	11	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
 ཁོང	khon	wts_1_34	277	20	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
 ཁོང	khon	wts_1_34	277	28	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་སིང་ khon sin I\khon sen Schlucht.
+སིང	sin	wts_1_34	277	28	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཁོང་སིང་ khon sin I\khon sen Schlucht.
 ཁོང	khon	wts_1_34	277	30	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་སུབས་ khon subs Anhang, Ergänzung.
 ཁོང	khon	wts_1_34	277	51	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་སན་ khon sran geduldig.
 ཁོང	khon	wts_1_34	277	57	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཁོང་གསེང་ khon gsen Tkhon sen.
@@ -67143,6 +67146,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 སྤྱང	spyan	wts_1_34	584	152	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཅེ་སྤྱང་ ce spyan \lce spyan.
 རོང	ron	wts_1_34	587	1	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཅོང་རོང་ con ron
 རོང	ron	wts_1_34	587	13	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཅྲོང་རོང་ con ron \gcon roṅ.
+རྐྱང	rkyani	wts_1_34	592	101	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	གཅིག་རྐྱང་ geig rkyani
 རྐྱང	rkyan	wts_1_34	592	148	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	གཅིག་རྐྱང་ geig rkyan ganz allein, nur einer.
 བྲང	bran	wts_1_34	593	173	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	གཅིག་བྲང་ཕྲ་མོ་ gcig bran phra mo Sehnenteil
 ལུང	lun	wts_1_34	593	190	5	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	གཅིག་ལས་འཕྲོས་པའི་ལུང་ gcig las ’phros pa’i lun
@@ -67742,6 +67746,7 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 ཞིང	Ziṅ	wts_35_51	873	69	2	historical_observation	not_teaching_evidence	feature_only_root	historical_observation	historical_observation	historical_observation	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
 འཆང	chah	wts_35_51	878	77	5	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chah"
 ཤིང	sih	wts_35_51	881	47	3	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཕག་གི་ཤིང་རྟ་ phag gi sih rta
+ཕང	phani	wts_35_51	884	19	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
 ཕུང	phuh	wts_35_51	884	19	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
 བྲང	brani	wts_35_51	939	37	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕྲོ་བྲང་ pho brani
 བྲང	brani	wts_35_51	940	1	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕོ་བྲང་འཁོར་ pho brani 'khor
@@ -67749,6 +67754,8 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 བྲང	brań	wts_35_51	941	33	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
 ཚང	tshani	wts_35_51	966	23	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕྱག་ཚང་ phyag tshani.
 ཚང	tshani	wts_35_51	966	42	2	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag
+ཕྱང	phyani	wts_35_51	972	28	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
+ཕྱང	phyani	wts_35_51	972	40	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	ཕྱང་བཟུང་ phyani bzuṅ
 བཞི	bzi	wts_35_51	990	12	2	historical_observation	not_teaching_evidence	feature_only_root	historical_observation	historical_observation	historical_observation	ཕྱི་བཞི་ phyi bzi Zeuge.
 ཞིང	Ziṅ	wts_35_51	1014	44	2	historical_observation	not_teaching_evidence	feature_only_root	historical_observation	historical_observation	historical_observation	ཕྱིར་ཞིང་ phyir Ziṅ
 ཞིང	Ziṅ	wts_35_51	1014	73	2	historical_observation	not_teaching_evidence	feature_only_root	historical_observation	historical_observation	historical_observation	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
@@ -67759,6 +67766,8 @@ tibetan_syllable	latin_form	volume	page	line	token_index	provenance_class	canoni
 སྣང	snah	wts_35_51	1059	20	3	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
 འཕང	phan	wts_35_51	1084	1	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	"འཕང་ ""phan"
 འཕང	phani	wts_35_51	1085	2	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
+འཕྱོང	phyon	wts_35_51	1108	42	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	"འཕྱོང་ ""phyon"
+འཕྱོང	phyon	wts_35_51	1108	76	1	historical_observation	not_teaching_evidence	derived_from_existing_canonical	historical_observation	historical_observation	historical_observation	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
 འཕྲེང	phren	wts_35_51	1111	15	2	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	འཕྲང་འཕྲེང་ /phran phren Verlangen.
 འཕྲེང	phren	wts_35_51	1121	34	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	"འཕྲེང་ ""phren Tphren ba."
 འཕྲེང	phren	wts_35_51	1121	35	1	historical_observation	not_teaching_evidence	feature_only_final_nasal	historical_observation	historical_observation	historical_observation	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."

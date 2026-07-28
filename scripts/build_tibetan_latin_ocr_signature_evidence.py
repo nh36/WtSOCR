@@ -70,7 +70,9 @@ QUEUE_FIELDS = [
     "domain_breakdown",
     "damage_or_marker", "boundary_secure_occurrences",
     "condition_matching_occurrences", "condition_failing_occurrences",
-    "canonical_evidence", "sample_contexts",
+    "canonical_evidence", "target_authority_ready", "ocr_signature_ready",
+    "alignment_ready", "boundary_ready", "domain_ready",
+    "prior_decision_ready", "final_action_ready", "sample_contexts",
 ]
 EXHAUSTION_FIELDS = [
     "signature", "remaining_outlier_families", "remaining_outlier_rows",
@@ -96,11 +98,31 @@ PACKET_FIELDS = [
     "tibetan_syllable", "source", "canonical_target", "target_evidence",
     "volume", "page", "line", "token_index", "full_captured_source",
     "preceding_character", "following_character", "boundary_status",
-    "operation_positions", "proposed_structural_role",
+    "operation_positions", "source_edit_start", "source_edit_end",
+    "target_edit_start", "target_edit_end", "source_structural_location",
+    "target_structural_role", "tibetan_role", "tibetan_feature",
+    "parent_structural_unit", "target_component_rule_id",
+    "crosses_role_boundaries", "extra_source_material",
+    "edit_specific_domain_condition", "proposed_structural_role",
     "primitive_edit_sequence", "authorized_components",
     "missing_components", "compound_classification",
     "exact_alternate_witness_status", "exact_alternate_witness_token",
     "domain", "context", "suggested_decision",
+]
+EDIT_ATTRIBUTION_FIELDS = [
+    "tibetan_syllable", "source", "canonical_target", "operation_signature",
+    "source_edit_start", "source_edit_end", "target_edit_start",
+    "target_edit_end", "source_structural_location",
+    "target_structural_role", "tibetan_role", "tibetan_feature",
+    "parent_structural_unit", "target_component_rule_id",
+    "crosses_role_boundaries", "extra_source_material",
+    "edit_specific_domain_condition", "attribution_status",
+]
+ALIGNMENT_RESCUE_FIELDS = [
+    "tibetan_syllable", "source", "canonical_target", "occurrence_count",
+    "current_alignment_status", "rescue_category", "layout_evidence",
+    "canonical_agreement_diagnostic_only", "upgrade_authorized", "blocker",
+    "sample_contexts",
 ]
 BOUNDARY_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
@@ -132,6 +154,66 @@ def split_signature(signature: str) -> tuple[str, str, str]:
     if signature.startswith("INS "):
         return "insertion", "", signature[4:]
     return "complex", signature, ""
+
+
+def attribute_edit_to_spans(
+    source: str,
+    target: str,
+    operation: dict[str, str],
+    spans: list[dict[str, str]],
+    domain: str,
+) -> dict[str, str]:
+    """Locate one OCR edit against exact canonical role spans."""
+    source_start = int(operation["source_position"])
+    source_end = source_start + len(operation["source_span"])
+    target_start = int(operation["target_position"])
+    target_end = target_start + len(operation["target_span"])
+    if not operation["target_span"]:
+        if source_start == 0:
+            source_location = "extra_source_material:token_initial"
+        elif source_end == len(source):
+            source_location = "extra_source_material:token_final"
+        else:
+            source_location = "extra_source_material:internal"
+        matching: list[dict[str, str]] = []
+        extra = "yes"
+    else:
+        matching = [
+            span for span in spans
+            if target_start < int(span["target_end"])
+            and target_end > int(span["target_start"])
+        ]
+        source_location = (
+            "canonical_corresponding_span:"
+            + ",".join(span["tibetan_role"] for span in matching)
+            if matching else "structural_location_unresolved"
+        )
+        extra = "no"
+    roles = sorted({span["tibetan_role"] for span in matching})
+    features = sorted({span["tibetan_feature"] for span in matching})
+    rule_ids = sorted({span["rule_id"] for span in matching})
+    return {
+        "source_edit_start": str(source_start),
+        "source_edit_end": str(source_end),
+        "target_edit_start": str(target_start),
+        "target_edit_end": str(target_end),
+        "source_structural_location": source_location,
+        "target_structural_role": ";".join(roles) or "none",
+        "tibetan_role": ";".join(roles) or "none",
+        "tibetan_feature": ";".join(features) or "none",
+        "parent_structural_unit": (
+            "role_span" if len(roles) == 1 else
+            "between_or_multi_role" if roles else "extra_source_material"
+        ),
+        "target_component_rule_id": ";".join(rule_ids) or "none",
+        "crosses_role_boundaries": "yes" if len(roles) > 1 else "no",
+        "extra_source_material": extra,
+        "edit_specific_domain_condition": domain or "unresolved",
+        "attribution_status": (
+            "structurally_attributed" if matching or extra == "yes"
+            else "structurally_unresolved"
+        ),
+    }
 
 
 def primitive_decomposition(
@@ -438,7 +520,18 @@ def build() -> dict[str, list[dict[str, str]]]:
     canon_rows = read(ROOT / "data/tibetan_latin_canonical_syllables.tsv")
     canon_by_syllable = {r["tibetan_syllable"]: r for r in canon_rows}
     concordance = read(ROOT / "data/tibetan_latin_syllable_concordance.tsv")
+    role_spans = read(ROOT / "data/tibetan_latin_canonical_role_spans.tsv")
+    spans_by_target: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    for span in role_spans:
+        spans_by_target[(span["tibetan_syllable"], span["target"])].append(span)
     decision_map = decisions()
+    transcription_exceptions = {
+        (r["tibetan_syllable"], r["source_token"]): r
+        for r in read(
+            ROOT / "data/reviewed_tibetan_transcription_exceptions.tsv"
+        )
+    }
+    edit_attributions: list[dict[str, str]] = []
 
     candidate_signatures = set(positives) | {
         signature
@@ -657,6 +750,11 @@ def build() -> dict[str, list[dict[str, str]]]:
                 for part in row["domain_breakdown"].split(";")
             )
         )
+        exception = transcription_exceptions.get(
+            (row["tibetan_syllable"], row["current_source"]), {}
+        )
+        if exception.get("status") == "foreign_or_alternate_transcription":
+            safe_domain = False
         clean = row["damage_or_marker"] == "damage:0;marker:0"
         authorized = {
             "authorized", "authorized_role_conditioned",
@@ -665,6 +763,26 @@ def build() -> dict[str, list[dict[str, str]]]:
         exact_rows = aligned_by_family.get(
             (row["tibetan_syllable"], row["current_source"]), []
         )
+        operations = canonical.edit_operations(
+            row["current_source"], row["canonical_forms"]
+        )
+        target_spans = spans_by_target.get(
+            (row["tibetan_syllable"], row["canonical_forms"]), []
+        )
+        family_attributions = [
+            {
+                "tibetan_syllable": row["tibetan_syllable"],
+                "source": row["current_source"],
+                "canonical_target": row["canonical_forms"],
+                "operation_signature": operation["signature"],
+                **attribute_edit_to_spans(
+                    row["current_source"], row["canonical_forms"],
+                    operation, target_spans, row["domain_breakdown"],
+                ),
+            }
+            for operation in operations
+        ]
+        edit_attributions.extend(family_attributions)
         boundary_secure = [
             exact for exact in exact_rows
             if exact["token_boundary_status"] == "token_boundary_secure"
@@ -724,6 +842,23 @@ def build() -> dict[str, list[dict[str, str]]]:
             action = "multiple_signatures_missing"
         else:
             action = "complex_unexplained"
+        target_ready = row["canonical_confidence_tier"] in {
+            "canonical_reviewed", "canonical_independent_strong",
+            "canonical_feature_composed",
+        }
+        signature_ready = bool(signatures) and all(
+            status in authorized for status in statuses
+        )
+        alignment_ready = (
+            row.get("source_alignment_status")
+            == "secure_transcription_outlier"
+        )
+        boundary_ready = bool(boundary_secure)
+        prior_ready = not reviewed_echo_rows
+        final_ready = all((
+            target_ready, signature_ready, alignment_ready, boundary_ready,
+            safe_domain, clean, prior_ready, bool(matching_rows),
+        ))
         queue.append({
             "tibetan_syllable": row["tibetan_syllable"],
             "current_source": row["current_source"],
@@ -742,6 +877,13 @@ def build() -> dict[str, list[dict[str, str]]]:
             "condition_matching_occurrences": str(len(matching_rows)),
             "condition_failing_occurrences": str(len(failing_rows)),
             "canonical_evidence": row["canonical_evidence"],
+            "target_authority_ready": "yes" if target_ready else "no",
+            "ocr_signature_ready": "yes" if signature_ready else "no",
+            "alignment_ready": "yes" if alignment_ready else "no",
+            "boundary_ready": "yes" if boundary_ready else "no",
+            "domain_ready": "yes" if safe_domain else "no",
+            "prior_decision_ready": "yes" if prior_ready else "no",
+            "final_action_ready": "yes" if final_ready else "no",
             "sample_contexts": row["sample_contexts"],
         })
 
@@ -877,6 +1019,21 @@ def build() -> dict[str, list[dict[str, str]]]:
             operations = canonical.edit_operations(
                 row["current_source"], row["canonical_target"]
             )
+            operation = next(
+                (op for op in operations if op["signature"] == signature),
+                operations[0] if operations else {
+                    "signature": signature, "source_span": "",
+                    "target_span": "", "source_position": "0",
+                    "target_position": "0",
+                },
+            )
+            attribution = attribute_edit_to_spans(
+                row["current_source"], row["canonical_target"], operation,
+                spans_by_target.get(
+                    (row["tibetan_syllable"], row["canonical_target"]), []
+                ),
+                row["domain_breakdown"],
+            )
             for exact in exact_examples:
                 if emitted >= 20:
                     break
@@ -914,14 +1071,17 @@ def build() -> dict[str, list[dict[str, str]]]:
                     f"{op['signature']}@{op['source_position']}"
                     for op in operations
                 ),
-                "proposed_structural_role": (
-                    "suffix_coda:ང;token_final"
-                    if row["canonical_target"].endswith("ṅ")
-                    and integrity.tibetan_roles(
-                        row["tibetan_syllable"]
-                    ).get("suffix_coda") == "ང"
-                    else "unresolved"
-                ),
+                **{field: attribution[field] for field in (
+                    "source_edit_start", "source_edit_end",
+                    "target_edit_start", "target_edit_end",
+                    "source_structural_location", "target_structural_role",
+                    "tibetan_role", "tibetan_feature",
+                    "parent_structural_unit", "target_component_rule_id",
+                    "crosses_role_boundaries", "extra_source_material",
+                    "edit_specific_domain_condition",
+                )},
+                "proposed_structural_role":
+                    attribution["source_structural_location"],
                 "primitive_edit_sequence": ";".join(
                     primitive_decomposition(
                         row["current_source"], row["canonical_target"],
@@ -1045,12 +1205,48 @@ def build() -> dict[str, list[dict[str, str]]]:
                 if residual_failures else "none"
             ),
         })
+    alignment_rescue: list[dict[str, str]] = []
+    for row in queue:
+        if row["action_category"] != "alignment_or_damage":
+            continue
+        alignment = row["source_alignment_status"]
+        damage = row["damage_or_marker"]
+        if alignment == "probable_transcription_outlier":
+            category = "probable_headword_span"
+        elif alignment == "structurally_unaligned":
+            category = "structurally_unaligned"
+        elif alignment == "gloss_alignment_noise":
+            category = "gloss_intrusion"
+        elif "marker:" in damage and not damage.endswith("marker:0"):
+            category = "marker_attached"
+        elif "damage:" in damage and not damage.startswith("damage:0"):
+            category = "damaged_ocr"
+        elif row["boundary_ready"] == "no":
+            category = "boundary_uncertainty"
+        else:
+            category = "other"
+        alignment_rescue.append({
+            "tibetan_syllable": row["tibetan_syllable"],
+            "source": row["current_source"],
+            "canonical_target": row["canonical_target"],
+            "occurrence_count": row["occurrence_count"],
+            "current_alignment_status": alignment,
+            "rescue_category": category,
+            "layout_evidence": "not_yet_independently_secure",
+            "canonical_agreement_diagnostic_only": "yes",
+            "upgrade_authorized": "no",
+            "blocker":
+                "layout_evidence_required_independent_of_desired_correction",
+            "sample_contexts": row["sample_contexts"],
+        })
     return {
         "evidence": evidence, "controls": control_rows,
         "registry": registry_rows, "queue": queue, "exhaustion": exhaustion,
         "incomplete": incomplete, "moderate": moderate, "packet": packet,
         "boundary": boundary_audit,
         "condition_backtest": condition_backtest,
+        "edit_attribution": edit_attributions,
+        "alignment_rescue": alignment_rescue,
     }
 
 
@@ -1067,6 +1263,8 @@ def main() -> None:
         ("tibetan_latin_signature_review_packet.tsv", "packet", PACKET_FIELDS),
         ("tibetan_latin_token_boundary_audit.tsv", "boundary", BOUNDARY_FIELDS),
         ("tibetan_latin_signature_condition_backtest.tsv", "condition_backtest", CONDITION_BACKTEST_FIELDS),
+        ("tibetan_latin_ocr_edit_span_attribution.tsv", "edit_attribution", EDIT_ATTRIBUTION_FIELDS),
+        ("tibetan_latin_alignment_rescue_queue.tsv", "alignment_rescue", ALIGNMENT_RESCUE_FIELDS),
     ]
     for name, key, fields in targets:
         write(ROOT / "data" / name, outputs[key], fields)

@@ -10,3 +10,4 @@ tibetan_syllable	source_token	status	exception_scope	reviewed_canonical_target	e
 ཤང	San	source_variant_requires_manual_review	family_block		manual_diagnostic_review	The corpus transcription convention for Tibetan root ཤ remains ambiguous.
 ཤིང	Sin	source_variant_requires_manual_review	family_block		manual_diagnostic_review	The corpus transcription convention for Tibetan root ཤ remains ambiguous.
 ཤིང	sin	source_variant_requires_manual_review	family_block		manual_diagnostic_review	The corpus transcription convention for Tibetan root ཤ remains ambiguous.
+ཀང	kani	foreign_or_alternate_transcription	source_form_only		manual_domain_review	The family contains Sanskrit/foreign-transcription material and remains domain-risk pending a lexical audit; signature readiness is not final-action readiness.

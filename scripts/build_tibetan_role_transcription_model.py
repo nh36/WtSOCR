@@ -110,7 +110,8 @@ DOMAIN_FIELDS = [
     "proper_name_compatible", "rationale",
 ]
 GRAPH_FIELDS = [
-    "from_node", "edge_type", "to_node", "evidence_identity",
+    "from_node", "from_node_type", "edge_type", "to_node",
+    "to_node_type", "evidence_identity", "dependency_edge",
     "teaching_allowed",
 ]
 SIGN_FIELDS = [
@@ -139,6 +140,34 @@ DEPENDENCY_FIELDS = [
     "domain_rule_dependencies", "target_support_channel",
     "authority_status",
 ]
+MIGRATION_FIELDS = [
+    "tibetan_syllable", "baseline_target", "current_target",
+    "baseline_status", "current_status", "migration_disposition",
+    "rationale",
+]
+CONFLICT_FIELDS = [
+    "tibetan_syllable", "true_canonical", "predicted_form",
+    "component_rule_ids", "parsed_roles", "predicted_role_spans",
+    "canonical_segmentation", "first_divergence", "contributing_rules",
+    "likely_missing_interaction", "rule_supporting_syllables",
+    "disposition",
+]
+ROLE_SPAN_FIELDS = [
+    "tibetan_syllable", "target", "target_authority",
+    "tibetan_role", "tibetan_feature", "target_start", "target_end",
+    "target_span", "rule_id", "structural_context", "domain_authority",
+]
+CORRECTION_AUTHORITY_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable",
+    "observed_source", "target", "correction_reason", "evidence_label",
+    "correction_batch", "correction_commit", "target_authority_at_decision",
+    "canonical_target", "component_feature_rule_ids",
+    "structural_unit_rule_ids", "strict_leave_one_out_result",
+    "target_support_channel", "ocr_signature_ids",
+    "edit_structural_locations", "gate0_alignment_status",
+    "token_boundary_status", "domain_gate", "prior_exact_decision_status",
+    "authority_snapshot_sha", "current_backaudit_status",
+]
 EXPANSION_FIELDS = [
     "tibetan_role", "tibetan_feature", "structural_context",
     "strong_canonical_missing_count", "single_unknown_count",
@@ -166,6 +195,10 @@ SOURCE_RECOVERY_FIELDS = [
     "corrected_roles", "recovery_status", "recovered_roles",
     "structural_unit", "mapping_dependencies", "blocker",
 ]
+CONVERGENCE_FIELDS = [
+    "iteration", "effective_rule_count", "new_rule_ids",
+    "new_residual_candidate_ids", "authority_changed", "converged",
+]
 
 
 def read(path: Path) -> list[dict[str, str]]:
@@ -173,7 +206,11 @@ def read(path: Path) -> list[dict[str, str]]:
 
 
 def write(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
-    integrity.write_tsv(path, rows, fields)
+    integrity.write_tsv(
+        path,
+        [{field: row.get(field, "") for field in fields} for row in rows],
+        fields,
+    )
 
 
 def read_git_tsv(commit: str, relative_path: str) -> list[dict[str, str]]:
@@ -1117,6 +1154,79 @@ def build_residual_expansion(
     return rows, structural
 
 
+def simulate_expansion_yields(
+    expansion: list[dict[str, str]],
+    parses: dict[str, dict[str, str]],
+    rules: dict[tuple[str, str], dict[str, str]],
+    composition: list[dict[str, str]],
+    teaching: list[dict[str, str]],
+) -> None:
+    """Populate downstream-yield columns by temporary, non-writing rules."""
+    current = {row["tibetan_syllable"]: row for row in composition}
+    outlier_path = ROOT / "data/tibetan_latin_transcription_outliers.tsv"
+    outliers = read(outlier_path) if outlier_path.exists() else []
+    final_rows: list[dict[str, str]] = []
+    for path in (ROOT / "release/current/qa").glob(
+        "wts_*/tibetan_cleanup_diagnostics/"
+        "tibetan_final_ng_source_compatible_candidates.tsv"
+    ):
+        final_rows.extend(read(path))
+    for row in expansion:
+        realizations = [
+            value for value in row["isolated_residual_realizations"].split(";")
+            if value
+        ]
+        if len(realizations) != 1 or row["induction_status"] == (
+            "competing_residual_realizations"
+        ):
+            continue
+        role, feature = row["tibetan_role"], row["tibetan_feature"]
+        if (role, feature) in rules:
+            continue
+        temporary = dict(rules)
+        temporary[(role, feature)] = {
+            "rule_id": f"SIMULATED:{role}:{feature}",
+            "tibetan_role": role,
+            "tibetan_feature": feature,
+            "latin_realization": realizations[0],
+            "structural_context": row["structural_context"],
+        }
+        newly_complete: dict[str, str] = {}
+        newly_authoritative: set[str] = set()
+        for syllable, parse in parses.items():
+            if current.get(syllable, {}).get("feature_composed_target"):
+                continue
+            predicted, _ids, missing = compose(
+                parse, temporary, excluded_syllable=syllable
+            )
+            if not predicted or missing:
+                continue
+            newly_complete[syllable] = predicted
+            _channel, support_ok = target_support_channel(
+                syllable, predicted, teaching, feature_complete=True
+            )
+            if support_ok:
+                newly_authoritative.add(syllable)
+        secure_outliers = sum(
+            int(item.get("occurrence_count", "0") or 0)
+            for item in outliers
+            if item["tibetan_syllable"] in newly_authoritative
+            and item.get("source_alignment_status")
+            == "secure_transcription_outlier"
+            and item.get("canonical_forms")
+            == newly_complete[item["tibetan_syllable"]]
+        )
+        final_unlocked = sum(
+            1 for item in final_rows
+            if item["tibetan_syllable"] in newly_authoritative
+            and item.get("proposed_latin_target")
+            == newly_complete[item["tibetan_syllable"]]
+        )
+        row["provisional_syllables_unlocked"] = str(len(newly_complete))
+        row["secure_outliers_unlocked"] = str(secure_outliers)
+        row["final_ng_rows_unlocked"] = str(final_unlocked)
+
+
 def residual_mapping_candidates(
     expansion: list[dict[str, str]],
 ) -> list[dict[str, str]]:
@@ -1191,19 +1301,11 @@ def merge_mapping_candidates(
     return list(merged.values())
 
 
-def build_recent_correction_backaudit(
+def build_correction_authority_backaudit(
     composition: list[dict[str, str]],
     dependencies: list[dict[str, str]],
+    role_spans: list[dict[str, str]],
 ) -> list[dict[str, str]]:
-    evidence_labels = {
-        "feature_composed_root_zha_gzhon_20260728",
-        "feature_complete_stem_plus_reviewed_final_ng_ning_20260728",
-        "feature_complete_stem_plus_conditioned_final_ni_ng_myang_20260728",
-        "feature_composed_root_zha_zhig_20260728",
-        "feature_complete_stem_plus_conditioned_final_ni_ng_rgyang_20260728",
-        "feature_complete_stem_plus_conditioned_final_ni_ng_sgang_20260728",
-        "feature_domain_compatible_proper_name_final_ng_thang_20260728",
-    }
     shadow = {
         (row["volume"], row["page"], row["line"], row["token_index"]): row
         for row in read(SOURCE_SHADOW_PATH)
@@ -1213,16 +1315,43 @@ def build_recent_correction_backaudit(
     }
     composed = {row["tibetan_syllable"]: row for row in composition}
     dependency = {row["tibetan_syllable"]: row for row in dependencies}
+    spans_by_target: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    for span in role_spans:
+        spans_by_target[(span["tibetan_syllable"], span["target"])].append(span)
+    diagnostics = {
+        (r["volume"], r["page"], r["line"], r["token_index"]): r
+        for r in integrity.build_diagnostics(ROOT / "release/current")
+    }
+    aligned_current = {
+        (r["volume"], r["page"], r["line"], r["token_index"]): r
+        for r in integrity.collect_all_aligned(ROOT / "release/current")
+    }
+    scope_registry = {
+        r["reason"]: r
+        for r in read(ROOT / "data/reviewed_correction_evidence_scopes.tsv")
+    }
+    snapshot = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
+    ).strip()
     rows: list[dict[str, str]] = []
     for override in read(integrity.OVERRIDES_PATH):
-        if override["evidence"] not in evidence_labels:
-            continue
         key = tuple(
             override[field]
             for field in ("volume", "page", "line", "token_index")
         )
         source = shadow.get(key, {})
-        syllable = source.get("tibetan_syllable", "")
+        registered_scope = scope_registry.get(override["reason"], {}).get(
+            "evidence_scope", ""
+        )
+        effective_scope = source.get("evidence_scope") or registered_scope
+        if effective_scope not in {
+            "derived_from_existing_canonical", "composed_repair",
+        } and override["reason"] != "reviewed_tibetan_exact_ocr_signature":
+            continue
+        syllable = (
+            source.get("tibetan_syllable", "")
+            or aligned_current.get(key, {}).get("tibetan_syllable", "")
+        )
         current_composition = composed.get(syllable, {})
         canonical_row = canonical.get(syllable, {})
         dependency_row = dependency.get(syllable, {})
@@ -1250,6 +1379,44 @@ def build_recent_correction_backaudit(
         exact_canonical_route = target_authority in {
             "canonical_reviewed", "canonical_independent_strong"
         }
+        target_spans = spans_by_target.get((syllable, override["to_token"]), [])
+        locations: list[str] = []
+        for operation in operations:
+            target_start = int(operation.get("target_position", "0") or 0)
+            target_end = target_start + len(operation.get("target_span", ""))
+            if not operation.get("target_span"):
+                source_position = int(operation.get("source_position", "0"))
+                if source_position == 0:
+                    locations.append("extra_source_material:token_initial")
+                elif source_position + len(operation.get("source_span", "")) \
+                        == len(override["from_token"]):
+                    locations.append("extra_source_material:token_final")
+                else:
+                    locations.append("extra_source_material:internal")
+                continue
+            matching = [
+                span for span in target_spans
+                if (
+                    target_start < int(span["target_end"])
+                    and target_end > int(span["target_start"])
+                )
+                or (
+                    target_start == target_end
+                    and int(span["target_start"]) <= target_start
+                    <= int(span["target_end"])
+                )
+            ]
+            locations.append(
+                ",".join(
+                    f"{span['tibetan_role']}:{span['tibetan_feature']}"
+                    for span in matching
+                ) or "extra_or_unresolved"
+            )
+        diagnostic = diagnostics.get(key, {})
+        current_status = (
+            "current_authority_retained" if retained else
+            "authority_downgraded_correction_preserved"
+        )
         rows.append({
             "volume": override["volume"], "page": override["page"],
             "line": override["line"],
@@ -1280,10 +1447,42 @@ def build_recent_correction_backaudit(
                 current_composition.get("composition_status")
                 or target_authority
             ),
-            "backaudit_disposition": (
-                "retained_authority" if retained
-                else "preserve_correction_remove_propagation_authority"
+            "backaudit_disposition": current_status,
+            # Extended persistent authority-provenance fields.
+            "observed_source": override["from_token"],
+            "correction_reason": override["reason"],
+            "evidence_label": override["evidence"],
+            "correction_batch": override["evidence"],
+            "correction_commit": "",
+            "target_authority_at_decision": target_authority,
+            "canonical_target": canonical_row.get("canonical_forms", ""),
+            "component_feature_rule_ids": (
+                canonical_row.get("feature_dependency_rule_ids", "")
+                or current_composition.get("component_rule_ids", "")
             ),
+            "structural_unit_rule_ids": dependency_row.get(
+                "structural_unit_dependencies", ""
+            ),
+            "strict_leave_one_out_result": current_composition.get(
+                "leave_one_out_status", "exact_canonical_route"
+            ),
+            "target_support_channel": dependency_row.get(
+                "target_support_channel", ""
+            ),
+            "ocr_signature_ids": signatures,
+            "edit_structural_locations": ";".join(locations),
+            "gate0_alignment_status": diagnostic.get(
+                "alignment_confidence", "reviewed_exact_identity"
+            ),
+            "token_boundary_status": diagnostic.get(
+                "token_boundary_status", "reviewed_exact_identity"
+            ),
+            "domain_gate": diagnostic.get(
+                "domain_context", "reviewed_exact_identity"
+            ),
+            "prior_exact_decision_status": "none_before_active_override",
+            "authority_snapshot_sha": snapshot,
+            "current_backaudit_status": current_status,
         })
     return rows
 
@@ -1444,6 +1643,44 @@ def compose(
     return "".join(spans) if not missing else "", rule_ids, missing
 
 
+def compose_with_role_spans(
+    parse: dict[str, str],
+    rules: dict[tuple[str, str], dict[str, str]],
+    *,
+    excluded_syllable: str = "",
+) -> tuple[str, list[dict[str, str]], list[str]]:
+    """Compose while retaining exact Latin offsets for every Tibetan role."""
+    target, _rule_ids, missing = compose(
+        parse, rules, excluded_syllable=excluded_syllable
+    )
+    if not target:
+        return "", [], missing
+    spans: list[dict[str, str]] = []
+    offset = 0
+    for role in ROLE_ORDER:
+        feature = parse.get(role, "")
+        if not feature:
+            continue
+        rule = rules[(role, feature)]
+        realization = rule["latin_realization"]
+        end = offset + len(realization)
+        spans.append({
+            "tibetan_role": role,
+            "tibetan_feature": feature,
+            "target_start": str(offset),
+            "target_end": str(end),
+            "target_span": realization,
+            "rule_id": rule["rule_id"],
+            "structural_context": rule["structural_context"],
+        })
+        offset = end
+    if offset != len(target):
+        raise ValueError(
+            f"Role-span coverage mismatch for {parse['tibetan_syllable']}"
+        )
+    return target, spans, []
+
+
 def build() -> tuple[list[dict[str, str]], ...]:
     canonical = canonical_forms()
     syllables = {
@@ -1460,7 +1697,9 @@ def build() -> tuple[list[dict[str, str]], ...]:
     rules = authoritative_rules(candidates)
     expansion: list[dict[str, str]] = []
     structural: list[dict[str, str]] = []
-    for _iteration in range(6):
+    convergence: list[dict[str, str]] = []
+    previous_candidate_ids: set[str] = set()
+    for iteration in range(1, 21):
         expansion, structural = build_residual_expansion(
             canonical, parses, rules
         )
@@ -1470,10 +1709,29 @@ def build() -> tuple[list[dict[str, str]], ...]:
             contrast_candidates, list(residual_candidates_by_id.values())
         )
         new_rules = authoritative_rules(candidates)
-        if set(new_rules) == set(rules):
+        new_rule_ids = sorted(
+            new_rules[key]["rule_id"]
+            for key in set(new_rules) - set(rules)
+        )
+        candidate_ids = set(residual_candidates_by_id)
+        new_candidate_ids = sorted(candidate_ids - previous_candidate_ids)
+        converged = set(new_rules) == set(rules) and not new_candidate_ids
+        convergence.append({
+            "iteration": str(iteration),
+            "effective_rule_count": str(len(new_rules)),
+            "new_rule_ids": ";".join(new_rule_ids) or "none",
+            "new_residual_candidate_ids":
+                ";".join(new_candidate_ids) or "none",
+            "authority_changed": "yes" if set(new_rules) != set(rules) else "no",
+            "converged": "yes" if converged else "no",
+        })
+        previous_candidate_ids = candidate_ids
+        if converged:
             rules = new_rules
             break
         rules = new_rules
+    else:
+        raise ValueError("Residual feature induction failed to converge")
     feature_evidence = feature_teaching_evidence(parses, rules)
     source_recovery, recovered_feature_evidence = (
         build_unaffected_source_recovery(parses, rules)
@@ -1510,7 +1768,7 @@ def build() -> tuple[list[dict[str, str]], ...]:
         if prediction == row["canonical_forms"]:
             status = "exact_reconstruction"
         elif prediction:
-            status = "known_canonical_conflict_blocked"
+            status = "wrong_prediction_blocked_by_exact_canonical"
         elif parse["role_parse_status"] == "unsupported_orthographic_sign":
             status = "unsupported_orthographic_sign"
         elif held_out:
@@ -1654,12 +1912,15 @@ def build() -> tuple[list[dict[str, str]], ...]:
     for row in feature_evidence:
         graph.append({
             "from_node": "identity:" + identity(row),
-            "edge_type": row["feature_teaching_status"],
+            "from_node_type": "exact_observation",
+            "edge_type": "supports",
             "to_node": (
                 f"feature:{row['tibetan_role']}:{row['tibetan_feature']}:"
                 f"{row['latin_realization']}"
             ),
+            "to_node_type": "feature_rule_evidence",
             "evidence_identity": identity(row),
+            "dependency_edge": "yes",
             "teaching_allowed": (
                 "yes" if row["feature_teaching_status"] in {
                     "independent_full_form_feature_evidence",
@@ -1669,19 +1930,25 @@ def build() -> tuple[list[dict[str, str]], ...]:
             ),
         })
     for row in composition:
-        if row["correction_authority"] != "yes":
+        if not row["feature_composed_target"]:
             continue
         for rule_id in row["component_rule_ids"].split(";"):
             graph.append({
                 "from_node": "feature_rule:" + rule_id,
-                "edge_type": "composes",
+                "from_node_type": "feature_rule",
+                "edge_type": "depends_on_rule",
                 "to_node": "canonical_feature_composed:" + row["tibetan_syllable"],
+                "to_node_type": "feature_composed_target",
                 "evidence_identity": row["tibetan_syllable"],
+                "dependency_edge": "yes",
                 "teaching_allowed": "no",
             })
     validate_no_cycles(graph)
     orthography_audit: list[dict[str, str]] = []
     dependencies: list[dict[str, str]] = []
+    migration: list[dict[str, str]] = []
+    conflicts: list[dict[str, str]] = []
+    role_spans: list[dict[str, str]] = []
     old_composed = [
         row for row in read_git_tsv(
             FEATURE_COMPOSITION_AUDIT_BASELINE,
@@ -1693,6 +1960,8 @@ def build() -> tuple[list[dict[str, str]], ...]:
         row["tibetan_syllable"]: row for row in composition
     }
     candidate_by_id = {row["rule_id"]: row for row in candidates}
+    # Historical migration audit: the 429 baseline rows remain an immutable
+    # comparison set, separate from current dependency completeness.
     for old in old_composed:
         syllable = old["tibetan_syllable"]
         current = composition_by_syllable.get(syllable, {})
@@ -1724,10 +1993,51 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 if retain else current.get("blocker", "composition_changed")
             ),
         })
+        migration.append({
+            "tibetan_syllable": syllable,
+            "baseline_target": old["canonical_forms"],
+            "current_target": current.get("feature_composed_target", ""),
+            "baseline_status": "canonical_feature_composed",
+            "current_status": current.get("composition_status", "absent"),
+            "migration_disposition": "retained" if retain else "downgraded",
+            "rationale": (
+                "Current strict composition matches the baseline target."
+                if retain else current.get("blocker", "composition_changed")
+            ),
+        })
+
+    canonical_registry = {
+        row["tibetan_syllable"]: row for row in read(CANONICAL_PATH)
+    }
+    # Current dependencies iterate the current composition state—not the old
+    # 429-row baseline.
+    for current in composition:
+        target = current.get("feature_composed_target", "")
+        if not target:
+            continue
+        syllable = current["tibetan_syllable"]
         component_ids = [
             item for item in current.get("component_rule_ids", "").split(";")
             if item
         ]
+        missing_rule_ids = [
+            rule_id for rule_id in component_ids
+            if rule_id not in candidate_by_id
+        ]
+        if missing_rule_ids:
+            raise ValueError(
+                f"Unknown composition rule(s) for {syllable}: "
+                + ";".join(missing_rule_ids)
+            )
+        inactive_rule_ids = [
+            rule_id for rule_id in component_ids
+            if rule_id not in {r["rule_id"] for r in rules.values()}
+        ]
+        if inactive_rule_ids:
+            raise ValueError(
+                f"Inactive composition rule(s) for {syllable}: "
+                + ";".join(inactive_rule_ids)
+            )
         evidence_syllables = sorted({
             evidence_syllable
             for rule_id in component_ids
@@ -1737,7 +2047,7 @@ def build() -> tuple[list[dict[str, str]], ...]:
         })
         dependencies.append({
             "tibetan_syllable": syllable,
-            "target": old["canonical_forms"],
+            "target": target,
             "component_rule_ids": ";".join(component_ids),
             "rule_evidence_syllables": ";".join(evidence_syllables),
             "target_in_rule_evidence": (
@@ -1748,25 +2058,183 @@ def build() -> tuple[list[dict[str, str]], ...]:
             "structural_unit_dependencies": "",
             "domain_rule_dependencies":
                 current.get("domain_compatibility", ""),
-            "target_support_channel": channel,
-            "authority_status": "retained" if retain else "downgraded",
+            "target_support_channel":
+                current.get("supporting_evidence_ids", ""),
+            "authority_status": (
+                "correction_authoritative"
+                if canonical_registry.get(syllable, {}).get(
+                    "canonical_confidence_tier"
+                ) == "canonical_feature_composed"
+                and canonical_registry[syllable]["canonical_forms"] == target
+                else "complete_not_currently_authoritative"
+            ),
         })
+        _target, spans, span_missing = compose_with_role_spans(
+            parses[syllable], rules, excluded_syllable=syllable
+        )
+        if span_missing or _target != target:
+            raise ValueError(f"Role spans disagree with composition for {syllable}")
+        for span in spans:
+            role_spans.append({
+                "tibetan_syllable": syllable,
+                "target": target,
+                "target_authority": dependencies[-1]["authority_status"],
+                **span,
+                "domain_authority": current["domain_compatibility"],
+            })
+
+    # Reviewed/strong exact canonicals also expose spans when strict held-out
+    # composition reconstructs them exactly.
+    spanned_targets = {
+        (row["tibetan_syllable"], row["target"]) for row in role_spans
+    }
+    for row in backtest:
+        if row["reconstruction_status"] != "exact_reconstruction":
+            continue
+        key = (row["tibetan_syllable"], row["hidden_canonical_target"])
+        if key in spanned_targets:
+            continue
+        _target, spans, missing = compose_with_role_spans(
+            parses[row["tibetan_syllable"]], rules,
+            excluded_syllable=row["tibetan_syllable"],
+        )
+        if missing or _target != row["hidden_canonical_target"]:
+            continue
+        for span in spans:
+            role_spans.append({
+                "tibetan_syllable": row["tibetan_syllable"],
+                "target": _target,
+                "target_authority": row["canonical_tier"],
+                **span,
+                "domain_authority": "ordinary_only",
+            })
+
+    for row in backtest:
+        if row["reconstruction_status"] != (
+            "wrong_prediction_blocked_by_exact_canonical"
+        ):
+            continue
+        syllable = row["tibetan_syllable"]
+        _target, spans, _missing = compose_with_role_spans(
+            parses[syllable], rules, excluded_syllable=syllable
+        )
+        true = row["hidden_canonical_target"]
+        divergence = next(
+            (
+                str(index) for index, (left, right)
+                in enumerate(zip(_target, true)) if left != right
+            ),
+            str(min(len(_target), len(true))),
+        )
+        ids = row["component_rule_ids"].split(";")
+        conflicts.append({
+            "tibetan_syllable": syllable,
+            "true_canonical": true,
+            "predicted_form": _target,
+            "component_rule_ids": row["component_rule_ids"],
+            "parsed_roles": ";".join(
+                f"{role}:{parses[syllable].get(role, '')}"
+                for role in ROLE_ORDER if parses[syllable].get(role, "")
+            ),
+            "predicted_role_spans": ";".join(
+                f"{s['tibetan_role']}[{s['target_start']}:{s['target_end']}]="
+                f"{s['target_span']}" for s in spans
+            ),
+            "canonical_segmentation": "unresolved_at_first_divergence",
+            "first_divergence": divergence,
+            "contributing_rules": ";".join(ids),
+            "likely_missing_interaction":
+                "structural_interaction_unresolved",
+            "rule_supporting_syllables": ";".join(sorted({
+                item for rule_id in ids
+                for item in _supporting_syllables(candidate_by_id[rule_id])
+            })),
+            "disposition":
+                "block_context_retain_rules_outside_failed_interaction",
+        })
+
+    current_composed = {
+        row["tibetan_syllable"]: row
+        for row in canonical_registry.values()
+        if row["canonical_confidence_tier"] == "canonical_feature_composed"
+    }
+    authoritative_dependencies = {
+        row["tibetan_syllable"]: row for row in dependencies
+        if row["authority_status"] == "correction_authoritative"
+    }
+    if set(current_composed) != set(authoritative_dependencies):
+        missing = sorted(set(current_composed) - set(authoritative_dependencies))
+        extra = sorted(set(authoritative_dependencies) - set(current_composed))
+        raise ValueError(
+            f"Feature dependency completeness failed: missing={missing} "
+            f"extra={extra}"
+        )
+    for syllable, canonical_row in current_composed.items():
+        if authoritative_dependencies[syllable]["target"] != (
+            canonical_row["canonical_forms"]
+        ):
+            raise ValueError(f"Feature dependency target mismatch: {syllable}")
     expansion, structural = build_residual_expansion(canonical, parses, rules)
-    recent_audit = build_recent_correction_backaudit(
-        composition, dependencies
+    simulate_expansion_yields(
+        expansion, parses, rules, composition, teaching
     )
+    correction_audit = build_correction_authority_backaudit(
+        composition, dependencies, role_spans
+    )
+    for candidate in candidates:
+        for syllable in _supporting_syllables(candidate):
+            graph.append({
+                "from_node": f"canonical:{syllable}",
+                "from_node_type": "strong_or_reviewed_canonical",
+                "edge_type": (
+                    "induces_rule" if candidate["evidence_kind"]
+                    == "single_unknown_residual_induction"
+                    else "contrasts_with"
+                ),
+                "to_node": "feature_rule:" + candidate["rule_id"],
+                "to_node_type": "feature_rule",
+                "evidence_identity": syllable,
+                "dependency_edge": "yes",
+                "teaching_allowed": "yes",
+            })
+    for correction in correction_audit:
+        correction_node = (
+            "exact_correction:"
+            f"{correction['volume']}:{correction['page']}:"
+            f"{correction['line']}:{correction['token_index']}"
+        )
+        target_node = (
+            "canonical_feature_composed:" + correction["tibetan_syllable"]
+            if correction["target_authority_at_decision"]
+            == "canonical_feature_composed"
+            else "canonical:" + correction["tibetan_syllable"]
+        )
+        graph.append({
+            "from_node": target_node,
+            "from_node_type": "canonical_target",
+            "edge_type": "produces_correction",
+            "to_node": correction_node,
+            "to_node_type": "exact_correction",
+            "evidence_identity": (
+                f"{correction['volume']}:{correction['page']}:"
+                f"{correction['line']}:{correction['token_index']}"
+            ),
+            "dependency_edge": "yes",
+            "teaching_allowed": "no",
+        })
+    validate_no_cycles(graph)
     return (
         parse_rows, feature_evidence, candidates, backtest, composition,
         domain, graph, sign_inventory, orthography_audit, revalidation,
-        dependencies, expansion, structural, recent_audit,
-        source_recovery,
+        dependencies, expansion, structural, correction_audit,
+        source_recovery, migration, conflicts, role_spans, convergence,
     )
 
 
 def validate_no_cycles(graph: list[dict[str, str]]) -> None:
     adjacency: dict[str, set[str]] = defaultdict(set)
     for edge in graph:
-        if edge["teaching_allowed"] == "yes":
+        if edge.get("dependency_edge", edge.get("teaching_allowed")) == "yes":
             adjacency[edge["from_node"]].add(edge["to_node"])
     visiting: set[str] = set()
     visited: set[str] = set()
@@ -1818,6 +2286,16 @@ def main() -> None:
          RECENT_CORRECTION_FIELDS),
         ("tibetan_latin_unaffected_source_evidence_audit.tsv", outputs[14],
          SOURCE_RECOVERY_FIELDS),
+        ("tibetan_feature_composition_migration.tsv", outputs[15],
+         MIGRATION_FIELDS),
+        ("tibetan_feature_composition_conflicts.tsv", outputs[16],
+         CONFLICT_FIELDS),
+        ("tibetan_latin_canonical_role_spans.tsv", outputs[17],
+         ROLE_SPAN_FIELDS),
+        ("tibetan_transcription_correction_authority.tsv", outputs[13],
+         CORRECTION_AUTHORITY_FIELDS),
+        ("tibetan_feature_mapping_convergence.tsv", outputs[18],
+         CONVERGENCE_FIELDS),
     ]:
         write(args.data_root / name, rows, fields)
     counts = Counter(r["role_parse_status"] for r in outputs[0])

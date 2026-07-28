@@ -187,6 +187,44 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
             {"authorized", "authorized_role_conditioned"},
         )
 
+    def test_leading_apostrophe_is_extra_initial_material(self) -> None:
+        operation = module.canonical.edit_operations("'khoṅ", "khoṅ")[0]
+        attributed = module.attribute_edit_to_spans(
+            "'khoṅ", "khoṅ", operation, [{
+                "target_start": "3", "target_end": "4",
+                "tibetan_role": "suffix_coda", "tibetan_feature": "ང",
+                "rule_id": "NG",
+            }], "ordinary_tibetan_lexical_or_compound",
+        )
+        self.assertEqual(
+            attributed["source_structural_location"],
+            "extra_source_material:token_initial",
+        )
+        self.assertEqual(attributed["target_structural_role"], "none")
+
+    def test_root_substitution_maps_to_root_span(self) -> None:
+        operation = module.canonical.edit_operations("kbuṅ", "khuṅ")[0]
+        attributed = module.attribute_edit_to_spans(
+            "kbuṅ", "khuṅ", operation, [{
+                "target_start": "0", "target_end": "2",
+                "tibetan_role": "root_consonant", "tibetan_feature": "ཁ",
+                "rule_id": "KH",
+            }], "ordinary_tibetan_lexical_or_compound",
+        )
+        self.assertEqual(attributed["target_structural_role"], "root_consonant")
+        self.assertEqual(attributed["target_component_rule_id"], "KH")
+
+    def test_kani_signature_ready_is_not_necessarily_final_ready(self) -> None:
+        row = next(
+            item for item in self.generated["queue"]
+            if item["tibetan_syllable"] == "ཀང"
+            and item["current_source"] == "kani"
+        )
+        # The reviewed domain exception must prevent action even though the
+        # conditioned final-ni signature itself is authorised.
+        self.assertEqual(row["ocr_signature_ready"], "yes")
+        self.assertEqual(row["final_action_ready"], "no")
+
 
 if __name__ == "__main__":
     unittest.main()
