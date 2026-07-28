@@ -510,6 +510,12 @@ def final_ng_reconciliation(
             ROOT / "data/reviewed_final_ng_echo_decisions.tsv"
         )
     }
+    transcription_exceptions = {
+        (r["tibetan_syllable"], r["source_token"]): r
+        for r in integrity.read_tsv(
+            ROOT / "data/reviewed_tibetan_transcription_exceptions.tsv"
+        )
+    }
     rows = []
     authoritative = {
         "canonical_reviewed", "canonical_independent_strong",
@@ -547,6 +553,21 @@ def final_ng_reconciliation(
         outlier = outlier_rows.get(
             (item["tibetan_syllable"], item["source_latin_token"]), {}
         )
+        exception = transcription_exceptions.get(
+            (item["tibetan_syllable"], item["source_latin_token"]), {}
+        )
+        domain = integrity.classify_domain(
+            aligned_row.get("zone", ""),
+            aligned_row.get("context_excerpt", ""),
+        )
+        domain_ready = (
+            domain in {
+                "ordinary_tibetan_lexical_or_compound",
+                "tibetan_proper_name",
+            }
+            and exception.get("status")
+            != "foreign_or_alternate_transcription"
+        )
         if prior in {"deferred", "rejected", "resolved_elsewhere"}:
             disposition = f"blocked_prior_{prior}"
         elif not target:
@@ -557,6 +578,8 @@ def final_ng_reconciliation(
             disposition = "final_ng_target_conflicts_with_general_canonical"
         elif outlier.get("source_alignment_status") != "secure_transcription_outlier":
             disposition = "source_alignment_not_secure"
+        elif not domain_ready:
+            disposition = "domain_risk"
         elif operations and all(value.endswith(":applies") for value in applicability):
             disposition = "ready_existing_authority"
         else:

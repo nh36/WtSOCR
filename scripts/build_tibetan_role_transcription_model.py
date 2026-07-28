@@ -14,6 +14,7 @@ import importlib.util
 import json
 import hashlib
 import io
+import re
 import subprocess
 import sys
 import unicodedata
@@ -150,7 +151,7 @@ CONFLICT_FIELDS = [
     "component_rule_ids", "parsed_roles", "predicted_role_spans",
     "canonical_segmentation", "first_divergence", "contributing_rules",
     "likely_missing_interaction", "rule_supporting_syllables",
-    "disposition",
+    "tibetan_sibling_evidence", "tibetan_side_disposition", "disposition",
 ]
 ROLE_SPAN_FIELDS = [
     "tibetan_syllable", "target", "target_authority",
@@ -167,6 +168,11 @@ CORRECTION_AUTHORITY_FIELDS = [
     "edit_structural_locations", "gate0_alignment_status",
     "token_boundary_status", "domain_gate", "prior_exact_decision_status",
     "authority_snapshot_sha", "current_backaudit_status",
+    "exact_correction_status", "current_target_authority",
+    "current_signature_authority", "current_structural_gate",
+    "current_alignment_gate", "current_boundary_gate",
+    "current_domain_gate", "current_prior_decision_gate",
+    "current_propagation_authority",
 ]
 EXPANSION_FIELDS = [
     "tibetan_role", "tibetan_feature", "structural_context",
@@ -175,6 +181,12 @@ EXPANSION_FIELDS = [
     "supporting_volumes", "supporting_entry_clusters",
     "provisional_syllables_unlocked", "secure_outliers_unlocked",
     "final_ng_rows_unlocked", "induction_status", "blocker",
+    "new_exact_strong_reconstructions",
+    "new_feature_complete_provisional_syllables",
+    "new_admissible_target_support_cases",
+    "new_current_authoritative_targets",
+    "new_structurally_attributable_ocr_edits",
+    "new_current_correction_ready_rows",
 ]
 STRUCTURAL_FIELDS = [
     "structural_unit", "tibetan_context", "latin_realization",
@@ -916,7 +928,14 @@ def target_support_channel(
         row for row in teaching_rows
         if row["tibetan_syllable"] == syllable and row["latin_form"] == target
     ]
-    statuses = {row["canonical_teaching_status"] for row in matching}
+    ordinary_matching = [
+        row for row in matching
+        if row["domain_context"]
+        == "ordinary_tibetan_lexical_or_compound"
+    ]
+    statuses = {
+        row["canonical_teaching_status"] for row in ordinary_matching
+    }
     domains = {row["domain_context"] for row in matching}
     if "reviewed_full_target_teaching_evidence" in statuses:
         return "reviewed_full_target", True
@@ -1118,6 +1137,12 @@ def build_residual_expansion(
             "final_ng_rows_unlocked": "0",
             "induction_status": status,
             "blocker": "none",
+            "new_exact_strong_reconstructions": "0",
+            "new_feature_complete_provisional_syllables": "0",
+            "new_admissible_target_support_cases": "0",
+            "new_current_authoritative_targets": "0",
+            "new_structurally_attributable_ocr_edits": "0",
+            "new_current_correction_ready_rows": "0",
         })
     for row in rows:
         alternatives = by_feature[
@@ -1166,6 +1191,18 @@ def simulate_expansion_yields(
     outlier_path = ROOT / "data/tibetan_latin_transcription_outliers.tsv"
     outliers = read(outlier_path) if outlier_path.exists() else []
     final_rows: list[dict[str, str]] = []
+    canonical_by_syllable = {
+        item["tibetan_syllable"]: item for item in read(CANONICAL_PATH)
+    }
+    authorized_operations = {
+        item["operation_signature"]
+        for item in read(
+            ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+        )
+        if item["authorization_status"].startswith("authorized")
+    } if (
+        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+    ).exists() else set()
     for path in (ROOT / "release/current/qa").glob(
         "wts_*/tibetan_cleanup_diagnostics/"
         "tibetan_final_ng_source_compatible_candidates.tsv"
@@ -1193,6 +1230,7 @@ def simulate_expansion_yields(
         }
         newly_complete: dict[str, str] = {}
         newly_authoritative: set[str] = set()
+        exact_strong = 0
         for syllable, parse in parses.items():
             if current.get(syllable, {}).get("feature_composed_target"):
                 continue
@@ -1202,6 +1240,14 @@ def simulate_expansion_yields(
             if not predicted or missing:
                 continue
             newly_complete[syllable] = predicted
+            canonical_row = canonical_by_syllable.get(syllable, {})
+            if (
+                canonical_row.get("canonical_confidence_tier") in {
+                    "canonical_reviewed", "canonical_independent_strong",
+                }
+                and canonical_row.get("canonical_forms") == predicted
+            ):
+                exact_strong += 1
             _channel, support_ok = target_support_channel(
                 syllable, predicted, teaching, feature_complete=True
             )
@@ -1216,6 +1262,20 @@ def simulate_expansion_yields(
             and item.get("canonical_forms")
             == newly_complete[item["tibetan_syllable"]]
         )
+        correction_ready = sum(
+            int(item.get("occurrence_count", "0") or 0)
+            for item in outliers
+            if item["tibetan_syllable"] in newly_authoritative
+            and item.get("source_alignment_status")
+            == "secure_transcription_outlier"
+            and item.get("canonical_forms")
+            == newly_complete[item["tibetan_syllable"]]
+            and all(
+                signature in authorized_operations
+                for signature in item.get("edit_signatures", "").split(";")
+                if signature
+            )
+        )
         final_unlocked = sum(
             1 for item in final_rows
             if item["tibetan_syllable"] in newly_authoritative
@@ -1225,6 +1285,20 @@ def simulate_expansion_yields(
         row["provisional_syllables_unlocked"] = str(len(newly_complete))
         row["secure_outliers_unlocked"] = str(secure_outliers)
         row["final_ng_rows_unlocked"] = str(final_unlocked)
+        row["new_exact_strong_reconstructions"] = str(exact_strong)
+        row["new_feature_complete_provisional_syllables"] = str(
+            len(newly_complete)
+        )
+        row["new_admissible_target_support_cases"] = str(
+            len(newly_authoritative)
+        )
+        row["new_current_authoritative_targets"] = str(
+            len(newly_authoritative)
+        )
+        row["new_structurally_attributable_ocr_edits"] = str(
+            secure_outliers
+        )
+        row["new_current_correction_ready_rows"] = str(correction_ready)
 
 
 def residual_mapping_candidates(
@@ -1306,6 +1380,25 @@ def build_correction_authority_backaudit(
     dependencies: list[dict[str, str]],
     role_spans: list[dict[str, str]],
 ) -> list[dict[str, str]]:
+    blame_by_override_line: dict[str, str] = {}
+    try:
+        blame = subprocess.check_output(
+            [
+                "git", "blame", "--line-porcelain", "--",
+                str(integrity.OVERRIDES_PATH.relative_to(ROOT)),
+            ],
+            cwd=ROOT, text=True,
+        )
+        current_commit = ""
+        for line in blame.splitlines():
+            if re.fullmatch(r"[0-9a-f]{40} \d+ \d+(?: \d+)?", line):
+                current_commit = line.split()[0]
+            elif line.startswith("\t") and current_commit:
+                blame_by_override_line[
+                    "\t".join(line[1:].split("\t")[:8])
+                ] = current_commit
+    except (subprocess.CalledProcessError, OSError):
+        blame_by_override_line = {}
     shadow = {
         (row["volume"], row["page"], row["line"], row["token_index"]): row
         for row in read(SOURCE_SHADOW_PATH)
@@ -1329,6 +1422,12 @@ def build_correction_authority_backaudit(
     scope_registry = {
         r["reason"]: r
         for r in read(ROOT / "data/reviewed_correction_evidence_scopes.tsv")
+    }
+    signature_decisions = {
+        row["signature"]: row
+        for row in read(
+            ROOT / "data/reviewed_tibetan_ocr_signature_decisions.tsv"
+        )
     }
     snapshot = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
@@ -1366,6 +1465,26 @@ def build_correction_authority_backaudit(
             f"{item['target_span']}"
             for item in operations
         )
+        if (
+            override["from_token"].endswith("ni")
+            and override["to_token"].endswith("ṅ")
+            and override["from_token"][:-2] == override["to_token"][:-1]
+        ):
+            resolved_signature_ids = "FINAL_NI_TO_NG"
+        elif (
+            override["from_token"].endswith("n")
+            and override["to_token"].endswith("ṅ")
+            and override["from_token"][:-1] == override["to_token"][:-1]
+        ):
+            resolved_signature_ids = "SUB n→ṅ"
+        elif len(operations) == 1 and operations[0].get("source_span") == "Z" \
+                and operations[0].get("target_span") == "ź":
+            resolved_signature_ids = "SUB Z→ź"
+        elif len(operations) == 1 and operations[0].get("source_span") == "z" \
+                and operations[0].get("target_span") == "ź":
+            resolved_signature_ids = "SUB z→ź"
+        else:
+            resolved_signature_ids = "exact_row_review_only"
         retained = (
             target_authority in {
                 "canonical_reviewed", "canonical_independent_strong"
@@ -1413,6 +1532,44 @@ def build_correction_authority_backaudit(
                 ) or "extra_or_unresolved"
             )
         diagnostic = diagnostics.get(key, {})
+        signature_authority = (
+            "yes" if resolved_signature_ids != "exact_row_review_only"
+            and all(
+                signature_decisions.get(item, {}).get("decision") == "A"
+                for item in resolved_signature_ids.split(";")
+            ) else
+            "exact_row_review_only" if resolved_signature_ids
+            == "exact_row_review_only" else "no"
+        )
+        structural_gate = (
+            "yes" if signature_authority == "yes" and all(
+                location != "extra_or_unresolved" for location in locations
+            ) else
+            "exact_row_review_only" if signature_authority
+            == "exact_row_review_only" else "no"
+        )
+        alignment_gate = (
+            "yes" if diagnostic.get("alignment_confidence") in {
+                "secure_positional_alignment", "secure_reviewed_alignment",
+                None,
+            } else "no"
+        )
+        boundary_gate = (
+            "yes" if diagnostic.get("token_boundary_status") in {
+                "token_boundary_secure", None,
+            } else "no"
+        )
+        domain_gate = (
+            "yes" if diagnostic.get("domain_context") in {
+                "ordinary_tibetan_lexical_or_compound",
+                "tibetan_proper_name", None,
+            } else "no"
+        )
+        propagation = all((
+            retained, signature_authority == "yes",
+            structural_gate == "yes", alignment_gate == "yes",
+            boundary_gate == "yes", domain_gate == "yes",
+        ))
         current_status = (
             "current_authority_retained" if retained else
             "authority_downgraded_correction_preserved"
@@ -1453,8 +1610,17 @@ def build_correction_authority_backaudit(
             "correction_reason": override["reason"],
             "evidence_label": override["evidence"],
             "correction_batch": override["evidence"],
-            "correction_commit": "",
-            "target_authority_at_decision": target_authority,
+            "correction_commit": blame_by_override_line.get(
+                "\t".join(
+                    override.get(field, "") for field in (
+                        "volume", "page", "line", "token_index",
+                        "from_token", "to_token", "reason", "evidence",
+                    )
+                ),
+                "unknown_historical_commit",
+            ),
+            "target_authority_at_decision":
+                "decision_time_authority_snapshot_unavailable",
             "canonical_target": canonical_row.get("canonical_forms", ""),
             "component_feature_rule_ids": (
                 canonical_row.get("feature_dependency_rule_ids", "")
@@ -1469,7 +1635,7 @@ def build_correction_authority_backaudit(
             "target_support_channel": dependency_row.get(
                 "target_support_channel", ""
             ),
-            "ocr_signature_ids": signatures,
+            "ocr_signature_ids": resolved_signature_ids,
             "edit_structural_locations": ";".join(locations),
             "gate0_alignment_status": diagnostic.get(
                 "alignment_confidence", "reviewed_exact_identity"
@@ -1483,6 +1649,17 @@ def build_correction_authority_backaudit(
             "prior_exact_decision_status": "none_before_active_override",
             "authority_snapshot_sha": snapshot,
             "current_backaudit_status": current_status,
+            "exact_correction_status": "retained_reviewed_exact",
+            "current_target_authority": target_authority,
+            "current_signature_authority": signature_authority,
+            "current_structural_gate": structural_gate,
+            "current_alignment_gate": alignment_gate,
+            "current_boundary_gate": boundary_gate,
+            "current_domain_gate": domain_gate,
+            "current_prior_decision_gate": "yes",
+            "current_propagation_authority": (
+                "yes" if propagation else "no"
+            ),
         })
     return rows
 
@@ -1907,17 +2084,63 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 "syllables; ordinary lexical authority is never inherited alone."
             ),
         })
+    domain_by_rule = {row["rule_id"]: row for row in domain}
+    for row in composition:
+        component_ids = [
+            item for item in row["component_rule_ids"].split(";") if item
+        ]
+        authorized_domains = {
+            "ordinary_tibetan_lexical_or_compound"
+        } if component_ids else set()
+        if component_ids and all(
+            domain_by_rule.get(item, {}).get("proper_name_compatible") == "yes"
+            for item in component_ids
+        ):
+            authorized_domains.add("tibetan_proper_name")
+        row["domain_compatibility"] = (
+            ";".join(sorted(authorized_domains)) or "unresolved"
+        )
+        if (
+            row["correction_authority"] == "yes"
+            and not authorized_domains
+        ):
+            row["correction_authority"] = "no"
+            row["blocker"] = "component_rule_domain_authority_unresolved"
 
     graph: list[dict[str, str]] = []
     for row in feature_evidence:
+        feature_node = (
+            f"feature:{row['tibetan_role']}:{row['tibetan_feature']}:"
+            f"{row['latin_realization']}"
+        )
+        if (
+            row["feature_teaching_status"]
+            == "unaffected_feature_from_reviewed_source"
+        ):
+            correction_node = "reviewed_correction:" + identity(row)
+            licence_node = "source_scope_licence:" + identity(row)
+            graph.extend(({
+                "from_node": correction_node,
+                "from_node_type": "reviewed_correction",
+                "edge_type": "licenses_source_scope",
+                "to_node": licence_node,
+                "to_node_type": "source_scope_licence",
+                "evidence_identity": identity(row),
+                "dependency_edge": "yes", "teaching_allowed": "no",
+            }, {
+                "from_node": licence_node,
+                "from_node_type": "source_scope_licence",
+                "edge_type": "supports",
+                "to_node": feature_node,
+                "to_node_type": "feature_rule_evidence",
+                "evidence_identity": identity(row),
+                "dependency_edge": "yes", "teaching_allowed": "yes",
+            }))
         graph.append({
             "from_node": "identity:" + identity(row),
             "from_node_type": "exact_observation",
             "edge_type": "supports",
-            "to_node": (
-                f"feature:{row['tibetan_role']}:{row['tibetan_feature']}:"
-                f"{row['latin_realization']}"
-            ),
+            "to_node": feature_node,
             "to_node_type": "feature_rule_evidence",
             "evidence_identity": identity(row),
             "dependency_edge": "yes",
@@ -2127,6 +2350,24 @@ def build() -> tuple[list[dict[str, str]], ...]:
             str(min(len(_target), len(true))),
         )
         ids = row["component_rule_ids"].split(";")
+        vowel_signs = {"ི", "ུ", "ེ", "ོ"}
+        stripped = "".join(
+            char for char in syllable if char not in vowel_signs
+        )
+        sibling_evidence = sorted(
+            f"{candidate_syllable}:{candidate['canonical_forms']}"
+            for candidate_syllable, candidate in canonical_registry.items()
+            if candidate_syllable != syllable
+            and candidate.get("canonical_forms") == true
+            and "".join(
+                char for char in candidate_syllable
+                if char not in vowel_signs
+            ) == stripped
+        )
+        tibetan_side = (
+            "probable_tibetan_script_ocr_damage"
+            if sibling_evidence else "unresolved"
+        )
         conflicts.append({
             "tibetan_syllable": syllable,
             "true_canonical": true,
@@ -2143,14 +2384,22 @@ def build() -> tuple[list[dict[str, str]], ...]:
             "canonical_segmentation": "unresolved_at_first_divergence",
             "first_divergence": divergence,
             "contributing_rules": ";".join(ids),
-            "likely_missing_interaction":
-                "structural_interaction_unresolved",
+            "likely_missing_interaction": (
+                "tibetan_orthography_damage_precedes_latin_interaction"
+                if sibling_evidence else "structural_interaction_unresolved"
+            ),
             "rule_supporting_syllables": ";".join(sorted({
                 item for rule_id in ids
                 for item in _supporting_syllables(candidate_by_id[rule_id])
             })),
-            "disposition":
-                "block_context_retain_rules_outside_failed_interaction",
+            "tibetan_sibling_evidence":
+                ";".join(sibling_evidence) or "none",
+            "tibetan_side_disposition": tibetan_side,
+            "disposition": (
+                "block_as_probable_tibetan_orthography_damage"
+                if sibling_evidence else
+                "block_context_retain_rules_outside_failed_interaction"
+            ),
         })
 
     current_composed = {
@@ -2197,6 +2446,22 @@ def build() -> tuple[list[dict[str, str]], ...]:
                 "dependency_edge": "yes",
                 "teaching_allowed": "yes",
             })
+    for item in teaching:
+        if item.get("canonical_teaching_status") not in {
+            "independent_teaching_evidence",
+            "reviewed_full_target_teaching_evidence",
+        }:
+            continue
+        graph.append({
+            "from_node": "identity:" + identity(item),
+            "from_node_type": "exact_observation",
+            "edge_type": "supports",
+            "to_node": "canonical:" + item["tibetan_syllable"],
+            "to_node_type": "strong_or_reviewed_canonical",
+            "evidence_identity": identity(item),
+            "dependency_edge": "yes",
+            "teaching_allowed": "yes",
+        })
     for correction in correction_audit:
         correction_node = (
             "exact_correction:"
@@ -2205,7 +2470,7 @@ def build() -> tuple[list[dict[str, str]], ...]:
         )
         target_node = (
             "canonical_feature_composed:" + correction["tibetan_syllable"]
-            if correction["target_authority_at_decision"]
+            if correction["current_target_authority"]
             == "canonical_feature_composed"
             else "canonical:" + correction["tibetan_syllable"]
         )
@@ -2222,6 +2487,32 @@ def build() -> tuple[list[dict[str, str]], ...]:
             "dependency_edge": "yes",
             "teaching_allowed": "no",
         })
+        for signature_id in correction["ocr_signature_ids"].split(";"):
+            if not signature_id or signature_id == "exact_row_review_only":
+                continue
+            signature_node = "ocr_signature:" + signature_id
+            graph.extend(({
+                "from_node": "signature_decision:" + signature_id,
+                "from_node_type": "reviewed_signature_decision",
+                "edge_type": "authorizes_edit",
+                "to_node": signature_node,
+                "to_node_type": "ocr_signature",
+                "evidence_identity": correction["evidence_label"],
+                "dependency_edge": "yes",
+                "teaching_allowed": "no",
+            }, {
+                "from_node": signature_node,
+                "from_node_type": "ocr_signature",
+                "edge_type": "produces_correction",
+                "to_node": correction_node,
+                "to_node_type": "exact_correction",
+                "evidence_identity": (
+                    f"{correction['volume']}:{correction['page']}:"
+                    f"{correction['line']}:{correction['token_index']}"
+                ),
+                "dependency_edge": "yes",
+                "teaching_allowed": "no",
+            }))
     validate_no_cycles(graph)
     return (
         parse_rows, feature_evidence, candidates, backtest, composition,

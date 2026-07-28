@@ -1,4 +1,5 @@
 import importlib.util
+import csv
 import sys
 import unittest
 from pathlib import Path
@@ -109,7 +110,9 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
             record, self._row("གང", "gna"), "gṅa"
         )
         self.assertFalse(applies)
-        self.assertEqual(reason, "source_position_mismatch")
+        self.assertIn(reason, {
+            "source_position_mismatch", "tibetan_role_mismatch",
+        })
 
     def test_final_n_condition_requires_tibetan_coda_ng(self) -> None:
         record = self._registry("SUB n→ṅ")
@@ -224,6 +227,95 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         # conditioned final-ni signature itself is authorised.
         self.assertEqual(row["ocr_signature_ready"], "yes")
         self.assertEqual(row["final_action_ready"], "no")
+
+    def test_noncanonical_role_and_unknown_condition_fail_closed(self) -> None:
+        with self.assertRaisesRegex(ValueError, "noncanonical Tibetan role"):
+            module.validate_signature_condition({
+                "signature": "BAD", "tibetan_role": "root",
+                "source_position_type": "", "target_position_type": "",
+                "domain_condition": "", "canonical_target_required": "yes",
+                "aligned_tibetan_required": "yes",
+            })
+        with self.assertRaisesRegex(ValueError, "unknown source_position_type"):
+            module.validate_signature_condition({
+                "signature": "BAD", "tibetan_role": "",
+                "source_position_type": "approximately_initial",
+                "target_position_type": "", "domain_condition": "",
+                "canonical_target_required": "yes",
+                "aligned_tibetan_required": "yes",
+            })
+
+    def test_root_child_requires_exact_root_and_role_span(self) -> None:
+        record = next(
+            row for row in self.generated["registry"]
+            if row["signature_id"] == "ROOT_KB_TO_KH"
+        )
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("ཐུང", "kbuṅ"), "khuṅ"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "tibetan_role_mismatch")
+
+    def test_apostrophe_child_enforces_extra_initial_and_achung_block(self) -> None:
+        record = next(
+            row for row in self.generated["registry"]
+            if row["signature_id"]
+            == "INITIAL_STRAIGHT_APOSTROPHE_EXTRA_NO_ACHUNG"
+        )
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("འཁོར", "'khor"), "khor"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "forbidden_tibetan_feature")
+        applies, reason = module.signature_applies_to_row(
+            record, self._row("ཁོར", "kh'or"), "khor"
+        )
+        self.assertFalse(applies)
+        self.assertIn(reason, {
+            "source_context_mismatch", "source_position_mismatch",
+            "source_structural_location_mismatch",
+        })
+
+    def test_missing_r_children_enforce_distinct_roles(self) -> None:
+        subjoined = next(
+            row for row in self.generated["registry"]
+            if row["signature_id"] == "INS_R_SUBJOINED"
+        )
+        superscript = next(
+            row for row in self.generated["registry"]
+            if row["signature_id"] == "INS_R_SUPERSCRIPT"
+        )
+        applies, _ = module.signature_applies_to_row(
+            subjoined, self._row("གྲི", "gi"), "gri"
+        )
+        self.assertTrue(applies)
+        applies, reason = module.signature_applies_to_row(
+            superscript, self._row("གྲི", "gi"), "gri"
+        )
+        self.assertFalse(applies)
+        self.assertEqual(reason, "tibetan_role_mismatch")
+
+    def test_historical_only_family_has_zero_active_yield(self) -> None:
+        with (
+            ROOT / "data/tibetan_latin_active_historical_queue_summary.tsv"
+        ).open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        gloss = next(
+            row for row in rows
+            if row["queue_category"] == "gloss_alignment_noise"
+        )
+        self.assertGreater(int(gloss["historical_only_families"]), 0)
+        self.assertEqual(gloss["current_exact_occurrences"], "0")
+
+    def test_no_layout_candidate_is_implicitly_alignment_authority(self) -> None:
+        with (
+            ROOT / "data/tibetan_latin_alignment_rescue_exact.tsv"
+        ).open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        self.assertTrue(rows)
+        self.assertFalse(any(
+            row["upgrade_authorized"] == "yes" for row in rows
+        ))
 
 
 if __name__ == "__main__":

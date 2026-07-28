@@ -49,9 +49,16 @@ REGISTRY_FIELDS = [
     "signature_id", "operation_signature", "operation_type",
     "source_sequence", "target_sequence",
     "parent_signature", "tibetan_role", "tibetan_feature",
-    "source_position", "target_position", "source_context_pattern",
+    "source_position_type", "source_position_value",
+    "target_position_type", "target_position_value",
+    "source_context_pattern",
     "target_context_pattern", "domain_condition",
-    "canonical_target_required", "exact_tibetan_required",
+    "source_structural_location", "target_structural_role",
+    "parent_structural_unit", "crosses_role_boundaries",
+    "extra_source_material", "forbidden_tibetan_roles",
+    "forbidden_tibetan_features", "forbidden_tibetan_structures",
+    "canonical_target_required", "aligned_tibetan_required",
+    "exact_tibetan_identities",
     "reviewed_atomic_supporting_syllables", "reviewed_supporting_occurrences",
     "reviewed_supporting_volumes", "reviewed_page_ranges",
     "historical_support", "alternate_witness_support",
@@ -110,7 +117,9 @@ PACKET_FIELDS = [
     "domain", "context", "suggested_decision",
 ]
 EDIT_ATTRIBUTION_FIELDS = [
-    "tibetan_syllable", "source", "canonical_target", "operation_signature",
+    "volume", "page", "line", "token_index", "tibetan_syllable", "source",
+    "canonical_target", "source_alignment_status", "boundary_status",
+    "domain", "damage_or_marker", "operation_signature",
     "source_edit_start", "source_edit_end", "target_edit_start",
     "target_edit_end", "source_structural_location",
     "target_structural_role", "tibetan_role", "tibetan_feature",
@@ -124,6 +133,26 @@ ALIGNMENT_RESCUE_FIELDS = [
     "canonical_agreement_diagnostic_only", "upgrade_authorized", "blocker",
     "sample_contexts",
 ]
+ALIGNMENT_RESCUE_EXACT_FIELDS = [
+    "volume", "page", "line", "token_index", "tibetan_syllable", "source",
+    "canonical_target", "current_alignment_status", "rescue_category",
+    "line_zone", "tibetan_token_ordinal", "latin_token_ordinal",
+    "token_start", "token_end", "boundary_status", "damage_scope",
+    "marker_attached", "layout_signature", "positive_layout_support",
+    "negative_layout_collisions", "upgrade_authorized", "blocker",
+    "context_excerpt",
+]
+ACTIVE_QUEUE_SUMMARY_FIELDS = [
+    "queue_category", "family_count", "current_family_count",
+    "current_exact_occurrences", "historical_only_families",
+]
+FINAL_NG_ACTIVE_SUMMARY_FIELDS = [
+    "effective_disposition", "historical_diagnostic_rows",
+    "current_extant_source_rows", "historical_only_rows",
+    "current_target_ready_rows", "current_signature_ready_rows",
+    "current_alignment_ready_rows", "current_domain_ready_rows",
+    "current_final_action_ready_rows",
+]
 BOUNDARY_FIELDS = [
     "volume", "page", "line", "token_index", "tibetan_syllable",
     "captured_token", "token_start", "token_end", "preceding_character",
@@ -135,6 +164,28 @@ CONDITION_BACKTEST_FIELDS = [
     "residual_signature_occurrences", "residual_condition_matches",
     "residual_condition_failures", "residual_failure_reasons",
 ]
+HYPOTHETICAL_D_SCOPE_FIELDS = [
+    "signature_id", "operation_signature", "current_exact_candidates",
+    "condition_matches", "condition_failures", "distinct_syllables",
+    "exact_alternate_target_agreements", "exact_alternate_source_agreements",
+    "exact_alternate_conflicts", "failure_reasons", "matched_identities",
+]
+
+CANONICAL_TIBETAN_ROLES = {
+    "", "prefix", "superscript", "root_consonant",
+    "subjoined_consonants", "vowel", "suffix_coda", "post_suffix",
+}
+POSITION_TYPES = {
+    "", "token_initial", "token_final", "exact_index",
+    "within_target_role_span", "source_internal",
+    "source_initial_or_internal", "extra_source_initial",
+    "extra_source_final",
+}
+DOMAINS = {
+    "ordinary_tibetan_lexical_or_compound", "tibetan_proper_name",
+    "sanskrit_or_indic_transcription", "foreign_transcription",
+    "bibliography_or_citation", "german_gloss_or_prose", "unclear",
+}
 
 
 def read(path: Path) -> list[dict[str, str]]:
@@ -431,7 +482,126 @@ def exact_alternate_support() -> dict[tuple[str, str, str, str, str], list[dict[
 
 def decisions() -> dict[str, dict[str, str]]:
     path = ROOT / "data/reviewed_tibetan_ocr_signature_decisions.tsv"
-    return {row["signature"]: row for row in read(path)} if path.exists() else {}
+    rows = read(path) if path.exists() else []
+    for row in rows:
+        validate_signature_condition(row)
+    return {row["signature"]: row for row in rows}
+
+
+def _split_values(value: str) -> set[str]:
+    return {item for item in value.split(";") if item}
+
+
+def validate_signature_condition(row: dict[str, str]) -> None:
+    """Reject persisted conditions that the evaluator cannot execute."""
+    role = row.get("tibetan_role", "")
+    if role not in CANONICAL_TIBETAN_ROLES:
+        raise ValueError(
+            f"{row['signature']}: noncanonical Tibetan role {role!r}"
+        )
+    for field in ("source_position_type", "target_position_type"):
+        value = row.get(field, "")
+        if value not in POSITION_TYPES:
+            raise ValueError(
+                f"{row['signature']}: unknown {field} {value!r}"
+            )
+    for field in ("source_position_value", "target_position_value"):
+        value = row.get(field, "")
+        if value and not value.isdigit():
+            raise ValueError(
+                f"{row['signature']}: {field} must be an integer"
+            )
+    unknown_domains = _split_values(row.get("domain_condition", "")) - DOMAINS
+    if unknown_domains:
+        raise ValueError(
+            f"{row['signature']}: unknown domain predicates "
+            f"{sorted(unknown_domains)}"
+        )
+    forbidden_roles = _split_values(
+        row.get("forbidden_tibetan_roles", "")
+    )
+    if forbidden_roles - CANONICAL_TIBETAN_ROLES:
+        raise ValueError(
+            f"{row['signature']}: unknown forbidden Tibetan roles "
+            f"{sorted(forbidden_roles - CANONICAL_TIBETAN_ROLES)}"
+        )
+    for field in (
+        "canonical_target_required", "aligned_tibetan_required",
+        "crosses_role_boundaries", "extra_source_material",
+    ):
+        value = row.get(field, "")
+        if value not in {"", "yes", "no"}:
+            raise ValueError(
+                f"{row['signature']}: {field} must be yes/no/blank"
+            )
+    if (
+        row.get("source_position_type") == "exact_index"
+        and not row.get("source_position_value")
+    ):
+        raise ValueError(f"{row['signature']}: source exact index missing")
+    if (
+        row.get("target_position_type") == "exact_index"
+        and not row.get("target_position_value")
+    ):
+        raise ValueError(f"{row['signature']}: target exact index missing")
+
+
+_ROLE_SPANS_CACHE: dict[
+    tuple[str, str], list[dict[str, str]]
+] | None = None
+
+
+def canonical_role_spans(
+    tibetan_syllable: str, target: str,
+) -> list[dict[str, str]]:
+    global _ROLE_SPANS_CACHE
+    if _ROLE_SPANS_CACHE is None:
+        _ROLE_SPANS_CACHE = defaultdict(list)
+        for span in read(
+            ROOT / "data/tibetan_latin_canonical_role_spans.tsv"
+        ):
+            _ROLE_SPANS_CACHE[
+                (span["tibetan_syllable"], span["target"])
+            ].append(span)
+    return _ROLE_SPANS_CACHE.get((tibetan_syllable, target), [])
+
+
+def _position_matches(
+    position_type: str, position_value: str,
+    operation: dict[str, str], source: str, target: str, side: str,
+    attribution: dict[str, str],
+) -> bool:
+    start = int(operation[f"{side}_position"])
+    span = operation[f"{side}_span"]
+    end = start + len(span)
+    token = source if side == "source" else target
+    if not position_type:
+        return True
+    if position_type == "token_initial":
+        return start == 0
+    if position_type == "token_final":
+        return end == len(token)
+    if position_type == "exact_index":
+        return start == int(position_value)
+    if position_type == "source_internal":
+        return side == "source" and start > 0 and end < len(source)
+    if position_type == "source_initial_or_internal":
+        return side == "source" and end < len(source)
+    if position_type == "extra_source_initial":
+        return (
+            side == "source"
+            and attribution["source_structural_location"]
+            == "extra_source_material:token_initial"
+        )
+    if position_type == "extra_source_final":
+        return (
+            side == "source"
+            and attribution["source_structural_location"]
+            == "extra_source_material:token_final"
+        )
+    if position_type == "within_target_role_span":
+        return side == "target" and attribution["target_structural_role"] != "none"
+    raise ValueError(f"unhandled position type {position_type!r}")
 
 
 def reviewed_echo_identity_keys() -> set[tuple[str, str, str, str]]:
@@ -450,11 +620,17 @@ def signature_applies_to_row(
     """Evaluate a persisted signature condition against one exact row."""
     if row.get("token_boundary_status") != "token_boundary_secure":
         return False, "insecure_token_boundary"
+    validate_signature_condition(signature_record)
     if (
-        signature_record.get("exact_tibetan_required") == "yes"
+        signature_record.get("aligned_tibetan_required") == "yes"
         and not row.get("tibetan_syllable")
     ):
-        return False, "exact_tibetan_missing"
+        return False, "aligned_tibetan_missing"
+    identities = _split_values(
+        signature_record.get("exact_tibetan_identities", "")
+    )
+    if identities and row.get("tibetan_syllable") not in identities:
+        return False, "exact_tibetan_identity_mismatch"
     domain = integrity.classify_domain(
         row.get("zone", ""), row.get("context_excerpt", "")
     )
@@ -471,44 +647,92 @@ def signature_applies_to_row(
         return False, "source_context_mismatch"
     if target_pattern and not re.search(target_pattern, canonical_target):
         return False, "target_context_mismatch"
-    operations = canonical.edit_operations(source, canonical_target)
-    operation = next((
-        op for op in operations
+    operations = [
+        op for op in canonical.edit_operations(source, canonical_target)
         if op["signature"] == signature_record.get("operation_signature")
-    ), None)
-    if operation is None:
+    ]
+    if not operations:
         return False, "signature_not_in_edit_script"
-    source_position = signature_record.get("source_position", "")
-    target_position = signature_record.get("target_position", "")
-    if source_position == "token_final" and (
-        int(operation["source_position"]) + len(operation["source_span"])
-        != len(source)
-    ):
-        return False, "source_position_mismatch"
-    if target_position == "token_final" and (
-        int(operation["target_position"]) + len(operation["target_span"])
-        != len(canonical_target)
-    ):
-        return False, "target_position_mismatch"
-    if source_position == "token_initial" and operation["source_position"] != "0":
-        return False, "source_position_mismatch"
-    if target_position == "token_initial" and operation["target_position"] != "0":
-        return False, "target_position_mismatch"
-    roles = integrity.tibetan_roles(row["tibetan_syllable"])
     role = signature_record.get("tibetan_role", "")
     feature = signature_record.get("tibetan_feature", "")
-    if role == "suffix_coda" and roles.get("suffix_coda") != feature:
-        return False, "tibetan_role_mismatch"
-    if role == "root_consonant" and roles.get("root_consonant") != feature:
-        return False, "tibetan_role_mismatch"
-    if role == "latin_initial_confusable" and operation["source_position"] != "0":
-        return False, "tibetan_role_mismatch"
-    if (
-        signature_record.get("canonical_target_required") == "yes"
-        and not canonical_target
+    forbidden_features = _split_values(
+        signature_record.get("forbidden_tibetan_features", "")
+    )
+    if forbidden_features and any(
+        item in row["tibetan_syllable"] for item in forbidden_features
     ):
-        return False, "canonical_target_missing"
-    return True, "condition_match"
+        return False, "forbidden_tibetan_feature"
+    forbidden_roles = _split_values(
+        signature_record.get("forbidden_tibetan_roles", "")
+    )
+    spans = canonical_role_spans(
+        row["tibetan_syllable"], canonical_target
+    )
+    span_roles = {span["tibetan_role"] for span in spans}
+    if forbidden_roles & span_roles:
+        return False, "forbidden_tibetan_role"
+    if role and not any(
+        span["tibetan_role"] == role
+        and (not feature or span["tibetan_feature"] == feature)
+        for span in spans
+    ):
+        return False, (
+            "tibetan_role_mismatch" if feature else "tibetan_role_missing"
+        )
+    failure_reasons: list[str] = []
+    for operation in operations:
+        attribution = attribute_edit_to_spans(
+            source, canonical_target, operation, spans, domain
+        )
+        if not _position_matches(
+            signature_record.get("source_position_type", ""),
+            signature_record.get("source_position_value", ""),
+            operation, source, canonical_target, "source", attribution,
+        ):
+            failure_reasons.append("source_position_mismatch")
+            continue
+        if not _position_matches(
+            signature_record.get("target_position_type", ""),
+            signature_record.get("target_position_value", ""),
+            operation, source, canonical_target, "target", attribution,
+        ):
+            failure_reasons.append("target_position_mismatch")
+            continue
+        for condition_field, observed_field in (
+            ("source_structural_location", "source_structural_location"),
+            ("target_structural_role", "target_structural_role"),
+            ("parent_structural_unit", "parent_structural_unit"),
+            ("crosses_role_boundaries", "crosses_role_boundaries"),
+            ("extra_source_material", "extra_source_material"),
+        ):
+            required = signature_record.get(condition_field, "")
+            if required and attribution[observed_field] != required:
+                failure_reasons.append(f"{condition_field}_mismatch")
+                break
+        else:
+            if (
+                role and attribution["target_structural_role"] != role
+                and not (
+                    role == "suffix_coda"
+                    and signature_record.get("target_position_type")
+                    == "token_final"
+                )
+            ):
+                failure_reasons.append("edit_role_span_mismatch")
+                continue
+            if (
+                feature and attribution["tibetan_feature"] != feature
+                and attribution["tibetan_feature"] != "none"
+            ):
+                failure_reasons.append("edit_feature_span_mismatch")
+                continue
+            if (
+                signature_record.get("canonical_target_required") == "yes"
+                and not canonical_target
+            ):
+                return False, "canonical_target_missing"
+            return True, "condition_match"
+    return False, failure_reasons[0] if failure_reasons else "condition_mismatch"
 
 
 def build() -> dict[str, list[dict[str, str]]]:
@@ -598,8 +822,10 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "A": (
                     "authorized_role_conditioned"
                     if any(decision.get(field, "") for field in (
-                        "tibetan_role", "tibetan_feature", "source_position",
-                        "target_position", "source_context_pattern",
+                        "tibetan_role", "tibetan_feature",
+                        "source_position_type", "target_position_type",
+                        "source_structural_location",
+                        "target_structural_role", "source_context_pattern",
                         "target_context_pattern", "domain_condition",
                     ))
                     else "authorized"
@@ -630,10 +856,18 @@ def build() -> dict[str, list[dict[str, str]]]:
             if decision else "",
             "tibetan_feature": decision.get("tibetan_feature", "")
             if decision else "",
-            "source_position": decision.get("source_position", "")
-            if decision else "",
-            "target_position": decision.get("target_position", "")
-            if decision else "",
+            "source_position_type": decision.get(
+                "source_position_type", ""
+            ) if decision else "",
+            "source_position_value": decision.get(
+                "source_position_value", ""
+            ) if decision else "",
+            "target_position_type": decision.get(
+                "target_position_type", ""
+            ) if decision else "",
+            "target_position_value": decision.get(
+                "target_position_value", ""
+            ) if decision else "",
             "source_context_pattern": decision.get(
                 "source_context_pattern", ""
             ) if decision else "",
@@ -643,11 +877,22 @@ def build() -> dict[str, list[dict[str, str]]]:
             "domain_condition": decision.get(
                 "domain_condition", ""
             ) if decision else "",
+            **{
+                field: decision.get(field, "") if decision else ""
+                for field in (
+                    "source_structural_location", "target_structural_role",
+                    "parent_structural_unit", "crosses_role_boundaries",
+                    "extra_source_material", "forbidden_tibetan_roles",
+                    "forbidden_tibetan_features",
+                    "forbidden_tibetan_structures",
+                    "exact_tibetan_identities",
+                )
+            },
             "canonical_target_required": decision.get(
                 "canonical_target_required", "yes"
             ) if decision else "yes",
-            "exact_tibetan_required": decision.get(
-                "exact_tibetan_required", "yes"
+            "aligned_tibetan_required": decision.get(
+                "aligned_tibetan_required", "yes"
             ) if decision else "yes",
             "reviewed_atomic_supporting_syllables": str(len(syllables)),
             "reviewed_supporting_occurrences": str(len(reviewed)),
@@ -690,8 +935,18 @@ def build() -> dict[str, list[dict[str, str]]]:
             "parent_signature": parent,
             "tibetan_role": decision.get("tibetan_role", ""),
             "tibetan_feature": decision.get("tibetan_feature", ""),
-            "source_position": decision.get("source_position", ""),
-            "target_position": decision.get("target_position", ""),
+            "source_position_type": decision.get(
+                "source_position_type", ""
+            ),
+            "source_position_value": decision.get(
+                "source_position_value", ""
+            ),
+            "target_position_type": decision.get(
+                "target_position_type", ""
+            ),
+            "target_position_value": decision.get(
+                "target_position_value", ""
+            ),
             "source_context_pattern": decision.get(
                 "source_context_pattern", ""
             ),
@@ -699,11 +954,22 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "target_context_pattern", ""
             ),
             "domain_condition": decision.get("domain_condition", ""),
+            **{
+                field: decision.get(field, "")
+                for field in (
+                    "source_structural_location", "target_structural_role",
+                    "parent_structural_unit", "crosses_role_boundaries",
+                    "extra_source_material", "forbidden_tibetan_roles",
+                    "forbidden_tibetan_features",
+                    "forbidden_tibetan_structures",
+                    "exact_tibetan_identities",
+                )
+            },
             "canonical_target_required": decision.get(
                 "canonical_target_required", "yes"
             ),
-            "exact_tibetan_required": decision.get(
-                "exact_tibetan_required", "yes"
+            "aligned_tibetan_required": decision.get(
+                "aligned_tibetan_required", "yes"
             ),
             "evidence_tier": "persistent_reviewed_conditioned_child",
             "authorization_status": {
@@ -769,20 +1035,29 @@ def build() -> dict[str, list[dict[str, str]]]:
         target_spans = spans_by_target.get(
             (row["tibetan_syllable"], row["canonical_forms"]), []
         )
-        family_attributions = [
-            {
-                "tibetan_syllable": row["tibetan_syllable"],
-                "source": row["current_source"],
-                "canonical_target": row["canonical_forms"],
-                "operation_signature": operation["signature"],
-                **attribute_edit_to_spans(
-                    row["current_source"], row["canonical_forms"],
-                    operation, target_spans, row["domain_breakdown"],
-                ),
-            }
-            for operation in operations
-        ]
-        edit_attributions.extend(family_attributions)
+        for exact in exact_rows:
+            exact_domain = integrity.classify_domain(
+                exact.get("zone", ""), exact.get("context_excerpt", "")
+            )
+            for operation in operations:
+                edit_attributions.append({
+                    "volume": exact["volume"], "page": exact["page"],
+                    "line": exact["line"],
+                    "token_index": exact["token_index"],
+                    "tibetan_syllable": row["tibetan_syllable"],
+                    "source": row["current_source"],
+                    "canonical_target": row["canonical_forms"],
+                    "source_alignment_status":
+                        row["source_alignment_status"],
+                    "boundary_status": exact["token_boundary_status"],
+                    "domain": exact_domain,
+                    "damage_or_marker": row["damage_or_marker"],
+                    "operation_signature": operation["signature"],
+                    **attribute_edit_to_spans(
+                        row["current_source"], row["canonical_forms"],
+                        operation, target_spans, exact_domain,
+                    ),
+                })
         boundary_secure = [
             exact for exact in exact_rows
             if exact["token_boundary_status"] == "token_boundary_secure"
@@ -1011,6 +1286,37 @@ def build() -> dict[str, list[dict[str, str]]]:
         control = next(
             (r for r in control_rows if r["signature"] == signature), {}
         )
+        conditioned_records = [
+            record for record in registry_by_signature.get(signature, [])
+            if record["signature_id"] != f"sig_{signature.replace(' ', '_').replace('→', '_to_')}"
+            and decision_map.get(record["signature_id"], {}).get("decision")
+            in {"A", "D", "R"}
+        ]
+        gated_collisions = 0
+        same_tibetan_controls = 0
+        gated_domain_controls = 0
+        for family in examples[signature]:
+            canonical_row = canon_by_syllable.get(
+                family["tibetan_syllable"], {}
+            )
+            credible = set(filter(None, canonical_row.get(
+                "credible_competing_transcriptions", ""
+            ).split(";")))
+            for exact in aligned_by_family.get(
+                (family["tibetan_syllable"], family["current_source"]), []
+            ):
+                results = [
+                    signature_applies_to_row(
+                        record, exact, family["canonical_target"]
+                    )
+                    for record in conditioned_records
+                ]
+                if any(match for match, _reason in results):
+                    if family["current_source"] in credible:
+                        same_tibetan_controls += 1
+                        gated_collisions += 1
+                elif any(reason == "domain_mismatch" for _match, reason in results):
+                    gated_domain_controls += 1
         emitted = 0
         for row in examples[signature]:
             exact_examples = aligned_by_family.get(
@@ -1049,9 +1355,11 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "global_source_controls": control.get(
                     "legitimate_source_form_controls", "0"
                 ),
-                "gated_collision_controls": "0",
-                "same_tibetan_competing_controls": "0",
-                "domain_controls": control.get("foreign_domain_cases", "0"),
+                "gated_collision_controls": str(gated_collisions),
+                "same_tibetan_competing_controls": str(
+                    same_tibetan_controls
+                ),
+                "domain_controls": str(gated_domain_controls),
                 "tibetan_syllable": row["tibetan_syllable"],
                 "source": row["current_source"],
                 "canonical_target": row["canonical_target"],
@@ -1206,6 +1514,33 @@ def build() -> dict[str, list[dict[str, str]]]:
             ),
         })
     alignment_rescue: list[dict[str, str]] = []
+    alignment_rescue_exact: list[dict[str, str]] = []
+    family_alignment = {
+        (item["tibetan_syllable"], item["current_source"]):
+            item["source_alignment_status"]
+        for item in outliers
+    }
+
+    def layout_signature(item: dict[str, str]) -> str:
+        return "|".join((
+            item.get("zone", "unresolved"),
+            item.get("headword_transliteration_span_status", "unresolved"),
+            f"token_index={item.get('token_index', '')}",
+            f"preceding={'space' if item.get('preceding_character') == ' ' else 'other'}",
+            f"following={'space' if item.get('following_character') == ' ' else 'other'}",
+        ))
+
+    layout_positive: Counter[str] = Counter()
+    layout_negative: Counter[str] = Counter()
+    for exact in aligned_rows:
+        status = family_alignment.get(
+            (exact["tibetan_syllable"], exact["latin_token"]), ""
+        )
+        signature = layout_signature(exact)
+        if status == "secure_transcription_outlier":
+            layout_positive[signature] += 1
+        elif status in {"gloss_alignment_noise", "structurally_unaligned"}:
+            layout_negative[signature] += 1
     for row in queue:
         if row["action_category"] != "alignment_or_damage":
             continue
@@ -1239,6 +1574,246 @@ def build() -> dict[str, list[dict[str, str]]]:
                 "layout_evidence_required_independent_of_desired_correction",
             "sample_contexts": row["sample_contexts"],
         })
+        for exact in aligned_by_family.get(
+            (row["tibetan_syllable"], row["current_source"]), []
+        ):
+            signature = layout_signature(exact)
+            clean_exact = (
+                exact["token_boundary_status"] == "token_boundary_secure"
+                and exact["damage_scope"] in {
+                    "none", "later_gloss_or_commentary",
+                }
+                and exact["marker_attached"] == "no"
+            )
+            high_precision_layout_candidate = (
+                category == "probable_headword_span"
+                and clean_exact and layout_positive[signature] >= 3
+                and layout_negative[signature] == 0
+                and exact["zone"] == "headword_line"
+                and exact["headword_transliteration_span_status"]
+                == "probable_span"
+            )
+            alignment_rescue_exact.append({
+                "volume": exact["volume"], "page": exact["page"],
+                "line": exact["line"],
+                "token_index": exact["token_index"],
+                "tibetan_syllable": exact["tibetan_syllable"],
+                "source": exact["latin_token"],
+                "canonical_target": row["canonical_target"],
+                "current_alignment_status": alignment,
+                "rescue_category": category,
+                "line_zone": exact["zone"],
+                "tibetan_token_ordinal": "unavailable",
+                "latin_token_ordinal": exact["token_index"],
+                "token_start": exact["token_start"],
+                "token_end": exact["token_end"],
+                "boundary_status": exact["token_boundary_status"],
+                "damage_scope": exact["damage_scope"],
+                "marker_attached": exact["marker_attached"],
+                "layout_signature": signature,
+                "positive_layout_support": str(layout_positive[signature]),
+                "negative_layout_collisions": str(layout_negative[signature]),
+                "upgrade_authorized": "no",
+                "blocker": (
+                    "candidate_zero_collision_layout_needs_exact_review"
+                    if high_precision_layout_candidate else
+                    "layout_pattern_not_zero_collision_high_support"
+                ),
+                "context_excerpt": exact["context_excerpt"],
+            })
+    hypothetical_d_scope: list[dict[str, str]] = []
+    for decision in sorted(
+        (item for item in decision_map.values() if item["decision"] == "D"),
+        key=lambda item: item["signature"],
+    ):
+        operation_signature = (
+            decision.get("parent_signature") or decision["signature"]
+        )
+        record = next((
+            item for item in registry_rows
+            if item["signature_id"] == decision["signature"]
+            or (
+                not decision.get("parent_signature")
+                and item["operation_signature"] == decision["signature"]
+            )
+        ), None)
+        if record is None:
+            continue
+        candidates: list[tuple[dict[str, str], str]] = []
+        for family in outliers:
+            if operation_signature not in family["edit_signatures"].split(";"):
+                continue
+            target = family["canonical_forms"]
+            for exact in aligned_by_family.get(
+                (family["tibetan_syllable"], family["current_source"]), []
+            ):
+                exact_with_gates = dict(exact)
+                exact_with_gates["_source_alignment_status"] = (
+                    family["source_alignment_status"]
+                )
+                exact_with_gates["_damage_or_marker"] = (
+                    family["damage_or_marker"]
+                )
+                candidates.append((exact_with_gates, target))
+        matches: list[tuple[dict[str, str], str]] = []
+        failures: Counter[str] = Counter()
+        alternate_counts: Counter[str] = Counter()
+        for exact, target in candidates:
+            if (
+                exact["volume"], exact["page"], exact["line"],
+                exact["token_index"],
+            ) in echo_identity_keys:
+                failures["controlling_exact_decision"] += 1
+                continue
+            if (
+                exact["_source_alignment_status"]
+                != "secure_transcription_outlier"
+            ):
+                failures["alignment_not_secure"] += 1
+                continue
+            if exact["_damage_or_marker"] != "damage:0;marker:0":
+                failures["damage_or_marker"] += 1
+                continue
+            applies, reason = signature_applies_to_row(record, exact, target)
+            if not applies:
+                failures[reason] += 1
+                continue
+            unexplained = False
+            for operation in canonical.edit_operations(
+                exact["latin_token"], target
+            ):
+                if operation["signature"] == operation_signature:
+                    continue
+                other_records = [
+                    item for item in registry_rows
+                    if item["operation_signature"] == operation["signature"]
+                    and item["authorization_status"].startswith("authorized")
+                ]
+                if not any(
+                    signature_applies_to_row(
+                        item, exact, target
+                    )[0] for item in other_records
+                ):
+                    unexplained = True
+                    break
+            if unexplained:
+                failures["other_unexplained_edit"] += 1
+                continue
+            matches.append((exact, target))
+            alternate_rows = exact_alternates.get((
+                exact["volume"], exact["page"], exact["line"],
+                exact["token_index"], exact["latin_token"],
+            ), [])
+            for alternate_row in alternate_rows:
+                token = alternate_row["token"]
+                alternate_counts[
+                    "target" if token == target else
+                    "source" if token == exact["latin_token"] else "conflict"
+                ] += 1
+        hypothetical_d_scope.append({
+            "signature_id": decision["signature"],
+            "operation_signature": operation_signature,
+            "current_exact_candidates": str(len(candidates)),
+            "condition_matches": str(len(matches)),
+            "condition_failures": str(len(candidates) - len(matches)),
+            "distinct_syllables": str(len({
+                item["tibetan_syllable"] for item, _target in matches
+            })),
+            "exact_alternate_target_agreements": str(
+                alternate_counts["target"]
+            ),
+            "exact_alternate_source_agreements": str(
+                alternate_counts["source"]
+            ),
+            "exact_alternate_conflicts": str(alternate_counts["conflict"]),
+            "failure_reasons": ";".join(
+                f"{key}:{value}" for key, value in sorted(failures.items())
+            ) or "none",
+            "matched_identities": ";".join(
+                f"{item['volume']}:{item['page']}:{item['line']}:"
+                f"{item['token_index']}:{item['tibetan_syllable']}:"
+                f"{item['latin_token']}→{target}"
+                for item, target in matches[:40]
+            ) or "none",
+        })
+    active_queue_summary: list[dict[str, str]] = []
+    for category in sorted({item["action_category"] for item in queue}):
+        families = [
+            item for item in queue if item["action_category"] == category
+        ]
+        current = [
+            item for item in families if int(item["occurrence_count"]) > 0
+        ]
+        active_queue_summary.append({
+            "queue_category": category,
+            "family_count": str(len(families)),
+            "current_family_count": str(len(current)),
+            "current_exact_occurrences": str(sum(
+                int(item["occurrence_count"]) for item in current
+            )),
+            "historical_only_families": str(len(families) - len(current)),
+        })
+    aligned_by_identity = {
+        (
+            item["volume"], item["page"], item["line"], item["token_index"]
+        ): item for item in aligned_rows
+    }
+    final_reconciliation = read(
+        ROOT / "data/final_ng_vs_general_signature_reconciliation.tsv"
+    )
+    final_ng_active_summary: list[dict[str, str]] = []
+    queue_by_family = {
+        (item["tibetan_syllable"], item["current_source"]): item
+        for item in queue
+    }
+    for disposition in sorted({
+        item["effective_disposition"] for item in final_reconciliation
+    }):
+        items = [
+            item for item in final_reconciliation
+            if item["effective_disposition"] == disposition
+        ]
+        extant = sum(
+            1 for item in items
+            if aligned_by_identity.get((
+                item["volume"], item["page"], item["line"],
+                item["token_index"],
+            ), {}).get("latin_token") == item["source_token"]
+        )
+        extant_items = [
+            item for item in items
+            if aligned_by_identity.get((
+                item["volume"], item["page"], item["line"],
+                item["token_index"],
+            ), {}).get("latin_token") == item["source_token"]
+        ]
+
+        def gate_count(field: str) -> int:
+            return sum(
+                queue_by_family.get(
+                    (item["tibetan_syllable"], item["source_token"]), {}
+                ).get(field) == "yes"
+                for item in extant_items
+            )
+        final_ng_active_summary.append({
+            "effective_disposition": disposition,
+            "historical_diagnostic_rows": str(len(items)),
+            "current_extant_source_rows": str(extant),
+            "historical_only_rows": str(len(items) - extant),
+            "current_target_ready_rows": str(
+                gate_count("target_authority_ready")
+            ),
+            "current_signature_ready_rows": str(
+                gate_count("ocr_signature_ready")
+            ),
+            "current_alignment_ready_rows": str(
+                gate_count("alignment_ready")
+            ),
+            "current_domain_ready_rows": str(gate_count("domain_ready")),
+            "current_final_action_ready_rows": str(
+                gate_count("final_action_ready")
+            ),
+        })
     return {
         "evidence": evidence, "controls": control_rows,
         "registry": registry_rows, "queue": queue, "exhaustion": exhaustion,
@@ -1247,6 +1822,10 @@ def build() -> dict[str, list[dict[str, str]]]:
         "condition_backtest": condition_backtest,
         "edit_attribution": edit_attributions,
         "alignment_rescue": alignment_rescue,
+        "hypothetical_d_scope": hypothetical_d_scope,
+        "alignment_rescue_exact": alignment_rescue_exact,
+        "active_queue_summary": active_queue_summary,
+        "final_ng_active_summary": final_ng_active_summary,
     }
 
 
@@ -1265,6 +1844,10 @@ def main() -> None:
         ("tibetan_latin_signature_condition_backtest.tsv", "condition_backtest", CONDITION_BACKTEST_FIELDS),
         ("tibetan_latin_ocr_edit_span_attribution.tsv", "edit_attribution", EDIT_ATTRIBUTION_FIELDS),
         ("tibetan_latin_alignment_rescue_queue.tsv", "alignment_rescue", ALIGNMENT_RESCUE_FIELDS),
+        ("tibetan_latin_signature_hypothetical_d_scope.tsv", "hypothetical_d_scope", HYPOTHETICAL_D_SCOPE_FIELDS),
+        ("tibetan_latin_alignment_rescue_exact.tsv", "alignment_rescue_exact", ALIGNMENT_RESCUE_EXACT_FIELDS),
+        ("tibetan_latin_active_historical_queue_summary.tsv", "active_queue_summary", ACTIVE_QUEUE_SUMMARY_FIELDS),
+        ("final_ng_active_historical_summary.tsv", "final_ng_active_summary", FINAL_NG_ACTIVE_SUMMARY_FIELDS),
     ]
     for name, key, fields in targets:
         write(ROOT / "data" / name, outputs[key], fields)

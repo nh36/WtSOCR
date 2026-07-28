@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import importlib.util
+import subprocess
 import sys
 from pathlib import Path
 
@@ -220,6 +221,105 @@ def main() -> None:
         int(r["token_index"]), r["from_token"],
     ))
     integrity.write_tsv(path, rows, fields)
+    decision_path = (
+        ROOT / "data/tibetan_transcription_correction_decisions.tsv"
+    )
+    decision_fields = [
+        "volume", "page", "line", "token_index", "tibetan_syllable",
+        "observed_source", "target", "decision_base_sha",
+        "canonical_tier", "canonical_target", "component_feature_rule_ids",
+        "structural_rule_ids", "ocr_signature_ids",
+        "edit_structural_attribution", "signature_decision_version",
+        "gate0_alignment_status", "token_boundary_status", "domain",
+        "prior_decision_state", "target_support_channel", "evidence",
+    ]
+    decision_rows = (
+        integrity.read_tsv(decision_path) if decision_path.exists() else []
+    )
+    canonical_row = next(
+        row for row in integrity.read_tsv(
+            ROOT / "data/tibetan_latin_canonical_syllables.tsv"
+        )
+        if row["tibetan_syllable"] == args.tibetan
+        and args.target in row["canonical_forms"].split(";")
+    )
+    registry_rows = integrity.read_tsv(
+        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+    )
+    spans = [
+        row for row in integrity.read_tsv(
+            ROOT / "data/tibetan_latin_canonical_role_spans.tsv"
+        )
+        if row["tibetan_syllable"] == args.tibetan
+        and row["target"] == args.target
+    ]
+    base_sha = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
+    ).strip()
+    for row in selected:
+        operation_ids = []
+        attributions = []
+        versions = []
+        for operation in signature_engine.canonical.edit_operations(
+            row["latin_token"], args.target
+        ):
+            matching = []
+            for record in registry_rows:
+                if (
+                    record["operation_signature"] == operation["signature"]
+                    and record["authorization_status"].startswith("authorized")
+                    and signature_engine.signature_applies_to_row(
+                        record, row, args.target
+                    )[0]
+                ):
+                    matching.append(record)
+            operation_ids.append(
+                matching[0]["signature_id"] if matching
+                else "exact_row_review_only"
+            )
+            attribution = signature_engine.attribute_edit_to_spans(
+                row["latin_token"], args.target, operation, spans,
+                integrity.classify_domain(
+                    row.get("zone", ""), row.get("context_excerpt", "")
+                ),
+            )
+            attributions.append(
+                attribution["source_structural_location"] + "→"
+                + attribution["target_structural_role"]
+            )
+            versions.append(
+                matching[0].get("evidence_tier", "") if matching
+                else "explicit_manual_review"
+            )
+        decision_rows.append({
+            "volume": row["volume"], "page": row["page"],
+            "line": row["line"], "token_index": row["token_index"],
+            "tibetan_syllable": args.tibetan,
+            "observed_source": row["latin_token"], "target": args.target,
+            "decision_base_sha": base_sha,
+            "canonical_tier": canonical_row["canonical_confidence_tier"],
+            "canonical_target": canonical_row["canonical_forms"],
+            "component_feature_rule_ids": canonical_row.get(
+                "feature_dependency_rule_ids", ""
+            ),
+            "structural_rule_ids": "",
+            "ocr_signature_ids": ";".join(operation_ids),
+            "edit_structural_attribution": ";".join(attributions),
+            "signature_decision_version": ";".join(versions),
+            "gate0_alignment_status": "secure_positional_alignment",
+            "token_boundary_status": row["token_boundary_status"],
+            "domain": integrity.classify_domain(
+                row.get("zone", ""), row.get("context_excerpt", "")
+            ),
+            "prior_decision_state": "none",
+            "target_support_channel": canonical_row.get(
+                "evidence_class", ""
+            ),
+            "evidence": args.evidence,
+        })
+    integrity.write_tsv(
+        decision_path, decision_rows, decision_fields
+    )
     print(f"recorded={len(selected)}")
 
 

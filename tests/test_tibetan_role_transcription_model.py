@@ -1,4 +1,5 @@
 import importlib.util
+import csv
 import sys
 import unittest
 from pathlib import Path
@@ -279,6 +280,42 @@ class FeatureCompositionTests(unittest.TestCase):
         self.assertEqual(target, "khaṅ")
         self.assertFalse(missing)
         self.assertEqual("".join(span["target_span"] for span in spans), target)
+
+    def test_correction_validity_is_separate_from_propagation(self):
+        with (
+            ROOT / "data/tibetan_transcription_correction_authority.tsv"
+        ).open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        self.assertEqual(len(rows), 54)
+        self.assertTrue(all(
+            row["exact_correction_status"] == "retained_reviewed_exact"
+            for row in rows
+        ))
+        phren = next(row for row in rows if row["observed_source"] == "phren")
+        self.assertEqual(
+            phren["current_target_authority"],
+            "canonical_independent_moderate",
+        )
+        self.assertEqual(phren["current_propagation_authority"], "no")
+        self.assertEqual(
+            phren["target_authority_at_decision"],
+            "decision_time_authority_snapshot_unavailable",
+        )
+
+    def test_tibetan_vowel_conflicts_do_not_teach_latin_rules(self):
+        with (
+            ROOT / "data/tibetan_feature_composition_conflicts.tsv"
+        ).open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        by_syllable = {row["tibetan_syllable"]: row for row in rows}
+        for syllable in ("བདན", "རྟལ"):
+            self.assertEqual(
+                by_syllable[syllable]["tibetan_side_disposition"],
+                "probable_tibetan_script_ocr_damage",
+            )
+        self.assertEqual(
+            by_syllable["རྡ"]["tibetan_side_disposition"], "unresolved"
+        )
 
 
 if __name__ == "__main__":
