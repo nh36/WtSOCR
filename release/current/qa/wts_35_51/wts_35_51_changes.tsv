@@ -6463,3 +6463,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1085	2	5834	headword_line	phani	phaṅ	A	reviewed_tibetan_exact_ocr_signature	1	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
 1022	1	5470	headword_line	sgani	sgaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱུག་པོ་སྒང་དཀར་་ phyug po sgani dkar
 884	19	4596	headword_line	phani	phaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕང་ཕུང་ phani phuṅ Haufen; ~ byed aufhäufen.
+972	28	5148	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
+972	40	5149	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་བཟུང་ phyani bzuṅ
