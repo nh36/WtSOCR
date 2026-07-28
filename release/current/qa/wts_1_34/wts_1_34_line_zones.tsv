@@ -38915,7 +38915,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 277	184	3709	german_prose_with_translit			none	2	4	0	0	Lex. kha gcod - bZin pa „mit einem Deckel
 277	185	3709	latin_other			none	4	0	0	0	bedeckend“ (brDa); kha gcod kyis bkab bzin
 277	186	3709	german_prose_with_translit			none	1	3	0	0	pa „mit Deckeln zudeckend“ (Dagy).
-277	188	3710	headword_line	ཁོམ་ཏིང་	khom	high	1	0	0	0	ཁོམ་ཏིང་ khom tin tiefsitzend.
+277	188	3710	headword_line	ཁོམ་ཏིང་	khom	high	1	0	0	0	ཁོམ་ཏིང་ khom tiṅ tiefsitzend.
 277	190	3710	german_prose_with_translit			none	3	2	0	0	"mig ~ gi ""bras bu ’dra ba Zig gda’ ’o „Augen"
 277	191	3710	german_prose			none	0	2	0	0	sind wie tiefsitzende Früchte“ (gZer 225,1).
 277	193	3711	headword_line	ཁོམ་པ་	khom pa	high	4	3	0	0	"ཁོམ་པ་ khom pa auch ’khom, ""khoms Zeit, Ge-"
@@ -126096,7 +126096,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 874	137	9649	latin_other			none	1	0	0	0	2. unsicher, ungewiß.
 874	138	9649	german_prose_with_translit			none	3	1	0	0	Lex. tig med pa 22 res pa med pa’am gtan gtan
 874	139	9649	latin_other			none	2	0	0	0	tig tig med pa (brDa).
-874	140	9650	headword_line	ཏིང་	ting	medium	1	4	0	0	ཏིང་ tin ein Gefäß, Schale; vgl. chin, SH ting
+874	140	9650	headword_line	ཏིང་	ting	medium	1	4	0	0	ཏིང་ tiṅ ein Gefäß, Schale; vgl. chin, SH ting
 874	141	9650	german_prose			none	0	2	0	0	Dreifuß, Opfergefäß.
 874	143	9650	latin_other			none	3	0	0	0	Nas = g.yag mig tsam gyl nani du ja spar gan
 874	144	9650	german_prose_with_translit			none	3	9	0	0	tsam blugs nas „ich gab in eine Wasserschale, die so groß war wie das Auge eines
@@ -126104,17 +126104,17 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 874	147	9650	german_prose			none	0	1	0	0	(KunK 32,7).
 874	149	9650	german_prose_with_translit			none	3	2	0	0	Lex. mchod pa’ ~ „Opfergefäß“ (brDa);
 874	150	9650	german_prose_with_translit			none	3	1	0	0	mchod pa ’bul byed kyi ~ (Dagy).
-874	152	9650	tibetan_only	ཏིང་ཀྲས་		none	0	1	0	0	ཏིང་ཀྲས་ tin kras cin Vogel.
+874	152	9650	tibetan_only	ཏིང་ཀྲས་		none	0	1	0	0	ཏིང་ཀྲས་ tiṅ kras cin Vogel.
 874	154	9650	german_prose_with_translit			none	2	2	0	0	khu byug dan / ~ „Kuckuck und tin kras“
 874	155	9650	other			none	0	0	0	0	(5271 2: 115,7).
-874	157	9651	headword_line	ཏིང་ཁྲོལ་	khrol	high	1	2	0	0	ཏིང་ཁྲོལ་ tin khrol ein Laut.
+874	157	9651	headword_line	ཏིང་ཁྲོལ་	khrol	high	1	2	0	0	ཏིང་ཁྲོལ་ tiṅ khrol ein Laut.
 874	159	9651	german_prose_with_translit			none	3	2	0	0	Lex. tin tin Zes khrol pa’am (brDa).
 874	161	9651	tibetan_only	ཏང་གོར་		none	0	6	0	0	ཏང་གོར་ tin gor Melasse, die in einer Schale in
 874	163	9651	german_prose			none	0	2	0	0	Torn gepreßt wurde.
 874	165	9651	german_prose			none	0	2	0	0	Lex. bur tin = bu ram ~ (Dagy).
 874	167	9651	other			none	0	0	0	0	9
-874	169	9652	headword_line	ཏིང་ ངེ་ འཛིན་	dzin	high	1	0	0	0	ཏིང་ ངེ་ འཛིན་ tin he ’dzin
-874	171	9653	headword_line	ཏིང་ངེ་འཛིན་	dzin	high	2	1	0	0	ཏིང་ངེ་འཛིན་ tin ne ’dzin auch tin ’dzin.
+874	169	9652	headword_line	ཏིང་ ངེ་ འཛིན་	dzin	high	1	0	0	0	ཏིང་ ངེ་ འཛིན་ tiṅ he ’dzin
+874	171	9653	headword_line	ཏིང་ངེ་འཛིན་	dzin	high	2	1	0	0	ཏིང་ངེ་འཛིན་ tiṅ ne ’dzin auch tiṅ ’dzin.
 874	173	9653	german_prose_with_translit			none	1	1	0	0	1. meditative Versenkung, Meditation, skt.
 874	174	9653	latin_other			none	1	0	0	0	samädhi.
 874	176	9653	latin_other			none	2	0	0	0	bsam gtan - la gnas nas (metr.) „nachdem
@@ -126159,7 +126159,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 874	216	9653	german_prose_with_translit			none	1	3	0	0	„sechs Jahre lang verharrte er in der all-
 874	217	9653	german_prose_with_translit			none	2	1	0	0	durchdringenden Versenkung“ (Bu 760,6);
 874	218	9653	latin_other			none	5	0	0	0	zad par zilnon gyi tiṅ ṅe 'dzin mnon du gyur
-875	1	9654	headword_line	ཏིང་ངེ་འཛིན་་	dzin	high	1	0	0	0	ཏིང་ངེ་འཛིན་་ tin ne ’dzin ...
+875	1	9654	headword_line	ཏིང་ངེ་འཛིན་་	dzin	high	1	0	0	0	ཏིང་ངེ་འཛིན་་ tiṅ ne ’dzin ...
 875	3	9654	german_prose_with_translit			none	1	1	0	0	„der zad-par-zil-non-Samädhi wurde ihm
 875	4	9654	german_prose_with_translit			none	1	2	0	0	offenbar“ (Debm 3558); - la süom par
 875	5	9654	german_prose_with_translit			none	1	4	0	0	bäugs so „er weilte ausgeglichen in der me-
@@ -126247,7 +126247,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	106	9657	german_prose_with_translit			none	4	1	0	0	Lex. x ces bya ba tin ne ’dzin = samädhi-
 875	107	9657	german_prose_with_translit			none	1	3	0	0	samatä näma samädhih (Mvy 615).
 875	109	9657	other			none	0	0	0	0	LS
-875	111	9658	headword_line	ཏིང་ངེ་འཛིན་་	dzin	high	1	0	0	0	ཏིང་ངེ་འཛིན་་”་ tin ne ’dzin ...
+875	111	9658	headword_line	ཏིང་ངེ་འཛིན་་	dzin	high	1	0	0	0	ཏིང་ངེ་འཛིན་་”་ tiṅ ne ’dzin ...
 875	113	9659	headword_line	ཏིང་ངེ་འཛིན་བཟང་པོ་	tiṅ ṅe dzin bzan po	high	5	0	0	0	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
 875	114	9659	german_prose			none	0	2	0	0	ein Übersetzer.
 875	116	9659	latin_other			none	5	0	0	0	de’i geen po fan ~$ ... grog gi lha khan bzens
@@ -126271,10 +126271,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	141	9660	german_prose_with_translit			none	4	5	0	0	Lex. mchu sgro rin po bya Zig „ein Vogel mit
 875	142	9660	german_prose_with_translit			none	2	1	0	0	langem Schnabel“ (brDa).
 875	144	9660	tibetan_only	ཏང་ཏང་ཤགས་		none	0	1	0	0	ཏང་ཏང་ཤགས་ tin tin Sags 1///7 6:95.
-875	146	9661	headword_line	ཏིང་མཐའ་	imtha’	high	1	1	0	0	ཏིང་མཐའ་ tin imtha’ finites Verb, skt. tinanta.
+875	146	9661	headword_line	ཏིང་མཐའ་	imtha’	high	1	1	0	0	ཏིང་མཐའ་ tiṅ imtha’ finites Verb, skt. tinanta.
 875	147	9661	german_prose_with_translit			none	2	2	0	0	"Lex. sgra rig pa’ „gramm. t.t.“ (Dagy); -"""
 875	148	9661	german_prose_with_translit			none	2	2	0	0	tshig = Avyätam (r. Akbyätam) (Tshe 6432),
-875	149	9662	headword_line	ཏིང་མཐོའི་ཚིག་	mtho’i tshig	high	2	1	0	0	ཏིང་མཐོའི་ཚིག་ tin mtho’i tshig irrt. für tin
+875	149	9662	headword_line	ཏིང་མཐོའི་ཚིག་	mtho’i tshig	high	2	1	0	0	ཏིང་མཐོའི་ཚིག་ tiṅ mtho’i tshig irrt. für tin
 875	150	9662	latin_other			none	2	0	0	0	mtha’i tshig?
 875	152	9662	german_prose_with_translit			none	4	2	0	0	Lex. tha ma’i tshig (brDa, Dagy).
 875	153	9662	german_prose			none	0	1	0	0	N “ -
@@ -126293,7 +126293,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	172	9664	latin_other			none	1	0	0	0	(brDa).
 875	174	9664	tibetan_only	༠༨		none	0	0	0	0	༠༨ ON ›„ › / + -„ , › / *
 875	175	9664	example_tibetan_latin	ཏང་འཛན་		none	1	1	0	0	ཏང་འཛན་ tin 7/7//7 Yiin ne 'dzin.
-875	177	9664	tibetan_only	ཏིང་ཞི་		none	0	4	0	0	ཏིང་ཞི་ tin Zi 72. Silber oder Türkis.
+875	177	9664	tibetan_only	ཏིང་ཞི་		none	0	4	0	0	ཏིང་ཞི་ tiṅ Zi 72. Silber oder Türkis.
 875	179	9664	german_prose_with_translit			none	5	2	0	0	reya mtsho chen po ~ dnul gyi mtsho Zes bya
 875	180	9664	german_prose_with_translit			none	2	4	0	0	ba dan „der große Ozean namens Silbermeer“ (571 1: 441,1).
 875	183	9664	german_prose			none	0	2	0	0	Lex. ~ dirul lam g.yu (Bon 120,9).
@@ -126304,7 +126304,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	190	9664	german_prose			none	0	2	0	0	2. ein Vogel.
 875	191	9664	german_prose_with_translit			none	2	3	0	0	lha bya ~ „der göttliche Vogel tin len“ (271
 875	192	9664	other			none	0	0	0	0	2: 115,4).
-875	194	9665	headword_line	ཏིང་ལོ་	lo	medium	1	3	0	0	ཏིང་ལོ་ tin lo winzige Schalen aus Teig, vgl.
+875	194	9665	headword_line	ཏིང་ལོ་	lo	medium	1	3	0	0	ཏིང་ལོ་ tiṅ lo winzige Schalen aus Teig, vgl.
 875	195	9665	german_prose			none	0	1	0	0	Neb 363.
 875	197	9665	german_prose_with_translit			none	2	2	0	0	= Sa khrag sgog ... glud chas „das Zubehör
 875	198	9665	german_prose_with_translit			none	2	3	0	0	eines Substituts, wie tin lo, Fleisch, Blut
@@ -126312,7 +126312,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 875	201	9665	german_prose_with_translit			none	3	1	0	0	Lex. mar me ste zan kon (brDa); zan gyi
 875	202	9665	latin_other			none	2	0	0	0	mar me’i kon bu „Butterlampengefäß aus
 875	203	9665	german_prose			none	0	2	0	0	Teig“ (Dagy).
-875	205	9666	headword_line	ཏིང་ལོ་ཏིང་སྨན་	lo	medium	2	3	0	0	ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
+875	205	9666	headword_line	ཏིང་ལོ་ཏིང་སྨན་	lo	medium	2	3	0	0	ཏིང་ལོ་ཏིང་སྨན་ tiṅ lo tiṅ sman ein gäi bdag in
 875	206	9666	german_prose_with_translit			none	1	1	0	0	Byan-rgyud (Neb 228).
 875	208	9666	tibetan_only	ཏིང་ཤགས་		none	0	1	0	0	ཏིང་ཤགས་ tin 5795 auch tin tin 5705) tin sag
 875	209	9666	german_prose_with_translit			none	1	1	0	0	Schlagbecken, Handzimbel.
@@ -126326,7 +126326,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 876	7	9667	example_tibetan_latin			none	5	1	0	0	Lex. ༨, tin ~ = rol mo’i bye brag dan phar
 876	8	9667	latin_other			none	6	0	0	0	brduns tshur brduns pa la’an (brDa); tin sag
 876	9	9667	german_prose_with_translit			none	1	1	0	0	= rol mo’i bye brag (Dagy).
-876	11	9668	headword_line	ཏིང་ཤོ་	so	medium	1	1	0	0	ཏིང་ཤོ་ tin so ZZ. Fluß.
+876	11	9668	headword_line	ཏིང་ཤོ་	so	medium	1	1	0	0	ཏིང་ཤོ་ tiṅ so ZZ. Fluß.
 876	13	9668	german_prose_with_translit			none	1	2	0	0	reyun tut 'bab pa ~ gal chen chn (metr.) „das
 876	14	9668	german_prose			none	0	4	0	0	Wasser des wichtigen Flusses, das immer
 876	15	9668	german_prose			none	0	1	0	0	fließt“ (gZi 1: 598,6).

@@ -3030,3 +3030,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 408	49	2254	example_tibetan_latin	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"
 438	28	2412	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབར་ཤིང་ ""bar sin Schwefel."
 493	24	2667	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
+102	59	504	tibetan_only	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	བུར་ཏིང་ bur tin.

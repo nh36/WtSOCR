@@ -3229,6 +3229,22 @@ class PostprocessRegressionTests(unittest.TestCase):
             for row in changes
         ))
 
+    def test_historical_witness_ting_is_exactly_gated(self) -> None:
+        lines = {
+            (874, 140): "ཏིང་ tin ein Gefäß, Schale",
+            (875, 205): "ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman",
+            (1400, 1): "unreviewed tin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཏིང་ tiṅ ein Gefäß, Schale", corrected)
+        self.assertIn("ཏིང་ལོ་ཏིང་སྨན་ tiṅ lo tiṅ sman", corrected)
+        self.assertIn("unreviewed tin control", corrected)
+        self.assertEqual(
+            [row["to_token"] for row in changes].count("tiṅ"), 3
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

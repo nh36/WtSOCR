@@ -28828,3 +28828,19 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 277	51	3741	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་སན་ khon sran geduldig.
 277	57	3743	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་གསེང་ khon gsen Tkhon sen.
 277	65	3745	headword_line	khon	khoṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོང་ལྷོད་ khon lhod geduldig.
+277	188	3757	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཁོམ་ཏིང་ khom tin tiefsitzend.
+874	140	9829	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ tin ein Gefäß, Schale; vgl. chin, SH ting
+874	152	9829	tibetan_only	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ཀྲས་ tin kras cin Vogel.
+874	157	9830	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ཁྲོལ་ tin khrol ein Laut.
+874	169	9831	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ ངེ་ འཛིན་ tin he ’dzin
+874	171	9832	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཏིང་ངེ་འཛིན་ tin ne ’dzin auch tin ’dzin.
+874	171	9832	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ངེ་འཛིན་ tin ne ’dzin auch tin ’dzin.
+875	1	9833	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ངེ་འཛིན་་ tin ne ’dzin ...
+875	111	9837	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ངེ་འཛིན་་”་ tin ne ’dzin ...
+875	146	9840	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་མཐའ་ tin imtha’ finites Verb, skt. tinanta.
+875	149	9841	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་མཐོའི་ཚིག་ tin mtho’i tshig irrt. für tin
+875	177	9843	tibetan_only	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ཞི་ tin Zi 72. Silber oder Türkis.
+875	194	9844	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ལོ་ tin lo winzige Schalen aus Teig, vgl.
+875	205	9845	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
+875	205	9845	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
+876	11	9847	headword_line	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	ཏིང་ཤོ་ tin so ZZ. Fluß.

@@ -166,7 +166,7 @@ target_changed	wts_1_34	276	92	1	ཁོང	Khon	khoṅ		source_compatible_insuff
 disappeared	wts_1_34	276	94	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་གཅོང་ khon gcon.
 disappeared	wts_1_34	277	1	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མོ་ khon mo
 disappeared	wts_1_34	277	11	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ཡངས་པ་ khon yans pa weitherzig, aufge-
-category_changed	wts_1_34	277	188	2	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོམ་ཏིང་ khom tin tiefsitzend.
+disappeared	wts_1_34	277	188	2	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཁོམ་ཏིང་ khom tin tiefsitzend.
 disappeared	wts_1_34	277	20	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་རང་ khon raṅ pron. 3. pers. er, sie, es
 disappeared	wts_1_34	277	28	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སིང་ khon sin I\khon sen Schlucht.
 category_changed	wts_1_34	277	28	2	སིང	sin	siṅ	siṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
@@ -530,31 +530,31 @@ category_changed	wts_1_34	87	155	2	སློང	slon	sloṅ	sloṅ	source_compat
 category_changed	wts_1_34	87	195	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.
 newly_discovered	wts_1_34	87	30	2	ཤེང	sen				source_compatible_no_anchor	0	ཀུན་ཤེང་ཀོང་ཇོ་ kun sen koṅ jo \wun sin kon jo.
 newly_discovered	wts_1_34	873	53	2	གདང	gdun				source_compatible_no_anchor	0	ཏལ་གདང་ tal gdun ein Balken.
-category_changed	wts_1_34	874	140	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ tin ein Gefäß, Schale; vgl. chin, SH ting
-category_changed	wts_1_34	874	152	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ཀྲས་ tin kras cin Vogel.
-category_changed	wts_1_34	874	157	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ཁྲོལ་ tin khrol ein Laut.
+disappeared	wts_1_34	874	140	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ tin ein Gefäß, Schale; vgl. chin, SH ting
+disappeared	wts_1_34	874	152	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ཀྲས་ tin kras cin Vogel.
+disappeared	wts_1_34	874	157	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ཁྲོལ་ tin khrol ein Laut.
 newly_discovered	wts_1_34	874	161	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་གོར་ tin gor Melasse, die in einer Schale in
-category_changed	wts_1_34	874	169	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ ངེ་ འཛིན་ tin he ’dzin
-category_changed	wts_1_34	874	171	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ངེ་འཛིན་ tin ne ’dzin auch tin ’dzin.
-category_changed	wts_1_34	875	1	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ངེ་འཛིན་་ tin ne ’dzin ...
-category_changed	wts_1_34	875	111	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ངེ་འཛིན་་”་ tin ne ’dzin ...
+disappeared	wts_1_34	874	169	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ ངེ་ འཛིན་ tin he ’dzin
+disappeared	wts_1_34	874	171	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ངེ་འཛིན་ tin ne ’dzin auch tin ’dzin.
+disappeared	wts_1_34	875	1	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ངེ་འཛིན་་ tin ne ’dzin ...
+disappeared	wts_1_34	875	111	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ངེ་འཛིན་་”་ tin ne ’dzin ...
 newly_discovered	wts_1_34	875	135	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་ tin tin (0110111, ein Laut.
 newly_discovered	wts_1_34	875	135	2	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་ tin tin (0110111, ein Laut.
 newly_discovered	wts_1_34	875	140	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་མ་ tin tin ma ein Vogel.
 newly_discovered	wts_1_34	875	140	2	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་མ་ tin tin ma ein Vogel.
 newly_discovered	wts_1_34	875	144	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་ཤགས་ tin tin Sags 1///7 6:95.
 newly_discovered	wts_1_34	875	144	2	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཏང་ཤགས་ tin tin Sags 1///7 6:95.
-category_changed	wts_1_34	875	146	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་མཐའ་ tin imtha’ finites Verb, skt. tinanta.
-category_changed	wts_1_34	875	149	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་མཐོའི་ཚིག་ tin mtho’i tshig irrt. für tin
+disappeared	wts_1_34	875	146	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་མཐའ་ tin imtha’ finites Verb, skt. tinanta.
+disappeared	wts_1_34	875	149	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་མཐོའི་ཚིག་ tin mtho’i tshig irrt. für tin
 newly_discovered	wts_1_34	875	154	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ནམ་ tin nam Zi. Wasser, Ozean.
 newly_discovered	wts_1_34	875	163	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ནམ་རྒྱལ་མོ་ tin nam rgyal mo npr. eine
 newly_discovered	wts_1_34	875	175	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་འཛན་ tin 7/7//7 Yiin ne 'dzin.
-category_changed	wts_1_34	875	177	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ཞི་ tin Zi 72. Silber oder Türkis.
-category_changed	wts_1_34	875	194	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ལོ་ tin lo winzige Schalen aus Teig, vgl.
-category_changed	wts_1_34	875	205	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
-category_changed	wts_1_34	875	205	3	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
+disappeared	wts_1_34	875	177	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ཞི་ tin Zi 72. Silber oder Türkis.
+disappeared	wts_1_34	875	194	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ལོ་ tin lo winzige Schalen aus Teig, vgl.
+disappeared	wts_1_34	875	205	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
+disappeared	wts_1_34	875	205	3	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman ein gäi bdag in
 newly_discovered	wts_1_34	875	53	1	ཏིང	tun				source_compatible_no_anchor	0	ཏིང་ངེ་འཛིན་་ tun ne ’dzin ...
-category_changed	wts_1_34	876	11	1	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཏིང་ཤོ་ tin so ZZ. Fluß.
+disappeared	wts_1_34	876	11	1	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			ཏིང་ཤོ་ tin so ZZ. Fluß.
 newly_discovered	wts_1_34	876	3	1	ཏང	tin				source_compatible_no_anchor	0	ཏང་ཤ་ tin so
 newly_discovered	wts_1_34	877	195	2	རང	rin		riṅ		source_compatible_not_final_ng_only	1	ཏག་རང་ tig rin ein Laut.
 category_changed	wts_1_34	88	1	2	སློང	slon	sloṅ	sloṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀུན་སློང་ཅན་ kun slon can
@@ -659,7 +659,7 @@ newly_discovered	wts_35_51	830	78	1	སྤྲོང	halten				source_compatible_
 newly_discovered	wts_35_51	871	31	2	ལྤང	bon				source_compatible_no_anchor	0	ཕ་ལྤང་ phpha bon.
 newly_discovered	wts_35_51	882	10	2	དོང	Wildschwein				source_compatible_no_anchor	0	ཕྲག་དོང་ phagrgod Wildschwein; wilder Eber,
 newly_discovered	wts_35_51	913	53	1	ཕུང	ph				source_compatible_no_anchor	0	ཕུང་གཡོ་བ་ ph g.yoba Verleumdung, Intrige.
-category_changed	wts_8_b	102	59	2	ཏིང	tin	tiṅ	tiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	བུར་ཏིང་ bur tin.
+disappeared	wts_8_b	102	59	2	ཏིང	tin	tiṅ		source_compatible_insufficient_evidence			བུར་ཏིང་ bur tin.
 newly_discovered	wts_8_b	177	42	1	ཀྱང	byan		byaṅ		source_compatible_single_anchor	1	"ཀྱང་མའི་ལྕགས་ ""byan ma'ilcags Eisenplatte."
 newly_discovered	wts_8_b	225	5	1	བང	byun				source_compatible_no_anchor	0	"བང་སྔོང་ ""byun son Einkünfte und Ausgaben."
 newly_discovered	wts_8_b	225	5	2	སྔོང	son				source_compatible_no_anchor	0	"བང་སྔོང་ ""byun son Einkünfte und Ausgaben."

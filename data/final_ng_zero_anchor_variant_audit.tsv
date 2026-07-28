@@ -75,7 +75,7 @@ tibetan_syllable	source_variant	source_state	supported_target	other_source_varia
 ཉུང	nun	no_anchor_clean_source_shape		run	ñuṅ:4			ཉུང་ཀར་ nun kar [/7//77.4 kar.
 ཉུང	run	no_anchor_clean_source_shape		nun	ñuṅ:4			ཁ་ཉུང་ kha run wortkarg.
 ཏང	tin	no_anchor_clean_source_shape			taṅ:5			ཆུ་ཏང་རན chu tin ron npr. eine Nägini.
-ཏིང	tun	no_anchor_clean_source_shape		tin	tiṅ:1; dziṅ:1			ཏིང་ངེ་འཛིན་་ tun ne ’dzin ...
+ཏིང	tun	no_anchor_clean_source_shape			tiṅ:17; dziṅ:1			ཏིང་ངེ་འཛིན་་ tun ne ’dzin ...
 ཐང	lhan	no_anchor_clean_source_shape		Ithon;thin;thon	thaṅ:91			ཐང་ཆོད་ lhan chod
 ཐང	thin	no_anchor_clean_source_shape		Ithon;lhan;thon	thaṅ:91			ཐང་ཤང་ thin sin ein blauer Farbstoff.
 ཐང	thon	no_anchor_clean_source_shape		Ithon;lhan;thin	thaṅ:91			ང་ཐང་ thon thon

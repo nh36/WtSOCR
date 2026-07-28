@@ -551,6 +551,7 @@ wts_1_34	277	30	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan
 wts_1_34	277	51	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་སན་ khoṅ sran geduldig.
 wts_1_34	277	57	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་གསེང་ khoṅ gsen Tkhon sen.
 wts_1_34	277	65	1	ཁོང	khoṅ	reviewed_exact_final_ng	khon	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_khong_consensus_batch_20260728	ཁོང་ལྷོད་ khoṅ lhod geduldig.
+wts_1_34	277	188	2	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཁོམ་ཏིང་ khom tiṅ tiefsitzend.
 wts_1_34	282	1	3	ཤིང	siṅ	reviewed_exact_final_ng	sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཁྱབ་འཇུག་ཤིང་རྟ་ khyab jug siṅ rta
 wts_1_34	284	206	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	ཁྱིམ་ཕུང་ khyim phuṅ innerfamiliäre Streitig-
 wts_1_34	285	33	2	སྦྱོང	sbyoṅ	reviewed_exact_final_ng	sbyon	reviewed_tibetan_exact_final_ng_consensus	tibetan_sbyong_consensus_batch_20260726	ཁྱིམ་སྦྱོང་ khyim sbyoṅ Bez. für Maus.
@@ -1248,8 +1249,22 @@ wts_1_34	872	48	1	ཏང	taṅ	reviewed_exact_final_ng	tan	reviewed_tibetan_exac
 wts_1_34	872	173	4	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_direct_unique_batch_20260719	ཏམ་བུ་རའེ་ཆུང་མ་ tani bu ra’i chuṅ ma Beiname
 wts_1_34	873	23	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	ཏར་།ཁང་ tar khaṅ 'Telegrafenamt.
 wts_1_34	873	181	3	གྲོང	groṅ	google_adopted	gron	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཏི་མའི་གྲོང་ཀྱེར་ ti ma’i groṅ khyer Bez. für
+wts_1_34	874	140	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ tiṅ ein Gefäß, Schale; vgl. chin, SH ting
+wts_1_34	874	152	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ཀྲས་ tiṅ kras cin Vogel.
+wts_1_34	874	157	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ཁྲོལ་ tiṅ khrol ein Laut.
+wts_1_34	874	169	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ ངེ་ འཛིན་ tiṅ he ’dzin
+wts_1_34	874	171	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ངེ་འཛིན་ tiṅ ne ’dzin auch tiṅ ’dzin.
+wts_1_34	875	1	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ངེ་འཛིན་་ tiṅ ne ’dzin ...
+wts_1_34	875	111	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ངེ་འཛིན་་”་ tiṅ ne ’dzin ...
 wts_1_34	875	113	1	ཏིང	tiṅ	base_provenance_unverified	tiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
 wts_1_34	875	113	4	བཟང	bzaṅ	reviewed_exact_final_ng	bzan	reviewed_tibetan_exact_final_ng_consensus	tibetan_bzang_consensus_batch_20260719	ཏིང་ངེ་འཛིན་བཟང་པོ་ tiṅ ṅe 'dzin bzaṅ po npr.
+wts_1_34	875	146	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་མཐའ་ tiṅ imtha’ finites Verb, skt. tinanta.
+wts_1_34	875	149	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་མཐོའི་ཚིག་ tiṅ mtho’i tshig irrt. für tin
+wts_1_34	875	177	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ཞི་ tiṅ Zi 72. Silber oder Türkis.
+wts_1_34	875	194	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ལོ་ tiṅ lo winzige Schalen aus Teig, vgl.
+wts_1_34	875	205	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ལོ་ཏིང་སྨན་ tiṅ lo tiṅ sman ein gäi bdag in
+wts_1_34	875	205	3	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ལོ་ཏིང་སྨན་ tiṅ lo tiṅ sman ein gäi bdag in
+wts_1_34	876	11	1	ཏིང	tiṅ	reviewed_exact_final_ng	tin	reviewed_tibetan_exact_final_ng_historical_witness	historical_witness_ting_consensus_batch_20260728	ཏིང་ཤོ་ tiṅ so ZZ. Fluß.
 wts_1_34	876	91	2	རྡུང	rduṅ	reviewed_exact_final_ng	rdun	reviewed_tibetan_exact_final_ng_consensus	final_ng_rdung_consensus_batch_20260727	ཏིལ་རྡུང་ tl rduṅ auch til brdun Sesam-
 wts_1_34	879	101	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཏེའུ་ཤིང་ te’ Siṅ Stuhl, Sitzbank.
 wts_1_34	889	220	1	གཏིང	gtiṅ	reviewed_exact_final_ng	gtin	reviewed_tibetan_exact_final_ng_consensus	tibetan_gting_consensus_batch_20260726	གཏིང་ཀློ་ gtiṅ klo Bez. für die kla klo 111 den

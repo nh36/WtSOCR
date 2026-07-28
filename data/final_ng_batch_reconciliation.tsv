@@ -121,3 +121,4 @@ one_anchor_rting_20260727	63a9742b88eaf7345cf8225bb6d5b4ad770fbb5e	རྟིང	
 one_anchor_bgrang_20260727	63a9742b88eaf7345cf8225bb6d5b4ad770fbb5e	བགྲང	one_anchor_bgrang_consensus_batch_20260727	8	8	one_anchor_bgrang_same_entry_echo_batch_20260727	5	3	2	0	0	0	8	3	5	11	0
 historical_witness_drang_20260728	acfc246bb710861c9b5da6b205565bf1bd3a6734	དྲང	historical_witness_drang_consensus_batch_20260728	43	43	historical_witness_drang_same_entry_echo_batch_20260728	4	3	1	0	0	0	43	3	4	46	2
 historical_witness_khong_20260728	acfc246bb710861c9b5da6b205565bf1bd3a6734	ཁོང	historical_witness_khong_consensus_batch_20260728	27	27	historical_witness_khong_same_entry_echo_batch_20260728	5	3	2	0	0	0	27	3	5	30	1
+historical_witness_ting_20260728	acfc246bb710861c9b5da6b205565bf1bd3a6734	ཏིང	historical_witness_ting_consensus_batch_20260728	16	16	historical_witness_ting_same_entry_echo_batch_20260728	4	1	2	0	1	0	16	2	4	17	0
