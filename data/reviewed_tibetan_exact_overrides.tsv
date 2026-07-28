@@ -876,6 +876,7 @@ wts_1_34	249	112	2	phan	phaṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_1_34	249	114	7	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	249	114	8	Itar	ltar	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_trusted_full_twopass_20260628	Exact reviewed trusted full-twopass initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	250	44	3	min	miṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_ming_consensus_batch_20260726	Frozen exact Tibetan མིང alignment; exact-row only.
+wts_1_34	251	98	2	sbyani	sbyaṅ	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	Exact སྦྱང alignment; canonical target and conditioned reviewed OCR signature; no Latin-wide substitution.
 wts_1_34	251	153	2	Itas	ltas	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
 wts_1_34	251	153	4	Itas	ltas	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_postprocess_token_index_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; postprocess-token-index aligned; no broad I-to-l rule
 wts_1_34	251	154	1	Itas	ltas	reviewed_tibetan_exact_initial_i_l_family	initial_i_residual_cleanup_second_pass_20260628	Exact reviewed residual initial-I/l-family OCR damage in Tibetan context; no broad I-to-l rule
