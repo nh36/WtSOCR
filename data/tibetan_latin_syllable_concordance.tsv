@@ -1566,9 +1566,8 @@ tibetan_syllable	latin_form	current_clean_occurrences	historical_baseline_occurr
 གཞི	g	12	12	wts_1_34;wts_35_51;wts_8_b	11	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:11;tibetan_proper_name:1	secure_positional_alignment:12	blocked:12		yes:12	ཀུན་གཞི་ kun gäi || ཀུན་གཞི་ kun gäi. || ཀོ་ལྤགས་ཀྱི་གཞི་ ko lpags kyi gäi einer der 17 gäi
 གཞི	gZi	0	12		0	0	0	0	0	0	0	0	unclear:1	probable_alignment:1	blocked:1		yes:1	"gsum ""[Krankheits]typus, -bild und Behand- དབྱེ་གཞི་ dbye gZi Unterscheidungsgrundlage."
 གཞི	gi	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
-གཞི	gzi	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	བརྟེན་གཞི་ brten gzi Stütze, Grundlage.
 གཞི	gāi	1	1	wts_9_m	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	མ་གཞི་ ma gāi Grundlage, Basis.
-གཞི	gźi	18	7	wts_1_34;wts_35_51;wts_9_m	18	11	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:18	secure_positional_alignment:7;secure_reviewed_alignment:11	pass:18	other_reviewed_feature	no:18	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa || གར་ཀྱི་ས་གཞི་ gar gyi sa gźi Schauspielbühne. || གྲང་གཞི་ graṅ gźi eine Krankheit.
+གཞི	gźi	19	7	wts_1_34;wts_35_51;wts_9_m	19	12	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:19	secure_positional_alignment:7;secure_reviewed_alignment:12	pass:19	other_reviewed_feature	no:19	ཀུན་གཞི་རྣམ་པར་ཤེས་པ་ kun gźi rnam par ses pa || གར་ཀྱི་ས་གཞི་ gar gyi sa gźi Schauspielbühne. || གྲང་གཞི་ graṅ gźi eine Krankheit.
 གཞི	maj	1	1	wts_8_b	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	བག་གཞི་ bbag maj
 གཞིག	gZ	1	1	wts_1_34	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	རྗེས་གཞིག་ rjes gZ1g.
 གཞིགས	gZigs	1	1	wts_35_51	1	0	0	0	0	0	0	0	ordinary_tibetan_lexical_or_compound:1	secure_positional_alignment:1	blocked:1		yes:1	"རྣམ་པར་འབུས་གཞིགས་པ་ rnam par ""bus gZigs pa"

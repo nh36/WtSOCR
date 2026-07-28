@@ -30564,8 +30564,8 @@ wts_1_34	966	169	1	བརྟེན	brten	insufficient_feature_coverage	yes	no	su
 wts_1_34	966	169	2	མདོས	mdos	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་མདོས་ brten mdos ein Tadenkreuz (Neb
 wts_1_34	966	172	1	བརྟེན	brten	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་པ་ brten pa.
 wts_1_34	966	172	2	པ	pa	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་པ་ brten pa.
-wts_1_34	966	178	1	བརྟེན	brten	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་གཞི་ brten gzi Stütze, Grundlage.
-wts_1_34	966	178	2	གཞི	gzi	nonfinal_feature_mismatch	no	yes	partial	blocked		secure_positional_alignment	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་གཞི་ brten gzi Stütze, Grundlage.
+wts_1_34	966	178	1	བརྟེན	brten	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་གཞི་ brten gźi Stütze, Grundlage.
+wts_1_34	966	178	2	གཞི	gźi	transcription_integrity_pass	yes	no	sufficient	pass		secure_reviewed_alignment	ཞ:ź	ź		gźi	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	བརྟེན་གཞི་ brten gźi Stütze, Grundlage.
 wts_1_34	966	181	1	བརྟོད	brtod	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	བརྟོད་ brtod pf. und fur. zu 17707 festbinden,
 wts_1_34	966	189	1	བརྟོན	brton	insufficient_feature_coverage	no	no	none	unresolved		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟོན་ brton pf. zu Trton aufrichtig sein.
 wts_1_34	966	194	1	བརྟོལ	brtol	insufficient_feature_coverage	yes	no	sufficient	pass		secure_positional_alignment						ordinary_tibetan_lexical_or_compound	none	no	བརྟོལ་ brtol pf. und fur. zu !'rtol.

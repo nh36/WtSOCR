@@ -2141,7 +2141,6 @@ gyur	gur	canonical_target_known_but_edit_unclassified	1	1	ordinary_tibetan_lexic
 gyur	par	canonical_target_known_but_edit_unclassified	1	0	unclear:1	diagnostic_only
 gyur	tshal	canonical_target_known_but_edit_unclassified	1	1	tibetan_proper_name:1	diagnostic_only
 gzer	gzar	single_diacritic_confusion	1	1	ordinary_tibetan_lexical_or_compound:1	diagnostic_only
-gzi	gźi	single_diacritic_confusion	1	1	ordinary_tibetan_lexical_or_compound:1	diagnostic_only
 gzigs	kri	canonical_target_known_but_edit_unclassified	1	1	ordinary_tibetan_lexical_or_compound:1	diagnostic_only
 gzugs	yi	canonical_target_known_but_edit_unclassified	1	1	ordinary_tibetan_lexical_or_compound:1	diagnostic_only
 gzun	su	canonical_target_known_but_edit_unclassified	1	0	unclear:1	diagnostic_only
