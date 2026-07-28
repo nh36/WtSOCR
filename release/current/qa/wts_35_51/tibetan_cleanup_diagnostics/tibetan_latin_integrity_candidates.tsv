@@ -6708,8 +6708,8 @@ wts_35_51	499	6	1	གནམ	vum	insufficient_feature_coverage	yes						ordinary_
 wts_35_51	499	6	2	གྲུའེ	gra'i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ གྲུའེ་འབབ ཐང་ vum gra'i bab thaṅ Ylug
 wts_35_51	499	6	3	འབབ	bab	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ གྲུའེ་འབབ ཐང་ vum gra'i bab thaṅ Ylug
 wts_35_51	499	6	4	ཐང	thaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	གནམ གྲུའེ་འབབ ཐང་ vum gra'i bab thaṅ Ylug
-wts_35_51	499	11	1	གནམ	gnam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ་དགུང་ gnam dgun.
-wts_35_51	499	11	2	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	གནམ་དགུང་ gnam dgun.
+wts_35_51	499	11	1	གནམ	gnam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ་དགུང་ gnam dguṅ.
+wts_35_51	499	11	2	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	གནམ་དགུང་ gnam dguṅ.
 wts_35_51	499	15	1	གནམ	sram	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ་རྒྱང་ sram rgyaṅ.
 wts_35_51	499	15	2	རྒྱང	rgyaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	གནམ་རྒྱང་ sram rgyaṅ.
 wts_35_51	499	25	1	གནམ	gnam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གནམ་རྒྱན་ gnam rgyan Tgnam gyi rgyan.

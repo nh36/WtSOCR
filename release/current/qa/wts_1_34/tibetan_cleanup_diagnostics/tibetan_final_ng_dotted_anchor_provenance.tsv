@@ -859,6 +859,14 @@ wts_1_34	404	62	3	སྤོང	spoṅ	google_adopted	spon	alternate_witness_goog
 wts_1_34	404	93	3	དབང	dbaṅ	google_adopted	dban	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དགའ་བའི་དབང་པོ་ dga’ ba’i dbaṅ po Beiname
 wts_1_34	404	99	3	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	དགའ་བའི་ཤིང་རྟ་མ་ dga’ ba’i Siṅ rta ma göttliche
 wts_1_34	406	163	2	སེང	seṅ	reviewed_exact_final_ng	sen	reviewed_tibetan_exact_final_ng_consensus	tibetan_seng_consensus_batch_20260726	དྲག་སེང་དྲུག་འགྱར་ dgu seṅ drug 'gyur eine Me-
+wts_1_34	407	109	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་ཆར་ dguṅ char
+wts_1_34	407	136	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་ཆར་ dguṅ char Bez. für Regen.
+wts_1_34	407	161	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་མོ་ ” dguṅ mo
+wts_1_34	407	168	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་གདགས་ dguṅ gdugs Mittagshitze.
+wts_1_34	407	173	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་བདན་ dguṅ bdun sieben Tage, Woche.
+wts_1_34	407	186	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་གནམ་ dguṅ gnam Himmel.
+wts_1_34	407	191	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་མོ་ dguṅ mo Mitte, Abend, Nacht, Mit-
+wts_1_34	408	2	1	དགུང	dguṅ	reviewed_exact_final_ng	dgun	reviewed_tibetan_exact_final_ng_historical_witness	repeated_historical_dgung_consensus_batch_20260728	དགུང་ཚིགས་ dguṅ tshigs Tgun tshigs.
 wts_1_34	408	51	4	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	དགུན་ཟླ་བ་ཆུང dgun zla tha chuṅ
 wts_1_34	408	68	2	འབྲིང	briṅ	reviewed_exact_final_ng	brin	reviewed_tibetan_exact_final_ng_consensus	tibetan_abring_consensus_batch_20260726	དགུན་འབྲིང་ dgun ’briṅ auch dgun zla 7777 po
 wts_1_34	408	96	4	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	དགུན་ཟླ་ཐ་ཆུང dgun zla tha chuṅ der Monat

@@ -6437,3 +6437,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1014	73	5421	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
 1015	19	5423	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
 1015	36	5425	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+499	11	2532	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གནམ་དགུང་ gnam dgun.

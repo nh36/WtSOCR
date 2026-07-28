@@ -14478,32 +14478,32 @@ wts_1_34	406	163	3	དྲུག	drug	insufficient_feature_coverage	yes						ordi
 wts_1_34	406	163	4	འགྱར	gyur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དྲག་སེང་དྲུག་འགྱར་ dgu seṅ drug 'gyur eine Me-
 wts_1_34	406	171	2	དགག	fur	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	damage_before_latin_alignment	no	དགག་ @27/£ fur. zu 19//£.
 wts_1_34	407	44	1	དགང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་ dgun.
-wts_1_34	407	109	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dgun char
-wts_1_34	407	109	2	ཆར	char	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dgun char
-wts_1_34	407	136	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dgun char Bez. für Regen.
-wts_1_34	407	136	2	ཆར	char	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dgun char Bez. für Regen.
+wts_1_34	407	109	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dguṅ char
+wts_1_34	407	109	2	ཆར	char	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dguṅ char
+wts_1_34	407	136	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dguṅ char Bez. für Regen.
+wts_1_34	407	136	2	ཆར	char	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཆར་ dguṅ char Bez. für Regen.
 wts_1_34	407	140	1	དགུང	dgun	marker_or_damage	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	latin_headword_overlap	no	དགུང་མཉམ་ dgun 77777:777 resp. gleichaltrig.
 wts_1_34	407	140	4	མཉམ	resp	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	latin_headword_overlap	no	དགུང་མཉམ་ dgun 77777:777 resp. gleichaltrig.
 wts_1_34	407	144	1	དགང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
 wts_1_34	407	144	2	སྙིང	sh	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
 wts_1_34	407	149	1	དགྱང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགྱང་ཐུན་ dgun thun mittlerer Teil des Tages
 wts_1_34	407	149	2	ཐུན	thun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགྱང་ཐུན་ dgun thun mittlerer Teil des Tages
-wts_1_34	407	161	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ ” dgun mo
-wts_1_34	407	161	2	མོ	mo	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ ” dgun mo
+wts_1_34	407	161	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ ” dguṅ mo
+wts_1_34	407	161	2	མོ	mo	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ ” dguṅ mo
 wts_1_34	407	163	1	དགང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་མཐོངས་ dgun mthons Dachfenster.
 wts_1_34	407	163	2	མཐོངས	mthons	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་མཐོངས་ dgun mthons Dachfenster.
-wts_1_34	407	168	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་གདགས་ dgun gdugs Mittagshitze.
-wts_1_34	407	168	2	གདགས	gdugs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་གདགས་ dgun gdugs Mittagshitze.
-wts_1_34	407	173	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་བདན་ dgun bdun sieben Tage, Woche.
-wts_1_34	407	173	2	བདན	bdun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་བདན་ dgun bdun sieben Tage, Woche.
-wts_1_34	407	186	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་གནམ་ dgun gnam Himmel.
-wts_1_34	407	186	2	གནམ	gnam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་གནམ་ dgun gnam Himmel.
-wts_1_34	407	191	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
-wts_1_34	407	191	2	མོ	mo	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
+wts_1_34	407	168	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་གདགས་ dguṅ gdugs Mittagshitze.
+wts_1_34	407	168	2	གདགས	gdugs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་གདགས་ dguṅ gdugs Mittagshitze.
+wts_1_34	407	173	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་བདན་ dguṅ bdun sieben Tage, Woche.
+wts_1_34	407	173	2	བདན	bdun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་བདན་ dguṅ bdun sieben Tage, Woche.
+wts_1_34	407	186	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་གནམ་ dguṅ gnam Himmel.
+wts_1_34	407	186	2	གནམ	gnam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་གནམ་ dguṅ gnam Himmel.
+wts_1_34	407	191	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ dguṅ mo Mitte, Abend, Nacht, Mit-
+wts_1_34	407	191	2	མོ	mo	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་མོ་ dguṅ mo Mitte, Abend, Nacht, Mit-
 wts_1_34	408	1	1	དགང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགང་ཚིགས་ dgun tshigs
 wts_1_34	408	1	2	ཚིགས	tshigs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགང་ཚིགས་ dgun tshigs
-wts_1_34	408	2	1	དགུང	dgun	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
-wts_1_34	408	2	2	ཚིགས	tshigs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
+wts_1_34	408	2	1	དགུང	dguṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		dguṅ	reviewed_tibetan_exact_final_ng_historical_witness	ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཚིགས་ dguṅ tshigs Tgun tshigs.
+wts_1_34	408	2	2	ཚིགས	tshigs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུང་ཚིགས་ dguṅ tshigs Tgun tshigs.
 wts_1_34	408	4	1	དགན	dgun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགན་ dgun auch - kha Winter.
 wts_1_34	408	51	1	དགུན	dgun	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུན་ཟླ་བ་ཆུང dgun zla tha chuṅ
 wts_1_34	408	51	2	ཟླ	zla	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དགུན་ཟླ་བ་ཆུང dgun zla tha chuṅ

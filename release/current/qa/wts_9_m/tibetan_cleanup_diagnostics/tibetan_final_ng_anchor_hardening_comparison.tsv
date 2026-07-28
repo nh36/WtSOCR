@@ -282,15 +282,15 @@ target_changed	wts_1_34	400	35	3	འདྲེང	drin	driṅ		source_compatible_
 target_changed	wts_1_34	401	107	1	གློང	glon	gloṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	གློང་ glon pf. !glons umrühren, aufwirbeln.
 category_changed	wts_1_34	401	171	2	ཧང	han	haṅ	haṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྷི་ཧང་ ghi han †£7 wan.
 target_changed	wts_1_34	405	55	3	དཔང	dban	dbaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	དགའ་རབ་དཔང་རམྱག་ dga’ rab dban phyug
-category_changed	wts_1_34	407	109	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་ཆར་ dgun char
-category_changed	wts_1_34	407	136	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་ཆར་ dgun char Bez. für Regen.
+disappeared	wts_1_34	407	109	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཆར་ dgun char
+disappeared	wts_1_34	407	136	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཆར་ dgun char Bez. für Regen.
 target_changed	wts_1_34	407	144	2	སྙིང	sh	sṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགང་སྙིང་ dgun shäin Bez. der chin. Tierkreis-
-category_changed	wts_1_34	407	161	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་མོ་ ” dgun mo
-category_changed	wts_1_34	407	168	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་གདགས་ dgun gdugs Mittagshitze.
-category_changed	wts_1_34	407	173	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་བདན་ dgun bdun sieben Tage, Woche.
-category_changed	wts_1_34	407	186	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་གནམ་ dgun gnam Himmel.
-category_changed	wts_1_34	407	191	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
-category_changed	wts_1_34	408	2	1	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
+disappeared	wts_1_34	407	161	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་མོ་ ” dgun mo
+disappeared	wts_1_34	407	168	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་གདགས་ dgun gdugs Mittagshitze.
+disappeared	wts_1_34	407	173	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་བདན་ dgun bdun sieben Tage, Woche.
+disappeared	wts_1_34	407	186	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་གནམ་ dgun gnam Himmel.
+disappeared	wts_1_34	407	191	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་མོ་ dgun mo Mitte, Abend, Nacht, Mit-
+disappeared	wts_1_34	408	2	1	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			དགུང་ཚིགས་ dgun tshigs Tgun tshigs.
 target_changed	wts_1_34	408	66	2	དང	dun	duṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགན་དང་ dgun dun \dgon dun.
 target_changed	wts_1_34	412	56	3	སྙིང	shin	shiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	དགེ་བའི་སྙིང་པོ་ dge ba’i shin po
 category_changed	wts_1_34	413	1	3	འབྱང	byun	byuṅ	byuṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas
@@ -665,7 +665,7 @@ target_changed	wts_35_51	23	1	1	གདུང	odun	oduṅ		source_compatible_insu
 target_changed	wts_35_51	379	52	2	ཚང	ishah	ishaṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 target_changed	wts_35_51	421	41	10	སྙིང	sth	stṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	"auch der Himmelsfluß"" (brDa); ha' chn bo ནམ་མཁའི་སྙིང་པོ nam mkha'i sth po auch nam"
 target_changed	wts_35_51	428	20	2	འཚོང	ishoh	ishoṅ		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	ནམ་འཚོང་ nam 'ishoh auch nam tsoṅ, nam
-category_changed	wts_35_51	499	11	2	དགུང	dgun	dguṅ	dguṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གནམ་དགུང་ gnam dgun.
+disappeared	wts_35_51	499	11	2	དགུང	dgun	dguṅ		source_compatible_insufficient_evidence			གནམ་དགུང་ gnam dgun.
 disappeared	wts_35_51	503	18	3	སྲོང	sroh	sroṅ		source_compatible_insufficient_evidence			གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
 category_changed	wts_35_51	554	22	1	རྣང	rnan	rnaṅ	rnaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	"རྣང་ ""rnan Bereich, Feld, Zwischenraum."
 target_changed	wts_35_51	689	69	2	གསུང	gsuṅń	gsuṅń		source_compatible_insufficient_evidence	source_compatible_no_anchor	0	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana

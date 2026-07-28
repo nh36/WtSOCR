@@ -3293,6 +3293,20 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed gtan control", corrected)
         self.assertEqual([row["to_token"] for row in changes], ["gtaṅ"])
 
+    def test_repeated_historical_dgung_withholds_damaged_row(self) -> None:
+        lines = {
+            (407, 109): "དགུང་ཆར་ dgun char",
+            (407, 140): "དགུང་མཉམ་ dgun 77777:777 resp. gleichaltrig.",
+            (1400, 1): "unreviewed dgun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དགུང་ཆར་ dguṅ char", corrected)
+        self.assertIn("དགུང་མཉམ་ dgun 77777:777", corrected)
+        self.assertIn("unreviewed dgun control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["dguṅ"])
+
     def test_historical_witness_zhang_supersedes_bad_ascii_stem(self) -> None:
         lines = {
             (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",
