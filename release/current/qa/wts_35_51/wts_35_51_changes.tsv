@@ -6465,3 +6465,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 884	19	4596	headword_line	phani	phaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕང་ཕུང་ phani phuṅ Haufen; ~ byed aufhäufen.
 972	28	5148	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
 972	40	5149	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་བཟུང་ phyani bzuṅ
+1108	42	6021	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon"
+1108	76	6025	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
