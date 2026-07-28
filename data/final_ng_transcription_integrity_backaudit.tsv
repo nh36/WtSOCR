@@ -1084,13 +1084,13 @@ wts_1_34	1086	17	3	བྱུང	byun	byuṅ	reviewed_tibetan_exact_final_ng_cons
 wts_1_34	1205	50	4	བྱུང	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	transcription_integrity_pass		pass	དེ་ལྟ་བུ་བྱུང་་ de lta bu byuṅ ...
 wts_1_34	1205	85	4	བྱུང	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	transcription_integrity_pass		pass	དེ་ལྟ་བུ་བྱུང་བ་ de lta bu byuṅ ba.
 wts_35_51	600	5	2	བྱུང	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	transcription_integrity_pass		pass	རྣམ་བྱུང་ mam byuṅ.
-wts_1_34	386	25	2	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	གློག་ཞིང་ grog Ziṅ Ameisenhügel.
-wts_1_34	779	45	2	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	ཉིན་ཞིང་ Hin Ziṅ Thin.
-wts_1_34	784	200	3	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
-wts_1_34	1099	32	3	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
-wts_1_34	1100	10	2	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
-wts_1_34	1168	60	2	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	དུར་ཞིང་ dur Ziṅ Leichenacker.
-wts_35_51	260	68	2	ཞིང	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	nonfinal_feature_mismatch	root_consonant:ཞ->ź	supersede_high_confidence_feature_mismatch	ལྡུམ་ཞིང་ ldum Ziṅ.
+wts_1_34	386	25	2	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	གློག་ཞིང་ grog źiṅ Ameisenhügel.
+wts_1_34	779	45	2	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	ཉིན་ཞིང་ Hin źiṅ Thin.
+wts_1_34	784	200	3	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	ཉེ་བའི་ཞིང་ ie ba’i źiṅ auch ne źiṅ Bez. für
+wts_1_34	1099	32	3	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	དག་པའི་ཞིང་ dag pa’i źiṅ \dag Zin.
+wts_1_34	1100	10	2	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	དག་ཞིང་ dag źiṅ Kurzf. für dag pa’i źiṅ reines
+wts_1_34	1168	60	2	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	དུར་ཞིང་ dur źiṅ Leichenacker.
+wts_35_51	260	68	2	ཞིང	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	transcription_integrity_pass		pass	ལྡུམ་ཞིང་ ldum źiṅ.
 wts_1_34	124	43	4	ལོང	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	transcription_integrity_pass		pass	དཀར་མོ་ དུང་ལོང་ dkar mo duṅ loṅ npr. ein Steig-
 wts_1_34	358	128	3	ལོང	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	transcription_integrity_pass		pass	གོ་རེ་ལོང་ go re loṅ Diener, Kehrer.
 wts_1_34	773	32	3	ལོང	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	transcription_integrity_pass		pass	ཉི་མས་ལོང་བ་ Ai mas loṅ ba Bez. für Nacht-

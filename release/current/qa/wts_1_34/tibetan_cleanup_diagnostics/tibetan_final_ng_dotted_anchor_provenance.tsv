@@ -745,7 +745,7 @@ wts_1_34	380	7	2	ལིང	liṅ	reviewed_exact_final_ng	lin	reviewed_tibetan_ex
 wts_1_34	386	3	5	ལིང	liṅ	reviewed_exact_final_ng	lin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ling_consensus_batch_20260726	གྲོག་སྨན་པི་པི་ལིང་ grog sman pi pi liṅ
 wts_1_34	386	12	5	ལིང	liṅ	reviewed_exact_final_ng	lin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ling_consensus_batch_20260726	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi liṅ ein Heil-
 wts_1_34	386	22	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshan	reviewed_tibetan_exact_final_ng_consensus	tibetan_tshang_consensus_batch_20260726	གྲོག་ཚང་ grog tshaṅ Ameisenhügel.
-wts_1_34	386	25	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	གློག་ཞིང་ grog Ziṅ Ameisenhügel.
+wts_1_34	386	25	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	གློག་ཞིང་ grog źiṅ Ameisenhügel.
 wts_1_34	386	111	3	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	གློགས་ཀྱི་ཆུང་མ་ grogs kyi chuṅ ma
 wts_1_34	386	123	3	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_direct_batch_20260719	གློགས་ཀྱི་ཆུང་མ་ grogs kyi chuṅ ma [divin.) Bez.
 wts_1_34	386	149	1	གྲོང	groṅ	reviewed_exact_final_ng	gron	reviewed_tibetan_exact_final_ng_consensus	tibetan_grong_consensus_batch_20260726	གྲོང་ groṅ auch ~ kha Dorf, Stadt, Haushalt.
@@ -1214,12 +1214,12 @@ wts_1_34	775	30	2	སང	saṅ	reviewed_exact_final_ng	san	reviewed_tibetan_exac
 wts_1_34	776	198	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཉིད་རང་ id raṅ resp. pron. 2. pers. Sie, Ihr.
 wts_1_34	778	57	3	ལོང	loṅ	reviewed_exact_final_ng	lon	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	ཉིན་མོ་ལོང་བ་ iin mo loṅ ba Bez. für Eule.
 wts_1_34	778	114	3	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	ཉིན་མོའི་དབང་ཕྱག་ min mo’i dbaṅ phyug
-wts_1_34	779	45	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	ཉིན་ཞིང་ Hin Ziṅ Thin.
+wts_1_34	779	45	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	ཉིན་ཞིང་ Hin źiṅ Thin.
 wts_1_34	780	21	6	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_exact_final_ng_consensus	tibetan_ring_consensus_batch_20260719	ཉ་ལེ་ཉབ་ཀྱི་ལག་རིང་ Au le ab kyi lag riṅ eine
 wts_1_34	784	11	3	ལྕང	lcaṅ	reviewed_exact_final_ng	lcan	reviewed_tibetan_exact_final_ng_consensus	tibetan_lcang_consensus_batch_20260726	ཉེ་གནས་ལྕང་དཀར་ fie gnas lcaṅ dkar eine
 wts_1_34	784	33	3	དྲུང	druṅ	reviewed_exact_final_ng	drun	reviewed_tibetan_exact_final_ng_consensus	tibetan_drung_consensus_batch_20260720	ཉེ་བ་དྲུང་པོ་ ie ba druṅ po enger Vertrauter,
 wts_1_34	784	143	3	དཔུང	dpuṅ	reviewed_exact_final_ng	dpun	reviewed_tibetan_exact_final_ng_consensus	tibetan_dpung_consensus_batch_20260726	ཉེ་བའི་དཔུང་པ་ fie ba’i dpuṅ pa Ellbogen.
-wts_1_34	784	200	3	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
+wts_1_34	784	200	3	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	ཉེ་བའི་ཞིང་ ie ba’i źiṅ auch ne źiṅ Bez. für
 wts_1_34	786	218	3	མཐོང	mthoṅ	reviewed_exact_final_ng	mthon	reviewed_tibetan_exact_final_ng_consensus	tibetan_mthong_consensus_batch_20260719	ཉེ་བར་མཐོང་ fie bar mthoṅ sehen.
 wts_1_34	789	53	3	འོང	oṅ	reviewed_exact_final_ng	on	reviewed_tibetan_exact_final_ng_consensus	tibetan_ong_consensus_batch_20260726	ཉེ་བར་འོང་ fie bar ’oṅ pf. fie bar ’ons kommen.
 wts_1_34	789	137	3	སོང	soṅ	reviewed_exact_final_ng	son	reviewed_tibetan_exact_final_ng_consensus	tibetan_song_consensus_batch_20260726	ཉེ་བར་སོང་ fie bar soṅ auch ñer soṅ, pf. zu Te
@@ -1616,8 +1616,8 @@ wts_1_34	1092	12	3	རིང	riṅ	reviewed_exact_final_ng	rin	reviewed_tibetan_
 wts_1_34	1097	70	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དག་དང་ dag daṅ völlig rein.
 wts_1_34	1098	1	2	སྣང	snaṅ	google_adopted	snan	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	དག་སྣང་ dag snaṅ
 wts_1_34	1098	13	2	སྣང	snaṅ	reviewed_exact_final_ng	snan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	དག་སྣང་ dag snaṅ auch dag pa’i snaṅ ba.
-wts_1_34	1099	32	3	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
-wts_1_34	1100	10	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
+wts_1_34	1099	32	3	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	དག་པའི་ཞིང་ dag pa’i źiṅ \dag Zin.
+wts_1_34	1100	10	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	དག་ཞིང་ dag źiṅ Kurzf. für dag pa’i źiṅ reines
 wts_1_34	1100	44	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ alttib. auch tan.
 wts_1_34	1100	54	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ
 wts_1_34	1101	1	1	དང	daṅ	reviewed_exact_final_ng	dan	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_trusted_full_twopass_20260628	དང་ 'daṅ
@@ -1737,7 +1737,7 @@ wts_1_34	1161	67	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshan	reviewed_tibetan
 wts_1_34	1165	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུར་ཁང་ dur khaṅ
 wts_1_34	1165	8	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུར་ཁང་ dur khaṅ Leichenhaus, Mausoleum.
 wts_1_34	1167	48	2	ཕུང	phuṅ	reviewed_exact_final_ng	phun	reviewed_tibetan_exact_final_ng_consensus	tibetan_phung_consensus_batch_20260726	"དུར་ཕུང་ dur phuṅ ""Totenzeremonie, Bestat-"
-wts_1_34	1168	60	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	དུར་ཞིང་ dur Ziṅ Leichenacker.
+wts_1_34	1168	60	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	དུར་ཞིང་ dur źiṅ Leichenacker.
 wts_1_34	1170	1	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ
 wts_1_34	1170	16	2	ཁང	khaṅ	reviewed_exact_final_ng	khan	reviewed_tibetan_exact_final_ng_consensus	tibetan_khang_consensus_batch_20260719	དུལ་ཁང་ dul khaṅ Badehaus, vgl. Tdud khan.
 wts_1_34	1181	79	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དུས་དང་དུས་སུ་ dus daṅ dus su \dus dus su.

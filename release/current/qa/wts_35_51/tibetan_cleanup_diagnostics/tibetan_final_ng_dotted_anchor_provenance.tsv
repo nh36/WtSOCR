@@ -132,7 +132,7 @@ wts_35_51	79	53	3	གསང	gsaṅ	base_provenance_unverified	gsaṅ	No direct a
 wts_35_51	80	1	4	ཤང	Saṅ	base_provenance_unverified	Saṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་སྒྲོན་ཧ་ཤང་ bde sgron ha Saṅ
 wts_35_51	80	67	3	གླིང	gliṅ	base_provenance_unverified	gliṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་ཆེན་གླིང་པ་ bde chen gliṅ pa tbde glin.
 wts_35_51	81	23	3	རྫོང	rdzoṅ	base_provenance_unverified	rdzoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་ཆེན་རྫོང་ bde chen rdzoṅ npr. ein rdzoṅ in
-wts_35_51	81	29	3	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
+wts_35_51	81	29	3	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
 wts_35_51	82	22	2	སྟོང	stoṅ	base_provenance_unverified	stoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"བདེ་སྟོང་ཐུང་འཇུག་ bde stoṅ zu jug ""die Ver-"
 wts_35_51	82	29	2	ཐང	thaṅ	base_provenance_unverified	thaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་ཐང་ bde thaṅ Wohlergehen.
 wts_35_51	83	1	3	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བདེ་ལྡན་དབང་ཕྱུག་ bde ldan dbaṅ phyug
@@ -228,7 +228,7 @@ wts_35_51	180	21	1	འདེང	deṅ	base_provenance_unverified	deṅ	No direct
 wts_35_51	180	33	1	འདེངས	deṅs	base_provenance_unverified	deṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདེངས་ deṅs T'den.
 wts_35_51	183	1	2	ཁུང	khuṅ	base_provenance_unverified	khuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདེབས་ཁུང་ 'debs khuṅ
 wts_35_51	183	16	2	ཁུང	khuṅ	base_provenance_unverified	khuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདེབས་ཁུང་ 'debs khuṅ Bez. für ein Loch.
-wts_35_51	183	18	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
+wts_35_51	183	18	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	འདེབས་ཞིང་ 'debs źiṅ Bez. für Feld, Acker.
 wts_35_51	184	48	1	འདོང	doṅ	base_provenance_unverified	doṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདོང་ 'doṅ
 wts_35_51	184	75	1	འདོང	doṅ	base_provenance_unverified	doṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདོང་ 'doṅ pf. und imp. t'don.
 wts_35_51	188	2	2	སྐྱོང	skyoṅ	base_provenance_unverified	skyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འདོད སྐྱོང dod skyoṅ
@@ -303,7 +303,7 @@ wts_35_51	258	52	1	ང	ldiṅ	base_provenance_unverified	ldiṅ	No direct author
 wts_35_51	258	72	1	ལྡིང	ldiṅ	base_provenance_unverified	ldiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ལྡིང་དཔོན་ ldiṅ dpon hoher Offizier, Komman-
 wts_35_51	259	1	1	ལྡིངས	ldiṅs	base_provenance_unverified	ldiṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ལྡིངས་ ldiṅs
 wts_35_51	259	5	1	ལྡེངས	ldiṅs	other_postprocess	Idiṅs	confusable_initial_I_to_l_strong_context	A	ལྡེངས་ ldiṅs pf. zu 1/(/77)) schweben.
-wts_35_51	260	68	2	ཞིང	Ziṅ	reviewed_exact_final_ng	Zin	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	ལྡུམ་ཞིང་ ldum Ziṅ.
+wts_35_51	260	68	2	ཞིང	źiṅ	reviewed_exact_final_ng	Zin;Ziṅ	reviewed_correction_supersession_bridge;reviewed_tibetan_exact_final_ng_consensus	tibetan_zha_feature_integrity_20260728;tibetan_zhing_consensus_batch_20260726	ལྡུམ་ཞིང་ ldum źiṅ.
 wts_35_51	262	26	4	ུང	cuṅ	base_provenance_unverified	cuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ལྡེ་སྨན་ལྡེའུ་ུང་ llde sman lde'u cuṅ cun.
 wts_35_51	263	23	2	དགོངས	dgoṅs	base_provenance_unverified	dgoṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ལྡེམ་དགོངས་བཞི་ Idem dgoṅs bźi ldem por
 wts_35_51	263	25	2	རྒྱང	rgyaṅ	base_provenance_unverified	rgyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ལྤེམ་རྒྱང་ ldem rgyaṅ auch ldem rgyanis.
@@ -1048,7 +1048,7 @@ wts_35_51	871	32	2	ལྤང	lbaṅ	base_provenance_unverified	lbaṅ	No direct 
 wts_35_51	872	31	2	མིང	miṅ	reviewed_exact_final_ng	min	reviewed_tibetan_exact_final_ng_consensus	tibetan_ming_consensus_batch_20260726	"ཕུ་མིང་ ""phba miṅ Vater und Bruder."
 wts_35_51	873	57	2	ཝྲང	waṅ	base_provenance_unverified	waṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban loṅ
 wts_35_51	873	57	3	ལོང	loṅ	unknown	lon	ambiguous_change_or_token_position		ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban loṅ
-wts_35_51	873	69	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+wts_35_51	873	69	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	ཕ་ཞིང་ pha źiṅ Grundbesitz als Familienerbe.
 wts_35_51	878	30	3	གཏོང	gtoṅ	base_provenance_unverified	gtoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕ་རོལ་གཏོང་ pha rol gtoṅ
 wts_35_51	878	77	5	འཆང	chaṅ	reviewed_exact_final_ng	chah	reviewed_tibetan_exact_final_ng_consensus	tibetan_achang_consensus_batch_20260726	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chaṅ"
 wts_35_51	881	47	3	ཤིང	siṅ	reviewed_exact_final_ng	sih	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཕག་གི་ཤིང་རྟ་ phag gi siṅ rta
@@ -1191,12 +1191,12 @@ wts_35_51	1012	68	2	བྱུང	byuṅ	base_provenance_unverified	byuṅ	No dir
 wts_35_51	1013	22	2	བླངས	blaṅs	base_provenance_unverified	blaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་བླངས་ pbyir blaṅs pf. aufgeben.
 wts_35_51	1013	54	2	འབྱུང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་འབྱུང་ ppbyir 'byuṅ Tphyir byun wieder
 wts_35_51	1014	41	3	འོང	oṅ	base_provenance_unverified	oṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
-wts_35_51	1014	44	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞིང་ phyir Ziṅ
-wts_35_51	1014	73	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
+wts_35_51	1014	44	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	ཕྱིར་ཞིང་ phyir źiṅ
+wts_35_51	1014	73	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	ཕྱིར་ཞིང་ phyir źiṅ auch phyir bin wieder, wie-
 wts_35_51	1015	15	2	ཞེང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
-wts_35_51	1015	19	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
-wts_35_51	1015	36	2	ཞིང	Ziṅ	base_provenance_unverified	Ziṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
-wts_35_51	1015	36	3	བྱུང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+wts_35_51	1015	19	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	"ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ ""dm pa sehr lüstern;"
+wts_35_51	1015	36	2	ཞིང	źiṅ	reviewed_exact_final_ng	Ziṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
+wts_35_51	1015	36	3	བྱུང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
 wts_35_51	1016	28	2	འོང	oṅ	other_postprocess	oñ	confusable_to_headword	A	ཕྱིར་འོང་ phyir oṅ.
 wts_35_51	1016	45	2	ཡང	yaṅ	base_provenance_unverified	yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྲེར་ཡང་ phbyir yaṅ wieder, wiederum.
 wts_35_51	1019	59	2	ཀྱང	kyaṅ	base_provenance_unverified	kyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཕྱིས་ཀྱང་མི་སྤོང་ phyis kyaṅ mi spoṅ nicht ablas-

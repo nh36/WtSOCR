@@ -13559,8 +13559,8 @@ wts_1_34	386	12	4	པེ	pi	insufficient_feature_coverage	yes						ordinary_tibe
 wts_1_34	386	12	5	ལིང	liṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		liṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi liṅ ein Heil-
 wts_1_34	386	22	1	གྲོག	grog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྲོག་ཚང་ grog tshaṅ Ameisenhügel.
 wts_1_34	386	22	2	ཚང	tshaṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ		tshaṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	གྲོག་ཚང་ grog tshaṅ Ameisenhügel.
-wts_1_34	386	25	1	གློག	grog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གློག་ཞིང་ grog Ziṅ Ameisenhügel.
-wts_1_34	386	25	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	གློག་ཞིང་ grog Ziṅ Ameisenhügel.
+wts_1_34	386	25	1	གློག	grog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གློག་ཞིང་ grog źiṅ Ameisenhügel.
+wts_1_34	386	25	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	གློག་ཞིང་ grog źiṅ Ameisenhügel.
 wts_1_34	386	28	1	གྲོགས	grogs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྲོགས་ grogs auch ~ po Freund, Gefährte, Hel-
 wts_1_34	386	55	1	གྲོགས	grogs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གྲོགས་ grogs
 wts_1_34	386	111	1	གློགས	grogs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	གློགས་ཀྱི་ཆུང་མ་ grogs kyi chuṅ ma
@@ -26001,8 +26001,8 @@ wts_1_34	779	39	1	ཉིན	rin	insufficient_feature_coverage	yes						ordinary_
 wts_1_34	779	39	2	ཞག	Zag	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞག་ཚོགས་པ་ rin Zag lshogs pa Bez. für
 wts_1_34	779	39	3	ཚོགས	lshogs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞག་ཚོགས་པ་ rin Zag lshogs pa Bez. für
 wts_1_34	779	39	4	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞག་ཚོགས་པ་ rin Zag lshogs pa Bez. für
-wts_1_34	779	45	1	ཉིན	Hin	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞིང་ Hin Ziṅ Thin.
-wts_1_34	779	45	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞིང་ Hin Ziṅ Thin.
+wts_1_34	779	45	1	ཉིན	Hin	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞིང་ Hin źiṅ Thin.
+wts_1_34	779	45	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཞིང་ Hin źiṅ Thin.
 wts_1_34	779	46	1	ཉིན	Ain	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་བཞིན་ Ain bzin Täin
 wts_1_34	779	46	2	བཞིན	bzin	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཉིན་བཞིན་ Ain bzin Täin
 wts_1_34	779	47	1	ཉིན	iin	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉིན་ཟླ་བྲ་ iin zla za Til zla za
@@ -26221,9 +26221,9 @@ wts_1_34	784	188	1	ཉེ	ie	insufficient_feature_coverage	yes						ordinary_tib
 wts_1_34	784	188	2	བའི	ba’i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཉེ་བའི་མཚམས་མེད་ ie ba’i mtsbams med $©~
 wts_1_34	784	188	3	མཚམས	mtsbams	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཉེ་བའི་མཚམས་མེད་ ie ba’i mtsbams med $©~
 wts_1_34	784	188	4	མེད	med	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	later_gloss_or_commentary	no	ཉེ་བའི་མཚམས་མེད་ ie ba’i mtsbams med $©~
-wts_1_34	784	200	1	ཉེ	ie	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
-wts_1_34	784	200	2	བའི	ba’i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
-wts_1_34	784	200	3	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i Ziṅ auch ne Ziṅ Bez. für
+wts_1_34	784	200	1	ཉེ	ie	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i źiṅ auch ne źiṅ Bez. für
+wts_1_34	784	200	2	བའི	ba’i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i źiṅ auch ne źiṅ Bez. für
+wts_1_34	784	200	3	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་ཞིང་ ie ba’i źiṅ auch ne źiṅ Bez. für
 wts_1_34	784	216	1	ཉེ	ne	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་རི་མོ་ཅན་ ne ba’ ri mo can eine Heil-
 wts_1_34	784	216	2	བའི	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་རི་མོ་ཅན་ ne ba’ ri mo can eine Heil-
 wts_1_34	784	216	3	རི	ri	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཉེ་བའི་རི་མོ་ཅན་ ne ba’ ri mo can eine Heil-
@@ -33921,9 +33921,9 @@ wts_1_34	1099	24	1	དག	dag	marker_or_damage	yes						ordinary_tibetan_lexical
 wts_1_34	1099	24	2	པའི	pa’i	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	latin_headword_overlap	no	དག་པའི་རྡོ་དཀར་ dag pa’i ༡:40 dkar klarer, reiner
 wts_1_34	1099	24	4	རྡོ	dkar	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	latin_headword_overlap	no	དག་པའི་རྡོ་དཀར་ dag pa’i ༡:40 dkar klarer, reiner
 wts_1_34	1099	24	5	དཀར	klarer	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	latin_headword_overlap	no	དག་པའི་རྡོ་དཀར་ dag pa’i ༡:40 dkar klarer, reiner
-wts_1_34	1099	32	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
-wts_1_34	1099	32	2	པའི	pa’i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
-wts_1_34	1099	32	3	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i Ziṅ \dag Zin.
+wts_1_34	1099	32	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i źiṅ \dag Zin.
+wts_1_34	1099	32	2	པའི	pa’i	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i źiṅ \dag Zin.
+wts_1_34	1099	32	3	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	དག་པའི་ཞིང་ dag pa’i źiṅ \dag Zin.
 wts_1_34	1099	34	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པར་བཅོས་ dag par bcos gründlich verbes-
 wts_1_34	1099	34	2	པར	par	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པར་བཅོས་ dag par bcos gründlich verbes-
 wts_1_34	1099	34	3	བཅོས	bcos	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་པར་བཅོས་ dag par bcos gründlich verbes-
@@ -33956,8 +33956,8 @@ wts_1_34	1100	1	3	བྱས	byas	insufficient_feature_coverage	yes						ordinary
 wts_1_34	1100	3	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་འཚང་བྱས་ dag ’tshan byas pf. bereinigen.
 wts_1_34	1100	3	2	འཚང	tshan	final_feature_mismatch_only	yes	ང:ṅ		suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	དག་འཚང་བྱས་ dag ’tshan byas pf. bereinigen.
 wts_1_34	1100	3	3	བྱས	byas	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་འཚང་བྱས་ dag ’tshan byas pf. bereinigen.
-wts_1_34	1100	10	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
-wts_1_34	1100	10	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	དག་ཞིང་ dag Ziṅ Kurzf. für dag pa’i Ziṅ reines
+wts_1_34	1100	10	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་ཞིང་ dag źiṅ Kurzf. für dag pa’i źiṅ reines
+wts_1_34	1100	10	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	དག་ཞིང་ dag źiṅ Kurzf. für dag pa’i źiṅ reines
 wts_1_34	1100	26	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་ཡིག་ dag yig Wörterbuch.
 wts_1_34	1100	26	2	ཡིག	yig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་ཡིག་ dag yig Wörterbuch.
 wts_1_34	1100	32	1	དག	dag	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དག་སེལ་ dag sel [Fehler] beseitigen, bereini-
@@ -35072,8 +35072,8 @@ wts_1_34	1168	38	1	དུར	dur	insufficient_feature_coverage	yes						ordinary
 wts_1_34	1168	38	2	མིག	mig	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་མིག་ dur mig für die keg-rtsis-Divination
 wts_1_34	1168	58	1	དུར	d	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ཝ་ dür wa Tdur ba.
 wts_1_34	1168	58	0	ཝ	r	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ཝ་ dür wa Tdur ba.
-wts_1_34	1168	60	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ཞིང་ dur Ziṅ Leichenacker.
-wts_1_34	1168	60	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	དུར་ཞིང་ dur Ziṅ Leichenacker.
+wts_1_34	1168	60	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ཞིང་ dur źiṅ Leichenacker.
+wts_1_34	1168	60	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	དུར་ཞིང་ dur źiṅ Leichenacker.
 wts_1_34	1168	79	1	དུར	dur	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དུར་ཡ་ dur ya npr. Ortsname.
 wts_1_34	1168	79	2	ཡ	ya	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	དུར་ཡ་ dur ya npr. Ortsname.
 wts_1_34	1168	84	1	དུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	དུར་ལེན་ dur len ein Kalkulationsschema der

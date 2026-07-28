@@ -1283,9 +1283,9 @@ wts_35_51	81	8	3	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_
 wts_35_51	81	23	1	བདེ	bde	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	བདེ་ཆེན་རྫོང་ bde chen rdzoṅ npr. ein rdzoṅ in
 wts_35_51	81	23	2	ཆེན	chen	insufficient_feature_coverage	yes						tibetan_proper_name	none	no	བདེ་ཆེན་རྫོང་ bde chen rdzoṅ npr. ein rdzoṅ in
 wts_35_51	81	23	3	རྫོང	rdzoṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				tibetan_proper_name	none	no	བདེ་ཆེན་རྫོང་ bde chen rdzoṅ npr. ein rdzoṅ in
-wts_35_51	81	29	1	བདེ	bde	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
-wts_35_51	81	29	2	ཆེན	chen	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
-wts_35_51	81	29	3	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
+wts_35_51	81	29	1	བདེ	bde	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
+wts_35_51	81	29	2	ཆེན	chen	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
+wts_35_51	81	29	3	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
 wts_35_51	81	39	1	བདེ	bde	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་མཆོག་ལྷ་རི bde mchog lha ri
 wts_35_51	81	39	2	མཆོག	mchog	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་མཆོག་ལྷ་རི bde mchog lha ri
 wts_35_51	81	39	3	ལྷ	lha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	བདེ་མཆོག་ལྷ་རི bde mchog lha ri
@@ -2708,8 +2708,8 @@ wts_35_51	183	1	1	འདེབས	debs	insufficient_feature_coverage	yes						or
 wts_35_51	183	1	2	ཁུང	khuṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཁུང་ 'debs khuṅ
 wts_35_51	183	16	1	འདེབས	debs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཁུང་ 'debs khuṅ Bez. für ein Loch.
 wts_35_51	183	16	2	ཁུང	khuṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཁུང་ 'debs khuṅ Bez. für ein Loch.
-wts_35_51	183	18	1	འདེབས	debs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
-wts_35_51	183	18	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
+wts_35_51	183	18	1	འདེབས	debs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཞིང་ 'debs źiṅ Bez. für Feld, Acker.
+wts_35_51	183	18	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	འདེབས་ཞིང་ 'debs źiṅ Bez. für Feld, Acker.
 wts_35_51	183	30	1	འདེམས	dems	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འདེམས་ 'dems pf. und imp. zu 'dem wählen,
 wts_35_51	183	41	1	འདོགས	dogs	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"འདོགས་ ""dogs"
 wts_35_51	184	2	1	འདོག	R	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	འདོག R
@@ -4006,8 +4006,8 @@ wts_35_51	260	53	3	གསུམ	gsum	insufficient_feature_coverage	yes						ordi
 wts_35_51	260	63	1	ལྡུམ	ldum	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་བུའི་ཚལ་ ldum bwi tshal Garten, Gemüse- earten.
 wts_35_51	260	63	2	བུའི	bwi	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་བུའི་ཚལ་ ldum bwi tshal Garten, Gemüse- earten.
 wts_35_51	260	63	3	ཚལ	tshal	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་བུའི་ཚལ་ ldum bwi tshal Garten, Gemüse- earten.
-wts_35_51	260	68	1	ལྡུམ	ldum	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་ཞིང་ ldum Ziṅ.
-wts_35_51	260	68	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་ཞིང་ ldum Ziṅ.
+wts_35_51	260	68	1	ལྡུམ	ldum	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་ཞིང་ ldum źiṅ.
+wts_35_51	260	68	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_correction_supersession_bridge	ordinary_tibetan_lexical_or_compound	none	no	ལྡུམ་ཞིང་ ldum źiṅ.
 wts_35_51	260	74	1	མ	Idum	marker_or_damage	yes						ordinary_tibetan_lexical_or_compound	none	yes	མ་རྭ་ Idum rwa auch Idum ra Garten, Park.
 wts_35_51	260	74	2	རྭ	rwa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	མ་རྭ་ Idum rwa auch Idum ra Garten, Park.
 wts_35_51	261	1	1	ལྡུར	dur	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ལྡུར་ལྡུར་ 'dur ldur
@@ -12332,8 +12332,8 @@ wts_35_51	873	57	3	ལོང	loṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ	
 wts_35_51	873	57	4	བུ	bu	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban loṅ
 wts_35_51	873	67	1	ཕ	pha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཝམ་ pha wam Tpha wan.
 wts_35_51	873	67	2	ཝམ	wam	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཝམ་ pha wam Tpha wan.
-wts_35_51	873	69	1	ཕ	pha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
-wts_35_51	873	69	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+wts_35_51	873	69	1	ཕ	pha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཞིང་ pha źiṅ Grundbesitz als Familienerbe.
+wts_35_51	873	69	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཕ་ཞིང་ pha źiṅ Grundbesitz als Familienerbe.
 wts_35_51	873	73	1	ཕ	pha	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་གཞིས་ pha gāis vāterliches Gut, väterlicher
 wts_35_51	873	73	2	གཞིས	gāis	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕ་གཞིས་ pha gāis vāterliches Gut, väterlicher
 wts_35_51	873	82	1	ཕ	pha'on	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕ་འོང་ pha'on Tpha bon.
@@ -14249,26 +14249,26 @@ wts_35_51	1014	41	1	ཕིར	phyir	insufficient_feature_coverage	yes						ordin
 wts_35_51	1014	41	2	མེ	mi	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
 wts_35_51	1014	41	3	འོང	oṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
 wts_35_51	1014	41	4	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
-wts_35_51	1014	44	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir Ziṅ
-wts_35_51	1014	44	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir Ziṅ
-wts_35_51	1014	73	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
-wts_35_51	1014	73	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
+wts_35_51	1014	44	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir źiṅ
+wts_35_51	1014	44	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir źiṅ
+wts_35_51	1014	73	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir źiṅ auch phyir bin wieder, wie-
+wts_35_51	1014	73	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་ phyir źiṅ auch phyir bin wieder, wie-
 wts_35_51	1015	15	1	ཕྱིར	pphyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
 wts_35_51	1015	15	2	ཞེང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
 wts_35_51	1015	15	3	དད	dad	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
 wts_35_51	1015	15	4	ཆེ	che	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
 wts_35_51	1015	15	5	བ	ba	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞེང་དད་ཆེ་བ་ pphyir Ziṅ dad che ba ver-
-wts_35_51	1015	19	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
-wts_35_51	1015	19	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
-wts_35_51	1015	19	3	འདུན	dm	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
-wts_35_51	1015	19	4	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
+wts_35_51	1015	19	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ ""dm pa sehr lüstern;"
+wts_35_51	1015	19	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ ""dm pa sehr lüstern;"
+wts_35_51	1015	19	3	འདུན	dm	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ ""dm pa sehr lüstern;"
+wts_35_51	1015	19	4	པ	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	"ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ ""dm pa sehr lüstern;"
 wts_35_51	1015	24	1	ཕྱིར	pphyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
 wts_35_51	1015	24	2	ཞིང	dod	multiple_feature_mismatches	no	ཞ:ź;ང:ṅ		root_consonant:ཞ->ź;suffix_coda:ང->ṅ			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
 wts_35_51	1015	24	3	འདོད	pa	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
 wts_35_51	1015	24	0	པ	berm	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་འདོད་པ་ pphyir 'dod pa übermäßige
-wts_35_51	1015	36	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
-wts_35_51	1015	36	2	ཞིང	Ziṅ	nonfinal_feature_mismatch	no	ཞ:ź;ང:ṅ	ṅ	root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
-wts_35_51	1015	36	3	བྱུང	byuṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+wts_35_51	1015	36	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
+wts_35_51	1015	36	2	ཞིང	źiṅ	transcription_integrity_pass	yes	ཞ:ź;ང:ṅ	ź;ṅ		źiṅ	reviewed_tibetan_exact_transcription_integrity	ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
+wts_35_51	1015	36	3	བྱུང	byuṅ	transcription_integrity_pass	yes	ང:ṅ	ṅ				ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
 wts_35_51	1015	40	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་བཞུད་ phyir bzud
 wts_35_51	1015	40	2	བཞུད	bzud	nonfinal_feature_mismatch	no	ཞ:ź		root_consonant:ཞ->ź			ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་བཞུད་ phyir bzud
 wts_35_51	1016	1	1	ཕྱིར	phyir	insufficient_feature_coverage	yes						ordinary_tibetan_lexical_or_compound	none	no	ཕྱིར་བློག་ phyir zlog

@@ -2926,7 +2926,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed byun occurrence", corrected)
         self.assertEqual(sum(row["to_token"] == "byuṅ" for row in changes), 2)
 
-    def test_reviewed_zhing_preserves_case_and_lowercase_controls(self) -> None:
+    def test_reviewed_zhing_repairs_ascii_stem_and_preserves_controls(self) -> None:
         lines = {
             (784, 200): "ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin",
             (1400, 3): "unrelated lowercase zin control",
@@ -2934,9 +2934,9 @@ class PostprocessRegressionTests(unittest.TestCase):
         _result, corrected, changes = self.run_postprocess_fixture(
             self.fixture_with_reviewed_lines(lines), label="wts_1_34"
         )
-        self.assertIn("ie ba’i Ziṅ auch ne Ziṅ", corrected)
+        self.assertIn("ie ba’i źiṅ auch ne źiṅ", corrected)
         self.assertIn("lowercase zin control", corrected)
-        self.assertEqual(sum(row["to_token"] == "Ziṅ" for row in changes), 2)
+        self.assertEqual(sum(row["to_token"] == "źiṅ" for row in changes), 2)
 
     def test_reviewed_long_variants_are_exactly_gated(self) -> None:
         lines = {

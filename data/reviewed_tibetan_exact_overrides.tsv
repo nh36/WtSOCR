@@ -5569,15 +5569,15 @@ wts_1_34	1086	17	3	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan
 wts_1_34	1205	50	4	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
 wts_1_34	1205	85	4	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
 wts_35_51	600	5	2	byun	byuṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_byung_consensus_batch_20260726	Frozen exact Tibetan བྱུང alignment; separate from འབྱུང.
-wts_1_34	386	25	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	779	45	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	784	200	3	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	1099	32	3	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	1100	10	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	1168	60	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_35_51	260	68	2	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
-wts_1_34	784	200	6	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Explicit alternate repeats the same ཞིང element.
-wts_1_34	1100	10	7	Zin	Ziṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Kurzf. für transparently repeats the same ཞིང element.
+wts_1_34	386	25	2	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	779	45	2	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	784	200	3	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1099	32	3	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1100	10	2	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	1168	60	2	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_35_51	260	68	2	Zin	źiṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_zhing_consensus_batch_20260726	Frozen exact Tibetan ཞིང alignment; case preserved.
+wts_1_34	784	200	6	Zin	źiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Explicit alternate repeats the same ཞིང element.
+wts_1_34	1100	10	7	Zin	źiṅ	reviewed_tibetan_exact_final_ng_echo	tibetan_zhing_same_entry_echo_batch_20260726	Kurzf. für transparently repeats the same ཞིང element.
 wts_1_34	124	43	4	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
 wts_1_34	358	128	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
 wts_1_34	773	32	3	lon	loṅ	reviewed_tibetan_exact_final_ng_consensus	tibetan_long_consensus_batch_20260726	Frozen exact Tibetan ལོང alignment.
@@ -6152,3 +6152,19 @@ wts_1_34	35	164	3	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_z
 wts_1_34	1117	21	3	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞང identity; advances the already materialized obsolete target without a global Z-to-ź rule.
 wts_1_34	35	164	7	Zaṅ	źaṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact reviewed ཞང echo; advances the already materialized obsolete target without a global Z-to-ź rule.
 wts_8_b	398	42	2	Zaṅ	źaṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact historical ཞང anchor fails reviewed root-consonant integrity; no global Z-to-ź rule.
+wts_1_34	386	25	2	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	779	45	2	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	784	200	3	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	1099	32	3	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	1100	10	2	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	1168	60	2	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_35_51	260	68	2	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact Tibetan ཞིང identity; advances the materialized obsolete target only.
+wts_1_34	784	200	6	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact reviewed ཞིང echo; advances the materialized obsolete target only.
+wts_1_34	1100	10	7	Ziṅ	źiṅ	reviewed_correction_supersession_bridge	tibetan_zha_feature_integrity_20260728	Exact reviewed ཞིང echo; advances the materialized obsolete target only.
+wts_35_51	81	29	3	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	183	18	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	873	69	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	1014	44	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	1014	73	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	1015	19	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.
+wts_35_51	1015	36	2	Ziṅ	źiṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_zha_feature_integrity_20260728	Exact clean Tibetan ཞིང alignment; reviewed root-consonant integrity only.

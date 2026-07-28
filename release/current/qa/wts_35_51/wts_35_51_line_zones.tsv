@@ -6783,7 +6783,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 81	26	487	german_prose_with_translit			none	5	1	0	0	"daṅ groṅ skor ya man tsam yod ciṅ ""das vom"
 81	27	487	german_prose_with_translit			none	2	2	0	0	sde pa sKyid-śod-pa in Besitz genommene
 81	28	487	latin_other			none	3	0	0	0	"sTod-luṅ bDe-chen-rdzon"" (""Dzam 22,10)."
-81	29	488	headword_line	བདེ་ཆེན་ཞིང་	bde	medium	2	4	0	0	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
+81	29	488	headword_line	བདེ་ཆེན་ཞིང་	bde	medium	2	4	0	0	བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
 81	30	488	latin_other			none	3	0	0	0	Buddha Amitābha, skt. Sukhāvatī;
 81	31	488	german_prose_with_translit			none	3	1	0	0	— sgrub meditative Verwirklichung der Su-
 81	32	488	german_prose_with_translit			none	1	1	0	0	khāvati (ScHwieger 1995: XVI).
@@ -15444,7 +15444,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 183	15	1045	german_prose			none	0	1	0	0	Dasy).
 183	16	1046	headword_line	འདེབས་ཁུང་	khuṅ	high	1	4	0	0	འདེབས་ཁུང་ 'debs khuṅ Bez. für ein Loch.
 183	17	1046	german_prose_with_translit			none	2	3	0	0	Lex. bu ga'i min (brDa, ähnl. Dagy).
-183	18	1047	headword_line	འདེབས་ཞིང་	Ziṅ	high	1	4	0	0	འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
+183	18	1047	headword_line	འདེབས་ཞིང་	Ziṅ	high	1	4	0	0	འདེབས་ཞིང་ 'debs źiṅ Bez. für Feld, Acker.
 183	19	1047	german_prose_with_translit			none	2	5	0	0	"Lex. sa bon 'debs pa'i Zin ""Veld, auf dem gesät"
 183	20	1047	german_prose_with_translit			none	2	3	0	0	"wird"" (Dagy); Zin sa ""Acker"" (brDa)."
 183	21	1047	other			none	0	0	0	0	"* ?//""› '"
@@ -21839,7 +21839,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 260	65	1512	german_prose_with_translit			none	5	2	0	0	"Lex. la phug sno tsbod la sogs pa ""Rettich,"
 260	66	1512	german_prose_with_translit			none	3	1	0	0	"Gemüse usw."" (brDa); sro /(7//?)/ gyi rwa ba"
 260	67	1512	german_prose_with_translit			none	1	3	0	0	"""Umzäunung für Grünpflanzen"" (Dagy)."
-260	68	1512	tibetan_only	ལྡུམ་ཞིང་		none	0	1	0	0	ལྡུམ་ཞིང་ ldum Ziṅ.
+260	68	1512	tibetan_only	ལྡུམ་ཞིང་		none	0	1	0	0	ལྡུམ་ཞིང་ ldum źiṅ.
 260	69	1512	german_prose			none	0	1	0	0	1. Gemüsegarten.
 260	70	1512	german_prose_with_translit			none	3	5	0	0	"Lex. sro tsbod btab sa ""ein Ort, an dem man"
 260	71	1512	german_prose_with_translit			none	1	1	0	0	"Gemüse anpflanzt"" (brDa)."
@@ -71049,7 +71049,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 873	66	4501	german_prose_with_translit			none	3	1	0	0	pa rdo Zig (brDa).
 873	67	4502	headword_line	ཕ་ཝམ་	pha	high	2	0	0	0	ཕ་ཝམ་ pha wam Tpha wan.
 873	68	4502	tibetan_only	༨		none	0	0	0	0	༨ PR . 112༢ ༡༩།༨ ༢
-873	69	4503	headword_line	ཕ་ཞིང་	pha Ziṅ	high	2	3	0	0	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+873	69	4503	headword_line	ཕ་ཞིང་	pha Ziṅ	high	2	3	0	0	ཕ་ཞིང་ pha źiṅ Grundbesitz als Familienerbe.
 873	70	4503	german_prose_with_translit			none	5	3	0	0	"Lex. pha mes kyi 'tsho rten sa Zin ""Le-"
 873	71	4503	german_prose			none	0	3	0	0	"bensgrundlage der Vorfahren, Grundbesitz"""
 873	72	4503	german_prose			none	0	1	0	0	(Dagy).
@@ -82463,7 +82463,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1014	41	5409	headword_line	ཕིར་མེ་འོང་བ་	phyir	high	4	1	0	0	ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
 1014	42	5409	tibetan_only	༦		none	0	0	0	0	༦ . . ‹ 7
 1014	43	5409	german_prose			none	0	2	0	0	"""Nichtwiederkehrer"", jmd., der"
-1014	44	5410	headword_line	ཕྱིར་ཞིང་	phyir Ziṅ	high	2	0	0	0	ཕྱིར་ཞིང་ phyir Ziṅ
+1014	44	5410	headword_line	ཕྱིར་ཞིང་	phyir Ziṅ	high	2	0	0	0	ཕྱིར་ཞིང་ phyir źiṅ
 1014	45	5410	german_prose			none	0	3	0	0	nicht mehr in den Wiedergeburtenkreislauf
 1014	46	5410	german_prose_with_translit			none	1	1	0	0	zurückkehren wird; skt. anāgāmin.
 1014	47	5410	latin_other			none	5	0	0	0	kha cig gis ni lan geig phyir 'on ba'i 'bras but /
@@ -82492,7 +82492,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1014	70	5410	german_prose_with_translit			none	5	1	0	0	9138, Abt. dge sbyon gi skyon du brtsi ba'
 1014	71	5410	other			none	0	0	0	0	mi).
 1014	72	5410	tibetan_only	༽ ༤༨		none	0	1	0	0	༽ ༤༨ un ` Fr `; .
-1014	73	5411	headword_line	ཕྱིར་ཞིང་	phyir Ziṅ	high	3	1	0	0	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
+1014	73	5411	headword_line	ཕྱིར་ཞིང་	phyir Ziṅ	high	3	1	0	0	ཕྱིར་ཞིང་ phyir źiṅ auch phyir bin wieder, wie-
 1014	74	5411	german_prose_with_translit			none	1	1	0	0	derum; — — immer wieder; vgl. Iphy7
 1014	75	5411	latin_other			none	1	0	0	0	phyir.
 1014	76	5411	latin_other			none	6	0	0	0	de nas lo nes pa dan / nad sna tsbogs 'byun
@@ -82526,7 +82526,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1015	16	5412	latin_other			none	1	0	0	0	langend, begierig.
 1015	17	5412	german_prose_with_translit			none	2	4	0	0	Lex. bhayo rucitä (Mvy 2212, Abt. chags pa
 1015	18	5412	latin_other			none	3	0	0	0	dan 'dod pa'i rnam pa'i min).
-1015	19	5413	headword_line	ཕྱིར་ཞིང་འདུན་པ་	phyir Ziṅ	high	3	1	0	0	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
+1015	19	5413	headword_line	ཕྱིར་ཞིང་འདུན་པ་	phyir Ziṅ	high	3	1	0	0	ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ "dm pa sehr lüstern;
 1015	20	5413	latin_other			none	2	0	0	0	vel. Iphyir 'dun pa.
 1015	21	5413	german_prose_with_translit			none	3	2	0	0	Lex. phyir Zin sred pa'am — = bbūyacchandi-
 1015	22	5413	german_prose_with_translit			none	2	2	0	0	"kab [!] (Mvy 2211, Abt. chags pa dan ""dod"
@@ -82543,7 +82543,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1015	33	5414	latin_other			none	3	0	0	0	"phyir zabhiprasannānām bhūyobhāvaya ""um"
 1015	34	5414	german_prose			none	0	7	0	0	"[die Zahl] der Gläubigen zu erhöhen"" (Mvy"
 1015	35	5414	other			none	0	0	0	0	8353).
-1015	36	5415	headword_line	ཕྱིར་ཞིང་བྱུང་	phyir Ziṅ byuṅ	high	4	2	0	0	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+1015	36	5415	headword_line	ཕྱིར་ཞིང་བྱུང་	phyir Ziṅ byuṅ	high	4	2	0	0	ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
 1015	37	5415	german_prose			none	0	1	0	0	D out
 1015	38	5415	other			none	0	0	0	0	by sich vermehren.
 1015	39	5415	german_prose_with_translit			none	3	1	0	0	Lex. — ba = 'phel ba (TTC).
