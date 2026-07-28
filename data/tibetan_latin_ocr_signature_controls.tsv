@@ -533,7 +533,7 @@ INS os	0	0	0	0	0	0	0	0	0	0	0	none
 INS p	0	0	0	0	0	0	0	0	0	0	0	none
 INS pa	0	0	0	0	0	0	0	0	0	0	0	none
 INS ph	0	0	0	0	0	0	0	0	0	0	0	none
-INS r	0	0	0	0	13	0	0	0	0	0	0	none
+INS r	12	13	0	0	13	0	0	0	0	0	0	none
 INS ra	0	0	0	0	0	0	0	0	0	0	0	none
 INS rd	0	0	0	0	0	0	0	0	0	0	0	none
 INS rg	0	0	0	0	0	0	0	0	0	0	0	none

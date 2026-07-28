@@ -3049,3 +3049,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 574	58	3058	headword_line	chani	chaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chani
 375	17	2032	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_ocr_signature	1	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
 434	12	2389	headword_line	zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	འབའ་ཞིག་ 'ba' zig allein, ausschließlich, einzig,
+131	42	655	headword_line	goṅ	groṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	བོལ་གྲོང་ bol goṅ oberer Teil des Fußes, Fuß-

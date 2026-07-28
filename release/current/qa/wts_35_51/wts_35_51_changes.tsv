@@ -6487,3 +6487,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 562	1	2791	headword_line	kbrims	khrims	A	reviewed_tibetan_exact_manual_structural_ocr	1	རྣམ་དག་ཁྲིམས་གླིང་ rnam dag kbrims gliṅ
 978	43	5198	headword_line	kbuṅ	khuṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
 994	49	5304	headword_line	kbul	khul	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.
+867	18	4469	headword_line	pha	phra	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྲ ""pha gegenüberliegende Seite."
+870	22	4496	headword_line	bi	bri	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲ་བྲི་ pba bi gegenūberliegende Seite; — na
+1024	35	5485	headword_line	dzi	rdzi	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
+1086	68	5847	headword_line	phan	phran	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
+1098	11	5931	headword_line	pho	phro	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."

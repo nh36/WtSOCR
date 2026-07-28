@@ -70502,7 +70502,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 867	15	4456	german_prose			none	0	1	0	0	"[beschafft hat]"" (Sumpa 14223)."
 867	16	4456	german_prose_with_translit			none	1	4	0	0	"Lex. pitä (Mvy 3877); skyed byed kyi — ""Va-"
 867	17	4456	german_prose			none	0	3	0	0	"ter, der Erzeuger"" (Dagy)."
-867	18	4457	headword_line	ཕྲ	pha	high	1	2	0	0	"ཕྲ ""pha gegenüberliegende Seite."
+867	18	4457	headword_line	ཕྲ	pha	high	1	2	0	0	ཕྲ "phra gegenüberliegende Seite.
 867	19	4457	german_prose_with_translit			none	3	3	0	0	"Lex. —s ‰ pha rol nas dan ""von der ande-"
 867	20	4457	german_prose_with_translit			none	2	1	0	0	"ren Seite her"" (brDa); —s pbam ‰ pha rol"
 867	21	4457	german_prose_with_translit			none	3	3	0	0	"nas pham pa ""von der Gegenseite besiegt"""
@@ -70746,7 +70746,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 870	19	4482	german_prose_with_translit			none	2	3	0	0	"ohne Feuer', ein blutstillendes Heilmittel"""
 870	20	4482	german_prose			none	0	1	0	0	(Dagy).
 870	21	4483	headword_line	ཕ་བང་ལོང་བུ་	pha baṅ loṅ	high	4	0	0	0	ཕ་བང་ལོང་བུ་ pha baṅ loṅ bu \pha wan lon bu.
-870	22	4484	headword_line	ཕྲ་བྲི་	gegenūberliegende	high	2	1	0	0	ཕྲ་བྲི་ pba bi gegenūberliegende Seite; — na
+870	22	4484	headword_line	ཕྲ་བྲི་	gegenūberliegende	high	2	1	0	0	ཕྲ་བྲི་ pba bri gegenūberliegende Seite; — na
 870	23	4484	german_prose_with_translit			none	2	2	0	0	drüben; vgl. Tpha gi.
 870	24	4484	german_prose_with_translit			none	4	2	0	0	yul 'dro tir Zes bya ba' Tjons — na ... byani
 870	25	4484	german_prose_with_translit			none	4	1	0	0	"chub sems dpa'i spyad pa spyod pa'itshe ""als er"
@@ -83299,7 +83299,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1024	32	5472	german_prose_with_translit			none	5	2	0	0	Lex. nor — ba po (brDa); — ba po (Dagy).
 1024	33	5472	german_prose			none	0	3	0	0	2. Bez. für Wolf.
 1024	34	5472	german_prose_with_translit			none	1	1	0	0	Lex. spyan ki (brDa).
-1024	35	5473	headword_line	ཕྱུགས་རྫི་	phyngs dzi	high	2	2	0	0	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
+1024	35	5473	headword_line	ཕྱུགས་རྫི་	phyngs dzi	high	2	2	0	0	ཕྱུགས་རྫི་ phyngs"rdzi Viehhire; = mo Vichhir-
 1024	36	5473	other			none	0	0	0	0	tn.
 1024	37	5473	german_prose_with_translit			none	5	2	0	0	— mo Zig 70 '/ bum pa... khyer nas rgyun Ses kyi
 1024	38	5473	german_prose_with_translit			none	3	3	0	0	"bei drun du son ba las ""eine Viehhirtin kam"
@@ -88462,7 +88462,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1086	65	5833	german_prose_with_translit			none	5	2	0	0	Dagy); — che ba = ba dan chen po lta bu
 1086	66	5833	german_prose_with_translit			none	1	4	0	0	"aan ""wie: ein großes Banner"" (brDa, ähnl."
 1086	67	5833	german_prose			none	0	1	0	0	Dagy).
-1086	68	5834	headword_line	འཕྲན་	phan	high	2	3	0	0	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
+1086	68	5834	headword_line	འཕྲན་	phan	high	2	3	0	0	འཕྲན་ "phran Fehler, schadhafte Stelle, Riß; —
 1086	69	5834	german_prose_with_translit			none	1	2	0	0	pa fehlerhaft, zerbrochen, Beschädigu; _
 1086	70	5834	latin_other			none	1	0	0	0	med pa fehlerlos.
 1086	71	5834	german_prose_with_translit			none	3	2	0	0	Lex. skyon la (Dagy); — pa = chag pa'am
@@ -89392,7 +89392,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1098	8	5917	german_prose_with_translit			none	1	1	0	0	"nad mams (metr.) ""Krankheiten mit tiefen,"
 1098	9	5917	german_prose			none	0	2	0	0	"schmerzenden und wuchernden Wunden"""
 1098	10	5917	other			none	0	0	0	0	(¥ 64d).
-1098	11	5918	headword_line	འཕྲོ་	pho	high	2	2	0	0	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."
+1098	11	5918	headword_line	འཕྲོ་	pho	high	2	2	0	0	འཕྲོ་ "phro ausgießen; vgl. 1'bo.
 1098	12	5918	latin_other			none	4	0	0	0	blo yi bum pa) ... dad ldan blo gsal sa phyogs
 1098	13	5918	german_prose_with_translit			none	1	5	0	0	"~~ bar śog (metr.) ""möge die Vase des Gei-"
 1098	14	5918	german_prose_with_translit			none	1	5	0	0	stes in Richtung der Gläubigen und Klugen
