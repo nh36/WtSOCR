@@ -1,8 +1,8 @@
 record_type	volume	page	line	token_index	tibetan_syllable	source_or_current_token	supported_target	provenance	disposition	context_excerpt
 current_dotted_form	wts_1_34	111	3	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	ཀླད་གཞུང་ klad gźuṅ Rückenmark.
+current_dotted_form	wts_35_51	826	11	2	གཞུང	gźuṅ	gźuṅ	reviewed_exact_final_ng	explicit_user_correction	སྤྱི་གཞུང་ spyi gźuṅ Regierung.
 current_dotted_form	wts_8_b	128	43	2	གཞུང	gZuṅ	gZuṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
 residual_source	wts_1_34	300	171	2	གཞུང	gun			manual_unresolved	ཁྲེལ་གཞུང་ khrel gun \khrel.
-residual_source	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ		target_supported_but_row_not_authorized	སྤྱི་གཞུང་ spyi gźuń Regierung.
 current_dotted_form	wts_1_34	750	80	1	ལྗང	ldaṅ	ldaṅ	reviewed_exact_final_ng	explicit_user_correction	"ལྗང་ ldaṅ ""jan."
 current_dotted_form	wts_35_51	252	43	1	ལྗང	daṅ	daṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	ལྗང་ 'daṅ
 current_dotted_form	wts_35_51	938	25	2	ལྗང	ldaṅ	ldaṅ	base_provenance_unverified	anchor_provenance_requires_direct_verification	ཕོ་ལྗང་ pho ldaṅ npr. ein Kloster.

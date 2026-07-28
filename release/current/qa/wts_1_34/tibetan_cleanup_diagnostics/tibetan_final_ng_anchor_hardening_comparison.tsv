@@ -677,7 +677,7 @@ target_changed	wts_35_51	737	37	1	དཔུང	dpuṅń	dpuṅń		source_compati
 category_changed	wts_35_51	756	63	2	སྡིང	sdih	sdiṅ	sdiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དཔྱད་སྡིང་བཅུ་གསུམ་ dpyad sdih ben gsum eine
 category_changed	wts_35_51	803	40	1	སྤང	spyah	spyaṅ	spyaṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	སྤང་ཀི་ spyah ki auch spyan khu, spyan gu,
 target_changed	wts_35_51	813	40	1	རང	spyan	spyaṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	'རང་དྲང་ཅྲན་ spyan raṅ dran can
-category_changed	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ	gźuṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	སྤྱི་གཞུང་ spyi gźuń Regierung.
+disappeared	wts_35_51	826	11	2	གཞུང	gźuń	gźuṅ		source_compatible_insufficient_evidence			སྤྱི་གཞུང་ spyi gźuń Regierung.
 target_changed	wts_35_51	830	78	1	སྤྲོང	halten	halteṅ		source_compatible_structure_mismatch	source_compatible_damaged_context	0	སྤྲོང་ ༡༠༧ halten, greifen.
 target_changed	wts_35_51	871	31	2	ལྤང	bon	boṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཕ་ལྤང་ phpha bon.
 target_changed	wts_35_51	882	10	2	དོང	Wildschwein	Wildschweiṅ		source_compatible_structure_mismatch	source_compatible_no_anchor	0	ཕྲག་དོང་ phagrgod Wildschwein; wilder Eber,

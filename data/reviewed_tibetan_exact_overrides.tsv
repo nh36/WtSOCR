@@ -6033,3 +6033,4 @@ wts_1_34	424	178	4	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor
 wts_1_34	560	16	5	bgran	bgraṅ	reviewed_tibetan_exact_final_ng_echo	one_anchor_bgrang_same_entry_echo_batch_20260727	Entry structure independently establishes the same Tibetan lemma.
 wts_1_34	111	3	2	gzun	gźuṅ	reviewed_tibetan_exact_manual_multi_error	explicit_user_review	Exact Tibetan གཞུང row; repairs non-final ź and final ṅ only at this page-line-token.
 wts_1_34	750	80	1	Dan	ldaṅ	reviewed_tibetan_exact_manual_multi_error	explicit_user_review	Exact Tibetan ལྗང row; repairs damaged initial cluster and final ṅ only at this page-line-token.
+wts_35_51	826	11	2	gźuń	gźuṅ	reviewed_same_tibetan_target_final_nasal_only	explicit_user_reviewed_same_tibetan_target_plus_exact_final_nasal_variant	Exact Tibetan གཞུང alignment; canonical gźuṅ is explicitly user-reviewed and this source differs only in the final nasal glyph.

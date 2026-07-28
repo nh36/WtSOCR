@@ -3129,6 +3129,32 @@ class PostprocessRegressionTests(unittest.TestCase):
             ],
         )
 
+    def test_user_reviewed_gzhung_acute_n_variant_is_exactly_gated(
+        self,
+    ) -> None:
+        lines = {
+            (826, 11): "སྤྱི་གཞུང་ spyi gźuń Regierung.",
+            (826, 12): "unreviewed gźuń control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("སྤྱི་གཞུང་ spyi gźuṅ Regierung.", corrected)
+        self.assertIn("unreviewed gźuń control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                (
+                    "gźuń",
+                    "gźuṅ",
+                    "reviewed_same_tibetan_target_final_nasal_only",
+                )
+            ],
+        )
+
     def test_reviewed_btang_preserves_damaged_context(self) -> None:
         lines = {
             (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",

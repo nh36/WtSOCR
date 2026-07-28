@@ -47,7 +47,6 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 ཀྱང	byan	bya<FINAL_NASAL>	byaṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		kyaṅ:7; gyaṅ:1	0	wts_8_b
 ཁོང	kbon	kbo<FINAL_NASAL>	kboṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		khoṅ:1	0	wts_1_34
 གཅུང	gcun	gcu<FINAL_NASAL>	gcuṅ	1	insufficient_consensus:1	source_compatible_single_anchor:1	1			0	wts_1_34
-གཞུང	gźuń	gźu<FINAL_NASAL>	gźuṅ	1	competing_latin_forms:1	source_compatible_single_anchor:1	1		gZuṅ:1	0	wts_35_51
 གླིང	elin	eli<FINAL_NASAL>	eliṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		gliṅ:51; ciṅ:1	0	wts_1_34
 ཆུང	run	ru<FINAL_NASAL>	ruṅ	1	not_emitted_by_legacy_global_target:1	source_compatible_single_anchor:1	1		chuṅ:130	0	wts_1_34
 ནིང	nin	ni<FINAL_NASAL>	niṅ	1	competing_latin_forms:1	source_compatible_single_anchor:1	1		miṅ:1	0	wts_1_34
@@ -137,7 +136,7 @@ tibetan_syllable	source_variant	source_signature	proposed_target	candidate_count
 གདུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gduṅ:30; voṅ:1; gdunṅ:1	0	wts_1_34
 གདུང	odun	odu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gduṅ:30; voṅ:1; gdunṅ:1	0	wts_35_51
 གདོང	can	ca<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gdoṅ:45; edoṅ:1; ggdoṅ:1	0	wts_1_34
-གཞུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gźuṅ:1; gZuṅ:1	0	wts_1_34
+གཞུང	gun	gu<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gźuṅ:2; gZuṅ:1	0	wts_1_34
 གསུང	gsuṅń	gsuṅ<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		gsuṅ:9	0	wts_35_51
 གོང	dgon	dgo<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_damaged_context:1	0		goṅ:54	1	wts_1_34
 གོང	in	i<FINAL_NASAL>		1	not_emitted_by_legacy_global_target:1	source_compatible_no_anchor:1	0		goṅ:54	0	wts_1_34
