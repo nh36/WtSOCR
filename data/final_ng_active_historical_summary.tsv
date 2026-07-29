@@ -4,6 +4,6 @@ blocked_prior_rejected	2	2	0	0	0	0	0	0
 canonical_target_not_authoritative	117	117	0	0	0	0	0	0
 domain_risk	3	3	0	3	3	3	0	0
 final_ng_target_conflicts_with_general_canonical	16	16	0	16	1	10	8	0
-no_supported_target	343	337	6	145	2	88	125	0
+no_supported_target	343	330	13	138	2	81	118	0
 ready_existing_authority	18	18	0	18	18	18	0	0
 source_alignment_not_secure	11	11	0	11	11	0	4	0

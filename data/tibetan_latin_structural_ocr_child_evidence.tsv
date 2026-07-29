@@ -12,4 +12,6 @@ INITIAL_STRAIGHT_APOSTROPHE_EXTRA_NO_ACHUNG	DEL '	D	151	85	0	0	23	wts_1_34;wts_3
 INITIAL_CURLY_APOSTROPHE_EXTRA_NO_ACHUNG	DEL ’	D	17	12	0	0	12	wts_1_34	wts_1_34:164-1262	exact_headword_gate_applied	0	0	47	0	0	alignment_not_secure:77;damage_or_marker:84;domain_mismatch:12;forbidden_tibetan_feature:362;other_unexplained_edit:2	0	remain_D_no_independent_conditioned_witness_or_review
 INS_R_SUBJOINED	INS r	A	0	0	10	0	0			exact_headword_gate_applied	13	13	0	0	0		0	persistent_A
 INS_R_SUPERSCRIPT	INS r	D	0	0	2	0	0			exact_headword_gate_applied	13	13	0	0	0	alignment_not_secure:29;other_unexplained_edit:2;tibetan_role_mismatch:6	0	persistent_D
+ROOT_T_MISSING_H	INS h	D	0	0	1	0	0			exact_headword_gate_applied	7	2	0	0	0	alignment_not_secure:15;source_context_mismatch:2	0	persistent_D
+ROOT_P_MISSING_H	INS h	D	0	0	6	0	0			exact_headword_gate_applied	7	2	0	0	0	alignment_not_secure:15;other_unexplained_edit:1;source_context_mismatch:1	0	persistent_D
 VOWEL_N_TO_U	SUB n→u	A	0	0	9	0	0			exact_headword_gate_applied	10	21	327	0	0		0	persistent_A

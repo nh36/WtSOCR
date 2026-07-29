@@ -312,6 +312,7 @@ def stdlib_modules() -> set[str]:
         "datetime",
         "difflib",
         "fnmatch",
+        "functools",
         "glob",
         "hashlib",
         "importlib",

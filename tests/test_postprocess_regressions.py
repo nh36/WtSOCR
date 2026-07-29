@@ -3146,7 +3146,7 @@ class PostprocessRegressionTests(unittest.TestCase):
         self.assertIn("unreviewed sprah control", corrected)
         self.assertEqual(sum(row["to_token"] == "spraṅ" for row in changes), 1)
 
-    def test_one_anchor_krong_pilot_is_exactly_gated(self) -> None:
+    def test_reviewed_krong_rows_are_exactly_gated(self) -> None:
         lines = {
             (109, 55): "ཀྲོང་ངེ་ kron ne",
             (109, 88): "ཀྲོང་ཀྲོང་ kron kron.",
@@ -3158,9 +3158,9 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn("ཀྲོང་ངེ་ kroṅ ne", corrected)
         self.assertIn("ཀྲོང་ཀྲོང་ kroṅ kroṅ.", corrected)
-        self.assertIn("ཀྲོང་སྤྲེའུ་ gron", corrected)
+        self.assertIn("ཀྲོང་སྤྲེའུ་ kroṅ", corrected)
         self.assertIn("unreviewed kron control", corrected)
-        self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 3)
+        self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 4)
 
     def test_one_anchor_rting_pilot_preserves_marker_attached_echo(self) -> None:
         lines = {

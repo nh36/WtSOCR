@@ -2109,7 +2109,7 @@ SUB g→b	0	0	0	0	3	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀ�
 SUB g→c	0	0	0	0	0	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
 SUB g→d	0	0	0	0	4	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
 SUB g→i	0	0	0	0	1	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
-SUB g→k	0	0	0	0	0	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
+SUB g→k	1	1	0	0	0	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
 SUB g→l	0	0	0	0	0	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
 SUB g→m	0	0	0	0	1	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
 SUB g→n	0	0	0	0	1	0	597	0	3639	0	0	ཀེག=keg;ཀོ=go;ཀོག=kog;ཀྱི=gyi;ཀྱིས=gyis;ཀྱོག=kyog;ཀྲུགས=krugs;ཀླག=klag
@@ -2146,7 +2146,7 @@ SUB i→n	0	0	0	1	5	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;
 SUB i→o	0	0	0	0	0	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
 SUB i→r	0	0	0	0	3	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
 SUB i→s	0	0	0	0	1	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
-SUB i→t	0	0	0	1	8	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
+SUB i→t	7	7	0	1	8	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
 SUB i→u	0	0	0	0	5	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
 SUB i→z	0	0	0	0	0	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin
 SUB i→ñ	0	0	0	0	8	0	333	0	1714	0	0	ཀའི=ka’i;ཀི=ki;ཀིང=kiṅ;ཀིམ=kim;ཀྱི=gyi;ཀྱི=khyi;ཀྱི=kyi;ཀྱིན=kyin

@@ -315,6 +315,17 @@ class FeatureCompositionTests(unittest.TestCase):
             "decision_time_authority_snapshot_unavailable",
         )
 
+    def test_authority_snapshot_is_frozen_from_persistent_decision(self):
+        stored = {"decision_base_sha": "0123456789abcdef"}
+        self.assertEqual(
+            role_model.frozen_authority_snapshot(stored),
+            "0123456789abcdef",
+        )
+        self.assertEqual(
+            role_model.frozen_authority_snapshot({}),
+            "decision_time_authority_snapshot_unavailable",
+        )
+
     def test_resolved_tibetan_vowel_conflicts_leave_no_latin_conflict(self):
         with (
             ROOT / "data/tibetan_feature_composition_conflicts.tsv"

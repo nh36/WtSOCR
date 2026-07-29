@@ -1379,6 +1379,13 @@ def merge_mapping_candidates(
     return list(merged.values())
 
 
+def frozen_authority_snapshot(persistent_decision: dict[str, str]) -> str:
+    """Return immutable decision-time provenance, never the current build SHA."""
+    return persistent_decision.get(
+        "decision_base_sha", ""
+    ) or "decision_time_authority_snapshot_unavailable"
+
+
 def build_correction_authority_backaudit(
     composition: list[dict[str, str]],
     dependencies: list[dict[str, str]],
@@ -1660,9 +1667,9 @@ def build_correction_authority_backaudit(
                 "domain_context", "reviewed_exact_identity"
             ),
             "prior_exact_decision_status": "none_before_active_override",
-            "authority_snapshot_sha": persistent_decision.get(
-                "decision_base_sha"
-            ) or "decision_time_authority_snapshot_unavailable",
+            "authority_snapshot_sha": frozen_authority_snapshot(
+                persistent_decision
+            ),
             "current_backaudit_status": current_status,
             "exact_correction_status": "retained_reviewed_exact",
             "current_target_authority": target_authority,
