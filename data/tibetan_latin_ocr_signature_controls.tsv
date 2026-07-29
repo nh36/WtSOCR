@@ -273,7 +273,7 @@ DEL miyi	0	0	0	0	0	0	0	0	0	0	0	none
 DEL mjal	0	0	0	0	0	0	1	0	0	0	0	མཇལ=mjal
 DEL mo	0	0	0	0	0	0	13	0	236	0	0	ཉོ=mo;མོ=mo;མོང=moṅ;མོན=mon;མོའི=mo';མོའི=mo'i;མོའི=mo’i;རྨོ=rmo
 DEL myu	0	0	0	0	0	0	2	0	0	0	0	སྨྱུག=smyug;སྨྱུང=smyuṅ
-DEL n	0	0	0	0	17	0	327	0	2419	0	0	ཀན=kan;ཀུན=kun;ཀྱིན=kyin;ཁན=khan;ཁུན=khrun;ཁུན=khun;ཁོན=khon;ཁྲོན=khron
+DEL n	6	6	0	0	17	0	327	0	2419	0	0	ཀན=kan;ཀུན=kun;ཀྱིན=kyin;ཁན=khan;ཁུན=khrun;ཁུན=khun;ཁོན=khon;ཁྲོན=khron
 DEL na	0	0	0	0	0	0	49	0	732	0	0	གནག=gnag;གནང=gnaṅ;གནམ=gnam;གནས=gnas;ང=naṅ;ངག=nag;ངན=nan;ངན=naṅ
 DEL nad	0	0	0	0	0	0	1	0	0	0	0	ནད=nad
 DEL nag	0	0	0	0	0	0	6	0	68	0	0	གནག=gnag;ངག=nag;ནག=nag;ནགས=nags;སྔགས=snags;སྣག=snag
@@ -496,7 +496,7 @@ INS gu	0	0	0	0	0	0	0	0	0	0	0	none
 INS gy	0	0	0	0	1	0	0	0	0	0	0	none
 INS gyun	0	0	0	0	0	0	0	0	0	0	0	none
 INS gźo	0	0	0	0	0	0	0	0	0	0	0	none
-INS h	0	0	0	0	2	0	0	0	0	0	0	none
+INS h	7	7	0	0	2	0	0	0	0	0	0	none
 INS higs	0	0	0	0	0	0	0	0	0	0	0	none
 INS hr	0	0	0	0	0	0	0	0	0	0	0	none
 INS huṅ	0	0	0	0	0	0	0	0	0	0	0	none
@@ -1662,7 +1662,7 @@ REPLACE ris→byed	0	0	0	0	0	0	0	0	0	0	0	none
 REPLACE ri→m	0	0	0	0	2	0	0	0	0	0	0	none
 REPLACE ri→tho	0	0	0	0	0	0	0	0	0	0	0	none
 REPLACE ri→ñ	0	0	0	0	2	0	0	0	0	0	0	none
-REPLACE ri→ṅ	0	0	0	0	7	0	0	0	0	0	0	none
+REPLACE ri→ṅ	6	8	0	0	7	0	0	0	0	0	0	none
 REPLACE rje'i→glu	0	0	0	0	0	0	0	0	0	0	0	none
 REPLACE rje'i→sna	0	0	0	0	0	0	0	0	0	0	0	none
 REPLACE rje→spyan	0	0	0	0	0	0	0	0	0	0	0	none

@@ -38092,7 +38092,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 270	144	3606	example_tibetan_latin			none	8	3	0	0	Lex. khe yon ba’i las ka „gewinnbringende ཁེངས་པ་ 'khens pa Verbalnomen zu Tkhens.
 270	146	3606	example_tibetan_latin			none	1	1	0	0	Tätigkeit“ (Dagy). ཌེ
 270	147	3606	example_tibetan_latin			none	3	3	0	0	ätigkeit“ (Dagy) །ཁངས་པ་ ’khens pa stolz, hochmütig; Stolz,
-270	149	3607	headword_line	ཁེ་སང་	khe	high	2	4	0	0	ཁེ་སང་ khe sari Gewinn. ཁེངས་ 'khens voll, gesättigt sein. Hochmut, Arroganz.
+270	149	3607	headword_line	ཁེ་སང་	khe	high	2	4	0	0	ཁེ་སང་ khe saṅ Gewinn. ཁེངས་ 'khens voll, gesättigt sein. Hochmut, Arroganz.
 270	151	3607	german_prose_with_translit			none	8	4	0	0	N Rbe pa auch khye pa Verkäufer, rtsal ldan pas khens sems kyis ... gdams 7749
 270	153	3607	german_prose			none	0	2	0	0	yons mi spah (metr.) „der Geschickte darf
 270	154	3607	german_prose			none	0	4	0	0	nicht mit stolzem Geist die Lehren verwer-
@@ -66337,7 +66337,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	17	6034	german_prose_with_translit			none	1	1	0	0	(brDa, 3111] Dagy).
 466	18	6034	tibetan_only			none	0	0	0	0	"""ཀིས་ཆོཿ ""reyan gis chod \reyan chod."
 466	19	6034	tibetan_only	རྒྱང་ག ད		none	0	0	0	0	རྒྱང་ག ད &yarıg go
-466	21	6035	headword_line	རྒྱང་གྲགས་	rgyari	high	1	3	0	0	རྒྱང་གྲགས་ rgyari grags eine Maßeinheit, Ruf-
+466	21	6035	headword_line	རྒྱང་གྲགས་	rgyari	high	1	3	0	0	རྒྱང་གྲགས་ rgyaṅ grags eine Maßeinheit, Ruf-
 466	22	6035	latin_other			none	1	0	0	0	weite; skt. krosa entspricht 1/4
 466	24	6035	other			none	0	0	0	0	yoJana.
 466	25	6035	latin_other			none	4	0	0	0	nor bu rin po che ran ’od ~ tsam du ’od ’phro
@@ -66350,7 +66350,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 466	35	6035	latin_other			none	6	0	0	0	gcig = dom gan lṅa brgya tham pa (brDa).
 466	37	6036	headword_line	རྒྱང་གྲགས་ཐོས་	rgyan	high	2	3	0	0	རྒྱང་གྲགས་ཐོས་ rgyaṅ grags thos Bez. für Gans.
 466	38	6036	german_prose_with_translit			none	3	2	0	0	Lex. bya ku ru ra’! min (brDa, Dagy).
-466	39	6037	headword_line	རྒྱང་གྲགས་བཅུང་	rgyari	high	2	3	0	0	རྒྱང་གྲགས་བཅུང་ rgyari grags bzun Bez. für den
+466	39	6037	headword_line	རྒྱང་གྲགས་བཅུང་	rgyari	high	2	3	0	0	རྒྱང་གྲགས་བཅུང་ rgyaṅ grags bzun Bez. für den
 466	40	6037	german_prose			none	0	3	0	0	` Weg eines Königs.
 466	41	6037	german_prose_with_translit			none	3	2	0	0	Lex. rgyal po’i bgrod lam (brDa, Dagy).
 466	43	6038	headword_line	རྒྱང་བསྒྲགས་	bsgrags	medium	1	2	0	0	རྒྱང་བསྒྲགས་ royari bsgrags Rundfunk, Laut-
@@ -69423,7 +69423,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 489	79	6291	german_prose_with_translit			none	2	1	0	0	~ @// = sten du „oben auf“ (brDa, Dagy).
 489	80	6291	german_prose			none	0	1	0	0	2. Stachelschwein.
 489	81	6291	german_prose_with_translit			none	4	1	0	0	Lex. sens can gzer mo’am byi thur (brDa).
-489	83	6292	headword_line	སྒང་ཐུར་	thur	high	1	3	0	0	སྒང་ཐུར་ sgari thur Stachelschwein, Stachel des
+489	83	6292	headword_line	སྒང་ཐུར་	thur	high	1	3	0	0	སྒང་ཐུར་ sgaṅ thur Stachelschwein, Stachel des
 489	85	6292	german_prose			none	0	1	0	0	Stachelschweins.
 489	87	6292	german_prose_with_translit			none	5	1	0	0	Lex. sems can gzer mo’am byi thur (brDa);
 489	88	6292	german_prose_with_translit			none	2	1	0	0	gzer mo?i sgro thur (Dagy).

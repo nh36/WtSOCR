@@ -11,6 +11,7 @@ reviewed_correction_supersession_bridge	superseded_wrong_target	multiple	full_to
 reviewed_same_tibetan_target_final_nasal_only	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
 reviewed_tibetan_exact_final_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
 reviewed_tibetan_exact_final_r_to_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the reviewed token-final r realization of Tibetan suffix ང is rejected; independently delimited unaffected spans remain usable.
+reviewed_tibetan_exact_final_ri_to_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the reviewed token-final ri realization of Tibetan suffix ང is rejected; independently delimited unaffected spans remain usable.
 reviewed_tibetan_exact_final_ng_consensus	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
 reviewed_tibetan_exact_final_ng_echo	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
 reviewed_tibetan_exact_final_ng_historical_witness	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.

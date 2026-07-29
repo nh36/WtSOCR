@@ -427,6 +427,11 @@ def applicable_operations(
             op for op in operations
             if op["target_span"] == "ṅ" and op["source_span"] == "r"
         ]
+    if scope == "feature_only_final_ri_to_ng":
+        return [
+            op for op in operations
+            if op["target_span"] == "ṅ" and op["source_span"] == "ri"
+        ]
     if scope == "feature_only_root":
         return [
             op for op in operations

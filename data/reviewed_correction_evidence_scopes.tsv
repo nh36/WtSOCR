@@ -11,6 +11,7 @@ reviewed_correction_supersession_bridge	composed_repair	supporting_but_derived	S
 reviewed_same_tibetan_target_final_nasal_only	feature_only_final_nasal	supporting_but_derived	Reviewed target propagation establishes the final nasal only for teaching purposes.
 reviewed_tibetan_exact_final_ng	feature_only_final_nasal	supporting_but_derived	Final-ng review establishes coda evidence, not an independent full token.
 reviewed_tibetan_exact_final_r_to_ng	feature_only_final_r_to_ng	supporting_but_derived	Exact pre-promotion review establishes only token-final suffix-coda r→ṅ evidence; the full target remains derived and cannot self-teach.
+reviewed_tibetan_exact_final_ri_to_ng	feature_only_final_ri_to_ng	supporting_but_derived	Exact review establishes only token-final suffix-coda ri→ṅ evidence; the full target remains derived and cannot self-teach.
 reviewed_tibetan_exact_final_ng_consensus	feature_only_final_nasal	supporting_but_derived	Final-ng consensus establishes coda evidence, not an independent full token.
 reviewed_tibetan_exact_final_ng_echo	feature_only_final_nasal	supporting_but_derived	Final-ng echo review establishes coda evidence, not an independent full token.
 reviewed_tibetan_exact_final_ng_historical_witness	feature_only_final_nasal	supporting_but_derived	Historical final-ng review is not a fresh independent canonical vote.

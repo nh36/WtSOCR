@@ -3067,3 +3067,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 269	2	1476	headword_line	bbram	bram	A	reviewed_tibetan_exact_manual_multi_error	1	བྲམ་ཟེའི་ཁྱེའུ་ bbram ze'i khye'u brao
 323	1	1679	headword_line	bblo	blo	A	reviewed_tibetan_exact_manual_multi_error	1	བློ་གདེངས་བསྐྱེད་ bblo gdeṅs bskyed blo ldan
 116	4	595	headword_line	ཆང	ཆུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi
+95	10	458	headword_line	tshari	tshaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	བང་ཚང་ buṅ tshari Bienennest.
+538	5	2872	headword_line	tshari	tshaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྤུག་ཚང་ sbug tshari betrügerisch.
+572	18	3040	headword_line	churi	chuṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྦྲང་ཆུང་ sbraṅ churi ein Insckt, Fliege.

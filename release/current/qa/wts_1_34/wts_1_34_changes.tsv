@@ -29065,3 +29065,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 655	124	8129	headword_line	gron	groṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཆུ་ཨུན་གྲོང་ཏྱར་ chu srin gron khyer
 270	15	3646	headword_line	kbe	khe	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
 1063	134	11971	headword_line	mtbo	mtho	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	"མཐོ་ཁྱ་ྱ་ས།ས། mtbo btsams pf. zu Imtho ""tshams."
+270	149	3656	headword_line	sari	saṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	ཁེ་སང་ khe sari Gewinn. ཁེངས་ 'khens voll, gesättigt sein. Hochmut, Arroganz.
+466	21	6147	headword_line	rgyari	rgyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	རྒྱང་གྲགས་ rgyari grags eine Maßeinheit, Ruf-
+466	39	6149	headword_line	rgyari	rgyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	རྒྱང་གྲགས་བཅུང་ rgyari grags bzun Bez. für den
+489	83	6405	headword_line	sgari	sgaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྒང་ཐུར་ sgari thur Stachelschwein, Stachel des
