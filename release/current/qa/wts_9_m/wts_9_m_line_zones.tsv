@@ -8865,7 +8865,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 108	13	447	headword_line	མི་གཅོད་སྐྱེས་	skyes	medium	1	3	0	0	མི་གཅོད་སྐྱེས་ mi gcod skyes Bez. für Sonne.
 108	14	447	german_prose_with_translit			none	4	3	0	0	Lex. ñi ma la'ari (brDa, änhl. Dagy).
 108	15	447	tibetan_only	༽ ༤༧		none	0	0	0	0	༽ ༤༧ ; , ༡
-108	16	448	headword_line	མེ་གཉོད་དགྲའ་	dea'	high	1	3	0	0	མེ་གཉོད་དགྲའ་ mi gcod dea' Bez. für Gott,
+108	16	448	headword_line	མེ་གཉོད་དགྲའ་	dea'	high	1	3	0	0	མེ་གཅོད་དགྲའ་ mi gcod dea' Bez. für Gott,
 108	17	448	tibetan_only	པ དདག		none	0	1	0	0	པ དདག Gottheit.
 108	18	448	german_prose_with_translit			none	2	1	0	0	"Lex. lha $/)7//'/ min ""allgemeine Bezeichnung"
 108	19	448	german_prose_with_translit			none	1	3	0	0	"für Gottheiten"" (brDa, Dagy)."
@@ -14677,7 +14677,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 177	15	799	german_prose_with_translit			none	1	3	0	0	Geschlecht der gNam, Khyun-po vom Ge-
 177	16	799	german_prose_with_translit			none	1	4	0	0	schlecht der Gya und sNe'u-gdon vom Ge-
 177	17	799	german_prose			none	0	3	0	0	"schlecht der Götter usw."" (Gesar 197,3)."
-177	18	800	headword_line	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་	gdunṅ	high	2	0	0	0	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gduṅ drug dera lha
+177	18	800	headword_line	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་	gdunṅ	high	2	0	0	0	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gduṅ drug dgra lha
 177	19	800	german_prose			none	0	4	0	0	eine Gruppe von Gotthei-
 177	20	800	german_prose			none	0	1	0	0	ten (Neb 325).
 177	21	800	german_prose			none	0	1	0	0	N .

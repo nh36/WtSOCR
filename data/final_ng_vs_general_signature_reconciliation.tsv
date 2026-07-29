@@ -31,11 +31,11 @@ wts_1_34	115	122	1	ང	klun		ambiguous	not_in_general_outlier_queue		none	none	s
 wts_1_34	118	3	1	ཀླང	klon		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཀླང་ཆན་པ་” klon chen pa...
 wts_1_34	124	96	3	རྒྱང	igyan		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
 wts_1_34	155	207	1	ང	ykan		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་སྙས།་ ykan skyes Bez. für Angehörige der un-
-wts_1_34	157	177	1	རྐང	ran		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	རྐང་དྲུག་ ran ing ep
+wts_1_34	157	177	1	རྐང	ran		canonical_reviewed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	རྐང་དྲུག་ ran ing ep
 wts_1_34	162	157	1	ང	rkon		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་བྲར་ rkon zor
 wts_1_34	164	39	1	རྐྱང	Ryan		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	རྐྱང་ཟླ་ Ryan zla.
 wts_1_34	176	29	2	ཤེང	sen		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	སྐམ་ཤེང་ skam sen kam Sen.
-wts_1_34	184	25	2	གདུང	gun		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	སྐུ་གདུང་ sh gun.
+wts_1_34	184	25	2	གདུང	gun		canonical_reviewed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	སྐུ་གདུང་ sh gun.
 wts_1_34	187	148	1	ང	skun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་སླང་ skun skun verborgen, geheim.
 wts_1_34	187	148	2	སླང	skun		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ང་སླང་ skun skun verborgen, geheim.
 wts_1_34	195	114	2	སང	sen		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	སྐྱ་སང་སང་པ་ skya sen sen po
@@ -44,9 +44,9 @@ wts_1_34	202	56	1	ང	skyun		ambiguous	not_in_general_outlier_queue		none	none	s
 wts_1_34	207	100	2	སྔོང	sdon		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	སྐྱེ་སྔོང་ skye sdon ein Baum.
 wts_1_34	226	146	1	བསླང	bskan		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	བསླང་ bskan fur. t'skon erfüllen; zufrieden-
 wts_1_34	228	165	1	བསླང	bskun		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	བསླང་ bskun fut. zu tskun verbergen.
-wts_1_34	244	160	4	ཕྱང	phyun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
+wts_1_34	244	160	4	ཕྱང	phyun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁྭ་ཆུ་ཆུས་ཕྱང་ kha chu chus phyun ein Schuh.
 wts_1_34	245	60	2	ཉུང	run		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁ་ཉུང་ kha run wortkarg.
-wts_1_34	250	109	2	ཕྱང	byan		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁ་ཕྱང་བ་ kha byan ba
+wts_1_34	250	109	2	ཕྱང	byan		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁ་ཕྱང་བ་ kha byan ba
 wts_1_34	256	35	4	སང	Ton		canonical_feature_composed	boundary_or_damage		none	none	source_compatible_marker_attached	no_supported_target	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
 wts_1_34	257	53	1	ཁང	kan		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁང་ཁུང་ kan khuṅ
 wts_1_34	258	47	1	བང	Rhan		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	།བང་བྱུ་ Rhan bu Häuschen, kleine Behausung.
@@ -62,41 +62,41 @@ wts_1_34	277	35	1	ཁང	khon		ambiguous	not_in_general_outlier_queue		none	none
 wts_1_34	277	35	2	སང	sen		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁང་སང་ khon sen auch khon sin, khon gsen
 wts_1_34	287	69	1	ཀྱང	khyun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀྱང་སྡེར་ khyun sder eine Heilpflanze.
 wts_1_34	287	97	1	ཁུང	khyun		canonical_reviewed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
-wts_1_34	292	135	2	ཕྱང	phyun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྲག་ཕྱང་ khrag phyun pf. zu lkhrag 'byin „Blut
+wts_1_34	292	135	2	ཕྱང	phyun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྲག་ཕྱང་ khrag phyun pf. zu lkhrag 'byin „Blut
 wts_1_34	297	108	2	ངང	dun		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁྲིམས་ངང་ khrims dun
 wts_1_34	297	110	2	ངང	dun		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁྲིམས་ངང་ khrims dun ein bei Gericht geblase-
 wts_1_34	298	56	1	ཁྱུང	khrun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྱུང་ཁྱུང་ khrun khrun
 wts_1_34	298	56	2	ཁྱུང	khrun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྱུང་ཁྱུང་ khrun khrun
-wts_1_34	298	94	1	ཁུང	khrun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་ khrun resp. für chan.
+wts_1_34	298	94	1	ཁུང	khrun		canonical_reviewed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་ khrun resp. für chan.
 wts_1_34	298	98	1	ཁྱུང	khrun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྱུང་ཏཁྱུང་ khrun khrun.
 wts_1_34	298	129	1	ཁང	khrun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 wts_1_34	298	129	2	ཁང	khrun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 wts_1_34	298	134	1	ཁང	khrun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	།ཁང་མ་། khrun ma Kellnerin.
-wts_1_34	298	141	1	ཁུང	khrun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
-wts_1_34	300	171	2	གཞུང	gun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྲེལ་གཞུང་ khrel gun \khrel.
-wts_1_34	306	72	3	སྣང	Glühwürmchen		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མ།བའ་སྣང་ mkha’ snarn Glühwürmchen.
+wts_1_34	298	141	1	ཁུང	khrun		canonical_reviewed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
+wts_1_34	300	171	2	གཞུང	gun		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	ཁྲེལ་གཞུང་ khrel gun \khrel.
+wts_1_34	306	72	3	སྣང	Glühwürmchen		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མ།བའ་སྣང་ mkha’ snarn Glühwürmchen.
 wts_1_34	310	54	3	མོང	dban		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མ།ཁའ་མོང་ངཔང་ལོ་ mkha’ spyod dban po Beina-
-wts_1_34	311	97	2	སློང	sgon		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མབར་སློང་ mkhar sgon
+wts_1_34	311	97	2	སློང	sgon		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མབར་སློང་ mkhar sgon
 wts_1_34	322	186	2	དང	buddh		canonical_independent_strong	gloss_alignment_noise		none	none	source_compatible_no_anchor	no_supported_target	T དང buddh. Gemeinde.
 wts_1_34	338	131	1	ང	gan		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་ཁོ་སྦིས། བྲེང་ gan po skem byed Beiname des
 wts_1_34	346	145	2	སླང	span		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གབ་སླང་ gab span [arch.] Gebälk, Abschluß-
 wts_1_34	352	8	1	གང	gun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གང་བྲང་ gun than npr. eine Gegend in mÑa’-
 wts_1_34	352	101	1	གང	gun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གང་ལོ་ gun lo Ydgun 2.
 wts_1_34	359	109	1	གང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གང་སྐར་ gon skor
-wts_1_34	360	84	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
-wts_1_34	361	39	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་མ་སྲེག་ gon ma sreg ein Vogel, Rebhuhn.
-wts_1_34	361	63	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་མོ་ gon mo ein Vogel.
-wts_1_34	361	71	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་རྩེ་ gon rtse Kragen.
-wts_1_34	361	109	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ལེན་ gon len
-wts_1_34	361	111	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ལེན་ gon len Trophäe.
-wts_1_34	361	139	1	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་སེལ་ gon sel ein Ritual.
+wts_1_34	360	84	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
+wts_1_34	361	39	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་མ་སྲེག་ gon ma sreg ein Vogel, Rebhuhn.
+wts_1_34	361	63	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་མོ་ gon mo ein Vogel.
+wts_1_34	361	71	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་རྩེ་ gon rtse Kragen.
+wts_1_34	361	109	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ལེན་ gon len
+wts_1_34	361	111	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་ལེན་ gon len Trophäe.
+wts_1_34	361	139	1	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀོང་སེལ་ gon sel ein Ritual.
 wts_1_34	373	190	1	གླང	gran		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གླང་ཁྲ་ gran ba.
 wts_1_34	374	1	1	གྲང	oran		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གྲང་ཚལ་ oran tshal
 wts_1_34	374	32	1	གླང	gran		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གླང་རླང་ gran rlun eine Krankheit.
 wts_1_34	387	153	1	གྲོང	grorn		canonical_reviewed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གྲོང་འཇིག་ grorn jig „Städtezerstörer“, Bei-
-wts_1_34	388	70	1	ཀྲོང	gron		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
+wts_1_34	388	70	1	ཀྲོང	gron		canonical_feature_composed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
 wts_1_34	394	183	1	གྲུང	glan		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གྲུང་པོའི་རྒྱལ་པོ་ glan po’i rgyal po Bez. für den
-wts_1_34	396	122	1	གླང	glin		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	གླང་ཕྲན་ glin phran.
+wts_1_34	396	122	1	གླང	glin		canonical_independent_strong	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	གླང་ཕྲན་ glin phran.
 wts_1_34	396	178	1	ང	glin		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་བཞི་ལྟེ་བ་ glin bźi Ite ba auch glin bZi’i Ite
 wts_1_34	396	189	1	ང	glin		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་བཞི་ཌྡེགས་པ་ glin bźi ldegs pa Bez. für Erde
 wts_1_34	399	136	2	སྙིང	säin		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	གློ་སྙིང་ལྡེག་ glo säin ldeg Herzklopfen.
@@ -108,11 +108,11 @@ wts_1_34	412	56	3	སྙིང	shin		canonical_independent_moderate	not_in_gener
 wts_1_34	412	101	3	སྙིང	säih		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	དགེ་བའི་སྙིང་པོ་ dge ba’i säih po ein myth.
 wts_1_34	415	125	1	གོང	dgon		canonical_independent_strong	boundary_or_damage		none	none	source_compatible_damaged_context	no_supported_target	གོང་ཞྲག་ dgon 749 Nacht bzw. Tag und
 wts_1_34	417	32	2	དང	dun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	དགོན་དང་ dgon dun auch ~ can, dgun dun can
-wts_1_34	424	1	1	བགྲང	beran		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ beran
-wts_1_34	424	51	1	བགྲང	beran		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ beran
-wts_1_34	424	123	1	བགྲང	beran		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
-wts_1_34	424	158	1	བགྲང	beran		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
-wts_1_34	424	173	1	བགྲང	beran		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་གཞི་ beran gäi.
+wts_1_34	424	1	1	བགྲང	beran		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ beran
+wts_1_34	424	51	1	བགྲང	beran		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ beran
+wts_1_34	424	123	1	བགྲང	beran		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
+wts_1_34	424	158	1	བགྲང	beran		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
+wts_1_34	424	173	1	བགྲང	beran		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	བགྲང་གཞི་ beran gäi.
 wts_1_34	430	109	2	ལང	lin		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མག་ལང་ go lin.
 wts_1_34	452	46	2	ལྡིང	Idın		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_marker_attached	no_supported_target	འགྲོ་ལྡིང་ gro Idın.
 wts_1_34	453	27	3	ངང	nan		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	འགྲོ་བའི་ངང་ཚུལ་ gro ba’i nan tshul Bez. für
@@ -151,7 +151,7 @@ wts_1_34	544	136	2	གདང	gdun		ambiguous	not_in_general_outlier_queue		none	
 wts_1_34	544	163	2	སང	sran		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	དྭྱངལ་སང་ drul sran
 wts_1_34	544	204	2	སང	sran		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	དྭངལ་སང་ dnul sran eine Währung.
 wts_1_34	552	31	3	ཝང	ldan		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	མངོན་དྭ་ཝང་བ་ mnon du ldan ba ehrerbietiges
-wts_1_34	552	37	3	ཕྱང	phyun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མངོན་ད་ཕྱང་ mnon du phyun pf. enthüllen,
+wts_1_34	552	37	3	ཕྱང	phyun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	མངོན་ད་ཕྱང་ mnon du phyun pf. enthüllen,
 wts_1_34	552	131	4	འོང	herbeikommen		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_damaged_context	no_supported_target	མངོན་ང་འོང་ mnon du 07? herbeikommen.
 wts_1_34	571	102	5	བཏང	vergegenwärtigen		canonical_independent_strong	boundary_or_damage		none	none	source_compatible_damaged_context	no_supported_target	སྔོན་ད་བཏང་ $?7077 du btaṅ vergegenwärtigen.
 wts_1_34	575	168	2	ཀེང	ken		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཅང་ཀེང་ caṅ ken
@@ -173,7 +173,7 @@ wts_1_34	645	135	2	ཏང	tin		canonical_feature_composed	secure_transcription_o
 wts_1_34	651	78	2	ཞང	Zin		canonical_reviewed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཆུ ཞང་ chu Zin Reisfeld.
 wts_1_34	654	51	2	ཤང	Sin		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཆུ་ཤང་ ch Sin.
 wts_1_34	654	115	2	ཤང	Sin		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཆུ་ཤང་ཆ cha Sin ma.
-wts_1_34	655	124	3	གྲང	gron		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
+wts_1_34	655	124	3	གྲང	gron		canonical_independent_strong	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
 wts_1_34	665	57	2	སྙིང	shin		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཆེད་སྙིང་ ched shin
 wts_1_34	680	22	4	ང	klon		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	EN བེངས་ཀོང་ང་བཤགས་ chos dbyins klon du
 wts_1_34	695	99	2	སྔོང	sdon		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	མཆོད་སྔོང་ mchod sdon
@@ -188,8 +188,8 @@ wts_1_34	707	122	2	མདང	mdon		canonical_feature_composed	probable_transcrip
 wts_1_34	717	1	2	སྙིང	shin		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	མཇུག་སྙིང་ mjug shin
 wts_1_34	717	4	2	སྙང	sin		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	"མཇུག་སྙང་ ming sin auch ""ug säin Herzstück"
 wts_1_34	720	3	2	ལྔང	ljan		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	འཇམ་ལྔང་འདབ་ལྡན་ am ljan ’dab ldan Bez. für
-wts_1_34	724	164	3	རྐྱང	rgyan		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
-wts_1_34	724	212	3	རྐྱང	rgyan		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
+wts_1_34	724	164	3	རྐྱང	rgyan		canonical_feature_composed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
+wts_1_34	724	212	3	རྐྱང	rgyan		canonical_feature_composed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
 wts_1_34	743	75	2	གདང	gdun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	རྗེས་གདང་ rjes gdun 1765 su gdun.
 wts_1_34	748	84	3	འབྲང	bren		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	རྫཾས་སུ་འབྲང་ rjes su bren Trjes su ’bran.
 wts_1_34	750	88	1	ལྗང	han		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ལྗང་ཁ་ han khn.
@@ -277,20 +277,20 @@ wts_1_34	989	113	1	ཐང	lhan		canonical_independent_strong	secure_transcriptio
 wts_1_34	989	116	1	ཁང	than		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁང་ཆོང་ than chod entschieden, entschlossen
 wts_1_34	989	216	1	བང	than		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	བང་ཉོ།། than mo eine Gruppe von Gottheiten.
 wts_1_34	992	66	2	ཁང	khun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁྲབ་།ཁང་ thab khun Feuerplatz, Herd.
-wts_1_34	999	202	2	ཀོང	gon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
+wts_1_34	999	202	2	ཀོང	gon		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 wts_1_34	1001	9	2	ཀྱང	byun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཐལ་ཀྱང་ thal byun geradewegs; ༡ du ’gro glatt
 wts_1_34	1001	169	2	རྨང	rlun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཐལ་རྨང་ thal rlun Sandsturm.
 wts_1_34	1004	7	1	བིང	thin		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	བིང་ ཡུག་ thin yug eine hohe Zahl.
 wts_1_34	1004	15	1	ཐང	thin		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཐང་ཤང་ thin sin ein blauer Farbstoff.
 wts_1_34	1015	194	4	བང	thun		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	Dämonen besessen sein. བང་ thun alttib. auch thune kurz, klein sein; ༡
 wts_1_34	1017	200	2	མོང	thun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	"ཐུན་མོང་ EN"" thun mon chos."
-wts_1_34	1028	18	3	རྐང	bran		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བའུ་བང་རྐང་གཅུག་ lhe u bran rkan geig ein für
+wts_1_34	1028	18	3	རྐང	bran		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བའུ་བང་རྐང་གཅུག་ lhe u bran rkan geig ein für
 wts_1_34	1033	42	2	དུང	drun		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཐོག་དུང་ thog drun hoch und niedrig; Höhe.
 wts_1_34	1036	55	1	ཐང	Ithon		canonical_independent_strong	boundary_or_damage		none	none	source_compatible_marker_attached	no_supported_target	ཐང་ Ithon
 wts_1_34	1036	167	1	ང	thon		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ང་ཐང་ thon thon
 wts_1_34	1036	167	2	ཐང	thon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ང་ཐང་ thon thon
-wts_1_34	1036	214	2	བོང	thon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཐོང་བོང་ thon thon Lebensalter; jugendlich.
-wts_1_34	1037	19	1	བོང	thon		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བོང་མི་ཁྲ་ thon mi ba.
+wts_1_34	1036	214	2	བོང	thon		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཐོང་བོང་ thon thon Lebensalter; jugendlich.
+wts_1_34	1037	19	1	བོང	thon		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	བོང་མི་ཁྲ་ thon mi ba.
 wts_1_34	1049	50	1	མཐང	mthan		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	མཐང་སྤྲད་པ་ mthan sprad pa
 wts_1_34	1049	71	1	མཐང	mthan		provisional	not_in_general_outlier_queue		none	none	source_compatible_damaged_context	no_supported_target	མཐང་གོས་ mthan 905 Rock, Unterteil des
 wts_1_34	1049	98	1	མཐང	mthan		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	མཐང་སྤྲད་པ་ mthan sprad pa Bez. für Ge-
@@ -475,13 +475,13 @@ wts_1_34	352	8	2	བྲང	than	thaṅ	canonical_independent_strong	secure_trans
 wts_1_34	987	153	1	བྲང	than	thaṅ	canonical_independent_strong	secure_transcription_outlier	SUB n→ṅ	SUB n→ṅ:applies	none	source_compatible_not_final_ng_only	final_ng_target_conflicts_with_general_canonical	བྲང་ than.
 wts_1_34	988	91	1	ཐྲང	than	thaṅ	provisional	not_in_general_outlier_queue	SUB n→ṅ	SUB n→ṅ:applies	none	source_compatible_not_final_ng_only	canonical_target_not_authoritative	ཐྲང་དཀར་ than dkar auch than kar.
 wts_1_34	989	229	1	བྲང	than	thaṅ	canonical_independent_strong	secure_transcription_outlier	SUB n→ṅ	SUB n→ṅ:applies	none	source_compatible_not_final_ng_only	final_ng_target_conflicts_with_general_canonical	བྲང་ཞེ་ than Zu auch than Zwa eine Kopfbe-
-wts_35_51	23	1	1	གདུང	odun		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	"གདུང་ ""odun"
+wts_35_51	23	1	1	གདུང	odun		canonical_reviewed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	"གདུང་ ""odun"
 wts_35_51	69	66	3	འབྲང	byun		provisional	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	"བདད་རྩེའི་འབྲང་གནས་ bdud risi'i ""byun gnas"
 wts_35_51	379	52	2	ཚང	ishah		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 wts_35_51	421	41	10	སྙིང	sth		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	"auch der Himmelsfluß"" (brDa); ha' chn bo ནམ་མཁའི་སྙིང་པོ nam mkha'i sth po auch nam"
 wts_35_51	689	69	2	གསུང	gsuṅń		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana
 wts_35_51	700	55	3	སྟེང	Dach		canonical_independent_strong	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	པུ་ཤུ་སྟེང་ ༼ sten Giebel, Dach eines Pala-
-wts_35_51	712	54	1	ཕྱིང	pyih		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཕྱིང་ pyih lphyin.
+wts_35_51	712	54	1	ཕྱིང	pyih		canonical_reviewed	structurally_unaligned		none	none	source_compatible_no_anchor	no_supported_target	ཕྱིང་ pyih lphyin.
 wts_35_51	799	3	2	རང	Balken		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	སྤར་རང་ sporröt Balken einer Waage.
 wts_35_51	813	40	1	རང	spyan		canonical_feature_composed	probable_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	'རང་དྲང་ཅྲན་ spyan raṅ dran can
 wts_35_51	830	78	1	སྤྲོང	halten		provisional	not_in_general_outlier_queue		none	none	source_compatible_damaged_context	no_supported_target	སྤྲོང་ ༡༠༧ halten, greifen.

@@ -101,3 +101,6 @@ wts_1_34	932	106	1	སྟར	ལྟར	reviewed_exact_tibetan_headword_root_ocr	
 wts_1_34	932	135	1	སྟར	ལྟར	reviewed_exact_tibetan_headword_root_ocr	dispositive local order and repeated ltar ltar po identity	ltar_two_witness_side_review_20260729	tibetan_ocr_corrected_observation
 wts_1_34	932	135	2	སྟར	ལྟར	reviewed_exact_tibetan_headword_root_ocr	dispositive local order and repeated ltar ltar po identity	ltar_two_witness_side_review_20260729	tibetan_ocr_corrected_observation
 wts_1_34	932	173	1	སྟར	ལྟར	reviewed_exact_tibetan_headword_root_ocr	dispositive local order and exact ལྟར་སྣང identity	ltar_two_witness_side_review_20260729	tibetan_ocr_corrected_observation
+wts_1_34	904	21	2	གཉོད	གཅོད	reviewed_exact_tibetan_headword_root_ocr	exact བཏང་གཅོད identity plus independent clean གཅོད/gcod evidence	root_nya_counterexample_side_review_20260729	tibetan_ocr_corrected_observation
+wts_1_34	1072	75	2	གཉོད	གཅོད	reviewed_exact_tibetan_headword_root_ocr	exact འཐུང་གཅོད identity and same-line འཐུང་བཅོད sibling	root_nya_counterexample_side_review_20260729	tibetan_ocr_corrected_observation
+wts_9_m	108	16	2	གཉོད	གཅོད	reviewed_exact_tibetan_headword_root_ocr	exact མེ་གཅོད identity plus independent clean གཅོད/gcod evidence	root_nya_counterexample_side_review_20260729	tibetan_ocr_corrected_observation

@@ -60186,7 +60186,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	119	5556	latin_other			none	5	0	0	0	grans ka - bar bya’am - rgyu (brDa); ~ ba =
 424	120	5556	german_prose_with_translit			none	2	1	0	0	ganana (Mvy 1167); rku bar ~ ba = steye
 424	121	5556	german_prose_with_translit			none	1	3	0	0	samkhyatah „als Dieb geltend“ (Mvy 5352).
-424	123	5557	headword_line	བགྲང་རྟོགས་	rtogs	high	1	2	0	0	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
+424	123	5557	headword_line	བགྲང་རྟོགས་	rtogs	high	1	2	0	0	བགྲང་རྟོགས་ bgraṅ rtogs eine hohe Zahl.
 424	125	5557	german_prose_with_translit			none	6	2	0	0	Lex. rdzogs ’thob phrag brgya na ~ Zes bya’o
 424	126	5557	german_prose_with_translit			none	1	1	0	0	= Satam samäptalambhänam gananagatir
 424	127	5557	german_prose_with_translit			none	1	3	0	0	nämocyate „ 100 samäptalambha heißen eine
@@ -60211,7 +60211,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 424	152	5560	german_prose_with_translit			none	1	2	0	0	eine Gebetskette“ (Glr 115,25).
 424	154	5560	other			none	0	0	0	0	345
 424	156	5560	other			none	0	0	0	0	NAAN” berans
-424	158	5561	headword_line	བགྲང་ཕྲེང་འཛིན་	phren dzin	high	2	2	0	0	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
+424	158	5561	headword_line	བགྲང་ཕྲེང་འཛིན་	phren dzin	high	2	2	0	0	བགྲང་ཕྲེང་འཛིན་ bgraṅ phreṅ ’dzin Beiname des
 424	160	5561	german_prose			none	0	1	0	0	Feuergottes.
 424	162	5561	german_prose_with_translit			none	2	2	0	0	Lex. me lha (brDa, Dagy).
 424	164	5562	headword_line	བགང་བྱ་	bya	medium	1	0	0	0	བགང་བྱ་ beran bya.
@@ -110448,7 +110448,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 757	221	8998	german_prose_with_translit			none	6	1	0	0	Lex. ra ri’i mi gtsan nal /7// lta bu (brDa); ra
 757	222	8998	german_prose_with_translit			none	3	1	0	0	ri’i mi gtsani ba (Dagy).
 757	224	8998	other			none	0	0	0	0	439
-758	1	8999	headword_line	ཉག་ཐག་པ་	thag pa	high	2	0	0	0	ཉག་ཐག་པ་ nag thag pa
+758	1	8999	headword_line	ཉག་ཐག་པ་	thag pa	high	2	0	0	0	ཉག་ཐག་པ་ ñag thag pa
 758	3	8999	tibetan_latin_mixed	ཉང་པོ་ ༡		none	1	0	0	0	ཉང་པོ་ ༡7:72 po
 758	5	8999	example_tibetan_latin	ཉག་ཐག་པ་		none	3	2	0	0	ཉག་ཐག་པ་ 7697 thag pa Verantwortlicher für ཉག་མ་ flag ma.
 758	7	8999	german_prose			none	0	2	0	0	die Kettenbrücke.
@@ -110944,7 +110944,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 760	212	9021	german_prose_with_translit			none	2	1	0	0	» yamis chig btsugs nas „nachdem man einen
 760	213	9021	german_prose_with_translit			none	1	6	0	0	Teil der Teigspeise für die Toten hineinge-
 760	215	9021	other			none	0	0	0	0	445
-761	1	9022	headword_line	ཉམ་ཆད་	tshad	high	1	0	0	0	ཉམས་ཆད་ nam chad
+761	1	9022	headword_line	ཉམ་ཆད་	tshad	high	1	0	0	0	ཉམས་ཆད་ ñams chad
 761	3	9022	german_prose_with_translit			none	1	2	0	0	steckt hatte“ (M.L.vi.2a b2); ~ ma ’chugs /
 761	4	9022	german_prose			none	0	2	0	0	par gsol „sie boten auf korrekte Weise die
 761	5	9022	german_prose			none	0	4	0	0	Teigspeise für die Toten dar“ (PT1042 52);
@@ -118191,7 +118191,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 809	170	9418	other			none	0	0	0	0	733,5).
 809	172	9418	german_prose_with_translit			none	3	2	0	0	Lex. müam pa /7//7 kyi ye ses 2 samalājñānam
 809	173	9418	german_prose_with_translit			none	4	4	0	0	(Mvy 112, sGra 21); ye śes ba = ~ „Weisheit der Gleichheit [u. a.]“ (Dagy).
-809	176	9419	headword_line	མཉམ་མཐུན་	mthun	high	1	1	0	0	མཉམ་མཐུན་ mnam mthun übereinstimmen.
+809	176	9419	headword_line	མཉམ་མཐུན་	mthun	high	1	1	0	0	མཉམ་མཐུན་ mñam mthun übereinstimmen.
 809	177	9419	other			none	0	0	0	0	=
 809	178	9419	german_prose_with_translit			none	6	1	0	0	Lex. du ma mñam du blo mthun pa „viele
 809	180	9419	german_prose			none	0	2	0	0	stimmen miteinander überein“ (Dagy).
@@ -121187,7 +121187,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 827	147	9522	other			none	0	0	0	0	3/5/31 23).
 827	149	9522	german_prose_with_translit			none	4	1	0	0	Lex. siom pa = sems ... cha = pa lta bu byed
 827	150	9522	german_prose_with_translit			none	1	1	0	0	tshig (Dagy).
-827	152	9522	headword_line	སྙོམས་ཆུང་	chuṅ	high	1	1	0	0	སྙོམས་ཆུང་ sioms chuṅ zufrieden, genügsam,
+827	152	9522	headword_line	སྙོམས་ཆུང་	chuṅ	high	1	1	0	0	སྙོམས་ཆུང་ sñoms chuṅ zufrieden, genügsam,
 827	154	9522	other			none	0	0	0	0	bescheiden.
 827	156	9522	german_prose_with_translit			none	3	1	0	0	Lex. chog ses pa’i sems sam sems chun
 827	158	9522	latin_other			none	1	0	0	0	(brDa).
@@ -130859,7 +130859,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 904	16	9907	german_prose_with_translit			none	1	4	0	0	Gedruckt auf säurefreiem und alterungsbeständigen Papier
 904	18	9907	tibetan_only			none	0	0	0	0	“1 1 ༼༣ ས་འ ” $ ླྨ
 904	19	9907	german_prose_with_translit			none	1	6	0	0	Druck und Bindung: AZ Druck und Datentechnik, Kempten
-904	21	9908	headword_line	བཏང་གཉོད་	btan	medium	1	0	0	0	བཏང་གཉོད་ btaṅ gcod
+904	21	9908	headword_line	བཏང་གཉོད་	btan	medium	1	0	0	0	བཏང་གཅོད་ btaṅ gcod
 904	23	9908	german_prose			none	0	4	0	0	verständlich zu machen“ (Vdk 2: 414,6);
 904	24	9908	latin_other			none	1	0	0	0	bsdabs bsigs (r. brdab gsig) ci che ~ glen byun
 904	25	9908	german_prose_with_translit			none	1	2	0	0	bar brten „es har sich Beschwerde darüber
@@ -130931,7 +130931,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 904	103	9911	german_prose_with_translit			none	1	3	0	0	Gleichmut“ (Mvy 995, Abt. byan chub kyi
 904	104	9911	latin_other			none	3	0	0	0	yan lag bdun gyi min).
 904	106	9911	german_prose			none	0	2	0	0	2. Bez. für 10° (SCHUH 2012: 1393).
-904	108	9912	headword_line	བཏང་སྙོམས་ཆེན་པོ་	btan	medium	2	3	0	0	བཏང་སྙོམས་ཆེན་པོ་ btaṅ sioms chen po Bez. für
+904	108	9912	headword_line	བཏང་སྙོམས་ཆེན་པོ་	btan	medium	2	3	0	0	བཏང་སྙོམས་ཆེན་པོ་ btaṅ sñoms chen po Bez. für
 904	109	9912	other			none	0	0	0	0	10° (SCHUH 2012: 1393).
 904	111	9913	headword_line	བཏང་གཏོར་	btan	medium	2	0	0	0	བཏང་གཏོར་ btaṅ gtor besprengen.
 904	112	9913	german_prose_with_translit			none	4	1	0	0	des ni dkyil ’khor ~ bya (metr.) „damit soll
@@ -157165,7 +157165,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1072	71	11842	german_prose_with_translit			none	3	1	0	0	~ mkhan (brDa); chani ¬~ ba = madyapänam
 1072	72	11842	german_prose			none	0	3	0	0	„der Genuß berauschender Getränke“
 1072	73	11842	german_prose			none	0	1	0	0	(Mvy 2505).
-1072	75	11843	headword_line	འཐུང་གཉོད་	thun	high	2	3	0	0	འཐུང་གཉོད་ 'thuṅ gcod auch 'thuṅ bcod Bez. für
+1072	75	11843	headword_line	འཐུང་གཉོད་	thun	high	2	3	0	0	འཐུང་གཅོད་ 'thuṅ gcod auch 'thuṅ bcod Bez. für
 1072	77	11843	latin_other			none	1	0	0	0	tantrische Versammlungsplätze,
 1072	78	11843	other			none	0	0	0	0	skt. pilava.
 1072	80	11843	latin_other			none	4	0	0	0	'thun bcod nie ba’i ~ fd ... ’di rnams sa ni

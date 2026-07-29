@@ -12,7 +12,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 ཁྲེལ	khrel	5	wts_1_34		5		single_volume	retain_moderate
 གཉའ	giia’	2	wts_1_34		2		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 གཉེན	gen	2	wts_1_34		4		fewer_than_3_independent_occurrences;single_volume	retain_moderate
-གཉོད	gcod	2	wts_1_34;wts_9_m		3		fewer_than_3_independent_occurrences	retain_moderate
 གཏགས	gtugs	3	wts_1_34		4		single_volume	retain_moderate
 གདའ	gda'	6	wts_35_51		6		single_volume	retain_moderate
 གནོད	gnod	5	wts_35_51		34		single_volume	retain_moderate
@@ -114,7 +113,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 བསུ	bsu	2	wts_35_51		4		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 བསོ	bso	2	wts_1_34		4		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 བསོད	bsod	5	wts_1_34		5		single_volume	retain_moderate
-བསྙིལ	bsñil	3	wts_35_51		3		single_volume	retain_moderate
 བསྟེན	bsten	3	wts_1_34		10		single_volume	retain_moderate
 བུག	bug	2	wts_35_51;wts_8_b		10		fewer_than_3_independent_occurrences	retain_moderate
 བུགས	thugs	7	wts_1_34		7		single_volume	retain_moderate
@@ -216,7 +214,6 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 སྙད	sad	4	wts_1_34		4		single_volume	retain_moderate
 སྙིང	siṅ	3	wts_35_51		3		single_volume	retain_moderate
 སྙེ	sie	4	wts_1_34		9		single_volume	retain_moderate
-སྙོམས	sioms	2	wts_1_34;wts_8_b		5		fewer_than_3_independent_occurrences	retain_moderate
 སྟེ	ste	2	wts_35_51		8		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 སྣེའུ	sne'u	2	wts_35_51		3		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 སྤས	sbas	3	wts_35_51;wts_8_b		8		entry_cluster_independence	retain_moderate

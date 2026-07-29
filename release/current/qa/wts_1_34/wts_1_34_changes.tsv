@@ -29122,3 +29122,12 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 932	173	10472	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་སྣང་ ltar snaṅ.
 300	171	4164	headword_line	gun	gźuṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཁྲེལ་གཞུང་ khrel gun \khrel.
 510	54	6707	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	བརྱ་བཞི་ brgya bi
+758	1	8999	headword_line	nag	ñag	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	ཉག་ཐག་པ་ nag thag pa
+809	176	9419	headword_line	mnam	mñam	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	མཉམ་མཐུན་ mnam mthun übereinstimmen.
+761	1	9022	headword_line	nam	ñams	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_multi_error	yes	ཉམས་ཆད་ nam chad
+424	123	5557	headword_line	beran	bgraṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_multi_error	yes	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
+424	158	5561	headword_line	beran	bgraṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_multi_error	yes	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
+827	152	9522	headword_line	sioms	sñoms	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	སྙོམས་ཆུང་ sioms chuṅ zufrieden, genügsam,
+904	108	9912	headword_line	sioms	sñoms	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	བཏང་སྙོམས་ཆེན་པོ་ btaṅ sioms chen po Bez. für
+904	21	9908	headword_line	གཉོད	གཅོད	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	བཏང་གཉོད་ btaṅ gcod
+1072	75	11843	headword_line	གཉོད	གཅོད	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	འཐུང་གཉོད་ 'thuṅ gcod auch 'thuṅ bcod Bez. für

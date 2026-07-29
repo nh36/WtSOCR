@@ -69,6 +69,19 @@ class RecordIntegrityFamilyTests(unittest.TestCase):
             None,
         ))
 
+    def test_prefix_m_insertion_is_not_a_root_edit(self) -> None:
+        spans = module.signature_engine.canonical_role_spans("མཁུར", "mkhur")
+        operation = module.signature_engine.canonical.edit_operations(
+            "khur", "mkhur"
+        )[0]
+        attribution = module.signature_engine.attribute_edit_to_spans(
+            "khur", "mkhur", operation, spans,
+            "ordinary_tibetan_lexical_or_compound",
+        )
+        self.assertEqual(attribution["target_structural_role"], "prefix")
+        self.assertEqual(attribution["tibetan_feature"], "མ")
+        self.assertEqual(module.root_change_status([attribution]), "no")
+
     def test_multi_error_root_change_is_reason_independent(self) -> None:
         # Regression shape: g→k at the root plus n→ṅ at the suffix.  A
         # manual_multi_error reason must not bypass the root identity gate.
