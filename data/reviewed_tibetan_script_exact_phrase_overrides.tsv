@@ -1,0 +1,2 @@
+volume	page	line	observed_phrase	adjudicated_phrase	reason	evidence	review_batch	teaching_status
+wts_1_34	999	202	ཐལ།་གོང་	ཐལ་གོང་	reviewed_exact_tibetan_headword_delimiter_ocr	Exact same-page ཐལ་གོང headword at 999:167 establishes the damaged delimiter.	g_to_k_occurrence_identity_repair_20260729	tibetan_ocr_corrected_observation

@@ -1551,10 +1551,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 གྱགས	gyags	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	unresolved
 གྱགས	gyags	complete_not_currently_authoritative	suffix_coda	ག	3	4	g	CORPUS_9A673562CD7A	contrastive	unresolved
 གྱགས	gyags	complete_not_currently_authoritative	post_suffix	ས	4	5	s	CORPUS_F685D66CEF46	contrastive	unresolved
-གྱང	gyaṅ	complete_not_currently_authoritative	root_consonant	ག	0	1	g	CORPUS_A6063072E7A9	contrastive	unresolved
-གྱང	gyaṅ	complete_not_currently_authoritative	subjoined_consonants	ཡ	1	2	y	CORPUS_E34B3E203AE6	contrastive	unresolved
-གྱང	gyaṅ	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	unresolved
-གྱང	gyaṅ	complete_not_currently_authoritative	suffix_coda	ང	3	4	ṅ	SUFFIX_NG_TO_NDOT	token_final	unresolved
+གྱང	gyaṅ	complete_not_currently_authoritative	root_consonant	ག	0	1	g	CORPUS_A6063072E7A9	contrastive	ordinary_tibetan_lexical_or_compound
+གྱང	gyaṅ	complete_not_currently_authoritative	subjoined_consonants	ཡ	1	2	y	CORPUS_E34B3E203AE6	contrastive	ordinary_tibetan_lexical_or_compound
+གྱང	gyaṅ	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
+གྱང	gyaṅ	complete_not_currently_authoritative	suffix_coda	ང	3	4	ṅ	SUFFIX_NG_TO_NDOT	token_final	ordinary_tibetan_lexical_or_compound
 གྱད	gyad	correction_authoritative	root_consonant	ག	0	1	g	CORPUS_A6063072E7A9	contrastive	ordinary_tibetan_lexical_or_compound
 གྱད	gyad	correction_authoritative	subjoined_consonants	ཡ	1	2	y	CORPUS_E34B3E203AE6	contrastive	ordinary_tibetan_lexical_or_compound
 གྱད	gyad	correction_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound

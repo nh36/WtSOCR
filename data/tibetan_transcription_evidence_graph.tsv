@@ -205,6 +205,15 @@ canonical:གོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS
 canonical:གོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_30256E043D83	feature_rule	གོ	yes	yes
 canonical:གོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_6EF8E6EDDF18	feature_rule	གོ	yes	yes
 canonical:གོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_A6063072E7A9	feature_rule	གོ	yes	yes
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:360:84:1	exact_correction	wts_1_34:360:84:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:360:84:1	exact_correction	wts_1_34:360:84:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:361:111:1	exact_correction	wts_1_34:361:111:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:361:111:1	exact_correction	wts_1_34:361:111:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:361:71:1	exact_correction	wts_1_34:361:71:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:361:71:1	exact_correction	wts_1_34:361:71:1	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:999:202:2	exact_correction	wts_1_34:999:202:2	yes	no
+canonical:གོང	canonical_target	produces_correction	exact_correction:wts_1_34:999:202:2	exact_correction	wts_1_34:999:202:2	yes	no
+canonical:གྱང	canonical_target	produces_correction	exact_correction:wts_1_34:366:67:1	exact_correction	wts_1_34:366:67:1	yes	no
 canonical:གྱིས	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_A6063072E7A9	feature_rule	གྱིས	yes	yes
 canonical:གྱུར	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_30256E043D83	feature_rule	གྱུར	yes	yes
 canonical:གྲང	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_01025FAF5D30	feature_rule	གྲང	yes	yes
@@ -227,6 +236,8 @@ canonical:གྲོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:COR
 canonical:གྲོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_7F71AFFFC788	feature_rule	གྲོ	yes	yes
 canonical:གྲོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_A6063072E7A9	feature_rule	གྲོ	yes	yes
 canonical:གྲོ	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_FE10A0A29248	feature_rule	གྲོ	yes	yes
+canonical:གྲོང	canonical_target	produces_correction	exact_correction:wts_1_34:388:70:1	exact_correction	wts_1_34:388:70:1	yes	no
+canonical:གྲོང	canonical_target	produces_correction	exact_correction:wts_1_34:388:70:1	exact_correction	wts_1_34:388:70:1	yes	no
 canonical:གྲོང	canonical_target	produces_correction	exact_correction:wts_1_34:655:124:3	exact_correction	wts_1_34:655:124:3	yes	no
 canonical:གྲོང	strong_or_reviewed_canonical	contrasts_with	feature_rule:CORPUS_16D4A9AA0695	feature_rule	གྲོང	yes	yes
 canonical:གྲོང	strong_or_reviewed_canonical	contrasts_with	feature_rule:SUFFIX_NG_TO_NDOT	feature_rule	གྲོང	yes	yes
@@ -1482,6 +1493,10 @@ canonical_feature_composed:འཕྱོང	canonical_target	produces_correction	
 canonical_feature_composed:རྐྱང	canonical_target	produces_correction	exact_correction:wts_1_34:163:121:1	exact_correction	wts_1_34:163:121:1	yes	no
 canonical_feature_composed:རྐྱང	canonical_target	produces_correction	exact_correction:wts_1_34:592:101:2	exact_correction	wts_1_34:592:101:2	yes	no
 canonical_feature_composed:རྒྱང	canonical_target	produces_correction	exact_correction:wts_1_34:124:3:3	exact_correction	wts_1_34:124:3:3	yes	no
+canonical_feature_composed:རྒྱང	canonical_target	produces_correction	exact_correction:wts_1_34:724:164:3	exact_correction	wts_1_34:724:164:3	yes	no
+canonical_feature_composed:རྒྱང	canonical_target	produces_correction	exact_correction:wts_1_34:724:164:3	exact_correction	wts_1_34:724:164:3	yes	no
+canonical_feature_composed:རྒྱང	canonical_target	produces_correction	exact_correction:wts_1_34:724:212:3	exact_correction	wts_1_34:724:212:3	yes	no
+canonical_feature_composed:རྒྱང	canonical_target	produces_correction	exact_correction:wts_1_34:724:212:3	exact_correction	wts_1_34:724:212:3	yes	no
 canonical_feature_composed:སིང	canonical_target	produces_correction	exact_correction:wts_1_34:277:28:2	exact_correction	wts_1_34:277:28:2	yes	no
 canonical_feature_composed:སྒང	canonical_target	produces_correction	exact_correction:wts_1_34:490:80:1	exact_correction	wts_1_34:490:80:1	yes	no
 canonical_feature_composed:སྒང	canonical_target	produces_correction	exact_correction:wts_35_51:1022:1:3	exact_correction	wts_35_51:1022:1:3	yes	no
@@ -23174,6 +23189,8 @@ identity:wts_1_34:298:177:1	exact_observation	supports	canonical:ཁུམས	st
 identity:wts_1_34:298:177:2	exact_observation	supports	canonical:སྟོད	strong_or_reviewed_canonical	wts_1_34:298:177:2	yes	yes
 identity:wts_1_34:298:1:1	exact_observation	supports	canonical:ཁྲིམས	strong_or_reviewed_canonical	wts_1_34:298:1:1	yes	yes
 identity:wts_1_34:298:1:2	exact_observation	supports	canonical:སུ	strong_or_reviewed_canonical	wts_1_34:298:1:2	yes	yes
+identity:wts_1_34:298:1:3	exact_observation	supports	canonical:བཙལ	strong_or_reviewed_canonical	wts_1_34:298:1:3	yes	yes
+identity:wts_1_34:298:1:3	exact_observation	supports	feature:unsegmented_structural_unit:བཙལ:b□sal	feature_rule_evidence	wts_1_34:298:1:3	yes	yes
 identity:wts_1_34:298:217:1	exact_observation	supports	canonical:ཁུམས	strong_or_reviewed_canonical	wts_1_34:298:217:1	yes	yes
 identity:wts_1_34:298:217:2	exact_observation	supports	canonical:ཟླ	strong_or_reviewed_canonical	wts_1_34:298:217:2	yes	yes
 identity:wts_1_34:298:30:1	exact_observation	supports	canonical:ཁྲིས	strong_or_reviewed_canonical	wts_1_34:298:30:1	yes	yes
@@ -23187,6 +23204,8 @@ identity:wts_1_34:298:89:2	exact_observation	supports	canonical:གིས	strong
 identity:wts_1_34:298:9:1	exact_observation	supports	canonical:ཁྲིམས	strong_or_reviewed_canonical	wts_1_34:298:9:1	yes	yes
 identity:wts_1_34:299:105:1	exact_observation	supports	canonical:ཁྱུས	strong_or_reviewed_canonical	wts_1_34:299:105:1	yes	yes
 identity:wts_1_34:299:105:2	exact_observation	supports	canonical:ཀྱི	strong_or_reviewed_canonical	wts_1_34:299:105:2	yes	yes
+identity:wts_1_34:299:105:3	exact_observation	supports	canonical:བརྟུལ	strong_or_reviewed_canonical	wts_1_34:299:105:3	yes	yes
+identity:wts_1_34:299:105:3	exact_observation	supports	feature:unsegmented_structural_unit:བརྟུལ:br□ul	feature_rule_evidence	wts_1_34:299:105:3	yes	yes
 identity:wts_1_34:299:115:1	exact_observation	supports	canonical:ཁྱུས	strong_or_reviewed_canonical	wts_1_34:299:115:1	yes	yes
 identity:wts_1_34:299:115:2	exact_observation	supports	canonical:ཀྱི	strong_or_reviewed_canonical	wts_1_34:299:115:2	yes	yes
 identity:wts_1_34:299:115:3	exact_observation	supports	canonical:བརྟུལ	strong_or_reviewed_canonical	wts_1_34:299:115:3	yes	yes
@@ -24207,13 +24226,16 @@ identity:wts_1_34:360:66:2	exact_observation	supports	canonical:ད	strong_or_re
 identity:wts_1_34:360:73:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:360:73:1	yes	no
 identity:wts_1_34:360:73:2	exact_observation	supports	canonical:ད	strong_or_reviewed_canonical	wts_1_34:360:73:2	yes	yes
 identity:wts_1_34:360:73:3	exact_observation	supports	canonical:ཕུད	strong_or_reviewed_canonical	wts_1_34:360:73:3	yes	yes
-identity:wts_1_34:360:84:2	exact_observation	supports	canonical:ད	strong_or_reviewed_canonical	wts_1_34:360:84:2	yes	yes
+identity:wts_1_34:360:84:1	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:360:84:1	yes	no
+identity:wts_1_34:360:84:1	exact_observation	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:360:84:1	yes	yes
 identity:wts_1_34:360:8:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:360:8:1	yes	no
 identity:wts_1_34:360:8:2	exact_observation	supports	canonical:རྒྱན	strong_or_reviewed_canonical	wts_1_34:360:8:2	yes	yes
 identity:wts_1_34:360:97:2	exact_observation	supports	canonical:ད	strong_or_reviewed_canonical	wts_1_34:360:97:2	yes	yes
 identity:wts_1_34:360:97:4	exact_observation	supports	canonical:བ	strong_or_reviewed_canonical	wts_1_34:360:97:4	yes	yes
 identity:wts_1_34:361:101:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:361:101:1	yes	no
 identity:wts_1_34:361:101:2	exact_observation	supports	canonical:ལག	strong_or_reviewed_canonical	wts_1_34:361:101:2	yes	yes
+identity:wts_1_34:361:111:1	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:361:111:1	yes	no
+identity:wts_1_34:361:111:1	exact_observation	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:361:111:1	yes	yes
 identity:wts_1_34:361:111:2	exact_observation	supports	canonical:ལེན	strong_or_reviewed_canonical	wts_1_34:361:111:2	yes	yes
 identity:wts_1_34:361:118:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:361:118:1	yes	no
 identity:wts_1_34:361:118:2	exact_observation	supports	canonical:ས	strong_or_reviewed_canonical	wts_1_34:361:118:2	yes	yes
@@ -24229,6 +24251,8 @@ identity:wts_1_34:361:50:3	exact_observation	supports	feature:suffix_coda::	feat
 identity:wts_1_34:361:50:4	exact_observation	supports	canonical:མ	strong_or_reviewed_canonical	wts_1_34:361:50:4	yes	yes
 identity:wts_1_34:361:57:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:361:57:1	yes	no
 identity:wts_1_34:361:57:2	exact_observation	supports	canonical:ལག	strong_or_reviewed_canonical	wts_1_34:361:57:2	yes	yes
+identity:wts_1_34:361:71:1	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:361:71:1	yes	no
+identity:wts_1_34:361:71:1	exact_observation	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:361:71:1	yes	yes
 identity:wts_1_34:361:71:2	exact_observation	supports	canonical:རྩེ	strong_or_reviewed_canonical	wts_1_34:361:71:2	yes	yes
 identity:wts_1_34:361:78:1	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:361:78:1	yes	no
 identity:wts_1_34:361:78:2	exact_observation	supports	canonical:ཡོལ	strong_or_reviewed_canonical	wts_1_34:361:78:2	yes	yes
@@ -24266,6 +24290,7 @@ identity:wts_1_34:366:115:2	exact_observation	supports	feature:pre_coda_structur
 identity:wts_1_34:366:115:2	exact_observation	supports	feature:root_consonant:ལ:l	feature_rule_evidence	wts_1_34:366:115:2	yes	no
 identity:wts_1_34:366:115:2	exact_observation	supports	feature:suffix_coda:ང:ṅ	feature_rule_evidence	wts_1_34:366:115:2	yes	yes
 identity:wts_1_34:366:115:2	exact_observation	supports	feature:vowel:i:i	feature_rule_evidence	wts_1_34:366:115:2	yes	no
+identity:wts_1_34:366:67:1	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:366:67:1	yes	no
 identity:wts_1_34:366:96:1	exact_observation	supports	canonical:གྱད	strong_or_reviewed_canonical	wts_1_34:366:96:1	yes	yes
 identity:wts_1_34:366:96:2	exact_observation	supports	canonical:རྡོ	strong_or_reviewed_canonical	wts_1_34:366:96:2	yes	yes
 identity:wts_1_34:367:25:2	exact_observation	supports	feature:suffix_coda::	feature_rule_evidence	wts_1_34:367:25:2	yes	no
@@ -24644,6 +24669,8 @@ identity:wts_1_34:388:64:1	exact_observation	supports	feature:root_consonant:ག
 identity:wts_1_34:388:64:1	exact_observation	supports	feature:subjoined_consonants:ར:r	feature_rule_evidence	wts_1_34:388:64:1	yes	no
 identity:wts_1_34:388:64:1	exact_observation	supports	feature:suffix_coda:ང:ṅ	feature_rule_evidence	wts_1_34:388:64:1	yes	yes
 identity:wts_1_34:388:64:1	exact_observation	supports	feature:vowel:o:o	feature_rule_evidence	wts_1_34:388:64:1	yes	no
+identity:wts_1_34:388:70:1	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:388:70:1	yes	no
+identity:wts_1_34:388:70:1	exact_observation	supports	feature:unsegmented_structural_unit:གྲོང:gro□	feature_rule_evidence	wts_1_34:388:70:1	yes	yes
 identity:wts_1_34:388:70:2	exact_observation	supports	canonical:སྤྲེའུ	strong_or_reviewed_canonical	wts_1_34:388:70:2	yes	yes
 identity:wts_1_34:388:73:2	exact_observation	supports	canonical:ཕྱ	strong_or_reviewed_canonical	wts_1_34:388:73:2	yes	yes
 identity:wts_1_34:388:73:4	exact_observation	supports	canonical:མ	strong_or_reviewed_canonical	wts_1_34:388:73:4	yes	yes
@@ -28369,6 +28396,8 @@ identity:wts_1_34:621:180:1	exact_observation	supports	canonical:ཆ	strong_or_r
 identity:wts_1_34:621:180:3	exact_observation	supports	canonical:སྡེ	strong_or_reviewed_canonical	wts_1_34:621:180:3	yes	yes
 identity:wts_1_34:621:199:1	exact_observation	supports	canonical:ཆ	strong_or_reviewed_canonical	wts_1_34:621:199:1	yes	yes
 identity:wts_1_34:621:199:3	exact_observation	supports	canonical:ཚེར	strong_or_reviewed_canonical	wts_1_34:621:199:3	yes	yes
+identity:wts_1_34:621:199:4	exact_observation	supports	canonical:བརྩེགས	strong_or_reviewed_canonical	wts_1_34:621:199:4	yes	yes
+identity:wts_1_34:621:199:4	exact_observation	supports	feature:unsegmented_structural_unit:བརྩེགས:br□segs	feature_rule_evidence	wts_1_34:621:199:4	yes	yes
 identity:wts_1_34:621:1:2	exact_observation	supports	feature:prefix:བ:b	feature_rule_evidence	wts_1_34:621:1:2	yes	no
 identity:wts_1_34:621:1:2	exact_observation	supports	feature:root_consonant:ཞ:ź	feature_rule_evidence	wts_1_34:621:1:2	yes	yes
 identity:wts_1_34:621:1:2	exact_observation	supports	feature:suffix_coda:ག:g	feature_rule_evidence	wts_1_34:621:1:2	yes	no
@@ -30077,6 +30106,8 @@ identity:wts_1_34:724:123:2	exact_observation	supports	canonical:རྟེན	st
 identity:wts_1_34:724:123:3	exact_observation	supports	canonical:ཁྲིམས	strong_or_reviewed_canonical	wts_1_34:724:123:3	yes	yes
 identity:wts_1_34:724:164:1	exact_observation	supports	canonical:འཇིག	strong_or_reviewed_canonical	wts_1_34:724:164:1	yes	yes
 identity:wts_1_34:724:164:2	exact_observation	supports	canonical:རྟེན	strong_or_reviewed_canonical	wts_1_34:724:164:2	yes	yes
+identity:wts_1_34:724:164:3	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:724:164:3	yes	no
+identity:wts_1_34:724:164:3	exact_observation	supports	feature:unsegmented_structural_unit:རྒྱང:rgya□	feature_rule_evidence	wts_1_34:724:164:3	yes	yes
 identity:wts_1_34:724:164:4	exact_observation	supports	canonical:ཕན	strong_or_reviewed_canonical	wts_1_34:724:164:4	yes	yes
 identity:wts_1_34:724:179:1	exact_observation	supports	canonical:འཇིག	strong_or_reviewed_canonical	wts_1_34:724:179:1	yes	yes
 identity:wts_1_34:724:179:2	exact_observation	supports	canonical:རྟེན	strong_or_reviewed_canonical	wts_1_34:724:179:2	yes	yes
@@ -30088,6 +30119,8 @@ identity:wts_1_34:724:1:4	exact_observation	supports	canonical:ཏུ	strong_or_
 identity:wts_1_34:724:1:5	exact_observation	supports	canonical:དགའ	strong_or_reviewed_canonical	wts_1_34:724:1:5	yes	yes
 identity:wts_1_34:724:212:1	exact_observation	supports	canonical:འཇིག	strong_or_reviewed_canonical	wts_1_34:724:212:1	yes	yes
 identity:wts_1_34:724:212:2	exact_observation	supports	canonical:རྟེན	strong_or_reviewed_canonical	wts_1_34:724:212:2	yes	yes
+identity:wts_1_34:724:212:3	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:724:212:3	yes	no
+identity:wts_1_34:724:212:3	exact_observation	supports	feature:unsegmented_structural_unit:རྒྱང:rgya□	feature_rule_evidence	wts_1_34:724:212:3	yes	yes
 identity:wts_1_34:724:212:4	exact_observation	supports	canonical:ཕན	strong_or_reviewed_canonical	wts_1_34:724:212:4	yes	yes
 identity:wts_1_34:724:55:1	exact_observation	supports	canonical:འཇིག	strong_or_reviewed_canonical	wts_1_34:724:55:1	yes	yes
 identity:wts_1_34:724:55:2	exact_observation	supports	canonical:རྟེན	strong_or_reviewed_canonical	wts_1_34:724:55:2	yes	yes
@@ -32435,6 +32468,8 @@ identity:wts_1_34:913:204:2	exact_observation	supports	canonical:བྲོན	st
 identity:wts_1_34:913:212:1	exact_observation	supports	canonical:ཏྟ	strong_or_reviewed_canonical	wts_1_34:913:212:1	yes	yes
 identity:wts_1_34:913:216:1	exact_observation	supports	canonical:རྟ	strong_or_reviewed_canonical	wts_1_34:913:216:1	yes	yes
 identity:wts_1_34:913:216:2	exact_observation	supports	canonical:བཟེད	strong_or_reviewed_canonical	wts_1_34:913:216:2	yes	yes
+identity:wts_1_34:913:220:1	exact_observation	supports	canonical:རྟ	strong_or_reviewed_canonical	wts_1_34:913:220:1	yes	yes
+identity:wts_1_34:913:220:1	exact_observation	supports	feature:unsegmented_structural_unit:རྟ:r□a	feature_rule_evidence	wts_1_34:913:220:1	yes	yes
 identity:wts_1_34:913:38:1	exact_observation	supports	canonical:རྟ	strong_or_reviewed_canonical	wts_1_34:913:38:1	yes	yes
 identity:wts_1_34:913:38:2	exact_observation	supports	canonical:བྲེས	strong_or_reviewed_canonical	wts_1_34:913:38:2	yes	yes
 identity:wts_1_34:913:3:1	exact_observation	supports	canonical:རྟ	strong_or_reviewed_canonical	wts_1_34:913:3:1	yes	yes
@@ -34297,7 +34332,8 @@ identity:wts_1_34:999:175:2	exact_observation	supports	canonical:ཀར	strong_o
 identity:wts_1_34:999:189:1	exact_observation	supports	canonical:ཐལ	strong_or_reviewed_canonical	wts_1_34:999:189:1	yes	yes
 identity:wts_1_34:999:189:2	exact_observation	supports	canonical:སྐྱ	strong_or_reviewed_canonical	wts_1_34:999:189:2	yes	yes
 identity:wts_1_34:999:1:1	exact_observation	supports	canonical:ཐར	strong_or_reviewed_canonical	wts_1_34:999:1:1	yes	yes
-identity:wts_1_34:999:202:1	exact_observation	supports	canonical:ཀྲཁ	strong_or_reviewed_canonical	wts_1_34:999:202:1	yes	yes
+identity:wts_1_34:999:202:2	exact_observation	supports	feature:::	feature_rule_evidence	wts_1_34:999:202:2	yes	no
+identity:wts_1_34:999:202:2	exact_observation	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:999:202:2	yes	yes
 identity:wts_1_34:99:10:1	exact_observation	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:10:1	yes	yes
 identity:wts_1_34:99:10:1	exact_observation	supports	feature:root_consonant:ཀ:k	feature_rule_evidence	wts_1_34:99:10:1	yes	no
 identity:wts_1_34:99:10:1	exact_observation	supports	feature:suffix_coda:ང:ṅ	feature_rule_evidence	wts_1_34:99:10:1	yes	yes
@@ -34339,6 +34375,8 @@ identity:wts_1_34:99:38:3	exact_observation	supports	feature:pre_coda_structural
 identity:wts_1_34:99:38:3	exact_observation	supports	feature:root_consonant:ཀ:k	feature_rule_evidence	wts_1_34:99:38:3	yes	no
 identity:wts_1_34:99:38:3	exact_observation	supports	feature:suffix_coda:ང:ṅ	feature_rule_evidence	wts_1_34:99:38:3	yes	yes
 identity:wts_1_34:99:38:3	exact_observation	supports	feature:vowel:o:o	feature_rule_evidence	wts_1_34:99:38:3	yes	no
+identity:wts_1_34:99:38:4	exact_observation	supports	canonical:བཙུན	strong_or_reviewed_canonical	wts_1_34:99:38:4	yes	yes
+identity:wts_1_34:99:38:4	exact_observation	supports	feature:unsegmented_structural_unit:བཙུན:b□sun	feature_rule_evidence	wts_1_34:99:38:4	yes	yes
 identity:wts_1_34:99:38:5	exact_observation	supports	canonical:རྒྱ	strong_or_reviewed_canonical	wts_1_34:99:38:5	yes	yes
 identity:wts_1_34:99:38:6	exact_observation	supports	canonical:ལ	strong_or_reviewed_canonical	wts_1_34:99:38:6	yes	yes
 identity:wts_1_34:99:3:1	exact_observation	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:3:1	yes	yes
@@ -37437,6 +37475,8 @@ identity:wts_35_51:401:63:1	exact_observation	supports	feature:suffix_coda:ང:�
 identity:wts_35_51:401:63:1	exact_observation	supports	feature:vowel:a:a	feature_rule_evidence	wts_35_51:401:63:1	yes	no
 identity:wts_35_51:401:63:2	exact_observation	supports	canonical:ཚ	strong_or_reviewed_canonical	wts_35_51:401:63:2	yes	yes
 identity:wts_35_51:402:10:1	exact_observation	supports	canonical:ནང	strong_or_reviewed_canonical	wts_35_51:402:10:1	yes	yes
+identity:wts_35_51:402:10:2	exact_observation	supports	canonical:ཚུད	strong_or_reviewed_canonical	wts_35_51:402:10:2	yes	yes
+identity:wts_35_51:402:10:2	exact_observation	supports	feature:unsegmented_structural_unit:ཚུད:□shud	feature_rule_evidence	wts_35_51:402:10:2	yes	yes
 identity:wts_35_51:402:17:1	exact_observation	supports	canonical:ནང	strong_or_reviewed_canonical	wts_35_51:402:17:1	yes	yes
 identity:wts_35_51:402:17:2	exact_observation	supports	canonical:ཚོང	strong_or_reviewed_canonical	wts_35_51:402:17:2	yes	yes
 identity:wts_35_51:402:1:1	exact_observation	supports	canonical:ནང	strong_or_reviewed_canonical	wts_35_51:402:1:1	yes	yes
@@ -43488,6 +43528,8 @@ identity:wts_8_b:357:15:3	exact_observation	supports	canonical:ཐུལ	strong_
 identity:wts_8_b:357:15:4	exact_observation	supports	canonical:པ	strong_or_reviewed_canonical	wts_8_b:357:15:4	yes	yes
 identity:wts_8_b:357:1:1	exact_observation	supports	canonical:དབང	strong_or_reviewed_canonical	wts_8_b:357:1:1	yes	yes
 identity:wts_8_b:357:1:2	exact_observation	supports	canonical:པོ	strong_or_reviewed_canonical	wts_8_b:357:1:2	yes	yes
+identity:wts_8_b:357:1:3	exact_observation	supports	canonical:རྟུལ	strong_or_reviewed_canonical	wts_8_b:357:1:3	yes	yes
+identity:wts_8_b:357:1:3	exact_observation	supports	feature:unsegmented_structural_unit:རྟུལ:r□ul	feature_rule_evidence	wts_8_b:357:1:3	yes	yes
 identity:wts_8_b:357:21:1	exact_observation	supports	canonical:དབང	strong_or_reviewed_canonical	wts_8_b:357:21:1	yes	yes
 identity:wts_8_b:357:21:2	exact_observation	supports	canonical:པོ	strong_or_reviewed_canonical	wts_8_b:357:21:2	yes	yes
 identity:wts_8_b:357:21:3	exact_observation	supports	canonical:དྲུག	strong_or_reviewed_canonical	wts_8_b:357:21:3	yes	yes
@@ -46771,9 +46813,16 @@ ocr_signature:SUB Z→ź	ocr_signature	produces_correction	exact_correction:wts_
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:248:148:2	exact_correction	wts_1_34:248:148:2	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:277:28:2	exact_correction	wts_1_34:277:28:2	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:287:97:1	exact_correction	wts_1_34:287:97:1	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:360:84:1	exact_correction	wts_1_34:360:84:1	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:361:111:1	exact_correction	wts_1_34:361:111:1	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:361:71:1	exact_correction	wts_1_34:361:71:1	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:388:70:1	exact_correction	wts_1_34:388:70:1	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:396:122:1	exact_correction	wts_1_34:396:122:1	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:655:124:3	exact_correction	wts_1_34:655:124:3	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:724:164:3	exact_correction	wts_1_34:724:164:3	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:724:212:3	exact_correction	wts_1_34:724:212:3	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:811:181:2	exact_correction	wts_1_34:811:181:2	yes	no
+ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_1_34:999:202:2	exact_correction	wts_1_34:999:202:2	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_35_51:1108:42:1	exact_correction	wts_35_51:1108:42:1	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_35_51:1108:76:1	exact_correction	wts_35_51:1108:76:1	yes	no
 ocr_signature:SUB n→ṅ	ocr_signature	produces_correction	exact_correction:wts_8_b:375:17:3	exact_correction	wts_8_b:375:17:3	yes	no
@@ -47467,6 +47516,8 @@ reviewed_correction:wts_1_34:295:45:2	reviewed_correction	licenses_source_scope	
 reviewed_correction:wts_1_34:297:139:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:297:139:3	source_scope_licence	wts_1_34:297:139:3	yes	no
 reviewed_correction:wts_1_34:297:175:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:297:175:3	source_scope_licence	wts_1_34:297:175:3	yes	no
 reviewed_correction:wts_1_34:297:62:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:297:62:2	source_scope_licence	wts_1_34:297:62:2	yes	no
+reviewed_correction:wts_1_34:298:1:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:298:1:3	source_scope_licence	wts_1_34:298:1:3	yes	no
+reviewed_correction:wts_1_34:299:105:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:299:105:3	source_scope_licence	wts_1_34:299:105:3	yes	no
 reviewed_correction:wts_1_34:302:25:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:302:25:2	source_scope_licence	wts_1_34:302:25:2	yes	no
 reviewed_correction:wts_1_34:303:117:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:303:117:2	source_scope_licence	wts_1_34:303:117:2	yes	no
 reviewed_correction:wts_1_34:303:125:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:303:125:2	source_scope_licence	wts_1_34:303:125:2	yes	no
@@ -47515,6 +47566,9 @@ reviewed_correction:wts_1_34:358:128:3	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_1_34:35:164:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:35:164:3	source_scope_licence	wts_1_34:35:164:3	yes	no
 reviewed_correction:wts_1_34:35:206:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:35:206:3	source_scope_licence	wts_1_34:35:206:3	yes	no
 reviewed_correction:wts_1_34:360:30:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:360:30:2	source_scope_licence	wts_1_34:360:30:2	yes	no
+reviewed_correction:wts_1_34:360:84:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:360:84:1	source_scope_licence	wts_1_34:360:84:1	yes	no
+reviewed_correction:wts_1_34:361:111:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:361:111:1	source_scope_licence	wts_1_34:361:111:1	yes	no
+reviewed_correction:wts_1_34:361:71:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:361:71:1	source_scope_licence	wts_1_34:361:71:1	yes	no
 reviewed_correction:wts_1_34:364:163:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:364:163:2	source_scope_licence	wts_1_34:364:163:2	yes	no
 reviewed_correction:wts_1_34:365:186:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:365:186:3	source_scope_licence	wts_1_34:365:186:3	yes	no
 reviewed_correction:wts_1_34:366:115:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:366:115:2	source_scope_licence	wts_1_34:366:115:2	yes	no
@@ -47561,6 +47615,7 @@ reviewed_correction:wts_1_34:388:1:1	reviewed_correction	licenses_source_scope	s
 reviewed_correction:wts_1_34:388:3:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:388:3:1	source_scope_licence	wts_1_34:388:3:1	yes	no
 reviewed_correction:wts_1_34:388:40:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:388:40:1	source_scope_licence	wts_1_34:388:40:1	yes	no
 reviewed_correction:wts_1_34:388:64:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:388:64:1	source_scope_licence	wts_1_34:388:64:1	yes	no
+reviewed_correction:wts_1_34:388:70:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:388:70:1	source_scope_licence	wts_1_34:388:70:1	yes	no
 reviewed_correction:wts_1_34:388:9:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:388:9:1	source_scope_licence	wts_1_34:388:9:1	yes	no
 reviewed_correction:wts_1_34:390:123:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:390:123:2	source_scope_licence	wts_1_34:390:123:2	yes	no
 reviewed_correction:wts_1_34:390:79:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:390:79:2	source_scope_licence	wts_1_34:390:79:2	yes	no
@@ -47878,6 +47933,7 @@ reviewed_correction:wts_1_34:614:115:2	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_1_34:616:95:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:616:95:2	source_scope_licence	wts_1_34:616:95:2	yes	no
 reviewed_correction:wts_1_34:61:164:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:61:164:3	source_scope_licence	wts_1_34:61:164:3	yes	no
 reviewed_correction:wts_1_34:61:210:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:61:210:3	source_scope_licence	wts_1_34:61:210:3	yes	no
+reviewed_correction:wts_1_34:621:199:4	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:621:199:4	source_scope_licence	wts_1_34:621:199:4	yes	no
 reviewed_correction:wts_1_34:621:1:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:621:1:2	source_scope_licence	wts_1_34:621:1:2	yes	no
 reviewed_correction:wts_1_34:627:168:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:627:168:3	source_scope_licence	wts_1_34:627:168:3	yes	no
 reviewed_correction:wts_1_34:628:101:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:628:101:1	source_scope_licence	wts_1_34:628:101:1	yes	no
@@ -48041,6 +48097,8 @@ reviewed_correction:wts_1_34:720:197:3	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_1_34:720:20:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:720:20:2	source_scope_licence	wts_1_34:720:20:2	yes	no
 reviewed_correction:wts_1_34:721:142:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:721:142:2	source_scope_licence	wts_1_34:721:142:2	yes	no
 reviewed_correction:wts_1_34:722:9:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:722:9:2	source_scope_licence	wts_1_34:722:9:2	yes	no
+reviewed_correction:wts_1_34:724:164:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:724:164:3	source_scope_licence	wts_1_34:724:164:3	yes	no
+reviewed_correction:wts_1_34:724:212:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:724:212:3	source_scope_licence	wts_1_34:724:212:3	yes	no
 reviewed_correction:wts_1_34:724:60:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:724:60:3	source_scope_licence	wts_1_34:724:60:3	yes	no
 reviewed_correction:wts_1_34:725:159:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:725:159:3	source_scope_licence	wts_1_34:725:159:3	yes	no
 reviewed_correction:wts_1_34:725:169:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:725:169:3	source_scope_licence	wts_1_34:725:169:3	yes	no
@@ -48264,6 +48322,7 @@ reviewed_correction:wts_1_34:912:118:3	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_1_34:912:52:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:912:52:2	source_scope_licence	wts_1_34:912:52:2	yes	no
 reviewed_correction:wts_1_34:912:63:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:912:63:3	source_scope_licence	wts_1_34:912:63:3	yes	no
 reviewed_correction:wts_1_34:913:156:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:913:156:2	source_scope_licence	wts_1_34:913:156:2	yes	no
+reviewed_correction:wts_1_34:913:220:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:913:220:1	source_scope_licence	wts_1_34:913:220:1	yes	no
 reviewed_correction:wts_1_34:914:105:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:914:105:3	source_scope_licence	wts_1_34:914:105:3	yes	no
 reviewed_correction:wts_1_34:915:108:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:915:108:3	source_scope_licence	wts_1_34:915:108:3	yes	no
 reviewed_correction:wts_1_34:918:166:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:918:166:1	source_scope_licence	wts_1_34:918:166:1	yes	no
@@ -48474,6 +48533,7 @@ reviewed_correction:wts_1_34:992:133:3	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_1_34:992:1:4	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:992:1:4	source_scope_licence	wts_1_34:992:1:4	yes	no
 reviewed_correction:wts_1_34:992:7:4	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:992:7:4	source_scope_licence	wts_1_34:992:7:4	yes	no
 reviewed_correction:wts_1_34:998:115:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:998:115:1	source_scope_licence	wts_1_34:998:115:1	yes	no
+reviewed_correction:wts_1_34:999:202:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:999:202:2	source_scope_licence	wts_1_34:999:202:2	yes	no
 reviewed_correction:wts_1_34:99:10:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:10:1	source_scope_licence	wts_1_34:99:10:1	yes	no
 reviewed_correction:wts_1_34:99:16:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:16:1	source_scope_licence	wts_1_34:99:16:1	yes	no
 reviewed_correction:wts_1_34:99:16:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:16:2	source_scope_licence	wts_1_34:99:16:2	yes	no
@@ -48481,6 +48541,7 @@ reviewed_correction:wts_1_34:99:1:1	reviewed_correction	licenses_source_scope	so
 reviewed_correction:wts_1_34:99:21:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:21:1	source_scope_licence	wts_1_34:99:21:1	yes	no
 reviewed_correction:wts_1_34:99:38:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:38:1	source_scope_licence	wts_1_34:99:38:1	yes	no
 reviewed_correction:wts_1_34:99:38:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:38:3	source_scope_licence	wts_1_34:99:38:3	yes	no
+reviewed_correction:wts_1_34:99:38:4	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:38:4	source_scope_licence	wts_1_34:99:38:4	yes	no
 reviewed_correction:wts_1_34:99:3:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:3:1	source_scope_licence	wts_1_34:99:3:1	yes	no
 reviewed_correction:wts_1_34:99:41:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:41:1	source_scope_licence	wts_1_34:99:41:1	yes	no
 reviewed_correction:wts_1_34:99:86:4	reviewed_correction	licenses_source_scope	source_scope_licence:wts_1_34:99:86:4	source_scope_licence	wts_1_34:99:86:4	yes	no
@@ -48543,6 +48604,7 @@ reviewed_correction:wts_35_51:399:55:3	reviewed_correction	licenses_source_scope
 reviewed_correction:wts_35_51:400:35:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:400:35:1	source_scope_licence	wts_35_51:400:35:1	yes	no
 reviewed_correction:wts_35_51:401:45:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:401:45:2	source_scope_licence	wts_35_51:401:45:2	yes	no
 reviewed_correction:wts_35_51:401:63:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:401:63:1	source_scope_licence	wts_35_51:401:63:1	yes	no
+reviewed_correction:wts_35_51:402:10:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:402:10:2	source_scope_licence	wts_35_51:402:10:2	yes	no
 reviewed_correction:wts_35_51:403:25:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:403:25:1	source_scope_licence	wts_35_51:403:25:1	yes	no
 reviewed_correction:wts_35_51:408:2:2	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:408:2:2	source_scope_licence	wts_35_51:408:2:2	yes	no
 reviewed_correction:wts_35_51:421:1:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_35_51:421:1:1	source_scope_licence	wts_35_51:421:1:1	yes	no
@@ -48676,6 +48738,7 @@ reviewed_correction:wts_8_b:352:41:1	reviewed_correction	licenses_source_scope	s
 reviewed_correction:wts_8_b:356:1:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:356:1:1	source_scope_licence	wts_8_b:356:1:1	yes	no
 reviewed_correction:wts_8_b:356:7:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:356:7:1	source_scope_licence	wts_8_b:356:7:1	yes	no
 reviewed_correction:wts_8_b:356:8:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:356:8:3	source_scope_licence	wts_8_b:356:8:3	yes	no
+reviewed_correction:wts_8_b:357:1:3	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:357:1:3	source_scope_licence	wts_8_b:357:1:3	yes	no
 reviewed_correction:wts_8_b:358:34:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:358:34:1	source_scope_licence	wts_8_b:358:34:1	yes	no
 reviewed_correction:wts_8_b:363:57:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:363:57:1	source_scope_licence	wts_8_b:363:57:1	yes	no
 reviewed_correction:wts_8_b:363:67:1	reviewed_correction	licenses_source_scope	source_scope_licence:wts_8_b:363:67:1	source_scope_licence	wts_8_b:363:67:1	yes	no
@@ -48818,6 +48881,13 @@ signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_s
 signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	feature_composed_target_plus_conditioned_final_n_ng_aphyong_20260728	yes	no
 signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	feature_composed_target_plus_conditioned_final_n_ng_sing_20260728	yes	no
 signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	feature_domain_compatible_proper_name_final_ng_thang_20260728	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_grong_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_rgyang_20260729	yes	no
+signature_decision:SUB n→ṅ	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB n→ṅ	ocr_signature	g_to_k_identity_supersession_final_n_ng_rgyang_20260729	yes	no
 signature_decision:SUB z→ź	reviewed_signature_decision	authorizes_edit	ocr_signature:SUB z→ź	ocr_signature	feature_composed_root_zha_zhig_20260728	yes	no
 source_scope_licence:wts_1_34:1003:107:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཤི:si	feature_rule_evidence	wts_1_34:1003:107:2	yes	yes
 source_scope_licence:wts_1_34:1003:64:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཤི:si	feature_rule_evidence	wts_1_34:1003:64:2	yes	yes
@@ -49508,6 +49578,8 @@ source_scope_licence:wts_1_34:295:45:2	source_scope_licence	supports	feature:pre
 source_scope_licence:wts_1_34:297:139:3	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆུ:chu	feature_rule_evidence	wts_1_34:297:139:3	yes	yes
 source_scope_licence:wts_1_34:297:175:3	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_1_34:297:175:3	yes	yes
 source_scope_licence:wts_1_34:297:62:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཁ:kha	feature_rule_evidence	wts_1_34:297:62:2	yes	yes
+source_scope_licence:wts_1_34:298:1:3	source_scope_licence	supports	feature:unsegmented_structural_unit:བཙལ:b□sal	feature_rule_evidence	wts_1_34:298:1:3	yes	yes
+source_scope_licence:wts_1_34:299:105:3	source_scope_licence	supports	feature:unsegmented_structural_unit:བརྟུལ:br□ul	feature_rule_evidence	wts_1_34:299:105:3	yes	yes
 source_scope_licence:wts_1_34:302:25:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆུ:chu	feature_rule_evidence	wts_1_34:302:25:2	yes	yes
 source_scope_licence:wts_1_34:303:117:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆུ:chu	feature_rule_evidence	wts_1_34:303:117:2	yes	yes
 source_scope_licence:wts_1_34:303:125:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆུ:chu	feature_rule_evidence	wts_1_34:303:125:2	yes	yes
@@ -49556,6 +49628,9 @@ source_scope_licence:wts_1_34:358:128:3	source_scope_licence	supports	feature:pr
 source_scope_licence:wts_1_34:35:164:3	source_scope_licence	supports	feature:pre_coda_structural_unit:ཞ:Za	feature_rule_evidence	wts_1_34:35:164:3	yes	yes
 source_scope_licence:wts_1_34:35:206:3	source_scope_licence	supports	feature:unsegmented_structural_unit:བཞི:b□i	feature_rule_evidence	wts_1_34:35:206:3	yes	yes
 source_scope_licence:wts_1_34:360:30:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཐ:tha	feature_rule_evidence	wts_1_34:360:30:2	yes	yes
+source_scope_licence:wts_1_34:360:84:1	source_scope_licence	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:360:84:1	yes	yes
+source_scope_licence:wts_1_34:361:111:1	source_scope_licence	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:361:111:1	yes	yes
+source_scope_licence:wts_1_34:361:71:1	source_scope_licence	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:361:71:1	yes	yes
 source_scope_licence:wts_1_34:364:163:2	source_scope_licence	supports	feature:pre_coda_structural_unit:བཟ:bza	feature_rule_evidence	wts_1_34:364:163:2	yes	yes
 source_scope_licence:wts_1_34:365:186:3	source_scope_licence	supports	feature:pre_coda_structural_unit:སྣ:sna	feature_rule_evidence	wts_1_34:365:186:3	yes	yes
 source_scope_licence:wts_1_34:366:115:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ལི:li	feature_rule_evidence	wts_1_34:366:115:2	yes	yes
@@ -49602,6 +49677,7 @@ source_scope_licence:wts_1_34:388:1:1	source_scope_licence	supports	feature:pre_
 source_scope_licence:wts_1_34:388:3:1	source_scope_licence	supports	feature:pre_coda_structural_unit:གྲོ:gro	feature_rule_evidence	wts_1_34:388:3:1	yes	yes
 source_scope_licence:wts_1_34:388:40:1	source_scope_licence	supports	feature:pre_coda_structural_unit:གྲོ:gro	feature_rule_evidence	wts_1_34:388:40:1	yes	yes
 source_scope_licence:wts_1_34:388:64:1	source_scope_licence	supports	feature:pre_coda_structural_unit:གྲོ:gro	feature_rule_evidence	wts_1_34:388:64:1	yes	yes
+source_scope_licence:wts_1_34:388:70:1	source_scope_licence	supports	feature:unsegmented_structural_unit:གྲོང:gro□	feature_rule_evidence	wts_1_34:388:70:1	yes	yes
 source_scope_licence:wts_1_34:388:9:1	source_scope_licence	supports	feature:pre_coda_structural_unit:གྲོ:gro	feature_rule_evidence	wts_1_34:388:9:1	yes	yes
 source_scope_licence:wts_1_34:390:123:2	source_scope_licence	supports	feature:unsegmented_structural_unit:གཞི:g□i	feature_rule_evidence	wts_1_34:390:123:2	yes	yes
 source_scope_licence:wts_1_34:390:79:2	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_1_34:390:79:2	yes	yes
@@ -49919,6 +49995,7 @@ source_scope_licence:wts_1_34:614:115:2	source_scope_licence	supports	feature:pr
 source_scope_licence:wts_1_34:616:95:2	source_scope_licence	supports	feature:pre_coda_structural_unit:སྤྱ:spya	feature_rule_evidence	wts_1_34:616:95:2	yes	yes
 source_scope_licence:wts_1_34:61:164:3	source_scope_licence	supports	feature:pre_coda_structural_unit:གླི:gli	feature_rule_evidence	wts_1_34:61:164:3	yes	yes
 source_scope_licence:wts_1_34:61:210:3	source_scope_licence	supports	feature:pre_coda_structural_unit:གླི:gli	feature_rule_evidence	wts_1_34:61:210:3	yes	yes
+source_scope_licence:wts_1_34:621:199:4	source_scope_licence	supports	feature:unsegmented_structural_unit:བརྩེགས:br□segs	feature_rule_evidence	wts_1_34:621:199:4	yes	yes
 source_scope_licence:wts_1_34:621:1:2	source_scope_licence	supports	feature:unsegmented_structural_unit:བཞག:b□ag	feature_rule_evidence	wts_1_34:621:1:2	yes	yes
 source_scope_licence:wts_1_34:627:168:3	source_scope_licence	supports	feature:pre_coda_structural_unit:གཏ:gta	feature_rule_evidence	wts_1_34:627:168:3	yes	yes
 source_scope_licence:wts_1_34:628:101:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆ:cha	feature_rule_evidence	wts_1_34:628:101:1	yes	yes
@@ -50082,6 +50159,8 @@ source_scope_licence:wts_1_34:720:197:3	source_scope_licence	supports	feature:pr
 source_scope_licence:wts_1_34:720:20:2	source_scope_licence	supports	feature:pre_coda_structural_unit:གཏི:gti	feature_rule_evidence	wts_1_34:720:20:2	yes	yes
 source_scope_licence:wts_1_34:721:142:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀློ:klo	feature_rule_evidence	wts_1_34:721:142:2	yes	yes
 source_scope_licence:wts_1_34:722:9:2	source_scope_licence	supports	feature:unsegmented_structural_unit:ལུས:□us	feature_rule_evidence	wts_1_34:722:9:2	yes	yes
+source_scope_licence:wts_1_34:724:164:3	source_scope_licence	supports	feature:unsegmented_structural_unit:རྒྱང:rgya□	feature_rule_evidence	wts_1_34:724:164:3	yes	yes
+source_scope_licence:wts_1_34:724:212:3	source_scope_licence	supports	feature:unsegmented_structural_unit:རྒྱང:rgya□	feature_rule_evidence	wts_1_34:724:212:3	yes	yes
 source_scope_licence:wts_1_34:724:60:3	source_scope_licence	supports	feature:pre_coda_structural_unit:སྐྱོ:skyo	feature_rule_evidence	wts_1_34:724:60:3	yes	yes
 source_scope_licence:wts_1_34:725:159:3	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_1_34:725:159:3	yes	yes
 source_scope_licence:wts_1_34:725:169:3	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_1_34:725:169:3	yes	yes
@@ -50305,6 +50384,7 @@ source_scope_licence:wts_1_34:912:118:3	source_scope_licence	supports	feature:pr
 source_scope_licence:wts_1_34:912:52:2	source_scope_licence	supports	feature:pre_coda_structural_unit:གདོ:gdo	feature_rule_evidence	wts_1_34:912:52:2	yes	yes
 source_scope_licence:wts_1_34:912:63:3	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_1_34:912:63:3	yes	yes
 source_scope_licence:wts_1_34:913:156:2	source_scope_licence	supports	feature:pre_coda_structural_unit:གཙ:gtsa	feature_rule_evidence	wts_1_34:913:156:2	yes	yes
+source_scope_licence:wts_1_34:913:220:1	source_scope_licence	supports	feature:unsegmented_structural_unit:རྟ:r□a	feature_rule_evidence	wts_1_34:913:220:1	yes	yes
 source_scope_licence:wts_1_34:914:105:3	source_scope_licence	supports	feature:pre_coda_structural_unit:རྐ:rka	feature_rule_evidence	wts_1_34:914:105:3	yes	yes
 source_scope_licence:wts_1_34:915:108:3	source_scope_licence	supports	feature:unsegmented_structural_unit:གཞོན:g□on	feature_rule_evidence	wts_1_34:915:108:3	yes	yes
 source_scope_licence:wts_1_34:918:166:1	source_scope_licence	supports	feature:pre_coda_structural_unit:རྟི:rti	feature_rule_evidence	wts_1_34:918:166:1	yes	yes
@@ -50515,6 +50595,7 @@ source_scope_licence:wts_1_34:992:133:3	source_scope_licence	supports	feature:un
 source_scope_licence:wts_1_34:992:1:4	source_scope_licence	supports	feature:pre_coda_structural_unit:རི:ri	feature_rule_evidence	wts_1_34:992:1:4	yes	yes
 source_scope_licence:wts_1_34:992:7:4	source_scope_licence	supports	feature:pre_coda_structural_unit:རི:ri	feature_rule_evidence	wts_1_34:992:7:4	yes	yes
 source_scope_licence:wts_1_34:998:115:1	source_scope_licence	supports	feature:unsegmented_structural_unit:ཐར:t□ar	feature_rule_evidence	wts_1_34:998:115:1	yes	yes
+source_scope_licence:wts_1_34:999:202:2	source_scope_licence	supports	feature:unsegmented_structural_unit:གོང:go□	feature_rule_evidence	wts_1_34:999:202:2	yes	yes
 source_scope_licence:wts_1_34:99:10:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:10:1	yes	yes
 source_scope_licence:wts_1_34:99:16:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:16:1	yes	yes
 source_scope_licence:wts_1_34:99:16:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ལུ:lu	feature_rule_evidence	wts_1_34:99:16:2	yes	yes
@@ -50522,6 +50603,7 @@ source_scope_licence:wts_1_34:99:1:1	source_scope_licence	supports	feature:pre_c
 source_scope_licence:wts_1_34:99:21:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:21:1	yes	yes
 source_scope_licence:wts_1_34:99:38:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:38:1	yes	yes
 source_scope_licence:wts_1_34:99:38:3	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:38:3	yes	yes
+source_scope_licence:wts_1_34:99:38:4	source_scope_licence	supports	feature:unsegmented_structural_unit:བཙུན:b□sun	feature_rule_evidence	wts_1_34:99:38:4	yes	yes
 source_scope_licence:wts_1_34:99:3:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:3:1	yes	yes
 source_scope_licence:wts_1_34:99:41:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ཀོ:ko	feature_rule_evidence	wts_1_34:99:41:1	yes	yes
 source_scope_licence:wts_1_34:99:86:4	source_scope_licence	supports	feature:pre_coda_structural_unit:ཆུ:chu	feature_rule_evidence	wts_1_34:99:86:4	yes	yes
@@ -50584,6 +50666,7 @@ source_scope_licence:wts_35_51:399:55:3	source_scope_licence	supports	feature:un
 source_scope_licence:wts_35_51:400:35:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ན:na	feature_rule_evidence	wts_35_51:400:35:1	yes	yes
 source_scope_licence:wts_35_51:401:45:2	source_scope_licence	supports	feature:pre_coda_structural_unit:ཚ:tsha	feature_rule_evidence	wts_35_51:401:45:2	yes	yes
 source_scope_licence:wts_35_51:401:63:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ན:na	feature_rule_evidence	wts_35_51:401:63:1	yes	yes
+source_scope_licence:wts_35_51:402:10:2	source_scope_licence	supports	feature:unsegmented_structural_unit:ཚུད:□shud	feature_rule_evidence	wts_35_51:402:10:2	yes	yes
 source_scope_licence:wts_35_51:403:25:1	source_scope_licence	supports	feature:pre_coda_structural_unit:ན:na	feature_rule_evidence	wts_35_51:403:25:1	yes	yes
 source_scope_licence:wts_35_51:408:2:2	source_scope_licence	supports	feature:unsegmented_structural_unit:ཁོང:k□oṅ	feature_rule_evidence	wts_35_51:408:2:2	yes	yes
 source_scope_licence:wts_35_51:421:1:1	source_scope_licence	supports	feature:unsegmented_structural_unit:ནམ:□nam	feature_rule_evidence	wts_35_51:421:1:1	yes	yes
@@ -50717,6 +50800,7 @@ source_scope_licence:wts_8_b:352:41:1	source_scope_licence	supports	feature:pre_
 source_scope_licence:wts_8_b:356:1:1	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_8_b:356:1:1	yes	yes
 source_scope_licence:wts_8_b:356:7:1	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_8_b:356:7:1	yes	yes
 source_scope_licence:wts_8_b:356:8:3	source_scope_licence	supports	feature:unsegmented_structural_unit:ལྔ:□□a	feature_rule_evidence	wts_8_b:356:8:3	yes	yes
+source_scope_licence:wts_8_b:357:1:3	source_scope_licence	supports	feature:unsegmented_structural_unit:རྟུལ:r□ul	feature_rule_evidence	wts_8_b:357:1:3	yes	yes
 source_scope_licence:wts_8_b:358:34:1	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_8_b:358:34:1	yes	yes
 source_scope_licence:wts_8_b:363:57:1	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_8_b:363:57:1	yes	yes
 source_scope_licence:wts_8_b:363:67:1	source_scope_licence	supports	feature:pre_coda_structural_unit:དབ:dba	feature_rule_evidence	wts_8_b:363:67:1	yes	yes

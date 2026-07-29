@@ -543,10 +543,24 @@ def validate_supersessions() -> None:
             row["volume"], row["page"], row["line"], row["token_index"],
             row["original_source"],
         )
-        override = active.get(key)
-        if not override or override["to_token"] != row["superseding_target"]:
+        direct = active.get(key)
+        bridge = active.get((
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["old_target"],
+        ))
+        direct_matches = (
+            direct is not None
+            and direct["to_token"] == row["superseding_target"]
+        )
+        bridge_matches = (
+            bridge is not None
+            and bridge["to_token"] == row["superseding_target"]
+            and bridge["reason"] == "reviewed_correction_supersession_bridge"
+        )
+        if not direct_matches and not bridge_matches:
             raise ValueError(
-                f"Supersession {key} does not have one effective target "
+                f"Supersession {key} has neither a direct correction nor "
+                f"a materialized-target bridge to "
                 f"{row['superseding_target']}"
             )
 

@@ -111,6 +111,20 @@ def validate_authorization(
             )
 
 
+def require_occurrence_identity_evidence(
+    reason: str, explicit_manual_review: bool, evidence: str | None,
+) -> None:
+    if (
+        explicit_manual_review
+        and reason == "reviewed_tibetan_exact_manual_structural_root_ocr"
+        and not evidence
+    ):
+        raise ValueError(
+            "Root-changing Latin review requires occurrence-level Tibetan "
+            "identity evidence"
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tibetan", required=True)
@@ -121,7 +135,18 @@ def main() -> None:
         "--reason", default="reviewed_tibetan_exact_ocr_signature"
     )
     parser.add_argument("--explicit-manual-review", action="store_true")
+    parser.add_argument(
+        "--occurrence-identity-evidence",
+        help=(
+            "Required for a manually reviewed Latin root-span substitution; "
+            "cite lemma order, an exact sibling, or an exact repeated identity."
+        ),
+    )
     args = parser.parse_args()
+    require_occurrence_identity_evidence(
+        args.reason, args.explicit_manual_review,
+        args.occurrence_identity_evidence,
+    )
     sources = set(args.sources.split(","))
     validate_authorization(
         args.tibetan, sources, args.target, args.explicit_manual_review
@@ -328,6 +353,50 @@ def main() -> None:
     integrity.write_tsv(
         decision_path, decision_rows, decision_fields
     )
+    if (
+        args.explicit_manual_review
+        and args.reason == "reviewed_tibetan_exact_manual_structural_root_ocr"
+    ):
+        identity_path = (
+            ROOT / "data/reviewed_tibetan_occurrence_identity_checks.tsv"
+        )
+        identity_fields = [
+            "volume", "page", "line", "token_index", "observed_tibetan",
+            "adjudicated_tibetan", "latin_source", "latin_target",
+            "root_change", "identity_status", "evidence_channel",
+            "evidence", "review_batch",
+        ]
+        identity_rows = (
+            integrity.read_tsv(identity_path) if identity_path.exists() else []
+        )
+        existing_identity = {
+            (
+                row["volume"], row["page"], row["line"], row["token_index"],
+                row["latin_source"], row["latin_target"],
+            )
+            for row in identity_rows
+        }
+        for row in selected:
+            identity_key = (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["latin_token"], args.target,
+            )
+            if identity_key in existing_identity:
+                continue
+            identity_rows.append({
+                "volume": row["volume"], "page": row["page"],
+                "line": row["line"], "token_index": row["token_index"],
+                "observed_tibetan": args.tibetan,
+                "adjudicated_tibetan": args.tibetan,
+                "latin_source": row["latin_token"],
+                "latin_target": args.target,
+                "root_change": "yes",
+                "identity_status": "retain_latin_correction",
+                "evidence_channel": "explicit_occurrence_identity_review",
+                "evidence": args.occurrence_identity_evidence,
+                "review_batch": args.evidence,
+            })
+        integrity.write_tsv(identity_path, identity_rows, identity_fields)
     print(f"recorded={len(selected)}")
 
 

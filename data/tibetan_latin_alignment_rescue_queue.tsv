@@ -30,6 +30,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཀོང	'koṅ	koṅ	3	secure_transcription_outlier	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀོང་ 'koṅ ausgehöhlt, holprig, vgl. Ikon kon; || ཀོང་པོ་ 'koṅ po Opferschale; vgl. Ikon bu. || ཀོང་མོ་ 'koṅ mo
 ཀོང	Sa	koṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཤ་ཀོང་ཅོ་ ma Sa kon co
 ཀོང	dbyins	koṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	EN བེངས་ཀོང་ང་བཤགས་ chos dbyins klon du
+ཀོང	gon	koṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀོང་མ་སྲེག་ gon ma sreg ein Vogel, Rebhuhn. || ཀོང་མོ་ gon mo ein Vogel. || ཀོང་ལེན་ gon len
 ཀོད	god	kod	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀོད་འདྲེ་ god ’dre ein ’dre-Dämon, der Schaden
 ཀོར	Daumenring	kor	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བྲེ་ཀོར་ brekor Daumenring.
 ཀོར	ba	kor	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀོར་བ་ 2907 ba Tgor kha.
@@ -987,6 +988,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 བརྡ	brida	brda	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བརྡ་ཤེས་ཆེན་པོ་ brida ses chen po eine hohe Zahl.
 བརྡ	bur	brda	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"བརྡ་ད།། bur ma Staub; —r rlog ""zu Staub ver-"
 བརྡུལ	braul	brdul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བརྡུལ་ braul
+བརྩེགས	brisegs	brtsegs	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀ་བ་དཔལ་བརྩེགས་ ka ba dpal brisegs, auch ska ba || དཀོན་བརྩེགས་ dkon brisegs || གྱེན་བརྩེགས་ gyen brisegs Bez. für Berg.
 བརྩེགས	pa	brtsegs	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དཀོན་ཅོག་བརྩེགས་པ་ dkon cog /7775695 pa \dkon
 བརྩོན	brison	brtson	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མངོན་པར་བརྩོན་པ་ mnon par brison pa An-
 བརླག	Glaube	brlag	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བོ་བརླག་པ་ blobrlugpa Glaube, Vertrauen, Zu-
@@ -1631,6 +1633,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 རྟ	han	rta	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྟ་ངང་པ་ ༩༩ han pa isabellfarbenes Pferd.
 རྟ	ma’irta	rta	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉ་མའ་ཤང་རྟ་ Al /77:7/ Sinrta Tütl ma’irta.
 རྟ	ra	rta	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྟ་སྦྲས་ ra sbas npr. ein Arhat. || རྟ་དཨམག་ ra dmag
+རྟ	ria	rta	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྟ་བན་པ་ ria bon pa Kastanie des Pferdes, ein
 རྟགས	rlogs	rtags	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྟགས rlogs erkennen, verstehen, erfassen,
 རྟགས	verstehen	rtags	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྗཾས་སུ་རྟགས་ ༡༡༧ su rtogs verstehen; + par byed
 རྟིང	yein	rtiṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྟིང་འབྲང་བ་ yein ’braṅ ba

@@ -154,7 +154,6 @@ tibetan_syllable	prefix	superscript	root_consonant	subjoined_consonants	vowel	su
 ཀྱོར			ཀ	ཡ	o	ར		ཀཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཀྱོལ			ཀ	ཡ	o	ལ		ཀཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཀྲ			ཀ	ར	a			ཀར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
-ཀྲཁ			ཀ	ར	a			ཀར	ཁ	partially_resolved	medium	Stack resolved; extra consonants remain ambiguous.
 ཀྲག			ཀ	ར	a	ག		ཀར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཀྲང			ཀ	ར	a	ང		ཀར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཀྲད			ཀ	ར	a	ད		ཀར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.

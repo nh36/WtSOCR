@@ -23,6 +23,28 @@ class RecordIntegrityFamilyTests(unittest.TestCase):
     def test_accepts_authorized_canonical_confusion(self) -> None:
         module.validate_authorization("བཞི", {"bZi"}, "bźi", False)
 
+    def test_root_change_requires_occurrence_identity_evidence(self) -> None:
+        with self.assertRaises(ValueError):
+            module.require_occurrence_identity_evidence(
+                "reviewed_tibetan_exact_manual_structural_root_ocr",
+                True,
+                None,
+            )
+
+    def test_root_change_accepts_occurrence_identity_evidence(self) -> None:
+        module.require_occurrence_identity_evidence(
+            "reviewed_tibetan_exact_manual_structural_root_ocr",
+            True,
+            "exact sibling establishes this occurrence identity",
+        )
+
+    def test_non_root_review_does_not_require_identity_evidence(self) -> None:
+        module.require_occurrence_identity_evidence(
+            "reviewed_tibetan_exact_manual_structural_vowel_ocr",
+            True,
+            None,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

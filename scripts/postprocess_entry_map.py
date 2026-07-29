@@ -4557,6 +4557,11 @@ REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES_PATH = (
     / "data"
     / "reviewed_tibetan_script_exact_overrides.tsv"
 )
+REVIEWED_TIBETAN_SCRIPT_EXACT_PHRASE_OVERRIDES_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data"
+    / "reviewed_tibetan_script_exact_phrase_overrides.tsv"
+)
 REVIEWED_TIBETAN_HEADWORD_OCR_DECISIONS_PATH = (
     Path(__file__).resolve().parents[1]
     / "data"
@@ -4774,6 +4779,62 @@ def apply_reviewed_tibetan_script_exact_overrides(
             f"source identities for {label}: {missing}"
         )
     return page_lines_to_text(pages), change_rows, len(change_rows)
+
+
+def apply_reviewed_tibetan_script_exact_phrase_overrides(
+    corrected_text: str,
+    line_infos: list[LineInfo],
+    label: str,
+    *,
+    strict: bool = False,
+    overrides_path: Path = REVIEWED_TIBETAN_SCRIPT_EXACT_PHRASE_OVERRIDES_PATH,
+) -> tuple[str, list[list[str]], int]:
+    """Apply tiny reviewed Tibetan phrase/delimiter repairs at exact lines."""
+    if not overrides_path.exists():
+        return corrected_text, [], 0
+    label_key = normalized_label_key(label)
+    with overrides_path.open(newline="", encoding="utf-8") as handle:
+        expected = [
+            row for row in csv.DictReader(handle, delimiter="\t")
+            if normalized_label_key(row["volume"]) == label_key
+        ]
+    if not expected:
+        return corrected_text, [], 0
+    pages = [page.split("\n") for page in corrected_text.split("\f")]
+    info_by_key = {(info.page, info.line): info for info in line_infos}
+    changes: list[list[str]] = []
+    missing: list[str] = []
+    for row in expected:
+        page = int(row["page"])
+        line = int(row["line"])
+        identity = f"{label}:{page}:{line}"
+        if page < 1 or page > len(pages) or line < 1 or line > len(pages[page - 1]):
+            missing.append(identity)
+            continue
+        current = pages[page - 1][line - 1]
+        source = row["observed_phrase"]
+        target = row["adjudicated_phrase"]
+        if source == target or not source or not target:
+            raise ValueError(f"Invalid exact Tibetan phrase override {identity}")
+        if target in current and source not in current:
+            continue
+        if current.count(source) != 1:
+            missing.append(identity)
+            continue
+        pages[page - 1][line - 1] = current.replace(source, target, 1)
+        info = info_by_key.get((page, line))
+        changes.append([
+            str(page), str(line), str(info.entry_id if info else 0),
+            info.zone if info else "", source, target,
+            "reviewed_tibetan_script_exact_phrase", row["reason"], "yes",
+            current,
+        ])
+    if missing and strict:
+        raise ValueError(
+            "Reviewed Tibetan phrase overrides did not match: "
+            + ", ".join(missing)
+        )
+    return page_lines_to_text(pages), changes, len(changes)
 
 
 def reviewed_tibetan_exact_match_options(
@@ -7888,6 +7949,18 @@ def run_one(
         )
         change_rows.extend(tibetan_script_rows)
         if tibetan_script_count:
+            entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(
+                corrected_text,
+                audit_by_line,
+            )
+        corrected_text, tibetan_phrase_rows, tibetan_phrase_count = (
+            apply_reviewed_tibetan_script_exact_phrase_overrides(
+                corrected_text, line_infos, label,
+                strict=strict_tibetan_script_overrides,
+            )
+        )
+        change_rows.extend(tibetan_phrase_rows)
+        if tibetan_phrase_count:
             entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(
                 corrected_text,
                 audit_by_line,

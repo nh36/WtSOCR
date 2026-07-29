@@ -495,6 +495,39 @@ class PostprocessRegressionTests(unittest.TestCase):
         finally:
             pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = original
 
+    def test_reviewed_tibetan_phrase_override_is_exact_and_fail_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "phrases.tsv"
+            path.write_text(
+                "volume\tpage\tline\tobserved_phrase\tadjudicated_phrase\t"
+                "reason\tevidence\treview_batch\tteaching_status\n"
+                "fixture\t1\t1\tཐལ།་གོང་\tཐལ་གོང་\t"
+                "reviewed_exact_tibetan_headword_ocr\ttest\tfixture\t"
+                "tibetan_ocr_corrected_observation\n",
+                encoding="utf-8",
+            )
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ།་གོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+            )
+            self.assertEqual(corrected, "ཐལ་གོང་ thal goṅ")
+            self.assertEqual(count, 1)
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ་གོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+            )
+            self.assertEqual(corrected, "ཐལ་གོང་ thal goṅ")
+            self.assertEqual(count, 0)
+            with self.assertRaises(ValueError):
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ།་ཀོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+
     def test_reviewed_tibetan_script_registry_validation(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
@@ -3158,9 +3191,10 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertIn("ཀྲོང་ངེ་ kroṅ ne", corrected)
         self.assertIn("ཀྲོང་ཀྲོང་ kroṅ kroṅ.", corrected)
-        self.assertIn("ཀྲོང་སྤྲེའུ་ kroṅ", corrected)
+        self.assertIn("གྲོང་སྤྲེའུ་ groṅ", corrected)
         self.assertIn("unreviewed kron control", corrected)
-        self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 4)
+        self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 3)
+        self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 1)
 
     def test_one_anchor_rting_pilot_preserves_marker_attached_echo(self) -> None:
         lines = {

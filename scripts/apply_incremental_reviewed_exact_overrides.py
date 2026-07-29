@@ -60,6 +60,17 @@ def main() -> None:
             _entries, line_infos, _rows, _validators, _summary, _pages = (
                 postprocess.parse_entries(corrected, {})
             )
+        corrected, tibetan_phrase_rows, tibetan_phrase_applied = (
+            postprocess.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                corrected, line_infos, volume, strict=True
+            )
+        )
+        tibetan_script_rows += tibetan_phrase_rows
+        tibetan_script_applied += tibetan_phrase_applied
+        if tibetan_phrase_applied:
+            _entries, line_infos, _rows, _validators, _summary, _pages = (
+                postprocess.parse_entries(corrected, {})
+            )
         corrected, change_rows, applied = (
             postprocess.apply_reviewed_tibetan_exact_normalizations(
                 corrected, line_infos, volume
