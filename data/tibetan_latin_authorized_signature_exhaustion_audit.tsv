@@ -1,11 +1,12 @@
 signature	remaining_outlier_families	remaining_outlier_rows	authoritative_target_rows	clean_domain_safe_rows	ready_uncorrected_rows	disposition	examples
-INS r	27	7	7	5	0	authorized_signature_clean_outliers_exhausted	ཀར:ka→kar;ཁྱེར:Bote→khyer;ཁྲབ:thab→khrab;གྲི:gi→gri;གྲོ:sgo→gro;ཏྲ:ta→tra
+INS r	40	7	7	5	0	authorized_signature_clean_outliers_exhausted	ཀར:ka→kar;ཁྱེར:Bote→khyer;ཁྲབ:thab→khrab;གྲི:gi→gri;གྲོ:sgo→gro;ཏྲ:ta→tra
 REPLACE ni→ṅ	48	9	9	2	0	authorized_signature_clean_outliers_exhausted	ཀང:kani→kaṅ;གཙང:gtsani→gtsaṅ;གླང:glani→glaṅ;བཟང:bzani→bzaṅ;འཐུང:'thuni→thuṅ;འཕྱང:'phyani→phyaṅ
 SUB I→l	9	0	0	0	0	authorized_signature_clean_outliers_exhausted	ལས:Ins→las;ལུ:In→lu;ལུ:Iu→lu;ལུགས:Iugs→lugs;ལྕགས:Icags→lcags;ལྗང:Ijan→ldaṅ
 SUB Z→ź	68	1	1	1	0	authorized_signature_clean_outliers_exhausted	གཞག:gZag→gźag;གཞི:gZi→gźi;གཞོན:gZon→gźon;བཞག:bZag→bźag;བཞི:bZin→bźi;ཞ:Za→źa
-SUB b→h	63	19	19	8	0	authorized_signature_clean_outliers_exhausted	ཁམས:kbams→khams;ཁས:Rkbas→khas;ཁུག:Tbar→khug;ཁེ:kbe→khe;ཁོང:kbon→khoṅ;ཁོར:kbom→khor
+SUB b→h	86	19	19	8	0	authorized_signature_clean_outliers_exhausted	ཁམས:kbams→khams;ཁས:Rkbas→khas;ཁུག:Tbar→khug;ཁེ:kbe→khe;ཁོང:kbon→khoṅ;ཁོར:kbom→khor
 SUB h→ṅ	35	1	1	1	0	authorized_signature_clean_outliers_exhausted	དང:buddh→daṅ;ཕྱིང:pyih→phyiṅ;ཚང:ishah→tshaṅ;སྟེང:Dach→steṅ;སྲོང:spoh→sroṅ;སྟེང:steh→steṅ
-SUB n→ṅ	1041	67	67	55	0	authorized_signature_clean_outliers_exhausted	ཀང:kan→kaṅ;ཀོང:gon→koṅ;ཀྱང:Ryan→kyaṅ;ཀྱང:byan→kyaṅ;ཀྱང:byun→kyaṅ;ཀྱང:khyun→kyaṅ
+SUB n→u	30	8	8	5	0	authorized_signature_clean_outliers_exhausted	ཁུག:'khng→khug;གདུགས:Sonne→gdugs;ཆུག:’chng→chug;དུག:dns→dug;དུས:dns→dus;ཕུད:'phnd→phud
+SUB n→ṅ	1040	66	66	54	0	authorized_signature_clean_outliers_exhausted	ཀང:kan→kaṅ;ཀོང:gon→koṅ;ཀྱང:Ryan→kyaṅ;ཀྱང:byan→kyaṅ;ཀྱང:byun→kyaṅ;ཀྱང:khyun→kyaṅ
 SUB z→ź	18	0	0	0	0	authorized_signature_clean_outliers_exhausted	ཞིག:zig→źig;བཞི:bzi→bźi;བཞི:bzi→bźi;གཞུང:gzun→gźuṅ;བཞི:bzi→bźi;བཞི:bzi→bźi
 SUB ñ→ṅ	0	0	0	0	0	authorized_signature_clean_outliers_exhausted	none
 SUB ń→ṅ	2	0	0	0	0	authorized_signature_clean_outliers_exhausted	གཞུང:gźuń→gźuṅ;བྲང:brań→braṅ

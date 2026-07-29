@@ -9036,7 +9036,7 @@ samen Quelle der vier Flüsse Tibets" (gZer
 བོད་
 འབྲངས་ bod kyi 'bans
 ༥
-དྲ་ཀི་འབངས་ bod kyi 'baṅs \bod 'bans.
+དྲ་ཀྱི་འབངས་ bod kyi 'baṅs \bod 'bans.
 ༨
 2
 'Sy bodkyi mi \bod mi.
@@ -11209,7 +11209,7 @@ Hahin.
 Lex. la las chu bya dkar po ske rin po dan 'ga'
 Zig gis khyim bya "einige erklären, es sei 011]
 weißer Wasservogel mit langem Hals, ande-
-re, cs sei ein Halin" (brDa); bya'i bye bragབྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
+re, cs sei ein Halin" (brDa); bya'i bye bragབྱ་གག་སྐྱོང་བ་ bya gag skyoṅ ba
 "ein Vogel" (Dagy); bya de po ni khyim bya'i
 min yin te / yul skad 'garbya bo dan / — dan /
 bya pho dan / gzer mo yaṅ zer ro "bya de po
@@ -12587,7 +12587,7 @@ Lex. mda' mkhan (Dagy).བྱག་མཁན་ ?byag mkhan
 བྱག་མཁན་ ?byag mkhan Räuber, vgl. Tjag.
 Lex. 'phrog 'joms byed mkhan "jmd., der
 raubt und plündert" (brDa).
-བག་མཁན་ "byag mkhan Kehrer, vgl. tphyag
+བྱག་མཁན་ "byag mkhan Kehrer, vgl. tphyag
 བྱག་མཁན dar mkhan.
 Lex. rdul phyags mkhan "jmd., der Staub
 wegkehrt" (brDa).
@@ -12772,7 +12772,7 @@ Region im Norden Tibets.
 yulben 0/7/5 27 / — dan beu gsum "wenn die
 Regionen 12 sind, sind es mit Byani-ka snam-
 brgyad zusammen 13" (PT1286 24).
-བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+བྲང་རྐྱང་ byaṅ rkyaṅ Kiang, ein Wildesel,
 ༤ ༦༤
 Equus kiang.
 Lex. byan gi ri dwags rkyani "ein wildes Tier
@@ -29008,7 +29008,7 @@ rechnet sind es sechs. Wenn man die männ-
 lichen Organe und weiblichen Organe, usw.
 hinzurechnet, sind es 22" (brDa).
 u
-དབང་པོ་རྟལ་ dbaṅ po rtul Tdbani rtul.
+དབང་པོ་རྟུལ་ dbaṅ po rtul Tdbani rtul.
 དབང་པོ་ཐུལ་པ་ dbaṅ po thul ba Bez. für einen
 Weisen.
 chos spyod — ni (metr.) "jemand, der den

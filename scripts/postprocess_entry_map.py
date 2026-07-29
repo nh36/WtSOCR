@@ -4552,6 +4552,136 @@ REVIEWED_TIBETAN_EXACT_NORMALIZATIONS = load_reviewed_tibetan_exact_normalizatio
     REVIEWED_TIBETAN_EXACT_OVERRIDES_PATH
 )
 
+REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data"
+    / "reviewed_tibetan_script_exact_overrides.tsv"
+)
+TIBETAN_SYLLABLE_TOKEN_RE = re.compile(r"[\u0F40-\u0FBC]+")
+
+
+def load_reviewed_tibetan_script_exact_overrides(
+    path: Path,
+) -> dict[tuple[str, int, int, int, str], tuple[str, str]]:
+    if not path.exists():
+        return {}
+    required = {
+        "volume", "page", "line", "token_index", "observed_tibetan",
+        "adjudicated_tibetan", "reason",
+    }
+    rows: dict[tuple[str, int, int, int, str], tuple[str, str]] = {}
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        missing = required - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(
+                f"{path} is missing reviewed Tibetan-script exact override columns: "
+                + ", ".join(sorted(missing))
+            )
+        for row in reader:
+            if not row or not row.get("volume"):
+                continue
+            key = (
+                normalized_label_key(row["volume"]),
+                int(row["page"]),
+                int(row["line"]),
+                int(row["token_index"]),
+                row["observed_tibetan"],
+            )
+            value = (row["adjudicated_tibetan"], row["reason"])
+            if key in rows and rows[key] != value:
+                raise ValueError(
+                    f"Conflicting reviewed Tibetan-script exact override for {key}"
+                )
+            rows[key] = value
+    return rows
+
+
+REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = (
+    load_reviewed_tibetan_script_exact_overrides(
+        REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES_PATH
+    )
+)
+
+
+def apply_reviewed_tibetan_script_exact_overrides(
+    corrected_text: str,
+    line_infos: list[LineInfo],
+    label: str,
+    *,
+    strict: bool = False,
+) -> tuple[str, list[list[str]], int]:
+    """Apply reviewed Tibetan-script repairs by exact page/line/token/source."""
+    label_key = normalized_label_key(label)
+    expected = {
+        key: value
+        for key, value in REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES.items()
+        if key[0] == label_key
+    }
+    if not expected:
+        return corrected_text, [], 0
+
+    pages = [page.split("\n") for page in corrected_text.split("\f")]
+    info_by_key = {(info.page, info.line): info for info in line_infos}
+    change_rows: list[list[str]] = []
+    applied_keys: set[tuple[str, int, int, int, str]] = set()
+    for page_idx, page in enumerate(pages, start=1):
+        for line_idx, line in enumerate(page, start=1):
+            replacements: list[tuple[int, int, str, str, str]] = []
+            matches = list(TIBETAN_SYLLABLE_TOKEN_RE.finditer(line))
+            line_expected = [
+                (key, value) for key, value in expected.items()
+                if key[1] == page_idx and key[2] == line_idx
+            ]
+            for key, (adjudicated, reason) in line_expected:
+                token_index, observed = key[3], key[4]
+                match = (
+                    matches[token_index - 1]
+                    if 0 < token_index <= len(matches)
+                    and matches[token_index - 1].group(0) == observed
+                    else None
+                )
+                if match is None:
+                    source_matches = [m for m in matches if m.group(0) == observed]
+                    if len(source_matches) == 1:
+                        match = source_matches[0]
+                if match is None:
+                    target_matches = [m for m in matches if m.group(0) == adjudicated]
+                    if len(target_matches) == 1:
+                        # Idempotent incremental rebuild: this exact line already
+                        # contains the reviewed target and no source occurrence.
+                        applied_keys.add(key)
+                        continue
+                    continue
+                replacements.append(
+                    (match.start(), match.end(), observed, adjudicated, reason)
+                )
+                applied_keys.add(key)
+            if not replacements:
+                continue
+            original_line = line
+            for start, end, observed, adjudicated, reason in sorted(
+                replacements, key=lambda row: row[0], reverse=True
+            ):
+                line = line[:start] + adjudicated + line[end:]
+                info = info_by_key.get((page_idx, line_idx))
+                change_rows.append([
+                    str(page_idx), str(line_idx),
+                    str(info.entry_id if info else 0),
+                    info.zone if info else "",
+                    observed, adjudicated,
+                    "reviewed_tibetan_script_exact", reason, "yes", original_line,
+                ])
+            pages[page_idx - 1][line_idx - 1] = line
+
+    missing = sorted(set(expected) - applied_keys)
+    if missing and strict:
+        raise ValueError(
+            "Reviewed Tibetan-script exact overrides did not match their expected "
+            f"source identities for {label}: {missing}"
+        )
+    return page_lines_to_text(pages), change_rows, len(change_rows)
+
 
 def reviewed_tibetan_exact_match_options(
     line: str, token: str, start: int, end: int
@@ -7653,6 +7783,19 @@ def run_one(
             discovered=discovered,
         )
         change_rows = structural_change_rows + google_vision_change_rows + change_rows
+        corrected_text, tibetan_script_rows, tibetan_script_count = (
+            apply_reviewed_tibetan_script_exact_overrides(
+                corrected_text=corrected_text,
+                line_infos=line_infos,
+                label=label,
+            )
+        )
+        change_rows.extend(tibetan_script_rows)
+        if tibetan_script_count:
+            entries, line_infos, line_rows, validator_rows, summary, page_lines = parse_entries(
+                corrected_text,
+                audit_by_line,
+            )
         corrected_text, reviewed_tibetan_change_rows, reviewed_tibetan_change_count = (
             apply_reviewed_tibetan_exact_normalizations(
                 corrected_text=corrected_text,

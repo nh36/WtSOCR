@@ -6492,3 +6492,17 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1024	35	5485	headword_line	dzi	rdzi	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
 1086	68	5847	headword_line	phan	phran	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
 1098	11	5931	headword_line	pho	phro	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."
+235	31	1302	example_tibetan_latin	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	"der einen geilen und bumsgierigen Vajra hat- རྡ་རྔ་ཁྱུང་རྒྱལ rdo པའ ""9 rgal !gnod sbyin"
+238	28	1333	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རྗེ་སྙིང་པོ་ rdo rje sāiṅ po npr. cin Bodhisattva,
+243	44	1388	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རྗེའི་སྐྱིལ་ཀྲུང་ rdo rje'i skyil kruṅ
+247	32	1433	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རངས་ rdo riṅs auch rdo rin Steinstele, Stein-
+34	51	141	headword_line	mjng	mjug	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	གདོང་མཇུག་ gdoṅ mjng die beiden Mondkno-
+399	55	2051	headword_line	chnd	chud	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ནང་བྱན་ཆུད་ naṅ byan chnd auch naṅ byan
+702	51	3478	headword_line	mkhynd	mkhyud	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	པུས་མཁྱུད་ pus mkhynd eine Schnur oder ein
+878	38	4543	headword_line	drng	drug	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drng
+904	38	4702	headword_line	phn	phu	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ཕུ་མདུད་ phn mdud Knoten zum Schutz ge-
+1024	35	5485	headword_line	phyngs	phyugs	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	"ཕྱུགས་རྫི་ phyngs""rdzi Viehhire; = mo Vichhir-"
+476	57	2399	headword_line	གི	གྱི	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	རྭ་གི་དབང་ཕྲག་ nor gyi dbaṅ phyug Beiname
+599	39	2966	headword_line	ཕོད	ཕྱོད	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	མ།་ཕོད་་ nam phyod auch rnam phyog eine ho-
+1041	6	5564	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕྱོགས་སྐོང་ phyogs skyoṅ Hūter der Weltgegen-
+1049	3	5621	headword_line	ཕོལ	ཕྱོལ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕོལ་ཐོའ། phyol phyol onom., vgl. Taal. 62,3); spyi ru mnam pa bźi yin te... dpon gsas

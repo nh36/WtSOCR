@@ -9155,7 +9155,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 119	2	594	tibetan_only	བོད་		none	0	0	0	0	བོད་
 119	3	595	headword_line	འབྲངས་	kyi	medium	1	0	0	0	འབྲངས་ bod kyi 'bans
 119	4	595	tibetan_only	༥		none	0	0	0	0	༥
-119	5	596	headword_line	དྲ་ཀི་འབངས་	kyi baṅs	high	2	0	0	0	དྲ་ཀི་འབངས་ bod kyi 'baṅs \bod 'bans.
+119	5	596	headword_line	དྲ་ཀི་འབངས་	kyi baṅs	high	2	0	0	0	དྲ་ཀྱི་འབངས་ bod kyi 'baṅs \bod 'bans.
 119	6	596	tibetan_only	༨		none	0	0	0	0	༨
 119	7	596	other			none	0	0	0	0	2
 119	8	596	german_prose			none	0	1	0	0	'Sy bodkyi mi \bod mi.
@@ -11353,7 +11353,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 143	77	688	german_prose_with_translit			none	2	2	0	0	"Zig gis khyim bya ""einige erklären, es sei 011]"
 143	78	688	german_prose_with_translit			none	1	4	0	0	weißer Wasservogel mit langem Hals, ande-
 143	79	688	german_prose_with_translit			none	2	2	0	0	"re, cs sei ein Halin"" (brDa); bya'i bye brag"
-144	1	689	headword_line	བྱ་གག་སྐོང་བ་	bya	medium	3	0	0	0	བྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
+144	1	689	headword_line	བྱ་གག་སྐོང་བ་	bya	medium	3	0	0	0	བྱ་གག་སྐྱོང་བ་ bya gag skyoṅ ba
 144	2	689	german_prose_with_translit			none	6	3	0	0	"""ein Vogel"" (Dagy); bya de po ni khyim bya'i"
 144	3	689	latin_other			none	5	0	0	0	min yin te / yul skad 'garbya bo dan / — dan /
 144	4	689	latin_other			none	7	0	0	0	"bya pho dan / gzer mo yaṅ zer ro ""bya de po"
@@ -12748,7 +12748,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 161	2	827	headword_line	བྱག་མཁན་	byag mkhan	high	2	3	0	0	བྱག་མཁན་ ?byag mkhan Räuber, vgl. Tjag.
 161	3	827	german_prose_with_translit			none	2	2	0	0	"Lex. 'phrog 'joms byed mkhan ""jmd., der"
 161	4	827	german_prose_with_translit			none	1	2	0	0	"raubt und plündert"" (brDa)."
-161	5	828	headword_line	བག་མཁན་	byag mkhan	high	3	2	0	0	"བག་མཁན་ ""byag mkhan Kehrer, vgl. tphyag"
+161	5	828	headword_line	བག་མཁན་	byag mkhan	high	3	2	0	0	བྱག་མཁན་ "byag mkhan Kehrer, vgl. tphyag
 161	6	829	headword_line	བྱག་མཁན	mkhan	high	1	0	0	0	བྱག་མཁན dar mkhan.
 161	7	829	german_prose_with_translit			none	3	3	0	0	"Lex. rdul phyags mkhan ""jmd., der Staub"
 161	8	829	latin_other			none	1	0	0	0	"wegkehrt"" (brDa)."
@@ -12935,7 +12935,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 163	4	835	german_prose_with_translit			none	1	1	0	0	"yulben 0/7/5 27 / — dan beu gsum ""wenn die"
 163	5	835	german_prose			none	0	5	0	0	Regionen 12 sind, sind es mit Byani-ka snam-
 163	6	835	latin_other			none	1	0	0	0	"brgyad zusammen 13"" (PT1286 24)."
-163	7	836	headword_line	བྲང་རྐང་	byaṅ rkyaṅ Kiang	high	3	2	0	0	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+163	7	836	headword_line	བྲང་རྐང་	byaṅ rkyaṅ Kiang	high	3	2	0	0	བྲང་རྐྱང་ byaṅ rkyaṅ Kiang, ein Wildesel,
 163	8	836	tibetan_only	༤ ༦༤		none	0	0	0	0	༤ ༦༤
 163	9	836	german_prose_with_translit			none	1	1	0	0	Equus kiang.
 163	10	836	german_prose_with_translit			none	2	3	0	0	"Lex. byan gi ri dwags rkyani ""ein wildes Tier"
@@ -29365,7 +29365,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 357	11	1866	german_prose			none	0	5	0	0	lichen Organe und weiblichen Organe, usw.
 357	12	1866	german_prose_with_translit			none	1	1	0	0	"hinzurechnet, sind es 22"" (brDa)."
 357	13	1866	other			none	0	0	0	0	u
-357	14	1867	headword_line	དབང་པོ་རྟལ་	dbaṅ po rtul	high	4	1	0	0	དབང་པོ་རྟལ་ dbaṅ po rtul Tdbani rtul.
+357	14	1867	headword_line	དབང་པོ་རྟལ་	dbaṅ po rtul	high	4	1	0	0	དབང་པོ་རྟུལ་ dbaṅ po rtul Tdbani rtul.
 357	15	1868	headword_line	དབང་པོ་ཐུལ་པ་	dbaṅ po thul ba	high	4	3	0	0	དབང་པོ་ཐུལ་པ་ dbaṅ po thul ba Bez. für einen
 357	16	1868	german_prose			none	0	1	0	0	Weisen.
 357	17	1868	german_prose_with_translit			none	2	2	0	0	"chos spyod — ni (metr.) ""jemand, der den"

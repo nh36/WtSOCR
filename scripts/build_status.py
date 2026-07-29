@@ -1192,6 +1192,29 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "Forbidden broad rule. Current initial-I cleanup is explicit-token, lexicon/context, or reviewed exact only.",
         ),
         row(
+            "reviewed_exact_tibetan_headword_ocr",
+            "tibetan_script_exact",
+            "observed Tibetan token",
+            "adjudicated Tibetan token",
+            "exact page-line-token",
+            "applied",
+            "wts_1_34;wts_35_51;wts_8_b;wts_9_m",
+            "reviewed_exact_tibetan_headword_vowel_ocr;reviewed_exact_tibetan_headword_subjoined_ocr",
+            "data/reviewed_tibetan_script_exact_overrides.tsv;scripts/postprocess_entry_map.py",
+            "data/reviewed_tibetan_headword_ocr_decisions.tsv",
+            (
+                stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_vowel_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_subjoined_ocr", 0
+                )
+            ),
+            0,
+            "རྡ/rda protected legitimate control",
+            "Exact missing-vowel-sign or subjoined-y repairs only; corrected observations remain non-independent Latin teaching evidence.",
+        ),
+        row(
             "validator_only_suggestions",
             "validator",
             "validator/canonicalisation suggestions",

@@ -457,6 +457,16 @@ def classify_learning(
     return "not_signature_learning_evidence"
 
 
+SIGNATURE_POSITIVE_LEARNING_CLASSES = {
+    "atomic_reviewed_edit",
+    "feature_specific_review",
+}
+
+
+def learning_can_support_signature(learning_class: str) -> bool:
+    return learning_class in SIGNATURE_POSITIVE_LEARNING_CLASSES
+
+
 def reviewed_evidence() -> tuple[
     list[dict[str, str]], dict[str, list[dict[str, str]]], Counter[str]
 ]:
@@ -516,8 +526,9 @@ def reviewed_evidence() -> tuple[
             "history_status": "superseded" if is_superseded else "active",
         }
         output.append(evidence_row)
-        for op in usable:
-            positive[op["signature"]].append(evidence_row)
+        if learning_can_support_signature(learning):
+            for op in usable:
+                positive[op["signature"]].append(evidence_row)
     for row in supersessions:
         old_operations = canonical.edit_operations(
             row["original_source"], row["old_target"]

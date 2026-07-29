@@ -299,7 +299,7 @@ class FeatureCompositionTests(unittest.TestCase):
             ROOT / "data/tibetan_transcription_correction_authority.tsv"
         ).open(encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        self.assertEqual(len(rows), 54)
+        self.assertEqual(len(rows), 55)
         self.assertTrue(all(
             row["exact_correction_status"] == "retained_reviewed_exact"
             for row in rows
@@ -315,20 +315,14 @@ class FeatureCompositionTests(unittest.TestCase):
             "decision_time_authority_snapshot_unavailable",
         )
 
-    def test_tibetan_vowel_conflicts_do_not_teach_latin_rules(self):
+    def test_resolved_tibetan_vowel_conflicts_leave_no_latin_conflict(self):
         with (
             ROOT / "data/tibetan_feature_composition_conflicts.tsv"
         ).open(encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        by_syllable = {row["tibetan_syllable"]: row for row in rows}
-        for syllable in ("བདན", "རྟལ"):
-            self.assertEqual(
-                by_syllable[syllable]["tibetan_side_disposition"],
-                "probable_tibetan_script_ocr_damage",
-            )
-        self.assertEqual(
-            by_syllable["རྡ"]["tibetan_side_disposition"], "unresolved"
-        )
+        self.assertFalse({
+            "བདན", "རྟལ", "རྡ"
+        } & {row["tibetan_syllable"] for row in rows})
 
 
 if __name__ == "__main__":

@@ -3050,3 +3050,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 375	17	2032	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_ocr_signature	1	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
 434	12	2389	headword_line	zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	འབའ་ཞིག་ 'ba' zig allein, ausschließlich, einzig,
 131	42	655	headword_line	goṅ	groṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	བོལ་གྲོང་ bol goṅ oberer Teil des Fußes, Fuß-
+357	14	1874	headword_line	རྟལ	རྟུལ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	དབང་པོ་རྟལ་ dbaṅ po rtul Tdbani rtul.
+119	5	601	headword_line	ཀི	ཀྱི	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	དྲ་ཀི་འབངས་ bod kyi 'baṅs \bod 'bans.
+144	1	694	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
+161	5	833	headword_line	བག	བྱག	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	"བག་མཁན་ ""byag mkhan Kehrer, vgl. tphyag"
+163	7	841	headword_line	རྐང	རྐྱང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,

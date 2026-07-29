@@ -311,6 +311,16 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         and "explicit_user" in r.get("evidence", "")
     }
     historical = historical_identities()
+    tibetan_script_corrections_path = (
+        ROOT / "data/reviewed_tibetan_script_exact_overrides.tsv"
+    )
+    tibetan_script_corrections = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["adjudicated_tibetan"],
+        )
+        for row in integrity.read_tsv(tibetan_script_corrections_path)
+    } if tibetan_script_corrections_path.exists() else set()
     feature_compositions = {
         row["tibetan_syllable"]: row
         for row in integrity.read_tsv(FEATURE_COMPOSITION_PATH)
@@ -342,6 +352,13 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
                 r, historical, historical_ledger_sets, override, superseded,
                 superseding_full_targets,
             )
+            if (
+                r["volume"], r["page"], r["line"], r["token_index"],
+                r["tibetan_syllable"],
+            ) in tibetan_script_corrections:
+                provenance_class = "tibetan_ocr_corrected_observation"
+                teaching_status = "supporting_but_derived"
+                evidence_scope = "tibetan_script_exact_review"
             if not domain_is_teaching_safe(d["domain_context"]):
                 teaching_status = "foreign_domain"
             if d["alignment_confidence"] not in {

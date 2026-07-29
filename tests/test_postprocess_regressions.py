@@ -456,6 +456,29 @@ class PostprocessRegressionTests(unittest.TestCase):
             ("dṅos", "reviewed_tibetan_exact_dngos"),
         )
 
+    def test_reviewed_tibetan_script_override_is_exact_and_fail_closed(self) -> None:
+        original = pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES
+        pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = {
+            ("fixture", 1, 1, 2, "བདན"): (
+                "བདུན", "reviewed_exact_tibetan_headword_vowel_ocr"
+            )
+        }
+        try:
+            corrected, changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདན་ dguṅ bdun", [], "fixture"
+                )
+            )
+            self.assertEqual(corrected, "དགུང་བདུན་ dguṅ bdun")
+            self.assertEqual(count, 1)
+            self.assertEqual(changes[0][4:6], ["བདན", "བདུན"])
+            with self.assertRaises(ValueError):
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདག་ dguṅ bdag", [], "fixture", strict=True
+                )
+        finally:
+            pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = original
+
     def test_reviewed_wts_8b_final_ng_exact_batch_normalization(self) -> None:
         reviewed_lines = {
             (69, 16): 'die sañ gsen mit dem Wollschopf [usw.]"',

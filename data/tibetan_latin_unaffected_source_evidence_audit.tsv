@@ -329,6 +329,7 @@ wts_1_34	109	100	1	ཀྲོང	kron	kroṅ	feature_error_source	suffix_coda	rol
 wts_1_34	110	77	2	ཁུང	khun	khuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_84A74DBDD722	none
 wts_1_34	111	163	2	ཁང	khan	khaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_01025FAF5D30	none
 wts_1_34	112	31	2	གླང	glan	glaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;subjoined_consonants;vowel	none	CORPUS_A6063072E7A9;CORPUS_ED2342564FDA;CORPUS_01025FAF5D30	none
+wts_1_34	112	40	1	ཀླུ	kln	klu	feature_error_source	vowel	role_specific_unaffected_evidence	root_consonant;subjoined_consonants	none	RESIDUAL_16C7C1641787;CORPUS_ED2342564FDA	none
 wts_1_34	112	44	6		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	112	58	6		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	112	58	7		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -935,7 +936,7 @@ wts_1_34	271	163	2		Itar	ltar	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	272	9	2		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	272	13	2		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	274	45	2	རང	ran	raṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_5BE28982C775;CORPUS_01025FAF5D30	none
-wts_1_34	275	104	1	ཁྲོག	khog	khrog	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_1_34	275	104	1	ཁྲོག	khog	khrog	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel;suffix_coda	none	RESIDUAL_B4DD5F8EE553;CORPUS_16D4A9AA0695;CORPUS_9A673562CD7A	none
 wts_1_34	275	173	1	ཁོང	khon	khoṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_16D4A9AA0695	none
 wts_1_34	275	173	3		khon	khoṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	276	1	1	ཁོང	khon	khoṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_16D4A9AA0695	none
@@ -989,6 +990,7 @@ wts_1_34	286	21	2	སྐྱོང	skyon	skyoṅ	feature_error_source	suffix_coda
 wts_1_34	286	103	3	རྐང	rkan	rkaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	superscript;root_consonant;vowel	none	CORPUS_987FBEB04DC6;RESIDUAL_16C7C1641787;CORPUS_01025FAF5D30	none
 wts_1_34	287	57	4		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	287	80	4		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
+wts_1_34	287	97	1	ཁྱུང	khyun	khyuṅ	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span	root_consonant;subjoined_consonants;vowel		RESIDUAL_B4DD5F8EE553;CORPUS_E34B3E203AE6;CORPUS_84A74DBDD722	source_span_mismatch:suffix_coda:ང
 wts_1_34	287	97	2	སེང	sen	seṅ	feature_error_source	suffix_coda	pre_coda_structural_unit_evidence	root_consonant	se	RESIDUAL_014281225BA9	mapping_unavailable:vowel:e
 wts_1_34	287	130	2	གང	gan	gaṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				ambiguous_root
 wts_1_34	288	33	3		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -1316,7 +1318,7 @@ wts_1_34	374	64	6		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegme
 wts_1_34	374	84	6		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	378	62	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	378	83	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_1_34	378	96	1	གྲི	gi	gri	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_1_34	378	96	1	གྲི	gi	gri	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_A6063072E7A9;CORPUS_63EB474B7A3F	none
 wts_1_34	379	35	2	རིང	rin	riṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_5BE28982C775;CORPUS_63EB474B7A3F	none
 wts_1_34	380	1	2	ལིང	lin	liṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_10051C382A6A;CORPUS_63EB474B7A3F	none
 wts_1_34	380	7	2	ལིང	lin	liṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_10051C382A6A;CORPUS_63EB474B7A3F	none
@@ -1439,7 +1441,7 @@ wts_1_34	396	200	1	གླིང	glin	gliṅ	feature_error_source	suffix_coda	rol
 wts_1_34	397	112	2	འགོང	gon	goṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	CORPUS_91DCE7C115D4;CORPUS_A6063072E7A9;CORPUS_16D4A9AA0695	none
 wts_1_34	398	35	2	ཤིང	sin	siṅ	feature_error_source	suffix_coda	pre_coda_structural_unit_evidence		si		mapping_unavailable:root_consonant:ཤ
 wts_1_34	399	55	2	ཁུང	khun	khuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_84A74DBDD722	none
-wts_1_34	399	56	3	སྲི	si	sri	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_1_34	399	56	3	སྲི	si	sri	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_014281225BA9;CORPUS_63EB474B7A3F	none
 wts_1_34	399	107	2	ཁུང	khun	khuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_B4DD5F8EE553;CORPUS_84A74DBDD722	none
 wts_1_34	400	5	3	ཆུང	chun	chuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_59F309DD5F15;CORPUS_84A74DBDD722	none
 wts_1_34	400	10	3	ཆུང	chun	chuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_59F309DD5F15;CORPUS_84A74DBDD722	none
@@ -1600,7 +1602,7 @@ wts_1_34	462	163	4		Itar	ltar	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	462	179	2		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	463	78	2		Itas	ltas	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	463	187	3	འཐུང	thuh	thuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	CORPUS_91DCE7C115D4;RESIDUAL_9DD158EE4F10;CORPUS_84A74DBDD722	none
-wts_1_34	463	200	3	སྦྲས	sbas	sbras	feature_error_source	root_consonant	masked_unsegmented_unaffected_span	superscript		CORPUS_86605D8DD3C9	corrected_span_not_isolated:root_consonant
+wts_1_34	463	200	3	སྦྲས	sbas	sbras	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	superscript;root_consonant;vowel;suffix_coda	none	CORPUS_86605D8DD3C9;CORPUS_B453155DE050;CORPUS_01025FAF5D30;CORPUS_735B62E02527	none
 wts_1_34	464	73	2	ཞིག	Zig	źig	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span				source_span_mismatch:root_consonant:ཞ
 wts_1_34	464	168	2	ཤིང	Sin	Siṅ	feature_error_source	suffix_coda	pre_coda_structural_unit_evidence		Si		mapping_unavailable:root_consonant:ཤ
 wts_1_34	466	13	1	རྒྱང	rgyan	rgyaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	superscript;root_consonant;subjoined_consonants;vowel	none	CORPUS_987FBEB04DC6;CORPUS_A6063072E7A9;CORPUS_E34B3E203AE6;CORPUS_01025FAF5D30	none
@@ -3137,7 +3139,7 @@ wts_1_34	991	128	5		Itas	ltas	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	991	149	2		Itas	ltas	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	992	1	4	རིང	rin	riṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_5BE28982C775;CORPUS_63EB474B7A3F	none
 wts_1_34	992	7	4	རིང	rin	riṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_5BE28982C775;CORPUS_63EB474B7A3F	none
-wts_1_34	992	133	3	བྲབ	bab	brab	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_1_34	992	133	3	བྲབ	bab	brab	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel;suffix_coda	none	CORPUS_B453155DE050;CORPUS_01025FAF5D30;CORPUS_0C6592BB5CEF	none
 wts_1_34	992	142	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	992	142	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	992	187	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -3294,9 +3296,11 @@ wts_1_34	1058	32	3		Itar	ltar	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	1058	32	9		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1058	40	8		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1058	47	8		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
+wts_1_34	1058	201	1	མཐུ	mthn	mthu	feature_error_source	vowel	role_specific_unaffected_evidence	prefix;root_consonant	none	CORPUS_BC919FFB8C2C;RESIDUAL_9DD158EE4F10	none
 wts_1_34	1059	9	2	དབང	dban	dbaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	RESIDUAL_F3DC70A190E0;CORPUS_B453155DE050;CORPUS_01025FAF5D30	none
 wts_1_34	1059	32	1		Ipags	lpags	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1059	47	1		Ipags	lpags	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
+wts_1_34	1059	53	1	མཐུག	mthng	mthug	feature_error_source	vowel	role_specific_unaffected_evidence	prefix;root_consonant;suffix_coda	none	CORPUS_BC919FFB8C2C;RESIDUAL_9DD158EE4F10;CORPUS_9A673562CD7A	none
 wts_1_34	1059	111	4		Ispyi	↓ spyi	marker_only	marker	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1060	165	3		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1060	216	3	གནང	gnan	gnaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	CORPUS_4E31F0FBB76E;CORPUS_7F051B17DE73;CORPUS_01025FAF5D30	none
@@ -3470,7 +3474,7 @@ wts_1_34	1120	67	5		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	1120	86	5		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1123	25	2		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1123	28	2		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_1_34	1127	13	3	གྲི	gi	gri	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_1_34	1127	13	3	གྲི	gi	gri	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_A6063072E7A9;CORPUS_63EB474B7A3F	none
 wts_1_34	1127	94	2	ཤིང	Sin	Siṅ	feature_error_source	suffix_coda	pre_coda_structural_unit_evidence		Si		mapping_unavailable:root_consonant:ཤ
 wts_1_34	1130	45	8		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1131	34	4		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -3487,6 +3491,7 @@ wts_1_34	1135	75	7		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegm
 wts_1_34	1136	60	2	ལིང	lin	liṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_10051C382A6A;CORPUS_63EB474B7A3F	none
 wts_1_34	1136	69	2	སེང	seh	seṅ	feature_error_source	suffix_coda	pre_coda_structural_unit_evidence	root_consonant	se	RESIDUAL_014281225BA9	mapping_unavailable:vowel:e
 wts_1_34	1137	36	2	རྐང	rkan	rkaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	superscript;root_consonant;vowel	none	CORPUS_987FBEB04DC6;RESIDUAL_16C7C1641787;CORPUS_01025FAF5D30	none
+wts_1_34	1137	111	2	རྒྱུ	rgyn	rgyu	feature_error_source	vowel	role_specific_unaffected_evidence	superscript;root_consonant;subjoined_consonants	none	CORPUS_987FBEB04DC6;CORPUS_A6063072E7A9;CORPUS_E34B3E203AE6	none
 wts_1_34	1143	11	4	རིང	rin	riṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_5BE28982C775;CORPUS_63EB474B7A3F	none
 wts_1_34	1144	31	3		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_1_34	1144	31	5		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -3993,6 +3998,7 @@ wts_35_51	30	68	4		gden	gdeṅ	feature_error_source	suffix_coda	masked_unsegment
 wts_35_51	31	10	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	34	21	2	ལྔ	Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				mapping_unavailable:superscript:ལ
 wts_35_51	34	42	2	ཆུང	chun	chuṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_59F309DD5F15;CORPUS_84A74DBDD722	none
+wts_35_51	34	51	2	མཇུག	mjng	mjug	feature_error_source	vowel	masked_unsegmented_unaffected_span	prefix		CORPUS_BC919FFB8C2C	mapping_unavailable:root_consonant:ཇ
 wts_35_51	39	43	4		Ipags	lpags	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	39	43	9		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	39	43	10		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4232,6 +4238,7 @@ wts_35_51	396	50	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegm
 wts_35_51	396	50	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	396	50	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	398	40	4		Tnan	↑² naṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
+wts_35_51	399	55	3	ཆུད	chnd	chud	feature_error_source	vowel	role_specific_unaffected_evidence	root_consonant;suffix_coda	none	RESIDUAL_59F309DD5F15;CORPUS_DDC164B090C8	none
 wts_35_51	399	55	5		nan	naṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	400	35	1	ནང	nah	naṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_7F051B17DE73;CORPUS_01025FAF5D30	none
 wts_35_51	400	43	9		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4490,6 +4497,7 @@ wts_35_51	698	62	9		Itar	ltar	feature_error_source	root_or_initial	masked_unsegm
 wts_35_51	699	11	4		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	699	55	3	གུང	guh	guṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				ambiguous_root
 wts_35_51	699	55	7		gun	guṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
+wts_35_51	702	51	2	མཁྱུད	mkhynd	mkhyud	feature_error_source	vowel	role_specific_unaffected_evidence	prefix;root_consonant;subjoined_consonants;suffix_coda	none	CORPUS_BC919FFB8C2C;RESIDUAL_B4DD5F8EE553;CORPUS_E34B3E203AE6;CORPUS_DDC164B090C8	none
 wts_35_51	705	66	3		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	707	14	2		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	707	66	4		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4603,11 +4611,12 @@ wts_35_51	861	51	1		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegm
 wts_35_51	863	50	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	863	50	5		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	863	50	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_35_51	867	18	1	ཕྲ	pha	phra	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
-wts_35_51	870	22	2	བྲི	bi	bri	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_35_51	867	18	1	ཕྲ	pha	phra	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_C14A7F0F1043;CORPUS_01025FAF5D30	none
+wts_35_51	870	22	2	བྲི	bi	bri	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel	none	CORPUS_B453155DE050;CORPUS_63EB474B7A3F	none
 wts_35_51	872	31	2	མིང	min	miṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				ambiguous_root
 wts_35_51	873	57	8		lon	loṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	873	69	2	ཞིང	Ziṅ	źiṅ	feature_error_source	root_consonant	role_specific_unaffected_evidence	vowel;suffix_coda	none	CORPUS_63EB474B7A3F;SUFFIX_NG_TO_NDOT	none
+wts_35_51	878	38	6	དྲུག	drng	drug	feature_error_source	vowel	role_specific_unaffected_evidence	root_consonant;subjoined_consonants;suffix_coda	none	RESIDUAL_C2670784C902;CORPUS_7F71AFFFC788;CORPUS_9A673562CD7A	none
 wts_35_51	878	77	5	འཆང	chah	chaṅ	feature_error_source	suffix_coda	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	CORPUS_91DCE7C115D4;RESIDUAL_59F309DD5F15;CORPUS_01025FAF5D30	none
 wts_35_51	880	83	3		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	881	4	4		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4633,6 +4642,7 @@ wts_35_51	896	54	2	ཕྱིན	pbyin	phyin	feature_error_source	root_consonant	
 wts_35_51	898	51	3		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	901	31	1	ཕས	pbas	phas	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
 wts_35_51	901	68	10		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
+wts_35_51	904	38	1	ཕུ	phn	phu	feature_error_source	vowel	role_specific_unaffected_evidence	root_consonant	none	RESIDUAL_C14A7F0F1043	none
 wts_35_51	905	39	1	ཕུ	pbu	phu	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
 wts_35_51	910	31	4		phun	phuṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	911	1	3	ལྔ	Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				mapping_unavailable:superscript:ལ
@@ -4708,7 +4718,8 @@ wts_35_51	1018	18	3		Itar	ltar	feature_error_source	root_or_initial	masked_unseg
 wts_35_51	1019	16	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1020	37	4		Tspyis	↑ spyis	marker_only	marker	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1022	1	3	སྒང	sgani	sgaṅ	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span	superscript;root_consonant;vowel		CORPUS_86605D8DD3C9;CORPUS_A6063072E7A9;CORPUS_01025FAF5D30	source_span_mismatch:suffix_coda:ང
-wts_35_51	1024	35	2	རྫི	dzi	rdzi	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				source_span_mismatch:superscript:ར
+wts_35_51	1024	35	1	ཕྱུགས	phyngs	phyugs	feature_error_source	vowel	role_specific_unaffected_evidence	root_consonant;subjoined_consonants;suffix_coda;post_suffix	none	RESIDUAL_C14A7F0F1043;CORPUS_E34B3E203AE6;CORPUS_9A673562CD7A;CORPUS_F685D66CEF46	none
+wts_35_51	1024	35	2	རྫི	dzi	rdzi	feature_error_source	superscript	role_specific_unaffected_evidence	root_consonant;vowel	none	RESIDUAL_207625DA40E3;CORPUS_63EB474B7A3F	none
 wts_35_51	1032	71	7		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1037	29	5		Ikog	lkog	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1043	76	5		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4761,12 +4772,12 @@ wts_35_51	1085	2	1	འཕང	phani	phaṅ	feature_error_source	conditioned_featu
 wts_35_51	1086	21	4		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1086	21	4		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1086	21	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_35_51	1086	68	1	འཕྲན	phan	phran	feature_error_source	root_consonant	masked_unsegmented_unaffected_span	prefix		CORPUS_91DCE7C115D4	corrected_span_not_isolated:root_consonant
+wts_35_51	1086	68	1	འཕྲན	phan	phran	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	prefix;root_consonant;vowel;suffix_coda	none	CORPUS_91DCE7C115D4;RESIDUAL_C14A7F0F1043;CORPUS_01025FAF5D30;CORPUS_76CFA3FCFF21	none
 wts_35_51	1088	7	1		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1090	15	2		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1093	52	3		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1096	86	3		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_35_51	1098	11	1	འཕྲོ	pho	phro	feature_error_source	root_consonant	masked_unsegmented_unaffected_span	prefix		CORPUS_91DCE7C115D4	corrected_span_not_isolated:root_consonant
+wts_35_51	1098	11	1	འཕྲོ	pho	phro	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	prefix;root_consonant;vowel	none	CORPUS_91DCE7C115D4;RESIDUAL_C14A7F0F1043;CORPUS_16D4A9AA0695	none
 wts_35_51	1100	46	6		phon	phoṅ	feature_error_source	suffix_coda	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1108	39	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_35_51	1108	39	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -4882,7 +4893,7 @@ wts_8_b	128	43	2	གཞུང	gZuṅ	gźuṅ	feature_error_source	root_consonant
 wts_8_b	130	58	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_8_b	130	58	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_8_b	130	58	7		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_8_b	131	42	2	གྲོང	goṅ	groṅ	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				corrected_span_not_isolated:root_consonant
+wts_8_b	131	42	2	གྲོང	goṅ	groṅ	feature_error_source	subjoined_consonants	role_specific_unaffected_evidence	root_consonant;vowel;suffix_coda	none	CORPUS_A6063072E7A9;CORPUS_16D4A9AA0695;SUFFIX_NG_TO_NDOT	none
 wts_8_b	132	25	1		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_8_b	134	59	6		Itar	ltar	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_8_b	136	26	3		Ina	lṅa	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
@@ -5829,7 +5840,7 @@ wts_9_m	328	13	2		bZin	bźin	feature_error_source	root_consonant	masked_unsegmen
 wts_9_m	328	53	8		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_9_m	328	53	9		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
 wts_9_m	328	53	9		Ius	lus	feature_error_source	root_or_initial	masked_unsegmented_unaffected_span				parse_missing
-wts_9_m	330	37	1	རྨང	maṅ	rmaṅ	feature_error_source	root_consonant	masked_unsegmented_unaffected_span				source_span_mismatch:superscript:ར
+wts_9_m	330	37	1	རྨང	maṅ	rmaṅ	feature_error_source	superscript	role_specific_unaffected_evidence	root_consonant;vowel;suffix_coda	none	CORPUS_6C68775C4C70;CORPUS_01025FAF5D30;SUFFIX_NG_TO_NDOT	none
 wts_9_m	330	63	1	རྨང	rmani	rmaṅ	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span	superscript;root_consonant;vowel		CORPUS_987FBEB04DC6;CORPUS_6C68775C4C70;CORPUS_01025FAF5D30	source_span_mismatch:suffix_coda:ང
 wts_9_m	331	1	1	རྨང	rmani	rmaṅ	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span	superscript;root_consonant;vowel		CORPUS_987FBEB04DC6;CORPUS_6C68775C4C70;CORPUS_01025FAF5D30	source_span_mismatch:suffix_coda:ང
 wts_9_m	332	2	1	རྨང	rmani	rmaṅ	feature_error_source	conditioned_feature	masked_unsegmented_unaffected_span	superscript;root_consonant;vowel		CORPUS_987FBEB04DC6;CORPUS_6C68775C4C70;CORPUS_01025FAF5D30	source_span_mismatch:suffix_coda:ང

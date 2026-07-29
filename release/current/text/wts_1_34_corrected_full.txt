@@ -19840,7 +19840,7 @@ na „wenn man die Kraft des Näga-Ochsen
 sieht, der auf dem Grund des Ozeans läuft“
 (gZer 586,4).
 
-ཀླུ་དགའ་ kln dga’.
+ཀླུ་དགའ་ klu dga’.
 1.npr. ein Buddha.
 Lex. naganandin (Bhad 153).
 2.npr. ein Bla-ma der Bon-pos.
@@ -54660,7 +54660,7 @@ Lex. spos kyi glan po (brDa, Dagy).ཏྱུ་ཡི་གཙོ་བོ་ k
 Lex. 97/$ ’thun dban po’am glan chen
 (Dagy).
 
-ཁུག་བདེ་བ་ khyug bde ba flink.
+ཁྱུག་བདེ་བ་ khyug bde ba flink.
 
 byis pa ... yan lag » „ein Kind mit flinken
 Gliedmaßen“ (BhuGr 48,24).
@@ -54748,7 +54748,7 @@ Lex. ~ tshag pa’ kha chu „Ivon] khyun
 phrug ausgespieener Nektar, Speichel einer
 Heuschrecke“ (gYu 7,6).
 
-ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
+ཁྱུང་སེང་འདས་པ་ khyuṅ seṅ ’dus pa achtfüßiger
 
 Löwe.
 
@@ -67372,7 +67372,7 @@ gnaṅ ste „ndem man gleichsam als Entschädigung dafür jedes Jahr 500 rgya t
 
 Rupien] überreichte“ (MTH3/3/12 3,9).
 
-གྲན་གསྲལ་ཀི་ངང་འ། gun gsab kyi drul Aus-
+གྲན་གསྲལ་ཀྱི་ངང་འ། gun gsab kyi drul Aus-
 IR gleichszahlung.
 
 Lex. gyon phog par gsab byed kyi dhul „Geld
@@ -78510,7 +78510,7 @@ mthons (Dagy).
 Lex. Rin dgun gi 777 ma tsha dro „Hitze der
 Mittagssonne“ (brDa).
 
-དགུང་བདན་ dguṅ bdun sieben Tage, Woche.
+དགུང་བདུན་ dguṅ bdun sieben Tage, Woche.
 
 = du dbyig gi char bab „sieben Tage lang ist
 ein Regen von Goldstücken gefallen“ (Udr
@@ -110061,7 +110061,7 @@ Dagy).
 སྔགས་རྒྱད་ shags rgyud ༈$77:49$.
 སྔགས་ཏེ་བས་པ་ snags te bsu pa \shags bsu ba.
 
-སྔགས་བདན་ shags bdun Bez. für Feuer, Feuer-
+སྔགས་བདུན་ shags bdun Bez. für Feuer, Feuer-
 ༄ 9076.
 
 Lex. me dan me lha (brDa).
@@ -159291,7 +159291,7 @@ unausgeglichenen Geist“ (Mvy 139).
 
 མཉམ་པོ་ miam po [?7//7/7777,
 
-མཉམ་པོ་བདན་ müam po bdun auch ?7?/7:7/7/
+མཉམ་པོ་བདུན་ müam po bdun auch ?7?/7:7/7/
 
 ༄ bdun das gegenüberliegende
 Tierkreiszeichen, Opposition.
@@ -178006,14 +178006,14 @@ chin ba „aus der Unterweisung der rta-
 bdag-brgyad: Kuberas Fesseln der Diebe“
 (PhB 2: 215,6).
 
-རྟ་བདན་བདག་པོ་ rta bdun bdag po Bez. für
+རྟ་བདུན་བདག་པོ་ rta bdun bdag po Bez. für
 
 Sonne,
 
 Lex. tsha zer can te fi ma’ min (brDa); mi
 ma’i min (Dagy).
 
-རྟེ་བདན་པ་ rta bdun pa.
+རྟེ་བདུན་པ་ rta bdun pa.
 
 1. Bez. für Sonne.
 
@@ -179619,7 +179619,7 @@ rtsol ba daṅ / ’bad pa (TC).
 
 Lex. - ba = dpa’ ba (Dagy).
 
-རྟལ་ rtul.
+རྟུལ་ rtul.
 
 1. träge sein; spyan ~ blind; vgl. !rtul po.
 bad kan ... lci ba dan / ~ Zih (metr.)
@@ -179679,7 +179679,7 @@ Lex. rig pa bul po’am rno bo ma yin pa
 yab „schwache Sinnesfähigkeit“ (Mvy
 1257).
 
-རྟལ་ཕོད་ rtul phod auch brtnl phod Mut,
+རྟུལ་ཕོད་ rtul phod auch brtnl phod Mut,
 
 Tapferkeit; - can, - pa mutig, Held.
 
@@ -179707,7 +179707,7 @@ stag dan dpa’ bo dan rtsal dan „Tiger, Held,
 stark“ (brDa); brtul phod can = 6777) stobs
 can / skyes pa (Dagy).
 
-རྟལ་བ་ rtul ba ]'!77///, °)7///.
+རྟུལ་བ་ rtul ba ]'!77///, °)7///.
 རྟུལ་ཤུགས་ rtul 6//95 \brtul Zugs.
 
 རྟ "'rten pf. und fur. !brten.
@@ -207741,7 +207741,7 @@ wahr ist und was nicht“ (KTh 1: 380,3).
 2. npr. ein Buddha, skt. Prabhüta (Bhad
 32).
 
-མཐུ་དཔལ་ mthn dpal.
+མཐུ་དཔལ་ mthu dpal.
 
 1. herrliche Kraft.
 
@@ -207808,7 +207808,7 @@ attels und der Brusteingang“
 1010) gang“ (Hlipp
 
 Lex. sa chags pa ni ... thug pa (Liś 25,9).
-མཐུག་པོ་ mthng po auch 'thug po.
+མཐུག་པོ་ mthug po auch 'thug po.
 
 1. grob, dick; mnal >, 9/7//7 ~ tiefer Schlaf.
 
@@ -208960,7 +208960,7 @@ breya byin (Dagy); mtho ris bdag = divaspati
 མཐོ་རིས་འདྲེན་པ་ mtho ris ’dren pa Beiname
 Indras.
 Lex. brgya byin (Dagy).
-མཐོ་རིས་ནོར་བདན་ཅན་ mtho ris nor bdun can
+མཐོ་རིས་ནོར་བདུན་ཅན་ mtho ris nor bdun can
 པ་ Bez. für Gottheiten.
 Lex. /!ha spyi (brDa, Dagy).
 མཐོ་རིས་གནས་ mtho 775 gnas Bez. für die
@@ -209006,7 +209006,7 @@ Lex. lha’i sman pa (brDa); lha’i ’tsho byed
 (Dagy); mtho ris smin (r. sman) pa ma rta’i
 bu = svarvaldyav asvinisutau (Ak 14.46).
 
-མཐོ་རེས་ཡོན་ཏན་བདན་ mtho ris yon tan bdun die
+མཐོ་རེས་ཡོན་ཏན་བདུན་ mtho ris yon tan bdun die
 
 sieben Vorzüge einer
 Existenz in der Götterwelt.
@@ -211072,7 +211072,7 @@ ist die Bez. für einen ubetischen Vers, bei
 dem es acht Silbenpunkte dazwischen gibt“
 (Be’uD 204,4).
 
-འཐེང་འཁར་ then "khyar auch ’then khyer
+འཐེང་འཁྱར་ then "khyar auch ’then khyer
 
 hinken.
 
@@ -217515,7 +217515,7 @@ Lex. ran dkar (Dagy).
 
 Lex. rus sbal (Dagy).
 
-དལ་རྒྱུ་ dal rgyn.
+དལ་རྒྱུ་ dal rgyu.
 
 57
 

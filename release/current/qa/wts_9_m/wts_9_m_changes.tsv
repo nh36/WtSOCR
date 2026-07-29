@@ -2118,3 +2118,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 332	2	1483	tibetan_only	rmani	rmaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྨང་ལམ་ rmani lam Traum.
 273	44	1193	headword_line	myani	myaṅ	A	reviewed_tibetan_exact_ocr_signature	1	མྱང་རྩི་སྦྲས་ myani rtsi sbras
 330	37	1478	headword_line	maṅ	rmaṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	རྨང་ maṅ
+196	31	878	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མུན་རྡ་ mun rdo ein Stein, der in finstere Räu-
+371	10	1652	headword_line	བདན	བདུན	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྤིར་བདན་ལོངས་སོང་ smin bdun loṅ / Me

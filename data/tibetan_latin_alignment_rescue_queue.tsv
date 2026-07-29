@@ -921,8 +921,6 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 བདད	'zy	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདད་ཀྲི་དལ་པོ་མ་ 'zy bdud kyi royal po ma
 བདད	bind	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པོ་ཀ་བདད་ཐོད་ངདཀའར་ pbo Klu bind tod dkar
 བདད	po	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	་པོ་བདད་ nag po bdud schwarzer bdud-
-བདན	nam	bdun	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཉམ་བདན་ m nam bdun 177777/77?7 po bdun.
-བདན	sieben	bdun	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉེ་བའི་རིན་ཆེན་བདན་ 776 ba’i rin chen bdun sieben
 བདུད	Mäuseteufel	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"བྱི་བདུད་ byibdud ""Mäuseteufel"", Wiesel."
 བདུད	bbdud	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདུད་ཞགས་ནག་པོ bbdud nag po cine
 བདུད	bdnd	bdud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདུད་ཀྱི་དགྲ་ bdnd kyi dgra || བདུད་མདོས་ bdnd mdos ein
@@ -1310,6 +1308,8 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 འཁོར	yug	khor	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཁོར་ཡུག་ ༡707 yug 1/0/707ˆ yug.
 འཁོར	’Rhor	khor	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཁོར་ ’Rhor
 འཁོལ	’bol	khol	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྙེ་འཁོལ་ sie ’bol auch gie ’bol Kissen.
+འཁྱར	po	khyar	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	(Thgr 80,1); kun tu rgyu dag ... a sam ... yul འཁྱར་པོ་ 9༡༧7 po lose.
+འཁྱར	sich	khyar	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཁྱར་ ༡£/7/¢7ˆ sich verbreiten, auseinanderge-
 འཁྱིལ	Rhyil	khyil	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཁྱིལ་བ་ Rhyil ba
 འཁྱུད	'klyyud	khyud	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྣ་འཁྱུད་ sna 'klyyud Nasenpflock, -ring.
 འཁྱུད	umschlingen	khyud	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཉམ་འཁྱུད་ /7777:7777 ’kbyud umschlingen.
@@ -2170,6 +2170,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཁུང	khun	khuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླད་ཁུང་ klad khun Hirnschale.
 གཞུང	gzun	gźuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླད་གཞུང་ klad gzun Rückenmark.
 གླང	glan	glaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླུ་གླང་ klu glan ein myth. Wesen; — dmar po „der
+ཀླུ	kln	klu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླུ་དགའ་ kln dga’.
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླ་ལྕམ་ཁོད་དེ་རིང་མོ་ klu lcam khod de rin mo npr.
 ཁྱུང	khyun	khyuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླུ་འདུལ་ཁྱུང་ཆེན་ཕུག་ klu ’dul khyun chen phug N.
 ཁྱུང	khyun	khyuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླུ་ཕྲུག་འོད་ཁྱུང་ klu phrug ’od khyun \klu sbrul ’od
@@ -2322,6 +2323,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 མོང	mon	moṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁུར་མོང་ khur mon auch khur man eine Pflan-
 གྱོང	gyon	gyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
 རྐྱང	rkyan	rkyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.
+ཁྲོག	khog	khrog	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	།ཁྲོག།ཊྲ།། khog ma Tongefäß.
 ཁོང	khon	khoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁོང་སྐེམ་པ་ khon skem pa
 ཁོང	khon	khoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁོང་སྐེམ་པ་ khon skem pa auch khon skems pa
 ཁོང	khon	khoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཁོང་ཀྱལ་ khon khyul auch khon ’khyul Aufge-
@@ -2404,6 +2406,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 གྲང	gran	graṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲང་སེལ་ gran sel Bez. für Feuer, Feuergott.
 གྲང	gran	graṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲང་ལྷང་ངེར་སོང་ gran lhan ner son \gren lhan
 སོང	son	soṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲང་ལྷང་ངེར་སོང་ gran lhan ner son \gren lhan
+གྲི	gi	gri	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲི་ཐོགས་བཞན་པ་བརྒྱད་ gi thogs bśan pa brgyad
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲི་རིང་ gri rin Schwert.
 ལིང	lin	liṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲིབ་ལིང་ grib lin
 ལིང	lin	liṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲིབ་ལིང་ grib lin eine Augenkrankheit.
@@ -2482,6 +2485,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 གླིང	glin	gliṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གླིང་བཞིའི་ལྟེ་བ་ glin bzi’i Ite ba 12///) bi Ite ba.
 གླིང	glin	gliṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གླིང་བཞིའི་སློ་ glin bZi’i spo der Berg Meru.
 ཁུང	khun	khuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གློ་ཁུང་ glo khun
+སྲི	si	sri	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འུ་པ་སྲི་གེའུ་ཤ་ gle’u bu si gle’u śu ein chin.
 ཁུང	khun	khuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གློ་ཁུང་ glo khun Türöffnung, Guckloch.
 སྤྱང	spyan	spyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གློག་སྤྱང་དམར་པོ་ glog spyan dmar po ein Hund.
 ཕྲེང	phren	phreṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གློག་ཕྲེང་ཅན་ glog phren can (zw.) Bez. für den
@@ -2517,6 +2521,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སོང	son	soṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འགྲོ་སོང་ ’gro son Ausgaben.
 གླིང	glin	gliṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱ་གླིང་ reya glin
 དྲུང	drun	druṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱ་དྲུང་ rgya drun Beamte an den indischen
+སྦྲས	sbas	sbras	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱ་མཚོ་སྦྲས་པ་ rgya mtsho sbas pa.
 ཞིག	Zig	źig	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱ་ཞིག་ rgya Zig Schädelnaht.
 རྒྱང	rgyan	rgyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱང་བསྐྱར་ rgyan bskyur hinausschieben.
 རྒྱང	rgyan	rgyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྒྱང་གྲགས་ཐོས་ rgyan grags thos Bez. für Gans.
@@ -2840,10 +2845,13 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 རྫོང	rdzon	rdzoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr. ein Ort
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐག་རིང་ thag rin.
 བཟང	bzan	bzaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-
+ཐུ	tbu	thu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐང་ཤུ་ཐུ་ཧན་ thaṅ Su tbu han
 གཞི	gZi	gźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐང་གཞི་ thaṅ gZi Marktpreis; vgl. T'than 4.
 དྲང	dran	draṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐད་དྲང་ tbad dran direkt, unmittelbar.
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐན་མོ་རྔོ་རིང་ than mo rdo rin
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐན་མོ་རྔོ་རིང་ than mo rdo rin npr. ein Ort bei
+བྲབ	bab	brab	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བབ་རིར་བྲབ་པ་ thab rir bab pa auch thab rim
+ཐར	tbar	thar	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐར་ན་ tbar nu eine Heilpflanze, Euphorbia
 གསང	gsani	gsaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐུགས་གཏེར་གསང་་ thugs gter gsani ...
 དབྱུང	dbyun	dbyuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyun bar byed
 བཞག	bzag	bźag	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐུགས་བཞག་ thugs bzag 1//7//94 la bZag.
@@ -2857,6 +2865,9 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སོང	son	soṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐྲེག་གེ་སོང་ theg ge son fortgehen; vgl. Ithegs.
 བྲང	brani	braṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བེའུ་བྲང་ the’u brani auch the bran eine Gruppe
 གཞི	gZi	gźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐོབ་གཞི་ thob gZi Anspruch.
+ཐོན	tbon	thon	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐིལ་ཐོན་ mthil tbon auf den Grund
+མཐུ	mthn	mthu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐུ་དཔལ་ mthn dpal.
+མཐུག	mthng	mthug	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐུག་པོ་ mthng po auch 'thug po.
 མཐོང	mthon	mthoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐོང་ཀ་ mthon ka
 མཐོང	mthon	mthoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐོང་ཀ་ mthon ka \mthon ga.
 མཐོང	mthon	mthoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མཐོང་བཀར་ mthon bkur Würde und Ehre; ~
@@ -2894,11 +2905,13 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 བླང	blan	blaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དང་དུ་བླང་ daṅ du blan fur. zu 1772 du len
 བཟང	bzan	bzaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དང་བཟང་དབང་པོ་ daṅ bzan dbaṅ po Beiname
 ཞང	Zan	źaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དན་འབག་ཞང་པོ་ dan ’bag Zan po npr. eine in
+གྲི	gi	gri	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མ་ཚིག་གྲི་དྲཔང་ཆོ། dam tsbig gi dbaṅ mo npr.
 གླིང	glin	gliṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དར་རྒྱས་ཆོས་གླིང་ dar rgyas chos glin
 མདུང	mdun	mduṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དར་མདུང་ dar mdun Speer mit einem Banner.
 སྒང	sgan	sgaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དར་མ་སྒང་ dar ma sgan npr. ein Ort am gÑal-
 ལིང	lin	liṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དར་ལིང་ dar lin eine Seide, Brokat; chin. 3.
 སེང	seh	seṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དར་སེང་ dar seh eine feine, dünne Seide.
+རྒྱུ	rgyn	rgyu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དལ་རྒྱུ་ dal rgyn.
 རིང	rin	riṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དུ་བ་མཇུག་རིང་ du ba mjug rin der Komet
 ཕྱུང	phyun	phyuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དུག་ཕྱུང་ dug phyun
 སྐྱོང	skyon	skyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དུང་སྐྱོང་ dun skyon auch dun skyons npr. ein
@@ -3034,6 +3047,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 དབྱུང	dbyun	dbyuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲུངས་དབྱུང་ druns dbyun auch drun dbyun fut.
 གདོང	gdon	gdoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲེད་གདོང་མ་ dred gdon ma eine Gottheit, die
 རླུང	rlun	rluṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྲོད་རླུང་ drod rlun warme Brise, warmer Wind.
+མཇུག	mjng	mjug	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གདོང་མཇུག་ gdoṅ mjng die beiden Mondkno-
 བཞི	bZi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདུད བཞི bdud bZi die vier Märas: Skandha
 བཞི	bzi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདུད་བཞི་བཅོམ་པ་ bdud bzi bcom pa Bez. für
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
@@ -3050,13 +3064,17 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཡང	yah	yaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྡུམ་ཡང་ sdum yah eine Amtsbezeichnung in
 བཞི	bZi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྡེ་ཚན་བཞི་པ sde tshan bZi pa Isde bźi
 བཞི	bzi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྡེ་བཞི་ sde bzi
+ཐིག	tbig	thig	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྡོང་ཐིག་ sdoṅ tbig Docht.
 ཡང	yani	yaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ན་ཡང་ na yani
+ཆུད	chnd	chud	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནང་བྱན་ཆུད་ naṅ byan chnd auch naṅ byan
 ཚང	tshah	tshaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-
+ཁོང	kboṅ	khoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནད་ཁོང་སྐེམས་པ་ nad kboṅ skems pa auch nad
 སྐྱོང	skyon	skyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནོར་སྐྱོང་ nor skyon.
 ལུང	luh	luṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa
 དགུང	dgun	dguṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གནམ་དགུང་ gnam dgun.
 སྲོང	sroh	sroṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
 གསང	gsani	gsaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྣ་བ་གསང་བ་ ma ba gsani ba jmd., der gut hört
+ཁྲིམས	kbrims	khrims	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྣམ་དག་ཁྲིམས་གླིང་ rnam dag kbrims gliṅ
 སྣང	snani	snaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྣམ་པར་སྣང་བར་་ rnam par snani bar
 སྣང	snani	snaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྣམ་པར་སྣང་བྱེད་ rnam par snani byed
 བཞག	bZag	bźag	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
@@ -3065,6 +3083,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སྣང	snah	snaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
 སྟེང	steh	steṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"པང་སྟེང་ pani steh Ypani eine hohe Zahl, 10""."
 གུང	guh	guṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+མཁྱུད	mkhynd	mkhyud	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པུས་མཁྱུད་ pus mkhynd eine Schnur oder ein
 ལུང	lun	luṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དཔའ་ལུང་ dpa' lun.
 ཆུང	chuh	chuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chuṅ.
 བཞི	bZi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
@@ -3072,28 +3091,53 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སྤྱང	spyani	spyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྱང་ཁ་ spyani kha Wolfsmaul.
 གཞུང	gźuń	gźuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྱི་གཞུང་ spyi gźuń Regierung.
 བཟང	bzan	bzaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ur > | སྤྱོད་པ་བཟང་པོ་ spyod pa bzan po npr. ein Bud. dha.
+ཕྲ	pha	phra	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྲ ""pha gegenüberliegende Seite."
+བྲི	bi	bri	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲ་བྲི་ pba bi gegenūberliegende Seite; — na
 མིང	min	miṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕུ་མིང་ ""phba min Vater und Bruder."
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+དྲུག	drng	drug	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drng
 འཆང	chah	chaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chah"
+ཕང	pbaṅ	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕང་མཁན་ pbaṅ mkhan
 ཕང	phani	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
+ཕྱིན	pbyin	phyin	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕར་ཕྱིན་ 'phar pbyin Kurzf. für [/)/7 vol ru
+ཕས	pbas	phas	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕས་ཀྱི་རྒོལ་བ་ pbas kyi rgol ba. Kurzf. phas rgol
+ཕུ	phn	phu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུ་མདུད་ phn mdud Knoten zum Schutz ge-
+ཕུ	pbu	phu	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུ་མོ་ pbu mo āltere Schwester.
+ཕུར	pbur	phur	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ཚུགས་པ་ pbur tshugs pa eindringlich, kon-
+ཕུལ	pbul	phul	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུལ་ཕྱིན་ pbul phyin auch phul du phyin pa
 བྲང	brani	braṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲོ་བྲང་ pho brani
 བྲང	brani	braṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོ་བྲང་འཁོར་ pho brani 'khor
 བྲང	brani	braṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོ་བྲང་འཁོར་ pho brani 'khor
 བྲང	brań	braṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
+ཕོན	pbon	phon	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོན་པོ་ pbon po Tphon.
+ཕོར	pbor	phor	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕོར་ཤུབས་ pbor śubs
 ཚང	tshani	tshaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱག་ཚང་ phyag tshani.
 ཚང	tshani	tshaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag
 ཕྱང	phyani	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
 ཕྱང	phyani	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་བཟུང་ phyani bzuṅ
+ཕྱམ	pbyam	phyam	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten ""allgemei-"
+ཁུང	kbuṅ	khuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
 བཞི	bzi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱི་བཞི་ phyi bzi Zeuge.
+ཁུལ	kbul	khul	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.
+ཕྱིང	pbyiṅ	phyiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིང་དྲིལ་ pbyiṅ dril cine Rolle Filz.
+ཐུང	tbuṅ	thuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཐུང་གིས་ phyir tbuṅ gis vor kurzem.
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཞིང་ phyir Ziṅ
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
 སྒང	sgani	sgaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱུག་པོ་སྒང་དཀར་་ phyug po sgani dkar
+ཕྱུགས	phyngs	phyugs	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
+རྫི	dzi	rdzi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
 བཞི	bZi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-
 སྣང	snah	snaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
+ཕྲན	pbran	phran	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲན་ཚེགས་ pbran tshegs.
+ཕྲིན	pbrin	phrin	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་བློན་ pbrin blon ein Minister; in bka'ii
+ཕྲུ	pbru	phru	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲུ་རྟོག་ pbru rtog
+འཕག	pbag	phag	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕག་ pbag pf. V'phags.
 འཕང	phan	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕང་ ""phan"
 འཕང	phani	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
+འཕྲན	phan	phran	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
+འཕྲོ	pho	phro	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."
 འཕྱོང	phyon	phyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྱོང་ ""phyon"
 འཕྱོང	phyon	phyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
 ལང	lan	laṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"པ་ལང་ ""ba lan"
@@ -3107,6 +3151,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 བོང	bon	boṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བོང་བུ་ལན་ ° bon bu lan tshwa eine Heilpflan-
 བོང	bon	boṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-
 གཞུང	gZuṅ	gźuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
+གྲོང	goṅ	groṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བོལ་གྲོང་ bol goṅ oberer Teil des Fußes, Fuß-
 བཏང	btani	btaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བྱ་བཏང་ bya btani pf. zubya gtori.
 བཞག	bZag	bźag	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བྱ་བཞག་ bya bZag.
 བཞི	bzi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནྲ་གྱིས་བརླབ་པ་བཞི་ byin gis brlab pa bzi
@@ -3153,5 +3198,6 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 བཞི	bZi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མོ་བཙུན་རྩིས་བཞི་ mo btsun rtsis bZi ein Kalku-
 མྱང	myani	myaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མྱང་རྩི་སྦྲས་ myani rtsi sbras
 རྫིང	rdzin	rdziṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དམུ་རྫིང dmu rdzin.
+རྨང	maṅ	rmaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྨང་ maṅ
 རྨང	rmani	rmaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"རྨང་ ""rmani"
 རྨང	rmani	rmaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྨང་ལམ་ rmani lam Traum.

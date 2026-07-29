@@ -119,7 +119,7 @@ tibetan_syllable	baseline_target	current_target	baseline_status	current_status	m
 བསྣོར	bsnor	bsnor	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
 བསྣོས	bsnos	bsnos	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
 བཱ	ba		canonical_feature_composed	role_parse_unresolved	downgraded	unsupported_orthographic_sign
-བྱག	byag	byag	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
+བྱག	byag	byag	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 བྱབ	byab	byab	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
 བྱབས	byabs	byabs	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 བྱམ	byam	byam	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.

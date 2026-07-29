@@ -78,6 +78,22 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
             "not_signature_learning_evidence",
         )
 
+    def test_nonlearning_and_alternate_only_rows_are_not_positive_support(self) -> None:
+        self.assertFalse(
+            module.learning_can_support_signature(
+                "not_signature_learning_evidence"
+            )
+        )
+        self.assertFalse(
+            module.learning_can_support_signature("reviewed_composed_edit")
+        )
+        self.assertTrue(
+            module.learning_can_support_signature("atomic_reviewed_edit")
+        )
+        self.assertTrue(
+            module.learning_can_support_signature("feature_specific_review")
+        )
+
     def test_six_prior_authorities_are_persistent_evidence_decisions(self) -> None:
         reviewed = module.decisions()
         for signature in (

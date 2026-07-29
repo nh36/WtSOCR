@@ -61,7 +61,7 @@ wts_1_34	276	175	1	ཁོང	ikhon		canonical_reviewed	secure_transcription_outl
 wts_1_34	277	35	1	ཁང	khon		ambiguous	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	།ཁང་སང་ khon sen auch khon sin, khon gsen
 wts_1_34	277	35	2	སང	sen		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	།ཁང་སང་ khon sen auch khon sin, khon gsen
 wts_1_34	287	69	1	ཀྱང	khyun		canonical_independent_strong	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཀྱང་སྡེར་ khyun sder eine Heilpflanze.
-wts_1_34	287	97	1	ཁུང	khyun		canonical_reviewed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
+wts_1_34	287	97	1	ཁུང	khyun		canonical_reviewed	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
 wts_1_34	292	135	2	ཕྱང	phyun		canonical_feature_composed	secure_transcription_outlier		none	none	source_compatible_no_anchor	no_supported_target	ཁྲག་ཕྱང་ khrag phyun pf. zu lkhrag 'byin „Blut
 wts_1_34	297	108	2	ངང	dun		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁྲིམས་ངང་ khrims dun
 wts_1_34	297	110	2	ངང	dun		canonical_independent_moderate	not_in_general_outlier_queue		none	none	source_compatible_no_anchor	no_supported_target	ཁྲིམས་ངང་ khrims dun ein bei Gericht geblase-
