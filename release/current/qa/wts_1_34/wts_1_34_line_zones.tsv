@@ -8975,7 +8975,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 75	145	793	latin_other			none	3	0	0	0	smras pa dag la kun tu smra min byed (metr.)
 75	146	793	german_prose_with_translit			none	2	1	0	0	„als sie angesprochen wurde, sagte sie nichts
 75	147	793	german_prose			none	0	1	0	0	(alapa)“ (Nägn 111,18).
-75	149	794	headword_line	ཀུན་ཏུ་གཅེས་པ་	tu gtses pa	high	5	0	0	0	ཀུན་ཏུ་གཅེས་པ་ kun tu gtses pa \kun tu /5/7€ ba.
+75	149	794	headword_line	ཀུན་ཏུ་གཅེས་པ་	tu gtses pa	high	5	0	0	0	ཀུན་ཏུ་གཙེས་པ་ kun tu gtses pa \kun tu /5/7€ ba.
 75	150	795	headword_line	ཀུན་ཏུ་བཙལ་བ་	tu btsal ba	high	6	0	0	0	ཀུན་ཏུ་བཙལ་བ་ kun tu btsal ba \kun tu ’tshol ba.
 75	152	796	headword_line	ཀུན་ཏུ་སྩོགས་པ་	tu stsogs pa	high	4	1	0	0	ཀུན་ཏུ་སྩོགས་པ་ kun tu stsogs pa Nebenf. f. 1,5//77 tu
 75	153	796	german_prose_with_translit			none	1	1	0	0	g5og pa anhäufen.
@@ -37410,7 +37410,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 266	38	3521	german_prose_with_translit			none	1	1	0	0	mütterlicherseits“ (Dagy).
 266	40	3522	headword_line	ཁུ་ཚེགས་	khu tshigs	high	3	1	0	0	ཁུ་ཚེགས་ khu tshigs eine Krankheit.
 266	41	3522	german_prose_with_translit			none	3	3	0	0	Lex. na tsha Zig (brDa, Dagy).
-266	43	3523	headword_line	ཁུ་ཆུར་	khu tshur	high	2	1	0	0	ཁུ་ཆུར་ khu tshur Faust.
+266	43	3523	headword_line	ཁུ་ཆུར་	khu tshur	high	2	1	0	0	ཁུ་ཚུར་ khu tshur Faust.
 266	45	3523	german_prose_with_translit			none	2	3	0	0	» mi ’chan ba „er wird die Faust nicht ballen (skt. na mustim karisyati)“ (Käsy 229,
 266	47	3523	latin_other			none	3	0	0	0	12); gZan gyi ~ ’tsho ba sla (metr.) „leicht
 266	48	3523	german_prose			none	0	4	0	0	ist es, aus den Fäusten [d. h. auf Kosten]
@@ -37879,7 +37879,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 269	46	3578	german_prose_with_translit			none	6	2	0	0	Lex. khur bo chen po (brDa); khur po’am
 269	47	3578	german_prose_with_translit			none	2	1	0	0	khres po (Dagy).
 269	49	3579	headword_line	ཁུལ་	khul	high	1	0	0	0	ཁུལ་ khul
-269	51	3580	headword_line	ཁུར་ཆོས་	khur tshos	high	4	1	0	0	ཁུར་ཆོས་ khur tshos I\mkhur tshos.
+269	51	3580	headword_line	ཁུར་ཆོས་	khur tshos	high	4	1	0	0	མཁུར་ཚོས་ mkhur tshos I\mkhur tshos.
 269	53	3581	headword_line	ཁུར་འཛིན་	khur dzin	high	2	1	0	0	ཁུར་འཛིན་ khur ’dzin „Lasten auf sich neh-
 269	54	3581	german_prose			none	0	1	0	0	men“, Gestell.
 269	55	3581	german_prose_with_translit			none	3	3	0	0	Lex. 9774” sin lta bu’i gdan la’an „auch für
@@ -42408,7 +42408,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 300	165	4114	german_prose_with_translit			none	1	2	0	0	lung eines Heilmittels.
 300	167	4114	latin_other			none	4	0	0	0	skyu ru ra ~ sbyar ba mar gyi nani du brnos te
 300	168	4114	german_prose_with_translit			none	2	4	0	0	„man brate Myrobalane mit khrel bu gemischt in Butter“ (Siddh 26.21).
-300	171	4115	headword_line	ཁྲེལ་གཞུང་	khrel	high	2	0	0	0	ཁྲེལ་གཞུང་ khrel gun \khrel.
+300	171	4115	headword_line	ཁྲེལ་གཞུང་	khrel	high	2	0	0	0	ཁྲེལ་གཞུང་ khrel gźuṅ \khrel.
 300	173	4116	headword_line	ཁྲེས་པོ་	khres po	high	2	1	0	0	ཁྲེས་པོ་ khres po Last.
 300	175	4116	german_prose_with_translit			none	2	1	0	0	mi hren khres khur (metr.) „ein einzelner
 300	176	4116	german_prose			none	0	6	0	0	Mensch, der eine Last trägt“ (Vdk 2: 341,
@@ -47574,7 +47574,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 338	22	4581	german_prose_with_translit			none	2	1	0	0	(brDa); - ni gan mos „gan tig: wie es einem
 338	23	4581	tibetan_only			none	0	2	0	0	gefällt“ (BeuD 208,6); gan ༡707 ’dod
 338	24	4581	other			none	0	0	0	0	(TTC).
-338	26	4582	headword_line	གང་སྟར་	gaṅ	high	1	0	0	0	གང་སྟར་ gaṅ ltar.
+338	26	4582	headword_line	གང་སྟར་	gaṅ	high	1	0	0	0	གང་ལྟར་ gaṅ ltar.
 338	27	4582	german_prose			none	0	1	0	0	1. wie, auf welche Weise.
 338	28	4582	latin_other			none	4	0	0	0	ron cig ... mi rgyud ~ grol ba dan (metr.)
 338	29	4582	german_prose			none	0	4	0	0	„höre, wie die Menschheit sich gelöst hat
@@ -57379,7 +57379,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 405	52	5325	german_prose_with_translit			none	2	1	0	0	lus nag gi rnam ’gyur lta bu „wie: Ausdruck
 405	53	5325	german_prose			none	0	7	0	0	der Freude in Taten und Worten“ (Dagy).
 405	55	5326	headword_line	དགའ་རབ་དཔང་རམྱག་	dga’	high	3	0	0	0	དགའ་རབ་དཔང་རམྱག་ dga’ rab dban phyug
-405	57	5327	headword_line	དགའ་ཆལ་	dga’ tshal	high	2	2	0	0	དགའ་ཆལ་ dga’ tshal Garten, Göttergarten.
+405	57	5327	headword_line	དགའ་ཆལ་	dga’ tshal	high	2	2	0	0	དགའ་ཚལ་ dga’ tshal Garten, Göttergarten.
 405	59	5327	german_prose_with_translit			none	2	2	0	0	ku mud - dar mdzad pa (metr.) „er läßt den
 405	60	5327	german_prose_with_translit			none	1	1	0	0	Kumuda-Garten gedeihen“ (PhB 7: 118,6);
 405	61	5327	latin_other			none	1	0	0	0	ku mud = su yis skyon (metr.) „wer sollte
@@ -72597,7 +72597,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 510	48	6584	example_tibetan_latin	བྱ་བྱིན་མིང་ཅན་		none	2	2	0	0	བྱ་བྱིན་མིང་ཅན་ 29 byin mih can Bez. für
 510	50	6584	german_prose_with_translit			none	3	2	0	0	Lex. bya ’ug pa’i min (brDa, Dagy).
 510	52	6584	other			none	0	0	0	0	504
-510	54	6585	headword_line	བརྱ་བཞི་	brgya	high	1	0	0	0	བརྱ་བཞི་ brgya bi
+510	54	6585	headword_line	བརྱ་བཞི་	brgya	high	1	0	0	0	བརྱ་བཞི་ brgya bźi
 510	56	6586	headword_line	བརྒྱ་བྱིན་གཙུག་	brgya byin gtsug	high	3	3	0	0	བརྒྱ་བྱིན་གཙུག་ brgya byin gtsug Bez. für Amei-
 510	58	6586	german_prose			none	0	1	0	0	senhügel.
 510	60	6586	german_prose_with_translit			none	2	2	0	0	Lex. grog mkhar (brDa, Dagy).
@@ -110944,7 +110944,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 760	212	9021	german_prose_with_translit			none	2	1	0	0	» yamis chig btsugs nas „nachdem man einen
 760	213	9021	german_prose_with_translit			none	1	6	0	0	Teil der Teigspeise für die Toten hineinge-
 760	215	9021	other			none	0	0	0	0	445
-761	1	9022	headword_line	ཉམ་ཆད་	tshad	high	1	0	0	0	ཉམ་ཆད་ nam tshad
+761	1	9022	headword_line	ཉམ་ཆད་	tshad	high	1	0	0	0	ཉམས་ཆད་ nam chad
 761	3	9022	german_prose_with_translit			none	1	2	0	0	steckt hatte“ (M.L.vi.2a b2); ~ ma ’chugs /
 761	4	9022	german_prose			none	0	2	0	0	par gsol „sie boten auf korrekte Weise die
 761	5	9022	german_prose			none	0	4	0	0	Teigspeise für die Toten dar“ (PT1042 52);
@@ -135441,7 +135441,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 931	163	10256	german_prose_with_translit			none	1	2	0	0	lam - byas nas (metr.) „wenn er die Vielfalt
 931	164	10256	german_prose			none	0	3	0	0	wie einen Traum behandelt hat“ (Hev
 931	166	10256	other			none	0	0	0	0	119
-931	168	10256	tibetan_only	སྟར་		none	0	0	0	0	སྟར་ ltar
+931	168	10256	tibetan_only	སྟར་		none	0	0	0	0	ལྟར་ ltar
 931	170	10256	latin_other			none	5	0	0	0	2.2.29); zla ba skar ma = dkar ba’i / ma he’i
 931	171	10256	german_prose_with_translit			none	2	3	0	0	’o ma (metr.) „Büffelmilch, die so weiß wie
 931	172	10256	german_prose_with_translit			none	1	5	0	0	Mond [und] Sterne ist“ (Ahs 1.3.33a); dbr
@@ -135482,7 +135482,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 931	213	10256	german_prose			none	0	2	0	0	verblassender Regenbogen“ (Sumpa 9b+).
 931	214	10256	german_prose_with_translit			none	1	3	0	0	Lex. sadrsa (in Mvy 310); ~ gyar pa = kalpa
 931	215	10256	german_prose_with_translit			none	4	3	0	0	(in Mvy 622); lta bu Zes mtshuns pa’i sgra
-932	1	10257	headword_line	སྟར་བཅོས་པ་	pa	medium	1	0	0	0	སྟར་བཅོས་པ་ ltar bcos pa
+932	1	10257	headword_line	སྟར་བཅོས་པ་	pa	medium	1	0	0	0	ལྟར་བཅོས་པ་ ltar bcos pa
 932	3	10257	german_prose_with_translit			none	2	4	0	0	„ta bu, ein Wort für ähnlich“ (brDa);
 932	4	10257	german_prose_with_translit			none	4	1	0	0	mtshuns pa gsal byed (Dagy); sems rgya
 932	5	10257	latin_other			none	3	0	0	0	mtsho = zab pa = sägaravadgambhiracittah
@@ -135571,7 +135571,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 932	102	10259	german_prose_with_translit			none	2	2	0	0	eines Bodhisattva“ (Käsy 34,1); dam pa’i
 932	103	10259	german_prose_with_translit			none	3	1	0	0	chos -r gyur pa na „wenn der wahre
 932	104	10259	german_prose_with_translit			none	1	2	0	0	Dharma verfälscht worden ist (skt. prati-
-932	106	10259	tibetan_only	སྟར་ཨཉན་		none	0	0	0	0	སྟར་ཨཉན་ ltar man
+932	106	10259	tibetan_only	སྟར་ཨཉན་		none	0	0	0	0	ལྟར་ཨཉན་ ltar man
 932	108	10259	german_prose			none	0	2	0	0	rüpaka)“ (Suv 137,12).
 932	110	10259	german_prose_with_translit			none	5	1	0	0	Lex. ses rab kyi pha rol tu phyin pa = = pra-
 932	111	10259	german_prose_with_translit			none	1	2	0	0	jAäpäramitäprativarnikab (Mvy 6687); dge
@@ -135593,7 +135593,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 932	130	10259	german_prose			none	0	2	0	0	habenen zu“ (K12 10753).
 932	132	10259	german_prose_with_translit			none	2	3	0	0	"Lex. bcom ldan ""das kyi ltar müan (v. |. fan)"
 932	133	10259	german_prose_with_translit			none	3	1	0	0	nas ‰ bhagavatah pratiśrutya (Mvy 6317).
-932	135	10260	headword_line	སྟར་སྟར་པོ་	po	medium	1	0	0	0	སྟར་སྟར་པོ་ ltar ltar po.
+932	135	10260	headword_line	སྟར་སྟར་པོ་	po	medium	1	0	0	0	ལྟར་ལྟར་པོ་ ltar ltar po.
 932	137	10260	german_prose_with_translit			none	1	4	0	0	1. „oval“, ein Zustand in der Entwicklung
 932	138	10260	german_prose			none	0	2	0	0	des Embryos.
 932	140	10260	latin_other			none	3	0	0	0	’od dpag med mgon = ... inam pa lṅar ni
@@ -135621,7 +135621,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 932	167	10260	german_prose			none	0	4	0	0	Lex. Itar Itar = picchila (Ak 231.46).
 932	169	10260	tibetan_only	ལྟར་སྟེས་		none	0	2	0	0	ལྟར་སྟེས་ ltar stes glückliche Umstände.
 932	171	10260	german_prose_with_translit			none	3	2	0	0	Lex. stabs legs sam de Itar byun ba (brDa).
-932	173	10261	headword_line	སྟར་སྣང་	snaṅ	high	1	0	0	0	སྟར་སྣང་ ltar snaṅ.
+932	173	10261	headword_line	སྟར་སྣང་	snaṅ	high	1	0	0	0	ལྟར་སྣང་ ltar snaṅ.
 932	175	10261	other			none	0	0	0	0	121
 932	177	10261	german_prose			none	0	1	0	0	1. erscheinen wie, glänzen wie.
 932	179	10261	german_prose_with_translit			none	5	1	0	0	44 ba spu gser daṅ (d)nul gi kha dog - ba Zig

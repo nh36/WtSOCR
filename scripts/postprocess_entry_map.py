@@ -4572,6 +4572,7 @@ KNOWN_TIBETAN_SCRIPT_OVERRIDE_REASONS = {
     "reviewed_exact_tibetan_headword_root_ocr",
     "reviewed_exact_tibetan_headword_subjoined_ocr",
     "reviewed_exact_tibetan_headword_superscript_ocr",
+    "reviewed_exact_tibetan_headword_suffix_ocr",
     "reviewed_exact_tibetan_headword_vowel_ocr",
 }
 KNOWN_TIBETAN_SCRIPT_TEACHING_STATUSES = {

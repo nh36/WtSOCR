@@ -29105,3 +29105,20 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 473	179	6264	headword_line	ཆབ	ཚབ	A	reviewed_exact_tibetan_headword_root_ocr	1	རྒྱལ་ཆབ་ rgyal tshab
 650	152	8060	headword_line	ཆགས	ཚགས	A	reviewed_exact_tibetan_headword_root_ocr	1	ཆུ་ཆགས་ chu tshags Sieb, Wasserfilter.
 1059	9	11913	headword_line	mihn	mthu	A	reviewed_tibetan_exact_manual_multi_error	1	མཐུ་དབང་གི་ཆོ་ག་ mihn dbaṅ gi cho ga Schüler-
+75	149	795	headword_line	གཅེས	གཙེས	A	reviewed_exact_tibetan_headword_root_ocr	1	ཀུན་ཏུ་གཅེས་པ་ kun tu gtses pa \kun tu /5/7€ ba.
+266	43	3572	headword_line	ཆུར	ཚུར	A	reviewed_exact_tibetan_headword_root_ocr	1	ཁུ་ཆུར་ khu tshur Faust.
+269	51	3629	headword_line	ཆོས	ཚོས	A	reviewed_exact_tibetan_headword_root_ocr	1	ཁུར་ཆོས་ khur tshos I\mkhur tshos.
+269	51	3629	headword_line	ཁུར	མཁུར	A	reviewed_exact_tibetan_headword_root_ocr	1	ཁུར་ཆོས་ khur tshos I\mkhur tshos.
+405	57	5435	headword_line	ཆལ	ཚལ	A	reviewed_exact_tibetan_headword_root_ocr	1	དགའ་ཆལ་ dga’ tshal Garten, Göttergarten.
+761	1	9204	headword_line	ཉམ	ཉམས	A	reviewed_exact_tibetan_headword_suffix_ocr	1	ཉམ་ཆད་ nam tshad
+269	51	3629	headword_line	khur	mkhur	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	མཁུར་ཚོས་ khur tshos I\mkhur tshos.
+761	1	9204	headword_line	tshad	chad	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཉམས་ཆད་ nam tshad
+338	26	4633	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	གང་སྟར་ gaṅ ltar.
+931	168	10467	tibetan_only	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་ ltar
+932	1	10468	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་བཅོས་པ་ ltar bcos pa
+932	106	10470	tibetan_only	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་ཨཉན་ ltar man
+932	135	10471	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་སྟར་པོ་ ltar ltar po.
+932	135	10471	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་སྟར་པོ་ ltar ltar po.
+932	173	10472	headword_line	སྟར	ལྟར	A	reviewed_exact_tibetan_headword_root_ocr	1	སྟར་སྣང་ ltar snaṅ.
+300	171	4164	headword_line	gun	gźuṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཁྲེལ་གཞུང་ khrel gun \khrel.
+510	54	6707	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	བརྱ་བཞི་ brgya bi

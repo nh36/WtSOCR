@@ -7,7 +7,7 @@ SUB Z→ź	64	110	domain_mismatch:2;identity_not_resolved:108	1	19	28	condition_
 SUB b→h	23	3	source_context_mismatch:2;tibetan_role_mismatch:1	16	57	32	condition_or_boundary_mismatch
 SUB h→ṅ	44	2	domain_mismatch:1;tibetan_role_mismatch:1	0	0	4	condition_or_boundary_mismatch
 SUB n→u	10	2	identity_not_resolved:1;tibetan_role_mismatch:1	7	4	18	condition_or_boundary_mismatch
-SUB n→ṅ	1813	1845	domain_mismatch:35;identity_not_resolved:1712;tibetan_role_mismatch:98	55	176	146	condition_or_boundary_mismatch
+SUB n→ṅ	1814	1845	domain_mismatch:35;identity_not_resolved:1712;tibetan_role_mismatch:98	54	176	145	condition_or_boundary_mismatch
 SUB r→ṅ	12	0	none	4	21	13	condition_or_boundary_mismatch
 SUB z→ź	17	20	identity_not_resolved:20	0	2	0	none
 SUB ñ→ṅ	0	102	identity_not_resolved:102	0	0	0	none

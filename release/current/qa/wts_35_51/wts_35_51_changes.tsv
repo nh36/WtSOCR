@@ -6534,3 +6534,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1009	32	5376	headword_line	ton	thon	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱིར་ཐོན་ 'phyir ton hinausgehen, herauskom-
 972	41	5150	headword_line	phyari	phyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	ཕྱང་ཆད་ phyari chad auch phyan bcad entschie-
 402	10	2070	headword_line	ishud	tshud	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ནང་ཚུད་ raṅ ishud innerhalb von, in.
+38	56	168	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	གདོན་ཕལ་པ་བཞི་ gdon phal pa bi eine Gruppe
+174	28	1014	headword_line	gi	gźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
+1120	45	6114	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འཕྲུལ་མི་བཞི་ phrul mi bi

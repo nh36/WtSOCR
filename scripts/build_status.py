@@ -1199,7 +1199,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "exact page-line-token or exact page-line phrase",
             "applied",
             "wts_1_34;wts_35_51;wts_8_b;wts_9_m",
-            "reviewed_exact_tibetan_headword_vowel_ocr;reviewed_exact_tibetan_headword_subjoined_ocr;reviewed_exact_tibetan_headword_r_structure_ocr;reviewed_exact_tibetan_headword_root_ocr;reviewed_exact_tibetan_headword_delimiter_ocr",
+            "reviewed_exact_tibetan_headword_vowel_ocr;reviewed_exact_tibetan_headword_subjoined_ocr;reviewed_exact_tibetan_headword_r_structure_ocr;reviewed_exact_tibetan_headword_root_ocr;reviewed_exact_tibetan_headword_suffix_ocr;reviewed_exact_tibetan_headword_delimiter_ocr",
             "data/reviewed_tibetan_script_exact_overrides.tsv;data/reviewed_tibetan_script_exact_phrase_overrides.tsv;scripts/postprocess_entry_map.py",
             "data/reviewed_tibetan_headword_ocr_decisions.tsv",
             (
@@ -1216,12 +1216,15 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
                     "reviewed_exact_tibetan_headword_root_ocr", 0
                 )
                 + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_suffix_ocr", 0
+                )
+                + stats.reason_counts.get(
                     "reviewed_exact_tibetan_headword_delimiter_ocr", 0
                 )
             ),
             0,
             "རྡ/rda protected legitimate control",
-            "Exact reviewed Tibetan component repairs include missing vowel signs, subjoined y, r structure, root consonants, and one exact damaged delimiter phrase; corrected observations remain non-independent Latin teaching evidence.",
+            "Exact reviewed Tibetan component repairs include missing vowel signs, subjoined y, r structure, suffixes, root consonants, and one exact damaged delimiter phrase; corrected observations remain non-independent Latin teaching evidence.",
         ),
         row(
             "validator_only_suggestions",

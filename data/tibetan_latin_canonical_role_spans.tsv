@@ -6719,6 +6719,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 མཁུན	mkhun	correction_authoritative	root_consonant	ཁ	1	3	kh	RESIDUAL_B4DD5F8EE553	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 མཁུན	mkhun	correction_authoritative	vowel	u	3	4	u	CORPUS_84A74DBDD722	contrastive	ordinary_tibetan_lexical_or_compound
 མཁུན	mkhun	correction_authoritative	suffix_coda	ན	4	5	n	CORPUS_76CFA3FCFF21	contrastive	ordinary_tibetan_lexical_or_compound
+མཁུར	mkhur	complete_not_currently_authoritative	prefix	མ	0	1	m	CORPUS_BC919FFB8C2C	contrastive	ordinary_tibetan_lexical_or_compound
+མཁུར	mkhur	complete_not_currently_authoritative	root_consonant	ཁ	1	3	kh	RESIDUAL_B4DD5F8EE553	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+མཁུར	mkhur	complete_not_currently_authoritative	vowel	u	3	4	u	CORPUS_84A74DBDD722	contrastive	ordinary_tibetan_lexical_or_compound
+མཁུར	mkhur	complete_not_currently_authoritative	suffix_coda	ར	4	5	r	CORPUS_6783C3DA00D4	contrastive	ordinary_tibetan_lexical_or_compound
 མཁོ	mkho	correction_authoritative	prefix	མ	0	1	m	CORPUS_BC919FFB8C2C	contrastive	ordinary_tibetan_lexical_or_compound
 མཁོ	mkho	correction_authoritative	root_consonant	ཁ	1	3	kh	RESIDUAL_B4DD5F8EE553	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 མཁོ	mkho	correction_authoritative	vowel	o	3	4	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound

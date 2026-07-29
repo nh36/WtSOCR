@@ -131,6 +131,9 @@ EDIT_ATTRIBUTION_FIELDS = [
     "crosses_role_boundaries", "extra_source_material",
     "edit_specific_domain_condition", "attribution_status",
 ]
+AFFRICATE_DISAGREEMENT_FIELDS = EDIT_ATTRIBUTION_FIELDS + [
+    "witness_disagreement_class", "review_label",
+]
 ALIGNMENT_RESCUE_FIELDS = [
     "tibetan_syllable", "source", "canonical_target", "occurrence_count",
     "current_alignment_status", "rescue_category", "layout_evidence",
@@ -2215,6 +2218,24 @@ def build() -> dict[str, list[dict[str, str]]]:
                 else "persistent_" + decision["decision"]
             ),
         })
+    affricate_disagreements = []
+    affricate_operations = {
+        "REPLACE ts→c": "latin_dental_tibetan_palatal",
+        "REPLACE tsh→ch": "latin_dental_tibetan_palatal",
+        "REPLACE c→ts": "latin_palatal_tibetan_dental",
+        "REPLACE ch→tsh": "latin_palatal_tibetan_dental",
+        "SUB dz→j": "latin_dental_tibetan_palatal",
+        "SUB j→dz": "latin_palatal_tibetan_dental",
+    }
+    for row in edit_attributions:
+        disagreement = affricate_operations.get(row["operation_signature"])
+        if not disagreement:
+            continue
+        affricate_disagreements.append({
+            **row,
+            "witness_disagreement_class": disagreement,
+            "review_label": "AFFRICATE_TS_C_WITNESS_DISAGREEMENT",
+        })
     return {
         "evidence": evidence, "controls": control_rows,
         "registry": registry_rows, "queue": queue, "exhaustion": exhaustion,
@@ -2231,6 +2252,7 @@ def build() -> dict[str, list[dict[str, str]]]:
         "correction_authority": correction_authority,
         "correction_authority_fields": correction_authority_fields,
         "structural_child_evidence": structural_child_evidence,
+        "affricate_disagreements": affricate_disagreements,
     }
 
 
@@ -2255,6 +2277,7 @@ def main() -> None:
         ("final_ng_active_historical_summary.tsv", "final_ng_active_summary", FINAL_NG_ACTIVE_SUMMARY_FIELDS),
         ("tibetan_latin_structural_alternate_witness_evidence.tsv", "structural_alternates", STRUCTURAL_ALTERNATE_FIELDS),
         ("tibetan_latin_structural_ocr_child_evidence.tsv", "structural_child_evidence", STRUCTURAL_CHILD_EVIDENCE_FIELDS),
+        ("tibetan_affricate_witness_disagreements.tsv", "affricate_disagreements", AFFRICATE_DISAGREEMENT_FIELDS),
     ]
     for name, key, fields in targets:
         write(ROOT / "data" / name, outputs[key], fields)

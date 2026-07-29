@@ -163,6 +163,73 @@ def require_occurrence_identity_evidence(
     return root_change
 
 
+def exact_coordinate_from_args(args: argparse.Namespace) -> tuple[
+    str, str, str, str
+] | None:
+    values = (args.volume, args.page, args.line, args.token_index)
+    if any(value is not None for value in values) and not all(
+        value is not None for value in values
+    ):
+        raise ValueError(
+            "Exact manual review coordinates require volume, page, line, "
+            "and token index together"
+        )
+    return values if all(value is not None for value in values) else None
+
+
+def scope_root_review_to_coordinate(
+    selected: list[dict[str, str]],
+    coordinate: tuple[str, str, str, str] | None,
+) -> list[dict[str, str]]:
+    if coordinate is None:
+        raise ValueError(
+            "Manual root-changing correction requires an exact "
+            "volume/page/line/token coordinate"
+        )
+    scoped = [
+        row for row in selected
+        if (
+            row["volume"], row["page"], row["line"], row["token_index"]
+        ) == coordinate
+    ]
+    if len(scoped) != 1:
+        raise ValueError(
+            f"Exact root-review coordinate selected {len(scoped)} rows: "
+            f"{coordinate}"
+        )
+    return scoped
+
+
+def explicit_manual_review_note(
+    tibetan: str,
+    source: str,
+    target: str,
+    row: dict[str, str],
+    registry_rows: list[dict[str, str]],
+) -> str:
+    authorities: list[str] = []
+    for operation in signature_engine.canonical.edit_operations(source, target):
+        matches = [
+            record for record in registry_rows
+            if (
+                record["operation_signature"] == operation["signature"]
+                and record["authorization_status"].startswith("authorized")
+                and signature_engine.signature_applies_to_row(
+                    record, row, target
+                )[0]
+            )
+        ]
+        authority = (
+            matches[0]["signature_id"] if matches
+            else "exact-row-only"
+        )
+        authorities.append(f"{operation['signature']}={authority}")
+    return (
+        f"Exact {tibetan} alignment; explicit manual review; operation "
+        f"authority: {'; '.join(authorities)}; no Latin-wide substitution."
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tibetan", required=True)
@@ -192,7 +259,12 @@ def main() -> None:
             "must not bypass occurrence-identity review."
         ),
     )
+    parser.add_argument("--volume")
+    parser.add_argument("--page")
+    parser.add_argument("--line")
+    parser.add_argument("--token-index")
     args = parser.parse_args()
+    requested_coordinate = exact_coordinate_from_args(args)
     sources = set(args.sources.split(","))
     validate_authorization(
         args.tibetan, sources, args.target, args.explicit_manual_review
@@ -269,6 +341,25 @@ def main() -> None:
             args.occurrence_identity_channel,
             args.occurrence_identity_evidence,
         )
+    if any(root_change_by_identity.values()):
+        selected = scope_root_review_to_coordinate(
+            selected, requested_coordinate
+        )
+        selected_keys = {
+            (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["latin_token"],
+            )
+            for row in selected
+        }
+        root_change_by_identity = {
+            key: value for key, value in root_change_by_identity.items()
+            if key in selected_keys
+        }
+        attribution_by_identity = {
+            key: value for key, value in attribution_by_identity.items()
+            if key in selected_keys
+        }
     if not args.explicit_manual_review:
         registry: dict[str, list[dict[str, str]]] = {}
         for registry_row in integrity.read_tsv(
@@ -308,6 +399,9 @@ def main() -> None:
         (r["volume"], r["page"], r["line"], r["token_index"], r["from_token"])
         for r in rows
     }
+    registry_rows = integrity.read_tsv(
+        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+    )
     for row in selected:
         key = (
             row["volume"], row["page"], row["line"], row["token_index"],
@@ -322,6 +416,11 @@ def main() -> None:
             "reason": args.reason,
             "evidence": args.evidence,
             "review_note": (
+                explicit_manual_review_note(
+                    args.tibetan, row["latin_token"], args.target,
+                    row, registry_rows,
+                )
+                if args.explicit_manual_review else
                 f"Exact {args.tibetan} alignment; canonical target and "
                 "conditioned reviewed OCR signature; no Latin-wide substitution."
             ),
@@ -346,16 +445,24 @@ def main() -> None:
     decision_rows = (
         integrity.read_tsv(decision_path) if decision_path.exists() else []
     )
-    canonical_row = next(
+    canonical_candidates = [
         row for row in integrity.read_tsv(
             ROOT / "data/tibetan_latin_canonical_syllables.tsv"
         )
         if row["tibetan_syllable"] == args.tibetan
-        and args.target in row["canonical_forms"].split(";")
+    ]
+    canonical_row = next(
+        (
+            row for row in canonical_candidates
+            if args.target in row["canonical_forms"].split(";")
+        ),
+        canonical_candidates[0]
+        if args.explicit_manual_review and canonical_candidates else None,
     )
-    registry_rows = integrity.read_tsv(
-        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
-    )
+    if canonical_row is None:
+        raise ValueError(
+            f"No canonical registry row for exact Tibetan {args.tibetan}"
+        )
     base_sha = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
     ).strip()
@@ -423,6 +530,9 @@ def main() -> None:
             ),
             "target_support_channel": canonical_row.get(
                 "evidence_class", ""
+            ) if args.target in canonical_row["canonical_forms"].split(";")
+            else (
+                "exact_manual_lexical_identity_review"
             ),
             "evidence": args.evidence,
         })

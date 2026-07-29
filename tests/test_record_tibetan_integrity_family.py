@@ -1,6 +1,7 @@
 import importlib.util
 import sys
 import unittest
+from argparse import Namespace
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -110,6 +111,34 @@ class RecordIntegrityFamilyTests(unittest.TestCase):
         self.assertFalse(module.require_occurrence_identity_evidence(
             True, "unresolved", "no", None, None
         ))
+
+    def test_root_review_evidence_is_exact_coordinate_scoped(self) -> None:
+        rows = [
+            {
+                "volume": "v", "page": "1", "line": "10",
+                "token_index": "1", "latin_token": "gon",
+            },
+            {
+                "volume": "v", "page": "1", "line": "11",
+                "token_index": "1", "latin_token": "gon",
+            },
+        ]
+        with self.assertRaises(ValueError):
+            module.scope_root_review_to_coordinate(rows, None)
+        scoped = module.scope_root_review_to_coordinate(
+            rows, ("v", "1", "10", "1")
+        )
+        self.assertEqual(
+            [(row["line"], row["latin_token"]) for row in scoped],
+            [("10", "gon")],
+        )
+
+    def test_partial_exact_coordinate_fails_closed(self) -> None:
+        args = Namespace(
+            volume="v", page="1", line=None, token_index="1"
+        )
+        with self.assertRaises(ValueError):
+            module.exact_coordinate_from_args(args)
 
 
 if __name__ == "__main__":

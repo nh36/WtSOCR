@@ -571,6 +571,7 @@ tibetan_syllable	prefix	superscript	root_consonant	subjoined_consonants	vowel	su
 གཙུག	ག		ཙ		u	ག		ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 གཙུགས	ག		ཙ		u	ག	ས	ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 གཙེར	ག		ཙ		e	ར		ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
+གཙེས	ག		ཙ		e	ས		ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 གཙོ	ག		ཙ		o			ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 གཙོར	ག		ཙ		o	ར		ཙ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 གཞག	ག		ཞ		a	ག		ཞ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
@@ -3199,6 +3200,7 @@ tibetan_syllable	prefix	superscript	root_consonant	subjoined_consonants	vowel	su
 མཁསས	མ		ཁ		a	ས	ས	ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 མཁུ	མ		ཁ		u			ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 མཁུན	མ		ཁ		u	ན		ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
+མཁུར	མ		ཁ		u	ར		ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 མཁོ	མ		ཁ		o			ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 མཁོང	མ		ཁ		o	ང		ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
 མཁོངས	མ		ཁ		o	ང	ས	ཁ		fully_resolved	high	One prefix/root/suffix parse is structurally possible.
