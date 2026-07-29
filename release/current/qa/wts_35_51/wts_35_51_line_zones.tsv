@@ -22307,7 +22307,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 266	56	1551	german_prose			none	0	6	0	0	"""die rNog, eine Gruppe der IDon aus den"
 266	57	1551	german_prose			none	0	2	0	0	"vier Klans"" (Debm 3235)."
 266	58	1551	german_prose_with_translit			none	1	1	0	0	Lex. — nirus min dan (dPeD 197,5).
-266	59	1552	headword_line	ལྗོང་ཕྲོམ་	ldoṅ	high	1	4	0	0	"ལྗོང་ཕྲོམ་ ldoṅ prom ""weißes Kupfer"", vgl. Bia-"
+266	59	1552	headword_line	ལྗོང་ཕྲོམ་	ldoṅ	high	1	4	0	0	ལྗོང་ཕྲོམ་ ldoṅ phrom "weißes Kupfer", vgl. Bia-
 266	60	1552	other			none	0	0	0	0	11:% 2015: 277 f.
 266	61	1552	latin_other			none	5	0	0	0	khrab bse' sna beu dan / — gi ral gi
 266	62	1552	latin_other			none	2	0	0	0	"mdor cod / gñis gsol to ""er schenkte zehn"
@@ -56923,14 +56923,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 702	16	3461	headword_line	ནན་ག	bzw	medium	1	3	0	0	ནན་ག Rottleria tinctoria Roxb. bzw. Calo-
 702	17	3461	german_prose_with_translit			none	2	1	0	0	phyllum inophyllum L. (pw 4.96 s. v.).
 702	18	3461	german_prose			none	0	3	0	0	Lex. punnägah (Mvy 6173).
-702	19	3462	headword_line	ཕུབ་	lphub	high	1	0	0	0	ཕུབ་ pub lphub.
+702	19	3462	headword_line	ཕུབ་	lphub	high	1	0	0	0	ཕུབ་ phub lphub.
 702	20	3462	tibetan_only	ཕུར་		none	0	0	0	0	ཕུར་ 'pur fliegen lassen, steigen lassen.
 702	21	3462	german_prose_with_translit			none	3	1	0	0	"Lex. 'phur du ?//0 pa'am chug ""steigen lassen"""
 702	22	3462	german_prose_with_translit			none	3	1	0	0	"(brDa); 'phur ba'i don ""i.S. v. hochfliegen"""
 702	23	3462	german_prose_with_translit			none	4	3	0	0	"(Dagy); — cig = bya 'phur du chug ""laß den"
 702	24	3462	german_prose_with_translit			none	1	2	0	0	"Vogel fliegen!"" (brDa, Dagy)."
 702	25	3462	tibetan_only	པུར་		none	0	1	0	0	པུར་ °pur Ispur.
-702	26	3463	headword_line	ཕུར་ཁང་	khaṅ	high	1	2	0	0	ཕུར་ཁང་ pur khaṅ Leichenhaus, Leichenplatz,
+702	26	3463	headword_line	ཕུར་ཁང་	khaṅ	high	1	2	0	0	ཕུར་ཁང་ phur khaṅ Leichenhaus, Leichenplatz,
 702	27	3463	german_prose_with_translit			none	1	2	0	0	Verbrennungsstätte für Leichen.
 702	28	3463	german_prose			none	0	2	0	0	"Lex. ro sreg gnas ro gnas ""Leichenverbren-"
 702	29	3463	german_prose_with_translit			none	2	1	0	0	"nungsstätte, Leichenplatz"" (brDa); ro sreg"
@@ -57791,7 +57791,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 712	35	3493	german_prose_with_translit			none	5	1	0	0	"mtho ni gag dina' ba (metr.) ""Khan-skya am"
 712	36	3493	german_prose_with_translit			none	2	5	0	0	Talanfang von Pya oder sTag-rtse in Pyin-
 712	37	3493	tibetan_only	ཕྱུགས་		none	0	0	0	0	ཕྱུགས་ /༡//༦༩ [//?7/5.
-712	38	3494	headword_line	ཕྱུང་	pyuṅ lphyun	high	2	0	0	0	ཕྱུང་ pyuṅ lphyun.
+712	38	3494	headword_line	ཕྱུང་	pyuṅ lphyun	high	2	0	0	0	ཕྱུང་ phyuṅ lphyun.
 712	39	3495	headword_line	པྱེ་	pye lphye	high	2	0	0	0	པྱེ་ pye lphye.
 712	40	3496	headword_line	ཕྱོགས་	pyogs Iphyogs	high	2	0	0	0	ཕྱོགས་ pyogs Iphyogs.
 712	41	3496	german_prose			none	0	2	0	0	Dar pyol Lbyol.
@@ -57800,14 +57800,14 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 712	44	3496	german_prose_with_translit			none	1	3	0	0	ba, welches der beiden ist hoch, welches ist
 712	45	3496	other			none	0	0	0	0	"niedrig?"" (PT1287 470)."
 712	46	3497	headword_line	ཕྱག་	Pyag lphyag	high	2	0	0	0	ཕྱག་ Pyag lphyag.
-712	47	3498	headword_line	ཕྱང་ཆུབ་	pyaṅ	high	2	0	0	0	ཕྱང་ཆུབ་ pyaṅ chub \byani chab.
+712	47	3498	headword_line	ཕྱང་ཆུབ་	pyaṅ	high	2	0	0	0	ཕྱང་ཆུབ་ phyaṅ chub \byani chab.
 712	48	3499	headword_line	ཕྱི	pyi	medium	2	0	0	0	ཕྱི pyi !phyi.
 712	49	3499	latin_other			none	1	0	0	0	pyi tra gsani phrum \byi tra gsani
 712	50	3499	latin_other			none	1	0	0	0	phrum.
 712	51	3499	tibetan_only	༣		none	0	0	0	0	༣. ༠ * ཕྲ
 712	52	3499	tibetan_only	ཕྱི་ཏྲ་གསང་ཕྲུམ		none	0	0	0	0	ཕྱི་ཏྲ་གསང་ཕྲུམ
 712	53	3500	headword_line	ཕྱི་ན་	pyina lphyi na	high	3	0	0	0	ཕྱི་ན་ pyina lphyi na.
-712	54	3501	headword_line	ཕྱིང་	pyih lphyin	high	2	0	0	0	ཕྱིང་ pyih lphyin.
+712	54	3501	headword_line	ཕྱིང་	pyih lphyin	high	2	0	0	0	ཕྱིང་ phyiṅ lphyin.
 712	55	3502	headword_line	ཕྱིང་བ་	ppyiṅ ba ba	high	3	0	0	0	ཕྱིང་བ་ ppyiṅ ba ba.
 712	56	3502	other			none	0	0	0	0	363
 712	57	3502	german_prose			none	0	4	0	0	glatten Oberfläche, wie z.B. einem Spie-
@@ -57951,7 +57951,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 714	42	3520	latin_other			none	3	0	0	0	tin sag skyur / ki sa kha / chab 'dren gźon nu /
 714	43	3520	latin_other			none	1	0	0	0	rtsi'n zer (780 190,2).
 714	44	3521	headword_line	པྲིཀ་	ka	medium	1	0	0	0	པྲིཀ་ prik ttri ka.
-714	45	3522	headword_line	ཕྲིག་ཆུམ་བཀང་	bkaṅ	high	1	1	0	0	ཕྲིག་ཆུམ་བཀང་ prig chum bkaṅ zögerlich,
+714	45	3522	headword_line	ཕྲིག་ཆུམ་བཀང་	bkaṅ	high	1	1	0	0	ཕྲིག་ཆུམ་བཀང་ phrig chum bkaṅ zögerlich,
 714	46	3522	latin_other			none	2	0	0	0	ängstlich, zurūckhaltend.
 714	47	3522	german_prose_with_translit			none	5	3	0	0	"Lex. the tshom gyis bkani ba ""mit Zweifeln er-"
 714	48	3522	german_prose_with_translit			none	1	1	0	0	"füllt"" (brDa)."
@@ -82041,7 +82041,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1009	29	5363	german_prose_with_translit			none	1	2	0	0	"med — dgos ""Unnötiges wie z.B. zerfalle-"
 1009	30	5363	german_prose			none	0	1	0	0	"ne, nutzlose Häuser soll abgerissen werden"""
 1009	31	5363	german_prose			none	0	1	0	0	(Wadd135h 9).
-1009	32	5364	headword_line	ཕྱིར་ཐོན་	phyir	high	1	0	0	0	ཕྱིར་ཐོན་ 'phyir ton hinausgehen, herauskom-
+1009	32	5364	headword_line	ཕྱིར་ཐོན་	phyir	high	1	0	0	0	ཕྱིར་ཐོན་ 'phyir thon hinausgehen, herauskom-
 1009	33	5364	other			none	0	0	0	0	men.
 1009	34	5364	latin_other			none	1	0	0	0	"— ma tbag /// ""unmittelbar nachdem sie hin-"
 1009	35	5364	german_prose_with_translit			none	1	3	0	0	"ausgegangen war"" (Mil 42,24); Zabs spyi bor"

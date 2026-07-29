@@ -6524,3 +6524,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 421	1	2160	headword_line	nnam	nam	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
 467	12	2361	headword_line	nne	ne	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནེ་ལ་ nne la Abhāngigkeit.
 485	9	2474	headword_line	nnor	nor	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-
+266	59	1555	headword_line	prom	phrom	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	"ལྗོང་ཕྲོམ་ ldoṅ prom ""weißes Kupfer"", vgl. Bia-"
+702	19	3471	headword_line	pub	phub	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕུབ་ pub lphub.
+702	26	3472	headword_line	pur	phur	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕུར་ཁང་ pur khaṅ Leichenhaus, Leichenplatz,
+712	38	3503	headword_line	pyuṅ	phyuṅ	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱུང་ pyuṅ lphyun.
+712	47	3507	headword_line	pyaṅ	phyaṅ	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱང་ཆུབ་ pyaṅ chub \byani chab.
+712	54	3510	headword_line	pyih	phyiṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱིང་ pyih lphyin.
+714	45	3531	headword_line	prig	phrig	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྲིག་ཆུམ་བཀང་ prig chum bkaṅ zögerlich,
+1009	32	5376	headword_line	ton	thon	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱིར་ཐོན་ 'phyir ton hinausgehen, herauskom-
