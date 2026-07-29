@@ -14000,7 +14000,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 166	36	980	german_prose			none	0	5	0	0	einen ausgezeichneten Dienst an der Lehre
 166	37	980	other			none	0	0	0	0	"dar"" (MTH3/5/18 8)."
 166	38	980	german_prose_with_translit			none	1	2	0	0	"Lex. ninon pa ""sichtbar sein"" (Dagy)."
-166	39	981	headword_line	འདུག་སྟངས་	dung staṅs Stellung	high	3	1	0	0	འདུག་སྟངས་ dung staṅs Stellung, Sitzweise.
+166	39	981	headword_line	འདུག་སྟངས་	dung staṅs Stellung	high	3	1	0	0	འདུག་སྟངས་ dug staṅs Stellung, Sitzweise.
 166	40	981	latin_other			none	4	0	0	0	yan dag gras kyifs} rab dbye — lta tshul
 166	41	981	german_prose_with_translit			none	3	1	0	0	"daṅ / phra sbom zug (metr.) ""die Einzelhei-"
 166	42	981	german_prose_with_translit			none	1	3	0	0	ten deräußeren Erscheinung, [d. h.] die Stel-
@@ -33608,7 +33608,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 420	72	2154	german_prose_with_translit			none	6	1	0	0	Lex. gnam gyi dgu tshigs (brDa); gram gyi dgu
 420	73	2154	german_prose_with_translit			none	1	1	0	0	tshig (Dagy).
 420	74	2154	latin_other			none	2	0	0	0	mkha' skra can.
-421	1	2155	headword_line	ནམ་མཁའི་ཁམས་	mkha'i khams	high	4	1	0	0	ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
+421	1	2155	headword_line	ནམ་མཁའི་ཁམས་	mkha'i khams	high	4	1	0	0	ནམ་མཁའི་ཁམས་ nam mkha'i khams nam mkha'i säin po
 421	2	2156	headword_line	ནམ་མཁའི་ཁམས་	mkha'i khams	high	6	2	0	0	ནམ་མཁའི་ཁམས་ nam mkha'i khams Bereich Lex. nam mkha'i ges (1. gos) can ma / 'phyon
 421	3	2156	german_prose_with_translit			none	7	3	0	0	des Raums, Himmelsraum, ma / tshegs can ma rnams ni smad 'tshon ma'i
 421	4	2156	german_prose_with_translit			none	1	2	0	0	Raum. min gi grans (KlonD 729,4).
@@ -37494,7 +37494,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 467	9	2355	german_prose_with_translit			none	3	2	0	0	"— las byun sans rgyas sku (metr.) ""der aus der"
 467	10	2355	german_prose_with_translit			none	2	1	0	0	"Wärme entstandene Buddhakörper"" (gZi 3:"
 467	11	2355	other			none	0	0	0	0	129,1).
-467	12	2356	headword_line	ནེ་ལ་	la Abhāngigkeit	high	2	0	0	0	ནེ་ལ་ nne la Abhāngigkeit.
+467	12	2356	headword_line	ནེ་ལ་	la Abhāngigkeit	high	2	0	0	0	ནེ་ལ་ ne la Abhāngigkeit.
 467	13	2356	german_prose_with_translit			none	3	3	0	0	Lex. drin Zes pa ni — dan (Lis 40,9).
 467	14	2356	tibetan_only	ནེ་ལེ་		none	0	5	0	0	ནེ་ལེ་ 'ne le ein Vogel, z. B. Falke, Geier.
 467	15	2356	latin_other			none	7	0	0	0	cha ga pa dan / byi ba dan / — dan / khyi dan /
@@ -39007,7 +39007,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 485	6	2468	german_prose_with_translit			none	2	2	0	0	devah (Mvy 3132); khyab 'jug (brDa, Dagy).
 485	7	2468	german_prose_with_translit			none	1	1	0	0	2. npr. ein Buddha.
 485	8	2468	german_prose_with_translit			none	1	1	0	0	Lex. vasava (Bhad 598).
-485	9	2469	headword_line	ནོར་ལྷས་བྱིན་	lhas byin	high	2	2	0	0	ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-
+485	9	2469	headword_line	ནོར་ལྷས་བྱིན་	lhas byin	high	2	2	0	0	ནོར་ལྷས་བྱིན་ nor lhas byin ein Neffe /\ 0-
 485	10	2469	other			none	0	0	0	0	kas.
 485	11	2469	latin_other			none	8	0	0	0	rgyal po'i tsha bo — ces bya ba gser gyi mdzod
 485	12	2469	german_prose_with_translit			none	3	3	0	0	"8770?"" pa yin pa """"Väsudevadatta, der Nef-"

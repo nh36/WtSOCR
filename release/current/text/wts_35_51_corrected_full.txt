@@ -13834,7 +13834,7 @@ degs phun sim tshogs pa yin — pas "es stellt
 einen ausgezeichneten Dienst an der Lehre
 dar" (MTH3/5/18 8).
 Lex. ninon pa "sichtbar sein" (Dagy).
-འདུག་སྟངས་ dung staṅs Stellung, Sitzweise.
+འདུག་སྟངས་ dug staṅs Stellung, Sitzweise.
 yan dag gras kyifs} rab dbye — lta tshul
 daṅ / phra sbom zug (metr.) "die Einzelhei-
 ten deräußeren Erscheinung, [d. h.] die Stel-
@@ -33191,7 +33191,7 @@ Lex. äkäsatalam "Himmelsfläche" (Mvy
 für die Milchstraße.
 Lex. gnam gyi dgu tshigs (brDa); gram gyi dgu
 tshig (Dagy).
-mkha' skra can.ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
+mkha' skra can.ནམ་མཁའི་ཁམས་ nam mkha'i khams nam mkha'i säin po
 ནམ་མཁའི་ཁམས་ nam mkha'i khams Bereich Lex. nam mkha'i ges (1. gos) can ma / 'phyon
 des Raums, Himmelsraum, ma / tshegs can ma rnams ni smad 'tshon ma'i
 Raum. min gi grans (KlonD 729,4).
@@ -37031,7 +37031,7 @@ rafijanä.
 — las byun sans rgyas sku (metr.) "der aus der
 Wärme entstandene Buddhakörper" (gZi 3:
 129,1).
-ནེ་ལ་ nne la Abhāngigkeit.
+ནེ་ལ་ ne la Abhāngigkeit.
 Lex. drin Zes pa ni — dan (Liś 40,9).
 ནེ་ལེ་ 'ne le ein Vogel, z. B. Falke, Geier.
 cha ga pa dan / byi ba dan / — dan / khyi dan /
@@ -38526,7 +38526,7 @@ Lex. nor lha'i bu ste khyab ?//9 gi min = vāsu-
 devah (Mvy 3132); khyab 'jug (brDa, Dagy).
 2. npr. ein Buddha.
 Lex. vasava (Bhad 598).
-ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-
+ནོར་ལྷས་བྱིན་ nor lhas byin ein Neffe /\ 0-
 kas.
 rgyal po'i tsha bo — ces bya ba gser gyi mdzod
 8770?" pa yin pa ""Väsudevadatta, der Nef-

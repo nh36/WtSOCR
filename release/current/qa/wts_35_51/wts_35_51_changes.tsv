@@ -6520,3 +6520,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 92	67	595	headword_line	གསང	གསུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བདྡེན་པ་གསང་བྲ་ bden pa gsuṅ ba Bez. für Bud-
 917	3	4790	headword_line	ཚགས	ཚོགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཕུན་སུམ་ཚགས་པ phun sum tshogs pa Kurzf.
 1028	80	5503	headword_line	pbye	phye	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-
+166	39	982	headword_line	dung	dug	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	འདུག་སྟངས་ dung staṅs Stellung, Sitzweise.
+421	1	2160	headword_line	nnam	nam	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
+467	12	2361	headword_line	nne	ne	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནེ་ལ་ nne la Abhāngigkeit.
+485	9	2474	headword_line	nnor	nor	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-

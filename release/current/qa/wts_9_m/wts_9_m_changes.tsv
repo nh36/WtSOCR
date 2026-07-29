@@ -2123,3 +2123,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 273	48	1194	headword_line	miyaṅ	myaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	མྱང་འདས་ miyaṅ 'das Nirvāna.
 22	57	54	headword_line	ཆག	ཆོག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མ་ཆག་པ་ ma chog pa weniger, vermindert um.
 377	22	1700	headword_line	སྨད	སྨོད	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྨད་པ་ smod pa Tsmod, len sie mich im Buddhafeld des Sambhoga-
+165	34	738	headword_line	slonṅ	sloṅ	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	"མིང་གི་དགེ་སློང་ miṅ gi dge slonṅ ""ein Mönch"
+177	18	800	headword_line	gdunṅ	gduṅ	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gdunṅ drug dera lha
