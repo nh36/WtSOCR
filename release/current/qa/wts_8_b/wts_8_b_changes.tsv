@@ -3055,3 +3055,15 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 144	1	694	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
 161	5	833	headword_line	བག	བྱག	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	"བག་མཁན་ ""byag mkhan Kehrer, vgl. tphyag"
 163	7	841	headword_line	རྐང	རྐྱང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+269	62	1481	headword_line	བམ	བྲམ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བམ།་ཟེའི་བུ་ bram ze'i bu Brahmanensohn. SCHUH 2012: 1496.
+113	2	569	headword_line	borṅ	boṅ	A	reviewed_tibetan_exact_manual_multi_error	1	བོང་ང་དཀར་པོ་ borṅ ra dkar po Kurzf. bori dkar
+522	28	2804	headword_line	rrba	rba	A	reviewed_tibetan_exact_manual_multi_error	1	རྦ་ཚད་ rrba tshad Arbeitsdruck, Streß.
+345	72	1813	headword_line	chur	chuṅ	A	reviewed_tibetan_exact_final_ng	1	དབང་ཆུང་ dbaṅ chur schwach, machtlos, un-
+470	67	2565	headword_line	byur	byuṅ	A	reviewed_tibetan_exact_final_ng	1	འབྱུང་པོའི་དབང་པོ་ byur po'i dbaṅ po Beiname Sivas.
+472	44	2579	headword_line	byur	byuṅ	A	reviewed_tibetan_exact_final_ng	1	"འབྱུང་བའི་གནས་ ""byur ba'i gnas ] '/)7///?? gnas."
+576	61	3087	headword_line	sbrar	sbraṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྦྲང་ལྷག་ sbrar lhag Bienenwachs.
+99	51	485	headword_line	bbum	bum	A	reviewed_tibetan_exact_manual_multi_error	1	བུམ་སྒྲུབ་ bbum sādhana mit einem Gefäß,
+113	45	573	headword_line	bboṅ	boṅ	A	reviewed_tibetan_exact_manual_multi_error	1	བོང་ཆེ་ཆང་ bboṅ che \bons che (/)//7?.
+269	2	1476	headword_line	bbram	bram	A	reviewed_tibetan_exact_manual_multi_error	1	བྲམ་ཟེའི་ཁྱེའུ་ bbram ze'i khye'u brao
+323	1	1679	headword_line	bblo	blo	A	reviewed_tibetan_exact_manual_multi_error	1	བློ་གདེངས་བསྐྱེད་ bblo gdeṅs bskyed blo ldan
+116	4	595	headword_line	ཆང	ཆུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi

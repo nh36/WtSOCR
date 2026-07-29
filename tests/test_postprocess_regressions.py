@@ -50,6 +50,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             alternate_merged=alternate_merged if alternate_merged_text is not None else None,
             alternate_google_vision=alternate_google_vision,
             merge_only=merge_only,
+            strict_tibetan_script_overrides=False,
         )
         corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
         with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
@@ -476,8 +477,80 @@ class PostprocessRegressionTests(unittest.TestCase):
                 pem.apply_reviewed_tibetan_script_exact_overrides(
                     "དགུང་བདག་ dguṅ bdag", [], "fixture", strict=True
                 )
+            for wrong_line in (
+                "བདན་དགུང་ dguṅ bdun",
+                "བདུན་དགུང་ dguṅ bdun",
+            ):
+                with self.assertRaises(ValueError):
+                    pem.apply_reviewed_tibetan_script_exact_overrides(
+                        wrong_line, [], "fixture", strict=True
+                    )
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདུན་ dguṅ bdun", [], "fixture", strict=True
+                )
+            )
+            self.assertEqual(corrected, "དགུང་བདུན་ dguṅ bdun")
+            self.assertEqual(count, 0)
         finally:
             pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = original
+
+    def test_reviewed_tibetan_script_registry_validation(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            overrides = root / "overrides.tsv"
+            decisions = root / "decisions.tsv"
+            override_header = (
+                "volume\tpage\tline\ttoken_index\tobserved_tibetan\t"
+                "adjudicated_tibetan\treason\tevidence\treview_batch\t"
+                "teaching_status\n"
+            )
+            decision_header = (
+                "volume\tpage\tline\ttoken_index\tobserved_tibetan\t"
+                "adjudicated_tibetan\tlatin_token\tdecision\tlemma_ordinal\t"
+                "neighbour_window\tevidence\treview_batch\n"
+            )
+            override_row = (
+                "fixture\t1\t1\t2\tབདན\tབདུན\t"
+                "reviewed_exact_tibetan_headword_vowel_ocr\te\tb\t"
+                "tibetan_ocr_corrected_observation\n"
+            )
+            confirmed_row = (
+                "fixture\t1\t1\t2\tབདན\tབདུན\tbdun\t"
+                "tibetan_headword_ocr_confirmed\t1\tw\te\tb\n"
+            )
+            overrides.write_text(override_header + override_row, encoding="utf-8")
+            decisions.write_text(decision_header + confirmed_row, encoding="utf-8")
+            pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                overrides, decisions
+            )
+
+            overrides.write_text(
+                override_header + override_row
+                + override_row.replace("\tབདན\t", "\tབདག\t"),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "Duplicate"):
+                pem.load_reviewed_tibetan_script_exact_overrides(overrides)
+
+            overrides.write_text(override_header, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "registry mismatch"):
+                pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                    overrides, decisions
+                )
+
+            overrides.write_text(override_header + override_row, encoding="utf-8")
+            decisions.write_text(
+                decision_header
+                + confirmed_row.replace(
+                    "tibetan_headword_ocr_confirmed", "credible_variant"
+                ),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "registry mismatch"):
+                pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                    overrides, decisions
+                )
 
     def test_reviewed_wts_8b_final_ng_exact_batch_normalization(self) -> None:
         reviewed_lines = {
@@ -2072,7 +2145,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             label="wts_1_34",
         )
 
-        self.assertIn("gar ga chuṅ", corrected)
+        self.assertIn("gaṅ ga chuṅ", corrected)
         self.assertIn("mnon chuṅ", corrected)
         self.assertIn('ཆུང་གྲས\" chuṅ gras', corrected)
         self.assertIn("säoms chuṅ", corrected)
@@ -2087,7 +2160,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
         ]
         self.assertEqual(len(reviewed), 5)
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_damaged_context_final_ng_tokens_are_independent(self) -> None:
         reviewed_lines = {

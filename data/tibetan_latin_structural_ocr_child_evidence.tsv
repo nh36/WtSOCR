@@ -1,12 +1,12 @@
 signature_child_id	parent_operation	decision	current_exact_rows	distinct_syllables	reviewed_support	exact_alternate_support	same_tibetan_independent_target_support	source_volumes	source_page_ranges	line_zones	parent_reviewed_support	parent_alternate_support	global_source_controls	structural_gate_controls	same_tibetan_competing_controls	domain_controls	reviewed_contradictions	disposition
 FINAL_NI_TO_NG	REPLACE ni→ṅ	A	0	0	0	0	0			exact_headword_gate_applied	0	11	0	0	0		0	persistent_A
-FINAL_R_TO_NG	SUB r→ṅ	D	25	10	0	0	10	wts_1_34;wts_35_51;wts_8_b;wts_9_m	wts_1_34:284-1240;wts_35_51:537-847;wts_8_b:202-576;wts_9_m:318-318	exact_headword_gate_applied	0	12	664	0	0	alignment_not_secure:17;domain_mismatch:2;other_unexplained_edit:2	0	remain_D_no_independent_conditioned_witness_or_review
-ASPIRATE_DIGRAPH_B_TO_H	SUB b→h	D	0	0	23	0	0			exact_headword_gate_applied	23	41	504	0	0	alignment_not_secure:73;domain_mismatch:4;other_unexplained_edit:2;source_context_mismatch:11;tibetan_role_missing:2	0	persistent_D
-ROOT_KB_TO_KH	SUB b→h	A	0	0	4	0	0			exact_headword_gate_applied	23	41	504	0	0		0	persistent_A
-ROOT_TB_TO_TH	SUB b→h	A	0	0	5	0	0			exact_headword_gate_applied	23	41	504	0	0		0	persistent_A
-ROOT_PB_TO_PH	SUB b→h	A	0	0	14	0	0			exact_headword_gate_applied	23	41	504	0	0		0	persistent_A
-ROOT_TSB_TO_TSH	SUB b→h	D	0	0	0	0	0			exact_headword_gate_applied	23	41	504	0	0	alignment_not_secure:73;domain_mismatch:4;source_context_mismatch:11;tibetan_role_mismatch:4	0	remain_D_no_independent_conditioned_witness_or_review
-ROOT_MTB_TO_MTH	SUB b→h	D	1	1	0	0	1	wts_1_34	wts_1_34:1063-1063	exact_headword_gate_applied	23	41	504	0	0	alignment_not_secure:73;domain_mismatch:4;source_context_mismatch:14	0	remain_D_no_independent_conditioned_witness_or_review
+FINAL_R_TO_NG	SUB r→ṅ	A	0	0	0	0	0			exact_headword_gate_applied	0	12	666	0	0		0	persistent_A
+ASPIRATE_DIGRAPH_B_TO_H	SUB b→h	D	0	0	23	0	0			exact_headword_gate_applied	26	41	505	0	0	alignment_not_secure:73;domain_mismatch:4;other_unexplained_edit:2;source_context_mismatch:10	0	persistent_D
+ROOT_KB_TO_KH	SUB b→h	A	0	0	4	0	0			exact_headword_gate_applied	26	41	505	0	0		0	persistent_A
+ROOT_TB_TO_TH	SUB b→h	A	0	0	5	0	0			exact_headword_gate_applied	26	41	505	0	0		0	persistent_A
+ROOT_PB_TO_PH	SUB b→h	A	0	0	14	0	0			exact_headword_gate_applied	26	41	505	0	0		0	persistent_A
+ROOT_TSB_TO_TSH	SUB b→h	D	0	0	0	0	0			exact_headword_gate_applied	26	41	505	0	0	alignment_not_secure:73;domain_mismatch:4;source_context_mismatch:8;tibetan_role_mismatch:4	0	remain_D_no_independent_conditioned_witness_or_review
+ROOT_MTB_TO_MTH	SUB b→h	D	0	0	1	0	0			exact_headword_gate_applied	26	41	505	0	0	alignment_not_secure:73;domain_mismatch:4;source_context_mismatch:12	0	persistent_D
 INITIAL_STRAIGHT_APOSTROPHE_EXTRA_NO_ACHUNG	DEL '	D	151	85	0	0	23	wts_1_34;wts_35_51;wts_8_b	wts_1_34:125-1159;wts_35_51:21-22;wts_8_b:372-372	exact_headword_gate_applied	0	2	43	0	0	alignment_not_secure:250;damage_or_marker:98;domain_mismatch:39;forbidden_tibetan_feature:499;other_unexplained_edit:11	0	remain_D_no_independent_conditioned_witness_or_review
 INITIAL_CURLY_APOSTROPHE_EXTRA_NO_ACHUNG	DEL ’	D	17	12	0	0	12	wts_1_34	wts_1_34:164-1262	exact_headword_gate_applied	0	0	47	0	0	alignment_not_secure:77;damage_or_marker:84;domain_mismatch:12;forbidden_tibetan_feature:362;other_unexplained_edit:2	0	remain_D_no_independent_conditioned_witness_or_review
 INS_R_SUBJOINED	INS r	A	0	0	10	0	0			exact_headword_gate_applied	13	13	0	0	0		0	persistent_A

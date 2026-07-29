@@ -8205,7 +8205,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 70	179	706	german_prose_with_translit			none	6	1	0	0	sa ba ni gnod sbyin gyi rgyal po —r gyur „der
 70	180	706	german_prose			none	0	4	0	0	Hirsch ist zum Yaksa-König Samjaya gewor-
 70	181	706	german_prose			none	0	2	0	0	den“ (Liy2 79,8).
-70	183	707	headword_line	ཀན་ཏུ་རྒྱས་པར་བྱེད་པ་	tu rgyas	high	4	0	0	0	ཀན་ཏུ་རྒྱས་པར་བྱེད་པ་ kun tu rgyas par byed pa ver-
+70	183	707	headword_line	ཀན་ཏུ་རྒྱས་པར་བྱེད་པ་	tu rgyas	high	4	0	0	0	ཀུན་ཏུ་རྒྱས་པར་བྱེད་པ་ kun tu rgyas par byed pa ver-
 70	184	707	german_prose_with_translit			none	2	1	0	0	breiten; vgl. kun nas rgyas
 70	185	707	latin_other			none	1	0	0	0	par byed pa.
 70	186	707	german_prose_with_translit			none	2	1	0	0	Lex. kun tn rgyas par byed = parisphärayatı
@@ -15311,7 +15311,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 117	191	1430	german_prose_with_translit			none	3	1	0	0	rgyal-mo; vgl. lmkha’ klon ma mo.
 117	193	1430	german_prose_with_translit			none	3	2	0	0	mkha’ klon dbyins kyi{s} yum „Mutter der
 117	194	1430	latin_other			none	1	0	0	0	Sphären“ (5716 2b4).
-117	196	1430	tibetan_only	ཀློང་གྲམ་		none	0	3	0	0	ཀློང་གྲམ་ kloṅ grum eine Art Dachs.
+117	196	1430	tibetan_only	ཀློང་གྲམ་		none	0	3	0	0	ཀློང་གྲུམ་ kloṅ grum eine Art Dachs.
 117	198	1430	german_prose_with_translit			none	1	2	0	0	sprel dkar — ba dkar (metr.) „ein weißer
 117	199	1430	german_prose			none	0	6	0	0	Affe, ein Dachs, eine weiße Kuh“ (gZı 2:
 117	200	1430	other			none	0	0	0	0	569,6).
@@ -20969,7 +20969,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 156	3	1952	german_prose_with_translit			none	3	1	0	0	Lex. gdol rigs ... dmans rigs ... rkan mthil las
 156	4	1952	german_prose_with_translit			none	1	4	0	0	skyes pa „Candäla, Südra, ‚aus der Fußsohle
 156	5	1952	german_prose_with_translit			none	1	3	0	0	Geborener‘“ (brDa, ähnl. Dagy).
-156	7	1953	headword_line	རྐང་སྐྱོབ་	rkaṅi skyob	high	2	2	0	0	རྐང་སྐྱོབ་ rkaṅi skyob Schuh, Stiefel.
+156	7	1953	headword_line	རྐང་སྐྱོབ་	rkaṅi skyob	high	2	2	0	0	རྐང་སྐྱོབ་ rkaṅ skyob Schuh, Stiefel.
 156	8	1953	german_prose_with_translit			none	3	3	0	0	Lex. Zabs phyags sam lham (brDa, Dagy).
 156	10	1954	headword_line	རྐང་ཁལ་	rkaṅ khal	high	2	1	0	0	རྐང་ཁལ་ rkaṅ khal Lasttier.
 156	12	1954	latin_other			none	3	0	0	0	— ra mon dag pas bzaṅ ba med (metr.) „kein
@@ -21913,7 +21913,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 161	198	2063	german_prose			none	0	3	0	0	den ist“ (Udr 34,6).
 161	200	2063	german_prose_with_translit			none	2	2	0	0	Lex. 5a skam por gyur pa’am rid pa „dünn
 161	201	2063	german_prose_with_translit			none	1	3	0	0	oder mager geworden“ (brDa, ähnl. Dagy).
-161	203	2064	headword_line	རྐེད་སྐབས་ཕྱེད་པ་	rked	high	4	0	0	0	རྐེད་སྐབས་ཕྱེད་པ་ rked skabs phryed pa schmalhüf-
+161	203	2064	headword_line	རྐེད་སྐབས་ཕྱེད་པ་	rked	high	4	0	0	0	རྐེད་སྐབས་ཕྱེད་པ་ rked skabs phyed pa schmalhüf-
 161	204	2064	other			none	0	0	0	0	tig.
 161	205	2064	german_prose_with_translit			none	4	2	0	0	Lex. rked skabs phra mo’i don (brDa, ähnl.
 161	206	2064	german_prose			none	0	1	0	0	Dagy).
@@ -37998,7 +37998,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 270	10	3596	latin_other			none	4	0	0	0	(PT1287 482); - mdo snan las stsogs pa log
 270	12	3596	german_prose_with_translit			none	2	3	0	0	ste „der Kirgise mDo-snan und andere re-
 270	13	3596	german_prose			none	0	1	0	0	bellierten“ (S750 100).
-270	15	3597	headword_line	ཁེ་ཉེན་	khye	high	1	3	0	0	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
+270	15	3597	headword_line	ཁེ་ཉེན་	khye	high	1	3	0	0	ཁེ་ཉེན་ khe nen auch khye fen Gewinn und
 270	16	3597	german_prose			none	0	5	0	0	Verlust, Für und Wider, Eventualität,
 270	17	3597	german_prose			none	0	1	0	0	Risiko.
 270	19	3597	latin_other			none	6	0	0	0	nan gas pa rnams la ... khye nen yaṅ yaṅ du
@@ -39857,7 +39857,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 284	6	3816	german_prose			none	0	3	0	0	Lex. kutumbikab „Hausdiener* (Mvy
 284	7	3816	german_prose_with_translit			none	2	2	0	0	3818); ~ srun ma 2 Aug rum pa „Eunuch“
 284	9	3816	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
-284	10	3817	headword_line	ཀྱིམ་གྱི་གོ་ རེ་ལོང་	khyim gyi	high	2	1	0	0	ཀྱིམ་གྱི་གོ་ རེ་ལོང་ khyim gyi go re lor Hausreini-
+284	10	3817	headword_line	ཀྱིམ་གྱི་གོ་ རེ་ལོང་	khyim gyi	high	2	1	0	0	ཀྱིམ་གྱི་གོ་ རེ་ལོང་ khyim gyi go re loṅ Hausreini-
 284	11	3817	latin_other			none	1	0	0	0	gung.
 284	12	3817	german_prose_with_translit			none	2	1	0	0	Lex. khyim gad dar byed pa (TITC).
 284	13	3818	headword_line	ཀྱིམ་གྱི་གཏོར་བྲ་	khyim	high	1	2	0	0	ཀྱིམ་གྱི་གཏོར་བྲ་ khyim 0)// gtor za ein Wasservo-
@@ -41274,7 +41274,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 293	72	3981	german_prose_with_translit			none	2	3	0	0	Schutz des Körpers“ (brDa); lus skyob pa’i
 293	73	3981	german_prose_with_translit			none	2	1	0	0	go ~ dass. (Dagy); ~ ma = lus la gyon byed
 293	74	3981	latin_other			none	1	0	0	0	pa’ ~ (TTC).
-293	76	3982	headword_line	ཁབ་ཁྲིབ་	khrab khrib	high	4	2	0	0	ཁབ་ཁྲིབ་ khrab khrib auch khrib khrib eine ho-
+293	76	3982	headword_line	ཁབ་ཁྲིབ་	khrab khrib	high	4	2	0	0	ཁྲབ་ཁྲིབ་ khrab khrib auch khrib khrib eine ho-
 293	77	3982	german_prose			none	0	1	0	0	he Zahl.
 293	79	3982	german_prose_with_translit			none	2	3	0	0	Lex. vinäkam (Mvy 7841); khrib khrib =
 293	80	3982	german_prose			none	0	1	0	0	viragam (Mvy 7715).
@@ -41646,7 +41646,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 295	152	4019	other			none	0	0	0	0	BAUM 2001: 289.
 295	154	4020	headword_line	ཁྲི་གདན་	khri	high	2	0	0	0	ཁྲི་གདན་ khri gdan Thronsockel, -polster.
 295	156	4020	german_prose_with_translit			none	3	2	0	0	Lex. khri?i kha gdan (brDa, Dagy).
-295	158	4021	headword_line	ཁྲི་གདགས་	khri	high	1	4	0	0	ཁྲི་གདགས་ khri gdugs Bez. für die Sonne.
+295	158	4021	headword_line	ཁྲི་གདགས་	khri	high	1	4	0	0	ཁྲི་གདུགས་ khri gdugs Bez. für die Sonne.
 295	160	4021	german_prose_with_translit			none	1	2	0	0	ye ses gsal ba’ - (metr.) „die Sonne seiner
 295	161	4021	german_prose_with_translit			none	2	1	0	0	klaren Weisheit“ (Padm 3b4); khri drug (r.
 295	163	4022	headword_line	ཁྲི་ལམ་	khri	high	1	0	0	0	ཁྲི་ལམ་ khri lam
@@ -41955,7 +41955,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 297	179	4066	german_prose_with_translit			none	3	2	0	0	Lex. khrims lugs gsar bzo’i dban cha „die
 297	180	4066	german_prose			none	0	5	0	0	Gewalt, die neue Gesetze erläßt“ (Dagy).
 297	182	4066	tibetan_only			none	0	1	0	0	N ༤ , ;
-297	183	4067	headword_line	ཁྱམས་ཡག་	khrims	high	1	1	0	0	ཁྱམས་ཡག་ khrims yig Gesetzestext.
+297	183	4067	headword_line	ཁྱམས་ཡག་	khrims	high	1	1	0	0	ཁྱམས་ཡིག་ khrims yig Gesetzestext.
 297	184	4067	latin_other			none	7	0	0	0	chos kyi rgyal po’i bka’i - bsad pa la „um
 297	186	4067	german_prose_with_translit			none	1	4	0	0	den Gesetzeserlaß des Dharma-Königs zu
 297	187	4067	german_prose_with_translit			none	1	1	0	0	erklären“ (BhuKkh 122,1).
@@ -41981,7 +41981,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 298	3	4072	headword_line	ཁྲིམས་སུ་བཙལ་	khrims su btsal	high	3	1	0	0	ཁྲིམས་སུ་བཙལ་ khrims su btsal domestizieren.
 298	5	4072	german_prose_with_translit			none	1	1	0	0	ra lug - (metr.) „er domestizierte Ziege
 298	7	4072	german_prose			none	0	2	0	0	und Schaf“ ( 6] 531).
-298	9	4073	headword_line	ཁྲིམས་སོལ་	khrims	high	1	1	0	0	ཁྲིམས་སོལ་ khrims srol weltliches Gesetz,
+298	9	4073	headword_line	ཁྲིམས་སོལ་	khrims	high	1	1	0	0	ཁྲིམས་སྲོལ་ khrims srol weltliches Gesetz,
 298	10	4073	german_prose			none	0	1	0	0	Recht.
 298	12	4073	german_prose_with_translit			none	2	4	0	0	Lex. lugs güis khrims kyi lam lugs „von den
 298	13	4073	german_prose			none	0	4	0	0	zwei [Gesetzes]arten das System des weltli-
@@ -42040,10 +42040,10 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 298	84	4079	headword_line	ཁྱུ་མ་	khru ma	high	2	1	0	0	ཁྱུ་མ་ khru ma Eihaut.
 298	86	4079	german_prose_with_translit			none	1	2	0	0	mnal gyi ~ (metr.) „die Eihaut (skt. jarayn)
 298	87	4079	german_prose			none	0	3	0	0	im Uterus“ (Hev 2.4.61d).
-298	89	4080	headword_line	ཁུག་གིས་	khrug	high	1	0	0	0	ཁུག་གིས་ khrug gis wirbelnd.
+298	89	4080	headword_line	ཁུག་གིས་	khrug	high	1	0	0	0	ཁྲུག་གིས་ khrug gis wirbelnd.
 298	91	4080	german_prose_with_translit			none	3	2	0	0	nam mkha’ dan rig pa ~ ’dres „Himmel und
 298	92	4080	german_prose_with_translit			none	1	1	0	0	Geist wirbelnd vermischt“ (Akhr2 90,6).
-298	94	4081	headword_line	ཁུང་	khrun	high	1	1	0	0	ཁུང་ khrun resp. für chan.
+298	94	4081	headword_line	ཁུང་	khrun	high	1	1	0	0	ཁྲུང་ khrun resp. für chan.
 298	96	4081	german_prose_with_translit			none	2	4	0	0	Lex. khrun chan Zes Ze sa (Bon 29,5).
 298	98	4082	headword_line	ཁྱུང་ཏཁྱུང་	khrun khrun	high	2	0	0	0	ཁྱུང་ཏཁྱུང་ khrun khrun.
 298	100	4082	german_prose			none	0	2	0	0	1. auch krun krun Kranich.
@@ -42073,7 +42073,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 298	136	4085	tibetan_only	༣༄		none	0	0	0	0	༣༄
 298	138	4085	german_prose_with_translit			none	4	2	0	0	Lex. chan ma’am chan zu mkhan ma (brDa,
 298	139	4085	german_prose			none	0	1	0	0	Dagy).
-298	141	4086	headword_line	ཁུང་ཞེ་ཆཿ	khrun	high	2	2	0	0	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
+298	141	4086	headword_line	ཁུང་ཞེ་ཆཿ	khrun	high	2	2	0	0	ཁྲུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
 298	143	4086	german_prose_with_translit			none	4	2	0	0	Lex. chan ma’am chan Zu mkhan ma (brDa,
 298	144	4086	german_prose			none	0	1	0	0	Dagy).
 298	146	4086	latin_other			none	2	0	0	0	ART khrun rwa Wirtshaus.
@@ -47003,11 +47003,11 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 334	102	4538	other			none	0	0	0	0	mand, alle.
 334	104	4538	german_prose_with_translit			none	2	3	0	0	Lex. ga thog = gan Zig (brDa, Dagy); -, ga
 334	105	4538	latin_other			none	3	0	0	0	dag = yod tshad tshan ma (TTC).
-334	107	4539	headword_line	ག་དར་མཆོག་	mchog	medium	1	2	0	0	ག་དར་མཆོག་ ga dur mchog eine Heilpflanze,
+334	107	4539	headword_line	ག་དར་མཆོག་	mchog	medium	1	2	0	0	ག་དུར་མཆོག་ ga dur mchog eine Heilpflanze,
 334	109	4539	german_prose			none	0	2	0	0	synon. Tkon li, vgl. KLETTER/
 334	110	4539	other			none	0	0	0	0	KRIECHBAUM 2001: 138 ff., 158 ff.
 334	112	4539	tibetan_only	ག་དུང་དམན་		none	0	0	0	0	ག་དུང་དམན་ ga dur dman
-334	114	4539	tibetan_only	ག་དར་དམན་		none	0	3	0	0	ག་དར་དམན་ ga dur dman eine Heilpflanze, vgl.
+334	114	4539	tibetan_only	ག་དར་དམན་		none	0	3	0	0	ག་དུར་དམན་ ga dur dman eine Heilpflanze, vgl.
 334	115	4539	tibetan_only	པི		none	0	0	0	0	པི KLETTER/KRIECHBAUM 2001:
 334	117	4539	other			none	0	0	0	0	158 ff.
 334	118	4539	latin_other			none	1	0	0	0	TAN’ ga dus wann?
@@ -47436,7 +47436,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 337	48	4569	german_prose			none	0	1	0	0	gendwelche, wer auch immer.
 337	50	4569	latin_other			none	5	0	0	0	myi ˆ~ bya - / rjo bo yod na na 7 rjo bo gar
 337	52	4569	other			none	0	0	0	0	182
-337	54	4569	headword_line	གང་ག་ཆུང་	chuṅ	high	1	0	0	0	གང་ག་ཆུང་ gar ga chuṅ
+337	54	4569	headword_line	གང་ག་ཆུང་	chuṅ	high	1	0	0	0	གང་ག་ཆུང་ gaṅ ga chuṅ
 337	56	4569	german_prose			none	0	7	0	0	re „wenn jeder Mensch und jeder Vogel einen Herrn hat, wo ist mein Herr?“ (PT
 337	58	4569	latin_other			none	6	0	0	0	1287 28); ri ~ ni khus btab kyaṅ / bya pu ni
 337	59	4569	german_prose_with_translit			none	2	2	0	0	khus ma gdab (metr.) „auch wenn man von
@@ -47604,7 +47604,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 338	55	4584	german_prose_with_translit			none	1	2	0	0	kommt [zunächst] zur Vermehrung und
 338	56	4584	german_prose_with_translit			none	1	1	0	0	[dann] zur Verminderung“ (Vdk 2: 345,5).
 338	57	4584	german_prose_with_translit			none	1	2	0	0	Lex. ’hel ’grib (brDa, Dagy).
-338	59	4585	headword_line	གང་ཐད་	thad gaṅ thad pa	high	4	0	0	0	གང་ཐད་ gar thad \gaṅ ’thad pa.
+338	59	4585	headword_line	གང་ཐད་	thad gaṅ thad pa	high	4	0	0	0	གང་ཐད་ gaṅ thad \gaṅ ’thad pa.
 338	61	4586	headword_line	གང་ཐོབ་	gaṅ thob	high	2	1	0	0	གང་ཐོབ་ gaṅ thob Gesamtbetrag.
 338	62	4586	german_prose_with_translit			none	4	2	0	0	"{s}gan thob thabs mkhas bsdu ""khos „der Ge-"
 338	64	4586	german_prose_with_translit			none	1	1	0	0	samtbetrag [wörtl.: was erlangt wurde] soll
@@ -49626,7 +49626,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 353	31	4752	other			none	0	0	0	0	(gZer 802,1).
 353	33	4752	german_prose_with_translit			none	4	4	0	0	Lex. ras gur ram sbra gur lta bu „wie: Baumwollzelt oder Filzzelt“ (brDa); ’od kyi - zer
 353	35	4752	german_prose_with_translit			none	2	3	0	0	ba lta bu „wie das sog. Lichtzelt“ (Dagy).
-353	37	4753	headword_line	གར་ཏྱིམ་	khyim	high	1	2	0	0	གར་ཏྱིམ་ gur khyim ein Zelt.
+353	37	4753	headword_line	གར་ཏྱིམ་	khyim	high	1	2	0	0	གུར་ཏྱིམ་ gur khyim ein Zelt.
 353	39	4753	german_prose_with_translit			none	3	2	0	0	ja’ tshon ~ phul „das Regenbogenwohnzelt
 353	40	4753	german_prose			none	0	1	0	0	wurde übergeben“ (gZer 805,4).
 353	42	4753	german_prose_with_translit			none	4	2	0	0	Lex. ’od kyi gur khan zer ba lta bu „wie das
@@ -54066,7 +54066,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 383	169	5046	german_prose			none	0	6	0	0	„Fell des Raubtieres Dachs“ (Dagy, ähnl.
 383	170	5046	latin_other			none	1	0	0	0	brDa).
 383	172	5047	headword_line	གྲམ་པ་	pa	medium	2	0	0	0	གྲམ་པ་ 'grum pa \grums pa.
-383	174	5048	headword_line	གྲམ་པྲོ་	po	medium	1	1	0	0	གྲམ་པྲོ་ grum po Krüppel.
+383	174	5048	headword_line	གྲམ་པྲོ་	po	medium	1	1	0	0	གྲུམ་པྲོ་ grum po Krüppel.
 383	176	5048	german_prose_with_translit			none	4	2	0	0	Lex. phakkah (Mvy 8876); yan lag ma tshan
 383	177	5048	german_prose_with_translit			none	1	3	0	0	ba „jmd. mit unvollständigen Gliedmaßen“
 383	179	5048	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
@@ -54079,7 +54079,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 383	190	5048	german_prose_with_translit			none	1	3	0	0	durch Lymphe Lahmer und Gelenkkrank-
 383	191	5048	german_prose_with_translit			none	3	4	0	0	heit“ (brDa); nad cig gi min „Bez. für eine
 383	192	5048	german_prose_with_translit			none	1	1	0	0	Krankheit“ (Dagy).
-383	194	5049	headword_line	གྲམ་རྩེ་	rtse	high	1	1	0	0	གྲམ་རྩེ་ grum rtse Teppich.
+383	194	5049	headword_line	གྲམ་རྩེ་	rtse	high	1	1	0	0	གྲུམ་རྩེ་ grum rtse Teppich.
 383	196	5049	german_prose			none	0	4	0	0	Lex. par tan nam gdan Zig „ein Teppich
 383	197	5049	german_prose_with_translit			none	4	2	0	0	oder Kissen“ (brDa); bal gyis ’thags pa’i
 383	198	5049	german_prose			none	0	3	0	0	grum „ein aus Wolle gewebter Teppich“
@@ -55629,7 +55629,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 393	169	5163	latin_other			none	1	0	0	0	pa’i min).
 393	171	5163	tibetan_only	གླང་ཆེན་མོ་		none	0	2	0	0	གླང་ཆེན་མོ་ glaṅ chen mo Elefantenkuh.
 393	172	5163	german_prose_with_translit			none	1	2	0	0	Lex. glan mo = ~ (brDa, Dagy).
-393	174	5164	headword_line	གླང་ཆེན་རྩ་	rtsi	high	1	2	0	0	གླང་ཆེན་རྩ་ glaṅ chen rtsi Bezoar.
+393	174	5164	headword_line	གླང་ཆེན་རྩ་	rtsi	high	1	2	0	0	གླང་ཆེན་རྩི་ glaṅ chen rtsi Bezoar.
 393	175	5164	german_prose_with_translit			none	1	2	0	0	Lex. - byid (gYu 292,22); glan chen gi wan
 393	176	5164	other			none	0	0	0	0	(TTC).
 393	178	5165	headword_line	གླང་མཇུག་པ་	pa	medium	1	3	0	0	གླང་མཇུག་པ་ glani mjug pa Bez. für Affe.
@@ -56033,7 +56033,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 396	116	5198	tibetan_only	གླིང་སྣམ་		none	0	1	0	0	གླིང་སྣམ་ gliṅ snam Stoffflicken.
 396	118	5198	german_prose_with_translit			none	4	3	0	0	rmad gos - rtsa lha daṅ „ein ausgezeichnetes Kleidungsstück mit 25 Flicken aus
 396	120	5198	german_prose			none	0	1	0	0	Stoff“ (gZer 932,2).
-396	122	5199	headword_line	གླང་ཕྲན་	phran	high	1	0	0	0	གླང་ཕྲན་ glin phran.
+396	122	5199	headword_line	གླང་ཕྲན་	phran	high	1	0	0	0	གླིང་ཕྲན་ gliṅ phran.
 396	124	5199	other			none	0	0	0	0	1. 1glın 1.
 396	126	5199	german_prose			none	0	4	0	0	2. Bez. der acht kleinen Tempel zwischen
 396	127	5199	german_prose			none	0	2	0	0	den glin bzZi in bSam-yas.
@@ -57783,7 +57783,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 407	163	5360	headword_line	དགང་མཐོངས་	dgun mthons	high	2	1	0	0	དགང་མཐོངས་ dgun mthons Dachfenster.
 407	165	5360	german_prose_with_translit			none	3	1	0	0	Lex. gnam mthons (brDa); nam mkha’i
 407	166	5360	german_prose_with_translit			none	1	1	0	0	mthons (Dagy).
-407	168	5361	headword_line	དགུང་གདགས་	dgun	medium	2	0	0	0	དགུང་གདགས་ dguṅ gdugs Mittagshitze.
+407	168	5361	headword_line	དགུང་གདགས་	dgun	medium	2	0	0	0	དགུང་གདུགས་ dguṅ gdugs Mittagshitze.
 407	170	5361	german_prose_with_translit			none	4	4	0	0	Lex. Rin dgun gi 777 ma tsha dro „Hitze der
 407	171	5361	german_prose_with_translit			none	1	1	0	0	Mittagssonne“ (brDa).
 407	173	5362	headword_line	དགུང་བདན་	dgun bdun	medium	2	2	0	0	དགུང་བདུན་ dguṅ bdun sieben Tage, Woche.
@@ -61497,7 +61497,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 433	40	5704	german_prose_with_translit			none	4	1	0	0	zelts“ (Mil 117,13); rtsiig zur ~ ston de yaṅ
 433	41	5704	german_prose_with_translit			none	6	7	0	0	ni / nan gi sa dgra yin pas „auch die Mauerecke, die auf eine Talmündung zeigt, ist ein
 433	43	5704	german_prose			none	0	2	0	0	innerer Erdfeind“ (Vdk 2: 359,5).
-433	45	5704	tibetan_only	འགག་སྒ་		none	0	1	0	0	འགག་སྒ་ gag sgo Grenzaufsicht.
+433	45	5704	tibetan_only	འགག་སྒ་		none	0	1	0	0	འགག་སྒོ་ gag sgo Grenzaufsicht.
 433	47	5704	german_prose_with_translit			none	3	1	0	0	’di kha ~ sa heb su yitg} ge ’byor „hier ist
 433	48	5704	german_prose_with_translit			none	1	2	0	0	beim englischen Grenzkontrollbeamten ein
 433	49	5704	german_prose_with_translit			none	1	2	0	0	Brief eingetroffen“ (Wadd135p 2).
@@ -65054,7 +65054,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 457	154	5903	german_prose_with_translit			none	3	1	0	0	Lex. thur du gug po „nach unten gebeugt“
 457	155	5903	latin_other			none	1	0	0	0	(brDa).
 457	157	5904	headword_line	རྒོ་བ་	rgo ba	high	3	0	0	0	རྒོ་བ་ rgo ba [7290 ba.
-457	159	5905	headword_line	རྒ་བུ་	rgo	high	1	1	0	0	རྒ་བུ་ rgo bu Antilope.
+457	159	5905	headword_line	རྒ་བུ་	rgo	high	1	1	0	0	རྒོ་བུ་ rgo bu Antilope.
 457	161	5905	latin_other			none	4	0	0	0	gran tsha ~ rdza span{s} mtshams la sdod
 457	163	5905	other			none	0	0	0	0	407
 457	165	5905	latin_other			none	1	0	0	0	AR rgod
@@ -65646,7 +65646,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 461	116	5954	german_prose_with_translit			none	2	4	0	0	tsa bsil Zin yan (metr.) „das Wasser der
 461	117	5954	german_prose			none	0	6	0	0	Kokosnuß (skt. nälikera) ist ölig, süß und
 461	118	5954	german_prose			none	0	2	0	0	kühlend“ (Ahs 1.5.19).
-461	120	5955	headword_line	རྒྱ་སྟབས་	rgya	high	1	2	0	0	རྒྱ་སྟབས་ rgya stobs eine hohe Zahl.
+461	120	5955	headword_line	རྒྱ་སྟབས་	rgya	high	1	2	0	0	རྒྱ་སྟོབས་ rgya stobs eine hohe Zahl.
 461	122	5955	german_prose_with_translit			none	4	2	0	0	Lex. - phrag brgya na kun stobs Zes bya’o =
 461	123	5955	german_prose			none	0	3	0	0	Satam mudräbalänam sarvabalam nämocyate
 461	124	5955	german_prose			none	0	3	0	0	„100 mudrabala heißen ein sarvabala“ (Mvy
@@ -66325,7 +66325,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 465	209	6031	german_prose_with_translit			none	3	1	0	0	» rin = thag rin (brDa, Dagy); - rin ba =
 465	210	6031	german_prose			none	0	1	0	0	viprakrstah „fern“ (Mvy 5102); = srins = rin
 465	211	6031	latin_other			none	6	0	0	0	du gyis sig (brDa); - bsrin = rin du bya ba
-466	1	6032	headword_line	རྒྱང་བཀྲག་	rgyar bkrag	high	2	0	0	0	རྒྱང་བཀྲག་ rgyar bkrag
+466	1	6032	headword_line	རྒྱང་བཀྲག་	rgyar bkrag	high	2	0	0	0	རྒྱང་བཀྲག་ rgyaṅ bkrag
 466	3	6032	latin_other			none	6	0	0	0	ste ~ bsgrags nas gsar ’gyur sgrog pa lta bu
 466	4	6032	german_prose_with_translit			none	4	4	0	0	„wie: verlängern, über Rundfunk Nachrichten verbreiten“ (Dagy); bskal ba ni ... ~ rin
 466	6	6032	latin_other			none	2	0	0	0	ba (Liś 28,1).
@@ -69312,7 +69312,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 488	131	6287	german_prose_with_translit			none	2	3	0	0	Lex. rtsam snod rtsam pas - Sig „stopfe das
 488	132	6287	german_prose			none	0	7	0	0	Röstmehl in den Behälter für das Röst-
 488	133	6287	latin_other			none	1	0	0	0	mehl!“ (brDa).
-488	135	6288	headword_line	རྒྱབ་	rgyob	high	2	1	0	0	རྒྱབ་ rgyob imp. zu !’rgyab schlagen, zuschla-
+488	135	6288	headword_line	རྒྱབ་	rgyob	high	2	1	0	0	རྒྱོབ་ rgyob imp. zu !’rgyab schlagen, zuschla-
 488	136	6288	german_prose_with_translit			none	1	1	0	0	gen, [Preis] festsetzen.
 488	138	6288	german_prose_with_translit			none	3	4	0	0	zon la gon ~ (metr.) „für Waren seien Preise festgesetzt“ (Padm 24655); kha nas - sod
 488	140	6288	german_prose_with_translit			none	4	3	0	0	kyi sgra sg(r)og pa „sie rufen ‚Schlag zu! Töte!‘“ (Thgr 164,1).
@@ -69565,7 +69565,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 490	77	6302	tibetan_only	སྒར་ཏོག་		none	0	4	0	0	སྒར་ཏོག་ sgar tog npr. ein Ort in Amdo.
 490	78	6302	german_prose_with_translit			none	4	2	0	0	Lex. stod kyi yul Zig (brDa); bod mdo stod
 490	79	6302	german_prose			none	0	1	0	0	(Dagy).
-490	80	6303	headword_line	སྒང་དམ་	tham Verfügung	high	2	1	0	0	སྒང་དམ་ sgar dam auch sgar tham Verfügung
+490	80	6303	headword_line	སྒང་དམ་	tham Verfügung	high	2	1	0	0	སྒང་དམ་ sgaṅ dam auch sgar tham Verfügung
 490	81	6303	german_prose			none	0	2	0	0	des Militärlagers.
 490	83	6303	german_prose_with_translit			none	3	1	0	0	sgar tham rim can yod ’dug „es liegen sukzessiv [ausgefertigte] Rechtsbriefe des
 490	85	6303	german_prose			none	0	2	0	0	Heerlagers vor“ (MTH3/5/13 4); ~ Zig
@@ -70240,7 +70240,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 494	158	6340	tibetan_only	སྒོ་ཡི་མེ་ཁོང་		none	0	1	0	0	སྒོ་ཡི་མེ་ཁོང་ sgo yı me lor Türblatt.
 494	159	6340	german_prose_with_translit			none	2	1	0	0	Lex. sgo’i leb sin me lon (brDa).
 494	161	6340	tibetan_only	སྒོ་གསུམ་		none	0	0	0	0	སྒོ་གསུམ་ sgo gsum
-494	163	6340	tibetan_only	སྒྲ་ཡག་		none	0	1	0	0	སྒྲ་ཡག་ go yig Türschild.
+494	163	6340	tibetan_only	སྒྲ་ཡག་		none	0	1	0	0	སྒྲ་ཡིག་ go yig Türschild.
 494	164	6340	german_prose_with_translit			none	2	2	0	0	Lex. sgo yi them byan lta bu (Dagy).
 494	166	6341	headword_line	གྲོ	Anfechtung	medium	1	2	0	0	"གྲོ U"" sgo yus Anfechtung, Anklage."
 494	167	6341	german_prose			none	0	2	0	0	Lex. Zu gtug (TTC).
@@ -79002,7 +79002,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 552	41	6971	latin_other			none	2	0	0	0	mi gab par / gab pa ~ nas ... gsol (metr.)
 552	42	6971	german_prose_with_translit			none	1	3	0	0	„ohne daß es verborgen bleibt, mögest du
 552	43	6971	german_prose			none	0	4	0	0	das Verborgene enthüllen“ (Glr 141,16).
-552	45	6972	headword_line	མངན དུ་ཕྱགས	du phyogs	high	2	0	0	0	མངན དུ་ཕྱགས mnon du phyogs.
+552	45	6972	headword_line	མངན དུ་ཕྱགས	du phyogs	high	2	0	0	0	མངན དུ་ཕྱོགས mnon du phyogs.
 552	47	6972	german_prose_with_translit			none	1	1	0	0	1. sich zuwenden; - pa zugewandt; vgl.
 552	48	6972	german_prose_with_translit			none	1	1	0	0	Imnon phyogs.
 552	50	6972	latin_other			none	3	0	0	0	tshogs la - par 9249 par bya „er stelle sich
@@ -89825,7 +89825,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 622	3	7602	headword_line	ཆ་ཤས་རིམ་རྫོགས་	rdzogs	high	1	3	0	0	ཆ་ཤས་རིམ་རྫོགས་ cha Sas rim rdzogs Bez. für
 622	5	7602	german_prose			none	0	1	0	0	zunehmender Mond.
 622	7	7602	german_prose_with_translit			none	2	1	0	0	Lex. yar no’i min (brDa).
-622	8	7602	tibetan_only	ཆ་སོལ་		none	0	2	0	0	ཆ་སོལ་ cha srol Brauch, Sitte.
+622	8	7602	tibetan_only	ཆ་སོལ་		none	0	2	0	0	ཆ་སྲོལ་ cha srol Brauch, Sitte.
 622	9	7602	german_prose_with_translit			none	1	2	0	0	Lex. /ugs srol (brDa, Dagy).
 622	11	7603	headword_line	ཆ་གསུམ་གཏོར་མ་	ma	medium	2	0	0	0	ཆ་གསུམ་གཏོར་མ་ cha gsum gtor ma \gtor ma
 622	13	7603	other			none	0	0	0	0	cha gsum.
@@ -89947,7 +89947,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 624	35	7606	german_prose			none	0	3	0	0	„Honig verbindet Brüche“ (Ahs 1.5.52c).
 624	36	7606	german_prose_with_translit			none	1	2	0	0	Lex. ran bZin gas chag son ba „von selbst
 624	37	7606	german_prose			none	0	2	0	0	zerbrochen“ (Dagy).
-624	39	7606	tibetan_only	ཆག་གྲམ་		none	0	1	0	0	ཆག་གྲམ་ chag grum Zerfall.
+624	39	7606	tibetan_only	ཆག་གྲམ་		none	0	1	0	0	ཆག་གྲུམ་ chag grum Zerfall.
 624	41	7606	german_prose_with_translit			none	3	4	0	0	sku rten rnams la ~ „ein Zerfall der Standbilder“ (MTH3/5/17 14).
 624	44	7606	german_prose_with_translit			none	3	1	0	0	Lex. bcag pa’am dkrums pa’i - dum bu
 624	45	7606	german_prose_with_translit			none	2	1	0	0	(brDa); ran bZin gas chag son ba „von selbst
@@ -92386,7 +92386,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 639	205	7783	german_prose			none	0	4	0	0	„aus Eisen, Holz und Fasern hergestellte
 639	206	7783	german_prose			none	0	2	0	0	Fessel“ (BloD 233,5).
 639	208	7783	tibetan_only			none	0	1	0	0	EN ༨ . . Ion
-639	209	7783	tibetan_only	ཆངས་ཡག་		none	0	2	0	0	ཆངས་ཡག་ chins yig auch ’chin yig Vertrag,
+639	209	7783	tibetan_only	ཆངས་ཡག་		none	0	2	0	0	ཆངས་ཡིག་ chins yig auch ’chin yig Vertrag,
 639	210	7783	german_prose			none	0	1	0	0	Friedensvertrag.
 639	212	7783	german_prose_with_translit			none	1	1	0	0	'chin yig chen mo bjaags klog legs par bka’ drin
 639	213	7783	german_prose_with_translit			none	1	3	0	0	bskyans rjes „nachdem er die Güte besaß,
@@ -93517,7 +93517,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 646	213	7866	headword_line	ཆུ་གདམས་	Harnverhaltung	medium	1	0	0	0	ཆུ་གདམས་ chu gdams Harnverhaltung.
 646	215	7866	german_prose_with_translit			none	1	4	0	0	mi rta » dus „wenn Mensch oder Pferd an
 646	216	7866	german_prose_with_translit			none	1	1	0	0	Harnverhaltung [leiden]“ (Hipp 166,5).
-646	218	7866	tibetan_only	ཆུ་གདགས་		none	0	1	0	0	ཆུ་གདགས་ chu gdugs Schirm.
+646	218	7866	tibetan_only	ཆུ་གདགས་		none	0	1	0	0	ཆུ་གདུགས་ chu gdugs Schirm.
 646	219	7866	german_prose_with_translit			none	1	3	0	0	Lex. Ai gdugs la’an (Dagy).
 646	221	7867	headword_line	ཆུ་བདག་	bdag	medium	1	0	0	0	ཆུ་བདག་ chu bdag.
 646	223	7867	german_prose			none	0	2	0	0	1. Beiname Varunas.
@@ -94437,7 +94437,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 652	166	7945	german_prose_with_translit			none	1	2	0	0	(TMP); vgl. T!chu rtsa.
 652	167	7945	german_prose_with_translit			none	1	2	0	0	Lex. śu dag (Dagy).
 652	169	7945	tibetan_only	༤༽		none	0	0	0	0	༤༽ .
-652	170	7946	headword_line	ཆུ་ཡ་ཚེར་མ་	tsher ma	high	2	1	0	0	ཆུ་ཡ་ཚེར་མ་ chu yi tsher ma Lotoswurzel,
+652	170	7946	headword_line	ཆུ་ཡ་ཚེར་མ་	tsher ma	high	2	1	0	0	ཆུ་ཡི་ཚེར་མ་ chu yi tsher ma Lotoswurzel,
 652	171	7946	latin_other			none	1	0	0	0	Lotosstengel.
 652	172	7946	german_prose_with_translit			none	5	1	0	0	Lex. padma’i rtsa ba (brDa); padina la sogs
 652	173	7946	german_prose_with_translit			none	4	1	0	0	pa’irtsa ba dan ston po’i min (Dagy).
@@ -94497,7 +94497,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 653	40	7954	example_tibetan_latin	ཆུ་		none	1	1	0	0	ཆུ་'ཡི་སྲིན་པོ་ chu ༡// srin po auch chu yi srin mo,
 653	41	7954	other			none	0	0	0	0	chu yi srin rin \chu srin.
 653	43	7954	tibetan_only			none	0	0	0	0	* ¡¥ པ་ན ལྦི ༤
-653	44	7954	tibetan_only	ཆུ་ཡ་སྲ་མ		none	0	3	0	0	ཆུ་ཡ་སྲ་མ chu yi sre mo Bez. für Otter.
+653	44	7954	tibetan_only	ཆུ་ཡ་སྲ་མ		none	0	3	0	0	ཆུ་ཡི་སྲ་མ chu yi sre mo Bez. für Otter.
 653	45	7954	german_prose_with_translit			none	2	3	0	0	Lex. sram gyi min (brDa, ähnl. Dagy).
 653	47	7954	tibetan_only	ཆུ་ཡུར་		none	0	1	0	0	ཆུ་ཡུར་ chu yur Kanal.
 653	49	7954	german_prose_with_translit			none	4	1	0	0	gal chen dmigs bsal - ma son la shad pa’i ’gal
@@ -94876,7 +94876,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 655	118	7974	german_prose_with_translit			none	1	3	0	0	can der Monat Pausya.
 655	120	7974	other			none	0	0	0	0	252
 655	122	7974	tibetan_only			none	0	1	0	0	N ༨༡ ༢
-655	124	7975	headword_line	ཆུ་ཨུན་གྲང་ཏྱར་	khyer	high	1	0	0	0	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
+655	124	7975	headword_line	ཆུ་ཨུན་གྲང་ཏྱར་	khyer	high	1	0	0	0	ཆུ་ཨུན་གྲོང་ཏྱར་ chu srin groṅ khyer
 655	126	7975	latin_other			none	4	0	0	0	dgun zla 'brin po - ’dod / karka ta dan ~
 655	127	7975	german_prose_with_translit			none	1	4	0	0	la’an (metr.) „[der Monat] Pausa gilt als
 655	128	7975	german_prose			none	0	5	0	0	[das Tierkreiszeichen] Steinbock; im Krebs
@@ -99685,7 +99685,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 686	61	8298	german_prose			none	0	2	0	0	Lex. mu tıg (Dagy).
 686	63	8298	latin_other			none	3	0	0	0	NET mchur Ausdehnung, Länge.
 686	64	8298	german_prose			none	0	3	0	0	Lex. yäamah (Mvy 2680).
-686	66	8299	headword_line	མྱཆུས་རྐ་	mchus rko	high	2	2	0	0	མྱཆུས་རྐ་ mchus rko „Schnabelgräber“, ein
+686	66	8299	headword_line	མྱཆུས་རྐ་	mchus rko	high	2	2	0	0	མྱཆུས་རྐོ་ mchus rko „Schnabelgräber“, ein
 686	68	8299	tibetan_only	་༄		none	0	0	0	0	་༄ . .
 686	70	8299	german_prose			none	0	3	0	0	myth. Lebewesen, vermutlich ein
 686	71	8299	german_prose			none	0	1	0	0	Preta.
@@ -113412,7 +113412,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 778	64	9155	german_prose_with_translit			none	1	5	0	0	der sieben Pferde, Bez. für Sonne“ (brDa);
 778	65	9155	german_prose_with_translit			none	4	1	0	0	rta bdun bdag po (Dagy).
 778	67	9155	tibetan_only			none	0	2	0	0	¬ N Pe . ལེ ༩
-778	68	9156	headword_line	ཉན་མང་སྒ་	mo’i	high	1	3	0	0	ཉན་མང་སྒ་ iin mo’i sgo Bez. für Tagesan-
+778	68	9156	headword_line	ཉན་མང་སྒ་	mo’i	high	1	3	0	0	ཉན་མང་སྒོ་ iin mo’i sgo Bez. für Tagesan-
 778	69	9156	latin_other			none	1	0	0	0	bruch, Morgendämmerung.
 778	71	9156	german_prose			none	0	2	0	0	Lex. skya rens (Dagy).
 778	73	9157	headword_line	ཉིན་མོའི་སྒོ་ང་	mo’i	high	2	4	0	0	ཉིན་མོའི་སྒོ་ང་ in mo’i sgo na Bez. für Dunkel-
@@ -114453,7 +114453,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 784	92	9216	latin_other			none	2	0	0	0	„. di rnams sa ni bcu gfis te (metr.) „pllava
 784	94	9216	german_prose			none	0	5	0	0	und upaprlava [usw.] sind die zwölf Orte“
 784	95	9216	german_prose			none	0	1	0	0	(Hev 1.7.10e).
-784	97	9217	headword_line	ཉེ་བའི་དར་ྲོད་	ba’	high	2	1	0	0	ཉེ་བའི་དར་ྲོད་ ne ba’ dur khrod „sekundäre
+784	97	9217	headword_line	ཉེ་བའི་དར་ྲོད་	ba’	high	2	1	0	0	ཉེ་བའི་དུར་ྲོད་ ne ba’ dur khrod „sekundäre
 784	99	9217	german_prose			none	0	3	0	0	Leichenstätte“, Bez. für tantri-
 784	100	9217	latin_other			none	1	0	0	0	sche Versammlungsplätze, skt. upasma-
 784	101	9217	german_prose			none	0	1	0	0	Säna,.
@@ -120393,7 +120393,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 822	187	9487	german_prose_with_translit			none	3	3	0	0	Lex. ~ Zes bya ba’i tin ne ’dzin = säravati
 822	188	9487	german_prose			none	0	3	0	0	näma samädbib (Mvy 610).
 822	190	9487	german_prose			none	0	2	0	0	En Nm “ir +
-822	191	9488	headword_line	སྙང་པ་ཡ་ག་དྲག་མ་	po	medium	2	1	0	0	སྙང་པ་ཡ་ག་དྲག་མ་ sin po yi ge drug ma der
+822	191	9488	headword_line	སྙང་པ་ཡ་ག་དྲག་མ་	po	medium	2	1	0	0	སྙང་པ་ཡི་ག་དྲག་མ་ sin po yi ge drug ma der
 822	192	9488	german_prose_with_translit			none	1	1	0	0	» sechssilbige Mantra om ma
 822	194	9488	latin_other			none	1	0	0	0	ni pad me ham.
 822	195	9488	example_tibetan_latin			none	3	1	0	0	= gser gyis bris pa geig „ein sin po ༡/7 ge drug
@@ -128585,7 +128585,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 889	114	9800	headword_line	གཏི་མུག་འཁོར་ལོ་	khor lo	high	2	0	0	0	"གཏི་མུག་འཁོར་ལོ་ gti mug ""khor lo"
 889	116	9800	german_prose_with_translit			none	3	1	0	0	170); ~ bdo ba’am Sas che ba’am mi bzad
 889	117	9800	german_prose_with_translit			none	3	1	0	0	pa’am isha ba = tivramohah (Mvy 7266).
-889	118	9801	headword_line	གཏ་མུག་འཁར་ཡ་	khor lo	high	2	2	0	0	གཏ་མུག་འཁར་ཡ་ gti mug khor lo Bez. für
+889	118	9801	headword_line	གཏ་མུག་འཁར་ཡ་	khor lo	high	2	2	0	0	གཏ་མུག་འཁོར་ཡ་ gti mug khor lo Bez. für
 889	120	9801	german_prose			none	0	1	0	0	Schwein.
 889	122	9801	german_prose_with_translit			none	3	2	0	0	Lex. phag pa’! min (brDa, Dagy).
 889	124	9802	headword_line	གཏི་མྨུག་རྡོ་རྗེ་	rdo rje	high	2	2	0	0	གཏི་མྨུག་རྡོ་རྗེ་ gu mug rdo rje npr. eine Gott-
@@ -138550,7 +138550,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 953	14	10409	german_prose_with_translit			none	6	1	0	0	(Nel 5b1); klu mo mdzes ldan ma / na ra lo
 953	15	10409	german_prose_with_translit			none	1	5	0	0	» dpon mo byed „die klu mo mDzes-Idanma wird die Anführerin von uns, der
 953	17	10409	german_prose			none	0	3	0	0	Tausendschaft Ra-lo sein“ (Gesar 215,9).
-953	19	10410	headword_line	སྟང་པ་	stoṅ pa bzw	high	6	0	0	0	སྟང་པ་ stoṅ pa bzw. stoṅ pa ñid 1°ston 2.
+953	19	10410	headword_line	སྟང་པ་	stoṅ pa bzw	high	6	0	0	0	སྟོང་པ་ stoṅ pa bzw. stoṅ pa ñid 1°ston 2.
 953	20	10410	tibetan_latin_mixed	སྟོང་པོ་		none	2	0	0	0	སྟོང་པོ་ $70/7 po T'ston.
 953	22	10411	headword_line	སྟོང་དཔོན་གོང་མོ་རི་བཀྲ་	goṅ	high	2	0	0	0	སྟོང་དཔོན་གོང་མོ་རི་བཀྲ་ ston dpon goṅ mo 7⁄7 bkra
 953	23	10411	german_prose_with_translit			none	1	4	0	0	ein gäi bdag in A-’dam-
@@ -144022,7 +144022,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 988	190	10760	other			none	0	0	0	0	239).
 988	192	10760	german_prose_with_translit			none	2	2	0	0	Lex. lag ’dzin khyim yig „Besitzurkunde“
 988	194	10760	other			none	0	0	0	0	(TTC).
-988	196	10761	headword_line	ཐང་ཁོམ་	thaṅ khrom than phrom	high	4	0	0	0	ཐང་ཁོམ་ thaṅ khrom \than phrom.
+988	196	10761	headword_line	ཐང་ཁོམ་	thaṅ khrom than phrom	high	4	0	0	0	ཐང་ཁྲོམ་ thaṅ khrom \than phrom.
 988	197	10762	headword_line	ཐང་ག་	thaṅ	high	2	0	0	0	ཐང་ག་ thaṅ ga 1//77/7 ka 2,
 988	199	10762	other			none	0	0	0	0	EN a . ° .
 988	200	10763	headword_line	ཐང་ག་ཆུ་སྐྱེས་	thaṅ gi	high	3	2	0	0	ཐང་ག་ཆུ་སྐྱེས་ thaṅ gi chu skyes eine Pflanze,
@@ -150261,7 +150261,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1027	178	11301	german_prose			none	0	4	0	0	bu „wie: Aufschrift am Türsturz“ (Dagy).
 1027	180	11301	german_prose_with_translit			none	2	1	0	0	"Aal"" thems Y'them."
 1027	181	11301	tibetan_only			none	0	0	0	0	m ¢༽ ` ,
-1027	182	11302	headword_line	ཐམས་ཡག་	thems	high	1	0	0	0	ཐམས་ཡག་ thems yig 1/776/77 yig.
+1027	182	11302	headword_line	ཐམས་ཡག་	thems	high	1	0	0	0	ཐམས་ཡིག་ thems yig 1/776/77 yig.
 1027	184	11302	german_prose_with_translit			none	2	1	0	0	AR the’u auch the ’n.
 1027	185	11302	tibetan_only	༣༡		none	0	0	0	0	༣༡
 1027	187	11302	german_prose_with_translit			none	1	3	0	0	1. kleines Siegel; Rechtsbrief; vgl. Ithel 7750.
@@ -152073,7 +152073,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1038	135	11451	german_prose			none	0	1	0	0	skt. Kapälaräja.
 1038	137	11451	german_prose			none	0	3	0	0	Lex. kapälaräjä (Mvy 3592).
 1038	139	11451	tibetan_only	༡༦༡༩		none	0	0	0	0	༡༦༡༩ lin
-1038	141	11452	headword_line	བྲོད་ཕར་	thod phor	high	2	2	0	0	བྲོད་ཕར་ thod phor Schädelschale (Neb 345).
+1038	141	11452	headword_line	བྲོད་ཕར་	thod phor	high	2	2	0	0	བྲོད་ཕོར་ thod phor Schädelschale (Neb 345).
 1038	143	11453	headword_line	ཐོད་ཝྲེང་	thod phren	high	2	0	0	0	ཐོད་ཝྲེང་ thod phren.
 1038	145	11453	german_prose			none	0	2	0	0	1. Kette aus Schädeln.
 1038	147	11453	german_prose_with_translit			none	6	1	0	0	Lex. mgo rus kyi phren ba (brDa); thod pa
@@ -153865,7 +153865,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1052	180	11587	german_prose_with_translit			none	1	2	0	0	Lex. titibbab (Mvy 8016); grans (brDa);
 1052	181	11587	german_prose_with_translit			none	1	4	0	0	’di’an grans sig „auch dies ist eine Zahl“
 1052	183	11587	german_prose			none	0	1	0	0	(Dagy).
-1052	185	11588	headword_line	མཐའ་སྣང་ཆེན་པོ་	mtha’ snaṅi	high	3	2	0	0	མཐའ་སྣང་ཆེན་པོ་ mtha’ snaṅi chen po eine hohe
+1052	185	11588	headword_line	མཐའ་སྣང་ཆེན་པོ་	mtha’ snaṅi	high	3	2	0	0	མཐའ་སྣང་ཆེན་པོ་ mtha’ snaṅ chen po eine hohe
 1052	186	11588	german_prose			none	0	2	0	0	Zahl, 10°; vgl. SCHUH 2012:
 1052	188	11588	other			none	0	0	0	0	1406.
 1052	190	11588	german_prose_with_translit			none	1	2	0	0	Lex. mahätitibhah (Mvy 8017); grans
@@ -154842,7 +154842,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1058	120	11660	german_prose_with_translit			none	2	1	0	0	so wurde prophezeit“ (Bu 703,3).
 1058	122	11660	german_prose			none	0	3	0	0	Lex. mahästhämapräptah (Mvy 653).
 1058	124	11661	headword_line	མཐུ་ཆེན་པོ་	mthu	high	2	3	0	0	མཐུ་ཆེན་པོ་ mthu chen po Tmthu chen.
-1058	126	11662	headword_line	མཐུ་ཆེན་སེང་གེའི་ང་རོ་	mthu	high	3	1	0	0	མཐུ་ཆེན་སེང་གེའི་ང་རོ་ mthu chen ser ge’ na ro
+1058	126	11662	headword_line	མཐུ་ཆེན་སེང་གེའི་ང་རོ་	mthu	high	3	1	0	0	མཐུ་ཆེན་སེང་གེའི་ང་རོ་ mthu chen seṅ ge’ na ro
 1058	127	11662	german_prose			none	0	2	0	0	” npr. ein Text.
 1058	128	11662	german_prose_with_translit			none	2	8	0	0	> las „in [dem Text] ‚Gebrüll des mächtigen Löwen‘ [heißt es]“ (BhuKkh 138,7).
 1058	131	11663	headword_line	མཐུ་གཏད་	mthu	high	2	1	0	0	མཐུ་གཏད་ mthu gtad Beschwörung, Fluch.
@@ -155690,7 +155690,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1063	130	11727	german_prose			none	0	3	0	0	vollendeten Yogins sollen die Menschen
 1063	131	11727	german_prose			none	0	3	0	0	nicht aus Stolz herabsetzen oder verhöh-
 1063	132	11727	german_prose			none	0	1	0	0	nen“ (Hev 2.11.8b).
-1063	134	11728	headword_line	མཐོ་ཁྱ་ྱ་ས།ས།	mtbo btsams	high	3	2	0	0	"མཐོ་ཁྱ་ྱ་ས།ས། mtbo btsams pf. zu Imtho ""tshams."
+1063	134	11728	headword_line	མཐོ་ཁྱ་ྱ་ས།ས།	mtbo btsams	high	3	2	0	0	མཐོ་ཁྱ་ྱ་ས།ས། mtho btsams pf. zu Imtho "tshams.
 1063	136	11728	german_prose			none	0	1	0	0	1. verhöhnen.
 1063	138	11728	german_prose_with_translit			none	5	1	0	0	Lex. gnod sems kyis gtses pa’am fie bar 'tshe
 1063	139	11728	german_prose_with_translit			none	2	1	0	0	bar byed pa lta bu „wie: böswillig verletzt
@@ -155858,7 +155858,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1064	123	11746	german_prose			none	0	3	0	0	der Gattin Indras.
 1064	125	11746	german_prose_with_translit			none	3	2	0	0	Lex. breya byin gyi btsun mo (brDa, Dagy).
 1064	127	11746	german_prose			none	0	1	0	0	N . .
-1064	128	11747	headword_line	མཐོ་རས་སྨན་པ་	mtho	high	2	2	0	0	མཐོ་རས་སྨན་པ་ mtho ris sman pa Beiname der
+1064	128	11747	headword_line	མཐོ་རས་སྨན་པ་	mtho	high	2	2	0	0	མཐོ་རིས་སྨན་པ་ mtho ris sman pa Beiname der
 1064	129	11747	german_prose			none	0	3	0	0	beiden Asvins, der göttlichen
 1064	130	11747	other			none	0	0	0	0	. 8
 1064	131	11747	german_prose			none	0	1	0	0	Arzte.
@@ -170121,7 +170121,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1240	40	12675	german_prose			none	0	2	0	0	gen Sinnen werden!“ (Suv 30,24); — mi san
 1240	41	12675	german_prose_with_translit			none	1	1	0	0	thos ’gyur Zin (metr.) „bald (skt. nacirena)
 1240	42	12675	german_prose			none	0	4	0	0	hörte man das Unerfreuliche“ (Suv 169,23).
-1240	44	12676	headword_line	དེའེ་ཏང་	de’e	high	2	1	0	0	དེའེ་ཏང་ de’e tar Dynastiename der [319
+1240	44	12676	headword_line	དེའེ་ཏང་	de’e	high	2	1	0	0	དེའེ་ཏང་ de’e taṅ Dynastiename der [319
 1240	45	12676	german_prose_with_translit			none	1	1	0	0	(618-905), chin. A ta-t’ang.
 1240	47	12676	german_prose_with_translit			none	8	1	0	0	— gi srid lo ni [su] rtsa gsum lon „dreiundzwanzig Regierungsjahre der T’ang waren
 1240	49	12676	german_prose			none	0	1	0	0	abgelaufen“ (1312 E21).

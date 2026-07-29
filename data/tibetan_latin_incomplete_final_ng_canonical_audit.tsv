@@ -25,7 +25,7 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 ནང	naṅ	2	ambiguous	96	84		retain_incomplete
 ཕང	phaṅ	1	canonical_reviewed	5	5		canonical_now_authoritative
 ཕུང	phuṅ	11	ambiguous	29	27		retain_incomplete
-ཕྱུང	phyuṅ	3	canonical_feature_composed	4	4		canonical_now_authoritative
+ཕྱུང	phyuṅ	3	canonical_reviewed	4	4		canonical_now_authoritative
 བཀང	bkaṅ	3	canonical_feature_composed	3	3		canonical_now_authoritative
 བང	baṅ	2	ambiguous	16	16		retain_incomplete
 བཟུང	bzuṅ	3	canonical_feature_composed	6	4		canonical_now_authoritative
@@ -34,7 +34,7 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 བྱང	byaṅ	18	ambiguous	65	59		retain_incomplete
 བྲེང	breṅ	2	canonical_independent_moderate	6	6		retain_incomplete
 མང	maṅ	13	ambiguous	49	42		retain_incomplete
-མདུང	mduṅ	1	canonical_feature_composed	15	14		canonical_now_authoritative
+མདུང	mduṅ	1	canonical_reviewed	15	14		canonical_now_authoritative
 ཚོང	tshoṅ	1	canonical_independent_moderate	2	2		retain_incomplete
 ཝང	waṅ	3	canonical_independent_moderate	2	2		retain_incomplete
 འགོང	goṅ	3	provisional	0	0		retain_incomplete

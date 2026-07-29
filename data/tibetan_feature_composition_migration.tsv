@@ -417,7 +417,7 @@ tibetan_syllable	baseline_target	current_target	baseline_status	current_status	m
 སྨུ	smu	smu	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 སྨུག	smug	smug	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 སྨུགས	smugs	smugs	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
-སྨོད	smod	smod	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation
+སྨོད	smod	smod	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 སྨོན	smon	smon	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 སྨོས	smos	smos	canonical_feature_composed	feature_complete_unique	retained	Current strict composition matches the baseline target.
 སྨྱག	smyag	smyag	canonical_feature_composed	feature_complete_target_support_insufficient	downgraded	nonadmissible_observation

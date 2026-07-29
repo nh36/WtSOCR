@@ -2120,3 +2120,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 330	37	1478	headword_line	maṅ	rmaṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	རྨང་ maṅ
 196	31	878	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མུན་རྡ་ mun rdo ein Stein, der in finstere Räu-
 371	10	1652	headword_line	བདན	བདུན	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྤིར་བདན་ལོངས་སོང་ smin bdun loṅ / Me
+273	48	1194	headword_line	miyaṅ	myaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	མྱང་འདས་ miyaṅ 'das Nirvāna.
+22	57	54	headword_line	ཆག	ཆོག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མ་ཆག་པ་ ma chog pa weniger, vermindert um.
+377	22	1700	headword_line	སྨད	སྨོད	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྨད་པ་ smod pa Tsmod, len sie mich im Buddhafeld des Sambhoga-

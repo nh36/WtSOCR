@@ -6506,3 +6506,17 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 599	39	2966	headword_line	ཕོད	ཕྱོད	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	མ།་ཕོད་་ nam phyod auch rnam phyog eine ho-
 1041	6	5564	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕྱོགས་སྐོང་ phyogs skyoṅ Hūter der Weltgegen-
 1049	3	5621	headword_line	ཕོལ	ཕྱོལ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕོལ་ཐོའ། phyol phyol onom., vgl. Taal. 62,3); spyi ru mnam pa bźi yin te... dpon gsas
+537	46	2659	headword_line	bzar	bzaṅ	A	reviewed_tibetan_exact_final_ng	1	གནོད་སྦྱིན་གང་བཟང་ grod sbyin gaṅ bzar
+104	47	705	headword_line	mdiuṅ	mduṅ	A	reviewed_tibetan_exact_manual_multi_error	1	མདུང་ཐོགས་ mdiuṅ thogs
+295	1	1664	headword_line	dikar	dkar	A	reviewed_tibetan_exact_manual_multi_error	1	སྡོང་གྲོགས་ཞལ་དཀར་་ sdoṅ grogs Zal dikar
+818	14	4198	headword_line	khbyab	khyab	A	reviewed_tibetan_exact_manual_multi_error	1	སྤྲི་ཁྱབ་མཁན་པོ་ spyi khbyab mkhan po eine
+974	41	5174	headword_line	phyami	phyam	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱམ་མེ་བ་ phyami me ba eben, flach.
+1024	43	5486	headword_line	phbyuṅ	phyuṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱུང་ phbyuṅ
+1045	34	5594	headword_line	tsami	tsam	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱོགས་ཙམ་ phyogs tsami nur ein wenig, ein biß-
+1052	22	5637	headword_line	pbhra	phra	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲ་རྒྱས་ pbhra rgyas Laster, Neigung.
+1064	1	5688	headword_line	pbhran	phran	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲན་རྩེ་ pbhran rtse
+1065	8	5693	headword_line	pbhras	phras	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲས་ཀྱིས་ pbhras kyis plötzlich.
+25	6	85	headword_line	ཆག	ཆོག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གདུང་ཆག་ gduṅ chog eine Totenzeremonie
+92	67	595	headword_line	གསང	གསུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བདྡེན་པ་གསང་བྲ་ bden pa gsuṅ ba Bez. für Bud-
+917	3	4790	headword_line	ཚགས	ཚོགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཕུན་སུམ་ཚགས་པ phun sum tshogs pa Kurzf.
+1028	80	5503	headword_line	pbye	phye	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-

@@ -29011,3 +29011,57 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 352	172	4808	headword_line	ཀི	ཀྱི	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	གྲན་གསྲལ་ཀི་ངང་འ། gun gsab kyi drul Aus-
 1074	8	12100	headword_line	འཁར	འཁྱར	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	"འཐེང་འཁར་ then ""khyar auch ’then khyer"
 287	97	3941	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཁྱུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
+293	76	4031	headword_line	ཁབ	ཁྲབ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཁབ་ཁྲིབ་ khrab khrib auch khrib khrib eine ho-
+298	9	4122	headword_line	སོལ	སྲོལ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཁྲིམས་སོལ་ khrims srol weltliches Gesetz,
+298	89	4129	headword_line	ཁུག	ཁྲུག	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཁུག་གིས་ khrug gis wirbelnd.
+298	94	4130	headword_line	ཁུང	ཁྲུང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཁུང་ khrun resp. für chan.
+298	141	4135	headword_line	ཁུང	ཁྲུང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
+622	8	7739	tibetan_only	སོལ	སྲོལ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཆ་སོལ་ cha srol Brauch, Sitte.
+988	196	11001	headword_line	ཁོམ	ཁྲོམ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཐང་ཁོམ་ thaṅ khrom \than phrom.
+161	203	2108	headword_line	phryed	phyed	A	reviewed_tibetan_exact_manual_multi_error	1	རྐེད་སྐབས་ཕྱེད་པ་ rked skabs phryed pa schmalhüf-
+284	10	3866	headword_line	lor	loṅ	A	reviewed_tibetan_exact_final_ng	1	ཀྱིམ་གྱི་གོ་ རེ་ལོང་ khyim gyi go re lor Hausreini-
+337	54	4619	headword_line	gar	gaṅ	A	reviewed_tibetan_exact_final_ng	1	གང་ག་ཆུང་ gar ga chuṅ
+338	59	4636	headword_line	gar	gaṅ	A	reviewed_tibetan_exact_final_ng	1	གང་ཐད་ gar thad \gaṅ ’thad pa.
+466	1	6144	headword_line	rgyar	rgyaṅ	A	reviewed_tibetan_exact_final_ng	1	རྒྱང་བཀྲག་ rgyar bkrag
+1240	44	12937	headword_line	tar	taṅ	A	reviewed_tibetan_exact_final_ng	1	དེའེ་ཏང་ de’e tar Dynastiename der [319
+490	80	6418	headword_line	sgar	sgaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྒང་དམ་ sgar dam auch sgar tham Verfügung
+1058	126	11905	headword_line	ser	seṅ	A	reviewed_tibetan_exact_ocr_signature	1	མཐུ་ཆེན་སེང་གེའི་ང་རོ་ mthu chen ser ge’ na ro
+156	7	1997	headword_line	rkaṅi	rkaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	རྐང་སྐྱོབ་ rkaṅi skyob Schuh, Stiefel.
+1052	185	11831	headword_line	snaṅi	snaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	མཐའ་སྣང་ཆེན་པོ་ mtha’ snaṅi chen po eine hohe
+70	183	708	headword_line	ཀན	ཀུན	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཀན་ཏུ་རྒྱས་པར་བྱེད་པ་ kun tu rgyas par byed pa ver-
+117	196	1467	headword_line	གྲམ	གྲུམ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཀློང་གྲམ་ kloṅ grum eine Art Dachs.
+295	158	4070	headword_line	གདགས	གདུགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཁྲི་གདགས་ khri gdugs Bez. für die Sonne.
+297	183	4116	headword_line	ཡག	ཡིག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཁྱམས་ཡག་ khrims yig Gesetzestext.
+334	107	4588	headword_line	དར	དུར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ག་དར་མཆོག་ ga dur mchog eine Heilpflanze,
+334	114	4588	tibetan_only	དར	དུར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ག་དར་དམན་ ga dur dman eine Heilpflanze, vgl.
+353	37	4810	headword_line	གར	གུར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གར་ཏྱིམ་ gur khyim ein Zelt.
+383	174	5127	headword_line	གྲམ	གྲུམ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གྲམ་པྲོ་ grum po Krüppel.
+383	194	5128	headword_line	གྲམ	གྲུམ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གྲམ་རྩེ་ grum rtse Teppich.
+393	174	5253	headword_line	རྩ	རྩི	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གླང་ཆེན་རྩ་ glaṅ chen rtsi Bezoar.
+396	122	5303	headword_line	གླང	གླིང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གླང་ཕྲན་ glin phran.
+407	168	5469	headword_line	གདགས	གདུགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	དགུང་གདགས་ dguṅ gdugs Mittagshitze.
+433	45	5814	tibetan_only	སྒ	སྒོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	འགག་སྒ་ gag sgo Grenzaufsicht.
+457	159	6016	headword_line	རྒ	རྒོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྒ་བུ་ rgo bu Antilope.
+461	120	6067	headword_line	སྟབས	སྟོབས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྒྱ་སྟབས་ rgya stobs eine hohe Zahl.
+488	135	6400	headword_line	རྒྱབ	རྒྱོབ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྒྱབ་ rgyob imp. zu !’rgyab schlagen, zuschla-
+494	163	6455	tibetan_only	ཡག	ཡིག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྒྲ་ཡག་ go yig Türschild.
+552	45	7099	headword_line	ཕྱགས	ཕྱོགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མངན དུ་ཕྱགས mnon du phyogs.
+624	39	7744	tibetan_only	གྲམ	གྲུམ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆག་གྲམ་ chag grum Zerfall.
+639	209	7933	tibetan_only	ཡག	ཡིག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆངས་ཡག་ chins yig auch ’chin yig Vertrag,
+646	218	8019	tibetan_only	གདགས	གདུགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆུ་གདགས་ chu gdugs Schirm.
+652	170	8100	headword_line	ཡ	ཡི	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆུ་ཡ་ཚེར་མ་ chu yi tsher ma Lotoswurzel,
+653	44	8108	tibetan_only	ཡ	ཡི	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆུ་ཡ་སྲ་མ chu yi sre mo Bez. für Otter.
+655	124	8129	headword_line	གྲང	གྲོང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
+686	66	8464	headword_line	རྐ	རྐོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མྱཆུས་རྐ་ mchus rko „Schnabelgräber“, ein
+778	68	9340	headword_line	སྒ	སྒོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཉན་མང་སྒ་ iin mo’i sgo Bez. für Tagesan-
+784	97	9402	headword_line	དར	དུར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཉེ་བའི་དར་ྲོད་ ne ba’ dur khrod „sekundäre
+822	191	9675	headword_line	ཡ	ཡི	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྙང་པ་ཡ་ག་དྲག་མ་ sin po yi ge drug ma der
+889	118	9996	headword_line	འཁར	འཁོར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གཏ་མུག་འཁར་ཡ་ gti mug khor lo Bez. für
+953	19	10646	headword_line	སྟང	སྟོང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	སྟང་པ་ stoṅ pa bzw. stoṅ pa ñid 1°ston 2.
+1027	182	11545	headword_line	ཡག	ཡིག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཐམས་ཡག་ thems yig 1/776/77 yig.
+1038	141	11695	headword_line	ཕར	ཕོར	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བྲོད་ཕར་ thod phor Schädelschale (Neb 345).
+1064	128	11990	headword_line	རས	རིས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	མཐོ་རས་སྨན་པ་ mtho ris sman pa Beiname der
+396	122	5303	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_ocr_signature	1	གླིང་ཕྲན་ glin phran.
+655	124	8129	headword_line	gron	groṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཆུ་ཨུན་གྲོང་ཏྱར་ chu srin gron khyer
+270	15	3646	headword_line	kbe	khe	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཁེ་ཉེན་ kbe nen auch khye fen Gewinn und
+1063	134	11971	headword_line	mtbo	mtho	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	"མཐོ་ཁྱ་ྱ་ས།ས། mtbo btsams pf. zu Imtho ""tshams."

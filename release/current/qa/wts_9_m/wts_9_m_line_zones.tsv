@@ -1618,7 +1618,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 22	54	53	german_prose_with_translit			none	1	4	0	0	"byan, Zubereiter von Speisen"" (Dagy); ja ma"
 22	55	53	german_prose_with_translit			none	2	1	0	0	= ja bzo mkhan ma byan (Dagy).
 22	56	53	tibetan_only	༨		none	0	0	0	0	༨ . .
-22	57	54	headword_line	མ་ཆག་པ་	ma	medium	2	0	0	0	མ་ཆག་པ་ ma chog pa weniger, vermindert um.
+22	57	54	headword_line	མ་ཆག་པ་	ma	medium	2	0	0	0	མ་ཆོག་པ་ ma chog pa weniger, vermindert um.
 22	58	54	german_prose_with_translit			none	2	1	0	0	dbyar rin po'i dus m /7/// Zag gaig gis zla
 22	59	54	german_prose_with_translit			none	4	2	0	0	"ba gsum du — ste ""der lange Sommer [dau-"
 22	60	54	german_prose			none	0	4	0	0	"ert] drei Monate weniger einen Tag"" (Prav"
@@ -22853,7 +22853,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 273	45	1192	german_prose_with_translit			none	1	4	0	0	"""wenn man von Myan-stod in gTsaṅ aus die"
 273	46	1192	german_prose_with_translit			none	1	2	0	0	Umgebung des [Berges] gNod-sbyin gan-
 273	47	1192	latin_other			none	1	0	0	0	"bzar durchwandert"" (""Dzam 18,20)."
-273	48	1193	headword_line	མྱང་འདས་	miyaṅ	high	2	1	0	0	མྱང་འདས་ miyaṅ 'das Nirvāna.
+273	48	1193	headword_line	མྱང་འདས་	miyaṅ	high	2	1	0	0	མྱང་འདས་ myaṅ 'das Nirvāna.
 273	49	1193	german_prose_with_translit			none	6	2	0	0	Lex. das pa = mya ñan las 'daspa'am 'khor ba
 273	50	1193	german_prose_with_translit			none	5	3	0	0	"las das pa 'khor 'das — lta bu dan ""wie: das"
 273	51	1193	german_prose			none	0	5	0	0	Leiden überwunden haben oder den Kreis-
@@ -31523,7 +31523,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 377	19	1694	german_prose			none	0	2	0	0	und [andere] Menschen werden dich be-
 377	20	1694	german_prose_with_translit			none	3	1	0	0	"wundern"" (Kdsg 44,2); mthar ni /0/76 sku'i"
 377	21	1695	headword_line	༨	du	medium	1	2	0	0	"༨ . | ། | Zin du mjal bar — (metr.) ""schließlich wol-"
-377	22	1696	headword_line	སྨད་པ་	pa Tsmod	high	4	2	0	0	སྨད་པ་ smod pa Tsmod, len sie mich im Buddhafeld des Sambhoga-
+377	22	1696	headword_line	སྨད་པ་	pa Tsmod	high	4	2	0	0	སྨོད་པ་ smod pa Tsmod, len sie mich im Buddhafeld des Sambhoga-
 377	23	1696	german_prose_with_translit			none	1	2	0	0	""" käya treffen"" (Padm 298b4); mi nor gan la"
 377	24	1697	headword_line	སྤྲོད་བྱེད་	byed	medium	2	1	0	0	སྤྲོད་བྱེད་ smod byed auch smod par byed.
 377	25	1697	latin_other			none	3	0	0	0	"— mi dgos pa yod pas ""wir haben [so viel]"

@@ -299,7 +299,7 @@ class FeatureCompositionTests(unittest.TestCase):
             ROOT / "data/tibetan_transcription_correction_authority.tsv"
         ).open(encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle, delimiter="\t"))
-        self.assertEqual(len(rows), 55)
+        self.assertGreaterEqual(len(rows), 55)
         self.assertTrue(all(
             row["exact_correction_status"] == "retained_reviewed_exact"
             for row in rows

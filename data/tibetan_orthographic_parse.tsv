@@ -370,6 +370,8 @@ tibetan_syllable	prefix	superscript	root_consonant	subjoined_consonants	vowel	su
 ཁྲིལ			ཁ	ར	i	ལ		ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཁྲིས			ཁ	ར	i	ས		ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཁྲུ			ཁ	ར	u			ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
+ཁྲུག			ཁ	ར	u	ག		ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
+ཁྲུང			ཁ	ར	u	ང		ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཁྲུས			ཁ	ར	u	ས		ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཁྲེ			ཁ	ར	e			ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 ཁྲེགས			ཁ	ར	e	ག	ས	ཁར		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
@@ -4766,6 +4768,7 @@ tibetan_syllable	prefix	superscript	root_consonant	subjoined_consonants	vowel	su
 རྒྱུན		ར	ག	ཡ	u	ན		རགཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 རྒྱུར		ར	ག	ཡ	u	ར		རགཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 རྒྱུས		ར	ག	ཡ	u	ས		རགཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
+རྒྱོབ		ར	ག	ཡ	o	བ		རགཡ		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 རྔ		ར	ང		a			རང		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 རྔགས		ར	ང		a	ག	ས	རང		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.
 རྔང		ར	ང		a	ང		རང		fully_resolved	high	Unicode stack and trailing suffix roles resolve uniquely.

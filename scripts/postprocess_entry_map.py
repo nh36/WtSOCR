@@ -4557,7 +4557,21 @@ REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES_PATH = (
     / "data"
     / "reviewed_tibetan_script_exact_overrides.tsv"
 )
+REVIEWED_TIBETAN_HEADWORD_OCR_DECISIONS_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data"
+    / "reviewed_tibetan_headword_ocr_decisions.tsv"
+)
 TIBETAN_SYLLABLE_TOKEN_RE = re.compile(r"[\u0F40-\u0FBC]+")
+KNOWN_TIBETAN_SCRIPT_OVERRIDE_REASONS = {
+    "reviewed_exact_tibetan_headword_root_ocr",
+    "reviewed_exact_tibetan_headword_subjoined_ocr",
+    "reviewed_exact_tibetan_headword_superscript_ocr",
+    "reviewed_exact_tibetan_headword_vowel_ocr",
+}
+KNOWN_TIBETAN_SCRIPT_TEACHING_STATUSES = {
+    "tibetan_ocr_corrected_observation",
+}
 
 
 def load_reviewed_tibetan_script_exact_overrides(
@@ -4570,6 +4584,7 @@ def load_reviewed_tibetan_script_exact_overrides(
         "adjudicated_tibetan", "reason",
     }
     rows: dict[tuple[str, int, int, int, str], tuple[str, str]] = {}
+    coordinates: set[tuple[str, int, int, int]] = set()
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle, delimiter="\t")
         missing = required - set(reader.fieldnames or [])
@@ -4581,20 +4596,95 @@ def load_reviewed_tibetan_script_exact_overrides(
         for row in reader:
             if not row or not row.get("volume"):
                 continue
-            key = (
+            coordinate = (
                 normalized_label_key(row["volume"]),
                 int(row["page"]),
                 int(row["line"]),
                 int(row["token_index"]),
-                row["observed_tibetan"],
             )
-            value = (row["adjudicated_tibetan"], row["reason"])
-            if key in rows and rows[key] != value:
+            observed = row["observed_tibetan"]
+            adjudicated = row["adjudicated_tibetan"]
+            reason = row["reason"]
+            teaching_status = row.get("teaching_status", "")
+            if coordinate in coordinates:
                 raise ValueError(
-                    f"Conflicting reviewed Tibetan-script exact override for {key}"
+                    "Duplicate reviewed Tibetan-script exact override coordinate "
+                    f"{coordinate}"
                 )
+            if (
+                not observed
+                or not adjudicated
+                or observed == adjudicated
+                or TIBETAN_SYLLABLE_TOKEN_RE.fullmatch(observed) is None
+                or TIBETAN_SYLLABLE_TOKEN_RE.fullmatch(adjudicated) is None
+            ):
+                raise ValueError(
+                    f"Invalid reviewed Tibetan-script token pair at {coordinate}"
+                )
+            if reason not in KNOWN_TIBETAN_SCRIPT_OVERRIDE_REASONS:
+                raise ValueError(
+                    f"Unknown reviewed Tibetan-script override reason {reason!r}"
+                )
+            if teaching_status not in KNOWN_TIBETAN_SCRIPT_TEACHING_STATUSES:
+                raise ValueError(
+                    "Unknown reviewed Tibetan-script teaching status "
+                    f"{teaching_status!r}"
+                )
+            coordinates.add(coordinate)
+            key = (*coordinate, observed)
+            value = (adjudicated, reason)
             rows[key] = value
     return rows
+
+
+def validate_reviewed_tibetan_script_registry_reconciliation(
+    overrides_path: Path = REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES_PATH,
+    decisions_path: Path = REVIEWED_TIBETAN_HEADWORD_OCR_DECISIONS_PATH,
+) -> None:
+    overrides = load_reviewed_tibetan_script_exact_overrides(overrides_path)
+    execution = {
+        (key[0], key[1], key[2], key[3]): (key[4], value[0])
+        for key, value in overrides.items()
+    }
+    confirmed: dict[tuple[str, int, int, int], tuple[str, str]] = {}
+    credible_variants: set[tuple[str, int, int, int]] = set()
+    with decisions_path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        for row in reader:
+            coordinate = (
+                normalized_label_key(row["volume"]),
+                int(row["page"]),
+                int(row["line"]),
+                int(row["token_index"]),
+            )
+            decision = row["decision"]
+            if decision == "tibetan_headword_ocr_confirmed":
+                if coordinate in confirmed:
+                    raise ValueError(
+                        f"Duplicate confirmed Tibetan OCR decision {coordinate}"
+                    )
+                confirmed[coordinate] = (
+                    row["observed_tibetan"], row["adjudicated_tibetan"]
+                )
+            elif decision == "credible_variant":
+                credible_variants.add(coordinate)
+    if confirmed != execution:
+        missing = sorted(set(confirmed) - set(execution))
+        extra = sorted(set(execution) - set(confirmed))
+        mismatched = sorted(
+            coordinate for coordinate in set(confirmed) & set(execution)
+            if confirmed[coordinate] != execution[coordinate]
+        )
+        raise ValueError(
+            "Reviewed Tibetan decision/execution registry mismatch: "
+            f"missing={missing}; extra={extra}; mismatched={mismatched}"
+        )
+    invalid_variants = sorted(credible_variants & set(execution))
+    if invalid_variants:
+        raise ValueError(
+            "Credible Tibetan variants cannot have execution overrides: "
+            f"{invalid_variants}"
+        )
 
 
 REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = (
@@ -4642,14 +4732,17 @@ def apply_reviewed_tibetan_script_exact_overrides(
                     else None
                 )
                 if match is None:
-                    source_matches = [m for m in matches if m.group(0) == observed]
-                    if len(source_matches) == 1:
-                        match = source_matches[0]
-                if match is None:
-                    target_matches = [m for m in matches if m.group(0) == adjudicated]
-                    if len(target_matches) == 1:
+                    indexed_match = (
+                        matches[token_index - 1]
+                        if 0 < token_index <= len(matches)
+                        else None
+                    )
+                    if (
+                        indexed_match is not None
+                        and indexed_match.group(0) == adjudicated
+                    ):
                         # Idempotent incremental rebuild: this exact line already
-                        # contains the reviewed target and no source occurrence.
+                        # contains the reviewed target at the registered index.
                         applied_keys.add(key)
                         continue
                     continue
@@ -7708,6 +7801,7 @@ def run_one(
     alternate_merged: Path | None = None,
     alternate_google_vision: bool = False,
     merge_only: bool = False,
+    strict_tibetan_script_overrides: bool = True,
 ) -> dict[str, object]:
     audit_by_line = load_audit(audit)
     witness = prepare_witness(
@@ -7783,11 +7877,13 @@ def run_one(
             discovered=discovered,
         )
         change_rows = structural_change_rows + google_vision_change_rows + change_rows
+        validate_reviewed_tibetan_script_registry_reconciliation()
         corrected_text, tibetan_script_rows, tibetan_script_count = (
             apply_reviewed_tibetan_script_exact_overrides(
                 corrected_text=corrected_text,
                 line_infos=line_infos,
                 label=label,
+                strict=strict_tibetan_script_overrides,
             )
         )
         change_rows.extend(tibetan_script_rows)
