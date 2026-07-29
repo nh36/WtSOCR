@@ -12660,7 +12660,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 99	34	1199	german_prose_with_translit			none	1	2	0	0	can npr. eine dem
 99	35	1199	german_prose			none	0	4	0	0	Westen zugeordnete Gottheit aus dem Gefol-
 99	37	1199	german_prose			none	0	3	0	0	ge des Rähu (Neb 261).
-99	38	1200	headword_line	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་	koṅ lha koṅ	high	3	0	0	0	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ koṅ lha koṅ bisun rgya la
+99	38	1200	headword_line	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་	koṅ lha koṅ	high	3	0	0	0	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ koṅ lha koṅ btsun rgya la
 99	39	1200	german_prose			none	0	3	0	0	npr. eine Lokalgottheit im
 99	40	1200	german_prose			none	0	5	0	0	Osten und Westen Kon-pos (Neb 227).
 99	41	1201	headword_line	ཀོང་ལྷམ་	koṅ lham	high	1	4	0	0	ཀོང་ལྷམ་ koṅ lham, das Schuhwerk von Frauen
@@ -41977,7 +41977,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 297	209	4070	headword_line	ཁྲིམས་སུ་བྱས་པ་	su byas pa	medium	3	1	0	0	ཁྲིམས་སུ་བྱས་པ་ kbrims su byas pa Abma-
 297	210	4070	german_prose_with_translit			none	1	1	0	0	chung, Gelöbnis.
 297	212	4070	german_prose			none	0	3	0	0	Lex. kriyakarab (Mvy 9420, vgl. BHSD).
-298	1	4071	headword_line	ཁྲིམས་སུ་བཙལ་	khrims su	high	2	0	0	0	ཁྲིམས་སུ་བཙལ་ khrims su bisal
+298	1	4071	headword_line	ཁྲིམས་སུ་བཙལ་	khrims su	high	2	0	0	0	ཁྲིམས་སུ་བཙལ་ khrims su btsal
 298	3	4072	headword_line	ཁྲིམས་སུ་བཙལ་	khrims su btsal	high	3	1	0	0	ཁྲིམས་སུ་བཙལ་ khrims su btsal domestizieren.
 298	5	4072	german_prose_with_translit			none	1	1	0	0	ra lug - (metr.) „er domestizierte Ziege
 298	7	4072	german_prose			none	0	2	0	0	und Schaf“ ( 6] 531).
@@ -42213,7 +42213,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 299	100	4093	german_prose_with_translit			none	1	2	0	0	„dugs khan bedeutet Badehaus“ ([ 16 21,7).
 299	101	4093	german_prose			none	0	1	0	0	3. Abführmittel.
 299	103	4093	latin_other			none	2	0	0	0	sbyan sogs snum chos - bian bya (metr.)
-299	105	4094	headword_line	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་	khrus kyi	high	2	0	0	0	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་ khrus kyi briul zugs
+299	105	4094	headword_line	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་	khrus kyi	high	2	0	0	0	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་ khrus kyi brtul zugs
 299	107	4094	german_prose			none	0	6	0	0	„Abführmittel usw., Gleitmittel [und Miirtel], die zum Abführen verwendet werden
 299	109	4094	german_prose			none	0	2	0	0	sollen (für skt. svedarekästhäpananäva-
 299	110	4094	german_prose_with_translit			none	3	1	0	0	nam)“ (Ahs 1.1.37a); de bZin nas ~ rtug
@@ -89816,7 +89816,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 621	194	7598	headword_line	ཆ་ཤས་མེད་མ་	ma	medium	1	2	0	0	ཆ་ཤས་མེད་མ་ cha sas med ma Beiname der
 621	195	7598	german_prose			none	0	2	0	0	Göttin Umä.
 621	197	7598	german_prose_with_translit			none	3	3	0	0	Lex. umäh (brDa); lha mo u ma (Dagy).
-621	199	7599	headword_line	ཆ་ཤས་ཚེར་ བརྩེགས་	śas tsher	high	2	2	0	0	ཆ་ཤས་ཚེར་ བརྩེགས་ cha śas tsher brisegs Tcha Sas
+621	199	7599	headword_line	ཆ་ཤས་ཚེར་ བརྩེགས་	śas tsher	high	2	2	0	0	ཆ་ཤས་ཚེར་ བརྩེགས་ cha śas tsher brtsegs Tcha Sas
 621	201	7599	latin_other			none	2	0	0	0	mche rtsig.
 621	203	7600	headword_line	ཆ་ཤས་རིམ་འཛད་	dzad	high	1	2	0	0	ཆ་ཤས་རིམ་འཛད་ cha sas rim ’dzad Bez. für
 621	204	7600	german_prose			none	0	1	0	0	abnehmender Mond.
@@ -132470,7 +132470,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 913	214	10025	german_prose			none	0	1	0	0	” Pferden (SCHWIEGER 2009:XXII).
 913	216	10026	headword_line	རྟ་བཟེད་	rta bzed	high	2	2	0	0	རྟ་བཟེད་ rta bzed eine Fliege.
 913	218	10026	german_prose_with_translit			none	3	2	0	0	Lex. sbran ma Zig (brDa).
-913	220	10027	headword_line	རྟ་འུལ།	rta’n la	high	2	2	0	0	རྟ་འུལ། ria ’ul auch rta’n la Pferdetransport,
+913	220	10027	headword_line	རྟ་འུལ།	rta’n la	high	2	2	0	0	རྟ་འུལ། rta ’ul auch rta’n la Pferdetransport,
 913	221	10027	other			none	0	0	0	0	»
 913	223	10027	german_prose			none	0	5	0	0	Pferdedienst, bei dem ein Pferd zur
 913	224	10027	german_prose_with_translit			none	1	2	0	0	Verfügung gestellt werden muß (], P).

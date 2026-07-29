@@ -3490,10 +3490,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 ཕྱགས	phyags	complete_not_currently_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྱགས	phyags	complete_not_currently_authoritative	suffix_coda	ག	4	5	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྱགས	phyags	complete_not_currently_authoritative	post_suffix	ས	5	6	s	CORPUS_F685D66CEF46	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྱང	phyaṅ	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-ཕྱང	phyaṅ	correction_authoritative	subjoined_consonants	ཡ	2	3	y	CORPUS_E34B3E203AE6	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྱང	phyaṅ	correction_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྱང	phyaṅ	correction_authoritative	suffix_coda	ང	4	5	ṅ	SUFFIX_NG_TO_NDOT	token_final	ordinary_tibetan_lexical_or_compound
+ཕྱང	phyaṅ	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+ཕྱང	phyaṅ	complete_not_currently_authoritative	subjoined_consonants	ཡ	2	3	y	CORPUS_E34B3E203AE6	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྱང	phyaṅ	complete_not_currently_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྱང	phyaṅ	complete_not_currently_authoritative	suffix_coda	ང	4	5	ṅ	SUFFIX_NG_TO_NDOT	token_final	ordinary_tibetan_lexical_or_compound
 ཕྱད	phyad	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 ཕྱད	phyad	complete_not_currently_authoritative	subjoined_consonants	ཡ	2	3	y	CORPUS_E34B3E203AE6	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྱད	phyad	complete_not_currently_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
@@ -3640,10 +3640,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 ཕྲི	phri	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 ཕྲི	phri	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲི	phri	correction_authoritative	vowel	i	3	4	i	CORPUS_63EB474B7A3F	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲིག	phrig	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-ཕྲིག	phrig	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲིག	phrig	correction_authoritative	vowel	i	3	4	i	CORPUS_63EB474B7A3F	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲིག	phrig	correction_authoritative	suffix_coda	ག	4	5	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲིག	phrig	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+ཕྲིག	phrig	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲིག	phrig	complete_not_currently_authoritative	vowel	i	3	4	i	CORPUS_63EB474B7A3F	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲིག	phrig	complete_not_currently_authoritative	suffix_coda	ག	4	5	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲིང	phriṅ	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	unresolved
 ཕྲིང	phriṅ	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	unresolved
 ཕྲིང	phriṅ	complete_not_currently_authoritative	vowel	i	3	4	i	CORPUS_63EB474B7A3F	contrastive	unresolved
@@ -3713,10 +3713,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 ཕྲོབ	phrob	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲོབ	phrob	correction_authoritative	vowel	o	3	4	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲོབ	phrob	correction_authoritative	suffix_coda	བ	4	5	b	CORPUS_0C6592BB5CEF	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲོམ	phrom	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-ཕྲོམ	phrom	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲོམ	phrom	correction_authoritative	vowel	o	3	4	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
-ཕྲོམ	phrom	correction_authoritative	suffix_coda	མ	4	5	m	CORPUS_5683E9A09D00	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲོམ	phrom	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+ཕྲོམ	phrom	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲོམ	phrom	complete_not_currently_authoritative	vowel	o	3	4	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
+ཕྲོམ	phrom	complete_not_currently_authoritative	suffix_coda	མ	4	5	m	CORPUS_5683E9A09D00	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲོལ	phrol	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 ཕྲོལ	phrol	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
 ཕྲོལ	phrol	correction_authoritative	vowel	o	3	4	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
@@ -8641,10 +8641,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 འདིར	dir	complete_not_currently_authoritative	root_consonant	ད	0	1	d	RESIDUAL_C2670784C902	single_unknown_residual_induction	unresolved
 འདིར	dir	complete_not_currently_authoritative	vowel	i	1	2	i	CORPUS_63EB474B7A3F	contrastive	unresolved
 འདིར	dir	complete_not_currently_authoritative	suffix_coda	ར	2	3	r	CORPUS_6783C3DA00D4	contrastive	unresolved
-འདུག	dug	correction_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
-འདུག	dug	correction_authoritative	root_consonant	ད	0	1	d	RESIDUAL_C2670784C902	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-འདུག	dug	correction_authoritative	vowel	u	1	2	u	CORPUS_84A74DBDD722	contrastive	ordinary_tibetan_lexical_or_compound
-འདུག	dug	correction_authoritative	suffix_coda	ག	2	3	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
+འདུག	dug	complete_not_currently_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
+འདུག	dug	complete_not_currently_authoritative	root_consonant	ད	0	1	d	RESIDUAL_C2670784C902	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+འདུག	dug	complete_not_currently_authoritative	vowel	u	1	2	u	CORPUS_84A74DBDD722	contrastive	ordinary_tibetan_lexical_or_compound
+འདུག	dug	complete_not_currently_authoritative	suffix_coda	ག	2	3	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
 འདུན	dun	correction_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
 འདུན	dun	correction_authoritative	root_consonant	ད	0	1	d	RESIDUAL_C2670784C902	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 འདུན	dun	correction_authoritative	vowel	u	1	2	u	CORPUS_84A74DBDD722	contrastive	ordinary_tibetan_lexical_or_compound
@@ -12836,10 +12836,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 སློག	slog	complete_not_currently_authoritative	subjoined_consonants	ལ	1	2	l	CORPUS_ED2342564FDA	contrastive	ordinary_tibetan_lexical_or_compound
 སློག	slog	complete_not_currently_authoritative	vowel	o	2	3	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
 སློག	slog	complete_not_currently_authoritative	suffix_coda	ག	3	4	g	CORPUS_9A673562CD7A	contrastive	ordinary_tibetan_lexical_or_compound
-སློང	sloṅ	correction_authoritative	root_consonant	ས	0	1	s	RESIDUAL_014281225BA9	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-སློང	sloṅ	correction_authoritative	subjoined_consonants	ལ	1	2	l	CORPUS_ED2342564FDA	contrastive	ordinary_tibetan_lexical_or_compound
-སློང	sloṅ	correction_authoritative	vowel	o	2	3	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
-སློང	sloṅ	correction_authoritative	suffix_coda	ང	3	4	ṅ	SUFFIX_NG_TO_NDOT	token_final	ordinary_tibetan_lexical_or_compound
+སློང	sloṅ	complete_not_currently_authoritative	root_consonant	ས	0	1	s	RESIDUAL_014281225BA9	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+སློང	sloṅ	complete_not_currently_authoritative	subjoined_consonants	ལ	1	2	l	CORPUS_ED2342564FDA	contrastive	ordinary_tibetan_lexical_or_compound
+སློང	sloṅ	complete_not_currently_authoritative	vowel	o	2	3	o	CORPUS_16D4A9AA0695	contrastive	ordinary_tibetan_lexical_or_compound
+སློང	sloṅ	complete_not_currently_authoritative	suffix_coda	ང	3	4	ṅ	SUFFIX_NG_TO_NDOT	token_final	ordinary_tibetan_lexical_or_compound
 སློངས	sloṅs	complete_not_currently_authoritative	root_consonant	ས	0	1	s	RESIDUAL_014281225BA9	single_unknown_residual_induction	unresolved
 སློངས	sloṅs	complete_not_currently_authoritative	subjoined_consonants	ལ	1	2	l	CORPUS_ED2342564FDA	contrastive	unresolved
 སློངས	sloṅs	complete_not_currently_authoritative	vowel	o	2	3	o	CORPUS_16D4A9AA0695	contrastive	unresolved

@@ -8,7 +8,7 @@ DEL 'groba	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound
 DEL 'grol	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL 'thums	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL 'u	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL An	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL An	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL Auge	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL Be	edit_unclassified	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL Filzkleidun	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -24,7 +24,7 @@ DEL V’	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1
 DEL Wil	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL Y	single_character_deletion	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL Y'ranzo	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL a	single_character_deletion	unresolved	5	5	ordinary_tibetan_lexical_or_compound:4;tibetan_proper_name:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL a	single_character_deletion	unresolved	5	5	ordinary_tibetan_lexical_or_compound:4;tibetan_proper_name:2	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL al	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL ame	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL an	edit_unclassified	unresolved	2	2	ordinary_tibetan_lexical_or_compound:1;tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -85,14 +85,14 @@ DEL kr	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	c
 DEL l	single_character_deletion	unresolved	6	7	ordinary_tibetan_lexical_or_compound:7	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL la	edit_unclassified	unresolved	2	2	ordinary_tibetan_lexical_or_compound:1;sanskrit_or_indic_transcription:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL las	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL le	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL le	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL leba	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL lhad	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL lin	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL llenstel	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL log	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL lung	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL läubiger	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL läubiger	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL m	single_character_deletion	unresolved	5	5	ordinary_tibetan_lexical_or_compound:7	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL ma	edit_unclassified	unresolved	6	6	ordinary_tibetan_lexical_or_compound:6	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL maraga	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -100,7 +100,7 @@ DEL me	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	c
 DEL mel	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL mi	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1;unclear:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL myu	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL n	single_character_deletion	unresolved	12	12	ordinary_tibetan_lexical_or_compound:13	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL n	single_character_deletion	unresolved	6	6	ordinary_tibetan_lexical_or_compound:6	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL nad	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL nas	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL nian	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -139,7 +139,7 @@ DEL rtsi	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1
 DEL rugs	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL s	single_character_deletion	unresolved	3	3	ordinary_tibetan_lexical_or_compound:4	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL sa	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-DEL sbyi	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+DEL sbyi	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL sebya	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL si	edit_unclassified	unresolved	1	1	tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 DEL sung	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -185,7 +185,7 @@ INS dzi	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	
 INS g	single_character_insertion	unresolved	5	5	ordinary_tibetan_lexical_or_compound:5	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS gs	edit_unclassified	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS gy	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-INS h	single_character_insertion	unresolved	10	10	ordinary_tibetan_lexical_or_compound:12	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+INS h	single_character_insertion	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS i	single_character_insertion	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS j	single_character_insertion	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS k	single_character_insertion	unresolved	3	4	ordinary_tibetan_lexical_or_compound:4	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -194,9 +194,9 @@ INS kha	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	
 INS m	single_character_insertion	unresolved	4	4	ordinary_tibetan_lexical_or_compound:4	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS ma	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS n	single_character_insertion	unresolved	3	3	ordinary_tibetan_lexical_or_compound:3	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-INS na	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1;tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+INS na	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1;tibetan_proper_name:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS o	single_character_insertion	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-INS or	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+INS or	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS os	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS r	single_character_insertion	unresolved	7	7	ordinary_tibetan_lexical_or_compound:8	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 INS ra	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -347,7 +347,7 @@ REPLACE b→gts	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_com
 REPLACE b→hr	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:2	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE b→kh	edit_unclassified	unresolved	1	3	ordinary_tibetan_lexical_or_compound:2;sanskrit_or_indic_transcription:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE b→mr	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-REPLACE b→ph	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+REPLACE b→ph	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE b→th	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE can→gdoṅ	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE can→sgrib	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -375,7 +375,7 @@ REPLACE een→su	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_co
 REPLACE endlo→ya	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE ents→g	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE en→a	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-REPLACE ers→u	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+REPLACE ers→u	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE erzrā→d	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE e→an	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE e→ra	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -515,7 +515,7 @@ REPLACE rgy→s	edit_unclassified	unresolved	1	1	tibetan_proper_name:1	canonical
 REPLACE rgy→th	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE riphrug→ṅ	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE ri→m	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-REPLACE ri→ṅ	edit_unclassified	unresolved	12	21	ordinary_tibetan_lexical_or_compound:19;tibetan_proper_name:6	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+REPLACE ri→ṅ	edit_unclassified	unresolved	6	13	ordinary_tibetan_lexical_or_compound:9;tibetan_proper_name:6	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE rje'i→glu	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE rje'i→sna	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE rje→spyan	edit_unclassified	unresolved	1	1	tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -573,7 +573,7 @@ REPLACE u→ti	edit_unclassified	unresolved	1	1	tibetan_proper_name:1	canonical_
 REPLACE vertr→khy	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE ve→brag	edit_unclassified	unresolved	1	1	tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE von→bzuṅ	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-REPLACE vo→gdu	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+REPLACE vo→gdu	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE v→rdz	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE v→rt	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 REPLACE wa→u	edit_unclassified	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -615,7 +615,7 @@ SUB I→l	single_character_substitution		35	126	ordinary_tibetan_lexical_or_comp
 SUB J→j	single_diacritic_or_case_confusion	unresolved	1	2	ordinary_tibetan_lexical_or_compound:2;tibetan_proper_name:1;unclear:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB K→k	single_diacritic_or_case_confusion	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB M→ñ	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-SUB N→n	single_diacritic_or_case_confusion	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB N→n	single_diacritic_or_case_confusion	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB P→p	single_diacritic_or_case_confusion	unresolved	3	3	ordinary_tibetan_lexical_or_compound:2;tibetan_proper_name:1	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB P→r	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB R→m	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -658,7 +658,7 @@ SUB d→i	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_
 SUB d→k	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB d→l	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB d→m	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-SUB d→n	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB d→n	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB d→p	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB d→r	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB d→z	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -680,7 +680,7 @@ SUB e→z	single_character_substitution	unresolved	2	3	ordinary_tibetan_lexical_
 SUB g→b	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB g→i	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB g→k	single_character_substitution	unresolved	7	13	ordinary_tibetan_lexical_or_compound:17	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-SUB g→l	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB g→l	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB g→n	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB g→s	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB g→ṅ	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -692,7 +692,7 @@ SUB h→r	single_character_substitution	unresolved	10	13	ordinary_tibetan_lexica
 SUB h→s	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB h→y	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB h→z	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-SUB h→ṅ	single_character_substitution	suffix_coda:ང	30	46	ordinary_tibetan_lexical_or_compound:46	canonical_reviewed;reviewed_feature_repair	Explicit feature-specific final-nasal reviews establish this OCR variant; no general h replacement is authorized.		unrelated Latin Z/z excluded by Tibetan identity	authorized_exact_tibetan_conditioned
+SUB h→ṅ	single_character_substitution	suffix_coda:ང	29	45	ordinary_tibetan_lexical_or_compound:45	reviewed_feature_repair	Explicit feature-specific final-nasal reviews establish this OCR variant; no general h replacement is authorized.		unrelated Latin Z/z excluded by Tibetan identity	authorized_exact_tibetan_conditioned
 SUB i→a	single_character_substitution	unresolved	8	9	ordinary_tibetan_lexical_or_compound:20;tibetan_proper_name:2;unclear:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→e	single_character_substitution	unresolved	9	9	ordinary_tibetan_lexical_or_compound:11;tibetan_proper_name:5	canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→g	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -700,7 +700,7 @@ SUB i→n	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_
 SUB i→o	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→r	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→t	single_character_substitution		10	10	ordinary_tibetan_lexical_or_compound:15	canonical_feature_composed;canonical_independent_strong;canonical_reviewed	No reviewed atomic evidence; unrelated character substitution has insufficient conditioned support.		unrelated Latin Z/z excluded by Tibetan identity	candidate_review
-SUB i→u	single_character_substitution	unresolved	3	3	ordinary_tibetan_lexical_or_compound:3	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB i→u	single_character_substitution	unresolved	3	3	ordinary_tibetan_lexical_or_compound:3	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→ñ	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:7;unclear:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→ź	single_character_substitution	unresolved	2	4	ordinary_tibetan_lexical_or_compound:9	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB i→ṅ	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -722,7 +722,7 @@ SUB l→w	single_character_substitution	unresolved	1	1	tibetan_proper_name:1	can
 SUB l→y	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB m→d	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB m→g	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
-SUB m→n	single_character_substitution	unresolved	7	7	ordinary_tibetan_lexical_or_compound:7;tibetan_proper_name:1	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB m→n	single_character_substitution	unresolved	7	7	ordinary_tibetan_lexical_or_compound:7;tibetan_proper_name:1	canonical_feature_composed;canonical_independent_strong;canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB m→p	single_character_substitution	unresolved	1	2	ordinary_tibetan_lexical_or_compound:2;tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB m→r	single_character_substitution	unresolved	2	3	ordinary_tibetan_lexical_or_compound:5;unclear:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB m→s	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
@@ -787,7 +787,7 @@ SUB t→p	single_character_substitution	unresolved	3	3	ordinary_tibetan_lexical_
 SUB t→r	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_feature_composed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB t→y	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB u→a	single_character_substitution		29	37	ordinary_tibetan_lexical_or_compound:42;tibetan_proper_name:5	canonical_feature_composed;canonical_independent_strong;canonical_reviewed	No reviewed atomic evidence and extensive legitimate controls; vowel correspondence may reflect alignment or lexical variation.		unrelated Latin Z/z excluded by Tibetan identity	candidate_review
-SUB u→e	single_character_substitution	unresolved	1	2	ordinary_tibetan_lexical_or_compound:1;tibetan_proper_name:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
+SUB u→e	single_character_substitution	unresolved	1	2	ordinary_tibetan_lexical_or_compound:1;tibetan_proper_name:1	canonical_reviewed			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB u→h	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB u→i	single_character_substitution	unresolved	2	2	ordinary_tibetan_lexical_or_compound:2	canonical_feature_composed;canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only
 SUB u→l	single_character_substitution	unresolved	1	1	ordinary_tibetan_lexical_or_compound:1	canonical_independent_strong			unrelated Latin Z/z excluded by Tibetan identity	diagnostic_only

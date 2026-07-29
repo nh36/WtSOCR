@@ -29069,3 +29069,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 466	21	6147	headword_line	rgyari	rgyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	རྒྱང་གྲགས་ rgyari grags eine Maßeinheit, Ruf-
 466	39	6149	headword_line	rgyari	rgyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	རྒྱང་གྲགས་བཅུང་ rgyari grags bzun Bez. für den
 489	83	6405	headword_line	sgari	sgaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྒང་ཐུར་ sgari thur Stachelschwein, Stachel des
+99	38	1225	headword_line	bisun	btsun	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཀོང་ལྷ་ཀོང་བཙུན་རྒྱ་ལ་ koṅ lha koṅ bisun rgya la
+298	1	4120	headword_line	bisal	btsal	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཁྲིམས་སུ་བཙལ་ khrims su bisal
+299	105	4143	headword_line	briul	brtul	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་ khrus kyi briul zugs
+621	199	7736	headword_line	brisegs	brtsegs	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཆ་ཤས་ཚེར་ བརྩེགས་ cha śas tsher brisegs Tcha Sas
+913	220	10239	headword_line	ria	rta	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	རྟ་འུལ། ria ’ul auch rta’n la Pferdetransport,

@@ -758,6 +758,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ནམ	'nam	nam	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནམ་ 'nam || ནམ་ 'nam eine Währungseinheit.
 ནམ	Inam	nam	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནམ་གཞུག་ Inam gäng.
 ནམ	nim	nam	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནམ་བུ་ nim bu
+ནམ	nnam	nam	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནམ་ཅང་ nnam \nam 7/5/?0/?,
 ནམ	nom	nam	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	རྱྱ་ནམ་སྣང་བ་ gya nom snaṅ ba Bez. einer Klas- || ནམ་ nom vgl. Immam, Isnom. || ནམ་ནམ་ nom nom riechen.
 ནམས	noms	nams	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནམས་ noms \snoms.
 ནིང	nid	niṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བངག་ནིང་སྲོར།པ་ bdag nid sgom pa
@@ -828,6 +829,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཕུར	'pur	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ 'pur fliegen lassen, steigen lassen.
 ཕུར	mi	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་མི་ ༼ mi alttib. prer my der Name eines
 ཕུར	pbur	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ཐོར་ pbur zor ein kleiner Ritualdolch aus
+ཕུར	pur	phur	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་སྒྲོམ་ pur sgrom Sarg.
 ཕུར	vollkommen	phur	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྙང་ཕུར་ $?7/77 phur vollkommen, andringlic
 ཕུལ	Unterbreitung	phul	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཆར་ཕུལ་ 947 phul Unterbreitung eines
 ཕུལ	pul	phul	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུལ་ pul
@@ -857,6 +859,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཕྲ	pa	phra	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མེ་ཕྲ་ mo pa
 ཕྲད	prad	phrad	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ྲད་ཕྲད་ prad prad in — gyis byed sich aufrich-
 ཕྲན	pbran	phran	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲན བུ pbran bu
+ཕྲིག	prig	phrig	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པྲག་ཕྲིག་ prag prig ein bißchen, ein wenig,
 ཕྲིན	pbrin	phrin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ལས་ pbrin las
 ཕྲིན	ran	phrin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ངན་པ་ ran pa schlechter Bote, Un-
 ཕྲིན	yig	phrin	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྲིན་ཡིག་ ༼ yig 1 ?7)/0)7)/ yig.
@@ -1793,6 +1796,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 སང	Junggeselle	saṅ	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དང་སང་ daṅ 527 Junggeselle; Frauenheld.
 སང	Ton	saṅ	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	།ཁ་སང་ 45/¢ san 72. Ton, Laut.
 སང	sa	saṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དུས་དིང་སང་ dus din sa \den san.
+སང	sari	saṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀ་སང་ ka sari vollkommen klar. || སྐྱ་སང་སང་ skya sari saṅ.
 སང	sarı	saṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དེང་སང་ den sarı
 སང	spyi	saṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	'སྱང་སྐི་སང་འཁོར་ལོ་ dag snaṅ spyi sruṅ 'khor
 སང	sran	saṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	དྭྱངལ་སང་ drul sran || དྭངལ་སང་ dnul sran eine Währung.

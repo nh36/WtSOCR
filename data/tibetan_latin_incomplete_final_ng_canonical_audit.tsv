@@ -66,4 +66,4 @@ tibetan_syllable	active_target	applied_target_count	canonical_confidence_tier	hi
 སྤོང	spoṅ	3	canonical_independent_moderate	4	3		retain_incomplete
 སྤྲང	spraṅ	1	ambiguous	20	20		retain_incomplete
 སྲོང	sroṅ	16	canonical_feature_composed	1	0		canonical_now_authoritative
-སློང	sloṅ	15	canonical_feature_composed	1	1		canonical_now_authoritative
+སློང	sloṅ	15	canonical_reviewed	1	1		canonical_now_authoritative
