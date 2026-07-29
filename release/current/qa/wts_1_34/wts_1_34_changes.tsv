@@ -29101,3 +29101,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 724	212	8861	headword_line	rkyaṅ	rgyaṅ	A	reviewed_correction_supersession_bridge	1	འཇིག་རྟེན་རྒྱང་ཕན་ ig rten rkyaṅ phan auch ’jig
 999	202	11145	headword_line	koṅ	goṅ	A	reviewed_correction_supersession_bridge	1	ཐལ།་གོང་ thal koṅ der Bereich zwischen den
 999	202	11145	headword_line	ཐལ།་གོང་	ཐལ་གོང་	A	reviewed_exact_tibetan_headword_delimiter_ocr	1	ཐལ།་གོང་ thal goṅ der Bereich zwischen den
+346	15	4722	headword_line	ཆིག	ཚིག	A	reviewed_exact_tibetan_headword_root_ocr	1	གན་ཆིག་ gan tshig Vertragsurkunde.
+473	179	6264	headword_line	ཆབ	ཚབ	A	reviewed_exact_tibetan_headword_root_ocr	1	རྒྱལ་ཆབ་ rgyal tshab
+650	152	8060	headword_line	ཆགས	ཚགས	A	reviewed_exact_tibetan_headword_root_ocr	1	ཆུ་ཆགས་ chu tshags Sieb, Wasserfilter.
+1059	9	11913	headword_line	mihn	mthu	A	reviewed_tibetan_exact_manual_multi_error	1	མཐུ་དབང་གི་ཆོ་ག་ mihn dbaṅ gi cho ga Schüler-

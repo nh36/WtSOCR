@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import csv
 import importlib.util
+import re
+import subprocess
 import sys
 import unicodedata
 from collections import Counter
@@ -24,6 +26,18 @@ REGISTRY_PATH = ROOT / "data/tibetan_latin_feature_registry.tsv"
 EXCEPTIONS_PATH = ROOT / "data/reviewed_tibetan_transcription_exceptions.tsv"
 OVERRIDES_PATH = ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
 SUPERSESSIONS_PATH = ROOT / "data/reviewed_correction_supersessions.tsv"
+OCCURRENCE_IDENTITY_CHECKS_PATH = (
+    ROOT / "data/reviewed_tibetan_occurrence_identity_checks.tsv"
+)
+OCCURRENCE_IDENTITY_CHANNELS = {
+    "dispositive_local_lemma_order",
+    "exact_adjacent_sibling",
+    "exact_same_entry_sibling",
+    "exact_repeated_headword",
+    "exact_repeated_compound",
+    "independent_clean_same_tibetan_identity",
+    "nearby_clean_same_tibetan_identity",
+}
 CANONICAL_PATH = ROOT / "data/tibetan_latin_canonical_syllables.tsv"
 
 DIAGNOSTIC_FIELDS = [
@@ -528,6 +542,34 @@ def build_backaudit(
     return rows
 
 
+def validate_superseding_commit(commit: str) -> None:
+    """Require immutable supersession provenance from reachable history."""
+    if commit == "pending_repair_commit":
+        raise ValueError(
+            "pending_repair_commit may not survive in checked-in "
+            "supersession provenance"
+        )
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise ValueError(
+            f"Invalid superseding_commit {commit!r}; expected full "
+            "40-hex commit"
+        )
+    if subprocess.run(
+        ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
+        cwd=ROOT, check=False, stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    ).returncode:
+        raise ValueError(f"Superseding commit does not resolve: {commit}")
+    if subprocess.run(
+        ["git", "merge-base", "--is-ancestor", commit, "HEAD"],
+        cwd=ROOT, check=False, stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    ).returncode:
+        raise ValueError(
+            f"Superseding commit is not an ancestor of HEAD: {commit}"
+        )
+
+
 def validate_supersessions() -> None:
     overrides = read_tsv(OVERRIDES_PATH)
     active = {
@@ -539,6 +581,8 @@ def validate_supersessions() -> None:
     for row in read_tsv(SUPERSESSIONS_PATH):
         if row["status"] != "active":
             continue
+        commit = row.get("superseding_commit", "")
+        validate_superseding_commit(commit)
         key = (
             row["volume"], row["page"], row["line"], row["token_index"],
             row["original_source"],
@@ -565,6 +609,23 @@ def validate_supersessions() -> None:
             )
 
 
+def validate_occurrence_identity_checks() -> None:
+    for row in read_tsv(OCCURRENCE_IDENTITY_CHECKS_PATH):
+        if row.get("root_change") != "yes":
+            continue
+        if row.get("evidence_channel") not in OCCURRENCE_IDENTITY_CHANNELS:
+            raise ValueError(
+                "Unknown occurrence-identity evidence channel at "
+                f"{row['volume']} {row['page']}:{row['line']}: "
+                f"{row.get('evidence_channel', '')!r}"
+            )
+        if not row.get("evidence", "").strip():
+            raise ValueError(
+                "Root-changing occurrence identity lacks evidence at "
+                f"{row['volume']} {row['page']}:{row['line']}"
+            )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--release-root", type=Path, default=ROOT / "release/current")
@@ -588,6 +649,7 @@ def main() -> None:
         backaudit, BACKAUDIT_FIELDS,
     )
     validate_supersessions()
+    validate_occurrence_identity_checks()
     counts = Counter(row["integrity_status"] for row in diagnostics)
     print(f"aligned_rows={len(diagnostics)}")
     for status, count in sorted(counts.items()):

@@ -48524,7 +48524,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 346	10	4668	german_prose			none	0	2	0	0	liegend und nicht zum Boden schauend“
 346	11	4668	latin_other			none	1	0	0	0	(Akhr2 79,12).
 346	13	4668	german_prose_with_translit			none	3	2	0	0	Lex. gan rkyal dan kha bub güis (TTC).
-346	15	4669	headword_line	གན་ཆིག་	tshig	high	1	1	0	0	གན་ཆིག་ gan tshig Vertragsurkunde.
+346	15	4669	headword_line	གན་ཆིག་	tshig	high	1	1	0	0	གན་ཚིག་ gan tshig Vertragsurkunde.
 346	17	4669	german_prose_with_translit			none	1	2	0	0	~ ’dra gäis „zweifache Ausfertigung der
 346	18	4669	german_prose			none	0	2	0	0	Vertragsurkunde“ (Wadd135 3).
 346	20	4670	headword_line	གན་ཛིར་	dzir	high	1	4	0	0	གན་ཛིར་ gan dzir eine Dachspitze oder Schatz-
@@ -67531,7 +67531,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 473	173	6151	german_prose			none	0	3	0	0	2. Beiname der Umä.
 473	175	6151	german_prose_with_translit			none	1	3	0	0	Lex. !ha mo u mäh (brDa, Dagy).
 473	177	6151	other			none	0	0	0	0	439
-473	179	6152	headword_line	རྒྱལ་ཆབ་	rgyal tshab	high	2	0	0	0	རྒྱལ་ཆབ་ rgyal tshab
+473	179	6152	headword_line	རྒྱལ་ཆབ་	rgyal tshab	high	2	0	0	0	རྒྱལ་ཚབ་ rgyal tshab
 473	181	6153	headword_line	རྒྱལ་མའི་བུ་	rgyal ma’i	high	2	3	0	0	རྒྱལ་མའི་བུ་ rgyal ma’i bu Bez. für Saturn,
 473	183	6153	german_prose			none	0	1	0	0	Samstag.
 473	185	6153	german_prose_with_translit			none	3	2	0	0	Lex. gza’ spen pa (brDa, Dagy).
@@ -94107,7 +94107,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 650	146	7904	german_prose_with_translit			none	1	1	0	0	öffnung bestens“ (Vdk 2: 381,2).
 650	148	7905	headword_line	ཆུ་རྩི་	rtsi	high	1	2	0	0	ཆུ་རྩི་ chu rtsi eine Pflanze.
 650	150	7905	german_prose			none	0	1	0	0	Lex. ~ mo lun (gYu 292,5).
-650	152	7906	headword_line	ཆུ་ཆགས་	tshags	high	1	2	0	0	ཆུ་ཆགས་ chu tshags Sieb, Wasserfilter.
+650	152	7906	headword_line	ཆུ་ཆགས་	tshags	high	1	2	0	0	ཆུ་ཚགས་ chu tshags Sieb, Wasserfilter.
 650	154	7906	german_prose_with_translit			none	2	1	0	0	skye bo nan pa ~ ’dra (metr.) „der schlechte
 650	155	7906	german_prose			none	0	4	0	0	Mensch gleicht einem Sieb“ (Pd 179d);
 650	156	7906	latin_other			none	5	0	0	0	lhun bzed dan / - gnas ji lta ba bZin du bzag
@@ -154914,7 +154914,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1059	3	11668	latin_other			none	2	0	0	0	SINE mthu bo che
 1059	5	11668	german_prose			none	0	1	0	0	an
 1059	7	11669	headword_line	མབ་བ་ཆེ་	mthu bo	high	2	1	0	0	མབ་བ་ཆེ་ mthu bo che Imthu che.
-1059	9	11670	headword_line	མཐུ་དབང་གི་ཆོ་ག་	dbaṅ gi	high	2	1	0	0	མཐུ་དབང་གི་ཆོ་ག་ mihn dbaṅ gi cho ga Schüler-
+1059	9	11670	headword_line	མཐུ་དབང་གི་ཆོ་ག་	dbaṅ gi	high	2	1	0	0	མཐུ་དབང་གི་ཆོ་ག་ mthu dbaṅ gi cho ga Schüler-
 1059	10	11670	other			none	0	0	0	0	weihe (SCHWIEGER 1995:
 1059	11	11670	other			none	0	0	0	0	610).
 1059	13	11671	headword_line	མཐུ་མད་	mthu	high	1	1	0	0	མཐུ་མད་ mthu med es besteht keine Möglich-

@@ -65928,7 +65928,7 @@ liegend und nicht zum Boden schauend“
 
 Lex. gan rkyal dan kha bub güis (TTC).
 
-གན་ཆིག་ gan tshig Vertragsurkunde.
+གན་ཚིག་ gan tshig Vertragsurkunde.
 
 ~ ’dra gäis „zweifache Ausfertigung der
 Vertragsurkunde“ (Wadd135 3).
@@ -91623,7 +91623,7 @@ Lex. !ha mo u mäh (brDa, Dagy).
 
 439
 
-རྒྱལ་ཆབ་ rgyal tshab
+རྒྱལ་ཚབ་ rgyal tshab
 
 རྒྱལ་མའི་བུ་ rgyal ma’i bu Bez. für Saturn,
 
@@ -127267,7 +127267,7 @@ SE :chu rtsa Wasserader.
 
 Lex. ~ mo lun (gYu 292,5).
 
-ཆུ་ཆགས་ chu tshags Sieb, Wasserfilter.
+ཆུ་ཚགས་ chu tshags Sieb, Wasserfilter.
 
 skye bo nan pa ~ ’dra (metr.) „der schlechte
 Mensch gleicht einem Sieb“ (Pd 179d);
@@ -207764,7 +207764,7 @@ an
 
 མབ་བ་ཆེ་ mthu bo che Imthu che.
 
-མཐུ་དབང་གི་ཆོ་ག་ mihn dbaṅ gi cho ga Schüler-
+མཐུ་དབང་གི་ཆོ་ག་ mthu dbaṅ gi cho ga Schüler-
 weihe (SCHWIEGER 1995:
 610).
 

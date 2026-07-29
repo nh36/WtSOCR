@@ -313,6 +313,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 གོས	aus	gos	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀ་ཤིའི་གོས་ ka 477 905 Gewand aus Käsikä-Stoff. ~
 གོས	behaftet	gos	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གོས་ 2065 behaftet, befleckt, beschmutzt, be-
 གོས	pa	gos	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྲོང་ཆོས་མ་གོས་པ་ groṅ chos ma 903 pa junges
+གྱང	gyun	gyaṅ	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྱང་རོ་ gyun ro hart, trocken; trockene Leiche.
 གྱད	gad	gyad	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྱད་མོ་ gad mo Bez. der neun dbal-
 གྱིན	gyen	gyin	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྱིན་ gyen das Obere; ~ du nach oben, hinauf,
 གྱིན	oyin	gyin	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	གྱིན་ ?oyin plötzlich, zufällig.

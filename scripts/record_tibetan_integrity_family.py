@@ -111,18 +111,56 @@ def validate_authorization(
             )
 
 
+OCCURRENCE_IDENTITY_CHANNELS = integrity.OCCURRENCE_IDENTITY_CHANNELS
+
+
+def root_change_status(
+    attributions: list[dict[str, str]],
+) -> str:
+    """Classify actual edit spans without consulting the reason code."""
+    for attribution in attributions:
+        roles = set(attribution["target_structural_role"].split(";"))
+        if "root_consonant" in roles:
+            return "yes"
+    for attribution in attributions:
+        if (
+            attribution["attribution_status"] == "structurally_unresolved"
+            or attribution["extra_source_material"] == "yes"
+        ):
+            return "unresolved"
+    return "no"
+
+
 def require_occurrence_identity_evidence(
-    reason: str, explicit_manual_review: bool, evidence: str | None,
-) -> None:
-    if (
-        explicit_manual_review
-        and reason == "reviewed_tibetan_exact_manual_structural_root_ocr"
-        and not evidence
-    ):
+    explicit_manual_review: bool,
+    attribution_status: str,
+    root_change_declaration: str | None,
+    evidence_channel: str | None,
+    evidence: str | None,
+) -> bool:
+    """Fail closed for manual root edits, including multi-error repairs."""
+    if not explicit_manual_review:
+        return False
+    if attribution_status == "unresolved" and root_change_declaration is None:
         raise ValueError(
-            "Root-changing Latin review requires occurrence-level Tibetan "
-            "identity evidence"
+            "Unresolved manual edit attribution requires an explicit "
+            "--root-change yes/no declaration"
         )
+    root_change = (
+        attribution_status == "yes" or root_change_declaration == "yes"
+    )
+    if root_change:
+        if evidence_channel not in OCCURRENCE_IDENTITY_CHANNELS:
+            raise ValueError(
+                "Root-changing Latin review requires a controlled, "
+                "independent occurrence-identity evidence channel"
+            )
+        if not evidence:
+            raise ValueError(
+                "Root-changing Latin review requires occurrence-level "
+                "Tibetan identity evidence"
+            )
+    return root_change
 
 
 def main() -> None:
@@ -142,11 +180,19 @@ def main() -> None:
             "cite lemma order, an exact sibling, or an exact repeated identity."
         ),
     )
-    args = parser.parse_args()
-    require_occurrence_identity_evidence(
-        args.reason, args.explicit_manual_review,
-        args.occurrence_identity_evidence,
+    parser.add_argument(
+        "--occurrence-identity-channel",
+        choices=sorted(OCCURRENCE_IDENTITY_CHANNELS),
     )
+    parser.add_argument(
+        "--root-change",
+        choices=("yes", "no"),
+        help=(
+            "Required when structural attribution is unresolved; uncertainty "
+            "must not bypass occurrence-identity review."
+        ),
+    )
+    args = parser.parse_args()
     sources = set(args.sources.split(","))
     validate_authorization(
         args.tibetan, sources, args.target, args.explicit_manual_review
@@ -186,6 +232,43 @@ def main() -> None:
         selected.append(selected_row)
     if not selected:
         raise ValueError("No secure exact identities selected")
+    spans = [
+        row for row in integrity.read_tsv(
+            ROOT / "data/tibetan_latin_canonical_role_spans.tsv"
+        )
+        if row["tibetan_syllable"] == args.tibetan
+        and row["target"] == args.target
+    ]
+    root_change_by_identity: dict[
+        tuple[str, str, str, str, str], bool
+    ] = {}
+    attribution_by_identity: dict[
+        tuple[str, str, str, str, str], list[dict[str, str]]
+    ] = {}
+    for row in selected:
+        identity = (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["latin_token"],
+        )
+        domain = integrity.classify_domain(
+            row.get("zone", ""), row.get("context_excerpt", "")
+        )
+        attributions = [
+            signature_engine.attribute_edit_to_spans(
+                row["latin_token"], args.target, operation, spans, domain
+            )
+            for operation in signature_engine.canonical.edit_operations(
+                row["latin_token"], args.target
+            )
+        ]
+        attribution_by_identity[identity] = attributions
+        root_change_by_identity[identity] = require_occurrence_identity_evidence(
+            args.explicit_manual_review,
+            root_change_status(attributions),
+            args.root_change,
+            args.occurrence_identity_channel,
+            args.occurrence_identity_evidence,
+        )
     if not args.explicit_manual_review:
         registry: dict[str, list[dict[str, str]]] = {}
         for registry_row in integrity.read_tsv(
@@ -273,13 +356,6 @@ def main() -> None:
     registry_rows = integrity.read_tsv(
         ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
     )
-    spans = [
-        row for row in integrity.read_tsv(
-            ROOT / "data/tibetan_latin_canonical_role_spans.tsv"
-        )
-        if row["tibetan_syllable"] == args.tibetan
-        and row["target"] == args.target
-    ]
     base_sha = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
     ).strip()
@@ -353,10 +429,7 @@ def main() -> None:
     integrity.write_tsv(
         decision_path, decision_rows, decision_fields
     )
-    if (
-        args.explicit_manual_review
-        and args.reason == "reviewed_tibetan_exact_manual_structural_root_ocr"
-    ):
+    if args.explicit_manual_review and any(root_change_by_identity.values()):
         identity_path = (
             ROOT / "data/reviewed_tibetan_occurrence_identity_checks.tsv"
         )
@@ -381,7 +454,14 @@ def main() -> None:
                 row["volume"], row["page"], row["line"],
                 row["token_index"], row["latin_token"], args.target,
             )
-            if identity_key in existing_identity:
+            lookup_key = (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["latin_token"],
+            )
+            if (
+                identity_key in existing_identity
+                or not root_change_by_identity[lookup_key]
+            ):
                 continue
             identity_rows.append({
                 "volume": row["volume"], "page": row["page"],
@@ -392,7 +472,7 @@ def main() -> None:
                 "latin_target": args.target,
                 "root_change": "yes",
                 "identity_status": "retain_latin_correction",
-                "evidence_channel": "explicit_occurrence_identity_review",
+                "evidence_channel": args.occurrence_identity_channel,
                 "evidence": args.occurrence_identity_evidence,
                 "review_batch": args.evidence,
             })

@@ -1,7 +1,7 @@
 queue_category	family_count	current_family_count	current_exact_occurrences	historical_only_families
-alignment_or_damage	3215	18	34	3197
+alignment_or_damage	3216	18	34	3198
 domain_risk	133	133	543	0
 gloss_alignment_noise	107	0	0	107
 historical_echo_decision_block	7	0	0	7
-multiple_signatures_missing	267	267	268	0
-one_signature_missing	751	751	1053	0
+multiple_signatures_missing	268	268	269	0
+one_signature_missing	747	747	1049	0

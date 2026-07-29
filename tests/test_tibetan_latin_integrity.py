@@ -168,7 +168,10 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
                 writer.writerow({
                     "volume": "v", "page": "1", "line": "2",
                     "token_index": "1", "original_source": "Zan",
-                    "superseding_target": "źaṅ", "status": "active",
+                    "superseding_target": "źaṅ",
+                    "superseding_commit":
+                        "11b0d8047985f098c0286a8a6dbe6defad60c6af",
+                    "status": "active",
                 })
             old_overrides = integrity.OVERRIDES_PATH
             old_supersessions = integrity.SUPERSESSIONS_PATH
@@ -179,6 +182,17 @@ class TibetanLatinIntegrityTests(unittest.TestCase):
             finally:
                 integrity.OVERRIDES_PATH = old_overrides
                 integrity.SUPERSESSIONS_PATH = old_supersessions
+
+    def test_superseding_commit_provenance_fails_closed(self) -> None:
+        with self.assertRaises(ValueError):
+            integrity.validate_superseding_commit("pending_repair_commit")
+        with self.assertRaises(ValueError):
+            integrity.validate_superseding_commit("abc123")
+        with self.assertRaises(ValueError):
+            integrity.validate_superseding_commit("f" * 40)
+        integrity.validate_superseding_commit(
+            "11b0d8047985f098c0286a8a6dbe6defad60c6af"
+        )
 
 
 if __name__ == "__main__":

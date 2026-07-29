@@ -32,7 +32,11 @@ jobs:
           python3 -m py_compile scripts/build_status.py
           python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py
 
-      - name: Tests
-        run: |
-          python3 -m pytest tests -q
-          python3 -m unittest discover -s tests
+      # Pytest is authoritative: it collects the two module-level regression
+      # tests as well as every unittest.TestCase.  unittest discovery is kept
+      # as a stdlib compatibility/subset check.
+      - name: Authoritative full test suite
+        run: python3 -m pytest tests -q
+
+      - name: Unittest compatibility subset
+        run: python3 -m unittest discover -s tests
