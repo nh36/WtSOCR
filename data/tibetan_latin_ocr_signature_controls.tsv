@@ -2256,7 +2256,7 @@ SUB r→u	0	0	0	0	2	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer
 SUB r→y	0	0	0	0	1	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer;ཀྲ=kra;ཀྲད=krad;ཀྲུགས=krugs;ཀྲུང=kruṅ;ཀྲོ=kro
 SUB r→z	0	0	0	0	0	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer;ཀྲ=kra;ཀྲད=krad;ཀྲུགས=krugs;ཀྲུང=kruṅ;ཀྲོ=kro
 SUB r→ñ	0	0	0	0	3	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer;ཀྲ=kra;ཀྲད=krad;ཀྲུགས=krugs;ཀྲུང=kruṅ;ཀྲོ=kro
-SUB r→ṅ	0	0	0	5	7	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer;ཀྲ=kra;ཀྲད=krad;ཀྲུགས=krugs;ཀྲུང=kruṅ;ཀྲོ=kro
+SUB r→ṅ	7	9	0	5	7	0	666	0	3554	0	0	ཀར=kar;ཀོར=kor;ཀྱེར=khyer;ཀྲ=kra;ཀྲད=krad;ཀྲུགས=krugs;ཀྲུང=kruṅ;ཀྲོ=kro
 SUB s→S	0	0	0	0	30	0	727	0	3190	0	0	ཀུས=kus;ཀོས=kos;ཀྱིས=gyis;ཀྱིས=kyis;ཀྱུས=kyus;ཀྲུགས=krugs;ཀྲོམས=kroms;ཀླས=klas
 SUB s→a	0	0	0	0	4	0	727	0	3190	0	0	ཀུས=kus;ཀོས=kos;ཀྱིས=gyis;ཀྱིས=kyis;ཀྱུས=kyus;ཀྲུགས=krugs;ཀྲོམས=kroms;ཀླས=klas
 SUB s→b	0	0	0	0	1	0	727	0	3190	0	0	ཀུས=kus;ཀོས=kos;ཀྱིས=gyis;ཀྱིས=kyis;ཀྱུས=kyus;ཀྲུགས=krugs;ཀྲོམས=kroms;ཀླས=klas

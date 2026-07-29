@@ -1,6 +1,6 @@
 signature_child_id	parent_operation	decision	current_exact_rows	distinct_syllables	reviewed_support	exact_alternate_support	same_tibetan_independent_target_support	source_volumes	source_page_ranges	line_zones	parent_reviewed_support	parent_alternate_support	global_source_controls	structural_gate_controls	same_tibetan_competing_controls	domain_controls	reviewed_contradictions	disposition
 FINAL_NI_TO_NG	REPLACE ni→ṅ	A	0	0	0	0	0			exact_headword_gate_applied	0	11	0	0	0		0	persistent_A
-FINAL_R_TO_NG	SUB r→ṅ	A	0	0	0	0	0			exact_headword_gate_applied	0	12	666	0	0		0	persistent_A
+FINAL_R_TO_NG	SUB r→ṅ	A	0	0	9	0	0			exact_headword_gate_applied	9	12	666	0	0		0	persistent_A
 ASPIRATE_DIGRAPH_B_TO_H	SUB b→h	D	0	0	23	0	0			exact_headword_gate_applied	26	41	505	0	0	alignment_not_secure:73;domain_mismatch:4;other_unexplained_edit:2;source_context_mismatch:10	0	persistent_D
 ROOT_KB_TO_KH	SUB b→h	A	0	0	4	0	0			exact_headword_gate_applied	26	41	505	0	0		0	persistent_A
 ROOT_TB_TO_TH	SUB b→h	A	0	0	5	0	0			exact_headword_gate_applied	26	41	505	0	0		0	persistent_A

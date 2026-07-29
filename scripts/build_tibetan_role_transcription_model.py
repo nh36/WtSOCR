@@ -1433,9 +1433,15 @@ def build_correction_authority_backaudit(
             ROOT / "data/reviewed_tibetan_ocr_signature_decisions.tsv"
         )
     }
-    snapshot = subprocess.check_output(
-        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-    ).strip()
+    persistent_decisions = {
+        (
+            row["volume"], row["page"], row["line"], row["token_index"],
+            row["observed_source"], row["target"],
+        ): row
+        for row in read(
+            ROOT / "data/tibetan_transcription_correction_decisions.tsv"
+        )
+    }
     rows: list[dict[str, str]] = []
     for override in read(integrity.OVERRIDES_PATH):
         key = tuple(
@@ -1443,6 +1449,9 @@ def build_correction_authority_backaudit(
             for field in ("volume", "page", "line", "token_index")
         )
         source = shadow.get(key, {})
+        persistent_decision = persistent_decisions.get(
+            (*key, override["from_token"], override["to_token"]), {}
+        )
         registered_scope = scope_registry.get(override["reason"], {}).get(
             "evidence_scope", ""
         )
@@ -1651,7 +1660,9 @@ def build_correction_authority_backaudit(
                 "domain_context", "reviewed_exact_identity"
             ),
             "prior_exact_decision_status": "none_before_active_override",
-            "authority_snapshot_sha": snapshot,
+            "authority_snapshot_sha": persistent_decision.get(
+                "decision_base_sha"
+            ) or "decision_time_authority_snapshot_unavailable",
             "current_backaudit_status": current_status,
             "exact_correction_status": "retained_reviewed_exact",
             "current_target_authority": target_authority,
