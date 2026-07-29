@@ -29074,3 +29074,11 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 299	105	4143	headword_line	briul	brtul	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཁྱུས་ཀྱི་བརྟུལ་ཞུགས་ khrus kyi briul zugs
 621	199	7736	headword_line	brisegs	brtsegs	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཆ་ཤས་ཚེར་ བརྩེགས་ cha śas tsher brisegs Tcha Sas
 913	220	10239	headword_line	ria	rta	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	རྟ་འུལ། ria ’ul auch rta’n la Pferdetransport,
+360	84	4891	headword_line	gon	koṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
+361	71	4904	headword_line	gon	koṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀོང་རྩེ་ gon rtse Kragen.
+361	111	4910	headword_line	gon	koṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀོང་ལེན་ gon len Trophäe.
+366	67	4974	headword_line	gyaṅ	kyaṅ	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཀྱང་གྱིང་ gyaṅ gyiṅ Stolz.
+388	70	5190	headword_line	gron	kroṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
+724	164	8859	headword_line	rgyan	rkyaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
+724	212	8861	headword_line	rgyan	rkyaṅ	A	reviewed_tibetan_exact_manual_multi_error	1	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
+999	202	11145	headword_line	gon	koṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
