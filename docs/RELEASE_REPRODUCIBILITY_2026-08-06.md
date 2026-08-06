@@ -9,17 +9,30 @@ copy its inputs from ignored directories under
 the production workspace and absent from Git, so a fresh checkout could not
 rebuild the bundle.
 
-The stable integration point is merge commit
+The initial stable integration point is merge commit
 `8b9613a55f8d11359fbb15fa07fd6dc1ec3410f2`, annotated by tag
-`wtsocr-stable-2026-08-06`. No OCR policy or reviewed linguistic decision is
-changed by this reproducibility work.
+`wtsocr-stable-2026-08-06`. Its original content-addressed input archive and
+lock remain immutable. The later alignment-review snapshot is tagged
+`wtsocr-alignment-review-2026-08-06`; it contains the reviewed
+alignment/damage corrections and uses a distinct lock and GitHub release.
+
+The snapshots are deliberately separate:
+
+| Snapshot | Git tag and release | Input lock | Archive SHA-256 |
+| --- | --- | --- | --- |
+| Initial integrated stable checkpoint | `wtsocr-stable-2026-08-06` | `release/inputs/wtsocr-stable-2026-08-06.lock.json` | `c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458` |
+| Post-alignment-review current snapshot | `wtsocr-alignment-review-2026-08-06` | `release/inputs/wtsocr-alignment-review-2026-08-06.lock.json` | `7d4860dbaafae6766065164a897274a5ace5a576a185e0b02226069532db9f31` |
+
+Both archives are immutable. The later archive is also retained under the
+original release for historical download continuity, but the current lock
+uses the distinct alignment-review release URL.
 
 ## Locked production inputs
 
 The committed lock is:
 
 ```text
-release/inputs/wtsocr-stable-2026-08-06.lock.json
+release/inputs/wtsocr-alignment-review-2026-08-06.lock.json
 ```
 
 It records logical path, archive path, byte size, SHA-256, provenance, and the
@@ -43,10 +56,11 @@ reports are not archived.
 
 ## Immutable archive
 
-The inputs are attached to the GitHub release for the stable tag:
+The current inputs are attached to the GitHub release for the alignment-review
+tag:
 
 ```text
-https://github.com/nh36/WtSOCR/releases/tag/wtsocr-stable-2026-08-06
+https://github.com/nh36/WtSOCR/releases/tag/wtsocr-alignment-review-2026-08-06
 ```
 
 Asset:
@@ -89,7 +103,7 @@ decision-time provenance. Known diagnostic producers are recorded per file.
 ```bash
 git clone https://github.com/nh36/WtSOCR.git
 cd WtSOCR
-git switch codex-release-reproducibility-20260806
+git switch main
 python3 -m venv .venv
 . .venv/bin/activate
 python3 -m pip install -r requirements-dev.txt

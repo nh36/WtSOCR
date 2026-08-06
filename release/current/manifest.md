@@ -22,23 +22,23 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/wts_1_34` |
-| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/wts_35_51` |
-| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/wts_8_b` |
-| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-alignment-review-2026-08-06/wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-alignment-review-2026-08-06/wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-alignment-review-2026-08-06/wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-alignment-review-2026-08-06/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Locked Input
 
-- Input lock: `wtsocr-stable-2026-08-06`
+- Input lock: `wtsocr-alignment-review-2026-08-06`
 - Every archived input is verified by SHA-256 before materialization.
 
 ## Corrected Text

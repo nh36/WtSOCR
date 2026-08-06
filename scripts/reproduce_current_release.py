@@ -54,7 +54,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--lock",
         type=Path,
-        default=Path("release/inputs/wtsocr-stable-2026-08-06.lock.json"),
+        default=Path(
+            "release/inputs/wtsocr-alignment-review-2026-08-06.lock.json"
+        ),
     )
     parser.add_argument("--archive", type=Path)
     parser.add_argument(
@@ -63,7 +65,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--materialized-root",
         type=Path,
-        default=Path("work/materialized_release_inputs/wtsocr-stable-2026-08-06"),
+        default=Path(
+            "work/materialized_release_inputs/wtsocr-alignment-review-2026-08-06"
+        ),
     )
     parser.add_argument(
         "--output-dir", type=Path, default=Path("work/reproduced_release")

@@ -5,9 +5,12 @@ contains the corrected text files that should be treated as the deployable
 etext, plus compact QA artifacts, a manifest, and SHA-256 checksums.
 
 The large production directories under `work/` remain ignored by Git. The
-minimum accepted inputs for the current stable snapshot are stored separately
-as a content-addressed GitHub release asset and described by the committed lock
-at `release/inputs/wtsocr-stable-2026-08-06.lock.json`.
+minimum accepted inputs for the current alignment-review snapshot are stored
+separately as a content-addressed GitHub release asset and described by the
+committed lock at
+`release/inputs/wtsocr-alignment-review-2026-08-06.lock.json`. The original
+stable checkpoint remains independently locked by
+`release/inputs/wtsocr-stable-2026-08-06.lock.json`.
 
 The 2026-06-28 refresh deploys the current override tables into
 `release/current` for all four volumes, including the latest exact
@@ -53,9 +56,9 @@ An explicitly materialized input tree can instead be supplied with:
 
 ```bash
 python3 scripts/build_current_release_bundle.py \
-  --input-root work/materialized_release_inputs/wtsocr-stable-2026-08-06 \
-  --input-lock-id wtsocr-stable-2026-08-06 \
-  --build-timestamp 2026-07-29T16:22:11Z
+  --input-root work/materialized_release_inputs/wtsocr-alignment-review-2026-08-06 \
+  --input-lock-id wtsocr-alignment-review-2026-08-06 \
+  --build-timestamp 2026-08-06T15:30:00Z
 ```
 
 `--build-timestamp` takes precedence over `SOURCE_DATE_EPOCH`; otherwise the
