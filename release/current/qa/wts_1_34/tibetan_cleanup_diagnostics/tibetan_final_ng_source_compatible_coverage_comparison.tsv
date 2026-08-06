@@ -128,7 +128,7 @@ newly_discovered	wts_1_34	269	66	2	བསླང	bslan		bslaṅ		source_compatibl
 category_changed	wts_1_34	270	1	2	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཁེ་ཀྱོང་ khe gyon
 disappeared	wts_1_34	270	3	2	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			ཁེ་གྱོང་ khe gyon Gewinn und Verlust.
 disappeared	wts_1_34	275	173	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ 'khon auch khon pa pron. 3. pers. sing.
-newly_discovered	wts_1_34	275	182	1	ཁོང	kbon		kboṅ		source_compatible_single_anchor	1	ཁོང་ kbon;
+newly_discovered	wts_1_34	275	182	1	ཁོང	kbon				source_compatible_no_anchor	0	ཁོང་ kbon;
 disappeared	wts_1_34	276	1	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་སྐེམ་པ་ khon skem pa
 disappeared	wts_1_34	276	105	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			།ཁོང་ཏ་ khon ta
 disappeared	wts_1_34	276	114	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ཏ་ khon ta pron. 3. pers.
@@ -162,7 +162,6 @@ disappeared	wts_1_34	277	57	1	ཁོང	khon	khoṅ		source_compatible_insuffici
 disappeared	wts_1_34	277	65	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་ལྷོད་ khon lhod geduldig.
 disappeared	wts_1_34	277	8	1	ཁོང	khon	khoṅ		source_compatible_insufficient_evidence			ཁོང་མོ་ khon mo wildes Yak.
 newly_discovered	wts_1_34	287	69	1	ཀྱང	khyun				source_compatible_no_anchor	0	ཀྱང་སྡེར་ khyun sder eine Heilpflanze.
-newly_discovered	wts_1_34	287	97	1	ཁུང	khyun				source_compatible_no_anchor	0	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
 newly_discovered	wts_1_34	292	135	2	ཕྱང	phyun				source_compatible_no_anchor	0	ཁྲག་ཕྱང་ khrag phyun pf. zu lkhrag 'byin „Blut
 newly_discovered	wts_1_34	295	69	4	རང	rin		riṅ		source_compatible_not_final_ng_only	1	ཁ་སྒྲ་རུ་རང་ khri sgra vu rin eine langhörnige
 newly_discovered	wts_1_34	297	108	2	ངང	dun				source_compatible_no_anchor	0	ཁྲིམས་ངང་ khrims dun
@@ -170,12 +169,9 @@ newly_discovered	wts_1_34	297	110	2	ངང	dun				source_compatible_no_anchor	0	
 newly_discovered	wts_1_34	298	129	1	ཁང	khrun				source_compatible_no_anchor	0	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 newly_discovered	wts_1_34	298	129	2	ཁང	khrun				source_compatible_no_anchor	0	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 newly_discovered	wts_1_34	298	134	1	ཁང	khrun				source_compatible_no_anchor	0	།ཁང་མ་། khrun ma Kellnerin.
-newly_discovered	wts_1_34	298	141	1	ཁུང	khrun				source_compatible_no_anchor	0	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
 newly_discovered	wts_1_34	298	56	1	ཁྱུང	khrun				source_compatible_no_anchor	0	ཁྱུང་ཁྱུང་ khrun khrun
 newly_discovered	wts_1_34	298	56	2	ཁྱུང	khrun				source_compatible_no_anchor	0	ཁྱུང་ཁྱུང་ khrun khrun
-newly_discovered	wts_1_34	298	94	1	ཁུང	khrun				source_compatible_no_anchor	0	ཁུང་ khrun resp. für chan.
 newly_discovered	wts_1_34	298	98	1	ཁྱུང	khrun				source_compatible_no_anchor	0	ཁྱུང་ཏཁྱུང་ khrun khrun.
-newly_discovered	wts_1_34	300	171	2	གཞུང	gun				source_compatible_no_anchor	0	ཁྲེལ་གཞུང་ khrel gun \khrel.
 newly_discovered	wts_1_34	306	72	3	སྣང	Glühwürmchen				source_compatible_no_anchor	0	མ།བའ་སྣང་ mkha’ snarn Glühwürmchen.
 newly_discovered	wts_1_34	310	54	3	མོང	dban				source_compatible_no_anchor	0	མ།ཁའ་མོང་ངཔང་ལོ་ mkha’ spyod dban po Beina-
 newly_discovered	wts_1_34	311	97	2	སློང	sgon				source_compatible_no_anchor	0	མབར་སློང་ mkhar sgon
@@ -192,13 +188,11 @@ newly_discovered	wts_1_34	352	101	1	གང	gun				source_compatible_no_anchor	0	
 newly_discovered	wts_1_34	352	8	1	གང	gun				source_compatible_no_anchor	0	གང་བྲང་ gun than npr. eine Gegend in mÑa’-
 newly_discovered	wts_1_34	352	8	2	བྲང	than		thaṅ		source_compatible_not_final_ng_only	1	གང་བྲང་ gun than npr. eine Gegend in mÑa’-
 newly_discovered	wts_1_34	359	109	1	གང	gon				source_compatible_no_anchor	0	གང་སྐར་ gon skor
-newly_discovered	wts_1_34	360	84	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
 newly_discovered	wts_1_34	361	109	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་ལེན་ gon len
-newly_discovered	wts_1_34	361	111	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་ལེན་ gon len Trophäe.
 newly_discovered	wts_1_34	361	139	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་སེལ་ gon sel ein Ritual.
 newly_discovered	wts_1_34	361	39	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་མ་སྲེག་ gon ma sreg ein Vogel, Rebhuhn.
 newly_discovered	wts_1_34	361	63	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་མོ་ gon mo ein Vogel.
-newly_discovered	wts_1_34	361	71	1	ཀོང	gon				source_compatible_no_anchor	0	ཀོང་རྩེ་ gon rtse Kragen.
+newly_discovered	wts_1_34	367	184	1	གྱང	gyun				source_compatible_no_anchor	0	གྱང་རོ་ gyun ro hart, trocken; trockene Leiche.
 category_changed	wts_1_34	370	106	1	ཀྱོང	gyon	gyoṅ	gyoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀྱོང་རོལ་ gyon rol auch gyon ral Bez. für die
 disappeared	wts_1_34	370	112	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་བཞིག་ gyon bsig
 disappeared	wts_1_34	370	123	1	གྱོང	gyon	gyoṅ		source_compatible_insufficient_evidence			གྱོང་བཤིག་ gyon bśig Zerstörung.
@@ -223,12 +217,10 @@ category_changed	wts_1_34	388	34	1	གློང	gron	groṅ	groṅ	source_compat
 category_changed	wts_1_34	388	52	1	གློང	gron	groṅ	groṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	གློང་བཤུལ་ gron bsul
 category_changed	wts_1_34	388	59	1	གློང	gron	groṅ	groṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	གློང་པའི་ཆོས་ gron pa’i chos Bez. für Ge-
 category_changed	wts_1_34	388	67	1	གློང	gron	groṅ	groṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	གློང་སྤྱོད་ gron spyod Bez. für Krähe.
-newly_discovered	wts_1_34	388	70	1	ཀྲོང	gron				source_compatible_no_anchor	0	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
 category_changed	wts_1_34	388	82	1	གློང	gron	groṅ	groṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	1	གློང་ཚིག་ gron tshig Umgangssprache.
 category_changed	wts_1_34	390	14	2	གླེང	glen	gleṅ	gleṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	གྲོས་གླེང་ gros glen Gespräch, Beratung, Dis-
 newly_discovered	wts_1_34	392	201	2	ཤང	sin		siṅ		source_compatible_not_final_ng_only	1	གླུ་ཤང་ gla sin [°2/7 ba.
 newly_discovered	wts_1_34	394	183	1	གྲུང	glan				source_compatible_no_anchor	0	གྲུང་པོའི་རྒྱལ་པོ་ glan po’i rgyal po Bez. für den
-newly_discovered	wts_1_34	396	122	1	གླང	glin				source_compatible_no_anchor	0	གླང་ཕྲན་ glin phran.
 newly_discovered	wts_1_34	396	168	1	གླིང	elin		eliṅ		source_compatible_single_anchor	1	གླིང་བཞི་ elin bäi.
 newly_discovered	wts_1_34	396	178	1	ང	glin				source_compatible_no_anchor	0	ང་བཞི་ལྟེ་བ་ glin bźi Ite ba auch glin bZi’i Ite
 newly_discovered	wts_1_34	396	189	1	ང	glin				source_compatible_no_anchor	0	ང་བཞི་ཌྡེགས་པ་ glin bźi ldegs pa Bez. für Erde
@@ -260,9 +252,7 @@ disappeared	wts_1_34	414	198	2	སློང	slon	sloṅ		source_compatible_insuf
 newly_discovered	wts_1_34	415	125	1	གོང	dgon				source_compatible_damaged_context	0	གོང་ཞྲག་ dgon 749 Nacht bzw. Tag und
 newly_discovered	wts_1_34	417	32	2	དང	dun				source_compatible_no_anchor	0	དགོན་དང་ dgon dun auch ~ can, dgun dun can
 newly_discovered	wts_1_34	424	1	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་ beran
-newly_discovered	wts_1_34	424	123	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
 disappeared	wts_1_34	424	141	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཝྲེང་ bgran phren Gebetskette.
-newly_discovered	wts_1_34	424	158	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
 newly_discovered	wts_1_34	424	173	1	བགྲང	beran				source_compatible_no_anchor	0	བགྲང་གཞི་ beran gäi.
 disappeared	wts_1_34	424	178	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཡས་ bgran yas auch bgran yal eine hohe
 disappeared	wts_1_34	424	188	1	བགྲང	bgran	bgraṅ		source_compatible_insufficient_evidence			བགྲང་ཡོལ་ bgran yol eine hohe Zahl.
@@ -399,7 +389,6 @@ category_changed	wts_1_34	651	81	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_i
 category_changed	wts_1_34	651	90	2	ཞེང	Zen	Zeṅ	Zeṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཆུ་ཞེང་གབ་པ་ chu Zen gab pa Umfang; wohl-
 newly_discovered	wts_1_34	654	115	2	ཤང	Sin				source_compatible_no_anchor	0	ཆུ་ཤང་ཆ cha Sin ma.
 newly_discovered	wts_1_34	654	51	2	ཤང	Sin				source_compatible_no_anchor	0	ཆུ་ཤང་ ch Sin.
-newly_discovered	wts_1_34	655	124	3	གྲང	gron				source_compatible_no_anchor	0	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
 newly_discovered	wts_1_34	665	57	2	སྙིང	shin				source_compatible_no_anchor	0	ཆེད་སྙིང་ ched shin
 disappeared	wts_1_34	675	26	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་ཀློང་ chos klon Allwissenheit, Meister-
 disappeared	wts_1_34	680	1	3	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins klon du
@@ -428,8 +417,6 @@ newly_discovered	wts_1_34	717	110	2	རང	rin		riṅ		source_compatible_not_fin
 newly_discovered	wts_1_34	717	4	2	སྙང	sin				source_compatible_no_anchor	0	"མཇུག་སྙང་ ming sin auch ""ug säin Herzstück"
 newly_discovered	wts_1_34	720	3	2	ལྔང	ljan				source_compatible_no_anchor	0	འཇམ་ལྔང་འདབ་ལྡན་ am ljan ’dab ldan Bez. für
 disappeared	wts_1_34	721	142	2	ཀློང	klon	kloṅ		source_compatible_dominant_consensus			འཇའ་ཀློང་ཡེ་ཤེས་ ja’ klon ye śes ein ritueller
-newly_discovered	wts_1_34	724	164	3	རྐྱང	rgyan				source_compatible_no_anchor	0	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
-newly_discovered	wts_1_34	724	212	3	རྐྱང	rgyan				source_compatible_no_anchor	0	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
 disappeared	wts_1_34	731	190	3	རུང	run	ruṅ		source_compatible_insufficient_evidence			འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.
 category_changed	wts_1_34	742	149	4	མེང	min	miṅ	miṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	རྗེས་བསྒྲུབ་ཀྱི་མེང་ rjes bsgrub kyi min Metapher,
 newly_discovered	wts_1_34	743	75	2	གདང	gdun				source_compatible_no_anchor	0	རྗེས་གདང་ rjes gdun 1765 su gdun.
@@ -454,7 +441,7 @@ newly_discovered	wts_1_34	787	200	3	བྱང	byun		byuṅ		source_compatible_no
 newly_discovered	wts_1_34	793	196	2	བྱང	byun		byuṅ		source_compatible_not_final_ng_only	1	ཉེས་བྱང་ fies byun Verbrechen.
 newly_discovered	wts_1_34	80	48	3	རྙིང	räin				source_compatible_no_anchor	0	ཀུན་ནས་རྙིང་བ་ kun nas räin ba verwelken, ver-
 newly_discovered	wts_1_34	801	53	2	ཤང	Sin				source_compatible_no_anchor	0	གཉའ་ཤང་གང་ཅམ་ལྟ་བ་ gia’ Sin gaṅ tsam lta ba
-newly_discovered	wts_1_34	804	213	4	གསུང	gsun		gsuṅ		source_compatible_dominant_consensus	9	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
+newly_discovered	wts_1_34	804	213	4	གསུང	gsun		gsuṅ		source_compatible_dominant_consensus	10	གཉིས་སུ་མི་གསུང་བ་ gäls su mi gsun ba ein-
 newly_discovered	wts_1_34	814	160	1	སྙང	shan				source_compatible_no_anchor	0	སྙང་སྙོང་ shan sion sinnlos, 111111061༽༣61110,
 newly_discovered	wts_1_34	817	219	4	ལྟོང	hören				source_compatible_damaged_context	0	སྙན་ལྟོང་ san //90/7 hören, erfahren.
 newly_discovered	wts_1_34	819	152	1	སྙིང	snin				source_compatible_no_anchor	0	སྙིང་ཀ་ snin ka Isnin ga.
@@ -485,7 +472,7 @@ category_changed	wts_1_34	822	106	1	སྙིང	sin	siṅ	siṅ	source_compatib
 newly_discovered	wts_1_34	822	162	1	སྙིང	säin				source_compatible_no_anchor	0	སྙིང་ཕུར་ säin phur
 category_changed	wts_1_34	822	171	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་པོ་མཆོག་ sin po mchog eine hohe Zahl.
 category_changed	wts_1_34	822	179	1	སྙིང	sin	siṅ	siṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	3	སྙིང་པོ་ཐུགས་ཀྱེ་དབང་ sin po thugs kyi dbaṅ
-newly_discovered	wts_1_34	822	191	1	སྙང	sin				source_compatible_no_anchor	0	སྙང་པ་ཡ་ག་དྲག་མ་ sin po yi ge drug ma der
+newly_discovered	wts_1_34	822	191	1	སྙང	sin				source_compatible_no_anchor	0	སྙང་པ་ཡི་ག་དྲག་མ་ sin po yi ge drug ma der
 newly_discovered	wts_1_34	822	200	1	སྙང	sh				source_compatible_no_anchor	0	སྙང་པོའ་།ཁང་པ་ sh po’i khaṅ pa Bez. für
 newly_discovered	wts_1_34	822	213	1	སྙིང	szin				source_compatible_no_anchor	0	སྙིང་ཕྲ་ང་ szin phur vollkommen, eindringlich
 newly_discovered	wts_1_34	822	213	3	ང	vollkommen				source_compatible_no_anchor	0	སྙིང་ཕྲ་ང་ szin phur vollkommen, eindringlich
@@ -593,7 +580,7 @@ newly_discovered	wts_1_34	943	120	3	ཆུང	ch				source_compatible_no_anchor	
 newly_discovered	wts_1_34	944	104	1	ང	stan				source_compatible_no_anchor	0	ང་ཀྲེའ།” stan zil auch stans zil ein Mineral,
 newly_discovered	wts_1_34	948	208	2	འབུང	thun				source_compatible_no_anchor	0	སྟིང་འབུང་ sten thun Bez. für Wasserlilie; -
 newly_discovered	wts_1_34	952	198	1	སྔོང	ston				source_compatible_no_anchor	0	སྔོང་བརང་འྲཆི་བདག་ ston bdud ’chi bdag eine
-newly_discovered	wts_1_34	953	201	1	སྟང	ston		stoṅ		source_compatible_not_final_ng_only	1	སྟང་བསང་ ston bsan Vena maxiliaris externa in
+newly_discovered	wts_1_34	953	201	1	སྟང	ston				source_compatible_no_anchor	0	སྟང་བསང་ ston bsan Vena maxiliaris externa in
 newly_discovered	wts_1_34	96	128	2	ཤེང	sen				source_compatible_no_anchor	0	ཀོ་ཤེང་ ko sen, auch kon sen N. einer Gegend.
 newly_discovered	wts_1_34	961	156	2	བྲང	bzan				source_compatible_no_anchor	0	སྟོབས་བྲང་ལྷ་མོ་ stobs bzan lba mo Beiname
 newly_discovered	wts_1_34	98	185	1	ང	kon				source_compatible_no_anchor	0	ང་ཚོ་ kon tsho eine Schule, die von śab-rtse im
@@ -607,7 +594,6 @@ newly_discovered	wts_1_34	989	216	1	བང	than				source_compatible_no_anchor	0
 newly_discovered	wts_1_34	989	229	1	བྲང	than		thaṅ		source_compatible_not_final_ng_only	1	བྲང་ཞེ་ than Zu auch than Zwa eine Kopfbe-
 newly_discovered	wts_1_34	99	21	2	ཤེང	sen				source_compatible_no_anchor	0	ཀོང་ཤེང་ koṅ sen eine Region in der Nähe von
 newly_discovered	wts_1_34	992	66	2	ཁང	khun				source_compatible_no_anchor	0	ཁྲབ་།ཁང་ thab khun Feuerplatz, Herd.
-newly_discovered	wts_1_34	999	202	2	ཀོང	gon				source_compatible_no_anchor	0	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 category_changed	wts_35_51	1050	12	2	གཡང	g.yan	g.yaṅ	g.yaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཕྱུ་གཡང་ phywa g.yan auch phya g.yari Glück;
 newly_discovered	wts_35_51	1084	2	1	འཕྲང	phan				source_compatible_no_anchor	0	"འཕྲང་ ""phan fur. zu Uphen werfen, schleu-"
 disappeared	wts_35_51	1108	42	1	འཕྱོང	phyon	phyoṅ		source_compatible_insufficient_evidence			"འཕྱོང་ ""phyon"
@@ -622,7 +608,6 @@ newly_discovered	wts_35_51	689	69	2	གསུང	gsuṅń				source_compatible_n
 newly_discovered	wts_35_51	69	66	3	འབྲང	byun				source_compatible_no_anchor	0	"བདད་རྩེའི་འབྲང་གནས་ bdud risi'i ""byun gnas"
 newly_discovered	wts_35_51	690	45	3	སྙིང	sñiń		sñiṅ		source_compatible_not_final_ng_only	1	པདྨའི་སྙིང་པོ་ padma''i sñiń po npr. cin Buddha.
 newly_discovered	wts_35_51	700	55	3	སྟེང	Dach				source_compatible_no_anchor	0	པུ་ཤུ་སྟེང་ ༼ sten Giebel, Dach eines Pala-
-newly_discovered	wts_35_51	712	54	1	ཕྱིང	pyih				source_compatible_no_anchor	0	ཕྱིང་ pyih lphyin.
 category_changed	wts_35_51	756	63	2	སྡིང	sdih	sdiṅ	sdiṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	དཔྱད་སྡིང་བཅུ་གསུམ་ dpyad sdih ben gsum eine
 newly_discovered	wts_35_51	799	3	2	རང	Balken				source_compatible_no_anchor	0	སྤར་རང་ sporröt Balken einer Waage.
 newly_discovered	wts_35_51	803	40	1	སྤང	spyah		spyaṅ		source_compatible_not_final_ng_only	2	སྤང་ཀི་ spyah ki auch spyan khu, spyan gu,

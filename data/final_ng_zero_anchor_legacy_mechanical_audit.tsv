@@ -10,6 +10,7 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 རེངས	auchmoren	auchmoreṅ	long_or_gloss_like	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	མོ་རེངས།་ morens auchmoren, mo hreris allein-
 རུང	noch	nocṅ	long_or_gloss_like	obvious_gloss_or_alignment_noise	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ད་རུང་ darun noch, dann, weiterhin, noch im-
 སྟེང	Dach	Dacṅ	long_or_gloss_like	obvious_gloss_or_alignment_noise	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	པུ་ཤུ་སྟེང་ ༼ sten Giebel, Dach eines Pala-
+ཁོང	kbon	kboṅ	different_stem_or_multi_error	source_variant_requires_manual_review	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁོང་ kbon;
 གཏོང	vernich	vernicṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཏོར་ཁྲ་ཏག་ཏ་གཏོང་ gtor brlag du gton vernich-
 དང	dangon	dangoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	དང་གོང་ dangon in thugs kyi — Brust.
 བྲེང	rennen	renneṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བྲེངས་སེ་བྲེང་ brenssebreṅ onom. rennen,
@@ -18,9 +19,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 ཁང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 ཁང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁང་ཁང་འཇོམས་ khrun khrun ”joms Beiname
 ཁང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།ཁང་མ་། khrun ma Kellnerin.
-ཁུང	khyun	khyuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
-ཁུང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁུང་ khrun resp. für chan.
-ཁུང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
 ཁོང	ikhon	ikhoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁོང་པ་ ikhon pa 1'khon.
 ཁྱུང	kbyun	kbyuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀླུ་སྦྲལ་འོད་ཁྱུང་ klu sbrul ’od kbyun ¦/5// sbrul ’od
 ཁྱུང	khrun	khruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁྱུང་ཁྱུང་ khrun khrun
@@ -35,8 +33,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 ཕྱང	phyun	phyuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	མངོན་ད་ཕྱང་ mnon du phyun pf. enthüllen,
 བགྲང	beran	beraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བགྲང་ beran
 བགྲང	beran	beraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བགྲང་ beran
-བགྲང	beran	beraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
-བགྲང	beran	beraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
 བགྲང	beran	beraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བགྲང་གཞི་ beran gäi.
 བསླང	bskan	bskaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བསླང་ bskan fur. t'skon erfüllen; zufrieden-
 བསླང	bskun	bskuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	བསླང་ bskun fut. zu tskun verbergen.
@@ -50,8 +46,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 མོང	mthon	mthoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	མོང་རྒ་ཆེ་ mthon rgya che weitsichtig, erfah-
 ཚང	ishah	ishaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 རང	spyan	spyaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	'རང་དྲང་ཅྲན་ spyan raṅ dran can
-རྐྱང	rgyan	rgyaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
-རྐྱང	rgyan	rgyaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
 རྒྱང	igyan	igyaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	དཀར་མོའི་རྒྱང་གྲགས་ dkar mo’i igyan grags !dkar
 རྒྱང	rgyon	rgyoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	རྒྱང་ rgyon
 རྒྱང	rgyon	rgyoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	རྒྱང་ rgyon pf. \brgyans fut. \brgyan imp.
@@ -63,7 +57,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 ཀྱོང	kyon	kyoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྱོང་ཀྱོང་ kyon kyon
 ཀྱོང	kyon	kyoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྱོང་ཀྱོང་ kyon kyon
 ཀྱོང	kyon	kyoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྱོང་བུ་ kyon bu ein Gerät, vgl. Ikyon mo.
-ཀྲོང	gron	groṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
 ཀླང	krun	kruṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
 ཀླང	klon	kloṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀླང་ཆན་པ་” klon chen pa...
 ཁང	khon	khoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།ཁང་།ཁྲ་ khon khro auch khon khro ba Zorn,
@@ -86,12 +79,11 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 གདང	gdun	gduṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཉེ་བར་གདང་བ་ fie bar gdun ba starke Schmer-
 གདང	gdun	gduṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཏལ་གདང་ tal gdun ein Balken.
 གདུང	odun	oduṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	"གདུང་ ""odun"
+གྱང	gyun	gyuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གྱང་རོ་ gyun ro hart, trocken; trockene Leiche.
 གྲང	oran	oraṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གྲང་ཚལ་ oran tshal
-གྲང	gron	groṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
 གྲུང	glan	glaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གྲུང་པོའི་རྒྱལ་པོ་ glan po’i rgyal po Bez. für den
 གླང	gran	graṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གླང་ཁྲ་ gran ba.
 གླང	gran	graṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གླང་རླང་ gran rlun eine Krankheit.
-གླང	glin	gliṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གླང་ཕྲན་ glin phran.
 གླེང	khan	khaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	'བྲེད་ཁྲས་ཁང་གླེང་ dag byed khrus khan glin
 གློང	glon	gloṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གློང་ glon pf. !glons umrühren, aufwirbeln.
 ང	klun	kluṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ང་ klun.
@@ -114,7 +106,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 དཔང	dban	dbaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	དགའ་རབ་དཔང་རམྱག་ dga’ rab dban phyug
 དུང	drun	druṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཐོག་དུང་ thog drun hoch und niedrig; Höhe.
 ཕྱང	byan	byaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།ཁ་ཕྱང་བ་ kha byan ba
-ཕྱིང	pyih	pyiṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཕྱིང་ pyih lphyin.
 བང	Rhan	Rhaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།བང་བྱུ་ Rhan bu Häuschen, kleine Behausung.
 བང	khan	khaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།བང་རྩ་ khan rtsa
 བང	khan	khaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	།བང་རྩ་ * khan rtsa Fundament, Grundmauer.
@@ -191,6 +182,7 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 སྙིང	säin	säiṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙིང་བསྲལ་ཅན་ säin bsral can hartherzig, mu-
 སྙིང	shin	shiṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	འཐབ་སྙིང་ 'thab shin geübt.
 སྙིང	säin	säiṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	དྲི་ཡི་སྙིང་པོ་ dri yi säin po
+སྟང	ston	stoṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྟང་བསང་ ston bsan Vena maxiliaris externa in
 སྲིང	shin	shiṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	མ་མགོ་ཀགྲང་སྲིང་ dom mgo glan shin eine füh-
 སླང	skun	skuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ང་སླང་ skun skun verborgen, geheim.
 སླང	span	spaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གབ་སླང་ gab span [arch.] Gebälk, Abschluß-
@@ -207,14 +199,10 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 ཀེང	ken	keṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀེང་ཤེ་ ken se Tkin 7.
 ཀེང	ken	keṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཅང་ཀེང་ caṅ ken
 ཀེང	ken	keṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཅང་ཀེང་ can ken die chin. Regierungsdevise &
-ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
 ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་མ་སྲེག་ gon ma sreg ein Vogel, Rebhuhn.
 ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་མོ་ gon mo ein Vogel.
-ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་རྩེ་ gon rtse Kragen.
 ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་ལེན་ gon len
-ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་ལེན་ gon len Trophäe.
 ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀོང་སེལ་ gon sel ein Ritual.
-ཀོང	gon	goṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 ཁང	kan	kaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁང་ཁུང་ kan khuṅ
 གང	gun	guṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གང་བྲང་ gun than npr. eine Gegend in mÑa’-
 གང	gun	guṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གང་ལོ་ gun lo Ydgun 2.
@@ -222,7 +210,6 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 གཏང	gun	guṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	གཏང་དཔག་ gun dpag fur. zu gti dpog_ er-
 གདུང	gun	guṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྐུ་གདུང་ sh gun.
 གདོང	can	caṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	རྟ་ཡི་གདོང་ཅན་ rta ༡// gdon can Trta gdon can.
-གཞུང	gun	guṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ཁྲེལ་གཞུང་ khrel gun \khrel.
 ང	kan	kaṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ང་ཀ་ནག་ག་ཀ་བཅཙན་ kan ka nag gi klu btsan eine
 ང	kun	kuṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ང་ས་ kun sa divin., einer der vier bzw. fünf gro-
 ང	kon	koṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	ང་ཚོ་ kon tsho eine Schule, die von śab-rtse im
@@ -306,7 +293,7 @@ tibetan_syllable	source_variant	former_mechanical_variant_nonsemantic	audit_prio
 སྙང	sin	siṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	"མཇུག་སྙང་ ming sin auch ""ug säin Herzstück"
 སྙང	sin	siṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་ཆུ་ sin chu eine Herzkrankheit.
 སྙང	Min	Miṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་ནད་ Min nad Herzerkrankung, Herz-
-སྙང	sin	siṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་པ་ཡ་ག་དྲག་མ་ sin po yi ge drug ma der
+སྙང	sin	siṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་པ་ཡི་ག་དྲག་མ་ sin po yi ge drug ma der
 སྙང	sin	siṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་མ་ sin ma (zw.) Blüten; vgl. Isie ma.
 སྙང	san	saṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙང་རླུང་ san rluṅ
 སྙིང	sun	suṅ	ordinary_manual_review	unresolved	Mechanical string transformation only; not a proposed correction and not evidence of the canonical transcription.	སྙིང་ sun.

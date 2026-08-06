@@ -3177,6 +3177,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 གཏིང	gtin	gtiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtin 'byin [7770
 སྣང	snah	snaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
 སྟེང	steh	steṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"པང་སྟེང་ pani steh Ypani eine hohe Zahl, 10""."
+པད	ppad	pad	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པད་མའི་དྲག་ ppad ma' dgra dgra.
 གུང	guh	guṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
 ཕུབ	pub	phub	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུབ་ pub lphub.
 ཕུར	pur	phur	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུར་ཁང་ pur khaṅ Leichenhaus, Leichenplatz,
@@ -3200,6 +3201,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 དྲུག	drng	drug	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drng
 འཆང	chah	chaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chah"
 ཕང	pbaṅ	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕང་མཁན་ pbaṅ mkhan
+ཕང	pphaṅ	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕང་འགྲ pphaṅ gro JAULENMSTTUMENE.
 ཕང	phani	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
 ཕྱིན	pbyin	phyin	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕར་ཕྱིན་ 'phar pbyin Kurzf. für [/)/7 vol ru
 ཕས	pbas	phas	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕས་ཀྱི་རྒོལ་བ་ pbas kyi rgol ba. Kurzf. phas rgol
@@ -3218,6 +3220,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཕྱང	phyani	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
 ཕྱང	phyani	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་བཟུང་ phyani bzuṅ
 ཕྱང	phyari	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་ཆད་ phyari chad auch phyan bcad entschie-
+ཕྱང	pphyaṅ	phyaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
 ཕྱམ	pbyam	phyam	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten ""allgemei-"
 ཕྱམ	phyami	phyam	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱམ་མེ་བ་ phyami me ba eben, flach.
 ཁུང	kbuṅ	khuṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
@@ -3230,6 +3233,7 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
 ཞིང	Ziṅ	źiṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+ཕྱིས	pphyis	phyis	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
 སྒང	sgani	sgaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕྱུག་པོ་སྒང་དཀར་་ phyug po sgani dkar
 ཕྱུགས	phyngs	phyugs	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
 རྫི	dzi	rdzi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
@@ -3248,9 +3252,11 @@ tibetan_syllable	source	canonical_target	occurrence_count	current_alignment_stat
 འཕང	phan	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕང་ ""phan"
 འཕང	phani	phaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
 འཕྲན	phan	phran	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
+འཕར	pphar	phar	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕར་ཞིབ་ pphar Zib Fluktuation,
 འཕྲོ	pho	phro	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."
 འཕྱོང	phyon	phyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྱོང་ ""phyon"
 འཕྱོང	phyon	phyoṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
+འཕྲལ	pphral	phral	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der
 བཞི	bi	bźi	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	འཕྲུལ་མི་བཞི་ phrul mi bi
 ལང	lan	laṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"པ་ལང་ ""ba lan"
 ཆང	chani	chaṅ	0	structurally_unaligned	structurally_unaligned	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"བན་ཆང་ ""ban chani"

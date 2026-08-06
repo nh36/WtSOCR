@@ -1,5 +1,5 @@
 volume	page	line	token_index	tibetan_syllable	current_dotted_token	provenance_class	source_token_or_tokens	correction_reason	correction_evidence	context_excerpt
-wts_9_m	17	50	2	ཁུངས	khuṅs	base_provenance_unverified	khuṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མ་ཁུངས་བཞི་ ma khuṅs bi vier Kalkulationen
+wts_9_m	17	50	2	ཁུངས	khuṅs	base_provenance_unverified	khuṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མ་ཁུངས་བཞི་ ma khuṅs bźi vier Kalkulationen
 wts_9_m	22	1	4	རིང	riṅ	base_provenance_unverified	riṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མ་གཅིག་ཚེ་རིང་་ ma geig tshe riṅ
 wts_9_m	22	40	3	སྟོང	stoṅ	base_provenance_unverified	stoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མ་ཆགས་སྟོང་གི་དགྲ་ལྷ་ ma chags stoṅ gi d gra lha
 wts_9_m	24	10	2	བསྙེངས	bsnieṅs	base_provenance_unverified	bsnieṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མ་བསྙེངས་པ་ ma bsnieṅs pa npr. cin Buddha.
@@ -112,8 +112,8 @@ wts_9_m	164	50	1	མང	miṅ	base_provenance_unverified	miṅ	No direct authori
 wts_9_m	165	2	1	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིང་རྐྱང་ miṅ rkyaṅ
 wts_9_m	165	2	2	རྐྱང	rkyaṅ	base_provenance_unverified	rkyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིང་རྐྱང་ miṅ rkyaṅ
 wts_9_m	165	29	1	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིང་གི་སྐར་མ་ miṅ gi skar ma Methode der
-wts_9_m	165	34	1	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"མིང་གི་དགེ་སློང་ miṅ gi dge slonṅ ""ein Mönch"
-wts_9_m	165	34	4	སློང	slonṅ	base_provenance_unverified	slonṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"མིང་གི་དགེ་སློང་ miṅ gi dge slonṅ ""ein Mönch"
+wts_9_m	165	34	1	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"མིང་གི་དགེ་སློང་ miṅ gi dge sloṅ ""ein Mönch"
+wts_9_m	165	34	4	སློང	sloṅ	reviewed_exact_final_ng	slonṅ	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	del_n_exact_review_internal_n_before_ng_independent_slong_20260729	"མིང་གི་དགེ་སློང་ miṅ gi dge sloṅ ""ein Mönch"
 wts_9_m	165	63	1	མེང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མེང་ངེས་པར་འཇུག་པ་ miṅ nes par jug pa ein
 wts_9_m	165	68	1	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིང་ཅན་ miṅ can.
 wts_9_m	166	25	1	མང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མང་ཆེན་ miṅ chen.
@@ -144,7 +144,7 @@ wts_9_m	176	35	2	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct au
 wts_9_m	176	40	2	སེང	seṅ	base_provenance_unverified	seṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིའི་སེང་གེ་ mi'i seṅ ge Imi yi seṅ ge,
 wts_9_m	176	51	2	ཐུང	thuṅ	base_provenance_unverified	thuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིའུ་ཐུང miru thuṅ auch mi thur.
 wts_9_m	177	2	2	གདུང	gduṅ	base_provenance_unverified	gduṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མའུ་གདུང་དྲུག mi'u gduṅ drug
-wts_9_m	177	18	2	གདུང	gdunṅ	base_provenance_unverified	gdunṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gdunṅ drug dera lha
+wts_9_m	177	18	2	གདུང	gduṅ	reviewed_exact_final_ng	gdunṅ	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	del_n_exact_review_internal_n_before_ng_independent_gdung_20260729	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gduṅ drug dgra lha
 wts_9_m	178	46	2	ཁྱུང	khyuṅ	base_provenance_unverified	khyuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མུ་ཁྱུང་རྒྱན་ mu khyuṅ reyan
 wts_9_m	186	1	4	ལང	laṅ	base_provenance_unverified	laṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མུ་སྟེགས་གུ་ལང་་ man stegs gu laṅ
 wts_9_m	189	29	2	སྤུངས	spuṅs	base_provenance_unverified	spuṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མུ་སྤུངས་གསལ་ཏང་ mu spuṅs gsal tari npr. cin
@@ -195,7 +195,7 @@ wts_9_m	272	1	4	རིང	riṅ	base_provenance_unverified	riṅ	No direct autho
 wts_9_m	273	1	1	མྱང	myaṅ	base_provenance_unverified	myaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མྱང་གིཞུ་ myaṅ gi Zwa
 wts_9_m	273	27	1	རྱང	myaṅ	base_provenance_unverified	myaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྱང་གྲོལ་ myaṅ grol Freiwerden durch Genuß
 wts_9_m	273	44	1	མྱང	myaṅ	reviewed_exact_final_ng	myani	reviewed_tibetan_exact_ocr_signature	feature_complete_stem_plus_conditioned_final_ni_ng_myang_20260728	མྱང་རྩི་སྦྲས་ myaṅ rtsi sbras
-wts_9_m	273	48	1	མྱང	miyaṅ	base_provenance_unverified	miyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མྱང་འདས་ miyaṅ 'das Nirvāna.
+wts_9_m	273	48	1	མྱང	myaṅ	reviewed_exact_final_ng	miyaṅ	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	del_i_exact_review_secure_tibetan_independent_myang_20260729	མྱང་འདས་ myaṅ 'das Nirvāna.
 wts_9_m	273	56	1	མྱང	myaṅ	base_provenance_unverified	myaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མྱང་བྲན་རྒྱལ་ཆེན་ myaṅ bran rggral 'chen npr. ei-
 wts_9_m	273	59	1	མྱང	myaṅ	base_provenance_unverified	myaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མྱང་རྨྱང་ myaṅ myaṅ krumm, schief, gebeugt.
 wts_9_m	273	59	2	རྨྱང	myaṅ	base_provenance_unverified	myaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	མྱང་རྨྱང་ myaṅ myaṅ krumm, schief, gebeugt.
@@ -247,7 +247,7 @@ wts_9_m	323	3	3	སྲུང	sruṅ	base_provenance_unverified	sruṅ	No direct 
 wts_9_m	323	16	2	མོང	moṅ	base_provenance_unverified	moṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དམྱལ་མོང་ dinyal moṅ npr. eine Gegend am
 wts_9_m	328	41	3	མཇིང	mjiṅ	base_provenance_unverified	mjiṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྨ་བྱ་མཇིང་བསྣོལ་རྩེས་ rma bya mjiṅ bsnol rtsis
 wts_9_m	330	32	2	ཤིང	siṅ	base_provenance_unverified	siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྨཾ་ཤིང་ rma siṅ eine Färberpflanze, rotes San-
-wts_9_m	330	37	1	རྨང	maṅ	base_provenance_unverified	maṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྨང་ maṅ
+wts_9_m	330	37	1	རྨང	rmaṅ	reviewed_exact_final_ng	maṅ	reviewed_tibetan_exact_manual_structural_superscript_ocr	reviewed_missing_superscript_r_same_tibetan_controls_20260728	རྨང་ rmaṅ
 wts_9_m	331	1	1	རྨང	rmaṅ	reviewed_exact_final_ng	rmani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	"རྨང་ ""rmaṅ"
 wts_9_m	331	43	1	རྨང	rmaṅ	base_provenance_unverified	rmaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྨང་རིགས་ rmaṅ rigs
 wts_9_m	332	1	1	རྨང	rmaṅ	base_provenance_unverified	rmaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	རྨང་ལམ་ rmaṅ lam

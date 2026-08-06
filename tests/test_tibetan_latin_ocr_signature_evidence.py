@@ -102,6 +102,60 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         ):
             self.assertEqual(reviewed[signature]["decision"], "A")
 
+    def test_duplicated_initial_p_reviews_remain_exact_row_only(self) -> None:
+        expected = {
+            ("683", "4", "1", "ppad", "pad"),
+            ("884", "3", "1", "pphaṅ", "phaṅ"),
+            ("972", "48", "1", "pphyaṅ", "phyaṅ"),
+            ("1020", "39", "1", "pphyis", "phyis"),
+            ("1090", "34", "1", "pphar", "phar"),
+            ("1113", "2", "1", "pphral", "phral"),
+        }
+        overrides = {
+            (
+                row["page"], row["line"], row["token_index"],
+                row["from_token"], row["to_token"],
+            )
+            for row in module.read(
+                ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
+            )
+            if row["volume"] == "wts_35_51"
+            and row["reason"]
+            == "reviewed_tibetan_exact_manual_extra_latin_glyph_ocr"
+            and row["from_token"].startswith("pp")
+        }
+        self.assertEqual(overrides, expected)
+
+        decision = module.decisions()["DEL p"]
+        self.assertEqual(decision["decision"], "D")
+        registry = next(
+            row for row in self.generated["registry"]
+            if row["operation_signature"] == "DEL p"
+        )
+        self.assertEqual(registry["authorization_status"], "candidate_review")
+        self.assertFalse(registry["authorization_status"].startswith("authorized"))
+        self.assertEqual(registry["conditioned_reviewed_support"], "6")
+        self.assertEqual(registry["conditioned_controls"], "226")
+
+        changes = [
+            row for row in module.read(
+                ROOT / "release/current/qa/wts_35_51/wts_35_51_changes.tsv"
+            )
+            if row["reason"]
+            == "reviewed_tibetan_exact_manual_extra_latin_glyph_ocr"
+            and row["from_token"].startswith("pp")
+        ]
+        self.assertEqual(
+            {
+                (
+                    row["page"], row["line"], "1",
+                    row["from_token"], row["to_token"],
+                )
+                for row in changes
+            },
+            expected,
+        )
+
     def _row(self, tibetan: str, source: str, **updates):
         row = {
             "tibetan_syllable": tibetan,

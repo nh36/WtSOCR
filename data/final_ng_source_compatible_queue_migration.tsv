@@ -38,10 +38,20 @@ wts_1_34	157	112	2	འབུང	thun		pre_gate0_555_to_current	before	resolved_o
 wts_1_34	248	148	2	ནིང	nin	niṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁ་ནིང་ kha nin letztes Jahr.
 wts_1_34	277	28	2	སིང	sin	siṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁོང་སིང་ khoṅ sin I\khon sen Schlucht.
 wts_1_34	280	44	3	འབུང	thun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁྱད་པར་འབུང་ khyad par ’thun Bez. für Mond.
-wts_1_34	367	184	1	གྱང	gyun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	གྱང་རོ་ gyun ro hart, trocken; trockene Leiche.
+wts_1_34	287	97	1	ཁུང	khyun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁུང་སེང་འདས་པ་ khyun seṅ ’dus pa achtfüßiger
+wts_1_34	298	94	1	ཁུང	khrun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁུང་ khrun resp. für chan.
+wts_1_34	298	141	1	ཁུང	khrun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁུང་ཞེ་ཆཿ khrun Zu ma Kellnerin.
+wts_1_34	300	171	2	གཞུང	gun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཁྲེལ་གཞུང་ khrel gun \khrel.
+wts_1_34	360	84	1	ཀོང	gon		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཀོང་ད་འཕེལ་ gon du ’phel sich verbreiten, zu-
+wts_1_34	361	71	1	ཀོང	gon		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཀོང་རྩེ་ gon rtse Kragen.
+wts_1_34	361	111	1	ཀོང	gon		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཀོང་ལེན་ gon len Trophäe.
+wts_1_34	388	70	1	ཀྲོང	gron		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.
+wts_1_34	396	122	1	གླང	glin		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	གླང་ཕྲན་ glin phran.
 wts_1_34	400	35	3	འདྲེང	drin		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	གློ་བ་འདྲེང་ glo ba ’drin unloyal, untreu sein;
 wts_1_34	413	1	3	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas
 wts_1_34	413	12	3	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དགེ་བའི་འབྱང་གནས་ dge ba’i ’byun gnas Beina- དགེ་སྦྱོང་ dge sbyon Mönch, Asket, skt.
+wts_1_34	424	123	1	བགྲང	beran		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	བགྲང་རྟོགས་ beran rtogs eine hohe Zahl.
+wts_1_34	424	158	1	བགྲང	beran		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	བགྲང་ཕྲེང་འཛིན་ beran phreṅ ’dzin Beiname des
 wts_1_34	439	200	1	འགང	gon	goṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འགང་པ gon po ein Damon; gon mo eine
 wts_1_34	441	20	4	འགྱངས	then		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འགྱངས་འཐེན་ ”£9)/47?5£ ’then Aufschub, Verzöge-
 wts_1_34	491	208	2	ཆུང	sge’n		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	SQ ཆུང་ 'sge’n chuṅ }'sge’n.
@@ -53,6 +63,7 @@ wts_1_34	625	9	2	འདིང	din	diṅ	pre_gate0_555_to_current	before	resolved
 wts_1_34	645	94	2	འཆེང	chin	chiṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆ་འཆེང་ chu ’chin Bez. für Dach, chinesisches
 wts_1_34	646	141	2	འབུང	thun		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆུ་འབུང་ chu ’thun.
 wts_1_34	649	103	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆུ་འབྱང་ chu ’byun Bez. für die Zahl 54.
+wts_1_34	655	124	3	གྲང	gron		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆུ་ཨུན་གྲང་ཏྱར་ chu srin gron khyer
 wts_1_34	655	165	3	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆུ་སིན་འབྱང་གནས་ chu srin ’byun gnas Bez. für
 wts_1_34	674	176	3	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆས་ཀྱ་འབྱང་གནས་སྒེ་ chos kyi ’byun gnas sgo
 wts_1_34	680	34	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཆོས་འབྱང་ chos ’byun.
@@ -60,6 +71,8 @@ wts_1_34	680	64	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resol
 wts_1_34	703	199	1	འཆེང	chin	chiṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འཆེང་སྒྲིགས་ 'chin sgrigs Vereinbarung.
 wts_1_34	704	35	1	འཆེང	chin	chiṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འཆེང་བ་གསུམ་ 'chin ba gsum die drei Fesseln:
 wts_1_34	704	78	1	འཆེང	chin	chiṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འཆེང་བླཟླམ་གནང་ 'chin bzlum gnaṅ vermitteln,
+wts_1_34	724	164	3	རྐྱང	rgyan		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan
+wts_1_34	724	212	3	རྐྱང	rgyan		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འཇིག་རྟེན་རྐྱང་ཕན་ ig rten rgyan phan auch ’jig
 wts_1_34	811	181	2	ཐང	than	thaṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	མཉེས་ཐང་ möes than npr. eine Gegend.
 wts_1_34	820	105	3	སྙིང	chn		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	སྙིང་ཁཆུ་བ་ $77/7 ’chn ba unglücklich, beküm-
 wts_1_34	826	38	1	སྙིང	sien		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	སྙིང་ 'sien auch $)76/75 pf. Ibsnens fur. Ibsäen
@@ -68,11 +81,13 @@ wts_1_34	887	80	3	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resol
 wts_1_34	916	84	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	རྟག་འབྱང་ rag 'byun Beiname Mahesvaras.
 wts_1_34	922	9	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	རྟེན་འབྱང་ rten ’byun.
 wts_1_34	961	46	2	འབྱང	byun	byuṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཏྟབས་འབྱང་ stobs ’byun eine hohe Zahl.
+wts_1_34	999	202	2	ཀོང	gon		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཀྲཁ།་ཀོང་ thal gon der Bereich zwischen den
 wts_1_34	1074	31	1	འབྲེང	then		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	འབྲེང་མ་ ’then ma lahm.
 wts_1_34	1100	1	2	འཚང	tshan	tshaṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དག་འཚང་བྱས་ dag ’tshan byas
 wts_1_34	1100	3	2	འཚང	tshan	tshaṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དག་འཚང་བྱས་ dag ’tshan byas pf. bereinigen.
 wts_1_34	1141	45	2	འགང	gah		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དིང་འགང་ din ’'gah (zw.) Filztuch; vgl. Igdin
 wts_35_51	428	20	2	འཚོང	ishoh		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ནམ་འཚོང་ nam 'ishoh auch nam tsoṅ, nam
+wts_35_51	712	54	1	ཕྱིང	pyih		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	ཕྱིང་ pyih lphyin.
 wts_35_51	737	37	1	དཔུང	dpuṅń		pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	དཔུང་ 'dpuṅń
 wts_35_51	1108	42	1	འཕྱོང	phyon	phyoṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	"འཕྱོང་ ""phyon"
 wts_35_51	1108	76	1	འཕྱོང	phyon	phyoṅ	pre_gate0_555_to_current	before	resolved_or_no_longer_candidate	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."

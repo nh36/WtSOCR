@@ -8,6 +8,10 @@ This directory is the tracked best-current deployable etext snapshot.
 for this snapshot; it is not the project to-do list.
 The large production outputs under `work/` are local artifacts and are
 not versioned in the repository.
+The source/code SHA above identifies the checkout observed while the
+bundle was staged from those inputs. It is not the SHA of the necessarily
+later commit that checked in the generated files, and later exact reviewed
+updates may be visible in per-file Git history.
 
 No OCR correction behavior is changed by this bundle builder. It copies
 the latest trusted corrected text and compact QA artifacts into

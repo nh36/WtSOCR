@@ -97,7 +97,8 @@ wts_8_b	94	42	1	བུང	buṅ	base_provenance_unverified	buṅ	No direct autho
 wts_8_b	95	1	1	བུང	buṅ	base_provenance_unverified	buṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བུང་བ་དགའ་བ་ buṅ ba dga’ ba
 wts_8_b	95	4	1	བུང	burṅ	base_provenance_unverified	burṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བུང་པ་དགའ་པ་ burṅ ba dga'ba einerote Secrose.
 wts_8_b	95	6	1	བུང	buṅ	base_provenance_unverified	buṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བུང་བུ་ buṅ bu \bon bu.
-wts_8_b	95	10	1	བང	buṅ	base_provenance_unverified	buṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བང་ཚང་ buṅ tshari Bienennest.
+wts_8_b	95	10	1	བང	buṅ	base_provenance_unverified	buṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བང་ཚང་ buṅ tshaṅ Bienennest.
+wts_8_b	95	10	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshari	reviewed_tibetan_exact_final_ri_to_ng	final_ri_to_ng_exact_review_explicit_tibetan_ng_independent_tshang_20260729	བང་ཚང་ buṅ tshaṅ Bienennest.
 wts_8_b	95	18	1	བུངས	buṅs	base_provenance_unverified	buṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བུངས་ buṅs Haufen, Masse; — skyed vermeh-
 wts_8_b	97	2	3	རྐང	rkaṅ	reviewed_exact_final_ng	rkani	reviewed_tibetan_exact_ocr_signature	conditioned_final_ni_to_ng_signature_20260728	བུད་མེད་རྐང་བརྡེག་་ bud med rkaṅ brdeg
 wts_8_b	97	25	4	ཤིང	Siṅ	base_provenance_unverified	Siṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བུད་མེད་དགའ་ཤིང་ bud med dga’ Siṅ Bez. für
@@ -119,11 +120,11 @@ wts_8_b	109	55	3	ཤྲིང	eiṅ	base_provenance_unverified	eiṅ	No direct a
 wts_8_b	112	1	2	གཏོང	gtoṅ	base_provenance_unverified	gtoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོགས་གཏོང་ bogs gtoṅ
 wts_8_b	112	45	1	བོང	boṅ	reviewed_exact_final_ng	bon	reviewed_tibetan_exact_final_ng_consensus	tibetan_bong_consensus_batch_20260726	"བོང་ར་ ""boṅ rgya"
 wts_8_b	113	1	1	བོང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོང་ང་དཀར་པོ་ boṅ ña dkar po
-wts_8_b	113	2	1	བོང	borṅ	base_provenance_unverified	borṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོང་ང་དཀར་པོ་ borṅ ra dkar po Kurzf. bori dkar
+wts_8_b	113	2	1	བོང	boṅ	reviewed_exact_final_ng	borṅ	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	del_r_exact_side_review_adjacent_bong_target_sibling_20260729	བོང་ང་དཀར་པོ་ boṅ ra dkar po Kurzf. bori dkar
 wts_8_b	113	24	1	བོང	boṅ	unknown	bon	ambiguous_change_or_token_position		བོང་ང་ནག་པོ་ boṅ na nag po Kurzf. boṅ nag
 wts_8_b	113	38	1	བོང	boṅ	unknown	bon	ambiguous_change_or_token_position		བོང་ང་དམར་པོ་ boṅ na dmar po auch boṅ ba
 wts_8_b	113	43	1	བོང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོང་ནྲག་ boṅ na
-wts_8_b	113	45	1	བོང	bboṅ	base_provenance_unverified	bboṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོང་ཆེ་ཆང་ bboṅ che \bons che (/)//7?.
+wts_8_b	113	45	1	བོང	boṅ	reviewed_exact_final_ng	bboṅ	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	del_b_exact_review_duplicate_initial_b_independent_bong_20260729	བོང་ཆེ་ཆང་ boṅ che \bons che (/)//7?.
 wts_8_b	113	48	1	ང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ང་ཆེན་ boṅ chen tbuns.
 wts_8_b	113	50	1	ང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ང་སྙོམས་ boṅ siioms eine Heil- bzw. Gift-
 wts_8_b	113	57	1	ང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ང་ཐོར་ boṅ thor \bon dor.
@@ -144,9 +145,9 @@ wts_8_b	115	69	1	བོང	boṅ	base_provenance_unverified	boṅ	No direct auth
 wts_8_b	115	70	1	བོང	boṅ	base_provenance_unverified	boṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོང་ཡར་ boṅ yar einjāhriges Eseljunges.
 wts_8_b	116	2	1	བོངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོངས་ཆེ་ཆུང་ boṅs che chuṅ
 wts_8_b	116	2	3	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོངས་ཆེ་ཆུང་ boṅs che chuṅ
-wts_8_b	116	4	1	བངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi
-wts_8_b	116	4	3	ཆང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi
-wts_8_b	116	8	1	བོངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོངས་སྙོམས་ boṅs sioms gleiche Größe, glei-
+wts_8_b	116	4	1	བངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བངས་ཆེ་ཆུང་ boṅs che chuṅ auch bon che chi
+wts_8_b	116	4	3	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བངས་ཆེ་ཆུང་ boṅs che chuṅ auch bon che chi
+wts_8_b	116	8	1	བོངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོངས་སྙོམས་ boṅs sñoms gleiche Größe, glei-
 wts_8_b	116	14	1	བོངས	boṅs	base_provenance_unverified	boṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོངས་ཚདང་ boṅs tshad auch bon tshad Größe,
 wts_8_b	120	2	2	ཁོངས	khoṅs	base_provenance_unverified	khoṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ད་ཁོངས་ bod khoṅs
 wts_8_b	120	47	2	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"བོད་ཆུང་ངུ་ bod chuṅ ru ""kleines Tibet"", Bez."
@@ -159,10 +160,10 @@ wts_8_b	126	1	2	སྲང	seruṅ	base_provenance_unverified	seruṅ	No direct a
 wts_8_b	126	44	5	ལུང	haṅ	base_provenance_unverified	haṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོན་འཇང་བྲག་སྟག་ལུང་རི་ bon 'jari brag stag haṅ ri
 wts_8_b	128	23	2	མིང	miṅ	base_provenance_unverified	miṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"བོན་མིང་ bon miṅ ""Bon-Name"", Name, den je-"
 wts_8_b	128	43	2	གཞུང	gźuṅ	reviewed_exact_final_ng	gZuṅ	reviewed_tibetan_exact_transcription_integrity	tibetan_root_zha_integrity_gzhung_batch_20260728	བོན་གཞུང་ bon gźuṅ Text der Bon-po.
-wts_8_b	131	42	2	གྲོང	goṅ	base_provenance_unverified	goṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བོལ་གྲོང་ bol goṅ oberer Teil des Fußes, Fuß-
+wts_8_b	131	42	2	གྲོང	groṅ	reviewed_exact_final_ng	goṅ	reviewed_tibetan_exact_manual_structural_subjoined_ocr	reviewed_missing_subjoined_r_same_tibetan_controls_20260728	བོལ་གྲོང་ bol groṅ oberer Teil des Fußes, Fuß-
 wts_8_b	142	39	2	རྐང	rkaṅ	reviewed_exact_final_ng	rkan	reviewed_tibetan_exact_final_ng_consensus	tibetan_rkang_consensus_batch_20260719	བྱ་རྐང་ bya rkaṅ.
 wts_8_b	143	32	2	ཁྱུང	khyuṅ	base_provenance_unverified	khyuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་ཁྱུང་དམར་པོ་ bya khyuṅ dinar po eine Ente
-wts_8_b	144	1	3	སྐོང	skyoṅ	base_provenance_unverified	skyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
+wts_8_b	144	1	3	སྐྱོང	skyoṅ	base_provenance_unverified	skyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་གག་སྐྱོང་བ་ bya gag skyoṅ ba
 wts_8_b	144	10	3	སྐྱོང	skyoṅ	base_provenance_unverified	skyoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་གག་སྐྱོང་བ་ bya gag skyoṅ ba npr. ein Tal.
 wts_8_b	145	59	4	ཕུང	phuṅ	base_provenance_unverified	phuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་རྒོད་ཀྱི་ཕུང་པོ་ bya rgod kyi phuṅ po !bya rgod
 wts_8_b	145	67	3	སྤུངས	spuṅs	base_provenance_unverified	spuṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་རྒོད་སྤུངས་པ་ bya rgod spuṅs pa npr. der
@@ -183,8 +184,8 @@ wts_8_b	160	20	2	ལིང	liṅ	base_provenance_unverified	liṅ	No direct auth
 wts_8_b	160	56	4	ཁང	khaṅ	base_provenance_unverified	khaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱ་ས་ལྷ་ཁང་ bya sa lha khaṅ npr. ein Tempel
 wts_8_b	162	46	1	བྱང	byaṅ	reviewed_exact_final_ng	byan	reviewed_tibetan_exact_final_ng_consensus	tibetan_byang_consensus_batch_20260726	"བྱང་ ""byaṅ"
 wts_8_b	163	1	1	བྱང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱང་ཀ་སྣམ་བརྒྱད་ byaṅ ka snam brgyad
-wts_8_b	163	7	1	བྲང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
-wts_8_b	163	7	2	རྐང	rkyaṅ	base_provenance_unverified	rkyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+wts_8_b	163	7	1	བྲང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྲང་རྐྱང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+wts_8_b	163	7	2	རྐྱང	rkyaṅ	base_provenance_unverified	rkyaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྲང་རྐྱང་ byaṅ rkyaṅ Kiang, ein Wildesel,
 wts_8_b	163	12	1	བྱང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱང་སྐར་སྤུན་བདུན་ byaṅ skar spin bdun ein
 wts_8_b	163	24	1	བྱང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བྱང་ཁྲ་ byaṅ khra.
 wts_8_b	163	36	1	ང	byaṅ	base_provenance_unverified	byaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"ང་གི་སྒོ་གླེགས་ byaṅ gi sgo glegs ""nördli-"
@@ -381,7 +382,7 @@ wts_8_b	321	70	2	གཏིང	gtiṅ	base_provenance_unverified	gtiṅ	No direct
 wts_8_b	322	49	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་དང་ལྡན་པ་ blo daṅ ldan pa.
 wts_8_b	322	53	2	དང	daṅ	base_provenance_unverified	daṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་དང་འཚམ་པར་ blo daṅ 'tsham par auch
 wts_8_b	322	60	2	དོང	doṅ	base_provenance_unverified	doṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་དོང་ཅན་ blo doṅ can hinterhältig, bösartige.
-wts_8_b	323	1	2	གདེངས	gdeṅs	base_provenance_unverified	gdeṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་གདེངས་བསྐྱེད་ bblo gdeṅs bskyed blo ldan
+wts_8_b	323	1	2	གདེངས	gdeṅs	base_provenance_unverified	gdeṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་གདེངས་བསྐྱེད་ blo gdeṅs bskyed blo ldan
 wts_8_b	323	5	2	གདེངས	gdeṅs	base_provenance_unverified	gdeṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་གདེངས་བསྐྱེད་ blo gdeṅs bskyed pf. sich etw.
 wts_8_b	325	25	2	དཔངས	dpaṅs	base_provenance_unverified	dpaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་དཔངས་མཐོ་བ་ blo dpaṅs mtho ba hochge-
 wts_8_b	326	19	4	སོང	soṅ	base_provenance_unverified	soṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བློ་བེམ་གྱིས་སོང་ blo bem gyis soṅ entspannt
@@ -418,7 +419,8 @@ wts_8_b	345	44	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct au
 wts_8_b	345	44	2	ཆུང	chuṅ	base_provenance_unverified	chuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆུང་ dbaṅ chuṅ
 wts_8_b	345	65	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་གཅད་ dbaṅ gcad Schiedsrichter.
 wts_8_b	345	69	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆ་ dbaṅ cha Macht, Autorität.
-wts_8_b	345	72	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆུང་ dbaṅ chur schwach, machtlos, un-
+wts_8_b	345	72	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆུང་ dbaṅ chuṅ schwach, machtlos, un-
+wts_8_b	345	72	2	ཆུང	chuṅ	reviewed_exact_final_ng	chur	reviewed_tibetan_exact_final_r_to_ng	final_r_to_ng_exact_review_explicit_tibetan_ng_independent_chung_targets_20260729	དབང་ཆུང་ dbaṅ chuṅ schwach, machtlos, un-
 wts_8_b	346	1	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆེ་བ་ dbaṅ che ba
 wts_8_b	346	37	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆེན་ dbaṅ chen.
 wts_8_b	346	44	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་ཆེར་ dbaṅ cher
@@ -468,8 +470,8 @@ wts_8_b	352	41	1	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_
 wts_8_b	356	1	1	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	"དབང་པོ་ ""dbaṅ po"
 wts_8_b	356	7	1	དབང	dbaṅ	reviewed_exact_final_ng	dban	reviewed_tibetan_exact_final_ng_consensus	tibetan_dban_consensus_batch_20260719	དབང་པོ་ ?dbaṅ po ↑ dpaṅ.
 wts_8_b	356	21	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་ཉི་ཤུ་་ dbaṅ po ñi su
-wts_8_b	357	1	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་རྟུལ་ dbaṅ po riul
-wts_8_b	357	14	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་རྟལ་ dbaṅ po rtul Tdbani rtul.
+wts_8_b	357	1	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་རྟུལ་ dbaṅ po rtul
+wts_8_b	357	14	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་རྟུལ་ dbaṅ po rtul Tdbani rtul.
 wts_8_b	357	15	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་ཐུལ་པ་ dbaṅ po thul ba Bez. für einen
 wts_8_b	357	21	1	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	དབང་པོ་དྲུག་ dbaṅ po drug auch — po die sechs
 wts_8_b	357	42	1	བང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	བང་པོ་ཟང་སྲོར་ dbaṅ po zuṅ sbyor
@@ -640,10 +642,12 @@ wts_8_b	470	38	3	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct au
 wts_8_b	470	46	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	"འབྱུང་པོའི་རྟེན་མ་ ""byuṅ po'i rten ma auch '/))///3?"
 wts_8_b	470	60	1	འབྱུང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འབྱུང་པོའི་གནས་ byuṅ po'i gnas Bez. für Erde.
 wts_8_b	470	62	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	"འབྱུང་པོའི་བྱ་ ""byuṅ po'i bya ""Vogel der '""byun-"
-wts_8_b	470	67	3	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འབྱུང་པོའི་དབང་པོ་ byur po'i dbaṅ po Beiname Sivas.
+wts_8_b	470	67	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byur	reviewed_tibetan_exact_final_r_to_ng	final_r_to_ng_exact_review_explicit_tibetan_ng_independent_byung_targets_20260729	འབྱུང་པོའི་དབང་པོ་ byuṅ po'i dbaṅ po Beiname Sivas.
+wts_8_b	470	67	3	དབང	dbaṅ	base_provenance_unverified	dbaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འབྱུང་པོའི་དབང་པོ་ byuṅ po'i dbaṅ po Beiname Sivas.
 wts_8_b	471	2	1	འབྱང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འབྱང་པོའི་རལ་པ་ byuṅ po' ral pa Bez. für
 wts_8_b	472	1	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byuh	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	འབྱུང་བ་ཉིད་ byuṅ ba ñid
 wts_8_b	472	14	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byuh	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	འབྱུང་བ་ཉིད་ byuṅ ba ñid.
+wts_8_b	472	44	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byur	reviewed_tibetan_exact_final_r_to_ng	final_r_to_ng_exact_review_explicit_tibetan_ng_independent_byung_targets_20260729	"འབྱུང་བའི་གནས་ ""byuṅ ba'i gnas ] '/)7///?? gnas."
 wts_8_b	472	71	1	འབྱུང	byuṅ	base_provenance_unverified	byuṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	འབྱུང་བྱེད་མ་ byuṅ byed ma Bez. für Mutter.
 wts_8_b	473	1	1	འབྱུང	byuṅ	reviewed_exact_final_ng	byun	reviewed_tibetan_exact_final_ng_consensus	tibetan_abyung_consensus_batch_20260720	"འབྱུང་ཚུལ་ ""byuṅ tshul"
 wts_8_b	476	21	1	འབྱོང	byoṅ	reviewed_exact_final_ng	byon	reviewed_tibetan_exact_final_ng_consensus	final_ng_abyong_consensus_batch_20260727	"འབྱོང་ ""byoṅ V'byan."
@@ -700,6 +704,7 @@ wts_8_b	534	28	3	རྐང	rkaṅ	base_provenance_unverified	rkaṅ	No direct au
 wts_8_b	534	28	4	མང	maṅ	base_provenance_unverified	maṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"སྤལ་པ་རྐང་མང་ sbal pa rkaṅ maṅ ""Frosch mit"
 wts_8_b	535	54	2	སྐུངས	skuṅs	base_provenance_unverified	skuṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤས་སྐུངས་ sbas skuṅs Geheimhaltung, Verbor-
 wts_8_b	535	58	2	ལྗོངས	ljoṅs	base_provenance_unverified	ljoṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦས་ལྗོངས་ sbas ljoṅs das verborgene Land Sik-
+wts_8_b	538	5	2	ཚང	tshaṅ	reviewed_exact_final_ng	tshari	reviewed_tibetan_exact_final_ri_to_ng	final_ri_to_ng_exact_review_explicit_tibetan_ng_independent_tshang_20260729	སྤུག་ཚང་ sbug tshaṅ betrügerisch.
 wts_8_b	539	1	2	ལིང	liṅ	base_provenance_unverified	liṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤྲད་ལིང་གིས་འགྲོ་ sbud liṅ gis 'gro
 wts_8_b	539	2	2	ལེང	liṅ	base_provenance_unverified	liṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྤུད་ལེང་གིས་འགྲོ་ sbud liṅ gis 'gro.
 wts_8_b	541	24	2	བཤངས	bsaṅs	base_provenance_unverified	bsaṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲབས་བཤངས་ sbubs bsaṅs Aufbrechen, Freile-
@@ -745,7 +750,8 @@ wts_8_b	571	65	1	སྦྲང	sbraṅ	unknown	sbran	ambiguous_change_or_token_po
 wts_8_b	571	65	2	ཆང	chaṅ	base_provenance_unverified	chaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆང་ sbraṅ chaṅ auch sbraṅ can alkoho-
 wts_8_b	572	1	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆར་ sbraṅ char
 wts_8_b	572	13	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆུ་ sbraṅ chu Honigwasser.
-wts_8_b	572	18	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆུང་ sbraṅ churi ein Insckt, Fliege.
+wts_8_b	572	18	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆུང་ sbraṅ chuṅ ein Insckt, Fliege.
+wts_8_b	572	18	2	ཆུང	chuṅ	reviewed_exact_final_ng	churi	reviewed_tibetan_exact_final_ri_to_ng	final_ri_to_ng_exact_review_explicit_tibetan_ng_independent_chung_20260729	སྦྲང་ཆུང་ sbraṅ chuṅ ein Insckt, Fliege.
 wts_8_b	572	24	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཆེན་ sbraṅ chen eine Salbe.
 wts_8_b	572	28	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	"སྦྲང་སྙིགས་ sbraṅ sñigs ""Honigrückstand"", Bie- Annwrarhe"
 wts_8_b	572	42	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་བུ་ sbraṅ bu
@@ -788,6 +794,7 @@ wts_8_b	576	36	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No dire
 wts_8_b	576	38	1	སྦྲང	sbraṅ	base_provenance_unverified	sbraṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཚོང་བ་ sbraṅ tshoṅ ba Honighāndler.
 wts_8_b	576	38	2	ཚོང	tshoṅ	base_provenance_unverified	tshoṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲང་ཚོང་བ་ sbraṅ tshoṅ ba Honighāndler.
 wts_8_b	576	44	1	སྦྲང	sbraṅ	unknown	sbran	ambiguous_change_or_token_position		སྦྲང་ཡབ་ sbraṅ yab auch sbraṅ g.yab Wede
+wts_8_b	576	61	1	སྦྲང	sbraṅ	reviewed_exact_final_ng	sbrar	reviewed_tibetan_exact_ocr_signature	final_r_to_ng_authorized_suffix_ng_existing_authority_20260729	སྦྲང་ལྷག་ sbraṅ lhag Bienenwachs.
 wts_8_b	576	64	1	སྦྲངས	sbraṅs	base_provenance_unverified	sbraṅs	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	སྦྲངས་པ་ sbraṅs pa Nahrung, Speise.
 wts_8_b	580	45	2	འཆིང	chiṅ	reviewed_exact_final_ng	chin	reviewed_tibetan_exact_final_ng_consensus	tibetan_aching_consensus_batch_20260726	ལ་འཆིང་ sbrul chiṅ.
 wts_8_b	581	26	5	ཆུང	chuṅ	reviewed_exact_final_ng	chun	reviewed_tibetan_exact_script_ng_witness	tibetan_script_chung_cross_volume_batch_20260719	Schlange hält, Schlangenhalter སྦྲ་ཆུང་ sbre chuṅ ein Gefäß, vgl. tbre chui.

@@ -304,6 +304,85 @@ class FeatureCompositionTests(unittest.TestCase):
             role_model.read = original_read
             role_model._SOURCE_CONVENTION_CACHE = original_cache
 
+    def test_source_convention_corroboration_filters_nonindependent_rows(self):
+        decision = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཉ", "latin_realization": "ñ",
+            "provenance": "explicit_source_convention_and_corpus_review",
+        }
+        rows = [
+            {
+                "tibetan_syllable": "ཉ", "latin_form": "ña",
+                "canonical_teaching_status": "independent_teaching_evidence",
+                "domain_context": "ordinary_tibetan_lexical_or_compound",
+                "volume": "v", "page": "1", "line": "1", "token_index": "1",
+            },
+            {
+                "tibetan_syllable": "ཉ", "latin_form": "na",
+                "canonical_teaching_status": "independent_teaching_evidence",
+                "domain_context": "ordinary_tibetan_lexical_or_compound",
+                "volume": "v", "page": "1", "line": "2", "token_index": "1",
+            },
+            {
+                "tibetan_syllable": "ཉ", "latin_form": "ña",
+                "canonical_teaching_status": "not_teaching_evidence",
+                "domain_context": "ordinary_tibetan_lexical_or_compound",
+                "volume": "v", "page": "1", "line": "3", "token_index": "1",
+            },
+            {
+                "tibetan_syllable": "ཉ", "latin_form": "ña",
+                "canonical_teaching_status": "independent_teaching_evidence",
+                "domain_context": "sanskrit_or_indic_transcription",
+                "volume": "v", "page": "1", "line": "4", "token_index": "1",
+            },
+            {
+                "tibetan_syllable": "ན", "latin_form": "ña",
+                "canonical_teaching_status": "independent_teaching_evidence",
+                "domain_context": "ordinary_tibetan_lexical_or_compound",
+                "volume": "v", "page": "1", "line": "5", "token_index": "1",
+            },
+        ]
+        original_read = role_model.read
+        original_cache = role_model._SOURCE_CONVENTION_CACHE
+        try:
+            role_model._SOURCE_CONVENTION_CACHE = {}
+            role_model.read = lambda _path: rows
+            self.assertEqual(
+                role_model.source_convention_corroboration(decision),
+                {"ཉ": ["v:1:1:1"]},
+            )
+        finally:
+            role_model.read = original_read
+            role_model._SOURCE_CONVENTION_CACHE = original_cache
+
+    def test_source_convention_leave_one_syllable_out_is_strict(self):
+        rule = {
+            "decision": "A", "authority_basis": "explicit_source_convention",
+            "tibetan_role": "root_consonant", "tibetan_feature": "ཉ",
+            "latin_realization": "ñ",
+            "provenance": "explicit_source_convention_and_corpus_review",
+        }
+        key = ("root_consonant", "ཉ", "ñ")
+        original_cache = role_model._SOURCE_CONVENTION_CACHE
+        try:
+            role_model._SOURCE_CONVENTION_CACHE = {
+                key: {"ཉག": ["v:1:1:1"]}
+            }
+            self.assertTrue(role_model.strict_rule_available(rule, "ཉུང"))
+            self.assertFalse(role_model.strict_rule_available(rule, "ཉག"))
+        finally:
+            role_model._SOURCE_CONVENTION_CACHE = original_cache
+
+    def test_explicit_review_does_not_authorize_unrelated_feature(self):
+        decision = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཞ", "provenance": "explicit_user_review",
+        }
+        unrelated = {
+            "tibetan_role": "root_consonant", "tibetan_feature": "ཉ",
+        }
+        self.assertFalse(role_model.rule_effective(decision, unrelated))
+
     def test_single_unknown_residual_isolates_complete_digraph(self):
         rules = {
             ("vowel", "a"): {
