@@ -4,9 +4,10 @@
 contains the corrected text files that should be treated as the deployable
 etext, plus compact QA artifacts, a manifest, and SHA-256 checksums.
 
-The large production directories under `work/` are local artifacts. They remain
-ignored by Git, so every accepted cleanup pass should end by rebuilding
-`release/current` and committing the updated snapshot.
+The large production directories under `work/` remain ignored by Git. The
+minimum accepted inputs for the current stable snapshot are stored separately
+as a content-addressed GitHub release asset and described by the committed lock
+at `release/inputs/wtsocr-stable-2026-08-06.lock.json`.
 
 The 2026-06-28 refresh deploys the current override tables into
 `release/current` for all four volumes, including the latest exact
@@ -14,38 +15,52 @@ user-reported Tibetan, siglum, Initial-I/l, and Tibetan-script `ང` witness
 cleanup. Earlier tracked bundles were useful QA snapshots, but this bundle is
 the repository's best current etext target.
 
-## Current Sources
+## Locked Current Sources
 
-The current bundle is built from these trusted local outputs:
+The lock contains exactly 160 files: four corrected text files, the selected
+postprocess QA files copied by the bundle builder, and four diagnostic
+directories. It intentionally excludes `*_entry_map.jsonl` and every other
+general-purpose `work/` artifact. See
+`docs/RELEASE_REPRODUCIBILITY_2026-08-06.md` for the complete inventory,
+checksums, provenance, and archive location.
 
-| Volume | Local output directory |
-| --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/wts_9_m` |
+## Clean-checkout reproduction
 
-The Tibetan cleanup diagnostics are copied from:
+From a clean checkout:
 
-| Volume | Local diagnostics directory |
-| --- | --- |
-| `wts_1_34` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/current_release_four_volume_refresh_20260628T193714Z/tibetan_cleanup_diagnostics_wts_9_m` |
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install -r requirements-dev.txt
+python3 scripts/reproduce_current_release.py
+```
 
-These `work/` paths are local, unversioned artifacts. They are recorded here so
-the accepted bundle can be reproduced on this machine; the tracked deployment
-artifact is `release/current`.
+The command downloads or reuses the exact asset named in the lock, verifies the
+archive hash and all 160 per-file hashes, materializes only the locked paths,
+builds into `work/reproduced_release`, and compares every file with
+`release/current`. Missing, extra, or mismatched inputs fail closed.
 
 ## Rebuild
 
-After a production or postprocess run has been reviewed and accepted, rebuild
-the tracked snapshot:
+The historical local workflow remains available after a production or
+postprocess run has been reviewed and accepted:
 
 ```bash
 python3 scripts/build_current_release_bundle.py
 ```
+
+An explicitly materialized input tree can instead be supplied with:
+
+```bash
+python3 scripts/build_current_release_bundle.py \
+  --input-root work/materialized_release_inputs/wtsocr-stable-2026-08-06 \
+  --input-lock-id wtsocr-stable-2026-08-06 \
+  --build-timestamp 2026-07-29T16:22:11Z
+```
+
+`--build-timestamp` takes precedence over `SOURCE_DATE_EPOCH`; otherwise the
+builder uses `SOURCE_DATE_EPOCH` when set and current UTC only as a final
+fallback. The lock also pins build-recipe and production-input provenance.
 
 Then run the usual lightweight verification:
 

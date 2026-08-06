@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import shutil
 import subprocess
 import sys
@@ -64,6 +65,7 @@ BUCKET_PREFIXES = (
 class VolumeSource:
     label: str
     path: Path
+    manifest_path: str | None = None
 
 
 def parse_source_override(raw: str) -> tuple[str, Path]:
@@ -95,6 +97,32 @@ def git_commit(root: Path) -> str:
         ).strip()
     except (OSError, subprocess.CalledProcessError):
         return "unknown"
+
+
+def resolve_build_timestamp(explicit: str | None) -> str:
+    """Return a normalized UTC timestamp, honoring reproducible-build inputs."""
+    if explicit:
+        raw = explicit
+    elif os.environ.get("SOURCE_DATE_EPOCH"):
+        try:
+            epoch = int(os.environ["SOURCE_DATE_EPOCH"])
+        except ValueError as exc:
+            raise ValueError("SOURCE_DATE_EPOCH must be an integer") from exc
+        return datetime.fromtimestamp(epoch, timezone.utc).strftime(
+            "%Y-%m-%dT%H:%M:%SZ"
+        )
+    else:
+        return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError(
+            "build timestamp must be ISO-8601, for example 2026-07-29T16:22:11Z"
+        ) from exc
+    if parsed.tzinfo is None:
+        raise ValueError("build timestamp must include a UTC offset")
+    return parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def clean_output_dir(root: Path, output_dir: Path) -> None:
@@ -273,9 +301,13 @@ def write_manifest(
     copied: list[Path],
     missing_optional: list[str],
     compressed_qa: bool,
+    *,
+    timestamp: str,
+    build_revision: str,
+    production_input_origin: str,
+    input_lock_id: str | None,
+    diagnostic_manifest_paths: dict[str, str],
 ) -> Path:
-    commit = git_commit(root)
-    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     text_files = sorted((output_dir / "text").glob("*_corrected_full.txt"))
     qa_files = sorted(
         path for path in (output_dir / "qa").rglob("*") if path.is_file()
@@ -285,17 +317,18 @@ def write_manifest(
         "# Current WtS OCR Release Bundle",
         "",
         f"Generated UTC: `{timestamp}`",
-        f"Source/code commit observed while building this bundle: `{commit}`",
+        f"Build recipe revision: `{build_revision}`",
+        f"Production input provenance: `{production_input_origin}`",
         "",
         "This directory is the tracked best-current deployable etext snapshot.",
         "`release/current/manifest.md` is an inventory and reproducibility file",
         "for this snapshot; it is not the project to-do list.",
         "The large production outputs under `work/` are local artifacts and are",
         "not versioned in the repository.",
-        "The source/code SHA above identifies the checkout observed while the",
-        "bundle was staged from those inputs. It is not the SHA of the necessarily",
-        "later commit that checked in the generated files, and later exact reviewed",
-        "updates may be visible in per-file Git history.",
+        "The build command reports its runtime repository revision separately.",
+        "The recipe revision above is pinned for deterministic reproduction and",
+        "the production-input provenance identifies the workspace that produced",
+        "the locked source payload. Neither value is inferred from the other.",
         "",
         "No OCR correction behavior is changed by this bundle builder. It copies",
         "the latest trusted corrected text and compact QA artifacts into",
@@ -307,12 +340,25 @@ def write_manifest(
         "| --- | --- |",
     ]
     for source in volume_sources:
-        lines.append(f"| `{source.label}` | `{relative(source.path, root)}` |")
+        display = source.manifest_path or relative(source.path, root)
+        lines.append(f"| `{source.label}` | `{display}` |")
 
     if diagnostics:
         lines.extend(["", "## Diagnostic Sources", "", "| Volume | Local source directory |", "| --- | --- |"])
         for label, path in sorted(diagnostics.items()):
-            lines.append(f"| `{label}` | `{relative(path, root)}` |")
+            display = diagnostic_manifest_paths.get(label) or relative(path, root)
+            lines.append(f"| `{label}` | `{display}` |")
+
+    if input_lock_id:
+        lines.extend(
+            [
+                "",
+                "## Locked Input",
+                "",
+                f"- Input lock: `{input_lock_id}`",
+                "- Every archived input is verified by SHA-256 before materialization.",
+            ]
+        )
 
     lines.extend(["", "## Corrected Text", ""])
     for path in text_files:
@@ -338,7 +384,7 @@ def write_manifest(
             "## Reproduction",
             "",
             "```bash",
-            "python3 scripts/build_current_release_bundle.py",
+            "python3 scripts/reproduce_current_release.py",
             "python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py",
             "python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q",
             "```",
@@ -383,6 +429,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Destination directory for the tracked release bundle.",
     )
     parser.add_argument(
+        "--input-root",
+        type=Path,
+        help=(
+            "Materialized locked-input root containing the four volume and four "
+            "diagnostic directories."
+        ),
+    )
+    parser.add_argument(
         "--source",
         action="append",
         default=[],
@@ -399,6 +453,22 @@ def main(argv: list[str] | None = None) -> int:
         help="Override or add a per-volume diagnostics directory.",
     )
     parser.add_argument(
+        "--build-timestamp",
+        help="Explicit ISO-8601 UTC build timestamp; otherwise SOURCE_DATE_EPOCH or current UTC is used.",
+    )
+    parser.add_argument(
+        "--build-revision",
+        help="Pinned build recipe revision for deterministic manifest provenance.",
+    )
+    parser.add_argument(
+        "--production-input-origin",
+        help="Immutable description of the workspace/revision that produced the inputs.",
+    )
+    parser.add_argument(
+        "--input-lock-id",
+        help="Stable identifier for the verified release-input lock.",
+    )
+    parser.add_argument(
         "--zip-qa",
         action="store_true",
         help="Store copied QA artifacts in release/current/qa_bundle.zip.",
@@ -408,18 +478,57 @@ def main(argv: list[str] | None = None) -> int:
     root = repo_root()
     output_dir = (root / args.output_dir).resolve()
 
-    sources = {label: root / path for label, path in DEFAULT_SOURCES.items()}
+    if args.input_root and (args.source or args.diagnostics):
+        parser.error("--input-root cannot be combined with --source or --diagnostics")
+
+    timestamp = resolve_build_timestamp(args.build_timestamp)
+    runtime_revision = git_commit(root)
+    build_revision = args.build_revision or runtime_revision
+    production_input_origin = (
+        args.production_input_origin
+        or f"local production workspace; build checkout {runtime_revision}"
+    )
+
+    if args.input_root:
+        input_root = (
+            args.input_root
+            if args.input_root.is_absolute()
+            else root / args.input_root
+        ).resolve()
+        sources = {label: input_root / label for label in DEFAULT_SOURCES}
+        diagnostics = {
+            label: input_root / f"tibetan_cleanup_diagnostics_{label}"
+            for label in DEFAULT_DIAGNOSTIC_SOURCES
+        }
+    else:
+        input_root = None
+        sources = {label: root / path for label, path in DEFAULT_SOURCES.items()}
+        diagnostics = {
+            label: root / path
+            for label, path in DEFAULT_DIAGNOSTIC_SOURCES.items()
+        }
     for label, path in args.source:
         sources[label] = path if path.is_absolute() else root / path
     volume_sources = [
-        VolumeSource(label, path) for label, path in sorted(sources.items())
+        VolumeSource(
+            label,
+            path,
+            (
+                f"locked://{args.input_lock_id}/{label}"
+                if input_root and args.input_lock_id
+                else None
+            ),
+        )
+        for label, path in sorted(sources.items())
     ]
 
-    diagnostics = {
-        label: root / path for label, path in DEFAULT_DIAGNOSTIC_SOURCES.items()
-    }
     for label, path in args.diagnostics:
         diagnostics[label] = path if path.is_absolute() else root / path
+    diagnostic_manifest_paths = {
+        label: f"locked://{args.input_lock_id}/tibetan_cleanup_diagnostics_{label}"
+        for label in diagnostics
+        if input_root and args.input_lock_id
+    }
 
     # Required sources are intentionally preflighted before the output directory
     # is cleaned.  A fresh checkout lacks ignored work/ inputs and must fail
@@ -447,6 +556,11 @@ def main(argv: list[str] | None = None) -> int:
         copied,
         missing_optional,
         compressed_qa,
+        timestamp=timestamp,
+        build_revision=build_revision,
+        production_input_origin=production_input_origin,
+        input_lock_id=args.input_lock_id,
+        diagnostic_manifest_paths=diagnostic_manifest_paths,
     )
     checksum_rows = build_checksums(output_dir)
     checksum_path = write_checksums(output_dir, checksum_rows)
@@ -456,6 +570,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Copied {len(copied)} files before checksums")
     print(f"Wrote {relative(checksum_path, root)}")
     print(f"Bundle size: {bundle_size} bytes")
+    print(f"Runtime repository revision: {runtime_revision}")
+    print(f"Build recipe revision: {build_revision}")
     if missing_optional:
         print(f"Missing optional artifacts: {len(missing_optional)}")
     return 0
