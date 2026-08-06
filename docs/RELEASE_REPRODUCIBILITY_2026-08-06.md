@@ -133,6 +133,25 @@ re-verifies it after cache restoration, materializes the lock, rebuilds into
 modified. The cache key includes the lock-file digest; checksum verification is
 not skipped on a cache hit.
 
+## Validation result
+
+The committed branch passed:
+
+```text
+python3 scripts/check_repo_hygiene.py          PASS
+python3 scripts/build_status.py --check       PASS (5 existing review warnings)
+python3 -m compileall -q scripts              PASS
+python3 -m pytest tests -q                    470 passed
+python3 -m unittest discover -s tests         468 passed
+release/current/checksums.tsv                 161/161 valid
+locked release inputs                         160/160 valid
+git diff --check                              PASS
+```
+
+Pytest remains the authoritative complete suite. The two-test difference is
+the established pair of module-level pytest tests that unittest discovery does
+not collect.
+
 ## Remaining limitations
 
 - GitHub release administrators can technically replace an asset, but the
