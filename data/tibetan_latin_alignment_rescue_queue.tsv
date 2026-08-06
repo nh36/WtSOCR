@@ -1284,12 +1284,12 @@ tibetan_syllable	source	canonical_target	occurrence_count	reviewed_terminal_occu
 ཙུག	Isug	tsug	0	0	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མར་མོ་ཙུག ད་མ་ mar mo Isug da ma npr. eine als
 ཙེ	Tmigtsan	tse	0	0	0	boundary_or_damage	marker_attached	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཙེ Tmigtsan gi mchodsbyin.
 ཙེ	Verhaltens	tse	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	"ཙེ Verhaltens"", eine der !stobs beu"
-ཚག	tsbag	tshag	1	0	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐིགས་ཚག་ thigs tsbag auch thig tshags, thigs
+ཚག	tsbag	tshag	0	1	0	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཐིགས་ཚག་ thigs tsbag auch thig tshags, thigs
 ཚགས	tsbags	tshags	1	0	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	བུམ་ཚགས་གཅེའུ་ཅན་ bum tsbags gce'u can cine
 ཚང	ishah	tshaṅ	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 ཚང	tsbaṅ	tshaṅ	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	མ་ཡི་ཚང་ཚུངས་ ma yi tsbaṅ tshuris auch ma yi
 ཚབ	ishab	tshab	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྐུ་ཚབ་ sku ishab resp.
-ཚར	tsbar	tshar	1	0	1	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུན་ཚར་ phun tsbar Fransen, Fadenenden.
+ཚར	tsbar	tshar	0	1	0	secure_transcription_outlier	other	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཕུན་ཚར་ phun tsbar Fransen, Fadenenden.
 ཚིགས	Märas	tshigs	0	0	0	boundary_or_damage	damaged_ocr	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཉ་ཡི་ཚིགས་ 74 7/ tshigs Beiname Märas bzw.
 ཚུགས	i	tshugs	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	སྤྱིའི་ཚུགས་ spyři tshugs lspyi'n tshugs.
 ཚུལ	ishul	tshul	0	0	0	probable_transcription_outlier	probable_headword_span	not_yet_independently_secure	yes	no	layout_evidence_required_independent_of_desired_correction	ཀླན་ཤཱཀྱ་ཚུལ་ཁྲིམས་ klan sakya ishul kbrims N. || སྤྲོད་ཚུལ་ spyod ishul Kurzf. für spyod pa' tshul

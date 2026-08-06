@@ -1,5 +1,5 @@
 queue_category	family_count	current_family_count	current_exact_occurrences	historical_only_families	reviewed_terminal_families	reviewed_terminal_exact_occurrences
-alignment_or_damage	3339	5	7	3325	9	22
+alignment_or_damage	3339	3	5	3325	11	24
 domain_risk	133	133	543	0	0	0
 gloss_alignment_noise	108	0	0	108	0	0
 historical_echo_decision_block	7	0	0	7	0	0

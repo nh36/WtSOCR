@@ -502,11 +502,11 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "wts_1_34;wts_35_51;wts_9_m",
             "reviewed_tibetan_exact_manual_structural_root_ocr;reviewed_exact_tibetan_headword_subjoined_ocr;reviewed_exact_tibetan_headword_root_ocr",
             "data/reviewed_tibetan_exact_overrides.tsv;data/reviewed_tibetan_script_exact_overrides.tsv",
-            "data/reviewed_tibetan_alignment_damage_decisions.tsv",
+            "data/reviewed_tibetan_alignment_damage_decisions.tsv;docs/ALIGNMENT_DAMAGE_SOURCE_REVIEW_2026-08-06.md",
             alignment_review_applied,
             alignment_review_residual,
             "apostrophe-bearing source variants;tsb/tsh competition;German-gloss and fused-token misalignments",
-            "Two Latin bäi→bźi repairs and four Tibetan-token repairs are exact only; 34 active identities were reviewed and seven remain unresolved.",
+            f"Two Latin bäi→bźi repairs and four Tibetan-token repairs are exact only; {len(alignment_reviews)} exact identities were reviewed and {alignment_review_residual} remain unresolved pending external source evidence.",
         ),
         row(
             "dotless_i_to_i_translit_and_names",
@@ -1477,6 +1477,12 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
 
 
 def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]) -> str:
+    alignment_review_residual = sum(
+        item.get("decision") == "unresolved"
+        for item in iter_tsv(
+            ROOT / "data/reviewed_tibetan_alignment_damage_decisions.tsv"
+        )
+    )
     volume_rows = []
     for volume in VOLUME_ORDER:
         data = stats.volumes[volume]
@@ -1608,6 +1614,8 @@ Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-chec
 
 Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. Validator-only rows are diagnostics, not correction evidence.
 
+The alignment/damage source review is exhausted pending external source evidence. Two direct `tsb/tsh` print variants are terminal reviewed evidence; the remaining {alignment_review_residual} exact occurrences require a better primary scan and are not an active automatic-correction queue. See `docs/ALIGNMENT_DAMAGE_SOURCE_REVIEW_2026-08-06.md`.
+
 ## Current Remaining Work
 
 {remaining_table}
@@ -1618,14 +1626,11 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review reference-marker OCR diagnostics with lemma-order comparison and promote only exact page/line/token rows; accept ambiguous lemma identity only when all matches point the same direction; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
-3. Review siglum policy candidates separately from Tibetan lexical corrections.
-4. Review the script-ng witness diagnostic queue after marker separation.
-5. Review formal Sanskrit source-check suggestions.
-6. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
-7. Treat validator-only rows as diagnostics, not correction evidence.
-8. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
+1. Review the three exact rows in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
+2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
+3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
+5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
 """
 
 

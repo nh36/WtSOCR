@@ -41,7 +41,7 @@ is reported by the reproduction command and is not inferred from either field.
 | Family | Status | Scope | Volumes | Implementation | Evidence | Current residual note |
 | --- | --- | --- | --- | --- | --- | --- |
 | google_vision_alternate_witness_policy | applied | policy | all | scripts/postprocess_entry_map.py;release/current/qa/*/*_alternate_witness_adoptions.tsv | docs/STATUS.md;release/current/qa | Base OCR remains authoritative; Google Vision is an alternate witness only. |
-| alignment_damage_exact_review_20260806 | applied | exact page-line-token only | wts_1_34;wts_35_51;wts_9_m | data/reviewed_tibetan_exact_overrides.tsv;data/reviewed_tibetan_script_exact_overrides.tsv | data/reviewed_tibetan_alignment_damage_decisions.tsv | Two Latin bäi→bźi repairs and four Tibetan-token repairs are exact only; 34 active identities were reviewed and seven remain unresolved. |
+| alignment_damage_exact_review_20260806 | applied | exact page-line-token only | wts_1_34;wts_35_51;wts_9_m | data/reviewed_tibetan_exact_overrides.tsv;data/reviewed_tibetan_script_exact_overrides.tsv | data/reviewed_tibetan_alignment_damage_decisions.tsv;docs/ALIGNMENT_DAMAGE_SOURCE_REVIEW_2026-08-06.md | Two Latin bäi→bźi repairs and four Tibetan-token repairs are exact only; 34 exact identities were reviewed and 5 remain unresolved pending external source evidence. |
 | dotless_i_to_i_translit_and_names | applied | guarded_token_context | all | scripts/postprocess_entry_map.py | release/current/qa | Guarded dotless-i repairs are active; residual dotless-i artifacts remain review evidence, not proof of a global rule. |
 | german_prose_dotless_i | applied | german_prose_context | all | scripts/postprocess_entry_map.py | release/current/qa | German prose dotless-i repairs are separate from transliteration repairs. |
 | guarded_dollar_to_sacute | partially_applied | exact_or_context_guarded | all | scripts/postprocess_entry_map.py;data/reviewed_tibetan_exact_overrides.tsv | release/current/qa;docs/tibetan_sigla_registry_cleanup_2026-06-27.md | Exact/guarded $ to ś repairs are active, but the broad character rule is forbidden and residual $ buckets remain. |
@@ -107,6 +107,8 @@ Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-chec
 
 Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. Validator-only rows are diagnostics, not correction evidence.
 
+The alignment/damage source review is exhausted pending external source evidence. Two direct `tsb/tsh` print variants are terminal reviewed evidence; the remaining 5 exact occurrences require a better primary scan and are not an active automatic-correction queue. See `docs/ALIGNMENT_DAMAGE_SOURCE_REVIEW_2026-08-06.md`.
+
 ## Current Remaining Work
 
 | Queue / family | Current count | Where counted | Status | Next action | Notes |
@@ -136,11 +138,8 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review reference-marker OCR diagnostics with lemma-order comparison and promote only exact page/line/token rows; accept ambiguous lemma identity only when all matches point the same direction; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-2. Review residual `$ -> ś` candidates, keeping the generic `$ -> ś` rule forbidden.
-3. Review siglum policy candidates separately from Tibetan lexical corrections.
-4. Review the script-ng witness diagnostic queue after marker separation.
-5. Review formal Sanskrit source-check suggestions.
-6. Treat residual Sanskrit low-confidence candidates as exploratory only unless sampled and promoted into a formal queue.
-7. Treat validator-only rows as diagnostics, not correction evidence.
-8. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
+1. Review the three exact rows in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
+2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
+3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
+5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
