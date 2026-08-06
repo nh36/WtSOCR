@@ -412,6 +412,52 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
             row["upgrade_authorized"] == "yes" for row in rows
         ))
 
+    def test_alignment_damage_review_covers_exact_active_set(self) -> None:
+        rows = module.read(
+            ROOT / "data/reviewed_tibetan_alignment_damage_decisions.tsv"
+        )
+        identities = {
+            (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["tibetan_syllable"], row["source"],
+            )
+            for row in rows
+        }
+        self.assertEqual(len(rows), 34)
+        self.assertEqual(len(identities), 34)
+        self.assertEqual(
+            sum(row["decision"] == "unresolved" for row in rows), 7
+        )
+
+    def test_reviewed_terminal_alignment_rows_leave_active_residual_only(self) -> None:
+        summary = next(
+            row for row in self.generated["active_queue_summary"]
+            if row["queue_category"] == "alignment_or_damage"
+        )
+        self.assertEqual(summary["current_family_count"], "5")
+        self.assertEqual(summary["current_exact_occurrences"], "7")
+        self.assertEqual(summary["reviewed_terminal_families"], "13")
+        self.assertEqual(
+            summary["reviewed_terminal_exact_occurrences"], "27"
+        )
+
+    def test_bai_repairs_are_exact_row_only(self) -> None:
+        rows = module.read(
+            ROOT / "data/reviewed_tibetan_exact_overrides.tsv"
+        )
+        repairs = {
+            (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["from_token"], row["to_token"],
+            )
+            for row in rows
+            if row.get("evidence") == "alignment_damage_exact_review_20260806"
+        }
+        self.assertEqual(repairs, {
+            ("wts_1_34", "926", "1", "3", "bäi", "bźi"),
+            ("wts_35_51", "35", "58", "2", "bäi", "bźi"),
+        })
+
 
 if __name__ == "__main__":
     unittest.main()
