@@ -1,5 +1,5 @@
 signature	remaining_outlier_families	remaining_outlier_rows	authoritative_target_rows	clean_domain_safe_rows	ready_uncorrected_rows	disposition	examples
-INS r	40	7	7	5	0	authorized_signature_clean_outliers_exhausted	ཀར:ka→kar;ཁྱེར:Bote→khyer;ཁྲབ:thab→khrab;གྲི:gi→gri;གྲོ:sgo→gro;ཏྲ:ta→tra
+INS r	39	5	5	5	0	authorized_signature_clean_outliers_exhausted	ཀར:ka→kar;ཁྱེར:Bote→khyer;ཁྲབ:thab→khrab;གྲི:gi→gri;གྲོ:sgo→gro;ཏྲ:ta→tra
 REPLACE ni→ṅ	48	9	9	2	0	authorized_signature_clean_outliers_exhausted	ཀང:kani→kaṅ;གཙང:gtsani→gtsaṅ;གླང:glani→glaṅ;བཟང:bzani→bzaṅ;འཐུང:'thuni→thuṅ;འཕྱང:'phyani→phyaṅ
 REPLACE ri→ṅ	30	13	13	1	0	authorized_signature_clean_outliers_exhausted	ཀྱང:kyari→kyaṅ;གང:gari→gaṅ;གཙང:gtsari→gtsaṅ;གསང:gsari→gsaṅ;གླང:glari→glaṅ;གླིང:eliri→gliṅ
 SUB I→l	9	0	0	0	0	authorized_signature_clean_outliers_exhausted	ལས:Ins→las;ལུ:In→lu;ལུ:Iu→lu;ལུགས:Iugs→lugs;ལྕགས:Icags→lcags;ལྗང:Ijan→ldaṅ

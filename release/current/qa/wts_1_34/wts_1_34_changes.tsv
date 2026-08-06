@@ -29131,3 +29131,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 904	108	9912	headword_line	sioms	sñoms	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	བཏང་སྙོམས་ཆེན་པོ་ btaṅ sioms chen po Bez. für
 904	21	9908	headword_line	གཉོད	གཅོད	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	བཏང་གཉོད་ btaṅ gcod
 1072	75	11843	headword_line	གཉོད	གཅོད	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	འཐུང་གཉོད་ 'thuṅ gcod auch 'thuṅ bcod Bez. für
+926	1	10211	headword_line	bäi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	རྟོན་པ་བཞི་ rton pa bäi
+1048	82	11522	headword_line	ཐྲོས	ཐོས	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_subjoined_ocr	yes	ཐྲོས་སློག་ thos sgrog.
+1048	82	11522	headword_line	སློག	སྒྲོག	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	ཐྲོས་སློག་ thos sgrog.
+1198	75	12498	headword_line	དྲེ	དེ	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_subjoined_ocr	yes	དྲེ་རྐྱང་པ་ de rkyaṅ pa einzig, nur.

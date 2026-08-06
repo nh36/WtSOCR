@@ -28,15 +28,15 @@ the minimum groups are:
 
 | Logical directory | Files | Uncompressed bytes | Contents |
 | --- | ---: | ---: | --- |
-| `wts_1_34` | 15 | 33,212,627 | corrected text and selected postprocess QA |
-| `wts_35_51` | 15 | 14,392,534 | corrected text and selected postprocess QA |
+| `wts_1_34` | 15 | 33,213,316 | corrected text and selected postprocess QA |
+| `wts_35_51` | 15 | 14,392,690 | corrected text and selected postprocess QA |
 | `wts_8_b` | 15 | 7,304,560 | corrected text and selected postprocess QA |
-| `wts_9_m` | 15 | 5,284,997 | corrected text and selected postprocess QA |
-| `tibetan_cleanup_diagnostics_wts_1_34` | 25 | 15,331,067 | tracked cleanup/final-ṅ/integrity diagnostics |
-| `tibetan_cleanup_diagnostics_wts_35_51` | 25 | 6,681,195 | tracked cleanup/final-ṅ/integrity diagnostics |
-| `tibetan_cleanup_diagnostics_wts_8_b` | 25 | 3,546,014 | tracked cleanup/final-ṅ/integrity diagnostics |
-| `tibetan_cleanup_diagnostics_wts_9_m` | 25 | 2,460,672 | tracked cleanup/final-ṅ/integrity diagnostics |
-| **Total** | **160** | **88,213,666** | exact one-to-one source for all substantive release files |
+| `wts_9_m` | 15 | 5,285,179 | corrected text and selected postprocess QA |
+| `tibetan_cleanup_diagnostics_wts_1_34` | 25 | 15,331,105 | tracked cleanup/final-ṅ/integrity diagnostics |
+| `tibetan_cleanup_diagnostics_wts_35_51` | 25 | 6,681,229 | tracked cleanup/final-ṅ/integrity diagnostics |
+| `tibetan_cleanup_diagnostics_wts_8_b` | 25 | 3,545,728 | tracked cleanup/final-ṅ/integrity diagnostics |
+| `tibetan_cleanup_diagnostics_wts_9_m` | 25 | 2,460,663 | tracked cleanup/final-ṅ/integrity diagnostics |
+| **Total** | **160** | **88,214,470** | exact one-to-one source for all substantive release files |
 
 The general-purpose `work/` tree, entry maps, and unselected intermediate
 reports are not archived.
@@ -52,11 +52,11 @@ https://github.com/nh36/WtSOCR/releases/tag/wtsocr-stable-2026-08-06
 Asset:
 
 ```text
-wtsocr-stable-2026-08-06-c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458.zip
+wtsocr-stable-2026-08-06-7d4860dbaafae6766065164a897274a5ace5a576a185e0b02226069532db9f31.zip
 ```
 
-- Compressed bytes: `20,442,926`
-- SHA-256: `c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458`
+- Compressed bytes: `20,443,096`
+- SHA-256: `7d4860dbaafae6766065164a897274a5ace5a576a185e0b02226069532db9f31`
 - Format: deterministic ZIP with sorted members, fixed metadata, and a single
   `wtsocr-release-inputs/` root.
 
@@ -71,11 +71,14 @@ Three distinct facts are recorded:
 1. `scripts/reproduce_current_release.py` reports the repository revision
    actually running the reproduction.
 2. The bundle pins build-recipe revision
-   `aef604d5f50a07d86a397b5199c259c866a5c179` so manifest output does not
-   acquire a self-referential commit dependency.
+   `cc45ddf53cfc516ce35083230ada35b7d5d7195e`, the commit that froze the
+   exact alignment/damage decisions before generated release files were
+   checked in, so manifest output does not acquire a self-referential commit
+   dependency.
 3. The inputs came from production workspace
-   `work/final_ng_seed_clean_20260719T210000Z`, observed with revision
-   `d407bf522ae6645c50dd7ba9ce4d5b42721d1097`.
+   `work/final_ng_seed_clean_20260719T210000Z`, updated and observed with
+   revision `cc45ddf53cfc516ce35083230ada35b7d5d7195e`. The directory name is
+   historical and is not treated as the production revision.
 
 The exact historical commands that produced every postprocess QA artifact are
 not recoverable. The lock states that limitation instead of reconstructing
@@ -110,7 +113,7 @@ It receives the same verification and is never accepted by filename alone.
 
 ## Deterministic metadata
 
-The lock fixes the release timestamp at `2026-07-29T16:22:11Z`. The bundle
+The lock fixes the release timestamp at `2026-08-06T15:30:00Z`. The bundle
 builder accepts `--build-timestamp`; absent that option, it honors
 `SOURCE_DATE_EPOCH`, and uses current UTC only when neither is supplied. Explicit
 timestamps are normalized to UTC. Source and diagnostic paths in the manifest
@@ -141,8 +144,8 @@ The committed branch passed:
 python3 scripts/check_repo_hygiene.py          PASS
 python3 scripts/build_status.py --check       PASS (5 existing review warnings)
 python3 -m compileall -q scripts              PASS
-python3 -m pytest tests -q                    470 passed
-python3 -m unittest discover -s tests         468 passed
+python3 -m pytest tests -q                    474 passed
+python3 -m unittest discover -s tests         472 passed
 release/current/checksums.tsv                 161/161 valid
 locked release inputs                         160/160 valid
 git diff --check                              PASS

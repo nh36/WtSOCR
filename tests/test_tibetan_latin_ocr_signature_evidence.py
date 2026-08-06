@@ -436,9 +436,9 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         )
         self.assertEqual(summary["current_family_count"], "5")
         self.assertEqual(summary["current_exact_occurrences"], "7")
-        self.assertEqual(summary["reviewed_terminal_families"], "13")
+        self.assertEqual(summary["reviewed_terminal_families"], "9")
         self.assertEqual(
-            summary["reviewed_terminal_exact_occurrences"], "27"
+            summary["reviewed_terminal_exact_occurrences"], "22"
         )
 
     def test_bai_repairs_are_exact_row_only(self) -> None:

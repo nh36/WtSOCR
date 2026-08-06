@@ -2128,3 +2128,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 17	50	19	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	མ་ཁུངས་བཞི་ ma khuṅs bi vier Kalkulationen
 177	18	800	headword_line	dera	dgra	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	མིའུ་གདུང་དྲུག་དགྲ་ལྷ་ min gduṅ drug dera lha
 108	16	448	headword_line	གཉོད	གཅོད	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	མེ་གཉོད་དགྲའ་ mi gcod dea' Bez. für Gott,
+168	33	758	headword_line	སྤྲོ	སྤོ	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_subjoined_ocr	yes	མིང་སྤྲོ་ miṅ spo Namenswechsel; vgl. SCHUH

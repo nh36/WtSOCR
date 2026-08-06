@@ -221,7 +221,7 @@ tibetan_syllable	candidate_forms	independent_occurrences	volumes	entry_clusters	
 སྤུར	spur	2	wts_35_51		5		fewer_than_3_independent_occurrences;single_volume	retain_moderate
 སྤུས	spus	4	wts_35_51		8		single_volume	retain_moderate
 སྤེན	spen	3	wts_35_51		10		single_volume	retain_moderate
-སྤོ	spo	6	wts_35_51		10		single_volume	retain_moderate
+སྤོ	spo	6	wts_35_51;wts_9_m		10		entry_cluster_independence	retain_moderate
 སྤོང	spoṅ	3	wts_1_34;wts_35_51		4		entry_cluster_independence	retain_moderate
 སྤོབས	spobs	3	wts_35_51		10		single_volume	retain_moderate
 སྤྱིན	sbyin	6	wts_8_b		29		single_volume	retain_moderate
