@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import subprocess
 import sys
 from pathlib import Path
 
@@ -48,15 +47,6 @@ def compare_trees(expected: Path, actual: Path) -> tuple[int, list[str]]:
         elif sha256_file(expected_path) != sha256_file(actual_path):
             differences.append(f"content:{relative_path}")
     return len(expected_files), differences
-
-
-def runtime_revision() -> str:
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-        ).strip()
-    except (OSError, subprocess.CalledProcessError):
-        return "unknown"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -115,7 +105,6 @@ def main(argv: list[str] | None = None) -> int:
         return result
 
     expected_count, differences = compare_trees(args.expected_dir, args.output_dir)
-    print(f"Runtime repository revision: {runtime_revision()}")
     print(f"Expected release files: {expected_count}")
     print(f"Differences: {len(differences)}")
     for difference in differences:

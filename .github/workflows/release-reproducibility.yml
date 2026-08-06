@@ -1,0 +1,39 @@
+name: release-reproducibility
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-current-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install development dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+
+      - name: Cache content-addressed release inputs
+        uses: actions/cache@v4
+        with:
+          path: .cache/release-inputs
+          key: release-inputs-${{ hashFiles('release/inputs/wtsocr-stable-2026-08-06.lock.json') }}
+
+      - name: Verify locked inputs and reproduce release
+        run: |
+          python3 scripts/reproduce_current_release.py \
+            --cache-dir .cache/release-inputs \
+            --materialized-root work/ci-release-inputs \
+            --output-dir work/ci-reproduced-release

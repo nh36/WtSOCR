@@ -1,0 +1,1300 @@
+{
+  "archive": {
+    "bytes": 20442926,
+    "filename": "wtsocr-stable-2026-08-06-c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458.zip",
+    "format": "deterministic-zip",
+    "root": "wtsocr-release-inputs",
+    "sha256": "c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458",
+    "url": "https://github.com/nh36/WtSOCR/releases/download/wtsocr-stable-2026-08-06/wtsocr-stable-2026-08-06-c6f74598ef22c738de638608cd3528dbdf65e8f347b0eca831ef28c6bd12a458.zip"
+  },
+  "files": [
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/reference_marker_candidates.tsv",
+      "bytes": 470501,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/reference_marker_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d4a2f6fc85ad9cb1f4968e9cf277ab52f147e15458819bdd4dc9f96beecc8e90"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/reference_marker_token_families.tsv",
+      "bytes": 190940,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/reference_marker_token_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "5e33a54a8fab2c471b400a6c047312c926727be586256f6f69708680f27ec1ce"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/residual_sanskrit_low_confidence_candidates.tsv",
+      "bytes": 228617,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/residual_sanskrit_low_confidence_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d321e0aeaf6d0fe3ba07beebc4822a7cc9961c1548e21791575190b96bbe9ce6"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/sigla_variant_candidates.tsv",
+      "bytes": 122051,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/sigla_variant_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "2b348b5d7322e072412c8df051b190bfbb45a560bb792a662e46188517afa7f5"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/summary.md",
+      "bytes": 4572,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/summary.md",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8ffac5b532be290dd7d7af4455ee02b49160a39bd8d80620871ec024786d5b48"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_anchor_count_changes.tsv",
+      "bytes": 1134,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_anchor_count_changes.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "03ec07f49834f9d20c11f3b006fc21d5e4a99fd4d155a9ac970059911db1ba4e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "bytes": 126848,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "58e52e3c15c971bea549347f3cbd81fe4f4e96eb63a67046bac254565a836838"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_consensus_candidates.tsv",
+      "bytes": 36940,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_consensus_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "05045fc4ea6e2b02baeaab89aa07c79bfe97eecab40fde38a229630eb88643f7"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "bytes": 399232,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b57673422c6a8aa943955dfdcbc40f1022cbce5ec48b47ff4e1d95496ae0374f"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_family_rankings.tsv",
+      "bytes": 2176,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f4a24d2a887463b659762834e9e6797c0ab4233a233181b71b68ae27feb71fe2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "bytes": 64040,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e621f38ef63f9f45c42a3f508a03aa1f97749c1474f59709a0c593fb0756bb69"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "bytes": 668,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "2f6a37d63f7067452dde5349c56e77cc74a39fc8a0ce830d9140bb6073d60812"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "bytes": 37679,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "17ab36db132025b75e133f670c986c5908726c363c4fc78ce7f83d1320674126"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_candidates.tsv",
+      "bytes": 195037,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "566a4ff46b6a551685ccf88d342e3aadbebd355d244dcf7f8c47c7279f8d4740"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_coverage.tsv",
+      "bytes": 281,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_coverage.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0e588f45789ab98952f1b17703330e828f6e7ac731caa6d64f6f26111c73b082"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "bytes": 97259,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "032b8df5daf50086b36f9d411386cdb48b3b7eba74fb0ebae54cd3ee417a9d86"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "bytes": 45062,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ab84925b8ecf2037c97397522965278675759a1314b5ee6dd22797f2d2be965a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "bytes": 43693,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4c0672994c56b8b840004d8a28ed44111abaa2e09281a13abf9b04e6a5b26940"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_google_adoption_patterns.tsv",
+      "bytes": 130259,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_google_adoption_patterns.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "66c5245bb685e5ef61129b9643e32c97fc7c7bd5b58b7e7750ef1dffd61cd3e9"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_google_candidate_readings.tsv",
+      "bytes": 142973,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_google_candidate_readings.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b38cfbd84ef50c9675a43d95141653be752da8f7d84b9a4cd2bee3da4690b186"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_initial_i_residual_candidates.tsv",
+      "bytes": 165,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_initial_i_residual_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "697257923f28d85488a9f368f6af667e8941f36cb2ff6b9c7fa13361069aa42e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_latin_integrity_candidates.tsv",
+      "bytes": 12545526,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_latin_integrity_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_latin_integrity.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e75ced88551b6c91570bd6a7fb69d13704facc798d4f04d8a43811e040f8a7b4"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_orthography_damage_candidates.tsv",
+      "bytes": 295450,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_orthography_damage_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "989d75381df1cc4370a4d89b2adec4da25b2b85d426f1cb8ade0221e692a34a1"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_script_ng_witness_candidates.tsv",
+      "bytes": 1045,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_script_ng_witness_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ebe8240a70e194b34c95fde033a83ad96a05805022fedb05fe481e9a0d51be9b"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_1_34/tibetan_variant_families.tsv",
+      "bytes": 148919,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_1_34/tibetan_variant_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d7188193404c40bf804994be010a14aa431e72e672544b1589a39ec6c822590a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/reference_marker_candidates.tsv",
+      "bytes": 335501,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/reference_marker_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f067c62ea386b827ab307baf34ece7a42f1e528c5085809c5208730c489cce29"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/reference_marker_token_families.tsv",
+      "bytes": 136876,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/reference_marker_token_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d0c7427a9fab4411ae85a237dc60e8c38fe0b54aee287af1c94f7d3f4c69ed51"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/residual_sanskrit_low_confidence_candidates.tsv",
+      "bytes": 90078,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/residual_sanskrit_low_confidence_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0d31a910c83db60e7fb8ca3895ded01652d71311c72495b0828733c3a559164e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/sigla_variant_candidates.tsv",
+      "bytes": 43017,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/sigla_variant_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7a4349dfaffaef8eddf3293e33400e861003a5951c506e79cf66b75bb485f8d9"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/summary.md",
+      "bytes": 4495,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/summary.md",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f10151aa11dfc65a21f779b23ad4cb3817d2d0355b051d6ae1b4446fdd2f06ce"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_anchor_count_changes.tsv",
+      "bytes": 626,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_anchor_count_changes.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ab57ac795f6e674c6a3b41a40134724718255493abab592faf5dfeb241107efd"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "bytes": 126848,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "58e52e3c15c971bea549347f3cbd81fe4f4e96eb63a67046bac254565a836838"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_consensus_candidates.tsv",
+      "bytes": 919,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_consensus_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "97220dd121996a9e19ebfb48d3f5e0ad8944e72e001f6a46f3bde889b2c50e14"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "bytes": 264832,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "fd41755b08db9d507748175ebe33ac1393813bb550a86db5030037cac0b6aa2f"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_family_rankings.tsv",
+      "bytes": 2176,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f4a24d2a887463b659762834e9e6797c0ab4233a233181b71b68ae27feb71fe2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "bytes": 64040,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e621f38ef63f9f45c42a3f508a03aa1f97749c1474f59709a0c593fb0756bb69"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "bytes": 820,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "c546819d47de470a864d1373efa846b879fe789707b7de7f188b2f6a5e39b6ce"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "bytes": 17230,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "cf2091035127563bfb99350ea4d081619a033e211be0a807470296cdc5ce0162"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_candidates.tsv",
+      "bytes": 8629,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "3b413d1e2ca30755691324bc1951f0182c4e4e55cb91b7443ac1a6bbb73005fc"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_coverage.tsv",
+      "bytes": 281,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_coverage.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0e588f45789ab98952f1b17703330e828f6e7ac731caa6d64f6f26111c73b082"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "bytes": 97259,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "032b8df5daf50086b36f9d411386cdb48b3b7eba74fb0ebae54cd3ee417a9d86"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "bytes": 45062,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ab84925b8ecf2037c97397522965278675759a1314b5ee6dd22797f2d2be965a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "bytes": 43693,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4c0672994c56b8b840004d8a28ed44111abaa2e09281a13abf9b04e6a5b26940"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_google_adoption_patterns.tsv",
+      "bytes": 55101,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_google_adoption_patterns.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d1a5ed7dc9bcd956623e6b90cc1071fe0f4f16472e09202e8c59e0b2050dda17"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_google_candidate_readings.tsv",
+      "bytes": 30711,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_google_candidate_readings.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "69374dbe1b272306528f73d4e72b78a166a884b02caedd7bf29142a95c951157"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_initial_i_residual_candidates.tsv",
+      "bytes": 165,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_initial_i_residual_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "697257923f28d85488a9f368f6af667e8941f36cb2ff6b9c7fa13361069aa42e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_latin_integrity_candidates.tsv",
+      "bytes": 5212694,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_latin_integrity_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_latin_integrity.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e896329661ee2c23a6240a0b6f502bdbfa90e5c79dfd02a910eada0d4351009b"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_orthography_damage_candidates.tsv",
+      "bytes": 67931,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_orthography_damage_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7a1c5017aef8943c9fa734e1b238456653c9a527f21707577416addd51a84356"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_script_ng_witness_candidates.tsv",
+      "bytes": 284,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_script_ng_witness_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "85b0444057bd52e2022d8f49fdb89a49f8492f7d7ed184a68f085e7807ad61c8"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_35_51/tibetan_variant_families.tsv",
+      "bytes": 31927,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_35_51/tibetan_variant_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a9d23d3d7d966c5c7d2f01d606e823fbf50b9d88e37af7a9d2865c08287ab159"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/reference_marker_candidates.tsv",
+      "bytes": 176424,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/reference_marker_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "530979eff37e1adcb62ff5b7ddad78a773e14c03766c28ea3ff4af10dd6e4bc2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/reference_marker_token_families.tsv",
+      "bytes": 83677,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/reference_marker_token_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b4b6ee7e9a0284f61b88d9c6dfceeced55f94fa2c74173db55403daabcda6afa"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/residual_sanskrit_low_confidence_candidates.tsv",
+      "bytes": 32020,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/residual_sanskrit_low_confidence_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "822dc187d96b338c3e91b968f0ab6d610a1a6c9b92d0ac94b49dab67aa4c8941"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/sigla_variant_candidates.tsv",
+      "bytes": 8421,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/sigla_variant_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "2123d72e89c39cba4469477b0f9fddf5fd9d8731085c5e80b46c67d0bcdc358a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/summary.md",
+      "bytes": 3721,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/summary.md",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "87b74f3a231ffe13f4ff0c19907b5739e8735b8e6de50d5561ef563e7ca5a19b"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_anchor_count_changes.tsv",
+      "bytes": 164,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_anchor_count_changes.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7df13ccb69440e5bebe67320cbb9f38c0dff66c80ba9aafcf8700c57eef86166"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "bytes": 126848,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "58e52e3c15c971bea549347f3cbd81fe4f4e96eb63a67046bac254565a836838"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_consensus_candidates.tsv",
+      "bytes": 294,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_consensus_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "3480cd3115ac97f8d0f22e41a48aaeb0c2f20b6f3cb9ce7e31215d7060957dd0"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "bytes": 173321,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8ffcd5d8acb5c7604ebb76542a0303ce25a65b4f4d1e2fb29ca40a36a8c8643e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_family_rankings.tsv",
+      "bytes": 2176,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f4a24d2a887463b659762834e9e6797c0ab4233a233181b71b68ae27feb71fe2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "bytes": 64040,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e621f38ef63f9f45c42a3f508a03aa1f97749c1474f59709a0c593fb0756bb69"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "bytes": 471,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "2ba1750355f32d41ee926201100def6f9ac8a048209a0c78aa78de2d0a95873e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "bytes": 7830,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8a59028049508e197674f0a3aacf8f651ee6574a6f8bf0b10f4578ca3958e213"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_candidates.tsv",
+      "bytes": 4306,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8a907bde215771cfaf2abc47d1d8182232d266da268773525f0feb4d370d1a1c"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_coverage.tsv",
+      "bytes": 281,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_coverage.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0e588f45789ab98952f1b17703330e828f6e7ac731caa6d64f6f26111c73b082"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "bytes": 97259,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "032b8df5daf50086b36f9d411386cdb48b3b7eba74fb0ebae54cd3ee417a9d86"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "bytes": 45062,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ab84925b8ecf2037c97397522965278675759a1314b5ee6dd22797f2d2be965a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "bytes": 43693,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4c0672994c56b8b840004d8a28ed44111abaa2e09281a13abf9b04e6a5b26940"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_google_adoption_patterns.tsv",
+      "bytes": 558,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_google_adoption_patterns.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d3ab4e0af6d711f18f028ee59de1d90485392887e5a87ccd13319e9d8af67983"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_google_candidate_readings.tsv",
+      "bytes": 4994,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_google_candidate_readings.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "513bb4294589af888c0b8d2c54d0b29952350d5f435f8afd2025856097ef0b2a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_initial_i_residual_candidates.tsv",
+      "bytes": 165,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_initial_i_residual_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "697257923f28d85488a9f368f6af667e8941f36cb2ff6b9c7fa13361069aa42e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_latin_integrity_candidates.tsv",
+      "bytes": 2635647,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_latin_integrity_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_latin_integrity.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "df6a392dd448c63448d5b4ed74368915898df73d969165ab6478f3b8d8e9bc66"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_orthography_damage_candidates.tsv",
+      "bytes": 29262,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_orthography_damage_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4fac19bd0b252d8523491dacbdc9fe90f093445f9b7daa197ed92712746954bf"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_script_ng_witness_candidates.tsv",
+      "bytes": 284,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_script_ng_witness_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "85b0444057bd52e2022d8f49fdb89a49f8492f7d7ed184a68f085e7807ad61c8"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_8_b/tibetan_variant_families.tsv",
+      "bytes": 5096,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_8_b/tibetan_variant_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4622cda2937cd775f32bc8ba8ce7d0172e1d15707e6191cb5def2ddb9617910d"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/reference_marker_candidates.tsv",
+      "bytes": 112660,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/reference_marker_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "9aa825dbe5188668784dc6bab86a5abf41c45b0d775f6fa5902dcaab98536e97"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/reference_marker_token_families.tsv",
+      "bytes": 61105,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/reference_marker_token_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "1306f2e390b680a624fbe8cb386a3ca3d39a25119aeb737d9ab36233bb4d92d7"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/residual_sanskrit_low_confidence_candidates.tsv",
+      "bytes": 30949,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/residual_sanskrit_low_confidence_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "52160cc4bb2b548138503c6d213162558fbb54f61a6d80c0b120282375bc13f6"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/sigla_variant_candidates.tsv",
+      "bytes": 17575,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/sigla_variant_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f034c68c01133e5faf42ce82aa8dd31a01ab12c9b3e764a1c6ce42b5d79e3793"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/summary.md",
+      "bytes": 4567,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/summary.md",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d4c6655cdaacb35c5afb6bea465159a537e1fa2a13c809002521dd9f69289b00"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_anchor_count_changes.tsv",
+      "bytes": 164,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_anchor_count_changes.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7df13ccb69440e5bebe67320cbb9f38c0dff66c80ba9aafcf8700c57eef86166"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "bytes": 126848,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_anchor_hardening_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "58e52e3c15c971bea549347f3cbd81fe4f4e96eb63a67046bac254565a836838"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_consensus_candidates.tsv",
+      "bytes": 597,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_consensus_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "45455e4802efda97a852df3dcedb5a65fc9fde3fa755e2a88559c4ae2443c6f0"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "bytes": 61393,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_dotted_anchor_provenance.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f126c12eed89ef55e7de8811ef2c2b7e3e961a5eb51228dfd40034a973e1ab69"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_family_rankings.tsv",
+      "bytes": 2176,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f4a24d2a887463b659762834e9e6797c0ab4233a233181b71b68ae27feb71fe2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "bytes": 64040,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e621f38ef63f9f45c42a3f508a03aa1f97749c1474f59709a0c593fb0756bb69"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "bytes": 328,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_malformed_anchor_audit.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "bd6a577aaaa054032b3527cec11efd267439f8ceecfe872ddfc34fa99fc79174"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "bytes": 3564,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_same_entry_echo_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "89f480960d413eceafbe09c4f0bfff2862b310dca0339363663f9635006e570c"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_candidates.tsv",
+      "bytes": 2829,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4aad3baac74b80ad5d642d2fc04ee48a429f1d5cd649288de3fa32c95fb374ec"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_coverage.tsv",
+      "bytes": 281,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_coverage.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0e588f45789ab98952f1b17703330e828f6e7ac731caa6d64f6f26111c73b082"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "bytes": 97259,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_coverage_comparison.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "032b8df5daf50086b36f9d411386cdb48b3b7eba74fb0ebae54cd3ee417a9d86"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "bytes": 45062,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_family_rankings.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ab84925b8ecf2037c97397522965278675759a1314b5ee6dd22797f2d2be965a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "bytes": 43693,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_final_ng_source_compatible_reclassifications.tsv",
+      "producer": "python3 scripts/build_tibetan_final_ng_consensus.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4c0672994c56b8b840004d8a28ed44111abaa2e09281a13abf9b04e6a5b26940"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_google_adoption_patterns.tsv",
+      "bytes": 40033,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_google_adoption_patterns.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "be71a60c1140815f7c2ac03113b280eadae57f4f0a73f7f4ef06d92646619bf5"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_google_candidate_readings.tsv",
+      "bytes": 32924,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_google_candidate_readings.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "71058c21ef173c680fa1dbe4d6919d61eab765c0465b9b89cd4ec0dd2656e65a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_initial_i_residual_candidates.tsv",
+      "bytes": 165,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_initial_i_residual_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "697257923f28d85488a9f368f6af667e8941f36cb2ff6b9c7fa13361069aa42e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_latin_integrity_candidates.tsv",
+      "bytes": 1669596,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_latin_integrity_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_latin_integrity.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "88d1c858fe10f3ab50a24a1b2053f1213cc60a665862a99f98ed90e4c301b65c"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_orthography_damage_candidates.tsv",
+      "bytes": 23416,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_orthography_damage_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a508f6a531664e391b45142a7b935dc9f876dc38827e7012fd0eef594330ba02"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_script_ng_witness_candidates.tsv",
+      "bytes": 284,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_script_ng_witness_candidates.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "85b0444057bd52e2022d8f49fdb89a49f8492f7d7ed184a68f085e7807ad61c8"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/tibetan_cleanup_diagnostics_wts_9_m/tibetan_variant_families.tsv",
+      "bytes": 19164,
+      "logical_path": "tibetan_cleanup_diagnostics_wts_9_m/tibetan_variant_families.tsv",
+      "producer": "python3 scripts/build_tibetan_cleanup_diagnostics.py",
+      "provenance": "generated diagnostic input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4da955b85ff03c151809a69300bd6964446c62dc059358cefb084a9b183657af"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/bucket_report.artifact_tokens.tsv",
+      "bytes": 26502,
+      "logical_path": "wts_1_34/bucket_report.artifact_tokens.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8e042af34342e28ec47f884ae8dfa70dc0d24f0c9f3240ca321840aee31f1bd2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/bucket_report.summary.md",
+      "bytes": 1741,
+      "logical_path": "wts_1_34/bucket_report.summary.md",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e10d29b5cc669ad97ed7c47dabb410ed5a0860a6513e133d82b9421f98cf973b"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/bucket_report.unresolved_pairs.tsv",
+      "bytes": 11510,
+      "logical_path": "wts_1_34/bucket_report.unresolved_pairs.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "6d6bfaec6799b62f74f9cd5a79710c33d0f02193890914385a3a38b70bf75156"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_alternate_witness_adoptions.tsv",
+      "bytes": 1655302,
+      "logical_path": "wts_1_34/wts_1_34_alternate_witness_adoptions.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "866775f1eb6d10d423646c24aebf7c98d7cf71f3eb679b88ab1446b041b49dd0"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_alternate_witness_unresolved.tsv",
+      "bytes": 602138,
+      "logical_path": "wts_1_34/wts_1_34_alternate_witness_unresolved.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a0bfd40ba69dffa1d5201b6c22709e7d14e51e95bf607be5f8e02916e6242267"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_changes.tsv",
+      "bytes": 4499700,
+      "logical_path": "wts_1_34/wts_1_34_changes.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b98493d84147cdb43837596ee8d80c42fe74209c0e3d0fad40eb37db7de36253"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_citation_name_report.tsv",
+      "bytes": 6472,
+      "logical_path": "wts_1_34/wts_1_34_citation_name_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d8cc4796b6357923baef66f8bbae4481747085cdfb9dcf2a60b04473cfba510d"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_corrected_full.txt",
+      "bytes": 7726032,
+      "logical_path": "wts_1_34/wts_1_34_corrected_full.txt",
+      "producer": "scripts/postprocess_entry_map.py production pipeline; exact historical invocation unavailable",
+      "provenance": "trusted corrected four-volume text input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "c016df4cd02caa879ec2b6a4b4f854aa05174dd1339f06c7d5a183469b222e83"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_discovered_patterns.tsv",
+      "bytes": 4567,
+      "logical_path": "wts_1_34/wts_1_34_discovered_patterns.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0bacac0428d7a96336a24ee60487173c5ab4474b0c1157b7854c1a7905b1c8e4"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_line_zones.tsv",
+      "bytes": 16832002,
+      "logical_path": "wts_1_34/wts_1_34_line_zones.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4fe61ce8cf384c65efdac75a6a3a80d670e885b1f18956cb14a7ff52e93c459d"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_review_queue.tsv",
+      "bytes": 6516,
+      "logical_path": "wts_1_34/wts_1_34_review_queue.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "71902ead7db88759d5f371884a319e097013ed0d1a6b05dc63cabef2f6729d51"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_sanskrit_report.tsv",
+      "bytes": 22359,
+      "logical_path": "wts_1_34/wts_1_34_sanskrit_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "5f621479e545dd2c10a7fde6f2b28e72e3cbe898f4e9f0c59acea940962dca1a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_summary.json",
+      "bytes": 2524,
+      "logical_path": "wts_1_34/wts_1_34_summary.json",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4437859dacbdcdf59fee91f3eb3e6f8247ec93b73712a88a8cabfee82cc878d6"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_validator_issues.tsv",
+      "bytes": 1757193,
+      "logical_path": "wts_1_34/wts_1_34_validator_issues.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a195ce96a013201616413bdd618d7fea4723083abeeca63196fe810b4ba046fc"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_1_34/wts_1_34_watchdog_flags.tsv",
+      "bytes": 58069,
+      "logical_path": "wts_1_34/wts_1_34_watchdog_flags.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "4a3a069a81768d7feac0b8e5f5c45e9e0e292be664d1b84ca0b243fa9eb671d2"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/bucket_report.artifact_tokens.tsv",
+      "bytes": 16640,
+      "logical_path": "wts_35_51/bucket_report.artifact_tokens.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "31cbf2b0979a65f4edb0928364bccc605be92aa4c2e319978e03b38632c24e70"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/bucket_report.summary.md",
+      "bytes": 1638,
+      "logical_path": "wts_35_51/bucket_report.summary.md",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "01265049204d0319e44deff78ec056fbe22805772545aa03a5f7dcb7e4368ba9"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/bucket_report.unresolved_pairs.tsv",
+      "bytes": 10276,
+      "logical_path": "wts_35_51/bucket_report.unresolved_pairs.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b6311dd5bc2c8f82ee71ff989e98702bd01b18674580b044c698743f30f8785a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_alternate_witness_adoptions.tsv",
+      "bytes": 339335,
+      "logical_path": "wts_35_51/wts_35_51_alternate_witness_adoptions.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7e2b19c83e73a3297913818ee159c73f4d838a848de35b003e187e3fe76132f5"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_alternate_witness_unresolved.tsv",
+      "bytes": 378847,
+      "logical_path": "wts_35_51/wts_35_51_alternate_witness_unresolved.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e3db93eae570967f821468ef5c00810ad02daae4c251419bd0f9fe34512715e5"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_changes.tsv",
+      "bytes": 852906,
+      "logical_path": "wts_35_51/wts_35_51_changes.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "3fe0030e9712164f0d0004ac7461475fa86011c11bc7c627554a53964d5ddf1a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_citation_name_report.tsv",
+      "bytes": 809,
+      "logical_path": "wts_35_51/wts_35_51_citation_name_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "bdcff07afb2c9069b46f496ac45426fdc4794dc6ff4e39ecb731eeb517733ae9"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_corrected_full.txt",
+      "bytes": 3720216,
+      "logical_path": "wts_35_51/wts_35_51_corrected_full.txt",
+      "producer": "scripts/postprocess_entry_map.py production pipeline; exact historical invocation unavailable",
+      "provenance": "trusted corrected four-volume text input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "b0c840a13a66c34a7feafce46907a0a959b3b0d46006d4e25dd678af96a4e2df"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_discovered_patterns.tsv",
+      "bytes": 3987,
+      "logical_path": "wts_35_51/wts_35_51_discovered_patterns.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "55b2ad370b88dad78c6b8f7542ec9b0bdd93c5d1810c51389d293558954c0612"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_line_zones.tsv",
+      "bytes": 8431009,
+      "logical_path": "wts_35_51/wts_35_51_line_zones.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a09c1d948e11ef9dad304d308fa14ed1b46428d512a23ecbecb85dfdff4eca96"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_review_queue.tsv",
+      "bytes": 5682,
+      "logical_path": "wts_35_51/wts_35_51_review_queue.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "babda7a3fa02109d50fe1b2f0649c419f069b65e0b85fa7fac9dc1d6f39d6691"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_sanskrit_report.tsv",
+      "bytes": 15665,
+      "logical_path": "wts_35_51/wts_35_51_sanskrit_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d520f6409c3b8e22579ea67e1541e0518c517c8063131651ac4714aaaaff4d31"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_summary.json",
+      "bytes": 2623,
+      "logical_path": "wts_35_51/wts_35_51_summary.json",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f2e1e57cd39f92c1a71e453746c7da509971a01defe8e68ce9c2f2c73867d616"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_validator_issues.tsv",
+      "bytes": 601830,
+      "logical_path": "wts_35_51/wts_35_51_validator_issues.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "dbfc6d6de33ee79245839ce1b9d68c01414483741572a0e5ffd3c34abbc0c5f0"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_35_51/wts_35_51_watchdog_flags.tsv",
+      "bytes": 11071,
+      "logical_path": "wts_35_51/wts_35_51_watchdog_flags.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "bbddca218550a67960f0917f54c08fd9d3daf28c456b045ba3a582a93e22ec00"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/bucket_report.artifact_tokens.tsv",
+      "bytes": 13532,
+      "logical_path": "wts_8_b/bucket_report.artifact_tokens.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "dfe35c0d1504d6749f22ec3bc7833e6cf0673aee5160bc8b1883ac99fe7ff922"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/bucket_report.summary.md",
+      "bytes": 1528,
+      "logical_path": "wts_8_b/bucket_report.summary.md",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f5d6a98d693665cf6555babbb99177e644370b8b1c9ec5b161a79d1cfe2536cb"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/bucket_report.unresolved_pairs.tsv",
+      "bytes": 7268,
+      "logical_path": "wts_8_b/bucket_report.unresolved_pairs.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "1c7fbf1439f7e84c30a28420d0e99618b1df451f3c8549c77fb32b9ca128ad29"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_alternate_witness_adoptions.tsv",
+      "bytes": 1424,
+      "logical_path": "wts_8_b/wts_8_b_alternate_witness_adoptions.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "780d489b06159ec4d89c9922cd008a7f3075e394e53dbf4b2dbe7c6aca392a8e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_alternate_witness_unresolved.tsv",
+      "bytes": 199792,
+      "logical_path": "wts_8_b/wts_8_b_alternate_witness_unresolved.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "aae222f8815f6ae0efe25da58f38570af3ac3a2bd145e62701f8bf65dd845da8"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_changes.tsv",
+      "bytes": 405680,
+      "logical_path": "wts_8_b/wts_8_b_changes.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "15a8dfddbaa606ae657e1e4495bc6599b7ec59a3eef5828968cf9706fc587d21"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_citation_name_report.tsv",
+      "bytes": 275,
+      "logical_path": "wts_8_b/wts_8_b_citation_name_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "d7ce98afe3f3743951e98dbb3301b44e9497339858b7c7b5ba60e735c1c37880"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_corrected_full.txt",
+      "bytes": 1942511,
+      "logical_path": "wts_8_b/wts_8_b_corrected_full.txt",
+      "producer": "scripts/postprocess_entry_map.py production pipeline; exact historical invocation unavailable",
+      "provenance": "trusted corrected four-volume text input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f6b1100867e62b872369b030d3bd03a5915de122a2f4c7c674ee338cfde8855d"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_discovered_patterns.tsv",
+      "bytes": 3029,
+      "logical_path": "wts_8_b/wts_8_b_discovered_patterns.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "9d309e7288377eb20ccc6aaa8a116ed4bef9757e8b93adc524916aaff9682d88"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_line_zones.tsv",
+      "bytes": 4398788,
+      "logical_path": "wts_8_b/wts_8_b_line_zones.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a4dc5bf219ee48c4db9d0c399c1150f2c6b113648e1ea804e58c09f468286181"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_review_queue.tsv",
+      "bytes": 1464,
+      "logical_path": "wts_8_b/wts_8_b_review_queue.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f60c7cd01e0676165f3c96769dac346e0060f3b25a3bd4ad3428ada7eda6198f"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_sanskrit_report.tsv",
+      "bytes": 7307,
+      "logical_path": "wts_8_b/wts_8_b_sanskrit_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "10126899bd904fe8a8e25fc0958bc5e097633df9ce3f852e4532376259f44b8e"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_summary.json",
+      "bytes": 2414,
+      "logical_path": "wts_8_b/wts_8_b_summary.json",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "96299032e14806c650cb5b5067f2e3d0c2301d099547ed9c4da44b7fd38f7b34"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_validator_issues.tsv",
+      "bytes": 314267,
+      "logical_path": "wts_8_b/wts_8_b_validator_issues.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "577cea6319e3581c95e119d2373b3c8d7d0aa2683e36f07b45cbc63c1ff6b343"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_8_b/wts_8_b_watchdog_flags.tsv",
+      "bytes": 5281,
+      "logical_path": "wts_8_b/wts_8_b_watchdog_flags.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "c0c3b7602b42fafafd5c1499cfbe6db2c8eda9bb3882b4a176791092964b530a"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/bucket_report.artifact_tokens.tsv",
+      "bytes": 12286,
+      "logical_path": "wts_9_m/bucket_report.artifact_tokens.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7b83cf35b7d96ef24715a71f7b5d24468592bca5385e41e4532b61f8f0dde287"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/bucket_report.summary.md",
+      "bytes": 1497,
+      "logical_path": "wts_9_m/bucket_report.summary.md",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "33871d110f26454a24a805c5b1d5c40e6a3818d81750260dc964f72dee6075d9"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/bucket_report.unresolved_pairs.tsv",
+      "bytes": 2217,
+      "logical_path": "wts_9_m/bucket_report.unresolved_pairs.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "f7fe12fb11bc74b8ce00e79af05f04100e1995598309cb82dcbcde24471ed6eb"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_alternate_witness_adoptions.tsv",
+      "bytes": 244325,
+      "logical_path": "wts_9_m/wts_9_m_alternate_witness_adoptions.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "ebe47ca9a4e8e1b15f7b8287fc6c465d593080e35b597493117487543ddd97b4"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_alternate_witness_unresolved.tsv",
+      "bytes": 178221,
+      "logical_path": "wts_9_m/wts_9_m_alternate_witness_unresolved.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "79a3dce4ee4f4caebe07e3af277c01af00732f0480d35a2c6e7175b566e59481"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_changes.tsv",
+      "bytes": 280909,
+      "logical_path": "wts_9_m/wts_9_m_changes.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "8935bad6de49642bb288eb615b1231c84d61bd17e86504a101f522af882cbb10"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_citation_name_report.tsv",
+      "bytes": 526,
+      "logical_path": "wts_9_m/wts_9_m_citation_name_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "dc522fe83cd6419c2eaf1ead4cfcff2c9cf9b9c321c3e9db2aeac20a8f40eefd"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_corrected_full.txt",
+      "bytes": 1332374,
+      "logical_path": "wts_9_m/wts_9_m_corrected_full.txt",
+      "producer": "scripts/postprocess_entry_map.py production pipeline; exact historical invocation unavailable",
+      "provenance": "trusted corrected four-volume text input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e4f847d2a9f517bfcc5f9d7e125945e2dbcb79dcaad2a6a8bd4329f1025b2069"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_discovered_patterns.tsv",
+      "bytes": 2199,
+      "logical_path": "wts_9_m/wts_9_m_discovered_patterns.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "03fbd8f0eaf36939172daa566b0e2d5e20de0acc2ceefbf9bf89cd7f454a3bd3"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_line_zones.tsv",
+      "bytes": 3011758,
+      "logical_path": "wts_9_m/wts_9_m_line_zones.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "9c918ae96ebf2ca914b693ba56eb5427d06e9a3a242663db12c5b99be6310fe7"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_review_queue.tsv",
+      "bytes": 1709,
+      "logical_path": "wts_9_m/wts_9_m_review_queue.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "0e1b4f92f765cd33bf508fca1487cd1a2fc07d8074eebbc6abeb5ff1708bc989"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_sanskrit_report.tsv",
+      "bytes": 5235,
+      "logical_path": "wts_9_m/wts_9_m_sanskrit_report.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "7612ebf685bfaee35906800c274f1f20406f1dd34e1e712b4ca32244144d5346"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_summary.json",
+      "bytes": 2457,
+      "logical_path": "wts_9_m/wts_9_m_summary.json",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "6904f83836adc6480f6068b59b4cb5956521fd284f8785103e01d94e5b49efb6"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_validator_issues.tsv",
+      "bytes": 206842,
+      "logical_path": "wts_9_m/wts_9_m_validator_issues.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "a5e54596dc2e7341d5add5a76ec10cbcb41a236f1a8ab3004afef85c8977287b"
+    },
+    {
+      "archive_path": "wtsocr-release-inputs/wts_9_m/wts_9_m_watchdog_flags.tsv",
+      "bytes": 2442,
+      "logical_path": "wts_9_m/wts_9_m_watchdog_flags.tsv",
+      "producer": "postprocess/reporting production pipeline; exact historical invocation unavailable",
+      "provenance": "generated postprocess QA input; production workspace observed at d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+      "sha256": "e287038ce5419c7442e6f5f27cc827e169684b50ee01f442d118f738eec51591"
+    }
+  ],
+  "release_build": {
+    "build_timestamp": "2026-07-29T16:22:11Z",
+    "production_input_revision": "d407bf522ae6645c50dd7ba9ce4d5b42721d1097",
+    "production_input_workspace": "work/final_ng_seed_clean_20260719T210000Z",
+    "recipe_revision": "aef604d5f50a07d86a397b5199c259c866a5c179"
+  },
+  "release_id": "wtsocr-stable-2026-08-06",
+  "schema_version": 1
+}

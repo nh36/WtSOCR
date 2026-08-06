@@ -1,17 +1,18 @@
 # Current WtS OCR Release Bundle
 
 Generated UTC: `2026-07-29T16:22:11Z`
-Source/code commit observed while building this bundle: `d407bf522ae6645c50dd7ba9ce4d5b42721d1097`
+Build recipe revision: `aef604d5f50a07d86a397b5199c259c866a5c179`
+Production input provenance: `work/final_ng_seed_clean_20260719T210000Z; observed revision d407bf522ae6645c50dd7ba9ce4d5b42721d1097`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
 for this snapshot; it is not the project to-do list.
 The large production outputs under `work/` are local artifacts and are
 not versioned in the repository.
-The source/code SHA above identifies the checkout observed while the
-bundle was staged from those inputs. It is not the SHA of the necessarily
-later commit that checked in the generated files, and later exact reviewed
-updates may be visible in per-file Git history.
+The build command reports its runtime repository revision separately.
+The recipe revision above is pinned for deterministic reproduction and
+the production-input provenance identifies the workspace that produced
+the locked source payload. Neither value is inferred from the other.
 
 No OCR correction behavior is changed by this bundle builder. It copies
 the latest trusted corrected text and compact QA artifacts into
@@ -21,19 +22,24 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/final_ng_seed_clean_20260719T210000Z/wts_1_34` |
-| `wts_35_51` | `work/final_ng_seed_clean_20260719T210000Z/wts_35_51` |
-| `wts_8_b` | `work/final_ng_seed_clean_20260719T210000Z/wts_8_b` |
-| `wts_9_m` | `work/final_ng_seed_clean_20260719T210000Z/wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_9_m` |
+
+## Locked Input
+
+- Input lock: `wtsocr-stable-2026-08-06`
+- Every archived input is verified by SHA-256 before materialization.
 
 ## Corrected Text
 
@@ -209,7 +215,7 @@ the latest trusted corrected text and compact QA artifacts into
 ## Reproduction
 
 ```bash
-python3 scripts/build_current_release_bundle.py
+python3 scripts/reproduce_current_release.py
 python3 -m py_compile scripts/postprocess_entry_map.py scripts/build_current_release_bundle.py scripts/report_unresolved_buckets.py scripts/build_tibetan_cleanup_diagnostics.py
 python3 -m pytest tests/test_postprocess_regressions.py tests/test_tibetan_cleanup_diagnostics.py -q
 ```
