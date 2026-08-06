@@ -6343,3 +6343,203 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1080	32	5780	german_prose	Mahäsattva	Mahāsattva	A	sanskrit_high_freq_allowlist	1	"ler"", Bez. für Mahäsattva."
 1081	16	5790	german_prose	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	traf den Lehrer Nägärjuna, Äryadeva, Cand-
 1081	27	5790	german_prose_with_translit	arya	ārya	A	sanskrit_high_freq_allowlist	1	"dpon chen po arya de wa ""Äryadeva, der gro-"
+34	42	140	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	གདོང་ཆུང་ gdoṅ chun.
+226	35	1245	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-
+361	1	1834	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་གརཆུང་ na ga chun
+740	13	3742	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chun.
+360	43	1829	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་ཁ་ཆུང་ na kha chuṅ auch na ga chun, na gu
+361	8	1835	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་ག་ཆུང་ raga chun lṅa kha chun.
+361	8	1835	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་ག་ཆུང་ raga chun lṅa kha chun.
+361	53	1841	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ན་གུ་ཆུང་ na gu chuṅ lṅa kha chun.
+465	41	2348	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	ནེ་ཆུང་ ne chuṅ npr. auch gSen-za ne'u chun-
+547	8	2685	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	མནོག་ཆུང་ mnog chuṅ Tninag chun.
+633	2	3131	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྣང་ཆུང་ chun.
+1120	51	6102	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	འཕྲུལ་བུ་ཆུང་ bu chun npr. Neffe des
+425	6	2207	headword_line	goh	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri.
+1057	16	5650	tibetan_only	gon	goṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕྲག་གོང་ pbrag gon.
+983	1	5226	headword_line	ston	stoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཕྱི་ནང་སྟོང་པ་ "" phyi naṅ ston pa"
+835	59	4305	example_tibetan_latin	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ur > | སྤྱོད་པ་བཟང་པོ་ spyod pa bzan po npr. ein Bud. dha.
+176	60	1019	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འདུས་གླིང་ ""dus glin Versammlungsgebiet."
+79	13	463	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བདེ་གླིང་ bde gliṅ Kurzf. für bde chen glin pa
+476	14	2389	headword_line	skyon	skyoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནོར་སྐྱོང་ nor skyon.
+85	38	532	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode
+87	67	549	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བདེ་འབྱུང་ bde 'byun.
+848	44	4383	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྤྲིན་འབྱུང་ sprin 'byun.
+680	12	3303	tibetan_only	steh	steṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	པང་སྟེང་ pani steh Ypani eine hohe Zahl, 10".
+424	54	2204	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ནམ་གུང་ nam guṅ auch nam gyi gun, nam gyi
+699	55	3441	headword_line	gun	guṅ	A	reviewed_tibetan_exact_final_ng_echo	1	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+699	55	3441	headword_line	guh	guṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+458	57	2331	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནུབ་བྱང་ nub byan.
+505	1	2562	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"གནམ་ལྷ་བྱང་སྨན་་ ""་ gram lba byan sman"
+379	52	1947	headword_line	tshan	tshaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ནག་ཚང་ nag ishah Kurzf. für nag po'i tshan.
+401	45	2062	headword_line	tshah	tshaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-
+611	55	3017	tibetan_latin_mixed	gtin	gtiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtin 'byin [7770
+884	19	4584	headword_line	phuh	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
+910	31	4728	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕུང་འདྲེ་ phuṅ 'dre auch 'phun 'dre ein Dämon.
+913	27	4747	headword_line	phuh	phuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕུང་གཞི་ 'phuh gźi Grundlage fūr das Verder-
+913	68	4754	headword_line	phun	phuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕུང་གསུམ་པ་ phuṅ gsum pa auch phun sum pa
+878	77	4538	headword_line	chah	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben ""chah"
+941	33	4911	headword_line	brań	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
+600	5	2964	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	རྣམ་བྱུང་ mam byun.
+260	68	1512	tibetan_only	Zin	Ziṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལྡུམ་ཞིང་ ldum Zin.
+157	51	972	headword_line	loh	loṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འདུ་ལོང་ du loh Geschāftigkeit
+873	57	4501	headword_line	lon	loṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban lon
+646	46	3194	headword_line	gdon	gdoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྣེ་གདོང་ sne gdoṅ auch sne'u gdon.
+828	51	4265	headword_line	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྤྱིར་བཏང་ spyir btaṅ auch spyi btan.
+191	47	1070	tibetan_only	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འདོད་འཆིང་ 'dod chin.
+1074	47	5746	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕྲེང་བ་ཅན་ phreṅ ba can auch 'phren ba can.
+1111	15	6029	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འཕྲང་འཕྲེང་ /phran phren Verlangen.
+1121	34	6109	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren Tphren ba."
+1121	35	6110	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕྲེང་ ""phren sich sehnen, lieben; sich sorgen."
+1084	1	5815	headword_line	phan	phaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འཕང་ ""phan"
+737	43	3721	tibetan_only	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཔུང་ 'dpun.
+738	54	3723	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དཔུང་ ""dpun Ldpuṅ pa."
+739	1	3729	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"དཔུང་གི་ཆུང་གི་་ "" dpun gi chuṅ gi"
+739	47	3736	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་མགོ་ dpuṅ mgo auch dpun pa'i mgo
+740	75	3751	headword_line	dpun	dpuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔུང་པ་ dpuṅ pa auch dpun Arm, Oberarm,
+872	31	4499	headword_line	min	miṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"ཕུ་མིང་ ""phba min Vater und Bruder."
+539	29	2670	headword_line	spoh	spoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"གནོད་སེམས་སྤོང་བ་ gnod ses spoh ba ""Aufge-"
+191	14	1070	headword_line	chuh	chuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འདོད་ཆུང་ ""dod chuh auch 'dod pa chuṅ ba ""klei-"
+740	13	3747	headword_line	chuh	chuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དཔུང་ཆུང་ dpuṅ chuh Idpun bu chuṅ.
+636	50	3155	headword_line	snah	snaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
+1059	20	5667	headword_line	snah	snaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
+549	75	2693	headword_line	bkan	bkaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྣ་བཀང་ rma bkaṅ auch rna ga bkan, rma gru
+883	52	4579	headword_line	rdzon	rdzoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕག་རི་རྫོང་ phag ri rdzoṅ auch phag rdzon npr.
+294	65	1659	tibetan_only	sdon	sdoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྡོང་ 'sdon.
+682	2	3314	headword_line	sdon	sdoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdon po
+584	31	2892	headword_line	span	spaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam span
+767	1	3920	tibetan_only	span	spaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"སྤང་ ""span"
+767	48	3920	tibetan_only	span	spaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"སྤང་ ""span"
+768	27	3925	headword_line	skon	skoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྤང་སྐོང་ spaṅ skoṅ auch dpan skon, — phyag
+283	21	1624	headword_line	yah	yaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	སྡུམ་ཡང་ sdum yah eine Amtsbezeichnung in
+400	35	2055	headword_line	nah	naṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནང་འབབ་ nah bab eigener Grundherr
+403	25	2083	tibetan_only	nah	naṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ནང་རིམ་ nah rim Rundweg in einem Gebäude.
+24	46	83	headword_line	gdun	gduṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གདུང་བརྒྱུད་ gduṅ breynd auch gdun rgynd.
+30	68	117	headword_line	gden	gdeṅ	A	reviewed_tibetan_exact_final_ng_echo	1	གདེང་ཚད་ gdeṅ tshad auch gden tsbod Zuver-
+105	33	715	headword_line	mdun	mduṅ	A	reviewed_tibetan_exact_final_ng_echo	1	མདུང་རྩེ་ mduṅ rtse Kurzf. für mdun gi rtse,
+720	49	3571	headword_line	dpan	dpaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	དཔང་ལོ་ dpaṅ lo Kurzf. für dpan lo tsä ba
+943	33	4936	headword_line	yon	yoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཕོ་ཡོང་བཟྲའ་ pho yoṅ bza' auch pho yon gza',
+269	29	1567	headword_line	sdan	sdaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྡང་དགྲ་ sdaṅ dgra Kurzf. für sdan ba'i dgra er-
+242	1	1372	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	རྡོརྗེ་བྱ་ཁྱུང་ rdo rje bya khyun
+1100	46	5941	headword_line	phon	phoṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འཕོང་གི་དཔོང་ས་ 'phoṅ gi dpoṅ sa auch 'phon gi
+498	28	2526	headword_line	luh	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa
+727	35	3630	headword_line	lun	luṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	དཔའ་ལུང་ dpa' lun.
+444	17	2285	headword_line	Sin	Siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Sin.
+881	47	4564	headword_line	sih	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	ཕག་གི་ཤིང་རྟ་ phag gi sih rta
+839	75	4339	headword_line	sprah	spraṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.
+826	11	4252	headword_line	gźuń	gźuṅ	A	reviewed_same_tibetan_target_final_nasal_only	1	སྤྱི་གཞུང་ spyi gźuń Regierung.
+503	18	2556	tibetan_only	sroh	sroṅ	A	reviewed_same_tibetan_target_final_nasal_only	1	གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
+81	29	488	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
+183	18	1047	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
+260	68	1514	headword_line	Ziṅ	źiṅ	A	reviewed_correction_supersession_bridge	1	ལྡུམ་ཞིང་ ldum Ziṅ.
+873	69	4513	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+1014	44	5420	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་ phyir Ziṅ
+1014	73	5421	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
+1015	19	5423	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	"ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ ""dm pa sehr lüstern;"
+1015	36	5425	headword_line	Ziṅ	źiṅ	A	reviewed_tibetan_exact_transcription_integrity	1	ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+499	11	2532	headword_line	dgun	dguṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_historical_witness	yes	གནམ་དགུང་ gnam dgun.
+70	25	411	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདུད བཞི bdud bZi die vier Märas: Skandha
+70	49	413	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདུད་བཞི་བཅོམ་པ་ bdud bzi bcom pa Bez. für
+92	32	593	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བདེན་པ་བཞི་ bden pa bZi auch bden bäi die
+290	53	1641	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	སྡེ་ཚན་བཞི་པ sde tshan bZi pa Isde bźi
+291	1	1646	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	སྡེ་བཞི་ sde bzi
+742	16	3767	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
+990	12	5269	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱི་བཞི་ phyi bzi Zeuge.
+1046	31	5600	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-
+593	1	2942	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	རྣམ་པར་བཞག་པ་་ rnam par bZag pa
+116	2	772	headword_line	snani	snaṅ	A	reviewed_tibetan_exact_ocr_signature	1	མདོ་སྣང་ mdo snani
+147	1	922	tibetan_only	yani	yaṅ	A	reviewed_tibetan_exact_ocr_signature	1	འདི་ལྟར་ཡང་ di ltar yani
+366	44	1878	headword_line	yani	yaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ན་ཡང་ na yani
+552	14	2723	headword_line	gsani	gsaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྣ་བ་གསང་བ་ ma ba gsani ba jmd., der gut hört
+582	14	2887	tibetan_only	snani	snaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྣམ་པར་སྣང་བར་་ rnam par snani bar
+583	1	2889	headword_line	snani	snaṅ	A	reviewed_tibetan_exact_ocr_signature	1	རྣམ་པར་སྣང་བྱེད་ rnam par snani byed
+803	38	4116	headword_line	spyani	spyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྤྱང་ཁ་ spyani kha
+803	77	4118	headword_line	spyani	spyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྤྱང་ཁ་ spyani kha Wolfsmaul.
+939	37	4913	headword_line	brani	braṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྲོ་བྲང་ pho brani
+940	1	4915	headword_line	brani	braṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕོ་བྲང་འཁོར་ pho brani 'khor
+940	47	4916	headword_line	brani	braṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕོ་བྲང་འཁོར་ pho brani 'khor
+966	23	5097	headword_line	tshani	tshaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱག་ཚང་ phyag tshani.
+966	42	5101	headword_line	tshani	tshaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag
+1085	2	5834	headword_line	phani	phaṅ	A	reviewed_tibetan_exact_ocr_signature	1	འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
+1022	1	5470	headword_line	sgani	sgaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱུག་པོ་སྒང་དཀར་་ phyug po sgani dkar
+884	19	4596	headword_line	phani	phaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕང་ཕུང་ phani phuṅ Haufen; ~ byed aufhäufen.
+972	28	5148	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
+972	40	5149	headword_line	phyani	phyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	ཕྱང་བཟུང་ phyani bzuṅ
+1108	42	6021	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon"
+1108	76	6025	headword_line	phyon	phyoṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འཕྱོང་ ""phyon auch 'phyons aufhängen, vgl."
+883	40	4585	headword_line	pbaṅ	phaṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕང་མཁན་ pbaṅ mkhan
+896	54	4662	headword_line	pbyin	phyin	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕར་ཕྱིན་ 'phar pbyin Kurzf. für [/)/7 vol ru
+901	31	4683	headword_line	pbas	phas	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕས་ཀྱི་རྒོལ་བ་ pbas kyi rgol ba. Kurzf. phas rgol
+905	39	4706	headword_line	pbu	phu	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུ་མོ་ pbu mo āltere Schwester.
+923	16	4821	headword_line	pbur	phur	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུར་ཚུགས་པ་ pbur tshugs pa eindringlich, kon-
+926	29	4835	headword_line	pbul	phul	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕུལ་ཕྱིན་ pbul phyin auch phul du phyin pa
+951	18	4986	headword_line	pbon	phon	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕོན་པོ་ pbon po Tphon.
+953	1	5000	headword_line	pbor	phor	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕོར་ཤུབས་ pbor śubs
+974	11	5165	headword_line	pbyam	phyam	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten ""allgemei-"
+994	57	5307	headword_line	pbyiṅ	phyiṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱིང་དྲིལ་ pbyiṅ dril cine Rolle Filz.
+1064	18	5690	headword_line	pbran	phran	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲན་ཚེགས་ pbran tshegs.
+1066	13	5701	headword_line	pbrin	phrin	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲིན་བློན་ pbrin blon ein Minister; in bka'ii
+1068	44	5709	headword_line	pbru	phru	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲུ་རྟོག་ pbru rtog
+1076	29	5776	headword_line	pbag	phag	A	reviewed_tibetan_exact_manual_structural_ocr	1	འཕག་ pbag pf. V'phags.
+295	15	1666	headword_line	tbig	thig	A	reviewed_tibetan_exact_manual_structural_ocr	1	སྡོང་ཐིག་ sdoṅ tbig Docht.
+1009	15	5373	headword_line	tbuṅ	thuṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱིར་ཐུང་གིས་ phyir tbuṅ gis vor kurzem.
+408	2	2107	headword_line	kboṅ	khoṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ནད་ཁོང་སྐེམས་པ་ nad kboṅ skems pa auch nad
+562	1	2791	headword_line	kbrims	khrims	A	reviewed_tibetan_exact_manual_structural_ocr	1	རྣམ་དག་ཁྲིམས་གླིང་ rnam dag kbrims gliṅ
+978	43	5198	headword_line	kbuṅ	khuṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
+994	49	5304	headword_line	kbul	khul	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.
+867	18	4469	headword_line	pha	phra	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྲ ""pha gegenüberliegende Seite."
+870	22	4496	headword_line	bi	bri	A	reviewed_tibetan_exact_manual_structural_ocr	1	ཕྲ་བྲི་ pba bi gegenūberliegende Seite; — na
+1024	35	5485	headword_line	dzi	rdzi	A	reviewed_tibetan_exact_manual_structural_ocr	1	"ཕྱུགས་རྫི་ phyngs""dzi Viehhire; = mo Vichhir-"
+1086	68	5847	headword_line	phan	phran	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲན་ ""phan Fehler, schadhafte Stelle, Riß; —"
+1098	11	5931	headword_line	pho	phro	A	reviewed_tibetan_exact_manual_structural_ocr	1	"འཕྲོ་ ""pho ausgießen; vgl. 1'bo."
+235	31	1302	example_tibetan_latin	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	"der einen geilen und bumsgierigen Vajra hat- རྡ་རྔ་ཁྱུང་རྒྱལ rdo པའ ""9 rgal !gnod sbyin"
+238	28	1333	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རྗེ་སྙིང་པོ་ rdo rje sāiṅ po npr. cin Bodhisattva,
+243	44	1388	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རྗེའི་སྐྱིལ་ཀྲུང་ rdo rje'i skyil kruṅ
+247	32	1433	headword_line	རྡ	རྡོ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	རྡ་རངས་ rdo riṅs auch rdo rin Steinstele, Stein-
+34	51	141	headword_line	mjng	mjug	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	གདོང་མཇུག་ gdoṅ mjng die beiden Mondkno-
+399	55	2051	headword_line	chnd	chud	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ནང་བྱན་ཆུད་ naṅ byan chnd auch naṅ byan
+702	51	3478	headword_line	mkhynd	mkhyud	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	པུས་མཁྱུད་ pus mkhynd eine Schnur oder ein
+878	38	4543	headword_line	drng	drug	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drng
+904	38	4702	headword_line	phn	phu	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	ཕུ་མདུད་ phn mdud Knoten zum Schutz ge-
+1024	35	5485	headword_line	phyngs	phyugs	A	reviewed_tibetan_exact_manual_structural_vowel_ocr	1	"ཕྱུགས་རྫི་ phyngs""rdzi Viehhire; = mo Vichhir-"
+476	57	2399	headword_line	གི	གྱི	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	རྭ་གི་དབང་ཕྲག་ nor gyi dbaṅ phyug Beiname
+599	39	2966	headword_line	ཕོད	ཕྱོད	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	མ།་ཕོད་་ nam phyod auch rnam phyog eine ho-
+1041	6	5564	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕྱོགས་སྐོང་ phyogs skyoṅ Hūter der Weltgegen-
+1049	3	5621	headword_line	ཕོལ	ཕྱོལ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	ཕོལ་ཐོའ། phyol phyol onom., vgl. Taal. 62,3); spyi ru mnam pa bźi yin te... dpon gsas
+537	46	2659	headword_line	bzar	bzaṅ	A	reviewed_tibetan_exact_final_ng	1	གནོད་སྦྱིན་གང་བཟང་ grod sbyin gaṅ bzar
+104	47	705	headword_line	mdiuṅ	mduṅ	A	reviewed_tibetan_exact_manual_multi_error	1	མདུང་ཐོགས་ mdiuṅ thogs
+295	1	1664	headword_line	dikar	dkar	A	reviewed_tibetan_exact_manual_multi_error	1	སྡོང་གྲོགས་ཞལ་དཀར་་ sdoṅ grogs Zal dikar
+818	14	4198	headword_line	khbyab	khyab	A	reviewed_tibetan_exact_manual_multi_error	1	སྤྲི་ཁྱབ་མཁན་པོ་ spyi khbyab mkhan po eine
+974	41	5174	headword_line	phyami	phyam	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱམ་མེ་བ་ phyami me ba eben, flach.
+1024	43	5486	headword_line	phbyuṅ	phyuṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱུང་ phbyuṅ
+1045	34	5594	headword_line	tsami	tsam	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱོགས་ཙམ་ phyogs tsami nur ein wenig, ein biß-
+1052	22	5637	headword_line	pbhra	phra	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲ་རྒྱས་ pbhra rgyas Laster, Neigung.
+1064	1	5688	headword_line	pbhran	phran	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲན་རྩེ་ pbhran rtse
+1065	8	5693	headword_line	pbhras	phras	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྲས་ཀྱིས་ pbhras kyis plötzlich.
+25	6	85	headword_line	ཆག	ཆོག	A	reviewed_exact_tibetan_headword_vowel_ocr	1	གདུང་ཆག་ gduṅ chog eine Totenzeremonie
+92	67	595	headword_line	གསང	གསུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བདྡེན་པ་གསང་བྲ་ bden pa gsuṅ ba Bez. für Bud-
+917	3	4790	headword_line	ཚགས	ཚོགས	A	reviewed_exact_tibetan_headword_vowel_ocr	1	ཕུན་སུམ་ཚགས་པ phun sum tshogs pa Kurzf.
+1028	80	5503	headword_line	pbye	phye	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-
+166	39	982	headword_line	dung	dug	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	འདུག་སྟངས་ dung staṅs Stellung, Sitzweise.
+421	1	2160	headword_line	nnam	nam	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
+467	12	2361	headword_line	nne	ne	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནེ་ལ་ nne la Abhāngigkeit.
+485	9	2474	headword_line	nnor	nor	A	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	1	ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-
+266	59	1555	headword_line	prom	phrom	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	"ལྗོང་ཕྲོམ་ ldoṅ prom ""weißes Kupfer"", vgl. Bia-"
+702	19	3471	headword_line	pub	phub	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕུབ་ pub lphub.
+702	26	3472	headword_line	pur	phur	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕུར་ཁང་ pur khaṅ Leichenhaus, Leichenplatz,
+712	38	3503	headword_line	pyuṅ	phyuṅ	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱུང་ pyuṅ lphyun.
+712	47	3507	headword_line	pyaṅ	phyaṅ	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱང་ཆུབ་ pyaṅ chub \byani chab.
+712	54	3510	headword_line	pyih	phyiṅ	A	reviewed_tibetan_exact_manual_multi_error	1	ཕྱིང་ pyih lphyin.
+714	45	3531	headword_line	prig	phrig	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྲིག་ཆུམ་བཀང་ prig chum bkaṅ zögerlich,
+1009	32	5376	headword_line	ton	thon	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ཕྱིར་ཐོན་ 'phyir ton hinausgehen, herauskom-
+972	41	5150	headword_line	phyari	phyaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	ཕྱང་ཆད་ phyari chad auch phyan bcad entschie-
+402	10	2070	headword_line	ishud	tshud	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	ནང་ཚུད་ raṅ ishud innerhalb von, in.
+38	56	168	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	གདོན་ཕལ་པ་བཞི་ gdon phal pa bi eine Gruppe
+174	28	1014	headword_line	gi	gźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
+1120	45	6114	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འཕྲུལ་མི་བཞི་ phrul mi bi
+683	4	3333	headword_line	ppad	pad	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	པད་མའི་དྲག་ ppad ma' dgra dgra.
+884	3	4580	headword_line	pphaṅ	phaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕང་འགྲ pphaṅ gro JAULENMSTTUMENE.
+972	48	5139	headword_line	pphyaṅ	phyaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
+1020	39	5450	headword_line	pphyis	phyis	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
+1090	34	5866	headword_line	pphar	phar	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕར་ཞིབ་ pphar Zib Fluktuation,
+1113	2	6044	headword_line	pphral	phral	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der

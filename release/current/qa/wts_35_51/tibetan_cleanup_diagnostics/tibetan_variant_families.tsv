@@ -31,7 +31,6 @@ dngos_family:dnos:dṅos	dngos_family	dnos (2)	dṅos (2)	2	1	wts_35_51:47:86; w
 google_tibetan_diacritic_disagreement:nani:naṅ	google_tibetan_diacritic_disagreement	nani (2)	naṅ (2)	2	1	wts_35_51:18:79; wts_35_51:164:45	"kla klo 'di mmams nani 'khrug gis gud de ""die || 45,2); phyi nani kun tu 'bar gyin— / der Iha"	google_unresolved_tibetan_context:2	medium:2	review
 google_tibetan_diacritic_disagreement:zes:źes	google_tibetan_diacritic_disagreement	Zes (2)	źes (2)	2	1	wts_35_51:73:28; wts_35_51:177:36	"ña btul ba'i ... le'u Zes bya ba ste beu ~o ""das || grol ba dan ni rigs dan imndzod / — Zes pa"	google_unresolved_tibetan_context:2	medium:2	review
 loc_nasal_damage:'gyañńs:'gyañṅs	loc_nasal_damage	'gyañńs (2)	'gyañṅs (2)	2	1	wts_35_51:896:15; wts_35_51:1007:36	"ཕར་འགྱང་ phar 'gaṅ auch phar 'gyañńs Auf- || Lex. phar 'gyañńs su btan ba ""hinausgescho-"	orthography_scan:2	medium:2	review
-loc_nasal_damage:brań:braṅ	loc_nasal_damage	brań (2)	braṅ (2)	2	1	wts_35_51:817:22; wts_35_51:941:33	bäugs pa'i pho brań sa ~r ñi Su rtsa geig bäugs || ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die	orthography_scan:2	medium:2	review
 loc_nasal_damage:bzuñń:bzuñṅ	loc_nasal_damage	bzuñń (2)	bzuñṅ (2)	2	1	wts_35_51:248:43; wts_35_51:641:57	"ba ran phyis rgya cher skyed nas ~ gis bzuñń || lag pas chos gos ~ bzuñń nas ""sie halten mit der"	orthography_scan:2	medium:2	review
 loc_nasal_damage:dań:daṅ	loc_nasal_damage	dań (2)	daṅ (2)	2	1	wts_35_51:214:49; wts_35_51:531:41	191,17); ba ~ gñan dań thag bsrins la (metr.) || kbri do re smyah zun dań / ~ sña do re	orthography_scan:2	medium:1, low:1	review
 loc_nasal_damage:goń:goṅ	loc_nasal_damage	goń (2)	goṅ (2)	2	1	wts_35_51:122:14; wts_35_51:1108:8	"ten"" (MTH3/5/9 5); goń bkod drag Zan su'i || 220); goń po (Mim2 220); rkan pa gñis khums"	orthography_scan:2	medium:2	review
@@ -106,6 +105,7 @@ google_tibetan_diacritic_disagreement:zin:źiṅ	google_tibetan_diacritic_disagr
 loc_nasal_damage:'dpuṅń:'dpuṅṅ	loc_nasal_damage	'dpuṅń (1)	'dpuṅṅ (1)	1	1	wts_35_51:737:37	དཔུང་ 'dpuṅń	orthography_scan:1	medium:1	review
 loc_nasal_damage:bcań:bcaṅ	loc_nasal_damage	bcań (1)	bcaṅ (1)	1	1	wts_35_51:409:10	gźug pa'i phyir mchan khug bcań bar bya'o	orthography_scan:1	medium:1	review
 loc_nasal_damage:brañń:brañṅ	loc_nasal_damage	brañń (1)	brañṅ (1)	1	1	wts_35_51:711:38	"Lex. ba gam ste pho brañń gi sdins cha ""ba gam:"	orthography_scan:1	medium:1	review
+loc_nasal_damage:brań:braṅ	loc_nasal_damage	brań (1)	braṅ (1)	1	1	wts_35_51:817:22	bäugs pa'i pho brań sa ~r ñi Su rtsa geig bäugs	orthography_scan:1	medium:1	review
 loc_nasal_damage:brdzañńs:brdzañṅs	loc_nasal_damage	brdzañńs (1)	brdzañṅs (1)	1	1	wts_35_51:817:32	pa gdan dren pa la sa skya pa ~s brdzañńs	orthography_scan:1	medium:1	review
 loc_nasal_damage:brkyañń:brkyañṅ	loc_nasal_damage	brkyañń (1)	brkyañṅ (1)	1	1	wts_35_51:462:53	"Nacken schlagen?"" (K6 tha 21877); brkyañń"	orthography_scan:1	medium:1	review
 loc_nasal_damage:broń:broṅ	loc_nasal_damage	broń (1)	broṅ (1)	1	1	wts_35_51:2:49	"broń ru ~ cig tu beng ""sie steckte es in das"	orthography_scan:1	low:1	review
@@ -121,7 +121,6 @@ loc_nasal_damage:gsuñń:gsuñṅ	loc_nasal_damage	gsuñń (1)	gsuñṅ (1)	1	1	
 loc_nasal_damage:gsuṅń:gsuṅṅ	loc_nasal_damage	gsuṅń (1)	gsuṅṅ (1)	1	1	wts_35_51:689:69	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana	orthography_scan:1	medium:1	review
 loc_nasal_damage:guñń:guñṅ	loc_nasal_damage	guñń (1)	guñṅ (1)	1	1	wts_35_51:1085:45	"lde bla guñń rgyal ni ti tse ganis rum du ""phanste"	orthography_scan:1	medium:1	review
 loc_nasal_damage:gzuń:gzuṅ	loc_nasal_damage	gZuń (1)	gZuṅ (1)	1	1	wts_35_51:197:32	"འདོདབློ་ dodblo Wunsch gZuń ma rñed pas ""da ich keinen Text gefun-"	orthography_scan:1	medium:1	review
-loc_nasal_damage:gźuń:gźuṅ	loc_nasal_damage	gźuń (1)	gźuṅ (1)	1	1	wts_35_51:826:11	སྤྱི་གཞུང་ spyi gźuń Regierung.	orthography_scan:1	medium:1	review
 loc_nasal_damage:khañń:khañṅ	loc_nasal_damage	khañń (1)	khañṅ (1)	1	1	wts_35_51:389:12	rgyal mo daṅ / slas dan / ~ ma mchis pa'i khañń	orthography_scan:1	medium:1	review
 loc_nasal_damage:kyañń:kyañṅ	loc_nasal_damage	kyañń (1)	kyañṅ (1)	1	1	wts_35_51:967:16	'tshol na / dud de ni pyag kyañń 'tshal (metr.)	orthography_scan:1	medium:1	review
 loc_nasal_damage:kyań:kyaṅ	loc_nasal_damage	kyań (1)	kyaṅ (1)	1	1	wts_35_51:555:39	chos klon chen po mtshoms bźed skad cig kyań	orthography_scan:1	medium:1	review

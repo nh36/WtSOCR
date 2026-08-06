@@ -52,7 +52,15 @@ TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
     "གཙང": "gtsaṅ",
     "ནང": "naṅ",
     "རང": "raṅ",
+    "ཉངས": "ñaṅs",
+    "ཆུང": "chuṅ",
+    "སྒྲུང": "sgruṅ",
+    "ངུ": "ṅu",
 }
+TIBETAN_SCRIPT_NG_WITNESS_SOURCE_FORMS = {
+    "ṅu": "hu",
+}
+SCRIPT_NG_DAMAGED_CONTEXT_RE = re.compile(r"[{}?¡£]|\bSQ\b")
 TIBETAN_INITIAL_I_FORMS = {
     "Ita": "lta",
     "Itar": "ltar",
@@ -386,7 +394,10 @@ REFERENCE_MARKER_TRANSLITERATION_CUE_RE = re.compile(
 
 
 def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, str] | None:
-    source = latin_n_source_for_ng_target(target)
+    source = TIBETAN_SCRIPT_NG_WITNESS_SOURCE_FORMS.get(
+        target,
+        latin_n_source_for_ng_target(target),
+    )
     if token == source:
         return {
             "proposed_target": target,
@@ -396,8 +407,8 @@ def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, 
             "base_proposed_target": target,
             "evidence": "tibetan_script_witness",
             "score_explanation": (
-                "Latin n conflicts with same-line Tibetan-script ང witness; "
-                "review exact rows rather than applying a broad n->ṅ rule."
+                "Latin token conflicts with a directly aligned Tibetan-script ང witness; "
+                "review exact rows rather than applying a broad character rule."
             ),
         }
     for prefix, marker in REFERENCE_MARKER_PREFIX_TARGETS.items():
@@ -417,6 +428,22 @@ def candidate_target_for_ng_witness_token(token: str, target: str) -> dict[str, 
     return None
 
 
+def tibetan_witness_occurrences(context: str, witness: str) -> list[tuple[int, int]]:
+    """Find complete Tibetan syllable witnesses, excluding longer-form substrings."""
+    spans: list[tuple[int, int]] = []
+    start = 0
+    while True:
+        index = context.find(witness, start)
+        if index < 0:
+            break
+        end = index + len(witness)
+        following = context[end : end + 1]
+        if not following or following in {"་", "།", " ", "\t"}:
+            spans.append((index, end))
+        start = index + 1
+    return spans
+
+
 def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str] | None:
     clean = stripped_token(token)
     if not clean or is_german_prose(context):
@@ -424,7 +451,7 @@ def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str]
     if not TIBETAN_SCRIPT_RE.search(context):
         return None
     for tibetan_witness, target in TIBETAN_SCRIPT_NG_WITNESS_FORMS.items():
-        if tibetan_witness not in context:
+        if not tibetan_witness_occurrences(context, tibetan_witness):
             continue
         proposed = candidate_target_for_ng_witness_token(clean, target)
         if proposed and proposed["proposed_target"] != clean:
@@ -437,12 +464,105 @@ def classify_tibetan_script_ng_token(token: str, context: str) -> dict[str, str]
                 "base_proposed_target": proposed["base_proposed_target"],
                 "tibetan_witness": tibetan_witness,
                 "evidence": proposed["evidence"],
-                "confidence": "high",
-                "suggested_action": "exact_promotion_candidate",
-                "score": "98",
+                "confidence": "unclassified",
+                "suggested_action": "categorize_alignment",
+                "score": "0",
                 "score_explanation": proposed["score_explanation"],
             }
     return None
+
+
+def script_ng_alignment_category(
+    *,
+    line: str,
+    token_start: int,
+    token_class: dict[str, str],
+    same_candidate_count: int,
+    zone_row: dict[str, str] | None,
+) -> dict[str, str]:
+    """Classify alignment strength without treating same-line presence as proof."""
+    if token_class["reference_marker_source"]:
+        return {
+            "review_category": "marker_attached_candidate",
+            "confidence": "manual",
+            "suggested_action": "separate_marker_and_final_ng_review",
+            "score": "40",
+            "score_explanation": (
+                "Marker reconstruction and final-nasal reconstruction require "
+                "independent evidence."
+            ),
+        }
+
+    witness = token_class["tibetan_witness"]
+    witness_count = len(tibetan_witness_occurrences(line, witness))
+    if witness_count != 1:
+        return {
+            "review_category": "damaged_or_competing_context",
+            "confidence": "low",
+            "suggested_action": "defer",
+            "score": "20",
+            "score_explanation": (
+                "The relevant Tibetan witness is absent or repeated, so unique "
+                "token alignment is not established."
+            ),
+        }
+
+    if same_candidate_count > 1:
+        return {
+            "review_category": "repeated_same_lemma_alignment",
+            "confidence": "manual",
+            "suggested_action": "manual_alignment_review",
+            "score": "70",
+            "score_explanation": (
+                "One Tibetan witness co-occurs with repeated Latin candidates; "
+                "each repetition must be aligned independently."
+            ),
+        }
+
+    if SCRIPT_NG_DAMAGED_CONTEXT_RE.search(line):
+        return {
+            "review_category": "damaged_or_competing_context",
+            "confidence": "low",
+            "suggested_action": "defer",
+            "score": "20",
+            "score_explanation": (
+                "The candidate phrase contains additional OCR damage, so the "
+                "final-nasal alignment is not promoted automatically."
+            ),
+        }
+
+    zone_name = (zone_row or {}).get("zone", "")
+    last_tibetan_end = max(
+        (match.end() for match in TIBETAN_SCRIPT_RE.finditer(line)),
+        default=-1,
+    )
+    direct_zone = zone_name in {
+        "headword_line",
+        "example_tibetan_latin",
+        "tibetan_latin_mixed",
+    }
+    if direct_zone and last_tibetan_end <= token_start:
+        return {
+            "review_category": "direct_unique_alignment",
+            "confidence": "high",
+            "suggested_action": "exact_promotion_candidate",
+            "score": "98",
+            "score_explanation": (
+                "One Tibetan final-ང witness aligns with one Latin candidate in "
+                "the corresponding headword or transliteration phrase."
+            ),
+        }
+
+    return {
+        "review_category": "same_line_unaligned",
+        "confidence": "low",
+        "suggested_action": "defer_unless_entry_alignment_confirmed",
+        "score": "35",
+        "score_explanation": (
+            "Tibetan and Latin forms share a line, but direct headword or phrase "
+            "alignment is not established."
+        ),
+    }
 
 
 def classify_tibetan_initial_i_token(token: str, context: str) -> dict[str, str] | None:
@@ -862,9 +982,21 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 def write_tsv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, delimiter="\t", fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(
+            f, delimiter="\t", fieldnames=fields, extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
-        writer.writerows(rows)
+        terminal_field = fields[-1]
+        for row in rows:
+            output_row = dict(row)
+            # A terminal empty field is serialized as a trailing tab, which
+            # fails repository whitespace validation and makes regenerated
+            # diagnostics appear malformed.  Preserve the audited absence
+            # explicitly instead.
+            if not output_row.get(terminal_field, ""):
+                output_row[terminal_field] = "none"
+            writer.writerow(output_row)
 
 
 def iter_corrected_lines(path: Path):
@@ -926,15 +1058,49 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
     corrected = find_one(run_dir, "_corrected_full.txt")
     if not corrected:
         return []
+    zones = load_line_zones(run_dir)
     rows: list[dict[str, str]] = []
     for page, line_no, line in iter_corrected_lines(corrected):
         if not line:
             continue
+        classified_matches: list[tuple[int, re.Match[str], str, dict[str, str]]] = []
         for token_index, match in enumerate(POSTPROCESS_TOKEN_RE.finditer(line), start=1):
             tok = stripped_token(match.group(0))
             token_class = classify_tibetan_script_ng_token(tok, line)
             if not token_class:
                 continue
+            classified_matches.append((token_index, match, tok, token_class))
+        line_tokens = [
+            stripped_token(match.group(0))
+            for match in POSTPROCESS_TOKEN_RE.finditer(line)
+        ]
+        candidate_counts: Counter[tuple[str, str]] = Counter()
+        for _, _, _, token_class in classified_matches:
+            key = (
+                token_class["tibetan_witness"],
+                token_class["base_source_token"],
+            )
+            candidate_counts[key] = sum(
+                token
+                in {
+                    token_class["base_source_token"],
+                    token_class["base_proposed_target"],
+                }
+                for token in line_tokens
+            )
+        for token_index, match, tok, token_class in classified_matches:
+            alignment = script_ng_alignment_category(
+                line=line,
+                token_start=match.start(),
+                token_class=token_class,
+                same_candidate_count=candidate_counts[
+                    (
+                        token_class["tibetan_witness"],
+                        token_class["base_source_token"],
+                    )
+                ],
+                zone_row=zones.get((str(page), str(line_no))),
+            )
             rows.append(
                 {
                     "source_queue": "corrected_text_scan",
@@ -950,12 +1116,13 @@ def build_script_ng_witness_candidates(run_dir: Path, volume: str) -> list[dict[
                     "base_proposed_target": token_class["base_proposed_target"],
                     "tibetan_witness": token_class["tibetan_witness"],
                     "candidate_family": token_class["candidate_family"],
+                    "review_category": alignment["review_category"],
                     "context_excerpt": line,
                     "evidence": token_class["evidence"],
-                    "confidence": token_class["confidence"],
-                    "suggested_action": token_class["suggested_action"],
-                    "score": token_class["score"],
-                    "score_explanation": token_class["score_explanation"],
+                    "confidence": alignment["confidence"],
+                    "suggested_action": alignment["suggested_action"],
+                    "score": alignment["score"],
+                    "score_explanation": alignment["score_explanation"],
                 }
             )
     return rows
@@ -1172,6 +1339,15 @@ def build_google_candidates(run_dir: Path, volume: str, registry: dict[str, list
     for row in read_tsv(path) if path else []:
         candidate = classify_google_row(row, volume, registry)
         if candidate:
+            # Keep absent alignment provenance explicit.  Empty terminal TSV
+            # fields produce trailing-tab churn and obscure whether provenance
+            # was checked or merely unavailable.
+            for field in (
+                "alignment_method",
+                "alignment_attribution",
+                "resynchronization_attribution",
+            ):
+                candidate[field] = candidate.get(field, "") or "not_recorded"
             rows.append(candidate)
     return rows
 
@@ -1445,6 +1621,7 @@ def main() -> None:
         "base_proposed_target",
         "tibetan_witness",
         "candidate_family",
+        "review_category",
         "context_excerpt",
         "evidence",
         "confidence",

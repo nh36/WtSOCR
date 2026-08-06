@@ -1,0 +1,5 @@
+volume	page	line	token_index	tibetan_syllable	malformed_dotted_token	valid_anchor_count_for_tibetan_syllable	matches_historical_frozen_target	audit_decision	context_excerpt
+wts_1_34	82	166	2	སྣང	snaṅı	79	no	exclude_internal_ng_not_final_coda	ཀུན་སྣང་ kun snaṅı
+wts_1_34	672	41	2	ཟང	zaṅs	1	no	exclude_internal_ng_not_final_coda	ཆོལ་ཟང་ས་ chol zaṅs Spucknapf, Nachttopf,
+wts_1_34	710	105	3	ཡང	yaṅı	32	no	exclude_internal_ng_not_final_coda	ཇི་ལྟར་ཡང་ ji ltar yaṅı
+wts_1_34	714	51	3	གངས	gaṅıs	3	no	exclude_internal_ng_not_final_coda	ཇོ་མོ་གངས་ jo mo gaṅıs

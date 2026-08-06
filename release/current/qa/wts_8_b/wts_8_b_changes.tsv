@@ -2954,3 +2954,121 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 553	44	2924	german_prose_with_translit	Nägärjuna	Nāgārjuna	A	sanskrit_high_freq_allowlist	1	"ba lṅa broya la ... 'tsho ba ""Nägärjuna ge-"
 557	11	2945	latin_other	Prajnāpāramitā	Prajñāpāramitā	A	sanskrit_high_freq_allowlist	1	"'dodla ""wenn er diese Prajnāpāramitā geben"
 565	44	2994	german_prose_with_translit	Ajnāpayitavya	Ajñāpayitavya	A	sanskrit_jn_cluster_context_gate	1	"nen (skt. Ajnāpayitavya)"" (Suv 59,16); chos"
+496	36	2675	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	འབྲི་ཆུང་དགོན་པ་ chun dgoṅ pa npr. ein
+581	26	3105	example_tibetan_latin	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	Schlange hält, Schlangenhalter སྦྲ་ཆུང་ sbre chun ein Gefäß, vgl. tbre chui.
+341	35	1777	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་ 'dban.
+345	13	1799	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་སྒྱུར ," dban sgyur pf. und fur. dban bsgyur
+352	41	1853	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ "dban po
+356	1	1862	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ "dban po
+356	7	1863	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོ་ ?dban po ↑ dpaṅ.
+358	34	1886	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་པོའི་བརྡ་སྤྲོད་ °་ dban po'i brda sprod
+363	57	1935	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་འབྱོར་ ?dban 'byor Macht, Pracht.
+363	67	1937	headword_line	dban	dbaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	དབང་མེ * dban med machtlos, ohne Macht,
+142	39	678	headword_line	rkan	rkaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng_consensus	yes	བྱ་རྐང་ bya rkan.
+212	42	1155	headword_line	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	བྱིས་ཆུང་ 'byis chuṅ auch byis pa chun rn klei-
+529	25	2819	tibetan_only	chun	chuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_script_ng_witness	yes	སྤག་ཆུང་ sbag chun.
+100	8	487	headword_line	than	thaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུམ་ཐང་ bum than.
+39	51	186	tibetan_only	glah	glaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བན་གླང་མོ་ ban glah mo Ibal glari mo.
+68	56	323	headword_line	glan	glaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བལ་གླང་མོ་ bal glaṅ no auch ban glan mo Ele-
+328	8	1700	headword_line	bzan	bzaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བློ་བཟང་ blo bzan.
+444	56	2430	headword_line	glin	gliṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབུམ་གླིང་ ""bum glin npr. ein Meditationgk ol."
+462	32	2522	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ byun.
+463	48	2524	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+464	1	2525	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+466	1	2527	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ "byun
+466	47	2528	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ཁུངས་ "byun khuns
+469	46	2542	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་ "byun po
+470	1	2543	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་ཅན་ "byun po can
+470	23	2548	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོ་འཛིན་བྱེད་ "byun po 'dzin byed Bez. für
+470	46	2553	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོའི་རྟེན་མ་ "byun po'i rten ma auch '/))///3?
+470	62	2556	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་པོའི་བྱ་ "byun po'i bya "Vogel der '"byun-
+472	1	2565	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་བ་ཉིད་ byuh ba ñid
+472	14	2566	headword_line	byuh	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་བ་ཉིད་ byuh ba ñid.
+473	1	2576	headword_line	byun	byuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱུང་ཚུལ་ "byun tshul
+432	24	2371	headword_line	don	doṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབབ་ཆུའི་དོང་ ""bab chn'i don Quelle, Brunnen."
+162	46	833	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྱང་ ""byan"
+163	68	847	headword_line	byah	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྱང་བགྲོད་ byah bgrod ""der Lauf [der Sonne]"
+165	48	855	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྱང་ཆུབ་ཀྱི་སླིང་ * byan chub kyi sin
+175	62	930	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་ཕྱོགས་ 'byaṅ phyogs Kurzf. für byan gi
+177	50	944	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྱང་སྨན་ byaṅ sman Kurzf. für byan /?/// mig
+179	7	957	headword_line	byan	byaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.
+104	76	516	tibetan_only	chan	chaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བེ་ཅོན་འཆང་ be con 'chan.
+498	1	2683	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲིང་ངེ་བ་ ""'brin ne ba"
+499	1	2686	headword_line	brin	briṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲིང་ཚོ་ ""brin tsho"
+263	25	1446	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྲང་སྤད་ braṅ sprad auch bran phrad Grundla-
+263	45	1451	headword_line	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྲང་བྲེང་ ""bran bren Tdran dreṅ."
+279	2	1494	example_tibetan_latin	btan	btaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	und Butter und beräuchere [das Pferd] mit བྲུབས་བཏང་ brubs btan pf.
+580	45	3100	headword_line	chin	chiṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	ལ་འཆིང་ sbrul chin.
+481	67	2628	example_tibetan_latin	bran	braṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"kommt"" (dPeD 186,2). འབྲང་ས་ ""bran sa Tbran sa."
+263	45	1451	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བྲང་བྲེང་ ""braṅ bren Tdran dreṅ."
+284	19	1516	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བྲེང་ 'breṅ auch 'bren Brauch, Gepflogenheit,
+284	23	1516	tibetan_only	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བྲེང་ ?bren npr. ein Ort.
+512	2	2735	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren pf. P'breris folgen; vgl. 1'bran."
+512	9	2736	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren npr. Vater des Ru-las-skyes."
+512	13	2736	tibetan_only	bren	breṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྲེང་ ""bren \bren."
+512	33	2740	headword_line	bren	breṅ	A	reviewed_tibetan_exact_final_ng_echo	1	འབྲེང་པ་ 'breṅ pa auch 'bren ba Lederriemen.
+409	62	2266	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ 'dbyi mon.
+409	73	2267	headword_line	mon	moṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	དབྱི་མོང་ ?dbyi mon Tdbyi mo.
+112	45	563	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"བོང་ར་ ""bon rgya"
+113	24	566	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བོང་ང་ནག་པོ་ boṅ na nag po Kurzf. bon nag
+113	38	567	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བོང་ང་དམར་པོ་ boṅ na dmar po auch bon ba
+115	52	584	headword_line	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བོང་བུ་ལན་ ° bon bu lan tshwa eine Heilpflan-
+115	66	586	tibetan_only	bon	boṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བོང་རྨེ * bon rmed Schweifriemen, Schwanz-
+21	1	76	headword_line	lan	laṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"པ་ལང་ ""ba lan"
+83	25	392	headword_line	chuh	chuṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	བུ་ཆུང་ bu chuh auch ~ ñu.
+307	24	1614	headword_line	blan	blaṅ	A	reviewed_tibetan_exact_final_ng_echo	1	བླང་དོར་ blaṅ dor auch blan dan dor ba annch-
+486	7	2644	headword_line	gah	gaṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྲས་གང་ 'bras gah eine Pflanze, Zypergras;
+571	65	3031	headword_line	sbran	sbraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྦྲང་ཆང་ sbraṅ chaṅ auch sbran can alkoho-
+573	8	3039	headword_line	sbran	sbraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྦྲང་བུ་མཆུ་རིང་ sbraṅ bu mchu riṅ auch sbran bu
+576	44	3079	headword_line	sbran	sbraṅ	A	reviewed_tibetan_exact_final_ng_echo	1	སྦྲང་ཡབ་ sbraṅ yab auch sbran g.yab Wede
+143	8	685	headword_line	khyun	khyuṅ	A	reviewed_tibetan_exact_final_ng_echo	1	ཁྱུང་ bya khyun cin myth. Vogel, skt. garuda.
+476	21	2595	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	"འབྱོང་ ""byon V'byan."
+476	22	2596	headword_line	byon	byoṅ	A	reviewed_tibetan_exact_final_ng_consensus	1	འབྱོང་ ®byon reinigen, vgl. Isbyon.
+433	23	2381	headword_line	tshon	tshoṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲམ།་ཚོང་ ""bam tshon Zwangskauf."
+49	49	232	headword_line	sih	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བའི་ཤིང་ཐོར་དོག་ཤིང་ ba'i siṅ thor dog sih npr. ein
+305	5	1607	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	བླ་ཤིང་ bla sin.
+408	49	2254	example_tibetan_latin	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"brin zhorzlalnapa la'an ""auch für den fünf ར་ཤིང dbyar sin Feuerholz für den Som-"
+438	28	2412	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབར་ཤིང་ ""bar sin Schwefel."
+493	24	2667	tibetan_only	sin	siṅ	A	reviewed_tibetan_exact_final_ng_source_compatible	1	"འབྲས་ཤིང་ ""bras sin Vbras bwi Sin,"
+102	59	504	tibetan_only	tin	tiṅ	A	reviewed_tibetan_exact_final_ng_historical_witness	1	བུར་ཏིང་ bur tin.
+398	42	2186	headword_line	Zaṅ	źaṅ	A	reviewed_tibetan_exact_transcription_integrity	1	དབོན་ཞང་ dbon Zaṅ Neffe und Onkel, auch
+207	32	1114	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	ནྲ་གྱིས་བརླབ་པ་བཞི་ byin gis brlab pa bzi
+468	40	2545	headword_line	bZi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྱུང་འགྱུར་བཞི་ 'byuṅ 'gyur bZi Bez. für die
+491	17	2664	headword_line	bzi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	འབྲས་བུ་བཞི་ 'bras bu bzi die vier aufeinander-
+128	43	645	headword_line	gZuṅ	gźuṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བོན་གཞུང་ bon gZuṅ Text der Bon-po.
+157	41	807	headword_line	bZag	bźag	reviewed_tibetan_exact	reviewed_tibetan_exact_transcription_integrity	yes	བྱ་བཞག་ bya bZag.
+39	42	184	tibetan_only	chani	chaṅ	A	reviewed_tibetan_exact_ocr_signature	1	"བན་ཆང་ ""ban chani"
+43	37	213	headword_line	yani	yaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བབ་ཚོལ་ཕྱར་ཡང་ bab tshol phyar yani wunüber-
+97	2	461	headword_line	rkani	rkaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བུད་མེད་རྐང་བརྡེག་་ bud med rkani brdeg
+148	27	732	headword_line	btani	btaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བྱ་བཏང་ bya btani pf. zubya gtori.
+258	1	1405	headword_line	tshani	tshaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བྲག་དམར་ཀེའུ་ཚང་ brag dmar ke'u tshani
+310	1	1621	headword_line	kyani	kyaṅ	A	reviewed_tibetan_exact_ocr_signature	1	བླངས་ཀྱང་ blaṅs kyani
+347	42	1823	headword_line	thani	thaṅ	A	reviewed_tibetan_exact_ocr_signature	1	དབང་ཐང་ dbaṅ thani
+494	47	2674	headword_line	rkani	rkaṅ	A	reviewed_tibetan_exact_ocr_signature	1	"འབྲེ ་རྐང་ ""bri rkani"
+505	1	2715	tibetan_only	gsani	gsaṅ	A	reviewed_tibetan_exact_ocr_signature	1	འབྲུ་གསང་ bru gsani
+574	58	3058	headword_line	chani	chaṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྦྲང་རྩི་ཆང་ sbraṅ rtsi chani
+375	17	2032	headword_line	phren	phreṅ	A	reviewed_tibetan_exact_ocr_signature	1	དུ་བའི་འཕྲེང་བ་ dbu bæi 'phren ba lbu ba'i
+434	12	2389	headword_line	zig	źig	A	reviewed_tibetan_exact_ocr_signature	1	འབའ་ཞིག་ 'ba' zig allein, ausschließlich, einzig,
+131	42	655	headword_line	goṅ	groṅ	A	reviewed_tibetan_exact_manual_structural_ocr	1	བོལ་གྲོང་ bol goṅ oberer Teil des Fußes, Fuß-
+357	14	1874	headword_line	རྟལ	རྟུལ	A	reviewed_exact_tibetan_headword_vowel_ocr	1	དབང་པོ་རྟལ་ dbaṅ po rtul Tdbani rtul.
+119	5	601	headword_line	ཀི	ཀྱི	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	དྲ་ཀི་འབངས་ bod kyi 'baṅs \bod 'bans.
+144	1	694	headword_line	སྐོང	སྐྱོང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྱ་གག་སྐོང་བ་ bya gag skyoṅ ba
+161	5	833	headword_line	བག	བྱག	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	"བག་མཁན་ ""byag mkhan Kehrer, vgl. tphyag"
+163	7	841	headword_line	རྐང	རྐྱང	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བྲང་རྐང་ byaṅ rkyaṅ Kiang, ein Wildesel,
+269	62	1481	headword_line	བམ	བྲམ	A	reviewed_exact_tibetan_headword_subjoined_ocr	1	བམ།་ཟེའི་བུ་ bram ze'i bu Brahmanensohn. SCHUH 2012: 1496.
+113	2	569	headword_line	borṅ	boṅ	A	reviewed_tibetan_exact_manual_multi_error	1	བོང་ང་དཀར་པོ་ borṅ ra dkar po Kurzf. bori dkar
+522	28	2804	headword_line	rrba	rba	A	reviewed_tibetan_exact_manual_multi_error	1	རྦ་ཚད་ rrba tshad Arbeitsdruck, Streß.
+345	72	1813	headword_line	chur	chuṅ	A	reviewed_tibetan_exact_final_ng	1	དབང་ཆུང་ dbaṅ chur schwach, machtlos, un-
+470	67	2565	headword_line	byur	byuṅ	A	reviewed_tibetan_exact_final_ng	1	འབྱུང་པོའི་དབང་པོ་ byur po'i dbaṅ po Beiname Sivas.
+472	44	2579	headword_line	byur	byuṅ	A	reviewed_tibetan_exact_final_ng	1	"འབྱུང་བའི་གནས་ ""byur ba'i gnas ] '/)7///?? gnas."
+576	61	3087	headword_line	sbrar	sbraṅ	A	reviewed_tibetan_exact_ocr_signature	1	སྦྲང་ལྷག་ sbrar lhag Bienenwachs.
+99	51	485	headword_line	bbum	bum	A	reviewed_tibetan_exact_manual_multi_error	1	བུམ་སྒྲུབ་ bbum sādhana mit einem Gefäß,
+113	45	573	headword_line	bboṅ	boṅ	A	reviewed_tibetan_exact_manual_multi_error	1	བོང་ཆེ་ཆང་ bboṅ che \bons che (/)//7?.
+269	2	1476	headword_line	bbram	bram	A	reviewed_tibetan_exact_manual_multi_error	1	བྲམ་ཟེའི་ཁྱེའུ་ bbram ze'i khye'u brao
+323	1	1679	headword_line	bblo	blo	A	reviewed_tibetan_exact_manual_multi_error	1	བློ་གདེངས་བསྐྱེད་ bblo gdeṅs bskyed blo ldan
+116	4	595	headword_line	ཆང	ཆུང	A	reviewed_exact_tibetan_headword_vowel_ocr	1	བངས་ཆེ་ཆང་ boṅs che chuṅ auch bon che chi
+95	10	458	headword_line	tshari	tshaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	བང་ཚང་ buṅ tshari Bienennest.
+538	5	2872	headword_line	tshari	tshaṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྤུག་ཚང་ sbug tshari betrügerisch.
+572	18	3040	headword_line	churi	chuṅ	A	reviewed_tibetan_exact_final_ri_to_ng	1	སྦྲང་ཆུང་ sbraṅ churi ein Insckt, Fliege.
+357	1	1873	headword_line	riul	rtul	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	དབང་པོ་རྟུལ་ dbaṅ po riul
+116	8	591	headword_line	sioms	sñoms	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	བོངས་སྙོམས་ boṅs sioms gleiche Größe, glei-

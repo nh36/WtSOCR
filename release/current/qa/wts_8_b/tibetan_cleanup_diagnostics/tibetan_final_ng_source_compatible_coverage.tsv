@@ -1,0 +1,13 @@
+metric	count
+aligned_undotted_candidates_considered	496
+no_compatible_anchor	331
+one_compatible_anchor	135
+two_or_more_compatible_anchors	30
+identity_guard_excluded	67
+damaged	26
+marker_attached	11
+dominant	1
+single_anchor	86
+no_anchor	305
+competing	0
+accounted_category_total	496

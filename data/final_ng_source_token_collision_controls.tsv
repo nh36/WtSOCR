@@ -1,0 +1,17 @@
+source_latin_token	tibetan_syllable	expected_latin_form	polarity	volume	page	line	token_index	expected_complete_line_excerpt	correction_family
+mthon	མཐོང	mthoṅ	positive	wts_1_34	78	67	2	ཀུན་མཐོང་ kun mthoṅ Spiegel.	tibetan_mthong_20260719
+mthon	མཐོན	mthon	negative	wts_1_34	1068	8	1	མཐོན་ཀ་ mthon ka.	tibetan_mthong_20260719
+rin	རིང	riṅ	positive	wts_1_34	1158	57	2	དུང་རིང་ duṅ riṅ eine Langtrompete	tibetan_ring_20260719
+rin	རིན	rin	negative	wts_1_34	86	117	2	ཀུན་རིན་ kun rin	tibetan_ring_20260719
+skyon	སྐྱོང	skyoṅ	positive	wts_1_34	52	81	3	ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po	tibetan_skyong_20260720
+skyon	སྐྱོན	skyon	negative	wts_1_34	219	37	1	སྐྱོན་བཀལ་ skyon bkal pf. zu Iskyon 'gel tadeln.	tibetan_skyong_20260720
+sten	སྟེང	steṅ	positive	wts_1_34	948	114	1	སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes	tibetan_steng_20260720
+sten	སྟེན	sten	negative	wts_1_34	949	128	1	སྟེན་ sten pf. und fur. !bsten.	tibetan_steng_20260720
+ston	སྟོང	stoṅ	positive	wts_1_34	157	58	2	རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel vergeblich	tibetan_stong_20260719
+ston	སྟོན	ston	negative	wts_35_51	745	58	2	དཔེ་སྟོན་སྡེ་པ་ dpe ston sde pa	tibetan_stong_20260719
+than	ཐང	thaṅ	positive	wts_1_34	989	136	1	ཐང་ཐན་ thaṅ than sehr klein, mickrig.	tibetan_thang_20260719
+than	ཐན	than	negative	wts_1_34	989	136	2	ཐང་ཐན་ thaṅ than sehr klein, mickrig.	tibetan_thang_20260719
+kon	ཀོང	koṅ	positive	wts_1_34	97	5	1	ཀོང་ཀ་ན་ koṅ ka na	tibetan_kong_20260719
+kon	ཀོན	kon	negative	wts_1_34	99	48	1	ཀོན་ཏི་ kon ti	tibetan_kong_20260719
+gton	གཏོང	gtoṅ	positive	wts_1_34	895	125	1	གཏོང་ gtoṅ pf. Ibtan fur. Tgtan imp. Ithonis.	tibetan_gtong_20260720
+gton	གཏང	gton	negative	wts_1_34	897	40	1	གཏང་ བའ ནོར་ gton ༼/¢'/7 nor	tibetan_gtong_20260720

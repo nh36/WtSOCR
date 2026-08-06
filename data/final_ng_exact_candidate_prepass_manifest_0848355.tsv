@@ -1,0 +1,164 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	121	136	4	ཁུང	khun	khuṅ	echo	uncertain	uncertain	དཀར་ཁུང་ dkar khun \skar khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	176	149	5	ཁུང	khun	khuṅ	echo	explicit_same_lemma_repetition	none	སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	346	127	5	ཁུང	khun	khuṅ	echo	explicit_same_lemma_repetition	none	གབ་ཁུང་ gab khun auch sgab khun Kniekehle.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	489	149	4	ཁུང	khun	khuṅ	echo	uncertain	uncertain	སྒབ་ཁུང་ sgab khun Tgab khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	934	122	5	ཁུང	khun	khuṅ	echo	explicit_same_lemma_repetition	none	ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	935	20	5	ཁུང	khun	khuṅ	echo	uncertain	uncertain	ལྟེ་བ་ཁུང་ Ite ba khun 7//¢ khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	962	9	5	ཁུང	khun	khuṅ	echo	damaged_reference	damaged_reference	སྟོར་ཁུང་ stor khun [།2/07 khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	110	77	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ཀླད་ཁུང་ klad khun Hirnschale.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	121	136	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	དཀར་ཁུང་ dkar khun \skar khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	176	149	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	257	53	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ཁང་ཁུང་ kan khun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	267	30	1	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ཁུང་ khun Loch, Grube, Höhle, Mine.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	267	66	1	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ཁུང་བུ་ khun bu kleines Loch, Höhlung, Pore.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	267	87	1	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ཁུང་ཤེད་ khun sed Inneres.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	346	106	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གབ་ཁུང་ gab khun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	346	127	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གབ་ཁུང་ gab khun auch sgab khun Kniekehle.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	399	55	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གློ་ཁུང་ glo khun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	399	107	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གློ་ཁུང་ glo khun Türöffnung, Guckloch.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	489	149	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྒབ་ཁུང་ sgab khun Tgab khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	493	91	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྒོ་ཁུང་ sgo khun Fenster.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	496	171	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྒྱིད་ཁུང་ sgyid khun Kniekehle.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	682	88	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	མཆན་ཁུང་ mchan khun Achselhöhle, -grube.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	815	102	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྙན་ཁུང་ཆུང་ san khun chuṅ unbeirrbar.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	898	108	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གཏོར་ཁུང་ 'gtor khun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	898	110	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	གཏོར་ཁུང་ 'stor khun auch stor kbun Sammel-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	934	120	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ལྟེ་ཁུང་ lte khun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	934	122	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	935	20	3	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	ལྟེ་བ་ཁུང་ Ite ba khun 7//¢ khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	962	9	2	ཁུང	khun	khuṅ	positional	dominant_internal_consensus	none	སྟོར་ཁུང་ stor khun [།2/07 khun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	134	129	6	གུང	gun	guṅ	echo	cross_reference_probable	none	བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	771	25	6	གུང	gun	guṅ	echo	damaged_reference	damaged_reference	ཉི་མ་གུང་ ri ma gun Wii /7777 gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	771	27	8	གུང	gun	guṅ	echo	explicit_same_lemma_repetition	none	ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	772	8	7	གུང	gun	guṅ	echo	explicit_same_lemma_repetition	none	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	424	54	6	གུང	gun	guṅ	echo	explicit_same_lemma_repetition	none	ནམ་གུང་ nam guṅ auch nam gyi gun, nam gyi
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	425	9	5	གུང	gun	guṅ	echo	uncertain	uncertain	ནམ་གྱི་གུང་ nam gyi guṅ Tnam gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	425	10	6	གུང	gun	guṅ	echo	uncertain	uncertain	ནམ་གྱི་གུང་ཐུན nam gyi guṅ thun Tnam gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	699	55	7	གུང	gun	guṅ	echo	uncertain	uncertain	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	134	129	2	གུང	gun	guṅ	positional	dominant_internal_consensus	none	བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon Mi-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	144	17	2	གུང	gun	guṅ	positional	dominant_internal_consensus	none	བཀའི་གུང་བློན་ bka’i gun blon Ministerrat der zen-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	351	159	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་བསྒྲིགས་ gun bsgrigs
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	351	193	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་འགྲིགས་ gun ’grigs passend, angemessen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	351	199	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་སྒྲིག་ gun sgrig pf. 1,9//77 bsgrigs in Einklang
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	351	206	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་བསྒྲིགས་ gun bsgrigs pl. zu 197/77 sgrig in
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	1	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་ཐང་ gun thaṅ
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	21	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་ཐུན་ gun thun Mittag; Mitternacht.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	39	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་མཐུན་པ་ gun mthun pa in Übereinstim-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	48	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་བློན་ gun blon Innenminister.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	54	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་གསེང་ gun gsen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	70	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་བཙན་ gun btsan Regent.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	76	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་ཚིགས་ gun tshigs auch dgun tshigs Mittag-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	352	105	1	གུང	gun	guṅ	positional	dominant_internal_consensus	none	གུང་གསེང་ gun gseh Urlaub, Freizeit.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	771	25	3	གུང	gun	guṅ	positional	dominant_internal_consensus	none	ཉི་མ་གུང་ ri ma gun Wii /7777 gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	771	27	3	གུང	gun	guṅ	positional	dominant_internal_consensus	none	ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	772	8	3	གུང	gun	guṅ	positional	dominant_internal_consensus	none	ཉ་མའ་གུང་ rl ma’i gun auch fi ma gun.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	699	55	3	གུང	guh	guṅ	positional	dominant_internal_consensus	none	པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1252	93	4	དོང	don	doṅ	echo	explicit_same_lemma_repetition	none	དོང་ don ka auch don ga eine Pflanze, Cas-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	14	4	དོང	don	doṅ	echo	explicit_same_lemma_repetition	none	དོང་ཀྲ་ don kra auch don gra eine Art lngwer;
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	41	4	དོང	don	doṅ	echo	explicit_same_lemma_repetition	none	དོང་པ་ don pa auch don ba Rohr; Köcher.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	100	4	དོང	don	doṅ	echo	explicit_same_lemma_repetition	none	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	78	103	2	དོང	don	doṅ	positional	dominant_internal_consensus	none	ཀུན་དོང་ kun don
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	78	105	2	དོང	don	doṅ	positional	dominant_internal_consensus	none	ཀུན་དོང་ kun don eine Heilpflanze, Zwiebel,
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	942	169	2	དོང	don	doṅ	positional	dominant_internal_consensus	none	སྟག་དོང་ stag don auch stag gdon ein Köcher
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1251	49	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ 'don
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1252	54	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ཀ་ don ka
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1252	93	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ don ka auch don ga eine Pflanze, Cas-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	1	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ཀྲ་ don kra
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	14	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ཀྲ་ don kra auch don gra eine Art lngwer;
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	28	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་རྐ་ don rka Brunnen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	34	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་གྲྭ་ don gra [@0:7 kra.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	36	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ཆུ་ don chu Brunnenwasser.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	41	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་པ་ don pa auch don ba Rohr; Köcher.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	63	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་སྤྲུགས་ don sprugs aufwühlen, i.S.v. aus-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	88	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་བ་ don ba 107 pa.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	90	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་བུ་ don bu Hülse, Röhrchen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1253	100	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་ཙེ་ don tse auch don rtse eine Münze, eine
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1254	1	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་རྩེ་དགུ་བསྐོར་་ don rise dgu bskor ...
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1254	33	1	དོང	don	doṅ	positional	dominant_internal_consensus	none	དོང་རལ་ don ral Köcher.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	432	24	3	དོང	don	doṅ	positional	dominant_internal_consensus	none	"འབབ་ཆུའི་དོང་ ""bab chn'i don Quelle, Brunnen."
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	600	4	5	བྱང	byan	byaṅ	echo	uncertain	uncertain	རྣམ་བྱང་ rnam byaṅ Irnam par byan ba.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	175	62	5	བྱང	byan	byaṅ	echo	cross_reference_probable	none	བྱང་ཕྱོགས་ 'byaṅ phyogs Kurzf. für byan gi
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	177	50	5	བྱང	byan	byaṅ	echo	cross_reference_probable	none	བྱང་སྨན་ byaṅ sman Kurzf. für byan /?/// mig
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	54	134	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ཀིན་བྱང་དྷུ་ kin byan hü !kin jan hu.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	116	112	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ཀླུའི་བྱང་ཆུབ་ klu’i byan chub npr. ein ind. buddh.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	141	104	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བཀའ་བྱང་ bika’ byan
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	141	132	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བཀའ་བྱང་ bka’ byan Lehrschrift.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	155	1	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བཀྲོལ་བྱང་ bkrol byan
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	155	22	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བཀྲོལ་བྱང་ bkrol byan Kommentar.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	245	182	3	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ཁ་ཏོན་བྱང་བ kha ton byan ba redegewandt.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	556	177	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	མངོན་བྱང་ mnon byan Bez. des Weges eines
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	717	76	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	མཇུག་བྱང་ mjug byan Schlußwort in einem
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	750	43	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ལྔགས་བྱང་ ljags byan (zw.).
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	753	60	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བརྗེད་བྱང་ brjed byan Notizen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1027	147	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ཐེམ་བྱང་ them byan Register, Auflistung
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	458	57	2	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	ནུབ་བྱང་ nub byan.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_35_51	505	1	3	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	"གནམ་ལྷ་བྱང་སྨན་་ ""་ gram lba byan sman"
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	162	46	1	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	"བྱང་ ""byan"
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	163	68	1	བྱང	byah	byaṅ	positional	dominant_internal_consensus	none	"བྱང་བགྲོད་ byah bgrod ""der Lauf [der Sonne]"
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	165	48	1	བྱང	byan	byaṅ	positional	dominant_internal_consensus	none	བྱང་ཆུབ་ཀྱི་སླིང་ * byan chub kyi sin
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_8_b	179	7	1	བྱང	byan	byaṅ	positional	damaged_context	damage_before_latin_alignment	བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	65	8	ལིང	lin	liṅ	echo	explicit_same_lemma_repetition	none	ཀ་ལིང་ཀ་ ka lin ka, auch ka linika, ka lin ga, ka
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	350	60	6	ལིང	lin	liṅ	echo	damaged_reference	damaged_reference	གི་ལིང་པ་ gi lin pa 1,97// lin.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	52	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ ka lin, auch ka li ein Ort 111 rMa.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	58	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་འབུད་ ka lin ’bud
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	65	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཀ་ ka lin ka, auch ka linika, ka lin ga, ka
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	97	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་འབུད་ ka lin ’bud Bed. unklar, vielleicht
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	103	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	46	105	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཀ་ལིང་ཡ་ཀ་ ka lin ya ka Ika li ya ka.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	321	174	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	ཞཁོར་ལིང་ ’khor lin kreisrund.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	350	60	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གི་ལིང་པ་ gi lin pa 1,97// lin.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	351	71	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གུ་ལིང་དར་ gu lin dar ein Seidenstoff oder
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	366	115	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྱི་ལིང་ ai lin
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	380	1	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲིབ་ལིང་ grib lin
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	380	7	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲིབ་ལིང་ grib lin eine Augenkrankheit.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	386	3	5	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲོག་སྨན་པི་པི་ལིང་ grog sman pi pi lin
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	386	12	5	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	གྲོག་སྨན་པི་པེ་ལིང་ grog sman pi pi lin ein Heil-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	430	100	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	མགོ་ ལིང་ mgo lin
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1136	60	2	ལིང	lin	liṅ	positional	dominant_internal_consensus	none	དར་ལིང་ dar lin eine Seide, Brokat; chin. 3.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	194	167	4	སེང	sen	seṅ	echo	uncertain	uncertain	AN ང་སེང་པོ་ skya bo sen sen po \skya sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	194	167	5	སེང	sen	seṅ	echo	uncertain	uncertain	AN ང་སེང་པོ་ skya bo sen sen po \skya sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	194	167	8	སེང	sen	seṅ	echo	uncertain	uncertain	AN ང་སེང་པོ་ skya bo sen sen po \skya sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	194	167	9	སེང	sen	seṅ	echo	uncertain	uncertain	AN ང་སེང་པོ་ skya bo sen sen po \skya sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	116	3	སེང	sen	seṅ	echo	direct_repeated_tibetan_alignment	none	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	116	8	སེང	sen	seṅ	echo	explicit_same_lemma_repetition	none	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	116	9	སེང	sen	seṅ	echo	explicit_same_lemma_repetition	none	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	945	72	4	སེང	sen	seṅ	echo	uncertain	uncertain	སྟབ་སེང་ stab sen \stabs sen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	64	130	3	སེང	sen	seṅ	positional	dominant_internal_consensus	none	ཀུན་དགའ་སེང་གེ་ kun dga’ sen ge ein Lama, Schü-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	124	78	3	སེང	sen	seṅ	positional	dominant_internal_consensus	none	དཀར་མོ་སེང་མགོ་ dkar mo sen mgo npr. eine gZe-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	127	15	3	སེང	sen	seṅ	positional	dominant_internal_consensus	none	དཀོན་མཆོག་སེང་གེ་ dkon mchog sen ge npr. ein
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	57	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱ་སེང་ skya sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	96	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱ་སེང་ skya sen auch skya bsen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	116	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	195	116	3	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	215	144	3	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱེས་བུའི་སེང་གེ་ skyes bu’i sen ge „ein Mann wie
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	217	62	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྐྱོ་སེང་བ་ skyo sen ba traurig, verdrießlich.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	256	57	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	ཁ་སེང་ kha sen 1'kha san.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	287	97	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	ཁུང་སེང་འདས་པ་ khyun sen ’dus pa achtfüßiger
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	344	18	2	སེང	seh	seṅ	positional	dominant_internal_consensus	none	གངས་སེང་ gans seh Schneelöwe.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	406	163	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	དྲག་སེང་དྲུག་འགྱར་ dgu sen drug 'gyur eine Me-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	576	89	2	སེང	seh	seṅ	positional	dominant_internal_consensus	none	ཅང་སེང་ can seh auch can se eine Gruppe von
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	817	173	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྙན་སེང་ sñan sen Eingabe, Petition.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	945	72	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	སྟབ་སེང་ stab sen \stabs sen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1136	69	2	སེང	seh	seṅ	positional	dominant_internal_consensus	none	དར་སེང་ dar seh eine feine, dünne Seide.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1300	56	2	སེང	sen	seṅ	positional	dominant_internal_consensus	none	དྲང་སེང་ངེ་བ་ dran sen ne ba geradlinig.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	789	137	6	སོང	son	soṅ	echo	explicit_same_lemma_repetition	none	ཉེ་བར་སོང་ fie bar son auch ñer son, pf. zu Te
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	792	86	5	སོང	son	soṅ	echo	uncertain	uncertain	ཉེར་སོང་ ner son tie bar son.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	165	180	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	རྐྱེན་ཁར་སོང་ rkyen khar son pf. sich mitreißen
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	197	103	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	སྐྱབས་སུ་སོང་ skyabs su son
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	197	105	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	སྐྱབས་སུ་སོང་ skyabs su son pf. zu Tskyabs su ’gro
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	263	53	2	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཁར་སོང་ khar son
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	263	105	2	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཁར་སོང་ khar son neulich.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	374	39	4	སོང	son	soṅ	positional	dominant_internal_consensus	none	གྲང་ལྷང་ངེར་སོང་ gran lhan ner son \gren lhan
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	454	15	2	སོང	son	soṅ	positional	dominant_internal_consensus	none	འགྲོ་སོང་ ’gro son Ausgaben.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	529	3	2	སོང	son	soṅ	positional	dominant_internal_consensus	none	ངན་སོང་ nan son
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	529	5	7	སོང	son	soṅ	positional	dominant_internal_consensus	none	rIa-ra klu-gon von Nan-lam“ (bKth ངན་སོང་ nan son schlechter Daseins-, Wieder-
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	571	122	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	སྔོན་ད་སོང་ shon du son
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	571	124	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	སྔོན་ད་སོང་ shon du son pf. zuvorkommen.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	749	87	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	རྗེས་ས་སོང་ res su son pf. zu Irjes s# ’gro
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	789	137	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཉེ་བར་སོང་ fie bar son auch ñer son, pf. zu Te
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	792	86	2	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཉེར་སོང་ ner son tie bar son.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1021	1	4	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1021	3	4	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཐུམ་རིལ་གྱིས་སོང་ thum ril gyis son untrennbar
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1024	83	3	སོང	son	soṅ	positional	dominant_internal_consensus	none	ཐྲེག་གེ་སོང་ theg ge son fortgehen; vgl. Ithegs.
+0848355ecd7399fbb36bcff65acc9b65e779f546	wts_1_34	1161	62	4	སོང	son	soṅ	positional	dominant_internal_consensus	none	དུད་མུར་བྱོལ་སོང་ dud mur byol son Tier.

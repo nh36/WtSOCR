@@ -1965,7 +1965,7 @@ zehn Bon-Königen (Neb 459).
 ༨༧ ,
 གདུང་སྒྲོམ་ gduṅ sgrom Sarg.
 Lex. ro sgam lta bu (brDa, ähnl. Dagy).
-གདུང་བརྒྱུད་ gduṅ breynd auch gdun rgynd.
+གདུང་བརྒྱུད་ gduṅ breynd auch gduṅ rgynd.
 1. Dynastie, Geschlecht, Abstammung, Ge-
 neration, Hauptlinie, Klan.
 yab mes 'phags rigs ñi ma yi / gduṅ rgyud chos
@@ -2010,7 +2010,7 @@ cin "die Nachfolger [im Kloster gCun] Ri-
 bo-che [u.a.] waren zufrieden gestellt wor-
 den" (Gar 200,14).
 ༨ . . .
-གདུང་ཆག་ gduṅ chog eine Totenzeremonie
+གདུང་ཆོག་ gduṅ chog eine Totenzeremonie
 (SCHWIEGER 2009: VIII).
 གདུང་ཏལ་མ་ gduṅ talma Raum ohne Pfeiler.
 Lex. lcags kyi tal gduṅ lta bu "wie: durchge-
@@ -2481,7 +2481,7 @@ Lex. ~ pa = mi jigs pa'i blo gden rñed pa lta bu
 "wie: furchtloses Vertrauen haben" (brDa);
 gdens thob pa = gtan la phab pa'am mal ma
 "festgelegt oder wahr" (brDa).
-གདེང་ཚད་ gdeṅ tshad auch gden tsbod Zuver-
+གདེང་ཚད་ gdeṅ tshad auch gdeṅ tsbod Zuver-
 sicht, Sicherheit.
 Lex. drod ṅul ni bloi ~ lta ba "die Wär-
 me fühlen: die wirkliche Intention betrach-
@@ -2774,7 +2774,7 @@ Lex. de ma thag gam de 'phral lta bu la
 (Dagy).
 ༨༧ ༠༠
 གདོང་འདྲེ་ gdoṅ 'dre
-གདོང་ཆུང་ gdoṅ chun.
+གདོང་ཆུང་ gdoṅ chuṅ.
 1. engstirnig.
 kbrel med — ma byed par "sei nicht unver-
 schämt und nicht engstirnig" (Glr 106,27).
@@ -2783,7 +2783,7 @@ yan — du bugs dus / bisan zig gis yar 'gro
 mar 'gro byed dus "als er außerdem in gDon-
 chun weilte, ließ ihn ein Dämon bergauf und
 bergab gehen" (Akhri 17,14).
-གདོང་མཇུག་ gdoṅ mjng die beiden Mondkno-
+གདོང་མཇུག་ gdoṅ mjug die beiden Mondkno-
 ten; — ri mo' nes pa Berech-
 nung der mittleren ekliptikalen Längen der
 Mondknoten (Schun 2012: 1422).
@@ -3111,7 +3111,7 @@ gdon chen ab!" (MigTo 237,21).
 Lex. mi ma yin pa (brDa); gnod'tshe byed pa'i
 re "ein 'dre-Dämon, der Schaden stiftet"
 (Dagy).
-གདོན་ཕལ་པ་བཞི་ gdon phal pa bi eine Gruppe
+གདོན་ཕལ་པ་བཞི་ gdon phal pa bźi eine Gruppe
 von gdon (vgl. Neb 310).
 གདོན་མི་འཚལ་ gdon mi tshal resp. für gdon mi
 za ohne Zweifel, zweifellos.
@@ -5755,7 +5755,7 @@ Lex. zla ba (Dagy).
 Schlinge, Attribut von bdud-
 Dämonen (Neb 18).
 un: 57 a yipr 311༥: Ik: -
-བདུད བཞི bdud bZi die vier Märas: Skandha
+བདུད བཞི bdud bźi die vier Märas: Skandha
 Devaputramära (TSEPAK RIGDZIN 2003 s. v.).
 mära, Klesamära, Mrtyupatimära,
 byan chub sems dpa' ... ~ dag dan sa gñis
@@ -5779,7 +5779,7 @@ Lex. ñon mons pa'i bdud / phun po'i bdud
 lha'i bwi bdud 'chi bdag gi —'o (brDa); ñon
 mons pa'i bdud / 'chi bdag gi bdud / phun po'i
 bdud / lha'i bu'i bdud (Dagy).
-བདུད་བཞི་བཅོམ་པ་ bdud bzi bcom pa Bez. für
+བདུད་བཞི་བཅོམ་པ་ bdud bźi bcom pa Bez. für
 Buddha.
 Lex. sans rgyas (brDa, Dagy).
 bdud zil gyis gron Bez. für
@@ -6530,7 +6530,7 @@ ma npr. eine weibliche
 Gottheit im Gefolge des mGon-po lha-chen
 dpal-'bar jo-bo'i-lugs, heißt auch dPal-ldan
 lha-mo remati (Neb 53).
-བདེ་གླིང་ bde gliṅ Kurzf. für bde chen glin pa
+བདེ་གླིང་ bde gliṅ Kurzf. für bde chen gliṅ pa
 npr. ein Bon-Lehrer.
 chn sbrul — bltams "im Wasser-Schlange[-
 Jahr] wurde bDe[-chen] glin[-pa] geboren"
@@ -6702,7 +6702,7 @@ der sde pa skyid śod pas bzun ba'i stod lun —
 daṅ groṅ skor ya man tsam yod ciṅ "das vom
 sde pa sKyid-śod-pa in Besitz genommene
 sTod-luṅ bDe-chen-rdzon" ("Dzam 22,10).
-བདེ་ཆེན་ཞིང་ bde chen Ziṅ das reine Land des
+བདེ་ཆེན་ཞིང་ bde chen źiṅ das reine Land des
 Buddha Amitābha, skt. Sukhāvatī;
 — sgrub meditative Verwirklichung der Su-
 khāvati (SCHWIEGER 1995: XVI).
@@ -7030,7 +7030,7 @@ Lex. sukhendriyam "das Gefühlsvermögen
 'Wohlgefühl'" (Mvy 2069, Abt. dbaṅ po ñi
 Su rtsa 077/5 kyi min).
 བདེ་བར་གཤེགས་པ་ bde bar gsegs pa
-བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode
+བདེ་བའི་འབྱུང་གནས་ bde ba'i byuṅ gnas Iode
 byun].
 བདེ་བའི་རི་ bde ba'i ri npr. ein Yaksa.
 gans can dan / — fd de bZin te (meir.) "[die
@@ -7223,7 +7223,7 @@ blon" (PT1287 384); — gyi 'dun tsa nas bkye
 Heilvolles.
 Lex. dge ba bde sbyin Zes pa'aṅ "Gutes, auch
 dge sbyin" (brDa); dge ba la (Dagy).
-བདེ་འབྱུང་ bde 'byun.
+བདེ་འབྱུང་ bde 'byuṅ.
 1. Kurzf. für bde ba'i 'byun gnas "Quelle des
 Glücks", Bez. für den Dharma, das Gute.
 khyod kyi dga’ ba'i bde ba 'di / — kha na ma
@@ -7582,7 +7582,7 @@ brtag dpyad byed pa'am bden pa bstan pa
 oder die Wahrheit beweisen" (Dagy); bden
 brdar ni dran po "bden brdar: aufrichtg"
 (KlonD 741,5).
-བདེན་པ་བཞི་ bden pa bZi auch bden bäi die
+བདེན་པ་བཞི་ bden pa bźi auch bden bäi die
 Vier Edlen Wahrheiten: das Leiden
 (sdug bsṅal), seine Entstehung (kun byun),
 seine Aufhebung ('gog pa) und der Weg
@@ -7617,7 +7617,7 @@ Weges, die vier" (brDa); sdug bsṅal ba dan
 kun "byun dan 'gog pa dan lam gyi bden pa
 bcas bźi la (Dagy); 'phags pa'i ~ = catvāry
 äryasatyani (Mvy 1189).
-བདྡེན་པ་གསང་བྲ་ bden pa gsuṅ ba Bez. für Bud-
+བདྡེན་པ་གསུང་བྲ་ bden pa gsuṅ ba Bez. für Bud-
 དན་པ་གྲས་ dha, vgl. Ibden par gsun ba 2,
 'di ltar de bZin gsegs pa ni / —s bden 'di gsuns
 (metr.) "der Tathāgata, der die Wahrheit
@@ -8560,7 +8560,7 @@ rtse.
 མདུང་ཅན་ mduṅ can.
 1. mit einem Wurfspieß bewaffnet.
 Lex. prasika (Ak 207.70).
-མདུང་ཐོགས་ mdiuṅ thogs
+མདུང་ཐོགས་ mduṅ thogs
 2. die Wurzel des langen Pfeffers.
 Lex. granthika (Ak 247.110).
 3. Bez. für Eidechse.
@@ -8633,7 +8633,7 @@ Lex. gin rje'i chun ma (brDa, Dagy).
 — rani 'debs 'di la 'khor (metr.) "versammelt
 euch um den Speer, der von selbst zustößt"
 (gZi 2: 66,1).
-མདུང་རྩེ་ mduṅ rtse Kurzf. für mdun gi rtse,
+མདུང་རྩེ་ mduṅ rtse Kurzf. für mduṅ gi rtse,
 mdun gi ma rtse ma.
 1. Speerspitze, Lanzenspitze.
 glan po broya' la / gser gyi — nis broya' rwa
@@ -9513,7 +9513,7 @@ pa'an "bad pas bita bar bya (metr.) "Sūtra-
 samuccaya, mit Eifer soll man auch das zwei-
 te [Werk] lesen, das der erhabene Nāgārjuna
 verfaßt hat" (Bca 5.106b).--
-མདོ་སྣང་ mdo snani
+མདོ་སྣང་ mdo snaṅ
 མད་སྣང་ mmdo npr. ein Kirgise.
 khe rgad — las stsogs pa log ste "der Kirgi-
 se mDo-snan und andere rebellierten" (5750
@@ -12117,7 +12117,7 @@ Lex. tathā hi "denn so, nämlich" (Mvy 5431);
 giphyir ram — = yasmāt "weil, da; daß" (Mvy
 5407); ji lta ba'am ji ltar ram ji nas sam —
 = yatha (Mvy 5403); 'di skad dam — ram de
-bZin zevam "so" (Mvy 5421).འདི་ལྟར་ཡང་ di ltar yani
+bZin zevam "so" (Mvy 5421).འདི་ལྟར་ཡང་ di ltar yaṅ
 འདི་ལྟར་ཡང་ di ltar yaṅ und außerdem, ferner,
 weiter.
 Lex. kim ca (Mvy 5413).
@@ -13030,7 +13030,7 @@ ken aus dem Süden [d.h. Monsunwolken]"
 (metr.) "haltet die Versammlung der sech-
 zchn Abteilungen in Ka-lin in rMa ab!"
 (Gesar 192,33).
-འདུ་ལོང་ du loh Geschāftigkeit
+འདུ་ལོང་ du loṅ Geschāftigkeit
 Lex. zani zin ste dben pa med pa'i don "Ge-
 tümmel, ¦, $. v. nicht einsam" (Dagy).
 འདུ་ཤེས་ du ses fūr skt. samjñā.
@@ -13834,7 +13834,7 @@ degs phun sim tshogs pa yin — pas "es stellt
 einen ausgezeichneten Dienst an der Lehre
 dar" (MTH3/5/18 8).
 Lex. ninon pa "sichtbar sein" (Dagy).
-འདུག་སྟངས་ dung staṅs Stellung, Sitzweise.
+འདུག་སྟངས་ dug staṅs Stellung, Sitzweise.
 yan dag gras kyifs} rab dbye — lta tshul
 daṅ / phra sbom zug (metr.) "die Einzelhei-
 ten deräußeren Erscheinung, [d. h.] die Stel-
@@ -14507,7 +14507,7 @@ mentar des Vinayavastn ist dargelegt, daß
 pitaka.
 Lex. sde snod gsum gyi nani tshan "einer der
 drei Pitakas" (Dagy).
-འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
+འདུལ་བའི་གཞི་ dul ba'i gźi auch 'dul ba gi
 ein buddh. Text, skt. Vinayava-
 sta (Toh 1).
 rgya gar skad du / bi na ya bastu / bod
@@ -14714,7 +14714,7 @@ dem nun die Weltanschauung, die Medi-
 tation und das Verhalten der Mönchsge-
 meinschaft des Klosters bSam-gtan-glin rein
 sind" (MTH3/5/25 3).
-འདུས་གླིང་ "dus glin Versammlungsgebiet.
+འདུས་གླིང་ "dus gliṅ Versammlungsgebiet.
 sgo mkha' 'gro — (r)tswa'i ri "der Gras-
 berg, das Versammlungsgebiet der Däkinis
 in [Zan-Zun] sGo[-pa]" (Tise-Pr 70,19).
@@ -15261,7 +15261,7 @@ mit dem Kopf ein Zeichen geben" (brDa,
 Dasy).
 འདེབས་ཁུང་ 'debs khuṅ Bez. für ein Loch.
 Lex. bu ga'i min (brDa, ähnl. Dagy).
-འདེབས་ཞིང་ 'debs Ziṅ Bez. für Feld, Acker.
+འདེབས་ཞིང་ 'debs źiṅ Bez. für Feld, Acker.
 Lex. sa bon 'debs pa'i Zin "Veld, auf dem gesät
 wird" (Dagy); Zin sa "Acker" (brDa).
 * ?//"› '
@@ -15940,7 +15940,7 @@ kha la — (metr.) "im Mund ist Rägavajrikä"
 འདོད་ཆགས་བྲལ་ 'dod chags bral auch ~ ba
 N] t'dod chags daṅ bral ba.
 ༨ ; Pi .
-འདོད་ཆུང་ "dod chuh auch 'dod pa chuṅ ba "klei-
+འདོད་ཆུང་ "dod chuṅ auch 'dod pa chuṅ ba "klei-
 ne Wünsche habend*, genügsam, be-
 scheiden; Genügsamkeit, Bescheidenheit.
 bcom ldan 'das kyis 'dod pa chun ba'i bsnags
@@ -15973,7 +15973,7 @@ Aussehen und Merkmalen ein śramaṇa ist"
 'dod ion
 Lex. —, — pa = icchantikah (Mvy 2210,
 2223).
-འདོད་འཆིང་ 'dod chin.
+འདོད་འཆིང་ 'dod chiṅ.
 1. Gebundensein durch Begierde.
 Lex. 'dod chags "Begehren" (brDa); 'dod
 chags kyis gzir ba "von Leidenschaft gepei-
@@ -18851,7 +18851,7 @@ Lex. khyab jug (brDa, Dagy).
 Frau, Frau in den besten Jahren.
 Lex. bud med dar ma (brDa, Dagy).
 རྡུལ་ཕྲ་མོ་ rdul phra mo
-རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-
+རྡུལ་ཆུང་ངུ་ chuṅ ru eiṅ sehr kleines Län-
 rdul.
 genmaß, der siebte Teil eines [/7/ zer
 — bilun la ni /7/ zer gyi rdul 0079 go "sieben
@@ -19589,7 +19589,7 @@ säin rje che "der Vajra-Geborene mit großem
 Mitgefühl" (Hev 1.3.8b).
 zer ba'i (r)tsa dmar rgyo dad — 0079 yin pa
 "ein geistlicher Lehrer namens dPal-byor, ze__._.. ., . .
-der einen geilen und bumsgierigen Vajra hat- རྡ་རྔ་ཁྱུང་རྒྱལ rdo པའ "9 rgal !gnod sbyin
+der einen geilen und bumsgierigen Vajra hat- རྡོ་རྔ་ཁྱུང་རྒྱལ rdo པའ "9 rgal !gnod sbyin
 te" (KunK 59,21). por 67 764 Po.
 5. der mit der Zahl 14 gezählte Yoga-
 Abschnitt (Isbyor ba); errechnet sich durch
@@ -19810,7 +19810,7 @@ jah (Mvy 3389, Abt. dri za'i dban po'i min).
 རྡོ་རྗེ་ཉི་མ rdo rje ñi ma Beiname Avalokiteśva-
 ras.
 Lex. spyan ras gzigs (brDa, Dagy).
-རྡ་རྗེ་སྙིང་པོ་ rdo rje sāiṅ po npr. cin Bodhisattva,
+རྡོ་རྗེ་སྙིང་པོ་ rdo rje sāiṅ po npr. cin Bodhisattva,
 skt. Vajragarbha.
 — $77//7 370 che (metr.) "schr mitfühlender Va-
 jragarbha!" (Hev 1.7.17e); — la sogs kun /
@@ -20104,7 +20104,7 @@ Mond als Sitz" (Glr 126,6).
 eine Gottheit, auch Kon-
 btsun bde-mo bzw. Kon-po'i koṅ-bstun de-
 mo, gehört zu den bstan ma bcu 0/7/5 (Neb
-182 f.).རྡོརྗེ་བྱ་ཁྱུང་ rdo rje bya khyun
+182 f.).རྡོརྗེ་བྱ་ཁྱུང་ rdo rje bya khyuṅ
 རྡརྗེ་བྱ་ཁྱུང་ rdo rje bya khyuṅ "Vajragaruda", ein
 Attribut des Mahäkäla Las-mgon
 bya-rog gdon-can (Neb 49).
@@ -20215,7 +20215,7 @@ cärya.
 mhon 'byun gi rgyud la "das Heruka-
 Abhiniskramanatantra, in dem hauptsäch-
 lich die Handlungen eines Vajrācārya gelehrt
-རྡ་རྗེའི་སྐྱིལ་ཀྲུང་ rdo rje'i skyil kruṅ
+རྡོ་རྗེའི་སྐྱིལ་ཀྲུང་ rdo rje'i skyil kruṅ
 werden" (1SK 1: 214,2,2); — bsad pa'i slob
 ma de / mnar med dimyal ba'i gnas su tshud pa
 na "wenn der Schüler, der seinen tantrischen
@@ -20498,7 +20498,7 @@ rMa-tsho bekannten [Gemeinden] rDo-ra
 usw." (Nel 2362); —" zam khar kag ni bzens
 "an der rDo-ra-Brücke errichtete ich einen
 Eingangs-Stüpa" (Dol2 62,20).
-རྡ་རངས་ rdo riṅs auch rdo rin Steinstele, Stein-
+རྡོ་རངས་ rdo riṅs auch rdo rin Steinstele, Stein-
 säule, Obelisk.
 gisigs gnani ba') mdo — la yitg} grau (7. da)
 bris pa' "die Zusammenfassung der Urkun-
@@ -21579,7 +21579,7 @@ garten.
 Lex. la phug sno tsbod la sogs pa "Rettich,
 Gemüse usw." (brDa); sro /(7//?)/ gyi rwa ba
 "Umzäunung für Grünpflanzen" (Dagy).
-ལྡུམ་ཞིང་ ldum Zin.
+ལྡུམ་ཞིང་ ldum źiṅ.
 1. Gemüsegarten.
 Lex. sro tsbod btab sa "ein Ort, an dem man
 Gemüse anpflanzt" (brDa).
@@ -22041,7 +22041,7 @@ und sTon bewachten die Landesgrenzen"
 "die rNog, eine Gruppe der IDon aus den
 vier Klans" (Debm 3235).
 Lex. — nirus min dan (dPeD 197,5).
-ལྗོང་ཕྲོམ་ ldoṅ prom "weißes Kupfer", vgl. Bia-
+ལྗོང་ཕྲོམ་ ldoṅ phrom "weißes Kupfer", vgl. Bia-
 11:% 2015: 277 f.
 khrab bse' sna beu dan / — gi ral gi
 mdor cod / gñis gsol to "er schenkte zehn
@@ -22257,7 +22257,7 @@ Lex. — ba = Ze sdan "Haß" (brDa); — ba =
 (brDa); g.yen spyo ba ni ci dri'am — bar byed
 pa "jmdn. provozieren: etwas fragen oder
 wütend machen" (Liś 13,11).
-སྡང་དགྲ་ sdaṅ dgra Kurzf. für sdan ba'i dgra er-
+སྡང་དགྲ་ sdaṅ dgra Kurzf. für sdaṅ ba'i dgra er-
 bitterter, verhaßter Feind.
 ~s mthon yaṅ mchi ma 'chor (metr.) "auch
 wenn ein erbitterter Feind ihn sieht, bricht
@@ -23394,7 +23394,7 @@ khyim mtshes (KlonD 725,4); sdum mtshes
 ni khyim mtshes (Liś 23,10); sdum mitshes =
 khyim mtshes sam gron pa "Nachbar" (brDa);
 sdum mtshes = khyim mtshes (TTC).
-སྡུམ་ཡང་ sdum yah eine Amtsbezeichnung in
+སྡུམ་ཡང་ sdum yaṅ eine Amtsbezeichnung in
 Sikkim.
 bla dpon ... gar thag — ... dag la sprins pa "ge-
 sandt an die hohen geistlichen Lehrer und
@@ -24016,7 +24016,7 @@ Gruppe der IDon aus den vier Klans" (Debm
 — dir gtogs pa'i sde che ba "in der Nähe des
 Landes Gha-hron [lebt] ein großer Klan, der
 zum Volk der Ja gehört" (Śambh 1335).
-སྡེ་ཚན་བཞི་པ sde tshan bZi pa Isde bźi
+སྡེ་ཚན་བཞི་པ sde tshan bźi pa Isde bźi
 སྡེ་ཚོགས་ sde tshogs Gesellschaft, Verband,
 Verein.
 Lex. imiman po tshogs pa' sde "Abteilung vie-
@@ -24045,7 +24045,7 @@ Rigem Verstoß gegen das gute Verhalten Be-
 trug begangen wird" (MTH3/5/7 6).
 སྡེ་གཞོན་མ་ ssde ma Beiname der Göttin
 Umä.
-Lex. !ba mo // mäb (brDa, Dagy).སྡེ་བཞི་ sde bzi
+Lex. !ba mo // mäb (brDa, Dagy).སྡེ་བཞི་ sde bźi
 སྡེ་བཞི་ sde bźi.
 1. ༈$706.
 2. Kurzf. für sde tshan bZi pa die vier Lebens-
@@ -24329,7 +24329,7 @@ Lex. sdog pa'i bskul tshig "einpacken, Impe-
 rativ" (Dagy); — sig = sie bar ma bsdogs na
 ~~ sig lta bu "wie: wenn etwas nicht fertig
 eingepackt ist, packe ein!" (brDa).
-སྡོང་ 'sdon.
+སྡོང་ 'sdoṅ.
 1. incp. für Isdon po und Isdon bu.
 2. Gras.
 Lex. — dan rtswa = trmam arjunam "Gras"
@@ -24345,7 +24345,7 @@ Helfer; — mdzad jmdn. unterstüt-
 zen, sich jmdn. zum Freund machen.
 dam can tha tshig can la — mdzod (metr.)
 "mache dir jene zu Freunden, die sich an die
-Gelübde halten" (gZi 1: 334,6); bstan pa spelསྡོང་གྲོགས་ཞལ་དཀར་་ sdoṅ grogs Zal dikar
+Gelübde halten" (gZi 1: 334,6); bstan pa spelསྡོང་གྲོགས་ཞལ་དཀར་་ sdoṅ grogs Zal dkar
 na — mdzod (metr.) "wenn ich die [Bon-
 ]Lehre verbreite, unterstütze mich!" (gZi 2:
 66,4); — chos skyon srun ma yod (metr.) "es
@@ -24359,7 +24359,7 @@ ar nn ཅབ a z
 gran po npr. eine
 Berggottheit im Gefolge des sNo-la g.yu-
 rtse (Neb 214).
-སྡོང་ཐིག་ sdoṅ tbig Docht.
+སྡོང་ཐིག་ sdoṅ thig Docht.
 — bcas par "zusammen mit dem Docht"
 (MTH3/3/41 22).
 སྡོང་དུམ་ sdoṅ dum Baumstumpf.
@@ -28279,7 +28279,7 @@ byed pa "eine grüne Wiese von schr großer
 ནཱ་ག་གེ་སར་ nd ga ge sar
 Feuchtigkeit, die [beim Gehen] nachgibt"
 (Dagy).
-ན་ཁ་ཆུང་ na kha chuṅ auch na ga chun, na gu
+ན་ཁ་ཆུང་ na kha chuṅ auch na ga chuṅ, na gu
 chun Blüte einer Hülsenfrucht, Pi-
 sum sativum L., vgl. PasanG 1998: 118 s. v.
 na ga chun.
@@ -28314,14 +28314,14 @@ näga-Baumes und Vetiver: diese [Zutaten]
 soll man zu gleichen Teilen pulverisieren"
 (Suv 80,22); btsod dar — bzun (metr.) "man
 nehme Krapp und die Blüte des Eisenholz-
-baums (skt. nāgakesara)" (Samv 26.40b); —ན་གརཆུང་ na ga chun
+baums (skt. nāgakesara)" (Samv 26.40b); —ན་གརཆུང་ na ga chuṅ
 g@&i sran lam du "auf dem Pfad aus Näga-
 Baum-Blüten" (Lokn 44,12).
 Lex. nā ga gle) sar zans khog dum bu 'dra "nā
 ga ge sar sieht aus wie das Stück von einem
 Kupfertopf" (gYu 294,4); na ga ke sar = na-
 gakesara (Ak 102.65).
-ན་ག་ཆུང་ raga chun lṅa kha chun.
+ན་ག་ཆུང་ raga chuṅ lṅa kha chuṅ.
 ན་ག་པུངླ་ ma ga puspa Bez. für den Blütenkelch
 des Baumes Bombax ceiba L., synon.
 klu'i me tog, vgl. PasanG 1998: 118.
@@ -28366,7 +28366,7 @@ wandte des Tshes-pon Nag-sen, [Tshes-pon]
 Na-gu" (PT1287 196); —s rta geig dan ja sig
 geig phul "Na-gu gab ihm ein Pferd und eine
 Stange Ziegeltee" (Lśdz-K 294,9).
-ན་གུ་ཆུང་ na gu chuṅ lṅa kha chun.
+ན་གུ་ཆུང་ na gu chuṅ lṅa kha chuṅ.
 ན་འགྱུ་ na
 1. (zw.) eine Krankheit.
 Lex. na tsha'l bye brag (brDa).
@@ -28751,7 +28751,7 @@ ben" (Siddh 28.8); dag gis btab — 'khums
 te "als die Soldaten ihn geschlagen hatten,
 krümmte er sich zusammen" (Liyl 18262);
 gsan ba' skad / mi gsun — 'grons par ''gyur
-ན་ཡང་ na yani
+ན་ཡང་ na yaṅ
 (metr.) "er wird sterben, falls er nicht die ge-
 heime Sprache spricht" (Hev 2.3.66d); chaṅ
 mi btun ste 'thun — / fun ba'am chu man
@@ -29840,7 +29840,7 @@ daṅ ldan pa byun (metr.) "dadurch wurde in
 China, welches als ein durch die Divinati-
 on zu zähmender Bereich bekannt ist, [diese
 Kalkulation] angewandt" (Nagdel 5,11).
-ནག་ཚང་ nag ishah Kurzf. für nag po'i tshan.
+ནག་ཚང་ nag ishah Kurzf. für nag po'i tshaṅ.
 1. Bez. für Küche.
 ñin mo ñin mo khyed kyi nag po'i tshan du
 ni / ri dags re re bdag gis rnam par gtan bar
@@ -31511,7 +31511,7 @@ Diener.
 Lex. nan gi bran (Dagy); — ni g.yog (Lis
 27,11); 'bans san — nam rtse rgod = kalpi-
 käarah (Mvy 3840).
-ནང་བྱན་ཆུད་ naṅ byan chnd auch naṅ byan
+ནང་བྱན་ཆུད་ naṅ byan chud auch naṅ byan
 tsbud verstehen, sich auskennen,
 etw. beherrschen.
 Lex. nań byan = khon du chud pa'am yaṅ dag
@@ -31568,7 +31568,7 @@ naheliegt" (brDa); drun na spyod pa'i blon po
 Lex. mantriparsadadhyaksah (Mvy 3678).
 ནང་བློན་སྦྱིན་ nani blon sbyin Richter.
 Lex. drastr (Ak 191.5).
-ནང་འབབ་ nah bab eigener Grundherr
+ནང་འབབ་ naṅ bab eigener Grundherr
 (SCHNEIDER 2012: XX).
 ནང་འབྱེད་ nar 'byed Bez. für Bad, Waschraum.
 Lex. khban chun min "Bez. für kleines Haus
@@ -31657,7 +31657,7 @@ terabteilung (?)" (brDa); gsin pa' mdza'
 grogs lta bu nan lugs su spyod pa la "wie:
 gute Freunde und für: informell handeln"
 (Dagy).
-ང་ཚང་ naṅ tshah Haushalt, Familie, Famili-
+ང་ཚང་ naṅ tshaṅ Haushalt, Familie, Famili-
 enmitglieder.
 skyabs 'gro 'don grabs byas pas / — thams cad
 rgad po smyo byun zer "da er dabei war, die
@@ -31702,7 +31702,7 @@ lo bde mchog gi yul ñer bźťi ~ ... mdo smad
 kam po gans kyi rwa ba "einer der 24 Orte
 des Cakrasamvara, Kam-po-gans-kyi rwa-ba
 in mDo-smad" (KhB 7: 249,5).
-ནང་ཚུད་ raṅ ishud innerhalb von, in.
+ནང་ཚུད་ raṅ tshud innerhalb von, in.
 dgon pa'i mtha' bskor rgya nags bcad (7, bcas)
 pa'i —rtanor / va lugbya phag sogs gso mi chog
 "im Klosterbereich und im Wald ist es nicht
@@ -31790,7 +31790,7 @@ don rig pa Bez. für die buddh. Philo-
 sophie.
 Lex. span blani rig pa'am bslab pa gsum gyi don
 rtogs pa (brDa).
-ནང་རིམ་ nah rim Rundweg in einem Gebäude.
+ནང་རིམ་ naṅ rim Rundweg in einem Gebäude.
 Lex. abhyantarapattikā (Mvy 4362).
 ནང་རུབ་ naṅ rab Morgen und Abend.
 Lex. Zogs pa dan dgons mtha' "Ende des Mor-
@@ -32157,7 +32157,7 @@ erzeugt" (Siddh 19.1); me yi drod ñams ~
 de (metr.) "dies ruft Krankheiten durch eine
 Schwächung der Wärme des Verdauungsfeu-
 ers hervor" (Ahs 1.3.18c).ནད་ཁོང་སྐེམས་པ་ nad khoṅ skems pa
-ནད་ཁོང་སྐེམས་པ་ nad kboṅ skems pa auch nad
+ནད་ཁོང་སྐེམས་པ་ nad khoṅ skems pa auch nad
 khon skem pa Auszchrung,
 Schwindsucht.
 Lex. nad khon skems (v.1. skem) pa = ksaya-
@@ -33191,7 +33191,7 @@ Lex. äkäsatalam "Himmelsfläche" (Mvy
 für die Milchstraße.
 Lex. gnam gyi dgu tshigs (brDa); gram gyi dgu
 tshig (Dagy).
-mkha' skra can.ནམ་མཁའི་ཁམས་ nnam mkha'i khams nam mkha'i säin po
+mkha' skra can.ནམ་མཁའི་ཁམས་ nam mkha'i khams nam mkha'i säin po
 ནམ་མཁའི་ཁམས་ nam mkha'i khams Bereich Lex. nam mkha'i ges (1. gos) can ma / 'phyon
 des Raums, Himmelsraum, ma / tshegs can ma rnams ni smad 'tshon ma'i
 Raum. min gi grans (KlonD 729,4).
@@ -33447,7 +33447,7 @@ bei den Abhāngen des Nordgebirges [lie-
 5 85©1990118
 gen] die Namgata-Länder" (Tär 199,9).
 ནམ་གང་ nam gaṅ Ignam gaṅ.
-ནམ་གུང་ nam guṅ auch nam gyi gun, nam gyi
+ནམ་གུང་ nam guṅ auch nam gyi guṅ, nam gyi
 gun thin, nam dgun, gnam dgmn Bez.
 für Mitternacht, Mitte der Nachit.
 tsan dan gor śi sa'i khan bur nam gyi gun stod
@@ -33474,7 +33474,7 @@ du snan "nam dgun, steht als Bez. für Mit-
 ternacht" (brDa).
 ནམ་གུང་ཅན་ nam guṅ can Bez fūr Nacht.
 Lex. mtshan mo (brDa, Dagy).
-ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri.
+ནམ་གོང་ nam goṅ Bez. für das Mondhaus sa ri.
 Lex. sa ri skar ma (brDa); skar ma sa ri
 (Dagy).
 ནམ་གྱི་གུང་ nam gyi guṅ Tnam gun.
@@ -35109,7 +35109,7 @@ K95.
 yuns 'bru bdun la ni — geig go / — bdun la
 ni sor gcig go "sieben yanis 'bru sind ein nas;
 sieben nas sind ein Zoll" (K95 7733).
-ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Sin.
+ནས་ཀྱི་འཁྲི་ཤིང་ nas kyi 'khri Siṅ.
 1. ein Getreide, Erbse.
 Lex. 'bru Zig (brDa); sran ma (TTC).
 2. Getreidehalm.
@@ -36328,7 +36328,7 @@ dig avanamati (Mvy 3021).
 Varunas.
 Lex. chu lha'i min "Name für den Gott des
 Wassers" (brDa, Dagy).
-ནུབ་བྱང་ nub byan.
+ནུབ་བྱང་ nub byaṅ.
 1. Nordwesten.
 rab legs mdzes ldan can gyi — nos (metr.)
 "an der Nordwestseite, die schr schön ist"
@@ -36904,7 +36904,7 @@ der zwölfte Hor-Monat" (Dagy).
 ནེ་གུ་ ne gu schwarz.
 Lex. nag po (TTC).
 ནེ་གྲོ་དྷ་ ne gro dha \nya gro dha.
-ནེ་ཆུང་ ne chuṅ npr. auch gSen-za ne'u chun-
+ནེ་ཆུང་ ne chuṅ npr. auch gSen-za ne'u chuṅ-
 ma, eine Tochter des gSen-rab Mi-bo.
 bu mo gen za — ma / yab la Sin tu skyo has pas
 (metr.) "als die Tochter gSen-za ne-chun-
@@ -37031,7 +37031,7 @@ rafijanä.
 — las byun sans rgyas sku (metr.) "der aus der
 Wärme entstandene Buddhakörper" (gZi 3:
 129,1).
-ནེ་ལ་ nne la Abhāngigkeit.
+ནེ་ལ་ ne la Abhāngigkeit.
 Lex. drin Zes pa ni — dan (Liś 40,9).
 ནེ་ལེ་ 'ne le ein Vogel, z. B. Falke, Geier.
 cha ga pa dan / byi ba dan / — dan / khyi dan /
@@ -37801,7 +37801,7 @@ kannte ich den Wert des Juwels nicht" (Glu
 5. Resultat einer mathematischen Operati-
 on, Quotient; vgl. SCHUH 2012: 1444.
 6. Bez. für die Zahl 8; vgl. Scrrum 2012: 1444.
-ནོར་སྐྱོང་ nor skyon.
+ནོར་སྐྱོང་ nor skyoṅ.
 1. den Besitz bewachend.
 Lex. nor skyons (brDa).
 2. Bez. für Hund.
@@ -37844,7 +37844,7 @@ des Vaisravana, auch rDo-rje khyun-rgyal
 Lex. sa gi'! min (brDa, Dagy).
 2. Bez. für junge Frau.
 Lex. gźon nu ma la'an (brDa, Dagy).
-རྭ་གི་དབང་ཕྲག་ nor gyi dbaṅ phyug Beiname
+རྭ་གྱི་དབང་ཕྲག་ nor gyi dbaṅ phyug Beiname
 ནརྱ་གཱད ཕྱུག Jambhalas.
 Lex. dzambhala'i min (brDa, Dagy).
 ནོར་གྱི་མཛོད་ nor gyi mdzod.
@@ -38526,7 +38526,7 @@ Lex. nor lha'i bu ste khyab ?//9 gi min = vāsu-
 devah (Mvy 3132); khyab 'jug (brDa, Dagy).
 2. npr. ein Buddha.
 Lex. vasava (Bhad 598).
-ནོར་ལྷས་བྱིན་ nnor lhas byin ein Neffe /\ 0-
+ནོར་ལྷས་བྱིན་ nor lhas byin ein Neffe /\ 0-
 kas.
 rgyal po'i tsha bo — ces bya ba gser gyi mdzod
 8770?" pa yin pa ""Väsudevadatta, der Nef-
@@ -39595,7 +39595,7 @@ dan por — sbor tha che "zuerst war der Him-
 melssohn sBor-tha-che" (Debm 1431).
 Lex. 'kbor bsgyur ram gon ma la'an (brDa,
 Dagy).
-གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa
+གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luṅ pa
 npr. ein Ort in sTod-lun.
 rgyalba'i 'byun gnas stodlun — "der Geburts-
 ort des Siegreichen war gNam-gyi bye-ma
@@ -39661,7 +39661,7 @@ afen.
 Lex. dmigs bkar gyis bzos pa'i gnam gru 'bab
 yul "Landeplatz, der speziell für Flugzeuge
 gebaut wurde" (Dagy).
-གནམ་དགུང་ gnam dgun.
+གནམ་དགུང་ gnam dguṅ.
 1. Inam gun.
 2. Himmelssphāre.
 Lex. nam mkha'i dbyins (Dagy).
@@ -39976,7 +39976,7 @@ rgyan pa dan... phullo "als Erstlingsgabe für
 die Holzarbeiten hat man vier mit Kostbar-
 keiten geschmückte Säulen für den Innen-
 hof dargebracht" (Glr 186,6).
-གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.
+གནམ་རི་སྲོང་བཙན་ gnam ri sroṅ bisan Kurzf.
 gnamri.
 1. npr. der Vater des Sron-btsan sgam-po.
 shun yab gnam ?77/ rin la "ehemals, zu Leb-
@@ -40121,7 +40121,7 @@ gnam-theb dkar-po (Neb 97).
 po byan-chub, gNam-Iha byan-chub, der Va-
 ter des Pe-har (Neb 98).
 གནམ་ལྷ་བྱང་ཆུབ་ gran Iba byani chub.
-1. !gram lha dkar po.གནམ་ལྷ་བྱང་སྨན་་ "་ gram lba byan sman
+1. !gram lha dkar po.གནམ་ལྷ་བྱང་སྨན་་ "་ gram lba byaṅ sman
 2. npr. eine Gottheit im Gefolge des Pe-har
 (Neb 118).
 གནམ་ལྟ་བྱང་སྨན་མཐེིང་གི་གོ་ཟུ་ཅན་ gnam lha byaṅ
@@ -42919,7 +42919,7 @@ Yaksas oder Kinnaras kommen läßt" (Hev
 2.2.2la); tri Sa ku ne dan ni ko sala / ~
 'khor gyis bzun bas ñe ba'i Zin (metr.) "Trisa-
 Lu ` 5 . 5 9 ༼)- ༢༡
-གནོད་སྦྱིན་གང་བཟང་ grod sbyin gaṅ bzar
+གནོད་སྦྱིན་གང་བཟང་ grod sbyin gaṅ bzaṅ
 kuna und Kosala sind "paksetras, weil sie
 von einer Yaksaschar übernommen wurden"
 (Pad 2463); gram bu yul tshal du / — gtsug
@@ -43063,7 +43063,7 @@ Lex. — las 'byin pani — med pa ste byams pa=
 vyapadasyavyapado nihsaranam maitri "das
 Herauskommen aus der Bosheit, die Nicht-
 Bosheit, ist Freundlichkeit" (Mvy 1597).
-གནོད་སེམས་སྤོང་བ་ gnod ses spoh ba "Aufge-
+གནོད་སེམས་སྤོང་བ་ gnod ses spoṅ ba "Aufge-
 ben der Bosheit", eine der
 zehn heilvollen Handlungen.
 Lex. vyapädät prativiratib (Mvy 1697, Abt.
@@ -43704,7 +43704,7 @@ Lex. Zim pa (Dagy).
 4. (zw.).
 Lex. 9407? tshud (Dagy); — pa = 940/? tshud che
 ba sogs (Dagy).
-མནོག་ཆུང་ mnog chuṅ Tninag chun.
+མནོག་ཆུང་ mnog chuṅ Tninag chuṅ.
 མནོག་པ་ mnog pa
 Be
 མནོད་ mnod fut. zu Tnod entgegennehmen.
@@ -43946,7 +43946,7 @@ das den Ton aufnimmt" (brDa); sgra 'dzin
 (Dagy).
 རྣ་ཀོར་ ma kor Ohrring, Ohrschmuck.
 Lex. na rgyan (brDa, Dagy).
-རྣ་བཀང་ rma bkaṅ auch rna ga bkan, rma gru
+རྣ་བཀང་ rma bkaṅ auch rna ga bkaṅ, rma gru
 bkan den Bogen spannen.
 07// ... 7777 drun du thug par bkan ste "er
 spannte den Bogen bis zum Ohr" (Udr
@@ -44121,7 +44121,7 @@ Lex. mnan pa las sla po (brDa); gtan bden
 rdzun mtha' dag la ñan 709 byed pa "jeman-
 den veranlassen, auf alles Wahre und alle Lü-
 gen zu hören" (Dagy).
-རྣ་བ་གསང་བ་ ma ba gsani ba jmd., der gut hört
+རྣ་བ་གསང་བ་ ma ba gsaṅ ba jmd., der gut hört
 oder gut informiert ist.
 rma bya'i Sa ni rluni sel Zin / — ... byed
 do "Pfauenfleisch vertreibt den Wind und
@@ -44922,7 +44922,7 @@ viereckiges [Mandala] mit einem Dreieck"
 pa "der reine Dharmadhātu" (Bu 733,5); rta
 ra klu gon gis / rnam par dag pa bon gyl kha
 bzun 7775 (metr.) "Ta-ra klu-gon ergriff Par-
-tei für die reine Bon-Religion" (bKth 610,4);རྣམ་དག་ཁྲིམས་གླིང་ rnam dag kbrims gliṅ
+tei für die reine Bon-Religion" (bKth 610,4);རྣམ་དག་ཁྲིམས་གླིང་ rnam dag khrims gliṅ
 tschJul khrims — gos gon pas (metr.) "sie tra-
 gen das Gewand einer reinen Moral" (Glr
 24,24); lta ba — gi gZi gzun nas "man legt
@@ -46549,7 +46549,7 @@ pa dan "den Bodhisattva hassen und ver-
 leumden" (Käsy 11,20); phan tshun rtsod pa
 byed pas ni / — 'gyur (metr.) "dadurch, daß
 er Streit untereinander verursacht, kommt
-རྣམ་པར་སྣང་བར་་ rnam par snani bar
+རྣམ་པར་སྣང་བར་་ rnam par snaṅ bar
 Lex. gdon drug la'an "auch für Sanmukha"
 (brDa, Dagy).
 gnon.
@@ -46607,7 +46607,7 @@ nehmung eines in Verwesung befindlichen
 Lex. — Zes bya ba'i tin ne dzin = vairocano
 näma samādhib (Mvy 536).
 erleuchten.
-Lex. vidyotitah (Mvy 6909).རྣམ་པར་སྣང་བྱེད་ rnam par snani byed
+Lex. vidyotitah (Mvy 6909).རྣམ་པར་སྣང་བྱེད་ rnam par snaṅ byed
 SIR ང་བྱེ * mam par snan byed Kurzf.
 རྣམ་པར་སྣང་བྱད ;
 rnam snan byed.
@@ -46726,7 +46726,7 @@ dpyod prüfen, erwägen.
 rna ba'i dban po sgra la — (metr.) "der Hör-
 sinn prüft die Laute" (Suv 42,20).
 Lex. vicärana (Ak 36.135).
-རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam span
+རྣམ་པར་སྤང་ mam par spaṅ Kurzf. rmam spaṅ
 fut. zu Irnam par spon aufgeben,
 von etw. ablassen.
 du 'dzi rnam span bya (metr.) "man lasse
@@ -47423,7 +47423,7 @@ pa, man bZag Anordnung, Darbringung,
 Abmachung, Zustand, Thema.
 des... de dag ni thun nur — go "er ordne-
 te es in kurzer [Form] an" (Prav 37,10);
-rtogs pa dan / rjes su dran pa dan / — paརྣམ་པར་བཞག་པ་་ rnam par bZag pa
+rtogs pa dan / rjes su dran pa dan / — paརྣམ་པར་བཞག་པ་་ rnam par bźag pa
 dan / 'dres pa dan / 'byor ba "Erkennen, Er-
 innerung, Anordnung, Verbindung und Er-
 folg" (MSg 78,28); de'i phyir / rnam par ses
@@ -47959,7 +47959,7 @@ ten hatten, wurden geboren" (Glr 43,21).
 Lex. sgra sñan la'an (brDa, Dagy).
 རྣམ་འཕྲུལ་ rnam 'phrul
 རྣམ་ཕྱིས་ rnam phyis Isnam phyis.
-མ།་ཕོད་་ nam phyod auch rnam phyog eine ho-
+མ།་ཕྱོད་་ nam phyod auch rnam phyog eine ho-
 རྣམ་ཕྱད
 he Zahl.
 Lex. viturnam (Mvy 7730); — (vl. rnam
@@ -48001,7 +48001,7 @@ rnam rol (Dagy).རྣམ་བྱང་ rnam byani
 2. Zerstreutheit, vgl. T'khrul.
 Lex. vibhrama (Ak 54.206).
 རྣམ་བྱང་ rnam byaṅ Irnam par byan ba.
-རྣམ་བྱུང་ mam byun.
+རྣམ་བྱུང་ mam byuṅ.
 1. Irnam 'byun.
 2. Bez. des 2. Jahres in dem aus Indien
 stammenden Zyklus von 60 Jahren, ent-
@@ -48960,7 +48960,7 @@ rufen" (TTC).
 རྣོ་པོ་ mo po scharf, scharfsinnig; vgl. !'rmon
 Lex. gri — dan rig pa — dan rtsub po "schar-
 fes Messer und scharfer Verstand und rauh"
-(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtin 'byin [7770
+(brDa); gri dan rig pa sogs rno ba (Dagy). ལྣོད་གཅོད་གཏིང་འབྱིན་ mod gcod gtiṅ 'byin [7770
 8 8 Pa sog རྣད་གཅད་གཏང་འབྱ:
 gcod gtin 'byin.
 རྣོ་དབལ་ rno dbal scharf, rno ba dbal scharfe Cate
@@ -50681,7 +50681,7 @@ Lex. szani nor = yid la snan ba'i nor "an-
 gesichts dessen, was im Geist erscheint"
 (brDa); snan nor = snani tshul gyi or "aus
 einer Sichtweise" (Dagy).སྙང་ཆུང་ snaṅ chuṅ
-སྣང་ཆུང་ chun.
+སྣང་ཆུང་ chuṅ.
 1. geringschätzig,
 grogs la giun han la gian (r. gien) la sna(h)
 chun "rücksichtlos zu Freunden und gering-
@@ -50977,7 +50977,7 @@ Lex. /7/ ma' min (brDa, Dagy).
 སྣང་བའི་འོད་ཟེར་ snaṅ ba'i 'od zer npr. ein Bud-
 dha.
 Lex. abhayarasmi, äbbäsarasmi (Bhad 647).
-སྣང་བར་བྱེད་པ་ snah bar byed pa ↑ snaṅ.
+སྣང་བར་བྱེད་པ་ snaṅ bar byed pa ↑ snaṅ.
 2. Bez. für Stern oder Sternbild.
 Lex. skar ma' tshogs sam —"i tshogs 2 /7/0//~
 rganab "die Schar der Sterne" (Mvy 6610).
@@ -51758,7 +51758,7 @@ aufkommt über auch nur geringfügige Aus-
 übungen von Nötigungen" (MTH3/5/31
 24).
 $ ༤༨༤ . > "
-སྣེ་གདོང་ sne gdoṅ auch sne'u gdon.
+སྣེ་གདོང་ sne gdoṅ auch sne'u gdoṅ.
 1. npr. ein Gebiet in Yar-kluäs im Mün-
 dungsgebiet des Yar-kluns gtsan-po und Yar-
 lha Śam-po, der Sitz von Byan-chub rgyal-
@@ -54488,7 +54488,7 @@ geschmückt war" (Sumpa 1933).
 Lex. !to bas yar 'gyogs pa'ani 'degs pa "mit dem
 Bauch hochheben oder halten" (brDa); pani
 par 'degs pa "auf den Schoß heben" (Dagy).
-པང་སྟེང་ pani steh Ypani eine hohe Zahl, 10".
+པང་སྟེང་ pani steṅ Ypani eine hohe Zahl, 10".
 grans ni / geig / bcu / broya / ston ... khyad
 phyin chen po / — / pas sten chen po "die
 Zahlen sind: 1, 10, 100, 1000... 10°, 10°, 10°"
@@ -54609,7 +54609,7 @@ pad phor dan / pad Sun — ... med (metr.) "er
 hatte keine Lotusalmosenschale, kein Lotus-
 gewand, keine Lotusmatte [u.a.]" (gZi 3:
 713,5).པད་སྡོང་ pad sdoṅ
-པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdon po
+པད་སྡོང་ pad sdoṅ Kurzf. für lpadma'i sdoṅ po
 Lotusstengel.
 'o ma can gyi rgya mtsho las / — rtse la
 khye'u mched Ira 'khruns (metr.) "aus dem
@@ -54683,7 +54683,7 @@ skye gnas.
 པད་མའི་སྐྲ་ Pad ma'i skra tpadma'i skra.པད་མའི་གྲོགས་པོ་ pad ma'i grogs po
 པད་མའི་གྲོགས་པོ་ pad ma'i grogs po lpadma'i
 87085 pP.
-པད་མའི་དྲག་ ppad ma' dgra dgra.
+པད་མའི་དྲག་ pad ma' dgra dgra.
 པད་མའི་ངོས་ pad ma'i ños lpadma'i ño.
 པད་མའི་མངལ་བྱུང་ papad ma'i padma’i
 mal byin.
@@ -56036,7 +56036,7 @@ sen aus dem Gefolge Pehars, vgl.
 SCHUH 2012: 1457.
 པུ་སྟ་ཀ་ pu staka
 པུ་སྟི་ pusti Ipoti.
-པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:
+པུ་དེ་གུང་རྒྱལ་ pu de guṅ rgyal Ispu de guṅ rgyal:
 པུ་ནུ་ punu \phunu.
 པུ་བུར་ pu bur allein; vgl. tpu gur.
 Lex. — sdod pa = tsog pur sdod pa'am geig pur
@@ -56225,14 +56225,14 @@ punda ri ka = padma dkar po (Dagy).
 ནན་ག Rottleria tinctoria Roxb. bzw. Calo-
 phyllum inophyllum L. (pw 4.96 s. v.).
 Lex. punnägah (Mvy 6173).
-ཕུབ་ pub lphub.
+ཕུབ་ phub lphub.
 ཕུར་ 'pur fliegen lassen, steigen lassen.
 Lex. 'phur du ?//0 pa'am chug "steigen lassen"
 (brDa); 'phur ba'i don "i.S. v. hochfliegen"
 (Dagy); — cig = bya 'phur du chug "laß den
 Vogel fliegen!" (brDa, Dagy).
 པུར་ °pur Ispur.
-ཕུར་ཁང་ pur khaṅ Leichenhaus, Leichenplatz,
+ཕུར་ཁང་ phur khaṅ Leichenhaus, Leichenplatz,
 Verbrennungsstätte für Leichen.
 Lex. ro sreg gnas ro gnas "Leichenverbren-
 nungsstätte, Leichenplatz" (brDa); ro sreg
@@ -56257,7 +56257,7 @@ Ohr" (K841(2) 20722).
 པཕུས་ pus \pus mo.
 པུས་དཀར་ pus dkar eine Heilpflanze.
 Lex. ma nu'i rigs "eine Art ma nu" (Dagy).
-པུས་མཁྱུད་ pus mkhynd eine Schnur oder ein
+པུས་མཁྱུད་ pus mkhyud eine Schnur oder ein
 Band, das ein Yogin bei der Medi-
 tation um seine Knie bindet.
 — sgom thag skor cig bde "um die Knie
@@ -57083,7 +57083,7 @@ khani skya dan / pyin ba ini stagrtse 0)7/5 / gan
 mtho ni gag dina' ba (metr.) "Khan-skya am
 Talanfang von Pya oder sTag-rtse in Pyin-
 ཕྱུགས་ /༡//༦༩ [//?7/5.
-ཕྱུང་ pyuṅ lphyun.
+ཕྱུང་ phyuṅ lphyun.
 པྱེ་ pye lphye.
 ཕྱོགས་ pyogs Iphyogs.
 Dar pyol Lbyol.
@@ -57092,14 +57092,14 @@ eine Divinationsmethode mit einer
 ba, welches der beiden ist hoch, welches ist
 niedrig?" (PT1287 470).
 ཕྱག་ Pyag lphyag.
-ཕྱང་ཆུབ་ pyaṅ chub \byani chab.
+ཕྱང་ཆུབ་ phyaṅ chub \byani chab.
 ཕྱི pyi !phyi.
 pyi tra gsani phrum \byi tra gsani
 phrum.
 ༣. ༠ * ཕྲ
 ཕྱི་ཏྲ་གསང་ཕྲུམ
 ཕྱི་ན་ pyina lphyi na.
-ཕྱིང་ pyih lphyin.
+ཕྱིང་ phyiṅ lphyin.
 ཕྱིང་བ་ ppyiṅ ba ba.
 363
 glatten Oberfläche, wie z.B. einem Spie-
@@ -57241,7 +57241,7 @@ die drei, sind die drei gar kum" (8Yu 290,20);
 tin sag skyur / ki sa kha / chab 'dren gźon nu /
 rtsi'n zer (780 190,2).
 པྲིཀ་ prik ttri ka.
-ཕྲིག་ཆུམ་བཀང་ prig chum bkaṅ zögerlich,
+ཕྲིག་ཆུམ་བཀང་ phrig chum bkaṅ zögerlich,
 ängstlich, zurūckhaltend.
 Lex. the tshom gyis bkani ba "mit Zweifeln er-
 füllt" (brDa).
@@ -57730,7 +57730,7 @@ ldpan lo.
 དཔང་ལག་ dpaṅ lag Zeuge und Vermittler.
 Lex. dpan po dan Sar lag 0)7/5 la snani "steht
 für Zeuge und Vermittler" (Dagy).
-དཔང་ལོ་ dpaṅ lo Kurzf. für dpan lo tsä ba
+དཔང་ལོ་ dpaṅ lo Kurzf. für dpaṅ lo tsä ba
 npr. der Übersetzer Blo-gros brtan-
 pa (1276-1342).
 dpan blo gros brtan pas kyan ... dus 'khor gyi
@@ -58284,7 +58284,7 @@ gibt es viele dGe-lugs-pa-Klöster" ("Dzam
 Mut, Tapferkeit.
 Lex. dpa' bo'i tshul du sems pa "heldenhaftes
 Denken" (Dagy).
-དཔའ་ལུང་ dpa' lun.
+དཔའ་ལུང་ dpa' luṅ.
 1. Schwertgriff.
 Lex. ral gri'i yu ba (brDa, Dagy).
 དཔལ་ dpal
@@ -59064,7 +59064,7 @@ atta.
 Lex. khyim bdag — gyis Zus pa = virada-
 ttagrhapatipariprechä "die Fragen des Haus-
 herrn Viradatta" (Mvy 1407).
-དཔུང་ 'dpun.
+དཔུང་ 'dpuṅ.
 1. Armee, Heer, Truppe, Wehr, — gi kha lo
 pa Heerführer, — ggom Truppen aufstellen.
 rgyal po padma chen po — dan mthn che
@@ -59154,7 +59154,7 @@ schen laufen ohne Begleitung allein umher"
 (Sumpa 119a4).
 Lex. tshogs pa'i min dan dkyil la'an "Bez. für
 Schar und auch für Mitte" (Dagy).
-དཔུང་ "dpun Ldpuṅ pa.
+དཔུང་ "dpuṅ Ldpuṅ pa.
 དཔུང་བཀོད་པ་ dpuṅ bkod pa ein Samādhi.
 Lex. ~ Zes bya ba'i tiṅ ṅe 'dzin = balavyāho
 näma samādhib (Mvy 520).
@@ -59184,7 +59184,7 @@ Lex. dinag dpon nam dpun gi bdag po "Ge-
 bieter über das Heer oder Herr des Hee-
 res" (brDa); dag dpon nam dpun 0/ ?7/ 'dren
 "Gebieter über das Heer oder Heerführer"
-(Dagy).དཔུང་གི་ཆུང་གི་་ " dpun gi chuṅ gi
+(Dagy).དཔུང་གི་ཆུང་གི་་ " dpuṅ gi chuṅ gi
 དཔུང་གི་ཆུང་གི་ཚོགས་ dpuṅ gi chuṅ gi tshogs
 Fußsoldaten, Infanterie.
 Lex. pattikäyab (Mvy 3641).
@@ -59230,7 +59230,7 @@ than gi dmag dpun dan bZi (Dagy).
 Lex. dmag dpon nam dpun gi bdag po "Ge-
 bieter über das Heer oder Herr des Heeres"
 (brDa, Dagy).
-དཔུང་མགོ་ dpuṅ mgo auch dpun pa'i mgo
+དཔུང་མགོ་ dpuṅ mgo auch dpuṅ pa'i mgo
 Schulter, Schultergelenk, Achsel.
 ro stod sen ge'i 'dra / 'di yi dpun pa'! mgo
 zlum thal gon rgyas (metr.) "sein Oberkör-
@@ -59277,7 +59277,7 @@ sen, um ihren Oberkörper zu bedecken, eine
 ärmellose Weste oder Bluse.
 Lex. dge slon ma'inu ma khebs ras "ein Tuch,
 das die Brüste der Nonne bedeckt" (brDa).
-དཔུང་ཆུང་ dpuṅ chuh Idpun bu chun.
+དཔུང་ཆུང་ dpuṅ chuṅ Idpun bu chuṅ.
 དཔུང་ཆེན་བཏེག་ dpuṅ chen bteg ein Heerla-
 ger aufschlagen, einen militäri-
 schen Stützpunkt einrichten; in den Krieg
@@ -59339,7 +59339,7 @@ Lex. — ni 'grogs par byas Zes pa'o (Be'uD
 དཔུང་སྣ་ dpuṅ sna Bug, Schulter.
 sna gdons ... ol bdud la / — (metr.) "Nasen-
 sattel, Kehlkopf und Bug" (Hipp 172,13).
-དཔུང་པ་ dpuṅ pa auch dpun Arm, Oberarm,
+དཔུང་པ་ dpuṅ pa auch dpuṅ Arm, Oberarm,
 Schulter.
 mal stan chen po la / — la ni mgo brten nas
 (metr.) "auf großen Liegepolstern, den Kopf
@@ -59438,7 +59438,7 @@ skya sehn bu lṅa dan sgra nan — beu ghis
 hab pa'i dus su "als die fünf Pändavas mit
 den zwölf Armeen der Kauravas kämpften"
 (Bu-śz 1,11).
-དཔུང་བཞི་པ་ dpuṅ bZi pa Beiname Visnus.
+དཔུང་བཞི་པ་ dpuṅ bźi pa Beiname Visnus.
 Lex. khyab 'jug (brDa, Dagy).
 དཔུང་ཟོར་ dpuṅ zor magische Kraft.
 mgyogs ma khra mgos dpun zur (r. zor) dera
@@ -61453,7 +61453,7 @@ verkehr ablassen" (Siddh 25.34); bgrod dan
 bgrod min mi ~~ Zin (metr.) "Bekömmliches
 und Unbekömmliches soll man nicht mei-
 den" (Hev 2.3.41b); ga par nes par cis mi —
-(metr.) "den Kampfer [d. h. den Samen] sollསྤང་ "span
+(metr.) "den Kampfer [d. h. den Samen] sollསྤང་ "spaṅ
 man keinesfalls loslassen [d. h. ejakulieren]"
 (Hev 2.4.27d); sman brüas — (metr.) "man
 muß [einen Patienten] meiden, der den Arzt
@@ -61500,7 +61500,7 @@ bar bya ba gnad (metr.) "es ist wichtig, [die
 Leiche] nicht zu begraben" (Nagdel 89,1);
 nus mtbu bsam gtan g.yo 'khrug — (metr.)
 418
-སྤང་ "span
+སྤང་ "spaṅ
 "Macht, Meditation und Illusion gibt man
 auf" (gZer 1006,4); de' phyir gdod nas — bar
 bya (metr.) "daher muß man es von Anfang
@@ -61569,7 +61569,7 @@ Stelle mit grünem Gras" (Dagy).
 ar 'spah npr. ein buddh. Lehrer.
 a me'i mkhan bu ~ "sPaṅ, der geistige Sohn
 des A-me" (Bu-śz 72,3).
-སྤང་སྐོང་ spaṅ skoṅ auch dpan skon, — phyag
+སྤང་སྐོང་ spaṅ skoṅ auch dpan skoṅ, — phyag
 rgya pa ein buddh. Text (Toh 267)
 bzw. ein Ritual für die kl; das Sūtra soll zur
 Zeit des Königs lHa Tho-tho-ri vom Him-
@@ -64416,7 +64416,7 @@ Lex. spu lon (r. spur len?) — (brDa); rin po
 che'i bye brag "ein Edelstein" (Dagy); spur
 len = spos śe la'ani (brDa).
 སྤང་ 'spyai Kurzf. für Ispyan ki.
-སྤྱང་ཁ་ spyani kha
+སྤྱང་ཁ་ spyaṅ kha
 ar ?spyan Kurzf. für Ispyan po.
 སྤང་ཀི་ spyah ki auch spyan khu, spyan gu,
 = Kurzf. spyan Wolt.
@@ -64455,7 +64455,7 @@ Lex. ~, spyan khu = gcan gran spyaṅ khu
 lug za mkhan "das Raubtier Wolf, das Schafe
 frißt" (brDa); ~, spyaṅ khu = gean gzan Zig
 "ein Raubtier" (Dagy).
-སྤྱང་ཁ་ spyani kha Wolfsmaul.
+སྤྱང་ཁ་ spyaṅ kha Wolfsmaul.
 — dgye dgu med pa dan (metr.) "wie das starr
 [aufgerissene] Maul eines Wolfes" (Vdk 2:
 371,4); dkar Ing khbyu 'phar ba'i (r. bas?)སྤྱང་གྲུང་ spyaṅ grum
@@ -65654,7 +65654,7 @@ die allgemeinen Angelegenheiten" (brDa);
 spy!'i bkod 'doms byed po "einer, der allge-
 meine Anweisungen gibt" (Dagy).
 ༽ ༨ . .
-སྤྲི་ཁྱབ་མཁན་པོ་ spyi khbyab mkhan po eine
+སྤྲི་ཁྱབ་མཁན་པོ་ spyi khyab mkhan po eine
 S Amitsbezeichnung, höchster
 Mönchsbeaniter der tibetischen Regierung,
 ständiger Begleiter des Dalai Lama.
@@ -66300,7 +66300,7 @@ dar
 Smith (PasanG 1998: 136 s. v. spyi bZur).
 Lex. sin sa la ser po "gelber Säla-Baum"
 (brDa).
-སྤྱི་གཞུང་ spyi gźuń Regierung.
+སྤྱི་གཞུང་ spyi gźuṅ Regierung.
 Lex. spyi pa'i gäun (Dagy).
 སྤྱི་ཟོག་ spyi zog öffentliches Eigentum.
 vw
@@ -66512,7 +66512,7 @@ scheinung etwas ähneln" (MilGb 414,11).
 EN ur oo, . ) .
 སྤིར་འགྲོ་ spyir gro allgemeine Praxis (Iver-
 ༄ DDInG $, VII).
-སྤྱིར་བཏང་ spyir btaṅ auch spyi btan.
+སྤྱིར་བཏང་ spyir btaṅ auch spyi btaṅ.
 1. allgemein, im allgemeinen, gewöhnlich,
 für gewöhnlich.
 bya ba Zi drag gi{s} las sner 'khod pa ~ dmigs
@@ -67131,7 +67131,7 @@ herrschaft geweiht" (Tär 156,21).
 skyes bu ni ses pa can dan / — dan / rtag pa dan
 cha mñam pa'o "der purusa ist wissend, rezi-
 pierend, ewig und homogen" (ViśT 210,10),
-ur > | སྤྱོད་པ་བཟང་པོ་ spyod pa bzan po npr. ein Bud. dha.
+ur > | སྤྱོད་པ་བཟང་པོ་ spyod pa bzaṅ po npr. ein Bud. dha.
 dha.
 Lex. siecesta (Bhad 921).
 an" m
@@ -67488,7 +67488,7 @@ par yul gan du — du pbyin "mein Elend war
 zu groß, daher konnte ich mich im Hause
 nicht länger halten und ging zum Betteln in
 eine andere Gegend" (Mil 132,23).
-སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.
+སྤྲང་ *spraṅ Kurzforn für ↓ spraṅ po.
 སྤྲང་ཆས་ spraṅ chas Bertlerkleidung,
 — su Zugs nas "nachdem sie in Bettlerklei-
 dung geschlüpft waren" (sBa 83,13).སྤྲང་ཉལ་ spraṅ ñal
@@ -68203,7 +68203,7 @@ melte [Menge von Humores] gut gereinigt
 hat" (Ahs 1.4.35c).
 སྤྲིན་དབྱངས་ sprin dbyaṅs npr. ein Buddha.
 Lex. meghasvara (Bhad 74).
-སྤྲིན་འབྱུང་ sprin 'byun.
+སྤྲིན་འབྱུང་ sprin 'byuṅ.
 1. Bez. für Sommer bzw. Regenzeit; — dus
 dass.
 Lex. dbyar kha (brDa); — dus = dbyar kha'i
@@ -69639,7 +69639,7 @@ Prajnāparamitāsātra, das der Vater für Glin
 [beschafft hat]" (Sumpa 14223).
 Lex. pitä (Mvy 3877); skyed byed kyi — "Va-
 ter, der Erzeuger" (Dagy).
-ཕྲ "pha gegenüberliegende Seite.
+ཕྲ "phra gegenüberliegende Seite.
 Lex. —s ‰ pha rol nas dan "von der ande-
 ren Seite her" (brDa); —s pbam ‰ pha rol
 nas pham pa "von der Gegenseite besiegt"
@@ -69880,7 +69880,7 @@ sman "ein Gewächs wie ein Pilz, oder 'Rauch
 ohne Feuer', ein blutstillendes Heilmittel"
 (Dagy).
 ཕ་བང་ལོང་བུ་ pha baṅ loṅ bu \pha wan lon bu.
-ཕྲ་བྲི་ pba bi gegenūberliegende Seite; — na
+ཕྲ་བྲི་ pba bri gegenūberliegende Seite; — na
 drüben; vgl. Tpha gi.
 yul 'dro tir Zes bya ba' Tjons — na ... byani
 chub sems dpa'i spyad pa spyod pa'itshe "als er
@@ -70057,7 +70057,7 @@ mit gleichen Eltern" (Dagy); ~i rigs bdun
 rgyud (v1 broynd) tsbun chad = āsaptamami
 yugam upädäya "von der siebten Generation
 an" (Mvy 9251).
-ཕུ་མིང་ "phba min Vater und Bruder.
+ཕུ་མིང་ "phba miṅ Vater und Bruder.
 — rom na an 'gran pas chog (metr.) "auch
 wenn wir mit Vater und Brüdern zufrieden
 sein sollten, können wir miteinander wettei-
@@ -70168,7 +70168,7 @@ Lex. pags bye'n (brDa); mtshan mor ryu ba'i
 byi'wi bye brag dan "eine Art Vögelchen, das
 sich in der Nacht bewegt" (Dagy).
 ཕ་ཝྭང་ 'pha war Tpha bon.
-ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban lon
+ཕ་ཝྲང་ལོང་བུ་ pba waṅ loṅ bu auch pha ban loṅ
 bu, pha Iban lon bu ein Mineral,
 Pyrit (vgl. Pasang 1998: 139 s. v. pha bani lori
 bu).
@@ -70180,7 +70180,7 @@ ger Stein" (Dagy); pha Iban lori bu = zur bzi
 pa rdo Zig (brDa).
 ཕ་ཝམ་ pha wam Tpha wan.
 ༨ PR . 112༢ ༡༩།༨ ༢
-ཕ་ཞིང་ pha Ziṅ Grundbesitz als Familienerbe.
+ཕ་ཞིང་ pha źiṅ Grundbesitz als Familienerbe.
 Lex. pha mes kyi 'tsho rten sa Zin "Le-
 bensgrundlage der Vorfahren, Grundbesitz"
 (Dagy).
@@ -70576,7 +70576,7 @@ Lex. phar nos su (brDa).
 Lex. srog gcod pa' min la'an "auch Bez. für
 töten" (brDa).
 ar ༨ .
-ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drng
+ཕ་རལ་དུ་ཕྱིན་པ་དྲུག་ pha vol du phyin pa drug
 N པ བྱུག tpba rol tu phyin pa drug.
 ཕ་རོལ་འདོད་ pharol'dod Bez. für die indischen
 Scher und Heiligen (rs2).
@@ -70615,7 +70615,7 @@ grausam und beherrschend* (Tär 12,20).
 ཕ་རོལ་པོ pharolpo Ipharal,
 ཕ་རོལ་ཕྱིན pha rol phyin Kurzf. für lpha rol tn
 phyn und pha rol tu phybr pa.
-ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben "chah
+ཕ་རོལ་ཕྱིན་བཅུ་འཆང་ pha rol phyin ben "chaṅ
 Bez. für Buddha.
 Lex. sans reyas bcom ldan "das "Buddha, der
 Erhabene" (brDa, Dagy).
@@ -70827,7 +70827,7 @@ sgras slob dpon bai ro tsa na la ~ ñan byas pas
 "gYu-sgra hörte insgeheim auf den Lehrer
 Vairocana" (VaiNth 190,2); bod kyi blon po
 2 or an
-ཕག་གི་ཤིང་རྟ་ phag gi sih rta
+ཕག་གི་ཤིང་རྟ་ phag gi siṅ rta
 che ba Zigyod pas ma bsad par ~ tu ña ra byas
 "da war ein großer tibetischer Minister, der
 ihn nicht tötete und heimlich für ihn sorgte"
@@ -70983,7 +70983,7 @@ cal kba sa g.yos kyis gel ba'i tshab tu —
 rin chen sgan brtsigs śih "anstelle des durch
 ein Erdbeben eingestürzten Cal-kha errich-
 teten sie Rin-chen-sgan in Phag-ri" (Debm
-ཕང་མཁན་ pbaṅ mkhan
+ཕང་མཁན་ phaṅ mkhan
 3865); — ma' khons gZun sger chos bcas "im
 Machtbereich von Phag-ri befindliche Re-
 gierungseinrichtungen, Privathaushalte ein-
@@ -70995,7 +70995,7 @@ Lex. phag pa 'dra ri yod pa'i yul Zig "eine Ge-
 gend, in der sich ein Berg befindet, der einem
 Eber ähnlich ist" (brDa); bod kyi yul žig "ei-
 ne Gegend 11] Tibet" (Dagy).
-ཕག་རི་རྫོང་ phag ri rdzoṅ auch phag rdzon npr.
+ཕག་རི་རྫོང་ phag ri rdzoṅ auch phag rdzoṅ npr.
 ein rdzon in Phag-ri.
 phag rdzon mia' khons su skan 'gro lags
 'don "die Steuer- und Dienstleistungen
@@ -71022,7 +71022,7 @@ zeichnungen für Angehörige niedriger Ka-
 sten" (KloAD 729,3); — pa = rigs han pa
 (TTC).nr " )
 ཕང་འགྲོ་ phaṅ 'gro
-ཕང་འགྲ pphaṅ gro JAULENMSTTUMENE.
+ཕང་འགྲ phaṅ gro JAULENMSTTUMENE.
 Lex. sgra sian nam rgyud mans (brDa); sgra
 snan (Dagy); —"rgyud = sgra san 07// thag
 pa (brDa); -"rgyud = sgra san reoyud skud
@@ -71038,7 +71038,7 @@ war äußerst hoch" (PT1287 460).
 1. Ipan.
 2. Seite.
 Lex. nos (Dagy).
-ཕང་ཕུང་ phani phuh Haufen; ~ byed aufhäufen.
+ཕང་ཕུང་ phaṅ phuṅ Haufen; ~ byed aufhäufen.
 Lex. geig tn phun por gyur pa'i dbyibs kyi
 khyad par "etwas Zusammengehäuftes, eine
 Lorm" (Dagy); — byas & spuns pa'ani phun
@@ -72091,7 +72091,7 @@ ba'i yulnas — tsa na .., mi nag po Zig ... 'gro'o
 "als er aus der Unigebung von Ra-ra weiter-
 gegangen war, kam ihm ein schwarzer Mann
 entgegen" (Tär 161,6).
-ཕར་ཕྱིན་ 'phar pbyin Kurzf. für [/)/7 vol ru
+ཕར་ཕྱིན་ 'phar phyin Kurzf. für [/)/7 vol ru
 pbyin, pha rol tu phyin pa.
 1. Vollkommenheit (skt. pāramita).
 — gyis kyani tshe geig la mthon lam skye ru
@@ -72477,7 +72477,7 @@ che = indo sde phal chen (brDa).
 (
 ཕས་ཀྱི་དགྲ་ pbas kyi dgra Gegner, Feind.
 Lex. pratyanikah (Mvy 2732).
-ཕས་ཀྱི་རྒོལ་བ་ pbas kyi rgol ba. Kurzf. phas rgol
+ཕས་ཀྱི་རྒོལ་བ་ phas kyi rgol ba. Kurzf. phas rgol
 Gegenredner, Feind.
 gźan mu stegs can .. thams cad zil gyis gnon
 par 'gyur ro / — thams cad kyis mi rdzi bar
@@ -72729,7 +72729,7 @@ dere erweisen dem König der Berge Ehre"
 Lex. bsti stani nas gus 'dud (TTC); — byas pa =
 mchod pa phul ba "Ehre erweisen" (brDa); —
 byas pa = gus 'dud Zus pa "verchren" (Dagy).
-ཕུ་མདུད་ phn mdud Knoten zum Schutz ge-
+ཕུ་མདུད་ phu mdud Knoten zum Schutz ge-
 gen Krankheiten, die häufig an einem
 Band um den Hals getragen werden, vgl.
 srun mdud (Neb 441).
@@ -72808,7 +72808,7 @@ pi min "Ber. für älterer Bruder" (Dagy);
 Lex, phu than med pa'i chn pa la "für chu pa
 ohne Ärmel" (brDa); phu dum med pa' gos
 "Kleidung ohne Ärmel" (Dagy).
-ཕུ་མོ་ pbu mo āltere Schwester.
+ཕུ་མོ་ phu mo āltere Schwester.
 reya rje'i sras mo śo rgya Zes bgyi ba' — dge
 slon ma śo'i dzaya Zes boyi ba "die Tochter
 ཕུ་ཤུ་ 'phu su
@@ -73205,7 +73205,7 @@ bsgyur (metr.) "er, Phun-bdud, mit Thogs-
 rgod zwei, [u.a.] führten eine Armee von
 3000 [Mann] an" (Sumpa 14645).
 _ ༤ རླ , ..
-ཕུང་འདྲེ་ phuṅ 'dre auch 'phun 'dre ein Dämon.
+ཕུང་འདྲེ་ phuṅ 'dre auch 'phuṅ 'dre ein Dämon.
 $77//) du Zugs pa' sinyon pa de / van la
 gan gnod pa' spyod pa byed pa "ein Ver-
 rückter, in dessen Herz der phun 'dre ein-
@@ -73454,7 +73454,7 @@ ran nid phun tshab(s) chen po la sbyor ba'i snin
 rul po "herzlose Menschen, die sich selbst
 in ernsthaftes Verderbnis bringen" (KTh 1:
 508,2).
-ཕུང་གཞི་ 'phuh gźi Grundlage fūr das Verder-
+ཕུང་གཞི་ 'phuṅ gźi Grundlage fūr das Verder-
 ben,
 —" bu mo na mi 'dod (metr.) "ich will keine
 Tochter, [sie ist die] Grundlage für [künfti-
@@ -73495,7 +73495,7 @@ das gdon chen ab!" (MigTo 237,20).
 ཕུང་སྲི་ལྟས་ངན་ཟློག་ phwi sri ltas ñaṅ zlog ein
 Ritual zur Schadensabwehr,
 gehört zu den räksa mdos beu (Neb 391).
-ཕུང་གསུམ་པ་ phuṅ gsum pa auch phun sum pa
+ཕུང་གསུམ་པ་ phuṅ gsum pa auch phuṅ sum pa
 neutrale, dritte Person.
 Lex. phun sum pa, ~ = ñis su ma bsdus pa "mit
 beidem nicht verbunden" (brDa); phun sum
@@ -73744,7 +73744,7 @@ Lex. yi dwags kyi min (brDa, Dagy).
 ཕུན་རེ་ phun re
 51ཕུན་སུམ་ཚོགས་པ་ phun sum tshogs pa
 . Sr ne ༦ ( 974 D
-ཕུན་སུམ་ཚགས་པ phun sum tshogs pa Kurzf.
+ཕུན་སུམ་ཚོགས་པ phun sum tshogs pa Kurzf.
 phun tsbogs, pbun sum, phun
 sum tsbogs.
 1. vollendet, vollkommen, vorzüglich, ex-
@@ -74280,7 +74280,7 @@ pflanzen (vgl. Pasang 1998: 141,
 Kietrer/KrischBAuM 2001: 206, 228).
 Lex. ?7570:/ a kron Zig "eine a-kron-Pflanze"
 (brDa, Dagy).
-ཕུར་ཚུགས་པ་ pbur tshugs pa eindringlich, kon-
+ཕུར་ཚུགས་པ་ phur tshugs pa eindringlich, kon-
 zentriert.
 khyed mkhyen Zes phur tshugs su gsol ba 'debs
 kyits} 'dug pas "er betete konzentriert: 'Ge-
@@ -74552,7 +74552,7 @@ schickt" (MTH3/3/23 3).
 denn dun ~ poe ña sa tshal du "dus par "der
 Winterrat versammelte sich in Na-śa-tshal
 von Phul-po" (5750 52).
-ཕུལ་ཕྱིན་ pbul phyin auch phul du phyin pa
+ཕུལ་ཕྱིན་ phul phyin auch phul du phyin pa
 hervorragend, vorzüglich, vollendet,
 vollkommen.
 rtogs pa phul du phyin pa'i spyod pa cig "eine
@@ -75472,7 +75472,7 @@ die drei heißen [Heilmittel]* (gYu 290,9).
 dba's kyi — phans to re dbyi tshab "Phans to-
 re dbyi-tshab, der ältere Bruder von dBa's"
 (PT1287 144); rgyal pos de — yin pa dan / fies
-ཕྲོ་བྲང་ pho brani
+ཕྲོ་བྲང་ pho braṅ
 med du ma ses nas "da der König nicht wuß-
 te, daß dieser sein älterer Bruder und un-
 schuldig war" (Debm 334); — go' ta ma gsal
@@ -75515,7 +75515,7 @@ oberste Dach des Palastes gekommen" (Nel
 737); bai dürya yi — rin po che (metr.) "ein
 kostbarer Palast aus Beryll" (Padm 5722);
 byan phyogs na — rgyas ldan du "im Nor-
-den, in dem Palast Vistaravati" (Bu 820,1);ཕོ་བྲང་འཁོར་ pho brani 'khor
+den, in dem Palast Vistaravati" (Bu 820,1);ཕོ་བྲང་འཁོར་ pho braṅ 'khor
 — rim dgwi '09 khan du "im Erdgeschoß ei-
 nes neunstöckigen Palastes" (sBa 53,9); sea
 mkhar chen po / — 'um bu glan mkhar gyt rtse
@@ -75561,7 +75561,7 @@ rgyal po'i khani pa lta bit "wie: Haus des Kö-
 nigs" (Dagy); gron khyer ram — = param
 "Burg, Stadt" (Mvy 5511); rgyal poll — =
 royal po' brani sa "Aufenthaltsort des Kö-
-ཕོ་བྲང་འཁོར་ pho brani 'khor
+ཕོ་བྲང་འཁོར་ pho braṅ 'khor
 nigs" (brDa); phruo ma mi — nam dmag sgar
 "phriu ma: Palast oder Heerlager" (Liś 13,4).
 2. auf andere herausragende Plätze übertra-
@@ -75636,7 +75636,7 @@ bka' 'dzin pa Palast-
 wächter.
 Lex. räjadvärikah (Mvy 3719).
 ༨
-ཕོ་བྲང་འཁོར་མེོ་ pho brań 'kbor mo Bez. für die
+ཕོ་བྲང་འཁོར་མེོ་ pho braṅ 'kbor mo Bez. für die
 Gemahlin eines Königs, Köni-
 gin.
 Lex. btsun mo (brDa, Dagy).
@@ -75799,7 +75799,7 @@ Lex. pho'i bzo 'dra can (brDa, Dagy).
 Lex. pho brens geig pu "einzelner, allein-
 stehender Mann" (brDa); pho bren geig pr
 (Dagy).
-ཕོ་ཡོང་བཟྲའ་ pho yoṅ bza' auch pho yon gza',
+ཕོ་ཡོང་བཟྲའ་ pho yoṅ bza' auch pho yoṅ gza',
 pbo yons bza' npr. die Gattin des
 Khri Sron-Ide-bisan.
 pho yon gza' rgyal mo btsun gyis dbu ishal gser
@@ -76429,7 +76429,7 @@ Lex. phan te (Mim2 425); khe phan (T'TC).
 rgyal khrūns ni sog rul gi — /?7/)/ Zig "das
 königliche Gesetz zerfiel wie die Bindschnur
 um faules Stroh" (Glr 190,30).
-ཕོན་པོ་ pbon po Tphon.
+ཕོན་པོ་ phon po Tphon.
 ཕོན་པོར་རྩེ phon por rtse Bez. für Elefant.
 Lex. glan po che la'an (brDa).
 `~ . .
@@ -76567,7 +76567,7 @@ man zum Tee in die Tasse gibt" (brDa); phor
 pi naṅ gi ja la 'debs pa'; mar (Dagy).
 པོར་ཤབ་ pphor halbe Schale.
 Lex. pbor phyed tsam la'an "auch für soviel
-wie eine halbe Schale" (brDa).ཕོར་ཤུབས་ pbor śubs
+wie eine halbe Schale" (brDa).ཕོར་ཤུབས་ phor śubs
 ཕོར་ཤུབས་ phor śubs Tasche zur Aufbewahrung
 der Teeschale.
 Lex. phor ba'i snod (brDa); phor pa jug snod
@@ -77644,7 +77644,7 @@ Lex. bla ma'i skur'i — "Tonfigürchen in der
 Gestalt eines geistlichen Lehrers" (brDa);
 lag 'debs kyi satstsha'i Ze sa "resp. von Hand
 geformte Tonfigürchen" (Dagy).
-ཕྱག་ཚང་ phyag tshani.
+ཕྱག་ཚང་ phyag tshaṅ.
 1. Koch, Küchengehilfe, Servierer.
 Lex. thab ka pa'am zas 'dren pa daṅ lag bde
 ba'am thab g.yog "Koch, Servierer, Teeaus-
@@ -77663,7 +77663,7 @@ bskrad do "die Bettler liefen los, doch wur-
 den sie von den Ordnungsleuten wieder ver-
 trieben" (K1 kha 16646).
 ཕྱག་འཚལ་ pbyag 'tshal
-ཕྱག་ཚང་མང་བ་ phyag tshani maṅ ba auch phyag
+ཕྱག་ཚང་མང་བ་ phyag tshaṅ maṅ ba auch phyag
 75:67? man ba Koch.
 Lex. phyag tshan (༣ 1. tsari) man ba = sūpaka-
 rab "Bereiter von Brühen" (Mvy 3768).
@@ -78146,7 +78146,7 @@ punkts für die Entsendung der Braut nach
 dem kbam-yn-Divinationszyklus der Hoch-
 zeitkalkulationen; vgl. Schun 2012: 1472.
 3. Reisigbesen, vgl. Scnun 2012: 1472.
-ཕྱང་ངེ་བ་ phyani he ba herabhāngend.
+ཕྱང་ངེ་བ་ phyaṅ he ba herabhāngend.
 dgn (r. dku) zlum skabs phyin ma rrions dan /
 — dan (metr.) "der Bauch [des Buddhas] ist
 rund, poliert, nicht gebogen und herabhān-
@@ -78158,15 +78158,15 @@ Dagy); phyan ñe = jol le ba (Mim2 724); ~
 ni 'phyan ba'am 70/ ba "phyan ne ba: herab-
 hängend oder schleifend" (KlonD 735,2); —
 ni jolle ba (Liś 27,10).
-ཕྱང་བཟུང་ phyani bzuṅ
-ཕྱང་ཆད་ phyari chad auch phyan bcad entschie-
+ཕྱང་བཟུང་ phyaṅ bzuṅ
+ཕྱང་ཆད་ phyaṅ chad auch phyan bcad entschie-
 den, gewiß, sicher.
 Lex. thag bead pa'am the tshom bcad pa "ent-
 schlossen oder zweifellos" (brDa, Dagy);
 thag bead pa (TTC); — ni thag bead (Lis
 8,16); phyari bead = thag bcad (Mimi 178);
 phyun chad (r. —) = thag bcad (Mim2 158).
-ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
+ཕྱང་སྤྲུལ་ phyaṅ sprul phrul.
 ཕྱང་ཕྱང་བ་ phyaṅ phyaṅ ba herabhāngend.
 Lex. jol le ba'am mar rin du 'dzar ba "schlei-
 fend oder weit nach unten hängend" (brDa,
@@ -78284,7 +78284,7 @@ Zweige, die oben auf die Balken des Hauses
 drücken" (brDa); — dass. (Dagy); lcam rtsa
 gron byed rdo sogs (TTC).
 SAN . . .
-ཕྱམ་གྱི་སྤྱི་རྟེན་ pbyam gyi spyi rten "allgemei-
+ཕྱམ་གྱི་སྤྱི་རྟེན་ phyam gyi spyi rten "allgemei-
 ༦ ne Stütze der Querbalken", Bez.
 für eine Dachkonstruktion, Dachfirst, vgl.
 SWTF 1.100 $. v. krta.
@@ -78314,7 +78314,7 @@ müam nid (Liś 5,5); phyarn chad = mñam pa
 ñid (brDa, Dagy); phyi chad (r. phyam chad)
 = mūam id (Mimi 54).
 ཕྱམ་སྤུ་བོ་ phyam sbu bo Tphyam sgu bo.
-ཕྱམ་མེ་བ་ phyami me ba eben, flach.
+ཕྱམ་མེ་བ་ phyam me ba eben, flach.
 Lex. mtho dman med pa ños mñam pa "oh-
 ne Höhenunterschiede, ebene Oberfläche"
 (brDa, Dapy).
@@ -78636,7 +78636,7 @@ vgl. Schun 2012: 1472.
 Lex. phyi ru skor ba bo "einer, der außen um-
 kreist" (brDa).
 ཕྱི་དགྲ་ phyi dgra
-ཕྱི་ཁུང་ phbyi kbuṅ Bau des Murmeltieres.
+ཕྱི་ཁུང་ phbyi khuṅ Bau des Murmeltieres.
 Lex. phyi ba'itsban gi /0/)//)) bu "Höhle für das
 Nest des Murmeltieres" (Dagy).
 ཕྱི་འཁོར་ phyi 'khor äußerer Umkreis.
@@ -78998,7 +78998,7 @@ tet war" (Mil 57,3); — kun tu "bar gyin 'dug
 (Tär 184,4); — gi rien gsum mams med par
 gton rtsis kyis "in der Absicht, die drei [Arten
 von] heiligen Objekten, äußeren und inne-
-ren, zu beseitigen" (Tpl 15,1); — sa dpyadཕྱི་ནང་སྟོང་པ་ " phyi naṅ ston pa
+ren, zu beseitigen" (Tpl 15,1); — sa dpyadཕྱི་ནང་སྟོང་པ་ " phyi naṅ stoṅ pa
 kyi mitshon byed du bgyis pa' le'u "das Ka-
 pitel, das zur Veranschaulichung der inne-
 ren und äußeren Geomantie verfaßt wurde"
@@ -79569,7 +79569,7 @@ deren Funktionären [des Klosters] ist als
 Bußabgabe für den size mo beispielsweise
 je ein phyi-mdzod-Zeremonialtuch zu spen-
 den" (MTH3/3/34 9).
-ཕྱི་བཞི་ phyi bzi Zeuge.
+ཕྱི་བཞི་ phyi bźi Zeuge.
 Lex. bar dpan byed mikban (TTC).
 a hg 7, ;
 ཕྱི་བཞིན་ phyi bin das Folgende; — rgyud mar
@@ -79937,7 +79937,7 @@ herum" (Kl ¡13 1953); lag pa 9)7/5 — tu beins
 nas ...rgyal po'i drun die khrid de "sie banden
 ihm beide Hände auf den Rücken und führ-
 ten ihn zum König" (K3 ja 23161).
-ཕྱིང་ཁུལ་ phyiṅ kbul eine Art Wolle oder Bilz.
+ཕྱིང་ཁུལ་ phyiṅ khul eine Art Wolle oder Bilz.
 8
 Lex. phyin ba lta bu'i kehn In spue "Haarwolle,
 ähnlich wie Filz" (brDa).
@@ -79945,7 +79945,7 @@ Lex. phyin ba lta bu'i kehn In spue "Haarwolle,
 Lex. phyit pas bzos pa'i gos "aus Filz gefer-
 tigte Kleidung" (Dagy).
 ཕྱིང་སྟག་རྩེ་ phyiṅ stag rtse lphyin ba.
-ཕྱིང་དྲིལ་ pbyiṅ dril cine Rolle Filz.
+ཕྱིང་དྲིལ་ phyiṅ dril cine Rolle Filz.
 Lex. byins (r. phyin) 0070 tu dril ba "zusam-
 mengerollter Filz" (brDa); — beos pa = spyir
 byins (r. phyūh) dril te bzos pa'am bcos pa
@@ -81019,7 +81019,7 @@ mir Pußeritte und warf mich hinaus" (Mil
 Lex. — pa =phyimigbltas pa "zurückgeblickt
 haben" (Dagy).
 EN ༨ . ""
-ཕྱིར་ཐུང་གིས་ phyir tbuṅ gis vor kurzem.
+ཕྱིར་ཐུང་གིས་ phyir thuṅ gis vor kurzem.
 nos kyani — log reyn beas gani cir stabs 'grigs
 byum ma son "auf der anderen Seite hat sich
 vor kurzem wegen meiner Rückkehr keiner-
@@ -81036,7 +81036,7 @@ khani gogs nor mi ñan gyis mtshon dgos
 med — dgos "Unnötiges wie z.B. zerfalle-
 ne, nutzlose Häuser soll abgerissen werden"
 (Wadd135h 9).
-ཕྱིར་ཐོན་ 'phyir ton hinausgehen, herauskom-
+ཕྱིར་ཐོན་ 'phyir thon hinausgehen, herauskom-
 men.
 — ma tbag /// "unmittelbar nachdem sie hin-
 ausgegangen war" (Mil 42,24); Zabs spyi bor
@@ -81453,7 +81453,7 @@ Aa \ . . › , . - › .
 ཕིར་མེ་འོང་བ་ phyir mi oṅ ba auch phyir mi
 ༦ . . ‹ 7
 "Nichtwiederkehrer", jmd., der
-ཕྱིར་ཞིང་ phyir Ziṅ
+ཕྱིར་ཞིང་ phyir źiṅ
 nicht mehr in den Wiedergeburtenkreislauf
 zurückkehren wird; skt. anāgāmin.
 kha cig gis ni lan geig phyir 'on ba'i 'bras but /
@@ -81482,7 +81482,7 @@ vasrittab "inwendig faulig, auslaufend" (Mvy
 9138, Abt. dge sbyon gi skyon du brtsi ba'
 mi).
 ༽ ༤༨ un ` Fr `; .
-ཕྱིར་ཞིང་ phyir Ziṅ auch phyir bin wieder, wie-
+ཕྱིར་ཞིང་ phyir źiṅ auch phyir bin wieder, wie-
 derum; — — immer wieder; vgl. Iphy7
 phyir.
 de nas lo nes pa dan / nad sna tsbogs 'byun
@@ -81515,7 +81515,7 @@ dan yan dam — = abhiksnam (in Mvy
 langend, begierig.
 Lex. bhayo rucitä (Mvy 2212, Abt. chags pa
 dan 'dod pa'i rnam pa'i min).
-ཕྱིར་ཞིང་འདུན་པ་ phyir Ziṅ "dm pa sehr lüstern;
+ཕྱིར་ཞིང་འདུན་པ་ phyir źiṅ "dm pa sehr lüstern;
 vel. Iphyir 'dun pa.
 Lex. phyir Zin sred pa'am — = bbūyacchandi-
 kab [!] (Mvy 2211, Abt. chags pa dan "dod
@@ -81532,7 +81532,7 @@ Lex. mon par dad pa mams — bar bya ba'
 phyir zabhiprasannānām bhūyobhāvaya "um
 [die Zahl] der Gläubigen zu erhöhen" (Mvy
 8353).
-ཕྱིར་ཞིང་བྱུང་ phyir Ziṅ byuṅ pf, zu lphyir Zin
+ཕྱིར་ཞིང་བྱུང་ phyir źiṅ byuṅ pf, zu lphyir Zin
 D out
 by sich vermehren.
 Lex. — ba = 'phel ba (TTC).
@@ -81951,7 +81951,7 @@ bhavisyat "künftig" (Mvy 8317).
 Lex. rjes ma la'an (brDa).
 ཕྱིས་བཙན་པོ་ phyis btsan po ↑ spyis brtsan pa.
 ཕྱིས་སུ་ phyis su
-ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
+ཕྱིས་ཚན་གསུམ་ phyis gsum spätere Drei-
 ergruppe.
 reya chin ru ba / chos rje jam gsar / skyel nag
 grags seh gsum la — zer bar "rGya-'chin ru-
@@ -82074,7 +82074,7 @@ mi phan pa' / — bkren dan ci mi mtshuns
 (metr.) "ist nicht der Reiche wie ein Be-
 dürftiger, wenn er weder sich noch ande-
 ren nützt?" (Ps 83b); gan du thos man "gro
-(our ba / der ni phun (r. phyug) po 'grub miཕྱུག་པོ་སྒང་དཀར་་ phyug po sgani dkar
+(our ba / der ni phun (r. phyug) po 'grub miཕྱུག་པོ་སྒང་དཀར་་ phyug po sgaṅ dkar
 'oyur (metr.) "wohin ein schr Gelehrter geht,
 dorthin kann ein Reicher (skt. dhanin) nicht
 gelangen" (Pd-K 134d); nor — 'dod na 'di
@@ -82279,7 +82279,7 @@ lassen" (Glr 195,28).
 Lex. nor — ba po (brDa); — ba po (Dagy).
 2. Bez. für Wolf.
 Lex. spyan ki (brDa).
-ཕྱུགས་རྫི་ phyngs"dzi Viehhire; = mo Vichhir-
+ཕྱུགས་རྫི་ phyugs"rdzi Viehhire; = mo Vichhir-
 tn.
 — mo Zig 70 '/ bum pa... khyer nas rgyun Ses kyi
 bei drun du son ba las "eine Viehhirtin kam
@@ -82287,7 +82287,7 @@ mit einen Topf Joghurt zu Ätreya" (Kl ga
 6161); ba lan rdzi dan / — dag gis mthon nas
 "die Rinderhirten und Viehhirten sahen ihn"
 (Udr 37,10); // skad kyan byis pa — rnamis la
-ཕྱུང་ phbyuṅ
+ཕྱུང་ phyuṅ
 bcos sin bstan "sie schufen auch die khotane-
 sische Sprache und lehrten sie den Kindern,
 den Viehhirten" (Liyl 17667); — rnams kyis
@@ -82658,7 +82658,7 @@ loben" (Dagy).
 schließende Untersuchung.
 Lex. nes par rtog paami — & nitivanam (Mvy
 7471).
-ཕྱེ་ཐུག་ pbye thug Gerstenmehlsu pPe-
+ཕྱེ་ཐུག་ phye thug Gerstenmehlsu pPe-
 — Ja zo man (7, mar) skyur ba "Butter-
 rahm, den man in Gerstenmehlsuppe gewor-
 fen hat" (Kdsg 5,3).
@@ -83718,7 +83718,7 @@ und erster Tag des abnehmenden Mondes"
 ང་སྲེར།་ pbyogs skyes Bez. für Mond bzw.
 ཕྱག རྱ Monat.
 Lex. zla ba (brDa, Dagy).
-ཕྱོགས་སྐོང་ phyogs skyoṅ Hūter der Weltgegen-
+ཕྱོགས་སྐྱོང་ phyogs skyoṅ Hūter der Weltgegen-
 ༦ den, Schützer der Richtungen; —
 ben Beschützer der zehn Richtungen (vgl.
 Neb 68).
@@ -84058,7 +84058,7 @@ Mädchen" (brDa, Dagy); — ma = bZun (r.
 gZon) nwam lani tsho dan po "jugendlich oder
 frühe Jugend" (brDa); — ma zbu mo gzon nu
 la'añ "auch für junges Mädchen" (Dagy).
-ཕྱོགས་ཙམ་ phyogs tsami nur ein wenig, ein biß-
+ཕྱོགས་ཙམ་ phyogs tsam nur ein wenig, ein biß-
 chen.
 yon tan — royal bas hun bstan gsol (metr.)
 "von diesen Vorzügen erkläre bitte, o Sieg-
@@ -84141,7 +84141,7 @@ te sind durcheinander geraten und unklar;
 wenn man aus Parteilichkeit darauf vertraut"
 (Tär 185,1).
 ༨ ༤༨ 2 , ` oo. .
-ཕྱོགས་བཞི་ phyogs bZi die vier Seiten, Richtun-
+ཕྱོགས་བཞི་ phyogs bźi die vier Seiten, Richtun-
 gen, die vier Himimels- bzw. Haupt-
 himmelsrichtungen.
 ~r dge 'dun spyan 'dren pa'i pho ña "Bo-
@@ -84345,7 +84345,7 @@ Lex. attab (Mvy 8067).
 ཕྱོར་པོ་ phyor po 1 '//))/0)ˆ bo.
 ཕྱོར་མོ་ phyor mo 1 'phyor mo.Narkar phyol phyol AIR phywa btsun sten gi...
 ཕྱལ་ཕྱ་
-ཕོལ་ཐོའ། phyol phyol onom., vgl. Taal. 62,3); spyi ru mnam pa bźi yin te... dpon gsas
+ཕྱོལ་ཐོའ། phyol phyol onom., vgl. Taal. 62,3); spyi ru mnam pa bźi yin te... dpon gsas
 ༦ ༦ , — gan glo yi sgo (metr.) "im allgemeinen
 Lex. chol chol Zes pa' sgra'am chal chal g.y0 gibt es vier Arten: dpon gsas, das Tor der gto[-
 Rituale] für phywa und gran [usw.]" (gZi-Sn
@@ -84598,7 +84598,7 @@ Ort stieß ich auf ein schlechtes Vorzeichen"
 (gZer 20,6).
 ཕྲ 'pobra lphra ma.
 ཕྲ་ °phra Vphra.
-ཕྲ་རྒྱས་ pbhra rgyas Laster, Neigung.
+ཕྲ་རྒྱས་ phra rgyas Laster, Neigung.
 fon mons pa' — spans pas bcom ldan "das yin
 Zin "er ist von den Lastern der Befleckungen
 frei, und darum ist er der Erhabene" (DevT
@@ -85019,7 +85019,7 @@ tal" (dPeD 195,6); /phrag & rt'; — gani bar
 mtshuams "Zwischenraum oder Abstand zwi-
 schen Bergen" (brDa).
 ཕྲག་ 'phrag lphrag pa.
-ཕྲག་གོང་ pbrag gon.
+ཕྲག་གོང་ pbrag goṅ.
 1. auf bzw. über der Schulter.
 gan dag la mgul med cin ///00 — la 'byar ba de
 dag "diejenigen, die keinen Hals haben und
@@ -85203,7 +85203,7 @@ angebrachte Haltung, vgl. BHSD 606 s. v. so-
 dhaukikā.
 Lex. phrag pa mi sprad = na sodhaukikaya
 (Mvy 8553).
-ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snah ba Bez. für
+ཕྲག་ཕྲིག་སྣང་བ་ phrag phrig snaṅ ba Bez. für
 Luftspiegelung.
 Lex. snug rgyu'i min (brDa, Dagy).
 ཕྲག་དབྱུང་ phrag dbyuṅ auch — ma Bez. für
@@ -85467,7 +85467,7 @@ in Kommission beim Verlag C.F.Beck, München
 ISBN 978-3-7696-2228-7
 Satz: Tibetisches Wörterbuch
 Gedruckt auf säurefreiem und alterungsbeständigem Papier
-Druck und Bindung: AZ Druck und Datentechnik, Kemptenཕྲན་རྩེ་ pbhran rtse
+Druck und Bindung: AZ Druck und Datentechnik, Kemptenཕྲན་རྩེ་ phran rtse
 künften zur [regelmäßigen] Durchführung
 religiöser Zeremonien besitzen sie mit Klo-
 stergütern usw. keine Einkommensgrund-
@@ -85484,7 +85484,7 @@ wenig" (Dagy).
 ger Joint as a unit of measure" (MARTIN
 2010: 143 $. ¥, pratse).
 Lex. sor ino la'an (brDa, Dagy).
-ཕྲན་ཚེགས་ pbran tshegs.
+ཕྲན་ཚེགས་ phran tshegs.
 1. klein; wenig; Kleinigkeit.
 dalta'isdugbsnal — mi bzod par "man erträgt
 das gegenwärtige kleine Leid nicht" (Kdsg
@@ -85558,7 +85558,7 @@ du beug pa'i "das pa "veranlassen, daß sich et-
 was voneinander löst, Perfekt" (Dagy).
 gar 'phral ''phral.
 ཕྲས་ phras V'phras.
-ཕྲས་ཀྱིས་ pbhras kyis plötzlich.
+ཕྲས་ཀྱིས་ phras kyis plötzlich.
 yid kyi khye'n chun — sad (metr.) "Yid-
 kyi khye'u-chufi erwachte plötzlich" (gZer
 691,1),
@@ -85647,7 +85647,7 @@ Dagy).
 2: 131,6).
 Lex. 'phrin pa = ban chen sogs "Bote usw."
 (Dagy).
-ཕྲིན་བློན་ pbrin blon ein Minister; in bka'ii
+ཕྲིན་བློན་ phrin blon ein Minister; in bka'ii
 ein Regierungsamt, Generalsekretär,
 steht für chin. 7© 2[ P chi-shib-chung "super-
 vising censors of former days" (Marnuws
@@ -85850,7 +85850,7 @@ na 17624); thi ba' — skrag pa "erschrocke-
 ne Taubenküken (skt. fāvaka)" (Suv 162,6);
 thi ba phrug gu de khras 'tshal (metr.) "jenes
 Taubenküken wurde von einem Falken ge-
-ཕྲུ་རྟོག་ pbru rtog
+ཕྲུ་རྟོག་ phru rtog
 fressen" (Suv 168,24); kbun bu Gs bskos nas
 der byi la'i phrug gu gñis bZag ste "sie brachten
 zwei Löcher an und setzten zwei Katzenjun-
@@ -86350,7 +86350,7 @@ erwies mit Wohlgerüchen, Girlanden, Räu-
 cherwerk, Puder und Zimbeln Huldigung"
 (Udr 46,27).
 ཕྲེད་གཏན་ phred gtan
-ཕྲེང་བ་ཅན་ phreṅ ba can auch 'phren ba can.
+ཕྲེང་བ་ཅན་ phreṅ ba can auch 'phreṅ ba can.
 1. bekränzt.
 sprin chen glog gi — (metr.) "die große, mit
 Blitzen bekränzte Wolke" (K8+1(2) 20352);
@@ -86497,7 +86497,7 @@ männliche oder weibliche Nachkommen ha-
 ben, muß die Grundstückssteuer jeweils ge-
 trennt festgelegt werden" (BhuKkh 156,24).
 དཔྱའ་ dphya' tdpya.
-འཕག་ pbag pf. V'phags.
+འཕག་ phag pf. V'phags.
 1. sich erheben, sich aufrichten.
 Lex. — pa = bu chun chun sug bZis 'gro ba
 lta bu "wie: schr kleine Kinder, die auf allen
@@ -87144,7 +87144,7 @@ in den jeweiligen Fahrzeugen" (Dagy).
 འཕགས་ལམ་ཡན་ལག་བརྒྱད་ ༼༧༩༩༩ kam yan
 breyad ° [ 7//7/705 pa'i
 lam yan lag breyad pa.
-nའཕང་ "phan
+nའཕང་ "phaṅ
 འཕྲང་ "phan fur. zu Uphen werfen, schleu-
 dern, schießen.
 gyag ched po la mda' phra mos — sna sod
@@ -87231,7 +87231,7 @@ standen ist" (T+183 48b2).
 Lex. bon dpans nitho lta bu "wie: Höhe"
 (brDa); dpans mtho "hoch" (Dagy).
 =འཕང་མདའ་རུ་ phaṅ mda' ru
-འཕང་མདའ་རུ་ phani mda ru | in Sch ußweite, in
+འཕང་མདའ་རུ་ phaṅ mda ru | in Sch ußweite, in
 der Höhe, in der Länge.
 Lex. dpans su (brDa).
 འཕང་མདུང་ 'phaṅ mduṅ Wurfspeer.
@@ -87380,7 +87380,7 @@ Lex. ka ~ lta bu "wie: ka phan" (brDa,
 Dagy); — che ba = ba dan chen po lta bu
 aan "wie: ein großes Banner" (brDa, ähnl.
 Dagy).
-འཕྲན་ "phan Fehler, schadhafte Stelle, Riß; —
+འཕྲན་ "phran Fehler, schadhafte Stelle, Riß; —
 pa fehlerhaft, zerbrochen, Beschädigu; _
 med pa fehlerlos.
 Lex. skyon la (Dagy); — pa = chag pa'am
@@ -87674,7 +87674,7 @@ g.yog "Bote oder Diener" (TTC);
 bärib, lekhahārikab "Kurier" (Mvy 3816).
 Lex. bya ma 77:77 min "Bez. für
 um (xl.
-འཕར་ཞིབ་ pphar Zib Fluktuation,
+འཕར་ཞིབ་ phar Zib Fluktuation,
 Lex. 'phar chag lta bu "wie: Fluktuation"
 (brDa).
 u, .
@@ -88298,7 +88298,7 @@ nan dam gzer bcas — Zin 'gyur ba'i rma yi
 nad mams (metr.) "Krankheiten mit tiefen,
 schmerzenden und wuchernden Wunden"
 (¥ 64d).
-འཕྲོ་ "pho ausgießen; vgl. 1'bo.
+འཕྲོ་ "phro ausgießen; vgl. 1'bo.
 blo yi bum pa) ... dad ldan blo gsal sa phyogs
 ~~ bar śog (metr.) "möge die Vase des Gei-
 stes in Richtung der Gläubigen und Klugen
@@ -88499,7 +88499,7 @@ par byed pa po "jemand, der geschickt und
 འཕོངས་ "pbons
 schnell den Pfeil abschießt* (brDa); /// 07 la
 mkhas pa (Dagy).
-འཕོང་གི་དཔོང་ས་ 'phoṅ gi dpoṅ sa auch 'phon gi
+འཕོང་གི་དཔོང་ས་ 'phoṅ gi dpoṅ sa auch 'phoṅ gi
 spon sa Platz zum Bogenschie-
 ßen, Bogenschießplatz.
 kha cig ni ~r khwa bźin du thag rin po nas
@@ -89130,7 +89130,7 @@ den sich bestimmt in Tibet herumtreiben"
 (KTh 1: 303,3); rgya mtsho la ña ~ ba ltar
 rtsi Sin la rlun — ba Itar "wie ein im Ozean
 umherschwimmender Fisch, wie der Wind,
-འཕྱོང་ "phyon
+འཕྱོང་ "phyoṅ
 der durch Büsche und Bäume weht" (Akhr2
 81,19); ia //0 dkar chu la — ba la (metr.) "ein
 Fisch mit weißem Bauch schwimmt im Was-
@@ -89164,7 +89164,7 @@ fend.
 umherschweifst, bist du mit dem Makel be-
 haftet, daß du das Hauptziel verlierst" (g24
 2: 133,3).
-འཕྱོང་ "phyon auch 'phyons aufhängen, vgl.
+འཕྱོང་ "phyoṅ auch 'phyons aufhängen, vgl.
 Vphyan.
 Lex. — bu = 'phyan bar byed pa po'am 'phyani
 die jug pa po "einer, der etwas herunter-
@@ -89344,7 +89344,7 @@ den keinen Weg gibt, hindurchzukommen"
 Lex. g.yan sa — dan brag ri' g.yani sa 0// dog
 sa "enge Schlucht und enge Stelle bei Berg-
 felsen" (brDa).
-འཕྲང་འཕྲེང་ /phran phren Verlangen.
+འཕྲང་འཕྲེང་ /phran phreṅ Verlangen.
 bdag rab tn byun nas 'khor la — med pa "da
 ich ein Mönch geworden bin, habe ich kein
 Verlangen nach Dienern" (gZer 973,5).
@@ -89495,7 +89495,7 @@ byed du beng (metr.) "nur um das drohende
 Unheil für die Welt abzuwehren, wurde den
 Bonf-po] angeordnet, Ebenbilder anzuferti-
 gen" (Padm 29363).འཕྲལ་རྐྱེན་འགྲམ་ 'phral rkyen 'gram
-འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der
+འཕྲལ་རྐྱེན་འགྲམ་ phral rkyen 'eines der
 acht großen Unheile in der
 Totenkalkulation, vgl. Scrhurt 2012: 1490 s. v.
 bya ba ñes pa'i 'phral rkan 'grams.
@@ -90123,13 +90123,13 @@ snan umsetzen!" (Bu-śz 14,6).
 འཕྲུལ་པ་པོ་ 'phrul pa po Erzeuger, Schöpfer.
 Lex. -am 'phrul byed pa = nirmātā (Mvy
 6474).
-འཕྲུལ་མི་བཞི་ phrul mi bi
+འཕྲུལ་མི་བཞི་ phrul mi bźi
 Aa › un
 འཕྲུལ་བའི་མེག་ 'phrul ba' mig auch — can Bez.
 für Taube.
 Lex. phug ron (brDa); — can = phug ron la
 "für Taube" (Dagy).
-འཕྲུལ་བུ་ཆུང་ bu chun npr. Neffe des
+འཕྲུལ་བུ་ཆུང་ bu chuṅ npr. Neffe des
 Kon-tse.
 kon tse'i tsba bo — la gab tsbe sum brgya drug
 cu bstan "er lehrte Phrul-bu-chun, den Nef-
@@ -90196,8 +90196,8 @@ phywa gśen gi bon po dan / snani ggen gyi bon
 po dan / — gi bon po rnams "die phywa gsen,
 sunañ gSen und 'phrul gen [genannten] Bon-
 po [usw.]" (8213: 6,1).
-འཕྲེང་ "phren Tphren ba.
-འཕྲེང་ "phren sich sehnen, lieben; sich sorgen.
+འཕྲེང་ "phreṅ Tphren ba.
+འཕྲེང་ "phreṅ sich sehnen, lieben; sich sorgen.
 yab yum 0/7/5 hy thugs la — bäin du ...bod du
 chas so "von den Eltern im Herzen geliebt,
 reiste [Kon-jo| nach Tibet" (Glr 96,20); yram

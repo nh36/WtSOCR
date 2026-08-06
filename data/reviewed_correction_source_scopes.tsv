@@ -1,0 +1,42 @@
+reason	source_disposition	corrected_tibetan_roles	corrected_latin_spans	unaffected_source_may_teach	intentional_variant	target_establishment	rationale
+reviewed_tibetan_exact_manual_structural_root_ocr	feature_error_source	root_consonant	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the isolated root-span OCR edit; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_structural_prefix_ocr	feature_error_source	prefix	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the isolated prefix-span OCR edit; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_structural_subjoined_ocr	feature_error_source	subjoined_consonants	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the isolated subjoined-span OCR edit; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_structural_superscript_ocr	feature_error_source	superscript	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the isolated superscript-span OCR edit; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_structural_vowel_ocr	feature_error_source	vowel	reviewed_single_structural_edit	yes	no	full_token	Exact review rejects only the isolated vowel-span OCR edit; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	feature_error_source	source_extra_glyph	single_source_only_span	yes	no	full_token	Exact review rejects one isolated extra Latin glyph; independently delimited unaffected spans may remain evidence.
+reviewed_tibetan_exact_manual_multi_error	full_source_noncanonical	multiple	full_token	no	no	full_token	Explicit exact multi-error review rejects the observed source as a complete transcription.
+reviewed_tibetan_exact_transcription_integrity	feature_error_source	root_consonant	changed_spans	yes	no	feature_only	Only the reviewed root feature is corrected; unchanged source spans remain supporting evidence.
+reviewed_tibetan_exact_ocr_signature	feature_error_source	conditioned_feature	changed_spans	yes	no	derived_full_token	The exact changed span is reviewed as OCR under an independently established canonical target.
+reviewed_correction_supersession_bridge	superseded_wrong_target	multiple	full_token	no	no	derived_full_token	The superseded target is historical negative evidence and teaches nothing.
+reviewed_same_tibetan_target_final_nasal_only	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_final_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_final_r_to_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the reviewed token-final r realization of Tibetan suffix ང is rejected; independently delimited unaffected spans remain usable.
+reviewed_tibetan_exact_final_ri_to_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the reviewed token-final ri realization of Tibetan suffix ང is rejected; independently delimited unaffected spans remain usable.
+reviewed_tibetan_exact_final_ng_consensus	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_final_ng_echo	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_final_ng_historical_witness	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_final_ng_source_compatible	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_prefixed_final_ng_consensus	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_residual_ng	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_residual_spacing_ng	composed_error_source	suffix_coda;punctuation	token_final;punctuation	yes	no	composed_repair	The final nasal and spacing are reviewed; other transcription spans remain usable.
+reviewed_tibetan_exact_script_ng_witness	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_yang	feature_error_source	suffix_coda	token_final	yes	no	feature_only	Only the final nasal feature is reviewed as erroneous.
+reviewed_tibetan_exact_reference_marker	marker_only	marker	marker	yes	no	marker_only	The transcription itself is not rejected by a marker-only correction.
+reviewed_siglum_exact_registry_canonicalization	marker_only	marker	full_token	no	no	marker_only	Siglum normalization is outside Tibetan transcription teaching.
+reviewed_siglum_exact_tar	marker_only	marker	full_token	no	no	marker_only	Siglum normalization is outside Tibetan transcription teaching.
+reviewed_siglum_exact_visht	marker_only	marker	full_token	no	no	marker_only	Siglum normalization is outside Tibetan transcription teaching.
+reviewed_tibetan_exact_initial_i_l_family	feature_error_source	root_or_initial	changed_spans	yes	no	feature_only	Only the reviewed Initial-I/l confusable span is rejected.
+reviewed_tibetan_exact_bzhin_bzhugs	feature_error_source	root_consonant	changed_spans	yes	no	feature_only	Only the reviewed root ཞ realization is rejected.
+reviewed_tibetan_exact_google_tibetan_candidate	alternate_witness_source	unknown	changed_spans	yes	no	alternate_witness	Adopting an alternate witness does not by itself prove the original source was OCR corruption.
+reviewed_tibetan_exact_residual_context_google	alternate_witness_source	unknown	changed_spans	yes	no	alternate_witness	Adopting an alternate witness does not by itself prove the original source was OCR corruption.
+reviewed_tibetan_exact_dngos	full_source_noncanonical	multiple	full_token	no	no	full_token	The reviewed exact target establishes the complete transcription.
+reviewed_tibetan_exact_ambitious_residual_context	unknown_source_disposition	unknown	unknown	no	no	other	The evidence scope is not precise enough to recover source features automatically.
+reviewed_tibetan_exact_di_lta_bu_spacing	punctuation_only	punctuation	punctuation	yes	no	punctuation_only	Spacing repair leaves transcription feature evidence untouched.
+reviewed_tibetan_exact_di_lta_spacing	punctuation_only	punctuation	punctuation	yes	no	punctuation_only	Spacing repair leaves transcription feature evidence untouched.
+reviewed_tibetan_exact_gna_khri	unknown_source_disposition	unknown	unknown	no	no	other	Family-specific evidence requires explicit feature review.
+reviewed_tibetan_exact_second_ambitious_dngos	unknown_source_disposition	unknown	unknown	no	no	other	Second-pass family evidence is not sufficiently feature-scoped.
+reviewed_tibetan_exact_second_ambitious_gtsang	unknown_source_disposition	unknown	unknown	no	no	other	Second-pass family evidence is not sufficiently feature-scoped.
+reviewed_tibetan_exact_second_ambitious_lnga	unknown_source_disposition	unknown	unknown	no	no	other	Second-pass family evidence is not sufficiently feature-scoped.
+reviewed_tibetan_exact_second_ambitious_snang	unknown_source_disposition	unknown	unknown	no	no	other	Second-pass family evidence is not sufficiently feature-scoped.
+reviewed_tibetan_exact_second_ambitious_sngar	unknown_source_disposition	unknown	unknown	no	no	other	Second-pass family evidence is not sufficiently feature-scoped.

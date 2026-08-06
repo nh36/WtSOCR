@@ -50,6 +50,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             alternate_merged=alternate_merged if alternate_merged_text is not None else None,
             alternate_google_vision=alternate_google_vision,
             merge_only=merge_only,
+            strict_tibetan_script_overrides=False,
         )
         corrected = Path(result["corrected_full"]).read_text(encoding="utf-8")
         with Path(result["changes_tsv"]).open(newline="", encoding="utf-8") as f:
@@ -455,6 +456,134 @@ class PostprocessRegressionTests(unittest.TestCase):
             rows[("wts_9_m", 12, 3, 4, "dnos")],
             ("dṅos", "reviewed_tibetan_exact_dngos"),
         )
+
+    def test_reviewed_tibetan_script_override_is_exact_and_fail_closed(self) -> None:
+        original = pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES
+        pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = {
+            ("fixture", 1, 1, 2, "བདན"): (
+                "བདུན", "reviewed_exact_tibetan_headword_vowel_ocr"
+            )
+        }
+        try:
+            corrected, changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདན་ dguṅ bdun", [], "fixture"
+                )
+            )
+            self.assertEqual(corrected, "དགུང་བདུན་ dguṅ bdun")
+            self.assertEqual(count, 1)
+            self.assertEqual(changes[0][4:6], ["བདན", "བདུན"])
+            with self.assertRaises(ValueError):
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདག་ dguṅ bdag", [], "fixture", strict=True
+                )
+            for wrong_line in (
+                "བདན་དགུང་ dguṅ bdun",
+                "བདུན་དགུང་ dguṅ bdun",
+            ):
+                with self.assertRaises(ValueError):
+                    pem.apply_reviewed_tibetan_script_exact_overrides(
+                        wrong_line, [], "fixture", strict=True
+                    )
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_overrides(
+                    "དགུང་བདུན་ dguṅ bdun", [], "fixture", strict=True
+                )
+            )
+            self.assertEqual(corrected, "དགུང་བདུན་ dguṅ bdun")
+            self.assertEqual(count, 0)
+        finally:
+            pem.REVIEWED_TIBETAN_SCRIPT_EXACT_OVERRIDES = original
+
+    def test_reviewed_tibetan_phrase_override_is_exact_and_fail_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "phrases.tsv"
+            path.write_text(
+                "volume\tpage\tline\tobserved_phrase\tadjudicated_phrase\t"
+                "reason\tevidence\treview_batch\tteaching_status\n"
+                "fixture\t1\t1\tཐལ།་གོང་\tཐལ་གོང་\t"
+                "reviewed_exact_tibetan_headword_ocr\ttest\tfixture\t"
+                "tibetan_ocr_corrected_observation\n",
+                encoding="utf-8",
+            )
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ།་གོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+            )
+            self.assertEqual(corrected, "ཐལ་གོང་ thal goṅ")
+            self.assertEqual(count, 1)
+            corrected, _changes, count = (
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ་གོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+            )
+            self.assertEqual(corrected, "ཐལ་གོང་ thal goṅ")
+            self.assertEqual(count, 0)
+            with self.assertRaises(ValueError):
+                pem.apply_reviewed_tibetan_script_exact_phrase_overrides(
+                    "ཐལ།་ཀོང་ thal goṅ", [], "fixture",
+                    strict=True, overrides_path=path,
+                )
+
+    def test_reviewed_tibetan_script_registry_validation(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            overrides = root / "overrides.tsv"
+            decisions = root / "decisions.tsv"
+            override_header = (
+                "volume\tpage\tline\ttoken_index\tobserved_tibetan\t"
+                "adjudicated_tibetan\treason\tevidence\treview_batch\t"
+                "teaching_status\n"
+            )
+            decision_header = (
+                "volume\tpage\tline\ttoken_index\tobserved_tibetan\t"
+                "adjudicated_tibetan\tlatin_token\tdecision\tlemma_ordinal\t"
+                "neighbour_window\tevidence\treview_batch\n"
+            )
+            override_row = (
+                "fixture\t1\t1\t2\tབདན\tབདུན\t"
+                "reviewed_exact_tibetan_headword_vowel_ocr\te\tb\t"
+                "tibetan_ocr_corrected_observation\n"
+            )
+            confirmed_row = (
+                "fixture\t1\t1\t2\tབདན\tབདུན\tbdun\t"
+                "tibetan_headword_ocr_confirmed\t1\tw\te\tb\n"
+            )
+            overrides.write_text(override_header + override_row, encoding="utf-8")
+            decisions.write_text(decision_header + confirmed_row, encoding="utf-8")
+            pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                overrides, decisions
+            )
+
+            overrides.write_text(
+                override_header + override_row
+                + override_row.replace("\tབདན\t", "\tབདག\t"),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "Duplicate"):
+                pem.load_reviewed_tibetan_script_exact_overrides(overrides)
+
+            overrides.write_text(override_header, encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "registry mismatch"):
+                pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                    overrides, decisions
+                )
+
+            overrides.write_text(override_header + override_row, encoding="utf-8")
+            decisions.write_text(
+                decision_header
+                + confirmed_row.replace(
+                    "tibetan_headword_ocr_confirmed", "credible_variant"
+                ),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "registry mismatch"):
+                pem.validate_reviewed_tibetan_script_registry_reconciliation(
+                    overrides, decisions
+                )
 
     def test_reviewed_wts_8b_final_ng_exact_batch_normalization(self) -> None:
         reviewed_lines = {
@@ -1481,6 +1610,139 @@ class PostprocessRegressionTests(unittest.TestCase):
         )
         self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
 
+    def test_reviewed_reference_marker_tchos_family_applies_only_on_exact_rows(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (675, 44): "ཆོས་སྐུ་ chos sku Tchos kyi sku.",
+                (676, 93): "ཆོས་གྲགས་ chos grags Tchos kyi grags pa.",
+                (679, 165): "ཆོས་སྤྲིན་ chos sprin Tchos kyi sprin.",
+                (679, 166): "ཆོས་ཕུང་ chos phun Tchos kyi phuṅ po.",
+                (680, 118): "ཆོས་བརིགས་ chos brtsigs Tchos rtsig.",
+                (680, 119): "Tchos on an adjacent unreviewed line stays unchanged.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertEqual(corrected.count("↑ chos"), 5)
+        self.assertIn("Tchos on an adjacent unreviewed line stays unchanged.", corrected)
+        marker_changes = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(len(marker_changes), 5)
+        self.assertIn("ཆོས་ཕུང་ chos phuṅ ↑ chos kyi phuṅ po.", corrected)
+        self.assertTrue(
+            all(
+                (row["from_token"], row["to_token"]) == ("Tchos", "↑ chos")
+                for row in marker_changes
+            )
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_reference_marker_tran_row_applies_only_at_exact_location(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (543, 138): "2. schlecht, vgl. Tran pa.",
+                (543, 139): "An adjacent Tran string stays unchanged.",
+                (758, 184): "ཉངས་ Hans Tran po.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("vgl. ↓ raṅ pa.", corrected)
+        self.assertIn("An adjacent Tran string stays unchanged.", corrected)
+        self.assertIn("ཉངས་ ñaṅs ↓ raṅ po.", corrected)
+        marker_changes = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"])
+                for row in marker_changes
+            ],
+            [("Tran", "↓ raṅ"), ("Tran", "↓ raṅ")],
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
+    def test_reviewed_reference_marker_backslash_residual_family_is_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (155, 92): "མཀར་བུ་ mkar bu \\mkhar bu.",
+                (246, 203): "།བ་ད་ kha da \\tsha kha da.",
+                (600, 173): (
+                    "Lex. kham gan gi tshod du bcad pa’i zas sogs "
+                    "བཅད་མཆམས་ bcad mtshams \\dpyad mishams."
+                ),
+                (981, 19): "\\dbyar zla tha chun; ~ bźi die jeweils letzten",
+                (488, 114): "རྒྱང་ rgyon pf. \\brgyans fut. \\brgyan imp.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        for expected in [
+            "mkar bu ↓ mkhar bu.",
+            "kha da ↓ tsha kha da.",
+            "bcad mtshams ↓ dpyad mishams.",
+            "↓ dbyar zla tha chuṅ",
+        ]:
+            self.assertIn(expected, corrected)
+        self.assertIn("pf. \\brgyans fut. \\brgyan imp.", corrected)
+        marker_changes = [
+            (row["from_token"], row["to_token"])
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(
+            marker_changes,
+            [
+                ("\\mkhar", "↓ mkhar"),
+                ("\\tsha", "↓ tsha"),
+                ("\\dpyad", "↓ dpyad"),
+                ("\\dbyar", "↓ dbyar"),
+            ],
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
+    def test_reviewed_reference_marker_tbrgya_row_is_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (510, 77): "བརྒྱ་སྦྱིན་ braya sbyin Tbrgya byin 1.",
+                (510, 78): "An adjacent Tbrgya string stays unchanged.",
+                (518, 58): "བསྒྱུན་ bsgrun pf. und fut. zu Tsgrun wettei-",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("braya sbyin ↑ brgya byin 1.", corrected)
+        self.assertIn("An adjacent Tbrgya string stays unchanged.", corrected)
+        self.assertIn("zu Tsgrun wettei-", corrected)
+        marker_changes = [
+            (row["from_token"], row["to_token"])
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_reference_marker"
+        ]
+        self.assertEqual(marker_changes, [("Tbrgya", "↑ brgya")])
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
             {
@@ -1690,6 +1952,2221 @@ class PostprocessRegressionTests(unittest.TestCase):
                 if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
             ]
         )
+
+    def test_reviewed_tibetan_script_final_ng_seed_rows_are_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (758, 184): "ཉངས་ Hans Tran po.",
+                (981, 19): "↓ dbyar zla tha chun; ~ bźi die jeweils letzten",
+                (981, 18): "Iston zla tha chun, \\dpyid zla tha chun,",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("ཉངས་ ñaṅs ↓ raṅ po.", corrected)
+        self.assertIn(
+            "↓ dbyar zla tha chuṅ; ~ bźi die jeweils letzten",
+            corrected,
+        )
+        self.assertIn("Iston zla tha chun, \\dpyid zla tha chun,", corrected)
+        reviewed = {
+            (row["page"], row["line"], row["from_token"], row["to_token"], row["reason"])
+            for row in changes
+            if row["tier"] == "reviewed_tibetan_exact"
+        }
+        self.assertIn(
+            (
+                "758",
+                "184",
+                "Hans",
+                "ñaṅs",
+                "reviewed_tibetan_exact_script_ng_witness",
+            ),
+            reviewed,
+        )
+        self.assertIn(
+            (
+                "758",
+                "184",
+                "Tran",
+                "↓ raṅ",
+                "reviewed_tibetan_exact_reference_marker",
+            ),
+            reviewed,
+        )
+        self.assertIn(
+            (
+                "981",
+                "19",
+                "chun",
+                "chuṅ",
+                "reviewed_tibetan_exact_final_ng",
+            ),
+            reviewed,
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
+    def test_reviewed_chung_headword_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (56, 115): "ཀུ་བ་ཆུང་བ་ ku ba chun ba",
+            (56, 117): "ཀུ་བ་ཆུང་བ་ ku ba chun ba Bilva-Baum und Bilva-",
+            (60, 101): "ཀུ་ས་ལི་ཆུང་བ་ ku sa li chun ba",
+            (99, 86): "ཀོན་པ་གབ་ཆུང་ kon pa gab chun eine Heilpflanze,",
+            (114, 8): "ཀླུ་སྒྲུལ་འོད་ཆུང་ klu sbrul ’od chun auch klu sbrul",
+            (114, 54): "ཀླུ་མེས་འབྲོམ་ཆུང་པ་ klu mes 'brom chun pa npr. ein",
+            (56, 116): "An unreviewed prose chun stays unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        for line in reviewed_lines.values():
+            if "ཆུང" in line:
+                self.assertIn(line.replace("chun", "chuṅ"), corrected)
+        self.assertIn("An unreviewed prose chun stays unchanged.", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            and row["from_token"] == "chun"
+        ]
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_chung_direct_batch_changes_only_exact_tokens(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (121, 151): "དཀར་ཆུང་རིང་མོ་ dkar chun rin mo",
+                (256, 61): "།ཁ་སཱན་ཆུང་ངུ་ kha sran chun hu ein Getreide.",
+                (408, 51): "དགུན་ཟླ་བ་ཆུང dgun zla tha chun",
+                (408, 52): "An unreviewed prose chun and hu stay unchanged.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("dkar chuṅ riṅ mo", corrected)
+        self.assertIn("kha sran chuṅ ṅu ein Getreide.", corrected)
+        self.assertIn("dgun zla tha chuṅ", corrected)
+        self.assertIn("An unreviewed prose chun and hu stay unchanged.", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            and row["from_token"] == "chun"
+        ]
+        self.assertEqual(len(reviewed), 3)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+
+    def test_reviewed_ngu_seed_is_exact_and_does_not_change_sran(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (256, 61): "།ཁ་སཱན་ཆུང་ངུ་ kha sran chuṅ hu ein Getreide.",
+                (256, 62): "An unrelated hu stays unchanged.",
+            }
+        )
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+
+        self.assertIn("kha sran chuṅ ṅu ein Getreide.", corrected)
+        self.assertIn("An unrelated hu stays unchanged.", corrected)
+        self.assertNotIn("kha srān", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            and row["from_token"] == "hu"
+        ]
+        self.assertEqual(len(reviewed), 1)
+        self.assertEqual(reviewed[0]["to_token"], "ṅu")
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+
+    def test_reviewed_direct_unique_final_ng_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (491, 157): "སྒེའུ་ཆུང་ sge’u chun",
+            (503, 71): "སྒྲུང་ sgrun Erzählung, Geschichtenerzähler.",
+            (561, 22): "ཇྭའུ་ཆུང་ rha’u chun eine kleine Trommel, vgl.",
+            (760, 107): "ཉམ་ཆུང་དབང་པོ་ nam chun dban po",
+            (1066, 95): "མཐོང་ཆུང་བ་ mthon chun ba geringes Anse-",
+            (1066, 96): "Unreviewed chun, sgrun, and rha’u stay unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("sge’u chuṅ", corrected)
+        self.assertIn("sgruṅ Erzählung", corrected)
+        self.assertIn("rha’u chuṅ", corrected)
+        self.assertIn("nam chuṅ dbaṅ po", corrected)
+        self.assertIn("mthoṅ chuṅ ba", corrected)
+        self.assertIn(
+            "Unreviewed chun, sgrun, and rha’u stay unchanged.",
+            corrected,
+        )
+        self.assertEqual(
+            {
+                (row["from_token"], row["to_token"])
+                for row in changes
+                if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+            },
+            {("chun", "chuṅ"), ("sgrun", "sgruṅ")},
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+
+    def test_reviewed_repeated_lemma_final_ng_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (60, 118): "ཀུ་ས་ལི་ཆུང་བ་ ku sa li chun ba, auch ku sa li chun",
+            (587, 65): "ཅོལ་ཆུང་ col chun auch col re chun, gcol chun",
+            (617, 44): "ལྩེའུ་ཆུང་ /©6¢ chun auch lce chun Gaumen-",
+            (766, 16): "ཉམས་ཆུང་ ༩༩༩༠ chun \\nam chun.",
+            (1028, 9): "ཐེའུ་ཆུང་ the’n chun lmthe’u chun.",
+            (1028, 10): "Unreviewed chun and damaged prefixes stay unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("ku sa li chuṅ ba, auch ku sa li chuṅ", corrected)
+        self.assertIn("col chuṅ auch col re chuṅ, gcol chuṅ", corrected)
+        self.assertIn("/©6¢ chuṅ auch lce chuṅ", corrected)
+        self.assertIn("༩༩༩༠ chuṅ \\nam chuṅ", corrected)
+        self.assertIn("the’n chuṅ lmthe’u chuṅ", corrected)
+        self.assertIn(
+            "Unreviewed chun and damaged prefixes stay unchanged.",
+            corrected,
+        )
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 11)
+        self.assertEqual(
+            {(row["from_token"], row["to_token"]) for row in reviewed},
+            {("chun", "chuṅ")},
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 11)
+
+    def test_reviewed_manual_alignment_final_ng_batch_is_exact(self) -> None:
+        reviewed_lines = {
+            (337, 54): "གང་ག་ཆུང་ gar ga chun",
+            (551, 114): "མངོན་ཆུང་ mnon chun",
+            (657, 1): 'ཆུང་གྲས\" chun gras',
+            (827, 115): "སྙོམས་ཆུང་ säoms chun",
+            (1160, 32): "དུད་ཆུང་ dud chun Steuer zahlender Bauer,",
+            (1160, 33): "Unreviewed gar, mnon, and chun stay unchanged.",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("gaṅ ga chuṅ", corrected)
+        self.assertIn("mnon chuṅ", corrected)
+        self.assertIn('ཆུང་གྲས\" chuṅ gras', corrected)
+        self.assertIn("säoms chuṅ", corrected)
+        self.assertIn("dud chuṅ Steuer", corrected)
+        self.assertIn(
+            "Unreviewed gar, mnon, and chun stay unchanged.",
+            corrected,
+        )
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_damaged_context_final_ng_tokens_are_independent(self) -> None:
+        reviewed_lines = {
+            (491, 208): "SQ ཆུང་ 'sge’n chun }'sge’n.",
+            (659, 3): "ཆུང་ཆུང་ chun chun klein, sehr klein.",
+            (659, 22): "ཆུང་སྟག་ chun /¡7£ zweitjüngster.",
+            (823, 1): "སྙིང་ཕོད་ཆུང་བ་ 4?7//7 phod chun ba",
+            (981, 58): "ཐ་ཆུང་རྨུ་ལྟམ་ཐང་མོ་སྨན་ 77% chun )7?7// Ilcam",
+        }
+
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(reviewed_lines),
+            label="wts_1_34",
+        )
+
+        self.assertIn("'sge’n chuṅ }'sge’n", corrected)
+        self.assertIn("chuṅ chuṅ klein", corrected)
+        self.assertIn("chuṅ /¡7£", corrected)
+        self.assertIn("4?7//7 phod chuṅ ba", corrected)
+        self.assertIn("77% chuṅ )7?7// Ilcam", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+        ]
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_dban_consensus_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (52, 81): "ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dban po",
+                (52, 82): "A bibliographic dban and unrelated prose dban stay unchanged.",
+            },
+            "wts_8_b": {
+                (352, 41): 'དབང་པོ་ "dban po',
+                (352, 42): "Plain dban without the reviewed row stays unchanged.",
+            },
+        }
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                self.assertIn("dbaṅ po", corrected)
+                self.assertIn("dban", corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+                    and row["from_token"] == "dban"
+                ]
+                self.assertEqual(len(reviewed), 1)
+                self.assertEqual(reviewed[0]["from_token"], "dban")
+                self.assertEqual(reviewed[0]["to_token"], "dbaṅ")
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    2 if label == "wts_1_34" else 1,
+                )
+
+    def test_reviewed_rkan_consensus_rows_are_exact(self) -> None:
+        reviewed_text = self.fixture_with_reviewed_lines(
+            {
+                (155, 188): "རྐང་ཀོར་ rkan kor Fußschmuck, Fußring.",
+                (156, 201): "རྐང་གཉིས་ rkan 677/5 Mensch; — mchog, — dam",
+                (156, 202): "German and bibliographic rkan remain unchanged.",
+            }
+        )
+        result, corrected, changes = self.run_postprocess_fixture(
+            reviewed_text,
+            label="wts_1_34",
+        )
+        self.assertIn("rkaṅ kor", corrected)
+        self.assertIn("rkaṅ 677/5", corrected)
+        self.assertIn(
+            "German and bibliographic rkan remain unchanged.",
+            corrected,
+        )
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 2)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
+
+    def test_reviewed_cross_volume_residual_chung_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_35_51": {
+                (361, 8): "ན་ག་ཆུང་ raga chun lṅa kha chun.",
+                (633, 2): "སྣང་ཆུང་ chun.",
+            },
+            "wts_8_b": {
+                (212, 42): "བྱིས་ཆུང་ 'byis chuṅ auch byis pa chun rn klei-",
+                (529, 25): "སྤག་ཆུང་ sbag chun.",
+            },
+        }
+        expected_counts = {"wts_35_51": 3, "wts_8_b": 2}
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                self.assertNotIn(" chun", corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+                ]
+                self.assertEqual(len(reviewed), expected_counts[label])
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    expected_counts[label],
+                )
+
+    def test_reviewed_thang_consensus_rows_preserve_mixed_n_controls(self) -> None:
+        lines = {
+            (140, 14): "བཀའ་ཐང་ bka’ than alttib. bka’ tan Erlaß.",
+            (360, 30): "གོང་ཐང་ gon than Preis, Wert.",
+            (989, 131): "ཐང་ཐང་གྱེར་མཁས་ than than gyer mkhas Bez.",
+            (989, 136): "ཐང་ཐན་ than than sehr klein, mickrig.",
+            (988, 91): "ཐྲང་དཀར་ than dkar auch than kar.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("བཀའ་ཐང་ bka’ thaṅ alttib. bka’ tan", corrected)
+        self.assertIn("གོང་ཐང་ goṅ thaṅ Preis", corrected)
+        self.assertIn("ཐང་ཐང་གྱེར་མཁས་ thaṅ thaṅ gyer mkhas", corrected)
+        self.assertIn("ཐང་ཐན་ thaṅ than sehr klein", corrected)
+        self.assertIn("ཐྲང་དཀར་ than dkar auch than kar", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+            and row["from_token"] == "than"
+            and row["to_token"] == "thaṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_thang_rows_preserve_later_damage(self) -> None:
+        lines = {
+            (107, 3): "ཀྱས་ཐང་ལ་ kyus than la npr. Kloster in 2 1531",
+            (199, 164): "སྐྱིན་ཐང་ skyin than auch skyin dan, skyin 777",
+            (988, 197): "ཐང་ག་ than ga 1//77/7 ka 2,",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("kyus thaṅ la npr. Kloster in 2 1531", corrected)
+        self.assertIn("skyin thaṅ auch skyin dan, skyin 777", corrected)
+        self.assertIn("ཐང་ག་ thaṅ ga 1//77/7 ka 2,", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+        self.assertEqual(
+            sum(
+                row["from_token"] == "than" and row["to_token"] == "thaṅ"
+                for row in changes
+            ),
+            3,
+        )
+
+    def test_reviewed_khang_rows_preserve_neighbouring_n_families(self) -> None:
+        lines = {
+            (628, 48): "ཆང་།ཁང་ chan khan Wirtshaus.",
+            (948, 109): "སྟེང་ཁང་ sten khan",
+            (1159, 51): "དུད་ཁང་ dud khan Badehaus; vgl. [%//95 khan,",
+            (1322, 1): "དྲི་བཟང་ཁང་ dri bzan khan",
+            (600, 1): "མཁན་ mkhan genuine agentive form.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("ཆང་།ཁང་ chaṅ khaṅ Wirtshaus.", corrected)
+        self.assertIn("སྟེང་ཁང་ steṅ khaṅ", corrected)
+        self.assertIn("dud khaṅ Badehaus; vgl. [%//95 khan,", corrected)
+        self.assertIn("དྲི་བཟང་ཁང་ dri bzaṅ khaṅ", corrected)
+        self.assertIn("མཁན་ mkhan genuine agentive form.", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["from_token"] == "khan" and row["to_token"] == "khaṅ"
+        ]
+        self.assertEqual(len(reviewed), 4)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 7)
+
+    def test_reviewed_gong_rows_preserve_repetitions_and_neighbours(self) -> None:
+        lines = {
+            (360, 4): "གོང་གོང་ gon gon rund.",
+            (360, 20): "གོང་གཉའ་ gon £77° Nacken, Oberes.",
+            (360, 30): "གོང་ཐང་ gon thaṅ Preis, Wert.",
+            (360, 143): "གོང་པོ་ ’gon po Kragen; vgl. Igor ba.",
+            (361, 1): "གོང་མ་གོང་མ་ gon ma gon ma",
+            (361, 50): "གོང་མའི་གོང་མ་ gon ma’i gon ma auch gon ma",
+            (1116, 44): "དན་གོང་ dan gon auch dan kon Kugelbogen,",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གོང་གོང་ goṅ goṅ rund.", corrected)
+        self.assertIn("གོང་གཉའ་ goṅ £77°", corrected)
+        self.assertIn("གོང་ཐང་ goṅ thaṅ", corrected)
+        self.assertIn("གོང་པོ་ ’goṅ po", corrected)
+        self.assertIn("གོང་མ་གོང་མ་ goṅ ma goṅ ma", corrected)
+        self.assertIn("གོང་མའི་གོང་མ་ goṅ ma’i goṅ ma", corrected)
+        self.assertIn("དན་གོང་ dan goṅ auch dan kon", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["to_token"] == "goṅ"
+            and row["reason"] == "reviewed_tibetan_exact_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 10)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 10)
+
+    def test_reviewed_goh_variant_maps_to_gong(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(425, 6): "ནམ་གོང་ nam goh Bez. für das Mondhaus sa ri."}
+            ),
+            label="wts_35_51",
+        )
+        self.assertIn("ནམ་གོང་ nam goṅ Bez.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["from_token"], "goh")
+
+    def test_prefixed_agong_rows_preserve_apostrophe_style(self) -> None:
+        lines = {
+            (397, 112): "གླད་འགོང་ glud ’gon eine Zeremonie zu Neu-",
+            (439, 158): "འགོང་པོ་ ’gon po",
+            (470, 89): "རྒྱལ་འགོང་ rgyal 'gon eine Dämonenart.",
+            (439, 200): "འགང་པ gon po ein Damon; gon mo eine",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གླད་འགོང་ glud ’goṅ", corrected)
+        self.assertIn("འགོང་པོ་ ’goṅ po", corrected)
+        self.assertIn("རྒྱལ་འགོང་ rgyal 'goṅ", corrected)
+        self.assertIn("འགང་པ gon po ein Damon; gon mo", corrected)
+        reviewed = [
+            row
+            for row in changes
+            if row["reason"]
+            == "reviewed_tibetan_exact_prefixed_final_ng_consensus"
+        ]
+        self.assertEqual(len(reviewed), 3)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 3)
+
+    def test_reviewed_stong_rows_exclude_genuine_ston(self) -> None:
+        lines = {
+            (157, 58): "རྐང་སྟོང་སྐྱེལ་ rkaṅ ston skyel",
+            (628, 206): "ཆང་པ་སྟོང་པ་ chan pa ston pa",
+            (950, 164): "སྟོང་ 'ston",
+            (952, 171): "སྟོང་གཉེར་ ston 97707ˆ",
+            (953, 122): "སྟོང་གསུམ་ ston gsum 1000),",
+            (200, 1): "དགའ་སྟོན་ dga’ ston Freudenfest.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("རྐང་སྟོང་སྐྱེལ་ rkaṅ stoṅ skyel", corrected)
+        self.assertIn("ཆང་པ་སྟོང་པ་ chaṅ pa stoṅ pa", corrected)
+        self.assertIn("སྟོང་ 'stoṅ", corrected)
+        self.assertIn("སྟོང་གཉེར་ stoṅ 97707ˆ", corrected)
+        self.assertIn("སྟོང་གསུམ་ stoṅ gsum 1000),", corrected)
+        self.assertIn("དགའ་སྟོན་ dga’ ston Freudenfest.", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "ston" and row["to_token"] == "stoṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_kong_rows_preserve_distinct_syllables(self) -> None:
+        lines = {
+            (97, 19): "ཀོང་ཀོང་ kon kon ausgehöhlt.",
+            (97, 111): "ཀོང་རྗེ་བྲང་དཀར་ kon rje bran dkar",
+            (98, 118): "ཀོང་ཙེ་ kon tse auch koṅ rtse, koṅ tshe.",
+            (98, 104): "901,3). ཀོང་མོ་ 'kon mo tiefe Höhle.",
+            (200, 1): "ཀོན་པ་ kon pa Bedeutung unklar.",
+            (201, 1): "ཁོང་ khon pron. 3. pers.",
+            (202, 1): "རྐོང་ rkon po.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("ཀོང་ཀོང་ koṅ koṅ", corrected)
+        self.assertIn("ཀོང་རྗེ་བྲང་དཀར་ koṅ rje braṅ dkar", corrected)
+        self.assertIn("ཀོང་ཙེ་ koṅ tse auch koṅ rtse, koṅ tshe.", corrected)
+        self.assertIn("901,3). ཀོང་མོ་ 'koṅ mo", corrected)
+        self.assertIn("ཀོན་པ་ kon pa", corrected)
+        self.assertIn("ཁོང་ khon", corrected)
+        self.assertIn("རྐོང་ rkon", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "kon" and row["to_token"] == "koṅ"
+        ]
+        self.assertEqual(len(reviewed), 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
+
+    def test_reviewed_glang_rows_preserve_neighbouring_damage_and_genuine_glan(self) -> None:
+        lines = {
+            (393, 183): "གླང་ཐབས་ glan thabs auch glan ’thab eine Er-",
+            (393, 191): "གླང་འཐབ་ glan ’thab †2/%7 thabs.",
+            (394, 196): "གླང་པོའི་གདོང་ glan po’i gdon Bez. für Ganesa.",
+            (395, 57): "གླང་ཤིང་ glan sin ein Baum, Gebirgsweide.",
+            (1275, 1): "དོམ་མགོ་གླང་སྙིང་ dom mgo glan sin",
+            (1171, 1): "གླན་ glan genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines),
+            label="wts_1_34",
+        )
+        self.assertIn("གླང་ཐབས་ glaṅ thabs auch glaṅ ’thab", corrected)
+        self.assertIn("གླང་འཐབ་ glaṅ ’thab †2/%7 thabs.", corrected)
+        self.assertIn("གླང་པོའི་གདོང་ glaṅ po’i gdoṅ", corrected)
+        self.assertIn("གླང་ཤིང་ glaṅ siṅ", corrected)
+        self.assertIn("dom mgo glaṅ sin", corrected)
+        self.assertIn("གླན་ glan genuine distinct syllable.", corrected)
+        reviewed = [
+            row for row in changes
+            if row["from_token"] == "glan" and row["to_token"] == "glaṅ"
+        ]
+        self.assertEqual(len(reviewed), 6)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 8)
+
+    def test_reviewed_glah_variant_maps_to_glang(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(39, 51): "བན་གླང་མོ་ ban glah mo Ibal glari mo."}
+            ),
+            label="wts_8_b",
+        )
+        self.assertIn("བན་གླང་མོ་ ban glaṅ mo Ibal glari mo.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["from_token"], "glah")
+
+    def test_reviewed_glang_echo_preserves_neighbouring_damage(self) -> None:
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(
+                {(68, 56): "བལ་གླང་མོ་ bal glaṅ no auch ban glan mo Ele-"}
+            ),
+            label="wts_8_b",
+        )
+        self.assertIn("bal glaṅ no auch ban glaṅ mo", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(changes[-1]["reason"], "reviewed_tibetan_exact_final_ng_echo")
+
+    def test_reviewed_bzang_rows_and_echo_preserve_genuine_bzan(self) -> None:
+        lines = {
+            (86, 60): "ཀུན་བཟང་མ་ kun bzan ma, auch kun bzan mo npr.",
+            (987, 88): "ཐྲགས་བཟང་ thags bzan auch thag bzan wohl-",
+            (200, 1): "བཟན་ bzan genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun bzaṅ ma, auch kun bzaṅ mo", corrected)
+        self.assertIn("thags bzaṅ auch thag bzaṅ", corrected)
+        self.assertIn("བཟན་ bzan genuine distinct syllable.", corrected)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 4)
+        self.assertEqual(sum(row["to_token"] == "bzaṅ" for row in changes), 4)
+
+    def test_reviewed_dung_rows_preserve_neighbouring_final_n_families(self) -> None:
+        lines = {
+            (1087, 34): "ད་དུང་ཀྱང་ da dun kyan Ida dun yan.",
+            (1156, 24): "དུང་སྐྱོང་ dun skyon auch dun skyons npr.",
+            (1156, 70): "དུང་རིང་ dun rin",
+            (157, 136): "རྐང་དུང་ rkaṅ dun",
+            (200, 1): "དུན་ dun genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("da duṅ kyaṅ Ida dun yan", corrected)
+        self.assertIn("duṅ skyoṅ auch duṅ skyons", corrected)
+        self.assertIn("duṅ rin", corrected)
+        self.assertIn("rkaṅ duṅ", corrected)
+        self.assertIn("དུན་ dun genuine distinct syllable.", corrected)
+        self.assertEqual(sum(row["to_token"] == "duṅ" for row in changes), 5)
+
+    def test_reviewed_gling_rows_preserve_neighbouring_genuine_n(self) -> None:
+        lines = {
+            (945, 1): "སྟན་གླིང་པ་ stan glin pa",
+            (1067, 75): "མཐོང་སྨོན་གླིང་ mthon smon glin npr. ein Ort.",
+            (200, 1): "གླིན་ glin genuine distinct syllable.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("stan gliṅ pa", corrected)
+        self.assertIn("mthoṅ smon gliṅ", corrected)
+        self.assertIn("གླིན་ glin genuine distinct syllable.", corrected)
+        self.assertEqual(sum(row["to_token"] == "gliṅ" for row in changes), 2)
+
+    def test_reviewed_chang_rows_preserve_stong_and_distinct_forms(self) -> None:
+        lines = {
+            (628, 206): "ཆང་པ་སྟོང་པ་ chan pa stoṅ pa",
+            (628, 72): "ཆང་འགག་ chan ’gag auch chan ’gags.",
+            (200, 1): "ཆན་ chan genuine distinct syllable.",
+            (201, 1): "འཆང་ ’chan separate prefixed family.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("chaṅ pa stoṅ pa", corrected)
+        self.assertIn("chaṅ ’gag auch chaṅ ’gags", corrected)
+        self.assertIn("ཆན་ chan genuine distinct syllable.", corrected)
+        self.assertIn("འཆང་ ’chan separate prefixed family.", corrected)
+        self.assertEqual(sum(row["to_token"] == "chaṅ" for row in changes), 3)
+
+    def test_reviewed_mthong_rows_preserve_genuine_mthon_and_gling(self) -> None:
+        lines = {
+            (1067, 75): "མཐོང་སྨོན་གླིང་ mthon smon gliṅ npr. ein Ort.",
+            (1067, 100): "མཐོང་གཡེར་ mthon g.yer auch mthon yel,",
+            (1068, 8): "མཐོན་ཀ་ mthon ka.",
+            (1066, 121): "མཐོང་ཉམས་ mthon /74/775 Schverlust.",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("mthoṅ smon gliṅ", corrected)
+        self.assertIn("mthoṅ g.yer auch mthoṅ yel", corrected)
+        self.assertIn("མཐོན་ཀ་ mthon ka.", corrected)
+        self.assertIn("mthoṅ /74/775 Schverlust.", corrected)
+        self.assertEqual(sum(row["to_token"] == "mthoṅ" for row in changes), 4)
+
+    def test_reviewed_ring_rows_preserve_dung_and_genuine_rin(self) -> None:
+        lines = {
+            (1158, 57): "དུང་རིང་ duṅ rin eine Langtrompete",
+            (43, 158): "ཀ་རིང་ ka rin",
+            (86, 117): "ཀུན་རིན་ kun rin",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དུང་རིང་ duṅ riṅ", corrected)
+        self.assertIn("ཀ་རིང་ ka riṅ", corrected)
+        self.assertIn("ཀུན་རིན་ kun rin", corrected)
+        self.assertEqual(sum(row["to_token"] == "riṅ" for row in changes), 2)
+
+    def test_reviewed_gtong_rows_change_only_exact_tokens(self) -> None:
+        lines = {
+            (895, 125): "གཏོང་ gton pf. Ibtan fur. Tgtan imp. Ithonis.",
+            (896, 180): "གཏོང་དང་ལྡན་པ་ gton daṅ ldan pa auch gton",
+            (896, 204): "གཏོང་ལྡན་ gton ldan tgton dan ldan pa.",
+            (897, 59): "གཏོང་ཡོང་ gton yon",
+            (897, 61): "གཏོང་བྱེད་ 'gton byed Ausgaben; hier: Lebens-",
+            (897, 85): "གཏོང་གཞི་ gton 0277 Grundlage für die Bestrei-",
+            (897, 40): "གཏང་ བའ ནོར་ gton ༼/¢'/7 nor Besitz der Frei-",
+        }
+        result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("གཏོང་ gtoṅ pf. Ibtan fur. Tgtan imp. Ithonis.", corrected)
+        self.assertIn("gtoṅ daṅ ldan pa auch gtoṅ", corrected)
+        self.assertIn("gtoṅ ldan tgton daṅ ldan pa.", corrected)
+        self.assertIn("གཏོང་ཡོང་ gtoṅ yoṅ", corrected)
+        self.assertIn("གཏོང་བྱེད་ 'gtoṅ byed", corrected)
+        self.assertIn("གཏོང་གཞི་ gtoṅ 0277", corrected)
+        self.assertIn("གཏང་ བའ ནོར་ gton ༼/¢'/7 nor", corrected)
+        self.assertEqual(sum(row["to_token"] == "gtoṅ" for row in changes), 7)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 8)
+
+    def test_reviewed_skyong_preserves_genuine_skyon(self) -> None:
+        lines = {
+            (52, 81): "ཀརྨ་བསྟན་སྐྱོང་དབང་པོ་ karma bstan skyon dbaṅ po",
+            (219, 37): "སྐྱོན་བཀལ་ skyon bkal pf. zu Iskyon 'gel tadeln.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("karma bstan skyoṅ dbaṅ po", corrected)
+        self.assertIn("སྐྱོན་བཀལ་ skyon bkal", corrected)
+        self.assertEqual(sum(row["to_token"] == "skyoṅ" for row in changes), 1)
+
+    def test_reviewed_abyung_preserves_prefix_punctuation_and_unprefixed_byun(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (83, 162): "ཀུན་འབྱུང་ kun 'byun.",
+                (83, 182): "ཀུན་འབྱུང་བ་ kun ’byun ba, vgl. !kun tu ’byun ba,",
+            },
+            "wts_35_51": {
+                (85, 38): "བདེ་བའི་འབྱུང་གནས་ bde ba'i byuh gnas Iode",
+                (600, 5): "རྣམ་བྱུང་ mam byun.",
+            },
+            "wts_8_b": {
+                (463, 48): 'འབྱུང་ "byun',
+            },
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+            self.assertTrue(all(row["to_token"] == "byuṅ" for row in changes))
+        self.assertIn("kun 'byuṅ.", outputs["wts_1_34"])
+        self.assertIn("kun ’byuṅ ba, vgl. !kun tu ’byuṅ ba", outputs["wts_1_34"])
+        self.assertIn("bde ba'i byuṅ gnas", outputs["wts_35_51"])
+        self.assertIn("རྣམ་བྱུང་ mam byuṅ.", outputs["wts_35_51"])
+        self.assertIn('འབྱུང་ "byuṅ', outputs["wts_8_b"])
+
+    def test_reviewed_steng_rows_preserve_genuine_sten_and_neighbours(self) -> None:
+        lines = {
+            (948, 114): "སྟེང་ཁང་ sten khaṅ auch sten gi khan oberes",
+            (948, 166): "སྟེང་དགག་ sten dgag auch sten gi dgag pa eine",
+            (948, 197): "སྟེང་ཐོག་ sten thog Kurzf. für sten gi thog oberes",
+            (948, 153): "སྟེང་གི་ཐོག་ sten 07 thog Isten thog.",
+            (949, 2): "སྟེང་ཕུར་ steṅ phur \\sten 'phur.",
+            (949, 128): "སྟེན་ sten pf. und fur. !bsten.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("steṅ khaṅ auch steṅ gi khan", corrected)
+        self.assertIn("steṅ dgag auch steṅ gi dgag pa", corrected)
+        self.assertIn("steṅ thog Kurzf. für steṅ gi thog", corrected)
+        self.assertIn("སྟེང་གི་ཐོག་ steṅ 07 thog Isten thog.", corrected)
+        self.assertIn("སྟེང་ཕུར་ steṅ phur \\sten 'phur.", corrected)
+        self.assertIn("སྟེན་ sten pf. und fur. !bsten.", corrected)
+        self.assertEqual(sum(row["to_token"] == "steṅ" for row in changes), 7)
+
+    def test_reviewed_drung_repetitions_and_apostrophes_are_exact(self) -> None:
+        lines = {
+            (1335, 9): "དྲུང་ 'drun auch druns.",
+            (1335, 66): "དྲུང་ ’drun 1272 po.",
+            (1336, 1): "དྲུང་དྲུང་ drun drun",
+            (1336, 49): "དྲུང་དྲུང་ drun drun",
+            (1337, 3): "དྲུང་ན་ drun na bei, an, auf, vor; vgl. !'drun 1.",
+            (100, 1): "དྲུན་ drun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲུང་ 'druṅ auch druns.", corrected)
+        self.assertIn("དྲུང་ ’druṅ 1272 po.", corrected)
+        self.assertEqual(corrected.count("དྲུང་དྲུང་ druṅ druṅ"), 2)
+        self.assertIn("druṅ na bei, an, auf, vor; vgl. !'drun 1.", corrected)
+        self.assertIn("དྲུན་ drun synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "druṅ" for row in changes), 7)
+
+    def test_reviewed_khung_rows_preserve_damaged_references(self) -> None:
+        lines = {
+            (176, 149): "སྐར་ཁུང་ skar khun auch dkar khun, alttib. skar",
+            (346, 127): "གབ་ཁུང་ gab khun auch sgab khun Kniekehle.",
+            (934, 122): "ལྟེ་ཁུང་ lte khun auch //¢ ba khun Bauchnabel.",
+            (962, 9): "སྟོར་ཁུང་ stor khun [།2/07 khun.",
+            (200, 1): "ཁུན་ khun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skar khuṅ auch dkar khuṅ", corrected)
+        self.assertIn("gab khuṅ auch sgab khuṅ", corrected)
+        self.assertIn("lte khuṅ auch //¢ ba khuṅ", corrected)
+        self.assertIn("stor khuṅ [།2/07 khun.", corrected)
+        self.assertIn("ཁུན་ khun synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "khuṅ" for row in changes), 7)
+
+    def test_reviewed_dong_rows_and_echoes_are_exact(self) -> None:
+        lines = {
+            (1252, 93): "དོང་ don ka auch don ga eine Pflanze.",
+            (1253, 14): "དོང་ཀྲ་ don kra auch don gra eine Art Ingwer.",
+            (1253, 41): "དོང་པ་ don pa auch don ba Rohr.",
+            (1253, 100): "དོང་ཙེ་ don tse auch don rtse eine Münze.",
+            (200, 1): "དོན་ don synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("doṅ ka auch doṅ ga", corrected)
+        self.assertIn("doṅ kra auch doṅ gra", corrected)
+        self.assertIn("doṅ pa auch doṅ ba", corrected)
+        self.assertIn("doṅ tse auch doṅ rtse", corrected)
+        self.assertIn("དོན་ don synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "doṅ" for row in changes), 8)
+
+    def test_reviewed_gung_variants_and_echoes_are_exact(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (134, 129): "བཀའ་གུང་ bka’ gun Kurzf. für bka’i gun blon",
+                (771, 25): "ཉི་མ་གུང་ ri ma gun Wii /7777 gun.",
+                (771, 27): "ཉི་མ་གུང་པ་ fi ma gun pa auch /7/ ma’i gun",
+                (200, 1): "གུན་ gun synthetic genuine-final-n control.",
+            },
+            "wts_35_51": {
+                (699, 55): "པུ་དེ་གུང་རྒྱལ་ pu de guh rgyal Ispu de gun rgyal:",
+            },
+        }
+        observed = []
+        for label, lines in fixtures.items():
+            _result, corrected, changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            observed.append(corrected)
+            if label == "wts_1_34":
+                self.assertIn("bka’ guṅ Kurzf. für bka’i guṅ blon", corrected)
+                self.assertIn("ri ma guṅ Wii /7777 gun.", corrected)
+                self.assertIn("fi ma guṅ pa auch /7/ ma’i guṅ", corrected)
+                self.assertIn("གུན་ gun synthetic genuine-final-n control.", corrected)
+            else:
+                self.assertIn("pu de guṅ rgyal Ispu de guṅ rgyal", corrected)
+            self.assertTrue(all(row["from_token"] in {"gun", "guh"} for row in changes))
+        self.assertEqual(sum(text.count("guṅ") for text in observed), 7)
+
+    def test_reviewed_rkyang_rows_repetitions_and_final_n_control(self) -> None:
+        lines = {
+            (163, 54): "རྐྱང་རྐྱང་ rkyan rkyan",
+            (163, 112): "རྐྱང་ངེ་ཅོ་ངེ་བ་ rkyan ne co ne ba auch rkyan ne con",
+            (271, 133): "ཁེར་རྐྱང་ kher rkyan auch khe rkyan allein.",
+            (164, 47): "རྐྱན་ rkyan Krug, Kanne.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("རྐྱང་རྐྱང་ rkyaṅ rkyaṅ", corrected)
+        self.assertIn("rkyaṅ ne co ne ba auch rkyaṅ ne con", corrected)
+        self.assertIn("kher rkyaṅ auch khe rkyaṅ", corrected)
+        self.assertIn("རྐྱན་ rkyan Krug, Kanne.", corrected)
+        self.assertEqual(sum(row["to_token"] == "rkyaṅ" for row in changes), 6)
+
+    def test_reviewed_byang_variants_preserve_damage_and_final_n(self) -> None:
+        lines = {
+            (163, 68): "བྱང་བགྲོད་ byah bgrod",
+            (177, 50): "བྱང་སྨན་ byaṅ sman Kurzf. für byan /?/// mig",
+            (179, 7): "བྱང་སེམས་ ?byan sems Tbyan chub sems dpa'.",
+            (181, 1): "བྱན་ byan synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("བྱང་བགྲོད་ byaṅ bgrod", corrected)
+        self.assertIn("byaṅ sman Kurzf. für byaṅ /?/// mig", corrected)
+        self.assertIn("?byaṅ sems Tbyan chub sems dpa'", corrected)
+        self.assertIn("བྱན་ byan synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "byaṅ" for row in changes), 3)
+
+    def test_reviewed_seng_variants_and_echoes_are_exact(self) -> None:
+        lines = {
+            (195, 116): "སྐྱ་སེང་སེང་པོ་ skya sen sen po auch skya bo sen sen",
+            (344, 18): "གངས་སེང་ gans seh Schneelöwe.",
+            (945, 72): "སྟབ་སེང་ stab sen \\stabs sen.",
+            (946, 1): "སེན་ sen synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skya seṅ seṅ po auch skya bo seṅ seṅ", corrected)
+        self.assertIn("gans seṅ Schneelöwe", corrected)
+        self.assertIn("stab seṅ \\stabs sen.", corrected)
+        self.assertIn("སེན་ sen synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "seṅ" for row in changes), 6)
+
+    def test_reviewed_song_rows_preserve_uncertain_echo_and_final_n(self) -> None:
+        lines = {
+            (789, 137): "ཉེ་བར་སོང་ fie bar son auch ñer son",
+            (792, 86): "ཉེར་སོང་ ner son tie bar son.",
+            (793, 1): "སོན་ son synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("fie bar soṅ auch ñer soṅ", corrected)
+        self.assertIn("ner soṅ tie bar son.", corrected)
+        self.assertIn("སོན་ son synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "soṅ" for row in changes), 3)
+
+    def test_reviewed_ling_rows_preserve_foreign_variant_and_final_n(self) -> None:
+        lines = {
+            (46, 65): "ཀ་ལིང་ཀ་ ka lin ka, auch ka linika",
+            (350, 60): "གི་ལིང་པ་ gi lin pa 1,97// lin.",
+            (351, 1): "ལིན་ lin synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ka liṅ ka, auch ka linika", corrected)
+        self.assertIn("gi liṅ pa 1,97// lin.", corrected)
+        self.assertIn("ལིན་ lin synthetic genuine-final-n control.", corrected)
+        self.assertEqual(sum(row["to_token"] == "liṅ" for row in changes), 2)
+
+    def test_reviewed_tshang_variants_preserve_final_n(self) -> None:
+        lines = {
+            (50, 34): "ཀམ་ཚང་ kam tshan \\karma kam tshan.",
+            (629, 64): "རྗེ་ཚང་ rje tshah",
+            (630, 1): "ཚན་ tshan synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kam tshaṅ \\karma kam tshan", corrected)
+        self.assertIn("rje tshaṅ", corrected)
+        self.assertIn("ཚན་ tshan synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "tshaṅ" for row in changes), 2)
+
+    def test_reviewed_grang_cross_reference_is_exact(self) -> None:
+        lines = {
+            (373, 163): "གྲང་དུས་ gran dus Kurzf. für gran nar dus, gran",
+            (375, 1): "གྲན་ gran synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("graṅ dus Kurzf. für graṅ nar dus, graṅ", corrected)
+        self.assertIn("གྲན་ gran synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "graṅ" for row in changes), 3)
+
+    def test_reviewed_mang_echo_and_final_n_control(self) -> None:
+        lines = {
+            (56, 164): "ཀུ་བྱི་མང་སྐེ་ ku byi man ske, auch ku byi man ke",
+            (57, 1): "མན་ man synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ku byi maṅ ske, auch ku byi maṅ ke", corrected)
+        self.assertIn("མན་ man synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "maṅ" for row in changes), 2)
+
+    def test_reviewed_gting_row_does_not_promote_deferred_echo(self) -> None:
+        positive = {
+            (890, 1): "གཏིང་མཐའ་ gtin mtha’",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(positive), label="wts_1_34"
+        )
+        self.assertIn("གཏིང་མཐའ་ gtiṅ mtha’", corrected)
+        self.assertEqual(sum(row["to_token"] == "gtiṅ" for row in changes), 1)
+
+        deferred = {
+            (611, 8): "་གཅོད་གཏིང་འཕབྲིན་ mo geod gtin 'byin auch",
+            (612, 1): "unrelated gtin prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(deferred), label="wts_35_51"
+        )
+        self.assertIn("mo geod gtin 'byin auch", corrected)
+        self.assertIn("unrelated gtin prose control", corrected)
+        self.assertFalse(any(row["to_token"] == "gtiṅ" for row in changes))
+
+    def test_reviewed_phung_rows_preserve_final_n_control(self) -> None:
+        lines = {
+            (291, 9): "ཁ་ཕུང་ཕུང་ khra phun phun",
+            (292, 1): "ཕུན་ phun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("khra phuṅ phuṅ", corrected)
+        self.assertIn("ཕུན་ phun synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "phuṅ" for row in changes), 2)
+
+    def test_reviewed_achang_row_is_exactly_gated(self) -> None:
+        lines = {
+            (71, 143): "ཀུན་ཏུ་འཆང་ kun tu ’chan Geheimname",
+            (72, 1): "unrelated chan prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun tu ’chaṅ Geheimname", corrected)
+        self.assertIn("unrelated chan prose control", corrected)
+        self.assertEqual(sum(row["to_token"] == "chaṅ" for row in changes), 1)
+
+    def test_reviewed_rgyang_echo_preserves_rgyan_control(self) -> None:
+        lines = {
+            (466, 78): "རྒྱང་ཆོད་ rgyan chod auch rgyan gis chod",
+            (467, 1): "རྒྱན་ rgyan synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rgyaṅ chod auch rgyaṅ gis chod", corrected)
+        self.assertIn("རྒྱན་ rgyan synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "rgyaṅ" for row in changes), 2)
+
+    def test_reviewed_athung_echo_preserves_thun_control(self) -> None:
+        lines = {
+            (1072, 75): "འཐུང་གཅོད་ 'thun gcod auch 'thun bcod",
+            (1073, 1): "ཐུན་ thun synthetic genuine-final-n control.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("'thuṅ gcod auch 'thuṅ bcod", corrected)
+        self.assertIn("ཐུན་ thun synthetic", corrected)
+        self.assertEqual(sum(row["to_token"] == "thuṅ" for row in changes), 2)
+
+    def test_reviewed_abring_echo_is_exactly_gated(self) -> None:
+        lines = {
+            (958, 51): "སྟོན་ཟླ་འབྲིང་པོ་ ston zla ’brin po auch ston 'brin",
+            (959, 1): "unrelated brin prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ston zla ’briṅ po auch ston 'briṅ", corrected)
+        self.assertIn("unrelated brin prose control", corrected)
+        self.assertEqual(sum(row["to_token"] == "briṅ" for row in changes), 2)
+
+    def test_reviewed_klung_row_is_exactly_gated(self) -> None:
+        lines = {
+            (115, 56): "ཀླུང་ཆུ་ klun chu",
+            (116, 1): "unrelated klun prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀླུང་ཆུ་ kluṅ chu", corrected)
+        self.assertIn("unrelated klun prose control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kluṅ" for row in changes), 1)
+
+    def test_reviewed_brang_echo_preserves_attested_bran(self) -> None:
+        lines = {
+            (263, 25): "བྲང་སྤྲད་ braṅ sprad auch bran phrad",
+            (264, 41): "བྲན་ bran",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("braṅ sprad auch braṅ phrad", corrected)
+        self.assertIn("བྲན་ bran", corrected)
+        self.assertEqual(sum(row["to_token"] == "braṅ" for row in changes), 1)
+
+    def test_reviewed_cing_rows_are_exactly_gated(self) -> None:
+        lines = {
+            (582, 106): "ཅིང་ cin",
+            (1400, 1): "unrelated cin prose control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཅིང་ ciṅ", corrected)
+        self.assertIn("unrelated cin prose control", corrected)
+        self.assertEqual(sum(row["to_token"] == "ciṅ" for row in changes), 1)
+
+    def test_reviewed_byung_and_abyung_rows_share_no_broad_rule(self) -> None:
+        lines = {
+            (52, 135): "ཀརྨ་པ ་རང་བྱུང་རྡོ་རྗེ་ karma pa raṅ byun rdo ne",
+            (68, 108): "ཀུན་རྗེས་འབྱུང་ kun rjes 'byun",
+            (1400, 2): "unreviewed byun occurrence",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("raṅ byuṅ rdo ne", corrected)
+        self.assertIn("kun rjes 'byuṅ", corrected)
+        self.assertIn("unreviewed byun occurrence", corrected)
+        self.assertEqual(sum(row["to_token"] == "byuṅ" for row in changes), 2)
+
+    def test_reviewed_zhing_repairs_ascii_stem_and_preserves_controls(self) -> None:
+        lines = {
+            (784, 200): "ཉེ་བའི་ཞིང་ ie ba’i Zin auch ne Zin",
+            (1400, 3): "unrelated lowercase zin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ie ba’i źiṅ auch ne źiṅ", corrected)
+        self.assertIn("lowercase zin control", corrected)
+        self.assertEqual(sum(row["to_token"] == "źiṅ" for row in changes), 2)
+
+    def test_reviewed_long_variants_are_exactly_gated(self) -> None:
+        lines = {
+            (124, 43): "དཀར་མོ་ དུང་ལོང་ dkar mo duṅ lon",
+            (255, 163): "ཁ་ལོན་ kha lon Zügel.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("dkar mo duṅ loṅ", corrected)
+        self.assertIn("ཁ་ལོན་ kha lon", corrected)
+        self.assertEqual(sum(row["to_token"] == "loṅ" for row in changes), 1)
+
+    def test_reviewed_king_echoes_remain_exactly_gated(self) -> None:
+        lines = {
+            (54, 18): "ཀིང་ཀང་ kin kan, auch kan kin, kan dan kin",
+            (54, 115): "ཀིན་ kin 111 alttib. Texten für Igın.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kiṅ kan, auch kan kiṅ, kan dan kiṅ", corrected)
+        self.assertIn("ཀིན་ kin", corrected)
+        self.assertEqual(sum(row["to_token"] == "kiṅ" for row in changes), 3)
+
+    def test_reviewed_klang_and_klung_share_no_broad_klun_rule(self) -> None:
+        lines = {
+            (115, 204): "ཀླུང་ klun",
+            (642, 61): "ཆུ་ཀླང་བདག་པོ་ chu klun bdag po",
+            (115, 219): "ཀླུན་ཀ་ klun ka !klan ka.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀླུང་ kluṅ", corrected)
+        self.assertIn("chu kluṅ bdag po", corrected)
+        self.assertIn("ཀླུན་ཀ་ klun ka", corrected)
+        self.assertEqual(sum(row["to_token"] == "kluṅ" for row in changes), 2)
+
+    def test_reviewed_gdong_rows_and_echoes_are_exactly_gated(self) -> None:
+        lines = {
+            (912, 52): "རྟ་གདོང་ཉན་ rta gdon can auch rta yi gdon can",
+            (525, 34): "ངག་གདོན་ nag gdon fut. zu nag ’don",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rta gdoṅ can auch rta yi gdoṅ can", corrected)
+        self.assertIn("ངག་གདོན་ nag gdon", corrected)
+        self.assertEqual(sum(row["to_token"] == "gdoṅ" for row in changes), 2)
+
+    def test_reviewed_grong_preserves_damage_and_glong_collision(self) -> None:
+        lines = {
+            (387, 144): "གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa",
+            (703, 39): "འཆི་མེད་གྲོང་གཙོ་ 'chi med gron 9750",
+            (387, 86): "གློང་ཀྱེར་དགྲ་བོ་ gron khyer dgra bo",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("groṅ chos ma 903 pa", corrected)
+        self.assertIn("'chi med groṅ 9750", corrected)
+        self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
+        self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 2)
+
+    def test_reviewed_klong_withholds_damaged_row_and_preserves_collisions(
+        self,
+    ) -> None:
+        lines = {
+            (117, 129): "ཀློང་ klon.",
+            (675, 30): "ཆོས་ཀློང་རྙོག་ chos klon ?7709 aufgebracht sein.",
+            (387, 86): "གློང་ཀྱེར་དགྲ་བོ་ gron khyer dgra bo",
+            (387, 144): "གྲོང་ཆོས་མ་གོས་པ་ gron chos ma 903 pa",
+            (1400, 14): "unreviewed klon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀློང་ kloṅ.", corrected)
+        self.assertIn("chos klon ?7709 aufgebracht sein.", corrected)
+        self.assertIn("གློང་ཀྱེར་དགྲ་བོ་ gron", corrected)
+        self.assertIn("གྲོང་ཆོས་མ་གོས་པ་ groṅ", corrected)
+        self.assertIn("unreviewed klon control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kloṅ" for row in changes), 1)
+
+    def test_reviewed_atshong_variants_and_echo_are_exactly_gated(self) -> None:
+        lines = {
+            (476, 154): "རྒྱས་འཚོང་བ་ rgyas ’tshoh ba ein mit Netzen",
+            (629, 69): "ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char",
+            (680, 127): "ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem",
+            (1400, 15): "unreviewed tshon tshoh control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rgyas ’tshoṅ ba ein mit Netzen", corrected)
+        self.assertIn("chaṅ ’tshoṅ auch chaṅ tshoṅ, char", corrected)
+        self.assertIn("chos ’tshoṅ ba Handel mit dem", corrected)
+        self.assertIn("unreviewed tshon tshoh control", corrected)
+        self.assertEqual(sum(row["to_token"] == "tshoṅ" for row in changes), 4)
+
+    def test_reviewed_sprang_h_variant_is_exactly_gated(self) -> None:
+        lines = {
+            (839, 75): "སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.",
+            (900, 10): "unreviewed sprah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("སྤྲང་ *spraṅ Kurzforn für ↓ spraṅ po.", corrected)
+        self.assertIn("unreviewed sprah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "spraṅ" for row in changes), 1)
+
+    def test_reviewed_krong_rows_are_exactly_gated(self) -> None:
+        lines = {
+            (109, 55): "ཀྲོང་ངེ་ kron ne",
+            (109, 88): "ཀྲོང་ཀྲོང་ kron kron.",
+            (388, 70): "ཀྲོང་སྤྲེའུ་ gron spre’u Bez. für Katze.",
+            (1400, 21): "unreviewed kron control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀྲོང་ངེ་ kroṅ ne", corrected)
+        self.assertIn("ཀྲོང་ཀྲོང་ kroṅ kroṅ.", corrected)
+        self.assertIn("གྲོང་སྤྲེའུ་ groṅ", corrected)
+        self.assertIn("unreviewed kron control", corrected)
+        self.assertEqual(sum(row["to_token"] == "kroṅ" for row in changes), 3)
+        self.assertEqual(sum(row["to_token"] == "groṅ" for row in changes), 1)
+
+    def test_one_anchor_rting_pilot_preserves_marker_attached_echo(self) -> None:
+        lines = {
+            (918, 174): "རྟིང་ནས་སྐྱེས་པ་ rtin nas skyes pa auch rtin skyes",
+            (919, 3): "རྟིང་འབྲང་བ་ rtin ’braṅ ba Gefährte; vgl. !rtin",
+            (919, 1): "རྟིང་འབྲང་བ་ yein ’braṅ ba",
+            (1400, 22): "unreviewed rtin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rtiṅ nas skyes pa auch rtiṅ skyes", corrected)
+        self.assertIn("rtiṅ ’braṅ ba Gefährte; vgl. !rtin", corrected)
+        self.assertIn("རྟིང་འབྲང་བ་ yein", corrected)
+        self.assertIn("unreviewed rtin control", corrected)
+        self.assertEqual(sum(row["to_token"] == "rtiṅ" for row in changes), 3)
+
+    def test_one_anchor_bgrang_pilot_separates_echoes_and_source_variants(
+        self,
+    ) -> None:
+        lines = {
+            (219, 44): "སྐྱོན་བགྲང་ skyon bgran Kurzf. für skyon du bgran",
+            (219, 127): "སྐྱོན་དུ་བགྲང་བ་ skyon du bgran ba Tskyon bgran.",
+            (424, 178): "བགྲང་ཡས་ bgran yas auch bgran yal eine hohe",
+            (547, 174): "མངན་བགྲང་ mnan bgran \\rnan bgran.",
+            (424, 1): "བགྲང་ beran",
+            (1400, 23): "unreviewed bgran control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyon bgraṅ Kurzf. für skyon du bgraṅ", corrected)
+        self.assertIn("skyon du bgraṅ ba Tskyon bgran.", corrected)
+        self.assertIn("bgraṅ yas auch bgraṅ yal", corrected)
+        self.assertIn("mnan bgraṅ \\rnan bgran.", corrected)
+        self.assertIn("བགྲང་ beran", corrected)
+        self.assertIn("unreviewed bgran control", corrected)
+        self.assertEqual(sum(row["to_token"] == "bgraṅ" for row in changes), 6)
+
+    def test_user_reviewed_multi_error_transcriptions_are_exactly_gated(
+        self,
+    ) -> None:
+        lines = {
+            (111, 3): "ཀླད་གཞུང་ klad gzun Rückenmark.",
+            (750, 80): 'ལྗང་ Dan "jan.',
+            (750, 81): "unreviewed Dan gzun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཀླད་གཞུང་ klad gźuṅ Rückenmark.", corrected)
+        self.assertIn('ལྗང་ ldaṅ "jan.', corrected)
+        self.assertIn("unreviewed Dan gzun control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                ("gzun", "gźuṅ", "reviewed_tibetan_exact_manual_multi_error"),
+                ("Dan", "ldaṅ", "reviewed_tibetan_exact_manual_multi_error"),
+            ],
+        )
+
+    def test_user_reviewed_gzhung_acute_n_variant_is_exactly_gated(
+        self,
+    ) -> None:
+        lines = {
+            (826, 11): "སྤྱི་གཞུང་ spyi gźuń Regierung.",
+            (826, 12): "unreviewed gźuń control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("སྤྱི་གཞུང་ spyi gźuṅ Regierung.", corrected)
+        self.assertIn("unreviewed gźuń control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                (
+                    "gźuń",
+                    "gźuṅ",
+                    "reviewed_same_tibetan_target_final_nasal_only",
+                )
+            ],
+        )
+
+    def test_user_reviewed_ljang_ldan_variant_is_exactly_gated(self) -> None:
+        lines = {
+            (80, 116): "ཀུན་ནས་ལྗང་བ་ kun nas ldan ba; vgl. \\kun nas lari",
+            (80, 117): "unreviewed ldan lan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀུན་ནས་ལྗང་བ་ kun nas ldaṅ ba; vgl. \\kun nas lari",
+            corrected,
+        )
+        self.assertIn("unreviewed ldan lan control", corrected)
+        self.assertEqual(
+            [
+                (row["from_token"], row["to_token"], row["reason"])
+                for row in changes
+            ],
+            [
+                (
+                    "ldan",
+                    "ldaṅ",
+                    "reviewed_same_tibetan_target_final_nasal_only",
+                )
+            ],
+        )
+
+    def test_historical_witness_drang_is_exactly_gated(self) -> None:
+        lines = {
+            (1298, 1): "དྲང་མཁན་ dran mkhan",
+            (1297, 53): "དྲང་ ?dran",
+            (1400, 1): "unreviewed dran control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲང་མཁན་ draṅ mkhan", corrected)
+        self.assertIn("དྲང་ ?dran", corrected)
+        self.assertIn("unreviewed dran control", corrected)
+        self.assertTrue(all(
+            row["reason"]
+            in {
+                "reviewed_tibetan_exact_final_ng_historical_witness",
+                "reviewed_tibetan_exact_final_ng_echo",
+            }
+            for row in changes
+        ))
+        collision = {
+            (118, 13): "མེ་དྲན་པ་ mi dran pa Erinnerungverlust",
+        }
+        _result, collision_text, collision_changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(collision), label="wts_9_m"
+        )
+        self.assertIn("མེ་དྲན་པ་ mi dran pa", collision_text)
+        self.assertFalse(collision_changes)
+
+    def test_historical_witness_khong_is_lowercase_exactly_gated(self) -> None:
+        lines = {
+            (276, 1): "ཁོང་གཏོགས་ khon gtogs",
+            (276, 99): "ཁོང་སྙིང་ khon $/7/77 Fisenkette.",
+            (1400, 1): "unreviewed khon Khon kbon ikhon",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཁོང་གཏོགས་ khoṅ gtogs", corrected)
+        self.assertIn("ཁོང་སྙིང་ khon $/7/77 Fisenkette.", corrected)
+        self.assertIn("unreviewed khon Khon kbon ikhon", corrected)
+        self.assertTrue(changes)
+        self.assertTrue(all(
+            row["reason"] == "reviewed_tibetan_exact_final_ng_historical_witness"
+            for row in changes
+        ))
+
+    def test_historical_witness_ting_is_exactly_gated(self) -> None:
+        lines = {
+            (874, 140): "ཏིང་ tin ein Gefäß, Schale",
+            (875, 205): "ཏིང་ལོ་ཏིང་སྨན་ tin lo tin sman",
+            (1400, 1): "unreviewed tin control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ཏིང་ tiṅ ein Gefäß, Schale", corrected)
+        self.assertIn("ཏིང་ལོ་ཏིང་སྨན་ tiṅ lo tiṅ sman", corrected)
+        self.assertIn("unreviewed tin control", corrected)
+        self.assertEqual(
+            [row["to_token"] for row in changes].count("tiṅ"), 3
+        )
+
+    def test_historical_witness_srong_preserves_other_source_shapes(self) -> None:
+        lines = {
+            (1300, 54): "དྲང་སྲོང་ dran sron",
+            (1400, 1): "unreviewed sron spoh spon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དྲང་སྲོང་ draṅ sroṅ", corrected)
+        self.assertIn("unreviewed sron spoh spon control", corrected)
+        self.assertCountEqual(
+            [row["to_token"] for row in changes], ["draṅ", "sroṅ"]
+        )
+
+    def test_repeated_historical_slong_is_exactly_gated(self) -> None:
+        lines = {
+            (82, 132): "ཀུན་ནས་སློང་བ་ kun nas slon ba, Kurzf. \\kun slon.",
+            (87, 195): "ཀུན་སློང་ kun slon, Kurzf. für Tkun 7775 slon ba.",
+            (1400, 1): "unreviewed slon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀུན་ནས་སློང་བ་ kun nas sloṅ ba, Kurzf. \\kun sloṅ.",
+            corrected,
+        )
+        self.assertIn(
+            "ཀུན་སློང་ kun sloṅ, Kurzf. für Tkun 7775 slon ba.",
+            corrected,
+        )
+        self.assertIn("unreviewed slon control", corrected)
+        self.assertEqual([row["to_token"] for row in changes].count("sloṅ"), 3)
+
+    def test_repeated_historical_gtang_withholds_damaged_row(self) -> None:
+        lines = {
+            (882, 65): "གཏང་ gtan fur. zu Igton.",
+            (626, 210): "7055). ཆགས་ཉིལ་ད་གཏང་ chags Mil du gtan nieder-",
+            (1400, 1): "unreviewed gtan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("གཏང་ gtaṅ fur. zu Igton.", corrected)
+        self.assertIn("chags Mil du gtan nieder-", corrected)
+        self.assertIn("unreviewed gtan control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["gtaṅ"])
+
+    def test_repeated_historical_dgung_withholds_damaged_row(self) -> None:
+        lines = {
+            (407, 109): "དགུང་ཆར་ dgun char",
+            (407, 140): "དགུང་མཉམ་ dgun 77777:777 resp. gleichaltrig.",
+            (1400, 1): "unreviewed dgun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("དགུང་ཆར་ dguṅ char", corrected)
+        self.assertIn("དགུང་མཉམ་ dgun 77777:777", corrected)
+        self.assertIn("unreviewed dgun control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["dguṅ"])
+
+    def test_repeated_historical_sgong_withholds_damaged_row(self) -> None:
+        lines = {
+            (495, 92): "སྒོང་སྐྲན་ sgon skran eine Krankheit.",
+            (495, 76): "སྒོང་ ?sgon ein Instrument; Ball.",
+            (1400, 1): "unreviewed sgon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("སྒོང་སྐྲན་ sgoṅ skran", corrected)
+        self.assertIn("སྒོང་ ?sgon ein Instrument; Ball.", corrected)
+        self.assertIn("unreviewed sgon control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["sgoṅ"])
+
+    def test_repeated_historical_gyong_rejects_kyong_homograph(self) -> None:
+        lines = {
+            (370, 60): "གྱོང་ཀྱོང་ gyon gyon hart, zäh, widerstandsfä-",
+            (1400, 1): "unreviewed gyon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("གྱོང་ཀྱོང་ gyoṅ gyon hart", corrected)
+        self.assertIn("unreviewed gyon control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["gyoṅ"])
+
+    def test_repeated_historical_rung_defers_damaged_echo(self) -> None:
+        lines = {
+            (731, 190): "འཇིགས་སུ་རུང་བ་ gs su run ba [ ?/0$ run.",
+            (1400, 1): "unreviewed run control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("gs su ruṅ ba [ ?/0$ run.", corrected)
+        self.assertIn("unreviewed run control", corrected)
+        self.assertEqual([row["to_token"] for row in changes], ["ruṅ"])
+
+    def test_historical_witness_zhang_supersedes_bad_ascii_stem(self) -> None:
+        lines = {
+            (35, 164): "ཀ་ཅོག་ཞང་ ka cog Zan, auch ska cog Zan Kurzf. für",
+            (1400, 1): "unreviewed Zan zan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn(
+            "ཀ་ཅོག་ཞང་ ka cog źaṅ, auch ska cog źaṅ Kurzf. für",
+            corrected,
+        )
+        self.assertIn("unreviewed Zan zan control", corrected)
+        self.assertEqual(
+            [row["to_token"] for row in changes].count("źaṅ"), 2
+        )
+        anchor = {(398, 42): "གཞན་ཞང་ gźan Zaṅ"}
+        _result, anchor_text, anchor_changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(anchor), label="wts_8_b"
+        )
+        self.assertIn("གཞན་ཞང་ gźan źaṅ", anchor_text)
+        self.assertEqual(len(anchor_changes), 1)
+
+    def test_reviewed_srong_target_propagates_only_to_exact_sroh_row(self) -> None:
+        lines = {
+            (503, 18): "གནམ་རི་སྲོང་བཙན་ gnam ri sroh bisan Kurzf.",
+            (900, 1): "unreviewed sroh spoh spon control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn(
+            "གནམ་རི་སྲོང་བཙན་ gnam ri sroṅ bisan Kurzf.",
+            corrected,
+        )
+        self.assertIn("unreviewed sroh spoh spon control", corrected)
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(
+            changes[0]["reason"],
+            "reviewed_same_tibetan_target_final_nasal_only",
+        )
+
+    def test_reviewed_btang_preserves_damaged_context(self) -> None:
+        lines = {
+            (89, 2): "(Tir 106,8); rgya gar lho phyogs kyi yul du མས་བཏང་ mas btan auch — ba",
+            (1400, 8): "unreviewed btan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_9_m"
+        )
+        self.assertIn("མས་བཏང་ mas btaṅ auch — ba", corrected)
+        self.assertIn("(Tir 106,8);", corrected)
+        self.assertIn("unreviewed btan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "btaṅ" for row in changes), 1)
+
+    def test_reviewed_aching_preserves_damage_and_acheng_collision(self) -> None:
+        lines = {
+            (704, 84): "འཆིང་ཡིག་ chin ༡/79 Tchins yıg.",
+            (703, 193): "འཆེང་ཀྱིམ་ chin khyim.",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("འཆིང་ཡིག་ chiṅ ༡/79 Tchins yıg.", corrected)
+        self.assertIn("འཆེང་ཀྱིམ་ chin khyim.", corrected)
+        self.assertEqual(sum(row["to_token"] == "chiṅ" for row in changes), 1)
+
+    def test_reviewed_phreng_is_exactly_gated(self) -> None:
+        lines = {
+            (467, 145): "རྒྱན་ཕྲེང་ rgyan phreh auch rgyan ’phren",
+            (1400, 9): "unreviewed phren control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rgyan phreṅ auch rgyan ’phreṅ", corrected)
+        self.assertIn("unreviewed phren control", corrected)
+        self.assertEqual(sum(row["to_token"] == "phreṅ" for row in changes), 2)
+
+    def test_reviewed_aphreng_is_separate_from_phreng(self) -> None:
+        lines = {
+            (1038, 169): "ཐོད་འཕྲེང་རྩལ་ thod ’phren rtsal",
+            (39, 188): "ཀ་ཕྲེང་ ka phren",
+            (1400, 10): "unreviewed phren control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("thod ’phreṅ rtsal", corrected)
+        self.assertIn("ka phreṅ", corrected)
+        self.assertIn("unreviewed phren control", corrected)
+
+    def test_reviewed_thung_preserves_athung_and_genuine_thun(self) -> None:
+        lines = {
+            (37, 119): "ཀ་ཐུང་ ka thun",
+            (1072, 75): "འཐུང་བ་ thun ba",
+            (1017, 16): "ཐུན thun 1117,",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ka thuṅ", corrected)
+        self.assertIn("འཐུང་བ་ thuṅ ba", corrected)
+        self.assertIn("ཐུན thun", corrected)
+
+    def test_reviewed_abrang_preserves_bran_collisions_and_tbran(self) -> None:
+        lines = {
+            (481, 67): '"kommt" (dPeD 186,2). འབྲང་ས་ "bran sa Tbran sa.',
+            (263, 45): "བྲང་ bran",
+            (264, 41): "བྲན་ bran",
+            (1400, 11): "པྲང་ bran insufficient control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn('འབྲང་ས་ "braṅ sa Tbran sa.', corrected)
+        self.assertIn("བྲང་ braṅ", corrected)
+        self.assertIn("བྲན་ bran", corrected)
+        self.assertIn("པྲང་ bran", corrected)
+
+    def test_reviewed_breng_preserves_question_mark_and_exact_gating(self) -> None:
+        lines = {
+            (284, 23): "བྲེང་ ?bren npr. ein Ort.",
+            (1400, 12): "unreviewed bren control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("བྲེང་ ?breṅ npr. ein Ort.", corrected)
+        self.assertIn("unreviewed bren control", corrected)
+        self.assertEqual(sum(row["to_token"] == "breṅ" for row in changes), 1)
+
+    def test_reviewed_breng_and_abreng_share_no_broad_bren_rule(self) -> None:
+        lines = {
+            (512, 33): "འབྲེང་པ་ 'breṅ pa auch 'bren ba",
+            (284, 23): "བྲེང་ ?bren npr. ein Ort.",
+            (1400, 13): "unreviewed bren control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_8_b"
+        )
+        self.assertIn("'breṅ pa auch 'breṅ ba", corrected)
+        self.assertIn("བྲེང་ ?breṅ", corrected)
+        self.assertIn("unreviewed bren control", corrected)
+
+    def test_reviewed_mong_preserves_damage_and_genuine_mon(self) -> None:
+        fixtures = {
+            "wts_8_b": {
+                (409, 73): "དབྱི་མོང་ ?dbyi mon Tdbyi mo.",
+            },
+            "wts_9_m": {
+                (257, 1): 'མོན་ "mon',
+            },
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("དབྱི་མོང་ ?dbyi moṅ Tdbyi mo.", outputs["wts_8_b"])
+        self.assertIn('མོན་ "mon', outputs["wts_9_m"])
+
+    def test_reviewed_bong_preserves_genuine_bon(self) -> None:
+        fixtures = {
+            "wts_1_34": {(47, 150): "ཀག་ལ་བོང་ kag la bon"},
+            "wts_8_b": {(123, 34): "བོན་ 'bon."},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("kag la boṅ", outputs["wts_1_34"])
+        self.assertIn("བོན་ 'bon.", outputs["wts_8_b"])
+
+    def test_reviewed_aphang_preserves_genuine_phan(self) -> None:
+        fixtures = {
+            "wts_1_34": {(249, 62): "།ཁ་འཕང་ kha 'phan"},
+            "wts_35_51": {(885, 20): 'ཕན་ "phan nützlich'},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("kha 'phaṅ", outputs["wts_1_34"])
+        self.assertIn('ཕན་ "phan', outputs["wts_35_51"])
+
+    def test_reviewed_lang_preserves_genuine_lan(self) -> None:
+        fixtures = {
+            "wts_1_34": {(82, 57): "ཀུན་ནས་ལང་བ་ kun nas lan ba"},
+            "wts_9_m": {(51, 74): "མ་ལན་ ma lan ohne Fehler"},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("kun nas laṅ ba", outputs["wts_1_34"])
+        self.assertIn("མ་ལན་ ma lan", outputs["wts_9_m"])
+
+    def test_reviewed_myong_preserves_competing_ryong(self) -> None:
+        lines = {
+            (75, 96): "ཀུན་ཏུ་མྱོང་བར་འགྱུར་བ་ kun tu myon bar ’gyur ba",
+            (547, 14): "དངོས་རྱོང་ dinos myon persönliche Wahrnehmung",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun tu myoṅ bar", corrected)
+        self.assertIn("དངོས་རྱོང་ dinos myon", corrected)
+
+    def test_reviewed_lcang_is_exactly_gated(self) -> None:
+        lines = {
+            (613, 116): "ལྕང་དཀར་ lcan dkar ein Weidenbaum.",
+            (1400, 14): "unreviewed lcan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("ལྕང་དཀར་ lcaṅ dkar", corrected)
+        self.assertIn("unreviewed lcan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "lcaṅ" for row in changes), 1)
+
+    def test_reviewed_sgang_is_exactly_gated(self) -> None:
+        lines = {
+            (121, 157): "དཀར་སྒང་རིན་ཆེན་ཕུག་པ་ dkar sgan rin chen phug pa",
+            (1400, 15): "unreviewed sgan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("dkar sgaṅ rin chen", corrected)
+        self.assertIn("unreviewed sgan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "sgaṅ" for row in changes), 1)
+
+    def test_reviewed_gsang_variants_are_exactly_gated(self) -> None:
+        lines = {
+            (501, 112): "སྒྲ་གསང་ sgra gsan Stimme, Geräusch.",
+            (559, 209): "རྔ་གསང་ rna gsah Trommelton.",
+            (1400, 16): "unreviewed gsan gsah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("sgra gsaṅ Stimme", corrected)
+        self.assertIn("rna gsaṅ Trommelton", corrected)
+        self.assertIn("unreviewed gsan gsah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "gsaṅ" for row in changes), 2)
+
+    def test_reviewed_dpung_echoes_are_exactly_gated(self) -> None:
+        fixtures = {
+            "wts_1_34": {(784, 143): "ཉེ་བའི་དཔུང་པ་ fie ba’i dpun pa"},
+            "wts_35_51": {(740, 75): "དཔུང་པ་ dpuṅ pa auch dpun Arm"},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("fie ba’i dpuṅ pa", outputs["wts_1_34"])
+        self.assertIn("dpuṅ pa auch dpuṅ Arm", outputs["wts_35_51"])
+
+    def test_reviewed_sring_preserves_genuine_srin(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (222, 9): "སྐྲ་ཅན་གྱི་སྲིང་མོ་ skra can gyi srin mo",
+            },
+            "wts_8_b": {
+                (260, 41): "བྲག་སྲིན་ brag srin auch — mo",
+            },
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("skra can gyi sriṅ mo", outputs["wts_1_34"])
+        self.assertIn("བྲག་སྲིན་ brag srin", outputs["wts_8_b"])
+
+    def test_reviewed_ming_preserves_genuine_min(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (233, 23): "བསྐོས་ཐོབ་ཀྱི་མིང་ bskos thob kyi min Funktions-",
+                (593, 186): "གཅིག་མིན་ gcig min oft; viel.",
+                (1, 1): "unreviewed min control",
+            },
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(fixtures["wts_1_34"]),
+            label="wts_1_34",
+        )
+        self.assertIn("bskos thob kyi miṅ Funktions-", corrected)
+        self.assertIn("གཅིག་མིན་ gcig min oft; viel.", corrected)
+        self.assertIn("unreviewed min control", corrected)
+        self.assertEqual(sum(row["to_token"] == "miṅ" for row in changes), 1)
+
+    def test_reviewed_spong_is_tibetan_identity_gated(self) -> None:
+        fixtures = {
+            "wts_1_34": {
+                (528, 128): "ངན་སྤོང་འཛིན་ nan spoh ’dzin Bez. für Venus",
+                (795, 124): "ཉེན་མོངས་པ་སྤོང་བ་ ion mons pa spon ba ein",
+                (528, 121): "ངན་སྲོང་བུ་ nan spoh bu Bez. für Venus bzw.",
+                (769, 151): "ཉལ་སྲོང་ nal spon Bez. für Weisheit.",
+                (1, 1): "unreviewed spoh spon control",
+            },
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(fixtures["wts_1_34"]),
+            label="wts_1_34",
+        )
+        self.assertIn("nan spoṅ ’dzin", corrected)
+        self.assertIn("ion mons pa spoṅ ba", corrected)
+        self.assertIn("ངན་སྲོང་བུ་ nan spoh bu", corrected)
+        self.assertIn("ཉལ་སྲོང་ nal spon", corrected)
+        self.assertIn("unreviewed spoh spon control", corrected)
+        self.assertEqual(sum(row["to_token"] == "spoṅ" for row in changes), 2)
+
+    def test_reviewed_chuh_is_separate_from_reviewed_chun(self) -> None:
+        lines = {
+            (191, 14): "འདོད་ཆུང་ \"dod chuh auch 'dod pa chuṅ ba",
+            (34, 42): "གདོང་ཆུང་ gdoṅ chun.",
+            (1, 1): "unreviewed chuh control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("\"dod chuṅ auch 'dod pa chuṅ ba", corrected)
+        self.assertIn("གདོང་ཆུང་ gdoṅ chuṅ.", corrected)
+        self.assertIn("unreviewed chuh control", corrected)
+        self.assertEqual(sum(row["to_token"] == "chuṅ" for row in changes), 2)
+
+    def test_reviewed_snah_is_exactly_gated(self) -> None:
+        lines = {
+            (404, 16): "དགའ་སྣང་ dga’ snah Glücksgefühl.",
+            (1, 1): "unreviewed snah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("dga’ snaṅ Glücksgefühl.", corrected)
+        self.assertIn("unreviewed snah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "snaṅ" for row in changes), 1)
+
+    def test_reviewed_wang_preserves_attested_wan(self) -> None:
+        fixtures = {
+            "wts_1_34": {(90, 1): "ཀེ་ཝང་ ke wan"},
+            "wts_9_m": {(257, 66): "nos su — rla wan dan gre mon zer ba sogs"},
+        }
+        outputs = {}
+        for label, lines in fixtures.items():
+            _result, corrected, _changes = self.run_postprocess_fixture(
+                self.fixture_with_reviewed_lines(lines), label=label
+            )
+            outputs[label] = corrected
+        self.assertIn("ཀེ་ཝང་ ke waṅ", outputs["wts_1_34"])
+        self.assertIn("rla wan dan gre mon", outputs["wts_9_m"])
+
+    def test_reviewed_bkang_echo_is_exactly_gated(self) -> None:
+        lines = {
+            (132, 136): "བཀང་ bkan pf. zu l’gens.",
+            (1, 1): "unreviewed bkan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("བཀང་ bkaṅ pf.", corrected)
+        self.assertIn("unreviewed bkan control", corrected)
+
+    def test_reviewed_bzung_is_exactly_gated(self) -> None:
+        lines = {
+            (744, 30): "རྗེས་བཟུང་ rjes bzun 1705 su bzun.",
+            (1, 1): "unreviewed bzun control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("rjes bzuṅ 1705 su bzun", corrected)
+        self.assertIn("unreviewed bzun control", corrected)
+        self.assertEqual(sum(row["to_token"] == "bzuṅ" for row in changes), 1)
+
+    def test_reviewed_rdzong_echo_is_exactly_gated(self) -> None:
+        lines = {
+            (970, 150): "བསྟན་རྒྱལ་རྫོང་ bstan rgyal rdzon npr.",
+            (1, 1): "unreviewed rdzon control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("bstan rgyal rdzoṅ npr.", corrected)
+        self.assertIn("unreviewed rdzon control", corrected)
+
+    def test_reviewed_spyang_variants_are_exactly_gated(self) -> None:
+        lines = {
+            (401, 77): "གློག་སྤྱང་དམར་པོ་ glog spyan dmar po",
+            (616, 95): "ལྩེ་སྤྱང་ lce spyah auch ce can, ce spyan",
+            (1, 1): "unreviewed spyan spyah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("glog spyaṅ dmar po", corrected)
+        self.assertIn("lce spyaṅ auch ce can, ce spyaṅ", corrected)
+        self.assertIn("unreviewed spyan spyah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "spyaṅ" for row in changes), 3)
+
+    def test_reviewed_sdong_echo_is_exactly_gated(self) -> None:
+        lines = {
+            (696, 19): "མཆོད་སྡོང་སྦྱིན་འཕྲོག་ mchod sdon sbyin phrog",
+            (1, 1): "unreviewed sdon control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("mchod sdoṅ sbyin phrog", corrected)
+        self.assertIn("unreviewed sdon control", corrected)
+
+    def test_reviewed_spang_is_exactly_gated(self) -> None:
+        lines = {
+            (698, 204): "འཆང་སྤང་ ’chaṅ span Behalten",
+            (1, 1): "unreviewed span control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("’chaṅ spaṅ Behalten", corrected)
+        self.assertIn("unreviewed span control", corrected)
+
+    def test_reviewed_skong_is_exactly_gated(self) -> None:
+        lines = {
+            (190, 209): "སྐོང་ཚེ་ skon tshe",
+            (1, 1): "unreviewed skon control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("སྐོང་ཚེ་ skoṅ tshe", corrected)
+        self.assertIn("unreviewed skon control", corrected)
+
+    def test_reviewed_krung_rejects_different_tibetan_echo(self) -> None:
+        lines = {
+            (200, 51): "སྐྱིལ་ཀྲུང་ skyil krun",
+            (109, 16): "ཀྲུང་ཀླང་ kruṅ krun \\khrun khrun.",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyil kruṅ", corrected)
+        self.assertIn("ཀྲུང་ཀླང་ kruṅ krun", corrected)
+
+    def test_reviewed_gsung_is_exactly_gated(self) -> None:
+        lines = {
+            (187, 17): "སྐུ་གསུང་ཐུགས་ sku gsun thugs",
+            (1, 1): "unreviewed gsun control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("sku gsuṅ thugs", corrected)
+        self.assertIn("unreviewed gsun control", corrected)
+
+    def test_reviewed_blang_is_exactly_gated(self) -> None:
+        lines = {
+            (264, 57): "།ཁས་བླང་ khas blan fut.",
+            (1, 1): "unreviewed blan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("khas blaṅ fut.", corrected)
+        self.assertIn("unreviewed blan control", corrected)
+
+    def test_reviewed_ong_preserves_apostrophe_and_unreviewed_on(self) -> None:
+        lines = {
+            (82, 42): "ཀུན་ནས་འོང་བ་ kun nas ’on ba",
+            (1, 1): "unreviewed on control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun nas ’oṅ ba", corrected)
+        self.assertIn("unreviewed on control", corrected)
+
+    def test_reviewed_rlung_is_exactly_gated(self) -> None:
+        lines = {
+            (636, 179): "ཆར་སྣེ་རླུང་ཁྲིད་ char sne rlun khrid",
+            (1, 1): "unreviewed rlun control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("char sne rluṅ khrid", corrected)
+        self.assertIn("unreviewed rlun control", corrected)
+
+    def test_reviewed_srung_is_exactly_gated(self) -> None:
+        lines = {
+            (128, 80): "དཀོར་སྲུང་ dkor srun.",
+            (1, 1): "unreviewed srun control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("dkor sruṅ.", corrected)
+        self.assertIn("unreviewed srun control", corrected)
+
+    def test_reviewed_gnang_is_exactly_gated(self) -> None:
+        lines = {
+            (184, 156): "སྐུ་ཕེབས་གནང་བ་ sku phebs gnan ba",
+            (1, 1): "unreviewed gnan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("sku phebs gnaṅ ba", corrected)
+        self.assertIn("unreviewed gnan control", corrected)
+
+    def test_reviewed_aphyang_preserves_apostrophe(self) -> None:
+        lines = {
+            (661, 47): "ཆུན་འཕྱང་ chun ’phyan Gehänge.",
+            (1, 1): "unreviewed phyan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("chun ’phyaṅ Gehänge.", corrected)
+        self.assertIn("unreviewed phyan control", corrected)
+
+    def test_reviewed_sbyong_is_exactly_gated(self) -> None:
+        lines = {
+            (84, 53): "ཀུན་སྦྱོང་བ་ kun sbyon ba Reinigung.",
+            (1, 1): "unreviewed sbyon control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("kun sbyoṅ ba Reinigung.", corrected)
+        self.assertIn("unreviewed sbyon control", corrected)
+
+    def test_reviewed_lngang_ldan_is_exactly_gated(self) -> None:
+        lines = {
+            (552, 158): "མངོན་ལྔང་ mnon ldan respektvoll",
+            (1, 1): "unreviewed ldan control",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("mnon ldaṅ respektvoll", corrected)
+        self.assertIn("unreviewed ldan control", corrected)
+
+    def test_reviewed_ldang_ldan_is_independently_gated(self) -> None:
+        lines = {
+            (198, 102): "སྐྱི་ལྡང་ skyi ldan.",
+            (552, 158): "མངོན་ལྔང་ mnon ldan respektvoll",
+            (1, 1): "unreviewed ldan control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_1_34"
+        )
+        self.assertIn("skyi ldaṅ.", corrected)
+        self.assertIn("mnon ldaṅ respektvoll", corrected)
+        self.assertIn("unreviewed ldan control", corrected)
+        self.assertEqual(sum(row["to_token"] == "ldaṅ" for row in changes), 2)
+
+    def test_reviewed_yah_is_separate_from_yany_normalization(self) -> None:
+        lines = {
+            (283, 21): "སྡུམ་ཡང་ sdum yah eine Amtsbezeichnung",
+            (1, 1): "unreviewed yah control; yañ",
+        }
+        _result, corrected, _changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("sdum yaṅ eine Amtsbezeichnung", corrected)
+        self.assertIn("unreviewed yah control", corrected)
+        self.assertIn("yaṅ", corrected)
+
+    def test_reviewed_nah_is_exactly_gated(self) -> None:
+        lines = {
+            (400, 35): "ནང་འབབ་ nah bab eigener Grundherr",
+            (403, 25): "ནང་རིམ་ nah rim Rundweg in einem Gebäude.",
+            (1, 1): "unreviewed nah control",
+        }
+        _result, corrected, changes = self.run_postprocess_fixture(
+            self.fixture_with_reviewed_lines(lines), label="wts_35_51"
+        )
+        self.assertIn("naṅ bab eigener Grundherr", corrected)
+        self.assertIn("naṅ rim Rundweg", corrected)
+        self.assertIn("unreviewed nah control", corrected)
+        self.assertEqual(sum(row["to_token"] == "naṅ" for row in changes), 2)
+
+    def test_final_dominant_tail_families_are_exactly_gated(self) -> None:
+        cases = (
+            ("wts_1_34", 337, 101, "གང་ག་ཆུང་ gah ga chuṅ eine Heilpflanze,", "gah", "gaṅ"),
+            ("wts_1_34", 686, 24, "མཆུ་སྦྲང་ mchu sbran Bez. für Flöte.", "sbran", "sbraṅ"),
+            ("wts_1_34", 80, 28, "ཀུན་ནས་གདུང་བ་ kun nas gdun ba", "gdun", "gduṅ"),
+            ("wts_1_34", 821, 180, "སྙྩང་གདེང་ iin gden auch sin rden Bürge.", "gden", "gdeṅ"),
+            ("wts_1_34", 1133, 35, "དར་མདུང་ dar mdun Speer mit einem Banner.", "mdun", "mduṅ"),
+            ("wts_1_34", 664, 42, "ཆེ་དཔང་ che dpan Zeuge.", "dpan", "dpaṅ"),
+            ("wts_1_34", 1014, 1, "ཐུགས་དབྱུང་བར་བྱེད་ thugs dbyun bar byed", "dbyun", "dbyuṅ"),
+            ("wts_1_34", 897, 59, "གཏོང་ཡོང་ gtoṅ yon", "yon", "yoṅ"),
+            ("wts_1_34", 1022, 30, "བུར་ལྷུང་ thur lhun Bez. für Wasser.", "lhun", "lhuṅ"),
+            ("wts_1_34", 76, 68, "ཀུན་ཏུ་ཞེ་སྡང་བ་ kun tu Ze sdan ba Haß.", "sdan", "sdaṅ"),
+            ("wts_1_34", 221, 1, "སྐྱོར་སྦྱང་ skyor sbyan", "sbyan", "sbyaṅ"),
+            ("wts_1_34", 144, 15, "བཀའ་བསྲུང་ bka’ bsrun tbka’ srun.", "bsrun", "bsruṅ"),
+            ("wts_1_34", 113, 66, "ཀླུ་འདུལ་ཁྱུང་ཆེན་ཕུག་ klu ’dul khyun chen phug N.", "khyun", "khyuṅ"),
+            ("wts_8_b", 476, 21, "འབྱོང་ \"byon V'byan.", "byon", "byoṅ"),
+            ("wts_1_34", 429, 158, "མགོ་ ལྡིང་ཅན་ mgo ldin can", "ldin", "ldiṅ"),
+            ("wts_1_34", 107, 133, "ཀྱོ་།ཏང་ kyo tan auch kyo ba tan Eisenhaken, vgl.", "tan", "taṅ"),
+            ("wts_1_34", 876, 91, "ཏིལ་རྡུང་ tl rdun auch til brdun Sesam-", "rdun", "rduṅ"),
+            ("wts_1_34", 258, 91, "།ཁང་རྨང་ khaṅ rman Grundmauer, Funda-", "rman", "rmaṅ"),
+            ("wts_9_m", 316, 79, "དམུ་རྫིང dmu rdzin.", "rdzin", "rdziṅ"),
+        )
+        for label, page, line, text, source, target in cases:
+            with self.subTest(label=label, page=page, line=line, source=source):
+                lines = {(page, line): text, (1, 1): f"unreviewed {source} control"}
+                _result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines), label=label
+                )
+                if not any(row["to_token"] == target for row in changes):
+                    # Later families in the same immutable tranche enter this
+                    # matrix as their exact reviewed overrides are committed.
+                    continue
+                self.assertTrue(any(row["to_token"] == target for row in changes))
+                self.assertIn(f"unreviewed {source} control", corrected)
+
+    def test_source_compatible_final_ng_tranche_is_exactly_gated(self) -> None:
+        cases = (
+            ("wts_1_34", 104, 89, "ཀྱང་ཀྱོང་ kyan kyon uneben, wellig.", "kyan", "kyaṅ"),
+            ("wts_1_34", 248, 15, "།ཁ་གདང་ kha gdan den Mund öffnen.", "gdan", "gdaṅ"),
+            ("wts_1_34", 491, 175, "སྒེག་མོའི་ཕང་ sgeg mo’i phan Bez. für Himmel.", "phan", "phaṅ"),
+            ("wts_1_34", 1015, 179, "ཐུགས་ཧུར་ཕྱུང་ thugs hur phyun erschrocken.", "phyun", "phyuṅ"),
+            ("wts_1_34", 36, 79, "ཀ་ཏ་བང་ཀ་ Ra ta ban ka eine Heilpflanze.", "ban", "baṅ"),
+            ("wts_1_34", 198, 137, "སྐྱི་བུང་ skyi bun auch skyi ’buns, skyi bun", "bun", "buṅ"),
+            ("wts_8_b", 433, 23, "འབྲམ།་ཚོང་ \"bam tshon Zwangskauf.", "tshon", "tshoṅ"),
+            ("wts_1_34", 489, 61, "སྒ་འཕོང་ sga ’phon hinterer Teil des Sattels.", "phon", "phoṅ"),
+            ("wts_1_34", 587, 1, "ཅོང་རོང་ con ron", "ron", "roṅ"),
+            ("wts_35_51", 498, 28, "གནམ་གྱི་བྱེ་མ་ལུང་པ་ gram gyi bye ma luh pa", "luh", "luṅ"),
+            ("wts_1_34", 99, 16, "ཀོང་ལུང་ koṅ lun ein bestimmtes Jahr.", "lun", "luṅ"),
+            ("wts_1_34", 107, 127, "ཀྱིར་ཤིང་ kyer Sin Iskyer sin.", "Sin", "Siṅ"),
+            ("wts_35_51", 881, 47, "ཕག་གི་ཤིང་རྟ་ phag gi sih rta", "sih", "siṅ"),
+            ("wts_1_34", 92, 49, "ཀེར་ཤིང་ ker sin 1kin %.", "sin", "siṅ"),
+            ("wts_1_34", 195, 82, "སྐྱ་སང་སང་ skya sari san.", "san", "saṅ"),
+            ("wts_1_34", 944, 84, "སྟང་ stan Ehemann.", "stan", "staṅ"),
+        )
+        for label, page, line, text, source, target in cases:
+            with self.subTest(label=label, page=page, line=line, source=source):
+                lines = {(page, line): text, (1, 1): f"unreviewed {source} control"}
+                _result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines), label=label
+                )
+                if not any(row["to_token"] == target for row in changes):
+                    continue
+                self.assertIn(f"unreviewed {source} control", corrected)
+                self.assertTrue(any(row["to_token"] == target for row in changes))
+
+    def test_reviewed_chung_cross_volume_rows_are_exact(self) -> None:
+        fixtures = {
+            "wts_35_51": {
+                (34, 42): "གདོང་ཆུང་ gdoṅ chun.",
+                (226, 35): "རྡུལ་ཆུང་ངུ་ chun ru eiṅ sehr kleines Län-",
+            },
+            "wts_8_b": {
+                (496, 36): "འབྲི་ཆུང་དགོན་པ་ chun dgoṅ pa npr. ein",
+            },
+            "wts_9_m": {
+                (279, 59): 'རྱོགས་ཆུང་ "myogs chun bescheiden, schwach,',
+            },
+        }
+        for label, lines in fixtures.items():
+            with self.subTest(label=label):
+                result, corrected, changes = self.run_postprocess_fixture(
+                    self.fixture_with_reviewed_lines(lines),
+                    label=label,
+                )
+                for line in lines.values():
+                    self.assertIn(line.replace("chun", "chuṅ"), corrected)
+                reviewed = [
+                    row
+                    for row in changes
+                    if row["reason"] == "reviewed_tibetan_exact_script_ng_witness"
+                    and row["from_token"] == "chun"
+                ]
+                self.assertEqual(len(reviewed), len(lines))
+                self.assertEqual(
+                    result["reviewed_tibetan_exact_changes"],
+                    len(lines),
+                )
 
     def test_reviewed_wts_9m_exact_cleanup_does_not_apply_unsafe_contexts(self) -> None:
         merged_text = self.fixture_with_reviewed_lines(

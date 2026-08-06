@@ -1,0 +1,4 @@
+volume	page	line	token_index	tibetan_syllable	dotted_token	verification_status	evidence	rationale
+wts_9_m	302	20	2	ཀྲོང	kroṅ	base_provenance_unverified	base_ocr_source_unavailable	The authoritative pre-postprocessing OCR source is not present in this checkout; current-release presence is not direct base verification.
+wts_8_b	252	37	3	རྟིང	rtiṅ	base_provenance_unverified	base_ocr_source_unavailable	The authoritative pre-postprocessing OCR source is not present in this checkout; current-release presence is not direct base verification.
+wts_8_b	22	12	3	བགྲང	bgraṅ	base_provenance_unverified	base_ocr_source_unavailable	The authoritative pre-postprocessing OCR source is not present in this checkout; current-release presence is not direct base verification.

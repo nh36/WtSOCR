@@ -1,0 +1,6 @@
+volume	page	line	token_index	tibetan_syllable	malformed_dotted_token	valid_anchor_count_for_tibetan_syllable	matches_historical_frozen_target	audit_decision	context_excerpt
+wts_35_51	30	39	1	གདེང	lgdeṅs	7	no	exclude_internal_ng_not_final_coda	གདེང་ lgdeṅs wedeln.
+wts_35_51	361	8	3	ཆུང	lṅa	137	no	exclude_internal_ng_not_final_coda	ན་ག་ཆུང་ raga chuṅ lṅa kha chuṅ.
+wts_35_51	431	22	1	ནའང	lṅa	0	no	exclude_internal_ng_not_final_coda	ནའང་ lṅa yan.
+wts_35_51	689	69	2	གསུང	gsuṅń	10	no	exclude_internal_ng_not_final_coda	པདྨ་གསུང་ padma gsuṅń cine Mahāyoga-Praxis Ir. -NI'i Hana
+wts_35_51	1106	17	1	འཕྱིང	Uphyiṅs	2	no	exclude_internal_ng_not_final_coda	འཕྱིང་ Uphyiṅs verfilzen; vgl. 7/)/27//2?

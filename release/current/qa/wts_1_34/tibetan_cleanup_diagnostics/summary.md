@@ -6,11 +6,11 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv`: 357
 - `tibetan_orthography_damage_candidates.tsv`: 1606
-- `tibetan_script_ng_witness_candidates.tsv`: 1
+- `tibetan_script_ng_witness_candidates.tsv`: 2
 - `reference_marker_candidates.tsv`: 1189
-- `reference_marker_token_families.tsv`: 486
+- `reference_marker_token_families.tsv`: 487
 - `tibetan_initial_i_residual_candidates.tsv`: 0
-- `sigla_variant_candidates.tsv`: 775
+- `sigla_variant_candidates.tsv`: 774
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
 - `tibetan_variant_families.tsv`: 762
 - `tibetan_google_adoption_patterns.tsv`: 633
@@ -28,7 +28,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
 | dngos_family | dnos (38) | dṅos (38) | 38 | exact_promotion_candidate |
 | unknown | gs (24), G$ (3), Gś (2) | Gs (29) | 29 | siglum_policy_review |
-| unknown | gzi (28) | gZi (28) | 28 | siglum_policy_review |
+| unknown | gzi (27) | gZi (27) | 27 | siglum_policy_review |
 | unknown | Lsdz (16), L$dz (10) | Lśdz (26) | 26 | siglum_policy_review |
 | unknown | Bu-Sz (16) | Bu-śz (16) | 16 | siglum_policy_review |
 | dotless_i | gZı (13), gzı (1) | gZi (13), gzi (1) | 14 | review |

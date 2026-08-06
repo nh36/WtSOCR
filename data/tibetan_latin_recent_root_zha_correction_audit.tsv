@@ -1,0 +1,5 @@
+tibetan_syllable	source_variants	target	corrected_count	canonical_rationale	historical_target_present	explicit_feature_support	remainder_support	derived_or_circular	disposition
+བཞི	bZi;bzi	bźi	29	Reviewed root ཞ→ź plus independently attested/reviewed unchanged remainder of the exact syllable target.	yes	reviewed root_consonant ཞ→ź	historical exact full-form concordance	no	preserve
+གཞི	gZi;gzi	gźi	12	Reviewed root ཞ→ź plus independently attested/reviewed unchanged remainder of the exact syllable target.	yes	reviewed root_consonant ཞ→ź	historical exact full-form concordance	no	preserve
+གཞུང	gZuṅ	gźuṅ	1	Reviewed root ཞ→ź plus independently attested/reviewed unchanged remainder of the exact syllable target.	no	reviewed root_consonant ཞ→ź	explicit_user_reviewed_full_target	no	preserve
+བཞག	bZag;bzag	bźag	8	Reviewed root ཞ→ź plus independently attested/reviewed unchanged remainder of the exact syllable target.	yes	reviewed root_consonant ཞ→ź	historical exact full-form concordance	no	preserve

@@ -22,17 +22,17 @@ from typing import Iterable
 
 
 DEFAULT_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/reference_marker_expanded_lemma_order_clean_20260701T091500Z/wts_1_34",
-    "wts_35_51": "work/reference_marker_same_direction_clean_20260701T181007Z/wts_35_51",
-    "wts_8_b": "work/reference_marker_same_direction_clean_20260701T181007Z/wts_8_b",
-    "wts_9_m": "work/reference_marker_same_direction_clean_20260701T181007Z/wts_9_m",
+    "wts_1_34": "work/final_ng_seed_clean_20260719T210000Z/wts_1_34",
+    "wts_35_51": "work/final_ng_seed_clean_20260719T210000Z/wts_35_51",
+    "wts_8_b": "work/final_ng_seed_clean_20260719T210000Z/wts_8_b",
+    "wts_9_m": "work/final_ng_seed_clean_20260719T210000Z/wts_9_m",
 }
 
 DEFAULT_DIAGNOSTIC_SOURCES: dict[str, str] = {
-    "wts_1_34": "work/reference_marker_expanded_lemma_order_clean_20260701T091500Z/tibetan_cleanup_diagnostics_wts_1_34",
-    "wts_35_51": "work/reference_marker_same_direction_clean_20260701T181007Z/tibetan_cleanup_diagnostics_wts_35_51",
-    "wts_8_b": "work/reference_marker_same_direction_clean_20260701T181007Z/tibetan_cleanup_diagnostics_wts_8_b",
-    "wts_9_m": "work/reference_marker_same_direction_clean_20260701T181007Z/tibetan_cleanup_diagnostics_wts_9_m",
+    "wts_1_34": "work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_1_34",
+    "wts_35_51": "work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_35_51",
+    "wts_8_b": "work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_8_b",
+    "wts_9_m": "work/final_ng_seed_clean_20260719T210000Z/tibetan_cleanup_diagnostics_wts_9_m",
 }
 
 QA_SUFFIXES = (
@@ -180,6 +180,18 @@ def copy_volume(
             missing_optional.append(f"{source.label}: {name}")
 
 
+def validate_volume_sources(volume_sources: Iterable[VolumeSource]) -> None:
+    """Fail before cleaning the tracked bundle when required inputs are absent."""
+    for source in volume_sources:
+        if not source.path.is_dir():
+            raise FileNotFoundError(
+                f"{source.label} source directory not found: {source.path}"
+            )
+        corrected = source.path / f"{source.label}_corrected_full.txt"
+        if not corrected.is_file():
+            raise FileNotFoundError(f"missing corrected text: {corrected}")
+
+
 def copy_root_artifacts(
     root: Path,
     output_dir: Path,
@@ -280,6 +292,10 @@ def write_manifest(
         "for this snapshot; it is not the project to-do list.",
         "The large production outputs under `work/` are local artifacts and are",
         "not versioned in the repository.",
+        "The source/code SHA above identifies the checkout observed while the",
+        "bundle was staged from those inputs. It is not the SHA of the necessarily",
+        "later commit that checked in the generated files, and later exact reviewed",
+        "updates may be visible in per-file Git history.",
         "",
         "No OCR correction behavior is changed by this bundle builder. It copies",
         "the latest trusted corrected text and compact QA artifacts into",
@@ -405,6 +421,10 @@ def main(argv: list[str] | None = None) -> int:
     for label, path in args.diagnostics:
         diagnostics[label] = path if path.is_absolute() else root / path
 
+    # Required sources are intentionally preflighted before the output directory
+    # is cleaned.  A fresh checkout lacks ignored work/ inputs and must fail
+    # without destroying its already tracked release snapshot.
+    validate_volume_sources(volume_sources)
     clean_output_dir(root, output_dir)
 
     copied: list[Path] = []

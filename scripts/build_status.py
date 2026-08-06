@@ -237,6 +237,22 @@ def read_release_stats() -> ReleaseStats:
             "script_ng_witness_candidates": tsv_row_count(
                 diagnostic_dir / "tibetan_script_ng_witness_candidates.tsv"
             ),
+            "final_ng_consensus_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_final_ng_consensus_candidates.tsv"
+            ),
+            "final_ng_source_compatible_candidates": tsv_row_count(
+                diagnostic_dir
+                / "tibetan_final_ng_source_compatible_candidates.tsv"
+            ),
+            "final_ng_same_entry_echo_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_final_ng_same_entry_echo_candidates.tsv"
+            ),
+            "final_ng_insufficient_evidence_families": tsv_row_count(
+                diagnostic_dir / "tibetan_final_ng_insufficient_evidence_matrix.tsv"
+            ),
+            "tibetan_latin_integrity_candidates": tsv_row_count(
+                diagnostic_dir / "tibetan_latin_integrity_candidates.tsv"
+            ),
             "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
@@ -377,6 +393,50 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
     dngos_google_witness_residual = total(stats, "dngos_family_google_witness_candidates")
     dngos_blocked_wrong_nasal = total(stats, "dngos_family_blocked_wrong_nasal_witness")
     dngos_context_diagnostic = total(stats, "dngos_family_context_diagnostic_candidates")
+    integrity_backaudit = list(iter_tsv(
+        ROOT / "data/final_ng_transcription_integrity_backaudit.tsv"
+    ))
+    integrity_mismatches = sum(
+        item.get("proposed_disposition") in {"blocked", "superseded"}
+        for item in integrity_backaudit
+    )
+    integrity_unresolved = sum(
+        item.get("proposed_disposition")
+        == "no_known_violation_but_incomplete"
+        for item in integrity_backaudit
+    )
+    superseded_count = sum(
+        item.get("status") == "active"
+        for item in iter_tsv(
+            ROOT / "data/reviewed_correction_supersessions.tsv"
+        )
+    )
+    canonical_rows = list(iter_tsv(
+        ROOT / "data/tibetan_latin_canonical_syllables.tsv"
+    ))
+    canonical_authoritative = sum(
+        item.get("canonical_confidence_tier")
+        in {
+            "canonical_reviewed", "canonical_independent_strong",
+            "canonical_feature_composed",
+        }
+        for item in canonical_rows
+    )
+    canonical_non_authoritative = len(canonical_rows) - canonical_authoritative
+    transcription_outliers = list(iter_tsv(
+        ROOT / "data/tibetan_latin_transcription_outliers.tsv"
+    ))
+    confusion_signatures = list(iter_tsv(
+        ROOT / "data/tibetan_latin_ocr_signature_registry.tsv"
+    ))
+    authorized_signatures = sum(
+        item.get("authorization_status")
+        in {
+            "authorized", "authorized_role_conditioned",
+            "authorized_domain_conditioned",
+        }
+        for item in confusion_signatures
+    )
     initial_i_exact_note = (
         "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket."
         if initial_i_exact_residual == 0
@@ -456,10 +516,10 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "exact_token_or_witness_guarded",
             "partially_applied",
             "all",
-            "confusable_nya_coda_safe;confusable_nya_coda_safe_strong_context;reviewed_tibetan_exact_final_ng;reviewed_tibetan_exact_script_ng_witness;reviewed_tibetan_exact_residual_ng;reviewed_tibetan_exact_residual_spacing_ng",
+            "confusable_nya_coda_safe;confusable_nya_coda_safe_strong_context;reviewed_correction_supersession_bridge;reviewed_same_tibetan_target_final_nasal_only;reviewed_tibetan_exact_final_ng;reviewed_tibetan_exact_final_ng_consensus;reviewed_tibetan_exact_final_ng_historical_witness;reviewed_tibetan_exact_final_ng_source_compatible;reviewed_tibetan_exact_script_ng_witness;reviewed_tibetan_exact_residual_ng;reviewed_tibetan_exact_residual_spacing_ng;reviewed_tibetan_exact_transcription_integrity",
             "scripts/postprocess_entry_map.py;data/reviewed_tibetan_exact_overrides.tsv",
             "docs/tibetan_script_ng_witness_sweep_2026-06-28.md;release/current/qa",
-            reason_sum(stats, "confusable_nya_coda_safe", "reviewed_tibetan_exact_final_ng", "reviewed_tibetan_exact_script_ng_witness", "reviewed_tibetan_exact_residual_ng", "reviewed_tibetan_exact_residual_spacing_ng"),
+            reason_sum(stats, "confusable_nya_coda_safe", "reviewed_correction_supersession_bridge", "reviewed_same_tibetan_target_final_nasal_only", "reviewed_tibetan_exact_final_ng", "reviewed_tibetan_exact_final_ng_consensus", "reviewed_tibetan_exact_final_ng_historical_witness", "reviewed_tibetan_exact_final_ng_source_compatible", "reviewed_tibetan_exact_script_ng_witness", "reviewed_tibetan_exact_residual_ng", "reviewed_tibetan_exact_residual_spacing_ng", "reviewed_tibetan_exact_transcription_integrity"),
             final_ng_residual,
             "broad ń->ṅ;broad n->ṅ",
             "Many exact final-ṅ repairs are applied; remaining nasal-looking tokens still require context or Tibetan-script witness support.",
@@ -495,6 +555,138 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             script_ng_witness_residual,
             "broad ń->ṅ;broad n->ṅ;broad T/I/\\->↑ marker rule;unverified witness-only contexts",
             "Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual; marker-attached rows remain in this queue after reference-marker separation.",
+        ),
+        row(
+            "final_ng_corpus_consensus_diagnostic",
+            "final_ng",
+            "positionally aligned corpus final-nasal variants",
+            "dominant internally attested dotted forms",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv",
+            0,
+            total(stats, "final_ng_consensus_candidates"),
+            "generic n->ṅ;generic h->ṅ;same-line co-occurrence without alignment",
+            "Corpus-consensus candidates are diagnostic only and require exact-row review before promotion.",
+        ),
+        row(
+            "final_ng_same_entry_echo_diagnostic",
+            "final_ng",
+            "later undotted tokens after a secure aligned final-ng occurrence",
+            "reviewed canonical spelling",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv",
+            0,
+            total(stats, "final_ng_same_entry_echo_candidates"),
+            "automatic echo promotion;historical or dialect variants;marker-attached forms;damaged references",
+            "Same-entry echoes are diagnostic only; entry structure must independently establish that each later token repeats the aligned Tibetan lemma.",
+        ),
+        row(
+            "final_ng_source_compatible_diagnostic",
+            "final_ng",
+            "case-sensitive source-compatible final-nasal variants",
+            "at least two exact-signature dotted anchors for the same Tibetan syllable",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_source_compatible_candidates.tsv",
+            0,
+            total(stats, "final_ng_source_compatible_candidates"),
+            "edit distance;case folding;different Latin stems;Latin-only replacement",
+            "Parallel diagnostic preserves the complete case-sensitive source stem and changes only the final nasal glyph; exact-row review remains mandatory.",
+        ),
+        row(
+            "tibetan_latin_transcription_integrity",
+            "transcription_integrity",
+            "securely aligned Tibetan/Latin headword tokens",
+            "reviewed corpus-conditioned feature compatibility",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_latin_integrity.py;data/tibetan_latin_feature_registry.tsv",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_latin_integrity_candidates.tsv",
+            0,
+            total(stats, "tibetan_latin_integrity_candidates"),
+            "external transliteration standard;Latin-only replacement;edit distance",
+            "Tri-state Gate 1 separates validated, blocked, and unresolved tokens; partial/absent feature coverage is never reported as a pass.",
+        ),
+        row(
+            "final_ng_transcription_integrity_backaudit",
+            "transcription_integrity",
+            "applied exact final-ng targets",
+            "targets passing reviewed stem and coda features",
+            "diagnostic_queue",
+            "partially_applied",
+            "none",
+            "reviewed_correction_supersession",
+            "data/final_ng_transcription_integrity_backaudit.tsv;data/reviewed_correction_supersessions.tsv",
+            "data/final_ng_transcription_integrity_backaudit.tsv",
+            superseded_count,
+            integrity_mismatches,
+            "historical presence without target integrity",
+            f"Applied targets are backaudited honestly: {integrity_unresolved} have no known violation but incomplete feature/canonical coverage; blocked targets require exact review and supersession.",
+        ),
+        row(
+            "tibetan_latin_canonical_syllables",
+            "transcription_integrity",
+            "exact Tibetan syllable/Latin form concordance",
+            "non-circular provenance-aware teaching identities",
+            "canonical_registry",
+            "partially_applied",
+            "none",
+            "reviewed exact full targets; independent historical teaching rows",
+            "scripts/build_tibetan_latin_syllable_concordance.py;data/tibetan_latin_canonical_teaching_evidence.tsv",
+            "data/tibetan_latin_canonical_syllables.tsv",
+            canonical_authoritative,
+            canonical_non_authoritative,
+            "frequency-only voting;derived self-teaching;foreign-domain teaching",
+            "Only canonical_reviewed, canonical_independent_strong, and "
+            "non-teaching canonical_feature_composed forms authorize propagation.",
+        ),
+        row(
+            "tibetan_latin_ocr_confusion_signatures",
+            "transcription_integrity",
+            "canonical-source edit operations",
+            "Unicode-normalized diagnostic edit scripts",
+            "diagnostic_queue",
+            "partially_applied",
+            "none",
+            "reviewed Tibetan-conditioned confusion signatures",
+            "scripts/build_tibetan_latin_syllable_concordance.py;scripts/build_tibetan_latin_ocr_signature_evidence.py;data/reviewed_tibetan_ocr_signature_decisions.tsv",
+            "data/tibetan_latin_ocr_signature_registry.tsv;data/tibetan_latin_authoritative_outlier_queue.tsv",
+            authorized_signatures,
+            len(confusion_signatures) - authorized_signatures,
+            "unconditioned Latin replacement;edit-distance authorization",
+            f"{len(transcription_outliers)} current canonical outlier form(s) are decomposed; signature authority is learned from scoped reviewed evidence and persistent decisions.",
+        ),
+        row(
+            "final_ng_insufficient_evidence_matrix",
+            "final_ng",
+            "source-compatible families below the two-anchor threshold",
+            "separate internal, cross-volume, entry, Google, and reviewed evidence channels",
+            "diagnostic_queue",
+            "diagnostic_only",
+            "none",
+            "none",
+            "scripts/build_tibetan_final_ng_consensus.py",
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+            0,
+            max(
+                as_int(item.get("final_ng_insufficient_evidence_families"))
+                for item in stats.volumes.values()
+            ),
+            "frequency-only promotion;duplicate evidence counting;one-anchor automatic correction",
+            "Evidence channels are reported separately; this matrix does not authorize corrections.",
         ),
         row(
             "reference_marker_diagnostics",
@@ -1000,6 +1192,41 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "Forbidden broad rule. Current initial-I cleanup is explicit-token, lexicon/context, or reviewed exact only.",
         ),
         row(
+            "reviewed_exact_tibetan_headword_ocr",
+            "tibetan_script_exact",
+            "observed Tibetan token or exact damaged phrase",
+            "adjudicated Tibetan token or phrase",
+            "exact page-line-token or exact page-line phrase",
+            "applied",
+            "wts_1_34;wts_35_51;wts_8_b;wts_9_m",
+            "reviewed_exact_tibetan_headword_vowel_ocr;reviewed_exact_tibetan_headword_subjoined_ocr;reviewed_exact_tibetan_headword_r_structure_ocr;reviewed_exact_tibetan_headword_root_ocr;reviewed_exact_tibetan_headword_suffix_ocr;reviewed_exact_tibetan_headword_delimiter_ocr",
+            "data/reviewed_tibetan_script_exact_overrides.tsv;data/reviewed_tibetan_script_exact_phrase_overrides.tsv;scripts/postprocess_entry_map.py",
+            "data/reviewed_tibetan_headword_ocr_decisions.tsv",
+            (
+                stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_vowel_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_subjoined_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_r_structure_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_root_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_suffix_ocr", 0
+                )
+                + stats.reason_counts.get(
+                    "reviewed_exact_tibetan_headword_delimiter_ocr", 0
+                )
+            ),
+            0,
+            "རྡ/rda protected legitimate control",
+            "Exact reviewed Tibetan component repairs include missing vowel signs, subjoined y, r structure, suffixes, root consonants, and one exact damaged delimiter phrase; corrected observations remain non-independent Latin teaching evidence.",
+        ),
+        row(
             "validator_only_suggestions",
             "validator",
             "validator/canonicalisation suggestions",
@@ -1124,6 +1351,41 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             f'{per_volume_count_text(stats, "script_ng_witness_candidates")}; marker-attached rows remain part of this queue.',
         ],
         [
+            "Corpus-consensus final-ng diagnostics",
+            total(stats, "final_ng_consensus_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv",
+            "diagnostic only",
+            "Rank exact positionally aligned families by dominant internal dotted spelling.",
+            f'{per_volume_count_text(stats, "final_ng_consensus_candidates")}; no automatic corrections.',
+        ],
+        [
+            "Same-entry final-ng echo diagnostics",
+            total(stats, "final_ng_same_entry_echo_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv",
+            "diagnostic only",
+            "Review explicit repetitions and alternate forms individually; never infer identity from spelling alone.",
+            f'{per_volume_count_text(stats, "final_ng_same_entry_echo_candidates")}; no automatic corrections.',
+        ],
+        [
+            "Source-compatible final-ng diagnostics",
+            total(stats, "final_ng_source_compatible_candidates"),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_source_compatible_candidates.tsv",
+            "diagnostic only",
+            "Compare only case-sensitive dotted anchors with the identical pre-final Latin structure.",
+            f'{per_volume_count_text(stats, "final_ng_source_compatible_candidates")}; parallel to the unchanged legacy consensus diagnostic.',
+        ],
+        [
+            "Final-ng insufficient-evidence matrix",
+            max(
+                as_int(item.get("final_ng_insufficient_evidence_families"))
+                for item in stats.volumes.values()
+            ),
+            "release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_insufficient_evidence_matrix.tsv",
+            "diagnostic only",
+            "Review independent evidence channels without treating recurrence as additional anchors.",
+            "One row per Tibetan syllable/source variant/target family; no automatic corrections.",
+        ],
+        [
             "Reference-marker OCR diagnostics",
             reference_marker_residual,
             "release/current/qa/*/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv",
@@ -1230,9 +1492,15 @@ Generated by `python3 scripts/build_status.py` from checked-in release artifacts
 
 - Current release path: `release/current`
 - Current release generated date: `{stats.manifest_generated_utc}`
-- Current release commit / observed source commit: `{stats.manifest_source_commit}`
+- Release-build checkout / observed source commit: `{stats.manifest_source_commit}`
 - Volumes included: `{', '.join(VOLUME_ORDER)}`
 - Policy: base OCR authoritative; Google Vision alternate witness only.
+
+The observed source SHA records the checkout used when the bundle was staged
+from ignored production inputs. It is not the necessarily later commit that
+checked in the generated files, nor does it imply that the repository itself
+is at that older revision. Use per-file Git history to trace later exact
+reviewed updates to the tracked release.
 
 ## How To Read This Repository
 

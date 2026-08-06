@@ -1,0 +1,27 @@
+frozen_prepass_sha	volume	page	line	token_index	tibetan_syllable	source_token	target	candidate_status	alignment_category	damage_category	context_excerpt
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_8_b	366	63	3	ཀློང	klon	kloṅ	echo	uncertain	none	དབའ་ཀློང་ ddba' kloṅ klon.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	129	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་ klon.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	165	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་སྒོམ་ klon sgom
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	172	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་དཀྱིལ་ klon dkyil Mitee.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	184	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་འཁོར་ klon ’khor Strudel, Welle.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	189	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་གི་མ་མོ་ klon gi ma mo Beiname der Srid-pa
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	196	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་གྲམ་ klon grum eine Art Dachs.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	117	202	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་སྒོམ་ klon sgom die höchste von drei Medita-
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	23	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་ཐང་ klon thaṅ N. einer Region in ’Dan
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	29	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་དུ་གྱུར་པ་ klon du gyur pa.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	40	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་རྡོལ་ klon rdol npr. ein Kloster in sKyid-śod,
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	44	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་རྡོལ་བླ་མ་ klon rdol bla ma npr. der Gelehrte
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	56	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	"ཀློང་ ""klon sde eine Abteilung der rDzogs-"
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	64	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་བརྡོལ་ klon brdol „aus der Mitte hervorkom-
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	74	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་པ་ klon pa Schmutz, Schlamm.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	118	77	1	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཀློང་ཡངས་ klon yans ausgedehnt, weitherzig.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	642	135	2	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཆུ་ཀློང་ chu klon Flußmitte.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	675	26	2	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཆོས་ཀློང་ chos klon Allwissenheit, Meister-
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	680	1	3	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	ཆོས་དབྱིངས་ཀློང་དུ་ chos dbyins klon du
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	721	142	2	ཀློང	klon	kloṅ	positional	source_compatible_dominant_consensus	none	འཇའ་ཀློང་ཡེ་ཤེས་ ja’ klon ye śes ein ritueller
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	675	30	2	ཀློང	klon	kloṅ	withheld_damage	source_compatible_damaged_context	latin_headword_overlap	ཆོས་ཀློང་རྙོག་ chos klon ?7709 aufgebracht sein.
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	476	154	2	འཚོང	tshoh	tshoṅ	positional	source_compatible_dominant_consensus	none	རྒྱས་འཚོང་བ་ rgyas ’tshoh ba ein mit Netzen
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	629	69	5	འཚོང	tshon	tshoṅ	echo	explicit_same_lemma_repetition	none	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	629	69	2	འཚོང	tshon	tshoṅ	positional	source_compatible_dominant_consensus	none	ཆང་འཚོང་ chaṅ ’tshon auch chaṅ tshon, char
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_1_34	680	127	2	འཚོང	tshon	tshoṅ	positional	source_compatible_dominant_consensus	none	ཆོས་འཚོང་པ་ chos ’tshon ba Handel mit dem
+652273e47f67e8d17a1988e4c3bc2e3641841125	wts_35_51	839	75	1	སྤྲང	sprah	spraṅ	positional	source_compatible_dominant_consensus	none	སྤྲང་ *sprah Kurzforn für ↓ spraṅ po.

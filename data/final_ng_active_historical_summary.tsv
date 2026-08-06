@@ -1,0 +1,9 @@
+effective_disposition	historical_diagnostic_rows	current_extant_source_rows	historical_only_rows	current_target_ready_rows	current_signature_ready_rows	current_alignment_ready_rows	current_domain_ready_rows	current_final_action_ready_rows
+blocked_prior_deferred	1	1	0	1	1	0	0	0
+blocked_prior_rejected	2	2	0	0	0	0	0	0
+canonical_target_not_authoritative	117	117	0	0	0	0	0	0
+domain_risk	3	3	0	3	3	3	0	0
+final_ng_target_conflicts_with_general_canonical	14	14	0	14	0	10	6	0
+no_supported_target	330	328	2	138	3	71	115	0
+ready_existing_authority	18	18	0	18	18	18	0	0
+source_alignment_not_secure	11	11	0	11	11	0	4	0

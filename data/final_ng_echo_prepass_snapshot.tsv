@@ -1,0 +1,13 @@
+prepass_sha	tibetan_syllable	source_latin_variants	proposed_latin_target	frozen_echo_candidate_count	active_unreviewed_count	echo_categories	volumes
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	གཏོང	gton	gtoṅ	2	2	explicit_same_lemma_repetition:1;uncertain:1	wts_1_34
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྐྱོང	skyon	skyoṅ	0	0		wts_1_34;wts_35_51
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	འབྱུང	byun;byuh	byuṅ	5	5	cross_reference_probable:1;uncertain:4	wts_1_34;wts_35_51;wts_8_b;wts_9_m
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	སྟེང	sten;steh	steṅ	6	6	cross_reference_probable:1;damaged_reference:1;explicit_same_lemma_repetition:2;uncertain:2	wts_1_34;wts_35_51
+04d8c1a99743277a31460e050ff9a6f1ac5b2604	དྲུང	drun	druṅ	3	3	cross_reference_probable:1;uncertain:2	wts_1_34;wts_9_m
+0848355ecd7399fbb36bcff65acc9b65e779f546	ཁུང	khun	khuṅ	7	7	damaged_reference:1;explicit_same_lemma_repetition:3;uncertain:3	wts_1_34
+0848355ecd7399fbb36bcff65acc9b65e779f546	དོང	don	doṅ	4	4	explicit_same_lemma_repetition:4	wts_1_34
+0848355ecd7399fbb36bcff65acc9b65e779f546	གུང	gun;guh	guṅ	8	8	cross_reference_probable:1;damaged_reference:1;explicit_same_lemma_repetition:3;uncertain:3	wts_1_34;wts_35_51
+0848355ecd7399fbb36bcff65acc9b65e779f546	བྱང	byan;byah	byaṅ	3	3	cross_reference_probable:2;uncertain:1	wts_35_51;wts_8_b
+0848355ecd7399fbb36bcff65acc9b65e779f546	སེང	sen;seh	seṅ	8	8	direct_repeated_tibetan_alignment:1;explicit_same_lemma_repetition:2;uncertain:5	wts_1_34
+0848355ecd7399fbb36bcff65acc9b65e779f546	སོང	son	soṅ	2	2	explicit_same_lemma_repetition:1;uncertain:1	wts_1_34
+0848355ecd7399fbb36bcff65acc9b65e779f546	ལིང	lin	liṅ	2	2	damaged_reference:1;explicit_same_lemma_repetition:1	wts_1_34
