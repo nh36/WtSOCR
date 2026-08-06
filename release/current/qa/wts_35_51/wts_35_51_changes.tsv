@@ -6537,3 +6537,9 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 38	56	168	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	གདོན་ཕལ་པ་བཞི་ gdon phal pa bi eine Gruppe
 174	28	1014	headword_line	gi	gźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འདུལ་བའི་གཞི་ dul ba'i gi auch 'dul ba gi
 1120	45	6114	headword_line	bi	bźi	A	reviewed_tibetan_exact_manual_structural_root_ocr	1	འཕྲུལ་མི་བཞི་ phrul mi bi
+683	4	3333	headword_line	ppad	pad	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	པད་མའི་དྲག་ ppad ma' dgra dgra.
+884	3	4580	headword_line	pphaṅ	phaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕང་འགྲ pphaṅ gro JAULENMSTTUMENE.
+972	48	5139	headword_line	pphyaṅ	phyaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
+1020	39	5450	headword_line	pphyis	phyis	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
+1090	34	5866	headword_line	pphar	phar	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕར་ཞིབ་ pphar Zib Fluktuation,
+1113	2	6044	headword_line	pphral	phral	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der

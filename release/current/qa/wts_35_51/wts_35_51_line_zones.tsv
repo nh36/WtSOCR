@@ -55362,7 +55362,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 683	1	3331	headword_line	པད་མའི་གྲོགས་པོ་	ma'i	high	2	0	0	0	པད་མའི་གྲོགས་པོ་ pad ma'i grogs po
 683	2	3332	headword_line	པད་མའི་གྲོགས་པོ་	ma'i	high	3	0	0	0	པད་མའི་གྲོགས་པོ་ pad ma'i grogs po lpadma'i
 683	3	3332	other			none	0	0	0	0	87085 pP.
-683	4	3333	headword_line	པད་མའི་དྲག་	ma' dgra dgra	high	3	0	0	0	པད་མའི་དྲག་ ppad ma' dgra dgra.
+683	4	3333	headword_line	པད་མའི་དྲག་	ma' dgra dgra	high	3	0	0	0	པད་མའི་དྲག་ pad ma' dgra dgra.
 683	5	3334	headword_line	པད་མའི་ངོས་	ma'i ños lpadma'i ño	high	4	0	0	0	པད་མའི་ངོས་ pad ma'i ños lpadma'i ño.
 683	6	3335	headword_line	པད་མའི་མངལ་བྱུང་	ma'i padma’i	high	2	0	0	0	པད་མའི་མངལ་བྱུང་ papad ma'i padma’i
 683	7	3335	other			none	0	0	0	0	mal byin.
@@ -71902,7 +71902,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 883	77	4578	other			none	0	0	0	0	(TTC).
 884	1	4578	other			none	0	0	0	0	"nr "" )"
 884	2	4579	headword_line	ཕང་འགྲོ་	phaṅ	high	1	0	0	0	ཕང་འགྲོ་ phaṅ 'gro
-884	3	4580	headword_line	ཕང་འགྲ	pphaṅ	high	1	0	0	0	ཕང་འགྲ pphaṅ gro JAULENMSTTUMENE.
+884	3	4580	headword_line	ཕང་འགྲ	phaṅ	high	1	0	0	0	ཕང་འགྲ phaṅ gro JAULENMSTTUMENE.
 884	4	4580	german_prose_with_translit			none	4	1	0	0	Lex. sgra sian nam rgyud mans (brDa); sgra
 884	5	4580	german_prose_with_translit			none	3	1	0	0	"snan (Dagy); —""rgyud = sgra san 07// thag"
 884	6	4580	latin_other			none	4	0	0	0	"pa (brDa); -""rgyud = sgra san reoyud skud"
@@ -79134,7 +79134,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 972	45	5138	german_prose_with_translit			none	4	1	0	0	thag bead pa (TTC); — ni thag bead (Lis
 972	46	5138	german_prose_with_translit			none	2	1	0	0	8,16); phyari bead = thag bcad (Mimi 178);
 972	47	5138	german_prose_with_translit			none	2	1	0	0	phyun chad (r. —) = thag bcad (Mim2 158).
-972	48	5139	headword_line	ཕྱང་སྤྲུལ་	pphyaṅ sprul phrul	high	3	0	0	0	ཕྱང་སྤྲུལ་ pphyaṅ sprul phrul.
+972	48	5139	headword_line	ཕྱང་སྤྲུལ་	phyaṅ sprul phrul	high	3	0	0	0	ཕྱང་སྤྲུལ་ phyaṅ sprul phrul.
 972	49	5140	headword_line	ཕྱང་ཕྱང་བ་	phyaṅ phyaṅ ba herabhāngend	high	4	0	0	0	ཕྱང་ཕྱང་བ་ phyaṅ phyaṅ ba herabhāngend.
 972	50	5140	german_prose_with_translit			none	4	1	0	0	"Lex. jol le ba'am mar rin du 'dzar ba ""schlei-"
 972	51	5140	german_prose_with_translit			none	2	1	0	0	"fend oder weit nach unten hängend"" (brDa,"
@@ -82967,7 +82967,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1020	36	5447	german_prose_with_translit			none	3	1	0	0	Lex. rjes ma la'an (brDa).
 1020	37	5448	headword_line	ཕྱིས་བཙན་པོ་	phyis btsan po spyis brtsan pa	high	6	0	0	0	ཕྱིས་བཙན་པོ་ phyis btsan po ↑ spyis brtsan pa.
 1020	38	5449	headword_line	ཕྱིས་སུ་	phyis su	high	2	0	0	0	ཕྱིས་སུ་ phyis su
-1020	39	5450	headword_line	ཕྱིས་ཚན་གསུམ་	pphyis	high	1	2	0	0	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
+1020	39	5450	headword_line	ཕྱིས་ཚན་གསུམ་	phyis	high	1	2	0	0	ཕྱིས་ཚན་གསུམ་ phyis gsum spätere Drei-
 1020	40	5450	other			none	0	0	0	0	ergruppe.
 1020	41	5450	latin_other			none	3	0	0	0	reya chin ru ba / chos rje jam gsar / skyel nag
 1020	42	5450	latin_other			none	2	0	0	0	"grags seh gsum la — zer bar ""rGya-'chin ru-"
@@ -88760,7 +88760,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1090	31	5865	german_prose_with_translit			none	1	3	0	0	"bärib, lekhahārikab ""Kurier"" (Mvy 3816)."
 1090	32	5865	german_prose_with_translit			none	2	3	0	0	"Lex. bya ma 77:77 min ""Bez. für"
 1090	33	5865	other			none	0	0	0	0	um (xl.
-1090	34	5866	headword_line	འཕར་ཞིབ་	pphar	high	1	2	0	0	འཕར་ཞིབ་ pphar Zib Fluktuation,
+1090	34	5866	headword_line	འཕར་ཞིབ་	phar	high	1	2	0	0	འཕར་ཞིབ་ phar Zib Fluktuation,
 1090	35	5866	german_prose_with_translit			none	2	2	0	0	"Lex. 'phar chag lta bu ""wie: Fluktuation"""
 1090	36	5866	latin_other			none	1	0	0	0	(brDa).
 1090	37	5866	other			none	0	0	0	0	u, .
@@ -90604,7 +90604,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1112	83	6042	german_prose_with_translit			none	1	2	0	0	Bonf-po] angeordnet, Ebenbilder anzuferti-
 1112	84	6042	german_prose			none	0	1	0	0	"gen"" (Padm 29363)."
 1113	1	6043	headword_line	འཕྲལ་རྐྱེན་འགྲམ་	phral rkyen	high	2	0	0	0	འཕྲལ་རྐྱེན་འགྲམ་ 'phral rkyen 'gram
-1113	2	6044	headword_line	འཕྲལ་རྐྱེན་འགྲམ་	pphral rkyen	high	2	2	0	0	འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der
+1113	2	6044	headword_line	འཕྲལ་རྐྱེན་འགྲམ་	phral rkyen	high	2	2	0	0	འཕྲལ་རྐྱེན་འགྲམ་ phral rkyen 'eines der
 1113	3	6044	german_prose			none	0	4	0	0	acht großen Unheile in der
 1113	4	6044	german_prose			none	0	3	0	0	Totenkalkulation, vgl. Scrhurt 2012: 1490 s. v.
 1113	5	6044	latin_other			none	6	0	0	0	bya ba ñes pa'i 'phral rkan 'grams.

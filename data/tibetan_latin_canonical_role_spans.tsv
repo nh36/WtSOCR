@@ -9205,10 +9205,10 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 འཕམ	pham	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	unresolved
 འཕམ	pham	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	unresolved
 འཕམ	pham	complete_not_currently_authoritative	suffix_coda	མ	3	4	m	CORPUS_5683E9A09D00	contrastive	unresolved
-འཕར	phar	correction_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
-འཕར	phar	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-འཕར	phar	correction_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
-འཕར	phar	correction_authoritative	suffix_coda	ར	3	4	r	CORPUS_6783C3DA00D4	contrastive	ordinary_tibetan_lexical_or_compound
+འཕར	phar	complete_not_currently_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
+འཕར	phar	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+འཕར	phar	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
+འཕར	phar	complete_not_currently_authoritative	suffix_coda	ར	3	4	r	CORPUS_6783C3DA00D4	contrastive	ordinary_tibetan_lexical_or_compound
 འཕལ	phal	complete_not_currently_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	unresolved
 འཕལ	phal	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	unresolved
 འཕལ	phal	complete_not_currently_authoritative	vowel	a	2	3	a	CORPUS_01025FAF5D30	contrastive	unresolved
@@ -9417,11 +9417,11 @@ tibetan_syllable	target	target_authority	tibetan_role	tibetan_feature	target_sta
 འཕྲར	phrar	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	unresolved
 འཕྲར	phrar	complete_not_currently_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	unresolved
 འཕྲར	phrar	complete_not_currently_authoritative	suffix_coda	ར	4	5	r	CORPUS_6783C3DA00D4	contrastive	unresolved
-འཕྲལ	phral	correction_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
-འཕྲལ	phral	correction_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
-འཕྲལ	phral	correction_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
-འཕྲལ	phral	correction_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
-འཕྲལ	phral	correction_authoritative	suffix_coda	ལ	4	5	l	RESIDUAL_A5A2CF47705E	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+འཕྲལ	phral	complete_not_currently_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	ordinary_tibetan_lexical_or_compound
+འཕྲལ	phral	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
+འཕྲལ	phral	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	ordinary_tibetan_lexical_or_compound
+འཕྲལ	phral	complete_not_currently_authoritative	vowel	a	3	4	a	CORPUS_01025FAF5D30	contrastive	ordinary_tibetan_lexical_or_compound
+འཕྲལ	phral	complete_not_currently_authoritative	suffix_coda	ལ	4	5	l	RESIDUAL_A5A2CF47705E	single_unknown_residual_induction	ordinary_tibetan_lexical_or_compound
 འཕྲས	phras	complete_not_currently_authoritative	prefix	འ	0	0		CORPUS_91DCE7C115D4	contrastive	unresolved
 འཕྲས	phras	complete_not_currently_authoritative	root_consonant	ཕ	0	2	ph	RESIDUAL_C14A7F0F1043	single_unknown_residual_induction	unresolved
 འཕྲས	phras	complete_not_currently_authoritative	subjoined_consonants	ར	2	3	r	CORPUS_7F71AFFFC788	contrastive	unresolved

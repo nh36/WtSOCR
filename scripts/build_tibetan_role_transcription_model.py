@@ -50,6 +50,9 @@ FEATURE_COMPOSITION_AUDIT_BASELINE = (
     "e278992cc9317fca3bbe638c3420391a9b47d2cd"
 )
 _TEACHING_DIVERSITY_CACHE: dict[str, tuple[set[str], set[str]]] | None = None
+_SOURCE_CONVENTION_CACHE: dict[
+    tuple[str, str, str], dict[str, list[str]]
+] = {}
 
 PREFIXES = set("གདབམའ")
 SUPERSCRIPTS = set("རལས")
@@ -133,6 +136,7 @@ REVALIDATION_FIELDS = [
     "current_qualifying_contrasts", "current_volumes",
     "current_entry_clusters", "conflicts", "evidence_kind",
     "strict_leave_one_out_minimum_support", "dependency_status",
+    "corroborating_support_details", "revalidation_policy",
     "effective_authority", "rationale",
 ]
 DEPENDENCY_FIELDS = [
@@ -810,17 +814,143 @@ def authoritative_rules(
         decision = decisions.get(row["rule_id"])
         if not decision:
             continue
-        basis = (
-            "empirical_corpus"
-            if decision.get("provenance", "").startswith("corpus_internal_")
-            else "explicit_review"
-        )
-        if basis == "empirical_corpus" and not empirical_rule_qualifies(row):
+        basis = decision_authority_basis(decision)
+        corroborating = source_convention_corroboration(decision)
+        if not rule_effective(
+            decision, row,
+            independent_corroborating_syllables=set(corroborating),
+        ):
             continue
         result[(row["tibetan_role"], row["tibetan_feature"])] = {
             **row, **decision, "authority_basis": basis,
         }
     return result
+
+
+def decision_authority_basis(decision: dict[str, str]) -> str:
+    provenance = decision.get("provenance", "")
+    if provenance.startswith("corpus_internal_"):
+        return "empirical_corpus"
+    if provenance.startswith("explicit_source_convention_"):
+        return "explicit_source_convention"
+    if provenance.startswith("reviewed_feature_corpus"):
+        return "reviewed_feature_corpus"
+    return "explicit_review"
+
+
+def rule_effective(
+    decision: dict[str, str],
+    candidate: dict[str, str],
+    *,
+    independent_corroborating_syllables: set[str] | None = None,
+) -> bool:
+    """Evaluate an A decision under the policy appropriate to its basis."""
+    if decision.get("decision") != "A" or not candidate:
+        return False
+    basis = decision_authority_basis(decision)
+    if basis == "empirical_corpus":
+        return empirical_rule_qualifies(candidate)
+    if basis == "explicit_source_convention":
+        return (
+            bool(independent_corroborating_syllables)
+            and not candidate.get("competing_realizations", "")
+            and candidate.get("tibetan_role") == decision.get("tibetan_role")
+            and candidate.get("tibetan_feature")
+            == decision.get("tibetan_feature")
+        )
+    # Explicit human review and reviewed feature-corpus decisions remain
+    # persistent while their exact structural candidate is current. They are
+    # not retroactively subjected to empirical-induction thresholds.
+    return (
+        candidate.get("tibetan_role") == decision.get("tibetan_role")
+        and candidate.get("tibetan_feature") == decision.get("tibetan_feature")
+    )
+
+
+def source_convention_corroboration(
+    decision: dict[str, str],
+    excluded_syllable: str = "",
+) -> dict[str, list[str]]:
+    """Return only clean, pre-existing observations corroborating a convention.
+
+    Reviewed targets, alternate-only forms, and derived corrections are
+    deliberately excluded so that a convention-backed rule cannot cite a
+    target generated or reviewed with help from that same rule.
+    """
+    if decision_authority_basis(decision) != "explicit_source_convention":
+        return {}
+    role = decision.get("tibetan_role", "")
+    feature = decision.get("tibetan_feature", "")
+    realization = decision.get("latin_realization", "")
+    cache_key = (role, feature, realization)
+    if cache_key in _SOURCE_CONVENTION_CACHE:
+        return {
+            syllable: identities
+            for syllable, identities in _SOURCE_CONVENTION_CACHE[
+                cache_key
+            ].items()
+            if syllable != excluded_syllable
+        }
+    support: dict[str, list[str]] = defaultdict(list)
+    for row in read(
+        ROOT / "data/tibetan_latin_canonical_teaching_evidence.tsv"
+    ):
+        syllable = row["tibetan_syllable"]
+        if (
+            syllable == excluded_syllable
+            or row["canonical_teaching_status"]
+            != "independent_teaching_evidence"
+            or row["domain_context"]
+            != "ordinary_tibetan_lexical_or_compound"
+        ):
+            continue
+        parsed = parse_tibetan_syllable(syllable)
+        if parsed.get(role) != feature:
+            continue
+        latin = row["latin_form"]
+        if realization not in latin:
+            continue
+        support[syllable].append(
+            f"{row['volume']}:{row['page']}:{row['line']}:{row['token_index']}"
+        )
+    cached = dict(support)
+    _SOURCE_CONVENTION_CACHE[cache_key] = cached
+    return {
+        syllable: identities for syllable, identities in cached.items()
+        if syllable != excluded_syllable
+    }
+
+
+def source_convention_excluded_observations(
+    decision: dict[str, str],
+    audited_syllables: set[str],
+) -> dict[str, list[str]]:
+    """Explain matching reviewed/derived observations excluded from support."""
+    if decision_authority_basis(decision) != "explicit_source_convention":
+        return {}
+    role = decision.get("tibetan_role", "")
+    feature = decision.get("tibetan_feature", "")
+    realization = decision.get("latin_realization", "")
+    excluded: dict[str, list[str]] = defaultdict(list)
+    for row in read(
+        ROOT / "data/tibetan_latin_canonical_teaching_evidence.tsv"
+    ):
+        syllable = row["tibetan_syllable"]
+        status = row["canonical_teaching_status"]
+        if (
+            syllable not in audited_syllables
+            or status == "independent_teaching_evidence"
+            or row["domain_context"]
+            != "ordinary_tibetan_lexical_or_compound"
+            or parse_tibetan_syllable(syllable).get(role) != feature
+            or realization not in row["latin_form"]
+        ):
+            continue
+        excluded[syllable].append(
+            f"{status}@{row['volume']}:{row['page']}:{row['line']}:"
+            f"{row['token_index']}"
+        )
+    return dict(excluded)
 
 
 def _pair_items(rule: dict[str, str]) -> list[str]:
@@ -907,8 +1037,16 @@ def empirical_rule_qualifies(
 def strict_rule_available(
     rule: dict[str, str], excluded_syllable: str,
 ) -> bool:
-    if rule.get("authority_basis") == "explicit_review":
+    if rule.get("authority_basis") in {
+        "explicit_review", "reviewed_feature_corpus",
+    }:
         return True
+    if rule.get("authority_basis") == "explicit_source_convention":
+        support = source_convention_corroboration(rule, excluded_syllable)
+        return rule_effective(
+            rule, rule,
+            independent_corroborating_syllables=set(support),
+        )
     return empirical_rule_qualifies(rule, excluded_syllable)
 
 
@@ -996,26 +1134,73 @@ def build_revalidation(
     rows: list[dict[str, str]] = []
     for decision in read(DECISIONS_PATH):
         candidate = candidate_by_id.get(decision["rule_id"], {})
-        basis = (
-            "empirical_corpus"
-            if decision.get("provenance", "").startswith("corpus_internal_")
-            else "explicit_review"
-        )
+        basis = decision_authority_basis(decision)
         supporters = _supporting_syllables(candidate)
+        corroborating = source_convention_corroboration(decision)
+        qualifying_syllables = (
+            set(corroborating)
+            if basis == "explicit_source_convention" else supporters
+        )
         volumes, clusters = _support_diversity(supporters)
+        if basis == "explicit_source_convention":
+            volumes, clusters = _support_diversity(qualifying_syllables)
+        merged_rule = {**candidate, **decision, "authority_basis": basis}
         held_out_counts = [
-            len(_supporting_syllables(candidate, syllable))
-            for syllable in supporters
-            if strict_rule_available(
-                {**candidate, "authority_basis": basis}, syllable
+            len(
+                source_convention_corroboration(decision, syllable)
+                if basis == "explicit_source_convention"
+                else _supporting_syllables(candidate, syllable)
             )
+            for syllable in qualifying_syllables
+            if strict_rule_available(merged_rule, syllable)
         ]
-        effective = (
-            decision["decision"] == "A"
-            and (
-                basis == "explicit_review"
-                or empirical_rule_qualifies(candidate)
+        effective = rule_effective(
+            decision, candidate,
+            independent_corroborating_syllables=set(corroborating),
+        )
+        if basis == "empirical_corpus":
+            policy = "empirical_threshold_revalidation"
+            rationale = (
+                "Empirical corpus A remains usable only with complete-role "
+                "evidence, at least three syllables (four for residual "
+                "induction), two qualifying contrasts where applicable, two "
+                "volumes, two entry clusters, and zero competition."
             )
+        elif basis == "explicit_source_convention":
+            policy = "source_convention_corroboration_revalidation"
+            rationale = (
+                "The reviewed WTS source convention remains applicable to "
+                "this resolved role; independently clean pre-existing corpus "
+                "observations corroborate it, derived/reviewed targets are "
+                "excluded, and no qualifying ordinary-Tibetan contradiction "
+                "survives."
+            )
+        elif basis == "reviewed_feature_corpus":
+            policy = "reviewed_feature_corpus_revalidation"
+            rationale = (
+                "Reviewed feature-corpus authority remains active while its "
+                "structural candidate is current; it is not an empirical "
+                "induction decision and is not assigned induction thresholds."
+            )
+        else:
+            policy = "explicit_review_revalidation"
+            rationale = (
+                "Explicit human-reviewed authority remains active while its "
+                "structural candidate is current; it is not an empirical "
+                "induction decision and is not assigned induction thresholds."
+            )
+        excluded_observations = source_convention_excluded_observations(
+            decision, set(corroborating) | supporters
+        )
+        support_details = ";".join(
+            f"{syllable}|eligible_independent_preexisting|"
+            + ",".join(corroborating[syllable])
+            + (
+                "|excluded_nonindependent:"
+                + ",".join(excluded_observations.get(syllable, []))
+                if excluded_observations.get(syllable) else ""
+            )
+            for syllable in sorted(corroborating)
         )
         rows.append({
             "rule_id": decision["rule_id"], "authority_basis": basis,
@@ -1023,7 +1208,7 @@ def build_revalidation(
             "original_supporting_syllables":
                 candidate.get("strong_canonical_syllables", ""),
             "current_qualifying_syllables":
-                candidate.get("strong_canonical_syllables", "")
+                ";".join(sorted(qualifying_syllables))
                 if effective else "",
             "current_qualifying_contrasts": str(len(_pair_items(candidate))),
             "current_volumes": ";".join(sorted(volumes)),
@@ -1034,12 +1219,10 @@ def build_revalidation(
                 str(min(held_out_counts)) if held_out_counts else "0"
             ),
             "dependency_status": "current" if candidate else "missing_candidate",
+            "corroborating_support_details": support_details,
+            "revalidation_policy": policy,
             "effective_authority": "yes" if effective else "no",
-            "rationale": (
-                "Empirical A decisions remain usable only while complete-role "
-                "evidence, three syllables, two contrasts, two volumes, two "
-                "clusters, and zero competition remain current."
-            ),
+            "rationale": rationale,
         })
     return rows
 

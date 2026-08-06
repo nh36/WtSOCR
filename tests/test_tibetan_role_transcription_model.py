@@ -216,6 +216,94 @@ class FeatureCompositionTests(unittest.TestCase):
         finally:
             role_model._TEACHING_DIVERSITY_CACHE = original_cache
 
+    def test_authority_basis_specific_revalidation(self):
+        candidate = {
+            "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཉ",
+            "strong_canonical_syllables": "A;B",
+            "minimal_pair_support": "A:x↔B:y",
+            "evidence_kind": "full_realization_isolated",
+            "competing_realizations": "",
+        }
+        empirical = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཉ",
+            "provenance": "corpus_internal_contrastive_review",
+        }
+        self.assertFalse(role_model.rule_effective(empirical, candidate))
+        convention = {
+            **empirical,
+            "provenance": "explicit_source_convention_and_corpus_review",
+        }
+        self.assertTrue(role_model.rule_effective(
+            convention, candidate,
+            independent_corroborating_syllables={"A"},
+        ))
+        contradiction = {**candidate, "competing_realizations": "n"}
+        self.assertFalse(role_model.rule_effective(
+            convention, contradiction,
+            independent_corroborating_syllables={"A"},
+        ))
+
+    def test_explicit_review_does_not_claim_empirical_threshold(self):
+        decision = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཞ", "provenance": "explicit_user_review",
+        }
+        candidate = {
+            "tibetan_role": "root_consonant", "tibetan_feature": "ཞ",
+            "strong_canonical_syllables": "A;B",
+        }
+        self.assertEqual(
+            role_model.decision_authority_basis(decision), "explicit_review"
+        )
+        self.assertTrue(role_model.rule_effective(decision, candidate))
+
+    def test_source_convention_requires_independent_corroboration(self):
+        decision = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཉ", "latin_realization": "ñ",
+            "provenance": "explicit_source_convention_and_corpus_review",
+        }
+        candidate = {
+            "tibetan_role": "root_consonant", "tibetan_feature": "ཉ",
+            "competing_realizations": "",
+        }
+        self.assertFalse(role_model.rule_effective(
+            decision, candidate,
+            independent_corroborating_syllables=set(),
+        ))
+
+    def test_derived_target_cannot_corroborate_source_convention(self):
+        decision = {
+            "decision": "A", "tibetan_role": "root_consonant",
+            "tibetan_feature": "ཉ", "latin_realization": "ñ",
+            "provenance": "explicit_source_convention_and_corpus_review",
+        }
+        original_read = role_model.read
+        original_cache = role_model._SOURCE_CONVENTION_CACHE
+        try:
+            role_model._SOURCE_CONVENTION_CACHE = {}
+            role_model.read = lambda _path: [{
+                "tibetan_syllable": "མཉམ", "latin_form": "mñam",
+                "canonical_teaching_status": "supporting_but_derived",
+                "domain_context": "ordinary_tibetan_lexical_or_compound",
+                "volume": "v", "page": "1", "line": "1",
+                "token_index": "1",
+            }]
+            self.assertEqual(
+                role_model.source_convention_corroboration(decision), {}
+            )
+            self.assertEqual(
+                role_model.source_convention_excluded_observations(
+                    decision, {"མཉམ"}
+                ),
+                {"མཉམ": ["supporting_but_derived@v:1:1:1"]},
+            )
+        finally:
+            role_model.read = original_read
+            role_model._SOURCE_CONVENTION_CACHE = original_cache
+
     def test_single_unknown_residual_isolates_complete_digraph(self):
         rules = {
             ("vowel", "a"): {
