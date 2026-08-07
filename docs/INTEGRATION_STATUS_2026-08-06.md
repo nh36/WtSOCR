@@ -1,5 +1,8 @@
 # Integration status — 2026-08-06
 
+> Historical audit record. Counts and recommendations may have been superseded.
+> For the current state, see `docs/STATUS.md`.
+
 ## Scope and branch relationship
 
 This stabilization started from the clean, synchronized head of

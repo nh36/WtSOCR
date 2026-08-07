@@ -426,7 +426,7 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
         self.assertEqual(len(rows), 34)
         self.assertEqual(len(identities), 34)
         self.assertEqual(
-            sum(row["decision"] == "unresolved" for row in rows), 7
+            sum(row["decision"] == "unresolved" for row in rows), 5
         )
 
     def test_reviewed_terminal_alignment_rows_leave_active_residual_only(self) -> None:
@@ -434,11 +434,11 @@ class OcrSignatureEvidenceTests(unittest.TestCase):
             row for row in self.generated["active_queue_summary"]
             if row["queue_category"] == "alignment_or_damage"
         )
-        self.assertEqual(summary["current_family_count"], "5")
-        self.assertEqual(summary["current_exact_occurrences"], "7")
-        self.assertEqual(summary["reviewed_terminal_families"], "9")
+        self.assertEqual(summary["current_family_count"], "3")
+        self.assertEqual(summary["current_exact_occurrences"], "5")
+        self.assertEqual(summary["reviewed_terminal_families"], "11")
         self.assertEqual(
-            summary["reviewed_terminal_exact_occurrences"], "22"
+            summary["reviewed_terminal_exact_occurrences"], "24"
         )
 
     def test_bai_repairs_are_exact_row_only(self) -> None:
