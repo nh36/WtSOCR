@@ -29,7 +29,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/release-inputs
-          key: release-inputs-${{ hashFiles('release/inputs/wtsocr-stable-2026-08-06.lock.json') }}
+          key: release-inputs-${{ hashFiles('release/inputs/wtsocr-alignment-review-2026-08-06.lock.json') }}
 
       - name: Verify locked inputs and reproduce release
         run: |

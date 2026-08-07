@@ -1,5 +1,5 @@
 signature	condition_matching_reviewed_occurrences	condition_failing_reviewed_occurrences	reviewed_failure_reasons	residual_signature_occurrences	residual_condition_matches	residual_condition_failures	residual_failure_reasons
-INS r	10	3	domain_mismatch:1;tibetan_role_mismatch:2	7	8	29	condition_or_boundary_mismatch
+INS r	10	3	domain_mismatch:1;tibetan_role_mismatch:2	5	8	27	condition_or_boundary_mismatch
 REPLACE ni→ṅ	44	30	identity_not_resolved:30	9	12	5	condition_or_boundary_mismatch
 REPLACE ri→ṅ	8	28	identity_not_resolved:28	13	22	14	condition_or_boundary_mismatch
 SUB I→l	115	3177	domain_mismatch:11;identity_not_resolved:3166	0	16	5	condition_or_boundary_mismatch

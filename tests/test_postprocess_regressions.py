@@ -528,6 +528,44 @@ class PostprocessRegressionTests(unittest.TestCase):
                     strict=True, overrides_path=path,
                 )
 
+    def test_alignment_damage_tibetan_repairs_are_exact_and_reconciled(self) -> None:
+        expected = {
+            ("wts_1_34", "1198", "75", "1", "དྲེ", "དེ"),
+            ("wts_1_34", "1048", "82", "1", "ཐྲོས", "ཐོས"),
+            ("wts_1_34", "1048", "82", "2", "སློག", "སྒྲོག"),
+            ("wts_9_m", "168", "33", "2", "སྤྲོ", "སྤོ"),
+        }
+        with (
+            ROOT / "data/reviewed_tibetan_script_exact_overrides.tsv"
+        ).open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        actual = {
+            (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["observed_tibetan"],
+                row["adjudicated_tibetan"],
+            )
+            for row in rows
+            if row["review_batch"] == "alignment_damage_exact_review_20260806"
+        }
+        self.assertEqual(actual, expected)
+
+        with (
+            ROOT / "data/reviewed_tibetan_headword_ocr_decisions.tsv"
+        ).open(encoding="utf-8", newline="") as handle:
+            decisions = list(csv.DictReader(handle, delimiter="\t"))
+        confirmed = {
+            (
+                row["volume"], row["page"], row["line"],
+                row["token_index"], row["observed_tibetan"],
+                row["adjudicated_tibetan"],
+            )
+            for row in decisions
+            if row["review_batch"] == "alignment_damage_exact_review_20260806"
+            and row["decision"] == "tibetan_headword_ocr_confirmed"
+        }
+        self.assertEqual(confirmed, expected)
+
     def test_reviewed_tibetan_script_registry_validation(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

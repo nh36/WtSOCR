@@ -1,8 +1,8 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-07-29T16:22:11Z`
-Build recipe revision: `aef604d5f50a07d86a397b5199c259c866a5c179`
-Production input provenance: `work/final_ng_seed_clean_20260719T210000Z; observed revision d407bf522ae6645c50dd7ba9ce4d5b42721d1097`
+Generated UTC: `2026-08-06T15:30:00Z`
+Build recipe revision: `cc45ddf53cfc516ce35083230ada35b7d5d7195e`
+Production input provenance: `work/final_ng_seed_clean_20260719T210000Z; observed revision cc45ddf53cfc516ce35083230ada35b7d5d7195e`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -22,23 +22,23 @@ the latest trusted corrected text and compact QA artifacts into
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/wts_1_34` |
-| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/wts_35_51` |
-| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/wts_8_b` |
-| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-alignment-review-2026-08-06/wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-alignment-review-2026-08-06/wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-alignment-review-2026-08-06/wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-alignment-review-2026-08-06/wts_9_m` |
 
 ## Diagnostic Sources
 
 | Volume | Local source directory |
 | --- | --- |
-| `wts_1_34` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_1_34` |
-| `wts_35_51` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_35_51` |
-| `wts_8_b` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_8_b` |
-| `wts_9_m` | `locked://wtsocr-stable-2026-08-06/tibetan_cleanup_diagnostics_wts_9_m` |
+| `wts_1_34` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_1_34` |
+| `wts_35_51` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_35_51` |
+| `wts_8_b` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_8_b` |
+| `wts_9_m` | `locked://wtsocr-alignment-review-2026-08-06/tibetan_cleanup_diagnostics_wts_9_m` |
 
 ## Locked Input
 
-- Input lock: `wtsocr-stable-2026-08-06`
+- Input lock: `wtsocr-alignment-review-2026-08-06`
 - Every archived input is verified by SHA-256 before materialization.
 
 ## Corrected Text

@@ -6543,3 +6543,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1020	39	5450	headword_line	pphyis	phyis	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	ཕྱིས་ཚན་གསུམ་ pphyis gsum spätere Drei-
 1090	34	5866	headword_line	pphar	phar	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕར་ཞིབ་ pphar Zib Fluktuation,
 1113	2	6044	headword_line	pphral	phral	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_extra_latin_glyph_ocr	yes	འཕྲལ་རྐྱེན་འགྲམ་ pphral rkyen 'eines der
+35	58	158	headword_line	bäi	bźi	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	གདོང་བཞི་ gdoṅ bäi.

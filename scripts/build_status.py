@@ -452,6 +452,23 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         }
         for item in confusion_signatures
     )
+    alignment_review_batch = "alignment_damage_exact_review_20260806"
+    alignment_reviews = list(iter_tsv(
+        ROOT / "data/reviewed_tibetan_alignment_damage_decisions.tsv"
+    ))
+    alignment_review_applied = sum(
+        item.get("evidence") == alignment_review_batch
+        for item in iter_tsv(ROOT / "data/reviewed_tibetan_exact_overrides.tsv")
+    ) + sum(
+        item.get("review_batch") == alignment_review_batch
+        for item in iter_tsv(
+            ROOT / "data/reviewed_tibetan_script_exact_overrides.tsv"
+        )
+    )
+    alignment_review_residual = sum(
+        item.get("decision") == "unresolved"
+        for item in alignment_reviews
+    )
     initial_i_exact_note = (
         "Exact Initial-I/l residual diagnostics are exhausted in all four volumes; this is not the broader initial_confusable_I artifact bucket."
         if initial_i_exact_residual == 0
@@ -474,6 +491,22 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             total(stats, "google_unresolved"),
             "no raw line replacement;no loosened adoption gates",
             "Base OCR remains authoritative; Google Vision is an alternate witness only.",
+        ),
+        row(
+            "alignment_damage_exact_review_20260806",
+            "exact_review",
+            "bäi plus occurrence-specific Tibetan stack damage",
+            "exact reviewed Latin and Tibetan tokens",
+            "exact page-line-token only",
+            "applied",
+            "wts_1_34;wts_35_51;wts_9_m",
+            "reviewed_tibetan_exact_manual_structural_root_ocr;reviewed_exact_tibetan_headword_subjoined_ocr;reviewed_exact_tibetan_headword_root_ocr",
+            "data/reviewed_tibetan_exact_overrides.tsv;data/reviewed_tibetan_script_exact_overrides.tsv",
+            "data/reviewed_tibetan_alignment_damage_decisions.tsv",
+            alignment_review_applied,
+            alignment_review_residual,
+            "apostrophe-bearing source variants;tsb/tsh competition;German-gloss and fused-token misalignments",
+            "Two Latin bäi→bźi repairs and four Tibetan-token repairs are exact only; 34 active identities were reviewed and seven remain unresolved.",
         ),
         row(
             "dotless_i_to_i_translit_and_names",

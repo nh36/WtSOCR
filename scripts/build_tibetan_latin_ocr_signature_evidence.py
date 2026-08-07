@@ -136,6 +136,7 @@ AFFRICATE_DISAGREEMENT_FIELDS = EDIT_ATTRIBUTION_FIELDS + [
 ]
 ALIGNMENT_RESCUE_FIELDS = [
     "tibetan_syllable", "source", "canonical_target", "occurrence_count",
+    "reviewed_terminal_occurrences", "remaining_unresolved_occurrences",
     "current_alignment_status", "rescue_category", "layout_evidence",
     "canonical_agreement_diagnostic_only", "upgrade_authorized", "blocker",
     "sample_contexts",
@@ -147,11 +148,13 @@ ALIGNMENT_RESCUE_EXACT_FIELDS = [
     "token_start", "token_end", "boundary_status", "damage_scope",
     "marker_attached", "layout_signature", "positive_layout_support",
     "negative_layout_collisions", "upgrade_authorized", "blocker",
+    "review_decision", "review_evidence", "active_after_review",
     "context_excerpt",
 ]
 ACTIVE_QUEUE_SUMMARY_FIELDS = [
     "queue_category", "family_count", "current_family_count",
     "current_exact_occurrences", "historical_only_families",
+    "reviewed_terminal_families", "reviewed_terminal_exact_occurrences",
 ]
 FINAL_NG_ACTIVE_SUMMARY_FIELDS = [
     "effective_disposition", "historical_diagnostic_rows",
@@ -1211,6 +1214,40 @@ def build() -> dict[str, list[dict[str, str]]]:
         (r["volume"], r["page"], r["line"], r["token_index"]): r
         for r in aligned_rows
     }
+    alignment_review_path = (
+        ROOT / "data/reviewed_tibetan_alignment_damage_decisions.tsv"
+    )
+    alignment_review_rows = (
+        read(alignment_review_path) if alignment_review_path.exists() else []
+    )
+    allowed_alignment_review_decisions = {
+        "securely_correctable_latin", "securely_correctable_tibetan",
+        "genuinely_damaged", "misaligned", "credible_source_variant",
+        "historically_interesting_no_longer_current", "unresolved",
+    }
+    alignment_review_by_identity: dict[
+        tuple[str, str, str, str, str, str], dict[str, str]
+    ] = {}
+    for review in alignment_review_rows:
+        decision = review.get("decision", "")
+        if decision not in allowed_alignment_review_decisions:
+            raise ValueError(
+                f"Unknown alignment/damage review decision: {decision!r}"
+            )
+        key = (
+            review["volume"], review["page"], review["line"],
+            review["token_index"], review["tibetan_syllable"],
+            review["source"],
+        )
+        if key in alignment_review_by_identity:
+            raise ValueError(
+                "Duplicate alignment/damage exact review identity: "
+                + ":".join(key)
+            )
+        alignment_review_by_identity[key] = review
+    terminal_alignment_review_decisions = (
+        allowed_alignment_review_decisions - {"unresolved"}
+    )
     structural_alternates: list[dict[str, str]] = []
     conditioned_reviewed: dict[str, list[dict[str, str]]] = defaultdict(list)
     conditioned_alternate: dict[str, list[dict[str, str]]] = defaultdict(list)
@@ -1875,6 +1912,24 @@ def build() -> dict[str, list[dict[str, str]]]:
     for row in queue:
         if row["action_category"] != "alignment_or_damage":
             continue
+        terminal_reviews = [
+            review for key, review in alignment_review_by_identity.items()
+            if key[4] == row["tibetan_syllable"]
+            and key[5] == row["current_source"]
+            and review["decision"] in terminal_alignment_review_decisions
+            and (
+                exact := aligned_by_identity.get(key[:4])
+            ) is not None
+            and exact["tibetan_syllable"] == key[4]
+            and exact["latin_token"] == key[5]
+        ]
+        reviewed_terminal_occurrences = min(
+            int(row["occurrence_count"]), len(terminal_reviews)
+        )
+        remaining_unresolved_occurrences = max(
+            0,
+            int(row["occurrence_count"]) - reviewed_terminal_occurrences,
+        )
         alignment = row["source_alignment_status"]
         damage = row["damage_or_marker"]
         if alignment == "probable_transcription_outlier":
@@ -1895,7 +1950,13 @@ def build() -> dict[str, list[dict[str, str]]]:
             "tibetan_syllable": row["tibetan_syllable"],
             "source": row["current_source"],
             "canonical_target": row["canonical_target"],
-            "occurrence_count": row["occurrence_count"],
+            "occurrence_count": str(remaining_unresolved_occurrences),
+            "reviewed_terminal_occurrences": str(
+                reviewed_terminal_occurrences
+            ),
+            "remaining_unresolved_occurrences": str(
+                remaining_unresolved_occurrences
+            ),
             "current_alignment_status": alignment,
             "rescue_category": category,
             "layout_evidence": "not_yet_independently_secure",
@@ -1908,6 +1969,11 @@ def build() -> dict[str, list[dict[str, str]]]:
         for exact in aligned_by_family.get(
             (row["tibetan_syllable"], row["current_source"]), []
         ):
+            review = alignment_review_by_identity.get((
+                exact["volume"], exact["page"], exact["line"],
+                exact["token_index"], exact["tibetan_syllable"],
+                exact["latin_token"],
+            ), {})
             signature = layout_signature(exact)
             clean_exact = (
                 exact["token_boundary_status"] == "token_boundary_secure"
@@ -1949,6 +2015,12 @@ def build() -> dict[str, list[dict[str, str]]]:
                     "candidate_zero_collision_layout_needs_exact_review"
                     if high_precision_layout_candidate else
                     "layout_pattern_not_zero_collision_high_support"
+                ),
+                "review_decision": review.get("decision", "not_reviewed"),
+                "review_evidence": review.get("entry_evidence", ""),
+                "active_after_review": (
+                    "yes" if review.get("decision") == "unresolved"
+                    else "no"
                 ),
                 "context_excerpt": exact["context_excerpt"],
             })
@@ -2072,17 +2144,60 @@ def build() -> dict[str, list[dict[str, str]]]:
         families = [
             item for item in queue if item["action_category"] == category
         ]
-        current = [
-            item for item in families if int(item["occurrence_count"]) > 0
-        ]
+        if category == "alignment_or_damage":
+            rescue_families = {
+                (item["tibetan_syllable"], item["source"]): item
+                for item in alignment_rescue
+            }
+            current = [
+                item for item in families
+                if int(rescue_families.get((
+                    item["tibetan_syllable"], item["current_source"]
+                ), {}).get("remaining_unresolved_occurrences", "0")) > 0
+            ]
+            current_occurrences = sum(
+                int(rescue_families[(
+                    item["tibetan_syllable"], item["current_source"]
+                )]["remaining_unresolved_occurrences"])
+                for item in current
+            )
+            terminal = [
+                item for item in families
+                if int(rescue_families.get((
+                    item["tibetan_syllable"], item["current_source"]
+                ), {}).get("reviewed_terminal_occurrences", "0")) > 0
+            ]
+            terminal_occurrences = sum(
+                int(rescue_families[(
+                    item["tibetan_syllable"], item["current_source"]
+                )]["reviewed_terminal_occurrences"])
+                for item in terminal
+            )
+        else:
+            current = [
+                item for item in families
+                if int(item["occurrence_count"]) > 0
+            ]
+            current_occurrences = sum(
+                int(item["occurrence_count"]) for item in current
+            )
+            terminal = []
+            terminal_occurrences = 0
         active_queue_summary.append({
             "queue_category": category,
             "family_count": str(len(families)),
             "current_family_count": str(len(current)),
-            "current_exact_occurrences": str(sum(
-                int(item["occurrence_count"]) for item in current
-            )),
-            "historical_only_families": str(len(families) - len(current)),
+            "current_exact_occurrences": str(current_occurrences),
+            "historical_only_families": str(
+                len(families) - len({
+                    (item["tibetan_syllable"], item["current_source"])
+                    for item in current + terminal
+                })
+            ),
+            "reviewed_terminal_families": str(len(terminal)),
+            "reviewed_terminal_exact_occurrences": str(
+                terminal_occurrences
+            ),
         })
     aligned_by_identity = {
         (

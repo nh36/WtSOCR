@@ -134464,7 +134464,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 925	233	10210	german_prose_with_translit			none	3	3	0	0	Basis“ (MSg 30,3); ye ses la ~ pa dan „[die
 925	234	10210	other			none	0	0	0	0	106
 925	236	10210	other			none	0	0	0	0	107
-926	1	10211	headword_line	རྟོན་པ་བཞི་	rton pa	high	2	1	0	0	རྟོན་པ་བཞི་ rton pa bäi
+926	1	10211	headword_line	རྟོན་པ་བཞི་	rton pa bźi	high	3	0	0	0	རྟོན་པ་བཞི་ rton pa bźi
 926	3	10211	german_prose_with_translit			none	1	3	0	0	Bodhisattvas] stützen sich auf die Weis-
 926	4	10211	german_prose_with_translit			none	3	3	0	0	heit“ (MSg 45,35); sans rgyas kyi Zin yons su
 926	5	10211	latin_other			none	7	0	0	0	dag pa ’di’i ... ~ pa phun sum tshogs pa daṅ ...
@@ -153130,7 +153130,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1048	78	11521	german_prose_with_translit			none	1	4	0	0	bskyans te „der große Vertrag wurde den
 1048	79	11521	german_prose			none	0	3	0	0	Hörern deutlich vorgelesen“ (KTh 1:
 1048	80	11521	other			none	0	0	0	0	292,6).
-1048	82	11522	headword_line	ཐྲོས་སློག་	thos sgrog	high	2	0	0	0	ཐྲོས་སློག་ thos sgrog.
+1048	82	11522	headword_line	ཐོས་སྒྲོག་	thos sgrog	high	2	0	0	0	ཐོས་སྒྲོག་ thos sgrog.
 1048	84	11522	german_prose_with_translit			none	1	5	0	0	1. Hörer, Bez. für Schüler des Buddha.
 1048	85	11522	german_prose_with_translit			none	4	3	0	0	Lex. Aan thos (brDa); nas (r. Aan) thos
 1048	87	11522	german_prose			none	0	1	0	0	(Dagy).
@@ -166950,7 +166950,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1198	71	12497	german_prose			none	0	7	0	0	der Ferne und ’di ga ist das Wort für etwas
 1198	72	12497	german_prose_with_translit			none	2	4	0	0	in der Nähe“ (Dagy); de ga ran = khon ran
 1198	73	12497	latin_other			none	2	0	0	0	yin (brDa).
-1198	75	12498	headword_line	དྲེ་རྐྱང་པ་	de rkyan pa	high	3	0	0	0	དྲེ་རྐྱང་པ་ de rkyaṅ pa einzig, nur.
+1198	75	12498	headword_line	དེ་རྐྱང་པ་	de rkyan pa	high	3	0	0	0	དེ་རྐྱང་པ་ de rkyaṅ pa einzig, nur.
 1198	77	12498	german_prose_with_translit			none	2	2	0	0	Lex. rag gcig = gcig pu nid dam — (Dagy).
 1198	79	12499	headword_line	དེ་སྐད་	de	medium	2	4	0	0	དེ་སྐད་ de skad mit den Worten, so; schließt ei-
 1198	81	12499	other			none	0	0	0	0	114
