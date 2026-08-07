@@ -40,6 +40,8 @@ ALLOWED_REPORT_FILES = {
     "docs/STATUS.md",
     "docs/current_release_workflow.md",
     "docs/branch_audit_current_release_refresh_2026-06-29.md",
+    # Restores the historical provenance document already cited by current status.
+    "docs/sanskrit_large_batch_cleanup_2026-05-28.md",
 }
 
 ALLOWED_LEDGER_FILES = {
