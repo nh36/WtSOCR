@@ -99542,7 +99542,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 685	81	8279	german_prose_with_translit			none	1	1	0	0	chun ma (KlonD 728,6).
 685	83	8279	german_prose_with_translit			none	1	2	0	0	2. Aufenthaltsort, Hof, Residenz; - slas
 685	84	8279	german_prose			none	0	1	0	0	Palastbedienstete.
-685	86	8279	latin_other			none	4	0	0	0	reyal mo dan / = slas dan / nan ’khor ma
+685	86	8279	latin_other			none	4	0	0	0	reyal mo dan / = slas dan ↓ naṅ ’khor ma
 685	87	8279	german_prose			none	0	3	0	0	mams dag „Königin, Palastbedienstete und
 685	88	8279	german_prose			none	0	4	0	0	Damen bei Hofe“ (Liyl 185b3); hu mar
 685	89	8279	german_prose_with_translit			none	4	2	0	0	bya ba’i - dan mjal ba’i bu mo „die Tochter,
@@ -103716,7 +103716,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 713	214	8560	german_prose_with_translit			none	4	2	0	0	"phral du -""i phebs bsu la sog „die Lehrer"
 713	215	8560	german_prose			none	0	3	0	0	sollen unverzüglich kommen, um Ausa zu
 713	216	8560	latin_other			none	2	0	0	0	empfangen“ (PhB 11: 71,2).
-713	218	8560	german_prose_with_translit			none	6	1	0	0	Lex. rje’u / rje rigs (brDa); rje rigs / gtso bo
+713	218	8560	german_prose_with_translit			none	6	1	0	0	Lex. rje’u ↓ rje rigs (brDa); rje rigs ↓ gtso bo
 713	219	8560	german_prose_with_translit			none	1	5	0	0	la’an „Adliger, auch für Herr“ (Dagy); -
 713	220	8560	german_prose_with_translit			none	6	3	0	0	Zes pa ni rje bo’i min ste „jo bo ist eine
 713	221	8560	german_prose_with_translit			none	2	2	0	0	Bezeichnung für Herr“ (Be’uD 202,4);
@@ -128754,7 +128754,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 890	124	9813	other			none	0	0	0	0	(gZi 1: 124,3).
 890	126	9813	german_prose			none	0	2	0	0	N an
 890	128	9813	tibetan_only	གཏང་སླེབས་		none	0	1	0	0	གཏང་སླེབས་ gtin slebs ergründen.
-890	130	9813	latin_other			none	7	0	0	0	fie rgyal ... chos rig pa dan / chos kyi = pa
+890	130	9813	latin_other			none	7	0	0	0	fie rgyal ... chos rig pa dan ↑ chos kyi = pa
 890	131	9813	german_prose_with_translit			none	6	6	0	0	dan/ som Ai las rgal ba dan „als Upatisya den Dharma erkannt und ergründet
 890	133	9813	german_prose			none	0	4	0	0	und die Bedenken überwunden hatte“
 890	134	9813	german_prose			none	0	1	0	0	(Prav 86,10).
@@ -131561,7 +131561,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 908	110	9955	german_prose_with_translit			none	4	1	0	0	pa dan ni beum pa rnams (metr.) „gepreßte
 908	111	9955	german_prose			none	0	3	0	0	oder lockere Stimme, hohe und zusam-
 908	112	9955	german_prose_with_translit			none	3	1	0	0	mengezogene“ (Rol 78,1,3); yaṅ gser gaṅ
-908	113	9955	latin_other			none	4	0	0	0	yod bskur bas / rgya ma la = dus „wieder
+908	113	9955	latin_other			none	4	0	0	0	yod bskur bas ↑ rgya ma la = dus „wieder
 908	114	9955	german_prose			none	0	3	0	0	übergab er alles, was 01 an Gold hatte, aber
 908	115	9955	german_prose			none	0	2	0	0	als es gewogen wurde“ (Glr 198,19); dınas
 908	116	9955	german_prose_with_translit			none	3	2	0	0	’dug gswis nas ’og nas btegs pas „mit den
