@@ -31,7 +31,7 @@ is reported by the reproduction command and is not inferred from either field.
 
 | Volume | Entries | Non-empty lines | Validator issues | Google adoptions | Google unresolved | Applied changes | Reviewed Tibetan exact changes | Sanskrit changes | Sanskrit review suggestions | Bucket unresolved pairs | Promote rows | Hold rows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| wts_1_34 | 13136 | 178435 | 12312 | 5470 | 3266 | 29136 | 3094 | 675 | 39 | 189 | 8 | 181 |
+| wts_1_34 | 13136 | 178435 | 12312 | 5470 | 3266 | 29139 | 3097 | 675 | 39 | 189 | 8 | 181 |
 | wts_35_51 | 6148 | 91855 | 4519 | 1168 | 1895 | 6545 | 712 | 149 | 31 | 176 | 7 | 169 |
 | wts_8_b | 3126 | 48290 | 2344 | 3 | 900 | 3073 | 508 | 72 | 8 | 125 | 0 | 125 |
 | wts_9_m | 1792 | 33664 | 1554 | 842 | 1134 | 2130 | 431 | 89 | 10 | 38 | 0 | 38 |
@@ -46,7 +46,7 @@ is reported by the reproduction command and is not inferred from either field.
 | german_prose_dotless_i | applied | german_prose_context | all | scripts/postprocess_entry_map.py | release/current/qa | German prose dotless-i repairs are separate from transliteration repairs. |
 | guarded_dollar_to_sacute | partially_applied | exact_or_context_guarded | all | scripts/postprocess_entry_map.py;data/reviewed_tibetan_exact_overrides.tsv | release/current/qa;docs/tibetan_sigla_registry_cleanup_2026-06-27.md | Exact/guarded $ to ś repairs are active, but the broad character rule is forbidden and residual $ buckets remain. |
 | final_ng_mark_variants | partially_applied | exact_token_or_witness_guarded | all | scripts/postprocess_entry_map.py;data/reviewed_tibetan_exact_overrides.tsv | docs/tibetan_script_ng_witness_sweep_2026-06-28.md;release/current/qa | Many exact final-ṅ repairs are applied; remaining nasal-looking tokens still require context or Tibetan-script witness support. |
-| final_ng_deferred_source_review | deferred | source_review_queue | none | none | docs/tibetan_initial_i_ng_cleanup_2026-06-28.md;release/current/qa/*/tibetan_cleanup_diagnostics | Deferred final-ng source-review rows remain separate from the script-ng witness diagnostic queue. |
+| final_ng_deferred_source_review | applied | source_review_queue | none | none | docs/tibetan_initial_i_ng_cleanup_2026-06-28.md;release/current/qa/*/tibetan_cleanup_diagnostics | Current final-ng source-review artifact residual is exhausted; keep this separate from the script-ng witness diagnostic queue. |
 | final_ng_script_witness_diagnostic_queue | diagnostic_only | diagnostic_queue | none | none | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv | Current script-ng witness diagnostic rows are separate from the final-ng deferred source-review residual; marker-attached rows remain in this queue after reference-marker separation. |
 | final_ng_corpus_consensus_diagnostic | diagnostic_only | diagnostic_queue | none | scripts/build_tibetan_final_ng_consensus.py | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv | Corpus-consensus candidates are diagnostic only and require exact-row review before promotion. |
 | final_ng_same_entry_echo_diagnostic | diagnostic_only | diagnostic_queue | none | scripts/build_tibetan_final_ng_consensus.py | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv | Same-entry echoes are diagnostic only; entry structure must independently establish that each later token repeats the aligned Tibetan lemma. |
@@ -99,7 +99,7 @@ The initial-`I` family is intentionally mixed:
 - Reviewed exact Initial-I/l rows have been applied, including forms such as `Ina -> lṅa`, `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
 - No generic `I -> l` rule exists, and no global unconstrained `Itar -> ltar` rule exists.
 
-The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current 2-row script-ng witness diagnostic queue (wts_1_34: 2, wts_35_51: 0, wts_8_b: 0, wts_9_m: 0). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
+The final-ng rows also use two separate counts. `final_ng_deferred_source_review` currently has no residual source-review rows in artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current 2-row script-ng witness diagnostic queue (wts_1_34: 2, wts_35_51: 0, wts_8_b: 0, wts_9_m: 0). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
 
 Reference-marker cleanup is exact/page-line-token only. `reference_marker_candidates.tsv` currently has 2795 row(s) (wts_1_34: 1189, wts_35_51: 858, wts_8_b: 457, wts_9_m: 291) covering actual arrows and likely `T`, `I`, `/`, and `\` marker OCR substitutes near Tibetan transliteration contexts. No broad `I`/`T`/slash/backslash -> `↑`/`↓` marker normalisation rule exists; exact changes use lemma-order comparison where possible to choose `↑` or `↓`. Ambiguous lemma identity is accepted only when all possible matches point the same direction; slash is not bulk-promoted; superscripted marker numbers are not inferred automatically.
 
@@ -120,7 +120,7 @@ The alignment/damage source review is exhausted pending external source evidence
 | dngos_family Google-witness diagnostic residual | 46 | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_google_candidate_readings.tsv | diagnostic only; broad rule forbidden | Review only if promoted to exact page/line/token rows; keep dnos -> dños blocked. | 44 blocked dnos -> dños pairs; 2 context diagnostics. |
 | Guarded $ -> ś residuals | 2229 | release/current/qa/*/bucket_report.artifact_tokens.tsv | partially applied; broad rule forbidden | Review exact/context candidates only. | Siglum policy is a separate queue. |
 | Siglum policy diagnostics | 1230 | release/current/qa/*/tibetan_cleanup_diagnostics/sigla_variant_candidates.tsv | exploratory diagnostic | Review separately from Tibetan lexical corrections. | Named sigla normalisations are already applied separately. |
-| Final-ng deferred source review | 3 | release/current/qa/*/bucket_report.artifact_tokens.tsv | deferred source review | Check source/context before promotion. | Separate from script-ng witness diagnostics. |
+| Final-ng deferred source review | 0 | release/current/qa/*/bucket_report.artifact_tokens.tsv | exhausted | No current artifact rows; reopen only if a later artifact report repopulates this queue. | Separate from script-ng witness diagnostics. |
 | Script-ng witness diagnostic queue | 2 | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_script_ng_witness_candidates.tsv | diagnostic only | Review witness rows; separate reference markers first, then promote only exact accepted cases. | wts_1_34: 2, wts_35_51: 0, wts_8_b: 0, wts_9_m: 0; marker-attached rows remain part of this queue. |
 | Corpus-consensus final-ng diagnostics | 119 | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_consensus_candidates.tsv | diagnostic only | Rank exact positionally aligned families by dominant internal dotted spelling. | wts_1_34: 116, wts_35_51: 2, wts_8_b: 0, wts_9_m: 1; no automatic corrections. |
 | Same-entry final-ng echo diagnostics | 212 | release/current/qa/*/tibetan_cleanup_diagnostics/tibetan_final_ng_same_entry_echo_candidates.tsv | diagnostic only | Review explicit repetitions and alternate forms individually; never infer identity from spelling alone. | wts_1_34: 121, wts_35_51: 55, wts_8_b: 25, wts_9_m: 11; no automatic corrections. |
@@ -138,8 +138,7 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review the three exact rows in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
-2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
-4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
-5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
+1. The final-ng deferred source-review queue is currently exhausted. Continue with reference-marker OCR diagnostics as a separately bounded exact-coordinate batch with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
+2. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+3. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
+4. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.

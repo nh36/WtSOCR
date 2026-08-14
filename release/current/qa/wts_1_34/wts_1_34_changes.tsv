@@ -29135,3 +29135,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1048	82	11522	headword_line	ཐྲོས	ཐོས	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_subjoined_ocr	yes	ཐྲོས་སློག་ thos sgrog.
 1048	82	11522	headword_line	སློག	སྒྲོག	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_root_ocr	yes	ཐྲོས་སློག་ thos sgrog.
 1198	75	12498	headword_line	དྲེ	དེ	reviewed_tibetan_script_exact	reviewed_exact_tibetan_headword_subjoined_ocr	yes	དྲེ་རྐྱང་པ་ de rkyaṅ pa einzig, nur.
+108	140	1325	headword_line	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
+177	131	2276	german_prose_with_translit	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	— gnam gan yod pa yañı Ai ma gchig gi ’od la
+994	145	11090	latin_other	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	gen rab mi bo ~ yañı / gfien la rgyab log da

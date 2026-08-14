@@ -13841,7 +13841,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 108	136	1299	german_prose_with_translit			none	4	1	0	0	de rnams la kr’ yo ga sde gsum bśad „er erklärte
 108	137	1299	german_prose_with_translit			none	1	3	0	0	ihnen die drei Abteilungen des Kriyäyoga“
 108	138	1299	german_prose			none	0	1	0	0	(Tär 171,10).
-108	140	1300	headword_line	ཀྲི་གཡང་སྐུ་	yaṅ sku	high	4	0	0	0	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
+108	140	1300	headword_line	ཀྲི་གཡང་སྐུ་	yaṅ sku	high	4	0	0	0	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yaṅ khn.
 108	141	1300	tibetan_only	ཀྲིག་ཀྲིག་		none	0	3	0	0	ཀྲིག་ཀྲིག་ krig krig onom. für einen Laut.
 108	143	1300	german_prose_with_translit			none	3	3	0	0	Lex. nan tan dan don med sgra la’an „auch für
 108	144	1300	german_prose_with_translit			none	1	3	0	0	einen eindringlichen und sinnlosen Laut“
@@ -24146,7 +24146,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 177	126	2231	headword_line	སྐར་མ་	ma	medium	1	0	0	0	སྐར་མ་ skar ma.
 177	128	2231	german_prose			none	0	6	0	0	1. Stern, Fixstern, Gestirn, auch für Planet
 177	129	2231	german_prose			none	0	1	0	0	bzw. Himmelskörper allgemein.
-177	131	2231	german_prose_with_translit			none	5	1	0	0	— gnam gan yod pa yañı Ai ma gchig gi ’od la
+177	131	2231	german_prose_with_translit			none	5	1	0	0	— gnam gan yod pa yaṅ Ai ma gchig gi ’od la
 177	132	2231	german_prose			none	0	3	0	0	myed do „wenn auch der Himmel voller
 177	133	2231	german_prose_with_translit			none	1	6	0	0	Sterne ist, so sind sie doch im Licht einer
 177	134	2231	german_prose			none	0	1	0	0	einzigen Sonne nicht mehr vorhanden“
@@ -145003,7 +145003,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 994	140	10848	german_prose_with_translit			none	2	1	0	0	Lex. thabs ses kyi srid byus „geschicktes
 994	141	10848	german_prose			none	0	2	0	0	Vorgehen“ (Dagy).
 994	143	10849	headword_line	ཁྲལས་མང་	thabs	high	1	0	0	0	ཁྲལས་མང་ thabs maṅ sehr geschickt.
-994	145	10849	latin_other			none	4	0	0	0	gen rab mi bo ~ yañı / gfien la rgyab log da
+994	145	10849	latin_other			none	4	0	0	0	gen rab mi bo ~ yaṅ / gfien la rgyab log da
 994	146	10849	german_prose			none	0	1	0	0	mi byed (meır.) „auch wenn gSen-rab mi-
 994	147	10849	german_prose_with_translit			none	1	1	0	0	bo sehr geschickt ist, wird er nun nicht
 994	148	10849	german_prose			none	0	2	0	0	gegen seine Verwandten agieren“ (gZer

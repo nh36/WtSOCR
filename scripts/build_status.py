@@ -474,6 +474,12 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         if initial_i_exact_residual == 0
         else f"Current exact Initial-I/l residual diagnostics contain {initial_i_exact_residual} candidate row(s); this is not the broader initial_confusable_I artifact bucket."
     )
+    final_ng_deferred_status = "applied" if final_ng_residual == 0 else "deferred"
+    final_ng_deferred_note = (
+        "Current final-ng source-review artifact residual is exhausted; keep this separate from the script-ng witness diagnostic queue."
+        if final_ng_residual == 0
+        else "Deferred final-ng source-review rows remain separate from the script-ng witness diagnostic queue."
+    )
 
     rows = [
         row(
@@ -578,7 +584,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "source-sensitive final-ng candidates",
             "source-checked Tibetan forms",
             "source_review_queue",
-            "deferred",
+            final_ng_deferred_status,
             "none",
             "none",
             "none",
@@ -586,7 +592,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             0,
             final_ng_residual,
             "broad ń->ṅ;broad n->ṅ;abbreviation/noisy contexts",
-            "Deferred final-ng source-review rows remain separate from the script-ng witness diagnostic queue.",
+            final_ng_deferred_note,
         ),
         row(
             "final_ng_script_witness_diagnostic_queue",
@@ -1386,8 +1392,12 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "Final-ng deferred source review",
             final_ng_residual,
             "release/current/qa/*/bucket_report.artifact_tokens.tsv",
-            "deferred source review",
-            "Check source/context before promotion.",
+            "exhausted" if final_ng_residual == 0 else "deferred source review",
+            (
+                "No current artifact rows; reopen only if a later artifact report repopulates this queue."
+                if final_ng_residual == 0
+                else "Check source/context before promotion."
+            ),
             "Separate from script-ng witness diagnostics.",
         ],
         [
@@ -1530,6 +1540,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
         remaining_work_rows(stats),
     )
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
+    final_ng_residual = residual_chars(stats, "ñńň")
     script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
     reference_marker_residual = total(stats, "reference_marker_candidates")
     initial_i_exact_sentence = (
@@ -1537,6 +1548,27 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
         if initial_i_exact_residual == 0
         else f"The exact Initial-I/l residual diagnostic currently has {initial_i_exact_residual} candidate row(s); keep these for a dedicated Initial-I pass, separate from dngos_family release changes."
     )
+    if final_ng_residual == 0:
+        final_ng_sentence = (
+            "The final-ng rows also use two separate counts. `final_ng_deferred_source_review` currently has no residual source-review rows in artifact reports. "
+            f"`final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, 'script_ng_witness_candidates')}). "
+            "Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted."
+        )
+        recommended_order = """1. The final-ng deferred source-review queue is currently exhausted. Continue with reference-marker OCR diagnostics as a separately bounded exact-coordinate batch with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
+2. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+3. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
+4. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked."""
+    else:
+        final_ng_sentence = (
+            f"The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current {final_ng_residual}-row residual source-review signal from artifact reports. "
+            f"`final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, 'script_ng_witness_candidates')}). "
+            "Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted."
+        )
+        recommended_order = f"""1. Review the {final_ng_residual} exact row(s) in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
+2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
+3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
+5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked."""
 
     return f"""# WtS OCR Current Status
 
@@ -1606,7 +1638,7 @@ The initial-`I` family is intentionally mixed:
 - Reviewed exact Initial-I/l rows have been applied, including forms such as `Ina -> lṅa`, `Itar -> ltar`, `Ipags -> lpags`, `Ius -> lus`, and `Ikog -> lkog`.
 - No generic `I -> l` rule exists, and no global unconstrained `Itar -> ltar` rule exists.
 
-The final-ng rows also use two separate counts. `final_ng_deferred_source_review` counts the current 3-row residual source-review signal from artifact reports. `final_ng_script_witness_diagnostic_queue` counts the current {script_ng_witness_residual}-row script-ng witness diagnostic queue ({per_volume_count_text(stats, "script_ng_witness_candidates")}). Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted.
+{final_ng_sentence}
 
 Reference-marker cleanup is exact/page-line-token only. `reference_marker_candidates.tsv` currently has {reference_marker_residual} row(s) ({per_volume_count_text(stats, "reference_marker_candidates")}) covering actual arrows and likely `T`, `I`, `/`, and `\\` marker OCR substitutes near Tibetan transliteration contexts. No broad `I`/`T`/slash/backslash -> `↑`/`↓` marker normalisation rule exists; exact changes use lemma-order comparison where possible to choose `↑` or `↓`. Ambiguous lemma identity is accepted only when all possible matches point the same direction; slash is not bulk-promoted; superscripted marker numbers are not inferred automatically.
 
@@ -1626,11 +1658,7 @@ The next cleanup pass should not be a broad OCR pass. Work one residual queue at
 
 Recommended order:
 
-1. Review the three exact rows in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
-2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
-4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
-5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked.
+{recommended_order}
 """
 
 

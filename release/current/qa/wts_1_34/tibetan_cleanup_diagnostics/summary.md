@@ -5,14 +5,14 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 ## Row Counts
 
 - `tibetan_google_candidate_readings.tsv`: 357
-- `tibetan_orthography_damage_candidates.tsv`: 1606
+- `tibetan_orthography_damage_candidates.tsv`: 1603
 - `tibetan_script_ng_witness_candidates.tsv`: 2
 - `reference_marker_candidates.tsv`: 1189
 - `reference_marker_token_families.tsv`: 487
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 774
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
-- `tibetan_variant_families.tsv`: 762
+- `tibetan_variant_families.tsv`: 761
 - `tibetan_google_adoption_patterns.tsv`: 633
 
 ## Top Candidate Families

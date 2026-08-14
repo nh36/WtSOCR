@@ -161,7 +161,7 @@ wts_1_34	107	3	2	ཐང	thaṅ	reviewed_exact_final_ng	than	reviewed_tibetan_exa
 wts_1_34	107	127	2	ཤིང	Siṅ	reviewed_exact_final_ng	Sin	reviewed_tibetan_exact_final_ng_source_compatible	source_compatible_shing_consensus_batch_20260727	ཀྱིར་ཤིང་ kyer Siṅ Iskyer sin.
 wts_1_34	107	133	2	ཏང	taṅ	reviewed_exact_final_ng	tan	reviewed_tibetan_exact_final_ng_consensus	final_ng_tang_consensus_batch_20260727	ཀྱོ་།ཏང་ kyo taṅ auch kyo ba taṅ Eisenhaken, vgl.
 wts_1_34	107	152	2	རང	raṅ	reviewed_exact_final_ng	ran	reviewed_tibetan_exact_script_ng_witness	tibetan_script_ng_witness_residual_20260628	ཀྱོ་རང་ kyo raṅ Elefantenhaken.
-wts_1_34	108	140	2	གཡང	g.yaṅ	base_provenance_unverified	g.yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
+wts_1_34	108	140	2	གཡང	g.yaṅ	base_provenance_unverified	g.yaṅ	No direct authoritative base-OCR verification is recorded.	current_release_presence_only	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yaṅ khn.
 wts_1_34	109	16	1	ཀྲུང	kruṅ	google_adopted	krun	alternate_witness_google_loc_nasal_upgrade	alternate_witness_adoption	ཀྲུང་ཀླང་ kruṅ krun \khrun khrun.
 wts_1_34	109	55	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ངེ་ kroṅ ne
 wts_1_34	109	88	1	ཀྲོང	kroṅ	reviewed_exact_final_ng	kron	reviewed_tibetan_exact_final_ng_source_compatible	one_anchor_krong_consensus_batch_20260727	ཀྲོང་ཀྲོང་ kroṅ kroṅ.
