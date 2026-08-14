@@ -50369,7 +50369,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 621	37	3064	german_prose			none	0	5	0	0	Nasenheilmitteln und durch Schauen in die
 621	38	3064	german_prose			none	0	4	0	0	"Sonne [soll man das Niesen anregen]"" (Ahs"
 621	39	3064	other			none	0	0	0	0	1.4.10d).
-621	40	3065	headword_line	སྣ་སྨྱུང་	Tsna	high	1	0	0	0	སྣ་སྨྱུང་ Tsna
+621	40	3065	headword_line	སྣ་སྨྱུང་	Tsna	high	1	0	0	0	སྣ་སྨྱུང་ ↑ sna
 621	41	3066	headword_line	སྣ་ཚོགས་	tshogs	high	1	0	0	0	སྣ་ཚོགས་ sna tshogs
 621	42	3067	headword_line	སྣ་རྩེ་	rtse	high	1	1	0	0	སྣ་རྩེ་ sna rtse Nasenspitze.
 621	43	3067	german_prose_with_translit			none	3	2	0	0	"— ko sa la yin te (metr.) ""die Nasenspitze"
@@ -50825,7 +50825,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 627	10	3112	german_prose			none	0	6	0	0	drei Tore jeweils im Einzelnen [in die Praxis]
 627	11	3112	german_prose_with_translit			none	1	1	0	0	"integrieren"" (Akhr2 99,16)."
 627	12	3112	german_prose_with_translit			none	1	1	0	0	diejenigen, die zur Führung ge-
-627	13	3112	german_prose_with_translit			none	4	3	0	0	hörten, Führungskräfte; vgl. Tsna chen po la
+627	13	3112	german_prose_with_translit			none	4	3	0	0	hörten, Führungskräfte; vgl. ↑ sna chen po la
 627	14	3112	latin_other			none	1	0	0	0	gtogs pa.
 627	15	3112	latin_other			none	4	0	0	0	sna la gthogs pa dan / dmans yan chad sum
 627	16	3112	latin_other			none	4	0	0	0	"brgya' rtsa beu gñis bzun nas ""man nahm 312"
@@ -52520,7 +52520,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 648	9	3196	german_prose_with_translit			none	6	1	0	0	Lex. rtswa sho tshod cig sneu (brDa); rtswa
 648	10	3196	german_prose_with_translit			none	2	1	0	0	sne'witsbod ma (Dagy).
 648	11	3196	latin_other			none	1	0	0	0	aa ' sne len empfangen, willkommen hei-
-648	12	3196	german_prose_with_translit			none	1	2	0	0	ßen; vgl. Tsna len 1.
+648	12	3196	german_prose_with_translit			none	1	2	0	0	ßen; vgl. ↑ sna len 1.
 648	13	3196	german_prose_with_translit			none	4	2	0	0	"Lex. ~ pa =bsu ba'i don de sna len yaṅ ""i. S.v."
 648	14	3196	german_prose_with_translit			none	1	2	0	0	"willkommen heißen, auch sna len"" (brDa);"
 648	15	3196	german_prose_with_translit			none	5	1	0	0	"— pa = gdon bsu ba'i las byed pa po ""einer,"

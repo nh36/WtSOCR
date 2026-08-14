@@ -6554,3 +6554,6 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 620	35	3062	headword_line	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	སྣ་སྤུགས་ sna sbugs Tsna bug.
 620	36	3063	headword_line	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	སྣ་སྤུབས་ sna sbubs Tsna bug.
 624	69	3088	headword_line	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	སྣ་ཚོགས་པ་ sna tshogs pa Tsna tshogs.
+621	40	3065	headword_line	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	སྣ་སྨྱུང་ Tsna
+627	13	3112	german_prose_with_translit	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	hörten, Führungskräfte; vgl. Tsna chen po la
+648	12	3196	german_prose_with_translit	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	ßen; vgl. Tsna len 1.

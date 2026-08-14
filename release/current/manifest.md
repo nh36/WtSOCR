@@ -1,8 +1,8 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-08-14T15:14:00Z`
-Build recipe revision: `95624152ccdfb0245250e7c3e65e4bf2754cca0d`
-Production input provenance: `local production workspace; build checkout 95624152ccdfb0245250e7c3e65e4bf2754cca0d`
+Generated UTC: `2026-08-14T15:23:35Z`
+Build recipe revision: `20632fbf9dd2f1304c13c055075975cdd04ec123`
+Production input provenance: `local production workspace; build checkout 20632fbf9dd2f1304c13c055075975cdd04ec123`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
