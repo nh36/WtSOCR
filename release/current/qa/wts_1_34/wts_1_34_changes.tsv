@@ -29172,3 +29172,10 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 748	84	8889	headword_line	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྫཾས་སུ་འབྲང་ rjes su bren Trjes su ’bran.
 749	3	8898	headword_line	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་བཟུང་ rjes $// bzuṅ pf. zu Trjes su ’dzin
 749	134	8907	headword_line	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་བསླབས་ rjes bslabs pf. zu Trjes su slob
+436	27	5733	tibetan_only	Tbkas	↑ bkas	A	reviewed_tibetan_exact_reference_marker	1	འགས་ ®”oas pf. Tbkas, fut. Tdgas etw. zerspal-
+437	131	5740	example_tibetan_latin	Tbkab	↑ bkab	A	reviewed_tibetan_exact_reference_marker	1	འགེབས་ 2655 pf. Tbkab fut. † 725 imp. !khob.
+744	87	8838	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	nid la sogs par kun tu lta bas „die im རྫས་སུ་།ཁྲད་ rjes su khrid Trjes khrid.
+746	32	8863	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་བསྟན་ 705 su bstan pf. zu Trjes su ston
+746	190	8871	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་འབུན་ 7765 su 'thun Trjes su mthun.
+747	171	8882	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་དཔོག་ 1705 su dpog pf. Trjes su dpags fur.
+748	208	8896	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་གཟུང་ ?76$ su gzun fur. zu Trjes su ’dzin
