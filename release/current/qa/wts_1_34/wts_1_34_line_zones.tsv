@@ -69123,7 +69123,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 487	83	6262	german_prose_with_translit			none	3	2	0	0	der bstod pa ~ kyan mdzad „da verfaßte er
 487	84	6262	german_prose			none	0	4	0	0	auch das Dandakastotra“ (Tär 136,1);
 487	86	6262	german_prose			none	0	2	0	0	Lex. dandakam (Mvy 1465).
-487	88	6263	headword_line	རྒྱན་ཆོད་	rgyun	high	2	1	0	0	རྒྱན་ཆོད་ rgyun chod imp. zu Trgyun gcod ab-
+487	88	6263	headword_line	རྒྱན་ཆོད་	rgyun	high	2	1	0	0	རྒྱན་ཆོད་ rgyun chod imp. zu ↑ rgyun gcod ab-
 487	89	6263	german_prose			none	0	1	0	0	» schneiden, [Gesetze] aufheben.
 487	91	6263	latin_other			none	5	0	0	0	shon gyi bka’ khrims ... - la (metr.) „hebe
 487	92	6263	german_prose			none	0	4	0	0	die früheren Gesetze auf!“ (KanL 43b).
@@ -70733,7 +70733,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 498	21	6387	german_prose			none	0	6	0	0	den Eltern der Frau ‚Schwiegervater‘ und
 498	22	6387	german_prose			none	0	5	0	0	‚Schwiegermutter‘; die Frau sagt auch zu
 498	23	6387	german_prose			none	0	2	0	0	seinen Eltern ebenso“ (Dagy).
-498	25	6388	headword_line	སྒྱུངས་	sgyuns Trgyuns	high	2	0	0	0	སྒྱུངས་ sgyuns Trgyuns.
+498	25	6388	headword_line	སྒྱུངས་	sgyuns Trgyuns	high	2	0	0	0	སྒྱུངས་ sgyuns ↑ rgyuns.
 498	27	6388	german_prose			none	0	2	0	0	ax 'sgyur pf. und fut. Ibsgyur.
 498	29	6388	german_prose			none	0	1	0	0	1. wenden, verdrehen, ändern.
 498	31	6388	latin_other			none	7	0	0	0	mtsho ’di khyed kyis gu du pho la / slar yul
@@ -71111,7 +71111,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 500	114	6421	german_prose_with_translit			none	2	2	0	0	TSITaz sgra gcan za byed Vajra des
 500	115	6421	tibetan_only	གཾ ན་ཐྱ་བུད		none	0	1	0	0	གཾ ན་ཐྱ་བུད Indra.
 500	116	6421	german_prose_with_translit			none	4	3	0	0	Lex. brgya sbyin rdo rje (brDa, ähnl. Dagy).
-500	118	6422	headword_line	སྒྲ་གཅན་བྲིན་	sgra	medium	3	0	0	0	སྒྲ་གཅན་བྲིན་ sgra gcan zin Tsgra gcan ’dzin.
+500	118	6422	headword_line	སྒྲ་གཅན་བྲིན་	sgra	medium	3	0	0	0	སྒྲ་གཅན་བྲིན་ sgra gcan zin ↑ sgra gcan ’dzin.
 500	120	6423	headword_line	སྒྲ་གཅན་གསོད་	sgra	medium	1	2	0	0	སྒྲ་གཅན་གསོད་ sgra gcan gsod Beiname des
 500	122	6423	german_prose			none	0	1	0	0	Visnu.
 500	124	6423	german_prose_with_translit			none	2	2	0	0	Lex. khyab 7//£ (brDa, Dagy).
@@ -71260,7 +71260,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 501	115	6447	german_prose_with_translit			none	1	2	0	0	Stimme“ (Dagy, brDa).
 501	117	6448	headword_line	སྒྲགས	sgrags	medium	1	1	0	0	སྒྲགས sgrags Ibsgrags.
 501	118	6449	headword_line	སྒྲའི་སྦྱོར་བ་	sgra	medium	4	0	0	0	སྒྲའི་སྦྱོར་བ་ sgra”i sbyor ba [$9777 sbyor.
-501	119	6450	headword_line	སྒྲའི་རིག་པ་	sgra’i	high	4	0	0	0	སྒྲའི་རིག་པ་ sgra’i rig pa Tsgra 779 pa.
+501	119	6450	headword_line	སྒྲའི་རིག་པ་	sgra’i	high	4	0	0	0	སྒྲའི་རིག་པ་ sgra’i rig pa ↑ sgra 779 pa.
 501	121	6451	headword_line	སྒྲིག་	sgrig	medium	2	0	0	0	སྒྲིག་ sgrig pf. [55297793, fut. \bsgrig, imp. 1,597795
 501	122	6451	other			none	0	0	0	0	ordnen, einordnen.
 501	124	6451	german_prose_with_translit			none	4	4	0	0	Lex. las ka - pa pos - bZin pa „einer, der die
@@ -71478,7 +71478,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 502	209	6479	german_prose_with_translit			none	5	2	0	0	Lex. gnad ka sgril ma can lta bu „wie: das
 502	210	6479	german_prose_with_translit			none	1	2	0	0	Wichtige gebündelt“ (brDa).
 503	1	6480	headword_line	སྒྲིམས་	sgrims	medium	1	0	0	0	སྒྲིམས་ sgrims
-503	3	6481	headword_line	སྒྲམས་	sgrims	medium	2	1	0	0	སྒྲམས་ sgrims imp. zu Tsgrim zusammendre-
+503	3	6481	headword_line	སྒྲམས་	sgrims	medium	2	1	0	0	སྒྲམས་ sgrims imp. zu ↑ sgrim zusammendre-
 503	4	6481	german_prose			none	0	1	0	0	hen, sich konzentrieren.
 503	6	6481	german_prose_with_translit			none	6	2	0	0	rig pa rtse gcig tu khrims kyis ~ „das Wissen
 503	7	6481	german_prose_with_translit			none	1	1	0	0	konzentriert beherrschen“ (Akhr2 80,7).
@@ -72675,7 +72675,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 510	155	6593	latin_other			none	1	0	0	0	AIR breya sran Kreuzung.
 510	157	6593	german_prose_with_translit			none	3	3	0	0	Lex. Jam kha man po’i mda’ sran „Stelle, wo
 510	158	6593	german_prose_with_translit			none	1	1	0	0	viele Straßen zusammenlaufen“ (brDa).
-510	160	6594	headword_line	བརརྒྱགས་	brgyags T'rgyags	high	2	0	0	0	བརརྒྱགས་ 'brgyags T'rgyags.
+510	160	6594	headword_line	བརརྒྱགས་	brgyags T'rgyags	high	2	0	0	0	བརརྒྱགས་ 'brgyags ↑ 'rgyags.
 510	162	6594	german_prose_with_translit			none	2	1	0	0	AAN ?brgyags pf. zu T’rgyags satt sein.
 510	164	6594	german_prose_with_translit			none	3	2	0	0	Lex. ~ zin pa (Dagy); - pa = zas kyis ~ son
 510	165	6594	german_prose_with_translit			none	2	1	0	0	lta bu „durch Essen satt geworden“ (brDa);
@@ -72803,7 +72803,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 511	123	6602	german_prose			none	0	2	0	0	Lex. astamikam (Mvy 5758).
 511	125	6602	example_tibetan_latin	བརྒྱད་ལྡན་མ་		none	2	2	0	0	བརྒྱད་ལྡན་མ་ 9 ldan ma das Naksatra nag
 511	127	6602	german_prose_with_translit			none	3	3	0	0	Lex. nag pa skar ma (brDa, ähnl. Dagy).
-511	128	6603	headword_line	བརྒྱད་པ་	pa Tbrgyad	high	2	0	0	0	བརྒྱད་པ་ 'breyad pa Tbrgyad.
+511	128	6603	headword_line	བརྒྱད་པ་	pa Tbrgyad	high	2	0	0	0	བརྒྱད་པ་ 'breyad pa ↑ brgyad.
 511	130	6604	headword_line	བྱད་པ་	brgyad pa	high	2	2	0	0	བྱད་པ་ ?brgyad pa Tadel, Schelte.
 511	132	6604	german_prose_with_translit			none	3	3	0	0	Lex. paribhäsä (Mvy 2644, Abt. bstod pa
 511	133	6604	latin_other			none	5	0	0	0	dan smad pa dan grags pa’i inam grans kyi
@@ -73742,7 +73742,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 517	71	6655	german_prose_with_translit			none	1	1	0	0	„die Arbeitsgeräte zurechtlegen werden“
 517	72	6655	german_prose_with_translit			none	3	2	0	0	(brDa); ~ bya = go rim sogs - bya „in einer
 517	73	6655	german_prose			none	0	2	0	0	Reihe usw. anordnen werden“ (Dagy).
-517	75	6656	headword_line	བསྒྲིགས་	bsgrigs	medium	2	1	0	0	བསྒྲིགས་ bsgrigs pf. zu Tsgrig anordnen, zusam-
+517	75	6656	headword_line	བསྒྲིགས་	bsgrigs	medium	2	1	0	0	བསྒྲིགས་ bsgrigs pf. zu ↑ sgrig anordnen, zusam-
 517	77	6656	german_prose			none	0	1	0	0	menstellen, zusammenfügen, schaf-
 517	78	6656	german_prose_with_translit			none	2	1	0	0	fen, verfassen; - pa Werk; ~ ’bab Arrange-
 517	79	6656	german_prose_with_translit			none	1	1	0	0	ment, Mittel zum Arrangement.
@@ -73788,7 +73788,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 517	130	6658	german_prose			none	0	4	0	0	dunkelt die endgültige Wahrheit, heißt es“
 517	131	6658	german_prose_with_translit			none	4	2	0	0	(brDa); yol ba sogs kyis - bya „mit einem
 517	132	6658	german_prose_with_translit			none	1	1	0	0	Vorhang usw. bedecken werden“ (Dagy).
-517	134	6659	headword_line	བསླྲིབས་	bsgribs	medium	2	1	0	0	བསླྲིབས་ bsgribs pf. zu Tsgrib bedecken, ver-
+517	134	6659	headword_line	བསླྲིབས་	bsgribs	medium	2	1	0	0	བསླྲིབས་ bsgribs pf. zu ↑ sgrib bedecken, ver-
 517	136	6659	other			none	0	0	0	0	decken, verdunkeln.
 517	138	6659	latin_other			none	3	0	0	0	na rgyal dregs pas - bgyis pa (metr.) „was
 517	139	6659	german_prose			none	0	4	0	0	ich aus Hochmut und Stolz (skt. mäna-
@@ -73820,7 +73820,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 517	172	6660	german_prose_with_translit			none	2	1	0	0	sen getrübt“ (brDa); - pa ‰ yol bas ~ zin
 517	173	6660	german_prose_with_translit			none	1	2	0	0	sogs „mit Vorhang usw. bedeckt“ (Dagy); -
 517	174	6660	german_prose_with_translit			none	1	1	0	0	pa = nivrta (111 Mvy 6889).
-517	176	6661	headword_line	བསྙིམ་	bsgrim	medium	2	1	0	0	བསྙིམ་ bsgrim [11[, zu Tsgrim konzentriert; rig
+517	176	6661	headword_line	བསྙིམ་	bsgrim	medium	2	1	0	0	བསྙིམ་ bsgrim [11[, zu ↑ sgrim konzentriert; rig
 517	178	6661	tibetan_latin_mixed			none	1	0	0	0	pa ༡ vorsichtig sein, sich konzentrie-
 517	179	6661	other			none	0	0	0	0	ren.
 517	181	6662	headword_line	༡༨	pa’i	high	5	0	0	0	༡༨ pa’i mig gis kun tn lta bar brtsams pa na
