@@ -41737,7 +41737,7 @@ und die der Thangkas der 16 Arhats usw."
 (gNas 21,8).
 near gnas brtan sde pa Tgnas brtan
 གནས་བརྟན་སྡེ་པ་ £
-གནས་བརྟན་པ་ gras brtan pa Tgnas brtan
+གནས་བརྟན་པ་ gras brtan pa ↑ gnas brtan
 གནས་བརྟན་པའི་སྡེ་པ་རྩ་བ་ gnas brtan pa'i sde pa
 rtsa ba "die ursprüng-
 lichen Sthaviras", eine buddh. Schule, skt.
@@ -41749,7 +41749,7 @@ ursprünglichen Sthaviras, der Sarvästivädins,
 der Vätsiputriyas [usw.]" (Tär 206,7).
 གནས་ཐང་ gnas thaṅ npr. ein Ort in [1630
 (Neb 534).
-གནས་དང་རྟེན་ gnas daṅ rten Tgnas rten.
+གནས་དང་རྟེན་ gnas daṅ rten ↑ gnas rten.
 གནས་དང་གནས་མ་ཡིན་པ་མཁྱེན་པའི་སྟོབས་ ༩༧༩༠
 dan
 gnas ma yin pa mkhyen pa'i stobs eine der
@@ -41965,7 +41965,7 @@ Lex. me dan me lha la'ani (brDa, Dagy).
 Lex. sthānu (Ak 10.29).
 གནས་བྱེད་མ་ gnas byed ma Bez. für Nacht.
 Lex. mtshan mo' min (brDa, Dagy).
-གནས་དབྱུང་ gnas dbyuṅ Tgnas nas dbyun.
+གནས་དབྱུང་ gnas dbyuṅ ↑ gnas nas dbyun.
 གནས་སྦྱིན་ gnas sbyin.
 1. Betreuung gewähren; — pa Bez. für einen
 Mönch, der einen neu ordinierten Mönch in
@@ -42017,8 +42017,8 @@ zen den gleichen Sinn" (Tär 208,9).
 Lex. —" sde = vātsiputriyab (Mvy 9088, Abt.
 sde bźi rnam pa bco brgyad du dgyes pa'i miṅ).
 གནས་མ་ཡིན་ gras mayin Ignas min.
-གནས་མའི་བུ་ gras mai bu Tgnas ma bu.
-གནས་མའི་བུ་སྡེ་ gras ma'i bu sde Tgnas ma bu.
+གནས་མའི་བུ་ gras mai bu ↑ gnas ma bu.
+གནས་མའི་བུ་སྡེ་ gras ma'i bu sde ↑ gnas ma bu.
 གནས་མལ་ gras mal Ruheplatz, Ruhestät-
 te, Lagerstätte, Liegestätte, Schlaf-
 platz, Wohnstätte, Ort; — kban Wohnhaus,
@@ -42389,7 +42389,7 @@ Däkinis der drei Bereiche sind meine Beglei-
 tung" (Mil 105,10); — dpa' bo mkha' 'gro
 ma "ihr Viras und Däkinis in den drei Be-
 reichen!" (MigTo 86,8).
-གནས་བསྲུང་ guas bsruṅ Tgnas sruṅ.
+གནས་བསྲུང་ guas bsruṅ ↑ gnas sruṅ.
 གནུབ་ gnub Ibsnub.
 གནོག་ ༩༩༠8
 གནུབས་ grubs auch snubs npr. ein Seitental
@@ -49382,7 +49382,7 @@ eines Dzos, Yaks usw. anbringt" (Dagy).
 སྣ་ཅན་ snacan
 སྣ་འཁྱོག་ sna 'khyog Bez. für Eule.
 Lex. 'ug pa la'ani (brDa, Dagy).
-སྣ་འཁྲིད་ sia 'khrid Tsna khrid.
+སྣ་འཁྲིད་ sia 'khrid ↑ sna khrid.
 སྣ་ག་ sna ga tsiza kha..
 སྣ་གོང་ sna goṅ die Stelle zwischen den beiden
 Augen.
@@ -49673,8 +49673,8 @@ dpal (r. dbal?) bya "man soll Opfergebete
 an die Götter des Bestattungsortes richten,
 man fertige das sna dbal und das 'gon dbal
 an" (MigTo 223,14).
-སྣ་སྤུགས་ sna sbugs Tsna bug.
-སྣ་སྤུབས་ sna sbubs Tsna bug.
+སྣ་སྤུགས་ sna sbugs ↑ sna bug.
+སྣ་སྤུབས་ sna sbubs ↑ sna bug.
 ༨ DE
 NaQazauz snamai bras bu
 Lex. inda'i mde'u Icags (brDa); inda'i mde'u
@@ -50029,7 +50029,7 @@ Lex. citrasenab (Mvy 3334, Abt. klu phal pa'!
 mi).
 3. eine Pflanze.
 Lex. visvaksenä (Ak 100.56).
-སྣ་ཚོགས་པ་ sna tshogs pa Tsna tshogs.
+སྣ་ཚོགས་པ་ sna tshogs pa ↑ sna tshogs.
 སྣ་ཚོགས་བྱེད་པོ་ sna tshogs byed po auch
 tsbogs byed Beiname Brahmans.
 Lex. tshans pa ste sna tshogs bzo ba'ani zer ba

@@ -42256,7 +42256,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 523	20	2587	other			none	0	0	0	0	(gNas 21,8).
 523	21	2587	german_prose_with_translit			none	3	1	0	0	near gnas brtan sde pa Tgnas brtan
 523	22	2587	tibetan_only	གནས་བརྟན་སྡེ་པ་		none	0	0	0	0	གནས་བརྟན་སྡེ་པ་ £
-523	23	2588	headword_line	གནས་བརྟན་པ་	brtan pa	high	3	1	0	0	གནས་བརྟན་པ་ gras brtan pa Tgnas brtan
+523	23	2588	headword_line	གནས་བརྟན་པ་	brtan pa	high	3	1	0	0	གནས་བརྟན་པ་ gras brtan pa ↑ gnas brtan
 523	24	2589	headword_line	གནས་བརྟན་པའི་སྡེ་པ་རྩ་བ་	brtan pa'i	high	3	0	0	0	གནས་བརྟན་པའི་སྡེ་པ་རྩ་བ་ gnas brtan pa'i sde pa
 523	25	2589	german_prose_with_translit			none	3	1	0	0	"rtsa ba ""die ursprüng-"
 523	26	2589	german_prose_with_translit			none	1	4	0	0	"lichen Sthaviras"", eine buddh. Schule, skt."
@@ -42268,7 +42268,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 523	32	2589	german_prose_with_translit			none	1	2	0	0	"der Vätsiputriyas [usw.]"" (Tär 206,7)."
 523	33	2590	headword_line	གནས་ཐང་	thaṅ	high	1	3	0	0	གནས་ཐང་ gnas thaṅ npr. ein Ort in [1630
 523	34	2590	german_prose			none	0	1	0	0	(Neb 534).
-523	35	2591	headword_line	གནས་དང་རྟེན་	daṅ rten	high	3	1	0	0	གནས་དང་རྟེན་ gnas daṅ rten Tgnas rten.
+523	35	2591	headword_line	གནས་དང་རྟེན་	daṅ rten	high	3	1	0	0	གནས་དང་རྟེན་ gnas daṅ rten ↑ gnas rten.
 523	36	2591	tibetan_only	གནས་དང་གནས་མ་ཡིན་པ་མཁྱེན་པའི་སྟོབས་ ༩༧༩༠		none	0	0	0	0	གནས་དང་གནས་མ་ཡིན་པ་མཁྱེན་པའི་སྟོབས་ ༩༧༩༠
 523	37	2591	latin_other			none	1	0	0	0	dan
 523	38	2591	german_prose_with_translit			none	5	2	0	0	gnas ma yin pa mkhyen pa'i stobs eine der
@@ -42487,7 +42487,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 526	10	2613	german_prose_with_translit			none	1	2	0	0	Lex. sthānu (Ak 10.29).
 526	11	2614	headword_line	གནས་བྱེད་མ་	byed ma	medium	2	3	0	0	གནས་བྱེད་མ་ gnas byed ma Bez. für Nacht.
 526	12	2614	german_prose_with_translit			none	3	2	0	0	Lex. mtshan mo' min (brDa, Dagy).
-526	13	2615	headword_line	གནས་དབྱུང་	dbyuṅ	high	3	1	0	0	གནས་དབྱུང་ gnas dbyuṅ Tgnas nas dbyun.
+526	13	2615	headword_line	གནས་དབྱུང་	dbyuṅ	high	3	1	0	0	གནས་དབྱུང་ gnas dbyuṅ ↑ gnas nas dbyun.
 526	14	2616	headword_line	གནས་སྦྱིན་	sbyin	medium	1	0	0	0	གནས་སྦྱིན་ gnas sbyin.
 526	15	2616	german_prose_with_translit			none	2	4	0	0	1. Betreuung gewähren; — pa Bez. für einen
 526	16	2616	german_prose			none	0	5	0	0	Mönch, der einen neu ordinierten Mönch in
@@ -42539,8 +42539,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 526	62	2618	german_prose_with_translit			none	1	3	0	0	"Lex. —"" sde = vātsiputriyab (Mvy 9088, Abt."
 526	63	2618	latin_other			none	7	0	0	0	sde bźi rnam pa bco brgyad du dgyes pa'i miṅ).
 526	64	2618	tibetan_only	གནས་མ་ཡིན་		none	0	1	0	0	གནས་མ་ཡིན་ gras mayin Ignas min.
-526	65	2619	headword_line	གནས་མའི་བུ་	ma	medium	1	1	0	0	གནས་མའི་བུ་ gras mai bu Tgnas ma bu.
-526	66	2620	headword_line	གནས་མའི་བུ་སྡེ་	ma'i	high	2	1	0	0	གནས་མའི་བུ་སྡེ་ gras ma'i bu sde Tgnas ma bu.
+526	65	2619	headword_line	གནས་མའི་བུ་	ma	medium	1	1	0	0	གནས་མའི་བུ་ gras mai bu ↑ gnas ma bu.
+526	66	2620	headword_line	གནས་མའི་བུ་སྡེ་	ma'i	high	2	1	0	0	གནས་མའི་བུ་སྡེ་ gras ma'i bu sde ↑ gnas ma bu.
 526	67	2620	tibetan_only	གནས་མལ་		none	0	2	0	0	གནས་མལ་ gras mal Ruheplatz, Ruhestät-
 526	68	2620	german_prose			none	0	3	0	0	te, Lagerstätte, Liegestätte, Schlaf-
 526	69	2620	german_prose			none	0	3	0	0	platz, Wohnstätte, Ort; — kban Wohnhaus,
@@ -42916,7 +42916,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 531	32	2638	german_prose_with_translit			none	4	1	0	0	"tung"" (Mil 105,10); — dpa' bo mkha' 'gro"
 531	33	2638	german_prose_with_translit			none	1	6	0	0	"ma ""ihr Viras und Däkinis in den drei Be-"
 531	34	2638	german_prose			none	0	2	0	0	"reichen!"" (MigTo 86,8)."
-531	35	2639	headword_line	གནས་བསྲུང་	bsruṅ	high	2	1	0	0	གནས་བསྲུང་ guas bsruṅ Tgnas sruṅ.
+531	35	2639	headword_line	གནས་བསྲུང་	bsruṅ	high	2	1	0	0	གནས་བསྲུང་ guas bsruṅ ↑ gnas sruṅ.
 531	36	2639	tibetan_only	གནུབ་		none	0	1	0	0	གནུབ་ gnub Ibsnub.
 531	37	2639	tibetan_only	གནོག་ ༩༩༠		none	0	0	0	0	གནོག་ ༩༩༠8
 531	38	2639	tibetan_only	གནུབས་		none	0	3	0	0	གནུབས་ grubs auch snubs npr. ein Seitental
@@ -49994,7 +49994,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 616	37	3028	tibetan_only	སྣ་ཅན་		none	0	0	0	0	སྣ་ཅན་ snacan
 616	38	3029	headword_line	སྣ་འཁྱོག་	khyog	high	1	3	0	0	སྣ་འཁྱོག་ sna 'khyog Bez. für Eule.
 616	39	3029	german_prose_with_translit			none	3	2	0	0	Lex. 'ug pa la'ani (brDa, Dagy).
-616	40	3030	headword_line	སྣ་འཁྲིད་	khrid Tsna khrid	high	3	0	0	0	སྣ་འཁྲིད་ sia 'khrid Tsna khrid.
+616	40	3030	headword_line	སྣ་འཁྲིད་	khrid Tsna khrid	high	3	0	0	0	སྣ་འཁྲིད་ sia 'khrid ↑ sna khrid.
 616	41	3031	headword_line	སྣ་ག་	tsiza kha	high	2	0	0	0	སྣ་ག་ sna ga tsiza kha..
 616	42	3032	headword_line	སྣ་གོང་	goṅ	high	1	4	0	0	སྣ་གོང་ sna goṅ die Stelle zwischen den beiden
 616	43	3032	german_prose			none	0	1	0	0	Augen.
@@ -50289,8 +50289,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 620	32	3061	german_prose_with_translit			none	1	4	0	0	an die Götter des Bestattungsortes richten,
 620	33	3061	german_prose_with_translit			none	2	3	0	0	man fertige das sna dbal und das 'gon dbal
 620	34	3061	german_prose			none	0	2	0	0	"an"" (MigTo 223,14)."
-620	35	3062	headword_line	སྣ་སྤུགས་	Tsna	high	1	0	0	0	སྣ་སྤུགས་ sna sbugs Tsna bug.
-620	36	3063	headword_line	སྣ་སྤུབས་	Tsna	high	1	0	0	0	སྣ་སྤུབས་ sna sbubs Tsna bug.
+620	35	3062	headword_line	སྣ་སྤུགས་	Tsna	high	1	0	0	0	སྣ་སྤུགས་ sna sbugs ↑ sna bug.
+620	36	3063	headword_line	སྣ་སྤུབས་	Tsna	high	1	0	0	0	སྣ་སྤུབས་ sna sbubs ↑ sna bug.
 620	37	3063	tibetan_only	༨		none	0	0	0	0	༨ DE
 620	38	3063	german_prose			none	0	1	0	0	NaQazauz snamai bras bu
 620	39	3063	german_prose_with_translit			none	5	2	0	0	Lex. inda'i mde'u Icags (brDa); inda'i mde'u
@@ -50649,7 +50649,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 624	66	3087	other			none	0	0	0	0	mi).
 624	67	3087	german_prose			none	0	2	0	0	3. eine Pflanze.
 624	68	3087	german_prose			none	0	3	0	0	Lex. visvaksenä (Ak 100.56).
-624	69	3088	headword_line	སྣ་ཚོགས་པ་	tshogs pa Tsna tshogs	high	4	0	0	0	སྣ་ཚོགས་པ་ sna tshogs pa Tsna tshogs.
+624	69	3088	headword_line	སྣ་ཚོགས་པ་	tshogs pa Tsna tshogs	high	4	0	0	0	སྣ་ཚོགས་པ་ sna tshogs pa ↑ sna tshogs.
 624	70	3089	headword_line	སྣ་ཚོགས་བྱེད་པོ་	tshogs byed po	high	3	1	0	0	སྣ་ཚོགས་བྱེད་པོ་ sna tshogs byed po auch
 624	71	3089	german_prose_with_translit			none	1	2	0	0	tsbogs byed Beiname Brahmans.
 624	72	3089	german_prose_with_translit			none	6	1	0	0	Lex. tshans pa ste sna tshogs bzo ba'ani zer ba
