@@ -101709,7 +101709,7 @@ täter.
 
 Lex. g.yo sgyu’am zol han „Betrug oder
 Heuchelei“ (brDa); g.yo rgyu’i thabs lta bu
-(Dagy); ~ byed po = rnon pa dan / ran shags
+(Dagy); ~ byed po = rnon pa dan ↓ raṅ shags
 mkhan lta bu la’an „wie: Jäger und
 Schwarzmagier“ (Dagy).
 
@@ -103963,7 +103963,7 @@ Lex. rgyu mtshan (brDa, Dagy).
 Lex. mtshan 7777 (brDa, Dagy).
 
 4. echt, wahrhaft, wirklich.
-Lex. no ma’am / dṅos gnas (TTC).
+Lex. no ma’am ↓ dṅos gnas (TTC).
 
 ངོ་རྟགས་ no rtags Identifikation.
 
@@ -111980,7 +111980,7 @@ lam bar = nas ’grim phyin pas „als ich unterwegs über Can-sgan-kha wanderte
 
 ཅང་ངེ་ཅོག་གེ་ can he €09 ge zögerlich, unschlüs-
 sig.
-Lex. ~ byas pa ni / rgyans rin du bsriñs nas
+Lex. ~ byas pa ni ↑ rgyans rin du bsriñs nas
 bsdad pa „can ne cog ge gemacht: entfernt
 bleiben“ (dPeD 191,6); rgyan thag rin tsam
 byas nas sdod pa „sich weit entfernt haben
@@ -113378,7 +113378,7 @@ sogs / blta ba’i don yin - kyan / man par
 bya ba nid (metr.) „[die Gattungen] Samyä
 usw. sind zum Schauen, die anderen
 dagegen nur zum Hören“ (Kävyäd 1.39b);
-de yis mkhas pa Sin tu ni / tshim gyur = ma
+de yis mkhas pa Sin tu ni ↓ tshim gyur = ma
 yin (metr.) „das stellt [manche] Kundige
 sehr zufrieden, die anderen aber gar nicht“
 (Kävyäd 1.89d); - daṅ mthun par bsgyur na
@@ -131457,7 +131457,7 @@ Salt chom po.
 
 1. Räuber.
 
-=s phrogs pa ji bin du / sgren mo lag pa ston
+=s phrogs pa ji bin du ↑ sgren mo lag pa ston
 par (metr.) „wie von einem Räuber beraubt
 nackt und mit leeren Händen“ (Bca 6,596);
 mä li ka buddhi ... tu ruska’i ~$ bkrons „die

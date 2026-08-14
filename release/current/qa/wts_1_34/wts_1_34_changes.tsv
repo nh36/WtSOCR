@@ -29184,3 +29184,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 330	132	4512	german_prose_with_translit	/ nan	↓ naṅ	A	reviewed_tibetan_exact_reference_marker	1	phyi’i °o (7, so) ka Sor / nan gi srid = „die
 338	33	4582	latin_other	/ rje	↓ rje	A	reviewed_tibetan_exact_reference_marker	1	= na’an / rje gfia’ khri bisan po yiin par don
 464	94	6007	german_prose_with_translit	/ ran	↓ raṅ	A	reviewed_tibetan_exact_reference_marker	1	Lex. sems rgya ’byams su g.yen ba dan / ran
+527	153	6739	german_prose_with_translit	/ ran	↓ raṅ	A	reviewed_tibetan_exact_reference_marker	1	(Dagy); ~ byed po = rnon pa dan / ran shags
+538	32	6851	german_prose_with_translit	/ dṅos	↓ dṅos	A	reviewed_tibetan_exact_reference_marker	1	Lex. no ma’am / dṅos gnas (TTC).
+576	20	7229	german_prose_with_translit	/ rgyans	↑ rgyans	A	reviewed_tibetan_exact_reference_marker	1	Lex. ~ byas pa ni / rgyans rin du bsriñs nas
+582	130	7281	german_prose_with_translit	/ tshim	↓ tshim	A	reviewed_tibetan_exact_reference_marker	1	de yis mkhas pa Sin tu ni / tshim gyur = ma
+671	180	8094	latin_other	/ sgren	↑ sgren	A	reviewed_tibetan_exact_reference_marker	1	=s phrogs pa ji bin du / sgren mo lag pa ston

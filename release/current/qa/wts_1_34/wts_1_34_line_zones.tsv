@@ -75003,7 +75003,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 527	149	6739	german_prose			none	0	1	0	0	täter.
 527	151	6739	german_prose_with_translit			none	1	3	0	0	Lex. g.yo sgyu’am zol han „Betrug oder
 527	152	6739	german_prose_with_translit			none	4	1	0	0	Heuchelei“ (brDa); g.yo rgyu’i thabs lta bu
-527	153	6739	german_prose_with_translit			none	4	1	0	0	(Dagy); ~ byed po = rnon pa dan / ran shags
+527	153	6739	german_prose_with_translit			none	4	1	0	0	(Dagy); ~ byed po = rnon pa dan ↓ raṅ shags
 527	154	6739	german_prose_with_translit			none	3	2	0	0	mkhan lta bu la’an „wie: Jäger und
 527	155	6739	german_prose			none	0	2	0	0	Schwarzmagier“ (Dagy).
 527	157	6739	other			none	0	0	0	0	11
@@ -76676,7 +76676,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 538	28	6851	german_prose			none	0	1	0	0	3. Definition.
 538	29	6851	german_prose_with_translit			none	2	2	0	0	Lex. mtshan 7777 (brDa, Dagy).
 538	31	6851	german_prose			none	0	1	0	0	4. echt, wahrhaft, wirklich.
-538	32	6851	german_prose_with_translit			none	2	1	0	0	Lex. no ma’am / dṅos gnas (TTC).
+538	32	6851	german_prose_with_translit			none	2	1	0	0	Lex. no ma’am ↓ dṅos gnas (TTC).
 538	34	6852	headword_line	ངོ་རྟགས་	rtags	high	1	1	0	0	ངོ་རྟགས་ no rtags Identifikation.
 538	36	6852	latin_other			none	5	0	0	0	= dgon khag so so’i spyi dam re sprad nas
 538	37	6852	german_prose			none	0	2	0	0	„ihnen wurde zur Identifikation [ein
@@ -82652,7 +82652,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 576	16	7228	other			none	0	0	0	0	59,20).
 576	18	7229	headword_line	ཅང་ངེ་ཅོག་གེ་	can	medium	1	2	0	0	ཅང་ངེ་ཅོག་གེ་ can he €09 ge zögerlich, unschlüs-
 576	19	7229	other			none	0	0	0	0	sig.
-576	20	7229	german_prose_with_translit			none	6	1	0	0	Lex. ~ byas pa ni / rgyans rin du bsriñs nas
+576	20	7229	german_prose_with_translit			none	6	1	0	0	Lex. ~ byas pa ni ↑ rgyans rin du bsriñs nas
 576	21	7229	latin_other			none	2	0	0	0	bsdad pa „can ne cog ge gemacht: entfernt
 576	22	7229	latin_other			none	3	0	0	0	bleiben“ (dPeD 191,6); rgyan thag rin tsam
 576	23	7229	latin_other			none	2	0	0	0	byas nas sdod pa „sich weit entfernt haben
@@ -83748,7 +83748,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 582	127	7281	german_prose_with_translit			none	3	2	0	0	bya ba nid (metr.) „[die Gattungen] Samyä
 582	128	7281	german_prose			none	0	3	0	0	usw. sind zum Schauen, die anderen
 582	129	7281	german_prose			none	0	2	0	0	dagegen nur zum Hören“ (Kävyäd 1.39b);
-582	130	7281	german_prose_with_translit			none	7	1	0	0	de yis mkhas pa Sin tu ni / tshim gyur = ma
+582	130	7281	german_prose_with_translit			none	7	1	0	0	de yis mkhas pa Sin tu ni ↓ tshim gyur = ma
 582	131	7281	german_prose_with_translit			none	1	2	0	0	yin (metr.) „das stellt [manche] Kundige
 582	132	7281	german_prose			none	0	1	0	0	sehr zufrieden, die anderen aber gar nicht“
 582	133	7281	german_prose_with_translit			none	4	1	0	0	(Kävyäd 1.89d); - daṅ mthun par bsgyur na
@@ -97256,7 +97256,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 671	174	8094	german_prose_with_translit			none	1	3	0	0	Caurfi, so heißt es“ (Hev 1.9.11a).
 671	176	8094	german_prose_with_translit			none	1	1	0	0	Salt chom po.
 671	178	8094	german_prose			none	0	1	0	0	1. Räuber.
-671	180	8094	latin_other			none	5	0	0	0	=s phrogs pa ji bin du / sgren mo lag pa ston
+671	180	8094	latin_other			none	5	0	0	0	=s phrogs pa ji bin du ↑ sgren mo lag pa ston
 671	181	8094	german_prose			none	0	3	0	0	par (metr.) „wie von einem Räuber beraubt
 671	182	8094	german_prose			none	0	4	0	0	nackt und mit leeren Händen“ (Bca 6,596);
 671	183	8094	german_prose_with_translit			none	5	2	0	0	mä li ka buddhi ... tu ruska’i ~$ bkrons „die
