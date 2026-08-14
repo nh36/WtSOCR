@@ -16331,7 +16331,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 124	98	1535	german_prose_with_translit			none	1	1	0	0	mo rgyan graßgs.
 124	99	1536	headword_line	དཀར་མོའི་ཉི་ཟླའི་ཐོད་འཕྲེང་	mo’i ni zla’i thod	high	4	0	0	0	དཀར་མོའི་ཉི་ཟླའི་ཐོད་འཕྲེང་ dkar mo’i ni zla’i thod
 124	100	1536	german_prose_with_translit			none	1	2	0	0	’phren npr. eine Gott-
-124	102	1536	german_prose_with_translit			none	1	6	0	0	heit; gehört zu den Inan gi sde breyad der
+124	102	1536	german_prose_with_translit			none	1	6	0	0	heit; gehört zu den ↓ naṅ gi sde breyad der
 124	103	1536	german_prose_with_translit			none	2	1	0	0	\dregs pa sde brgyad (Neb 258).
 124	105	1537	headword_line	དཀར་མོའི་མདངས་ལྡན་དབང་སད་མ་	dkarmo’imdans	high	1	0	0	0	དཀར་མོའི་མདངས་ལྡན་དབང་སད་མ་ dkarmo’imdans
 124	106	1538	headword_line	ལྡ རྦུ	ldan dban	medium	2	0	0	0	ལྡ རྦུ ldan dban sdud
@@ -22119,7 +22119,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 163	44	2096	german_prose_with_translit			none	4	1	0	0	men“ (KTh 1: 446,5); sätstsha brkos phor nas
 163	45	2096	german_prose_with_translit			none	2	4	0	0	bton pa Itar „wie Votivbilder, die aus Modeln
 163	46	2096	latin_other			none	1	0	0	0	herausgeholt wurden“ (PhB 8: 384,5).
-163	48	2097	headword_line	རྒྱ་	rkya	high	5	2	0	0	རྒྱ་ rkya einzeln; vgl. Irkyan pa, Iran rkya ba.
+163	48	2097	headword_line	རྒྱ་	rkya	high	5	2	0	0	རྒྱ་ rkya einzeln; vgl. Irkyan pa, ↓ raṅ rkya ba.
 163	49	2097	latin_other			none	3	0	0	0	ba spu — cig kyan mi bskyod (metr.) „nicht
 163	51	2097	german_prose			none	0	2	0	0	einmal ein einzelnes Körperhaar wird sich
 163	52	2097	other			none	0	0	0	0	bewegen“ (gZer 657,6).
@@ -69298,7 +69298,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 488	110	6285	german_prose			none	0	2	0	0	gen, oder geschlechtlich verkehren“
 488	111	6285	german_prose_with_translit			none	6	1	0	0	(brDa); ’khrig pa’i bya ba (Dagy); - ba =
 488	112	6285	latin_other			none	2	0	0	0	"""khrig pa (TTC)."
-488	114	6286	headword_line	རྒྱང་	rgyon	high	3	0	0	0	རྒྱང་ rgyon pf. \brgyans fut. \brgyan imp.
+488	114	6286	headword_line	རྒྱང་	rgyon	high	3	0	0	0	རྒྱང་ rgyon pf. \brgyans fut. ↓ brgyan imp.
 488	115	6286	latin_other			none	1	0	0	0	\'rgyons ausbreiten, ausstrecken.
 488	117	6286	german_prose_with_translit			none	2	2	0	0	Lex. ko ba sogs ~ bZin pa „Leder usw. aus-
 488	119	6286	german_prose			none	0	1	0	0	breiten“ (Dagy).
@@ -73889,7 +73889,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 518	52	6669	headword_line	བསྒྱུངས་	bsgruṅs	high	1	0	0	0	བསྒྱུངས་ bsgruṅs ༈/5/977//25.
 518	54	6669	other			none	0	0	0	0	520
 518	56	6669	latin_other			none	1	0	0	0	AAN bsgrub
-518	58	6670	headword_line	བསྒྱུན་	bsgrun	medium	2	2	0	0	བསྒྱུན་ bsgrun pf. und fut. zu Tsgrun wettei-
+518	58	6670	headword_line	བསྒྱུན་	bsgrun	medium	2	2	0	0	བསྒྱུན་ bsgrun pf. und fut. zu ↑ sgruṅ wettei-
 518	60	6670	german_prose			none	0	3	0	0	fern, rivalisieren, vergleichen; auch -
 518	61	6670	other			none	0	0	0	0	ldom vergleichbar sein.
 518	63	6670	german_prose_with_translit			none	7	1	0	0	chos ... de nid dan / khyod du ~ Zin de dan

@@ -29138,3 +29138,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 108	140	1325	headword_line	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	ཀྲི་གཡང་སྐུ་ kri g.yaṅ sku \pri yañı khn.
 177	131	2276	german_prose_with_translit	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	— gnam gan yod pa yañı Ai ma gchig gi ’od la
 994	145	11090	latin_other	yañı	yaṅ	A	reviewed_tibetan_exact_residual_ng	1	gen rab mi bo ~ yañı / gfien la rgyab log da
+124	102	1536	german_prose_with_translit	Inan	↓ naṅ	A	reviewed_tibetan_exact_reference_marker	1	heit; gehört zu den Inan gi sde breyad der
+163	48	2097	headword_line	Iran	↓ raṅ	A	reviewed_tibetan_exact_reference_marker	1	རྒྱ་ rkya einzeln; vgl. Irkyan pa, Iran rkya ba.
+488	114	6286	headword_line	\brgyan	↓ brgyan	A	reviewed_tibetan_exact_reference_marker	1	རྒྱང་ rgyon pf. \brgyans fut. \brgyan imp.
+518	58	6670	headword_line	Tsgrun	↑ sgruṅ	A	reviewed_tibetan_exact_reference_marker	1	བསྒྱུན་ bsgrun pf. und fut. zu Tsgrun wettei-

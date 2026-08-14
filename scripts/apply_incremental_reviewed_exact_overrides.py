@@ -34,6 +34,19 @@ def write_tsv(path: Path, fields: list[str], rows: list[list[str]]) -> None:
         writer.writerows(rows)
 
 
+def load_line_zone_rows(path: Path) -> tuple[list[str], dict[tuple[int, int], list[str]]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        lines = handle.read().splitlines(keepends=True)
+    rows: dict[tuple[int, int], list[str]] = {}
+    for raw_line in lines:
+        body = raw_line.rstrip("\r\n")
+        fields = body.split("\t", 11)
+        if len(fields) != len(LINE_FIELDS) or not fields[0].isdigit():
+            continue
+        rows[(int(fields[0]), int(fields[1]))] = fields
+    return lines, rows
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--work-root", type=Path, required=True)
@@ -82,18 +95,39 @@ def main() -> None:
             print(f"{volume}: no new exact overrides")
             continue
 
+        zone_lines, line_zone_rows = load_line_zone_rows(line_zones_path)
+
         with changes_path.open("a", encoding="utf-8", newline="") as handle:
             writer = csv.writer(handle, delimiter="\t", lineterminator="\n")
             for row in change_rows:
+                page_line_key = (int(row[0]), int(row[1]))
+                zone_row = line_zone_rows.get(page_line_key)
+                if zone_row:
+                    entry_id = zone_row[2]
+                    zone = zone_row[3]
+                    line_excerpt = zone_row[11]
+                else:
+                    entry_id = row[2]
+                    zone = row[3]
+                    line_excerpt = row[9]
                 writer.writerow(
-                    row[:6] + ["A", row[7], "1", row[9]]
+                    [
+                        row[0],
+                        row[1],
+                        entry_id,
+                        zone,
+                        row[4],
+                        row[5],
+                        "A",
+                        row[7],
+                        "1",
+                        line_excerpt,
+                    ]
                 )
         corrected_path.write_text(corrected, encoding="utf-8")
 
         corrected_pages = [page.split("\n") for page in corrected.split("\f")]
         changed_keys = {(int(row[0]), int(row[1])) for row in change_rows}
-        with line_zones_path.open(encoding="utf-8", newline="") as handle:
-            zone_lines = handle.read().splitlines(keepends=True)
         for index, raw_line in enumerate(zone_lines):
             body = raw_line.rstrip("\r\n")
             ending = raw_line[len(body):]
@@ -103,7 +137,7 @@ def main() -> None:
             row_key = (int(fields[0]), int(fields[1]))
             if row_key in changed_keys:
                 fields[11] = corrected_pages[row_key[0] - 1][row_key[1] - 1]
-                zone_lines[index] = "\t".join(fields) + "\n"
+                zone_lines[index] = "\t".join(fields) + ending
         with line_zones_path.open("w", encoding="utf-8", newline="") as handle:
             handle.write("".join(zone_lines))
         summary = json.loads(summary_path.read_text(encoding="utf-8"))

@@ -1739,7 +1739,7 @@ class PostprocessRegressionTests(unittest.TestCase):
             "↓ dbyar zla tha chuṅ",
         ]:
             self.assertIn(expected, corrected)
-        self.assertIn("pf. \\brgyans fut. \\brgyan imp.", corrected)
+        self.assertIn("pf. \\brgyans fut. ↓ brgyan imp.", corrected)
         marker_changes = [
             (row["from_token"], row["to_token"])
             for row in changes
@@ -1750,11 +1750,12 @@ class PostprocessRegressionTests(unittest.TestCase):
             [
                 ("\\mkhar", "↓ mkhar"),
                 ("\\tsha", "↓ tsha"),
+                ("\\brgyan", "↓ brgyan"),
                 ("\\dpyad", "↓ dpyad"),
                 ("\\dbyar", "↓ dbyar"),
             ],
         )
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 5)
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 6)
 
     def test_reviewed_reference_marker_tbrgya_row_is_exact(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
@@ -1772,14 +1773,17 @@ class PostprocessRegressionTests(unittest.TestCase):
 
         self.assertIn("braya sbyin ↑ brgya byin 1.", corrected)
         self.assertIn("An adjacent Tbrgya string stays unchanged.", corrected)
-        self.assertIn("zu Tsgrun wettei-", corrected)
+        self.assertIn("zu ↑ sgruṅ wettei-", corrected)
         marker_changes = [
             (row["from_token"], row["to_token"])
             for row in changes
             if row["reason"] == "reviewed_tibetan_exact_reference_marker"
         ]
-        self.assertEqual(marker_changes, [("Tbrgya", "↑ brgya")])
-        self.assertEqual(result["reviewed_tibetan_exact_changes"], 1)
+        self.assertEqual(
+            marker_changes,
+            [("Tbrgya", "↑ brgya"), ("Tsgrun", "↑ sgruṅ")],
+        )
+        self.assertEqual(result["reviewed_tibetan_exact_changes"], 2)
 
     def test_reviewed_reference_marker_backslash_rows_require_exact_boundary(self) -> None:
         reviewed_text = self.fixture_with_reviewed_lines(
