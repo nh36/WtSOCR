@@ -29194,3 +29194,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 713	218	8560	german_prose_with_translit	/ rje	↓ rje	A	reviewed_tibetan_exact_reference_marker	1	Lex. rje’u / rje rigs (brDa); rje rigs / gtso bo
 890	130	9813	latin_other	/ chos	↑ chos	A	reviewed_tibetan_exact_reference_marker	1	fie rgyal ... chos rig pa dan / chos kyi = pa
 908	113	9955	latin_other	/ rgya	↑ rgya	A	reviewed_tibetan_exact_reference_marker	1	yod bskur bas / rgya ma la = dus „wieder
+927	189	10220	latin_other	/ rgyal	↑ rgyal	A	reviewed_tibetan_exact_reference_marker	1	’gyur na / rgyal po’i rgyal srid ni = ci smos te
+956	32	10444	latin_other	/ nan	↓ naṅ	A	reviewed_tibetan_exact_reference_marker	1	risig zur 'gag = de yaṅ ni / nan gi sa dgra yin
+1067	28	11775	latin_other	/ brgyad	↑ brgyad	A	reviewed_tibetan_exact_reference_marker	1	sa brgyad = 7723 kyi sa / brgyad pa’i sa / ~ /
+1096	33	11937	german_prose_with_translit	/ gtsan	↓ gtsaṅ	A	reviewed_tibetan_exact_reference_marker	1	tshig / gtsan ma (Dagy);gtsani — = pütam pa-
