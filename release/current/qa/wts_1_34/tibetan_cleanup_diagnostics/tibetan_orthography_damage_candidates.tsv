@@ -989,7 +989,7 @@ wts_1_34	748	152	$	dollar_ś	ś	རྗེས་ས་འཚོ་ rjes su 7$/70 
 wts_1_34	748	169	$	dollar_ś	ś	རྗེས་སུ་གཟུང་ rjes $// gzun	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
 wts_1_34	748	188	$	dollar_ś	ś	རྗེས་སུ་ཞུགས་ rjes $// Zugs auch rjes Zugs, pf. zu	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
 wts_1_34	748	208	$	dollar_ś	ś	རྗེས་སུ་གཟུང་ ?76$ su gzun fur. zu Trjes su ’dzin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
-wts_1_34	749	3	$	dollar_ś	ś	རྗེས་སུ་བཟུང་ rjes $// bzuṅ pf. zu Trjes su ’dzin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
+wts_1_34	749	3	$	dollar_ś	ś	རྗེས་སུ་བཟུང་ rjes $// bzuṅ pf. zu ↑ rjes su ’dzin	orthography_scan	medium	review	50	Dollar sign may represent ś in transliteration; sigla are handled separately.
 wts_1_34	749	28	noınmen	dotless_i	noinmen	noınmen hatten, war seine Stimme	orthography_scan	low	review	20	Dotless i is likely OCR damage in transliteration.
 wts_1_34	751	104	Sıkkim	dotless_i	Sikkim	ons Sıkkim.	orthography_scan	low	review	20	Dotless i is likely OCR damage in transliteration.
 wts_1_34	751	125	sınan	dotless_i	sinan	Territorium errichten“ (Liyl 17566); sınan	orthography_scan	low	review	20	Dotless i is likely OCR damage in transliteration.

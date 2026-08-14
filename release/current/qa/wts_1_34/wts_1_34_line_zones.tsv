@@ -73835,7 +73835,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 517	191	6662	german_prose_with_translit			none	1	2	0	0	[zusammendrehen]“ (brDa, ähnl. Dagy);
 517	192	6662	german_prose_with_translit			none	3	1	0	0	gus par bsgrim pa = sambhramah „rück-
 517	193	6662	german_prose_with_translit			none	1	2	0	0	sichtsvolles Verhalten“ (Mvy 6662).
-517	195	6663	headword_line	བསྒྲིམས་	bsgrims	medium	2	2	0	0	བསྒྲིམས་ bsgrims pf. zu Tsgrim festhalten, zu-
+517	195	6663	headword_line	བསྒྲིམས་	bsgrims	medium	2	2	0	0	བསྒྲིམས་ bsgrims pf. zu ↑ sgrim festhalten, zu-
 517	197	6663	german_prose_with_translit			none	1	1	0	0	sammendrehen; achtsam, sorgfältig
 517	198	6663	german_prose_with_translit			none	1	1	0	0	sein, sich konzentrieren; rig pa - vorsichtig
 517	199	6663	other			none	0	0	0	0	sein.
@@ -73874,7 +73874,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 518	29	6666	german_prose_with_translit			none	1	6	0	0	für in eine Richtung, wie in einem Appen-
 518	30	6666	german_prose_with_translit			none	2	1	0	0	dix, zusammengelegt oder zusammenge-
 518	32	6666	latin_other			none	1	0	0	0	rollt“ (brDa).
-518	34	6667	headword_line	བསྒྲག་	bsgrug	medium	2	1	0	0	བསྒྲག་ bsgrug 1110. zu Tsgrug auflesen, aufhe-
+518	34	6667	headword_line	བསྒྲག་	bsgrug	medium	2	1	0	0	བསྒྲག་ bsgrug 1110. zu ↑ sgrug auflesen, aufhe-
 518	35	6667	other			none	0	0	0	0	2;
 518	36	6667	other			none	0	0	0	0	en.
 518	38	6667	german_prose_with_translit			none	3	4	0	0	Lex. sa nas ~~ ’drug ces snaṅ „von der Erde
@@ -100849,7 +100849,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 696	75	8393	german_prose			none	0	1	0	0	1. Immchod,
 696	76	8393	german_prose_with_translit			none	1	1	0	0	2.npr. ein Buddha.
 696	77	8393	german_prose_with_translit			none	1	1	0	0	Lex. mahita (Bhad 256).
-696	79	8394	headword_line	མཆོད་ པའི་གནས་	mchod pa’i	high	2	1	0	0	མཆོད་ པའི་གནས་ mchod pa’i gnas Tmchod gnas.
+696	79	8394	headword_line	མཆོད་ པའི་གནས་	mchod pa’i	high	2	1	0	0	མཆོད་ པའི་གནས་ mchod pa’i gnas ↑ mchod gnas.
 696	80	8395	headword_line	མཆོད་པའི་རྫས་	mchod pa’i rdzas mchod rdzas	high	5	0	0	0	མཆོད་པའི་རྫས་ mchod pa’i rdzas \mchod rdzas.
 696	82	8396	headword_line	མཆོད་དཔོན་	mchod	medium	1	2	0	0	མཆོད་དཔོན་ mchod dpon Verantwortlicher für
 696	83	8396	german_prose			none	0	4	0	0	die Opfergaben und Mandalas.
@@ -101002,7 +101002,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 697	62	8420	german_prose			none	0	2	0	0	für Feigenbaum.
 697	64	8420	german_prose_with_translit			none	2	2	0	0	Lex. yajäänga (Ak 91.22); udumba ra’i sin
 697	65	8420	german_prose_with_translit			none	2	2	0	0	la’an (brDa, ähnl. Dagy).
-697	67	8421	headword_line	མཆོད་སྦྱིན་རིག་བྱེད་	mchod sbyin	medium	3	1	0	0	མཆོད་སྦྱིན་རིག་བྱེད་ mchod sbyin 779 byed Tmchod
+697	67	8421	headword_line	མཆོད་སྦྱིན་རིག་བྱེད་	mchod sbyin	medium	3	1	0	0	མཆོད་སྦྱིན་རིག་བྱེད་ mchod sbyin 779 byed ↑ mchod
 697	69	8421	other			none	0	0	0	0	sbyin 2.
 697	71	8422	headword_line	མཆོད་སྦྱིན་སྲད་བུ་	mchod sbyin	medium	2	1	0	0	མཆོད་སྦྱིན་སྲད་བུ་ mchod sbyin srad bu Brah-
 697	73	8422	other			none	0	0	0	0	manenschnur.
@@ -107136,7 +107136,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 737	82	8778	german_prose_with_translit			none	3	3	0	0	Lex. dbyibs kyi khyad par „eine Form“
 737	83	8778	german_prose_with_translit			none	2	2	0	0	(Dagy); Jons = dbyibs ’jons rin po „ovale
 737	84	8778	german_prose_with_translit			none	1	1	0	0	Form“ (brDa).
-737	86	8779	headword_line	འཇོད་ཚེ་	tshe	high	2	3	0	0	འཇོད་ཚེ་ jod tshe Tisch; vgl. Tsgrog rise, Tcog
+737	86	8779	headword_line	འཇོད་ཚེ་	tshe	high	2	3	0	0	འཇོད་ཚེ་ jod tshe Tisch; vgl. ↑ sgrog rise, Tcog
 737	88	8779	example_tibetan_latin			none	1	1	0	0	tse; vgl. chin. ‡ཛ 7 chuo-tzu.
 737	90	8779	german_prose_with_translit			none	4	2	0	0	Lex. khri’am cog tse lta bu „wie: Thron oder
 737	92	8779	german_prose_with_translit			none	1	1	0	0	Tisch“ (brDa).
@@ -107865,7 +107865,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 741	153	8812	german_prose_with_translit			none	1	1	0	0	ET ®rje’u Kalb.
 741	154	8812	german_prose_with_translit			none	2	4	0	0	rna mo = stor ba bZin du „wie eine Kamelstute, deren Kalb (skt. sävaka) verloren-
 741	156	8812	german_prose_with_translit			none	1	2	0	0	gegangen ist“ (Suv 164,16).
-741	158	8813	headword_line	རྗེའུ་རིགས་	rje’u rigs	high	3	1	0	0	རྗེའུ་རིགས་ rje’u rigs Trje rigs.
+741	158	8813	headword_line	རྗེའུ་རིགས་	rje’u rigs	high	3	1	0	0	རྗེའུ་རིགས་ rje’u rigs ↑ rje rigs.
 741	160	8813	other			none	0	0	0	0	ey
 741	162	8813	german_prose_with_translit			none	1	1	0	0	ER rje’o Edler.
 741	163	8813	german_prose			none	0	3	0	0	Lex. äryah (Mvy 3750).
@@ -108385,7 +108385,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 744	211	8844	german_prose_with_translit			none	4	2	0	0	lha füid kyi bkas ~ nas „nachdem ich mit
 744	212	8844	german_prose			none	0	3	0	0	dem Befehl seiner Majestät entlassen
 744	213	8844	german_prose			none	0	1	0	0	wurde“ (Lokn 124,25).
-744	215	8845	headword_line	རྗེས་སུ་བསྒྱུབ་	su bsgrub	medium	4	2	0	0	རྗེས་སུ་བསྒྱུབ་ rjes su bsgrub fut. zu Trjes su sgrub
+744	215	8845	headword_line	རྗེས་སུ་བསྒྱུབ་	su bsgrub	medium	4	2	0	0	རྗེས་སུ་བསྒྱུབ་ rjes su bsgrub fut. zu ↑ rjes su sgrub
 744	217	8845	german_prose			none	0	1	0	0	erwerben, verwirklichen.
 744	218	8845	latin_other			none	6	0	0	0	dgos pa = pa la nes par sbyar bar bya ste
 744	220	8845	german_prose			none	0	6	0	0	„zum Erwerb des Nötigen ist zu beauftragen“ (Prav 163,22).
@@ -108967,7 +108967,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 748	80	8888	german_prose_with_translit			none	2	1	0	0	Lex. - pa = dei = zin pa „hinterher-
 748	81	8888	latin_other			none	5	0	0	0	gegangen“ (brDa); - pa = phyi bZin du sfieg
 748	82	8888	german_prose_with_translit			none	1	1	0	0	pa „folgen“ (Dagy).
-748	84	8889	headword_line	རྫཾས་སུ་འབྲང་	su	medium	2	1	0	0	རྫཾས་སུ་འབྲང་ rjes su bren Trjes su ’bran.
+748	84	8889	headword_line	རྫཾས་སུ་འབྲང་	su	medium	2	1	0	0	རྫཾས་སུ་འབྲང་ rjes su bren ↑ rjes su ’bran.
 748	86	8889	example_tibetan_latin	རྗེས་ས་འབླེལ་		none	1	1	0	0	རྗེས་ས་འབླེལ་ 77༩5 su ’brel auch rjes 'brel gebun-
 748	88	8889	german_prose_with_translit			none	1	1	0	0	den, verbunden, bedingt, ab-
 748	89	8889	german_prose_with_translit			none	2	1	0	0	hängig sein, an etw. hängen.
@@ -109068,7 +109068,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 748	221	8896	german_prose_with_translit			none	2	3	0	0	pa rnams - Zin „nimm auch du dich der
 748	222	8896	german_prose_with_translit			none	1	4	0	0	Schüler des Dharma an“ (Mil 26,13).
 749	1	8897	headword_line	རྗེས་སུ་བཟུང་	su bzuṅ	high	2	0	0	0	རྗེས་སུ་བཟུང་ rjes su bzuṅ
-749	3	8898	headword_line	རྗེས་སུ་བཟུང་	bzuṅ	high	3	2	0	0	རྗེས་སུ་བཟུང་ rjes $// bzuṅ pf. zu Trjes su ’dzin
+749	3	8898	headword_line	རྗེས་སུ་བཟུང་	bzuṅ	high	3	2	0	0	རྗེས་སུ་བཟུང་ rjes $// bzuṅ pf. zu ↑ rjes su ’dzin
 749	5	8898	other			none	0	0	0	0	gewogen sein, sich jmds. anneh-
 749	6	8898	other			none	0	0	0	0	men, aufrecht erhalten, versorgen; rjes bzun
 749	7	8898	german_prose			none	0	2	0	0	Gunst, Beschützen.
@@ -109168,7 +109168,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 749	129	8906	german_prose_with_translit			none	4	1	0	0	Lex. lag len de’i rjes su gso ru bZag pa lta bu
 749	130	8906	german_prose			none	0	3	0	0	„wie; nach einer Tätigkeit unverändert
 749	132	8906	latin_other			none	1	0	0	0	lassen“ (brDa).
-749	134	8907	headword_line	རྗེས་བསླབས་	bslabs	medium	2	2	0	0	རྗེས་བསླབས་ rjes bslabs pf. zu Trjes su slob
+749	134	8907	headword_line	རྗེས་བསླབས་	bslabs	medium	2	2	0	0	རྗེས་བསླབས་ rjes bslabs pf. zu ↑ rjes su slob
 749	136	8907	other			none	0	0	0	0	unterrichtet werden.
 749	138	8907	german_prose_with_translit			none	2	1	0	0	ran byun rnams kyi - pa (metr.) „nach [der
 749	139	8907	german_prose_with_translit			none	1	4	0	0	Lehre] der von selbst entstandenen [Bud-
