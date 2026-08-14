@@ -29179,3 +29179,8 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 746	190	8871	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་འབུན་ 7765 su 'thun Trjes su mthun.
 747	171	8882	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་དཔོག་ 1705 su dpog pf. Trjes su dpags fur.
 748	208	8896	example_tibetan_latin	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	རྗེས་སུ་གཟུང་ ?76$ su gzun fur. zu Trjes su ’dzin
+109	199	1314	german_prose_with_translit	/ lha	↓ lha	A	reviewed_tibetan_exact_reference_marker	1	Lex. sgog ni / rgya sgog / lha min khrag / —
+109	199	1314	german_prose_with_translit	/ rgya	↓ rgya	A	reviewed_tibetan_exact_reference_marker	1	Lex. sgog ni / rgya sgog / lha min khrag / —
+330	132	4512	german_prose_with_translit	/ nan	↓ naṅ	A	reviewed_tibetan_exact_reference_marker	1	phyi’i °o (7, so) ka Sor / nan gi srid = „die
+338	33	4582	latin_other	/ rje	↓ rje	A	reviewed_tibetan_exact_reference_marker	1	= na’an / rje gfia’ khri bisan po yiin par don
+464	94	6007	german_prose_with_translit	/ ran	↓ raṅ	A	reviewed_tibetan_exact_reference_marker	1	Lex. sems rgya ’byams su g.yen ba dan / ran

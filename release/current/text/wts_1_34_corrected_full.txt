@@ -19336,7 +19336,7 @@ dkyil-’khor-than (Neb 406).
 
 ཀླ་ཀློའི་སྤོས་ kla klo’i spos Bez. für Knoblauch.
 
-Lex. sgog ni / rgya sgog / lha min khrag / —
+Lex. sgog ni ↓ rgya sgog ↓ lha min khrag / —
 „Knoblauch [heißt] China-Knoblauch, Blut
 der Asuras und Parfüm der Barbaren“ (gSo
 218,1); sgog pa’i min (brDa).
@@ -63218,7 +63218,7 @@ befreit“ (Lokn 104,4); tsha skyur chan dan
 . mkhris pa rab in = par ’gyur (metr.)
 „Scharfes, Saures und Alkoholisches
 [behebt] Störungen der Galle“ (Yś 93a);
-phyi’i °o (7, so) ka Sor / nan gi srid = „die
+phyi’i °o (7, so) ka Sor ↓ naṅ gi srid = „die
 Wachsamkeit nach außen ging verloren, die
 Herrschaft im Inneren war chaotisch“ (Nel
 4a7); de yi mtshan mo rmi lam thams cad ~
@@ -64689,7 +64689,7 @@ ron cig ... mi rgyud ~ grol ba dan (metr.)
 [d. h. entstanden ist]“ (gZi-Sn 64,39).
 2. auch - na’an, - yan wie dem auch sei, je-
 denfalls.
-= na’an / rje gfia’ khri bisan po yiin par don
+= na’an ↓ rje gfia’ khri bisan po yiin par don
 mthun no „wie dem auch sei, [die Quellen]
 stimmen darin überein, daß der Herrscher
 gNa’-khri btsan-po war“ (Glr 46,18); ~ yari
@@ -89663,7 +89663,7 @@ chun ma (Dagy).
 རྒྱ་ཡན་ rgya yan umherschweifend, abgelenkt,
 träumend.
 
-Lex. sems rgya ’byams su g.yen ba dan / ran
+Lex. sems rgya ’byams su g.yen ba dan ↓ raṅ
 ’gar yan pa „in die Weite schweifender
 Geist und ziellos umherwandernd“ (Dagy);
 > pa = don med ’khyams pa „sinnloses Um-
