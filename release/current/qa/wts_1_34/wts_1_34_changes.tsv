@@ -29263,3 +29263,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1175	97	12612	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. zla ba bcu 277/5 lo yi miñ „Bez. für das
 1186	41	12705	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	güis re re daṅ lo yi miñ daṅ dpyid ka dbyar
 1196	68	12752	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	pa rañ gi gos dri ma can bskon „die Figur
+132	127	1669	tibetan_only	Tbkag	↑ bkag	A	reviewed_tibetan_exact_reference_marker	1	བཀགས་ bRags Tbkag.
+437	89	5740	tibetan_only	Tbkan	↑ bkan	A	reviewed_tibetan_exact_reference_marker	1	འགེངས་ ’gens auch ’gen pf. Tbkan fut. Tagan.
+438	72	5743	tibetan_only	Tmgo	↑ mgo	A	reviewed_tibetan_exact_reference_marker	1	འགོ་འདོན་ 20 ’don Tmgo ’don.
+512	106	6611	example_tibetan_latin	Trgyug	↑ rgyug	A	reviewed_tibetan_exact_reference_marker	1	བརྒྱུག་ 777///9 fut. zu Trgyug laufen.

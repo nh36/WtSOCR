@@ -59410,7 +59410,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 732	36	3661	german_prose			none	0	3	0	0	2. Bez. für rote Seerose.
 732	37	3661	german_prose_with_translit			none	3	1	0	0	Lex. utpal dnar po la'an (brDa).
 732	38	3662	headword_line	དཔལ་གྱི་ལོ་མ་	dpal gyi lo ma	medium	4	1	0	0	དཔལ་གྱི་ལོ་མ་ dpal gyi lo ma Tkäasina ri.
-732	39	3663	headword_line	དཔལ་གྱི་ལྷ་མོ་	dpal gyi lha	high	3	1	0	0	དཔལ་གྱི་ལྷ་མོ་ dpal gyi lha mo Tdpal
+732	39	3663	headword_line	དཔལ་གྱི་ལྷ་མོ་	dpal gyi lha	high	3	1	0	0	དཔལ་གྱི་ལྷ་མོ་ dpal gyi lha mo ↑ dpal
 732	40	3664	headword_line	དཔལ་རྒྱས་	dpal rgyas	high	2	0	0	0	དཔལ་རྒྱས་ dpal rgyas
 732	41	3665	headword_line	དཔལ་དགའ་	dpal dga’	high	2	4	0	0	དཔལ་དགའ་ dpal dga’ Bez. für eine blaue Sec-
 732	42	3665	other			none	0	0	0	0	rose.
@@ -59523,7 +59523,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 733	69	3686	german_prose_with_translit			none	3	1	0	0	nag po bstan bsrun yons rdzogs npr. eine
 733	70	3686	german_prose_with_translit			none	1	3	0	0	Erscheinungsform des Mahäkäla (Neb 66).
 734	1	3687	headword_line	དཔལ་ལྡན་	dpal ldan	medium	2	0	0	0	དཔལ་ལྡན་ dpal ldan
-734	2	3688	headword_line	དཔལ་ལྡན་	dpal ldan	medium	4	3	0	0	དཔལ་ལྡན་ dpal ldan Kurzf. für Tdpal dan ldan
+734	2	3688	headword_line	དཔལ་ལྡན་	dpal ldan	medium	4	3	0	0	དཔལ་ལྡན་ dpal ldan Kurzf. für ↑ dpal dan ldan
 734	3	3688	latin_other			none	1	0	0	0	pa.
 734	4	3688	german_prose			none	0	2	0	0	1, herrlich, glorreich, edel, prächtig.
 734	5	3688	german_prose_with_translit			none	1	2	0	0	"> nan 'gro rnams las rin (metr.) ""mit Herr-"
@@ -59762,7 +59762,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 737	5	3714	german_prose_with_translit			none	1	2	0	0	Lex. sribhadrah (Mvy 3352).
 737	6	3715	headword_line	དཔལ་འོད་	dpal	medium	2	1	0	0	དཔལ་འོད་ dpal od npr. ein Buddha.
 737	7	3715	german_prose_with_translit			none	2	1	0	0	Lex. sriprabha (Bhad 382).
-737	8	3716	headword_line	དཔལ་ཡོན་	dpal	medium	2	2	0	0	དཔལ་ཡོན་ dpal yon Tdpal gi yon tan Glück,
+737	8	3716	headword_line	དཔལ་ཡོན་	dpal	medium	2	2	0	0	དཔལ་ཡོན་ dpal yon ↑ dpal gi yon tan Glück,
 737	9	3716	german_prose_with_translit			none	2	3	0	0	Glanz, Pracht; — ldan pa prächtig,
 737	10	3716	german_prose			none	0	2	0	0	großartig, glücklich.
 737	11	3716	german_prose_with_translit			none	1	3	0	0	"Lex. bkra sis dpal yon ""Glück, Glanz"""
@@ -60824,7 +60824,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 750	11	3807	latin_other			none	5	0	0	0	"dbus nas ni —r 'phen ba (metr.) ""diejenigen,"
 750	12	3807	german_prose			none	0	7	0	0	die von der [Tal]mitte auf den Bauch [des
 750	13	3807	german_prose			none	0	2	0	0	"Yaks] schießen"" (PT1287 414)."
-750	14	3807	tibetan_only	དཔོག་		none	0	3	0	0	དཔོག་ dpog pf. Tdpags fut. Tdpag abwägen, er-
+750	14	3807	tibetan_only	དཔོག་		none	0	3	0	0	དཔོག་ dpog pf. ↑ dpags fut. ↑ dpag abwägen, er-
 750	15	3807	other			none	0	0	0	0	messen, aufwiegen.
 750	16	3807	german_prose_with_translit			none	5	1	0	0	rdzogs pa chen po' gtin mtha' ga la spogs (r.
 750	17	3807	german_prose			none	0	3	0	0	"~~) (metr.) ""wie könnte man das Ausmaß"
@@ -61490,7 +61490,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 758	3	3841	german_prose_with_translit			none	1	1	0	0	tersuchung durch brennen, schneiden und
 758	4	3841	german_prose_with_translit			none	1	1	0	0	"pulverisieren"" (brDa)."
 758	5	3842	headword_line	དཔྱའ་	dpya' dpya	high	2	0	0	0	དཔྱའ་ dpya' ↑ dpya.
-758	6	3843	headword_line	དཔྱས་	dpyas	medium	2	1	0	0	དཔྱས་ dpyas pf. zu T'dpya tadeln, schelten.
+758	6	3843	headword_line	དཔྱས་	dpyas	medium	2	1	0	0	དཔྱས་ dpyas pf. zu ↑ 'dpya tadeln, schelten.
 758	7	3843	german_prose_with_translit			none	3	1	0	0	"Lex. — pa = 'phya smod byas pa ""getadelt, ge-"
 758	8	3843	german_prose			none	0	1	0	0	"scholten"" (Dagy)."
 758	9	3844	headword_line	དཔྱས་བཏགས་	dpyas btags Anschuldigung	medium	3	1	0	0	དཔྱས་བཏགས་ dpyas btags Anschuldigung, Be-
@@ -61705,7 +61705,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 760	55	3869	headword_line	དཔྱིད་ས་	dpyid sa	medium	2	1	0	0	དཔྱིད་ས་ dpyid sa Sommerwohnsitz.
 760	56	3869	german_prose			none	0	3	0	0	"Lex. graismikävasab ""Sommerwohnsitz"""
 760	57	3869	german_prose			none	0	1	0	0	(Mvy 5625).
-760	58	3870	headword_line	དཔྱིད་སླ་ར་བ་	dpyid	medium	5	0	0	0	དཔྱིད་སླ་ར་བ་ dpyid slara ba Tdpyid zla ra ba.
+760	58	3870	headword_line	དཔྱིད་སླ་ར་བ་	dpyid	medium	5	0	0	0	དཔྱིད་སླ་ར་བ་ dpyid slara ba ↑ dpyid zla ra ba.
 760	59	3871	headword_line	དཔྱིས་ཕྱིན་པ་	dpyis phyin pa	high	3	0	0	0	དཔྱིས་ཕྱིན་པ་ dpyis phyin pa vollendet, beendet,
 760	60	3871	german_prose			none	0	1	0	0	vollständig, perfekt.
 760	61	3871	german_prose_with_translit			none	4	1	0	0	"Lex. mthar phyin pa ""vollendet"" (brDa,"
@@ -61736,7 +61736,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 761	8	3875	german_prose_with_translit			none	4	2	0	0	"Lex. thur du — yod lta bu'am — Sig ""wie: oben"
 761	9	3875	german_prose_with_translit			none	3	1	0	0	"aufgehängt; oder: häng es auf!"" (brDa);"
 761	10	3875	german_prose_with_translit			none	2	1	0	0	bskul tshig (Dagy).
-761	11	3876	headword_line	དཔྱོད་	dpyod	medium	2	2	0	0	དཔྱོད་ dpyod pf. und fut. Tdpyad prüfen, un-
+761	11	3876	headword_line	དཔྱོད་	dpyod	medium	2	2	0	0	དཔྱོད་ dpyod pf. und fut. ↑ dpyad prüfen, un-
 761	12	3876	german_prose_with_translit			none	1	1	0	0	tersuchen, beurteilen, entscheiden, sich
 761	13	3876	german_prose			none	0	1	0	0	orientieren.
 761	14	3876	german_prose_with_translit			none	6	1	0	0	nam pa Ina ste / rtogs pa dan / rjes su dran
@@ -66024,7 +66024,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 812	61	4154	latin_other			none	1	0	0	0	"— sbag 2 rin dirul sran 6 ""zwei Packungen"
 812	62	4154	german_prose			none	0	3	0	0	"spyan-""bru[-Tee] zum Preis von sechs sran"""
 812	63	4154	other			none	0	0	0	0	(MTH3/3/39 9).
-812	64	4155	headword_line	སྨན་མ་	spyan ma Tspyan	high	3	0	0	0	སྨན་མ་ spyan ma Tspyan
+812	64	4155	headword_line	སྨན་མ་	spyan ma Tspyan	high	3	0	0	0	སྨན་མ་ spyan ma ↑ spyan
 812	65	4156	headword_line	སྨན་མེ་བཟང་	spyan	medium	2	2	0	0	སྨན་མེ་བཟང་ spyan mi bzaṅ npr. eine der
 812	66	4157	headword_line	༦	Mahārāja-Gottheiten	high	1	0	0	0	༦ vier Mahārāja-Gottheiten, skt.
 812	67	4157	german_prose			none	0	1	0	0	Virüpäksa (LC 1494).
@@ -70010,7 +70010,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 859	41	4424	latin_other			none	5	0	0	0	gnod pa'i min); sems 'dod pa thun thun
 859	42	4424	latin_other			none	4	0	0	0	"(brDa); khon khro za sla ba ""leicht reizbar"""
 859	43	4424	german_prose			none	0	1	0	0	(Dagy).
-859	44	4425	headword_line	སྤྲོ་བདེ་ཁང་གསར་	bde khaṅ	high	4	0	0	0	སྤྲོ་བདེ་ཁང་གསར་ spro bde khaṅ gsar Tspro khani
+859	44	4425	headword_line	སྤྲོ་བདེ་ཁང་གསར་	bde khaṅ	high	4	0	0	0	སྤྲོ་བདེ་ཁང་གསར་ spro bde khaṅ gsar ↑ spro khani
 859	45	4425	german_prose_with_translit			none	1	1	0	0	bde chen lcog.
 859	46	4426	headword_line	སྤྲོ་སྣང་	snaṅ	high	1	1	0	0	སྤྲོ་སྣང་ spro snaṅ Freude.
 859	47	4426	german_prose_with_translit			none	2	4	0	0	"Lex. dga’ snani che ba ""große Freude"" (Dagy)."

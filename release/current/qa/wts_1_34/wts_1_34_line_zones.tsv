@@ -17625,7 +17625,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 132	122	1669	headword_line	བཀག་འདོམས་	bkag	medium	2	1	0	0	བཀག་འདོམས་ bkag ’doms Widerlegung, Sper-
 132	124	1669	latin_other			none	1	0	0	0	rung.
 132	126	1669	german_prose			none	0	3	0	0	Lex. wie bei fbkag ’gog (Dagy).
-132	127	1669	tibetan_only	བཀགས་		none	0	1	0	0	བཀགས་ bRags Tbkag.
+132	127	1669	tibetan_only	བཀགས་		none	0	1	0	0	བཀགས་ bRags ↑ bkag.
 132	128	1670	headword_line	བཀགས་བསྐྱིལ་བྱེད་	bkags bskyil byed gewaltsam	high	4	0	0	0	བཀགས་བསྐྱིལ་བྱེད་ bkags bskyil byed gewaltsam
 132	130	1670	other			none	0	0	0	0	versperren.
 132	131	1670	latin_other			none	3	0	0	0	bsam glin gra beu geig nas bkags dkyil (r.
@@ -62146,7 +62146,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 437	85	5740	german_prose_with_translit			none	2	3	0	0	des ... ran gi gzugs brüan ~ pa Zig bris te „er
 437	86	5740	german_prose			none	0	4	0	0	zeichnete ein Bildnis seiner selbst als Er-
 437	87	5740	german_prose_with_translit			none	2	1	0	0	hängter“ (K1 kha 283a7).
-437	89	5740	tibetan_only	འགེངས་		none	0	3	0	0	འགེངས་ ’gens auch ’gen pf. Tbkan fut. Tagan.
+437	89	5740	tibetan_only	འགེངས་		none	0	3	0	0	འགེངས་ ’gens auch ’gen pf. ↑ bkan fut. Tagan.
 437	91	5740	german_prose			none	0	1	0	0	1. füllen.
 437	93	5740	latin_other			none	5	0	0	0	na bun ni lha ’i sbubs / ’gen gan ni kun la
 437	94	5740	german_prose			none	0	10	0	0	dpen (metr.) „der Nebel, der ist der göttliche Hohlraum; was ihn füllt, das nützt al-
@@ -62288,7 +62288,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 438	67	5743	latin_other			none	2	0	0	0	mchan-Siegel angebracht“ (MTH3/5/28 4).
 438	69	5743	latin_other			none	1	0	0	0	RATEN go stod Anfang, zuerst.
 438	70	5743	german_prose_with_translit			none	4	2	0	0	Lex. thog ma’am daṅ po (Dagy).
-438	72	5743	tibetan_only	འགོ་འདོན་		none	0	1	0	0	འགོ་འདོན་ 20 ’don Tmgo ’don.
+438	72	5743	tibetan_only	འགོ་འདོན་		none	0	1	0	0	འགོ་འདོན་ 20 ’don ↑ mgo ’don.
 438	74	5743	example_tibetan_latin	འགོ་ནན་		none	1	3	0	0	འགོ་ནན་ 90 nan auch mgo nan Oberstes, Er-
 438	75	5743	latin_other			none	1	0	0	0	stes, Anfang.
 438	77	5743	german_prose_with_translit			none	5	1	0	0	Lex. mgo nan ni thog ma (Liś 5,16); ’go pa
@@ -72948,7 +72948,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 512	101	6611	german_prose_with_translit			none	1	4	0	0	mkhan „jmd., der das Aufzureihende, eine
 512	102	6611	german_prose_with_translit			none	1	3	0	0	Kette usw., aufreiht“ (brDa, ähnl. Dagy).
 512	104	6611	tibetan_only	བརྒྱག་		none	0	0	0	0	བརྒྱག་ breyug
-512	106	6611	example_tibetan_latin	བརྒྱུག་		none	1	1	0	0	བརྒྱུག་ 777///9 fut. zu Trgyug laufen.
+512	106	6611	example_tibetan_latin	བརྒྱུག་		none	1	1	0	0	བརྒྱུག་ 777///9 fut. zu ↑ rgyug laufen.
 512	108	6611	german_prose_with_translit			none	4	1	0	0	Lex. - bya = myur du rkan pas - par bya
 512	109	6611	german_prose			none	0	3	0	0	„schnell mit dem Fuß laufen werden“
 512	111	6611	german_prose_with_translit			none	1	2	0	0	(brDa, ähnl. Dagy).

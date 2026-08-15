@@ -33632,7 +33632,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 408	69	2252	german_prose_with_translit			none	2	4	0	0	"la'an ""der 4. hor Monat"" (brDa, ähnl. Dagy)."
 408	70	2253	headword_line	དབྱར་ས་	dbyar sa	medium	3	3	0	0	དབྱར་ས་ dbyar sa Wohnsitz fūr die Regenzeit.
 408	71	2253	german_prose			none	0	3	0	0	Lex. varsikävasah (Mvy 5626).
-408	72	2254	headword_line	དབྱར་སླ་	dbyar	medium	2	0	0	0	དབྱར་སླ་ dbyar sla Tdbyar zla.
+408	72	2254	headword_line	དབྱར་སླ་	dbyar	medium	2	0	0	0	དབྱར་སླ་ dbyar sla ↑ dbyar zla.
 408	73	2255	headword_line	དབྱརད་	dbyard dbyar	high	2	0	0	0	དབྱརད་ dbyard ↑ dbyar.
 408	74	2256	headword_line	དབྱལ་	dbyal	medium	2	3	0	0	དབྱལ་ dbyal auch dbyal mo Dame; Ehefrau.
 408	75	2256	latin_other			none	3	0	0	0	bso nams kyi stobs kyis ... stans — ... bla na
@@ -33710,7 +33710,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 409	70	2266	german_prose_with_translit			none	2	3	0	0	"Lex. sin — dar rtswa — ""der Baum dbyi mon:"
 409	71	2266	german_prose_with_translit			none	3	4	0	0	"und die Pflanze dbyi mon"" (brDa); Sin dan"
 409	72	2266	german_prose_with_translit			none	2	2	0	0	rtswa Zig la snari (Dagy).
-409	73	2267	headword_line	དབྱི་མོང་	dbyi	medium	2	0	0	0	དབྱི་མོང་ ?dbyi moṅ Tdbyi mo.
+409	73	2267	headword_line	དབྱི་མོང་	dbyi	medium	2	0	0	0	དབྱི་མོང་ ?dbyi moṅ ↑ dbyi mo.
 409	74	2268	headword_line	དབྱི་ཚབ་	dbyi tsbab	high	2	2	0	0	དབྱི་ཚབ་ dbyi tsbab npr. ein Minister.
 409	75	2268	latin_other			none	7	0	0	0	dba's kyi pho bo phanis to re — kyis / zin po
 409	76	2268	latin_other			none	5	0	0	0	"rje la ... gsol nas ""Phans to-re dbyi-tshab,"

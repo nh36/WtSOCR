@@ -6607,3 +6607,13 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1106	29	5992	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"keten in 'Phyin-phu"" (sBa 63,15); zañs kyi"
 1124	41	6134	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"fort das Leben"" (Gś-H 62d); ñon moñs chom"
 760	71	3873	headword_line	Tdpyans	↑ dpyaṅs	A	reviewed_tibetan_exact_reference_marker	1	དཔྱོང་ dpyoṅ pf. Tdpyans fur. ↑ dpyaṅ imp.
+732	39	3663	headword_line	Tdpal	↑ dpal	A	reviewed_tibetan_exact_reference_marker	1	དཔལ་གྱི་ལྷ་མོ་ dpal gyi lha mo Tdpal
+734	2	3688	headword_line	Tdpal	↑ dpal	A	reviewed_tibetan_exact_reference_marker	1	དཔལ་ལྡན་ dpal ldan Kurzf. für Tdpal dan ldan
+737	8	3716	headword_line	Tdpal	↑ dpal	A	reviewed_tibetan_exact_reference_marker	1	དཔལ་ཡོན་ dpal yon Tdpal gi yon tan Glück,
+750	14	3807	tibetan_only	Tdpag	↑ dpag	A	reviewed_tibetan_exact_reference_marker	1	དཔོག་ dpog pf. Tdpags fut. Tdpag abwägen, er-
+750	14	3807	tibetan_only	Tdpags	↑ dpags	A	reviewed_tibetan_exact_reference_marker	1	དཔོག་ dpog pf. Tdpags fut. Tdpag abwägen, er-
+758	6	3843	headword_line	T'dpya	↑ 'dpya	A	reviewed_tibetan_exact_reference_marker	1	དཔྱས་ dpyas pf. zu T'dpya tadeln, schelten.
+760	58	3870	headword_line	Tdpyid	↑ dpyid	A	reviewed_tibetan_exact_reference_marker	1	དཔྱིད་སླ་ར་བ་ dpyid slara ba Tdpyid zla ra ba.
+761	11	3876	headword_line	Tdpyad	↑ dpyad	A	reviewed_tibetan_exact_reference_marker	1	དཔྱོད་ dpyod pf. und fut. Tdpyad prüfen, un-
+812	64	4155	headword_line	Tspyan	↑ spyan	A	reviewed_tibetan_exact_reference_marker	1	སྨན་མ་ spyan ma Tspyan
+859	44	4425	headword_line	Tspro	↑ spro	A	reviewed_tibetan_exact_reference_marker	1	སྤྲོ་བདེ་ཁང་གསར་ spro bde khaṅ gsar Tspro khani
