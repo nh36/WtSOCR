@@ -42,6 +42,56 @@ SANSKRIT_CONTEXT_RE = re.compile(
 )
 SIGLUM_CONTEXT_RE = re.compile(r"(?:\(|\)|,|;|:|\bms\.|\bmss\.|\bsource\b|\bvol\.|\bp\.|\bfol\.|\bDagy\b|\bToh\b|\bMvy\b|\bLex\.)", re.IGNORECASE)
 SIGLUM_TOKEN_RE = re.compile(r"^[A-ZĀŚṢṬḌṆa-zāśṣṭḍṇ]{1,7}\$?[A-ZŚṢṬḌṆa-zāśṣṭḍṇ]{0,4}$")
+DOLLAR_LATIN_TOKEN_RE = re.compile(
+    r"[A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+"
+    r"(?:['’.-][A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňß]+)*"
+)
+DOLLAR_SACUTE_ARTIFACT_RE = re.compile(r"(?:sś|śz|śś|ṣś)", re.IGNORECASE)
+DOLLAR_ALL_CAPS_RE = re.compile(r"^[A-ZÄÖÜŚṢṬḌṆĀĪŪṄÑŹČŽŠŃǸŇ]{2,}$")
+DOLLAR_ROMAN_NUMERAL_RE = re.compile(r"^(?=[ivxlcdmIVXLCDM]+$)[IVXLCDMivxlcdm]+$")
+DOLLAR_GERMAN_UMLAUT_RE = re.compile(r"[ÄÖÜäöüß]")
+DOLLAR_GERMAN_WORD_SUFFIXES = ("ung", "heit", "keit", "lich", "isch", "chen")
+DOLLAR_GERMAN_HINT_WORDS = {
+    "als",
+    "auch",
+    "da",
+    "das",
+    "dem",
+    "den",
+    "der",
+    "des",
+    "die",
+    "ein",
+    "eine",
+    "einer",
+    "fur",
+    "für",
+    "im",
+    "indien",
+    "ist",
+    "mit",
+    "nach",
+    "nicht",
+    "oder",
+    "seite",
+    "sich",
+    "siehe",
+    "sind",
+    "text",
+    "tibet",
+    "und",
+    "vgl",
+    "von",
+    "war",
+    "werden",
+    "wird",
+    "zu",
+}
+DOLLAR_TIBETAN_SIGNATURE_RE = re.compile(
+    r"(?:kh|tsh|ts|ph|th|dz|rdz|rgy|bzh|gz|mkh|dng|gny|gñ|mng|mṅ|lh|ṅ|ñ|"
+    r"ś(?:a|e|i|o|u)|bś|gś|dś|mś)",
+    re.IGNORECASE,
+)
 TIBETAN_SCRIPT_NG_WITNESS_FORMS = {
     "གང": "gaṅ",
     "དང": "daṅ",
@@ -235,6 +285,249 @@ def classify_siglum_token(token: str, context: str, registry: dict[str, list[Sig
         "intro_line_ref": intro_line_ref,
         "status": status,
         "suggested_action": action,
+    }
+
+
+def dollar_to_sacute_preserve_case(token: str) -> str:
+    if "$" not in token:
+        return token
+    if token == "$":
+        return "ś"
+    if token.isupper():
+        return token.replace("$", "Ś")
+    if token[:1] == "$" and len(token) > 1 and token[1:].isupper():
+        return token.replace("$", "Ś")
+    return token.replace("$", "ś")
+
+
+def token_upper_ratio(token: str) -> float:
+    letters = [ch for ch in token if ch.isalpha()]
+    if not letters:
+        return 0.0
+    return sum(ch.isupper() for ch in letters) / len(letters)
+
+
+def dollar_part_is_tibetan_mixed_caps_shape(part: str) -> bool:
+    if not part or not any(ch.islower() for ch in part):
+        return False
+    if part[0].isupper() and any(ch.islower() for ch in part[1:]):
+        return True
+    return not any(ch.isupper() for ch in part)
+
+
+def token_is_titlecase_or_lower_compound_shape(token: str) -> bool:
+    parts = [part for part in re.split(r"[-'’.]", token) if part]
+    if not parts:
+        return False
+    return all(dollar_part_is_tibetan_mixed_caps_shape(part) for part in parts)
+
+
+def token_is_safe_dollar_to_sacute(src: str, dst: str) -> bool:
+    if "$" not in src or not any(ch.isalpha() for ch in src):
+        return False
+    expected = dollar_to_sacute_preserve_case(src)
+    if dst != expected or dst == src:
+        return False
+    if DOLLAR_SACUTE_ARTIFACT_RE.search(dst):
+        return False
+    for idx, ch in enumerate(src):
+        if ch != "$":
+            continue
+        left = dst[idx - 1] if idx > 0 else ""
+        right = dst[idx + 1] if idx + 1 < len(dst) else ""
+        if left.lower() in {"ś", "ṣ", "z", "ź", "ž"} or right.lower() in {
+            "ś",
+            "ṣ",
+            "z",
+            "ź",
+            "ž",
+        }:
+            return False
+    return True
+
+
+def token_has_non_sacute_hard_marker(token: str) -> bool:
+    return bool(re.search(r"[ṅñṭḍṇṣḥṛḷṃṁāīū]", token, re.IGNORECASE))
+
+
+def token_has_translit_cue(token: str) -> bool:
+    return bool(TIBETAN_CUE_RE.search(token) or STRONG_TIBETAN_CUE_RE.search(token))
+
+
+def token_has_distinctive_tibetan_signature(token: str) -> bool:
+    return bool(DOLLAR_TIBETAN_SIGNATURE_RE.search(dollar_to_sacute_preserve_case(token)))
+
+
+def token_is_german_like_for_dollar(token: str) -> bool:
+    folded = dollar_to_sacute_preserve_case(token).lower()
+    folded = folded.strip(".,;:()[]{}<>\"“”")
+    ascii_folded = (
+        folded.replace("ś", "s")
+        .replace("ṣ", "s")
+        .replace("ṅ", "n")
+        .replace("ñ", "n")
+        .replace("ā", "a")
+        .replace("ī", "i")
+        .replace("ū", "u")
+    )
+    if DOLLAR_GERMAN_UMLAUT_RE.search(folded):
+        return True
+    if ascii_folded in DOLLAR_GERMAN_HINT_WORDS:
+        return True
+    return any(ascii_folded.endswith(suffix) for suffix in DOLLAR_GERMAN_WORD_SUFFIXES)
+
+
+def token_is_relaxed_dollar_translit_shape(token: str) -> bool:
+    dst = dollar_to_sacute_preserve_case(token)
+    if "$" in dst or not DOLLAR_LATIN_TOKEN_RE.fullmatch(dst):
+        return False
+    if DOLLAR_ROMAN_NUMERAL_RE.fullmatch(token):
+        return False
+    if DOLLAR_ALL_CAPS_RE.fullmatch(dst):
+        return False
+    if not token_is_titlecase_or_lower_compound_shape(dst):
+        return False
+    if token_is_german_like_for_dollar(token) and not token_has_non_sacute_hard_marker(dst):
+        return False
+    return True
+
+
+def dollar_siglum_blocker(clean: str, context: str, registry: dict[str, list[SiglumEntry]]) -> bool:
+    key = siglum_key(clean)
+    entries = registry.get(key, [])
+    if entries and registered_siglum_context_ok(clean, context, entries):
+        return True
+    if SIGLUM_CONTEXT_RE.search(context) or token_upper_ratio(clean) >= 0.45:
+        return looks_like_unregistered_siglum(clean, context)
+    return False
+
+
+def dollar_block(
+    token: str,
+    proposed: str,
+    reason: str,
+    action: str,
+    *,
+    confidence: str = "low",
+    evidence: str = "guarded_dollar_scan",
+    score: str = "0",
+    explanation: str = "Blocked guarded dollar-to-ś candidate; exact correction requires stronger Tibetan evidence.",
+) -> dict[str, str]:
+    return {
+        "candidate_family": "guarded_dollar_to_sacute",
+        "proposed_target": proposed or dollar_to_sacute_preserve_case(token),
+        "evidence": evidence,
+        "confidence": confidence,
+        "suggested_action": action,
+        "block_reason": reason,
+        "score": score,
+        "score_explanation": explanation,
+    }
+
+
+def classify_dollar_sacute_token(
+    token: str,
+    context: str,
+    registry: dict[str, list[SiglumEntry]],
+) -> dict[str, str] | None:
+    clean = stripped_token(token)
+    if not clean or "$" not in clean:
+        return None
+    proposed = dollar_to_sacute_preserve_case(clean)
+    if clean == "$" or any(ch.isdigit() for ch in clean) or not any(ch.isalpha() for ch in clean):
+        return dollar_block(
+            clean,
+            proposed,
+            "artifact_or_numeric_noise",
+            "defer",
+            explanation="Dollar token lacks a clean alphabetic Tibetan-transliteration shape.",
+        )
+    if dollar_siglum_blocker(clean, context, registry):
+        return dollar_block(
+            clean,
+            proposed,
+            "registered_or_possible_siglum",
+            "defer_to_sigla_policy",
+            confidence="policy",
+            evidence="sigla_registry_or_shape",
+            explanation="Dollar token has registered or likely siglum shape; handle in the sigla policy queue.",
+        )
+    if not token_is_safe_dollar_to_sacute(clean, proposed):
+        return dollar_block(
+            clean,
+            proposed,
+            "unsafe_neighbor_or_shape",
+            "defer",
+            explanation="The proposed ś would create an unsafe adjacent-sibilant or non-changing shape.",
+        )
+    if not token_is_relaxed_dollar_translit_shape(clean):
+        return dollar_block(
+            clean,
+            proposed,
+            "non_transliteration_shape",
+            "defer",
+            score="10",
+            explanation="Dollar token does not match the conservative Tibetan transliteration token shape.",
+        )
+
+    has_tibetan_script = bool(TIBETAN_SCRIPT_RE.search(context))
+    strong_context = bool(STRONG_TIBETAN_CUE_RE.search(context))
+    context_is_tibetan = is_tibetan_context(context)
+    token_has_marker = (
+        token_has_non_sacute_hard_marker(proposed)
+        or token_has_translit_cue(proposed)
+        or token_has_distinctive_tibetan_signature(clean)
+    )
+
+    if is_german_prose(context) and not (has_tibetan_script or strong_context):
+        return dollar_block(
+            clean,
+            proposed,
+            "non_tibetan_context",
+            "defer",
+            explanation="German/prose context suppresses guarded dollar-to-ś promotion.",
+        )
+    if is_sanskrit_context(context) and not (has_tibetan_script or strong_context):
+        return dollar_block(
+            clean,
+            proposed,
+            "sanskrit_context",
+            "review",
+            score="20",
+            explanation="Sanskrit-like context needs separate source review before any exact promotion.",
+        )
+    if token_is_german_like_for_dollar(clean) and not (
+        has_tibetan_script or strong_context or token_has_non_sacute_hard_marker(proposed)
+    ):
+        return dollar_block(
+            clean,
+            proposed,
+            "german_like_token",
+            "defer",
+            explanation="German-looking token lacks enough Tibetan evidence for this exact queue.",
+        )
+    if not (has_tibetan_script or strong_context or (context_is_tibetan and token_has_marker)):
+        return dollar_block(
+            clean,
+            proposed,
+            "weak_transliteration_evidence",
+            "review",
+            score="25",
+            explanation="Tibetan context is too weak for exact promotion without manual source review.",
+        )
+
+    return {
+        "candidate_family": "guarded_dollar_to_sacute",
+        "proposed_target": proposed,
+        "evidence": "tibetan_script_context" if has_tibetan_script else "tibetan_transliteration_context",
+        "confidence": "high" if has_tibetan_script else "medium",
+        "suggested_action": "exact_promotion_candidate",
+        "block_reason": "none",
+        "score": "93" if has_tibetan_script else "84",
+        "score_explanation": (
+            "Exact guarded dollar-to-ś candidate in Tibetan transliteration context; "
+            "review/promote by page-line-token only."
+        ),
     }
 
 
@@ -833,16 +1126,6 @@ def classify_tibetan_token(token: str, context: str) -> dict[str, str] | None:
             "score": "55" if context_is_tibetan else "25",
             "score_explanation": "LOC-style acute-n appears in a Tibetan transliteration context.",
         }
-    if "$" in token and context_is_tibetan:
-        return {
-            "candidate_family": "dollar_ś",
-            "proposed_target": token.replace("$", "ś"),
-            "evidence": "orthography_scan",
-            "confidence": "medium",
-            "suggested_action": "review",
-            "score": "50",
-            "score_explanation": "Dollar sign may represent ś in transliteration; sigla are handled separately.",
-        }
     if "ı" in token:
         return {
             "candidate_family": "dotless_i",
@@ -1030,6 +1313,8 @@ def build_orthography_candidates(run_dir: Path, volume: str, registry: dict[str,
             tok = stripped_token(match.group(0))
             if not tok:
                 continue
+            if "$" in tok:
+                continue
             if classify_siglum_token(tok, line, registry):
                 continue
             token_class = classify_tibetan_token(tok, line)
@@ -1049,6 +1334,38 @@ def build_orthography_candidates(run_dir: Path, volume: str, registry: dict[str,
                     "suggested_action": token_class["suggested_action"],
                     "score": token_class["score"],
                     "score_explanation": token_class["score_explanation"],
+                }
+            )
+    return rows
+
+
+def build_dollar_sacute_candidates(
+    run_dir: Path,
+    volume: str,
+    registry: dict[str, list[SiglumEntry]],
+) -> list[dict[str, str]]:
+    corrected = find_one(run_dir, "_corrected_full.txt")
+    if not corrected:
+        return []
+    rows: list[dict[str, str]] = []
+    for page, line_no, line in iter_corrected_lines(corrected):
+        if not line:
+            continue
+        for token_index, match in enumerate(POSTPROCESS_TOKEN_RE.finditer(line), start=1):
+            tok = stripped_token(match.group(0))
+            token_class = classify_dollar_sacute_token(tok, line, registry)
+            if not token_class:
+                continue
+            rows.append(
+                {
+                    "source_queue": "corrected_text_scan",
+                    "volume": volume,
+                    "page": str(page),
+                    "line": str(line_no),
+                    "token_index": str(token_index),
+                    "source_token": tok,
+                    **token_class,
+                    "context_excerpt": line,
                 }
             )
     return rows
@@ -1528,6 +1845,7 @@ def write_summary(out_dir: Path, counts: dict[str, int], family_rows: list[dict[
             "",
             "- `tibetan_google_candidate_readings.tsv` contains unresolved Google-witness disagreements that may deserve manual review.",
             "- `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.",
+            "- `guarded_dollar_to_sacute_candidates.tsv` scans current corrected text for exact `$ -> ś` candidates and explicitly blocks sigla, numeric/noise, Sanskrit, German/prose, and weak-context rows.",
             "- `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.",
             "- `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.",
             "- `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\\`) near Tibetan transliteration contexts. It is diagnostic only; it is not a broad marker-normalisation rule.",
@@ -1552,6 +1870,7 @@ def main() -> None:
 
     google_rows: list[dict[str, str]] = []
     orthography_rows: list[dict[str, str]] = []
+    dollar_rows: list[dict[str, str]] = []
     script_ng_rows: list[dict[str, str]] = []
     reference_marker_rows: list[dict[str, str]] = []
     initial_i_rows: list[dict[str, str]] = []
@@ -1563,6 +1882,7 @@ def main() -> None:
         volume = volume_label(run)
         google_rows.extend(build_google_candidates(run, volume, registry))
         orthography_rows.extend(build_orthography_candidates(run, volume, registry))
+        dollar_rows.extend(build_dollar_sacute_candidates(run, volume, registry))
         script_ng_rows.extend(build_script_ng_witness_candidates(run, volume))
         reference_marker_rows.extend(build_reference_marker_candidates(run, volume, registry))
         initial_i_rows.extend(build_initial_i_candidates(run, volume, registry))
@@ -1604,6 +1924,23 @@ def main() -> None:
         "evidence",
         "confidence",
         "suggested_action",
+        "score",
+        "score_explanation",
+    ]
+    dollar_fields = [
+        "source_queue",
+        "volume",
+        "page",
+        "line",
+        "token_index",
+        "source_token",
+        "proposed_target",
+        "candidate_family",
+        "context_excerpt",
+        "evidence",
+        "confidence",
+        "suggested_action",
+        "block_reason",
         "score",
         "score_explanation",
     ]
@@ -1735,10 +2072,13 @@ def main() -> None:
         "sample_contexts",
     ]
 
-    family_rows = build_variant_families(google_rows + orthography_rows + script_ng_rows + initial_i_rows + sigla_rows)
+    family_rows = build_variant_families(
+        google_rows + orthography_rows + dollar_rows + script_ng_rows + initial_i_rows + sigla_rows
+    )
     reference_marker_family_rows = build_reference_marker_token_families(reference_marker_rows)
     write_tsv(out_dir / "tibetan_google_candidate_readings.tsv", google_rows, google_fields)
     write_tsv(out_dir / "tibetan_orthography_damage_candidates.tsv", orthography_rows, orthography_fields)
+    write_tsv(out_dir / "guarded_dollar_to_sacute_candidates.tsv", dollar_rows, dollar_fields)
     write_tsv(out_dir / "tibetan_script_ng_witness_candidates.tsv", script_ng_rows, script_ng_fields)
     write_tsv(out_dir / "reference_marker_candidates.tsv", reference_marker_rows, reference_marker_fields)
     write_tsv(
@@ -1757,6 +2097,7 @@ def main() -> None:
         {
             "tibetan_google_candidate_readings.tsv": len(google_rows),
             "tibetan_orthography_damage_candidates.tsv": len(orthography_rows),
+            "guarded_dollar_to_sacute_candidates.tsv": len(dollar_rows),
             "tibetan_script_ng_witness_candidates.tsv": len(script_ng_rows),
             "reference_marker_candidates.tsv": len(reference_marker_rows),
             "reference_marker_token_families.tsv": len(reference_marker_family_rows),

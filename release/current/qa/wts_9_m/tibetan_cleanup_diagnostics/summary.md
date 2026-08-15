@@ -4,22 +4,23 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 ## Row Counts
 
-- `tibetan_google_candidate_readings.tsv`: 90
-- `tibetan_orthography_damage_candidates.tsv`: 123
+- `tibetan_google_candidate_readings.tsv`: 86
+- `tibetan_orthography_damage_candidates.tsv`: 0
+- `guarded_dollar_to_sacute_candidates.tsv`: 209
 - `tibetan_script_ng_witness_candidates.tsv`: 0
 - `reference_marker_candidates.tsv`: 291
 - `reference_marker_token_families.tsv`: 168
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 114
 - `residual_sanskrit_low_confidence_candidates.tsv`: 233
-- `tibetan_variant_families.tsv`: 85
+- `tibetan_variant_families.tsv`: 107
 - `tibetan_google_adoption_patterns.tsv`: 239
 
 ## Top Candidate Families
 
 | Family | Sources | Targets | Count | Action |
 |---|---|---|---:|---|
-| dollar_ś | $ (124) | ś (124) | 124 | review |
+| guarded_dollar_to_sacute | $ (171) | ś (171) | 171 | defer |
 | unknown | rol (20) | Rol (20) | 20 | siglum_policy_review |
 | unknown | ins (19) | Ins (19) | 19 | siglum_policy_review |
 | unknown | Lis (12), Li$ (3), LIS (1), LiS (1) | Liś (17) | 17 | siglum_policy_review |
@@ -36,9 +37,9 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 | citation_or_siglum | Tär (3) | Tār (3) | 3 | already_canonical_siglum |
 | google_tibetan_diacritic_disagreement | Zes (3) | źes (3) | 3 | review |
 | google_tibetan_diacritic_disagreement | Zig (3) | źig (3) | 3 | review |
-| unknown | gzi (3) | gZi (3) | 3 | siglum_policy_review |
-| citation_or_siglum | brDa (2) | brDa (2) | 2 | already_canonical_siglum |
-| citation_or_siglum | HMrg (2) | HMrg (2) | 2 | already_canonical_siglum |
+| guarded_dollar_to_sacute | $5 (3) | ś5 (3) | 3 | defer |
+| guarded_dollar_to_sacute | $750 (3) | ś750 (3) | 3 | defer |
+| guarded_dollar_to_sacute | $7 (3) | ś7 (3) | 3 | defer |
 
 ## Top Google Adoption Patterns
 
@@ -64,6 +65,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv` contains unresolved Google-witness disagreements that may deserve manual review.
 - `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.
+- `guarded_dollar_to_sacute_candidates.tsv` scans current corrected text for exact `$ -> ś` candidates and explicitly blocks sigla, numeric/noise, Sanskrit, German/prose, and weak-context rows.
 - `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.
 - `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.
 - `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\`) near Tibetan transliteration contexts. It is diagnostic only; it is not a broad marker-normalisation rule.

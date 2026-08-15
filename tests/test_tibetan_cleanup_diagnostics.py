@@ -766,6 +766,33 @@ class TibetanCleanupDiagnosticsTests(unittest.TestCase):
             "damaged_or_competing_context",
         )
 
+    def test_guarded_dollar_sacute_candidate_uses_exact_token_gate(self) -> None:
+        candidate = diag.classify_dollar_sacute_token(
+            "b$ad",
+            "བཤད་ b$ad kyi tshig",
+            self.registry,
+        )
+
+        self.assertIsNotNone(candidate)
+        self.assertEqual(candidate["candidate_family"], "guarded_dollar_to_sacute")
+        self.assertEqual(candidate["proposed_target"], "bśad")
+        self.assertEqual(candidate["suggested_action"], "exact_promotion_candidate")
+        self.assertEqual(candidate["block_reason"], "none")
+
+    def test_guarded_dollar_sacute_blocks_sigla_and_numeric_noise(self) -> None:
+        siglum = diag.classify_dollar_sacute_token("L$dz", "(L$dz 84,6)", self.registry)
+
+        self.assertIsNotNone(siglum)
+        self.assertEqual(siglum["proposed_target"], "Lśdz")
+        self.assertEqual(siglum["suggested_action"], "defer_to_sigla_policy")
+        self.assertEqual(siglum["block_reason"], "registered_or_possible_siglum")
+
+        noise = diag.classify_dollar_sacute_token("$750", "Dagy $750", self.registry)
+
+        self.assertIsNotNone(noise)
+        self.assertEqual(noise["suggested_action"], "defer")
+        self.assertEqual(noise["block_reason"], "artifact_or_numeric_noise")
+
     def test_german_prose_suppresses_tibetan_token_scan(self) -> None:
         candidate = diag.classify_tibetan_token("dnos", "Das ist ein dnos und der Text ist deutsch.")
 

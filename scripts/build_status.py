@@ -268,6 +268,9 @@ def read_release_stats() -> ReleaseStats:
                 diagnostic_dir / "tibetan_latin_integrity_candidates.tsv"
             ),
             "reference_marker_candidates": tsv_row_count(diagnostic_dir / "reference_marker_candidates.tsv"),
+            "guarded_dollar_sacute_candidates": tsv_row_count(
+                diagnostic_dir / "guarded_dollar_to_sacute_candidates.tsv"
+            ),
             "sanskrit_low_confidence_candidates": tsv_row_count(
                 diagnostic_dir / "residual_sanskrit_low_confidence_candidates.tsv"
             ),
@@ -554,13 +557,19 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
             "exact_or_context_guarded",
             "partially_applied",
             "all",
-            "confusable_dollar_to_sacute_shape_safe;confusable_dollar_to_sacute_lexicon;confusable_dollar_to_sacute_name_anchor;orphan_safe_dollar_to_sacute;citation_isv_dollar_abbrev_map",
+            "confusable_dollar_to_sacute_shape_safe;confusable_dollar_to_sacute_lexicon;confusable_dollar_to_sacute_name_anchor;orphan_safe_dollar_to_sacute;citation_isv_dollar_abbrev_map;reviewed_tibetan_exact_dollar_to_sacute",
             "scripts/postprocess_entry_map.py;data/reviewed_tibetan_exact_overrides.tsv",
-            "release/current/qa;docs/tibetan_sigla_registry_cleanup_2026-06-27.md",
-            reason_sum(stats, "confusable_dollar_to_sacute_", "orphan_safe_dollar_to_sacute", "citation_isv_dollar_abbrev_map"),
+            "release/current/qa;release/current/qa/*/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv;docs/tibetan_sigla_registry_cleanup_2026-06-27.md",
+            reason_sum(
+                stats,
+                "confusable_dollar_to_sacute_",
+                "orphan_safe_dollar_to_sacute",
+                "citation_isv_dollar_abbrev_map",
+                "reviewed_tibetan_exact_dollar_to_sacute",
+            ),
             dollar_residual,
             "generic $ token;currency/noise;unreviewed sigla",
-            "Exact/guarded $ to ś repairs are active, but the broad character rule is forbidden and residual $ buckets remain.",
+            "Exact/guarded $ to ś repairs are active, but the broad character rule is forbidden; residual count is the raw artifact-token signal, while the guarded diagnostic is reviewed only by exact coordinates.",
         ),
         row(
             "final_ng_mark_variants",
@@ -1321,6 +1330,7 @@ def per_volume_count_text(stats: ReleaseStats, key: str) -> str:
 
 def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
     dollar_residual = residual_chars(stats, "$")
+    guarded_dollar_diagnostic_residual = total(stats, "guarded_dollar_sacute_candidates")
     initial_i_residual = residual_bucket(stats, "initial_confusable_I")
     initial_i_exact_residual = total(stats, "initial_i_exact_residual_candidates")
     final_ng_residual = residual_chars(stats, "ñńň")
@@ -1379,6 +1389,14 @@ def remaining_work_rows(stats: ReleaseStats) -> list[list[str | int]]:
             "partially applied; broad rule forbidden",
             "Review exact/context candidates only.",
             "Siglum policy is a separate queue.",
+        ],
+        [
+            "Guarded $ -> ś residual diagnostic",
+            guarded_dollar_diagnostic_residual,
+            "release/current/qa/*/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv",
+            "diagnostic only; exact rows only",
+            "Promote only reviewed page/line/token rows with suggested_action=exact_promotion_candidate; keep generic $ -> ś forbidden.",
+            f"{per_volume_count_text(stats, 'guarded_dollar_sacute_candidates')}; blockers include sigla, numeric/noise, Sanskrit, and weak-context rows.",
         ],
         [
             "Siglum policy diagnostics",
@@ -1543,6 +1561,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     final_ng_residual = residual_chars(stats, "ñńň")
     script_ng_witness_residual = total(stats, "script_ng_witness_candidates")
     reference_marker_residual = total(stats, "reference_marker_candidates")
+    guarded_dollar_diagnostic_residual = total(stats, "guarded_dollar_sacute_candidates")
     initial_i_exact_sentence = (
         "The exact Initial-I/l residual diagnostic is exhausted: `tibetan_initial_i_residual_candidates.tsv` has no candidate rows after the header for all four volumes."
         if initial_i_exact_residual == 0
@@ -1555,7 +1574,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
             "Marker-attached rows stay in this queue after the reference marker is separated; they are not discarded as false final-ng candidates. The witness queue is diagnostic only until reviewed exact rows are accepted."
         )
         recommended_order = """1. The final-ng deferred source-review queue is currently exhausted. Continue with reference-marker OCR diagnostics as a separately bounded exact-coordinate batch with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-2. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+2. Review the guarded `$ -> ś` diagnostic, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
 3. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
 4. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked."""
     else:
@@ -1566,7 +1585,7 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
         )
         recommended_order = f"""1. Review the {final_ng_residual} exact row(s) in the final-ng deferred source-review queue as one bounded pass. Require the printed source or decisive same-entry context for every coordinate; do not infer a broad `n -> ṅ`, `h -> ṅ`, or other final-nasal rule.
 2. Review reference-marker OCR diagnostics only as separately bounded exact-coordinate batches with lemma-order evidence; keep broad marker rules, slash bulk promotion, and automatic superscript inference forbidden.
-3. Review residual `$ -> ś`, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
+3. Review the guarded `$ -> ś` diagnostic, siglum, script-ng, and Sanskrit queues separately, never as a combined cleanup pass.
 4. Treat residual Sanskrit low-confidence and validator-only rows as diagnostics unless sampled and explicitly promoted into a formal queue.
 5. Revisit remaining `dngos_family` Google-witness diagnostics only as a separate exact-row pass if evidence warrants it; keep broad `dnos -> dṅos` and `dnos -> dños` blocked."""
 
@@ -1644,7 +1663,7 @@ Reference-marker cleanup is exact/page-line-token only. `reference_marker_candid
 
 Sanskrit has two queues. `sanskrit_source_check_queue` is the formal source-check queue with {total(stats, "sanskrit_review_suggestions")} suggestions. `residual_sanskrit_low_confidence_diagnostic` is an exploratory diagnostic with {total(stats, "sanskrit_low_confidence_candidates")} rows. Do not collapse them.
 
-Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. Validator-only rows are diagnostics, not correction evidence.
+Generic `$ -> ś` remains forbidden. Exact/context-gated `$ -> ś` rows are only partially applied, and sigla normalisations are separate from generic `$ -> ś`. The dedicated guarded diagnostic currently has {guarded_dollar_diagnostic_residual} row(s) ({per_volume_count_text(stats, "guarded_dollar_sacute_candidates")}); promote only reviewed `exact_promotion_candidate` coordinates. Validator-only rows are diagnostics, not correction evidence.
 
 The alignment/damage source review is exhausted pending external source evidence. Two direct `tsb/tsh` print variants are terminal reviewed evidence; the remaining {alignment_review_residual} exact occurrences require a better primary scan and are not an active automatic-correction queue. See `docs/ALIGNMENT_DAMAGE_SOURCE_REVIEW_2026-08-06.md`.
 

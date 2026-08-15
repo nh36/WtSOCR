@@ -4,41 +4,42 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 ## Row Counts
 
-- `tibetan_google_candidate_readings.tsv`: 357
-- `tibetan_orthography_damage_candidates.tsv`: 1603
+- `tibetan_google_candidate_readings.tsv`: 349
+- `tibetan_orthography_damage_candidates.tsv`: 695
+- `guarded_dollar_to_sacute_candidates.tsv`: 1286
 - `tibetan_script_ng_witness_candidates.tsv`: 2
 - `reference_marker_candidates.tsv`: 1189
-- `reference_marker_token_families.tsv`: 487
+- `reference_marker_token_families.tsv`: 496
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 774
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
-- `tibetan_variant_families.tsv`: 761
+- `tibetan_variant_families.tsv`: 905
 - `tibetan_google_adoption_patterns.tsv`: 633
 
 ## Top Candidate Families
 
 | Family | Sources | Targets | Count | Action |
 |---|---|---|---:|---|
-| dollar_ś | $ (902) | ś (902) | 902 | review |
+| guarded_dollar_to_sacute | $ (855) | ś (855) | 855 | defer |
 | unknown | Lis (153), Li$ (42), lis (6) | Liś (201) | 201 | siglum_policy_review |
 | unknown | rol (145) | Rol (145) | 145 | siglum_policy_review |
 | unknown | VisT (90), VisṬ (4), ViST (2), ViśṬ (1), Vi$T (1) | ViśT (98) | 98 | siglum_policy_review |
 | unknown | ins (85), INS (1) | Ins (86) | 86 | siglum_policy_review |
+| guarded_dollar_to_sacute | $77 (73) | ś77 (73) | 73 | defer |
 | unknown | Lsdz-K (33), L$dz-K (13) | Lśdz-K (46) | 46 | siglum_policy_review |
 | unknown | Y$ (23), Ys (16) | Yś (39) | 39 | siglum_policy_review |
 | dngos_family | dnos (38) | dṅos (38) | 38 | exact_promotion_candidate |
+| guarded_dollar_to_sacute | 9$ (37) | 9ś (37) | 37 | defer |
 | unknown | gs (24), G$ (3), Gś (2) | Gs (29) | 29 | siglum_policy_review |
 | unknown | gzi (27) | gZi (27) | 27 | siglum_policy_review |
 | unknown | Lsdz (16), L$dz (10) | Lśdz (26) | 26 | siglum_policy_review |
+| guarded_dollar_to_sacute | 7$ (23) | 7ś (23) | 23 | defer |
+| guarded_dollar_to_sacute | $7 (20) | ś7 (20) | 20 | defer |
+| guarded_dollar_to_sacute | 77$ (16) | 77ś (16) | 16 | defer |
 | unknown | Bu-Sz (16) | Bu-śz (16) | 16 | siglum_policy_review |
 | dotless_i | gZı (13), gzı (1) | gZi (13), gzi (1) | 14 | review |
 | unknown | GS-H (5), G$-H (4), Gs-H (3) | Gś-H (12) | 12 | siglum_policy_review |
-| unknown | P$ (8), PS (2), Pś (1) | Ps (11) | 11 | siglum_policy_review |
-| citation_or_siglum | TAIC (10) | TAIC (10) | 10 | already_canonical_siglum |
-| citation_or_siglum | Tär (10) | Tār (10) | 10 | already_canonical_siglum |
-| dotless_i | garı (9) | gari (9) | 9 | review |
-| dotless_i | kyanı (9) | kyani (9) | 9 | review |
-| dotless_i | MıgTo (9) | MigTo (9) | 9 | review |
+| guarded_dollar_to_sacute | $77077 (11) | ś77077 (11) | 11 | defer |
 
 ## Top Google Adoption Patterns
 
@@ -64,6 +65,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 
 - `tibetan_google_candidate_readings.tsv` contains unresolved Google-witness disagreements that may deserve manual review.
 - `tibetan_orthography_damage_candidates.tsv` scans the current corrected text directly for Tibetan-looking damage patterns.
+- `guarded_dollar_to_sacute_candidates.tsv` scans current corrected text for exact `$ -> ś` candidates and explicitly blocks sigla, numeric/noise, Sanskrit, German/prose, and weak-context rows.
 - `tibetan_script_ng_witness_candidates.tsv` scans corrected text for exact Latin `n`/`ṅ` disagreements backed by a same-line Tibetan-script `ང` witness. It is diagnostic only; it is not a broad `n -> ṅ` rule.
 - `tibetan_initial_i_residual_candidates.tsv` scans corrected text for exact known Tibetan initial-`l` forms where OCR has capital `I`. It is diagnostic only; it is not a broad `I -> l` rule.
 - `reference_marker_candidates.tsv` inventories actual reference markers and likely OCR substitutes (`T`, `I`, `/`, `\`) near Tibetan transliteration contexts. It is diagnostic only; it is not a broad marker-normalisation rule.

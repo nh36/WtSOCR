@@ -1,8 +1,8 @@
 # Current WtS OCR Release Bundle
 
-Generated UTC: `2026-08-14T21:15:02Z`
-Build recipe revision: `15259937b89903af8404cb7237e50f7669ae3f94`
-Production input provenance: `local production workspace; build checkout 15259937b89903af8404cb7237e50f7669ae3f94`
+Generated UTC: `2026-08-15T09:46:51Z`
+Build recipe revision: `8af947d0091a0f4dfc4bea1286dab88b0108c71e`
+Production input provenance: `local production workspace; build checkout 8af947d0091a0f4dfc4bea1286dab88b0108c71e`
 
 This directory is the tracked best-current deployable etext snapshot.
 `release/current/manifest.md` is an inventory and reproducibility file
@@ -48,6 +48,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_1_34/bucket_report.artifact_tokens.tsv`
 - `qa/wts_1_34/bucket_report.summary.md`
 - `qa/wts_1_34/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_1_34/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_1_34/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
@@ -87,6 +88,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_35_51/bucket_report.artifact_tokens.tsv`
 - `qa/wts_35_51/bucket_report.summary.md`
 - `qa/wts_35_51/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_35_51/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_35_51/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
@@ -126,6 +128,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_8_b/bucket_report.artifact_tokens.tsv`
 - `qa/wts_8_b/bucket_report.summary.md`
 - `qa/wts_8_b/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_8_b/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_8_b/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
@@ -165,6 +168,7 @@ the latest trusted corrected text and compact QA artifacts into
 - `qa/wts_9_m/bucket_report.artifact_tokens.tsv`
 - `qa/wts_9_m/bucket_report.summary.md`
 - `qa/wts_9_m/bucket_report.unresolved_pairs.tsv`
+- `qa/wts_9_m/tibetan_cleanup_diagnostics/guarded_dollar_to_sacute_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/reference_marker_candidates.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/reference_marker_token_families.tsv`
 - `qa/wts_9_m/tibetan_cleanup_diagnostics/residual_sanskrit_low_confidence_candidates.tsv`
