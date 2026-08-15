@@ -36,6 +36,24 @@ REVIEW_NOTE = (
     "promotion; direction from current/referenced lemma ordinal; no broad "
     "marker, slash, Initial-I/l, or nasal rule."
 )
+TEXT_INVESTIGATION_REVIEW_NOTE = (
+    "Exact page-line-token reference-marker correction from bounded text "
+    "investigation; accepted proof is lemma-order, sibling-marker, or "
+    "same-family-reviewed evidence; no broad marker, slash, Initial-I/l, "
+    "or nasal rule."
+)
+INVESTIGATION_PREFIX_MARKERS = {"I", "T", "\\"}
+INVESTIGATION_PROMOTE_PROOF_TYPES = {
+    "lemma_order",
+    "sibling_marker",
+    "same_family_reviewed",
+}
+INVESTIGATION_REFERENCE_CONTEXTS = {
+    "reference_cue",
+    "near_actual_marker_control",
+    "headword_transliteration_context",
+    "reference_list_context",
+}
 
 TOKEN_RE = re.compile(
     r"[0-9A-Za-zÀ-ÖØ-öø-ÿĀāĪīŪūṄṅÑñŚśŹźḌḍṬṭṢṣḤḥṚṛḶḷČčŽžŠšŃńǸǹŇňıß$]+"
@@ -178,6 +196,19 @@ class CandidateDecision:
     tier: str
 
 
+@dataclass(frozen=True)
+class ReviewedReferencePattern:
+    marker_source: str
+    attached_key: str
+    target_marker: str
+    target_token: str
+    volume: str
+    page: str
+    line: str
+    from_token: str
+    to_token: str
+
+
 NEAR_MISS_FIELDS = [
     "volume",
     "page",
@@ -196,6 +227,42 @@ NEAR_MISS_FIELDS = [
     "defer_reason",
     "decision_notes",
     "suggested_target",
+]
+
+INVESTIGATION_FIELDS = [
+    "batch_id",
+    "volume",
+    "page",
+    "line",
+    "token_index",
+    "source_token",
+    "reviewed_to_token",
+    "decision",
+    "proof_type",
+    "proof_note",
+    "current_lemma",
+    "current_lemma_ordinal",
+    "current_lemma_ref",
+    "referenced_lemma_candidate",
+    "referenced_lemma",
+    "referenced_lemma_ordinal",
+    "referenced_lemma_ref",
+    "matched_lemma_ordinals",
+    "direction_basis",
+    "context_type",
+    "defer_reason",
+    "candidate_family",
+    "marker_source",
+    "attached_token",
+    "score",
+    "positive_evidence",
+    "negative_evidence",
+    "source_diagnostic",
+    "context_before_2",
+    "context_before_1",
+    "context_line",
+    "context_after_1",
+    "context_after_2",
 ]
 
 
@@ -747,6 +814,37 @@ def load_promoted_reference_marker_patterns(root: Path) -> set[tuple[str, str]]:
     return patterns
 
 
+def load_reviewed_reference_marker_details(root: Path) -> list[ReviewedReferencePattern]:
+    path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
+    if not path.exists():
+        return []
+    patterns: list[ReviewedReferencePattern] = []
+    for row in read_tsv(path):
+        if row.get("reason") != REFERENCE_MARKER_REASON:
+            continue
+        marker_source, attached = reference_source_parts(row.get("from_token", ""))
+        target = row.get("to_token", "")
+        target_marker = target[:1] if target[:1] in {"↑", "↓"} else ""
+        if not marker_source or not attached or not target_marker:
+            continue
+        target_parts = target.split(maxsplit=1)
+        target_token = target_parts[1].split()[0] if len(target_parts) > 1 else attached
+        patterns.append(
+            ReviewedReferencePattern(
+                marker_source=marker_source,
+                attached_key=normalize_key(attached),
+                target_marker=target_marker,
+                target_token=target_token,
+                volume=row.get("volume", ""),
+                page=row.get("page", ""),
+                line=row.get("line", ""),
+                from_token=row.get("from_token", ""),
+                to_token=target,
+            )
+        )
+    return patterns
+
+
 def promoted_family_similarity(
     marker_source: str, attached_token: str, patterns: set[tuple[str, str]]
 ) -> str:
@@ -1091,6 +1189,393 @@ def packet_row_from_decision(decision: CandidateDecision, batch_id: str) -> dict
         }
     )
     return row
+
+
+def parse_ordinals(value: str) -> list[int]:
+    ordinals: list[int] = []
+    for part in re.split(r"[;,\s]+", value.strip()):
+        if not part:
+            continue
+        try:
+            ordinals.append(int(part))
+        except ValueError:
+            continue
+    return ordinals
+
+
+def clean_investigation_text(value: str) -> str:
+    return re.sub(r"\s+", " ", value.replace("\t", " ")).strip()
+
+
+def investigation_context_window(
+    release_lines: dict[tuple[str, str, str], str],
+    decision: CandidateDecision,
+) -> dict[str, str]:
+    line_no = as_int(decision.line, default=-1)
+
+    def line_at(offset: int) -> str:
+        if line_no < 1 or line_no + offset < 1:
+            return ""
+        return release_lines.get(
+            (decision.volume, decision.page, str(line_no + offset)),
+            "",
+        )
+
+    return {
+        "context_before_2": line_at(-2),
+        "context_before_1": line_at(-1),
+        "context_line": line_at(0),
+        "context_after_1": line_at(1),
+        "context_after_2": line_at(2),
+    }
+
+
+def investigation_context_is_reference_like(decision: CandidateDecision) -> bool:
+    if decision.context_type in INVESTIGATION_REFERENCE_CONTEXTS:
+        return True
+    if REFERENCE_CONTEXT_RE.search(decision.context_excerpt):
+        return True
+    return False
+
+
+def exact_source_is_unique(decision: CandidateDecision) -> bool:
+    return decision.exact_occurrence_status in {"unique", "candidate"} and bool(decision.token_index)
+
+
+def candidate_target_token(decision: CandidateDecision) -> str:
+    return first_replacement_token(
+        decision.attached_token,
+        decision.referenced_lemma or decision.referenced_lemma_candidate,
+    )
+
+
+def lemma_order_text_proof(decision: CandidateDecision) -> tuple[str, str, str] | None:
+    if as_int(decision.referenced_lemma_match_count) != 1 or not decision.referenced_lemma:
+        return None
+    current = as_int(decision.current_lemma_ordinal)
+    ordinals = parse_ordinals(decision.matched_lemma_ordinals)
+    if current <= 0 or not ordinals or current in ordinals:
+        return None
+    all_before = all(ordinal < current for ordinal in ordinals)
+    all_after = all(ordinal > current for ordinal in ordinals)
+    if not (all_before or all_after):
+        return None
+    target_token = candidate_target_token(decision)
+    if not target_token:
+        return None
+    marker_target = "↑" if all_before else "↓"
+    ordinal_side = (
+        str(ordinals[0])
+        if len(ordinals) == 1
+        else f"{min(ordinals)}-{max(ordinals)}"
+    )
+    direction_basis = f"{ordinal_side} {'<' if all_before else '>'} {current}"
+    proof_note = (
+        "text proof: referenced lemma ordinal(s) are all "
+        f"{'before' if all_before else 'after'} current lemma; context is reference-like"
+    )
+    return f"{marker_target} {target_token}", direction_basis, proof_note
+
+
+def sibling_marker_text_proof(
+    decision: CandidateDecision,
+    context_line: str,
+) -> tuple[str, str, str] | None:
+    if decision.marker_source not in INVESTIGATION_PREFIX_MARKERS:
+        return None
+    if not context_line or not re.search(r"[;,]", context_line):
+        return None
+    if not (
+        decision.context_type in {"near_actual_marker_control", "reference_list_context", "reference_cue"}
+        or REFERENCE_CONTEXT_RE.search(context_line)
+    ):
+        return None
+    directions = set(re.findall(r"[↑↓]", context_line))
+    if len(directions) != 1:
+        return None
+    target_token = candidate_target_token(decision)
+    if not target_token:
+        return None
+    marker_target = next(iter(directions))
+    direction_basis = f"sibling_marker_line_direction={marker_target}"
+    proof_note = (
+        "text proof: same local list contains an actual marker and all visible "
+        f"sibling markers point {marker_target}"
+    )
+    return f"{marker_target} {target_token}", direction_basis, proof_note
+
+
+def same_family_reviewed_text_proof(
+    decision: CandidateDecision,
+    reviewed_patterns: list[ReviewedReferencePattern],
+) -> tuple[str, str, str] | None:
+    if decision.marker_source not in INVESTIGATION_PREFIX_MARKERS:
+        return None
+    if not investigation_context_is_reference_like(decision):
+        return None
+    attached_key = normalize_key(decision.attached_token)
+    if not attached_key:
+        return None
+    page = as_int(decision.page, default=-1)
+    line = as_int(decision.line, default=-1)
+    for pattern in reviewed_patterns:
+        if pattern.marker_source != decision.marker_source:
+            continue
+        if pattern.attached_key != attached_key:
+            continue
+        if pattern.volume != decision.volume or as_int(pattern.page, default=-2) != page:
+            continue
+        if line < 1 or abs(as_int(pattern.line, default=-100000) - line) > 6:
+            continue
+        target_token = candidate_target_token(decision)
+        if not target_token:
+            continue
+        direction_basis = (
+            f"reviewed_family={pattern.volume} {pattern.page}:{pattern.line} "
+            f"{pattern.from_token}->{pattern.to_token}"
+        )
+        proof_note = (
+            "text proof: same marker plus attached token already reviewed in the "
+            "same local entry/list window"
+        )
+        return f"{pattern.target_marker} {target_token}", direction_basis, proof_note
+    return None
+
+
+def source_image_needed(decision: CandidateDecision, context_line: str) -> bool:
+    if decision.marker_source not in INVESTIGATION_PREFIX_MARKERS:
+        return False
+    if not exact_source_is_unique(decision):
+        return False
+    if decision.defer_reason in {
+        "same_lemma",
+        "ambiguous_crosses_current",
+        "possible_ldan_not_marker",
+        "false_positive_control",
+        "ordinary_example_context",
+        "slash_punctuation_context",
+    }:
+        return False
+    if investigation_context_is_reference_like(decision):
+        return True
+    return bool(re.search(r"[↑↓]", context_line) and re.search(r"[;,]", context_line))
+
+
+def investigation_reject_note(decision: CandidateDecision) -> str:
+    ordinals = parse_ordinals(decision.matched_lemma_ordinals)
+    current = as_int(decision.current_lemma_ordinal)
+    if decision.marker_source == "/":
+        return "slash row excluded from this reference-marker investigation"
+    if decision.marker_source not in INVESTIGATION_PREFIX_MARKERS:
+        return "not an investigated prefix marker source"
+    if not exact_source_is_unique(decision):
+        return "exact source occurrence is not uniquely located in corrected text"
+    if decision.defer_reason == "possible_ldan_not_marker" or looks_like_ldan_not_marker(
+        decision.source_token,
+        decision.attached_token,
+        decision.context_excerpt,
+    ):
+        return "likely Initial-I/l or ldan-like OCR damage, not a reference marker"
+    if current > 0 and current in ordinals:
+        return "referenced lemma resolves to the current lemma"
+    if ordinals and current > 0 and not (
+        all(ordinal < current for ordinal in ordinals)
+        or all(ordinal > current for ordinal in ordinals)
+    ):
+        return "possible referenced lemmas cross the current lemma, so direction is unproved"
+    if decision.defer_reason == "no_referenced_lemma_match":
+        return "no referenced lemma can be proven from corrected text"
+    if decision.context_type in {"ordinary_context", "ordinary_example_context", "control_context"}:
+        return "ordinary prose/example context, not a reference-list context"
+    if not investigation_context_is_reference_like(decision):
+        return "local text context does not prove reference-marker usage"
+    if decision.defer_reason:
+        return f"unresolved diagnostic defer reason: {decision.defer_reason}"
+    return "no concrete text proof found"
+
+
+def base_investigation_row(
+    decision: CandidateDecision,
+    release_lines: dict[tuple[str, str, str], str],
+    batch_id: str,
+) -> dict[str, str]:
+    row = {
+        "batch_id": batch_id,
+        "volume": decision.volume,
+        "page": decision.page,
+        "line": decision.line,
+        "token_index": decision.token_index,
+        "source_token": decision.source_token,
+        "reviewed_to_token": "",
+        "decision": "",
+        "proof_type": "",
+        "proof_note": "",
+        "current_lemma": decision.current_lemma,
+        "current_lemma_ordinal": decision.current_lemma_ordinal,
+        "current_lemma_ref": decision.current_lemma_ref,
+        "referenced_lemma_candidate": decision.referenced_lemma_candidate,
+        "referenced_lemma": decision.referenced_lemma,
+        "referenced_lemma_ordinal": decision.referenced_lemma_ordinal
+        or decision.referenced_lemma_ordinal_min,
+        "referenced_lemma_ref": decision.referenced_lemma_ref,
+        "matched_lemma_ordinals": decision.matched_lemma_ordinals,
+        "direction_basis": decision.direction_basis,
+        "context_type": decision.context_type,
+        "defer_reason": decision.defer_reason,
+        "candidate_family": decision.candidate_family,
+        "marker_source": decision.marker_source,
+        "attached_token": decision.attached_token,
+        "score": decision.score,
+        "positive_evidence": decision.positive_evidence,
+        "negative_evidence": decision.negative_evidence,
+        "source_diagnostic": diagnostic_source_for(decision),
+    }
+    row.update(investigation_context_window(release_lines, decision))
+    return {field: clean_investigation_text(row.get(field, "")) for field in INVESTIGATION_FIELDS}
+
+
+def investigate_decision(
+    decision: CandidateDecision,
+    release_lines: dict[tuple[str, str, str], str],
+    reviewed_patterns: list[ReviewedReferencePattern],
+    batch_id: str,
+) -> dict[str, str]:
+    row = base_investigation_row(decision, release_lines, batch_id)
+    context_line = row.get("context_line", "")
+    if decision.marker_source == "/" or decision.marker_source not in INVESTIGATION_PREFIX_MARKERS:
+        row.update(decision="reject_not_marker", proof_note=investigation_reject_note(decision))
+        return row
+    if not exact_source_is_unique(decision):
+        row.update(decision="reject_not_marker", proof_note=investigation_reject_note(decision))
+        return row
+    if investigation_reject_note(decision).startswith(
+        ("likely Initial-I", "referenced lemma resolves", "possible referenced lemmas cross")
+    ):
+        row.update(decision="reject_not_marker", proof_note=investigation_reject_note(decision))
+        return row
+
+    if investigation_context_is_reference_like(decision):
+        proof = lemma_order_text_proof(decision)
+        if proof:
+            reviewed_to_token, direction_basis, proof_note = proof
+            row.update(
+                decision="promote_exact",
+                proof_type="lemma_order",
+                reviewed_to_token=reviewed_to_token,
+                direction_basis=direction_basis,
+                proof_note=proof_note,
+            )
+            return row
+
+    proof = sibling_marker_text_proof(decision, context_line)
+    if proof:
+        reviewed_to_token, direction_basis, proof_note = proof
+        row.update(
+            decision="promote_exact",
+            proof_type="sibling_marker",
+            reviewed_to_token=reviewed_to_token,
+            direction_basis=direction_basis,
+            proof_note=proof_note,
+        )
+        return row
+
+    proof = same_family_reviewed_text_proof(decision, reviewed_patterns)
+    if proof:
+        reviewed_to_token, direction_basis, proof_note = proof
+        row.update(
+            decision="promote_exact",
+            proof_type="same_family_reviewed",
+            reviewed_to_token=reviewed_to_token,
+            direction_basis=direction_basis,
+            proof_note=proof_note,
+        )
+        return row
+
+    if source_image_needed(decision, context_line):
+        row.update(
+            decision="needs_source_image",
+            proof_note="text strongly suggests a marker, but corrected text cannot prove target glyph",
+        )
+        return row
+
+    row.update(decision="reject_not_marker", proof_note=investigation_reject_note(decision))
+    return row
+
+
+def investigation_sort_key(decision: CandidateDecision) -> tuple[int, int, int, int, int]:
+    volume_rank = {volume: index for index, volume in enumerate(VOLUME_ORDER)}
+    return (
+        -as_int(decision.score),
+        volume_rank.get(decision.volume, len(volume_rank)),
+        as_int(decision.page),
+        as_int(decision.line),
+        as_int(decision.token_index),
+    )
+
+
+def select_investigation_candidates(
+    deferred: list[CandidateDecision],
+    *,
+    limit: int,
+    min_score: int,
+) -> list[CandidateDecision]:
+    candidates = [
+        row
+        for row in deferred
+        if row.marker_source in INVESTIGATION_PREFIX_MARKERS
+        and as_int(row.score) >= min_score
+        and row.source_token
+        and row.attached_token
+    ]
+    selected = sorted(candidates, key=investigation_sort_key)
+    return selected[:limit] if limit else selected
+
+
+def investigation_packet_row(row: dict[str, str], batch_id: str) -> dict[str, str]:
+    if row.get("decision") != "promote_exact":
+        raise ValueError("investigation row is not marked promote_exact")
+    proof_type = row.get("proof_type", "")
+    if proof_type not in INVESTIGATION_PROMOTE_PROOF_TYPES:
+        raise ValueError(
+            "investigation promote_exact row lacks an accepted concrete proof type: "
+            f"{proof_type!r}"
+        )
+    if not row.get("reviewed_to_token", ""):
+        raise ValueError("investigation promote_exact row lacks reviewed_to_token")
+    if row.get("marker_source") == "/":
+        raise ValueError("slash rows are excluded from reference-marker investigation import")
+    evidence = f"{EVIDENCE_TAG}:{batch_id}:{proof_type}"
+    return {
+        "volume": row.get("volume", ""),
+        "page": row.get("page", ""),
+        "line": row.get("line", ""),
+        "token_index": row.get("token_index", ""),
+        "from_token": row.get("source_token", ""),
+        "to_token": row.get("reviewed_to_token", ""),
+        "reason": REFERENCE_MARKER_REASON,
+        "evidence": evidence,
+        "review_note": f"{TEXT_INVESTIGATION_REVIEW_NOTE} {row.get('proof_note', '')}".strip(),
+        "batch_id": batch_id,
+        "score": row.get("score", ""),
+        "source_diagnostic": row.get("source_diagnostic", ""),
+        "candidate_family": row.get("candidate_family", ""),
+        "direction_basis": row.get("direction_basis", ""),
+        "context_type": row.get("context_type", ""),
+        "positive_evidence": row.get("positive_evidence", ""),
+        "negative_evidence": row.get("negative_evidence", ""),
+    }
+
+
+def packet_rows_from_investigation(
+    rows: list[dict[str, str]],
+    batch_id: str,
+) -> list[dict[str, str]]:
+    packet_rows: list[dict[str, str]] = []
+    for row in rows:
+        if row.get("decision") != "promote_exact":
+            continue
+        packet_rows.append(investigation_packet_row(row, batch_id))
+    return packet_rows
 
 
 def promotable_sort_key(decision: CandidateDecision) -> tuple[int, int, int, int, int]:
@@ -1499,6 +1984,7 @@ def run(args: argparse.Namespace) -> int:
     release_lines = load_release_lines(root)
     rows = load_reference_marker_rows(root)
     promoted_patterns = load_promoted_reference_marker_patterns(root)
+    reviewed_patterns = load_reviewed_reference_marker_details(root)
     decisions = [
         decide_candidate(
             row,
@@ -1530,6 +2016,29 @@ def run(args: argparse.Namespace) -> int:
     deferred = [row for row in decisions if row.decision == "defer"]
     false_positive = [row for row in decisions if row.decision == "false_positive"]
     packet_rows = [packet_row_from_decision(decision, batch_id) for decision in selected]
+    packet_min_score = args.min_score
+
+    investigation_rows: list[dict[str, str]] = []
+    investigation_packet_rows: list[dict[str, str]] = []
+    if args.write_investigation_packet:
+        investigation_candidates = select_investigation_candidates(
+            deferred,
+            limit=args.investigation_limit,
+            min_score=args.investigation_min_score,
+        )
+        investigation_rows = [
+            investigate_decision(decision, release_lines, reviewed_patterns, batch_id)
+            for decision in investigation_candidates
+        ]
+        investigation_packet_rows = packet_rows_from_investigation(investigation_rows, batch_id)
+        write_tsv(
+            Path(args.write_investigation_packet),
+            investigation_rows,
+            INVESTIGATION_FIELDS,
+        )
+        if args.include_investigation_promotions and not packet_rows:
+            packet_rows = investigation_packet_rows
+            packet_min_score = min(args.min_score, args.investigation_min_score)
 
     applied = 0
     applied_from_packet = ""
@@ -1541,7 +2050,7 @@ def run(args: argparse.Namespace) -> int:
             packet_rows,
             override_path=override_path,
             expected_reason=REFERENCE_MARKER_REASON,
-            min_score=args.min_score,
+            min_score=packet_min_score,
         )
         batch.write_packet(packet_path, packet_rows)
     if args.apply:
@@ -1552,12 +2061,18 @@ def run(args: argparse.Namespace) -> int:
             applied_from_packet = str(packet_path)
             if rows_to_apply and rows_to_apply[0].get("batch_id"):
                 batch_id = rows_to_apply[0]["batch_id"]
+        apply_min_score = args.min_score
+        if any(
+            row.get("evidence", "").split(":")[-1] in INVESTIGATION_PROMOTE_PROOF_TYPES
+            for row in rows_to_apply
+        ):
+            apply_min_score = min(args.min_score, args.investigation_min_score)
         batch.validate_packet_rows(
             root,
             rows_to_apply,
             override_path=override_path,
             expected_reason=REFERENCE_MARKER_REASON,
-            min_score=args.min_score,
+            min_score=apply_min_score,
         )
         applied = batch.append_override_rows(override_path, rows_to_apply)
 
@@ -1582,6 +2097,16 @@ def run(args: argparse.Namespace) -> int:
     print(f"false_positive={len(false_positive)}")
     if args.write_packet:
         print(f"packet_path={Path(args.write_packet)}")
+    if args.write_investigation_packet:
+        investigation_counts = Counter(row.get("decision", "") for row in investigation_rows)
+        proof_counts = Counter(row.get("proof_type", "") for row in investigation_rows if row.get("proof_type", ""))
+        print(f"investigation_packet_path={Path(args.write_investigation_packet)}")
+        print(f"investigation_rows={len(investigation_rows)}")
+        print(f"investigation_promote_exact={investigation_counts.get('promote_exact', 0)}")
+        print(f"investigation_reject_not_marker={investigation_counts.get('reject_not_marker', 0)}")
+        print(f"investigation_needs_source_image={investigation_counts.get('needs_source_image', 0)}")
+        for proof_type, count in sorted(proof_counts.items()):
+            print(f"investigation_proof_{proof_type}={count}")
     if applied_from_packet:
         print(f"applied_from_packet={applied_from_packet}")
     print(f"applied={applied}")
@@ -1618,6 +2143,34 @@ def main() -> int:
         "--apply-packet",
         default="",
         help="Apply exact override rows from a previously emitted packet TSV.",
+    )
+    parser.add_argument(
+        "--write-investigation-packet",
+        default="",
+        help=(
+            "Write bounded deferred-row investigation results to this TSV; "
+            "promote_exact rows require a concrete text proof."
+        ),
+    )
+    parser.add_argument(
+        "--investigation-limit",
+        type=int,
+        default=25,
+        help="Maximum deferred prefix rows to investigate; 0 means no limit.",
+    )
+    parser.add_argument(
+        "--investigation-min-score",
+        type=int,
+        default=70,
+        help="Minimum score for bounded deferred prefix investigation.",
+    )
+    parser.add_argument(
+        "--include-investigation-promotions",
+        action="store_true",
+        help=(
+            "When no Tier A rows are selected, write promote_exact investigation "
+            "rows to --write-packet."
+        ),
     )
     parser.add_argument(
         "--direction-from-lemma-order",

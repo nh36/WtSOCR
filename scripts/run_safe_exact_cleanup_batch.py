@@ -123,6 +123,7 @@ def validation_commands() -> list[list[str]]:
             "tests/test_postprocess_regressions.py",
             "tests/test_tibetan_cleanup_diagnostics.py",
             "tests/test_exact_promotion_batch.py",
+            "tests/test_reference_marker_investigator.py",
             "-q",
         ],
     ]
@@ -137,6 +138,7 @@ def run_reference_marker(args: argparse.Namespace) -> int:
     batch_id = args.batch_id or f"reference_marker_{timestamp}"
     work_dir = args.work_dir or root / "work" / "safe_exact_batches" / batch_id
     packet_path = work_dir / "selected_exact_overrides.tsv"
+    investigation_path = work_dir / "deferred_reference_marker_investigation.tsv"
     dry_run_dir = work_dir / "dry_run"
     apply_dir = work_dir / "apply"
     source_revision = batch.git_revision(root)
@@ -161,15 +163,33 @@ def run_reference_marker(args: argparse.Namespace) -> int:
             str(dry_run_dir),
             "--write-packet",
             str(packet_path),
+            "--write-investigation-packet",
+            str(investigation_path),
+            "--investigation-limit",
+            str(args.investigation_limit),
+            "--investigation-min-score",
+            str(args.investigation_min_score),
+            "--include-investigation-promotions",
         ],
         root=root,
         capture=True,
     )
     packet_rows = batch.load_packet(packet_path)
     selected_count = len(packet_rows)
+    investigation_rows = batch.read_tsv(investigation_path) if investigation_path.exists() else []
+    investigation_counts = {
+        key: sum(1 for row in investigation_rows if row.get("decision") == key)
+        for key in ("promote_exact", "reject_not_marker", "needs_source_image")
+    }
     print(f"packet_rows={selected_count}")
+    print(
+        "investigation="
+        f"promote_exact:{investigation_counts['promote_exact']},"
+        f"reject_not_marker:{investigation_counts['reject_not_marker']},"
+        f"needs_source_image:{investigation_counts['needs_source_image']}"
+    )
     if selected_count == 0:
-        print("No rows selected; nothing to apply.")
+        print("No rows selected; no concrete promote_exact proof rows to apply.")
         return 0
     if not args.apply:
         return 0
@@ -194,6 +214,8 @@ def run_reference_marker(args: argparse.Namespace) -> int:
             str(apply_dir),
             "--apply-packet",
             str(packet_path),
+            "--investigation-min-score",
+            str(args.investigation_min_score),
         ],
         root=root,
         capture=True,
@@ -223,7 +245,8 @@ def run_reference_marker(args: argparse.Namespace) -> int:
             "source_diagnostic": ";".join(source_diagnostics),
             "selection_rule": (
                 "tier=A;sort=score_desc_volume_page_line_token;"
-                "direction=lemma_order;exact_unique_source=true"
+                "direction=lemma_order;exact_unique_source=true;"
+                "fallback=bounded_deferred_text_investigation"
             ),
             "min_score": str(args.min_score),
             "row_limit": str(args.limit),
@@ -231,7 +254,10 @@ def run_reference_marker(args: argparse.Namespace) -> int:
             "selected_count": str(selected_count),
             "applied_count": applied_count,
             "affected_volumes": ";".join(volumes),
-            "notes": f"packet={relpath(root, packet_path)}",
+            "notes": (
+                f"packet={relpath(root, packet_path)};"
+                f"investigation={relpath(root, investigation_path)}"
+            ),
         },
     )
 
@@ -279,6 +305,8 @@ def main() -> int:
     parser.add_argument("--work-dir", type=Path, default=None)
     parser.add_argument("--work-root", type=Path, default=DEFAULT_WORK_ROOT)
     parser.add_argument("--root", type=Path, default=repo_root())
+    parser.add_argument("--investigation-limit", type=int, default=25)
+    parser.add_argument("--investigation-min-score", type=int, default=70)
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--push", action="store_true")
     parser.add_argument("--no-commit", action="store_true")
