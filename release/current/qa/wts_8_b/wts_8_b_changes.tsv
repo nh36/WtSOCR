@@ -3074,3 +3074,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 116	8	591	headword_line	sioms	sñoms	reviewed_tibetan_exact	reviewed_tibetan_exact_manual_structural_root_ocr	yes	བོངས་སྙོམས་ boṅs sioms gleiche Größe, glei-
 408	72	2254	headword_line	Tdbyar	↑ dbyar	A	reviewed_tibetan_exact_reference_marker	1	དབྱར་སླ་ dbyar sla Tdbyar zla.
 409	73	2267	headword_line	Tdbyi	↑ dbyi	A	reviewed_tibetan_exact_reference_marker	1	དབྱི་མོང་ ?dbyi moṅ Tdbyi mo.
+343	28	1784	german_prose_with_translit	Inas	↓ nas	A	reviewed_tibetan_exact_reference_marker	1	(TsornNth 5,21b3); bde gsegs rigs Inas —

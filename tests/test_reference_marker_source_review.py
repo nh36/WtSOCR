@@ -152,6 +152,48 @@ class ReferenceMarkerSourceReviewTests(unittest.TestCase):
 
             self.assertTrue(any("stale current_line" in error for error in errors))
 
+    def test_applied_accepted_review_row_validates_after_exact_replacement(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_release_line(root, "one ↑ foo two")
+            write_source_pdfs(root)
+
+            errors = helper.validate_review_rows(
+                root,
+                [
+                    review_row(
+                        source_image_decision="accept_exact",
+                        source_image_marker="↑",
+                        proposed_to_token="↑ foo",
+                        review_note="source image shows upward marker before foo",
+                        reviewed_at="2026-08-15T12:00:00Z",
+                    )
+                ],
+            )
+
+            self.assertEqual(errors, [])
+
+    def test_applied_accepted_review_row_still_rejects_nonmatching_line(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_release_line(root, "one ↑ bar two")
+            write_source_pdfs(root)
+
+            errors = helper.validate_review_rows(
+                root,
+                [
+                    review_row(
+                        source_image_decision="accept_exact",
+                        source_image_marker="↑",
+                        proposed_to_token="↑ foo",
+                        review_note="source image shows upward marker before foo",
+                        reviewed_at="2026-08-15T12:00:00Z",
+                    )
+                ],
+            )
+
+            self.assertTrue(any("stale current_line" in error for error in errors))
+
     def test_marker_mismatch_rejected(self) -> None:
         with TemporaryDirectory() as tmp:
             root = Path(tmp)

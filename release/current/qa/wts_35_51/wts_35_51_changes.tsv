@@ -6618,3 +6618,7 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 812	64	4155	headword_line	Tspyan	↑ spyan	A	reviewed_tibetan_exact_reference_marker	1	སྨན་མ་ spyan ma Tspyan
 859	44	4425	headword_line	Tspro	↑ spro	A	reviewed_tibetan_exact_reference_marker	1	སྤྲོ་བདེ་ཁང་གསར་ spro bde khaṅ gsar Tspro khani
 863	4	4451	headword_line	\spros	↓ spros	A	reviewed_tibetan_exact_reference_marker	1	སྤྲོས་པ་མེད་པ་ spros pa med pa \spros med.
+520	39	2580	headword_line	Ignas	↓ gnas	A	reviewed_tibetan_exact_reference_marker	1	གནས་བཅའ་ gras bca' fut. zu Ignas cha'.
+523	58	2595	headword_line	Ignas	↓ gnas	A	reviewed_tibetan_exact_reference_marker	1	གནས་ནས་ཕྱུང་ gnas nas phyuṅ pf. zu Ignas nas
+524	11	2598	headword_line	Ignas	↑ gnas	A	reviewed_tibetan_exact_reference_marker	1	གནས་ནས་འབྱིན་ gnas nas byin pf. Ignas nas
+863	2	4450	headword_line	Ispros	↓ spros	A	reviewed_tibetan_exact_reference_marker	1	སྤྲོས་པ་དང་བྲལ་བ་ spros pa daṅ bral ba Ispros bral.

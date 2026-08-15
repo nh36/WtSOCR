@@ -42017,7 +42017,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 520	36	2579	german_prose_with_translit			none	2	3	0	0	"tu Ses ""er kennt die Einheit (skt. ekārthata)"
 520	37	2579	german_prose			none	0	5	0	0	"von Dispositionen und Obsessionen"" (K44"
 520	38	2579	latin_other			none	1	0	0	0	kha 25244).
-520	39	2580	headword_line	གནས་བཅའ་	bca'	high	2	2	0	0	གནས་བཅའ་ gras bca' fut. zu Ignas cha'.
+520	39	2580	headword_line	གནས་བཅའ་	bca'	high	2	2	0	0	གནས་བཅའ་ gras bca' fut. zu ↓ gnas cha'.
 520	40	2580	other			none	0	0	0	0	1. sich niederlassen.
 520	41	2580	tibetan_only	གནས་ཆེན་		none	0	1	0	0	གནས་ཆེན་ gnas chen
 520	42	2580	german_prose_with_translit			none	3	3	0	0	"Lex. sdod gnas 'cha' ba la'ani ""auch für: sich"
@@ -42291,7 +42291,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 523	55	2594	german_prose_with_translit			none	4	2	0	0	"lha mo 'khor lṅa ston dan ""die Göt-"
 523	56	2594	german_prose_with_translit			none	1	3	0	0	"tin Sthānavati mit fünftausend Begleitern"""
 523	57	2594	german_prose			none	0	1	0	0	(Liyl 17453).
-523	58	2595	headword_line	གནས་ནས་ཕྱུང་	nas phyuṅ	high	3	2	0	0	གནས་ནས་ཕྱུང་ gnas nas phyuṅ pf. zu Ignas nas
+523	58	2595	headword_line	གནས་ནས་ཕྱུང་	nas phyuṅ	high	3	2	0	0	གནས་ནས་ཕྱུང་ gnas nas phyuṅ pf. zu ↓ gnas nas
 523	59	2595	german_prose			none	0	2	0	0	'byin vertreiben; des Amtes ent-
 523	60	2595	german_prose			none	0	2	0	0	heben, aus der Mönchsgemeinde ausschlie-
 523	61	2595	german_prose			none	0	1	0	0	ßen.
@@ -42322,7 +42322,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 524	8	2597	latin_other			none	2	0	0	0	"vertricben werden"" (brDa); — ba = utksepa-"
 524	9	2597	german_prose			none	0	2	0	0	ulyam (Mvy 8646, Abt. chad pas bcad cin gso
 524	10	2597	latin_other			none	3	0	0	0	ba la sogs pa'i min).
-524	11	2598	headword_line	གནས་ནས་འབྱིན་	nas byin	medium	3	1	0	0	གནས་ནས་འབྱིན་ gnas nas byin pf. Ignas nas
+524	11	2598	headword_line	གནས་ནས་འབྱིན་	nas byin	medium	3	1	0	0	གནས་ནས་འབྱིན་ gnas nas byin pf. ↑ gnas nas
 524	12	2598	german_prose_with_translit			none	3	1	0	0	phyun fur. gnas nas dbyun
 524	13	2598	german_prose			none	0	3	0	0	vertreiben; des Amtes entheben, aus der
 524	14	2598	german_prose			none	0	2	0	0	Mönchsgemeinde ausschließen.
@@ -70317,7 +70317,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 862	94	4448	latin_other			none	2	0	0	0	"Ausschweifung verstanden"" ( <Th 1: 255,4)."
 862	95	4448	german_prose_with_translit			none	3	2	0	0	Lex. las ka'am las gan (T TC).
 863	1	4449	headword_line	སྤྲོས་པ་དང་བྲལ་་	pa daṅ	high	2	0	0	0	"སྤྲོས་པ་དང་བྲལ་་ "" spros pa daṅ bral"
-863	2	4450	headword_line	སྤྲོས་པ་དང་བྲལ་བ་	pa daṅ	high	3	1	0	0	སྤྲོས་པ་དང་བྲལ་བ་ spros pa daṅ bral ba Ispros bral.
+863	2	4450	headword_line	སྤྲོས་པ་དང་བྲལ་བ་	pa daṅ	high	3	1	0	0	སྤྲོས་པ་དང་བྲལ་བ་ spros pa daṅ bral ba ↓ spros bral.
 863	3	4450	other			none	0	0	0	0	bral.
 863	4	4451	headword_line	སྤྲོས་པ་མེད་པ་	pa	medium	2	0	0	0	སྤྲོས་པ་མེད་པ་ spros pa med pa ↓ spros med.
 863	5	4452	headword_line	སྤྲོས་བྲལ་	pa dan	medium	2	2	0	0	སྤྲོས་བྲལ་ spros bral Kurzf. für spros pa dan bral

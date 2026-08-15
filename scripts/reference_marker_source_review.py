@@ -293,6 +293,49 @@ def is_blank_row(row: dict[str, str]) -> bool:
     return not any((value or "").strip() for value in row.values())
 
 
+def replacement_span_for_source(
+    line: str,
+    *,
+    source_token: str,
+    token_index: int,
+) -> tuple[int, int] | None:
+    for index, (token, start, end) in enumerate(batch.extract_tokens(line), start=1):
+        if index != token_index:
+            continue
+        matches = [
+            (candidate_start, candidate_end)
+            for candidate, candidate_start, candidate_end in batch.match_options(
+                line,
+                token,
+                start,
+                end,
+            )
+            if candidate == source_token
+        ]
+        if len(matches) == 1:
+            return matches[0]
+        return None
+    return None
+
+
+def applied_line_for_review_row(row: dict[str, str]) -> str | None:
+    line = row.get("current_line", "")
+    source_token = row.get("source_token", "")
+    replacement = row.get("proposed_to_token", "")
+    token_index = as_int(row.get("token_index", ""))
+    if not line or not source_token or not replacement or token_index < 1:
+        return None
+    span = replacement_span_for_source(
+        line,
+        source_token=source_token,
+        token_index=token_index,
+    )
+    if span is None:
+        return None
+    start, end = span
+    return f"{line[:start]}{replacement}{line[end:]}"
+
+
 def validate_review_rows(root: Path, rows: list[dict[str, str]]) -> list[str]:
     errors: list[str] = []
     seen: set[tuple[str, str, str, str, str]] = set()
@@ -341,16 +384,29 @@ def validate_review_rows(root: Path, rows: list[dict[str, str]]) -> list[str]:
         except (KeyError, ValueError) as exc:
             errors.append(f"row {index} cannot load current release line: {exc}")
             current_line = ""
-        if current_line and row.get("current_line", "") != current_line:
-            errors.append(
-                f"row {index} stale current_line for {row['volume']} {row['page']}:{row['line']}"
-            )
 
         expected_index = as_int(row.get("token_index", ""))
+        source_validation_line = current_line
+        if current_line:
+            if row.get("current_line", "") == current_line:
+                source_validation_line = current_line
+            elif (
+                decision == "accept_exact"
+                and applied_line_for_review_row(row) == current_line
+            ):
+                source_validation_line = row.get("current_line", "")
+            else:
+                errors.append(
+                    f"row {index} stale current_line for {row['volume']} {row['page']}:{row['line']}"
+                )
+
         if expected_index < 1:
             errors.append(f"row {index} has invalid token_index {row.get('token_index', '')!r}")
-        elif current_line:
-            occurrences = batch.line_occurrences_for_source(row.get("source_token", ""), current_line)
+        elif source_validation_line:
+            occurrences = batch.line_occurrences_for_source(
+                row.get("source_token", ""),
+                source_validation_line,
+            )
             if occurrences != [expected_index]:
                 errors.append(
                     f"row {index} stale or ambiguous source token {row.get('source_token', '')!r}; "

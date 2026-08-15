@@ -29271,3 +29271,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 946	86	10359	headword_line	\bsti	↓ bsti	A	reviewed_tibetan_exact_reference_marker	1	སྟི་སྟང་ sti staṅ \bsti stan.
 688	16	8325	headword_line	\mchog	↓ mchog	A	reviewed_tibetan_exact_reference_marker	1	མཆོག་གྱར་ mchog gyur \mchog tn gyur pa.
 696	80	8395	headword_line	\mchod	↓ mchod	A	reviewed_tibetan_exact_reference_marker	1	མཆོད་པའི་རྫས་ mchod pa’i rdzas \mchod rdzas.
+748	123	8892	german_prose_with_translit	Trjes	↑ rjes	A	reviewed_tibetan_exact_reference_marker	1	vgl. Trjes su säin brtse.
