@@ -11,12 +11,20 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
+
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+import exact_promotion_batch as batch
 
 
 VOLUME_ORDER = ("wts_1_34", "wts_35_51", "wts_8_b", "wts_9_m")
@@ -207,6 +215,13 @@ def write_tsv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in fields})
+
+
+def as_int(value: str, default: int = 0) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
 
 
 def normalize_key(value: str) -> str:
@@ -1039,62 +1054,85 @@ def decision_to_row(decision: CandidateDecision) -> dict[str, str]:
     return decision.__dict__.copy()
 
 
-def load_existing_overrides(path: Path) -> tuple[list[dict[str, str]], set[tuple[str, str, str, str, str]]]:
-    rows = read_tsv(path)
-    keys = {
-        (
-            row["volume"],
-            row["page"],
-            row["line"],
-            row["token_index"],
-            row["from_token"],
-        )
-        for row in rows
+def override_row_from_decision(decision: CandidateDecision, batch_id: str = "") -> dict[str, str]:
+    evidence = EVIDENCE_TAG if not batch_id else f"{EVIDENCE_TAG}:{batch_id}"
+    return {
+        "volume": decision.volume,
+        "page": decision.page,
+        "line": decision.line,
+        "token_index": decision.token_index,
+        "from_token": decision.source_token,
+        "to_token": decision.replacement_target,
+        "reason": REFERENCE_MARKER_REASON,
+        "evidence": evidence,
+        "review_note": REVIEW_NOTE,
     }
-    return rows, keys
+
+
+def diagnostic_source_for(decision: CandidateDecision) -> str:
+    return (
+        f"release/current/qa/{decision.volume}/"
+        "tibetan_cleanup_diagnostics/reference_marker_candidates.tsv"
+    )
+
+
+def packet_row_from_decision(decision: CandidateDecision, batch_id: str) -> dict[str, str]:
+    row = override_row_from_decision(decision, batch_id=batch_id)
+    row.update(
+        {
+            "batch_id": batch_id,
+            "score": decision.score,
+            "source_diagnostic": diagnostic_source_for(decision),
+            "candidate_family": decision.candidate_family,
+            "direction_basis": decision.direction_basis,
+            "context_type": decision.context_type,
+            "positive_evidence": decision.positive_evidence,
+            "negative_evidence": decision.negative_evidence,
+        }
+    )
+    return row
+
+
+def promotable_sort_key(decision: CandidateDecision) -> tuple[int, int, int, int, int]:
+    volume_rank = {volume: index for index, volume in enumerate(VOLUME_ORDER)}
+    return (
+        -as_int(decision.score),
+        volume_rank.get(decision.volume, len(volume_rank)),
+        as_int(decision.page),
+        as_int(decision.line),
+        as_int(decision.token_index),
+    )
+
+
+def select_promotable(
+    decisions: list[CandidateDecision],
+    *,
+    tier: str,
+    limit: int,
+    min_score: int,
+    max_per_volume: int,
+) -> list[CandidateDecision]:
+    counts: Counter[str] = Counter()
+    selected: list[CandidateDecision] = []
+    promotable = [
+        row
+        for row in decisions
+        if row.decision == "promote" and row.tier == tier and as_int(row.score) >= min_score
+    ]
+    for row in sorted(promotable, key=promotable_sort_key):
+        if max_per_volume and counts[row.volume] >= max_per_volume:
+            continue
+        selected.append(row)
+        counts[row.volume] += 1
+        if limit and len(selected) >= limit:
+            break
+    return selected
 
 
 def append_overrides(path: Path, decisions: list[CandidateDecision]) -> int:
-    rows, existing = load_existing_overrides(path)
-    added = 0
-    for decision in decisions:
-        key = (
-            decision.volume,
-            decision.page,
-            decision.line,
-            decision.token_index,
-            decision.source_token,
-        )
-        if key in existing:
-            continue
-        rows.append(
-            {
-                "volume": decision.volume,
-                "page": decision.page,
-                "line": decision.line,
-                "token_index": decision.token_index,
-                "from_token": decision.source_token,
-                "to_token": decision.replacement_target,
-                "reason": REFERENCE_MARKER_REASON,
-                "evidence": EVIDENCE_TAG,
-                "review_note": REVIEW_NOTE,
-            }
-        )
-        existing.add(key)
-        added += 1
-    fields = [
-        "volume",
-        "page",
-        "line",
-        "token_index",
-        "from_token",
-        "to_token",
-        "reason",
-        "evidence",
-        "review_note",
-    ]
-    write_tsv(path, rows, fields)
-    return added
+    return batch.append_override_rows(
+        path, [override_row_from_decision(decision) for decision in decisions]
+    )
 
 
 def write_deferred_profile(out_dir: Path, deferred: list[CandidateDecision]) -> None:
@@ -1454,6 +1492,7 @@ def write_audit(
 def run(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    batch_id = args.batch_id or f"reference_marker_{timestamp}"
     out_dir = Path(args.work_dir) if args.work_dir else root / "work" / f"reference_marker_promotion_{timestamp}"
 
     line_zones, lemma_by_entry, lemma_index, lemmas = load_line_zones(root)
@@ -1471,15 +1510,56 @@ def run(args: argparse.Namespace) -> int:
         )
         for row in rows
     ]
-    promotable_all = [row for row in decisions if row.decision == "promote"]
-    selected = promotable_all[: args.limit] if args.limit else promotable_all
+    promotable_all = sorted(
+        [
+            row
+            for row in decisions
+            if row.decision == "promote"
+            and row.tier == args.tier
+            and as_int(row.score) >= args.min_score
+        ],
+        key=promotable_sort_key,
+    )
+    selected = select_promotable(
+        decisions,
+        tier=args.tier,
+        limit=args.limit,
+        min_score=args.min_score,
+        max_per_volume=args.max_per_volume,
+    )
     deferred = [row for row in decisions if row.decision == "defer"]
     false_positive = [row for row in decisions if row.decision == "false_positive"]
+    packet_rows = [packet_row_from_decision(decision, batch_id) for decision in selected]
 
     applied = 0
+    applied_from_packet = ""
+    override_path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
+    if args.write_packet:
+        packet_path = Path(args.write_packet)
+        batch.validate_packet_rows(
+            root,
+            packet_rows,
+            override_path=override_path,
+            expected_reason=REFERENCE_MARKER_REASON,
+            min_score=args.min_score,
+        )
+        batch.write_packet(packet_path, packet_rows)
     if args.apply:
-        override_path = root / "data" / "reviewed_tibetan_exact_overrides.tsv"
-        applied = append_overrides(override_path, selected)
+        rows_to_apply = packet_rows
+        if args.apply_packet:
+            packet_path = Path(args.apply_packet)
+            rows_to_apply = batch.load_packet(packet_path)
+            applied_from_packet = str(packet_path)
+            if rows_to_apply and rows_to_apply[0].get("batch_id"):
+                batch_id = rows_to_apply[0]["batch_id"]
+        batch.validate_packet_rows(
+            root,
+            rows_to_apply,
+            override_path=override_path,
+            expected_reason=REFERENCE_MARKER_REASON,
+            min_score=args.min_score,
+        )
+        applied = batch.append_override_rows(override_path, rows_to_apply)
 
     write_audit(
         out_dir,
@@ -1494,11 +1574,16 @@ def run(args: argparse.Namespace) -> int:
     )
 
     print(f"audit_dir={out_dir}")
+    print(f"batch_id={batch_id}")
     print(f"lemmas_indexed={len(lemmas)}")
     print(f"tier_a_total={len(promotable_all)}")
     print(f"tier_a_selected={len(selected)}")
     print(f"deferred={len(deferred)}")
     print(f"false_positive={len(false_positive)}")
+    if args.write_packet:
+        print(f"packet_path={Path(args.write_packet)}")
+    if applied_from_packet:
+        print(f"applied_from_packet={applied_from_packet}")
     print(f"applied={applied}")
     for source, count in sorted(Counter(row.marker_source for row in selected).items()):
         print(f"selected_source_{source}={count}")
@@ -1516,6 +1601,24 @@ def main() -> int:
     mode.add_argument("--apply", action="store_true")
     parser.add_argument("--tier", default="A", choices=["A"])
     parser.add_argument("--limit", type=int, default=250)
+    parser.add_argument("--min-score", type=int, default=100)
+    parser.add_argument(
+        "--max-per-volume",
+        type=int,
+        default=0,
+        help="Maximum selected rows per volume; 0 means no per-volume cap.",
+    )
+    parser.add_argument("--batch-id", default="")
+    parser.add_argument(
+        "--write-packet",
+        default="",
+        help="Write selected exact override rows and review metadata to this TSV.",
+    )
+    parser.add_argument(
+        "--apply-packet",
+        default="",
+        help="Apply exact override rows from a previously emitted packet TSV.",
+    )
     parser.add_argument(
         "--direction-from-lemma-order",
         action="store_true",
