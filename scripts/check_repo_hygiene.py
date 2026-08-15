@@ -49,6 +49,8 @@ ALLOWED_LEDGER_FILES = {
 }
 
 ALLOWED_NON_STDLIB_IMPORTS = {
+    # Pillow is already used by the line-anchor/image crop workflow.
+    "PIL",
     "pytest",
 }
 
