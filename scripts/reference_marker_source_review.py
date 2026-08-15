@@ -158,12 +158,32 @@ def source_review_sort_key(row: dict[str, str]) -> tuple[int, int, int, int, int
     )
 
 
+def source_review_key(row: dict[str, str]) -> tuple[str, str, str, str, str]:
+    return (
+        row.get("volume", ""),
+        row.get("page", ""),
+        row.get("line", ""),
+        row.get("token_index", ""),
+        row.get("source_token", ""),
+    )
+
+
+def reviewed_source_image_keys(rows: list[dict[str, str]]) -> set[tuple[str, str, str, str, str]]:
+    return {
+        source_review_key(row)
+        for row in rows
+        if row.get("source_image_decision", "")
+    }
+
+
 def select_source_review_candidates(
     investigation_rows: list[dict[str, str]],
     *,
     limit: int,
     max_per_volume: int,
+    exclude_keys: set[tuple[str, str, str, str, str]] | None = None,
 ) -> list[dict[str, str]]:
+    exclude_keys = exclude_keys or set()
     counts: Counter[str] = Counter()
     selected: list[dict[str, str]] = []
     candidates = [
@@ -174,6 +194,7 @@ def select_source_review_candidates(
         and row.get("source_token", "")
         and row.get("attached_token", "")
         and row.get("token_index", "")
+        and source_review_key(row) not in exclude_keys
     ]
     for row in sorted(candidates, key=source_review_sort_key):
         volume = row.get("volume", "")
@@ -229,11 +250,14 @@ def build_review_rows(
     max_per_volume: int,
     render_crops: bool = False,
     dpi: int = 200,
+    existing_review_rows: list[dict[str, str]] | None = None,
 ) -> list[dict[str, str]]:
+    exclude_keys = reviewed_source_image_keys(existing_review_rows or [])
     selected = select_source_review_candidates(
         investigation_rows,
         limit=limit,
         max_per_volume=max_per_volume,
+        exclude_keys=exclude_keys,
     )
     rows = [
         review_row_from_investigation(root, row, batch_id=batch_id, work_dir=work_dir)

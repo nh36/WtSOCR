@@ -27,6 +27,7 @@ def main() -> int:
     parser.add_argument("--batch-id", default="")
     parser.add_argument("--work-dir", type=Path, default=None)
     parser.add_argument("--root", type=Path, default=repo_root())
+    parser.add_argument("--review-ledger", type=Path, default=Path("data/reference_marker_source_image_reviews.tsv"))
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--max-per-volume", type=int, default=15)
     parser.add_argument("--render-crops", action="store_true")
@@ -36,6 +37,8 @@ def main() -> int:
     root = args.root.resolve()
     batch_id = args.batch_id or source_review.utc_batch_id()
     work_dir = args.work_dir or args.review_packet.parent
+    review_ledger = args.review_ledger if args.review_ledger.is_absolute() else root / args.review_ledger
+    existing_review_rows = batch.read_tsv(review_ledger) if review_ledger.exists() else []
     rows = source_review.build_review_rows(
         root,
         batch.read_tsv(args.investigation_packet),
@@ -45,6 +48,7 @@ def main() -> int:
         max_per_volume=args.max_per_volume,
         render_crops=args.render_crops,
         dpi=args.dpi,
+        existing_review_rows=existing_review_rows,
     )
     batch.write_tsv(args.review_packet, rows, source_review.SOURCE_REVIEW_FIELDS)
     print(f"source_review_rows={len(rows)}")

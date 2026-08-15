@@ -112,6 +112,35 @@ class ReferenceMarkerSourceReviewTests(unittest.TestCase):
             self.assertEqual(rows[0]["source_image_decision"], "")
             self.assertEqual(rows[0]["proposed_to_token"], "")
 
+    def test_build_review_rows_skips_existing_source_image_decisions(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_source_pdfs(root)
+
+            rows = helper.build_review_rows(
+                root,
+                [
+                    investigation_row(source_token="Tfoo", attached_token="foo"),
+                    investigation_row(source_token="Ibar", marker_source="I", attached_token="bar"),
+                ],
+                batch_id="reference_marker_source_review_test",
+                work_dir=root / "work" / "source_review",
+                limit=5,
+                max_per_volume=5,
+                render_crops=False,
+                existing_review_rows=[
+                    review_row(
+                        source_token="Tfoo",
+                        attached_token="foo",
+                        source_image_decision="reject_not_marker",
+                        review_note="already reviewed",
+                    )
+                ],
+            )
+
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["source_token"], "Ibar")
+
     def test_accepted_review_imports_exact_packet_row(self) -> None:
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
