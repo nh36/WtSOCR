@@ -29198,3 +29198,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 956	32	10444	latin_other	/ nan	↓ naṅ	A	reviewed_tibetan_exact_reference_marker	1	risig zur 'gag = de yaṅ ni / nan gi sa dgra yin
 1067	28	11775	latin_other	/ brgyad	↑ brgyad	A	reviewed_tibetan_exact_reference_marker	1	sa brgyad = 7723 kyi sa / brgyad pa’i sa / ~ /
 1096	33	11937	german_prose_with_translit	/ gtsan	↓ gtsaṅ	A	reviewed_tibetan_exact_reference_marker	1	tshig / gtsan ma (Dagy);gtsani — = pütam pa-
+659	47	7995	headword_line	Tchun	↑ chuṅ	A	reviewed_tibetan_exact_script_ng_witness	1	ཆུང་པོ་གྲོགས་ chuṅ po grogs Tchun grogs.
+660	54	8003	headword_line	Tchun	↑ chuṅ	A	reviewed_tibetan_exact_script_ng_witness	1	ཆུང་གསུམ་ཡོད་པ་ chuṅ gsum yod pa Tchun ma
