@@ -29267,3 +29267,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 437	89	5740	tibetan_only	Tbkan	↑ bkan	A	reviewed_tibetan_exact_reference_marker	1	འགེངས་ ’gens auch ’gen pf. Tbkan fut. Tagan.
 438	72	5743	tibetan_only	Tmgo	↑ mgo	A	reviewed_tibetan_exact_reference_marker	1	འགོ་འདོན་ 20 ’don Tmgo ’don.
 512	106	6611	example_tibetan_latin	Trgyug	↑ rgyug	A	reviewed_tibetan_exact_reference_marker	1	བརྒྱུག་ 777///9 fut. zu Trgyug laufen.
+408	66	5370	headword_line	\dgon	↓ dgon	A	reviewed_tibetan_exact_reference_marker	1	དགན་དང་ dgun dun \dgon dun.
+946	86	10359	headword_line	\bsti	↓ bsti	A	reviewed_tibetan_exact_reference_marker	1	སྟི་སྟང་ sti staṅ \bsti stan.

@@ -69460,7 +69460,7 @@ Ausschweifung verstanden" ( <Th 1: 255,4).
 Lex. las ka'am las gan (T TC).སྤྲོས་པ་དང་བྲལ་་ " spros pa daṅ bral
 སྤྲོས་པ་དང་བྲལ་བ་ spros pa daṅ bral ba Ispros bral.
 bral.
-སྤྲོས་པ་མེད་པ་ spros pa med pa \spros med.
+སྤྲོས་པ་མེད་པ་ spros pa med pa ↓ spros med.
 སྤྲོས་བྲལ་ spros bral Kurzf. für spros pa dan bral
 ba frei von Aktivitäten, frei von gei-
 stiger Aktivität, ruhig, untätig; auch Bez. für

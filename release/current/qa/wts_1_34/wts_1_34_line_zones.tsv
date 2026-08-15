@@ -57871,7 +57871,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 408	60	5369	headword_line	དགན་ཐ་མ་	dgun tha ma	high	3	4	0	0	དགན་ཐ་མ་ dgun tha ma Bez. für den 12. Hor-
 408	62	5369	german_prose			none	0	1	0	0	Monat.
 408	64	5369	german_prose_with_translit			none	2	2	0	0	Lex. hor zla beu 977/$ pa (brDa, Dagy).
-408	66	5370	headword_line	དགན་དང་	dgun	medium	2	0	0	0	དགན་དང་ dgun dun \dgon dun.
+408	66	5370	headword_line	དགན་དང་	dgun	medium	2	0	0	0	དགན་དང་ dgun dun ↓ dgon dun.
 408	68	5371	headword_line	དགུན་འབྲིང་	dgun	medium	3	1	0	0	དགུན་འབྲིང་ dgun ’briṅ auch dgun zla 7777 po
 408	70	5371	german_prose			none	0	4	0	0	Bez. für den mittleren Wintermo-
 408	71	5371	german_prose			none	0	2	0	0	nat, den 11. Hor-Monat.
@@ -137388,7 +137388,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 946	79	10358	german_prose_with_translit			none	1	1	0	0	pa aufgefädelt, aufgereiht.
 946	81	10358	german_prose_with_translit			none	3	2	0	0	Lex. go rim legs par breyus pa „gut aufgereiht“ (Dagy); star breyus pa = phren bar
 946	83	10358	german_prose_with_translit			none	5	3	0	0	bsgrigs pa’am breyus pa „als Kette angeordnet oder aufgereiht“ (brDa).
-946	86	10359	headword_line	སྟི་སྟང་	bsti	medium	1	0	0	0	སྟི་སྟང་ sti staṅ \bsti stan.
+946	86	10359	headword_line	སྟི་སྟང་	bsti	medium	1	0	0	0	སྟི་སྟང་ sti staṅ ↓ bsti stan.
 946	88	10360	headword_line	སྟིང་	bstins	medium	1	1	0	0	སྟིང་ stin pf. !bstins tadeln, verspotten; (Zw.)
 946	89	10360	other			none	0	0	0	0	schmeicheln (SWTF s. v. #llapati).
 946	91	10360	latin_other			none	2	0	0	0	rdan can byed - bar byed „er macht sich
