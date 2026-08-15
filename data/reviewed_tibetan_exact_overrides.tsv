@@ -6672,3 +6672,4 @@ wts_35_51	1038	45	2	moñs	moṅs	reviewed_tibetan_exact_final_ng	residual_bucket
 wts_35_51	1045	33	1	la'añ	la'aṅ	reviewed_tibetan_exact_final_ng	residual_bucket_final_ng_exact_20260815	Exact residual bucket final-ng repair; no broad nasal rule.
 wts_35_51	1106	29	7	zañs	zaṅs	reviewed_tibetan_exact_final_ng	residual_bucket_final_ng_exact_20260815	Exact residual bucket final-ng repair; no broad nasal rule.
 wts_35_51	1124	41	7	moñs	moṅs	reviewed_tibetan_exact_final_ng	residual_bucket_final_ng_exact_20260815	Exact residual bucket final-ng repair; no broad nasal rule.
+wts_35_51	760	71	3	Tdpyans	↑ dpyaṅs	reviewed_tibetan_exact_reference_marker	reference_marker_same_line_review_20260815	Exact same-line verb principal-parts marker repair; sibling token 5 is already reviewed as ↑ dpyaṅ; no broad marker or nasal rule.

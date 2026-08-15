@@ -288,7 +288,7 @@ category_changed	wts_1_34	48	77	1	ཀང	kan	kaṅ	kaṅ	source_compatible_insuf
 category_changed	wts_1_34	48	84	1	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀང་ཀའི་མགོ་ ཅན་ kan ka’i mgo can „die mit dem
 category_changed	wts_1_34	48	99	1	ཀང	kan	kaṅ	kaṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	ཀང་ཀིང་ kan kiṅ kin kan.
 newly_discovered	wts_1_34	488	105	1	རྒྱང	rgyon				source_compatible_no_anchor	0	རྒྱང་ rgyon
-newly_discovered	wts_1_34	488	114	1	རྒྱང	rgyon				source_compatible_no_anchor	0	རྒྱང་ rgyon pf. \brgyans fut. \brgyan imp.
+newly_discovered	wts_1_34	488	114	1	རྒྱང	rgyon				source_compatible_no_anchor	0	རྒྱང་ rgyon pf. \brgyans fut. ↓ brgyan imp.
 newly_discovered	wts_1_34	493	73	3	ཁང	Eingangsbereich				source_compatible_damaged_context	0	གྒོ་ཁང་ $90 khan Eingangsbereich, Wachtturm.
 newly_discovered	wts_1_34	495	10	2	བསླང	bsruh				source_compatible_no_anchor	0	སྒོ་བསླང་བ་ sgo bsruh ba auch sgo bsruns Tsgo
 newly_discovered	wts_1_34	495	76	1	སྒོང	sgon		sgoṅ		source_compatible_damaged_context	9	སྒོང་ ?sgon ein Instrument; Ball.
@@ -421,7 +421,7 @@ disappeared	wts_1_34	731	190	3	རུང	run	ruṅ		source_compatible_insufficie
 category_changed	wts_1_34	742	149	4	མེང	min	miṅ	miṅ	source_compatible_structure_mismatch	source_compatible_not_final_ng_only	2	རྗེས་བསྒྲུབ་ཀྱི་མེང་ rjes bsgrub kyi min Metapher,
 newly_discovered	wts_1_34	743	75	2	གདང	gdun				source_compatible_no_anchor	0	རྗེས་གདང་ rjes gdun 1765 su gdun.
 category_changed	wts_1_34	748	107	3	མྐྱོང	myon	myoṅ	myoṅ	source_compatible_insufficient_evidence	source_compatible_single_anchor	1	རྗེས་སུ་མྐྱོང་ rjes su myon
-newly_discovered	wts_1_34	748	84	3	འབྲང	bren				source_compatible_no_anchor	0	རྫཾས་སུ་འབྲང་ rjes su bren Trjes su ’bran.
+newly_discovered	wts_1_34	748	84	3	འབྲང	bren				source_compatible_no_anchor	0	རྫཾས་སུ་འབྲང་ rjes su bren ↑ rjes su ’bran.
 newly_discovered	wts_1_34	750	101	1	ལྗང	han				source_compatible_no_anchor	0	ལྗང་ལྔོའི་བུ་ han sho’i bu
 newly_discovered	wts_1_34	750	127	1	ལྗང	lan		laṅ		source_compatible_single_anchor	1	ལྗང་ལྔོའི་བུ་ lan sro’ bu npr. ein Rsi, Härita,
 newly_discovered	wts_1_34	750	176	1	ལྗང	ljan				source_compatible_no_anchor	0	ལྗང་ཚགས་ ljan tshags Sieb.

@@ -6606,3 +6606,4 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1045	33	5590	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"la'añ ""auch für junges Mädchen"" (Dagy)."
 1106	29	5992	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"keten in 'Phyin-phu"" (sBa 63,15); zañs kyi"
 1124	41	6134	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"fort das Leben"" (Gś-H 62d); ñon moñs chom"
+760	71	3873	headword_line	Tdpyans	↑ dpyaṅs	A	reviewed_tibetan_exact_reference_marker	1	དཔྱོང་ dpyoṅ pf. Tdpyans fur. ↑ dpyaṅ imp.
