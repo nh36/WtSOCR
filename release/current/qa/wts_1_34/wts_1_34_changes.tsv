@@ -29269,3 +29269,5 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 512	106	6611	example_tibetan_latin	Trgyug	↑ rgyug	A	reviewed_tibetan_exact_reference_marker	1	བརྒྱུག་ 777///9 fut. zu Trgyug laufen.
 408	66	5370	headword_line	\dgon	↓ dgon	A	reviewed_tibetan_exact_reference_marker	1	དགན་དང་ dgun dun \dgon dun.
 946	86	10359	headword_line	\bsti	↓ bsti	A	reviewed_tibetan_exact_reference_marker	1	སྟི་སྟང་ sti staṅ \bsti stan.
+688	16	8325	headword_line	\mchog	↓ mchog	A	reviewed_tibetan_exact_reference_marker	1	མཆོག་གྱར་ mchog gyur \mchog tn gyur pa.
+696	80	8395	headword_line	\mchod	↓ mchod	A	reviewed_tibetan_exact_reference_marker	1	མཆོད་པའི་རྫས་ mchod pa’i rdzas \mchod rdzas.

@@ -99975,7 +99975,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 688	11	8324	other			none	0	0	0	0	garten.
 688	12	8324	german_prose_with_translit			none	6	1	0	0	Lex. bza’ sin gi rwa ba (brDa); bza’ sin gi
 688	14	8324	german_prose_with_translit			none	1	1	0	0	rwa ba’i min (Dagy).
-688	16	8325	headword_line	མཆོག་གྱར་	mchog gyur mchog	medium	5	0	0	0	མཆོག་གྱར་ mchog gyur \mchog tn gyur pa.
+688	16	8325	headword_line	མཆོག་གྱར་	mchog gyur mchog	medium	5	0	0	0	མཆོག་གྱར་ mchog gyur ↓ mchog tn gyur pa.
 688	17	8326	headword_line	མཆོག་དགའ་	mchog dga’ mchog tu	high	4	0	0	0	མཆོག་དགའ་ mchog dga’ ↓ mchog tu 797.
 688	19	8327	headword_line	མཆོག་རྒྱལ་མ་	mchog rgyal ma	high	3	2	0	0	མཆོག་རྒྱལ་མ་ mchog rgyal ma Beiname der
 688	20	8327	german_prose			none	0	2	0	0	Gattin Indras.
@@ -100850,7 +100850,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 696	76	8393	german_prose_with_translit			none	1	1	0	0	2.npr. ein Buddha.
 696	77	8393	german_prose_with_translit			none	1	1	0	0	Lex. mahita (Bhad 256).
 696	79	8394	headword_line	མཆོད་ པའི་གནས་	mchod pa’i	high	2	1	0	0	མཆོད་ པའི་གནས་ mchod pa’i gnas ↑ mchod gnas.
-696	80	8395	headword_line	མཆོད་པའི་རྫས་	mchod pa’i rdzas mchod rdzas	high	5	0	0	0	མཆོད་པའི་རྫས་ mchod pa’i rdzas \mchod rdzas.
+696	80	8395	headword_line	མཆོད་པའི་རྫས་	mchod pa’i rdzas mchod rdzas	high	5	0	0	0	མཆོད་པའི་རྫས་ mchod pa’i rdzas ↓ mchod rdzas.
 696	82	8396	headword_line	མཆོད་དཔོན་	mchod	medium	1	2	0	0	མཆོད་དཔོན་ mchod dpon Verantwortlicher für
 696	83	8396	german_prose			none	0	4	0	0	die Opfergaben und Mandalas.
 696	85	8396	german_prose_with_translit			none	3	2	0	0	mkhan chen blo gros rnam rgyal gyi Zabs

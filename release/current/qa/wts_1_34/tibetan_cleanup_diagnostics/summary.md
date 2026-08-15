@@ -9,7 +9,7 @@ This is a diagnostics-only packet. It does not add OCR correction heuristics, do
 - `guarded_dollar_to_sacute_candidates.tsv`: 1286
 - `tibetan_script_ng_witness_candidates.tsv`: 0
 - `reference_marker_candidates.tsv`: 1191
-- `reference_marker_token_families.tsv`: 496
+- `reference_marker_token_families.tsv`: 495
 - `tibetan_initial_i_residual_candidates.tsv`: 0
 - `sigla_variant_candidates.tsv`: 774
 - `residual_sanskrit_low_confidence_candidates.tsv`: 1630
