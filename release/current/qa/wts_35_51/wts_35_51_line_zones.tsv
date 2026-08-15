@@ -1224,7 +1224,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 15	63	53	german_prose			none	0	4	0	0	"""es war nötig gewesen, ihnen zu sagen, daß"
 15	64	53	german_prose			none	0	4	0	0	man mit einem Yi-dam nicht willkürlich um-
 15	65	53	german_prose_with_translit			none	4	1	0	0	"gehen soll"" (KTh 1: 54,4); na rgyal ni ... ñon"
-15	66	53	latin_other			none	4	0	0	0	moñs) hrag pa'i skabs su skyes pas mgo bsñol
+15	66	53	latin_other			none	4	0	0	0	moṅs) hrag pa'i skabs su skyes pas mgo bsñol
 15	67	53	german_prose_with_translit			none	3	2	0	0	"ba'aṅ dka' por bda' (r. —) ""weil der Stolz"
 15	68	53	german_prose_with_translit			none	2	2	0	0	entsteht, wenn die Befleckungen stark sind,
 15	69	53	german_prose			none	0	5	0	0	"ist auch das Überwinden schwierig"" (KTh 1:"
@@ -3400,7 +3400,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 41	55	182	german_prose			none	0	1	0	0	"selbst genossen hat"" (Hev 2.3.82); — girgyud"
 41	56	182	german_prose_with_translit			none	1	3	0	0	"la (metr.) ""in Hinblick auf deinen Charak-"
 41	57	182	german_prose_with_translit			none	1	1	0	0	"ter (skt. ātmasamtāna)"" (Ppu 31a); bag med"
-41	58	182	latin_other			none	6	0	0	0	pas ni ~ la'añ bdag / tsher ma la sogs gnod
+41	58	182	latin_other			none	6	0	0	0	pas ni ~ la'aṅ bdag / tsher ma la sogs gnod
 41	59	182	german_prose_with_translit			none	1	2	0	0	"pa byed (metr.) ""aus Unbedachtheit fügen"
 41	60	182	german_prose_with_translit			none	1	1	0	0	sie sich selbst (skt. atmanātmāanam) Schaden
 41	61	182	german_prose_with_translit			none	3	2	0	0	"zu"" (Bca 6.35a); — don sems pa 'dre yi tshul"
@@ -4650,7 +4650,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 56	17	273	german_prose_with_translit			none	3	1	0	0	"(Bca 8.1130); da — byed na na ran ""khrul"
 56	18	273	german_prose			none	0	2	0	0	"(metr.) ""wenn ich jetzt an meinem Ich fest-"
 56	19	273	german_prose			none	0	2	0	0	"halte, täusche ich mich selbst"" (Gar 173,25);"
-56	20	273	german_prose_with_translit			none	3	1	0	0	"dam tshig ~ ñon moñs ru trar skye ""wer das"
+56	20	273	german_prose_with_translit			none	3	1	0	0	"dam tshig ~ ñon moṅs ru trar skye ""wer das"
 56	21	273	german_prose			none	0	4	0	0	Gelübde [nicht achtet] und egozentrisch ist,
 56	22	273	german_prose			none	0	3	0	0	der wird als verblendeter rz-tra[-Dämon]
 56	23	273	german_prose			none	0	1	0	0	"wiedergeboren werden"" (Magy 8b5)."
@@ -5422,7 +5422,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 65	32	355	german_prose_with_translit			none	4	1	0	0	=... pbyogs daṅ phyogs su skar mda' It
 65	33	355	german_prose_with_translit			none	1	4	0	0	"ba ... gton ""die üblen Märas lassen in allen"
 65	34	355	german_prose_with_translit			none	1	1	0	0	Himmelsrichtungen Meteorschauer nieder-
-65	35	355	german_prose_with_translit			none	4	1	0	0	"gehen"" (K12 226b2); ñe sbas kyis ~ de la'añ"
+65	35	355	german_prose_with_translit			none	4	1	0	0	"gehen"" (K12 226b2); ñe sbas kyis ~ de la'aṅ"
 65	36	355	latin_other			none	4	0	0	0	"chos kyi gtam kun tu sbyor bar byas nas ""nach-"
 65	37	355	german_prose_with_translit			none	1	4	0	0	dem Upagupta sogar den sūndhaften Mära
 65	38	355	german_prose			none	0	6	0	0	in ein Gespräch über die Lehre verwickelt
@@ -5444,7 +5444,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 65	54	357	other			none	0	0	0	0	u.
 65	55	358	headword_line	བདུད་པོ་ཁ་མཐུན	bdud po kha mthun	high	4	0	0	0	བདུད་པོ་ཁ་མཐུན um bdud po kha mthun yaksa
 65	56	358	german_prose_with_translit			none	4	1	0	0	auch bdud po kha mtshun
-65	57	358	german_prose_with_translit			none	1	5	0	0	yaksa npr. eine Gottheit, gehört zu den gsañ
+65	57	358	german_prose_with_translit			none	1	5	0	0	yaksa npr. eine Gottheit, gehört zu den gsaṅ
 65	58	358	german_prose_with_translit			none	1	3	0	0	ba'i sde breyad, (vgl. Neb 255 und 259),
 65	59	359	headword_line	བདུད་པོ་བྱེ་བ་གུང་རིང་	bdud po bye ba guṅ riṅ	high	6	0	0	0	བདུད་པོ་བྱེ་བ་གུང་རིང་ bdud po bye ba guṅ riṅ
 65	60	359	german_prose			none	0	4	0	0	npr. eine Gottheit im Ge-
@@ -8032,7 +8032,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 96	63	633	german_prose			none	0	4	0	0	"pänilekbab ""mit deutlichen Handlinien"""
 96	64	633	german_prose_with_translit			none	2	2	0	0	(Mvy 311, Abt. dpe byad bzan po brgyad
 96	65	633	german_prose_with_translit			none	1	1	0	0	"cu' min); — sam gzi brjid = ojah ""Glanz"""
-96	66	633	german_prose_with_translit			none	4	1	0	0	(Mvy 6409); kha dog ... dan skar ma la'añ
+96	66	633	german_prose_with_translit			none	4	1	0	0	(Mvy 6409); kha dog ... dan skar ma la'aṅ
 96	67	633	german_prose_with_translit			none	1	5	0	0	"""wie: Farbe, und auch für Stern (?)"" (brDa)."
 96	68	633	german_prose_with_translit			none	1	3	0	0	2. Teint, Antlitz, Gesichtsfarbe; Ausstrah-
 96	69	633	german_prose_with_translit			none	1	1	0	0	lung; — med blaß.
@@ -12589,7 +12589,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 150	70	942	german_prose_with_translit			none	5	1	0	0	— dpa' chen bde gśegs dag / dam pa'i chos
 150	71	942	german_prose_with_translit			none	4	1	0	0	"kyis khrid mdzad de (metr.) ""hier lehren die"
 150	72	942	german_prose			none	0	5	0	0	Mahäviras, die Sugatas, gemäß dem wahren
-150	73	942	german_prose_with_translit			none	4	1	0	0	"Dharma"" (Prav 94,12); ~ gaṅ yani ñon moñs"
+150	73	942	german_prose_with_translit			none	4	1	0	0	"Dharma"" (Prav 94,12); ~ gaṅ yani ñon moṅs"
 150	74	942	other			none	0	0	0	0	"mam dag 'gyur med par (metr.) ""hierbei gibt"
 150	75	942	german_prose			none	0	4	0	0	es keinen, der befleckt wäre oder geläutert
 150	76	942	german_prose_with_translit			none	6	1	0	0	"würde"" (Rgs 22.70); ~ dge sbyoṅ kha cig kha"
@@ -14065,7 +14065,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 167	16	986	latin_other			none	3	0	0	0	15,13); rdzogs sans rgyas la gus par — (metr.)
 167	17	986	german_prose			none	0	1	0	0	"""[ich] verbeuge mich respektvoll vor [die-"
 167	18	986	german_prose_with_translit			none	1	1	0	0	"sem] vollkommenen Buddha"" (Mvup 1.2d);"
-167	19	986	latin_other			none	8	0	0	0	thams cad la / ~ dan ñon moñs las rgyal daṅ
+167	19	986	latin_other			none	8	0	0	0	thams cad la / ~ dan ñon moṅs las rgyal daṅ
 167	20	986	german_prose			none	0	6	0	0	"(metr.) ""in allem Demut und Sieg über die"
 167	21	986	latin_other			none	3	0	0	0	"Befleckungen"" (AA 2.17b); bla ma dam pa'i"
 167	22	986	german_prose_with_translit			none	1	2	0	0	"Zabs la gus pas — (metr.) ""ehrfürchtig ver-"
@@ -15474,7 +15474,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 183	45	1047	german_prose			none	0	1	0	0	chen.
 183	46	1047	german_prose_with_translit			none	5	1	0	0	"Lex. man po'i khrod nas 'dems pa lta bu ""wie:"
 183	47	1047	german_prose			none	0	2	0	0	"aus vielen auswählen"" (Dagy)."
-183	48	1047	german_prose_with_translit			none	3	2	0	0	Lex. pho ña'am bañ chen (TTC).
+183	48	1047	german_prose_with_translit			none	3	2	0	0	Lex. pho ña'am baṅ chen (TTC).
 183	49	1047	german_prose_with_translit			none	4	1	0	0	Lex. pho ña'am khyogs (brDa).
 183	50	1047	other			none	0	0	0	0	wertlos.
 183	51	1047	german_prose_with_translit			none	2	1	0	0	Lex. gso zuns ined pa (brDa).
@@ -20770,7 +20770,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 247	54	1432	latin_other			none	6	0	0	0	byas pa'i yi ge / lha sa'i rdo rin la bris so
 247	55	1432	german_prose			none	0	5	0	0	"""der Friedensvertrag zwischen Neffe und"
 247	56	1432	german_prose_with_translit			none	1	4	0	0	Onkel wurde auf die Steinsäule von Lha-
-247	57	1432	german_prose_with_translit			none	2	1	0	0	"sa geschrieben"" (Bu-Sz 46,15); yar luns bañ"
+247	57	1432	german_prose_with_translit			none	2	1	0	0	"sa geschrieben"" (Bu-Sz 46,15); yar luns baṅ"
 247	58	1432	german_prose_with_translit			none	2	4	0	0	"so; — kyi yi ge ""die Inschrift auf der Stein-"
 247	59	1432	german_prose			none	0	6	0	0	"säule der Grabmäler in Yar-luns"" (Debm"
 247	60	1432	latin_other			none	1	0	0	0	5b8); chad mal (r. mol) gyi yi ge — gsum
@@ -25783,7 +25783,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 308	58	1738	german_prose_with_translit			none	1	3	0	0	"dem Namen nach bekannt"" (Padm 3b5); ra"
 308	59	1738	german_prose_with_translit			none	4	1	0	0	"la sa bskyas nas — te ""sie brachten auf Ziegen"
 308	60	1738	german_prose			none	0	6	0	0	"Erde und streuten sie [in den See]"" (Bu-Sz"
-308	61	1738	german_prose_with_translit			none	5	2	0	0	"12,4); bañ so ... sa phun ~ ba 'dra ""das Grab-"
+308	61	1738	german_prose_with_translit			none	5	2	0	0	"12,4); baṅ so ... sa phun ~ ba 'dra ""das Grab-"
 308	62	1738	german_prose_with_translit			none	1	1	0	0	mal sieht aus wie ein ausgebreiter Erdhau-
 308	63	1738	german_prose_with_translit			none	3	1	0	0	"fen"" (Glr 51,5); — ba sa gZri gdan sten na /"
 308	64	1738	latin_other			none	5	0	0	0	"sa bdag khon ma rgan mo bZugs (metr.) ""auf"
@@ -26340,7 +26340,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 315	34	1762	german_prose			none	0	1	0	0	zusammenbinden, unterbinden, schließen,
 315	35	1762	german_prose_with_translit			none	2	1	0	0	verschließen, besiegeln, festlegen; ma — pa
 315	36	1762	german_prose_with_translit			none	2	1	0	0	ungehörig, ungezügelt; rirgya — Jagdverbot;
-315	37	1762	german_prose_with_translit			none	3	1	0	0	Sin tu ~ 'gyur sehr beherrscht sein; gsañ rgya
+315	37	1762	german_prose_with_translit			none	3	1	0	0	Sin tu ~ 'gyur sehr beherrscht sein; gsaṅ rgya
 315	38	1762	german_prose			none	0	2	0	0	Sin tn — äußerst geheimhalten.
 315	39	1762	latin_other			none	6	0	0	0	dge sbyon ni / dban po legs par — pa dan
 315	40	1762	german_prose			none	0	4	0	0	"(metr.) ""ein Sramana, der seine Sinne gut"
@@ -27868,7 +27868,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 352	11	1809	latin_other			none	2	0	0	0	"bauern"" (MTH3/5/26 19); phyag — skos kyi"
 352	12	1809	german_prose_with_translit			none	2	1	0	0	"dran sin dkar po bsnams pas so ""denn in seiner"
 352	13	1809	german_prose			none	0	6	0	0	Hand hält er ein weißes Zepter zur Ernen-
-352	14	1809	latin_other			none	5	0	0	0	"nung"" (mDzodG 54,16); gsas 'khar gsañ ba"
+352	14	1809	latin_other			none	5	0	0	0	"nung"" (mDzodG 54,16); gsas 'khar gsaṅ ba"
 352	15	1809	german_prose_with_translit			none	1	2	0	0	"— (metr.) ""in der geheimen Götterfestung"""
 352	16	1809	german_prose_with_translit			none	2	1	0	0	"(Magy 1b3); rno mtshon phyag — bsnams ""sie"
 352	17	1809	german_prose			none	0	6	0	0	"hält scharfe Waffen in der Hand"" (Srid 234);"
@@ -27956,7 +27956,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 353	7	1811	german_prose			none	0	3	0	0	"""sieht man es bei strahlender Sonne"" (Mvup"
 353	8	1811	latin_other			none	3	0	0	0	1.90d); dga’ ma rin — gnas par gyur pa'i skye
 353	9	1811	german_prose_with_translit			none	1	6	0	0	"bo (metr.) ""ein Mensch, der fern von der Ge-"
-353	10	1811	german_prose_with_translit			none	4	1	0	0	"liebten weilt"" (Megh 3c); ñon moñs mche ba'i"
+353	10	1811	german_prose_with_translit			none	4	1	0	0	"liebten weilt"" (Megh 3c); ñon moṅs mche ba'i"
 353	11	1811	german_prose_with_translit			none	1	3	0	0	"phrag — gnas (metr.) ""er bleibt in den Fän-"
 353	12	1811	german_prose_with_translit			none	1	1	0	0	"gen der Befleckungen"" (dPe 286,3); din san"
 353	13	1811	latin_other			none	3	0	0	0	"gi dus — / yul ni bag dran (7, gran) ""heut-"
@@ -31786,7 +31786,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 398	21	2034	german_prose			none	0	6	0	0	"snan ""einer, der zu einem selbst gehört, oder"
 398	22	2034	german_prose_with_translit			none	1	5	0	0	ein Buddhist, und heißt Morgen, d.i. der
 398	23	2034	german_prose			none	0	5	0	0	frühe Morgen, und der folgende Tag, steht
-398	24	2034	german_prose_with_translit			none	3	2	0	0	"auch für zañs par"" (brDa); dkon mchog gsum"
+398	24	2034	german_prose_with_translit			none	3	2	0	0	"auch für zaṅs par"" (brDa); dkon mchog gsum"
 398	25	2034	german_prose_with_translit			none	5	1	0	0	la süin nas skyabs su 'gro ba'i skyabs 'gro rgyud
 398	26	2034	german_prose_with_translit			none	2	4	0	0	"ldan gyi gani zag ""eine Person, die Zuflucht"
 398	27	2034	german_prose			none	0	5	0	0	nimmt, d.h. die von ganzem Herzen zu den
@@ -36834,7 +36834,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 459	18	2332	german_prose			none	0	3	0	0	jenem Abend [gab es] aus dem Inneren je-
 459	19	2332	german_prose_with_translit			none	1	3	0	0	nes Wäldchens von fern so etwas wie eine
 459	20	2332	german_prose_with_translit			none	4	2	0	0	"Lampe"" (Liyl 182b3); de yi — kho na la /"
-459	21	2332	german_prose_with_translit			none	4	2	0	0	"ñon moñs Sin tu che spahs pa (metr.) ""in eben"
+459	21	2332	german_prose_with_translit			none	4	2	0	0	"ñon moṅs Sin tu che spahs pa (metr.) ""in eben"
 459	22	2332	german_prose_with_translit			none	2	2	0	0	jener Nacht (skt. rātri) hast du die sehr gro-
 459	23	2332	german_prose			none	0	4	0	0	"ßen Laster aufgegeben"" (Ppu 44b); Zin mo"
 459	24	2332	german_prose			none	0	3	0	0	"yibs — bros ""sie versteckten sich am Tag und"
@@ -38608,7 +38608,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 480	9	2416	latin_other			none	3	0	0	0	3labe); khyod kyi — bzan ste ... rin yar mi
 480	10	2416	german_prose_with_translit			none	1	4	0	0	"theg ""dein Juwel ist schön, aber wir können"
 480	11	2416	german_prose_with_translit			none	1	2	0	0	"den Preis nicht bezahlen"" (ThK 2: 528,1);"
-480	12	2416	latin_other			none	4	0	0	0	"de'i kba bar (r. bañ) la ~s brgyan cin ""deren"
+480	12	2416	latin_other			none	4	0	0	0	"de'i kba bar (r. baṅ) la ~s brgyan cin ""deren"
 480	13	2416	german_prose			none	0	3	0	0	"Mauerkrone wurden mit Juwelen verziert"""
 480	14	2416	latin_other			none	6	0	0	0	(TsonNth 6,1336); rgya mtsho la ~ / ñi ma
 480	15	2416	german_prose_with_translit			none	1	7	0	0	"la 'od ""im Mcer sind Juwelen, in der Sonne"
@@ -39746,7 +39746,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 493	69	2497	german_prose_with_translit			none	3	1	0	0	"— la phebs ma nus ""[ich bekenne, daß] ich"
 493	70	2497	german_prose_with_translit			none	1	2	0	0	die Unterweisung nicht zielgerichtet [an-
 493	71	2497	german_prose			none	0	1	0	0	"wenden] konnte"" (Magy 7b7)."
-493	72	2497	german_prose_with_translit			none	5	1	0	0	"Lex. mdo 'gag / rtsa ba / gsañ lta bu ""wichti-"
+493	72	2497	german_prose_with_translit			none	5	1	0	0	"Lex. mdo 'gag / rtsa ba / gsaṅ lta bu ""wichti-"
 493	73	2497	german_prose			none	0	3	0	0	"ger Punkt, Grundursache; wie: Geheimnis"""
 493	74	2497	german_prose			none	0	1	0	0	(Dagy).
 493	75	2497	german_prose			none	0	2	0	0	3. wunder Punkt, Schwachstelle.
@@ -40051,7 +40051,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 497	36	2515	german_prose_with_translit			none	6	4	0	0	"rechnen und zu besänftigen"" (MigTo 259,1); la la zig ni lha'i gnam rgyan gtib bo ""einige"
 497	37	2515	german_prose_with_translit			none	6	5	0	0	"="" sgos rtsis ni / lo yi — bco brgyad ... yin überspannten [den Thron] mit einem gött-"
 497	38	2515	german_prose_with_translit			none	1	3	0	0	"la (metr.) ""vierzehntens, was die besondere lichen Baldachin"" (gZi 1: 31,6)."
-497	39	2515	german_prose_with_translit			none	5	5	0	0	Kalkulation von gnam khyi betrifft, so ist der Lex. bla bres la'an (brDa); bla bre la'añ
+497	39	2515	german_prose_with_translit			none	5	5	0	0	Kalkulation von gnam khyi betrifft, so ist der Lex. bla bres la'an (brDa); bla bre la'aṅ
 497	40	2515	german_prose			none	0	6	0	0	gnam kbyi des Jahres das 18. [Lebensjahr der (Dagy).
 497	41	2515	german_prose			none	0	2	0	0	"Braut]"" (Nagdel 55,15)."
 497	42	2515	german_prose_with_translit			none	1	2	0	0	"Deo ""bris eine Pferdekrankheit."
@@ -41516,7 +41516,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 514	70	2567	german_prose			none	0	3	0	0	"Geliebten weilt"" (Megh 3c); dur sin (r. Zin)"
 514	71	2567	german_prose_with_translit			none	4	1	0	0	"de la dur bya man po — ""auf jenem Leichen-"
 514	72	2567	german_prose_with_translit			none	1	2	0	0	"acker leben viele Geier"" (Padm 113b4); ri bo"
-514	73	2567	latin_other			none	5	0	0	0	kun 'dzin la ~ pa'i dran sron ñon moñs med
+514	73	2567	latin_other			none	5	0	0	0	kun 'dzin la ~ pa'i dran sron ñon moṅs med
 514	74	2567	german_prose_with_translit			none	1	6	0	0	"""der Seher ""Arana, der auf dem Berg ""Adhā-"
 514	75	2567	german_prose_with_translit			none	1	1	0	0	"ra wohnt"" (Bu 746,6); kbams gsum rigs drug"
 514	76	2567	german_prose_with_translit			none	5	1	0	0	"na — pa'i sems can thams cad ""alle Lebewe-"
@@ -44571,7 +44571,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 550	66	2702	german_prose_with_translit			none	1	2	0	0	"baumelnde und makellose Ohrringe"" (Udr"
 550	67	2702	other			none	0	0	0	0	14,15).
 550	68	2702	german_prose			none	0	2	0	0	Lex. kundalam (Mvy 6014).
-550	69	2702	german_prose_with_translit			none	2	2	0	0	Lex. rāsabha (Ak 239.77): bon gu la'añ
+550	69	2702	german_prose_with_translit			none	2	2	0	0	Lex. rāsabha (Ak 239.77): bon gu la'aṅ
 550	70	2702	german_prose_with_translit			none	1	1	0	0	(brDa, Dagy).
 550	71	2702	latin_other			none	7	0	0	0	chos pa la / thos lo sgrub pa' — drons
 550	72	2702	german_prose_with_translit			none	1	1	0	0	"(metr.) ""den Dharmapraktizierenden setzt"
@@ -45374,7 +45374,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 560	72	2779	german_prose			none	0	4	0	0	"riputra und Vaisravana den Berg sNag auf"""
 560	73	2779	german_prose			none	0	1	0	0	(Liyl 17224).
 560	74	2779	german_prose_with_translit			none	3	1	0	0	Lex, byan gi pbyogs skyon ste ri rab kyi byani
-560	75	2779	german_prose_with_translit			none	4	3	0	0	"na bañ rim bZi pa') rgyal chen ""Schützer des"
+560	75	2779	german_prose_with_translit			none	4	3	0	0	"na baṅ rim bZi pa') rgyal chen ""Schützer des"
 560	76	2779	german_prose			none	0	5	0	0	Nordens, der Großkönig der vierten Stufe
 560	77	2779	german_prose_with_translit			none	2	4	0	0	"im Norden des Sumeru"" (brDa); byari phyogs"
 560	78	2779	german_prose_with_translit			none	5	2	0	0	"skyon ba'i rgyal po chen po nal gsos po ""der"
@@ -45418,7 +45418,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 561	26	2781	german_prose			none	0	4	0	0	er Teigopfer für Gur-mgon, rNam-sras, Sen-
 561	27	2781	latin_other			none	1	0	0	0	"gdon-ma usw. dar"" (TsonNth 5,79a})."
 561	28	2781	german_prose_with_translit			none	3	1	0	0	Lex. rnam sras & byan gi chos skyon ste ri rab
-561	29	2781	german_prose_with_translit			none	5	2	0	0	"kyi byani na bañ rim bZi pa'i rgyal chen ""der"
+561	29	2781	german_prose_with_translit			none	5	2	0	0	"kyi byani na baṅ rim bZi pa'i rgyal chen ""der"
 561	30	2781	german_prose			none	0	4	0	0	nördliche Religionsschützer, der Großkönig
 561	31	2781	german_prose			none	0	6	0	0	"der vierten Stufe im Norden des Sumeru"""
 561	32	2781	german_prose_with_translit			none	2	1	0	0	(brDa); rnam sras zrgyal chen rnam thos sras
@@ -52664,7 +52664,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 649	75	3210	german_prose_with_translit			none	2	3	0	0	"Gefäß schütter"" (Srkk 75.7); — kha bead pa'i"
 649	76	3210	german_prose_with_translit			none	6	4	0	0	"naṅ du btsos pa'i khu ba ""die in einem Gefäß,"
 649	77	3210	german_prose_with_translit			none	1	1	0	0	dessen Öffnung verschlossen ist, gekoch-
-649	78	3210	german_prose_with_translit			none	2	1	0	0	"ten Flüssigkeiten"" (Siddh 6.25); lcags zañs"
+649	78	3210	german_prose_with_translit			none	2	1	0	0	"ten Flüssigkeiten"" (Siddh 6.25); lcags zaṅs"
 649	79	3210	latin_other			none	5	0	0	0	"'khar ba'i — nani du / bkani ste (metr.) ""man"
 650	1	3210	other			none	0	0	0	0	NT: l
 650	2	3210	tibetan_only	སྣད་		none	0	0	0	0	སྣད་ $//0
@@ -52823,7 +52823,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 651	59	3211	german_prose			none	0	1	0	0	sab (Mvy 9446).
 651	60	3211	german_prose			none	0	2	0	0	"denas — g.yar ""danach lich ich mir Geschirr"""
 651	61	3211	german_prose			none	0	1	0	0	(Mil 68,19).
-651	62	3211	german_prose_with_translit			none	2	2	0	0	Lex. bhājana (Ak 228.33); chu snod dam zañs
+651	62	3211	german_prose_with_translit			none	2	2	0	0	Lex. bhājana (Ak 228.33); chu snod dam zaṅs
 651	63	3211	german_prose_with_translit			none	1	3	0	0	"snod lta bu ""wie: Wasserbehälter oder Kup-"
 651	64	3211	german_prose_with_translit			none	1	2	0	0	"ferbehälter"" (brDa); chu snod sogs ""Wasser-"
 651	65	3211	german_prose			none	0	2	0	0	"gefäß usw."" (Dagy)-"
@@ -53138,7 +53138,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 655	48	3219	latin_other			none	3	0	0	0	"dgar ba'am nes par bzun tshig ""identifiziert"
 655	49	3219	german_prose			none	0	5	0	0	oder betont festhalten oder Wort, mit dem
 655	50	3219	latin_other			none	2	0	0	0	"man etwas festlegt"" (brDa); — pa = nes par"
-655	51	3219	latin_other			none	3	0	0	0	"bzun ba'am nan tan lta bu la'añ ""bestimmt"
+655	51	3219	latin_other			none	3	0	0	0	"bzun ba'am nan tan lta bu la'aṅ ""bestimmt"
 655	52	3219	german_prose_with_translit			none	2	3	0	0	"oder betont"" (Dagy); — pa ni nes bzun (Lis"
 655	53	3219	other			none	0	0	0	0	8,4).
 655	54	3219	german_prose_with_translit			none	2	4	0	0	"Lex. nan tan gyi tshig ""ein Wort, das etwas"
@@ -55147,7 +55147,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 679	68	3301	other			none	0	0	0	0	50,19).
 679	69	3301	german_prose_with_translit			none	3	3	0	0	"Lex. — pa zus kyi — ""Schoß"" (Dagy); — pa"
 679	70	3301	german_prose_with_translit			none	3	2	0	0	"= utsangah ""Schoß"" (Mvy 6757); ~ sgañ la ="
-679	71	3301	german_prose_with_translit			none	3	4	0	0	"lus kyi bañ (r. ~) du ""im Schoß des Körpers"""
+679	71	3301	german_prose_with_translit			none	3	4	0	0	"lus kyi baṅ (r. ~) du ""im Schoß des Körpers"""
 679	72	3301	latin_other			none	4	0	0	0	(brDa); — sgan la, pan sten = — pa'i sgari la
 679	73	3301	german_prose			none	0	3	0	0	"""auf dem Schoß"" (Dagy)."
 679	74	3302	headword_line	པང་ཁྲེབ་	paṅ kheb	high	4	2	0	0	པང་ཁྲེབ་ paṅ kheb auch paṅ khebs Schoß-
@@ -56575,7 +56575,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 697	55	3429	latin_other			none	3	0	0	0	"(gYu 290,9); — byi ba'iril ma 'dra ""Langpfef-"
 697	56	3429	german_prose			none	0	1	0	0	"fer sicht aus wie Mäuseköttel"" (gYu 294,11);"
 697	57	3429	german_prose_with_translit			none	6	1	0	0	pipili Zes pa grog ma la jug cin de daṅ 'dra ba'i
-697	58	3429	german_prose_with_translit			none	4	1	0	0	sman nag po la grog sman ~ Zes pa la'añ / drod
+697	58	3429	german_prose_with_translit			none	4	1	0	0	sman nag po la grog sman ~ Zes pa la'aṅ / drod
 697	59	3429	german_prose_with_translit			none	3	1	0	0	"sman — du 'don pa dan ""[skt.] piptli steht für"
 697	60	3429	german_prose			none	0	5	0	0	Ameise und zu dem schwarzen Heilmittel,
 697	61	3429	german_prose_with_translit			none	1	4	0	0	das so ähnlich ist, sagt man auch grog sman
@@ -57317,7 +57317,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 706	72	3478	german_prose_with_translit			none	1	3	0	0	"großen Ozeanschiffe"" (Suv 15,21); phun ~"
 706	73	3478	german_prose_with_translit			none	4	1	0	0	bag ma med pa' mya nan las 'das pa'
 706	74	3478	german_prose_with_translit			none	2	5	0	0	"dbyins ""die Sphāre des Nirväna ohne Re-"
-706	75	3478	german_prose_with_translit			none	4	2	0	0	"ste der skandhas"" (Udr 46,19); ñon moñs"
+706	75	3478	german_prose_with_translit			none	4	2	0	0	"ste der skandhas"" (Udr 46,19); ñon moṅs"
 706	76	3478	latin_other			none	4	0	0	0	"gñen —i chos gos thob (metr.) ""er erlangt"
 706	77	3478	german_prose			none	0	6	0	0	das Mönchsgewand, das das Gegenmittel zu
 706	78	3478	german_prose_with_translit			none	1	3	0	0	"den Befleckungen ist"" (Srkk 79.6); ren bu"
@@ -59121,7 +59121,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 728	70	3631	german_prose_with_translit			none	5	1	0	0	yun rin du bsgoms pas — khro bo chen po
 728	71	3631	german_prose_with_translit			none	2	1	0	0	"dan man par gyur ""weil er lange Zeit medi-"
 728	72	3631	german_prose_with_translit			none	1	1	0	0	"tierte, wurde er mit 617 Mahākrodha gleich"""
-728	73	3631	german_prose_with_translit			none	4	1	0	0	(Tär 125,11); ~ gsañ ba 'dus pas phyogs thams
+728	73	3631	german_prose_with_translit			none	4	1	0	0	(Tär 125,11); ~ gsaṅ ba 'dus pas phyogs thams
 728	74	3631	german_prose_with_translit			none	1	2	0	0	"cad gan bar mdzad ""er erfüllte alle Gegen-"
 728	75	3631	german_prose_with_translit			none	1	5	0	0	"den mit dem śri Guhyasamäja"" (Tär 165,10);"
 728	76	3631	latin_other			none	4	0	0	0	-atisaiyan sku drin che ba'i bla ma cig
@@ -62636,7 +62636,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 771	87	3940	german_prose_with_translit			none	3	1	0	0	"5,32); khyim rgya chen po dag — te ""sie ver-"
 771	88	3940	german_prose_with_translit			none	1	2	0	0	"zichten auf große Wohnungen"" (Udr 18,14);"
 772	1	3941	headword_line	སྤངས་	spaṅs	high	1	0	0	0	སྤངས་ 'spaṅs
-772	2	3941	latin_other			none	8	0	0	0	kha cig gis ni ñon moñs pa thams cad ~ te dgra
+772	2	3941	latin_other			none	8	0	0	0	kha cig gis ni ñon moṅs pa thams cad ~ te dgra
 772	3	3941	latin_other			none	4	0	0	0	"bcom pa ñid mnon sum du byas so ""manche"
 772	4	3941	german_prose_with_translit			none	1	2	0	0	ließen alle Befleckungen hinter sich und ver-
 772	5	3941	german_prose_with_translit			none	1	1	0	0	"wirklichten Arhatschaft"" (K6 da 5232); ses"
@@ -62759,7 +62759,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 773	29	3942	german_prose_with_translit			none	1	1	0	0	"sich seiner Verfehlung entledigt hat"" (Mvy"
 773	30	3942	latin_other			none	5	0	0	0	2554); btan ba'am — pa'am bor ba = utsystam
 773	31	3942	german_prose			none	0	1	0	0	"""weggeworfen, aufgegeben, abgelegt"" (Mvy"
-773	32	3942	latin_other			none	5	0	0	0	2602); ~ pa = dgra bcom pas ñon moñs thams
+773	32	3942	latin_other			none	5	0	0	0	2602); ~ pa = dgra bcom pas ñon moṅs thams
 773	33	3942	german_prose_with_translit			none	1	3	0	0	"cad spans pa ""der Arhat hat alle Befleckun-"
 773	34	3942	latin_other			none	3	0	0	0	"gen aufgegeben"" (brDa); — pa =dor ba'i don"
 773	35	3942	german_prose_with_translit			none	3	1	0	0	"las ishig ""i.S. v. wegwerfen, Vergangenheit"""
@@ -63265,7 +63265,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 779	47	3973	german_prose			none	0	2	0	0	"kennen oder vertraut sein"" (Dagy)."
 779	48	3973	tibetan_only	སྤུ་སྡུག་		none	0	0	0	0	སྤུ་སྡུག་ spu sdug.
 779	49	3973	german_prose			none	0	2	0	0	1. schöne Flaare.
-779	50	3973	latin_other			none	4	0	0	0	rta pho han skya ~ bañ 'gros gsar gsum 'dzoms
+779	50	3973	latin_other			none	4	0	0	0	rta pho han skya ~ baṅ 'gros gsar gsum 'dzoms
 779	51	3973	german_prose_with_translit			none	5	2	0	0	"pa khyod ""du Hengst, der du drei Eigen-"
 779	52	3973	german_prose			none	0	2	0	0	schaften besitzt: isabellfarben, schönes Haar
 779	53	3973	german_prose_with_translit			none	1	2	0	0	"und cine muntere Gangart"" (KunK 30,23)."
@@ -66181,7 +66181,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 814	62	4169	german_prose_with_translit			none	2	1	0	0	"med mgon — ... phyag ""tshal (meti.) ""dem"
 814	63	4169	german_prose_with_translit			none	2	3	0	0	Dharmakāya Amitābha und dem Beschützer
 814	64	4169	german_prose_with_translit			none	2	1	0	0	"Avalokitesvara bringe ich Ehrerbietung dar"""
-814	65	4169	german_prose_with_translit			none	6	2	0	0	(Gar 151,1); bañ rin po che rdo rje Zes bya ba
+814	65	4169	german_prose_with_translit			none	6	2	0	0	(Gar 151,1); baṅ rin po che rdo rje Zes bya ba
 814	66	4169	german_prose_with_translit			none	6	2	0	0	"phags pa~ kyi Zal mthon ba źig ""Ban rin-po-"
 814	67	4169	german_prose_with_translit			none	1	5	0	0	che rdo-rje, der eine Vision des edlen Avalo-
 814	68	4169	latin_other			none	2	0	0	0	"kitesvara hatte"" (ThK 2: 524,3); — kyi sg"
@@ -67413,7 +67413,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 829	38	4269	other			none	0	0	0	0	201,21).
 829	39	4270	headword_line	སྤྲིལ་བུ་	spyil	medium	1	2	0	0	སྤྲིལ་བུ་ spyil bu Hütte, Häuschen.
 829	40	4270	other			none	0	0	0	0	vw
-829	41	4270	latin_other			none	4	0	0	0	"li skad du ~ la 'go bañ 206 bgyi ""auf Khotane-"
+829	41	4270	latin_other			none	4	0	0	0	"li skad du ~ la 'go baṅ 206 bgyi ""auf Khotane-"
 829	42	4270	german_prose			none	0	5	0	0	"sisch sagt man zu einer Hütte 'go ban"" (Liy2"
 829	43	4270	german_prose_with_translit			none	1	3	0	0	"103); /o ma'i — ""Hütte aus Blättern"" (Prav"
 829	44	4271	headword_line	སྤྲུག་	sPyUg	medium	1	0	0	0	སྤྲུག་ sPyUg
@@ -67600,7 +67600,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 831	54	4281	german_prose			none	0	1	0	0	"Verrückter tut alles, was ihm selbst schadet"""
 831	55	4281	german_prose_with_translit			none	4	1	0	0	"(dPe 97,6); las nan gi — pa ni b{r}do ""die"
 831	56	4281	german_prose_with_translit			none	1	1	0	0	"Ausübung schlechter Taten verbreitete sich"""
-831	57	4281	german_prose_with_translit			none	4	1	0	0	(Nel 437); ñon moñs gsod pa'i ~ pa skyon
+831	57	4281	german_prose_with_translit			none	4	1	0	0	(Nel 437); ñon moṅs gsod pa'i ~ pa skyon
 831	58	4281	german_prose			none	0	3	0	0	"(metr.) ""ich pflege die Praxis zur Vernich-"
 831	59	4281	german_prose_with_translit			none	2	2	0	0	"tung der Befleckungen"" (Padm 6953); stan"
 831	60	4281	latin_other			none	4	0	0	0	"bzan sten du phyin te dga’ mgur — ""sie gingen"
@@ -67740,8 +67740,8 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 833	7	4284	latin_other			none	3	0	0	0	"chend"" (Rgs 1.24b); de ni mi ses — par bas"
 833	8	4284	german_prose_with_translit			none	1	5	0	0	"(metr.) ""das ist nichts weiter als das Verhal-"
 833	9	4284	german_prose			none	0	2	0	0	"ten eines Unwissenden"" (\/16 38d); 'on cr ..."
-833	10	4284	latin_other			none	6	0	0	0	byan chub sems dpa'i ~ pa ... ñon moñs pa'i
-833	11	4284	latin_other			none	3	0	0	0	~ pas kun nas ñon moñs par yid ches par
+833	10	4284	latin_other			none	6	0	0	0	byan chub sems dpa'i ~ pa ... ñon moṅs pa'i
+833	11	4284	latin_other			none	3	0	0	0	~ pas kun nas ñon moṅs par yid ches par
 833	12	4284	german_prose_with_translit			none	3	3	0	0	"bya ba yin nam ""ist anzunehmen, daß das"
 833	13	4284	german_prose_with_translit			none	1	2	0	0	Verhalten eines Bodhisattva durch befleck-
 833	14	4284	german_prose_with_translit			none	1	3	0	0	"tes Verhalten befleckt ist?"" (K44 kha 23222);"
@@ -69747,7 +69747,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 856	75	4410	german_prose_with_translit			none	2	2	0	0	ca Diels (Pasang 1998: 137); vgl. abw. Tspre
 856	76	4410	german_prose			none	0	1	0	0	07//9, Isprel mjug.
 856	77	4411	headword_line	སྤྲེའུ་འདྲ་	spre''n	high	1	3	0	0	སྤྲེའུ་འདྲ་ spre''n 'dra ein Tier; Spinne.
-856	78	4411	german_prose_with_translit			none	1	3	0	0	"Lex. srog chags ""bu sdom la'añ ""ein Lebewe-"
+856	78	4411	german_prose_with_translit			none	1	3	0	0	"Lex. srog chags ""bu sdom la'aṅ ""ein Lebewe-"
 856	79	4411	german_prose_with_translit			none	2	4	0	0	"sen, auch für das 'lnsekt' Spinne"" (brDa,"
 856	80	4411	german_prose			none	0	1	0	0	Dagy).
 856	81	4412	headword_line	སྤྲེའུའི་ཚ་རྣམས་	spre'w'i tsha	high	2	2	0	0	"སྤྲེའུའི་ཚ་རྣམས་ spre'w'i tsha mams ""Enkel des"
@@ -73841,7 +73841,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 907	13	4701	german_prose_with_translit			none	3	2	0	0	"chen"" (gNas 8,3); mkha' 'gro'i gsani — Zes pa'i"
 907	14	4701	german_prose_with_translit			none	3	2	0	0	"— pa ""die Höhle namens mKha'-'gro'i gsan-"
 907	15	4701	latin_other			none	4	0	0	0	"phug"" (MTH3/5/30 315); dben sa nikhar"
-907	16	4701	german_prose_with_translit			none	3	2	0	0	"sna'irig dzin gsañ ~ ""eine abgelegene Stät-"
+907	16	4701	german_prose_with_translit			none	3	2	0	0	"sna'irig dzin gsaṅ ~ ""eine abgelegene Stät-"
 907	17	4701	german_prose_with_translit			none	1	4	0	0	te, die geheime Höhle der Vidyādharas von
 907	18	4701	latin_other			none	2	0	0	0	"mKhar-sna"" (Akhri 43,1); — bar (r. par)"
 907	19	4701	german_prose_with_translit			none	4	2	0	0	"sdug bstal mthon ba tsho ""alles Leid, das sie"
@@ -74816,7 +74816,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 918	63	4781	german_prose			none	0	4	0	0	Haus bauen, einen Hausstand gründen; gur
 918	64	4781	german_prose_with_translit			none	1	4	0	0	— ein Zelt aufschlagen; thog — ein Dach auf-
 918	65	4781	german_prose			none	0	2	0	0	setzen; gdurgs — einen Schirm aufspannen.
-918	66	4781	latin_other			none	4	0	0	0	"zañs bu broya' glad la ~ nas ""nachdem sie"
+918	66	4781	latin_other			none	4	0	0	0	"zaṅs bu broya' glad la ~ nas ""nachdem sie"
 918	67	4781	german_prose			none	0	2	0	0	hundert Töpfe auf ihre Köpfe aufgesetzt
 918	68	4781	latin_other			none	1	0	0	0	"hatten"" (PT1287 55); kbri bonns du' gan preb"
 918	69	4781	german_prose_with_translit			none	2	3	0	0	"nas ""er errichtete in Khri-boms einen Hin-"
@@ -78347,7 +78347,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 962	76	5064	german_prose_with_translit			none	2	2	0	0	"ri, dem bla ri des Phyag-na rdo-rje"" (gNas"
 962	77	5064	other			none	0	0	0	0	4,10).
 963	1	5065	headword_line	ཕྱག་ན་པདྨ་	phyag na	high	2	0	0	0	ཕྱག་ན་པདྨ་ phyag na padma
-963	2	5065	german_prose_with_translit			none	4	2	0	0	Lex. vajrapanih (Mvy 649); gsañ ba'i bdag po
+963	2	5065	german_prose_with_translit			none	4	2	0	0	Lex. vajrapanih (Mvy 649); gsaṅ ba'i bdag po
 963	3	5065	german_prose_with_translit			none	1	2	0	0	"""Guhyapati"" (brDa, Dagy)."
 963	4	5066	headword_line	ཕྱག་ན་པདྨ་	pbyag na	medium	4	1	0	0	ཕྱག་ན་པདྨ་ pbyag na padma auch phyag na
 963	5	5066	german_prose_with_translit			none	1	2	0	0	padimo Beiname des Bodhisattva
@@ -80050,7 +80050,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 983	71	5227	german_prose_with_translit			none	1	2	0	0	"tierte Chu-mig breya-rtsa"" (KTh 1: 145,1)."
 983	72	5227	example_tibetan_latin			none	1	3	0	0	4. in /7/ ma (70 ༡// — in diesen Tagen.
 983	73	5227	latin_other			none	3	0	0	0	nimadeyiphyitr} naṅ stod smad bar gsum la
-983	74	5227	german_prose_with_translit			none	2	2	0	0	"cha dan bon (r. bañ) chen ... byas te ""in diesen"
+983	74	5227	german_prose_with_translit			none	2	2	0	0	"cha dan bon (r. baṅ) chen ... byas te ""in diesen"
 983	75	5227	german_prose_with_translit			none	1	3	0	0	Tagen wurden Botschaften und Boten zum
 983	76	5227	german_prose			none	0	3	0	0	oberen, unteren und mittleren [Glin], den
 983	77	5227	german_prose			none	0	1	0	0	"dreien, geschickt"" (Gesar 223,8)."
@@ -82770,7 +82770,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1018	28	5433	german_prose			none	0	3	0	0	"as ""das kleine Kind aber, das sie befreit hat-"
 1018	29	5433	german_prose			none	0	5	0	0	ten, erreichte später die Frucht der Arhat-
 1018	30	5433	german_prose_with_translit			none	3	2	0	0	"schaft"" (Liyl 178b1); kun nas ñon mons pa'i"
-1018	31	5433	latin_other			none	6	0	0	0	chos rnamis kyani shon kun nas ñon moñs pa
+1018	31	5433	latin_other			none	6	0	0	0	chos rnamis kyani shon kun nas ñon moṅs pa
 1018	32	5433	german_prose_with_translit			none	3	1	0	0	can die gyur la — rnani par byan bar 'gyur ba
 1018	33	5433	german_prose_with_translit			none	1	2	0	0	"ma ybr ""die befleckten Gegebenheiten aber"
 1018	34	5433	german_prose			none	0	5	0	0	sind von früher befleckt und später nicht
@@ -83472,7 +83472,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1026	31	5482	latin_other			none	3	0	0	0	— ba = tathāgatasyāntike dustacittarudhiro-
 1026	32	5482	german_prose_with_translit			none	2	5	0	0	"tpādanam ""bei einem Tathāgata in böser Ab-"
 1026	33	5482	german_prose			none	0	2	0	0	"sicht Blut hervortreten lassen"" (Mvy 2328)."
-1026	34	5482	german_prose_with_translit			none	3	1	0	0	"zañs 0707? padma dmar pos ~r khens pa ""ein"
+1026	34	5482	german_prose_with_translit			none	3	1	0	0	"zaṅs 0707? padma dmar pos ~r khens pa ""ein"
 1026	35	5482	german_prose_with_translit			none	1	3	0	0	Kupferbecken, das randvoll mit roten Lo-
 1026	36	5482	german_prose_with_translit			none	1	3	0	0	"tussen gefüllt war"" (Sdr 366,6); rter gsar"
 1026	37	5482	german_prose_with_translit			none	2	1	0	0	"biens rnams la —r bltams pa\i ""die neu errich-"
@@ -84531,7 +84531,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1038	42	5539	latin_other			none	3	0	0	0	"de 7// //// mthun — bsad bya (metr.) ""nun soll"
 1038	43	5539	german_prose_with_translit			none	1	3	0	0	das ihr [d.h. der Stärke] Entgegengesetzte
 1038	44	5539	german_prose			none	0	2	0	0	"(skt. vipaksa) erklärt werden"" (Bca 7.2b);"
-1038	45	5539	latin_other			none	3	0	0	0	"ñon moñs ~ kyt kbrod gnas na (metr.) ""wenn"
+1038	45	5539	latin_other			none	3	0	0	0	"ñon moṅs ~ kyt kbrod gnas na (metr.) ""wenn"
 1038	46	5539	german_prose_with_translit			none	1	2	0	0	"man inmitten von Befleckungen weilt"" (Bea"
 1038	47	5539	latin_other			none	5	0	0	0	7.602); sākya de ba yis / chos ~ gtsor ston
 1038	48	5539	other			none	0	0	0	0	169
@@ -85098,7 +85098,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1045	30	5581	german_prose_with_translit			none	2	2	0	0	"Mädchen"" (brDa, Dagy); — ma = bZun (r."
 1045	31	5581	german_prose_with_translit			none	3	2	0	0	"gZon) nwam lani tsho dan po ""jugendlich oder"
 1045	32	5581	german_prose_with_translit			none	2	2	0	0	"frühe Jugend"" (brDa); — ma zbu mo gzon nu"
-1045	33	5581	german_prose_with_translit			none	2	4	0	0	"la'añ ""auch für junges Mädchen"" (Dagy)."
+1045	33	5581	german_prose_with_translit			none	2	4	0	0	"la'aṅ ""auch für junges Mädchen"" (Dagy)."
 1045	34	5582	headword_line	ཕྱོགས་ཙམ་	phyogs tsami	high	2	3	0	0	ཕྱོགས་ཙམ་ phyogs tsam nur ein wenig, ein biß-
 1045	35	5582	german_prose			none	0	1	0	0	chen.
 1045	36	5582	latin_other			none	1	0	0	0	yon tan — royal bas hun bstan gsol (metr.)
@@ -90066,7 +90066,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1106	26	5982	headword_line	འཕྱིང་ཕུ་	phyiṅ phu	high	2	2	0	0	འཕྱིང་ཕུ་ 'phyiṅ phu npr. ein Ort, andere
 1106	27	5982	german_prose_with_translit			none	1	2	0	0	Schreibung für mChims-phu.
 1106	28	5982	german_prose_with_translit			none	2	4	0	0	"= sgom chen 77/ Su rtsa Ira ""die 25 As-"
-1106	29	5982	german_prose_with_translit			none	3	1	0	0	"keten in 'Phyin-phu"" (sBa 63,15); zañs kyi"
+1106	29	5982	german_prose_with_translit			none	3	1	0	0	"keten in 'Phyin-phu"" (sBa 63,15); zaṅs kyi"
 1106	30	5982	latin_other			none	3	0	0	0	byan bu la bris nas / ~i dkor / mdzod
 1106	31	5982	german_prose_with_translit			none	2	2	0	0	"du sbas so ""nachdem er es auf eine Kup-"
 1106	32	5982	other			none	0	0	0	0	fertafel geschrieben hatte, versteckte er sie
@@ -91561,7 +91561,7 @@ page	line	entry_id	zone	headword_tibetan	headword_latin	headword_latin_confidenc
 1124	38	6123	german_prose			none	0	7	0	0	"""es raubt die Kraft der Haare und der Au-"
 1124	39	6123	german_prose_with_translit			none	3	1	0	0	"gen"" (Ahs 1.2.17b); 'di ding /phral du srog —"
 1124	40	6123	german_prose_with_translit			none	2	1	0	0	"pa'o (metr.) ""diese sechs rauben einem so-"
-1124	41	6123	german_prose_with_translit			none	2	3	0	0	"fort das Leben"" (GS-H 62d); ñon moñs chom"
+1124	41	6123	german_prose_with_translit			none	2	3	0	0	"fort das Leben"" (GS-H 62d); ñon moṅs chom"
 1124	42	6123	latin_other			none	1	0	0	0	dge — cin ... srog kyali
 1124	43	6123	tibetan_only	དད དད		none	0	0	0	0	དད དད
 1124	44	6123	german_prose_with_translit			none	5	3	0	0	"Ze sdari las kyi — ""das karmische Fortwirken rkun tsbogs ""di ni..."

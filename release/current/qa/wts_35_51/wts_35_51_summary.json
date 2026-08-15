@@ -16,14 +16,14 @@
   "merge_only": false,
   "non_empty_lines": 91855,
   "pages": 1128,
-  "reviewed_tibetan_exact_changes": 725,
+  "reviewed_tibetan_exact_changes": 774,
   "sanskrit_changes": 149,
   "sanskrit_families": 178,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_review_suggestions": 31,
   "stale_review_rows_removed": 4,
   "structural_rewrite_count": 0,
-  "tier_a_applied": 6399,
+  "tier_a_applied": 6607,
   "tier_b_suggestions": 37,
   "top_tier_a_reasons": [
     [
@@ -65,6 +65,14 @@
     [
       "confusable_initial_I_to_l_strong_context",
       102
+    ],
+    [
+      "citation_author_lexicon",
+      88
+    ],
+    [
+      "sanskrit_high_freq_allowlist",
+      88
     ]
   ],
   "top_tier_b_reasons": [
@@ -104,14 +112,14 @@
     ],
     [
       "confusable_char",
-      449
+      400
     ]
   ],
   "total_lines_seen": 91855,
   "translit_tokens_detected": 153768,
   "trusted_lexicon_size": 800,
   "uncaptured_tibetan_prefix_lines": 1872,
-  "validator_issues": 4519,
+  "validator_issues": 4470,
   "watchdog_flag_counts": {
     "high_edit_distance_drift": 72
   },

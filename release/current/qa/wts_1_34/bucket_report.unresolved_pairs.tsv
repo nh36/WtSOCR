@@ -1,12 +1,6 @@
 decision	volume	unresolved_hits	validator_hits	applied_hits	score	rewrite_class	has_translit_cue	german_risk	from_token	to_token
-promote	wts_1_34	23	24	1	5	safe_char_map	1	0	mañ	maṅ
-promote	wts_1_34	11	11	0	5	safe_char_map	1	0	rañ	raṅ
-promote	wts_1_34	10	10	0	5	safe_char_map	1	0	miñ	miṅ
 promote	wts_1_34	8	8	0	4	safe_char_map	1	0	Ihgr	lhgr
-promote	wts_1_34	7	7	0	4	safe_char_map	1	0	gañs	gaṅs
 promote	wts_1_34	6	6	0	4	safe_char_map	1	0	Iśvara	lśvara
-promote	wts_1_34	6	6	0	4	safe_char_map	1	0	sañs	saṅs
-promote	wts_1_34	5	5	0	4	safe_char_map	1	0	ruñ	ruṅ
 hold	wts_1_34	4	4	0	3	safe_char_map	1	0	drañs	draṅs
 hold	wts_1_34	4	4	0	3	safe_char_map	1	0	grañs	graṅs
 hold	wts_1_34	4	4	0	2	safe_char_map	0	0	P’Institut	P’lnstitut

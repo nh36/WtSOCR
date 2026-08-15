@@ -29200,3 +29200,66 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 1096	33	11937	german_prose_with_translit	/ gtsan	↓ gtsaṅ	A	reviewed_tibetan_exact_reference_marker	1	tshig / gtsan ma (Dagy);gtsani — = pütam pa-
 659	47	7995	headword_line	Tchun	↑ chuṅ	A	reviewed_tibetan_exact_script_ng_witness	1	ཆུང་པོ་གྲོགས་ chuṅ po grogs Tchun grogs.
 660	54	8003	headword_line	Tchun	↑ chuṅ	A	reviewed_tibetan_exact_script_ng_witness	1	ཆུང་གསུམ་ཡོད་པ་ chuṅ gsum yod pa Tchun ma
+98	3	1201	latin_other	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	— bya bas sku bla gañs brag nas drans pa’i mdo
+177	85	2270	latin_other	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	g.yu rañ yaṅ snah ba mtha’ yas sam ... — la
+315	69	4342	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	ma’i ’od la ~ ba’am rañ Aid pham nas ran gi
+315	208	4351	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. mkhar ba’i dgra Zes khyab ’jug gi miñ
+332	141	4574	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Siddh 21.14); lan mañ du - na „wenn man
+375	127	5075	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	92,16); na rañ gi rgyags ci ’byor - gyis Sig
+403	3	5384	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	su „als alle Tibeter sich an der Finsternis erfreuten“ (sBa 57,6); rañ re 977/5 ka la mi ~
+421	147	5652	german_prose_with_translit	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. lam du gañs ’bab na - mi yod „wenn es
+442	17	5878	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	gcig tn gyur nas mañ po » = eko bhütvä
+485	190	6360	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	säan (brDa); rgyud mañ = sgra sian (Dagy);
+555	128	7158	german_prose_with_translit	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	zu mṅon par rdzogs par sañs rgya vollkom-
+574	158	7341	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"don med kyi gtam mam mi mañ po’i ""ur sgra"
+581	5	7399	latin_other	ruñ	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	te bdag ’ga’ yod na ni / ~ ruñ las ’jigs ’gyur
+593	98	7477	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	tradition“ (Debm 3233); stoṅ pa ~$ rañ la
+618	155	7705	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	stände“ (gZer 228,6); ’khor lo ... la sogs mañ
+631	80	7830	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. gśin rje la’an (brDa); gśin rje’i miñ
+643	95	7971	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. - sñi ba = gcin pa rañ dban med par
+654	75	8120	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	2826, Abt. sgyu ma la sogs pa’i dpe’i miñ);
+667	158	8243	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	mo ’phrad mkhan ~ mañ Zin „es gab äußerst
+676	111	8317	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	„die 13 zu Lehrern der Klosterschule Ernannten“ (sBa 63,16); chos gra mañ du
+681	127	8403	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	khyad par kla klo’i ~ ’dzin pa je mañ je man
+695	120	8551	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. ii ma’i miñ la’aṅ (Dagy).
+700	34	8614	latin_other	ruñ	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	du ... fie sbas gnas » bar byed na ci ma ruñ
+732	6	8910	german_prose_with_translit	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	rman bran ni gañs la - (metr.) „Pferde
+733	137	8922	latin_other	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	ma rañ ña la pbrad pa daṅ ... kha ta » pa la
+752	136	9121	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	1.41d); ~ pa tshig sdud mañ po üld (metr.)
+753	167	9131	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(VaiNth 78,3); de dag gi rgyu mtshan mañ
+785	209	9430	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	mi rtag tshe ’di’i ched dag tn / sdig pa mañ po
+843	133	9765	latin_other	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(1700-1774): bDe bar gśegs pa’i bka’ gañs can gyi brdas drans pa’i phyi
+850	35	9765	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Karma glin pa (gTer ston): Zab chos Zi khro dgons pa rañ grol las bar do
+904	39	10121	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	106,18); khro thun des bsam mno mañ du -
+949	96	10615	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	135h 13); kban pa - mañ tsam bdag sprod
+952	24	10627	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	bdag mi ~ ’jal ba mañ (metr.) „Kompensa-
+969	133	10829	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	sku’i bkod pa mañ po - to „er zeigte viele
+969	135	10829	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Debm 3 437) ; rgya mos rañ gi nu ma ~ „die
+981	127	10915	latin_other	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	ba dan fan pa daṅ sgra skad kyi min); miñ
+981	132	10915	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(brDa); miñ ñam ses brjod ’jug yul „Objekt
+981	136	10915	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Dagy); - pa = miñ can nam sgra bsad pa
+982	63	10922	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(T4140 15405); pags pa’ rim pa ’di / rañ gi
+988	120	10993	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	rum ba mañ po byun ba yin „es gibt viele
+1000	8	11147	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	po’ mtshan sum cu rtsa güis kyi miñ).
+1057	134	11897	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	smon lam mañ du mdzad pa’i = grub las
+1059	178	11922	latin_other	ruñ	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	dam dan mtshan = pa khyim thab tu mi ruñ
+1062	83	11963	german_prose_with_translit	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Debm 3832); gañs yar lha sam po ~ ba daṅi
+1065	67	11994	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(’Dzam 10,6); mig ltas han pa mañ du ~ bas
+1075	52	12116	german_prose_with_translit	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"gan ""bar / = güis gañs ti se gnan pa’i don du"
+1086	29	12145	german_prose_with_translit	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	ma byon pa daṅ / —’i sañs rgyas „alle vergangenen, zukünftigen und gegenwärtigen Bud-
+1089	91	12164	latin_other	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	— du / sañs rgyas gsun mams yi ger ... btab
+1090	18	12165	german_prose_with_translit	gañs	gaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. srog chags Sig ste skyin gor zer „ein Lebewesen, Eidechse“ (brDa); gañs sbal te sman
+1092	103	12180	german_prose_with_translit	ruñ	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	mi ’gums pa yi rgyur ruñ ño (metr.) „das ist
+1095	22	12181	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	ri dags re re tshan mañ du btaṅ bar gyur to „aus
+1097	79	12184	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	¬~ dan / Ikugs pa mañ du 'byun bar bśad
+1108	16	12234	latin_other	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	1b3); — nas sañs rgyas na ci ñes „wenn du
+1116	11	12292	latin_other	ruñ	ruṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	57,11); — byin pa la lons spyod par mi ruñ
+1123	4	12337	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	grags pa can mañ po’i 'khruñs gnas „Geburtsorte vieler früherer berühmter Persönlich-
+1130	13	12371	latin_other	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	pa sañs raṅ gza’ — / bzaṅ la ... spen pa ñan
+1131	38	12378	latin_other	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	dar rgud kyi rnam pa mañ du 'byun bar ’dug
+1167	96	12588	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	dur sin (r. Zin) de la — mañ po gnas „auf jenem Leichenacker leben viele Geier“ (Padm
+1171	41	12606	german_prose_with_translit	mañ	maṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	thuṅ rig pa’i mam pa mañ (metr.) „die [Lebens]zeit ist kurz, das Wissen mannigfach“
+1174	91	12606	german_prose_with_translit	sañs	saṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	sor sde pa sañs rgyas rgya mtsho’i — „früher,
+1175	97	12612	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. zla ba bcu 277/5 lo yi miñ „Bez. für das
+1186	41	12705	german_prose_with_translit	miñ	miṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	güis re re daṅ lo yi miñ daṅ dpyid ka dbyar
+1196	68	12752	german_prose_with_translit	rañ	raṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	pa rañ gi gos dri ma can bskon „die Figur

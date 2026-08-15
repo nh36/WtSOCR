@@ -16,14 +16,14 @@
   "merge_only": false,
   "non_empty_lines": 178435,
   "pages": 1352,
-  "reviewed_tibetan_exact_changes": 3159,
+  "reviewed_tibetan_exact_changes": 3222,
   "sanskrit_changes": 675,
   "sanskrit_families": 242,
   "sanskrit_promoted_overrides_loaded": 272,
   "sanskrit_review_suggestions": 39,
   "stale_review_rows_removed": 21,
   "structural_rewrite_count": 7617,
-  "tier_a_applied": 28515,
+  "tier_a_applied": 29264,
   "tier_b_suggestions": 44,
   "top_tier_a_reasons": [
     [
@@ -51,6 +51,10 @@
       1286
     ],
     [
+      "reviewed_tibetan_exact_final_ng_consensus",
+      1242
+    ],
+    [
       "confusable_dotless_i_to_i_safe_char_map",
       906
     ],
@@ -65,6 +69,10 @@
     [
       "german_dotless_i_safe_map",
       704
+    ],
+    [
+      "confusable_initial_I_to_l_marked_context",
+      525
     ]
   ],
   "top_tier_b_reasons": [
@@ -96,14 +104,14 @@
     ],
     [
       "confusable_char",
-      320
+      257
     ]
   ],
   "total_lines_seen": 240015,
   "translit_tokens_detected": 304563,
   "trusted_lexicon_size": 1179,
   "uncaptured_tibetan_prefix_lines": 5422,
-  "validator_issues": 12312,
+  "validator_issues": 12249,
   "watchdog_flag_counts": {
     "high_edit_distance_drift": 368
   },

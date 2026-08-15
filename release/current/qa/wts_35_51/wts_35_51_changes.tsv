@@ -6557,3 +6557,52 @@ page	line	entry_id	zone	from_token	to_token	tier	reason	applied	line_excerpt
 621	40	3065	headword_line	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	སྣ་སྨྱུང་ Tsna
 627	13	3112	german_prose_with_translit	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	hörten, Führungskräfte; vgl. Tsna chen po la
 648	12	3196	german_prose_with_translit	Tsna	↑ sna	A	reviewed_tibetan_exact_reference_marker	1	ßen; vgl. Tsna len 1.
+15	66	53	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	moñs) hrag pa'i skabs su skyes pas mgo bsñol
+41	58	182	latin_other	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	pas ni ~ la'añ bdag / tsher ma la sogs gnod
+56	20	273	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"dam tshig ~ ñon moñs ru trar skye ""wer das"
+65	35	355	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"gehen"" (K12 226b2); ñe sbas kyis ~ de la'añ"
+65	57	358	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	yaksa npr. eine Gottheit, gehört zu den gsañ
+96	66	633	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Mvy 6409); kha dog ... dan skar ma la'añ
+150	73	943	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"Dharma"" (Prav 94,12); ~ gaṅ yani ñon moñs"
+167	19	987	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	thams cad la / ~ dan ñon moñs las rgyal daṅ
+183	48	1048	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. pho ña'am bañ chen (TTC).
+247	57	1434	latin_other	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"sa geschrieben"" (Bu-śz 46,15); yar luns bañ"
+308	61	1742	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"12,4); bañ so ... sa phun ~ ba 'dra ""das Grab-"
+315	37	1766	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Sin tu ~ 'gyur sehr beherrscht sein; gsañ rgya
+352	14	1813	latin_other	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"nung"" (mDzodG 54,16); gsas 'khar gsañ ba"
+353	10	1815	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"liebten weilt"" (Megh 3c); ñon moñs mche ba'i"
+398	24	2038	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"auch für zañs par"" (brDa); dkon mchog gsum"
+459	21	2337	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"ñon moñs Sin tu che spahs pa (metr.) ""in eben"
+480	12	2421	latin_other	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"de'i kba bar (r. bañ) la ~s brgyan cin ""deren"
+493	72	2502	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"Lex. mdo 'gag / rtsa ba / gsañ lta bu ""wichti-"
+497	39	2520	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Kalkulation von gnam khyi betrifft, so ist der Lex. bla bres la'an (brDa); bla bre la'añ
+514	73	2573	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	kun 'dzin la ~ pa'i dran sron ñon moñs med
+550	69	2708	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. rāsabha (Ak 239.77): bon gu la'añ
+560	75	2785	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"na bañ rim bZi pa') rgyal chen ""Schützer des"
+561	29	2787	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"kyi byani na bañ rim bZi pa'i rgyal chen ""der"
+649	78	3215	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"ten Flüssigkeiten"" (Siddh 6.25); lcags zañs"
+651	62	3216	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. bhājana (Ak 228.33); chu snod dam zañs
+655	51	3224	latin_other	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"bzun ba'am nan tan lta bu la'añ ""bestimmt"
+679	71	3306	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"lus kyi bañ (r. ~) du ""im Schoß des Körpers"""
+697	58	3435	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	sman nag po la grog sman ~ Zes pa la'añ / drod
+706	75	3484	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"ste der skandhas"" (Udr 46,19); ñon moñs"
+728	73	3637	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Tär 125,11); ~ gsañ ba 'dus pas phyogs thams
+772	2	3950	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	kha cig gis ni ñon moñs pa thams cad ~ te dgra
+773	32	3951	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	2602); ~ pa = dgra bcom pas ñon moñs thams
+779	50	3982	latin_other	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	rta pho han skya ~ bañ 'gros gsar gsum 'dzoms
+814	65	4178	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Gar 151,1); bañ rin po che rdo rje Zes bya ba
+829	41	4279	latin_other	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"li skad du ~ la 'go bañ 206 bgyi ""auf Khotane-"
+831	57	4290	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	(Nel 437); ñon moñs gsod pa'i ~ pa skyon
+833	10	4293	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	byan chub sems dpa'i ~ pa ... ñon moñs pa'i
+833	11	4293	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	~ pas kun nas ñon moñs par yid ches par
+856	78	4420	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"Lex. srog chags ""bu sdom la'añ ""ein Lebewe-"
+907	16	4710	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"sna'irig dzin gsañ ~ ""eine abgelegene Stät-"
+918	66	4790	latin_other	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"zañs bu broya' glad la ~ nas ""nachdem sie"
+963	2	5074	german_prose_with_translit	gsañ	gsaṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	Lex. vajrapanih (Mvy 649); gsañ ba'i bdag po
+983	74	5236	german_prose_with_translit	bañ	baṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"cha dan bon (r. bañ) chen ... byas te ""in diesen"
+1018	31	5442	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	chos rnamis kyani shon kun nas ñon moñs pa
+1026	34	5491	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"zañs 0707? padma dmar pos ~r khens pa ""ein"
+1038	45	5548	latin_other	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"ñon moñs ~ kyt kbrod gnas na (metr.) ""wenn"
+1045	33	5590	german_prose_with_translit	la'añ	la'aṅ	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"la'añ ""auch für junges Mädchen"" (Dagy)."
+1106	29	5992	german_prose_with_translit	zañs	zaṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"keten in 'Phyin-phu"" (sBa 63,15); zañs kyi"
+1124	41	6134	german_prose_with_translit	moñs	moṅs	reviewed_tibetan_exact	reviewed_tibetan_exact_final_ng	yes	"fort das Leben"" (Gś-H 62d); ñon moñs chom"

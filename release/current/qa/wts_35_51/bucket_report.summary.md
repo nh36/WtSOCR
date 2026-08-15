@@ -1,19 +1,14 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/reference_marker_same_direction_clean_20260701T181007Z/wts_35_51`
-- unresolved confusable pairs: `176`
-- promote candidates (conservative): `7`
+- run_dir: `work/final_ng_seed_clean_20260719T210000Z/wts_35_51`
+- unresolved confusable pairs: `171`
+- promote candidates (conservative): `2`
 - hold candidates: `169`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
 |---|---|---|---:|---:|---|
-|wts_35_51|moñs|moṅs|16|5|-|
-|wts_35_51|bañ|baṅ|11|5|-|
-|wts_35_51|la'añ|la'aṅ|9|4|-|
 |wts_35_51|Vi$|Viś|8|4|-|
-|wts_35_51|gsañ|gsaṅ|7|4|-|
-|wts_35_51|zañs|zaṅs|6|4|-|
 |wts_35_51|IhK|lhK|5|4|-|
 
 ## Top Hold Candidates

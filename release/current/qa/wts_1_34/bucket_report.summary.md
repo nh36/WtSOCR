@@ -1,21 +1,15 @@
 # Unresolved Bucket Report
 
-- run_dir: `work/materialized_release_inputs/wtsocr-alignment-review-2026-08-06/wts_1_34`
-- unresolved confusable pairs: `189`
-- promote candidates (conservative): `8`
+- run_dir: `work/final_ng_seed_clean_20260719T210000Z/wts_1_34`
+- unresolved confusable pairs: `183`
+- promote candidates (conservative): `2`
 - hold candidates: `181`
 
 ## Top Promote Candidates
 |volume|from|to|unresolved|score|flags|
 |---|---|---|---:|---:|---|
-|wts_1_34|mañ|maṅ|23|5|-|
-|wts_1_34|rañ|raṅ|11|5|-|
-|wts_1_34|miñ|miṅ|10|5|-|
 |wts_1_34|Ihgr|lhgr|8|4|-|
-|wts_1_34|gañs|gaṅs|7|4|-|
 |wts_1_34|Iśvara|lśvara|6|4|-|
-|wts_1_34|sañs|saṅs|6|4|-|
-|wts_1_34|ruñ|ruṅ|5|4|-|
 
 ## Top Hold Candidates
 |volume|from|to|unresolved|score|reason|
