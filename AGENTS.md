@@ -42,6 +42,10 @@ Do not introduce broad OCR rules unless explicitly approved.
 
 Prefer exact reviewed rows keyed by volume/page/line/token/source.
 
+## BAdW source policy
+
+Follow `docs/BADW_SOURCE_INTEGRATION.md`. Keep the published WTS and the BAdW editorial source as separate layers: aligned BAdW evidence may drive automated print-faithful corrections only when article identity, span alignment, exact reading, and print compatibility pass the documented gates. Never replace a printed reading silently with a post-print BAdW revision, and keep raw BAdW HTML, PDFs, and decoded corpora in ignored `work/` storage.
+
 ## Release policy
 
 If corrected text changes, rebuild:

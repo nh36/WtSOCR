@@ -1,0 +1,37 @@
+field	required	type	allowed_values	description
+evidence_id	yes	string		Stable unique identifier for the evidence row.
+target_layer	yes	enum	print_faithful|badw_editorial	Layer whose reading the row describes or proposes changing.
+disposition	yes	enum	apply_print_correction|retain_print_reading|record_editorial_variant|needs_review|reject	Outcome supported by the evidence.
+volume	yes	integer	1..9	Published WTS volume containing the local span.
+page	yes	integer	positive integer	Printed page coordinate used by the local corpus.
+line	yes	integer	positive integer	Printed line coordinate used by the local corpus.
+token_index	yes	integer	non-negative integer	Token index in the identified local line.
+local_span_start	no	integer	non-negative integer	Zero-based Unicode code-point offset in source_token; inclusive.
+local_span_end	no	integer	non-negative integer	Zero-based Unicode code-point offset in source_token; exclusive.
+source_token	yes	string		Exact WtSOCR token before any proposed change.
+proposed_token	no	string		Exact replacement token; empty when no print-layer change is proposed.
+local_entry_id	no	string		Stable local entry identifier when available.
+local_lemma	no	string		Local lemma preserved exactly as represented by WtSOCR.
+badw_lemma	yes	string		BAdW lemma preserved in original Unicode.
+badw_homonym	no	string		BAdW homonym number or other article discriminator.
+source_url	yes	url		Stable public BAdW article or PDF URL.
+fetched_at_utc	yes	datetime	RFC 3339 UTC	Fetch time of the exact source object.
+source_sha256	yes	sha256	64 lowercase hexadecimal characters	SHA-256 of the unmodified fetched response body.
+source_media_type	yes	string		Response media type, such as text/html or application/pdf.
+source_record_id	yes	string		Stable identifier of the parsed article within the source object.
+source_span_kind	yes	enum	article_text|meaning|example|citation|cross_reference|pdf_text_run|other	Parsed structure containing the source span.
+source_span_start	yes	integer	non-negative integer	Zero-based Unicode code-point offset in the preserved parsed field; inclusive.
+source_span_end	yes	integer	non-negative integer	Zero-based Unicode code-point offset in the preserved parsed field; exclusive.
+source_span_sha256	yes	sha256	64 lowercase hexadecimal characters	SHA-256 of the exact UTF-8 encoded BAdW source span.
+article_match_method	yes	string		Named deterministic method used to identify the local article.
+article_match_confidence	yes	decimal	0..1	Confidence score for article identity.
+span_alignment_method	yes	string		Named deterministic method used to align the exact spans.
+span_alignment_confidence	yes	decimal	0..1	Confidence score for the span alignment.
+difference_class	yes	enum	ocr_damage|presentation|structure|print_variant|post_print_editorial_revision|unresolved	Classification of the BAdW-versus-WtSOCR difference.
+editorially_mutable	yes	boolean	true|false	Whether the field may plausibly contain a post-print editorial change.
+print_check_status	yes	enum	not_required|matches_badw|differs_from_badw|ambiguous|pending	Result of checking the registered print scan when required.
+print_check_reference	no	string		Registered scan identifier and page or other exact print locator.
+parser_version	yes	string		Version or source revision of the parser that produced the record.
+decoder_version	no	string		Version or source revision of the PDF decoder, when applicable.
+created_at_utc	yes	datetime	RFC 3339 UTC	Time the evidence row was produced.
+notes	no	string		Concise review notes that do not replace structured provenance.
