@@ -5,7 +5,7 @@ disposition	yes	enum	apply_print_correction|retain_print_reading|record_editoria
 volume	yes	integer	1..9	Published WTS volume containing the local span.
 page	yes	integer	positive integer	Printed page coordinate used by the local corpus.
 line	yes	integer	positive integer	Printed line coordinate used by the local corpus.
-token_index	yes	integer	non-negative integer	Token index in the identified local line.
+token_index	yes	integer	positive integer	Positive, 1-based token index in the identified local line.
 local_span_start	no	integer	non-negative integer	Zero-based Unicode code-point offset in source_token; inclusive.
 local_span_end	no	integer	non-negative integer	Zero-based Unicode code-point offset in source_token; exclusive.
 source_token	yes	string		Exact WtSOCR token before any proposed change.
