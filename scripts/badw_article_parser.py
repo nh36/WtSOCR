@@ -8,7 +8,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
-from typing import Iterable, Mapping, Sequence
+from typing import Callable, Iterable, Mapping, Sequence
 from urllib.parse import unquote, urljoin, urlsplit
 
 from badw_catalogue import CatalogueRecord, read_catalogue
@@ -340,11 +340,11 @@ def parse_cached_article(cache: SourceCache, spec: RequestSpec) -> dict[str, obj
     return parse_database_article(response.body, source_metadata=response.metadata)
 
 
-def parse_cached_catalogue(
+def _process_cached_catalogue(
     cache: SourceCache,
-    records: Sequence[CatalogueRecord],
-) -> tuple[list[dict[str, object]], dict[str, object]]:
-    parsed = []
+    records: Iterable[CatalogueRecord],
+    emit: Callable[[dict[str, object]], None],
+) -> dict[str, object]:
     failures = []
     counts = Counter()
     for record in records:
@@ -359,9 +359,43 @@ def parse_cached_catalogue(
                 {"error": f"{type(error).__name__}: {error}", "url": record.canonical_url}
             )
             continue
-        parsed.append(article)
+        emit(article)
         counts["parsed"] += 1
-    return parsed, {"attempted_database_articles": counts["parsed"] + counts["failed"], "failures": failures, **dict(sorted(counts.items()))}
+    return {"attempted_database_articles": counts["parsed"] + counts["failed"], "failures": failures, **dict(sorted(counts.items()))}
+
+
+def parse_cached_catalogue(
+    cache: SourceCache,
+    records: Sequence[CatalogueRecord],
+) -> tuple[list[dict[str, object]], dict[str, object]]:
+    """Parse a small in-memory catalogue (primarily for callers and tests)."""
+
+    parsed: list[dict[str, object]] = []
+    summary = _process_cached_catalogue(cache, records, parsed.append)
+    return parsed, summary
+
+
+def write_cached_catalogue_jsonl(
+    cache: SourceCache,
+    records: Iterable[CatalogueRecord],
+    output: Path,
+) -> dict[str, object]:
+    """Parse cached articles directly to JSONL without retaining the corpus in RAM."""
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", encoding="utf-8") as handle:
+        def write_record(record: dict[str, object]) -> None:
+            handle.write(
+                json.dumps(
+                    record,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n"
+            )
+
+        return _process_cached_catalogue(cache, records, write_record)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -376,14 +410,9 @@ def _build_parser() -> argparse.ArgumentParser:
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     cache = SourceCache(args.cache_root)
-    records, summary = parse_cached_catalogue(cache, read_catalogue(args.catalogue))
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("w", encoding="utf-8") as handle:
-        for record in records:
-            handle.write(
-                json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-                + "\n"
-            )
+    summary = write_cached_catalogue_jsonl(
+        cache, read_catalogue(args.catalogue), args.output
+    )
     args.summary.parent.mkdir(parents=True, exist_ok=True)
     args.summary.write_text(
         json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

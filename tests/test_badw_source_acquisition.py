@@ -13,7 +13,10 @@ SCRIPTS = ROOT / "scripts"
 FIXTURES = ROOT / "tests" / "fixtures" / "badw"
 sys.path.insert(0, str(SCRIPTS))
 
-from badw_article_parser import parse_cached_article  # noqa: E402
+from badw_article_parser import (  # noqa: E402
+    parse_cached_article,
+    write_cached_catalogue_jsonl,
+)
 from badw_catalogue import (  # noqa: E402
     CatalogueRecord,
     acquire_catalogue_records,
@@ -411,3 +414,30 @@ def test_article_parser_is_reproducible_offline_from_cached_bytes():
         assert json.dumps(first, ensure_ascii=False, sort_keys=True) == json.dumps(
             second, ensure_ascii=False, sort_keys=True
         )
+
+
+def test_catalogue_parser_streams_deterministic_jsonl():
+    records = [
+        article_record("https://wts-digital.badw.de/lemma/ka/2"),
+        article_record("https://wts-digital.badw.de/lemma/kha/1"),
+    ]
+    calls = []
+
+    def transport(request, timeout):
+        calls.append(request.full_url)
+        return html_response(request)
+
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(temporary, delay_seconds=0, transport=transport)
+        for record in records:
+            cache.fetch(RequestSpec(record.canonical_url))
+        first = Path(temporary) / "first.jsonl"
+        second = Path(temporary) / "second.jsonl"
+        first_summary = write_cached_catalogue_jsonl(cache, iter(records), first)
+        second_summary = write_cached_catalogue_jsonl(cache, iter(records), second)
+
+        assert first_summary["parsed"] == 2
+        assert first_summary == second_summary
+        assert first.read_bytes() == second.read_bytes()
+        assert len(first.read_text(encoding="utf-8").splitlines()) == 2
+        assert calls == [record.canonical_url for record in records]
