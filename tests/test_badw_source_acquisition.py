@@ -383,6 +383,7 @@ def test_article_parser_preserves_unicode_and_structure_from_cache():
         assert article["sigla"][0]["expanded_text"] == "Test-Siglum Langform"
         assert [reference["marker"] for reference in article["cross_references"]] == ["↑", "↓"]
         assert article["cross_references"][1]["target_homonym"] == "3"
+        assert article["cross_references"][1]["target_url"].endswith("/lemma/ga/3")
         assert article["divisions"][0]["example_indices"] == [0]
         assert article["divisions"][0]["lexical_block_indices"] == [0]
         assert "Test-Siglum Langform" not in article["article_source_text"]

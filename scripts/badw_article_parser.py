@@ -243,11 +243,7 @@ def parse_database_article(
 
     cross_references = []
     for link_container in find_all(article, class_name="link"):
-        anchor = find_first(
-            link_container,
-            tag="a",
-            predicate=lambda item: "lemma" in item.classes,
-        )
+        anchor = find_first(link_container, tag="a")
         if anchor is None or anchor is link_container or not anchor.attrs.get("href"):
             continue
         container_text = exact_text(
