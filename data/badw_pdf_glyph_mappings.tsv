@@ -1,0 +1,537 @@
+family	style	cid	glyph_signature	unicode	evidence_method	evidence_count	evidence_note
+RabtenTibetan	regular	0002	ebbba6ed181c32d2dc7ba4e665a008186ad80c6a18710ecc5f42769a4840cc95	།	catalogue-heading-consensus	2027	multi_pair; winning paired-heading votes 2027/2027; sample occurrences=3515
+RabtenTibetan	regular	01A4	9910d38a3fa7f5b6a37452b0c8abfd9f352aadd9675c2131a7792b2b62106869	ཀ	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=32
+RabtenTibetan	regular	01A8	48c846de6daecf4191010f32925454a7f7ca6c803d65fbd358ed5e84c1f43cdc	ཀུ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=7
+RabtenTibetan	regular	01AA	5b573eccf5af1fd4725d77de28924fcbb2fdc207b2747c1c11a47f0f259402a9	ཀེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	01AC	045dc4220f7a8be5bc4e5fa1b10d895982762893bd10ca712c5dab37573c32e0	ཀོ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=5
+RabtenTibetan	regular	01D8	550b5bcb068eaff9c3b1b04b6ecddac61f38a35d4eb3913da03888141c9b0694	ཀྱི	catalogue-heading-consensus	21	multi_pair; winning paired-heading votes 21/21; sample occurrences=52
+RabtenTibetan	regular	01DA	2c7e1e4bd938eccac6e5ddfdf53ea20b036a37f131fcc73c6c341eb8a24190f0	ཀྱུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	01DC	ea50d588ee9d51cb6ba34f3b3e73a167f983bd304308327ed3300b0226f487e2	ཀྱེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	01E0	06b16727ad1a3350cf1a14ddc3acb7c9fa9ef0300a2cab40854261605a020e4a	ཀྲ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	01E2	a917e3e5dc97fa63e74fae6d68a8c86355915f96a18456f877e29222cbb53685	ཀྲི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	01E4	87c3ff9dbf80e07b2d7840b5afd86778c40fe648dc332c8d625487cefd93af9e	ཀྲུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	01E8	6b8d6c1af25a07a1d4ea800e4d6f324793c46c2c741fce89e57a509b66643fd9	ཀྲོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	01EC	c6889c356e5239abef971e31311d1eb60ef943f749ccd527cabecc313a9275ff	ཀླ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	01F4	961a609f6ba3157524b3de8b415eda0321c1ac7f8a77e38c01920928a4670030	ཀློ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	0210	e0fcbffb917dbd494e1284a52a0680316d0b738168720b9a420a7e01afa305fd	རྐ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	0214	542d990e30eda34e590d66bbbfb9d069b1090a84c17d9bdd96f80e4b7c6a8d60	རྐུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	0218	50ba9ed489cc6f1afe57d789d5ee48737042235d4d70ac451a54dc081c974fee	རྐོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	021A	3bfaf8271e70af398753f2763fb1d444aefa0e53f96868fb7674befe2b43659f	རྐྱ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0220	99f15db3399fdfcf781176962354e04208a7b5e05bded1bbb4f516855a0ac94a	རྐྱེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	022A	5e90b67aa9a6c8add173074da20d7f240dc3b8a140425709713a836f3cb1edf4	ལྐུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0230	c38f0292f6219b4dd01c8f585549df54f0f7142124c639879d38df3d04b17bf7	སྐ	catalogue-heading-consensus	17	multi_pair; winning paired-heading votes 17/17; sample occurrences=19
+RabtenTibetan	regular	0234	23370679058bfeb06ebed8dbf1835bb7cc1f27de70ee905f9646f6fb3e6f980a	སྐུ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=4
+RabtenTibetan	regular	0238	e6a1ec74b748a804d6193c8fb042e03d8ac565e06a8054387c661e90dbcabcab	སྐོ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=11
+RabtenTibetan	regular	023C	e0963106bbc1d8bd6c4382bff6555f9abc21a6d1fff1e75ecfcedacbbd72d135	སྐྱི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	023E	e9589707779f72cce7ee6229c31075063842a41cb67aa4cc2cf22c6620b90aba	སྐྱུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0240	d60a8c31e7ed8d7e37f6de4cf1d5c3ec517e3a9ff7c52aec01243d0598422c54	སྐྱེ	catalogue-heading-consensus	22	multi_pair; winning paired-heading votes 22/22; sample occurrences=29
+RabtenTibetan	regular	0242	0dce0f4ae93c0bd825f3224e12c84c2e20728aef62ee0fc887d7cde35eb53b01	སྐྱོ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=9
+RabtenTibetan	regular	0244	aa724c28541e73d903d1841fb2206e19ab2737f5327b224ae0e3f4a92ff1856d	སྐྲ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	024C	1077c05e8f3d811e75a21ab5a593e03fd9611f2d6c8f918059a13308c415d16f	སྐྲོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0250	821019d352ae15a9c02cb8ec4bd2cf750e90e5bf0a0c3aaf242d07da6557dd49	ཁ	catalogue-heading-consensus	162	conflict; winning paired-heading votes 162/164; sample occurrences=204
+RabtenTibetan	regular	0251	dd1e389e546227bffed9a63bd491c4b1186e4dc9d34330aa4b1d0ec98875f4ca	ཁā	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0252	03eb94d7f243d375ff3ba0606a461c880dbd10857aa7826d086319e09527f6ed	ཁི	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=4
+RabtenTibetan	regular	0254	c8b5077ce8b948515d6d19ef62ce2a71368b69c777d5e3077ffd1911edd142c9	ཁུ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=28
+RabtenTibetan	regular	0258	dc283f3b6a0a9ffb38b981c9b33b9174ea984019866ab8b9d32a33b7a61714cf	ཁོ	catalogue-heading-consensus	82	multi_pair; winning paired-heading votes 82/82; sample occurrences=105
+RabtenTibetan	regular	0260	b9f8d06460f0887d1aa551a27a13286a57efe266b21b96b685e1b4f54a75e192	ཁྱ	catalogue-heading-consensus	13	multi_pair; winning paired-heading votes 13/13; sample occurrences=17
+RabtenTibetan	regular	0262	6f1ec5230a26fbdc1fd131df9ed08d95e6805a00ebdc059b17669552f195cf48	ཁྱི	catalogue-heading-consensus	22	multi_pair; winning paired-heading votes 22/22; sample occurrences=25
+RabtenTibetan	regular	0264	937d5be5b9d8cc17cd0cc819d40d4cf3825254445a66a49232bcd70b28266915	ཁྱུ	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=23
+RabtenTibetan	regular	0266	46ef880e1bf33320f9b766ce90b73e3e6b26eaa6527df658647668b60f30b714	ཁྱེ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=10
+RabtenTibetan	regular	0268	60f4b5d026ea4ff7ed0a9bc154f9d56121bebea3a494bade8e33b90f80cfe00d	ཁྱོ	catalogue-heading-consensus	21	multi_pair; winning paired-heading votes 21/21; sample occurrences=25
+RabtenTibetan	regular	026A	89f2fc4d492a23e97657e468099faa1871ff5ed0b8165399ef523e36f4658550	ཁྲ	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=25
+RabtenTibetan	regular	026C	4338f2627bcc9adc1d4ec74874c784f5fd5660f767080a3af74391241159063d	ཁྲི	catalogue-heading-consensus	25	multi_pair; winning paired-heading votes 25/25; sample occurrences=31
+RabtenTibetan	regular	026E	bcf809c667cbdc6a1f68f5d59a55e2882d062de6533189ddf272d09bc2c22895	ཁྲུ	catalogue-heading-consensus	17	multi_pair; winning paired-heading votes 17/17; sample occurrences=20
+RabtenTibetan	regular	0270	16a7188a73c709396276605dd8e9bcbc7ae5ce0408451abe8bcf5d3bb177bb57	ཁྲེ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=7
+RabtenTibetan	regular	0272	1119f7beae0484cae18a50d802c25b666413cb6529c7147009620828be62cc1c	ཁྲོ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=15
+RabtenTibetan	regular	0278	a39479f243b4701decfdbcc4cee0fc37b4a01645d369fc799eeacdbaa7e02d80	ག	catalogue-heading-consensus	873	multi_pair; winning paired-heading votes 873/873; sample occurrences=1146
+RabtenTibetan	regular	027A	83cd7c3afb3e967a726850552bc2aa065ea3ad2a79fec67c89c56de0dc8a9ec8	གི	catalogue-heading-consensus	11	multi_pair; winning paired-heading votes 11/11; sample occurrences=13
+RabtenTibetan	regular	027C	2491a5302deb3cd9679bbe79bf64d93065ded963e09b91b72537d57227f4371f	གུ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=32
+RabtenTibetan	regular	027E	a9d8911931f8970ba127becb00546cbb888fa52e41d661fb3eb1d63634e03060	གེ	catalogue-heading-consensus	15	multi_pair; winning paired-heading votes 15/15; sample occurrences=16
+RabtenTibetan	regular	0280	3e39a5e114635006f4d471eef98f624403a1e51d8950eb56b52642725f2a1003	གོ	catalogue-heading-consensus	48	multi_pair; winning paired-heading votes 48/48; sample occurrences=63
+RabtenTibetan	regular	02A2	eafe6766494c999ab43bc2ff578a75081d11b2c5bbf0c81807eae26e97dbebcd	གྱི	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=22
+RabtenTibetan	regular	02A4	f2dd5e221fc92ef233c2d4d5319d42c53dc15510a432476567c641ecd518bd67	གྱུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=8
+RabtenTibetan	regular	02A6	3da199e501041744131d8467890b8f9d89244f30d82f230218a0644c231b761f	གྱེ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=6
+RabtenTibetan	regular	02A8	7090d5054044062b83cc72b27f646f0dbe34dec74df8e244898a8816a248976c	གྱོ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=6
+RabtenTibetan	regular	02AA	9e2cc027a28e501a90bb7f2610095db8bf6136a9c2c9b59e6edff2c2f2f7d812	གྲ	catalogue-heading-consensus	14	multi_pair; winning paired-heading votes 14/14; sample occurrences=19
+RabtenTibetan	regular	02AC	b7b2a79001a910ef78e58e455c2dd41ca1b24ef12ba66a908bae6738c50d808b	གྲི	catalogue-heading-consensus	14	multi_pair; winning paired-heading votes 14/14; sample occurrences=16
+RabtenTibetan	regular	02AE	bf47c7a3daab03868f58c014822e0b8886af638dcf248826e9bc811a8497b936	གྲུ	catalogue-heading-consensus	11	multi_pair; winning paired-heading votes 11/11; sample occurrences=15
+RabtenTibetan	regular	02B0	c714fdcec48ef4252bef94336a9f8c47b38c2d86fa073fb1edfb178e24013f02	གྲེ	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=13
+RabtenTibetan	regular	02B2	654c0d3dff43003e27a35941575091b45e4a13a68d23356b068d0b8a4f5edd45	གྲོ	catalogue-heading-consensus	67	multi_pair; winning paired-heading votes 67/67; sample occurrences=84
+RabtenTibetan	regular	02B8	2f70b1be9442c9de84946b72b017a1d884bec53b46577ca834d80c93ae8edacb	གླ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	02BA	b83d402484a2928b1917c5a1af6ffd43dfb21daa521b690b9b0c01d752e6e03c	གླི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	02BC	1cfb865bfcf550e4c577adccb55e9e0af87b268c7296198bb157dd1a4c60a1bf	གླུ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	02BE	8a7a243d14b19e376661246f3061a577534e4699732ab73869ddcd027684de61	གླེ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=9
+RabtenTibetan	regular	02E4	395bee9f2bcfcad6da58f4cc17033f911f37f315b1a0b424e14964cdd58252e3	རྒྱ	catalogue-heading-consensus	85	multi_pair; winning paired-heading votes 85/85; sample occurrences=134
+RabtenTibetan	regular	02E8	50c6fa56a6d07360cfc6243a0449d19e273f22f0ea1203bb65686204f4198120	རྒྱུ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=29
+RabtenTibetan	regular	02FE	17994b0ef030cfd632d5b9c4dbb100cfbc160144c01afcf25c417b2367d0a8ab	སྒ	catalogue-heading-consensus	13	multi_pair; winning paired-heading votes 13/13; sample occurrences=16
+RabtenTibetan	regular	0302	86c5b99d50f019464b2fa9b472f2bd71ce46e5d1ae2bcdf5511f78fdbeedd5b0	སྒུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0306	e1f55b0b489df138ef7be73f804c84d9ecd6b01344fd4a7b59b0f2cdc638c59a	སྒོ	catalogue-heading-consensus	18	multi_pair; winning paired-heading votes 18/18; sample occurrences=20
+RabtenTibetan	regular	030C	b9dd38a055376911e21600890d05fcfbe3ff1f9b8182e460e2bb5bc4d83cb027	སྒྱུ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=10
+RabtenTibetan	regular	030E	e820ea803d65ad6b3dfda79a4a60f3ee68e3aacec5002520a53fdca83e14fe9e	སྒྱེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	0312	440896e6f2396acdfaf7e03b6703a200ce95faf19ac3de94dc63b6dc0ccbb3ef	སྒྲ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0314	b9dcdf00ce8edc8f1e094011733822da881c6c2072b2bab1f221bb6b96a172af	སྒྲི	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=6
+RabtenTibetan	regular	0318	e7aef791a53ebf8f9152bcbc44904a7ccb27f3e34178017dbc2d2645c4abf4c7	སྒྲེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=3
+RabtenTibetan	regular	031A	b54c5a99e72b806244204d6ef4eddc2a9dd3491ee6b7ddfe86ba664952d7ab37	སྒྲོ	catalogue-heading-consensus	22	multi_pair; winning paired-heading votes 22/22; sample occurrences=29
+RabtenTibetan	regular	031C	b49a17b36a8df2fe9cb49f796bcdacf3a0cd50665909764fe6e226dfc86ab27d	ང	catalogue-heading-consensus	488	multi_pair; winning paired-heading votes 488/488; sample occurrences=650
+RabtenTibetan	regular	0320	bf33f5cfe62e418f85e0b9c6df05a27748462b9d289a4991a68cf224fb3fa7f9	ངུ	catalogue-heading-consensus	16	multi_pair; winning paired-heading votes 16/16; sample occurrences=20
+RabtenTibetan	regular	0322	1a9580381d4a3761681cbd44767a07390aa15a55396b904c42baf8b83bf78a6f	ངེ	catalogue-heading-consensus	14	multi_pair; winning paired-heading votes 14/14; sample occurrences=23
+RabtenTibetan	regular	0324	369843ff22715c1d4b4416f28cc1ce90e18c6c65be957528ea4da14d37b8d455	ངོ	catalogue-heading-consensus	49	multi_pair; winning paired-heading votes 49/49; sample occurrences=73
+RabtenTibetan	regular	0350	e9162a9f991024cc4a36c9a4966fe77afeee95dbc575f1743e941a037b8e9cf1	རྔ	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=11
+RabtenTibetan	regular	0358	b8bebd22b02c86c81d4807bf62d1d20d4f36abc4ae54138066860a04a8e39cca	རྔོ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=12
+RabtenTibetan	regular	035A	6ce4073941307c7540c3c690f1bde630b194b02b40bc477d10edb5b48b0b112d	ལྔ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0364	5081cac190e7fa08569141b00deb928331736f681be925fb28cddfc3a6241b3d	སྔ	catalogue-heading-consensus	16	multi_pair; winning paired-heading votes 16/16; sample occurrences=20
+RabtenTibetan	regular	0368	1b0454922abb93a9783d9c9beb3f7d4ef75c79ae30efac8e1ac162ef8624e3f2	སྔུ	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=14
+RabtenTibetan	regular	036C	7f98dd66c6172aaeca0b3a35adeaaf250801c254153e8fb5a4a1529d511f017f	སྔོ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=7
+RabtenTibetan	regular	036E	bf70000475a42a841be6ccec435e6d67fe2d85a2aece31b347c63b72406b2fa9	ཅ	catalogue-heading-consensus	68	multi_pair; winning paired-heading votes 68/68; sample occurrences=116
+RabtenTibetan	regular	0370	0529b1542757313f4c7ffcb9f390b31693fc7f9addd576279ba46997e72ccf0c	ཅི	catalogue-heading-consensus	44	multi_pair; winning paired-heading votes 44/44; sample occurrences=56
+RabtenTibetan	regular	0372	4911ab74bcf4b9089cdabf8dfd7e64c71d6af881d8db555ec840e2f917cebeed	ཅུ	catalogue-heading-consensus	22	multi_pair; winning paired-heading votes 22/22; sample occurrences=24
+RabtenTibetan	regular	0374	f60bce4314d2f388649e46b885a4dbfb3c58637fbe1a1c010a57b97ede719077	ཅེ	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=14
+RabtenTibetan	regular	0376	ce6c9244e3b8395f93a2fdcbe125895edbaf59a62dc2b29fc6fded93bff6d9a6	ཅོ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=29
+RabtenTibetan	regular	0378	f1107f359f3436394baf5e10b186916e6d3a709d91562c205ba32354abd5d20f	ཅྭ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	037A	11ac26f219b1d62766469c30d71c6caafe41ac3aa2e468d8d53acf4d62e09d9f	ལྕ	catalogue-heading-consensus	38	multi_pair; winning paired-heading votes 38/38; sample occurrences=46
+RabtenTibetan	regular	037C	ba95dffcbd0612f3b0ee37d913ced997c13096a5804438260d4895bf1ff3d8dc	ལྕི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0380	0c0c1adfe5a3d73ceb468cf37630d06d44f52bc55ed5691f1ea8499f1b03cb5f	ལྕེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0384	f49835ededfc3bfd9dca789ad2bf7401f9a1445ca605ee1b817fea021f20539e	ཆ	catalogue-heading-consensus	78	multi_pair; winning paired-heading votes 78/78; sample occurrences=99
+RabtenTibetan	regular	0386	e4c57b83b622b590b83b073416f4ded0108d446b8f0eac83463a587e7c738b93	ཆི	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=5
+RabtenTibetan	regular	0388	7eb88ba2a5a117c260e5f7f78dcb4d80b76f15fc226829cbb74028e5debdef28	ཆུ	catalogue-heading-consensus	59	multi_pair; winning paired-heading votes 59/59; sample occurrences=77
+RabtenTibetan	regular	038A	1d12189c887d61dcf59f9b180f3885d98780a3b5e5b025d14869ab2d1b31308f	ཆེ	catalogue-heading-consensus	52	multi_pair; winning paired-heading votes 52/52; sample occurrences=64
+RabtenTibetan	regular	038C	d0cffb00da92ca68a955ccd290d61b48e61a32c7ae3aada69725ffe2c6b7b316	ཆོ	catalogue-heading-consensus	40	multi_pair; winning paired-heading votes 40/40; sample occurrences=80
+RabtenTibetan	regular	038D	86d7417b80905b1858dafe87dd73f8f5ebf43e3cb82d6296e3b111614fefe0cd	ཆཽ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0390	3d614052e9a410088c8a14b66d2be9a6c9c87a197f28c32bd165f7965ca5d77c	ཇ	catalogue-heading-consensus	48	multi_pair; winning paired-heading votes 48/48; sample occurrences=58
+RabtenTibetan	regular	0392	e0ec6a82b67c17ffd8da55aba290a0dcc7638067296351e945d32f729dfc87bc	ཇི	catalogue-heading-consensus	31	multi_pair; winning paired-heading votes 31/31; sample occurrences=43
+RabtenTibetan	regular	0394	ac4434ffb194f34f07b3d670afe040e8c345d630ef2814b85860bc15d0ce7770	ཇུ	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=15
+RabtenTibetan	regular	0396	4fb67a5a075125340b828a0d139e01e5ce48edfa5acda3aa4cd36e291987b5aa	ཇེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	0398	7f30146fa6bfeb7a790c488a7d0c80f9844fb5e6c4fb184411c010287cfcf98b	ཇོ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	039A	7b607efbc28277b0c355f041992394ee5950d4c1e3dd9c08cd789f08a103788b	རྗ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	039C	8da02a9edd2ce99a665d40474615302354f3e913beef7c1c772092f3e6fcc95e	རྗི	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=9
+RabtenTibetan	regular	039E	1573653ec0df96097c9d1cc8a9148cb0784c204272f434668c71b7f42f70c2d9	རྗུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	03A0	8d8fb46eb2f1a94f9f23e186ed28d87049ad5376c7f9f03cc0b8e7398d2c1eba	རྗེ	catalogue-heading-consensus	26	multi_pair; winning paired-heading votes 26/26; sample occurrences=33
+RabtenTibetan	regular	03A2	3967ece5547e0aa10a93ae90db7a64573cb7f9d3235562257de48c7bbee2200e	རྗོ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=17
+RabtenTibetan	regular	03A4	51e4f88463abf342a87df6508bd46372bed72a9b717bd4a23025a96ad6a1dc2f	ལྗ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=8
+RabtenTibetan	regular	03AC	261e7df44be6f88dd5e6498a045ccddbb51fd8b39bfab5debb29febfcb5482f0	ལྗོ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=6
+RabtenTibetan	regular	03AE	456acd4ddb24a8a678f62ba7d9a334988f77ef14f738c8bcaefff8ac904f8578	ཉ	catalogue-heading-consensus	22	multi_pair; winning paired-heading votes 22/22; sample occurrences=35
+RabtenTibetan	regular	03B0	bd573182b7ffa29df5e45f0690c9fc6b9be14d6d87ebbafa1c47e766f13494d2	ཉི	catalogue-heading-consensus	35	multi_pair; winning paired-heading votes 35/35; sample occurrences=57
+RabtenTibetan	regular	03B2	2845c9363ef0a02866a2f5a19136c98e290cb0e9f9da1f511222305360d58248	ཉུ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=9
+RabtenTibetan	regular	03B4	5af1bc392a37e7be82fa1738537a604345e0ce001f2c7354f1e0b916f8f7e678	ཉེ	catalogue-heading-consensus	25	multi_pair; winning paired-heading votes 25/25; sample occurrences=30
+RabtenTibetan	regular	03B6	72c06a890c62b1e37c29b34c591a76dc3700b437008e9c2490e3e2e4bcb89fe7	ཉོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=6
+RabtenTibetan	regular	03C4	2300b5fe1acce2ec908dfe9c1b3c922339c9362ee28dd41b01c0990e3ed1ee5a	ཉྭ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=6
+RabtenTibetan	regular	03CC	b52972b97488eec5de7e0218c9256c63518f058c518a62bda044523bc370b505	རྙ	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=10
+RabtenTibetan	regular	03D2	aaee7b732057e3dfda8cc54249d8df787ea8cee687849cad8f57a8b51b89d57d	རྙེ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=7
+RabtenTibetan	regular	03D4	6f7a64f4223b1c382c76758dfbbaedf61cc1c180e692ba6b1be499ddfd38ec38	རྙོ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=12
+RabtenTibetan	regular	03D6	7a2f84571892a4884260d2c373a41037e13dcb21d0d7fb51a9744450c5708fee	སྙ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=7
+RabtenTibetan	regular	03D8	2b1facdb2cac5c2a45f76e5d10874b7624d92e0835c1de63daaf10c96487c225	སྙི	catalogue-heading-consensus	21	multi_pair; winning paired-heading votes 21/21; sample occurrences=25
+RabtenTibetan	regular	03DA	521d373200eb1ae9ae2e43a0e0b9b4ee7999aa1e91bac954aec07488767e8d53	སྙུ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=10
+RabtenTibetan	regular	03DC	62de49577c0d9d03b993862227fd99b13ab03a485a64e14270cd9603b1fc37e0	སྙེ	catalogue-heading-consensus	16	multi_pair; winning paired-heading votes 16/16; sample occurrences=22
+RabtenTibetan	regular	03DE	a26c77c085b42f56cf450709bf720a66ec342cb6b58a2031be877e52ddd62c2a	སྙོ	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=15
+RabtenTibetan	regular	03E0	f4c5c418978692c918979c16d9b08b6342c44cabb4aab53f20af5619e092752e	ཏ	catalogue-heading-consensus	51	multi_pair; winning paired-heading votes 51/51; sample occurrences=68
+RabtenTibetan	regular	03E2	bfc4c74ea35f33d0bbeaac0b89332410072c55aade210722d3eced53f3b1861b	ཏི	catalogue-heading-consensus	67	multi_pair; winning paired-heading votes 67/67; sample occurrences=82
+RabtenTibetan	regular	03E4	9193d5ac135f610ac5a234cf70790dd7e1542788556250beb9b8e935ae7bc104	ཏུ	catalogue-heading-consensus	31	conflict; winning paired-heading votes 31/32; sample occurrences=45
+RabtenTibetan	regular	03E6	b4256b71f27af498c7d48577491b07adccbd4205501f447774b4898e3a0c38f5	ཏེ	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=23
+RabtenTibetan	regular	03E7	777e2f440c33ea4fecda3e9ac2c82ad09d961e96af987ae992dd77ec53d6817d	ཏཻ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	03E8	12763c226b13a378cee674d00c90d11897a7b408786904d672ad31467d8c4392	ཏོ	catalogue-heading-consensus	41	multi_pair; winning paired-heading votes 41/41; sample occurrences=47
+RabtenTibetan	regular	0416	93386d625562e9fd588fdb023e1e4022f4badbe976eb6041d4f81b6364097616	ཏྲ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=6
+RabtenTibetan	regular	041C	d38827d1ed6a20eb9df6b048bf743611c137b8c487d6e0b2b3712580901837ab	ཏྲེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0434	a9d0d9f5c53a124e5b3bf2e9971f018b181a48d523f398b3a5cd6fe723d3617f	རྟ	catalogue-heading-consensus	64	multi_pair; winning paired-heading votes 64/64; sample occurrences=79
+RabtenTibetan	regular	0436	fce8d9806527e8a3763e871659aeccb9392ca1f35e275848c2846453fa591845	རྟི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0438	fefae17d1d1e6ca71fab1b13083885a2095faa456d979bf58d084a353c448e27	རྟུ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=6
+RabtenTibetan	regular	043A	3203fd210819ad8b081ab92054249091782060f74a64ea33dae0eb3b1b5fbba2	རྟེ	catalogue-heading-consensus	48	multi_pair; winning paired-heading votes 48/48; sample occurrences=57
+RabtenTibetan	regular	043C	85295e8faa3e7829667a4a2ade0602499b02c34d35be148f35b963e843c4f62f	རྟོ	catalogue-heading-consensus	23	multi_pair; winning paired-heading votes 23/23; sample occurrences=31
+RabtenTibetan	regular	0448	48172c538a3215e397cfc292b677eaed58925bf36950c4332f7c169eee8ec99e	ལྟ	catalogue-heading-consensus	33	multi_pair; winning paired-heading votes 33/33; sample occurrences=50
+RabtenTibetan	regular	044A	fc67eaa7bc92661384450ef125cbf09f0ada5cca57324622a7cf91f3ec6aecd8	ལྟི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	044E	a05ac2ad7e190268e1d568a05279a6760a6f853658a623c5565e71dd91217e49	ལྟེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0450	c3a8162a5514f358dea0f3d13e8c3c4a5ce875de46a0c462e8760316e5acd0a3	ལྟོ	catalogue-heading-consensus	13	multi_pair; winning paired-heading votes 13/13; sample occurrences=15
+RabtenTibetan	regular	0452	9edf9ad020d2bda525defc6e7fda93d6e38e5a1082b61e6f4f995037d64b7f61	སྟ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=29
+RabtenTibetan	regular	0458	ba204a900ead8eef7d363c1dcc50a3a8821519bad51367b6ddaae7b421b047fc	སྟེ	catalogue-heading-consensus	21	multi_pair; winning paired-heading votes 21/21; sample occurrences=26
+RabtenTibetan	regular	045A	79f42f19fcf7c830e8b698aa83ba0872bebf86e17c74d44f5a3cff74b12ea95a	སྟོ	catalogue-heading-consensus	57	multi_pair; winning paired-heading votes 57/57; sample occurrences=72
+RabtenTibetan	regular	0480	9c379cb712b573d0b3b86df6651f9bb52db694d637a4a96283d8ed0d559d224f	ཐ	catalogue-heading-consensus	147	multi_pair; winning paired-heading votes 147/147; sample occurrences=219
+RabtenTibetan	regular	0481	5c4660a84903a46f64473f6ce06de1d87e21d0a5ef4ee3e06e756ebbfb4d63a7	ཐā	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	0482	eb5dbadc7f5bd537d45fcc771d47aaa381aab2b829b60630bab605ce268d6885	ཐི	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=18
+RabtenTibetan	regular	0484	adc69930d59933f0f1de29c2c4eca3ca50570f1cc25bd31bb64d4dcac3876ee7	ཐུ	catalogue-heading-consensus	96	multi_pair; winning paired-heading votes 96/96; sample occurrences=123
+RabtenTibetan	regular	0486	91a262c2d7cf8fec9acd29c6a30073890ca574822909e8079a16387fa15ad118	ཐེ	catalogue-heading-consensus	54	multi_pair; winning paired-heading votes 54/54; sample occurrences=64
+RabtenTibetan	regular	0487	5ef95ef109fdaf925201d10e00aedaf3b533337d915e31869f2672a2976b10cd	ཐཻ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0488	1845c30d37bfae653cbb29ebd311e4a2a8b0474196f715fcc9719914c48dff36	ཐོ	catalogue-heading-consensus	100	multi_pair; winning paired-heading votes 100/100; sample occurrences=119
+RabtenTibetan	regular	04B2	d6d449ac27e2390a46434a8a3a853bee527c69548a4efb958814636057de6bc1	ད	catalogue-heading-consensus	451	multi_pair; winning paired-heading votes 451/451; sample occurrences=638
+RabtenTibetan	regular	04B4	8497cb5ec8eac68851afa3ce21193e7ee5bccdcb1d01fb378665b9fed5d53632	དི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	04B6	e6fd00488274dc0fdf71593f8593ca5b91d661ec0841b616e99b7175cd55b643	དུ	catalogue-heading-consensus	35	multi_pair; winning paired-heading votes 35/35; sample occurrences=52
+RabtenTibetan	regular	04B8	e1fed746089a5c9befd54ed76c26fceffd47237fcf30774336854941554fac74	དེ	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=10
+RabtenTibetan	regular	04BA	77f114e393cc2219fcb4009206fe8204f937fbdd9e588f6534bc6b4186396781	དོ	catalogue-heading-consensus	20	multi_pair; winning paired-heading votes 20/20; sample occurrences=20
+RabtenTibetan	regular	04EC	be28f85ed97871041da90f76529070e3c490ece727959e39851baba2c3925bbe	དྱ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	04EE	28c213370a96922712be5aedd0e6d7e91fd7390d5f12b3d1a18af8080d3a509c	དྲ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=6
+RabtenTibetan	regular	04F0	6411f203484e2be04c6d8b14df3ce3002cd4606f6accf6bf23ed615aa7326a88	དྲི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	04F2	1a6a9a1292ff0f184d11d1f0b3a9a12c179e4f7d970fddebbd4d48cf8d8219df	དྲུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=7
+RabtenTibetan	regular	04F4	5015017caae6d595053ff486a55eee0841d83524745aa38372f2e21c46dd5be5	དྲེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	04F6	f2bd57f40f0b5149f2808929ceb96036df36b785e6cd68c298be7d00637e3049	དྲོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0514	aaba8a52950dd43bf6bf9f5d56955f81ed2ce20cc78fc40871fbcec5cef7062b	རྡ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0518	503a6ef337a126c353cc84095ae8057a8a62c7d305f3343f73ccebd44cc1c994	རྡུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	051A	9b37db6aa6b19f478aa09af997e213d7473271816cdb9c3a45d2a27dfc405a53	རྡེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	051C	639e03b454bd9a94457b20c788eb2829bb9be6bc58dc1979dca00888243e5d3d	རྡོ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=8
+RabtenTibetan	regular	0520	d25ffc19755550bab14e66f252ecf2ede0e554e8355432166960bb5739bf4f0b	ལྡ	catalogue-heading-consensus	17	multi_pair; winning paired-heading votes 17/17; sample occurrences=27
+RabtenTibetan	regular	0522	2f66961c3ce21046605a59f5106e959d78bac7481bd1ed558e7215fdecdf8e93	ལྡི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0524	4df6f9e986752f89f0f9b04d65a10740efe8acbce0ede243f15afb3721899794	ལྡུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0528	cbfcb7a16814d7cc4f675aa4f3a725bce4bc3a17e018760dbbe24e1b3e59b64a	ལྡོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	052A	db069457805a31ddbd438c21f91f847ae0ddb73927834651aab6ba3b2b567903	སྡ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	052E	ab9c7b5b840106a10ab2095c93ff8e81025eab16e3e86dcd5892d8b48e02d617	སྡུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0530	14ca5ea6985904d6b04a486f167cb9dd38c1e23a7e84dc8308e6e33c09e07ce8	སྡེ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=7
+RabtenTibetan	regular	0566	12ff0693171f3687fed5e96038b0edaee94aef85dc1a2e3bb73a569dbfd21ccf	ན	catalogue-heading-consensus	479	multi_pair; winning paired-heading votes 479/479; sample occurrences=617
+RabtenTibetan	regular	0568	2d576796be65989cdeeffa819da742990da1cff53f709459ebebefafeacaec8c	ནི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	056A	c9f2d7900cedc4a1c3fb5b7229d1e46382cdd08b4547d726b57964a0a83cb48e	ནུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	056C	3e82fd01118975202274d345454afb5dcd39fe0ccf4e697a723277d9f69556f1	ནེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	056E	57018e78a125743387a303d1778aa67318488acf5209a1e597fa11b477cf5c97	ནོ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=12
+RabtenTibetan	regular	05C4	d5689d075e5798e703a70ecf0bd1f91aa5dd385c4d867448db57f2694995e69b	རྣ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	05CE	91aaf2535867cbbd38bcc9d8bdc6d47dc77a3f2187ebb0fbbd0b56734dd65268	སྣ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	05EE	98616d411d803d51c9924fcae7df6d32f6e9fba1894374b6e707ced31bf2b282	ཨ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=3
+RabtenTibetan	regular	0604	964e427c0714aa6144f9f6ef377299b8d4a8aff3c8e6e02667da20b5e6c8e4e6	པ	catalogue-heading-consensus	228	multi_pair; winning paired-heading votes 228/228; sample occurrences=351
+RabtenTibetan	regular	0608	933a10bc2fb6a509f4674cd01ebca7fb08c84ba549de2e17a953331d9879aff2	པུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=11
+RabtenTibetan	regular	060A	67bb90d477e21563b545e242671d5d9fd807139a8b400a162c9376224d2eac99	པེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	060C	dcdb47e0dc48ccf42687cff908c347a0fe26558a85880f5bf42edfe3715dd93e	པོ	catalogue-heading-consensus	83	multi_pair; winning paired-heading votes 83/83; sample occurrences=110
+RabtenTibetan	regular	064E	70d43054bd5a1404ebc1005527f109af408f2cacd5fe792f06f27c4e7583b915	སྤ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	0652	e933d7d1c171a5ee627de527d7386bcb5bf82594d67f9d80a5fcd7a770e168b1	སྤུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0654	1391c140716b03962d240cc70da71d473860fe234ea458fc39c47ef81cb2937e	སྤེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0656	bd5966cf21234bcc4ef5d598020503435248c61bf9d387831e488b1973acfccb	སྤོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	0658	7494ae83cdd17e288738f07957d850ee05bf5ad613c14d8b05c6e3abe8f0b4ea	སྤྱ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	065A	e3c76b68687bfc3624c2dd1de643b0d3a04a6eea158cd9f9544687703f14d399	སྤྱི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0660	f46d623f47fab1843064f8ab69abd511d791560c4a309c2312c304b769a1c00b	སྤྱོ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	0662	6997339eafdca9f6de1f49a7fceb520d1a5c5916e87cbea0f39a509935c46261	སྤྲ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0664	a1c071b3a5219c6b17b03dcee721916063d12ccba9881dab60be135216d718a3	སྤྲི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0666	3342acc12d71e5632b46f1ceaa832db470f91dbd0f52175b1227bd256464d715	སྤྲུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	066A	111a7d55b3853b907ef094c8797a3b8c2c9726ec2f52469ff903a4c2cdc0adbe	སྤྲོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	066C	69c9ddf40b5817ee857056f1a68b4ab47a57cfe05eaed62c1d83f2ba49153870	ཕ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=9
+RabtenTibetan	regular	0670	61c30ebe574789fb040ff60ce6e8a04e28e50137e64afd8960e3956fd693e257	ཕུ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=11
+RabtenTibetan	regular	0672	c719f280eb8fd311007f17e275af793475ae14299f5d1c27b3edecc0a917a8b2	ཕེ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=8
+RabtenTibetan	regular	0674	7c55e23d706acc4b7e4a84191861a6f37b7e76042e32f4a47878ca742b979138	ཕོ	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=10
+RabtenTibetan	regular	0676	354d656f36abcb63262f64f80bf0cbd979612c78966751692b1e1dc0bf1369c9	ཕྱ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=19
+RabtenTibetan	regular	0678	7a7792fbc9441ac0920c2b3404181ee44bde976e723418606e69798fc6c697ee	ཕྱི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=4
+RabtenTibetan	regular	067A	77a8931779ce1b6029004917f6f81383cd8518e65d422ebf2336ba900474581a	ཕྱུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=9
+RabtenTibetan	regular	067C	d774ab8ada4ebd9bf56384e1123d578c217c35516cb9db950581317f52a71ee1	ཕྱེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=6
+RabtenTibetan	regular	067E	d7041e2d1a30b87ebbff4fb9b0b886e1dcf5d3dd1abd752f345402ade4125cf0	ཕྱོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	0682	9211d70c1faa92308f24aaee033bc007234f1a2e3e4b9a21c799a539d69a4374	ཕྲ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=9
+RabtenTibetan	regular	0686	72997d9e93c43071bcf6b2059522cec178d38d4068c548b717facd50e5fdd5c1	ཕྲུ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=5
+RabtenTibetan	regular	0688	c7c4093039c752ae3537b3964948a6fd2d12247cbd91bdd02fe7e1d58fa5f09d	ཕྲེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	068A	984efcc6daeb9d6cf5f7d25357ce3306f0077a48b3ce6fd62ac3b20eefed94f5	ཕྲོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	068E	be30fea49c45efb087672c23db1a23f55c0ba5dc8a17a14ee6f41faa0ea71e92	བ	catalogue-heading-consensus	582	multi_pair; winning paired-heading votes 582/582; sample occurrences=751
+RabtenTibetan	regular	0690	665b3c2455b2b00c273cde52c70e23bf6d6a84aad48477ef3cfad42783eb1ebf	བི	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=5
+RabtenTibetan	regular	0692	750dbf4f74a4fca3320d7ff210c2efad31192ba23b0717338873977bf04ddfd8	བུ	catalogue-heading-consensus	27	multi_pair; winning paired-heading votes 27/27; sample occurrences=35
+RabtenTibetan	regular	0694	12f6219069d9547bcce92409d9c320575c20bc05c9163d9b43174f9dc46bb151	བེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	0696	11a2ddd36519ad62dc5792cb3e235b719d44dce59bdc345867e411b179b18ac7	བོ	catalogue-heading-consensus	30	multi_pair; winning paired-heading votes 30/30; sample occurrences=39
+RabtenTibetan	regular	06B4	7206689302b0b993e4736a7faa6c539b89dbefaeb5a6834daac44424156b0ba4	བྱ	catalogue-heading-consensus	24	multi_pair; winning paired-heading votes 24/24; sample occurrences=33
+RabtenTibetan	regular	06B6	930d322ae90687cbd6a943723dac7d707525b9aa84534864e882eaefbae29456	བྱི	catalogue-heading-consensus	13	multi_pair; winning paired-heading votes 13/13; sample occurrences=14
+RabtenTibetan	regular	06B8	76c0d0f690636e846e03b49b3fe2920304e28bc2d38871ca3fdcf730868a6411	བྱུ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=11
+RabtenTibetan	regular	06BA	d0da67e014f098d2c1a194fbee729b37407e868b811d30afb5f6cb1e1db334bc	བྱེ	catalogue-heading-consensus	43	multi_pair; winning paired-heading votes 43/43; sample occurrences=54
+RabtenTibetan	regular	06BC	e0a01f84a1494b323031b30c2ff2758f75fff67dbee0254f4681bdeedada57fa	བྱོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	06BE	faf897174b98cedd839cd2662f5b5d030608aebcd924980b4b25222832717a61	བྲ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=6
+RabtenTibetan	regular	06C0	da481b252c278c3cfd16837f3f70fea80eca2780d8b1df6a18934e7bf1aee8a6	བྲི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	06C4	194faa8b606f4e1856e290306a4390b9c1d3cc6c4ea02fc708d94877934de251	བྲེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=4
+RabtenTibetan	regular	06C6	681f7c67e8768e16dc62d4470fd325e21f40209c628d06563628ad1eded70fb0	བྲོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	06C8	f26fa12568ff8e9fca57ab46dd3d9adf163c2bd6a55a1c64c6f6a81fdc6316de	བླ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=4
+RabtenTibetan	regular	06CC	c32ccc77486f3efbca21d802d3552e5a34be94b45bbf5304db7e937cd015c694	བླུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	06D0	2c5b0e98b5ff9215e612f77915500e5c795e24903f46382cef865a06dd307510	བློ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	06E6	0b71b69b554d8c7b8b3d1ee18eac47bd23a8c8cb9e39fba0026d956310a05ccd	རྦ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0706	0f9417087c24fecd723321e9632c0d5a110ac5bcb70af1d53a2289d76e1bdbd4	སྦུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	070C	aaee4146420a40262e24ffeb0e3ca0804e3aa98869c94359ba8aa1eddab90252	སྦྱ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=5
+RabtenTibetan	regular	070E	fb485344e986c4ee44eed9dd1597a278d6442231f213fab89ca9d12a4986f341	སྦྱི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0714	fd6d8f63e0ecdb1e870fbb1265c58813bb919561b3f42a731ac1d5a3e04bcebf	སྦྱོ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0716	3da4211f45853ee1a0c31bfcbbafd02c48f048c0d2ec10a4f424772a7979767d	སྦྲ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0718	f134657c687ec136c6379e49ebd3f45b21698fc05dac74bae90ee6b48db7f6d2	སྦྲི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0720	176f5eb88026912bbf0b7fed59b46d403bfec2a584e2239f6967c5e7824b02ea	མ	catalogue-heading-consensus	563	multi_pair; winning paired-heading votes 563/563; sample occurrences=765
+RabtenTibetan	regular	0722	5979efc6a061c2dd093262e8db94a3083015b64cab15754a8f1283895fd0e100	མི	catalogue-heading-consensus	17	multi_pair; winning paired-heading votes 17/17; sample occurrences=23
+RabtenTibetan	regular	0724	c978755b386bf088801840e1e1a850f5bbd6c60cba19a3e19e142660d52a2e84	མུ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=8
+RabtenTibetan	regular	0726	cb6840a7c117a04c314fada3aefceefc42848f2514e5b8c5f6a7941eda12323d	མེ	catalogue-heading-consensus	29	multi_pair; winning paired-heading votes 29/29; sample occurrences=36
+RabtenTibetan	regular	0728	3d8a075c4db57cd488df7aaa00a45d57c8116766509c69c1032804a0a4f716c6	མོ	catalogue-heading-consensus	43	multi_pair; winning paired-heading votes 43/43; sample occurrences=64
+RabtenTibetan	regular	0742	be5434ae2b3030ac2a72c3dae7d63f8e67287e256f1c535efb272ca75021b0e0	མྱི	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0748	66a4688f2b6ec507126c729429bcc8427cb19d959db196c884d6bef51ab22577	མྱོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	075A	5278ba113d0fc1fb953e29b4d25e43bc8f6828ff83669a4e6acd1810975a1dba	རྨ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=4
+RabtenTibetan	regular	0770	1038eba2ea7647844580d082710bd794bbfac20958fefa6f1e8a41bbb3360718	སྨ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=7
+RabtenTibetan	regular	0774	11e64f54e523012080b6911bb52c4c56d8c7e7d99ccdd124d738f036de48b50e	སྨུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	077E	2a14354a175fa35d76b8b01505b860fa9f8cb07254dcddaa7ef1ab6a3b2cf039	སྨྱུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0784	689aa18744e776aa5f3668e2011b6f4ae59fa0e7a0bd315738546b6b7d6f4232	སྨྲ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=7
+RabtenTibetan	regular	078E	66e872f7c969667bacb3292dc9752f4f7c36942095be965dd1620f3c425450b0	ཙ	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=18
+RabtenTibetan	regular	0792	ea7cf4108f08e045545c59adc8660172a0e7d8f9657e69ad399e764f8e5fc419	ཙུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	0794	a4c71b48792297395ade2a8adb9df83cc1f02c888ac3acda685c0415a72fc7b2	ཙེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0796	7ed747731a2e581a5fe35d831557ba58d547b7ed8e8d1435b7b803e02978c37d	ཙོ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=8
+RabtenTibetan	regular	07AE	35ddda750e2be638fef0b561dde2c373d82e3ee539f68574911075facd594971	རྩ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=7
+RabtenTibetan	regular	07B0	fb00d639acb6a0ced010fa72e76f2ef905a19c85fee2b390b3f2604a05ac67ae	རྩི	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=11
+RabtenTibetan	regular	07B4	3e071adf74052d946f93102eef34282b9b560c66c0999ccfb12d1b619e317762	རྩེ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=12
+RabtenTibetan	regular	07B6	f86a82689031c9d371c7e5726499c7cbaff9e86c562f1039402bd2ecd39e1815	རྩོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	07B8	5f6fbfd4e36c2c2d950bca348d427d00a00244eb7a535c9c3e300f42ad396d65	རྩྭ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	07C8	1eebfb6f3a795b6ae0f7c6b39537d68789e9a04cac8476a236fe2afa355e50f9	ཚ	catalogue-heading-consensus	33	multi_pair; winning paired-heading votes 33/33; sample occurrences=45
+RabtenTibetan	regular	07CA	6a0876f522324b4425b277e9a213742bb4d65876a10c9bdbbbcbb3e7e66ca576	ཚི	catalogue-heading-consensus	9	multi_pair; winning paired-heading votes 9/9; sample occurrences=13
+RabtenTibetan	regular	07CC	bb345dfc908b76fa6f49c953992992f9b6802079a4d6ab0535b11432b360afd0	ཚུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=9
+RabtenTibetan	regular	07CE	3ad8270147e54b2ed9f6838ae209eff5cecef0536010d4cf7523fd8aa1b98eff	ཚེ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	07D0	f808bbe2cf7cdfa8ce34f16297edf9f514352a4bff19df10578d5948a9e1b9e1	ཚོ	catalogue-heading-consensus	11	multi_pair; winning paired-heading votes 11/11; sample occurrences=15
+RabtenTibetan	regular	07DC	fa7ef595850c45b357ca35acb89cf93641e5779ebe3dd82b8f31283d3b417cc8	ཛ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	07DE	b41f2066c0f46441da2125c2024d78a75f05dbd3ec87af379887ea8a6203c432	ཛི	catalogue-heading-consensus	23	multi_pair; winning paired-heading votes 23/23; sample occurrences=35
+RabtenTibetan	regular	07E0	aff1cff3d41703e6dae684496d2580eaf57b60a07a6ca8ba137005f02644d9e0	ཛུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	07E2	69d4dfa9776b7c99dfca1aa211f10e4b0039d27303dc5c95907efa11020016eb	ཛེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	07E4	7f491ba97528b92d12027bc8d49453136e7a967c05ca0e28fdc6245c07b62ade	ཛོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	080A	7f5c392c323a5d0a7f7a853b48c2e7546849580101391c2b8a0fa3e23b1cea39	རྫ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	080E	f2e69277992136751493686bb84c23b925493781528f9ed3e76af890525f5766	རྫུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0812	37064ab3eb84f2e8d12df8b3404100d2b85f7d0168e34b255e87696fc4dc9ca2	རྫོ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=12
+RabtenTibetan	regular	0816	0096f44644ee5ab9ebbf688054b8c70ae27cbfa15b0604ae27c5e42a36c08a1f	ཝ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0828	ce3b5207a0998548a7ca05dbfb9939e48c3786d506c6cec92f777813449e5f16	ཞ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=8
+RabtenTibetan	regular	082A	5dfdf57c5a9f2721f02527e12b7be7e7faf159ae05cd9541235596303a7759e7	ཞི	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=23
+RabtenTibetan	regular	082C	d337a867adcd67bf58b518d244cd69cad0442fe11ec715bb9b2cd217e9a2c384	ཞུ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=13
+RabtenTibetan	regular	082E	10c6c79123f3bd63858714344ee31a34fe30d447ad9218df1d12008b21652eb0	ཞེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	0830	53f69b692abf409936e2c9939f7df338a8c1e438718f6c3684954142cd94a61b	ཞོ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=5
+RabtenTibetan	regular	0832	f6244c11c0b4274e14f3a63ec78fd6cd5ff6fad9b7a4ee9475799b132675175c	ཞྭ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0834	379db425d9c4dd2dededba078abfd6db5253635ceeb8627109fef82db28995c2	ཟ	catalogue-heading-consensus	14	multi_pair; winning paired-heading votes 14/14; sample occurrences=16
+RabtenTibetan	regular	0836	fdd3b93228052b94f6df9fcab162a0d84c83d431017ebca61bacaf2dab083bc8	ཟི	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=7
+RabtenTibetan	regular	0838	22f8ca3cf6b498516d68b84925abf3782757b0886c939100a8b8f862d7e7e6a7	ཟུ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=8
+RabtenTibetan	regular	083A	feafa7ff643311b18f9d4454f62908f20a13758554f46217e24f64cba2e886e3	ཟེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	083C	5856e644778467b9228faff1da905b1f6ce39db068f36d03dc3bb73e67a90968	ཟོ	catalogue-heading-consensus	4	multi_pair; winning paired-heading votes 4/4; sample occurrences=4
+RabtenTibetan	regular	0840	75ed4804ce2f6de3f201e294c710b37067549890f7ac7247a7bf3acc3545b017	ཟླ	catalogue-heading-consensus	11	multi_pair; winning paired-heading votes 11/11; sample occurrences=13
+RabtenTibetan	regular	0844	b6d5fbe0ea7dce0690d453729e9d8ec43bc6f179a945d25159767de0700e25ff	ཟླུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	0848	ca5e33b06226076016ba664b2404fc9fdba67387d485905e0675346a1e490f13	ཟློ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	084A	0c662929b44b42774ffa6ada7592f713a48aba85592d6f1375e7333ca255fdba	འ	catalogue-heading-consensus	551	multi_pair; winning paired-heading votes 551/551; sample occurrences=720
+RabtenTibetan	regular	084C	579aca9d497b6e03831989f7925ea82160317fa7be56ed63bcba8c93bf9f5af1	འི	catalogue-heading-consensus	110	multi_pair; winning paired-heading votes 110/110; sample occurrences=156
+RabtenTibetan	regular	084E	42d1c2b6cc085c555620456760ab066bcff14c46b65350334d451aeaffc2398e	འུ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=9
+RabtenTibetan	regular	0850	76090420cb63db23fc287756a7930bebf7b39dcaf0e165c0d7d43f81808055dc	འེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0852	53c4d06347de75376418b0cbfdd5f64ad6b7aadd6d9f59659fd0fb08a3f1bc77	འོ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=8
+RabtenTibetan	regular	0854	7027188d085efb0be672f0da9aeab10963cdeebbb1d0fb6a1a82a33c2abe2ab0	ཡ	catalogue-heading-consensus	15	multi_pair; winning paired-heading votes 15/15; sample occurrences=32
+RabtenTibetan	regular	0856	ee15508151e3748b06e3517c44b2ae6e1b40c7a6fc728f5ee0f9ebb6cd7af690	ཡི	catalogue-heading-consensus	12	multi_pair; winning paired-heading votes 12/12; sample occurrences=14
+RabtenTibetan	regular	0858	85926868b4f9f8978b54361e763a7b962462b50a492b65a96d5fc9ffd1cf2369	ཡུ	catalogue-heading-consensus	8	multi_pair; winning paired-heading votes 8/8; sample occurrences=11
+RabtenTibetan	regular	085A	097cc2c4e766522249078571a5a0a4a676a894d5b4b84a124c10c90285b8ff2c	ཡེ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=8
+RabtenTibetan	regular	085C	29260d07d592e6117b06ce253ed8b73186e19c0167c44091e7f6f198e15476d5	ཡོ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=7
+RabtenTibetan	regular	0864	5dda35c64cf6e304fa78d00c2ce2c48c9a47b8098df3101730b48fdb868ac0fb	ར	catalogue-heading-consensus	337	multi_pair; winning paired-heading votes 337/337; sample occurrences=452
+RabtenTibetan	regular	0866	efbed43edf8430e430e0c86f4cdad57f3436ffb034b3e597d84ee46223407dbd	རི	catalogue-heading-consensus	21	multi_pair; winning paired-heading votes 21/21; sample occurrences=28
+RabtenTibetan	regular	0868	3a2e054e7cdd931d6a7cf9dd7e21707ae9bcea59fd24f8be3e32dac6877263cb	རུ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=7
+RabtenTibetan	regular	086A	a79a18df28aa1c16139a8cc4ffc6666cfcc0da00555f65094c8a599280b46100	རེ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=6
+RabtenTibetan	regular	086C	d0697d5c0e57bbb73ccc12cdba957b025e145f71bf30f7956cc310859d594928	རོ	catalogue-heading-consensus	11	multi_pair; winning paired-heading votes 11/11; sample occurrences=16
+RabtenTibetan	regular	086E	addc16f8c10b41c3e3a495ea2ed4d24d7fc2eddd01d4463de19fd026f3ce7e8c	རྭ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=9
+RabtenTibetan	regular	0872	70137010631b3ebacf44f2340fd3c35e850f9835739c24a8dec366d1e15ca9ee	རླ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=3
+RabtenTibetan	regular	087C	c6517f1f7618f3d2f969e519beb79e58c4123f3bc6a6b2467e1438b65d251023	ལ	catalogue-heading-consensus	237	multi_pair; winning paired-heading votes 237/237; sample occurrences=325
+RabtenTibetan	regular	087E	add07ee3c1ed8c3f4ab3465d43576f1c782f1d2e8a9dba2c1325fb0343f237f0	ལི	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=5
+RabtenTibetan	regular	0880	0884411e3d32445ab44caf3da228c155506553f3bbf066afe8bb2b249eeb63d3	ལུ	catalogue-heading-consensus	15	multi_pair; winning paired-heading votes 15/15; sample occurrences=22
+RabtenTibetan	regular	0882	ca6aed6551c9d488b47cb7569ab6beb58ba97cab83f8f21613deb64acf26bf21	ལེ	catalogue-heading-consensus	14	multi_pair; winning paired-heading votes 14/14; sample occurrences=16
+RabtenTibetan	regular	0884	a560c1336bbefab46663e6596899578aa2379be42ff824cce1f9e54a0ac086d6	ལོ	catalogue-heading-consensus	45	multi_pair; winning paired-heading votes 45/45; sample occurrences=55
+RabtenTibetan	regular	088E	ec420a27a892d375edf4b44a2e1155405131b0e89ecd26206745e7f2c668cdad	ཤ	catalogue-heading-consensus	20	multi_pair; winning paired-heading votes 20/20; sample occurrences=25
+RabtenTibetan	regular	0890	49ec4bd6a571ec8c0c7945614ee27b2a4486aa3e00fac01252aa83a32cdf539c	ཤི	catalogue-heading-consensus	23	multi_pair; winning paired-heading votes 23/23; sample occurrences=24
+RabtenTibetan	regular	0892	c5aa0c0e4cdfd9983f47eb4e5c2304de5a6952eb0599fbba05481c86904891ba	ཤུ	catalogue-heading-consensus	5	multi_pair; winning paired-heading votes 5/5; sample occurrences=6
+RabtenTibetan	regular	0894	73775413c384ca65296b548c2405134a49820cec2a9a9b9dc43606b0d7340595	ཤེ	catalogue-heading-consensus	13	multi_pair; winning paired-heading votes 13/13; sample occurrences=21
+RabtenTibetan	regular	0896	6da15d38ff53805f4d5ca96403705a37d7cd49889a5cf4be5c8c89beb69c6d6b	ཤོ	catalogue-heading-consensus	7	multi_pair; winning paired-heading votes 7/7; sample occurrences=10
+RabtenTibetan	regular	08A0	c4e7807a20bd5139f7251dc87fc552b416c696588fef3d13877ce2c91273e284	ཤྭ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	08E8	0c98ee8e1d248c18473c05d28221d9b79912fb45ba674471b4fa8e4a297cdb07	ས	catalogue-heading-consensus	625	multi_pair; winning paired-heading votes 625/625; sample occurrences=902
+RabtenTibetan	regular	08EA	619db64695f5cf6b470815c8108522bb02ecdd3f68a93d43fc799749b42bbe3f	སི	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=4
+RabtenTibetan	regular	08EC	b5be8eac2c01035536ffed1a1c7efb1d932a7b30491b276754edd7ff24f42995	སུ	catalogue-heading-consensus	27	multi_pair; winning paired-heading votes 27/27; sample occurrences=33
+RabtenTibetan	regular	08EE	f400ddc881534e5bba6ba4830fd2bfe2340b2279163b0fe56cea130afeb2103b	སེ	catalogue-heading-consensus	19	multi_pair; winning paired-heading votes 19/19; sample occurrences=22
+RabtenTibetan	regular	08F0	46654ebedcccf7978ee85e90496d8bdb324abe6d6d5502c5be169a5091401c15	སོ	catalogue-heading-consensus	10	multi_pair; winning paired-heading votes 10/10; sample occurrences=13
+RabtenTibetan	regular	08F6	c107e700053aa003f84ef4083d6a488632ee6cc865e5cb1e21affa6b65a76ce2	སྱ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	08F8	0d9bc3c5b0379e3bfd731f86a22a23b15e95f5da6f8f5bec9302a83e003a294e	སྲ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	08FA	781320a05cc7e1830fab14dc405b16818a1ddf2fd8232da8596b0faa701149af	སྲི	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=6
+RabtenTibetan	regular	08FC	10f5c7210b34d077822b2f32a820824da12a70bd5366e364ec3289a8f0d6e8c8	སྲུ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=3
+RabtenTibetan	regular	08FE	40c5039030948eadd17952543b5e2d3b4c05d3cbf4ca3e3261236c950dd550f0	སྲེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0900	1c6f9718300bc80f70fd7da22f407b72f9585fc9f60f483f34f1f8f257f8666e	སྲོ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	0904	21023ba138d566223c6c91d80b251ad620be461648bca8a90c7577e1ce588113	སླ	catalogue-heading-consensus	2	multi_pair; winning paired-heading votes 2/2; sample occurrences=2
+RabtenTibetan	regular	090A	998fd260641f97d1820c79747ac9b46d835cb8935217c670d8f6341db980d3a2	སླེ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0916	f64373073d892808930bdee9e4a38d38723e49fcb740203da9d7f65711cabc9b	ཧ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=4
+RabtenTibetan	regular	091A	a4c9f8ce1c5ad6bf407621ed710e94b86418fec0185824c265c466fb3efed75f	ཧུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=2
+RabtenTibetan	regular	0948	54b5b4d5e1779df8eb8622edd1d0903e7d6d45987c7954bb0adc99b01ce7361d	ལྷ	catalogue-heading-consensus	6	multi_pair; winning paired-heading votes 6/6; sample occurrences=6
+RabtenTibetan	regular	094C	651ad6f2f22e4c50f9fbab6162bd22a2f75a189d735c00ecb3dafdba2a8de2eb	ལྷུ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	0950	fbc702928df4b218c27f393686f5ebae51cb186ff7b9b598dbb2dec60d990392	ལྷོ	catalogue-heading-consensus	3	multi_pair; winning paired-heading votes 3/3; sample occurrences=6
+RabtenTibetan	regular	0952	4a880c1c713758e8795d9ef261b4c04df919df45ce11733e3d744173420c4a55	ཨ	catalogue-heading-consensus	1	single_pair; winning paired-heading votes 1/1; sample occurrences=1
+RabtenTibetan	regular	099B	46849a6b633678284d17419b3191baa059eacc5953e6503b261d8b4fbe6bb617	་	catalogue-heading-consensus	4782	conflict; winning paired-heading votes 4782/4824; sample occurrences=6504
+TGaramond	italic	0002	6cd0ccd771c357d4f9b5e77c37dff8826b4c9d5ba067bafb86eb4a26e6ad0c97	ā	visible-pdf-and-outline-review	648	A2 stratified 201-PDF sample
+TGaramond	italic	0006	e500c482f7570241f1c480d62b1b1a48f9a77e296b05812d4e13f1bff3294141	ḍ	visible-pdf-and-outline-review	43	A2 stratified 201-PDF sample
+TGaramond	italic	0008	4f545a7c1d1c3bf1a660049a025617ec39bead4f6d1d774a1f2273db0fccf18d	(	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	0009	872eccb7cf9cce6164f4f48a3960d6a7fc4cf31d7fb7d9279328cdbc97a6d30b	)	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	000C	8e43f27dfc3846b4869b3b7038e058c841d31c0b8661991e736f9847fddc373e	,	visible-pdf-and-outline-review	76	A2 stratified 201-PDF sample
+TGaramond	italic	000D	5d0b661d545167e757b3b5308bc327f970e004a4065fdc291549851bcf6eb231	-	visible-pdf-and-outline-review	220	A2 stratified 201-PDF sample
+TGaramond	italic	000E	d805526451b7ddb70e993773070300ca8b1409b9a09c47017466d86f66ea129c	.	visible-pdf-and-outline-review	2010	A2 stratified 201-PDF sample
+TGaramond	italic	000F	5aa498d80676ccf072f0b6735c15e91ec074edf085a056b4d4b0b0b06f8ca5cc	/	visible-pdf-and-outline-review	637	A2 stratified 201-PDF sample
+TGaramond	italic	0010	d424a13a735b48a33035b8450b535785cd428b93817b3e00179fbb3be8b620a3	0	visible-pdf-and-outline-review	11	A2 stratified 201-PDF sample
+TGaramond	italic	0011	f798b3f5e69c436ddede3fb6d61fc8566ac35b38aaa90d0229df9de26ae07e6e	1	visible-pdf-and-outline-review	5	A2 stratified 201-PDF sample
+TGaramond	italic	0012	b97127c1d02ed16b0b77777ef4874dcecfc6d253133c1d6127acd2ba7ef68db1	2	visible-pdf-and-outline-review	3	A2 stratified 201-PDF sample
+TGaramond	italic	0013	cd091ab72676e17a0d4eeeead3b193ffb3764315ac42d0a397f1e2ade4c6c081	3	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0014	fb94f97963481c2a7fb911110c3113a3eba2d3557de8cdbd0a86ebf227e9824f	4	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0015	06e4b3ce7cf7c5a9ed73ce9219daa5b9971ac461beb2db3cc0071936b5a8ef19	5	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0018	7a458df09e484424e2e525843afe7da6d98bbbe406c6167ba4e30177272685a4	8	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	001B	8168bfdbffe65249f56b0a8c4ebc210cc3230b8b20662ae56683c100d3af88cb	;	visible-pdf-and-outline-review	4	A2 stratified 201-PDF sample
+TGaramond	italic	0020	d38a3d6c8dd84e38441d31242a8b45b2ecf2c5c63e38d48df38966d722a600f9	γ	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0021	9f375e349cec6341fb8daa232a669fda23ff8110ad0907bd46b74e3450b704f3	A	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0024	52b2e1c4b18d9336d421b6a9a199487cec8bd6e1c80686b9c649aeaa2d30f376	D	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	0027	84ca8710a1b3319e8e7305e9c0ab88f72061a9442c45e0d6ef0427dfe7839339	G	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0028	ccb829aa1dc523b3a8ab2b64fdbea4842b7fc741f4f4521bdbfa0b2242300f48	H	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	002C	e84fddf7afe5aac1c272563b068c8e4232d3b7cb14eec1289d619bbf9b88b8dd	L	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	002D	78b5c9970748f7f83d1806cc1f95ea437ea26e6365c3e75caf844d0445ebc3f5	M	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	002E	68dfc4211a6abe555d3fdf2a7ec1696d89527b2a081a74edcb45cfb2a3e5a67e	N	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0034	128d61a981a91ebf37bf1241b5638dee4a5731dc4a7162f70d3801ae52490d04	T	visible-pdf-and-outline-review	9	A2 stratified 201-PDF sample
+TGaramond	italic	0036	b8a42735b1112a14963123be54c7e6edef3cbab906cf9857ecb7e750cf7551a3	V	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0039	f8db038466aa08d708b016cdb09101058f34d9ea52abd79a6ed5f7dbfcfe7343	Y	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	003B	427a568dd1bd6e45031404b4d3b122f1b46a2c7db3fd9b38722e4eb5372cd90e	[	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	003D	162184ed867c84b8753e56757c51162ef684ec4be2bcf698da82f66fe7eb7ea6	]	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0041	1f43e01b00d6d2371a30008de302cf646b08271935e2da908a907fea17c340c0	a	visible-pdf-and-outline-review	24904	A2 stratified 201-PDF sample
+TGaramond	italic	0042	384ce5d878d0a526449bb5845ce1f048ba82e3b07255357bbde5b2d296ae22f1	b	visible-pdf-and-outline-review	8477	A2 stratified 201-PDF sample
+TGaramond	italic	0043	47dc25cf090ac127da2e73367aa5f969253ba7644a77df9a52ab85c0b3704bde	c	visible-pdf-and-outline-review	3063	A2 stratified 201-PDF sample
+TGaramond	italic	0044	0a4280f3dea0317e0c2a490d44d30628754c33a010215ac25f395951e554edb9	d	visible-pdf-and-outline-review	8474	A2 stratified 201-PDF sample
+TGaramond	italic	0045	69e7b73a69bc9b8e5d8f4d0dd398d728434c467651c396b215191b7b101f065b	e	visible-pdf-and-outline-review	5172	A2 stratified 201-PDF sample
+TGaramond	italic	0046	66e17b8d20b360e462460c93b1f0fc83885fbdbfd4371691db1bb6ab0dcd4132	f	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	0047	3355178b141b0526869644e3adac65edf1a7774adeaba42345ac8678317d7b1d	g	visible-pdf-and-outline-review	11242	A2 stratified 201-PDF sample
+TGaramond	italic	0048	972dbdfe903e97de393c555d3dc3565b8256ce4afbc4679c2171c909fe00e0fd	h	visible-pdf-and-outline-review	7459	A2 stratified 201-PDF sample
+TGaramond	italic	0049	dc15c8fc0528d70cc3fc694d8a6e5529c5ae18d53692fdb14403ec01f5fa0a7d	i	visible-pdf-and-outline-review	9198	A2 stratified 201-PDF sample
+TGaramond	italic	004A	dd37b4acddbd30ed796635a03e4461ccf4c61d304d606a9fc349f10ed51fec40	j	visible-pdf-and-outline-review	779	A2 stratified 201-PDF sample
+TGaramond	italic	004B	a4ee9137d7591ad5c9bc7b3bc3256356e758d8bbd83f190d9653b5e3a3675215	k	visible-pdf-and-outline-review	4419	A2 stratified 201-PDF sample
+TGaramond	italic	004C	510b113504684699e8a11e1b51f484b06cec53bf3b8cdb09eaf9b4941c0c3553	l	visible-pdf-and-outline-review	5379	A2 stratified 201-PDF sample
+TGaramond	italic	004D	f9b7b7416cdc64bebcb3cbf8088667741f82bab58a9e1bf089960352859b0c25	m	visible-pdf-and-outline-review	6986	A2 stratified 201-PDF sample
+TGaramond	italic	004E	5aaec2b46b4ed2e220bc8a612259931e212f8c34137725dd2ed5894fca97a4b9	n	visible-pdf-and-outline-review	6378	A2 stratified 201-PDF sample
+TGaramond	italic	004F	3d01652e801d84c6e94d70d9c313a7aff391d649d5d3ffaeab8344ef4d623ef6	o	visible-pdf-and-outline-review	8141	A2 stratified 201-PDF sample
+TGaramond	italic	0050	048fa412901e43e07fa768061a77cc90e8f775053a4dcc3302f69e83a586e5fb	p	visible-pdf-and-outline-review	5997	A2 stratified 201-PDF sample
+TGaramond	italic	0051	857828c25367efb0a75d0d6d226da17646f98f564e8eba73f083e0098d67c1f4	q	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	0052	7f33dd5f331c3cf91868c92aa75ef053c326a6769be76486ab47190dfee31bd6	r	visible-pdf-and-outline-review	9974	A2 stratified 201-PDF sample
+TGaramond	italic	0053	0e7f9bd2d586c7379ac2c862d8a26e6252074f3d2b96bb8c2ecf6c0635edf2c0	s	visible-pdf-and-outline-review	13609	A2 stratified 201-PDF sample
+TGaramond	italic	0054	cfe592db52ce906915e87368641095e67f1add84cb485090d8750238d77f579e	t	visible-pdf-and-outline-review	6271	A2 stratified 201-PDF sample
+TGaramond	italic	0055	6abe4b3f2a02bc557764ad9f472aa8c440f9de7c8d7d1b1d241370d096885b86	u	visible-pdf-and-outline-review	6632	A2 stratified 201-PDF sample
+TGaramond	italic	0056	003dd78267e22c0f80dfdd22580c3faf2f6296a88f928af7e95a1e996cd16876	v	visible-pdf-and-outline-review	263	A2 stratified 201-PDF sample
+TGaramond	italic	0057	3a8c35ff3151ff1595ded4196e642dc98e7388c872a562f88d99d6c0ffa858c0	w	visible-pdf-and-outline-review	121	A2 stratified 201-PDF sample
+TGaramond	italic	0059	b91b75f7544a845e18aa86334dfd6685c1b3e03d2a620a37eec6bfa77ef8088b	y	visible-pdf-and-outline-review	6169	A2 stratified 201-PDF sample
+TGaramond	italic	005A	0bc2adfb111ef5d284384e2d50f27c4f0c854741a05f687f815d1699ac3df7fb	z	visible-pdf-and-outline-review	1049	A2 stratified 201-PDF sample
+TGaramond	italic	005B	e4731638d6e4db4b7df6687c91ed0854b6193aa3f6e6b9df71bbe5e8cb20864b	{	visible-pdf-and-outline-review	3	A2 stratified 201-PDF sample
+TGaramond	italic	005D	862c0b8775392a1660c3b82fec5c2437ed35c945f57635f430627713dfc5e179	}	visible-pdf-and-outline-review	3	A2 stratified 201-PDF sample
+TGaramond	italic	005E	88365e2f2c26767e31f03bb2d265d479eec231abdee2802390f303d6aea5a9a0	~	visible-pdf-and-outline-review	1	visible PDF: line-initial tilde in theṅs
+TGaramond	italic	0061	e2d53f2403c3b235846d92cff5ee8479a21992d8db61b308d477a4571f6e5f26	„	visible-pdf-and-outline-review	10	A2 stratified 201-PDF sample
+TGaramond	italic	0062	2d104f6c0dbe08c81b552c17929b0cc736eb560c664bcfec8746359965ff18a6	ḥ	visible-pdf-and-outline-review	244	A2 stratified 201-PDF sample
+TGaramond	italic	0066	6d230ec4499949aab7a7ed8c11e2d4e7ba46534c93328102cbb6b9cc3c2d8cd4	ī	visible-pdf-and-outline-review	108	A2 stratified 201-PDF sample
+TGaramond	italic	006B	e08465e33f54b8a14c94e15e72c975628e84812ff0827ec42c2b9d2064612270	’	visible-pdf-and-outline-review	5847	A2 stratified 201-PDF sample
+TGaramond	italic	006C	d4012dfbce7638fc2306d823b7e4264847019ca602f0e42803b4b307de57c2bf	“	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	0072	74e0f9c7d26f1496a5754452507fc542c21a5f25a92e0732241726950acd1738	ṛ	visible-pdf-and-outline-review	128	A2 stratified 201-PDF sample
+TGaramond	italic	007C	05f1ca0e14ead6d64230df3b16820a0fa684ea12e6456591dde570cf9c3f82c2	ṃ	visible-pdf-and-outline-review	78	A2 stratified 201-PDF sample
+TGaramond	italic	007F	534c11e39115d2917186843a5633051e89231ef04975fd42f68c986469935bf9	ṇ	visible-pdf-and-outline-review	83	A2 stratified 201-PDF sample
+TGaramond	italic	0082	063cf23d22965c587c386cbb340be5886d37cfdb5c459887c7bd774d09929aca	ṅ	visible-pdf-and-outline-review	6431	A2 stratified 201-PDF sample
+TGaramond	italic	0086	a8d6f1aca10be3bb90065377b32f7fdca61aa3c78aea2a3b563c443f11b21800	°	visible-pdf-and-outline-review	3	A2 stratified 201-PDF sample
+TGaramond	italic	0089	078858191c7970803e60b2cdfa3b033f235dbb1c4e10ebc51725138054b63caa	r	visible-pdf-and-outline-review	34	A2 stratified 201-PDF sample
+TGaramond	italic	008E	f4e109c4d19c92662c051caa8f37226e11fe72d161118d666b968e035028a153	ś	visible-pdf-and-outline-review	905	A2 stratified 201-PDF sample
+TGaramond	italic	008F	209c76d9fec155a0b1855938c54c717deedf88bc9381a0e7d731b3edde083ca0	Ś	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	italic	0090	a97e362d5177549890d40cf80eb3f8955b8ba0a4f2d0d7f9f828ea0290b1ecf2	ṣ	visible-pdf-and-outline-review	80	A2 stratified 201-PDF sample
+TGaramond	italic	0093	61158aec2c0ec746baaa74657211378a22591b00c9df59488c1ff97a845c6a49	ṭ	visible-pdf-and-outline-review	99	A2 stratified 201-PDF sample
+TGaramond	italic	0095	42aa8645ec7489b9b60978c6b324bc2459eb77b4c28f98fd95ab21fa1b242a8f	ū	visible-pdf-and-outline-review	44	A2 stratified 201-PDF sample
+TGaramond	italic	00AD	4ca12504fe3c3f439c3142e3fe49bfac606898cec89ae3c9fd5fa2a5675efa59	ź	visible-pdf-and-outline-review	1057	A2 stratified 201-PDF sample
+TGaramond	italic	00BC	afe1c174c7664a476210606d64978e816da9b0067e9ad8bb16f2a14f2be14c16	ç	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	00C5	4215d1b4a9c57feede32f17454561739ce28123e6825e7c1c82ff50441bf735c	ñ	visible-pdf-and-outline-review	1160	A2 stratified 201-PDF sample
+TGaramond	italic	00CB	8e174b17662868a5852eca230ebf780629ce6914621bc48e29bb515fe39114b6	↑	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	00D2	a23f9eeb507175030958b778a0fdf40d6155461d54beeda18b290d03fed4d846	↓	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	italic	00D4	7a7a9098cbd21cdbfafe9cf09f543a132264cd0c7547299de63c91e39c886d02	 	visible-pdf-and-outline-review	44918	A2 stratified 201-PDF sample
+TGaramond	italic	00E4	c1ae7ab66291c9b9b546287196eb75ff29425f783a0f36e3650de3fede49b6f3	~	visible-pdf-and-outline-review	4355	A2 stratified 201-PDF sample
+TGaramond	italic	00E5	cc6b74e13af78d3e5feb1c4a427ae800200895a5ab6fb9ac312bc036be2fbdea	⟨	visible-pdf-and-outline-review	2	visible PDF: left angle bracket in skt. abhi ⟨man verachten⟩
+TGaramond	italic	00E6	27098d49e6693169b7e7aa01b60f813b331f876e33f0f3ef7744717c69ce3a15	≈	visible-pdf-and-outline-review	6	A2 stratified 201-PDF sample
+TGaramond	italic	00E8	42dcd24d7f4145a3e610c01afa25cff08f0ea03dd32406904b06b0287d714a84	⟨	visible-pdf-and-outline-review	38	A2 stratified 201-PDF sample
+TGaramond	italic	00E9	b8f0955072dfb98dc2f17ea86b8b900bc168ac33ee5308acf69bd9ccfe783da3	⟩	visible-pdf-and-outline-review	39	A2 stratified 201-PDF sample
+TGaramond	regular	0001	75c1d1a5257c58d9966b3da0262eaa063921c392f8793984b5e5a910e041c0fc	!	visible-pdf-and-outline-review	164	A2 stratified 201-PDF sample
+TGaramond	regular	0002	7c521a60ebad2eb850be392d2183f13af21348e7411314da7336a4b5863beed5	ā	visible-pdf-and-outline-review	736	A2 stratified 201-PDF sample
+TGaramond	regular	0003	17cad71b12fabe1ae88b3541278f3d7ea82b555b8913575685cb5f166b81172e	Ā	visible-pdf-and-outline-review	6	A2 stratified 201-PDF sample
+TGaramond	regular	0006	cd540b4aee94306ba4cc28eaf758ea8e4aafb141ca17880f8ce4c5968f19789e	ḍ	visible-pdf-and-outline-review	114	A2 stratified 201-PDF sample
+TGaramond	regular	0007	aa820783338b71b41eba75828dad4ba88b04a3edd808bd748df033aebdfd6f10	Ḍ	visible-pdf-and-outline-review	35	A2 stratified 201-PDF sample
+TGaramond	regular	0008	ec659d810bbd8e39357b92d0f06e7caacb691e1377e5f87d8de48879cce00e94	(	visible-pdf-and-outline-review	7742	A2 stratified 201-PDF sample
+TGaramond	regular	0009	e3f5381b386697c485dbfcbdca78a6b7110fc1c3da24f663290477307195d6df	)	visible-pdf-and-outline-review	7744	A2 stratified 201-PDF sample
+TGaramond	regular	000A	5d98a20fd0400f332c8d075e9b2df5606d68a5789d2a2dfb905a24187584a1d5	*	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	regular	000C	63d204d9b86c92ebaf4cd83ac8ac7dd8ac70d97f4f825066726d192d763ce037	,	visible-pdf-and-outline-review	5934	A2 stratified 201-PDF sample
+TGaramond	regular	000D	92e3544bd7f4828328250e442c75f3cb5e902cec4e1eb147515072c943fefa33	-	visible-pdf-and-outline-review	2630	A2 stratified 201-PDF sample
+TGaramond	regular	000E	27cad1de731cadb63fbf9694fdf6c5712eaf238bbbc7e9c4a806dff6e9fad8bf	.	visible-pdf-and-outline-review	13847	A2 stratified 201-PDF sample
+TGaramond	regular	000F	894b6203a0cf3c38d7f4f9308f095ac3455cb1651d75564c03220679e7163b29	/	visible-pdf-and-outline-review	364	A2 stratified 201-PDF sample
+TGaramond	regular	0010	15ca9a8857f42c005299a653c200f0ec43d8ebdd34ad65d767a01c717e1a6c45	0	visible-pdf-and-outline-review	1167	A2 stratified 201-PDF sample
+TGaramond	regular	0011	d396c60d487cef1487b30734b08b14b6ddb5a0695a4710f9b91ded1b6850d0e6	1	visible-pdf-and-outline-review	4977	A2 stratified 201-PDF sample
+TGaramond	regular	0012	c445588c454025e41814a24df7320fabf9ee895fd938efc57a15c27d7d6533bf	2	visible-pdf-and-outline-review	3891	A2 stratified 201-PDF sample
+TGaramond	regular	0013	e42fa59a9ba7ffa20da646e895bdcf1a3cf8c0b5ece280689263a04293163c48	3	visible-pdf-and-outline-review	2438	A2 stratified 201-PDF sample
+TGaramond	regular	0014	24b25ae5af869e027df8630ae29865ba7f947fdae1322ab97c21547404d1e0aa	4	visible-pdf-and-outline-review	1657	A2 stratified 201-PDF sample
+TGaramond	regular	0015	b26b3646489423b3691f73cb4009095d2cd5324990ee5047a0fe2bebc5467e18	5	visible-pdf-and-outline-review	1644	A2 stratified 201-PDF sample
+TGaramond	regular	0016	4bb15ee31cc58a2283e5d962c219e7db4e71f2157d6a7ef83fc88e7b274f93be	6	visible-pdf-and-outline-review	1375	A2 stratified 201-PDF sample
+TGaramond	regular	0017	8ff7f2225f554cd94864dfacbc57665a34694d5821598e728109a67c54fa77de	7	visible-pdf-and-outline-review	1288	A2 stratified 201-PDF sample
+TGaramond	regular	0018	a3235301d7e4eb9a16da9675fb668411bf74dd7979de5b2aa9f7970b7e6287d7	8	visible-pdf-and-outline-review	1149	A2 stratified 201-PDF sample
+TGaramond	regular	0019	404e0315ebcc940f01318395bb23eac9998d1c88cd55784416c3a9fb901ec83f	9	visible-pdf-and-outline-review	1080	A2 stratified 201-PDF sample
+TGaramond	regular	001A	d6fb0a5aecd411f9436493a48df819c1d9661e968ca5b1acb840d7074402c49a	?	visible-pdf-and-outline-review	701	A2 stratified 201-PDF sample
+TGaramond	regular	001B	65f5e51bebd50081a12e7988b568def528bb4e442463324281ec3016ad3579eb	;	visible-pdf-and-outline-review	3846	A2 stratified 201-PDF sample
+TGaramond	regular	001F	484adc0c55fd71189bc447f61659e029dcea7d0fad7a164b7fe814d3cf9aceae	!	visible-pdf-and-outline-review	149	A2 stratified 201-PDF sample
+TGaramond	regular	0021	1402ce6e01de8e14c07936e8aa37fdf8b3f7719875d828889cf5f40fa771f8f7	A	visible-pdf-and-outline-review	897	A2 stratified 201-PDF sample
+TGaramond	regular	0022	5728b783d5c9ff039bd18886a7ee000e9fb55eb1d85c5501e6d798b652b03a71	B	visible-pdf-and-outline-review	1710	A2 stratified 201-PDF sample
+TGaramond	regular	0023	187d86212978c5d608e007d371a1550b4ec28bc4d3ad072a3cb950800e3108f6	C	visible-pdf-and-outline-review	257	A2 stratified 201-PDF sample
+TGaramond	regular	0024	36c493282733fe25038b55d0677bdcf187daefd35428bc2f072bc0b5e0b510a7	D	visible-pdf-and-outline-review	3140	A2 stratified 201-PDF sample
+TGaramond	regular	0025	fdc1f3dd5a0711a10b8675ffbcef6ea1d2105b6be2ecee45460f8a3e2a4d1dbe	E	visible-pdf-and-outline-review	727	A2 stratified 201-PDF sample
+TGaramond	regular	0026	6a9b61d825329b07fc5de9c9eb1191eb5c4b8865c89afe5dcd89a38c1803adb1	F	visible-pdf-and-outline-review	579	A2 stratified 201-PDF sample
+TGaramond	regular	0027	a702c15e08d59b8fd9e3b6d3a17e7a2df1bfb0464b39a5ff65c0e0f75f56542f	G	visible-pdf-and-outline-review	1310	A2 stratified 201-PDF sample
+TGaramond	regular	0028	6d074f921c7fdc352f31439d4353392a4856ceb7d4cd81341efaa9d9275c8c31	H	visible-pdf-and-outline-review	1088	A2 stratified 201-PDF sample
+TGaramond	regular	0029	663a4f8908770ec481f6409ba0c3933b578e960a7c529f61537e9c53557d79c0	I	visible-pdf-and-outline-review	261	A2 stratified 201-PDF sample
+TGaramond	regular	002A	a6438f0a85d67e151c563ac65f33eb41f40d6ca0bdceef5acbb055b46281329d	J	visible-pdf-and-outline-review	177	A2 stratified 201-PDF sample
+TGaramond	regular	002B	fecdeda22f49c13d70830385a5d97a7b2876775cc1ff11fe9ed07f8411c79604	K	visible-pdf-and-outline-review	1266	A2 stratified 201-PDF sample
+TGaramond	regular	002C	11d70f3bca89ed885ed98e3247eba80c507db1231df16be5146b071f282a0a79	L	visible-pdf-and-outline-review	2520	A2 stratified 201-PDF sample
+TGaramond	regular	002D	44f5de4bed9be210271c2bab633c06f2ff6e1b27b08ecad7453f10e6b3e674e2	M	visible-pdf-and-outline-review	1676	A2 stratified 201-PDF sample
+TGaramond	regular	002E	45b8b63bdb8df605f94c4157b2208579a2389c3b1a9ff5f0476d41dd7fdfb665	N	visible-pdf-and-outline-review	568	A2 stratified 201-PDF sample
+TGaramond	regular	002F	776b5564e51ec661005f28eb11457068c96656a7578264c4a8f76089e676e02b	O	visible-pdf-and-outline-review	151	A2 stratified 201-PDF sample
+TGaramond	regular	0030	0dfe497bdf49de1fd32feb2c5f5c324ea7bcf5afd92dd2c04288458bf41f1e7d	P	visible-pdf-and-outline-review	719	A2 stratified 201-PDF sample
+TGaramond	regular	0031	fa09a423af862c6b8c2f0076e42e067245dcedbbf57b4a3640efee9bc23706ca	Q	visible-pdf-and-outline-review	24	A2 stratified 201-PDF sample
+TGaramond	regular	0032	54d71bbd900e0f11eb8692b0b1a15bfa117513757a36b7b7e39c58b84ba9451e	R	visible-pdf-and-outline-review	615	A2 stratified 201-PDF sample
+TGaramond	regular	0033	bc88a5dec050b079b7a25044306a52b9857668766488f74f54246754fa05db6d	S	visible-pdf-and-outline-review	1751	A2 stratified 201-PDF sample
+TGaramond	regular	0034	f422f3ba951d56719bbd5af891f12f82a02b10be61631edb27397c5382a22e42	T	visible-pdf-and-outline-review	1512	A2 stratified 201-PDF sample
+TGaramond	regular	0035	60cb29eb1161a87d6f054ac7b206cd3e63cf63b72dab2c7575964a636fef1a7e	U	visible-pdf-and-outline-review	348	A2 stratified 201-PDF sample
+TGaramond	regular	0036	f861e316b00d48ac884c0914f61937bb9afbc73d905b9ca6bd7d2e7ce5e1eb14	V	visible-pdf-and-outline-review	733	A2 stratified 201-PDF sample
+TGaramond	regular	0037	093b8a6b3851d6fdc31fb9fb26533dc3d9f9d1e4417fa1f8a35cb4f4bf7550dc	W	visible-pdf-and-outline-review	668	A2 stratified 201-PDF sample
+TGaramond	regular	0038	2c976f0b351d9ad7f7514a3ea157e998f91ceaf57590cce39848ffa380476c44	X	visible-pdf-and-outline-review	11	A2 stratified 201-PDF sample
+TGaramond	regular	0039	0a50328d5c06fafb1a773a8beacc6922198b4fd92c8bd77a6f7f7a115db544f0	Y	visible-pdf-and-outline-review	85	A2 stratified 201-PDF sample
+TGaramond	regular	003A	e5f86103ee0637ee1df3734e02f4a218a787e2cd623767ec1d9ff383182c8505	Z	visible-pdf-and-outline-review	452	A2 stratified 201-PDF sample
+TGaramond	regular	003B	e13e149bb826a43e792bfa03818815f5cc5ab4077108f0517a924cbfe5480388	[	visible-pdf-and-outline-review	783	A2 stratified 201-PDF sample
+TGaramond	regular	003D	2fb5e9a517f60069c8bc8d8f9af2d0d7cf33971db8f6f5df802e0df79458374c	]	visible-pdf-and-outline-review	783	A2 stratified 201-PDF sample
+TGaramond	regular	0041	e9865d62fc5afecb6939241de04035b34c8f906224a64965466c0745edb0262b	a	visible-pdf-and-outline-review	16067	A2 stratified 201-PDF sample
+TGaramond	regular	0042	9a3d2829003cf3e6b09f4e6fae7049e88c3579bfd7a6b73970d3a552dc7b41fe	b	visible-pdf-and-outline-review	5460	A2 stratified 201-PDF sample
+TGaramond	regular	0043	90c89679de7ac4e24f5ad7520b4ad94e4b66b057c8a5c092f3aba606210d0f29	c	visible-pdf-and-outline-review	6547	A2 stratified 201-PDF sample
+TGaramond	regular	0044	45239bcbd1fcfc5ebdc5a314d29c9237831e81704c5a1440d677e1668efc7c69	d	visible-pdf-and-outline-review	12099	A2 stratified 201-PDF sample
+TGaramond	regular	0045	8d9f38d0a85f7ba4ff0b20d76ba6f59b40ec4cbe9dc0f32f6cff4e1f5b441231	e	visible-pdf-and-outline-review	42071	A2 stratified 201-PDF sample
+TGaramond	regular	0046	9016bf0067871b8511414ed088fee49040d9b34803258f28867c421dd524ddfc	f	visible-pdf-and-outline-review	3645	A2 stratified 201-PDF sample
+TGaramond	regular	0047	ba09ba238de5914048b6880f771642d9424eb6776ecfd4f645f82b8912b865f4	g	visible-pdf-and-outline-review	8467	A2 stratified 201-PDF sample
+TGaramond	regular	0048	1bbdd0bb38f6b38ee4ed142a1496368c485282e581fac12b9733a0a8be070925	h	visible-pdf-and-outline-review	10973	A2 stratified 201-PDF sample
+TGaramond	regular	0049	116d4d071c7d128f0071bcb0c3664302bf39866f9c52582e4400ae3002e24254	i	visible-pdf-and-outline-review	17834	A2 stratified 201-PDF sample
+TGaramond	regular	004A	a6dc63f1df61b3cb0a4c9647b751db81b32a3eff3387e69cd4f4815b1478cecc	j	visible-pdf-and-outline-review	295	A2 stratified 201-PDF sample
+TGaramond	regular	004B	a41a8f65db2bd84d7a3ed7facecf69876088b1b5f610a7ace2068f653c8b072b	k	visible-pdf-and-outline-review	2993	A2 stratified 201-PDF sample
+TGaramond	regular	004C	cd7db2985a0b6fdaa79d2bd7278fcc11ae5ca4936125c9aa4bcbcb07e6d2e66e	l	visible-pdf-and-outline-review	8551	A2 stratified 201-PDF sample
+TGaramond	regular	004D	441a5715614a09e3ab952ee7853610737c40dd2673c372d086b5df054927c86c	m	visible-pdf-and-outline-review	6477	A2 stratified 201-PDF sample
+TGaramond	regular	004E	ce2d34f49e3a03306618c3efb127d2469ca135a83be77861364bb7e839b5025e	n	visible-pdf-and-outline-review	22711	A2 stratified 201-PDF sample
+TGaramond	regular	004F	95e58b0602c28701f02dfdbedc666cd11fad3669de5fe4a14eb14f4a29302a4a	o	visible-pdf-and-outline-review	4944	A2 stratified 201-PDF sample
+TGaramond	regular	0050	7a934631ec8fee752b624b7a176b0c9163b16218b6624b8dfbf75a44bfd60138	p	visible-pdf-and-outline-review	1657	A2 stratified 201-PDF sample
+TGaramond	regular	0051	e99edf0530621d0e130d8786b97a4fd78f3014e31b506f4928405bd94d6a2593	q	visible-pdf-and-outline-review	22	A2 stratified 201-PDF sample
+TGaramond	regular	0052	eca36d3e3d701d8ee78f91b865a2e9eccc70e750d73c8851050798ad12789164	r	visible-pdf-and-outline-review	19457	A2 stratified 201-PDF sample
+TGaramond	regular	0053	71ada083a5cc97db96314faaac98fa3bf4b0dd431ada9966daca9baee480bec6	s	visible-pdf-and-outline-review	13051	A2 stratified 201-PDF sample
+TGaramond	regular	0054	e700b0be7793a2bd2275eee3acde9662c47e9612ea67fe9ed429b7366f530b71	t	visible-pdf-and-outline-review	13924	A2 stratified 201-PDF sample
+TGaramond	regular	0055	e1d6fa9e37442ee9cad18720b0a7573d38d6327ec0daa818e3d1ec6cf336fe5b	u	visible-pdf-and-outline-review	8703	A2 stratified 201-PDF sample
+TGaramond	regular	0056	0e75c3b341f87ef542269a80e5aed5493c4df7b27ad005f5ffdc2a8020bb661f	v	visible-pdf-and-outline-review	2610	A2 stratified 201-PDF sample
+TGaramond	regular	0057	906d8939fd04d2932b95cdc5a0781a8bd4df113f48b645b4a38f90ffc3b1de2f	w	visible-pdf-and-outline-review	3309	A2 stratified 201-PDF sample
+TGaramond	regular	0058	1138da228a74c70acf734475b6c9274872da33a795a41fc5e7ce67f959d0aa35	x	visible-pdf-and-outline-review	1811	A2 stratified 201-PDF sample
+TGaramond	regular	0059	3c3e8afcc1d0b41a69bce893bbed01a8aa8b30ae588f798ce5624cab6f22017a	y	visible-pdf-and-outline-review	2128	A2 stratified 201-PDF sample
+TGaramond	regular	005A	cc8e1fb73273299458cde6032a9518fd0214f02e08cb8bcf9376e643746615e5	z	visible-pdf-and-outline-review	2901	A2 stratified 201-PDF sample
+TGaramond	regular	005B	e4731638d6e4db4b7df6687c91ed0854b6193aa3f6e6b9df71bbe5e8cb20864b	{	visible-pdf-and-outline-review	56	A2 stratified 201-PDF sample
+TGaramond	regular	005D	862c0b8775392a1660c3b82fec5c2437ed35c945f57635f430627713dfc5e179	}	visible-pdf-and-outline-review	56	A2 stratified 201-PDF sample
+TGaramond	regular	005F	783e258a2c0ea7c3a7fe64d5805ec81ce319e619a09ace3cb2aaa0fbbf04b12d	‚	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	regular	0061	91374144cd58c7b1f6794e76fe909555028da7edf01c5d0c254f0edce057a0c1	„	visible-pdf-and-outline-review	4522	A2 stratified 201-PDF sample
+TGaramond	regular	0066	179b84f5acf1d975545bb93f7dda9f6474763e1d4109872dbe04cdff763dd288	ī	visible-pdf-and-outline-review	90	A2 stratified 201-PDF sample
+TGaramond	regular	006A	840502193117b8c4f5df6e1a76d880125dc2707e2af46dc4349b04bb345d369c	‘	visible-pdf-and-outline-review	78	A2 stratified 201-PDF sample
+TGaramond	regular	006B	0f76e9cf6be07632d0a9e6a990e5de160aa8be1a831bb3e46d199165b6d5d99a	’	visible-pdf-and-outline-review	153	A2 stratified 201-PDF sample
+TGaramond	regular	006C	0873ce96eea825f607c1e539b9ea86ad0d01b0a5eff3fbd2c663a5207ef95cd0	“	visible-pdf-and-outline-review	4531	A2 stratified 201-PDF sample
+TGaramond	regular	0070	e7b2b647f6601d254b61a3e61f02243d19dd2c25836db737647288d35ad60f5e	Ī	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	regular	007B	e0b2f864e314c9d1441bae666be865b07be432a6ee4c723f7b962648d1dfdc55	Ź	visible-pdf-and-outline-review	11	A2 stratified 201-PDF sample
+TGaramond	regular	007C	67045d2c668e927c1d98da6d74155a542cd9c7d29f967f9576727b410c7a9ae9	ṃ	visible-pdf-and-outline-review	67	A2 stratified 201-PDF sample
+TGaramond	regular	007F	3cc022a99149b25a4b59f7fd30004938f9baad4f6e4606051d5ac3df86a88013	ṇ	visible-pdf-and-outline-review	51	A2 stratified 201-PDF sample
+TGaramond	regular	0082	3dad78d7500c218d1093b8f272cbcc9f8390675b301d46d94ecb208d33411c99	ṅ	visible-pdf-and-outline-review	307	A2 stratified 201-PDF sample
+TGaramond	regular	0084	a446d518fc80673a9815071f29f72473490b3d194a7b42c8dbc3eaa91b7adaf2	ṅ	visible-pdf-and-outline-review	18	A2 stratified 201-PDF sample
+TGaramond	regular	0089	e7869e3d8cd6a6dce99479831852ef679e1c42f6bfb660919ed7c77c54448915	r	visible-pdf-and-outline-review	26	A2 stratified 201-PDF sample
+TGaramond	regular	008B	3be679b6eef8a8bd462e188faec6183a2c0eb77dba5fda4bc7bd20a7dd2b1663	Ṛ	visible-pdf-and-outline-review	2	A2 stratified 201-PDF sample
+TGaramond	regular	008E	2dbfeaee863bde9bd1aa3c2b451363de563b88ddab8f83d093eb1e816cca24d5	ś	visible-pdf-and-outline-review	316	A2 stratified 201-PDF sample
+TGaramond	regular	008F	4f50f10701333d75a6660c1fea4195edcd5f970331db6b32de2297c37757cf8a	Ś	visible-pdf-and-outline-review	45	A2 stratified 201-PDF sample
+TGaramond	regular	0090	fd1bb15f97fc2c4298ee8a607cab6b18c4c9673aea7ddd7234adc79c4dd9c6cc	ṣ	visible-pdf-and-outline-review	80	A2 stratified 201-PDF sample
+TGaramond	regular	0092	ae98173cd5162f69ad1ec02a05eb04c10ef4429fa01195b63ed10cd6f7198bbb	Ṣ	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	regular	0093	110d08394ce74b46b0c39cb91a4735a26247349160f111bdf9af4b71482cf541	ṭ	visible-pdf-and-outline-review	10	A2 stratified 201-PDF sample
+TGaramond	regular	0094	108118eaff02f87320db284bd167c1e40a4c70b32ade4066381270b8691aceeb	Ṭ	visible-pdf-and-outline-review	53	A2 stratified 201-PDF sample
+TGaramond	regular	0095	5189458451a88cd3d2dab2dce471e859b086432fedc458f0d874701afb21f2c5	ū	visible-pdf-and-outline-review	33	A2 stratified 201-PDF sample
+TGaramond	regular	009A	1c5860848572789146bc9973514f47a88eb7bb33c8ceec68e745b89cef447ee6	Ä	visible-pdf-and-outline-review	27	A2 stratified 201-PDF sample
+TGaramond	regular	00A7	53a8fd650f58254523ba86ebee6e994f18b858c6d787098f8bdd46af92668125	Ñ	visible-pdf-and-outline-review	32	A2 stratified 201-PDF sample
+TGaramond	regular	00AC	12af4849bc6e03a39343235b472d9164ee8cdff80adc04fd9208b98291cf0550	Ö	visible-pdf-and-outline-review	14	A2 stratified 201-PDF sample
+TGaramond	regular	00AD	512e23ae904ec67d82031c6c067866876719c834410a2e0c0cb72a7d30a3437b	ź	visible-pdf-and-outline-review	24	A2 stratified 201-PDF sample
+TGaramond	regular	00AE	4b70f64de0009a3d824f3e56902940984a49a75a9885375a3858ae3f53ef0733	Ø	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	regular	00B2	584e9d95d6ab790c0c4ec5aec87b40aca739d46d3d9799e8dbc2d9dda8695717	Ü	visible-pdf-and-outline-review	53	A2 stratified 201-PDF sample
+TGaramond	regular	00B4	a360a170fd7450b0832a9dc7b38d246ff5c9c08fc346b04ae917f1e25e05bd5e	ß	visible-pdf-and-outline-review	772	A2 stratified 201-PDF sample
+TGaramond	regular	00B9	3e746abe45ee41d13fff4aa4efb45ad84035b245a2395d923218adc0c4210e95	ä	visible-pdf-and-outline-review	1321	A2 stratified 201-PDF sample
+TGaramond	regular	00BE	1c9aea18b5d85805e1a2c2d93c27099f49992065043722ebb99f702c8f599329	é	visible-pdf-and-outline-review	1	A2 stratified 201-PDF sample
+TGaramond	regular	00C5	53f71979b95fd0eb0ce2461ca854f88eb357245fa00041bc5eb57bac6e5141ec	ñ	visible-pdf-and-outline-review	31	A2 stratified 201-PDF sample
+TGaramond	regular	00CA	1adaacd86bbf390bef5e959886d6c7106fcef95f86553112e2c637d1519712cc	ö	visible-pdf-and-outline-review	834	A2 stratified 201-PDF sample
+TGaramond	regular	00CB	8e174b17662868a5852eca230ebf780629ce6914621bc48e29bb515fe39114b6	↑	visible-pdf-and-outline-review	281	A2 stratified 201-PDF sample
+TGaramond	regular	00D0	7a6619f26c605c97ad6ff254d8b4ea600b41c5af53653b1ead2e5fa4abaf8620	ü	visible-pdf-and-outline-review	1876	A2 stratified 201-PDF sample
+TGaramond	regular	00D2	a23f9eeb507175030958b778a0fdf40d6155461d54beeda18b290d03fed4d846	↓	visible-pdf-and-outline-review	253	A2 stratified 201-PDF sample
+TGaramond	regular	00D4	7a7a9098cbd21cdbfafe9cf09f543a132264cd0c7547299de63c91e39c886d02	 	visible-pdf-and-outline-review	53179	A2 stratified 201-PDF sample
+TGaramond	regular	00E3	c1ae7ab66291c9b9b546287196eb75ff29425f783a0f36e3650de3fede49b6f3	~	visible-pdf-and-outline-review	27	A2 stratified 201-PDF sample
+TGaramond	regular	00E6	b8f0955072dfb98dc2f17ea86b8b900bc168ac33ee5308acf69bd9ccfe783da3	⟩	visible-pdf-and-outline-review	51	A2 stratified 201-PDF sample
+TGaramond	regular	00E8	f3332e38a645cd4e2ca17affb0d3b46ced102023bdb5e1729c052eda6f55e35c	≈	visible-pdf-and-outline-review	4	visible PDF: citation separator ≈ in four sampled occurrences
+TGaramond	regular	00E9	27098d49e6693169b7e7aa01b60f813b331f876e33f0f3ef7744717c69ce3a15	≈	visible-pdf-and-outline-review	932	A2 stratified 201-PDF sample
+TGaramond	regular	00EA	42dcd24d7f4145a3e610c01afa25cff08f0ea03dd32406904b06b0287d714a84	⟨	visible-pdf-and-outline-review	52	A2 stratified 201-PDF sample
