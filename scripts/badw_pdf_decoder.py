@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Decode BAdW generated PDFs from embedded Type0 font data.
+"""Decode BAdW generated PDFs from embedded font data.
 
 The decoder is intentionally source-faithful.  Legacy-font mappings are
 accepted only when family, style, CID, and the embedded glyph-outline hash all
@@ -29,7 +29,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAPPING = ROOT / "data/badw_pdf_glyph_mappings.tsv"
-DECODER_VERSION = "badw-generated-pdf-v1"
+DECODER_VERSION = "badw-generated-pdf-v2"
 SUBSET_RE = re.compile(r"^([A-Z]{6})\+")
 LEGACY_FAMILIES = frozenset({"RabtenTibetan", "TGaramond"})
 
@@ -66,6 +66,8 @@ class FontIdentity:
     font_resource_sha256: str
     to_unicode_sha256: str
     cid_to_gid_kind: str
+    font_subtype: str
+    source_code_bytes: int
 
 
 @dataclass(frozen=True)
@@ -253,6 +255,15 @@ def _cid_to_gid(descendant: Mapping, cid: int) -> int | None:
 def parse_type0_cids(value) -> tuple[int, ...]:
     """Return the two-byte CIDs in a Type0 Identity-H string operand."""
 
+    return parse_source_codes(value, 2)
+
+
+def parse_source_codes(value, code_bytes: int) -> tuple[int, ...]:
+    """Return fixed-width source codes without applying an inferred encoding."""
+
+    if code_bytes not in {1, 2}:
+        raise UnsupportedPDFError(f"unsupported source-code width {code_bytes}")
+
     if isinstance(value, bytes):
         data = value
     else:
@@ -263,9 +274,16 @@ def parse_type0_cids(value) -> tuple[int, ...]:
             data = value.encode("latin-1")
         else:
             raise UnsupportedPDFError(f"unsupported PDF string operand {type(value)!r}")
-    if len(data) % 2:
-        raise PDFDecodeError("Type0 text string has an odd number of bytes")
-    return tuple(int.from_bytes(data[offset : offset + 2], "big") for offset in range(0, len(data), 2))
+    if len(data) % code_bytes:
+        if code_bytes == 2:
+            raise PDFDecodeError("Type0 text string has an odd number of bytes")
+        raise PDFDecodeError(
+            f"text string length is not divisible by source-code width {code_bytes}"
+        )
+    return tuple(
+        int.from_bytes(data[offset : offset + code_bytes], "big")
+        for offset in range(0, len(data), code_bytes)
+    )
 
 
 def _widths(descendant: Mapping) -> tuple[int, dict[int, float]]:
@@ -292,6 +310,17 @@ def _widths(descendant: Mapping) -> tuple[int, dict[int, float]]:
         for cid in range(start, end + 1):
             widths[cid] = width
     return default, widths
+
+
+def _simple_widths(font: Mapping, descriptor: Mapping) -> tuple[int, dict[int, float]]:
+    """Read widths for a simple font while retaining its byte codes verbatim."""
+
+    default = int(descriptor.get("/MissingWidth", 0) or 0)
+    first = int(font.get("/FirstChar", 0) or 0)
+    values = list(_indirect(font.get("/Widths")) or [])
+    return default, {
+        first + offset: float(width) for offset, width in enumerate(values)
+    }
 
 
 def _embedded_cmap(font: TTFont) -> dict[int, str]:
@@ -456,6 +485,8 @@ class _ResolvedFont:
     cmap: dict[int, str]
     to_unicode: dict[int, str]
     signatures: dict[int, str]
+    source_code_bytes: int
+    deterministic_gid_mapping: bool
 
     def signature(self, gid: int) -> str:
         if gid not in self.signatures:
@@ -469,21 +500,41 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
     result = {}
     for resource_name, font_reference in fonts.items():
         top = _indirect(font_reference)
-        if str(top.get("/Subtype")) != "/Type0":
-            raise UnsupportedPDFError(f"font {resource_name} is not Type0")
-        encoding = str(top.get("/Encoding", ""))
-        if encoding not in {"/Identity-H", "/Identity-V"}:
+        subtype = str(top.get("/Subtype"))
+        if subtype == "/Type0":
+            encoding = str(top.get("/Encoding", ""))
+            if encoding not in {"/Identity-H", "/Identity-V"}:
+                raise UnsupportedPDFError(
+                    f"font {resource_name} has unsupported Type0 encoding {encoding}"
+                )
+            descendants = _indirect(top.get("/DescendantFonts")) or []
+            if len(descendants) != 1:
+                raise UnsupportedPDFError(
+                    f"font {resource_name} does not have exactly one descendant"
+                )
+            descendant = _indirect(descendants[0])
+            descriptor = _indirect(descendant.get("/FontDescriptor")) or {}
+            base_font = str(top.get("/BaseFont", descendant.get("/BaseFont", "")))
+            default_width, widths = _widths(descendant)
+            source_code_bytes = 2
+            deterministic_gid_mapping = True
+            cid_to_gid_kind = str(descendant.get("/CIDToGIDMap", "/Identity"))
+        elif subtype == "/TrueType":
+            # Some generated pages use a tiny embedded simple TrueType font for
+            # an auxiliary symbol.  Its byte code is preserved, but without a
+            # ToUnicode CMap or a deterministic Encoding-to-GID relation it
+            # must remain an explicit unknown rather than aborting the page.
+            descendant = top
+            descriptor = _indirect(top.get("/FontDescriptor")) or {}
+            base_font = str(top.get("/BaseFont", ""))
+            default_width, widths = _simple_widths(top, descriptor)
+            source_code_bytes = 1
+            deterministic_gid_mapping = False
+            cid_to_gid_kind = "unresolved-simple-true-type-code"
+        else:
             raise UnsupportedPDFError(
-                f"font {resource_name} has unsupported Type0 encoding {encoding}"
+                f"font {resource_name} has unsupported subtype {subtype}"
             )
-        descendants = _indirect(top.get("/DescendantFonts")) or []
-        if len(descendants) != 1:
-            raise UnsupportedPDFError(
-                f"font {resource_name} does not have exactly one descendant"
-            )
-        descendant = _indirect(descendants[0])
-        descriptor = _indirect(descendant.get("/FontDescriptor")) or {}
-        base_font = str(top.get("/BaseFont", descendant.get("/BaseFont", "")))
         family, style, subset = _family_style(base_font, descriptor)
         program_kind, program = _font_program(descendant)
         if not program:
@@ -495,7 +546,6 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
             raise UnsupportedPDFError(
                 f"font {resource_name} program cannot be read: {exc}"
             ) from exc
-        default_width, widths = _widths(descendant)
         resource_payload = json.dumps(
             _serialise_pdf_object(top), sort_keys=True, separators=(",", ":"), ensure_ascii=False
         ).encode()
@@ -527,7 +577,9 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
             to_unicode_sha256=(
                 sha256(to_unicode_data).hexdigest() if to_unicode_data else ""
             ),
-            cid_to_gid_kind=str(descendant.get("/CIDToGIDMap", "/Identity")),
+            cid_to_gid_kind=cid_to_gid_kind,
+            font_subtype=subtype,
+            source_code_bytes=source_code_bytes,
         )
         result[str(resource_name)] = _ResolvedFont(
             identity=identity,
@@ -538,6 +590,8 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
             cmap=_embedded_cmap(ttfont),
             to_unicode=to_unicode,
             signatures={},
+            source_code_bytes=source_code_bytes,
+            deterministic_gid_mapping=deterministic_gid_mapping,
         )
     return result
 
@@ -554,7 +608,7 @@ def _decode_cid(
     cid: int,
     registry: GlyphRegistry,
 ) -> tuple[int | None, str, str, str, bool]:
-    gid = _cid_to_gid(font.descendant, cid)
+    gid = _cid_to_gid(font.descendant, cid) if font.deterministic_gid_mapping else None
     signature = "missing-cid-to-gid" if gid is None else font.signature(gid)
     if cid in font.to_unicode:
         return gid, signature, font.to_unicode[cid], "pdf_to_unicode", False
@@ -785,7 +839,7 @@ def decode_pdf_bytes(
                         * state.horizontal_scale
                     )
                     continue
-                cids = parse_type0_cids(value)
+                cids = parse_source_codes(value, font.source_code_bytes)
                 glyphs = []
                 run_start_x, run_start_y = state.x, state.y
                 for cid in cids:

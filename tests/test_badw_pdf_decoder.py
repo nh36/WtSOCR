@@ -31,6 +31,7 @@ from badw_pdf_decoder import (  # noqa: E402
     decode_pdf_bytes,
     deterministic_json_bytes,
     glyph_outline_signature,
+    parse_source_codes,
     parse_type0_cids,
     parse_tounicode_cmap,
 )
@@ -110,10 +111,36 @@ def type0_page(
     return {"/Resources": {"/Font": {"/F1": top}}}, descendant
 
 
+def simple_truetype_page(program, *, to_unicode=None):
+    descriptor = {
+        "/ItalicAngle": 0,
+        "/MissingWidth": 250,
+        "/FontFile2": FakeStream(program),
+    }
+    top = {
+        "/Subtype": "/TrueType",
+        "/Encoding": "/WinAnsiEncoding",
+        "/BaseFont": "/ABCDEF+MicrosoftSansSerif",
+        "/FirstChar": 31,
+        "/LastChar": 31,
+        "/Widths": [293],
+        "/FontDescriptor": descriptor,
+    }
+    if to_unicode is not None:
+        top["/ToUnicode"] = FakeStream(to_unicode)
+    return {"/Resources": {"/Font": {"/TT26": top}}}
+
+
 def test_type0_cid_parsing_and_odd_input_failure():
     assert parse_type0_cids(b"\x00\x01\x12\x34") == (1, 0x1234)
     with pytest.raises(PDFDecodeError, match="odd number"):
         parse_type0_cids(b"\x00")
+
+
+def test_fixed_width_source_code_parsing_preserves_simple_font_bytes():
+    assert parse_source_codes(b"\x1f\x80", 1) == (0x1F, 0x80)
+    with pytest.raises(UnsupportedPDFError, match="source-code width"):
+        parse_source_codes(b"\x00", 3)
 
 
 def test_type0_font_extraction_records_exact_identity_and_widths():
@@ -127,6 +154,8 @@ def test_type0_font_extraction_records_exact_identity_and_widths():
     assert font.identity.font_resource_sha256
     assert font.identity.to_unicode_sha256 == ""
     assert font.identity.cid_to_gid_kind == "/Identity"
+    assert font.identity.font_subtype == "/Type0"
+    assert font.identity.source_code_bytes == 2
     assert font.default_width == 500
     assert font.widths == {1: 600.0, 2: 700.0}
 
@@ -143,9 +172,39 @@ def test_cid_to_gid_stream_and_unsupported_font_failure():
         _resolve_fonts(first_page)["/F1"].identity.font_resource_sha256
         != _resolve_fonts(second_page)["/F1"].identity.font_resource_sha256
     )
-    page, _ = type0_page(tiny_font_bytes(), subtype="/TrueType")
-    with pytest.raises(UnsupportedPDFError, match="not Type0"):
+    page, _ = type0_page(tiny_font_bytes(), subtype="/Type1")
+    with pytest.raises(UnsupportedPDFError, match="unsupported subtype"):
         _resolve_fonts(page)
+
+
+def test_simple_truetype_font_is_preserved_as_explicit_unknown():
+    program = tiny_font_bytes(family="MicrosoftSansSerif")
+    font = _resolve_fonts(simple_truetype_page(program))["/TT26"]
+    assert font.identity.family == "MicrosoftSansSerif"
+    assert font.identity.font_subtype == "/TrueType"
+    assert font.identity.source_code_bytes == 1
+    assert font.identity.cid_to_gid_kind == "unresolved-simple-true-type-code"
+    assert font.default_width == 250
+    assert font.widths == {31: 293.0}
+    gid, signature, marker, method, unknown = _decode_cid(
+        font, 31, GlyphRegistry()
+    )
+    assert gid is None
+    assert signature == "missing-cid-to-gid"
+    assert marker.startswith("⟦UNKNOWN:MicrosoftSansSerif:regular:001F:")
+    assert (method, unknown) == ("unknown", True)
+
+
+def test_simple_truetype_tounicode_is_used_without_guessing_a_gid():
+    cmap = b"1 beginbfchar <1F> <2192> endbfchar"
+    font = _resolve_fonts(simple_truetype_page(tiny_font_bytes(), to_unicode=cmap))["/TT26"]
+    assert _decode_cid(font, 31, GlyphRegistry()) == (
+        None,
+        "missing-cid-to-gid",
+        "→",
+        "pdf_to_unicode",
+        False,
+    )
 
 
 def test_tounicode_bfchar_bfrange_and_exact_font_provenance():
@@ -243,7 +302,8 @@ def test_tj_sequence_retains_positioning_adjustments_in_source_order():
 
 def test_positioned_run_reconstruction_preserves_run_and_line_order():
     identity = FontIdentity(
-        "/F1", "font", "family", "regular", "", "", "a", "b", "", "/Identity"
+        "/F1", "font", "family", "regular", "", "", "a", "b", "", "/Identity",
+        "/Type0", 2,
     )
     glyph = PositionedGlyph(1, "0001", 1, "sig", "a", "reviewed_registry", False, 10, 20, 5)
     first = PositionedTextRun(0, 1, "Tj", "font", 10, 10, 20, ("0001",), "a", 0, (glyph,))
