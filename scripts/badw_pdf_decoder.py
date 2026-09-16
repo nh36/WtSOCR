@@ -29,7 +29,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAPPING = ROOT / "data/badw_pdf_glyph_mappings.tsv"
-DECODER_VERSION = "badw-generated-pdf-v2"
+DECODER_VERSION = "badw-generated-pdf-v3"
 SUBSET_RE = re.compile(r"^([A-Z]{6})\+")
 LEGACY_FAMILIES = frozenset({"RabtenTibetan", "TGaramond"})
 
@@ -479,7 +479,7 @@ def _serialise_pdf_object(value) -> object:
 class _ResolvedFont:
     identity: FontIdentity
     descendant: Mapping
-    ttfont: TTFont
+    ttfont: TTFont | None
     default_width: int
     widths: dict[int, float]
     cmap: dict[int, str]
@@ -489,6 +489,10 @@ class _ResolvedFont:
     deterministic_gid_mapping: bool
 
     def signature(self, gid: int) -> str:
+        if self.ttfont is None:
+            raise PDFDecodeError(
+                f"font {self.identity.resource_name} has no outline decoder"
+            )
         if gid not in self.signatures:
             self.signatures[gid] = glyph_outline_signature(self.ttfont, gid)
         return self.signatures[gid]
@@ -531,6 +535,18 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
             source_code_bytes = 1
             deterministic_gid_mapping = False
             cid_to_gid_kind = "unresolved-simple-true-type-code"
+        elif subtype == "/Type1":
+            # A small set of generated pages uses an embedded Type1C font for
+            # a space-only italic run.  We do not infer a legacy encoding or
+            # attempt CFF outline decoding: each used byte must be covered by
+            # the PDF's own explicit ToUnicode CMap.
+            descendant = top
+            descriptor = _indirect(top.get("/FontDescriptor")) or {}
+            base_font = str(top.get("/BaseFont", ""))
+            default_width, widths = _simple_widths(top, descriptor)
+            source_code_bytes = 1
+            deterministic_gid_mapping = False
+            cid_to_gid_kind = "explicit-tounicode-simple-type1-code"
         else:
             raise UnsupportedPDFError(
                 f"font {resource_name} has unsupported subtype {subtype}"
@@ -539,13 +555,6 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
         program_kind, program = _font_program(descendant)
         if not program:
             raise UnsupportedPDFError(f"font {resource_name} has no embedded program")
-        try:
-            logging.getLogger("fontTools.ttLib.tables._h_m_t_x").setLevel(logging.ERROR)
-            ttfont = TTFont(BytesIO(program), lazy=False, recalcBBoxes=False)
-        except Exception as exc:
-            raise UnsupportedPDFError(
-                f"font {resource_name} program cannot be read: {exc}"
-            ) from exc
         resource_payload = json.dumps(
             _serialise_pdf_object(top), sort_keys=True, separators=(",", ":"), ensure_ascii=False
         ).encode()
@@ -565,6 +574,23 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
                 raise PDFDecodeError(
                     f"font {resource_name} has an invalid ToUnicode CMap: {exc}"
                 ) from exc
+        if subtype == "/Type1":
+            if not to_unicode:
+                raise UnsupportedPDFError(
+                    f"font {resource_name} Type1 decoding requires an explicit "
+                    "ToUnicode CMap"
+                )
+            ttfont = None
+            embedded_cmap = {}
+        else:
+            try:
+                logging.getLogger("fontTools.ttLib.tables._h_m_t_x").setLevel(logging.ERROR)
+                ttfont = TTFont(BytesIO(program), lazy=False, recalcBBoxes=False)
+            except Exception as exc:
+                raise UnsupportedPDFError(
+                    f"font {resource_name} program cannot be read: {exc}"
+                ) from exc
+            embedded_cmap = _embedded_cmap(ttfont)
         identity = FontIdentity(
             resource_name=str(resource_name),
             base_font=base_font,
@@ -587,7 +613,7 @@ def _resolve_fonts(page) -> dict[str, _ResolvedFont]:
             ttfont=ttfont,
             default_width=default_width,
             widths=widths,
-            cmap=_embedded_cmap(ttfont),
+            cmap=embedded_cmap,
             to_unicode=to_unicode,
             signatures={},
             source_code_bytes=source_code_bytes,
@@ -612,6 +638,11 @@ def _decode_cid(
     signature = "missing-cid-to-gid" if gid is None else font.signature(gid)
     if cid in font.to_unicode:
         return gid, signature, font.to_unicode[cid], "pdf_to_unicode", False
+    if font.identity.font_subtype == "/Type1":
+        raise UnsupportedPDFError(
+            f"font {font.identity.resource_name} Type1 source code "
+            f"{cid:02X} lacks an explicit ToUnicode mapping"
+        )
     if gid is None:
         return gid, signature, _unknown_marker(font.identity, cid, signature), "unknown", True
     mapping = registry.lookup(

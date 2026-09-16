@@ -131,6 +131,28 @@ def simple_truetype_page(program, *, to_unicode=None):
     return {"/Resources": {"/Font": {"/TT26": top}}}
 
 
+def simple_type1_page(program=b"fixture-type1c", *, to_unicode=None):
+    font_stream = FakeStream(program)
+    font_stream["/Subtype"] = "/Type1C"
+    descriptor = {
+        "/ItalicAngle": -15,
+        "/MissingWidth": 250,
+        "/FontFile3": font_stream,
+    }
+    top = {
+        "/Subtype": "/Type1",
+        "/Encoding": "/WinAnsiEncoding",
+        "/BaseFont": "/IHDKCI+TimesNewRomanPS-ItalicMT",
+        "/FirstChar": 32,
+        "/LastChar": 32,
+        "/Widths": [250],
+        "/FontDescriptor": descriptor,
+    }
+    if to_unicode is not None:
+        top["/ToUnicode"] = FakeStream(to_unicode)
+    return {"/Resources": {"/Font": {"/F1": top}}}
+
+
 def test_type0_cid_parsing_and_odd_input_failure():
     assert parse_type0_cids(b"\x00\x01\x12\x34") == (1, 0x1234)
     with pytest.raises(PDFDecodeError, match="odd number"):
@@ -172,7 +194,7 @@ def test_cid_to_gid_stream_and_unsupported_font_failure():
         _resolve_fonts(first_page)["/F1"].identity.font_resource_sha256
         != _resolve_fonts(second_page)["/F1"].identity.font_resource_sha256
     )
-    page, _ = type0_page(tiny_font_bytes(), subtype="/Type1")
+    page, _ = type0_page(tiny_font_bytes(), subtype="/Type3")
     with pytest.raises(UnsupportedPDFError, match="unsupported subtype"):
         _resolve_fonts(page)
 
@@ -205,6 +227,35 @@ def test_simple_truetype_tounicode_is_used_without_guessing_a_gid():
         "pdf_to_unicode",
         False,
     )
+
+
+def test_simple_type1_requires_and_uses_explicit_tounicode_only():
+    cmap = b"1 beginbfchar <20> <0020> endbfchar"
+    program = b"reviewable synthetic Type1C fixture"
+    font = _resolve_fonts(simple_type1_page(program, to_unicode=cmap))["/F1"]
+    assert font.identity.family == "TimesNewRomanPS-ItalicMT"
+    assert font.identity.style == "italic"
+    assert font.identity.font_subtype == "/Type1"
+    assert font.identity.program_kind == "FontFile3"
+    assert font.identity.program_sha256 == sha256(program).hexdigest()
+    assert font.identity.to_unicode_sha256 == sha256(cmap).hexdigest()
+    assert font.identity.source_code_bytes == 1
+    assert font.identity.cid_to_gid_kind == "explicit-tounicode-simple-type1-code"
+    assert font.ttfont is None
+    assert _decode_cid(font, 0x20, GlyphRegistry()) == (
+        None,
+        "missing-cid-to-gid",
+        " ",
+        "pdf_to_unicode",
+        False,
+    )
+    with pytest.raises(UnsupportedPDFError, match="21 lacks an explicit ToUnicode"):
+        _decode_cid(font, 0x21, GlyphRegistry())
+
+
+def test_simple_type1_without_tounicode_is_unsupported():
+    with pytest.raises(UnsupportedPDFError, match="requires an explicit ToUnicode"):
+        _resolve_fonts(simple_type1_page())
 
 
 def test_tounicode_bfchar_bfrange_and_exact_font_provenance():
