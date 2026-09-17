@@ -343,6 +343,25 @@ def test_reviewed_registry_covers_wts_diacritics_arrows_latin_and_rabten():
     assert {"ཀ", "ཁ", "་", "།"} <= characters
 
 
+def test_reviewed_registry_preserves_retroflex_and_compound_rabten_glyphs():
+    registry = GlyphRegistry.from_tsv(ROOT / "data/badw_pdf_glyph_mappings.tsv")
+    expected = {
+        (0x0462, "b16b3783ed594b765a545f7453679aa0dadc0bec4becaaa1e6d35fb77d7a00b5"): "ཊ",
+        (0x0534, "b1dfe58e6310663df21950c09862fb73eb16cedd51a875f812803559ef9514f6"): "ཌ",
+        (0x05E0, "1c070e9c3739a7f4995c87ad7e1badf21a94ce46fa2c0bcafe72d44e65faa714"): "ཎི",
+        (0x05EE, "98616d411d803d51c9924fcae7df6d32f6e9fba1894374b6e707ced31bf2b282"): "ཎྜ",
+        (0x01AE, "6a3626a89b03602becdfe23e991480026450219c7e3adb8da2a94bad800d87f7"): "ཀྐ",
+        (0x0410, "ba333a73a7ba467327780d31364076fe02f44144d6bc855dbde12e1ce8b5cb36"): "ཊྭ",
+        (0x07E7, "fe3bc46e95b81ed9169a034f2dcf68a579daf91c2dbb18e8e6d220c790c51604"): "ཛྙཱ",
+        (0x0960, "f44b41430d35298392f5791653929aa5b2b6f5b158e80dcd0640ce372a02def0"): "ཾ",
+    }
+    for (cid, signature), unicode_text in expected.items():
+        mapping = registry.lookup("RabtenTibetan", "regular", cid, signature)
+        assert mapping is not None
+        assert mapping.unicode == unicode_text
+        assert mapping.evidence_method == "canonical-page-heading-and-adjacent-wts-review"
+
+
 def test_tj_sequence_retains_positioning_adjustments_in_source_order():
     assert _text_sequence("TJ", [[b"\x00\x01", -120, b"\x00\x02"]]) == [
         b"\x00\x01",
