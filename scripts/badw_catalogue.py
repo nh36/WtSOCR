@@ -29,6 +29,8 @@ BASE_URL = "https://wts-digital.badw.de"
 SEARCH_URL = f"{BASE_URL}/suche"
 CATALOGUE_CONTRACT_VERSION = "badw-catalogue-v1"
 INITIAL_PREFIXES = tuple("abcdefghijklmnopqrstuvwxyz") + ("'",) + (
+    "ṅ",
+    "ñ",
     "A",
     "I",
     "U",

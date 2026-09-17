@@ -18,6 +18,7 @@ from badw_article_parser import (  # noqa: E402
     write_cached_catalogue_jsonl,
 )
 from badw_catalogue import (  # noqa: E402
+    INITIAL_PREFIXES,
     CatalogueRecord,
     acquire_catalogue_records,
     enumerate_catalogue,
@@ -38,6 +39,12 @@ from badw_source_cache import (  # noqa: E402
 ARTICLE_BYTES = (FIXTURES / "article.html").read_bytes()
 SEARCH_BYTES = (FIXTURES / "search_results.html").read_bytes()
 ERROR_BYTES = (FIXTURES / "error_page.html").read_bytes()
+
+
+def test_default_prefixes_include_distinct_wts_nasal_initials():
+    assert "ṅ" in INITIAL_PREFIXES
+    assert "ñ" in INITIAL_PREFIXES
+    assert len(INITIAL_PREFIXES) == len(set(INITIAL_PREFIXES))
 
 
 def html_response(request, body=ARTICLE_BYTES, *, status=200, final_url=None):
