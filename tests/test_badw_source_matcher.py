@@ -77,6 +77,27 @@ def _write_canonical_page(root: Path) -> None:
         (directory / "pages").mkdir()
 
 
+def _local(
+    anchor_id: str,
+    legacy_entry_ids: tuple[str, ...],
+    lemma: str,
+    tibetan: str,
+    start_page: int,
+    text: str,
+) -> LocalEntry:
+    return LocalEntry(
+        volume="wts_1_34",
+        anchor_id=anchor_id,
+        legacy_entry_ids=legacy_entry_ids,
+        start_page=start_page,
+        start_line=1,
+        lemma=lemma,
+        tibetan=tibetan,
+        pages=(start_page,),
+        text=text,
+    )
+
+
 def test_pdf_source_spans_preserve_loc_heading_and_exact_provenance(tmp_path: Path):
     _write_canonical_page(tmp_path)
     sources = load_pdf_articles(tmp_path)
@@ -90,8 +111,8 @@ def test_pdf_source_spans_preserve_loc_heading_and_exact_provenance(tmp_path: Pa
 
 
 def test_matcher_requires_unambiguous_article_identity():
-    matching = LocalEntry("wts_1_34", "1", "ka", "ཀ", (240,), "ཀ ka exact first article")
-    competing = LocalEntry("wts_1_34", "2", "ka", "ཁ", (241,), "ཁ ka unrelated")
+    matching = _local("wts_1_34:1:1", ("1",), "ka", "ཀ", 240, "ཀ ka exact first article")
+    competing = _local("wts_1_34:2:1", ("2",), "ka", "ཁ", 241, "ཁ ka unrelated")
     entries, latin, tibetan, page = build_indexes([matching, competing])
     source = SourceArticle(
         "badw:pdf:v2-p001:0", "generated_pdf_span", "ka", "2", "ཀ",
@@ -108,23 +129,26 @@ def test_tibetan_key_preserves_only_comparison_relevant_tibetan():
 
 
 def test_candidate_evidence_retains_ambiguous_identity_in_deterministic_order():
-    first = LocalEntry("wts_1_34", "1", "ka", "ཀ", (240,), "first")
-    second = LocalEntry("wts_1_34", "2", "ka", "ཀ", (241,), "second")
+    first = _local("wts_1_34:1:1", ("1",), "ka", "ཀ", 240, "first")
+    second = _local("wts_1_34:2:1", ("2",), "ka", "ཀ", 241, "second")
     entries, latin, tibetan, page = build_indexes([second, first])
     source = SourceArticle(
         "badw:html:ka/1", "database_article", "ka", "1", "ཀ", "source", {}
     )
     candidates = score_candidates(source, entries, latin, tibetan, page)
-    assert [candidate["entry"].entry_id for candidate in candidates] == ["1", "2"]
+    assert [candidate["entry"].anchor_id for candidate in candidates] == ["wts_1_34:1:1", "wts_1_34:2:1"]
     assert [candidate["rank"] for candidate in candidates] == [1, 2]
     assert score_article(source, entries, latin, tibetan, page)["confidence"] == "low"
     record = candidate_record(source, candidates[0])
     assert record == {
-        "contract_version": "badw-source-match-candidate-v1",
+        "contract_version": "badw-source-match-candidate-v2",
         "source_id": "badw:html:ka/1",
         "delivery_type": "database_article",
         "local_volume": "wts_1_34",
-        "local_entry_id": "1",
+        "local_anchor_id": "wts_1_34:1:1",
+        "legacy_entry_ids": ["1"],
+        "local_start_page": 240,
+        "local_start_line": 1,
         "rank": 1,
         "score": 0.82,
         "latin_exact": True,
@@ -132,6 +156,24 @@ def test_candidate_evidence_retains_ambiguous_identity_in_deterministic_order():
         "printed_page_exact": False,
         "local_pages": [240],
     }
+
+
+def test_split_legacy_entry_group_remains_two_coordinate_anchors():
+    first = _local("wts_1_34:10:2", ("legacy-1",), "ka", "ཀ", 240, "first")
+    second = _local("wts_1_34:11:3", ("legacy-1",), "kha", "ཁ", 241, "second")
+    entries, latin, tibetan, page = build_indexes([second, first])
+    assert {entry.anchor_id for entry in entries} == {"wts_1_34:10:2", "wts_1_34:11:3"}
+    assert latin["ka"] == [first]
+    assert latin["kha"] == [second]
+    assert page[("wts_1_34", 240)] == [first]
+    assert page[("wts_1_34", 241)] == [second]
+
+
+def test_empty_anchor_heading_cannot_create_a_candidate():
+    empty = _local("wts_8_b:91:12", ("legacy-empty",), "", "་", 900, "")
+    entries, latin, tibetan, page = build_indexes([empty])
+    source = SourceArticle("badw:html:blank", "database_article", "", "", "", "", {})
+    assert score_candidates(source, entries, latin, tibetan, page) == []
 
 
 def test_existing_source_snapshot_is_copied_without_reparsing_or_reordering(tmp_path: Path):

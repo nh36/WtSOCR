@@ -31,27 +31,31 @@ def _fixture(tmp_path: Path) -> tuple[Path, Path, Path, Path]:
          "homonym": "", "tibetan": "ག", "source_text": "unmatched", "provenance": {"sha256": "c"}},
     ]) + "\n", encoding="utf-8")
     fields = ["source_id", "matched", "confidence", "candidate_count", "score", "margin", "latin_exact",
-              "tibetan_exact", "local_volume", "local_entry_id"]
+              "tibetan_exact", "local_volume", "local_anchor_id", "legacy_entry_ids",
+              "local_start_page", "local_start_line"]
     matches = tmp_path / "matches.tsv"
     _write_tsv(matches, fields, [
         {"source_id": "badw:html:ka", "matched": "True", "confidence": "high", "candidate_count": "1",
          "score": "0.82", "margin": "0.82", "latin_exact": "True", "tibetan_exact": "True",
-         "local_volume": "wts_1_34", "local_entry_id": "10"},
+         "local_volume": "wts_1_34", "local_anchor_id": "wts_1_34:1:1", "legacy_entry_ids": "10",
+         "local_start_page": "1", "local_start_line": "1"},
         {"source_id": "badw:pdf:v2-p1:0", "matched": "True", "confidence": "medium", "candidate_count": "2",
          "score": "0.41", "margin": "0.06", "latin_exact": "True", "tibetan_exact": "False",
-         "local_volume": "wts_1_34", "local_entry_id": "11"},
+         "local_volume": "wts_1_34", "local_anchor_id": "wts_1_34:2:1", "legacy_entry_ids": "11",
+         "local_start_page": "2", "local_start_line": "1"},
         {"source_id": "badw:html:ga", "matched": "False", "confidence": "none", "candidate_count": "0",
-         "score": "", "margin": "", "latin_exact": "", "tibetan_exact": "", "local_volume": "", "local_entry_id": ""},
+         "score": "", "margin": "", "latin_exact": "", "tibetan_exact": "", "local_volume": "",
+         "local_anchor_id": "", "legacy_entry_ids": "", "local_start_page": "", "local_start_line": ""},
     ])
     qa = tmp_path / "qa/wts_1_34"
-    _write_tsv(qa / "wts_1_34_line_zones.tsv", ["page", "entry_id", "zone", "headword_tibetan", "headword_latin", "line_text"], [
-        {"page": "1", "entry_id": "10", "zone": "headword_line", "headword_latin": "ka", "headword_tibetan": "ཀ", "line_text": "ka"},
-        {"page": "2", "entry_id": "11", "zone": "headword_line", "headword_latin": "kha", "headword_tibetan": "ཁ", "line_text": "kha"},
-        {"page": "3", "entry_id": "12", "zone": "headword_line", "headword_latin": "nga", "headword_tibetan": "ང", "line_text": "nga"},
+    _write_tsv(qa / "wts_1_34_line_zones.tsv", ["page", "line", "entry_id", "zone", "headword_tibetan", "headword_latin", "line_text"], [
+        {"page": "1", "line": "1", "entry_id": "10", "zone": "headword_line", "headword_latin": "ka", "headword_tibetan": "ཀ", "line_text": "ka"},
+        {"page": "2", "line": "1", "entry_id": "11", "zone": "headword_line", "headword_latin": "kha", "headword_tibetan": "ཁ", "line_text": "kha"},
+        {"page": "3", "line": "1", "entry_id": "12", "zone": "headword_line", "headword_latin": "nga", "headword_tibetan": "ང", "line_text": "nga"},
     ])
     for volume in ("wts_35_51", "wts_8_b", "wts_9_m"):
         _write_tsv(qa.parent / volume / f"{volume}_line_zones.tsv",
-                   ["page", "entry_id", "zone", "headword_tibetan", "headword_latin", "line_text"], [])
+                   ["page", "line", "entry_id", "zone", "headword_tibetan", "headword_latin", "line_text"], [])
     inventory = tmp_path / "scan_only.tsv"
     _write_tsv(inventory, ["volume", "scan_page", "classification", "evidence"], [
         {"volume": "2", "scan_page": "273", "classification": "fascicle_copyright_acknowledgements", "evidence": "x"},
@@ -63,7 +67,7 @@ def test_identity_graph_keeps_witnesses_and_candidates_separate(tmp_path: Path):
     source, matches, qa, inventory = _fixture(tmp_path)
     witnesses, clusters, summary = build_identity_graph(source, matches, qa, inventory)
     by_source = {record["source_id"]: record for record in witnesses}
-    assert by_source["badw:html:ka"]["linked_cluster_id"] == "wtsocr-local:wts_1_34:10"
+    assert by_source["badw:html:ka"]["linked_cluster_id"] == "wtsocr-local:wts_1_34:1:1"
     assert by_source["badw:pdf:v2-p1:0"]["local_identity_disposition"] == "candidate_only"
     assert by_source["badw:pdf:v2-p1:0"]["linked_cluster_id"] is None
     assert by_source["badw:html:ga"]["local_identity_disposition"] == "unmatched"

@@ -22,12 +22,13 @@ from typing import Iterable
 import unicodedata
 
 from badw_canonical_pages import extract_headings
+from wtsocr_entry_segmentation import anchor_records, read_rows
 
 
 ROOT = Path(__file__).resolve().parents[1]
 VOLUMES = ("wts_1_34", "wts_35_51", "wts_8_b", "wts_9_m")
-CONTRACT_VERSION = "badw-source-index-v2"
-CANDIDATE_CONTRACT_VERSION = "badw-source-match-candidate-v1"
+CONTRACT_VERSION = "badw-source-index-v3"
+CANDIDATE_CONTRACT_VERSION = "badw-source-match-candidate-v2"
 
 
 def compact(text: str) -> str:
@@ -47,21 +48,13 @@ def tibetan_key(text: str) -> str:
     return re.sub("་+", "་", "".join(kept)).strip("་")
 
 
-def reconstructed_headword(row: dict[str, str]) -> str:
-    tibetan = row["headword_tibetan"].strip()
-    syllables = [value for value in re.split(r"[་༌\s]+", tibetan) if value]
-    line = row["line_text"].strip()
-    if tibetan and line.startswith(tibetan):
-        remainder = line[len(tibetan) :].strip()
-    else:
-        remainder = re.sub(r"^[\u0f00-\u0fff\s]+", "", line).strip()
-    return lemma_key(" ".join(remainder.split()[: len(syllables)]))
-
-
 @dataclass(frozen=True)
 class LocalEntry:
     volume: str
-    entry_id: str
+    anchor_id: str
+    legacy_entry_ids: tuple[str, ...]
+    start_page: int
+    start_line: int
     lemma: str
     tibetan: str
     pages: tuple[int, ...]
@@ -69,7 +62,7 @@ class LocalEntry:
 
     @property
     def key(self) -> str:
-        return f"{self.volume}:{self.entry_id}"
+        return self.anchor_id
 
 
 @dataclass(frozen=True)
@@ -84,31 +77,32 @@ class SourceArticle:
 
 
 def load_local_entries(qa_root: Path) -> list[LocalEntry]:
+    """Load one provisional local identity per QA headword coordinate.
+
+    Legacy ``entry_id`` groups are deliberately not used as entry boundaries:
+    a small number contain multiple headword lines. The coordinate anchor is
+    the stable identity. Its current end coordinate is useful provenance but
+    is not used as a complete entry segmentation or page-match evidence.
+    """
     entries: list[LocalEntry] = []
     for volume in VOLUMES:
         path = qa_root / volume / f"{volume}_line_zones.tsv"
-        with path.open(encoding="utf-8", newline="") as handle:
-            rows = list(csv.DictReader(handle, delimiter="\t"))
-        grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
-        for row in rows:
-            if row["entry_id"] != "0":
-                grouped[row["entry_id"]].append(row)
-        for entry_id, entry_rows in sorted(grouped.items(), key=lambda item: int(item[0])):
-            heads = [row for row in entry_rows if row["zone"] == "headword_line"]
-            if not heads:
-                continue
-            lemma = reconstructed_headword(heads[0])
-            if not lemma or len(lemma) > 120:
-                continue
+        for anchor in anchor_records(volume, read_rows(path)):
+            lemma = lemma_key(str(anchor["headword_loc_display"]))
             entries.append(LocalEntry(
                 volume=volume,
-                entry_id=entry_id,
+                anchor_id=str(anchor["anchor_id"]),
+                legacy_entry_ids=tuple(str(value) for value in anchor["legacy_entry_ids"]),
+                start_page=int(anchor["start_page"]),
+                start_line=int(anchor["start_line"]),
                 lemma=lemma,
-                tibetan=heads[0]["headword_tibetan"],
-                pages=tuple(sorted({int(row["page"]) for row in entry_rows})),
-                text="\n".join(row["line_text"] for row in entry_rows),
+                tibetan=str(anchor["headword_tibetan"]),
+                # A PDF-page match must support the exact headword coordinate,
+                # not a provisional span that has not been segmented fully.
+                pages=(int(anchor["start_page"]),),
+                text=str(anchor["headword_line_text"]),
             ))
-    return entries
+    return sorted(entries, key=lambda entry: entry.key)
 
 
 def load_html_articles(path: Path) -> list[SourceArticle]:
@@ -208,8 +202,10 @@ def build_indexes(entries: Iterable[LocalEntry]):
     page: dict[tuple[str, int], list[LocalEntry]] = defaultdict(list)
     all_entries = list(entries)
     for entry in all_entries:
-        latin[lemma_key(entry.lemma)].append(entry)
-        tibetan[tibetan_key(entry.tibetan)].append(entry)
+        if lemma_key(entry.lemma):
+            latin[lemma_key(entry.lemma)].append(entry)
+        if tibetan_key(entry.tibetan):
+            tibetan[tibetan_key(entry.tibetan)].append(entry)
         for number in entry.pages:
             page[(entry.volume, number)].append(entry)
     return all_entries, latin, tibetan, page
@@ -320,7 +316,10 @@ def candidate_record(source: SourceArticle, candidate: dict[str, object]) -> dic
         "source_id": source.source_id,
         "delivery_type": source.delivery_type,
         "local_volume": entry.volume,
-        "local_entry_id": entry.entry_id,
+        "local_anchor_id": entry.anchor_id,
+        "legacy_entry_ids": list(entry.legacy_entry_ids),
+        "local_start_page": entry.start_page,
+        "local_start_line": entry.start_line,
         "rank": candidate["rank"],
         "score": candidate["score"],
         "latin_exact": candidate["latin_exact"],
@@ -373,7 +372,8 @@ def run(
     fields = [
         "source_id", "delivery_type", "source_lemma", "source_homonym", "source_tibetan",
         "source_text_characters", "matched", "confidence", "candidate_count", "score", "margin",
-        "latin_exact", "tibetan_exact", "local_volume", "local_entry_id",
+        "latin_exact", "tibetan_exact", "local_volume", "local_anchor_id", "legacy_entry_ids",
+        "local_start_page", "local_start_line",
         "local_lemma", "local_tibetan", "local_pages", "source_provenance",
     ]
     with (output_root / "matches.tsv").open("w", encoding="utf-8", newline="") as handle:
@@ -390,12 +390,16 @@ def run(
                 "candidate_count": match.get("candidate_count", 0), "score": match.get("score", ""),
                 "margin": match.get("margin", ""),
                 "latin_exact": match.get("latin_exact", ""), "tibetan_exact": match.get("tibetan_exact", ""),
-                "local_volume": "", "local_entry_id": "", "local_lemma": "", "local_tibetan": "", "local_pages": "",
+                "local_volume": "", "local_anchor_id": "", "legacy_entry_ids": "",
+                "local_start_page": "", "local_start_line": "", "local_lemma": "",
+                "local_tibetan": "", "local_pages": "",
                 "source_provenance": json.dumps(source.provenance, ensure_ascii=False, sort_keys=True),
             }
             if match["matched"]:
                 entry = match["entry"]
-                row.update({"local_volume": entry.volume, "local_entry_id": entry.entry_id,
+                row.update({"local_volume": entry.volume, "local_anchor_id": entry.anchor_id,
+                            "legacy_entry_ids": ",".join(entry.legacy_entry_ids),
+                            "local_start_page": entry.start_page, "local_start_line": entry.start_line,
                             "local_lemma": entry.lemma, "local_tibetan": entry.tibetan,
                             "local_pages": ",".join(map(str, entry.pages))})
             writer.writerow(row)

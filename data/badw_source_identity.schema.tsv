@@ -8,6 +8,6 @@ source_provenance	yes	Cached-source/page/span provenance needed to locate the ex
 local_identity_disposition	yes	confident_link, candidate_only, or unmatched; candidate evidence is never silently promoted to identity.
 linked_cluster_id	conditional	Provisional WtSOCR local-entry anchor only for a confident identity link; it is not a final canonical dictionary-entry ID.
 candidate_local_identity	conditional	Best local candidate and matching evidence retained for candidate_only or confident_link dispositions.
-cluster_id	yes	Stable provisional local-entry anchor identifier based on WtSOCR volume and entry ID, not on a headword alone.
-identity_kind	yes	provisional_local_anchor: an interim cluster awaiting systematic source-side canonicalization.
+cluster_id	yes	Stable provisional local-anchor identifier based on the WtSOCR volume and exact QA headword coordinate (volume:page:line); legacy entry IDs remain provenance only.
+identity_kind	yes	provisional_local_anchor: an interim coordinate anchor awaiting systematic source-side canonicalization.
 confident_witness_ids	yes	All BAdW witness IDs with a high-confidence edge to the provisional local anchor.

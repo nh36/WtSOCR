@@ -21,7 +21,7 @@ from badw_source_matcher import load_local_entries as load_matcher_local_entries
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTRACT_VERSION = "badw-source-identity-v1"
+CONTRACT_VERSION = "badw-source-identity-v2"
 SNAPSHOT_CONTRACT_VERSION = "badw-source-snapshot-v1"
 
 
@@ -52,9 +52,9 @@ def stable_json(value: object) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
-def local_cluster_id(volume: str, entry_id: str) -> str:
+def local_cluster_id(anchor_id: str) -> str:
     """Return an opaque, snapshot-independent local anchor identifier."""
-    return f"wtsocr-local:{volume}:{entry_id}"
+    return f"wtsocr-local:{anchor_id}"
 
 
 def source_witness_id(source_id: str) -> str:
@@ -75,10 +75,10 @@ def classify_match(match: dict[str, str]) -> tuple[str, str | None, str]:
     if not parse_bool(match.get("matched", "")):
         return "unmatched", None, "no_local_candidate"
     confidence = match.get("confidence", "none")
-    volume, entry_id = match.get("local_volume", ""), match.get("local_entry_id", "")
-    if confidence == "high" and volume and entry_id:
-        return "confident_link", local_cluster_id(volume, entry_id), "high_confidence_identity"
-    if confidence in {"medium", "low"} and volume and entry_id:
+    anchor_id = match.get("local_anchor_id", "")
+    if confidence == "high" and anchor_id:
+        return "confident_link", local_cluster_id(anchor_id), "high_confidence_identity"
+    if confidence in {"medium", "low"} and anchor_id:
         return "candidate_only", None, f"{confidence}_confidence_candidate"
     return "unmatched", None, "incomplete_match_record"
 
@@ -105,14 +105,14 @@ def refresh_snapshot_id(manifest: dict[str, object]) -> None:
     manifest["snapshot_id"] = hashlib.sha256(stable_json(logical).encode("utf-8")).hexdigest()
 
 
-def load_local_entries(qa_root: Path) -> dict[tuple[str, str], dict[str, object]]:
-    entries: dict[tuple[str, str], dict[str, object]] = {}
+def load_local_entries(qa_root: Path) -> dict[str, dict[str, object]]:
+    entries: dict[str, dict[str, object]] = {}
     for local in load_matcher_local_entries(qa_root):
-        key = (local.volume, local.entry_id)
-        entries[key] = {
-            "cluster_id": local_cluster_id(*key), "volume": local.volume,
-            "entry_id": local.entry_id, "lemma": local.lemma,
-            "tibetan": local.tibetan, "pages": list(local.pages),
+        entries[local.anchor_id] = {
+            "cluster_id": local_cluster_id(local.anchor_id), "volume": local.volume,
+            "anchor_id": local.anchor_id, "legacy_entry_ids": list(local.legacy_entry_ids),
+            "start_page": local.start_page, "start_line": local.start_line,
+            "lemma": local.lemma, "tibetan": local.tibetan, "pages": list(local.pages),
         }
     return entries
 
@@ -145,9 +145,11 @@ def build_identity_graph(
         candidate: dict[str, object] | None = None
         if parse_bool(match.get("matched", "")):
             candidate = {
-                "cluster_id": local_cluster_id(match["local_volume"], match["local_entry_id"])
-                if match.get("local_volume") and match.get("local_entry_id") else None,
-                "volume": match.get("local_volume", ""), "entry_id": match.get("local_entry_id", ""),
+                "cluster_id": local_cluster_id(match["local_anchor_id"])
+                if match.get("local_anchor_id") else None,
+                "volume": match.get("local_volume", ""), "anchor_id": match.get("local_anchor_id", ""),
+                "legacy_entry_ids": [value for value in match.get("legacy_entry_ids", "").split(",") if value],
+                "start_page": match.get("local_start_page", ""), "start_line": match.get("local_start_line", ""),
                 "score": match.get("score", ""), "margin": match.get("margin", ""),
                 "candidate_count": int(match.get("candidate_count") or 0),
                 "loc_exact": parse_bool(match.get("latin_exact", "")),
@@ -177,7 +179,9 @@ def build_identity_graph(
             "contract_version": CONTRACT_VERSION,
             "cluster_id": cluster_id,
             "identity_kind": "provisional_local_anchor",
-            "local_identity": {"volume": entry["volume"], "entry_id": entry["entry_id"],
+            "local_identity": {"volume": entry["volume"], "anchor_id": entry["anchor_id"],
+                               "legacy_entry_ids": entry["legacy_entry_ids"],
+                               "start_page": entry["start_page"], "start_line": entry["start_line"],
                                "lemma": entry["lemma"], "tibetan_heading": entry["tibetan"],
                                "pages": entry["pages"]},
             "confident_witness_ids": sorted(linked_by_cluster[cluster_id]),

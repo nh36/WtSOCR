@@ -114,6 +114,8 @@ Stage C3 records the complete deterministic candidate set for every attempted BA
 
 Stage C4 begins from the local corpus alone: QA `headword_line` coordinates are materialized as stable provisional anchors (`volume:page:line`) while the legacy `entry_id` remains provenance. This exposes rare over-merged or unheaded QA groups without changing CURRENT text or inferring boundaries. A later reconciliation pass may use these exact anchors, but must still retain candidate ambiguity and source provenance.
 
+Stage C5 replays source identity using those coordinate anchors rather than legacy QA grouping. It matches only the LoC/Tibetan headword and the anchor start page; coarse inferred anchor ranges are deliberately not treated as article boundaries or prose evidence. The C3 source snapshot remains frozen, and this identity-only work neither reconciles BAdW prose nor changes the print-faithful release.
+
 ### Stage D — reconcile the print-faithful corpus
 
 Produce a corpus-scale ledger of exact differences and provenance. Automatically apply only source-backed OCR corrections that pass the confidence gates to the print-faithful layer, with deterministic rebuilds and audit checks.
