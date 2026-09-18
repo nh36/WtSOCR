@@ -125,3 +125,5 @@ Produce a corpus-scale ledger of exact differences and provenance. Automatically
 ### Stage E — expose editorial variants
 
 Represent substantive post-print BAdW readings as a separate enhanced/editorial layer linked to their print-faithful counterparts. Preserve both readings and their provenance.
+
+The future parser/export contract is [`data/lexical_record_contract.schema.tsv`](../data/lexical_record_contract.schema.tsv). It represents entries, ordered senses, Tibetan attestations/Belegstellen, citations, bibliography records, and editorial variants as separately identified, source-spanned records. This contract is intentionally only a validation target at present: it does not assert that the existing OCR or source cache has already been fully parsed.

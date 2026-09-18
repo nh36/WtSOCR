@@ -1,0 +1,30 @@
+record_type	field	required	type	allowed_values	description
+all	contract_version	yes	string	wts-lexical-record-v1	Versioned contract; parsed corpora must not silently change shape.
+all	id	yes	string		Globally unique stable record identifier within one export.
+all	source_spans	yes	array		Exact source-object field and Unicode offsets supporting this record; raw source remains in ignored cache.
+entry	layer	yes	enum	print_faithful|badw_editorial	The layer represented by this entry; neither layer silently overwrites the other.
+entry	headword	yes	object		Object with LoC transliteration and Tibetan fields, preserving source Unicode. LoC is the historical Library of Congress system, not Wylie.
+entry	witness_ids	yes	array		Zero or more source-witness identities; candidate identity must not be represented as a final entry link.
+sense	entry_id	yes	string		Foreign key to an entry record.
+sense	ordinal	yes	integer	positive integer	Source order within the entry.
+sense	definition	yes	string		Source-faithful definition text; presentation normalization, if any, belongs in a separately named derived field.
+attestation	sense_id	yes	string		Foreign key to a sense record.
+attestation	ordinal	yes	integer	positive integer	Source order within the sense.
+attestation	tibetan	yes	string		Tibetan quotation/Belegstellung as preserved from the source.
+attestation	german_translation	no	string		German translation or gloss when the source provides one.
+attestation	citation_id	no	string		Foreign key to a citation record when a siglum/citation is identified.
+citation	siglum	yes	string		Source-preserved citation siglum; normalization is explicit and never inferred by a broad OCR rule.
+citation	bibliographic_source_id	yes	string		Foreign key to a bibliographic_source record.
+citation	locator	no	string		Source-preserved citation locator.
+bibliographic_source	canonical_label	yes	string		Stable human-readable bibliographic source label.
+editorial_variant	entry_id	yes	string		Foreign key to the print-faithful or editorial entry being related.
+editorial_variant	field_path	yes	string		Named structured field whose readings differ; not an unbounded prose replacement.
+editorial_variant	base_reading	yes	string		Reading in the declared base layer.
+editorial_variant	variant_reading	yes	string		Reading in the related layer.
+editorial_variant	variant_kind	yes	enum	post_print_editorial_revision|print_variant|presentation|unresolved	Relationship classification; OCR damage belongs in a correction-evidence ledger, not here.
+editorial_variant	print_check_status	yes	enum	not_required|matches_badw|differs_from_badw|ambiguous|pending	Status of any needed print comparison.
+source_span	source_id	yes	string		Stable cached-object/article/PDF-run identifier.
+source_span	source_sha256	yes	sha256	64 lowercase hexadecimal characters	SHA-256 of the exact unmodified cached response object.
+source_span	field	yes	string		Named parsed/decoded source field containing the span.
+source_span	start	yes	integer	non-negative integer	Zero-based Unicode code-point offset, inclusive.
+source_span	end	yes	integer	positive integer	Zero-based Unicode code-point offset, exclusive and greater than start.

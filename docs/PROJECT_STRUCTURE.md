@@ -9,6 +9,7 @@ The current repository state is defined by a small set of entry points:
 | Project orientation | `README.md` |
 | Current operational state and queues | `docs/STATUS.md` |
 | BAdW source integration architecture | [`docs/BADW_SOURCE_INTEGRATION.md`](BADW_SOURCE_INTEGRATION.md) |
+| Future lexical-record data contract | `data/lexical_record_contract.schema.tsv` |
 | Deployable four-volume release | `release/current/` |
 | Release inventory and build provenance | `release/current/manifest.md` |
 | Reproducible input snapshots | `release/inputs/` |
