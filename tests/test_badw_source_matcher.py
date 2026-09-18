@@ -14,8 +14,11 @@ from badw_source_matcher import (  # noqa: E402
     LocalEntry,
     SourceArticle,
     build_indexes,
+    candidate_record,
     load_pdf_articles,
+    materialize_source_snapshot,
     score_article,
+    score_candidates,
     tibetan_key,
 )
 
@@ -102,3 +105,45 @@ def test_matcher_requires_unambiguous_article_identity():
 
 def test_tibetan_key_preserves_only_comparison_relevant_tibetan():
     assert tibetan_key(" ཀ༌་ 2 ") == "ཀ"
+
+
+def test_candidate_evidence_retains_ambiguous_identity_in_deterministic_order():
+    first = LocalEntry("wts_1_34", "1", "ka", "ཀ", (240,), "first")
+    second = LocalEntry("wts_1_34", "2", "ka", "ཀ", (241,), "second")
+    entries, latin, tibetan, page = build_indexes([second, first])
+    source = SourceArticle(
+        "badw:html:ka/1", "database_article", "ka", "1", "ཀ", "source", {}
+    )
+    candidates = score_candidates(source, entries, latin, tibetan, page)
+    assert [candidate["entry"].entry_id for candidate in candidates] == ["1", "2"]
+    assert [candidate["rank"] for candidate in candidates] == [1, 2]
+    assert score_article(source, entries, latin, tibetan, page)["confidence"] == "low"
+    record = candidate_record(source, candidates[0])
+    assert record == {
+        "contract_version": "badw-source-match-candidate-v1",
+        "source_id": "badw:html:ka/1",
+        "delivery_type": "database_article",
+        "local_volume": "wts_1_34",
+        "local_entry_id": "1",
+        "rank": 1,
+        "score": 0.82,
+        "latin_exact": True,
+        "tibetan_exact": True,
+        "printed_page_exact": False,
+        "local_pages": [240],
+    }
+
+
+def test_existing_source_snapshot_is_copied_without_reparsing_or_reordering(tmp_path: Path):
+    source = tmp_path / "source.jsonl"
+    source.write_text(
+        json.dumps({
+            "source_id": "badw:one", "delivery_type": "database_article",
+            "lemma": "ka", "homonym": "1", "tibetan": "ཀ", "source_text": "source",
+            "provenance": {},
+        }, ensure_ascii=False, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    destination = tmp_path / "copied.jsonl"
+    assert materialize_source_snapshot(source, None, None, destination) == 1
+    assert destination.read_bytes() == source.read_bytes()

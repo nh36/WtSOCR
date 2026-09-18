@@ -110,6 +110,8 @@ Improve WtSOCR entry segmentation and BAdW-to-local article identification subst
 
 The first Stage C2 deliverable is a deterministic source snapshot and identity graph. It keeps individual BAdW HTML/PDF witness occurrences, source provenance, and low-confidence candidate associations separate from provisional local-entry anchors. A local anchor is not a final canonical dictionary-entry identity, and no candidate association is silently promoted to one.
 
+Stage C3 records the complete deterministic candidate set for every attempted BAdW-to-local identity association, including the exact LoC headword, Tibetan-heading, and printed-page evidence for each candidate. It deliberately does not collapse an ambiguous candidate set to its first-ranked member, compare article prose, or generate correction evidence.
+
 ### Stage D — reconcile the print-faithful corpus
 
 Produce a corpus-scale ledger of exact differences and provenance. Automatically apply only source-backed OCR corrections that pass the confidence gates to the print-faithful layer, with deterministic rebuilds and audit checks.

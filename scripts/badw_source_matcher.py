@@ -17,6 +17,7 @@ import gzip
 import json
 from pathlib import Path
 import re
+import shutil
 from typing import Iterable
 import unicodedata
 
@@ -25,7 +26,8 @@ from badw_canonical_pages import extract_headings
 
 ROOT = Path(__file__).resolve().parents[1]
 VOLUMES = ("wts_1_34", "wts_35_51", "wts_8_b", "wts_9_m")
-CONTRACT_VERSION = "badw-source-index-v1"
+CONTRACT_VERSION = "badw-source-index-v2"
+CANDIDATE_CONTRACT_VERSION = "badw-source-match-candidate-v1"
 
 
 def compact(text: str) -> str:
@@ -213,13 +215,21 @@ def build_indexes(entries: Iterable[LocalEntry]):
     return all_entries, latin, tibetan, page
 
 
-def score_article(
+def score_candidates(
     source: SourceArticle,
     entries: list[LocalEntry],
     latin: dict[str, list[LocalEntry]],
     tibetan: dict[str, list[LocalEntry]],
     page: dict[tuple[str, int], list[LocalEntry]],
-) -> dict[str, object]:
+) -> list[dict[str, object]]:
+    """Return every deterministic local-identity candidate and its evidence.
+
+    This is deliberately an identity-only operation.  It does not compare an
+    article's prose with WtSOCR and it does not normalize the historical LoC
+    transliteration beyond Unicode/whitespace comparison used for headword
+    identity.  Callers must retain the complete returned set: selecting a
+    convenient best candidate would conceal ambiguity needed by Stage C.
+    """
     candidates: set[LocalEntry] = set(latin.get(lemma_key(source.lemma), []))
     candidates.update(tibetan.get(tibetan_key(source.tibetan), []))
     if source.delivery_type == "generated_pdf_span":
@@ -228,7 +238,7 @@ def score_article(
             scan_page = {2: 239, 3: 521, 4: 869}[int(source.provenance["volume"])] + int(printed_page)
             candidates.update(page.get(("wts_1_34", scan_page), []))
             candidates.update(page.get(("wts_1_34", scan_page + 1), []))
-    scored = []
+    scored: list[dict[str, object]] = []
     for entry in candidates:
         latin_exact = lemma_key(source.lemma) == lemma_key(entry.lemma)
         tibetan_exact = bool(tibetan_key(source.tibetan)) and tibetan_key(source.tibetan) == tibetan_key(entry.tibetan)
@@ -239,15 +249,35 @@ def score_article(
             if scan_page in entry.pages:
                 page_bonus = 0.18
         score = (0.41 if latin_exact else 0.0) + (0.41 if tibetan_exact else 0.0) + page_bonus
-        scored.append((score, latin_exact, tibetan_exact, entry))
-    scored.sort(key=lambda item: (-item[0], item[3].key))
+        scored.append({
+            "entry": entry,
+            "score": round(score, 6),
+            "latin_exact": latin_exact,
+            "tibetan_exact": tibetan_exact,
+            "printed_page_exact": bool(page_bonus),
+        })
+    scored.sort(key=lambda item: (-float(item["score"]), str(item["entry"].key)))
+    for rank, candidate in enumerate(scored, start=1):
+        candidate["rank"] = rank
+    return scored
+
+
+def score_article(
+    source: SourceArticle,
+    entries: list[LocalEntry],
+    latin: dict[str, list[LocalEntry]],
+    tibetan: dict[str, list[LocalEntry]],
+    page: dict[tuple[str, int], list[LocalEntry]],
+) -> dict[str, object]:
+    """Classify only the best candidate while retaining all rows elsewhere."""
+    scored = score_candidates(source, entries, latin, tibetan, page)
     if not scored:
         return {"matched": False, "confidence": "none", "candidate_count": 0}
     best = scored[0]
-    margin = best[0] - scored[1][0] if len(scored) > 1 else best[0]
-    if (best[1] and best[2] and margin >= 0.08) or (best[0] >= 0.70 and margin >= 0.12):
+    margin = float(best["score"]) - float(scored[1]["score"]) if len(scored) > 1 else float(best["score"])
+    if (best["latin_exact"] and best["tibetan_exact"] and margin >= 0.08) or (float(best["score"]) >= 0.70 and margin >= 0.12):
         confidence = "high"
-    elif (best[1] or best[2]) and margin >= 0.04:
+    elif (best["latin_exact"] or best["tibetan_exact"]) and margin >= 0.04:
         confidence = "medium"
     else:
         confidence = "low"
@@ -255,11 +285,11 @@ def score_article(
         "matched": True,
         "confidence": confidence,
         "candidate_count": len(scored),
-        "score": round(best[0], 6),
+        "score": round(float(best["score"]), 6),
         "margin": round(margin, 6),
-        "latin_exact": best[1],
-        "tibetan_exact": best[2],
-        "entry": best[3],
+        "latin_exact": best["latin_exact"],
+        "tibetan_exact": best["tibetan_exact"],
+        "entry": best["entry"],
     }
 
 
@@ -281,19 +311,64 @@ def read_source_articles(path: Path) -> Iterable[SourceArticle]:
             )
 
 
-def run(html_jsonl: Path, canonical_root: Path, qa_root: Path, output_root: Path) -> dict[str, object]:
+def candidate_record(source: SourceArticle, candidate: dict[str, object]) -> dict[str, object]:
+    """Serialize a candidate without leaking source text into tracked output."""
+    entry = candidate["entry"]
+    assert isinstance(entry, LocalEntry)
+    return {
+        "contract_version": CANDIDATE_CONTRACT_VERSION,
+        "source_id": source.source_id,
+        "delivery_type": source.delivery_type,
+        "local_volume": entry.volume,
+        "local_entry_id": entry.entry_id,
+        "rank": candidate["rank"],
+        "score": candidate["score"],
+        "latin_exact": candidate["latin_exact"],
+        "tibetan_exact": candidate["tibetan_exact"],
+        "printed_page_exact": candidate["printed_page_exact"],
+        "local_pages": list(entry.pages),
+    }
+
+
+def materialize_source_snapshot(
+    source_jsonl: Path | None,
+    html_jsonl: Path | None,
+    canonical_root: Path | None,
+    output_path: Path,
+) -> int:
+    """Materialize one deterministic input snapshot for offline identity work."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if source_jsonl is not None:
+        previous = list(read_source_articles(source_jsonl))
+        if [source.source_id for source in previous] != sorted(source.source_id for source in previous):
+            raise ValueError(f"source snapshot is not ordered by source_id: {source_jsonl}")
+        if len({source.source_id for source in previous}) != len(previous):
+            raise ValueError(f"source snapshot has duplicate source_id values: {source_jsonl}")
+        shutil.copyfile(source_jsonl, output_path)
+        return len(previous)
+    if html_jsonl is None or canonical_root is None:
+        raise ValueError("either source_jsonl or both html_jsonl and canonical_root are required")
     sources = load_html_articles(html_jsonl) + load_pdf_articles(canonical_root)
     sources.sort(key=lambda item: item.source_id)
-    source_count = len(sources)
-    entries, latin, tibetan, page = build_indexes(load_local_entries(qa_root))
-    output_root.mkdir(parents=True, exist_ok=True)
-    write_jsonl(output_root / "source_articles.jsonl", ({
+    write_jsonl(output_path, ({
         "contract_version": CONTRACT_VERSION, "source_id": source.source_id,
         "delivery_type": source.delivery_type, "lemma": source.lemma,
         "homonym": source.homonym, "tibetan": source.tibetan,
         "source_text": source.text, "provenance": source.provenance,
     } for source in sources))
-    del sources
+    return len(sources)
+
+
+def run(
+    html_jsonl: Path | None, canonical_root: Path | None, qa_root: Path,
+    output_root: Path, source_jsonl: Path | None = None,
+) -> dict[str, object]:
+    entries, latin, tibetan, page = build_indexes(load_local_entries(qa_root))
+    output_root.mkdir(parents=True, exist_ok=True)
+    source_path = output_root / "source_articles.jsonl"
+    source_count = materialize_source_snapshot(
+        source_jsonl, html_jsonl, canonical_root, source_path
+    )
     counts: Counter[str] = Counter()
     fields = [
         "source_id", "delivery_type", "source_lemma", "source_homonym", "source_tibetan",
@@ -304,7 +379,7 @@ def run(html_jsonl: Path, canonical_root: Path, qa_root: Path, output_root: Path
     with (output_root / "matches.tsv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, delimiter="\t")
         writer.writeheader()
-        for source in read_source_articles(output_root / "source_articles.jsonl"):
+        for source in read_source_articles(source_path):
             match = score_article(source, entries, latin, tibetan, page)
             counts[f"{source.delivery_type}:{match['confidence']}"] += 1
             row: dict[str, object] = {
@@ -324,20 +399,33 @@ def run(html_jsonl: Path, canonical_root: Path, qa_root: Path, output_root: Path
                             "local_lemma": entry.lemma, "local_tibetan": entry.tibetan,
                             "local_pages": ",".join(map(str, entry.pages))})
             writer.writerow(row)
+    candidate_rows: list[dict[str, object]] = []
+    for source in read_source_articles(source_path):
+        for candidate in score_candidates(source, entries, latin, tibetan, page):
+            candidate_rows.append(candidate_record(source, candidate))
+    write_jsonl(output_root / "candidate_evidence.jsonl", candidate_rows)
     summary = {"contract_version": CONTRACT_VERSION, "source_articles": source_count,
-               "local_entries": len(entries), "match_counts": dict(sorted(counts.items()))}
+               "local_entries": len(entries), "match_counts": dict(sorted(counts.items())),
+               "candidate_evidence_rows": len(candidate_rows)}
     (output_root / "summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return summary
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--html-jsonl", required=True, type=Path)
-    parser.add_argument("--canonical-root", required=True, type=Path)
+    parser.add_argument("--html-jsonl", type=Path)
+    parser.add_argument("--canonical-root", type=Path)
+    parser.add_argument("--source-jsonl", type=Path,
+                        help="reuse an existing deterministic source snapshot offline")
     parser.add_argument("--qa-root", default=ROOT / "release/current/qa", type=Path)
     parser.add_argument("--output-root", required=True, type=Path)
     args = parser.parse_args()
-    print(json.dumps(run(args.html_jsonl, args.canonical_root, args.qa_root, args.output_root), indent=2, sort_keys=True))
+    if args.source_jsonl is not None and (args.html_jsonl is not None or args.canonical_root is not None):
+        parser.error("--source-jsonl cannot be combined with --html-jsonl or --canonical-root")
+    if args.source_jsonl is None and (args.html_jsonl is None or args.canonical_root is None):
+        parser.error("supply --source-jsonl or both --html-jsonl and --canonical-root")
+    print(json.dumps(run(args.html_jsonl, args.canonical_root, args.qa_root, args.output_root,
+                         source_jsonl=args.source_jsonl), indent=2, sort_keys=True))
     return 0
 
 
