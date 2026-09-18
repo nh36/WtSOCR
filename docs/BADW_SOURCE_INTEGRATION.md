@@ -106,7 +106,9 @@ Resumably acquire the complete publicly exposed BAdW database/PDF corpus into th
 
 ### Stage C — improve article identification
 
-Improve WtSOCR entry segmentation and BAdW-to-local article identification substantially beyond the current 68.3% experimental success rate. Measure performance by volume, letter, delivery form, and ambiguity class.
+Improve WtSOCR entry segmentation and BAdW-to-local article identification substantially beyond the current 68.3% experimental success rate. Measure performance by volume, letter, delivery form, and ambiguity class. The Latin transliteration in the WTS is the historical Library of Congress (LoC) system, not Wylie; source identity and normalization code must use that terminology.
+
+The first Stage C2 deliverable is a deterministic source snapshot and identity graph. It keeps individual BAdW HTML/PDF witness occurrences, source provenance, and low-confidence candidate associations separate from provisional local-entry anchors. A local anchor is not a final canonical dictionary-entry identity, and no candidate association is silently promoted to one.
 
 ### Stage D — reconcile the print-faithful corpus
 

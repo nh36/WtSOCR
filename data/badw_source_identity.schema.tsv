@@ -1,0 +1,13 @@
+field	required	description
+contract_version	yes	Version of the deterministic BAdW source identity graph contract.
+witness_id	yes	Stable identifier for one BAdW source witness occurrence; it never asserts a canonical dictionary entry identity.
+source_id	yes	Stable identifier from the BAdW HTML article or generated-PDF-span source inventory.
+delivery_type	yes	BAdW delivery form, for example database_article or generated_pdf_span.
+source_identity	yes	Source-preserved lemma, homonym and Tibetan-heading identity fields; Latin is historical Library of Congress transliteration, not Wylie.
+source_provenance	yes	Cached-source/page/span provenance needed to locate the exact BAdW witness.
+local_identity_disposition	yes	confident_link, candidate_only, or unmatched; candidate evidence is never silently promoted to identity.
+linked_cluster_id	conditional	Provisional WtSOCR local-entry anchor only for a confident identity link; it is not a final canonical dictionary-entry ID.
+candidate_local_identity	conditional	Best local candidate and matching evidence retained for candidate_only or confident_link dispositions.
+cluster_id	yes	Stable provisional local-entry anchor identifier based on WtSOCR volume and entry ID, not on a headword alone.
+identity_kind	yes	provisional_local_anchor: an interim cluster awaiting systematic source-side canonicalization.
+confident_witness_ids	yes	All BAdW witness IDs with a high-confidence edge to the provisional local anchor.
