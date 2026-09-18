@@ -1,22 +1,34 @@
 record_type	field	required	type	allowed_values	description
-all	contract_version	yes	string	wts-lexical-record-v1	Versioned contract; parsed corpora must not silently change shape.
+all	contract_version	yes	string	wts-lexical-record-v2	Versioned contract; parsed corpora must not silently change shape.
 all	id	yes	string		Globally unique stable record identifier within one export.
 all	source_spans	yes	array		Exact source-object field and Unicode offsets supporting this record; raw source remains in ignored cache.
+all	source_snapshot_id	yes	string		Deterministic identifier for the input source snapshot named by the companion manifest.
+all	extraction_run_id	yes	string		Deterministic identifier for the extractor and exact source snapshot that produced this record.
 entry	layer	yes	enum	print_faithful|badw_editorial	The layer represented by this entry; neither layer silently overwrites the other.
 entry	headword	yes	object		Object with LoC transliteration and Tibetan fields, preserving source Unicode. LoC is the historical Library of Congress system, not Wylie.
 entry	witness_ids	yes	array		Zero or more source-witness identities; candidate identity must not be represented as a final entry link.
 sense	entry_id	yes	string		Foreign key to an entry record.
 sense	ordinal	yes	integer	positive integer	Source order within the entry.
 sense	definition	yes	string		Source-faithful definition text; presentation normalization, if any, belongs in a separately named derived field.
-attestation	sense_id	yes	string		Foreign key to a sense record.
-attestation	ordinal	yes	integer	positive integer	Source order within the sense.
+attestation	entry_id	yes	string		Foreign key to the entry containing this attestation.
+attestation	sense_id	no	string		Foreign key to a sense record when the source structure supports the association.
+attestation	association_status	yes	enum	explicit|entry_level|unresolved	Whether the source explicitly associates this attestation with the cited sense; absence of a sense is preserved rather than guessed.
+attestation	ordinal	yes	integer	positive integer	Source order within its declared entry or sense association.
 attestation	tibetan	yes	string		Tibetan quotation/Belegstellung as preserved from the source.
 attestation	german_translation	no	string		German translation or gloss when the source provides one.
-attestation	citation_id	no	string		Foreign key to a citation record when a siglum/citation is identified.
-citation	siglum	yes	string		Source-preserved citation siglum; normalization is explicit and never inferred by a broad OCR rule.
-citation	bibliographic_source_id	yes	string		Foreign key to a bibliographic_source record.
+attestation	citation_ids	yes	array		Zero or more foreign keys to citation records; multiple source citations are not collapsed.
+citation	entry_id	yes	string		Foreign key to the entry containing the source citation.
+citation	raw_text	yes	string		Complete visible source-preserved citation field; normalization is explicit and never inferred by a broad OCR rule.
+citation	siglum	no	string		Source-preserved siglum when structurally identifiable.
+citation	authority_status	yes	enum	resolved|unresolved|ambiguous|not_applicable	Bibliographic-authority resolution state; unresolved raw sigla remain valid evidence.
+citation	bibliographic_source_id	no	string		Foreign key to a bibliographic_source record when authority_status is resolved.
 citation	locator	no	string		Source-preserved citation locator.
 bibliographic_source	canonical_label	yes	string		Stable human-readable bibliographic source label.
+cross_reference	entry_id	yes	string		Foreign key to the entry containing the literal reference marker.
+cross_reference	marker	yes	enum	↑|↓	Literal source marker; it is never normalized into an OCR rule.
+cross_reference	resolution_status	yes	enum	resolved|unresolved	Whether the source supplies an explicit target.
+cross_reference	target_url	no	string		Absolute stable target URL when resolution_status is resolved.
+cross_reference	target_label	no	string		Visible source target label when supplied.
 editorial_variant	entry_id	yes	string		Foreign key to the print-faithful or editorial entry being related.
 editorial_variant	field_path	yes	string		Named structured field whose readings differ; not an unbounded prose replacement.
 editorial_variant	base_reading	yes	string		Reading in the declared base layer.
