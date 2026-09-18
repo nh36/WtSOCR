@@ -112,6 +112,8 @@ The first Stage C2 deliverable is a deterministic source snapshot and identity g
 
 Stage C3 records the complete deterministic candidate set for every attempted BAdW-to-local identity association, including the exact LoC headword, Tibetan-heading, and printed-page evidence for each candidate. It deliberately does not collapse an ambiguous candidate set to its first-ranked member, compare article prose, or generate correction evidence.
 
+Stage C4 begins from the local corpus alone: QA `headword_line` coordinates are materialized as stable provisional anchors (`volume:page:line`) while the legacy `entry_id` remains provenance. This exposes rare over-merged or unheaded QA groups without changing CURRENT text or inferring boundaries. A later reconciliation pass may use these exact anchors, but must still retain candidate ambiguity and source provenance.
+
 ### Stage D — reconcile the print-faithful corpus
 
 Produce a corpus-scale ledger of exact differences and provenance. Automatically apply only source-backed OCR corrections that pass the confidence gates to the print-faithful layer, with deterministic rebuilds and audit checks.
