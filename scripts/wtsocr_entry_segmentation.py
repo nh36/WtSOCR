@@ -26,7 +26,7 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 VOLUMES = ("wts_1_34", "wts_35_51", "wts_8_b", "wts_9_m")
-CONTRACT_VERSION = "wtsocr-local-headword-anchor-v1"
+CONTRACT_VERSION = "wtsocr-local-headword-anchor-v2"
 
 
 def _coordinate(row: dict[str, str]) -> tuple[int, int]:
@@ -43,6 +43,36 @@ def reconstruct_headword(row: dict[str, str]) -> str:
     else:
         remainder = re.sub(r"^[\u0f00-\u0fff\s]+", "", line).strip()
     return " ".join(remainder.split()[:len(syllables)])
+
+
+def heading_identity_fields(row: dict[str, str]) -> dict[str, str]:
+    """Expose source-free heading fields without repairing their readings.
+
+    ``headword_latin`` is a QA field and can be only the final syllable of a
+    multi-syllable historical Library of Congress (LoC) heading.  The bounded
+    display reconstruction is retained separately, with the original field
+    and line text, so later identity work can assess the extraction without
+    treating either form as an OCR correction.
+    """
+    raw_tibetan = row.get("headword_tibetan", "")
+    raw_latin = row.get("headword_latin", "")
+    line_text = row.get("line_text", "")
+    loc_display = reconstruct_headword(row)
+    if raw_tibetan.strip() and loc_display:
+        status = "usable_tibetan_and_loc_display"
+    elif raw_tibetan.strip():
+        status = "missing_loc_display"
+    elif loc_display:
+        status = "missing_tibetan"
+    else:
+        status = "missing_tibetan_and_loc_display"
+    return {
+        "headword_tibetan": raw_tibetan,
+        "headword_latin_field": raw_latin,
+        "headword_loc_display": loc_display,
+        "headword_line_text": line_text,
+        "headword_parser_status": status,
+    }
 
 
 def read_rows(path: Path) -> list[dict[str, str]]:
@@ -82,10 +112,7 @@ def anchor_records(volume: str, rows: Iterable[dict[str, str]]) -> list[dict[str
             "end_line": end_line,
             "boundary_kind": "qa_headword_line",
             "legacy_entry_ids": entry_ids,
-            "headword_tibetan": head.get("headword_tibetan", ""),
-            "headword_latin_field": head.get("headword_latin", ""),
-            "headword_loc_display": reconstruct_headword(head),
-            "headword_line_text": head.get("line_text", ""),
+            **heading_identity_fields(head),
             "line_count": len(current_rows),
             "zones": dict(sorted(Counter(row["zone"] for row in current_rows).items())),
         })

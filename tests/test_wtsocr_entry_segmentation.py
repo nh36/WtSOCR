@@ -11,7 +11,12 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from wtsocr_entry_segmentation import anchor_records, inventory, read_rows  # noqa: E402
+from wtsocr_entry_segmentation import (  # noqa: E402
+    anchor_records,
+    heading_identity_fields,
+    inventory,
+    read_rows,
+)
 
 
 def _row(page: int, line: int, entry_id: int, zone: str, tibetan: str = "", latin: str = "", text: str = "") -> dict[str, str]:
@@ -33,6 +38,24 @@ def test_headword_anchors_split_a_legacy_entry_without_changing_unicode():
     assert anchors[0]["headword_tibetan"] == "དཀར་ཅི་"
     assert anchors[0]["headword_loc_display"] == "dkar ci"
     assert anchors[1]["legacy_entry_ids"] == ["1"]
+
+
+def test_identity_fields_preserve_raw_heading_and_separate_loc_display():
+    row = _row(1, 1, 1, "headword_line", "དྲོད་ཕེབས་", "phebs", "དྲོད་ཕེབས་ drod phebs")
+    fields = heading_identity_fields(row)
+    assert fields == {
+        "headword_tibetan": "དྲོད་ཕེབས་",
+        "headword_latin_field": "phebs",
+        "headword_loc_display": "drod phebs",
+        "headword_line_text": "དྲོད་ཕེབས་ drod phebs",
+        "headword_parser_status": "usable_tibetan_and_loc_display",
+    }
+
+
+def test_identity_fields_report_malformed_missing_heading_without_inference():
+    fields = heading_identity_fields(_row(1, 1, 1, "headword_line", "", "", "   "))
+    assert fields["headword_parser_status"] == "missing_tibetan_and_loc_display"
+    assert fields["headword_loc_display"] == ""
 
 
 def test_inventory_is_deterministic_and_records_missing_and_multiple_legacy_ids(tmp_path: Path):
