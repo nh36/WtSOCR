@@ -21,16 +21,19 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REGISTRY = ROOT / "data/badw_pdf_glyph_mappings.tsv"
-CONTRACT_VERSION = "badw-canonical-glyph-residuals-v2"
+CONTRACT_VERSION = "badw-canonical-glyph-residuals-v3"
 UNKNOWN_FIELDS = (
     "family",
     "style",
     "cid_hex",
     "glyph_signature",
     "registry_relation",
+    "current_registry_state",
     "same_cid_registry_unicode",
     "same_outline_registry_unicode",
     "occurrence_count",
+    "region_occurrence_counts",
+    "region_page_counts",
     "canonical_page_count",
     "volume_count",
     "volumes",
@@ -120,6 +123,14 @@ def _registry_relation(
     )
 
 
+def _current_registry_state(relation: str) -> str:
+    """State whether a frozen unknown marker has an exact reviewed remedy."""
+
+    if relation == "exact_identity_registered":
+        return "exact_mapping_available_redecode_required"
+    return "no_exact_mapping_registered"
+
+
 def _write_tsv(path: Path, rows: Iterable[dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
@@ -133,6 +144,28 @@ def _glyph_context(runs: list[dict[str, object]], run_index: int, limit: int = 8
     right = min(len(runs), run_index + 4)
     text = "".join(str(run.get("decoded_unicode", "")) for run in runs[left:right])
     return " ".join(text.split())[:limit]
+
+
+def _run_regions(positioned_page: dict[str, object]) -> dict[int, set[str]]:
+    """Return conservative source-region labels for positioned text runs.
+
+    Tibetan candidates are emitted by the decoder from its own deterministic
+    run grouping.  They are useful for prioritising residuals that can affect
+    headwords or Tibetan citations, but are deliberately *not* labelled as
+    headwords here: later entry segmentation must establish that distinction.
+    Every other positioned run remains explicitly classified as other text.
+    """
+
+    regions: defaultdict[int, set[str]] = defaultdict(set)
+    for candidate in positioned_page.get("tibetan_text_candidates", []):
+        if not isinstance(candidate, dict):
+            continue
+        for value in candidate.get("run_indices", []):
+            try:
+                regions[int(value)].add("tibetan_text_candidate")
+            except (TypeError, ValueError):
+                continue
+    return dict(regions)
 
 
 def build_residual_inventory(
@@ -155,6 +188,10 @@ def build_residual_inventory(
     printed_pages: defaultdict[tuple[str, str, str, str], set[str]] = defaultdict(set)
     urls: defaultdict[tuple[str, str, str, str], set[str]] = defaultdict(set)
     contexts: defaultdict[tuple[str, str, str, str], set[str]] = defaultdict(set)
+    region_occurrences: defaultdict[tuple[str, str, str, str], Counter[str]] = defaultdict(Counter)
+    region_pages: defaultdict[tuple[str, str, str, str], defaultdict[str, set[str]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
     page_count = 0
     unknown_page_count = 0
 
@@ -173,6 +210,7 @@ def build_residual_inventory(
                 for font in record.get("representative_fonts", [])
             }
             runs = record["positioned_page"]["positioned_text_runs"]
+            run_regions = _run_regions(record["positioned_page"])
             page_had_unknown = False
             for run_index, run in enumerate(runs):
                 font = fonts.get(str(run.get("font_id", "")), {})
@@ -196,6 +234,10 @@ def build_residual_inventory(
                     printed_pages[key].add(f"v{volume}:p{record.get('printed_page', '')}")
                     urls[key].add(str(record["representative_source"]["canonical_url"]))
                     contexts[key].add(_glyph_context(runs, run_index))
+                    glyph_regions = run_regions.get(run_index, {"other_positioned_text"})
+                    for region in glyph_regions:
+                        region_occurrences[key][region] += 1
+                        region_pages[key][region].add(str(record["page_id"]))
             unknown_page_count += int(page_had_unknown)
 
     rows = []
@@ -203,6 +245,7 @@ def build_residual_inventory(
         counts.items(), key=lambda item: (-item[1], -len(pages[item[0]]), item[0])
     ):
         relation, cid_values, outline_values = _registry_relation(key, indexes)
+        registry_state = _current_registry_state(relation)
         rows.append(
             {
                 "family": key[0],
@@ -210,9 +253,18 @@ def build_residual_inventory(
                 "cid_hex": key[2],
                 "glyph_signature": key[3],
                 "registry_relation": relation,
+                "current_registry_state": registry_state,
                 "same_cid_registry_unicode": cid_values,
                 "same_outline_registry_unicode": outline_values,
                 "occurrence_count": occurrence_count,
+                "region_occurrence_counts": ",".join(
+                    f"{region}:{count}"
+                    for region, count in sorted(region_occurrences[key].items())
+                ),
+                "region_page_counts": ",".join(
+                    f"{region}:{len(page_ids)}"
+                    for region, page_ids in sorted(region_pages[key].items())
+                ),
                 "canonical_page_count": len(pages[key]),
                 "volume_count": len(seen_volumes[key]),
                 "volumes": ",".join(str(value) for value in sorted(seen_volumes[key])),
@@ -230,6 +282,10 @@ def build_residual_inventory(
     identities_by_family = Counter()
     by_relation = Counter()
     occurrences_by_relation = Counter()
+    unresolved_identities = 0
+    unresolved_occurrences = 0
+    exact_redecode_identities = 0
+    exact_redecode_occurrences = 0
     for row in rows:
         family = str(row["family"] or "(unknown)")
         by_family[family] += int(row["occurrence_count"])
@@ -237,6 +293,12 @@ def build_residual_inventory(
         relation = str(row["registry_relation"])
         by_relation[relation] += 1
         occurrences_by_relation[relation] += int(row["occurrence_count"])
+        if row["current_registry_state"] == "exact_mapping_available_redecode_required":
+            exact_redecode_identities += 1
+            exact_redecode_occurrences += int(row["occurrence_count"])
+        else:
+            unresolved_identities += 1
+            unresolved_occurrences += int(row["occurrence_count"])
     summary: dict[str, object] = {
         "contract_version": CONTRACT_VERSION,
         "canonical_root": canonical_root.as_posix(),
@@ -245,8 +307,12 @@ def build_residual_inventory(
         "volumes": list(selected_volumes),
         "canonical_pages": page_count,
         "pages_with_unknowns": unknown_page_count,
-        "distinct_unknown_identities": len(rows),
-        "unknown_occurrences": sum(counts.values()),
+        "decoded_unknown_identities": len(rows),
+        "decoded_unknown_occurrences": sum(counts.values()),
+        "exact_registry_redecode_identities": exact_redecode_identities,
+        "exact_registry_redecode_occurrences": exact_redecode_occurrences,
+        "currently_unmapped_identities": unresolved_identities,
+        "currently_unmapped_occurrences": unresolved_occurrences,
         "unknown_identities_by_family": dict(sorted(identities_by_family.items())),
         "unknown_occurrences_by_family": dict(sorted(by_family.items())),
         "unknown_identities_by_registry_relation": dict(sorted(by_relation.items())),

@@ -15,7 +15,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from badw_glyph_residuals import build_residual_inventory  # noqa: E402
 
 
-def _write_page(root: Path, volume: int, page: int, *, unknown: bool) -> None:
+def _write_page(
+    root: Path, volume: int, page: int, *, unknown: bool, tibetan_candidate: bool = False
+) -> None:
     pages = root / f"volume_{volume}" / "pages"
     pages.mkdir(parents=True, exist_ok=True)
     glyph = {
@@ -44,7 +46,12 @@ def _write_page(root: Path, volume: int, page: int, *, unknown: bool) -> None:
                     "decoded_unicode": glyph["unicode"],
                     "glyphs": [glyph],
                 }
-            ]
+            ],
+            "tibetan_text_candidates": (
+                [{"kind": "body_tibetan_text", "run_indices": [0]}]
+                if tibetan_candidate
+                else []
+            ),
         },
     }
     with gzip.open(pages / f"p{page}.json.gz", "wt", encoding="utf-8") as handle:
@@ -84,8 +91,10 @@ def test_canonical_residual_inventory_counts_and_is_deterministic(tmp_path):
 
     assert summary["canonical_pages"] == 3
     assert summary["pages_with_unknowns"] == 2
-    assert summary["distinct_unknown_identities"] == 1
-    assert summary["unknown_occurrences"] == 2
+    assert summary["decoded_unknown_identities"] == 1
+    assert summary["decoded_unknown_occurrences"] == 2
+    assert summary["currently_unmapped_identities"] == 1
+    assert summary["currently_unmapped_occurrences"] == 2
     with (first / "unknown_glyph_identities.tsv").open(
         encoding="utf-8", newline=""
     ) as handle:
@@ -94,8 +103,11 @@ def test_canonical_residual_inventory_counts_and_is_deterministic(tmp_path):
     assert row["canonical_page_count"] == "2"
     assert row["font_program_hashes"] == "a" * 64
     assert row["registry_relation"] == "ambiguous_registry_analogy"
+    assert row["current_registry_state"] == "no_exact_mapping_registered"
     assert row["same_cid_registry_unicode"] == "a"
     assert row["same_outline_registry_unicode"] == "b"
+    assert row["region_occurrence_counts"] == "other_positioned_text:2"
+    assert row["region_page_counts"] == "other_positioned_text:2"
     assert summary["unknown_identities_by_registry_relation"] == {
         "ambiguous_registry_analogy": 1
     }
@@ -135,3 +147,44 @@ def test_registry_relationship_classification(tmp_path, cid, signature, expected
     ) as handle:
         row = next(csv.DictReader(handle, delimiter="\t"))
     assert row["registry_relation"] == expected
+
+
+def test_exact_registry_identity_is_redecode_work_not_new_mapping_work(tmp_path):
+    canonical = tmp_path / "canonical"
+    _write_page(canonical, 2, 1, unknown=True)
+    page = next((canonical / "volume_2" / "pages").glob("*.json.gz"))
+    with gzip.open(page, "rt", encoding="utf-8") as handle:
+        record = json.load(handle)
+    glyph = record["positioned_page"]["positioned_text_runs"][0]["glyphs"][0]
+    glyph["glyph_signature"] = "outline-old"
+    with gzip.open(page, "wt", encoding="utf-8") as handle:
+        json.dump(record, handle, ensure_ascii=False, sort_keys=True)
+    registry = tmp_path / "registry.tsv"
+    _write_registry(registry)
+
+    summary = build_residual_inventory(canonical, tmp_path / "output", (2,), registry)
+    assert summary["exact_registry_redecode_identities"] == 1
+    assert summary["exact_registry_redecode_occurrences"] == 1
+    assert summary["currently_unmapped_identities"] == 0
+    assert summary["currently_unmapped_occurrences"] == 0
+
+
+def test_residual_inventory_marks_decoder_tibetan_candidates_conservatively(tmp_path):
+    canonical = tmp_path / "canonical"
+    _write_page(canonical, 2, 1, unknown=True, tibetan_candidate=True)
+    _write_page(canonical, 2, 2, unknown=True)
+    registry = tmp_path / "registry.tsv"
+    _write_registry(registry)
+
+    output = tmp_path / "output"
+    build_residual_inventory(canonical, output, (2,), registry)
+    with (output / "unknown_glyph_identities.tsv").open(
+        encoding="utf-8", newline=""
+    ) as handle:
+        row = next(csv.DictReader(handle, delimiter="\t"))
+    assert row["region_occurrence_counts"] == (
+        "other_positioned_text:1,tibetan_text_candidate:1"
+    )
+    assert row["region_page_counts"] == (
+        "other_positioned_text:1,tibetan_text_candidate:1"
+    )
