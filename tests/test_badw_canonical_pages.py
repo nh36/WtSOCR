@@ -12,7 +12,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from badw_canonical_pages import build_volume, printed_page_number  # noqa: E402
+from badw_canonical_pages import (  # noqa: E402
+    build_volume,
+    extract_headings,
+    printed_page_number,
+)
 
 
 def _run(index, text, y, font_id="body", *, unknown=False):
@@ -136,6 +140,46 @@ def test_printed_page_number_joins_same_baseline_fragments():
     assert printed_page_number(runs) == (363, "positioned_footer_same_baseline:363")
 
 
+def test_heading_extraction_preserves_optional_homonym_before_loc_headword():
+    page = {
+        "positioned_text_runs": [
+            _run(0, "ཀ", 100.0, "rabten"),
+            _run(1, "2", 100.0, "body"),
+            _run(2, "ka", 100.0, "italic"),
+        ],
+        "tibetan_text_candidates": [
+            {
+                "candidate_index": 0,
+                "kind": "body_tibetan_text",
+                "decoded_unicode": "ཀ",
+                "run_indices": [0],
+                "unknown_glyphs": 0,
+                "x": 10.0,
+                "y": 100.0,
+            }
+        ],
+    }
+    fonts = {
+        "rabten": {"family": "RabtenTibetan", "style": "regular"},
+        "body": {"family": "TGaramond", "style": "regular"},
+        "italic": {"family": "TGaramond", "style": "italic"},
+    }
+    assert extract_headings(page, fonts) == [
+        {
+            "candidate_index": 0,
+            "tibetan": "ཀ",
+            "tibetan_run_indices": "0",
+            "tibetan_unknown_glyphs": 0,
+            "homonym": "2",
+            "homonym_run_indices": "1",
+            "loc": "ka",
+            "loc_run_indices": "2",
+            "x": 10.0,
+            "y": 100.0,
+        }
+    ]
+
+
 def test_canonical_builder_deduplicates_and_preserves_provenance(tmp_path):
     decode_root = tmp_path / "decode"
     _write_fixture(decode_root)
@@ -163,7 +207,7 @@ def test_canonical_builder_deduplicates_and_preserves_provenance(tmp_path):
     ) as handle:
         heading = next(csv.DictReader(handle, delimiter="\t"))
     assert heading["tibetan"] == "ཀ"
-    assert heading["wylie"] == "ka"
+    assert heading["loc"] == "ka"
 
     page_path = next((first / "volume_2/pages").glob("*.json.gz"))
     with gzip.open(page_path, "rt", encoding="utf-8") as handle:

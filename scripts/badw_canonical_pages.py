@@ -89,7 +89,13 @@ def printed_page_number(runs: list[dict[str, object]]) -> tuple[int | None, str]
 def extract_headings(
     page: dict[str, object], font_by_id: dict[str, dict[str, object]]
 ) -> list[dict[str, object]]:
-    """Extract paired Tibetan and italic-WTS heading runs without cleaning."""
+    """Extract paired Tibetan, optional homonym, and italic LoC heading runs.
+
+    The generated PDFs put a regular TGaramond homonym digit between the Tibetan
+    heading and the italic Library-of-Congress (LoC) transliterated headword.
+    It is source structure rather than a presentation artefact, so retain its
+    run provenance instead of folding it into either neighbouring field.
+    """
 
     runs = page["positioned_text_runs"]
     assert isinstance(runs, list)
@@ -101,8 +107,25 @@ def extract_headings(
         if not re.search(r"[\u0f40-\u0fbc]", tibetan):
             continue
         cursor = max(candidate["run_indices"]) + 1
+        homonym_pieces: list[str] = []
+        homonym_run_indices: list[int] = []
+        heading_y = float(candidate["y"])
+        while cursor < len(runs):
+            run = runs[cursor]
+            font = font_by_id.get(str(run["font_id"]), {})
+            text = str(run["decoded_unicode"])
+            if (
+                font.get("family") != "TGaramond"
+                or font.get("style") != "regular"
+                or abs(float(run["y"]) - heading_y) > 0.02
+                or not re.fullmatch(r"\s*\d+\s*", text)
+            ):
+                break
+            homonym_pieces.append(text)
+            homonym_run_indices.append(int(run["run_index"]))
+            cursor += 1
         pieces: list[str] = []
-        wylie_run_indices: list[int] = []
+        loc_run_indices: list[int] = []
         baseline: float | None = None
         while cursor < len(runs):
             run = runs[cursor]
@@ -114,7 +137,7 @@ def extract_headings(
                 break
             baseline = y if baseline is None else baseline
             pieces.append(str(run["decoded_unicode"]))
-            wylie_run_indices.append(int(run["run_index"]))
+            loc_run_indices.append(int(run["run_index"]))
             cursor += 1
         headings.append(
             {
@@ -124,9 +147,13 @@ def extract_headings(
                     str(value) for value in candidate["run_indices"]
                 ),
                 "tibetan_unknown_glyphs": candidate["unknown_glyphs"],
-                "wylie": "".join(pieces).strip(),
-                "wylie_run_indices": ",".join(
-                    str(value) for value in wylie_run_indices
+                "homonym": "".join(homonym_pieces).strip(),
+                "homonym_run_indices": ",".join(
+                    str(value) for value in homonym_run_indices
+                ),
+                "loc": "".join(pieces).strip(),
+                "loc_run_indices": ",".join(
+                    str(value) for value in loc_run_indices
                 ),
                 "x": candidate["x"],
                 "y": candidate["y"],
