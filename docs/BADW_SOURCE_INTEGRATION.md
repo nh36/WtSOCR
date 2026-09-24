@@ -120,6 +120,8 @@ Stage C5 replays source identity using those coordinate anchors rather than lega
 
 Stage C6 replays C5 witnesses from that frozen candidate set through a stricter dual-evidence gate without changing a source or local reading. It preserves raw QA Tibetan, the raw LoC field, and the bounded LoC display reconstruction as distinct fields. A generated-PDF witness can be promoted only when one candidate has exact LoC and Tibetan identity plus exact printed-page support. A database witness with exact dual headings remains a candidate until an independent BAdW source discriminator resolves it; one-field and page-only matches never promote an identity. This is an identity gate, not prose reconciliation or correction evidence.
 
+Stage C11 materializes the C6/C10 results as a snapshot-bound identity handoff. It verifies the immutable source snapshot, retains every candidate edge, and exposes a provisional local anchor only where the existing strict dual-evidence or two-sided-neighbourhood gate is met. Later lexical work may consume confident links only; candidate edges never populate a final entry-witness association. This remains identity work, not source-text reconciliation.
+
 ### Stage D — reconcile the print-faithful corpus
 
 Produce a corpus-scale ledger of exact differences and provenance. Automatically apply only source-backed OCR corrections that pass the confidence gates to the print-faithful layer, with deterministic rebuilds and audit checks.

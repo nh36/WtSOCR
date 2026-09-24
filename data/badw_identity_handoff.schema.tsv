@@ -1,0 +1,18 @@
+record_type	field	required	description
+source_identity_handoff	contract_version	yes	Version of the deterministic snapshot-bound identity-handoff contract.
+source_identity_handoff	source_snapshot_id	yes	Immutable BAdW source snapshot verified before this handoff was built.
+source_identity_handoff	source_id	yes	Stable BAdW source witness occurrence identifier; it is not a canonical dictionary entry ID.
+source_identity_handoff	delivery_type	yes	BAdW delivery type, for example database_article or generated_pdf_span.
+source_identity_handoff	identity_status	yes	confident_link, candidate_only, or unmatched; candidate evidence is never silently promoted.
+source_identity_handoff	evidence_disposition	yes	Disposition preserved from the C6/C10 identity gate.
+source_identity_handoff	identity_method	conditional	Exact confidence gate used only for a confident_link.
+source_identity_handoff	linked_local_anchor_id	conditional	Provisional WtSOCR QA coordinate anchor only for a confident link.
+candidate_identity_edge	source_id	yes	BAdW witness with a retained possible local-anchor association.
+candidate_identity_edge	local_anchor_id	yes	Provisional local anchor in volume:page:line form.
+candidate_identity_edge	edge_disposition	yes	confident_link only for the selected strict-gate edge; every other retained edge is candidate_only.
+candidate_identity_edge	latin_exact	yes	Exact historical Library of Congress (LoC) heading evidence; it is not Wylie.
+candidate_identity_edge	tibetan_exact	yes	Exact Tibetan-heading evidence.
+candidate_identity_edge	printed_page_exact	yes	Exact printed-page evidence when available from a generated PDF span.
+local_anchor_handoff	local_anchor_id	yes	Provisional local QA coordinate anchor; it is not a final canonical entry ID.
+local_anchor_handoff	confident_source_ids	yes	All source witnesses with a strict confident link to this anchor.
+local_anchor_handoff	candidate_source_ids	yes	All non-selected source candidates retained for later resolution.
