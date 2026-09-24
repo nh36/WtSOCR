@@ -9,7 +9,7 @@ The current repository state is defined by a small set of entry points:
 | Project orientation | `README.md` |
 | Current operational state and queues | `docs/STATUS.md` |
 | BAdW source integration architecture | [`docs/BADW_SOURCE_INTEGRATION.md`](BADW_SOURCE_INTEGRATION.md) |
-| Future lexical-record data contract | `data/lexical_record_contract.schema.tsv` |
+| Lexical-record contract and local database builder | `data/lexical_record_contract.schema.tsv`, `scripts/build_lexical_database.py` |
 | Deployable four-volume release | `release/current/` |
 | Release inventory and build provenance | `release/current/manifest.md` |
 | Reproducible input snapshots | `release/inputs/` |
@@ -27,6 +27,8 @@ Generated evidence tables live mainly under `data/tibetan_*.tsv` and `release/cu
 `release/current/text/` is deployable corrected text. `release/current/qa/` and `release/current/checksums.tsv` verify and explain that snapshot. `docs/STATUS.md` is generated from the checked-in release and ledgers by `scripts/build_status.py`.
 
 BAdW integration follows a two-layer model: the existing release remains print-faithful, while current BAdW editorial readings and post-print variants belong to a separate source layer. Raw BAdW source caches and decoded corpora remain ignored under `work/`; see [`docs/BADW_SOURCE_INTEGRATION.md`](BADW_SOURCE_INTEGRATION.md).
+
+`scripts/build_lexical_database.py` turns a validated lexical-record JSONL snapshot into a local SQLite/FTS database with source spans, snapshot hashes, and a separate siglum-registry candidate layer. It is deliberately non-corrective: registry matches never silently resolve a citation, and BAdW data belongs in an ignored database under `work/`.
 
 ## Immutable release snapshots
 
