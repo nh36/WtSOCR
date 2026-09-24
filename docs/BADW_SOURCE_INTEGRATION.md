@@ -86,6 +86,8 @@ The proposed field contract is recorded in [`data/badw_correction_evidence.schem
 
 Fetched BAdW HTML and PDFs, decoded bulk article text, rendered pages, and intermediate corpora stay under an ignored `work/` directory in a content-addressed cache. They are not committed or published as part of the repository. Tracked code, tests, small non-substantial fixtures, source metadata, and coordinate-level derived evidence may be considered separately.
 
+Before an identity, parsing, or reconciliation run consumes that ignored material, it must pin an immutable offline source snapshot: designated canonical-page and crosswalk inputs, glyph-registry version, cache request/object integrity, and known page/glyph residuals. The reusable snapshot tool records hashes and source-quality observations without copying BAdW text into Git; later work must name the snapshot it used rather than treating `work/` as an unversioned current source.
+
 Parsing must preserve the original BAdW Unicode. WtSOCR OCR correction rules must never be applied to the cached or parsed BAdW source text.
 
 ## Generated PDFs for volumes 2–4

@@ -1,0 +1,11 @@
+field	type	required	description
+issue_id	string	yes	Stable deterministic identifier for a known source-quality issue.
+category	enum	yes	printed_page_gap or unresolved_glyph_identity.
+status	string	yes	Observation status; it must not claim permanent source unavailability.
+volume	positive_integer	no	Published WTS volume when known.
+printed_page	positive_integer	no	Published print page when the issue is page-specific.
+identity	string	no	Exact decoder glyph identity family:style:CID:outline-signature when applicable.
+occurrences	non_negative_integer	no	Observed canonical-page occurrences of an unresolved identity.
+evidence_path	repository_relative_path	yes	Ignored-work input from which the observation was derived.
+evidence_sha256	sha256	yes	Hash of that exact evidence input.
+notes	string	no	Concise source-faithful interpretation of the issue.
