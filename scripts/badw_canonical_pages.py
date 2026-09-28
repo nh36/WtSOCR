@@ -117,7 +117,10 @@ def extract_headings(
             if (
                 font.get("family") != "TGaramond"
                 or font.get("style") != "regular"
-                or abs(float(run["y"]) - heading_y) > 0.02
+                # The superscript-like homonym sits about 4.6 PDF points
+                # below the Rabten heading baseline in some generated pages.
+                # Requiring the same baseline drops the entire LoC heading.
+                or not 0 <= heading_y - float(run["y"]) <= 6.0
                 or not re.fullmatch(r"\s*\d+\s*", text)
             ):
                 break
