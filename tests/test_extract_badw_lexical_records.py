@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -72,5 +73,8 @@ def test_jsonl_emission_is_deterministic_and_keeps_structural_failures_as_diagno
         assert first == second == {"articles": 2, "diagnostics": 1, "records": 7, "snapshot_id": "fixture"}
         assert paths[0][0].read_bytes() == paths[1][0].read_bytes()
         assert paths[0][1].read_bytes() == paths[1][1].read_bytes()
+        manifest = json.loads(paths[0][2].read_text(encoding="utf-8"))
+        assert manifest["records_sha256"] == hashlib.sha256(paths[0][0].read_bytes()).hexdigest()
+        assert manifest["diagnostics_sha256"] == hashlib.sha256(paths[0][1].read_bytes()).hexdigest()
         diagnostics = [json.loads(line) for line in paths[0][1].read_text(encoding="utf-8").splitlines()]
         assert diagnostics == [{"reason": "lemma lacks source_text", "source_identifier": "badw:https://wts-digital.badw.de/lemma/ka/2"}]

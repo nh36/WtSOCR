@@ -14,8 +14,9 @@ from pathlib import Path
 from typing import Any
 
 from validate_lexical_record_contract import CONTRACT_VERSION, read_jsonl, validate
+from verify_badw_lexical_source import VerificationError, audit_lexical_records, sha256 as verified_sha256, verify_verified_lexical_source
 
-BUILDER_VERSION = "lexical-database-builder-v1"
+BUILDER_VERSION = "lexical-database-builder-v2"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -39,7 +40,7 @@ def read_sigla(path: Path) -> list[dict[str, str]]:
     return sorted(rows, key=lambda r: r["canon"])
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate"]
     digest = hashlib.sha256()
     for table in tables:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})")]
@@ -49,24 +50,57 @@ def logical_digest(conn: sqlite3.Connection) -> str:
     return digest.hexdigest()
 
 def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = DEFAULT_SCHEMA,
-          sigla: Path = DEFAULT_SIGLA, records_manifest: Path | None = None, force: bool = False) -> dict[str, Any]:
+          sigla: Path = DEFAULT_SIGLA, records_manifest: Path | None = None,
+          verified_source_manifest: Path | None = None, force: bool = False,
+          repo_root: Path = ROOT) -> dict[str, Any]:
+    if records_manifest is None or verified_source_manifest is None:
+        raise BuildError("records_manifest and verified_source_manifest are required")
+    try:
+        verified_source = verify_verified_lexical_source(verified_source_manifest, repo_root)
+        span_audit = audit_lexical_records(records_path, verified_source_manifest, repo_root)
+    except VerificationError as error:
+        raise BuildError(str(error)) from error
+    try:
+        extractor_manifest = json.loads(records_manifest.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise BuildError(f"invalid records manifest: {records_manifest}") from error
+    if extractor_manifest.get("diagnostic_count") != 0:
+        raise BuildError("records manifest contains extraction diagnostics")
+    if extractor_manifest.get("records_sha256") != sha256(records_path):
+        raise BuildError("records do not match records manifest")
+    if extractor_manifest.get("input_sha256") != verified_source["parsed_articles_sha256"]:
+        raise BuildError("records manifest input differs from verified parsed source")
+    if extractor_manifest.get("snapshot_id") != verified_source["source_snapshot_id"]:
+        raise BuildError("records manifest snapshot differs from verified source")
+    if extractor_manifest.get("verified_lexical_source_sha256") != verified_source["verified_lexical_source_sha256"]:
+        raise BuildError("records manifest is not bound to verified lexical source")
+    expected_objects = {(item["source_identifier"], item["source_sha256"])
+                        for item in verified_source["article_source_objects"]}
+    manifest_objects = {(str(item.get("source_identifier")), str(item.get("sha256")))
+                        for item in extractor_manifest.get("source_objects", []) if isinstance(item, dict)}
+    if manifest_objects != expected_objects or extractor_manifest.get("source_object_count") != len(expected_objects):
+        raise BuildError("records manifest source objects differ from verified source")
     records = read_jsonl(records_path)
     errors = validate(records)
     if errors: raise BuildError("invalid lexical records:\n" + "\n".join(errors[:20]))
     snapshots = sorted({r["source_snapshot_id"] for r in records})
-    if len(snapshots) != 1: raise BuildError("this v1 builder requires exactly one source snapshot")
+    if len(snapshots) != 1: raise BuildError("builder requires exactly one source snapshot")
     snapshot = snapshots[0]
+    if snapshot != verified_source["source_snapshot_id"]:
+        raise BuildError("records snapshot differs from verified source")
     if database.exists() and not force: raise BuildError(f"database exists: {database} (use --force to replace it)")
     if manifest.exists() and not force: raise BuildError(f"manifest exists: {manifest} (use --force to replace it)")
     database.parent.mkdir(parents=True, exist_ok=True); manifest.parent.mkdir(parents=True, exist_ok=True)
     input_hash, schema_hash, sigla_hash = sha256(records_path), sha256(schema), sha256(sigla)
-    manifest_hash = sha256(records_manifest) if records_manifest else None
+    manifest_hash = sha256(records_manifest)
+    verified_manifest_hash = verified_sha256(verified_source_manifest)
     temp = database.with_name(database.name + ".tmp")
     if temp.exists(): temp.unlink()
     conn = sqlite3.connect(temp)
     try:
         conn.executescript(schema.read_text(encoding="utf-8")); conn.execute("PRAGMA foreign_keys = ON")
-        conn.execute("INSERT INTO source_snapshot VALUES (?, ?, ?, ?, NULL)", (snapshot, "badw_html", input_hash, manifest_hash))
+        conn.execute("INSERT INTO source_snapshot VALUES (?, ?, ?, ?, NULL)",
+                     (snapshot, "badw_html", input_hash, manifest_hash))
         objects: dict[str, str] = {}
         for row in records:
             for span in row["source_spans"]:
@@ -108,9 +142,17 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
             for cid in r["citation_ids"]: conn.execute("INSERT INTO attestation_citation VALUES (?, ?)", (r["id"],cid))
         for r in sorted(by_type.get("cross_reference",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO cross_reference VALUES (?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r["marker"],r.get("target_label"),r.get("target_url"),r["resolution_status"]))
-        conn.execute("INSERT INTO metadata VALUES (?, ?)", ("contract_version", CONTRACT_VERSION)); conn.execute("INSERT INTO metadata VALUES (?, ?)", ("builder_version", BUILDER_VERSION))
+        metadata = {
+            "builder_version": BUILDER_VERSION,
+            "cache_manifest_index_sha256": verified_source["cache_manifest_index_sha256"],
+            "contract_version": CONTRACT_VERSION,
+            "parsed_articles_sha256": verified_source["parsed_articles_sha256"],
+            "source_snapshot_sha256": verified_source["source_snapshot_sha256"],
+            "verified_lexical_source_sha256": verified_manifest_hash,
+        }
+        conn.executemany("INSERT INTO metadata VALUES (?, ?)", sorted(metadata.items()))
         conn.commit(); conn.execute("VACUUM"); conn.commit()
-        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"logical_sha256":logical_digest(conn)}
+        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"logical_sha256":logical_digest(conn)}
     finally: conn.close()
     os.replace(temp, database)
     report["database_sha256"] = sha256(database); report["database_bytes"] = database.stat().st_size
@@ -118,8 +160,8 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
     return report
 
 def main() -> int:
-    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--force",action="store_true"); a=p.parse_args()
-    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,force=a.force),ensure_ascii=False,sort_keys=True))
+    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path,required=True); p.add_argument("--verified-source-manifest",type=Path,required=True); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--force",action="store_true"); a=p.parse_args()
+    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,verified_source_manifest=a.verified_source_manifest,force=a.force),ensure_ascii=False,sort_keys=True))
     except (BuildError, ValueError, sqlite3.Error) as e: print(f"error: {e}"); return 2
     return 0
 if __name__ == "__main__": raise SystemExit(main())

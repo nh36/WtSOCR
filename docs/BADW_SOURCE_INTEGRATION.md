@@ -88,6 +88,8 @@ Fetched BAdW HTML and PDFs, decoded bulk article text, rendered pages, and inter
 
 Before an identity, parsing, or reconciliation run consumes that ignored material, it must pin an immutable offline source snapshot: designated canonical-page and crosswalk inputs, glyph-registry version, cache request/object integrity, and known page/glyph residuals. The reusable snapshot tool records hashes and source-quality observations without copying BAdW text into Git; later work must name the snapshot it used rather than treating `work/` as an unversioned current source.
 
+Lexical extraction additionally requires a verified source contract: the frozen cache index, parsed database-article JSONL, and every emitted lexical span must agree on source identifier, object hash, source field, and offsets. SQLite construction rejects unverified or out-of-range spans and records the verification hashes in its local metadata.
+
 Parsing must preserve the original BAdW Unicode. WtSOCR OCR correction rules must never be applied to the cached or parsed BAdW source text.
 
 ## Generated PDFs for volumes 2–4

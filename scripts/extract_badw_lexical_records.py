@@ -18,9 +18,10 @@ from pathlib import Path
 from typing import Any, Iterable, Sequence
 
 from validate_lexical_record_contract import CONTRACT_VERSION, validate
+from verify_badw_lexical_source import VerificationError, sha256, verify_verified_lexical_source
 
 
-EXTRACTOR_VERSION = "badw-html-lexical-extractor-v1"
+EXTRACTOR_VERSION = "badw-html-lexical-extractor-v2"
 
 
 class ExtractionError(ValueError):
@@ -301,13 +302,24 @@ def extract_jsonl(
     manifest_path: Path,
     *,
     snapshot_id: str | None = None,
+    verified_source_manifest: Path | None = None,
 ) -> dict[str, Any]:
     """Emit deterministic JSONL plus a deterministic manifest and diagnostics."""
 
     with input_path.open("rb") as handle:
         input_sha256 = hashlib.file_digest(handle, "sha256").hexdigest()
-    snapshot = snapshot_id or f"badw-html:{input_sha256}"
-    run = f"{EXTRACTOR_VERSION}:{input_sha256}"
+    verified_source: dict[str, Any] | None = None
+    if verified_source_manifest is not None:
+        try:
+            verified_source = verify_verified_lexical_source(verified_source_manifest)
+        except VerificationError as error:
+            raise ExtractionError(str(error)) from error
+        if input_sha256 != verified_source["parsed_articles_sha256"]:
+            raise ExtractionError("input does not match verified lexical source manifest")
+        if snapshot_id and snapshot_id != verified_source["source_snapshot_id"]:
+            raise ExtractionError("requested snapshot id disagrees with verified lexical source")
+    snapshot = (verified_source or {}).get("source_snapshot_id") or snapshot_id or f"badw-html:{input_sha256}"
+    run = f"{EXTRACTOR_VERSION}:{snapshot}:{input_sha256}"
     articles = sorted(_read_articles(input_path), key=lambda article: str(article.get("source_identifier") or ""))
     records: list[dict[str, Any]] = []
     diagnostics: list[dict[str, str]] = []
@@ -334,17 +346,27 @@ def extract_jsonl(
         "".join(json.dumps(diagnostic, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n" for diagnostic in diagnostics),
         encoding="utf-8",
     )
+    records_sha256 = sha256(output_path)
+    diagnostics_sha256 = sha256(diagnostics_path)
     manifest = {
         "contract_version": CONTRACT_VERSION,
         "diagnostic_count": len(diagnostics),
         "extraction_run_id": run,
         "extractor_version": EXTRACTOR_VERSION,
         "input_sha256": input_sha256,
+        "records_sha256": records_sha256,
+        "diagnostics_sha256": diagnostics_sha256,
         "record_count": len(records),
         "snapshot_id": snapshot,
         "source_object_count": len(source_objects),
         "source_objects": sorted(source_objects, key=lambda item: item["source_identifier"]),
     }
+    if verified_source is not None:
+        manifest.update({
+            "verified_lexical_source_sha256": verified_source["verified_lexical_source_sha256"],
+            "source_snapshot_sha256": verified_source["source_snapshot_sha256"],
+            "cache_manifest_index_sha256": verified_source["cache_manifest_index_sha256"],
+        })
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     return {"articles": len(articles), "diagnostics": len(diagnostics), "records": len(records), "snapshot_id": snapshot}
 
@@ -356,13 +378,17 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--diagnostics", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--snapshot-id", help="Optional stable identifier for the cached source snapshot")
+    parser.add_argument("--verified-source-manifest", type=Path,
+                        help="Immutable verification binding parser input to a BAdW source snapshot")
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     try:
-        summary = extract_jsonl(args.articles, args.output, args.diagnostics, args.manifest, snapshot_id=args.snapshot_id)
+        summary = extract_jsonl(args.articles, args.output, args.diagnostics, args.manifest,
+                                snapshot_id=args.snapshot_id,
+                                verified_source_manifest=args.verified_source_manifest)
     except ExtractionError as error:
         print(str(error))
         return 2
