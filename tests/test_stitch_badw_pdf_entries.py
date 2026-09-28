@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from hashlib import sha256
+import csv
 import gzip
 import json
 import sys
@@ -13,7 +14,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from badw_canonical_pages import stable_json_bytes
-from stitch_badw_pdf_entries import _linked, stitch_volume, verify_output
+from stitch_badw_pdf_entries import _linked, stitch_volume, verify_output, build
 
 
 def fixture_page(number: int, body: list[str], starts: list[int], *, predecessor: int | None = None,
@@ -147,6 +148,9 @@ def test_offline_output_verifier_checks_spans_and_logical_hash(tmp_path):
     }
     (tmp_path / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
     assert verify_output(tmp_path)["articles"] == 1
+    del summary["counts"]["unassigned_leading_fragments"]
+    (tmp_path / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+    assert verify_output(tmp_path)["articles"] == 1
     article["source_spans"][0]["source_text_sha256"] = "0" * 64
     tampered_blob = stable_json_bytes(article) + b"\n"
     with gzip.open(tmp_path / "pdf_article_witnesses.jsonl.gz", "wb") as handle:
@@ -154,4 +158,68 @@ def test_offline_output_verifier_checks_spans_and_logical_hash(tmp_path):
     summary["article_logical_sha256"] = sha256(tampered_blob).hexdigest()
     (tmp_path / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
     with pytest.raises(ValueError, match="source span hash mismatch"):
+        verify_output(tmp_path)
+
+
+def test_stitch_rejects_mismatched_extraction_snapshot_before_writing(tmp_path):
+    canonical = tmp_path / "canonical"
+    entries = tmp_path / "entries"
+    entries.mkdir()
+    hashes = {}
+    for volume in (2, 3, 4):
+        folder = canonical / f"volume_{volume}"
+        folder.mkdir(parents=True)
+        index = folder / "canonical_pages.tsv"
+        index.write_text("page_id\tprinted_page\n", encoding="utf-8")
+        hashes[f"volume_{volume}/canonical_pages.tsv"] = sha256(index.read_bytes()).hexdigest()
+    hashes["volume_3/canonical_pages.tsv"] = "0" * 64
+    (entries / "summary.json").write_text(
+        json.dumps({"canonical_index_sha256": hashes}), encoding="utf-8"
+    )
+    output = tmp_path / "stitched"
+    with pytest.raises(ValueError, match="snapshot mismatch: volume_3"):
+        build(canonical, entries, output)
+    assert not output.exists()
+
+
+def test_continuation_attribution_must_match_verified_article_span(tmp_path):
+    first = fixture_page(1, ["HEAD"], [0], successor=2)
+    second = fixture_page(2, ["tail"], [], predecessor=1)
+    article = stitch_volume([first, second])[0][0]
+    article_blob = stable_json_bytes(article) + b"\n"
+    with gzip.open(tmp_path / "pdf_article_witnesses.jsonl.gz", "wb") as handle:
+        handle.write(article_blob)
+    with gzip.open(tmp_path / "unassigned_page_fragments.jsonl.gz", "wb") as handle:
+        handle.write(b"")
+    span = article["source_spans"][1]
+    row = {
+        "article_id": article["id"], "loc_headword": article["loc_headword"],
+        "start_printed_page": article["start_printed_page"],
+        "continuation_page": span["printed_page"], "continuation_page_id": span["page_id"],
+        "run_start": span["run_start"], "run_end_exclusive": span["run_end_exclusive"],
+        "join_method": span["join_method"], "source_text_sha256": span["source_text_sha256"],
+    }
+    attribution_path = tmp_path / "continuation_attributions.tsv"
+    with attribution_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(row), delimiter="\t")
+        writer.writeheader()
+        writer.writerow(row)
+    summary = {
+        "contract_version": "badw-pdf-article-witness-v1",
+        "article_logical_sha256": sha256(article_blob).hexdigest(),
+        "unassigned_logical_sha256": sha256(b"").hexdigest(),
+        "continuation_attributions_sha256": sha256(attribution_path.read_bytes()).hexdigest(),
+        "counts": {"article_source_spans": 2, "article_unknown_glyph_occurrences": 0,
+                   "volume_2_articles": 1, "volume_3_articles": 0, "volume_4_articles": 0},
+    }
+    (tmp_path / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+    assert verify_output(tmp_path)["continuation_attributions"] == 1
+    row["article_id"] = "wrong-entry"
+    with attribution_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(row), delimiter="\t")
+        writer.writeheader()
+        writer.writerow(row)
+    summary["continuation_attributions_sha256"] = sha256(attribution_path.read_bytes()).hexdigest()
+    (tmp_path / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+    with pytest.raises(ValueError, match="attributions do not match"):
         verify_output(tmp_path)

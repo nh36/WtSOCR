@@ -173,6 +173,15 @@ def stitch_volume(pages: list[tuple[dict, dict, list[dict], dict]]) -> tuple[lis
 def build(canonical_root: Path, page_entries_root: Path, output_root: Path) -> dict:
     if output_root.exists():
         raise FileExistsError(f"refusing to overwrite output: {output_root}")
+    extraction_summary = json.loads((page_entries_root / "summary.json").read_text(encoding="utf-8"))
+    expected_indexes = extraction_summary.get("canonical_index_sha256")
+    if not isinstance(expected_indexes, dict):
+        raise ValueError("page-entry extraction lacks canonical index hashes; rebuild it from the intended source")
+    for volume in (2, 3, 4):
+        key = f"volume_{volume}/canonical_pages.tsv"
+        actual = _file_sha256(canonical_root / key)
+        if expected_indexes.get(key) != actual:
+            raise ValueError(f"page-entry/canonical snapshot mismatch: {key}")
     output_root.mkdir(parents=True)
     entries_path = page_entries_root / "pdf_page_entries.jsonl.gz"
     diagnostics_path = page_entries_root / "page_diagnostics.tsv"
@@ -193,6 +202,7 @@ def build(canonical_root: Path, page_entries_root: Path, output_root: Path) -> d
     counts: Counter = Counter()
     logical_hash = sha256()
     unassigned_hash = sha256()
+    attributions: list[dict[str, object]] = []
     with (output_root / "pdf_article_witnesses.jsonl.gz").open("wb") as raw, (
         output_root / "unassigned_page_fragments.jsonl.gz"
     ).open("wb") as unassigned_raw:
@@ -226,16 +236,38 @@ def build(canonical_root: Path, page_entries_root: Path, output_root: Path) -> d
                     logical_hash.update(blob)
                     counts["article_source_spans"] += len(article["source_spans"])
                     counts["article_unknown_glyph_occurrences"] += len(article["unknown_glyphs"])
+                    for span in article["source_spans"][1:]:
+                        attributions.append({
+                            "article_id": article["id"],
+                            "loc_headword": article["loc_headword"],
+                            "start_printed_page": article["start_printed_page"],
+                            "continuation_page": span["printed_page"],
+                            "continuation_page_id": span["page_id"],
+                            "run_start": span["run_start"],
+                            "run_end_exclusive": span["run_end_exclusive"],
+                            "join_method": span["join_method"],
+                            "source_text_sha256": span["source_text_sha256"],
+                        })
                 for fragment in unassigned:
                     blob = stable_json_bytes(fragment) + b"\n"
                     unassigned_compressed.write(blob)
                     unassigned_hash.update(blob)
     if entries_by_page or diagnostics:
         raise ValueError(f"unmatched page entries/diagnostics: {len(entries_by_page)}/{len(diagnostics)}")
+    attribution_path = output_root / "continuation_attributions.tsv"
+    with attribution_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=[
+            "article_id", "loc_headword", "start_printed_page", "continuation_page",
+            "continuation_page_id", "run_start", "run_end_exclusive", "join_method",
+            "source_text_sha256",
+        ], delimiter="\t")
+        writer.writeheader()
+        writer.writerows(attributions)
     summary = {
         "contract_version": CONTRACT_VERSION,
         "source_page_entries": str(page_entries_root / "pdf_page_entries.jsonl.gz"),
         "input_sha256": input_hashes,
+        "continuation_attributions_sha256": _file_sha256(attribution_path),
         "article_logical_sha256": logical_hash.hexdigest(),
         "unassigned_logical_sha256": unassigned_hash.hexdigest(),
         "counts": dict(sorted(counts.items())),
@@ -251,6 +283,7 @@ def verify_output(output_root: Path) -> dict:
         raise ValueError("unsupported article-witness contract")
     seen_ids: set[str] = set()
     counts: Counter = Counter()
+    expected_attributions: list[dict[str, str]] = []
     for filename, hash_field in (
         ("pdf_article_witnesses.jsonl.gz", "article_logical_sha256"),
         ("unassigned_page_fragments.jsonl.gz", "unassigned_logical_sha256"),
@@ -282,6 +315,18 @@ def verify_output(output_root: Path) -> dict:
                     ]
                     if record["unknown_glyphs"] != expected_unknown:
                         raise ValueError(f"unknown-glyph inventory mismatch: {article_id}")
+                    for span in spans[1:]:
+                        expected_attributions.append({
+                            "article_id": article_id,
+                            "loc_headword": str(record["loc_headword"]),
+                            "start_printed_page": str(record["start_printed_page"]),
+                            "continuation_page": str(span["printed_page"]),
+                            "continuation_page_id": str(span["page_id"]),
+                            "run_start": str(span["run_start"]),
+                            "run_end_exclusive": str(span["run_end_exclusive"]),
+                            "join_method": str(span["join_method"]),
+                            "source_text_sha256": str(span["source_text_sha256"]),
+                        })
                     counts["articles"] += 1
                     counts["article_source_spans"] += len(spans)
                     counts["article_unknown_glyph_occurrences"] += len(expected_unknown)
@@ -294,10 +339,19 @@ def verify_output(output_root: Path) -> dict:
         if digest.hexdigest() != summary[hash_field]:
             raise ValueError(f"logical output hash mismatch: {filename}")
     for key in ("article_source_spans", "article_unknown_glyph_occurrences", "unassigned_leading_fragments"):
-        if counts[key] != summary["counts"][key]:
+        if counts[key] != summary["counts"].get(key, 0):
             raise ValueError(f"output count mismatch: {key}")
     if counts["articles"] != sum(summary["counts"][f"volume_{v}_articles"] for v in (2, 3, 4)):
         raise ValueError("article count mismatch")
+    if "continuation_attributions_sha256" in summary:
+        path = output_root / "continuation_attributions.tsv"
+        if _file_sha256(path) != summary["continuation_attributions_sha256"]:
+            raise ValueError("continuation attribution hash mismatch")
+        with path.open(encoding="utf-8", newline="") as handle:
+            observed_attributions = list(csv.DictReader(handle, delimiter="\t"))
+        if observed_attributions != expected_attributions:
+            raise ValueError("continuation attributions do not match article spans")
+        counts["continuation_attributions"] = len(observed_attributions)
     return dict(sorted(counts.items()))
 
 
@@ -360,8 +414,13 @@ def main() -> None:
     parser.add_argument("--page-entries-root", type=Path)
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--verify-output-root", type=Path)
+    parser.add_argument("--verify-source-root", type=Path)
     args = parser.parse_args()
-    if args.verify_output_root:
+    if args.verify_source_root:
+        if not args.canonical_root or args.page_entries_root or args.output_root or args.verify_output_root:
+            parser.error("--verify-source-root requires --canonical-root and no build/output verification arguments")
+        result = verify_source(args.verify_source_root, args.canonical_root)
+    elif args.verify_output_root:
         if args.canonical_root or args.page_entries_root or args.output_root:
             parser.error("--verify-output-root cannot be combined with build arguments")
         result = verify_output(args.verify_output_root)

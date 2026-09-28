@@ -232,6 +232,20 @@ def extract_page(page: dict[str, object], canonical_object: str) -> tuple[list[d
 
 
 def build(canonical_root: Path, output_root: Path) -> dict[str, object]:
+    # Check the entire source tree before creating output. Some historical
+    # canonical snapshots contain a complete index but only overlay objects.
+    indexed: dict[int, list[dict[str, str]]] = {}
+    index_hashes: dict[str, str] = {}
+    for volume in (2, 3, 4):
+        root = canonical_root / f"volume_{volume}"
+        index_path = root / "canonical_pages.tsv"
+        index_hashes[f"volume_{volume}/canonical_pages.tsv"] = sha256(index_path.read_bytes()).hexdigest()
+        with index_path.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        for row in rows:
+            if not (root / row["canonical_object"]).is_file():
+                raise FileNotFoundError(f"indexed canonical object missing: {root / row['canonical_object']}")
+        indexed[volume] = sorted(rows, key=lambda r: (int(r["printed_page"] or 0), r["page_id"]))
     output_root.mkdir(parents=True, exist_ok=True)
     entries_path = output_root / "pdf_page_entries.jsonl.gz"
     diagnostics_path = output_root / "page_diagnostics.tsv"
@@ -244,9 +258,7 @@ def build(canonical_root: Path, output_root: Path) -> dict[str, object]:
         with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as compressed:
             for volume in (2, 3, 4):
                 root = canonical_root / f"volume_{volume}"
-                with (root / "canonical_pages.tsv").open(encoding="utf-8", newline="") as handle:
-                    rows = list(csv.DictReader(handle, delimiter="\t"))
-                for row in sorted(rows, key=lambda r: (int(r["printed_page"] or 0), r["page_id"])):
+                for row in indexed[volume]:
                     path = root / row["canonical_object"]
                     with gzip.open(path, "rt", encoding="utf-8") as handle:
                         page = json.load(handle)
@@ -277,6 +289,7 @@ def build(canonical_root: Path, output_root: Path) -> dict[str, object]:
         writer.writerows(diagnostics)
     summary = {"contract_version": CONTRACT_VERSION, "logical_sha256": logical_hash.hexdigest(),
                "entries_path": str(entries_path), "diagnostics_path": str(diagnostics_path),
+               "canonical_index_sha256": index_hashes,
                "counts": dict(sorted(stats.items()))}
     (output_root / "summary.json").write_text(json.dumps(summary, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     return summary

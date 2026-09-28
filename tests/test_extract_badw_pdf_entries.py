@@ -154,6 +154,7 @@ def test_build_is_byte_deterministic_and_replays_page(tmp_path: Path):
         json.dump(_page(), handle, ensure_ascii=False)
     one = build(root, tmp_path / "one")
     two = build(root, tmp_path / "two")
+    assert one["canonical_index_sha256"] == two["canonical_index_sha256"]
     assert one["logical_sha256"] == two["logical_sha256"]
     assert (tmp_path / "one/pdf_page_entries.jsonl.gz").read_bytes() == (
         tmp_path / "two/pdf_page_entries.jsonl.gz").read_bytes()
@@ -177,3 +178,19 @@ def test_build_is_byte_deterministic_and_replays_page(tmp_path: Path):
             handle.write(json.dumps(record, ensure_ascii=False) + "\n")
     with pytest.raises(ValueError, match="source-faithful text mismatch"):
         audit(root, damaged)
+
+
+def test_incomplete_canonical_snapshot_fails_before_writing_output(tmp_path: Path):
+    root = tmp_path / "canonical"
+    for volume in (2, 3, 4):
+        folder = root / f"volume_{volume}"
+        folder.mkdir(parents=True)
+        (folder / "canonical_pages.tsv").write_text(
+            "page_id\tprinted_page\tcanonical_object\tvisible_body_sha256\n" +
+            ("missing\t1\tpages/missing.json.gz\thash\n" if volume == 3 else ""),
+            encoding="utf-8",
+        )
+    output = tmp_path / "output"
+    with pytest.raises(FileNotFoundError, match="indexed canonical object missing"):
+        build(root, output)
+    assert not output.exists()
