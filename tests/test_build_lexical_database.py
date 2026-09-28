@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 from hashlib import sha256
 import json
 import sqlite3
@@ -14,6 +15,8 @@ from build_lexical_database import BuildError, build
 from inventory_badw_sigla import inventory
 from verify_badw_lexical_source import create_verified_lexical_source
 from validate_lexical_record_contract import CONTRACT_VERSION
+from stitch_badw_pdf_entries import _span
+from badw_canonical_pages import stable_json_bytes
 
 
 def _digest(path: Path) -> str:
@@ -217,3 +220,94 @@ def test_tampered_badw_tooltip_inventory_is_rejected(tmp_path: Path):
               records_manifest=records_manifest, verified_source_manifest=verified,
               siglum_candidates=candidate_file, siglum_occurrences=occurrence_file,
               repo_root=tmp_path)
+
+
+def _pdf_witness_inputs(tmp_path: Path) -> tuple[Path, Path]:
+    canonical = tmp_path / "work/pdf_canonical"
+    output = tmp_path / "work/pdf_articles"
+    output.mkdir(parents=True)
+    indexes = {}
+    for volume in (2, 3, 4):
+        folder = canonical / f"volume_{volume}"
+        folder.mkdir(parents=True)
+        index = folder / "canonical_pages.tsv"
+        if volume == 2:
+            runs = [{"run_index": 0, "decoded_unicode": "ཀ་ ka — Liś ↑kha", "y": 700.0,
+                     "font_id": "f", "glyphs": []}]
+            body_hash = sha256(runs[0]["decoded_unicode"].encode()).hexdigest()
+            positioned = {"positioned_text_runs": runs, "visible_text": runs[0]["decoded_unicode"]}
+            page = {"page_id": "p2-1", "volume": 2, "printed_page": 1,
+                    "positioned_page": positioned,
+                    "representative_source": {"canonical_url": "https://example.invalid/pdf/ka",
+                                              "source_sha256": "a" * 64},
+                    "visible_body_sha256": body_hash,
+                    "source_faithful_decoded_text": runs[0]["decoded_unicode"],
+                    "representative_positioned_sha256": sha256(stable_json_bytes(positioned)).hexdigest()}
+            object_path = folder / "pages/p2-1.json.gz"
+            object_path.parent.mkdir()
+            with gzip.open(object_path, "wt", encoding="utf-8") as handle:
+                json.dump(page, handle, ensure_ascii=False)
+            _write_tsv(index, ("page_id", "canonical_object", "visible_body_sha256"),
+                       [{"page_id": "p2-1", "canonical_object": "pages/p2-1.json.gz",
+                         "visible_body_sha256": body_hash}])
+        else:
+            _write_tsv(index, ("page_id", "canonical_object", "visible_body_sha256"), [])
+        indexes[f"volume_{volume}/canonical_pages.tsv"] = _digest(index)
+    span = _span(page, "volume_2/pages/p2-1.json.gz", 0, 1, "entry_start")
+    article = {"id": "pdf-entry-1", "volume": 2, "start_printed_page": 1,
+               "end_printed_page": 1, "loc_headword": "ka", "tibetan_headword": "ཀ་",
+               "homonym": "1", "ending_status": "open_after_last_recovered_page",
+               "source_spans": [span], "source_faithful_text": span["source_faithful_text"],
+               "derived_reading_text": span["derived_reading_text"], "unknown_glyphs": []}
+    blob = json.dumps(article, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode() + b"\n"
+    with gzip.open(output / "pdf_article_witnesses.jsonl.gz", "wb") as handle:
+        handle.write(blob)
+    fragment = _span(page, "volume_2/pages/p2-1.json.gz", 0, 1, "page_leading_continuation")
+    fragment["volume"] = 2
+    fragment_blob = json.dumps(fragment, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode() + b"\n"
+    with gzip.open(output / "unassigned_page_fragments.jsonl.gz", "wb") as handle:
+        handle.write(fragment_blob)
+    summary = {"contract_version": "badw-pdf-article-witness-v1",
+               "article_logical_sha256": sha256(blob).hexdigest(),
+               "unassigned_logical_sha256": sha256(fragment_blob).hexdigest(),
+               "input_sha256": indexes,
+               "counts": {"article_source_spans": 1, "article_unknown_glyph_occurrences": 0,
+                          "unassigned_leading_fragments": 1, "volume_2_articles": 1,
+                          "volume_3_articles": 0, "volume_4_articles": 0}}
+    (output / "summary.json").write_text(json.dumps(summary), encoding="utf-8")
+    return output, canonical
+
+
+def test_pdf_witnesses_are_separate_searchable_source_layer(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path)
+    report = build(source, tmp_path / "joined.sqlite", tmp_path / "joined.json", sigla=sigla,
+                   records_manifest=records_manifest, verified_source_manifest=verified,
+                   pdf_article_root=pdf_root, pdf_canonical_root=canonical, repo_root=tmp_path)
+    assert report["pdf_article_count"] == 1
+    assert report["pdf_source_audit"]["replayed_source_spans"] == 2
+    assert report["pdf_unassigned_fragment_count"] == 1
+    conn = sqlite3.connect(tmp_path / "joined.sqlite")
+    assert conn.execute("select count(*) from source_snapshot").fetchone() == (2,)
+    assert conn.execute("select id from pdf_article_fts where pdf_article_fts match 'Liś'").fetchone() == ("pdf-entry-1",)
+    assert conn.execute("select source_faithful_text from pdf_article_witness").fetchone() == ("ཀ་ ka — Liś ↑kha",)
+    assert conn.execute("select representative_pdf_sha256,run_start,run_end_exclusive from pdf_article_source_span").fetchone() == ("a" * 64, 0, 1)
+    assert conn.execute("select source_faithful_text from pdf_unassigned_fragment").fetchone() == ("ཀ་ ka — Liś ↑kha",)
+    assert conn.execute("select count(*) from pdf_unassigned_fragment_fts where pdf_unassigned_fragment_fts match 'Liś'").fetchone() == (1,)
+    assert conn.execute("select count(*) from entry").fetchone() == (1,)
+    conn.close()
+
+
+def test_pdf_witness_source_tampering_fails_closed(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path)
+    object_path = canonical / "volume_2/pages/p2-1.json.gz"
+    with gzip.open(object_path, "rt", encoding="utf-8") as handle:
+        page = json.load(handle)
+    page["positioned_page"]["positioned_text_runs"][0]["decoded_unicode"] = "invented"
+    with gzip.open(object_path, "wt", encoding="utf-8") as handle:
+        json.dump(page, handle, ensure_ascii=False)
+    with pytest.raises(BuildError, match="canonical positioned page hash mismatch"):
+        build(source, tmp_path / "rejected.sqlite", tmp_path / "rejected.json", sigla=sigla,
+              records_manifest=records_manifest, verified_source_manifest=verified,
+              pdf_article_root=pdf_root, pdf_canonical_root=canonical, repo_root=tmp_path)

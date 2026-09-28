@@ -8,7 +8,7 @@ ignored ``work/`` when it contains BAdW material.
 """
 from __future__ import annotations
 
-import argparse, csv, hashlib, json, os, sqlite3, tempfile, unicodedata
+import argparse, csv, gzip, hashlib, json, os, sqlite3, tempfile, unicodedata
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -16,8 +16,9 @@ from typing import Any
 from validate_lexical_record_contract import CONTRACT_VERSION, read_jsonl, validate
 from verify_badw_lexical_source import VerificationError, audit_lexical_records, sha256 as verified_sha256, verify_verified_lexical_source
 from inventory_badw_sigla import inventory, _read_articles
+from stitch_badw_pdf_entries import verify_source as verify_pdf_source
 
-BUILDER_VERSION = "lexical-database-builder-v3"
+BUILDER_VERSION = "lexical-database-builder-v4"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -41,7 +42,7 @@ def read_sigla(path: Path) -> list[dict[str, str]]:
     return sorted(rows, key=lambda r: r["canon"])
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment"]
     digest = hashlib.sha256()
     for table in tables:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})")]
@@ -54,11 +55,14 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
           sigla: Path = DEFAULT_SIGLA, records_manifest: Path | None = None,
           verified_source_manifest: Path | None = None, force: bool = False,
           siglum_candidates: Path | None = None, siglum_occurrences: Path | None = None,
+          pdf_article_root: Path | None = None, pdf_canonical_root: Path | None = None,
           repo_root: Path = ROOT) -> dict[str, Any]:
     if records_manifest is None or verified_source_manifest is None:
         raise BuildError("records_manifest and verified_source_manifest are required")
     if (siglum_candidates is None) != (siglum_occurrences is None):
         raise BuildError("siglum candidates and occurrences must be supplied together")
+    if (pdf_article_root is None) != (pdf_canonical_root is None):
+        raise BuildError("PDF article and canonical roots must be supplied together")
     try:
         verified_source = verify_verified_lexical_source(verified_source_manifest, repo_root)
         span_audit = audit_lexical_records(records_path, verified_source_manifest, repo_root)
@@ -101,6 +105,14 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
         tooltip_occurrences = read_jsonl(siglum_occurrences)
         if tooltip_candidates != expected_candidates or tooltip_occurrences != expected_occurrences:
             raise BuildError("siglum inventory differs from verified parsed source")
+    pdf_summary: dict[str, Any] | None = None
+    pdf_audit: dict[str, Any] | None = None
+    if pdf_article_root is not None and pdf_canonical_root is not None:
+        try:
+            pdf_audit = verify_pdf_source(pdf_article_root, pdf_canonical_root)
+            pdf_summary = json.loads((pdf_article_root / "summary.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError, KeyError, TypeError) as error:
+            raise BuildError(f"PDF witness source verification failed: {error}") from error
     if database.exists() and not force: raise BuildError(f"database exists: {database} (use --force to replace it)")
     if manifest.exists() and not force: raise BuildError(f"manifest exists: {manifest} (use --force to replace it)")
     database.parent.mkdir(parents=True, exist_ok=True); manifest.parent.mkdir(parents=True, exist_ok=True)
@@ -114,6 +126,14 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
         conn.executescript(schema.read_text(encoding="utf-8")); conn.execute("PRAGMA foreign_keys = ON")
         conn.execute("INSERT INTO source_snapshot VALUES (?, ?, ?, ?, NULL)",
                      (snapshot, "badw_html", input_hash, manifest_hash))
+        pdf_snapshot = ""
+        if pdf_summary is not None:
+            pdf_input_hash = hashlib.sha256((pdf_summary["article_logical_sha256"] + "\n" +
+                                             pdf_summary["unassigned_logical_sha256"]).encode("ascii")).hexdigest()
+            pdf_snapshot = "badw-pdf-witnesses:" + pdf_input_hash
+            conn.execute("INSERT INTO source_snapshot VALUES (?, ?, ?, ?, NULL)",
+                         (pdf_snapshot, "badw_generated_pdf", pdf_input_hash,
+                          sha256(pdf_article_root / "summary.json")))
         objects: dict[str, str] = {}
         for row in records:
             for span in row["source_spans"]:
@@ -174,6 +194,53 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
             for cid in r["citation_ids"]: conn.execute("INSERT INTO attestation_citation VALUES (?, ?)", (r["id"],cid))
         for r in sorted(by_type.get("cross_reference",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO cross_reference VALUES (?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r["marker"],r.get("target_label"),r.get("target_url"),r["resolution_status"]))
+        pdf_count = 0
+        pdf_source_objects: dict[str, str] = {}
+        if pdf_article_root is not None:
+            with gzip.open(pdf_article_root / "pdf_article_witnesses.jsonl.gz", "rt", encoding="utf-8") as handle:
+                for line in handle:
+                    article = json.loads(line)
+                    pdf_count += 1
+                    conn.execute("INSERT INTO pdf_article_witness VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                 (article["id"], pdf_snapshot, article["volume"], article["start_printed_page"],
+                                  article["end_printed_page"], article["loc_headword"], article["tibetan_headword"],
+                                  article["homonym"], article["ending_status"], article["source_faithful_text"],
+                                  article["derived_reading_text"], len(article["unknown_glyphs"])))
+                    conn.execute("INSERT INTO pdf_article_fts VALUES (?, ?, ?, ?)",
+                                 (article["id"], article["loc_headword"], article["tibetan_headword"],
+                                  article["derived_reading_text"]))
+                    for ordinal, span in enumerate(article["source_spans"], 1):
+                        url, source_sha = span["representative_pdf_url"], span["representative_pdf_sha256"]
+                        prior = pdf_source_objects.setdefault(url, source_sha)
+                        if prior != source_sha:
+                            raise BuildError(f"PDF URL has conflicting source hashes: {url}")
+                        conn.execute("INSERT INTO pdf_article_source_span VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                     (article["id"], ordinal, span["page_id"], span["canonical_object"],
+                                      span["printed_page"], url, source_sha, span["visible_body_sha256"],
+                                      span["run_start"], span["run_end_exclusive"], span["segment_role"],
+                                      span["join_method"], span["source_text_sha256"], span["source_faithful_text"],
+                                      span["derived_reading_text"], canon(span["unknown_glyphs"])))
+            pdf_fragment_count = 0
+            with gzip.open(pdf_article_root / "unassigned_page_fragments.jsonl.gz", "rt", encoding="utf-8") as handle:
+                for line in handle:
+                    span = json.loads(line)
+                    pdf_fragment_count += 1
+                    url, source_sha = span["representative_pdf_url"], span["representative_pdf_sha256"]
+                    prior = pdf_source_objects.setdefault(url, source_sha)
+                    if prior != source_sha:
+                        raise BuildError(f"PDF URL has conflicting source hashes: {url}")
+                    fragment_id = f"pdf-fragment:{span['page_id']}:{span['run_start']}:{span['run_end_exclusive']}"
+                    conn.execute("INSERT INTO pdf_unassigned_fragment VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                                 (fragment_id, pdf_snapshot, span["volume"], span["printed_page"],
+                                  span["page_id"], span["canonical_object"], url, source_sha,
+                                  span["visible_body_sha256"], span["run_start"], span["run_end_exclusive"],
+                                  span["segment_role"], span["source_text_sha256"], span["source_faithful_text"],
+                                  span["derived_reading_text"], canon(span["unknown_glyphs"])))
+                    conn.execute("INSERT INTO pdf_unassigned_fragment_fts VALUES (?, ?)",
+                                 (fragment_id, span["derived_reading_text"]))
+            conn.executemany("INSERT INTO source_object VALUES (?, ?, ?, ?)",
+                             [(pdf_snapshot, "badw:pdf:" + url, source_sha, url)
+                              for url, source_sha in sorted(pdf_source_objects.items())])
         metadata = {
             "builder_version": BUILDER_VERSION,
             "cache_manifest_index_sha256": verified_source["cache_manifest_index_sha256"],
@@ -185,9 +252,18 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
         if siglum_candidates is not None and siglum_occurrences is not None:
             metadata["badw_siglum_candidates_sha256"] = sha256(siglum_candidates)
             metadata["badw_siglum_occurrences_sha256"] = sha256(siglum_occurrences)
+        if pdf_summary is not None:
+            metadata["pdf_article_logical_sha256"] = pdf_summary["article_logical_sha256"]
+            metadata["pdf_unassigned_logical_sha256"] = pdf_summary["unassigned_logical_sha256"]
+            metadata["pdf_article_summary_sha256"] = sha256(pdf_article_root / "summary.json")
         conn.executemany("INSERT INTO metadata VALUES (?, ?)", sorted(metadata.items()))
         conn.commit(); conn.execute("VACUUM"); conn.commit()
         report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"badw_siglum_candidate_count":len(tooltip_candidates),"badw_siglum_occurrence_count":len(tooltip_occurrences),"logical_sha256":logical_digest(conn)}
+        if pdf_summary is not None:
+            report.update({"pdf_source_snapshot_id": pdf_snapshot, "pdf_article_count": pdf_count,
+                           "pdf_unassigned_fragment_count": pdf_fragment_count,
+                           "pdf_source_object_count": len(pdf_source_objects), "pdf_source_audit": pdf_audit,
+                           "pdf_article_logical_sha256": pdf_summary["article_logical_sha256"]})
     finally: conn.close()
     os.replace(temp, database)
     report["database_sha256"] = sha256(database); report["database_bytes"] = database.stat().st_size
@@ -195,8 +271,8 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
     return report
 
 def main() -> int:
-    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path,required=True); p.add_argument("--verified-source-manifest",type=Path,required=True); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--siglum-candidates",type=Path); p.add_argument("--siglum-occurrences",type=Path); p.add_argument("--force",action="store_true"); a=p.parse_args()
-    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,verified_source_manifest=a.verified_source_manifest,siglum_candidates=a.siglum_candidates,siglum_occurrences=a.siglum_occurrences,force=a.force),ensure_ascii=False,sort_keys=True))
+    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path,required=True); p.add_argument("--verified-source-manifest",type=Path,required=True); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--siglum-candidates",type=Path); p.add_argument("--siglum-occurrences",type=Path); p.add_argument("--pdf-article-root",type=Path); p.add_argument("--pdf-canonical-root",type=Path); p.add_argument("--force",action="store_true"); a=p.parse_args()
+    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,verified_source_manifest=a.verified_source_manifest,siglum_candidates=a.siglum_candidates,siglum_occurrences=a.siglum_occurrences,pdf_article_root=a.pdf_article_root,pdf_canonical_root=a.pdf_canonical_root,force=a.force),ensure_ascii=False,sort_keys=True))
     except (BuildError, ValueError, sqlite3.Error) as e: print(f"error: {e}"); return 2
     return 0
 if __name__ == "__main__": raise SystemExit(main())

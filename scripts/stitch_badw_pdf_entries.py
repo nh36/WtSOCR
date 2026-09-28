@@ -14,6 +14,7 @@ import gzip
 from hashlib import sha256
 import json
 from pathlib import Path
+from functools import lru_cache
 
 from badw_canonical_pages import stable_json_bytes
 from extract_badw_pdf_entries import _body_end, _reading
@@ -298,6 +299,59 @@ def verify_output(output_root: Path) -> dict:
     if counts["articles"] != sum(summary["counts"][f"volume_{v}_articles"] for v in (2, 3, 4)):
         raise ValueError("article count mismatch")
     return dict(sorted(counts.items()))
+
+
+def verify_source(output_root: Path, canonical_root: Path) -> dict:
+    """Replay every witness span against the pinned canonical positioned pages."""
+    counts = verify_output(output_root)
+    summary = json.loads((output_root / "summary.json").read_text(encoding="utf-8"))
+    known: dict[str, dict] = {}
+    for volume in (2, 3, 4):
+        index = canonical_root / f"volume_{volume}" / "canonical_pages.tsv"
+        key = f"volume_{volume}/canonical_pages.tsv"
+        if _file_sha256(index) != summary["input_sha256"][key]:
+            raise ValueError(f"canonical page index hash mismatch: {key}")
+        with index.open(encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle, delimiter="\t"):
+                relative = f"volume_{volume}/{row['canonical_object']}"
+                if relative in known:
+                    raise ValueError(f"duplicate canonical object: {relative}")
+                known[relative] = row
+
+    @lru_cache(maxsize=4)
+    def page_for(relative: str) -> dict:
+        if relative not in known:
+            raise ValueError(f"unregistered canonical object: {relative}")
+        with gzip.open(canonical_root / relative, "rt", encoding="utf-8") as handle:
+            page = json.load(handle)
+        visible = page["source_faithful_decoded_text"]
+        if sha256(visible.encode("utf-8")).hexdigest() != page["visible_body_sha256"]:
+            raise ValueError(f"canonical visible text hash mismatch: {relative}")
+        positioned = page["positioned_page"]
+        if positioned["visible_text"] != visible or sha256(stable_json_bytes(positioned)).hexdigest() != page["representative_positioned_sha256"]:
+            raise ValueError(f"canonical positioned page hash mismatch: {relative}")
+        return page
+
+    replayed = 0
+    for filename in ("pdf_article_witnesses.jsonl.gz", "unassigned_page_fragments.jsonl.gz"):
+        with gzip.open(output_root / filename, "rt", encoding="utf-8") as handle:
+            for line in handle:
+                record = json.loads(line)
+                spans = record["source_spans"] if filename.startswith("pdf_article") else [record]
+                for span in spans:
+                    relative = span["canonical_object"]
+                    page = page_for(relative)
+                    row = known[relative]
+                    if page["page_id"] != row["page_id"] or page["visible_body_sha256"] != row["visible_body_sha256"]:
+                        raise ValueError(f"canonical page identity mismatch: {relative}")
+                    expected = _span(page, relative, span["run_start"], span["run_end_exclusive"],
+                                     span["segment_role"], span["join_method"])
+                    if span != expected:
+                        raise ValueError(f"source replay mismatch: {relative}")
+                    replayed += 1
+    if replayed != counts["article_source_spans"] + counts.get("unassigned_leading_fragments", 0):
+        raise ValueError("replayed span count mismatch")
+    return {**counts, "replayed_source_spans": replayed}
 
 
 def main() -> None:

@@ -85,15 +85,50 @@ CREATE TABLE citation_siglum_candidate (
   PRIMARY KEY (citation_id, candidate_id)
 );
 
+-- Positioned generated-PDF witnesses are searchable source text, not parsed
+-- editorial entries and not reconciled identities in the printed OCR layer.
+CREATE TABLE pdf_article_witness (
+  id TEXT PRIMARY KEY, snapshot_id TEXT NOT NULL REFERENCES source_snapshot(id),
+  volume INTEGER NOT NULL, start_printed_page INTEGER NOT NULL,
+  end_printed_page INTEGER NOT NULL, loc_headword TEXT NOT NULL,
+  tibetan_headword TEXT NOT NULL, homonym TEXT NOT NULL,
+  ending_status TEXT NOT NULL, source_faithful_text TEXT NOT NULL,
+  derived_reading_text TEXT NOT NULL, unknown_glyph_count INTEGER NOT NULL
+);
+CREATE TABLE pdf_article_source_span (
+  article_id TEXT NOT NULL REFERENCES pdf_article_witness(id), ordinal INTEGER NOT NULL,
+  page_id TEXT NOT NULL, canonical_object TEXT NOT NULL,
+  printed_page INTEGER NOT NULL, representative_pdf_url TEXT NOT NULL,
+  representative_pdf_sha256 TEXT NOT NULL, visible_body_sha256 TEXT NOT NULL,
+  run_start INTEGER NOT NULL, run_end_exclusive INTEGER NOT NULL,
+  segment_role TEXT NOT NULL, join_method TEXT NOT NULL,
+  source_text_sha256 TEXT NOT NULL, source_faithful_text TEXT NOT NULL,
+  derived_reading_text TEXT NOT NULL, unknown_glyphs_json TEXT NOT NULL,
+  PRIMARY KEY (article_id, ordinal)
+);
+CREATE TABLE pdf_unassigned_fragment (
+  id TEXT PRIMARY KEY, snapshot_id TEXT NOT NULL REFERENCES source_snapshot(id),
+  volume INTEGER NOT NULL, printed_page INTEGER NOT NULL,
+  page_id TEXT NOT NULL, canonical_object TEXT NOT NULL,
+  representative_pdf_url TEXT NOT NULL, representative_pdf_sha256 TEXT NOT NULL,
+  visible_body_sha256 TEXT NOT NULL, run_start INTEGER NOT NULL,
+  run_end_exclusive INTEGER NOT NULL, segment_role TEXT NOT NULL,
+  source_text_sha256 TEXT NOT NULL, source_faithful_text TEXT NOT NULL,
+  derived_reading_text TEXT NOT NULL, unknown_glyphs_json TEXT NOT NULL
+);
+
 CREATE VIRTUAL TABLE entry_fts USING fts5(id UNINDEXED, loc_headword, tibetan_headword);
 CREATE VIRTUAL TABLE sense_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, definition);
 CREATE VIRTUAL TABLE attestation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, tibetan, german_translation);
 CREATE VIRTUAL TABLE citation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, raw_text, siglum, locator);
 CREATE VIRTUAL TABLE bibliography_fts USING fts5(id UNINDEXED, canonical_label, work_title, aliases);
 CREATE VIRTUAL TABLE badw_siglum_fts USING fts5(id UNINDEXED, siglum, expansion);
+CREATE VIRTUAL TABLE pdf_article_fts USING fts5(id UNINDEXED, loc_headword, tibetan_headword, derived_reading_text);
+CREATE VIRTUAL TABLE pdf_unassigned_fragment_fts USING fts5(id UNINDEXED, derived_reading_text);
 
 CREATE INDEX sense_entry_idx ON sense(entry_id, ordinal);
 CREATE INDEX citation_entry_idx ON citation(entry_id);
 CREATE INDEX attestation_entry_idx ON attestation(entry_id);
 CREATE INDEX span_source_idx ON record_source_span(snapshot_id, source_id, start_offset);
 CREATE INDEX badw_siglum_occurrence_source_idx ON badw_siglum_occurrence(source_snapshot_id, source_id, visible_start);
+CREATE INDEX pdf_article_span_page_idx ON pdf_article_source_span(page_id, run_start);
