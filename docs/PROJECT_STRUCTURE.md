@@ -30,6 +30,8 @@ BAdW integration follows a two-layer model: the existing release remains print-f
 
 `scripts/verify_badw_lexical_source.py` binds parsed BAdW database articles and lexical spans to a frozen source snapshot. `scripts/build_lexical_database.py` turns that verified lexical-record JSONL into a local SQLite/FTS database with source spans, snapshot hashes, and a separate siglum-registry candidate layer. It is deliberately non-corrective: registry matches never silently resolve a citation, and BAdW data belongs in an ignored database under `work/`.
 
+For generated PDFs, `scripts/extract_badw_pdf_entries.py` identifies page-local entry starts and `scripts/stitch_badw_pdf_entries.py` joins only verified consecutive-page continuations into source-faithful article witnesses. Both retain exact positioned-source spans and explicit unknown glyphs; neither parses senses or silently bridges missing pages. Their bulk outputs stay under ignored `work/`.
+
 ## Immutable release snapshots
 
 Release tags, input locks, and GitHub release assets describe distinct immutable checkpoints:
