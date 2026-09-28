@@ -11,6 +11,7 @@ import pytest
 
 from badw_source_snapshot import create_snapshot
 from build_lexical_database import BuildError, build
+from inventory_badw_sigla import inventory
 from verify_badw_lexical_source import create_verified_lexical_source
 from validate_lexical_record_contract import CONTRACT_VERSION
 
@@ -73,6 +74,11 @@ def _verified_source(tmp_path: Path) -> tuple[Path, str, str]:
         "source_identifier": "badw:" + url,
         "source_object": {"sha256": source_sha, "final_url": url},
         "article_source_text": "ka source",
+        "dom_full_text": "ka sourceKā title",
+        "sigla": [{"source_text": "ka", "expanded_display_text": "Kā title",
+                   "expanded_source_text": "Kā title",
+                   "locator": {"visible_text_start": 0, "visible_text_end": 2, "dom_path": "/div/span"},
+                   "expanded_locator": {"dom_text_start": 9, "dom_text_end": 17, "dom_path": "/div/span/span"}}],
     }, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     verified = tmp_path / "work/verified_source.json"
     create_verified_lexical_source(snapshot, articles, verified, tmp_path)
@@ -171,3 +177,43 @@ def test_unverified_records_manifest_is_rejected(tmp_path: Path):
     with pytest.raises(BuildError, match="not bound"):
         build(source, tmp_path / "bad.sqlite", tmp_path / "bad.json", sigla=sigla,
               records_manifest=records_manifest, verified_source_manifest=verified, repo_root=tmp_path)
+
+
+def _tooltip_inputs(tmp_path: Path) -> tuple[Path, Path]:
+    article = json.loads((tmp_path / "work/parsed/articles.jsonl").read_text(encoding="utf-8"))
+    candidates, occurrences, _ = inventory([article])
+    candidate_file = tmp_path / "work/siglum_candidates.jsonl"
+    occurrence_file = tmp_path / "work/siglum_occurrences.jsonl"
+    candidate_file.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in candidates), encoding="utf-8")
+    occurrence_file.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in occurrences), encoding="utf-8")
+    return candidate_file, occurrence_file
+
+
+def test_badw_tooltips_are_searchable_candidates_but_not_resolved_authorities(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    candidate_file, occurrence_file = _tooltip_inputs(tmp_path)
+    db = tmp_path / "with_tooltips.sqlite"
+    report = build(source, db, tmp_path / "with_tooltips.json", sigla=sigla,
+                   records_manifest=records_manifest, verified_source_manifest=verified,
+                   siglum_candidates=candidate_file, siglum_occurrences=occurrence_file,
+                   repo_root=tmp_path)
+    assert report["badw_siglum_candidate_count"] == 1
+    conn = sqlite3.connect(db)
+    assert conn.execute("select siglum,expansion from badw_siglum_candidate").fetchone() == ("ka", "Kā title")
+    assert conn.execute("select visible_start,visible_end,tooltip_start,tooltip_end from badw_siglum_occurrence").fetchone() == (0, 2, 9, 17)
+    assert conn.execute("select id from badw_siglum_fts where badw_siglum_fts match 'title'").fetchone()[0].startswith("badw:siglum:")
+    assert conn.execute("select authority_status,bibliographic_source_id from citation").fetchone() == ("unresolved", None)
+    conn.close()
+
+
+def test_tampered_badw_tooltip_inventory_is_rejected(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    candidate_file, occurrence_file = _tooltip_inputs(tmp_path)
+    candidates = json.loads(candidate_file.read_text(encoding="utf-8"))
+    candidates["expansion"] = "invented title"
+    candidate_file.write_text(json.dumps(candidates, ensure_ascii=False) + "\n", encoding="utf-8")
+    with pytest.raises(BuildError, match="differs from verified parsed source"):
+        build(source, tmp_path / "tampered.sqlite", tmp_path / "tampered.json", sigla=sigla,
+              records_manifest=records_manifest, verified_source_manifest=verified,
+              siglum_candidates=candidate_file, siglum_occurrences=occurrence_file,
+              repo_root=tmp_path)

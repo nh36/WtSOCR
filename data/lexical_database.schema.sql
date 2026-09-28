@@ -63,14 +63,37 @@ CREATE TABLE citation_authority_candidate (
   bibliographic_source_id TEXT NOT NULL REFERENCES bibliographic_source(id),
   match_method TEXT NOT NULL, PRIMARY KEY (citation_id, bibliographic_source_id, match_method)
 );
+-- BAdW tooltip expansions are first-party evidence, not reviewed bibliography.
+CREATE TABLE badw_siglum_candidate (
+  id TEXT PRIMARY KEY, siglum TEXT NOT NULL, expansion TEXT NOT NULL,
+  candidate_status TEXT NOT NULL, occurrence_count INTEGER NOT NULL
+);
+CREATE TABLE badw_siglum_occurrence (
+  candidate_id TEXT NOT NULL REFERENCES badw_siglum_candidate(id),
+  source_snapshot_id TEXT NOT NULL, source_id TEXT NOT NULL,
+  source_sha256 TEXT NOT NULL, source_url TEXT NOT NULL,
+  ordinal_in_article INTEGER NOT NULL,
+  visible_start INTEGER NOT NULL, visible_end INTEGER NOT NULL,
+  tooltip_start INTEGER, tooltip_end INTEGER,
+  PRIMARY KEY (candidate_id, source_id, ordinal_in_article),
+  FOREIGN KEY (source_snapshot_id, source_id) REFERENCES source_object(snapshot_id, source_id)
+);
+CREATE TABLE citation_siglum_candidate (
+  citation_id TEXT NOT NULL REFERENCES citation(id),
+  candidate_id TEXT NOT NULL REFERENCES badw_siglum_candidate(id),
+  match_method TEXT NOT NULL,
+  PRIMARY KEY (citation_id, candidate_id)
+);
 
 CREATE VIRTUAL TABLE entry_fts USING fts5(id UNINDEXED, loc_headword, tibetan_headword);
 CREATE VIRTUAL TABLE sense_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, definition);
 CREATE VIRTUAL TABLE attestation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, tibetan, german_translation);
 CREATE VIRTUAL TABLE citation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, raw_text, siglum, locator);
 CREATE VIRTUAL TABLE bibliography_fts USING fts5(id UNINDEXED, canonical_label, work_title, aliases);
+CREATE VIRTUAL TABLE badw_siglum_fts USING fts5(id UNINDEXED, siglum, expansion);
 
 CREATE INDEX sense_entry_idx ON sense(entry_id, ordinal);
 CREATE INDEX citation_entry_idx ON citation(entry_id);
 CREATE INDEX attestation_entry_idx ON attestation(entry_id);
 CREATE INDEX span_source_idx ON record_source_span(snapshot_id, source_id, start_offset);
+CREATE INDEX badw_siglum_occurrence_source_idx ON badw_siglum_occurrence(source_snapshot_id, source_id, visible_start);

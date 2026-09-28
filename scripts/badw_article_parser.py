@@ -98,6 +98,34 @@ def _span_for_element(
     return int(offsets[0][0]), int(offsets[-1][1])
 
 
+def _dom_span_for_element(
+    element: Element, fragments: Sequence[Mapping[str, object]]
+) -> tuple[int | None, int | None]:
+    prefix = dom_path(element) + "/"
+    offsets = [
+        (fragment["dom_text_start"], fragment["dom_text_end"])
+        for fragment in fragments
+        if str(fragment["dom_path"]).startswith(prefix)
+    ]
+    if not offsets:
+        return None, None
+    return int(offsets[0][0]), int(offsets[-1][1])
+
+
+def _tooltip_display_text(element: Element) -> str:
+    """Tooltip content without *nested* explanatory/UI tooltip expansions."""
+
+    parts = []
+    for child in element.children:
+        if isinstance(child, TextNode):
+            parts.append(child.text)
+        else:
+            parts.append(
+                exact_text(child, excluded_classes=HIDDEN_CLASSES, excluded_tags=HIDDEN_TAGS)
+            )
+    return "".join(parts)
+
+
 def _located_field(
     element: Element | None, fragments: Sequence[Mapping[str, object]]
 ) -> dict[str, object] | None:
@@ -147,6 +175,8 @@ def _records_for_elements(
         field
         for element in elements
         if (field := _located_field(element, fragments)) is not None
+        and field["source_text"]
+        and field["locator"]["visible_text_start"] is not None
     ]
 
 
@@ -183,7 +213,11 @@ def parse_database_article(
     tibetan_field = _located_field(tibetan_element, fragments)
     final_url = str(source_metadata.get("final_url") or source_metadata.get("requested_url"))
     path_lemma, path_homonym = _path_identity(final_url)
-    sup = find_first(article, tag="sup")
+    # Superscripts in definitions and examples also encode exponents and
+    # cross-reference homonyms.  Only the lemma heading can supply this one's
+    # homonym; otherwise the stable article URL is authoritative.
+    lemma_heading = find_first(article, tag="span", class_name="lemma")
+    sup = find_first(lemma_heading, tag="sup") if lemma_heading is not None else None
     homonym = compact_text(exact_text(sup)) if sup is not None else path_homonym
     lemma = str(lemma_field["text"]) if lemma_field else path_lemma
 
@@ -233,11 +267,20 @@ def parse_database_article(
     for element in find_all(article, class_name="textsiglum"):
         field = _located_field(element, fragments) or {}
         expansion = find_first(element, class_name="infotext")
+        expansion_locator = element_locator(expansion) if expansion else None
+        if expansion_locator is not None:
+            start, end = _dom_span_for_element(expansion, fragments)
+            expansion_locator["dom_text_start"] = start
+            expansion_locator["dom_text_end"] = end
+        display_source = _tooltip_display_text(expansion) if expansion else ""
         sigla.append(
             {
                 **field,
                 "expanded_source_text": exact_text(expansion) if expansion else "",
                 "expanded_text": compact_text(exact_text(expansion)) if expansion else "",
+                "expanded_display_source_text": display_source,
+                "expanded_display_text": compact_text(display_source),
+                "expanded_locator": expansion_locator,
             }
         )
 

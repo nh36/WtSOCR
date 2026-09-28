@@ -400,6 +400,75 @@ def test_article_parser_preserves_unicode_and_structure_from_cache():
         assert any(fragment["source_text"] == "kā" for fragment in article["text_fragments"])
 
 
+def test_article_homonym_ignores_reference_and_exponent_superscripts():
+    body = ARTICLE_BYTES.replace(
+        b"<span class=\"lem\">ka\xcc\x84</span><sup>2</sup>",
+        b"<span class=\"lem\">ka\xcc\x84</span>",
+    ).replace(
+        b"erste Bedeutung,",
+        b"erste Bedeutung 10<sup>45</sup>,",
+    )
+    url = "https://wts-digital.badw.de/lemma/ka/1"
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(
+            temporary,
+            delay_seconds=0,
+            transport=lambda request, timeout: html_response(request, body),
+        )
+        cache.fetch(RequestSpec(url))
+        article = parse_cached_article(cache, RequestSpec(url))
+        assert article["homonym"] == "1"
+        assert article["cross_references"][1]["target_homonym"] == "3"
+
+
+def test_siglum_tooltip_keeps_original_and_excludes_nested_ui_from_display():
+    body = ARTICLE_BYTES.replace(
+        b"Test-Siglum Langform",
+        b'Test-Siglum <span class="abk info">Ed.<span class="infotext">edition</span></span> Langform',
+    )
+    url = "https://wts-digital.badw.de/lemma/ka/2"
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(
+            temporary,
+            delay_seconds=0,
+            transport=lambda request, timeout: html_response(request, body),
+        )
+        cache.fetch(RequestSpec(url))
+        article = parse_cached_article(cache, RequestSpec(url))
+        siglum = article["sigla"][0]
+        assert siglum["expanded_text"] == "Test-Siglum Ed.edition Langform"
+        assert siglum["expanded_display_text"] == "Test-Siglum Ed. Langform"
+        start = siglum["expanded_locator"]["dom_text_start"]
+        end = siglum["expanded_locator"]["dom_text_end"]
+        assert article["dom_full_text"][start:end] == siglum["expanded_source_text"]
+
+
+def test_empty_sanskrit_markup_is_not_a_lexical_field():
+    body = ARTICLE_BYTES.replace("<skt>kāya</skt>".encode(), "<skt></skt><skt>kāya</skt>".encode())
+    url = "https://wts-digital.badw.de/lemma/ka/2"
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(temporary, delay_seconds=0,
+                            transport=lambda request, timeout: html_response(request, body))
+        cache.fetch(RequestSpec(url))
+        article = parse_cached_article(cache, RequestSpec(url))
+        assert [field["text"] for field in article["sanskrit"]] == ["kāya"]
+
+
+def test_sanskrit_inside_hidden_tooltip_is_not_a_visible_lexical_field():
+    body = ARTICLE_BYTES.replace(
+        b"Test-Siglum Langform",
+        b"Test-Siglum <skt>hidden title</skt> Langform",
+    )
+    url = "https://wts-digital.badw.de/lemma/ka/2"
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(temporary, delay_seconds=0,
+                            transport=lambda request, timeout: html_response(request, body))
+        cache.fetch(RequestSpec(url))
+        article = parse_cached_article(cache, RequestSpec(url))
+        assert [field["text"] for field in article["sanskrit"]] == ["kāya"]
+        assert "hidden title" in article["dom_full_text"]
+
+
 def test_article_parser_is_reproducible_offline_from_cached_bytes():
     url = "https://wts-digital.badw.de/lemma/ka/2"
     with TemporaryDirectory() as temporary:

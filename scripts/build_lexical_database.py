@@ -15,8 +15,9 @@ from typing import Any
 
 from validate_lexical_record_contract import CONTRACT_VERSION, read_jsonl, validate
 from verify_badw_lexical_source import VerificationError, audit_lexical_records, sha256 as verified_sha256, verify_verified_lexical_source
+from inventory_badw_sigla import inventory, _read_articles
 
-BUILDER_VERSION = "lexical-database-builder-v2"
+BUILDER_VERSION = "lexical-database-builder-v3"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -40,7 +41,7 @@ def read_sigla(path: Path) -> list[dict[str, str]]:
     return sorted(rows, key=lambda r: r["canon"])
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate"]
     digest = hashlib.sha256()
     for table in tables:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})")]
@@ -52,9 +53,12 @@ def logical_digest(conn: sqlite3.Connection) -> str:
 def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = DEFAULT_SCHEMA,
           sigla: Path = DEFAULT_SIGLA, records_manifest: Path | None = None,
           verified_source_manifest: Path | None = None, force: bool = False,
+          siglum_candidates: Path | None = None, siglum_occurrences: Path | None = None,
           repo_root: Path = ROOT) -> dict[str, Any]:
     if records_manifest is None or verified_source_manifest is None:
         raise BuildError("records_manifest and verified_source_manifest are required")
+    if (siglum_candidates is None) != (siglum_occurrences is None):
+        raise BuildError("siglum candidates and occurrences must be supplied together")
     try:
         verified_source = verify_verified_lexical_source(verified_source_manifest, repo_root)
         span_audit = audit_lexical_records(records_path, verified_source_manifest, repo_root)
@@ -88,6 +92,15 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
     snapshot = snapshots[0]
     if snapshot != verified_source["source_snapshot_id"]:
         raise BuildError("records snapshot differs from verified source")
+    tooltip_candidates: list[dict[str, Any]] = []
+    tooltip_occurrences: list[dict[str, Any]] = []
+    if siglum_candidates is not None and siglum_occurrences is not None:
+        parsed_path = repo_root / verified_source["parsed_articles_path"]
+        expected_candidates, expected_occurrences, _ = inventory(_read_articles(parsed_path))
+        tooltip_candidates = read_jsonl(siglum_candidates)
+        tooltip_occurrences = read_jsonl(siglum_occurrences)
+        if tooltip_candidates != expected_candidates or tooltip_occurrences != expected_occurrences:
+            raise BuildError("siglum inventory differs from verified parsed source")
     if database.exists() and not force: raise BuildError(f"database exists: {database} (use --force to replace it)")
     if manifest.exists() and not force: raise BuildError(f"manifest exists: {manifest} (use --force to replace it)")
     database.parent.mkdir(parents=True, exist_ok=True); manifest.parent.mkdir(parents=True, exist_ok=True)
@@ -136,6 +149,25 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
                 if norm == normalized:
                     method = "registry_canonical_exact" if kind == "canonical" and alias == siglum else "registry_alias_exact"
                     conn.execute("INSERT OR IGNORE INTO citation_authority_candidate VALUES (?, ?, ?)", (cid,bid,method))
+        if tooltip_candidates:
+            for row in tooltip_candidates:
+                conn.execute("INSERT INTO badw_siglum_candidate VALUES (?, ?, ?, ?, ?)",
+                             (row["candidate_id"],row["siglum"],row["expansion"],row["candidate_status"],row["occurrence_count"]))
+                conn.execute("INSERT INTO badw_siglum_fts VALUES (?, ?, ?)",
+                             (row["candidate_id"],row["siglum"],row["expansion"]))
+            for row in tooltip_occurrences:
+                visible, hidden = row["source_span"], row["tooltip_span"]
+                conn.execute("INSERT INTO badw_siglum_occurrence VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                             (row["candidate_id"],snapshot,visible["source_id"],visible["source_sha256"],
+                              row["source_url"],row["ordinal_in_article"],visible["start"],visible["end"],
+                              hidden["start"] if hidden else None,hidden["end"] if hidden else None))
+            candidate_by_siglum: dict[str,list[str]] = {}
+            for row in tooltip_candidates:
+                candidate_by_siglum.setdefault(row["siglum"],[]).append(row["candidate_id"])
+            for cid, siglum in conn.execute("SELECT id, siglum FROM citation WHERE siglum IS NOT NULL"):
+                for candidate_id in candidate_by_siglum.get(siglum, []):
+                    conn.execute("INSERT INTO citation_siglum_candidate VALUES (?, ?, ?)",
+                                 (cid,candidate_id,"badw_tooltip_siglum_exact"))
         for r in sorted(by_type.get("attestation",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO attestation VALUES (?, ?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r.get("sense_id"),r["ordinal"],r["association_status"],r["tibetan"],r.get("german_translation", "")))
             conn.execute("INSERT INTO attestation_fts VALUES (?, ?, ?, ?)", (r["id"],r["entry_id"],r["tibetan"],r.get("german_translation", "")))
@@ -150,9 +182,12 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
             "source_snapshot_sha256": verified_source["source_snapshot_sha256"],
             "verified_lexical_source_sha256": verified_manifest_hash,
         }
+        if siglum_candidates is not None and siglum_occurrences is not None:
+            metadata["badw_siglum_candidates_sha256"] = sha256(siglum_candidates)
+            metadata["badw_siglum_occurrences_sha256"] = sha256(siglum_occurrences)
         conn.executemany("INSERT INTO metadata VALUES (?, ?)", sorted(metadata.items()))
         conn.commit(); conn.execute("VACUUM"); conn.commit()
-        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"logical_sha256":logical_digest(conn)}
+        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"badw_siglum_candidate_count":len(tooltip_candidates),"badw_siglum_occurrence_count":len(tooltip_occurrences),"logical_sha256":logical_digest(conn)}
     finally: conn.close()
     os.replace(temp, database)
     report["database_sha256"] = sha256(database); report["database_bytes"] = database.stat().st_size
@@ -160,8 +195,8 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
     return report
 
 def main() -> int:
-    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path,required=True); p.add_argument("--verified-source-manifest",type=Path,required=True); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--force",action="store_true"); a=p.parse_args()
-    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,verified_source_manifest=a.verified_source_manifest,force=a.force),ensure_ascii=False,sort_keys=True))
+    p=argparse.ArgumentParser(description=__doc__); p.add_argument("records",type=Path); p.add_argument("database",type=Path); p.add_argument("manifest",type=Path); p.add_argument("--records-manifest",type=Path,required=True); p.add_argument("--verified-source-manifest",type=Path,required=True); p.add_argument("--schema",type=Path,default=DEFAULT_SCHEMA); p.add_argument("--sigla",type=Path,default=DEFAULT_SIGLA); p.add_argument("--siglum-candidates",type=Path); p.add_argument("--siglum-occurrences",type=Path); p.add_argument("--force",action="store_true"); a=p.parse_args()
+    try: print(json.dumps(build(a.records,a.database,a.manifest,schema=a.schema,sigla=a.sigla,records_manifest=a.records_manifest,verified_source_manifest=a.verified_source_manifest,siglum_candidates=a.siglum_candidates,siglum_occurrences=a.siglum_occurrences,force=a.force),ensure_ascii=False,sort_keys=True))
     except (BuildError, ValueError, sqlite3.Error) as e: print(f"error: {e}"); return 2
     return 0
 if __name__ == "__main__": raise SystemExit(main())
