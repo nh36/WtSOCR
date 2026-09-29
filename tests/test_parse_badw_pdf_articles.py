@@ -63,6 +63,11 @@ def test_numbered_senses_and_candidates_preserve_source() -> None:
     assert parsed["diagnostics"]["visual_overprint_impressions_removed"] == 1
     assert parsed["candidates"]["german_quotes"][0]["text"] == "Mund"
     assert parsed["candidates"]["parenthetical_citations"][0]["siglum_candidate"] == "Siddh"
+    assert parsed["candidates"]["adjacent_quote_citation_pairs"] == [{
+        "quote_index": 0, "citation_index": 0, "division_index": 0,
+        "status": "typographic_candidate"}]
+    assert parsed["divisions"][0]["start_line_index"] == 0
+    assert parsed["divisions"][0]["end_line_index_exclusive"] == 1
     assert parsed["candidates"]["cross_references"][0]["target_label_candidate"] == "kha"
     assert parsed["source_objects"][0]["source_text_sha256"] == _hash(article["source_faithful_text"])
     assert parsed["source_faithful_text"] == article["source_faithful_text"]
@@ -100,6 +105,23 @@ def test_multiline_quote_and_citation_have_end_line_provenance() -> None:
     assert (quote["start_line_index"], quote["end_line_index"]) == (0, 1)
     assert citation["text"] == "(Siddh\n 11.2)"
     assert (citation["start_line_index"], citation["end_line_index"]) == (1, 2)
+    assert parsed["candidates"]["adjacent_quote_citation_pairs"][0]["division_index"] == 0
+
+
+def test_quote_and_citation_are_not_paired_across_prose_or_divisions() -> None:
+    article, page = _fixture()
+    runs = page["positioned_page"]["positioned_text_runs"]
+    runs[5] = _run(5, " Mund „Mund“ mit Kommentar (Siddh 11.2)", 2, 9)
+    runs[6] = _run(6, "2. „Mund“", 1, 8)
+    runs.append(_run(7, "(Siddh 11.3)", 1, 7))
+    text = "".join(run["decoded_unicode"] for run in runs)
+    article["source_spans"][0].update(source_faithful_text=text,
+        source_text_sha256=_hash(text), run_end_exclusive=len(runs))
+    article["source_faithful_text"] = text
+    parsed = parse_article(article, lambda _: page)
+    assert parsed["candidates"]["adjacent_quote_citation_pairs"] == [{
+        "quote_index": 1, "citation_index": 1, "division_index": 1,
+        "status": "typographic_candidate"}]
 
 
 def test_source_mismatch_fails_closed() -> None:

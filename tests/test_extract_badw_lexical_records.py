@@ -46,6 +46,7 @@ def test_emits_source_faithful_semantic_records_without_bibliography_guesses() -
     citations = [record for record in records if record["record_type"] == "citation"]
     assert len(citations) == 1
     assert citations[0]["siglum"] == "TS"
+    assert [item["text"] for item in citations[0]["sigla"]] == ["TS"]
     assert citations[0]["authority_status"] == "unresolved"
     assert "bibliographic_source_id" not in citations[0]
     refs = [record for record in records if record["record_type"] == "cross_reference"]
@@ -57,6 +58,31 @@ def test_emits_source_faithful_semantic_records_without_bibliography_guesses() -
         for record in records
         for span in record["source_spans"]
     )
+
+
+def test_multiple_sigla_keep_separate_exact_spans_without_scalar_guess() -> None:
+    html = ARTICLE_BYTES.replace(
+        b'<span class="stellenangabe">1.2a</span>',
+        b'<span class="textsiglum info">LX<span class="infotext">Lexicon</span></span> '
+        b'<span class="stellenangabe">1.2a</span>',
+    )
+    source = SOURCE | {"sha256": hashlib.sha256(html).hexdigest()}
+    parsed = parse_database_article(html, source_metadata=source)
+    records = extract_article(parsed, snapshot_id="snapshot", extraction_run_id="run")
+    assert validate(records) == []
+    citation = next(row for row in records if row["record_type"] == "citation")
+    assert [item["text"] for item in citation["sigla"]] == ["TS", "LX"]
+    assert "siglum" not in citation
+    for item in citation["sigla"]:
+        span = item["source_span"]
+        assert parsed["article_source_text"][span["start"]:span["end"]] == item["text"]
+
+
+def test_rejects_unlocated_or_out_of_order_citation_sigla() -> None:
+    records = extract_article(article(), snapshot_id="snapshot", extraction_run_id="run")
+    citation = next(row for row in records if row["record_type"] == "citation")
+    citation["sigla"][0]["source_span"]["start"] = 0
+    assert any("citation sigla" in error for error in validate(records))
 
 
 def test_jsonl_emission_is_deterministic_and_keeps_structural_failures_as_diagnostics() -> None:

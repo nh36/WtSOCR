@@ -18,7 +18,7 @@ from verify_badw_lexical_source import VerificationError, audit_lexical_records,
 from inventory_badw_sigla import inventory, _read_articles
 from stitch_badw_pdf_entries import verify_source as verify_pdf_source
 
-BUILDER_VERSION = "lexical-database-builder-v4"
+BUILDER_VERSION = "lexical-database-builder-v5"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -42,7 +42,7 @@ def read_sigla(path: Path) -> list[dict[str, str]]:
     return sorted(rows, key=lambda r: r["canon"])
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "citation_siglum", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "citation_siglum_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment"]
     digest = hashlib.sha256()
     for table in tables:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})")]
@@ -161,9 +161,20 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
             conn.execute("INSERT INTO sense_fts VALUES (?, ?, ?)", (r["id"],r["entry_id"],r["definition"]))
         for r in sorted(by_type.get("citation",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO citation VALUES (?, ?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r["raw_text"],r.get("siglum"),r.get("locator"),r["authority_status"],r.get("bibliographic_source_id")))
-            conn.execute("INSERT INTO citation_fts VALUES (?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r["raw_text"],r.get("siglum",""),r.get("locator", "")))
+            conn.execute("INSERT INTO citation_fts VALUES (?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r["raw_text"]," ".join(s["text"] for s in r.get("sigla", [])) or r.get("siglum", ""),r.get("locator", "")))
+            for ordinal, siglum in enumerate(r.get("sigla", []), 1):
+                span = siglum["source_span"]
+                conn.execute("INSERT INTO citation_siglum VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                             (r["id"],ordinal,siglum["text"],snapshot,span["source_id"],
+                              span["source_sha256"],span["start"],span["end"]))
         aliases = conn.execute("SELECT bibliographic_source_id, alias, alias_kind, normalized_alias FROM bibliographic_alias").fetchall()
-        for cid, siglum in conn.execute("SELECT id, siglum FROM citation WHERE siglum IS NOT NULL"):
+        for cid, ordinal, siglum in conn.execute("SELECT citation_id, ordinal, siglum FROM citation_siglum"):
+            normalized = unicodedata.normalize("NFC",siglum).casefold()
+            for bid, alias, kind, norm in aliases:
+                if norm == normalized:
+                    method = "registry_canonical_exact" if kind == "canonical" and alias == siglum else "registry_alias_exact"
+                    conn.execute("INSERT OR IGNORE INTO citation_siglum_authority_candidate VALUES (?, ?, ?, ?)", (cid,ordinal,bid,method))
+        for cid, siglum in conn.execute("SELECT id, siglum FROM citation WHERE siglum IS NOT NULL AND id NOT IN (SELECT citation_id FROM citation_siglum)"):
             normalized = unicodedata.normalize("NFC",siglum).casefold()
             for bid, alias, kind, norm in aliases:
                 if norm == normalized:
@@ -181,13 +192,19 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
                              (row["candidate_id"],snapshot,visible["source_id"],visible["source_sha256"],
                               row["source_url"],row["ordinal_in_article"],visible["start"],visible["end"],
                               hidden["start"] if hidden else None,hidden["end"] if hidden else None))
-            candidate_by_siglum: dict[str,list[str]] = {}
-            for row in tooltip_candidates:
-                candidate_by_siglum.setdefault(row["siglum"],[]).append(row["candidate_id"])
-            for cid, siglum in conn.execute("SELECT id, siglum FROM citation WHERE siglum IS NOT NULL"):
-                for candidate_id in candidate_by_siglum.get(siglum, []):
-                    conn.execute("INSERT INTO citation_siglum_candidate VALUES (?, ?, ?)",
-                                 (cid,candidate_id,"badw_tooltip_siglum_exact"))
+            occurrence_by_location: dict[tuple[str, str, int, int, str],list[tuple[str, int]]] = {}
+            for row in tooltip_occurrences:
+                visible = row["source_span"]
+                key = (visible["source_id"],visible["source_sha256"],
+                       visible["start"],visible["end"],row["siglum"])
+                occurrence_by_location.setdefault(key,[]).append((row["candidate_id"],row["ordinal_in_article"]))
+            for cid, ordinal, siglum, source_id, source_sha, start, end in conn.execute(
+                    "SELECT citation_id, ordinal, siglum, source_id, source_sha256, visible_start, visible_end FROM citation_siglum"):
+                for candidate_id, occurrence_ordinal in occurrence_by_location.get(
+                        (source_id,source_sha,start,end,siglum),[]):
+                    conn.execute("INSERT INTO citation_siglum_candidate VALUES (?, ?, ?, ?, ?, ?)",
+                                 (cid,ordinal,candidate_id,source_id,occurrence_ordinal,
+                                  "badw_tooltip_same_source_span"))
         for r in sorted(by_type.get("attestation",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO attestation VALUES (?, ?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r.get("sense_id"),r["ordinal"],r["association_status"],r["tibetan"],r.get("german_translation", "")))
             conn.execute("INSERT INTO attestation_fts VALUES (?, ?, ?, ?)", (r["id"],r["entry_id"],r["tibetan"],r.get("german_translation", "")))

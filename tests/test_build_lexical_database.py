@@ -206,6 +206,34 @@ def test_badw_tooltips_are_searchable_candidates_but_not_resolved_authorities(tm
     assert conn.execute("select visible_start,visible_end,tooltip_start,tooltip_end from badw_siglum_occurrence").fetchone() == (0, 2, 9, 17)
     assert conn.execute("select id from badw_siglum_fts where badw_siglum_fts match 'title'").fetchone()[0].startswith("badw:siglum:")
     assert conn.execute("select authority_status,bibliographic_source_id from citation").fetchone() == ("unresolved", None)
+    assert conn.execute("select count(*) from citation_siglum_candidate").fetchone() == (0,)
+    conn.close()
+
+
+def test_tooltip_links_only_to_the_same_located_citation_siglum(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    rows = [json.loads(line) for line in source.read_text(encoding="utf-8").splitlines()]
+    citation = next(row for row in rows if row["record_type"] == "citation")
+    siglum_span = citation["source_spans"][0]
+    citation_span = siglum_span | {"end": 9}
+    citation["source_spans"] = [citation_span, siglum_span]
+    citation["raw_text"] = "ka source"
+    citation["siglum"] = "ka"
+    citation["sigla"] = [{"text": "ka", "source_span": siglum_span}]
+    source.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8")
+    manifest_data = json.loads(records_manifest.read_text(encoding="utf-8"))
+    manifest_data["records_sha256"] = _digest(source)
+    records_manifest.write_text(json.dumps(manifest_data, sort_keys=True) + "\n", encoding="utf-8")
+    candidate_file, occurrence_file = _tooltip_inputs(tmp_path)
+    db = tmp_path / "located.sqlite"
+    build(source, db, tmp_path / "located.json", sigla=sigla,
+          records_manifest=records_manifest, verified_source_manifest=verified,
+          siglum_candidates=candidate_file, siglum_occurrences=occurrence_file,
+          repo_root=tmp_path)
+    conn = sqlite3.connect(db)
+    assert conn.execute("select siglum,visible_start,visible_end from citation_siglum").fetchone() == ("ka", 0, 2)
+    assert conn.execute("select siglum_ordinal,occurrence_ordinal,match_method from citation_siglum_candidate").fetchone() == (1, 1, "badw_tooltip_same_source_span")
+    assert conn.execute("select authority_status,bibliographic_source_id from citation").fetchone() == ("unresolved", None)
     conn.close()
 
 

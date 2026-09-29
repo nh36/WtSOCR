@@ -36,6 +36,16 @@ CREATE TABLE citation (
   raw_text TEXT NOT NULL, siglum TEXT, locator TEXT, authority_status TEXT NOT NULL,
   bibliographic_source_id TEXT
 );
+-- A citation may contain multiple independently located sigla.  The scalar
+-- citation.siglum is retained only for the single-siglum case.
+CREATE TABLE citation_siglum (
+  citation_id TEXT NOT NULL REFERENCES citation(id), ordinal INTEGER NOT NULL,
+  siglum TEXT NOT NULL, source_snapshot_id TEXT NOT NULL,
+  source_id TEXT NOT NULL, source_sha256 TEXT NOT NULL,
+  visible_start INTEGER NOT NULL, visible_end INTEGER NOT NULL,
+  PRIMARY KEY (citation_id, ordinal),
+  FOREIGN KEY (source_snapshot_id, source_id) REFERENCES source_object(snapshot_id, source_id)
+);
 CREATE TABLE attestation (
   id TEXT PRIMARY KEY REFERENCES lexical_record(id), entry_id TEXT NOT NULL REFERENCES entry(id),
   sense_id TEXT REFERENCES sense(id), ordinal INTEGER NOT NULL, association_status TEXT NOT NULL,
@@ -63,6 +73,13 @@ CREATE TABLE citation_authority_candidate (
   bibliographic_source_id TEXT NOT NULL REFERENCES bibliographic_source(id),
   match_method TEXT NOT NULL, PRIMARY KEY (citation_id, bibliographic_source_id, match_method)
 );
+CREATE TABLE citation_siglum_authority_candidate (
+  citation_id TEXT NOT NULL, siglum_ordinal INTEGER NOT NULL,
+  bibliographic_source_id TEXT NOT NULL REFERENCES bibliographic_source(id),
+  match_method TEXT NOT NULL,
+  PRIMARY KEY (citation_id, siglum_ordinal, bibliographic_source_id, match_method),
+  FOREIGN KEY (citation_id, siglum_ordinal) REFERENCES citation_siglum(citation_id, ordinal)
+);
 -- BAdW tooltip expansions are first-party evidence, not reviewed bibliography.
 CREATE TABLE badw_siglum_candidate (
   id TEXT PRIMARY KEY, siglum TEXT NOT NULL, expansion TEXT NOT NULL,
@@ -80,9 +97,15 @@ CREATE TABLE badw_siglum_occurrence (
 );
 CREATE TABLE citation_siglum_candidate (
   citation_id TEXT NOT NULL REFERENCES citation(id),
+  siglum_ordinal INTEGER NOT NULL,
   candidate_id TEXT NOT NULL REFERENCES badw_siglum_candidate(id),
+  occurrence_source_id TEXT NOT NULL,
+  occurrence_ordinal INTEGER NOT NULL,
   match_method TEXT NOT NULL,
-  PRIMARY KEY (citation_id, candidate_id)
+  PRIMARY KEY (citation_id, siglum_ordinal, candidate_id, occurrence_source_id, occurrence_ordinal),
+  FOREIGN KEY (citation_id, siglum_ordinal) REFERENCES citation_siglum(citation_id, ordinal),
+  FOREIGN KEY (candidate_id, occurrence_source_id, occurrence_ordinal)
+    REFERENCES badw_siglum_occurrence(candidate_id, source_id, ordinal_in_article)
 );
 
 -- Positioned generated-PDF witnesses are searchable source text, not parsed
@@ -128,6 +151,7 @@ CREATE VIRTUAL TABLE pdf_unassigned_fragment_fts USING fts5(id UNINDEXED, derive
 
 CREATE INDEX sense_entry_idx ON sense(entry_id, ordinal);
 CREATE INDEX citation_entry_idx ON citation(entry_id);
+CREATE INDEX citation_siglum_source_idx ON citation_siglum(source_snapshot_id, source_id, visible_start);
 CREATE INDEX attestation_entry_idx ON attestation(entry_id);
 CREATE INDEX span_source_idx ON record_source_span(snapshot_id, source_id, start_offset);
 CREATE INDEX badw_siglum_occurrence_source_idx ON badw_siglum_occurrence(source_snapshot_id, source_id, visible_start);

@@ -117,6 +117,39 @@ def validate(records: Iterable[dict[str, Any]]) -> list[str]:
                 _error(errors, line, "citation requires entry_id, non-empty raw_text, and allowed authority_status")
             if "siglum" in row and (not isinstance(row["siglum"], str) or not row["siglum"]):
                 _error(errors, line, "citation siglum must be a non-empty string when supplied")
+            if "sigla" in row:
+                sigla = row["sigla"]
+                if not isinstance(sigla, list) or not sigla:
+                    _error(errors, line, "citation sigla must be a non-empty array when supplied")
+                else:
+                    citation_spans = row.get("source_spans")
+                    citation_spans = citation_spans if isinstance(citation_spans, list) else []
+                    preceding_end = -1
+                    for index, siglum in enumerate(sigla):
+                        if not isinstance(siglum, dict) or not isinstance(siglum.get("text"), str) or not siglum.get("text"):
+                            _error(errors, line, f"citation sigla[{index}] requires non-empty text")
+                            continue
+                        span = siglum.get("source_span")
+                        if not isinstance(span, dict) or span not in citation_spans:
+                            _error(errors, line, f"citation sigla[{index}] requires a matching record source span")
+                        elif (span.get("field") != "article_source_text" or not isinstance(span.get("start"), int)
+                              or span["start"] < preceding_end or not isinstance(span.get("end"), int)):
+                            _error(errors, line, f"citation sigla[{index}] must be ordered, non-overlapping visible text")
+                        else:
+                            preceding_end = span["end"]
+                            containers = [container for container in citation_spans
+                                          if isinstance(container, dict) and container is not span
+                                          and container.get("source_id") == span.get("source_id")
+                                          and container.get("source_sha256") == span.get("source_sha256")
+                                          and isinstance(container.get("start"), int)
+                                          and isinstance(container.get("end"), int)
+                                          and container["start"] <= span["start"] < span["end"] <= container["end"]]
+                            if not containers:
+                                _error(errors, line, f"citation sigla[{index}] lies outside its citation")
+                    if len(sigla) == 1 and isinstance(sigla[0], dict) and row.get("siglum") != sigla[0].get("text"):
+                        _error(errors, line, "single citation siglum disagrees with located sigla")
+                    if len(sigla) > 1 and "siglum" in row:
+                        _error(errors, line, "multi-siglum citation must not claim one scalar siglum")
             authority_id = row.get("bibliographic_source_id")
             if row.get("authority_status") == "resolved" and not isinstance(authority_id, str):
                 _error(errors, line, "resolved citation requires bibliographic_source_id")

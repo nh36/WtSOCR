@@ -24,7 +24,7 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v1"
+VERSION = "badw-pdf-structural-parser-v2"
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.\s*(?=\S)")
 REFERENCE = re.compile(r"[↑↓][^\s;,.()„“]{1,80}")
 PARENTHESIS = re.compile(r"\(([^()]{1,100})\)")
@@ -160,15 +160,21 @@ def _structure(lines: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[
     if sum(len(d["line_indices"]) for d in divisions) != len(lines):
         raise AssertionError("division coverage failed")
     for division in divisions:
-        selected = [lines[i] for i in division["line_indices"]]
+        indices = division["line_indices"]
+        if indices != list(range(indices[0], indices[-1] + 1)):
+            raise AssertionError("PDF division is not a contiguous visual-line range")
+        selected = [lines[i] for i in indices]
         division["text"] = "\n".join(line["text"] for line in selected)
         division["source_runs"] = [_line_ref(line) for line in selected]
+        division["start_line_index"] = indices[0]
+        division["end_line_index_exclusive"] = indices[-1] + 1
         del division["line_indices"]
     return divisions, dict(counts)
 
 
-def _candidates(lines: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [], "cross_references": []}
+def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
+        "cross_references": [], "adjacent_quote_citation_pairs": []}
     if not lines:
         return result
     offsets: list[int] = []
@@ -177,13 +183,25 @@ def _candidates(lines: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
         offsets.append(cursor)
         cursor += len(line["text"]) + 1
     text = "\n".join(line["text"] for line in lines)
+    division_by_line: dict[int, int] = {}
+    for division_index, division in enumerate(divisions):
+        for line_index in range(division["start_line_index"], division["end_line_index_exclusive"]):
+            if line_index in division_by_line:
+                raise AssertionError("PDF division line ranges overlap")
+            division_by_line[line_index] = division_index
+    if len(division_by_line) != len(lines):
+        raise AssertionError("PDF divisions do not cover visual lines")
 
     def location(match: re.Match[str]) -> dict[str, Any]:
         first = bisect_right(offsets, match.start()) - 1
         last = bisect_right(offsets, match.end() - 1) - 1
+        first_division = division_by_line[first]
+        division_index = first_division if division_by_line[last] == first_division else None
         return {"source_line": _line_ref(lines[first]), "source_line_end": _line_ref(lines[last]),
             "start_line_index": first, "end_line_index": last,
-            "line_start": match.start() - offsets[first], "line_end": match.end() - offsets[last]}
+            "line_start": match.start() - offsets[first], "line_end": match.end() - offsets[last],
+            "visual_start": match.start(), "visual_end": match.end(),
+            "division_index": division_index}
 
     for match in re.finditer(r"„([^“]{1,500})“", text):
         result["german_quotes"].append({"text": match.group(1), **location(match),
@@ -199,6 +217,25 @@ def _candidates(lines: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
         result["cross_references"].append({"marker": match.group()[0],
             "target_label_candidate": match.group()[1:], **location(match),
             "status": "unresolved_candidate"})
+    citations = result["parenthetical_citations"]
+    for quote_index, quote in enumerate(result["german_quotes"]):
+        following = [index for index, citation in enumerate(citations)
+                     if citation["visual_start"] >= quote["visual_end"]]
+        if not following:
+            continue
+        citation_index = following[0]
+        citation = citations[citation_index]
+        between = text[quote["visual_end"]:citation["visual_start"]]
+        # This records typographic adjacency, not a resolved Belegstelle or
+        # bibliographic authority.  Do not bridge another quote or prose.
+        if (quote["division_index"] is not None
+                and quote["division_index"] == citation["division_index"]
+                and not between.strip()):
+            result["adjacent_quote_citation_pairs"].append({
+                "quote_index": quote_index, "citation_index": citation_index,
+                "division_index": quote["division_index"],
+                "status": "typographic_candidate",
+            })
     return result
 
 
@@ -246,7 +283,7 @@ def parse_article(article: dict[str, Any], load_page: Any) -> dict[str, Any]:
     divisions, diagnostics = _structure(lines)
     for index, line in enumerate(lines):
         line["line_index"] = index
-    candidates = _candidates(lines)
+    candidates = _candidates(lines, divisions)
     diagnostics["visual_overprint_impressions_removed"] = overprints
     diagnostics["line_count"] = len(lines)
     diagnostics["unknown_glyphs"] = sum(line["unknown_glyphs"] for line in lines)

@@ -21,7 +21,7 @@ from validate_lexical_record_contract import CONTRACT_VERSION, validate
 from verify_badw_lexical_source import VerificationError, sha256, verify_verified_lexical_source
 
 
-EXTRACTOR_VERSION = "badw-html-lexical-extractor-v2"
+EXTRACTOR_VERSION = "badw-html-lexical-extractor-v3"
 
 
 class ExtractionError(ValueError):
@@ -52,6 +52,11 @@ def _source_span(article: dict[str, Any], field: dict[str, Any] | None) -> dict[
     if (not isinstance(start, int) or not isinstance(end, int) or start < 0 or end <= start
             or not isinstance(source_hash, str) or len(source_hash) != 64):
         raise ExtractionError("source field lacks a non-empty visible-text span")
+    text = article.get("article_source_text")
+    field_text = field.get("source_text")
+    if (not isinstance(text, str) or not isinstance(field_text, str)
+            or end > len(text) or text[start:end] != field_text):
+        raise ExtractionError("source field does not match its exact visible-text span")
     return {
         "source_id": source_id,
         "source_sha256": source_hash,
@@ -65,6 +70,25 @@ def _field_text(field: dict[str, Any] | None, name: str) -> str:
     if not isinstance(field, dict) or not isinstance(field.get("source_text"), str):
         raise ExtractionError(f"{name} lacks source_text")
     return field["source_text"]
+
+
+def _citation_sigla(article: dict[str, Any], citation_span: dict[str, Any]) -> list[dict[str, Any]]:
+    """Locate every structurally marked siglum within this exact citation."""
+    found: list[dict[str, Any]] = []
+    for field in article.get("sigla", []):
+        span = _source_span(article, field)
+        if citation_span["start"] <= span["start"] < span["end"] <= citation_span["end"]:
+            found.append({"text": _field_text(field, "citation siglum"), "source_span": span})
+    return sorted(found, key=lambda item: (item["source_span"]["start"], item["source_span"]["end"]))
+
+
+def _add_citation_sigla(record: dict[str, Any], article: dict[str, Any], citation_span: dict[str, Any]) -> None:
+    found = _citation_sigla(article, citation_span)
+    if found:
+        record["sigla"] = found
+        record["source_spans"].extend(item["source_span"] for item in found)
+        if len(found) == 1:
+            record["siglum"] = found[0]["text"]
 
 
 def _base_record(
@@ -167,7 +191,8 @@ def extract_article(
             continue
         citation_ordinal += 1
         citation_id = _record_id("citation", source_identifier, citation_ordinal)
-        citation_record = _base_record("citation", citation_id, [_source_span(article, citation)], snapshot_id, extraction_run_id)
+        citation_span = _source_span(article, citation)
+        citation_record = _base_record("citation", citation_id, [citation_span], snapshot_id, extraction_run_id)
         citation_record.update(
             {
                 "entry_id": entry_id,
@@ -175,16 +200,17 @@ def extract_article(
                 "authority_status": "unresolved",
             }
         )
-        sigla = example.get("citation_sigla")
-        if isinstance(sigla, list) and sigla and isinstance(sigla[0], dict):
-            siglum = _field_text(sigla[0], "citation siglum")
-            if siglum:
-                citation_record["siglum"] = siglum
+        _add_citation_sigla(citation_record, article, citation_span)
         location = example.get("location")
         if isinstance(location, dict):
             locator = _field_text(location, "citation locator")
             if locator:
                 citation_record["locator"] = locator
+                location_span = _source_span(article, location)
+                if not (citation_span["start"] <= location_span["start"]
+                        < location_span["end"] <= citation_span["end"]):
+                    raise ExtractionError("citation locator lies outside its citation")
+                citation_record["source_spans"].append(location_span)
         records.append(citation_record)
         citations_by_example[example_index].append(citation_id)
         span = citation_record["source_spans"][0]
@@ -205,6 +231,7 @@ def extract_article(
         citation_id = _record_id("citation", source_identifier, citation_ordinal)
         citation_record = _base_record("citation", citation_id, [span], snapshot_id, extraction_run_id)
         citation_record.update({"entry_id": entry_id, "raw_text": raw_text, "authority_status": "unresolved"})
+        _add_citation_sigla(citation_record, article, span)
         records.append(citation_record)
 
     sense_ordinals: Counter[str] = Counter()
@@ -250,6 +277,7 @@ def extract_article(
             translation_text = _field_text(translation, f"example {example_index + 1} translation")
             if translation_text:
                 attestation["german_translation"] = translation_text
+                attestation["source_spans"].append(_source_span(article, translation))
         records.append(attestation)
 
     for index, reference in enumerate(article.get("cross_references", []), 1):

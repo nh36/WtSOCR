@@ -19,7 +19,8 @@ attestation	german_translation	no	string		German translation or gloss when the s
 attestation	citation_ids	yes	array		Zero or more foreign keys to citation records; multiple source citations are not collapsed.
 citation	entry_id	yes	string		Foreign key to the entry containing the source citation.
 citation	raw_text	yes	string		Complete visible source-preserved citation field; normalization is explicit and never inferred by a broad OCR rule.
-citation	siglum	no	string		Source-preserved siglum when structurally identifiable.
+citation	siglum	no	string		Source-preserved siglum only when exactly one is structurally identifiable; legacy single-siglum records remain valid.
+citation	sigla	no	array		Ordered source-preserved siglum occurrences, each with text and an exact article_source_text source_span contained in this citation.
 citation	authority_status	yes	enum	resolved|unresolved|ambiguous|not_applicable	Bibliographic-authority resolution state; unresolved raw sigla remain valid evidence.
 citation	bibliographic_source_id	no	string		Foreign key to a bibliographic_source record when authority_status is resolved.
 citation	locator	no	string		Source-preserved citation locator.
