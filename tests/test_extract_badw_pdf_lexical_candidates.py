@@ -319,6 +319,10 @@ def test_wrapped_parenthetical_correction_preserves_complete_example() -> None:
      [[(0, 7, "italic"), (7, 12, "regular"), (12, 17, "italic"),
        (17, 18, "regular")], [(0, 33, "regular")]],
      "~ rtsal (r. stsal)"),
+    (["~ mdon (r.ka) „translation“ (Source 1)."],
+     [[(0, 6, "italic"), (6, 10, "regular"), (10, 12, "italic"),
+       (12, len("~ mdon (r.ka) „translation“ (Source 1)."), "regular")]],
+     "~ mdon (r.ka)"),
 ])
 def test_final_printed_correction_is_part_of_complete_example(
         lines: list[str], spans: list[list[tuple[int, int, str]]],
@@ -453,6 +457,41 @@ def test_nested_parenthetical_correction_does_not_emit_truncated_example() -> No
     assert result["belegstellen"] == []
     assert result["unresolved_quotes"] == [{"quote_index": 0,
         "reason": "mixed_style_parenthetical_correction"}]
+
+
+def test_compact_mixed_style_correction_joins_the_complete_loc_example() -> None:
+    first = "dṅos rigs ~ yod med la ma ltos pa’i mi ño"
+    second = "dka’ (r.ka) med ’bam tshoṅ "
+    correction_start = second.index("(r.ka)")
+    proposal_start = second.index("ka)")
+    lines = [_line(first, [(0, len(first), "italic")]),
+             _line(second, [(0, correction_start, "italic"),
+                            (correction_start, proposal_start, "regular"),
+                            (proposal_start, proposal_start + 2, "italic"),
+                            (proposal_start + 2, proposal_start + 3, "regular"),
+                            (proposal_start + 3, len(second), "italic")]),
+             _line("„translation“ (Source 12).")]
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Source 12)")
+    article = _article(lines, candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„translation“"),
+                           "division_index": 0, "start_line_index": 2}],
+        "parenthetical_citations": [{"visual_start": cite_start,
+                                      "visual_end": cite_start + len("(Source 12)"),
+                                      "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                                           "citation_index": 0}]})
+    result = extract(article)
+    assert result["unresolved_quotes"] == []
+    assert result["tibetan_examples"][0]["text"] == first + "\n" + second.rstrip()
+    assert result["belegstellen"][0]["text"] == (
+        first + "\n" + second + "\n„translation“ (Source 12)")
+    correction = result["correction_apparatus"][0]
+    assert correction["proposed_reading"] == "ka"
+    assert correction["target_text"] == "dka’"
+    validate(article, result)
 
 
 @pytest.mark.parametrize("first,spans", [

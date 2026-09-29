@@ -21,7 +21,7 @@ from badw_canonical_pages import stable_json_bytes
 from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 
 
-VERSION = "badw-pdf-lexical-candidates-v6"
+VERSION = "badw-pdf-lexical-candidates-v7"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
 # In generated pages the lemma placeholder can be roman while the surrounding
 # LoC example is italic. Admit only this literal, adjacent suffix; do not
@@ -32,7 +32,7 @@ PLACEHOLDER_QUALIFIER = re.compile(r"\s*~\s*(?:\(metr\.\)\s*)?\Z")
 # proposal rather than the example. Require the entire intervening source
 # span to be exactly one literal correction and an optional metre qualifier.
 CORRECTION_BEFORE_QUOTE = re.compile(
-    r"(?P<apparatus>\s*\(r\.\s+[^()]+\))\s*(?:\(metr\.\)\s*)?\Z")
+    r"(?P<apparatus>\s*\(r\.\s*[^()]+\))\s*(?:\(metr\.\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
 MORPHOLOGY_PREFIX = re.compile(r"^\s*(?:pf\.|fut\.|prs\.|imp\.)\s+zu\s+[↑↓]")
@@ -40,8 +40,9 @@ GLOSS_REFERENCE_SUFFIX = re.compile(r"[,;]\s*vgl\.\s+[↑↓][^\n,;()„“]+\.?
 REFERENCE_CONTINUATION = re.compile(r"\s*vgl\.\s+[↑↓][^\n;()„“]+\.?\s*\Z")
 MORPHOLOGY_PREAMBLE = re.compile(r"\s*(?:pf\.|fut\.|prs\.|imp\.)\s*\Z")
 INLINE_ITALIC_INTERRUPTION = re.compile(
-    r"(?:\s+\.\.\.\s+|\s*⟨[^<>\n]+⟩\s*|\s*\(r\.\s+[^()]+\)\s*)\Z")
-PRINTED_CORRECTION = re.compile(r"\(r\.\s+(?P<proposal>[^()]+?)\)")
+    r"(?:\s+\.\.\.\s+|\s*⟨[^<>\n]+⟩\s*|\s*\(r\.\s*[^()]+\)\s*)\Z")
+PRINTED_CORRECTION = re.compile(r"\(r\.\s*(?P<proposal>[^()]+?)\)")
+INLINE_APPARATUS = re.compile(r"\(r\.\s*[^()]+\)|⟨[^⟨⟩\n]+⟩|\{[^{}\n]+\}|\.\.\.")
 PRECEDING_TOKEN = re.compile(r"(?P<target>[^\s()]+)\s*\Z")
 VARIANT_GLOSS_CUE = re.compile(
     r"(?<!\w)(?P<cue>auch|Kurzf\.\s+für|(?:pf|prs|fut|imp)\.\s*(?:zu\s*)?[↑↓])\s*\Z")
@@ -73,6 +74,53 @@ def _anchor(lines: list[dict[str, Any]], offsets: list[int], start: int, end: in
 
 def _in_italic(intervals: list[tuple[int, int, int]], start: int, end: int) -> bool:
     return any(left <= start and end <= right for left, right, _ in intervals)
+
+
+def _joined_correction_start(text: str, start: int, end: int,
+                             first_line: int, lines: list[dict[str, Any]],
+                             offsets: list[int],
+                             intervals: list[tuple[int, int, int]]) -> int:
+    """Include mixed-style ``(r. …)`` only with a complete source span.
+
+    A correction's delimiters are often roman but its proposal is italic.
+    Testing the gap between two italic runs therefore loses the full syntax.
+    Inspect the entire candidate instead, and require every nonitalic source
+    character to be whitespace, a lemma placeholder, or literal apparatus.
+    German prose, citations, unknown glyphs and earlier quotes stop the join.
+    """
+    for prior_start, _, prior_line in reversed(intervals):
+        if prior_start >= start:
+            continue
+        if first_line - prior_line > 2:
+            break
+        if lines[prior_line]["page_id"] != lines[first_line]["page_id"]:
+            break
+        if any(lines[i]["unknown_glyphs"] for i in range(prior_line, first_line + 1)):
+            break
+        candidate = text[prior_start:end]
+        if len(candidate) > 500 or "„" in candidate or "“" in candidate or ";" in candidate:
+            break
+        if not re.search(r"\(r\.\s*[^()]+\)", candidate):
+            continue
+        allowed = [char.isspace() or char == "~" for char in candidate]
+        for match in INLINE_APPARATUS.finditer(candidate):
+            allowed[match.start():match.end()] = [True] * (match.end() - match.start())
+        safe = True
+        for line_index in range(prior_line, first_line + 1):
+            for span in lines[line_index]["style_spans"]:
+                if span["style"] == "italic":
+                    continue
+                left = max(prior_start, offsets[line_index] + span["start"])
+                right = min(end, offsets[line_index] + span["end"])
+                if any(not allowed[pos - prior_start] for pos in range(left, right)):
+                    safe = False
+                    break
+            if not safe:
+                break
+        if safe:
+            start = prior_start
+            first_line = prior_line
+    return start
 
 
 def _corrections(text: str, examples: list[dict[str, Any]],
@@ -388,6 +436,8 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             if INLINE_ITALIC_INTERRUPTION.fullmatch(text[prior_end:start]):
                 start, first_line = prior_start, prior_line
                 example_text = text[start:end].strip()
+        start = _joined_correction_start(
+            text, start, end, first_line, lines, offsets, intervals[:index])
         # A newly joined italic span can include leading/trailing source
         # whitespace.  Re-anchor the final candidate, not its pre-join tail.
         joined = text[start:end]
