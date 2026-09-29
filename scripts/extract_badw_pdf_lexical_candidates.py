@@ -18,9 +18,10 @@ import re
 from typing import Any, Iterable
 
 from badw_canonical_pages import stable_json_bytes
+from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 
 
-VERSION = "badw-pdf-lexical-candidates-v3"
+VERSION = "badw-pdf-lexical-candidates-v5"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
 # A printed correction belongs to the preceding LoC example. Its proposal
 # may use italic type, so the final italic run before a quote can be the
@@ -38,6 +39,8 @@ INLINE_ITALIC_INTERRUPTION = re.compile(
     r"(?:\s+\.\.\.\s+|\s*⟨[^<>\n]+⟩\s*|\s*\(r\.\s+[^()]+\)\s*)\Z")
 PRINTED_CORRECTION = re.compile(r"\(r\.\s+(?P<proposal>[^()]+?)\)")
 PRECEDING_TOKEN = re.compile(r"(?P<target>[^\s()]+)\s*\Z")
+VARIANT_GLOSS_CUE = re.compile(
+    r"(?<!\w)(?P<cue>auch|Kurzf\.\s+für|(?:pf|prs|fut|imp)\.\s*(?:zu\s*)?[↑↓])\s*\Z")
 
 
 def _offsets(lines: list[dict[str, Any]]) -> list[int]:
@@ -232,8 +235,41 @@ def _definition_candidates(article: dict[str, Any], text: str,
     return results
 
 
+def _opening_quoted_definition(article: dict[str, Any], quote: dict[str, Any],
+                               quote_index: int, paired: set[int],
+                               text: str, offsets: list[int]) -> dict[str, Any] | None:
+    """Retain a source-quoted opening gloss as a definition candidate.
+
+    The rule is deliberately narrow: only the first visual line of its own
+    division, with no LoC text before it, no adjacent citation, and regular
+    TGaramond type. Other orphan quotes remain unresolved for review.
+    """
+    division_index = quote.get("division_index")
+    if division_index is None or quote_index in paired:
+        return None
+    division = article["divisions"][division_index]
+    line_index = int(quote["start_line_index"])
+    if line_index != division["start_line_index"]:
+        return None
+    line = article["visual_lines"][line_index]
+    start, end = int(quote["visual_start"]), int(quote["visual_end"])
+    local_start = start - offsets[line_index]
+    prefix = line["text"][:local_start]
+    if division["kind"] == "numbered_sense":
+        prefix = re.sub(r"^\s*" + re.escape(division["label"]) + r"\.\s+", "", prefix, count=1)
+    if prefix.strip() or line["unknown_glyphs"]:
+        return None
+    if not any(span["family"] == "TGaramond" and span["style"] == "regular"
+               and span["start"] <= local_start < span["end"]
+               for span in line["style_spans"]):
+        return None
+    return {"text": text[start:end], "division_index": division_index,
+            "quote_index": quote_index, "status": "unverified_quoted_gloss_candidate",
+            **_anchor(article["visual_lines"], offsets, start, end)}
+
+
 def extract(article: dict[str, Any]) -> dict[str, Any]:
-    if article.get("contract_version") != "badw-pdf-structural-parser-v4":
+    if article.get("contract_version") != STRUCTURE_VERSION:
         raise ValueError("unsupported PDF structure contract")
     lines = article["visual_lines"]
     text = "\n".join(line["text"] for line in lines)
@@ -247,7 +283,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         "source_faithful_sha256": article["source_faithful_sha256"],
         "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
         "definitions": [], "tibetan_examples": [], "belegstellen": [],
-        "lexicographic_parallels": [], "quote_dispositions": [],
+        "lexicographic_parallels": [], "variant_glosses": [], "quote_dispositions": [],
         "translations": [], "citations": [], "correction_apparatus": [],
         "divisions": [], "unresolved_quotes": []}
     if not lines:
@@ -258,6 +294,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     citations = article["candidates"]["parenthetical_citations"]
     pairs = {pair["quote_index"]: pair["citation_index"]
              for pair in article["candidates"]["adjacent_quote_citation_pairs"]}
+    paired = set(pairs)
     for quote in quotes:
         start, end = int(quote["visual_start"]), int(quote["visual_end"])
         result["translations"].append({"text": text[start:end],
@@ -286,6 +323,11 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                             for i in range(interval_line, quote_line + 1))):
                 eligible.append((interval_index, interval_end + match.end("apparatus")))
         if not eligible:
+            definition = _opening_quoted_definition(article, quote, quote_index,
+                                                    paired, text, offsets)
+            if definition is not None:
+                result["definitions"].append(definition)
+                continue
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "no_adjacent_italic_loc_span"})
             continue
@@ -356,6 +398,21 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                 "status": "source_lexicon_parallel_candidate",
                 **_anchor(lines, offsets, start, parallel_end)})
             continue
+        # A quoted German gloss immediately following an explicit variant
+        # cue is not an illustrative Tibetan Belegstelle.  Require the cue
+        # directly before the source-italic LoC span and no citation; other
+        # uncited quotations remain unresolved for review.
+        variant_cue = (VARIANT_GLOSS_CUE.search(text[max(0, start - 100):start])
+                       if cite_index is None else None)
+        if variant_cue:
+            result["variant_glosses"].append({
+                "text": text[start:int(quote["visual_end"])],
+                "loc_text": example_text, "cue": variant_cue.group("cue"),
+                "quote_index": quote_index, "translation_index": quote_index,
+                "division_index": division_index,
+                "status": "source_variant_gloss_candidate",
+                **_anchor(lines, offsets, start, int(quote["visual_end"]))})
+            continue
         example_index = len(result["tibetan_examples"])
         example = {"text": example_text, "quote_index": quote_index,
             "division_index": division_index, "lexical_region": False,
@@ -388,6 +445,11 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         dispositions[item["quote_index"]] = ("belegstelle_candidate", "typographic_source_sequence")
     for item in result["lexicographic_parallels"]:
         dispositions[item["quote_index"]] = ("lexicographic_parallel_candidate", "lexicon_region")
+    for item in result["variant_glosses"]:
+        dispositions[item["quote_index"]] = ("variant_gloss_candidate", "adjacent_source_variant_cue")
+    for item in result["definitions"]:
+        if "quote_index" in item:
+            dispositions[item["quote_index"]] = ("quoted_definition_candidate", "division_opening_regular_gloss")
     result["quote_dispositions"] = [
         {"quote_index": i, "kind": dispositions[i][0], "reason": dispositions[i][1]}
         for i in range(len(quotes))]
@@ -402,7 +464,9 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             "belegstelle_indices": [i for i, item in enumerate(result["belegstellen"])
                                     if item["division_index"] == division_index],
             "parallel_indices": [i for i, item in enumerate(result["lexicographic_parallels"])
-                                 if item["division_index"] == division_index]})
+                                 if item["division_index"] == division_index],
+            "variant_gloss_indices": [i for i, item in enumerate(result["variant_glosses"])
+                                      if item["division_index"] == division_index]})
     validate(article, result)
     return result
 
@@ -416,7 +480,7 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
         raise ValueError("article source identity mismatch")
     if result["visual_sha256"] != sha256(visual.encode("utf-8")).hexdigest():
         raise ValueError("visual source hash mismatch")
-    for collection in ("definitions", "tibetan_examples", "belegstellen", "lexicographic_parallels",
+    for collection in ("definitions", "tibetan_examples", "belegstellen", "lexicographic_parallels", "variant_glosses",
                        "translations", "citations", "correction_apparatus"):
         for record in result[collection]:
             if collection == "correction_apparatus":
@@ -488,14 +552,32 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
             citation = result["citations"][parallel["citation_index"]]
             if citation["visual_end"] != parallel["visual_end"]:
                 raise ValueError("lexicographic parallel citation mismatch")
+    for variant in result["variant_glosses"]:
+        quote = result["translations"][variant["translation_index"]]
+        if (variant["quote_index"] != variant["translation_index"] or
+                not variant["visual_start"] < quote["visual_start"] < quote["visual_end"] == variant["visual_end"] or
+                variant["division_index"] != quote["division_index"] or
+                result["quote_dispositions"][variant["quote_index"]]["kind"] != "variant_gloss_candidate"):
+            raise ValueError("variant gloss source order mismatch")
     if ([item["quote_index"] for item in result["quote_dispositions"]] !=
             list(range(len(result["translations"])))):
         raise ValueError("quote disposition coverage mismatch")
+    for definition in result["definitions"]:
+        if "quote_index" not in definition:
+            continue
+        index = definition["quote_index"]
+        translation = result["translations"][index]
+        if (definition["visual_start"] != translation["visual_start"] or
+                definition["visual_end"] != translation["visual_end"] or
+                definition["division_index"] != translation["division_index"] or
+                result["quote_dispositions"][index]["kind"] != "quoted_definition_candidate"):
+            raise ValueError("quoted definition source link mismatch")
     for index, division in enumerate(result["divisions"]):
         for field, collection in (("definition_indices", "definitions"),
                                   ("example_indices", "tibetan_examples"),
                                   ("belegstelle_indices", "belegstellen"),
-                                  ("parallel_indices", "lexicographic_parallels")):
+                                  ("parallel_indices", "lexicographic_parallels"),
+                                  ("variant_gloss_indices", "variant_glosses")):
             expected = [item for item, record in enumerate(result[collection])
                         if record["division_index"] == index]
             if division[field] != expected:
@@ -525,7 +607,7 @@ def build(source: Path, output: Path) -> dict[str, Any]:
             stats["articles"] += 1
             stats[f"volume_{row['volume']}"] += 1
             for key in ("definitions", "tibetan_examples", "belegstellen",
-                        "lexicographic_parallels", "quote_dispositions",
+                        "lexicographic_parallels", "variant_glosses", "quote_dispositions",
                         "translations", "citations", "correction_apparatus",
                         "divisions", "unresolved_quotes"):
                 stats[key] += len(row[key])

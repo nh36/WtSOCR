@@ -12,7 +12,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from parse_badw_pdf_articles import _candidates, build, parse_article
+from parse_badw_pdf_articles import _candidates, _structure, build, parse_article, reindex_article
 
 
 def _hash(value: str) -> str:
@@ -86,6 +86,30 @@ def test_nonsequential_labels_are_not_promoted() -> None:
     assert [part["label"] for part in parsed["divisions"]] == ["1"]
     assert parsed["diagnostics"]["unpromoted_number_labels"] == 1
     assert "4. continuation" in parsed["divisions"][0]["text"]
+
+
+def test_wrapped_locator_is_not_a_numbered_sense() -> None:
+    lines = [_candidate_line("1. Bedeutung."),
+             _candidate_line("1.3.34c); mtsho la ~ bab pa „Schnee“ (Pd-K 4).")]
+    divisions, counts = _structure(lines)
+    assert [division["label"] for division in divisions] == ["1"]
+    assert counts["numbered_senses"] == 1
+    assert "1.3.34c)" in divisions[0]["text"]
+
+
+def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
+    article, page = _fixture()
+    previous = parse_article(article, lambda _: page)
+    previous["contract_version"] = "badw-pdf-structural-parser-v4"
+    first = reindex_article(previous)
+    assert first == reindex_article(previous)
+    assert first["source_objects"] == previous["source_objects"]
+    assert first["source_faithful_text"] == previous["source_faithful_text"]
+    assert first["visual_lines"] == previous["visual_lines"]
+    assert first["contract_version"] == "badw-pdf-structural-parser-v5"
+    previous["source_faithful_sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="hash mismatch"):
+        reindex_article(previous)
 
 
 def test_multiline_quote_and_citation_have_end_line_provenance() -> None:
@@ -213,6 +237,15 @@ def test_qualified_locatorless_and_reviewed_mixed_case_siglum() -> None:
     assert [(item["text"], item["siglum_candidate"]) for item in citations] == [
         ("(brDa, ähnl. Dagy)", "brDa"), ("(gZer 563,4)", "gZer"),
         ("(brDa,\nähnl. Dagy)", "brDa")]
+
+
+def test_reviewed_source_forms_exclude_correction_and_prose() -> None:
+    line = _candidate_line(
+        "(Bca Kolophon) (Pś Kolophon) (PT1083 Siegelabdruck) "
+        "(ChFr67) (Ctr14) (PW) (SWTF) (r. źi) (Kolophon) (vergleichbar)")
+    citations = _candidates([line], _candidate_division(1))["parenthetical_citations"]
+    assert [item["siglum_candidate"] for item in citations] == [
+        "Bca", "Pś", "PT1083", "ChFr67", "Ctr14", "PW", "SWTF"]
 
 
 def test_md_zod_g_wrapped_locator_is_citation_not_arbitrary_parenthesis() -> None:

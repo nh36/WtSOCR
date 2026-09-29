@@ -24,14 +24,25 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v4"
-SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.\s*(?=\S)")
+VERSION = "badw-pdf-structural-parser-v5"
+PREVIOUS_VERSION = "badw-pdf-structural-parser-v4"
+# A sense number is a standalone printed label, not the first component of a
+# wrapped source locator such as 1.3.34c). Require actual following space.
+SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.(?=\s+\S)")
 SIGLUM = re.compile(r"^(?:in\s+)?(?P<siglum>[’']?[\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{1,24})(?=\s|,|\(|/|$)")
 # Reviewed, locatorless source sigla in the frozen PDF-structure benchmark.
 # Other locatorless parentheses remain unassociated until source evidence is
 # reviewed; this is deliberately not a broad capitalisation heuristic.
 LOCATORLESS_SIGLA = frozenset({"Dagy", "TTC", "brDa"})
 QUALIFIED_LOCATORLESS_SIGLA = re.compile(r"^brDa,\s*ähnl\.\s*Dagy$")
+# Source-shaped citation forms checked against the frozen unresolved queue.
+# Do not admit arbitrary parenthetical prose or (r. ...) apparatus here.
+REVIEWED_CITATION_FORMS = {
+    "Bca Kolophon": "Bca", "Bca Kol.": "Bca", "Pś Kolophon": "Pś",
+    "Pś Kolo-\nphon": "Pś", "PT1083 Siegelabdruck": "PT1083",
+    "brDa, Dagy": "brDa", "PW": "PW", "SWTF": "SWTF",
+}
+EMBEDDED_LOCATOR_SIGLA = re.compile(r"^(?P<siglum>(?:ChFr|Ctr)\d+)$")
 
 
 def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
@@ -56,6 +67,11 @@ def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
 
 
 def _citation_siglum(interior: str) -> str | None:
+    if interior in REVIEWED_CITATION_FORMS:
+        return REVIEWED_CITATION_FORMS[interior]
+    embedded = EMBEDDED_LOCATOR_SIGLA.fullmatch(interior)
+    if embedded:
+        return embedded.group("siglum")
     if interior in LOCATORLESS_SIGLA or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior):
         match = SIGLUM.match(interior)
         return match.group("siglum") if match else None
@@ -400,6 +416,56 @@ def _file_hash(path: Path) -> str:
     return digest.hexdigest()
 
 
+def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
+    """Rebuild only derived divisions/candidates from an audited cached v4 row.
+
+    This offline path never reloads a PDF and never changes source/visual text.
+    """
+    if article.get("contract_version") != PREVIOUS_VERSION:
+        raise ValueError("unsupported source structure contract for reindex")
+    lines = article["visual_lines"]
+    if [line["line_index"] for line in lines] != list(range(len(lines))):
+        raise ValueError("nonsequential visual lines")
+    if _hash_text(article["source_faithful_text"]) != article["source_faithful_sha256"]:
+        raise ValueError("source-faithful text hash mismatch")
+    divisions, diagnostics = _structure(lines)
+    candidates = _candidates(lines, divisions)
+    diagnostics.update({key: article["diagnostics"][key] for key in
+        ("visual_overprint_impressions_removed", "line_count", "unknown_glyphs")})
+    diagnostics.update({key: len(value) for key, value in candidates.items()})
+    if diagnostics["line_count"] != len(lines) or diagnostics["unknown_glyphs"] != sum(
+            line["unknown_glyphs"] for line in lines):
+        raise ValueError("visual-line diagnostics mismatch")
+    return {**article, "contract_version": VERSION, "divisions": divisions,
+            "candidates": candidates, "diagnostics": diagnostics}
+
+
+def reindex_corpus(source: Path, output_root: Path) -> dict[str, Any]:
+    if output_root.exists():
+        raise FileExistsError(f"refusing to overwrite output: {output_root}")
+    output_root.mkdir(parents=True)
+    output = output_root / "pdf_article_structure.jsonl.gz"
+    counts: Counter[str] = Counter()
+    logical = sha256()
+    with gzip.open(source, "rt", encoding="utf-8") as rows, output.open("wb") as raw:
+        with gzip.GzipFile(filename="", fileobj=raw, mode="wb", mtime=0) as sink:
+            for row in rows:
+                parsed = reindex_article(json.loads(row))
+                encoded = stable_json_bytes(parsed) + b"\n"
+                sink.write(encoded)
+                logical.update(encoded)
+                counts["articles"] += 1
+                counts[f"volume_{parsed['volume']}"] += 1
+                counts["divisions"] += len(parsed["divisions"])
+                for key, value in parsed["diagnostics"].items():
+                    counts[key] += value
+    summary = {"contract_version": VERSION, "reindexed_from_sha256": _file_hash(source),
+        "logical_output_sha256": logical.hexdigest(), "compressed_output_sha256": _file_hash(output),
+        "counts": dict(sorted(counts.items()))}
+    (output_root / "summary.json").write_bytes(stable_json_bytes(summary) + b"\n")
+    return summary
+
+
 def build(witnesses: Path, canonical_roots: Path | list[Path], output_root: Path) -> dict[str, Any]:
     if isinstance(canonical_roots, Path):
         canonical_roots = [canonical_roots]
@@ -449,12 +515,22 @@ def build(witnesses: Path, canonical_roots: Path | list[Path], output_root: Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--witnesses", type=Path, required=True)
-    parser.add_argument("--canonical-root", type=Path, action="append", required=True,
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--witnesses", type=Path)
+    source.add_argument("--reindex-structure", type=Path)
+    parser.add_argument("--canonical-root", type=Path, action="append",
                         help="repeat for compatible historical canonical page-object roots")
     parser.add_argument("--output-root", type=Path, required=True)
     args = parser.parse_args()
-    print(json.dumps(build(args.witnesses, args.canonical_root, args.output_root), ensure_ascii=False, indent=2))
+    if args.reindex_structure:
+        if args.canonical_root:
+            parser.error("--canonical-root is not used when reindexing")
+        summary = reindex_corpus(args.reindex_structure, args.output_root)
+    else:
+        if not args.canonical_root:
+            parser.error("--canonical-root is required with --witnesses")
+        summary = build(args.witnesses, args.canonical_root, args.output_root)
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

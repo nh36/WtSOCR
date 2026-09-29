@@ -36,7 +36,7 @@ def article(with_citation: bool = True) -> dict:
     citations = ([{"visual_start": citation_start,
                    "visual_end": citation_start + len("(Quelle 1)"),
                    "division_index": 0}] if with_citation else [])
-    return {"contract_version": "badw-pdf-structural-parser-v4",
+    return {"contract_version": "badw-pdf-structural-parser-v5",
             "article_id": "badw:pdf:test", "volume": 2,
             "loc_headword": "sñags", "tibetan_headword": "སྔགས", "homonym": None,
             "source_objects": [],
@@ -82,6 +82,26 @@ def test_uncited_example_keeps_complete_tibetan_and_correction() -> None:
     assert item["reason"] == "no_adjacent_citation"
 
 
+def test_variant_gloss_is_separate_from_belegstelle() -> None:
+    source = article(with_citation=False)
+    first = "auch kha chiṅ „eine Variante“"
+    source["visual_lines"] = [{"text": first, "page_id": "page-1", "span_index": 0,
+        "printed_page": 17, "run_start": 0, "run_end_exclusive": len(first),
+        "unknown_glyphs": [], "style_spans": [
+            {"start": 0, "end": 5, "family": "TGaramond", "style": "regular"},
+            {"start": 5, "end": 14, "family": "TGaramond", "style": "italic"},
+            {"start": 14, "end": len(first), "family": "TGaramond", "style": "regular"}]}]
+    source["source_faithful_sha256"] = sha256(first.encode()).hexdigest()
+    source["divisions"] = [{"kind": "unsegmented", "label": "",
+        "start_line_index": 0, "end_line_index_exclusive": 1, "text": first}]
+    source["candidates"] = {"german_quotes": [{"visual_start": first.index("„"),
+        "visual_end": len(first), "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []}
+    row = project(source, extract(source))
+    assert [item["kind"] for item in row["divisions"][0]["items"]] == ["variant_gloss_candidate"]
+    assert row["divisions"][0]["items"][0]["components"]["variant_glosses"]["cue"] == "auch"
+
+
 def test_projection_rejects_source_mismatch() -> None:
     source = article()
     lexical = extract(source)
@@ -90,7 +110,7 @@ def test_projection_rejects_source_mismatch() -> None:
         project(source, lexical)
 
 
-def test_unanchored_german_quote_remains_explicit_in_its_sense() -> None:
+def test_quoted_opening_gloss_is_definition_in_its_sense() -> None:
     source = article()
     third = "2. „deutsche Definition“"
     source["visual_lines"].append({
@@ -112,7 +132,7 @@ def test_unanchored_german_quote_remains_explicit_in_its_sense() -> None:
     row = project(source, extract(source))
     second = row["divisions"][1]
     assert second["kind"] == "sense_candidate"
-    assert next(item for item in second["items"] if item["kind"] == "unresolved_quote")[
+    assert next(item for item in second["items"] if item["kind"] == "definition_candidate")[
         "components"]["translations"]["text"] == "„deutsche Definition“"
     assert not any(item["kind"] == "belegstelle_candidate" for item in second["items"])
 

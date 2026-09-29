@@ -27,7 +27,7 @@ def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
 def _article(lines: list[dict], divisions: list[dict] | None = None,
              candidates: dict | None = None) -> dict:
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v4",
+    return {"contract_version": "badw-pdf-structural-parser-v5",
             "article_id": "badw:pdf:test", "volume": 2, "loc_headword": "sñags",
             "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines,
@@ -147,10 +147,77 @@ def test_same_line_variant_followed_by_german_gloss() -> None:
     assert first[definition["visual_start"]:definition["visual_end"]] == definition["text"]
 
 
+def test_regular_quoted_division_opening_is_gloss_not_unresolved_example() -> None:
+    first = "1. „fünfgesichtig“, Löwe."
+    start = first.index("„")
+    article = _article([_line(first)], divisions=[{
+        "kind": "numbered_sense", "label": "1", "start_line_index": 0,
+        "end_line_index_exclusive": 1}], candidates={
+        "german_quotes": [{"visual_start": start,
+                           "visual_end": start + len("„fünfgesichtig“"),
+                           "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []})
+    result = extract(article)
+    assert [item["text"] for item in result["definitions"]] == ["„fünfgesichtig“"]
+    assert result["definitions"][0]["status"] == "unverified_quoted_gloss_candidate"
+    assert result["unresolved_quotes"] == []
+    assert result["quote_dispositions"][0]["kind"] == "quoted_definition_candidate"
+    validate(article, result)
+
+
+def test_regular_quote_after_tibetan_and_citation_stays_out_of_gloss_rule() -> None:
+    first = "~ kha la „mouth“ (Siddh 4)."
+    quote_start = first.index("„")
+    citation_start = first.index("(Siddh")
+    article = _article([_line(first)], candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„mouth“"),
+                           "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [{"visual_start": citation_start,
+                                      "visual_end": citation_start + len("(Siddh 4)"),
+                                      "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0, "citation_index": 0}]})
+    result = extract(article)
+    assert result["definitions"] == []
+    assert result["quote_dispositions"][0]["kind"] == "unresolved"
+
+
 def test_variant_without_same_line_gloss_is_not_promoted() -> None:
     first = "auch thig gu"
     lines = [_line(first, [(0, 5, "regular"), (5, len(first), "italic")])]
     assert extract(_article(lines))["definitions"] == []
+
+
+def test_quoted_variant_gloss_is_not_an_uncited_belegstelle() -> None:
+    line = "auch kha chiṅ „eine Variante“"
+    italic_start = line.index("kha chiṅ")
+    quote_start = line.index("„")
+    article = _article([_line(line, [(0, italic_start, "regular"),
+                                  (italic_start, quote_start - 1, "italic"),
+                                  (quote_start - 1, len(line), "regular")])], candidates={
+        "german_quotes": [{"visual_start": quote_start, "visual_end": len(line),
+                            "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []})
+    result = extract(article)
+    assert result["tibetan_examples"] == []
+    assert result["unresolved_quotes"] == []
+    assert result["variant_glosses"][0]["loc_text"] == "kha chiṅ"
+    assert result["variant_glosses"][0]["cue"] == "auch"
+    assert result["quote_dispositions"][0]["kind"] == "variant_gloss_candidate"
+    validate(article, result)
+
+
+def test_quoted_uncited_example_without_explicit_variant_cue_remains_unresolved() -> None:
+    line = "~ bcad pa „ein Beispiel“"
+    quote_start = line.index("„")
+    article = _article([_line(line, [(0, quote_start - 1, "italic"),
+                                  (quote_start - 1, len(line), "regular")])], candidates={
+        "german_quotes": [{"visual_start": quote_start, "visual_end": len(line),
+                            "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []})
+    result = extract(article)
+    assert result["variant_glosses"] == []
+    assert result["unresolved_quotes"] == [{"quote_index": 0, "reason": "no_adjacent_citation"}]
 
 
 def test_mixed_font_definition_continues_after_line_final_tilde() -> None:

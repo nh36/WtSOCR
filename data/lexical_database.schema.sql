@@ -174,6 +174,7 @@ CREATE TABLE pdf_lexical_candidate (
   article_id TEXT NOT NULL REFERENCES pdf_article_analysis(article_id),
   kind TEXT NOT NULL CHECK (kind IN
     ('definition', 'tibetan_example', 'belegstelle', 'lexicographic_parallel',
+     'variant_gloss',
      'translation', 'citation', 'correction_apparatus')),
   ordinal INTEGER NOT NULL,
   division_index INTEGER,
@@ -188,7 +189,8 @@ CREATE TABLE pdf_quote_disposition (
   article_id TEXT NOT NULL REFERENCES pdf_article_analysis(article_id),
   quote_index INTEGER NOT NULL,
   kind TEXT NOT NULL CHECK (kind IN
-    ('belegstelle_candidate', 'lexicographic_parallel_candidate', 'unresolved')),
+    ('belegstelle_candidate', 'lexicographic_parallel_candidate',
+     'variant_gloss_candidate', 'quoted_definition_candidate', 'unresolved')),
   reason TEXT NOT NULL,
   PRIMARY KEY (article_id, quote_index)
 );

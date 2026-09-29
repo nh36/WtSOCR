@@ -58,6 +58,7 @@ def _import_pdf_candidates(conn: sqlite3.Connection, witnesses: Path,
     """Stage source-anchored candidates without promoting them to dictionary facts."""
     names = {"definitions": "definition", "tibetan_examples": "tibetan_example",
              "belegstellen": "belegstelle", "lexicographic_parallels": "lexicographic_parallel",
+             "variant_glosses": "variant_gloss",
              "translations": "translation", "citations": "citation",
              "correction_apparatus": "correction_apparatus"}
     counts: Counter[str] = Counter()
