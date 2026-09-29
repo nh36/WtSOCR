@@ -21,8 +21,12 @@ from badw_canonical_pages import stable_json_bytes
 from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 
 
-VERSION = "badw-pdf-lexical-candidates-v5"
+VERSION = "badw-pdf-lexical-candidates-v6"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
+# In generated pages the lemma placeholder can be roman while the surrounding
+# LoC example is italic. Admit only this literal, adjacent suffix; do not
+# bridge arbitrary regular-font text to a quotation.
+PLACEHOLDER_QUALIFIER = re.compile(r"\s*~\s*(?:\(metr\.\)\s*)?\Z")
 # A printed correction belongs to the preceding LoC example. Its proposal
 # may use italic type, so the final italic run before a quote can be the
 # proposal rather than the example. Require the entire intervening source
@@ -311,17 +315,30 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         quote_line = int(quote["start_line_index"])
         eligible: list[tuple[int, int]] = []
         for interval_index, (_, interval_end, interval_line) in enumerate(intervals):
-            if interval_end > qstart:
+            # Some generated font runs carry the opening German quote in the
+            # preceding italic LoC run.  The quotation candidate starts at
+            # that literal mark, so trim exactly that one character; never
+            # admit a genuine overlap with German translation text.
+            effective_end = (qstart if text[qstart:interval_end] == "„"
+                             else interval_end)
+            if effective_end > qstart:
                 continue
-            if QUALIFIER.fullmatch(text[interval_end:qstart]):
-                eligible.append((interval_index, interval_end))
+            if QUALIFIER.fullmatch(text[effective_end:qstart]):
+                eligible.append((interval_index, effective_end))
                 continue
-            match = CORRECTION_BEFORE_QUOTE.fullmatch(text[interval_end:qstart])
+            if (PLACEHOLDER_QUALIFIER.fullmatch(text[effective_end:qstart]) and
+                    quote_line - interval_line <= 1 and
+                    lines[interval_line]["page_id"] == lines[quote_line]["page_id"] and
+                    not any(lines[i]["unknown_glyphs"]
+                            for i in range(interval_line, quote_line + 1))):
+                eligible.append((interval_index, qstart))
+                continue
+            match = CORRECTION_BEFORE_QUOTE.fullmatch(text[effective_end:qstart])
             if (match and quote_line - interval_line <= 2 and
                     lines[interval_line]["page_id"] == lines[quote_line]["page_id"] and
                     not any(lines[i]["unknown_glyphs"]
                             for i in range(interval_line, quote_line + 1))):
-                eligible.append((interval_index, interval_end + match.end("apparatus")))
+                eligible.append((interval_index, effective_end + match.end("apparatus")))
         if not eligible:
             definition = _opening_quoted_definition(article, quote, quote_index,
                                                     paired, text, offsets)

@@ -182,6 +182,27 @@ def test_regular_quote_after_tibetan_and_citation_stays_out_of_gloss_rule() -> N
     assert result["quote_dispositions"][0]["kind"] == "unresolved"
 
 
+def test_italic_run_may_include_only_opening_german_quote() -> None:
+    line = "~ kha la „mouth“ (Siddh 4)."
+    quote_start = line.index("„")
+    citation_start = line.index("(Siddh")
+    article = _article([_line(line, [(0, quote_start + 1, "italic"),
+                                    (quote_start + 1, len(line), "regular")])],
+                       candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„mouth“"),
+                           "division_index": 0, "start_line_index": 0}],
+        "parenthetical_citations": [{"visual_start": citation_start,
+                                      "visual_end": citation_start + len("(Siddh 4)"),
+                                      "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0, "citation_index": 0}]})
+    result = extract(article)
+    assert [item["text"] for item in result["tibetan_examples"]] == ["~ kha la"]
+    assert result["unresolved_quotes"] == []
+    assert result["quote_dispositions"][0]["kind"] == "belegstelle_candidate"
+    validate(article, result)
+
+
 def test_variant_without_same_line_gloss_is_not_promoted() -> None:
     first = "auch thig gu"
     lines = [_line(first, [(0, 5, "regular"), (5, len(first), "italic")])]
@@ -457,6 +478,32 @@ def test_literal_italic_interruptions_preserve_whole_example(first: str,
     result = extract(_article(lines, candidates=candidates))
     assert result["tibetan_examples"][0]["text"] == first.rstrip()
     assert result["belegstellen"][0]["text"] == first + "\n„translation“ (Source 12)"
+
+
+@pytest.mark.parametrize("line_break", [False, True])
+def test_roman_lemma_placeholder_after_italic_loc_is_part_of_example(
+        line_break: bool) -> None:
+    first = "bod "
+    rest = "~ (metr.) „translation“ (Source 12)"
+    lines = ([_line(first, [(0, len(first), "italic")]), _line(rest)]
+             if line_break else [_line(first + rest, [(0, len(first), "italic"),
+                                                    (len(first), len(first + rest), "regular")])])
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Source 12)")
+    result = extract(_article(lines, candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„translation“"),
+                           "division_index": 0, "start_line_index": len(lines) - 1}],
+        "parenthetical_citations": [{"visual_start": cite_start,
+                                      "visual_end": cite_start + len("(Source 12)"),
+                                      "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                                           "citation_index": 0}]}))
+    assert result["unresolved_quotes"] == []
+    assert result["tibetan_examples"][0]["text"] == ("bod \n~ (metr.)" if line_break
+                                                     else "bod ~ (metr.)")
+    assert len(result["belegstellen"]) == 1
 
 
 def test_unrelated_mixed_style_gap_is_not_merged_into_example() -> None:

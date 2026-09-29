@@ -423,7 +423,7 @@ def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
     assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
     assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
                         "FROM pdf_article_analysis").fetchone() == (
-                            "badw-pdf-structural-parser-v5", "badw-pdf-lexical-candidates-v5")
+                            "badw-pdf-structural-parser-v5", "badw-pdf-lexical-candidates-v6")
     conn.close()
 
 
