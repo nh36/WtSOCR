@@ -59,12 +59,14 @@ def _qualifies(article: dict[str, Any], stratum: str) -> bool:
 
 
 def select(articles: Iterable[dict[str, Any]], per_volume: int = 8,
-           review_chars: int = 500) -> list[dict[str, Any]]:
+           review_chars: int = 500,
+           exclude_ids: set[str] | None = None) -> list[dict[str, Any]]:
     """Hash-rank each stratum; selection is independent of input ordering."""
     if per_volume < 1 or review_chars < 1:
         raise ValueError("per_volume and review_chars must be positive")
     best: dict[tuple[int, str], list[tuple[str, dict[str, Any]]]] = {}
     seen: set[str] = set()
+    exclude_ids = exclude_ids or set()
     for article in articles:
         volume = int(article["volume"])
         if volume not in (2, 3, 4):
@@ -73,6 +75,8 @@ def select(articles: Iterable[dict[str, Any]], per_volume: int = 8,
         if article_id in seen:
             raise ValueError(f"duplicate article_id: {article_id}")
         seen.add(article_id)
+        if article_id in exclude_ids:
+            continue
         for stratum in STRATA:
             if not _qualifies(article, stratum):
                 continue
@@ -244,6 +248,8 @@ def main() -> None:
     sample_cmd.add_argument("--output", type=Path, required=True)
     sample_cmd.add_argument("--per-volume", type=int, default=8)
     sample_cmd.add_argument("--review-chars", type=int, default=500)
+    sample_cmd.add_argument("--exclude-sample", type=Path,
+                            help="exclude article IDs in an existing review sample")
     score_cmd = commands.add_parser("score")
     score_cmd.add_argument("--sample", type=Path, required=True)
     score_cmd.add_argument("--gold", type=Path, required=True)
@@ -254,7 +260,9 @@ def main() -> None:
     gold_cmd.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "select":
-        chosen = select(_rows(args.articles), args.per_volume, args.review_chars)
+        excluded = ({row["article_id"] for row in _rows(args.exclude_sample)}
+                    if args.exclude_sample else set())
+        chosen = select(_rows(args.articles), args.per_volume, args.review_chars, excluded)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_bytes(b"".join(_stable(row) + b"\n" for row in chosen))
         print(json.dumps({"sample_size": len(chosen), "output": str(args.output)}))

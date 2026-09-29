@@ -24,11 +24,15 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v2"
+VERSION = "badw-pdf-structural-parser-v3"
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.\s*(?=\S)")
-REFERENCE = re.compile(r"[↑↓][^\s;,.()„“]{1,80}")
 PARENTHESIS = re.compile(r"\(([^()]{1,100})\)")
-SIGLUM = re.compile(r"^(?P<siglum>[A-ZÄÖÜŚṢṬḌṄÑĀĪŪ][\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{0,20}|dPe|mKhas)\b")
+SIGLUM = re.compile(r"^(?P<siglum>[A-ZÄÖÜŚṢṬḌṄÑĀĪŪ][\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{0,20}|dPe|mKhas|gZer|brDa)\b")
+# Reviewed, locatorless source sigla in the frozen PDF-structure benchmark.
+# Other locatorless parentheses remain unassociated until source evidence is
+# reviewed; this is deliberately not a broad capitalisation heuristic.
+LOCATORLESS_SIGLA = frozenset({"Dagy", "TTC", "brDa"})
+QUALIFIED_LOCATORLESS_SIGLA = re.compile(r"^brDa,\s*ähnl\.\s*Dagy$")
 
 
 def _hash_text(value: str) -> str:
@@ -192,30 +196,83 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) ->
     if len(division_by_line) != len(lines):
         raise AssertionError("PDF divisions do not cover visual lines")
 
-    def location(match: re.Match[str]) -> dict[str, Any]:
-        first = bisect_right(offsets, match.start()) - 1
-        last = bisect_right(offsets, match.end() - 1) - 1
+    def location(start: int, end: int) -> dict[str, Any]:
+        first = bisect_right(offsets, start) - 1
+        last = bisect_right(offsets, end - 1) - 1
         first_division = division_by_line[first]
         division_index = first_division if division_by_line[last] == first_division else None
         return {"source_line": _line_ref(lines[first]), "source_line_end": _line_ref(lines[last]),
             "start_line_index": first, "end_line_index": last,
-            "line_start": match.start() - offsets[first], "line_end": match.end() - offsets[last],
-            "visual_start": match.start(), "visual_end": match.end(),
+            "line_start": start - offsets[first], "line_end": end - offsets[last],
+            "visual_start": start, "visual_end": end,
             "division_index": division_index}
 
+    def italic_span_at(position: int) -> tuple[int, int, int, dict[str, Any]] | None:
+        if position >= len(text):
+            return None
+        line_index = bisect_right(offsets, position) - 1
+        offset = position - offsets[line_index]
+        for span in lines[line_index]["style_spans"]:
+            if span["start"] <= offset < span["end"] and span["style"] == "italic":
+                return offsets[line_index] + span["start"], offsets[line_index] + span["end"], line_index, span
+        return None
+
     for match in re.finditer(r"„([^“]{1,500})“", text):
-        result["german_quotes"].append({"text": match.group(1), **location(match),
+        result["german_quotes"].append({"text": match.group(1), **location(match.start(), match.end()),
             "status": "unassociated_candidate"})
     for match in PARENTHESIS.finditer(text):
         interior = match.group(1).strip()
         siglum_match = SIGLUM.match(interior)
-        if siglum_match and any(char.isdigit() for char in interior):
+        siglum = siglum_match.group("siglum") if siglum_match else interior
+        if (siglum_match and any(char.isdigit() for char in interior)
+                or interior in LOCATORLESS_SIGLA
+                or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior)):
             result["parenthetical_citations"].append({"text": match.group(),
-                "siglum_candidate": siglum_match.group("siglum"), **location(match),
+                "siglum_candidate": siglum, **location(match.start(), match.end()),
                 "status": "unassociated_candidate"})
-    for match in REFERENCE.finditer(text):
-        result["cross_references"].append({"marker": match.group()[0],
-            "target_label_candidate": match.group()[1:], **location(match),
+    for marker in re.finditer(r"[↑↓]", text):
+        start = marker.start()
+        target_start = marker.end()
+        # A separately positioned homonym numeral may sit on its own visual
+        # line between the arrow and the italic headword (e.g. ↓\n1\n’chos).
+        interlude = re.match(r"\s*(?:[1-9][0-9]?\s*)?", text[target_start:])
+        if interlude:
+            target_start += interlude.end()
+        italic = italic_span_at(target_start)
+        if italic and (italic[0] == target_start or italic[0] <= start):
+            end = italic[1]
+            line_index, last_span = italic[2], italic[3]
+            # A reference may wrap at the visual line boundary.  Continue
+            # only through an immediately following italic span in the same
+            # font, source page, and division; never infer from plain text.
+            while (end == offsets[line_index] + len(lines[line_index]["text"])
+                    and text[end - 1] not in ".;:"
+                    and line_index + 1 < len(lines)
+                    and end - start < 80):
+                next_line = lines[line_index + 1]
+                first_span = next_line["style_spans"][0]
+                if (first_span["start"] != 0 or first_span["style"] != "italic"
+                        or first_span["font_id"] != last_span["font_id"]
+                        or next_line["page_id"] != lines[line_index]["page_id"]
+                        or division_by_line[line_index + 1] != division_by_line[line_index]):
+                    break
+                line_index += 1
+                last_span = first_span
+                end = offsets[line_index] + first_span["end"]
+            while end > target_start and text[end - 1] in " \t\n.,;:":
+                end -= 1
+        else:
+            # Some source runs have no useful italic boundary.  Retain the
+            # older, conservative one-token candidate in that case, but do
+            # not infer a multiword target from unstyled prose.
+            fallback = re.match(r"[^\s;,.()„“]{1,80}", text[marker.end():])
+            if not fallback:
+                continue
+            end = marker.end() + fallback.end()
+        if end == target_start or end - start > 80:
+            continue
+        result["cross_references"].append({"marker": text[start],
+            "target_label_candidate": text[marker.end():end], **location(start, end),
             "status": "unresolved_candidate"})
     citations = result["parenthetical_citations"]
     for quote_index, quote in enumerate(result["german_quotes"]):

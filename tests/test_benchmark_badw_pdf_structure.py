@@ -36,6 +36,16 @@ def test_selection_is_stratified_and_input_order_independent() -> None:
     assert len({row["article_id"] for row in first}) == 9
 
 
+def test_independent_selection_excludes_prior_sample() -> None:
+    articles = [_article(volume, suffix) for volume in (2, 3, 4) for suffix in range(6)]
+    prior = select(articles, per_volume=2)
+    excluded = {row["article_id"] for row in prior}
+    holdout = select(articles, per_volume=2, exclude_ids=excluded)
+    assert len(holdout) == 6
+    assert excluded.isdisjoint(row["article_id"] for row in holdout)
+    assert holdout == select(reversed(articles), per_volume=2, exclude_ids=excluded)
+
+
 def test_predictions_and_gold_are_exact_spans() -> None:
     row = select([_article(volume, 0) for volume in (2, 3, 4)], per_volume=1)[0]
     assert row["predictions"]["numbered_sense"] == [(0, 2)]
