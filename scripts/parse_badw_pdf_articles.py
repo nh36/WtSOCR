@@ -27,7 +27,7 @@ from badw_canonical_pages import stable_json_bytes
 VERSION = "badw-pdf-structural-parser-v3"
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.\s*(?=\S)")
 PARENTHESIS = re.compile(r"\(([^()]{1,100})\)")
-SIGLUM = re.compile(r"^(?P<siglum>[A-ZÄÖÜŚṢṬḌṄÑĀĪŪ][\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{0,20}|dPe|mKhas|gZer|brDa)\b")
+SIGLUM = re.compile(r"^(?P<siglum>[A-ZÄÖÜŚṢṬḌṄÑĀĪŪ][\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{0,20}|dPe|mKhas|mDzodG|gZer|brDa)\b")
 # Reviewed, locatorless source sigla in the frozen PDF-structure benchmark.
 # Other locatorless parentheses remain unassociated until source evidence is
 # reviewed; this is deliberately not a broad capitalisation heuristic.

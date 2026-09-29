@@ -155,3 +155,63 @@ def test_prediction_refresh_preserves_frozen_review_identity() -> None:
     corrupt = [dict(articles[0], source_faithful_sha256="0" * 64)] + articles[1:]
     with pytest.raises(ValueError, match="sample source mismatch"):
         refresh_predictions(sample, corrupt)
+
+
+def test_windowed_review_scores_later_article_spans_and_rejects_gap_annotations() -> None:
+    articles = [_article(volume, 0) for volume in (2, 3, 4)]
+    for article in articles:
+        article["visual_lines"] = [{"text": "1. Wort"}, {"text": "unreviewed middle"},
+                                   {"text": "later „meaning“ (Mil 74,4)"}]
+        text = "\n".join(line["text"] for line in article["visual_lines"])
+        quote_start = text.index("„meaning“")
+        article["candidates"]["german_quotes"] = [{"visual_start": quote_start,
+                                                      "visual_end": quote_start + len("„meaning“")}]
+        article["candidates"]["parenthetical_citations"] = []
+        article["candidates"]["cross_references"] = []
+        article["source_faithful_sha256"] = sha256(text.encode()).hexdigest()
+    sample = select(articles, per_volume=1, review_chars=7, windowed=True)
+    row = sample[0]
+    assert row["contract_version"].endswith("v2")
+    assert len(row["reviewed_ranges"]) == 2
+    later = row["visual_text"].index("„meaning“")
+    assert row["reviewed_ranges"][1][0] <= later
+    marker = {"sample_index": "0", "article_id": row["article_id"],
+              "kind": "reviewed", "text": "german_quote", "occurrence": ""}
+    annotation = dict(marker, kind="german_quote", text="„meaning“")
+    gold = materialize_gold([row], [marker, annotation])
+    assert gold[0]["spans"][0]["start"] == later
+    assert score([row], gold)["metrics"]["german_quote"]["gold"] == 1
+    with pytest.raises(ValueError, match="absent/occurrence"):
+        materialize_gold([row], [marker, dict(annotation, text="unreviewed")])
+    corrupt = [dict(gold[0], reviewed_ranges=[[0, 7]])]
+    with pytest.raises(ValueError, match="source/review boundary"):
+        score([row], corrupt)
+
+
+def test_windowed_lexical_join_and_refresh_leave_input_untouched() -> None:
+    articles = [_article(volume, 0) for volume in (2, 3, 4)]
+    sample = select(articles, per_volume=1, windowed=True)
+    lexical = [{"article_id": row["article_id"],
+                "source_faithful_sha256": row["source_faithful_sha256"],
+                "visual_sha256": row["visual_sha256"],
+                "definitions": [{"visual_start": 3, "visual_end": 7}],
+                "tibetan_examples": [], "belegstellen": []} for row in sample]
+    joined = with_lexical_predictions(sample, lexical)
+    assert joined[0]["predictions"]["definition"] == [(3, 7)]
+    assert sample[0]["predictions"]["definition"] == []
+    joined[0]["predictions"]["numbered_sense"] = []
+    refreshed = refresh_predictions(joined, articles)
+    assert refreshed[0]["predictions"]["numbered_sense"] == [(0, 2)]
+    assert joined[0]["predictions"]["numbered_sense"] == []
+
+
+def test_windowed_review_assignments_are_frozen_and_input_order_independent() -> None:
+    articles = [_article(volume, suffix) for volume in (2, 3, 4) for suffix in range(45)]
+    first = select(articles, per_volume=40, windowed=True)
+    assert first == select(reversed(articles), per_volume=40, windowed=True)
+    for volume in (2, 3, 4):
+        rows = [row for row in first if row["volume"] == volume]
+        assert len(rows) == 40
+        assert sum(row["review_partition"] == "development" for row in rows) == 30
+        assert sum(row["review_partition"] == "acceptance" for row in rows) == 10
+        assert sum(row["double_review"] for row in rows) == 6

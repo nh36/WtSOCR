@@ -64,6 +64,17 @@ def test_morphology_reference_does_not_swallow_following_definition() -> None:
     assert extract(_article(lines))["definitions"][0]["text"] == "schlußfolgern, ermessen."
 
 
+def test_gloss_can_end_with_exact_compare_reference() -> None:
+    lines = [_line("pf. zu ↑sñog.།"), _line("1. folgen, vgl. ↓bsñegs.")]
+    divisions = [{"kind": "unsegmented", "label": "", "start_line_index": 0,
+                  "end_line_index_exclusive": 1},
+                 {"kind": "numbered_sense", "label": "1", "start_line_index": 1,
+                  "end_line_index_exclusive": 2}]
+    assert [item["text"] for item in extract(_article(lines, divisions))["definitions"]] == [
+        "folgen, vgl. ↓bsñegs."]
+    assert extract(_article([_line("vgl. ↓bsñegs.")]))["definitions"] == []
+
+
 def test_variant_preamble_is_not_a_definition_but_numbered_sense_is() -> None:
     first = "auch thugs yi dam."
     lines = [_line(first, [(0, 5, "regular"), (5, len(first), "italic")]),
@@ -73,6 +84,21 @@ def test_variant_preamble_is_not_a_definition_but_numbered_sense_is() -> None:
                  {"kind": "numbered_sense", "label": "1", "start_line_index": 1,
                   "end_line_index_exclusive": 2}]
     assert [item["text"] for item in extract(_article(lines, divisions))["definitions"]] == ["Gelöbnis."]
+
+
+def test_same_line_variant_followed_by_german_gloss() -> None:
+    first = "auch thig gu Schnur, Seil, Faden;"
+    lines = [_line(first, [(0, 5, "regular"), (5, 12, "italic"),
+                           (12, len(first), "regular")])]
+    definition = extract(_article(lines))["definitions"][0]
+    assert definition["text"] == "Schnur, Seil, Faden;"
+    assert first[definition["visual_start"]:definition["visual_end"]] == definition["text"]
+
+
+def test_variant_without_same_line_gloss_is_not_promoted() -> None:
+    first = "auch thig gu"
+    lines = [_line(first, [(0, 5, "regular"), (5, len(first), "italic")])]
+    assert extract(_article(lines))["definitions"] == []
 
 
 def test_mixed_font_definition_continues_after_line_final_tilde() -> None:
@@ -88,12 +114,12 @@ def test_mixed_font_definition_continues_after_line_final_tilde() -> None:
         "Gelöbnis, Gelübde, Versprechen, ~\nmdzad geloben, ~ bźes Gelübde ablegen.")
 
 
-def test_parenthetical_correction_does_not_create_partial_example() -> None:
+def test_parenthetical_correction_preserves_complete_example() -> None:
     first = "~ kha lhor blta (r. lta) ba źig na phug ro gcig"
     second = "„translation“ (Siddh 11,2)."
-    lines = [_line(first, [(0, 17, "italic"), (17, 21, "regular"),
-                           (21, 24, "italic"), (24, 25, "regular"),
-                           (25, len(first), "italic")]), _line(second)]
+    lines = [_line(first, [(0, 16, "italic"), (16, 20, "regular"),
+                           (20, 23, "italic"), (23, 24, "regular"),
+                           (24, len(first), "italic")]), _line(second)]
     visual = "\n".join(line["text"] for line in lines)
     quote_start = visual.index("„translation“")
     cite_start = visual.index("(Siddh 11,2)")
@@ -106,10 +132,96 @@ def test_parenthetical_correction_does_not_create_partial_example() -> None:
                   "adjacent_quote_citation_pairs": [{"quote_index": 0,
                    "citation_index": 0}]}
     result = extract(_article(lines, candidates=candidates))
+    assert [item["text"] for item in result["tibetan_examples"]] == [first]
+    assert result["belegstellen"][0]["text"] == first + "\n" + second[:-1]
+    assert result["unresolved_quotes"] == []
+
+
+def test_wrapped_parenthetical_correction_preserves_complete_example() -> None:
+    first = "~ phuṅ (r."
+    second = "phyugs) po ’grub mi ’gyur (metr.)"
+    lines = [_line(first, [(0, 7, "italic"), (7, len(first), "regular")]),
+             _line(second, [(0, 6, "italic"), (6, 8, "regular"),
+                            (8, 26, "italic"), (26, len(second), "regular")]),
+             _line("„translation“ (Pd-K 134c).")]
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Pd-K 134c)")
+    candidates = {"german_quotes": [{"visual_start": quote_start,
+                   "visual_end": quote_start + len("„translation“"),
+                   "division_index": 0, "start_line_index": 2}],
+                  "parenthetical_citations": [{"visual_start": cite_start,
+                   "visual_end": cite_start + len("(Pd-K 134c)"),
+                   "division_index": 0}],
+                  "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                   "citation_index": 0}]}
+    result = extract(_article(lines, candidates=candidates))
+    assert result["tibetan_examples"][0]["text"] == first + "\n" + second[:26].rstrip()
+    assert result["belegstellen"][0]["text"] == first + "\n" + second + "\n„translation“ (Pd-K 134c)"
+    assert result["unresolved_quotes"] == []
+
+
+def test_nested_parenthetical_correction_does_not_emit_truncated_example() -> None:
+    first = "~ koṅ co (Gl. mun śen (r. śeṅ)) bźes pas "
+    lines = [_line(first, [(0, 21, "italic"), (21, 25, "regular"),
+                           (25, 29, "italic"), (29, 31, "regular"),
+                           (31, len(first), "italic")]),
+             _line("„translation“ (Nel 7b5).")]
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Nel 7b5)")
+    candidates = {"german_quotes": [{"visual_start": quote_start,
+                   "visual_end": quote_start + len("„translation“"),
+                   "division_index": 0, "start_line_index": 1}],
+                  "parenthetical_citations": [{"visual_start": cite_start,
+                   "visual_end": cite_start + len("(Nel 7b5)"),
+                   "division_index": 0}],
+                  "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                   "citation_index": 0}]}
+    result = extract(_article(lines, candidates=candidates))
     assert result["tibetan_examples"] == []
     assert result["belegstellen"] == []
     assert result["unresolved_quotes"] == [{"quote_index": 0,
         "reason": "mixed_style_parenthetical_correction"}]
+
+
+@pytest.mark.parametrize("first,spans", [
+    ("~ dkar po ... bzuṅ ", [(0, 9, "italic"), (9, 14, "regular"),
+                             (14, 19, "italic")]),
+    ("~ bźi ⟨b⟩sgril gyi sgrog rgyab la ",
+     [(0, 6, "italic"), (6, 9, "regular"), (9, 35, "italic")]),
+])
+def test_literal_italic_interruptions_preserve_whole_example(first: str,
+                                                               spans: list[tuple[int, int, str]]) -> None:
+    lines = [_line(first, spans), _line("„translation“ (Source 12).")]
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Source 12)")
+    candidates = {"german_quotes": [{"visual_start": quote_start,
+                   "visual_end": quote_start + len("„translation“"),
+                   "division_index": 0, "start_line_index": 1}],
+                  "parenthetical_citations": [{"visual_start": cite_start,
+                   "visual_end": cite_start + len("(Source 12)"),
+                   "division_index": 0}],
+                  "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                   "citation_index": 0}]}
+    result = extract(_article(lines, candidates=candidates))
+    assert result["tibetan_examples"][0]["text"] == first.rstrip()
+    assert result["belegstellen"][0]["text"] == first + "\n„translation“ (Source 12)"
+
+
+def test_unrelated_mixed_style_gap_is_not_merged_into_example() -> None:
+    first = "other (editorial) Tibetan „translation“"
+    lines = [_line(first, [(0, 5, "italic"), (5, 17, "regular"),
+                           (17, 25, "italic"), (25, len(first), "regular")])]
+    quote_start = first.index("„translation“")
+    candidates = {"german_quotes": [{"visual_start": quote_start,
+                   "visual_end": len(first), "division_index": 0,
+                   "start_line_index": 0}],
+                  "parenthetical_citations": [],
+                  "adjacent_quote_citation_pairs": []}
+    result = extract(_article(lines, candidates=candidates))
+    assert [item["text"] for item in result["tibetan_examples"]] == ["Tibetan"]
 
 
 def test_tibetan_example_and_belegstelle_are_distinct_from_lexicon_quote() -> None:

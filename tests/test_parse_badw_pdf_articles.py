@@ -215,6 +215,13 @@ def test_qualified_locatorless_and_reviewed_mixed_case_siglum() -> None:
         ("(brDa,\nähnl. Dagy)", "brDa")]
 
 
+def test_md_zod_g_wrapped_locator_is_citation_not_arbitrary_parenthesis() -> None:
+    lines = [_candidate_line("„Bedeutung“ (mDzodG"), _candidate_line("64,3). (ordinary prose)")]
+    citations = _candidates(lines, _candidate_division(2))["parenthetical_citations"]
+    assert [(item["text"], item["siglum_candidate"]) for item in citations] == [
+        ("(mDzodG\n64,3)", "mDzodG")]
+
+
 def test_source_mismatch_fails_closed() -> None:
     article, page = _fixture()
     article["source_spans"][0]["source_text_sha256"] = "0" * 64
