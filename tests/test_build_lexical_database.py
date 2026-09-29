@@ -192,7 +192,7 @@ def _tooltip_inputs(tmp_path: Path) -> tuple[Path, Path]:
     return candidate_file, occurrence_file
 
 
-def test_badw_tooltips_are_searchable_candidates_but_not_resolved_authorities(tmp_path: Path):
+def test_badw_tooltip_authority_does_not_resolve_unlocated_citation_or_print_source(tmp_path: Path):
     source, sigla, records_manifest, verified = _write_inputs(tmp_path)
     candidate_file, occurrence_file = _tooltip_inputs(tmp_path)
     db = tmp_path / "with_tooltips.sqlite"
@@ -207,6 +207,8 @@ def test_badw_tooltips_are_searchable_candidates_but_not_resolved_authorities(tm
     assert conn.execute("select id from badw_siglum_fts where badw_siglum_fts match 'title'").fetchone()[0].startswith("badw:siglum:")
     assert conn.execute("select authority_status,bibliographic_source_id from citation").fetchone() == ("unresolved", None)
     assert conn.execute("select count(*) from citation_siglum_candidate").fetchone() == (0,)
+    assert conn.execute("select count(*) from badw_bibliographic_authority").fetchone() == (1,)
+    assert conn.execute("select count(*) from citation_siglum_badw_authority").fetchone() == (0,)
     conn.close()
 
 
@@ -233,6 +235,17 @@ def test_tooltip_links_only_to_the_same_located_citation_siglum(tmp_path: Path):
     conn = sqlite3.connect(db)
     assert conn.execute("select siglum,visible_start,visible_end from citation_siglum").fetchone() == ("ka", 0, 2)
     assert conn.execute("select siglum_ordinal,occurrence_ordinal,match_method from citation_siglum_candidate").fetchone() == (1, 1, "badw_tooltip_same_source_span")
+    assert conn.execute("select siglum_ordinal,occurrence_ordinal,link_method from citation_siglum_badw_authority").fetchone() == (1, 1, "exact_visible_source_span")
+    assert conn.execute("select a.authority_scope,a.source_status,a.print_bibliography_status,c.expansion "
+                        "from badw_bibliographic_authority a join badw_siglum_candidate c on c.id=a.id").fetchone() == (
+                            "siglum_expansion", "first_party_tooltip", "unverified", "Kā title")
+    assert conn.execute("select o.source_url,o.source_sha256,o.visible_start,o.visible_end,o.tooltip_start,o.tooltip_end "
+                        "from citation_siglum_badw_authority l join badw_siglum_occurrence o "
+                        "on o.candidate_id=l.authority_id and o.source_id=l.occurrence_source_id "
+                        "and o.ordinal_in_article=l.occurrence_ordinal").fetchone() == (
+                            "https://example.invalid/lemma/ka/1",
+                            json.loads(source.read_text(encoding="utf-8").splitlines()[0])["source_spans"][0]["source_sha256"],
+                            0, 2, 9, 17)
     assert conn.execute("select authority_status,bibliographic_source_id from citation").fetchone() == ("unresolved", None)
     conn.close()
 

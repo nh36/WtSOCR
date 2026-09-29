@@ -107,6 +107,25 @@ CREATE TABLE citation_siglum_candidate (
   FOREIGN KEY (candidate_id, occurrence_source_id, occurrence_ordinal)
     REFERENCES badw_siglum_occurrence(candidate_id, source_id, ordinal_in_article)
 );
+-- An exact BAdW tooltip establishes the editor's expansion of this siglum,
+-- not a verified match to a printed bibliography entry.  Keep the two
+-- authority namespaces and their review states separate.
+CREATE TABLE badw_bibliographic_authority (
+  id TEXT PRIMARY KEY REFERENCES badw_siglum_candidate(id),
+  authority_scope TEXT NOT NULL CHECK (authority_scope = 'siglum_expansion'),
+  source_status TEXT NOT NULL CHECK (source_status = 'first_party_tooltip'),
+  print_bibliography_status TEXT NOT NULL CHECK (print_bibliography_status IN ('unverified', 'verified'))
+);
+CREATE TABLE citation_siglum_badw_authority (
+  citation_id TEXT NOT NULL, siglum_ordinal INTEGER NOT NULL,
+  authority_id TEXT NOT NULL REFERENCES badw_bibliographic_authority(id),
+  occurrence_source_id TEXT NOT NULL, occurrence_ordinal INTEGER NOT NULL,
+  link_method TEXT NOT NULL CHECK (link_method = 'exact_visible_source_span'),
+  PRIMARY KEY (citation_id, siglum_ordinal),
+  FOREIGN KEY (citation_id, siglum_ordinal) REFERENCES citation_siglum(citation_id, ordinal),
+  FOREIGN KEY (authority_id, occurrence_source_id, occurrence_ordinal)
+    REFERENCES badw_siglum_occurrence(candidate_id, source_id, ordinal_in_article)
+);
 
 -- Positioned generated-PDF witnesses are searchable source text, not parsed
 -- editorial entries and not reconciled identities in the printed OCR layer.

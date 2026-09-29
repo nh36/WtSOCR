@@ -18,7 +18,7 @@ from verify_badw_lexical_source import VerificationError, audit_lexical_records,
 from inventory_badw_sigla import inventory, _read_articles
 from stitch_badw_pdf_entries import verify_source as verify_pdf_source
 
-BUILDER_VERSION = "lexical-database-builder-v5"
+BUILDER_VERSION = "lexical-database-builder-v6"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -42,7 +42,7 @@ def read_sigla(path: Path) -> list[dict[str, str]]:
     return sorted(rows, key=lambda r: r["canon"])
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "citation_siglum", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "citation_siglum_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "citation_siglum", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "citation_siglum_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "badw_bibliographic_authority", "citation_siglum_badw_authority", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment"]
     digest = hashlib.sha256()
     for table in tables:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})")]
@@ -186,6 +186,9 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
                              (row["candidate_id"],row["siglum"],row["expansion"],row["candidate_status"],row["occurrence_count"]))
                 conn.execute("INSERT INTO badw_siglum_fts VALUES (?, ?, ?)",
                              (row["candidate_id"],row["siglum"],row["expansion"]))
+                if row["expansion"]:
+                    conn.execute("INSERT INTO badw_bibliographic_authority VALUES (?, ?, ?, ?)",
+                                 (row["candidate_id"], "siglum_expansion", "first_party_tooltip", "unverified"))
             for row in tooltip_occurrences:
                 visible, hidden = row["source_span"], row["tooltip_span"]
                 conn.execute("INSERT INTO badw_siglum_occurrence VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
@@ -205,6 +208,23 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
                     conn.execute("INSERT INTO citation_siglum_candidate VALUES (?, ?, ?, ?, ?, ?)",
                                  (cid,ordinal,candidate_id,source_id,occurrence_ordinal,
                                   "badw_tooltip_same_source_span"))
+            # A unique same-span occurrence is stronger than spelling-only
+            # matching.  Multiple occurrences are retained as candidates but
+            # never promoted to an authority link by arbitrary row order.
+            for cid, ordinal, count in conn.execute(
+                    "SELECT citation_id, siglum_ordinal, count(*) FROM citation_siglum_candidate "
+                    "GROUP BY citation_id, siglum_ordinal"):
+                if count != 1:
+                    continue
+                candidate_id, source_id, occurrence_ordinal = conn.execute(
+                    "SELECT candidate_id, occurrence_source_id, occurrence_ordinal "
+                    "FROM citation_siglum_candidate WHERE citation_id=? AND siglum_ordinal=?",
+                    (cid, ordinal)).fetchone()
+                if conn.execute("SELECT 1 FROM badw_bibliographic_authority WHERE id=?",
+                                (candidate_id,)).fetchone():
+                    conn.execute("INSERT INTO citation_siglum_badw_authority VALUES (?, ?, ?, ?, ?, ?)",
+                                 (cid, ordinal, candidate_id, source_id, occurrence_ordinal,
+                                  "exact_visible_source_span"))
         for r in sorted(by_type.get("attestation",[]),key=lambda r:r["id"]):
             conn.execute("INSERT INTO attestation VALUES (?, ?, ?, ?, ?, ?, ?)", (r["id"],r["entry_id"],r.get("sense_id"),r["ordinal"],r["association_status"],r["tibetan"],r.get("german_translation", "")))
             conn.execute("INSERT INTO attestation_fts VALUES (?, ?, ?, ?)", (r["id"],r["entry_id"],r["tibetan"],r.get("german_translation", "")))
@@ -275,7 +295,7 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
             metadata["pdf_article_summary_sha256"] = sha256(pdf_article_root / "summary.json")
         conn.executemany("INSERT INTO metadata VALUES (?, ?)", sorted(metadata.items()))
         conn.commit(); conn.execute("VACUUM"); conn.commit()
-        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"badw_siglum_candidate_count":len(tooltip_candidates),"badw_siglum_occurrence_count":len(tooltip_occurrences),"logical_sha256":logical_digest(conn)}
+        report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"badw_siglum_candidate_count":len(tooltip_candidates),"badw_siglum_occurrence_count":len(tooltip_occurrences),"badw_bibliographic_authority_count":conn.execute("SELECT count(*) FROM badw_bibliographic_authority").fetchone()[0],"citation_siglum_badw_authority_count":conn.execute("SELECT count(*) FROM citation_siglum_badw_authority").fetchone()[0],"citation_siglum_unlinked_count":conn.execute("SELECT count(*) FROM citation_siglum AS cs WHERE NOT EXISTS (SELECT 1 FROM citation_siglum_badw_authority AS ba WHERE ba.citation_id=cs.citation_id AND ba.siglum_ordinal=cs.ordinal)").fetchone()[0],"logical_sha256":logical_digest(conn)}
         if pdf_summary is not None:
             report.update({"pdf_source_snapshot_id": pdf_snapshot, "pdf_article_count": pdf_count,
                            "pdf_unassigned_fragment_count": pdf_fragment_count,
