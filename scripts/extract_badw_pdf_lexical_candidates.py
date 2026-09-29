@@ -20,7 +20,7 @@ from typing import Any, Iterable
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-lexical-candidates-v2"
+VERSION = "badw-pdf-lexical-candidates-v3"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
@@ -227,7 +227,7 @@ def _definition_candidates(article: dict[str, Any], text: str,
 
 
 def extract(article: dict[str, Any]) -> dict[str, Any]:
-    if article.get("contract_version") != "badw-pdf-structural-parser-v3":
+    if article.get("contract_version") != "badw-pdf-structural-parser-v4":
         raise ValueError("unsupported PDF structure contract")
     lines = article["visual_lines"]
     text = "\n".join(line["text"] for line in lines)
@@ -241,6 +241,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         "source_faithful_sha256": article["source_faithful_sha256"],
         "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
         "definitions": [], "tibetan_examples": [], "belegstellen": [],
+        "lexicographic_parallels": [], "quote_dispositions": [],
         "translations": [], "citations": [], "correction_apparatus": [],
         "divisions": [], "unresolved_quotes": []}
     if not lines:
@@ -327,16 +328,25 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "mixed_style_parenthetical_correction"})
             continue
+        cite_index = pairs.get(quote_index)
+        if lex:
+            parallel_end = int(citations[cite_index]["visual_end"]) if cite_index is not None else int(quote["visual_end"])
+            result["lexicographic_parallels"].append({
+                "text": text[start:parallel_end], "quote_index": quote_index,
+                "translation_index": quote_index, "citation_index": cite_index,
+                "division_index": division_index, "loc_text": example_text,
+                "status": "source_lexicon_parallel_candidate",
+                **_anchor(lines, offsets, start, parallel_end)})
+            continue
         example_index = len(result["tibetan_examples"])
         example = {"text": example_text, "quote_index": quote_index,
-            "division_index": division_index, "lexical_region": lex,
-            "status": "lexicon_quote_candidate" if lex else "unverified_typographic_candidate",
+            "division_index": division_index, "lexical_region": False,
+            "status": "unverified_typographic_candidate",
             **_anchor(lines, offsets, start, end)}
         result["tibetan_examples"].append(example)
-        cite_index = pairs.get(quote_index)
-        if cite_index is None or lex:
+        if cite_index is None:
             result["unresolved_quotes"].append({"quote_index": quote_index,
-                "reason": "lexicon_region" if lex else "no_adjacent_citation"})
+                "reason": "no_adjacent_citation"})
             continue
         citation = citations[cite_index]
         citation_end = int(citation["visual_end"])
@@ -354,6 +364,15 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         group["correction_indices"] = [i for i, correction in
             enumerate(result["correction_apparatus"])
             if correction["example_index"] == group["example_index"]]
+    dispositions = {item["quote_index"]: ("unresolved", item["reason"])
+                    for item in result["unresolved_quotes"]}
+    for item in result["belegstellen"]:
+        dispositions[item["quote_index"]] = ("belegstelle_candidate", "typographic_source_sequence")
+    for item in result["lexicographic_parallels"]:
+        dispositions[item["quote_index"]] = ("lexicographic_parallel_candidate", "lexicon_region")
+    result["quote_dispositions"] = [
+        {"quote_index": i, "kind": dispositions[i][0], "reason": dispositions[i][1]}
+        for i in range(len(quotes))]
     for division_index, division in enumerate(article["divisions"]):
         result["divisions"].append({"kind": division["kind"], "label": division["label"],
             "start_line_index": division["start_line_index"],
@@ -363,7 +382,9 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             "example_indices": [i for i, item in enumerate(result["tibetan_examples"])
                                 if item["division_index"] == division_index],
             "belegstelle_indices": [i for i, item in enumerate(result["belegstellen"])
-                                    if item["division_index"] == division_index]})
+                                    if item["division_index"] == division_index],
+            "parallel_indices": [i for i, item in enumerate(result["lexicographic_parallels"])
+                                 if item["division_index"] == division_index]})
     validate(article, result)
     return result
 
@@ -377,7 +398,7 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
         raise ValueError("article source identity mismatch")
     if result["visual_sha256"] != sha256(visual.encode("utf-8")).hexdigest():
         raise ValueError("visual source hash mismatch")
-    for collection in ("definitions", "tibetan_examples", "belegstellen",
+    for collection in ("definitions", "tibetan_examples", "belegstellen", "lexicographic_parallels",
                        "translations", "citations", "correction_apparatus"):
         for record in result[collection]:
             if collection == "correction_apparatus":
@@ -439,10 +460,24 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
                                 if correction["example_index"] == beleg["example_index"]]
         if beleg["correction_indices"] != expected_corrections:
             raise ValueError(f"Belegstelle {index} correction links mismatch")
+    for parallel in result["lexicographic_parallels"]:
+        quote = result["translations"][parallel["translation_index"]]
+        if (parallel["quote_index"] != parallel["translation_index"] or
+                not parallel["visual_start"] < quote["visual_start"] < quote["visual_end"] <= parallel["visual_end"] or
+                parallel["division_index"] != quote["division_index"]):
+            raise ValueError("lexicographic parallel source order mismatch")
+        if parallel["citation_index"] is not None:
+            citation = result["citations"][parallel["citation_index"]]
+            if citation["visual_end"] != parallel["visual_end"]:
+                raise ValueError("lexicographic parallel citation mismatch")
+    if ([item["quote_index"] for item in result["quote_dispositions"]] !=
+            list(range(len(result["translations"])))):
+        raise ValueError("quote disposition coverage mismatch")
     for index, division in enumerate(result["divisions"]):
         for field, collection in (("definition_indices", "definitions"),
                                   ("example_indices", "tibetan_examples"),
-                                  ("belegstelle_indices", "belegstellen")):
+                                  ("belegstelle_indices", "belegstellen"),
+                                  ("parallel_indices", "lexicographic_parallels")):
             expected = [item for item, record in enumerate(result[collection])
                         if record["division_index"] == index]
             if division[field] != expected:
@@ -472,6 +507,7 @@ def build(source: Path, output: Path) -> dict[str, Any]:
             stats["articles"] += 1
             stats[f"volume_{row['volume']}"] += 1
             for key in ("definitions", "tibetan_examples", "belegstellen",
+                        "lexicographic_parallels", "quote_dispositions",
                         "translations", "citations", "correction_apparatus",
                         "divisions", "unresolved_quotes"):
                 stats[key] += len(row[key])

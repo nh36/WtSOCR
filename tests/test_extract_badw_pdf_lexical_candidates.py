@@ -27,7 +27,7 @@ def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
 def _article(lines: list[dict], divisions: list[dict] | None = None,
              candidates: dict | None = None) -> dict:
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v3",
+    return {"contract_version": "badw-pdf-structural-parser-v4",
             "article_id": "badw:pdf:test", "volume": 2, "loc_headword": "sñags",
             "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines,
@@ -359,11 +359,14 @@ def test_tibetan_example_and_belegstelle_are_distinct_from_lexicon_quote() -> No
             {"quote_index": 1, "citation_index": 1}]}
     result = extract(_article(lines, candidates=candidates))
     assert result["definitions"][0]["text"] == "Bedeutung."
-    assert [item["text"] for item in result["tibetan_examples"]] == ["sñags pa", "sñags"]
-    assert [item["lexical_region"] for item in result["tibetan_examples"]] == [False, True]
+    assert [item["text"] for item in result["tibetan_examples"]] == ["sñags pa"]
+    assert result["lexicographic_parallels"][0]["loc_text"] == "sñags"
+    assert result["lexicographic_parallels"][0]["citation_index"] == 1
     assert len(result["belegstellen"]) == 1
     assert result["belegstellen"][0]["text"] == "sñags pa „translation“ (Siddh 11,2)"
-    assert result["unresolved_quotes"] == [{"quote_index": 1, "reason": "lexicon_region"}]
+    assert result["unresolved_quotes"] == []
+    assert [item["kind"] for item in result["quote_dispositions"]] == [
+        "belegstelle_candidate", "lexicographic_parallel_candidate"]
 
 
 def test_unknown_glyph_and_contract_failure_are_explicit() -> None:

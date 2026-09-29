@@ -17,6 +17,7 @@ from verify_badw_lexical_source import create_verified_lexical_source
 from validate_lexical_record_contract import CONTRACT_VERSION
 from stitch_badw_pdf_entries import _span
 from badw_canonical_pages import stable_json_bytes
+from extract_badw_pdf_lexical_candidates import extract as extract_pdf_lexical
 
 
 def _digest(path: Path) -> str:
@@ -263,7 +264,7 @@ def test_tampered_badw_tooltip_inventory_is_rejected(tmp_path: Path):
               repo_root=tmp_path)
 
 
-def _pdf_witness_inputs(tmp_path: Path) -> tuple[Path, Path]:
+def _pdf_witness_inputs(tmp_path: Path, source_text: str = "ཀ་ ka — Liś ↑kha") -> tuple[Path, Path]:
     canonical = tmp_path / "work/pdf_canonical"
     output = tmp_path / "work/pdf_articles"
     output.mkdir(parents=True)
@@ -273,7 +274,7 @@ def _pdf_witness_inputs(tmp_path: Path) -> tuple[Path, Path]:
         folder.mkdir(parents=True)
         index = folder / "canonical_pages.tsv"
         if volume == 2:
-            runs = [{"run_index": 0, "decoded_unicode": "ཀ་ ka — Liś ↑kha", "y": 700.0,
+            runs = [{"run_index": 0, "decoded_unicode": source_text, "y": 700.0,
                      "font_id": "f", "glyphs": []}]
             body_hash = sha256(runs[0]["decoded_unicode"].encode()).hexdigest()
             positioned = {"positioned_text_runs": runs, "visible_text": runs[0]["decoded_unicode"]}
@@ -319,6 +320,44 @@ def _pdf_witness_inputs(tmp_path: Path) -> tuple[Path, Path]:
     return output, canonical
 
 
+def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path) -> tuple[Path, Path]:
+    with gzip.open(pdf_root / "pdf_article_witnesses.jsonl.gz", "rt", encoding="utf-8") as handle:
+        witness = json.loads(next(handle))
+    span = witness["source_spans"][0]
+    source = witness["source_faithful_text"]
+    structure = {"contract_version": "badw-pdf-structural-parser-v4",
+        "article_id": witness["id"], "volume": witness["volume"],
+        "loc_headword": witness["loc_headword"],
+        "tibetan_headword": witness["tibetan_headword"], "homonym": witness["homonym"],
+        "source_faithful_sha256": sha256(source.encode()).hexdigest(),
+        "source_faithful_text": source,
+        "source_objects": [{"page_id": span["page_id"],
+            "canonical_object": span["canonical_object"],
+            "canonical_object_sha256": None,
+            "pdf_url": span["representative_pdf_url"],
+            "pdf_sha256": span["representative_pdf_sha256"],
+            "source_text_sha256": span["source_text_sha256"],
+            "run_start": span["run_start"],
+            "run_end_exclusive": span["run_end_exclusive"]}],
+        "visual_lines": [{"text": source, "page_id": span["page_id"],
+            "span_index": 0, "printed_page": 1, "run_start": 0,
+            "run_end_exclusive": 1, "unknown_glyphs": [],
+            "style_spans": [{"start": 0, "end": len(source),
+                             "family": "TGaramond", "style": "regular"}]}],
+        "divisions": [{"kind": "unsegmented", "label": "",
+                       "start_line_index": 0, "end_line_index_exclusive": 1}],
+        "candidates": {"german_quotes": [], "parenthetical_citations": [],
+                       "adjacent_quote_citation_pairs": []}}
+    lexical = extract_pdf_lexical(structure)
+    structure_path = tmp_path / "structure.jsonl.gz"
+    lexical_path = tmp_path / "lexical.jsonl.gz"
+    with gzip.open(structure_path, "wt", encoding="utf-8") as handle:
+        handle.write(json.dumps(structure, ensure_ascii=False) + "\n")
+    with gzip.open(lexical_path, "wt", encoding="utf-8") as handle:
+        handle.write(json.dumps(lexical, ensure_ascii=False) + "\n")
+    return structure_path, lexical_path
+
+
 def test_pdf_witnesses_are_separate_searchable_source_layer(tmp_path: Path):
     source, sigla, records_manifest, verified = _write_inputs(tmp_path)
     pdf_root, canonical = _pdf_witness_inputs(tmp_path)
@@ -352,3 +391,41 @@ def test_pdf_witness_source_tampering_fails_closed(tmp_path: Path):
         build(source, tmp_path / "rejected.sqlite", tmp_path / "rejected.json", sigla=sigla,
               records_manifest=records_manifest, verified_source_manifest=verified,
               pdf_article_root=pdf_root, pdf_canonical_root=canonical, repo_root=tmp_path)
+
+
+def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path, "Bedeutung.")
+    structure, lexical = _pdf_candidate_inputs(tmp_path, pdf_root)
+    report = build(source, tmp_path / "staged.sqlite", tmp_path / "staged.json",
+                   sigla=sigla, records_manifest=records_manifest,
+                   verified_source_manifest=verified, pdf_article_root=pdf_root,
+                   pdf_canonical_root=canonical, pdf_structure=structure,
+                   pdf_lexical_candidates=lexical, repo_root=tmp_path)
+    assert report["pdf_candidate_counts"] == {"articles": 1, "definition": 1}
+    conn = sqlite3.connect(tmp_path / "staged.sqlite")
+    assert conn.execute("SELECT kind,text,status FROM pdf_lexical_candidate").fetchall() == [
+        ("definition", "Bedeutung.", "unverified_typographic_candidate")]
+    assert conn.execute("SELECT count(*) FROM sense WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
+    assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
+    assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
+                        "FROM pdf_article_analysis").fetchone() == (
+                            "badw-pdf-structural-parser-v4", "badw-pdf-lexical-candidates-v3")
+    conn.close()
+
+
+def test_pdf_candidate_tampering_fails_closed(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path, "Bedeutung.")
+    structure, lexical = _pdf_candidate_inputs(tmp_path, pdf_root)
+    with gzip.open(lexical, "rt", encoding="utf-8") as handle:
+        row = json.loads(next(handle))
+    row["definitions"][0]["text"] = "invented"
+    with gzip.open(lexical, "wt", encoding="utf-8") as handle:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+    with pytest.raises(BuildError, match="PDF lexical candidate replay mismatch"):
+        build(source, tmp_path / "rejected.sqlite", tmp_path / "rejected.json",
+              sigla=sigla, records_manifest=records_manifest,
+              verified_source_manifest=verified, pdf_article_root=pdf_root,
+              pdf_canonical_root=canonical, pdf_structure=structure,
+              pdf_lexical_candidates=lexical, repo_root=tmp_path)

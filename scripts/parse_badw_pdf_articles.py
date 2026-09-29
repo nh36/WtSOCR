@@ -24,15 +24,55 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v3"
+VERSION = "badw-pdf-structural-parser-v4"
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.\s*(?=\S)")
-PARENTHESIS = re.compile(r"\(([^()]{1,100})\)")
-SIGLUM = re.compile(r"^(?P<siglum>[A-ZÄÖÜŚṢṬḌṄÑĀĪŪ][\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{0,20}|dPe|mKhas|mDzodG|gZer|brDa)\b")
+SIGLUM = re.compile(r"^(?:in\s+)?(?P<siglum>[’']?[\wĀāĪīŪūŚśṢṣṬṭḌḍṄṅÑñ-]{1,24})(?=\s|,|\(|/|$)")
 # Reviewed, locatorless source sigla in the frozen PDF-structure benchmark.
 # Other locatorless parentheses remain unassociated until source evidence is
 # reviewed; this is deliberately not a broad capitalisation heuristic.
 LOCATORLESS_SIGLA = frozenset({"Dagy", "TTC", "brDa"})
 QUALIFIED_LOCATORLESS_SIGLA = re.compile(r"^brDa,\s*ähnl\.\s*Dagy$")
+
+
+def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
+    """Yield balanced outer groups; nested source locators remain intact.
+
+    Unbalanced groups are not guessed. A length cap avoids treating an entire
+    damaged article as one citation.
+    """
+    start: int | None = None
+    depth = 0
+    for index, char in enumerate(text):
+        if char == "(":
+            if depth == 0:
+                start = index
+            depth += 1
+        elif char == ")" and depth:
+            depth -= 1
+            if depth == 0 and start is not None:
+                if index + 1 - start <= 180:
+                    yield start, index + 1, text[start + 1:index].strip()
+                start = None
+
+
+def _citation_siglum(interior: str) -> str | None:
+    if interior in LOCATORLESS_SIGLA or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior):
+        match = SIGLUM.match(interior)
+        return match.group("siglum") if match else None
+    match = SIGLUM.match(interior)
+    if not match:
+        return None
+    siglum = match.group("siglum")
+    # This is only a *candidate* citation, but require a source-shaped
+    # siglum and a locator outside the siglum.  In particular (r. ...),
+    # (zw.), and ordinary parenthetical German are not sources.
+    source_shaped = (any(char.isalpha() for char in siglum)
+                     and (siglum[0].isupper() or siglum[0].isdigit()
+                          or siglum[0] in "’'" or any(c.isupper() for c in siglum[1:])))
+    locator = interior[match.end():]
+    if not source_shaped or not re.search(r"\d", locator):
+        return None
+    return siglum
 
 
 def _hash_text(value: str) -> str:
@@ -220,15 +260,11 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) ->
     for match in re.finditer(r"„([^“]{1,500})“", text):
         result["german_quotes"].append({"text": match.group(1), **location(match.start(), match.end()),
             "status": "unassociated_candidate"})
-    for match in PARENTHESIS.finditer(text):
-        interior = match.group(1).strip()
-        siglum_match = SIGLUM.match(interior)
-        siglum = siglum_match.group("siglum") if siglum_match else interior
-        if (siglum_match and any(char.isdigit() for char in interior)
-                or interior in LOCATORLESS_SIGLA
-                or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior)):
-            result["parenthetical_citations"].append({"text": match.group(),
-                "siglum_candidate": siglum, **location(match.start(), match.end()),
+    for start, end, interior in _parenthetical_spans(text):
+        siglum = _citation_siglum(interior)
+        if siglum is not None:
+            result["parenthetical_citations"].append({"text": text[start:end],
+                "siglum_candidate": siglum, **location(start, end),
                 "status": "unassociated_candidate"})
     for marker in re.finditer(r"[↑↓]", text):
         start = marker.start()

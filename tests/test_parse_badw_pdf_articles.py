@@ -222,6 +222,26 @@ def test_md_zod_g_wrapped_locator_is_citation_not_arbitrary_parenthesis() -> Non
         ("(mDzodG\n64,3)", "mDzodG")]
 
 
+def test_balanced_nested_and_loc_sigla_are_source_candidates_only() -> None:
+    line = _candidate_line(
+        "(K841(2) 204b2) (’Dzam 21,22) (gZi-Sn 92,37) "
+        "(sBa 62,14) (1PL 19,4) (in Mvy 226,1) "
+        "(r. preṣitaḥ „ausgesandt“!) (zw.) (ordinary prose 12)")
+    citations = _candidates([line], _candidate_division(1))["parenthetical_citations"]
+    assert [(item["text"], item["siglum_candidate"]) for item in citations] == [
+        ("(K841(2) 204b2)", "K841"), ("(’Dzam 21,22)", "’Dzam"),
+        ("(gZi-Sn 92,37)", "gZi-Sn"), ("(sBa 62,14)", "sBa"),
+        ("(1PL 19,4)", "1PL"), ("(in Mvy 226,1)", "Mvy")]
+
+
+def test_slash_locator_and_numeric_dates_are_distinguished() -> None:
+    lines = [_candidate_line("„erhalten“ (MTH3/5/26 2) (1711-1799)"),
+             _candidate_line("„aufbewahrt“ (MTH3/\n5/30 b10)")]
+    citations = _candidates(lines, _candidate_division(2))["parenthetical_citations"]
+    assert [(item["text"], item["siglum_candidate"]) for item in citations] == [
+        ("(MTH3/5/26 2)", "MTH3"), ("(MTH3/\n5/30 b10)", "MTH3")]
+
+
 def test_source_mismatch_fails_closed() -> None:
     article, page = _fixture()
     article["source_spans"][0]["source_text_sha256"] = "0" * 64

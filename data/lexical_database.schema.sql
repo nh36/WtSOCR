@@ -159,6 +159,40 @@ CREATE TABLE pdf_unassigned_fragment (
   derived_reading_text TEXT NOT NULL, unknown_glyphs_json TEXT NOT NULL
 );
 
+-- These are source-anchored typographic candidates, not verified senses or
+-- attestations.  The two input contracts and source hashes are retained so a
+-- later review can replay the exact parser decision without reinterpreting it.
+CREATE TABLE pdf_article_analysis (
+  article_id TEXT PRIMARY KEY REFERENCES pdf_article_witness(id),
+  structural_contract_version TEXT NOT NULL,
+  lexical_contract_version TEXT NOT NULL,
+  source_faithful_sha256 TEXT NOT NULL,
+  visual_sha256 TEXT NOT NULL,
+  structural_json TEXT NOT NULL
+);
+CREATE TABLE pdf_lexical_candidate (
+  article_id TEXT NOT NULL REFERENCES pdf_article_analysis(article_id),
+  kind TEXT NOT NULL CHECK (kind IN
+    ('definition', 'tibetan_example', 'belegstelle', 'lexicographic_parallel',
+     'translation', 'citation', 'correction_apparatus')),
+  ordinal INTEGER NOT NULL,
+  division_index INTEGER,
+  visual_start INTEGER NOT NULL,
+  visual_end INTEGER NOT NULL,
+  text TEXT NOT NULL,
+  status TEXT NOT NULL,
+  candidate_json TEXT NOT NULL,
+  PRIMARY KEY (article_id, kind, ordinal)
+);
+CREATE TABLE pdf_quote_disposition (
+  article_id TEXT NOT NULL REFERENCES pdf_article_analysis(article_id),
+  quote_index INTEGER NOT NULL,
+  kind TEXT NOT NULL CHECK (kind IN
+    ('belegstelle_candidate', 'lexicographic_parallel_candidate', 'unresolved')),
+  reason TEXT NOT NULL,
+  PRIMARY KEY (article_id, quote_index)
+);
+
 CREATE VIRTUAL TABLE entry_fts USING fts5(id UNINDEXED, loc_headword, tibetan_headword);
 CREATE VIRTUAL TABLE sense_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, definition);
 CREATE VIRTUAL TABLE attestation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, tibetan, german_translation);
@@ -175,3 +209,4 @@ CREATE INDEX attestation_entry_idx ON attestation(entry_id);
 CREATE INDEX span_source_idx ON record_source_span(snapshot_id, source_id, start_offset);
 CREATE INDEX badw_siglum_occurrence_source_idx ON badw_siglum_occurrence(source_snapshot_id, source_id, visible_start);
 CREATE INDEX pdf_article_span_page_idx ON pdf_article_source_span(page_id, run_start);
+CREATE INDEX pdf_lexical_candidate_kind_idx ON pdf_lexical_candidate(kind, article_id);
