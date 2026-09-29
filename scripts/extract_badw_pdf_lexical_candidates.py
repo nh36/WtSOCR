@@ -22,6 +22,12 @@ from badw_canonical_pages import stable_json_bytes
 
 VERSION = "badw-pdf-lexical-candidates-v3"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
+# A printed correction belongs to the preceding LoC example. Its proposal
+# may use italic type, so the final italic run before a quote can be the
+# proposal rather than the example. Require the entire intervening source
+# span to be exactly one literal correction and an optional metre qualifier.
+CORRECTION_BEFORE_QUOTE = re.compile(
+    r"(?P<apparatus>\s*\(r\.\s+[^()]+\))\s*(?:\(metr\.\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
 MORPHOLOGY_PREFIX = re.compile(r"^\s*(?:pf\.|fut\.|prs\.|imp\.)\s+zu\s+[↑↓]")
@@ -265,14 +271,27 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             **_anchor(lines, offsets, start, end)})
     for quote_index, quote in enumerate(quotes):
         qstart = int(quote["visual_start"])
-        eligible = [index for index, (_, end, _) in enumerate(intervals)
-                    if end <= qstart and QUALIFIER.fullmatch(text[end:qstart])]
+        quote_line = int(quote["start_line_index"])
+        eligible: list[tuple[int, int]] = []
+        for interval_index, (_, interval_end, interval_line) in enumerate(intervals):
+            if interval_end > qstart:
+                continue
+            if QUALIFIER.fullmatch(text[interval_end:qstart]):
+                eligible.append((interval_index, interval_end))
+                continue
+            match = CORRECTION_BEFORE_QUOTE.fullmatch(text[interval_end:qstart])
+            if (match and quote_line - interval_line <= 2 and
+                    lines[interval_line]["page_id"] == lines[quote_line]["page_id"] and
+                    not any(lines[i]["unknown_glyphs"]
+                            for i in range(interval_line, quote_line + 1))):
+                eligible.append((interval_index, interval_end + match.end("apparatus")))
         if not eligible:
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "no_adjacent_italic_loc_span"})
             continue
-        index = eligible[-1]
-        start, end, first_line = intervals[index]
+        index, example_end = eligible[-1]
+        start, _, first_line = intervals[index]
+        end = example_end
         # Join LoC text across a visual line break only when the same source
         # page carries an uninterrupted italic continuation.
         while index > 0:
@@ -295,7 +314,6 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                 "reason": "quote_crosses_division"})
             continue
         division = article["divisions"][division_index]
-        quote_line = int(quote["start_line_index"])
         lex = _lexical_region(lines, quote_line, division["start_line_index"])
         # Ellipses, angle-bracket emendations and an explicit '(r. …)'
         # correction can interrupt an otherwise continuous italic LoC span.

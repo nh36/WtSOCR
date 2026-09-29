@@ -223,6 +223,77 @@ def test_wrapped_parenthetical_correction_preserves_complete_example() -> None:
     assert result["correction_apparatus"][0]["proposed_reading"] == "phyugs"
 
 
+@pytest.mark.parametrize("lines,spans,expected", [
+    (["~ mdon (r. ’don) „translation“ (Source 1)."],
+     [[(0, 6, "italic"), (6, 11, "regular"), (11, 15, "italic"),
+       (15, 40, "regular")]], "~ mdon (r. ’don)"),
+    (["~ rtsal (r. stsal)", "(metr.) „translation“ (Source 1)."],
+     [[(0, 7, "italic"), (7, 12, "regular"), (12, 17, "italic"),
+       (17, 18, "regular")], [(0, 33, "regular")]],
+     "~ rtsal (r. stsal)"),
+])
+def test_final_printed_correction_is_part_of_complete_example(
+        lines: list[str], spans: list[list[tuple[int, int, str]]],
+        expected: str) -> None:
+    source_lines = [_line(line, line_spans)
+                    for line, line_spans in zip(lines, spans)]
+    visual = "\n".join(lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Source 1)")
+    quote_line = next(i for i, line in enumerate(lines) if "„translation“" in line)
+    article = _article(source_lines, candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„translation“"),
+                           "division_index": 0, "start_line_index": quote_line}],
+        "parenthetical_citations": [{"visual_start": cite_start,
+                                     "visual_end": cite_start + len("(Source 1)"),
+                                     "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0,
+                                            "citation_index": 0}]})
+    result = extract(article)
+    assert result["unresolved_quotes"] == []
+    assert result["tibetan_examples"][0]["text"] == expected
+    assert result["belegstellen"][0]["correction_indices"] == [0]
+    assert result["correction_apparatus"][0]["example_index"] == 0
+    assert result["correction_apparatus"][0]["interpretation"] == "printed_apparatus_not_applied"
+
+
+@pytest.mark.parametrize("barrier", ["unrelated prose", "other (r. ’don)", "(r. ’don) extra"])
+def test_printed_correction_rule_rejects_other_intervening_text(barrier: str) -> None:
+    first = "~ mdon " + barrier + " „translation“"
+    line = _line(first, [(0, 6, "italic"), (6, len(first), "regular")])
+    result = extract(_article([line], candidates={
+        "german_quotes": [{"visual_start": first.index("„translation“"),
+                           "visual_end": len(first), "division_index": 0,
+                           "start_line_index": 0}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []}))
+    assert result["belegstellen"] == []
+    assert result["tibetan_examples"] == []
+    assert result["unresolved_quotes"][0]["reason"] == "no_adjacent_italic_loc_span"
+
+
+@pytest.mark.parametrize("barrier", ["different_page", "unknown_glyph"])
+def test_printed_correction_rule_rejects_unsafe_source_boundary(barrier: str) -> None:
+    first = "~ mdon (r. ’don)"
+    second = "„translation“ (Source 1)."
+    lines = [_line(first, [(0, 6, "italic"), (6, len(first), "regular")]),
+             _line(second)]
+    if barrier == "different_page":
+        lines[1]["page_id"] = "different-source-page"
+    else:
+        lines[0]["unknown_glyphs"] = [{"cid": 999}]
+    visual = first + "\n" + second
+    quote_start = visual.index("„translation“")
+    result = extract(_article(lines, candidates={
+        "german_quotes": [{"visual_start": quote_start,
+                           "visual_end": quote_start + len("„translation“"),
+                           "division_index": 0, "start_line_index": 1}],
+        "parenthetical_citations": [], "adjacent_quote_citation_pairs": []}))
+    assert result["belegstellen"] == []
+    assert result["tibetan_examples"] == []
+    assert result["unresolved_quotes"][0]["reason"] == "no_adjacent_italic_loc_span"
+
+
 def test_correction_without_italic_target_stays_unresolved() -> None:
     first = "mchu (r. sgros) ’gros"
     lines = [_line(first, [(0, len(first), "regular")]),
