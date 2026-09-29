@@ -14,6 +14,7 @@ import gzip
 from hashlib import sha256
 import json
 from pathlib import Path
+import re
 from typing import Any, Iterable
 
 
@@ -88,19 +89,26 @@ def select(articles: Iterable[dict[str, Any]], per_volume: int = 8,
     chosen: list[dict[str, Any]] = []
     for volume in (2, 3, 4):
         used: set[str] = set()
-        for stratum in STRATA:
-            for _, article in best.get((volume, stratum), []):
-                if article["article_id"] not in used:
-                    used.add(article["article_id"])
-                    text = visual_text(article)
-                    chosen.append({"contract_version": VERSION, "article_id": article["article_id"],
-                        "volume": volume, "stratum": stratum, "loc_headword": article["loc_headword"],
-                        "tibetan_headword": article["tibetan_headword"],
-                        "source_faithful_sha256": article["source_faithful_sha256"],
-                        "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
-                        "reviewed_start": 0, "reviewed_end": min(len(text), review_chars),
-                        "visual_text": text[:review_chars],
-                        "predictions": predictions(article, min(len(text), review_chars))})
+        # Take the best unused article in each stratum per round.  The old
+        # single pass silently capped a volume at eight articles, even when
+        # callers requested a larger independent readiness sample.
+        for _ in range(per_volume):
+            for stratum in STRATA:
+                article = next((candidate for _, candidate in best.get((volume, stratum), [])
+                                if candidate["article_id"] not in used), None)
+                if article is None:
+                    continue
+                used.add(article["article_id"])
+                text = visual_text(article)
+                chosen.append({"contract_version": VERSION, "article_id": article["article_id"],
+                    "volume": volume, "stratum": stratum, "loc_headword": article["loc_headword"],
+                    "tibetan_headword": article["tibetan_headword"],
+                    "source_faithful_sha256": article["source_faithful_sha256"],
+                    "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
+                    "reviewed_start": 0, "reviewed_end": min(len(text), review_chars),
+                    "visual_text": text[:review_chars],
+                    "predictions": predictions(article, min(len(text), review_chars))})
+                if len(used) >= per_volume:
                     break
             if len(used) >= per_volume:
                 break
@@ -118,8 +126,12 @@ def predictions(article: dict[str, Any], review_end: int) -> dict[str, list[tupl
         offset += len(line["text"]) + 1
     for division in article["divisions"]:
         if division["kind"] == "numbered_sense":
-            start = offsets[division["start_line_index"]]
-            end = start + len(division["label"]) + 1
+            line = article["visual_lines"][division["start_line_index"]]["text"]
+            label = re.match(r"^\s*(?P<label>" + re.escape(division["label"]) + r"\.)", line)
+            if label is None:
+                raise ValueError(f"numbered sense lacks its printed label: {article['article_id']}")
+            start = offsets[division["start_line_index"]] + label.start("label")
+            end = offsets[division["start_line_index"]] + label.end("label")
             if end <= review_end:
                 result["numbered_sense"].append((start, end))
     for kind, key in PREDICTED.items():
@@ -177,6 +189,64 @@ def score(sample: Iterable[dict[str, Any]], gold: Iterable[dict[str, Any]]) -> d
     return {"contract_version": VERSION, "sample_size": len(samples),
             "reviewed_count": sum(reviewed.values()), "reviewed_by_volume": dict(sorted(reviewed.items())),
             "metrics": {kind: dict(sorted(counter.items())) for kind, counter in totals.items()}}
+
+
+def with_lexical_predictions(sample: list[dict[str, Any]],
+                             lexical: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Join independent candidate output without modifying the frozen sample."""
+    by_id = {row["article_id"]: row for row in sample}
+    if len(by_id) != len(sample):
+        raise ValueError("duplicate sample article_id")
+    seen: set[str] = set()
+    for candidate in lexical:
+        article_id = candidate["article_id"]
+        if article_id not in by_id:
+            continue
+        if article_id in seen:
+            raise ValueError(f"duplicate lexical article_id: {article_id}")
+        seen.add(article_id)
+        row = by_id[article_id]
+        if (candidate["source_faithful_sha256"] != row["source_faithful_sha256"]
+                or candidate["visual_sha256"] != row["visual_sha256"]):
+            raise ValueError(f"lexical source mismatch: {article_id}")
+        mapping = (("definition", "definitions"), ("tibetan_example", "tibetan_examples"),
+                   ("belegstelle", "belegstellen"))
+        for kind, key in mapping:
+            row["predictions"][kind] = sorted(
+                (int(item["visual_start"]), int(item["visual_end"]))
+                for item in candidate[key]
+                if item["visual_end"] <= row["reviewed_end"]
+                and (kind != "tibetan_example" or not item["lexical_region"])
+            )
+    if seen != set(by_id):
+        raise ValueError(f"missing lexical candidates for {len(by_id) - len(seen)} sampled articles")
+    return sample
+
+
+def refresh_predictions(sample: list[dict[str, Any]],
+                        articles: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Recompute structural predictions without changing frozen review sources."""
+    by_id = {row["article_id"]: row for row in sample}
+    if len(by_id) != len(sample):
+        raise ValueError("duplicate sample article_id")
+    seen: set[str] = set()
+    for article in articles:
+        article_id = article["article_id"]
+        if article_id not in by_id:
+            continue
+        if article_id in seen:
+            raise ValueError(f"duplicate source article_id: {article_id}")
+        seen.add(article_id)
+        row = by_id[article_id]
+        text = visual_text(article)
+        if (row["source_faithful_sha256"] != article["source_faithful_sha256"]
+                or row["visual_sha256"] != sha256(text.encode("utf-8")).hexdigest()
+                or row["visual_text"] != text[:row["reviewed_end"]]):
+            raise ValueError(f"sample source mismatch: {article_id}")
+        row["predictions"] = predictions(article, row["reviewed_end"])
+    if seen != set(by_id):
+        raise ValueError(f"missing structural sources for {len(by_id) - len(seen)} sampled articles")
+    return sample
 
 
 def materialize_gold(sample: list[dict[str, Any]], annotations: Iterable[dict[str, str]]) -> list[dict[str, Any]]:
@@ -248,29 +318,43 @@ def main() -> None:
     sample_cmd.add_argument("--output", type=Path, required=True)
     sample_cmd.add_argument("--per-volume", type=int, default=8)
     sample_cmd.add_argument("--review-chars", type=int, default=500)
-    sample_cmd.add_argument("--exclude-sample", type=Path,
+    sample_cmd.add_argument("--exclude-sample", type=Path, action="append",
                             help="exclude article IDs in an existing review sample")
     score_cmd = commands.add_parser("score")
     score_cmd.add_argument("--sample", type=Path, required=True)
     score_cmd.add_argument("--gold", type=Path, required=True)
     score_cmd.add_argument("--output", type=Path, required=True)
+    score_cmd.add_argument("--lexical-candidates", type=Path,
+                           help="source-hash-checked lexical candidate corpus")
     gold_cmd = commands.add_parser("gold")
     gold_cmd.add_argument("--sample", type=Path, required=True)
     gold_cmd.add_argument("--annotations", type=Path, required=True)
     gold_cmd.add_argument("--output", type=Path, required=True)
+    refresh_cmd = commands.add_parser("refresh")
+    refresh_cmd.add_argument("--sample", type=Path, required=True)
+    refresh_cmd.add_argument("--articles", type=Path, required=True)
+    refresh_cmd.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "select":
-        excluded = ({row["article_id"] for row in _rows(args.exclude_sample)}
+        excluded = ({row["article_id"] for path in args.exclude_sample for row in _rows(path)}
                     if args.exclude_sample else set())
         chosen = select(_rows(args.articles), args.per_volume, args.review_chars, excluded)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_bytes(b"".join(_stable(row) + b"\n" for row in chosen))
         print(json.dumps({"sample_size": len(chosen), "output": str(args.output)}))
     elif args.command == "score":
-        result = score(_rows(args.sample), _rows(args.gold))
+        sample = list(_rows(args.sample))
+        if args.lexical_candidates:
+            sample = with_lexical_predictions(sample, _rows(args.lexical_candidates))
+        result = score(sample, _rows(args.gold))
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_bytes(_stable(result) + b"\n")
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+    elif args.command == "refresh":
+        rows = refresh_predictions(list(_rows(args.sample)), _rows(args.articles))
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_bytes(b"".join(_stable(row) + b"\n" for row in rows))
+        print(json.dumps({"sample_size": len(rows), "output": str(args.output)}))
     else:
         with args.annotations.open(newline="", encoding="utf-8") as handle:
             gold = materialize_gold(list(_rows(args.sample)), csv.DictReader(handle, delimiter="\t"))

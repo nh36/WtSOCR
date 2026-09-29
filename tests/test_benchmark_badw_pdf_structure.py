@@ -10,7 +10,10 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from benchmark_badw_pdf_structure import materialize_gold, predictions, score, select
+from benchmark_badw_pdf_structure import (
+    materialize_gold, predictions, refresh_predictions, score, select,
+    with_lexical_predictions,
+)
 
 
 def _article(volume: int, suffix: int) -> dict:
@@ -44,6 +47,20 @@ def test_independent_selection_excludes_prior_sample() -> None:
     assert len(holdout) == 6
     assert excluded.isdisjoint(row["article_id"] for row in holdout)
     assert holdout == select(reversed(articles), per_volume=2, exclude_ids=excluded)
+
+
+def test_selection_can_exceed_eight_per_volume() -> None:
+    articles = [_article(volume, suffix) for volume in (2, 3, 4) for suffix in range(30)]
+    chosen = select(articles, per_volume=24)
+    assert len(chosen) == 72
+    assert chosen == select(reversed(articles), per_volume=24)
+
+
+def test_numbered_sense_span_excludes_visual_indent() -> None:
+    article = _article(2, 0)
+    article["visual_lines"][0]["text"] = " 2. Wort"
+    article["divisions"][0]["label"] = "2"
+    assert predictions(article, 8)["numbered_sense"] == [(1, 3)]
 
 
 def test_predictions_and_gold_are_exact_spans() -> None:
@@ -101,3 +118,40 @@ def test_manual_literal_annotations_resolve_and_require_review_marker() -> None:
         materialize_gold([row], [span])
     with pytest.raises(ValueError, match="article identity mismatch"):
         materialize_gold([row], [dict(marker, article_id="wrong")])
+
+
+def test_lexical_join_checks_source_and_requires_complete_unique_sample() -> None:
+    sample = select([_article(volume, 0) for volume in (2, 3, 4)], per_volume=1)
+    lexical = [{"article_id": row["article_id"],
+                "source_faithful_sha256": row["source_faithful_sha256"],
+                "visual_sha256": row["visual_sha256"],
+                "definitions": [{"visual_start": 3, "visual_end": 7}],
+                "tibetan_examples": [{"visual_start": 3, "visual_end": 7,
+                                        "lexical_region": True}],
+                "belegstellen": []} for row in sample]
+    joined = with_lexical_predictions(sample, lexical)
+    assert joined[0]["predictions"]["definition"] == [(3, 7)]
+    assert joined[0]["predictions"]["tibetan_example"] == []
+    with pytest.raises(ValueError, match="duplicate lexical article_id"):
+        with_lexical_predictions(sample, lexical + lexical[:1])
+    with pytest.raises(ValueError, match="missing lexical candidates"):
+        with_lexical_predictions(sample, lexical[:-1])
+    with pytest.raises(ValueError, match="lexical source mismatch"):
+        with_lexical_predictions(sample, lexical[:1] + [dict(lexical[1], visual_sha256="0" * 64)]
+                                 + lexical[2:])
+
+
+def test_prediction_refresh_preserves_frozen_review_identity() -> None:
+    articles = [_article(volume, 0) for volume in (2, 3, 4)]
+    sample = select(articles, per_volume=1)
+    sample[0]["predictions"]["numbered_sense"] = [(0, 1)]
+    refreshed = refresh_predictions(sample, reversed(articles))
+    assert refreshed[0]["predictions"]["numbered_sense"] == [(0, 2)]
+    assert refreshed[0]["source_faithful_sha256"] == articles[0]["source_faithful_sha256"]
+    with pytest.raises(ValueError, match="duplicate source article_id"):
+        refresh_predictions(sample, articles + articles[:1])
+    with pytest.raises(ValueError, match="missing structural sources"):
+        refresh_predictions(sample, articles[:-1])
+    corrupt = [dict(articles[0], source_faithful_sha256="0" * 64)] + articles[1:]
+    with pytest.raises(ValueError, match="sample source mismatch"):
+        refresh_predictions(sample, corrupt)
