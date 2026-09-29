@@ -12,7 +12,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from extract_badw_pdf_lexical_candidates import build, extract
+from extract_badw_pdf_lexical_candidates import build, extract, validate
 
 
 def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
@@ -75,6 +75,58 @@ def test_gloss_can_end_with_exact_compare_reference() -> None:
     assert extract(_article([_line("vgl. ↓bsñegs.")]))["definitions"] == []
 
 
+def test_inflection_preamble_is_not_a_gloss_and_multiword_reference_is() -> None:
+    lines = [_line("pf., vgl. ↓gñul.།"),
+             _line("1. umherwandern; vgl. ↓myul myul."),
+             _line("2. verputzen.")]
+    divisions = [{"kind": "unsegmented", "label": "", "start_line_index": 0,
+                  "end_line_index_exclusive": 1},
+                 {"kind": "numbered_sense", "label": "1", "start_line_index": 1,
+                  "end_line_index_exclusive": 2},
+                 {"kind": "numbered_sense", "label": "2", "start_line_index": 2,
+                  "end_line_index_exclusive": 3}]
+    result = extract(_article(lines, divisions))
+    assert [item["text"] for item in result["definitions"]] == [
+        "umherwandern; vgl. ↓myul myul.", "verputzen."]
+    validate(_article(lines, divisions), result)
+
+
+def test_reference_only_line_continues_a_semicolon_terminated_gloss() -> None:
+    lines = [_line("1. Intrige; khon ~ das Schüren von Haß;"),
+             _line("vgl. ↑’khon gcugs.")]
+    divisions = [{"kind": "numbered_sense", "label": "1", "start_line_index": 0,
+                  "end_line_index_exclusive": 2}]
+    result = extract(_article(lines, divisions))
+    assert result["definitions"][0]["text"] == (
+        "Intrige; khon ~ das Schüren von Haß;\nvgl. ↑’khon gcugs.")
+    validate(_article(lines, divisions), result)
+
+
+def test_hyphenated_german_gloss_continues_into_inline_references() -> None:
+    lines = [_line("Bez. für Schatztexte beson-"),
+             _line("ders der rÑiṅ-ma-pa, im Unter-"),
+             _line("schied zu ↑bka’ ma; vgl. ↑bka’ gter.")]
+    result = extract(_article(lines))
+    assert [item["text"] for item in result["definitions"]] == [
+        "Bez. für Schatztexte beson-\n"
+        "ders der rÑiṅ-ma-pa, im Unter-\n"
+        "schied zu ↑bka’ ma; vgl. ↑bka’ gter."]
+    validate(_article(lines), result)
+
+
+def test_sanskrit_title_wrapped_after_hyphen_is_not_truncated() -> None:
+    first = "3. ein buddh. Text, skt. Mahābalamahā-"
+    second = "yānasūtra (Toh 757)."
+    lines = [_line(first, [(0, 25, "regular"), (25, len(first), "italic")]),
+             _line(second, [(0, 9, "italic"), (9, len(second), "regular")])]
+    divisions = [{"kind": "numbered_sense", "label": "3", "start_line_index": 0,
+                  "end_line_index_exclusive": 2}]
+    result = extract(_article(lines, divisions))
+    assert result["definitions"][0]["text"] == (
+        "ein buddh. Text, skt. Mahābalamahā-\nyānasūtra (Toh 757).")
+    validate(_article(lines, divisions), result)
+
+
 def test_variant_preamble_is_not_a_definition_but_numbered_sense_is() -> None:
     first = "auch thugs yi dam."
     lines = [_line(first, [(0, 5, "regular"), (5, len(first), "italic")]),
@@ -135,6 +187,14 @@ def test_parenthetical_correction_preserves_complete_example() -> None:
     assert [item["text"] for item in result["tibetan_examples"]] == [first]
     assert result["belegstellen"][0]["text"] == first + "\n" + second[:-1]
     assert result["unresolved_quotes"] == []
+    correction = result["correction_apparatus"][0]
+    assert (correction["literal_text"], correction["target_text"],
+            correction["proposed_reading"]) == ("(r. lta)", "blta", "lta")
+    assert correction["status"] == "anchored_printed_proposal"
+    assert result["belegstellen"][0]["correction_indices"] == [0]
+    assert result["belegstellen"][0]["translation_index"] == 0
+    assert result["citations"][0]["text"] == "(Siddh 11,2)"
+    assert result["tibetan_examples"][0]["text"] == first
 
 
 def test_wrapped_parenthetical_correction_preserves_complete_example() -> None:
@@ -159,6 +219,57 @@ def test_wrapped_parenthetical_correction_preserves_complete_example() -> None:
     assert result["tibetan_examples"][0]["text"] == first + "\n" + second[:26].rstrip()
     assert result["belegstellen"][0]["text"] == first + "\n" + second + "\n„translation“ (Pd-K 134c)"
     assert result["unresolved_quotes"] == []
+    assert result["correction_apparatus"][0]["target_text"] == "phuṅ"
+    assert result["correction_apparatus"][0]["proposed_reading"] == "phyugs"
+
+
+def test_correction_without_italic_target_stays_unresolved() -> None:
+    first = "mchu (r. sgros) ’gros"
+    lines = [_line(first, [(0, len(first), "regular")]),
+             _line("„translation“ (Source 1).")]
+    visual = "\n".join(line["text"] for line in lines)
+    quote_start = visual.index("„translation“")
+    cite_start = visual.index("(Source 1)")
+    article = _article(lines, candidates={"german_quotes": [{
+        "visual_start": quote_start, "visual_end": quote_start + len("„translation“"),
+        "division_index": 0, "start_line_index": 1}],
+        "parenthetical_citations": [{"visual_start": cite_start,
+        "visual_end": cite_start + len("(Source 1)"), "division_index": 0}],
+        "adjacent_quote_citation_pairs": []})
+    # The source apparatus is inventoried even though no Tibetan example is
+    # admitted without an eligible italic source span.
+    result = extract(article)
+    assert result["tibetan_examples"] == []
+    assert result["correction_apparatus"][0]["status"] == "unresolved_target"
+    assert result["correction_apparatus"][0]["example_index"] is None
+
+
+def test_multiword_printed_proposal_does_not_guess_one_token_target() -> None:
+    first = "ka ca (r. skad cha) sñan pa"
+    result = extract(_article([_line(first, [(0, 6, "italic"),
+                                             (6, 20, "regular"),
+                                             (20, len(first), "italic")])]))
+    correction = result["correction_apparatus"][0]
+    assert correction["proposed_reading"] == "skad cha"
+    assert correction["status"] == "multiword_target_scope_unresolved"
+    assert "target_text" not in correction
+    assert "target_span" not in correction
+
+
+def test_source_replay_validator_rejects_mutated_fields_and_links() -> None:
+    article = _article([_line("Bedeutung.")])
+    result = extract(article)
+    result["definitions"][0]["text"] = "Berichtigung."
+    with pytest.raises(ValueError, match="source span does not replay"):
+        validate(article, result)
+    result = extract(article)
+    result["divisions"][0]["definition_indices"] = []
+    with pytest.raises(ValueError, match="division link mismatch"):
+        validate(article, result)
+    result = extract(article)
+    result["article_id"] = "other-article"
+    with pytest.raises(ValueError, match="article source identity mismatch"):
+        validate(article, result)
 
 
 def test_nested_parenthetical_correction_does_not_emit_truncated_example() -> None:

@@ -362,6 +362,15 @@ def test_reviewed_registry_preserves_retroflex_and_compound_rabten_glyphs():
         assert mapping.evidence_method == "canonical-page-heading-and-adjacent-wts-review"
 
 
+def test_reviewed_times_italic_h_breve_below_is_exact_outline_only():
+    registry = GlyphRegistry.from_tsv(ROOT / "data/badw_pdf_glyph_mappings.tsv")
+    signature = "4f1ddde3d43f578aa91f185c93642e23c17bf6cd8510a413dc2cf0df1fe1dd09"
+    mapping = registry.lookup("TimesNewRoman", "italic", 0x06D0, signature)
+    assert mapping is not None
+    assert mapping.unicode == "ḫ"
+    assert registry.lookup("TimesNewRoman", "italic", 0x06D0, "0" * 64) is None
+
+
 def test_tj_sequence_retains_positioning_adjustments_in_source_order():
     assert _text_sequence("TJ", [[b"\x00\x01", -120, b"\x00\x02"]]) == [
         b"\x00\x01",

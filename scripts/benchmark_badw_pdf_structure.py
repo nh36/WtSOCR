@@ -22,11 +22,13 @@ from typing import Any, Iterable
 VERSION = "badw-pdf-structure-benchmark-v1"
 WINDOWED_VERSION = "badw-pdf-structure-benchmark-v2"
 KINDS = ("numbered_sense", "german_quote", "parenthetical_citation",
-         "cross_reference", "definition", "tibetan_example", "belegstelle")
+         "cross_reference", "definition", "tibetan_example", "belegstelle",
+         "correction_apparatus")
 PREDICTED = {"german_quote": "german_quotes",
              "parenthetical_citation": "parenthetical_citations",
              "cross_reference": "cross_references"}
-STRATA = ("short", "long", "numbered", "unknown", "reference", "paired", "general", "general_2")
+STRATA = ("short", "long", "numbered", "unknown", "reference", "paired",
+          "correction", "general", "general_2")
 
 
 def _stable(data: Any) -> bytes:
@@ -78,6 +80,17 @@ def _review_windows(text: str, width: int) -> list[tuple[int, int]]:
     return [(0, first_end), (later_start, later_end)]
 
 
+def _correction_windows(text: str, width: int) -> list[tuple[int, int]]:
+    """Keep a printed correction and its surrounding complete source lines in view."""
+    match = re.search(r"\(r\.\s+[^()]+\)", text)
+    if match is None:
+        raise ValueError("correction stratum lacks a literal printed correction")
+    start = text.rfind("\n", 0, max(0, match.start() - width // 2)) + 1
+    end = text.find("\n", min(len(text), match.end() + width // 2))
+    end = len(text) if end < 0 else end
+    return [(start, end)]
+
+
 def _qualifies(article: dict[str, Any], stratum: str) -> bool:
     size = len(visual_text(article))
     diagnostics = article["diagnostics"]
@@ -89,6 +102,7 @@ def _qualifies(article: dict[str, Any], stratum: str) -> bool:
         "unknown": diagnostics.get("unknown_glyphs", 0) > 0,
         "reference": bool(candidates["cross_references"]),
         "paired": bool(candidates["adjacent_quote_citation_pairs"]),
+        "correction": bool(re.search(r"\(r\.\s+[^()]+\)", visual_text(article))),
         "general": True,
         "general_2": True,
     }[stratum]
@@ -137,7 +151,8 @@ def select(articles: Iterable[dict[str, Any]], per_volume: int = 8,
                     continue
                 used.add(article["article_id"])
                 text = visual_text(article)
-                ranges = _review_windows(text, review_chars) if windowed else [(0, min(len(text), review_chars))]
+                ranges = (_correction_windows(text, review_chars) if stratum == "correction"
+                          else _review_windows(text, review_chars)) if windowed else [(0, min(len(text), review_chars))]
                 row = {"contract_version": WINDOWED_VERSION if windowed else VERSION,
                     "article_id": article["article_id"],
                     "volume": volume, "stratum": stratum, "loc_headword": article["loc_headword"],
@@ -239,7 +254,7 @@ def score(sample: Iterable[dict[str, Any]], gold: Iterable[dict[str, Any]]) -> d
         for kind in KINDS:
             if kind not in reviewed_kinds:
                 continue
-            actual = set(tuple(pair) for pair in row["predictions"][kind])
+            actual = set(tuple(pair) for pair in row["predictions"].get(kind, []))
             expected = gold_spans[kind]
             totals[kind]["reviewed_articles"] += 1
             totals[kind]["true_positive"] += len(actual & expected)
@@ -273,11 +288,12 @@ def with_lexical_predictions(sample: list[dict[str, Any]],
                 or candidate["visual_sha256"] != row["visual_sha256"]):
             raise ValueError(f"lexical source mismatch: {article_id}")
         mapping = (("definition", "definitions"), ("tibetan_example", "tibetan_examples"),
-                   ("belegstelle", "belegstellen"))
+                   ("belegstelle", "belegstellen"),
+                   ("correction_apparatus", "correction_apparatus"))
         for kind, key in mapping:
             row["predictions"][kind] = sorted(
                 (int(item["visual_start"]), int(item["visual_end"]))
-                for item in candidate[key]
+                for item in candidate.get(key, [])
                 if _inside(int(item["visual_start"]), int(item["visual_end"]), reviewed_ranges(row))
                 and (kind != "tibetan_example" or not item["lexical_region"])
             )

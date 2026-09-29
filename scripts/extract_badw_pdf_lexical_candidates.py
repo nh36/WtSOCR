@@ -20,14 +20,18 @@ from typing import Any, Iterable
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-lexical-candidates-v1"
+VERSION = "badw-pdf-lexical-candidates-v2"
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
 MORPHOLOGY_PREFIX = re.compile(r"^\s*(?:pf\.|fut\.|prs\.|imp\.)\s+zu\s+[↑↓]")
-GLOSS_REFERENCE_SUFFIX = re.compile(r",\s*vgl\.\s+[↑↓][^\s,;()„“]+\.?\s*$")
+GLOSS_REFERENCE_SUFFIX = re.compile(r"[,;]\s*vgl\.\s+[↑↓][^\n,;()„“]+\.?\s*$")
+REFERENCE_CONTINUATION = re.compile(r"\s*vgl\.\s+[↑↓][^\n;()„“]+\.?\s*\Z")
+MORPHOLOGY_PREAMBLE = re.compile(r"\s*(?:pf\.|fut\.|prs\.|imp\.)\s*\Z")
 INLINE_ITALIC_INTERRUPTION = re.compile(
     r"(?:\s+\.\.\.\s+|\s*⟨[^<>\n]+⟩\s*|\s*\(r\.\s+[^()]+\)\s*)\Z")
+PRINTED_CORRECTION = re.compile(r"\(r\.\s+(?P<proposal>[^()]+?)\)")
+PRECEDING_TOKEN = re.compile(r"(?P<target>[^\s()]+)\s*\Z")
 
 
 def _offsets(lines: list[dict[str, Any]]) -> list[int]:
@@ -47,9 +51,55 @@ def _anchor(lines: list[dict[str, Any]], offsets: list[int], start: int, end: in
     return {"visual_start": start, "visual_end": end,
         "source_lines": [{"line_index": i, "page_id": lines[i]["page_id"],
             "span_index": lines[i]["span_index"], "printed_page": lines[i]["printed_page"],
+            "line_char_start": max(0, start - offsets[i]),
+            "line_char_end": min(len(lines[i]["text"]), end - offsets[i]),
             "run_start": lines[i]["run_start"],
             "run_end_exclusive": lines[i]["run_end_exclusive"]}
             for i in range(first, last + 1)]}
+
+
+def _in_italic(intervals: list[tuple[int, int, int]], start: int, end: int) -> bool:
+    return any(left <= start and end <= right for left, right, _ in intervals)
+
+
+def _corrections(text: str, examples: list[dict[str, Any]],
+                 lines: list[dict[str, Any]], offsets: list[int],
+                 intervals: list[tuple[int, int, int]]) -> list[dict[str, Any]]:
+    """Inventory literal simple r.-apparatus, including unpaired passages."""
+    records: list[dict[str, Any]] = []
+    for match in PRINTED_CORRECTION.finditer(text):
+        proposed = match.group("proposal").strip()
+        pstart = match.start("proposal") + len(match.group("proposal")) - len(match.group("proposal").lstrip())
+        pend = pstart + len(proposed)
+        example_index = next((i for i, example in enumerate(examples)
+                              if example["visual_start"] <= match.start() and
+                              match.end() <= example["visual_end"]), None)
+        line_start = text.rfind("\n", 0, match.start()) + 1
+        prior = PRECEDING_TOKEN.search(text[line_start:match.start()])
+        target_start = line_start + prior.start("target") if prior else None
+        target_end = line_start + prior.end("target") if prior else None
+        multiword_proposal = len(proposed.split()) > 1
+        anchored = (bool(proposed) and "~" not in proposed and not multiword_proposal
+                    and prior is not None and
+                    _in_italic(intervals, target_start, target_end) and
+                    "⟦UNKNOWN:" not in proposed and
+                    "⟦UNKNOWN:" not in prior.group("target"))
+        record = {"literal_text": match.group(), "proposed_reading": proposed,
+            "interpretation": "printed_apparatus_not_applied",
+            "example_index": example_index,
+            "division_index": examples[example_index]["division_index"]
+                if example_index is not None else None,
+            "status": "anchored_printed_proposal" if anchored else
+                ("contextual_placeholder" if "~" in proposed else
+                 "multiword_target_scope_unresolved" if multiword_proposal else
+                 "unresolved_target"),
+            "proposal_span": _anchor(lines, offsets, pstart, pend),
+            **_anchor(lines, offsets, match.start(), match.end())}
+        if anchored:
+            record["target_text"] = prior.group("target")
+            record["target_span"] = _anchor(lines, offsets, target_start, target_end)
+        records.append(record)
+    return records
 
 
 def _italic_intervals(lines: list[dict[str, Any]], offsets: list[int]) -> list[tuple[int, int, int]]:
@@ -94,7 +144,13 @@ def _definition_candidates(article: dict[str, Any], text: str,
                 and any(span["family"] == "TGaramond" and span["style"] == "regular"
                         for span in spans)
                 and "„" not in line["text"] and "“" not in line["text"])
-            if not starts_regular and not mixed_continuation:
+            sanskrit_continuation = (bool(fragments) and not starts_regular
+                and fragments[-1].rstrip().endswith("-")
+                and "skt." in "\n".join(fragments)
+                and spans[0]["family"] == "TGaramond"
+                and spans[0]["style"] == "italic"
+                and "„" not in line["text"] and "“" not in line["text"])
+            if not starts_regular and not (mixed_continuation or sanskrit_continuation):
                 break
             if (division["kind"] == "unsegmented" and i == division["start_line_index"]
                     and re.match(r"\s*(?:Kurzf\.\s+für|auch\s+)", line["text"])
@@ -134,10 +190,20 @@ def _definition_candidates(article: dict[str, Any], text: str,
                 part = part.split("།", 1)[0]
             reference_suffix = GLOSS_REFERENCE_SUFFIX.search(part)
             gloss_before_reference = part[:reference_suffix.start()] if reference_suffix else ""
+            reference_continuation = (bool(fragments) and fragments[-1].rstrip().endswith(";")
+                                      and REFERENCE_CONTINUATION.fullmatch(part))
+            hyphenated_prose_continuation = (bool(fragments)
+                                            and fragments[-1].rstrip().endswith("-")
+                                            and bool(re.match(r"\s*[a-zäöüß]", part))
+                                            and bool(reference_suffix)
+                                            and bool(re.search(r"[A-Za-zÄÖÜäöüß]", gloss_before_reference))
+                                            and not bool(MORPHOLOGY_PREAMBLE.fullmatch(gloss_before_reference)))
             if (len(part) > 250 or
-                    (MORPHOLOGY.search(part) and not (
+                    (MORPHOLOGY.search(part) and not reference_continuation
+                     and not hyphenated_prose_continuation and not (
                         reference_suffix and
                         re.search(r"[A-Za-zÄÖÜäöüß]", gloss_before_reference) and
+                        not MORPHOLOGY_PREAMBLE.fullmatch(gloss_before_reference) and
                         not MORPHOLOGY.search(gloss_before_reference)))):
                 break
             if start is None:
@@ -169,10 +235,14 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     result: dict[str, Any] = {"contract_version": VERSION,
         "article_id": article["article_id"], "volume": article["volume"],
         "loc_headword": article["loc_headword"],
+        "tibetan_headword": article.get("tibetan_headword"),
+        "homonym": article.get("homonym"),
+        "source_objects": article.get("source_objects", []),
         "source_faithful_sha256": article["source_faithful_sha256"],
         "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
         "definitions": [], "tibetan_examples": [], "belegstellen": [],
-        "unresolved_quotes": []}
+        "translations": [], "citations": [], "correction_apparatus": [],
+        "divisions": [], "unresolved_quotes": []}
     if not lines:
         return result
     result["definitions"] = _definition_candidates(article, text, offsets)
@@ -181,6 +251,17 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     citations = article["candidates"]["parenthetical_citations"]
     pairs = {pair["quote_index"]: pair["citation_index"]
              for pair in article["candidates"]["adjacent_quote_citation_pairs"]}
+    for quote in quotes:
+        start, end = int(quote["visual_start"]), int(quote["visual_end"])
+        result["translations"].append({"text": text[start:end],
+            "division_index": quote.get("division_index"),
+            "status": "source_quote_candidate", **_anchor(lines, offsets, start, end)})
+    for citation in citations:
+        start, end = int(citation["visual_start"]), int(citation["visual_end"])
+        result["citations"].append({"text": text[start:end],
+            "division_index": citation.get("division_index"),
+            "status": "unlinked_source_citation_candidate",
+            **_anchor(lines, offsets, start, end)})
     for quote_index, quote in enumerate(quotes):
         qstart = int(quote["visual_start"])
         eligible = [index for index, (_, end, _) in enumerate(intervals)
@@ -229,6 +310,12 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             if INLINE_ITALIC_INTERRUPTION.fullmatch(text[prior_end:start]):
                 start, first_line = prior_start, prior_line
                 example_text = text[start:end].strip()
+        # A newly joined italic span can include leading/trailing source
+        # whitespace.  Re-anchor the final candidate, not its pre-join tail.
+        joined = text[start:end]
+        start += len(joined) - len(joined.lstrip())
+        end -= len(joined) - len(joined.rstrip())
+        example_text = text[start:end]
         preceding = text[max(0, start - 100):start]
         if preceding.count("(") > preceding.count(")"):
             result["unresolved_quotes"].append({"quote_index": quote_index,
@@ -240,6 +327,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "mixed_style_parenthetical_correction"})
             continue
+        example_index = len(result["tibetan_examples"])
         example = {"text": example_text, "quote_index": quote_index,
             "division_index": division_index, "lexical_region": lex,
             "status": "lexicon_quote_candidate" if lex else "unverified_typographic_candidate",
@@ -255,11 +343,110 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         # The candidate covers the entire visible citation group; it does
         # not claim that its siglum has been linked to a bibliography record.
         group = {"text": text[start:citation_end], "quote_index": quote_index,
-            "citation_index": cite_index, "example_index": len(result["tibetan_examples"]) - 1,
+            "citation_index": cite_index, "example_index": example_index,
+            "translation_index": quote_index,
             "division_index": division_index, "status": "unverified_typographic_candidate",
             **_anchor(lines, offsets, start, citation_end)}
         result["belegstellen"].append(group)
+    result["correction_apparatus"] = _corrections(
+        text, result["tibetan_examples"], lines, offsets, intervals)
+    for group in result["belegstellen"]:
+        group["correction_indices"] = [i for i, correction in
+            enumerate(result["correction_apparatus"])
+            if correction["example_index"] == group["example_index"]]
+    for division_index, division in enumerate(article["divisions"]):
+        result["divisions"].append({"kind": division["kind"], "label": division["label"],
+            "start_line_index": division["start_line_index"],
+            "end_line_index_exclusive": division["end_line_index_exclusive"],
+            "definition_indices": [i for i, item in enumerate(result["definitions"])
+                                   if item["division_index"] == division_index],
+            "example_indices": [i for i, item in enumerate(result["tibetan_examples"])
+                                if item["division_index"] == division_index],
+            "belegstelle_indices": [i for i, item in enumerate(result["belegstellen"])
+                                    if item["division_index"] == division_index]})
+    validate(article, result)
     return result
+
+
+def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
+    """Check source replay and internal links, not semantic truth of candidates."""
+    lines = article["visual_lines"]
+    visual = "\n".join(line["text"] for line in lines)
+    if (result["article_id"] != article["article_id"] or
+            result["source_faithful_sha256"] != article["source_faithful_sha256"]):
+        raise ValueError("article source identity mismatch")
+    if result["visual_sha256"] != sha256(visual.encode("utf-8")).hexdigest():
+        raise ValueError("visual source hash mismatch")
+    for collection in ("definitions", "tibetan_examples", "belegstellen",
+                       "translations", "citations", "correction_apparatus"):
+        for record in result[collection]:
+            if collection == "correction_apparatus":
+                source_text = record["literal_text"]
+                nested = [record["proposal_span"]]
+                if "target_span" in record:
+                    nested.append(record["target_span"])
+            else:
+                source_text = record["text"]
+                nested = []
+            if visual[record["visual_start"]:record["visual_end"]] != source_text:
+                raise ValueError(f"{collection} source span does not replay")
+            for span in [record, *nested]:
+                if not span["source_lines"]:
+                    raise ValueError(f"{collection} lacks source lines")
+                indices = [source_line["line_index"] for source_line in span["source_lines"]]
+                if indices != list(range(indices[0], indices[-1] + 1)):
+                    raise ValueError(f"{collection} source lines are not contiguous")
+                pieces = []
+                for source_line in span["source_lines"]:
+                    line = lines[source_line["line_index"]]
+                    if (source_line["page_id"] != line["page_id"] or
+                            source_line["span_index"] != line["span_index"] or
+                            source_line["printed_page"] != line["printed_page"] or
+                            source_line["run_start"] != line["run_start"] or
+                            source_line["run_end_exclusive"] != line["run_end_exclusive"] or
+                            not 0 <= source_line["line_char_start"] <=
+                            source_line["line_char_end"] <= len(line["text"])):
+                        raise ValueError(f"{collection} source line mismatch")
+                    pieces.append(line["text"][source_line["line_char_start"]:
+                                               source_line["line_char_end"]])
+                if "\n".join(pieces) != visual[span["visual_start"]:span["visual_end"]]:
+                    raise ValueError(f"{collection} source-line text does not replay")
+            if collection == "correction_apparatus":
+                if record["interpretation"] != "printed_apparatus_not_applied":
+                    raise ValueError("correction apparatus interpretation changed")
+                proposal = record["proposal_span"]
+                if visual[proposal["visual_start"]:proposal["visual_end"]] != record["proposed_reading"]:
+                    raise ValueError("correction proposal does not replay")
+                if "target_span" in record:
+                    target = record["target_span"]
+                    if visual[target["visual_start"]:target["visual_end"]] != record["target_text"]:
+                        raise ValueError("correction target does not replay")
+    for index, beleg in enumerate(result["belegstellen"]):
+        example = result["tibetan_examples"][beleg["example_index"]]
+        translation = result["translations"][beleg["translation_index"]]
+        citation = result["citations"][beleg["citation_index"]]
+        if not (beleg["visual_start"] == example["visual_start"] and
+                beleg["quote_index"] == example["quote_index"] ==
+                beleg["translation_index"] and
+                example["visual_end"] <= translation["visual_start"] and
+                translation["visual_end"] <= citation["visual_start"] and
+                citation["visual_end"] == beleg["visual_end"] and
+                beleg["division_index"] == example["division_index"] ==
+                translation["division_index"] and
+                citation["division_index"] in (None, beleg["division_index"])):
+            raise ValueError(f"Belegstelle {index} has invalid source order or links")
+        expected_corrections = [i for i, correction in enumerate(result["correction_apparatus"])
+                                if correction["example_index"] == beleg["example_index"]]
+        if beleg["correction_indices"] != expected_corrections:
+            raise ValueError(f"Belegstelle {index} correction links mismatch")
+    for index, division in enumerate(result["divisions"]):
+        for field, collection in (("definition_indices", "definitions"),
+                                  ("example_indices", "tibetan_examples"),
+                                  ("belegstelle_indices", "belegstellen")):
+            expected = [item for item, record in enumerate(result[collection])
+                        if record["division_index"] == index]
+            if division[field] != expected:
+                raise ValueError("division link mismatch")
 
 
 def _rows(path: Path) -> Iterable[dict[str, Any]]:
@@ -284,8 +471,13 @@ def build(source: Path, output: Path) -> dict[str, Any]:
             logical.update(encoded)
             stats["articles"] += 1
             stats[f"volume_{row['volume']}"] += 1
-            for key in ("definitions", "tibetan_examples", "belegstellen", "unresolved_quotes"):
+            for key in ("definitions", "tibetan_examples", "belegstellen",
+                        "translations", "citations", "correction_apparatus",
+                        "divisions", "unresolved_quotes"):
                 stats[key] += len(row[key])
+            stats["anchored_printed_proposals"] += sum(
+                item["status"] == "anchored_printed_proposal"
+                for item in row["correction_apparatus"])
     return {"contract_version": VERSION, "counts": dict(sorted(stats.items())),
         "logical_sha256": logical.hexdigest(),
         "compressed_sha256": sha256(output.read_bytes()).hexdigest()}

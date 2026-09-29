@@ -215,3 +215,32 @@ def test_windowed_review_assignments_are_frozen_and_input_order_independent() ->
         assert sum(row["review_partition"] == "development" for row in rows) == 30
         assert sum(row["review_partition"] == "acceptance" for row in rows) == 10
         assert sum(row["double_review"] for row in rows) == 6
+
+
+def test_correction_stratum_reviews_literal_apparatus_and_joins_predictions() -> None:
+    articles = [_article(volume, suffix) for volume in (2, 3, 4) for suffix in range(12)]
+    for article in articles:
+        text = "opening line\n" + "middle\n" * 100 + "blta (r. lta) „sah“ (Mil 1)"
+        article["visual_lines"] = [{"text": line} for line in text.split("\n")]
+        article["divisions"] = []
+        article["candidates"] = {"german_quotes": [], "parenthetical_citations": [],
+                                 "cross_references": [], "adjacent_quote_citation_pairs": []}
+        article["source_faithful_sha256"] = sha256(text.encode()).hexdigest()
+    sample = select(articles, per_volume=9, review_chars=40, windowed=True)
+    correction_rows = [row for row in sample if row["stratum"] == "correction"]
+    assert correction_rows
+    for row in correction_rows:
+        start = row["visual_text"].index("(r. lta)")
+        assert any(left <= start and start + 8 <= right
+                   for left, right in row["reviewed_ranges"])
+    lexical = [{"article_id": row["article_id"],
+                "source_faithful_sha256": row["source_faithful_sha256"],
+                "visual_sha256": row["visual_sha256"],
+                "definitions": [], "tibetan_examples": [], "belegstellen": [],
+                "correction_apparatus": [{"visual_start": row["visual_text"].index("(r. lta)"),
+                                          "visual_end": row["visual_text"].index("(r. lta)") + 8}]}
+               for row in sample]
+    joined = with_lexical_predictions(sample, lexical)
+    correction_ids = {row["article_id"] for row in correction_rows}
+    assert all(row["predictions"]["correction_apparatus"] for row in joined
+               if row["article_id"] in correction_ids)
