@@ -24,8 +24,8 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v6"
-PREVIOUS_VERSION = "badw-pdf-structural-parser-v5"
+VERSION = "badw-pdf-structural-parser-v7"
+PREVIOUS_VERSION = "badw-pdf-structural-parser-v6"
 # A sense number is a standalone printed label, not the first component of a
 # wrapped source locator such as 1.3.34c). Require actual following space.
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.(?=\s+\S)")
@@ -239,9 +239,56 @@ def _structure(lines: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[
     return divisions, dict(counts)
 
 
+def quotation_spans(text: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Balanced literal German quotations, without flattening nested speech.
+
+    Only double low/high quotation marks establish outer boundaries. Single
+    low/high marks remain literal within those boundaries, never independent
+    translations. Unclosed marks are diagnostics, not guessed quotations.
+    An immediately repeated closing mark remains in the literal outer span
+    and is diagnosed; this is not source-text repair.
+    """
+    stack: list[dict[str, Any]] = []
+    roots: list[dict[str, Any]] = []
+    diagnostics: list[dict[str, Any]] = []
+    i = 0
+    while i < len(text):
+        char = text[i]
+        if char == "„":
+            stack.append({"visual_start": i, "children": []})
+        elif char == "“":
+            if not stack:
+                diagnostics.append({"kind": "unmatched_closing_quote", "visual_start": i,
+                                    "visual_end": i + 1})
+            else:
+                item = stack.pop()
+                end = i + 1
+                item["diagnostics"] = []
+                if not stack and text[end:end + 1] == "“":
+                    end += 1
+                    i += 1
+                    item["diagnostics"].append("repeated_closing_quote")
+                item["visual_end"] = end
+                item["text"] = text[item["visual_start"] + 1:end - 1]
+                if stack:
+                    stack[-1]["children"].append(item)
+                else:
+                    roots.append(item)
+        i += 1
+    for item in stack:
+        diagnostics.append({"kind": "unclosed_opening_quote",
+                            "visual_start": item["visual_start"], "visual_end": len(text)})
+        # An unclosed outer mark must not hide independently closed later
+        # quotations (including subsequent senses). Preserve those literal
+        # children, but never invent a closing boundary for their parent.
+        roots.extend(item["children"])
+    roots.sort(key=lambda item: item["visual_start"])
+    return roots, diagnostics
+
+
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
-        "cross_references": [], "adjacent_quote_citation_pairs": []}
+        "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": []}
     if not lines:
         return result
     offsets: list[int] = []
@@ -280,9 +327,15 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) ->
                 return offsets[line_index] + span["start"], offsets[line_index] + span["end"], line_index, span
         return None
 
-    for match in re.finditer(r"„([^“]{1,500})“", text):
-        result["german_quotes"].append({"text": match.group(1), **location(match.start(), match.end()),
-            "status": "unassociated_candidate"})
+    def anchored_quote(item: dict[str, Any]) -> dict[str, Any]:
+        return {**item, **location(item["visual_start"], item["visual_end"]),
+                "children": [anchored_quote(child) for child in item["children"]]}
+
+    quotes, quote_diagnostics = quotation_spans(text)
+    result["quotation_diagnostics"] = quote_diagnostics
+    for item in quotes:
+        result["german_quotes"].append({**anchored_quote(item),
+                                        "status": "unassociated_candidate"})
     for start, end, interior in _parenthetical_spans(text):
         siglum = _citation_siglum(interior)
         if siglum is not None:
@@ -424,7 +477,7 @@ def _file_hash(path: Path) -> str:
 
 
 def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
-    """Rebuild only derived divisions/candidates from an audited cached v5 row.
+    """Rebuild only derived divisions/candidates from an audited cached v6 row.
 
     This offline path never reloads a PDF and never changes source/visual text.
     """

@@ -321,12 +321,13 @@ def _pdf_witness_inputs(tmp_path: Path, source_text: str = "ཀ་ ka — Liś �
 
 
 def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
-                          variant_gloss: bool = False) -> tuple[Path, Path]:
+                          variant_gloss: bool = False,
+                          reviewed_quote: bool = False) -> tuple[Path, Path]:
     with gzip.open(pdf_root / "pdf_article_witnesses.jsonl.gz", "rt", encoding="utf-8") as handle:
         witness = json.loads(next(handle))
     span = witness["source_spans"][0]
     source = witness["source_faithful_text"]
-    structure = {"contract_version": "badw-pdf-structural-parser-v6",
+    structure = {"contract_version": "badw-pdf-structural-parser-v7",
         "article_id": witness["id"], "volume": witness["volume"],
         "loc_headword": witness["loc_headword"],
         "tibetan_headword": witness["tibetan_headword"], "homonym": witness["homonym"],
@@ -358,6 +359,8 @@ def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
              "family": "TGaramond", "style": "italic"},
             {"start": quote_start - 1, "end": len(source),
              "family": "TGaramond", "style": "regular"}]
+    if variant_gloss or reviewed_quote:
+        quote_start = source.index("„")
         structure["candidates"]["german_quotes"] = [{
             "visual_start": quote_start, "visual_end": len(source),
             "division_index": 0, "start_line_index": 0}]
@@ -423,7 +426,7 @@ def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
     assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
     assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
                         "FROM pdf_article_analysis").fetchone() == (
-                            "badw-pdf-structural-parser-v6", "badw-pdf-lexical-candidates-v7")
+                            "badw-pdf-structural-parser-v7", "badw-pdf-lexical-candidates-v9")
     conn.close()
 
 
@@ -460,3 +463,29 @@ def test_pdf_candidate_tampering_fails_closed(tmp_path: Path):
               verified_source_manifest=verified, pdf_article_root=pdf_root,
               pdf_canonical_root=canonical, pdf_structure=structure,
               pdf_lexical_candidates=lexical, repo_root=tmp_path)
+
+
+@pytest.mark.parametrize("role", ["usage_gloss", "etymological_gloss", "scholarly_commentary"])
+def test_reviewed_non_example_roles_are_staged_without_promotion(tmp_path: Path, monkeypatch, role):
+    import extract_badw_pdf_lexical_candidates as extractor
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    literal = "„ein erklärender Kommentar“"
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path, literal)
+    with gzip.open(pdf_root / "pdf_article_witnesses.jsonl.gz", "rt", encoding="utf-8") as handle:
+        witness = json.loads(next(handle))
+    review = {"visual_sha256": sha256(literal.encode()).hexdigest(),
+              "visual_end": str(len(literal)), "quote_sha256": sha256(literal.encode()).hexdigest(),
+              "role": role, "basis": "synthetic independently reviewed comment"}
+    monkeypatch.setattr(extractor, "load_role_reviews", lambda: {(witness["id"], 0): review})
+    structure, lexical = _pdf_candidate_inputs(tmp_path, pdf_root, reviewed_quote=True)
+    report = build(source, tmp_path / "staged.sqlite", tmp_path / "staged.json",
+                   sigla=sigla, records_manifest=records_manifest,
+                   verified_source_manifest=verified, pdf_article_root=pdf_root,
+                   pdf_canonical_root=canonical, pdf_structure=structure,
+                   pdf_lexical_candidates=lexical, repo_root=tmp_path)
+    assert report["pdf_candidate_counts"]["quoted_non_example"] == 1
+    with sqlite3.connect(tmp_path / "staged.sqlite") as conn:
+        assert conn.execute("SELECT kind FROM pdf_quote_disposition").fetchall() == [(role + "_candidate",)]
+        assert conn.execute("SELECT text FROM pdf_lexical_candidate WHERE kind='quoted_non_example'").fetchall() == [(literal,)]
+        assert conn.execute("PRAGMA foreign_key_check").fetchall() == []
+        assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)

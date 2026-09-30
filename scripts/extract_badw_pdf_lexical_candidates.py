@@ -9,8 +9,10 @@ No source text is normalized or silently repaired.
 from __future__ import annotations
 
 import argparse
+import csv
 from collections import Counter
 import gzip
+from functools import lru_cache
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -22,7 +24,72 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v8"
+VERSION = "badw-pdf-lexical-candidates-v9"
+ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
+SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
+
+
+@lru_cache(maxsize=4)
+def load_role_reviews(path: Path = ROLE_REVIEWS) -> dict[tuple[str, int], dict[str, str]]:
+    """Exact semantic reviews, never language/font-based blanket promotion."""
+    with path.open(encoding="utf-8", newline="") as source:
+        rows = list(csv.DictReader(source, delimiter="\t"))
+    result = {}
+    for row in rows:
+        key = (row["article_id"], int(row["visual_start"]))
+        if key in result or row["role"] not in {
+                "definition", "usage_gloss", "etymological_gloss", "scholarly_commentary"}:
+            raise ValueError("invalid or duplicate PDF quote role review")
+        result[key] = row
+    return result
+
+
+def reviewed_quote_role(article: dict[str, Any], quote: dict[str, Any], text: str,
+                        reviews: dict[tuple[str, int], dict[str, str]]) -> dict[str, str] | None:
+    row = reviews.get((article["article_id"], int(quote["visual_start"])))
+    if row is None:
+        return None
+    literal = text[quote["visual_start"]:quote["visual_end"]]
+    if (row["visual_sha256"] != sha256(text.encode()).hexdigest()
+            or int(row["visual_end"]) != quote["visual_end"]
+            or row["quote_sha256"] != sha256(literal.encode()).hexdigest()):
+        raise ValueError("stale PDF quote role review: " + article["article_id"])
+    return row
+
+
+@lru_cache(maxsize=4)
+def load_span_reviews(path: Path = SPAN_REVIEWS) -> dict[tuple[str, int], dict[str, str]]:
+    """Source-reviewed mixed-font boundaries, not a general roman-text rule."""
+    with path.open(encoding="utf-8", newline="") as source:
+        rows = list(csv.DictReader(source, delimiter="\t"))
+    result = {}
+    for row in rows:
+        key = (row["article_id"], int(row["visual_start"]))
+        if key in result:
+            raise ValueError("duplicate PDF example span review")
+        result[key] = row
+    return result
+
+
+def reviewed_example_span(article: dict[str, Any], quote: dict[str, Any], text: str,
+                          reviews: dict[tuple[str, int], dict[str, str]]) -> dict[str, str] | None:
+    row = reviewed_quote_role(article, quote, text, reviews)
+    if row is None:
+        return None
+    start, end = int(row["example_start"]), int(row["example_end"])
+    division_index = quote.get("division_index")
+    if division_index is None:
+        raise ValueError("reviewed PDF example has no division")
+    offsets = _offsets(article["visual_lines"])
+    division = article["divisions"][division_index]
+    division_start = offsets[division["start_line_index"]]
+    if (not division_start <= start < end <= quote["visual_start"]
+            or row["example_sha256"] != sha256(text[start:end].encode()).hexdigest()
+            or any(mark in text[end:quote["visual_start"]] for mark in "„“")):
+        raise ValueError("stale or out-of-division PDF example span review")
+    return row
+
+
 QUALIFIER = re.compile(r"\s*(?:\(metr\.\s*\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
@@ -277,7 +344,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         "source_faithful_sha256": article["source_faithful_sha256"],
         "visual_sha256": sha256(text.encode("utf-8")).hexdigest(),
         "definitions": [], "tibetan_examples": [], "belegstellen": [],
-        "lexicographic_parallels": [], "variant_glosses": [], "quote_dispositions": [],
+        "lexicographic_parallels": [], "variant_glosses": [], "quoted_non_examples": [], "quote_dispositions": [],
         "translations": [], "citations": [], "correction_apparatus": [],
         "divisions": [], "unresolved_quotes": [], "nonprinting_layout_tokens": []}
     if not lines:
@@ -296,8 +363,14 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     paired = set(pairs)
     for quote in quotes:
         start, end = int(quote["visual_start"]), int(quote["visual_end"])
+        def nested_quotes(children: list[dict[str, Any]]) -> list[dict[str, Any]]:
+            return [{"text": text[child["visual_start"]:child["visual_end"]],
+                     **_anchor(lines, offsets, child["visual_start"], child["visual_end"]),
+                     "children": nested_quotes(child["children"])} for child in children]
         result["translations"].append({"text": text[start:end],
             "division_index": quote.get("division_index"),
+            "nested_quotes": nested_quotes(quote.get("children", [])),
+            "quotation_diagnostics": quote.get("diagnostics", []),
             "status": "source_quote_candidate", **_anchor(lines, offsets, start, end)})
     for citation in citations:
         start, end = int(citation["visual_start"]), int(citation["visual_end"])
@@ -306,8 +379,18 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             "status": "unlinked_source_citation_candidate",
             **_anchor(lines, offsets, start, end)})
     for quote_index, quote in enumerate(quotes):
+        review = reviewed_quote_role(article, quote, text, load_role_reviews())
+        if review is not None and quote.get("division_index") is not None:
+            record = {**result["translations"][quote_index], "quote_index": quote_index,
+                      "semantic_role": review["role"], "review_basis": review["basis"],
+                      "citation_index": pairs.get(quote_index),
+                      "status": "source_reviewed_semantic_candidate"}
+            collection = "definitions" if review["role"] == "definition" else "quoted_non_examples"
+            result[collection].append(record)
+            continue
         qstart = int(quote["visual_start"])
         quote_line = int(quote["start_line_index"])
+        span_review = reviewed_example_span(article, quote, text, load_span_reviews())
         eligible: list[tuple[int, int]] = []
         for interval_index, (_, interval_end, interval_line) in enumerate(intervals):
             # Some generated font runs carry the opening German quote in the
@@ -333,7 +416,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                     if metre and "~" not in text[effective_end:qstart]:
                         example_end = effective_end + metre.start()
                     eligible.append((interval_index, example_end))
-        if not eligible:
+        if not eligible and span_review is None:
             definition = _opening_quoted_definition(article, quote, quote_index,
                                                     paired, text, offsets)
             if definition is not None:
@@ -342,9 +425,14 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "no_adjacent_italic_loc_span"})
             continue
-        index, example_end = eligible[-1]
-        start, _, first_line = intervals[index]
-        end = example_end
+        if span_review is not None:
+            start, end = int(span_review["example_start"]), int(span_review["example_end"])
+            first_line = max(i for i, offset in enumerate(offsets) if offset <= start)
+            index = 0  # Exact reviewed boundary must not be widened by the joiner.
+        else:
+            index, example_end = eligible[-1]
+            start, _, first_line = intervals[index]
+            end = example_end
         # Join italic LoC across whitespace and balanced literal apparatus.
         # A page boundary requires adjacent source lines and continuation
         # whitespace or the same apparatus spanning both sides.
@@ -414,6 +502,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                 "text": text[start:parallel_end], "quote_index": quote_index,
                 "translation_index": quote_index, "citation_index": cite_index,
                 "division_index": division_index, "loc_text": example_text,
+                "boundary_review_basis": span_review["basis"] if span_review else None,
                 "status": "source_lexicon_parallel_candidate",
                 **_anchor(lines, offsets, start, parallel_end)})
             continue
@@ -434,6 +523,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             continue
         example_index = len(result["tibetan_examples"])
         example = {"text": example_text, "quote_index": quote_index,
+            "boundary_review_basis": span_review["basis"] if span_review else None,
             "division_index": division_index, "lexical_region": False,
             "status": "unverified_typographic_candidate",
             **_anchor(lines, offsets, start, end)}
@@ -469,6 +559,10 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     for item in result["definitions"]:
         if "quote_index" in item:
             dispositions[item["quote_index"]] = ("quoted_definition_candidate", "division_opening_regular_gloss")
+            if "review_basis" in item:
+                dispositions[item["quote_index"]] = ("quoted_definition_candidate", "exact_source_role_review")
+    for item in result["quoted_non_examples"]:
+        dispositions[item["quote_index"]] = (item["semantic_role"] + "_candidate", "exact_source_role_review")
     result["quote_dispositions"] = [
         {"quote_index": i, "kind": dispositions[i][0], "reason": dispositions[i][1]}
         for i in range(len(quotes))]
@@ -485,7 +579,9 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             "parallel_indices": [i for i, item in enumerate(result["lexicographic_parallels"])
                                  if item["division_index"] == division_index],
             "variant_gloss_indices": [i for i, item in enumerate(result["variant_glosses"])
-                                      if item["division_index"] == division_index]})
+                                      if item["division_index"] == division_index],
+            "quoted_non_example_indices": [i for i, item in enumerate(result["quoted_non_examples"])
+                                            if item["division_index"] == division_index]})
     validate(article, result)
     return result
 
@@ -499,8 +595,21 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
         raise ValueError("article source identity mismatch")
     if result["visual_sha256"] != sha256(visual.encode("utf-8")).hexdigest():
         raise ValueError("visual source hash mismatch")
+    def check_children(parent: dict[str, Any]) -> None:
+        previous_end = parent["visual_start"]
+        for child in parent.get("nested_quotes", parent.get("children", [])):
+            if (not parent["visual_start"] < child["visual_start"] < child["visual_end"] < parent["visual_end"]
+                    or child["visual_start"] < previous_end
+                    or visual[child["visual_start"]:child["visual_end"]] != child["text"]
+                    or child["source_lines"] != _anchor(lines, _offsets(lines),
+                        child["visual_start"], child["visual_end"])["source_lines"]):
+                raise ValueError("nested quotation source link mismatch")
+            check_children(child)
+            previous_end = child["visual_end"]
+    for translation in result["translations"]:
+        check_children(translation)
     for collection in ("definitions", "tibetan_examples", "belegstellen", "lexicographic_parallels", "variant_glosses",
-                       "translations", "citations", "correction_apparatus", "nonprinting_layout_tokens"):
+                       "translations", "citations", "correction_apparatus", "nonprinting_layout_tokens", "quoted_non_examples"):
         for record in result[collection]:
             if collection == "correction_apparatus":
                 source_text = record["literal_text"]
@@ -591,12 +700,25 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
                 definition["division_index"] != translation["division_index"] or
                 result["quote_dispositions"][index]["kind"] != "quoted_definition_candidate"):
             raise ValueError("quoted definition source link mismatch")
+    for record in [*result["quoted_non_examples"],
+                   *(r for r in result["definitions"] if "review_basis" in r)]:
+        quote = result["translations"][record["quote_index"]]
+        if (record["text"] != quote["text"] or record["division_index"] != quote["division_index"]
+                or record["semantic_role"] not in
+                {"definition", "usage_gloss", "etymological_gloss", "scholarly_commentary"}):
+            raise ValueError("reviewed quote semantic link mismatch")
+        if record["citation_index"] is not None:
+            citation = result["citations"][record["citation_index"]]
+            if (citation["visual_start"] < quote["visual_end"] or
+                    citation["division_index"] not in (None, record["division_index"])):
+                raise ValueError("reviewed quote citation link mismatch")
     for index, division in enumerate(result["divisions"]):
         for field, collection in (("definition_indices", "definitions"),
                                   ("example_indices", "tibetan_examples"),
                                   ("belegstelle_indices", "belegstellen"),
                                   ("parallel_indices", "lexicographic_parallels"),
-                                  ("variant_gloss_indices", "variant_glosses")):
+                                  ("variant_gloss_indices", "variant_glosses"),
+                                  ("quoted_non_example_indices", "quoted_non_examples")):
             expected = [item for item, record in enumerate(result[collection])
                         if record["division_index"] == index]
             if division[field] != expected:
@@ -628,7 +750,7 @@ def build(source: Path, output: Path) -> dict[str, Any]:
             for key in ("definitions", "tibetan_examples", "belegstellen",
                         "lexicographic_parallels", "variant_glosses", "quote_dispositions",
                         "translations", "citations", "correction_apparatus",
-                        "divisions", "unresolved_quotes", "nonprinting_layout_tokens"):
+                        "divisions", "unresolved_quotes", "nonprinting_layout_tokens", "quoted_non_examples"):
                 stats[key] += len(row[key])
             stats["anchored_printed_proposals"] += sum(
                 item["status"] == "anchored_printed_proposal"

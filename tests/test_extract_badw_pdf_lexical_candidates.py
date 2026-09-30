@@ -27,7 +27,7 @@ def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
 def _article(lines: list[dict], divisions: list[dict] | None = None,
              candidates: dict | None = None) -> dict:
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v6",
+    return {"contract_version": "badw-pdf-structural-parser-v7",
             "article_id": "badw:pdf:test", "volume": 2, "loc_headword": "sñags",
             "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines,
@@ -719,3 +719,65 @@ def test_cached_source_replay_is_byte_deterministic(tmp_path: Path) -> None:
     assert one.read_bytes() == two.read_bytes()
     assert first["logical_sha256"] == second["logical_sha256"]
     assert first["counts"]["articles"] == 1
+
+
+def _review(article: dict, **extra: str) -> dict:
+    text = '\n'.join(line['text'] for line in article['visual_lines'])
+    quote = article['candidates']['german_quotes'][0]
+    return {'article_id': article['article_id'], 'visual_sha256': sha256(text.encode()).hexdigest(),
+            'visual_start': str(quote['visual_start']), 'visual_end': str(quote['visual_end']),
+            'quote_sha256': sha256(text[quote['visual_start']:quote['visual_end']].encode()).hexdigest(),
+            'basis': 'synthetic source review', **extra}
+
+
+@pytest.mark.parametrize('role', ['definition', 'usage_gloss', 'etymological_gloss', 'scholarly_commentary'])
+def test_exact_semantic_review_does_not_manufacture_belegstelle(monkeypatch, role: str) -> None:
+    import extract_badw_pdf_lexical_candidates as module
+    article = _example_article([_line('deutscher Kommentar „translation“ (Source 1)')])
+    row = _review(article, role=role)
+    monkeypatch.setattr(module, 'load_role_reviews', lambda: {(article['article_id'], int(row['visual_start'])): row})
+    result = extract(article)
+    assert result['belegstellen'] == []
+    collection = 'definitions' if role == 'definition' else 'quoted_non_examples'
+    record = next(r for r in result[collection] if r.get('review_basis'))
+    assert record['semantic_role'] == role
+    assert record['citation_index'] == 0
+    validate(article, result)
+    row['visual_sha256'] = '0' * 64
+    with pytest.raises(ValueError, match='stale PDF quote role'):
+        extract(article)
+
+
+@pytest.mark.parametrize('example,blocked', [('ka (r.ka) [g] (skt. ga)', False),
+    ('ka ⟦UNKNOWN:TGaramond:italic:001F:093e0cf015da⟧', True)])
+def test_exact_mixed_font_boundary_preserves_apparatus_and_unknown_guard(monkeypatch, example, blocked) -> None:
+    import extract_badw_pdf_lexical_candidates as module
+    article = _example_article([_line(example + ' „translation“ (Source 1)')])
+    row = _review(article, example_start='0', example_end=str(len(example)),
+                  example_sha256=sha256(example.encode()).hexdigest())
+    monkeypatch.setattr(module, 'load_span_reviews', lambda: {(article['article_id'], int(row['visual_start'])): row})
+    result = extract(article)
+    if blocked:
+        assert result['belegstellen'] == []
+        assert result['unresolved_quotes'][0]['reason'] == 'empty_or_unknown_loc_span'
+    else:
+        assert result['tibetan_examples'][0]['text'] == example
+        assert len(result['belegstellen']) == 1
+    validate(article, result)
+    row['example_sha256'] = '0' * 64
+    with pytest.raises(ValueError, match='span review'):
+        extract(article)
+
+
+def test_nested_quote_source_links_are_validated() -> None:
+    from parse_badw_pdf_articles import _candidates
+    text = 'ka „er sagt „ja“ jetzt“ (Source 1)'
+    article = _article([_line(text, [(0, 2, 'italic'), (2, len(text), 'regular')])])
+    article['candidates'] = _candidates(article['visual_lines'], article['divisions'])
+    result = extract(article)
+    assert len(result['translations']) == 1
+    assert result['translations'][0]['nested_quotes'][0]['text'] == '„ja“'
+    validate(article, result)
+    result['translations'][0]['nested_quotes'][0]['text'] = 'invented'
+    with pytest.raises(ValueError, match='nested quotation'):
+        validate(article, result)

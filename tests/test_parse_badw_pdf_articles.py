@@ -100,13 +100,13 @@ def test_wrapped_locator_is_not_a_numbered_sense() -> None:
 def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
     article, page = _fixture()
     previous = parse_article(article, lambda _: page)
-    previous["contract_version"] = "badw-pdf-structural-parser-v5"
+    previous["contract_version"] = "badw-pdf-structural-parser-v6"
     first = reindex_article(previous)
     assert first == reindex_article(previous)
     assert first["source_objects"] == previous["source_objects"]
     assert first["source_faithful_text"] == previous["source_faithful_text"]
     assert first["visual_lines"] == previous["visual_lines"]
-    assert first["contract_version"] == "badw-pdf-structural-parser-v6"
+    assert first["contract_version"] == "badw-pdf-structural-parser-v7"
     previous["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="hash mismatch"):
         reindex_article(previous)
@@ -353,3 +353,36 @@ def test_canonical_roots_must_not_conflict(tmp_path: Path) -> None:
         json.dump(changed, handle, ensure_ascii=False)
     with pytest.raises(ValueError, match="conflicting canonical page objects"):
         build(witness_path, roots, tmp_path / "failure")
+
+
+def test_balanced_nested_quotations_preserve_literal_long_outer_span() -> None:
+    from parse_badw_pdf_articles import quotation_spans
+    text = '„' + 'Wort ' * 120 + '„innere Rede“ und ‚ein Wort‘“'
+    quotes, diagnostics = quotation_spans(text)
+    assert diagnostics == []
+    assert len(quotes) == 1
+    assert quotes[0]['visual_end'] == len(text)
+    child = quotes[0]['children'][0]
+    assert text[child['visual_start']:child['visual_end']] == '„innere Rede“'
+    assert len(quotes[0]['children']) == 1
+
+
+def test_unbalanced_and_repeated_quote_marks_are_not_silently_repaired() -> None:
+    from parse_badw_pdf_articles import quotation_spans
+    quotes, diagnostics = quotation_spans('„offen')
+    assert quotes == []
+    assert diagnostics[0]['kind'] == 'unclosed_opening_quote'
+    quotes, diagnostics = quotation_spans('„Wort““')
+    assert diagnostics == []
+    assert quotes[0]['visual_end'] == len('„Wort““')
+    assert quotes[0]['diagnostics'] == ['repeated_closing_quote']
+
+
+def test_unclosed_outer_quote_preserves_independently_closed_later_quotes() -> None:
+    from parse_badw_pdf_articles import quotation_spans
+    text = '„unclosed translation. Lex. „lexical gloss“ (Dagy). 3. „later example“ (HMrg 51,3).'
+    quotes, diagnostics = quotation_spans(text)
+    assert [text[q['visual_start']:q['visual_end']] for q in quotes] == [
+        '„lexical gloss“', '„later example“',
+    ]
+    assert diagnostics == [{'kind': 'unclosed_opening_quote', 'visual_start': 0, 'visual_end': len(text)}]

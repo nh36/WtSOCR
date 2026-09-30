@@ -21,10 +21,10 @@ from badw_canonical_pages import stable_json_bytes
 from extract_badw_pdf_lexical_candidates import VERSION as LEXICAL_VERSION, validate as validate_lexical
 from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 
-VERSION = "badw-pdf-nested-candidates-v3"
+VERSION = "badw-pdf-nested-candidates-v4"
 COLLECTIONS = ("definitions", "tibetan_examples", "belegstellen",
                "lexicographic_parallels", "variant_glosses", "translations", "citations",
-               "correction_apparatus")
+               "correction_apparatus", "quoted_non_examples")
 
 
 def rows(path: Path) -> Iterator[dict[str, Any]]:
@@ -104,7 +104,8 @@ def project(structure: dict[str, Any], lexical: dict[str, Any]) -> dict[str, Any
             definition = lexical["definitions"][i]
             if "quote_index" in definition:
                 quote_index = definition["quote_index"]
-                add("definition_candidate", {"definitions": i, "translations": quote_index})
+                add("definition_candidate", {"definitions": i, "translations": quote_index,
+                    "citations": definition.get("citation_index")})
                 quote_seen.add(quote_index)
             else:
                 add("definition_candidate", {"definitions": i})
@@ -160,6 +161,12 @@ def project(structure: dict[str, Any], lexical: dict[str, Any]) -> dict[str, Any
             add("variant_gloss_candidate", {"variant_glosses": i,
                 "translations": variant["translation_index"]})
             quote_seen.add(variant["quote_index"])
+        for i, record in enumerate(lexical["quoted_non_examples"]):
+            if record["division_index"] == d:
+                add(record["semantic_role"] + "_candidate",
+                    {"quoted_non_examples": i, "translations": record["quote_index"],
+                     "citations": record.get("citation_index")})
+                quote_seen.add(record["quote_index"])
         for quote_index, disposition in enumerate(lexical["quote_dispositions"]):
             if quote_index in quote_seen or disposition["kind"] != "unresolved":
                 continue
@@ -194,7 +201,7 @@ def project(structure: dict[str, Any], lexical: dict[str, Any]) -> dict[str, Any
         for i, record in enumerate(lexical[name]):
             if i not in seen[name]:
                 if name in ("definitions", "tibetan_examples", "belegstellen",
-                            "lexicographic_parallels", "variant_glosses", "translations") and record.get("division_index") is not None:
+                            "lexicographic_parallels", "variant_glosses", "translations", "quoted_non_examples") and record.get("division_index") is not None:
                     raise ValueError(f"lost in-division {name} candidate")
                 unassigned.append({"collection": name, "index": i, "record": record})
                 seen[name].add(i)

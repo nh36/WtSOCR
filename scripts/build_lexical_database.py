@@ -22,7 +22,7 @@ from extract_badw_pdf_lexical_candidates import extract as extract_pdf_lexical
 from parse_badw_pdf_articles import VERSION as PDF_STRUCTURE_VERSION
 from extract_badw_pdf_lexical_candidates import VERSION as PDF_LEXICAL_VERSION
 
-BUILDER_VERSION = "lexical-database-builder-v7"
+BUILDER_VERSION = "lexical-database-builder-v8"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -59,6 +59,7 @@ def _import_pdf_candidates(conn: sqlite3.Connection, witnesses: Path,
     names = {"definitions": "definition", "tibetan_examples": "tibetan_example",
              "belegstellen": "belegstelle", "lexicographic_parallels": "lexicographic_parallel",
              "variant_glosses": "variant_gloss",
+             "quoted_non_examples": "quoted_non_example",
              "translations": "translation", "citations": "citation",
              "correction_apparatus": "correction_apparatus"}
     counts: Counter[str] = Counter()

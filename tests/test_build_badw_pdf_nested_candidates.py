@@ -36,7 +36,7 @@ def article(with_citation: bool = True) -> dict:
     citations = ([{"visual_start": citation_start,
                    "visual_end": citation_start + len("(Quelle 1)"),
                    "division_index": 0}] if with_citation else [])
-    return {"contract_version": "badw-pdf-structural-parser-v6",
+    return {"contract_version": "badw-pdf-structural-parser-v7",
             "article_id": "badw:pdf:test", "volume": 2,
             "loc_headword": "sñags", "tibetan_headword": "སྔགས", "homonym": None,
             "source_objects": [],
@@ -108,6 +108,30 @@ def test_projection_rejects_source_mismatch() -> None:
     lexical["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="source identity mismatch"):
         project(source, lexical)
+
+
+@pytest.mark.parametrize("role", ["definition", "usage_gloss", "etymological_gloss", "scholarly_commentary"])
+def test_reviewed_semantic_quote_owns_only_its_adjacent_citation(monkeypatch, role) -> None:
+    import extract_badw_pdf_lexical_candidates as extractor
+    source = article()
+    text = "\n".join(line["text"] for line in source["visual_lines"])
+    quote = source["candidates"]["german_quotes"][0]
+    review = {"visual_sha256": sha256(text.encode()).hexdigest(),
+              "visual_end": str(quote["visual_end"]),
+              "quote_sha256": sha256(text[quote["visual_start"]:quote["visual_end"]].encode()).hexdigest(),
+              "role": role, "basis": "synthetic exact review"}
+    monkeypatch.setattr(extractor, "load_role_reviews",
+                        lambda: {(source["article_id"], quote["visual_start"]): review})
+    row = project(source, extract(source))
+    kind = "definition_candidate" if role == "definition" else role + "_candidate"
+    item = next(item for item in row["divisions"][0]["items"]
+                if item["kind"] == kind and "translations" in item["components"])
+    assert item["components"]["citations"]["text"] == "(Quelle 1)"
+    assert item["components"]["translations"]["text"] == "„Übersetzung“"
+    assert not any(item["kind"] == "belegstelle_candidate"
+                   for item in row["divisions"][0]["items"])
+    assert [r["collection"] for r in row["unassigned_source_candidates"]] == ["correction_apparatus"]
+    assert row["unassigned_source_candidates"][0]["record"]["literal_text"] == "(r. ’don)"
 
 
 def test_quoted_opening_gloss_is_definition_in_its_sense() -> None:
