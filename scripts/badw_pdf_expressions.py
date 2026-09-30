@@ -60,4 +60,3 @@ def boundary_mask(text: str) -> tuple[list[bool], list[tuple[int, int]]]:
 def contains_unknown(text: str) -> bool:
     """Only independently established nonprinting identities are exempt."""
     return "⟦UNKNOWN:" in NONPRINTING.sub("", text)
-
