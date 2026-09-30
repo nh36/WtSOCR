@@ -39,6 +39,111 @@ def _article(lines: list[dict], divisions: list[dict] | None = None,
                                           "adjacent_quote_citation_pairs": []}}
 
 
+def _example_article(lines: list[dict]) -> dict:
+    """One synthetic quotation/citation, with exact source coordinates."""
+    text = "\n".join(line["text"] for line in lines)
+    qstart, qend = text.index("„"), text.index("“") + 1
+    cstart, cend = text.index("(Source 1)"), text.index("(Source 1)") + 10
+    return _article(lines, candidates={
+        "german_quotes": [{"visual_start": qstart, "visual_end": qend,
+                           "division_index": 0,
+                           "start_line_index": text[:qstart].count("\n")}],
+        "parenthetical_citations": [{"visual_start": cstart, "visual_end": cend,
+                                     "division_index": 0}],
+        "adjacent_quote_citation_pairs": [{"quote_index": 0, "citation_index": 0}]})
+
+
+@pytest.mark.parametrize("apparatus", ["(v. l. kha)", "(Gl. kha (r. ka))", "{kha}"])
+def test_roman_apparatus_between_italic_runs_preserves_full_example(apparatus: str) -> None:
+    text = f"ka {apparatus} ga „translation“ (Source 1)"
+    tail = text.index("ga „")
+    article = _example_article([_line(text, [(0, 2, "italic"), (2, tail, "regular"),
+                                           (tail, tail + 2, "italic"),
+                                           (tail + 2, len(text), "regular")])])
+    result = extract(article)
+    assert result["tibetan_examples"][0]["text"] == f"ka {apparatus} ga"
+    assert len(result["belegstellen"]) == 1
+    validate(article, result)
+
+
+def test_page_boundary_inside_balanced_correction_recovers_prefix() -> None:
+    first, second = "ka (r.", "kha) ga „translation“ (Source 1)"
+    lines = [_line(first, [(0, 2, "italic"), (2, len(first), "regular")]),
+             _line(second, [(0, 3, "italic"), (3, 5, "regular"),
+                            (5, 7, "italic"), (7, len(second), "regular")])]
+    lines[1]["page_id"] = "next-source-page"
+    lines[1]["printed_page"] = 18
+    article = _example_article(lines)
+    result = extract(article)
+    assert result["tibetan_examples"][0]["text"] == "ka (r.\nkha) ga"
+    assert len(result["tibetan_examples"][0]["source_lines"]) == 2
+    validate(article, result)
+
+
+def test_leading_gloss_is_not_truncated_to_italic_tail() -> None:
+    text = "(Gl. ka) ga „translation“ (Source 1)"
+    article = _example_article([_line(text, [(0, 5, "regular"), (5, 7, "italic"),
+                                           (7, 9, "regular"), (9, 11, "italic"),
+                                           (11, len(text), "regular")])])
+    result = extract(article)
+    assert result["tibetan_examples"][0]["text"] == "(Gl. ka) ga"
+    validate(article, result)
+
+
+@pytest.mark.parametrize("token,accepted", [
+    ("⟦UNKNOWN:Arial:regular:0003:ebbba6ed181c⟧", True),
+    ("⟦UNKNOWN:TGaramond:italic:00E2:960b47bc4fc7⟧", False),
+])
+def test_unknowns_remain_literal_and_only_verified_layout_is_exempt(token: str, accepted: bool) -> None:
+    text = f"ka {token} „translation“ (Source 1)"
+    line = _line(text, [(0, 2, "italic"), (2, len(text), "regular")])
+    line["unknown_glyphs"] = [{"cid": 3}]
+    article = _example_article([line])
+    result = extract(article)
+    assert bool(result["belegstellen"]) == accepted
+    assert len(result["nonprinting_layout_tokens"]) == int(accepted)
+    if accepted:
+        assert token in result["tibetan_examples"][0]["text"]
+        result["nonprinting_layout_tokens"][0]["text"] = " "
+        with pytest.raises(ValueError, match="source span does not replay"):
+            validate(article, result)
+
+
+def test_unknown_inside_apparatus_blocks_even_when_boundary_mask_allows_it() -> None:
+    token = "⟦UNKNOWN:TGaramond:italic:00E2:960b47bc4fc7⟧"
+    text = f"ka (r. {token}) ga „translation“ (Source 1)"
+    tail = text.index("ga „")
+    article = _example_article([_line(text, [(0, 2, "italic"), (2, tail, "regular"),
+                                           (tail, tail + 2, "italic"),
+                                           (tail + 2, len(text), "regular")])])
+    result = extract(article)
+    assert not result["belegstellen"]
+    assert result["unresolved_quotes"][0]["reason"] == "empty_or_unknown_loc_span"
+
+
+def test_leading_gloss_expansion_cannot_bypass_unknown_barrier() -> None:
+    token = "⟦UNKNOWN:TGaramond:regular:001F:abcdef123456⟧"
+    text = f"(Gl. {token} ka) ga „translation“ (Source 1)"
+    start = text.index("ka)")
+    tail = text.index("ga „")
+    article = _example_article([_line(text, [
+        (0, start, "regular"), (start, start + 2, "italic"),
+        (start + 2, tail, "regular"), (tail, tail + 2, "italic"),
+        (tail + 2, len(text), "regular")])])
+    result = extract(article)
+    assert not result["tibetan_examples"]
+    assert not result["belegstellen"]
+    assert result["unresolved_quotes"][0]["reason"] == "empty_or_unknown_loc_span"
+
+
+def test_italic_opening_quote_is_not_part_of_tibetan_example() -> None:
+    text = "ka „translation“ (Source 1)"
+    article = _example_article([_line(text, [(0, 4, "italic"), (4, len(text), "regular")])])
+    result = extract(article)
+    assert result["tibetan_examples"][0]["text"] == "ka"
+    validate(article, result)
+
+
 def test_numbered_wrapped_definition_retains_exact_unicode_and_coordinates() -> None:
     lines = [_line(" 2. dritter Buchstabe des tibetischen Alpha-"), _line("bets.")]
     divisions = [{"kind": "numbered_sense", "label": "2", "start_line_index": 0,
@@ -435,7 +540,7 @@ def test_source_replay_validator_rejects_mutated_fields_and_links() -> None:
         validate(article, result)
 
 
-def test_nested_parenthetical_correction_does_not_emit_truncated_example() -> None:
+def test_nested_parenthetical_correction_keeps_complete_example() -> None:
     first = "~ koṅ co (Gl. mun śen (r. śeṅ)) bźes pas "
     lines = [_line(first, [(0, 21, "italic"), (21, 25, "regular"),
                            (25, 29, "italic"), (29, 31, "regular"),
@@ -453,10 +558,9 @@ def test_nested_parenthetical_correction_does_not_emit_truncated_example() -> No
                   "adjacent_quote_citation_pairs": [{"quote_index": 0,
                    "citation_index": 0}]}
     result = extract(_article(lines, candidates=candidates))
-    assert result["tibetan_examples"] == []
-    assert result["belegstellen"] == []
-    assert result["unresolved_quotes"] == [{"quote_index": 0,
-        "reason": "mixed_style_parenthetical_correction"}]
+    assert result["tibetan_examples"][0]["text"] == first.strip()
+    assert len(result["belegstellen"]) == 1
+    assert result["unresolved_quotes"] == []
 
 
 def test_compact_mixed_style_correction_joins_the_complete_loc_example() -> None:

@@ -19,30 +19,18 @@ from typing import Any, Iterable
 
 from badw_canonical_pages import stable_json_bytes
 from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
+from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v7"
-QUALIFIER = re.compile(r"\s*(?:\(metr\.\)\s*)?\Z")
-# In generated pages the lemma placeholder can be roman while the surrounding
-# LoC example is italic. Admit only this literal, adjacent suffix; do not
-# bridge arbitrary regular-font text to a quotation.
-PLACEHOLDER_QUALIFIER = re.compile(r"\s*~\s*(?:\(metr\.\)\s*)?\Z")
-# A printed correction belongs to the preceding LoC example. Its proposal
-# may use italic type, so the final italic run before a quote can be the
-# proposal rather than the example. Require the entire intervening source
-# span to be exactly one literal correction and an optional metre qualifier.
-CORRECTION_BEFORE_QUOTE = re.compile(
-    r"(?P<apparatus>\s*\(r\.\s*[^()]+\))\s*(?:\(metr\.\)\s*)?\Z")
+VERSION = "badw-pdf-lexical-candidates-v8"
+QUALIFIER = re.compile(r"\s*(?:\(metr\.\s*\)\s*)?\Z")
 LEX_LABEL = re.compile(r"(?:^|[\s;])Lex\.\s")
 MORPHOLOGY = re.compile(r"\b(?:pf\.|fut\.|prs\.|imp\.|vgl\.|siehe)\b|[↑↓]")
 MORPHOLOGY_PREFIX = re.compile(r"^\s*(?:pf\.|fut\.|prs\.|imp\.)\s+zu\s+[↑↓]")
 GLOSS_REFERENCE_SUFFIX = re.compile(r"[,;]\s*vgl\.\s+[↑↓][^\n,;()„“]+\.?\s*$")
 REFERENCE_CONTINUATION = re.compile(r"\s*vgl\.\s+[↑↓][^\n;()„“]+\.?\s*\Z")
 MORPHOLOGY_PREAMBLE = re.compile(r"\s*(?:pf\.|fut\.|prs\.|imp\.)\s*\Z")
-INLINE_ITALIC_INTERRUPTION = re.compile(
-    r"(?:\s+\.\.\.\s+|\s*⟨[^<>\n]+⟩\s*|\s*\(r\.\s*[^()]+\)\s*)\Z")
 PRINTED_CORRECTION = re.compile(r"\(r\.\s*(?P<proposal>[^()]+?)\)")
-INLINE_APPARATUS = re.compile(r"\(r\.\s*[^()]+\)|⟨[^⟨⟩\n]+⟩|\{[^{}\n]+\}|\.\.\.")
 PRECEDING_TOKEN = re.compile(r"(?P<target>[^\s()]+)\s*\Z")
 VARIANT_GLOSS_CUE = re.compile(
     r"(?<!\w)(?P<cue>auch|Kurzf\.\s+für|(?:pf|prs|fut|imp)\.\s*(?:zu\s*)?[↑↓])\s*\Z")
@@ -74,53 +62,6 @@ def _anchor(lines: list[dict[str, Any]], offsets: list[int], start: int, end: in
 
 def _in_italic(intervals: list[tuple[int, int, int]], start: int, end: int) -> bool:
     return any(left <= start and end <= right for left, right, _ in intervals)
-
-
-def _joined_correction_start(text: str, start: int, end: int,
-                             first_line: int, lines: list[dict[str, Any]],
-                             offsets: list[int],
-                             intervals: list[tuple[int, int, int]]) -> int:
-    """Include mixed-style ``(r. …)`` only with a complete source span.
-
-    A correction's delimiters are often roman but its proposal is italic.
-    Testing the gap between two italic runs therefore loses the full syntax.
-    Inspect the entire candidate instead, and require every nonitalic source
-    character to be whitespace, a lemma placeholder, or literal apparatus.
-    German prose, citations, unknown glyphs and earlier quotes stop the join.
-    """
-    for prior_start, _, prior_line in reversed(intervals):
-        if prior_start >= start:
-            continue
-        if first_line - prior_line > 2:
-            break
-        if lines[prior_line]["page_id"] != lines[first_line]["page_id"]:
-            break
-        if any(lines[i]["unknown_glyphs"] for i in range(prior_line, first_line + 1)):
-            break
-        candidate = text[prior_start:end]
-        if len(candidate) > 500 or "„" in candidate or "“" in candidate or ";" in candidate:
-            break
-        if not re.search(r"\(r\.\s*[^()]+\)", candidate):
-            continue
-        allowed = [char.isspace() or char == "~" for char in candidate]
-        for match in INLINE_APPARATUS.finditer(candidate):
-            allowed[match.start():match.end()] = [True] * (match.end() - match.start())
-        safe = True
-        for line_index in range(prior_line, first_line + 1):
-            for span in lines[line_index]["style_spans"]:
-                if span["style"] == "italic":
-                    continue
-                left = max(prior_start, offsets[line_index] + span["start"])
-                right = min(end, offsets[line_index] + span["end"])
-                if any(not allowed[pos - prior_start] for pos in range(left, right)):
-                    safe = False
-                    break
-            if not safe:
-                break
-        if safe:
-            start = prior_start
-            first_line = prior_line
-    return start
 
 
 def _corrections(text: str, examples: list[dict[str, Any]],
@@ -168,7 +109,8 @@ def _italic_intervals(lines: list[dict[str, Any]], offsets: list[int]) -> list[t
     for i, line in enumerate(lines):
         for span in line["style_spans"]:
             if span["family"] == "TGaramond" and span["style"] == "italic":
-                intervals.append((offsets[i] + span["start"], offsets[i] + span["end"], i))
+                if line["text"][span["start"]:span["end"]].strip():
+                    intervals.append((offsets[i] + span["start"], offsets[i] + span["end"], i))
     return intervals
 
 
@@ -337,11 +279,16 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         "definitions": [], "tibetan_examples": [], "belegstellen": [],
         "lexicographic_parallels": [], "variant_glosses": [], "quote_dispositions": [],
         "translations": [], "citations": [], "correction_apparatus": [],
-        "divisions": [], "unresolved_quotes": []}
+        "divisions": [], "unresolved_quotes": [], "nonprinting_layout_tokens": []}
     if not lines:
         return result
     result["definitions"] = _definition_candidates(article, text, offsets)
     intervals = _italic_intervals(lines, offsets)
+    allowed, apparatus = boundary_mask(text)
+    result["nonprinting_layout_tokens"] = [
+        {"text": m.group(), "interpretation": "verified_zero_contour_not_unicode_mapping",
+         **_anchor(lines, offsets, m.start(), m.end())}
+        for m in NONPRINTING.finditer(text)]
     quotes = article["candidates"]["german_quotes"]
     citations = article["candidates"]["parenthetical_citations"]
     pairs = {pair["quote_index"]: pair["citation_index"]
@@ -371,22 +318,21 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                              else interval_end)
             if effective_end > qstart:
                 continue
-            if QUALIFIER.fullmatch(text[effective_end:qstart]):
-                eligible.append((interval_index, effective_end))
-                continue
-            if (PLACEHOLDER_QUALIFIER.fullmatch(text[effective_end:qstart]) and
-                    quote_line - interval_line <= 1 and
-                    lines[interval_line]["page_id"] == lines[quote_line]["page_id"] and
-                    not any(lines[i]["unknown_glyphs"]
-                            for i in range(interval_line, quote_line + 1))):
-                eligible.append((interval_index, qstart))
-                continue
-            match = CORRECTION_BEFORE_QUOTE.fullmatch(text[effective_end:qstart])
-            if (match and quote_line - interval_line <= 2 and
-                    lines[interval_line]["page_id"] == lines[quote_line]["page_id"] and
-                    not any(lines[i]["unknown_glyphs"]
-                            for i in range(interval_line, quote_line + 1))):
-                eligible.append((interval_index, effective_end + match.end("apparatus")))
+            if (quote.get("division_index") is not None
+                    and quote_line - interval_line <= 6 and qstart - effective_end <= 500
+                    and (lines[interval_line]["page_id"] == lines[quote_line]["page_id"]
+                         or QUALIFIER.fullmatch(text[effective_end:qstart]))
+                    and interval_line >= article["divisions"][quote["division_index"]]["start_line_index"]
+                    and not any(line["unknown_glyphs"] and "⟦UNKNOWN:" not in line["text"]
+                                for line in lines[interval_line:quote_line + 1])):
+                if all(allowed[effective_end:qstart]):
+                    # Keep a plain metre qualifier outside the example, as in
+                    # the previous contract; other literal apparatus remains.
+                    example_end = effective_end if QUALIFIER.fullmatch(text[effective_end:qstart]) else qstart
+                    metre = re.search(r"\s*\(metr\.\s*\)\s*\Z", text[effective_end:qstart])
+                    if metre and "~" not in text[effective_end:qstart]:
+                        example_end = effective_end + metre.start()
+                    eligible.append((interval_index, example_end))
         if not eligible:
             definition = _opening_quoted_definition(article, quote, quote_index,
                                                     paired, text, offsets)
@@ -399,19 +345,29 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         index, example_end = eligible[-1]
         start, _, first_line = intervals[index]
         end = example_end
-        # Join LoC text across a visual line break only when the same source
-        # page carries an uninterrupted italic continuation.
+        # Join italic LoC across whitespace and balanced literal apparatus.
+        # A page boundary requires adjacent source lines and continuation
+        # whitespace or the same apparatus spanning both sides.
         while index > 0:
             prev_start, prev_end, prev_line = intervals[index - 1]
-            if (lines[prev_line]["page_id"] != lines[first_line]["page_id"]
-                    or text[prev_end:start] not in ("", "\n")):
+            crosses_page = lines[prev_line]["page_id"] != lines[first_line]["page_id"]
+            continuous_page_boundary = (first_line == prev_line + 1
+                and (text[prev_end:start].isspace()
+                     or any((left <= prev_end <= start <= right
+                             or prev_end <= left <= start <= right
+                             and text[prev_end:left].isspace())
+                            for left, right in apparatus)))
+            if (crosses_page and not continuous_page_boundary
+                    or first_line - prev_line > 6 or end - prev_start > 500
+                    or prev_line < article["divisions"][quote["division_index"]]["start_line_index"]
+                    or not all(allowed[prev_end:start])):
                 break
             start, first_line = prev_start, prev_line
             index -= 1
         example_text = text[start:end].strip()
         start += len(text[start:end]) - len(text[start:end].lstrip())
         end = start + len(example_text)
-        if not example_text or "⟦UNKNOWN:" in example_text:
+        if not example_text or contains_unknown(example_text):
             result["unresolved_quotes"].append({"quote_index": quote_index,
                 "reason": "empty_or_unknown_loc_span"})
             continue
@@ -422,38 +378,34 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             continue
         division = article["divisions"][division_index]
         lex = _lexical_region(lines, quote_line, division["start_line_index"])
-        # Ellipses, angle-bracket emendations and an explicit '(r. …)'
-        # correction can interrupt an otherwise continuous italic LoC span.
-        # Admit only those literal source delimiters within the same page
-        # and at most one visual-line boundary; retain the interruption.
-        for prior_start, prior_end, prior_line in reversed(intervals[:index]):
-            if first_line - prior_line > 1:
-                break
-            if (prior_end > start or lines[prior_line]["page_id"] != lines[first_line]["page_id"]
-                    or lines[prior_line]["unknown_glyphs"]
-                    or lines[first_line]["unknown_glyphs"]):
-                continue
-            if INLINE_ITALIC_INTERRUPTION.fullmatch(text[prior_end:start]):
-                start, first_line = prior_start, prior_line
-                example_text = text[start:end].strip()
-        start = _joined_correction_start(
-            text, start, end, first_line, lines, offsets, intervals[:index])
+        # Apparatus can contain italic runs. Reject a tail beginning inside a
+        # balanced expression instead of interpreting its proposal as a new
+        # Tibetan example; a successfully joined outer span is safe.
+        for left, right in apparatus:
+            if left < start < right and (text[left:left + 1] in "⟨{"
+                    or re.match(r"\(\s*Gl\.", text[left:right])):
+                start = left
+        if any(left < start < right for left, right in apparatus):
+            result["unresolved_quotes"].append({"quote_index": quote_index,
+                "reason": "italic_fragment_inside_apparatus"})
+            continue
+        # Unbalanced literal apparatus is not a license to emit its tail.
+        prefix = text[max(0, start - 100):start]
+        if prefix.count("(") > prefix.count(")"):
+            result["unresolved_quotes"].append({"quote_index": quote_index,
+                "reason": "italic_fragment_after_open_parenthesis"})
+            continue
         # A newly joined italic span can include leading/trailing source
         # whitespace.  Re-anchor the final candidate, not its pre-join tail.
         joined = text[start:end]
         start += len(joined) - len(joined.lstrip())
         end -= len(joined) - len(joined.rstrip())
         example_text = text[start:end]
-        preceding = text[max(0, start - 100):start]
-        if preceding.count("(") > preceding.count(")"):
+        # Leading gloss/apparatus expansion can expose glyphs outside the
+        # original italic interval. Check the final source span as well.
+        if contains_unknown(example_text):
             result["unresolved_quotes"].append({"quote_index": quote_index,
-                "reason": "italic_fragment_after_open_parenthesis"})
-            continue
-        prior_same_line = [prior_start for prior_start, _, line_index in intervals
-                           if line_index == first_line and prior_start < start]
-        if prior_same_line and re.search(r"\(\s*r\.\s*", text[min(prior_same_line):start]):
-            result["unresolved_quotes"].append({"quote_index": quote_index,
-                "reason": "mixed_style_parenthetical_correction"})
+                "reason": "empty_or_unknown_loc_span"})
             continue
         cite_index = pairs.get(quote_index)
         if lex:
@@ -548,7 +500,7 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
     if result["visual_sha256"] != sha256(visual.encode("utf-8")).hexdigest():
         raise ValueError("visual source hash mismatch")
     for collection in ("definitions", "tibetan_examples", "belegstellen", "lexicographic_parallels", "variant_glosses",
-                       "translations", "citations", "correction_apparatus"):
+                       "translations", "citations", "correction_apparatus", "nonprinting_layout_tokens"):
         for record in result[collection]:
             if collection == "correction_apparatus":
                 source_text = record["literal_text"]
@@ -676,7 +628,7 @@ def build(source: Path, output: Path) -> dict[str, Any]:
             for key in ("definitions", "tibetan_examples", "belegstellen",
                         "lexicographic_parallels", "variant_glosses", "quote_dispositions",
                         "translations", "citations", "correction_apparatus",
-                        "divisions", "unresolved_quotes"):
+                        "divisions", "unresolved_quotes", "nonprinting_layout_tokens"):
                 stats[key] += len(row[key])
             stats["anchored_printed_proposals"] += sum(
                 item["status"] == "anchored_printed_proposal"
