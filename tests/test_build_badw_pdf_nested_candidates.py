@@ -36,7 +36,7 @@ def article(with_citation: bool = True) -> dict:
     citations = ([{"visual_start": citation_start,
                    "visual_end": citation_start + len("(Quelle 1)"),
                    "division_index": 0}] if with_citation else [])
-    return {"contract_version": "badw-pdf-structural-parser-v5",
+    return {"contract_version": "badw-pdf-structural-parser-v6",
             "article_id": "badw:pdf:test", "volume": 2,
             "loc_headword": "sñags", "tibetan_headword": "སྔགས", "homonym": None,
             "source_objects": [],

@@ -326,7 +326,7 @@ def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
         witness = json.loads(next(handle))
     span = witness["source_spans"][0]
     source = witness["source_faithful_text"]
-    structure = {"contract_version": "badw-pdf-structural-parser-v5",
+    structure = {"contract_version": "badw-pdf-structural-parser-v6",
         "article_id": witness["id"], "volume": witness["volume"],
         "loc_headword": witness["loc_headword"],
         "tibetan_headword": witness["tibetan_headword"], "homonym": witness["homonym"],
@@ -423,7 +423,7 @@ def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
     assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
     assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
                         "FROM pdf_article_analysis").fetchone() == (
-                            "badw-pdf-structural-parser-v5", "badw-pdf-lexical-candidates-v6")
+                            "badw-pdf-structural-parser-v6", "badw-pdf-lexical-candidates-v7")
     conn.close()
 
 

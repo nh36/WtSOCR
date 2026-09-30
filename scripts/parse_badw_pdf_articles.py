@@ -24,8 +24,8 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v5"
-PREVIOUS_VERSION = "badw-pdf-structural-parser-v4"
+VERSION = "badw-pdf-structural-parser-v6"
+PREVIOUS_VERSION = "badw-pdf-structural-parser-v5"
 # A sense number is a standalone printed label, not the first component of a
 # wrapped source locator such as 1.3.34c). Require actual following space.
 SENSE_LABEL = re.compile(r"^\s*([1-9][0-9]?)\.(?=\s+\S)")
@@ -41,8 +41,13 @@ REVIEWED_CITATION_FORMS = {
     "Bca Kolophon": "Bca", "Bca Kol.": "Bca", "Pś Kolophon": "Pś",
     "Pś Kolo-\nphon": "Pś", "PT1083 Siegelabdruck": "PT1083",
     "brDa, Dagy": "brDa", "PW": "PW", "SWTF": "SWTF",
+    # Exact additional forms verified in the positioned PDF corpus. These
+    # are bibliography sigla, not the printed (r. ...) correction apparatus.
+    "KanL Kol.": "KanL", "Siddh Kol.": "Siddh",
+    "M.I.vi.2a b2": "M.I", "BHSD": "BHSD",
 }
 EMBEDDED_LOCATOR_SIGLA = re.compile(r"^(?P<siglum>(?:ChFr|Ctr)\d+)$")
+REVIEWED_QUESTIONED_SIGLUM = re.compile(r"^Vḍk2\?\s+\d+,\d+$")
 
 
 def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
@@ -69,6 +74,8 @@ def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
 def _citation_siglum(interior: str) -> str | None:
     if interior in REVIEWED_CITATION_FORMS:
         return REVIEWED_CITATION_FORMS[interior]
+    if REVIEWED_QUESTIONED_SIGLUM.fullmatch(interior):
+        return "Vḍk2?"
     embedded = EMBEDDED_LOCATOR_SIGLA.fullmatch(interior)
     if embedded:
         return embedded.group("siglum")
@@ -417,7 +424,7 @@ def _file_hash(path: Path) -> str:
 
 
 def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
-    """Rebuild only derived divisions/candidates from an audited cached v4 row.
+    """Rebuild only derived divisions/candidates from an audited cached v5 row.
 
     This offline path never reloads a PDF and never changes source/visual text.
     """

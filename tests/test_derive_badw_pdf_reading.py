@@ -25,7 +25,7 @@ def _line(text: str, index: int, page: str = "page-1") -> dict:
 def _article() -> dict:
     lines = [_line("für", 0), _line("skt. Alpha-", 1), _line("bet", 2)]
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v5",
+    return {"contract_version": "badw-pdf-structural-parser-v6",
             "article_id": "badw:pdf:synthetic", "volume": 2,
             "loc_headword": "test", "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines, "divisions": [{"kind": "unsegmented", "label": "",

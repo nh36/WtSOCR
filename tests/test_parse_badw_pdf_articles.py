@@ -100,13 +100,13 @@ def test_wrapped_locator_is_not_a_numbered_sense() -> None:
 def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
     article, page = _fixture()
     previous = parse_article(article, lambda _: page)
-    previous["contract_version"] = "badw-pdf-structural-parser-v4"
+    previous["contract_version"] = "badw-pdf-structural-parser-v5"
     first = reindex_article(previous)
     assert first == reindex_article(previous)
     assert first["source_objects"] == previous["source_objects"]
     assert first["source_faithful_text"] == previous["source_faithful_text"]
     assert first["visual_lines"] == previous["visual_lines"]
-    assert first["contract_version"] == "badw-pdf-structural-parser-v5"
+    assert first["contract_version"] == "badw-pdf-structural-parser-v6"
     previous["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="hash mismatch"):
         reindex_article(previous)
@@ -246,6 +246,22 @@ def test_reviewed_source_forms_exclude_correction_and_prose() -> None:
     citations = _candidates([line], _candidate_division(1))["parenthetical_citations"]
     assert [item["siglum_candidate"] for item in citations] == [
         "Bca", "Pś", "PT1083", "ChFr67", "Ctr14", "PW", "SWTF"]
+
+
+def test_exact_reviewed_pdf_citations_preserve_questioned_siglum() -> None:
+    line = _candidate_line(
+        "„gloss“ (Vḍk2? 362,6) (KanL Kol.) (Siddh Kol.) "
+        "(M.I.vi.2a b2) (BHSD) (Vḍk2? prose) (KanL Kolophon) "
+        "(r.ka) (r. ka)")
+    candidates = _candidates([line], _candidate_division(1))
+    citations = candidates["parenthetical_citations"]
+    assert [(item["text"], item["siglum_candidate"]) for item in citations] == [
+        ("(Vḍk2? 362,6)", "Vḍk2?"), ("(KanL Kol.)", "KanL"),
+        ("(Siddh Kol.)", "Siddh"), ("(M.I.vi.2a b2)", "M.I"),
+        ("(BHSD)", "BHSD")]
+    assert candidates["adjacent_quote_citation_pairs"] == [{
+        "quote_index": 0, "citation_index": 0, "division_index": 0,
+        "status": "typographic_candidate"}]
 
 
 def test_md_zod_g_wrapped_locator_is_citation_not_arbitrary_parenthesis() -> None:

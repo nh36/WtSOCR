@@ -27,7 +27,7 @@ def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
 def _article(lines: list[dict], divisions: list[dict] | None = None,
              candidates: dict | None = None) -> dict:
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v5",
+    return {"contract_version": "badw-pdf-structural-parser-v6",
             "article_id": "badw:pdf:test", "volume": 2, "loc_headword": "sñags",
             "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines,
