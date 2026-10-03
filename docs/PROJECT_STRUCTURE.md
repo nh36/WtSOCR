@@ -30,6 +30,18 @@ BAdW integration follows a two-layer model: the existing release remains print-f
 
 `scripts/verify_badw_lexical_source.py` binds parsed BAdW database articles and lexical spans to a frozen source snapshot. `scripts/build_lexical_database.py` turns that verified lexical-record JSONL into a local SQLite/FTS database with source spans, snapshot hashes, occurrence-level citation sigla, exact-span BAdW tooltip-expansion authorities, separate print-bibliography candidates, and optional generated-PDF article witnesses and unassigned fragments. A uniquely linked tooltip establishes a first-party siglum expansion, not verification against the printed bibliography; that status remains separately unverified. PDF witnesses remain a distinct searchable source layer, not conflated with database editorial entries. The builder is non-corrective, and BAdW data belongs in an ignored database under `work/`.
 
+`scripts/badw_bibliography.py` builds a separate authority database using `data/bibliography_database.schema.sql`, entirely offline from cached official `/texte`, `/bibliographie` and `/abkuerzungen` pages. Work, publication and abbreviation identities are separate; source occurrences retain Unicode text, DOM locators, hashes and observation times. Exact author/year references produce candidate edition/containment relationships, not verified editions. Optional citation spelling links preserve overlaps and unmatched cases in a review queue; they do not replace stronger same-DOM HTML links. BibTeX exports are explicitly partial `@misc` records retaining the original descriptions, not automatically inferred titles or authors. Registered print OCR supplies fascicle/volume bibliography heading candidates for subsequent scan review, not complete bibliography records.
+
+Example (all generated source material stays ignored):
+
+```bash
+python3 scripts/badw_bibliography.py --cache work/badw_source_cache \
+  --output work/bibliography_snapshot --staging work/staging.sqlite \
+  --print-registry data/source_pdfs.tsv
+```
+
+The three official pages must already be cached. Builds refuse an existing output directory, retain the staging/schema hashes, and leave the lexical database and release unchanged. Next steps are review of printed supplement boundaries, structured publication metadata/BibTeX, and edition-specific citation resolution; a spelling match alone does not complete those tasks.
+
 For generated PDFs, `scripts/extract_badw_pdf_entries.py` identifies page-local entry starts and `scripts/stitch_badw_pdf_entries.py` joins only verified consecutive-page continuations into source-faithful article witnesses. `scripts/parse_badw_pdf_articles.py` replays those witnesses against cached positioned pages and derives visual lines, typography-supported numbered divisions, quotation/citation/reference candidates, and same-division adjacent quotation–citation pairs. `scripts/benchmark_badw_pdf_structure.py` selects a reproducible stratified review sample and scores those candidates against source-hashed, manually located spans kept under ignored `work/`. These pairs are typographic candidates, not resolved Belegstellen. The parser does not claim a complete definition/Belegstelle parse or silently bridge missing pages. Exact source spans and explicit unknown glyphs remain available; bulk outputs stay under ignored `work/`.
 
 Canonical PDF refresh and review migration use `scripts/refresh_badw_canonical_pages.py` and `scripts/migrate_badw_pdf_reviews.py`: new immutable page trees, source-checked crosswalks, and fail-closed review proposals. Exact malformed-quotation boundaries live in `data/reviewed_badw_pdf_quote_boundaries.tsv`; bulk regenerated corpora and staging databases remain under ignored `work/`.
