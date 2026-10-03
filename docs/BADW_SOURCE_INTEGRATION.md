@@ -92,6 +92,8 @@ Lexical extraction additionally requires a verified source contract: the frozen 
 
 Parsing must preserve the original BAdW Unicode. WtSOCR OCR correction rules must never be applied to the cached or parsed BAdW source text.
 
+`scripts/refresh_badw_canonical_pages.py` refreshes canonical decoding offline into a new immutable tree, checks source hashes and positioned glyph geometry, and emits a page-ID crosswalk and fresh unknown-glyph census. Historical observations remain preserved; downstream witnesses, parses, and verified snapshots must be rebuilt against the new tree. `scripts/migrate_badw_pdf_reviews.py` proposes review migrations only where source identity, run anchors, and reviewed text remain unchanged. Changed text requires renewed source review. Exact source-hashed boundary evidence can describe malformed quotation punctuation without changing the literal text. Typography-supported quote-internal LoC/gloss pairs in `Lex.` sections remain lexicographic parallels, not Belegstellen; explicit reviewed semantic roles take precedence. Unknown ink remains a blocker, unlike reviewed zero-outline layout glyphs.
+
 ## Generated PDFs for volumes 2–4
 
 The per-article PDFs for volumes 2–4 are digitally encoded sources, not images to be sent directly to OCR. They use embedded subset fonts and CID-coded content without adequate `ToUnicode` maps. The current experiment has demonstrated complete recovery of sampled TGaramond/WTS body glyphs, including the WTS transliteration in the tested material. The mapping of Rabten Tibetan-heading glyphs remains incomplete.

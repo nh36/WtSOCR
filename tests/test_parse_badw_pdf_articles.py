@@ -264,6 +264,16 @@ def test_exact_reviewed_pdf_citations_preserve_questioned_siglum() -> None:
         "status": "typographic_candidate"}]
 
 
+def test_correctly_decoded_vdk_colon_is_a_citation_without_changing_text() -> None:
+    line = _candidate_line(
+        "„gloss“ (Vḍk2: 362,6) (Vḍk2: prose) (r. ka) (r.ka)")
+    candidates = _candidates([line], _candidate_division(1))
+    assert [(item["text"], item["siglum_candidate"])
+            for item in candidates["parenthetical_citations"]] == [
+        ("(Vḍk2: 362,6)", "Vḍk2")]
+    assert len(candidates["adjacent_quote_citation_pairs"]) == 1
+
+
 def test_md_zod_g_wrapped_locator_is_citation_not_arbitrary_parenthesis() -> None:
     lines = [_candidate_line("„Bedeutung“ (mDzodG"), _candidate_line("64,3). (ordinary prose)")]
     citations = _candidates(lines, _candidate_division(2))["parenthetical_citations"]
@@ -386,3 +396,24 @@ def test_unclosed_outer_quote_preserves_independently_closed_later_quotes() -> N
         '„lexical gloss“', '„later example“',
     ]
     assert diagnostics == [{'kind': 'unclosed_opening_quote', 'visual_start': 0, 'visual_end': len(text)}]
+
+
+def test_exact_malformed_nested_quote_review_preserves_literal_and_rejects_stale():
+    from hashlib import sha256
+    from parse_badw_pdf_articles import reviewed_quotation_spans
+    import pytest
+
+    text = '„,ja!“ sagte er“'
+    row = {"visual_sha256": sha256(text.encode()).hexdigest(),
+           "visual_start": "0", "visual_end": str(len(text)),
+           "quote_sha256": sha256(text.encode()).hexdigest(),
+           "inner_start": "1", "inner_end": "6", "basis": "synthetic_visible_review"}
+    quotes, diagnostics = reviewed_quotation_spans(text, "test", {"test": [row]})
+    assert quotes[0]["visual_end"] == len(text)
+    assert quotes[0]["children"][0]["visual_start"] == 1
+    assert quotes[0]["children"][0]["text"] == "ja!"
+    assert diagnostics[0]["review_basis"] == "synthetic_visible_review"
+    other, _ = reviewed_quotation_spans(text, "other", {"test": [row]})
+    assert other[0]["visual_end"] == 6
+    with pytest.raises(ValueError, match="stale"):
+        reviewed_quotation_spans(text + "!", "test", {"test": [row]})

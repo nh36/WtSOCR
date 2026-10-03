@@ -11,6 +11,7 @@ and bibliographic associations can be established independently.
 from __future__ import annotations
 
 import argparse
+import csv
 from bisect import bisect_right
 from collections import Counter
 from functools import lru_cache
@@ -48,6 +49,7 @@ REVIEWED_CITATION_FORMS = {
 }
 EMBEDDED_LOCATOR_SIGLA = re.compile(r"^(?P<siglum>(?:ChFr|Ctr)\d+)$")
 REVIEWED_QUESTIONED_SIGLUM = re.compile(r"^Vḍk2\?\s+\d+,\d+$")
+REVIEWED_COLON_SIGLUM = re.compile(r"^Vḍk2:\s+\d+,\d+$")
 
 
 def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
@@ -76,6 +78,8 @@ def _citation_siglum(interior: str) -> str | None:
         return REVIEWED_CITATION_FORMS[interior]
     if REVIEWED_QUESTIONED_SIGLUM.fullmatch(interior):
         return "Vḍk2?"
+    if REVIEWED_COLON_SIGLUM.fullmatch(interior):
+        return "Vḍk2"
     embedded = EMBEDDED_LOCATOR_SIGLA.fullmatch(interior)
     if embedded:
         return embedded.group("siglum")
@@ -286,7 +290,48 @@ def quotation_spans(text: str) -> tuple[list[dict[str, Any]], list[dict[str, Any
     return roots, diagnostics
 
 
-def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+@lru_cache(maxsize=4)
+def load_quote_boundary_reviews() -> dict[str, list[dict[str, str]]]:
+    path = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_boundaries.tsv"
+    result: dict[str, list[dict[str, str]]] = {}
+    with path.open(encoding="utf-8", newline="") as source:
+        for row in csv.DictReader(source, delimiter="\t"):
+            result.setdefault(row["article_id"], []).append(row)
+    return result
+
+
+def reviewed_quotation_spans(text: str, article_id: str,
+                             reviews: dict[str, list[dict[str, str]]]):
+    """Apply exact visible-source boundary reviews without repairing punctuation."""
+    quotes, diagnostics = quotation_spans(text)
+    for row in reviews.get(article_id, []):
+        start, end = int(row["visual_start"]), int(row["visual_end"])
+        inner_start, inner_end = int(row["inner_start"]), int(row["inner_end"])
+        if (row["visual_sha256"] != sha256(text.encode()).hexdigest()
+                or not 0 <= start < inner_start < inner_end < end <= len(text)
+                or row["quote_sha256"] != sha256(text[start:end].encode()).hexdigest()
+                or text[start] != "„" or text[end - 1] != "“"
+                or text[inner_start] != "," or text[inner_end - 1] != "“"):
+            raise ValueError("stale or invalid reviewed quotation boundary: " + article_id)
+        overlaps = [q for q in quotes if q["visual_start"] < end and start < q["visual_end"]]
+        if any(q["visual_start"] < start or q["visual_end"] > end for q in overlaps):
+            raise ValueError("reviewed quotation boundary overlaps another quotation")
+        quotes = [q for q in quotes if q not in overlaps]
+        quotes.append({"visual_start": start, "visual_end": end,
+                       "text": text[start + 1:end - 1],
+                       "children": [{"visual_start": inner_start, "visual_end": inner_end,
+                                     "text": text[inner_start + 1:inner_end - 1],
+                                     "children": [], "diagnostics": ["reviewed_literal_comma_opener"]}],
+                       "diagnostics": ["exact_source_boundary_review:" + row["basis"]]})
+        for diagnostic in diagnostics:
+            if start <= diagnostic["visual_start"] < end:
+                diagnostic["review_basis"] = row["basis"]
+    quotes.sort(key=lambda q: q["visual_start"])
+    return quotes, diagnostics
+
+
+def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
+                article_id: str = "") -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": []}
     if not lines:
@@ -331,7 +376,7 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]]) ->
         return {**item, **location(item["visual_start"], item["visual_end"]),
                 "children": [anchored_quote(child) for child in item["children"]]}
 
-    quotes, quote_diagnostics = quotation_spans(text)
+    quotes, quote_diagnostics = reviewed_quotation_spans(text, article_id, load_quote_boundary_reviews())
     result["quotation_diagnostics"] = quote_diagnostics
     for item in quotes:
         result["german_quotes"].append({**anchored_quote(item),
@@ -452,7 +497,7 @@ def parse_article(article: dict[str, Any], load_page: Any) -> dict[str, Any]:
     divisions, diagnostics = _structure(lines)
     for index, line in enumerate(lines):
         line["line_index"] = index
-    candidates = _candidates(lines, divisions)
+    candidates = _candidates(lines, divisions, article["id"])
     diagnostics["visual_overprint_impressions_removed"] = overprints
     diagnostics["line_count"] = len(lines)
     diagnostics["unknown_glyphs"] = sum(line["unknown_glyphs"] for line in lines)
@@ -489,7 +534,7 @@ def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
     if _hash_text(article["source_faithful_text"]) != article["source_faithful_sha256"]:
         raise ValueError("source-faithful text hash mismatch")
     divisions, diagnostics = _structure(lines)
-    candidates = _candidates(lines, divisions)
+    candidates = _candidates(lines, divisions, article["article_id"])
     diagnostics.update({key: article["diagnostics"][key] for key in
         ("visual_overprint_impressions_removed", "line_count", "unknown_glyphs")})
     diagnostics.update({key: len(value) for key, value in candidates.items()})

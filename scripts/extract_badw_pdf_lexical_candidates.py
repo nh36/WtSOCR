@@ -329,6 +329,50 @@ def _opening_quoted_definition(article: dict[str, Any], quote: dict[str, Any],
             **_anchor(article["visual_lines"], offsets, start, end)}
 
 
+def _quote_internal_lexicon(article: dict[str, Any], quote: dict[str, Any],
+                           quote_index: int, citation_index: int | None,
+                           text: str, offsets: list[int]) -> dict[str, Any] | None:
+    """Quoted LoC lemma followed by a roman German gloss in a cited Lex. region.
+
+    This is not a Tibetan example preceding a translation. Require the literal
+    colon boundary, contiguous source-italic prefix, and source-roman suffix.
+    """
+    division_index = quote.get("division_index")
+    if division_index is None or citation_index is None or quote.get("children"):
+        return None
+    lines = article["visual_lines"]
+    if not _lexical_region(lines, quote["start_line_index"],
+                           article["divisions"][division_index]["start_line_index"]):
+        return None
+    start, end = int(quote["visual_start"]), int(quote["visual_end"])
+    colon = text.find(":", start + 1, end - 1)
+    if colon < 0 or contains_unknown(text[start:end]):
+        return None
+    def style_at(position: int, style: str) -> bool:
+        line_index = max(i for i, offset in enumerate(offsets) if offset <= position)
+        local = position - offsets[line_index]
+        return any(s["family"] == "TGaramond" and s["style"] == style
+                   and s["start"] <= local < s["end"] for s in lines[line_index]["style_spans"])
+    if (not all(style_at(i, "italic") for i in range(start + 1, colon) if not text[i].isspace())
+            or not all(style_at(i, "regular") for i in range(colon, end) if not text[i].isspace())
+            or not text[colon + 1:end - 1].strip()
+            or not text[start + 1:colon].strip()):
+        return None
+    german_start = colon + 1
+    while text[german_start].isspace():
+        german_start += 1
+    citation_end = article["candidates"]["parenthetical_citations"][citation_index]["visual_end"]
+    return {"text": text[start:citation_end], "quote_index": quote_index,
+            "translation_index": quote_index, "citation_index": citation_index,
+            "division_index": division_index, "loc_text": text[start + 1:colon],
+            "boundary_kind": "quote_internal_loc_gloss",
+            "quoted_loc": {"text": text[start + 1:colon], **_anchor(lines, offsets, start + 1, colon)},
+            "german_gloss": {"text": text[german_start:end - 1], **_anchor(lines, offsets, german_start, end - 1)},
+            "boundary_review_basis": "source_italic_prefix_roman_colon_and_gloss_in_cited_lex_region",
+            "status": "source_lexicon_parallel_candidate",
+            **_anchor(lines, offsets, start, citation_end)}
+
+
 def extract(article: dict[str, Any]) -> dict[str, Any]:
     if article.get("contract_version") != STRUCTURE_VERSION:
         raise ValueError("unsupported PDF structure contract")
@@ -387,6 +431,11 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
                       "status": "source_reviewed_semantic_candidate"}
             collection = "definitions" if review["role"] == "definition" else "quoted_non_examples"
             result[collection].append(record)
+            continue
+        internal_lexicon = _quote_internal_lexicon(article, quote, quote_index,
+                                                  pairs.get(quote_index), text, offsets)
+        if internal_lexicon is not None:
+            result["lexicographic_parallels"].append(internal_lexicon)
             continue
         qstart = int(quote["visual_start"])
         quote_line = int(quote["start_line_index"])
@@ -672,8 +721,17 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
             raise ValueError(f"Belegstelle {index} correction links mismatch")
     for parallel in result["lexicographic_parallels"]:
         quote = result["translations"][parallel["translation_index"]]
+        internal = parallel.get("boundary_kind") == "quote_internal_loc_gloss"
+        if internal:
+            candidates = article["candidates"]["german_quotes"]
+            expected = _quote_internal_lexicon(article, candidates[parallel["quote_index"]],
+                parallel["quote_index"], parallel["citation_index"], visual, _offsets(article["visual_lines"]))
+            if expected != parallel:
+                raise ValueError("quote-internal lexicon source boundaries mismatch")
         if (parallel["quote_index"] != parallel["translation_index"] or
-                not parallel["visual_start"] < quote["visual_start"] < quote["visual_end"] <= parallel["visual_end"] or
+                not ((parallel["visual_start"] == quote["visual_start"] if internal
+                      else parallel["visual_start"] < quote["visual_start"])
+                     and quote["visual_start"] < quote["visual_end"] <= parallel["visual_end"]) or
                 parallel["division_index"] != quote["division_index"]):
             raise ValueError("lexicographic parallel source order mismatch")
         if parallel["citation_index"] is not None:

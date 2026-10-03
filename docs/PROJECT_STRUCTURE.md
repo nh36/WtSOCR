@@ -32,6 +32,8 @@ BAdW integration follows a two-layer model: the existing release remains print-f
 
 For generated PDFs, `scripts/extract_badw_pdf_entries.py` identifies page-local entry starts and `scripts/stitch_badw_pdf_entries.py` joins only verified consecutive-page continuations into source-faithful article witnesses. `scripts/parse_badw_pdf_articles.py` replays those witnesses against cached positioned pages and derives visual lines, typography-supported numbered divisions, quotation/citation/reference candidates, and same-division adjacent quotation–citation pairs. `scripts/benchmark_badw_pdf_structure.py` selects a reproducible stratified review sample and scores those candidates against source-hashed, manually located spans kept under ignored `work/`. These pairs are typographic candidates, not resolved Belegstellen. The parser does not claim a complete definition/Belegstelle parse or silently bridge missing pages. Exact source spans and explicit unknown glyphs remain available; bulk outputs stay under ignored `work/`.
 
+Canonical PDF refresh and review migration use `scripts/refresh_badw_canonical_pages.py` and `scripts/migrate_badw_pdf_reviews.py`: new immutable page trees, source-checked crosswalks, and fail-closed review proposals. Exact malformed-quotation boundaries live in `data/reviewed_badw_pdf_quote_boundaries.tsv`; bulk regenerated corpora and staging databases remain under ignored `work/`.
+
 ## Immutable release snapshots
 
 Release tags, input locks, and GitHub release assets describe distinct immutable checkpoints:

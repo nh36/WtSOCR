@@ -781,3 +781,48 @@ def test_nested_quote_source_links_are_validated() -> None:
     result['translations'][0]['nested_quotes'][0]['text'] = 'invented'
     with pytest.raises(ValueError, match='nested quotation'):
         validate(article, result)
+
+
+def test_exact_review_precedes_quote_internal_lexicon(monkeypatch):
+    import extract_badw_pdf_lexical_candidates as module
+    text = 'Lex. rtsis „rtsis te: Anteil“ (Source 1)'
+    start, colon = text.index('„') + 1, text.index(':')
+    article = _example_article([_line(text, [(0, start, 'regular'),
+        (start, colon, 'italic'), (colon, len(text), 'regular')])])
+    row = _review(article, role='definition')
+    monkeypatch.setattr(module, 'load_role_reviews', lambda: {
+        (article['article_id'], int(row['visual_start'])): row})
+    result = extract(article)
+    assert not result['lexicographic_parallels']
+    assert result['definitions'][0]['semantic_role'] == 'definition'
+    validate(article, result)
+
+
+def test_quoted_lexicon_loc_prefix_is_nested_not_belegstelle():
+    text = 'Lex. rtsis „rtsis te: Anteil“ (Source 1)'
+    start = text.index("„") + 1
+    colon = text.index(":")
+    article = _example_article([_line(text, [(0, start, "regular"),
+                                             (start, colon, "italic"),
+                                             (colon, len(text), "regular")])])
+    result = extract(article)
+    validate(article, result)
+    assert not result["unresolved_quotes"]
+    assert not result["belegstellen"]
+    parallel = result["lexicographic_parallels"][0]
+    assert parallel["quoted_loc"]["text"] == "rtsis te"
+    assert parallel["german_gloss"]["text"] == "Anteil"
+    parallel["german_gloss"]["text"] = "wrong"
+    with pytest.raises(ValueError, match="quote-internal"):
+        validate(article, result)
+
+
+@pytest.mark.parametrize("text", ['Lex. rtsis „rtsis te Anteil“ (Source 1)',
+                                  'rtsis „rtsis te: Anteil“ (Source 1)'])
+def test_quote_internal_lexicon_requires_colon_and_lex_region(text):
+    start = text.index("„") + 1
+    end = text.index(" Anteil") if ":" not in text else text.index(":")
+    article = _example_article([_line(text, [(0, start, "regular"),
+                                             (start, end, "italic"),
+                                             (end, len(text), "regular")])])
+    assert not extract(article)["lexicographic_parallels"]
