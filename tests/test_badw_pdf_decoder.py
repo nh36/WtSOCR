@@ -371,6 +371,35 @@ def test_reviewed_times_italic_h_breve_below_is_exact_outline_only():
     assert registry.lookup("TimesNewRoman", "italic", 0x06D0, "0" * 64) is None
 
 
+@pytest.mark.parametrize("style,cid,signature,reading", [
+    ("italic", 0x0016, "f6031e0a7c8c9ce81909fc3f35e3f63a871ee23235ef43a031e6c188b9accc86", "6"),
+    ("italic", 0x0017, "7570315f150cf13eadcfa5a08f39a5836c93ac2c3ececd7308f3e2e99b7207b6", "7"),
+    ("italic", 0x0019, "704eb9da1e28491691ff99a1502954d25b712a57e04b947c274fba930466e95d", "9"),
+    ("italic", 0x001F, "093e0cf015da458bee6154b4e26e737d4b57bd84430890ea7712feaf22c4b108", "?"),
+    ("italic", 0x0038, "f1ba5307aa0807138db00787cc26f419ac5d321d693900b56e4dc0428328b9cf", "X"),
+    ("italic", 0x0085, "745daba2b84722c61fb7eec048286e85015ca04595d0c388f151faccd9ce8158", "ō"),
+    ("italic", 0x00E2, "960b47bc4fc73ee40dc5eda1edec22e1f26b3781d41cd65545e93e37ca6cdefa", "ź"),
+    ("regular", 0x001A, "d6fb0a5aecd411f9436493a48df819c1d9661e968ca5b1acb840d7074402c49a", ":"),
+])
+def test_reviewed_residual_glyphs_require_exact_identity(style, cid, signature, reading):
+    registry = GlyphRegistry.from_tsv(ROOT / "data/badw_pdf_glyph_mappings.tsv")
+    mapping = registry.lookup("TGaramond", style, cid, signature)
+    assert mapping is not None
+    assert mapping.unicode == reading
+    assert mapping.evidence_method == "generated-pdf-visual-review"
+    assert "source SHA-256" in mapping.evidence_note
+    assert registry.lookup("TGaramond", style, cid, "0" * 64) is None
+    assert registry.lookup("TGaramond", "bold", cid, signature) is None
+    assert registry.lookup("MicrosoftSansSerif", style, cid, signature) is None
+    assert registry.lookup("TGaramond", style, cid + 0x1000, signature) is None
+
+
+def test_inkless_unencoded_microsoft_glyph_is_not_guessed_as_space():
+    registry = GlyphRegistry.from_tsv(ROOT / "data/badw_pdf_glyph_mappings.tsv")
+    signature = "6dc2ca034cbe9a34c10b84edf32fed142b33f2dba4bd69797353842a54c3f387"
+    assert registry.lookup("MicrosoftSansSerif", "regular", 3, signature) is None
+
+
 def test_tj_sequence_retains_positioning_adjustments_in_source_order():
     assert _text_sequence("TJ", [[b"\x00\x01", -120, b"\x00\x02"]]) == [
         b"\x00\x01",
