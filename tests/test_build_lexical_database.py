@@ -347,6 +347,7 @@ def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
             "style_spans": [{"start": 0, "end": len(source),
                              "family": "TGaramond", "style": "regular"}]}],
         "divisions": [{"kind": "unsegmented", "label": "",
+                       "text": source,
                        "start_line_index": 0, "end_line_index_exclusive": 1}],
         "candidates": {"german_quotes": [], "parenthetical_citations": [],
                        "adjacent_quote_citation_pairs": []}}
@@ -418,16 +419,59 @@ def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
                    verified_source_manifest=verified, pdf_article_root=pdf_root,
                    pdf_canonical_root=canonical, pdf_structure=structure,
                    pdf_lexical_candidates=lexical, repo_root=tmp_path)
-    assert report["pdf_candidate_counts"] == {"articles": 1, "definition": 1}
+    assert report["pdf_candidate_counts"] == {"articles": 1, "definition": 1,
+        "tree_article_witness": 1, "tree_unsegmented_source_division": 1,
+        "tree_definition_candidate": 1}
     conn = sqlite3.connect(tmp_path / "staged.sqlite")
     assert conn.execute("SELECT kind,text,status FROM pdf_lexical_candidate").fetchall() == [
         ("definition", "Bedeutung.", "unverified_typographic_candidate")]
     assert conn.execute("SELECT count(*) FROM sense WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
     assert conn.execute("SELECT count(*) FROM attestation WHERE entry_id LIKE 'badw:pdf:%'").fetchone() == (0,)
+    assert conn.execute("SELECT count(*) FROM pdf_candidate_component").fetchone() == (1,)
+    assert conn.execute("SELECT parent_node_id,kind FROM pdf_candidate_node "
+                        "WHERE node_id='division:0:item:0'").fetchone() == (
+                            "division:0", "definition_candidate")
+    assert conn.execute("PRAGMA foreign_key_check").fetchall() == []
     assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
                         "FROM pdf_article_analysis").fetchone() == (
-                            "badw-pdf-structural-parser-v7", "badw-pdf-lexical-candidates-v9")
+                            "badw-pdf-structural-parser-v7", "badw-pdf-lexical-candidates-v10")
     conn.close()
+
+
+def test_pdf_citation_candidates_are_linked_without_semantic_promotion(tmp_path: Path):
+    source, sigla, records_manifest, verified = _write_inputs(tmp_path)
+    candidate_file, occurrence_file = _tooltip_inputs(tmp_path)
+    pdf_root, canonical = _pdf_witness_inputs(tmp_path, "Bedeutung (ka 3)")
+    structure_path, lexical_path = _pdf_candidate_inputs(tmp_path, pdf_root)
+    with gzip.open(structure_path, "rt", encoding="utf-8") as handle:
+        structure = json.load(handle)
+    start = structure["source_faithful_text"].index("(")
+    structure["candidates"]["parenthetical_citations"] = [{
+        "text": "(ka 3)", "visual_start": start,
+        "visual_end": len(structure["source_faithful_text"]),
+        "division_index": 0, "start_line_index": 0}]
+    lexical = extract_pdf_lexical(structure)
+    with gzip.open(structure_path, "wt", encoding="utf-8") as handle:
+        json.dump(structure, handle, ensure_ascii=False)
+    with gzip.open(lexical_path, "wt", encoding="utf-8") as handle:
+        json.dump(lexical, handle, ensure_ascii=False)
+    build(source, tmp_path / "linked.sqlite", tmp_path / "linked.json",
+          sigla=sigla, records_manifest=records_manifest,
+          verified_source_manifest=verified, pdf_article_root=pdf_root,
+          pdf_canonical_root=canonical, pdf_structure=structure_path,
+          pdf_lexical_candidates=lexical_path,
+          siglum_candidates=candidate_file,
+          siglum_occurrences=occurrence_file, repo_root=tmp_path)
+    with sqlite3.connect(tmp_path / "linked.sqlite") as conn:
+        assert conn.execute("SELECT status FROM pdf_citation_resolution").fetchall() == [
+            ("exact_label_expansion_candidates",)]
+        assert conn.execute("SELECT start_offset,end_offset,status FROM "
+                            "pdf_citation_authority_candidate").fetchall() == [
+            (1, 3, "exact_label_expansion_candidate")]
+        assert conn.execute("SELECT count(*) FROM pdf_lexical_candidate").fetchone() == (
+            conn.execute("SELECT count(*) FROM pdf_candidate_component").fetchone()[0],)
+        assert conn.execute("PRAGMA foreign_key_check").fetchall() == []
+        assert conn.execute("SELECT count(*) FROM attestation").fetchone() == (1,)
 
 
 def test_pdf_variant_gloss_is_staged_without_attestation_promotion(tmp_path: Path):

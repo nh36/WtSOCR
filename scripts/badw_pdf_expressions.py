@@ -1,6 +1,6 @@
 """Source-position-preserving syntax for mixed-font PDF expressions.
 
-This is not a Unicode repair layer. In particular, verified zero-contour
+This is not a Unicode repair layer. In particular, verified nonprinting
 glyphs retain their UNKNOWN tokens in the source; only the boundary predicate
 treats them as nonprinting. Other unknown identities remain barriers.
 """
@@ -12,9 +12,14 @@ import re
 # contours and advance 278; TT3678... CID 1627/GID 1627 has zero contours and
 # advance 500. Keys include family, style, CID and the outline fingerprint
 # emitted by the decoder, NOT just CID. Rabten's empty shad outline must not
-# inherit this treatment. MicrosoftSansSerif CID 3 has a contour: excluded.
+# inherit this treatment. MicrosoftSansSerif CID 3 has one degenerate contour
+# consisting solely of (0, 0): it cannot paint ink. Two independently inspected
+# embedded programs (b06d6599ebca... and af0138c4b01a...) have this exact outline
+# and PDF advance 266. Visible v4 pp. 293 and 321 corroborate layout use.
+# This is NOT a Unicode space mapping; the raw UNKNOWN remains unchanged.
 NONPRINTING = re.compile(
     r"⟦UNKNOWN:(?:Arial:(?:regular|italic):0003:ebbba6ed181c|"
+    r"MicrosoftSansSerif:regular:0003:6dc2ca034cbe|"
     r"TT3678AC74tCID-WinCharSetFFFF-H2:regular:065B:ce91b893d20f)⟧")
 APPARATUS_PREFIX = re.compile(r"\s*(?:r\.|v\.\s*l\.|Gl\.|metr\.)")
 

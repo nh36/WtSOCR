@@ -24,7 +24,7 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v9"
+VERSION = "badw-pdf-lexical-candidates-v10"
 ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
 SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
 
@@ -397,7 +397,7 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
     intervals = _italic_intervals(lines, offsets)
     allowed, apparatus = boundary_mask(text)
     result["nonprinting_layout_tokens"] = [
-        {"text": m.group(), "interpretation": "verified_zero_contour_not_unicode_mapping",
+        {"text": m.group(), "interpretation": "reviewed_nonprinting_outline_not_unicode_mapping",
          **_anchor(lines, offsets, m.start(), m.end())}
         for m in NONPRINTING.finditer(text)]
     quotes = article["candidates"]["german_quotes"]

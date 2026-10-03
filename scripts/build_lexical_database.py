@@ -3,7 +3,8 @@
 
 The builder imports source-faithful records only.  It never normalizes LoC
 transliteration as Wylie, resolves citations merely from a siglum spelling, or
-alters the print-faithful WtSOCR release.  The resulting database belongs in
+alters the print-faithful WtSOCR release. PDF siglum spelling candidates are
+separate from exact HTML tooltip authority links. The database belongs in
 ignored ``work/`` when it contains BAdW material.
 """
 from __future__ import annotations
@@ -21,8 +22,11 @@ from stitch_badw_pdf_entries import verify_source as verify_pdf_source
 from extract_badw_pdf_lexical_candidates import extract as extract_pdf_lexical
 from parse_badw_pdf_articles import VERSION as PDF_STRUCTURE_VERSION
 from extract_badw_pdf_lexical_candidates import VERSION as PDF_LEXICAL_VERSION
+from build_badw_pdf_nested_candidates import project as project_nested, VERSION as NESTED_VERSION
+from badw_pdf_candidate_tree import project as project_tree, VERSION as TREE_VERSION
+from badw_pdf_bibliography import Resolver, VERSION as BIBLIOGRAPHY_VERSION
 
-BUILDER_VERSION = "lexical-database-builder-v8"
+BUILDER_VERSION = "lexical-database-builder-v9"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SCHEMA = ROOT / "data" / "lexical_database.schema.sql"
 DEFAULT_SIGLA = ROOT / "data" / "sigla_registry.tsv"
@@ -63,6 +67,9 @@ def _import_pdf_candidates(conn: sqlite3.Connection, witnesses: Path,
              "translations": "translation", "citations": "citation",
              "correction_apparatus": "correction_apparatus"}
     counts: Counter[str] = Counter()
+    resolver = Resolver(conn.execute(
+        "SELECT a.id,c.siglum FROM badw_bibliographic_authority a "
+        "JOIN badw_siglum_candidate c ON c.id=a.id ORDER BY a.id").fetchall())
     for witness, structure, lexical in zip_longest(
             _jsonl_gz(witnesses), _jsonl_gz(structure_path), _jsonl_gz(lexical_path)):
         if witness is None or structure is None or lexical is None:
@@ -113,10 +120,30 @@ def _import_pdf_candidates(conn: sqlite3.Connection, witnesses: Path,
             conn.execute("INSERT INTO pdf_quote_disposition VALUES (?, ?, ?, ?)",
                          (article_id, row["quote_index"], row["kind"], row["reason"]))
             counts["quote_" + row["kind"]] += 1
+        nested = project_nested(structure, lexical)
+        nodes, edges = project_tree(nested, lexical)
+        for node in nodes:
+            conn.execute("INSERT INTO pdf_candidate_node VALUES (?, ?, ?, ?, ?, ?)",
+                         (article_id, node["id"], node["parent"], node["ordinal"],
+                          node["kind"], canon(node["payload"])))
+            counts["tree_" + node["kind"]] += 1
+        for edge in edges:
+            conn.execute("INSERT INTO pdf_candidate_component VALUES (?, ?, ?, ?)",
+                         (article_id, edge["kind"], edge["ordinal"], edge["node"]))
+        for ordinal, row in enumerate(lexical["citations"]):
+            resolution = resolver.resolve(row["text"])
+            conn.execute("INSERT INTO pdf_citation_resolution VALUES (?, ?, ?, ?, ?)",
+                         (article_id, ordinal, "citation", resolution["status"], canon(resolution)))
+            counts["bibliography_" + resolution["status"]] += 1
+            for match in resolution["matches"]:
+                for authority_id in match["authority_ids"]:
+                    conn.execute("INSERT INTO pdf_citation_authority_candidate VALUES (?, ?, ?, ?, ?, ?)",
+                                 (article_id, ordinal, match["start"], match["end"],
+                                  authority_id, match["status"]))
     return dict(sorted(counts.items()))
 
 def logical_digest(conn: sqlite3.Connection) -> str:
-    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "citation_siglum", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "citation_siglum_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "badw_bibliographic_authority", "citation_siglum_badw_authority", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment", "pdf_article_analysis", "pdf_lexical_candidate", "pdf_quote_disposition"]
+    tables = ["metadata", "source_snapshot", "source_object", "lexical_record", "record_source_span", "entry", "sense", "citation", "citation_siglum", "attestation", "attestation_citation", "cross_reference", "bibliographic_source", "bibliographic_alias", "citation_authority_candidate", "citation_siglum_authority_candidate", "badw_siglum_candidate", "badw_siglum_occurrence", "citation_siglum_candidate", "badw_bibliographic_authority", "citation_siglum_badw_authority", "pdf_article_witness", "pdf_article_source_span", "pdf_unassigned_fragment", "pdf_article_analysis", "pdf_lexical_candidate", "pdf_quote_disposition", "pdf_candidate_node", "pdf_candidate_component", "pdf_citation_resolution", "pdf_citation_authority_candidate"]
     digest = hashlib.sha256()
     for table in tables:
         columns = conn.execute(f"PRAGMA table_info({table})").fetchall()
@@ -384,6 +411,9 @@ def build(records_path: Path, database: Path, manifest: Path, *, schema: Path = 
         if pdf_structure is not None and pdf_lexical_candidates is not None:
             metadata["pdf_structure_sha256"] = sha256(pdf_structure)
             metadata["pdf_lexical_candidates_sha256"] = sha256(pdf_lexical_candidates)
+            metadata["pdf_nested_contract_version"] = NESTED_VERSION
+            metadata["pdf_candidate_tree_version"] = TREE_VERSION
+            metadata["pdf_bibliography_version"] = BIBLIOGRAPHY_VERSION
         conn.executemany("INSERT INTO metadata VALUES (?, ?)", sorted(metadata.items()))
         conn.commit(); conn.execute("VACUUM"); conn.commit()
         report = {"builder_version":BUILDER_VERSION,"contract_version":CONTRACT_VERSION,"input_sha256":input_hash,"records_manifest_sha256":manifest_hash,"verified_lexical_source_sha256":verified_manifest_hash,"source_snapshot_sha256":verified_source["source_snapshot_sha256"],"cache_manifest_index_sha256":verified_source["cache_manifest_index_sha256"],"source_span_audit":span_audit,"schema_sha256":schema_hash,"sigla_registry_sha256":sigla_hash,"source_snapshot_id":snapshot,"record_counts":dict(sorted(Counter(r["record_type"] for r in records).items())),"source_object_count":len(objects),"badw_siglum_candidate_count":len(tooltip_candidates),"badw_siglum_occurrence_count":len(tooltip_occurrences),"badw_bibliographic_authority_count":conn.execute("SELECT count(*) FROM badw_bibliographic_authority").fetchone()[0],"citation_siglum_badw_authority_count":conn.execute("SELECT count(*) FROM citation_siglum_badw_authority").fetchone()[0],"citation_siglum_unlinked_count":conn.execute("SELECT count(*) FROM citation_siglum AS cs WHERE NOT EXISTS (SELECT 1 FROM citation_siglum_badw_authority AS ba WHERE ba.citation_id=cs.citation_id AND ba.siglum_ordinal=cs.ordinal)").fetchone()[0],"logical_sha256":logical_digest(conn)}

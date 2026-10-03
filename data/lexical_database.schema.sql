@@ -197,6 +197,44 @@ CREATE TABLE pdf_quote_disposition (
   PRIMARY KEY (article_id, quote_index)
 );
 
+-- Ordered candidate tree; never promotes unsegmented divisions to senses.
+CREATE TABLE pdf_candidate_node (
+  article_id TEXT NOT NULL REFERENCES pdf_article_analysis(article_id),
+  node_id TEXT NOT NULL, parent_node_id TEXT, ordinal INTEGER NOT NULL,
+  kind TEXT NOT NULL, payload_json TEXT NOT NULL,
+  PRIMARY KEY (article_id, node_id),
+  FOREIGN KEY (article_id, parent_node_id) REFERENCES pdf_candidate_node(article_id, node_id),
+  UNIQUE (article_id, parent_node_id, ordinal)
+);
+CREATE TABLE pdf_candidate_component (
+  article_id TEXT NOT NULL, kind TEXT NOT NULL, candidate_ordinal INTEGER NOT NULL,
+  node_id TEXT NOT NULL,
+  PRIMARY KEY (article_id, kind, candidate_ordinal),
+  FOREIGN KEY (article_id, kind, candidate_ordinal)
+    REFERENCES pdf_lexical_candidate(article_id, kind, ordinal),
+  FOREIGN KEY (article_id, node_id) REFERENCES pdf_candidate_node(article_id, node_id)
+);
+-- Exact spelling candidates are weaker than the HTML same-DOM-span link.
+-- They identify tooltip expansions, not printed editions or example owners.
+CREATE TABLE pdf_citation_resolution (
+  article_id TEXT NOT NULL, citation_ordinal INTEGER NOT NULL,
+  candidate_kind TEXT NOT NULL DEFAULT 'citation' CHECK (candidate_kind = 'citation'),
+  status TEXT NOT NULL CHECK (status IN ('unmatched', 'ambiguous', 'exact_label_expansion_candidates')),
+  resolution_json TEXT NOT NULL,
+  PRIMARY KEY (article_id, citation_ordinal),
+  FOREIGN KEY (article_id, candidate_kind, citation_ordinal)
+    REFERENCES pdf_lexical_candidate(article_id, kind, ordinal)
+);
+CREATE TABLE pdf_citation_authority_candidate (
+  article_id TEXT NOT NULL, citation_ordinal INTEGER NOT NULL,
+  start_offset INTEGER NOT NULL, end_offset INTEGER NOT NULL,
+  authority_id TEXT NOT NULL REFERENCES badw_bibliographic_authority(id),
+  status TEXT NOT NULL CHECK (status IN ('ambiguous', 'exact_label_expansion_candidate')),
+  PRIMARY KEY (article_id, citation_ordinal, start_offset, end_offset, authority_id),
+  FOREIGN KEY (article_id, citation_ordinal)
+    REFERENCES pdf_citation_resolution(article_id, citation_ordinal)
+);
+
 CREATE VIRTUAL TABLE entry_fts USING fts5(id UNINDEXED, loc_headword, tibetan_headword);
 CREATE VIRTUAL TABLE sense_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, definition);
 CREATE VIRTUAL TABLE attestation_fts USING fts5(id UNINDEXED, entry_id UNINDEXED, tibetan, german_translation);

@@ -29,6 +29,7 @@ def test_malformed_or_unrecognized_apparatus_is_not_a_bridge(text: str) -> None:
 @pytest.mark.parametrize("token", [
     "⟦UNKNOWN:Arial:regular:0003:ebbba6ed181c⟧",
     "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧",
     "⟦UNKNOWN:TT3678AC74tCID-WinCharSetFFFF-H2:regular:065B:ce91b893d20f⟧",
 ])
 def test_verified_empty_outlines_are_boundaries_not_unicode_replacements(token: str) -> None:
@@ -41,7 +42,9 @@ def test_verified_empty_outlines_are_boundaries_not_unicode_replacements(token: 
     "⟦UNKNOWN:Arial:regular:0003:differentoutline⟧",
     "⟦UNKNOWN:Arial:bold:0003:ebbba6ed181c⟧",
     "⟦UNKNOWN:RabtenTibetan:regular:0003:ebbba6ed181c⟧",
-    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧",
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:0004:6dc2ca034cbe⟧",
+    "⟦UNKNOWN:MicrosoftSansSerif:italic:0003:6dc2ca034cbe⟧",
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:differentoutline⟧",
     "⟦UNKNOWN:TGaramond:italic:00E2:960b47bc4fc7⟧",
 ])
 def test_other_unknown_identity_is_not_a_layout_exception(token: str) -> None:
