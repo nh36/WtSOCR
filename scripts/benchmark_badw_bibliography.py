@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline blind bibliography review packets and independently reviewed scores.
+"""Offline blind bibliography review packets and source-reviewed scores.
 
 Packets deliberately omit resolver predictions. Gold reviews must exhaustively
 label identity spans; edition and locator checks are separate optional axes.
@@ -85,7 +85,7 @@ def sample(links: Path, challenge: Path, output: Path, per_layer=200):
         packets.append({"layer": identity[0], "citation_id": identity[1],
             "text": text, "text_sha256": text_hash(text), "stratum": stratum(text),
             "memberships": sorted(memberships), "review": {
-                "reviewer": "", "evidence_locator": "", "evidence_sha256": "",
+                "reviewer": "", "review_mode": "unspecified", "evidence_locator": "", "evidence_sha256": "",
                 "complete_identity_review": False, "accepted_spans": [],
                 "edition_checks": [], "locator_checks": []}})
     output.mkdir(parents=True)
@@ -109,6 +109,7 @@ def score(packets: Path, reviews: Path, predictions: Path):
         raise ValueError("duplicate predictions")
     counts, seen, checked = Counter(), set(), set()
     groups = defaultdict(Counter)
+    review_modes = Counter()
     for gold in records(reviews):
         identity = key(gold)
         if identity in seen or identity not in packet_map or identity not in predicted:
@@ -122,7 +123,11 @@ def score(packets: Path, reviews: Path, predictions: Path):
         if (review["complete_identity_review"] is not True or not review["reviewer"].strip() or
                 not review["evidence_locator"].strip() or
                 not re.fullmatch("[0-9a-f]{64}", review["evidence_sha256"])):
-            raise ValueError("independent exhaustive source review required")
+            raise ValueError("exhaustive source review required")
+        mode = review.get("review_mode", "unspecified")
+        if mode not in {"unspecified", "same_agent_source_review", "independent_blind_review", "prediction_exposed_review"}:
+            raise ValueError("unsupported review mode")
+        review_modes[mode] += 1
         evidence = Path(review.get("evidence_path", ""))
         if not evidence.is_file():
             raise ValueError("review evidence file missing")
@@ -155,10 +160,15 @@ def score(packets: Path, reviews: Path, predictions: Path):
             # Future resolvers may supply verified checks. An identity match is
             # never promoted to a successful edition/locator check implicitly.
             outputs = prediction.get(axis + "_checks", [])
+            axis_spans = set()
             for check in review[axis + "_checks"]:
                 if (type(check["start"]) is not int or type(check["end"]) is not int or
                         not 0 <= check["start"] < check["end"] <= len(packet["text"])):
                     raise ValueError("gold check outside source text")
+                span = check["start"], check["end"]
+                if span in axis_spans or not check.get("value"):
+                    raise ValueError("duplicate or empty gold check")
+                axis_spans.add(span)
                 counts[axis + "_reviewed"] += 1
                 candidates = [p for p in outputs if p["start"] == check["start"] and p["end"] == check["end"]
                               and p.get("status") == "verified"]
@@ -169,6 +179,9 @@ def score(packets: Path, reviews: Path, predictions: Path):
                     counts[axis + "_correct"] += len(candidates) == 1 and candidates[0]["value"] == check["value"]
     tp = counts["identity_true_positive"]
     return {"counts": dict(sorted(counts.items())),
+        "review_modes": dict(sorted(review_modes.items())),
+        "independence_status": "declared_only_not_verified",
+        "limitations": "Source review scores do not establish independence; edition/locator axes require their own reviewed checks.",
         "groups": {k: dict(sorted(v.items())) for k, v in sorted(groups.items())},
         "unreviewed_packets": len(packet_map) - len(seen),
         "identity_precision": tp / (tp + counts["identity_false_positive"]) if tp + counts["identity_false_positive"] else None,

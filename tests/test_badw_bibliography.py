@@ -340,3 +340,27 @@ def test_offline_build_fk_links_and_reproducibility(tmp_path, monkeypatch):
         assert db.execute("SELECT target_status FROM citation_target").fetchall() == [("candidate",)]
         result = json.loads(db.execute("SELECT record_json FROM citation_resolution WHERE citation_id='h'").fetchone()[0])
         assert result["unparsed_spans"][0]["start"] == 0
+
+    # A reviewed print authority is retained independently, never added to the
+    # global author/year resolver, and has no fictitious online occurrence.
+    import badw_print_bibliography
+    printed = dict(id="print-observation", authority_id="print-publication", online_occurrence_id=None,
+        authority=dict(id="print-publication", kind="publication", label="Author 1992", year="1992",
+                       scope="published_print", status="reviewed_print_identity"),
+        candidate=dict(pdf_sha256="p" * 64, ocr_sha256="o" * 64),
+        verified_transcription="Author 1992: Printed edition.")
+    monkeypatch.setattr(badw_print_bibliography, "reviewed_occurrences", lambda *args: [printed])
+    monkeypatch.setattr(bib, "print_inventory", lambda *args: [])
+    registry, candidates, reviews = [tmp_path / name for name in ("registry", "candidates", "reviews")]
+    for path in (registry, candidates, reviews):
+        path.write_text("synthetic input")
+    fourth = tmp_path / "work/fourth"
+    summary = bib.build(tmp_path, fourth, schema, staging, registry=registry,
+                        print_candidates=candidates, print_reviews=reviews)
+    assert summary["print_only_authorities"] == 1
+    exported = (fourth / "sources.bib").read_text()
+    assert "@misc{print-observation" in exported
+    assert "Visually reviewed printed publication identity" in exported
+    with sqlite3.connect(fourth / "bibliography.sqlite") as db:
+        assert db.execute("PRAGMA foreign_key_check").fetchall() == []
+        assert db.execute("SELECT authority_id, online_occurrence_id FROM print_occurrence").fetchall() == [("print-publication", None)]

@@ -62,7 +62,8 @@ def test_build_reproducible_and_immutable(tmp_path):
         printbib.build(registry, ranges, a)
 
 
-def test_reviewed_print_import_is_hash_pinned_and_preserves_variants(tmp_path):
+@pytest.mark.parametrize("print_only", [False, True])
+def test_reviewed_print_import_is_hash_pinned_and_preserves_variants(tmp_path, print_only):
     import csv
     pdf, ocr, review = inputs(tmp_path)
     _, candidates = printbib.extract(pdf, ocr, review)
@@ -77,6 +78,9 @@ def test_reviewed_print_import_is_hash_pinned_and_preserves_variants(tmp_path):
                   online_occurrence_id="o", online_source_sha256="onlinehash",
                   status="visually_reviewed_publication_identity", verified_transcription="AUTHOR 2001: Title",
                   evidence_note="Synthetic visual review, publication identity only")
+    if print_only:
+        record.update(status="visually_reviewed_print_publication", online_occurrence_id="",
+                      online_source_sha256="", publication_label="AUTHOR 2001", publication_year="2001")
     reviews = tmp_path / "reviews.tsv"
     def write(rows):
         with reviews.open("w", newline="") as stream:
@@ -88,6 +92,9 @@ def test_reviewed_print_import_is_hash_pinned_and_preserves_variants(tmp_path):
     assert len(result) == 1  # Other candidates never become authorities.
     assert result[0]["candidate"]["raw_text"] == c["raw_text"]
     assert result[0]["verified_transcription"] != online[0]["text"]
+    if print_only:
+        assert result[0]["online_occurrence_id"] is None
+        assert result[0]["authority"]["id"].startswith("publication-print-")
     assert result == printbib.reviewed_occurrences(candidate_path, reviews, registry, online)
     assert online[0]["text"] == "Different online description"
     for update, reason in (({"candidate_text_sha256": "stale"}, "candidate"),

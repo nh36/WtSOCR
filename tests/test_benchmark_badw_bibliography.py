@@ -59,6 +59,13 @@ def test_accuracy_requires_review_and_does_not_conflate_axes(tmp_path):
     assert result["unreviewed_packets"] == 1
     assert result["counts"]["edition_abstained"] == 1
     assert result["counts"]["locator_abstained"] == 1
+    assert result["review_modes"] == {"unspecified": 1}
+    assert result["independence_status"] == "declared_only_not_verified"
+    review["review"]["edition_checks"] *= 2
+    write(reviews, [review])
+    with pytest.raises(ValueError, match="duplicate"):
+        bench.score(output / "blind_packets.jsonl", reviews, links)
+    review["review"]["edition_checks"] = review["review"]["edition_checks"][:1]
     altered = predictions()
     altered[0]["resolution"]["matches"][0]["target_status"] = "candidate"
     evidence = tmp_path / "evidence"

@@ -24,12 +24,13 @@ from badw_bibliography_aliases import load_reviews as load_alias_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v5"
+VERSION = "badw-bibliography-v6"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
 YEAR_PATTERN = r"(?:1[5-9]|20)\d{2}[a-z]?(?:[–/-]\d{2,4})?(?:\s+ff\.)?"
-EXACT_STATUSES = {"exact_online_work_rows", "exact_online_publication_rows", "exact_online_source_rows"}
+EXACT_STATUSES = {"exact_online_work_rows", "exact_online_publication_rows", "exact_online_source_rows",
+                  "exact_print_publication_rows"}
 
 
 def dumps(value: object) -> str:
@@ -219,6 +220,8 @@ def export_bibtex(rows: list[dict]) -> str:
         fields.update(reviewed.get("fields", {}))
         if reviewed:
             fields["annotation"] = "Online source metadata reviewed; print compatibility unverified"
+        if row.get("scope") == "published_print":
+            fields["annotation"] = "Visually reviewed printed publication identity; citation edition and locator unverified"
         entries.append("@" + reviewed.get("entry_type", "misc") + "{" + row["occurrence_id"] + ",\n" +
                        ",\n".join("  " + k + " = {" + bibtex_escape(v) + "}" for k, v in sorted(fields.items())) + "\n}\n")
     return "\n".join(entries)
@@ -431,7 +434,7 @@ class AuthorityResolver:
         for match in result["matches"]:
             match["target_status"] = ("accepted_identity" if match["status"] in {
                                       "exact_online_work_row", "exact_online_publication_row",
-                                      "exact_online_abbreviation_row"}
+                                      "exact_online_abbreviation_row", "exact_print_publication_row"}
                                       else "candidate")
             match["raw_text"] = result["text"][match["start"]:match["end"]]
             occupied.append((match["start"], match["end"]))
@@ -551,7 +554,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           registry: Path | None = None, metadata_reviews: Path | None = None,
           relation_reviews: Path | None = None, print_candidates: Path | None = None,
           print_reviews: Path | None = None, alias_reviews: Path | None = None,
-          citation_reviews: Path | None = None) -> dict:
+          citation_reviews: Path | None = None, publication_reviews: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -566,20 +569,32 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     authorities, relations = authority_graph(rows)
     apply_relation_reviews(rows, relations, relation_reviews)
     aliases = load_alias_reviews(alias_reviews, rows, registry)
-    exact_reviews = CitationReviews(citation_reviews, rows, cache, registry)
     printed = []
     if print_candidates or print_reviews:
         if not (print_candidates and print_reviews and registry):
             raise ValueError("print import requires candidates, reviews and source registry")
         from badw_print_bibliography import reviewed_occurrences
         printed = reviewed_occurrences(print_candidates, print_reviews, registry, rows)
+    print_authorities = [r["authority"] for r in printed if r.get("authority")]
+    if len({a["id"] for a in authorities + print_authorities}) != len(authorities + print_authorities):
+        raise ValueError("duplicate bibliography authority")
+    authorities.extend(print_authorities)
+    exact_reviews = CitationReviews(citation_reviews, rows, cache, registry, printed)
+    from badw_bibliography_variants import publication_relations
+    variants = publication_relations(publication_reviews, authorities, rows, printed)
+    print_rows = [{"id": r["authority_id"], "occurrence_id": r["id"], "kind": "publication",
+                   "label": r["authority"]["label"], "year": r["authority"]["year"], "scope": "published_print",
+                   "text": r["verified_transcription"], "source_sha256": r["candidate"]["pdf_sha256"],
+                   "source_url": "urn:sha256:" + r["candidate"]["pdf_sha256"]}
+                  for r in printed if r.get("authority")]
     inventory = print_inventory(registry) if registry else []
     output.mkdir(parents=True)
     write_jsonl(output / "source_rows.jsonl", rows)
     write_jsonl(output / "relations.jsonl", relations)
     write_jsonl(output / "print_inventory.jsonl", inventory)
     write_jsonl(output / "print_occurrences.jsonl", printed)
-    (output / "sources.bib").write_text(export_bibtex(rows), encoding="utf-8")
+    write_jsonl(output / "publication_relations.jsonl", variants)
+    (output / "sources.bib").write_text(export_bibtex(rows + print_rows), encoding="utf-8")
     db = sqlite3.connect(output / "bibliography.sqlite")
     db.executescript(schema.read_text(encoding="utf-8"))
     with db:
@@ -590,13 +605,16 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         db.executemany("INSERT INTO print_occurrence VALUES (?,?,?,?,?,?)",
                        [(r["id"], r["authority_id"], r["online_occurrence_id"],
                          r["candidate"]["pdf_sha256"], r["candidate"]["ocr_sha256"], dumps(r)) for r in printed])
+        db.executemany("INSERT INTO publication_relation VALUES (?,?,?,?,?,?)",
+                       [(r["id"], r["source_id"], r["target_id"], r["relation_type"], r["status"], dumps(r)) for r in variants])
         db.executemany("INSERT INTO relation VALUES (?,?,?,?,?)",
                        [(r["occurrence_id"], r["ordinal"], r["work_id"], r["status"], dumps(r)) for r in relations])
         for relation in relations:
             db.executemany("INSERT INTO relation_candidate VALUES (?,?,?)",
                            [(relation["occurrence_id"], relation["ordinal"], p) for p in relation["publication_candidates"]])
     counts = Counter()
-    resolver = AuthorityResolver(authorities, rows, aliases)
+    # Print-only authorities require exact citation reviews, never fuzzy/global aliases.
+    resolver = AuthorityResolver([a for a in authorities if a not in print_authorities], rows, aliases)
     if staging:
         src = sqlite3.connect(staging.resolve().as_uri() + "?mode=ro", uri=True)
         dom_evidence = dom_citation_evidence(src)
@@ -641,6 +659,9 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "citation_statuses": dict(sorted(counts.items())),
                "print_heading_candidates": len(inventory),
                "reviewed_print_occurrences": len(printed),
+               "print_only_authorities": len(print_authorities),
+               "publication_relations": len(variants),
+               "publication_reviews_sha256": file_digest(publication_reviews) if publication_reviews else None,
                "print_candidates_sha256": file_digest(print_candidates) if print_candidates else None,
                "print_reviews_sha256": file_digest(print_reviews) if print_reviews else None,
                "staging_database_sha256": file_digest(staging) if staging else None,
@@ -665,11 +686,12 @@ def main():
     parser.add_argument("--print-reviews", type=Path)
     parser.add_argument("--alias-reviews", type=Path)
     parser.add_argument("--citation-reviews", type=Path)
+    parser.add_argument("--publication-reviews", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
                      args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
-                     args.alias_reviews, args.citation_reviews)))
+                     args.alias_reviews, args.citation_reviews, args.publication_reviews)))
 
 
 if __name__ == "__main__":

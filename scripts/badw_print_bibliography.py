@@ -2,7 +2,7 @@
 """Extract lossless OCR candidates from hash-pinned, scan-reviewed bibliography ranges.
 
 Extraction does not create authorities. Only separate, explicit visual reviews
-can import publication-identity crosswalks. Two-up OCR ordering, inherited
+can import publication identities or explicit online crosswalks. Two-up OCR ordering, inherited
 authors and candidate boundaries require review. Unclassified text is kept.
 Offsets are zero-based Python Unicode offsets into the exact OCR source file.
 """
@@ -45,7 +45,7 @@ def reviewed_occurrences(candidates: Path, reviews: Path, registry: Path,
     verified_sources, records = {}, []
     for review in sorted(review_rows, key=lambda r: r["candidate_id"]):
         candidate = by_id[review["candidate_id"]]
-        if review["status"] != "visually_reviewed_publication_identity" or not review["evidence_note"].strip():
+        if review["status"] not in {"visually_reviewed_publication_identity", "visually_reviewed_print_publication"} or not review["evidence_note"].strip():
             raise ValueError("missing visual print review")
         if digest(candidate["raw_text"].encode("utf-8")) != review["candidate_text_sha256"]:
             raise ValueError("stale print candidate text")
@@ -69,14 +69,30 @@ def reviewed_occurrences(candidates: Path, reviews: Path, registry: Path,
             raise ValueError("print span disagrees with scan page")
         if any(candidate["start"] <= h.start() < candidate["end"] for h in PAGE.finditer(text)):
             raise ValueError("cross-page print import requires a multi-span review")
-        row = online[review["online_occurrence_id"]]
-        if row["kind"] != "publication" or row["source_sha256"] != review["online_source_sha256"]:
-            raise ValueError("stale online publication crosswalk")
         transcription = review["verified_transcription"]
         if not transcription.strip():
             raise ValueError("missing verified print transcription")
+        authority = None
+        if review["status"] == "visually_reviewed_print_publication":
+            if review["online_occurrence_id"] or review["online_source_sha256"]:
+                raise ValueError("print-only publication must not imply an online crosswalk")
+            label = review.get("publication_label", "").strip()
+            year = review.get("publication_year", "")
+            if not label or not re.fullmatch(r"(?:1[5-9]|20)\d{2}[a-z]?", year):
+                raise ValueError("print publication requires reviewed label/year")
+            # Identity is source-specific, not deduced from author/year spelling.
+            authority = {"id": "publication-print-" + digest(candidate["id"].encode())[:32],
+                         "kind": "publication", "label": label, "year": year,
+                         "scope": "published_print", "status": "reviewed_print_identity"}
+            authority_id, online_id = authority["id"], None
+        else:
+            row = online.get(review["online_occurrence_id"])
+            if not row or row["kind"] != "publication" or row["source_sha256"] != review["online_source_sha256"]:
+                raise ValueError("stale online publication crosswalk")
+            authority_id, online_id = row["id"], row["occurrence_id"]
         records.append({"id": "print-occurrence-" + digest(dumps(review).encode())[:32],
-                        "authority_id": row["id"], "online_occurrence_id": row["occurrence_id"],
+                        "authority_id": authority_id, "online_occurrence_id": online_id,
+                        "authority": authority,
                         "candidate": candidate, "verified_transcription": transcription,
                         "review": review, "review_sha256": file_digest(reviews),
                         "status": review["status"], "scope": "published_print",

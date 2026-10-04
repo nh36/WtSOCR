@@ -31,6 +31,8 @@ class Bibliography:
                     "SELECT record_json FROM occurrence WHERE authority_id=? ORDER BY id", (identity,))],
                 "print_occurrences": [json.loads(r[0]) for r in self.db.execute(
                     "SELECT record_json FROM print_occurrence WHERE authority_id=? ORDER BY id", (identity,))],
+                "publication_relations": [json.loads(r[0]) for r in self.db.execute(
+                    "SELECT record_json FROM publication_relation WHERE source_id=? OR target_id=? ORDER BY id", (identity, identity))],
                 "relations": [json.loads(r[0]) for r in self.db.execute(
                     "SELECT record_json FROM relation WHERE work_id=? ORDER BY occurrence_id,ordinal", (identity,))]}
 

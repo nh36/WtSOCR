@@ -15,8 +15,15 @@ CREATE TABLE relation (
 );
 CREATE TABLE print_occurrence (
   id TEXT PRIMARY KEY, authority_id TEXT NOT NULL REFERENCES authority(id),
-  online_occurrence_id TEXT NOT NULL REFERENCES occurrence(id),
+  online_occurrence_id TEXT REFERENCES occurrence(id),
   pdf_sha256 TEXT NOT NULL, ocr_sha256 TEXT NOT NULL, record_json TEXT NOT NULL
+);
+CREATE TABLE publication_relation (
+  id TEXT PRIMARY KEY, source_id TEXT NOT NULL REFERENCES authority(id),
+  target_id TEXT NOT NULL REFERENCES authority(id),
+  relation_type TEXT NOT NULL CHECK(relation_type IN ('different_edition','reprint_of','possible_same_work')),
+  status TEXT NOT NULL CHECK(status IN ('candidate','reviewed')),
+  record_json TEXT NOT NULL, CHECK(source_id<>target_id)
 );
 CREATE TABLE relation_candidate (
   occurrence_id TEXT NOT NULL, ordinal INTEGER NOT NULL,

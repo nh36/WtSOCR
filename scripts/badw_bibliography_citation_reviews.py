@@ -21,11 +21,12 @@ def sha(path: Path) -> str:
 
 class CitationReviews:
     def __init__(self, path: Path | None, rows: list[dict], cache: Path,
-                 registry: Path | None):
+                 registry: Path | None, printed: list[dict] | None = None):
         self.reviews, self.seen = {}, set()
         if path is None:
             return
         occurrences = {r["occurrence_id"]: r for r in rows}
+        print_occurrences = {r["id"]: r for r in printed or []}
         prints = {}
         if registry:
             with registry.open(encoding="utf-8") as stream:
@@ -54,6 +55,8 @@ class CitationReviews:
                 if evidence in prints and int(review["evidence_page"]) > int(prints[evidence]["pages"]):
                     raise ValueError("citation evidence page outside registered source")
                 if review["status"] == "reviewed_identity":
+                    if any(review.get(k) for k in ("print_occurrence_id", "print_source_sha256")):
+                        raise ValueError("online citation review must not supply a print target")
                     target = occurrences.get(review["online_occurrence_id"])
                     if (not target or target["source_sha256"] != review["online_source_sha256"] or
                             target["kind"] not in {"publication", "abbreviation"}):
@@ -61,8 +64,15 @@ class CitationReviews:
                     review["authority_id"] = target["id"]
                     review["kind"] = target["kind"]
                     review["start"], review["end"] = int(review["start"]), int(review["end"])
+                elif review["status"] == "reviewed_print_identity":
+                    target = print_occurrences.get(review.get("print_occurrence_id"))
+                    if (not target or target["candidate"]["pdf_sha256"] != review.get("print_source_sha256") or
+                            review["online_occurrence_id"] or review["online_source_sha256"]):
+                        raise ValueError("citation print target occurrence/hash mismatch")
+                    review["authority_id"], review["kind"] = target["authority_id"], "publication"
+                    review["start"], review["end"] = int(review["start"]), int(review["end"])
                 elif review["status"] == "unresolved_publication_or_edition":
-                    if any(review[k] for k in ("online_occurrence_id", "online_source_sha256", "start", "end")):
+                    if any(review.get(k) for k in ("online_occurrence_id", "online_source_sha256", "print_occurrence_id", "print_source_sha256", "start", "end")):
                         raise ValueError("unresolved disposition must not supply a target")
                 else:
                     raise ValueError("unsupported citation review status")
@@ -77,7 +87,7 @@ class CitationReviews:
         if hashlib.sha256(result["text"].encode("utf-8")).hexdigest() != review["text_sha256"]:
             raise ValueError("stale citation review text hash")
         result["citation_review"] = review
-        if review["status"] != "reviewed_identity":
+        if review["status"] not in {"reviewed_identity", "reviewed_print_identity"}:
             return result
         if result["matches"] or result.get("unresolved_dom_components"):
             raise ValueError("exact citation review requires an unmatched source occurrence")
@@ -89,11 +99,15 @@ class CitationReviews:
                 raise ValueError("reviewed citation span bisects an unknown-glyph marker")
         result["matches"].append({"start": start, "end": end,
             "label": result["text"][start:end], "authority_ids": [review["authority_id"]],
-            "status": "exact_online_" + review["kind"] + "_row",
+            "status": ("exact_print_publication_row" if review["status"] == "reviewed_print_identity"
+                       else "exact_online_" + review["kind"] + "_row"),
             "method": "exact_citation_source_review", "review_evidence": review,
-            "edition_status": "unreviewed", "print_status": "identity_reviewed_only"})
+            "edition_status": "unreviewed", "locator_status": "unreviewed",
+            "literal_years": re.findall(r"\b(?:1[5-9]|20)\d{2}[a-z]?\b", result["text"]),
+            "print_status": "identity_reviewed_only"})
         result["matches"].sort(key=lambda m: (m["start"], m["end"], m["label"]))
-        result["status"] = "exact_online_source_rows"
+        result["status"] = ("exact_print_publication_rows" if review["status"] == "reviewed_print_identity"
+                            else "exact_online_source_rows")
         return result
 
     def finish(self):

@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from badw_bibliography_citation_reviews import CitationReviews
 
 
-def setup_review(tmp_path, **changes):
+def setup_review(tmp_path, printed=None, **changes):
     body = b"synthetic visible source"
     digest = hashlib.sha256(body).hexdigest()
     obj = tmp_path / "objects" / "sha256" / digest[:2] / digest
@@ -26,7 +26,7 @@ def setup_review(tmp_path, **changes):
         writer.writeheader()
         writer.writerow(row)
     targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="publication", id="p1")]
-    return CitationReviews(path, targets, tmp_path, None), obj
+    return CitationReviews(path, targets, tmp_path, None, printed), obj
 
 
 def result():
@@ -43,12 +43,31 @@ def test_exact_identity_preserves_text_and_never_certifies_edition(tmp_path):
     reviews.finish()
 
 
+def test_print_only_identity_is_distinct_and_hash_pinned(tmp_path):
+    printed = [dict(id="print1", authority_id="old-edition", candidate=dict(pdf_sha256="b" * 64))]
+    changes = dict(status="reviewed_print_identity", online_occurrence_id="", online_source_sha256="",
+                   print_occurrence_id="print1", print_source_sha256="b" * 64)
+    reviews, _ = setup_review(tmp_path, printed=printed, **changes)
+    linked = reviews.apply("pdf", "c1", result())
+    assert linked["status"] == "exact_print_publication_rows"
+    match = linked["matches"][0]
+    assert match["authority_ids"] == ["old-edition"]
+    assert match["edition_status"] == match["locator_status"] == "unreviewed"
+    assert match["literal_years"] == ["1992"]
+    reviews.finish()
+    for change in ({"print_source_sha256": "c" * 64}, {"print_occurrence_id": "missing"},
+                   {"online_occurrence_id": "o1"}):
+        with pytest.raises(ValueError, match="print target"):
+            setup_review(tmp_path, printed=printed, **{**changes, **change})
+
+
 @pytest.mark.parametrize("changes,message", [
     ({"text_sha256": "z" * 64}, "source hash"),
     ({"evidence_sha256": "a" * 64}, "object/hash"),
     ({"evidence_page": "0"}, "positive page"),
     ({"online_source_sha256": "b" * 64}, "target occurrence"),
     ({"online_occurrence_id": "absent"}, "target occurrence"),
+    ({"print_occurrence_id": "print1"}, "must not supply a print target"),
     ({"status": "guessed"}, "unsupported"),
 ])
 def test_invalid_evidence_rejected(tmp_path, changes, message):
