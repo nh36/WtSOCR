@@ -1,0 +1,22 @@
+{
+  "contract_version": "badw-backend-validation-pin-v1",
+  "snapshot_id": "badw-verified-rebuild-20261003",
+  "database_manifest": {
+    "path": "work/badw_backend_tranche_20261003/database_manifest.json",
+    "sha256": "f7d9e1327895a3ccd5423f0e318452757d2fe76d548c17832e2913d2627a630c"
+  },
+  "database": {
+    "path": "work/badw_backend_tranche_20261003/staging_linked.sqlite",
+    "sha256": "4d9868645d07ef5df0f92846dadd4d64148001081aab829d4ccbf67b96dc853f",
+    "logical_sha256": "477b146d8daadf580537d37952ea69e41d6e6f666da71f5315f0520814c134a3"
+  },
+  "review_packet": {
+    "path": "work/badw_backend_tranche_20261003/independent_review_packet.jsonl",
+    "sha256": "6ac4a03a9b0fd659d74e4b352c0fbef2acea4bbb430cebcebabb195e04737891",
+    "total": 120,
+    "html": 30,
+    "pdf": 90,
+    "holdout": 24
+  },
+  "readiness": "Verified source provenance, not verified whole-entry parsing. Packets remain pending independent review."
+}

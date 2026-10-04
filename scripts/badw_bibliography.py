@@ -24,7 +24,7 @@ from badw_bibliography_aliases import load_reviews as load_alias_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v7"
+VERSION = "badw-bibliography-v8"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
@@ -564,7 +564,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           relation_reviews: Path | None = None, print_candidates: Path | None = None,
           print_reviews: Path | None = None, alias_reviews: Path | None = None,
           citation_reviews: Path | None = None, publication_reviews: Path | None = None,
-          external_publications: Path | None = None) -> dict:
+          external_publications: Path | None = None,
+          citation_claims: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -595,6 +596,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         raise ValueError("duplicate bibliography authority")
     authorities.extend(print_authorities)
     exact_reviews = CitationReviews(citation_reviews, rows, cache, registry, printed)
+    from badw_bibliography_citation_claims import CitationClaims
+    claims = CitationClaims(citation_claims, cache)
     from badw_bibliography_variants import publication_relations
     variants = publication_relations(publication_reviews, authorities, rows, printed)
     print_rows = [{"id": r["authority_id"], "occurrence_id": r["id"], "kind": "publication",
@@ -643,6 +646,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                     result = (resolver.resolve_dom(text, dom_evidence[citation_id])
                               if layer == "html" and citation_id in dom_evidence else resolver.resolve(text, layer))
                     exact_reviews.apply(layer, citation_id, result)
+                    claims.apply(layer, citation_id, result)
                     resolver.component_contract(result)
                     record = {"layer": layer, "citation_id": citation_id, "resolution": result}
                     f.write(dumps(record) + "\n")
@@ -658,6 +662,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                                        (layer, citation_id, ordinal, authority_id, match["start"], match["end"], match["target_status"]))
         src.close()
     exact_reviews.finish()
+    claims.finish()
     if db.execute("PRAGMA foreign_key_check").fetchall():
         raise ValueError("authority foreign key failure")
     db.close()
@@ -669,6 +674,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "relation_reviews_sha256": file_digest(relation_reviews) if relation_reviews else None,
                "alias_reviews_sha256": file_digest(alias_reviews) if alias_reviews else None,
                "citation_reviews_sha256": file_digest(citation_reviews) if citation_reviews else None,
+               "citation_claims_sha256": file_digest(citation_claims) if citation_claims else None,
+               "reviewed_citation_claims": len(claims.claims),
                "exact_citation_review_counts": dict(Counter(r["status"] for r in exact_reviews.reviews.values())),
                "reviewed_identity_aliases": len(aliases),
                "relation_statuses": dict(Counter(r["status"] for r in relations)),
@@ -704,13 +711,15 @@ def main():
     parser.add_argument("--print-reviews", type=Path)
     parser.add_argument("--alias-reviews", type=Path)
     parser.add_argument("--citation-reviews", type=Path)
+    parser.add_argument("--citation-claims", type=Path)
     parser.add_argument("--publication-reviews", type=Path)
     parser.add_argument("--external-publications", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
                      args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
-                     args.alias_reviews, args.citation_reviews, args.publication_reviews, args.external_publications)))
+                     args.alias_reviews, args.citation_reviews, args.publication_reviews, args.external_publications,
+                     args.citation_claims)))
 
 
 if __name__ == "__main__":
