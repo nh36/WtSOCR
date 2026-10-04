@@ -96,6 +96,150 @@ def test_untagged_envelope_gaps_do_not_claim_a_language():
         'status': 'untagged_language_unresolved'}]
 
 
+def test_lexical_clause_intersects_tags_without_losing_parent_provenance():
+    body = '''<div class="text"><span class="lem">ka</span>
+<div class="lex">Lex.<tib> ka </tib> (A);<skt> śa; ṅa </skt>(B).</div></div>'''.encode()
+    a = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    block = a['lexical_blocks'][0]
+    assert [f['source_text'] for c in block['clauses']
+            for f in c['tagged_fields']['tibetan_segments']] == ['ka ']
+    fields = [f for c in block['clauses'] for f in c['tagged_fields']['sanskrit']]
+    assert [f['source_text'] for f in fields] == ['śa', 'ṅa ']
+    assert block['sanskrit'][0]['source_text'] == ' śa; ṅa '
+    for f in fields:
+        assert f['parent_source_locator'] == block['sanskrit'][0]['locator']
+        loc = f['locator']
+        assert a['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == f['source_text']
+        assert loc['derivation'] == 'source_clause_intersection'
+
+
+def test_mixed_language_example_preserves_container_and_tagged_sanskrit():
+    body = '''<div class="text"><span class="lem">ka</span>
+<div class="beleg-all"><span class="tibetisch"><tib>gnas so</tib> ≅ <skt>viharati</skt></span>
+<span class="deutsch">wohnt</span><span class="stelle">(A: 1)</span></div></div>'''.encode()
+    a = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    example = a['examples'][0]
+    assert example['tibetan']['source_text'] == 'gnas so ≅ viharati'
+    assert example['tibetan_container_languages'] == ['sanskrit', 'tibetan']
+    assert [s['source_text'] for s in example['sanskrit']] == ['viharati']
+    field = example['sanskrit'][0]
+    loc = field['locator']
+    assert a['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == 'viharati'
+
+
+def test_direct_entry_links_and_ambiguous_arrow_targets_are_preserved():
+    body = '''<div class="text"><span class="lem">ka</span>
+<a class="link" href="/lemma/kha/2">kha</a>
+<span class="link">↓<a href="/lemma/ga/1">ga</a>, <a href="/lemma/ṅa/1">ṅa</a></span>
+<a class="link" href="/lemma/ca/1">↑ca</a>
+<a href="/pdf/cha/3">cha</a>
+<span class="link">↓missing</span>
+<span class="infotext"><a class="link" href="/lemma/hidden/1">↑hidden</a></span></div>'''.encode()
+    a = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [r['target_lemma'] for r in a['entry_links']] == ['kha', 'ga', 'ṅa', 'ca', 'cha']
+    assert a['entry_links'][-1]['target_homonym'] == '3'
+    assert a['entry_links'][-1]['target_delivery_type'] == 'generated_pdf'
+    assert [r['target_lemma'] for r in a['cross_references']] == ['ca']
+    assert a['reference_diagnostics'][0]['anchor_count'] == 2
+    assert a['reference_diagnostics'][1]['markers'] == ['↓']
+    assert a['reference_diagnostics'][1]['anchor_count'] == 0
+    for r in a['entry_links'] + a['cross_references'] + a['reference_diagnostics']:
+        loc = r['locator']
+        assert a['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == r['source_text']
+
+
+def test_language_tags_inside_translation_keep_dom_containment():
+    body = '''<div class="text"><span class="lem">ka</span>
+<div class="beleg-all"><span class="tibetisch"><tib>ka</tib> (r. <tib>kha</tib>)</span>
+<span class="deutsch">„<tib>ga</tib>“, skt. <skt>śa</skt></span></div></div>'''.encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    example = article['examples'][0]
+    assert [f['source_text'] for f in example['tibetan_segments']] == ['ka', 'kha', 'ga']
+    assert [f['source_text'] for f in example['tibetan_container_segments']] == ['ka', 'kha']
+    assert [f['source_text'] for f in example['translation_tibetan_segments']] == ['ga']
+    assert [f['source_text'] for f in example['translation_sanskrit']] == ['śa']
+    assert example['tibetan']['source_text'] == 'ka (r. kha)'
+    for name in ('tibetan_container_segments', 'translation_tibetan_segments', 'translation_sanskrit'):
+        for field in example[name]:
+            loc = field['locator']
+            assert article['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == field['source_text']
+
+
+def pdf_lines(parts, *, fonts=None, pages=None):
+    lines = []
+    for index, (text, start, end) in enumerate(parts):
+        font = (fonts or ['italic'] * len(parts))[index]
+        spans = []
+        if start:
+            spans.append(dict(start=0, end=start, style='regular', font_id='roman'))
+        spans.append(dict(start=start, end=end, style='italic', font_id=font))
+        if end < len(text):
+            spans.append(dict(start=end, end=len(text), style='regular', font_id='roman'))
+        lines.append(dict(text=text, style_spans=spans, page_id=(pages or ['p'] * len(parts))[index],
+                          line_index=index, printed_page=1, volume=2, span_index=0,
+                          run_start=index, run_end_exclusive=index + 1))
+    return lines
+
+
+def test_sanskrit_wrap_and_unlabelled_tokens_preserve_exact_source():
+    lines = pdf_lines([('skt. cai-', 5, 9), ('tyāṅganaḥ „Hof“', 0, 10)])
+    divisions = [dict(start_line_index=0, end_line_index_exclusive=2)]
+    candidates = _candidates(lines, divisions)
+    assert candidates['sanskrit'][0]['source_text'] == 'cai-\ntyāṅganaḥ'
+    assert candidates['transliteration_candidates'] == []
+    unlabelled = pdf_lines([('Lex. pradakṣiṇapaṭṭikā „Weg“', 5, 22),
+                           ('≈ cai-', 2, 6), ('tyāṅganaḥ „Hof“', 0, 10),
+                           ('Beiname Viṣṇus.', 0, 0)])
+    # Regular prose has no italic span at all.
+    unlabelled[-1]['style_spans'] = [dict(start=0, end=15, style='regular', font_id='roman')]
+    c = _candidates(unlabelled, [dict(start_line_index=0, end_line_index_exclusive=4)])
+    assert [t['source_text'] for t in c['transliteration_candidates']] == [
+        'pradakṣiṇapaṭṭikā', 'cai-\ntyāṅganaḥ', 'Viṣṇus']
+    assert c['sanskrit'] == []
+    assert any(s['source_text'] == 'cai-\ntyāṅganaḥ ' for s in c['unclassified_italic_spans'])
+
+
+def test_sanskrit_label_inside_italic_and_division_barrier():
+    lines = pdf_lines([('skt. śa', 0, 7)])
+    candidates = _candidates(lines, [dict(start_line_index=0, end_line_index_exclusive=1)])
+    assert candidates['sanskrit'][0]['source_text'] == 'śa'
+    lines = pdf_lines([('skt. cai-', 5, 9), ('tyāṅganaḥ', 0, 9)])
+    candidates = _candidates(lines, [dict(start_line_index=0, end_line_index_exclusive=1),
+                                    dict(start_line_index=1, end_line_index_exclusive=2)])
+    assert candidates['sanskrit'][0]['source_text'] == 'cai-'
+    assert [s['source_text'] for s in candidates['unclassified_italic_spans']] == ['tyāṅganaḥ']
+
+
+def test_lexical_typographic_children_preserve_ascii_and_clause_boundaries():
+    text = 'Lex. niruddham (A); ka (B).'
+    lines = pdf_lines([(text, 5, len(text))])
+    c = _candidates(lines, [dict(start_line_index=0, end_line_index_exclusive=1)])
+    clauses = c['lexical_blocks'][0]['clauses']
+    assert [clause['typographic_fields'][0]['source_text'] for clause in clauses] == [
+        'niruddham (A)', 'ka (B).']
+    assert c['sanskrit'] == []
+    assert c['transliteration_candidates'] == []
+    for clause in clauses:
+        field = clause['typographic_fields'][0]
+        assert field['status'] == 'language_unresolved'
+        assert text[field['visual_start']:field['visual_end']] == field['source_text']
+        assert field['parent_field_visual_start'] == 5
+        assert field['parent_field_visual_end'] == len(text)
+        assert field['source_style_spans'] == c['unclassified_italic_spans'][0]['source_style_spans']
+
+
+@pytest.mark.parametrize('fonts,pages', [(['a', 'b'], ['p', 'p']), (['a', 'a'], ['p', 'q'])])
+def test_italic_continuation_cannot_cross_font_or_page_identity(fonts, pages):
+    lines = pdf_lines([('skt. cai-', 5, 9), ('tyāṅganaḥ', 0, 9)], fonts=fonts, pages=pages)
+    c = _candidates(lines, [dict(start_line_index=0, end_line_index_exclusive=2)])
+    assert c['sanskrit'][0]['source_text'] == 'cai-'
+    assert len(c['unclassified_italic_spans']) == 1
+
+
 def test_source_enrichment_adds_typed_fields_without_ownership():
     a = article()
     text = a['article_source_text']

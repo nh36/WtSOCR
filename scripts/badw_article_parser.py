@@ -29,7 +29,7 @@ from badw_html import (
 from badw_source_cache import RequestSpec, SourceCache, quote_iri
 
 
-ARTICLE_CONTRACT_VERSION = "badw-database-article-v2"
+ARTICLE_CONTRACT_VERSION = "badw-database-article-v3"
 HIDDEN_CLASSES = ("infotext",)
 HIDDEN_TAGS = ("script", "style", "input")
 
@@ -172,9 +172,25 @@ def _field_envelope(fields, source_text):
 
 def _path_identity(url: str) -> tuple[str, str]:
     parts = [unquote(part) for part in urlsplit(url).path.split("/") if part]
-    if len(parts) >= 2 and parts[0] == "lemma":
+    if len(parts) >= 2 and parts[0] in {"lemma", "pdf"}:
         return parts[1], parts[2] if len(parts) >= 3 else ""
     return "", ""
+
+
+def _intersect_field(field, start, end, source_text):
+    """Intersect source containment without losing the original DOM locator."""
+    locator = field["locator"]
+    left = max(start, locator["visible_text_start"])
+    right = min(end, locator["visible_text_end"])
+    if left >= right:
+        return None
+    if (left, right) == (locator["visible_text_start"], locator["visible_text_end"]):
+        return field
+    value = source_text[left:right]
+    return {**field, "source_text": value, "text": compact_text(value),
+            "parent_source_locator": dict(locator),
+            "locator": {**locator, "visible_text_start": left, "visible_text_end": right,
+                        "derivation": "source_clause_intersection"}}
 
 
 def _children_after_until_meaning(meaning: Element) -> list[Element]:
@@ -281,6 +297,22 @@ def parse_database_article(
                 "tibetan": (_located_field(tibetan, fragments) if tibetan is not None
                             else _field_envelope(tibetan_segments, article_source_text)),
                 "tibetan_segments": tibetan_segments,
+                # The legacy segment list covers the whole example, including
+                # Tibetan quoted inside German. Expose exact DOM containment
+                # separately; do not infer semantic ownership from language.
+                "tibetan_container_segments": _records_for_elements(
+                    find_all(tibetan, tag="tib") if tibetan is not None else [], fragments),
+                "translation_tibetan_segments": _records_for_elements(
+                    find_all(translation, tag="tib") if translation is not None else [], fragments),
+                "translation_sanskrit": _records_for_elements(
+                    find_all(translation, tag="skt") if translation is not None else [], fragments),
+                # A .tibetisch container can include explicitly tagged Sanskrit
+                # equivalences. Its full text is not a homogeneous language
+                # assertion: retain both the container and its tagged children.
+                "sanskrit": _records_for_elements(find_all(element, tag="skt"), fragments),
+                "tibetan_container_languages": sorted(
+                    {language for tag, language in (("tib", "tibetan"), ("skt", "sanskrit"))
+                     if tibetan is not None and find_all(tibetan, tag=tag)}),
                 "translation": _located_field(translation, fragments),
             }
         )
@@ -305,8 +337,9 @@ def parse_database_article(
             clauses, diagnostics = lexical_clauses(article_source_text, a + (label.end() if label else 0), b)
             for clause in clauses:
                 clause["tagged_fields"] = {
-                    name: [f for f in block[name] if clause["start"] <= f["locator"]["visible_text_start"]
-                           < f["locator"]["visible_text_end"] <= clause["end"]]
+                    name: [intersection for f in block[name]
+                           if (intersection := _intersect_field(
+                               f, clause["start"], clause["end"], article_source_text)) is not None]
                     for name in ("tibetan_segments", "sanskrit", "translations", "citations", "sigla")}
                 clause["german_quotation_candidates"] = quoted_spans(article_source_text, clause["start"], clause["end"])
             block["clauses"] = clauses
@@ -338,11 +371,35 @@ def parse_database_article(
             }
         )
 
-    cross_references = []
-    for link_container in find_all(article, class_name="link"):
-        anchor = find_first(link_container, tag="a")
-        if anchor is None or anchor is link_container or not anchor.attrs.get("href"):
+    # Direct grammatical/variant links need not have an arrow or a wrapping
+    # span.link. Keep every visible lemma anchor, independently of marker
+    # association; never assign multiple targets to the first anchor.
+    entry_links = []
+    for anchor in find_all(article, tag="a"):
+        href = anchor.attrs.get("href")
+        if not href:
             continue
+        target_url = quote_iri(urljoin(final_url, href))
+        delivery = urlsplit(target_url).path.split("/")[1:2]
+        if delivery not in (["lemma"], ["pdf"]):
+            continue
+        field = _located_field(anchor, fragments)
+        if not field or field["locator"]["visible_text_start"] is None:
+            continue
+        target_lemma, target_homonym = _path_identity(target_url)
+        entry_links.append({**field, "target_url": target_url,
+            "target_lemma": target_lemma, "target_homonym": target_homonym,
+            "target_delivery_type": "database_article" if delivery == ["lemma"] else "generated_pdf",
+            "status": "explicit_source_link"})
+
+    cross_references = []
+    reference_diagnostics = []
+    for link_container in find_all(article, class_name="link"):
+        link_field = _located_field(link_container, fragments)
+        if not link_field or link_field["locator"]["visible_text_start"] is None:
+            continue
+        anchors = [a for a in find_all(link_container, tag="a") if a.attrs.get("href")
+                   and (_located_field(a, fragments) or {}).get("locator", {}).get("visible_text_start") is not None]
         container_text = exact_text(
             link_container,
             excluded_classes=HIDDEN_CLASSES,
@@ -351,10 +408,15 @@ def parse_database_article(
         markers = [character for character in container_text if character in "↑↓"]
         if not markers:
             continue
+        if len(anchors) != 1:
+            reference_diagnostics.append({**link_field,
+                "reason": "arrow container has no unique target", "anchor_count": len(anchors),
+                "markers": markers, "status": "explicit_reference_target_unresolved"})
+            continue
+        anchor = anchors[0]
         target_url = quote_iri(urljoin(final_url, anchor.attrs["href"]))
         target_lemma, target_homonym = _path_identity(target_url)
         for marker in markers:
-            link_field = _located_field(link_container, fragments) or {}
             cross_references.append(
                 {
                     "locator": link_field.get("locator"),
@@ -362,7 +424,8 @@ def parse_database_article(
                     "source_text": container_text,
                     "target_homonym": target_homonym,
                     "target_lemma": target_lemma,
-                    "target_text": compact_text(exact_text(anchor)),
+                    "target_text": compact_text(exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
+                                                           excluded_tags=HIDDEN_TAGS)),
                     "target_url": target_url,
                 }
             )
@@ -410,6 +473,8 @@ def parse_database_article(
         "article_source_text": article_source_text,
         "article_text": compact_text(article_source_text),
         "cross_references": cross_references,
+        "entry_links": entry_links,
+        "reference_diagnostics": reference_diagnostics,
         "citations": citations,
         "divisions": divisions,
         "dom_full_text": dom_full_text,

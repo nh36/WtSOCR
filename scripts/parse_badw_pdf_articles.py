@@ -26,7 +26,7 @@ from badw_canonical_pages import stable_json_bytes
 
 
 VERSION = "badw-pdf-structural-parser-v7"
-EXTRACTION_VERSION = "badw-source-components-v1"
+EXTRACTION_VERSION = "badw-source-components-v2"
 PREVIOUS_VERSION = "badw-pdf-structural-parser-v6"
 # A sense number is a standalone printed label, not the first component of a
 # wrapped source locator such as 1.3.34c). Require actual following space.
@@ -336,6 +336,7 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
+        "transliteration_candidates": [],
         "lexical_blocks": []}
     if not lines:
         return result
@@ -379,6 +380,31 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
         return {**item, **location(item["visual_start"], item["visual_end"]),
                 "children": [anchored_quote(child) for child in item["children"]]}
 
+    # A typographic field can wrap without acquiring a new language or losing
+    # its literal hyphen/newline. Font, page and division continuity are required.
+    italic_fields = []
+    for line_index, line in enumerate(lines):
+        for span in line["style_spans"]:
+            if span["style"] != "italic":
+                continue
+            start, end = offsets[line_index] + span["start"], offsets[line_index] + span["end"]
+            previous = italic_fields[-1] if italic_fields else None
+            joins = (previous is not None and previous["end_line_index"] + 1 == line_index
+                and previous["visual_end"] + 1 == start and span["start"] == 0
+                and span.get("font_id") is not None and previous["font_id"] == span["font_id"]
+                and lines[previous["end_line_index"]]["page_id"] == line["page_id"]
+                and previous["division_index"] == division_by_line[line_index]
+                and text[previous["visual_end"] - 1] not in ".;:")
+            if joins:
+                previous.update(location(previous["visual_start"], end))
+                previous["source_text"] = text[previous["visual_start"]:end]
+                previous["source_style_spans"].append({"line_index": line_index, **span})
+            else:
+                italic_fields.append({"source_text": text[start:end], "font_id": span.get("font_id"),
+                    "family": span.get("family"), "style": "italic",
+                    "source_style_spans": [{"line_index": line_index, **span}],
+                    "status": "language_unresolved", **location(start, end)})
+
     # Retain full source clauses independently of downstream example/quote
     # claims. A partial semantic container must not hide a Lex. tail.
     from badw_source_components import lexical_clauses, quoted_spans
@@ -393,6 +419,19 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
         for clause in clauses:
             clause.update(location(clause["start"], clause["end"]))
             clause["german_quotation_candidates"] = quoted_spans(text, clause["start"], clause["end"])
+            # Typography is independently recoverable even for ASCII Sanskrit,
+            # Tibetan, sigla or Latin names. Retain clipped source fields as
+            # clause children without asserting a language or quote ownership.
+            clause["typographic_fields"] = []
+            for field in italic_fields:
+                left = max(clause["start"], field["visual_start"])
+                right = min(clause["end"], field["visual_end"])
+                if left < right:
+                    clause["typographic_fields"].append({
+                        **field, **location(left, right), "source_text": text[left:right],
+                        "parent_field_visual_start": field["visual_start"],
+                        "parent_field_visual_end": field["visual_end"],
+                    })
             clause["status"] = "unassociated_source_clause"
         result["lexical_blocks"].append({"source_text": text[a + label.start():b],
             "label_start": a + label.start(), "clauses": clauses,
@@ -404,12 +443,14 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
     for label in re.finditer(r"\bskt\.\s*", text):
         position = label.end()
         span = italic_span_at(position)
-        if span is None or span[0] != position:
+        if span is None:
             result["language_diagnostics"].append({
-                "reason": "Sanskrit label without exact italic field boundary",
+                "reason": "Sanskrit label without italic source field",
                 **location(label.start(), label.end())})
             continue
-        end = span[1]
+        field = next(item for item in italic_fields
+                     if item["visual_start"] <= position < item["visual_end"])
+        end = field["visual_end"]
         while end > position and text[end - 1].isspace():
             end -= 1
         if position < end:
@@ -417,17 +458,22 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 "label_start": label.start(), "label_end": label.end(),
                 "evidence": "literal skt. label and italic field boundary",
                 "status": "source_language_field", **location(position, end)})
-    for line_index, line in enumerate(lines):
-        for span in line["style_spans"]:
-            if span["style"] != "italic":
-                continue
-            start, end = offsets[line_index] + span["start"], offsets[line_index] + span["end"]
-            if not any(item["visual_start"] == start and item["visual_end"] <= end
-                       for item in result["sanskrit"]):
-                result["unclassified_italic_spans"].append({
-                    "source_text": text[start:end], "font_id": span.get("font_id"),
-                    "family": span.get("family"), "style": span["style"],
-                    "status": "language_unresolved", **location(start, end)})
+    for field in italic_fields:
+        if not any(item["visual_start"] == field["visual_start"]
+                   and item["visual_end"] <= field["visual_end"] for item in result["sanskrit"]):
+            result["unclassified_italic_spans"].append(field)
+    # Diacritics are a discovery signal, not proof of Sanskrit. This also
+    # surfaces names embedded in German prose (e.g. Viṣṇus), without turning
+    # inflected names or shared Tibetan typography into language assertions.
+    for token in re.finditer(r"[^\W\d_]+(?:-\n[^\W\d_]+)*", text, re.UNICODE):
+        if not re.search(r"[āīūṛṝḷḹṭḍṇṣḥṃ]", token.group()):
+            continue
+        if any(item["visual_start"] <= token.start() < token.end() <= item["visual_end"]
+               for item in result["sanskrit"]):
+            continue
+        result["transliteration_candidates"].append({"source_text": token.group(),
+            "status": "language_unresolved", "evidence": "transliteration diacritic; not a language claim",
+            **location(token.start(), token.end())})
 
     quotes, quote_diagnostics = reviewed_quotation_spans(text, article_id, load_quote_boundary_reviews())
     result["quotation_diagnostics"] = quote_diagnostics

@@ -107,7 +107,7 @@ def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
     assert first["source_faithful_text"] == previous["source_faithful_text"]
     assert first["visual_lines"] == previous["visual_lines"]
     assert first["contract_version"] == "badw-pdf-structural-parser-v7"
-    assert first['extraction_version'] == 'badw-source-components-v1'
+    assert first['extraction_version'] == 'badw-source-components-v2'
     previous["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="hash mismatch"):
         reindex_article(previous)
@@ -220,7 +220,7 @@ def test_v7_offline_reindex_retains_source_and_adds_language_candidates():
     previous['contract_version'] = 'badw-pdf-structural-parser-v7'
     result = reindex_article(previous)
     assert result['contract_version'] == 'badw-pdf-structural-parser-v7'
-    assert result['extraction_version'] == 'badw-source-components-v1'
+    assert result['extraction_version'] == 'badw-source-components-v2'
     assert result['visual_lines'] == previous['visual_lines']
     assert result['source_objects'] == previous['source_objects']
     assert 'unclassified_italic_spans' in result['candidates']
