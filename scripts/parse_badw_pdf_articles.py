@@ -26,6 +26,7 @@ from badw_canonical_pages import stable_json_bytes
 
 
 VERSION = "badw-pdf-structural-parser-v7"
+EXTRACTION_VERSION = "badw-source-components-v1"
 PREVIOUS_VERSION = "badw-pdf-structural-parser-v6"
 # A sense number is a standalone printed label, not the first component of a
 # wrapped source locator such as 1.3.34c). Require actual following space.
@@ -333,7 +334,9 @@ def reviewed_quotation_spans(text: str, article_id: str,
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 article_id: str = "") -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
-        "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": []}
+        "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
+        "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
+        "lexical_blocks": []}
     if not lines:
         return result
     offsets: list[int] = []
@@ -375,6 +378,56 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
     def anchored_quote(item: dict[str, Any]) -> dict[str, Any]:
         return {**item, **location(item["visual_start"], item["visual_end"]),
                 "children": [anchored_quote(child) for child in item["children"]]}
+
+    # Retain full source clauses independently of downstream example/quote
+    # claims. A partial semantic container must not hide a Lex. tail.
+    from badw_source_components import lexical_clauses, quoted_spans
+    for division in divisions:
+        first, last = division["start_line_index"], division["end_line_index_exclusive"]
+        a, b = offsets[first], offsets[last - 1] + len(lines[last - 1]["text"])
+        label = re.search(r"\bLex\.\s*", text[a:b])
+        if not label:
+            continue
+        start = a + label.end()
+        clauses, diagnostics = lexical_clauses(text, start, b)
+        for clause in clauses:
+            clause.update(location(clause["start"], clause["end"]))
+            clause["german_quotation_candidates"] = quoted_spans(text, clause["start"], clause["end"])
+            clause["status"] = "unassociated_source_clause"
+        result["lexical_blocks"].append({"source_text": text[a + label.start():b],
+            "label_start": a + label.start(), "clauses": clauses,
+            "diagnostics": diagnostics, "extent_status": "to_source_division_end",
+            **location(a + label.start(), b)})
+
+    # Typography preserves a source span, not its language. Only a literal
+    # Sanskrit label licenses a language claim; Tibetan uses the same italics.
+    for label in re.finditer(r"\bskt\.\s*", text):
+        position = label.end()
+        span = italic_span_at(position)
+        if span is None or span[0] != position:
+            result["language_diagnostics"].append({
+                "reason": "Sanskrit label without exact italic field boundary",
+                **location(label.start(), label.end())})
+            continue
+        end = span[1]
+        while end > position and text[end - 1].isspace():
+            end -= 1
+        if position < end:
+            result["sanskrit"].append({"source_text": text[position:end],
+                "label_start": label.start(), "label_end": label.end(),
+                "evidence": "literal skt. label and italic field boundary",
+                "status": "source_language_field", **location(position, end)})
+    for line_index, line in enumerate(lines):
+        for span in line["style_spans"]:
+            if span["style"] != "italic":
+                continue
+            start, end = offsets[line_index] + span["start"], offsets[line_index] + span["end"]
+            if not any(item["visual_start"] == start and item["visual_end"] <= end
+                       for item in result["sanskrit"]):
+                result["unclassified_italic_spans"].append({
+                    "source_text": text[start:end], "font_id": span.get("font_id"),
+                    "family": span.get("family"), "style": span["style"],
+                    "status": "language_unresolved", **location(start, end)})
 
     quotes, quote_diagnostics = reviewed_quotation_spans(text, article_id, load_quote_boundary_reviews())
     result["quotation_diagnostics"] = quote_diagnostics
@@ -422,14 +475,44 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
             # Some source runs have no useful italic boundary.  Retain the
             # older, conservative one-token candidate in that case, but do
             # not infer a multiword target from unstyled prose.
-            fallback = re.match(r"[^\s;,.()„“]{1,80}", text[marker.end():])
+            fallback = re.match(r"[^\s;,.()„“]{1,80}", text[target_start:])
             if not fallback:
                 continue
-            end = marker.end() + fallback.end()
+            end = target_start + fallback.end()
         if end == target_start or end - start > 80:
             continue
+        targets = [{"source_text": text[marker.end():end],
+                    **location(marker.end(), end)}]
+        # A comma-separated source list can carry a second printed homonym
+        # and target without repeating the arrow. Require the original
+        # target's italic font plus exact page/division continuity; plain
+        # prose and differently styled text cannot extend this candidate.
+        if italic:
+            while end - start < 80:
+                separator = re.match(r",\s*(?:[1-9]\d*\s*)?", text[end:])
+                if separator is None:
+                    break
+                next_start = end + separator.end()
+                following = italic_span_at(next_start)
+                if (following is None or following[0] != next_start
+                        or following[3]["font_id"] != italic[3]["font_id"]
+                        or lines[following[2]]["page_id"] != lines[italic[2]]["page_id"]
+                        or division_by_line[following[2]] != division_by_line[italic[2]]):
+                    break
+                next_end = following[1]
+                while next_end > next_start and text[next_end - 1] in " \t\n.,;:":
+                    next_end -= 1
+                if next_end <= next_start or next_end - start > 80:
+                    break
+                label_start = end + 1
+                while label_start < next_start and text[label_start].isspace():
+                    label_start += 1
+                targets.append({"source_text": text[label_start:next_end],
+                                **location(label_start, next_end)})
+                end = next_end
         result["cross_references"].append({"marker": text[start],
             "target_label_candidate": text[marker.end():end], **location(start, end),
+            "target_candidates": targets,
             "status": "unresolved_candidate"})
     citations = result["parenthetical_citations"]
     for quote_index, quote in enumerate(result["german_quotes"]):
@@ -503,7 +586,8 @@ def parse_article(article: dict[str, Any], load_page: Any) -> dict[str, Any]:
     diagnostics["unknown_glyphs"] = sum(line["unknown_glyphs"] for line in lines)
     diagnostics.update({key: len(value) for key, value in candidates.items()})
     return {
-        "contract_version": VERSION, "article_id": article["id"], "volume": article["volume"],
+        "contract_version": VERSION, "extraction_version": EXTRACTION_VERSION,
+        "article_id": article["id"], "volume": article["volume"],
         "loc_headword": article["loc_headword"], "tibetan_headword": article["tibetan_headword"],
         "homonym": article["homonym"], "ending_status": article["ending_status"],
         "source_objects": source_objects, "source_faithful_sha256": _hash_text(article["source_faithful_text"]),
@@ -522,11 +606,11 @@ def _file_hash(path: Path) -> str:
 
 
 def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
-    """Rebuild only derived divisions/candidates from an audited cached v6 row.
+    """Rebuild only derived divisions/candidates from an audited cached row.
 
     This offline path never reloads a PDF and never changes source/visual text.
     """
-    if article.get("contract_version") != PREVIOUS_VERSION:
+    if article.get("contract_version") not in (PREVIOUS_VERSION, "badw-pdf-structural-parser-v7"):
         raise ValueError("unsupported source structure contract for reindex")
     lines = article["visual_lines"]
     if [line["line_index"] for line in lines] != list(range(len(lines))):
@@ -541,7 +625,8 @@ def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
     if diagnostics["line_count"] != len(lines) or diagnostics["unknown_glyphs"] != sum(
             line["unknown_glyphs"] for line in lines):
         raise ValueError("visual-line diagnostics mismatch")
-    return {**article, "contract_version": VERSION, "divisions": divisions,
+    return {**article, "contract_version": VERSION, "extraction_version": EXTRACTION_VERSION,
+            "divisions": divisions,
             "candidates": candidates, "diagnostics": diagnostics}
 
 

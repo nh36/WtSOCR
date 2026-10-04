@@ -111,12 +111,34 @@ def graph(nodes, edges, text):
     return set(keys.values()), nested, links
 
 
+def boundary_diagnostic(nodes, text):
+    """Diagnostic only: ignore terminal whitespace, never internal text.
+
+    Report collapsed/empty spans explicitly. This is not an alternative gold
+    contract and never changes the exact graph/ownership score.
+    """
+    keys = []
+    empty = 0
+    for node in nodes:
+        a, b = node["start"], node["end"]
+        while a < b and text[a].isspace():
+            a += 1
+        while a < b and text[b - 1].isspace():
+            b -= 1
+        if a == b:
+            empty += 1
+        else:
+            keys.append((node["kind"], a, b))
+    return set(keys), len(keys) - len(set(keys)), empty
+
+
 def score(packets, reviews, predictions):
     pinned, gold, predicted = index(packets), index(reviews), index(predictions)
     if set(gold) - set(pinned) or set(predicted) - set(pinned):
         raise ValueError("unpinned article")
     totals, groups, modes = Counter(), defaultdict(Counter), Counter()
     kinds, disagreements = defaultdict(Counter), []
+    boundary = Counter()
     for key, packet in sorted(pinned.items()):
         text = packet["review_text"]
         digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -149,6 +171,12 @@ def score(packets, reviews, predictions):
                 raise ValueError("prediction changed pinned source or split")
         expected = graph(review["reviewed_nodes"], review["reviewed_edges"], text)
         actual = graph(predicted[key]["nodes"], predicted[key]["edges"], text)
+        wanted_boundary, gold_collisions, gold_empty = boundary_diagnostic(review["reviewed_nodes"], text)
+        found_boundary, predicted_collisions, predicted_empty = boundary_diagnostic(predicted[key]["nodes"], text)
+        boundary.update(gold=len(wanted_boundary), predicted=len(found_boundary),
+                        correct=len(wanted_boundary & found_boundary),
+                        gold_collisions=gold_collisions, predicted_collisions=predicted_collisions,
+                        gold_empty=gold_empty, predicted_empty=predicted_empty)
         for kind in sorted(PARENTS):
             wanted = {n for n in expected[0] if n[0] == kind}
             found = {n for n in actual[0] if n[0] == kind}
@@ -174,6 +202,7 @@ def score(packets, reviews, predictions):
             "groups": {k: dict(v) for k, v in sorted(groups.items())},
             "kinds": {k: dict(v) for k, v in sorted(kinds.items())},
             "disagreements": disagreements,
+            "terminal_whitespace_diagnostic": dict(boundary),
             "review_modes": dict(sorted(modes.items())),
             "limitations": "Empty axes have no measured accuracy; review-mode declarations do not prove independence. Exact entry scores cover packet review text only; PDF packets omit headings. Source divisions are not asserted senses. Partial reviews are unscored."}
 

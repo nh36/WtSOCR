@@ -107,6 +107,7 @@ def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
     assert first["source_faithful_text"] == previous["source_faithful_text"]
     assert first["visual_lines"] == previous["visual_lines"]
     assert first["contract_version"] == "badw-pdf-structural-parser-v7"
+    assert first['extraction_version'] == 'badw-source-components-v1'
     previous["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="hash mismatch"):
         reindex_article(previous)
@@ -166,6 +167,65 @@ def _candidate_division(count: int) -> list[dict]:
     return [{"start_line_index": 0, "end_line_index_exclusive": count}]
 
 
+def test_regular_reference_fallback_skips_newline_and_homonym() -> None:
+    lines = [_candidate_line('↑'), _candidate_line('3'), _candidate_line('ce')]
+    ref = _candidates(lines, _candidate_division(3))['cross_references'][0]
+    assert ref['target_label_candidate'] == '\n3\nce'
+    assert ref['visual_end'] == len('↑\n3\nce')
+
+
+def test_sanskrit_requires_explicit_label_not_italics():
+    line = _candidate_line('Kontinuum (skt. saṃtāna) und Aggregat', 16, 23)
+    other = _candidate_line('bod skad', 0, 8)
+    result = _candidates([line, other], _candidate_division(2))
+    field = result['sanskrit'][0]
+    assert field['source_text'] == 'saṃtāna'
+    assert line['text'][field['visual_start']:field['visual_end']] == 'saṃtāna'
+    assert [s['source_text'] for s in result['unclassified_italic_spans']] == ['bod skad']
+    assert result['language_diagnostics'] == []
+    regular = _candidate_line('skt. saṃtāna')
+    result = _candidates([regular], _candidate_division(1))
+    assert result['sanskrit'] == []
+    assert len(result['language_diagnostics']) == 1
+
+
+def test_pdf_lexical_clauses_preserve_full_tail_and_nested_delimiters():
+    text = 'Lex. ka (r.ka; r. kha) „Wort; Sache“ (Dagy); skt. śa (brDa).'
+    lines = [_candidate_line(text)]
+    divisions, _ = _structure(lines)
+    candidates = _candidates(lines, divisions)
+    block = candidates['lexical_blocks'][0]
+    assert block['source_text'] == text
+    assert block['extent_status'] == 'to_source_division_end'
+    assert [c['source_text'] for c in block['clauses']] == [
+        'ka (r.ka; r. kha) „Wort; Sache“ (Dagy)', 'skt. śa (brDa).']
+    assert block['diagnostics'] == []
+    assert block['clauses'][0]['german_quotation_candidates'][0]['source_text'] == '„Wort; Sache“'
+    for clause in block['clauses']:
+        assert text[clause['visual_start']:clause['visual_end']] == clause['source_text']
+        assert clause['status'] == 'unassociated_source_clause'
+
+
+def test_empty_pdf_lex_label_remains_a_source_block():
+    lines = [_candidate_line('Lex.')]
+    divisions, _ = _structure(lines)
+    block = _candidates(lines, divisions)['lexical_blocks'][0]
+    assert block['source_text'] == 'Lex.'
+    assert block['clauses'] == []
+
+
+def test_v7_offline_reindex_retains_source_and_adds_language_candidates():
+    article, page = _fixture()
+    previous = parse_article(article, lambda _: page)
+    previous['contract_version'] = 'badw-pdf-structural-parser-v7'
+    result = reindex_article(previous)
+    assert result['contract_version'] == 'badw-pdf-structural-parser-v7'
+    assert result['extraction_version'] == 'badw-source-components-v1'
+    assert result['visual_lines'] == previous['visual_lines']
+    assert result['source_objects'] == previous['source_objects']
+    assert 'unclassified_italic_spans' in result['candidates']
+
+
 def test_multiword_italic_reference_uses_typographic_boundary() -> None:
     line = _candidate_line("vgl. ↑’khon gcugs. anschliessend", 6, 17)
     candidate = _candidates([line], _candidate_division(1))["cross_references"][0]
@@ -214,6 +274,39 @@ def test_reference_with_separate_homonym_line_preserves_exact_span() -> None:
     candidate = _candidates(lines, _candidate_division(3))["cross_references"][0]
     assert candidate["target_label_candidate"] == "\n1\n’chos"
     assert (candidate["start_line_index"], candidate["end_line_index"]) == (0, 2)
+
+
+def test_comma_reference_list_preserves_second_target_and_homonym() -> None:
+    lines = [_candidate_line('↓tal la, ', 1, 7), _candidate_line('2'),
+             _candidate_line('tal tsam.།', 0, 8)]
+    for line in lines:
+        for span in line['style_spans']:
+            if span['style'] == 'italic':
+                span['font_id'] = 'same-font'
+    ref = _candidates(lines, _candidate_division(3))['cross_references'][0]
+    assert ref['target_label_candidate'] == 'tal la, \n2\ntal tsam'
+    assert [t['source_text'] for t in ref['target_candidates']] == [
+        'tal la', '2\ntal tsam']
+
+
+def test_comma_reference_list_does_not_cross_font_page_or_division() -> None:
+    for barrier in ('font', 'page', 'division', 'regular'):
+        lines = [_candidate_line('↓ka, ', 1, 3), _candidate_line('kha', 0, 3)]
+        lines[0]['style_spans'][1]['font_id'] = 'first'
+        lines[1]['style_spans'][0]['font_id'] = 'first'
+        divisions = _candidate_division(2)
+        if barrier == 'font':
+            lines[1]['style_spans'][0]['font_id'] = 'second'
+        elif barrier == 'page':
+            lines[1]['page_id'] = 'other'
+        elif barrier == 'division':
+            divisions = [{'start_line_index': 0, 'end_line_index_exclusive': 1},
+                         {'start_line_index': 1, 'end_line_index_exclusive': 2}]
+        else:
+            lines[1]['style_spans'][0]['style'] = 'regular'
+        ref = _candidates(lines, divisions)['cross_references'][0]
+        assert ref['target_label_candidate'] == 'ka'
+        assert len(ref['target_candidates']) == 1
 
 
 def test_arrow_inside_italic_span_and_unstyled_fallback() -> None:

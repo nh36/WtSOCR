@@ -7,6 +7,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Callable, Iterable, Mapping, Sequence
 from urllib.parse import unquote, urljoin, urlsplit
@@ -28,7 +29,7 @@ from badw_html import (
 from badw_source_cache import RequestSpec, SourceCache, quote_iri
 
 
-ARTICLE_CONTRACT_VERSION = "badw-database-article-v1"
+ARTICLE_CONTRACT_VERSION = "badw-database-article-v2"
 HIDDEN_CLASSES = ("infotext",)
 HIDDEN_TAGS = ("script", "style", "input")
 
@@ -145,6 +146,30 @@ def _located_field(
     }
 
 
+def _field_envelope(fields, source_text):
+    """Keep all explicitly tagged segments, including literal intervening text.
+
+    The derived envelope is auditable but does not assert the language of its
+    untagged gaps. Individual tagged segments are always retained separately.
+    """
+    if not fields:
+        return None
+    start = min(f["locator"]["visible_text_start"] for f in fields)
+    end = max(f["locator"]["visible_text_end"] for f in fields)
+    value = source_text[start:end]
+    gaps, cursor = [], start
+    for field in sorted(fields, key=lambda f: f["locator"]["visible_text_start"]):
+        a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
+        if cursor < a:
+            gaps.append({"source_text": source_text[cursor:a],
+                         "locator": {"visible_text_start": cursor, "visible_text_end": a},
+                         "status": "untagged_language_unresolved"})
+        cursor = max(cursor, b)
+    return {"locator": {"visible_text_start": start, "visible_text_end": end,
+                        "derivation": "tagged_segment_envelope"},
+            "source_text": value, "text": compact_text(value), "untagged_gaps": gaps}
+
+
 def _path_identity(url: str) -> tuple[str, str]:
     parts = [unquote(part) for part in urlsplit(url).path.split("/") if part]
     if len(parts) >= 2 and parts[0] == "lemma":
@@ -237,9 +262,11 @@ def parse_database_article(
     examples = []
     for element in example_nodes:
         field = _located_field(element, fragments) or {}
-        tibetan = find_first(element, tag="tib") or find_first(
-            element, class_name="tibetisch"
-        )
+        # A Tibetan example can contain multiple <tib> segments separated by
+        # apparatus or literal text. The container, not its first child, is
+        # the authoritative complete field. Keep the segments independently.
+        tibetan = find_first(element, class_name="tibetisch")
+        tibetan_segments = _records_for_elements(find_all(element, tag="tib"), fragments)
         translation = find_first(element, class_name="deutsch")
         location = find_first(element, class_name="stellenangabe")
         example_sigla = find_all(element, class_name="textsiglum")
@@ -251,13 +278,40 @@ def parse_database_article(
                 ),
                 "citation_sigla": _records_for_elements(example_sigla, fragments),
                 "location": _located_field(location, fragments),
-                "tibetan": _located_field(tibetan, fragments),
+                "tibetan": (_located_field(tibetan, fragments) if tibetan is not None
+                            else _field_envelope(tibetan_segments, article_source_text)),
+                "tibetan_segments": tibetan_segments,
                 "translation": _located_field(translation, fragments),
             }
         )
 
     lexical_nodes = find_all(article, tag="div", class_name="lex")
-    lexical_blocks = _records_for_elements(lexical_nodes, fragments)
+    lexical_blocks = []
+    for element in lexical_nodes:
+        block = {
+            **(_located_field(element, fragments) or {}),
+            "tibetan_segments": _records_for_elements(find_all(element, tag="tib"), fragments),
+            "sanskrit": _records_for_elements(find_all(element, tag="skt"), fragments),
+            "translations": _records_for_elements(find_all(element, class_name="deutsch"), fragments),
+            "citations": _records_for_elements(find_all(element, class_name="stelle"), fragments),
+            "sigla": _records_for_elements(find_all(element, class_name="textsiglum"), fragments),
+        }
+        from badw_source_components import lexical_clauses, quoted_spans
+        a, b = block["locator"]["visible_text_start"], block["locator"]["visible_text_end"]
+        if a is not None and b is not None:
+            # The label is not part of a lexical parallel, but remains in the
+            # full block and original source. Never strip punctuation internally.
+            label = re.match(r"\s*Lex\.\s*", article_source_text[a:b])
+            clauses, diagnostics = lexical_clauses(article_source_text, a + (label.end() if label else 0), b)
+            for clause in clauses:
+                clause["tagged_fields"] = {
+                    name: [f for f in block[name] if clause["start"] <= f["locator"]["visible_text_start"]
+                           < f["locator"]["visible_text_end"] <= clause["end"]]
+                    for name in ("tibetan_segments", "sanskrit", "translations", "citations", "sigla")}
+                clause["german_quotation_candidates"] = quoted_spans(article_source_text, clause["start"], clause["end"])
+            block["clauses"] = clauses
+            block["delimiter_diagnostics"] = diagnostics
+        lexical_blocks.append(block)
     sanskrit = _records_for_elements(find_all(article, tag="skt"), fragments)
     citations = _records_for_elements(
         find_all(article, class_name="stelle"), fragments
@@ -371,6 +425,7 @@ def parse_database_article(
         "source_object": source_object,
         "text_fragments": fragments,
         "tibetan_heading": tibetan_field,
+        "tibetan_segments": _records_for_elements(find_all(article, tag="tib"), fragments),
     }
 
 

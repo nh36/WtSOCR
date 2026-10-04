@@ -16,7 +16,93 @@ from pathlib import Path
 from benchmark_badw_structure import graph
 from build_badw_structural_review_packet import rows
 
-VERSION = "badw-structural-candidate-projection-v1"
+VERSION = "badw-structural-candidate-projection-v2"
+
+
+def enrich(nodes, text, *, article=None, structure=None):
+    """Source structure only: never add citation/translation ownership edges.
+
+    Tagged HTML supplies language evidence. PDF italic runs alone do not.
+    Original source records accompany the projection for exhaustive audit.
+    """
+    unresolved = []
+
+    def add(kind, a, b, evidence, allowed=None):
+        if not 0 <= a < b <= len(text):
+            raise ValueError("structural component outside pinned source")
+        existing = next((n for n in nodes if (n["kind"], n["start"], n["end"]) == (kind, a, b)), None)
+        if existing:
+            return existing
+        from benchmark_badw_structure import PARENTS
+        possible = [n for n in nodes if n["kind"] in PARENTS[kind]
+                    and n["start"] <= a < b <= n["end"]
+                    and (allowed is None or n["kind"] in allowed)]
+        possible.sort(key=lambda n: (n["end"] - n["start"], n["id"]))
+        parent = possible[0]["id"] if possible else None
+        if parent is None and None not in PARENTS[kind]:
+            unresolved.append({"kind": kind, "start": a, "end": b,
+                               "reason": "no source container", "evidence": evidence})
+            return None
+        node = dict(id=f"n{len(nodes)}", kind=kind, start=a, end=b, parent=parent,
+                    source_evidence=evidence, association_status="source_containment_only")
+        nodes.append(node)
+        return node
+
+    def bounds(field):
+        loc = field["locator"]
+        a, b = loc["visible_text_start"], loc["visible_text_end"]
+        if a is None or b is None or text[a:b] != field["source_text"]:
+            raise ValueError("HTML structural field differs from pinned source")
+        return a, b
+
+    if article is not None:
+        if article["article_source_text"] != text:
+            raise ValueError("HTML structural text differs from packet")
+        for block in article.get("lexical_blocks", []):
+            bounds(block)
+            for clause in block.get("clauses", []):
+                a, b = clause["start"], clause["end"]
+                if text[a:b] != clause["source_text"]:
+                    raise ValueError("Lex. clause differs from source")
+                add("lexical_parallel", a, b, "explicit HTML Lex. block / delimiter clause")
+                for quote in clause["german_quotation_candidates"]:
+                    add("translation", quote["start"], quote["end"], "source German quotation in Lex. block")
+        for name, kind in (("sanskrit", "sanskrit"), ("tibetan_segments", "tibetan")):
+            for field in article.get(name, []):
+                a, b = bounds(field)
+                # An existing complete Tibetan field already preserves these
+                # children; do not create duplicate nested language claims.
+                if kind == "tibetan" and any(n["kind"] == kind and n["start"] <= a < b <= n["end"] for n in nodes):
+                    continue
+                add(kind, a, b, f"explicit HTML {name} tag")
+        for ref in article.get("cross_references", []):
+            if "locator" in ref:
+                a, b = bounds(ref)
+                add("cross_reference", a, b, "explicit HTML reference link")
+    if structure is not None:
+        lines = structure["visual_lines"]
+        if "\n".join(line["text"] for line in lines) != text:
+            raise ValueError("PDF structural text differs from packet")
+        for block in structure["candidates"].get("lexical_blocks", []):
+            for clause in block["clauses"]:
+                x, y = clause["start"], clause["end"]
+                if text[x:y] != clause["source_text"]:
+                    raise ValueError("PDF Lex. clause differs from source")
+                # Keep the full source block in original_structure even when
+                # an existing semantic candidate covers only part of a clause.
+                # Do not turn that overlap into a new ownership assertion.
+                if not any(n["kind"] == "lexical_parallel" and n["start"] < y and x < n["end"] for n in nodes):
+                    add("lexical_parallel", x, y, "literal PDF Lex. block / delimiter clause")
+            unresolved.extend(block["diagnostics"])
+        for ref in structure["candidates"]["cross_references"]:
+            a, b = ref["visual_start"], ref["visual_end"]
+            add("cross_reference", a, b, "literal arrow and source typography")
+        for field in structure["candidates"].get("sanskrit", []):
+            a, b = field["visual_start"], field["visual_end"]
+            if text[a:b] != field["source_text"]:
+                raise ValueError("PDF Sanskrit field differs from source")
+            add("sanskrit", a, b, field["evidence"])
+    return unresolved
 
 
 def digest(text):
@@ -28,7 +114,7 @@ def literal(member):
     return member["literal_text"] if "literal_text" in member else member["text"]
 
 
-def project(packet, nested):
+def project(packet, nested, structure=None):
     text = packet["review_text"]
     if (packet["source_kind"] != "pdf" or packet["identity"] != nested["article_id"] or
             packet["review_text_sha256"] != digest(text) or
@@ -108,6 +194,10 @@ def project(packet, nested):
                     add("correction", a, b, tibetan, correction)
                 else:
                     unsupported.append({"kind": "correction", "reason": "no Tibetan owner"})
+    if structure is not None:
+        if structure["article_id"] != packet["identity"] or structure["source_objects"] != packet["source"]["source_objects"]:
+            raise ValueError("PDF structural source identity mismatch")
+        unsupported.extend(enrich(nodes, text, structure=structure))
     graph(nodes, edges, text)
     return {**{k: packet[k] for k in ("identity", "source_kind", "source", "group", "stratum", "split",
                                      "review_text_sha256")},
@@ -115,9 +205,11 @@ def project(packet, nested):
             "nested_record_sha256": digest(json.dumps(nested, ensure_ascii=False, sort_keys=True,
                                                       separators=(",", ":"))),
             "original_components": components, "unprojected": unsupported,
+            "original_structure": structure,
             "unassigned_source_candidates": nested["unassigned_source_candidates"],
             "limitations": ["candidate relationships, not reviewed gold", "headword absent from packet text",
-                            "cross-references and lexical language subspans not yet projected"]}
+                            "PDF italic language remains unresolved without explicit source evidence",
+                            "new structural components do not assert citation ownership"]}
 
 
 def citation_inventory(articles):
@@ -143,7 +235,7 @@ def citation_inventory(articles):
     return sorted(result, key=lambda r: (r["article_id"], r["citation_index"]))
 
 
-def project_html(packet, records):
+def project_html(packet, records, article=None):
     """Expose existing lexical claims, not a new HTML parser or gold annotation.
 
     Container extents are derived from the existing field spans; they are not
@@ -249,13 +341,18 @@ def project_html(packet, records):
             add("cross_reference", span["start"], span["end"], None, record)
         elif kind not in {"entry", "sense", "citation", "attestation"}:
             unprojected.append({"record_id": record["id"], "reason": "unsupported lexical record kind"})
+    if article is not None:
+        if article["source_identifier"] != packet["identity"] or article["source_object"]["sha256"] != source_sha:
+            raise ValueError("HTML structural source identity mismatch")
+        unprojected.extend(enrich(nodes, text, article=article))
     graph(nodes, edges, text)
     return {**{k: packet[k] for k in ("identity", "source_kind", "source", "group", "stratum", "split",
                                      "review_text_sha256")},
             "contract_version": VERSION, "nodes": nodes, "edges": edges,
             "original_records": records, "unprojected": unprojected,
+            "original_structure": article,
             "limitations": ["existing lexical claims, not reviewed gold", "derived container boundaries",
-                            "no new Lex., apparatus, language or grammatical analysis"]}
+                            "new structural components do not assert citation ownership"]}
 
 
 def citation_challenge(inventory, per_volume=20):
@@ -282,6 +379,16 @@ def write(path, records):
             handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n")
 
 
+def unique_rows(path, key):
+    result = {}
+    for record in rows(path):
+        identity = record[key]
+        if identity in result:
+            raise ValueError("duplicate structural source identity")
+        result[identity] = record
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--packets", type=Path, required=True)
@@ -289,6 +396,8 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--inventory", type=Path, required=True)
     parser.add_argument("--html-records", type=Path)
+    parser.add_argument("--html-articles", type=Path)
+    parser.add_argument("--pdf-structures", type=Path)
     parser.add_argument("--challenge", type=Path)
     args = parser.parse_args()
     outputs = [args.output, args.inventory] + ([args.challenge] if args.challenge else [])
@@ -303,7 +412,10 @@ def main():
             raise ValueError("duplicate pinned PDF identity")
         packets[packet["identity"]] = packet
     articles = list(rows(args.nested))
-    predictions = [project(packets[a["article_id"]], a) for a in articles if a["article_id"] in packets]
+    structures = unique_rows(args.pdf_structures, "article_id") if args.pdf_structures else {}
+    if args.pdf_structures and packets.keys() - structures.keys():
+        raise ValueError("missing pinned PDF structural source")
+    predictions = [project(packets[a["article_id"]], a, structures.get(a["article_id"])) for a in articles if a["article_id"] in packets]
     if len(predictions) != len(packets):
         raise ValueError("missing/duplicate pinned PDF article")
     inventory = citation_inventory(articles)
@@ -317,7 +429,10 @@ def main():
             keys = {s["source_id"] for s in record["source_spans"]} & selected.keys()
             for key in keys:
                 grouped[key].append(record)
-        predictions.extend(project_html(selected[key], grouped[key]) for key in sorted(selected))
+        html = unique_rows(args.html_articles, "source_identifier") if args.html_articles else {}
+        if args.html_articles and selected.keys() - html.keys():
+            raise ValueError("missing pinned HTML structural source")
+        predictions.extend(project_html(selected[key], grouped[key], html.get(key)) for key in sorted(selected))
     write(args.output, sorted(predictions, key=lambda r: r["identity"]))
     write(args.inventory, inventory)
     if args.challenge:
