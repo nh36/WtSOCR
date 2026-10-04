@@ -1,6 +1,8 @@
 """Tiny synthetic source rows; no downloaded bibliography fixtures."""
 from pathlib import Path
 import sqlite3
+import csv
+import json
 import sys
 from types import SimpleNamespace
 
@@ -95,6 +97,72 @@ def test_bibtex_is_partial_not_invented_metadata():
     assert bib.bibtex_escape("{%_\\}") == r"\{\%\_{\textbackslash}\}"
 
 
+def test_split_author_and_exact_publication_preserve_raw_spans():
+    rows = parse(WORK.replace("PW", "K")) + parse(PUBLICATION, "publication")
+    resolver = bib.AuthorityResolver(bib.authority_graph(rows)[0], rows)
+    result = resolver.resolve("K\nRETSCHMAR 1981, p. 4")
+    assert result["status"] == "unmatched"
+    assert result["rejected_matches"][0]["reason"] == "split_small_caps_author_year"
+    assert resolver.resolve("K\nTibetan text 1981")["status"] == "exact_online_work_rows"
+    assert resolver.resolve("K\nRETSCHMAR another reference 1981")["status"] == "exact_online_work_rows"
+    for text in ("AUTHOR 2001, p. 4", "A\nUTHOR 2001, p. 4", "Author 2001"):
+        result = resolver.resolve(text)
+        assert result["status"] == "exact_online_publication_rows"
+        match = result["matches"][0]
+        assert text[match["start"]:match["end"]] == match["label"]
+        assert match["reference_key"] == "Author 2001"
+        assert match["print_status"] == "unverified"
+    assert resolver.resolve("Author 20010")["status"] == "unmatched"
+    assert resolver.resolve("Unknown 2001")["status"] == "unmatched"
+
+
+def test_same_dom_disambiguates_without_longest_match_guess():
+    rows = parse(WORK.replace("PW", "Dol")) + parse(WORK.replace("PW", "Dol4"))
+    resolver = bib.AuthorityResolver(bib.authority_graph(rows)[0], rows)
+    evidence = [{"label": "Dol4", "start": 1, "end": 5, "expansion": rows[1]["text"]}]
+    result = resolver.resolve_dom("(Dol4 12)", evidence)
+    assert result["status"] == "exact_online_work_rows"
+    assert result["matches"][0]["label"] == "Dol4"
+    assert len(result["spelling_candidates"]) == 2
+    evidence[0]["expansion"] = "different edition"
+    assert resolver.resolve_dom("(Dol4 12)", evidence)["status"] == "ambiguous"
+    evidence[0].update(label="Other", start=0, end=5)
+    result = resolver.resolve_dom("Other 12", evidence)
+    assert result["status"] == "ambiguous"
+    assert result["unresolved_dom_components"][0]["authority_ids"] == []
+    with pytest.raises(ValueError, match="span mismatch"):
+        resolver.resolve_dom("Other 12", [{**evidence[0], "start": 1}])
+
+
+def test_reviewed_metadata_fail_closed_and_exports_useful_bibtex(tmp_path):
+    rows = parse(PUBLICATION, "publication")
+    row = rows[0]
+    review = {"occurrence_id": row["occurrence_id"], "source_sha256": row["source_sha256"],
+              "label": row["label"], "entry_type": "book",
+              "fields_json": json.dumps({"author": "Author, A.", "title": "Title & subtitle", "year": "2001"}),
+              "evidence_note": "Reviewed against exact cached table row; print unverified"}
+    path = tmp_path / "review.tsv"
+
+    def write(value):
+        with path.open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, delimiter="\t", fieldnames=review.keys())
+            writer.writeheader()
+            writer.writerow(value)
+
+    write(review)
+    bib.apply_metadata_reviews(rows, path)
+    exported = bib.export_bibtex(rows)
+    assert "@book{" in exported and "  author = {Author, A.}" in exported
+    assert "print compatibility unverified" in exported
+    for update, message in (({"source_sha256": "stale"}, "stale"),
+                            ({"fields_json": '{"title":"Invented"}'}, "title absent"),
+                            ({"fields_json": '{"year":"2002"}'}, "year disagrees"),
+                            ({"fields_json": '{"unsupported":"x"}'}, "unsupported")):
+        write({**review, **update})
+        with pytest.raises(ValueError, match=message):
+            bib.apply_metadata_reviews(rows, path)
+
+
 def test_invalid_source_and_abbreviation_scope():
     body = WORK.encode()
     with pytest.raises(ValueError, match="hash/status"):
@@ -102,6 +170,70 @@ def test_invalid_source_and_abbreviation_scope():
     with pytest.raises(ValueError, match="no recognized"):
         parse("<table><tr><td>Ed.</td><td>Edition</td></tr></table>", "abbreviation")
     assert parse(ABBREVIATION, "abbreviation")[0]["label"] == "Ed."
+
+
+def test_relation_review_is_occurrence_hash_and_locator_checked(tmp_path):
+    rows = parse(WORK.replace("Title</i>.", "Title</i>. Ed.: Author 2001, pp. 1–9.")) + parse(PUBLICATION, "publication")
+    _, relations = bib.authority_graph(rows)
+    source, publication = rows
+    review = dict(occurrence_id=source["occurrence_id"], ordinal=1,
+        source_sha256=source["source_sha256"], label=source["label"], reference_key="Author 2001",
+        publication_occurrence_id=publication["occurrence_id"], publication_sha256=publication["source_sha256"],
+        relation_kind="edition_in_publication", locator="pp. 1–9", source_excerpt="Ed.: Author 2001, pp. 1–9.",
+        evidence_note="Explicit edition statement, online only")
+    path = tmp_path / "reviews.tsv"
+    def write(value):
+        with path.open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=review, delimiter="\t")
+            writer.writeheader()
+            writer.writerow(value)
+    write(review)
+    bib.apply_relation_reviews(rows, relations, path)
+    assert relations[0]["status"] == "reviewed_online_relation"
+    assert relations[0]["print_status"] == "unverified"
+    for update, message in (({"source_sha256": "stale"}, "stale"),
+                            ({"source_excerpt": "invented"}, "absent"),
+                            ({"locator": "pp. 99"}, "locator"),
+                            ({"relation_kind": "guess"}, "unsupported")):
+        write({**review, **update})
+        with pytest.raises(ValueError, match=message):
+            bib.apply_relation_reviews(rows, relations, path)
+
+
+def test_dom_work_does_not_discard_separate_publication_component():
+    rows = parse(WORK) + parse(PUBLICATION, "publication")
+    authorities, _ = bib.authority_graph(rows)
+    result = bib.AuthorityResolver(authorities, rows).resolve_dom("PW12; Author 2001", [
+        {"label": "PW", "start": 0, "end": 2, "expansion": rows[0]["text"]}])
+    assert result["status"] == "exact_online_source_rows"
+    assert [m["label"] for m in result["matches"]] == ["PW", "Author 2001"]
+
+
+def test_dom_loader_requires_consistent_source_hashes():
+    with sqlite3.connect(":memory:") as db:
+        db.executescript("""
+            CREATE TABLE citation(id,raw_text);
+            CREATE TABLE lexical_record(id,record_json);
+            CREATE TABLE citation_siglum_badw_authority(citation_id,siglum_ordinal,authority_id,occurrence_source_id,occurrence_ordinal);
+            CREATE TABLE citation_siglum(citation_id,ordinal,siglum,visible_start,visible_end,source_id,source_sha256,source_snapshot_id);
+            CREATE TABLE badw_siglum_candidate(id,expansion);
+            CREATE TABLE badw_siglum_occurrence(candidate_id,source_id,ordinal_in_article,source_sha256);
+            CREATE TABLE source_object(snapshot_id,source_id,source_sha256,stable_url);
+            INSERT INTO citation VALUES('c','PW 12');
+            INSERT INTO citation_siglum_badw_authority VALUES('c',1,'a','source',3);
+            INSERT INTO citation_siglum VALUES('c',1,'PW',10,12,'source','sha','snapshot');
+            INSERT INTO badw_siglum_candidate VALUES('a','Expansion');
+            INSERT INTO badw_siglum_occurrence VALUES('a','source',3,'sha');
+            INSERT INTO source_object VALUES('snapshot','source','sha','https://example.test/lemma');
+        """)
+        db.execute("INSERT INTO lexical_record VALUES(?,?)", ('c', json.dumps({"raw_text": "PW 12",
+            "source_spans": [{"start": 10, "source_id": "source", "source_sha256": "sha"}]})))
+        result = bib.dom_citation_evidence(db)
+        assert result['c'][0]['start'] == 0 and result['c'][0]['end'] == 2
+        assert result['c'][0]['article_start'] == 10
+        db.execute("UPDATE badw_siglum_occurrence SET source_sha256='stale'")
+        with pytest.raises(ValueError, match="source mismatch"):
+            bib.dom_citation_evidence(db)
 
 
 def test_print_inventory_fascicle_supplements_are_candidates(tmp_path):

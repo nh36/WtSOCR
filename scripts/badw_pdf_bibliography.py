@@ -10,7 +10,7 @@ from __future__ import annotations
 import re
 from collections import defaultdict
 
-VERSION = "badw-pdf-bibliography-v1"
+VERSION = "badw-pdf-bibliography-v2"
 
 
 class Resolver:
@@ -31,6 +31,16 @@ class Resolver:
                   "authority_ids": self.labels[label]}
                  for label, pattern in self.patterns for m in pattern.finditer(text)]
         found.sort(key=lambda row: (row["start"], row["end"], row["label"]))
+        rejected = []
+        for row in found[:]:
+            # Small-cap author initials are sometimes positioned separately
+            # from the rest of the name. Do not identify K in K\nRETSCHMAR
+            # 1981 as the Kangyur. Retain the negative evidence and raw span.
+            if (len(row["label"]) == 1 and row["label"].isupper() and
+                    re.match(r"[ \t]*\n[ \t]*[A-ZÄÖÜ]{2,}(?:[ \t]*\n[ \t]*[A-ZÄÖÜ]+)*[ \t\n]+(?:1[5-9]|20)\d{2}(?!\d)",
+                             text[row["end"]:])):
+                rejected.append({**row, "reason": "split_small_caps_author_year"})
+                found.remove(row)
         for row in found:
             overlap = any(other is not row and other["start"] < row["end"]
                           and row["start"] < other["end"] for other in found)
@@ -41,4 +51,4 @@ class Resolver:
                 "status": "unmatched" if not found else
                           "ambiguous" if any(r["status"] == "ambiguous" for r in found)
                           else "exact_label_expansion_candidates",
-                "text": text, "matches": found}
+                "text": text, "matches": found, "rejected_matches": rejected}
