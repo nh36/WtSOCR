@@ -19,10 +19,10 @@ import sqlite3
 
 from badw_html import (Element, TextNode, compact_text, decode_html_bytes,
                        dom_path, element_locator, find_all, parse_html)
-from badw_pdf_bibliography import Resolver
+from badw_citation_components import ComponentResolver, spelling_pattern
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v2"
+VERSION = "badw-bibliography-v3"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
@@ -335,8 +335,8 @@ class AuthorityResolver:
     """Exact source-row identity only; no automatic edition/semantic ownership."""
     def __init__(self, authorities: list[dict], rows: list[dict] | None = None):
         self.by_id = {a["id"]: a for a in authorities}
-        self.resolver = Resolver([(a["id"], a["label"]) for a in authorities
-                                  if a["kind"] == "work"])
+        self.resolver = ComponentResolver([(a["id"], a["label"]) for a in authorities
+                                  if a["kind"] == "work"], rows or [])
         self.rows = {r["id"]: r for r in (rows or [])}
         self.work_labels = defaultdict(list)
         for a in authorities:
@@ -348,16 +348,17 @@ class AuthorityResolver:
                 keys[row["reference_key"]].add(row["id"])
         self.publication_patterns = []
         for key, ids in sorted(keys.items()):
-            author, year = key.rsplit(" ", 1) if not key.endswith(" ff.") else (None, None)
-            if not author:
-                continue  # Open ranges require a separate reviewed grammar.
+            split = re.fullmatch(r"(.+?) (" + YEAR_PATTERN + r")", key)
+            if not split:
+                continue
+            author, year = split.groups()
             for spelling in sorted({author, author.upper()}):
                 # Only a newline may split a printed small-cap name. No fuzzy
                 # matching or character substitution; offsets remain raw.
-                pattern = r"(?:[ \t]*\n[ \t]*)?".join(re.escape(c) for c in spelling)
+                pattern = spelling_pattern(spelling)
                 pattern = pattern.replace(re.escape(" "), r"\s+")
                 self.publication_patterns.append((key, sorted(ids), re.compile(
-                    r"(?<!\w)" + pattern + r"\s*" + re.escape(year) + r"(?![\w])")))
+                    r"(?<!\w)" + pattern + r"\s*" + spelling_pattern(year) + r"(?![\w–-])")))
 
     def resolve_dom(self, text: str, evidence: list[dict]) -> dict:
         """Crosswalk exact source spans, not substring guesses or longest match.
@@ -372,16 +373,23 @@ class AuthorityResolver:
             if start < 0 or end <= start or text[start:end] != label:
                 raise ValueError("same-DOM citation span mismatch")
             ids = self.work_labels.get(label, [])
+            analysis = None if ids else self.resolver.compound(label)
+            if analysis:
+                ids = self.work_labels.get(analysis[0], [])
             safe = len(ids) == 1 and self.by_id[ids[0]]["status"] == "first_party_source_row"
             safe = safe and compact_text(self.rows[ids[0]]["text"]) == compact_text(item["expansion"])
             match = {**item, "authority_ids": ids, "edition_status": "unreviewed",
                      "print_status": "unverified", "status": "exact_online_work_row" if safe else "ambiguous",
                      "method": "same_dom_span_and_exact_tooltip_description"}
+            if analysis:
+                match.update(canonical_label=analysis[0], selector=analysis[1],
+                             grammar_evidence=self.resolver.grammar_evidence[analysis[0]],
+                             method="same_dom_compound_grammar_and_exact_tooltip_description")
             if safe:
                 matches.append(match)
             else:
                 unresolved.append({**match, "reason": "work_row_absent_or_description_conflict"})
-        result["spelling_candidates"] = result["matches"]
+        result["spelling_candidates"] = result.get("legacy_spelling_candidates", result["matches"])
         # Preserve independently exact publication references outside DOM work
         # spans; a tooltip is evidence for its span, not the whole citation.
         publications = [m for m in result["matches"]
@@ -397,7 +405,44 @@ class AuthorityResolver:
                             "exact_online_source_rows" if publications and len(matches) > len(publications) else
                             "exact_online_publication_rows" if publications else
                             "exact_online_work_rows" if matches else "unmatched")
+        self.component_contract(result)
         return result
+
+    @staticmethod
+    def component_contract(result: dict) -> None:
+        """Separate accepted identity edges from candidate edges and editions.
+
+        Coverage remains deliberately partial: leftover text is not assumed to
+        be a locator or a fully parsed citation. All offsets address raw Unicode.
+        """
+        occupied = []
+        for match in result["matches"]:
+            match["target_status"] = ("accepted_identity" if match["status"].startswith("exact_online_")
+                                      else "candidate")
+            match["raw_text"] = result["text"][match["start"]:match["end"]]
+            occupied.append((match["start"], match["end"]))
+        for item in result.get("unresolved_dom_components", []):
+            occupied.append((item["start"], item["end"]))
+        covered = set(i for start, end in occupied for i in range(start, end))
+        runs = []
+        for i, char in enumerate(result["text"]):
+            if i in covered:
+                continue
+            if runs and runs[-1]["end"] == i:
+                runs[-1]["end"] += 1
+                runs[-1]["raw_text"] += char
+            else:
+                runs.append({"start": i, "end": i+1, "raw_text": char,
+                             "status": "unparsed_locator_or_explanatory_text"})
+        result["unparsed_spans"] = runs
+        result["component_contract_version"] = "citation-components-v1"
+        result["coverage_status"] = "matched_components_only_not_complete_citation_resolution"
+        result["edition_status"] = "unreviewed"
+        result["residual_reason"] = ("dom_work_absent_or_description_conflict" if
+            result.get("unresolved_dom_components") else "competing_component_identities" if
+            result["status"] == "ambiguous" else "unknown_glyph_in_unmatched_reference" if
+            result["status"] == "unmatched" and "⟦UNKNOWN:" in result["text"] else
+            "no_registered_component" if result["status"] == "unmatched" else None)
 
     def resolve(self, text: str) -> dict:
         result = self.resolver.resolve(text)
@@ -432,6 +477,7 @@ class AuthorityResolver:
                             else "exact_online_work_rows" if all(m["status"] == "exact_online_work_row" for m in result["matches"])
                             else "exact_online_publication_rows" if all(m["status"] == "exact_online_publication_row" for m in result["matches"])
                             else "exact_online_source_rows")
+        self.component_contract(result)
         return result
 
 
@@ -479,7 +525,8 @@ def write_jsonl(path: Path, records):
 
 def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           registry: Path | None = None, metadata_reviews: Path | None = None,
-          relation_reviews: Path | None = None) -> dict:
+          relation_reviews: Path | None = None, print_candidates: Path | None = None,
+          print_reviews: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -493,11 +540,18 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     apply_metadata_reviews(rows, metadata_reviews)
     authorities, relations = authority_graph(rows)
     apply_relation_reviews(rows, relations, relation_reviews)
+    printed = []
+    if print_candidates or print_reviews:
+        if not (print_candidates and print_reviews and registry):
+            raise ValueError("print import requires candidates, reviews and source registry")
+        from badw_print_bibliography import reviewed_occurrences
+        printed = reviewed_occurrences(print_candidates, print_reviews, registry, rows)
     inventory = print_inventory(registry) if registry else []
     output.mkdir(parents=True)
     write_jsonl(output / "source_rows.jsonl", rows)
     write_jsonl(output / "relations.jsonl", relations)
     write_jsonl(output / "print_inventory.jsonl", inventory)
+    write_jsonl(output / "print_occurrences.jsonl", printed)
     (output / "sources.bib").write_text(export_bibtex(rows), encoding="utf-8")
     db = sqlite3.connect(output / "bibliography.sqlite")
     db.executescript(schema.read_text(encoding="utf-8"))
@@ -506,6 +560,9 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                        [(a["id"], a["kind"], a["label"], a["scope"], a["status"], dumps(a)) for a in authorities])
         db.executemany("INSERT INTO occurrence VALUES (?,?,?,?,?)",
                        [(r["occurrence_id"], r["id"], r["source_sha256"], r["source_url"], dumps(r)) for r in rows])
+        db.executemany("INSERT INTO print_occurrence VALUES (?,?,?,?,?,?)",
+                       [(r["id"], r["authority_id"], r["online_occurrence_id"],
+                         r["candidate"]["pdf_sha256"], r["candidate"]["ocr_sha256"], dumps(r)) for r in printed])
         db.executemany("INSERT INTO relation VALUES (?,?,?,?,?)",
                        [(r["occurrence_id"], r["ordinal"], r["work_id"], r["status"], dumps(r)) for r in relations])
         for relation in relations:
@@ -533,8 +590,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                                (layer, citation_id, result["status"], dumps(result)))
                     for ordinal, match in enumerate(result["matches"], 1):
                         for authority_id in match["authority_ids"]:
-                            db.execute("INSERT INTO citation_target VALUES (?,?,?,?,?,?)",
-                                       (layer, citation_id, ordinal, authority_id, match["start"], match["end"]))
+                            db.execute("INSERT INTO citation_target VALUES (?,?,?,?,?,?,?)",
+                                       (layer, citation_id, ordinal, authority_id, match["start"], match["end"], match["target_status"]))
         src.close()
     if db.execute("PRAGMA foreign_key_check").fetchall():
         raise ValueError("authority foreign key failure")
@@ -548,6 +605,9 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "relation_statuses": dict(Counter(r["status"] for r in relations)),
                "citation_statuses": dict(sorted(counts.items())),
                "print_heading_candidates": len(inventory),
+               "reviewed_print_occurrences": len(printed),
+               "print_candidates_sha256": file_digest(print_candidates) if print_candidates else None,
+               "print_reviews_sha256": file_digest(print_reviews) if print_reviews else None,
                "staging_database_sha256": file_digest(staging) if staging else None,
                "schema_sha256": file_digest(schema),
                "limitations": ["Print inventory candidates require scan review and page-range boundaries",
@@ -566,10 +626,12 @@ def main():
     parser.add_argument("--print-registry", type=Path)
     parser.add_argument("--metadata-reviews", type=Path)
     parser.add_argument("--relation-reviews", type=Path)
+    parser.add_argument("--print-candidates", type=Path)
+    parser.add_argument("--print-reviews", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
-                     args.metadata_reviews, args.relation_reviews)))
+                     args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews)))
 
 
 if __name__ == "__main__":

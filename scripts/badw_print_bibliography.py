@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Extract lossless OCR candidates from hash-pinned, scan-reviewed bibliography ranges.
 
-This is NOT an authority importer. Two-up OCR ordering, inherited authors and
-every candidate boundary require later print review. Unclassified text is kept.
+Extraction does not create authorities. Only separate, explicit visual reviews
+can import publication-identity crosswalks. Two-up OCR ordering, inherited
+authors and candidate boundaries require review. Unclassified text is kept.
 Offsets are zero-based Python Unicode offsets into the exact OCR source file.
 """
 from __future__ import annotations
@@ -20,6 +21,67 @@ VERSION = "print-bibliography-candidates-v1"
 PAGE = re.compile(r"^=== page (\d+) ===\r?\n", re.M)
 AUTHOR_YEAR = re.compile(r"^[A-ZÄÖÜ][^\n\r]*?\b(?:1[5-9]|20)\d{2}[a-z]?\s*:", re.M)
 INHERITED_YEAR = re.compile(r"^[ \t]*(?:1[5-9]|20)\d{2}[a-z]?\s*:", re.M)
+
+
+def reviewed_occurrences(candidates: Path, reviews: Path, registry: Path,
+                         online_rows: list[dict]) -> list[dict]:
+    """Import only explicit, hash-pinned visual reviews, not OCR candidates.
+
+    A crosswalk establishes publication identity, never edition compatibility
+    for citations. Printed transcription and online wording remain separate.
+    Cross-page records require a later multi-span review contract.
+    """
+    candidate_rows = [json.loads(line) for line in candidates.read_text(encoding="utf-8").splitlines()]
+    by_id = {r["id"]: r for r in candidate_rows}
+    if len(by_id) != len(candidate_rows):
+        raise ValueError("duplicate print candidate identity")
+    with registry.open(encoding="utf-8", newline="") as stream:
+        sources = {r["label"]: r for r in csv.DictReader(stream, delimiter="\t")}
+    online = {r["occurrence_id"]: r for r in online_rows}
+    with reviews.open(encoding="utf-8", newline="") as stream:
+        review_rows = list(csv.DictReader(stream, delimiter="\t"))
+    if len({r["candidate_id"] for r in review_rows}) != len(review_rows):
+        raise ValueError("duplicate print review")
+    verified_sources, records = {}, []
+    for review in sorted(review_rows, key=lambda r: r["candidate_id"]):
+        candidate = by_id[review["candidate_id"]]
+        if review["status"] != "visually_reviewed_publication_identity" or not review["evidence_note"].strip():
+            raise ValueError("missing visual print review")
+        if digest(candidate["raw_text"].encode("utf-8")) != review["candidate_text_sha256"]:
+            raise ValueError("stale print candidate text")
+        label = candidate["source_label"]
+        source = sources[label]
+        if source["sha256"] != candidate["pdf_sha256"]:
+            raise ValueError("stale registered print PDF")
+        if label not in verified_sources:
+            pdf = Path(source["filename"])
+            if file_digest(pdf) != candidate["pdf_sha256"]:
+                raise ValueError("stale registered print PDF")
+            ocr = pdf.with_suffix(".vision.txt")
+            verified_sources[label] = (file_digest(ocr), ocr.read_bytes().decode("utf-8", errors="strict"))
+        ocr_sha, text = verified_sources[label]
+        if not 0 <= candidate["start"] < candidate["end"] <= len(text):
+            raise ValueError("invalid print OCR span")
+        if ocr_sha != candidate["ocr_sha256"] or text[candidate["start"]:candidate["end"]] != candidate["raw_text"]:
+            raise ValueError("stale print OCR span")
+        page_headers = [h for h in PAGE.finditer(text) if h.end() <= candidate["start"]]
+        if not page_headers or int(page_headers[-1][1]) != candidate["scan_page"]:
+            raise ValueError("print span disagrees with scan page")
+        if any(candidate["start"] <= h.start() < candidate["end"] for h in PAGE.finditer(text)):
+            raise ValueError("cross-page print import requires a multi-span review")
+        row = online[review["online_occurrence_id"]]
+        if row["kind"] != "publication" or row["source_sha256"] != review["online_source_sha256"]:
+            raise ValueError("stale online publication crosswalk")
+        transcription = review["verified_transcription"]
+        if not transcription.strip():
+            raise ValueError("missing verified print transcription")
+        records.append({"id": "print-occurrence-" + digest(dumps(review).encode())[:32],
+                        "authority_id": row["id"], "online_occurrence_id": row["occurrence_id"],
+                        "candidate": candidate, "verified_transcription": transcription,
+                        "review": review, "review_sha256": file_digest(reviews),
+                        "status": review["status"], "scope": "published_print",
+                        "limitations": "Publication identity only; citation editions remain unverified"})
+    return records
 
 
 def extract(pdf: Path, ocr: Path, review: dict) -> tuple[list[dict], list[dict]]:

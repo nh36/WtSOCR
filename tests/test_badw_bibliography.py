@@ -84,7 +84,9 @@ def test_case_overlap_conflicting_descriptions_and_offsets():
     conflict = bib.AuthorityResolver(bib.authority_graph(rows + parse(WORK.replace("Title", "Other")))[0])
     assert conflict.resolve("PW 3")["status"] == "ambiguous"
     overlap = parse(WORK.replace("PW", "Dol")) + parse(WORK.replace("PW", "Dol4"))
-    assert bib.AuthorityResolver(bib.authority_graph(overlap)[0]).resolve("Dol4 3")["status"] == "ambiguous"
+    result = bib.AuthorityResolver(bib.authority_graph(overlap)[0]).resolve("Dol4 3")
+    assert result["status"] == "exact_online_work_rows"
+    assert result["matches"][0]["canonical_label"] == "Dol4"
 
 
 def test_bibtex_is_partial_not_invented_metadata():
