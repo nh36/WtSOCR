@@ -24,7 +24,7 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v10"
+VERSION = "badw-pdf-lexical-candidates-v11"
 ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
 SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
 
@@ -259,6 +259,17 @@ def _definition_candidates(article: dict[str, Any], text: str,
             if "།" in part:
                 part = part.split("།", 1)[0]
             reference_suffix = GLOSS_REFERENCE_SUFFIX.search(part)
+            # A wrapped reference target need not end on this source line.
+            # Preserve the preceding German continuation without swallowing
+            # the reference or inferring its target/ownership.
+            reference_opening = re.search(r"[,;]\s*vgl\.\s+[↑↓]", part)
+            if reference_opening and not reference_suffix:
+                preceding = part[:reference_opening.start()]
+                if (re.search(r"[A-Za-zÄÖÜäöüß]", preceding)
+                        and not MORPHOLOGY.search(preceding)
+                        and not MORPHOLOGY_PREAMBLE.fullmatch(preceding)):
+                    part = preceding
+                    truncated = True
             gloss_before_reference = part[:reference_suffix.start()] if reference_suffix else ""
             reference_continuation = (bool(fragments) and fragments[-1].rstrip().endswith(";")
                                       and REFERENCE_CONTINUATION.fullmatch(part))

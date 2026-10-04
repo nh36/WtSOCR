@@ -6,7 +6,7 @@ import sys
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from badw_source_components import lexical_clauses, quoted_spans
+from badw_source_components import lexical_clauses, quoted_spans, terminal_lexical_citation
 from badw_article_parser import parse_database_article, _field_envelope
 from benchmark_badw_structure import boundary_diagnostic
 from project_badw_structural_candidates import enrich
@@ -31,6 +31,47 @@ def test_incomplete_delimiters_are_not_discarded():
     assert diagnostics == [{'offset': len(text), 'reason': 'unclosed_delimiter'}]
     with pytest.raises(ValueError):
         lexical_clauses(text, -1, len(text))
+
+
+@pytest.mark.parametrize('text,expected', [
+    ('ka (Mim1 107).', '(Mim1 107)'),
+    ('ka „Wort (A)“ (brDa)', '(brDa)'),
+    ('ka (r.ka)', None), ('ka (metr.)', None),
+    ('ka „Wort (A)“', None), ('ka (A) weiter', None),
+    ('ka (A', None), ('ka (r. kha (A))', None),
+    ('ka (auch)', None),
+])
+def test_terminal_lexical_citations_are_candidates_not_resolutions(text, expected):
+    candidate = terminal_lexical_citation(text, 0, len(text))
+    assert (candidate['source_text'] if candidate else None) == expected
+    if candidate:
+        assert text[candidate['start']:candidate['end']] == expected
+        assert candidate['status'] == 'unresolved_source_citation_candidate'
+
+
+def test_lexical_citation_projection_preserves_envelope_without_ownership_edges():
+    a = article()
+    text = a['article_source_text']
+    nodes = [dict(id='n0', kind='source_division', start=0, end=len(text), parent=None)]
+    enrich(nodes, text, article=a)
+    citations = [n for n in nodes if n['kind'] == 'citation']
+    assert [text[n['start']:n['end']] for n in citations] == ['(A)', '(B)']
+    assert all(nodes[int(n['parent'][1:])]['kind'] == 'lexical_parallel' for n in citations)
+    assert all(n['association_status'] == 'source_containment_only' for n in citations)
+    assert all(n['candidate_status'] == 'unresolved_source_citation_candidate' for n in citations)
+
+
+def test_explicit_metrical_qualifier_preserves_unicode_and_hidden_text_exclusion():
+    body = '<div class="text"><span class="lem">ka</span><span class="beleg metr">(<span class="info">metr.<span class="infotext">hidden</span></span>)</span></div>'.encode()
+    a = parse_database_article(body, source_metadata=dict(
+        delivery_type='database_article', valid_resource=True,
+        sha256=hashlib.sha256(body).hexdigest(), final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert a['qualifiers'][0]['source_text'] == '(metr.)'
+    nodes = []
+    enrich(nodes, a['article_source_text'], article=a)
+    qualifier = next(n for n in nodes if n['kind'] == 'qualifier')
+    assert a['article_source_text'][qualifier['start']:qualifier['end']] == '(metr.)'
+    assert qualifier['parent'] is None
 
 
 def test_nested_quotation_semicolon_is_not_a_lexical_boundary():

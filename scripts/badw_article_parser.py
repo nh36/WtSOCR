@@ -29,7 +29,7 @@ from badw_html import (
 from badw_source_cache import RequestSpec, SourceCache, quote_iri
 
 
-ARTICLE_CONTRACT_VERSION = "badw-database-article-v3"
+ARTICLE_CONTRACT_VERSION = "badw-database-article-v4"
 HIDDEN_CLASSES = ("infotext",)
 HIDDEN_TAGS = ("script", "style", "input")
 
@@ -328,7 +328,7 @@ def parse_database_article(
             "citations": _records_for_elements(find_all(element, class_name="stelle"), fragments),
             "sigla": _records_for_elements(find_all(element, class_name="textsiglum"), fragments),
         }
-        from badw_source_components import lexical_clauses, quoted_spans
+        from badw_source_components import lexical_clauses, quoted_spans, terminal_lexical_citation
         a, b = block["locator"]["visible_text_start"], block["locator"]["visible_text_end"]
         if a is not None and b is not None:
             # The label is not part of a lexical parallel, but remains in the
@@ -342,6 +342,8 @@ def parse_database_article(
                                f, clause["start"], clause["end"], article_source_text)) is not None]
                     for name in ("tibetan_segments", "sanskrit", "translations", "citations", "sigla")}
                 clause["german_quotation_candidates"] = quoted_spans(article_source_text, clause["start"], clause["end"])
+                citation = terminal_lexical_citation(article_source_text, clause["start"], clause["end"])
+                clause["terminal_citation_candidates"] = [citation] if citation else []
             block["clauses"] = clauses
             block["delimiter_diagnostics"] = diagnostics
         lexical_blocks.append(block)
@@ -476,6 +478,7 @@ def parse_database_article(
         "entry_links": entry_links,
         "reference_diagnostics": reference_diagnostics,
         "citations": citations,
+        "qualifiers": _records_for_elements(find_all(article, class_name="metr"), fragments),
         "divisions": divisions,
         "dom_full_text": dom_full_text,
         "examples": examples,

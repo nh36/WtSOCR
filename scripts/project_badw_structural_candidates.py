@@ -16,7 +16,7 @@ from pathlib import Path
 from benchmark_badw_structure import graph
 from build_badw_structural_review_packet import rows
 
-VERSION = "badw-structural-candidate-projection-v2"
+VERSION = "badw-structural-candidate-projection-v3"
 
 
 def enrich(nodes, text, *, article=None, structure=None):
@@ -67,6 +67,13 @@ def enrich(nodes, text, *, article=None, structure=None):
                 add("lexical_parallel", a, b, "explicit HTML Lex. block / delimiter clause")
                 for quote in clause["german_quotation_candidates"]:
                     add("translation", quote["start"], quote["end"], "source German quotation in Lex. block")
+                for citation in clause.get("terminal_citation_candidates", []):
+                    node = add("citation", citation["start"], citation["end"], citation["evidence"])
+                    if node is not None:
+                        node["candidate_status"] = citation["status"]
+        for field in article.get("qualifiers", []):
+            a, b = bounds(field)
+            add("qualifier", a, b, "explicit HTML metrical qualifier tag")
         for name, kind in (("sanskrit", "sanskrit"), ("tibetan_segments", "tibetan")):
             for field in article.get(name, []):
                 a, b = bounds(field)

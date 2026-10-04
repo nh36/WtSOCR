@@ -6,7 +6,45 @@ Incomplete delimiters are retained as an explicit diagnostic.
 """
 from __future__ import annotations
 
+import re
+
 QUOTE_PAIRS = {"„": "“", "«": "»", "‚": "‘"}
+
+
+def terminal_lexical_citation(text, start, end):
+    """A balanced terminal Lex. source expression, not resolved ownership.
+
+    Require a siglum-shaped label (optionally with a locator). Corrections,
+    prose parentheses, and quoted parentheses are not citation evidence.
+    """
+    _, diagnostics = lexical_clauses(text, start, end)
+    if diagnostics:
+        return None
+    stack, quotes, pairs = [], [], []
+    for i in range(start, end):
+        char = text[i]
+        if char in QUOTE_PAIRS:
+            quotes.append(QUOTE_PAIRS[char])
+        elif quotes:
+            if char == quotes[-1]:
+                quotes.pop()
+        elif char == "(":
+            stack.append(i)
+        elif char == ")" and stack:
+            a = stack.pop()
+            if not stack:
+                pairs.append((a, i + 1))
+    if not pairs:
+        return None
+    a, b = pairs[-1]
+    inside = text[a + 1:b - 1]
+    if (text[b:end].strip() not in ("", ".") or
+            not re.fullmatch(r"[A-Za-z][A-Za-z0-9]*(?:\s+\d[\w:., /–-]*)?", inside) or
+            not re.search(r"[A-Z0-9]", inside)):
+        return None
+    return dict(start=a, end=b, source_text=text[a:b],
+                status="unresolved_source_citation_candidate",
+                evidence="balanced terminal Lex. siglum-shaped parenthesis")
 
 
 def lexical_clauses(text, start, end):

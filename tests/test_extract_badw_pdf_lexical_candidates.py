@@ -53,6 +53,22 @@ def _example_article(lines: list[dict]) -> dict:
         "adjacent_quote_citation_pairs": [{"quote_index": 0, "citation_index": 0}]})
 
 
+def test_definition_continuation_before_wrapped_cross_reference_is_not_lost():
+    first = 'auch ka Leuchte, Lampe,'
+    second = 'Meteor; vgl. ↓kha, '
+    lines = [_line(first, [(0, 5, 'regular'), (5, 7, 'italic'), (7, len(first), 'regular')]),
+             _line(second), _line('2'), _line('ga.', [(0, 2, 'italic'), (2, 3, 'regular')])]
+    result = extract(_article(lines))
+    assert result['definitions'][0]['text'] == 'Leuchte, Lampe,\nMeteor'
+    assert result['definitions'][0]['visual_end'] == len(first) + 1 + len('Meteor')
+    validate(_article(lines), result)
+
+
+def test_wrapped_reference_without_preceding_gloss_is_not_a_definition():
+    result = extract(_article([_line('vgl. ↓ka,'), _line('kha', [(0, 3, 'italic')])]))
+    assert result['definitions'] == []
+
+
 @pytest.mark.parametrize("apparatus", ["(v. l. kha)", "(Gl. kha (r. ka))", "{kha}"])
 def test_roman_apparatus_between_italic_runs_preserves_full_example(apparatus: str) -> None:
     text = f"ka {apparatus} ga „translation“ (Source 1)"
