@@ -1,7 +1,8 @@
 """Exact reviewed citation identities; never a fuzzy spelling/year rule.
 
-Offsets address the original Unicode citation. Evidence objects and official
-target occurrences are hash-pinned. An unresolved disposition is not an edge.
+Offsets address the original Unicode citation. Evidence objects and reviewed
+target occurrences are hash-pinned. A work candidate is not an accepted edge;
+neither it nor a reviewed identity changes the literal year or verifies a locator.
 """
 from __future__ import annotations
 
@@ -54,7 +55,7 @@ class CitationReviews:
                     raise ValueError("citation evidence requires positive page")
                 if evidence in prints and int(review["evidence_page"]) > int(prints[evidence]["pages"]):
                     raise ValueError("citation evidence page outside registered source")
-                if review["status"] == "reviewed_identity":
+                if review["status"] in {"reviewed_identity", "reviewed_external_identity", "reviewed_work_candidate"}:
                     if any(review.get(k) for k in ("print_occurrence_id", "print_source_sha256")):
                         raise ValueError("online citation review must not supply a print target")
                     target = occurrences.get(review["online_occurrence_id"])
@@ -63,6 +64,13 @@ class CitationReviews:
                         raise ValueError("citation target occurrence/hash mismatch")
                     review["authority_id"] = target["id"]
                     review["kind"] = target["kind"]
+                    external = target.get("scope") == "reviewed_external"
+                    if external != (review["status"] == "reviewed_external_identity"):
+                        raise ValueError("citation review target scope mismatch")
+                    if review["status"] == "reviewed_work_candidate":
+                        if target["kind"] != "publication" or not target.get("year"):
+                            raise ValueError("work candidate requires publication/year evidence")
+                        review["target_year"] = target["year"]
                     review["start"], review["end"] = int(review["start"]), int(review["end"])
                 elif review["status"] == "reviewed_print_identity":
                     target = print_occurrences.get(review.get("print_occurrence_id"))
@@ -87,7 +95,7 @@ class CitationReviews:
         if hashlib.sha256(result["text"].encode("utf-8")).hexdigest() != review["text_sha256"]:
             raise ValueError("stale citation review text hash")
         result["citation_review"] = review
-        if review["status"] not in {"reviewed_identity", "reviewed_print_identity"}:
+        if review["status"] not in {"reviewed_identity", "reviewed_print_identity", "reviewed_external_identity", "reviewed_work_candidate"}:
             return result
         if result["matches"] or result.get("unresolved_dom_components"):
             raise ValueError("exact citation review requires an unmatched source occurrence")
@@ -97,16 +105,26 @@ class CitationReviews:
         for marker in re.finditer(r"⟦UNKNOWN:[^⟧]*⟧", result["text"]):
             if any(marker.start() < boundary < marker.end() for boundary in (start, end)):
                 raise ValueError("reviewed citation span bisects an unknown-glyph marker")
+        years = re.findall(r"\b(?:1[5-9]|20)\d{2}[a-z]?\b", result["text"][start:end])
+        candidate = review["status"] == "reviewed_work_candidate"
+        if candidate and (len(years) != 1 or years[0] == review["target_year"]):
+            raise ValueError("work candidate requires an explicit differing citation year")
         result["matches"].append({"start": start, "end": end,
             "label": result["text"][start:end], "authority_ids": [review["authority_id"]],
-            "status": ("exact_print_publication_row" if review["status"] == "reviewed_print_identity"
+            "status": ("reviewed_work_candidate" if candidate else
+                       "exact_external_publication_row" if review["status"] == "reviewed_external_identity" else
+                       "exact_print_publication_row" if review["status"] == "reviewed_print_identity"
                        else "exact_online_" + review["kind"] + "_row"),
             "method": "exact_citation_source_review", "review_evidence": review,
-            "edition_status": "unreviewed", "locator_status": "unreviewed",
+            "edition_status": "year_discrepancy_unresolved" if candidate else "unreviewed", "locator_status": "unreviewed",
+            "publication_year_relation": ({"literal_year": years[0], "target_year": review["target_year"],
+                "status": "reviewed_candidate_not_a_year_correction"} if candidate else None),
             "literal_years": re.findall(r"\b(?:1[5-9]|20)\d{2}[a-z]?\b", result["text"]),
             "print_status": "identity_reviewed_only"})
         result["matches"].sort(key=lambda m: (m["start"], m["end"], m["label"]))
-        result["status"] = ("exact_print_publication_rows" if review["status"] == "reviewed_print_identity"
+        result["status"] = ("reviewed_work_candidates" if candidate else
+                            "exact_external_publication_rows" if review["status"] == "reviewed_external_identity" else
+                            "exact_print_publication_rows" if review["status"] == "reviewed_print_identity"
                             else "exact_online_source_rows")
         return result
 

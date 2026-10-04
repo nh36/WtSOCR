@@ -25,7 +25,8 @@ def setup_review(tmp_path, printed=None, **changes):
         writer = csv.DictWriter(stream, fieldnames=row, delimiter="\t")
         writer.writeheader()
         writer.writerow(row)
-    targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="publication", id="p1")]
+    targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="publication", id="p1",
+                    year="1996", scope="reviewed_external" if row["status"] == "reviewed_external_identity" else "badw_online")]
     return CitationReviews(path, targets, tmp_path, None, printed), obj
 
 
@@ -92,6 +93,47 @@ def test_unresolved_disposition_is_not_an_edge(tmp_path):
     assert linked["matches"] == [] and linked["status"] == "unmatched"
     assert linked["citation_review"]["status"] == "unresolved_publication_or_edition"
     reviews.finish()
+
+
+def test_work_candidate_preserves_year_and_is_not_accepted(tmp_path):
+    from badw_bibliography import AuthorityResolver
+    reviews, _ = setup_review(tmp_path, status="reviewed_work_candidate")
+    linked = reviews.apply("pdf", "c1", result())
+    AuthorityResolver.component_contract(linked)
+    match = linked["matches"][0]
+    assert match["target_status"] == "candidate"
+    assert match["publication_year_relation"] == dict(literal_year="1992", target_year="1996",
+        status="reviewed_candidate_not_a_year_correction")
+    assert match["edition_status"] == "year_discrepancy_unresolved"
+    assert linked["edition_status"] == "year_discrepancy_unresolved"
+    assert linked["residual_reason"] == "reviewed_work_candidate_requires_cited_edition_evidence"
+    assert linked["text"] == result()["text"]
+    reviews.finish()
+
+
+def test_candidate_requires_differing_year_in_exact_span(tmp_path):
+    reviews, _ = setup_review(tmp_path, status="reviewed_work_candidate", end="7")
+    with pytest.raises(ValueError, match="differing citation year"):
+        reviews.apply("pdf", "c1", result())
+
+
+def test_candidate_cannot_claim_a_same_year_discrepancy(tmp_path):
+    text = "(Author 1996: 4)"
+    reviews, _ = setup_review(tmp_path, status="reviewed_work_candidate",
+        text_sha256=hashlib.sha256(text.encode()).hexdigest())
+    with pytest.raises(ValueError, match="differing citation year"):
+        reviews.apply("pdf", "c1", dict(text=text, matches=[]))
+
+
+def test_external_identity_is_accepted_without_edition_or_locator_claim(tmp_path):
+    from badw_bibliography import AuthorityResolver
+    reviews, _ = setup_review(tmp_path, status="reviewed_external_identity")
+    linked = reviews.apply("pdf", "c1", result())
+    AuthorityResolver.component_contract(linked)
+    match = linked["matches"][0]
+    assert match["target_status"] == "accepted_identity"
+    assert match["edition_status"] == match["locator_status"] == "unreviewed"
+    assert linked["status"] == "exact_external_publication_rows"
 
 
 def test_existing_candidate_cannot_be_promoted_by_exact_review(tmp_path):

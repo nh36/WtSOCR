@@ -24,13 +24,13 @@ from badw_bibliography_aliases import load_reviews as load_alias_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v6"
+VERSION = "badw-bibliography-v7"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
 YEAR_PATTERN = r"(?:1[5-9]|20)\d{2}[a-z]?(?:[–/-]\d{2,4})?(?:\s+ff\.)?"
 EXACT_STATUSES = {"exact_online_work_rows", "exact_online_publication_rows", "exact_online_source_rows",
-                  "exact_print_publication_rows"}
+                  "exact_print_publication_rows", "exact_external_publication_rows"}
 
 
 def dumps(value: object) -> str:
@@ -222,6 +222,8 @@ def export_bibtex(rows: list[dict]) -> str:
             fields["annotation"] = "Online source metadata reviewed; print compatibility unverified"
         if row.get("scope") == "published_print":
             fields["annotation"] = "Visually reviewed printed publication identity; citation edition and locator unverified"
+        if row.get("scope") == "reviewed_external":
+            fields["annotation"] = "Reviewed external publication; not a WTS bibliography row; citation edition and locator unverified"
         entries.append("@" + reviewed.get("entry_type", "misc") + "{" + row["occurrence_id"] + ",\n" +
                        ",\n".join("  " + k + " = {" + bibtex_escape(v) + "}" for k, v in sorted(fields.items())) + "\n}\n")
     return "\n".join(entries)
@@ -340,6 +342,10 @@ class AuthorityResolver:
     """Exact source-row identity only; no automatic edition/semantic ownership."""
     def __init__(self, authorities: list[dict], rows: list[dict] | None = None,
                  alias_reviews: list[dict] = ()):
+        # External evidence can establish an exact reviewed identity, not an
+        # automatic author/year alias. Keep this gate inside the resolver too.
+        authorities = [a for a in authorities if a.get("scope") != "reviewed_external"]
+        rows = [r for r in rows or [] if r.get("scope") != "reviewed_external"]
         self.by_id = {a["id"]: a for a in authorities}
         self.resolver = ComponentResolver([(a["id"], a["label"]) for a in authorities
                                   if a["kind"] == "work"], rows or [])
@@ -434,7 +440,8 @@ class AuthorityResolver:
         for match in result["matches"]:
             match["target_status"] = ("accepted_identity" if match["status"] in {
                                       "exact_online_work_row", "exact_online_publication_row",
-                                      "exact_online_abbreviation_row", "exact_print_publication_row"}
+                                      "exact_online_abbreviation_row", "exact_print_publication_row",
+                                      "exact_external_publication_row"}
                                       else "candidate")
             match["raw_text"] = result["text"][match["start"]:match["end"]]
             occupied.append((match["start"], match["end"]))
@@ -455,8 +462,10 @@ class AuthorityResolver:
         result["unparsed_spans"] = runs
         result["component_contract_version"] = "citation-components-v2"
         result["coverage_status"] = "matched_components_only_not_complete_citation_resolution"
-        result["edition_status"] = "unreviewed"
-        result["residual_reason"] = ("dom_work_absent_or_description_conflict" if
+        year_candidate = any(m["status"] == "reviewed_work_candidate" for m in result["matches"])
+        result["edition_status"] = "year_discrepancy_unresolved" if year_candidate else "unreviewed"
+        result["residual_reason"] = ("reviewed_work_candidate_requires_cited_edition_evidence" if
+            year_candidate else "dom_work_absent_or_description_conflict" if
             result.get("unresolved_dom_components") else "competing_component_identities" if
             result["status"] == "ambiguous" else "unknown_glyph_in_unmatched_reference" if
             result["status"] == "unmatched" and "⟦UNKNOWN:" in result["text"] else
@@ -554,7 +563,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           registry: Path | None = None, metadata_reviews: Path | None = None,
           relation_reviews: Path | None = None, print_candidates: Path | None = None,
           print_reviews: Path | None = None, alias_reviews: Path | None = None,
-          citation_reviews: Path | None = None, publication_reviews: Path | None = None) -> dict:
+          citation_reviews: Path | None = None, publication_reviews: Path | None = None,
+          external_publications: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -567,6 +577,11 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         observations.append(dict(response.metadata))
     apply_metadata_reviews(rows, metadata_reviews)
     authorities, relations = authority_graph(rows)
+    from badw_bibliography_external import load_publications
+    external_rows = load_publications(external_publications, cache)
+    external_authorities = [{k: r[k] for k in ("id", "kind", "label", "scope", "status")} for r in external_rows]
+    authorities.extend(external_authorities)
+    rows.extend(external_rows)
     apply_relation_reviews(rows, relations, relation_reviews)
     aliases = load_alias_reviews(alias_reviews, rows, registry)
     printed = []
@@ -614,7 +629,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                            [(relation["occurrence_id"], relation["ordinal"], p) for p in relation["publication_candidates"]])
     counts = Counter()
     # Print-only authorities require exact citation reviews, never fuzzy/global aliases.
-    resolver = AuthorityResolver([a for a in authorities if a not in print_authorities], rows, aliases)
+    resolver = AuthorityResolver([a for a in authorities if a not in print_authorities + external_authorities],
+                                 [r for r in rows if r not in external_rows], aliases)
     if staging:
         src = sqlite3.connect(staging.resolve().as_uri() + "?mode=ro", uri=True)
         dom_evidence = dom_citation_evidence(src)
@@ -662,6 +678,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "print_only_authorities": len(print_authorities),
                "publication_relations": len(variants),
                "publication_reviews_sha256": file_digest(publication_reviews) if publication_reviews else None,
+               "external_publications_sha256": file_digest(external_publications) if external_publications else None,
+               "reviewed_external_publications": len(external_rows),
                "print_candidates_sha256": file_digest(print_candidates) if print_candidates else None,
                "print_reviews_sha256": file_digest(print_reviews) if print_reviews else None,
                "staging_database_sha256": file_digest(staging) if staging else None,
@@ -687,11 +705,12 @@ def main():
     parser.add_argument("--alias-reviews", type=Path)
     parser.add_argument("--citation-reviews", type=Path)
     parser.add_argument("--publication-reviews", type=Path)
+    parser.add_argument("--external-publications", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
                      args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
-                     args.alias_reviews, args.citation_reviews, args.publication_reviews)))
+                     args.alias_reviews, args.citation_reviews, args.publication_reviews, args.external_publications)))
 
 
 if __name__ == "__main__":
