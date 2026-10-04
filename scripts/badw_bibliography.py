@@ -21,9 +21,10 @@ from badw_html import (Element, TextNode, compact_text, decode_html_bytes,
                        dom_path, element_locator, find_all, parse_html)
 from badw_citation_components import ComponentResolver, spelling_pattern
 from badw_bibliography_aliases import load_reviews as load_alias_reviews
+from badw_bibliography_citation_reviews import CitationReviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v4"
+VERSION = "badw-bibliography-v5"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
@@ -429,7 +430,8 @@ class AuthorityResolver:
         occupied = []
         for match in result["matches"]:
             match["target_status"] = ("accepted_identity" if match["status"] in {
-                                      "exact_online_work_row", "exact_online_publication_row"}
+                                      "exact_online_work_row", "exact_online_publication_row",
+                                      "exact_online_abbreviation_row"}
                                       else "candidate")
             match["raw_text"] = result["text"][match["start"]:match["end"]]
             occupied.append((match["start"], match["end"]))
@@ -548,7 +550,8 @@ def write_jsonl(path: Path, records):
 def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           registry: Path | None = None, metadata_reviews: Path | None = None,
           relation_reviews: Path | None = None, print_candidates: Path | None = None,
-          print_reviews: Path | None = None, alias_reviews: Path | None = None) -> dict:
+          print_reviews: Path | None = None, alias_reviews: Path | None = None,
+          citation_reviews: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -563,6 +566,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     authorities, relations = authority_graph(rows)
     apply_relation_reviews(rows, relations, relation_reviews)
     aliases = load_alias_reviews(alias_reviews, rows, registry)
+    exact_reviews = CitationReviews(citation_reviews, rows, cache, registry)
     printed = []
     if print_candidates or print_reviews:
         if not (print_candidates and print_reviews and registry):
@@ -604,6 +608,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                 for citation_id, text in src.execute(query):
                     result = (resolver.resolve_dom(text, dom_evidence[citation_id])
                               if layer == "html" and citation_id in dom_evidence else resolver.resolve(text, layer))
+                    exact_reviews.apply(layer, citation_id, result)
+                    resolver.component_contract(result)
                     record = {"layer": layer, "citation_id": citation_id, "resolution": result}
                     f.write(dumps(record) + "\n")
                     if result["status"] not in EXACT_STATUSES:
@@ -617,6 +623,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                             db.execute("INSERT INTO citation_target VALUES (?,?,?,?,?,?,?)",
                                        (layer, citation_id, ordinal, authority_id, match["start"], match["end"], match["target_status"]))
         src.close()
+    exact_reviews.finish()
     if db.execute("PRAGMA foreign_key_check").fetchall():
         raise ValueError("authority foreign key failure")
     db.close()
@@ -627,6 +634,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "metadata_reviews_sha256": file_digest(metadata_reviews) if metadata_reviews else None,
                "relation_reviews_sha256": file_digest(relation_reviews) if relation_reviews else None,
                "alias_reviews_sha256": file_digest(alias_reviews) if alias_reviews else None,
+               "citation_reviews_sha256": file_digest(citation_reviews) if citation_reviews else None,
+               "exact_citation_review_counts": dict(Counter(r["status"] for r in exact_reviews.reviews.values())),
                "reviewed_identity_aliases": len(aliases),
                "relation_statuses": dict(Counter(r["status"] for r in relations)),
                "citation_statuses": dict(sorted(counts.items())),
@@ -655,11 +664,12 @@ def main():
     parser.add_argument("--print-candidates", type=Path)
     parser.add_argument("--print-reviews", type=Path)
     parser.add_argument("--alias-reviews", type=Path)
+    parser.add_argument("--citation-reviews", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
                      args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
-                     args.alias_reviews)))
+                     args.alias_reviews, args.citation_reviews)))
 
 
 if __name__ == "__main__":

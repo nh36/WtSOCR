@@ -49,7 +49,7 @@ def test_accuracy_requires_review_and_does_not_conflate_axes(tmp_path):
     with pytest.raises(ValueError, match="exhaustive"):
         bench.score(output / "blind_packets.jsonl", reviews, links)
     review["review"].update(reviewer="independent", evidence_locator="scan:1",
-        evidence_sha256="a" * 64, complete_identity_review=True,
+        evidence_path=str(links), evidence_sha256=bench.file_digest(links), complete_identity_review=True,
         accepted_spans=[{"start": 0, "end": 2, "authority_id": "work-1"}],
         edition_checks=[{"start": 0, "end": 2, "value": "edition-1"}],
         locator_checks=[{"start": 3, "end": 5, "value": "12"}])
@@ -61,9 +61,30 @@ def test_accuracy_requires_review_and_does_not_conflate_axes(tmp_path):
     assert result["counts"]["locator_abstained"] == 1
     altered = predictions()
     altered[0]["resolution"]["matches"][0]["target_status"] = "candidate"
+    evidence = tmp_path / "evidence"
+    evidence.write_bytes(links.read_bytes())
+    review["review"]["evidence_path"] = str(evidence)
+    write(reviews, [review])
     write(links, altered)
     assert bench.score(output / "blind_packets.jsonl", reviews, links)["counts"]["identity_false_negative"] == 1
     review["text_sha256"] = "b" * 64
     write(reviews, [review])
     with pytest.raises(ValueError, match="hash mismatch"):
+        bench.score(output / "blind_packets.jsonl", reviews, links)
+
+
+def test_review_evidence_must_be_real_and_hash_pinned(tmp_path):
+    links = write(tmp_path / "links", predictions())
+    output = tmp_path / "work" / "packets"
+    bench.sample(links, write(tmp_path / "challenge", []), output, 1)
+    review = next(bench.records(output / "blind_packets.jsonl"))
+    review["review"].update(reviewer="reader", evidence_locator="source row 1",
+        evidence_path=str(tmp_path / "absent"), evidence_sha256="a" * 64,
+        complete_identity_review=True)
+    reviews = write(tmp_path / "reviews", [review])
+    with pytest.raises(ValueError, match="file missing"):
+        bench.score(output / "blind_packets.jsonl", reviews, links)
+    review["review"]["evidence_path"] = str(links)
+    write(reviews, [review])
+    with pytest.raises(ValueError, match="evidence hash mismatch"):
         bench.score(output / "blind_packets.jsonl", reviews, links)

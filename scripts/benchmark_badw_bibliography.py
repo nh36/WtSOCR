@@ -107,7 +107,8 @@ def score(packets: Path, reviews: Path, predictions: Path):
     predicted = {key(r): r for r in records(predictions)}
     if len(predicted) != sum(1 for _ in records(predictions)):
         raise ValueError("duplicate predictions")
-    counts, seen = Counter(), set()
+    counts, seen, checked = Counter(), set(), set()
+    groups = defaultdict(Counter)
     for gold in records(reviews):
         identity = key(gold)
         if identity in seen or identity not in packet_map or identity not in predicted:
@@ -122,10 +123,18 @@ def score(packets: Path, reviews: Path, predictions: Path):
                 not review["evidence_locator"].strip() or
                 not re.fullmatch("[0-9a-f]{64}", review["evidence_sha256"])):
             raise ValueError("independent exhaustive source review required")
+        evidence = Path(review.get("evidence_path", ""))
+        if not evidence.is_file():
+            raise ValueError("review evidence file missing")
+        evidence_key = str(evidence), review["evidence_sha256"]
+        if evidence_key not in checked:
+            if file_digest(evidence) != review["evidence_sha256"]:
+                raise ValueError("review evidence hash mismatch")
+            checked.add(evidence_key)
         expected = set()
         for span in review["accepted_spans"]:
             start, end = span["start"], span["end"]
-            if not isinstance(start, int) or not isinstance(end, int) or not 0 <= start < end <= len(packet["text"]):
+            if type(start) is not int or type(end) is not int or not 0 <= start < end <= len(packet["text"]):
                 raise ValueError("gold span outside source text")
             expected.add((span["authority_id"], start, end))
         if len(expected) != len(review["accepted_spans"]):
@@ -137,6 +146,11 @@ def score(packets: Path, reviews: Path, predictions: Path):
         counts["identity_true_positive"] += len(actual & expected)
         counts["identity_false_positive"] += len(actual - expected)
         counts["identity_false_negative"] += len(expected - actual)
+        for group in ("layer:" + packet["layer"], "stratum:" + packet["layer"] + ":" + packet["stratum"],
+                      *("membership:" + m for m in packet["memberships"])):
+            groups[group].update(reviewed=1, identity_exact=int(actual == expected),
+                true_positive=len(actual & expected), false_positive=len(actual - expected),
+                false_negative=len(expected - actual))
         for axis in ("edition", "locator"):
             # Future resolvers may supply verified checks. An identity match is
             # never promoted to a successful edition/locator check implicitly.
@@ -154,7 +168,9 @@ def score(packets: Path, reviews: Path, predictions: Path):
                     counts[axis + "_attempted"] += 1
                     counts[axis + "_correct"] += len(candidates) == 1 and candidates[0]["value"] == check["value"]
     tp = counts["identity_true_positive"]
-    return {"counts": dict(sorted(counts.items())), "unreviewed_packets": len(packet_map) - len(seen),
+    return {"counts": dict(sorted(counts.items())),
+        "groups": {k: dict(sorted(v.items())) for k, v in sorted(groups.items())},
+        "unreviewed_packets": len(packet_map) - len(seen),
         "identity_precision": tp / (tp + counts["identity_false_positive"]) if tp + counts["identity_false_positive"] else None,
         "identity_recall": tp / (tp + counts["identity_false_negative"]) if tp + counts["identity_false_negative"] else None,
         "packet_sha256": file_digest(packets), "review_sha256": file_digest(reviews),
