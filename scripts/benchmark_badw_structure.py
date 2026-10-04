@@ -17,16 +17,21 @@ from pathlib import Path
 from build_badw_structural_review_packet import VERSION, rows
 
 PARENTS = {
-    "headword": {None}, "sense": {None, "sense"},
-    "definition": {"sense"}, "example": {"sense"},
-    "tibetan": {"example"}, "translation": {"example"},
-    "citation": {"example", "sense", "lexical_parallel"},
-    "lexical_parallel": {"sense"}, "correction": {"tibetan"},
-    "cross_reference": {None, "sense", "definition", "example", "lexical_parallel"},
-    "grammar": {None, "sense"}, "sanskrit": {None, "sense", "definition", "example"},
+    "headword": {None}, "source_division": {None}, "sense": {None, "sense", "source_division"},
+    "definition": {"sense", "source_division"}, "example": {"sense", "source_division"},
+    "tibetan": {"example", "lexical_parallel", "definition"},
+    "translation": {"example", "lexical_parallel", "definition"},
+    "citation": {None, "example", "sense", "source_division", "definition", "lexical_parallel"},
+    "lexical_parallel": {"sense", "source_division"}, "correction": {"tibetan"},
+    "cross_reference": {None, "source_division", "sense", "definition", "example", "lexical_parallel"},
+    "grammar": {None, "source_division", "sense", "definition"},
+    "qualifier": {None, "source_division", "sense", "definition", "example", "lexical_parallel"},
+    "sanskrit": {None, "source_division", "sense", "definition", "example", "lexical_parallel"},
 }
-EDGES = {"citation_of": ("citation", {"example", "sense", "lexical_parallel"}),
+EDGES = {"citation_of": ("citation", {"example", "sense", "definition", "lexical_parallel"}),
+         "shared_citation_of": ("citation", {"example", "definition", "lexical_parallel"}),
          "translation_of": ("translation", {"tibetan"})}
+REVIEW_MODES = {"independent_blind_review", "same_agent_source_review", "prediction_exposed_review"}
 
 
 def identity(row):
@@ -82,8 +87,23 @@ def graph(nodes, edges, text):
             raise ValueError("invalid relationship kinds")
         if edge["kind"] == "citation_of" and source.get("parent") != target["id"]:
             raise ValueError("citation ownership contradicts nesting")
+        if edge["kind"] == "shared_citation_of":
+            # Shared support is semantic, not physical containment. Require an
+            # explicit evidence claim and a common source division/sense; never
+            # let this edge relax the ordinary single-owner relationship.
+            if not edge.get("evidence"):
+                raise ValueError("shared citation requires evidence")
+            def ancestors(node):
+                result = set()
+                while node is not None:
+                    if node["kind"] in {"sense", "source_division"}:
+                        result.add(node["id"])
+                    node = by_id.get(node.get("parent"))
+                return result
+            if not ancestors(source) & ancestors(target):
+                raise ValueError("shared citation crosses source divisions")
         if edge["kind"] == "translation_of" and source.get("parent") != target.get("parent"):
-            raise ValueError("translation crosses examples")
+            raise ValueError("translation crosses source owners")
         link = edge["kind"], keys[edge["from"]], keys[edge["to"]]
         if link in links:
             raise ValueError("duplicate relationship")
@@ -103,11 +123,21 @@ def score(packets, reviews, predictions):
         if packet["contract_version"] != VERSION or digest != packet["review_text_sha256"]:
             raise ValueError("stale packet source/version")
         review = gold.get(key, packet)
+        if review.get("review_status") == "reviewed_partial":
+            for field in ("source", "group", "stratum", "split", "review_text", "review_text_sha256"):
+                if review.get(field) != packet[field]:
+                    raise ValueError("review changed pinned source or split")
+            if (not review.get("reviewer") or not review.get("unresolved") or
+                    review.get("review_mode") not in REVIEW_MODES):
+                raise ValueError("partial review requires attribution and unresolved claims")
+            graph(review["reviewed_nodes"], review["reviewed_edges"], text)
+            totals["partial_unscored"] += 1
+            continue
         if review.get("review_status") == "pending_independent_review":
             totals["pending"] += 1
             continue
         if (review.get("review_status") != "reviewed_complete" or not review.get("reviewer") or
-                review.get("review_mode") not in {"independent_blind_review", "same_agent_source_review", "prediction_exposed_review"}):
+                review.get("review_mode") not in REVIEW_MODES):
             raise ValueError("complete attributed review required")
         for field in ("source", "group", "stratum", "split", "review_text", "review_text_sha256"):
             if review.get(field) != packet[field]:
@@ -140,12 +170,12 @@ def score(packets, reviews, predictions):
                 count[axis + ":gold"] += len(wanted)
                 count[axis + ":predicted"] += len(found)
                 count[axis + ":correct"] += len(wanted & found)
-    return {"contract_version": "badw-structural-benchmark-v1", "counts": dict(totals),
+    return {"contract_version": "badw-structural-benchmark-v2", "counts": dict(totals),
             "groups": {k: dict(v) for k, v in sorted(groups.items())},
             "kinds": {k: dict(v) for k, v in sorted(kinds.items())},
             "disagreements": disagreements,
             "review_modes": dict(sorted(modes.items())),
-            "limitations": "Empty axes have no measured accuracy; review-mode declarations do not prove independence."}
+            "limitations": "Empty axes have no measured accuracy; review-mode declarations do not prove independence. Exact entry scores cover packet review text only; PDF packets omit headings. Source divisions are not asserted senses. Partial reviews are unscored."}
 
 
 def main():

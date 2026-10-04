@@ -105,3 +105,49 @@ def test_prediction_provenance_cannot_change():
     predicted["source"] = {"sha256": "b" * 64}
     with pytest.raises(ValueError, match="prediction changed pinned"):
         score([source], [gold], [predicted])
+
+
+def test_source_division_does_not_assert_sense_and_definition_can_own_citation():
+    values = [dict(id="d", kind="source_division", start=0, end=20, parent=None),
+              dict(id="def", kind="definition", start=0, end=20, parent="d"),
+              dict(id="c", kind="citation", start=14, end=20, parent="def")]
+    typed, _, links = graph(values, [dict(kind="citation_of", **{"from": "c", "to": "def"})], packet()["review_text"])
+    assert ("source_division", 0, 20) in typed
+    assert not any(n[0] == "sense" for n in typed)
+    assert len(links) == 1
+
+
+def test_shared_citation_requires_evidence_and_common_source_scope():
+    values = nodes()
+    values[4]["parent"] = "s"  # physical containment differs from semantic support
+    edge = dict(kind="shared_citation_of", **{"from": "c", "to": "e"})
+    with pytest.raises(ValueError, match="requires evidence"):
+        graph(values, [edge], packet()["review_text"])
+    edge["evidence"] = "synthetic source review"
+    graph(values, [edge], packet()["review_text"])
+    values.append(dict(id="other", kind="sense", start=0, end=20, parent=None))
+    values[-1]["start"] = 1  # avoid duplicate typed span
+    values[1]["parent"] = "other"
+    with pytest.raises(ValueError, match="crosses source divisions"):
+        graph(values, [edge], packet()["review_text"])
+
+
+def test_partial_reviews_are_validated_but_never_scored():
+    source, gold, predicted = records()
+    gold.update(review_status="reviewed_partial", unresolved=["sense boundary unreviewed"])
+    assert score([source], [gold], [])["counts"] == {"partial_unscored": 1}
+    gold["reviewed_nodes"][0]["end"] = 200
+    with pytest.raises(ValueError, match="outside source"):
+        score([source], [gold], [])
+
+
+def test_partial_reviews_cannot_change_source_or_claim_anonymous_review():
+    source, gold, predicted = records()
+    gold.update(review_status="reviewed_partial", unresolved=["unreviewed"])
+    gold["source"] = {}
+    with pytest.raises(ValueError, match="changed pinned"):
+        score([source], [gold], [])
+    gold["source"] = source["source"]
+    gold["review_mode"] = None
+    with pytest.raises(ValueError, match="requires attribution"):
+        score([source], [gold], [])
