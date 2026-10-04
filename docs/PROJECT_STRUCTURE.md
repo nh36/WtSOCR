@@ -10,6 +10,7 @@ The current repository state is defined by a small set of entry points:
 | Current operational state and queues | `docs/STATUS.md` |
 | BAdW source integration architecture | [`docs/BADW_SOURCE_INTEGRATION.md`](BADW_SOURCE_INTEGRATION.md) |
 | Lexical-record contract and local database builder | `data/lexical_record_contract.schema.tsv`, `scripts/verify_badw_lexical_source.py`, `scripts/build_lexical_database.py` |
+| Source-bound scholarly annotation pilot | `data/badw_semantic_annotation.schema.tsv`, `data/reviewed_badw_semantic_annotations.jsonl`, `scripts/badw_semantic_annotations.py` |
 | Deployable four-volume release | `release/current/` |
 | Release inventory and build provenance | `release/current/manifest.md` |
 | Reproducible input snapshots | `release/inputs/` |
@@ -27,6 +28,8 @@ Generated evidence tables live mainly under `data/tibetan_*.tsv` and `release/cu
 `release/current/text/` is deployable corrected text. `release/current/qa/` and `release/current/checksums.tsv` verify and explain that snapshot. `docs/STATUS.md` is generated from the checked-in release and ledgers by `scripts/build_status.py`.
 
 BAdW integration follows a two-layer model: the existing release remains print-faithful, while current BAdW editorial readings and post-print variants belong to a separate source layer. Raw BAdW source caches and decoded corpora remain ignored under `work/`; see [`docs/BADW_SOURCE_INTEGRATION.md`](BADW_SOURCE_INTEGRATION.md).
+
+That source distinction is orthogonal to the four logical scholarly layers documented there: source observations, reviewed/inferred annotations, canonical entities/relationships, and derived representations. The small language/form-mention overlay validates against existing frozen review packets; it neither replaces the lexical contract nor promotes structure or citation ownership. Its reviewed Sanskrit records are development evidence, not independent benchmark gold. Bulk validation outputs remain under ignored `work/`.
 
 `scripts/verify_badw_lexical_source.py` binds parsed BAdW database articles and lexical spans to a frozen source snapshot. `scripts/build_lexical_database.py` turns that verified lexical-record JSONL into a local SQLite/FTS database with source spans, snapshot hashes, occurrence-level citation sigla, exact-span BAdW tooltip-expansion authorities, separate print-bibliography candidates, and optional generated-PDF article witnesses and unassigned fragments. A uniquely linked tooltip establishes a first-party siglum expansion, not verification against the printed bibliography; that status remains separately unverified. PDF witnesses remain a distinct searchable source layer, not conflated with database editorial entries. The builder is non-corrective, and BAdW data belongs in an ignored database under `work/`.
 

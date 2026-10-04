@@ -149,3 +149,60 @@ Whole-article structural validation must precede promotion of PDF candidates to 
 Source-component extraction retains complete HTML Tibetan containers and their individually tagged segments, including explicit unresolved gaps when only a segment envelope is available. Lex. blocks retain their complete source extent, balanced-delimiter clauses, tagged language fields, and quotation candidates without inferring citation ownership. PDF Lex. extents ending at a source-division boundary remain candidate extents, not verified semantic boundaries. PDF italics alone do not identify a language: literal Sanskrit labels may establish bounded fields, while unlabeled italic spans remain explicit unresolved source material. The structural projection carries the original source structures alongside its candidate graph so a partial graph cannot conceal omitted material.
 
 The structural benchmark keeps exact-span and nesting/edge scores separate from a terminal-whitespace-only diagnostic. That diagnostic does not rewrite source text, join lines, remove punctuation, or excuse missing language fields, reference targets, or semantic relationships. Improved development scores do not open the production or citation-ownership gate until substantive omissions and source-bound review have been addressed.
+
+## Scholarly data architecture
+
+The intended product is a source-faithful, queryable scholarly dictionary, not merely cleaned OCR. The following four **logical** layers supply its conceptual spine. They are not four new databases, and they do not replace the existing source cache, lexical-record contract, bibliography authority model or SQLite backend. The print-faithful/BAdW-editorial distinction cuts across these layers: neither source witness silently replaces the other.
+
+| Layer | Contents | Boundary |
+| --- | --- | --- |
+| Source observations | Immutable response bytes; source-faithful text; DOM/PDF locations, typography, explicit tags, links and literal apparatus | An extraction is a versioned observation of the bytes, not an infallible transcription or a semantic interpretation |
+| Scholarly annotations | Language identification, form mentions, structural interpretation, citation resolution/ownership, grammar, corrections and review decisions | Candidates, accepted claims, rejected claims and supersessions remain distinguishable; an inferred claim must not masquerade as a source tag |
+| Canonical entities and relationships | Entries, witness-specific senses, forms, works, editions/publications, source abbreviations and typed graph relationships | Entity identity is separate from a spelling, source occurrence, local OCR anchor or ranked candidate; containment is not semantic ownership |
+| Derived representations | Corrected readings, normalized Wylie, Tibetan-script conversion, English translation, search indexes and presentation | Every transformation retains its input, method/version and provenance; no derived string overwrites its source |
+
+Start with witness-specific senses rather than forcing print and online divisions into one canonical sense sequence. Alignments and editorial variants may relate them later. A headword spelling is not an entry identifier; a source URL alone is not a timeless witness identifier. Existing source hashes, occurrence IDs and accepted identity links should anchor migration. Do not invent a parallel entry schema or a generic entity/attribute framework to implement these distinctions.
+
+### Selectors, review and versioning
+
+An annotation must bind a particular witness and extraction view: raw source hash(s), view contract/version, view hash, text hash, exact literal text, ordered half-open Unicode ranges and available physical anchors. Discontinuous spans are legitimate. DOM locations and PDF page/run/glyph evidence must remain available even when a convenient review-text range is used. OCR coordinates retain their separate positive, 1-based token convention.
+
+`data/badw_semantic_annotation.schema.tsv` and `scripts/badw_semantic_annotations.py` introduce only a small `language_span`/`form_mention` overlay on the existing frozen structural review packets. The validator replays text ranges and physical selectors, verifies cached source/canonical-page hashes and retains superseded claims. PDF run/style envelopes are not glyph-exact selectors; an HTML visible-text range is not a claimed DOM-node location. This pilot does not yet supply production semantic entities, ownership, transformations or a complete annotation framework. Its four reviewed records in `data/reviewed_badw_semantic_annotations.jsonl` are prediction-exposed development evidence, not independent benchmark gold or proof that extraction is complete.
+
+Review status and evidence strength must stay separate. Acceptance records who reviewed what, how and against which source; it does not imply independent review. Frozen historical views are never rewritten to match a new extractor. New extraction versions require source-checked migration/review of annotations, not blind reuse of offsets. Supersession preserves the previous claim and reason/evidence for its replacement. Deterministic builds record input hashes and software/contract versions; fetch time establishes an observation date, not the date an editor changed the article.
+
+Original transcription, reviewed OCR correction, normalization, script conversion and translation are distinct operations with distinct parents. A correction can derive a print-faithful reading only through the established print-compatibility gates. Normalized Wylie is a later derived layer: the literal WTS transliteration is historical LoC, not Wylie. Translation links an English rendering to a particular German span/version, not to an unversioned entry blob.
+
+### Language and Sanskrit
+
+Preserve literal source classifications and scholarly identifications separately. Explicit `skt.` labels and HTML tags are source evidence; unlabeled italics alone are not a language classifier. A reviewed Sanskrit span may overlay otherwise unclassified text without inventing a missing source tag. Wraps and hyphens, including `cai-\ntyāṅganaḥ`, remain literal; any joined reading is a separately justified derivation.
+
+German-inflected `Viṣṇus` remains literal German-context text. A reviewed form-mention annotation can relate it to Sanskrit `Viṣṇu` without declaring the whole inflected token a literal Sanskrit passage or replacing the spelling. The same distinction generalizes to names, quotations and embedded forms: language, mention of a form and lexical identity are different claims.
+
+### Cross-reference graph
+
+Retain each reference occurrence with its literal arrow/link text, source span, direction, HTML href or printed target, and witness. An explicit href establishes a source link, not necessarily a unique canonical-entry resolution. Printed ↑/↓, other entry links, stem/form references and ambiguous homonyms require separately typed interpretations and target-resolution claims. Preserve candidate targets and unresolved occurrences; proximity or the first search result is not a resolution rule.
+
+An accepted edge links an occurrence to a canonical target and records the evidence, relation type, method and review. Direction, target interpretation and entity resolution remain independently revisable. Queries can then traverse accepted edges while exposing ambiguous alternatives and the original source link. Related stems/forms need their own entities/relationships rather than being squeezed into entry identity. This is an extension of the existing cross-reference/source-span records, not a second graph maintained beside them.
+
+### Bibliography and citation queries
+
+Reuse the existing work/publication/abbreviation, print-only authority and publication-relation infrastructure. A literal citation occurrence, canonical work, edition/publication, printed year, locator and owning example/sense are separate claims. Resolving a work does not verify an edition or page; locating a citation inside a source division does not establish its semantic owner. An absent online author-year row must not erase a reviewed print-only authority or force a year substitution.
+
+“Every citation of this book” should query resolved occurrence-to-work links, optionally restricted by edition, witness, locator-verification or review status. It must also expose unresolved candidates rather than count them as accepted links. Source-specific bibliography wording and editorial year/edition discrepancies remain recoverable as variants and reviewed relationships. BibTeX is an export of bibliography metadata, not the identity model or a replacement for source evidence.
+
+## Roadmap from source corpus to scholarly dictionary
+
+These are scholarly architecture stages, not a renumbering of the historical acquisition/reconciliation stages above. Each gate concerns correctness as well as coverage; later work must not erase uncertainty to meet a percentage.
+
+| Stage | Build and completion evidence | Explicitly defer |
+| --- | --- | --- |
+| A — stable boundaries | Document the four layers; validate a small source-bound annotation pilot with exact Unicode ranges, cached hashes, anchors, review modes and supersession. Map existing structures to the layers rather than duplicate them | Universal annotation engine, database rewrite, inferred ownership |
+| B — source fidelity | Finish source-component extraction for HTML/PDF; review complex boundaries, Lex., multi-segment Tibetan, Sanskrit and links. Keep exact structural scores, representational diagnostics and substantive losses separate. Independently reviewed stratified evidence and a tested lossless source-to-component path must justify opening the structural gate | Treating all development mismatches as conventions; production promotion |
+| C — scholarly annotations | Add bounded, source-reviewed language/form, grammar and structure claims; then citation-ownership review/challenge only after B. Validate nesting, unresolved material and evidence-specific associations, with held-out accuracy by phenomenon | Proximity ownership; canonicalizing competing interpretations |
+| D — canonical relationships | Reuse bibliography work/edition and entry/witness identity machinery; resolve explicit and printed references into typed edges. Test homonyms, ambiguous targets, edition/year discrepancies and locator correctness independently | Forcing one target or edition; collapsing editorial variants |
+| E — production projection | Extend the existing lexical contract/SQLite schema only for demonstrated needs. Fail closed on missing provenance, lost components, invalid accepted links or stale versions; test reproducible imports and complete entry-page component addressability | A public entry view that treats candidate structure as fact; speculative technology migration |
+| F — derived readings | Add versioned normalization/Wylie, Tibetan conversion and later German-to-English translation, each with reversible source links and independently tested difficult cases | Replacing literal LoC/German; using translation to infer source structure |
+| G — queries and interface | Provide research queries over components, witnesses, senses, forms and sources; test graph traversal and provenance drill-down, then build a polished public dictionary | A UI hiding unresolved claims or presenting coverage as verified accuracy |
+
+The next bounded tranche after the annotation pilot is to repair demonstrated source/projection losses and agree evidenced structural boundaries while retaining unchanged benchmark gold and exact scoring. Semantic annotations are reported separately from extractor matches. The 120-packet independent review, including its held-out portion, remains an outstanding gate; a four-span development overlay does not open citation ownership or production projection.
