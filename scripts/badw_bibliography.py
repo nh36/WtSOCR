@@ -20,9 +20,10 @@ import sqlite3
 from badw_html import (Element, TextNode, compact_text, decode_html_bytes,
                        dom_path, element_locator, find_all, parse_html)
 from badw_citation_components import ComponentResolver, spelling_pattern
+from badw_bibliography_aliases import load_reviews as load_alias_reviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v3"
+VERSION = "badw-bibliography-v4"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
@@ -333,11 +334,15 @@ def apply_relation_reviews(rows: list[dict], relations: list[dict], path: Path |
 
 class AuthorityResolver:
     """Exact source-row identity only; no automatic edition/semantic ownership."""
-    def __init__(self, authorities: list[dict], rows: list[dict] | None = None):
+    def __init__(self, authorities: list[dict], rows: list[dict] | None = None,
+                 alias_reviews: list[dict] = ()):
         self.by_id = {a["id"]: a for a in authorities}
         self.resolver = ComponentResolver([(a["id"], a["label"]) for a in authorities
                                   if a["kind"] == "work"], rows or [])
         self.rows = {r["id"]: r for r in (rows or [])}
+        self.alias_patterns = [(review, re.compile(r"(?<![\w/-])" +
+            spelling_pattern(review["alias"]) + r"(?![^\W\d]|[_/-])"))
+            for review in alias_reviews]
         self.work_labels = defaultdict(list)
         for a in authorities:
             if a["kind"] == "work":
@@ -377,7 +382,11 @@ class AuthorityResolver:
             if analysis:
                 ids = self.work_labels.get(analysis[0], [])
             safe = len(ids) == 1 and self.by_id[ids[0]]["status"] == "first_party_source_row"
-            safe = safe and compact_text(self.rows[ids[0]]["text"]) == compact_text(item["expansion"])
+            description_agrees = len(ids) == 1 and (
+                compact_text(self.rows[ids[0]]["text"]) == compact_text(item["expansion"]) or
+                bool(analysis and self.resolver.tooltip_agreement(
+                    analysis[0], analysis[1], self.rows[ids[0]]["text"], item["expansion"])))
+            safe = safe and description_agrees
             match = {**item, "authority_ids": ids, "edition_status": "unreviewed",
                      "print_status": "unverified", "status": "exact_online_work_row" if safe else "ambiguous",
                      "method": "same_dom_span_and_exact_tooltip_description"}
@@ -385,6 +394,8 @@ class AuthorityResolver:
                 match.update(canonical_label=analysis[0], selector=analysis[1],
                              grammar_evidence=self.resolver.grammar_evidence[analysis[0]],
                              method="same_dom_compound_grammar_and_exact_tooltip_description")
+                if safe and compact_text(self.rows[ids[0]]["text"]) != compact_text(item["expansion"]):
+                    match["method"] = "same_dom_item_selector_collection_and_edition_agreement"
             if safe:
                 matches.append(match)
             else:
@@ -417,12 +428,14 @@ class AuthorityResolver:
         """
         occupied = []
         for match in result["matches"]:
-            match["target_status"] = ("accepted_identity" if match["status"].startswith("exact_online_")
+            match["target_status"] = ("accepted_identity" if match["status"] in {
+                                      "exact_online_work_row", "exact_online_publication_row"}
                                       else "candidate")
             match["raw_text"] = result["text"][match["start"]:match["end"]]
             occupied.append((match["start"], match["end"]))
         for item in result.get("unresolved_dom_components", []):
-            occupied.append((item["start"], item["end"]))
+            item["target_status"] = "candidate"
+            item["raw_text"] = result["text"][item["start"]:item["end"]]
         covered = set(i for start, end in occupied for i in range(start, end))
         runs = []
         for i, char in enumerate(result["text"]):
@@ -435,7 +448,7 @@ class AuthorityResolver:
                 runs.append({"start": i, "end": i+1, "raw_text": char,
                              "status": "unparsed_locator_or_explanatory_text"})
         result["unparsed_spans"] = runs
-        result["component_contract_version"] = "citation-components-v1"
+        result["component_contract_version"] = "citation-components-v2"
         result["coverage_status"] = "matched_components_only_not_complete_citation_resolution"
         result["edition_status"] = "unreviewed"
         result["residual_reason"] = ("dom_work_absent_or_description_conflict" if
@@ -444,8 +457,17 @@ class AuthorityResolver:
             result["status"] == "unmatched" and "⟦UNKNOWN:" in result["text"] else
             "no_registered_component" if result["status"] == "unmatched" else None)
 
-    def resolve(self, text: str) -> dict:
+    def resolve(self, text: str, layer: str | None = None) -> dict:
         result = self.resolver.resolve(text)
+        for review, pattern in self.alias_patterns:
+            if review["layer"] != layer:
+                continue
+            for hit in pattern.finditer(text):
+                result["matches"].append({"start": hit.start(), "end": hit.end(),
+                    "label": hit.group(), "canonical_label": review["canonical_label"],
+                    "authority_ids": [review["authority_id"]],
+                    "status": "reviewed_alias_candidate", "review_evidence": review,
+                    "method": "reviewed_print_work_identity_alias"})
         publications = {}
         for key, ids, pattern in self.publication_patterns:
             for hit in pattern.finditer(text):
@@ -526,7 +548,7 @@ def write_jsonl(path: Path, records):
 def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           registry: Path | None = None, metadata_reviews: Path | None = None,
           relation_reviews: Path | None = None, print_candidates: Path | None = None,
-          print_reviews: Path | None = None) -> dict:
+          print_reviews: Path | None = None, alias_reviews: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -540,6 +562,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     apply_metadata_reviews(rows, metadata_reviews)
     authorities, relations = authority_graph(rows)
     apply_relation_reviews(rows, relations, relation_reviews)
+    aliases = load_alias_reviews(alias_reviews, rows, registry)
     printed = []
     if print_candidates or print_reviews:
         if not (print_candidates and print_reviews and registry):
@@ -569,7 +592,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
             db.executemany("INSERT INTO relation_candidate VALUES (?,?,?)",
                            [(relation["occurrence_id"], relation["ordinal"], p) for p in relation["publication_candidates"]])
     counts = Counter()
-    resolver = AuthorityResolver(authorities, rows)
+    resolver = AuthorityResolver(authorities, rows, aliases)
     if staging:
         src = sqlite3.connect(staging.resolve().as_uri() + "?mode=ro", uri=True)
         dom_evidence = dom_citation_evidence(src)
@@ -580,7 +603,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
             for layer, query in queries:
                 for citation_id, text in src.execute(query):
                     result = (resolver.resolve_dom(text, dom_evidence[citation_id])
-                              if layer == "html" and citation_id in dom_evidence else resolver.resolve(text))
+                              if layer == "html" and citation_id in dom_evidence else resolver.resolve(text, layer))
                     record = {"layer": layer, "citation_id": citation_id, "resolution": result}
                     f.write(dumps(record) + "\n")
                     if result["status"] not in EXACT_STATUSES:
@@ -588,7 +611,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                     counts[layer + ":" + result["status"]] += 1
                     db.execute("INSERT INTO citation_resolution VALUES (?,?,?,?)",
                                (layer, citation_id, result["status"], dumps(result)))
-                    for ordinal, match in enumerate(result["matches"], 1):
+                    edges = result["matches"] + result.get("unresolved_dom_components", [])
+                    for ordinal, match in enumerate(edges, 1):
                         for authority_id in match["authority_ids"]:
                             db.execute("INSERT INTO citation_target VALUES (?,?,?,?,?,?,?)",
                                        (layer, citation_id, ordinal, authority_id, match["start"], match["end"], match["target_status"]))
@@ -602,6 +626,8 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "reviewed_metadata_records": sum("reviewed_metadata" in r for r in rows),
                "metadata_reviews_sha256": file_digest(metadata_reviews) if metadata_reviews else None,
                "relation_reviews_sha256": file_digest(relation_reviews) if relation_reviews else None,
+               "alias_reviews_sha256": file_digest(alias_reviews) if alias_reviews else None,
+               "reviewed_identity_aliases": len(aliases),
                "relation_statuses": dict(Counter(r["status"] for r in relations)),
                "citation_statuses": dict(sorted(counts.items())),
                "print_heading_candidates": len(inventory),
@@ -628,10 +654,12 @@ def main():
     parser.add_argument("--relation-reviews", type=Path)
     parser.add_argument("--print-candidates", type=Path)
     parser.add_argument("--print-reviews", type=Path)
+    parser.add_argument("--alias-reviews", type=Path)
     parser.add_argument("--schema", type=Path, default=Path("data/bibliography_database.schema.sql"))
     args = parser.parse_args()
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
-                     args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews)))
+                     args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
+                     args.alias_reviews)))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import badw_bibliography as bib
+from badw_bibliography_aliases import load_reviews
 
 
 def parse(html, kind="work", url="https://example.test/texte"):
@@ -26,6 +27,45 @@ HIDDEN <span class="bibl"><sc>Wrong</sc><j>1900</j></span></span></span>.
 PUBLICATION = '''<table><tr><td class="autor_jahr"><sc>Author</sc>, A. 2001</td>
 <td class="titel_etc"><i>Title &amp; subtitle</i>. Press. [<span class="textsiglum">PW</span>]</td></tr></table>'''
 ABBREVIATION = '''<div class="content"><table><tr><td>Ed.</td><td>Edition</td></tr></table></div>'''
+
+
+def test_reviewed_alias_is_layer_bounded_and_source_preserving(tmp_path):
+    rows = parse(WORK.replace("PW", "HṚ"))
+    row = rows[0]
+    registry = tmp_path / "registry.tsv"
+    registry.write_text("sha256\tlabel\nprint-hash\tprint\n")
+    review = dict(layer="pdf", alias="HR", canonical_label="HṚ",
+                  online_occurrence_id=row["occurrence_id"],
+                  online_source_sha256=row["source_sha256"], print_pdf_sha256="print-hash",
+                  print_scan_page="1", status="visually_reviewed_work_identity", evidence_note="Review")
+    path = tmp_path / "reviews.tsv"
+
+    def write():
+        with path.open("w") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(review), delimiter="\t")
+            writer.writeheader()
+            writer.writerow(review)
+
+    write()
+    aliases = load_reviews(path, rows, registry)
+    resolver = bib.AuthorityResolver(bib.authority_graph(rows)[0], rows, aliases)
+    text = "(HR 56,19)"
+    result = resolver.resolve(text, "pdf")
+    assert result["status"] == "exact_online_work_rows"
+    assert result["text"] == text and result["matches"][0]["raw_text"] == "HR"
+    assert result["matches"][0]["edition_status"] == "unreviewed"
+    assert result["unparsed_spans"][1]["raw_text"] == " 56,19)"
+    for text, layer in (("HR 2", "html"), ("HR-other 2", "pdf"), ("xHR 2", "pdf")):
+        assert resolver.resolve(text, layer)["status"] == "unmatched"
+    for field, value in (("online_source_sha256", "stale"), ("canonical_label", "wrong"),
+                         ("print_scan_page", "0"), ("print_pdf_sha256", "unknown"),
+                         ("status", "candidate"), ("layer", "html"), ("evidence_note", "")):
+        original = review[field]
+        review[field] = value
+        write()
+        with pytest.raises(ValueError):
+            load_reviews(path, rows, registry)
+        review[field] = original
 
 
 def test_unicode_visible_nodes_and_provenance():
@@ -292,3 +332,11 @@ def test_offline_build_fk_links_and_reproducibility(tmp_path, monkeypatch):
         bib.build(tmp_path, first, schema)
     with pytest.raises(ValueError, match="under work"):
         bib.build(tmp_path, tmp_path / "outside", schema)
+    monkeypatch.setattr(bib, "dom_citation_evidence", lambda db: {
+        "h": [{"label": "PW", "start": 0, "end": 2, "expansion": "conflicting edition"}]})
+    third = tmp_path / "work/third"
+    bib.build(tmp_path, third, schema, staging)
+    with sqlite3.connect(third / "bibliography.sqlite") as db:
+        assert db.execute("SELECT target_status FROM citation_target").fetchall() == [("candidate",)]
+        result = json.loads(db.execute("SELECT record_json FROM citation_resolution WHERE citation_id='h'").fetchone()[0])
+        assert result["unparsed_spans"][0]["start"] == 0

@@ -74,3 +74,43 @@ def test_unknowns_are_not_repaired():
     result = resolver(["PW"]).resolve(text)
     assert result["text"] == text
     assert result["residual_reason"] == "unknown_glyph_in_unmatched_reference"
+
+
+@pytest.mark.parametrize("text", ["MTH 3/5/35", "MTH3/ 5/35", "MTH 3/\n5/35"])
+def test_mth_layout_requires_document_series_evidence(text):
+    row = parse(WORK.replace("PW", "MTH3/5").replace("Title", "Nummer des Dokuments"))[0]
+    r = bib.AuthorityResolver(bib.authority_graph([row])[0], [row])
+    result = r.resolve(text)
+    assert result["matches"][0]["raw_text"] == text
+    assert result["matches"][0]["selector"] == "/35"
+    assert resolver(["MTH3/5"]).resolve(text)["status"] == "unmatched"
+    assert r.resolve("M TH3/5/35")["status"] == "unmatched"
+    assert r.resolve("MTH3/5/35x")["status"] == "unmatched"
+
+
+def test_otm_collection_item_tooltip_is_not_an_edition_guess():
+    description = ("Manuskripte aus der Sammlung Example. Ed.: Editor 1997–1998, "
+                   "zit. mit Textnummer und Zeile im Manuskript (z. B. OTM184 3)")
+    row = parse(WORK.replace("PW", "OTM"))[0]
+    row["text"] = description
+    r = bib.AuthorityResolver(bib.authority_graph([row])[0], [row])
+    expansion = "Manuskript aus der Sammlung Example. Ed.: Editor 1997–1998, Nr. 648"
+    evidence = [{"label": "OTM648", "start": 1, "end": 7, "expansion": expansion}]
+    result = r.resolve_dom("(OTM648 a7)", evidence)
+    assert result["status"] == "exact_online_work_rows"
+    assert result["matches"][0]["method"] == "same_dom_item_selector_collection_and_edition_agreement"
+    assert result["edition_status"] == "unreviewed"
+    for wrong in [expansion.replace("648", "649"), expansion.replace("Example", "Other"),
+                  expansion.replace("1997–1998", "2003"), expansion + " extra"]:
+        evidence[0]["expansion"] = wrong
+        rejected = r.resolve_dom("(OTM648 a7)", evidence)
+        assert rejected["status"] == "ambiguous"
+        assert rejected["unresolved_dom_components"][0]["target_status"] == "candidate"
+        assert "OTM648" in "".join(s["raw_text"] for s in rejected["unparsed_spans"])
+
+
+def test_acceptance_uses_closed_status_vocabulary():
+    result = {"text": "PW", "status": "ambiguous", "matches": [
+        {"start": 0, "end": 2, "status": "exact_online_future_unreviewed"}]}
+    bib.AuthorityResolver.component_contract(result)
+    assert result["matches"][0]["target_status"] == "candidate"

@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 from badw_pdf_bibliography import Resolver
 
-VERSION = "badw-citation-components-v1"
+VERSION = "badw-citation-components-v2"
 
 # These are bounded citation conventions, not transliteration substitutions.
 # Collection-number grammars without an explicit description are not enabled.
@@ -43,8 +43,6 @@ class ComponentResolver:
     def __init__(self, authorities: list[tuple[str, str]], rows: list[dict] = ()):
         self.legacy = Resolver(authorities)
         self.labels = self.legacy.labels
-        self.patterns = [(label, re.compile(r"(?<![\w/-])" + spelling_pattern(label)))
-                         for label in self.labels]
         self.grammar_evidence = {}
         for row in rows:
             label = row["label"]
@@ -52,6 +50,31 @@ class ComponentResolver:
                 self.grammar_evidence.setdefault(label, []).append({
                     "occurrence_id": row["occurrence_id"], "source_sha256": row["source_sha256"],
                     "description": row["text"]})
+        self.patterns = []
+        for label in self.labels:
+            pattern = spelling_pattern(label)
+            # Only these source-described document series permit this layout.
+            # Do not turn ordinary spaces into arbitrary siglum joins.
+            if label in {"MTH3/3", "MTH3/5"} and label in self.grammar_evidence:
+                pattern = r"MTH\s*3/\s*" + label[-1]
+            self.patterns.append((label, re.compile(r"(?<![\w/-])" + pattern)))
+
+    def tooltip_agreement(self, base: str, selector: str, description: str,
+                          expansion: str) -> bool:
+        """OTM item tooltips identify one manuscript of the described collection.
+
+        Both collection and edition must agree literally (whitespace only).
+        Selector numbers must agree exactly; no year or edition inference.
+        """
+        if base != "OTM" or base not in self.grammar_evidence or not selector.isdecimal():
+            return False
+        collection = re.fullmatch(
+            r"Manuskripte aus der Sammlung (.+?)\. Ed\.: (.+?), zit\. mit Textnummer und Zeile im Manuskript .+",
+            " ".join(description.split()))
+        item = re.fullmatch(r"Manuskript aus der Sammlung (.+?)\. Ed\.: (.+?), Nr\. (\d+)",
+                            " ".join(expansion.split()))
+        return bool(collection and item and collection.groups() == item.groups()[:2]
+                    and item.group(3) == selector)
 
     def compound(self, label: str) -> tuple[str, str] | None:
         """A compound must have exactly one evidenced base/selector analysis."""

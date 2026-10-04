@@ -40,6 +40,10 @@ Registered print OCR supplies fascicle/volume bibliography heading candidates. `
 
 `scripts/query_badw_bibliography.py` offers read-only authority search, original online/print occurrences, relations, citation components and reverse links. Accepted identities and candidate targets are distinct; reverse links exclude candidates by default. No query updates the lexical database or source readings.
 
+`data/bibliography_alias_reviews.tsv` supplies exact, layer-bounded work-identity crosswalks (currently printed `HMrg` to official `HMṛg`). `scripts/badw_bibliography_aliases.py` validates occurrence/hash and registered-print provenance before use with `--alias-reviews` and `--print-registry`. Raw spelling is retained; a reviewed alias does not verify editions or locators. OTM item tooltips require exact collection, edition and selector agreement; spaced MTH selectors require official grammar evidence, not generic whitespace deletion.
+
+`scripts/benchmark_badw_bibliography.py` creates deterministic blind HTML/PDF review packets plus a pinned residual challenge set, then scores independently reviewed identity spans separately from edition and locator checks. Packets omit resolver predictions and remain under ignored `work/`. Sampling and link coverage are not accuracy measurements; unreviewed packets cannot be counted as correct.
+
 Example (all generated source material stays ignored):
 
 ```bash
