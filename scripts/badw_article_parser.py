@@ -317,6 +317,23 @@ def parse_database_article(
             }
         )
 
+    from badw_source_components import siglum_parentheses
+    tagged_sigla = _records_for_elements(find_all(article, class_name="textsiglum"), fragments)
+    siglum_spans = [(f["locator"]["visible_text_start"], f["locator"]["visible_text_end"])
+                   for f in tagged_sigla if f["locator"]["visible_text_start"] is not None]
+    marked_citations = siglum_parentheses(article_source_text, 0, len(article_source_text), siglum_spans)
+    # Untagged terminal source expressions in definitions remain candidates,
+    # not authority resolutions or ownership assertions. Reuse the bounded
+    # source grammar; prose, corrections and quoted parentheses fail closed.
+    from badw_source_components import terminal_lexical_citation
+    for element in find_all(article, class_name="bedeutung"):
+        field = _located_field(element, fragments)
+        a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
+        if a is not None and b is not None:
+            candidate = terminal_lexical_citation(article_source_text, a, b)
+            if candidate and not any(c["start"] == candidate["start"] and c["end"] == candidate["end"] for c in marked_citations):
+                candidate["evidence"] = "balanced terminal definition siglum-shaped parenthesis; unresolved candidate"
+                marked_citations.append(candidate)
     lexical_nodes = find_all(article, tag="div", class_name="lex")
     lexical_blocks = []
     for element in lexical_nodes:
@@ -343,7 +360,8 @@ def parse_database_article(
                     for name in ("tibetan_segments", "sanskrit", "translations", "citations", "sigla")}
                 clause["german_quotation_candidates"] = quoted_spans(article_source_text, clause["start"], clause["end"])
                 citation = terminal_lexical_citation(article_source_text, clause["start"], clause["end"])
-                clause["terminal_citation_candidates"] = [citation] if citation else []
+                marked = [c for c in marked_citations if clause["start"] <= c["start"] < c["end"] <= clause["end"]]
+                clause["terminal_citation_candidates"] = marked or ([citation] if citation else [])
             block["clauses"] = clauses
             block["delimiter_diagnostics"] = diagnostics
         lexical_blocks.append(block)
@@ -351,6 +369,15 @@ def parse_database_article(
     citations = _records_for_elements(
         find_all(article, class_name="stelle"), fragments
     )
+    for candidate in marked_citations:
+        a, b = candidate["start"], candidate["end"]
+        if any(f["locator"]["visible_text_start"] <= a and b <= f["locator"]["visible_text_end"]
+               for f in citations if f["locator"]["visible_text_start"] is not None):
+            continue
+        citations.append({"locator": {"visible_text_start": a, "visible_text_end": b,
+                         "derivation": "source_parenthesis_candidate"},
+                         "source_text": article_source_text[a:b], "text": compact_text(article_source_text[a:b]),
+                         "candidate_status": candidate["status"], "evidence": candidate["evidence"]})
 
     sigla = []
     for element in find_all(article, class_name="textsiglum"):

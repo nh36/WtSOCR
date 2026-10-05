@@ -13,6 +13,41 @@ from project_badw_structural_candidates import enrich
 from parse_badw_pdf_articles import _candidates, _structure
 
 
+@pytest.mark.parametrize('content,expected', [
+    ('Lex. <tib>ka</tib> (<span class="textsiglum">A</span>, <span class="textsiglum">B</span>).', '(A, B)'),
+    ('Lex. <tib>ka</tib> (<span class="textsiglum">Be’uD</span> 221,3).', '(Be’uD 221,3)'),
+    ('Lex. <tib>ka</tib> (<span class="textsiglum">Mvy</span> 6062, Abt. <tib>ka</tib>).', '(Mvy 6062, Abt. ka)'),
+    ('Definition (<span class="textsiglum">Neb<span class="infotext">hidden (B)</span></span> 229).', '(Neb 229)'),
+    ('Definition (auch so).', None),
+    ('„Zitat (<span class="textsiglum">A</span>)“', None),
+    ('Definition (<span class="textsiglum">A</span>', None),
+])
+def test_explicit_siglum_citations_without_stelle(content, expected):
+    body = ('<div class="text"><span class="lem">ka</span><div class="lex">' + content + '</div></div>').encode()
+    a = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [c['source_text'] for c in a['citations']] == ([expected] if expected else [])
+    for c in a['citations']:
+        assert a['article_source_text'][c['locator']['visible_text_start']:c['locator']['visible_text_end']] == expected
+        assert c['candidate_status'] == 'unresolved_source_citation_candidate'
+
+
+@pytest.mark.parametrize('content,expected', [
+    ('Eine Gottheit (Neb 229).', '(Neb 229)'),
+    ('Eine Gottheit (auch so).', None),
+    ('Eine Gottheit (r. ka).', None),
+    ('Eine Gottheit „Name (Neb 229)“.', None),
+    ('Eine Gottheit (Neb 229) und weitere Erklärung.', None),
+    ('Eine Gottheit (Neb 229.', None),
+])
+def test_untagged_terminal_definition_citation_is_only_a_candidate(content, expected):
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">' + content + '</div></div>').encode()
+    a = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [c['source_text'] for c in a['citations']] == ([expected] if expected else [])
+    assert all(c['candidate_status'] == 'unresolved_source_citation_candidate' for c in a['citations'])
+
+
 def test_lexical_delimiters_preserve_apparatus_quotes_and_unicode():
     text = ' ka (r.ka; r. kha) „Wort; ṅa“ (A); śa (B). '
     clauses, diagnostics = lexical_clauses(text, 0, len(text))

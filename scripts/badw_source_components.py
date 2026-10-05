@@ -11,6 +11,33 @@ import re
 QUOTE_PAIRS = {"„": "“", "«": "»", "‚": "‘"}
 
 
+def siglum_parentheses(text, start, end, siglum_spans):
+    """Outermost balanced parentheses supported by explicit source siglum tags.
+
+    This observes citation boundaries, not their ownership. Never generalize
+    untagged prose parentheses or use tooltip bibliography text as evidence.
+    """
+    if not 0 <= start <= end <= len(text):
+        raise ValueError("invalid citation bounds")
+    stack, quotes, result = [], [], []
+    for i in range(start, end):
+        char = text[i]
+        if char in QUOTE_PAIRS:
+            quotes.append(QUOTE_PAIRS[char])
+        elif quotes:
+            if char == quotes[-1]:
+                quotes.pop()
+        elif char == "(":
+            stack.append(i)
+        elif char == ")" and stack:
+            a = stack.pop()
+            if not stack and any(a < x < y <= i for x, y in siglum_spans):
+                result.append(dict(start=a, end=i + 1, source_text=text[a:i + 1],
+                    status="unresolved_source_citation_candidate",
+                    evidence="balanced parenthesis containing explicit DOM textsiglum"))
+    return result
+
+
 def terminal_lexical_citation(text, start, end):
     """A balanced terminal Lex. source expression, not resolved ownership.
 

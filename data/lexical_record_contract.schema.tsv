@@ -30,6 +30,7 @@ cross_reference	marker	yes	enum	↑|↓	Literal source marker; it is never norma
 cross_reference	resolution_status	yes	enum	resolved|unresolved	Whether the source supplies an explicit target.
 cross_reference	target_url	no	string		Absolute stable target URL when resolution_status is resolved.
 cross_reference	target_label	no	string		Visible source target label when supplied.
+cross_reference	canonical_resolution	no	object		Bounded entry-resolution annotation, separate from source URL capture: method/version, entry-index SHA-256, sorted candidate entry IDs, resolved/ambiguous/unresolved status, singleton target_entry_id only when resolved, and source-bound review for printed targets. No production promotion is implied.
 editorial_variant	entry_id	yes	string		Foreign key to the print-faithful or editorial entry being related.
 editorial_variant	field_path	yes	string		Named structured field whose readings differ; not an unbounded prose replacement.
 editorial_variant	base_reading	yes	string		Reading in the declared base layer.

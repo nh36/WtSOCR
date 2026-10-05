@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_lexical_record_contract import CONTRACT_VERSION, validate  # noqa: E402
+from resolve_badw_cross_references import EntryIndex
 
 
 HASH = "a" * 64
@@ -44,6 +45,37 @@ def corpus() -> list[dict[str, object]]:
 
 def test_valid_cross_linked_source_faithful_corpus() -> None:
     assert validate(corpus()) == []
+
+
+def test_optional_canonical_resolution_preserves_source_capture_contract():
+    rows = corpus()
+    rows[0]["stable_url"] = rows[5]["target_url"]
+    rows[5] = EntryIndex([rows[0]]).resolve(rows[5])
+    assert validate(rows) == []
+    for field, value, message in [("status", "unresolved", "disagrees"),
+                                  ("candidate_entry_ids", ["absent"], "existing entry"),
+                                  ("entry_index_sha256", "bad", "index hash")]:
+        broken = copy.deepcopy(rows)
+        broken[5]["canonical_resolution"][field] = value
+        assert any(message in error for error in validate(broken))
+    rows[0]["stable_url"] = "https://example/wrong"
+    assert any("exact source URL" in error for error in validate(rows))
+
+
+def test_printed_resolution_review_must_remain_bound_to_source():
+    rows = corpus()
+    rows[5].pop("target_url")
+    rows[5]["resolution_status"] = "unresolved"
+    review = dict(occurrence_id=rows[5]["id"], source_spans=rows[5]["source_spans"],
+                  literal=rows[5]["target_label"], lemma="ka",
+                  review=dict(reviewer="test", reviewed_at="2026-10-05", evidence="Inspected target"))
+    rows[5] = EntryIndex([rows[0]]).resolve(rows[5], reviewed_target=review)
+    assert validate(rows) == []
+    wrong_entry = copy.deepcopy(rows)
+    wrong_entry[0]["headword"]["loc"] = "kha"
+    assert any("reviewed printed target" in error for error in validate(wrong_entry))
+    rows[5]["canonical_resolution"]["target_review"]["literal"] = "different"
+    assert any("not source-bound" in error for error in validate(rows))
 
 
 def test_rejects_wylie_label_as_layer_and_invalid_span_hash() -> None:
