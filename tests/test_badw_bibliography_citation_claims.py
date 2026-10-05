@@ -90,3 +90,53 @@ def test_work_identity_is_separate_claim(tmp_path):
     assert linked["status"] == "reviewed_work_candidate"
     assert linked["reviewed_claims"][0]["claim"] == "work_identity"
     claims.finish()
+
+
+def year_claim(tmp_path, **changes):
+    return setup(tmp_path, claim="citation_year", status="reviewed_year_correction",
+                 evidence_sha256="", evidence_pdf_page="", witness_printed_page="",
+                 evidence_kind="author_confirmation_reported_by_user",
+                 evidence_reported_date="2026-10-05", corrected_year="1996", **changes)[0]
+
+
+def test_author_confirmation_accepts_identity_not_locator_or_source_rewrite(tmp_path):
+    from badw_bibliography import AuthorityResolver
+    claims = year_claim(tmp_path)
+    source = result()
+    source["matches"][0].update(status="reviewed_work_candidate",
+        start=1, end=12,
+        publication_year_relation=dict(literal_year="1992", target_year="1996"))
+    linked = claims.apply("pdf", "c1", source)
+    AuthorityResolver.component_contract(linked)
+    match = linked["matches"][0]
+    assert linked["text"] == "(Author 1992: 42)"
+    assert match["target_status"] == "accepted_identity"
+    assert match["locator_status"] == "unreviewed"
+    assert match["publication_year_relation"]["literal_year"] == "1992"
+    assert match["publication_year_relation"]["status"] == "reviewed_year_correction"
+    claims.finish()
+
+
+@pytest.mark.parametrize("field,value,message", [
+    ("evidence_reported_date", "yesterday", "ISO reported date"),
+    ("evidence_kind", "unspecified", "provenance"),
+    ("corrected_year", "unknown", "invalid author-confirmed"),
+    ("evidence_sha256", "a" * 64, "invalid author-confirmed"),
+])
+def test_year_assertion_requires_explicit_provenance(tmp_path, field, value, message):
+    options = dict(claim="citation_year", status="reviewed_year_correction",
+        evidence_sha256="", evidence_pdf_page="", witness_printed_page="",
+        evidence_kind="author_confirmation_reported_by_user",
+        evidence_reported_date="2026-10-05", corrected_year="1996")
+    options[field] = value
+    with pytest.raises(ValueError, match=message):
+        setup(tmp_path, **options)
+
+
+def test_year_claim_rejects_wrong_publication(tmp_path):
+    claims = year_claim(tmp_path)
+    source = result()
+    source["matches"][0].update(status="reviewed_work_candidate",
+        publication_year_relation=dict(literal_year="1992", target_year="2001"))
+    with pytest.raises(ValueError, match="differing-year"):
+        claims.apply("pdf", "c1", source)

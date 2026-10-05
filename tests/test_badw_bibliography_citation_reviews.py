@@ -3,11 +3,32 @@ import csv
 import hashlib
 from pathlib import Path
 import sys
+import sqlite3
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from badw_bibliography_citation_reviews import CitationReviews
+
+
+def test_supplemental_citation_is_exact_hash_bound_source_span(tmp_path):
+    text = "prefix (Author 1992: 4) suffix"
+    literal = "(Author 1992: 4)"
+    start, end = 7, 7 + len(literal)
+    identity = f"article:reviewed:{start}:{end}"
+    reviews, _ = setup_review(tmp_path, citation_id=identity,
+        source_article_id="article", source_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+        source_start=str(start), source_end=str(end))
+    db = sqlite3.connect(":memory:")
+    db.execute("CREATE TABLE pdf_article_witness (id TEXT, source_faithful_text TEXT)")
+    db.execute("INSERT INTO pdf_article_witness VALUES (?,?)", ("article", text))
+    assert list(reviews.supplemental_citations(db)) == [(identity, literal)]
+    reviews.apply("pdf", identity, result())
+    reviews.finish()
+    db.execute("UPDATE pdf_article_witness SET source_faithful_text='changed'")
+    with pytest.raises(ValueError, match="hash"):
+        list(reviews.supplemental_citations(db))
+    db.close()
 
 
 def setup_review(tmp_path, printed=None, **changes):
@@ -28,6 +49,15 @@ def setup_review(tmp_path, printed=None, **changes):
     targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="publication", id="p1",
                     year="1996", scope="reviewed_external" if row["status"] == "reviewed_external_identity" else "badw_online")]
     return CitationReviews(path, targets, tmp_path, None, printed), obj
+
+
+@pytest.mark.parametrize('changes', [
+    dict(source_start='0'), dict(source_article_id='article'),
+    dict(source_article_id='article', source_text_sha256='z' * 64, source_start='0', source_end='2'),
+])
+def test_partial_source_span_binding_fails_closed(tmp_path, changes):
+    with pytest.raises(ValueError, match='source-span binding'):
+        setup_review(tmp_path, **changes)
 
 
 def result():

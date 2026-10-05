@@ -24,7 +24,7 @@ from badw_bibliography_aliases import load_reviews as load_alias_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_source_cache import RequestSpec, SourceCache
 
-VERSION = "badw-bibliography-v8"
+VERSION = "badw-bibliography-v9"
 BASE = "https://wts-digital.badw.de/"
 PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
@@ -463,7 +463,10 @@ class AuthorityResolver:
         result["component_contract_version"] = "citation-components-v2"
         result["coverage_status"] = "matched_components_only_not_complete_citation_resolution"
         year_candidate = any(m["status"] == "reviewed_work_candidate" for m in result["matches"])
-        result["edition_status"] = "year_discrepancy_unresolved" if year_candidate else "unreviewed"
+        year_confirmed = any(m.get("edition_status") == "publication_year_author_confirmed"
+                             for m in result["matches"])
+        result["edition_status"] = ("year_discrepancy_unresolved" if year_candidate else
+            "publication_year_author_confirmed" if year_confirmed else "unreviewed")
         result["residual_reason"] = ("reviewed_work_candidate_requires_cited_edition_evidence" if
             year_candidate else "dom_work_absent_or_description_conflict" if
             result.get("unresolved_dom_components") else "competing_component_identities" if
@@ -642,7 +645,12 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         with db, (output / "citation_links.jsonl").open("w", encoding="utf-8") as f, \
                 (output / "citation_review_queue.jsonl").open("w", encoding="utf-8") as review:
             for layer, query in queries:
-                for citation_id, text in src.execute(query):
+                observations = list(src.execute(query))
+                if layer == "pdf":
+                    observations.extend(exact_reviews.supplemental_citations(src))
+                if len({identity for identity, _ in observations}) != len(observations):
+                    raise ValueError("duplicate citation observation identity")
+                for citation_id, text in sorted(observations):
                     result = (resolver.resolve_dom(text, dom_evidence[citation_id])
                               if layer == "html" and citation_id in dom_evidence else resolver.resolve(text, layer))
                     exact_reviews.apply(layer, citation_id, result)

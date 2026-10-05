@@ -7,8 +7,42 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from project_badw_structural_candidates import (
-    citation_challenge, citation_inventory, digest, project, project_html, write,
+    citation_challenge, citation_inventory, digest, enrich, project, project_html, write,
 )
+
+
+@pytest.mark.parametrize("name,kind,value", [
+    ("tibetan_segments", "tibetan", "ṅa"), ("sanskrit", "sanskrit", "śiva"),
+])
+def test_clipped_lex_language_field_preserves_original_locator(name, kind, value):
+    text = ' ' + value + ' „Wort“'
+    parent = dict(visible_text_start=0, visible_text_end=1 + len(value))
+    field = dict(source_text=value,
+                 locator=dict(visible_text_start=1, visible_text_end=1 + len(value)),
+                 parent_source_locator=parent)
+    clause = dict(start=1, end=len(text), source_text=text[1:],
+                  tagged_fields={name: [field, copy.deepcopy(field)]},
+                  german_quotation_candidates=[], terminal_citation_candidates=[])
+    article = dict(article_source_text=text, lexical_blocks=[dict(
+        source_text=text, locator=dict(visible_text_start=0, visible_text_end=len(text)),
+        clauses=[clause])])
+    root = dict(id='n0', kind='source_division', start=1, end=len(text), parent=None)
+    nodes = [root]
+    assert enrich(nodes, text, article=article) == []
+    language = [n for n in nodes if n['kind'] == kind]
+    assert len(language) == 1
+    assert language[0]['parent_source_locator'] == parent
+    assert text[language[0]['start']:language[0]['end']] == value
+    assert nodes[1]['start'] == 1  # Do not widen the source clause.
+    # Candidate containment follows the existing allowed-parent contract;
+    # it does not assert scholarly ownership of a Sanskrit mention by Lex.
+    assert language[0]['parent'] == (nodes[1]['id'] if kind == 'tibetan' else root['id'])
+    repeated = [copy.deepcopy(root)]
+    enrich(repeated, text, article=copy.deepcopy(article))
+    assert repeated == nodes
+    field['parent_source_locator']['visible_text_end'] = 1
+    with pytest.raises(ValueError, match='intersection outside'):
+        enrich([copy.deepcopy(root)], text, article=article)
 
 
 def fixture():

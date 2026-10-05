@@ -23,7 +23,8 @@ def test_readonly_queries_and_separate_target_states(tmp_path):
     db.execute("INSERT INTO relation VALUES (?,?,?,?,?)",
                ("o", 1, "w", "unmatched", '{"relation_kind":"edition_or_containment_unreviewed"}'))
     for identity, status in (("good", "accepted_identity"), ("maybe", "candidate")):
-        db.execute("INSERT INTO citation_resolution VALUES (?,?,?,?)", ("pdf", identity, status, '{}'))
+        db.execute("INSERT INTO citation_resolution VALUES (?,?,?,?)", ("pdf", identity, status,
+            json.dumps({"text": "Author 2000: 42"})))
         db.execute("INSERT INTO citation_target VALUES (?,?,?,?,?,?,?)", ("pdf", identity, 1, "w", 0, 3, status))
     db.commit()
     db.close()
@@ -42,6 +43,8 @@ def test_readonly_queries_and_separate_target_states(tmp_path):
         assert reader.citation("html", "good") is None
         assert len(reader.citations_for("w")) == 1
         assert len(reader.citations_for("w", True)) == 2
+        assert len(reader.literal_citations("Author 2000")) == 2
+        assert reader.literal_citations("Author 2001") == []
         with pytest.raises(sqlite3.OperationalError, match="readonly"):
             reader.db.execute("DELETE FROM authority")
     finally:

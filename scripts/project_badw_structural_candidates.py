@@ -16,7 +16,7 @@ from pathlib import Path
 from benchmark_badw_structure import graph
 from build_badw_structural_review_packet import rows
 
-VERSION = "badw-structural-candidate-projection-v3"
+VERSION = "badw-structural-candidate-projection-v4"
 
 
 def enrich(nodes, text, *, article=None, structure=None):
@@ -65,6 +65,22 @@ def enrich(nodes, text, *, article=None, structure=None):
                 if text[a:b] != clause["source_text"]:
                     raise ValueError("Lex. clause differs from source")
                 add("lexical_parallel", a, b, "explicit HTML Lex. block / delimiter clause")
+                # A DOM language field can start before the clause's trimmed
+                # boundary. Use the parser's exact source intersection, not a
+                # widened clause or a guessed semantic owner. Keep the original
+                # DOM locator alongside this derived span for audit.
+                for name, kind in (("tibetan_segments", "tibetan"), ("sanskrit", "sanskrit")):
+                    for field in clause.get("tagged_fields", {}).get(name, []):
+                        if "parent_source_locator" not in field:
+                            continue
+                        x, y = bounds(field)
+                        loc = field["parent_source_locator"]
+                        p, q = loc["visible_text_start"], loc["visible_text_end"]
+                        if not (0 <= p <= x < y <= q <= len(text) and a <= x < y <= b):
+                            raise ValueError("HTML clause intersection outside source field")
+                        node = add(kind, x, y, "explicit HTML language tag / source clause intersection")
+                        if node is not None:
+                            node["parent_source_locator"] = loc
                 for quote in clause["german_quotation_candidates"]:
                     add("translation", quote["start"], quote["end"], "source German quotation in Lex. block")
                 for citation in clause.get("terminal_citation_candidates", []):

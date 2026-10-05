@@ -40,6 +40,12 @@ class CitationReviews:
                     raise ValueError("duplicate or unsupported citation review")
                 if not re.fullmatch("[0-9a-f]{64}", review["text_sha256"]) or not review["evidence_note"].strip():
                     raise ValueError("citation review lacks source hash/note")
+                source_keys = ("source_article_id", "source_text_sha256", "source_start", "source_end")
+                if any(review.get(k) for k in source_keys):
+                    if (not all(review.get(k) for k in source_keys) or
+                            not re.fullmatch("[0-9a-f]{64}", review["source_text_sha256"]) or
+                            not all(review[k].isdecimal() for k in ("source_start", "source_end"))):
+                        raise ValueError("incomplete or invalid reviewed source-span binding")
                 evidence = review["evidence_sha256"]
                 if not re.fullmatch("[0-9a-f]{64}", evidence):
                     raise ValueError("invalid citation evidence hash")
@@ -131,3 +137,27 @@ class CitationReviews:
     def finish(self):
         if set(self.reviews) != self.seen:
             raise ValueError("orphan citation reviews absent from staging snapshot")
+
+    def supplemental_citations(self, db):
+        """Exact reviewed source spans absent from the candidate parser.
+
+        This is a bibliography observation, not inferred sense/example ownership.
+        The existing article and its entire immutable Unicode text are hash-bound.
+        """
+        for (layer, identity), review in sorted(self.reviews.items()):
+            article_id = review.get("source_article_id")
+            if not article_id:
+                continue
+            if layer != "pdf" or identity != article_id + ":reviewed:" + review["source_start"] + ":" + review["source_end"]:
+                raise ValueError("invalid reviewed source-span identity")
+            row = db.execute("SELECT source_faithful_text FROM pdf_article_witness WHERE id=?", (article_id,)).fetchone()
+            if row is None or hashlib.sha256(row[0].encode()).hexdigest() != review.get("source_text_sha256"):
+                raise ValueError("reviewed source article/hash mismatch")
+            start, end = int(review["source_start"]), int(review["source_end"])
+            if not 0 <= start < end <= len(row[0]):
+                raise ValueError("reviewed source span outside article")
+            text = row[0][start:end]
+            if hashlib.sha256(text.encode()).hexdigest() != review["text_sha256"]:
+                raise ValueError("reviewed source-span text hash mismatch")
+            review["source_field"] = "source_faithful_text"
+            yield identity, text

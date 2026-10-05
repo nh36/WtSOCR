@@ -2,11 +2,14 @@
 
 A publication can witness a work identity without being the cited edition.
 Likewise a locator corroborated in another edition is not a verified locator
-in the unresolved cited edition. No claim changes source wording or edges.
+in the unresolved cited edition. An explicit author-confirmed year correction
+may accept a reviewed publication candidate; it never changes source wording
+or verifies a locator merely by accepting that publication.
 """
 from __future__ import annotations
 
 import csv
+from datetime import date
 import hashlib
 from pathlib import Path
 import re
@@ -28,13 +31,30 @@ class CitationClaims:
                 if key in self.claims or key[0] not in {"html", "pdf"}:
                     raise ValueError("duplicate or unsupported citation claim")
                 allowed = {"work_identity": "reviewed_work_identity",
-                           "locator": "corroborated_in_other_edition"}
+                           "locator": "corroborated_in_other_edition",
+                           "citation_year": "reviewed_year_correction"}
                 if allowed.get(row["claim"]) != row["status"]:
                     raise ValueError("unsupported claim/status combination")
                 if (not row["evidence_note"].strip() or
                         not row["witness_authority_id"].strip() or
-                        not row["witness_printed_page"].strip() or
                         not row["literal_locator"].strip()):
+                    raise ValueError("citation claim lacks evidence or locator")
+                if row["claim"] == "citation_year":
+                    # A private scholarly communication is an assertion, not a
+                    # fabricated public evidence-object hash or a verified locator.
+                    if row.get("evidence_kind") != "author_confirmation_reported_by_user":
+                        raise ValueError("year correction requires explicit author-confirmation provenance")
+                    try:
+                        date.fromisoformat(row.get("evidence_reported_date") or "")
+                    except ValueError as exc:
+                        raise ValueError("year correction requires ISO reported date") from exc
+                    if (not re.fullmatch("[0-9a-f]{64}", row["text_sha256"]) or
+                            any(row.get(k) for k in ("evidence_sha256", "evidence_pdf_page", "witness_printed_page")) or
+                            not re.fullmatch(r"[0-9]{4}", row.get("corrected_year") or "")):
+                        raise ValueError("invalid author-confirmed year assertion")
+                    self.claims[key] = row
+                    continue
+                if not row["witness_printed_page"].strip():
                     raise ValueError("citation claim lacks evidence or locator")
                 for field in ("text_sha256", "evidence_sha256"):
                     if not re.fullmatch("[0-9a-f]{64}", row[field]):
@@ -65,6 +85,18 @@ class CitationClaims:
                 raise ValueError("claim requires unique exact reviewed witness")
             if row["claim"] == "locator" and matches[0].get("edition_status") != "year_discrepancy_unresolved":
                 raise ValueError("cross-edition locator requires unresolved cited edition")
+            if row["claim"] == "citation_year":
+                match = matches[0]
+                relation = match.get("publication_year_relation")
+                if (match.get("status") != "reviewed_work_candidate" or not relation or
+                        relation["target_year"] != row["corrected_year"]):
+                    raise ValueError("year correction requires exact differing-year publication candidate")
+                match["publication_year_relation"] = dict(relation,
+                    status="reviewed_year_correction", evidence=dict(row))
+                match["status"] = "exact_online_publication_row"
+                # Confirmed publication/year, not a verified page or printing.
+                match["edition_status"] = "publication_year_author_confirmed"
+                result["status"] = "exact_online_source_rows"
             result.setdefault("reviewed_claims", []).append(dict(row))
             self.seen.add((layer, citation_id, row["claim"]))
         return result

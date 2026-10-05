@@ -56,6 +56,15 @@ class Bibliography:
             "(? OR target_status='accepted_identity') ORDER BY layer,citation_id,component_ordinal",
             (identity, include_candidates))]
 
+    def literal_citations(self, text: str) -> list[dict]:
+        """Search preserved citation wording, independently of resolved identity."""
+        result = []
+        for row in self.db.execute("SELECT layer,citation_id,record_json FROM citation_resolution ORDER BY layer,citation_id"):
+            resolution = json.loads(row["record_json"])
+            if text in resolution["text"]:
+                result.append({"layer": row["layer"], "citation_id": row["citation_id"], "resolution": resolution})
+        return result
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -72,6 +81,8 @@ def main():
     reverse = sub.add_parser("citations-for")
     reverse.add_argument("id")
     reverse.add_argument("--include-candidates", action="store_true")
+    literal = sub.add_parser("literal-citations")
+    literal.add_argument("text")
     args = parser.parse_args()
     db = Bibliography(args.database)
     try:
@@ -81,6 +92,8 @@ def main():
             result = db.authority(args.id)
         elif args.command == "citation":
             result = db.citation(args.layer, args.id)
+        elif args.command == "literal-citations":
+            result = db.literal_citations(args.text)
         else:
             result = db.citations_for(args.id, args.include_candidates)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2))
