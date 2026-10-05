@@ -16,7 +16,7 @@ from pathlib import Path
 from benchmark_badw_structure import graph
 from build_badw_structural_review_packet import rows
 
-VERSION = "badw-structural-candidate-projection-v4"
+VERSION = "badw-structural-candidate-projection-v5"
 
 
 def enrich(nodes, text, *, article=None, structure=None):
@@ -37,7 +37,8 @@ def enrich(nodes, text, *, article=None, structure=None):
         possible = [n for n in nodes if n["kind"] in PARENTS[kind]
                     and n["start"] <= a < b <= n["end"]
                     and (allowed is None or n["kind"] in allowed)]
-        possible.sort(key=lambda n: (n["end"] - n["start"], n["id"]))
+        possible.sort(key=lambda n: (n["end"] - n["start"],
+                                    n["kind"] == "source_division", n["id"]))
         parent = possible[0]["id"] if possible else None
         if parent is None and None not in PARENTS[kind]:
             unresolved.append({"kind": kind, "start": a, "end": b,
@@ -125,6 +126,21 @@ def enrich(nodes, text, *, article=None, structure=None):
             if text[a:b] != field["source_text"]:
                 raise ValueError("PDF Sanskrit field differs from source")
             add("sanskrit", a, b, field["evidence"])
+    # Lex. clauses may be added after pre-existing unowned citations. Refine
+    # only their physical container, never a semantic owner or an edge.
+    by_id = {n["id"]: n for n in nodes}
+    for node in nodes:
+        if node["kind"] != "citation":
+            continue
+        parent = by_id.get(node["parent"])
+        if parent is not None and parent["kind"] != "source_division":
+            continue
+        clauses = sorted((n for n in nodes if n["kind"] == "lexical_parallel"
+            and n["start"] <= node["start"] < node["end"] <= n["end"]),
+            key=lambda n: (n["end"]-n["start"], n["id"]))
+        if clauses:
+            node["parent"] = clauses[0]["id"]
+            node["association_status"] = "source_containment_only"
     return unresolved
 
 
@@ -422,6 +438,9 @@ def main():
     parser.add_argument("--html-articles", type=Path)
     parser.add_argument("--pdf-structures", type=Path)
     parser.add_argument("--challenge", type=Path)
+    parser.add_argument("--annotations", type=Path)
+    parser.add_argument("--cache", type=Path)
+    parser.add_argument("--canonical-root", type=Path)
     args = parser.parse_args()
     outputs = [args.output, args.inventory] + ([args.challenge] if args.challenge else [])
     if len(set(p.resolve() for p in outputs)) != len(outputs) or any(p.exists() for p in outputs):
@@ -456,6 +475,15 @@ def main():
         if args.html_articles and selected.keys() - html.keys():
             raise ValueError("missing pinned HTML structural source")
         predictions.extend(project_html(selected[key], grouped[key], html.get(key)) for key in sorted(selected))
+    if args.annotations:
+        if args.cache is None:
+            raise ValueError("semantic annotations require offline source-cache verification")
+        from badw_semantic_annotations import validate, apply_validated_annotations
+        annotations = validate(all_packets, rows(args.annotations), cache=args.cache,
+                               canonical_root=args.canonical_root)
+        selected_packets = {p["identity"]: p for p in all_packets}
+        predictions = [apply_validated_annotations(selected_packets[p["identity"]], p, annotations)
+                       for p in predictions]
     write(args.output, sorted(predictions, key=lambda r: r["identity"]))
     write(args.inventory, inventory)
     if args.challenge:

@@ -36,7 +36,7 @@ def test_clipped_lex_language_field_preserves_original_locator(name, kind, value
     assert nodes[1]['start'] == 1  # Do not widen the source clause.
     # Candidate containment follows the existing allowed-parent contract;
     # it does not assert scholarly ownership of a Sanskrit mention by Lex.
-    assert language[0]['parent'] == (nodes[1]['id'] if kind == 'tibetan' else root['id'])
+    assert language[0]['parent'] == nodes[1]['id']
     repeated = [copy.deepcopy(root)]
     enrich(repeated, text, article=copy.deepcopy(article))
     assert repeated == nodes
@@ -68,6 +68,29 @@ def fixture():
                   divisions=[dict(division_index=0, kind="unsegmented_source_division", source_text=text,
                                   start_line_index=0, end_line_index_exclusive=1, items=[item])])
     return packet, nested
+
+
+def test_lex_citation_container_does_not_assert_ownership():
+    text = 'Lex. ka (A: 1)'
+    nodes = [dict(id='root', kind='source_division', start=0, end=len(text), parent=None),
+             dict(id='lex', kind='lexical_parallel', start=5, end=len(text), parent='root'),
+             dict(id='cite', kind='citation', start=8, end=len(text), parent='root')]
+    assert enrich(nodes, text) == []
+    assert nodes[-1]['parent'] == 'lex'
+    assert nodes[-1]['association_status'] == 'source_containment_only'
+    repeated = copy.deepcopy(nodes)
+    assert enrich(repeated, text) == []
+    assert repeated == nodes
+
+
+def test_existing_semantic_citation_parent_is_not_reassigned():
+    text = 'Lex. ka (A: 1)'
+    nodes = [dict(id='root', kind='source_division', start=0, end=len(text), parent=None),
+             dict(id='example', kind='example', start=5, end=len(text), parent='root'),
+             dict(id='lex', kind='lexical_parallel', start=5, end=len(text), parent='root'),
+             dict(id='cite', kind='citation', start=8, end=len(text), parent='example')]
+    enrich(nodes, text)
+    assert nodes[-1]['parent'] == 'example'
 
 
 def test_lossless_unicode_apparatus_and_provenance():

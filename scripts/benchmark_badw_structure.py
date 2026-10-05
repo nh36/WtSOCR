@@ -19,7 +19,9 @@ from build_badw_structural_review_packet import VERSION, rows
 PARENTS = {
     "headword": {None}, "source_division": {None}, "sense": {None, "sense", "source_division"},
     "definition": {"sense", "source_division"}, "example": {"sense", "source_division"},
-    "tibetan": {"example", "lexical_parallel", "definition"},
+    # Language identification can type an alias outside a German definition.
+    # A physical source container (or root) does not assert sense ownership.
+    "tibetan": {None, "source_division", "sense", "example", "lexical_parallel", "definition"},
     "translation": {"example", "lexical_parallel", "definition"},
     "citation": {None, "example", "sense", "source_division", "definition", "lexical_parallel"},
     "lexical_parallel": {"sense", "source_division"}, "correction": {"tibetan"},

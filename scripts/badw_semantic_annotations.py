@@ -223,5 +223,59 @@ def main():
                       for s in ("accepted", "candidate", "rejected", "superseded")}}))
 
 
+def apply_validated_annotations(packet, prediction, annotations):
+    """Project an offline-validated overlay, without changing observations.
+
+    Call validate() with the source cache before calling this function. Physical
+    containment is not citation ownership. Non-language claims and inactive
+    claims remain explicit; neither typography nor a base-form annotation is a
+    language rule. Discontinuous ranges remain separate source spans.
+    """
+    from copy import deepcopy
+    from benchmark_badw_structure import PARENTS, graph
+
+    if prediction["identity"] != packet["identity"]:
+        raise ValueError("annotation projection witness mismatch")
+    result = deepcopy(prediction)
+    selected = sorted((r for r in annotations if r["identity"] == packet["identity"]),
+                      key=lambda r: r["annotation_id"])
+    text = packet["review_text"]
+    for row in selected:
+        if row["binding"] != binding(packet) or row["physical_selectors"] != physical_selectors(packet, row["ranges"]):
+            raise ValueError("annotation projection source binding mismatch")
+        if "effective_status" not in row:
+            raise ValueError("annotation must be validated before projection")
+        for span in row["ranges"]:
+            if not 0 <= span["start"] < span["end"] <= len(text) or text[span["start"]:span["end"]] != span["literal"]:
+                raise ValueError("annotation projection literal mismatch")
+        if row["effective_status"] != "accepted" or row["kind"] != "language_span":
+            continue
+        kind = {"bo": "tibetan", "sa": "sanskrit"}.get(row["claim"]["language"])
+        # German language does not imply definition or translation function.
+        if kind is None:
+            continue
+        for span in row["ranges"]:
+            a, b = span["start"], span["end"]
+            existing = next((n for n in result["nodes"] if
+                             (n["kind"], n["start"], n["end"]) == (kind, a, b)), None)
+            if existing is None:
+                possible = sorted((n for n in result["nodes"] if
+                    n["kind"] in PARENTS[kind] and n["start"] <= a < b <= n["end"]),
+                    key=lambda n: (n["end"]-n["start"],
+                                   n["kind"] == "source_division", n["id"]))
+                existing = dict(id=f"annotation:{row['annotation_id']}:{a}:{b}",
+                    kind=kind, start=a, end=b,
+                    parent=possible[0]["id"] if possible else None,
+                    association_status="source_containment_only")
+                result["nodes"].append(existing)
+            ids = existing.setdefault("semantic_annotation_ids", [])
+            if row["annotation_id"] not in ids:
+                ids.append(row["annotation_id"])
+                ids.sort()
+    result["semantic_annotations"] = selected
+    graph(result["nodes"], result["edges"], text)
+    return result
+
+
 if __name__ == "__main__":
     main()

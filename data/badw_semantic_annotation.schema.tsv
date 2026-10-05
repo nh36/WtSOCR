@@ -16,4 +16,4 @@ review	Nonempty reviewer, timezone-qualified reviewed_at, mode, method_version a
 supersedes	Explicit list of older same-witness annotation IDs; one accepted replacement per retired claim; cycles, missing claims and cross-witness replacements rejected; old claims retained
 effective_status	Generated only: superseded if explicitly replaced, otherwise the reviewed status; never supplied as an input claim
 source_verification	Offline validator checks raw cached HTML/PDF and canonical page-object hashes plus frozen view consistency; this binds evidence but does not certify extraction correctness or perform decoder replay
-storage	Raw/bulk sources and validated output under ignored work/; tracked pilot contains only four minimal reviewed spans and their evidence anchors; no production projection
+storage	Raw/bulk sources and validated output under ignored work/; tracked overlay contains bounded reviewed spans and their evidence anchors, including superseded claims; no production projection

@@ -83,7 +83,7 @@ def test_stale_duplicate_missing_prediction():
 def test_invalid_boundaries_and_ownership():
     for mutate, message in (
         (lambda n: n[2].update(end=21), "outside source"),
-        (lambda n: n[2].update(parent="s"), "parent kind"),
+        (lambda n: n[2].update(parent="g"), "parent kind"),
         (lambda n: n[4].update(parent="s"), "ownership"),
         (lambda n: n[0].update(parent="s"), "cyclic"),
     ):

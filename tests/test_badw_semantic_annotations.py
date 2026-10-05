@@ -91,6 +91,99 @@ def test_candidates_never_promote_and_ids_sort(tmp_path):
     assert [(r["annotation_id"], r["effective_status"]) for r in result] == [("a", "rejected"), ("z", "candidate")]
 
 
+def prediction(p):
+    return dict(identity=p['identity'], nodes=[dict(id='root', kind='source_division',
+        start=0, end=len(p['review_text']), parent=None)], edges=[])
+
+
+def test_overlay_is_source_bound_deterministic_and_idempotent(tmp_path):
+    p = packet(tmp_path, 'pdf')
+    original = prediction(p)
+    validated = run(tmp_path, p, [claim(p)])
+    result = annotations.apply_validated_annotations(p, original, validated)
+    assert len(original['nodes']) == 1
+    assert result['nodes'][-1]['kind'] == 'sanskrit'
+    assert result['nodes'][-1]['parent'] == 'root'
+    assert result['edges'] == []
+    assert result == annotations.apply_validated_annotations(p, result, validated)
+    assert result == annotations.apply_validated_annotations(p, original, validated)
+    stale = copy.deepcopy(validated)
+    stale[0]['binding']['review_text_sha256'] = '0' * 64
+    with pytest.raises(ValueError, match='binding'):
+        annotations.apply_validated_annotations(p, original, stale)
+    with pytest.raises(ValueError, match='validated'):
+        annotations.apply_validated_annotations(p, original, [claim(p)])
+
+
+@pytest.mark.parametrize('literal', ['pradakṣiṇapaṭṭikā', 'cai-\ntyāṅganaḥ', 'ulkā'])
+def test_reviewed_sanskrit_preserves_literal_line_breaks_and_unicode(tmp_path, literal):
+    p = packet(tmp_path)
+    p['review_text'] = literal
+    p['review_text_sha256'] = annotations.digest(literal)
+    p['source']['article_source_text'] = literal
+    p['source']['dom_full_text'] = literal
+    a = claim(p, ranges=[dict(start=0, end=len(literal), literal=literal)])
+    result = annotations.apply_validated_annotations(p, prediction(p), run(tmp_path, p, [a]))
+    node = result['nodes'][-1]
+    assert node['kind'] == 'sanskrit'
+    assert p['review_text'][node['start']:node['end']] == literal
+    assert result['semantic_annotations'][0]['ranges'][0]['literal'] == literal
+    assert result['edges'] == []
+
+
+def test_overlay_does_not_promote_inactive_or_form_claims(tmp_path):
+    p = packet(tmp_path)
+    old, new = claim(p, id='old'), claim(p, id='new')
+    new['supersedes'] = ['old']
+    claims = [old, new, claim(p, id='candidate', status='candidate'),
+              claim(p, id='rejected', status='rejected'),
+              claim(p, id='form', kind='form_mention',
+                    ranges=[dict(start=0, end=6, literal='Viṣṇus')])]
+    result = annotations.apply_validated_annotations(p, prediction(p), run(tmp_path, p, claims))
+    assert len(result['nodes']) == 2
+    assert result['nodes'][-1]['semantic_annotation_ids'] == ['new']
+    assert len(result['semantic_annotations']) == 5
+
+
+def test_overlay_discontinuous_tibetan_is_not_a_definition(tmp_path):
+    p = packet(tmp_path)
+    a = claim(p, ranges=[dict(start=0, end=6, literal='Viṣṇus'),
+                         dict(start=16, end=17, literal='ཀ')])
+    a['claim'] = dict(language='bo')  # Synthetic claim tests mechanics, not linguistic truth.
+    result = annotations.apply_validated_annotations(p, prediction(p), run(tmp_path, p, [a]))
+    assert [n['kind'] for n in result['nodes']] == ['source_division', 'tibetan', 'tibetan']
+    assert [(n['start'], n['end']) for n in result['nodes'][1:]] == [(0, 6), (16, 17)]
+    assert result['edges'] == []
+
+
+def test_overlay_reuses_exact_typed_node_and_prefers_explicit_lex_parent(tmp_path):
+    p = packet(tmp_path)
+    base = prediction(p)
+    base['nodes'].append(dict(id='lex', kind='lexical_parallel', start=0,
+                             end=len(p['review_text']), parent='root'))
+    validated = run(tmp_path, p, [claim(p)])
+    first = annotations.apply_validated_annotations(p, base, validated)
+    assert first['nodes'][-1]['parent'] == 'lex'
+    already_typed = copy.deepcopy(base)
+    already_typed['nodes'].append(dict(id='source-tag', kind='sanskrit',
+                                       start=11, end=15, parent='lex'))
+    second = annotations.apply_validated_annotations(p, already_typed, validated)
+    assert len(second['nodes']) == 3
+    assert second['nodes'][-1]['id'] == 'source-tag'
+    assert second['nodes'][-1]['semantic_annotation_ids'] == ['claim-1']
+    assert second['edges'] == []
+
+
+def test_german_language_claim_does_not_invent_definition_or_translation(tmp_path):
+    p = packet(tmp_path)
+    a = claim(p)
+    a['claim']['language'] = 'de'  # Synthetic annotation mechanics only.
+    base = prediction(p)
+    result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
+    assert result['nodes'] == base['nodes']
+    assert result['semantic_annotations'][0]['claim']['language'] == 'de'
+
+
 def test_explicit_supersession_retains_old_claim(tmp_path):
     p = packet(tmp_path)
     a, b = claim(p, id="old"), claim(p, id="new")
