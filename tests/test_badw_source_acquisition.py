@@ -421,6 +421,36 @@ def test_article_homonym_ignores_reference_and_exponent_superscripts():
         assert article["cross_references"][1]["target_homonym"] == "3"
 
 
+def test_reference_targets_remain_explicit_and_ambiguous_arrows_unresolved():
+    extra = ('<span class="link">↑<a href="/lemma/ka/1">ka</a>'
+             ' oder <a href="/lemma/ka/2">ka²</a></span>'
+             '<span class="link">↓ unbekannt</span>'
+             '<a href="/lemma/nga/4">ohne Pfeil</a>').encode()
+    body = ARTICLE_BYTES.replace(b'</div>\n</body>', extra + b'</div>\n</body>')
+    url = "https://wts-digital.badw.de/lemma/ka/2"
+    with TemporaryDirectory() as temporary:
+        cache = SourceCache(temporary, delay_seconds=0,
+                            transport=lambda request, timeout: html_response(request, body))
+        cache.fetch(RequestSpec(url))
+        article = parse_cached_article(cache, RequestSpec(url))
+        assert len(article['cross_references']) == 2  # Only the two unique fixture targets.
+        diagnostics = article['reference_diagnostics']
+        assert [d['anchor_count'] for d in diagnostics] == [2, 0]
+        assert all(d['status'] == 'explicit_reference_target_unresolved' for d in diagnostics)
+        assert diagnostics[0]['source_text'] == '↑ka oder ka²'
+        assert diagnostics[1]['source_text'] == '↓ unbekannt'
+        links = article['entry_links']
+        assert any(l['target_url'].endswith('/lemma/ka/2') for l in links)
+        bare = next(l for l in links if l['target_url'].endswith('/lemma/nga/4'))
+        assert bare['source_text'] == 'ohne Pfeil'
+        assert bare['target_homonym'] == '4'
+        assert bare['status'] == 'explicit_source_link'
+        for link in links:
+            locator = link['locator']
+            assert article['article_source_text'][locator['visible_text_start']:
+                                                  locator['visible_text_end']] == link['source_text']
+
+
 def test_siglum_tooltip_keeps_original_and_excludes_nested_ui_from_display():
     body = ARTICLE_BYTES.replace(
         b"Test-Siglum Langform",

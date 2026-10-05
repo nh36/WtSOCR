@@ -19,6 +19,37 @@ from build_badw_structural_review_packet import VERSION as PACKET_VERSION, rows
 
 VERSION = "badw-semantic-annotation-v1"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
+RELATIONS = {
+    "citation_of": ({"citation"}, {"example", "definition", "sense", "lexical_parallel"}),
+    "translation_of": ({"translation"}, {"tibetan", "sanskrit"}),
+    "gloss_of": ({"translation"}, {"tibetan", "sanskrit"}),
+}
+
+
+def relationship_claim(claim, ranges):
+    """Validate exact endpoints, including shared/discontinuous support.
+
+    Evidence ranges may contain endpoints; they do not assert ownership.
+    Endpoints are source-view spans, never nearest-node or canonical identities.
+    """
+    _keys(claim, ("relation", "from", "to", "basis"))
+    if claim["relation"] not in RELATIONS or claim["basis"] not in (
+            "explicit_dom", "lex_item_punctuation", "reviewed_parallel_text"):
+        raise ValueError("unsupported relationship or evidence basis")
+    if not isinstance(claim["to"], list) or not claim["to"]:
+        raise ValueError("relationship requires target endpoints")
+    allowed_from, allowed_to = RELATIONS[claim["relation"]]
+    seen = set()
+    for endpoint, allowed in [(claim["from"], allowed_from)] + [(t, allowed_to) for t in claim["to"]]:
+        _keys(endpoint, ("kind", "start", "end"))
+        a, b = endpoint["start"], endpoint["end"]
+        if endpoint["kind"] not in allowed or type(a) is not int or type(b) is not int or not any(
+                r["start"] <= a < b <= r["end"] for r in ranges):
+            raise ValueError("invalid or unbound relationship endpoint")
+        key = (endpoint["kind"], a, b)
+        if key in seen:
+            raise ValueError("duplicate relationship endpoint")
+        seen.add(key)
 
 
 def canonical(value):
@@ -161,6 +192,8 @@ def validate(packets, annotations, *, cache, canonical_root=None):
             _keys(claim, ("base_form", "base_language", "context_language", "relation"))
             if not _string(claim["base_form"]) or claim["base_language"] != "sa" or claim["context_language"] != "de" or claim["relation"] != "inflected_name_mention":
                 raise ValueError("unsupported pilot form mention")
+        elif row["kind"] == "relationship":
+            relationship_claim(claim, ranges)
         else:
             raise ValueError("unsupported annotation kind")
         if row["status"] not in ("candidate", "accepted", "rejected"):
@@ -227,8 +260,9 @@ def apply_validated_annotations(packet, prediction, annotations):
     """Project an offline-validated overlay, without changing observations.
 
     Call validate() with the source cache before calling this function. Physical
-    containment is not citation ownership. Non-language claims and inactive
-    claims remain explicit; neither typography nor a base-form annotation is a
+    containment is not citation ownership. Accepted relationships bind exact
+    extracted endpoints separately from containment; inactive and base-form
+    claims remain explicit. Neither typography nor a base-form annotation is a
     language rule. Discontinuous ranges remain separate source spans.
     """
     from copy import deepcopy
@@ -273,6 +307,26 @@ def apply_validated_annotations(packet, prediction, annotations):
                 ids.append(row["annotation_id"])
                 ids.sort()
     result["semantic_annotations"] = selected
+    # Semantic ownership is not physical containment. Keep these reviewed
+    # assertions separate from the extraction benchmark's containment edges.
+    # Fail closed if extraction no longer exposes an exact reviewed endpoint.
+    relationships = []
+    for row in selected:
+        if row["kind"] != "relationship" or row["effective_status"] != "accepted":
+            continue
+        claim = row["claim"]
+        relationship_claim(claim, row["ranges"])
+        def resolve(endpoint):
+            matches = [n for n in result["nodes"] if all(n[k] == endpoint[k] for k in ("kind", "start", "end"))]
+            if len(matches) != 1:
+                raise ValueError("reviewed relationship endpoint absent or ambiguous")
+            return {**endpoint, "node_id": matches[0]["id"]}
+        relationships.append({"annotation_id": row["annotation_id"],
+            "relation": claim["relation"], "from": resolve(claim["from"]),
+            "to": [resolve(t) for t in claim["to"]], "basis": claim["basis"],
+            "binding": row["binding"], "physical_selectors": row["physical_selectors"],
+            "review": row["review"]})
+    result["semantic_relationships"] = relationships
     graph(result["nodes"], result["edges"], text)
     return result
 

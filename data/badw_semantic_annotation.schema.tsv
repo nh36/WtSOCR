@@ -5,12 +5,16 @@ identity	Existing frozen source-review-packet witness identity, not a canonical 
 binding	Exact view_version, view_sha256 and text_sha256; view hash covers packet version, identity, kind, source anchors and original review text, excluding review labels
 ranges	Nonempty ordered nonoverlapping list of start/end/literal objects; half-open Unicode code-point offsets in the frozen review_text; discontinuous ranges permitted; literal text must match exactly
 physical_selectors	Deterministically replayed source-view anchors: HTML visible-text ranges with raw object hash, or PDF page/visual-line/local ranges and run/style envelopes; envelopes are not glyph-exact selectors
-kind	language_span or form_mention only in v1; explicit source tags remain in extraction records and are not synthesized by this ledger
+kind	language_span, form_mention or relationship; explicit source tags remain observations and are not synthesized by this ledger
 claim.language	language_span only: sa, bo or de; a reviewed interpretation, not a source assertion
 claim.base_form	form_mention only: reviewed Sanskrit base spelling, distinct from unchanged literal source text; no canonical form entity is created
 claim.base_language	form_mention only: sa in this pilot
 claim.context_language	form_mention only: de in this pilot
-claim.relation	form_mention only: inflected_name_mention in this pilot; this does not classify the literal span as Sanskrit-language text
+claim.relation	form_mention: inflected_name_mention; relationship: citation_of, translation_of or gloss_of; gloss is not silently promoted to translation
+claim.from	relationship only: exact kind/start/end endpoint inside an evidence range; citation for citation_of, translation for translation_of/gloss_of; resolves to exactly one extracted node or fails closed
+claim.to	relationship only: nonempty list of exact kind/start/end endpoints; citation targets example, definition, sense or lexical_parallel; translation/gloss targets tibetan or sanskrit; multiple targets require explicit reviewed shared applicability, not proximity
+claim.basis	relationship only: explicit_dom, lex_item_punctuation or reviewed_parallel_text; review.evidence must explain applicability and boundaries, not just containment
+semantic_relationships	Generated reviewed ownership/translation/gloss assertions, distinct from physical parents and benchmark containment edges; retain exact endpoints, resolved node IDs, binding, physical selectors and review; no canonical entity or production projection
 status	candidate, accepted or rejected; validation alone does not promote a candidate; acceptance is not independent benchmark gold
 review	Nonempty reviewer, timezone-qualified reviewed_at, mode, method_version and evidence; modes: same_agent_source_review, prediction_exposed_review, independent_source_review
 supersedes	Explicit list of older same-witness annotation IDs; one accepted replacement per retired claim; cycles, missing claims and cross-witness replacements rejected; old claims retained

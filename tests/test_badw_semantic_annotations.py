@@ -96,6 +96,98 @@ def prediction(p):
         start=0, end=len(p['review_text']), parent=None)], edges=[])
 
 
+def relationship(p, relation='gloss_of', status='accepted'):
+    a = claim(p, ranges=[dict(start=0, end=len(p['review_text']), literal=p['review_text'])],
+              status=status)
+    a['kind'] = 'relationship'
+    a['claim'] = dict(relation=relation, basis='reviewed_parallel_text',
+        **{'from': dict(kind='translation', start=0, end=6),
+           'to': [dict(kind='sanskrit', start=11, end=15)]})
+    return a
+
+
+def relationship_prediction(p):
+    base = prediction(p)
+    base['nodes'].extend([
+        dict(id='lex', kind='lexical_parallel', start=0, end=17, parent='root'),
+        dict(id='german', kind='translation', start=0, end=6, parent='lex'),
+        dict(id='original', kind='sanskrit', start=11, end=15, parent='root')])
+    return base
+
+
+@pytest.mark.parametrize('kind', ['html', 'pdf'])
+def test_reviewed_relationship_has_exact_endpoints_and_provenance(tmp_path, kind):
+    p = packet(tmp_path, kind)
+    base = relationship_prediction(p)
+    validated = run(tmp_path, p, [relationship(p)])
+    result = annotations.apply_validated_annotations(p, base, validated)
+    edge = result['semantic_relationships'][0]
+    assert edge['relation'] == 'gloss_of'
+    assert edge['from']['node_id'] == 'german'
+    assert edge['to'][0]['node_id'] == 'original'
+    assert edge['binding'] == annotations.binding(p)
+    assert edge['physical_selectors'] == validated[0]['physical_selectors']
+    assert edge['review'] == validated[0]['review']
+    assert result['nodes'] == base['nodes']  # Ownership never reparents source nodes.
+    assert result['edges'] == []
+    assert result == annotations.apply_validated_annotations(p, result, validated)
+
+
+@pytest.mark.parametrize('status', ['candidate', 'rejected'])
+def test_inactive_relationship_never_assigns_ownership(tmp_path, status):
+    p = packet(tmp_path)
+    result = annotations.apply_validated_annotations(p, relationship_prediction(p),
+        run(tmp_path, p, [relationship(p, status=status)]))
+    assert result['semantic_relationships'] == []
+    assert result['semantic_annotations'][0]['effective_status'] == status
+
+
+@pytest.mark.parametrize('ambiguous', [False, True])
+def test_relationship_fails_closed_on_missing_or_ambiguous_node(tmp_path, ambiguous):
+    p = packet(tmp_path)
+    base = relationship_prediction(p)
+    if ambiguous:
+        base['nodes'].append(dict(base['nodes'][-1], id='duplicate'))
+    else:
+        base['nodes'].pop()
+    with pytest.raises(ValueError, match='endpoint absent or ambiguous'):
+        annotations.apply_validated_annotations(p, base, run(tmp_path, p, [relationship(p)]))
+
+
+def test_citation_can_have_multiple_explicit_reviewed_targets(tmp_path):
+    p = packet(tmp_path)
+    base = prediction(p)
+    base['nodes'].extend([
+        dict(id='cite', kind='citation', start=0, end=6, parent='root'),
+        dict(id='first', kind='lexical_parallel', start=0, end=15, parent='root'),
+        dict(id='second', kind='lexical_parallel', start=0, end=17, parent='root')])
+    a = relationship(p)
+    a['claim'] = dict(relation='citation_of', basis='lex_item_punctuation',
+        **{'from': dict(kind='citation', start=0, end=6),
+           'to': [dict(kind='lexical_parallel', start=0, end=15),
+                  dict(kind='lexical_parallel', start=0, end=17)]})
+    result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
+    assert [t['node_id'] for t in result['semantic_relationships'][0]['to']] == ['first', 'second']
+    assert result['nodes'][1]['parent'] == 'root'
+    assert base.get('semantic_relationships') is None
+
+
+@pytest.mark.parametrize('mutation', ['type', 'outside', 'duplicate', 'basis'])
+def test_invalid_relationship_contract_rejected(tmp_path, mutation):
+    p = packet(tmp_path)
+    a = relationship(p)
+    if mutation == 'type':
+        a['claim']['to'][0]['kind'] = 'definition'
+    elif mutation == 'outside':
+        a['claim']['to'][0]['end'] = 100
+    elif mutation == 'duplicate':
+        a['claim']['to'].append(dict(a['claim']['to'][0]))
+    else:
+        a['claim']['basis'] = 'nearest_text'
+    with pytest.raises(ValueError):
+        run(tmp_path, p, [a])
+
+
 def test_overlay_is_source_bound_deterministic_and_idempotent(tmp_path):
     p = packet(tmp_path, 'pdf')
     original = prediction(p)
