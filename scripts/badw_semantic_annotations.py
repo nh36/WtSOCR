@@ -20,7 +20,7 @@ from build_badw_structural_review_packet import VERSION as PACKET_VERSION, rows
 VERSION = "badw-semantic-annotation-v1"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 RELATIONS = {
-    "citation_of": ({"citation"}, {"example", "definition", "sense", "lexical_parallel"}),
+    "citation_of": ({"citation"}, {"example", "definition", "sense", "lexical_parallel", "citable_passage"}),
     "translation_of": ({"translation"}, {"tibetan", "sanskrit"}),
     "gloss_of": ({"translation"}, {"tibetan", "sanskrit"}),
 }
@@ -194,6 +194,11 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("unsupported pilot form mention")
         elif row["kind"] == "relationship":
             relationship_claim(claim, ranges)
+        elif row["kind"] == "citable_passage":
+            # A reviewed extent, not a newly inferred sense or language node.
+            _keys(claim, ())
+            if len(ranges) != 1:
+                raise ValueError("citable passage requires one exact range; use multiple targets for grouped support")
         else:
             raise ValueError("unsupported annotation kind")
         if row["status"] not in ("candidate", "accepted", "rejected"):
@@ -307,6 +312,21 @@ def apply_validated_annotations(packet, prediction, annotations):
                 ids.append(row["annotation_id"])
                 ids.sort()
     result["semantic_annotations"] = selected
+    passages = []
+    seen_passages = set()
+    for row in selected:
+        if row["kind"] != "citable_passage" or row["effective_status"] != "accepted":
+            continue
+        span = row["ranges"][0]
+        extent = (span["start"], span["end"])
+        if extent in seen_passages:
+            raise ValueError("duplicate accepted citable passage extent")
+        seen_passages.add(extent)
+        passages.append({"id": "passage:" + row["annotation_id"],
+            "kind": "citable_passage", **span, "annotation_id": row["annotation_id"],
+            "binding": row["binding"], "physical_selectors": row["physical_selectors"],
+            "review": row["review"]})
+    result["citable_passages"] = passages
     # Semantic ownership is not physical containment. Keep these reviewed
     # assertions separate from the extraction benchmark's containment edges.
     # Fail closed if extraction no longer exposes an exact reviewed endpoint.
@@ -317,10 +337,12 @@ def apply_validated_annotations(packet, prediction, annotations):
         claim = row["claim"]
         relationship_claim(claim, row["ranges"])
         def resolve(endpoint):
-            matches = [n for n in result["nodes"] if all(n[k] == endpoint[k] for k in ("kind", "start", "end"))]
+            pool = passages if endpoint["kind"] == "citable_passage" else result["nodes"]
+            matches = [n for n in pool if all(n[k] == endpoint[k] for k in ("kind", "start", "end"))]
             if len(matches) != 1:
                 raise ValueError("reviewed relationship endpoint absent or ambiguous")
-            return {**endpoint, "node_id": matches[0]["id"]}
+            key = "passage_id" if endpoint["kind"] == "citable_passage" else "node_id"
+            return {**endpoint, key: matches[0]["id"]}
         relationships.append({"annotation_id": row["annotation_id"],
             "relation": claim["relation"], "from": resolve(claim["from"]),
             "to": [resolve(t) for t in claim["to"]], "basis": claim["basis"],

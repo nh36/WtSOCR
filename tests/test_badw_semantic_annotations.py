@@ -116,6 +116,52 @@ def relationship_prediction(p):
 
 
 @pytest.mark.parametrize('kind', ['html', 'pdf'])
+@pytest.mark.parametrize('extent', [(0, 3), (0, 15), (11, 17)])
+def test_citable_subspan_and_mixed_passage_do_not_split_observations(tmp_path, kind, extent):
+    p = packet(tmp_path, kind)
+    a, b = extent
+    passage = claim(p, kind='citable_passage', id='passage',
+                    ranges=[dict(start=a, end=b, literal=p['review_text'][a:b])])
+    passage['claim'] = {}
+    rel = relationship(p)
+    rel['claim'] = dict(relation='citation_of', basis='reviewed_parallel_text',
+        **{'from': dict(kind='citation', start=15, end=17),
+           'to': [dict(kind='citable_passage', start=a, end=b)]})
+    base = relationship_prediction(p)
+    base['nodes'].append(dict(id='citation', kind='citation', start=15, end=17, parent='lex'))
+    before = copy.deepcopy(base)
+    validated = run(tmp_path, p, [rel, passage])
+    result = annotations.apply_validated_annotations(p, base, validated)
+    assert base == before
+    assert result['nodes'] == base['nodes']
+    assert result['edges'] == base['edges']
+    assert result['citable_passages'][0]['literal'] == p['review_text'][a:b]
+    assert result['semantic_relationships'][0]['to'][0]['passage_id'] == 'passage:passage'
+    assert result == annotations.apply_validated_annotations(p, result, validated)
+    for status in ('candidate', 'rejected'):
+        inactive = copy.deepcopy(passage)
+        inactive['status'] = status
+        with pytest.raises(ValueError, match='endpoint absent'):
+            annotations.apply_validated_annotations(p, base, run(tmp_path, p, [rel, inactive]))
+    with pytest.raises(ValueError, match='endpoint absent'):
+        annotations.apply_validated_annotations(p, base, run(tmp_path, p, [rel]))
+
+
+def test_passage_extent_must_be_unique_and_contiguous(tmp_path):
+    p = packet(tmp_path)
+    a = claim(p, kind='citable_passage')
+    a['claim'] = {}
+    b = copy.deepcopy(a)
+    b['annotation_id'] = 'duplicate'
+    with pytest.raises(ValueError, match='duplicate accepted'):
+        annotations.apply_validated_annotations(p, prediction(p), run(tmp_path, p, [a, b]))
+    a['ranges'].append(dict(start=16, end=17, literal=p['review_text'][16:17]))
+    a['physical_selectors'] = annotations.physical_selectors(p, a['ranges'])
+    with pytest.raises(ValueError, match='one exact range'):
+        run(tmp_path, p, [a])
+
+
+@pytest.mark.parametrize('kind', ['html', 'pdf'])
 def test_reviewed_relationship_has_exact_endpoints_and_provenance(tmp_path, kind):
     p = packet(tmp_path, kind)
     base = relationship_prediction(p)
