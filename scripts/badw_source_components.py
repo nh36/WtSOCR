@@ -11,6 +11,25 @@ import re
 QUOTE_PAIRS = {"„": "“", "«": "»", "‚": "‘"}
 
 
+def author_year_reference_candidates(text, start, end):
+    """Observe unquoted capitalized author/year/locator references only.
+
+    A colon and numeric locator are required. Observation does not assert
+    bibliography identity or citation ownership, including in etymologies.
+    """
+    if not 0 <= start <= end <= len(text):
+        raise ValueError("invalid citation bounds")
+    pattern = re.compile(r"(?<!\w)[A-ZÄÖÜ][A-Za-zÄÖÜäöüẞß-]{2,}\s+"
+                         r"(?:18|19|20)\d{2}:\s*\d+(?:[–-]\d+)?"
+                         r"(?:\s+ff?\.)?(?!\w)")
+    quotes = quoted_spans(text, start, end)
+    return [dict(start=m.start(), end=m.end(), source_text=m.group(),
+                 status="unresolved_source_citation_candidate",
+                 evidence="capitalized author year colon and numeric locator")
+            for m in pattern.finditer(text, start, end)
+            if not any(q['start'] <= m.start() < q['end'] for q in quotes)]
+
+
 def comparison_reference_candidates(text, start, end):
     """Observe explicit ``vgl.`` references, without asserting what they cite.
 

@@ -317,7 +317,7 @@ def parse_database_article(
             }
         )
 
-    from badw_source_components import siglum_parentheses, comparison_reference_candidates
+    from badw_source_components import siglum_parentheses, comparison_reference_candidates, author_year_reference_candidates
     tagged_sigla = _records_for_elements(find_all(article, class_name="textsiglum"), fragments)
     siglum_spans = [(f["locator"]["visible_text_start"], f["locator"]["visible_text_end"])
                    for f in tagged_sigla if f["locator"]["visible_text_start"] is not None]
@@ -336,6 +336,9 @@ def parse_database_article(
             marked_citations.append(dict(start=a, end=end, source_text=article_source_text[a:end],
                 status="unresolved_source_citation_candidate",
                 evidence="explicit visible DOM bibl tag followed by numeric locator"))
+    # Prefer explicit DOM evidence when the same span is also recognized by
+    # the untagged author/year grammar.
+    marked_citations.extend(author_year_reference_candidates(article_source_text, 0, len(article_source_text)))
     # Untagged terminal source expressions in definitions remain candidates,
     # not authority resolutions or ownership assertions. Reuse the bounded
     # source grammar; prose, corrections and quoted parentheses fail closed.
@@ -351,6 +354,31 @@ def parse_database_article(
             for candidate in candidates:
                 if not any(c["start"] == candidate["start"] and c["end"] == candidate["end"] for c in marked_citations):
                     marked_citations.append(candidate)
+    explicit_citations = _records_for_elements(find_all(article, class_name="stelle"), fragments)
+    bibliography_candidates = [c for c in marked_citations
+                               if c["evidence"].startswith("explicit visible DOM bibl")]
+    citation_candidate_diagnostics = []
+    retained_candidates = []
+    for candidate in marked_citations:
+        a, b = candidate["start"], candidate["end"]
+        overlaps = [f for f in explicit_citations
+                    if f["locator"]["visible_text_start"] is not None
+                    and a < f["locator"]["visible_text_end"]
+                    and f["locator"]["visible_text_start"] < b]
+        bibliography_overlaps = [c for c in bibliography_candidates
+                                 if c is not candidate and a < c["end"] and c["start"] < b
+                                 and not candidate["evidence"].startswith("explicit visible DOM bibl")]
+        if overlaps or bibliography_overlaps:
+            # A generic parenthesis may also contain a Tibetan s.v. target.
+            # Keep that envelope for audit, not as a second, broader citation.
+            citation_candidate_diagnostics.append({**candidate,
+                "diagnosis": "overlaps_explicit_dom_citation",
+                "explicit_citation_locators": [f["locator"] for f in overlaps],
+                "explicit_bibliography_spans": [dict(start=c["start"], end=c["end"])
+                                                for c in bibliography_overlaps]})
+        else:
+            retained_candidates.append(candidate)
+    marked_citations = retained_candidates
     lexical_nodes = find_all(article, tag="div", class_name="lex")
     lexical_blocks = []
     for element in lexical_nodes:
@@ -378,14 +406,16 @@ def parse_database_article(
                 clause["german_quotation_candidates"] = quoted_spans(article_source_text, clause["start"], clause["end"])
                 citation = terminal_lexical_citation(article_source_text, clause["start"], clause["end"])
                 marked = [c for c in marked_citations if clause["start"] <= c["start"] < c["end"] <= clause["end"]]
-                clause["terminal_citation_candidates"] = marked or ([citation] if citation else [])
+                explicit = [f for f in explicit_citations
+                            if f["locator"]["visible_text_start"] is not None
+                            and clause["start"] <= f["locator"]["visible_text_start"]
+                            and f["locator"]["visible_text_end"] <= clause["end"]]
+                clause["terminal_citation_candidates"] = marked or ([citation] if citation and not explicit else [])
             block["clauses"] = clauses
             block["delimiter_diagnostics"] = diagnostics
         lexical_blocks.append(block)
     sanskrit = _records_for_elements(find_all(article, tag="skt"), fragments)
-    citations = _records_for_elements(
-        find_all(article, class_name="stelle"), fragments
-    )
+    citations = list(explicit_citations)
     for candidate in marked_citations:
         a, b = candidate["start"], candidate["end"]
         if any(f["locator"]["visible_text_start"] <= a and b <= f["locator"]["visible_text_end"]
@@ -396,6 +426,8 @@ def parse_database_article(
                              if candidate["evidence"].startswith("explicit visible DOM bibl")
                              else "explicit_comparison_reference_candidate"
                              if candidate["evidence"].startswith("explicit vgl.")
+                             else "source_author_year_locator_candidate"
+                             if candidate["evidence"].startswith("capitalized author year")
                              else "source_parenthesis_candidate")},
                          "source_text": article_source_text[a:b], "text": compact_text(article_source_text[a:b]),
                          "candidate_status": candidate["status"], "evidence": candidate["evidence"]})
@@ -526,6 +558,7 @@ def parse_database_article(
         "entry_links": entry_links,
         "reference_diagnostics": reference_diagnostics,
         "citations": citations,
+        "citation_candidate_diagnostics": citation_candidate_diagnostics,
         "qualifiers": _records_for_elements(find_all(article, class_name="metr"), fragments),
         "divisions": divisions,
         "dom_full_text": dom_full_text,

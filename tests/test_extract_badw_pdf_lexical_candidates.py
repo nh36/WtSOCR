@@ -69,6 +69,51 @@ def test_wrapped_reference_without_preceding_gloss_is_not_a_definition():
     assert result['definitions'] == []
 
 
+def test_unparenthesized_citation_reaches_nested_projection_without_ownership():
+    from build_badw_pdf_nested_candidates import project
+    article = _article([_line('Ein Vogel; EMMERICK 1967:'), _line('120 f. vermutet eine Herkunft.')])
+    article.update(source_objects=[], tibetan_headword='', homonym='')
+    article['divisions'][0]['text'] = '\n'.join(line['text'] for line in article['visual_lines'])
+    lexical = extract(article)
+    citation = lexical['citations'][0]
+    assert citation['text'] == 'EMMERICK 1967:\n120 f.'
+    assert citation['division_index'] == 0
+    nested = project(article, lexical)
+    items = nested['divisions'][0]['items']
+    unowned = [item for item in items if item['kind'] == 'unassigned_citation_candidate']
+    assert len(unowned) == 1
+    assert unowned[0]['references'] == {'citations': 0}
+
+
+@pytest.mark.parametrize('prefix', ['auch ka, kha ', 'fut. und pf. ↓ka '])
+def test_alias_list_and_combined_tenses_leave_definition_separate(prefix):
+    text = prefix + 'Weite, Größe.'
+    if prefix.startswith('auch'):
+        spans = [(0, 5, 'regular'), (5, 7, 'italic'), (7, 9, 'regular'),
+                 (9, 12, 'italic'), (12, len(text), 'regular')]
+    else:
+        start = prefix.index('ka')
+        spans = [(0, start, 'regular'), (start, start + 2, 'italic'),
+                 (start + 2, len(text), 'regular')]
+    article = _article([_line(text, spans)])
+    result = extract(article)
+    assert [item['text'] for item in result['definitions']] == ['Weite, Größe.']
+    validate(article, result)
+
+
+def test_explicit_sanskrit_gloss_is_not_a_tibetan_example():
+    text = 'skt. cāṣa „Vogel“ (Source 1)'
+    start, end = text.index('cāṣa'), text.index(' „')
+    article = _example_article([_line(text, [(0, start, 'regular'),
+        (start, end, 'italic'), (end, len(text), 'regular')])])
+    result = extract(article)
+    assert not result['tibetan_examples']
+    assert not result['belegstellen']
+    assert any(item['reason'] == 'explicit_sanskrit_gloss_not_tibetan_example'
+               for item in result['unresolved_quotes'])
+    validate(article, result)
+
+
 @pytest.mark.parametrize('lines,expected', [
     ([_line('fut. zu ↓ka', [(0, 9, 'regular'), (9, 11, 'italic')]),
       _line('kha bringen,', [(0, 3, 'italic'), (3, 12, 'regular')]),

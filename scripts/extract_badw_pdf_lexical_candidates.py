@@ -24,7 +24,7 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v11"
+VERSION = "badw-pdf-lexical-candidates-v12"
 ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
 SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
 
@@ -201,7 +201,9 @@ def _opening_prose_offset(lines, offsets, division, text):
               for i in range(division["start_line_index"], stop)
               for s in lines[i]["style_spans"]
               if s["family"] == "TGaramond" and s["style"] == "italic"]
-    prefix = re.compile(r"\s*(?:(?:pf\.|fut\.|prs\.|imp\.)\s+(?:zu\s+)?[↑↓]\s*|auch\s+)")
+    tense = r"(?:pf\.|fut\.|prs\.|imp\.)"
+    prefix = re.compile(r"\s*(?:" + tense + r"(?:\s+und\s+" + tense
+                        + r")*\s+(?:zu\s+)?[↑↓]\s*|auch\s+)")
     pos, consumed = a, False
     while (match := prefix.match(text, pos, b)):
         target = match.end()
@@ -209,9 +211,14 @@ def _opening_prose_offset(lines, offsets, division, text):
         if run is None:
             break
         end = run[1]
-        # Only whitespace can connect wrapped parts of the same italic target.
+        # Whitespace joins a wrapped target. Only the explicit alias opening
+        # permits a comma-separated list of italic aliases; regular prose
+        # between runs always stops the opening.
+        alias_list = match.group().lstrip().startswith("auch ")
         for x, y in italic:
-            if x >= end and not text[end:x].strip():
+            separator = text[end:x]
+            if x >= end and (not separator.strip()
+                             or alias_list and separator.strip() == ","):
                 end = y
         pos, consumed = end, True
     return pos if consumed else a
@@ -470,14 +477,21 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             **_anchor(lines, offsets, start, end)})
     # Supplement component observations only. Do not insert these into the
     # indexed quote/citation pairing table or infer support from proximity.
-    from badw_source_components import comparison_reference_candidates
-    for candidate in comparison_reference_candidates(text, 0, len(text)):
+    from badw_source_components import comparison_reference_candidates, author_year_reference_candidates
+    for candidate in (comparison_reference_candidates(text, 0, len(text))
+                      + author_year_reference_candidates(text, 0, len(text))):
         start, end = candidate["start"], candidate["end"]
         if any(int(c["visual_start"]) <= start and end <= int(c["visual_end"])
                for c in result["citations"]):
             continue
+        containing = [i for i, division in enumerate(article["divisions"])
+                      if offsets[division["start_line_index"]] <= start
+                      and end <= (offsets[division["end_line_index_exclusive"]] - 1
+                                  if division["end_line_index_exclusive"] < len(offsets)
+                                  else len(text))]
         result["citations"].append({"text": text[start:end],
-            "division_index": None, "status": "unlinked_source_citation_candidate",
+            "division_index": containing[0] if len(containing) == 1 else None,
+            "status": "unlinked_source_citation_candidate",
             "evidence": candidate["evidence"], **_anchor(lines, offsets, start, end)})
     for quote_index, quote in enumerate(quotes):
         review = reviewed_quote_role(article, quote, text, load_role_reviews())
@@ -595,6 +609,14 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
         start += len(joined) - len(joined.lstrip())
         end -= len(joined) - len(joined.rstrip())
         example_text = text[start:end]
+        # An explicit Sanskrit cue overrides the purely typographic Tibetan
+        # hypothesis. Preserve both the italic source and quotation, but do
+        # not manufacture a Tibetan example or translation edge. Semantic
+        # gloss ownership remains available for source-bound review.
+        if re.search(r"\bskt\.\s*\Z", text[max(0, start - 30):start]):
+            result["unresolved_quotes"].append({"quote_index": quote_index,
+                "reason": "explicit_sanskrit_gloss_not_tibetan_example"})
+            continue
         # Leading gloss/apparatus expansion can expose glyphs outside the
         # original italic interval. Check the final source span as well.
         if contains_unknown(example_text):

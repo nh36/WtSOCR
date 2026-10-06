@@ -6,11 +6,62 @@ import sys
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from badw_source_components import lexical_clauses, quoted_spans, terminal_lexical_citation
+from badw_source_components import author_year_reference_candidates, lexical_clauses, quoted_spans, terminal_lexical_citation
 from badw_article_parser import parse_database_article, _field_envelope
 from benchmark_badw_structure import boundary_diagnostic
 from project_badw_structural_candidates import enrich
 from parse_badw_pdf_articles import _candidates, _structure
+
+
+@pytest.mark.parametrize('text,expected', [
+    ('EMMERICK 1967:\n120 f. vermutet', ['EMMERICK 1967:\n120 f.']),
+    ('LAUFER 1916: 464 Nr. 66', ['LAUFER 1916: 464']),
+    ('vgl. Laufer 1916: 464, Nr. 66.', ['Laufer 1916: 464']),
+    ('„EMMERICK 1967: 120“', []),
+    ('EMMERICK 1967 vermutet', []),
+    ('1967: 120', []),
+])
+def test_author_year_candidates_preserve_wrapping_without_assigning_ownership(text, expected):
+    result = author_year_reference_candidates(text, 0, len(text))
+    assert [item['source_text'] for item in result] == expected
+    assert all(item['status'] == 'unresolved_source_citation_candidate' for item in result)
+    assert all(text[item['start']:item['end']] == item['source_text'] for item in result)
+
+
+def test_untagged_html_author_year_locator_is_preserved_as_unowned_candidate():
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">'
+            'Pfau; von skt. mayūra, vgl. Laufer 1916: 464, Nr. 66.'
+            '</div></div>').encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [c['source_text'] for c in article['citations']] == ['Laufer 1916: 464']
+    assert article['citations'][0]['locator']['derivation'] == 'source_author_year_locator_candidate'
+    assert article['citations'][0]['candidate_status'] == 'unresolved_source_citation_candidate'
+
+
+@pytest.mark.parametrize('markup', ['<span class="stelle">Pasang 1998: 178</span>',
+    '<span class="bibl">Pasang 1998</span>: 178'])
+def test_explicit_citation_does_not_expand_to_parenthesis_with_tibetan_target(markup):
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung"><div class="lex">'
+            'Lex. <tib>ka</tib> (' + markup +
+            ' s.v. <tib>ma la yar skyes</tib>).</div></div></div>').encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [c['source_text'] for c in article['citations']] == ['Pasang 1998: 178']
+    assert 's.v. ma la yar skyes' in article['article_source_text']
+    diagnostics = article['citation_candidate_diagnostics']
+    assert diagnostics
+    assert all(d['diagnosis'] == 'overlaps_explicit_dom_citation' for d in diagnostics)
+    assert any('s.v.' in d['source_text'] for d in diagnostics)
+    candidates = [c for clause in article['lexical_blocks'][0]['clauses']
+                  for c in clause['terminal_citation_candidates']]
+    assert all(c['source_text'] == 'Pasang 1998: 178' for c in candidates)
+    # Exercise the final source-component enrichment as well as the parser.
+    nodes = []
+    enrich(nodes, article['article_source_text'], article=article)
+    citations = [n for n in nodes if n['kind'] == 'citation']
+    assert all(article['article_source_text'][n['start']:n['end']] == 'Pasang 1998: 178'
+               for n in citations)
 
 
 @pytest.mark.parametrize('suffix,expected', [(': 1519.', 'Schuh 2012: 1519'),
