@@ -317,23 +317,40 @@ def parse_database_article(
             }
         )
 
-    from badw_source_components import siglum_parentheses
+    from badw_source_components import siglum_parentheses, comparison_reference_candidates
     tagged_sigla = _records_for_elements(find_all(article, class_name="textsiglum"), fragments)
     siglum_spans = [(f["locator"]["visible_text_start"], f["locator"]["visible_text_end"])
                    for f in tagged_sigla if f["locator"]["visible_text_start"] is not None]
     marked_citations = siglum_parentheses(article_source_text, 0, len(article_source_text), siglum_spans)
+    marked_citations.extend(comparison_reference_candidates(article_source_text, 0, len(article_source_text)))
+    # An explicit visible bibliography tag followed by a numeric locator is
+    # citation evidence even outside parentheses. Tooltip expansions remain
+    # excluded. This records the citation, never ownership of nearby prose.
+    for field in _records_for_elements(find_all(article, class_name="bibl"), fragments):
+        a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
+        if a is None or b is None:
+            continue
+        suffix = re.match(r":\s*\d+(?:[a-z])?(?:\s*[–-]\s*\d+(?:[a-z])?)?(?:\s+ff?\.)?", article_source_text[b:])
+        if suffix:
+            end = b + suffix.end()
+            marked_citations.append(dict(start=a, end=end, source_text=article_source_text[a:end],
+                status="unresolved_source_citation_candidate",
+                evidence="explicit visible DOM bibl tag followed by numeric locator"))
     # Untagged terminal source expressions in definitions remain candidates,
     # not authority resolutions or ownership assertions. Reuse the bounded
     # source grammar; prose, corrections and quoted parentheses fail closed.
-    from badw_source_components import terminal_lexical_citation
+    from badw_source_components import terminal_lexical_citation, located_parenthetical_citations
     for element in find_all(article, class_name="bedeutung"):
         field = _located_field(element, fragments)
         a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
         if a is not None and b is not None:
-            candidate = terminal_lexical_citation(article_source_text, a, b)
-            if candidate and not any(c["start"] == candidate["start"] and c["end"] == candidate["end"] for c in marked_citations):
-                candidate["evidence"] = "balanced terminal definition siglum-shaped parenthesis; unresolved candidate"
-                marked_citations.append(candidate)
+            candidates = located_parenthetical_citations(article_source_text, a, b)
+            terminal = terminal_lexical_citation(article_source_text, a, b)
+            if terminal:
+                candidates.append(terminal)
+            for candidate in candidates:
+                if not any(c["start"] == candidate["start"] and c["end"] == candidate["end"] for c in marked_citations):
+                    marked_citations.append(candidate)
     lexical_nodes = find_all(article, tag="div", class_name="lex")
     lexical_blocks = []
     for element in lexical_nodes:
@@ -375,7 +392,11 @@ def parse_database_article(
                for f in citations if f["locator"]["visible_text_start"] is not None):
             continue
         citations.append({"locator": {"visible_text_start": a, "visible_text_end": b,
-                         "derivation": "source_parenthesis_candidate"},
+                         "derivation": ("explicit_bibliography_locator_candidate"
+                             if candidate["evidence"].startswith("explicit visible DOM bibl")
+                             else "explicit_comparison_reference_candidate"
+                             if candidate["evidence"].startswith("explicit vgl.")
+                             else "source_parenthesis_candidate")},
                          "source_text": article_source_text[a:b], "text": compact_text(article_source_text[a:b]),
                          "candidate_status": candidate["status"], "evidence": candidate["evidence"]})
 

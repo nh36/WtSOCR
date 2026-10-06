@@ -43,7 +43,7 @@ def apparatus_spans(text: str) -> list[tuple[int, int]]:
             left, start = stack.pop()
             interior = text[start + 1:i]
             recognized = (left == "(" and APPARATUS_PREFIX.match(interior)
-                          or left in "⟨{" or left == "[" and interior.strip() in ("!", "usw.", "ir"))
+                          or left in "⟨{" or left == "[" and interior.strip() in ("!", "so!", "usw.", "ir"))
             if recognized and not any(c in interior for c in "„“;") and len(interior) <= 500:
                 result.append((start, i + 1))
     return sorted(result)

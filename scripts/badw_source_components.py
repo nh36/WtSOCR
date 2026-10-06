@@ -11,6 +11,36 @@ import re
 QUOTE_PAIRS = {"„": "“", "«": "»", "‚": "‘"}
 
 
+def comparison_reference_candidates(text, start, end):
+    """Observe explicit ``vgl.`` references, without asserting what they cite.
+
+    Require a source-shaped abbreviation plus a numeric locator or ``s.v.``
+    headword. These remain unresolved candidates, not accepted bibliography
+    links. Quoted examples are not evidence for an editorial reference.
+    """
+    if not 0 <= start <= end <= len(text):
+        raise ValueError("invalid citation bounds")
+    pattern = re.compile(
+        r"(?<!\w)vgl\.\s+(?P<siglum>[A-Z][A-Za-z0-9]{1,23})\s+"
+        r"(?:\d+(?:[,:]\s*\d+)*(?:\s+ff?\.)?(?:\s+s\.v\.\s+[^\W\d_][^\s,;().„“]*)?"
+        r"|s\.v\.\s+[^\W\d_][^\s,;().„“]*)")
+    quotations = quoted_spans(text, start, end)
+    result = []
+    for match in pattern.finditer(text, start, end):
+        a, b = match.span()
+        label = match['siglum']
+        # Restrict untagged observations to short or capital-rich sigla.
+        # Longer title-case author names need explicit bibliography evidence.
+        if len(label) > 4 and sum(c.isupper() for c in label) < 2:
+            continue
+        if any(q["start"] <= a < q["end"] for q in quotations):
+            continue
+        result.append(dict(start=a, end=b, source_text=text[a:b],
+            status="unresolved_source_citation_candidate",
+            evidence="explicit vgl. reference with source-shaped label and locator or s.v. headword"))
+    return result
+
+
 def siglum_parentheses(text, start, end, siglum_spans):
     """Outermost balanced parentheses supported by explicit source siglum tags.
 
@@ -72,6 +102,35 @@ def terminal_lexical_citation(text, start, end):
     return dict(start=a, end=b, source_text=text[a:b],
                 status="unresolved_source_citation_candidate",
                 evidence="balanced terminal Lex. siglum-shaped parenthesis")
+
+
+def located_parenthetical_citations(text, start, end):
+    """Nonterminal source candidates with a siglum and numeric locator.
+
+    This deliberately does not attach a citation to the containing definition.
+    Quoted prose, nested corrections and bare labels are not evidence here.
+    """
+    if not 0 <= start <= end <= len(text):
+        raise ValueError("invalid citation bounds")
+    stack, quotes, result = [], [], []
+    for i in range(start, end):
+        char = text[i]
+        if char in QUOTE_PAIRS:
+            quotes.append(QUOTE_PAIRS[char])
+        elif quotes:
+            if char == quotes[-1]:
+                quotes.pop()
+        elif char == "(":
+            stack.append(i)
+        elif char == ")" and stack:
+            a = stack.pop()
+            inside = text[a + 1:i]
+            if (not stack and re.fullmatch(r"[A-Za-z][A-Za-z0-9]*\s+\d[\w:., /–-]*", inside)
+                    and re.search(r"[A-Z]", inside)):
+                result.append(dict(start=a, end=i + 1, source_text=text[a:i + 1],
+                    status="unresolved_source_citation_candidate",
+                    evidence="balanced siglum-shaped parenthesis with numeric locator"))
+    return result
 
 
 def lexical_clauses(text, start, end):

@@ -69,7 +69,33 @@ def test_wrapped_reference_without_preceding_gloss_is_not_a_definition():
     assert result['definitions'] == []
 
 
-@pytest.mark.parametrize("apparatus", ["(v. l. kha)", "(Gl. kha (r. ka))", "{kha}"])
+@pytest.mark.parametrize('lines,expected', [
+    ([_line('fut. zu ↓ka', [(0, 9, 'regular'), (9, 11, 'italic')]),
+      _line('kha bringen,', [(0, 3, 'italic'), (3, 12, 'regular')]),
+      _line('festlegen.')], 'bringen,\nfestlegen.'),
+    ([_line('auch ka die Gottheit.', [(0, 5, 'regular'), (5, 7, 'italic'),
+                                      (7, 21, 'regular')])], 'die Gottheit.'),
+    ([_line('auch ka', [(0, 5, 'regular'), (5, 7, 'italic')]),
+      _line('anfangslos, ewig.')], 'anfangslos, ewig.'),
+    ([_line('pf. ↓ka fut. ↓kha verstecken.', [(0, 5, 'regular'), (5, 7, 'italic'),
+       (7, 14, 'regular'), (14, 17, 'italic'), (17, 29, 'regular')])], 'verstecken.'),
+])
+def test_typographically_bounded_preambles_do_not_hide_definitions(lines, expected):
+    article = _article(lines)
+    result = extract(article)
+    assert [d['text'] for d in result['definitions']] == [expected]
+    validate(article, result)
+
+
+@pytest.mark.parametrize('text', ['auch ka „Zitat“ (Source 1)', 'pf. ↓ka'])
+def test_preamble_without_unquoted_regular_prose_does_not_invent_definition(text):
+    start = text.index('ka')
+    lines = [_line(text, [(0, start, 'regular'), (start, start + 2, 'italic'),
+                          (start + 2, len(text), 'regular')])]
+    assert extract(_article(lines))['definitions'] == []
+
+
+@pytest.mark.parametrize("apparatus", ["(v. l. kha)", "(Gl. kha (r. ka))", "{kha}", "[so!]"])
 def test_roman_apparatus_between_italic_runs_preserves_full_example(apparatus: str) -> None:
     text = f"ka {apparatus} ga „translation“ (Source 1)"
     tail = text.index("ga „")
@@ -80,6 +106,28 @@ def test_roman_apparatus_between_italic_runs_preserves_full_example(apparatus: s
     assert result["tibetan_examples"][0]["text"] == f"ka {apparatus} ga"
     assert len(result["belegstellen"]) == 1
     validate(article, result)
+
+
+def test_wrapped_editorial_so_marker_preserves_tibetan_prefix():
+    first = "~ so"
+    second = '[so!]r bkal nas „translation“ (Source 1)'
+    article = _example_article([
+        _line(first, [(0, len(first), "italic")]),
+        _line(second, [(0, 5, "regular"), (5, 16, "italic"),
+                       (16, len(second), "regular")]),
+    ])
+    result = extract(article)
+    assert result['tibetan_examples'][0]['text'] == '~ so\n[so!]r bkal nas'
+    validate(article, result)
+
+
+def test_bracketed_prose_is_not_editorial_apparatus():
+    text = 'ka [eine Erklärung] ga „translation“ (Source 1)'
+    tail = text.index('ga „')
+    article = _example_article([_line(text, [
+        (0, 2, 'italic'), (2, tail, 'regular'), (tail, tail + 2, 'italic'),
+        (tail + 2, len(text), 'regular')])])
+    assert extract(article)['tibetan_examples'][0]['text'] == 'ga'
 
 
 def test_page_boundary_inside_balanced_correction_recovers_prefix() -> None:
@@ -783,6 +831,15 @@ def test_exact_mixed_font_boundary_preserves_apparatus_and_unknown_guard(monkeyp
     row['example_sha256'] = '0' * 64
     with pytest.raises(ValueError, match='span review'):
         extract(article)
+
+
+def test_pdf_comparison_reference_is_unlinked_not_example_evidence():
+    article = _article([_line('Definition, vgl. BHSD s.v. śa.')])
+    result = extract(article)
+    validate(article, result)
+    assert [c['text'] for c in result['citations']] == ['vgl. BHSD s.v. śa']
+    assert result['citations'][0]['status'] == 'unlinked_source_citation_candidate'
+    assert result['belegstellen'] == []
 
 
 def test_nested_quote_source_links_are_validated() -> None:

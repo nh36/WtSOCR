@@ -187,6 +187,36 @@ def _lexical_region(lines: list[dict[str, Any]], quote_line: int, division_start
     return any(LEX_LABEL.search(lines[i]["text"]) for i in range(division_start, quote_line + 1))
 
 
+def _opening_prose_offset(lines, offsets, division, text):
+    """Skip explicit opening reference/alias typography, not lexical spelling.
+
+    A target is an uninterrupted italic TGaramond sequence, possibly wrapped.
+    Repeated tense references are permitted; only the following regular run
+    can start prose. No language or citation ownership is inferred here.
+    """
+    a = offsets[division["start_line_index"]]
+    stop = division["end_line_index_exclusive"]
+    b = offsets[stop] - 1 if stop < len(offsets) else len(text)
+    italic = [(offsets[i] + s["start"], offsets[i] + s["end"])
+              for i in range(division["start_line_index"], stop)
+              for s in lines[i]["style_spans"]
+              if s["family"] == "TGaramond" and s["style"] == "italic"]
+    prefix = re.compile(r"\s*(?:(?:pf\.|fut\.|prs\.|imp\.)\s+(?:zu\s+)?[↑↓]\s*|auch\s+)")
+    pos, consumed = a, False
+    while (match := prefix.match(text, pos, b)):
+        target = match.end()
+        run = next(((x, y) for x, y in italic if x <= target < y), None)
+        if run is None:
+            break
+        end = run[1]
+        # Only whitespace can connect wrapped parts of the same italic target.
+        for x, y in italic:
+            if x >= end and not text[end:x].strip():
+                end = y
+        pos, consumed = end, True
+    return pos if consumed else a
+
+
 def _definition_candidates(article: dict[str, Any], text: str,
                            offsets: list[int]) -> list[dict[str, Any]]:
     lines = article["visual_lines"]
@@ -195,8 +225,12 @@ def _definition_candidates(article: dict[str, Any], text: str,
         indices = range(division["start_line_index"], division["end_line_index_exclusive"])
         fragments: list[str] = []
         start: int | None = None
+        opening = _opening_prose_offset(lines, offsets, division, text)
         for i in indices:
             line = lines[i]
+            if offsets[i] + len(line["text"]) <= opening:
+                continue
+            opening_cut = max(0, opening - offsets[i]) if not fragments else 0
             if LEX_LABEL.search(line["text"]) or line["unknown_glyphs"]:
                 break
             # A definition may contain an italic LoC term (e.g. "Krug für
@@ -205,7 +239,8 @@ def _definition_candidates(article: dict[str, Any], text: str,
             spans = line["style_spans"]
             if not spans or spans[0]["family"] != "TGaramond":
                 break
-            starts_regular = spans[0]["style"] == "regular"
+            first_prose = next((s for s in spans if s["end"] > opening_cut), spans[0])
+            starts_regular = first_prose["style"] == "regular"
             # A source definition can continue after a line-final italic
             # tilde: "~ / mdzad geloben ...".  This is narrowly admitted
             # only when the next line also contains regular German prose.
@@ -222,7 +257,7 @@ def _definition_candidates(article: dict[str, Any], text: str,
                 and "„" not in line["text"] and "“" not in line["text"])
             if not starts_regular and not (mixed_continuation or sanskrit_continuation):
                 break
-            if (division["kind"] == "unsegmented" and i == division["start_line_index"]
+            if (opening_cut == 0 and division["kind"] == "unsegmented" and i == division["start_line_index"]
                     and re.match(r"\s*(?:Kurzf\.\s+für|auch\s+)", line["text"])
                     and any(span["family"] == "TGaramond" and span["style"] == "italic"
                             for span in spans)):
@@ -236,10 +271,10 @@ def _definition_candidates(article: dict[str, Any], text: str,
                     break
                 segment_start = variant["end"]
             else:
-                segment_start = 0
+                segment_start = opening_cut
             prose_end = min((span["start"] for span in spans
                              if span["family"] != "TGaramond"), default=len(line["text"]))
-            if i == division["start_line_index"] and MORPHOLOGY_PREFIX.match(line["text"]):
+            if opening_cut == 0 and i == division["start_line_index"] and MORPHOLOGY_PREFIX.match(line["text"]):
                 # A printed inflection reference may precede the gloss, on
                 # the same visual line or the next.  Its italic target is
                 # typographically bounded; never infer the end from spelling.
@@ -433,6 +468,17 @@ def extract(article: dict[str, Any]) -> dict[str, Any]:
             "division_index": citation.get("division_index"),
             "status": "unlinked_source_citation_candidate",
             **_anchor(lines, offsets, start, end)})
+    # Supplement component observations only. Do not insert these into the
+    # indexed quote/citation pairing table or infer support from proximity.
+    from badw_source_components import comparison_reference_candidates
+    for candidate in comparison_reference_candidates(text, 0, len(text)):
+        start, end = candidate["start"], candidate["end"]
+        if any(int(c["visual_start"]) <= start and end <= int(c["visual_end"])
+               for c in result["citations"]):
+            continue
+        result["citations"].append({"text": text[start:end],
+            "division_index": None, "status": "unlinked_source_citation_candidate",
+            "evidence": candidate["evidence"], **_anchor(lines, offsets, start, end)})
     for quote_index, quote in enumerate(quotes):
         review = reviewed_quote_role(article, quote, text, load_role_reviews())
         if review is not None and quote.get("division_index") is not None:

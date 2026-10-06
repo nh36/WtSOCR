@@ -13,6 +13,23 @@ from project_badw_structural_candidates import enrich
 from parse_badw_pdf_articles import _candidates, _structure
 
 
+@pytest.mark.parametrize('suffix,expected', [(': 1519.', 'Schuh 2012: 1519'),
+    (': 15–19 ff.', 'Schuh 2012: 15–19 ff.'), (' discusses this.', None)])
+def test_explicit_bibliography_locator_candidate(suffix, expected):
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">'
+            'Definition vgl. <span class="bibl">Schuh 2012<span class="infotext">'
+            'Private tooltip expansion</span></span>' + suffix + '</div></div>').encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert 'Private tooltip' not in article['article_source_text']
+    assert [c['source_text'] for c in article['citations']] == ([expected] if expected else [])
+    for citation in article['citations']:
+        loc = citation['locator']
+        assert article['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == expected
+        assert loc['derivation'] == 'explicit_bibliography_locator_candidate'
+        assert citation['candidate_status'] == 'unresolved_source_citation_candidate'
+
+
 @pytest.mark.parametrize('content,expected', [
     ('Lex. <tib>ka</tib> (<span class="textsiglum">A</span>, <span class="textsiglum">B</span>).', '(A, B)'),
     ('Lex. <tib>ka</tib> (<span class="textsiglum">Be’uD</span> 221,3).', '(Be’uD 221,3)'),
@@ -37,7 +54,7 @@ def test_explicit_siglum_citations_without_stelle(content, expected):
     ('Eine Gottheit (auch so).', None),
     ('Eine Gottheit (r. ka).', None),
     ('Eine Gottheit „Name (Neb 229)“.', None),
-    ('Eine Gottheit (Neb 229) und weitere Erklärung.', None),
+    ('Eine Gottheit (Neb 229) und weitere Erklärung.', '(Neb 229)'),
     ('Eine Gottheit (Neb 229.', None),
 ])
 def test_untagged_terminal_definition_citation_is_only_a_candidate(content, expected):
@@ -330,6 +347,38 @@ def test_source_enrichment_adds_typed_fields_without_ownership():
     a['article_source_text'] += 'changed'
     with pytest.raises(ValueError, match='differs'):
         enrich(nodes, text, article=a)
+
+
+@pytest.mark.parametrize('reference', ['vgl. BHSD s.v. nagarāvalambikā',
+    'vgl. Mvy 1155 ff.', 'vgl. BHSD 500 s.v. vivācayati',
+    'vgl. BHSD\ns.v. śa'])
+def test_comparison_references_preserve_source_without_ownership(reference):
+    from badw_source_components import comparison_reference_candidates
+    text = 'Text ' + reference + '; danach'
+    rows = comparison_reference_candidates(text, 0, len(text))
+    assert [r['source_text'] for r in rows] == [reference]
+    assert text[rows[0]['start']:rows[0]['end']] == reference
+    assert rows[0]['status'] == 'unresolved_source_citation_candidate'
+
+
+@pytest.mark.parametrize('text', ['„vgl. BHSD 500“', 'vgl. etwas anderes',
+    'vgl. ↑ ka', 'BHSD 500', 'vgl. BHSD'])
+def test_comparison_references_do_not_type_prose_or_quoted_content(text):
+    from badw_source_components import comparison_reference_candidates
+    assert comparison_reference_candidates(text, 0, len(text)) == []
+    with pytest.raises(ValueError, match='bounds'):
+        comparison_reference_candidates(text, -1, len(text))
+
+
+def test_html_comparison_reference_is_unresolved_and_source_bound():
+    body = ('<div class="text"><span class="lem">ka</span>'
+        '<div class="bedeutung">Text, vgl. BHSD s.v. śa.</div></div>').encode()
+    parsed = parse_database_article(body, source_metadata=dict(
+        delivery_type='database_article', valid_resource=True,
+        final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    citation = next(c for c in parsed['citations'] if 'vgl.' in c['source_text'])
+    assert citation['source_text'] == 'vgl. BHSD s.v. śa'
+    assert citation['locator']['derivation'] == 'explicit_comparison_reference_candidate'
 
 
 def test_boundary_diagnostic_only_trims_terminal_whitespace():
