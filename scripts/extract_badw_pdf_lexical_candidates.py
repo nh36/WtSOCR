@@ -24,7 +24,7 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v12"
+VERSION = "badw-pdf-lexical-candidates-v13"
 ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
 SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
 
@@ -202,8 +202,8 @@ def _opening_prose_offset(lines, offsets, division, text):
               for s in lines[i]["style_spans"]
               if s["family"] == "TGaramond" and s["style"] == "italic"]
     tense = r"(?:pf\.|fut\.|prs\.|imp\.)"
-    prefix = re.compile(r"\s*(?:" + tense + r"(?:\s+und\s+" + tense
-                        + r")*\s+(?:zu\s+)?[↑↓]\s*|auch\s+)")
+    prefix = re.compile(r"\s*,?\s*(?:" + tense + r"(?:\s+und\s+" + tense
+                        + r")*\s+(?:zu\s+)?[↑↓]\s*(?:\d+\s+)?|auch\s+)")
     pos, consumed = a, False
     while (match := prefix.match(text, pos, b)):
         target = match.end()
@@ -251,8 +251,17 @@ def _definition_candidates(article: dict[str, Any], text: str,
             # A source definition can continue after a line-final italic
             # tilde: "~ / mdzad geloben ...".  This is narrowly admitted
             # only when the next line also contains regular German prose.
+            previous_spans = lines[i - 1]["style_spans"] if i > 0 else []
+            wrapped_italic_field = (bool(previous_spans)
+                and previous_spans[-1]["style"] == "italic"
+                and previous_spans[-1]["family"] == first_prose["family"]
+                and first_prose["style"] == "italic"
+                and lines[i - 1].get("page") == line.get("page")
+                and not fragments[-1].rstrip().endswith((".", ":", "།"))) if fragments else False
             mixed_continuation = (bool(fragments) and not starts_regular
-                and fragments[-1].rstrip().endswith("~")
+                and (fragments[-1].rstrip().endswith("~")
+                     or fragments[-1].rstrip().endswith((",", ";"))
+                     or wrapped_italic_field)
                 and any(span["family"] == "TGaramond" and span["style"] == "regular"
                         for span in spans)
                 and "„" not in line["text"] and "“" not in line["text"])
@@ -332,7 +341,7 @@ def _definition_candidates(article: dict[str, Any], text: str,
             if start is None:
                 start = offsets[i] + line["text"].find(part)
             fragments.append(part)
-            if truncated or len(fragments) >= 4:
+            if truncated:
                 break
         if start is None or not fragments:
             continue
@@ -377,7 +386,26 @@ def _opening_quoted_definition(article: dict[str, Any], quote: dict[str, Any],
                and span["start"] <= local_start < span["end"]
                for span in line["style_spans"]):
         return None
+    # A quoted opening gloss can be followed by literal roman explanatory
+    # prose before a shad. Preserve that prose, but never consume a citation,
+    # another quotation, a reference or an italic expression on this basis.
+    quote_end = end
+    end_line = max(i for i, offset in enumerate(offsets) if offset < end)
+    closing = article["visual_lines"][end_line]
+    local_end = end - offsets[end_line]
+    shad = closing["text"].find("།", local_end)
+    if shad >= 0:
+        tail = closing["text"][local_end:shad]
+        regular_tail = all(any(s["family"] == "TGaramond" and s["style"] == "regular"
+                              and s["start"] <= j < s["end"]
+                              for s in closing["style_spans"])
+                           for j in range(local_end, shad)
+                           if not closing["text"][j].isspace())
+        if (tail.strip() and regular_tail and not closing["unknown_glyphs"]
+                and not re.search(r'[()„“↑↓]|\b(?:vgl\.|Lex\.)', tail)):
+            end = offsets[end_line] + shad
     return {"text": text[start:end], "division_index": division_index,
+            "quoted_gloss_end": quote_end,
             "quote_index": quote_index, "status": "unverified_quoted_gloss_candidate",
             **_anchor(article["visual_lines"], offsets, start, end)}
 
@@ -833,7 +861,8 @@ def validate(article: dict[str, Any], result: dict[str, Any]) -> None:
         index = definition["quote_index"]
         translation = result["translations"][index]
         if (definition["visual_start"] != translation["visual_start"] or
-                definition["visual_end"] != translation["visual_end"] or
+                definition.get("quoted_gloss_end", definition["visual_end"]) != translation["visual_end"] or
+                definition["visual_end"] < translation["visual_end"] or
                 definition["division_index"] != translation["division_index"] or
                 result["quote_dispositions"][index]["kind"] != "quoted_definition_candidate"):
             raise ValueError("quoted definition source link mismatch")

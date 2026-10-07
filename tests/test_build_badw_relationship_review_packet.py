@@ -57,6 +57,17 @@ def test_insufficient_sources_duplicate_identity_and_invalid_count_fail():
         packet(pdf, html, set(), per_stratum=0)
 
 
+def test_larger_packet_remains_unique_balanced_and_seeded():
+    pdf, html = sources()
+    records = packet(pdf, html, set(), per_stratum=6, seed="larger-review")
+    assert len(records) == len({r["identity"] for r in records}) == 120
+    assert sum(r["source_kind"] == "html" for r in records) == 60
+    assert [sum(r["volume"] == v for r in records) for v in (2, 3, 4)] == [20]*3
+    assert encode(records) == encode(packet(reversed(pdf), reversed(html), set(),
+                                          per_stratum=6, seed="larger-review"))
+    assert encode(records) != encode(packet(pdf, html, set(), per_stratum=6))
+
+
 def test_exclusion_contract(tmp_path):
     path = tmp_path / "seen.jsonl"
     path.write_text(json.dumps({"identity": "seen"})+"\n", encoding="utf-8")

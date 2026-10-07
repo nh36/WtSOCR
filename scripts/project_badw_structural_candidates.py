@@ -16,7 +16,7 @@ from pathlib import Path
 from benchmark_badw_structure import graph
 from build_badw_structural_review_packet import rows
 
-VERSION = "badw-structural-candidate-projection-v5"
+VERSION = "badw-structural-candidate-projection-v6"
 
 
 def enrich(nodes, text, *, article=None, structure=None):
@@ -112,11 +112,16 @@ def enrich(nodes, text, *, article=None, structure=None):
                 x, y = clause["start"], clause["end"]
                 if text[x:y] != clause["source_text"]:
                     raise ValueError("PDF Lex. clause differs from source")
-                # Keep the full source block in original_structure even when
-                # an existing semantic candidate covers only part of a clause.
-                # Do not turn that overlap into a new ownership assertion.
-                if not any(n["kind"] == "lexical_parallel" and n["start"] < y and x < n["end"] for n in nodes):
+                # A quotation-derived candidate may cover only the German
+                # end of a parallel. Preserve the complete literal clause as
+                # a separate observation; do not widen that candidate or its
+                # existing citation ownership edges.
+                if not any(n["kind"] == "lexical_parallel" and n["start"] <= x and y <= n["end"] for n in nodes):
                     add("lexical_parallel", x, y, "literal PDF Lex. block / delimiter clause")
+                for citation in clause.get("terminal_citation_candidates", []):
+                    node = add("citation", citation["start"], citation["end"], citation["evidence"])
+                    if node is not None:
+                        node["candidate_status"] = citation["status"]
             unresolved.extend(block["diagnostics"])
         for ref in structure["candidates"]["cross_references"]:
             a, b = ref["visual_start"], ref["visual_end"]

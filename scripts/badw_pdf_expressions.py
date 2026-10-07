@@ -43,7 +43,15 @@ def apparatus_spans(text: str) -> list[tuple[int, int]]:
             left, start = stack.pop()
             interior = text[start + 1:i]
             recognized = (left == "(" and APPARATUS_PREFIX.match(interior)
-                          or left in "⟨{" or left == "[" and interior.strip() in ("!", "so!", "usw.", "ir"))
+                          or left in "⟨{" or left == "[" and (
+                              interior.strip() in ("!", "so!", "usw.", "ir")
+                              # A short literal square-bracket supplement may
+                              # interrupt an otherwise contiguous italic run.
+                              # This licenses a boundary, not its language or
+                              # a corrected reading. Unbalanced/quoted/prose
+                              # delimiters remain barriers.
+                              or re.fullmatch(r"\s*[^\W\d_]+(?:[’'-][^\W\d_]+)*\s*",
+                                              interior, re.UNICODE)))
             if recognized and not any(c in interior for c in "„“;") and len(interior) <= 500:
                 result.append((start, i + 1))
     return sorted(result)

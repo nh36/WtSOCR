@@ -14,6 +14,21 @@ from parse_badw_pdf_articles import _candidates, _structure
 
 
 @pytest.mark.parametrize('text,expected', [
+    ('(Nachtr. s. v. ka, -kha)', ['(Nachtr. s. v. ka, -kha)']),
+    ('(Nachtr. s.v. ka)', ['(Nachtr. s.v. ka)']),
+    ('(SWTF s. v. skt. śraddhābala)', ['(SWTF s. v. skt. śraddhābala)']),
+    ('„(Nachtr. s.v. ka)“', []),
+    ('(auch s.v. ka)', []),
+    ('(Nachtr. ohne Locator)', []),
+])
+def test_headword_locator_observation_does_not_assign_owner(text, expected):
+    from badw_source_components import located_parenthetical_citations
+    records = located_parenthetical_citations(text, 0, len(text))
+    assert [r['source_text'] for r in records] == expected
+    assert all(r['status'] == 'unresolved_source_citation_candidate' for r in records)
+
+
+@pytest.mark.parametrize('text,expected', [
     ('EMMERICK 1967:\n120 f. vermutet', ['EMMERICK 1967:\n120 f.']),
     ('LAUFER 1916: 464 Nr. 66', ['LAUFER 1916: 464']),
     ('vgl. Laufer 1916: 464, Nr. 66.', ['Laufer 1916: 464']),
@@ -143,6 +158,11 @@ def test_incomplete_delimiters_are_not_discarded():
     ('ka „Wort (A)“', None), ('ka (A) weiter', None),
     ('ka (A', None), ('ka (r. kha (A))', None),
     ('ka (auch)', None),
+    ('ka (Dagy, brDa).', '(Dagy, brDa)'),
+    ('ka (Dagy, ähnl. brDa).', '(Dagy, ähnl. brDa)'),
+    ("ka (Be’uD 225,1)", "(Be’uD 225,1)"),
+    ('ka (Dagy, auch).', None),
+    ('ka (Mvy 1039, 1040).', '(Mvy 1039, 1040)'),
 ])
 def test_terminal_lexical_citations_are_candidates_not_resolutions(text, expected):
     candidate = terminal_lexical_citation(text, 0, len(text))
@@ -461,3 +481,20 @@ def test_pdf_source_components_project_without_ownership_or_language_guesses():
     structure['candidates']['sanskrit'][0]['source_text'] = 'guessed'
     with pytest.raises(ValueError, match='differs'):
         enrich(nodes, text, structure=structure)
+
+
+def test_partial_lexical_node_does_not_suppress_full_source_clause():
+    text = 'Lex. ka ≈ kha „Wort“ (Mvy 1)'
+    lines = [{'text': text, 'page_id': 'p', 'printed_page': 1,
+              'span_index': 0, 'run_start': 0, 'run_end_exclusive': 1,
+              'style_spans': []}]
+    partial = text.index('kha')
+    nodes = [dict(id='root', kind='source_division', start=0, end=len(text), parent=None),
+             dict(id='partial', kind='lexical_parallel', start=partial, end=len(text), parent='root')]
+    divisions, _ = _structure(lines)
+    enrich(nodes, text, structure={'visual_lines': lines,
+                                  'candidates': _candidates(lines, divisions)})
+    complete = [n for n in nodes if n['kind'] == 'lexical_parallel' and n['start'] == 5]
+    assert len(complete) == 1
+    assert complete[0]['association_status'] == 'source_containment_only'
+    assert nodes[1]['start'] == partial

@@ -95,13 +95,18 @@ def main():
     p.add_argument("--entry-index", type=Path, required=True,
                    help="pinned actual-entry index, recorded for later blind scoring")
     p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--per-stratum", type=int, default=3,
+                   help="positive cases per source kind/cue; PDF cases rotate volumes 2–4")
+    p.add_argument("--seed", default="badw-relationships-independent-v1")
     args = p.parse_args()
     if args.output.exists() or args.output.with_suffix(".manifest.json").exists():
         p.error("refusing to overwrite frozen blind packet")
     excluded = excluded_identities(args.exclude)
-    records = packet(rows(args.pdf), rows(args.html), excluded)
+    records = packet(rows(args.pdf), rows(args.html), excluded,
+                     per_stratum=args.per_stratum, seed=args.seed)
     body = encode(records)
     manifest = dict(contract_version=VERSION, cases=len(records), excluded_identities=len(excluded),
+                    per_stratum=args.per_stratum, seed=args.seed,
                     sha256=hashlib.sha256(body).hexdigest(), predictions_exposed=False,
                     instructions="Review full source first. Record exact supported passage(s), citation/translation/gloss/link relation, explicit evidence, alternatives and uncertainty. Mark absent phenomena explicitly. Sampling cues are not answers. Inspect cached HTML/PDF where needed; text alone may not settle structure. Do not tune frozen rules against these answers.",
                     inputs=[dict(path=str(x),sha256=hashlib.sha256(x.read_bytes()).hexdigest())

@@ -115,8 +115,9 @@ def terminal_lexical_citation(text, start, end):
     a, b = pairs[-1]
     inside = text[a + 1:b - 1]
     if (text[b:end].strip() not in ("", ".") or
-            not re.fullmatch(r"[A-Za-z][A-Za-z0-9]*(?:\s+\d[\w:., /–-]*)?", inside) or
-            not re.search(r"[A-Z0-9]", inside)):
+            not all(re.fullmatch(r"(?:ähnl\.\s*)?[A-Za-z][A-Za-z0-9’']*(?:\s+\d[\w:., /–-]*)?", member.strip())
+                    and re.search(r"[A-Z0-9]", member)
+                    for member in re.split(r",\s*(?=[A-Za-zä])", inside))):
         return None
     return dict(start=a, end=b, source_text=text[a:b],
                 status="unresolved_source_citation_candidate",
@@ -144,11 +145,14 @@ def located_parenthetical_citations(text, start, end):
         elif char == ")" and stack:
             a = stack.pop()
             inside = text[a + 1:i]
-            if (not stack and re.fullmatch(r"[A-Za-z][A-Za-z0-9]*\s+\d[\w:., /–-]*", inside)
-                    and re.search(r"[A-Z]", inside)):
+            numeric = (re.fullmatch(r"[A-Za-z][A-Za-z0-9’']*\s+\d[\w:., /–-]*", inside)
+                       and re.search(r"[A-Z]", inside))
+            headword = re.fullmatch(r"[A-Z][A-Za-z0-9]*\.?\s+s\.\s*v\.\s+[^()\n]+", inside)
+            if not stack and (numeric or headword):
                 result.append(dict(start=a, end=i + 1, source_text=text[a:i + 1],
                     status="unresolved_source_citation_candidate",
-                    evidence="balanced siglum-shaped parenthesis with numeric locator"))
+                    evidence=("balanced abbreviated source with explicit s.v. headword locator"
+                              if headword else "balanced siglum-shaped parenthesis with numeric locator")))
     return result
 
 

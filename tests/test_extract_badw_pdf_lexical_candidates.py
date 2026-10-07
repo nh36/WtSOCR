@@ -69,6 +69,66 @@ def test_wrapped_reference_without_preceding_gloss_is_not_a_definition():
     assert result['definitions'] == []
 
 
+def test_definition_is_not_limited_to_four_visual_lines():
+    lines = [_line(t) for t in ['Verschieden,', 'mannigfaltig;', 'Unterschied,',
+                               'Besonderheit,', 'Qualifizierung,', 'Vielheit.']]
+    article = _article(lines)
+    result = extract(article)
+    assert result['definitions'][0]['text'] == '\n'.join(l['text'] for l in lines)
+    validate(article, result)
+
+
+@pytest.mark.parametrize('prefix', ['fut. zu ↓2 ka ', 'pf. ↓ka, fut. ↓kha, imp. ↓ga '])
+def test_inflection_reference_sequence_retains_following_definition(prefix):
+    spans = []
+    for match in __import__('re').finditer(r'ka|kha|ga', prefix):
+        if not spans or spans[-1][1] < match.start():
+            spans.append((spans[-1][1] if spans else 0, match.start(), 'regular'))
+        spans.append((match.start(), match.end(), 'italic'))
+    spans.append((spans[-1][1], len(prefix) + 10, 'regular'))
+    article = _article([_line(prefix + 'krank sein', spans)])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == 'krank sein'
+    validate(article, result)
+
+
+@pytest.mark.parametrize('tail,expected', [
+    (', eine Nebenhölle.', '„Glut“, eine Nebenhölle.'),
+    (' (Source 1)', '„Glut“'),
+    (', vgl. ↓ka', '„Glut“'),
+])
+def test_opening_quoted_definition_keeps_roman_prose_not_citation_or_reference(tail, expected):
+    from parse_badw_pdf_articles import _candidates
+    text = '„Glut“' + tail + '།'
+    article = _article([_line(text)])
+    article['candidates'] = _candidates(article['visual_lines'], article['divisions'])
+    result = extract(article)
+    if tail.startswith(' ('):
+        assert not result['definitions']
+    else:
+        assert result['definitions'][0]['text'] == expected
+    validate(article, result)
+
+
+def test_definition_continues_with_italic_form_after_semicolon():
+    first, second = 'Essenz, Kern;', 'mar gyi ~ Ghee, Butterschmalz.'
+    article = _article([_line(first), _line(second, [(0, 9, 'italic'),
+                       (9, len(second), 'regular')]),
+                       _line('ka „Wort“ (Source 1)', [(0, 2, 'italic'), (2, 21, 'regular')])])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == first + '\n' + second
+    validate(article, result)
+
+
+def test_square_bracket_supplement_remains_inside_literal_example():
+    first, second = 'mda’ dar rṅon [cha] gser skyems btaṅ', '(metr.) „Opfer“ (Source 1)'
+    article = _example_article([_line(first, [(0, 13, 'italic'), (13, 18, 'regular'),
+                              (18, len(first), 'italic')]), _line(second)])
+    result = extract(article)
+    assert result['tibetan_examples'][0]['text'] == first
+    validate(article, result)
+
+
 def test_unparenthesized_citation_reaches_nested_projection_without_ownership():
     from build_badw_pdf_nested_candidates import project
     article = _article([_line('Ein Vogel; EMMERICK 1967:'), _line('120 f. vermutet eine Herkunft.')])
@@ -876,6 +936,24 @@ def test_exact_mixed_font_boundary_preserves_apparatus_and_unknown_guard(monkeyp
     row['example_sha256'] = '0' * 64
     with pytest.raises(ValueError, match='span review'):
         extract(article)
+
+
+def test_definition_with_wrapped_italic_field_keeps_literal_continuation():
+    first = 'Kern; mar'
+    second = 'gyi ~ Ghee, Butterschmalz.'
+    article = _article([_line(first, [(0, 6, 'regular'), (6, len(first), 'italic')]),
+                        _line(second, [(0, 6, 'italic'), (6, len(second), 'regular')])])
+    result = extract(article)
+    validate(article, result)
+    assert result['definitions'][0]['text'] == first + '\n' + second
+
+
+def test_wrapped_italic_definition_rule_does_not_absorb_quoted_example():
+    first = 'Kern; mar'
+    second = 'gyi ~ „Butter“ (Source 1)'
+    article = _article([_line(first, [(0, 6, 'regular'), (6, len(first), 'italic')]),
+                        _line(second, [(0, 6, 'italic'), (6, len(second), 'regular')])])
+    assert extract(article)['definitions'][0]['text'] == first
 
 
 def test_pdf_comparison_reference_is_unlinked_not_example_evidence():
