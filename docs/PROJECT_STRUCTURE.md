@@ -81,6 +81,30 @@ For generated PDFs, `scripts/extract_badw_pdf_entries.py` identifies page-local 
 
 Canonical PDF refresh and review migration use `scripts/refresh_badw_canonical_pages.py` and `scripts/migrate_badw_pdf_reviews.py`: new immutable page trees, source-checked crosswalks, and fail-closed review proposals. Exact malformed-quotation boundaries live in `data/reviewed_badw_pdf_quote_boundaries.tsv`; bulk regenerated corpora and staging databases remain under ignored `work/`.
 
+## Local read-only development dictionary
+
+`scripts/build_badw_dictionary_prototype.py` renders a frozen v6 structural
+candidate projection against the pinned actual-entry index. It does not extract
+components or infer ownership. Candidate relationships, reviewed annotations,
+unresolved citation ownership, and exact HTML reference resolutions remain
+visibly distinct. Literal text, component offsets, and source/review provenance
+are available in the view. All source-bearing output stays under ignored
+`work/`; this is not a production projection or deployment.
+
+```bash
+python3 scripts/build_badw_dictionary_prototype.py \
+  --projection work/badw_parser_prototype_20261007/prototype_projection.jsonl \
+  --entry-index work/badw_relationship_targets_20261005/actual_entry_index.jsonl \
+  --output work/badw_parser_prototype_20261007/prototype_v2
+python3 -m http.server 8765 --bind 127.0.0.1 \
+  --directory work/badw_parser_prototype_20261007/prototype_v2
+```
+
+Open `http://127.0.0.1:8765/`. Builds refuse to overwrite an existing frozen
+view. A changed PDF geometry view must not inherit old offset-based reviews
+without source-checked migration; the prototype uses pinned reviewed views,
+not automatic rebinding to newly decoded geometry.
+
 ## Immutable release snapshots
 
 Release tags, input locks, and GitHub release assets describe distinct immutable checkpoints:
