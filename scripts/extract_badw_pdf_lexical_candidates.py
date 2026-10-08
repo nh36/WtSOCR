@@ -24,7 +24,7 @@ from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 from badw_pdf_expressions import boundary_mask, contains_unknown, NONPRINTING
 
 
-VERSION = "badw-pdf-lexical-candidates-v13"
+VERSION = "badw-pdf-lexical-candidates-v14"
 ROLE_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_quote_roles.tsv"
 SPAN_REVIEWS = Path(__file__).resolve().parents[1] / "data/reviewed_badw_pdf_example_spans.tsv"
 
@@ -203,7 +203,7 @@ def _opening_prose_offset(lines, offsets, division, text):
               if s["family"] == "TGaramond" and s["style"] == "italic"]
     tense = r"(?:pf\.|fut\.|prs\.|imp\.)"
     prefix = re.compile(r"\s*,?\s*(?:" + tense + r"(?:\s+und\s+" + tense
-                        + r")*\s+(?:zu\s+)?[↑↓]\s*(?:\d+\s+)?|auch\s+)")
+                        + r")*\s+(?:zu\s+)?[↑↓]\s*(?:\d+\s+)?|resp\.\s+für\s+[↑↓]\s*|auch\s+)")
     pos, consumed = a, False
     while (match := prefix.match(text, pos, b)):
         target = match.end()
@@ -398,6 +398,31 @@ def _opening_quoted_definition(article: dict[str, Any], quote: dict[str, Any],
     end_line = max(i for i, offset in enumerate(offsets) if offset < end)
     closing = article["visual_lines"][end_line]
     local_end = end - offsets[end_line]
+    # The opening explanation may wrap over further roman lines. Typography
+    # establishes paragraph continuation, not language identity. Stop at an
+    # example/heading, apparatus, citation, arrow, quotation or unknown glyph.
+    # Inline italic names are retained only after a roman prose start.
+    if not closing["text"][local_end:].strip().startswith(("(", "↑", "↓")):
+        continuation_end = end
+        for i in range(end_line, division["end_line_index_exclusive"]):
+            current = article["visual_lines"][i]
+            begin = local_end if i == end_line else 0
+            tail = current["text"][begin:]
+            if current["unknown_glyphs"] or re.search(r'[()„“↑↓]|\b(?:vgl\.|Lex\.)', tail):
+                break
+            visible = next((j for j in range(begin, len(current["text"]))
+                            if not current["text"][j].isspace()), None)
+            if visible is None:
+                continue
+            if not any(s["family"] == "TGaramond" and s["style"] == "regular"
+                       and s["start"] <= visible < s["end"] for s in current["style_spans"]):
+                break
+            shad_at = current["text"].find("།", begin)
+            stop_at = shad_at if shad_at >= 0 else len(current["text"].rstrip())
+            continuation_end = offsets[i] + stop_at
+            if shad_at >= 0 or current["text"][:stop_at].rstrip().endswith("."):
+                break
+        end = max(end, continuation_end)
     shad = closing["text"].find("།", local_end)
     if shad >= 0:
         tail = closing["text"][local_end:shad]

@@ -13,6 +13,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from extract_badw_pdf_lexical_candidates import build, extract, validate
+from parse_badw_pdf_articles import VERSION as STRUCTURE_VERSION
 
 
 def test_repeated_sense_label_retains_exact_slice_coordinate():
@@ -36,7 +37,7 @@ def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
 def _article(lines: list[dict], divisions: list[dict] | None = None,
              candidates: dict | None = None) -> dict:
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v7",
+    return {"contract_version": STRUCTURE_VERSION,
             "article_id": "badw:pdf:test", "volume": 2, "loc_headword": "sñags",
             "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
             "visual_lines": lines,
@@ -84,6 +85,28 @@ def test_definition_is_not_limited_to_four_visual_lines():
     article = _article(lines)
     result = extract(article)
     assert result['definitions'][0]['text'] == '\n'.join(l['text'] for l in lines)
+    validate(article, result)
+
+
+def test_opening_quoted_gloss_keeps_wrapped_explanation_before_italic_example():
+    first = '„der zweite Siegreiche“, Beiname bedeu-'
+    lines = [_line(first), _line('tender geistlicher Lehrer.'),
+             _line('ka „Beispiel“ (Source 1)', [(0, 2, 'italic'), (2, 24, 'regular')])]
+    article = _article(lines, candidates={
+        'german_quotes': [{'visual_start': 0, 'visual_end': first.index('“') + 1,
+                          'division_index': 0, 'start_line_index': 0}],
+        'parenthetical_citations': [], 'adjacent_quote_citation_pairs': []})
+    result = extract(article)
+    assert result['definitions'][0]['text'] == first + '\ntender geistlicher Lehrer.'
+    validate(article, result)
+
+
+def test_explicit_respectful_reference_prefix_retains_following_definition():
+    text = 'resp. für ↓ka Mut, Sinn.།'
+    article = _article([_line(text, [(0, 11, 'regular'), (11, 13, 'italic'),
+                                   (13, len(text), 'regular')])])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == 'Mut, Sinn.'
     validate(article, result)
 
 
@@ -441,7 +464,7 @@ def test_regular_quoted_division_opening_is_gloss_not_unresolved_example() -> No
                            "division_index": 0, "start_line_index": 0}],
         "parenthetical_citations": [], "adjacent_quote_citation_pairs": []})
     result = extract(article)
-    assert [item["text"] for item in result["definitions"]] == ["„fünfgesichtig“"]
+    assert [item["text"] for item in result["definitions"]] == ["„fünfgesichtig“, Löwe."]
     assert result["definitions"][0]["status"] == "unverified_quoted_gloss_candidate"
     assert result["unresolved_quotes"] == []
     assert result["quote_dispositions"][0]["kind"] == "quoted_definition_candidate"

@@ -15,6 +15,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from parse_badw_pdf_articles import _candidates, _structure, build, parse_article, reindex_article
 
 
+def test_scaled_simulated_bold_keeps_adjacent_repeated_letters_and_raw_runs():
+    from parse_badw_pdf_articles import _visual_glyphs
+    import copy
+    runs = []
+    for index, (x, y) in enumerate(((10, 20), (10.3456, 20),
+                                   (10, 20.3456), (10.3456, 20.3456), (16, 20))):
+        run = _run(index, "1", x, y)
+        run["font_size"] = 12.8
+        runs.append(run)
+    before = copy.deepcopy(runs)
+    atoms, repeats = _visual_glyphs(runs, set())
+    assert "".join(a["unicode"] for a in atoms) == "11"
+    assert repeats == 3
+    assert runs == before
+    runs[1]["font_size"] = 11
+    assert _visual_glyphs(runs, set())[1] == 2
+
+
 def _hash(value: str) -> str:
     return sha256(value.encode("utf-8")).hexdigest()
 
@@ -106,7 +124,7 @@ def test_offline_reindex_preserves_source_and_is_deterministic() -> None:
     assert first["source_objects"] == previous["source_objects"]
     assert first["source_faithful_text"] == previous["source_faithful_text"]
     assert first["visual_lines"] == previous["visual_lines"]
-    assert first["contract_version"] == "badw-pdf-structural-parser-v7"
+    assert first["contract_version"] == "badw-pdf-structural-parser-v8"
     assert first['extraction_version'] == 'badw-source-components-v2'
     previous["source_faithful_sha256"] = "0" * 64
     with pytest.raises(ValueError, match="hash mismatch"):
@@ -219,7 +237,7 @@ def test_v7_offline_reindex_retains_source_and_adds_language_candidates():
     previous = parse_article(article, lambda _: page)
     previous['contract_version'] = 'badw-pdf-structural-parser-v7'
     result = reindex_article(previous)
-    assert result['contract_version'] == 'badw-pdf-structural-parser-v7'
+    assert result['contract_version'] == 'badw-pdf-structural-parser-v8'
     assert result['extraction_version'] == 'badw-source-components-v2'
     assert result['visual_lines'] == previous['visual_lines']
     assert result['source_objects'] == previous['source_objects']
@@ -314,6 +332,13 @@ def test_arrow_inside_italic_span_and_unstyled_fallback() -> None:
              _candidate_line("↑kha dog als Zeichen")]
     candidates = _candidates(lines, _candidate_division(2))["cross_references"]
     assert [item["target_label_candidate"] for item in candidates] == ["khyim", "kha"]
+
+
+def test_consecutive_arrows_in_one_italic_run_have_separate_targets():
+    text = "↑ka thig ↓tshaṅs thig"
+    lines = [_candidate_line(text, 0, len(text))]
+    refs = _candidates(lines, _candidate_division(1))["cross_references"]
+    assert [r["target_label_candidate"] for r in refs] == ["ka thig", "tshaṅs thig"]
 
 
 def test_locatorless_citation_whitelist_does_not_promote_prose() -> None:

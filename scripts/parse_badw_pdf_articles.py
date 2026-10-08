@@ -25,7 +25,7 @@ from typing import Any, Iterator
 from badw_canonical_pages import stable_json_bytes
 
 
-VERSION = "badw-pdf-structural-parser-v7"
+VERSION = "badw-pdf-structural-parser-v8"
 EXTRACTION_VERSION = "badw-source-components-v2"
 PREVIOUS_VERSION = "badw-pdf-structural-parser-v6"
 # A sense number is a standalone printed label, not the first component of a
@@ -117,8 +117,9 @@ def _overprints(first: dict[str, Any], second: dict[str, Any]) -> bool:
         first["font_id"] == second["font_id"]
         and first["cid_hex"] == second["cid_hex"]
         and first["unicode"] == second["unicode"]
-        and abs(first["x"] - second["x"]) <= 0.04
-        and abs(first["y"] - second["y"]) <= 0.04
+        and abs(first["font_size"] - second["font_size"]) <= 0.000001
+        and abs(first["x"] - second["x"]) <= max(0.04, first["font_size"] * 0.03)
+        and abs(first["y"] - second["y"]) <= max(0.04, first["font_size"] * 0.03)
     )
 
 
@@ -135,9 +136,12 @@ def _visual_glyphs(runs: list[dict[str, Any]], excluded: set[int]) -> tuple[list
                 "cid_hex": glyph["cid_hex"], "font_id": run["font_id"],
                 "run_index": index, "glyph_index": glyph_index,
                 "unknown": bool(glyph["unknown"]),
+                "font_size": float(run.get("font_size", 0)),
             }
-            # Simulated bold uses four impressions offset by about 0.027 PDF
-            # units.  Search a small window because one text run can contain
+            # Simulated bold offsets are approximately .027 em, not .027
+            # physical points after the text matrix is applied. Match only
+            # the same font, size and CID, never spelling. Raw runs remain
+            # untouched. Search a small window because one run can contain
             # the next character as well as an overprinted earlier one.
             if any(_overprints(atom, earlier) for earlier in result[-8:]):
                 overprints += 1
@@ -525,6 +529,13 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
             if not fallback:
                 continue
             end = target_start + fallback.end()
+        # A shared italic run can contain consecutive references. Typography
+        # is not permission to absorb the next literal direction marker.
+        next_marker = re.search(r"[↑↓]", text[target_start:end])
+        if next_marker is not None:
+            end = target_start + next_marker.start()
+            while end > target_start and text[end - 1].isspace():
+                end -= 1
         if end == target_start or end - start > 80:
             continue
         targets = [{"source_text": text[marker.end():end],
@@ -656,7 +667,7 @@ def reindex_article(article: dict[str, Any]) -> dict[str, Any]:
 
     This offline path never reloads a PDF and never changes source/visual text.
     """
-    if article.get("contract_version") not in (PREVIOUS_VERSION, "badw-pdf-structural-parser-v7"):
+    if article.get("contract_version") not in (PREVIOUS_VERSION, "badw-pdf-structural-parser-v7", VERSION):
         raise ValueError("unsupported source structure contract for reindex")
     lines = article["visual_lines"]
     if [line["line_index"] for line in lines] != list(range(len(lines))):
