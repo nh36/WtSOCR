@@ -305,7 +305,10 @@ def _definition_candidates(article: dict[str, Any], text: str,
             if "„" in part or "“" in part:
                 break
             if division["kind"] == "numbered_sense" and i == division["start_line_index"]:
-                part = re.sub(r"^\s*" + re.escape(division["label"]) + r"\.\s*", "", part, count=1)
+                prefix = re.match(r"^\s*" + re.escape(division["label"]) + r"\.\s*", part)
+                if prefix:
+                    segment_start += prefix.end()
+                    part = part[prefix.end():]
             truncated = prose_end < len(line["text"]) or "།" in part
             if "།" in part:
                 part = part.split("།", 1)[0]
@@ -339,7 +342,9 @@ def _definition_candidates(article: dict[str, Any], text: str,
                         not MORPHOLOGY.search(gloss_before_reference)))):
                 break
             if start is None:
-                start = offsets[i] + line["text"].find(part)
+                # The remaining text can repeat the removed sense label.
+                # Its coordinate comes from slicing, not a text search.
+                start = offsets[i] + segment_start
             fragments.append(part)
             if truncated:
                 break

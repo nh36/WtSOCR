@@ -15,6 +15,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from extract_badw_pdf_lexical_candidates import build, extract, validate
 
 
+def test_repeated_sense_label_retains_exact_slice_coordinate():
+    article = _article([_line('2. 2. '), _line('2. sich annähern.')],
+        divisions=[{'kind': 'numbered_sense', 'label': '2',
+                    'start_line_index': 0, 'end_line_index_exclusive': 2}])
+    result = extract(article)
+    validate(article, result)
+    assert result['definitions'][0]['text'] == '2. \n2. sich annähern.'
+
+
 def _line(text: str, spans: list[tuple[int, int, str]] | None = None) -> dict:
     spans = spans or [(0, len(text), "regular")]
     return {"text": text, "page_id": "source-page", "span_index": 0,

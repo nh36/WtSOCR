@@ -10,11 +10,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+from copy import copy
 from dataclasses import asdict, dataclass
 from hashlib import sha256
 from io import BytesIO
 import json
 import logging
+import math
 import numbers
 from pathlib import Path
 import re
@@ -29,7 +31,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MAPPING = ROOT / "data/badw_pdf_glyph_mappings.tsv"
-DECODER_VERSION = "badw-generated-pdf-v3"
+DECODER_VERSION = "badw-generated-pdf-v4"
 SUBSET_RE = re.compile(r"^([A-Z]{6})\+")
 LEGACY_FAMILIES = frozenset({"RabtenTibetan", "TGaramond"})
 
@@ -82,6 +84,7 @@ class PositionedGlyph:
     x: float
     y: float
     advance: float
+    advance_y: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -97,6 +100,9 @@ class PositionedTextRun:
     decoded_unicode: str
     unknown_glyphs: int
     glyphs: tuple[PositionedGlyph, ...]
+    text_matrix: tuple[float, ...] = ()
+    graphics_matrix: tuple[float, ...] = ()
+    source_font_size: float = 0.0
 
 
 @dataclass
@@ -111,6 +117,29 @@ class _TextState:
     line_y: float = 0.0
     x: float = 0.0
     y: float = 0.0
+    # Basis vectors of the text matrix; x/y and line_x/y are in user space.
+    a: float = 1.0
+    b: float = 0.0
+    c: float = 0.0
+    d: float = 1.0
+
+    def move_line(self, tx: float, ty: float) -> None:
+        self.line_x += tx * self.a + ty * self.c
+        self.line_y += tx * self.b + ty * self.d
+        self.x, self.y = self.line_x, self.line_y
+
+
+def _transform(matrix, x, y):
+    a, b, c, d, e, f = matrix
+    return a * x + c * y + e, b * x + d * y + f
+
+
+def _concat(outer, inner):
+    """Apply inner then outer, using PDF's six-number affine convention."""
+    a, b, c, d, e, f = inner
+    A, B, C, D, E, F = outer
+    return (A*a+C*b, B*a+D*b, A*c+C*d, B*c+D*d,
+            A*e+C*f+E, B*e+D*f+F)
 
 
 def _indirect(value):
@@ -800,6 +829,8 @@ def decode_pdf_bytes(
             font_records.setdefault(font_id, {"font_id": font_id, **identity_payload})
 
         state = _TextState()
+        graphics_matrix = (1., 0., 0., 1., 0., 0.)
+        graphics_stack = []
         runs: list[PositionedTextRun] = []
         contents = page.get_contents()
         if contents is None:
@@ -813,8 +844,21 @@ def decode_pdf_bytes(
                 ) from exc
         for operation_index, (operands, raw_operator) in enumerate(operations):
             operator = raw_operator.decode("ascii", errors="strict")
-            if operator == "BT":
-                state = _TextState()
+            if operator == "q":
+                graphics_stack.append((graphics_matrix, copy(state)))
+            elif operator == "Q":
+                if not graphics_stack:
+                    raise PDFDecodeError("unbalanced graphics-state restore")
+                graphics_matrix, saved = graphics_stack.pop()
+                # Text matrices are not part of the saved graphics state.
+                for name in ("font_id", "font_size", "char_spacing", "word_spacing",
+                             "horizontal_scale", "leading"):
+                    setattr(state, name, getattr(saved, name))
+            elif operator == "cm":
+                graphics_matrix = _concat(graphics_matrix, tuple(map(float, operands)))
+            elif operator == "BT":
+                state.a, state.b, state.c, state.d = 1., 0., 0., 1.
+                state.x = state.y = state.line_x = state.line_y = 0.
             elif operator == "Tf":
                 resource_name = str(operands[0])
                 if resource_name not in fonts:
@@ -824,18 +868,16 @@ def decode_pdf_bytes(
                 state.font_id = page_font_ids[resource_name]
                 state.font_size = float(operands[1])
             elif operator == "Tm":
+                state.a, state.b, state.c, state.d = map(float, operands[:4])
                 state.line_x = state.x = float(operands[4])
                 state.line_y = state.y = float(operands[5])
             elif operator in {"Td", "TD"}:
                 tx, ty = float(operands[0]), float(operands[1])
                 if operator == "TD":
                     state.leading = -ty
-                state.line_x += tx
-                state.line_y += ty
-                state.x, state.y = state.line_x, state.line_y
+                state.move_line(tx, ty)
             elif operator == "T*":
-                state.line_y -= state.leading
-                state.x, state.y = state.line_x, state.line_y
+                state.move_line(0., -state.leading)
             elif operator == "Tc":
                 state.char_spacing = float(operands[0])
             elif operator == "Tw":
@@ -848,8 +890,7 @@ def decode_pdf_bytes(
                 if operator == '"':
                     state.word_spacing = float(operands[0])
                     state.char_spacing = float(operands[1])
-                state.line_y -= state.leading
-                state.x, state.y = state.line_x, state.line_y
+                state.move_line(0., -state.leading)
 
             text_sequence = _text_sequence(operator, operands)
             if not text_sequence:
@@ -863,16 +904,20 @@ def decode_pdf_bytes(
             font = fonts[resource_name]
             for value in text_sequence:
                 if isinstance(value, numbers.Real):
-                    state.x += (
+                    adjustment = (
                         -float(value)
                         / 1000.0
                         * state.font_size
                         * state.horizontal_scale
                     )
+                    state.x += adjustment * state.a
+                    state.y += adjustment * state.b
                     continue
                 cids = parse_source_codes(value, font.source_code_bytes)
                 glyphs = []
-                run_start_x, run_start_y = state.x, state.y
+                text_matrix = (state.a, state.b, state.c, state.d, state.x, state.y)
+                run_start_x, run_start_y = _transform(graphics_matrix, state.x, state.y)
+                combined = _concat(graphics_matrix, text_matrix)
                 for cid in cids:
                     gid, signature, character, method, unknown = _decode_cid(
                         font, cid, registry
@@ -884,6 +929,10 @@ def decode_pdf_bytes(
                         + state.char_spacing
                         + word_spacing
                     ) * state.horizontal_scale
+                    gx, gy = _transform(graphics_matrix, state.x, state.y)
+                    ax, ay = _transform(graphics_matrix, advance * state.a, advance * state.b)
+                    ax -= graphics_matrix[4]
+                    ay -= graphics_matrix[5]
                     glyphs.append(
                         PositionedGlyph(
                             cid=cid,
@@ -893,12 +942,14 @@ def decode_pdf_bytes(
                             unicode=character,
                             mapping_method=method,
                             unknown=unknown,
-                            x=_stable_number(state.x),
-                            y=_stable_number(state.y),
-                            advance=_stable_number(advance),
+                            x=_stable_number(gx),
+                            y=_stable_number(gy),
+                            advance=_stable_number(ax),
+                            advance_y=_stable_number(ay),
                         )
                     )
-                    state.x += advance
+                    state.x += advance * state.a
+                    state.y += advance * state.b
                 decoded = "".join(glyph.unicode for glyph in glyphs)
                 unknown_count = sum(glyph.unknown for glyph in glyphs)
                 total_unknown += unknown_count
@@ -908,7 +959,10 @@ def decode_pdf_bytes(
                         operation_index=operation_index,
                         operator=operator,
                         font_id=state.font_id,
-                        font_size=_stable_number(state.font_size),
+                        font_size=_stable_number(state.font_size * math.hypot(combined[2], combined[3])),
+                        source_font_size=_stable_number(state.font_size),
+                        text_matrix=tuple(map(_stable_number, text_matrix)),
+                        graphics_matrix=tuple(map(_stable_number, graphics_matrix)),
                         x=_stable_number(run_start_x),
                         y=_stable_number(run_start_y),
                         source_cids=tuple(f"{cid:04X}" for cid in cids),

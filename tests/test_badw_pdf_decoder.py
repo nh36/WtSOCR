@@ -456,3 +456,60 @@ def test_deterministic_output_and_malformed_pdf_failure():
             catalogue_lemma="ka",
             registry=GlyphRegistry(),
         )
+
+
+def decode_synthetic_operations(monkeypatch, operations):
+    """Tiny embedded-font fixture, no copied dictionary PDF or author heuristic."""
+    import badw_pdf_decoder as decoder
+    from types import SimpleNamespace
+    resources, _ = type0_page(tiny_font_bytes())
+
+    class Page(dict):
+        mediabox = SimpleNamespace(height=800)
+
+        def get_contents(self):
+            return SimpleNamespace(operations=operations)
+
+    page = Page(resources)
+    monkeypatch.setattr(decoder, "PdfReader", lambda *a, **kw: SimpleNamespace(pages=[page]))
+    monkeypatch.setattr(decoder, "_decode_cid",
+                        lambda font, cid, registry: (cid, "fixture", chr(64 + cid), "fixture", False))
+    return decode_pdf_bytes(b"synthetic", canonical_url="https://example.invalid/a",
+                            catalogue_lemma="fixture", registry=GlyphRegistry())
+
+
+def test_scaled_text_matrix_and_small_cap_baseline(monkeypatch):
+    operations = [([], b"BT"), (["/F1", 1], b"Tf"),
+                  ([12, 0, 0, 12, 100, 200], b"Tm"),
+                  ([0, -1], b"Td"), ([b"\x00\x01"], b"Tj"),
+                  ([10, 0, 0, 10, 107.2, 188], b"Tm"),
+                  ([[b"\x00\x02", -100, b"\x00\x01"]], b"TJ"),
+                  ([0, -1.2], b"TD"), ([b"\x00\x02"], b"Tj")]
+    record = decode_synthetic_operations(monkeypatch, operations)
+    runs = record["pages"][0]["positioned_text_runs"]
+    assert [(r["x"], r["y"]) for r in runs] == [(100, 188), (107.2, 188), (115.2, 188), (107.2, 176)]
+    assert runs[0]["glyphs"][0]["advance"] == 7.2
+    assert runs[1]["font_size"] == 10
+    assert record["pages"][0]["visible_text"] == "ABA\nB"
+    assert runs[0]["text_matrix"] == (12, 0, 0, 12, 100, 188)
+
+
+def test_rotated_matrix_graphics_transform_and_restore(monkeypatch):
+    operations = [([], b"q"), ([2, 0, 0, 3, 10, 20], b"cm"),
+                  ([], b"BT"), (["/F1", 1], b"Tf"),
+                  ([0, 10, -10, 0, 100, 200], b"Tm"),
+                  ([b"\x00\x01\x00\x02"], b"Tj"), ([], b"ET"),
+                  ([], b"Q"), ([], b"BT"), (["/F1", 1], b"Tf"),
+                  ([1, 0, 0, 1, 2, 3], b"Tm"), ([b"\x00\x01"], b"Tj")]
+    runs = decode_synthetic_operations(monkeypatch, operations)["pages"][0]["positioned_text_runs"]
+    assert (runs[0]["x"], runs[0]["y"]) == (210, 620)
+    assert (runs[0]["glyphs"][1]["x"], runs[0]["glyphs"][1]["y"]) == (210, 638)
+    assert runs[0]["glyphs"][0]["advance_y"] == 18
+    assert (runs[1]["x"], runs[1]["y"]) == (2, 3)
+
+
+def test_same_letters_on_distinct_baselines_are_not_joined(monkeypatch):
+    operations = [([], b"BT"), (["/F1", 1], b"Tf"),
+                  ([12, 0, 0, 12, 100, 200], b"Tm"), ([b"\x00\x01"], b"Tj"),
+                  ([10, 0, 0, 10, 100, 188], b"Tm"), ([b"\x00\x02"], b"Tj")]
+    assert decode_synthetic_operations(monkeypatch, operations)["pages"][0]["visible_text"] == "A\nB"
