@@ -11,9 +11,50 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import sqlite3
 
 from build_badw_entry_index import encode
 from resolve_badw_cross_references import EntryIndex
+from badw_dictionary_entry_view import entry_view
+
+
+def bibliography_links(records, links_path, database):
+    """Export only accepted, exactly source-bound existing bibliography claims."""
+    originals = {r['id']: r for p in records for r in p.get('original_records', [])
+                 if r.get('record_type') == 'citation'}
+    result = {}
+    with sqlite3.connect(database.resolve().as_uri() + '?mode=ro', uri=True) as db:
+        for line in links_path.read_text().split('\n'):
+            if not line:
+                continue
+            link = json.loads(line)
+            original = originals.get(link['citation_id'])
+            if original is None:
+                continue
+            for match in link['resolution'].get('matches', []):
+                if match.get('target_status') != 'accepted_identity':
+                    continue
+                spans = original.get('source_spans', [])
+                start, end = match.get('article_start'), match.get('article_end')
+                if not (match.get('source_sha256') and isinstance(start, int)
+                        and isinstance(end, int) and 0 <= start < end):
+                    continue
+                if not any(s.get('source_sha256') == match['source_sha256']
+                           and isinstance(s.get('start'), int) and isinstance(s.get('end'), int)
+                           and 0 <= s['start'] <= start < end <= s['end']
+                           for s in spans):
+                    continue
+                for authority_id in match.get('authority_ids', []):
+                    authority = db.execute('SELECT label FROM authority WHERE id=?', (authority_id,)).fetchone()
+                    if authority is None:
+                        continue
+                    descriptions = [json.loads(r[0]).get('text', '') for r in db.execute(
+                        'SELECT record_json FROM occurrence WHERE authority_id=? ORDER BY id', (authority_id,))]
+                    result.setdefault(link['citation_id'], []).append(dict(
+                        id=authority_id, label=authority[0], descriptions=descriptions,
+                        coverage_status=link['resolution'].get('coverage_status', 'unreviewed'),
+                        edition_status=link['resolution'].get('edition_status', 'unreviewed')))
+    return result
 
 
 def view(records, index):
@@ -83,7 +124,11 @@ def main():
     ap.add_argument("--projection", type=Path, required=True)
     ap.add_argument("--entry-index", type=Path, required=True)
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--citation-links", type=Path)
+    ap.add_argument("--bibliography", type=Path)
     args = ap.parse_args()
+    if bool(args.citation_links) != bool(args.bibliography):
+        ap.error('--citation-links and --bibliography must be supplied together')
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     if not output.is_relative_to(root / "work"):
@@ -95,19 +140,24 @@ def main():
     records = [json.loads(line) for line in args.projection.read_text().split("\n") if line]
     index = EntryIndex(json.loads(line) for line in args.entry_index.read_text().split("\n") if line)
     entries = view(records, index)
-    payload = dict(contract_version="badw-development-view-v1", entries=entries,
+    bib = bibliography_links(records, args.citation_links, args.bibliography) if args.bibliography else {}
+    payload = dict(contract_version="badw-dictionary-reader-v1", entries=[entry_view(e, bib) for e in entries],
                    entry_index_sha256=index.sha256,
                    limitations=["Development candidates, not a production dictionary",
                                 "Review is not independent gold; unresolved ownership remains explicit"])
     body = encode([payload])
     output.mkdir(parents=True)
     (output / "data.json").write_bytes(body)
+    inspection = encode([dict(entries=entries)])
+    (output / "inspection.json").write_bytes(inspection)
     assets = Path(__file__).with_name("badw_dictionary_prototype")
     for name in ("index.html", "app.js", "style.css"):
         shutil.copyfile(assets / name, output / name)
     manifest = dict(entries=len(entries), data_sha256=hashlib.sha256(body).hexdigest(),
                     inputs=[dict(path=str(p), sha256=hashlib.sha256(p.read_bytes()).hexdigest())
-                            for p in (args.projection, args.entry_index)], network_requests=0)
+                            for p in (args.projection, args.entry_index, args.citation_links, args.bibliography)
+                            if p is not None], network_requests=0,
+                    inspection_sha256=hashlib.sha256(inspection).hexdigest())
     (output / "manifest.json").write_bytes(encode([manifest]))
     print(json.dumps(manifest, sort_keys=True))
 

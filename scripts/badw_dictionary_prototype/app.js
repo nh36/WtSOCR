@@ -1,48 +1,49 @@
-/* View only: no extraction, normalization or inferred association. */
+/* Rendering only. Language, ownership and resolved targets are data facts. */
 "use strict";
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-let data, byEntry;
-function details(title,value){const d=el('details');d.append(el('summary',title),el('pre',JSON.stringify(value,null,2)));return d;}
+let byEntry, inspection;
+function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\.badw\.de\//.test(url||'')){a.href=url;a.rel='noreferrer';}return a;}
+function bibliography(citation,entry){
+ const d=el('details',undefined,'bibliography');d.append(el('summary','Bibliography'));
+ for(const b of citation.bibliography){d.append(el('h3',b.label));for(const t of b.descriptions)d.append(el('p',t));if(b.edition_status==='unreviewed')d.append(el('p','Edition not independently reviewed.','note'));if(b.coverage_status==='matched_components_only_not_complete_citation')d.append(el('p','Only part of this citation has a resolved bibliographic identity.','note'));}
+ entry.append(d);d.open=true;d.scrollIntoView({block:'nearest'});
+}
 function show(item){
  const a=document.querySelector('#article');a.replaceChildren();
- const p=item.projection, entry=item.entry, nodes=p.nodes, byNode=new Map(nodes.map(n=>[n.id,n]));
- a.append(el('h2',`${entry.headword.loc||''} ${entry.homonym||''}`),el('p',entry.headword.tibetan||''));
- a.append(el('p',`${p.source_kind.toUpperCase()} · ${p.identity}`,'label'));
- const literal=el('details');literal.append(el('summary','Complete literal source reading'),el('div',item.review_text,'literal'));a.append(literal);
- const children=new Map();for(const n of nodes){const parent=n.parent||'';if(!children.has(parent))children.set(parent,[]);children.get(parent).push(n);}
- function render(n,ancestors){
-  if(ancestors.has(n.id))return el('p','Invalid cyclic parent graph');
-  const box=el('section',undefined,`component ${n.kind}`);box.id=n.id;
-  box.append(el('div',`${n.kind} · ${n.id} · [${n.start}, ${n.end})`,'label'));
-  const sourceText=Array.from(item.review_text).slice(n.start,n.end).join('');
-  if((children.get(n.id)||[]).length&&['source_division','sense'].includes(n.kind)){const full=el('details');full.append(el('summary','Literal enclosing passage'),el('div',sourceText,'literal'));box.append(full);}
-  else box.append(el('div',sourceText));
-  const relations=(p.edges||[]).filter(e=>e.from===n.id||e.to===n.id);
-  for(const e of relations){const target=el('a',`Candidate ${e.kind}: ${e.from} → ${e.to}`,'badge');target.href=`#${encodeURIComponent(p.identity)}`;target.onclick=event=>{event.preventDefault();document.getElementById(e.to)?.scrollIntoView();};box.append(target);}
-  const reviewed=(p.semantic_relationships||[]).filter(r=>r.from?.node_id===n.id);
-  for(const claim of reviewed){for(const t of claim.to||[]){const phrase=Array.from(item.review_text).slice(t.start,t.end).join('');box.append(el('p',`${claim.relation} (reviewed): “${phrase}”`,'reviewed'));}box.append(details('Relationship review and exact source evidence',claim));}
-  if(n.kind==='citation'&&!reviewed.some(r=>r.relation==='citation_of')){box.append(el('span','Citation ownership not reviewed (candidate edges and containment are not accepted ownership)','badge unresolved'));}
-  const next=new Set(ancestors);next.add(n.id);for(const child of children.get(n.id)||[])box.append(render(child,next));
-  box.append(details('Exact component evidence',n));return box;
+ a.append(el('h2',`${item.headword.loc||''} ${item.homonym||''}`),el('p',item.headword.tibetan||'','heading-tibetan'));
+ const reading=el('div',undefined,'reading');
+ const citations=new Map(item.citations.map(c=>[c.component_id,c]));
+ const references=new Map(item.cross_references.filter(r=>r.component_id).map(r=>[r.component_id,r]));
+ for(const segment of item.segments){
+  if(segment.starts_types.some(t=>['sense','source_division','lexical_parallel'].includes(t)))reading.append(el('br'));
+  const citation=segment.component_ids.map(id=>citations.get(id)).find(Boolean);
+  const reference=segment.component_ids.map(id=>references.get(id)).find(Boolean);
+  let n=el('span',segment.text);
+  if(citation){
+   if(citation.bibliography.length){n=el('a',segment.text,'citation');n.href='#bibliography';n.title=citation.bibliography.map(b=>b.descriptions[0]||b.label).join('\n');n.onclick=e=>{e.preventDefault();bibliography(citation,a);};}
+   else{n.classList.add('citation');n.title='Bibliographic identity unresolved';}
+   if(citation.ownership==='unresolved'){n.classList.add('unresolved');n.title=(n.title||'')+' · passage association unresolved';}
+  }else if(reference){
+   if(reference.target_entry_id&&byEntry.has(reference.target_entry_id)){n=el('a',segment.text);n.href='#'+encodeURIComponent(reference.target_entry_id);}
+   else if(reference.target_entry_id&&reference.source_url){n=sourceLink(reference.source_url,segment.text);n.title='Resolved entry outside the development subset';}
+   else n.title='Cross-reference target unresolved';
+  }
+  for(const language of segment.languages)n.classList.add('lang-'+language);
+  if(segment.languages.length>1)n.title=(n.title||'')+' · overlapping source/review language claims';
+  if(segment.types.includes('lexical_parallel'))n.classList.add('lexical');
+  reading.append(n);
  }
- a.append(el('h3','Extracted source structure'));
- for(const n of children.get('')||[])a.append(render(n,new Set()));
- a.append(el('h3','Reviewed annotations and passage relationships'));
- for(const claim of [...(p.semantic_annotations||[]),...(p.citable_passages||[]),...(p.semantic_relationships||[])]){if(claim.kind==='language_span'){a.append(el('p',`Reviewed language ${claim.claim.language}: ${(claim.ranges||[]).map(r=>r.literal).join(' / ')} (source tags retained unchanged)`,'reviewed'));}a.append(details(`${claim.kind||claim.relation||'Reviewed claim'} · ${claim.status||'see review'}`,claim));}
- if(!(p.semantic_relationships||[]).length)a.append(el('p','No reviewed semantic relationship overlay for this entry.','label'));
- a.append(el('h3','Dictionary references'));
- for(const r of item.cross_references){const row=el('p',`${r.marker||''} ${r.target_label||''} `),resolution=r.canonical_resolution;
-  if(resolution?.status==='resolved'){const target=byEntry.get(resolution.target_entry_id);if(target){const link=el('a','Open linked entry');link.href='#'+encodeURIComponent(target.projection.identity);row.append(link);}else{row.append(el('span','Resolved entry is outside this frozen subset','badge'));}}
-  else row.append(el('span',resolution?.status||'unresolved','badge unresolved'));
-  if(r.target_url){const link=el('a',' BAdW source');if(/^https:\/\/wts-digital\.badw\.de\//.test(r.target_url)){link.href=r.target_url;link.rel='noreferrer';row.append(link);}}
-  row.append(details('Literal reference and resolution provenance',r));a.append(row);
- }
- a.append(details('Full immutable projection, source locations and review provenance',p));
+ a.append(reading);
+ const reviewed=item.relationships.filter(r=>r.type==='citation_of');
+ if(reviewed.length){const d=el('details');d.append(el('summary','Reviewed citation associations'));for(const r of reviewed){const from=item.components.find(c=>c.id===r.from_id);const targets=r.to_ids.map(id=>item.components.find(c=>c.id===id)?.source_form||'');d.append(el('p',`${from?.source_form||''} supports: ${targets.join(' / ')}`));}a.append(d);}
+ const debug=el('details',undefined,'inspection');debug.append(el('summary','Source / debug'));
+ debug.addEventListener('toggle',async()=>{if(!debug.open||debug.dataset.loaded)return;try{inspection ||= await fetch('inspection.json').then(r=>r.json());const row=inspection.entries.find(e=>e.projection.identity===item.inspection_id);debug.append(sourceLink(item.source_url,'BAdW source'),el('pre',JSON.stringify(row,null,2)));debug.dataset.loaded='yes';}catch(e){debug.append(el('p',e.message));}});
+ a.append(debug);
 }
-function navigate(){const id=decodeURIComponent(location.hash.slice(1));const item=data.entries.find(e=>e.projection.identity===id);if(item)show(item);}
-fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load frozen data');return r.json();}).then(d=>{
- data=d;byEntry=new Map(d.entries.map(e=>[e.entry.id,e]));
- const search=document.querySelector('#search'), list=document.querySelector('#entries');
- function filter(){list.replaceChildren();const q=search.value.toLowerCase();const items=d.entries.filter(e=>`${e.entry.headword.loc||''} ${e.entry.headword.tibetan||''}`.toLowerCase().includes(q));document.querySelector('#count').textContent=`${items.length} / ${d.entries.length} entries`;for(const e of items){const link=el('a',`${e.entry.headword.loc} ${e.entry.homonym||''}`);link.href='#'+encodeURIComponent(e.projection.identity);list.append(link);}}
+function navigate(){const item=byEntry.get(decodeURIComponent(location.hash.slice(1)));if(item)show(item);}
+fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load dictionary data');return r.json();}).then(d=>{
+ byEntry=new Map(d.entries.map(e=>[e.id,e]));
+ const search=document.querySelector('#search'),list=document.querySelector('#entries');
+ function filter(){list.replaceChildren();const q=search.value.toLowerCase();const items=d.entries.filter(e=>`${e.headword.loc||''} ${e.headword.tibetan||''}`.toLowerCase().includes(q));document.querySelector('#count').textContent=`${items.length} / ${d.entries.length} entries`;for(const e of items){const link=el('a',`${e.headword.loc} ${e.homonym||''}`);link.href='#'+encodeURIComponent(e.id);list.append(link);}}
  search.addEventListener('input',filter);window.addEventListener('hashchange',navigate);filter();navigate();
 }).catch(e=>document.querySelector('#article').replaceChildren(el('p',e.message)));

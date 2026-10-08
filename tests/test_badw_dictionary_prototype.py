@@ -7,6 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from build_badw_dictionary_prototype import view
+from build_badw_dictionary_prototype import bibliography_links
 from resolve_badw_cross_references import EntryIndex
 
 
@@ -70,3 +71,27 @@ def test_rejects_inconsistent_projection(damage):
     if damage=='parent':r['nodes'][0]['parent']='missing'
     if damage=='cycle':r['nodes'][0]['parent']='n1'
     with pytest.raises(ValueError):view([r,r] if damage=='duplicate' else [r],EntryIndex(r['original_records']))
+
+
+def test_bibliography_only_exports_accepted_exact_source_bound_claims(tmp_path):
+    import json
+    import sqlite3
+    database=tmp_path/'bibliography.sqlite'
+    with sqlite3.connect(database) as db:
+        db.execute('CREATE TABLE authority (id TEXT, label TEXT)')
+        db.execute('CREATE TABLE occurrence (id TEXT, authority_id TEXT, record_json TEXT)')
+        db.execute('INSERT INTO authority VALUES (?,?)',('book:1','Author 2001'))
+        db.execute('INSERT INTO occurrence VALUES (?,?,?)',('o1','book:1',json.dumps(dict(text='Full description'))))
+    r=record()
+    r['original_records'].append(dict(record_type='citation',id='c1',source_spans=[dict(source_sha256='source',start=2,end=20)]))
+    match=dict(target_status='accepted_identity',source_sha256='source',article_start=3,article_end=18,authority_ids=['book:1'])
+    link=dict(citation_id='c1',resolution=dict(matches=[match],coverage_status='partial',edition_status='unresolved'))
+    path=tmp_path/'links.jsonl'
+    path.write_text(json.dumps(link)+'\n')
+    result=bibliography_links([r],path,database)['c1'][0]
+    assert result['descriptions']==['Full description']
+    assert result['coverage_status']=='partial' and result['edition_status']=='unresolved'
+    for field,value in [('target_status','candidate'),('source_sha256','other'),('article_end',21)]:
+        bad=copy.deepcopy(link);bad['resolution']['matches'][0][field]=value
+        path.write_text(json.dumps(bad)+'\n')
+        assert bibliography_links([r],path,database)=={}
