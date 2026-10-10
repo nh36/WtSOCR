@@ -13,7 +13,7 @@ from collections import Counter
 from parse_badw_pdf_articles import _visual_glyphs
 
 
-def html_occurrence_resolutions(records, cache_root, resolver):
+def html_occurrence_resolutions(records, cache_root, resolver, reviews=None):
     """Resolve exact cached HTML occurrences through the existing resolver.
 
     Replaying the immutable object verifies the view before DOM evidence is
@@ -54,11 +54,16 @@ def html_occurrence_resolutions(records, cache_root, resolver):
                     evidence.append(dict(start=a-start, end=b-start,
                         label=text[a:b], expansion=siglum['expanded_display_text']))
             resolution = (resolver.resolve_dom(text[start:end], evidence) if evidence
-                          else resolver.resolve(text[start:end]))
+                          else resolver.resolve(text[start:end], "html"))
+            if reviews is not None:
+                resolution = reviews.apply_source('html', p['identity'], text, start, end, resolution)
+                resolver.component_contract(resolution)
             results[(p['identity'], node['id'])] = resolution
             diagnostics.append(dict(entry_id=p['identity'], node_id=node['id'],
                 status='matched', source_sha256=sha, start=start, end=end,
                 literal=text[start:end], resolution=resolution))
+    if reviews is not None:
+        reviews.finish()
     return results, diagnostics
 
 
@@ -108,6 +113,22 @@ def source_key(lines):
     return tuple(tuple(line.get(k) for k in (
         'page_id', 'run_start', 'run_end_exclusive',
         'line_char_start', 'line_char_end')) for line in lines)
+
+
+def exact_span_locations(start, end, locations, visual_lines):
+    """Locations must describe this exact view span, not another equal string."""
+    offsets, offset = [], 0
+    for line in visual_lines:
+        offsets.append(offset)
+        offset += len(line['text']) + 1
+    expected = []
+    for index, line in enumerate(visual_lines):
+        a, b = max(start, offsets[index]), min(end, offsets[index] + len(line['text']))
+        if a < b:
+            expected.append((index, a-offsets[index], b-offsets[index]))
+    actual = [(loc.get('line_index'), loc.get('line_char_start'),
+               loc.get('line_char_end')) for loc in locations]
+    return bool(expected) and actual == expected
 
 
 def source_objects(objects):
@@ -212,10 +233,23 @@ def pdf_occurrence_bridge(records, staging, canonical_root=None):
                 status = ('source_mismatch' if not valid else
                           'matched' if len(found) == 1 else
                           'ambiguous' if found else 'no_exact_occurrence')
+                # A newer extractor may find an occurrence absent from the
+                # frozen resolver snapshot. This is not a spelling-based join:
+                # replay every character against the hash-checked positioned
+                # object before allowing the existing resolver to analyse it.
+                verified_new = (status == 'no_exact_occurrence' and bool(pages)
+                                and exact_span_locations(start, end, node.get('source_lines', []),
+                                                         p['source']['visual_lines'])
+                                and bool(exact_glyph_key(node.get('source_lines', []),
+                                                       p['source']['visual_lines'], pages)))
                 if len(found) == 1:
                     matches[(p['identity'], node['id'])] = f"{p['identity']}:{found[0]}"
                 diagnostics.append(dict(entry_id=p['identity'], node_id=node['id'],
                                         literal=literal, status=status,
+                                        verified_new_occurrence=verified_new,
+                                        start=start, end=end,
+                                        source_lines=node.get('source_lines', []),
+                                        source_objects=p['source']['source_objects'],
                                         resolver_literal=next((c['text'] for ordinal, c in candidates
                                                                if found == [ordinal]), None)))
     return matches, diagnostics
@@ -278,7 +312,10 @@ def bibliography_audit(records, entries, bibliography, diagnostics):
                 tally['lex_displayed'] += 1
                 tally['lex_bibliography_resolved' if resolved else 'lex_bibliography_unresolved'] += 1
             status = bridge.get((p['identity'], node['id']), 'html_lexical_record')
-            if kind == 'pdf' and status != 'matched':
+            if kind == 'pdf' and status == 'verified_new_occurrence':
+                tally['verified_new_source_occurrences'] += 1
+                tally['resolver_identity_unresolved'] += int(not resolved)
+            elif kind == 'pdf' and status != 'matched':
                 tally['outside_exact_resolver_bridge'] += 1
             elif not resolved:
                 tally['resolver_identity_unresolved'] += 1

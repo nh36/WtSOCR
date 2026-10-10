@@ -80,6 +80,7 @@ def test_bibliography_only_exports_accepted_exact_source_bound_claims(tmp_path):
     with sqlite3.connect(database) as db:
         db.execute('CREATE TABLE authority (id TEXT, label TEXT)')
         db.execute('CREATE TABLE occurrence (id TEXT, authority_id TEXT, record_json TEXT)')
+        db.execute('CREATE TABLE print_occurrence (id TEXT, authority_id TEXT, record_json TEXT)')
         db.execute('INSERT INTO authority VALUES (?,?)',('book:1','Author 2001'))
         db.execute('INSERT INTO occurrence VALUES (?,?,?)',('o1','book:1',json.dumps(dict(text='Full description'))))
     r=record()

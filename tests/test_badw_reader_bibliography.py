@@ -10,7 +10,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from badw_reader_bibliography import (exact_glyph_key, pdf_occurrence_bridge,
                                     validate_bibliography_export,
-                                    html_occurrence_resolutions)
+                                    html_occurrence_resolutions, exact_span_locations)
 from build_badw_dictionary_prototype import bibliography_links
 
 
@@ -75,6 +75,41 @@ def test_exact_glyph_replay_survives_small_cap_line_split():
     assert exact_glyph_key([loc(0,2),loc(1,3)], split, pages) == ()
     merged[0]['style_spans'][0]['font_id'] = 'other'
     assert exact_glyph_key([loc(0,5)], merged, pages) == ()
+
+
+def test_location_replay_requires_exact_span_not_equal_text_elsewhere():
+    lines = [dict(text='Abc'), dict(text='Abc')]
+    loc = dict(line_index=0, line_char_start=0, line_char_end=3)
+    assert exact_span_locations(0, 3, [loc], lines)
+    assert not exact_span_locations(4, 7, [loc], lines)
+    assert not exact_span_locations(0, 2, [loc], lines)
+    assert not exact_span_locations(0, 3, [loc, loc], lines)
+
+
+def test_new_pdf_occurrence_requires_hash_checked_glyphs_and_exact_span(tmp_path):
+    import gzip
+    p, staging = fixture(tmp_path)
+    runs = [dict(run_index=i+10, font_id='font', font_size=10,
+                 glyphs=[dict(unicode=c, x=i*10, y=20, cid_hex=str(i), unknown=False)])
+            for i, c in enumerate('(Abc)')]
+    body = gzip.compress(json.dumps(dict(page_id='page', positioned_page=dict(
+        positioned_text_runs=runs))).encode(), mtime=0)
+    (tmp_path / 'page.json.gz').write_bytes(body)
+    p['source']['source_objects'][0].update(canonical_object='page.json.gz',
+        canonical_object_sha256=hashlib.sha256(body).hexdigest())
+    span = p['source']['visual_lines'][0]['style_spans'][0]
+    span.update(last_run_index=14, last_glyph_index=0)
+    with sqlite3.connect(staging) as db:
+        db.execute('DELETE FROM pdf_lexical_candidate')
+        db.execute('UPDATE pdf_article_analysis SET structural_json=?',
+                   (json.dumps(p['source']),))
+    matches, diagnostics = pdf_occurrence_bridge([p], staging, tmp_path)
+    assert matches == {}
+    assert diagnostics[0]['verified_new_occurrence']
+    assert diagnostics[0]['status'] == 'no_exact_occurrence'
+    assert not pdf_occurrence_bridge([p], staging)[1][0]['verified_new_occurrence']
+    p['nodes'][0]['start'] = 1
+    assert not pdf_occurrence_bridge([p], staging, tmp_path)[1][0]['verified_new_occurrence']
 
 
 def fixture(tmp_path):
@@ -151,6 +186,7 @@ def test_pdf_reader_uses_exact_occurrence_not_shared_siglum(tmp_path):
     with sqlite3.connect(database) as db:
         db.execute('CREATE TABLE authority(id,label)')
         db.execute('CREATE TABLE occurrence(id,authority_id,record_json)')
+        db.execute('CREATE TABLE print_occurrence(id,authority_id,record_json)')
         db.execute('INSERT INTO authority VALUES (?,?)', ('book', 'Abc'))
         db.execute('INSERT INTO occurrence VALUES (?,?,?)',
                    ('description', 'book', json.dumps(dict(text='Full bibliography'))))

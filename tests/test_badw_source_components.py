@@ -69,6 +69,26 @@ def test_untagged_html_author_year_locator_is_preserved_as_unowned_candidate():
     assert article['citations'][0]['candidate_status'] == 'unresolved_source_citation_candidate'
 
 
+def test_parenthetical_author_year_citation_keeps_complete_locator_once():
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">'
+            'Definition (Author 1892: 458, Tafel XXIII, Nr. 55); '
+            'weiter Author 1892: 459.</div></div>').encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert [c['source_text'] for c in article['citations']] == [
+        'Author 1892: 459', '(Author 1892: 458, Tafel XXIII, Nr. 55)']
+    assert any(d['diagnosis'] == 'contained_author_year_citation'
+               for d in article['citation_candidate_diagnostics'])
+
+
+def test_grouped_parenthetical_authors_are_not_collapsed_to_first_author():
+    body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">'
+            'Definition (Author 1892: 458; Other 1992: 12).</div></div>').encode()
+    article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
+        valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    assert any('Other 1992: 12' in c['source_text'] for c in article['citations'])
+
+
 @pytest.mark.parametrize('markup', ['<span class="stelle">Pasang 1998: 178</span>',
     '<span class="bibl">Pasang 1998</span>: 178'])
 def test_explicit_citation_does_not_expand_to_parenthesis_with_tibetan_target(markup):

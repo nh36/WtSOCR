@@ -389,6 +389,12 @@ def parse_database_article(
     retained_candidates = []
     for candidate in marked_citations:
         a, b = candidate["start"], candidate["end"]
+        enclosing = [c for c in marked_citations
+                     if c is not candidate and c["start"] < a and b < c["end"]
+                     and c["source_text"].startswith("(")
+                     and c["source_text"].endswith(")")
+                     and article_source_text[c["start"] + 1:a].strip() == ""
+                     and candidate["evidence"] == "capitalized author year colon and numeric locator"]
         overlaps = [f for f in explicit_citations
                     if f["locator"]["visible_text_start"] is not None
                     and a < f["locator"]["visible_text_end"]
@@ -404,6 +410,10 @@ def parse_database_article(
                 "explicit_citation_locators": [f["locator"] for f in overlaps],
                 "explicit_bibliography_spans": [dict(start=c["start"], end=c["end"])
                                                 for c in bibliography_overlaps]})
+        elif enclosing:
+            citation_candidate_diagnostics.append({**candidate,
+                "diagnosis": "contained_author_year_citation",
+                "enclosing_spans": [dict(start=c["start"], end=c["end"]) for c in enclosing]})
         else:
             retained_candidates.append(candidate)
     marked_citations = retained_candidates

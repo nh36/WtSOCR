@@ -19,8 +19,9 @@ from badw_bibliography import digest, dumps, file_digest, write_jsonl
 
 VERSION = "print-bibliography-candidates-v1"
 PAGE = re.compile(r"^=== page (\d+) ===\r?\n", re.M)
-AUTHOR_YEAR = re.compile(r"^[A-ZÄÖÜ][^\n\r]*?\b(?:1[5-9]|20)\d{2}[a-z]?\s*:", re.M)
-INHERITED_YEAR = re.compile(r"^[ \t]*(?:1[5-9]|20)\d{2}[a-z]?\s*:", re.M)
+PUBLICATION_YEAR = r"(?:1[5-9]|20)\d{2}[a-z]?(?:[-–](?:\d{2}|\d{4})[a-z]?)?"
+AUTHOR_YEAR = re.compile(r"^[A-ZÄÖÜ][^\n\r]*?\b" + PUBLICATION_YEAR + r"\s*[:.]", re.M)
+INHERITED_YEAR = re.compile(r"^[ \t]*" + PUBLICATION_YEAR + r"\s*[:.]", re.M)
 
 
 def reviewed_occurrences(candidates: Path, reviews: Path, registry: Path,

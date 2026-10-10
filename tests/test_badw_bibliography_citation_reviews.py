@@ -64,6 +64,31 @@ def result():
     return dict(text="(Author 1992: 4)", status="unmatched", matches=[])
 
 
+def test_html_review_requires_exact_article_view_and_span(tmp_path):
+    text = "prefix (Author 1992: 4) suffix"
+    start, end = 7, 7 + len(result()["text"])
+    reviews, _ = setup_review(tmp_path, layer="html",
+        citation_id=f"article:reviewed:{start}:{end}", source_article_id="article",
+        source_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+        source_start=str(start), source_end=str(end))
+    for changed in ("changed " + text, text.replace("suffix", "altered")):
+        with pytest.raises(ValueError, match="article/span/hash"):
+            reviews.apply_source("html", "article", changed, start, end, result())
+    assert reviews.apply_source("html", "other", text, start, end, result())["matches"] == []
+    with pytest.raises(ValueError, match="orphan"):
+        reviews.finish()
+    linked = reviews.apply_source("html", "article", text, start, end, result())
+    assert linked["matches"][0]["authority_ids"] == ["p1"]
+    assert linked["text"] == text[start:end]
+    assert linked["matches"][0]["locator_status"] == "unreviewed"
+    reviews.finish()
+
+
+def test_html_review_without_source_binding_is_rejected(tmp_path):
+    with pytest.raises(ValueError, match="requires exact source-span"):
+        setup_review(tmp_path, layer="html")
+
+
 def test_exact_identity_preserves_text_and_never_certifies_edition(tmp_path):
     reviews, obj = setup_review(tmp_path)
     linked = reviews.apply("pdf", "c1", result())

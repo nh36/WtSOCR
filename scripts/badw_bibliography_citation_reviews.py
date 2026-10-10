@@ -36,7 +36,7 @@ class CitationReviews:
         with path.open(encoding="utf-8") as stream:
             for review in csv.DictReader(stream, delimiter="\t"):
                 key = review["layer"], review["citation_id"]
-                if key in self.reviews or key[0] != "pdf":
+                if key in self.reviews or key[0] not in {"html", "pdf"}:
                     raise ValueError("duplicate or unsupported citation review")
                 if not re.fullmatch("[0-9a-f]{64}", review["text_sha256"]) or not review["evidence_note"].strip():
                     raise ValueError("citation review lacks source hash/note")
@@ -46,6 +46,8 @@ class CitationReviews:
                             not re.fullmatch("[0-9a-f]{64}", review["source_text_sha256"]) or
                             not all(review[k].isdecimal() for k in ("source_start", "source_end"))):
                         raise ValueError("incomplete or invalid reviewed source-span binding")
+                if key[0] == "html" and not all(review.get(k) for k in source_keys):
+                    raise ValueError("HTML citation review requires exact source-span binding")
                 evidence = review["evidence_sha256"]
                 if not re.fullmatch("[0-9a-f]{64}", evidence):
                     raise ValueError("invalid citation evidence hash")
@@ -133,6 +135,19 @@ class CitationReviews:
                             "exact_print_publication_rows" if review["status"] == "reviewed_print_identity"
                             else "exact_online_source_rows")
         return result
+
+    def apply_source(self, layer, article_id, text, start, end, result):
+        """Apply a reviewed identity only to its exact immutable source view."""
+        identity = f"{article_id}:reviewed:{start}:{end}"
+        review = self.reviews.get((layer, identity))
+        if review is None:
+            return result
+        if (review.get("source_article_id") != article_id or
+                review.get("source_text_sha256") != hashlib.sha256(text.encode()).hexdigest() or
+                review.get("source_start") != str(start) or review.get("source_end") != str(end) or
+                not 0 <= start < end <= len(text) or result["text"] != text[start:end]):
+            raise ValueError("reviewed source article/span/hash mismatch")
+        return self.apply(layer, identity, result)
 
     def finish(self):
         if set(self.reviews) != self.seen:

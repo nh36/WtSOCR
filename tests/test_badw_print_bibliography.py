@@ -8,6 +8,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import badw_print_bibliography as printbib
 
 
+@pytest.mark.parametrize('text', ['JACOBI, Hermann 1892. Title',
+                                  'SCHMIDT, Richard 1924-28. Title',
+                                  'AUTHOR 2001: Title', 'AUTHOR 2001a: Title'])
+def test_publication_heading_punctuation_and_year_ranges(text):
+    assert printbib.AUTHOR_YEAR.match(text)
+
+
+@pytest.mark.parametrize('text', ['(AUTHOR 2001: Title)', 'Discussion of AUTHOR 2001',
+                                  'AUTHOR 2001 without heading punctuation'])
+def test_non_heading_material_is_not_publication_start(text):
+    assert not printbib.AUTHOR_YEAR.match(text)
+
+
 def inputs(tmp_path):
     pdf = tmp_path / "scan.pdf"
     pdf.write_bytes(b"synthetic scan")

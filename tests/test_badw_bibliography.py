@@ -59,7 +59,7 @@ def test_reviewed_alias_is_layer_bounded_and_source_preserving(tmp_path):
         assert resolver.resolve(text, layer)["status"] == "unmatched"
     for field, value in (("online_source_sha256", "stale"), ("canonical_label", "wrong"),
                          ("print_scan_page", "0"), ("print_pdf_sha256", "unknown"),
-                         ("status", "candidate"), ("layer", "html"), ("evidence_note", "")):
+                         ("status", "candidate"), ("layer", "invalid"), ("evidence_note", "")):
         original = review[field]
         review[field] = value
         write()

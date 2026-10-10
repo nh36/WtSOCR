@@ -30,7 +30,7 @@ PAGES = {"texte": "work", "bibliographie": "publication",
          "abkuerzungen": "abbreviation"}
 YEAR_PATTERN = r"(?:1[5-9]|20)\d{2}[a-z]?(?:[–/-]\d{2,4})?(?:\s+ff\.)?"
 EXACT_STATUSES = {"exact_online_work_rows", "exact_online_publication_rows", "exact_online_source_rows",
-                  "exact_print_publication_rows", "exact_external_publication_rows"}
+                  "exact_print_publication_rows", "exact_external_publication_rows", "exact_external_work_rows"}
 
 
 def dumps(value: object) -> str:
@@ -223,7 +223,7 @@ def export_bibtex(rows: list[dict]) -> str:
         if row.get("scope") == "published_print":
             fields["annotation"] = "Visually reviewed printed publication identity; citation edition and locator unverified"
         if row.get("scope") == "reviewed_external":
-            fields["annotation"] = "Reviewed external publication; not a WTS bibliography row; citation edition and locator unverified"
+            fields["annotation"] = f"Reviewed external {row['kind']}; not a WTS bibliography row; citation edition and locator unverified"
         entries.append("@" + reviewed.get("entry_type", "misc") + "{" + row["occurrence_id"] + ",\n" +
                        ",\n".join("  " + k + " = {" + bibtex_escape(v) + "}" for k, v in sorted(fields.items())) + "\n}\n")
     return "\n".join(entries)
@@ -344,9 +344,9 @@ class AuthorityResolver:
                  alias_reviews: list[dict] = ()):
         # External evidence can establish an exact reviewed identity, not an
         # automatic author/year alias. Keep this gate inside the resolver too.
+        self.by_id = {a["id"]: a for a in authorities}
         authorities = [a for a in authorities if a.get("scope") != "reviewed_external"]
         rows = [r for r in rows or [] if r.get("scope") != "reviewed_external"]
-        self.by_id = {a["id"]: a for a in authorities}
         self.resolver = ComponentResolver([(a["id"], a["label"]) for a in authorities
                                   if a["kind"] == "work"], rows or [])
         self.rows = {r["id"]: r for r in (rows or [])}
@@ -381,7 +381,7 @@ class AuthorityResolver:
         A tooltip must agree with the work table's visible description. Missing
         work rows stay explicit; the existing tooltip authority is not discarded.
         """
-        result = self.resolve(text)
+        result = self.resolve(text, "html")
         matches, unresolved = [], []
         for item in evidence:
             start, end, label = item["start"], item["end"], item["label"]
@@ -414,7 +414,7 @@ class AuthorityResolver:
         # Preserve independently exact publication references outside DOM work
         # spans; a tooltip is evidence for its span, not the whole citation.
         publications = [m for m in result["matches"]
-                        if m["status"] == "exact_online_publication_row" and
+                        if m["status"] in {"exact_online_publication_row", "exact_external_work_row"} and
                         not any(item["start"] < m["end"] and m["start"] < item["end"]
                                 for item in evidence)]
         matches.extend(publications)
@@ -424,6 +424,7 @@ class AuthorityResolver:
         result["match_method"] = "same_dom_span_and_exact_tooltip_description"
         result["status"] = ("ambiguous" if unresolved else
                             "exact_online_source_rows" if publications and len(matches) > len(publications) else
+                            "exact_external_work_rows" if publications and all(m["status"] == "exact_external_work_row" for m in matches) else
                             "exact_online_publication_rows" if publications else
                             "exact_online_work_rows" if matches else "unmatched")
         self.component_contract(result)
@@ -441,7 +442,7 @@ class AuthorityResolver:
             match["target_status"] = ("accepted_identity" if match["status"] in {
                                       "exact_online_work_row", "exact_online_publication_row",
                                       "exact_online_abbreviation_row", "exact_print_publication_row",
-                                      "exact_external_publication_row"}
+                                      "exact_external_publication_row", "exact_external_work_row"}
                                       else "candidate")
             match["raw_text"] = result["text"][match["start"]:match["end"]]
             occupied.append((match["start"], match["end"]))
@@ -502,10 +503,13 @@ class AuthorityResolver:
         for match in result["matches"]:
             overlap = any(other is not match and other["start"] < match["end"] and
                           match["start"] < other["end"] for other in result["matches"])
+            reviewed_external = (match["status"] == "reviewed_alias_candidate" and
+                all(self.by_id[i].get("scope") == "reviewed_external" for i in match["authority_ids"]))
             safe = (match["status"] != "ambiguous" and not overlap and
                     all(self.by_id[i]["status"] == "first_party_source_row" for i in match["authority_ids"]))
             kind = self.by_id[match["authority_ids"][0]]["kind"]
-            match["status"] = "exact_online_" + kind + "_row" if safe else "ambiguous"
+            match["status"] = ("exact_external_" + kind + "_row" if reviewed_external and not overlap
+                               else "exact_online_" + kind + "_row" if safe else "ambiguous")
             match["edition_status"] = "unreviewed"
             match["print_status"] = "unverified"
         result["contract_version"] = VERSION
@@ -513,6 +517,7 @@ class AuthorityResolver:
         result["coverage_status"] = "matched_components_only_not_complete_citation_resolution"
         result["status"] = ("unmatched" if not result["matches"] else
                             "ambiguous" if any(m["status"] == "ambiguous" for m in result["matches"])
+                            else "exact_external_work_rows" if all(m["status"] == "exact_external_work_row" for m in result["matches"])
                             else "exact_online_work_rows" if all(m["status"] == "exact_online_work_row" for m in result["matches"])
                             else "exact_online_publication_rows" if all(m["status"] == "exact_online_publication_row" for m in result["matches"])
                             else "exact_online_source_rows")
@@ -587,7 +592,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     authorities.extend(external_authorities)
     rows.extend(external_rows)
     apply_relation_reviews(rows, relations, relation_reviews)
-    aliases = load_alias_reviews(alias_reviews, rows, registry)
+    aliases = load_alias_reviews(alias_reviews, rows, registry, cache)
     printed = []
     if print_candidates or print_reviews:
         if not (print_candidates and print_reviews and registry):
@@ -635,8 +640,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                            [(relation["occurrence_id"], relation["ordinal"], p) for p in relation["publication_candidates"]])
     counts = Counter()
     # Print-only authorities require exact citation reviews, never fuzzy/global aliases.
-    resolver = AuthorityResolver([a for a in authorities if a not in print_authorities + external_authorities],
-                                 [r for r in rows if r not in external_rows], aliases)
+    resolver = AuthorityResolver([a for a in authorities if a not in print_authorities], rows, aliases)
     if staging:
         src = sqlite3.connect(staging.resolve().as_uri() + "?mode=ro", uri=True)
         dom_evidence = dom_citation_evidence(src)
