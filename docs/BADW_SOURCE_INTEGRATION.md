@@ -205,6 +205,92 @@ An exact reviewed citation-year correction may resolve a publication identity wh
 
 “Every citation of this book” should query resolved occurrence-to-work links, optionally restricted by edition, witness, locator-verification or review status. It must also expose unresolved candidates rather than count them as accepted links. Source-specific bibliography wording and editorial year/edition discrepancies remain recoverable as variants and reviewed relationships. BibTeX is an export of bibliography metadata, not the identity model or a replacement for source evidence.
 
+### Whole-dictionary apparatus census and completion gate
+
+The earlier `bibliography_print_ranges.tsv` is a bounded record-extraction input,
+not a complete WTS apparatus inventory. The separate
+`data/bibliography_apparatus_zones.tsv` records located printed source zones across
+all four registered PDFs, including the earliest source lists, successive fascicle
+supplements, later source-list/bibliography sequences, volume additions and memorial
+bibliographies. The delivery-31 list has two registered scan manifestations; keep
+both, without counting the scanned repetition as reviewed bibliographic duplication.
+Delivery 17 continues onto WtS_1-34 scan 590. Printed foliation marked unverified
+must be inspected rather than inferred from scan number.
+
+**This is an incomplete census, not completed ingestion/reconciliation.**
+`heading_locator` is a descriptive lookup aid, not an exact printed transcription.
+The zones are inclusive scan-page envelopes; shared end/start pages, introductory
+text and two-up dictionary pages remain inside them. Location review establishes
+where apparatus is visible, not every record's wording or identity. Pages outside
+these envelopes are explicitly unclassified until the visual census closes; OCR
+heading search cannot prove that no further definitions occur there. The supplied
+PDF labels do not by themselves establish complete coverage of every published
+volume or delivery. Completion obligations are recorded in
+`data/bibliography_apparatus_questions.tsv`.
+
+The offline capture command is:
+
+```bash
+python3 scripts/build_bibliography_apparatus.py \
+  --cache work/wts_apparatus_20261010/cache \
+  --output work/wts_apparatus_20261010/census_v3
+```
+
+The 2026-10-10 retrieval of `/texte`, `/bibliographie` and `/abkuerzungen` is
+registered in `data/bibliography_apparatus_online_sources.tsv`. Its hashes match
+the previous cached pages. Retrieval date establishes current observation, not
+publication date or print equivalence. The builder uses the existing source cache
+offline, checks PDF bytes against the source registry and OCR bytes against zone
+provenance, and rejects missing, duplicated or reordered OCR pages. Snapshots are
+immutable, built before publication and confined to ignored `work/` storage.
+
+`ocr_pages.jsonl` preserves original UTF-8 text, CR/LF, Unicode offsets and page
+markers. Prepending the `ocr_preamble` in `print_sources.jsonl` to that source's
+ordered page texts reproduces the source OCR bytes. These readings are always
+`unreviewed_ocr`. `online_occurrences.jsonl` retains the existing exact visible
+wording and DOM spans; original HTML and acquisition metadata are retained too.
+Neither OCR pages nor online source-authority IDs are reconciled print identities.
+The census adds no canonical work, edition or siglum and changes no citation link.
+Existing reviewed print occurrences, external identifications and publication
+relations remain in the established bibliography backend.
+
+The SQLite census supports direct evidence queries, for example:
+
+```sql
+-- Every located zone and its provenance/chronology notes.
+SELECT id, source_label, start_page, end_page, data FROM zone;
+-- Exact unreviewed text of a cross-page supplement, without losing continuation.
+SELECT p.scan_page, p.raw_text FROM zone_page z JOIN ocr_page p
+  USING (source_label, scan_page)
+  WHERE z.zone_id = 'delivery17-additions' ORDER BY p.scan_page;
+-- All online source occurrences with an exact literal label.
+SELECT kind, label_text, raw_text, source_sha256, data FROM online_occurrence
+  WHERE label_text = 'Mim1';
+-- Review obligations and pages not yet classified by the visual census.
+SELECT * FROM open_question;
+SELECT source_label, scan_page FROM ocr_page
+  WHERE apparatus_status = 'not_yet_classified_by_visual_census';
+```
+
+Corpus completion requires a visual apparatus census and exact multi-span record
+transcription, including inherited authors and all residual text, before reviewed
+reconciliation. Reuse the existing distinct work/publication/abbreviation,
+source-occurrence and citation entities; add explicit siglum-denotes-work or
+siglum-denotes-edition evidence rather than conflating them. Identity claims need
+reviewed source occurrences; normalized author/title/year or fuzzy matches must
+never merge records automatically. Record field variants with both occurrence
+IDs and classify orthographic/editorial versus substantive differences explicitly.
+First occurrence requires reviewed publication chronology, not scan ordering.
+
+Only after this gate closes can print-only/online-only counts, omitted consolidated
+records, unknown sigla and genuine probable WTS errors be reported. The census
+manifest deliberately reports canonical and discrepancy counts as null, rather
+than zero. `Mim1`/`Mim2` remain an open exhaustive-definition question. Their
+reviewed external BDSN/CDSN clarification must not be attributed to WTS; the 382
+already-reviewed citation links are unchanged. Maurer literal source years and
+reviewed canonical identification continue to coexist. No corpus-wide absence
+finding follows from an unsuccessful OCR search.
+
 ## Roadmap from source corpus to scholarly dictionary
 
 These are scholarly architecture stages, not a renumbering of the historical acquisition/reconciliation stages above. Each gate concerns correctness as well as coverage; later work must not erase uncertainty to meet a percentage.

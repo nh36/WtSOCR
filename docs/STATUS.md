@@ -27,6 +27,29 @@ is reported by the reproduction command and is not inferred from either field.
 - `data/correction_families.tsv` is the small machine-readable correction-family status table.
 - Code and override TSVs are the implementation source for applied behavior.
 
+## Bibliographic Apparatus
+
+The complete WTS apparatus ingestion/reconciliation is **in progress, not complete**.
+`data/bibliography_apparatus_zones.tsv` locates 36 print zones on
+108 distinct scan pages in the four registered PDFs. Zone envelopes
+and heading locators are not verified record transcriptions. Unlocated pages have
+not been proved apparatus-free. The earlier three-range print inventory is not
+a dictionary-wide inventory or evidence for a siglum's absence.
+
+`scripts/build_bibliography_apparatus.py` preserves all 3,466 registered OCR pages
+with offsets and hashes, including pages outside located zones. It snapshots the
+3 current online lists separately (1,057 source rows); retrieval provenance is in
+`data/bibliography_apparatus_online_sources.tsv`. Generated raw evidence and SQLite
+remain under ignored `work/`. See `docs/BADW_SOURCE_INTEGRATION.md` for the capture
+contract and queries. 7 explicit completion obligations remain in
+`data/bibliography_apparatus_questions.tsv`.
+
+Canonical corpus counts, duplicate counts, print-only/online-only classifications,
+first-occurrence findings and probable omissions remain unestablished. Whether WTS
+ever defines `Mim1`/`Mim2` remains unresolved pending exhaustive review. Existing
+external identifications and the 382 reviewed citation links remain unchanged.
+No parser expansion or `release/current` change belongs to this apparatus census.
+
 ## Volume Status
 
 | Volume | Entries | Non-empty lines | Validator issues | Google adoptions | Google unresolved | Applied changes | Reviewed Tibetan exact changes | Sanskrit changes | Sanskrit review suggestions | Bucket unresolved pairs | Promote rows | Hold rows |

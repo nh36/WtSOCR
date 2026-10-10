@@ -1,0 +1,4 @@
+url	fetched_at_utc	sha256	size_bytes	http_status	evidence_scope	source_row_count
+https://wts-digital.badw.de/abkuerzungen	2026-10-10T22:23:53+00:00	a1cf589ea9a125ae5e2d29265ff8d92809569f0399e608976b8ec6b21a794726	19917	200	current_public_online_source_not_print_equivalence	229
+https://wts-digital.badw.de/bibliographie	2026-10-10T22:23:51+00:00	b8fe0525608c4ff1cd73cb7411618869e802202f1dbd112a98e89ed32a773cfb	392514	200	current_public_online_source_not_print_equivalence	400
+https://wts-digital.badw.de/texte	2026-10-10T22:23:49+00:00	72820ad22be37adeda97b0005c23759145336dcb69f7524808120ebb41e6f0b8	300897	200	current_public_online_source_not_print_equivalence	428
