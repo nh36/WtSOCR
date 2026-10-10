@@ -79,6 +79,39 @@ def test_wrapped_reference_without_preceding_gloss_is_not_a_definition():
     assert result['definitions'] == []
 
 
+@pytest.mark.parametrize('apparatus', ['resp. ↑ka', 'resp. ↓ka'])
+def test_definition_before_inline_reference_apparatus_is_preserved(apparatus):
+    text = '1. Mut, Tapferkeit, Fähigkeit; ' + apparatus
+    article = _article([_line(text)], divisions=[{'kind': 'numbered_sense',
+        'label': '1', 'start_line_index': 0, 'end_line_index_exclusive': 1}])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == 'Mut, Tapferkeit, Fähigkeit'
+    assert result['definitions'][0]['visual_start'] == 3
+    validate(article, result)
+
+
+def test_definition_after_separate_abbreviation_line_preserves_exact_offsets():
+    first = 'Kurzf. für ka kha.'
+    article = _article([_line(first, [(0, 11, 'regular'), (11, 17, 'italic')]),
+                        _line('Nötiges, Bedarf.'),
+                        _line('ka „Beispiel“', [(0, 2, 'italic'), (2, 13, 'regular')])])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == 'Nötiges, Bedarf.'
+    assert result['definitions'][0]['visual_start'] == len(first) + 1
+    validate(article, result)
+
+
+@pytest.mark.parametrize('reference', ['↑ka', '↓ka'])
+def test_wrapped_german_definition_before_bare_arrow_preserves_continuation(reference):
+    first = 'eine der vier Bedingun-'
+    second = 'gen, ' + reference
+    article = _article([_line(first), _line(second)])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == first + '\ngen'
+    assert result['definitions'][0]['visual_end'] == len(first) + 1 + len('gen')
+    validate(article, result)
+
+
 def test_definition_is_not_limited_to_four_visual_lines():
     lines = [_line(t) for t in ['Verschieden,', 'mannigfaltig;', 'Unterschied,',
                                'Besonderheit,', 'Qualifizierung,', 'Vielheit.']]
@@ -110,7 +143,8 @@ def test_explicit_respectful_reference_prefix_retains_following_definition():
     validate(article, result)
 
 
-@pytest.mark.parametrize('prefix', ['fut. zu ↓2 ka ', 'pf. ↓ka, fut. ↓kha, imp. ↓ga '])
+@pytest.mark.parametrize('prefix', ['fut. zu ↓2 ka ', 'pf. ↓ka, fut. ↓kha, imp. ↓ga ',
+                                  'imp. und res. zu ↓ka ', ', fut. oder Nebenform ↑1 ka '])
 def test_inflection_reference_sequence_retains_following_definition(prefix):
     spans = []
     for match in __import__('re').finditer(r'ka|kha|ga', prefix):
@@ -121,6 +155,15 @@ def test_inflection_reference_sequence_retains_following_definition(prefix):
     article = _article([_line(prefix + 'krank sein', spans)])
     result = extract(article)
     assert result['definitions'][0]['text'] == 'krank sein'
+    validate(article, result)
+
+
+def test_combined_inflection_reference_keeps_next_line_definition():
+    prefix = 'imp. und res. zu ↓ka'
+    article = _article([_line(prefix, [(0, 18, 'regular'), (18, len(prefix), 'italic')]),
+                        _line('besiegen.།')])
+    result = extract(article)
+    assert result['definitions'][0]['text'] == 'besiegen.'
     validate(article, result)
 
 
@@ -222,6 +265,27 @@ def test_typographically_bounded_preambles_do_not_hide_definitions(lines, expect
     result = extract(article)
     assert [d['text'] for d in result['definitions']] == [expected]
     validate(article, result)
+
+
+def test_wrapped_alias_followed_by_unlinked_inflection_preserves_definition():
+    # Tense labels need not have an arrow. The following italic source run,
+    # not the spelling of the inflected form, determines the apparatus end.
+    first = 'auch ka pf.'
+    second = 'kas nachfolgen, sich orientieren.'
+    article = _article([
+        _line(first, [(0, 5, 'regular'), (5, 7, 'italic'),
+                      (7, len(first), 'regular')]),
+        _line(second, [(0, 3, 'italic'), (3, len(second), 'regular')]),
+    ])
+    result = extract(article)
+    assert [d['text'] for d in result['definitions']] == [
+        'nachfolgen, sich orientieren.']
+    validate(article, result)
+
+
+def test_unlinked_tense_does_not_skip_regular_prose():
+    article = _article([_line('pf. Erklärung.')])
+    assert [d['text'] for d in extract(article)['definitions']] == ['pf. Erklärung.']
 
 
 @pytest.mark.parametrize('text', ['auch ka „Zitat“ (Source 1)', 'pf. ↓ka'])
@@ -995,6 +1059,15 @@ def test_pdf_comparison_reference_is_unlinked_not_example_evidence():
     assert [c['text'] for c in result['citations']] == ['vgl. BHSD s.v. śa']
     assert result['citations'][0]['status'] == 'unlinked_source_citation_candidate'
     assert result['belegstellen'] == []
+
+
+def test_comparison_author_locator_is_not_duplicated_or_clipped():
+    article = _article([_line('Definition, vgl. LIN 2005: 310, Anm. 2015.')])
+    result = extract(article)
+    validate(article, result)
+    assert [c['text'] for c in result['citations']] == [
+        'vgl. LIN 2005: 310, Anm. 2015']
+    assert result['citations'][0]['status'] == 'unlinked_source_citation_candidate'
 
 
 def test_nested_quote_source_links_are_validated() -> None:

@@ -15,6 +15,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from parse_badw_pdf_articles import _candidates, _structure, build, parse_article, reindex_article
 
 
+def test_wrapped_reviewed_citation_form_retains_literal_source():
+    from parse_badw_pdf_articles import _citation_siglum, _parenthetical_spans
+    text = '„Rückseite“ (brDa,\nDagy).'
+    start, end, interior = next(_parenthetical_spans(text))
+    assert _citation_siglum(interior) == "brDa"
+    assert text[start:end] == "(brDa,\nDagy)"
+    assert _citation_siglum("r.\nDagy") is None
+    assert _citation_siglum("gewöhnliche\nProsa") is None
+    assert _citation_siglum("Pś Kolo-\nphon") == "Pś"
+
+
 def test_scaled_simulated_bold_keeps_adjacent_repeated_letters_and_raw_runs():
     from parse_badw_pdf_articles import _visual_glyphs
     import copy
@@ -31,6 +42,22 @@ def test_scaled_simulated_bold_keeps_adjacent_repeated_letters_and_raw_runs():
     assert runs == before
     runs[1]["font_size"] = 11
     assert _visual_glyphs(runs, set())[1] == 2
+
+
+def test_simulated_bold_punctuation_with_different_impression_advances():
+    from parse_badw_pdf_articles import _visual_glyphs
+    import copy
+    runs = []
+    # Independent four-impression geometry; no author-name or label matching.
+    for index, x in enumerate((321.970263, 321.628914, 321.970263, 321.576497, 325.4)):
+        run = _run(index, ".", x, 303.2649)
+        run["font_size"] = 12.7985
+        runs.append(run)
+    before = copy.deepcopy(runs)
+    atoms, repeats = _visual_glyphs(runs, set())
+    assert "".join(atom["unicode"] for atom in atoms) == ".."
+    assert repeats == 3
+    assert runs == before
 
 
 def _hash(value: str) -> str:
@@ -535,3 +562,10 @@ def test_exact_malformed_nested_quote_review_preserves_literal_and_rejects_stale
     assert other[0]["visual_end"] == 6
     with pytest.raises(ValueError, match="stale"):
         reviewed_quotation_spans(text + "!", "test", {"test": [row]})
+@pytest.mark.parametrize("literal,expected", [
+    ("Dagy,\nTTC", "Dagy"), ("TTC, brDa, Dagy", "TTC"),
+    ("Dagy, gewöhnlich", None), ("Dagy, unknown", None),
+])
+def test_locatorless_groups_require_every_member_to_be_a_known_siglum(literal, expected):
+    from parse_badw_pdf_articles import _citation_siglum
+    assert _citation_siglum(literal) == expected

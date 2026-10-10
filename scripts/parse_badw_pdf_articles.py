@@ -77,6 +77,11 @@ def _parenthetical_spans(text: str) -> Iterator[tuple[int, int, str]]:
 def _citation_siglum(interior: str) -> str | None:
     if interior in REVIEWED_CITATION_FORMS:
         return REVIEWED_CITATION_FORMS[interior]
+    # PDF wrapping is presentation, not a different citation form. Use a
+    # derived lookup string only; candidates retain exact source bounds/text.
+    interior = " ".join(interior.split())
+    if interior in REVIEWED_CITATION_FORMS:
+        return REVIEWED_CITATION_FORMS[interior]
     if REVIEWED_QUESTIONED_SIGLUM.fullmatch(interior):
         return "Vḍk2?"
     if REVIEWED_COLON_SIGLUM.fullmatch(interior):
@@ -84,7 +89,10 @@ def _citation_siglum(interior: str) -> str | None:
     embedded = EMBEDDED_LOCATOR_SIGLA.fullmatch(interior)
     if embedded:
         return embedded.group("siglum")
-    if interior in LOCATORLESS_SIGLA or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior):
+    members = [part.strip() for part in interior.split(",")]
+    locatorless_group = (len(members) > 1
+                         and all(part in LOCATORLESS_SIGLA for part in members))
+    if interior in LOCATORLESS_SIGLA or locatorless_group or QUALIFIED_LOCATORLESS_SIGLA.fullmatch(interior):
         match = SIGLUM.match(interior)
         return match.group("siglum") if match else None
     match = SIGLUM.match(interior)
@@ -118,8 +126,11 @@ def _overprints(first: dict[str, Any], second: dict[str, Any]) -> bool:
         and first["cid_hex"] == second["cid_hex"]
         and first["unicode"] == second["unicode"]
         and abs(first["font_size"] - second["font_size"]) <= 0.000001
-        and abs(first["x"] - second["x"]) <= max(0.04, first["font_size"] * 0.03)
-        and abs(first["y"] - second["y"]) <= max(0.04, first["font_size"] * 0.03)
+        # Simulated bold also changes advances slightly between impressions;
+        # a later punctuation glyph can be displaced farther than its digit.
+        # Keep the tolerance sub-glyph-sized and require identical font/CID.
+        and abs(first["x"] - second["x"]) <= max(0.04, first["font_size"] * 0.032)
+        and abs(first["y"] - second["y"]) <= max(0.04, first["font_size"] * 0.032)
     )
 
 

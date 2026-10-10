@@ -19,9 +19,10 @@ def author_year_reference_candidates(text, start, end):
     """
     if not 0 <= start <= end <= len(text):
         raise ValueError("invalid citation bounds")
-    pattern = re.compile(r"(?<!\w)[A-ZÄÖÜ][A-Za-zÄÖÜäöüẞß-]{2,}\s+"
+    author = r"[A-ZÄÖÜ][A-Za-zÄÖÜäöüẞß-]{2,}"
+    pattern = re.compile(r"(?<![\w/])" + author + r"(?:/" + author + r")*\s+"
                          r"(?:18|19|20)\d{2}:\s*\d+(?:[–-]\d+)?"
-                         r"(?:\s+ff?\.)?(?!\w)")
+                         r"(?:\s+ff?\.)?(?:(?:,\s*|\s+)(?:Nr\.|Anm\.)\s*\d+(?:[–-]\d+)?)*(?!\w)")
     quotes = quoted_spans(text, start, end)
     return [dict(start=m.start(), end=m.end(), source_text=m.group(),
                  status="unresolved_source_citation_candidate",
@@ -44,9 +45,17 @@ def comparison_reference_candidates(text, start, end):
         r"(?:\d+(?:[,:]\s*\d+)*(?:\s+ff?\.)?(?:\s+s\.v\.\s+[^\W\d_][^\s,;().„“]*)?"
         r"|s\.v\.\s+[^\W\d_][^\s,;().„“]*)")
     quotations = quoted_spans(text, start, end)
+    author_references = author_year_reference_candidates(text, start, end)
     result = []
     for match in pattern.finditer(text, start, end):
         a, b = match.span()
+        # The short-siglum grammar also matches capitalized author/year
+        # references. Preserve their full locator (including Anm./Nr.) rather
+        # than emitting a clipped, overlapping observation of the same source.
+        for reference in author_references:
+            if a < reference['start'] < b <= reference['end']:
+                b = reference['end']
+                break
         label = match['siglum']
         # Restrict untagged observations to short or capital-rich sigla.
         # Longer title-case author names need explicit bibliography evidence.
@@ -129,10 +138,24 @@ def located_parenthetical_citations(text, start, end):
 
     This deliberately does not attach a citation to the containing definition.
     Quoted prose, nested corrections and bare labels are not evidence here.
+    An explicit bracketed editorial comparison inside a quotation is different:
+    its numeric source reference is observed, without assigning ownership.
     """
     if not 0 <= start <= end <= len(text):
         raise ValueError("invalid citation bounds")
-    stack, quotes, result = [], [], []
+    result = []
+    editorial = re.compile(
+        r"\[\s*vgl\.\s+[^\[\]()]+\((?P<label>[^\W\d_][\w’']*)"
+        r"\s+\d[\w:., /–-]*\)\s*\]")
+    for match in editorial.finditer(text, start, end):
+        if not any(c.isupper() for c in match['label']):
+            continue
+        a = text.index('(', match.start(), match.end())
+        b = text.index(')', a, match.end()) + 1
+        result.append(dict(start=a, end=b, source_text=text[a:b],
+            status="unresolved_source_citation_candidate",
+            evidence="bracketed explicit vgl. editorial comparison with numeric source locator"))
+    stack, quotes = [], []
     for i in range(start, end):
         char = text[i]
         if char in QUOTE_PAIRS:
@@ -145,15 +168,17 @@ def located_parenthetical_citations(text, start, end):
         elif char == ")" and stack:
             a = stack.pop()
             inside = text[a + 1:i]
-            numeric = (re.fullmatch(r"[A-Za-z][A-Za-z0-9’']*\s+\d[\w:., /–-]*", inside)
-                       and re.search(r"[A-Z]", inside))
+            # Source labels can contain accented Latin letters (e.g. Macrì).
+            # Unicode letters are observed literally, not ASCII-normalized.
+            numeric = (re.fullmatch(r"[^\W\d_][\w’']*\s+\d[\w:., /–-]*", inside)
+                       and any(char.isupper() for char in inside))
             headword = re.fullmatch(r"[A-Z][A-Za-z0-9]*\.?\s+s\.\s*v\.\s+[^()\n]+", inside)
-            if not stack and (numeric or headword):
+            if not stack and (numeric or headword) and not any(r['start'] == a for r in result):
                 result.append(dict(start=a, end=i + 1, source_text=text[a:i + 1],
                     status="unresolved_source_citation_candidate",
                     evidence=("balanced abbreviated source with explicit s.v. headword locator"
                               if headword else "balanced siglum-shaped parenthesis with numeric locator")))
-    return result
+    return sorted(result, key=lambda r: (r['start'], r['end']))
 
 
 def lexical_clauses(text, start, end):

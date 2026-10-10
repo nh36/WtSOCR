@@ -11,6 +11,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from benchmark_badw_structure import graph
@@ -116,7 +117,17 @@ def enrich(nodes, text, *, article=None, structure=None):
                 # end of a parallel. Preserve the complete literal clause as
                 # a separate observation; do not widen that candidate or its
                 # existing citation ownership edges.
-                if not any(n["kind"] == "lexical_parallel" and n["start"] <= x and y <= n["end"] for n in nodes):
+                # Terminal delimiter punctuation is not a second parallel.
+                # Retain the existing exact span, not an expanded ownership
+                # assertion. The full source text remains in the observation.
+                def covers_clause(n):
+                    if n["kind"] != "lexical_parallel":
+                        return False
+                    if n["start"] <= x and y <= n["end"]:
+                        return True
+                    return (n["start"] == x and x < n["end"] < y
+                            and not text[n["end"]:y].strip(" \t\r\n.;"))
+                if not any(covers_clause(n) for n in nodes):
                     add("lexical_parallel", x, y, "literal PDF Lex. block / delimiter clause")
                 for citation in clause.get("terminal_citation_candidates", []):
                     node = add("citation", citation["start"], citation["end"], citation["evidence"])
@@ -131,6 +142,11 @@ def enrich(nodes, text, *, article=None, structure=None):
             if text[a:b] != field["source_text"]:
                 raise ValueError("PDF Sanskrit field differs from source")
             add("sanskrit", a, b, field["evidence"])
+        # This is a literal printed apparatus label, not a language guess.
+        # Preserve its complete span independently of surrounding examples.
+        for match in re.finditer(r"\(metr\.\)", text):
+            add("qualifier", match.start(), match.end(),
+                "literal PDF metrical qualifier label")
     # Lex. clauses may be added after pre-existing unowned citations. Refine
     # only their physical container, never a semantic owner or an edge.
     by_id = {n["id"]: n for n in nodes}

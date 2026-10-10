@@ -70,6 +70,22 @@ def fixture():
     return packet, nested
 
 
+def test_pdf_metrical_qualifiers_are_separate_literal_components():
+    text = 'ka (metr.) „Wort“ (A 1); ga (metr.)'
+    nodes = [dict(id='root', kind='source_division', start=0,
+                  end=len(text), parent=None)]
+    structure = dict(visual_lines=[dict(text=text)], candidates=dict(
+        lexical_blocks=[], cross_references=[], sanskrit=[]))
+    assert enrich(nodes, text, structure=structure) == []
+    qualifiers = [n for n in nodes if n['kind'] == 'qualifier']
+    assert [text[n['start']:n['end']] for n in qualifiers] == ['(metr.)', '(metr.)']
+    assert all(n['parent'] == 'root' for n in qualifiers)
+    assert not any(n['kind'] in ('tibetan', 'sanskrit') for n in nodes)
+    previous = copy.deepcopy(nodes)
+    enrich(nodes, text, structure=structure)
+    assert nodes == previous
+
+
 def test_lex_citation_container_does_not_assert_ownership():
     text = 'Lex. ka (A: 1)'
     nodes = [dict(id='root', kind='source_division', start=0, end=len(text), parent=None),
@@ -238,3 +254,20 @@ def test_challenge_is_balanced_deterministic_pending_and_not_gold():
     assert citation_challenge([]) == []
     with pytest.raises(ValueError):
         citation_challenge(records, 0)
+
+
+@pytest.mark.parametrize("suffix,expected", [(".", 1), (";\n", 1), (" weiteres Wort", 2)])
+def test_pdf_lex_terminal_delimiter_is_not_a_duplicate_parallel(suffix, expected):
+    body = "ka (Dagy)"
+    text = body + suffix
+    nodes = [dict(id="n0", kind="source_division", start=0,
+                  end=len(text), parent=None),
+             dict(id="n1", kind="lexical_parallel", start=0,
+                  end=len(body), parent="n0")]
+    structure = dict(visual_lines=[dict(text=text)], candidates=dict(
+        lexical_blocks=[dict(clauses=[dict(start=0, end=len(text),
+                                          source_text=text)], diagnostics=[])],
+        cross_references=[]))
+    enrich(nodes, text, structure=structure)
+    assert len([n for n in nodes if n["kind"] == "lexical_parallel"]) == expected
+    assert nodes[1]["end"] == len(body)

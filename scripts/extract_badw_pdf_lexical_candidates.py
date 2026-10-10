@@ -201,9 +201,9 @@ def _opening_prose_offset(lines, offsets, division, text):
               for i in range(division["start_line_index"], stop)
               for s in lines[i]["style_spans"]
               if s["family"] == "TGaramond" and s["style"] == "italic"]
-    tense = r"(?:pf\.|fut\.|prs\.|imp\.)"
+    tense = r"(?:pf\.|fut\.|prs\.|imp\.|res\.)"
     prefix = re.compile(r"\s*,?\s*(?:" + tense + r"(?:\s+und\s+" + tense
-                        + r")*\s+(?:zu\s+)?[↑↓]\s*(?:\d+\s+)?|resp\.\s+für\s+[↑↓]\s*|auch\s+)")
+                        + r")*\s+(?:(?:oder\s+Nebenform\s+)?(?:zu\s+)?[↑↓]\s*(?:\d+\s+)?)?|resp\.\s+für\s+[↑↓]\s*|auch\s+)")
     pos, consumed = a, False
     while (match := prefix.match(text, pos, b)):
         target = match.end()
@@ -282,6 +282,13 @@ def _definition_candidates(article: dict[str, Any], text: str,
                 variant = next((span for span in spans if span["family"] == "TGaramond"
                                 and span["style"] == "italic"), None)
                 trailing = line["text"][variant["end"]:] if variant else ""
+                if (variant and re.match(r"\s*Kurzf\.\s+für", line["text"])
+                        and not trailing.strip(" .;\t")):
+                    # The abbreviation is source apparatus, not the gloss.
+                    # A following regular-prose line may start the definition;
+                    # retain the apparatus elsewhere, and do not guess a
+                    # same-line boundary when further words follow the form.
+                    continue
                 if (not re.match(r"\s*auch\s+", line["text"])
                         or not re.match(r"\s+[A-ZÄÖÜ][a-zäöüß]", trailing)):
                     break
@@ -316,7 +323,7 @@ def _definition_candidates(article: dict[str, Any], text: str,
             # A wrapped reference target need not end on this source line.
             # Preserve the preceding German continuation without swallowing
             # the reference or inferring its target/ownership.
-            reference_opening = re.search(r"[,;]\s*vgl\.\s+[↑↓]", part)
+            reference_opening = re.search(r"[,;]\s*(?:(?:vgl\.|resp\.)\s*)?[↑↓]", part)
             if reference_opening and not reference_suffix:
                 preceding = part[:reference_opening.start()]
                 if (re.search(r"[A-Za-zÄÖÜäöüß]", preceding)

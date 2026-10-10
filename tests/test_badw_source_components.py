@@ -17,6 +17,16 @@ from parse_badw_pdf_articles import _candidates, _structure
     ('(Nachtr. s. v. ka, -kha)', ['(Nachtr. s. v. ka, -kha)']),
     ('(Nachtr. s.v. ka)', ['(Nachtr. s.v. ka)']),
     ('(SWTF s. v. skt. śraddhābala)', ['(SWTF s. v. skt. śraddhābala)']),
+    ('(Macrì 62)', ['(Macrì 62)']),
+    ('(Śrī 12)', ['(Śrī 12)']),
+    ('„(Macrì 62)“', []),
+    ('„Text [vgl. Titel (Toh 543)] weiter“', ['(Toh 543)']),
+    ('Text [vgl. Titel (Toh 543)]', ['(Toh 543)']),
+    ('„Text [Titel (Toh 543)] weiter“', []),
+    ('„Text [vgl. Titel (r. ka)] weiter“', []),
+    ('„Text [vgl. Titel (ungefähr 62)] weiter“', []),
+    ('(ungefähr 62)', []),
+    ('(PW)', []),
     ('„(Nachtr. s.v. ka)“', []),
     ('(auch s.v. ka)', []),
     ('(Nachtr. ohne Locator)', []),
@@ -30,8 +40,13 @@ def test_headword_locator_observation_does_not_assign_owner(text, expected):
 
 @pytest.mark.parametrize('text,expected', [
     ('EMMERICK 1967:\n120 f. vermutet', ['EMMERICK 1967:\n120 f.']),
-    ('LAUFER 1916: 464 Nr. 66', ['LAUFER 1916: 464']),
-    ('vgl. Laufer 1916: 464, Nr. 66.', ['Laufer 1916: 464']),
+    ('LAUFER 1916: 464 Nr. 66', ['LAUFER 1916: 464 Nr. 66']),
+    ('LAUFER 1916: 464\nNr. 64', ['LAUFER 1916: 464\nNr. 64']),
+    ('LAUFER 1916: 464 weitere Angaben', ['LAUFER 1916: 464']),
+    ('vgl. Laufer 1916: 464, Nr. 66.', ['Laufer 1916: 464, Nr. 66']),
+    ('(Kletter/Kriechbaum 2001: 141)', ['Kletter/Kriechbaum 2001: 141']),
+    ('LIN 2005: 310, Anm. 2015', ['LIN 2005: 310, Anm. 2015']),
+    ('„Kletter/Kriechbaum 2001: 141“', []),
     ('„EMMERICK 1967: 120“', []),
     ('EMMERICK 1967 vermutet', []),
     ('1967: 120', []),
@@ -49,7 +64,7 @@ def test_untagged_html_author_year_locator_is_preserved_as_unowned_candidate():
             '</div></div>').encode()
     article = parse_database_article(body, source_metadata=dict(delivery_type='database_article',
         valid_resource=True, final_url='https://wts-digital.badw.de/lemma/ka/1'))
-    assert [c['source_text'] for c in article['citations']] == ['Laufer 1916: 464']
+    assert [c['source_text'] for c in article['citations']] == ['Laufer 1916: 464, Nr. 66']
     assert article['citations'][0]['locator']['derivation'] == 'source_author_year_locator_candidate'
     assert article['citations'][0]['candidate_status'] == 'unresolved_source_citation_candidate'
 
@@ -80,7 +95,10 @@ def test_explicit_citation_does_not_expand_to_parenthesis_with_tibetan_target(ma
 
 
 @pytest.mark.parametrize('suffix,expected', [(': 1519.', 'Schuh 2012: 1519'),
-    (': 15–19 ff.', 'Schuh 2012: 15–19 ff.'), (' discusses this.', None)])
+    (': 15–19 ff.', 'Schuh 2012: 15–19 ff.'),
+    (': 464, Nr. 64.', 'Schuh 2012: 464, Nr. 64'),
+    (': 464\nNr. 64 Anm. 2.', 'Schuh 2012: 464\nNr. 64 Anm. 2'),
+    (' discusses this.', None)])
 def test_explicit_bibliography_locator_candidate(suffix, expected):
     body = ('<div class="text"><span class="lem">ka</span><div class="bedeutung">'
             'Definition vgl. <span class="bibl">Schuh 2012<span class="infotext">'
@@ -450,6 +468,41 @@ def test_html_comparison_reference_is_unresolved_and_source_bound():
     citation = next(c for c in parsed['citations'] if 'vgl.' in c['source_text'])
     assert citation['source_text'] == 'vgl. BHSD s.v. śa'
     assert citation['locator']['derivation'] == 'explicit_comparison_reference_candidate'
+
+
+@pytest.mark.parametrize('note,expected', [
+    ('[vgl. <skt>Titel</skt> (Toh 543)]', ['(Toh 543)']),
+    ('[<skt>Titel</skt> (Toh 543)]', []),
+    ('(Toh 543)', []),
+])
+def test_html_editorial_comparison_inside_translation(note, expected):
+    body = ('<div class="text"><span class="lem">ka</span>'
+        '<div class="beleg-all"><span class="deutsch">„Text '
+        + note + ' weiter“</span></div></div>').encode()
+    parsed = parse_database_article(body, source_metadata=dict(
+        delivery_type='database_article', valid_resource=True,
+        final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    candidates = [c for c in parsed['citations'] if 'Toh' in c['source_text']]
+    assert [c['source_text'] for c in candidates] == expected
+    for citation in candidates:
+        locator = citation['locator']
+        assert locator['derivation'] == 'source_parenthesis_candidate'
+
+
+def test_nonterminal_lexical_parenthesis_is_source_bound_without_ownership():
+    body = ('<div class="text"><span class="lem">ka</span>'
+        '<div class="lex">Lex. <tib>kha</tib> (Mim1 354), '
+        '<tib>ka</tib> ≅ <tib>kha</tib> „Wort“ '
+        '<span class="stelle">(brDa)</span>.</div></div>').encode()
+    parsed = parse_database_article(body, source_metadata=dict(
+        delivery_type='database_article', valid_resource=True,
+        final_url='https://wts-digital.badw.de/lemma/ka/1'))
+    citations = parsed['citations']
+    assert [c['source_text'] for c in citations].count('(Mim1 354)') == 1
+    candidate = next(c for c in citations if c['source_text'] == '(Mim1 354)')
+    assert candidate['locator']['derivation'] == 'source_parenthesis_candidate'
+    assert 'supports' not in candidate
+    assert [c['source_text'] for c in citations].count('(brDa)') == 1
 
 
 def test_boundary_diagnostic_only_trims_terminal_whitespace():

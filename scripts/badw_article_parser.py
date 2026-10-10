@@ -333,17 +333,28 @@ def parse_database_article(
         suffix = re.match(r":\s*\d+(?:[a-z])?(?:\s*[–-]\s*\d+(?:[a-z])?)?(?:\s+ff?\.)?", article_source_text[b:])
         if suffix:
             end = b + suffix.end()
+            # Reuse the complete author/year locator grammar. DOM priority
+            # must not truncate a following Nr./Anm. locator that the same
+            # source occurrence supplies. The tag is evidence, not an end
+            # boundary for the citation.
+            complete = [c for c in author_year_reference_candidates(
+                article_source_text, a, len(article_source_text))
+                if c["start"] == a and c["end"] >= end]
+            if complete:
+                end = max(c["end"] for c in complete)
             marked_citations.append(dict(start=a, end=end, source_text=article_source_text[a:end],
                 status="unresolved_source_citation_candidate",
                 evidence="explicit visible DOM bibl tag followed by numeric locator"))
     # Prefer explicit DOM evidence when the same span is also recognized by
     # the untagged author/year grammar.
     marked_citations.extend(author_year_reference_candidates(article_source_text, 0, len(article_source_text)))
-    # Untagged terminal source expressions in definitions remain candidates,
+    # Untagged source expressions in definitions and Lex. blocks remain candidates,
     # not authority resolutions or ownership assertions. Reuse the bounded
     # source grammar; prose, corrections and quoted parentheses fail closed.
     from badw_source_components import terminal_lexical_citation, located_parenthetical_citations
-    for element in find_all(article, class_name="bedeutung"):
+    citation_containers = (find_all(article, class_name="bedeutung")
+                           + find_all(article, tag="div", class_name="lex"))
+    for element in citation_containers:
         field = _located_field(element, fragments)
         a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
         if a is not None and b is not None:
@@ -354,6 +365,23 @@ def parse_database_article(
             for candidate in candidates:
                 if not any(c["start"] == candidate["start"] and c["end"] == candidate["end"] for c in marked_citations):
                     marked_citations.append(candidate)
+    # A translation can explicitly interrupt its quotation with an editorial
+    # [vgl. title (source locator)] note. Recover only that marked apparatus;
+    # ordinary parentheses inside quoted speech are not citation evidence.
+    for element in example_nodes:
+        translation = find_first(element, class_name="deutsch")
+        field = _located_field(translation, fragments)
+        if not field:
+            continue
+        a, b = field["locator"]["visible_text_start"], field["locator"]["visible_text_end"]
+        if a is None or b is None:
+            continue
+        for candidate in located_parenthetical_citations(article_source_text, a, b):
+            if not candidate["evidence"].startswith("bracketed explicit vgl."):
+                continue
+            if not any(c["start"] == candidate["start"] and c["end"] == candidate["end"]
+                       for c in marked_citations):
+                marked_citations.append(candidate)
     explicit_citations = _records_for_elements(find_all(article, class_name="stelle"), fragments)
     bibliography_candidates = [c for c in marked_citations
                                if c["evidence"].startswith("explicit visible DOM bibl")]

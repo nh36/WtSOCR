@@ -7,8 +7,36 @@ from resolve_badw_cross_references import EntryIndex
 import pytest
 
 
+def test_display_whitespace_and_explicit_blocks_do_not_change_source():
+    from badw_dictionary_entry_view import display_blocks
+    raw = [dict(text='tib\n  ', starts_types=['example'], types=['tibetan'], languages=['bo'], component_ids=['t']),
+           dict(text=' (metr.)\n “German” ', starts_types=[], types=[], languages=[], component_ids=[]),
+           dict(text='(Hev\n 2.4.46d);', starts_types=['citation'], types=['citation'], languages=[], component_ids=['c']),
+           dict(text='\n next', starts_types=['example'], types=[], languages=[], component_ids=[])]
+    before = copy.deepcopy(raw)
+    blocks = display_blocks(raw)
+    assert len(blocks) == 2
+    assert ''.join(s['text'] for s in blocks[0]['segments']) == 'tib (metr.) “German” (Hev 2.4.46d);'
+    assert raw == before
+
+
 def inspect(r):
     return view([r], EntryIndex(r['original_records']))[0]
+
+
+def test_source_marked_lex_label_has_separate_display_boundary():
+    r = record()
+    r['original_structure'] = {'lexical_blocks': [
+        {'locator': {'visible_text_start': 4}}]}
+    item = inspect(r)
+    item['review_text'] = 'for Lex. Viṣṇus'
+    result = entry_view(item)
+    assert ''.join(s['text'] for s in result['segments']) == 'for Lex. Viṣṇus'
+    assert result['display_blocks'][1]['kind'] == 'lexical_section'
+    assert ''.join(s['text'] for s in result['display_blocks'][1]['segments']).startswith('Lex.')
+    item['review_text'] = 'for bad. Viṣṇus'
+    with pytest.raises(ValueError, match='Lex. display boundary'):
+        entry_view(item)
 
 
 def test_literal_preservation_no_language_guessing_and_no_debug_payload():
@@ -61,6 +89,33 @@ def test_reviewed_smaller_passage_and_unresolved_ownership():
     assert not entry_view(inspect(r))['relationships']
     relation['status']='accepted';relation['to'][0]['end']=500
     with pytest.raises(ValueError,match='outside source'):entry_view(inspect(r))
+
+
+def test_source_bound_bibliography_does_not_require_reviewed_passage_ownership():
+    r = record()
+    r['nodes'].append(dict(id='citation', kind='citation', start=9, end=15,
+                           lexical_record_id='legacy'))
+    bibliography = {
+        (r['identity'], 'citation'): [dict(id='book:exact', label='Exact', descriptions=[])],
+        'legacy': [dict(id='book:other', label='Other', descriptions=[])],
+    }
+    result = entry_view(inspect(r), bibliography)
+    citation = result['citations'][0]
+    assert citation['source_form'] == 'Viṣṇus'
+    assert citation['accepted_authority_ids'] == ['book:exact']
+    assert citation['bibliography_status'] == 'resolved'
+    assert citation['ownership'] == 'unresolved'
+    assert result['relationships'] == []
+
+
+def test_nested_lexical_observations_do_not_fragment_display_parallel():
+    r = record()
+    r['nodes'] = [dict(id='outer', kind='lexical_parallel', start=0, end=15),
+                  dict(id='inner', kind='lexical_parallel', start=9, end=15)]
+    result = entry_view(inspect(r))
+    assert len(result['display_blocks']) == 1
+    assert len(result['components']) == 2
+    assert ''.join(s['text'] for s in result['segments']) == 'für skt. Viṣṇus'
 
 
 @pytest.mark.parametrize('damage',['source','target','empty','literal'])
