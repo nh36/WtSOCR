@@ -1,5 +1,6 @@
 """Synthetic reader contract checks: rendering never supplies scholarship."""
 import copy
+import hashlib
 from test_badw_dictionary_prototype import record
 from build_badw_dictionary_prototype import view
 from badw_dictionary_entry_view import entry_view
@@ -30,11 +31,13 @@ def test_source_marked_lex_label_has_separate_display_boundary():
         {'locator': {'visible_text_start': 4}}]}
     item = inspect(r)
     item['review_text'] = 'for Lex. Viṣṇus'
+    item['projection']['review_text_sha256'] = hashlib.sha256(item['review_text'].encode()).hexdigest()
     result = entry_view(item)
     assert ''.join(s['text'] for s in result['segments']) == 'for Lex. Viṣṇus'
     assert result['display_blocks'][1]['kind'] == 'lexical_section'
     assert ''.join(s['text'] for s in result['display_blocks'][1]['segments']).startswith('Lex.')
     item['review_text'] = 'for bad. Viṣṇus'
+    item['projection']['review_text_sha256'] = hashlib.sha256(item['review_text'].encode()).hexdigest()
     with pytest.raises(ValueError, match='Lex. display boundary'):
         entry_view(item)
 

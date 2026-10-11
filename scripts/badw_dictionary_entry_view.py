@@ -1,6 +1,6 @@
 """Read-only reader contract, derived from validated structural projections.
 
-No language, ownership, bibliography or target inference is performed here.
+Source-bound semantic derivation is delegated to the hierarchy module.
 Offsets and parser payloads live in the separate inspection export. Components
 retain source-bound identities; missing derived forms are explicitly null.
 """
@@ -95,6 +95,19 @@ def entry_view(inspected, bibliography=None):
                               bibliography_status="resolved" if authorities else "unresolved",
                               accepted_authority_ids=sorted({a['id'] for a in authorities}),
                               ownership="unresolved"))
+    from badw_semantic_hierarchy import hierarchy
+    semantic = hierarchy(p, text)
+    for owner in semantic['citation_ownership']:
+        if not owner.get('passage_id'):
+            continue
+        component = by_node[owner['citation_node_id']]['id']
+        for citation in citations:
+            if citation['component_id'] == component:
+                citation.update(ownership='derived_source_structure',
+                                supports=[owner['passage_id']],
+                                sense_node_id=owner['sense_node_id'],
+                                container_ownership=owner['ownership'],
+                                ownership_evidence=owner['evidence'])
     relationships = []
     for r in p.get("semantic_relationships", []):
         # These are already accepted, source-bound projection relationships.
@@ -150,7 +163,9 @@ def entry_view(inspected, bibliography=None):
                 raise ValueError('Lex. display boundary differs from source label')
             lexical_starts.add(start)
     boundaries = sorted({0, len(text)} | lexical_starts |
-                        {v for s, e, _ in components for v in (s, e)})
+                        {v for s, e, _ in components for v in (s, e)} |
+                        {v for x in semantic['effective_language_spans'] for v in (x['start'], x['end'])} |
+                        {v for x in semantic['lex_items'] for v in (x['start'], x['end'])})
     # Nested lexical observations (a quoted equivalent inside a full parallel)
     # retain their identities, but do not start additional reader paragraphs.
     # Punctuation-only observations likewise are not independent parallels.
@@ -167,7 +182,11 @@ def entry_view(inspected, bibliography=None):
         starts_types = {c['type'] for s, _, c in components if s == start}
         if start not in lexical_display_starts:
             starts_types.discard('lexical_parallel')
-        segments.append(dict(text=text[start:end], component_ids=[c["id"] for c in active],
+        effective = [x for x in semantic['effective_language_spans'] if x['start'] <= start < end <= x['end']]
+        segments.append(dict(semantic_item_ids=[x['id'] for x in semantic['lex_items'] if x['start'] <= start < end <= x['end']],
+                             passage_ids=[x['id'] for x in semantic['citable_passages'] if x['start'] <= start < end <= x['end']],
+                             effective_languages=sorted({x['language'] for x in effective}),
+                             text=text[start:end], component_ids=[c["id"] for c in active],
                              starts_types=sorted(starts_types |
                                                  ({'lexical_section'} if start in lexical_starts else set())),
                              types=sorted({c["type"] for c in active}),
@@ -177,11 +196,26 @@ def entry_view(inspected, bibliography=None):
         resolution = ref.get("canonical_resolution", {})
         node = next((n for n in p["nodes"] if n.get("lexical_record_id") == ref.get("id")
                      and ref.get("id") is not None), None)
+        if node is None and p['source_kind'] == 'pdf':
+            candidate = ref.get('source_candidate')
+            if candidate is None and ref.get('source_spans'):
+                candidate = ref['source_spans'][0]
+            if candidate:
+                matches = [n for n in p['nodes'] if n['kind'] == 'cross_reference'
+                           and (n['start'], n['end']) ==
+                           (candidate.get('visual_start'), candidate.get('visual_end'))]
+                if len(matches) == 1:
+                    node = matches[0]
         references.append(dict(component_id=by_node[node["id"]]["id"] if node else None,
                                marker=ref.get("marker"), wording=ref.get("target_label", ""),
                                source_url=ref.get("target_url"),
                                target_entry_id=resolution.get("target_entry_id"),
-                               status=resolution.get("status", "unresolved")))
+                               target_lexical_entity=resolution.get("target_lexical_entity"),
+                               status=resolution.get("status", "unresolved"),
+                               candidate_entry_ids=resolution.get("candidate_entry_ids", []),
+                               resolution_evidence=resolution,
+                               source_binding=dict(identity=p['identity'], text_sha256=p['review_text_sha256']),
+                               source_span=dict(start=node['start'], end=node['end']) if node else None))
     return dict(contract_version=VERSION, id=entry["id"],
                 headword=entry["headword"], homonym=entry.get("homonym"),
                 headword_forms=[dict(id=identifier(entry["id"],
@@ -197,4 +231,4 @@ def entry_view(inspected, bibliography=None):
                 components=[c for _, _, c in sorted(components, key=lambda x: (x[0], x[1], x[2]["id"]))],
                 segments=segments, display_blocks=display_blocks(segments),
                 citations=citations, cross_references=references,
-                relationships=relationships, inspection_id=p["identity"])
+                relationships=relationships, semantic_hierarchy=semantic, inspection_id=p["identity"])

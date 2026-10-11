@@ -536,19 +536,37 @@ def parse_database_article(
         anchor = anchors[0]
         target_url = quote_iri(urljoin(final_url, anchor.attrs["href"]))
         target_lemma, target_homonym = _path_identity(target_url)
-        for marker in markers:
-            cross_references.append(
-                {
-                    "locator": link_field.get("locator"),
-                    "marker": marker,
-                    "source_text": container_text,
-                    "target_homonym": target_homonym,
-                    "target_lemma": target_lemma,
-                    "target_text": compact_text(exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
-                                                           excluded_tags=HIDDEN_TAGS)),
-                    "target_url": target_url,
-                }
-            )
+        marker_positions = [i for i, character in enumerate(container_text) if character in "↑↓"]
+        anchor_locator = _located_field(anchor, fragments)["locator"]
+        origin = link_field["locator"]["visible_text_start"]
+        for index, position in enumerate(marker_positions):
+            # Nested link wrappers observe the same arrow. The innermost
+            # wrapper owns it; retain the outer DOM as a diagnostic only.
+            descendants = [f for child in find_all(link_container, class_name="link")
+                           if child is not link_container
+                           if (f := _located_field(child, fragments))
+                           and f["locator"]["visible_text_start"] is not None]
+            if any(f["locator"]["visible_text_start"] <= origin + position <
+                   f["locator"]["visible_text_end"] for f in descendants):
+                reference_diagnostics.append({**link_field,
+                    "reason": "arrow owned by nested link wrapper",
+                    "marker_start": origin + position})
+                continue
+            end = marker_positions[index + 1] if index + 1 < len(marker_positions) else len(container_text)
+            locator = dict(link_field["locator"], visible_text_start=origin + position,
+                           visible_text_end=origin + end)
+            owns_anchor = (origin + position <= anchor_locator["visible_text_start"] <
+                           anchor_locator["visible_text_end"] <= origin + end)
+            cross_references.append({
+                "locator": locator, "container_locator": link_field["locator"],
+                "marker": container_text[position], "source_text": container_text[position:end],
+                "target_homonym": target_homonym if owns_anchor else None,
+                "target_lemma": target_lemma if owns_anchor else None,
+                "target_text": compact_text(exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
+                               excluded_tags=HIDDEN_TAGS)) if owns_anchor else "",
+                "target_url": target_url if owns_anchor else None,
+                "target_status": "explicit_anchor" if owns_anchor else "unresolved_arrow_segment",
+            })
 
     example_index = {dom_path(node): index for index, node in enumerate(example_nodes)}
     lexical_index = {dom_path(node): index for index, node in enumerate(lexical_nodes)}

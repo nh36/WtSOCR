@@ -148,7 +148,7 @@ def main():
                     entry=by_identity.get(p['identity']) or dict(id=p['identity'],headword={'loc':article['loc_headword'],'tibetan':article.get('tibetan_headword')},homonym=article.get('homonym'))
                     references=[]
                     for j,c in enumerate(article['candidates'].get('cross_references',[])):
-                        references.append(dict(record_type='cross_reference',id=p['identity']+':xref:'+str(j),marker=c.get('marker'),target_label=c.get('target_label',c.get('text','')),source_spans=[c]))
+                        references.append(dict(record_type='cross_reference',id=p['identity']+':xref:'+str(j),marker=c.get('marker'),target_label=c.get('target_label_candidate',''),source_candidate=c,source_spans=[c]))
                 nodes=pred['nodes'];citations=[n for n in nodes if n['kind']=='citation'];bibliography={};accepted=0
                 phase='bibliography'
                 for n in citations:
@@ -163,7 +163,7 @@ def main():
                     else:emit('citation_identity_unresolved',p,[[a,b]],dict(status=result['status']))
                 resolved_refs=[];refstats=collections.Counter()
                 for r in references:
-                    rr=index.resolve(r,reviewed_target=refs_review.get(r['id']));resolved_refs.append(rr);status=rr['canonical_resolution']['status'];refstats[status]+=1
+                    rr=(index.resolve_source_candidate(r) if kind=='pdf' and r['id'] not in refs_review else index.resolve(r,reviewed_target=refs_review.get(r['id'])));resolved_refs.append(rr);status=rr['canonical_resolution']['status'];refstats[status]+=1
                     if status!='resolved':
                         candidates=sorted(index.labels.get(r.get('target_label',''),set()))
                         reason=('explicit_url_absent_from_acquired_index' if r.get('target_url') else 'printed_target_requires_review')

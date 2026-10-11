@@ -1611,58 +1611,78 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     reconciliation = json.loads((ROOT / "data/bibliography_apparatus_reconciliation.json").read_text(encoding="utf-8"))
     variant_categories = "; ".join(f"{key}: {value}" for key, value in reconciliation["variants_by_category"].items())
 
-    corpus_summary = json.loads((ROOT / "data/badw_corpus_structure/summary.json").read_text(encoding="utf-8"))
+    corpus_summary = json.loads((ROOT / "data/badw_semantic_hierarchy/summary.json").read_text(encoding="utf-8"))
     corpus_totals = corpus_summary["totals"]
-    corpus_gaps = json.loads((ROOT / "data/badw_corpus_structure/accounting.json").read_text(encoding="utf-8"))["gaps"]
+    corpus_gaps = json.loads((ROOT / "data/badw_semantic_hierarchy/accounting.json").read_text(encoding="utf-8"))["gaps"]
     corpus_section = f"""## Corpus Structural Health
 
-The pinned acquired-corpus replay projects **29,875 of 29,877 online witnesses
-(99.9933%)**: 18,035/18,037 HTML and 11,840/11,840 PDF. Two HTML duplicate
-span exceptions remain. This measures pipeline completion, not scholarly accuracy.
-The four registered historical PDFs additionally produce **24,528 legacy entry
-groups**, with 103 groups exceeding 150 lines. A registered-print canonical
-adapter is still needed; legacy zoning is not a canonical reader run.
+The semantic-hierarchy replay projects **29,877/29,877 acquired online witnesses**
+(18,037 HTML; 11,840 PDF), compared with 29,875 at `d99f6c51c2`.
+The nested-arrow/link construction causing both duplicate-span failures is fixed;
+fail-closed span validation remains enabled. Reader integrity checks pass on all
+witnesses with zero accepted bibliography identity loss. This certifies data
+projection, not browser rendering or independently reviewed scholarly accuracy.
+The four registered historical PDFs retain 24,528 legacy entry groups; their
+canonical adapter remains separate future work.
 
-Of {corpus_totals['alphabetic_characters']:,} alphabetic source characters,
-{corpus_totals['unassigned_alphabetic']:,} are outside leaf structural coverage.
-After separating layout and labels, {corpus_gaps['lexical_or_header_review_alphabetic']:,}
-alphabetic characters (0.70%) remain in {corpus_gaps['lexical_or_header_review_runs']:,}
-lexical/header review gaps. These include aliases and verb headers; they are not
-all demonstrated omissions. Source spans and hashes remain unchanged.
+Source-bound Lex. blocks, typed items and exact citable passages now augment the
+observation graph without rewriting it. **21,876 Lex. blocks contain 39,688 items**:
+13,242 have explicit sense-envelope ownership and 26,446 explicit entry-envelope
+ownership. All 8,190 formerly flat HTML Lex. occurrences now have source-defined
+sense ownership. Canonical items have zero duplicate or overlapping spans; the
+563 PDF block/item double representations remain preserved as observations.
+Source-defined grouping and malformed-delimiter diagnostics are retained.
 
-The run extracts **109,087 citations**, retaining **108,764 accepted bibliography
-identities**; 323 identities remain unresolved. Only **13 citation owners** have
-accepted reviewed relationships; **109,074 ownership relationships remain
-unestablished**. Containment/proximity is not accepted semantic ownership.
-HTML xrefs: **4,649 resolved / 629 unresolved**. PDF xrefs: **3,054 unresolved**
-(2,176 unique exact-label candidates, 120 ambiguous, 758 without exact-label
-candidates); all 3,054 also lack reader component bindings. Reader data projection
-checks pass on 29,875 witnesses with no accepted bibliography identity loss.
-This does not certify browser rendering, sense ordering or semantic boundaries.
+**{corpus_totals['citations']:,} citations** retain
+**{corpus_totals['accepted_identity_citations']:,} accepted bibliography identities**
+(323 unresolved). **81,853 have exact passage owners**, derived only from bounded
+Lex. clauses or explicit HTML attestation associations; 13 additional reviewed
+component owners remain distinct. 36,777 citations have sense ownership, 45,088
+entry-level ownership and **27,224 remain unresolved**. These are source-structure
+claims, not proximity guesses; PDF example candidates remain unowned.
 
-The fresh, source-inspected 30-entry holdout (14 HTML, 16 PDF) finds **12 local
-defects, 17 without observed local segmentation defects and one unresolved target
-qualifier**. It was selected before review and was not used to tune the parser.
-Further arbitrary review batches have diminishing returns; retain stratified
-holdouts and targeted source review.
+HTML xrefs: **4,649 resolved / 633 unresolved**. PDF xrefs: **2,176 resolved /
+120 ambiguous / 758 without exact candidates**. All 3,054 PDF occurrences now
+retain stable source-node bindings in the reader. Resolution requires one exact
+source target and one indexed witness, preserving homonyms, candidate sets,
+literal arrows and witness/entity identities separately. An absent exact target
+is not proof that the target lies outside the acquired corpus.
 
-The ranked next-work families are:
+Explicit Sanskrit fields now override enclosing Tibetan language observations in
+the derived language partition: **zero effective conflicts**, with all **384 raw
+conflict indicators retained**. **601 explicit-language indicators remain untyped**.
+No broad character-shape language classifier was introduced.
 
-1. Lex. sense envelopes and exact citable-passage ownership (parser/model).
-2. PDF cross-reference identifier/target binding (adapter/reader).
-3. Contextual Sanskrit/Tibetan language typing (parser/model).
-4. Registered historical-print canonical adapter (model/legacy zoning).
-5. Alias/verb/header accounting and PDF decoding residue (parser/model/source).
-6. Inline citation grammar and explicit uncertain identities (parser/scholarship).
-7. Duplicate-span exceptions and one rejected semantic contract (integration).
-8. Definition/numbered-sense boundaries (parser/source ambiguity).
+Structural accounting on the 29,875 common witnesses is unchanged: 131,061
+unassigned alphabetic characters and 28,910 gap runs. Including the two newly
+projected entries, {corpus_totals['unassigned_alphabetic']:,} alphabetic characters
+remain outside leaf coverage; {corpus_gaps['lexical_or_header_review_alphabetic']:,}
+of them occur in {corpus_gaps['lexical_or_header_review_runs']:,} lexical/header
+review gaps. Existing crossing components (1,063), later-definition structure
+warnings (1,289), empty components (2,205), definition-boundary cues (74) and empty
+numbered senses (3) are unchanged on common witnesses. Improved hierarchy has
+not swallowed gaps to improve coverage.
 
-**Next engineering tranche: typed Lex. items within sense envelopes, with exact
-citable-passage ownership contracts.** Bibliography reconciliation remains closed.
-No parser rule, corrected release text or `release/current` artifact changed.
-See [the complete findings and reproduction recipe](../data/badw_corpus_structure/README.md),
-`priorities.tsv`, source-bound `anomalies.jsonl.gz`, and reviewed holdout decisions
-in `data/badw_corpus_structure/`. Candidate family counts are not confirmed defect counts.
+The frozen original 30-entry holdout passes reader/source/bibliography replay;
+its historical manual findings remain available. A second fresh stratified
+30-entry holdout (14 HTML; 16 PDF), excluded from prior review and rule development,
+was inspected after implementation, including all PDF facsimiles and continuation
+pages: **25 without observed local defects, four residual defects and one unresolved
+qualifier**. Three defects concern untyped Sanskrit; one concerns a stray PDF layout
+numeral. No false ownership, over-segmentation, incorrect resolved xref or language
+overreach was observed in this small sample. It is not an accuracy estimate.
+One PDF scholarly overlay remains rejected specifically for stale source-view
+binding; its literal evidence and rejection are preserved.
+
+**Next engineering tranche: contextual Sanskrit typing from explicit source
+relations and typography**, retaining conservative ownership and ambiguity.
+Then address historical-print adaptation and residual header/accounting families.
+Random-entry review has diminishing returns; use fresh holdouts and family-specific
+source review. Bibliography reconciliation remains closed; `release/current` is
+unchanged. See [contracts, limitations and replay/query commands](../data/badw_semantic_hierarchy/README.md),
+`comparison.json`, source-bound anomaly records and both holdout replay/review files
+in `data/badw_semantic_hierarchy/`. The derived query database stays in ignored
+`work/` storage and is reproducible from pinned inputs.
 
 """
 

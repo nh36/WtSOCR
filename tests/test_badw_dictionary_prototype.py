@@ -57,7 +57,7 @@ def test_pdf_uses_exact_index_identity_and_keeps_printed_candidates_unresolved()
     result = view([r], EntryIndex([entry]))[0]
     assert result['entry'] == entry
     assert result['review_text'] == text
-    assert 'canonical_resolution' not in result['cross_references'][0]
+    assert result['cross_references'][0]['canonical_resolution']['status'] == 'unresolved'
     assert r == before
     with pytest.raises(ValueError, match='actual entry'):
         view([r], EntryIndex([]))

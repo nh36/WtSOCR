@@ -297,8 +297,8 @@ def extract_article(
             {
                 "entry_id": entry_id,
                 "marker": marker,
-                "resolution_status": "resolved",
-                "target_url": str(reference["target_url"]),
+                "resolution_status": "resolved" if reference.get("target_url") else "unresolved",
+                "target_url": reference.get("target_url"),
             }
         )
         if isinstance(reference.get("target_text"), str):

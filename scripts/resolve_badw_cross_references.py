@@ -42,6 +42,58 @@ class EntryIndex:
                              ensure_ascii=False, sort_keys=True, separators=(",", ":"))
         self.sha256 = hashlib.sha256(encoded.encode()).hexdigest()
 
+    def resolve_source_candidate(self, occurrence):
+        """Derived exact printed label, preserving witness/homonym ambiguity.
+
+        Requires the parser's single typographic target to reproduce the exact
+        label. No normalization or collapsing homonyms / manifestations.
+        """
+        candidate = occurrence.get('source_candidate', {})
+        label = occurrence.get('target_label', '')
+        targets = candidate.get('target_candidates', [])
+        valid = len(targets) == 1 and targets[0].get('source_text') == label
+        ids = sorted(self.labels.get(label, set())) if valid else []
+        result = copy.deepcopy(occurrence)
+        result['canonical_resolution'] = dict(
+            method_version='badw-cross-reference-exact-v2',
+            method='derived_exact_single_typographic_target' if valid else 'unresolved_target_extent',
+            entry_index_sha256=self.sha256, candidate_entry_ids=ids,
+            status='resolved' if len(ids) == 1 else 'ambiguous' if ids else 'unresolved',
+            evidence_status='derived_source_structure')
+        if len(ids) == 1:
+            result['canonical_resolution']['target_entry_id'] = ids[0]
+            result['canonical_resolution']['target_lexical_entity'] = self.target_identity(ids[0])
+        return result
+
+    def target_identity(self, entry_id):
+        """Exact index identity, with witness membership kept separate."""
+        entry = self.records[entry_id]
+        label = entry['headword']['loc']
+        homonym = str(entry.get('homonym') or '')
+        key = json.dumps([label, homonym], ensure_ascii=False)
+        return dict(id='lexical:' + hashlib.sha256(key.encode()).hexdigest(),
+                    headword=label, homonym=homonym,
+                    evidence='exact actual-entry headword and homonym index key',
+                    witness_entry_ids=sorted(self.identities[(label, homonym)]))
+
+    def resolve_manifestation(self, occurrence):
+        result = self.resolve(occurrence)
+        resolution = result['canonical_resolution']
+        if resolution['status'] == 'unresolved' and occurrence.get('target_url'):
+            label, homonym = occurrence.get('target_label'), occurrence.get('target_homonym')
+            # The explicit anchor supplies the exact headword and homonym.
+            # An absent URL is preserved; a different witness can supply the target.
+            if label and homonym is not None:
+                candidates = sorted(self.identities.get((label, str(homonym)), set()))
+                if candidates:
+                    resolution.update(method='exact_anchor_identity_other_manifestation',
+                                      candidate_entry_ids=candidates,
+                                      status='resolved' if len(candidates)==1 else 'ambiguous')
+                    if len(candidates)==1:resolution['target_entry_id']=candidates[0]
+        target = resolution.get('target_entry_id')
+        if target:resolution['target_lexical_entity']=self.target_identity(target)
+        return result
+
     def resolve(self, occurrence, *, reviewed_target=None):
         """Return a copy annotated with exact-index resolution.
 

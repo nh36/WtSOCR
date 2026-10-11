@@ -1,0 +1,111 @@
+{
+  "anomaly_comparison": {
+    "ambiguous_reference_marker": {
+      "baseline": 82,
+      "current": 82
+    },
+    "citation_identity_unresolved": {
+      "baseline": 323,
+      "current": 323
+    },
+    "citation_owner_unresolved": {
+      "baseline": 109074,
+      "current": 27224
+    },
+    "crossing_components": {
+      "baseline": 1063,
+      "current": 1063
+    },
+    "definition_boundary_cue": {
+      "baseline": 74,
+      "current": 74
+    },
+    "definition_contains_later_structure": {
+      "baseline": 1289,
+      "current": 1289
+    },
+    "empty_component": {
+      "baseline": 2205,
+      "current": 2205
+    },
+    "empty_numbered_sense": {
+      "baseline": 3,
+      "current": 3
+    },
+    "ignored_citation_cue": {
+      "baseline": 792,
+      "current": 792
+    },
+    "language_conflict": {
+      "baseline": 384,
+      "current": 384
+    },
+    "language_evidence_untyped": {
+      "baseline": 601,
+      "current": 601
+    },
+    "lex_clause_untyped": {
+      "baseline": 6,
+      "current": 6
+    },
+    "lex_outside_numbered_sense": {
+      "baseline": 8190,
+      "current": 0
+    },
+    "lexical_gap": {
+      "baseline": 28910,
+      "current": 28910
+    },
+    "long_component": {
+      "baseline": 2,
+      "current": 2
+    },
+    "overlapping_lex_items": {
+      "baseline": 564,
+      "current": 0
+    },
+    "pdf_unassigned_candidate": {
+      "baseline": 144,
+      "current": 144
+    },
+    "xref_component_missing": {
+      "baseline": 3054,
+      "current": 0
+    },
+    "xref_unresolved": {
+      "baseline": 3683,
+      "current": 1507
+    }
+  },
+  "canonical_lex_duplicate_spans": 0,
+  "canonical_lex_overlapping_pairs": 0,
+  "common_accounting": {
+    "lexical_gap_runs": {
+      "baseline": 28910,
+      "current": 28910
+    },
+    "unassigned_alphabetic": {
+      "baseline": 131061,
+      "current": 131061
+    },
+    "unassigned_characters": {
+      "baseline": 2203090,
+      "current": 2203090
+    }
+  },
+  "common_entries": 29875,
+  "foreign_key_violations": [],
+  "frozen_holdout_reader_passes": 30,
+  "newly_projected": [
+    "badw:https://wts-digital.badw.de/lemma/ka%20chen/1",
+    "badw:https://wts-digital.badw.de/lemma/kos%20s%C3%B1u%E1%B9%85/1"
+  ],
+  "script_sha256": "b93f97e9032c343a20d2de9560679e608dd8dc77595700c80f5fb78f8e45fcaa",
+  "store_rows": {
+    "citation": 109090,
+    "citation_passage": 81853,
+    "lex_item": 39688,
+    "passage": 82052,
+    "xref": 8336
+  }
+}

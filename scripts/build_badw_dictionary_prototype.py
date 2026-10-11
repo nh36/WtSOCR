@@ -179,14 +179,14 @@ def view(records, index):
             if r["record_type"] == "cross_reference":
                 # Reuse the existing canonical resolver; never resolve printed
                 # targets by approximate spelling in a presentation adapter.
-                references.append(r if "canonical_resolution" in r else index.resolve(r))
+                references.append(r if "canonical_resolution" in r else index.resolve_manifestation(r))
         if record["source_kind"] == "pdf":
-            # Display existing printed candidates, not new resolver claims.
-            # A source-bound printed-target review is required for linking.
+            # Exact source target candidates retain their spans through reader binding.
+            # Unique literal labels resolve; homonyms remain ambiguous.
             for candidate in record["original_structure"]["candidates"]["cross_references"]:
-                references.append(dict(marker=candidate["marker"],
+                references.append(index.resolve_source_candidate(dict(marker=candidate["marker"],
                                        target_label=candidate.get("target_label_candidate", ""),
-                                       source_candidate=candidate))
+                                       source_candidate=candidate)))
         result.append(dict(projection=record, entry=entries[0], review_text=text,
                            cross_references=references))
     return sorted(result, key=lambda r: (r["entry"]["headword"].get("loc", ""),
