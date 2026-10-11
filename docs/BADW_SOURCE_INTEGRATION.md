@@ -254,6 +254,46 @@ The census adds no canonical work, edition or siglum and changes no citation lin
 Existing reviewed print occurrences, external identifications and publication
 relations remain in the established bibliography backend.
 
+The record ingestion checkpoint is in `data/bibliography_apparatus_records.jsonl`.
+It contains separate facsimile transcriptions and exact OCR source spans, including
+cross-page records, printed foliation, inherited authors, edition statements,
+field variants and explicitly reviewed online crosswalks. Layout line wraps and
+purely typographical line-end divisions are joined in the facsimile transcription;
+raw OCR is retained independently. Small capitals are represented by capitals.
+Transcription-only records have no authority identity. This includes composite
+records awaiting separate relationships and all secondary memorial/biography
+bibliographies. Their presence in a bibliography never creates a citation target.
+
+Import this ledger into the existing bibliography backend by adding
+`--apparatus-records data/bibliography_apparatus_records.jsonl` to the established
+`scripts/badw_bibliography.py` build command, with `--print-registry
+ data/source_pdfs.tsv`. `--apparatus-zones` defaults to the checked-in inventory.
+The importer checks registered PDF/OCR hashes, zone membership, exact OCR offsets,
+facsimile bounds and the identity/text/hash of every online crosswalk. It rejects
+unreviewed or stale identities and retains transcription-only records with a null
+authority, without adding them to citation resolution. Existing six reviewed print
+occurrences remain separate from these new occurrence records. Corpus-wide absence,
+first-introduction and complete reconciliation claims still require the remaining
+editorial review and inventory closure.
+
+The existing authority SQLite database now exposes both manifestations through
+`authority_source_occurrence`; it is not a second authority system. For example:
+
+```sql
+-- All source occurrences of an existing authority, retaining every repetition.
+SELECT id, manifestation, source_sha256, record_json
+FROM authority_source_occurrence WHERE authority_id = :authority_id;
+-- Transcribed records for which no canonical identity has been asserted.
+SELECT id, json_extract(record_json, '$.candidate.zone_id') AS zone,
+       json_extract(record_json, '$.verified_transcription') AS reading
+FROM print_occurrence WHERE authority_id IS NULL;
+-- Literal print/online differences are occurrence evidence, not corrections.
+SELECT p.id, p.online_occurrence_id,
+       json_extract(p.record_json, '$.candidate.variants') AS differences
+FROM print_occurrence p
+WHERE json_array_length(json_extract(p.record_json, '$.candidate.variants')) > 0;
+```
+
 The SQLite census supports direct evidence queries, for example:
 
 ```sql

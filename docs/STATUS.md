@@ -44,11 +44,26 @@ remain under ignored `work/`. See `docs/BADW_SOURCE_INTEGRATION.md` for the capt
 contract and queries. 7 explicit completion obligations remain in
 `data/bibliography_apparatus_questions.tsv`.
 
+The checked-in `data/bibliography_apparatus_records.jsonl` now retains
+2,243 facsimile-reviewed source occurrences from 29 zones:
+2,153 identity-reviewed occurrences and
+90 transcription-only occurrences.
+2,045 occurrences have explicit, hash-pinned online crosswalks;
+373 retain field variations. These are occurrence counts, not
+complete canonical corpus totals or counts of probable source errors.
+Multi-page OCR spans and separate facsimile readings preserve continuation;
+memorial and biography records cannot become citation authorities through this import.
+The existing bibliography builder imports these records with `--apparatus-records`.
+Editorial/front-matter review, composite authority relationships, inventory closure,
+and the complete historical reconciliation still need completion. Raw OCR for
+unassigned material remains in the census; this checkpoint does not claim lossless
+record-level coverage of every zone.
+
 Canonical corpus counts, duplicate counts, print-only/online-only classifications,
 first-occurrence findings and probable omissions remain unestablished. Whether WTS
 ever defines `Mim1`/`Mim2` remains unresolved pending exhaustive review. Existing
 external identifications and the 382 reviewed citation links remain unchanged.
-No parser expansion or `release/current` change belongs to this apparatus census.
+The ingestion checkpoint changes no parser behavior or `release/current` files.
 
 ## Volume Status
 

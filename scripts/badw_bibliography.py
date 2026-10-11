@@ -221,7 +221,7 @@ def export_bibtex(rows: list[dict]) -> str:
         if reviewed:
             fields["annotation"] = "Online source metadata reviewed; print compatibility unverified"
         if row.get("scope") == "published_print":
-            fields["annotation"] = "Visually reviewed printed publication identity; citation edition and locator unverified"
+            fields["annotation"] = f"Visually reviewed printed {row['kind']} identity; citation edition and locator unverified"
         if row.get("scope") == "reviewed_external":
             fields["annotation"] = f"Reviewed external {row['kind']}; not a WTS bibliography row; citation edition and locator unverified"
         entries.append("@" + reviewed.get("entry_type", "misc") + "{" + row["occurrence_id"] + ",\n" +
@@ -573,7 +573,9 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
           print_reviews: Path | None = None, alias_reviews: Path | None = None,
           citation_reviews: Path | None = None, publication_reviews: Path | None = None,
           external_publications: Path | None = None,
-          citation_claims: Path | None = None) -> dict:
+          citation_claims: Path | None = None,
+          apparatus_records: Path | None = None,
+          apparatus_zones: Path | None = None) -> dict:
     if output.exists():
         raise ValueError("use a new output directory; snapshots are immutable")
     if "work" not in output.resolve().parts:
@@ -584,6 +586,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         response = client.fetch(RequestSpec(BASE + page), offline=True)
         rows.extend(parse_page(response.body, dict(response.metadata), kind))
         observations.append(dict(response.metadata))
+    source_observations = observations
     apply_metadata_reviews(rows, metadata_reviews)
     authorities, relations = authority_graph(rows)
     from badw_bibliography_external import load_publications
@@ -599,7 +602,19 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
             raise ValueError("print import requires candidates, reviews and source registry")
         from badw_print_bibliography import reviewed_occurrences
         printed = reviewed_occurrences(print_candidates, print_reviews, registry, rows)
-    print_authorities = [r["authority"] for r in printed if r.get("authority")]
+    if apparatus_records:
+        if not (registry and apparatus_zones):
+            raise ValueError("apparatus import requires registry and zones")
+        from badw_print_bibliography import reviewed_apparatus_occurrences
+        printed.extend(reviewed_apparatus_occurrences(apparatus_records, registry, apparatus_zones, rows))
+    print_by_id = {}
+    for record in printed:
+        authority = record.get("authority")
+        if authority:
+            previous = print_by_id.setdefault(authority["id"], authority)
+            if previous != authority:
+                raise ValueError("conflicting reviewed print authority")
+    print_authorities = list(print_by_id.values())
     if len({a["id"] for a in authorities + print_authorities}) != len(authorities + print_authorities):
         raise ValueError("duplicate bibliography authority")
     authorities.extend(print_authorities)
@@ -608,7 +623,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     claims = CitationClaims(citation_claims, cache)
     from badw_bibliography_variants import publication_relations
     variants = publication_relations(publication_reviews, authorities, rows, printed)
-    print_rows = [{"id": r["authority_id"], "occurrence_id": r["id"], "kind": "publication",
+    print_rows = [{"id": r["authority_id"], "occurrence_id": r["id"], "kind": r["authority"]["kind"],
                    "label": r["authority"]["label"], "year": r["authority"]["year"], "scope": "published_print",
                    "text": r["verified_transcription"], "source_sha256": r["candidate"]["pdf_sha256"],
                    "source_url": "urn:sha256:" + r["candidate"]["pdf_sha256"]}
@@ -678,7 +693,7 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
     if db.execute("PRAGMA foreign_key_check").fetchall():
         raise ValueError("authority foreign key failure")
     db.close()
-    summary = {"contract_version": VERSION, "sources": observations,
+    summary = {"contract_version": VERSION, "sources": source_observations,
                "authority_counts": dict(Counter(a["kind"] for a in authorities)),
                "source_rows": len(rows), "relations": len(relations),
                "reviewed_metadata_records": sum("reviewed_metadata" in r for r in rows),
@@ -695,6 +710,11 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
                "print_heading_candidates": len(inventory),
                "reviewed_print_occurrences": len(printed),
                "print_only_authorities": len(print_authorities),
+               "print_authority_counts": dict(Counter(a["kind"] for a in print_authorities)),
+               "apparatus_records_sha256": file_digest(apparatus_records) if apparatus_records else None,
+               "apparatus_zones_sha256": file_digest(apparatus_zones) if apparatus_records else None,
+               "reviewed_apparatus_occurrences": sum("zone_id" in r["candidate"] for r in printed),
+               "reviewed_apparatus_zones": len({r["candidate"]["zone_id"] for r in printed if "zone_id" in r["candidate"]}),
                "publication_relations": len(variants),
                "publication_reviews_sha256": file_digest(publication_reviews) if publication_reviews else None,
                "external_publications_sha256": file_digest(external_publications) if external_publications else None,
@@ -721,6 +741,8 @@ def main():
     parser.add_argument("--relation-reviews", type=Path)
     parser.add_argument("--print-candidates", type=Path)
     parser.add_argument("--print-reviews", type=Path)
+    parser.add_argument("--apparatus-records", type=Path)
+    parser.add_argument("--apparatus-zones", type=Path, default=Path("data/bibliography_apparatus_zones.tsv"))
     parser.add_argument("--alias-reviews", type=Path)
     parser.add_argument("--citation-reviews", type=Path)
     parser.add_argument("--citation-claims", type=Path)
@@ -731,7 +753,7 @@ def main():
     print(dumps(build(args.cache, args.output, args.schema, args.staging, args.print_registry,
                      args.metadata_reviews, args.relation_reviews, args.print_candidates, args.print_reviews,
                      args.alias_reviews, args.citation_reviews, args.publication_reviews, args.external_publications,
-                     args.citation_claims)))
+                     args.citation_claims, args.apparatus_records, args.apparatus_zones)))
 
 
 if __name__ == "__main__":

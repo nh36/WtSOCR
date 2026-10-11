@@ -142,3 +142,107 @@ def test_reviewed_print_import_is_hash_pinned_and_preserves_variants(tmp_path, p
     ocr.write_text(ocr.read_text() + "changed")
     with pytest.raises(ValueError, match="OCR span"):
         printbib.reviewed_occurrences(candidate_path, reviews, registry, online)
+
+
+def apparatus_inputs(tmp_path):
+    """Synthetic facsimile review crossing pages, independently pinned to OCR."""
+    pdf, ocr, review = inputs(tmp_path)
+    registry = tmp_path / "sources.tsv"
+    registry.write_text(f"label\tfilename\tsha256\nscan\t{pdf}\t{review['pdf_sha256']}\n")
+    zone = dict(zone_id="z", source_label="scan", pdf_sha256=review["pdf_sha256"],
+                ocr_sha256=review["ocr_sha256"], start_scan_page="1", end_scan_page="2")
+    import csv
+    zones = tmp_path / "zones.tsv"
+    with zones.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=zone, delimiter="\t")
+        writer.writeheader(); writer.writerow(zone)
+    text = ocr.read_text()
+    spans = []
+    for page, literal in [(1, "AUTHOR 2001: Title\n"), (2, "Continuation\n")]:
+        start = text.index(literal)
+        spans.append(dict(scan_page=page, start=start, end=start+len(literal), raw_text=literal))
+    online = [dict(occurrence_id="o", id="p", kind="publication", source_sha256="onlinehash",
+                   text="AUTHOR 2002: Title continued")]
+    record = dict(id="review-1", zone_id="z", source_label="scan", kind="publication", label="AUTHOR 2001",
+                  authority_id="p", year_as_printed="2001", pdf_sha256=review["pdf_sha256"],
+                  ocr_sha256=review["ocr_sha256"], source_spans=spans,
+                  facsimile_spans=[dict(scan_page=i, printed_page=None, bbox_fraction=[.1,.1,.9,.9]) for i in (1,2)],
+                  status="visually_reviewed_identity", apparatus_role="dictionary_source",
+                  verified_transcription="AUTHOR 2001: Title Continuation", evidence_note="Synthetic visual review",
+                  online_crosswalk=dict(occurrence_id="o", authority_id="p", source_sha256="onlinehash",
+                                        text_sha256=printbib.digest(online[0]["text"].encode()),
+                                        evidence="Reviewed author, title and publisher establish identity"))
+    records = tmp_path / "records.jsonl"
+    return records, registry, zones, online, record
+
+
+def test_apparatus_cross_page_reading_and_occurrences_are_preserved(tmp_path):
+    records, registry, zones, online, record = apparatus_inputs(tmp_path)
+    repeated = dict(record, id="review-2", manifestation_of="review-1",
+                    manifestation_relation="same_list_different_typesetting")
+    printbib.write_jsonl(records, [record, repeated])
+    imported = printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+    assert len(imported) == 2
+    assert {r["authority_id"] for r in imported} == {"p"}
+    assert imported[0]["candidate"]["source_spans"] == record["source_spans"]
+    assert imported[0]["verified_transcription"] != online[0]["text"]
+    assert imported[1]["candidate"]["manifestation_relation"] == "same_list_different_typesetting"
+
+
+@pytest.mark.parametrize("role", ["dictionary_source", "memorial_bibliography", "editorial_apparatus"])
+def test_transcription_does_not_mint_an_unreviewed_authority(tmp_path, role):
+    records, registry, zones, online, record = apparatus_inputs(tmp_path)
+    record.update(status="visually_reviewed_transcription", apparatus_role=role,
+                  authority_id=None, online_crosswalk=None)
+    printbib.write_jsonl(records, [record])
+    imported = printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+    assert imported[0]["authority"] is None
+    assert imported[0]["authority_id"] is None
+    assert imported[0]["verified_transcription"] == record["verified_transcription"]
+    record["authority_id"] = "publication-print-unsafe"
+    printbib.write_jsonl(records, [record])
+    with pytest.raises(ValueError, match="cannot assert authority"):
+        printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+
+
+@pytest.mark.parametrize("change,reason", [
+    ({"facsimile_spans": []}, "provenance"),
+    ({"pdf_sha256": "stale"}, "zone/source"),
+    ({"ocr_sha256": "stale"}, "zone/source"),
+    ({"kind": "work"}, "crosswalk"),
+    ({"evidence_note": ""}, "identity"),
+    ({"apparatus_role": "memorial_bibliography"}, "secondary apparatus"),
+    ({"manifestation_of": "missing", "manifestation_relation": "same_list_different_typesetting"}, "manifestation"),
+])
+def test_apparatus_rejects_stale_or_unreviewed_identity(tmp_path, change, reason):
+    records, registry, zones, online, record = apparatus_inputs(tmp_path)
+    printbib.write_jsonl(records, [dict(record, **change)])
+    with pytest.raises(ValueError, match=reason):
+        printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+
+
+def test_apparatus_rejects_changed_online_text_and_wrong_ocr_page(tmp_path):
+    records, registry, zones, online, record = apparatus_inputs(tmp_path)
+    printbib.write_jsonl(records, [record])
+    with pytest.raises(ValueError, match="crosswalk"):
+        printbib.reviewed_apparatus_occurrences(records, registry, zones, [dict(online[0], text="changed")])
+    spans = [dict(s, scan_page=2) for s in record["source_spans"]]
+    printbib.write_jsonl(records, [dict(record, source_spans=spans)])
+    with pytest.raises(ValueError, match="OCR span"):
+        printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+    printbib.write_jsonl(records, [record, record])
+    with pytest.raises(ValueError, match="duplicate apparatus occurrence"):
+        printbib.reviewed_apparatus_occurrences(records, registry, zones, online)
+
+
+def test_checked_in_apparatus_occurrence_ids_and_identity_states():
+    import json
+    records = [json.loads(line) for line in
+               (Path(__file__).resolve().parents[1] / "data/bibliography_apparatus_records.jsonl").read_text(encoding="utf-8").splitlines()]
+    assert len({r["id"] for r in records}) == len(records)
+    for record in records:
+        if record["status"] == "visually_reviewed_transcription":
+            assert record["authority_id"] is None
+            assert not record.get("online_crosswalk")
+        if record["apparatus_role"] != "dictionary_source":
+            assert record["status"] == "visually_reviewed_transcription"

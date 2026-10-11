@@ -14,7 +14,7 @@ CREATE TABLE relation (
   PRIMARY KEY(occurrence_id,ordinal)
 );
 CREATE TABLE print_occurrence (
-  id TEXT PRIMARY KEY, authority_id TEXT NOT NULL REFERENCES authority(id),
+  id TEXT PRIMARY KEY, authority_id TEXT REFERENCES authority(id),
   online_occurrence_id TEXT REFERENCES occurrence(id),
   pdf_sha256 TEXT NOT NULL, ocr_sha256 TEXT NOT NULL, record_json TEXT NOT NULL
 );
@@ -45,3 +45,10 @@ CREATE TABLE citation_target (
 );
 CREATE VIEW accepted_citation_target AS SELECT * FROM citation_target WHERE target_status='accepted_identity';
 CREATE INDEX citation_target_authority ON citation_target(authority_id,target_status);
+CREATE INDEX print_occurrence_authority ON print_occurrence(authority_id);
+CREATE VIEW authority_source_occurrence AS
+  SELECT id, authority_id, 'online_or_external' AS manifestation,
+         source_sha256, record_json FROM occurrence
+  UNION ALL
+  SELECT id, authority_id, 'print' AS manifestation,
+         pdf_sha256, record_json FROM print_occurrence;
