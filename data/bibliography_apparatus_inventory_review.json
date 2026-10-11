@@ -1,0 +1,75 @@
+{
+  "scope": "Four hash-registered PDFs only; not unavailable historical manifestations",
+  "method": "Full 3466-page pinned OCR census searched for bibliography/source/siglum headings, additions, contents, Nachruf, Vorwort, Einleitung and editorial notices. All front matter, delivery boundaries, contents/headings, apparatus page images and immediate neighboring pages inspected. Ordinary lexical pages examined only for heading hits; no page-by-page absence fiction.",
+  "new_zone": "delivery15-franke-memorial",
+  "boundary_corrections": [
+    "delivery01-sources starts xxiii, not xxii",
+    "delivery24-introduction ends vi; right vii overlaps sources",
+    "L17 continuation scan 590 retained",
+    "L22 scan 765 unnumbered",
+    "B6 biography scan343 x",
+    "L24 symbols scan867 lxiv"
+  ],
+  "outside_heading_hits": {
+    "WtS_1-34": {
+      "contents": [
+        3
+      ],
+      "acknowledgements": [
+        136,
+        171,
+        205,
+        239,
+        273,
+        309,
+        343,
+        377,
+        411,
+        445,
+        481,
+        588,
+        623,
+        658,
+        693,
+        729,
+        764,
+        799,
+        869,
+        938,
+        973,
+        1079
+      ],
+      "lexical_mentions": [
+        52,
+        110,
+        158,
+        390,
+        398,
+        665,
+        668,
+        734,
+        988,
+        1046,
+        1107
+      ],
+      "new_memorial": [
+        520
+      ]
+    },
+    "WtS_35-51": {
+      "acknowledgements": [
+        326,
+        328
+      ],
+      "lexical_mentions": [
+        369
+      ]
+    },
+    "WtS_9-m": {
+      "acknowledgements": [
+        3
+      ]
+    }
+  },
+  "result": "37 relevant zones. No further separately ingestible list or siglum-defining apparatus found. Acknowledgements retained as contextual front matter; no additional authority records. Reasonable exhaustive scholarly census closed."
+}

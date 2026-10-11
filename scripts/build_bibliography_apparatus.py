@@ -60,7 +60,8 @@ def capture_print(registry: Path, inventory: Path, root: Path) -> tuple[list, li
             raise ValueError("zone outside registered scan")
         if z["review_status"] not in {
                 "visually_located_records_unreviewed",
-                "visually_reviewed_editorial_classification"} or not z["boundary_note"]:
+                "visually_reviewed_editorial_classification",
+                "visually_reviewed_records_and_boundaries"} or not z["boundary_note"]:
             raise ValueError("zone requires explicit location review and boundary limitations")
     pages, source_records = [], []
     for s in sources:
@@ -98,8 +99,8 @@ def build(registry: Path, inventory: Path, questions: Path, cache: Path,
         raise ValueError("raw source material must remain in ignored work storage")
     sources, zones, pages = capture_print(registry, inventory, root)
     obligations = tsv(questions)
-    if not obligations or any(q["state"] != "open" for q in obligations):
-        raise ValueError("census snapshot requires explicit open completion obligations")
+    if not obligations or any(q["state"] not in {"open", "closed", "closed_with_residuals"} for q in obligations):
+        raise ValueError("census snapshot requires explicit completion obligations")
     online_sources, online_rows, responses = [], [], []
     for page, kind in PAGES.items():
         response = SourceCache(cache).fetch(RequestSpec(BASE + page), offline=True)
@@ -125,6 +126,8 @@ def build(registry: Path, inventory: Path, questions: Path, cache: Path,
                     or int(r["source_row_count"]) != row_counts[r["url"]]):
                 raise ValueError("stale online source inventory")
     manifest = {"contract_version": VERSION, "completeness": "incomplete",
+                "stage": "raw_capture_only",
+                "completion_results": "data/bibliography_apparatus_reconciliation.json",
                 "sources": sources, "online_sources": online_sources,
                 "registry_sha256": file_digest(registry),
                 "inventory_sha256": file_digest(inventory),
@@ -140,10 +143,10 @@ def build(registry: Path, inventory: Path, questions: Path, cache: Path,
                            "canonical_sigla": None, "exact_record_duplicates": None,
                            "print_online_discrepancies": None,
                            "print_only_records": None, "online_only_records": None},
-                "mim_definition_finding": "unresolved_pending_exhaustive_review",
+                "mim_definition_finding": "not_assessed_by_raw_capture",
                 "limitations": ["Zone headings are locators, not verified transcriptions.",
                                 "Zone envelopes include other material and may overlap.",
-                                "Unlocated pages have not been proved apparatus-free.",
+                                "This raw capture does not perform visual census review; see the completion inventory evidence.",
                                 "Online row authority IDs are not reconciled print identities.",
                                 "OCR pages are not bibliographic record occurrences."]}
     output.parent.mkdir(parents=True, exist_ok=True)

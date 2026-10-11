@@ -653,6 +653,11 @@ def build(cache: Path, output: Path, schema: Path, staging: Path | None = None,
         for relation in relations:
             db.executemany("INSERT INTO relation_candidate VALUES (?,?,?)",
                            [(relation["occurrence_id"], relation["ordinal"], p) for p in relation["publication_candidates"]])
+    from badw_bibliography_completion import ingest as ingest_completion
+    completion = ingest_completion(db, rows, printed, variants)
+    if completion:
+        (output / "apparatus_reconciliation.json").write_text(dumps(completion["summary"]) + "\n", encoding="utf-8")
+        write_jsonl(output / "authority_histories.jsonl", completion["histories"])
     counts = Counter()
     # Print-only authorities require exact citation reviews, never fuzzy/global aliases.
     resolver = AuthorityResolver([a for a in authorities if a not in print_authorities], rows, aliases)

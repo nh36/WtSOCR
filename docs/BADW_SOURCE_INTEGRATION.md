@@ -217,16 +217,15 @@ both, without counting the scanned repetition as reviewed bibliographic duplicat
 Delivery 17 continues onto WtS_1-34 scan 590. Printed foliation marked unverified
 must be inspected rather than inferred from scan number.
 
-**This is an incomplete census, not completed ingestion/reconciliation.**
-`heading_locator` is a descriptive lookup aid, not an exact printed transcription.
-The zones are inclusive scan-page envelopes; shared end/start pages, introductory
-text and two-up dictionary pages remain inside them. Location review establishes
-where apparatus is visible, not every record's wording or identity. Pages outside
-these envelopes are explicitly unclassified until the visual census closes; OCR
-heading search cannot prove that no further definitions occur there. The supplied
-PDF labels do not by themselves establish complete coverage of every published
-volume or delivery. Completion obligations are recorded in
-`data/bibliography_apparatus_questions.tsv`.
+**The registered-corpus reconciliation is complete, with eight named residual relationships.**
+The completion review corrected exact boundaries and located a 37th zone, the
+Herbert Franke memorial. `bibliography_apparatus_inventory_review.json` documents
+full OCR heading searches plus contents, front matter, delivery-boundary and
+neighboring-page facsimile review. This is closure for four registered PDFs, not a
+claim that unavailable historical manifestations have been examined.
+`bibliography_apparatus_accounting.jsonl` partitions every zone page into records,
+continuations, headings, editorial/secondary material and layout. Raw OCR remains
+unverified; facsimile transcriptions retain the source readings separately.
 
 The offline capture command is:
 
@@ -254,14 +253,14 @@ The census adds no canonical work, edition or siglum and changes no citation lin
 Existing reviewed print occurrences, external identifications and publication
 relations remain in the established bibliography backend.
 
-The record ingestion checkpoint is in `data/bibliography_apparatus_records.jsonl`.
+The reviewed source-occurrence corpus is in `data/bibliography_apparatus_records.jsonl`.
 It contains separate facsimile transcriptions and exact OCR source spans, including
 cross-page records, printed foliation, inherited authors, edition statements,
 field variants and explicitly reviewed online crosswalks. Layout line wraps and
 purely typographical line-end divisions are joined in the facsimile transcription;
 raw OCR is retained independently. Small capitals are represented by capitals.
 Transcription-only records have no authority identity. This includes composite
-records awaiting separate relationships and all secondary memorial/biography
+records carrying separate source pointers and all secondary memorial/biography
 bibliographies. Their presence in a bibliography never creates a citation target.
 
 Import this ledger into the existing bibliography backend by adding
@@ -272,9 +271,8 @@ The importer checks registered PDF/OCR hashes, zone membership, exact OCR offset
 facsimile bounds and the identity/text/hash of every online crosswalk. It rejects
 unreviewed or stale identities and retains transcription-only records with a null
 authority, without adding them to citation resolution. Existing six reviewed print
-occurrences remain separate from these new occurrence records. Corpus-wide absence,
-first-introduction and complete reconciliation claims still require the remaining
-editorial review and inventory closure.
+occurrences remain separate from these new occurrence records. Registered-corpus absence findings and chronology are now supported by the completed
+review; historical first introduction remains distinct from earliest registered evidence.
 
 The existing authority SQLite database now exposes both manifestations through
 `authority_source_occurrence`; it is not a second authority system. For example:
@@ -323,12 +321,12 @@ IDs and classify orthographic/editorial versus substantive differences explicitl
 First occurrence requires reviewed publication chronology, not scan ordering.
 
 `data/bibliography_apparatus_editorial_pages.jsonl` preserves source-bound page
-classifications for the seven editorial/memorial zones without standalone record
+classifications for the editorial/memorial zones without standalone record
 transcriptions. Its raw text is explicitly unverified OCR; facsimile review applies
 to the page classification, not to an exact transcription of the prose. The mixed
 scan 838 points to `delivery24-sources` for already ingested records. Secondary
-prose references and source-policy references are identified in the evidence notes
-and remain outside accepted citation authorities pending individual reconciliation.
+prose references and source-policy references are classified explicitly. Reviewed
+contextual links remain editorial references, rather than automatic citation authorities.
 
 The existing authority database supports a bounded historical query:
 
@@ -344,14 +342,32 @@ Neither an absence of online occurrences nor an unmatched publication record pro
 print-only status: online source-work descriptions can contain inline bibliographic
 references without an independent `/bibliographie` publication record.
 
-Only after this gate closes can print-only/online-only counts, omitted consolidated
-records, unknown sigla and genuine probable WTS errors be reported. The census
-manifest deliberately reports canonical and discrepancy counts as null, rather
-than zero. `Mim1`/`Mim2` remain an open exhaustive-definition question. Their
-reviewed external BDSN/CDSN clarification must not be attributed to WTS; the 382
-already-reviewed citation links are unchanged. Maurer literal source years and
-reviewed canonical identification continue to coexist. No corpus-wide absence
-finding follows from an unsuccessful OCR search.
+The completed results are checked in as `data/bibliography_apparatus_reconciliation.json`
+and `data/bibliography_authority_history.jsonl`. The existing database schema adds
+`canonical_membership`, `canonical_siglum`, `authority_history`,
+`apparatus_reference`, `apparatus_annotation` and `apparatus_summary`; occurrence
+and citation identities remain unchanged. Online bibliographic pointers preserve
+candidate editions without silently promoting them to reviewed edition identities.
+Eleven explicit reviewed edition/reprint relationships join bibliographic works
+while retaining distinct publications.
+
+The existing query command accepts `reconciliation`, `canonical-history ID` and
+`scholarly-notes`. History includes earliest observed registered occurrences,
+supplement/consolidation appearances and repeated scan manifestations. Publication
+IDs return edition history; their `work-of-` membership IDs return the aggregate
+bibliographic-work history. Delivery ranges supply order where dates are absent.
+Counterpart classes are not claims of error. Eight irreducible relationships are
+individually enumerated in the summary: six print edition cases, one legacy edition
+case and the unmatched Bca/Vaidya 1960b online pointer.
+
+The completed reviewed apparatus and all three online lists contain no definition
+of Mim1/Mim2, including spacing, Roman numeral and plausible OCR variants. The
+queryable `wts-undefined-mim1-mim2` annotation records the scoped WTS omission and
+external Mimaki clarification Mim1=BDSN, Mim2=CDSN. The 382 existing citation links
+are preserved. Three probable printed errors retain both literal forms; Maurer
+literal source years and reviewed canonical identification continue to coexist.
+The raw capture manifest remains a capture-stage artifact with null canonical
+counts; the completed reconciliation summary supplies the reviewed figures.
 
 ## Roadmap from source corpus to scholarly dictionary
 

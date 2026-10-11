@@ -29,52 +29,62 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## Bibliographic Apparatus
 
-The complete WTS apparatus ingestion/reconciliation is **in progress, not complete**.
-`data/bibliography_apparatus_zones.tsv` locates 36 print zones on
-108 distinct scan pages in the four registered PDFs. Zone envelopes
-and heading locators are not verified record transcriptions. Unlocated pages have
-not been proved apparatus-free. The earlier three-range print inventory is not
-a dictionary-wide inventory or evidence for a siglum's absence.
+The bibliography reconciliation is **complete for the four registered PDFs and
+three hash-pinned online apparatus lists**, with eight individually enumerated
+residual relationships. All seven completion obligations are closed or closed with
+these explicit residuals in `data/bibliography_apparatus_questions.tsv`.
 
-`scripts/build_bibliography_apparatus.py` preserves all 3,466 registered OCR pages
-with offsets and hashes, including pages outside located zones. It snapshots the
-3 current online lists separately (1,057 source rows); retrieval provenance is in
-`data/bibliography_apparatus_online_sources.tsv`. Generated raw evidence and SQLite
-remain under ignored `work/`. See `docs/BADW_SOURCE_INTEGRATION.md` for the capture
-contract and queries. 7 explicit completion obligations remain in
-`data/bibliography_apparatus_questions.tsv`.
+The census covers 3,466 OCR pages. Front matter, headings,
+delivery boundaries, apparatus facsimiles and neighboring pages establish
+37 zones on 109 distinct scan pages, including the newly located
+Franke memorial. Exact boundaries and mixed-page regions are reviewed.
+`data/bibliography_apparatus_inventory_review.json` records the exhaustive method;
+closure does not claim coverage of unavailable historical manifestations.
 
-The checked-in `data/bibliography_apparatus_records.jsonl` now retains
-2,243 facsimile-reviewed source occurrences from 29 zones:
-2,153 identity-reviewed occurrences and
-90 transcription-only occurrences.
-2,045 occurrences have explicit, hash-pinned online crosswalks;
-373 retain field variations. These are occurrence counts, not
-complete canonical corpus totals or counts of probable source errors.
-Multi-page OCR spans and separate facsimile readings preserve continuation;
-memorial and biography records cannot become citation authorities through this import.
-The existing bibliography builder imports these records with `--apparatus-records`.
-The seven zones without standalone record transcriptions now have facsimile-reviewed
-page classifications in `data/bibliography_apparatus_editorial_pages.jsonl`
-(23 source-bound page occurrences). They contain editorial or memorial
-prose; scan 838 also overlaps the already transcribed `delivery24-sources` zone.
-The ledger preserves OCR verbatim as unverified OCR, separately from the reviewed
-classification. Prose references are identified explicitly; individual source-policy
-references and secondary prose mentions are not yet fully reconciled.
-The read-only `apparatus-history` query orders accepted occurrences by their reviewed
-delivery ranges, preserves alternate typesettings and literal variants, and retains
-legacy occurrences lacking chronology. It reports earliest observed occurrences,
-not an exhaustive first introduction or inferred publication date.
-Composite authority relationships, inventory closure,
-and the complete historical reconciliation still need completion. Raw OCR for
-unassigned material remains in the census; this checkpoint does not claim lossless
-record-level coverage of every zone.
+`data/bibliography_apparatus_accounting.jsonl` accounts for all 114 zone-page
+occurrences with source hashes and contiguous verbatim spans. There is no unexplained
+residual text. OCR remains unverified OCR; 2,246 separate facsimile-reviewed
+records preserve literal print, inherited authors and continuations. Secondary
+bibliography and editorial prose remain separate from citation authorities.
+2,059 occurrences have reviewed online crosswalks.
 
-Canonical corpus counts, duplicate counts, print-only/online-only classifications,
-first-occurrence findings and probable omissions remain unestablished. Whether WTS
-ever defines `Mim1`/`Mim2` remains unresolved pending exhaustive review. Existing
-external identifications and the 382 reviewed citation links remain unchanged.
-The ingestion checkpoint changes no parser behavior or `release/current` files.
+The existing bibliography backend now contains canonical memberships, chronological
+histories, literal sigla, composite/collection pointers and scholarly annotations.
+Reviewed totals are 432 dictionary-source works,
+460 bibliographic works,
+471 publications/editions (399 online, 71 print, one external),
+8 collection/source entities, and
+723 literal siglum/abbreviation spellings.
+Source works and authored publications have separate scopes; bibliographic references
+are not automatically accepted edition identities.
+
+There are 1,052 repeated published occurrences and
+8 duplicate scan manifestations.
+68 reviewed authorities have only print counterparts;
+48 online authorities have no reviewed print counterpart.
+Six print edition relationships, one legacy edition relationship and one online
+Bca/Vaidya 1960b reference remain individually unresolved. Their identities, literal
+forms and reasons are in `data/bibliography_apparatus_reconciliation.json`.
+Counterpart absence is not itself a finding of error.
+
+All 387 variant sets retain both source forms and reviewed categories:
+author_name_variation: 26; capitalization: 29; edition_publication_difference: 71; expanded_abbreviated_wording: 150; probable_source_error: 3; publisher_series_variation: 34; siglum_difference: 9; title_variation: 36; transliteration_orthographic_variation: 33; typography_layout_only: 21; year_variation: 29. Categories count fields and may overlap within a record.
+122 authorities have substantive discrepancies
+(139 variant fields). Three probable printed errors
+(T4090 locator, Hoffmann series year, gZi bid/bis) are distinguished from harmless
+variation and the independently reviewed Maurer year correction.
+
+`data/bibliography_authority_history.jsonl` records earliest observed registered
+occurrences, later supplements/consolidations, alternate manifestations and online
+appearances. Delivery ranges are order evidence, not invented publication dates or
+proof of historical first introduction.
+
+WTS does not define `Mim1` or `Mim2` in the completed available apparatus.
+Backend note `wts-undefined-mim1-mim2` records the two undefined sigla and the
+external Mimaki clarification **Mim1 = BDSN; Mim2 = CDSN** as a digital-edition
+annotation, never as an expansion supplied by WTS. The 382 reviewed citation links
+and `release/current` remain unchanged.
+
 
 ## Volume Status
 

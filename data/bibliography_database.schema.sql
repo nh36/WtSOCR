@@ -52,3 +52,11 @@ CREATE VIEW authority_source_occurrence AS
   UNION ALL
   SELECT id, authority_id, 'print' AS manifestation,
          pdf_sha256, record_json FROM print_occurrence;
+
+-- Scholarly apparatus reconciliation, independent of citation resolution.
+    CREATE TABLE IF NOT EXISTS canonical_membership(authority_id TEXT PRIMARY KEY REFERENCES authority(id), canonical_id TEXT NOT NULL, relationship TEXT NOT NULL, record_json TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS authority_history(canonical_id TEXT PRIMARY KEY, record_json TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS apparatus_annotation(id TEXT PRIMARY KEY, record_json TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS apparatus_summary(id TEXT PRIMARY KEY, record_json TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS canonical_siglum(id TEXT PRIMARY KEY, record_json TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS apparatus_reference(occurrence_id TEXT NOT NULL, ordinal INTEGER NOT NULL, record_json TEXT NOT NULL, PRIMARY KEY(occurrence_id,ordinal));

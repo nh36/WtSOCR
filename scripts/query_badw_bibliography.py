@@ -36,6 +36,19 @@ class Bibliography:
                 "relations": [json.loads(r[0]) for r in self.db.execute(
                     "SELECT record_json FROM relation WHERE work_id=? ORDER BY occurrence_id,ordinal", (identity,))]}
 
+    def reconciliation(self) -> dict | None:
+        row = self.db.execute("SELECT record_json FROM apparatus_summary WHERE id='completed-registered-corpus'").fetchone()
+        return json.loads(row[0]) if row else None
+
+    def scholarly_notes(self) -> list[dict]:
+        return [json.loads(r[0]) for r in self.db.execute("SELECT record_json FROM apparatus_annotation ORDER BY id")]
+
+    def canonical_history(self, identity: str) -> dict | None:
+        row = self.db.execute("SELECT canonical_id FROM canonical_membership WHERE authority_id=?", (identity,)).fetchone()
+        canonical = row[0] if row and not identity.startswith('publication-') else identity
+        history = self.db.execute("SELECT record_json FROM authority_history WHERE canonical_id=?", (canonical,)).fetchone()
+        return json.loads(history[0]) if history else None
+
     def citation(self, layer: str, citation_id: str) -> dict | None:
         row = self.db.execute("SELECT record_json FROM citation_resolution WHERE layer=? AND citation_id=?",
                               (layer, citation_id)).fetchone()
@@ -108,6 +121,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--database", type=Path, required=True)
     sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser("reconciliation")
+    sub.add_parser("scholarly-notes")
+    canonical = sub.add_parser("canonical-history")
+    canonical.add_argument("id")
     search = sub.add_parser("search")
     search.add_argument("text")
     search.add_argument("--kind", choices=("work", "publication", "abbreviation"))
@@ -126,7 +143,13 @@ def main():
     args = parser.parse_args()
     db = Bibliography(args.database)
     try:
-        if args.command == "search":
+        if args.command == "reconciliation":
+            result = db.reconciliation()
+        elif args.command == "scholarly-notes":
+            result = db.scholarly_notes()
+        elif args.command == "canonical-history":
+            result = db.canonical_history(args.id)
+        elif args.command == "search":
             result = db.search(args.text, args.kind)
         elif args.command == "authority":
             result = db.authority(args.id)
