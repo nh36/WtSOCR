@@ -79,6 +79,41 @@ def test_unlocated_page_is_not_evidence_of_absence(tmp_path):
     assert pages[1]["apparatus_status"] == "not_yet_classified_by_visual_census"
 
 
+def test_editorial_classification_does_not_promote_ocr_to_reviewed_reading(tmp_path):
+    registry, inventory, _, _, zone, _ = inputs(tmp_path)
+    write_tsv(inventory, [{**zone, "review_status": "visually_reviewed_editorial_classification"}])
+    _, zones, pages = apparatus.capture_print(registry, inventory, tmp_path)
+    assert zones[0]["review_status"] == "visually_reviewed_editorial_classification"
+    assert all(p["reading_status"] == "unreviewed_ocr" for p in pages)
+
+
+def test_checked_in_editorial_page_provenance():
+    root = Path(__file__).resolve().parents[1]
+    zones = {r["zone_id"]: r for r in apparatus.tsv(root / "data/bibliography_apparatus_zones.tsv")}
+    sources = {r["label"]: r for r in apparatus.tsv(root / "data/source_pdfs.tsv")}
+    readings = [json.loads(line) for line in
+                (root / "data/bibliography_apparatus_editorial_pages.jsonl").read_text().splitlines()]
+    assert len({(r["zone_id"], r["scan_page"]) for r in readings}) == len(readings)
+    for reading in readings:
+        zone = zones[reading["zone_id"]]
+        label = reading["source_label"]
+        span = reading["source_span"]
+        assert span["end"] - span["start"] == len(span["raw_text"])
+        assert int(apparatus.PAGE.match(span["raw_text"])[1]) == reading["scan_page"]
+        assert reading["ocr_sha256"] == zone["ocr_sha256"]
+        assert reading["pdf_sha256"] == zone["pdf_sha256"] == sources[label]["sha256"]
+        assert int(zone["start_scan_page"]) <= reading["scan_page"] <= int(zone["end_scan_page"])
+        assert reading["reading_status"] == "unreviewed_ocr_preserved"
+        if reading["record_overlap_zone"]:
+            overlap = zones[reading["record_overlap_zone"]]
+            assert overlap["source_label"] == label
+            assert int(overlap["start_scan_page"]) <= reading["scan_page"] <= int(overlap["end_scan_page"])
+    for identity in {r["zone_id"] for r in readings}:
+        zone = zones[identity]
+        assert {r["scan_page"] for r in readings if r["zone_id"] == identity} == set(
+            range(int(zone["start_scan_page"]), int(zone["end_scan_page"]) + 1))
+
+
 def test_failed_offline_capture_does_not_publish_snapshot(tmp_path):
     registry, inventory, _, _, _, _ = inputs(tmp_path)
     questions = tmp_path / "questions.tsv"

@@ -58,7 +58,9 @@ def capture_print(registry: Path, inventory: Path, root: Path) -> tuple[list, li
         a, b = int(z["start_scan_page"]), int(z["end_scan_page"])
         if not 1 <= a <= b <= int(s["pages"]):
             raise ValueError("zone outside registered scan")
-        if z["review_status"] != "visually_located_records_unreviewed" or not z["boundary_note"]:
+        if z["review_status"] not in {
+                "visually_located_records_unreviewed",
+                "visually_reviewed_editorial_classification"} or not z["boundary_note"]:
             raise ValueError("zone requires explicit location review and boundary limitations")
     pages, source_records = [], []
     for s in sources:

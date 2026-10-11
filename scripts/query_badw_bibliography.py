@@ -49,6 +49,44 @@ class Bibliography:
                 "candidate_targets": [r for r in targets if r["target_status"] == "candidate"],
                 "limitations": "Accepted identity is not a verified edition or a fully parsed citation"}
 
+    def apparatus_history(self, identity: str) -> dict | None:
+        """Order reviewed appearances without asserting an exhaustive first introduction.
+
+        Delivery ranges describe the manifestation, not a publication date. Legacy
+        occurrences without reviewed chronology remain visible in a separate list.
+        Alternate typesettings remain occurrences but are not new introductions.
+        """
+        authority = self.authority(identity)
+        if authority is None:
+            return None
+        ordered, undated = [], []
+        for occurrence in authority["print_occurrences"]:
+            review = occurrence.get("review", {})
+            chronology = review.get("chronology", {})
+            span = chronology.get("delivery_range")
+            item = {"occurrence": occurrence, "chronology": chronology,
+                    "manifestation_of": review.get("manifestation_of"),
+                    "variants": review.get("variants", [])}
+            if (isinstance(span, list) and len(span) == 2
+                    and all(type(n) is int for n in span) and span[0] <= span[1]):
+                ordered.append(item)
+            else:
+                undated.append(item)
+        ordered.sort(key=lambda item: (
+            *item["chronology"]["delivery_range"], item["occurrence"]["id"]))
+        appearances = [item for item in ordered if not item["manifestation_of"]]
+        earliest = []
+        if appearances:
+            first_range = appearances[0]["chronology"]["delivery_range"]
+            earliest = [item["occurrence"]["id"] for item in appearances
+                        if item["chronology"]["delivery_range"] == first_range]
+        return {"authority": authority["authority"], "ordered_print_occurrences": ordered,
+                "occurrences_without_delivery_order": undated,
+                "earliest_observed_occurrence_ids": earliest,
+                "online_occurrences": authority["occurrences"],
+                "publication_relations": authority["publication_relations"],
+                "limitations": "Earliest observed in reviewed occurrences; not an exhaustive first WTS introduction. Delivery-range order is not a publication date."}
+
     def citations_for(self, identity: str, include_candidates: bool = False) -> list[dict]:
         """Reverse links default to accepted identities; candidates require explicit opt-in."""
         return [dict(r) for r in self.db.execute(
@@ -75,6 +113,8 @@ def main():
     search.add_argument("--kind", choices=("work", "publication", "abbreviation"))
     authority = sub.add_parser("authority")
     authority.add_argument("id")
+    history = sub.add_parser("apparatus-history")
+    history.add_argument("id")
     citation = sub.add_parser("citation")
     citation.add_argument("layer", choices=("html", "pdf"))
     citation.add_argument("id")
@@ -90,6 +130,8 @@ def main():
             result = db.search(args.text, args.kind)
         elif args.command == "authority":
             result = db.authority(args.id)
+        elif args.command == "apparatus-history":
+            result = db.apparatus_history(args.id)
         elif args.command == "citation":
             result = db.citation(args.layer, args.id)
         elif args.command == "literal-citations":

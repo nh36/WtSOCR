@@ -54,7 +54,18 @@ complete canonical corpus totals or counts of probable source errors.
 Multi-page OCR spans and separate facsimile readings preserve continuation;
 memorial and biography records cannot become citation authorities through this import.
 The existing bibliography builder imports these records with `--apparatus-records`.
-Editorial/front-matter review, composite authority relationships, inventory closure,
+The seven zones without standalone record transcriptions now have facsimile-reviewed
+page classifications in `data/bibliography_apparatus_editorial_pages.jsonl`
+(23 source-bound page occurrences). They contain editorial or memorial
+prose; scan 838 also overlaps the already transcribed `delivery24-sources` zone.
+The ledger preserves OCR verbatim as unverified OCR, separately from the reviewed
+classification. Prose references are identified explicitly; individual source-policy
+references and secondary prose mentions are not yet fully reconciled.
+The read-only `apparatus-history` query orders accepted occurrences by their reviewed
+delivery ranges, preserves alternate typesettings and literal variants, and retains
+legacy occurrences lacking chronology. It reports earliest observed occurrences,
+not an exhaustive first introduction or inferred publication date.
+Composite authority relationships, inventory closure,
 and the complete historical reconciliation still need completion. Raw OCR for
 unassigned material remains in the census; this checkpoint does not claim lossless
 record-level coverage of every zone.

@@ -57,3 +57,32 @@ def test_missing_database_is_not_created(tmp_path):
     with pytest.raises(sqlite3.OperationalError):
         Bibliography(path)
     assert not path.exists()
+
+
+def test_apparatus_history_orders_reviewed_ranges_and_retains_manifestations(tmp_path):
+    path = tmp_path / "bibliography.sqlite"
+    db = sqlite3.connect(path)
+    db.executescript(Path("data/bibliography_database.schema.sql").read_text())
+    authority = {"id": "w", "kind": "work", "label": "source"}
+    db.execute("INSERT INTO authority VALUES (?,?,?,?,?,?)",
+               ("w", "work", "source", "online", "reviewed", json.dumps(authority)))
+    for identity, span, manifestation in (
+            ("late", [24, 24], None), ("early", [3, 3], None),
+            ("alternate", [3, 3], "early"), ("legacy", None, None)):
+        review = {"chronology": {"delivery_range": span}, "manifestation_of": manifestation,
+                  "variants": [{"classification": "year_variation", "print": "2000", "online": "2001"}]}
+        occurrence = {"id": identity, "review": review}
+        db.execute("INSERT INTO print_occurrence VALUES (?,?,?,?,?,?)",
+                   (identity, "w", None, "pdfhash", "ocrhash", json.dumps(occurrence)))
+    db.commit()
+    db.close()
+    reader = Bibliography(path)
+    try:
+        history = reader.apparatus_history("w")
+        assert history["earliest_observed_occurrence_ids"] == ["early"]
+        assert [r["occurrence"]["id"] for r in history["ordered_print_occurrences"]] == ["alternate", "early", "late"]
+        assert history["occurrences_without_delivery_order"][0]["occurrence"]["id"] == "legacy"
+        assert history["ordered_print_occurrences"][0]["variants"][0]["print"] == "2000"
+        assert reader.apparatus_history("absent") is None
+    finally:
+        reader.close()

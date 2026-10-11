@@ -322,6 +322,28 @@ never merge records automatically. Record field variants with both occurrence
 IDs and classify orthographic/editorial versus substantive differences explicitly.
 First occurrence requires reviewed publication chronology, not scan ordering.
 
+`data/bibliography_apparatus_editorial_pages.jsonl` preserves source-bound page
+classifications for the seven editorial/memorial zones without standalone record
+transcriptions. Its raw text is explicitly unverified OCR; facsimile review applies
+to the page classification, not to an exact transcription of the prose. The mixed
+scan 838 points to `delivery24-sources` for already ingested records. Secondary
+prose references and source-policy references are identified in the evidence notes
+and remain outside accepted citation authorities pending individual reconciliation.
+
+The existing authority database supports a bounded historical query:
+
+```bash
+python3 scripts/query_badw_bibliography.py --database work/wts_apparatus_20261010/ingested_v3/bibliography.sqlite apparatus-history AUTHORITY_ID
+```
+
+It orders reviewed occurrences by delivery range, retains variants and alternate
+typesettings, and returns legacy occurrences lacking chronology separately.
+`earliest_observed_occurrence_ids` means earliest within the reviewed identity's
+current occurrence corpus; it does not establish an exhaustive WTS introduction.
+Neither an absence of online occurrences nor an unmatched publication record proves
+print-only status: online source-work descriptions can contain inline bibliographic
+references without an independent `/bibliographie` publication record.
+
 Only after this gate closes can print-only/online-only counts, omitted consolidated
 records, unknown sigla and genuine probable WTS errors be reported. The census
 manifest deliberately reports canonical and discrepancy counts as null, rather
