@@ -1,0 +1,91 @@
+{
+  "alias_exclusions": {
+    "Ati-Nth": "AtiNth",
+    "Bhu-Kkh, Mi-gTo, OBER-HAMMER": "Wrapped source/author tokens, not additional sigla",
+    "HMrg": "HMṛg; decoded glyph variation",
+    "K1, K3, T4090": "Defined generic K/T catalogues plus locators",
+    "Kunk": "KunK",
+    "MTH3/5/16": "MTH plus locator; spacing",
+    "Migto": "MigTo",
+    "MilGB": "MilGb",
+    "Mvy-IF": "Edition selector: Mvy /texte describes Ishihama/Fukuda 1989; no independent undefined work accepted.",
+    "Nag-del": "Nagdel",
+    "Sum-pa": "Sumpa",
+    "T.N., J.P., Ms.L.": "Editorial/prose notation, not unresolved source citation",
+    "Thk3, Thk2": "ThK; numbered locator/part",
+    "Tsoṅ-Nth": "TsoṅNth",
+    "[---], [ ]": "Online bracket convention definitions",
+    "g.Yu": "gYu"
+  },
+  "apparatus_sources": [
+    {
+      "sha256": "72820ad22be37adeda97b0005c23759145336dcb69f7524808120ebb41e6f0b8",
+      "url": "https://wts-digital.badw.de/texte"
+    },
+    {
+      "sha256": "b8fe0525608c4ff1cd73cb7411618869e802202f1dbd112a98e89ed32a773cfb",
+      "url": "https://wts-digital.badw.de/bibliographie"
+    },
+    {
+      "sha256": "a1cf589ea9a125ae5e2d29265ff8d92809569f0399e608976b8ec6b21a794726",
+      "url": "https://wts-digital.badw.de/abkuerzungen"
+    }
+  ],
+  "counts": {
+    "additional_unresolved_current_bibliography_targets": 14,
+    "current_maurer_errors": 4,
+    "historical_probable_errors_still_online": 0,
+    "malformed_source_sigla": 3,
+    "missing_print_publication_targets": 23,
+    "online_without_print_problematic": 0,
+    "online_without_print_reviewed": 48,
+    "print_only_actionable": 26,
+    "print_only_reviewed": 68,
+    "qa_findings": 49,
+    "undefined_abbreviations": 2,
+    "undefined_or_malformed_labels": 7,
+    "undefined_source_sigla": 2,
+    "wrong_bca_pointer": 1
+  },
+  "historical_error_exclusions": [
+    {
+      "conclusion": "Wrong printed ku 144b6–147b7 locator is not present in the current /texte row.",
+      "label": "T4090",
+      "online_literal": "Abt. mṄon pa, ku 26b1–258a7 u. khu 1b1–95a7"
+    },
+    {
+      "conclusion": "Historical Jg. 150 typo is corrected online.",
+      "label": "Hoffmann 1950",
+      "online_literal": "Jg. 1950, 4"
+    },
+    {
+      "conclusion": "Historical ka bid ṅa clause is absent online. Do not claim online substituted bis.",
+      "label": "gZi",
+      "online_literal": "’Dus pa rin po che’i rgyud dri ma med pa gzi brjid rab tu ’bar ba’i mdo. Ed.: Tibetan Bonpo Monastic Centre 1967. Andere, teilw. Ed.: Snellgrove 1967a (Kürzelzusatz Sn). Exzp.: S. Karmay"
+    }
+  ],
+  "input_sha256": {
+    "data/bibliography_apparatus_reconciliation.json": "479973ee8c95f7e8bb859a60820951cce629d0b01a9da594a7eb255aef20a88d",
+    "work/badw_online_qa_20261011/rows.json": "1820c4cf9784410383e7b502cb9ecbfac394726bbd1ce77ce9b19a1e65c1003b",
+    "work/badw_stage_c13_20260928/parsed/database_articles.jsonl": "17cb0be1c6c7d56a2c32199a45bba5cc936bc279c636358392239fec24b8c17e"
+  },
+  "method": "Compare marked citation/Lex. sigla and full-body parenthesized source tokens against all three apparatus lists, including compound resolvers. Independently search author/year citations throughout bodies; inspect candidate contexts, alternate labels, edition statements and tooltip targets. Freshly fetch every actionable representative. Fail closed on unresolved edition identities.",
+  "reviewed_on": "2026-10-11",
+  "scope": "Complete available harvested article bodies: 18,037 HTML articles (September 28) and 11,840 decoded online PDF article witnesses (October 3), plus October 11 refresh of all three apparatus lists and every reported suspect. This is not a new live crawl of every URL on October 11. Counts are verified findings in this corpus, not proof of absence in unharvested/new site entries.",
+  "snapshot_only_unconfirmed": [
+    "HAHN 1992 (online bibliography gives 1996): online PDF snapshot candidate; fresh entry fetch did not yield verifiable body.",
+    "KRAMER 2005: online PDF snapshot candidate; fresh entry fetch did not yield verifiable body."
+  ],
+  "usage_inventory": {
+    "additional_reviewed_problem_labels": 7,
+    "candidate_note": "Candidates include ordinary prose and are not defect counts. Whole-body review supplements the parser-known marked inventory; aliases and exclusions are recorded separately.",
+    "defined_marked_labels": 470,
+    "file": "data/bibliography_current_online_siglum_usage.tsv",
+    "marked_html_occurrences": 66633,
+    "pdf_staging_sha256": "041ef2fbe5cdfaad5773c3ac43611356f1f5de8bcadf1b924ec265b9e3b98f8e",
+    "whole_body_candidates": {
+      "author_year_candidate": 7357,
+      "source_token_candidate": 75783
+    }
+  }
+}

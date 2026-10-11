@@ -16,6 +16,12 @@ class Bibliography:
     def close(self):
         self.db.close()
 
+    def current_online_qa(self, identity: str | None = None) -> list[dict]:
+        """Exact reviewed QA overlay keyed to existing authorities; no new identities."""
+        path = Path(__file__).resolve().parents[1] / "data/bibliography_current_online_qa.jsonl"
+        rows = [json.loads(line) for line in path.read_text().splitlines() if line]
+        return [row for row in rows if identity is None or identity in row["authority_ids"]]
+
     def search(self, text: str, kind: str | None = None) -> list[dict]:
         """Literal, case-sensitive substring search; SQL wildcards are not input syntax."""
         return [json.loads(row[0]) for row in self.db.execute(
@@ -123,6 +129,8 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("reconciliation")
     sub.add_parser("scholarly-notes")
+    online = sub.add_parser("current-online-qa")
+    online.add_argument("--authority-id")
     canonical = sub.add_parser("canonical-history")
     canonical.add_argument("id")
     search = sub.add_parser("search")
@@ -147,6 +155,8 @@ def main():
             result = db.reconciliation()
         elif args.command == "scholarly-notes":
             result = db.scholarly_notes()
+        elif args.command == "current-online-qa":
+            result = db.current_online_qa(args.authority_id)
         elif args.command == "canonical-history":
             result = db.canonical_history(args.id)
         elif args.command == "search":

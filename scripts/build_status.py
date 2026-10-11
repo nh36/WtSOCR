@@ -1698,6 +1698,27 @@ external Mimaki clarification **Mim1 = BDSN; Mim2 = CDSN** as a digital-edition
 annotation, never as an expansion supplied by WTS. The 382 reviewed citation links
 and `release/current` remain unchanged.
 
+The final current-online pass is separate from historical reconciliation:
+`docs/BIBLIOGRAPHY_SCHOLARLY_SUMMARY.md` preserves the historical findings;
+`docs/BIBLIOGRAPHY_CURRENT_ONLINE.md` contains actionable BAdW feedback.
+All 68 print-only and 48 online-without-print authorities have individual
+dispositions in `data/bibliography_current_online_authorities.tsv`. Of the 68,
+26 have verified current gaps (24 publication targets and two abbreviations);
+none of the 48 has an established defect. Seven current literal labels are
+undefined or malformed, including Mim1/Mim2. All four Maurer 2000 citations
+remain online. None of the three probable historical print errors remains
+erroneous in the current apparatus. Bca/Vaidya 1960b has a wrong-work tooltip.
+Fourteen further current author/year targets require editorial identification.
+
+`data/bibliography_current_online_qa.jsonl` pins 49 findings to exact online
+hashes/spans and existing authorities. The existing query command exposes
+`current-online-qa`; `scripts/check_bibliography_current_online.py` checks cached
+or refreshed sources and fails closed when bytes change. The article sweep
+covers 18,037 harvested HTML articles and 11,840 decoded online PDF witnesses,
+with October 11 refresh of apparatus and actionable examples, rather than a
+new live crawl of every site URL. Two unrefreshed PDF candidates are excluded
+from BAdW feedback. Bibliography work is finished within this stated scope.
+
 
 ## Volume Status
 
