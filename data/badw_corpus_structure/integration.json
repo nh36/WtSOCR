@@ -1,0 +1,100 @@
+{
+  "bibliography_bridge": {
+    "matched": 41780,
+    "no_exact_occurrence": 377
+  },
+  "counts": {
+    "accepted_identity_reader_loss": 0,
+    "html_entries_multiple_reader_sense_containers": 2461,
+    "html_entries_no_sense": 15574,
+    "pdf_entries_multiple_reader_sense_containers": 1440,
+    "pdf_entries_no_sense": 10399,
+    "reader_checked": 29875,
+    "reader_integrity_failures": 0
+  },
+  "semantic_overlays": [
+    {
+      "annotations": 1,
+      "identity": "badw:https://wts-digital.badw.de/lemma/bal%20yul%20gser%20phug/1",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 1,
+      "identity": "badw:https://wts-digital.badw.de/lemma/bo%20tho/1",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 3,
+      "identity": "badw:https://wts-digital.badw.de/lemma/bu%20smad/1",
+      "relationships": 3,
+      "status": "applied"
+    },
+    {
+      "annotations": 1,
+      "identity": "badw:https://wts-digital.badw.de/lemma/dmus%20pa/2",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 1,
+      "identity": "badw:https://wts-digital.badw.de/lemma/me%20ma/1",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 2,
+      "identity": "badw:https://wts-digital.badw.de/lemma/mig%20ma%E1%B9%85s%20ris/1",
+      "relationships": 2,
+      "status": "applied"
+    },
+    {
+      "annotations": 4,
+      "identity": "badw:pdf:badw-v2-eafe95ccfbbc796b97a4f4987f73a344da6240c45d5a2e35ce8b7e2a4e12519d:140",
+      "relationships": 0,
+      "status": "applied"
+    },
+    {
+      "annotations": 2,
+      "identity": "badw:pdf:badw-v2-cbf95b4858e39f88fed5f801d7c67c294a976d3d4c2aaf9756f64de4ada6307a:137",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 3,
+      "identity": "badw:pdf:badw-v2-3395c73c83b582d70c1196066bc93001838631ebfaa07c56ee10fbd66dd0b0ee:322",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "identity": "badw:pdf:badw-v3-641fb924bc55d742a0314b58e05441cb60fa90228e722733bd3ab147261a8e4c:1579",
+      "reason": "missing or unsupported contract fields",
+      "status": "source_or_endpoint_conflict"
+    },
+    {
+      "annotations": 3,
+      "identity": "badw:pdf:badw-v3-6c72ac560f53a5ee5099b625d9bfc9c6c49c5ee517c06b61bb731eb3abc7135e:1622",
+      "relationships": 1,
+      "status": "applied"
+    },
+    {
+      "annotations": 14,
+      "identity": "badw:pdf:badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564:564",
+      "relationships": 5,
+      "status": "applied"
+    },
+    {
+      "annotations": 3,
+      "identity": "badw:pdf:badw-v4-2853f907a0595503d61df252be7869be7016169520a83cc03a0105aa597b246b:631",
+      "relationships": 1,
+      "status": "applied"
+    }
+  ],
+  "xref_reasons": {
+    "html:explicit_url_absent_from_acquired_index": 629,
+    "pdf:exact_label_ambiguous": 120,
+    "pdf:exact_label_unique_requires_span_review": 2176,
+    "pdf:no_exact_label_in_acquired_index": 758
+  }
+}

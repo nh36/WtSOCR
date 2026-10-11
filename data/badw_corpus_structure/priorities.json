@@ -1,0 +1,386 @@
+[
+  {
+    "affected_entries": 26506,
+    "component_families": [
+      "lex_outside_numbered_sense",
+      "overlapping_lex_items",
+      "citation_owner_unresolved"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "indicator": "citation_owner_unresolved",
+        "spans": [
+          [
+            286,
+            319
+          ]
+        ],
+        "text_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "indicator": "citation_owner_unresolved",
+        "spans": [
+          [
+            430,
+            461
+          ]
+        ],
+        "text_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "indicator": "citation_owner_unresolved",
+        "spans": [
+          [
+            568,
+            599
+          ]
+        ],
+        "text_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      }
+    ],
+    "family": "lex_sense_passage_model",
+    "html_entries": 15910,
+    "layer": "parser + canonical model",
+    "likely_cause": "Lex. outside HTML sense envelopes and duplicated PDF Lex. components; bibliography identity is retained but semantic citation ownership is almost entirely unestablished.",
+    "occurrence_distribution": {
+      "html": 75113,
+      "pdf": 42715
+    },
+    "occurrences": 117828,
+    "pdf_entries": 10596,
+    "rank": 1,
+    "recommended_action": "Build typed Lex. items inside explicit sense envelopes, with exact citable-passage relations. Test source-bound boundaries before assigning owners.",
+    "usability_impact": "high"
+  },
+  {
+    "affected_entries": 3242,
+    "component_families": [
+      "xref_component_missing",
+      "xref_unresolved"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20lci/1",
+        "indicator": "xref_unresolved",
+        "spans": [],
+        "text_sha256": "23453e57d57a3fb5842464fefccad93a29fd8a761bf8862a4f2a1b48a3d8fa89"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+        "indicator": "xref_unresolved",
+        "spans": [],
+        "text_sha256": "da72db311cbf2e4b91b045fa5e14a912c9ae1993de1d22cc2673114019f14b3d"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+        "indicator": "xref_unresolved",
+        "spans": [],
+        "text_sha256": "da72db311cbf2e4b91b045fa5e14a912c9ae1993de1d22cc2673114019f14b3d"
+      }
+    ],
+    "family": "pdf_xref_binding",
+    "html_entries": 572,
+    "layer": "canonical adapter + reader",
+    "likely_cause": "All PDF target candidates remain unresolved under the current source binding; reader reference records cannot bind their existing source nodes. Most labels have a unique exact index candidate.",
+    "occurrence_distribution": {
+      "html": 629,
+      "pdf": 6108
+    },
+    "occurrences": 6737,
+    "pdf_entries": 2670,
+    "rank": 2,
+    "recommended_action": "Carry stable source node/record identifiers through PDF adaptation; review target extents and homonym qualifiers, then replay exact target reviews.",
+    "usability_impact": "high"
+  },
+  {
+    "affected_entries": 804,
+    "component_families": [
+      "language_evidence_untyped",
+      "language_conflict"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20hu%20bhu%20dze/1",
+        "indicator": "language_evidence_untyped",
+        "spans": [
+          [
+            158,
+            262
+          ]
+        ],
+        "text_sha256": "2f7f40b6d9fcdf35942c6df1c7e92e562174674db0f8ba85f6a166e83f0e695f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%20ha/1",
+        "indicator": "language_evidence_untyped",
+        "spans": [
+          [
+            151,
+            255
+          ]
+        ],
+        "text_sha256": "67bc0fb29f58f03d62b9351e6079337218d3c88bdfd1c4c6170bc3b01ac13ba7"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20spyod/1",
+        "indicator": "language_evidence_untyped",
+        "spans": [
+          [
+            200,
+            304
+          ]
+        ],
+        "text_sha256": "70c4b78d3d3fd296fd50297abc90caad708516ac6f24b28b6f070fc8ec0ca1f8"
+      }
+    ],
+    "family": "contextual_language_typing",
+    "html_entries": 646,
+    "layer": "parser + canonical model",
+    "likely_cause": "Explicit Sanskrit cues/correspondences are untyped, especially PDF Lex.; some HTML terms are assigned contradictory languages.",
+    "occurrence_distribution": {
+      "html": 809,
+      "pdf": 176
+    },
+    "occurrences": 985,
+    "pdf_entries": 158,
+    "rank": 3,
+    "recommended_action": "Use explicit skt./correspondence structure and source typography; avoid character-shape language guessing.",
+    "usability_impact": "high"
+  },
+  {
+    "affected_entries": 0,
+    "component_families": [],
+    "count_scope": "24,528 legacy entry groups; no canonical adapter",
+    "examples": [],
+    "family": "registered_print_adapter",
+    "html_entries": 0,
+    "layer": "canonical model + legacy zoning",
+    "likely_cause": "Four registered print PDFs run through legacy entry zoning only; no canonical sense/citation/reader adapter exists. Long entry groups are boundary candidates, not independently proved errors.",
+    "occurrence_distribution": {},
+    "occurrences": 0,
+    "pdf_entries": 0,
+    "rank": 4,
+    "recommended_action": "Design a print OCR witness adapter preserving original coordinates; review the 103 >150-line groups before treating them as reliable entries.",
+    "usability_impact": "high"
+  },
+  {
+    "affected_entries": 19574,
+    "component_families": [
+      "lexical_gap",
+      "pdf_unassigned_candidate"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "indicator": "lexical_gap",
+        "spans": [
+          [
+            961,
+            972
+          ]
+        ],
+        "text_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+        "indicator": "lexical_gap",
+        "spans": [
+          [
+            2070,
+            2081
+          ]
+        ],
+        "text_sha256": "d52b8a0a8ab5b908c134cf6fe83e54e7a742ad7722eedff7a4320d8a705039ae"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "indicator": "lexical_gap",
+        "spans": [
+          [
+            40,
+            62
+          ]
+        ],
+        "text_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      }
+    ],
+    "family": "unaccounted_headers_and_clauses",
+    "html_entries": 11045,
+    "layer": "parser + model / source review",
+    "likely_cause": "Alphabetic gaps include aliases, verb headers and source labels; raw gap counts overstate lexical loss. Holdout exposes displaced PDF header markers.",
+    "occurrence_distribution": {
+      "html": 16588,
+      "pdf": 12466
+    },
+    "occurrences": 29054,
+    "pdf_entries": 8529,
+    "rank": 5,
+    "recommended_action": "Type header/alias/verb material where source evidence supports it. Review remaining lexical gaps and PDF decoding failures by exact spans.",
+    "usability_impact": "medium"
+  },
+  {
+    "affected_entries": 932,
+    "component_families": [
+      "ignored_citation_cue",
+      "citation_identity_unresolved"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20da%20ra/1",
+        "indicator": "ignored_citation_cue",
+        "spans": [
+          [
+            165,
+            184
+          ]
+        ],
+        "text_sha256": "afb35d33ab85098c9c40853b20717a36bea2e0f79064c18d12890aa8bde25e59"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20le%20ka/1",
+        "indicator": "ignored_citation_cue",
+        "spans": [
+          [
+            155,
+            191
+          ]
+        ],
+        "text_sha256": "0ebf9e59e3ffd3be11b2b0a1ae264c481186547ad372d03151e77d69241c1dce"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20lu/1",
+        "indicator": "ignored_citation_cue",
+        "spans": [
+          [
+            124,
+            152
+          ]
+        ],
+        "text_sha256": "ce78dbd0ed3d2a36abf24df09d07f4cdc76ddad5ce1e520b4638ad9fb587ed96"
+      }
+    ],
+    "family": "inline_citation_grammar",
+    "html_entries": 632,
+    "layer": "parser / scholarly ambiguity",
+    "likely_cause": "Inline references such as vgl. PW 5.3 remain unextracted. Numeric parentheses also generate false positives; unresolved authority is distinct from unresolved owner.",
+    "occurrence_distribution": {
+      "html": 796,
+      "pdf": 319
+    },
+    "occurrences": 1115,
+    "pdf_entries": 300,
+    "rank": 6,
+    "recommended_action": "Add general inline citation grammar after source review; preserve unresolved edition/reference identities rather than fuzzy resolving them.",
+    "usability_impact": "medium"
+  },
+  {
+    "affected_entries": 2,
+    "component_families": [
+      "pipeline_exception"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ka%20chen/1",
+        "indicator": "pipeline_exception",
+        "spans": [],
+        "text_sha256": "2a8308cf35ece7d830a5b362afe516e1a4dac23057b07312e5885b5b9ea8564f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kos%20s%C3%B1u%E1%B9%85/1",
+        "indicator": "pipeline_exception",
+        "spans": [],
+        "text_sha256": "b7c844820ad561704f27ed8dd6add18a94684a7a7a04634c8adefd3cc9ed69bc"
+      }
+    ],
+    "family": "source_contract_failures",
+    "html_entries": 2,
+    "layer": "canonical projection / integration",
+    "likely_cause": "Two HTML witnesses raise duplicate typed-span exceptions. One existing PDF semantic overlay fails its endpoint/source contract.",
+    "occurrence_distribution": {
+      "html": 2
+    },
+    "occurrences": 2,
+    "pdf_entries": 0,
+    "rank": 7,
+    "recommended_action": "Isolate duplicate-span construction and investigate the one exact overlay conflict; do not weaken validation to force acceptance.",
+    "usability_impact": "high"
+  },
+  {
+    "affected_entries": 988,
+    "component_families": [
+      "definition_boundary_cue",
+      "empty_numbered_sense",
+      "crossing_components"
+    ],
+    "count_scope": "Union of indicators, not confirmed defect count",
+    "examples": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gam/1",
+        "indicator": "crossing_components",
+        "spans": [
+          [
+            538,
+            601
+          ],
+          [
+            600,
+            602
+          ]
+        ],
+        "text_sha256": "c1e282f898e7d52ae7878fc3226fde1cf444cf77260b9bb0d534ee4b4fb46a33"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20med/1",
+        "indicator": "crossing_components",
+        "spans": [
+          [
+            1916,
+            2038
+          ],
+          [
+            1915,
+            1928
+          ]
+        ],
+        "text_sha256": "e1a436858bfc50226fb8885f103470e415fdb6b04b737ffeb7308e4f9716e1bc"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20po%E2%80%99i%20brtul%20%C5%BAugs%20ma/1",
+        "indicator": "crossing_components",
+        "spans": [
+          [
+            204,
+            259
+          ],
+          [
+            203,
+            228
+          ]
+        ],
+        "text_sha256": "aa301e63ef0651e9c765c230a5c1136af2fc4126c6c7447af79c09ab4164e6a0"
+      }
+    ],
+    "family": "definition_and_numbered_sense_boundaries",
+    "html_entries": 884,
+    "layer": "parser / source ambiguity",
+    "likely_cause": "Conservative boundary indicators require review: quote-only definitions and punctuation overlaps are frequently harmless; three empty numbered senses remain candidates.",
+    "occurrence_distribution": {
+      "html": 1026,
+      "pdf": 114
+    },
+    "occurrences": 1140,
+    "pdf_entries": 104,
+    "rank": 8,
+    "recommended_action": "Review the conservative Lex./later-number boundary queue, using hierarchical labels; handle malformed source quotes without silently swallowing adjacent items.",
+    "usability_impact": "medium"
+  }
+]

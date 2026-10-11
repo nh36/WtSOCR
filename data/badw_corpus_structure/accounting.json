@@ -1,0 +1,133 @@
+{
+  "examples": {
+    "html": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          40,
+          62
+        ],
+        "text_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          44,
+          66
+        ],
+        "text_sha256": "fbf53c62aec5b93f963318e32884f316e5fc78a1ae4a986af4a3393ca3539cf6"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20grus%20ma/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          48,
+          70
+        ],
+        "text_sha256": "099257a8aa0c55c94193abc318a4cb52db0f79dcbb3442d7f882631f3063f0ac"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20hu%20bhu%20dze/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          53,
+          75
+        ],
+        "text_sha256": "2f7f40b6d9fcdf35942c6df1c7e92e562174674db0f8ba85f6a166e83f0e695f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%20ha/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          43,
+          65
+        ],
+        "text_sha256": "67bc0fb29f58f03d62b9351e6079337218d3c88bdfd1c4c6170bc3b01ac13ba7"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+        "literal": "\n    \n    \n      auch ",
+        "span": [
+          41,
+          63
+        ],
+        "text_sha256": "1d9f1493fea386473f85a7deca1c54facf4ac7c711bc1152d7971973836c64dc"
+      }
+    ],
+    "pdf": [
+      {
+        "identity": "badw:pdf:badw-v2-ae03bf8638b16aea76c1fa18ca45d5f735f9b2c5ec6552c00a16982bff17890a:77",
+        "literal": "\ngnaṃ du bźud pa nṛ / ~ thabs brjod du myṛ\n[-]",
+        "span": [
+          5301,
+          5347
+        ],
+        "text_sha256": "9f50d1e871e5a7fa2bde0ec0b1e44854d242dbd6689a974233abe818933c2f54"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a43f0bca12a0227e20798a62cab27acda5ebee143c83478cc492d22805c6a26f:779",
+        "literal": " auch ka, ga ",
+        "span": [
+          0,
+          13
+        ],
+        "text_sha256": "03f95ccc2cbdc1f56cc47ac1a31e8ae9b74e5ac4a607cba8569d8c7f4a684a10"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a43f0bca12a0227e20798a62cab27acda5ebee143c83478cc492d22805c6a26f:1968",
+        "literal": " auch kha skoṅs.\n1. ",
+        "span": [
+          0,
+          20
+        ],
+        "text_sha256": "f001e71577ea05667ff9b4b39b4092bb134f293b769665874fbd4c1decf5371c"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-62395799335979e4c41417eaade5fc71f1fcef2696bdbefa4b2ceb38848dc44d:1223",
+        "literal": "r.",
+        "span": [
+          10,
+          12
+        ],
+        "text_sha256": "76dbce65fd4e166f214bcb413f650f8dd9825737e313c5110a396016f6685387"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-62395799335979e4c41417eaade5fc71f1fcef2696bdbefa4b2ceb38848dc44d:1570",
+        "literal": " auch kha kha khyer ",
+        "span": [
+          0,
+          20
+        ],
+        "text_sha256": "f8337502f21f31f25bbde22104aeb9403c21d5b46822a7084cf0dd345032e5f1"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-f6cef5ea2df255b13f6bac1cf5f77355f7dc894d0d4374bc392e3e82b5822f30:257",
+        "literal": " türk.-mong. Qa⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧an.\n",
+        "span": [
+          0,
+          64
+        ],
+        "text_sha256": "10e633e92b2e0e7c86dc7e324274d3f17362d0abde503ed8a31bd40fdec04e44"
+      }
+    ]
+  },
+  "gaps": {
+    "layout_alphabetic": 0,
+    "layout_characters": 1869927,
+    "layout_runs": 180289,
+    "lexical_or_header_review_alphabetic": 63246,
+    "lexical_or_header_review_characters": 148343,
+    "lexical_or_header_review_runs": 6144,
+    "structural_label_alphabetic": 67815,
+    "structural_label_characters": 184820,
+    "structural_label_runs": 22766
+  },
+  "interpretation": "Label exclusions are diagnostics, never silently assigned lexical content. Remaining gaps include alias/header material as well as lexical omissions.",
+  "outliers": {
+    "entries_over_10_senses": 18,
+    "max_definition_characters": 721,
+    "max_senses": 18
+  }
+}

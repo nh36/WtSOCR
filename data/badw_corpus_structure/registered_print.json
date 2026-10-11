@@ -1,0 +1,162 @@
+{
+  "limitation": "Legacy zoning replay only: no canonical sense/citation/reader adapter exists for registered OCR. Internal legacy normalize_line is not written back; input and original PDF hashes retained. Entry-group counts are not added to online witness counts as distinct lexical entries.",
+  "total_entry_groups": 24528,
+  "volumes": [
+    {
+      "boundary_accuracy": "not_independent_gold",
+      "canonical_reader_status": "adapter_not_available",
+      "entry_spans_over_150_lines": 46,
+      "input_text": "release/current/text/wts_1_34_corrected_full.txt",
+      "input_text_sha256": "f45e1c91576991937521cfe37d752ddf29c12fe71a0da5e2d30f9c22abd7df97",
+      "max_entry_lines": 3263,
+      "source": {
+        "filename": "pdfs/WtS 1-34.pdf",
+        "label": "WtS_1-34",
+        "note": "full main dictionary source PDF",
+        "pages": "1352",
+        "sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+        "size_bytes": "110232410",
+        "status": "ingested"
+      },
+      "summary": {
+        "entries_detected": 13435,
+        "non_empty_lines": 178435,
+        "pages": 1352,
+        "total_lines_seen": 240015,
+        "translit_tokens_detected": 305717,
+        "uncaptured_tibetan_prefix_lines": 5123,
+        "validator_issues": 12249,
+        "zone_counts": {
+          "example_tibetan_latin": 1284,
+          "german_prose": 43908,
+          "german_prose_with_translit": 84031,
+          "headword_line": 13435,
+          "latin_other": 21180,
+          "other": 9446,
+          "tibetan_latin_mixed": 664,
+          "tibetan_only": 4487
+        }
+      },
+      "unassigned_alphabetic": 26491,
+      "unassigned_nonempty_lines": 481,
+      "volume": "wts_1_34"
+    },
+    {
+      "boundary_accuracy": "not_independent_gold",
+      "canonical_reader_status": "adapter_not_available",
+      "entry_spans_over_150_lines": 26,
+      "input_text": "release/current/text/wts_35_51_corrected_full.txt",
+      "input_text_sha256": "dd3e68510ce2a359c5d68bffb3a36d477bc9ef74f7d27fd234b28daf89dbc1c2",
+      "max_entry_lines": 1002,
+      "source": {
+        "filename": "pdfs/WtS 35-51.pdf",
+        "label": "WtS_35-51",
+        "note": "full main dictionary source PDF",
+        "pages": "1128",
+        "sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+        "size_bytes": "79764217",
+        "status": "ingested"
+      },
+      "summary": {
+        "entries_detected": 6159,
+        "non_empty_lines": 91855,
+        "pages": 1128,
+        "total_lines_seen": 91855,
+        "translit_tokens_detected": 154282,
+        "uncaptured_tibetan_prefix_lines": 1861,
+        "validator_issues": 4285,
+        "zone_counts": {
+          "example_tibetan_latin": 223,
+          "german_prose": 23978,
+          "german_prose_with_translit": 42518,
+          "headword_line": 6159,
+          "latin_other": 12839,
+          "other": 4009,
+          "tibetan_latin_mixed": 112,
+          "tibetan_only": 2017
+        }
+      },
+      "unassigned_alphabetic": 0,
+      "unassigned_nonempty_lines": 0,
+      "volume": "wts_35_51"
+    },
+    {
+      "boundary_accuracy": "not_independent_gold",
+      "canonical_reader_status": "adapter_not_available",
+      "entry_spans_over_150_lines": 12,
+      "input_text": "release/current/text/wts_8_b_corrected_full.txt",
+      "input_text_sha256": "86a8d2e61bdd02555f1f089319b6888c25bbdd213fc61a59af95a92b60ac545f",
+      "max_entry_lines": 306,
+      "source": {
+        "filename": "pdfs/WtS 8-b.pdf",
+        "label": "WtS_8-b",
+        "note": "new source PDF copied from ~/Downloads on 2026-03-20",
+        "pages": "585",
+        "sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+        "size_bytes": "97173325",
+        "status": "ingested"
+      },
+      "summary": {
+        "entries_detected": 3138,
+        "non_empty_lines": 48290,
+        "pages": 585,
+        "total_lines_seen": 48291,
+        "translit_tokens_detected": 77244,
+        "uncaptured_tibetan_prefix_lines": 1121,
+        "validator_issues": 2251,
+        "zone_counts": {
+          "example_tibetan_latin": 143,
+          "german_prose": 12548,
+          "german_prose_with_translit": 22142,
+          "headword_line": 3138,
+          "latin_other": 6622,
+          "other": 2386,
+          "tibetan_latin_mixed": 75,
+          "tibetan_only": 1236
+        }
+      },
+      "unassigned_alphabetic": 12588,
+      "unassigned_nonempty_lines": 283,
+      "volume": "wts_8_b"
+    },
+    {
+      "boundary_accuracy": "not_independent_gold",
+      "canonical_reader_status": "adapter_not_available",
+      "entry_spans_over_150_lines": 19,
+      "input_text": "release/current/text/wts_9_m_corrected_full.txt",
+      "input_text_sha256": "2abb4c2eb1763c331cc817bc8fa666fc80f66de2925c9bc83cfa680cdcb71986",
+      "max_entry_lines": 630,
+      "source": {
+        "filename": "pdfs/WtS 9-m.pdf",
+        "label": "WtS_9-m",
+        "note": "new source PDF copied from ~/Downloads on 2026-04-15",
+        "pages": "401",
+        "sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+        "size_bytes": "71529965",
+        "status": "ingested"
+      },
+      "summary": {
+        "entries_detected": 1796,
+        "non_empty_lines": 33664,
+        "pages": 401,
+        "total_lines_seen": 33664,
+        "translit_tokens_detected": 51898,
+        "uncaptured_tibetan_prefix_lines": 1023,
+        "validator_issues": 1492,
+        "zone_counts": {
+          "example_tibetan_latin": 111,
+          "german_prose": 9066,
+          "german_prose_with_translit": 15006,
+          "headword_line": 1796,
+          "latin_other": 4816,
+          "other": 1677,
+          "tibetan_latin_mixed": 73,
+          "tibetan_only": 1119
+        }
+      },
+      "unassigned_alphabetic": 4249,
+      "unassigned_nonempty_lines": 144,
+      "volume": "wts_9_m"
+    }
+  ]
+}
