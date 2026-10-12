@@ -8,7 +8,7 @@ import hashlib
 import re
 from badw_source_components import lexical_clauses, terminal_lexical_citation
 
-VERSION = 'badw-semantic-hierarchy-v2'
+VERSION = 'badw-semantic-hierarchy-v3'
 
 
 def citation_family(projection, text, node):
@@ -55,6 +55,12 @@ def hierarchy(projection, text):
                     entry_identity=identity, start=a, end=b, literal=text[a:b],
                     source_binding=dict(identity=identity, text_sha256=sha),
                     status='derived_source_structure', **fields)
+
+    from badw_contextual_semantics import language_forms
+    contextual, language_indicators = language_forms(projection, text)
+    forms = [object_('sanskrit_form', f['start'], f['end'], language='sa',
+                     evidence=f['evidence'], marker_span=f['marker_span']) for f in contextual]
+    correspondences = []
 
     senses = {n['lexical_record_id']: n['id'] for n in nodes
               if n['kind'] == 'sense' and n.get('lexical_record_id')}
@@ -117,6 +123,11 @@ def hierarchy(projection, text):
             fields = {kind: [dict(node_id=n['id'], start=n['start'], end=n['end'],
                                  literal=text[n['start']:n['end']]) for n in contained if n['kind'] == kind]
                       for kind in ('tibetan', 'sanskrit', 'translation', 'citation')}
+            for form in forms:
+                if x <= form['start'] < form['end'] <= y:
+                    form['lex_item_id'] = object_('lex_item', x, y)['id']
+                    if not any(f['start']==form['start'] and f['end']==form['end'] for f in fields['sanskrit']):
+                        fields['sanskrit'].append(dict(node_id=form['id'], start=form['start'], end=form['end'], literal=form['literal']))
             sigla = []
             for sig in clause.get('tagged_fields', {}).get('sigla', []):
                 sl = sig['locator']; sa, sb = sl['visible_text_start'], sl['visible_text_end']
@@ -136,6 +147,22 @@ def hierarchy(projection, text):
                            sigla=sigla, delimiter_diagnostics=clause_diagnostics)
             item['source_locator'] = clause.get('locator') or {k: clause[k] for k in ('source_line', 'source_line_end', 'start_line_index', 'end_line_index', 'line_start', 'line_end', 'division_index') if k in clause}
             items.append(item)
+            for form in forms:
+                if form.get('lex_item_id') != item['id']: continue
+                form['sigla'] = sigla
+                # A correspondence requires an explicit equivalence sign.
+                # A Sanskrit lemma with Mvy alone remains a sourced form.
+                signs = list(re.finditer('[=≅≈]', text[x:form['start']]))
+                if not signs: continue
+                mark = x+signs[-1].start()
+                tibetan = [f for f in fields['tibetan'] if f['end'] <= mark]
+                if not tibetan: continue
+                antecedent = max(tibetan, key=lambda f:f['end'])
+                correspondences.append(dict(id=item['id']+':'+form['id'], lex_item_id=item['id'],
+                    sanskrit_form_id=form['id'], tibetan_span=antecedent,
+                    marker_span=dict(start=mark,end=mark+1,literal=text[mark]),
+                    evidence='explicit Lex. equivalence between source-bound fields',
+                    source_binding=item['source_binding']))
             passage = object_('citable_passage', x, y, passage_type='lex_item',
                               lex_item_id=item['id'], sense_node_id=item_sense,
                               ownership=item_ownership, evidence='bounded source Lex. delimiter clause',
@@ -177,6 +204,12 @@ def hierarchy(projection, text):
             if len(tib) != 1 or len(gloss) != 1 or not cites:
                 continue
             t, g = tib[0], gloss[0]
+            # Inline references inside the expression can support a local
+            # correction rather than the quotation. They neither establish
+            # nor invalidate its whitespace-attached terminal attribution.
+            cites = [c for c in cites if c['start'] >= g['end']]
+            if not cites:
+                continue
             q = quotes.get((g['start'], g['end']))
             if not q or q.get('diagnostics') or q.get('children'):
                 continue
@@ -225,10 +258,16 @@ def hierarchy(projection, text):
         sense = parent.get('id') if parent.get('kind') == 'sense' else None
         # PDF definitions are candidates; require citations syntactically
         # enclosed in a parenthetical or an explicit comparison construction.
-        if not html and any(not (text[c['start']:c['end']].startswith(('(', 'vgl.')) or
-                                 re.search(r'\bvgl\.\s*$', text[a:c['start']]))
-                            for c in cites):
-            continue
+        if not html:
+            # Eligibility belongs to each occurrence. An additional, unowned
+            # inline reference must not invalidate established clause owners.
+            cites = [c for c in cites if
+                     text[c['start']:c['end']].startswith(('(', 'vgl.')) or
+                     re.search(r'\bvgl\.\s*$', text[a:c['start']]) or
+                     c.get('source_evidence', {}).get('local_syntax') in
+                     ('bounded_parenthesis', 'explicit_comparison')]
+            if not cites:
+                continue
         passages.append(object_('citable_passage', a, b,
             passage_type='definition_clause', definition_node_id=node['id'],
             sense_node_id=sense, ownership='sense' if sense else 'entry',
@@ -257,6 +296,16 @@ def hierarchy(projection, text):
     # A narrower Sanskrit tag/correspondence overrides a broad Tibetan envelope;
     # both observations remain in the source graph for inspection.
     languages = [n for n in nodes if n['kind'] in ('tibetan', 'sanskrit')]
+    conflicts = []
+    for bo in (n for n in languages if n['kind']=='tibetan'):
+        for sa in (n for n in languages if n['kind']=='sanskrit'):
+            a,b=max(bo['start'],sa['start']),min(bo['end'],sa['end'])
+            if a<b:
+                conflict=object_('language_conflict',a,b,observation_node_ids=[bo['id'],sa['id']],classification='legitimate_nested_observation' if (bo['start'],bo['end'])==(sa['start'],sa['end']) else 'broad_source_envelope',effective_resolution='explicit Sanskrit evidence')
+                conflict['id']=hashlib.sha256((conflict['id']+'\0'+bo['id']+'\0'+sa['id']).encode()).hexdigest()
+                conflicts.append(conflict)
+    contextual_nodes = [dict(f, kind='sanskrit', source_evidence=f['evidence']) for f in forms]
+    languages += contextual_nodes
     cuts = sorted({v for n in languages for v in (n['start'], n['end'])})
     effective = []
     for a, b in zip(cuts, cuts[1:]):
@@ -269,5 +318,6 @@ def hierarchy(projection, text):
             effective.append(object_('language_span', a, b, language=language,
                              observation_node_ids=[n['id'] for n in covering],
                              evidence='explicit Sanskrit source field overrides enclosing Tibetan observation' if explicit_sa else 'source language observation'))
-    return dict(effective_language_spans=effective, contract_version=VERSION, lex_blocks=blocks, lex_items=items,
+    return dict(sanskrit_forms=forms, sanskrit_correspondences=correspondences,
+                language_indicators=language_indicators, source_language_conflicts=conflicts, effective_language_spans=effective, contract_version=VERSION, lex_blocks=blocks, lex_items=items,
                 citable_passages=passages, citation_ownership=owners)

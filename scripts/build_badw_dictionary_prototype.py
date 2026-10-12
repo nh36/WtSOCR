@@ -230,6 +230,18 @@ def main():
         ap.error('PDF bibliography export requires --pdf-citation-staging')
     if args.bibliography and any(p['source_kind'] == 'html' for p in records) and not args.source_cache:
         ap.error('HTML bibliography export requires --source-cache')
+    if args.bibliography and args.source_cache:
+        from badw_contextual_semantics import augment_citations
+        from badw_bibliography import AuthorityResolver
+        from badw_bibliography_aliases import load_reviews
+        with sqlite3.connect(args.bibliography.resolve().as_uri()+'?mode=ro',uri=True) as db:
+            authorities=[json.loads(r[0]) for r in db.execute('SELECT record_json FROM authority ORDER BY id')]
+        source_rows=[json.loads(line) for line in args.bibliography.with_name('source_rows.jsonl').read_text().split('\n') if line]
+        aliases=load_reviews(args.alias_reviews,source_rows,root/'data/source_pdfs.tsv',args.source_cache)
+        resolver=AuthorityResolver(authorities,source_rows,aliases)
+        texts={e['projection']['identity']:e['review_text'] for e in entries}
+        records=[augment_citations(p,texts[p['identity']],resolver)[0] for p in records]
+        entries=view(records,index)
     bridge, diagnostics = pdf_occurrence_bridge(records, args.pdf_citation_staging, args.pdf_canonical_root) if args.pdf_citation_staging else ({}, [])
     bib = bibliography_links(records, args.citation_links, args.bibliography, bridge, diagnostics, args.source_cache, args.source_citation_reviews, args.alias_reviews) if args.bibliography else {}
     payload = dict(contract_version="badw-dictionary-reader-v1", entries=[entry_view(e, bib) for e in entries],

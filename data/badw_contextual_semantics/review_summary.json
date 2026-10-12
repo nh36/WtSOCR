@@ -1,0 +1,34 @@
+{
+  "already_extracted_or_non_citation": 530,
+  "baseline_cues": 792,
+  "confirmed_real_missed_cues": 262,
+  "extracted_cues": 234,
+  "final_44_review": {
+    "diagnostic_false_positive": 16,
+    "genuine_missed_citation": 28
+  },
+  "fresh_holdout": {
+    "false_citation_extractions": 0,
+    "false_sanskrit_assignments": 0,
+    "html": 10,
+    "limitation": "No fresh PDF Mvy case survived exclusions; not an accuracy estimate.",
+    "missed_sanskrit_forms": 2,
+    "over_wide_sanskrit_spans": 0,
+    "pdf": 9,
+    "rules_tuned_to_holdout": false,
+    "tibetan_incorrectly_relabeled": 0,
+    "witnesses": 19,
+    "wrong_bibliography_identities": 0,
+    "wrong_citation_owners": 0
+  },
+  "ownership_residue": {
+    "HTML_example_envelope": 3,
+    "PDF_example_candidate": 6,
+    "definition_clause": 2,
+    "entry_prose_without_bounded_passage": 156,
+    "explicit_comparison_clause": 167,
+    "no_structural_envelope": 49,
+    "sense_prose_without_bounded_passage": 21
+  },
+  "still_missed_cues": 28
+}

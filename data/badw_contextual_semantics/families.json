@@ -1,0 +1,1495 @@
+[
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 16590,
+      "pdf": 12322
+    },
+    "entries": 19575,
+    "examples": [
+      {
+        "details": {
+          "alphabetic_characters": 3
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            961,
+            972
+          ]
+        ],
+        "text_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      },
+      {
+        "details": {
+          "alphabetic_characters": 3
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+        "source_kind": "html",
+        "spans": [
+          [
+            2070,
+            2081
+          ]
+        ],
+        "text_sha256": "d52b8a0a8ab5b908c134cf6fe83e54e7a742ad7722eedff7a4320d8a705039ae"
+      },
+      {
+        "details": {
+          "alphabetic_characters": 4
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            40,
+            62
+          ]
+        ],
+        "text_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      },
+      {
+        "details": {
+          "alphabetic_characters": 3
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            610,
+            621
+          ]
+        ],
+        "text_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      },
+      {
+        "details": {
+          "alphabetic_characters": 3
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20byu%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            110,
+            117
+          ]
+        ],
+        "text_sha256": "1826d7541cbb16c0f0e72543bedb69c43cc425b987ac6093cb1d66c9bdc20849"
+      },
+      {
+        "details": {
+          "alphabetic_characters": 3
+        },
+        "family": "lexical_gap",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20byu%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            269,
+            276
+          ]
+        ],
+        "text_sha256": "1826d7541cbb16c0f0e72543bedb69c43cc425b987ac6093cb1d66c9bdc20849"
+      }
+    ],
+    "family": "lexical_gap",
+    "layer": "parser",
+    "occurrences": 28912,
+    "recommended_action": "Alphabetic source outside every non-container component; delimit omitted clauses",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 2205
+    },
+    "entries": 2162,
+    "examples": [
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            92,
+            100
+          ]
+        ],
+        "text_sha256": "da81e528bc2d754e143ad0303fd16b784af8d5a048449f16c0630e4f39703e00"
+      },
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20drus%20ma/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            114,
+            122
+          ]
+        ],
+        "text_sha256": "a1ce463c0f1c004e74b47f03946c405fda2e95aeb18bea6a14df3c69fa59f35a"
+      },
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gla%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            105,
+            113
+          ]
+        ],
+        "text_sha256": "6f747d0efe63a4e975fccc47393b1f6d59106c7ab6e0046999a6aed7d3dc3b7b"
+      },
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            101,
+            109
+          ]
+        ],
+        "text_sha256": "55e2527e674e60586941ee3683400ae058017937899262f8a15c84da39f34c54"
+      },
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%20ra/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            107,
+            115
+          ]
+        ],
+        "text_sha256": "1a115465955d98d23bafb50da3b0ffeabfced48e421d45ab3ad3fa476631ee45"
+      },
+      {
+        "details": {
+          "kind": "source_division"
+        },
+        "family": "empty_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            103,
+            111
+          ]
+        ],
+        "text_sha256": "aa1081ae68b5c604ee8e696d86777ed6f5eded2fcf0a6926321c530cb0b7528c"
+      }
+    ],
+    "family": "empty_component",
+    "layer": "parser",
+    "occurrences": 2205,
+    "recommended_action": "Component has whitespace only",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 1108,
+      "pdf": 182
+    },
+    "entries": 1262,
+    "examples": [
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20bgra%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            88,
+            126
+          ]
+        ],
+        "text_sha256": "2efaaf382e0d3383d0533a31e560ce82e0d271ded78a697a4786e86742c954bf"
+      },
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20gi%20brtul%20%C5%BAugs%20%E2%80%99dzin%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            121,
+            226
+          ]
+        ],
+        "text_sha256": "68857a239e7cd1720b1a7480f36dc09820f70cb5c1f80844da872b2e193eff23"
+      },
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20mig/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            118,
+            186
+          ]
+        ],
+        "text_sha256": "efa33254dc0611d7aa77919a1ac00a2dd179e95fa6afbc36d190dcdfa1281dd0"
+      },
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rjes/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            87,
+            155
+          ]
+        ],
+        "text_sha256": "1860aa6fd45c5b8a4b654ba68954767a5f7f93272af661668fdb7ee4a562a53e"
+      },
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20le%20ka/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            81,
+            193
+          ]
+        ],
+        "text_sha256": "0ebf9e59e3ffd3be11b2b0a1ae264c481186547ad372d03151e77d69241c1dce"
+      },
+      {
+        "details": null,
+        "family": "definition_contains_later_structure",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20tshwa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            108,
+            232
+          ]
+        ],
+        "text_sha256": "20fe0d7e0aad2d5505117ec33db947ad8d1de996856b63d247fb52cd97a57676"
+      }
+    ],
+    "family": "definition_contains_later_structure",
+    "layer": "parser",
+    "occurrences": 1290,
+    "recommended_action": "Definition contains quote/Lex./later numbering; inspect boundary grammar",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 1023,
+      "pdf": 40
+    },
+    "entries": 913,
+    "examples": [
+      {
+        "details": {
+          "kinds": [
+            "translation",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gam/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            538,
+            601
+          ],
+          [
+            600,
+            602
+          ]
+        ],
+        "text_sha256": "c1e282f898e7d52ae7878fc3226fde1cf444cf77260b9bb0d534ee4b4fb46a33"
+      },
+      {
+        "details": {
+          "kinds": [
+            "lexical_parallel",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20med/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            1916,
+            2038
+          ],
+          [
+            1915,
+            1928
+          ]
+        ],
+        "text_sha256": "e1a436858bfc50226fb8885f103470e415fdb6b04b737ffeb7308e4f9716e1bc"
+      },
+      {
+        "details": {
+          "kinds": [
+            "lexical_parallel",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20po%E2%80%99i%20brtul%20%C5%BAugs%20ma/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            204,
+            259
+          ],
+          [
+            203,
+            228
+          ]
+        ],
+        "text_sha256": "aa301e63ef0651e9c765c230a5c1136af2fc4126c6c7447af79c09ab4164e6a0"
+      },
+      {
+        "details": {
+          "kinds": [
+            "lexical_parallel",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20skyes/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            408,
+            422
+          ],
+          [
+            407,
+            416
+          ]
+        ],
+        "text_sha256": "82e02acf9aee5188513909d333d0710bb09b5858de8b8d6d79ba21cb4c9b53fb"
+      },
+      {
+        "details": {
+          "kinds": [
+            "lexical_parallel",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20so/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            109,
+            177
+          ],
+          [
+            108,
+            128
+          ]
+        ],
+        "text_sha256": "36b567760c78e0e246f560258cacd5709c3337c038b5bf9229914d35956aa4f1"
+      },
+      {
+        "details": {
+          "kinds": [
+            "lexical_parallel",
+            "tibetan"
+          ]
+        },
+        "family": "crossing_components",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20%E2%80%99dzin/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            1113,
+            1406
+          ],
+          [
+            1112,
+            1212
+          ]
+        ],
+        "text_sha256": "3f7032a261066360e1af138538e5f66299a7d28fd35ffe75d8f8f543c5a08616"
+      }
+    ],
+    "family": "crossing_components",
+    "layer": "parser/model",
+    "occurrences": 1063,
+    "recommended_action": "Non-container intervals cross instead of nesting",
+    "severity": "high"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "html": 82,
+      "pdf": 322
+    },
+    "entries": 331,
+    "examples": [
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bregs/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            2720,
+            2728
+          ]
+        ],
+        "text_sha256": "0906252e042f86779f9d885e4edb189837688dda17928ced7b5c978874be7dcc"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bro%20%E2%80%99tshal/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            801,
+            812
+          ]
+        ],
+        "text_sha256": "67465aa754dbe3b46d78ee84ba736169740601b4962b64ce189a6f90adaaa041"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/dme/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            888,
+            899
+          ]
+        ],
+        "text_sha256": "df0bb20d1d16eaba7eeeb93485a05db9eb25b1759fc73ef0bf142bc388966c38"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/don%20spyod/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            911,
+            920
+          ]
+        ],
+        "text_sha256": "4d46b9cc7b270ffcf8b45a4f63918940a91050e19ca95a88c6699883def46cd5"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            186,
+            188
+          ]
+        ],
+        "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            408,
+            410
+          ]
+        ],
+        "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b"
+      }
+    ],
+    "family": "citation_owner_unresolved",
+    "layer": "model",
+    "occurrences": 404,
+    "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 383,
+      "pdf": 1
+    },
+    "entries": 255,
+    "examples": [
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20ya%E1%B9%85s/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            919,
+            928
+          ],
+          [
+            919,
+            928
+          ]
+        ],
+        "text_sha256": "8ef87caef66df4bf63c9597165023b2d1f93666cd7fcfddd9a48fdf40d21008c"
+      },
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bde%20chen%20%E2%80%99khor%20lo/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            337,
+            350
+          ],
+          [
+            337,
+            350
+          ]
+        ],
+        "text_sha256": "85451720e9e5d5e69b299219eda5aeb4daa336c7a7452dc79ec9e95e04a1c836"
+      },
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20blo%20bde%20ba/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            715,
+            723
+          ],
+          [
+            715,
+            722
+          ]
+        ],
+        "text_sha256": "5fb6ef6a0c68b8bb671696e883243d52ee18db60e09fef334147823b0d0f20d1"
+      },
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20mchid/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            1644,
+            1651
+          ],
+          [
+            1644,
+            1651
+          ]
+        ],
+        "text_sha256": "1e44257a79973aa465e9e490b27db75a4e2ccc6fc08e36fcfab46827abcd67ed"
+      },
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bkod%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            1770,
+            1775
+          ],
+          [
+            1770,
+            1775
+          ]
+        ],
+        "text_sha256": "3169add34c85d6852fd06c41515b4e2691239ae17a45e4d1c30f65bfe67085e1"
+      },
+      {
+        "details": null,
+        "family": "language_conflict",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bkra%20%C5%9Bis/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            3952,
+            3960
+          ],
+          [
+            3952,
+            3960
+          ]
+        ],
+        "text_sha256": "c6c2ed2b9dee20eb45c4564b68d892bea894e724e0916d75d4788885d0ea5a63"
+      }
+    ],
+    "family": "language_conflict",
+    "layer": "model",
+    "occurrences": 384,
+    "recommended_action": "Contradictory Tibetan/Sanskrit component intervals",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "pdf": 144
+    },
+    "entries": 138,
+    "examples": [
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-a43f0bca12a0227e20798a62cab27acda5ebee143c83478cc492d22805c6a26f:1843",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "242de8f3a518e2a926c244ec82eef4cebe2066fbf77a64a2cb8267853f57ffc3"
+      },
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-94e53758c4140e89927e31cd8e1e6222e37d938f81f905fcb6a985274742eb94:734",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "b102deb9723c83e8566ce440b9885d3b553a424a67b2d50b38618a239bfae90d"
+      },
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-2de932aa4427e87349b7332ffbfda7910e06d794d5f5f7cf5c3092cc27925f5c:744",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "4fc1fe3826843c508ab9b73b5eb14f867f08c1d756c58fd0a59e10ac4dcdec89"
+      },
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:623",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "05abeb60810c293d2f76eb665b761cda31f12d501acd8dec969ba679a3104d09"
+      },
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-3dd0869f862a0b2b8dcf47b62f116b97f34ca0ba2d27c7b73b54f9fd2f67ed60:145",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "e29e64f38bbd25f244c3b9613eda50c47bcb1350e8ba0e2fbdac2ca86e560e33"
+      },
+      {
+        "details": {
+          "kind": "candidate"
+        },
+        "family": "pdf_unassigned_candidate",
+        "identity": "badw:pdf:badw-v2-14155ce61fc592b3b39038c3109453d412923eff484ec8ddf935bcfc09769a7a:2110",
+        "source_kind": "pdf",
+        "spans": [],
+        "text_sha256": "d1254dbcd2f6003c1356cd78c410a8aeb985b756e87f217cca965dcdb7b4fc53"
+      }
+    ],
+    "family": "pdf_unassigned_candidate",
+    "layer": "model/parser",
+    "occurrences": 144,
+    "recommended_action": "Nested/adapted extraction leaves candidate explicitly unassigned",
+    "severity": "high"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "html": 22,
+      "pdf": 22
+    },
+    "entries": 40,
+    "examples": [
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(Tsepak rigdzin 2003 s. v.)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdud%20b%C5%BAi/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            155,
+            182
+          ]
+        ],
+        "text_sha256": "7d30a96d2e8e386971bd9452053dbf585371529b4cae4dc09d1da460b032d71a"
+      },
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(Abt. 4642, Abt. lta ba sna tshogs kyi miṅ)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/byed%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            2472,
+            2515
+          ]
+        ],
+        "text_sha256": "c6712b1471fed826252c6ff7b30766cb3b5aecd2ab900e5ee7069cfb6b805a2a"
+      },
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(3129, Abt. ’jig rten pa’i lha’i miṅ)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/dba%E1%B9%85%20phyug/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            3909,
+            3946
+          ]
+        ],
+        "text_sha256": "17cc64da335600878cdfe55261016f24dd8f004bf8f95ea6b63ec1dc129a5325"
+      },
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(gest. 739)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kim%20%C5%9Be%E1%B9%85%20ko%E1%B9%85%20co/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            212,
+            223
+          ]
+        ],
+        "text_sha256": "864bfa6d8fb7991229b2e599dd9ab1d6ce80442e38b7b2365033648d000f625e"
+      },
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(sKal bzaṅ gyur med 1992: 55 ff.)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            462,
+            495
+          ]
+        ],
+        "text_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "details": {
+          "classification": "unregistered_or_malformed_reference_requires_review",
+          "literal": "(sKal bzaṅ gyur med 1992: 87 ff.)"
+        },
+        "family": "ignored_citation_cue",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyin/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            388,
+            421
+          ]
+        ],
+        "text_sha256": "2d38592ebec25aee9d9de7c7864ec84575ec080d6f5de17de4e8a079d13c5166"
+      }
+    ],
+    "family": "ignored_citation_cue",
+    "layer": "parser",
+    "occurrences": 44,
+    "recommended_action": "Author-year or numeric parenthesis outside extracted citation",
+    "severity": "high"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "pdf": 3
+    },
+    "entries": 3,
+    "examples": [
+      {
+        "details": {
+          "classification": "unresolved_source_syntax",
+          "literal": "skt. ⟦UNKNOWN:TGaramond:regular:00E7:cc6b74e13af7⟧sphaṭ caus.) möch-\nte, muß ein tilaka ausführen“ (Hev "
+        },
+        "family": "language_evidence_untyped",
+        "identity": "badw:pdf:badw-v2-c024c88ad00dbbd19d680fe47a0eaf006dab6cbd912bc1b4398d5a041ea67fa4:935",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            94,
+            198
+          ]
+        ],
+        "text_sha256": "8c71c0cc2cf8d442af6345a0d53bc3bd58c9280ba82476347fa161bbac588854"
+      },
+      {
+        "details": {
+          "classification": "source_decoding_corruption",
+          "literal": "skt. Uccai⟦UNKNOWN:TGaramond:regular:0062:132486157c8f⟧śravas.\n།\n~ daṅ / śiṅ yoṅs su ’du la sogs pa byuṅ"
+        },
+        "family": "language_evidence_untyped",
+        "identity": "badw:pdf:badw-v4-756713ea3a4fa2a141b79e862f47744922b2522b090a58b96a43641afbd2e1ad:449",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            23,
+            127
+          ]
+        ],
+        "text_sha256": "9366892ed48180f33b185cc9a276ea530412c166fb8616a694d40a80583e5d37"
+      },
+      {
+        "details": {
+          "classification": "source_decoding_corruption",
+          "literal": "skt.\nUccai⟦UNKNOWN:TGaramond:regular:0062:132486157c8f⟧śravas.\n།\nLex. brgya byin gyi rta (brDa, Dagy)."
+        },
+        "family": "language_evidence_untyped",
+        "identity": "badw:pdf:badw-v4-edc402da483d9051abba62ee0fea2514076fb07d38df22103e38f01b2589a171:292",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            19,
+            121
+          ]
+        ],
+        "text_sha256": "a17a49d7e265e5b8c21d0cc4c273e249ce74221c98fc485f61a5832dc208d44d"
+      }
+    ],
+    "family": "language_evidence_untyped",
+    "layer": "parser/model",
+    "occurrences": 3,
+    "recommended_action": "Explicit Sanskrit cue lacks nearby Sanskrit component; use contextual evidence",
+    "severity": "high"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "pdf": 6
+    },
+    "entries": 3,
+    "examples": [
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-3b4a5a66039edefa627263517ddfe40c6836437cab742f75ef0be77a342f5c2a:1248",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            396,
+            400
+          ]
+        ],
+        "text_sha256": "b0551a6d0ac9d6ed06b48aaa808df55c7a3d171b930170a8b48934e1abe4e244"
+      },
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-3b4a5a66039edefa627263517ddfe40c6836437cab742f75ef0be77a342f5c2a:1248",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            452,
+            456
+          ]
+        ],
+        "text_sha256": "b0551a6d0ac9d6ed06b48aaa808df55c7a3d171b930170a8b48934e1abe4e244"
+      },
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-3b4a5a66039edefa627263517ddfe40c6836437cab742f75ef0be77a342f5c2a:1248",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            514,
+            518
+          ]
+        ],
+        "text_sha256": "b0551a6d0ac9d6ed06b48aaa808df55c7a3d171b930170a8b48934e1abe4e244"
+      },
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-1e4229bcef490fd717b70c4fe701b3002999ac2bcdbd3e86e11fd2a9066646ca:1224",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            2302,
+            2306
+          ]
+        ],
+        "text_sha256": "d8cd64da381ba197f6d43b75108467ecde7decfc8aedb541e2e3b2e47f92c414"
+      },
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-1e4229bcef490fd717b70c4fe701b3002999ac2bcdbd3e86e11fd2a9066646ca:1224",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            2351,
+            2355
+          ]
+        ],
+        "text_sha256": "d8cd64da381ba197f6d43b75108467ecde7decfc8aedb541e2e3b2e47f92c414"
+      },
+      {
+        "details": null,
+        "family": "lex_clause_untyped",
+        "identity": "badw:pdf:badw-v2-3df750f2779ebee1d4d8e22968434aada2b6cd4744f5e41f9433ea183514eddb:1999",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            5384,
+            5388
+          ]
+        ],
+        "text_sha256": "0e2111587097102bd26844689fba853b60ce3fd64376735d411e962e92d8f77b"
+      }
+    ],
+    "family": "lex_clause_untyped",
+    "layer": "parser/model",
+    "occurrences": 6,
+    "recommended_action": "Lex. marker has no following lexical_parallel component before next marker",
+    "severity": "high"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "html": 576,
+      "pdf": 276
+    },
+    "entries": 780,
+    "examples": [
+      {
+        "details": {
+          "exact_label_candidates": [
+            "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:623"
+          ],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "khur moṅ"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20lci/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "23453e57d57a3fb5842464fefccad93a29fd8a761bf8862a4f2a1b48a3d8fa89"
+      },
+      {
+        "details": {
+          "exact_label_candidates": [
+            "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:916"
+          ],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "khrums stod"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "da72db311cbf2e4b91b045fa5e14a912c9ae1993de1d22cc2673114019f14b3d"
+      },
+      {
+        "details": {
+          "exact_label_candidates": [
+            "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1509"
+          ],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "khrums smad"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "da72db311cbf2e4b91b045fa5e14a912c9ae1993de1d22cc2673114019f14b3d"
+      },
+      {
+        "details": {
+          "exact_label_candidates": [
+            "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1735"
+          ],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "khrums zla"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20rka%E1%B9%85%20pa/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "da72db311cbf2e4b91b045fa5e14a912c9ae1993de1d22cc2673114019f14b3d"
+      },
+      {
+        "details": {
+          "exact_label_candidates": [
+            "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1735"
+          ],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "khrums zla"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20zla%20ba/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "020482083f40c06281e9b1fcc711b22d87844d4e57f3ce79e00d5f05479d9276"
+      },
+      {
+        "details": {
+          "exact_label_candidates": [],
+          "reason": "explicit_link_target_absent_from_acquired_index",
+          "target": "wa zur"
+        },
+        "family": "xref_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20phyed/1",
+        "source_kind": "html",
+        "spans": [],
+        "text_sha256": "50477b9912790881531f7d2b163aba23b48f38a431a75a0b8a32003117c5089b"
+      }
+    ],
+    "family": "xref_unresolved",
+    "layer": "parser/source",
+    "occurrences": 852,
+    "recommended_action": "Exact URL absent or printed target not reviewed; no fuzzy linking",
+    "severity": "medium"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "html": 149,
+      "pdf": 201
+    },
+    "entries": 327,
+    "examples": [
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20med/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            3446,
+            3485
+          ]
+        ],
+        "text_sha256": "30020c3eca7429fcf56913d8b4d3a30a6a43eb20295502c056d830d07440fe82"
+      },
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ban%20de/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            252,
+            281
+          ]
+        ],
+        "text_sha256": "e637e95b880630d986d653eb5e4950d97e5ff8af1e6a0a15536f3973deba403d"
+      },
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20chen/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            124,
+            151
+          ]
+        ],
+        "text_sha256": "ec225dfbb2a987ed05371907894585f03183df58738ebce6500a12b4d8526977"
+      },
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bde%20ba%20skyo%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            194,
+            216
+          ]
+        ],
+        "text_sha256": "a94996f0036d28181e31f95f0a2478f09472a9b1eefbe609d0442c1668c5e13d"
+      },
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bde%20bar%20g%C5%9Begs%20pa%E2%80%99i%20chos%20gos%20kyi%20tshad%20las%20gyur%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            280,
+            295
+          ]
+        ],
+        "text_sha256": "2b29ae805762b49d786fbe1e7848d377290169abce7d26e067e25e62bd205328"
+      },
+      {
+        "details": {
+          "bridge": "unbridged_or_unresolved"
+        },
+        "family": "citation_identity_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bden%20stobs/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            312,
+            328
+          ]
+        ],
+        "text_sha256": "681364acc70e9285ad17ef26ebb231fb183f952d55b1031869e4c234a00c8a4a"
+      }
+    ],
+    "family": "citation_identity_unresolved",
+    "layer": "scholarly/source",
+    "occurrences": 350,
+    "recommended_action": "No accepted apparatus component; retain candidate/edition ambiguity",
+    "severity": "medium"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 82
+    },
+    "entries": 81,
+    "examples": [
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20lam%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            105,
+            106
+          ]
+        ],
+        "text_sha256": "3134ea543328753e4a0f2c8d1abac44b2bddec3ce66c64eee3c4859a5a4d6961"
+      },
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%E2%80%99/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            68,
+            69
+          ]
+        ],
+        "text_sha256": "26635138f2305224152ccef0dd1b5ab5fa81806046e5375ab41985fa5bb39bac"
+      },
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdud%20mo%20se%E1%B9%85%20gdo%E1%B9%85%20ma/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            123,
+            124
+          ]
+        ],
+        "text_sha256": "9a88d1ac7e78a13d6fb1e76e56bdd5cb117e0e3ba635d683a93a6a6eaaa21910"
+      },
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdud%20po%20bye%20ba%20gu%E1%B9%85%20ri%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            147,
+            148
+          ]
+        ],
+        "text_sha256": "bf624469e91918a4bf06f0c5a2a8a27d9607c09ee942ee39fad84498c652c504"
+      },
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdud%20po%20skos%20rje%20bra%E1%B9%85%20dkar/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            167,
+            168
+          ]
+        ],
+        "text_sha256": "a1fddaf892e0419dd6487234d29608242ecf47bac3bda685715a859e3d077791"
+      },
+      {
+        "details": null,
+        "family": "ambiguous_reference_marker",
+        "identity": "badw:https://wts-digital.badw.de/lemma/blon%20po%20chen%20po/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            77,
+            78
+          ]
+        ],
+        "text_sha256": "f5419f3365bd7e864dc29a203651e8a6727e4496b4ff5e61e0325a296e92b999"
+      }
+    ],
+    "family": "ambiguous_reference_marker",
+    "layer": "source/parser",
+    "occurrences": 82,
+    "recommended_action": "Arrow outside cross-reference node; target extent needs evidence",
+    "severity": "medium"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 2
+    },
+    "entries": 1,
+    "examples": [
+      {
+        "details": {
+          "kind": "tibetan"
+        },
+        "family": "long_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/sdig%20spyod/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            149,
+            559
+          ]
+        ],
+        "text_sha256": "40fc98b08a0c7b2302c33dfb5c131e83623de6b3431f4d5f40fca669976578fd"
+      },
+      {
+        "details": {
+          "kind": "tibetan"
+        },
+        "family": "long_component",
+        "identity": "badw:https://wts-digital.badw.de/lemma/sdig%20spyod/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            148,
+            559
+          ]
+        ],
+        "text_sha256": "40fc98b08a0c7b2302c33dfb5c131e83623de6b3431f4d5f40fca669976578fd"
+      }
+    ],
+    "family": "long_component",
+    "layer": "parser/model",
+    "occurrences": 2,
+    "recommended_action": "Definition >1200 or language span >400 characters; review envelope",
+    "severity": "medium"
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "pdf": 74
+    },
+    "entries": 73,
+    "examples": [
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-8ebaeeb69102603dc2efaa76954facbb9b93cb36922c484a7072465325ad8953:2439",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            1,
+            64
+          ]
+        ],
+        "text_sha256": "61ac26f9135d532005bd9252584e125c2cb0d3b7d78d4030c195afbf5c50349d"
+      },
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710:305",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            1,
+            81
+          ]
+        ],
+        "text_sha256": "8b46ecd57b9a6b5c4c5a3bdfded0375969da0a5df0fdb74edc2a727c98c34302"
+      },
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:718",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            1208,
+            1286
+          ]
+        ],
+        "text_sha256": "b63d18b3e8ad533a4396acb0916b61681aa7f545d38b6bd3e7758a5a8cc8f83a"
+      },
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:1721",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            305,
+            384
+          ]
+        ],
+        "text_sha256": "0c4fc843d8fdf6cd353eb8f661aeafdd20de4d2aea2689ab7a2e6370611fbae3"
+      },
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-e0fc0d3c396ac9dda57b03dfef6d07a3ce5dc7197f57a301f0d1773699a64485:2268",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            1,
+            52
+          ]
+        ],
+        "text_sha256": "71cf461d3fe702e65cbd614e55f561548a2cfbd1d470014b17cfe73e11fff1d4"
+      },
+      {
+        "details": {},
+        "family": "definition_boundary_cue",
+        "identity": "badw:pdf:badw-v2-79dc2fb0edfbf39ea6bb8f971666f3ad8588c5171c50168450bbae6f43d96111:238",
+        "source_kind": "pdf",
+        "spans": [
+          [
+            218,
+            259
+          ]
+        ],
+        "text_sha256": "7eda50adaaea598a39f983b657f11ebffc99396521a3acc78719ecde6f920261"
+      }
+    ],
+    "family": "definition_boundary_cue",
+    "occurrences": 74
+  },
+  {
+    "classification": "indicator_requires_review",
+    "distribution": {
+      "html": 3
+    },
+    "entries": 3,
+    "examples": [
+      {
+        "details": {},
+        "family": "empty_numbered_sense",
+        "identity": "badw:https://wts-digital.badw.de/lemma/dpal%20da%E1%B9%85%20ldan%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            129,
+            135
+          ]
+        ],
+        "text_sha256": "3bfc8592231a023d32663aa52d9024f46f2924ea1cd372ea85f56d9aa976c40a"
+      },
+      {
+        "details": {},
+        "family": "empty_numbered_sense",
+        "identity": "badw:https://wts-digital.badw.de/lemma/rnam%20par%20grags%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            97,
+            103
+          ]
+        ],
+        "text_sha256": "16291850ef1d2b84895bac8136db1595c784354e63eedceb1913da22a8295a34"
+      },
+      {
+        "details": {},
+        "family": "empty_numbered_sense",
+        "identity": "badw:https://wts-digital.badw.de/lemma/sna%E1%B9%85%20bar%20byed%20pa/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            120,
+            126
+          ]
+        ],
+        "text_sha256": "c3ff575f236eebb66ff9e180f3a146db90397261e7ce100655fb92addb477dd1"
+      }
+    ],
+    "family": "empty_numbered_sense",
+    "occurrences": 3
+  }
+]

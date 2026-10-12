@@ -1,0 +1,33 @@
+{
+  "counts": {
+    "citation_owner_unresolved:html:source_envelope_does_not_establish_exact_passage": 48,
+    "citation_owner_unresolved:pdf:definition_clause": 2,
+    "citation_owner_unresolved:pdf:explicit_comparison_clause": 2,
+    "citation_owner_unresolved:pdf:source_envelope_does_not_establish_exact_passage": 310,
+    "ignored_citation_cue:html:cross_reference_or_internal_editorial_number": 20,
+    "ignored_citation_cue:html:date_lifespan_or_explanatory_number": 24,
+    "ignored_citation_cue:html:existing_citation_in_broader_diagnostic_envelope": 366,
+    "ignored_citation_cue:html:inline_comparison": 31,
+    "ignored_citation_cue:html:inline_registered_source_locator": 117,
+    "ignored_citation_cue:html:numeric_or_date_parenthesis": 92,
+    "ignored_citation_cue:html:unregistered_or_malformed_reference_requires_review": 22,
+    "ignored_citation_cue:pdf:date_lifespan_or_explanatory_number": 1,
+    "ignored_citation_cue:pdf:existing_citation_in_broader_diagnostic_envelope": 5,
+    "ignored_citation_cue:pdf:inline_comparison": 1,
+    "ignored_citation_cue:pdf:inline_registered_source_locator": 85,
+    "ignored_citation_cue:pdf:language_clause_not_bibliographic_reference": 3,
+    "ignored_citation_cue:pdf:numeric_or_date_parenthesis": 3,
+    "ignored_citation_cue:pdf:unregistered_or_malformed_reference_requires_review": 22,
+    "language_conflict:html:broad_Tibetan_envelope_exact_Sanskrit_subspan": 148,
+    "language_conflict:html:legitimate_nested_observation": 235,
+    "language_conflict:pdf:broad_Tibetan_envelope_exact_Sanskrit_subspan": 1,
+    "language_evidence_untyped:html:German_metalinguistic_or_botanical_prose": 1,
+    "language_evidence_untyped:html:Sanskrit_edition_locator_not_language_form": 8,
+    "language_evidence_untyped:html:explicit_skt_bounded_form": 417,
+    "language_evidence_untyped:pdf:German_metalinguistic_or_botanical_prose": 1,
+    "language_evidence_untyped:pdf:Sanskrit_edition_locator_not_language_form": 4,
+    "language_evidence_untyped:pdf:explicit_skt_bounded_form": 167,
+    "language_evidence_untyped:pdf:source_decoding_corruption": 2,
+    "language_evidence_untyped:pdf:unresolved_source_syntax": 1
+  }
+}

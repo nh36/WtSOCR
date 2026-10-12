@@ -23,14 +23,23 @@ INDEX=Path('work/badw_relationship_targets_20261005/actual_entry_index.jsonl')
 
 def prior_review_exclusions():
     paths=sorted(p for root in Path('work').glob('badw_*') if root.is_dir() and root!=WORK
-                 for p in root.rglob('*') if p.is_file() and p.suffix in ('.jsonl','.tsv')
+                 for p in root.rglob('*') if p.is_file() and p.suffix in ('.jsonl','.tsv','.json')
                  and any(s in p.name for s in ('packet','gold','holdout','challenge','reviewed','review')))
     paths+=sorted(Path('data').glob('*badw*review*.tsv'))+[Path('data/reviewed_badw_semantic_annotations.jsonl')]
+    # Development candidates are reviewed evidence, even when stored as a JSON
+    # array in this run's work directory. Never sample them as fresh validation.
+    paths+=sorted(WORK.glob('*review*.json'))
     excluded={'badw:https://wts-digital.badw.de/lemma/ka%20chen/1', 'badw:https://wts-digital.badw.de/lemma/kos%20s%C3%B1u%E1%B9%85/1'}; valid=[]
     for p in paths:
         try:
-            iterator=rows(p) if p.suffix=='.jsonl' else csv.DictReader(p.open(),delimiter='\t')
+            if p.suffix=='.json':
+                payload=json.loads(p.read_text())
+                iterator=payload if isinstance(payload,list) else payload.get('cases',[])
+                if not isinstance(iterator,list):iterator=[]
+            else:
+                iterator=rows(p) if p.suffix=='.jsonl' else csv.DictReader(p.open(),delimiter='\t')
             for r in iterator:
+                if not isinstance(r,dict):continue
                 for record in [r]+[r[k] for k in ('packet','projection','metrics') if isinstance(r.get(k),dict)]:
                     for k in ('identity','article_id','source_article_id'):
                         if isinstance(record.get(k),str):excluded.add(record[k])
@@ -45,12 +54,20 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=OUT)
     parser.add_argument('--work', type=Path, default=WORK)
+    parser.add_argument('--contextual-semantics', action='store_true', help='Derive exact inline citations with the registered bibliography grammar')
+    parser.add_argument('--baseline-store', type=Path)
     parser.add_argument('--holdout-manifest', type=Path, help='Replay a previously selected source-review sample without resampling')
     args = parser.parse_args()
     OUT, WORK = args.output, args.work
     frozen_sample=json.loads(args.holdout_manifest.read_text()) if args.holdout_manifest else None
     frozen_ids={c['metrics']['identity'] for c in frozen_sample['cases']} if frozen_sample else set()
-    baseline_store=sqlite3.connect('file:work/badw_semantic_hierarchy/semantic.sqlite?mode=ro',uri=True) if WORK.name=='badw_relationship_closure' else None
+    baseline_path=args.baseline_store or (Path('work/badw_semantic_hierarchy/semantic.sqlite') if WORK.name=='badw_relationship_closure' else None)
+    baseline_store=sqlite3.connect('file:'+str(baseline_path)+'?mode=ro',uri=True) if baseline_path else None
+    contextual_records=[];contextual_counts=collections.Counter()
+    frozen_residue=collections.defaultdict(list)
+    if args.contextual_semantics:
+        for a in rows(Path('work/badw_contextual_semantics/residue_packets.jsonl')):
+            frozen_residue[a['packet']['identity']]=a['residue']
     store=create(WORK/'semantic.sqlite')
     index=EntryIndex(rows(INDEX)); db=sqlite3.connect(BIB/'bibliography.sqlite')
     authorities=[json.loads(x[0]) for x in db.execute('select record_json from authority')];db.close()
@@ -80,6 +97,12 @@ def main():
         if kind=='pdf':
             bridge,diagnostics=pdf_occurrence_bridge([{**pred,'source':p['source']}],STAGING)
             bib_bridge.update(d['status'] for d in diagnostics)
+        baseline_citations={json.loads(row[0])['component_id']:json.loads(row[0]) for row in baseline_store.execute('SELECT record_json FROM citation WHERE entry=?',(identity,))} if baseline_store else {}
+        baseline_by_span={(c['source_span']['start'],c['source_span']['end']):c for c in baseline_citations.values()}
+        additions=[]
+        if args.contextual_semantics:
+            from badw_contextual_semantics import augment_citations
+            pred,additions=augment_citations(pred,text,resolver);nodes=pred['nodes']
         bibliography={};accepted=0;known_residual=0
         for n in nodes:
             if n['kind']!='citation':continue
@@ -94,6 +117,8 @@ def main():
             original=[x for x in r['projection']['nodes'] if x['kind']=='citation']
             baseline=r['reader']['citations'][ci] if ci<len(original) and original[ci]['start']==n['start'] and original[ci]['end']==n['end'] else None
             if baseline:ids.update(baseline['accepted_authority_ids'])
+            prior=baseline_by_span.get((n['start'],n['end']))
+            if prior:ids.update(prior['accepted_authority_ids'])
             result=old or resolver.resolve(literal,kind)
             ids.update(aid for m in result['matches'] if m.get('target_status')=='accepted_identity' for aid in m['authority_ids'])
             if ids:accepted+=1;bibliography[(identity,n['id'])]=[resolver.by_id[a] for a in sorted(ids)]
@@ -123,16 +148,17 @@ def main():
             xref_reasons[kind+':'+reason]+=1
             extra.append(dict(family='xref_unresolved',identity=identity,source_kind=kind,text_sha256=p['review_text_sha256'],spans=[],details=dict(reason=reason,target=label,exact_label_candidates=candidates)))
         view=entry_view(dict(projection=pred,entry=r['entry'],review_text=text,cross_references=refs),bibliography)
-        if len(r['reader']['citations']) != len(view['citations']) or len(r['reader']['cross_references']) != len(view['cross_references']):
+        if len(r['reader']['citations'])+len(additions) != len(view['citations']) or len(r['reader']['cross_references']) != len(view['cross_references']):
             raise ValueError('relationship occurrence count changed: '+identity)
-        baseline_citations={json.loads(row[0])['component_id']:json.loads(row[0]) for row in baseline_store.execute('SELECT record_json FROM citation WHERE entry=?',(identity,))} if baseline_store else {}
-        for raw_old, new in zip(r['reader']['citations'], view['citations']):
+        new_by_id={c['component_id']:c for c in view['citations']}
+        for raw_old in r['reader']['citations']:
+            new=new_by_id[raw_old['component_id']]
             old=baseline_citations.get(raw_old['component_id'],raw_old)
             if old['ownership'] != 'unresolved':
                 if new['ownership'] == 'unresolved' or old['supports'] != new['supports'] or old.get('sense_node_id') != new.get('sense_node_id'):
                     raise ValueError('accepted citation ownership changed: '+identity)
                 counts['baseline_citation_owners_preserved']+=1
-            evidence_counts[kind+':'+new.get('ownership_evidence_class','unresolved')]+=1
+
             if old['ownership'] != 'unresolved':continue
             family=new['source_structural_family']
             residue_counts['citation:'+kind+':'+family]+=1
@@ -156,6 +182,16 @@ def main():
                 original_candidates=old['candidate_entry_ids'],after=new['status'],
                 parsed_target=parsed,reason=new.get('residual_reason'),
                 candidate_entry_ids=new['candidate_entry_ids']))
+        for citation in view['citations']:
+            evidence_counts[kind+':'+citation.get('ownership_evidence_class','unresolved')]+=1
+        if args.contextual_semantics:
+            from badw_contextual_semantics import classify_residue
+            classified=classify_residue(pred,text,view,frozen_residue.get(identity,[]),additions,baseline_by_span)
+            contextual_records.extend(classified)
+            for rec in classified:
+                contextual_counts[rec['baseline_family']+':'+kind+':'+rec['classification']]+=1
+                if rec['baseline_family'] in ('language_evidence_untyped','ignored_citation_cue') and rec['outcome']=='unresolved':
+                    extra.append(dict(family=rec['baseline_family'],identity=identity,source_kind=kind,text_sha256=rec['text_sha256'],spans=rec['source_spans'],details=dict(classification=rec['classification'],literal=rec['literal'])))
         ingest(store,view)
         owner=sum(c['ownership']!='unresolved' for c in view['citations'])
         counts['reader_checked']+=1;counts['reader_integrity_failures']+=int(''.join(s['text'] for s in view['segments'])!=text or len(view['citations'])!=sum(n['kind']=='citation' for n in nodes) or sum(bool(c['accepted_authority_ids']) for c in view['citations'])!=accepted)
@@ -167,7 +203,7 @@ def main():
             if not c['accepted_authority_ids']:extra.append(dict(family='citation_identity_unresolved',identity=identity,source_kind=kind,text_sha256=p['review_text_sha256'],spans=[[n['start'],n['end']]],details=dict(bridge='unbridged_or_unresolved')))
         for ref in view['cross_references']:
             if not ref['component_id']:extra.append(dict(family='xref_component_missing',identity=identity,source_kind=kind,text_sha256=p['review_text_sha256'],spans=[],details=dict(wording=ref['wording'])))
-        stat.update(accepted_identity_citations=accepted,reviewed_owner_citations=sum(c["ownership"]=="reviewed" for c in view["citations"]),resolved_xrefs=resolved,unresolved_xrefs=len(refs)-resolved)
+        stat.update(citations=len(view['citations']),accepted_identity_citations=accepted,reviewed_owner_citations=sum(c["ownership"]=="reviewed" for c in view["citations"]),resolved_xrefs=resolved,unresolved_xrefs=len(refs)-resolved)
         semantic=view['semantic_hierarchy']
         stat.update(lex_blocks=len(semantic['lex_blocks']),lex_items=len(semantic['lex_items']),
                     lex_sense_owned=sum(x['ownership']=='sense' for x in semantic['lex_items']),
@@ -180,6 +216,10 @@ def main():
                     unresolved_owner_citations=len(view['citations'])-owner,
                     effective_language_conflicts=sum(x['language']=='unresolved' for x in semantic['effective_language_spans']),
                     citable_passages=len(semantic['citable_passages']))
+        if args.contextual_semantics:
+            stat.update(contextual_sanskrit_forms=len(semantic['sanskrit_forms']),sanskrit_correspondences=len(semantic['sanskrit_correspondences']),new_inline_citations=len(additions))
+        if args.contextual_semantics:
+            stat.update(untyped_explicit_language_indicators=sum(r['baseline_family']=='language_evidence_untyped' and r['outcome']=='unresolved' for r in classified), ignored_citation_cues=sum(r['baseline_family']=='ignored_citation_cue' and r['outcome']=='unresolved' for r in classified))
         metrics.append(stat)
         # Audit duplicate numbers inside a level, not nested label reuse.
         ds=pred.get('original_structure',{}).get('divisions',[])
@@ -188,6 +228,11 @@ def main():
         counts[kind+'_entries_multiple_reader_sense_containers']+=int(len(view['senses'])>stat['senses'] and stat['senses']>0)
         if identity not in excluded:
             strata=[]
+            if args.contextual_semantics:
+                if additions:strata.append('inline_citation')
+                if semantic['sanskrit_correspondences']:strata.append('Sanskrit_correspondence')
+                if 'skt.' in text:strata.append('explicit_skt')
+                if re.search(r'\(\d+[^)]*\)',text):strata.append('numeric_control')
             if len(text)<200:strata.append('simple')
             if stat['senses']>=4:strata.append('many_sense')
             if 'Lex.' in text:strata.append('lex')
@@ -202,6 +247,7 @@ def main():
             if any(c.get('ownership_evidence_class')=='definition_comparison_clause' for c in view['citations']):strata.append('definition_citation')
             if any(len(p['citation_node_ids'])>1 for p in view['semantic_hierarchy']['citable_passages']):strata.append('grouped_citations')
             if any(c['ownership']=='unresolved' for c in view['citations']):strata.append('negative_ownership')
+            if args.contextual_semantics:strata=[s for s in strata if s in ('inline_citation','Sanskrit_correspondence','explicit_skt','numeric_control')]
             if re.search(r'\b(?:vb\.|Verb|pf\.|imp\.)',text):strata.append('verb')
             if kind=='pdf' and any('badw-v3-' in o['page_id'] or 'badw-v4-' in o['page_id'] for o in p['source']['source_objects']):strata.append('later_volume')
             import hashlib
@@ -217,6 +263,10 @@ def main():
             holdout_candidates={k:v for k,v in holdout_candidates.items() if k in retained or k in frozen_ids}
         if (i+1)%5000==0:print('finalize',i+1,dict(counts),flush=True)
     store.commit();store.close()
+    if args.contextual_semantics:
+        with gzip.GzipFile(filename=str(OUT/'contextual_classification.jsonl.gz'),mode='wb',mtime=0) as f:
+            for rec in contextual_records:f.write((json.dumps(rec,ensure_ascii=False,sort_keys=True)+'\n').encode())
+        write_json(OUT/'contextual_classification.json',dict(counts=dict(contextual_counts)))
     if baseline_store:baseline_store.close()
     holdout=[];chosen=set()
     for s,pool in sorted(pools.items()):
@@ -237,6 +287,7 @@ def main():
     write_json(OUT/'relationships.json',dict(baseline_residue_families=dict(residue_counts),ownership_evidence=dict(evidence_counts)))
     # Replace baseline findings for relationships with integrated results.
     replaced={'citation_owner_unresolved','citation_identity_unresolved','xref_unresolved','xref_component_missing'}
+    if args.contextual_semantics:replaced|={'language_evidence_untyped','ignored_citation_cue'}
     allrows=[a for a in rows(WORK/'anomalies.jsonl') if a['family'] not in replaced]+extra
     byfamily=collections.defaultdict(list)
     for a in allrows:byfamily[a['family']].append(a)
@@ -268,6 +319,12 @@ def main():
         manifest['baseline_commit']='e53176838a'
         manifest['baseline_store_sha256']=file_hash(Path('work/badw_semantic_hierarchy/semantic.sqlite'))
         manifest['semantic_contract_version']='badw-semantic-hierarchy-v2'
+    if args.contextual_semantics:
+        manifest['baseline_commit']='0e4c724e21'
+        manifest['baseline_store_sha256']=file_hash(baseline_path)
+        manifest['contextual_semantics']=True
+        manifest['code_sha256']['scripts/badw_contextual_semantics.py']=file_hash(Path('scripts/badw_contextual_semantics.py'))
+        manifest['semantic_contract_version']='badw-semantic-hierarchy-v3'
     write_json(OUT/'manifest.json',manifest)
     print(json.dumps(summary,sort_keys=True))
 

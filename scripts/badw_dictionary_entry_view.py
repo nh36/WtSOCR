@@ -96,7 +96,7 @@ def entry_view(inspected, bibliography=None):
                               accepted_authority_ids=sorted({a['id'] for a in authorities}),
                               ownership="unresolved",
                               source_span=dict(start=node["start"], end=node["end"]),
-                              source_binding=dict(identity=p["identity"], text_sha256=p["review_text_sha256"])))
+                              extraction_evidence=node.get("source_evidence"), source_binding=dict(identity=p["identity"], text_sha256=p["review_text_sha256"])))
     from badw_semantic_hierarchy import hierarchy, citation_family
     semantic = hierarchy(p, text)
     for node, citation in zip((n for n in p['nodes'] if n['kind']=='citation'), citations):

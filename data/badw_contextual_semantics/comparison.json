@@ -1,0 +1,101 @@
+{
+  "anomaly_comparison": {
+    "ambiguous_reference_marker": {
+      "baseline": 82,
+      "current": 82
+    },
+    "citation_identity_unresolved": {
+      "baseline": 323,
+      "current": 350
+    },
+    "citation_owner_unresolved": {
+      "baseline": 362,
+      "current": 404
+    },
+    "crossing_components": {
+      "baseline": 1063,
+      "current": 1063
+    },
+    "definition_boundary_cue": {
+      "baseline": 74,
+      "current": 74
+    },
+    "definition_contains_later_structure": {
+      "baseline": 1290,
+      "current": 1290
+    },
+    "empty_component": {
+      "baseline": 2205,
+      "current": 2205
+    },
+    "empty_numbered_sense": {
+      "baseline": 3,
+      "current": 3
+    },
+    "ignored_citation_cue": {
+      "baseline": 792,
+      "current": 44
+    },
+    "language_conflict": {
+      "baseline": 384,
+      "current": 384
+    },
+    "language_evidence_untyped": {
+      "baseline": 601,
+      "current": 3
+    },
+    "lex_clause_untyped": {
+      "baseline": 6,
+      "current": 6
+    },
+    "lexical_gap": {
+      "baseline": 28912,
+      "current": 28912
+    },
+    "long_component": {
+      "baseline": 2,
+      "current": 2
+    },
+    "pdf_unassigned_candidate": {
+      "baseline": 144,
+      "current": 144
+    },
+    "xref_unresolved": {
+      "baseline": 852,
+      "current": 852
+    }
+  },
+  "canonical_lex_duplicate_spans": 0,
+  "canonical_lex_overlapping_pairs": 0,
+  "common_accounting": {
+    "lexical_gap_runs": {
+      "baseline": 28912,
+      "current": 28912
+    },
+    "unassigned_alphabetic": {
+      "baseline": 131068,
+      "current": 131068
+    },
+    "unassigned_characters": {
+      "baseline": 2203289,
+      "current": 2203289
+    }
+  },
+  "common_entries": 29877,
+  "foreign_key_violations": [],
+  "frozen_holdout_reader_passes": 114,
+  "newly_projected": [],
+  "script_sha256": "79c9b552ddca19e752561eea2204d4c58287c16cf250be727cfc9b1d012f1f46",
+  "store_rows": {
+    "citation": 109395,
+    "citation_passage": 108978,
+    "language_conflict": 384,
+    "language_correspondence": 3003,
+    "language_effective": 125808,
+    "language_form": 12023,
+    "language_indicator": 4314,
+    "lex_item": 39688,
+    "passage": 108796,
+    "xref": 8336
+  }
+}
