@@ -60,8 +60,8 @@ def main():
     sub=p.add_subparsers(dest='command',required=True)
     lex=sub.add_parser('lex');lex.add_argument('--siglum');lex.add_argument('--sanskrit',action='store_true')
     passage=sub.add_parser('passages');passage.add_argument('--authority')
-    citation=sub.add_parser('citations');citation.add_argument('--unresolved',action='store_true');citation.add_argument('--sense')
-    xref=sub.add_parser('xrefs');xref.add_argument('--target');xref.add_argument('--unresolved',action='store_true')
+    citation=sub.add_parser('citations');citation.add_argument('--unresolved',action='store_true');citation.add_argument('--sense');citation.add_argument('--passage');citation.add_argument('--evidence');citation.add_argument('--entry-level',action='store_true')
+    xref=sub.add_parser('xrefs');xref.add_argument('--target');xref.add_argument('--unresolved',action='store_true');xref.add_argument('--status');xref.add_argument('--reason');xref.add_argument('--cross-manifestation',action='store_true')
     for child in (lex,passage,citation,xref):child.add_argument('--entry');child.add_argument('--limit',type=int,default=50)
     a=p.parse_args();db=sqlite3.connect('file:'+a.db+'?mode=ro',uri=True)
     table={'lex':'lex_item','passages':'passage','citations':'citation','xrefs':'xref'}[a.command]
@@ -75,9 +75,15 @@ def main():
     if a.command=='citations':
         if a.unresolved:conditions.append("ownership='unresolved'")
         if a.sense:conditions.append('sense=?');values.append(a.sense)
+        if a.passage:conditions.append('id IN (SELECT citation FROM citation_passage WHERE passage=?)');values.append(a.passage)
+        if a.evidence:conditions.append("json_extract(record_json,'$.ownership_evidence_class')=?");values.append(a.evidence)
+        if a.entry_level:conditions.append("json_extract(record_json,'$.container_ownership')='entry'")
     if a.command=='xrefs':
         if a.target:conditions.append('(target=? OR entity=?)');values.extend([a.target,a.target])
         if a.unresolved:conditions.append("status!='resolved'")
+        if a.status:conditions.append('status=?');values.append(a.status)
+        if a.reason:conditions.append("json_extract(record_json,'$.residual_reason')=?");values.append(a.reason)
+        if a.cross_manifestation:conditions.append("json_extract(record_json,'$.resolution_evidence.method')='exact_anchor_identity_other_manifestation'")
     sql='SELECT record_json FROM '+table+(' WHERE '+' AND '.join(conditions) if conditions else '')+' ORDER BY id LIMIT ?'
     for row in db.execute(sql,values+[a.limit]):print(row[0])
 

@@ -29,73 +29,66 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## Corpus Structural Health
 
-The semantic-hierarchy replay projects **29,877/29,877 acquired online witnesses**
-(18,037 HTML; 11,840 PDF), compared with 29,875 at `d99f6c51c2`.
-The nested-arrow/link construction causing both duplicate-span failures is fixed;
-fail-closed span validation remains enabled. Reader integrity checks pass on all
-witnesses with zero accepted bibliography identity loss. This certifies data
-projection, not browser rendering or independently reviewed scholarly accuracy.
-The four registered historical PDFs retain 24,528 legacy entry groups; their
-canonical adapter remains separate future work.
+The source-structural relationship replay projects **29,877/29,877 acquired
+online witnesses** (18,037 HTML; 11,840 PDF), with zero reader-integrity failures
+or accepted bibliography identity loss. Baseline: `e53176838a`. All previously
+accepted owners and resolved xrefs survive unchanged. Historical printed-volume
+canonical adaptation remains separate future work; bibliography remains closed.
 
-Source-bound Lex. blocks, typed items and exact citable passages now augment the
-observation graph without rewriting it. **21,876 Lex. blocks contain 39,688 items**:
-13,242 have explicit sense-envelope ownership and 26,446 explicit entry-envelope
-ownership. All 8,190 formerly flat HTML Lex. occurrences now have source-defined
-sense ownership. Canonical items have zero duplicate or overlapping spans; the
-563 PDF block/item double representations remain preserved as observations.
-Source-defined grouping and malformed-delimiter diagnostics are retained.
+**109,090 citations** retain **108,767 accepted bibliography
+identities** (323 unresolved). Established ownership rises from **81,866 to
+108,728**: 108,715 exact passage owners and 13 reviewed component owners.
+Evidence classes are Lex. containment **39,489**, explicit HTML attestation
+**42,364**, balanced PDF example/quotation **23,914**, and source-defined
+German definition/comparison clause **2,948**. Citation groups share a passage.
+Ownership is containment or explicit association, never generic proximity or
+bibliography-based inference. Clause containment does not claim that a citation
+supports every proposition in a multi-reference clause.
 
-**109,090 citations** retain
-**108,767 accepted bibliography identities**
-(323 unresolved). **81,853 have exact passage owners**, derived only from bounded
-Lex. clauses or explicit HTML attestation associations; 13 additional reviewed
-component owners remain distinct. 36,777 citations have sense ownership, 45,088
-entry-level ownership and **27,224 remain unresolved**. These are source-structure
-claims, not proximity guesses; PDF example candidates remain unowned.
+**46,946 citations have sense ownership; 61,782 have entry-only ownership**.
+Entry-only means an exact local passage lacking an established numbered sense,
+not a claim that the reference supports the entire entry. **362 remain unresolved**
+(48 HTML; 314 PDF), with explicit source-structural reasons. All 27,224 baseline
+unresolved owners are classified in the source-bound residue dataset.
 
-HTML xrefs: **4,649 resolved / 633 unresolved**. PDF xrefs: **2,176 resolved /
-120 ambiguous / 758 without exact candidates**. All 3,054 PDF occurrences now
-retain stable source-node bindings in the reader. Resolution requires one exact
-source target and one indexed witness, preserving homonyms, candidate sets,
-literal arrows and witness/entity identities separately. An absent exact target
-is not proof that the target lies outside the acquired corpus.
+HTML xrefs: **4,706 resolved / 576 unresolved** (previously 4,649 / 633).
+PDF xrefs: **2,778 resolved / 120 ambiguous / 156 other unresolved**
+(previously 2,176 / 120 / 758). Total unresolved falls **1,511 → 852**.
+All reader source bindings survive. Raised homonym numerals and italic wrapped
+targets are parsed using source typography and geometry; literals and qualifiers
+remain separate. Exact lexical identity is separate from physical witnesses.
+Missing HTML hyperlinks can resolve across manifestations using exact linked
+headword/homonym evidence. Homonyms are never collapsed. Residue comprises
+572 missing explicit HTML link targets, four absent unlinked HTML labels,
+128 absent PDF labels, 118 ambiguous PDF homonym identities and 30 PDF target
+extents lacking sufficient evidence (two of these also retain ambiguous status).
+Absence from the acquired index is not proof of absence from WTS.
 
-Explicit Sanskrit fields now override enclosing Tibetan language observations in
-the derived language partition: **zero effective conflicts**, with all **384 raw
-conflict indicators retained**. **601 explicit-language indicators remain untyped**.
-No broad character-shape language classifier was introduced.
+Lex. structure is unchanged: **21,876 blocks / 39,688 items**, 13,242 sense-owned,
+26,446 entry-owned, zero canonical overlaps or duplicates. Structural accounting
+is unchanged at **131,068 unassigned alphabetic characters / 28,912 gap runs**;
+all pre-existing boundary warnings remain unchanged. No component was enlarged
+merely to improve accounting. Language typing is unchanged: 601 explicit untyped
+indicators, 384 retained raw conflicts and zero effective conflicts.
 
-Structural accounting on the 29,875 common witnesses is unchanged: 131,061
-unassigned alphabetic characters and 28,910 gap runs. Including the two newly
-projected entries, 131,068 alphabetic characters
-remain outside leaf coverage; 63,250
-of them occur in 6,145 lexical/header
-review gaps. Existing crossing components (1,063), later-definition structure
-warnings (1,289), empty components (2,205), definition-boundary cues (74) and empty
-numbered senses (3) are unchanged on common witnesses. Improved hierarchy has
-not swallowed gaps to improve coverage.
+Both frozen 30-entry holdouts pass replay (**60/60**). A fresh combined sample
+of **54 witnesses (22 HTML; 32 PDF)** was inspected after implementation, including
+35 PDF pages with continuations. **No false xref resolution, false citation owner,
+over-wide passage or incorrect passage boundary was observed**. Existing malformed
+Lex. punctuation, split author citations and decoding placeholders remain explicit;
+ambiguous homonyms remain unresolved. This sample is not an accuracy estimate.
+One historical PDF overlay remains rejected for its stale source-view binding.
 
-The frozen original 30-entry holdout passes reader/source/bibliography replay;
-its historical manual findings remain available. A second fresh stratified
-30-entry holdout (14 HTML; 16 PDF), excluded from prior review and rule development,
-was inspected after implementation, including all PDF facsimiles and continuation
-pages: **25 without observed local defects, four residual defects and one unresolved
-qualifier**. Three defects concern untyped Sanskrit; one concerns a stray PDF layout
-numeral. No false ownership, over-segmentation, incorrect resolved xref or language
-overreach was observed in this small sample. It is not an accuracy estimate.
-One PDF scholarly overlay remains rejected specifically for stale source-view
-binding; its literal evidence and rejection are preserved.
-
-**Next engineering tranche: contextual Sanskrit typing from explicit source
-relations and typography**, retaining conservative ownership and ambiguity.
-Then address historical-print adaptation and residual header/accounting families.
-Random-entry review has diminishing returns; use fresh holdouts and family-specific
-source review. Bibliography reconciliation remains closed; `release/current` is
-unchanged. See [contracts, limitations and replay/query commands](../data/badw_semantic_hierarchy/README.md),
-`comparison.json`, source-bound anomaly records and both holdout replay/review files
-in `data/badw_semantic_hierarchy/`. The derived query database stays in ignored
-`work/` storage and is reproducible from pinned inputs.
+Cross-reference engineering is mature for mechanically recoverable exact targets;
+residual missing-target and homonym questions need source/index evidence.
+Citation ownership is structurally mature for explicit bounded local passages;
+362 source-ambiguous/corrupt or unbounded cases remain unasserted. Reader data
+integrity is verified; browser rendering is not certified by this replay.
+**Next tranche: contextual Sanskrit typing**, then residual lexical/header accounting,
+historical-print canonical adaptation and reader/product work. Random-entry review
+has diminishing returns. `release/current` is unchanged.
+See [contracts, source-bound diagnostics and reproducible commands](../data/badw_relationship_closure/README.md).
+The query SQLite database and raw witnesses remain in ignored `work/` storage.
 
 ## Bibliographic Apparatus
 
@@ -239,6 +232,7 @@ from BAdW feedback. Bibliography work is finished within this stated scope.
 | generic_I_to_l | unsafe_broad_rule | generic | none | none | docs/STATUS.md | Forbidden broad rule. Current initial-I cleanup is explicit-token, lexicon/context, or reviewed exact only. |
 | reviewed_exact_tibetan_headword_ocr | applied | exact page-line-token or exact page-line phrase | wts_1_34;wts_35_51;wts_8_b;wts_9_m | data/reviewed_tibetan_script_exact_overrides.tsv;data/reviewed_tibetan_script_exact_phrase_overrides.tsv;scripts/postprocess_entry_map.py | data/reviewed_tibetan_headword_ocr_decisions.tsv | Exact reviewed Tibetan component repairs include missing vowel signs, subjoined y, r structure, suffixes, root consonants, and one exact damaged delimiter phrase; corrected observations remain non-independent Latin teaching evidence. |
 | validator_only_suggestions | false_positive_or_noise | reporting_only | none | release/current/qa/*/*_validator_issues.tsv | docs/STATUS.md;release/current/qa | Validator-only rows are diagnostics. They are not OCR-witness evidence by themselves. |
+| badw_source_structural_relationship_closure | applied | 29877 acquired HTML/PDF witnesses | registered online corpus | scripts/badw_semantic_hierarchy.py;scripts/resolve_badw_cross_references.py;scripts/badw_semantic_store.py;scripts/badw_dictionary_entry_view.py | data/badw_relationship_closure/README.md;docs/STATUS.md | 26862 additional established citation owners;659 additional resolved xrefs;362 owners and 852 xrefs explicitly unresolved;all baseline relationships retained;release/current untouched;counts describe derived online structures, not release corrections. |
 
 The initial-`I` family is intentionally mixed:
 

@@ -100,3 +100,81 @@ def test_derived_store_preserves_passage_join_and_rejects_unbound_xref(tmp_path)
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     invalid=dict(inspection_id='other',semantic_hierarchy=dict(lex_items=[],citable_passages=[]),citations=[],cross_references=[dict(component_id=None)])
     with pytest.raises(ValueError,match='unbound xref'):ingest(db,invalid)
+
+
+def pdf_example(gap=' ', grouped=False):
+    text = 'bod'+gap+'„gloss“ (A)'+(' ; (B)' if grouped else '')
+    gloss = text.index('„'); cite = text.index('(A)')
+    nodes = [dict(id='example',kind='example',start=0,end=len(text)),
+        dict(id='tib',kind='tibetan',start=0,end=3,parent='example'),
+        dict(id='gloss',kind='translation',start=gloss,end=gloss+7,parent='example'),
+        dict(id='c',kind='citation',start=cite,end=cite+3,parent='example')]
+    if grouped:
+        nodes.append(dict(id='c2',kind='citation',start=text.index('(B)'),end=len(text),parent='example'))
+    p=dict(identity='pdf-example',source_kind='pdf',nodes=nodes,
+        review_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+        original_structure=dict(candidates=dict(german_quotes=[dict(visual_start=gloss,visual_end=gloss+7)])))
+    return p,text
+
+
+def test_pdf_quotation_and_group_share_exact_passage():
+    p,text=pdf_example(' (metr.) ',True)
+    result=hierarchy(p,text)
+    owners=result['citation_ownership']
+    assert len(owners)==2 and len({o['passage_id'] for o in owners})==1
+    assert all(o['evidence_class']=='PDF_example_quotation' for o in owners)
+    assert result['citable_passages'][0]['literal']==text
+
+
+@pytest.mark.parametrize('gap',[' unrelated prose ', ' (unknown.) '])
+def test_pdf_nearby_tibetan_does_not_establish_owner(gap):
+    p,text=pdf_example(gap)
+    assert hierarchy(p,text)['citation_ownership']==[]
+
+
+def test_pdf_quote_crossing_sense_is_not_promoted():
+    p,text=pdf_example()
+    p['nodes'].append(dict(id='s',kind='sense',start=4,end=len(text)))
+    assert hierarchy(p,text)['citation_ownership']==[]
+
+
+def test_pdf_parenthetical_definition_group_and_mixed_example_refusal():
+    p,text=pdf_example()
+    p['nodes']=[n for n in p['nodes'] if n['kind']=='citation']
+    p['nodes'].append(dict(id='definition',kind='definition',start=0,end=len(text)))
+    assert hierarchy(p,text)['citation_ownership'][0]['evidence_class']=='definition_comparison_clause'
+    p['nodes'].append(dict(id='example',kind='example',start=0,end=3))
+    assert hierarchy(p,text)['citation_ownership']==[]
+
+
+def test_printed_superscript_and_wrap_require_geometry():
+    from resolve_badw_cross_references import printed_target
+    lines=[dict(text='1',page_id='p',first_x=10,y=105,style_spans=[dict(start=0,end=1,style='regular',font_id='r')]),
+           dict(text='dkar po',page_id='p',first_x=12,y=100,style_spans=[dict(start=0,end=7,style='italic',font_id='i')]),
+           dict(text='chig thub',page_id='p',first_x=12,y=90,style_spans=[dict(start=0,end=9,style='italic',font_id='i')])]
+    text='\n'.join(l['text'] for l in lines)
+    target=dict(visual_start=0,visual_end=len(text),source_text=text)
+    parsed=printed_target(target,dict(visual_lines=lines),text)
+    assert parsed['valid'] and parsed['homonym']=='1'
+    assert parsed['lexical_target']=='dkar po chig thub' and parsed['literal']==text
+    lines[0]['y']=100
+    assert not printed_target(target,dict(visual_lines=lines),text)['valid']
+
+
+def test_manifestation_identity_does_not_collapse_homonyms():
+    entries=[dict(id=i,record_type='entry',headword=dict(loc='x'),homonym=h) for i,h in [('html',1),('pdf',1)]]
+    ref=dict(target_label='x',source_candidate=dict(target_candidates=[dict(source_text='x')]))
+    result=EntryIndex(entries).resolve_source_candidate(ref)['canonical_resolution']
+    assert result['status']=='resolved' and 'target_entry_id' not in result
+    assert result['target_lexical_entity']['witness_entry_ids']==['html','pdf']
+    entries.append(dict(id='homonym2',record_type='entry',headword=dict(loc='x'),homonym=2))
+    assert EntryIndex(entries).resolve_source_candidate(ref)['canonical_resolution']['status']=='ambiguous'
+
+
+def test_absent_html_url_can_resolve_exact_homonym_other_witness():
+    index=EntryIndex([dict(id='pdf',record_type='entry',headword=dict(loc='x'),homonym=2)])
+    ref=dict(record_type='cross_reference',target_label='x',target_url='https://wts-digital.badw.de/lemma/x/2',source_spans=[dict(start=0,end=1)])
+    result=index.resolve_manifestation(ref)['canonical_resolution']
+    assert result['status']=='resolved' and result['target_entry_id']=='pdf'
+    ref['target_url']='https://wts-digital.badw.de/lemma/y/2'
+    assert index.resolve_manifestation(ref)['canonical_resolution']['status']=='unresolved'

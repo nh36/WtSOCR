@@ -8,7 +8,33 @@ import hashlib
 import re
 from badw_source_components import lexical_clauses, terminal_lexical_citation
 
-VERSION = 'badw-semantic-hierarchy-v1'
+VERSION = 'badw-semantic-hierarchy-v2'
+
+
+def citation_family(projection, text, node):
+    """Classify observed containment; this function never asserts an owner."""
+    a, b = node['start'], node['end']
+    nodes = projection['nodes']
+    containing = [n for n in nodes if n['id'] != node['id'] and
+                  n['start'] <= a < b <= n['end']]
+    crossing = [n for n in nodes if n['kind'] == 'sense' and
+                max(a, n['start']) < min(b, n['end']) and
+                not n['start'] <= a < b <= n['end']]
+    if crossing:
+        return 'crossing_sense_boundary'
+    if any(n['kind'] == 'example' for n in containing):
+        return 'PDF_example_candidate' if projection['source_kind'] == 'pdf' else 'HTML_example_envelope'
+    if any(n['kind'] == 'lexical' for n in containing):
+        return 'residual_Lex_structure'
+    definitions = [n for n in containing if n['kind'] == 'definition']
+    if definitions:
+        start = min(n['start'] for n in definitions)
+        return 'explicit_comparison_clause' if 'vgl.' in text[start:b] else 'definition_clause'
+    if any(n['kind'] == 'sense' for n in containing):
+        return 'sense_prose_without_bounded_passage'
+    if any(n['kind'] == 'source_division' for n in containing):
+        return 'entry_prose_without_bounded_passage'
+    return 'no_structural_envelope'
 
 
 def hierarchy(projection, text):
@@ -116,7 +142,7 @@ def hierarchy(projection, text):
                               citation_node_ids=[] if clause_diagnostics else [c['node_id'] for c in fields['citation']])
             passages.append(passage)
     # Explicit attestation edges are asserted only by the HTML lexical adapter.
-    # PDF candidate edges are intentionally excluded here.
+    # PDF candidate edges alone are intentionally insufficient.
     if html:
         grouped = {}
         for edge in projection.get('edges', []):
@@ -133,6 +159,83 @@ def hierarchy(projection, text):
                             sense_node_id=sense, ownership='sense' if sense else 'entry',
                             evidence='explicit DOM attestation association and citation_of edge',
                             citation_node_ids=cites))
+    # Promote PDF examples only when independently observed typography agrees
+    # with the candidate envelope: italic expression, balanced quoted gloss,
+    # whitespace-only attachment, citation, and no crossing sense boundary.
+    # Candidate citation_of edges alone are deliberately insufficient.
+    assigned = {cid for p in passages for cid in p['citation_node_ids']}
+    if not html:
+        quotes = {(q['visual_start'], q['visual_end']): q for q in
+                  structure.get('candidates', {}).get('german_quotes', [])}
+        for node in nodes:
+            if node['kind'] != 'example':
+                continue
+            children = [n for n in nodes if n.get('parent') == node['id']]
+            tib = [n for n in children if n['kind'] == 'tibetan']
+            gloss = [n for n in children if n['kind'] == 'translation']
+            cites = [n for n in children if n['kind'] == 'citation']
+            if len(tib) != 1 or len(gloss) != 1 or not cites:
+                continue
+            t, g = tib[0], gloss[0]
+            q = quotes.get((g['start'], g['end']))
+            if not q or q.get('diagnostics') or q.get('children'):
+                continue
+            ordered = sorted(cites, key=lambda n: n['start'])
+            if (t['start'] != node['start'] or t['end'] > g['start'] or
+                    not re.fullmatch(r'\s*(?:\(metr\.\s*\))?\s*', text[t['end']:g['start']]) or
+                    text[g['end']:ordered[0]['start']].strip() or
+                    ordered[-1]['end'] != node['end'] or
+                    any(text[a['end']:b['start']].strip(' \n\t;,')
+                        for a, b in zip(ordered, ordered[1:]))):
+                continue
+            if any(s['kind'] == 'sense' and
+                   max(node['start'], s['start']) < min(node['end'], s['end']) and
+                   not s['start'] <= node['start'] < node['end'] <= s['end']
+                   for s in nodes):
+                continue
+            if any(c['id'] in assigned for c in cites):
+                continue
+            parent = by_id.get(node.get('parent'), {})
+            sense = parent.get('id') if parent.get('kind') == 'sense' else None
+            passages.append(object_('citable_passage', node['start'], node['end'],
+                passage_type='example', example_node_id=node['id'], sense_node_id=sense,
+                ownership='sense' if sense else 'entry',
+                evidence='PDF italic expression, optional explicit metrical annotation, balanced quoted gloss and whitespace-attached citation',
+                source_locator=node.get('source_lines', []),
+                citation_node_ids=[c['id'] for c in cites]))
+            assigned.update(c['id'] for c in cites)
+    # Exact source definition envelopes, not a window around a citation. Reject
+    # mixed example/Lex. envelopes and crossed senses. Multiple citations in the
+    # same source-defined clause share one owner.
+    for node in nodes:
+        if node['kind'] != 'definition':
+            continue
+        a, b = node['start'], node['end']
+        cites = [n for n in nodes if n['kind'] == 'citation' and
+                 a <= n['start'] < n['end'] <= b and n['id'] not in assigned]
+        if not cites or any(n['kind'] in ('example', 'lexical') and
+                           max(a, n['start']) < min(b, n['end']) for n in nodes):
+            continue
+        if any(max(a, x['start']) < min(b, x['end']) for x in blocks):
+            continue
+        if any(s['kind'] == 'sense' and max(a, s['start']) < min(b, s['end'])
+               and not s['start'] <= a < b <= s['end'] for s in nodes):
+            continue
+        parent = by_id.get(node.get('parent'), {})
+        sense = parent.get('id') if parent.get('kind') == 'sense' else None
+        # PDF definitions are candidates; require citations syntactically
+        # enclosed in a parenthetical or an explicit comparison construction.
+        if not html and any(not (text[c['start']:c['end']].startswith(('(', 'vgl.')) or
+                                 re.search(r'\bvgl\.\s*$', text[a:c['start']]))
+                            for c in cites):
+            continue
+        passages.append(object_('citable_passage', a, b,
+            passage_type='definition_clause', definition_node_id=node['id'],
+            sense_node_id=sense, ownership='sense' if sense else 'entry',
+            evidence='source definition envelope with embedded citation',
+            source_locator=node.get('source_lines', []),
+            citation_node_ids=[c['id'] for c in cites]))
+        assigned.update(c['id'] for c in cites)
     for node in nodes:
         if node['kind'] != 'citation':
             continue
@@ -141,7 +244,11 @@ def hierarchy(projection, text):
             p = candidates[0]
             owners.append(dict(citation_node_id=node['id'], passage_id=p['id'],
                                sense_node_id=p['sense_node_id'], ownership=p['ownership'],
-                               evidence=p['evidence'], status='derived_source_structure'))
+                               evidence=p['evidence'], evidence_class=(
+                                   'Lex_containment' if p['passage_type']=='lex_item' else
+                                   'explicit_HTML_attestation' if html and p['passage_type']=='example' else
+                                   'PDF_example_quotation' if p['passage_type']=='example' else
+                                   'definition_comparison_clause'), status='derived_source_structure'))
         elif candidates:
             owners.append(dict(citation_node_id=node['id'], ownership='unresolved',
                                reason='multiple explicit passage candidates',

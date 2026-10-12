@@ -94,9 +94,14 @@ def entry_view(inspected, bibliography=None):
                               bibliography=authorities,
                               bibliography_status="resolved" if authorities else "unresolved",
                               accepted_authority_ids=sorted({a['id'] for a in authorities}),
-                              ownership="unresolved"))
-    from badw_semantic_hierarchy import hierarchy
+                              ownership="unresolved",
+                              source_span=dict(start=node["start"], end=node["end"]),
+                              source_binding=dict(identity=p["identity"], text_sha256=p["review_text_sha256"])))
+    from badw_semantic_hierarchy import hierarchy, citation_family
     semantic = hierarchy(p, text)
+    for node, citation in zip((n for n in p['nodes'] if n['kind']=='citation'), citations):
+        citation['source_structural_family'] = citation_family(p, text, node)
+        citation['ownership_residual_reason'] = 'source_envelope_does_not_establish_exact_passage'
     for owner in semantic['citation_ownership']:
         if not owner.get('passage_id'):
             continue
@@ -107,7 +112,9 @@ def entry_view(inspected, bibliography=None):
                                 supports=[owner['passage_id']],
                                 sense_node_id=owner['sense_node_id'],
                                 container_ownership=owner['ownership'],
-                                ownership_evidence=owner['evidence'])
+                                ownership_evidence=owner['evidence'],
+                                ownership_evidence_class=owner['evidence_class'])
+                citation.pop('ownership_residual_reason', None)
     relationships = []
     for r in p.get("semantic_relationships", []):
         # These are already accepted, source-bound projection relationships.
@@ -145,6 +152,8 @@ def entry_view(inspected, bibliography=None):
                 if c["component_id"] == by_node[source["node_id"]]["id"]:
                     c["ownership"] = "reviewed"
                     c["supports"] = targets
+                    c['ownership_evidence_class'] = 'reviewed_relationship'
+                    c.pop('ownership_residual_reason', None)
     # Include reviewed subpassages in the display boundaries too. Every literal
     # character is emitted once even when several annotations overlap.
     # Section labels are source observations, not inferred citation owners.
@@ -209,6 +218,8 @@ def entry_view(inspected, bibliography=None):
         references.append(dict(component_id=by_node[node["id"]]["id"] if node else None,
                                marker=ref.get("marker"), wording=ref.get("target_label", ""),
                                source_url=ref.get("target_url"),
+                               parsed_target=resolution.get("parsed_target"),
+                               residual_reason=resolution.get("residual_reason"),
                                target_entry_id=resolution.get("target_entry_id"),
                                target_lexical_entity=resolution.get("target_lexical_entity"),
                                status=resolution.get("status", "unresolved"),

@@ -31,7 +31,7 @@ def test_view_preserves_source_contract_without_inventing_relationships():
     assert output == view([r], EntryIndex(r['original_records']))
 
 
-def test_exact_reference_resolves_but_printed_reference_is_not_guessed():
+def test_exact_reference_resolves_without_link_but_alternate_label_is_not_guessed():
     r = record()
     ref = dict(record_type='cross_reference',id='ref',target_label='ka',marker='↑',
                source_spans=[dict(start=0,end=2)], target_url=r['original_records'][0]['stable_url'])
@@ -40,6 +40,11 @@ def test_exact_reference_resolves_but_printed_reference_is_not_guessed():
     assert output[0]['cross_references'][0]['canonical_resolution']['target_entry_id']=='entry:1'
     assert 'canonical_resolution' not in ref
     del ref['target_url']
+    unlinked = view([r], EntryIndex(r['original_records']))[0]['cross_references'][0]['canonical_resolution']
+    assert unlinked['status'] == 'resolved'
+    assert unlinked['target_lexical_entity']['headword'] == 'ka'
+    assert unlinked['candidate_entry_ids'] == ['entry:1']
+    ref['target_label'] = 'kaa'
     assert view([r], EntryIndex(r['original_records']))[0]['cross_references'][0]['canonical_resolution']['status']=='unresolved'
 
 

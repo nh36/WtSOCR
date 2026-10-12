@@ -78,6 +78,7 @@ def test_review_language_annotation_supplements_source_and_rejects_stale_binding
 
 def test_reviewed_smaller_passage_and_unresolved_ownership():
     r=record();r['nodes'].append(dict(id='citation',kind='citation',start=9,end=15,lexical_record_id='c1'))
+    r['nodes'][0]['end'] = 9  # Citation lies outside the source-defined clause.
     assert entry_view(inspect(r))['citations'][0]['ownership']=='unresolved'
     relation=dict(annotation_id='relationship:1',relation='citation_of',
                   binding=dict(text_sha256=r['review_text_sha256']),
@@ -96,6 +97,7 @@ def test_reviewed_smaller_passage_and_unresolved_ownership():
 
 def test_source_bound_bibliography_does_not_require_reviewed_passage_ownership():
     r = record()
+    r['nodes'][0]['end'] = 9
     r['nodes'].append(dict(id='citation', kind='citation', start=9, end=15,
                            lexical_record_id='legacy'))
     bibliography = {
@@ -109,6 +111,17 @@ def test_source_bound_bibliography_does_not_require_reviewed_passage_ownership()
     assert citation['bibliography_status'] == 'resolved'
     assert citation['ownership'] == 'unresolved'
     assert result['relationships'] == []
+
+
+def test_definition_containment_owner_preserves_bibliography_and_literal():
+    r = record()
+    r['nodes'].append(dict(id='citation', kind='citation', start=9, end=15))
+    result = entry_view(inspect(r), {
+        (r['identity'], 'citation'): [dict(id='book:exact', label='Exact', descriptions=[])]})
+    citation = result['citations'][0]
+    assert citation['ownership'] != 'unresolved'
+    assert citation['accepted_authority_ids'] == ['book:exact']
+    assert ''.join(s['text'] for s in result['segments']) == 'für skt. Viṣṇus'
 
 
 def test_nested_lexical_observations_do_not_fragment_display_parallel():

@@ -62,10 +62,16 @@ def refine_boundary_diagnostics():
 
 
 def main():
+    global OUT, WORK, BASE
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--refine-boundaries', action='store_true')
-    if parser.parse_args().refine_boundaries:
+    parser.add_argument('--output', type=Path, default=OUT)
+    parser.add_argument('--work', type=Path, default=WORK)
+    parser.add_argument('--baseline', type=Path, default=BASE)
+    args = parser.parse_args()
+    OUT, WORK, BASE = args.output, args.work, args.baseline
+    if args.refine_boundaries:
         refine_boundary_diagnostics()
     db=sqlite3.connect('file:'+str(WORK/'semantic.sqlite')+'?mode=ro',uri=True)
     by_entry=collections.defaultdict(list)
@@ -92,13 +98,15 @@ def main():
     comparison={k:dict(baseline=family_counts[0][k],current=family_counts[1][k]) for k in sorted(set(family_counts[0])|set(family_counts[1]))}
     index=EntryIndex(list(rows(Path('work/badw_relationship_targets_20261005/actual_entry_index.jsonl'))))
     frozen=[]
-    for r in rows(Path('work/badw_corpus_structure/holdout_packets.jsonl')):
+    for r in (r for path in (Path('work/badw_corpus_structure/holdout_packets.jsonl'),
+                             Path('work/badw_semantic_hierarchy/holdout_packets.jsonl'))
+              for r in rows(path)):
         p=r['projection'];text=r['packet']['review_text'];semantic=hierarchy(p,text)
         refs=[]
         if p['source_kind']=='html':refs=[index.resolve_manifestation(x) for x in p['original_records'] if x.get('record_type')=='cross_reference']
         else:
             for c in p['original_structure']['candidates']['cross_references']:
-                refs.append(index.resolve_source_candidate(dict(marker=c.get('marker'),target_label=c.get('target_label_candidate',''),source_candidate=c)))
+                refs.append(index.resolve_source_candidate(dict(marker=c.get('marker'),target_label=c.get('target_label_candidate',''),source_candidate=c), structure=p['original_structure'], text=text))
         reader=r['reader'];entry=dict(id=reader['id'],headword=reader['headword'],homonym=reader['homonym'],stable_url=reader['source_url'])
         bibliography={(p['identity'],n['id']):c['bibliography'] for n,c in zip((n for n in p['nodes'] if n['kind']=='citation'),reader['citations'])}
         view=entry_view(dict(projection=p,entry=entry,review_text=text,cross_references=refs),bibliography)
@@ -109,6 +117,11 @@ def main():
         for r in frozen:f.write(json.dumps(r,ensure_ascii=False,sort_keys=True)+'\n')
     result=dict(common_entries=len(common),newly_projected=sorted(new.keys()-old.keys()),common_accounting=accounting,anomaly_comparison=comparison,canonical_lex_duplicate_spans=duplicate,canonical_lex_overlapping_pairs=overlap,frozen_holdout_reader_passes=len(frozen),foreign_key_violations=list(db.execute('PRAGMA foreign_key_check')),store_rows={table:db.execute('SELECT count(*) FROM '+table).fetchone()[0] for table in ('lex_item','passage','citation','citation_passage','xref')},script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (OUT/'comparison.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
+    manifest=json.loads((OUT/'manifest.json').read_text())
+    manifest['outputs_sha256']={str(p):hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in sorted(OUT.glob('*')) if p.is_file() and p.name not in ('manifest.json','anomalies.jsonl')}
+    manifest['code_sha256']['scripts/verify_badw_semantic_replay.py']=result['script_sha256']
+    (OUT/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='anomaly_comparison'},indent=2))
 
 if __name__=='__main__':main()
