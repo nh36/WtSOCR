@@ -1673,13 +1673,16 @@ source text, span validation and relationship contracts remain unchanged.
 | Meaningful structural-review characters | 60,298 | 22,825 |
 
 Achard 2015 is independently verified in author and publisher bibliographies.
-Schwieger is identified at work level by direct inspection of the supplied 2006
-edition, printed pp.241–242; 2006 versus 2009 remains ambiguous. Both malformed
+Schwieger 241 ff. is resolved to the existing WTS online Schwieger 2006 publication
+authority: the supplied edition directly verifies printed pp.241–242, and the
+user-reviewed 2005 printed kyis article lacks this later digital citation. No
+2009 Handbuch edition is registered in the online bibliography. This upgrades
+an already accepted work identity; accepted/unresolved totals remain 109,079/346. Both malformed
 Abteilung references resolve to Mvy at work level through facsimile-verified Sakaki
 numbers and section headings. Literal WTS wording remains unchanged. The printed
 `dBe’uD` extra letter is genuine; Be’uD locator/content evidence is unavailable,
-so that identity remains unresolved. Five concise editorial questions preserve
-these evidentiary limits. These four resolutions concern the five focal cases;
+so that identity remains unresolved. Four concise editorial questions preserve
+these evidentiary limits; Schwieger no longer requires editorial input. These four resolutions concern the five focal cases;
 the 346 total unresolved identities include other previously classified residue.
 
 The 408 unresolved owners retain their frozen distribution: 167 comparison clauses,

@@ -15,9 +15,15 @@ The reviewed rows are in `../bibliography_forensic_citation_reviews.tsv`.
   *The View of sPyi ti Yoga*, RET 31, pp. 1–20. This is an external authority,
   not a retrospectively invented WTS bibliography occurrence.
 * Schwieger: supplied 2006 facsimile, scan 243–244 / printed 241–242, directly
-  verifies the ergative/instrumental discussion. Work identified; edition remains
-  ambiguous because 2009 pagination and entry preparation chronology were not
-  established.
+  verifies the ergative/instrumental discussion. The citation now resolves to
+  existing online publication `publication-44447794083fe19d6792b97d1c5b1c40`
+  (Schwieger 2006). The pinned WTS bibliography registers this edition and no
+  2009 second edition of the Handbuch; its Schwieger 2009 row is a different work.
+  The user-reviewed first Lieferung (2005) kyis article lacks this citation.
+  Together these establish a later digital/revised addition referring to 2006.
+  The source literal remains `Schwieger 241 ff.`; 2009 is not an active candidate.
+  This publication-level upgrade replaces an already accepted work-level match,
+  so accepted identities remain 109,079 and unresolved identities remain 346.
 * Mvy: 1989 facsimile scan 136 / printed 226 verifies Sakaki 4642 and its section;
   scan 102 / printed 159 verifies Sakaki 3129 and its section. The malformed
   online literals remain unchanged; reviewed work relationships supply Mvy.
@@ -28,9 +34,10 @@ The reviewed rows are in `../bibliography_forensic_citation_reviews.tsv`.
   346 identities remain unresolved across the whole corpus.
 
 External bibliographic URLs and PDF hashes are retained in the authority/review
-TSVs. `badw_questions.tsv` contains five concise editorial questions, including
-the uncertain edition, unresolved source label and confirmed malformed online
-references. No message has been sent to BAdW.
+TSVs. `badw_questions.tsv` contains four concise editorial questions: the Achard
+online bibliography omission, unresolved source label and two confirmed malformed
+online references. The Mvy identities are resolved; their source errors remain
+editorial questions. Schwieger no longer requires editorial input. No message has been sent to BAdW.
 
 The 408 owner residue is enumerated in `ownership_residue.jsonl.gz`, with frozen
 family counts in `forensic_residue.json`. `ownership_context_review.jsonl`

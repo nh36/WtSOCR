@@ -3,6 +3,7 @@
   "baseline_commit": "26ba4c1344",
   "baseline_store_sha256": "da5cd2fc63683be9352d34e985504bfd29eb6ea7dbfc6e66785029c3f0fc7f49",
   "code_sha256": {
+    "/Users/nathanhill/Code/WtSOCR/scripts/finalize_badw_corpus_structure.py": "0fff84cafde8e3bb6d3226f9ed77323511e8e211e8fabf565e8c45422749b70f",
     "scripts/audit_badw_article_structure.py": "d40a08b0c78c8f065ca449c4a1d7e48681fa54e37c462d607e670e1453129fda",
     "scripts/audit_badw_corpus_structure.py": "50f3a505b3158683a973a509af7ded7388d9877d9e7a99e2aa35b4878c4eac85",
     "scripts/audit_badw_pdf_entries.py": "73bbdffd56d186f76958b2bcdcfce211d537d5207048cbc90e97d1525b598e14",
@@ -123,8 +124,8 @@
   "integration_inputs_sha256": {
     "data/badw_language_glyph_reviews.jsonl": "36b2940d1ecbe74a15c7fae9cdf65ad959c912e8e615424f74f32db345b40f75",
     "data/bibliography_alias_reviews.tsv": "1cbb69874d585a8beaa1e6b9be7d3dd8082159a0785337b024a550710cfdfa69",
-    "data/bibliography_external_publications.tsv": "47356a949695f1bf7041de9ce065854e9700afa35092b94000960bff5191ac0a",
-    "data/bibliography_forensic_citation_reviews.tsv": "20bd8fd6fd0a8bdbc6ab35d5495ea754c18f7b4ad2b8dff503d4ad55ed99d431",
+    "data/bibliography_external_publications.tsv": "0c649b71206e63f0655b2a8339c2ab455140044a6b37c287955f5801018a21c3",
+    "data/bibliography_forensic_citation_reviews.tsv": "ec5b8045d71886ff51553df4888597970e49d03482c2a3a2e9d8113879cd0243",
     "data/bibliography_occurrence_aliases.tsv": "64f0a2af2591f0fee43d2356cbb8c11e49c689b3579d5ade7c972bd49d96e9f1",
     "data/reviewed_badw_semantic_annotations.jsonl": "9da5c2d03f57943b96372307f7e7654ad2aafd9e2fb18da77dce0aebd7ed77be",
     "work/badw_relationship_targets_20261005/actual_entry_index.jsonl": "bac43a0aa32713ce7d700cf832a26dfafbe9c7a730de2cd35a00cacf341edbe3",
@@ -134,19 +135,26 @@
     "work/wts_apparatus_20261010/ingested_completed/source_rows.jsonl": "be4edd8e94afbb8b996f11bca0bd4dabf3357e0578b9bd80289ec1d5a8ab1979"
   },
   "outputs_sha256": {
+    "data/badw_forensic_structure/README.md": "a4f2c53a1ad28357f27f5129ee6a574bcd27c53a9f8206bf952d4ee10428f316",
     "data/badw_forensic_structure/accounting.json": "32c24e65eced8c830dd6bb78177479691a9a4dfdf38a0e76c17ca4a6740e0cd6",
     "data/badw_forensic_structure/anomalies.jsonl.gz": "04ad814840fb51cdcdb5698e9ba9f4cfef4a7f90c83c5c0f9a494f5561d9e5fd",
+    "data/badw_forensic_structure/badw_questions.tsv": "2bfa639513822104eb9511231c1a59514edea7530c49c912a42946dd0b936760",
     "data/badw_forensic_structure/baseline_residue.jsonl.gz": "3cae6e1a63cd52c06c03e92a3c854be8fe26e65b23874b8992f7a692673b4cd7",
     "data/badw_forensic_structure/comparison.json": "815cb02832079cb4ec7d1dad99012fdb383a2c3092cbbdf143e195911296eceb",
     "data/badw_forensic_structure/contextual_classification.json": "fdf88e96491652d7f669c5d7eef10fd65d05bf313929ced56d61fdd9de45d82d",
-    "data/badw_forensic_structure/contextual_classification.jsonl.gz": "cb6f309ebabbed72ee76930c8831542b5aa6937184b61fade8681cb481710408",
+    "data/badw_forensic_structure/contextual_classification.jsonl.gz": "6cabc1813f7b20488628675c3707b24468f84ad77dff1725a150ab1c0ebfd8f3",
     "data/badw_forensic_structure/entries.tsv": "cd71e8f86482b1bfbdb4147b2c0332c0a03972aaaad715abe51c5787cbdc871c",
     "data/badw_forensic_structure/families.json": "221f62b5d37285d075235fbddeb14a00899fe815e7ab19d1609fdda4cb4f5337",
+    "data/badw_forensic_structure/forensic_residue.json": "51bb3b87ee4fdabcb937b05d1fe23208e0b35f56fb99e1b7896ac560584e7134",
+    "data/badw_forensic_structure/fresh_header_review.jsonl": "375c00ce4e7a882b91aedb3ab3ad04d19a14f6b5dac7aec6c0f44379a3b1a88c",
     "data/badw_forensic_structure/frozen_holdout_replay.jsonl": "29b1ae9aa9a83f92fc9a2564bb2962796735bfcd0e81874c10aa1059fa556168",
     "data/badw_forensic_structure/header_accounting.json": "a81a128b53d23422d3e7174d905e39857674f5d22199581ce5b4418f4f8c31a9",
-    "data/badw_forensic_structure/header_accounting.jsonl.gz": "36ddb7db16d9c47497742c38992c05067acfe389ede0b4c12204107afc80bcb5",
+    "data/badw_forensic_structure/header_accounting.jsonl.gz": "12439449382884a28619e035a0fab6f58b29bc783cb7aae8fc63365cde37a056",
     "data/badw_forensic_structure/holdout.json": "92ca954fb94f0bdf7a5801bf4fd5432f75dcd07fc94cdd11d054bda7f1203a1c",
     "data/badw_forensic_structure/integration.json": "e5a19897a1b06d52372111c77bfa2f300e1bc9949df0ced8cb523aca40da5d1e",
+    "data/badw_forensic_structure/ownership_context_review.jsonl": "00f0afb0c43ceb37691eefd16e05e03e5c71a6600994f4469bae896da4a272ab",
+    "data/badw_forensic_structure/ownership_residue.jsonl.gz": "b8ef0dee78e974ae17d77ba666a3920f333b72f6a28bcf203f73b45abd5b3cd0",
+    "data/badw_forensic_structure/pending_structure.jsonl.gz": "e4eab7659f554a70834bcee7b993e5ea46bd3a0ee420c85280aaad22a4118039",
     "data/badw_forensic_structure/relationships.json": "cc6664a974143edfef93106a4487045aa848c2451d30f66db5e521a3f693c092",
     "data/badw_forensic_structure/summary.json": "616840168c3bdc629646438d024bee861745e1c9d2a3e0891d01b0d705e212de"
   },
@@ -160,7 +168,7 @@
     "Fresh 12-entry header sample: six PDF facsimiles plus six HTML source inspections; recall/model limits explicitly retained."
   ],
   "semantic_contract_version": "badw-semantic-hierarchy-v3",
-  "semantic_store_sha256": "1a3475db9ba50fe8ff8f270edfa46495e7ace3bb45aca129b23629666a4d2806",
+  "semantic_store_sha256": "108cce1d102e5092d4ecf1e720ea50df61aebe0c045b852a7844003c47e99ae4",
   "source_scope": {
     "html": "work/badw_stage_c13_20260928/parsed/database_articles.jsonl",
     "pdf": "work/badw_verified_rebuild_20261003/structure_replay_v2/pdf_article_structure.jsonl.gz"

@@ -89,6 +89,23 @@ def test_html_review_without_source_binding_is_rejected(tmp_path):
         setup_review(tmp_path, layer="html")
 
 
+def test_schwieger_yearless_review_targets_registered_2006_publication():
+    """The reviewed yearless occurrence must not regress to work/edition ambiguity."""
+    root = Path(__file__).resolve().parents[1]
+    with (root / "data/bibliography_forensic_citation_reviews.tsv").open() as stream:
+        rows = list(csv.DictReader(stream, delimiter="\t"))
+    row, = [r for r in rows if "lemma/kyis/1:reviewed:334:351" in r["citation_id"]]
+    literal = "Schwieger 241 ff."
+    assert row["status"] == "reviewed_identity"
+    assert row["online_occurrence_id"] == "occurrence-a756f349437fb5e6c0be26ba3874b427"
+    assert row["text_sha256"] == hashlib.sha256(literal.encode()).hexdigest()
+    assert (int(row["source_start"]), int(row["source_end"])) == (334, 351)
+    assert "2006" in row["evidence_note"] and "2005" in row["evidence_note"]
+    with (root / "data/badw_forensic_structure/badw_questions.tsv").open() as stream:
+        questions = list(csv.DictReader(stream, delimiter="\t"))
+    assert not any("Schwieger" in str(q) for q in questions)
+
+
 def test_exact_identity_preserves_text_and_never_certifies_edition(tmp_path):
     reviews, obj = setup_review(tmp_path)
     linked = reviews.apply("pdf", "c1", result())
