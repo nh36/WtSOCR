@@ -1,0 +1,729 @@
+{
+  "version": "exact-header-accounting-v3",
+  "source_projection_sha256": "eb2eecdd10426da7aee0f8840aba06ca5acdcb06f28ddc1cd85ca5de1af64199",
+  "baseline_unassigned_alphabetic_characters": 131068,
+  "partition_runs": [
+    {
+      "source_kind": "html",
+      "family": "punctuation_layout",
+      "count": 133419
+    },
+    {
+      "source_kind": "html",
+      "family": "source_heading_pending_type",
+      "count": 109874
+    },
+    {
+      "source_kind": "html",
+      "family": "source_structural_label",
+      "count": 12472
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_Sanskrit_form",
+      "count": 2
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_alternate_headword",
+      "count": 2184
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_citation",
+      "count": 38
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_grammatical_label",
+      "count": 1456
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_header_relation",
+      "count": 579
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_homonym_marker",
+      "count": 2791
+    },
+    {
+      "source_kind": "pdf",
+      "family": "punctuation_layout",
+      "count": 70164
+    },
+    {
+      "source_kind": "pdf",
+      "family": "source_decoding_residue",
+      "count": 128
+    },
+    {
+      "source_kind": "pdf",
+      "family": "source_structural_label",
+      "count": 9666
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_Lex_item",
+      "count": 3520
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_Sanskrit_form",
+      "count": 4
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_alternate_headword",
+      "count": 1290
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_citation",
+      "count": 7
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_header_relation",
+      "count": 314
+    },
+    {
+      "source_kind": "pdf",
+      "family": "unparsed_lexical_prose_pending_review",
+      "count": 1472
+    }
+  ],
+  "alphabetic_characters": [
+    {
+      "source_kind": "html",
+      "family": "punctuation_layout",
+      "count": 0
+    },
+    {
+      "source_kind": "html",
+      "family": "source_heading_pending_type",
+      "count": 6401
+    },
+    {
+      "source_kind": "html",
+      "family": "source_structural_label",
+      "count": 37416
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_Sanskrit_form",
+      "count": 26
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_alternate_headword",
+      "count": 8736
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_citation",
+      "count": 147
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_grammatical_label",
+      "count": 3564
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_header_relation",
+      "count": 1794
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_homonym_marker",
+      "count": 0
+    },
+    {
+      "source_kind": "pdf",
+      "family": "punctuation_layout",
+      "count": 0
+    },
+    {
+      "source_kind": "pdf",
+      "family": "source_decoding_residue",
+      "count": 10841
+    },
+    {
+      "source_kind": "pdf",
+      "family": "source_structural_label",
+      "count": 28996
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_Lex_item",
+      "count": 0
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_Sanskrit_form",
+      "count": 96
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_alternate_headword",
+      "count": 14406
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_citation",
+      "count": 66
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_header_relation",
+      "count": 2155
+    },
+    {
+      "source_kind": "pdf",
+      "family": "unparsed_lexical_prose_pending_review",
+      "count": 16424
+    }
+  ],
+  "canonical_header_fields": {
+    "homonym_marker": 2938,
+    "alternate_headword": 4077,
+    "header_relation": 796,
+    "grammatical_label": 1456,
+    "verb_form": 93
+  },
+  "pdf_candidates": [
+    {
+      "family": "printed_correction_apparatus",
+      "status": "anchored_printed_proposal",
+      "count": 110
+    },
+    {
+      "family": "printed_correction_apparatus",
+      "status": "contextual_placeholder",
+      "count": 6
+    },
+    {
+      "family": "printed_correction_apparatus",
+      "status": "multiword_target_scope_unresolved",
+      "count": 21
+    },
+    {
+      "family": "printed_correction_apparatus",
+      "status": "unresolved_target",
+      "count": 7
+    }
+  ],
+  "examples": {
+    "source_structural_label": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/1",
+        "start": 967,
+        "end": 971,
+        "literal": "Lex.",
+        "source_sha256": "34d41ce64d832b962cddc4e159e28bfd341e072dfc06ec913f72c17815008d41"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+        "start": 2076,
+        "end": 2080,
+        "literal": "Lex.",
+        "source_sha256": "d52b8a0a8ab5b908c134cf6fe83e54e7a742ad7722eedff7a4320d8a705039ae"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "start": 616,
+        "end": 620,
+        "literal": "Lex.",
+        "source_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20byu%E1%B9%85/1",
+        "start": 112,
+        "end": 116,
+        "literal": "Lex.",
+        "source_sha256": "1826d7541cbb16c0f0e72543bedb69c43cc425b987ac6093cb1d66c9bdc20849"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20byu%E1%B9%85/1",
+        "start": 271,
+        "end": 275,
+        "literal": "Lex.",
+        "source_sha256": "1826d7541cbb16c0f0e72543bedb69c43cc425b987ac6093cb1d66c9bdc20849"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20da%20ra/1",
+        "start": 188,
+        "end": 192,
+        "literal": "Lex.",
+        "source_sha256": "afb35d33ab85098c9c40853b20717a36bea2e0f79064c18d12890aa8bde25e59"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20da%20ra/1",
+        "start": 250,
+        "end": 254,
+        "literal": "Lex.",
+        "source_sha256": "afb35d33ab85098c9c40853b20717a36bea2e0f79064c18d12890aa8bde25e59"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20dan/1",
+        "start": 2276,
+        "end": 2280,
+        "literal": "Lex.",
+        "source_sha256": "1b599be567f008c1a9d9f19d755f3063a987ce4b79ccc13bdcf2c2e8f9af0576"
+      }
+    ],
+    "typed_alternate_headword": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20bla/1",
+        "start": 57,
+        "end": 62,
+        "literal": "auch ",
+        "source_sha256": "91fd1c413a1aef186c0878930d0af7e80ad17a79649978e0736df06b72ae2551"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+        "start": 61,
+        "end": 66,
+        "literal": "auch ",
+        "source_sha256": "fbf53c62aec5b93f963318e32884f316e5fc78a1ae4a986af4a3393ca3539cf6"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20grus%20ma/1",
+        "start": 65,
+        "end": 70,
+        "literal": "auch ",
+        "source_sha256": "099257a8aa0c55c94193abc318a4cb52db0f79dcbb3442d7f882631f3063f0ac"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20hu%20bhu%20dze/1",
+        "start": 70,
+        "end": 75,
+        "literal": "auch ",
+        "source_sha256": "2f7f40b6d9fcdf35942c6df1c7e92e562174674db0f8ba85f6a166e83f0e695f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%20ha/1",
+        "start": 60,
+        "end": 65,
+        "literal": "auch ",
+        "source_sha256": "67bc0fb29f58f03d62b9351e6079337218d3c88bdfd1c4c6170bc3b01ac13ba7"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+        "start": 58,
+        "end": 63,
+        "literal": "auch ",
+        "source_sha256": "1d9f1493fea386473f85a7deca1c54facf4ac7c711bc1152d7971973836c64dc"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20mig/1",
+        "start": 65,
+        "end": 70,
+        "literal": "auch ",
+        "source_sha256": "efa33254dc0611d7aa77919a1ac00a2dd179e95fa6afbc36d190dcdfa1281dd0"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20spyod/1",
+        "start": 69,
+        "end": 74,
+        "literal": "auch ",
+        "source_sha256": "70c4b78d3d3fd296fd50297abc90caad708516ac6f24b28b6f070fc8ec0ca1f8"
+      }
+    ],
+    "typed_header_relation": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20spyod/1",
+        "start": 89,
+        "end": 95,
+        "literal": "Kurzf.",
+        "source_sha256": "70c4b78d3d3fd296fd50297abc90caad708516ac6f24b28b6f070fc8ec0ca1f8"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85%20spyod/1",
+        "start": 95,
+        "end": 100,
+        "literal": " für ",
+        "source_sha256": "70c4b78d3d3fd296fd50297abc90caad708516ac6f24b28b6f070fc8ec0ca1f8"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bad/3",
+        "start": 53,
+        "end": 59,
+        "literal": "Kurzf.",
+        "source_sha256": "c5e75b5aa508e691f8128f6eee3b51974ab6c1268c566f7b34be2305e0dc9222"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bad/3",
+        "start": 59,
+        "end": 64,
+        "literal": " für ",
+        "source_sha256": "c5e75b5aa508e691f8128f6eee3b51974ab6c1268c566f7b34be2305e0dc9222"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20brkya%E1%B9%85/1",
+        "start": 69,
+        "end": 73,
+        "literal": " zu ",
+        "source_sha256": "44c4bd97a764161beb61533d53ba135d3e943cf8d9383fc8c325de4418fd31cb"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20gsar/1",
+        "start": 61,
+        "end": 67,
+        "literal": "Kurzf.",
+        "source_sha256": "aba4e19b9f08284c2c815b7af031cf280a7f3b33e454050a3f1dd11e34a9de08"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20gsar/1",
+        "start": 67,
+        "end": 72,
+        "literal": " für ",
+        "source_sha256": "aba4e19b9f08284c2c815b7af031cf280a7f3b33e454050a3f1dd11e34a9de08"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bai%20dkar/1",
+        "start": 61,
+        "end": 67,
+        "literal": "Kurzf.",
+        "source_sha256": "89c676ac74241284c6a3f15220212b559033314cb271b7f6357ab8f353f71901"
+      }
+    ],
+    "source_heading_pending_type": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20ru%20ra/1",
+        "start": 61,
+        "end": 67,
+        "literal": "Kurzf.",
+        "source_sha256": "a735b673a417723f6ffeef6d0cd4287a66ca7428488b7a681420b56f05a98805"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/babs/1",
+        "start": 68,
+        "end": 72,
+        "literal": " zu ",
+        "source_sha256": "a5c5918c2219ea8b567605f7ff8764489bcbec4fbfcb94ab1c0ab9db0ac390e8"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ban/3",
+        "start": 53,
+        "end": 59,
+        "literal": "Kurzf.",
+        "source_sha256": "aaad17233f5b76ebcf100008373149d254ec93492d96e8bde85fa95c6fccfe22"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ban/3",
+        "start": 59,
+        "end": 64,
+        "literal": " für ",
+        "source_sha256": "aaad17233f5b76ebcf100008373149d254ec93492d96e8bde85fa95c6fccfe22"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar/2",
+        "start": 46,
+        "end": 66,
+        "literal": "\n      postpos.\n    ",
+        "source_sha256": "841e813f17534213e7363cf40063ef3e6bf5ee5de81b57cd9ea8747fae2d3037"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20la/1",
+        "start": 57,
+        "end": 77,
+        "literal": "\n      postpos.\n    ",
+        "source_sha256": "0a6e19861acbd061d7de06ff070560ce9f07fb9646fdb148cb7c5c2526bcb29f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20tu/1",
+        "start": 58,
+        "end": 78,
+        "literal": "\n      postpos.\n    ",
+        "source_sha256": "db9d8341458be5932d0429dd8cb892586fea6d7e4307f71543181d3ca8d1f861"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/1",
+        "start": 52,
+        "end": 72,
+        "literal": "\n      postpos.\n    ",
+        "source_sha256": "7d6f504bfec5cea69e93ff040427ffee84e37679c364b0d8b05c8802094c52e9"
+      }
+    ],
+    "typed_grammatical_label": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/babs/1",
+        "start": 65,
+        "end": 68,
+        "literal": "pf.",
+        "source_sha256": "a5c5918c2219ea8b567605f7ff8764489bcbec4fbfcb94ab1c0ab9db0ac390e8"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20brkya%E1%B9%85/1",
+        "start": 65,
+        "end": 69,
+        "literal": "fut.",
+        "source_sha256": "44c4bd97a764161beb61533d53ba135d3e943cf8d9383fc8c325de4418fd31cb"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+        "start": 64,
+        "end": 68,
+        "literal": "fut.",
+        "source_sha256": "45bcf35efdf4926e8b7efc284ca1f8667ad8b66a673ca9572df0ec0f262df8de"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+        "start": 59,
+        "end": 63,
+        "literal": "adv.",
+        "source_sha256": "5924331ccc824eec46495db177147f664df563f0091f9ca8a006931d29f3b16f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+        "start": 55,
+        "end": 58,
+        "literal": "pf.",
+        "source_sha256": "1f94414b6ad3597a4cf1c09ba09c2c00853966c72f181afcab5b53a832855566"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20byas/1",
+        "start": 63,
+        "end": 66,
+        "literal": "pf.",
+        "source_sha256": "6915df6d325576d45215b657cdfeb36180cd4b36c270acf3ccbdf0d87be40568"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20bya/1",
+        "start": 69,
+        "end": 73,
+        "literal": "fut.",
+        "source_sha256": "db5479f0d9419fc47fd25121cffc788fb96973b819ee2b572941fb56f91cb546"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+        "start": 71,
+        "end": 74,
+        "literal": "pf.",
+        "source_sha256": "2ea241320208a3209bc8a8fd46c5ba6730075471ae214fa1c3aa396e62b99671"
+      }
+    ],
+    "typed_Sanskrit_form": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kun%20tu%20bza%E1%B9%85%20mo/1",
+        "start": 84,
+        "end": 97,
+        "literal": "Samantabhadrī",
+        "source_sha256": "673039935282b38c762e1fc8e8286f131fa34023c919684a2f841d0ec57a6b20"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kun%20tu%20bza%E1%B9%85%20po/1",
+        "start": 84,
+        "end": 97,
+        "literal": "Samantabhadra",
+        "source_sha256": "31d4777e3257bb5b0db68095ab26a0c9e15eb4251294049a863571d45fc889d1"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-756713ea3a4fa2a141b79e862f47744922b2522b090a58b96a43641afbd2e1ad:449",
+        "start": 28,
+        "end": 84,
+        "literal": "Uccai⟦UNKNOWN:TGaramond:regular:0062:132486157c8f⟧śravas",
+        "source_sha256": "9366892ed48180f33b185cc9a276ea530412c166fb8616a694d40a80583e5d37"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-4a98b17c4cf1c5ad8c52b382fc79622fbff7f9ca94e0c026712bbfe8ec76112b:2196",
+        "start": 47,
+        "end": 55,
+        "literal": "Mahāmuni",
+        "source_sha256": "36235b915541c4c0351d6e4769936385ff77afa04b1aee50b20c84238db8ee75"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-7b06525fd7c8c60d8ea5003751a0e34c21dbe9563113aa8d06058f73922de076:2250",
+        "start": 52,
+        "end": 68,
+        "literal": "Mahāsthāmaprāpta",
+        "source_sha256": "f95a00eb1555765672e5ce947b837409e761ccfb1fc9925c0686dee78dfc2339"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-edc402da483d9051abba62ee0fea2514076fb07d38df22103e38f01b2589a171:292",
+        "start": 24,
+        "end": 80,
+        "literal": "Uccai⟦UNKNOWN:TGaramond:regular:0062:132486157c8f⟧śravas",
+        "source_sha256": "a17a49d7e265e5b8c21d0cc4c273e249ce74221c98fc485f61a5832dc208d44d"
+      }
+    ],
+    "typed_citation": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 463,
+        "end": 482,
+        "literal": "sKal bzaṅ gyur med ",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 491,
+        "end": 494,
+        "literal": "ff.",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyis/1",
+        "start": 334,
+        "end": 343,
+        "literal": "Schwieger",
+        "source_sha256": "3fb188c4b666f6d3bee1e1ac3ebcebb47367a1102081477ea0b970248aec8603"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyis/1",
+        "start": 348,
+        "end": 351,
+        "literal": "ff.",
+        "source_sha256": "3fb188c4b666f6d3bee1e1ac3ebcebb47367a1102081477ea0b970248aec8603"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyis/1",
+        "start": 376,
+        "end": 395,
+        "literal": "sKal bzaṅ gyur med ",
+        "source_sha256": "3fb188c4b666f6d3bee1e1ac3ebcebb47367a1102081477ea0b970248aec8603"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyis/1",
+        "start": 404,
+        "end": 407,
+        "literal": "ff.",
+        "source_sha256": "3fb188c4b666f6d3bee1e1ac3ebcebb47367a1102081477ea0b970248aec8603"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "start": 127,
+        "end": 136,
+        "literal": "Schwieger",
+        "source_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "start": 141,
+        "end": 148,
+        "literal": "a: 296 ",
+        "source_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      }
+    ],
+    "unparsed_lexical_prose_pending_review": [
+      {
+        "identity": "badw:pdf:badw-v2-ae03bf8638b16aea76c1fa18ca45d5f735f9b2c5ec6552c00a16982bff17890a:77",
+        "start": 5301,
+        "end": 5347,
+        "literal": "\ngnaṃ du bźud pa nṛ / ~ thabs brjod du myṛ\n[-]",
+        "source_sha256": "9f50d1e871e5a7fa2bde0ec0b1e44854d242dbd6689a974233abe818933c2f54"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a43f0bca12a0227e20798a62cab27acda5ebee143c83478cc492d22805c6a26f:779",
+        "start": 8,
+        "end": 13,
+        "literal": ", ga ",
+        "source_sha256": "03f95ccc2cbdc1f56cc47ac1a31e8ae9b74e5ac4a607cba8569d8c7f4a684a10"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-f6cef5ea2df255b13f6bac1cf5f77355f7dc894d0d4374bc392e3e82b5822f30:1304",
+        "start": 0,
+        "end": 5,
+        "literal": " pf. ",
+        "source_sha256": "73d004cd748765a20733d499f6bf5d73e9f758e93cafd9f10028bf7e13b846d4"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-7b557f6b9a80b4664721e7edc488df506e0b28fcf0e857dd8eabd3c454433cff:981",
+        "start": 0,
+        "end": 15,
+        "literal": " pf. kha mṅags ",
+        "source_sha256": "6c17b246788d39152f2b478529d466750427d0dcf972320609b56ff98cd24481"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-ae21f2d2e5699fee5d34cbbf495941b534a9976d4d861f3ef175fac0f3b08891:66",
+        "start": 14,
+        "end": 53,
+        "literal": " „Zubinden\ndes Mauls“, ein gTo-Ritual.\n",
+        "source_sha256": "c2a65a2ed7a31a37df260a47fa1853e49db5ca7b5f393b37bc7b94f29b6022df"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-94e53758c4140e89927e31cd8e1e6222e37d938f81f905fcb6a985274742eb94:1971",
+        "start": 0,
+        "end": 15,
+        "literal": " pf. kha ’chus ",
+        "source_sha256": "6891d2adf91464d71598096a3368c35d839d96e4ee70c14aff820a61e71efca5"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-2fab92d1ba2d854a0cecc63b97069e34c350d788b965c54da365642df666eccb:1414",
+        "start": 0,
+        "end": 17,
+        "literal": " pf. und fut. zu ",
+        "source_sha256": "3ab866cd4b42d0406a8ccedae21c92713b333159ad137f672f09a4b7daf37ea2"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-04b0dfeec1fb2736f34135fb98d33e67831e52825fe45fbdf80fc5ab5ab2107a:255",
+        "start": 0,
+        "end": 5,
+        "literal": " pf. ",
+        "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
+      }
+    ],
+    "source_decoding_residue": [
+      {
+        "identity": "badw:pdf:badw-v2-f6cef5ea2df255b13f6bac1cf5f77355f7dc894d0d4374bc392e3e82b5822f30:257",
+        "start": 0,
+        "end": 64,
+        "literal": " türk.-mong. Qa⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧an.\n",
+        "source_sha256": "10e633e92b2e0e7c86dc7e324274d3f17362d0abde503ed8a31bd40fdec04e44"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-7cca316b1f1fe560045cc0993e683ae5b887ce0c28a0414492b63b134ba8069c:1031",
+        "start": 299,
+        "end": 340,
+        "literal": "\n⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+        "source_sha256": "ddeacbe9aff5ac4ca52cbbe38007a8860e6903beaf037965a1f05e8629a7e810"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-50ff496565dc33c3685ac32ef9bbbf83f21ac0667a3d20a40757270e5697690d:629",
+        "start": 1124,
+        "end": 1179,
+        "literal": "\n⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧",
+        "source_sha256": "af7d17900fd067b15e730c6b8986a5388cbb629581c594ec21cacab2ca0ed69f"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-e63e3888d015b28d786bd64ba6d51d2a596f25f07d58645d3da33742589aa658:789",
+        "start": 140,
+        "end": 197,
+        "literal": "; \n⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧",
+        "source_sha256": "7e986532ba3241f2b6909efc72472a7c895a8906a5f0863b79a788ae8a64fb3f"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-c908b48cc3dd8492ccc40aa3207724cd2a98fe76eb4f85de06ce8c9048f2803b:534",
+        "start": 60,
+        "end": 101,
+        "literal": "\n⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+        "source_sha256": "ec7f15513d0c577aec90e34788d3d12ff0298e83b14126e38572eebf69dbf936"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-bce62703d7e03c6d5219d366dba02757e4a7944092ca2d09a321300baa89a90b:1632",
+        "start": 0,
+        "end": 188,
+        "literal": " [divin.] das Trigramm ⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:1A29:4a5d91d89107⟧, chin. ⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:72B3:04c26ab6e4d3⟧\nken, eines der acht ",
+        "source_sha256": "efac76a381ace623430646f7039b3a0b95254d607130be24c341e33258d07b8f"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-5c7b751c73886cc0471726d25642d0092152bda6ab9e5c450c4b5b132692bbfd:1332",
+        "start": 761,
+        "end": 803,
+        "literal": ";\n⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+        "source_sha256": "4f7113d069eda834c7337b7a76ce6a38bb49b66d06ea6144a2097ec107dd9193"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-15f0d9b9c66bd220e67131f494fa5d0a94cdb39e772f791cb28e06137a1fb8b9:516",
+        "start": 11,
+        "end": 65,
+        "literal": "\nQutu⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧tu.\n",
+        "source_sha256": "f3576010478adcad58ff0f07e2677645c392fb82c836f3a196bc111cb84e0a86"
+      }
+    ]
+  },
+  "policy": "Pending heading/prose classifications are diagnostics, not accepted semantic containers. Printed correction proposals remain unapplied source observations."
+}

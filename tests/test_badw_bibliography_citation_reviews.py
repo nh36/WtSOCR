@@ -46,8 +46,8 @@ def setup_review(tmp_path, printed=None, **changes):
         writer = csv.DictWriter(stream, fieldnames=row, delimiter="\t")
         writer.writeheader()
         writer.writerow(row)
-    targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="publication", id="p1",
-                    year="1996", scope="reviewed_external" if row["status"] == "reviewed_external_identity" else "badw_online")]
+    targets = [dict(occurrence_id="o1", source_sha256="a" * 64, kind="work" if row["status"] in ("reviewed_work_identity", "reviewed_external_work_identity") else "publication", id="p1",
+                    year="1996", scope="reviewed_external" if row["status"] in ("reviewed_external_identity", "reviewed_external_work_identity") else "badw_online")]
     return CitationReviews(path, targets, tmp_path, None, printed), obj
 
 
@@ -209,3 +209,20 @@ def test_unknown_marker_is_preserved_and_cannot_be_bisected(tmp_path):
     linked = reviews.apply("pdf", "c1", dict(text=text, matches=[]))
     assert linked["text"] == text
     assert linked["matches"][0]["label"] == text[1:text.rfind(":")]
+
+
+@pytest.mark.parametrize('status,expected', [
+    ('reviewed_work_identity','exact_online_source_rows'),
+    ('reviewed_external_work_identity','exact_external_work_rows'),
+])
+def test_reviewed_work_is_accepted_without_certifying_publication(tmp_path,status,expected):
+    from badw_bibliography import AuthorityResolver
+    reviews,_=setup_review(tmp_path,status=status)
+    linked=reviews.apply('pdf','c1',result())
+    AuthorityResolver.component_contract(linked)
+    assert linked['status']==expected
+    match=linked['matches'][0]
+    assert match['target_status']=='accepted_identity'
+    assert match['edition_status']=='unreviewed'
+    assert match['locator_status']=='unreviewed'
+    reviews.finish()

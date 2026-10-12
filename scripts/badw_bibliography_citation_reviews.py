@@ -63,17 +63,17 @@ class CitationReviews:
                     raise ValueError("citation evidence requires positive page")
                 if evidence in prints and int(review["evidence_page"]) > int(prints[evidence]["pages"]):
                     raise ValueError("citation evidence page outside registered source")
-                if review["status"] in {"reviewed_identity", "reviewed_external_identity", "reviewed_work_candidate"}:
+                if review["status"] in {"reviewed_identity", "reviewed_external_identity", "reviewed_external_work_identity", "reviewed_work_identity", "reviewed_work_candidate"}:
                     if any(review.get(k) for k in ("print_occurrence_id", "print_source_sha256")):
                         raise ValueError("online citation review must not supply a print target")
                     target = occurrences.get(review["online_occurrence_id"])
                     if (not target or target["source_sha256"] != review["online_source_sha256"] or
-                            target["kind"] not in {"publication", "abbreviation"}):
+                            target["kind"] not in ({"work"} if review["status"] in {"reviewed_external_work_identity", "reviewed_work_identity"} else {"publication", "abbreviation"})):
                         raise ValueError("citation target occurrence/hash mismatch")
                     review["authority_id"] = target["id"]
                     review["kind"] = target["kind"]
                     external = target.get("scope") == "reviewed_external"
-                    if external != (review["status"] == "reviewed_external_identity"):
+                    if external != (review["status"] in {"reviewed_external_identity", "reviewed_external_work_identity"}):
                         raise ValueError("citation review target scope mismatch")
                     if review["status"] == "reviewed_work_candidate":
                         if target["kind"] != "publication" or not target.get("year"):
@@ -103,7 +103,7 @@ class CitationReviews:
         if hashlib.sha256(result["text"].encode("utf-8")).hexdigest() != review["text_sha256"]:
             raise ValueError("stale citation review text hash")
         result["citation_review"] = review
-        if review["status"] not in {"reviewed_identity", "reviewed_print_identity", "reviewed_external_identity", "reviewed_work_candidate"}:
+        if review["status"] not in {"reviewed_identity", "reviewed_print_identity", "reviewed_external_identity", "reviewed_external_work_identity", "reviewed_work_identity", "reviewed_work_candidate"}:
             return result
         if result["matches"] or result.get("unresolved_dom_components"):
             raise ValueError("exact citation review requires an unmatched source occurrence")
@@ -120,6 +120,7 @@ class CitationReviews:
         result["matches"].append({"start": start, "end": end,
             "label": result["text"][start:end], "authority_ids": [review["authority_id"]],
             "status": ("reviewed_work_candidate" if candidate else
+                       "exact_external_work_row" if review["status"] == "reviewed_external_work_identity" else
                        "exact_external_publication_row" if review["status"] == "reviewed_external_identity" else
                        "exact_print_publication_row" if review["status"] == "reviewed_print_identity"
                        else "exact_online_" + review["kind"] + "_row"),
@@ -131,6 +132,7 @@ class CitationReviews:
             "print_status": "identity_reviewed_only"})
         result["matches"].sort(key=lambda m: (m["start"], m["end"], m["label"]))
         result["status"] = ("reviewed_work_candidates" if candidate else
+                            "exact_external_work_rows" if review["status"] == "reviewed_external_work_identity" else
                             "exact_external_publication_rows" if review["status"] == "reviewed_external_identity" else
                             "exact_print_publication_rows" if review["status"] == "reviewed_print_identity"
                             else "exact_online_source_rows")

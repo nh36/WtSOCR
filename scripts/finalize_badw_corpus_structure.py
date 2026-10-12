@@ -56,7 +56,9 @@ def main():
     parser.add_argument('--work', type=Path, default=WORK)
     parser.add_argument('--contextual-semantics', action='store_true', help='Derive exact inline citations with the registered bibliography grammar')
     parser.add_argument('--baseline-store', type=Path)
+    parser.add_argument('--baseline-commit', help='Commit of the supplied frozen baseline store')
     parser.add_argument('--holdout-manifest', type=Path, help='Replay a previously selected source-review sample without resampling')
+    parser.add_argument('--citation-reviews', type=Path, help='Exact source-bound scholarly identity reviews; unmatched occurrences only')
     args = parser.parse_args()
     OUT, WORK = args.output, args.work
     frozen_sample=json.loads(args.holdout_manifest.read_text()) if args.holdout_manifest else None
@@ -73,6 +75,14 @@ def main():
     authorities=[json.loads(x[0]) for x in db.execute('select record_json from authority')]
     print_rows=[dict(id=r[0], occurrence_id=r[1], source_sha256=r[2], label=r[3]['authority']['label']) for r in ((a, o, h, json.loads(j)) for a,o,h,j in db.execute('select authority_id,id,pdf_sha256,record_json from print_occurrence where authority_id is not null')) if r[3].get('authority')];db.close()
     source_rows=list(rows(BIB/'source_rows.jsonl'))
+    from badw_bibliography_external import load_publications
+    from badw_bibliography_citation_reviews import CitationReviews
+    external=load_publications(Path('data/bibliography_external_publications.tsv'),CACHE)
+    existing={r['id'] for r in authorities}
+    authorities.extend(r for r in external if r['id'] not in existing)
+    existing_occ={r['occurrence_id'] for r in source_rows}
+    source_rows.extend(r for r in external if r['occurrence_id'] not in existing_occ)
+    citation_reviews=CitationReviews(args.citation_reviews,source_rows,CACHE,Path('data/source_pdfs.tsv'))
     aliases=load_reviews(Path('data/bibliography_alias_reviews.tsv'),source_rows,Path('data/source_pdfs.tsv'),CACHE)
     resolver=AuthorityResolver(authorities,source_rows,aliases,print_rows)
     links={r['citation_id']:r['resolution'] for r in rows(BIB/'citation_links.jsonl')}
@@ -121,6 +131,8 @@ def main():
             prior=baseline_by_span.get((n['start'],n['end']))
             if prior:ids.update(prior['accepted_authority_ids'])
             result=old or resolver.resolve(literal,kind)
+            result=citation_reviews.apply_source(kind,identity,text,n['start'],n['end'],result)
+            resolver.component_contract(result)
             ids.update(aid for m in result['matches'] if m.get('target_status')=='accepted_identity' for aid in m['authority_ids'])
             if ids:accepted+=1;bibliography[(identity,n['id'])]=[resolver.by_id[a] for a in sorted(ids)]
             else:known_residual+=1
@@ -268,6 +280,7 @@ def main():
         with gzip.GzipFile(filename=str(OUT/'contextual_classification.jsonl.gz'),mode='wb',mtime=0) as f:
             for rec in contextual_records:f.write((json.dumps(rec,ensure_ascii=False,sort_keys=True)+'\n').encode())
         write_json(OUT/'contextual_classification.json',dict(counts=dict(contextual_counts)))
+    citation_reviews.finish()
     if baseline_store:baseline_store.close()
     holdout=[];chosen=set()
     for s,pool in sorted(pools.items()):
@@ -312,8 +325,10 @@ def main():
     if fragments.exists():summary['unassigned_pdf_page_fragments']=sum(1 for _ in rows(fragments))
     write_json(OUT/'summary.json',summary)
     manifest=json.loads((OUT/'manifest.json').read_text());manifest['integration_inputs_sha256']={str(p):file_hash(p) for p in [STAGING,INDEX,Path('data/reviewed_badw_semantic_annotations.jsonl'),Path('data/bibliography_alias_reviews.tsv'),BIB/'citation_links.jsonl',BIB/'source_rows.jsonl',Path('data/bibliography_occurrence_aliases.tsv'),Path('data/badw_language_glyph_reviews.jsonl'),fragments] if p.exists()}
+    for evidence in (args.citation_reviews,Path('data/bibliography_external_publications.tsv')):
+        if evidence:manifest['integration_inputs_sha256'][str(evidence)]=file_hash(evidence)
     manifest['outputs_sha256']={str(p):file_hash(p) for p in sorted(OUT.glob('*')) if p.name not in ('manifest.json','anomalies.jsonl')}
-    for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py')):
+    for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py'),Path('scripts/badw_header_structure.py'),Path('scripts/badw_bibliography_citation_reviews.py'),Path('scripts/badw_bibliography_external.py')):
         manifest['code_sha256'][str(code)]=file_hash(code)
     manifest['semantic_store_sha256']=file_hash(WORK/'semantic.sqlite')
     if WORK.name=='badw_relationship_closure':
@@ -321,7 +336,7 @@ def main():
         manifest['baseline_store_sha256']=file_hash(Path('work/badw_semantic_hierarchy/semantic.sqlite'))
         manifest['semantic_contract_version']='badw-semantic-hierarchy-v2'
     if args.contextual_semantics:
-        manifest['baseline_commit']='252f90d0d4' if WORK.name=='badw_semantic_residue' else '0e4c724e21'
+        manifest['baseline_commit']=args.baseline_commit or ('252f90d0d4' if WORK.name=='badw_semantic_residue' else '0e4c724e21')
         manifest['baseline_store_sha256']=file_hash(baseline_path)
         manifest['contextual_semantics']=True
         manifest['code_sha256']['scripts/badw_contextual_semantics.py']=file_hash(Path('scripts/badw_contextual_semantics.py'))

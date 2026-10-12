@@ -1,0 +1,97 @@
+{
+  "anomaly_comparison": {
+    "ambiguous_reference_marker": {
+      "baseline": 82,
+      "current": 82
+    },
+    "citation_identity_unresolved": {
+      "baseline": 350,
+      "current": 346
+    },
+    "citation_owner_unresolved": {
+      "baseline": 408,
+      "current": 408
+    },
+    "crossing_components": {
+      "baseline": 1063,
+      "current": 1063
+    },
+    "definition_boundary_cue": {
+      "baseline": 74,
+      "current": 74
+    },
+    "definition_contains_later_structure": {
+      "baseline": 1290,
+      "current": 1290
+    },
+    "empty_component": {
+      "baseline": 2205,
+      "current": 2205
+    },
+    "empty_numbered_sense": {
+      "baseline": 3,
+      "current": 3
+    },
+    "ignored_citation_cue": {
+      "baseline": 16,
+      "current": 16
+    },
+    "language_conflict": {
+      "baseline": 384,
+      "current": 384
+    },
+    "lex_clause_untyped": {
+      "baseline": 6,
+      "current": 6
+    },
+    "lexical_gap": {
+      "baseline": 28912,
+      "current": 28912
+    },
+    "long_component": {
+      "baseline": 2,
+      "current": 2
+    },
+    "pdf_unassigned_candidate": {
+      "baseline": 144,
+      "current": 144
+    },
+    "xref_unresolved": {
+      "baseline": 852,
+      "current": 852
+    }
+  },
+  "canonical_lex_duplicate_spans": 0,
+  "canonical_lex_overlapping_pairs": 0,
+  "common_accounting": {
+    "lexical_gap_runs": {
+      "baseline": 28912,
+      "current": 28912
+    },
+    "unassigned_alphabetic": {
+      "baseline": 131068,
+      "current": 131068
+    },
+    "unassigned_characters": {
+      "baseline": 2203289,
+      "current": 2203289
+    }
+  },
+  "common_entries": 29877,
+  "foreign_key_violations": [],
+  "frozen_holdout_reader_passes": 114,
+  "newly_projected": [],
+  "script_sha256": "8ab86dc44f137949b66b416d55247df59658620a4830402b8db45cd3912d22d5",
+  "store_rows": {
+    "citation": 109425,
+    "citation_passage": 109004,
+    "language_conflict": 384,
+    "language_correspondence": 3003,
+    "language_effective": 126149,
+    "language_form": 12364,
+    "language_indicator": 4314,
+    "lex_item": 39688,
+    "passage": 108803,
+    "xref": 8336
+  }
+}

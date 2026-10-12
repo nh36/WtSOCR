@@ -1,0 +1,203 @@
+{
+  "ownership_families": [
+    {
+      "source_kind": "html",
+      "family": "HTML_example_envelope",
+      "count": 3
+    },
+    {
+      "source_kind": "html",
+      "family": "entry_prose_without_bounded_passage",
+      "count": 30
+    },
+    {
+      "source_kind": "html",
+      "family": "no_structural_envelope",
+      "count": 52
+    },
+    {
+      "source_kind": "pdf",
+      "family": "PDF_example_candidate",
+      "count": 6
+    },
+    {
+      "source_kind": "pdf",
+      "family": "definition_clause",
+      "count": 2
+    },
+    {
+      "source_kind": "pdf",
+      "family": "entry_prose_without_bounded_passage",
+      "count": 127
+    },
+    {
+      "source_kind": "pdf",
+      "family": "explicit_comparison_clause",
+      "count": 167
+    },
+    {
+      "source_kind": "pdf",
+      "family": "sense_prose_without_bounded_passage",
+      "count": 21
+    }
+  ],
+  "pending_alphabetic_families": [
+    {
+      "source_kind": "html",
+      "family": "alias_list_or_header_continuation_candidate",
+      "count": 234
+    },
+    {
+      "source_kind": "html",
+      "family": "header_form_or_relation_candidate",
+      "count": 860
+    },
+    {
+      "source_kind": "html",
+      "family": "other_heading_source_text",
+      "count": 4405
+    },
+    {
+      "source_kind": "html",
+      "family": "quotation_or_gloss_candidate",
+      "count": 608
+    },
+    {
+      "source_kind": "html",
+      "family": "reference_clause_candidate",
+      "count": 294
+    },
+    {
+      "source_kind": "pdf",
+      "family": "alias_list_or_header_continuation_candidate",
+      "count": 2438
+    },
+    {
+      "source_kind": "pdf",
+      "family": "header_form_or_relation_candidate",
+      "count": 4041
+    },
+    {
+      "source_kind": "pdf",
+      "family": "lexical_prose_without_proven_boundary",
+      "count": 7957
+    },
+    {
+      "source_kind": "pdf",
+      "family": "quotation_or_gloss_candidate",
+      "count": 1831
+    },
+    {
+      "source_kind": "pdf",
+      "family": "reference_clause_candidate",
+      "count": 157
+    }
+  ],
+  "unknown_glyph_signatures": {
+    "⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧": 3,
+    "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧": 10,
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧": 50,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:1A29:4a5d91d89107⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:72B3:04c26ab6e4d3⟧": 1,
+    "⟦UNKNOWN:Arial:regular:0003:ebbba6ed181c⟧": 2,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:593E:6e9ee709e168⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:4B95:3222788a72b1⟧": 3,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:5057:dfe7ed6ec27f⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:5CA4:65c77467352f⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:0011:fec9aed54682⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:6764:c6188dc63fcd⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:7A05:ab334731776b⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID32K-WinCharSetFFFF-H2:regular:85BC:a634d576ced0⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:51BB:ca4d78e10487⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:6A7C:e528d5385064⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:4E23:f03fbdafdfab⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:42D2:8508a6fa390d⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:5891:501729d68cfa⟧": 1,
+    "⟦UNKNOWN:TT9C8D2EB9tCID32K-WinCharSetFFFF-H2:regular:845D:88d086a97c9c⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6C6A:973f63e607d4⟧": 1,
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:001F:missing-cid-⟧": 2,
+    "⟦UNKNOWN:TimesNewRoman:italic:0735:82f85a3d2b6d⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6723:a87d2d8eb970⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6729:5473d62b8ff5⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:670B:374c6a5e6f99⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:68DC:02c61f827a93⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3E63:4cb78dfd8522⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:673D:7dd18cc7b1c7⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3EC3:d18ca704dfeb⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:86CB:a7becd40c331⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7349:57a33b777668⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4B95:3222788a72b1⟧": 6,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:737B:082f40c7bf07⟧": 4,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:653B:4471847127ba⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6D4A:5878d76c3900⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4FFA:b806a9250a69⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6A2B:865d884d0bf2⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6479:591ded5714f5⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6DD8:b1fc3d565924⟧": 1,
+    "⟦UNKNOWN:TGaramond:regular:0005:6c712ce2cc13⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6A31:c0e026ea74b4⟧": 1,
+    "⟦UNKNOWN:TGaramond:italic:00D0:2ad66a970875⟧": 7,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6BA2:a0c7b5473416⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E23:f03fbdafdfab⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4451:266f70ad2fa6⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4A21:aa97c491b80e⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6FD1:4b261eae5857⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:439C:69279cd3e3c1⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7A99:64aee35212b4⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:851C:a6217b35ddea⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:593E:6e9ee709e168⟧": 1,
+    "⟦UNKNOWN:TGaramond:regular:001D:d9a8612684a1⟧": 1,
+    "⟦UNKNOWN:TGaramond:italic:0030:ec8481c6eeb5⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧": 10,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5653:b4de8a151c7b⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:691F:22b6615707fd⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3EFF:048c98c6cb23⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:65BB:cf24be60484e⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5BBD:c04511edc885⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8142:5e290c685331⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496F:842c00bf8fb5⟧": 7,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4188:dc136f5bce40⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:443D:a4697428bb3b⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4FD7:df735f2dce97⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4775:bdb215a14258⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8AED:6cea3816a879⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:66F3:6d4230e3806d⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:847A:b48013c9f52f⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E62:0332397ccaa2⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧": 4,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8F53:3fa8219a7047⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:40CA:7346482fe41d⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4970:757aaebdc9ca⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4286:465f24794ed8⟧": 1,
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:08EF:96268b74aa6f⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:71E0:654c7c38badb⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:57B6:97fbcb8ad5ad⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4460:8ab85d009a9d⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8858:043a9b9c424d⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:85C5:41fe346a34bb⟧": 3,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5D83:44045dbeaf7c⟧": 3,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5F7D:5d8a8931021c⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4453:3d58adf2215b⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4555:2b0141fe74ff⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4455:6276795ef8df⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7588:2297a4e1c3bd⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:40F8:1e1c2c92f4a9⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:573D:8f1b988acf8b⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:43E4:621b95c39d6f⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4EE1:6dfe6df8bf66⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:659E:13bfc6885905⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4BCD:4dda3ff7cd9e⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5888:5f9719e0912b⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7C7C:373c7337bcfc⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5E83:87aeed757ef9⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:805F:7eae2effea7e⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3ED0:cc3f83ba1449⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7CB1:71798701acb5⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:574D:247e515c31df⟧": 2,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4199:5f43705fb33e⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5BB7:c2e6b0447356⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496E:1abd77c11fca⟧": 1,
+    "⟦UNKNOWN:TGaramond:italic:00B9:cc0fde1652a3⟧": 5
+  },
+  "policy": "No owner or decoding mapping inferred from diagnostic family; literal spans preserved."
+}
