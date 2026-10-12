@@ -341,7 +341,7 @@ def apply_relation_reviews(rows: list[dict], relations: list[dict], path: Path |
 class AuthorityResolver:
     """Exact source-row identity only; no automatic edition/semantic ownership."""
     def __init__(self, authorities: list[dict], rows: list[dict] | None = None,
-                 alias_reviews: list[dict] = ()):
+                 alias_reviews: list[dict] = (), print_rows: list[dict] = ()):
         # External evidence can establish an exact reviewed identity, not an
         # automatic author/year alias. Keep this gate inside the resolver too.
         self.by_id = {a["id"]: a for a in authorities}
@@ -350,6 +350,23 @@ class AuthorityResolver:
         self.resolver = ComponentResolver([(a["id"], a["label"]) for a in authorities
                                   if a["kind"] == "work"], rows or [])
         self.rows = {r["id"]: r for r in (rows or [])}
+        # Occurrence spellings are reviewed authority relationships, not edits
+        # to either the source text or the bibliography's literal metadata.
+        occurrence_aliases = Path(__file__).resolve().parents[1] / "data/bibliography_occurrence_aliases.tsv"
+        if occurrence_aliases.exists():
+            with occurrence_aliases.open(encoding="utf-8", newline="") as stream:
+                for review in csv.DictReader(stream, delimiter="\t"):
+                    target = self.rows.get(review["authority_id"]) or next((r for r in print_rows if r["id"] == review["authority_id"]), None)
+                    if target is None:
+                        continue  # A smaller resolver snapshot may lack this authority.
+                    if (target["occurrence_id"] != review["source_occurrence_id"] or
+                            target["source_sha256"] != review["source_sha256"]):
+                        raise ValueError("occurrence alias source evidence changed")
+                    if not review["evidence"] or review["status"] != "reviewed_occurrence_alias":
+                        raise ValueError("unreviewed occurrence alias")
+                    alias_reviews = [*alias_reviews, dict(review,
+                        canonical_label=target["label"], layer=review["layer"],
+                        alias=review["literal"], authority_id=target["id"])]
         self.alias_patterns = [(review, re.compile(r"(?<![\w/-])" +
             spelling_pattern(review["alias"]) + r"(?![^\W\d]|[_/-])"))
             for review in alias_reviews]
@@ -370,8 +387,7 @@ class AuthorityResolver:
             for spelling in sorted({author, author.upper()}):
                 # Only a newline may split a printed small-cap name. No fuzzy
                 # matching or character substitution; offsets remain raw.
-                pattern = spelling_pattern(spelling)
-                pattern = pattern.replace(re.escape(" "), r"\s+")
+                pattern = r"\s*/\s*".join(r"\s+".join(spelling_pattern(token) for token in part.split()) for part in spelling.split("/"))
                 self.publication_patterns.append((key, sorted(ids), re.compile(
                     r"(?<!\w)" + pattern + r"\s*" + spelling_pattern(year) + r"(?![\w–-])")))
 
@@ -485,7 +501,7 @@ class AuthorityResolver:
                     "label": hit.group(), "canonical_label": review["canonical_label"],
                     "authority_ids": [review["authority_id"]],
                     "status": "reviewed_alias_candidate", "review_evidence": review,
-                    "method": "reviewed_print_work_identity_alias"})
+                    "method": "reviewed_occurrence_identity_alias" if review.get("status") == "reviewed_occurrence_alias" else "reviewed_print_work_identity_alias"})
         publications = {}
         for key, ids, pattern in self.publication_patterns:
             for hit in pattern.finditer(text):
@@ -505,10 +521,14 @@ class AuthorityResolver:
                           match["start"] < other["end"] for other in result["matches"])
             reviewed_external = (match["status"] == "reviewed_alias_candidate" and
                 all(self.by_id[i].get("scope") == "reviewed_external" for i in match["authority_ids"]))
+            reviewed_print = (match["status"] == "reviewed_alias_candidate" and
+                match.get("review_evidence", {}).get("status") == "reviewed_occurrence_alias" and
+                all(self.by_id[i].get("status") == "reviewed_print_identity" for i in match["authority_ids"]))
             safe = (match["status"] != "ambiguous" and not overlap and
                     all(self.by_id[i]["status"] == "first_party_source_row" for i in match["authority_ids"]))
             kind = self.by_id[match["authority_ids"][0]]["kind"]
             match["status"] = ("exact_external_" + kind + "_row" if reviewed_external and not overlap
+                               else "exact_print_" + kind + "_row" if reviewed_print and not overlap
                                else "exact_online_" + kind + "_row" if safe else "ambiguous")
             match["edition_status"] = "unreviewed"
             match["print_status"] = "unverified"

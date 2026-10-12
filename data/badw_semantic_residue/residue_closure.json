@@ -1,0 +1,26 @@
+{
+  "reviewed_cues": 28,
+  "extracted_cues": 28,
+  "resolved_cues": 23,
+  "owned_cues": 24,
+  "baseline_unresolved": 404,
+  "baseline_origin": {
+    "new_contextual_citation": 46,
+    "old_baseline_unresolved": 358
+  },
+  "baseline_newly_owned": 0,
+  "current_unresolved": 408,
+  "current_families": {
+    "entry_prose_without_bounded_passage": 157,
+    "HTML_example_envelope": 3,
+    "no_structural_envelope": 52,
+    "explicit_comparison_clause": 167,
+    "sense_prose_without_bounded_passage": 21,
+    "PDF_example_candidate": 6,
+    "definition_clause": 2
+  },
+  "current_reasons": {
+    "source_envelope_does_not_establish_exact_passage": 408
+  },
+  "policy": "Identity does not imply ownership. Entry-owned passages have bounded local evidence; unresolved clauses are not assigned by proximity."
+}

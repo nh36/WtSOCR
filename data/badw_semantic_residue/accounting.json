@@ -1,0 +1,14 @@
+{
+  "gaps": {
+    "layout_alphabetic": 0,
+    "layout_characters": 1870097,
+    "layout_runs": 180300,
+    "lexical_or_header_review_alphabetic": 63250,
+    "lexical_or_header_review_characters": 148365,
+    "lexical_or_header_review_runs": 6145,
+    "structural_label_alphabetic": 67818,
+    "structural_label_characters": 184827,
+    "structural_label_runs": 22767
+  },
+  "interpretation": "Same layout/label diagnostic as baseline; no source coverage widened."
+}

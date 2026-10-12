@@ -70,10 +70,11 @@ def main():
             frozen_residue[a['packet']['identity']]=a['residue']
     store=create(WORK/'semantic.sqlite')
     index=EntryIndex(rows(INDEX)); db=sqlite3.connect(BIB/'bibliography.sqlite')
-    authorities=[json.loads(x[0]) for x in db.execute('select record_json from authority')];db.close()
+    authorities=[json.loads(x[0]) for x in db.execute('select record_json from authority')]
+    print_rows=[dict(id=r[0], occurrence_id=r[1], source_sha256=r[2], label=r[3]['authority']['label']) for r in ((a, o, h, json.loads(j)) for a,o,h,j in db.execute('select authority_id,id,pdf_sha256,record_json from print_occurrence where authority_id is not null')) if r[3].get('authority')];db.close()
     source_rows=list(rows(BIB/'source_rows.jsonl'))
     aliases=load_reviews(Path('data/bibliography_alias_reviews.tsv'),source_rows,Path('data/source_pdfs.tsv'),CACHE)
-    resolver=AuthorityResolver(authorities,source_rows,aliases)
+    resolver=AuthorityResolver(authorities,source_rows,aliases,print_rows)
     links={r['citation_id']:r['resolution'] for r in rows(BIB/'citation_links.jsonl')}
     annotations=list(rows(Path('data/reviewed_badw_semantic_annotations.jsonl')))
     grouped=collections.defaultdict(list)
@@ -300,7 +301,7 @@ def main():
     with gzip.GzipFile(filename=str(OUT/'anomalies.jsonl.gz'),mode='wb',mtime=0) as f:
         for a in allrows:f.write((json.dumps(a,ensure_ascii=False,sort_keys=True)+'\n').encode())
     with (OUT/'entries.tsv').open('w') as f:
-        w=csv.DictWriter(f,fieldnames=list(metrics[0]),delimiter='\t');w.writeheader();w.writerows(metrics)
+        w=csv.DictWriter(f,fieldnames=list(metrics[0]),delimiter='\t',lineterminator='\n');w.writeheader();w.writerows(metrics)
     summary=json.loads((OUT/'summary.json').read_text())
     summary['totals']={k:sum(r[k] for r in metrics) for k,v in metrics[0].items() if isinstance(v,int)}
     summary['source_kinds']={kind:{k:sum(r[k] for r in metrics if r['source_kind']==kind) for k,v in metrics[0].items() if isinstance(v,int)} for kind in ('html','pdf')}
@@ -310,7 +311,7 @@ def main():
     fragments=Path('work/badw_verified_rebuild_20261003/article_witnesses/unassigned_page_fragments.jsonl.gz')
     if fragments.exists():summary['unassigned_pdf_page_fragments']=sum(1 for _ in rows(fragments))
     write_json(OUT/'summary.json',summary)
-    manifest=json.loads((OUT/'manifest.json').read_text());manifest['integration_inputs_sha256']={str(p):file_hash(p) for p in [STAGING,INDEX,Path('data/reviewed_badw_semantic_annotations.jsonl'),Path('data/bibliography_alias_reviews.tsv'),BIB/'citation_links.jsonl',BIB/'source_rows.jsonl',fragments] if p.exists()}
+    manifest=json.loads((OUT/'manifest.json').read_text());manifest['integration_inputs_sha256']={str(p):file_hash(p) for p in [STAGING,INDEX,Path('data/reviewed_badw_semantic_annotations.jsonl'),Path('data/bibliography_alias_reviews.tsv'),BIB/'citation_links.jsonl',BIB/'source_rows.jsonl',Path('data/bibliography_occurrence_aliases.tsv'),Path('data/badw_language_glyph_reviews.jsonl'),fragments] if p.exists()}
     manifest['outputs_sha256']={str(p):file_hash(p) for p in sorted(OUT.glob('*')) if p.name not in ('manifest.json','anomalies.jsonl')}
     for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py')):
         manifest['code_sha256'][str(code)]=file_hash(code)
@@ -320,7 +321,7 @@ def main():
         manifest['baseline_store_sha256']=file_hash(Path('work/badw_semantic_hierarchy/semantic.sqlite'))
         manifest['semantic_contract_version']='badw-semantic-hierarchy-v2'
     if args.contextual_semantics:
-        manifest['baseline_commit']='0e4c724e21'
+        manifest['baseline_commit']='252f90d0d4' if WORK.name=='badw_semantic_residue' else '0e4c724e21'
         manifest['baseline_store_sha256']=file_hash(baseline_path)
         manifest['contextual_semantics']=True
         manifest['code_sha256']['scripts/badw_contextual_semantics.py']=file_hash(Path('scripts/badw_contextual_semantics.py'))

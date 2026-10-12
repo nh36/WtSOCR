@@ -7,6 +7,7 @@ No distance-based association, punctuation repair, or language guessing.
 import hashlib
 import re
 from badw_source_components import lexical_clauses, terminal_lexical_citation
+from badw_header_structure import header_fields
 
 VERSION = 'badw-semantic-hierarchy-v3'
 
@@ -59,7 +60,8 @@ def hierarchy(projection, text):
     from badw_contextual_semantics import language_forms
     contextual, language_indicators = language_forms(projection, text)
     forms = [object_('sanskrit_form', f['start'], f['end'], language='sa',
-                     evidence=f['evidence'], marker_span=f['marker_span']) for f in contextual]
+                     evidence=f['evidence'], marker_span=f['marker_span'],
+                     **{k:f[k] for k in ('reviewed_reading','decoding_review') if k in f}) for f in contextual]
     correspondences = []
 
     senses = {n['lexical_record_id']: n['id'] for n in nodes
@@ -318,6 +320,6 @@ def hierarchy(projection, text):
             effective.append(object_('language_span', a, b, language=language,
                              observation_node_ids=[n['id'] for n in covering],
                              evidence='explicit Sanskrit source field overrides enclosing Tibetan observation' if explicit_sa else 'source language observation'))
-    return dict(sanskrit_forms=forms, sanskrit_correspondences=correspondences,
+    return dict(header_fields=header_fields(projection, text), sanskrit_forms=forms, sanskrit_correspondences=correspondences,
                 language_indicators=language_indicators, source_language_conflicts=conflicts, effective_language_spans=effective, contract_version=VERSION, lex_blocks=blocks, lex_items=items,
                 citable_passages=passages, citation_ownership=owners)

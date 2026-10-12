@@ -107,7 +107,8 @@ def main():
         authorities=[json.loads(r[0]) for r in bibdb.execute('SELECT record_json FROM authority')]
         source_rows=list(rows(bibroot/'source_rows.jsonl'))
         aliases=load_reviews(Path('data/bibliography_alias_reviews.tsv'),source_rows,Path('data/source_pdfs.tsv'),Path('work/badw_source_cache'))
-        resolver=AuthorityResolver(authorities,source_rows,aliases)
+        print_rows=[dict(id=a, occurrence_id=o, source_sha256=h, label=record["authority"]["label"]) for a,o,h,j in bibdb.execute("SELECT authority_id,id,pdf_sha256,record_json FROM print_occurrence WHERE authority_id IS NOT NULL") for record in [json.loads(j)] if record.get("authority")]
+        resolver=AuthorityResolver(authorities,source_rows,aliases,print_rows)
         bibdb.close()
     frozen=[]
     for r in (r for path in (Path('work/badw_corpus_structure/holdout_packets.jsonl'),

@@ -1,0 +1,72 @@
+{
+  "review": "PDF facsimiles inspected: lokāloka printed 380; ti mi printed 7. Explicit italic Lex. equivalence/source relation supports forms. General correspondence rule; no word whitelist.",
+  "forms": [
+    {
+      "end": 61,
+      "entry_identity": "badw:pdf:badw-v3-dd9c2f123e55677f810f2c6616a0559ffc2adf3418c194d2a5ecd506eeb4fb76:1856",
+      "evidence": "printed italic lexical-source lemma / equivalence with bounded gloss",
+      "id": "2321d7672ea8d5b1ae38147f8a725707088ad6db58ad27b26574c661d83bb0d4",
+      "language": "sa",
+      "lex_item_id": "ebb19e18eb8ddd726bdc573d6abd9e6fe778e0da3e88f005b7308902a8516ca6",
+      "literal": "lokāloka",
+      "marker_span": null,
+      "sigla": [
+        {
+          "end": 65,
+          "literal": "Ak",
+          "start": 63
+        }
+      ],
+      "source_binding": {
+        "identity": "badw:pdf:badw-v3-dd9c2f123e55677f810f2c6616a0559ffc2adf3418c194d2a5ecd506eeb4fb76:1856",
+        "text_sha256": "e9e93e97d719919413ba09c016dc237d0ec6a6f9e35a7801d2e0a47a6f244961"
+      },
+      "start": 53,
+      "status": "derived_source_structure",
+      "type": "sanskrit_form"
+    },
+    {
+      "end": 52,
+      "entry_identity": "badw:pdf:badw-v4-982290ec2043ebdf8d003052b668035df328cef7ce29fc09ba4c6d8199da0f0f:1458",
+      "evidence": "explicit skt. label with bounded form",
+      "id": "7389b8f97347f599114bb6ede17d42463bee5b9c96fc941548c4e37f4ed65c51",
+      "language": "sa",
+      "literal": "timi",
+      "marker_span": [
+        43,
+        47
+      ],
+      "source_binding": {
+        "identity": "badw:pdf:badw-v4-982290ec2043ebdf8d003052b668035df328cef7ce29fc09ba4c6d8199da0f0f:1458",
+        "text_sha256": "c823638a46cd73ddee18b82c6bc9455fac255632193821da7020106476607388"
+      },
+      "start": 48,
+      "status": "derived_source_structure",
+      "type": "sanskrit_form"
+    },
+    {
+      "end": 100,
+      "entry_identity": "badw:pdf:badw-v4-982290ec2043ebdf8d003052b668035df328cef7ce29fc09ba4c6d8199da0f0f:1458",
+      "evidence": "printed italic lexical-source lemma / equivalence with bounded gloss",
+      "id": "04536313ce27bb014f09cc160e159317ecc278466a4ce866cd3772586d4d8373",
+      "language": "sa",
+      "lex_item_id": "8716a2608bd51d8a810e9058a5f6c4ffe7d9f826fc2668d298cdad2f4d02919f",
+      "literal": "timi",
+      "marker_span": null,
+      "sigla": [
+        {
+          "end": 104,
+          "literal": "Ak",
+          "start": 102
+        }
+      ],
+      "source_binding": {
+        "identity": "badw:pdf:badw-v4-982290ec2043ebdf8d003052b668035df328cef7ce29fc09ba4c6d8199da0f0f:1458",
+        "text_sha256": "c823638a46cd73ddee18b82c6bc9455fac255632193821da7020106476607388"
+      },
+      "start": 96,
+      "status": "derived_source_structure",
+      "type": "sanskrit_form"
+    }
+  ]
+}

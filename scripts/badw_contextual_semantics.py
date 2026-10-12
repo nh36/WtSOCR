@@ -7,8 +7,15 @@ is never a citation. Every derived span retains the original Unicode offsets.
 import copy
 import hashlib
 import re
+from pathlib import Path
+import json
+from functools import lru_cache
 
-VERSION = 'badw-contextual-semantics-v1'
+@lru_cache(maxsize=1)
+def glyph_reviews():
+    return [json.loads(line) for line in (Path(__file__).resolve().parents[1] / "data/badw_language_glyph_reviews.jsonl").read_text().splitlines()]
+
+VERSION = 'badw-contextual-semantics-v2'
 WORD = r"[^\W\d_]+(?:[-’'][^\W\d_]+)*"
 NON_FORMS = {'Optativ', 'Imperativ', 'Futur', 'Passiv', 'Text', 'Original',
              'Feronia', 'Ausdruck', 'Form', 'Wort', 'Skt', 'skt'}
@@ -50,6 +57,13 @@ def language_forms(projection, text):
     for a, b, evidence in styles:
         if evidence == 'explicit DOM skt field': add(a, b, evidence)
     classifications = []
+    reviewed = []
+    for review in glyph_reviews():
+        if review["identity"] != projection.get("identity"): continue
+        a,b=review["start"],review["end"]
+        if review["text_sha256"] != projection["review_text_sha256"] or text[a:b] != review["literal"]:
+            raise ValueError("reviewed language glyph source contract changed")
+        reviewed.append(review)
     for m in re.finditer(r'\bskt\.', text):
         a = m.end()
         prefix = re.match(r'\s*[\]*]*\s*(?:(?:abw\.|Wurzel)\s*)?', text[a:])
@@ -81,6 +95,11 @@ def language_forms(projection, text):
                     y=min(candidates,key=lambda s:s[1]-s[0])[1]
                     if re.search(r'[;„“(),:=⟦]',text[x:y]): break
                     add(x,y,'explicit skt. parallel form',[m.start(),m.end()]);tail=y
+        exact=[r for r in reviewed if m.end() <= r['start'] <= m.end()+2]
+        if exact:
+            r=exact[0];add(r['start'],r['end'],'explicit skt. label and facsimile-reviewed decoding',[m.start(),m.end()])
+            forms[(r['start'],r['end'])].update(reviewed_reading=r['reviewed_reading'],decoding_review=r)
+            family='explicit_skt_facsimile_reviewed_form'
         classifications.append(dict(start=m.start(),end=m.end(),family=family))
     if projection['source_kind']=='pdf':
         # Mvy is evidence of a Sanskrit correspondence only in a bounded
@@ -88,7 +107,7 @@ def language_forms(projection, text):
         for block in projection.get('original_structure',{}).get('candidates',{}).get('lexical_blocks',[]):
             for clause in block.get('clauses',[]):
                 x,y=clause['start'],clause['end']; value=text[x:y]
-                source=re.search(r'\(Mvy\s*\d',value)
+                source=re.search(r'\((?:Mvy|Ak)\s*\d',value)
                 if not source:continue
                 eq=list(re.finditer('[=≅≈]',value[:source.start()]))
                 lower=x+eq[-1].end() if eq else x
@@ -99,7 +118,7 @@ def language_forms(projection, text):
                     # Singleton Sanskrit lemma immediately followed by Mvy,
                     # or an equivalence followed by an explicitly quoted gloss.
                     if not after or (eq and after.startswith('„') and after.endswith('“')):
-                        add(a,b,'printed italic Mvy lemma / equivalence with bounded gloss')
+                        add(a,b,'printed italic lexical-source lemma / equivalence with bounded gloss')
         # Example correspondences may sit outside Lex. blocks. Require an
         # equivalence, a quoted German gloss and Mvy in the same local clause.
         for m in re.finditer(r'[≅≈=]\s*',text):
@@ -120,7 +139,10 @@ def inline_vocabulary(resolver, source_kind):
     if source_kind in cache:return cache[source_kind]
     patterns=[(key,pattern,'registered author-year') for key,_,pattern in resolver.publication_patterns]
     patterns += [(label,pattern,'registered source and locator') for label,pattern in resolver.resolver.patterns]
-    patterns += [(r['alias'], p, 'reviewed source alias and locator') for r,p in getattr(resolver,'alias_patterns',[]) if r['layer']==source_kind]
+    patterns += [(r['alias'], p, 'reviewed publication occurrence alias' if
+                  getattr(resolver,'by_id',{}).get(r['authority_id'],{}).get('kind')=='publication'
+                  else 'reviewed source alias and locator')
+                 for r,p in getattr(resolver,'alias_patterns',[]) if r['layer']==source_kind]
     # Registered author syntax may cite an unregistered year/edition. Extraction
     # records it literally; the existing resolver must leave identity uncertain.
     from badw_bibliography import spelling_pattern, YEAR_PATTERN
@@ -154,7 +176,7 @@ def inline_candidates(projection, text, resolver):
                 if not loc: continue
                 b=loc.end()
             else:
-                loc=re.match(r'\s*:\s*\d+[a-z]?(?:[,–-]\s*\d+[a-z]?)*',text[b:])
+                loc=re.match(r'\s*:\s*(?:(?:vol\.\s*\d+,\s*)?p\.\s*)?\d+[a-z]?(?:[,–-]\s*\d+[a-z]?)*(?:\s*(?:ff?\.|s\.\s*v\.))?',text[b:])
                 if loc:b+=loc.end()
             if b<len(text) and (text[b].isalnum() or text[b] in '/_'):continue
             # Source vocabulary is necessary but not sufficient: require a
@@ -165,6 +187,20 @@ def inline_candidates(projection, text, resolver):
             if not(paren or comparison):continue
             if any(max(a,n['start'])<min(b,n['end']) for n in existing):continue
             candidates.append(dict(start=a,end=b,literal=text[a:b],evidence=evidence,registered_label=label,local_syntax='bounded_parenthesis' if paren else 'explicit_comparison'))
+    # Bounded source references still exist when their authority is unknown.
+    # These grammars assert occurrence syntax, never an inherited identity.
+    residual = [
+        (r"(?<=vgl\. )[A-Z][^\W\d_]+\s+(?:18|19|20)\d{2}[a-z]?(?!\w)", 'explicit comparison author-year'),
+        (r"(?<=\()Schwieger\s+\d+\s*(?:ff?\.)?", 'bounded author without year'),
+        (r"(?<=\()dBe’uD\s+\d+,\d+", 'bounded unresolved source spelling'),
+        (r"(?<=\()(?:Abt\.\s*\d+|\d+,\s*Abt\.)[^()]*?(?=\))", 'bounded implicit-source division reference'),
+    ]
+    for grammar,evidence in residual:
+        for match in re.finditer(grammar,text):
+            a,b=match.span()
+            if not any(max(a,n['start'])<min(b,n['end']) for n in existing):
+                candidates.append(dict(start=a,end=b,literal=text[a:b],evidence=evidence,
+                    registered_label=None,local_syntax='explicit_bounded_reference'))
     unique={ (c['start'],c['end']):c for c in candidates }
     # A shorter registered label contained within an exact longer author or
     # source spelling is a grammar candidate, not another occurrence.

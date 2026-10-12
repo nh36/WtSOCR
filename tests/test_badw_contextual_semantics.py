@@ -90,3 +90,22 @@ def test_pdf_internal_correction_reference_preserves_terminal_example_owner():
     a=text.index('PW 2')
     p['nodes'].append(dict(id='new',kind='citation',start=a,end=a+4,parent='e'))
     assert hierarchy(p,text)['citation_ownership']==before
+
+
+def test_reviewed_compound_author_precedes_shorter_cue():
+    r=resolver()
+    r.alias_patterns=[({'alias':'Sørensen / Hazod 2007','authority_id':'joint','layer':'html'},re.compile(r'Sørensen / Hazod 2007'))]
+    r.by_id={'joint':{'kind':'publication'}}
+    text='vgl. Sørensen / Hazod 2007: vol. 2, p. 675, Anm. 12.'
+    found=inline_candidates(projection(),text,r)
+    assert [f['literal'] for f in found]==['Sørensen / Hazod 2007: vol. 2, p. 675']
+    assert inline_candidates(projection(),'Sørensen / Hazod 2007 ordinary prose',r)==[]
+
+
+def test_matching_layout_artifact_does_not_rewrite_literal():
+    from badw_bibliography import spelling_pattern
+    r=resolver()
+    r.publication_patterns=[('Pasang 1998',[],re.compile(spelling_pattern('Pasang 1998')))]
+    text='(P\u00adasang 1998: 136)'
+    found=inline_candidates(projection(),text,r)
+    assert [f['literal'] for f in found]==['P\u00adasang 1998: 136']

@@ -30,7 +30,7 @@ def spelling_pattern(label: str) -> str:
     A discretionary hyphen must be followed by a newline and the rest of an
     exact registered spelling. Matching ambiguity is still retained.
     """
-    return r"(?:-?[ \t]*\n[ \t]*)?".join(re.escape(c) for c in label)
+    return r"(?:\u00ad|-?[ \t]*\n[ \t]*)?".join(re.escape(c) for c in label)
 
 
 def following_boundary(text: str, end: int) -> bool:

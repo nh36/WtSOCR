@@ -11,6 +11,8 @@ import json
 import sqlite3
 
 SCHEMA = '''
+CREATE TABLE header_field(id TEXT PRIMARY KEY, entry TEXT, kind TEXT, record_json TEXT);
+CREATE INDEX header_entry ON header_field(entry);
 CREATE TABLE language_form(id TEXT PRIMARY KEY, entry TEXT, lex_item TEXT, language TEXT, record_json TEXT);
 CREATE TABLE language_effective(id TEXT PRIMARY KEY, entry TEXT, language TEXT, record_json TEXT);
 CREATE TABLE language_correspondence(id TEXT PRIMARY KEY, entry TEXT, lex_item TEXT, form TEXT, record_json TEXT);
@@ -40,6 +42,8 @@ def create(path):
 def ingest(db,view):
     encode=lambda r:json.dumps(r,ensure_ascii=False,sort_keys=True)
     identity=view['inspection_id'];semantic=view['semantic_hierarchy']
+    for field in semantic.get('header_fields', []):
+        db.execute('INSERT INTO header_field VALUES(?,?,?,?)',(field['id'],identity,field['header_kind'],encode(field)))
     for form in semantic.get('sanskrit_forms', []):
         db.execute('INSERT INTO language_form VALUES(?,?,?,?,?)',(form['id'],identity,form.get('lex_item_id'),form['language'],encode(form)))
     for span in semantic.get('effective_language_spans', []):
@@ -73,12 +77,13 @@ def ingest(db,view):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--db',required=True)
     sub=p.add_subparsers(dest='command',required=True)
+    headers=sub.add_parser('headers');headers.add_argument('--kind')
     lex=sub.add_parser('lex');lex.add_argument('--siglum');lex.add_argument('--sanskrit',action='store_true')
     passage=sub.add_parser('passages');passage.add_argument('--authority')
     citation=sub.add_parser('citations');citation.add_argument('--unresolved',action='store_true');citation.add_argument('--sense');citation.add_argument('--passage');citation.add_argument('--evidence');citation.add_argument('--entry-level',action='store_true')
     xref=sub.add_parser('xrefs');xref.add_argument('--target');xref.add_argument('--unresolved',action='store_true');xref.add_argument('--status');xref.add_argument('--reason');xref.add_argument('--cross-manifestation',action='store_true')
     language=sub.add_parser('language');language.add_argument('--conflicts',action='store_true');language.add_argument('--effective',action='store_true');language.add_argument('--correspondences',action='store_true');language.add_argument('--indicators',action='store_true');language.add_argument('--unresolved',action='store_true');language.add_argument('--lex',action='store_true');language.add_argument('--siglum');language.add_argument('--tibetan')
-    for child in (lex,passage,citation,xref,language):child.add_argument('--entry');child.add_argument('--limit',type=int,default=50)
+    for child in (headers,lex,passage,citation,xref,language):child.add_argument('--entry');child.add_argument('--limit',type=int,default=50)
     a=p.parse_args()
     if a.command=='language':
         if sum((a.conflicts,a.effective,a.correspondences,a.indicators))>1:
@@ -90,7 +95,7 @@ def main():
         if a.unresolved and a.correspondences:
             p.error('unresolved indicators are queried with --indicators --unresolved')
     db=sqlite3.connect('file:'+a.db+'?mode=ro',uri=True)
-    table={'lex':'lex_item','passages':'passage','citations':'citation','xrefs':'xref','language':'language_form'}[a.command]
+    table={'headers':'header_field','lex':'lex_item','passages':'passage','citations':'citation','xrefs':'xref','language':'language_form'}[a.command]
     if a.command=='language':
         table='language_conflict' if a.conflicts else 'language_effective' if a.effective else 'language_correspondence' if a.correspondences else 'language_indicator' if a.indicators else 'language_form'
     conditions=[];values=[]
@@ -101,6 +106,7 @@ def main():
         if a.lex:conditions.append('lex_item IS NOT NULL')
         if a.siglum:conditions.append('lex_item IN (SELECT item FROM lex_siglum WHERE siglum=?)');values.append(a.siglum)
         if a.tibetan:conditions.append("json_extract(record_json,'$.tibetan_span.literal')=?");values.append(a.tibetan)
+    if a.command=='headers' and a.kind:conditions.append('kind=?');values.append(a.kind)
     if a.command=='lex':
         if a.siglum:conditions.append('id IN (SELECT item FROM lex_siglum WHERE siglum=?)');values.append(a.siglum)
         if a.sanskrit:conditions.append('sanskrit=1')

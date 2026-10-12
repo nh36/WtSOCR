@@ -29,63 +29,74 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## Corpus Structural Health
 
-The contextual-language and inline-reference replay projects **29,877/29,877
-acquired online witnesses** (18,037 HTML; 11,840 PDF), with zero pipeline exceptions,
-reader-integrity failures or accepted bibliography identity loss. Baseline:
-`0e4c724e21`. Every accepted baseline owner and resolved xref survives.
-Bibliography reconciliation remains closed; historical-print adaptation is separate.
+The semantic-residue and header replay projects **29,877/29,877 acquired online
+witnesses** (18,037 HTML; 11,840 PDF), with **zero exceptions, reader-integrity
+failures or accepted identity loss**. Baseline: `252f90d0d4`. All accepted baseline
+relationships survive. Bibliography reconciliation remains closed.
 
-Explicit untyped language indicators fall **601 → 3**: **584 typed, 14 nonforms,
-three damaged/ambiguous PDF forms unresolved**. All 426 HTML indicators are accounted
-for; three of 175 PDF indicators remain. Exact Sanskrit subspans partition broader
-Tibetan source containers without deleting observations. **384 raw conflicts remain**
-(235 identical nested observations; 149 broad Tibetan envelopes containing exact
-Sanskrit subspans); **effective unresolved conflicts remain zero**. The store exposes
-**12,023 Sanskrit forms and 3,003 lexical correspondences** with source provenance.
-Explicit labels, bounded typography and source relations support assignments;
-character shape alone does not. Language and correspondence queries are available.
+**All 28 reviewed missed citation cues are extracted**: 23 receive bibliography
+identities and 24 receive existing structural owners. Unresolved identities are
+`dBe’uD`, Achard 2015, yearless Schwieger and two implicit Abteilung references;
+source context does not justify inventing their identities. Four cues lack bounded
+owners. Reviewed occurrence aliases, including `g.Yu → gYu`, preserve source spelling.
+Sixteen remaining cue diagnostics are reviewed noncitations.
 
-The **792 frozen ignored citation cues** are classified: **262 genuine missed cues**
-(234 now extracted; **28 still unsupported**) and **530 existing citation envelopes
-or noncitation text** (371 / 159). Final 44 diagnostics remain preserved: 28 true
-misses / 16 false positives, individually reviewed with exact source spans/hashes.
-Rules require registered vocabulary and bounded parentheses/comparison structure.
+| Metric | Baseline | Current |
+| --- | ---: | ---: |
+| Citations | 109,395 | 109,425 |
+| Accepted bibliography identities | 109,045 | 109,075 |
+| Unresolved identities | 350 | 350 |
+| Established owners | 108,991 | 109,017 |
+| Unresolved owners | 404 | 408 |
+| Explicit untyped language indicators | 3 | 0 |
+| Effective language conflicts | 0 | 0 |
 
-**305 new citations** yield **278 accepted bibliography identities**, 27 unresolved
-identities, **259 established owners** and 46 unresolved owners. Four prior PDF
-owners also become established. Totals: **109,395 citations / 109,045 accepted
-identities / 108,991 owners / 404 unresolved owners** (82 HTML; 322 PDF).
-There are 108,978 passage owners and 13 reviewed component owners; **47,033 sense
-owners / 61,958 entry-only owners**. Entry-only denotes a bounded local passage
-without an established sense, not attribution to every assertion in an entry.
-All 404 residual owners have explicit structural reasons; no proximity ownership.
+Current owners include **109,004 exact passages and 13 reviewed components**;
+**47,038 sense-owned / 61,979 entry-only**. Entry-only means a bounded local passage
+without an established sense, not every assertion in the entry. The 404 baseline
+unresolved cases comprise 358 earlier cases and 46 contextual-extraction additions.
+All remain explicitly unresolved; four further additions explain the denominator
+increase. Current residue: 167 comparison clauses, 157 entry prose, 52 without a
+structural envelope, 21 sense prose, six PDF example candidates, three HTML example
+envelopes and two definition clauses. No generic proximity ownership is used.
 
-Xrefs remain **4,706 resolved / 576 unresolved HTML** and **2,778 resolved /
-120 ambiguous / 156 other unresolved PDF**: 852 total unresolved, deliberately
-retained. All reader bindings survive. Lex. remains **21,876 blocks / 39,688 items**,
-13,242 sense-owned / 26,446 entry-owned, zero canonical overlaps or duplicates.
-Structural accounting remains **131,068 unassigned alphabetic characters / 28,912
-gap runs**, including 63,250 alphabetic characters in review gaps. Boundary warnings
-are unchanged; no container was widened to improve counts. Source text is unchanged.
+All three remaining PDF language cues were inspected in facsimiles: damaged
+TGaramond glyphs represent **√sphaṭ** (dgas, printed 311) and **ḥ** in Uccaiḥśravas
+(rta mgrin riṅs, printed 78; mthor thos, printed 367). Exact reviewed decoding
+annotations preserve raw observations. The general italic Lex. correspondence
+rule also captures `lokāloka` and the second `timi`. There are **12,364 Sanskrit
+forms / 3,003 correspondences**. **384 raw conflicts are expected provenance
+overlap**: 149 broad Tibetan envelopes/exact Sanskrit subspans and 235 nested
+observations; none is an effective unresolved ambiguity.
 
-**114 frozen witnesses pass replay**. A fresh post-implementation sample of
-**19 witnesses (10 HTML; nine PDF)** was inspected against HTML source and PDF
-facsimiles after excluding development/prior review entries. **No false language
-assignment, over-wide Sanskrit span, false citation, wrong identity or wrong owner
-was observed**. Two missed PDF Lex. Sanskrit forms remain (`lokāloka`, second
-`timi`); rules were not tuned to the sample. No fresh PDF Mvy case survived exclusions.
-This sample is not an accuracy estimate. Browser presentation is not certified.
+Xrefs remain **4,706 resolved / 576 unresolved HTML; 2,778 resolved / 276 unresolved
+PDF**, with all reader bindings surviving. Lex. remains **39,688 items**, zero
+canonical overlaps or duplicates. **114 frozen witnesses pass**. The three glyph
+cases and two recall cases were facsimile-reviewed. A fresh **11-entry HTML heading
+sample** has zero observed false fields, but one incomplete parallel-alias sequence
+(`ba laṅ`); this is a recall limitation, not a corpus accuracy estimate.
 
-Contextual explicit-language typing is reliable within its documented grammar;
-implicit PDF correspondences remain a recall limitation. Inline citation extraction
-is substantially improved but **not exhaustively complete**: 28 reviewed cues need
-additional source grammar or authority evidence. Remaining relationships are
-explicitly unresolved. Cross-reference engineering and bounded ownership remain
-mature. **Next tranche: residual lexical/header accounting and boundary cleanup**,
-then historical-print adaptation and reader/product work. Random-entry review has
-diminishing returns. **`release/current` is unchanged.**
-See [contracts, reviewed residue and replay commands](../data/badw_contextual_semantics/README.md).
-Raw witnesses, packets and query stores remain in ignored `work/` storage.
+Header structure now contains **6,513 exact fields**: 2,938 homonym markers, 1,960
+alternate headwords, 1,456 grammatical labels and 159 labelled verb forms. Queries
+use the semantic store. These are derived from source heading structure, not folded
+into definitions. PDF headings lacking explicit adapter evidence remain pending.
+
+The original **28,912 gap runs / 131,068 alphabetic characters remain unchanged**.
+Exact accounting separates **11,739 already typed characters**, **47,836 structural
+label characters**, **11,195 decoding-residue characters**, and **60,298 characters
+pending meaningful structural review**: 9,091 heading, 18,928 Lex. clause and 32,279
+other lexical prose. Pending prose is not yet verified as genuinely omitted lexical
+content. The 144 PDF unassigned candidates are printed correction apparatus:
+110 anchored proposals, 21 multiword scope ambiguities, six contextual placeholders
+and seven unresolved targets. They are not 144 missing lexical entries.
+
+Contextual explicit-language typing and bounded citation extraction are mature
+within the documented grammar; identity and ownership ambiguity remains deliberate.
+**Next: boundary/parser repair of the 60,298 pending lexical/header characters**,
+then historical-print adaptation and reader/product development. Definitions were
+not widened and diagnostics were not suppressed. **`release/current` is unchanged.**
+See [contracts, exact residue and reproduction](../data/badw_semantic_residue/README.md).
+Raw packets and SQLite stores remain in ignored `work/` storage.
 
 ## Bibliographic Apparatus
 
@@ -230,8 +241,9 @@ from BAdW feedback. Bibliography work is finished within this stated scope.
 | reviewed_exact_tibetan_headword_ocr | applied | exact page-line-token or exact page-line phrase | wts_1_34;wts_35_51;wts_8_b;wts_9_m | data/reviewed_tibetan_script_exact_overrides.tsv;data/reviewed_tibetan_script_exact_phrase_overrides.tsv;scripts/postprocess_entry_map.py | data/reviewed_tibetan_headword_ocr_decisions.tsv | Exact reviewed Tibetan component repairs include missing vowel signs, subjoined y, r structure, suffixes, root consonants, and one exact damaged delimiter phrase; corrected observations remain non-independent Latin teaching evidence. |
 | validator_only_suggestions | false_positive_or_noise | reporting_only | none | release/current/qa/*/*_validator_issues.tsv | docs/STATUS.md;release/current/qa | Validator-only rows are diagnostics. They are not OCR-witness evidence by themselves. |
 | badw_source_structural_relationship_closure | applied | 29877 acquired HTML/PDF witnesses | registered online corpus | scripts/badw_semantic_hierarchy.py;scripts/resolve_badw_cross_references.py;scripts/badw_semantic_store.py;scripts/badw_dictionary_entry_view.py | data/badw_relationship_closure/README.md;docs/STATUS.md | 26862 additional established citation owners;659 additional resolved xrefs;362 owners and 852 xrefs explicitly unresolved;all baseline relationships retained;release/current untouched;counts describe derived online structures, not release corrections. |
-| badw_contextual_sanskrit | applied | 29877 acquired witnesses | registered online corpus | scripts/badw_contextual_semantics.py;scripts/badw_semantic_hierarchy.py;scripts/badw_semantic_store.py | data/badw_contextual_semantics/README.md;docs/STATUS.md | 601 indicators classified:584 typed,14 nonforms,3 unresolved;384 raw conflicts retained,effective conflicts zero;fresh review found two missed PDF forms;release/current untouched. |
-| badw_inline_registered_citations | applied | 29877 acquired witnesses | registered online corpus | scripts/badw_contextual_semantics.py;scripts/badw_semantic_hierarchy.py | data/badw_contextual_semantics/README.md;docs/STATUS.md | 305 new citations:278 accepted identities,259 owners;4 prior owners established;792 cues classified:234 recovered,28 true misses,530 existing envelopes or noncitations;404 owners explicitly unresolved;release/current untouched. |
+| badw_contextual_sanskrit | applied | 29877 acquired witnesses | registered online corpus | scripts/badw_contextual_semantics.py;scripts/badw_semantic_hierarchy.py;scripts/badw_semantic_store.py | data/badw_contextual_semantics/README.md;docs/STATUS.md | All explicit indicators accounted for;three PDF glyph readings facsimile-reviewed;lokāloka and second timi recovered by general correspondence rule;384 expected provenance overlaps,effective conflicts zero;release/current untouched. |
+| badw_inline_registered_citations | applied | 29877 acquired witnesses | registered online corpus | scripts/badw_contextual_semantics.py;scripts/badw_semantic_hierarchy.py | data/badw_contextual_semantics/README.md;docs/STATUS.md | All 28 remaining genuine cues extracted:23 identities,24 owners;corpus totals109425 citations,109075 identities,109017 owners,408 explicit unresolved owners;reviewed occurrence aliases preserve literal text;release/current untouched. |
+| badw_source_header_accounting | applied | 29877 acquired witnesses | registered online corpus | scripts/badw_header_structure.py;scripts/classify_badw_header_accounting.py | data/badw_semantic_residue/README.md;docs/STATUS.md | 6513 typed header fields;131068 raw alphabetic gap characters partitioned exactly;60298 lexical/header characters pending structural review;144 PDF candidates are correction apparatus;11 fresh headers reviewed,one incomplete alias sequence;release/current untouched. |
 
 The initial-`I` family is intentionally mixed:
 

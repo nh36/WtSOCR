@@ -1,0 +1,1306 @@
+{
+  "reviewed_entries": 11,
+  "observed_false_claims": 0,
+  "incomplete_alias_sequences": 1,
+  "policy": "Fresh HTML heading sample excludes prior review/development entries; source DOM and exact field spans inspected. Not a corpus accuracy estimate.",
+  "entries": [
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba/2",
+      "source_sha256": "da81e528bc2d754e143ad0303fd16b784af8d5a048449f16c0630e4f39703e00",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 24,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་",
+          "visible": true,
+          "visible_text_end": 24,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 32,
+          "dom_text_start": 31,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "2",
+          "visible": true,
+          "visible_text_end": 32,
+          "visible_text_start": 31
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 34,
+          "dom_text_start": 32,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "ba",
+          "visible": true,
+          "visible_text_end": 34,
+          "visible_text_start": 32
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 52,
+          "dom_text_start": 51,
+          "source_column": 25,
+          "source_line": 102,
+          "source_text": "↑",
+          "visible": true,
+          "visible_text_end": 52,
+          "visible_text_start": 51
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/a[1]/text()[1]",
+          "dom_text_end": 54,
+          "dom_text_start": 52,
+          "source_column": 67,
+          "source_line": 102,
+          "source_text": "pa",
+          "visible": true,
+          "visible_text_end": 54,
+          "visible_text_start": 52
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[2]",
+          "dom_text_end": 60,
+          "dom_text_start": 54,
+          "source_column": 80,
+          "source_line": 102,
+          "source_text": ".\n    ",
+          "visible": true,
+          "visible_text_end": 60,
+          "visible_text_start": 54
+        }
+      ],
+      "fields": [
+        {
+          "id": "39006a19ece73bf91b7a68568604352a8e6e6b494b05632ec498b82728f6f9c7",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 31,
+          "end": 32,
+          "literal": "2",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba/2",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba/2",
+            "text_sha256": "da81e528bc2d754e143ad0303fd16b784af8d5a048449f16c0630e4f39703e00"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 32,
+            "dom_text_start": 31,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "2",
+            "visible": true,
+            "visible_text_end": 32,
+            "visible_text_start": 31
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+      "source_sha256": "d52b8a0a8ab5b908c134cf6fe83e54e7a742ad7722eedff7a4320d8a705039ae",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 24,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་",
+          "visible": true,
+          "visible_text_end": 24,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 32,
+          "dom_text_start": 31,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "3",
+          "visible": true,
+          "visible_text_end": 32,
+          "visible_text_start": 31
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 34,
+          "dom_text_start": 32,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "ba",
+          "visible": true,
+          "visible_text_end": 34,
+          "visible_text_start": 32
+        }
+      ],
+      "fields": [
+        {
+          "id": "42d85699637ccff5f039fb7ae8a6cf1fbacda92ac6222736a8ab4d3b8b2afbcf",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 31,
+          "end": 32,
+          "literal": "3",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba/3",
+            "text_sha256": "d52b8a0a8ab5b908c134cf6fe83e54e7a742ad7722eedff7a4320d8a705039ae"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 32,
+            "dom_text_start": 31,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "3",
+            "visible": true,
+            "visible_text_end": 32,
+            "visible_text_start": 31
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba%20dkar/1",
+      "source_sha256": "778692ce1ef427e4c9fec004b344c8f1b22984322cf8dc40c3ccdbf763c9b7de",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 28,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་དཀར་",
+          "visible": true,
+          "visible_text_end": 28,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 36,
+          "dom_text_start": 35,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "1",
+          "visible": true,
+          "visible_text_end": 36,
+          "visible_text_start": 35
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 43,
+          "dom_text_start": 36,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "ba dkar",
+          "visible": true,
+          "visible_text_end": 43,
+          "visible_text_start": 36
+        }
+      ],
+      "fields": [
+        {
+          "id": "754877dd4f54628b9ab87e3dc0f40f17e9cdc4140500d357dfdfc10db6e47c81",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 35,
+          "end": 36,
+          "literal": "1",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20dkar/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20dkar/1",
+            "text_sha256": "778692ce1ef427e4c9fec004b344c8f1b22984322cf8dc40c3ccdbf763c9b7de"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 36,
+            "dom_text_start": 35,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "1",
+            "visible": true,
+            "visible_text_end": 36,
+            "visible_text_start": 35
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+      "source_sha256": "fbf53c62aec5b93f963318e32884f316e5fc78a1ae4a986af4a3393ca3539cf6",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 29,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་གཅིན་",
+          "visible": true,
+          "visible_text_end": 29,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 37,
+          "dom_text_start": 36,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "1",
+          "visible": true,
+          "visible_text_end": 37,
+          "visible_text_start": 36
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 44,
+          "dom_text_start": 37,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "ba gcin",
+          "visible": true,
+          "visible_text_end": 44,
+          "visible_text_start": 37
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[1]",
+          "dom_text_end": 66,
+          "dom_text_start": 54,
+          "source_column": 25,
+          "source_line": 101,
+          "source_text": "\n      auch ",
+          "visible": true,
+          "visible_text_end": 66,
+          "visible_text_start": 54
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 76,
+          "dom_text_start": 66,
+          "source_column": 16,
+          "source_line": 102,
+          "source_text": "ba yi gcin",
+          "visible": true,
+          "visible_text_end": 76,
+          "visible_text_start": 66
+        }
+      ],
+      "fields": [
+        {
+          "id": "1f0f2d72ae993c8b0ecae05489017587f84b3855e0ef814ccdeef8501ea5b90e",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 36,
+          "end": 37,
+          "literal": "1",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+            "text_sha256": "fbf53c62aec5b93f963318e32884f316e5fc78a1ae4a986af4a3393ca3539cf6"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 37,
+            "dom_text_start": 36,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "1",
+            "visible": true,
+            "visible_text_end": 37,
+            "visible_text_start": 36
+          }
+        },
+        {
+          "id": "1e3c7db3a9db8d7432368bc43184d326c6b350955bbc7a9596ebc9a8fc2a2c72",
+          "type": "header_field",
+          "header_kind": "alternate_headword",
+          "start": 61,
+          "end": 76,
+          "literal": "auch ba yi gcin",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20gcin/1",
+            "text_sha256": "fbf53c62aec5b93f963318e32884f316e5fc78a1ae4a986af4a3393ca3539cf6"
+          },
+          "evidence": "explicit auch + Tibetan field in source heading",
+          "form_span": {
+            "start": 66,
+            "end": 76,
+            "literal": "ba yi gcin"
+          },
+          "marker_span": {
+            "start": 61,
+            "end": 65,
+            "literal": "auch"
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 76,
+            "dom_text_start": 66,
+            "source_column": 16,
+            "source_line": 102,
+            "source_text": "ba yi gcin",
+            "visible": true,
+            "visible_text_end": 76,
+            "visible_text_start": 66
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba%20grus%20ma/1",
+      "source_sha256": "099257a8aa0c55c94193abc318a4cb52db0f79dcbb3442d7f882631f3063f0ac",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 31,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་གྲུས་མ་",
+          "visible": true,
+          "visible_text_end": 31,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 48,
+          "dom_text_start": 38,
+          "source_column": 24,
+          "source_line": 99,
+          "source_text": "ba grus ma",
+          "visible": true,
+          "visible_text_end": 48,
+          "visible_text_start": 38
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[1]",
+          "dom_text_end": 70,
+          "dom_text_start": 58,
+          "source_column": 25,
+          "source_line": 101,
+          "source_text": "\n      auch ",
+          "visible": true,
+          "visible_text_end": 70,
+          "visible_text_start": 58
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 80,
+          "dom_text_start": 70,
+          "source_column": 16,
+          "source_line": 102,
+          "source_text": "ba drus ma",
+          "visible": true,
+          "visible_text_end": 80,
+          "visible_text_start": 70
+        }
+      ],
+      "fields": [
+        {
+          "id": "691c0168ff5a80dfaf5f27aef6d1530b1d1713f96011cbfccae70efbc9486d6f",
+          "type": "header_field",
+          "header_kind": "alternate_headword",
+          "start": 65,
+          "end": 80,
+          "literal": "auch ba drus ma",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20grus%20ma/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20grus%20ma/1",
+            "text_sha256": "099257a8aa0c55c94193abc318a4cb52db0f79dcbb3442d7f882631f3063f0ac"
+          },
+          "evidence": "explicit auch + Tibetan field in source heading",
+          "form_span": {
+            "start": 70,
+            "end": 80,
+            "literal": "ba drus ma"
+          },
+          "marker_span": {
+            "start": 65,
+            "end": 69,
+            "literal": "auch"
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 80,
+            "dom_text_start": 70,
+            "source_column": 16,
+            "source_line": 102,
+            "source_text": "ba drus ma",
+            "visible": true,
+            "visible_text_end": 80,
+            "visible_text_start": 70
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+      "source_sha256": "1d9f1493fea386473f85a7deca1c54facf4ac7c711bc1152d7971973836c64dc",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 27,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བ་ལང་",
+          "visible": true,
+          "visible_text_end": 27,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 35,
+          "dom_text_start": 34,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "1",
+          "visible": true,
+          "visible_text_end": 35,
+          "visible_text_start": 34
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 41,
+          "dom_text_start": 35,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "ba laṅ",
+          "visible": true,
+          "visible_text_end": 41,
+          "visible_text_start": 35
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[1]",
+          "dom_text_end": 63,
+          "dom_text_start": 51,
+          "source_column": 25,
+          "source_line": 101,
+          "source_text": "\n      auch ",
+          "visible": true,
+          "visible_text_end": 63,
+          "visible_text_start": 51
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 70,
+          "dom_text_start": 63,
+          "source_column": 16,
+          "source_line": 102,
+          "source_text": "ba glaṅ",
+          "visible": true,
+          "visible_text_end": 70,
+          "visible_text_start": 63
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[2]",
+          "dom_text_end": 72,
+          "dom_text_start": 70,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": ", ",
+          "visible": true,
+          "visible_text_end": 72,
+          "visible_text_start": 70
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[2]/text()[1]",
+          "dom_text_end": 100,
+          "dom_text_start": 72,
+          "source_column": 36,
+          "source_line": 102,
+          "source_text": "ban klaṅ,  ban glaṅ, ban laṅ",
+          "visible": true,
+          "visible_text_end": 100,
+          "visible_text_start": 72
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[3]",
+          "dom_text_end": 106,
+          "dom_text_start": 100,
+          "source_column": 70,
+          "source_line": 102,
+          "source_text": ".\n    ",
+          "visible": true,
+          "visible_text_end": 106,
+          "visible_text_start": 100
+        }
+      ],
+      "fields": [
+        {
+          "id": "aef38ac4699b95287fe1f5a6ec6af94744dd16ed6c5d824ed6436afc89438939",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 34,
+          "end": 35,
+          "literal": "1",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+            "text_sha256": "1d9f1493fea386473f85a7deca1c54facf4ac7c711bc1152d7971973836c64dc"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 35,
+            "dom_text_start": 34,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "1",
+            "visible": true,
+            "visible_text_end": 35,
+            "visible_text_start": 34
+          }
+        },
+        {
+          "id": "f8b7dcab04734f4285236a8e3bb74b7ed31302d1bce4a84e3a25cee0411d1d19",
+          "type": "header_field",
+          "header_kind": "alternate_headword",
+          "start": 58,
+          "end": 70,
+          "literal": "auch ba glaṅ",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%20la%E1%B9%85/1",
+            "text_sha256": "1d9f1493fea386473f85a7deca1c54facf4ac7c711bc1152d7971973836c64dc"
+          },
+          "evidence": "explicit auch + Tibetan field in source heading",
+          "form_span": {
+            "start": 63,
+            "end": 70,
+            "literal": "ba glaṅ"
+          },
+          "marker_span": {
+            "start": 58,
+            "end": 62,
+            "literal": "auch"
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 70,
+            "dom_text_start": 63,
+            "source_column": 16,
+            "source_line": 102,
+            "source_text": "ba glaṅ",
+            "visible": true,
+            "visible_text_end": 70,
+            "visible_text_start": 63
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": "parallel aliases after first auch form remain untyped"
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+      "source_sha256": "45bcf35efdf4926e8b7efc284ca1f8667ad8b66a673ca9572df0ec0f262df8de",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 31,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བག་རྐྱོང་",
+          "visible": true,
+          "visible_text_end": 31,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 47,
+          "dom_text_start": 38,
+          "source_column": 24,
+          "source_line": 99,
+          "source_text": "bag rkyoṅ",
+          "visible": true,
+          "visible_text_end": 47,
+          "visible_text_start": 38
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 68,
+          "dom_text_start": 64,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": "fut.",
+          "visible": true,
+          "visible_text_end": 68,
+          "visible_text_start": 64
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 84,
+          "dom_text_start": 74,
+          "source_column": 81,
+          "source_line": 102,
+          "source_text": "bag brkyaṅ",
+          "visible": true,
+          "visible_text_end": 79,
+          "visible_text_start": 69
+        }
+      ],
+      "fields": [
+        {
+          "id": "b79881945b91039723159a0e9e13cea676e0c5669a8ecbe048f90a92258ea65e",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 64,
+          "end": 68,
+          "literal": "fut.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+            "text_sha256": "45bcf35efdf4926e8b7efc284ca1f8667ad8b66a673ca9572df0ec0f262df8de"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+            "dom_text_end": 68,
+            "dom_text_start": 64,
+            "source_column": 29,
+            "source_line": 102,
+            "source_text": "fut.",
+            "visible": true,
+            "visible_text_end": 68,
+            "visible_text_start": 64
+          }
+        },
+        {
+          "id": "de5e0971936de5cff6039678b6d295169086d74960fada3af1388aa323ee3a63",
+          "type": "header_field",
+          "header_kind": "verb_form",
+          "start": 69,
+          "end": 79,
+          "literal": "bag brkyaṅ",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bag%20rkyo%E1%B9%85/1",
+            "text_sha256": "45bcf35efdf4926e8b7efc284ca1f8667ad8b66a673ca9572df0ec0f262df8de"
+          },
+          "evidence": "labelled Tibetan paradigm field within source heading",
+          "label_span": {
+            "start": 64,
+            "end": 68,
+            "literal": "fut."
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 84,
+            "dom_text_start": 74,
+            "source_column": 81,
+            "source_line": 102,
+            "source_text": "bag brkyaṅ",
+            "visible": true,
+            "visible_text_end": 79,
+            "visible_text_start": 69
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+      "source_sha256": "5924331ccc824eec46495db177147f664df563f0091f9ca8a006931d29f3b16f",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 28,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བར་དུ་",
+          "visible": true,
+          "visible_text_end": 28,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 36,
+          "dom_text_start": 35,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "2",
+          "visible": true,
+          "visible_text_end": 36,
+          "visible_text_start": 35
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 42,
+          "dom_text_start": 36,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "bar du",
+          "visible": true,
+          "visible_text_end": 42,
+          "visible_text_start": 36
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 63,
+          "dom_text_start": 59,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": "adv.",
+          "visible": true,
+          "visible_text_end": 63,
+          "visible_text_start": 59
+        }
+      ],
+      "fields": [
+        {
+          "id": "15c343460aa2b80e78d850c4e66153cd26b162593f94f9a866286c4f64f12799",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 35,
+          "end": 36,
+          "literal": "2",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+            "text_sha256": "5924331ccc824eec46495db177147f664df563f0091f9ca8a006931d29f3b16f"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 36,
+            "dom_text_start": 35,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "2",
+            "visible": true,
+            "visible_text_end": 36,
+            "visible_text_start": 35
+          }
+        },
+        {
+          "id": "f2550b4a205a4af074caa5e69d55a095e414f82236a63cff66a3f0ea69c20b93",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 59,
+          "end": 63,
+          "literal": "adv.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
+            "text_sha256": "5924331ccc824eec46495db177147f664df563f0091f9ca8a006931d29f3b16f"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+            "dom_text_end": 63,
+            "dom_text_start": 59,
+            "source_column": 29,
+            "source_line": 102,
+            "source_text": "adv.",
+            "visible": true,
+            "visible_text_end": 63,
+            "visible_text_start": 59
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+      "source_sha256": "1f94414b6ad3597a4cf1c09ba09c2c00853966c72f181afcab5b53a832855566",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 26,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བངས་",
+          "visible": true,
+          "visible_text_end": 26,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+          "dom_text_end": 34,
+          "dom_text_start": 33,
+          "source_column": 11,
+          "source_line": 99,
+          "source_text": "1",
+          "visible": true,
+          "visible_text_end": 34,
+          "visible_text_start": 33
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 38,
+          "dom_text_start": 34,
+          "source_column": 36,
+          "source_line": 99,
+          "source_text": "baṅs",
+          "visible": true,
+          "visible_text_end": 38,
+          "visible_text_start": 34
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 58,
+          "dom_text_start": 55,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": "pf.",
+          "visible": true,
+          "visible_text_end": 58,
+          "visible_text_start": 55
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[2]",
+          "dom_text_end": 69,
+          "dom_text_start": 65,
+          "source_column": 76,
+          "source_line": 102,
+          "source_text": " zu ",
+          "visible": true,
+          "visible_text_end": 62,
+          "visible_text_start": 58
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[2]/text()[1]",
+          "dom_text_end": 70,
+          "dom_text_start": 69,
+          "source_column": 99,
+          "source_line": 102,
+          "source_text": "↓",
+          "visible": true,
+          "visible_text_end": 63,
+          "visible_text_start": 62
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[2]/a[1]/text()[1]",
+          "dom_text_end": 74,
+          "dom_text_start": 70,
+          "source_column": 143,
+          "source_line": 102,
+          "source_text": "’baṅ",
+          "visible": true,
+          "visible_text_end": 67,
+          "visible_text_start": 63
+        }
+      ],
+      "fields": [
+        {
+          "id": "4dd5f255bed38f3150fa1d0bbb22ea65dee4d7c2d1d7ecca31e572ec1c77ecce",
+          "type": "header_field",
+          "header_kind": "homonym_marker",
+          "start": 33,
+          "end": 34,
+          "literal": "1",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+            "text_sha256": "1f94414b6ad3597a4cf1c09ba09c2c00853966c72f181afcab5b53a832855566"
+          },
+          "evidence": "superscript within source lemma heading",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/sup[1]/text()[1]",
+            "dom_text_end": 34,
+            "dom_text_start": 33,
+            "source_column": 11,
+            "source_line": 99,
+            "source_text": "1",
+            "visible": true,
+            "visible_text_end": 34,
+            "visible_text_start": 33
+          }
+        },
+        {
+          "id": "aca5680acf77392a531f2818cf4a2f9061622b7fdebfb65d9a9b0c7792636502",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 55,
+          "end": 58,
+          "literal": "pf.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
+            "text_sha256": "1f94414b6ad3597a4cf1c09ba09c2c00853966c72f181afcab5b53a832855566"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+            "dom_text_end": 58,
+            "dom_text_start": 55,
+            "source_column": 29,
+            "source_line": 102,
+            "source_text": "pf.",
+            "visible": true,
+            "visible_text_end": 58,
+            "visible_text_start": 55
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+      "source_sha256": "2ea241320208a3209bc8a8fd46c5ba6730075471ae214fa1c3aa396e62b99671",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 34,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བདག་གིར་བྱས་",
+          "visible": true,
+          "visible_text_end": 34,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 54,
+          "dom_text_start": 41,
+          "source_column": 24,
+          "source_line": 99,
+          "source_text": "bdag gir byas",
+          "visible": true,
+          "visible_text_end": 54,
+          "visible_text_start": 41
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 74,
+          "dom_text_start": 71,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": "pf.",
+          "visible": true,
+          "visible_text_end": 74,
+          "visible_text_start": 71
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/text()[2]",
+          "dom_text_end": 85,
+          "dom_text_start": 81,
+          "source_column": 76,
+          "source_line": 102,
+          "source_text": " zu ",
+          "visible": true,
+          "visible_text_end": 78,
+          "visible_text_start": 74
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 98,
+          "dom_text_start": 85,
+          "source_column": 85,
+          "source_line": 102,
+          "source_text": "bdag gir byed",
+          "visible": true,
+          "visible_text_end": 91,
+          "visible_text_start": 78
+        }
+      ],
+      "fields": [
+        {
+          "id": "c57a72294e456871eb876cc3074f76e0b5cfc931e2da797d930bb56bd0ef6ba3",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 71,
+          "end": 74,
+          "literal": "pf.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+            "text_sha256": "2ea241320208a3209bc8a8fd46c5ba6730075471ae214fa1c3aa396e62b99671"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+            "dom_text_end": 74,
+            "dom_text_start": 71,
+            "source_column": 29,
+            "source_line": 102,
+            "source_text": "pf.",
+            "visible": true,
+            "visible_text_end": 74,
+            "visible_text_start": 71
+          }
+        },
+        {
+          "id": "cee3b42ab00a971ce187c2bd314e8b288f973c8c607be9fb90e17da2d39e3290",
+          "type": "header_field",
+          "header_kind": "verb_form",
+          "start": 78,
+          "end": 91,
+          "literal": "bdag gir byed",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
+            "text_sha256": "2ea241320208a3209bc8a8fd46c5ba6730075471ae214fa1c3aa396e62b99671"
+          },
+          "evidence": "labelled Tibetan paradigm field within source heading",
+          "label_span": {
+            "start": 71,
+            "end": 74,
+            "literal": "pf."
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 98,
+            "dom_text_start": 85,
+            "source_column": 85,
+            "source_line": 102,
+            "source_text": "bdag gir byed",
+            "visible": true,
+            "visible_text_end": 91,
+            "visible_text_start": 78
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    },
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+      "source_sha256": "e4c35d3678838c0ecfd1e0a3083acdc084f7343e022fdcb7b22d763bfc983b6a",
+      "heading": [
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[1]/text()[1]",
+          "dom_text_end": 35,
+          "dom_text_start": 22,
+          "source_column": 27,
+          "source_line": 98,
+          "source_text": "བདག་གིར་བྱེད་",
+          "visible": true,
+          "visible_text_end": 35,
+          "visible_text_start": 22
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[1]/span[2]/text()[1]",
+          "dom_text_end": 55,
+          "dom_text_start": 42,
+          "source_column": 24,
+          "source_line": 99,
+          "source_text": "bdag gir byed",
+          "visible": true,
+          "visible_text_end": 55,
+          "visible_text_start": 42
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+          "dom_text_end": 75,
+          "dom_text_start": 72,
+          "source_column": 29,
+          "source_line": 102,
+          "source_text": "pf.",
+          "visible": true,
+          "visible_text_end": 75,
+          "visible_text_start": 72
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+          "dom_text_end": 96,
+          "dom_text_start": 83,
+          "source_column": 82,
+          "source_line": 102,
+          "source_text": "bdag gir byas",
+          "visible": true,
+          "visible_text_end": 89,
+          "visible_text_start": 76
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[2]/text()[1]",
+          "dom_text_end": 101,
+          "dom_text_start": 97,
+          "source_column": 125,
+          "source_line": 102,
+          "source_text": "fut.",
+          "visible": true,
+          "visible_text_end": 94,
+          "visible_text_start": 90
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[3]/text()[1]",
+          "dom_text_end": 108,
+          "dom_text_start": 107,
+          "source_column": 191,
+          "source_line": 102,
+          "source_text": "↑",
+          "visible": true,
+          "visible_text_end": 96,
+          "visible_text_start": 95
+        },
+        {
+          "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[3]/a[1]/text()[1]",
+          "dom_text_end": 120,
+          "dom_text_start": 108,
+          "source_column": 243,
+          "source_line": 102,
+          "source_text": "bdag gir bya",
+          "visible": true,
+          "visible_text_end": 108,
+          "visible_text_start": 96
+        }
+      ],
+      "fields": [
+        {
+          "id": "ddb10eec37785912f760c7b009dbbd07e0abeb3fb6a2bcf68eb74c4daf21799a",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 72,
+          "end": 75,
+          "literal": "pf.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+            "text_sha256": "e4c35d3678838c0ecfd1e0a3083acdc084f7343e022fdcb7b22d763bfc983b6a"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[1]/text()[1]",
+            "dom_text_end": 75,
+            "dom_text_start": 72,
+            "source_column": 29,
+            "source_line": 102,
+            "source_text": "pf.",
+            "visible": true,
+            "visible_text_end": 75,
+            "visible_text_start": 72
+          }
+        },
+        {
+          "id": "d65b9aacc3c62134e1c55f54266fe9d555806d3eb8043663e04bea6a06d117a0",
+          "type": "header_field",
+          "header_kind": "verb_form",
+          "start": 76,
+          "end": 89,
+          "literal": "bdag gir byas",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+            "text_sha256": "e4c35d3678838c0ecfd1e0a3083acdc084f7343e022fdcb7b22d763bfc983b6a"
+          },
+          "evidence": "labelled Tibetan paradigm field within source heading",
+          "label_span": {
+            "start": 72,
+            "end": 75,
+            "literal": "pf."
+          },
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/tib[1]/text()[1]",
+            "dom_text_end": 96,
+            "dom_text_start": 83,
+            "source_column": 82,
+            "source_line": 102,
+            "source_text": "bdag gir byas",
+            "visible": true,
+            "visible_text_end": 89,
+            "visible_text_start": 76
+          }
+        },
+        {
+          "id": "b64ce2384eb3249d6515c60175558590430643e1727c3b1a9b8cf30681b23078",
+          "type": "header_field",
+          "header_kind": "grammatical_label",
+          "start": 90,
+          "end": 94,
+          "literal": "fut.",
+          "entry_identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+          "status": "derived_source_structure",
+          "source_binding": {
+            "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byed/1",
+            "text_sha256": "e4c35d3678838c0ecfd1e0a3083acdc084f7343e022fdcb7b22d763bfc983b6a"
+          },
+          "evidence": "complete labelled heading leaf",
+          "source_locator": {
+            "dom_path": "/document[1]/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span[2]/span[2]/text()[1]",
+            "dom_text_end": 101,
+            "dom_text_start": 97,
+            "source_column": 125,
+            "source_line": 102,
+            "source_text": "fut.",
+            "visible": true,
+            "visible_text_end": 94,
+            "visible_text_start": 90
+          }
+        }
+      ],
+      "review": {
+        "false_typed_fields": 0,
+        "source_inspected": true,
+        "limitation": null
+      }
+    }
+  ]
+}
