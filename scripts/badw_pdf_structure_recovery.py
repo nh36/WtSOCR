@@ -162,4 +162,5 @@ def recover_hyphenated_definitions(projection, text):
 def recover(projection, text):
     if projection['source_kind'] != 'pdf':
         return projection
-    return recover_hyphenated_definitions(recover_opening(projection,text),text)
+    from badw_pdf_mixed_clauses import recover_mixed_clauses
+    return recover_mixed_clauses(recover_hyphenated_definitions(recover_opening(projection,text),text),text)

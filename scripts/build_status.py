@@ -1342,7 +1342,7 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         "registered online corpus", "none", "scripts/badw_header_structure.py;scripts/badw_pdf_structure_recovery.py;scripts/classify_badw_header_accounting.py",
         "data/badw_forensic_structure/README.md;docs/STATUS.md", 0, 0,
         "existing definition nodes preserved;no generic containers;exact PDF boundary evidence",
-        "11305 typed header fields including2166 relations;131068 raw alphabetic gap characters partitioned exactly;13960 meaningful characters pending;6379 PDF prose characters need typography-driven mixed-clause recovery;114 frozen witnesses pass;16 fresh witnesses reviewed with limited PDF coverage;release/current untouched.",
+        "11543 typed header fields including2218 relations;131068 raw alphabetic gap characters partitioned exactly;12260 meaningful characters pending;5806 PDF prose characters have explicit source-grammar reasons;114 frozen witnesses pass;36 fresh PDF witnesses facsimile-reviewed on36 pages;new rules have no observed false claims;baseline opening-rule defect recorded;release/current untouched.",
     ))
     return rows
 
@@ -1653,93 +1653,61 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     corpus_totals = corpus_summary["totals"]
     corpus_section = """## Corpus Structural Health
 
-The structural recovery replay from **a4f42b3af9** projects **29,877/29,877 acquired
-online witnesses** (18,037 HTML; 11,840 PDF), with **zero exceptions,
-reader-integrity failures or accepted identity loss**. Exact source text, span
-validation and relationship contracts remain unchanged. Bibliography reconciliation
-remains closed.
+The mixed-clause replay from **53caa38e6d** projects **29,877/29,877 witnesses**,
+with zero exceptions, reader-integrity failures or accepted bibliography identity
+loss. All **114 frozen witnesses pass**. Source text and relationship contracts
+remain unchanged; **release/current is untouched**.
 
-| Metric | Baseline | Current |
+| Metric | Before | After |
 | --- | ---: | ---: |
-| Citations | 109,425 | 109,425 |
-| Accepted bibliography identities | 109,079 | 109,079 |
-| Unresolved identities | 346 | 346 |
-| Established owners | 109,017 | 109,017 |
-| Unresolved owners | 408 | 408 |
-| Header fields | 9,360 | 11,305 |
-| Header relations | 796 | 2,166 |
-| Meaningful structural-review characters | 22,825 | 13,960 |
-| HTML meaningful residue | 6,401 | 3,766 |
-| PDF meaningful residue | 16,424 | 10,194 |
+| Meaningful untyped characters | 13,960 | 12,260 |
+| HTML residue | 3,766 | 3,766 |
+| PDF residue | 10,194 | 8,494 |
+| PDF lexical prose | 6,379 | 5,806 |
+| PDF header candidates | 1,778 | 738 |
+| PDF alias candidates | 779 | 692 |
+| PDF quotation/gloss | 1,101 | 1,101 |
+| PDF reference clauses | 157 | 157 |
+| Header fields | 11,305 | 11,543 |
+| Header relations | 2,166 | 2,218 |
+| Aliases | 4,352 | 4,355 |
 
-Achard 2015 is independently verified in author and publisher bibliographies.
-Schwieger 241 ff. is resolved to the existing WTS online Schwieger 2006 publication
-authority: the supplied edition directly verifies printed pp.241–242, and the
-user-reviewed 2005 printed kyis article lacks this later digital citation. No
-2009 Handbuch edition is registered in the online bibliography. This upgrades
-an already accepted work identity; accepted/unresolved totals remain 109,079/346. Both malformed
-Abteilung references resolve to Mvy at work level through facsimile-verified Sakaki
-numbers and section headings. Literal WTS wording remains unchanged. The printed
-`dBe’uD` extra letter is genuine; Be’uD locator/content evidence is unavailable,
-so that identity remains unresolved. Four concise editorial questions preserve
-these evidentiary limits; Schwieger no longer requires editorial input. These four resolutions concern the five focal cases;
-the 346 total unresolved identities include other previously classified residue.
+The new separate typography grammar recovers semicolon/italic tilde-bearing form
+→ Roman gloss fragments with exact run/geometry provenance. Thirty accounting runs
+cover 479 alphabetic characters. Header chains recover additional explicit verb
+forms and relations; existing definitions and the narrow opening-gloss rule remain
+unchanged. No catch-all prose container, proximity ownership or glyph guessing was
+added. The 131,068 raw alphabetic characters partition exactly: **42,211 typed,
+66,328 structural labels, 10,269 decoding-placeholder syntax, 12,260 pending**.
 
-The 408 unresolved owners retain their frozen distribution: 167 comparison clauses,
-157 entry prose, 52 without structural envelope, 21 sense prose, six PDF example
-candidates, three HTML example envelopes and two definition clauses. All 11 small
-cases and 24 systematic contexts were inspected without proximity inference.
-Some reveal missing bounded variant/comparison grammar; this pass does not establish
-maximum principled coverage or declare every prose case inherently unbounded.
-Owners remain **109,004 exact passages plus 13 reviewed components**, including
-**47,038 sense-owned / 61,979 entry-only** bounded passages.
+Remaining PDF prose is explicitly differentiated: quotation-adjacent 2,175;
+reference/comparison continuation 1,568; lexical substitution 1,188; unclosed
+mixed/Roman clause 439; wrapped form/clause 293; isolated fragment 112; alias
+continuation 31. These reasons are diagnostics, not accepted semantic claims.
+HTML other-heading residue is 641 register/grammar labels, 973 shared/composite
+syntax and 1,179 unregistered wording (2,793 total). All pending spans retain
+source hashes, exact spans and context.
 
-Header relations encode short-form, perfect, future and imperative relations,
-with whole composite target spans, shared tense markers and ordered comma/und/
-`bzw.` alias groups. PDF rules require explicit opening connective, typography
-and line/column continuity. Both manifestations use the same canonical model:
-**2,938 homonym markers, 4,352 aliases, 2,166 relations, 1,464 grammatical labels
-and 385 labelled verb forms**.
+A fresh preselected **36-entry PDF holdout covers 36 physical pages** across acquired
+volumes 2–4. Facsimile review observed no false **new-rule** structural claims.
+It did expose a pre-existing opening-v3 false `, vgl.` definition fragment and an
+opening-parenthesis boundary needing review; quotation and shared paradigm recall
+limitations remain explicit. The sample does not establish zero defects corpus-wide.
 
-PDF recovery adds source-bound opening-definition fragments after typed headers
-and explicit hyphenated continuations of observed definitions. Existing nodes are
-preserved. Exact fragments retain source division, geometry and boundary evidence;
-reader and semantic-store `fragments` queries consume them. Competing Lex., examples,
-citations, Sanskrit, new numbering, column changes and unsafe quotation boundaries
-stop recovery. No catch-all prose container or proximity owner was added.
+Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**,
+owners **109,017 established / 408 unresolved**; zero owners were gained solely
+through new boundaries. Schwieger resolves specifically to 2006; Achard remains an
+externally resolved authority absent from WTS bibliography; malformed Mvy literals
+retain reviewed identities; dBe’uD remains unresolved pending editorial evidence.
+Lex. remains **39,688** with zero overlaps. Xrefs remain **7,484 resolved / 852
+unresolved**. Sanskrit remains **12,364 forms / 3,003 correspondences**, zero effective
+conflicts; 384 raw overlaps remain provenance. Frozen relationships are preserved.
 
-The raw **28,912 gap runs / 131,068 alphabetic characters remain unchanged**.
-Accounting partitions them into **40,267 typed characters**, **66,331 structural
-labels**, **10,387 decoding-placeholder characters**, and **13,960 pending meaningful
-characters** (3,766 HTML / 10,194 PDF): **8,865 characters recovered, 38.8%**.
-Placeholder counts measure decoded diagnostic syntax, not printed glyphs. No new
-font mapping was accepted. PDF residue comprises **6,379 lexical-prose characters**,
-**1,778 header**, **779 alias**, **1,101 quotation/gloss** and **157 reference-clause**
-characters. Reference contexts were inspected completely without forcing passage
-claims. Every residual span retains exact provenance, context, nearby components
-and a concrete unresolved reason. Classification alone is not semantic recovery.
-The 144 PDF unassigned candidates remain printed correction apparatus.
-
-The fresh review contains **16 witnesses (14 HTML / two PDF)** outside all frozen
-samples. No false structural claim was observed. Its PDF coverage directly checks
-opening-definition recovery; nested quotations and mixed continuation families
-still lack the requested complete fresh validation. It is not a corpus accuracy
-estimate.
-
-Lex. remains **39,688 items**, zero canonical overlaps. Xrefs remain **4,706 resolved /
-576 unresolved HTML; 2,778 resolved / 276 unresolved PDF**, all bindings retained.
-Language remains **12,364 Sanskrit forms / 3,003 correspondences**, zero explicit
-untyped indicators or effective conflicts; 384 raw overlaps remain provenance.
-**114 frozen witnesses pass**, with baseline citation-owner and xref edges preserved.
-
-The model is **not structurally mature**. The one next coherent parser family is
-**6,379 PDF lexical-prose alphabetic characters** without proven boundaries. The
-missing capability is a typography-driven mixed-clause/continuation grammar that
-distinguishes Roman explanations, Tibetan examples and translations within a
-source layout unit. This specific implementation should precede historical-print
-adaptation or full reader/product work. **`release/current` is unchanged.**
-See [evidence, residuals and reproduction](../data/badw_forensic_structure/README.md).
-Raw sources and SQLite stores remain in ignored `work/` storage.
+**Not structurally mature:** the specific next capability is a nested quotation /
+Tibetan excerpt–German translation boundary grammar (2,175 quotation-adjacent prose
+characters plus 1,101 quotation/gloss candidates), alongside repair of the observed
+opening-v3 comparison-marker defect. Broader prose absorption is not justified.
+See [source evidence, review and reproduction](../data/badw_forensic_structure/README.md).
 
 """
 

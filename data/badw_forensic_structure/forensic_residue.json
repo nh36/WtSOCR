@@ -1,4 +1,96 @@
 {
+  "pending_source_grammar_reasons": [
+    {
+      "source_kind": "html",
+      "family": "alias_list_or_header_continuation_candidate",
+      "count": 234
+    },
+    {
+      "source_kind": "html",
+      "family": "header_form_or_relation_candidate",
+      "count": 95
+    },
+    {
+      "source_kind": "html",
+      "family": "quotation_or_gloss_candidate",
+      "count": 608
+    },
+    {
+      "source_kind": "html",
+      "family": "reference_clause_candidate",
+      "count": 36
+    },
+    {
+      "source_kind": "html",
+      "family": "register_or_grammatical_label",
+      "count": 641
+    },
+    {
+      "source_kind": "html",
+      "family": "shared_or_composite_heading_syntax",
+      "count": 973
+    },
+    {
+      "source_kind": "html",
+      "family": "unregistered_heading_wording",
+      "count": 1179
+    },
+    {
+      "source_kind": "pdf",
+      "family": "alias_list_or_header_continuation_candidate",
+      "count": 692
+    },
+    {
+      "source_kind": "pdf",
+      "family": "body_or_header_alias_continuation",
+      "count": 31
+    },
+    {
+      "source_kind": "pdf",
+      "family": "header_form_or_relation_candidate",
+      "count": 738
+    },
+    {
+      "source_kind": "pdf",
+      "family": "isolated_form_or_clause_fragment",
+      "count": 112
+    },
+    {
+      "source_kind": "pdf",
+      "family": "lexical_substitution_clause",
+      "count": 1188
+    },
+    {
+      "source_kind": "pdf",
+      "family": "mixed_or_Roman_clause_without_syntactic_closure",
+      "count": 439
+    },
+    {
+      "source_kind": "pdf",
+      "family": "quotation_adjacent_unbounded_fragment",
+      "count": 2175
+    },
+    {
+      "source_kind": "pdf",
+      "family": "quotation_or_gloss_candidate",
+      "count": 1101
+    },
+    {
+      "source_kind": "pdf",
+      "family": "reference_clause_candidate",
+      "count": 157
+    },
+    {
+      "source_kind": "pdf",
+      "family": "reference_target_or_comparison_continuation",
+      "count": 1568
+    },
+    {
+      "source_kind": "pdf",
+      "family": "wrapped_form_or_clause_without_role_boundary",
+      "count": 293
+    }
+  ],
   "ownership_families": [
     {
       "source_kind": "html",
@@ -70,17 +162,17 @@
     {
       "source_kind": "pdf",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 779
+      "count": 692
     },
     {
       "source_kind": "pdf",
       "family": "header_form_or_relation_candidate",
-      "count": 1778
+      "count": 738
     },
     {
       "source_kind": "pdf",
       "family": "lexical_prose_without_proven_boundary",
-      "count": 6379
+      "count": 5806
     },
     {
       "source_kind": "pdf",

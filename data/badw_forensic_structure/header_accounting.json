@@ -51,7 +51,7 @@
     {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 71223
+      "count": 71519
     },
     {
       "source_kind": "pdf",
@@ -61,7 +61,7 @@
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9639
+      "count": 9638
     },
     {
       "source_kind": "pdf",
@@ -76,7 +76,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 1528
+      "count": 1530
     },
     {
       "source_kind": "pdf",
@@ -86,22 +86,27 @@
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 525
+      "count": 562
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_mixed_clause_definition",
+      "count": 30
     },
     {
       "source_kind": "pdf",
       "family": "typed_opening_definition",
-      "count": 121
+      "count": 144
     },
     {
       "source_kind": "pdf",
       "family": "typed_verb_form",
-      "count": 299
+      "count": 475
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 775
+      "count": 567
     }
   ],
   "alphabetic_characters": [
@@ -158,12 +163,12 @@
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 10387
+      "count": 10269
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28915
+      "count": 28912
     },
     {
       "source_kind": "pdf",
@@ -178,7 +183,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 16115
+      "count": 16140
     },
     {
       "source_kind": "pdf",
@@ -188,30 +193,35 @@
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 3541
+      "count": 3735
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_mixed_clause_definition",
+      "count": 479
     },
     {
       "source_kind": "pdf",
       "family": "typed_opening_definition",
-      "count": 2408
+      "count": 2797
     },
     {
       "source_kind": "pdf",
       "family": "typed_verb_form",
-      "count": 1262
+      "count": 1996
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 10194
+      "count": 8494
     }
   ],
   "canonical_header_fields": {
     "homonym_marker": 2938,
-    "alternate_headword": 4352,
-    "header_relation": 2166,
+    "alternate_headword": 4355,
+    "header_relation": 2218,
     "grammatical_label": 1464,
-    "verb_form": 385
+    "verb_form": 568
   },
   "pdf_candidates": [
     {
@@ -637,17 +647,10 @@
         "source_sha256": "9f50d1e871e5a7fa2bde0ec0b1e44854d242dbd6689a974233abe818933c2f54"
       },
       {
-        "identity": "badw:pdf:badw-v2-04b0dfeec1fb2736f34135fb98d33e67831e52825fe45fbdf80fc5ab5ab2107a:255",
-        "start": 15,
-        "end": 21,
-        "literal": " fut. ",
-        "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
-      },
-      {
         "identity": "badw:pdf:badw-v2-9e720163c3c42684ac6eee8bfb1f8a54d38a9bb367aa60398fb7bcc30b836e2c:734",
         "start": 61,
-        "end": 105,
-        "literal": "\nbyed unter Kontrolle halten, niederwerfen.\n",
+        "end": 67,
+        "literal": "\nbyed ",
         "source_sha256": "168ccb724633affa14e467457a2642a094afa06f9def92082053047b2fef02b3"
       },
       {
@@ -683,6 +686,13 @@
         "start": 44,
         "end": 63,
         "literal": ";\nkha lo bsgyur ba ",
+        "source_sha256": "7ccb00f70f7b1ff8a3c90f25e0cd735ac0d2d730fafa2b58665725835aa635a3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1705",
+        "start": 107,
+        "end": 143,
+        "literal": "; auch als Bez. für ei-\nnen Buddha.\n",
         "source_sha256": "7ccb00f70f7b1ff8a3c90f25e0cd735ac0d2d730fafa2b58665725835aa635a3"
       }
     ],
@@ -774,6 +784,13 @@
         "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
       },
       {
+        "identity": "badw:pdf:badw-v2-04b0dfeec1fb2736f34135fb98d33e67831e52825fe45fbdf80fc5ab5ab2107a:255",
+        "start": 16,
+        "end": 21,
+        "literal": "fut. ",
+        "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
+      },
+      {
         "identity": "badw:pdf:badw-v2-9e720163c3c42684ac6eee8bfb1f8a54d38a9bb367aa60398fb7bcc30b836e2c:1827",
         "start": 1,
         "end": 5,
@@ -793,13 +810,6 @@
         "end": 5,
         "literal": "pf. ",
         "source_sha256": "5e5869ed800a73282ee265c6684d811a89efed1b9af2dca19dbf381b2b0a5a45"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
-        "start": 1,
-        "end": 5,
-        "literal": "pf. ",
-        "source_sha256": "7843f5cf56c154f2c4c28dc7bb981bc05be21a60d39dcad39257b3fb0d70e200"
       }
     ],
     "typed_opening_definition": [
@@ -853,11 +863,69 @@
         "source_sha256": "071682dae50f73393c1af971fa68ae9c509234127d3558f2dfc8e60bd0353174"
       },
       {
-        "identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:38",
+        "identity": "badw:pdf:badw-v2-baa1483f83554ce715226be867c60beead93f7c5065b1e5b0d19bd9af001784b:371",
+        "start": 38,
+        "end": 75,
+        "literal": "verspre-\nchen, behaupten, anerkennen.",
+        "source_sha256": "9bfab4a659b2ebeacf8554b5ebe76b63926b7799faa6174811862076a705a32b"
+      }
+    ],
+    "typed_mixed_clause_definition": [
+      {
+        "identity": "badw:pdf:badw-v2-9e720163c3c42684ac6eee8bfb1f8a54d38a9bb367aa60398fb7bcc30b836e2c:734",
         "start": 67,
-        "end": 71,
-        "literal": "vgl.",
-        "source_sha256": "c65b36725e61d3f054635cf95d9eac1ffe582ec53aa9ac3b3cdf23d5f3e7eafc"
+        "end": 104,
+        "literal": "unter Kontrolle halten, niederwerfen.",
+        "source_sha256": "168ccb724633affa14e467457a2642a094afa06f9def92082053047b2fef02b3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-252a5140978d896e97893a142f7f6e133716c7ad3fcdbbd2d1a426c94ef46fce:1256",
+        "start": 40,
+        "end": 60,
+        "literal": "sinnlos, ohne Grund.",
+        "source_sha256": "ae77902b4c6859aa048c67a66294777ff22476cb698a0ccca3760ae535a2ad00"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-b49c7db49a01667c064f4a8988883714e7acd37a90250bb6a714404588432c5c:422",
+        "start": 111,
+        "end": 120,
+        "literal": "Befreiung",
+        "source_sha256": "7b64c4ff176039056af0dc1f6b3b0adef8c2f2e6d1901493799c13bbe10d5376"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-3725d9cde219cac0ec7454d3d6bcfeba7db6ccec161c06a501dab7fae384cd15:1892",
+        "start": 57,
+        "end": 69,
+        "literal": "diskutieren.",
+        "source_sha256": "319e84bc8008644da29753204c17194b0c02990bb0b6b2ddc7dbfdee1d913764"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-09ef9d8b73c4e61e27596a1c7ff89961d6b8c2b8ace09bc1145e94ed9515b5b1:501",
+        "start": 62,
+        "end": 68,
+        "literal": "töten.",
+        "source_sha256": "ebbc422089ba13812297f33622c1a7e38402ee63909968ba8861582909047b7e"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-8919f684c536bd7e9a569e10b1021a9fb4b0b1ff65e40dd95b5c95fa66fb30ab:1436",
+        "start": 3426,
+        "end": 3447,
+        "literal": "Überlieferungsträger.",
+        "source_sha256": "300fc65df25afda41cedf0017b662309749794ddf92d77da2347e03d451a8cc2"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-63dbdd55ecf65c6af3a59f59d1430003797b33b49df45bffd56b5d7eb7382a52:541",
+        "start": 701,
+        "end": 740,
+        "literal": "Abfolge, Tradition, Überlieferungslinie",
+        "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-63dbdd55ecf65c6af3a59f59d1430003797b33b49df45bffd56b5d7eb7382a52:541",
+        "start": 748,
+        "end": 763,
+        "literal": "Traditionslinie",
+        "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
       }
     ]
   },

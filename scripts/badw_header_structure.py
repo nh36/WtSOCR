@@ -9,7 +9,7 @@ not reconstructed from a lemma string or lexical text.
 import hashlib
 import re
 
-VERSION = 'badw-header-structure-v6'
+VERSION = 'badw-header-structure-v7'
 GRAMMAR = re.compile(r'(?:pf\.|präs\.|pr\.|fut\.|imp\.|imper\.|vb\.|v\. tr\.|v\. intr\.|trans\.|intrans\.|subst\.|adj\.|adv\.|postpos\.)', re.I)
 
 
@@ -79,7 +79,7 @@ def contiguous_pdf_lines(lines, left, right):
     return abs(a['first_x'] - b['first_x']) < 20 and 0 < a['y'] - b['y'] < 4
 
 
-def pdf_heading_fields(projection, text, add):
+def pdf_heading_fields(projection, text, add, cursor=0):
     """Explicit initial header connective plus contiguous printed italic field.
 
     A regular-font German continuation terminates the field. Italics alone
@@ -96,9 +96,9 @@ def pdf_heading_fields(projection, text, add):
                                dict(line_index=index, page_id=line.get('page_id'),
                                     printed_page=line.get('printed_page'), style_span=span)))
         offset += len(line['text']) + 1
-    marker = re.match(
-        r'\s*(?:\.\s*)?(?:\d+\.\s*)?(?P<label>' + RELATION_LABEL + r'|auch|' + TENSE_MARKER + r'(?:\s+und\s+' + TENSE_MARKER + r')?)'
-        r'\s*[↑↓]?\s*(?P<homonym>\d+)?\s*', text)
+    marker = re.compile(
+        r'\s*(?:[.,]\s*)?(?:\d+\.\s*)?(?P<label>' + RELATION_LABEL + r'|auch|' + TENSE_MARKER + r'(?:\s+und\s+' + TENSE_MARKER + r')?)'
+        r'\s*[↑↓]?\s*(?P<homonym>\d+)?\s*').match(text, cursor)
     if not marker:
         return
     a = marker.end()
@@ -152,12 +152,22 @@ def pdf_heading_fields(projection, text, add):
                 target_span=dict(start=fa,end=fb,literal=text[fa:fb]), target_homonym=homonym,
                 marker_span=dict(start=ma,end=a,literal=text[ma:a]),
                 list_id=f"{projection['identity']}:{list_kind}:{ma}", source_locators=locations)
+
         else:
             add('alternate_headword', ma if fa == a else fa, fb,
                 'initial auch and contiguous PDF italic alias list',
                 form_span=dict(start=fa,end=fb,literal=text[fa:fb]),
                 marker_span=dict(start=ma,end=ma+4,literal=text[ma:ma+4]),
                 list_id=f"{projection['identity']}:{list_kind}:{ma}", source_locators=locations)
+    # A chain remains a heading only across another explicit marker and its
+    # contiguous italic field. A Roman gloss terminates it; body markers cannot
+    # restart this grammar. Keep every marker and target's absolute offsets.
+    following = re.match(r'\s*(?:,\s*)?(?:' + RELATION_LABEL + r'|auch|' + TENSE_MARKER + r')', text[b:])
+    if following and b > cursor:
+        next_italic = next((loc for x, y, loc in styles if x >= b), None)
+        if next_italic and contiguous_pdf_lines(lines, locations[-1]['line_index'], next_italic['line_index']):
+            pdf_heading_fields(projection, text, add, cursor=b)
+
 
 
 def header_fields(projection, text):

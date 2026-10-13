@@ -37,7 +37,7 @@ def main():
             row=json.loads(line);p=row['projection'];packet=row['packet'];text=packet['review_text'];identity=packet['identity'];headers=header_fields(p,text);headings=heading_fragments(p)
             from badw_pdf_structure_recovery import recover
             recovered=recover(p,text)
-            semantic[identity].extend(dict(start=n['start'],end=n['end'],family='typed_opening_definition') for n in recovered['nodes'] if n.get('structural_recovery'))
+            semantic[identity].extend(dict(start=n['start'],end=n['end'],family=('typed_mixed_clause_definition' if n['structural_recovery'].get('rule')=='pdf-mixed-clause-v1' else 'typed_opening_definition')) for n in recovered['nodes'] if n.get('structural_recovery'))
             headcounts.update(h['header_kind'] for h in headers)
             typed=sorted(semantic[identity],key=lambda h:h['end']-h['start'])
             gaps,lexical,n=accounting(text,p['nodes']);total+=n

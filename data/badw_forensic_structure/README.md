@@ -1,6 +1,6 @@
 # Forensic source-structure replay
 
-Baseline: `a4f42b3af9` (after the Schwieger publication correction). Source hashes and runtime code hashes are pinned in
+Baseline: `53caa38e6d` (previous structural recovery). Source hashes and runtime code hashes are pinned in
 `manifest.json`; raw sources, facsimiles and semantic SQLite remain in ignored
 `work/`. No release text was changed.
 
@@ -47,64 +47,91 @@ No new owner was inferred. Local variant parentheses and nested/malformed quotes
 expose possible bounded-grammar work; the pass does not prove that every remaining
 prose case is intrinsically unbounded.
 
-Header extraction now produces **11,305 fields**, including **2,166 relations**,
-4,352 aliases, 2,938 homonym markers, 1,464 grammatical labels and 385 labelled
-verb forms. Whole composite targets, shared tense markers and ordered comma/und/
-`bzw.` alias groups retain exact marker/member spans. HTML and PDF use the same
-canonical header contract. PDF rules require explicit opening connectives,
-source typography and line/column continuity.
+The mixed-clause replay produces **11,543 header fields**, including **2,218
+relations**, **4,355 aliases**, 2,938 homonym markers, 1,464 grammatical labels
+and 568 verb forms. Explicit marker → italic target chains share the existing
+HTML/PDF header model. Initial alias extraction is anchored to source position.
 
-PDF recovery adds exact opening-definition fragments after typed headers and
-explicit hyphenated continuations of observed definitions. Existing definition
-nodes are preserved: new fragments record the source division, geometry and
-boundary evidence, and are available in the semantic store's `fragments` query.
-The rules stop at competing examples, Lex., citations, Sanskrit, sense markers,
-column changes, semicolons and unbalanced quotation boundaries. No generic prose
-container, proximity owner or unverified glyph mapping was introduced.
+`badw_pdf_mixed_clauses.py` is separate from the unchanged narrow opening-gloss
+rule. Its positive production is printed semicolon → italic tilde-bearing lexical
+form → Roman gloss, with exact font/run and line geometry evidence. A second
+production handles an unfinished observed German connective followed by a
+same-font lowercase wrapped clause; it produces no corpus claims in this replay.
+Competing examples, Lex., languages, citations, numbering, quotes and columns stop
+recovery. Existing definitions remain immutable; exact fragments carry envelope
+and continuation evidence and flow through the existing reader/store projection.
+Thirty accounting runs recover **479 alphabetic characters** as mixed-clause
+definitions. No generic prose container or proximity owner was introduced.
 
-The unchanged **131,068 alphabetic gap characters** now partition into **40,267
-semantically typed**, **66,331 structural-label**, **10,387 decoding-placeholder**
-and **13,960 pending meaningful characters**. Meaningful residue fell from
-22,825 by **8,865 characters (38.8%)**: HTML 6,401 → **3,766**, PDF 16,424 → **10,194**.
-The remaining PDF families are 6,379 lexical-prose characters without proven
-boundaries, 1,778 header candidates, 779 alias candidates, 1,101 quotation/gloss
-candidates and 157 reference-clause characters. Every pending span retains its
-source hash, exact location, local context, nearby components and concrete reason
-for remaining unresolved. Classification alone does not recover structure.
-The reference-clause contexts were inspected in full; dictionary-key references
-and insufficient clause envelopes do not justify additional passage claims.
-Placeholder counts measure diagnostic syntax, not printed glyphs; the decrease
-reflects precise header accounting, not new glyph-decoding mappings.
+| Meaningful pending alphabetic characters | Before | After |
+| --- | ---: | ---: |
+| Total | 13,960 | 12,260 |
+| HTML | 3,766 | 3,766 |
+| PDF lexical prose | 6,379 | 5,806 |
+| PDF header candidates | 1,778 | 738 |
+| PDF aliases | 779 | 692 |
+| PDF quotation/gloss | 1,101 | 1,101 |
+| PDF reference clauses | 157 | 157 |
+| PDF total | 10,194 | 8,494 |
 
-`fresh_structural_review.jsonl` records **16 fresh witnesses (14 HTML, two PDF)**,
-separate from all 114 frozen witnesses and the earlier 12-header review. Source
-inspection found no false relation, over-wide recovered definition or duplicate
-content in this sample. PDF review directly checks the opening-definition rule;
-it does **not** complete the requested fresh coverage of nested quotations and
-mixed continuation families. This limited sample is not a corpus accuracy estimate.
+The unchanged 131,068 raw alphabetic characters partition exactly into **42,211
+typed**, **66,328 structural-label**, **10,269 decoding-placeholder**, and **12,260
+pending meaningful** characters. This is 1,700 characters recovered, not a claim
+that all residual categories now have proven canonical boundaries. No glyph mapping
+was added. Placeholder syntax is separate from meaningful printed content.
 
-`integration.json` and `frozen_holdout_replay.jsonl` record reader checks, preserved
-baseline relationships and **114 passing frozen witnesses**. All 108,732 baseline
-citation-owner relationships and 6,825 baseline xref edges survive. Citation
-owners remain 109,017 accepted / 408 unresolved; no proximity inference was added.
-Lex. remains 39,688 items with zero canonical overlap; bibliography, xrefs and
-language metrics remain unchanged. The rejected stale-source PDF overlay remains
-rejected. `release/current` remains untouched.
+The remaining 5,806 PDF prose characters have source-grammar reasons:
 
-**Not structurally mature.** The next coherent engineering family is the **6,379
-PDF lexical-prose alphabetic characters** lacking proven boundaries. It requires
-a typography-driven mixed-clause and continuation grammar that can distinguish
-Roman explanations, Tibetan examples and their translations within one source
-layout unit. The conservative opening/header grammar implemented here cannot
-establish those boundaries. That capability should precede historical-print
-canonical adaptation or full reader/product development.
+| Reason | Characters |
+| --- | ---: |
+| Quotation-adjacent fragment lacking a unique envelope | 2,175 |
+| Reference target/comparison continuation | 1,568 |
+| Lexical substitution clause with unresolved internal roles | 1,188 |
+| Mixed/Roman clause lacking syntactic closure | 439 |
+| Wrapped form/clause lacking a role boundary | 293 |
+| Isolated form/clause fragment | 112 |
+| Body/header alias continuation | 31 |
+
+These diagnostic reasons preserve exact spans and nearby source/canonical context;
+they are not semantic assignments. The separate 157 reference-clause characters
+were rerun without a defensible new envelope. HTML's 2,793 other-heading characters
+comprise 641 register/grammatical-label characters, 973 shared/composite heading
+syntax and 1,179 unregistered heading wording. They must not all be forced into
+relations. Other HTML residue remains 608 quotation/gloss, 234 aliases, 95 headers
+and 36 reference characters.
+
+`mixed_clause_holdout.json` freezes **36 previously unreviewed PDF entries on 36
+independent physical pages**, twelve each from acquired volumes 2, 3 and 4, before
+implementation outcomes. These are the acquired online PDF manifestations, not a
+historical-print adaptation test. `mixed_clause_review.jsonl` records facsimile
+inspection, exact accepted header/fragment spans, controls and misses. No false
+claim from the **new** mixed/header rules was observed. The sample also exposes a
+**pre-existing** opening-v3 false fragment `, vgl.` in the’u raṅ, and an opening
+parenthesis boundary needing review in thos ldan. Missing shared pf./fut. grammar
+and quotation/continuation recall remain explicit. This is not a zero-defect claim
+for the whole parser or a statistical corpus accuracy estimate.
+
+All **29,877 projections and 114 frozen witnesses pass**; reader integrity failures,
+accepted bibliography identity loss and Lex. overlaps remain zero. Baseline owner
+and xref edges survive. Citations remain 109,425; identities 109,079 accepted / 346
+unresolved; owners 109,017 established / 408 unresolved. **No new citation owner**
+was justified by these boundaries. Lex. remains 39,688 items; xrefs, language and
+source text remain unchanged. `release/current` is untouched.
+
+**Not structurally mature.** The largest coherent remaining boundary capability is
+nested quotation/Tibetan excerpt → German translation parsing: **2,175
+quotation-adjacent prose characters**, alongside **1,101 separately classified
+quotation/gloss characters**. It needs balanced/nested quote and typography-aware
+translation envelopes, not broader Roman-prose absorption. This specific grammar,
+and the observed opening-v3 comparison-marker defect, should precede historical
+print adaptation or full reader/product work.
 
 ## Reproduction
 
 Run from the repository root with the acquired source cache and baseline SQLite:
 
 ```sh
-python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/schwieger_baseline.sqlite --baseline-commit a4f42b3af9 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline53caa.sqlite --baseline-commit 53caa38e6d --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
 python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
 python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --refine-boundaries
 python3 scripts/classify_badw_forensic_residue.py
