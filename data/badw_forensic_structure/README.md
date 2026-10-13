@@ -1,14 +1,15 @@
 # Forensic source-structure replay
 
-Baseline: `26ba4c1344`. Source hashes and runtime code hashes are pinned in
+Baseline: `a4f42b3af9` (after the Schwieger publication correction). Source hashes and runtime code hashes are pinned in
 `manifest.json`; raw sources, facsimiles and semantic SQLite remain in ignored
 `work/`. No release text was changed.
 
 ## Results and evidence
 
 All 29,877 witnesses project, with no reader integrity failures or accepted
-bibliography identity loss. Four exact citation reviews raise accepted identities
-from 109,075 to 109,079; the 109,425 citation occurrences remain unchanged.
+bibliography identity loss. The preceding forensic citation reviews established
+109,079 accepted identities; these and all 109,425 citation occurrences remain
+unchanged in this structural replay.
 The reviewed rows are in `../bibliography_forensic_citation_reviews.tsv`.
 
 * Achard 2015: author HAL bibliography and RET publisher independently identify
@@ -46,34 +47,64 @@ No new owner was inferred. Local variant parentheses and nested/malformed quotes
 expose possible bounded-grammar work; the pass does not prove that every remaining
 prose case is intrinsically unbounded.
 
-Header extraction now produces 9,360 fields, including 796 short-form, perfect,
-future and imperative relations with exact marker/target evidence. Aliases retain
-list grouping. `fresh_header_review.jsonl` records 12 fresh inspections, six PDF
-facsimiles and six preserved HTML structures. No false relation was observed;
-missed parallel aliases, shared tense connectives and composite targets remain
-explicit recall/model limitations. This sample is not a corpus accuracy estimate.
+Header extraction now produces **11,305 fields**, including **2,166 relations**,
+4,352 aliases, 2,938 homonym markers, 1,464 grammatical labels and 385 labelled
+verb forms. Whole composite targets, shared tense markers and ordered comma/und/
+`bzw.` alias groups retain exact marker/member spans. HTML and PDF use the same
+canonical header contract. PDF rules require explicit opening connectives,
+source typography and line/column continuity.
 
-Accounting partitions the unchanged 131,068 alphabetic gap characters into
-30,990 typed characters, 66,412 structural-label characters, 10,841 characters of
-decoding-placeholder syntax and **22,825 pending meaningful characters**.
-`pending_structure.jsonl.gz` retains source-bound candidates; classification does
-not itself assert semantic structure. Most former PDF Lex. gaps were `. Lex.`
-labels beside already parsed Lex. items: their reclassification is not new Lex.
-boundary recovery. Definitions were not widened and no catch-all was added.
-Unknown glyph signatures are enumerated without accepting unverified mappings.
+PDF recovery adds exact opening-definition fragments after typed headers and
+explicit hyphenated continuations of observed definitions. Existing definition
+nodes are preserved: new fragments record the source division, geometry and
+boundary evidence, and are available in the semantic store's `fragments` query.
+The rules stop at competing examples, Lex., citations, Sanskrit, sense markers,
+column changes, semicolons and unbalanced quotation boundaries. No generic prose
+container, proximity owner or unverified glyph mapping was introduced.
+
+The unchanged **131,068 alphabetic gap characters** now partition into **40,267
+semantically typed**, **66,331 structural-label**, **10,387 decoding-placeholder**
+and **13,960 pending meaningful characters**. Meaningful residue fell from
+22,825 by **8,865 characters (38.8%)**: HTML 6,401 → **3,766**, PDF 16,424 → **10,194**.
+The remaining PDF families are 6,379 lexical-prose characters without proven
+boundaries, 1,778 header candidates, 779 alias candidates, 1,101 quotation/gloss
+candidates and 157 reference-clause characters. Every pending span retains its
+source hash, exact location, local context, nearby components and concrete reason
+for remaining unresolved. Classification alone does not recover structure.
+The reference-clause contexts were inspected in full; dictionary-key references
+and insufficient clause envelopes do not justify additional passage claims.
+Placeholder counts measure diagnostic syntax, not printed glyphs; the decrease
+reflects precise header accounting, not new glyph-decoding mappings.
+
+`fresh_structural_review.jsonl` records **16 fresh witnesses (14 HTML, two PDF)**,
+separate from all 114 frozen witnesses and the earlier 12-header review. Source
+inspection found no false relation, over-wide recovered definition or duplicate
+content in this sample. PDF review directly checks the opening-definition rule;
+it does **not** complete the requested fresh coverage of nested quotations and
+mixed continuation families. This limited sample is not a corpus accuracy estimate.
 
 `integration.json` and `frozen_holdout_replay.jsonl` record reader checks, preserved
-baseline relationships and 114 frozen witnesses. Lex., xrefs and language metrics
-remain unchanged. The rejected stale-source PDF overlay remains rejected.
-Structural extraction is not yet complete; bounded header/prose repair remains
-necessary before historical-print adaptation or full reader/product work.
+baseline relationships and **114 passing frozen witnesses**. All 108,732 baseline
+citation-owner relationships and 6,825 baseline xref edges survive. Citation
+owners remain 109,017 accepted / 408 unresolved; no proximity inference was added.
+Lex. remains 39,688 items with zero canonical overlap; bibliography, xrefs and
+language metrics remain unchanged. The rejected stale-source PDF overlay remains
+rejected. `release/current` remains untouched.
+
+**Not structurally mature.** The next coherent engineering family is the **6,379
+PDF lexical-prose alphabetic characters** lacking proven boundaries. It requires
+a typography-driven mixed-clause and continuation grammar that can distinguish
+Roman explanations, Tibetan examples and their translations within one source
+layout unit. The conservative opening/header grammar implemented here cannot
+establish those boundaries. That capability should precede historical-print
+canonical adaptation or full reader/product development.
 
 ## Reproduction
 
 Run from the repository root with the acquired source cache and baseline SQLite:
 
 ```sh
-python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_semantic_residue/semantic.sqlite --baseline-commit 26ba4c1344 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/schwieger_baseline.sqlite --baseline-commit a4f42b3af9 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
 python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
 python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --refine-boundaries
 python3 scripts/classify_badw_forensic_residue.py

@@ -60,6 +60,8 @@ def entry_view(inspected, bibliography=None):
                     normalized_wylie=None, tibetan_script=None)
         if kind in ("tibetan", "sanskrit"):
             item["language"] = "bo" if kind == "tibetan" else "sa"
+        if node.get('structural_recovery'):
+            item['structural_recovery'] = node['structural_recovery']
         components.append((start, end, item))
         by_node[node["id"]] = item
     for node in p["nodes"]:

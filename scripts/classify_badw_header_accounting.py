@@ -35,6 +35,9 @@ def main():
     with (args.work/'projections.jsonl').open() as src, gzip.open(args.output/'header_accounting.jsonl.gz','wt',encoding='utf8') as out:
         for line in src:
             row=json.loads(line);p=row['projection'];packet=row['packet'];text=packet['review_text'];identity=packet['identity'];headers=header_fields(p,text);headings=heading_fragments(p)
+            from badw_pdf_structure_recovery import recover
+            recovered=recover(p,text)
+            semantic[identity].extend(dict(start=n['start'],end=n['end'],family='typed_opening_definition') for n in recovered['nodes'] if n.get('structural_recovery'))
             headcounts.update(h['header_kind'] for h in headers)
             typed=sorted(semantic[identity],key=lambda h:h['end']-h['start'])
             gaps,lexical,n=accounting(text,p['nodes']);total+=n

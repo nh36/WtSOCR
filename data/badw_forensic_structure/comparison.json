@@ -81,7 +81,7 @@
   "foreign_key_violations": [],
   "frozen_holdout_reader_passes": 114,
   "newly_projected": [],
-  "script_sha256": "8ab86dc44f137949b66b416d55247df59658620a4830402b8db45cd3912d22d5",
+  "script_sha256": "67b75572100e250443dc5dc1259dcdf5e9d32d36edbffb16cdfc66ede851bfa1",
   "store_rows": {
     "citation": 109425,
     "citation_passage": 109004,

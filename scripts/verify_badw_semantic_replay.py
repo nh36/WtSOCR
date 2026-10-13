@@ -116,6 +116,8 @@ def main():
                              Path('work/badw_relationship_closure/holdout_packets.jsonl'))
               for r in rows(path)):
         p=r['projection'];text=r['packet']['review_text']
+        from badw_pdf_structure_recovery import recover
+        p=recover(p,text)
         if contextual:p,_=augment_citations(p,text,resolver)
         semantic=hierarchy(p,text)
         refs=[]

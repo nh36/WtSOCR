@@ -50,12 +50,12 @@
     {
       "source_kind": "html",
       "family": "header_form_or_relation_candidate",
-      "count": 860
+      "count": 95
     },
     {
       "source_kind": "html",
       "family": "other_heading_source_text",
-      "count": 4405
+      "count": 2793
     },
     {
       "source_kind": "html",
@@ -65,27 +65,27 @@
     {
       "source_kind": "html",
       "family": "reference_clause_candidate",
-      "count": 294
+      "count": 36
     },
     {
       "source_kind": "pdf",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 2438
+      "count": 779
     },
     {
       "source_kind": "pdf",
       "family": "header_form_or_relation_candidate",
-      "count": 4041
+      "count": 1778
     },
     {
       "source_kind": "pdf",
       "family": "lexical_prose_without_proven_boundary",
-      "count": 7957
+      "count": 6379
     },
     {
       "source_kind": "pdf",
       "family": "quotation_or_gloss_candidate",
-      "count": 1831
+      "count": 1101
     },
     {
       "source_kind": "pdf",
@@ -96,7 +96,7 @@
   "unknown_glyph_signatures": {
     "⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧": 3,
     "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧": 10,
-    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧": 50,
+    "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧": 49,
     "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:1A29:4a5d91d89107⟧": 1,
     "⟦UNKNOWN:TT9C8D2EB9tCID-WinCharSetFFFF-H2:regular:72B3:04c26ab6e4d3⟧": 1,
     "⟦UNKNOWN:Arial:regular:0003:ebbba6ed181c⟧": 2,
@@ -134,7 +134,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6A2B:865d884d0bf2⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6479:591ded5714f5⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6DD8:b1fc3d565924⟧": 1,
-    "⟦UNKNOWN:TGaramond:regular:0005:6c712ce2cc13⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6A31:c0e026ea74b4⟧": 1,
     "⟦UNKNOWN:TGaramond:italic:00D0:2ad66a970875⟧": 7,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6BA2:a0c7b5473416⟧": 1,
@@ -163,8 +162,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8AED:6cea3816a879⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:66F3:6d4230e3806d⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:847A:b48013c9f52f⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E62:0332397ccaa2⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧": 4,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8F53:3fa8219a7047⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:40CA:7346482fe41d⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4970:757aaebdc9ca⟧": 1,
@@ -177,6 +174,7 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:85C5:41fe346a34bb⟧": 3,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5D83:44045dbeaf7c⟧": 3,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5F7D:5d8a8931021c⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧": 3,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4453:3d58adf2215b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4555:2b0141fe74ff⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4455:6276795ef8df⟧": 2,
@@ -190,8 +188,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5888:5f9719e0912b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7C7C:373c7337bcfc⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5E83:87aeed757ef9⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:805F:7eae2effea7e⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3ED0:cc3f83ba1449⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7CB1:71798701acb5⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:574D:247e515c31df⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4199:5f43705fb33e⟧": 1,

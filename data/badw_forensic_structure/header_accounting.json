@@ -11,7 +11,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 109874
+      "count": 108267
     },
     {
       "source_kind": "html",
@@ -36,12 +36,12 @@
     {
       "source_kind": "html",
       "family": "typed_grammatical_label",
-      "count": 1456
+      "count": 1464
     },
     {
       "source_kind": "html",
       "family": "typed_header_relation",
-      "count": 579
+      "count": 2197
     },
     {
       "source_kind": "html",
@@ -51,17 +51,17 @@
     {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 70164
+      "count": 71223
     },
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 128
+      "count": 124
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9666
+      "count": 9639
     },
     {
       "source_kind": "pdf",
@@ -76,22 +76,32 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 1290
+      "count": 1528
     },
     {
       "source_kind": "pdf",
       "family": "typed_citation",
-      "count": 7
+      "count": 8
     },
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 314
+      "count": 525
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_opening_definition",
+      "count": 121
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_verb_form",
+      "count": 299
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 1472
+      "count": 775
     }
   ],
   "alphabetic_characters": [
@@ -103,7 +113,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 6401
+      "count": 3766
     },
     {
       "source_kind": "html",
@@ -128,12 +138,12 @@
     {
       "source_kind": "html",
       "family": "typed_grammatical_label",
-      "count": 3564
+      "count": 3620
     },
     {
       "source_kind": "html",
       "family": "typed_header_relation",
-      "count": 1794
+      "count": 4373
     },
     {
       "source_kind": "html",
@@ -148,12 +158,12 @@
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 10841
+      "count": 10387
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28996
+      "count": 28915
     },
     {
       "source_kind": "pdf",
@@ -168,7 +178,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 14406
+      "count": 16115
     },
     {
       "source_kind": "pdf",
@@ -178,20 +188,30 @@
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 2155
+      "count": 3541
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_opening_definition",
+      "count": 2408
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_verb_form",
+      "count": 1262
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 16424
+      "count": 10194
     }
   ],
   "canonical_header_fields": {
     "homonym_marker": 2938,
-    "alternate_headword": 4077,
-    "header_relation": 796,
-    "grammatical_label": 1456,
-    "verb_form": 93
+    "alternate_headword": 4352,
+    "header_relation": 2166,
+    "grammatical_label": 1464,
+    "verb_form": 385
   },
   "pdf_candidates": [
     {
@@ -348,6 +368,20 @@
         "source_sha256": "70c4b78d3d3fd296fd50297abc90caad708516ac6f24b28b6f070fc8ec0ca1f8"
       },
       {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20ru%20ra/1",
+        "start": 61,
+        "end": 67,
+        "literal": "Kurzf.",
+        "source_sha256": "a735b673a417723f6ffeef6d0cd4287a66ca7428488b7a681420b56f05a98805"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/babs/1",
+        "start": 68,
+        "end": 72,
+        "literal": " zu ",
+        "source_sha256": "a5c5918c2219ea8b567605f7ff8764489bcbec4fbfcb94ab1c0ab9db0ac390e8"
+      },
+      {
         "identity": "badw:https://wts-digital.badw.de/lemma/bad/3",
         "start": 53,
         "end": 59,
@@ -374,78 +408,6 @@
         "end": 67,
         "literal": "Kurzf.",
         "source_sha256": "aba4e19b9f08284c2c815b7af031cf280a7f3b33e454050a3f1dd11e34a9de08"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bag%20gsar/1",
-        "start": 67,
-        "end": 72,
-        "literal": " für ",
-        "source_sha256": "aba4e19b9f08284c2c815b7af031cf280a7f3b33e454050a3f1dd11e34a9de08"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bai%20dkar/1",
-        "start": 61,
-        "end": 67,
-        "literal": "Kurzf.",
-        "source_sha256": "89c676ac74241284c6a3f15220212b559033314cb271b7f6357ab8f353f71901"
-      }
-    ],
-    "source_heading_pending_type": [
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/ba%20ru%20ra/1",
-        "start": 61,
-        "end": 67,
-        "literal": "Kurzf.",
-        "source_sha256": "a735b673a417723f6ffeef6d0cd4287a66ca7428488b7a681420b56f05a98805"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/babs/1",
-        "start": 68,
-        "end": 72,
-        "literal": " zu ",
-        "source_sha256": "a5c5918c2219ea8b567605f7ff8764489bcbec4fbfcb94ab1c0ab9db0ac390e8"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/ban/3",
-        "start": 53,
-        "end": 59,
-        "literal": "Kurzf.",
-        "source_sha256": "aaad17233f5b76ebcf100008373149d254ec93492d96e8bde85fa95c6fccfe22"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/ban/3",
-        "start": 59,
-        "end": 64,
-        "literal": " für ",
-        "source_sha256": "aaad17233f5b76ebcf100008373149d254ec93492d96e8bde85fa95c6fccfe22"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bar/2",
-        "start": 46,
-        "end": 66,
-        "literal": "\n      postpos.\n    ",
-        "source_sha256": "841e813f17534213e7363cf40063ef3e6bf5ee5de81b57cd9ea8747fae2d3037"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20la/1",
-        "start": 57,
-        "end": 77,
-        "literal": "\n      postpos.\n    ",
-        "source_sha256": "0a6e19861acbd061d7de06ff070560ce9f07fb9646fdb148cb7c5c2526bcb29f"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20tu/1",
-        "start": 58,
-        "end": 78,
-        "literal": "\n      postpos.\n    ",
-        "source_sha256": "db9d8341458be5932d0429dd8cb892586fea6d7e4307f71543181d3ca8d1f861"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/1",
-        "start": 52,
-        "end": 72,
-        "literal": "\n      postpos.\n    ",
-        "source_sha256": "7d6f504bfec5cea69e93ff040427ffee84e37679c364b0d8b05c8802094c52e9"
       }
     ],
     "typed_grammatical_label": [
@@ -471,39 +433,97 @@
         "source_sha256": "45bcf35efdf4926e8b7efc284ca1f8667ad8b66a673ca9572df0ec0f262df8de"
       },
       {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar/2",
+        "start": 53,
+        "end": 61,
+        "literal": "postpos.",
+        "source_sha256": "841e813f17534213e7363cf40063ef3e6bf5ee5de81b57cd9ea8747fae2d3037"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20la/1",
+        "start": 64,
+        "end": 72,
+        "literal": "postpos.",
+        "source_sha256": "0a6e19861acbd061d7de06ff070560ce9f07fb9646fdb148cb7c5c2526bcb29f"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20dag%20tu/1",
+        "start": 65,
+        "end": 73,
+        "literal": "postpos.",
+        "source_sha256": "db9d8341458be5932d0429dd8cb892586fea6d7e4307f71543181d3ca8d1f861"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/1",
+        "start": 59,
+        "end": 67,
+        "literal": "postpos.",
+        "source_sha256": "7d6f504bfec5cea69e93ff040427ffee84e37679c364b0d8b05c8802094c52e9"
+      },
+      {
         "identity": "badw:https://wts-digital.badw.de/lemma/bar%20du/2",
         "start": 59,
         "end": 63,
         "literal": "adv.",
         "source_sha256": "5924331ccc824eec46495db177147f664df563f0091f9ca8a006931d29f3b16f"
+      }
+    ],
+    "source_heading_pending_type": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bdu%E1%B9%85/1",
+        "start": 88,
+        "end": 92,
+        "literal": "bzw.",
+        "source_sha256": "7ef6a82fa3458d1e6941e2272f345c78d270875cb070c6b9580fdd1d717b71c0"
       },
       {
-        "identity": "badw:https://wts-digital.badw.de/lemma/ba%E1%B9%85s/1",
-        "start": 55,
-        "end": 58,
-        "literal": "pf.",
-        "source_sha256": "1f94414b6ad3597a4cf1c09ba09c2c00853966c72f181afcab5b53a832855566"
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99/1",
+        "start": 54,
+        "end": 61,
+        "literal": "alttib.",
+        "source_sha256": "8cb098fbd3c529f643e7dcd650e7c76de9d31af7cfb3046e0cd45c024cb21c02"
       },
       {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20byas/1",
-        "start": 63,
-        "end": 66,
-        "literal": "pf.",
-        "source_sha256": "6915df6d325576d45215b657cdfeb36180cd4b36c270acf3ccbdf0d87be40568"
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20stsal/1",
+        "start": 81,
+        "end": 88,
+        "literal": "alttib.",
+        "source_sha256": "127788640458db6e2691c58770674b34753b06eef5954ac9aa09044916759a7f"
       },
       {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20bya/1",
-        "start": 69,
-        "end": 73,
-        "literal": "fut.",
-        "source_sha256": "db5479f0d9419fc47fd25121cffc788fb96973b819ee2b572941fb56f91cb546"
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20stsal/1",
+        "start": 106,
+        "end": 111,
+        "literal": "resp.",
+        "source_sha256": "127788640458db6e2691c58770674b34753b06eef5954ac9aa09044916759a7f"
       },
       {
-        "identity": "badw:https://wts-digital.badw.de/lemma/bdag%20gir%20byas/1",
-        "start": 71,
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20stsol/1",
+        "start": 65,
+        "end": 70,
+        "literal": "resp.",
+        "source_sha256": "0d31b2eae08bbafb02823b0ecf5688d83bc13b4b1a43e355c27159622e1b86b3"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20%C5%9Bog/1",
+        "start": 62,
+        "end": 69,
+        "literal": "alttib.",
+        "source_sha256": "0839b269d647ee396996417690c34d18199cb49e75f8f8bfd31e420f45f5f745"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20%E2%80%99og%20tu%20chud/1",
+        "start": 77,
+        "end": 84,
+        "literal": "alttib.",
+        "source_sha256": "457c271e7b9ec432ec3651acc0c58844dc016e9f1783d893d52b5562ed64c9e2"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/bkral/1",
+        "start": 70,
         "end": 74,
-        "literal": "pf.",
-        "source_sha256": "2ea241320208a3209bc8a8fd46c5ba6730075471ae214fa1c3aa396e62b99671"
+        "literal": "bzw.",
+        "source_sha256": "b93872180b5c93595972930df0471832d529722ff8df6f538fe098a3ea444530"
       }
     ],
     "typed_Sanskrit_form": [
@@ -617,53 +637,53 @@
         "source_sha256": "9f50d1e871e5a7fa2bde0ec0b1e44854d242dbd6689a974233abe818933c2f54"
       },
       {
-        "identity": "badw:pdf:badw-v2-a43f0bca12a0227e20798a62cab27acda5ebee143c83478cc492d22805c6a26f:779",
-        "start": 8,
-        "end": 13,
-        "literal": ", ga ",
-        "source_sha256": "03f95ccc2cbdc1f56cc47ac1a31e8ae9b74e5ac4a607cba8569d8c7f4a684a10"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-f6cef5ea2df255b13f6bac1cf5f77355f7dc894d0d4374bc392e3e82b5822f30:1304",
-        "start": 0,
-        "end": 5,
-        "literal": " pf. ",
-        "source_sha256": "73d004cd748765a20733d499f6bf5d73e9f758e93cafd9f10028bf7e13b846d4"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-7b557f6b9a80b4664721e7edc488df506e0b28fcf0e857dd8eabd3c454433cff:981",
-        "start": 0,
-        "end": 15,
-        "literal": " pf. kha mṅags ",
-        "source_sha256": "6c17b246788d39152f2b478529d466750427d0dcf972320609b56ff98cd24481"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-ae21f2d2e5699fee5d34cbbf495941b534a9976d4d861f3ef175fac0f3b08891:66",
-        "start": 14,
-        "end": 53,
-        "literal": " „Zubinden\ndes Mauls“, ein gTo-Ritual.\n",
-        "source_sha256": "c2a65a2ed7a31a37df260a47fa1853e49db5ca7b5f393b37bc7b94f29b6022df"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-94e53758c4140e89927e31cd8e1e6222e37d938f81f905fcb6a985274742eb94:1971",
-        "start": 0,
-        "end": 15,
-        "literal": " pf. kha ’chus ",
-        "source_sha256": "6891d2adf91464d71598096a3368c35d839d96e4ee70c14aff820a61e71efca5"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-2fab92d1ba2d854a0cecc63b97069e34c350d788b965c54da365642df666eccb:1414",
-        "start": 0,
-        "end": 17,
-        "literal": " pf. und fut. zu ",
-        "source_sha256": "3ab866cd4b42d0406a8ccedae21c92713b333159ad137f672f09a4b7daf37ea2"
-      },
-      {
         "identity": "badw:pdf:badw-v2-04b0dfeec1fb2736f34135fb98d33e67831e52825fe45fbdf80fc5ab5ab2107a:255",
-        "start": 0,
-        "end": 5,
-        "literal": " pf. ",
+        "start": 15,
+        "end": 21,
+        "literal": " fut. ",
         "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9e720163c3c42684ac6eee8bfb1f8a54d38a9bb367aa60398fb7bcc30b836e2c:734",
+        "start": 61,
+        "end": 105,
+        "literal": "\nbyed unter Kontrolle halten, niederwerfen.\n",
+        "source_sha256": "168ccb724633affa14e467457a2642a094afa06f9def92082053047b2fef02b3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-df5746cc398693ca32e01d1eb68c33636ea1c2d3de4ca44406dab7e242945b8e:1261",
+        "start": 14,
+        "end": 21,
+        "literal": ", auch ",
+        "source_sha256": "d00884d3f1a862e9a43b2e64537bfb00907c15de7e0610319836ba402274abb6"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-138d1f2d6505e033a0f5a7fee3219bd7338bba2c6976eec32839f1875affe2be:107",
+        "start": 122,
+        "end": 146,
+        "literal": " s. v. pratijñottaraka.\n",
+        "source_sha256": "bc0ee80407bb54b399cd4ad7f1ac860c441049dbf05f9e179815358cc694c1e2"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
+        "start": 39,
+        "end": 57,
+        "literal": "; kha lo sgyur ba ",
+        "source_sha256": "7843f5cf56c154f2c4c28dc7bb981bc05be21a60d39dcad39257b3fb0d70e200"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
+        "start": 103,
+        "end": 139,
+        "literal": ",\nbesonders als Beiname des Buddha.\n",
+        "source_sha256": "7843f5cf56c154f2c4c28dc7bb981bc05be21a60d39dcad39257b3fb0d70e200"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1705",
+        "start": 44,
+        "end": 63,
+        "literal": ";\nkha lo bsgyur ba ",
+        "source_sha256": "7ccb00f70f7b1ff8a3c90f25e0cd735ac0d2d730fafa2b58665725835aa635a3"
       }
     ],
     "source_decoding_residue": [
@@ -722,6 +742,122 @@
         "end": 65,
         "literal": "\nQutu⟦UNKNOWN:TGaramond:regular:0020:f958a53c825f⟧tu.\n",
         "source_sha256": "f3576010478adcad58ff0f07e2677645c392fb82c836f3a196bc111cb84e0a86"
+      }
+    ],
+    "typed_verb_form": [
+      {
+        "identity": "badw:pdf:badw-v2-f6cef5ea2df255b13f6bac1cf5f77355f7dc894d0d4374bc392e3e82b5822f30:1304",
+        "start": 1,
+        "end": 5,
+        "literal": "pf. ",
+        "source_sha256": "73d004cd748765a20733d499f6bf5d73e9f758e93cafd9f10028bf7e13b846d4"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-7b557f6b9a80b4664721e7edc488df506e0b28fcf0e857dd8eabd3c454433cff:981",
+        "start": 1,
+        "end": 14,
+        "literal": "pf. kha mṅags",
+        "source_sha256": "6c17b246788d39152f2b478529d466750427d0dcf972320609b56ff98cd24481"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-94e53758c4140e89927e31cd8e1e6222e37d938f81f905fcb6a985274742eb94:1971",
+        "start": 1,
+        "end": 14,
+        "literal": "pf. kha ’chus",
+        "source_sha256": "6891d2adf91464d71598096a3368c35d839d96e4ee70c14aff820a61e71efca5"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-04b0dfeec1fb2736f34135fb98d33e67831e52825fe45fbdf80fc5ab5ab2107a:255",
+        "start": 1,
+        "end": 5,
+        "literal": "pf. ",
+        "source_sha256": "1036585ccb3ed3267f996409501493c2ae648eee2e8f9293721a9864f9228b54"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9e720163c3c42684ac6eee8bfb1f8a54d38a9bb367aa60398fb7bcc30b836e2c:1827",
+        "start": 1,
+        "end": 5,
+        "literal": "pf. ",
+        "source_sha256": "1098e6281b7ad0750115b95f788c66f17165cd1bd6923ff677bd05d915ae4c8e"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-cd453e0a1ff7c36950ad91128ca39bfd25a63b0fe641acd25a009288ef1b4b3b:264",
+        "start": 1,
+        "end": 23,
+        "literal": "fut. und pf. kha sprod",
+        "source_sha256": "06daf83953e90c47665eded3dc8c1b73701d2876334b6f001c1f478a6ed02ccd"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9e0ce6a555b80e2694d6b9e185a72ebc15991dbf48e725c08a337bcd04946578:1170",
+        "start": 1,
+        "end": 5,
+        "literal": "pf. ",
+        "source_sha256": "5e5869ed800a73282ee265c6684d811a89efed1b9af2dca19dbf381b2b0a5a45"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
+        "start": 1,
+        "end": 5,
+        "literal": "pf. ",
+        "source_sha256": "7843f5cf56c154f2c4c28dc7bb981bc05be21a60d39dcad39257b3fb0d70e200"
+      }
+    ],
+    "typed_opening_definition": [
+      {
+        "identity": "badw:pdf:badw-v2-ae21f2d2e5699fee5d34cbbf495941b534a9976d4d861f3ef175fac0f3b08891:66",
+        "start": 15,
+        "end": 52,
+        "literal": "„Zubinden\ndes Mauls“, ein gTo-Ritual.",
+        "source_sha256": "c2a65a2ed7a31a37df260a47fa1853e49db5ca7b5f393b37bc7b94f29b6022df"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
+        "start": 28,
+        "end": 39,
+        "literal": "ren, lenken",
+        "source_sha256": "7843f5cf56c154f2c4c28dc7bb981bc05be21a60d39dcad39257b3fb0d70e200"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1705",
+        "start": 26,
+        "end": 44,
+        "literal": "regieren, anführen",
+        "source_sha256": "7ccb00f70f7b1ff8a3c90f25e0cd735ac0d2d730fafa2b58665725835aa635a3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-925a6b0dc9828bcea7d040f11f76b329ca15f3a7f5c732803943f1d27a3568bd:1505",
+        "start": 20,
+        "end": 44,
+        "literal": "Extrakt, Kan-\ndiszucker.",
+        "source_sha256": "296123a86033d312d55cb14a21baf40368ce2ebca01eb2f4836cb60695c95b20"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-f6508031428c442319cec5f406ba6e3ae1931a98b1ca99120309d46e35bde2a5:1889",
+        "start": 27,
+        "end": 38,
+        "literal": "elle Speise",
+        "source_sha256": "b7b694bf9a55b28f4ee8e76d720de065e0038874679317186be1673435d9c1e3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-09891ee71c577b402f2a4e7331b51f2ba9532c653a6b043473a597242031c8a9:2212",
+        "start": 31,
+        "end": 50,
+        "literal": "Kleinkönig, Vasall.",
+        "source_sha256": "8e30f4c14c484370855afa295242d66750f3122165759147f467d5334d128ce1"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-423c1a9bf306e912b07f02f4f760c7b8fe4c69aa49a57323d63ee91c0b44006e:489",
+        "start": 23,
+        "end": 35,
+        "literal": "versprechen.",
+        "source_sha256": "071682dae50f73393c1af971fa68ae9c509234127d3558f2dfc8e60bd0353174"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:38",
+        "start": 67,
+        "end": 71,
+        "literal": "vgl.",
+        "source_sha256": "c65b36725e61d3f054635cf95d9eac1ffe582ec53aa9ac3b3cdf23d5f3e7eafc"
       }
     ]
   },

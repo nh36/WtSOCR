@@ -35,7 +35,18 @@ def main():
                 elif g['family']=='source_heading_pending_type':family='other_heading_source_text'
                 else:family='lexical_prose_without_proven_boundary'
                 families[(p['source_kind'],family)]+=g['alphabetic_characters']
-                pending.write(json.dumps(dict(identity=identity,source_sha256=p['review_text_sha256'],start=g['start'],end=g['end'],literal=literal,family=family,alphabetic_characters=g['alphabetic_characters'],status='diagnostic_candidate_not_semantic_claim'),ensure_ascii=False)+'\n')
+                reasons = {
+                    'header_form_or_relation_candidate': 'Explicit header marker remains, but complete target/style continuity is not established by the accepted heading grammar.',
+                    'alias_list_or_header_continuation_candidate': 'Auch/list syntax alone does not distinguish a header alias from body prose or establish the complete member boundary.',
+                    'reference_clause_candidate': 'Reference connective/key text lacks an independently bounded canonical clause; existing citations are preserved separately.',
+                    'quotation_or_gloss_candidate': 'Quote punctuation does not establish a unique example/gloss role and source envelope.',
+                    'other_heading_source_text': 'Heading text lacks a complete accepted marker/target or grammatical-field production.',
+                    'lexical_prose_without_proven_boundary': 'No accepted typography/header or explicit hyphen-continuation production establishes the lexical role and boundary.',
+                }
+                nearby = [dict(id=n['id'],kind=n['kind'],start=n['start'],end=n['end'])
+                          for n in row['projection']['nodes']
+                          if n['start'] < g['end']+60 and g['start']-60 < n['end']]
+                pending.write(json.dumps(dict(identity=identity,source_sha256=p['review_text_sha256'],start=g['start'],end=g['end'],literal=literal,family=family,alphabetic_characters=g['alphabetic_characters'],status='diagnostic_candidate_not_semantic_claim',unresolved_reason=reasons[family],context=text[max(0,g['start']-100):min(len(text),g['end']+100)],nearby_components=nearby),ensure_ascii=False)+'\n')
     result=dict(ownership_families=[dict(source_kind=k[0],family=k[1],count=v) for k,v in sorted(counts.items())],pending_alphabetic_families=[dict(source_kind=k[0],family=k[1],count=v) for k,v in sorted(families.items())],unknown_glyph_signatures=dict(glyphs),policy='No owner or decoding mapping inferred from diagnostic family; literal spans preserved.')
     (a.output/'forensic_residue.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result,ensure_ascii=False))

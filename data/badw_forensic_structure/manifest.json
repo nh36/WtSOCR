@@ -1,9 +1,9 @@
 {
   "actual_entry_index_sha256": "90f0d3bcca87509cca469a9147a5dd1a394b29c0c4b3640ba4ab10cbe7c22afb",
-  "baseline_commit": "26ba4c1344",
-  "baseline_store_sha256": "da5cd2fc63683be9352d34e985504bfd29eb6ea7dbfc6e66785029c3f0fc7f49",
+  "baseline_commit": "a4f42b3af9",
+  "baseline_store_sha256": "108cce1d102e5092d4ecf1e720ea50df61aebe0c045b852a7844003c47e99ae4",
   "code_sha256": {
-    "/Users/nathanhill/Code/WtSOCR/scripts/finalize_badw_corpus_structure.py": "0fff84cafde8e3bb6d3226f9ed77323511e8e211e8fabf565e8c45422749b70f",
+    "/Users/nathanhill/Code/WtSOCR/scripts/finalize_badw_corpus_structure.py": "39df47f5b0b6504b75188171156658707fc9015569cc816c1d17c171e6b33c49",
     "scripts/audit_badw_article_structure.py": "d40a08b0c78c8f065ca449c4a1d7e48681fa54e37c462d607e670e1453129fda",
     "scripts/audit_badw_corpus_structure.py": "50f3a505b3158683a973a509af7ded7388d9877d9e7a99e2aa35b4878c4eac85",
     "scripts/audit_badw_pdf_entries.py": "73bbdffd56d186f76958b2bcdcfce211d537d5207048cbc90e97d1525b598e14",
@@ -19,11 +19,11 @@
     "scripts/badw_catalogue.py": "7ae42a0e63fde4be92343be4ff9ca6a64ccc363b244e5eced3c82ae1dda404a8",
     "scripts/badw_citation_components.py": "b574298ef7deed8c358c3ede547141b3fcd7072c08cb58ecd821e6309b938aed",
     "scripts/badw_contextual_semantics.py": "886e5d9488ddef3db2f5aaf0e71cff4de8a9b249ae5f0ce9f2ef1b9c7608b11f",
-    "scripts/badw_dictionary_entry_view.py": "e547091a159e0ed4e8e86ecbfb3307800281e5efe6974094e9993211de1d07d3",
+    "scripts/badw_dictionary_entry_view.py": "124d2dc9465257302f9fcd65712c9c6dc972e3d4433c63a3c2aa46fe7b58998c",
     "scripts/badw_dictionary_prototype/app.js": "170aa165f6465e06e05aeae87ac40df1ea0a29690e1b0cdf23cf9ecffd0163f7",
     "scripts/badw_dual_identity.py": "2afb328611af008bfc94840efb5ee968c7287af3e98dba64b318d64ed4b05c01",
     "scripts/badw_glyph_residuals.py": "64125ac3e5cf89f9a10448036e2907c95f44c9e420849956fe41bc2da72d349d",
-    "scripts/badw_header_structure.py": "8626e55f510a0f90283d1f5afd362d2019bc5c06580675bd92daf2993168926a",
+    "scripts/badw_header_structure.py": "2b5e9793a6ef56574bf2d26e44a973693293725f2f2fcacdbfb360f5eb70003b",
     "scripts/badw_html.py": "dac96912c231879db836f597fd79de32ab100b12066996487e87337c1211af4f",
     "scripts/badw_identity_handoff.py": "17c0325f136d5f07fe51da2745c50fded1c14d77cfebb676e1929ab389bad0e3",
     "scripts/badw_neighborhood_identity.py": "1c978adfab376b2e3afdec18a5b5be02a1d5c895ed9721194b5e0625368acf82",
@@ -31,12 +31,13 @@
     "scripts/badw_pdf_candidate_tree.py": "62b285de2cbc4cad40e0d7245d8bb29ed5f069846a47624ae3ead688471d3f94",
     "scripts/badw_pdf_decoder.py": "ac831205c8abf238687bf4ebca9be5c5b22a44695231be6b727077366d9458f6",
     "scripts/badw_pdf_expressions.py": "fb831f3caa264c267c5a9b005d1a97d25ade35ea4e7f221a623acbcfb971dd66",
+    "scripts/badw_pdf_structure_recovery.py": "0f405e93a78f225abd0504ec32f8ee3828deb9a057ca2ce25506dfbf52af8975",
     "scripts/badw_print_bibliography.py": "e4713033ea26b773768b5aeb6ad73150666fe125e78ad933f0ae4b888ecc77f5",
     "scripts/badw_print_crosswalk.py": "6dad60c467a8afd92de61adcecb7b0d6dbb51bd3194de2be373f1e687f36a040",
     "scripts/badw_reader_bibliography.py": "9e038c9a1ade9ddda4eac1d20bf47eea2f5e9c119d5313b2e8f45dfadad79106",
     "scripts/badw_semantic_annotations.py": "f5884363a652fc170b6a38a9f85361082aaf70904649acf3a1a77587afa662a6",
     "scripts/badw_semantic_hierarchy.py": "f06603814e184a62dc12555aa91f6dbc0a0070880ee90ef586e23ab9c407418d",
-    "scripts/badw_semantic_store.py": "c54aed219794461cc15f158fb1b295974b5f7e4d6868c0ff6ccf84c81079234e",
+    "scripts/badw_semantic_store.py": "b98cb6dffda3a589f3043cfe148b9194b1ac3aa1189e633a31cdd65d8654cea1",
     "scripts/badw_source_cache.py": "4d9c0c4edc4e320b20e13b3fd34119fcde4c629c9118b9f39ed2f61c454b81f9",
     "scripts/badw_source_components.py": "6380c258251a02906210eb470b2b17cedbc59b17052b9d07f1458d1b6600b5b5",
     "scripts/badw_source_coverage.py": "8ab00631d1dbd25c9068ffa203668ef869c6906b88b24823553eca12d1ead6cc",
@@ -74,7 +75,7 @@
     "scripts/stitch_badw_pdf_entries.py": "10ca4590e2b778c33205009d3d9abd4cc14ddf36ae11e70a1ae3a4a3d2e1fb38",
     "scripts/summarize_badw_corpus_structure.py": "5de3fdefdd6ad6eaabe6d024c9525a149e581269476a539fe5fce73016d19c79",
     "scripts/verify_badw_lexical_source.py": "0e76bb8410cd43f5e34f5324f2ed20820b3212e4fdccbef64ff0949cc0343768",
-    "scripts/verify_badw_semantic_replay.py": "8ab86dc44f137949b66b416d55247df59658620a4830402b8db45cd3912d22d5"
+    "scripts/verify_badw_semantic_replay.py": "67b75572100e250443dc5dc1259dcdf5e9d32d36edbffb16cdfc66ede851bfa1"
   },
   "contextual_semantics": true,
   "execution_code_sha256": {
@@ -135,40 +136,45 @@
     "work/wts_apparatus_20261010/ingested_completed/source_rows.jsonl": "be4edd8e94afbb8b996f11bca0bd4dabf3357e0578b9bd80289ec1d5a8ab1979"
   },
   "outputs_sha256": {
-    "data/badw_forensic_structure/README.md": "a4f2c53a1ad28357f27f5129ee6a574bcd27c53a9f8206bf952d4ee10428f316",
+    "data/badw_forensic_structure/README.md": "311028e0dd848bc09bd56917be3663fc21adc9f28b4e5db60926f0ebfe0c7dfb",
     "data/badw_forensic_structure/accounting.json": "32c24e65eced8c830dd6bb78177479691a9a4dfdf38a0e76c17ca4a6740e0cd6",
     "data/badw_forensic_structure/anomalies.jsonl.gz": "04ad814840fb51cdcdb5698e9ba9f4cfef4a7f90c83c5c0f9a494f5561d9e5fd",
     "data/badw_forensic_structure/badw_questions.tsv": "2bfa639513822104eb9511231c1a59514edea7530c49c912a42946dd0b936760",
     "data/badw_forensic_structure/baseline_residue.jsonl.gz": "3cae6e1a63cd52c06c03e92a3c854be8fe26e65b23874b8992f7a692673b4cd7",
-    "data/badw_forensic_structure/comparison.json": "815cb02832079cb4ec7d1dad99012fdb383a2c3092cbbdf143e195911296eceb",
+    "data/badw_forensic_structure/comparison.json": "3bf21cc64fa9ae24b0ab2bae985cb0976a709023265c0a2c118ccdeca2ea9044",
     "data/badw_forensic_structure/contextual_classification.json": "fdf88e96491652d7f669c5d7eef10fd65d05bf313929ced56d61fdd9de45d82d",
     "data/badw_forensic_structure/contextual_classification.jsonl.gz": "6cabc1813f7b20488628675c3707b24468f84ad77dff1725a150ab1c0ebfd8f3",
     "data/badw_forensic_structure/entries.tsv": "cd71e8f86482b1bfbdb4147b2c0332c0a03972aaaad715abe51c5787cbdc871c",
     "data/badw_forensic_structure/families.json": "221f62b5d37285d075235fbddeb14a00899fe815e7ab19d1609fdda4cb4f5337",
-    "data/badw_forensic_structure/forensic_residue.json": "51bb3b87ee4fdabcb937b05d1fe23208e0b35f56fb99e1b7896ac560584e7134",
+    "data/badw_forensic_structure/forensic_residue.json": "5df44ddae5c41ba5893eca95a500009ad8b2fa053d6af4e78ab2a1043348c89a",
     "data/badw_forensic_structure/fresh_header_review.jsonl": "375c00ce4e7a882b91aedb3ab3ad04d19a14f6b5dac7aec6c0f44379a3b1a88c",
+    "data/badw_forensic_structure/fresh_structural_review.jsonl": "9af7e2c2ebf08df1abbded3a4e01badf3d7428c04a9cd10bc6d80e46da3e39b4",
     "data/badw_forensic_structure/frozen_holdout_replay.jsonl": "29b1ae9aa9a83f92fc9a2564bb2962796735bfcd0e81874c10aa1059fa556168",
-    "data/badw_forensic_structure/header_accounting.json": "a81a128b53d23422d3e7174d905e39857674f5d22199581ce5b4418f4f8c31a9",
-    "data/badw_forensic_structure/header_accounting.jsonl.gz": "12439449382884a28619e035a0fab6f58b29bc783cb7aae8fc63365cde37a056",
+    "data/badw_forensic_structure/header_accounting.json": "417be986772b9e894b3c8ba1961195637ce2ac1593f26e1ec6445a9e4a256dae",
+    "data/badw_forensic_structure/header_accounting.jsonl.gz": "2c6b0058a710406f309886951d195ab8c21d4c967f7d592068c0040e20066f0e",
     "data/badw_forensic_structure/holdout.json": "92ca954fb94f0bdf7a5801bf4fd5432f75dcd07fc94cdd11d054bda7f1203a1c",
     "data/badw_forensic_structure/integration.json": "e5a19897a1b06d52372111c77bfa2f300e1bc9949df0ced8cb523aca40da5d1e",
     "data/badw_forensic_structure/ownership_context_review.jsonl": "00f0afb0c43ceb37691eefd16e05e03e5c71a6600994f4469bae896da4a272ab",
-    "data/badw_forensic_structure/ownership_residue.jsonl.gz": "b8ef0dee78e974ae17d77ba666a3920f333b72f6a28bcf203f73b45abd5b3cd0",
-    "data/badw_forensic_structure/pending_structure.jsonl.gz": "e4eab7659f554a70834bcee7b993e5ea46bd3a0ee420c85280aaad22a4118039",
+    "data/badw_forensic_structure/ownership_residue.jsonl.gz": "4c6280156503247b43d8bed3ff5685a0c076340e3bc3cf5afc6ca922dd25564c",
+    "data/badw_forensic_structure/pending_structure.jsonl.gz": "c03792d7d88307c1d57c882bc7aac6f6a26c4a29fb0f5d74547ad43c33464101",
     "data/badw_forensic_structure/relationships.json": "cc6664a974143edfef93106a4487045aa848c2451d30f66db5e521a3f693c092",
     "data/badw_forensic_structure/summary.json": "616840168c3bdc629646438d024bee861745e1c9d2a3e0891d01b0d705e212de"
   },
   "postprocessing_code_sha256": {
-    "scripts/build_status.py": "fbb932b7cef22ca1100ddc09e446297110cb3cfaf021780a77477e440aa36cc8",
-    "scripts/classify_badw_forensic_residue.py": "d700b3d87c09b2ddcf0b4042e56d15495046aa0237da1ab64ab000212c39c725"
+    "scripts/build_status.py": "d6620d7aad280694da4fc8c2eb890c00223d06f5e8c876ada9db99213e193f78",
+    "scripts/classify_badw_forensic_residue.py": "c6012d3830b577a592dadb000b7692164086f876cfa180d06c35ea6d539023f8",
+    "scripts/classify_badw_header_accounting.py": "76154b7dfc680020136dbe59ca7e403eb3bd0ee631c836abb5bad04c91bc513d",
+    "scripts/verify_badw_semantic_replay.py": "67b75572100e250443dc5dc1259dcdf5e9d32d36edbffb16cdfc66ede851bfa1"
   },
   "raw_projection_sha256": "eb2eecdd10426da7aee0f8840aba06ca5acdcb06f28ddc1cd85ca5de1af64199",
   "replay_notes": [
-    "Forensic replay from 26ba4c1344; four exact reviewed identities; no new ownership inference.",
-    "Fresh 12-entry header sample: six PDF facsimiles plus six HTML source inspections; recall/model limits explicitly retained."
+    "Structural replay against a4f42b3af9: 8,865 meaningful alphabetic characters recovered through typed headers and source-bounded PDF definition fragments; no new citation ownership inference.",
+    "All 29,877 witnesses project; 114 frozen witnesses and existing citation owners/xref edges preserved.",
+    "Fresh 16-witness review: 14 HTML and two PDF witnesses. No observed false structural claims; PDF holdout coverage remains limited.",
+    "execution_code_sha256 pins the actual finalizer used for this replay; postprocessing_code_sha256 pins final accounting, verification and status generation."
   ],
   "semantic_contract_version": "badw-semantic-hierarchy-v3",
-  "semantic_store_sha256": "108cce1d102e5092d4ecf1e720ea50df61aebe0c045b852a7844003c47e99ae4",
+  "semantic_store_sha256": "a5e5f69331dbb15e86f2a337628ded2a609ac208481dab2d1a112ebc82a91bb4",
   "source_scope": {
     "html": "work/badw_stage_c13_20260928/parsed/database_articles.jsonl",
     "pdf": "work/badw_verified_rebuild_20261003/structure_replay_v2/pdf_article_structure.jsonl.gz"
