@@ -1,0 +1,383 @@
+{
+  "baseline": "b677c3196c",
+  "examined_fragments": 163,
+  "withdrawn_or_shortened": 15,
+  "changes": [
+    {
+      "identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:38",
+      "review_text_sha256": "c65b36725e61d3f054635cf95d9eac1ffe582ec53aa9ac3b3cdf23d5f3e7eafc",
+      "source_span": {
+        "start": 67,
+        "end": 71
+      },
+      "literal": "vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 15,
+          "end": 71,
+          "literal": "eine Speise aus\nGetreide, besonders Fettgebackenes,\nvgl."
+        },
+        "continuation_of": [
+          "n1"
+        ]
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v2-5c07b1ab30c8e401f565c9cc1df1c00ceea4e5dd84057d871ddfaab7de969278:250",
+      "review_text_sha256": "3c927b8602635b73beb43f01105b2cb0a525f916ee7dad1c0650fd6e77eb47c1",
+      "source_span": {
+        "start": 29,
+        "end": 46
+      },
+      "literal": "„erfreuend“, vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 29,
+          "end": 46,
+          "literal": "„erfreuend“, vgl."
+        },
+        "continuation_of": []
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": [
+        {
+          "start": 29,
+          "end": 40,
+          "literal": "„erfreuend“"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v3-e8f17c3e7713626bdf746f44c1cba15c8386c4c62b1ec570f6e34bb220cffdc6:967",
+      "review_text_sha256": "70346ff02d6d7c6dc556a4b4a9f233ecd9ee0bfbaa72c4793cdc0a2366acfc16",
+      "source_span": {
+        "start": 26,
+        "end": 34
+      },
+      "literal": "mūliya (",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "hyphenated_definition_continuation",
+        "continuation_of": [
+          "n1"
+        ],
+        "envelope": {
+          "start": 1,
+          "end": 34,
+          "literal": "Bez. für den Laut Jihvā-\nmūliya ("
+        }
+      },
+      "reason": "unmatched_opening_delimiter",
+      "replacement_spans": [
+        {
+          "start": 26,
+          "end": 32,
+          "literal": "mūliya"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v3-8c49c5b89366f3e7bba3a4c30480c9643b39245af422d06040ef678a7773d435:463",
+      "review_text_sha256": "54515cb777aa9013455062a7bc61ec5ad3474c195faaca9c4a38261670fa1e95",
+      "source_span": {
+        "start": 34,
+        "end": 40
+      },
+      "literal": ", vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 16,
+          "end": 40,
+          "literal": "onom. ein\nGeräusch, vgl."
+        },
+        "continuation_of": [
+          "n1"
+        ]
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v3-641fb924bc55d742a0314b58e05441cb60fa90228e722733bd3ab147261a8e4c:330",
+      "review_text_sha256": "b450fcfba0ec9ba9eee5a3e871cb2ab339955196fa9666a4de509270b9ecd52f",
+      "source_span": {
+        "start": 21,
+        "end": 86
+      },
+      "literal": "„Dharmabereich“, Bez. für einen\nder 18 Wahrnehmungsbereiche, vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 21,
+          "end": 86,
+          "literal": "„Dharmabereich“, Bez. für einen\nder 18 Wahrnehmungsbereiche, vgl."
+        },
+        "continuation_of": []
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": [
+        {
+          "start": 21,
+          "end": 80,
+          "literal": "„Dharmabereich“, Bez. für einen\nder 18 Wahrnehmungsbereiche"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v3-5c68f67c1c0bd9bcc08ee11f4ffb8b331c680679257c804cd1b52ff694bb507d:369",
+      "review_text_sha256": "334d2054e6f9ddf798737af54dee8528c9d1421a5a98df37f01d89be04a08498",
+      "source_span": {
+        "start": 23,
+        "end": 96
+      },
+      "literal": "npr. ⟦UNKNOWN:TGaramond:regular:0005:6c712ce2cc13⟧inggis Qan (gest.\n1227)",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 23,
+          "end": 96,
+          "literal": "npr. ⟦UNKNOWN:TGaramond:regular:0005:6c712ce2cc13⟧inggis Qan (gest.\n1227)"
+        },
+        "continuation_of": []
+      },
+      "reason": "unresolved_source_decoding",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-a9c778e82999cc68d02b3d85b2be834b826f091e0d28eed2ad07820d637ba2a5:533",
+      "review_text_sha256": "ecbdf8043ba89293c4db25c40b7f275a2d167964d42878b92e8abc18ebdd0444",
+      "source_span": {
+        "start": 12,
+        "end": 153
+      },
+      "literal": "ein Titel, chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E62:0332397ccaa2⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 12,
+          "end": 153,
+          "literal": "ein Titel, chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E62:0332397ccaa2⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧"
+        },
+        "continuation_of": []
+      },
+      "reason": "unresolved_source_decoding",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-2784ee294036830577babd620e3d1ce3a53d861819d5f1075ad5abe4da7ef432:1694",
+      "review_text_sha256": "7a5f1fa1c18ad2a4f5c5423af3bc98e18917dccb78fcde24a0e0d0c4ad62bd88",
+      "source_span": {
+        "start": 12,
+        "end": 72
+      },
+      "literal": "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧pf. zu",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 12,
+          "end": 72,
+          "literal": "⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧pf. zu"
+        },
+        "continuation_of": []
+      },
+      "reason": "unresolved_source_decoding",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-6ba5d65b0376d68204207f9e619b88f7b4f62ed3a2edb872b14a90be45351931:774",
+      "review_text_sha256": "ad493f2d03b89370854dbbc2e1e6807787f0f7301276b073be3deba38325d02b",
+      "source_span": {
+        "start": 18,
+        "end": 24
+      },
+      "literal": ", vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 12,
+          "end": 24,
+          "literal": "Fohlen, vgl."
+        },
+        "continuation_of": [
+          "n1"
+        ]
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-96e4bb8ea87ad1022cb4cbf86ee55a51b5cb1d5107d7a8c4f7187594effebaf8:2265",
+      "review_text_sha256": "fef99be7da2d81841c65145cf02da353a4cba77891aa21771417e4cedc10a01c",
+      "source_span": {
+        "start": 27,
+        "end": 157
+      },
+      "literal": "chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:805F:7eae2effea7e⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3ED0:cc3f83ba1449⟧",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 14,
+          "end": 157,
+          "literal": "Dolmetscher,\nchin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:805F:7eae2effea7e⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3ED0:cc3f83ba1449⟧"
+        },
+        "continuation_of": [
+          "n1"
+        ]
+      },
+      "reason": "unresolved_source_decoding",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-2ce7b1f265fd8af3843863e28438ecfcfa39eb41e0007890eb7822f84c51b967:343",
+      "review_text_sha256": "569bc526bd8d25b08264cd66ad4863cee1e7a5a8ee476e78a9c8b1fb34dc008a",
+      "source_span": {
+        "start": 68,
+        "end": 74
+      },
+      "literal": ", vgl.",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 26,
+          "end": 74,
+          "literal": "eine\nGruppe schadenstiftender Gotthei-\nten, vgl."
+        },
+        "continuation_of": [
+          "n1"
+        ]
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": []
+    },
+    {
+      "identity": "badw:pdf:badw-v4-96ec7c7aff18c55b664ac3fd3dc477c8e9346ca240f263f978d43e6da5fb747a:143",
+      "review_text_sha256": "b66548fcc4264a8022cace23705464d4adac5129429347eafb6c17cad46f0657",
+      "source_span": {
+        "start": 81,
+        "end": 96
+      },
+      "literal": "bensunterhalt (",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "hyphenated_definition_continuation",
+        "continuation_of": [
+          "n1"
+        ],
+        "envelope": {
+          "start": 1,
+          "end": 96,
+          "literal": "materielle\nVorteile erschleichen, List,\neine der sechs Arten von unlauterem Le-\nbensunterhalt ("
+        }
+      },
+      "reason": "unmatched_opening_delimiter",
+      "replacement_spans": [
+        {
+          "start": 81,
+          "end": 94,
+          "literal": "bensunterhalt"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v4-883baadb023c45b4bc765f3ff5bc524e69240bb90fb755a2317574f3e46f3ba6:764",
+      "review_text_sha256": "54d5a7a8bddfa09e2c2afdb5d13b92641797ba492d2f3c103ca5defc418b1cd0",
+      "source_span": {
+        "start": 49,
+        "end": 56
+      },
+      "literal": "tümer (",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "hyphenated_definition_continuation",
+        "continuation_of": [
+          "n1"
+        ],
+        "envelope": {
+          "start": 1,
+          "end": 56,
+          "literal": "„Reichtum der\nBildung“, einer der sieben Reich-\ntümer ("
+        }
+      },
+      "reason": "unmatched_opening_delimiter",
+      "replacement_spans": [
+        {
+          "start": 49,
+          "end": 54,
+          "literal": "tümer"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v4-c8ea72248b3159384c8698cad43e7fbb0082399f86c0fd8c2890b13773cbeef1:1864",
+      "review_text_sha256": "6fcf161fced35322edcad53a5dc6c741c8d5a7673adfe09c643c2c296264804f",
+      "source_span": {
+        "start": 80,
+        "end": 88
+      },
+      "literal": "formen (",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "hyphenated_definition_continuation",
+        "continuation_of": [
+          "n1"
+        ],
+        "envelope": {
+          "start": 1,
+          "end": 88,
+          "literal": "„Bevölke-\nrung der angrenzenden Ge-\nbiete“, eine der acht ungünstigen Daseins-\nformen ("
+        }
+      },
+      "reason": "unmatched_opening_delimiter",
+      "replacement_spans": [
+        {
+          "start": 80,
+          "end": 86,
+          "literal": "formen"
+        }
+      ]
+    },
+    {
+      "identity": "badw:pdf:badw-v4-081309dc092a850fd433fa22f45cb480236cb8ddce7c89489df4004ec195b4e7:1685",
+      "review_text_sha256": "0349550963399f1cef93c2168128f13e014f2d38ca611a3436c85a7f1503b006",
+      "source_span": {
+        "start": 30,
+        "end": 71
+      },
+      "literal": "Bez. für vokalisch endende\nSilben, vgl. S",
+      "prior_evidence": {
+        "rule": "pdf-opening-gloss-recovery-v3",
+        "role": "opening_definition",
+        "envelope": {
+          "start": 30,
+          "end": 71,
+          "literal": "Bez. für vokalisch endende\nSilben, vgl. S"
+        },
+        "continuation_of": []
+      },
+      "reason": "reference_or_grammatical_marker",
+      "replacement_spans": [
+        {
+          "start": 30,
+          "end": 63,
+          "literal": "Bez. für vokalisch endende\nSilben"
+        }
+      ]
+    }
+  ],
+  "remaining_integrity_errors": []
+}

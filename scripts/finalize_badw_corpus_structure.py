@@ -330,7 +330,7 @@ def main():
     for evidence in (args.citation_reviews,Path('data/bibliography_external_publications.tsv')):
         if evidence:manifest['integration_inputs_sha256'][str(evidence)]=file_hash(evidence)
     manifest['outputs_sha256']={str(p):file_hash(p) for p in sorted(OUT.glob('*')) if p.name not in ('manifest.json','anomalies.jsonl')}
-    for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py'),Path('scripts/badw_header_structure.py'),Path('scripts/badw_pdf_structure_recovery.py'),Path('scripts/badw_pdf_mixed_clauses.py'),Path('scripts/badw_bibliography_citation_reviews.py'),Path('scripts/badw_bibliography_external.py')):
+    for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py'),Path('scripts/badw_header_structure.py'),Path('scripts/badw_pdf_structure_recovery.py'),Path('scripts/badw_pdf_mixed_clauses.py'),Path('scripts/badw_pdf_quotation_recovery.py'),Path('scripts/badw_recovered_fragment_integrity.py'),Path('scripts/badw_bibliography_citation_reviews.py'),Path('scripts/badw_bibliography_external.py')):
         manifest['code_sha256'][str(code)]=file_hash(code)
     manifest['semantic_store_sha256']=file_hash(WORK/'semantic.sqlite')
     if WORK.name=='badw_relationship_closure':

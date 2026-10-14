@@ -8,6 +8,9 @@ import hashlib
 import re
 from badw_header_structure import header_fields, contiguous_pdf_lines
 
+from badw_recovered_fragment_integrity import bounded_definition_end, definition_error
+
+# Stable IDs remain unchanged for unchanged accepted spans.
 VERSION = 'pdf-opening-gloss-recovery-v3'
 
 
@@ -55,6 +58,7 @@ def recover_opening(projection, text):
         b = a + text[a:b].index(';')
     while b > a and text[b-1].isspace():
         b -= 1
+    b = bounded_definition_end(text, a, b)
     literal = text[a:b]
     # A second header connective, reference introducer or paradigm marker is
     # not a German opening gloss. It requires its own target grammar.
@@ -62,7 +66,7 @@ def recover_opening(projection, text):
         return projection
     if not any(c.isalpha() for c in literal) or len(literal) > 500:
         return projection
-    if literal.count('„') != literal.count('“'):
+    if definition_error(literal):
         return projection
     # A pre-existing example/Lex. observation forbids reinterpretation.
     forbidden = {'example', 'lexicographic', 'lexicon', 'citation', 'sanskrit', 'tibetan'}
@@ -88,7 +92,7 @@ def recover_opening(projection, text):
     for x,y in gaps:
         while x < y and text[x].isspace(): x += 1
         while y > x and text[y-1].isspace(): y -= 1
-        if not any(c.isalpha() for c in text[x:y]): continue
+        if not any(c.isalpha() for c in text[x:y]) or definition_error(text[x:y]): continue
         key = f"{projection['identity']}:{VERSION}:{x}:{y}"
         node = dict(id='recovered-definition:'+hashlib.sha256(key.encode()).hexdigest(),
                     kind='definition', start=x, end=y, parent=parent,
@@ -136,7 +140,8 @@ def recover_hyphenated_definitions(projection, text):
         if boundary:
             b = a + boundary.start()
         while b > a and text[b-1].isspace(): b -= 1
-        if not a < b or text[node['start']:b].count('„') != text[node['start']:b].count('“'):
+        b = bounded_definition_end(text, a, b)
+        if not a < b or definition_error(text[a:b]) or definition_error(text[node['start']:b]):
             continue
         if any(n['kind'] not in ('sense','source_division') and n['start'] < b and a < n['end']
                for n in result['nodes']):
@@ -163,4 +168,5 @@ def recover(projection, text):
     if projection['source_kind'] != 'pdf':
         return projection
     from badw_pdf_mixed_clauses import recover_mixed_clauses
-    return recover_mixed_clauses(recover_hyphenated_definitions(recover_opening(projection,text),text),text)
+    from badw_pdf_quotation_recovery import recover_quotations
+    return recover_quotations(recover_mixed_clauses(recover_hyphenated_definitions(recover_opening(projection,text),text),text),text)

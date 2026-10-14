@@ -51,17 +51,17 @@
     {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 71519
+      "count": 71560
     },
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 124
+      "count": 128
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9638
+      "count": 9645
     },
     {
       "source_kind": "pdf",
@@ -80,8 +80,18 @@
     },
     {
       "source_kind": "pdf",
+      "family": "typed_bounded_example",
+      "count": 6
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_bounded_translation",
+      "count": 3
+    },
+    {
+      "source_kind": "pdf",
       "family": "typed_citation",
-      "count": 8
+      "count": 7
     },
     {
       "source_kind": "pdf",
@@ -91,22 +101,22 @@
     {
       "source_kind": "pdf",
       "family": "typed_mixed_clause_definition",
-      "count": 30
+      "count": 32
     },
     {
       "source_kind": "pdf",
       "family": "typed_opening_definition",
-      "count": 144
+      "count": 135
     },
     {
       "source_kind": "pdf",
       "family": "typed_verb_form",
-      "count": 475
+      "count": 495
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 567
+      "count": 536
     }
   ],
   "alphabetic_characters": [
@@ -163,12 +173,12 @@
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 10269
+      "count": 10616
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28912
+      "count": 28933
     },
     {
       "source_kind": "pdf",
@@ -187,6 +197,16 @@
     },
     {
       "source_kind": "pdf",
+      "family": "typed_bounded_example",
+      "count": 44
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_bounded_translation",
+      "count": 104
+    },
+    {
+      "source_kind": "pdf",
       "family": "typed_citation",
       "count": 66
     },
@@ -198,22 +218,22 @@
     {
       "source_kind": "pdf",
       "family": "typed_mixed_clause_definition",
-      "count": 479
+      "count": 575
     },
     {
       "source_kind": "pdf",
       "family": "typed_opening_definition",
-      "count": 2797
+      "count": 2705
     },
     {
       "source_kind": "pdf",
       "family": "typed_verb_form",
-      "count": 1996
+      "count": 2066
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 8494
+      "count": 7904
     }
   ],
   "canonical_header_fields": {
@@ -221,7 +241,7 @@
     "alternate_headword": 4355,
     "header_relation": 2218,
     "grammatical_label": 1464,
-    "verb_form": 568
+    "verb_form": 588
   },
   "pdf_candidates": [
     {
@@ -926,6 +946,52 @@
         "end": 763,
         "literal": "Traditionslinie",
         "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
+      }
+    ],
+    "typed_bounded_example": [
+      {
+        "identity": "badw:pdf:badw-v2-d6ee3ec530e6f5f99ae6a5c8d3e821410d6e80f880a6f4638a967c34c8f1ddbf:2037",
+        "start": 15,
+        "end": 44,
+        "literal": "[l]ab gleṅ ’khon ’dzin gyi ~ ",
+        "source_sha256": "21aa4353301202e6b786025b38e72ff1583d6db4f29c19f023a0197c784161fe"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-2f03faf5f719104ed1e8b51891770315844feec4535c99c8e6428b457eba89bb:144",
+        "start": 346,
+        "end": 372,
+        "literal": "[zu]ṅ ~ thugs stobs che’o ",
+        "source_sha256": "e4875688a4979ed06ac0c799f7dc5ef2a05da8c01e3e93b3dbd2c917cce40234"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-ac655d2046ddca3f0483d970b58dbecb5384952082e33b9e6779ba79a66acaba:478",
+        "start": 55,
+        "end": 74,
+        "literal": "[su]m pa’ / ~ gyaṅ ",
+        "source_sha256": "ef56668f8439b8f90bf3e796ec466a3535702c53178b9180aedfbe5cb0b2bfdf"
+      }
+    ],
+    "typed_bounded_translation": [
+      {
+        "identity": "badw:pdf:badw-v2-d6ee3ec530e6f5f99ae6a5c8d3e821410d6e80f880a6f4638a967c34c8f1ddbf:2037",
+        "start": 44,
+        "end": 103,
+        "literal": "„ein mit Kon-\ntroversen und Haß verbundener Gerichts-\nfall“",
+        "source_sha256": "21aa4353301202e6b786025b38e72ff1583d6db4f29c19f023a0197c784161fe"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-2f03faf5f719104ed1e8b51891770315844feec4535c99c8e6428b457eba89bb:144",
+        "start": 372,
+        "end": 427,
+        "literal": "„[seine] Kraft war\nmächtig und seine Geisteskraft groß“",
+        "source_sha256": "e4875688a4979ed06ac0c799f7dc5ef2a05da8c01e3e93b3dbd2c917cce40234"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-ac655d2046ddca3f0483d970b58dbecb5384952082e33b9e6779ba79a66acaba:478",
+        "start": 74,
+        "end": 92,
+        "literal": "„auch alle Sum-pa“",
+        "source_sha256": "ef56668f8439b8f90bf3e796ec466a3535702c53178b9180aedfbe5cb0b2bfdf"
       }
     ]
   },

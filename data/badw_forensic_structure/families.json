@@ -452,9 +452,9 @@
     "classification": "measured_contract_state",
     "distribution": {
       "html": 85,
-      "pdf": 323
+      "pdf": 320
     },
-    "entries": 332,
+    "entries": 329,
     "examples": [
       {
         "details": {
@@ -555,7 +555,7 @@
     ],
     "family": "citation_owner_unresolved",
     "layer": "model",
-    "occurrences": 408,
+    "occurrences": 405,
     "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
     "severity": "high"
   },
@@ -1290,144 +1290,5 @@
     "occurrences": 2,
     "recommended_action": "Definition >1200 or language span >400 characters; review envelope",
     "severity": "medium"
-  },
-  {
-    "classification": "indicator_requires_review",
-    "distribution": {
-      "pdf": 74
-    },
-    "entries": 73,
-    "examples": [
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-8ebaeeb69102603dc2efaa76954facbb9b93cb36922c484a7072465325ad8953:2439",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            1,
-            64
-          ]
-        ],
-        "text_sha256": "61ac26f9135d532005bd9252584e125c2cb0d3b7d78d4030c195afbf5c50349d"
-      },
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710:305",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            1,
-            81
-          ]
-        ],
-        "text_sha256": "8b46ecd57b9a6b5c4c5a3bdfded0375969da0a5df0fdb74edc2a727c98c34302"
-      },
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:718",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            1208,
-            1286
-          ]
-        ],
-        "text_sha256": "b63d18b3e8ad533a4396acb0916b61681aa7f545d38b6bd3e7758a5a8cc8f83a"
-      },
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:1721",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            305,
-            384
-          ]
-        ],
-        "text_sha256": "0c4fc843d8fdf6cd353eb8f661aeafdd20de4d2aea2689ab7a2e6370611fbae3"
-      },
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-e0fc0d3c396ac9dda57b03dfef6d07a3ce5dc7197f57a301f0d1773699a64485:2268",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            1,
-            52
-          ]
-        ],
-        "text_sha256": "71cf461d3fe702e65cbd614e55f561548a2cfbd1d470014b17cfe73e11fff1d4"
-      },
-      {
-        "details": {},
-        "family": "definition_boundary_cue",
-        "identity": "badw:pdf:badw-v2-79dc2fb0edfbf39ea6bb8f971666f3ad8588c5171c50168450bbae6f43d96111:238",
-        "source_kind": "pdf",
-        "spans": [
-          [
-            218,
-            259
-          ]
-        ],
-        "text_sha256": "7eda50adaaea598a39f983b657f11ebffc99396521a3acc78719ecde6f920261"
-      }
-    ],
-    "family": "definition_boundary_cue",
-    "occurrences": 74
-  },
-  {
-    "classification": "indicator_requires_review",
-    "distribution": {
-      "html": 3
-    },
-    "entries": 3,
-    "examples": [
-      {
-        "details": {},
-        "family": "empty_numbered_sense",
-        "identity": "badw:https://wts-digital.badw.de/lemma/dpal%20da%E1%B9%85%20ldan%20pa/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            129,
-            135
-          ]
-        ],
-        "text_sha256": "3bfc8592231a023d32663aa52d9024f46f2924ea1cd372ea85f56d9aa976c40a"
-      },
-      {
-        "details": {},
-        "family": "empty_numbered_sense",
-        "identity": "badw:https://wts-digital.badw.de/lemma/rnam%20par%20grags%20pa/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            97,
-            103
-          ]
-        ],
-        "text_sha256": "16291850ef1d2b84895bac8136db1595c784354e63eedceb1913da22a8295a34"
-      },
-      {
-        "details": {},
-        "family": "empty_numbered_sense",
-        "identity": "badw:https://wts-digital.badw.de/lemma/sna%E1%B9%85%20bar%20byed%20pa/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            120,
-            126
-          ]
-        ],
-        "text_sha256": "c3ff575f236eebb66ff9e180f3a146db90397261e7ce100655fb92addb477dd1"
-      }
-    ],
-    "family": "empty_numbered_sense",
-    "occurrences": 3
   }
 ]

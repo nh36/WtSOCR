@@ -165,7 +165,28 @@ def pdf_heading_fields(projection, text, add, cursor=0):
     following = re.match(r'\s*(?:,\s*)?(?:' + RELATION_LABEL + r'|auch|' + TENSE_MARKER + r')', text[b:])
     if following and b > cursor:
         next_italic = next((loc for x, y, loc in styles if x >= b), None)
-        if next_italic and contiguous_pdf_lines(lines, locations[-1]['line_index'], next_italic['line_index']):
+        continuous = next_italic and contiguous_pdf_lines(lines, locations[-1]['line_index'], next_italic['line_index'])
+        # The adapter puts an arrow and superscript homonym on separate
+        # physical lines. Bridge only those exact observed xref lines, never
+        # arbitrary missing prose or another column.
+        if next_italic and not continuous:
+            left, right = locations[-1]['line_index'], next_italic['line_index']
+            between = lines[left + 1:right]
+            same_page = all((line.get('page_id'), line.get('printed_page')) ==
+                (lines[left].get('page_id'), lines[left].get('printed_page'))
+                for line in lines[left:right + 1])
+            xref = any(n['kind'] == 'cross_reference' and b <= n['start'] < n['end']
+                and n['start'] <= next(x for x, y, loc in styles if loc == next_italic) < n['end']
+                for n in projection.get('nodes', []))
+            continuous = bool(between and same_page and xref
+                and all(re.fullmatch(r'\s*(?:[↑↓]|\d+)\s*', line['text']) for line in between)
+                and all(line.get('first_x') is not None and line.get('y') is not None
+                    for line in (lines[left], lines[right]))
+                and ((abs(lines[left]['first_x'] - lines[right]['first_x']) < 20
+                      and abs(lines[left]['y'] - lines[right]['y']) < 4)
+                     or (abs(lines[left]['y'] - lines[right]['y']) < .1
+                         and 0 < lines[right]['first_x'] - lines[left]['first_x'] < 100)))
+        if next_italic and continuous:
             pdf_heading_fields(projection, text, add, cursor=b)
 
 

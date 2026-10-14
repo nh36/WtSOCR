@@ -246,3 +246,32 @@ def test_pdf_bare_shared_tense_is_paradigm_not_relation():
     fields=header_fields(p,text)
     assert fields[0]['header_kind']=='verb_form'
     assert fields[0]['form_span']['literal']=='form'
+
+
+def test_pdf_chained_paradigm_bridges_only_observed_homonym_xref():
+    text='pf.↑\n1\nbcags fut.↑\n1\ngcags gloss'
+    lines=[dict(text='pf.↑',style_spans=[]),dict(text='1',style_spans=[]),
+           dict(text='bcags fut.↑',style_spans=[dict(style='italic',start=0,end=5)]),
+           dict(text='1',style_spans=[]),
+           dict(text='gcags gloss',style_spans=[dict(style='italic',start=0,end=5)])]
+    for i,line in enumerate(lines):
+        line.update(page_id='p',printed_page=1,first_x=100,y=12-i*.5)
+    p=pdf_projection(text,lines)
+    p['nodes']=[dict(kind='cross_reference',start=15,end=26)]
+    fields=header_fields(p,text)
+    assert [f['form_span']['literal'] for f in fields]==['bcags','gcags']
+    p['nodes']=[]
+    assert [f['form_span']['literal'] for f in header_fields(p,text)]==['bcags']
+    p['nodes']=[dict(kind='cross_reference',start=15,end=26)]
+    lines[-1]['first_x']=300
+    assert [f['form_span']['literal'] for f in header_fields(p,text)]==['bcags']
+
+
+def test_pdf_chained_paradigm_same_baseline_superscript():
+    text='pf.↑\n1\nbcags fut.↑\n1\ngcags gloss'
+    lines=[dict(text=t,style_spans=([dict(style='italic',start=0,end=5)] if i in (2,4) else []),page_id='p',printed_page=1,first_x=(165 if i==4 else 100),y=(12.5 if i==3 else 12)) for i,t in enumerate(['pf.↑','1','bcags fut.↑','1','gcags gloss'])]
+    p=pdf_projection(text,lines)
+    p['nodes']=[dict(kind='cross_reference',start=15,end=26)]
+    assert len(header_fields(p,text))==2
+    lines[-1]['first_x']=300
+    assert len(header_fields(p,text))==1

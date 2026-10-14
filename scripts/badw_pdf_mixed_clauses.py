@@ -9,6 +9,7 @@ import copy
 import hashlib
 import re
 from badw_header_structure import contiguous_pdf_lines
+from badw_recovered_fragment_integrity import bounded_definition_end, definition_error
 
 VERSION = 'pdf-mixed-clause-v1'
 STOP = re.compile(r';|[↑↓།„“]|\b(?:Lex\.|vgl\.|s\.\s*v\.|pf\.|fut\.|imp\.)|\n\s*\d+\.')
@@ -36,7 +37,7 @@ def roman_envelope(text, lines, spans, index):
     for s in spans[index+1:]:
         if s['style'] != 'regular' or not re.fullmatch(r'\s*', text[b:s['start']]):
             break
-        if s['observation'].get('font') != first['observation'].get('font'):
+        if s['observation'].get('font_id') != first['observation'].get('font_id'):
             break
         if not contiguous_pdf_lines(lines, evidence[-1]['line'], s['line']):
             break
@@ -45,6 +46,7 @@ def roman_envelope(text, lines, spans, index):
         b = s['end']; evidence.append(s)
     stop = STOP.search(text[a:b])
     if stop: b = a+stop.start()
+    b = bounded_definition_end(text, a, b)
     while a < b and text[a].isspace(): a += 1
     while b > a and text[b-1].isspace(): b -= 1
     return a, b, evidence
@@ -57,7 +59,7 @@ def add_fragment(result, text, a, b, role, evidence, continuation=()):
         return
     if re.search(r'\b(?:ein|eine|einen|einem|einer|eines|der|die|das|und|oder|von|für|mit)\s*$', text[a:b]):
         return
-    if b <= a or not any(c.isalpha() for c in text[a:b]) or b-a > 500:
+    if b <= a or not any(c.isalpha() for c in text[a:b]) or b-a > 500 or definition_error(text[a:b]):
         return
     # A passage already typed as an example, language form, citation or Lex.
     # item cannot be reinterpreted as a definition by this production.
@@ -78,7 +80,7 @@ def add_fragment(result, text, a, b, role, evidence, continuation=()):
     for x,y in gaps:
         while x<y and text[x].isspace(): x+=1
         while y>x and text[y-1].isspace(): y-=1
-        if not any(c.isalpha() for c in text[x:y]): continue
+        if not any(c.isalpha() for c in text[x:y]) or definition_error(text[x:y]): continue
         key=f"{result['identity']}:{VERSION}:{role}:{x}:{y}"
         result['nodes'].append(dict(id='recovered-definition:'+hashlib.sha256(key.encode()).hexdigest(),
             kind='definition',start=x,end=y,parent=parent,
@@ -124,8 +126,8 @@ def recover_mixed_clauses(projection, text):
         i,s=right
         if s['style']!='regular' or text[end:s['start']]!='\n': continue
         if not contiguous_pdf_lines(lines,left['line'],s['line']): continue
-        font = left['observation'].get('font')
-        if not font or font != s['observation'].get('font'): continue
+        font = left['observation'].get('font_id')
+        if not font or font != s['observation'].get('font_id'): continue
         a,b,ev=roman_envelope(text,lines,spans,i)
         # A lowercase continuation is necessary but not sufficient: the left
         # connective, matching Roman font run and geometry are also required.

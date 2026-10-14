@@ -1,6 +1,6 @@
 # Forensic source-structure replay
 
-Baseline: `53caa38e6d` (previous structural recovery). Source hashes and runtime code hashes are pinned in
+Baseline: `b677c3196c` (mixed-clause recovery). Source hashes and runtime code hashes are pinned in
 `manifest.json`; raw sources, facsimiles and semantic SQLite remain in ignored
 `work/`. No release text was changed.
 
@@ -40,101 +40,119 @@ online bibliography omission, unresolved source label and two confirmed malforme
 online references. The Mvy identities are resolved; their source errors remain
 editorial questions. Schwieger no longer requires editorial input. No message has been sent to BAdW.
 
-The 408 owner residue is enumerated in `ownership_residue.jsonl.gz`, with frozen
-family counts in `forensic_residue.json`. `ownership_context_review.jsonl`
-records all 11 small-family contexts and 24 systematic prose/comparison contexts.
-No new owner was inferred. Local variant parentheses and nested/malformed quotes
-expose possible bounded-grammar work; the pass does not prove that every remaining
-prose case is intrinsically unbounded.
+The current 405 unresolved owners are enumerated in `ownership_residue.jsonl.gz`.
+The earlier `ownership_context_review.jsonl` retains the 408-case baseline review.
+Three citations acquired owners through independently bounded quotation passages;
+no proximity ownership was added. The remaining families are: explicit comparison
+167, entry prose 155, no envelope 52, sense prose 20, PDF example candidates 6,
+HTML example envelopes 3, and definition clauses 2.
 
-The mixed-clause replay produces **11,543 header fields**, including **2,218
-relations**, **4,355 aliases**, 2,938 homonym markers, 1,464 grammatical labels
-and 568 verb forms. Explicit marker → italic target chains share the existing
-HTML/PDF header model. Initial alias extraction is anchored to source position.
+## Definition integrity and quotation recovery
 
-`badw_pdf_mixed_clauses.py` is separate from the unchanged narrow opening-gloss
-rule. Its positive production is printed semicolon → italic tilde-bearing lexical
-form → Roman gloss, with exact font/run and line geometry evidence. A second
-production handles an unfinished observed German connective followed by a
-same-font lowercase wrapped clause; it produces no corpus claims in this replay.
-Competing examples, Lex., languages, citations, numbering, quotes and columns stop
-recovery. Existing definitions remain immutable; exact fragments carry envelope
-and continuation evidence and flow through the existing reader/store projection.
-Thirty accounting runs recover **479 alphabetic characters** as mixed-clause
-definitions. No generic prose container or proximity owner was introduced.
+`definition_backaudit.json` records all **163 existing recovered definition
+fragments**: **15 withdrawn or shortened**, with **zero remaining integrity
+errors**. The source observations remain unchanged. Opening recovery now stops
+before comparison/reference and grammatical introducers; `, vgl.` is withdrawn
+and `tümer (` stops before the unmatched opener. Shared validation checks balanced
+parentheses, brackets and quotation delimiters for recovered fragments. Unknown
+decoding placeholders cannot become definition claims.
+
+The separate `pdf-bounded-quotation-v1` grammar uses balanced nested quotation,
+font runs, same-column line continuity and existing example/Lex. envelopes.
+A conservative additional production requires an italic tilde-bearing example,
+Roman quoted translation and immediately following existing citation. Hard sense,
+Lex. and column boundaries stop recovery. Citation text is not translation text.
+The corpus produces **three example–translation pairs and three new citation
+owners**. Source text, source punctuation and original nodes remain immutable.
+
+The header grammar also recovers chained fields across explicitly observed arrow
+and superscript lines. It now produces **11,563 header fields**, including **2,218
+relations**, **4,355 aliases**, 2,938 homonym markers, 1,464 grammatical labels and
+588 verb forms. Twenty verb-form fields were added; relations and aliases did not
+increase. Shared tense/list grammar remains conservative.
 
 | Meaningful pending alphabetic characters | Before | After |
 | --- | ---: | ---: |
-| Total | 13,960 | 12,260 |
+| Total | 12,260 | 11,670 |
 | HTML | 3,766 | 3,766 |
-| PDF lexical prose | 6,379 | 5,806 |
-| PDF header candidates | 1,778 | 738 |
-| PDF aliases | 779 | 692 |
-| PDF quotation/gloss | 1,101 | 1,101 |
+| PDF lexical prose | 5,806 | 5,527 |
+| PDF header candidates | 738 | 668 |
+| PDF aliases | 692 | 615 |
+| PDF quotation/gloss | 1,101 | 937 |
 | PDF reference clauses | 157 | 157 |
-| PDF total | 10,194 | 8,494 |
+| PDF total | 8,494 | 7,904 |
 
-The unchanged 131,068 raw alphabetic characters partition exactly into **42,211
-typed**, **66,328 structural-label**, **10,269 decoding-placeholder**, and **12,260
-pending meaningful** characters. This is 1,700 characters recovered, not a claim
-that all residual categories now have proven canonical boundaries. No glyph mapping
-was added. Placeholder syntax is separate from meaningful printed content.
+The unchanged 131,068 raw alphabetic characters partition exactly into **42,433
+typed**, **66,349 structural-label**, **10,616 decoding-placeholder**, and **11,670
+pending meaningful** characters. The 590-character pending reduction includes
+accounting changes and withdrawals; it is not 590 newly interpreted semantic
+characters. No reviewed glyph mapping was added.
 
-The remaining 5,806 PDF prose characters have source-grammar reasons:
+The remaining 5,527 PDF prose characters have explicit reasons:
 
 | Reason | Characters |
 | --- | ---: |
-| Quotation-adjacent fragment lacking a unique envelope | 2,175 |
-| Reference target/comparison continuation | 1,568 |
-| Lexical substitution clause with unresolved internal roles | 1,188 |
-| Mixed/Roman clause lacking syntactic closure | 439 |
+| Quotation-adjacent fragment lacking a unique role/envelope | 2,108 |
+| Reference target/comparison continuation | 1,558 |
+| Lexical substitution clause with unresolved internal roles | 1,092 |
+| Mixed/Roman clause lacking syntactic closure | 333 |
 | Wrapped form/clause lacking a role boundary | 293 |
 | Isolated form/clause fragment | 112 |
 | Body/header alias continuation | 31 |
 
-These diagnostic reasons preserve exact spans and nearby source/canonical context;
-they are not semantic assignments. The separate 157 reference-clause characters
-were rerun without a defensible new envelope. HTML's 2,793 other-heading characters
-comprise 641 register/grammatical-label characters, 973 shared/composite heading
-syntax and 1,179 unregistered heading wording. They must not all be forced into
-relations. Other HTML residue remains 608 quotation/gloss, 234 aliases, 95 headers
-and 36 reference characters.
+All quotation, comparison, substitution and header candidates were replayed through
+the new rules. Most do not satisfy the conservative productions. No broader
+comparison or substitution grammar was accepted without sufficient source evidence.
+The separate 157 reference-clause characters remain unresolved. HTML's 2,793
+other-heading characters still comprise 641 register/grammatical-label characters,
+973 shared/composite syntax and 1,179 unregistered wording. Other HTML residue is
+608 quotation/gloss, 234 aliases, 95 headers and 36 reference characters. These
+are retained diagnostics, not newly accepted semantic relations or labels.
 
-`mixed_clause_holdout.json` freezes **36 previously unreviewed PDF entries on 36
-independent physical pages**, twelve each from acquired volumes 2, 3 and 4, before
-implementation outcomes. These are the acquired online PDF manifestations, not a
-historical-print adaptation test. `mixed_clause_review.jsonl` records facsimile
-inspection, exact accepted header/fragment spans, controls and misses. No false
-claim from the **new** mixed/header rules was observed. The sample also exposes a
-**pre-existing** opening-v3 false fragment `, vgl.` in the’u raṅ, and an opening
-parenthesis boundary needing review in thos ldan. Missing shared pf./fut. grammar
-and quotation/continuation recall remain explicit. This is not a zero-defect claim
-for the whole parser or a statistical corpus accuracy estimate.
+## Validation and limits
+
+`quotation_holdout.json` freezes **36 fresh PDF entries on 36 independent pages**,
+twelve each from acquired volumes 2, 3 and 4, before implementation outcomes.
+`quotation_review.jsonl` records facsimile review and explicit recall limitations.
+No false new structural claim was observed, but **none of these 36 entries received
+a new fragment**. This is negative/control and retention evidence, not independent
+positive validation of the three new corpus pairs. All three actual positive corpus outputs were separately checked against their
+facsimiles (khrims gtugs p. 110, thub p. 275, mtha’ dag p. 334), with correct
+roles and boundaries and no swallowed citation or neighboring example.
+`quotation_positive_review.jsonl` preserves exact spans and source hashes. This
+is a complete positive-output census, not a fresh independent positive holdout.
+Broader positive validation remains necessary before expanding recall. The previous mixed-clause holdout and
+all frozen relationships remain unchanged.
 
 All **29,877 projections and 114 frozen witnesses pass**; reader integrity failures,
-accepted bibliography identity loss and Lex. overlaps remain zero. Baseline owner
-and xref edges survive. Citations remain 109,425; identities 109,079 accepted / 346
-unresolved; owners 109,017 established / 408 unresolved. **No new citation owner**
-was justified by these boundaries. Lex. remains 39,688 items; xrefs, language and
-source text remain unchanged. `release/current` is untouched.
+accepted bibliography identity loss and Lex. overlaps remain zero. Citations remain
+109,425; identities 109,079 accepted / 346 unresolved. Owners rise **109,017 →
+109,020**, unresolved **408 → 405**. Passage owners number 109,007 plus 13 reviewed
+relationships; 47,039 sense-owned and 61,981 entry-only citations are a separate
+ownership dimension, not additional citation counts. Lex. remains 39,688 items;
+xrefs remain 7,484 resolved / 852 unresolved; Sanskrit remains 12,364 forms and
+3,003 correspondences, with zero effective conflicts and 384 preserved source
+observation overlaps. `release/current` is untouched.
 
-**Not structurally mature.** The largest coherent remaining boundary capability is
-nested quotation/Tibetan excerpt → German translation parsing: **2,175
-quotation-adjacent prose characters**, alongside **1,101 separately classified
-quotation/gloss characters**. It needs balanced/nested quote and typography-aware
-translation envelopes, not broader Roman-prose absorption. This specific grammar,
-and the observed opening-v3 comparison-marker defect, should precede historical
-print adaptation or full reader/product work.
+**Not structurally mature.** The single remaining coherent capability is
+**quotation-role disambiguation beyond explicit tilde/example envelopes**: 2,108
+quotation-adjacent prose characters plus 937 separate quotation/gloss candidates.
+Balanced punctuation now supplies boundaries, but does not by itself establish
+translation/example/definition roles. Additional typography-and-layout productions
+need independently reviewed positive examples. Neither broad quote absorption nor
+generic boundary cleanup is justified. This tranche implements a safe subset;
+it does not claim completion of the requested quotation recall.
 
 ## Reproduction
 
 Run from the repository root with the acquired source cache and baseline SQLite:
 
 ```sh
-python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline53caa.sqlite --baseline-commit 53caa38e6d --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baselineb677.sqlite --baseline-commit b677c3196c --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
 python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
 python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --refine-boundaries
 python3 scripts/classify_badw_forensic_residue.py
+python3 scripts/backaudit_badw_recovered_definitions.py
 python3 scripts/build_status.py
 ```
 
