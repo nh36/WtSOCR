@@ -29,69 +29,48 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## Corpus Structural Health
 
-The quotation/integrity replay from **b677c3196c** projects **29,877/29,877
-witnesses**, with zero exceptions, reader-integrity failures or accepted bibliography
-identity loss. All **114 frozen witnesses pass**. **release/current is untouched**.
+The bounded-passage replay from **dcac807f73** projects **29,877/29,877 witnesses**.
+All **114 frozen witnesses pass**; reader integrity, source text, bibliography,
+xrefs, language and canonical Lex. invariants remain intact. `release/current`
+is untouched.
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| Meaningful untyped characters | 12,260 | 11,670 |
-| HTML residue | 3,766 | 3,766 |
-| PDF residue | 8,494 | 7,904 |
-| PDF lexical prose | 5,806 | 5,527 |
-| PDF header candidates | 738 | 668 |
-| PDF alias candidates | 692 | 615 |
-| PDF quotation/gloss | 1,101 | 937 |
-| PDF reference clauses | 157 | 157 |
-| Header fields | 11,543 | 11,563 |
-| Header relations | 2,218 | 2,218 |
-| Aliases | 4,355 | 4,355 |
-| Established citation owners | 109,017 | 109,020 |
-| Unresolved citation owners | 408 | 405 |
+| Established citation owners | 109,020 | 109,179 |
+| Unresolved citation owners | 405 | 246 |
+| Meaningful untyped alphabetic characters | 11,670 | 11,651 |
+| HTML pending characters | 3,766 | 3,766 |
+| PDF pending characters | 7,904 | 7,885 |
 
-All **163 recovered definition fragments** were backaudited: **15 withdrawn or
-shortened**, zero remaining integrity violations. General validation prevents
-reference-only definitions, unmatched delimiters and decoding-placeholder claims.
-The false `, vgl.` fragment is withdrawn; `tümer (` stops before its unmatched
-opener. Original source observations remain intact.
+New exact passages establish **124 terminal comparison owners and 35 nested
+parenthetical/quotation owners**. Rules require existing structural containment,
+explicit markers, balanced delimiters and hard boundary checks. They do not attach
+citations to preceding prose by distance. Existing owners are preserved.
+Only **19 alphabetic characters** gain structural accounting; passage ownership
+and lexical accounting are separate measurements.
 
-Balanced nested quotation recovery combines typography, continuous column geometry,
-existing envelopes and exact citation boundaries. A conservative italic tilde-form
-→ Roman quoted translation → citation production yields **three example–translation
-pairs and three citation owners**. Twenty additional verb-form header fields are
-recovered through explicit arrow/superscript source structure. No generic prose
-container, proximity ownership or glyph guessing was introduced.
-
-The raw 131,068 alphabetic characters partition exactly: **42,433 typed, 66,349
-structural labels, 10,616 decoding-placeholder syntax, 11,670 pending**. Pending
-reduction includes accounting changes and withdrawals; it is not all new semantic
-recovery. Remaining PDF prose: quotation-adjacent 2,108; reference/comparison 1,558;
-lexical substitution 1,092; unclosed mixed/Roman 333; wrapped clause 293; isolated
-112; alias continuation 31. HTML other-heading residue remains 641 register/grammar,
-973 shared/composite and 1,179 unregistered wording. These are explicit diagnostics,
-not accepted labels or relations.
-
-A fresh preselected **36-entry/36-page PDF holdout**, twelve entries per acquired
-volume 2–4, was facsimile-reviewed. No false new structural claim was observed,
-but **no new fragment was accepted in that sample**: this validates controls and
-retention, not positive corpus accuracy. Additional positive facsimile validation
-is needed before widening quotation recall. All earlier frozen reviews are retained.
+The **246 remaining owners (83 HTML / 163 PDF)** have exact source-bound census
+records. Families are: comparison without accepted enclosure 88; broad Lex. source
+nodes without an accepted item/subclause 39; unbounded/missing component 91;
+definition source nodes 20; example source nodes 4; balanced comparison candidates
+3; variant-reading candidate 1. Diagnostic containment is not accepted ownership.
+The small example/definition cases are retained in the checked-in passage census;
+individual scholarly disposition and fresh positive facsimile review remain pending.
 
 Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**.
-Owners are **109,020 established / 405 unresolved**: comparison 167, entry prose
-155, no envelope 52, sense prose 20, PDF example candidates 6, HTML example envelopes
-3, definition clauses 2. Lex. remains **39,688** with zero overlaps; xrefs **7,484
-resolved / 852 unresolved**; Sanskrit **12,364 forms / 3,003 correspondences**, zero
-effective conflicts, 384 preserved source-observation overlaps. Frozen relations
-and source text remain unchanged.
+Lex. remains **39,688 items**, zero duplicate/overlapping items; xrefs **7,484
+resolved / 852 unresolved**; Sanskrit **12,364 forms / 3,003 correspondences**,
+zero effective conflicts, 384 preserved source-observation overlaps.
+Raw alphabetic gaps partition exactly: **42,452 typed, 66,349 structural labels,
+10,616 decoding-placeholder syntax, 11,651 pending**.
 
-**Not structurally mature:** one coherent capability remains, quotation-role
-disambiguation beyond explicit tilde/example envelopes (**2,108 quotation-adjacent
-characters plus 937 quotation/gloss candidates**). Balanced delimiters establish
-boundaries but cannot alone establish translation/example/definition roles. Further
-positive typography/layout evidence is required; broad quote absorption is unsafe.
-This is a conservative implementation subset, not completion of quotation recall.
-See [evidence, review limitations and reproduction](../data/badw_forensic_structure/README.md).
+**Validation limit:** automated corpus replay and frozen relationship checks pass,
+but the 159 newly accepted relationships have not received a fresh positive
+facsimile holdout. This is a conservative implementation stopping point, not a
+claim that maximum principled ownership coverage or structural maturity is proven.
+Remaining coherent work includes quotation-role disambiguation and source-Lex.
+subclause recovery. No broad prose owner or generic cleanup rule is authorized.
+See [evidence and reproduction](../data/badw_forensic_structure/README.md).
 
 ## Bibliographic Apparatus
 

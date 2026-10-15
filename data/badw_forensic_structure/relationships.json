@@ -3,7 +3,7 @@
     "citation:html:HTML_example_envelope": 1,
     "citation:html:entry_prose_without_bounded_passage": 7,
     "citation:html:no_structural_envelope": 40,
-    "citation:pdf:PDF_example_candidate": 7,
+    "citation:pdf:PDF_example_candidate": 4,
     "citation:pdf:definition_clause": 2,
     "citation:pdf:entry_prose_without_bounded_passage": 114,
     "citation:pdf:explicit_comparison_clause": 167,
@@ -19,14 +19,14 @@
   },
   "ownership_evidence": {
     "html:Lex_containment": 22113,
-    "html:definition_comparison_clause": 2573,
+    "html:definition_comparison_clause": 2575,
     "html:explicit_HTML_attestation": 42364,
     "html:reviewed_relationship": 7,
-    "html:unresolved": 85,
+    "html:unresolved": 83,
     "pdf:Lex_containment": 17523,
     "pdf:PDF_example_quotation": 23917,
-    "pdf:definition_comparison_clause": 517,
+    "pdf:definition_comparison_clause": 674,
     "pdf:reviewed_relationship": 6,
-    "pdf:unresolved": 320
+    "pdf:unresolved": 163
   }
 }

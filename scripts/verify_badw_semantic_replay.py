@@ -69,6 +69,7 @@ def main():
     parser.add_argument('--output', type=Path, default=OUT)
     parser.add_argument('--work', type=Path, default=WORK)
     parser.add_argument('--baseline', type=Path, default=BASE)
+    parser.add_argument('--baseline-store', type=Path)
     args = parser.parse_args()
     OUT, WORK, BASE = args.output, args.work, args.baseline
     if args.refine_boundaries:
@@ -96,6 +97,24 @@ def main():
                 if r['identity'] in common:counts[r['family']]+=1
         family_counts.append(counts)
     comparison={k:dict(baseline=family_counts[0][k],current=family_counts[1][k]) for k in sorted(set(family_counts[0])|set(family_counts[1]))}
+    relationship_baseline = None
+    if args.baseline_store:
+        prior = sqlite3.connect('file:' + str(args.baseline_store) + '?mode=ro', uri=True)
+        relationship_baseline = dict(store=str(args.baseline_store), sha256=hashlib.sha256(args.baseline_store.read_bytes()).hexdigest())
+        for family, predicate in (
+            ('citation_owner_unresolved', "ownership='unresolved'"),
+            ('citation_identity_unresolved', "json_extract(record_json, '$.bibliography_status') != 'resolved'"),
+        ):
+            comparison[family] = dict(baseline=prior.execute('SELECT count(*) FROM citation WHERE ' + predicate).fetchone()[0], current=db.execute('SELECT count(*) FROM citation WHERE ' + predicate).fetchone()[0])
+        previous = {r[0]: json.loads(r[1]) for r in prior.execute('SELECT id,record_json FROM citation')}
+        current = {r[0]: json.loads(r[1]) for r in db.execute('SELECT id,record_json FROM citation')}
+        preservation = dict(missing_citations=len(previous.keys()-current.keys()))
+        for key in ('bibliography', 'source_span', 'source_form', 'source_binding'):
+            preservation[key + '_changed'] = sum(previous[i].get(key) != current[i].get(key) for i in previous.keys() & current.keys())
+        preservation['established_supports_changed'] = sum(previous[i].get('supports') != current[i].get('supports') for i in previous.keys() & current.keys() if previous[i].get('supports'))
+        assert not any(preservation.values()), preservation
+        relationship_baseline['preservation'] = preservation
+        prior.close()
     index=EntryIndex(list(rows(Path('work/badw_relationship_targets_20261005/actual_entry_index.jsonl'))))
     contextual=json.loads((OUT/'manifest.json').read_text()).get('contextual_semantics',False)
     if contextual:
@@ -142,7 +161,7 @@ def main():
         frozen.append(dict(identity=p['identity'],source_kind=p['source_kind'],text_sha256=p['review_text_sha256'],reader_integrity='passed',lex_items=len(semantic['lex_items']),passage_owners=len(semantic['citation_ownership']),resolved_xrefs=sum(x['status']=='resolved' for x in view['cross_references']),unresolved_xrefs=sum(x['status']!='resolved' for x in view['cross_references']),scope='Frozen source/structure replay; original manual observations retained. No tuning to this sample.'))
     with (OUT/'frozen_holdout_replay.jsonl').open('w') as f:
         for r in frozen:f.write(json.dumps(r,ensure_ascii=False,sort_keys=True)+'\n')
-    result=dict(common_entries=len(common),newly_projected=sorted(new.keys()-old.keys()),common_accounting=accounting,anomaly_comparison=comparison,canonical_lex_duplicate_spans=duplicate,canonical_lex_overlapping_pairs=overlap,frozen_holdout_reader_passes=len(frozen),foreign_key_violations=list(db.execute('PRAGMA foreign_key_check')),store_rows={table:db.execute('SELECT count(*) FROM '+table).fetchone()[0] for table in ('lex_item','passage','citation','citation_passage','xref','language_form','language_correspondence','language_indicator','language_conflict','language_effective')},script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    result=dict(relationship_baseline=relationship_baseline,common_entries=len(common),newly_projected=sorted(new.keys()-old.keys()),common_accounting=accounting,anomaly_comparison=comparison,canonical_lex_duplicate_spans=duplicate,canonical_lex_overlapping_pairs=overlap,frozen_holdout_reader_passes=len(frozen),foreign_key_violations=list(db.execute('PRAGMA foreign_key_check')),store_rows={table:db.execute('SELECT count(*) FROM '+table).fetchone()[0] for table in ('lex_item','passage','citation','citation_passage','xref','language_form','language_correspondence','language_indicator','language_conflict','language_effective')},script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (OUT/'comparison.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
     manifest=json.loads((OUT/'manifest.json').read_text())
     manifest['outputs_sha256']={str(p):hashlib.sha256(p.read_bytes()).hexdigest()

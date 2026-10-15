@@ -1,3 +1,32 @@
+# Bounded-passage stopping point (dcac807f73 baseline)
+
+The current replay establishes 109,179 owners (+159), leaving 246 (83 HTML,
+163 PDF). Gains comprise 124 terminal comparison clauses and 35 nested bounded
+passages. Exact source text and all prior accepted relationships are retained.
+All 29,877 projections and 114 frozen witnesses pass. Citations/identities remain
+109,425 / 109,079 accepted / 346 unresolved. Meaningful residue falls only 19
+alphabetic characters, from 11,670 to 11,651 (HTML 3,766; PDF 7,885).
+
+`passage_baseline.jsonl.gz` enumerates all 405 baseline owners with punctuation,
+source components and failure context; `passage_remaining.jsonl.gz` enumerates
+all 246 survivors. Summary JSON files give HTML/PDF counts by actual grammar.
+Thirty-nine survivors are inside broad source Lex. nodes but lack an accepted
+canonical item/subclause; these have not been promoted by broad containment.
+
+The small example/definition cases are represented in the baseline and remaining
+census. Individual scholarly disposition remains pending positive facsimile review.
+Malformed quotation boundaries and absent explicit variant markers are retained,
+not silently repaired. The exact source-bound records are the authoritative
+occurrence-level disposition.
+
+**Validation limitation:** the new 159 accepted relationships have not received
+fresh positive facsimile validation. Tests cover bounded positive and negative
+grammars and corpus replay preserves frozen relationships; this does not establish
+zero false semantic claims or completion of the requested scholarly review.
+Further review must inspect positive new relationships before widening these rules.
+
+## Historical preceding tranche documentation
+
 # Forensic source-structure replay
 
 Baseline: `b677c3196c` (mixed-clause recovery). Source hashes and runtime code hashes are pinned in
@@ -40,7 +69,7 @@ online bibliography omission, unresolved source label and two confirmed malforme
 online references. The Mvy identities are resolved; their source errors remain
 editorial questions. Schwieger no longer requires editorial input. No message has been sent to BAdW.
 
-The current 405 unresolved owners are enumerated in `ownership_residue.jsonl.gz`.
+The historical 405 unresolved owners are enumerated in `ownership_residue.jsonl.gz`.
 The earlier `ownership_context_review.jsonl` retains the 408-case baseline review.
 Three citations acquired owners through independently bounded quotation passages;
 no proximity ownership was added. The remaining families are: explicit comparison
@@ -148,9 +177,9 @@ it does not claim completion of the requested quotation recall.
 Run from the repository root with the acquired source cache and baseline SQLite:
 
 ```sh
-python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baselineb677.sqlite --baseline-commit b677c3196c --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline_dcac.sqlite --baseline-commit dcac807f73 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
 python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
-python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --refine-boundaries
+python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --baseline-store work/badw_forensic_structure/baseline_dcac.sqlite --refine-boundaries
 python3 scripts/classify_badw_forensic_residue.py
 python3 scripts/backaudit_badw_recovered_definitions.py
 python3 scripts/build_status.py

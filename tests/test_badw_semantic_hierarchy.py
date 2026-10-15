@@ -178,3 +178,53 @@ def test_absent_html_url_can_resolve_exact_homonym_other_witness():
     assert result['status']=='resolved' and result['target_entry_id']=='pdf'
     ref['target_url']='https://wts-digital.badw.de/lemma/y/2'
     assert index.resolve_manifestation(ref)['canonical_resolution']['status']=='unresolved'
+
+
+def test_nested_passage_grammar_requires_explicit_balanced_enclosure():
+    from badw_bounded_passages import nested_passages
+    def run(text, kind='example'):
+        start=text.index('SOURCE')
+        nodes=[dict(id='container',kind=kind,start=0,end=len(text)),
+               dict(id='citation',kind='citation',start=start,end=start+6)]
+        return nested_passages(nodes,text,set(),lambda k,a,b,**kw:dict(kind=k,start=a,end=b,**kw))
+    assert run('bod (v. l. alternative SOURCE) translation')[0]['passage_type']=='variant_reading'
+    assert run('definition [vgl. another assertion SOURCE]', 'definition')[0]['passage_type']=='bounded_comparison'
+    assert run('definition (zw. another assertion SOURCE)', 'definition')[0]['passage_type']=='definition_source_note'
+    assert run('bod (SOURCE) translation')==[]
+    assert run('bod (v. l. alternative SOURCE translation')==[]
+    assert run('bod nearby SOURCE translation')==[]
+
+
+def test_nested_comparison_group_shares_passage_and_rejects_sense_crossing():
+    from badw_bounded_passages import nested_passages
+    text='definition [vgl. assertion AAA and BBB]'
+    nodes=[dict(id='d',kind='definition',start=0,end=len(text))]
+    for label in ('AAA','BBB'):
+        start=text.index(label)
+        nodes.append(dict(id=label,kind='citation',start=start,end=start+3))
+    factory=lambda k,a,b,**kw:dict(kind=k,start=a,end=b,**kw)
+    passages=nested_passages(nodes,text,set(),factory)
+    assert len(passages)==1 and passages[0]['citation_node_ids']==['AAA','BBB']
+    nodes.append(dict(id='sense',kind='sense',start=text.index('AAA'),end=len(text)))
+    assert nested_passages(nodes,text,set(),factory)==[]
+
+
+def test_terminal_comparison_has_independent_definition_end():
+    from badw_bounded_passages import terminal_comparisons
+    text='definition example; vgl. AAA, BBB.'
+    nodes=[dict(id='d',kind='definition',start=0,end=len(text)),
+           dict(id='e',kind='example',start=0,end=18)]
+    for label in ('AAA','BBB'):
+        a=text.index(label)
+        nodes.append(dict(id=label,kind='citation',start=a,end=a+3))
+    factory=lambda k,a,b,**kw:dict(kind=k,start=a,end=b,**kw)
+    result=terminal_comparisons(nodes,text,set(),factory)
+    assert len(result)==1 and result[0]['citation_node_ids']==['AAA','BBB']
+    assert text[result[0]['start']:result[0]['end']]=='vgl. AAA, BBB.'
+    nodes[1]['end']=len(text)
+    assert terminal_comparisons(nodes,text,set(),factory)==[]
+    nodes.pop(1)
+    for suffix in (' subsequent prose.', ' (', ''):
+        candidate=text[:-1]+suffix
+        nodes[0]['end']=len(candidate)
+        assert terminal_comparisons(nodes,candidate,set(),factory)==[]

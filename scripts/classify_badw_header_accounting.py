@@ -30,6 +30,11 @@ def main():
         for entry,raw in db.execute('select entry,record_json from '+table):
             r=json.loads(raw);span=r.get('source_span',r)
             semantic[entry].append(dict(start=span['start'],end=span['end'],family=family))
+    for entry, raw in db.execute('select entry,record_json from passage'):
+        r = json.loads(raw)
+        if r.get('passage_type') in ('bounded_comparison', 'variant_reading', 'definition_source_note', 'terminal_comparison'):
+            span = r.get('source_span', r)
+            semantic[entry].append(dict(start=span['start'], end=span['end'], family='typed_'+r['passage_type']))
     db.close()
     counts=collections.Counter();alpha=collections.Counter();candidates=collections.Counter();headcounts=collections.Counter();examples=collections.defaultdict(list);total=0
     with (args.work/'projections.jsonl').open() as src, gzip.open(args.output/'header_accounting.jsonl.gz','wt',encoding='utf8') as out:

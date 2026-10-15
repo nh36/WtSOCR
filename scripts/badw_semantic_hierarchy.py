@@ -8,6 +8,7 @@ import hashlib
 import re
 from badw_source_components import lexical_clauses, terminal_lexical_citation
 from badw_header_structure import header_fields
+from badw_bounded_passages import nested_passages, terminal_comparisons
 
 VERSION = 'badw-semantic-hierarchy-v3'
 
@@ -277,6 +278,10 @@ def hierarchy(projection, text):
             source_locator=node.get('source_lines', []),
             citation_node_ids=[c['id'] for c in cites]))
         assigned.update(c['id'] for c in cites)
+    nested = nested_passages(nodes, text, assigned, object_)
+    passages.extend(nested)
+    assigned.update(c for p in nested for c in p['citation_node_ids'])
+    passages.extend(terminal_comparisons(nodes, text, assigned, object_))
     for node in nodes:
         if node['kind'] != 'citation':
             continue

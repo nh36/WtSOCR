@@ -61,7 +61,7 @@
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9645
+      "count": 9639
     },
     {
       "source_kind": "pdf",
@@ -77,6 +77,11 @@
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
       "count": 1530
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_bounded_comparison",
+      "count": 24
     },
     {
       "source_kind": "pdf",
@@ -116,7 +121,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 536
+      "count": 530
     }
   ],
   "alphabetic_characters": [
@@ -178,7 +183,7 @@
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28933
+      "count": 28915
     },
     {
       "source_kind": "pdf",
@@ -194,6 +199,11 @@
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
       "count": 16140
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_bounded_comparison",
+      "count": 37
     },
     {
       "source_kind": "pdf",
@@ -233,7 +243,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 7904
+      "count": 7885
     }
   ],
   "canonical_header_fields": {
@@ -946,6 +956,64 @@
         "end": 763,
         "literal": "Traditionslinie",
         "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
+      }
+    ],
+    "typed_bounded_comparison": [
+      {
+        "identity": "badw:pdf:badw-v2-9ead44bcf941bfe91df92338c8c2f07a9ea1ca74f151d28acddff2ae6cdb56d7:2332",
+        "start": 73,
+        "end": 77,
+        "literal": "vgl.",
+        "source_sha256": "aa29a765e4a050127f0013c4791aee96ae61e8a5508e0bcd50d87b374a7e11fa"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9ead44bcf941bfe91df92338c8c2f07a9ea1ca74f151d28acddff2ae6cdb56d7:2332",
+        "start": 77,
+        "end": 90,
+        "literal": " K\nLETTER/\nK\n",
+        "source_sha256": "aa29a765e4a050127f0013c4791aee96ae61e8a5508e0bcd50d87b374a7e11fa"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9ead44bcf941bfe91df92338c8c2f07a9ea1ca74f151d28acddff2ae6cdb56d7:2513",
+        "start": 46,
+        "end": 50,
+        "literal": "vgl.",
+        "source_sha256": "3ae20865c36bc0dc2a98497952b324fc4b64a19da61df7c2b2943d23bea9d472"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9ead44bcf941bfe91df92338c8c2f07a9ea1ca74f151d28acddff2ae6cdb56d7:2513",
+        "start": 50,
+        "end": 61,
+        "literal": "\nK\nLETTER/ ",
+        "source_sha256": "3ae20865c36bc0dc2a98497952b324fc4b64a19da61df7c2b2943d23bea9d472"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:916",
+        "start": 66,
+        "end": 70,
+        "literal": "vgl.",
+        "source_sha256": "9cdb86caca8b9f79724108d88e1d92ff62acf65e702bf91fda78bd3535425286"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:916",
+        "start": 70,
+        "end": 73,
+        "literal": " S\n",
+        "source_sha256": "9cdb86caca8b9f79724108d88e1d92ff62acf65e702bf91fda78bd3535425286"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1509",
+        "start": 38,
+        "end": 42,
+        "literal": "vgl.",
+        "source_sha256": "6d56ce4c94b825247a3dc60a0695c1782d8092b0848f9a1b9519a1fd7c23faec"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1509",
+        "start": 42,
+        "end": 45,
+        "literal": " S\n",
+        "source_sha256": "6d56ce4c94b825247a3dc60a0695c1782d8092b0848f9a1b9519a1fd7c23faec"
       }
     ],
     "typed_bounded_example": [
