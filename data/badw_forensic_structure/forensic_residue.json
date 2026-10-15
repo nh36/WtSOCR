@@ -83,7 +83,7 @@
     {
       "source_kind": "pdf",
       "family": "reference_target_or_comparison_continuation",
-      "count": 1558
+      "count": 1539
     },
     {
       "source_kind": "pdf",
@@ -95,7 +95,7 @@
     {
       "source_kind": "html",
       "family": "HTML_example_envelope",
-      "count": 3
+      "count": 1
     },
     {
       "source_kind": "html",
@@ -110,27 +110,27 @@
     {
       "source_kind": "pdf",
       "family": "PDF_example_candidate",
-      "count": 6
+      "count": 4
     },
     {
       "source_kind": "pdf",
       "family": "definition_clause",
-      "count": 2
+      "count": 1
     },
     {
       "source_kind": "pdf",
       "family": "entry_prose_without_bounded_passage",
-      "count": 125
+      "count": 120
     },
     {
       "source_kind": "pdf",
       "family": "explicit_comparison_clause",
-      "count": 167
+      "count": 8
     },
     {
       "source_kind": "pdf",
       "family": "sense_prose_without_bounded_passage",
-      "count": 20
+      "count": 19
     }
   ],
   "pending_alphabetic_families": [
@@ -172,7 +172,7 @@
     {
       "source_kind": "pdf",
       "family": "lexical_prose_without_proven_boundary",
-      "count": 5527
+      "count": 5508
     },
     {
       "source_kind": "pdf",

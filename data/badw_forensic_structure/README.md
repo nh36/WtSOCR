@@ -1,20 +1,21 @@
 # Bounded-passage stopping point (dcac807f73 baseline)
 
-The current replay establishes 109,179 owners (+159), leaving 246 (83 HTML,
-163 PDF). Gains comprise 124 terminal comparison clauses and 35 nested bounded
-passages. Exact source text and all prior accepted relationships are retained.
+The current replay establishes 109,190 owners (+170), leaving 235 (83 HTML,
+152 PDF). Gains comprise 124 terminal comparison clauses, 35 nested bounded
+passages and 11 semicolon-comparison owners. Exact source text and all prior accepted relationships are retained.
 All 29,877 projections and 114 frozen witnesses pass. Citations/identities remain
 109,425 / 109,079 accepted / 346 unresolved. Meaningful residue falls only 19
 alphabetic characters, from 11,670 to 11,651 (HTML 3,766; PDF 7,885).
 
 `passage_baseline.jsonl.gz` enumerates all 405 baseline owners with punctuation,
 source components and failure context; `passage_remaining.jsonl.gz` enumerates
-all 246 survivors. Summary JSON files give HTML/PDF counts by actual grammar.
+the preceding 246 survivors; `passage_after_semicolon.jsonl.gz` is the current
+235-occurrence census. Summary JSON files give HTML/PDF counts by actual grammar.
 Thirty-nine survivors are inside broad source Lex. nodes but lack an accepted
 canonical item/subclause; these have not been promoted by broad containment.
 
 The small example/definition cases are represented in the baseline and remaining
-census. Individual scholarly disposition of the 246 survivors remains pending.
+census. Individual scholarly disposition of the 235 survivors remains pending.
 Malformed quotation boundaries and absent explicit variant markers are retained,
 not silently repaired. The exact source-bound records are the authoritative
 occurrence-level disposition.
@@ -50,10 +51,27 @@ python3 scripts/select_badw_passage_positive_review.py --output /tmp/passage_pos
 ```
 
 The selector pins hashes of its ignored gain and source-packet inputs. Raw HTML,
-PDFs and rendered images remain in ignored `work/` storage. No parser rule was
-widened and no new corpus replay was performed for this source-validation change;
-the corpus figures above describe the preceding replay. Individual dispositions
-and implementation for the 246 unresolved occurrences remain open.
+PDFs and rendered images remain in ignored `work/` storage.
+
+## Semicolon comparison implementation and replay
+
+`semicolon_positive_review.jsonl` records all ten new passages, containing eleven
+citations across nine independent PDF entries/pages. Actual facsimiles were
+reviewed; no false owners were observed. The explicit `vgl.` marker and balanced
+top-level semicolon bound a comparison within an accepted definition. Parenthetical
+comparisons, malformed delimiters, full-sentence stops and crossing example/Lex./sense
+components fail closed. Bibliography identity and citation position never supply
+the boundary. Positive and negative tests exercise these exclusions.
+
+The full 29,877-witness replay and all 114 frozen witnesses pass. All prior citation
+owners, bibliography identities, xref bindings, language forms and source spans
+are preserved. Meaningful untyped text remains 11,651 characters: this gain
+surrounds already-accounted text rather than recovering missing lexical content.
+The eleven gains were definition-contained citations in the preceding census;
+definition-contained residue falls 20 to 9. The 88 coarse comparison rejections,
+39 Lex-contained cases and other surviving families still require their broader
+individual review. This is a tested implementation stopping point, not completion
+of that review.
 
 ## Historical preceding tranche documentation
 

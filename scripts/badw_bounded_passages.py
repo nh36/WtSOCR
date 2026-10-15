@@ -127,3 +127,64 @@ def terminal_comparisons(nodes, text, assigned, object_):
             citation_node_ids=[n['id'] for n in cites]))
         assigned.update(n['id'] for n in cites)
     return result
+
+
+def semicolon_comparisons(nodes, text, assigned, object_):
+    """A comparison closed by a top-level semicolon inside a definition.
+
+    The marker and punctuation establish the passage before citations are
+    considered. Delimiters, competing components and sense boundaries fail
+    closed; neither a citation nor its bibliography identity supplies an end.
+    """
+    result = []
+    for definition in nodes:
+        if definition['kind'] != 'definition':
+            continue
+        a, b = definition['start'], definition['end']
+        for marker in re.finditer(r'\bvgl\.\s+', text[a:b]):
+            start = a + marker.start()
+            # Parenthetical comparisons belong to the enclosure grammar.
+            if any(s < start < e for s, e, _ in envelopes(text)
+                   if s >= a and e <= b):
+                continue
+            stack, end = [], None
+            for i in range(start, b):
+                char = text[i]
+                if char in PAIRS.values():
+                    stack.append(char)
+                elif char in PAIRS:
+                    if not stack or stack.pop() != PAIRS[char]:
+                        break
+                elif char == ';' and not stack:
+                    end = i + 1
+                    break
+                elif char == '.' and not stack:
+                    token = re.search(r'([\w]+)$', text[start:i])
+                    abbreviation = token and token[1] in ('vgl', 'f', 'ff', 'Nr', 'Anm', 's', 'v', 'Bd')
+                    decimal = i > start and text[i-1].isdigit() and i+1 < b and text[i+1].isdigit()
+                    if not abbreviation and not decimal:
+                        break
+            if end is None:
+                continue
+            if any(n['kind'] in ('example', 'lexical', 'lexical_parallel', 'lex_block')
+                   and max(start, n['start']) < min(end, n['end']) for n in nodes):
+                continue
+            if any(n['kind'] == 'sense' and
+                   max(start, n['start']) < min(end, n['end']) and
+                   not n['start'] <= start < end <= n['end'] for n in nodes):
+                continue
+            cites = [n for n in nodes if n['kind'] == 'citation' and
+                     start <= n['start'] < n['end'] <= end and n['id'] not in assigned]
+            if not cites:
+                continue
+            senses = [n for n in nodes if n['kind'] == 'sense' and
+                      n['start'] <= start < end <= n['end']]
+            sense = min(senses, key=lambda n: n['end']-n['start'])['id'] if senses else None
+            result.append(object_('citable_passage', start, end,
+                passage_type='semicolon_comparison', containing_node_id=definition['id'],
+                sense_node_id=sense, ownership='sense' if sense else 'entry',
+                evidence='explicit comparison marker and balanced top-level semicolon within definition',
+                boundary_evidence=dict(marker='vgl.', terminal=';', containing_kind='definition'),
+                citation_node_ids=[n['id'] for n in cites]))
+            assigned.update(n['id'] for n in cites)
+    return result

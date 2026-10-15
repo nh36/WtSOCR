@@ -228,3 +228,28 @@ def test_terminal_comparison_has_independent_definition_end():
         candidate=text[:-1]+suffix
         nodes[0]['end']=len(candidate)
         assert terminal_comparisons(nodes,candidate,set(),factory)==[]
+
+
+def test_semicolon_comparison_is_independent_of_citation_end():
+    from badw_bounded_passages import semicolon_comparisons
+    factory=lambda k,a,b,**kw:dict(kind=k,start=a,end=b,**kw)
+    def run(text, extra=(), assigned=()):
+        nodes=[dict(id='d',kind='definition',start=0,end=len(text))]
+        for label in ('AAA','BBB'):
+            if label in text:
+                a=text.index(label)
+                nodes.append(dict(id=label,kind='citation',start=a,end=a+3))
+        return semicolon_comparisons(nodes+list(extra),text,set(assigned),factory)
+    text='definition; vgl. AAA (note; detail), BBB s. v. target; further definition.'
+    result=run(text)
+    assert len(result)==1 and result[0]['citation_node_ids']==['AAA','BBB']
+    assert text[result[0]['start']:result[0]['end']]=='vgl. AAA (note; detail), BBB s. v. target;'
+    assert run(text, assigned=('AAA','BBB'))==[]
+    for invalid in ('definition; vgl. AAA (unclosed; further text',
+                    'definition; vgl. AAA] ; further text',
+                    'definition; vgl. AAA. Further assertion;',
+                    'definition; vgl. AAA without independent closure',
+                    'definition (vgl. AAA; note) continues.'):
+        assert run(invalid)==[]
+    for kind in ('example','lexical','lexical_parallel','lex_block','sense'):
+        assert run(text,[dict(id='conflict',kind=kind,start=text.index('AAA'),end=len(text))])==[]
