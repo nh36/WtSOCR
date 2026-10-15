@@ -1,0 +1,3706 @@
+{
+  "baseline_commit": "e14c14598a",
+  "selection_policy": "deterministic feature-stratified; all rare productions; eight terminal comparisons per PDF volume",
+  "gain_occurrences": 159,
+  "unique_gain_passages": 152,
+  "gains_sha256": "c9474e54487d3157f136bd7db47c0aaec7a32577188105a4542f3b437fb58c26",
+  "packets_sha256": "8f09f3e3c452e69571dce2d582b17315e5d29daf246ca9057f0a3bcd32d6ba14",
+  "selected": [
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "source_division",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n0",
+        "end": 88,
+        "entry_identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:916",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "b63bfa97b5121601b59f9e864944d03fd76e08f0da1795f0ff8d7e5e92a53408",
+        "literal": "(vgl. S\nCHUH 1973: 148)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:916",
+          "text_sha256": "9cdb86caca8b9f79724108d88e1d92ff62acf65e702bf91fda78bd3535425286"
+        },
+        "start": 65,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "khrums stod",
+      "stratum": [
+        "2",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n0",
+        "kind": "source_division",
+        "start": 0,
+        "end": 758,
+        "parent": null
+      },
+      "container_literal": " auch khrum stod ein\nGestirn oder Nakṣatra, skt.\npūrvabhadrapadā (vgl. S\nCHUH 1973: 148)\nund der danach benannte Monat, vgl.\n↓khrums zla.\nskar ma ~ „das Gestirn khrums stod“ (Nel\n25a6); ~ la śi bud med ṅan (metr.) „stirbt\nman bei khrums stod, ist es für Frauen\nschlecht“ (Nagdel 76,5); ~ zla ba’i tshes\nbcu’i ñin „der zehnte Tag des Monats\nkhrums stod“ (Sumpa 4a1). \nLex. pūrvabhadrapadā (Mvy 3210); bya\nmchu źes pa’i skar ma’am yaṅ na ~ ni skar\nma gñis te dbyibs ni śiṅ rta ’dra’o skar ma ’di\nstod smad kyi khyad par ro „der Stern na-\nmens bya mchu, oder aber: khrums stod sind\nzwei Sterne, deren Form einem Wagen\nähnlich ist; dieses Sternbild wird in ein vor-\nderes und ein hinteres geteilt“ (brDa);  gnas\nma ≈ skar ma khrum stod „Stern khrum\nstod“ (Dagy).",
+      "context": " auch khrum stod ein\nGestirn oder Nakṣatra, skt.\npūrvabhadrapadā (vgl. S\nCHUH 1973: 148)\nund der danach benannte Monat, vgl.\n↓khrums zla.\nskar ma ~ „das Gestirn khrums stod“ (Nel\n25a6); ~ la śi bud med ṅan (metr.) „stirbt\nman bei khrums stod, ist es für Frauen\nschlech",
+      "review_text_sha256": "9cdb86caca8b9f79724108d88e1d92ff62acf65e702bf91fda78bd3535425286",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678.json.gz",
+          "canonical_object_sha256": "ba4ca83e8fd7aaa7ade833198cbb323b5e0fa9734a87473a488b494d8cae30e9",
+          "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+          "pdf_sha256": "72a55523343f7a11ab63b30d2debe877a79d6607e93a4ff1bbf195dade40ed3a",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khrums%20smad",
+          "run_end_exclusive": 1509,
+          "run_start": 916,
+          "source_text_sha256": "0c3bb3ccc7cfddedce246af584edef9b3ccdeb378d360648261a4292f6409f92"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "113"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 74,
+        "entry_identity": "badw:pdf:badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710:0",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "9da2f75359aae6bcdeb669f9d8a7b6527dbe51929fc91a7b2934fd784605a36c",
+        "literal": "(vgl.\nS\nCHUH 1973: 66)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710:0",
+          "text_sha256": "0b7d20768af612a5b536a1373ecfa8fd2e06cc300d60a1a7b2f8b304d39298e0"
+        },
+        "start": 52,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "khyim źag",
+      "stratum": [
+        "2",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 95,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710",
+            "span_index": 0,
+            "printed_page": 87,
+            "line_char_start": 1,
+            "line_char_end": 25,
+            "run_start": 8,
+            "run_end_exclusive": 31
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710",
+            "span_index": 0,
+            "printed_page": 87,
+            "line_char_start": 0,
+            "line_char_end": 31,
+            "run_start": 31,
+            "run_end_exclusive": 55
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710",
+            "span_index": 0,
+            "printed_page": 87,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 55,
+            "run_end_exclusive": 56
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710",
+            "span_index": 0,
+            "printed_page": 87,
+            "line_char_start": 0,
+            "line_char_end": 35,
+            "run_start": 56,
+            "run_end_exclusive": 78
+          }
+        ]
+      },
+      "container_literal": "ein solarer Tag, der 30.\nTeil eines solaren Monats (vgl.\nS\nCHUH 1973: 66); vgl. ↓khyim zla ba.",
+      "context": " ein solarer Tag, der 30.\nTeil eines solaren Monats (vgl.\nS\nCHUH 1973: 66); vgl. ↓khyim zla ba.\n~ re la cha chuṅ re / spyod ciṅ (metr.) „man\nteilt für jeden solaren Tag jeweils eine klei-\nne Einheit ein“ (Vḍk 2: 392,5).\nLex. ñi ma khyim bcu gñis su loṅs ",
+      "review_text_sha256": "0b7d20768af612a5b536a1373ecfa8fd2e06cc300d60a1a7b2f8b304d39298e0",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710.json.gz",
+          "canonical_object_sha256": "70edbc61a18871ac16ca35f44c498cb8445549d829e0003eec877717d572773c",
+          "page_id": "badw-v2-f275b11a78e433749c789156229a5f33ae1b56ea472fd7a1689f6d5344348710",
+          "pdf_sha256": "c9c7cebc27ef8609e415082e65fdcce961d0a57e3277cf076a196d8112c4f5c5",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khyil%20khyil%20ba",
+          "run_end_exclusive": 305,
+          "run_start": 0,
+          "source_text_sha256": "310c1218118f5e404b0807050ce30b2f0e1b78d1eca589359434b89588d97172"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "87"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 76,
+        "entry_identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1735",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "27b5fefd7e8407320452524a3c5f72f5606ce036682d36822b21f081057c34a0",
+        "literal": "(vgl.\nS\nCHUH 1973: 146)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678:1735",
+          "text_sha256": "e5530369f5f24ad6e4c05fdd36e579df4d2ef189d2bffd867d385f8ed60d8447"
+        },
+        "start": 53,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "khrums zla",
+      "stratum": [
+        "2",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 20,
+        "end": 132,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+            "span_index": 0,
+            "printed_page": 113,
+            "line_char_start": 20,
+            "line_char_end": 23,
+            "run_start": 1744,
+            "run_end_exclusive": 1760
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+            "span_index": 0,
+            "printed_page": 113,
+            "line_char_start": 0,
+            "line_char_end": 34,
+            "run_start": 1760,
+            "run_end_exclusive": 1788
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+            "span_index": 0,
+            "printed_page": 113,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 1788,
+            "run_end_exclusive": 1789
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+            "span_index": 0,
+            "printed_page": 113,
+            "line_char_start": 0,
+            "line_char_end": 39,
+            "run_start": 1789,
+            "run_end_exclusive": 1819
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+            "span_index": 0,
+            "printed_page": 113,
+            "line_char_start": 0,
+            "line_char_end": 31,
+            "run_start": 1819,
+            "run_end_exclusive": 1835
+          }
+        ]
+      },
+      "container_literal": "ein\nbest. Monat, skt. bhādrapada (vgl.\nS\nCHUH 1973: 146), bzw. das damit verbun-\ndene Tierkreiszeichen Jungfrau.",
+      "context": " auch khrums zla ba ein\nbest. Monat, skt. bhādrapada (vgl.\nS\nCHUH 1973: 146), bzw. das damit verbun-\ndene Tierkreiszeichen Jungfrau.\nLex. ston zla rwa ba’am khrums skar daṅ\n’brel ba’i zla ba’o / yaṅ na hor zla brgyad pa\n„erster Herbstmonat oder mit dem dem",
+      "review_text_sha256": "e5530369f5f24ad6e4c05fdd36e579df4d2ef189d2bffd867d385f8ed60d8447",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678.json.gz",
+          "canonical_object_sha256": "ba4ca83e8fd7aaa7ade833198cbb323b5e0fa9734a87473a488b494d8cae30e9",
+          "page_id": "badw-v2-a59c6499f067f78331a59ef3397d0e05f8d76eab94a690b0bdc93702434d3678",
+          "pdf_sha256": "72a55523343f7a11ab63b30d2debe877a79d6607e93a4ff1bbf195dade40ed3a",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khrums%20smad",
+          "run_end_exclusive": 1865,
+          "run_start": 1735,
+          "source_text_sha256": "841bcae25d738d0a2bdb5220e23215cb11fe0d2781d625dd770bf67d1b9420fa"
+        },
+        {
+          "canonical_object": "volume_2/pages/badw-v2-cd0493a14e9c34f7fbdbca278f884d7756d17d4d250d6c4470497eb501280895.json.gz",
+          "canonical_object_sha256": "2e45e3f557176815855c6c2c94db1a16327ab0896d8f9a466498799d3b860543",
+          "page_id": "badw-v2-cd0493a14e9c34f7fbdbca278f884d7756d17d4d250d6c4470497eb501280895",
+          "pdf_sha256": "ac5d900cf65120fb6ef8106f0fb2e538ff82a5a1b08ada7e2f132faaa44d42fe",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khrul%20yas",
+          "run_end_exclusive": 144,
+          "run_start": 0,
+          "source_text_sha256": "3647747fc86438436835b1ebc513ba9f15baa896d98381b17cc16a3448bc21d9"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "113",
+        "114"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2",
+          "n3"
+        ],
+        "containing_node_id": "n1",
+        "end": 148,
+        "entry_identity": "badw:pdf:badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90:375",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "80321f921a2202bdab880af2380918db50a1c7b0d1f36c34221a3cf68a518b57",
+        "literal": "vgl. H\nAHN 2003: 126-128 und\nSKAL BZAṅ ’GYUR MED 1992: 150-152.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90:375",
+          "text_sha256": "8880f084406a1b6c4252dcbe44f759ba033ad346cf2e5bf89fbc02020e6c662d"
+        },
+        "start": 85,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "graṅ",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 12,
+        "end": 148,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+            "span_index": 0,
+            "printed_page": 251,
+            "line_char_start": 12,
+            "line_char_end": 35,
+            "run_start": 380,
+            "run_end_exclusive": 409
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+            "span_index": 0,
+            "printed_page": 251,
+            "line_char_start": 0,
+            "line_char_end": 35,
+            "run_start": 409,
+            "run_end_exclusive": 434
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+            "span_index": 0,
+            "printed_page": 251,
+            "line_char_start": 0,
+            "line_char_end": 19,
+            "run_start": 434,
+            "run_end_exclusive": 447
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+            "span_index": 0,
+            "printed_page": 251,
+            "line_char_start": 0,
+            "line_char_end": 21,
+            "run_start": 447,
+            "run_end_exclusive": 461
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+            "span_index": 0,
+            "printed_page": 251,
+            "line_char_start": 0,
+            "line_char_end": 34,
+            "run_start": 461,
+            "run_end_exclusive": 483
+          }
+        ]
+      },
+      "container_literal": "es könnte sein; ein mo-\ndales Hilfsverb zur Bezeichnung der\nMöglichkeit, vgl. H\nAHN 2003: 126-128 und\nSKAL BZAṅ ’GYUR MED 1992: 150-152.",
+      "context": " auch kraṅ  es könnte sein; ein mo-\ndales Hilfsverb zur Bezeichnung der\nMöglichkeit, vgl. H\nAHN 2003: 126-128 und\nSKAL BZAṅ ’GYUR MED 1992: 150-152.\nsgo ṅa chu ṅu / rṛ ched po ’i ljid kyṛs mnan\nna chogs kraṅ „ein kleines Ei kann zerbro-\nchen werden, wenn es vom Gewicht eines\ngroßen Berges niedergedrückt wird“\n(PT1287 512); leg",
+      "review_text_sha256": "8880f084406a1b6c4252dcbe44f759ba033ad346cf2e5bf89fbc02020e6c662d",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90.json.gz",
+          "canonical_object_sha256": "65293b4e1d4724bb0b6c0b1a3c576a5b91ce0b103ca3554e9cca19da0ede100b",
+          "page_id": "badw-v2-6ea2c1e56273e7a57fca72ea9c18a986042681543434ccbf4a2878e23b32ba90",
+          "pdf_sha256": "e8c3fffe208bc4bb43a76b5a469476405206b52c5e09232815524736288bb148",
+          "pdf_url": "https://wts-digital.badw.de/pdf/gra%E1%B9%85%20dus",
+          "run_end_exclusive": 1178,
+          "run_start": 375,
+          "source_text_sha256": "74a47ba49574ff23563fd1fa0b09fe97d32546a214f53435a96853d4a3289ba9"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "251"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 57,
+        "entry_identity": "badw:pdf:badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028:0",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "55e67850b89e8fa5b5b13324ca8d2e61e167163e273418fc4e6c2150863518d1",
+        "literal": "vgl.\nK\nLETTER/KRIECHBAUM 2001:\n158 ff.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028:0",
+          "text_sha256": "1c3337dde4bb3a0a2ecf18421c3bb1c40b27c88202b22779ebfd80fa623522a5"
+        },
+        "start": 19,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ga dur dman",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 57,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028",
+            "span_index": 0,
+            "printed_page": 177,
+            "line_char_start": 1,
+            "line_char_end": 23,
+            "run_start": 9,
+            "run_end_exclusive": 26
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028",
+            "span_index": 0,
+            "printed_page": 177,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 26,
+            "run_end_exclusive": 27
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028",
+            "span_index": 0,
+            "printed_page": 177,
+            "line_char_start": 0,
+            "line_char_end": 23,
+            "run_start": 27,
+            "run_end_exclusive": 42
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028",
+            "span_index": 0,
+            "printed_page": 177,
+            "line_char_start": 0,
+            "line_char_end": 7,
+            "run_start": 42,
+            "run_end_exclusive": 47
+          }
+        ]
+      },
+      "container_literal": "eine Heilpflanze, vgl.\nK\nLETTER/KRIECHBAUM 2001:\n158 ff.",
+      "context": " eine Heilpflanze, vgl.\nK\nLETTER/KRIECHBAUM 2001:\n158 ff.",
+      "review_text_sha256": "1c3337dde4bb3a0a2ecf18421c3bb1c40b27c88202b22779ebfd80fa623522a5",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028.json.gz",
+          "canonical_object_sha256": "d556f20bfe3c5a66c23867589ef2a270c9414d373586cea1d1c64e7c9c88b3d3",
+          "page_id": "badw-v2-4ce379245266713fe431c9c3fa2722459101e20c3c04750f1a5ea129c8179028",
+          "pdf_sha256": "397d7d65a321c05194a51bb389238077abd3e321bbb88954088967e3ed55ced8",
+          "pdf_url": "https://wts-digital.badw.de/pdf/ga%20dur%20dman",
+          "run_end_exclusive": 47,
+          "run_start": 0,
+          "source_text_sha256": "05ab65892fdccaa4c501753c2c114e6eacb45c2fcb182aae585fde28ee161461"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "177"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 81,
+        "entry_identity": "badw:pdf:badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61:1064",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "b3b1ab1334c4dc4b5c89f7a157836733b249dfe8dd801d69f6fd951d1ff618cf",
+        "literal": "vgl. K\nLETTER/ KRIECHBAUM\n2001: 254-239.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61:1064",
+          "text_sha256": "59efe500efea5ee92b7c7c5bcbe0078cf2955604d6f9b60a5d6b3fd78c506f6c"
+        },
+        "start": 41,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "sga tig",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 81,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61",
+            "span_index": 0,
+            "printed_page": 462,
+            "line_char_start": 1,
+            "line_char_end": 30,
+            "run_start": 1070,
+            "run_end_exclusive": 1089
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61",
+            "span_index": 0,
+            "printed_page": 462,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 1089,
+            "run_end_exclusive": 1101
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61",
+            "span_index": 0,
+            "printed_page": 462,
+            "line_char_start": 0,
+            "line_char_end": 18,
+            "run_start": 1101,
+            "run_end_exclusive": 1115
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61",
+            "span_index": 0,
+            "printed_page": 462,
+            "line_char_start": 0,
+            "line_char_end": 14,
+            "run_start": 1115,
+            "run_end_exclusive": 1125
+          }
+        ]
+      },
+      "container_literal": "eine Heilpflanze, eine Andro-\nsace-Art, vgl. K\nLETTER/ KRIECHBAUM\n2001: 254-239.",
+      "context": " eine Heilpflanze, eine Andro-\nsace-Art, vgl. K\nLETTER/ KRIECHBAUM\n2001: 254-239.",
+      "review_text_sha256": "59efe500efea5ee92b7c7c5bcbe0078cf2955604d6f9b60a5d6b3fd78c506f6c",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61.json.gz",
+          "canonical_object_sha256": "61d33688e6763cc96334131500a41dfba33b19428bdf95c9f6e52cc812b0433c",
+          "page_id": "badw-v2-964389332aecfbfbd7dd3c287f782bfa19c979fc464d132ba02c5fcf06367a61",
+          "pdf_sha256": "da305d78bf76a356fcf4d29bbe32e1ed99985641ad28f12fb09bb560c74e585f",
+          "pdf_url": "https://wts-digital.badw.de/pdf/sga%20%E2%80%99pho%E1%B9%85",
+          "run_end_exclusive": 1125,
+          "run_start": 1064,
+          "source_text_sha256": "66be8b2d6b6e2340b86720640f28f7f94b46def0f3ad0c9bb9d983d3fb1380a0"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "462"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 54,
+        "entry_identity": "badw:pdf:badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274:1723",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "790fca5f587f968e48e0ad4a621f97d2bfc99602c40d2e6ce291f76ddc3427e7",
+        "literal": "vgl. K\nLETTER/KRIECHBAUM\n2001: 106.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274:1723",
+          "text_sha256": "d22170b3f88e8036d2a2767db75804f383a604bf0e2a09e8c1c4ca8545de94a1"
+        },
+        "start": 19,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "gla ba srad ma",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 54,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274",
+            "span_index": 0,
+            "printed_page": 284,
+            "line_char_start": 1,
+            "line_char_end": 18,
+            "run_start": 1739,
+            "run_end_exclusive": 1749
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274",
+            "span_index": 0,
+            "printed_page": 284,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 1749,
+            "run_end_exclusive": 1753
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274",
+            "span_index": 0,
+            "printed_page": 284,
+            "line_char_start": 0,
+            "line_char_end": 17,
+            "run_start": 1753,
+            "run_end_exclusive": 1765
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274",
+            "span_index": 0,
+            "printed_page": 284,
+            "line_char_start": 0,
+            "line_char_end": 10,
+            "run_start": 1765,
+            "run_end_exclusive": 1770
+          }
+        ]
+      },
+      "container_literal": "eine Heilpflanze,\nvgl. K\nLETTER/KRIECHBAUM\n2001: 106.",
+      "context": " eine Heilpflanze,\nvgl. K\nLETTER/KRIECHBAUM\n2001: 106.",
+      "review_text_sha256": "d22170b3f88e8036d2a2767db75804f383a604bf0e2a09e8c1c4ca8545de94a1",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274.json.gz",
+          "canonical_object_sha256": "20162369bfb8ce84513408300f1ea1212991a25868b2b07a11338e4169e62879",
+          "page_id": "badw-v2-e04ad9c218ff1e8c2bca8fba6305b4e1c9a944b06d7b999782e3796421b5f274",
+          "pdf_sha256": "ac3b6228d925061d34b515350bdc9c5519864726f03a77d918244d0b2a5ad886",
+          "pdf_url": "https://wts-digital.badw.de/pdf/gla%20%E2%80%99bab",
+          "run_end_exclusive": 1770,
+          "run_start": 1723,
+          "source_text_sha256": "4a13d5f1af826417caa30f2a7107f124634419a0e23a7d63a57628f7fdee92c9"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "284"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 68,
+        "entry_identity": "badw:pdf:badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c:342",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "19fa13a1d438c74b71c970be84fdc07ade4f698f3064ee3afe52602ca072c35b",
+        "literal": "vgl. K\nLETTER/\nK\nRIECHBAUM 2001: 146.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c:342",
+          "text_sha256": "67a6827d8906efb5bc9f80291efecdf853d9a01fc6acf678ca8819b0ecf9131d"
+        },
+        "start": 31,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "rgya thaṅ phrom",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 68,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+            "span_index": 0,
+            "printed_page": 415,
+            "line_char_start": 1,
+            "line_char_end": 18,
+            "run_start": 360,
+            "run_end_exclusive": 375
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+            "span_index": 0,
+            "printed_page": 415,
+            "line_char_start": 0,
+            "line_char_end": 18,
+            "run_start": 375,
+            "run_end_exclusive": 389
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+            "span_index": 0,
+            "printed_page": 415,
+            "line_char_start": 0,
+            "line_char_end": 7,
+            "run_start": 389,
+            "run_end_exclusive": 393
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+            "span_index": 0,
+            "printed_page": 415,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 393,
+            "run_end_exclusive": 394
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+            "span_index": 0,
+            "printed_page": 415,
+            "line_char_start": 0,
+            "line_char_end": 20,
+            "run_start": 394,
+            "run_end_exclusive": 408
+          }
+        ]
+      },
+      "container_literal": "eine Heilpflanze,\nthaṅ phrom; vgl. K\nLETTER/\nK\nRIECHBAUM 2001: 146.",
+      "context": " eine Heilpflanze,\nthaṅ phrom; vgl. K\nLETTER/\nK\nRIECHBAUM 2001: 146.",
+      "review_text_sha256": "67a6827d8906efb5bc9f80291efecdf853d9a01fc6acf678ca8819b0ecf9131d",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c.json.gz",
+          "canonical_object_sha256": "ba87509116c3c83964dc52144f2a851174acd52b53e9911237fb01c5371ce9a1",
+          "page_id": "badw-v2-911905568b949472acd1f3db4be82249565308e21c414d845ab9b7b96075853c",
+          "pdf_sha256": "bf89dcc7c09667b084a1e788b6142239a838e9cb25b8b671b19cebb59d3f3513",
+          "pdf_url": "https://wts-digital.badw.de/pdf/rgya%20tha%E1%B9%85%20phrom",
+          "run_end_exclusive": 408,
+          "run_start": 342,
+          "source_text_sha256": "60143edbf4bd93596e9855c43b780d8ef9a7f77f49656131cd5c8d6dac4cff4e"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "415"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 86,
+        "entry_identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:623",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "1507f6c87390775750d1d2c8974c6a0601162f880d7c0d7cdad9720867919ec8",
+        "literal": "vgl.\nK\nLETTER/KRIECHBAUM 2001: 128.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a:623",
+          "text_sha256": "05abeb60810c293d2f76eb665b761cda31f12d501acd8dec969ba679a3104d09"
+        },
+        "start": 51,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "khur moṅ",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 15,
+        "end": 86,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a",
+            "span_index": 0,
+            "printed_page": 58,
+            "line_char_start": 15,
+            "line_char_end": 26,
+            "run_start": 631,
+            "run_end_exclusive": 651
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a",
+            "span_index": 0,
+            "printed_page": 58,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 651,
+            "run_end_exclusive": 675
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a",
+            "span_index": 0,
+            "printed_page": 58,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 675,
+            "run_end_exclusive": 676
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a",
+            "span_index": 0,
+            "printed_page": 58,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 676,
+            "run_end_exclusive": 696
+          }
+        ]
+      },
+      "container_literal": "eine Pflan-\nze, eine Art Taraxacum, vgl.\nK\nLETTER/KRIECHBAUM 2001: 128.",
+      "context": " auch khur maṅ eine Pflan-\nze, eine Art Taraxacum, vgl.\nK\nLETTER/KRIECHBAUM 2001: 128.\nLex. ba laṅ lci (r. lce) ≈ khur maṅ (Dagy).",
+      "review_text_sha256": "05abeb60810c293d2f76eb665b761cda31f12d501acd8dec969ba679a3104d09",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a.json.gz",
+          "canonical_object_sha256": "12702f03bbf0b91a8a35b10919c2ed6c931dc68fee7108f0248b37c6713ae2c5",
+          "page_id": "badw-v2-9e16464faebb15a4d33bd2c8000a205b94e7e51899681a60d24c16dfce641c5a",
+          "pdf_sha256": "ac02734b11fd5abd70879c496119b0b18109be5a04e0e40c0df7ebbb63c49c2d",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khur%20tshos",
+          "run_end_exclusive": 727,
+          "run_start": 623,
+          "source_text_sha256": "e2943b84c5220431229824006819bd92c22daf756e4570a2af59ec8316a7ea32"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "58"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 100,
+        "entry_identity": "badw:pdf:badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1:1007",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "099cea6bc7cd3fce23adf27f94f9d7409d8dce2b9b03f3d1f9fdceb3c6b1e537",
+        "literal": "vgl. S\nCHUH 1973: 96.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1:1007",
+          "text_sha256": "8279053a273e272d808a89d7c574b799abfa2a275f3e6671f011f08e8cc99552"
+        },
+        "start": 79,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "sgra gcan",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 100,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1",
+            "span_index": 0,
+            "printed_page": 484,
+            "line_char_start": 1,
+            "line_char_end": 29,
+            "run_start": 1015,
+            "run_end_exclusive": 1042
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1",
+            "span_index": 0,
+            "printed_page": 484,
+            "line_char_start": 0,
+            "line_char_end": 30,
+            "run_start": 1042,
+            "run_end_exclusive": 1070
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1",
+            "span_index": 0,
+            "printed_page": 484,
+            "line_char_start": 0,
+            "line_char_end": 24,
+            "run_start": 1070,
+            "run_end_exclusive": 1085
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1",
+            "span_index": 0,
+            "printed_page": 484,
+            "line_char_start": 0,
+            "line_char_end": 14,
+            "run_start": 1085,
+            "run_end_exclusive": 1091
+          }
+        ]
+      },
+      "container_literal": "Rāhu, der als Planet gedach-\nte myth. Urheber von Mond- und\nSonnenfinsternis; vgl. S\nCHUH 1973: 96.",
+      "context": " Rāhu, der als Planet gedach-\nte myth. Urheber von Mond- und\nSonnenfinsternis; vgl. S\nCHUH 1973: 96.\nñin mtshan mgon ni bdud chu’i ~ rtsa bral\n„die Herren von Tag und Nacht [d. s. Son-\nne und Mond] sind vollkommen frei von\ndem nektar[speisenden] Rāhu“ (Mil 19,5);\n~ skor „die Bere",
+      "review_text_sha256": "8279053a273e272d808a89d7c574b799abfa2a275f3e6671f011f08e8cc99552",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1.json.gz",
+          "canonical_object_sha256": "0c680efb0e28710f39a9ae610d98901ba558a63169805c8c6ebd040eddde3f4c",
+          "page_id": "badw-v2-9a1d3927d1d2c98c0de8a6ef27ac4e7b9bc09936caf0aaeebd0d16186b18a3b1",
+          "pdf_sha256": "3b11c805e940cf089e9883893cc1622101321c036e1c086be2525f1acaef0397",
+          "pdf_url": "https://wts-digital.badw.de/pdf/sgra%20can",
+          "run_end_exclusive": 1330,
+          "run_start": 1007,
+          "source_text_sha256": "11604ee9783e417d8e7823e55dc3f76876f251f1dc65b96d5b81559506c7e4d9"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "484"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n13"
+        ],
+        "containing_node_id": "n12",
+        "end": 384,
+        "entry_identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:1721",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "9eeb94e862785deffffff2aa6ed3cd18eb5cb047b952639c7e99359af1dcfd7d",
+        "literal": "vgl. S\nCHUH 1973:\n144.",
+        "ownership": "sense",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": "n11",
+        "source_binding": {
+          "identity": "badw:pdf:badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc:1721",
+          "text_sha256": "0c4fc843d8fdf6cd353eb8f661aeafdd20de4d2aea2689ab7a2e6370611fbae3"
+        },
+        "start": 362,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "khro mo",
+      "stratum": [
+        "2",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n12",
+        "kind": "definition",
+        "start": 305,
+        "end": 384,
+        "parent": "n11",
+        "source_lines": [
+          {
+            "line_index": 9,
+            "page_id": "badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc",
+            "span_index": 0,
+            "printed_page": 119,
+            "line_char_start": 4,
+            "line_char_end": 39,
+            "run_start": 1961,
+            "run_end_exclusive": 1995
+          },
+          {
+            "line_index": 10,
+            "page_id": "badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc",
+            "span_index": 0,
+            "printed_page": 119,
+            "line_char_start": 0,
+            "line_char_end": 27,
+            "run_start": 1995,
+            "run_end_exclusive": 2013
+          },
+          {
+            "line_index": 11,
+            "page_id": "badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc",
+            "span_index": 0,
+            "printed_page": 119,
+            "line_char_start": 0,
+            "line_char_end": 10,
+            "run_start": 2013,
+            "run_end_exclusive": 2020
+          },
+          {
+            "line_index": 12,
+            "page_id": "badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc",
+            "span_index": 0,
+            "printed_page": 119,
+            "line_char_start": 0,
+            "line_char_end": 4,
+            "run_start": 2020,
+            "run_end_exclusive": 2021
+          }
+        ]
+      },
+      "container_literal": "Holz-Drachen-Jahr; das 38. Jahr des\nSechzigjahreszyklus, vgl. S\nCHUH 1973:\n144.",
+      "context": " 2: 363,4); khro bo\n~’i tshogs rnams daṅ „ihr Scharen männli-\ncher und weiblicher zornvoller Gottheiten“\n(MigTo 88,5).\n 2. Holz-Drachen-Jahr; das 38. Jahr des\nSechzigjahreszyklus, vgl. S\nCHUH 1973:\n144.\nLex. śiṅ ’brug lo (brDa, Dagy).",
+      "review_text_sha256": "0c4fc843d8fdf6cd353eb8f661aeafdd20de4d2aea2689ab7a2e6370611fbae3",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_2/pages/badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc.json.gz",
+          "canonical_object_sha256": "a7cfbefeafa9bb3054b733971f6965e00b32577fdf894d293a59d1c3d89ed4b9",
+          "page_id": "badw-v2-2e6773d79c0a53ebb3e13650aec96752e90ee99fbd31bbc482336e994c7144cc",
+          "pdf_sha256": "5480f5dccfa59fad8e2f636923f15e362983c1154141b9ca46e854daf5a33af8",
+          "pdf_url": "https://wts-digital.badw.de/pdf/khro%20mo",
+          "run_end_exclusive": 2043,
+          "run_start": 1721,
+          "source_text_sha256": "52910b6fa813d289b66f5250e4fb34f153eb34d3a8c8fff4506277e5d93895eb"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "119"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": "]",
+          "containing_kind": "example",
+          "opener": "["
+        },
+        "citation_node_ids": [
+          "n26"
+        ],
+        "containing_node_id": "n22",
+        "end": 637,
+        "entry_identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:709",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "9368241160c4739e073f518da0a39c872e2f8c747c805a36991da04a29abbd90",
+        "literal": "[vgl. Mañjuśrī-\nmūlatantra (Toh 543)]",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:709",
+          "text_sha256": "b747f5ca2ca2860975e8b104398703652a3517e4e4dc55314d018d064b661a48"
+        },
+        "start": 600,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "’jam dpal",
+      "stratum": [
+        "3",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n22",
+        "kind": "example",
+        "start": 551,
+        "end": 653,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 15,
+            "page_id": "badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec",
+            "span_index": 0,
+            "printed_page": 370,
+            "line_char_start": 21,
+            "line_char_end": 42,
+            "run_start": 1136,
+            "run_end_exclusive": 1169
+          },
+          {
+            "line_index": 16,
+            "page_id": "badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec",
+            "span_index": 0,
+            "printed_page": 370,
+            "line_char_start": 0,
+            "line_char_end": 42,
+            "run_start": 1169,
+            "run_end_exclusive": 1199
+          },
+          {
+            "line_index": 17,
+            "page_id": "badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec",
+            "span_index": 0,
+            "printed_page": 370,
+            "line_char_start": 0,
+            "line_char_end": 37,
+            "run_start": 1199,
+            "run_end_exclusive": 1229
+          }
+        ]
+      },
+      "container_literal": "~ bya ba las „aus dem\nKriyā[tantra] des Mañjuśrī [vgl. Mañjuśrī-\nmūlatantra (Toh 543)]“ (ThK 2: 524,3)",
+      "context": "63,8); de’i tshe ’phags pa ~\n’grub tu ñe ba na „als er nahe daran war,\n[den Zustand von] Mañjuśrī zu verwirk-\nlichen“ (Tār 164,9); ~ bya ba las „aus dem\nKriyā[tantra] des Mañjuśrī [vgl. Mañjuśrī-\nmūlatantra (Toh 543)]“ (ThK 2: 524,3); da\nlta ’phags pa ~ byon yaṅ „auch wenn heute\nder edle Mañjuśrī ankäme“ (ThK 2: 531,2);\n’phags pa ~ gyi bla ri sbra ma rir grags pa\n„der bla ri des erhabenen Mañju",
+      "review_text_sha256": "b747f5ca2ca2860975e8b104398703652a3517e4e4dc55314d018d064b661a48",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec.json.gz",
+          "canonical_object_sha256": "a81f84700b0355690d9cc3f61584ec65779c7bf7a37a2994ffd666259d1edc4f",
+          "page_id": "badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec",
+          "pdf_sha256": "626ccd5181d67b52f00b77ecd6b4510919431f7be1801e98b893b5a4d0369a50",
+          "pdf_url": "https://wts-digital.badw.de/pdf/%E2%80%99jam%20dpal",
+          "run_end_exclusive": 1492,
+          "run_start": 709,
+          "source_text_sha256": "0f56247a8e2b79088ab3d97db813c7ccc005f850164d61712e794a54c7cf1e95"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "370"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 117,
+        "entry_identity": "badw:pdf:badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e:1934",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "5469fb19344c6a8a8b20fae0245494b100fce5342043c1c56459d93545e9261c",
+        "literal": "(vgl. S\nCHUH 1973: 130)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e:1934",
+          "text_sha256": "c51e1a383f8040b1013021b3fc6c67858694080237f457182f12d203666fb286"
+        },
+        "start": 94,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "lṅa bsdus",
+      "stratum": [
+        "3",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 118,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+            "span_index": 0,
+            "printed_page": 81,
+            "line_char_start": 1,
+            "line_char_end": 24,
+            "run_start": 1944,
+            "run_end_exclusive": 1966
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+            "span_index": 0,
+            "printed_page": 81,
+            "line_char_start": 0,
+            "line_char_end": 29,
+            "run_start": 1966,
+            "run_end_exclusive": 1992
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+            "span_index": 0,
+            "printed_page": 81,
+            "line_char_start": 0,
+            "line_char_end": 38,
+            "run_start": 1992,
+            "run_end_exclusive": 2021
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+            "span_index": 0,
+            "printed_page": 81,
+            "line_char_start": 0,
+            "line_char_end": 7,
+            "run_start": 2021,
+            "run_end_exclusive": 2026
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+            "span_index": 0,
+            "printed_page": 81,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 2026,
+            "run_end_exclusive": 2034
+          }
+        ]
+      },
+      "container_literal": "die fünf kalendarischen\nGrößen: Wochentag, Datum, Na-\nkṣatra, Karaṇa und Yoga; skt. pañcāṅga\n(vgl. S\nCHUH 1973: 130).",
+      "context": " die fünf kalendarischen\nGrößen: Wochentag, Datum, Na-\nkṣatra, Karaṇa und Yoga; skt. pañcāṅga\n(vgl. S\nCHUH 1973: 130).།\nźag gsum ~ „die drei [Arten] von Tagen, die\nfünf kalendarischen Größen“ (Nagdel\n101,10). \nLex. khyim skyes ≈ ~ kyi naṅ tshan byed pa\nźig „Abschnitt im Kalender, ein karaṇa\n(Dagy",
+      "review_text_sha256": "c51e1a383f8040b1013021b3fc6c67858694080237f457182f12d203666fb286",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e.json.gz",
+          "canonical_object_sha256": "5bb08acfbbefb60dcc5500d0574bf498a4f9d5a866c10a22cbeeec780b1e0824",
+          "page_id": "badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e",
+          "pdf_sha256": "074be67ea649c52c084582eeb02e907689f59e3629264d5f26f631c0f058461f",
+          "pdf_url": "https://wts-digital.badw.de/pdf/l%E1%B9%85a%20bdo",
+          "run_end_exclusive": 2096,
+          "run_start": 1934,
+          "source_text_sha256": "27024e698914637d68f16d3ac649feb5f75a1577412410762fedcc9be94ff988"
+        },
+        {
+          "canonical_object": "volume_3/pages/badw-v3-eb5fbdfb74ccb770f63cc0c93d173cbace5dd95489e4d7e82874983261e381a9.json.gz",
+          "canonical_object_sha256": "ca5d52e0a05b6bc4180ac39a44ddd6c18a7ef3c7bcb086fba5c96f16bac87f7c",
+          "page_id": "badw-v3-eb5fbdfb74ccb770f63cc0c93d173cbace5dd95489e4d7e82874983261e381a9",
+          "pdf_sha256": "dcbf58d7374130e4c8c6da9ab83c100a75c26986b50a9f1ff18dc3f758adc7ba",
+          "pdf_url": "https://wts-digital.badw.de/pdf/l%E1%B9%85a%20pa",
+          "run_end_exclusive": 65,
+          "run_start": 0,
+          "source_text_sha256": "7e9ee5616327b01802f96a76a60626badee7d9b8fe83be1eb2c7e07f103c6747"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "81",
+        "82"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n21"
+        ],
+        "containing_node_id": "n20",
+        "end": 334,
+        "entry_identity": "badw:pdf:badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834:0",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "ef7e9ce264bb498d04bc591e6420ba6f6b9b7063d7af1629ff9bf9e49488e9f6",
+        "literal": "(vgl. Z\nEISLER\n2011: 179)",
+        "ownership": "sense",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": "n19",
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834:0",
+          "text_sha256": "f8df79aacec51a8beaeb483122e3661b4968ab96a551ac7876d7d97ad6534aec"
+        },
+        "start": 309,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ṅog",
+      "stratum": [
+        "3",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n20",
+        "kind": "definition",
+        "start": 284,
+        "end": 335,
+        "parent": "n19",
+        "source_lines": [
+          {
+            "line_index": 10,
+            "page_id": "badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834",
+            "span_index": 0,
+            "printed_page": 39,
+            "line_char_start": 3,
+            "line_char_end": 35,
+            "run_start": 210,
+            "run_end_exclusive": 240
+          },
+          {
+            "line_index": 11,
+            "page_id": "badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834",
+            "span_index": 0,
+            "printed_page": 39,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 240,
+            "run_end_exclusive": 245
+          },
+          {
+            "line_index": 12,
+            "page_id": "badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834",
+            "span_index": 0,
+            "printed_page": 39,
+            "line_char_start": 0,
+            "line_char_end": 11,
+            "run_start": 245,
+            "run_end_exclusive": 252
+          }
+        ]
+      },
+      "container_literal": "geschändet, entehrt sein (vgl. Z\nEISLER\n2011: 179).",
+      "context": "brDa); ~ na ni\nsoṅ na „wenn man geht“ (Liś 21,2); ~ na ≈\nsoṅ na (TTC).\n2. unterdrücken.\nLex. ~ go ≈ gnon no „unterdrücken“\n(brDa); ~ go ≈ non no (TTC).\n3. geschändet, entehrt sein (vgl. Z\nEISLER\n2011: 179).\nmo brgya’ nṛ slaṅ ṅa braṅ la bchar te ṅogo\n„die hundert Frauen, die Eisenpfannen an\ndie Brust gepreßt hatten, waren ge-\nschändet“ (PT1287 55).",
+      "review_text_sha256": "f8df79aacec51a8beaeb483122e3661b4968ab96a551ac7876d7d97ad6534aec",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834.json.gz",
+          "canonical_object_sha256": "807aaff92a5bb078e809020027943d96e001b056c4ad9e0e66b0a932e78bbc7e",
+          "page_id": "badw-v3-19232c08fba382758dd35712eac50f3fb472c4dc1765e091f5c980bdfbcc2834",
+          "pdf_sha256": "5f1e80982eb1570d5c10c676613563356d96f1b8f063447e2effc7085a8a215b",
+          "pdf_url": "https://wts-digital.badw.de/pdf/%E1%B9%85og",
+          "run_end_exclusive": 367,
+          "run_start": 0,
+          "source_text_sha256": "f272f79a9f758a93b7e04f5f8bab33adfb63a1590c9a2a24bd925e3a3c02ae10"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "39"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": "“",
+          "containing_kind": "example",
+          "opener": "„"
+        },
+        "citation_node_ids": [
+          "d254d72fba0031f78479b0bee680a99cc8b829fa7fc0b98a2e02f2beb95fdb87"
+        ],
+        "containing_node_id": "n2",
+        "end": 138,
+        "entry_identity": "badw:pdf:badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f:0",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "47d8ee4061dd4e7a8585293daa2a2d1dafd976f6aa68d9e39062ce60dcb8415b",
+        "literal": "„sie\nwurden zu solchen, die von den Göttern zu\nrühmen (skt. abhivādya Divy 469,4) sind“",
+        "ownership": "entry",
+        "passage_type": "quoted_translation",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f:0",
+          "text_sha256": "08c0f71938248054e6f6a44c3721186050494ce82f029053a7e76a7044f9928e"
+        },
+        "start": 51,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "mṅon du smra",
+      "stratum": [
+        "3",
+        "quoted_translation"
+      ],
+      "container": {
+        "id": "n2",
+        "kind": "example",
+        "start": 10,
+        "end": 150,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f",
+            "span_index": 0,
+            "printed_page": 61,
+            "line_char_start": 0,
+            "line_char_end": 45,
+            "run_start": 20,
+            "run_end_exclusive": 61
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f",
+            "span_index": 0,
+            "printed_page": 61,
+            "line_char_start": 0,
+            "line_char_end": 41,
+            "run_start": 61,
+            "run_end_exclusive": 91
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f",
+            "span_index": 0,
+            "printed_page": 61,
+            "line_char_start": 0,
+            "line_char_end": 40,
+            "run_start": 91,
+            "run_end_exclusive": 120
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f",
+            "span_index": 0,
+            "printed_page": 61,
+            "line_char_start": 0,
+            "line_char_end": 11,
+            "run_start": 120,
+            "run_end_exclusive": 126
+          }
+        ]
+      },
+      "container_literal": "lha rnams kyis ... ~ bar bya bar gyur to „sie\nwurden zu solchen, die von den Göttern zu\nrühmen (skt. abhivādya Divy 469,4) sind“\n(Udr 11,19)",
+      "context": " rühmen.།\nlha rnams kyis ... ~ bar bya bar gyur to „sie\nwurden zu solchen, die von den Göttern zu\nrühmen (skt. abhivādya Divy 469,4) sind“\n(Udr 11,19).",
+      "review_text_sha256": "08c0f71938248054e6f6a44c3721186050494ce82f029053a7e76a7044f9928e",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f.json.gz",
+          "canonical_object_sha256": "c627451687434d08afddea10db87ac22703466ae8c6f6e05422c534684f75209",
+          "page_id": "badw-v3-0f43e8bc6d57273a7794d474b2ffb1cbce878bb6d27f0ce94e1f5943c836216f",
+          "pdf_sha256": "801e326b0f3e9d3be462ca5799fb5d5cd966ecb530fa5c35d9fda5efd36794d4",
+          "pdf_url": "https://wts-digital.badw.de/pdf/m%E1%B9%85on%20du%20rdzogs%20pa",
+          "run_end_exclusive": 126,
+          "run_start": 0,
+          "source_text_sha256": "fc122d305a52beaacc32e2a967924cd20c8994355cb7c2722877310386f96f16"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "61"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2",
+          "n3"
+        ],
+        "containing_node_id": "n1",
+        "end": 110,
+        "entry_identity": "badw:pdf:badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9:99",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "e4f1ca8ace04e4787076d9c9929a41055a002d43e42d91ad810ce4440b62d6f8",
+        "literal": "vgl. P\nASANG\n1998: 74, KLETTER/KRIECHBAUM 2001:\n191-195.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9:99",
+          "text_sha256": "0e73b52db9e041b34070305643c81d12eda724d3caa1bd54f5754e149a2c17e3"
+        },
+        "start": 54,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ñe’u śiṅ",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 13,
+        "end": 110,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+            "span_index": 0,
+            "printed_page": 501,
+            "line_char_start": 13,
+            "line_char_end": 31,
+            "run_start": 108,
+            "run_end_exclusive": 131
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+            "span_index": 0,
+            "printed_page": 501,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 131,
+            "run_end_exclusive": 158
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+            "span_index": 0,
+            "printed_page": 501,
+            "line_char_start": 0,
+            "line_char_end": 5,
+            "run_start": 158,
+            "run_end_exclusive": 159
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+            "span_index": 0,
+            "printed_page": 501,
+            "line_char_start": 0,
+            "line_char_end": 34,
+            "run_start": 159,
+            "run_end_exclusive": 183
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+            "span_index": 0,
+            "printed_page": 501,
+            "line_char_start": 0,
+            "line_char_end": 8,
+            "run_start": 183,
+            "run_end_exclusive": 186
+          }
+        ]
+      },
+      "container_literal": "Bez. für verschie-\ndene Asparagus-Arten, vgl. P\nASANG\n1998: 74, KLETTER/KRIECHBAUM 2001:\n191-195.",
+      "context": " auch ñe śiṅ Bez. für verschie-\ndene Asparagus-Arten, vgl. P\nASANG\n1998: 74, KLETTER/KRIECHBAUM 2001:\n191-195.\n།\n~ gi rtsa ba daṅ „die Wurzel des Asparagus\n(skt. śatāvarī)“ (Siddh 12.11).\nLex. ñe śiṅ ≈ sman źig daṅ (brDa); ñe śiṅ ≈\nsṅo sman źig (Dagy).",
+      "review_text_sha256": "0e73b52db9e041b34070305643c81d12eda724d3caa1bd54f5754e149a2c17e3",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9.json.gz",
+          "canonical_object_sha256": "dca84f12efbe42df22b4c68847f0dc28ecbb93fa43a6b6da915959228eb120eb",
+          "page_id": "badw-v3-51c2b65812a863e4165cc94e5cc75a469b8266428a458863eaada93906ff08b9",
+          "pdf_sha256": "3f462578ed084b0b1a7cb16dca9a4db39ac4de76e25f81c2ac88778ebac139c6",
+          "pdf_url": "https://wts-digital.badw.de/pdf/%C3%B1e%E2%80%99u%20gyi",
+          "run_end_exclusive": 290,
+          "run_start": 99,
+          "source_text_sha256": "59f88900a5f5b3f12fccf71b79433f5ea60e86d2642ed970fa3778987c434a95"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "501"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 117,
+        "entry_identity": "badw:pdf:badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941:1581",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "a10b670e58911e52bb5d748c1923289e98f9ff47ff1700f5dd5e3611803391fa",
+        "literal": "vgl. K\nLETTER/KRIECHBAUM 2001: 202.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941:1581",
+          "text_sha256": "d1c61c0ff36a3a81595bf6a5369debf0e978d518227026ee88ac08359d757047"
+        },
+        "start": 82,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "sṅon po chig thub",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 117,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+            "span_index": 0,
+            "printed_page": 97,
+            "line_char_start": 1,
+            "line_char_end": 11,
+            "run_start": 1596,
+            "run_end_exclusive": 1605
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+            "span_index": 0,
+            "printed_page": 97,
+            "line_char_start": 0,
+            "line_char_end": 27,
+            "run_start": 1605,
+            "run_end_exclusive": 1629
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+            "span_index": 0,
+            "printed_page": 97,
+            "line_char_start": 0,
+            "line_char_end": 41,
+            "run_start": 1629,
+            "run_end_exclusive": 1662
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+            "span_index": 0,
+            "printed_page": 97,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 1662,
+            "run_end_exclusive": 1665
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+            "span_index": 0,
+            "printed_page": 97,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 1665,
+            "run_end_exclusive": 1684
+          }
+        ]
+      },
+      "container_literal": "eine Heil-\npflanze, Hypecoum leptocar-\npum Hook. f. et Thoms., synon. par pa ta,\nvgl. K\nLETTER/KRIECHBAUM 2001: 202.",
+      "context": " eine Heil-\npflanze, Hypecoum leptocar-\npum Hook. f. et Thoms., synon. par pa ta,\nvgl. K\nLETTER/KRIECHBAUM 2001: 202.།",
+      "review_text_sha256": "d1c61c0ff36a3a81595bf6a5369debf0e978d518227026ee88ac08359d757047",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941.json.gz",
+          "canonical_object_sha256": "940854fea265a69d776055f0ccb7003b6f9aff8f785f5cb322fa3306917674fb",
+          "page_id": "badw-v3-5179a0ad5fec9c27d103ff73b42ddfcdd1ccf46c6eb9084ec8ee01cb93ea3941",
+          "pdf_sha256": "d34b875c58d93d403d0a6481621b78aa151fcc28184600e9a0d6067f3c07dcbd",
+          "pdf_url": "https://wts-digital.badw.de/pdf/s%E1%B9%85on%20du%20so%E1%B9%85",
+          "run_end_exclusive": 1684,
+          "run_start": 1581,
+          "source_text_sha256": "b6714d554fadc9eb30907a1085588f21958b1be6533643637771ae7cb282a320"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "97"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 137,
+        "entry_identity": "badw:pdf:badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e:1873",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "bd1aceee251a402249b427775b3ebbd69b00bccf779786e7b9b983bde63e8b75",
+        "literal": "vgl.\nS\nCHMITHAUSEN 1969: 173.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e:1873",
+          "text_sha256": "1c3a4fa5b8b7249334fb37e4bf3a217f224c8bb0ec1eb354c9b1c3c84c8fb146"
+        },
+        "start": 108,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "gñis ka’i cha lasrnam par grolba",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 137,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+            "span_index": 0,
+            "printed_page": 518,
+            "line_char_start": 1,
+            "line_char_end": 36,
+            "run_start": 1914,
+            "run_end_exclusive": 1947
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+            "span_index": 0,
+            "printed_page": 518,
+            "line_char_start": 0,
+            "line_char_end": 34,
+            "run_start": 1947,
+            "run_end_exclusive": 1969
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+            "span_index": 0,
+            "printed_page": 518,
+            "line_char_start": 0,
+            "line_char_end": 40,
+            "run_start": 1969,
+            "run_end_exclusive": 1994
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+            "span_index": 0,
+            "printed_page": 518,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 1994,
+            "run_end_exclusive": 1995
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+            "span_index": 0,
+            "printed_page": 518,
+            "line_char_start": 0,
+            "line_char_end": 22,
+            "run_start": 1995,
+            "run_end_exclusive": 2014
+          }
+        ]
+      },
+      "container_literal": "beiderseits erlöst, nämlich von der\nHemmnis der Laster (kleśa) und der\nHemmnis der Versenkung (samāpatti), vgl.\nS\nCHMITHAUSEN 1969: 173.",
+      "context": " beiderseits erlöst, nämlich von der\nHemmnis der Laster (kleśa) und der\nHemmnis der Versenkung (samāpatti), vgl.\nS\nCHMITHAUSEN 1969: 173.།\nLex. ubhayatobhāgavimuktaḥ (sGra 119).",
+      "review_text_sha256": "1c3a4fa5b8b7249334fb37e4bf3a217f224c8bb0ec1eb354c9b1c3c84c8fb146",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e.json.gz",
+          "canonical_object_sha256": "25619d2f5b9145569b5914b763320bdb7e796639e86acb8d2b4f8c3c31545851",
+          "page_id": "badw-v3-c1f1bf86685025a6058e034f6e6b06b9a3bb6c6ed97bc24f6caee07bb3b22d3e",
+          "pdf_sha256": "6178e330d9412a0a08f391e37fdda6f18c802af87752565aa5282095d9767c8c",
+          "pdf_url": "https://wts-digital.badw.de/pdf/g%C3%B1is%20ka",
+          "run_end_exclusive": 2038,
+          "run_start": 1873,
+          "source_text_sha256": "a8f7f3465d9a69339b3171fc7ce3a47f6fd0695dd8d46f84717a2c86f78dd853"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "518"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 43,
+        "entry_identity": "badw:pdf:badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35:813",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "4e988f874602dd5376e148940e89186afa19c22e05eadad4d5377358118c8f47",
+        "literal": "vgl.\nE\nMMERICK 1967: 122.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35:813",
+          "text_sha256": "5e45e741fd993a37ad9b95625191c1c358b63390a623507b037af3df4db16924"
+        },
+        "start": 18,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "chags bśad",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 43,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35",
+            "span_index": 0,
+            "printed_page": 199,
+            "line_char_start": 1,
+            "line_char_end": 22,
+            "run_start": 824,
+            "run_end_exclusive": 844
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35",
+            "span_index": 0,
+            "printed_page": 199,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 844,
+            "run_end_exclusive": 845
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35",
+            "span_index": 0,
+            "printed_page": 199,
+            "line_char_start": 0,
+            "line_char_end": 18,
+            "run_start": 845,
+            "run_end_exclusive": 853
+          }
+        ]
+      },
+      "container_literal": "(zw.) Erklärung, vgl.\nE\nMMERICK 1967: 122.",
+      "context": " (zw.) Erklärung, vgl.\nE\nMMERICK 1967: 122.།\ndgra bcom bas skyin ba’i ~ bgyis nas\n„nachdem der Arhat eine Erklärung für das\nDarlehen abgegeben hatte“ (Liy2 105).",
+      "review_text_sha256": "5e45e741fd993a37ad9b95625191c1c358b63390a623507b037af3df4db16924",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35.json.gz",
+          "canonical_object_sha256": "4d7deaf3b57a25fe9d3b4445bb65c6cc6672892183cf6352910be7c287cb508d",
+          "page_id": "badw-v3-85be16d1f5917e8f73163d08c77f1a6163abc8e47a6d29be2b472f6e4434ad35",
+          "pdf_sha256": "0aa3126e676dea893db672cffe71e49abe41e0fc930f72bf751ef6947b6ea182",
+          "pdf_url": "https://wts-digital.badw.de/pdf/chags%20b%C5%9Bad",
+          "run_end_exclusive": 951,
+          "run_start": 813,
+          "source_text_sha256": "460347b2e8b7b557cdb7abb73ad8643e64ae1fa4b9b387219993977fe3d541d8"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "199"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 85,
+        "entry_identity": "badw:pdf:badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67:1916",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "68a369b42ecdc52afac8dd2e5f9f69de4a2b4717aafd841f5ce8d64013cebc51",
+        "literal": "vgl.\nK\nLETTER/KRIECHBAUM 2001: 251.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67:1916",
+          "text_sha256": "1dc6110ceb58b9f5ca4669ca0743c46184ac98f4bafa29ccfaaa03f4b816a47c"
+        },
+        "start": 50,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "sṅo gro śaṅ rtse",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 85,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67",
+            "span_index": 0,
+            "printed_page": 92,
+            "line_char_start": 1,
+            "line_char_end": 19,
+            "run_start": 1929,
+            "run_end_exclusive": 1946
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67",
+            "span_index": 0,
+            "printed_page": 92,
+            "line_char_start": 0,
+            "line_char_end": 34,
+            "run_start": 1946,
+            "run_end_exclusive": 1978
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67",
+            "span_index": 0,
+            "printed_page": 92,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 1978,
+            "run_end_exclusive": 1979
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67",
+            "span_index": 0,
+            "printed_page": 92,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 1979,
+            "run_end_exclusive": 2000
+          }
+        ]
+      },
+      "container_literal": "eine Pflanze, Oro-\nbanche alba Steph. in Willd., vgl.\nK\nLETTER/KRIECHBAUM 2001: 251.",
+      "context": " eine Pflanze, Oro-\nbanche alba Steph. in Willd., vgl.\nK\nLETTER/KRIECHBAUM 2001: 251.།",
+      "review_text_sha256": "1dc6110ceb58b9f5ca4669ca0743c46184ac98f4bafa29ccfaaa03f4b816a47c",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67.json.gz",
+          "canonical_object_sha256": "fbf6735648ac34f77ecc49081c4e7da593f0dc03c1d152ff7de01bd68b1880f9",
+          "page_id": "badw-v3-2771e0155587fa22736141e2c7c45bd1d1b888164cdbc90e13d5dd9834fa1d67",
+          "pdf_sha256": "58592e0b110a0ddd62638a945e71be879b2758a43cafb5cb1eaa12373d6754e8",
+          "pdf_url": "https://wts-digital.badw.de/pdf/s%E1%B9%85o%20ga%E2%80%99i%20tsha%20ba",
+          "run_end_exclusive": 2000,
+          "run_start": 1916,
+          "source_text_sha256": "d37ade256cb47e2ed57558cea2111ecb5e8f928fb317478eef12ae675422c98e"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "92"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 68,
+        "entry_identity": "badw:pdf:badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9:282",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "50f38ee721e0512cdada204c46c6056de08277c164a2f5aea4b53bdc93d293de",
+        "literal": "vgl. W\nYLIE 1962: 154,\nAnm. 366.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9:282",
+          "text_sha256": "61ca741e63d84dda8e5b223b59ce3996946a70242fbe6ce233f51f32df136d20"
+        },
+        "start": 36,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ṅa ’dra ma",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 68,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 1,
+            "line_char_end": 22,
+            "run_start": 293,
+            "run_end_exclusive": 312
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 19,
+            "run_start": 312,
+            "run_end_exclusive": 330
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 15,
+            "run_start": 330,
+            "run_end_exclusive": 338
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 9,
+            "run_start": 338,
+            "run_end_exclusive": 341
+          }
+        ]
+      },
+      "container_literal": "Bez. einer Statue des\nTsoṅ-kha-pa, vgl. W\nYLIE 1962: 154,\nAnm. 366.",
+      "context": " Bez. einer Statue des\nTsoṅ-kha-pa, vgl. W\nYLIE 1962: 154,\nAnm. 366.\n།\nrje rgyal ba gñis pa’i sku ~ „die Statue des\nHerrn, des zweiten Siegers [Tsoṅ-kha-pa],\n[genannt] ṅa-’dra-ma“ (’Dzam 33,11).",
+      "review_text_sha256": "61ca741e63d84dda8e5b223b59ce3996946a70242fbe6ce233f51f32df136d20",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9.json.gz",
+          "canonical_object_sha256": "7362fd0968affa37d12b2f100a77686fff8419537e34037e5f904bf662d51d93",
+          "page_id": "badw-v3-376122f3bdc310a60811bde30ae58ec84e04e52f23cb464b7fac87daae03bfe9",
+          "pdf_sha256": "5b031e208c2a5da9432d2d7d00b09f1d9b8953a2d92fc40507746cbe8dfd8fb0",
+          "pdf_url": "https://wts-digital.badw.de/pdf/%E1%B9%85a%20ldan%20pa",
+          "run_end_exclusive": 442,
+          "run_start": 282,
+          "source_text_sha256": "63713677417f7bbd0be63f884ca8c8874f8705ddad0b61073fd0f332d9aebff1"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "3"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 126,
+        "entry_identity": "badw:pdf:badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b:394",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "4fe478c483bb17f0995760b54a2cca04328baab23b7fc9aab0e30457e4ce1558",
+        "literal": "vgl. H\nILL 2007:\n278-281.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b:394",
+          "text_sha256": "34527c80af231cb59659581d6b777cd92f56744464670d8ec58aa9361298d910"
+        },
+        "start": 101,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ṅed",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 126,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+            "span_index": 0,
+            "printed_page": 22,
+            "line_char_start": 1,
+            "line_char_end": 40,
+            "run_start": 398,
+            "run_end_exclusive": 427
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+            "span_index": 0,
+            "printed_page": 22,
+            "line_char_start": 0,
+            "line_char_end": 35,
+            "run_start": 427,
+            "run_end_exclusive": 459
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+            "span_index": 0,
+            "printed_page": 22,
+            "line_char_start": 0,
+            "line_char_end": 30,
+            "run_start": 459,
+            "run_end_exclusive": 486
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+            "span_index": 0,
+            "printed_page": 22,
+            "line_char_start": 0,
+            "line_char_end": 9,
+            "run_start": 486,
+            "run_end_exclusive": 492
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+            "span_index": 0,
+            "printed_page": 22,
+            "line_char_start": 0,
+            "line_char_end": 8,
+            "run_start": 492,
+            "run_end_exclusive": 496
+          }
+        ]
+      },
+      "container_literal": "pron. 1. pers. ich, wir; ~ raṅ dass.; ~\ncag wir; der Plural bezieht den An-\ngesprochenen nicht ein, vgl. H\nILL 2007:\n278-281.",
+      "context": " pron. 1. pers. ich, wir; ~ raṅ dass.; ~\ncag wir; der Plural bezieht den An-\ngesprochenen nicht ein, vgl. H\nILL 2007:\n278-281.\n།\nrab du byuṅ ba’ṛ rnams / ~ yab sras kyṛs\n„diejenigen, die in den Orden eintraten,\nwir, Vater und Sohn“ (In8 44); ~ rgyal rigs\ntha dad „wir [gehören zur] königlichen\nFamilie und ",
+      "review_text_sha256": "34527c80af231cb59659581d6b777cd92f56744464670d8ec58aa9361298d910",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b.json.gz",
+          "canonical_object_sha256": "a64f641b7d3a17cb082ae45258ede62fea1f18cb12d963e7acdfc2b487c1ad4d",
+          "page_id": "badw-v3-b7114149ae2e99c162b06a7ee797367d8d552825f441257784c46a29b8dbe10b",
+          "pdf_sha256": "eea321a2e8c5d0566d342618cdd755f33e38c3cdca54a30ad3f2db7c470c9353",
+          "pdf_url": "https://wts-digital.badw.de/pdf/%E1%B9%85es",
+          "run_end_exclusive": 2486,
+          "run_start": 394,
+          "source_text_sha256": "22d6c7ff46705c34bf6d17626c7fd77c55df8851f5170f3876cee9b9774e1a2e"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "22"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2",
+          "n3"
+        ],
+        "containing_node_id": "n1",
+        "end": 91,
+        "entry_identity": "badw:pdf:badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c:1979",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "ddeabcf1687598928456df205114ef68340a326f9020670575040d542fb313db",
+        "literal": "vgl. K\nLETTER/KRIECHBAUM 2001: 257-\n260, P\nASANG 1998: 76.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c:1979",
+          "text_sha256": "93a8c66681608aef7975f94d219e0ff997b22458fec05d90d24bce922b863f72"
+        },
+        "start": 33,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "sña lo",
+      "stratum": [
+        "3",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 13,
+        "end": 91,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+            "span_index": 0,
+            "printed_page": 540,
+            "line_char_start": 13,
+            "line_char_end": 32,
+            "run_start": 1986,
+            "run_end_exclusive": 2013
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+            "span_index": 0,
+            "printed_page": 540,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 2013,
+            "run_end_exclusive": 2017
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+            "span_index": 0,
+            "printed_page": 540,
+            "line_char_start": 0,
+            "line_char_end": 28,
+            "run_start": 2017,
+            "run_end_exclusive": 2040
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+            "span_index": 0,
+            "printed_page": 540,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 2040,
+            "run_end_exclusive": 2042
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+            "span_index": 0,
+            "printed_page": 540,
+            "line_char_start": 0,
+            "line_char_end": 15,
+            "run_start": 2042,
+            "run_end_exclusive": 2052
+          }
+        ]
+      },
+      "container_literal": "eine Art Knöterich,\nvgl. K\nLETTER/KRIECHBAUM 2001: 257-\n260, P\nASANG 1998: 76.",
+      "context": " auch rña lo eine Art Knöterich,\nvgl. K\nLETTER/KRIECHBAUM 2001: 257-\n260, P\nASANG 1998: 76.།\n~ ... se ba’i śiṅ dum rnams ... lhwam naṅ du\nbcug nas „sña lo und das Holzstück einer\nWildrose stecke man in die Schuhe“\n(MigTo 138,20). \nLex. rña lo ≈ sman naṅ ’gro ba’i sṅo lo ",
+      "review_text_sha256": "93a8c66681608aef7975f94d219e0ff997b22458fec05d90d24bce922b863f72",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_3/pages/badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c.json.gz",
+          "canonical_object_sha256": "d650f36603492408a95a22b95b64592a55f8482c26d4ab685e80b4573e502746",
+          "page_id": "badw-v3-265a6e9f7fbffb4266872917a8bd8143093803cd3e18a3aff82a2ae1c0c8d86c",
+          "pdf_sha256": "d7a97845fa7a7f0fe4de8676939b1e92f5c136b167844eec5580c1e2d8b685b8",
+          "pdf_url": "https://wts-digital.badw.de/pdf/s%C3%B1a%20lo",
+          "run_end_exclusive": 2214,
+          "run_start": 1979,
+          "source_text_sha256": "94d93f9b910cafabdbc012ec200c064f139f0ff48236796fd58cb945ba2b1bf9"
+        },
+        {
+          "canonical_object": "volume_3/pages/badw-v3-53f4b1e7c367a8e06bb893d5156ade4b1a6244f461d4894892017053939c8051.json.gz",
+          "canonical_object_sha256": "22bb1f33ae6def37253e827c2728afb8d1c5a67dff27c76c22335e36e84e4d10",
+          "page_id": "badw-v3-53f4b1e7c367a8e06bb893d5156ade4b1a6244f461d4894892017053939c8051",
+          "pdf_sha256": "d7a97845fa7a7f0fe4de8676939b1e92f5c136b167844eec5580c1e2d8b685b8",
+          "pdf_url": "https://wts-digital.badw.de/pdf/s%C3%B1a%20lo",
+          "run_end_exclusive": 74,
+          "run_start": 0,
+          "source_text_sha256": "ce87dd60e06702979e72d25ac1eb15bdfc6b2a611acb29843694d9f455ff43ca"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "540",
+        "541"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 62,
+        "entry_identity": "badw:pdf:badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb:1826",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "7a276573de14684768938ca49ffe1dc9abc682bee9af7f695e229c88d8b4dc89",
+        "literal": "(vgl. S\nCHUH 2012:\n1398)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb:1826",
+          "text_sha256": "2ecd836eebce604bcdcac406a8cf526dd7623cc1f07dfd1c74027482fb776f6e"
+        },
+        "start": 38,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "stod las",
+      "stratum": [
+        "4",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 63,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb",
+            "span_index": 0,
+            "printed_page": 160,
+            "line_char_start": 1,
+            "line_char_end": 24,
+            "run_start": 1837,
+            "run_end_exclusive": 1854
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb",
+            "span_index": 0,
+            "printed_page": 160,
+            "line_char_start": 0,
+            "line_char_end": 20,
+            "run_start": 1854,
+            "run_end_exclusive": 1869
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb",
+            "span_index": 0,
+            "printed_page": 160,
+            "line_char_start": 0,
+            "line_char_end": 10,
+            "run_start": 1869,
+            "run_end_exclusive": 1874
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb",
+            "span_index": 0,
+            "printed_page": 160,
+            "line_char_start": 0,
+            "line_char_end": 6,
+            "run_start": 1874,
+            "run_end_exclusive": 1877
+          }
+        ]
+      },
+      "container_literal": "erste Verrichtungen bei\neinem Ritual (vgl. S\nCHUH 2012:\n1398).",
+      "context": " erste Verrichtungen bei\neinem Ritual (vgl. S\nCHUH 2012:\n1398).\n།",
+      "review_text_sha256": "2ecd836eebce604bcdcac406a8cf526dd7623cc1f07dfd1c74027482fb776f6e",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb.json.gz",
+          "canonical_object_sha256": "929b10e44376e467b6a60fad137a639ad7b3a2616e754d4edb62a5a0b01eb991",
+          "page_id": "badw-v4-42fa0fbf6209c9f835222484f37447f1154e8ea4ac52908944ad2aa4cb9068eb",
+          "pdf_sha256": "6fc2b126c191df18ec38a40172299de5d587ffb6cb95613a2fa851543062a4a1",
+          "pdf_url": "https://wts-digital.badw.de/pdf/stod%20phyag",
+          "run_end_exclusive": 1878,
+          "run_start": 1826,
+          "source_text_sha256": "ed8628aacf9f322a5ae12229923e2ec2ba69991cf4870f008210ce5bc0aea8dd"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "160"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "source_division",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n3"
+        ],
+        "containing_node_id": "n0",
+        "end": 206,
+        "entry_identity": "badw:pdf:badw-v4-af194e37269756c1de17cda1576c6b6d82274b76bc0e10f546c2712bc20e90d5:348",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "d8d886d15b8213247c8e94f9c6cbe4d592d30c2dec07e65baebc1b6b320bd4a7",
+        "literal": "(vgl. K\nIEFFER-PÜLZ\n1992: 53)",
+        "ownership": "entry",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-af194e37269756c1de17cda1576c6b6d82274b76bc0e10f546c2712bc20e90d5:348",
+          "text_sha256": "8b1607454663dc98ee9e13a516b7b4ffed04f9c175e711a5291acc25874d7e90"
+        },
+        "start": 177,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "tha dad du gnas pa",
+      "stratum": [
+        "4",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n0",
+        "kind": "source_division",
+        "start": 0,
+        "end": 418,
+        "parent": null
+      },
+      "container_literal": " „einer un-\nterchiedlichen Gemeinschaft\nzugehörig“, Bez. für Mönche oder Non-\nnen, die von anderen Mönchen oder Non-\nnen getrennt leben, suspendierte Mönche,\nskt. nānāsaṃvāsika (vgl. K\nIEFFER-PÜLZ\n1992: 53).།\n~ ma yin nam / gnas par mi bya ba ma yin\nnam „bist du auch keiner, der verschieden\n[von den anderen Mönchen im Orden]\nlebt, oder der nicht [im Orden] leben\ndarf!“ (Prav 142,5). \nLex. nānāsaṃvāsikaḥ (Mvy 8757).",
+      "context": " „einer un-\nterchiedlichen Gemeinschaft\nzugehörig“, Bez. für Mönche oder Non-\nnen, die von anderen Mönchen oder Non-\nnen getrennt leben, suspendierte Mönche,\nskt. nānāsaṃvāsika (vgl. K\nIEFFER-PÜLZ\n1992: 53).།\n~ ma yin nam / gnas par mi bya ba ma yin\nnam „bist du auch keiner, der verschieden\n[von den anderen Mönchen im Orden]\nlebt, oder der nicht [im Orden] leben\ndarf!“ (Prav 142,5). ",
+      "review_text_sha256": "8b1607454663dc98ee9e13a516b7b4ffed04f9c175e711a5291acc25874d7e90",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-af194e37269756c1de17cda1576c6b6d82274b76bc0e10f546c2712bc20e90d5.json.gz",
+          "canonical_object_sha256": "0f946b0c1d4557d0ae89a6193f08450f4f934bce8c326b7e54b4280ece1a7887",
+          "page_id": "badw-v4-af194e37269756c1de17cda1576c6b6d82274b76bc0e10f546c2712bc20e90d5",
+          "pdf_sha256": "2e3dcc2663652673ef9c8aa82474e4d7348ba8e56ec7b5c11353df4d2475f703",
+          "pdf_url": "https://wts-digital.badw.de/pdf/tha%20ba",
+          "run_end_exclusive": 694,
+          "run_start": 348,
+          "source_text_sha256": "331226c2448305fbe8489283fc73653e780116aca5a86b7900e851d1a41c1427"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "207"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n120"
+        ],
+        "containing_node_id": "n119",
+        "end": 3500,
+        "entry_identity": "badw:pdf:badw-v4-d249f6107306c946a128f36db047f2e19c3ecc956262d3331b3d15cf9d34090b:800",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "c9678cc99c60c1ba5227f789821f60ff2c553d88e7ab528266e3b65a362b8485",
+        "literal": "(vgl. S\nCHUH\n2012: 1395)",
+        "ownership": "sense",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": "n118",
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-d249f6107306c946a128f36db047f2e19c3ecc956262d3331b3d15cf9d34090b:800",
+          "text_sha256": "e9f4e4dd966c53dc3dd35ef048f878f756bc3f601ac336d62e02703ca6b90450"
+        },
+        "start": 3476,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "rtags",
+      "stratum": [
+        "4",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n119",
+        "kind": "definition",
+        "start": 3411,
+        "end": 3501,
+        "parent": "n118",
+        "source_lines": [
+          {
+            "line_index": 87,
+            "page_id": "badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a",
+            "span_index": 1,
+            "printed_page": 90,
+            "line_char_start": 3,
+            "line_char_end": 39,
+            "run_start": 1033,
+            "run_end_exclusive": 1068
+          },
+          {
+            "line_index": 88,
+            "page_id": "badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a",
+            "span_index": 1,
+            "printed_page": 90,
+            "line_char_start": 0,
+            "line_char_end": 35,
+            "run_start": 1068,
+            "run_end_exclusive": 1097
+          },
+          {
+            "line_index": 89,
+            "page_id": "badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a",
+            "span_index": 1,
+            "printed_page": 90,
+            "line_char_start": 0,
+            "line_char_end": 4,
+            "run_start": 1097,
+            "run_end_exclusive": 1100
+          },
+          {
+            "line_index": 90,
+            "page_id": "badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a",
+            "span_index": 1,
+            "printed_page": 90,
+            "line_char_start": 0,
+            "line_char_end": 12,
+            "run_start": 1100,
+            "run_end_exclusive": 1105
+          }
+        ]
+      },
+      "container_literal": "logisches Merkmal, Beweis; ~ yaṅ dag\ngültiges logisches Argument (vgl. S\nCHUH\n2012: 1395).",
+      "context": "mon lhun\ngyis grub pa’i ~ (metr.) „ein Zeichen dafür,\ndaß sich alle Wünsche von selbst erfüllen“\n(Gesar 198,2).\n3. logisches Merkmal, Beweis; ~ yaṅ dag\ngültiges logisches Argument (vgl. S\nCHUH\n2012: 1395).\ntshul gsum pa’i ~ kyi skabs su bab nas\n„nachdem das dreifache Merkmal (skt.\ntrirūpaṃ liṅgam) gelegentlich erwähnt\nwurde“ (NBṬ 41,10); ~ lkog tu gyur pa śes\npa’i rgyu mtshan yin t",
+      "review_text_sha256": "e9f4e4dd966c53dc3dd35ef048f878f756bc3f601ac336d62e02703ca6b90450",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-d249f6107306c946a128f36db047f2e19c3ecc956262d3331b3d15cf9d34090b.json.gz",
+          "canonical_object_sha256": "2102dedc7f335824b2b0285d02fc28a6dd911f52f95308a62dd63359e2102349",
+          "page_id": "badw-v4-d249f6107306c946a128f36db047f2e19c3ecc956262d3331b3d15cf9d34090b",
+          "pdf_sha256": "06bddb474a8ca236b97421c6ca992def42711d35c8aead5758cd345143809311",
+          "pdf_url": "https://wts-digital.badw.de/pdf/rtag%20%E2%80%99dzin%20can",
+          "run_end_exclusive": 2458,
+          "run_start": 800,
+          "source_text_sha256": "14f70ab42aff3ab836dc5ebb1a19d7cffec641bae19c16c617eea7a93167bba1"
+        },
+        {
+          "canonical_object": "volume_4/pages/badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a.json.gz",
+          "canonical_object_sha256": "1e64d8bbf9ffe6ba8e0ed07d679b39f56cf3712c713ddacd1d254a7e61eecbf5",
+          "page_id": "badw-v4-d52006bc9974a01866904f0e0861fd6656a1cf0daf8c0ea284daa33240a70a0a",
+          "pdf_sha256": "1e7ae83fb15ccb849591d36b4cfbb93fc126db846a625ee59c9d354caa9c2790",
+          "pdf_url": "https://wts-digital.badw.de/pdf/rtags%20brgyad",
+          "run_end_exclusive": 2174,
+          "run_start": 0,
+          "source_text_sha256": "2cc7968e210009f7e1a4f23717465f5c6d581a6badf237f7c5324c5f811b967b"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "89",
+        "90"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "definition",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 71,
+        "entry_identity": "badw:pdf:badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516:908",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "9cdad1f2cdd0dc6b774df7644b4a81f85711c0b4b522087b75763c4292ce12ca",
+        "literal": "(zw.\nL\nAUFER 1916: 494, Nr. 176, von\nmong. jam)",
+        "ownership": "entry",
+        "passage_type": "definition_source_note",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516:908",
+          "text_sha256": "ccbc556eecd85075b8cfd82dba61d19c64a151d688e22cb79dea81853e5640a4"
+        },
+        "start": 24,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "rta zam",
+      "stratum": [
+        "4",
+        "definition_source_note"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 133,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+            "span_index": 0,
+            "printed_page": 83,
+            "line_char_start": 1,
+            "line_char_end": 28,
+            "run_start": 915,
+            "run_end_exclusive": 939
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+            "span_index": 0,
+            "printed_page": 83,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 939,
+            "run_end_exclusive": 940
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+            "span_index": 0,
+            "printed_page": 83,
+            "line_char_start": 0,
+            "line_char_end": 29,
+            "run_start": 940,
+            "run_end_exclusive": 963
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+            "span_index": 0,
+            "printed_page": 83,
+            "line_char_start": 0,
+            "line_char_end": 38,
+            "run_start": 963,
+            "run_end_exclusive": 994
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+            "span_index": 0,
+            "printed_page": 83,
+            "line_char_start": 0,
+            "line_char_end": 33,
+            "run_start": 994,
+            "run_end_exclusive": 1014
+          }
+        ]
+      },
+      "container_literal": "Poststation, Reitboten (zw.\nL\nAUFER 1916: 494, Nr. 176, von\nmong. jam); ~ ’khri sgrub Stellung von\nPostkurierpferden; vgl. ↑’jam mo.",
+      "context": " Poststation, Reitboten (zw.\nL\nAUFER 1916: 494, Nr. 176, von\nmong. jam); ~ ’khri sgrub Stellung von\nPostkurierpferden; vgl. ↑’jam mo.\n།\n~ rim brgyud sgar nas der phebs pa’i gnaṅ\nskyes „die Geschenke, die aus sGar über\nReitboten dorthin gekommen waren“",
+      "review_text_sha256": "ccbc556eecd85075b8cfd82dba61d19c64a151d688e22cb79dea81853e5640a4",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516.json.gz",
+          "canonical_object_sha256": "d2d5ed43d601d5237a96037ec92ab41c553caff3c6c5025c020051427820be50",
+          "page_id": "badw-v4-662b231830b579faa0a0fb8c8740f385516e07a8a5b90b3b80f53320e2a0e516",
+          "pdf_sha256": "080855fdf5b1b827d14f9007a15a23723f252d811cb66cb7763dfdb65749f0c7",
+          "pdf_url": "https://wts-digital.badw.de/pdf/rta%20zam",
+          "run_end_exclusive": 1507,
+          "run_start": 908,
+          "source_text_sha256": "461a9d38fe55148ad3b3066275cdc9062f73cf3f13daacefaa739b7dd1a40cd6"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "83"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 96,
+        "entry_identity": "badw:pdf:badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0:601",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "3a11e4731c49ee00963e30d3e9a6195cb06a3598b5ae61d80c74b1efd1e30a5c",
+        "literal": "vgl. S\nCHUH 2012:\n1406.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0:601",
+          "text_sha256": "146f57a39c4811e842c8c207b4b995ebda7e2778845f189cfd1d82267a4f4d58"
+        },
+        "start": 73,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "mtha’ rtsis",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 96,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+            "span_index": 0,
+            "printed_page": 337,
+            "line_char_start": 1,
+            "line_char_end": 21,
+            "run_start": 613,
+            "run_end_exclusive": 632
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+            "span_index": 0,
+            "printed_page": 337,
+            "line_char_start": 0,
+            "line_char_end": 27,
+            "run_start": 632,
+            "run_end_exclusive": 656
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+            "span_index": 0,
+            "printed_page": 337,
+            "line_char_start": 0,
+            "line_char_end": 29,
+            "run_start": 656,
+            "run_end_exclusive": 683
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+            "span_index": 0,
+            "printed_page": 337,
+            "line_char_start": 0,
+            "line_char_end": 10,
+            "run_start": 683,
+            "run_end_exclusive": 688
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+            "span_index": 0,
+            "printed_page": 337,
+            "line_char_start": 0,
+            "line_char_end": 5,
+            "run_start": 688,
+            "run_end_exclusive": 689
+          }
+        ]
+      },
+      "container_literal": "Zukunftsberechnungen\nüber den Verlauf des ganzen\nLebens eines Menschen; vgl. S\nCHUH 2012:\n1406.",
+      "context": " Zukunftsberechnungen\nüber den Verlauf des ganzen\nLebens eines Menschen; vgl. S\nCHUH 2012:\n1406.\n།",
+      "review_text_sha256": "146f57a39c4811e842c8c207b4b995ebda7e2778845f189cfd1d82267a4f4d58",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0.json.gz",
+          "canonical_object_sha256": "72dafe3b2604ee2319bcc70596b496e39e0084ae0d523672e85e406fa0d6df80",
+          "page_id": "badw-v4-25cc3367272ad74128ab6d81ef15ba49c52a48a46cbd450603ca28def4bc75b0",
+          "pdf_sha256": "d237afd304ff5da29af2697405213470739fb0012ff5fedbfa1e8452170309d1",
+          "pdf_url": "https://wts-digital.badw.de/pdf/mtha%E2%80%99%20btsan",
+          "run_end_exclusive": 690,
+          "run_start": 601,
+          "source_text_sha256": "c41294064a37dbf6d9ac696383ba14df70ebe6c32b41e6db52cb0868ef4e5039"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "337"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n17"
+        ],
+        "containing_node_id": "n16",
+        "end": 567,
+        "entry_identity": "badw:pdf:badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258:1426",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "2ab4c8fc52fbff17860bc796df47b7212cb427116d3a7e8a3b6843d743104cad",
+        "literal": "vgl.\nS\nCHUH 2012: 1402.",
+        "ownership": "sense",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": "n15",
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258:1426",
+          "text_sha256": "51bd02b26a64c942ce3201458a4315b2130cae7d0ceeb7490bc7482b834e699f"
+        },
+        "start": 544,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "thabs śes",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n16",
+        "kind": "definition",
+        "start": 515,
+        "end": 567,
+        "parent": "n15",
+        "source_lines": [
+          {
+            "line_index": 14,
+            "page_id": "badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258",
+            "span_index": 0,
+            "printed_page": 231,
+            "line_char_start": 3,
+            "line_char_end": 36,
+            "run_start": 1823,
+            "run_end_exclusive": 1857
+          },
+          {
+            "line_index": 15,
+            "page_id": "badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258",
+            "span_index": 0,
+            "printed_page": 231,
+            "line_char_start": 0,
+            "line_char_end": 1,
+            "run_start": 1857,
+            "run_end_exclusive": 1858
+          },
+          {
+            "line_index": 16,
+            "page_id": "badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258",
+            "span_index": 0,
+            "printed_page": 231,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 1858,
+            "run_end_exclusive": 1869
+          }
+        ]
+      },
+      "container_literal": "symbolisches Zahlwort für 2; vgl.\nS\nCHUH 2012: 1402.",
+      "context": " absoluter Erleuchtungsgedanke“\n(Dagy); ~ pa la mkhas pa ≈ upāyajñāna-\nkuśalaḥ (Mvy 837); ~ rab mthar phyin pa ≈\nprajñopāyaniṣṭhāgata (in Mvy 784).\n2. symbolisches Zahlwort für 2; vgl.\nS\nCHUH 2012: 1402.",
+      "review_text_sha256": "51bd02b26a64c942ce3201458a4315b2130cae7d0ceeb7490bc7482b834e699f",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258.json.gz",
+          "canonical_object_sha256": "8cdcca3a497a39d054be4da0291b77aa1263537f7599cfd90a7df91dac6e039e",
+          "page_id": "badw-v4-6dd49464345fa289d096067e7a72646c55bfe3b2e85dbaf1533a1f2f20d17258",
+          "pdf_sha256": "1102e2f68357b4b070155ba9af24513dfe4fe3fb8946323b7030a396e78720d7",
+          "pdf_url": "https://wts-digital.badw.de/pdf/thabs%20byus",
+          "run_end_exclusive": 1869,
+          "run_start": 1426,
+          "source_text_sha256": "70c83baed381d6141168ef725daf0c543fc26048914f810b175af5a829a01162"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "231"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 66,
+        "entry_identity": "badw:pdf:badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f:344",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "0cb1f913be82030da97b068fa3464569621d85cdf22ec03e81a6c3913786c506",
+        "literal": "vgl. S\nCHUH 2012: 1402.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f:344",
+          "text_sha256": "db3ed316952b560cf2e96efdbfa5d21c2b36b730aada63b6807e4d5ca7cbf645"
+        },
+        "start": 43,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "thal ba",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 66,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f",
+            "span_index": 0,
+            "printed_page": 243,
+            "line_char_start": 1,
+            "line_char_end": 30,
+            "run_start": 355,
+            "run_end_exclusive": 382
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f",
+            "span_index": 0,
+            "printed_page": 243,
+            "line_char_start": 0,
+            "line_char_end": 18,
+            "run_start": 382,
+            "run_end_exclusive": 398
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f",
+            "span_index": 0,
+            "printed_page": 243,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 398,
+            "run_end_exclusive": 405
+          }
+        ]
+      },
+      "container_literal": "Asche, Staub; feiner Sand des\nSandabakus, vgl. S\nCHUH 2012: 1402.",
+      "context": " Asche, Staub; feiner Sand des\nSandabakus, vgl. S\nCHUH 2012: 1402.།\n~ blaṅ ba „der Gebrauch von Asche (skt.\nbhasman)“ (Prav 22,17); skad cig tsam la ri\nrab ~r brlag (metr.) „in nur einem Augen-\nblick wird der Meru in Staub aufgelöst“\n(Rgs 30.5b);",
+      "review_text_sha256": "db3ed316952b560cf2e96efdbfa5d21c2b36b730aada63b6807e4d5ca7cbf645",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f.json.gz",
+          "canonical_object_sha256": "812f2c8813221a23998208768166f20356d62bf2b2f249cb741a410320b66a66",
+          "page_id": "badw-v4-4d63bce26fee363ef3e79457f48acb088f26b82f3f8fa462ef132039e0dcdd0f",
+          "pdf_sha256": "96e06495d21d6a6c4bad033c60282201fb13457a25f7775cef0e1667931723d1",
+          "pdf_url": "https://wts-digital.badw.de/pdf/thal%20ba",
+          "run_end_exclusive": 2385,
+          "run_start": 344,
+          "source_text_sha256": "97b8be0047a6d4024620539241d4452db317bfe4072f920f61cd31dbef17904b"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "243"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 65,
+        "entry_identity": "badw:pdf:badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564:1587",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "adbd2780cab5e653e260438719b7ccb4646a39e13730251517fd718cec291c3a",
+        "literal": "vgl. L\nAUFER 1916:\n495, Nr. 180.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564:1587",
+          "text_sha256": "10da83f6a9990216081fa6c42ef07ee904e6782c328d821616f622933df3c51a"
+        },
+        "start": 33,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ta la’i bla ma",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 21,
+        "end": 65,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 18,
+            "run_start": 1621,
+            "run_end_exclusive": 1635
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 11,
+            "run_start": 1635,
+            "run_end_exclusive": 1642
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564",
+            "span_index": 0,
+            "printed_page": 3,
+            "line_char_start": 0,
+            "line_char_end": 13,
+            "run_start": 1642,
+            "run_end_exclusive": 1648
+          }
+        ]
+      },
+      "container_literal": "Dalai Lama; vgl. L\nAUFER 1916:\n495, Nr. 180.",
+      "context": " auch tā la’i bla ma\nDalai Lama; vgl. L\nAUFER 1916:\n495, Nr. 180.\n།\n~ ... lum pa ba bcas la mgo rtags (r. btags) pa\ngsum brgya skor „etwa 300 Männer, die sich\ndem Dalai Lama, Lum-pa-ba [u.a.] unter-\nworfen hatten“ (MTH3/5/10 32); ~s btaṅ\nba’i db",
+      "review_text_sha256": "10da83f6a9990216081fa6c42ef07ee904e6782c328d821616f622933df3c51a",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564.json.gz",
+          "canonical_object_sha256": "29ad9e565d78c878aa83bf92be99c859b941ddf2634272b6c354a91ed245f58e",
+          "page_id": "badw-v4-c66c91df6a7cb94dea3964a264b5a98dcce69624e4af1dc64e4753823d30b564",
+          "pdf_sha256": "ef8f7a27de0afc7ce48d368668923159f6904565ec0f000002450396a0a7f43c",
+          "pdf_url": "https://wts-digital.badw.de/pdf/ta%20la%20la",
+          "run_end_exclusive": 2015,
+          "run_start": 1587,
+          "source_text_sha256": "29dd413604c73e240af54012ac5bdb61202abb8111ea8e3d1c0644de0b19a273"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "3"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 86,
+        "entry_identity": "badw:pdf:badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7:1274",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "889c50257b4f9f899db686213b0d3a9ae9f4c93347771715aa195742d59b054a",
+        "literal": "vgl. S\nCHUH\n2012: 1407.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7:1274",
+          "text_sha256": "726b4b1c6d9622bf05c740762291427a9090acd0acd516b7306325e9894ea277"
+        },
+        "start": 63,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "mthun gsum lo pa",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 86,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 1,
+            "line_char_end": 12,
+            "run_start": 1295,
+            "run_end_exclusive": 1305
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 22,
+            "run_start": 1305,
+            "run_end_exclusive": 1324
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 33,
+            "run_start": 1324,
+            "run_end_exclusive": 1349
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 4,
+            "run_start": 1349,
+            "run_end_exclusive": 1351
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 11,
+            "run_start": 1351,
+            "run_end_exclusive": 1357
+          }
+        ]
+      },
+      "container_literal": "jeweils die\ndrei Jahrgänge mit dem\ngleichen kluṅ-rta-Element; vgl. S\nCHUH\n2012: 1407.",
+      "context": " jeweils die\ndrei Jahrgänge mit dem\ngleichen kluṅ-rta-Element; vgl. S\nCHUH\n2012: 1407.།\n~s ... sbrel thag bcad la „der mthun gsum lo\npa soll das Bindeseil durchschneiden“\n(MigTo 149,29); mthun gsum kluṅ (metr.)\n„[das Jahr] in dem drei [Jahrgänge jeweils]\nübereinstim",
+      "review_text_sha256": "726b4b1c6d9622bf05c740762291427a9090acd0acd516b7306325e9894ea277",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7.json.gz",
+          "canonical_object_sha256": "f2161ea2ea7602edfa2c5b104514a19b6a01df21dc0cfe401155f72012fa152f",
+          "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+          "pdf_sha256": "183a1b579a8b301cd1052dbef592a40f2ff18c61efe0f74bdecf33dbf12557ee",
+          "pdf_url": "https://wts-digital.badw.de/pdf/mthun%20lam",
+          "run_end_exclusive": 1550,
+          "run_start": 1274,
+          "source_text_sha256": "fe3c14987b6bce913523df1397deaf7d2f26e87859a8e79bfd32db606523ea75"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "352"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 75,
+        "entry_identity": "badw:pdf:badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7:986",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "fb479f2f5e3ac0c4a67f3245cab4cbcfdf1830b40984a0d27ccefa176923da17",
+        "literal": "vgl. S\nCHUH 2012: 1407.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7:986",
+          "text_sha256": "9c578bb1e649bca66f17f9d4940d8aab1d3b9ec57899d4f63a49e228b5934505"
+        },
+        "start": 52,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "mthun gsum rtsub pa",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 75,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 1,
+            "line_char_end": 6,
+            "run_start": 1007,
+            "run_end_exclusive": 1012
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 27,
+            "run_start": 1012,
+            "run_end_exclusive": 1033
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 23,
+            "run_start": 1033,
+            "run_end_exclusive": 1050
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+            "span_index": 0,
+            "printed_page": 352,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 1050,
+            "run_end_exclusive": 1058
+          }
+        ]
+      },
+      "container_literal": "eines\nder sieben schwierigen Jah-\nre (rtsub bdun); vgl. S\nCHUH 2012: 1407.",
+      "context": " eines\nder sieben schwierigen Jah-\nre (rtsub bdun); vgl. S\nCHUH 2012: 1407.\nde la rtsub bdun ’di lta ste ... mthun gsum\nraṅ lo nas bgraṅ ba’i / lṅa dgu gaṅ ruṅ gnam\nlor śar (metr.) „hierbei sind die schwierigen\nJahrgänge folgendermaßen: mthun gsum:\ndas fü",
+      "review_text_sha256": "9c578bb1e649bca66f17f9d4940d8aab1d3b9ec57899d4f63a49e228b5934505",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7.json.gz",
+          "canonical_object_sha256": "f2161ea2ea7602edfa2c5b104514a19b6a01df21dc0cfe401155f72012fa152f",
+          "page_id": "badw-v4-26e29e4b5f61ad227b9b7fcbe6d7cf187855c92df5a9394413bfe81564347de7",
+          "pdf_sha256": "183a1b579a8b301cd1052dbef592a40f2ff18c61efe0f74bdecf33dbf12557ee",
+          "pdf_url": "https://wts-digital.badw.de/pdf/mthun%20lam",
+          "run_end_exclusive": 1274,
+          "run_start": 986,
+          "source_text_sha256": "929fc7ff812e1eb614b384c2a31894377f49d22a5e4b5f50880417b56a41d7fc"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "352"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 121,
+        "entry_identity": "badw:pdf:badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192:1114",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "5548a5161e2e2756207d4f89284b5e13f6c40e9371d79325a2752c59106e61a2",
+        "literal": "vgl. S\nCHUH 2012:\n1402.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192:1114",
+          "text_sha256": "240e4096e082e77dea2d7eb1e66a9f5175644fc5c9f4358e1a8c9df7970dcb28"
+        },
+        "start": 98,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "thams cad ’dul",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 121,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 1,
+            "line_char_end": 13,
+            "run_start": 1131,
+            "run_end_exclusive": 1141
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 0,
+            "line_char_end": 24,
+            "run_start": 1141,
+            "run_end_exclusive": 1160
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 0,
+            "line_char_end": 38,
+            "run_start": 1160,
+            "run_end_exclusive": 1191
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 0,
+            "line_char_end": 26,
+            "run_start": 1191,
+            "run_end_exclusive": 1212
+          },
+          {
+            "line_index": 4,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 0,
+            "line_char_end": 10,
+            "run_start": 1212,
+            "run_end_exclusive": 1216
+          },
+          {
+            "line_index": 5,
+            "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+            "span_index": 0,
+            "printed_page": 236,
+            "line_char_start": 0,
+            "line_char_end": 5,
+            "run_start": 1216,
+            "run_end_exclusive": 1218
+          }
+        ]
+      },
+      "container_literal": "Bez. für das\nweibliche Feuer-Schwein-\nJahr, das 21. Jahr des 60-Jahreszyklus\nindischer Herkunft; vgl. S\nCHUH 2012:\n1402.",
+      "context": " Bez. für das\nweibliche Feuer-Schwein-\nJahr, das 21. Jahr des 60-Jahreszyklus\nindischer Herkunft; vgl. S\nCHUH 2012:\n1402.\n།\nLex. me mo phag lo (brDa, Dagy).",
+      "review_text_sha256": "240e4096e082e77dea2d7eb1e66a9f5175644fc5c9f4358e1a8c9df7970dcb28",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192.json.gz",
+          "canonical_object_sha256": "139fc91cbb425f59bc31e5a0faa25625087fdbccf1e9f56e6ee4f149ab554461",
+          "page_id": "badw-v4-5c1b249a8a33530f8a2e0160ab5b825755376e5d54d3479e82938f77956a5192",
+          "pdf_sha256": "4c887c8a70d85b29b9b8f67e98cd13f7ecc2ff1ec7881a995a9bab5871bad5c1",
+          "pdf_url": "https://wts-digital.badw.de/pdf/thams%20cad%20gzigs",
+          "run_end_exclusive": 1246,
+          "run_start": 1114,
+          "source_text_sha256": "3da08658902ae331031cfd07ef1eecf39fac05bf4f40e8b96facf8ef02120e63"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "236"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "containing_kind": "definition",
+          "marker": "vgl.",
+          "terminal": "."
+        },
+        "citation_node_ids": [
+          "n2"
+        ],
+        "containing_node_id": "n1",
+        "end": 85,
+        "entry_identity": "badw:pdf:badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b:218",
+        "evidence": "explicit comparison marker and independent definition terminal boundary",
+        "id": "8a62f87103502b024f319fcdba96124b25c8e459afeb065cbfc152de1562edf3",
+        "literal": "vgl. S\nCHUH 2012: 1401.",
+        "ownership": "entry",
+        "passage_type": "terminal_comparison",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:pdf:badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b:218",
+          "text_sha256": "d982a0f68c919943094e48ad3d7be32ba57d3fe6546ce0351cbf8c5463f1fe90"
+        },
+        "start": 62,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "tha skar zla ba",
+      "stratum": [
+        "4",
+        "terminal_comparison"
+      ],
+      "container": {
+        "id": "n1",
+        "kind": "definition",
+        "start": 1,
+        "end": 85,
+        "parent": "n0",
+        "source_lines": [
+          {
+            "line_index": 0,
+            "page_id": "badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b",
+            "span_index": 0,
+            "printed_page": 203,
+            "line_char_start": 1,
+            "line_char_end": 15,
+            "run_start": 234,
+            "run_end_exclusive": 247
+          },
+          {
+            "line_index": 1,
+            "page_id": "badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b",
+            "span_index": 0,
+            "printed_page": 203,
+            "line_char_start": 0,
+            "line_char_end": 31,
+            "run_start": 247,
+            "run_end_exclusive": 267
+          },
+          {
+            "line_index": 2,
+            "page_id": "badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b",
+            "span_index": 0,
+            "printed_page": 203,
+            "line_char_start": 0,
+            "line_char_end": 20,
+            "run_start": 267,
+            "run_end_exclusive": 284
+          },
+          {
+            "line_index": 3,
+            "page_id": "badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b",
+            "span_index": 0,
+            "printed_page": 203,
+            "line_char_start": 0,
+            "line_char_end": 16,
+            "run_start": 284,
+            "run_end_exclusive": 294
+          }
+        ]
+      },
+      "container_literal": "ein Monat; der\nmittlere Herbstmonat bzw. neun-\nte Hor-Monat; vgl. S\nCHUH 2012: 1401.",
+      "context": " ein Monat; der\nmittlere Herbstmonat bzw. neun-\nte Hor-Monat; vgl. S\nCHUH 2012: 1401.།\nLex. ston zla ’briṅ ṅam skar ma de daṅ ldan\npa’i zla ba’o / hor zla dgu pa’aṅ zer „mitt-\nlerer Herbstmonat oder der Monat, der zu\ndem [gleichnamigen] Sternbild gehört;\nheißt auch",
+      "review_text_sha256": "d982a0f68c919943094e48ad3d7be32ba57d3fe6546ce0351cbf8c5463f1fe90",
+      "review_status": "pending_source_inspection",
+      "candidate_pdf_sources": [
+        {
+          "canonical_object": "volume_4/pages/badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b.json.gz",
+          "canonical_object_sha256": "00c77b04a36cb2adb8f6eb79d5566d94a52da4ac96fe357c731f72c20fca8563",
+          "page_id": "badw-v4-c1a9b83f67f21dc5946ed03fa38aa032251832556add872f378308c6b1c9939b",
+          "pdf_sha256": "91ee121ff1d9dd89ce72fb12ff1428cfc02aa9bb708f10c136ab05f24359befe",
+          "pdf_url": "https://wts-digital.badw.de/pdf/tha%20khug",
+          "run_end_exclusive": 552,
+          "run_start": 218,
+          "source_text_sha256": "93c5cfae0a1dcd31a6cef5fdbdadc2e50ff3adb63e63ad4146a902a29c9e6f82"
+        }
+      ],
+      "packet_reported_printed_pages": [
+        "203"
+      ]
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": "]",
+          "containing_kind": "example",
+          "opener": "["
+        },
+        "citation_node_ids": [
+          "n105"
+        ],
+        "containing_node_id": "n69",
+        "end": 4273,
+        "entry_identity": "badw:https://wts-digital.badw.de/lemma/non/1",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "a0307b2d8db7263ff884eeafc2c9ff5374f0193444795d1d53047a01828c88bb",
+        "literal": "[vgl. Mañjuśrīmūlatantra (Toh 543)]",
+        "ownership": "sense",
+        "passage_type": "bounded_comparison",
+        "sense_node_id": "n7",
+        "source_binding": {
+          "identity": "badw:https://wts-digital.badw.de/lemma/non/1",
+          "text_sha256": "1345837a767c43076931b166ac03e8065fb02511abe3c988224a1b8ae56eae06"
+        },
+        "start": 4238,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "non",
+      "stratum": [
+        "html",
+        "bounded_comparison"
+      ],
+      "container": {
+        "id": "n69",
+        "kind": "example",
+        "start": 4107,
+        "end": 4346,
+        "parent": "n7",
+        "lexical_record_id": "badw:attestation:8a0a87b61adec906c07cbf39612be431a0397bb8b74dcc9a34ad50cbe3c60e55:23"
+      },
+      "container_literal": " lkog tu non ’jam dpal bya ba las bzlas luṅ bslaṅs\n  „man nimmt die Ermächtigung zur Rezitation aus dem Kriyā[tantra] des Mañjuśrī [vgl. Mañjuśrīmūlatantra (Toh 543)] auf, die man heimlich erlangt hat“\n    \n      (ThK\n      2: 524,3).\n    ",
+      "context": "ken: non“ (Liś 20,14).\n\n\n  3.\n  erlangen.\n\n\n  \n   lkog tu non ’jam dpal bya ba las bzlas luṅ bslaṅs\n  „man nimmt die Ermächtigung zur Rezitation aus dem Kriyā[tantra] des Mañjuśrī [vgl. Mañjuśrīmūlatantra (Toh 543)] auf, die man heimlich erlangt hat“\n    \n      (ThK\n      2: 524,3).\n    \n  \n\n\n\t    ",
+      "review_text_sha256": "1345837a767c43076931b166ac03e8065fb02511abe3c988224a1b8ae56eae06",
+      "review_status": "pending_source_inspection",
+      "source_object": {
+        "byte_length": 40355,
+        "content_classification": "database_article",
+        "decoded_encoding": "UTF-8",
+        "fetch_timestamp_utc": "2026-09-02T11:47:51+00:00",
+        "final_url": "https://wts-digital.badw.de/lemma/non/1",
+        "http_status": 200,
+        "media_type": "text/html",
+        "object_path": "objects/sha256/66/667118d49309b3223f29331535c6a18c91717102161597b5a9c14e0851abfd68",
+        "request_key": "2debc9310b90c7d81ba187c218f86be00b59dae485dfb11a2e672f47eff6cba0",
+        "requested_url": "https://wts-digital.badw.de/lemma/non/1",
+        "sha256": "667118d49309b3223f29331535c6a18c91717102161597b5a9c14e0851abfd68",
+        "used_replacement_characters": false
+      }
+    },
+    {
+      "passage": {
+        "boundary_evidence": {
+          "closer": ")",
+          "containing_kind": "example",
+          "opener": "("
+        },
+        "citation_node_ids": [
+          "efb47ebe6bf4bedd967fde99c5fa0d49099fa56a76b763919308e5b3c8139700"
+        ],
+        "containing_node_id": "n8",
+        "end": 420,
+        "entry_identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "evidence": "balanced source enclosure, explicit local syntax and exact component containment",
+        "id": "43c78a7eded066fe9f10413a1e441f3588c70b91481c5a3d425132ce98f7375d",
+        "literal": "(v. l. ka ku sta la K6 da 258b2)",
+        "ownership": "entry",
+        "passage_type": "variant_reading",
+        "sense_node_id": null,
+        "source_binding": {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+          "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b"
+        },
+        "start": 388,
+        "status": "derived_source_structure",
+        "type": "citable_passage"
+      },
+      "headword": "ka ku sta",
+      "stratum": [
+        "html",
+        "variant_reading"
+      ],
+      "container": {
+        "id": "n8",
+        "kind": "example",
+        "start": 357,
+        "end": 593,
+        "parent": "n2",
+        "lexical_record_id": "badw:attestation:1fae843abce035cc40da8fc33ffa3bfacf11d9acc0ff1168b13c238c785ab396:2"
+      },
+      "container_literal": "de’i tshe chu bo ka kus sta la (v. l. ka ku sta la K6 da 258b2) śiṅ rta lṅa brgya tsam gyi tshad cig gis brgal nas\n  „zu der Zeit hatte eine Menge von rund fünfhundert Wagen den Fluß Kukustā überquert“\n    \n      (MPS\n      27.12).\n    ",
+      "context": " nas) chu lhuṅ bzed gaṅ loṅ⧼s⧽ śig\n  „Ānanda, geh und hole aus dem Fluß Kukustā eine Schale voll Wasser!“\n    \n      (MPS\n      27.10);\n    \n  \n  \n  de’i tshe chu bo ka kus sta la (v. l. ka ku sta la K6 da 258b2) śiṅ rta lṅa brgya tsam gyi tshad cig gis brgal nas\n  „zu der Zeit hatte eine Menge von rund fünfhundert Wagen den Fluß Kukustā überquert“\n    \n      (MPS\n      27.12).\n    \n  \n\n\n\t",
+      "review_text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b",
+      "review_status": "pending_source_inspection",
+      "source_object": {
+        "byte_length": 8571,
+        "content_classification": "database_article",
+        "decoded_encoding": "UTF-8",
+        "fetch_timestamp_utc": "2026-09-02T10:05:37+00:00",
+        "final_url": "https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "http_status": 200,
+        "media_type": "text/html",
+        "object_path": "objects/sha256/9b/9b66a95a763f1bdb4b4c221031ce31ad6b928740f31018dd88114f31e577e203",
+        "request_key": "d3c6aa5c49d62913ca204f1d84fa361dc3f75ead2e80693b2ddf90fd56269f37",
+        "requested_url": "https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "sha256": "9b66a95a763f1bdb4b4c221031ce31ad6b928740f31018dd88114f31e577e203",
+        "used_replacement_characters": false
+      }
+    }
+  ]
+}

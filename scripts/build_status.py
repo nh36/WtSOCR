@@ -1679,7 +1679,7 @@ nodes without an accepted item/subclause 39; unbounded/missing component 91;
 definition source nodes 20; example source nodes 4; balanced comparison candidates
 3; variant-reading candidate 1. Diagnostic containment is not accepted ownership.
 The small example/definition cases are retained in the checked-in passage census;
-individual scholarly disposition and fresh positive facsimile review remain pending.
+individual scholarly disposition of the 246 survivors remains pending.
 
 Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**.
 Lex. remains **39,688 items**, zero duplicate/overlapping items; xrefs **7,484
@@ -1688,10 +1688,13 @@ zero effective conflicts, 384 preserved source-observation overlaps.
 Raw alphabetic gaps partition exactly: **42,452 typed, 66,349 structural labels,
 10,616 decoding-placeholder syntax, 11,651 pending**.
 
-**Validation limit:** automated corpus replay and frozen relationship checks pass,
-but the 159 newly accepted relationships have not received a fresh positive
-facsimile holdout. This is a conservative implementation stopping point, not a
-claim that maximum principled ownership coverage or structural maturity is proven.
+**Fresh positive validation:** 37 passages from the preceding 159-owner gain were
+reviewed: 35 PDF facsimiles and two raw HTML DOM examples, covering terminal
+comparisons in volumes 2–4 and every gain-producing nested production. No false
+owners were observed in this sample. Three review-source bindings were corrected
+explicitly. This is sample validation, not completion of the 246-owner census.
+No runtime rules changed or new corpus replay was performed for this review;
+the corpus figures above remain those of the preceding replay.
 Remaining coherent work includes quotation-role disambiguation and source-Lex.
 subclause recovery. No broad prose owner or generic cleanup rule is authorized.
 See [evidence and reproduction](../data/badw_forensic_structure/README.md).

@@ -14,16 +14,46 @@ Thirty-nine survivors are inside broad source Lex. nodes but lack an accepted
 canonical item/subclause; these have not been promoted by broad containment.
 
 The small example/definition cases are represented in the baseline and remaining
-census. Individual scholarly disposition remains pending positive facsimile review.
+census. Individual scholarly disposition of the 246 survivors remains pending.
 Malformed quotation boundaries and absent explicit variant markers are retained,
 not silently repaired. The exact source-bound records are the authoritative
 occurrence-level disposition.
 
-**Validation limitation:** the new 159 accepted relationships have not received
-fresh positive facsimile validation. Tests cover bounded positive and negative
-grammars and corpus replay preserves frozen relationships; this does not establish
-zero false semantic claims or completion of the requested scholarly review.
-Further review must inspect positive new relationships before widening these rules.
+## Fresh positive source validation
+
+`passage_positive_selection.json` freezes 37 feature-stratified positive passages
+from the 159 gains (152 unique passages): 24 terminal comparisons, eight each
+from PDF volumes 2–4; ten bounded comparisons; and all three rare productions
+(variant-reading parenthesis, quoted translation, definition-source note).
+Multiple citations, internal parentheses, wrapping and adjacent semantic structures
+are represented. No terminal-semicolon-ended positive existed in this output;
+semicolon-introduced comparisons are represented.
+
+`passage_positive_review.jsonl` records the completed decisions, exact spans,
+containers, citation identifiers, boundary evidence and source provenance.
+Thirty-five PDF facsimiles and two raw HTML DOM examples were inspected.
+No false ownership claims were observed in this sample. This is sample validation,
+not inspection of every one of the 159 gains or completion of the 246-owner census.
+The selection's pending status preserves its pre-inspection state; the separate
+review decisions are authoritative.
+
+Three source-review bindings were corrected explicitly: the neighboring PDF for
+`tha dad du gnas pa` was replaced by the correct witness; `rtags` was checked on
+printed p. 90 rather than the first candidate, p. 89; and `ṅed` was verified on
+printed p. 24 while retaining the packet's reported p. 22. These are review
+provenance corrections, not changes to runtime ownership or literal source text.
+
+Reproduce the frozen selection with:
+
+```bash
+python3 scripts/select_badw_passage_positive_review.py --output /tmp/passage_positive_selection.json
+```
+
+The selector pins hashes of its ignored gain and source-packet inputs. Raw HTML,
+PDFs and rendered images remain in ignored `work/` storage. No parser rule was
+widened and no new corpus replay was performed for this source-validation change;
+the corpus figures above describe the preceding replay. Individual dispositions
+and implementation for the 246 unresolved occurrences remain open.
 
 ## Historical preceding tranche documentation
 
