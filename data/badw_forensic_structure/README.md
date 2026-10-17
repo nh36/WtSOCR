@@ -1,81 +1,131 @@
-# Source-bounded ownership grammar tranche (e26c885e06 baseline)
+# Source-supported assertion tranche (cfd770283e baseline)
 
-The full replay projects **29,877/29,877 witnesses**, establishing **109,234
-citation owners** and leaving **191 unresolved** (50 HTML / 141 PDF). The 43 new
-owners comprise 18 Lex assertion owners, 18 HTML heading assertion owners, four
-PDF punctuated comparison-list owners and three balanced-comparison owners.
-Citations remain 109,425; bibliography identities remain 109,079 accepted / 346
-unresolved. `release/current` is untouched.
+The full replay projects **29,877/29,877 witnesses** and establishes **109,293
+citation owners**, leaving **132 unresolved** (29 HTML / 103 PDF), down from 191.
+The **59 gains** comprise **29 source-supported assertions** (17 definition,
+11 source-language and one grammatical assertion), **21 HTML heading assertions**
+and **nine PDF punctuated comparison lists**. All 114 frozen witnesses pass;
+baseline owners, bibliography relationships, xrefs, language observations, Lex.
+items, source spans and reader integrity are preserved. `release/current` is untouched.
+Citations remain 109,425; bibliography identities remain 109,079 accepted / 346 unresolved.
 
-Meaningful untyped alphabetic residue falls **579 characters**, from **11,651 to
-11,072** (HTML 3,219; PDF 7,853). Raw alphabetic gaps remain 131,068: 43,049 typed,
-66,331 structural labels, 10,616 decoding-placeholder syntax and 11,072 pending.
-Ownership and lexical accounting are separate measurements.
+Meaningful alphabetic residue falls **995 characters: 11,072 → 10,077**.
+HTML heading grammar accounts for **613** (3,219 → 2,606); PDF assertion and
+comparison grammars account for **382** (7,853 → 7,471). Raw alphabetic gaps
+remain 131,068, partitioned into **44,692 typed, 66,298 structural labels,
+10,001 decoding-placeholder syntax and 10,077 pending**. The typed increase
+also includes characters previously counted as labels or placeholder syntax;
+that increase is not reported as meaningful-residue reduction.
 
-## Complete occurrence census and batch disposition
+## Frozen current-survivor census and source validation
 
-`owner_review.jsonl.gz` contains all 234 baseline survivors, including source
-identity/headword, exact citation and local context, bibliography status, source
-and canonical nodes, punctuation/enclosures, markers, DOM or PDF styles/geometry,
-Lex subclause diagnostics, proposed grammar and final disposition.
-`owner_review.json` gives all 24 structural clusters, representative contexts,
-the entire 16-occurrence finite-family packet and the final reason counts.
-The frozen `passage_after_short_variant.jsonl.gz` is the 234-occurrence input,
-not the current survivor count. Earlier passage censuses remain historical.
+`assertion_baseline_cfd.jsonl.gz` freezes the actual **191** survivors from clean
+`cfd770283ecbb21758b9e2eb16fbc00dde5525fd`: 50 HTML and 141 PDF. Its summary
+records HTML comparison 19, example one, Lex 15, missing component 15; PDF
+comparison 55, definition nine, example three, Lex six, missing component 68.
+The earlier 234-row census is historical, not current input.
 
-The Lex grammar recovers locally balanced semicolon assertions after a damaged
-preceding item, requiring an explicit equivalence/gloss production and a terminal
-source enclosure. It preserves canonical Lex items and delimiter diagnostics.
-Heading assertions require the HTML lemma-heading DOM envelope and a complete
-gloss or narrow grammatical-label production. PDF comparison lists require an
-explicit marker, independent terminal punctuation, accepted semantic containment,
-continuous layout and a reference-list grammar. Balanced short comparisons retain
-the explicit comparison marker requirement. Citations acquire owners only through
-exact containment in these recovered passages. No broad Lex ownership, proximity,
-bibliography-derived boundary or generic prose envelope is introduced.
+`assertion_owner_review.jsonl.gz` retains every baseline occurrence, exact citation
+span, local source context, canonical components, punctuation/enclosure, raw DOM
+or PDF run/line geometry, structural diagnostics and final disposition.
+`assertion_owner_review.json` reports all 23 source-grammar clusters and the
+finite leftover packet. `assertion_after.jsonl.gz` is the fresh 132-survivor census.
+All **59 gains** have exact source bindings and decisions in
+`assertion_positive_review.jsonl`: all **38 PDF positives** were inspected in
+facsimiles, and all **21 HTML positives** against raw descriptive-sibling DOM.
+Raw sources and renderings remain ignored in `work/`.
 
-All 43 gains were source-validated: 33 HTML occurrences against raw DOM and all
-ten PDF occurrences across nine facsimiles. Exact spans, productions, source
-bindings and decisions are in `owner_grammar_positive_review.jsonl`. No false
-owners were observed. Raw HTML, PDFs and rendered pages remain ignored in `work/`.
-Positive and negative tests cover the production and rejection boundaries.
+The 47 parenthetical-source cases were clustered before implementation:
+31 sentence-terminal, seven semicolon-bounded, six comma continuations and
+three source parentheses followed by comparison. The new coherent
+`source_supported_assertion` production requires an accepted sense/division
+scope, a definition opening or explicit language/grammatical production,
+independent top-level sentence/semicolon punctuation and physical continuity.
+Only then does the balanced terminal source parenthesis validate the assertion.
+Citations, definitions, linguistic forms and language identifications remain
+separate leaves. Competing examples, Lex, xrefs, translations and multiple
+source-note subclauses block promotion. Citation identity supplies no boundary.
 
-The 191 survivors remain **parser capability or boundary review pending**;
-**zero are proven to lack an exact citable passage**. Ownership is not closed.
-The largest precise reason groups are parenthetical source prose without a
-canonical clause (47), PDF comparison layout continuity not established (36),
-source-language/etymological statements (30), heading grammatical assertions (21),
-missing comparison scope (13), and damaged Lex quotation/source delimiters (21).
-The layout label records a failed conservative guard, not proven source damage.
-The remaining 23 have the finer boundary/role reasons in the machine-readable
-census. All 88 original failed comparisons and 91 unbounded cases are classified;
-negative classification is not a scholarly finding that ownership is impossible.
+HTML extensions require the descriptive sibling of the lemma and a complete
+finite heading construction (category, function, register or coordinated label).
+Legacy accepted narrower owners take priority. Arbitrary heading prose is rejected.
 
-The largest coherent remaining residue family is PDF quotation-adjacent unbounded
-fragments (**2,108 alphabetic characters**), followed by reference/comparison
-continuations (1,539) and lexical-substitution clauses (1,092). The next parser
-tranche should recover quotation/gloss roles and nested source-note boundaries,
-using the structural clusters to select source validation.
+The original 36 PDF layout failures comprise **14 same-baseline font-run splits,
+two ordinary wraps and 20 combining both**. The old observation coordinates
+used unscaled text moves. Exact cached PDF decoding supplies derived physical
+geometry only after run indices, CIDs, fonts and Unicode match the immutable
+observations. Same-page/column, forward-baseline and ordinary leading checks
+replace the false discontinuity guard; source observations are never rewritten.
+Negative controls cover new senses, examples, Lex, columns and entries.
+The existing independent comparison punctuation/reference grammar remains required.
+
+## Final unresolved reasons
+
+All **132** remain parser-capability or source-boundary-review cases.
+**Zero are established to genuinely lack an exact citable passage**; ownership
+is not closed. A failed delimiter or current scope guard is not proof of
+intrinsic unownability. Exact per-occurrence evidence is in the review JSONL.
+
+| Reason | Occurrences |
+| --- | ---: |
+| Lex local quotation delimiter failure | 10 |
+| Lex local source parenthesis failure | 10 |
+| Lex source decoding and quotation failure | 1 |
+| assertion competing semantic components | 9 |
+| assertion continuation or editorial opening grammar missing | 37 |
+| assertion independent punctuation or delimiter recovery missing | 2 |
+| assertion multiple source notes require subclauses | 1 |
+| comparison canonical scope missing | 13 |
+| comparison competing source components | 1 |
+| comparison independent right boundary missing | 8 |
+| comparison reference label split across font runs | 29 |
+| comparison reference or prose grammar incomplete | 5 |
+| example nested or damaged translation quotes | 3 |
+| example nested variant note role missing | 1 |
+| scholar led etymological assertion grammar missing | 2 |
+
+The 29 split-label comparisons need PDF reference-run composition, not wider
+citation-based boundaries. Reference locators, additional prose and xref scope
+remain separate grammar gaps. The 21 Lex failures cluster into ten malformed
+source parentheses, ten quotation delimiters and one decoding/quotation failure;
+no additional independent local assertion survives the existing segmentation.
+Malformed punctuation is preserved, including when sound later assertions exist.
+Four example leftovers require nested variant-note or translation-quotation roles.
+
+## Remaining structural capability and next tranche
+
+The largest coherent residue remains **PDF quotation-adjacent unbounded fragments
+(1,946 characters)**, followed by **reference/comparison continuations (1,501)**
+and **lexical-substitution clauses (1,092)**; PDF quotation/gloss candidates are
+815. These counts do not justify a neutral quotation absorber.
+
+One further online-parser tranche is justified before historical-print adaptation
+or reader-product work: compose PDF reference labels across font runs, then
+recover independently bounded assertion continuations and multiple-source-note
+subclauses using fresh positive validation. Broad quotation-role inference should
+follow a focused typography/delimiter investigation only after those safer
+capabilities are exhausted.
 
 ## Reproduction
 
-Use the acquired immutable witness projections and a semantic-store snapshot of
-clean `e26c885e06` in ignored storage. Run one full projection after the grammar
-tranche stabilizes; the census itself can be regenerated without a full replay.
+Use immutable acquired projections and the clean baseline semantic-store snapshot
+in ignored storage. Freeze the baseline census before modifying grammars. Run
+one full projection after the batch stabilizes, then regenerate final evidence.
 
 ```bash
-python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline_e26.sqlite --baseline-commit e26c885e06 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
-python3 scripts/build_badw_owner_review.py --store work/badw_forensic_structure/semantic.sqlite
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline_cfd.sqlite --baseline-commit cfd770283ecbb21758b9e2eb16fbc00dde5525fd --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/build_badw_owner_review.py --census data/badw_forensic_structure/assertion_baseline_cfd.jsonl.gz --packets work/badw_forensic_structure/assertion_survivor_packets.jsonl --output data/badw_forensic_structure/assertion_owner_review --baseline-commit cfd770283ecbb21758b9e2eb16fbc00dde5525fd --store work/badw_forensic_structure/semantic.sqlite --prior-review data/badw_forensic_structure/owner_review.jsonl.gz
+python3 scripts/census_badw_passage_residue.py --store work/badw_forensic_structure/semantic.sqlite --name assertion_after
 python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
 python3 scripts/classify_badw_forensic_residue.py
-python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --baseline-store work/badw_forensic_structure/baseline_e26.sqlite --refine-boundaries
+python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --baseline-store work/badw_forensic_structure/baseline_cfd.sqlite --refine-boundaries
 python3 scripts/build_status.py
 ```
 
 ## Historical provenance
 
 The sections below preserve earlier tranches and their then-current counts.
-They do not describe the current 191 survivors.
+They do not describe the current 132 survivors.
 
 ## Fresh positive source validation
 

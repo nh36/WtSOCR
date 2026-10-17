@@ -1,0 +1,51 @@
+{
+  "projection_basis": "Current source projection; unresolved citation set from baseline_cfd.sqlite",
+  "total": 191,
+  "families": [
+    {
+      "source_kind": "html",
+      "family": "comparison_without_accepted_enclosure",
+      "count": 19
+    },
+    {
+      "source_kind": "html",
+      "family": "contained_example_source_node",
+      "count": 1
+    },
+    {
+      "source_kind": "html",
+      "family": "contained_lexical_source_node",
+      "count": 15
+    },
+    {
+      "source_kind": "html",
+      "family": "unbounded_or_missing_component",
+      "count": 15
+    },
+    {
+      "source_kind": "pdf",
+      "family": "comparison_without_accepted_enclosure",
+      "count": 55
+    },
+    {
+      "source_kind": "pdf",
+      "family": "contained_definition_source_node",
+      "count": 9
+    },
+    {
+      "source_kind": "pdf",
+      "family": "contained_example_source_node",
+      "count": 3
+    },
+    {
+      "source_kind": "pdf",
+      "family": "contained_lexical_source_node",
+      "count": 6
+    },
+    {
+      "source_kind": "pdf",
+      "family": "unbounded_or_missing_component",
+      "count": 68
+    }
+  ]
+}

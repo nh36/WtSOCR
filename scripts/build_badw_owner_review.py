@@ -21,6 +21,110 @@ from badw_pdf_structure_recovery import recover
 from badw_comparison_clauses import comparison_end
 from badw_header_structure import contiguous_pdf_lines
 from badw_pdf_mixed_clauses import style_runs
+from badw_assertion_layout import passage_layout, physical_lines, continuous
+from badw_source_assertions import clause_ends, LANGUAGE, GRAMMAR
+from badw_contextual_semantics import augment_citations
+
+
+def citation_resolver():
+    """Use the replay's citation augmentation before diagnosing source grammar."""
+    from finalize_badw_corpus_structure import BIB, CACHE, rows
+    from badw_bibliography import AuthorityResolver
+    from badw_bibliography_external import load_publications
+    from badw_bibliography_aliases import load_reviews
+    with sqlite3.connect(BIB/'bibliography.sqlite') as db:
+        authorities = [json.loads(r[0]) for r in db.execute('select record_json from authority')]
+        print_rows = []
+        for authority, occurrence, digest, raw in db.execute('select authority_id,id,pdf_sha256,record_json from print_occurrence where authority_id is not null'):
+            record = json.loads(raw)
+            if record.get('authority'):
+                print_rows.append(dict(id=authority, occurrence_id=occurrence, source_sha256=digest, label=record['authority']['label']))
+    source_rows = list(rows(BIB/'source_rows.jsonl'))
+    external = load_publications(Path('data/bibliography_external_publications.tsv'), CACHE)
+    existing = {r['id'] for r in authorities}
+    authorities.extend(r for r in external if r['id'] not in existing)
+    existing = {r['occurrence_id'] for r in source_rows}
+    source_rows.extend(r for r in external if r['occurrence_id'] not in existing)
+    aliases = load_reviews(Path('data/bibliography_alias_reviews.tsv'), source_rows, Path('data/source_pdfs.tsv'), CACHE)
+    return AuthorityResolver(authorities, source_rows, aliases, print_rows)
+
+
+def layout_review(projection, text, start, end):
+    """Expose why old layout guards fail; never license a semantic owner."""
+    if projection['source_kind'] != 'pdf':
+        return None
+    lines, runs = style_runs(projection, text)
+    indices = sorted({r['line'] for r in runs if r['start'] < end and start < r['end']})
+    physical = physical_lines(projection)
+    transitions = []
+    for a,b in zip(indices, indices[1:]):
+        old_ok = contiguous_pdf_lines(lines,a,b)
+        new_ok = bool(physical) and continuous(physical,a,b)
+        if physical:
+            left,right = physical[a],physical[b]
+            dy = left['y']-right['y']
+            cause = ('page_transition' if left['page_id'] != right['page_id'] else
+                     'column_transition' if int(left['x']>=300) != int(right['x']>=300) else
+                     'same_baseline_font_run_split' if abs(dy)<=.5 else
+                     'ordinary_body_line_wrap' if new_ok else
+                     'superscript_or_nonbody_leading' if 0<dy<8 else
+                     'reverse_or_nonadjacent_layout')
+            transitions.append(dict(left_line=a,right_line=b,old_guard=old_ok,
+                replayed_guard=new_ok,cause=cause,dy=dy,left=left,right=right))
+        else:
+            transitions.append(dict(left_line=a,right_line=b,old_guard=old_ok,
+                replayed_guard=False,cause='exact_geometry_replay_unavailable'))
+    return dict(line_indices=indices,transitions=transitions,
+                replayed_continuity=bool(physical) and all(t['replayed_guard'] for t in transitions))
+
+
+def assertion_review(projection, text, a, b):
+    """Classify the current source assertion gates independently of ownership."""
+    nodes=projection['nodes']
+    scopes=[n for n in nodes if n['kind'] in ('sense','source_division') and n['start']<=a<b<=n['end']]
+    if not scopes:
+        return dict(reason='assertion_canonical_scope_missing')
+    scope=min(scopes,key=lambda n:n['end']-n['start'])
+    cuts=[scope['start']]+list(clause_ends(text,scope['start'],scope['end']))
+    interval=next(((x,y) for x,y in zip(cuts,cuts[1:]) if x<=a<b<=y),None)
+    if interval is None:
+        return dict(reason='assertion_independent_punctuation_or_delimiter_recovery_missing',scope=scope['id'])
+    left,end=interval
+    start=left
+    while start<end and text[start].isspace(): start+=1
+    definitions=[n for n in nodes if n['kind']=='definition' and start<=n['start']<end]
+    opening=next((n for n in definitions if not text[start:n['start']].strip() or
+                  re.fullmatch(r'\d+\.\s*',text[start:n['start']])),None)
+    if opening: start=opening['start']
+    local=text[start:end]
+    competing=[n['kind'] for n in nodes if n['kind'] in ('example','lexical','lexical_parallel','cross_reference') and n['start']<end and start<n['end']]
+    reason=('assertion_competing_semantic_components' if competing else
+            'assertion_recognized_opening_validation_pending' if opening or LANGUAGE.match(local) or GRAMMAR.match(local) else
+            'scholar_led_etymological_assertion_grammar_missing' if re.search(r'\b(?:Herkunft|vermutet|Lehnwort)\b',local) else
+            'assertion_continuation_or_editorial_opening_grammar_missing')
+    stop=end
+    while stop>start and text[stop-1] in ' \n\t.;།': stop-=1
+    if reason=='assertion_recognized_opening_validation_pending':
+        terminal=next(((start+x,start+y) for x,y,o in envelopes(text[start:stop])
+                       if o=='(' and y==stop-start),None)
+        if terminal is None:
+            reason='assertion_source_note_followed_by_additional_material'
+        elif any(n['kind']=='citation' and start<=n['start']<n['end']<=stop and
+                 not terminal[0]<=n['start']<n['end']<=terminal[1] for n in nodes):
+            reason='assertion_multiple_source_notes_require_subclauses'
+        elif projection['source_kind']=='pdf':
+            _,runs=style_runs(projection,text)
+            layout=[r for r in runs if r['start']<stop and start<r['end']]
+            first=next((r for r in layout if r['start']<=start<r['end']),None)
+            if not first or first['style']!='regular':
+                reason='assertion_initial_quotation_or_form_role_missing'
+            elif passage_layout(projection,layout) is None:
+                reason='assertion_physical_continuity_requires_review'
+            elif any(n['kind']=='translation' and n['start']<stop and start<n['end'] and
+                     not any(d['start']<=n['start']<n['end']<=d['end'] for d in definitions) for n in nodes):
+                reason='assertion_quotation_translation_role_missing'
+    return dict(reason=reason,scope=scope['id'],span=dict(start=start,end=end),literal=local,
+                competing_components=competing,layout=layout_review(projection,text,start,end))
 
 
 def comparison_failure(projection, text, start, citation_end):
@@ -49,7 +153,8 @@ def comparison_failure(projection, text, start, citation_end):
         lines, runs = style_runs(projection, text)
         layout = [r for r in runs if r['start']<end and start<r['end']]
         if not layout or any(not contiguous_pdf_lines(lines, l['line'], r['line']) for l,r in zip(layout,layout[1:])):
-            return dict(reason='comparison_PDF_layout_boundary_unestablished', candidate_end=end)
+            if passage_layout(projection, layout) is None:
+                return dict(reason='comparison_PDF_layout_boundary_unestablished', candidate_end=end)
     remaining = text[start:end]
     cites = [n for n in nodes if n['kind']=='citation' and start<=n['start']<n['end']<=end]
     for n in sorted(cites, key=lambda n:n['start'], reverse=True):
@@ -66,13 +171,15 @@ def comparison_failure(projection, text, start, citation_end):
                 unparsed_alphabetic_material=residue)
 
 
-def review(row, occurrence):
+def review(row, occurrence, resolver=None):
     packet, projection = row['packet'], row['projection']
     text = packet['review_text']
     assert packet['review_text_sha256'] == occurrence['text_sha256']
     a, b = (occurrence['source_span'][k] for k in ('start', 'end'))
     assert text[a:b] == occurrence['literal']
     projection = recover(projection, text)
+    if resolver is not None:
+        projection, _ = augment_citations(projection, text, resolver)
     canonical = hierarchy(projection, text)
     start, end = max(0, a-350), min(len(text), b+350)
     components = [n for n in projection['nodes']
@@ -153,14 +260,24 @@ def review(row, occurrence):
     punct = r'[.;,:!?()\[\]„“«»→⇒]'
     left = list(re.finditer(punct, text[start:a]))
     right = re.search(punct, text[b:end])
+    source_note_end = enclosing[0][1] if enclosing and enclosing[0][2] == '(' else b
+    source_note_tail = text[source_note_end:min(len(text), source_note_end+80)]
     return dict(occurrence, headword=row['entry'].get('headword'),
                 context_span=dict(start=start, end=end), context=local,
                 canonical_Lex_items=lex,
+                assertion_punctuation_grammar=('parenthesis_then_comparison' if re.match(r'\s*[;,.]?\s*vgl\.', source_note_tail) else
+                    'semicolon_bounded' if re.match(r'\s*;', source_note_tail) else
+                    'sentence_terminal' if re.match(r'\s*\.', source_note_tail) else
+                    'comma_continuation' if re.match(r'\s*,', source_note_tail) else
+                    'source_parenthesis_then_further_material'),
                 canonical_passages=[n for n in canonical['citable_passages'] if n['start'] <= a < b <= n['end']],
                 source_nodes=components, layout_lines=layout, DOM_fragments=fragments,
                 source_enclosures=[dict(start=s,end=e,opener=o,literal=text[s:e]) for s,e,o in enclosing],
                 grammar_taxonomy=taxonomy, comparison_marker_start=marker_start,
                 comparison_failure=comparison_failure(projection,text,marker_start,b) if marker_start is not None else None,
+                comparison_layout=layout_review(projection,text,marker_start,
+                    comparison_end(text,marker_start,len(text)) or b) if marker_start is not None else None,
+                assertion_failure=assertion_review(projection,text,a,b) if not lex else None,
                 nearest_punctuation=dict(left=dict(literal=left[-1].group(), start=start+left[-1].start()) if left else None,
                                          right=dict(literal=right.group(), start=b+right.start()) if right else None),
                 markers=[dict(literal=m.group(), start=start+m.start(), end=start+m.end()) for m in re.finditer(r'vgl\.|v\.\s*l\.|\br\.|skt\.|zw\.|Abt\.|→|⇒|≅|≈|Lex\.', local)],
@@ -169,21 +286,31 @@ def review(row, occurrence):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--baseline-commit', default='e26c885e06')
     ap.add_argument('--census', type=Path, default=Path('data/badw_forensic_structure/passage_after_short_variant.jsonl.gz'))
     ap.add_argument('--packets', type=Path, default=Path('work/badw_forensic_structure/projections.jsonl'))
     ap.add_argument('--output', type=Path, default=Path('data/badw_forensic_structure/owner_review'))
     ap.add_argument('--store', type=Path, help='Completed replay store, for final owner/disposition joins')
+    ap.add_argument('--prior-review', type=Path, help='Historical review, joined only to the fresh census for reason transitions')
     args = ap.parse_args()
     occurrences = collections.defaultdict(list)
     for line in gzip.open(args.census, 'rt'):
         r = json.loads(line)
         occurrences[r['identity']].append(r)
     records = []
+    resolver = citation_resolver()
     for line in args.packets.open():
         row = json.loads(line)
         for occurrence in occurrences.pop(row['packet']['identity'], []):
-            records.append(review(row, occurrence))
+            records.append(review(row, occurrence, resolver))
     assert not occurrences, list(occurrences)
+    if args.prior_review:
+        prior = {(r['identity'],r['source_span']['start'],r['source_span']['end']): r
+                 for r in (json.loads(line) for line in gzip.open(args.prior_review,'rt'))}
+        for r in records:
+            old = prior.get((r['identity'],r['source_span']['start'],r['source_span']['end']))
+            if old:
+                r['prior_reason'] = old.get('disposition',{}).get('reason')
     if args.store:
         db = sqlite3.connect('file:'+str(args.store)+'?mode=ro', uri=True)
         citations = {(entry, json.loads(raw)['source_span']['start'], json.loads(raw)['source_span']['end']): json.loads(raw)
@@ -198,7 +325,7 @@ def main():
                 r['disposition'] = dict(status='resolved_by_source_grammar', reason=owner['passage_type'] if owner else 'reviewed_relationship')
                 continue
             reason = r['grammar_taxonomy']
-            if r['comparison_failure'] and r['grammar_family']=='comparison_without_accepted_enclosure':
+            if r['comparison_failure']:
                 reason = r['comparison_failure']['reason']
             if r['canonical_Lex_items']:
                 a,b = r['source_span']['start'],r['source_span']['end']
@@ -219,7 +346,9 @@ def main():
                 r['local_Lex_segment'] = segment
                 r['local_delimiter_diagnostics'] = diagnostics
             elif 'example' in r['grammar_family']:
-                reason = 'example_nested_source_note_role_missing' if r['source_enclosures'] else 'example_quotation_or_translation_envelope_missing'
+                reason = ('example_nested_variant_note_role_missing' if r['source_kind']=='html' else 'example_nested_or_damaged_translation_quotes')
+            elif not r['comparison_failure'] and r['assertion_failure']:
+                reason = r['assertion_failure']['reason']
             r['disposition'] = dict(status='parser_capability_or_source_boundary_review_pending', reason=reason,
                 source_lacks_exact_passage=None,
                 interpretation='No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication.')
@@ -231,12 +360,21 @@ def main():
     clusters = collections.defaultdict(list)
     for r in records:
         clusters[(r['source_kind'], r['grammar_family'], r['grammar_taxonomy'])].append(r)
-    summary = dict(baseline_unresolved=len(records), baseline_commit='e26c885e06', census=str(args.census),
+    summary = dict(baseline_unresolved=len(records), baseline_commit=args.baseline_commit, census=str(args.census),
                    census_sha256=hashlib.sha256(args.census.read_bytes()).hexdigest(),
                    script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                    policy='Structural flags are review evidence, never ownership rules.',
                    clusters=[dict(source_kind=k[0], coarse_family=k[1], grammar=k[2], count=len(v),
                                   representatives=[dict(identity=r['identity'], span=r['source_span'], literal=r['literal'], context=r['context']) for r in v[:3]]) for k,v in sorted(clusters.items())])
+    summary['assertion_punctuation_clusters'] = dict(collections.Counter(r['assertion_punctuation_grammar'] for r in records if r['grammar_taxonomy']=='parenthetical_source_in_prose_without_canonical_clause'))
+    summary['PDF_transition_causes'] = dict(collections.Counter(t['cause'] for r in records if r['comparison_layout'] for t in r['comparison_layout']['transitions'] if not t['old_guard']))
+    if args.prior_review:
+        summary['prior_review'] = str(args.prior_review)
+        summary['prior_review_sha256'] = hashlib.sha256(args.prior_review.read_bytes()).hexdigest()
+        summary['prior_layout_failure_occurrence_causes'] = [dict(causes=list(k),count=v)
+            for k,v in sorted(collections.Counter(tuple(sorted({t['cause'] for t in
+                (r['comparison_layout'] or {}).get('transitions',[]) if not t['old_guard']}))
+                for r in records if r.get('prior_reason')=='comparison_PDF_layout_boundary_unestablished').items())]
     if args.store:
         summary['final_dispositions'] = [dict(status=k[0],reason=k[1],count=v) for k,v in sorted(collections.Counter(
             (r['disposition']['status'],r['disposition']['reason']) for r in records).items())]

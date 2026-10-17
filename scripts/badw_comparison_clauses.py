@@ -8,6 +8,7 @@ import re
 from badw_bounded_passages import PAIRS, envelopes
 from badw_header_structure import contiguous_pdf_lines
 from badw_pdf_mixed_clauses import style_runs
+from badw_assertion_layout import passage_layout
 
 ABBREVIATIONS = {'vgl','f','ff','Nr','Anm','s','v','Bd','S','fig','p','vol'}
 
@@ -53,7 +54,11 @@ def comparison_clauses(projection,text,assigned,object_):
         if any(n['kind']=='sense' and n['start']<end and start<n['end']
                and not n['start']<=start<end<=n['end'] for n in nodes): continue
         layout=[r for r in runs if r['start']<end and start<r['end']]
-        if not layout or any(not contiguous_pdf_lines(lines,l['line'],r['line']) for l,r in zip(layout,layout[1:])): continue
+        if not layout: continue
+        physical = None
+        if any(not contiguous_pdf_lines(lines,l['line'],r['line']) for l,r in zip(layout,layout[1:])):
+            physical = passage_layout(projection, layout)
+            if physical is None: continue
         cites=[n for n in nodes if n['kind']=='citation' and start<=n['start']<n['end']<=end]
         if not cites or any(n['id'] in assigned for n in cites): continue
         # Parse all material outside observed citation leaves. Locator suffixes
@@ -70,7 +75,7 @@ def comparison_clauses(projection,text,assigned,object_):
         result.append(object_('citable_passage',start,end,passage_type='punctuated_comparison_list',
             containing_node_id=container['id'],sense_node_id=sense,ownership='sense' if sense else 'entry',
             evidence='explicit vgl., complete reference-list grammar, independent top-level punctuation and continuous PDF layout',
-            boundary_evidence=dict(marker='vgl.',terminal=text[end-1],typography=layout),
+            boundary_evidence=dict(marker='vgl.',terminal=text[end-1],typography=layout,derived_geometry=physical),
             citation_node_ids=[n['id'] for n in cites]))
         assigned.update(n['id'] for n in cites)
     return result

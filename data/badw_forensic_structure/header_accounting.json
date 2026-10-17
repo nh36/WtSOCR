@@ -11,7 +11,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 108256
+      "count": 108250
     },
     {
       "source_kind": "html",
@@ -46,7 +46,7 @@
     {
       "source_kind": "html",
       "family": "typed_heading_grammatical_assertion",
-      "count": 47
+      "count": 90
     },
     {
       "source_kind": "html",
@@ -56,17 +56,17 @@
     {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 71562
+      "count": 71539
     },
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 128
+      "count": 121
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9639
+      "count": 9628
     },
     {
       "source_kind": "pdf",
@@ -121,7 +121,12 @@
     {
       "source_kind": "pdf",
       "family": "typed_punctuated_comparison_list",
-      "count": 4
+      "count": 28
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_source_supported_assertion",
+      "count": 69
     },
     {
       "source_kind": "pdf",
@@ -131,7 +136,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 528
+      "count": 514
     }
   ],
   "alphabetic_characters": [
@@ -143,7 +148,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 3219
+      "count": 2606
     },
     {
       "source_kind": "html",
@@ -178,7 +183,7 @@
     {
       "source_kind": "html",
       "family": "typed_heading_grammatical_assertion",
-      "count": 547
+      "count": 1160
     },
     {
       "source_kind": "html",
@@ -193,12 +198,12 @@
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 10616
+      "count": 10001
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28915
+      "count": 28882
     },
     {
       "source_kind": "pdf",
@@ -253,7 +258,12 @@
     {
       "source_kind": "pdf",
       "family": "typed_punctuated_comparison_list",
-      "count": 32
+      "count": 61
+    },
+    {
+      "source_kind": "pdf",
+      "family": "typed_source_supported_assertion",
+      "count": 1001
     },
     {
       "source_kind": "pdf",
@@ -263,7 +273,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 7853
+      "count": 7471
     }
   ],
   "canonical_header_fields": {
@@ -646,6 +656,20 @@
         "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
       },
       {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 265,
+        "end": 367,
+        "literal": "Gradsuffix, bildet auch Indefinitpronomen und Konverben zum Ausdruck eines konzessiven Verhältnisses (",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 393,
+        "end": 463,
+        "literal": "connecteur mit intensivierender, adversativer und additiver Funktion (",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
         "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
         "start": 162,
         "end": 181,
@@ -671,20 +695,6 @@
         "start": 245,
         "end": 248,
         "literal": "ff.",
-        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
-        "start": 251,
-        "end": 268,
-        "literal": "Genitivpartikel (",
-        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
-      },
-      {
-        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
-        "start": 291,
-        "end": 293,
-        "literal": "f.",
         "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
       }
     ],
@@ -1050,6 +1060,48 @@
         "end": 79,
         "literal": " s. v. pattrachedaka.",
         "source_sha256": "94254f1877ec3bdc47d0b41b70873bcc04ba6ee57d6cacbbde2d764f70bbfebc"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9935d12e275e86d792cb655b36c41478b06e67d6405dd7ec7659cd67e116be23:395",
+        "start": 70,
+        "end": 74,
+        "literal": "vgl.",
+        "source_sha256": "88e1c04996f534f32a3f84919aa3eace15c0e2efa85acf5b84e23a52e2c77f6b"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-9935d12e275e86d792cb655b36c41478b06e67d6405dd7ec7659cd67e116be23:395",
+        "start": 107,
+        "end": 111,
+        "literal": "Anm.",
+        "source_sha256": "88e1c04996f534f32a3f84919aa3eace15c0e2efa85acf5b84e23a52e2c77f6b"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:1492",
+        "start": 96,
+        "end": 100,
+        "literal": "vgl.",
+        "source_sha256": "8739966a0eafb6be9f6edd024b354f1103a97695ffe051a318dc66bced268f9c"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:1492",
+        "start": 122,
+        "end": 138,
+        "literal": ": Bd. 1, S. 479;",
+        "source_sha256": "8739966a0eafb6be9f6edd024b354f1103a97695ffe051a318dc66bced268f9c"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-1f24cbd3589a7fdb7f0e773ec896fa0510a999a5aa07dbe1335a9e9143f96301:1002",
+        "start": 160,
+        "end": 164,
+        "literal": "vgl.",
+        "source_sha256": "4d26063da07dfdc585adecc1573a4a62c64a683a12739c38b3ece954024097ee"
+      },
+      {
+        "identity": "badw:pdf:badw-v4-389e16b3eff8a944d1d4cddb7f9889eea1d24caa22638f439063ee8d8c39aaf1:281",
+        "start": 150,
+        "end": 154,
+        "literal": "vgl.",
+        "source_sha256": "2dc9415057515cbcfc8df32d3b5a9403d6e8b12d83956c82083ca5e728a8b356"
       }
     ],
     "typed_bounded_comparison": [
@@ -1108,6 +1160,64 @@
         "end": 45,
         "literal": " S\n",
         "source_sha256": "6d56ce4c94b825247a3dc60a0695c1782d8092b0848f9a1b9519a1fd7c23faec"
+      }
+    ],
+    "typed_source_supported_assertion": [
+      {
+        "identity": "badw:pdf:badw-v2-604a0b74580125421abc3a532b7867ec25e10006d34bcf04dfd6228696fd9386:811",
+        "start": 30,
+        "end": 34,
+        "literal": "skt.",
+        "source_sha256": "a148361461838c1168484652dd89b6e0d068e089d11ebae4abb0cb96c8903df0"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-604a0b74580125421abc3a532b7867ec25e10006d34bcf04dfd6228696fd9386:811",
+        "start": 44,
+        "end": 69,
+        "literal": " „excroissance\nsanguine“ ",
+        "source_sha256": "a148361461838c1168484652dd89b6e0d068e089d11ebae4abb0cb96c8903df0"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-7cc07fa1ee2d3444dbb1877e11a82cdf0fc4039bbab170876cfe2ef9b6d950ac:2267",
+        "start": 48,
+        "end": 77,
+        "literal": "a topic marker similar to ni\n",
+        "source_sha256": "0b50fa811d7bb91d70ede37b055254f11a5c62d9d4275534fc8ba0925c875029"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-c024c88ad00dbbd19d680fe47a0eaf006dab6cbd912bc1b4398d5a041ea67fa4:696",
+        "start": 22,
+        "end": 26,
+        "literal": "\nni ",
+        "source_sha256": "49ce5fa3bfdda0b9cbfa3e3ae2b91011550c33e8f3754a342d78adbc97f8a34f"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-a3900b135954a7548d5f90a834068cc0f6fcda1900328832388b60f532e6060a:2480",
+        "start": 41,
+        "end": 49,
+        "literal": "\nbre ga ",
+        "source_sha256": "f9b4ec9f7a1c8d2c02a3adaaba7fb4186820db45b2d70a5149061721c643c5f8"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-381f878acb4c84dba1329c3ccda4adbc2a82e2584d34ca20334e3ffc20251311:1997",
+        "start": 23,
+        "end": 110,
+        "literal": "\nka ra Zucker, bu ram Melasse,\nsbraṅ rtsi Honig, die als Opfergaben ge-\nbraucht werden ",
+        "source_sha256": "91f0739d56bd907a357ca30cf5a3b89532a0be1c0761ba145877d196f6876a05"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-ddf437f59e4ecd59f1bed2c30600bf3c29a735cae2a7e3cc562a8c2739c10b29:1663",
+        "start": 48,
+        "end": 77,
+        "literal": " Nardostachys Jatamansi Dec. ",
+        "source_sha256": "c44248768d14d56a6410e9d78e42d0b53688399f9392d93aa1b1f992a275e22f"
+      },
+      {
+        "identity": "badw:pdf:badw-v3-77d7c11b1673cf8cb0ba6669f5a9571001c0cc9ea69ed0dc175c8f2d42178260:437",
+        "start": 47,
+        "end": 51,
+        "literal": "skt.",
+        "source_sha256": "d46c73523378386be876f690fab2292b7ab82d29850a7869699393eedab0c36b"
       }
     ],
     "typed_bounded_example": [

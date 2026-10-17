@@ -3,7 +3,7 @@
     {
       "source_kind": "html",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 234
+      "count": 145
     },
     {
       "source_kind": "html",
@@ -13,7 +13,7 @@
     {
       "source_kind": "html",
       "family": "quotation_or_gloss_candidate",
-      "count": 202
+      "count": 34
     },
     {
       "source_kind": "html",
@@ -28,17 +28,17 @@
     {
       "source_kind": "html",
       "family": "shared_or_composite_heading_syntax",
-      "count": 912
+      "count": 748
     },
     {
       "source_kind": "html",
       "family": "unregistered_heading_wording",
-      "count": 1099
+      "count": 907
     },
     {
       "source_kind": "pdf",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 615
+      "count": 636
     },
     {
       "source_kind": "pdf",
@@ -53,7 +53,7 @@
     {
       "source_kind": "pdf",
       "family": "isolated_form_or_clause_fragment",
-      "count": 112
+      "count": 138
     },
     {
       "source_kind": "pdf",
@@ -63,17 +63,17 @@
     {
       "source_kind": "pdf",
       "family": "mixed_or_Roman_clause_without_syntactic_closure",
-      "count": 333
+      "count": 295
     },
     {
       "source_kind": "pdf",
       "family": "quotation_adjacent_unbounded_fragment",
-      "count": 2108
+      "count": 1946
     },
     {
       "source_kind": "pdf",
       "family": "quotation_or_gloss_candidate",
-      "count": 937
+      "count": 815
     },
     {
       "source_kind": "pdf",
@@ -83,12 +83,12 @@
     {
       "source_kind": "pdf",
       "family": "reference_target_or_comparison_continuation",
-      "count": 1539
+      "count": 1501
     },
     {
       "source_kind": "pdf",
       "family": "wrapped_form_or_clause_without_role_boundary",
-      "count": 293
+      "count": 224
     }
   ],
   "ownership_families": [
@@ -105,7 +105,7 @@
     {
       "source_kind": "html",
       "family": "no_structural_envelope",
-      "count": 34
+      "count": 13
     },
     {
       "source_kind": "pdf",
@@ -120,7 +120,7 @@
     {
       "source_kind": "pdf",
       "family": "entry_prose_without_bounded_passage",
-      "count": 111
+      "count": 79
     },
     {
       "source_kind": "pdf",
@@ -130,14 +130,14 @@
     {
       "source_kind": "pdf",
       "family": "sense_prose_without_bounded_passage",
-      "count": 18
+      "count": 12
     }
   ],
   "pending_alphabetic_families": [
     {
       "source_kind": "html",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 234
+      "count": 145
     },
     {
       "source_kind": "html",
@@ -147,12 +147,12 @@
     {
       "source_kind": "html",
       "family": "other_heading_source_text",
-      "count": 2652
+      "count": 2296
     },
     {
       "source_kind": "html",
       "family": "quotation_or_gloss_candidate",
-      "count": 202
+      "count": 34
     },
     {
       "source_kind": "html",
@@ -162,7 +162,7 @@
     {
       "source_kind": "pdf",
       "family": "alias_list_or_header_continuation_candidate",
-      "count": 615
+      "count": 636
     },
     {
       "source_kind": "pdf",
@@ -172,12 +172,12 @@
     {
       "source_kind": "pdf",
       "family": "lexical_prose_without_proven_boundary",
-      "count": 5508
+      "count": 5227
     },
     {
       "source_kind": "pdf",
       "family": "quotation_or_gloss_candidate",
-      "count": 937
+      "count": 815
     },
     {
       "source_kind": "pdf",
@@ -219,8 +219,7 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:86CB:a7becd40c331⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7349:57a33b777668⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4B95:3222788a72b1⟧": 6,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:737B:082f40c7bf07⟧": 4,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:653B:4471847127ba⟧": 1,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:737B:082f40c7bf07⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6D4A:5878d76c3900⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4FFA:b806a9250a69⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:6A2B:865d884d0bf2⟧": 1,
@@ -240,17 +239,15 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:593E:6e9ee709e168⟧": 1,
     "⟦UNKNOWN:TGaramond:regular:001D:d9a8612684a1⟧": 1,
     "⟦UNKNOWN:TGaramond:italic:0030:ec8481c6eeb5⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧": 10,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧": 9,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5653:b4de8a151c7b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:691F:22b6615707fd⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3EFF:048c98c6cb23⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:65BB:cf24be60484e⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5BBD:c04511edc885⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8142:5e290c685331⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496F:842c00bf8fb5⟧": 7,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496F:842c00bf8fb5⟧": 5,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4188:dc136f5bce40⟧": 2,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:443D:a4697428bb3b⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4FD7:df735f2dce97⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4775:bdb215a14258⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8AED:6cea3816a879⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:66F3:6d4230e3806d⟧": 1,
@@ -269,7 +266,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:85C5:41fe346a34bb⟧": 3,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5D83:44045dbeaf7c⟧": 3,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5F7D:5d8a8931021c⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4453:3d58adf2215b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4555:2b0141fe74ff⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4455:6276795ef8df⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7588:2297a4e1c3bd⟧": 1,
@@ -279,7 +275,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4EE1:6dfe6df8bf66⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:659E:13bfc6885905⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4BCD:4dda3ff7cd9e⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5888:5f9719e0912b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7C7C:373c7337bcfc⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5E83:87aeed757ef9⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:805F:7eae2effea7e⟧": 1,
@@ -287,8 +282,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:7CB1:71798701acb5⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:574D:247e515c31df⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4199:5f43705fb33e⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5BB7:c2e6b0447356⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496E:1abd77c11fca⟧": 1,
     "⟦UNKNOWN:TGaramond:italic:00B9:cc0fde1652a3⟧": 5
   },
   "policy": "No owner or decoding mapping inferred from diagnostic family; literal spans preserved."

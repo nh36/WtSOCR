@@ -289,6 +289,8 @@ def hierarchy(projection, text):
     passages.extend(header_assertions(projection, text, assigned, object_))
     from badw_comparison_clauses import comparison_clauses
     passages.extend(comparison_clauses(projection, text, assigned, object_))
+    from badw_source_assertions import source_assertions
+    passages.extend(source_assertions(projection, text, assigned, object_))
     for node in nodes:
         if node['kind'] != 'citation':
             continue

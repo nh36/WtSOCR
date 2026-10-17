@@ -566,117 +566,6 @@
     "severity": "high"
   },
   {
-    "classification": "measured_contract_state",
-    "distribution": {
-      "html": 50,
-      "pdf": 141
-    },
-    "entries": 154,
-    "examples": [
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/don%20spyod/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            911,
-            920
-          ]
-        ],
-        "text_sha256": "4d46b9cc7b270ffcf8b45a4f63918940a91050e19ca95a88c6699883def46cd5"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            186,
-            188
-          ]
-        ],
-        "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            367,
-            390
-          ]
-        ],
-        "text_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            463,
-            494
-          ]
-        ],
-        "text_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            316,
-            339
-          ]
-        ],
-        "text_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            375,
-            406
-          ]
-        ],
-        "text_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
-      }
-    ],
-    "family": "citation_owner_unresolved",
-    "layer": "model",
-    "occurrences": 191,
-    "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
-    "severity": "high"
-  },
-  {
     "classification": "indicator_requires_review",
     "distribution": {
       "pdf": 144
@@ -748,6 +637,117 @@
     "layer": "model/parser",
     "occurrences": 144,
     "recommended_action": "Nested/adapted extraction leaves candidate explicitly unassigned",
+    "severity": "high"
+  },
+  {
+    "classification": "measured_contract_state",
+    "distribution": {
+      "html": 29,
+      "pdf": 103
+    },
+    "entries": 114,
+    "examples": [
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/don%20spyod/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            911,
+            920
+          ]
+        ],
+        "text_sha256": "4d46b9cc7b270ffcf8b45a4f63918940a91050e19ca95a88c6699883def46cd5"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            186,
+            188
+          ]
+        ],
+        "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            88,
+            107
+          ]
+        ],
+        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            109,
+            125
+          ]
+        ],
+        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            152,
+            185
+          ]
+        ],
+        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      },
+      {
+        "details": {
+          "accepted_identity": false,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "source_kind": "html",
+        "spans": [
+          [
+            127,
+            150
+          ]
+        ],
+        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      }
+    ],
+    "family": "citation_owner_unresolved",
+    "layer": "model",
+    "occurrences": 132,
+    "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
     "severity": "high"
   },
   {
