@@ -9,8 +9,8 @@
       "current": 346
     },
     "citation_owner_unresolved": {
-      "baseline": 191,
-      "current": 132
+      "baseline": 132,
+      "current": 66
     },
     "crossing_components": {
       "baseline": 1063,
@@ -113,20 +113,20 @@
       "xref_changed": 0,
       "xref_missing": 0
     },
-    "sha256": "788684bd7e6824ce4e1cc4b0ad20d910da04422fcf30f40d49b27d27febd80fe",
-    "store": "work/badw_forensic_structure/baseline_cfd.sqlite"
+    "sha256": "997f728e0678f1bf20960a4e12e8b6f869f0b7adc42756172bc18f827dd4223b",
+    "store": "work/badw_forensic_structure/baseline_0f4849.sqlite"
   },
   "script_sha256": "8b8039ea5056e1df3fd60f1d246f7bd4184e0a593bfbf76021720bf09d6954ac",
   "store_rows": {
     "citation": 109425,
-    "citation_passage": 109280,
+    "citation_passage": 109346,
     "language_conflict": 384,
     "language_correspondence": 3003,
     "language_effective": 126152,
     "language_form": 12364,
     "language_indicator": 4314,
     "lex_item": 39688,
-    "passage": 109068,
+    "passage": 109127,
     "xref": 8336
   }
 }

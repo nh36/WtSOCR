@@ -1,12 +1,12 @@
 {
   "baseline_residue_families": {
     "citation:html:entry_prose_without_bounded_passage": 7,
-    "citation:html:no_structural_envelope": 25,
+    "citation:html:no_structural_envelope": 9,
     "citation:pdf:PDF_example_candidate": 3,
     "citation:pdf:definition_clause": 1,
-    "citation:pdf:entry_prose_without_bounded_passage": 102,
+    "citation:pdf:entry_prose_without_bounded_passage": 76,
     "citation:pdf:explicit_comparison_clause": 8,
-    "citation:pdf:sense_prose_without_bounded_passage": 18,
+    "citation:pdf:sense_prose_without_bounded_passage": 12,
     "xref:html:linked_HTML_target": 629,
     "xref:html:unlinked_HTML_target": 4,
     "xref:pdf:ambiguous_exact_label": 120,
@@ -18,14 +18,14 @@
   },
   "ownership_evidence": {
     "html:Lex_containment": 22128,
-    "html:definition_comparison_clause": 2614,
+    "html:definition_comparison_clause": 2627,
     "html:explicit_HTML_attestation": 42364,
     "html:reviewed_relationship": 7,
-    "html:unresolved": 29,
+    "html:unresolved": 16,
     "pdf:Lex_containment": 17526,
-    "pdf:PDF_example_quotation": 23917,
-    "pdf:definition_comparison_clause": 731,
+    "pdf:PDF_example_quotation": 23918,
+    "pdf:definition_comparison_clause": 783,
     "pdf:reviewed_relationship": 6,
-    "pdf:unresolved": 103
+    "pdf:unresolved": 50
   }
 }

@@ -642,10 +642,10 @@
   {
     "classification": "measured_contract_state",
     "distribution": {
-      "html": 29,
-      "pdf": 103
+      "html": 16,
+      "pdf": 50
     },
-    "entries": 114,
+    "entries": 60,
     "examples": [
       {
         "details": {
@@ -685,15 +685,15 @@
           "candidate_containment_not_ownership": true
         },
         "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma%20dra%E1%B9%85s%20pa/1",
         "source_kind": "html",
         "spans": [
           [
-            88,
-            107
+            195,
+            203
           ]
         ],
-        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+        "text_sha256": "dd2f8e210cc63db4f118d664f3cd8bb446f499c5c99e44a4bb56a2f0c222db1e"
       },
       {
         "details": {
@@ -701,15 +701,15 @@
           "candidate_containment_not_ownership": true
         },
         "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "identity": "badw:https://wts-digital.badw.de/lemma/mi%20%E2%80%99dzag%20s%E1%B9%85on%20skyes/1",
         "source_kind": "html",
         "spans": [
           [
-            109,
-            125
+            196,
+            202
           ]
         ],
-        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+        "text_sha256": "66aeb5bc8812daa429a40f764eaaaeb7a8714c527555bdaa921d7274a3168ad9"
       },
       {
         "details": {
@@ -717,36 +717,36 @@
           "candidate_containment_not_ownership": true
         },
         "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "identity": "badw:https://wts-digital.badw.de/lemma/nor%20ldan%20ma/1",
         "source_kind": "html",
         "spans": [
           [
-            152,
-            185
+            212,
+            218
           ]
         ],
-        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+        "text_sha256": "b39941163c41ba5a07c8c703c5552d49f123eff18bf4a41bb629f333bb9722f1"
       },
       {
         "details": {
-          "accepted_identity": false,
+          "accepted_identity": true,
           "candidate_containment_not_ownership": true
         },
         "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "identity": "badw:https://wts-digital.badw.de/lemma/phyogs%20bcu/1",
         "source_kind": "html",
         "spans": [
           [
-            127,
-            150
+            3226,
+            3235
           ]
         ],
-        "text_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+        "text_sha256": "6971134f402714813e71ff963b9eeedecf289dcbbcd9339b463177e9deeee7e1"
       }
     ],
     "family": "citation_owner_unresolved",
     "layer": "model",
-    "occurrences": 132,
+    "occurrences": 66,
     "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
     "severity": "high"
   },

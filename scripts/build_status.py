@@ -1671,62 +1671,48 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     corpus_totals = corpus_summary["totals"]
     corpus_section = """## Corpus Structural Health
 
-A subsequent reference/assertion batch has **66 source-validated targeted gains**
-from a frozen 132-survivor census. At the user's request it was committed before
-its full replay finished. **Final replay, frozen-witness preservation and residue
-accounting are pending**; the certified totals below remain the preceding tranche.
-See the current stopping-point record in
-[data/badw_forensic_structure/README.md](../data/badw_forensic_structure/README.md).
-
-The assertion-grammar replay from **cfd770283e** projects **29,877/29,877 witnesses**.
-All **114 frozen witnesses pass**; accepted owners, source text, bibliography,
-xrefs, language, canonical Lex. and reader invariants remain intact.
+The reference/assertion tranche from **d413012a76** has completed full replay and
+verification. It projects **29,877/29,877 witnesses**; all **114 frozen witnesses
+pass**. Of 109,425 citation occurrences, **109,359 have established owners** and
+**66 remain unresolved** (16 HTML / 50 PDF). All 109,293 owners accepted at the
+0f4849f7ca baseline retain their ownership, support and sense links.
 `release/current` is untouched.
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| Established citation owners | 109,234 | 109,293 |
-| Unresolved citation owners | 191 | 132 |
-| Meaningful untyped alphabetic characters | 11,072 | 10,077 |
-| HTML pending characters | 3,219 | 2,606 |
-| PDF pending characters | 7,853 | 7,471 |
+| Established citation owners | 109,293 | 109,359 |
+| Unresolved citation owners | 132 | 66 |
+| Meaningful untyped alphabetic characters | 10,077 | 9,740 |
+| HTML pending characters | 2,606 | 2,587 |
+| PDF pending characters | 7,471 | 7,153 |
 
-The **59 source-validated gains** comprise **29 bounded scholarly assertions**
-(17 definition, 11 source-language, one grammatical), **21 HTML heading assertions**
-and **nine PDF comparison lists**. All 38 PDF positives were facsimile-inspected;
-all 21 HTML positives were checked against raw DOM. Independent punctuation,
-accepted scope and exact physical layout establish boundaries; citations and
-bibliography identities supply no boundary evidence.
+The **66 source-validated gains** comprise 28 composed PDF reference labels,
+one Roman locator, 13 HTML heading comparisons, three italic multiword locators,
+20 bounded assertion subclauses and one nested example translation. All 53 PDF
+positives were checked against facsimiles and all 13 HTML positives against raw
+DOM. The frozen 132-occurrence disposition join matches source hashes, spans and
+final ownership status. Citation identity supplies no boundary evidence.
 
-The fresh **191-occurrence baseline census** and final **132-survivor census**
-retain exact spans, components, context and DOM/PDF evidence. Of the original
-36 layout failures, 14 were same-baseline run splits, two ordinary wraps and
-20 combined both. Exact cached-PDF geometry now validates those transitions
-without modifying source observations. Remaining split-label comparisons require
-reference-run composition, not further layout relaxation.
-
-All **132 survivors (29 HTML / 103 PDF)** remain parser-capability or source-boundary
-review gaps: assertion continuation/opening 37; split reference labels 29;
-Lex delimiters/decoding 21; missing comparison scope 13; competing assertion
-components nine; missing comparison right boundary eight; incomplete comparison
-grammar five; nested example roles four; other assertion/comparison boundaries six.
-**Zero are proven to lack an exact citable passage; ownership is not closed.**
+The remaining 66 cases include 40 missing parser capabilities and 26 with
+insufficient source-boundary evidence; none is proven intrinsically uncitable.
+The 21 damaged Lex delimiter/decoding cases remain unresolved. Exact per-case
+reasons and evidence are in `reference_owner_review.jsonl.gz`.
 
 Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**.
 Lex. remains **39,688 items**; xrefs **7,484 resolved / 852 unresolved**;
-Sanskrit **12,364 forms / 3,003 correspondences**, zero effective conflicts,
-384 preserved source-observation overlaps.
-Raw alphabetic gaps partition exactly: **44,692 typed, 66,298 structural labels,
-10,001 decoding-placeholder syntax, 10,077 pending**. Meaningful residue falls
-**995 characters**: 613 through HTML heading grammar and 382 through PDF
-assertion/comparison grammars. The largest coherent residue remains PDF
-quotation-adjacent fragments (1,946), reference/comparison continuations (1,501)
-and lexical substitutions (1,092).
+Sanskrit **12,364 forms / 3,003 correspondences**, with zero effective conflicts
+and 384 preserved source-observation overlaps. The verifier found no changed
+accepted citation bindings, bibliography links, source spans, forms, xrefs,
+language structures, Lex. items, source text, or reader integrity failures.
 
-A further focused online-parser tranche is justified: PDF reference-run composition
-and bounded assertion/subclause recovery before broad quotation-role inference,
-historical-print adaptation or reader-product work.
-See [exact reasons, source validation and reproduction](../data/badw_forensic_structure/README.md).
+Meaningful residue falls **337 characters**, from 10,077 to **9,740**: HTML
+2,587 and PDF 7,153. Raw alphabetic gaps remain partitioned into 44,692 typed,
+66,298 structural labels, 10,001 decoding-placeholder syntax and 9,740 pending.
+The largest coherent remaining family is PDF lexical prose without a proven role
+boundary (4,909), followed by quotation/gloss candidates (815) and reference
+clauses (125). A focused quotation-role investigation is warranted before
+implementation; fresh source-backed examples should establish reliable role
+boundaries. See [current census, dispositions and reproduction](../data/badw_forensic_structure/README.md).
 
 """
 

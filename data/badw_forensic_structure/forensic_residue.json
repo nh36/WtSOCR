@@ -18,7 +18,7 @@
     {
       "source_kind": "html",
       "family": "reference_clause_candidate",
-      "count": 36
+      "count": 18
     },
     {
       "source_kind": "html",
@@ -33,7 +33,7 @@
     {
       "source_kind": "html",
       "family": "unregistered_heading_wording",
-      "count": 907
+      "count": 906
     },
     {
       "source_kind": "pdf",
@@ -53,7 +53,7 @@
     {
       "source_kind": "pdf",
       "family": "isolated_form_or_clause_fragment",
-      "count": 138
+      "count": 117
     },
     {
       "source_kind": "pdf",
@@ -63,12 +63,12 @@
     {
       "source_kind": "pdf",
       "family": "mixed_or_Roman_clause_without_syntactic_closure",
-      "count": 295
+      "count": 294
     },
     {
       "source_kind": "pdf",
       "family": "quotation_adjacent_unbounded_fragment",
-      "count": 1946
+      "count": 1802
     },
     {
       "source_kind": "pdf",
@@ -83,12 +83,12 @@
     {
       "source_kind": "pdf",
       "family": "reference_target_or_comparison_continuation",
-      "count": 1501
+      "count": 1381
     },
     {
       "source_kind": "pdf",
       "family": "wrapped_form_or_clause_without_role_boundary",
-      "count": 224
+      "count": 192
     }
   ],
   "ownership_families": [
@@ -103,14 +103,9 @@
       "count": 15
     },
     {
-      "source_kind": "html",
-      "family": "no_structural_envelope",
-      "count": 13
-    },
-    {
       "source_kind": "pdf",
       "family": "PDF_example_candidate",
-      "count": 3
+      "count": 2
     },
     {
       "source_kind": "pdf",
@@ -120,17 +115,17 @@
     {
       "source_kind": "pdf",
       "family": "entry_prose_without_bounded_passage",
-      "count": 79
+      "count": 33
     },
     {
       "source_kind": "pdf",
       "family": "explicit_comparison_clause",
-      "count": 8
+      "count": 3
     },
     {
       "source_kind": "pdf",
       "family": "sense_prose_without_bounded_passage",
-      "count": 12
+      "count": 11
     }
   ],
   "pending_alphabetic_families": [
@@ -147,7 +142,7 @@
     {
       "source_kind": "html",
       "family": "other_heading_source_text",
-      "count": 2296
+      "count": 2295
     },
     {
       "source_kind": "html",
@@ -157,7 +152,7 @@
     {
       "source_kind": "html",
       "family": "reference_clause_candidate",
-      "count": 36
+      "count": 18
     },
     {
       "source_kind": "pdf",
@@ -172,7 +167,7 @@
     {
       "source_kind": "pdf",
       "family": "lexical_prose_without_proven_boundary",
-      "count": 5227
+      "count": 4909
     },
     {
       "source_kind": "pdf",
@@ -239,7 +234,7 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:593E:6e9ee709e168⟧": 1,
     "⟦UNKNOWN:TGaramond:regular:001D:d9a8612684a1⟧": 1,
     "⟦UNKNOWN:TGaramond:italic:0030:ec8481c6eeb5⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧": 9,
+    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧": 8,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5653:b4de8a151c7b⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:691F:22b6615707fd⟧": 2,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:3EFF:048c98c6cb23⟧": 1,
@@ -255,7 +250,6 @@
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E62:0332397ccaa2⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4E70:bf3b1d8ee9f7⟧": 4,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8F53:3fa8219a7047⟧": 1,
-    "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:40CA:7346482fe41d⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4970:757aaebdc9ca⟧": 1,
     "⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4286:465f24794ed8⟧": 1,
     "⟦UNKNOWN:MicrosoftSansSerif:regular:08EF:96268b74aa6f⟧": 1,

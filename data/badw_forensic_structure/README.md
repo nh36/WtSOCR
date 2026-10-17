@@ -8,11 +8,30 @@ one balanced nested example translation. All 53 PDF positives were inspected in
 facsimile; all 13 HTML positives against raw DOM. Exact bindings are recorded in
 `reference_positive_review.jsonl`. Physical geometry thresholds are unchanged.
 
-**Full replay and final residue accounting are pending.** At the user's explicit
-request this substantive stopping point is committed before the replay finishes.
-The accepted corpus totals remain those of the preceding tranche until replay
-validation completes; 66 remaining owners is a targeted result, not a certified
-full-corpus total. `release/current` is untouched.
+The full replay is complete and certified: **29,877/29,877 witnesses project**,
+all **114 frozen witnesses pass**, and **109,359 citation occurrences have
+established owners**, leaving **66 unresolved** (16 HTML / 50 PDF). All 109,293
+previously accepted owners and their support/sense links remain unchanged.
+`release/current` is untouched.
+
+The fresh census is `reference_after.jsonl.gz`; the exact 132-occurrence
+disposition join is `reference_owner_review.jsonl.gz`. Each disposition matches
+its baseline source hash and citation span, and its resolved/unresolved status
+matches the final semantic store. The 66 gains are 28 composed PDF reference
+labels, one Roman locator, 13 HTML heading comparisons, three italic multiword
+locators, 20 bounded assertion subclauses and one nested example translation.
+All 53 PDF and 13 HTML positives have source review. Bibliography identities
+remain 109,079 accepted / 346 unresolved; the replay verifier reports no changed
+accepted citation relationships or lost source observations.
+
+Meaningful untyped alphabetic residue is **9,740 characters**, down **337** from
+the certified 10,077 baseline: HTML **2,587**, PDF **7,153**. The new grammars
+account for 337 newly typed characters; no reduction is attributed to diagnostic
+reclassification. The largest coherent remaining family is PDF lexical prose
+without a proven role boundary (4,909 characters), followed by PDF quotation/gloss
+(815) and quotation-adjacent structure within that lexical-prose family. These
+counts support a focused quotation-role investigation, not a generic quote
+absorber.
 
 The frozen census is `reference_baseline_0f4849.jsonl.gz`; its structural review is
 `reference_baseline_review.jsonl.gz`. `reference_cluster_review.json` records all
@@ -66,13 +85,8 @@ justify a generic quotation absorber. The meaningful-residue baseline remains
 | unparenthesized_authority_between_quoted_labels | 1 |
 | xref_extent_crosses_following_comparison | 1 |
 
-After the running replay finishes, regenerate `reference_after` with
-`census_badw_passage_residue.py --store semantic.sqlite --name reference_after`,
-join `build_badw_owner_review.py` to the frozen census using `--store` and
-`--dispositions data/badw_forensic_structure/reference_dispositions.jsonl`, then
-run header/residue accounting and `verify_badw_semantic_replay.py` against
-`work/badw_forensic_structure/baseline_0f4849.sqlite`. Regenerate status only after
-these totals stabilize. Historical review files below are not the live census.
+Reproduction commands and exact disposition details remain in the tracked
+artifacts listed above. Historical review files below are not the live census.
 
 
 The following sections are retained as historical tranche records.

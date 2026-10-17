@@ -5,7 +5,7 @@
   },
   "counts": {
     "accepted_identity_reader_loss": 0,
-    "baseline_citation_owners_preserved": 108926,
+    "baseline_citation_owners_preserved": 108974,
     "baseline_resolved_xrefs_preserved": 6825,
     "html_entries_multiple_reader_sense_containers": 2462,
     "html_entries_no_sense": 15575,

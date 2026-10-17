@@ -11,7 +11,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 108250
+      "count": 108229
     },
     {
       "source_kind": "html",
@@ -54,19 +54,24 @@
       "count": 2791
     },
     {
+      "source_kind": "html",
+      "family": "typed_punctuated_comparison_list",
+      "count": 25
+    },
+    {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 71539
+      "count": 71522
     },
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 121
+      "count": 120
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 9628
+      "count": 9600
     },
     {
       "source_kind": "pdf",
@@ -81,7 +86,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 1530
+      "count": 1528
     },
     {
       "source_kind": "pdf",
@@ -106,7 +111,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 562
+      "count": 560
     },
     {
       "source_kind": "pdf",
@@ -121,12 +126,12 @@
     {
       "source_kind": "pdf",
       "family": "typed_punctuated_comparison_list",
-      "count": 28
+      "count": 109
     },
     {
       "source_kind": "pdf",
       "family": "typed_source_supported_assertion",
-      "count": 69
+      "count": 119
     },
     {
       "source_kind": "pdf",
@@ -136,7 +141,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 514
+      "count": 477
     }
   ],
   "alphabetic_characters": [
@@ -148,7 +153,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 2606
+      "count": 2587
     },
     {
       "source_kind": "html",
@@ -191,6 +196,11 @@
       "count": 0
     },
     {
+      "source_kind": "html",
+      "family": "typed_punctuated_comparison_list",
+      "count": 19
+    },
+    {
       "source_kind": "pdf",
       "family": "punctuation_layout",
       "count": 0
@@ -198,12 +208,12 @@
     {
       "source_kind": "pdf",
       "family": "source_decoding_residue",
-      "count": 10001
+      "count": 9841
     },
     {
       "source_kind": "pdf",
       "family": "source_structural_label",
-      "count": 28882
+      "count": 28798
     },
     {
       "source_kind": "pdf",
@@ -218,7 +228,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_alternate_headword",
-      "count": 16140
+      "count": 16117
     },
     {
       "source_kind": "pdf",
@@ -243,7 +253,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_header_relation",
-      "count": 3735
+      "count": 3685
     },
     {
       "source_kind": "pdf",
@@ -258,12 +268,12 @@
     {
       "source_kind": "pdf",
       "family": "typed_punctuated_comparison_list",
-      "count": 61
+      "count": 226
     },
     {
       "source_kind": "pdf",
       "family": "typed_source_supported_assertion",
-      "count": 1001
+      "count": 1471
     },
     {
       "source_kind": "pdf",
@@ -273,7 +283,7 @@
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 7471
+      "count": 7153
     }
   ],
   "canonical_header_fields": {
@@ -756,6 +766,64 @@
         "source_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
       }
     ],
+    "typed_punctuated_comparison_list": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+        "start": 83,
+        "end": 87,
+        "literal": "vgl.",
+        "source_sha256": "56830e74af4b9a7fca774790cb48c52930d7c53864606379cfc4a3fd31e594e9"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/mo/3",
+        "start": 67,
+        "end": 71,
+        "literal": "vgl.",
+        "source_sha256": "8c3fcfe09d79f6d3c7602d0e169f7653277cad0d0d0041d14989f295f10fb8a9"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/na/2",
+        "start": 378,
+        "end": 382,
+        "literal": "vgl.",
+        "source_sha256": "55ad6e2f0cfe8cb451ad1c17f32657b52ffd28887c4c75dc791f20fc67a857e2"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ni/2",
+        "start": 196,
+        "end": 200,
+        "literal": "vgl.",
+        "source_sha256": "fd2640d87677ffdc6902e62815678ad1f462246ed3f940d762fbacf0932e2a44"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/ni/2",
+        "start": 231,
+        "end": 233,
+        "literal": "f.",
+        "source_sha256": "fd2640d87677ffdc6902e62815678ad1f462246ed3f940d762fbacf0932e2a44"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/pa/2",
+        "start": 248,
+        "end": 252,
+        "literal": "vgl.",
+        "source_sha256": "46a32ea62fb619173023941920aa36673393631a45dacfe24120b4b762efe30e"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/phrag/1",
+        "start": 135,
+        "end": 139,
+        "literal": "vgl.",
+        "source_sha256": "2f7b4b38b1ea13ac2ce3dd39d000cdac1ce011d984999717d0897878c0a4d99e"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-138d1f2d6505e033a0f5a7fee3219bd7338bba2c6976eec32839f1875affe2be:107",
+        "start": 122,
+        "end": 145,
+        "literal": " s. v. pratijñottaraka.",
+        "source_sha256": "bc0ee80407bb54b399cd4ad7f1ac860c441049dbf05f9e179815358cc694c1e2"
+      }
+    ],
     "unparsed_lexical_prose_pending_review": [
       {
         "identity": "badw:pdf:badw-v2-ae03bf8638b16aea76c1fa18ca45d5f735f9b2c5ec6552c00a16982bff17890a:77",
@@ -1046,64 +1114,6 @@
         "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
       }
     ],
-    "typed_punctuated_comparison_list": [
-      {
-        "identity": "badw:pdf:badw-v2-138d1f2d6505e033a0f5a7fee3219bd7338bba2c6976eec32839f1875affe2be:107",
-        "start": 122,
-        "end": 145,
-        "literal": " s. v. pratijñottaraka.",
-        "source_sha256": "bc0ee80407bb54b399cd4ad7f1ac860c441049dbf05f9e179815358cc694c1e2"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-2cbacb38c44077d92c65917a3bc01082fdabb7e75a3d4f85318c61e9b8fcf699:1653",
-        "start": 58,
-        "end": 79,
-        "literal": " s. v. pattrachedaka.",
-        "source_sha256": "94254f1877ec3bdc47d0b41b70873bcc04ba6ee57d6cacbbde2d764f70bbfebc"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-9935d12e275e86d792cb655b36c41478b06e67d6405dd7ec7659cd67e116be23:395",
-        "start": 70,
-        "end": 74,
-        "literal": "vgl.",
-        "source_sha256": "88e1c04996f534f32a3f84919aa3eace15c0e2efa85acf5b84e23a52e2c77f6b"
-      },
-      {
-        "identity": "badw:pdf:badw-v2-9935d12e275e86d792cb655b36c41478b06e67d6405dd7ec7659cd67e116be23:395",
-        "start": 107,
-        "end": 111,
-        "literal": "Anm.",
-        "source_sha256": "88e1c04996f534f32a3f84919aa3eace15c0e2efa85acf5b84e23a52e2c77f6b"
-      },
-      {
-        "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:1492",
-        "start": 96,
-        "end": 100,
-        "literal": "vgl.",
-        "source_sha256": "8739966a0eafb6be9f6edd024b354f1103a97695ffe051a318dc66bced268f9c"
-      },
-      {
-        "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:1492",
-        "start": 122,
-        "end": 138,
-        "literal": ": Bd. 1, S. 479;",
-        "source_sha256": "8739966a0eafb6be9f6edd024b354f1103a97695ffe051a318dc66bced268f9c"
-      },
-      {
-        "identity": "badw:pdf:badw-v3-1f24cbd3589a7fdb7f0e773ec896fa0510a999a5aa07dbe1335a9e9143f96301:1002",
-        "start": 160,
-        "end": 164,
-        "literal": "vgl.",
-        "source_sha256": "4d26063da07dfdc585adecc1573a4a62c64a683a12739c38b3ece954024097ee"
-      },
-      {
-        "identity": "badw:pdf:badw-v4-389e16b3eff8a944d1d4cddb7f9889eea1d24caa22638f439063ee8d8c39aaf1:281",
-        "start": 150,
-        "end": 154,
-        "literal": "vgl.",
-        "source_sha256": "2dc9415057515cbcfc8df32d3b5a9403d6e8b12d83956c82083ca5e728a8b356"
-      }
-    ],
     "typed_bounded_comparison": [
       {
         "identity": "badw:pdf:badw-v2-9ead44bcf941bfe91df92338c8c2f07a9ea1ca74f151d28acddff2ae6cdb56d7:2332",
@@ -1199,25 +1209,25 @@
         "source_sha256": "f9b4ec9f7a1c8d2c02a3adaaba7fb4186820db45b2d70a5149061721c643c5f8"
       },
       {
+        "identity": "badw:pdf:badw-v2-59c0039684d8574664007f26d8c572a1564e893d274cfc04b8a7f6f5d05acab2:496",
+        "start": 1,
+        "end": 27,
+        "literal": "Kurzf. für nag po mgo\ngsum",
+        "source_sha256": "405798c6746a588bcecf6348a0568a523a3c83bd143c159614870250ec1e74f8"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-59c0039684d8574664007f26d8c572a1564e893d274cfc04b8a7f6f5d05acab2:496",
+        "start": 27,
+        "end": 42,
+        "literal": " eine Gottheit ",
+        "source_sha256": "405798c6746a588bcecf6348a0568a523a3c83bd143c159614870250ec1e74f8"
+      },
+      {
         "identity": "badw:pdf:badw-v3-381f878acb4c84dba1329c3ccda4adbc2a82e2584d34ca20334e3ffc20251311:1997",
         "start": 23,
         "end": 110,
         "literal": "\nka ra Zucker, bu ram Melasse,\nsbraṅ rtsi Honig, die als Opfergaben ge-\nbraucht werden ",
         "source_sha256": "91f0739d56bd907a357ca30cf5a3b89532a0be1c0761ba145877d196f6876a05"
-      },
-      {
-        "identity": "badw:pdf:badw-v3-ddf437f59e4ecd59f1bed2c30600bf3c29a735cae2a7e3cc562a8c2739c10b29:1663",
-        "start": 48,
-        "end": 77,
-        "literal": " Nardostachys Jatamansi Dec. ",
-        "source_sha256": "c44248768d14d56a6410e9d78e42d0b53688399f9392d93aa1b1f992a275e22f"
-      },
-      {
-        "identity": "badw:pdf:badw-v3-77d7c11b1673cf8cb0ba6669f5a9571001c0cc9ea69ed0dc175c8f2d42178260:437",
-        "start": 47,
-        "end": 51,
-        "literal": "skt.",
-        "source_sha256": "d46c73523378386be876f690fab2292b7ab82d29850a7869699393eedab0c36b"
       }
     ],
     "typed_bounded_example": [
