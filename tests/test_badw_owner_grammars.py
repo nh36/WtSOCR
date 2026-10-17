@@ -208,3 +208,135 @@ def test_physical_layout_requires_exact_source_binding(monkeypatch):
     p['original_structure']['visual_lines']=[dict(page_id='p',run_start=0,run_end_exclusive=1)]
     monkeypatch.setattr('badw_assertion_layout.page_runs',lambda *args:None)
     assert physical_lines(p)==[]
+
+from badw_reference_runs import compose_reference_runs
+from badw_pdf_mixed_clauses import style_runs
+
+
+@pytest.mark.parametrize('label,leaf',[
+    ('K\nLETTER/KRIECHBAUM 2001: 136','LETTER/KRIECHBAUM'),
+    ('K\nLETTER/\nK\nRIECHBAUM 2001: 136','RIECHBAUM'),
+    ('K\nLETTER/KRIECH-\nBAUM 2001: 136','BAUM'),
+    ('H\nUCKER 1985: 481','UCKER'),
+])
+def test_composed_reference_preserves_runs_and_observed_citation(monkeypatch,label,leaf):
+    text='vgl. '+label+'.';p=comparison('vgl. SOURCE.')
+    a=text.index(leaf);p['nodes'][0].update(start=a,end=len(text)-1)
+    p['nodes'][1]['end']=len(text)
+    p['original_structure']['visual_lines'][0].update(text=text,style_spans=[dict(start=0,end=len(text),style='regular')])
+    monkeypatch.setattr('badw_reference_runs.passage_layout',lambda p,r:[dict(line_index=0)])
+    _,runs=style_runs(p,text);before=copy.deepcopy(p)
+    result=compose_reference_runs(p,text,0,len(text),[p['nodes'][0]],runs)
+    assert len(result)==1 and result[0]['start']==5
+    assert result[0]['end']==p['nodes'][0]['end'] and p==before
+    assert comparison_clauses(p,text,set(),obj)[0]['citation_node_ids']==['c']
+
+
+@pytest.mark.parametrize('prefix',['UPPERCASE PROSE ', 'K\nordinary prose ', 'ANOTHER\n'])
+def test_reference_composition_rejects_noninitial_prose(monkeypatch,prefix):
+    text='vgl. '+prefix+'AUTHOR 2001: 1.'
+    p=comparison('vgl. SOURCE.');a=text.index('AUTHOR')
+    p['nodes'][0].update(start=a,end=len(text)-1)
+    monkeypatch.setattr('badw_reference_runs.passage_layout',lambda p,r:[{}])
+    assert not compose_reference_runs(p,text,0,len(text),[p['nodes'][0]],[])
+
+
+def test_composed_reference_requires_exact_physical_continuity(monkeypatch):
+    text='vgl. H\nUCKER 1985: 481.';p=comparison('vgl. SOURCE.')
+    p['nodes'][0].update(start=text.index('UCKER'),end=len(text)-1)
+    monkeypatch.setattr('badw_reference_runs.passage_layout',lambda p,r:None)
+    assert not compose_reference_runs(p,text,0,len(text),[p['nodes'][0]],[])
+
+
+@pytest.mark.parametrize('text',[
+    'Kurzf. für form eine Gottheit (SOURCE).',
+    'synon. form (SOURCE).',
+    'wird dem Element Feuer zugeordnet (SOURCE);',
+    'auch form Bez. für den Mondknoten (SOURCE).',
+    'Name wird auch als Gottheit angesehen (SOURCE).',
+    'ein Gewand, das bei Tänzen getragen wird (SOURCE).',
+    'Indefinitpartikel (SOURCE), ordinary following prose.',
+    'ordinary preceding prose, selector (SOURCE);',
+])
+def test_editorial_and_coordinated_assertions(monkeypatch,text):
+    monkeypatch.setattr('badw_source_assertions.passage_layout',lambda p,r:[{}])
+    result=source_assertions(comparison(text),text,set(),obj)
+    assert len(result)==1 and result[0]['passage_type']=='source_supported_assertion'
+    assert 'SOURCE' in text[result[0]['start']:result[0]['end']]
+
+
+@pytest.mark.parametrize('text',[
+    'auch arbitrary prose (SOURCE).', 'selector arbitrary prose (SOURCE).',
+    'Kurzf. für form (SOURCE) additional prose.',
+    'ein Gewand (SOURCE).', 'Name wird erwähnt (SOURCE).',
+])
+def test_editorial_productions_do_not_accept_arbitrary_prose(monkeypatch,text):
+    monkeypatch.setattr('badw_source_assertions.passage_layout',lambda p,r:[{}])
+    assert not source_assertions(comparison(text),text,set(),obj)
+
+
+def test_heading_comparison_scope_is_descriptive_dom_sibling():
+    text='Nominalsuffix; vgl. SOURCE 12.'
+    p=projection(text)
+    result=comparison_clauses(p,text,set(),obj)
+    assert len(result)==1 and result[0]['start']==text.index('vgl.')
+    assert result[0]['boundary_evidence']['dom_path']=='/div[1]/span[2]/'
+    p['original_structure']['text_fragments'][0]['dom_path']='/div[2]/span[2]/text()[1]'
+    assert not comparison_clauses(p,text,set(),obj)
+
+
+def test_multiword_reference_headword_requires_observed_italic_extent(monkeypatch):
+    from badw_reference_runs import compose_reference_locators
+    monkeypatch.setattr('badw_reference_runs.passage_layout',lambda p,r:[{}])
+    text='vgl. SOURCE s. v. thig rkud.'
+    a=text.index('thig');b=len(text)-1
+    runs=[dict(start=a,end=b,style='italic'),dict(start=b,end=b+1,style='regular')]
+    got=compose_reference_locators({},text,0,len(text),runs)
+    assert len(got)==1 and got[0]['form_span']==dict(start=a,end=b)
+    assert not compose_reference_locators({},text,0,len(text),[dict(start=a,end=b,style='regular')])
+    # A transition to prose rather than reference punctuation cannot close a locator.
+    other='vgl. SOURCE s. v. thig rkud additional prose.'
+    assert not compose_reference_locators({},other,0,len(other),runs[:1])
+
+
+def test_nested_quotes_are_validated_only_for_existing_translation_role():
+    from badw_semantic_hierarchy import bounded_example_quotes
+    text='„say „yes“ and continue“'
+    child=dict(visual_start=5,visual_end=10,diagnostics=[],children=[])
+    q=dict(visual_start=0,visual_end=len(text),diagnostics=[],children=[child])
+    assert bounded_example_quotes(q,text)
+    child['diagnostics']=['unclosed']
+    assert not bounded_example_quotes(q,text)
+    child['diagnostics']=[];child['visual_end']=len(text)
+    assert not bounded_example_quotes(q,text)
+    child['visual_end']=10
+    assert not bounded_example_quotes(q,text.replace('“','"',1))
+
+
+@pytest.mark.parametrize('prefix',['eine Gottheit, gehört zu den ', 'npr. ein Geist aus der Gruppe der ', 'eine Gewichtseinheit, 1 form sind 27 '])
+def test_relational_definition_assertion_keeps_exact_xref_child(monkeypatch,prefix):
+    text=prefix+'↓form (SOURCE).';p=comparison(text)
+    a=text.index('↓');b=a+5
+    p['nodes'] += [dict(id='d',kind='definition',start=0,end=4),dict(id='r',kind='cross_reference',start=a,end=b)]
+    monkeypatch.setattr('badw_source_assertions.passage_layout',lambda p,r:[{}])
+    before=copy.deepcopy(p);result=source_assertions(p,text,set(),obj)
+    assert len(result)==1 and result[0]['nested_reference_node_ids']==['r']
+    assert result[0]['definition_node_ids']==['d'] and p==before
+    p['nodes'][-1]['end']=len(text)-1
+    assert not source_assertions(p,text,set(),obj)
+
+
+def test_unrecognized_xref_relation_still_blocks_assertion(monkeypatch):
+    text='eine Behauptung vgl. ↓form (SOURCE).';p=comparison(text)
+    a=text.index('↓')
+    p['nodes'] += [dict(id='d',kind='definition',start=0,end=4),dict(id='r',kind='cross_reference',start=a,end=a+5)]
+    monkeypatch.setattr('badw_source_assertions.passage_layout',lambda p,r:[{}])
+    assert not source_assertions(p,text,set(),obj)
+
+
+def test_reference_locator_nested_in_observed_citation_is_masked_once(monkeypatch):
+    text='vgl. SOURCE s. v. thig rkud.';p=comparison(text)
+    p['nodes'][0]['end']=len(text)-1
+    a=text.index('s. v.')
+    monkeypatch.setattr('badw_comparison_clauses.compose_reference_locators',lambda *args:[dict(start=a,end=len(text)-1)])
+    assert len(comparison_clauses(p,text,set(),obj))==1

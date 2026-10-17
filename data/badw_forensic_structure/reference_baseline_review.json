@@ -1,0 +1,875 @@
+{
+  "baseline_unresolved": 132,
+  "baseline_commit": "0f4849f7ca",
+  "census": "data/badw_forensic_structure/reference_baseline_0f4849.jsonl.gz",
+  "census_sha256": "ff5e3051fcbe6dc05e76b06344c38180cc6d06486f1015eea832fc4d66f30133",
+  "script_sha256": "fdfbce1ae0d68800082e84dbb18e258cc49cdb6f5f2a7022d5646d81ff9cd1ea",
+  "policy": "Structural flags are review evidence, never ownership rules.",
+  "clusters": [
+    {
+      "source_kind": "html",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_following_material_needs_boundary",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+          "span": {
+            "start": 152,
+            "end": 185
+          },
+          "literal": "sKal bzaṅ ’gyur med 1992: 131 ff.",
+          "context": "\n\t    \n\n  \n    \n      མ་\n      2ma\n    \n    \n      alttib. auch ma’ Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 34 f., Schwieger 2009a: 296 f., sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   yul gyi sruṅs ma mgon po dam tshig can rnams\n  „die Hüter des Landes, die an einen Eid gebundenen Schützer“\n    \n      (Liy2\n      42);\n    \n  \n  \n  lo bstud ma kho nar\n  „schon eine ganze Reihe von Jahren“\n    \n      (K1\n      kha 233b6);\n    \n  \n  \n  nu ma pho loṅ"
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/mo/3",
+          "span": {
+            "start": 134,
+            "end": 167
+          },
+          "literal": "sKal bzaṅ ’gyur med 1992: 131 ff.",
+          "context": "\n\t    \n\n  \n    \n      མོ་\n      3mo\n    \n    \n      Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 35 ff., Schwieger 2009a: 300, sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   ’thab mo myed pa nị gces par byas nas \n  „ohne Streitigkeiten achteten sie [einander]“\n    \n      (PT16\n      26a4);\n    \n  \n  \n   de’i nub mo dam pa’i chos kyaṅ nub nas\n  „als in jener Nacht auch der edle Dharma untergegangen war“\n    \n      (Liy2\n      72);\n    \n "
+        }
+      ]
+    },
+    {
+      "source_kind": "html",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_locator_and_terminal_punctuation",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/pa/2",
+          "span": {
+            "start": 253,
+            "end": 268
+          },
+          "literal": "Beyer 1992: 130",
+          "context": "\n\t    \n\n  \n    \n      པ་\n      2pa\n    \n    \n      deverbales Nominalbildungssuffix; pa (alttib. auch pha) steht nach -g, -d, -n, -b, -m, -s sowie nach ausgefallenem da drag; das Allomorph ba (alttib auch ↓ba’) steht nach -ṅ, -r, -l, -' und Vokal; vgl. Beyer 1992: 130.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  markiert den Handelnden bei Verben der Kategorie tha dad pa und Verben der Bewegung.\n\n\n  \n   yi ge’ lag na ’chaṅ ’chaṅ ba źịg\n  „einer, der die Ernennungsurkunde dauerhaft in Händen hält“\n    \n      (In1\n      N33);\n    \n  \n  \n   rje blon phyi rabs mṅa’ mdzad pa rnaṃs\n  „diejenigen, die Macht ausüben, d"
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/phrag/1",
+          "span": {
+            "start": 157,
+            "end": 176
+          },
+          "literal": "Schwieger 2006: 292",
+          "context": "\n\t    \n\n  \n    \n      ཕྲག་\n      1phrag\n    \n    \n      Kollektiv- bzw. Multiplikativpartikel bei Zahlwörtern (Hahn 1996: 50 und 197); vgl. Beyer 1992: 226, Schwieger 2006: 292.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  steht als Kollektivpartikel nach Zahlen.\n\n\n  \n  glo ba la / srin bu brgya phrag za byed nas\n  (metr.)\n  „als an den Lungen hundert Insekten fraßen“\n    \n      (Anav\n      1: 73,6);\n    \n  \n  \n  bram ze daṅ / khyim bdag ’bum phrag du ma daṅ lhan cig bden pa dag la bźag go\n  „er bekehrte viele Hunderttaus"
+        }
+      ]
+    },
+    {
+      "source_kind": "html",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_reference_list_or_semicolon",
+      "count": 7,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+          "span": {
+            "start": 88,
+            "end": 107
+          },
+          "literal": "Beyer 1992: 123 ff.",
+          "context": "\n\t    \n\n  \n    \n      མ་\n      2ma\n    \n    \n      alttib. auch ma’ Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 34 f., Schwieger 2009a: 296 f., sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   yul gyi sruṅs ma mgon po dam tshig can rnams\n  „die Hüter des Landes, die an einen Eid gebundenen Schützer“\n    \n      (Liy2\n      42);\n    \n  \n  \n  lo bstud ma kho nar\n  „schon eine ganze"
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+          "span": {
+            "start": 109,
+            "end": 125
+          },
+          "literal": "Hahn 1996: 34 f.",
+          "context": "\n\t    \n\n  \n    \n      མ་\n      2ma\n    \n    \n      alttib. auch ma’ Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 34 f., Schwieger 2009a: 296 f., sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   yul gyi sruṅs ma mgon po dam tshig can rnams\n  „die Hüter des Landes, die an einen Eid gebundenen Schützer“\n    \n      (Liy2\n      42);\n    \n  \n  \n  lo bstud ma kho nar\n  „schon eine ganze Reihe von Jahren“"
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/mo/3",
+          "span": {
+            "start": 72,
+            "end": 91
+          },
+          "literal": "Beyer 1992: 123 ff.",
+          "context": "\n\t    \n\n  \n    \n      མོ་\n      3mo\n    \n    \n      Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 35 ff., Schwieger 2009a: 300, sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   ’thab mo myed pa nị gces par byas nas \n  „ohne Streitigkeiten achteten sie [einander]“\n    \n      (PT16\n      26a4);\n    \n  \n  \n   de’i nub mo dam pa’i chos kyaṅ nub nas\n  „als in jener Nach"
+        }
+      ]
+    },
+    {
+      "source_kind": "html",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_then_comma_prose",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ma/2",
+          "span": {
+            "start": 127,
+            "end": 150
+          },
+          "literal": "Schwieger 2009a: 296 f.",
+          "context": "\n\t    \n\n  \n    \n      མ་\n      2ma\n    \n    \n      alttib. auch ma’ Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 34 f., Schwieger 2009a: 296 f., sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   yul gyi sruṅs ma mgon po dam tshig can rnams\n  „die Hüter des Landes, die an einen Eid gebundenen Schützer“\n    \n      (Liy2\n      42);\n    \n  \n  \n  lo bstud ma kho nar\n  „schon eine ganze Reihe von Jahren“\n    \n      (K1\n      kha"
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/mo/3",
+          "span": {
+            "start": 112,
+            "end": 132
+          },
+          "literal": "Schwieger 2009a: 300",
+          "context": "\n\t    \n\n  \n    \n      མོ་\n      3mo\n    \n    \n      Nominalsuffix, vgl. Beyer 1992: 123 ff., Hahn 1996: 35 ff., Schwieger 2009a: 300, sKal bzaṅ ’gyur med 1992: 131 ff.\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  1.\n  bildet Nomina von Verbstämmen.\n\n\n  \n   ’thab mo myed pa nị gces par byas nas \n  „ohne Streitigkeiten achteten sie [einander]“\n    \n      (PT16\n      26a4);\n    \n  \n  \n   de’i nub mo dam pa’i chos kyaṅ nub nas\n  „als in jener Nacht auch der edle Dharma untergegangen war“"
+        }
+      ]
+    },
+    {
+      "source_kind": "html",
+      "coarse_family": "contained_example_source_node",
+      "grammar": "example_nested_note",
+      "count": 1,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+          "span": {
+            "start": 186,
+            "end": 188
+          },
+          "literal": "K6",
+          "context": "\n\t    \n\n  \n    \n      ཀ་ཀུ་སྟ་\n      ka ku sta\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  ein Fluß in der Nähe von Kuśinagarī; skt. kukustā.\n\n\n  \n  kun dga’ bo soṅ la chu bo ka kus sta nas (K6 da 258b1: ka ku sta nas) chu lhuṅ bzed gaṅ loṅ⧼s⧽ śig\n  „Ānanda, geh und hole aus dem Fluß Kukustā eine Schale voll Wasser!“\n    \n      (MPS\n      27.10);\n    \n  \n  \n  de’i tshe chu bo ka kus sta la (v. l. ka ku sta la K6 da 258b2) śiṅ rta lṅa brgya tsam gyi tshad cig gis brgal nas\n  „zu der Zeit hatte eine Menge von rund fünfhundert Wagen den Flu"
+        }
+      ]
+    },
+    {
+      "source_kind": "html",
+      "coarse_family": "contained_lexical_source_node",
+      "grammar": "Lex_assertion_delimiter_failure",
+      "count": 15,
+      "representatives": [
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/%E2%80%99di/1",
+          "span": {
+            "start": 22168,
+            "end": 22178
+          },
+          "literal": "(Mvy 2975)",
+          "context": " \n  (metr.)\n  „in diesem Leben ist nichts gewiß, gewähre mir daher Gewißheit danach“\n    \n      (Glu\n      58c);\n    \n  \n  \n  tshe ’di las kyaṅ phyi ma’i khe ñen la gźigs te\n  „man [sollte] über dieses Leben hinaus das Risiko für das nächste abwägen“\n    \n      (KTh\n      1: 278,3).\n    \n  \n\n\nLex. ’di la ≅ ihatraḥ „hier [i. S. v. in diesem Leben]“ (Mvy 2975), Abt. tshe ’di daṅ phyi ma daṅ ’chi ’pho ba’i rnam pa’i miṅ).\n\n\n\t    "
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/don%20spyod/1",
+          "span": {
+            "start": 911,
+            "end": 920
+          },
+          "literal": "(Mvy 927)",
+          "context": "Mönche, die sinnvollen Tätigkeiten wie Spendensammeln nachgehen oder etwas in Verbindung mit dem geistlichen Lehrer tun“\n    \n      (BhuKkh\n      158,26).\n    \n  \n\n\nLex. sems can gyi don du spyod pa ste bsdu ba bźi’i naṅ tshan „zum Nutzen der Lebewesen handeln, gehört zu den vier bsdu ba“ (Dagy); don spyod pa ≅ arthacaryā „Handeln zu jmds. Nutzen“ (Mvy 927), Abt. bsdu ba’i dṅos po bźi’i miṅ).\n\n\n\t    "
+        },
+        {
+          "identity": "badw:https://wts-digital.badw.de/lemma/ma%20dra%E1%B9%85s%20pa/1",
+          "span": {
+            "start": 195,
+            "end": 203
+          },
+          "literal": "Mim1 506",
+          "context": "\n\t    \n\n  \n    \n      མ་དྲངས་པ་\n      1ma draṅs pa\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  gefährlich, ungezähmt, rüde.\n\n\nLex. ma ruṅs pa la’aṅ „gefährlich“ (brDa); ma draṅs ≅ ma dul „ungezähmt\" (Mim1 506); ma draṅs ≅ ma ṅul (r. dul) (Mim2 449); ma draṅs ≅ mi srun „nicht sanft“ (Mim1 683); ma draṅs ≅ mi bsrun (Mim2 627); ma draṅs pa ni ma dul ba (Liś 19,16); ma draṅs drol ba ≅ rtsed mos g.yeṅs śiṅ bag med daṅ rgod bag can „vom Spiel abgelenkt, sorglos und ungehobelt“ (TTC).\n\n\n\t    "
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_following_material_needs_boundary",
+      "count": 3,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-343981e073ca2ebe4a2f6772163fa8340bb90d3fd52bd91b57e0f363b30b9bfd:579",
+          "span": {
+            "start": 3040,
+            "end": 3057
+          },
+          "literal": "(H\nAHN 1996: 177)",
+          "context": "iṃ nānākaraṇam „was ist der\nUnterschied!“ (Mvy 6892); ~ la ≈ don ~ la\n„warum!“ (brDa); ~ la ≈ don daṅ rgyu\nmtshan gaṅ la „zu welchem Zweck und aus\nwelchem Grund!“ (Dagy); ~r ≈ ga re don\ndu (brDa); ~r ≈ ~ la „wozu“ (Dagy).\n2. Indefinitpronomen (S\nCHWIEGER 2006:\n49), „indefinite determiner nonanimate“\n(B\nEYER 1992: 214 f.), Relativpronomen,\nvgl. ↓ji (H\nAHN 1996: 177): was auch im-\nmer, welche auch immer; so ... wie mög-\nlich; ~ nas ... de ltar so daß.\nbka’ gyod gyṛ tshigs cṛ la bab pa las „was auch\nimmer an Worten der Anklage gegen sie\nerhoben wird“ (In1 N25); gces spras cṛ la\nyaṅ „zu welcher Bewertung auch immer\n[man kommt]“ (In8 30); lan du dku sgyu cṛ\nbyas kyaṅ „welcher Betrug und welche Täu-\nschung auch im"
+        },
+        {
+          "identity": "badw:pdf:badw-v3-7ce74ba454353bac44337fc2c87b5828e566195933a771a9f1d577f6f8d9e6ec:1492",
+          "span": {
+            "start": 224,
+            "end": 239
+          },
+          "literal": "S\nCHWIEGER 1995",
+          "context": " „Körper Mañ-\njuśrīs“, eine auf die Gottheit\nYamāntaka bezogene Mahāyoga-Praxis der\nrÑiṅ-ma-pa, vgl. D\nUDJOM RINPOCHE\n1991: Bd. 1, S. 479; ~’i sgrub pa meditative\nVollendung des Mañjuśrī, des Aspekts des\nBuddhakörpers, vgl. S\nCHWIEGER 1995:\nVIII.\n།\nrñiṅ ma pa rnams kyis ñams su spyod pa’i\nsgrub pa bka’ brgyad ni / ~ „die von den\nrÑiṅ-ma-pa ausgeübten Praktiken, die acht\nVerkündungen der Verwirklichung: ’Jam-\ndpal-sku [usw.]“ (Debṅ 95,3)."
+        },
+        {
+          "identity": "badw:pdf:badw-v4-1a79ac7d23d04a5719bdfba433a74645ec333a0b5dc3a8ac35c2afca60af3ad3:566",
+          "span": {
+            "start": 66,
+            "end": 78
+          },
+          "literal": "vgl. Neb 482",
+          "context": " auch gtor rgyab „Werfen\nmit Teigopfern“, eine Abwehr-\nzeremonie, vgl. Neb 482 und Neb 514.\n།\nLex. gtor zor ’phen pa (brDa); chos rgyal gyi\nglo bur las bcol lta bu „wie: glo bur las bcol\ndes Yama“ (Dagy)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_locator_and_terminal_punctuation",
+      "count": 26,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-3be8e20243b4c6ec5eaee3397cccf0c3543dcf443a9e6d8acd200972c4af0a0b:1450",
+          "span": {
+            "start": 147,
+            "end": 166
+          },
+          "literal": "RIECHBAUM 2001: 128",
+          "context": " eine Heilpflanze, bei der eine\nweiße (~ dkar po) und eine schwarze\n(~ nag po) Varietät unterschieden werden,\neine Art ↑khur moṅ, vgl. K\nLETTER/\nK\nRIECHBAUM 2001: 128."
+        },
+        {
+          "identity": "badw:pdf:badw-v2-5d772f53d1b5e8c5dc0b33e11a7ba08971280da370b38d2881930fbc7e7dd687:399",
+          "span": {
+            "start": 91,
+            "end": 106
+          },
+          "literal": "BAUM\n 2001: 136",
+          "context": " eine Pflanze, eine\nkleinere Leibnitzia-Art, synon.\nkon pa gab chuṅ, vgl. K\nLETTER/KRIECH-\nBAUM\n 2001: 136."
+        },
+        {
+          "identity": "badw:pdf:badw-v2-5d8f7382a161e2974f972d66ef238a4a7b6519b7e66e46ee269182a1d4b38591:812",
+          "span": {
+            "start": 53,
+            "end": 68
+          },
+          "literal": "BAUM \n2001: 254",
+          "context": " eine Pflanze, synon.\nsṅon bu, vgl. K\nLETTER/KRIECH-\nBAUM \n2001: 254."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "comparison_reference_list_or_semicolon",
+      "count": 6,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-a756d1e1e901a748317f3486450025396a40d73e2e58d4cd8cbcfca416e1e7ca:1868",
+          "span": {
+            "start": 52,
+            "end": 75
+          },
+          "literal": "RIECHBAUM 2001: 138 ff.",
+          "context": " eine Heilpflanze,\nsynon. ↑koṅ li, vgl. K\nLETTER/\nK\nRIECHBAUM 2001: 138 ff., 158 ff."
+        },
+        {
+          "identity": "badw:pdf:badw-v3-14b4f88a35d115421e6df75e14a8b54f43d038366ae6fff493e698d8bbe34151:1769",
+          "span": {
+            "start": 157,
+            "end": 181
+          },
+          "literal": "ARMAY 1998:\n341, Anm. 14",
+          "context": " scharf, wütend, fauchend; tsha ~ re\n⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧gtoṅ ein aufbrausendes Wesen zeigen;\neine besondere Kraft, vgl. K\nARMAY 1998:\n341, Anm. 14; vgl. ↓ṅar glud, ṅar phye, ṅar\nmi, ṅar zan.\n།\ngźon pa tsha ~ re gtoṅ ba źig yod na „wenn\nich einen Jungen hätte, der ein auf-\nbrausendes Wesen zeigt“ (dPe 263,16); bon\npos ... ~ thogs (metr.) „der Bon-po soll [die\nTrommel] kräftig schlagen!“ (Padm 117a\n3); stag mo ~ ba „eine fauchende Tigerin“\n(Mil 92,7); rig pa ~ thob gyoṅ tshig tal mar\nsmra (met"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-4129e2e8049f51ed343f6e43ca967127ea01622478fa36518d2f0dcd0ae954ba:748",
+          "span": {
+            "start": 192,
+            "end": 216
+          },
+          "literal": "AUFER 1916: 515, Nr. 243",
+          "context": " eine Heilpflanze; chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:65BB:cf24be60484e⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:5BBD:c04511edc885⟧\ntang kuei Cryptotaenia canadensis,\nvgl. L\nAUFER 1916: 515, Nr. 243; Angelica\nsinensis, Peucedanum sp. angelica, hog’s\nfennel (TMP).\n།\nLex. sman źig (brDa); go sñod ’dra ba’i\nsman źig „ein Heilmittel wie go sñod“\n(Dagy)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "parenthetical_source_in_prose_without_canonical_clause",
+      "count": 4,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-343981e073ca2ebe4a2f6772163fa8340bb90d3fd52bd91b57e0f363b30b9bfd:579",
+          "span": {
+            "start": 2933,
+            "end": 2954
+          },
+          "literal": "(S\nCHWIEGER 2006:\n49)",
+          "context": " Sinn oder\nGrund!“ (Dagy); ~ skad ≈ gaṅ lab bam gaṅ\nzer „was sagt man!“ (brDa); tha dad du bya\nba ~ yod ≈ kiṃ nānākaraṇam „was ist der\nUnterschied!“ (Mvy 6892); ~ la ≈ don ~ la\n„warum!“ (brDa); ~ la ≈ don daṅ rgyu\nmtshan gaṅ la „zu welchem Zweck und aus\nwelchem Grund!“ (Dagy); ~r ≈ ga re don\ndu (brDa); ~r ≈ ~ la „wozu“ (Dagy).\n2. Indefinitpronomen (S\nCHWIEGER 2006:\n49), „indefinite determiner nonanimate“\n(B\nEYER 1992: 214 f.), Relativpronomen,\nvgl. ↓ji (H\nAHN 1996: 177): was auch im-\nmer, welche auch immer; so ... wie mög-\nlich; ~ nas ... de ltar so daß.\nbka’ gyod gyṛ tshigs cṛ la bab pa las „was auch\nimmer an Worten der Anklage gegen sie\nerhoben wird“ (In1 N25); gces spras cṛ la\nyaṅ „zu welcher Bewertung auch i"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-2ce7b1f265fd8af3843863e28438ecfcfa39eb41e0007890eb7822f84c51b967:108",
+          "span": {
+            "start": 56,
+            "end": 65
+          },
+          "literal": "(Neb\n282)",
+          "context": " auch the braṅ eine Gruppe\nschadenstiftender Gottheiten (Neb\n282); vgl. ↓the’u raṅ.\n།"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-2ce7b1f265fd8af3843863e28438ecfcfa39eb41e0007890eb7822f84c51b967:343",
+          "span": {
+            "start": 165,
+            "end": 174
+          },
+          "literal": "(Neb 101)",
+          "context": " auch the raṅ, the’u raṅs eine\nGruppe schadenstiftender Gotthei-\nten, vgl. ↑the’u braṅ; ~ rkaṅ gcig der ein-\nbeinige the’u raṅ, eine frühe Form des\ngNam-the dkar-po (Neb 101).\n།\n~ sba rgyal to re naṅ blon du bskos „the’u raṅ\nsBa-rgyal to-re wurde zum Minister für\ninnere Angelegenheiten ernannt“ (Bu-Sz\n48,4); g.ya’ ri goṅ du ~ ’goṅ po skuṅs (metr.)\n„in gYa’-ri-goṅ sollen sich die the’u raṅ\nund die ’goṅ po auf die Lauer legen!“ (bKth\n40,1); ~ daṅ / mi ma yin gyi ’dus sa yod pa\n„dort liegt der Versammlungsort der the’u\nra"
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "comparison_without_accepted_enclosure",
+      "grammar": "source_language_or_etymological_statement",
+      "count": 4,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-69088e4acc79c6aa83431a057ba9dba9cb313698cb047f7fec70d19a801a2f25:1455",
+          "span": {
+            "start": 117,
+            "end": 121
+          },
+          "literal": "(PW)",
+          "context": " ein Vogel, Spatz; EMMERICK 1967:\n120 f. vermutet eine Herkunft von skt.\ncāṣa „der blaue Holzhäher, Coracias indica“\n(PW); vgl. ↓bya tsa śa.\n།\n~ btso ba bźin du źugs la bsregs nas „sie\nverbrannten ihn, wie man einen Spatz brät,\nim Feuer“ (Liy2 95)."
+        },
+        {
+          "identity": "badw:pdf:badw-v3-bbf6eba00a612e4395947a0d04aefdb3f4bb51fd355a85a2426ddbf135991919:654",
+          "span": {
+            "start": 86,
+            "end": 114
+          },
+          "literal": "(S\nCHUH 2012: vol. IV, 1378)",
+          "context": " divin. einer der 5 großen Klane, vgl.\n↓rus chen; wird dem Element Feuer zu-\ngeordnet (S\nCHUH 2012: vol. IV, 1378);\nvgl. chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4FFA:b806a9250a69⟧ chih.\n།\nkhams la lṅa yin te ... ~ me (metr.) „bei den\nElementen gibt es fünf: ji [entspricht] dem\nFeuer“ (Vḍk 1: 329,3); gaṅs ri mtsho ni ~ yi\ndgra „was den See am Schneeberg angeht,\nso ist er der Feind [einer Person, deren rus\nchen] ji ist“ (Vḍk 2: 338,6); rus khams ṅos\n’d"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-5ece75c49a2f4170112c33b2e161243c430c87d7e8e5539fbf50cd5fcb2b5b91:1741",
+          "span": {
+            "start": 163,
+            "end": 187
+          },
+          "literal": "(H\nUCKER 1985: Nr. 6158)",
+          "context": " ein Titel, chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:496C:fe77729d6a5e⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:40CA:7346482fe41d⟧ tai-fu grand\nmentor (H\nUCKER 1985: Nr. 6158), vgl.\nL\nAUFER 1916: 528, Nr. 300; vgl. ↓tai hu.།"
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_definition_source_node",
+      "grammar": "comparison_following_material_needs_boundary",
+      "count": 1,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v4-53145de27eba00f52c41bcb82cc291cc6107b3dcede5da563e65035a342c4282:754",
+          "span": {
+            "start": 183,
+            "end": 210
+          },
+          "literal": "LETTER/KRIECHBAUM 2001: 146",
+          "context": " auch thaṅ khrom Bez.\nverschiedener Pflanzen, vor allem\nNachtschattengewächse, z. B. ~ dkar po, ~\nkhra bo, ~ nag po, ~ laṅ thaṅ rtse, ~ ser po, ~\ntsha bo; vgl. P\nASANG 1998: 89-91,\nK\nLETTER/KRIECHBAUM 2001: 146 und\nTMP s. v.\n།\nLex. dha dhu ra ≈ rgya gar skad de btsan dug\n~ „ein Sanskritwort, das sehr giftige thaṅ\nphrom“ (brDa); gñan dug ≈ btsan dug ~\n(brDa, Dagy); laṅ taṅ rtsi ni / ~ ser po / ~\nkhra bo / rgya ~ / spyi blug ’chaṅ ba zer (gSo\n138,1)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_definition_source_node",
+      "grammar": "comparison_locator_and_terminal_punctuation",
+      "count": 3,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-7b1665a8de3445e07176ebbad037428cf3c0fe48513fba523c2434ee416390e3:470",
+          "span": {
+            "start": 85,
+            "end": 100
+          },
+          "literal": "CHUH\n2012: 1390",
+          "context": " auch ñis ldan dus,\ngñis ldan gyi dus das zweite\nZeitalter, skt. dvāparayuga, vgl. S\nCHUH\n2012: 1390 s. v. gñis ldan gyi dus.།\nLex. gñis ldan ’bum phrag brgyad daṅ / stoṅ\nphrag drug cu rtsa bźi’o / źes daṅ luṅ gi dus\nsam ñis ldan źes pa’aṅ „gñis ldan [dauert]\n864.000 [Jahre], heißt auch luṅ gi dus oder\nñis ldan“ (brDa); ’jig rten du mi tshaṅs spyod\ndaṅ ma byin len byuṅ la rdzun daṅ srog gcod\nma byuṅ ba’i skabs „die Zeit, wo es auf der\nWelt unrein"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-437bad12caa87bb364f9b4b31decb3b7a33b3a68a4b07b5066dfbb0d9f021e2f:101",
+          "span": {
+            "start": 63,
+            "end": 78
+          },
+          "literal": "CHUH 2012: 1407",
+          "context": " auch ’ther ’bum eine hohe\nZahl, eine Milliarde, 10\n9\n; vgl.\nS\nCHUH 2012: 1407 s. v. ’ther ’bum.།\ngraṅs ni ... bye ba / duṅ phyur / ~ „die\nZahlen sind: 10\n7\n, 10\n8\n und 10\n9\n [usw.]“ (Bu\n726,7). \nLex. duṅ phyur bcu tham pa 1000000000\n(brDa); graṅs duṅ phyur bcu (Dagy);\n⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧ayutam(Mvy 7701, 7827); ayutaḥ (Mvy\n7998); padmam (Mvy 8060); bye ba phrag\nbrgya na ~ źes bya’o ≈ śataṃ "
+        },
+        {
+          "identity": "badw:pdf:badw-v4-5644b990758444b6b7b00f0adbb75fcdfe54b08c0bd3ec6c80120cbaea4a2281:1508",
+          "span": {
+            "start": 68,
+            "end": 83
+          },
+          "literal": "CHUH 2012: 1402",
+          "context": " Faden, Konstruktionsfaden\nzur Zeichnung von geraden Linien;\nvgl. S\nCHUH 2012: 1402 s. v. thig rkud.།\nLex. sūtram (Mvy 5901); thig tshad draṅ bar\nbyed pa’i skud pa (brDa); thig tshad len byed\nkyi skud pa „Faden zum Maßnehmen“\n(Dagy)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_definition_source_node",
+      "grammar": "comparison_reference_list_or_semicolon",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-f5ed2448cf2f65759137a066378d9594a17ebe9ad7be56d2c93054f35dbc4ff5:850",
+          "span": {
+            "start": 115,
+            "end": 142
+          },
+          "literal": "LETTER/KRIECHBAUM 2001: 149",
+          "context": " eine Heilpflanze, Halenia\nelliptica D. Don, bzw. Swertia pe-\ntiolata D. Don, gehört zur Gruppe der tig\nta, vgl. K\nLETTER/KRIECHBAUM 2001: 149,\n303.\n།\nLex. sṅo sman gyi rigs śig (Dagy)."
+        },
+        {
+          "identity": "badw:pdf:badw-v4-53145de27eba00f52c41bcb82cc291cc6107b3dcede5da563e65035a342c4282:754",
+          "span": {
+            "start": 162,
+            "end": 179
+          },
+          "literal": "ASANG 1998: 89-91",
+          "context": " auch thaṅ khrom Bez.\nverschiedener Pflanzen, vor allem\nNachtschattengewächse, z. B. ~ dkar po, ~\nkhra bo, ~ nag po, ~ laṅ thaṅ rtse, ~ ser po, ~\ntsha bo; vgl. P\nASANG 1998: 89-91,\nK\nLETTER/KRIECHBAUM 2001: 146 und\nTMP s. v.\n།\nLex. dha dhu ra ≈ rgya gar skad de btsan dug\n~ „ein Sanskritwort, das sehr giftige thaṅ\nphrom“ (brDa); gñan dug ≈ btsan dug ~\n(brDa, Dagy); laṅ taṅ rtsi ni / ~ ser po / ~\nkhra bo / rgya ~ / spyi blug ’chaṅ ba zer (gSo\n138,1)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_definition_source_node",
+      "grammar": "comparison_then_comma_prose",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-74dd6377f9e3de2d79895447bdca7bed3871c886ad01ed6499aa197dc443dc13:884",
+          "span": {
+            "start": 60,
+            "end": 74
+          },
+          "literal": "EYER 1987: 393",
+          "context": " [arch.] Gebälk, Abschluß-\nbalken über dem Kapitell, vgl.\nM\nEYER 1987: 393, fig. 218.\nphyi naṅ ~ ka gźu thams cad la (metr.) „auf\ndas gesamte Gebälk und alle Kapitelle im\nInneren und Äußeren“ (Glr 125,2)."
+        },
+        {
+          "identity": "badw:pdf:badw-v3-a6977cb079235d7724ed4d1cce806eb0283a652f0a6dfb26dde638a6c68a7bc9:114",
+          "span": {
+            "start": 4404,
+            "end": 4425
+          },
+          "literal": "CHWIEGER 2006: 260 f.",
+          "context": " sems can ~ la gnas (metr.)\n„du bist noch immer auf einem Niveau mit\nden Lebewesen“ (gZer 647,1).\n3. Paar.\nskas daṅ rdo them la sogs pa / gdaṅ bu ya las\n~ mi ruṅ (metr.) „die Stufen von Leitern\nund Steintreppen usw. sind nur in unge-\nrader [Anzahl], [aber] nicht in paarweiser\n[Anordnung] passend“ (Vḍk 2: 402,5).\n4. Suffix zu Nominalbildung, vgl.\nS\nCHWIEGER 2006: 260 f., z. B. dpe ~ Buch,\nbrag ~ Echo, mtshon ~ Waffe, g.yaṅ ~\nglückverheißender Gegenstand, lag ~\nInstrument, lha ~ Sakralgegenstand.\nlha ~ daṅ / nor rdzas daṅ / rkaṅ ’gros\n„Sakralgegenstände, Vermögen und Vieh“\n(In11 19); mtshon ~’i thabs la mkhas (metr.)\n„im Umgang mit Waffen erfahren“ (KanL\n74a); bu drug khri thams cad go ~ bgos śiṅ\n„er steckte alle "
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_definition_source_node",
+      "grammar": "definition_candidate_with_competing_components",
+      "count": 1,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v3-69088e4acc79c6aa83431a057ba9dba9cb313698cb047f7fec70d19a801a2f25:1455",
+          "span": {
+            "start": 19,
+            "end": 40
+          },
+          "literal": "EMMERICK 1967:\n120 f.",
+          "context": " ein Vogel, Spatz; EMMERICK 1967:\n120 f. vermutet eine Herkunft von skt.\ncāṣa „der blaue Holzhäher, Coracias indica“\n(PW); vgl. ↓bya tsa śa.\n།\n~ btso ba bźin du źugs la bsregs nas „sie\nverbrannten ihn, wie man einen Spatz brät,\nim Feuer“ (Liy2 95)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_example_source_node",
+      "grammar": "example_quotation_delimiter_failure",
+      "count": 3,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v4-165ccbcb686a5cdf205456fd6c669d2435e730849813c6004ad6eae7767be081:130",
+          "span": {
+            "start": 524,
+            "end": 535
+          },
+          "literal": "(K12 107b3)",
+          "context": "e-\nhorchten die Mönche dem Erhabenen“ (K1\nkha 49b1); kun dga’ bos bcom ldan ’das kyi\n~ nas / mchod rten de phye ba daṅ „Ānanda,\ndem Erhabenen gehorchend (skt. prati-\nśrutya), öffnete den Stūpa“ (Suv 155,14);\nbcom ldan ’das legs so źes gsol nas ... rab\n’byor bcom ldan ’das kyi ltar ñan pa daṅ „,ja,\nErhabener!“ so stimmte Subhūti dem Er-\nhabenen zu“ (K12 107b3).\nLex. bcom ldan ’das kyi ltar mñan (v. l. ñan)\nnas ≈ bhagavataḥ pratiśrutya (Mvy 6317)."
+        },
+        {
+          "identity": "badw:pdf:badw-v4-a54e2f8a39cd95d531d4b055ac70c7f1913c128de0a139fa8883764c910f7eb4:994",
+          "span": {
+            "start": 1271,
+            "end": 1282
+          },
+          "literal": "(Mil 67,17)",
+          "context": "); srin mo yaṅ ~ byuṅ ste „auch die\nSchwester kam heraus“ (Mil 36,23); yul du\nmthu’i rtags ~ pa źig cis kyaṅ gyis śog cig „tue\nunbedingt etwas, damit die Zeichen der\nMagie im Lande offenbar werden!“ (Mil\n38,7); ~ byas ruṅ mi ’gro ba’i khyod kyi yus\nci yod pa „obwohl ich sagte: ,Geh hinaus!‘\nbist du nicht gegangen; was hast du mir da\nvorzuhalten!““ (Mil 67,17); bye ma’i phuṅ\npo bsal ba’i ’og nas rdo’i lha khaṅ ṅo mtshar\ncan ~ „als der Sandhaufen beseitigt war,\nkam darunter ein wundervoller Steintem-\npel zum Vorschein“ (Tār 161,11); phor pa\nlag pa khyer źiṅ phyir ~ soṅ ṅo „sie nahmen\ndie Schalen in die Hand und gingen\nhinaus“ (KunK 41,25); sku las rṅul ~ pa\n„aus dem Körper ist Schweiß ausgetreten“\n(ThK 2"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-bf2bd049177967fee6aba9800527ae9c3b646dc14a31621dfc4e65ae1b397d54:87",
+          "span": {
+            "start": 6681,
+            "end": 6693
+          },
+          "literal": "(dPe 133,21)",
+          "context": "ßlich erholen sich auch die Vidyā-\ndharas“ (Lokn 58,2); ster mo (r. sder mo)\ndag ni ~ ru sa la btab ciṅ byed (metr.) „er\nbohrt seine Krallen schließlich in die Erde“\n(Nāgn 202,16); raṅ re yaṅ ’gal rkyen med\ntsa na mthar gzigs śig zer źiṅ kha pho bzlos te\n„sobald die Schwierigkeit vorüber ist,\nsagen wir auch schließlich „Schau mal an!“\nund prahlen“ (dPe 133,21); mthar bod du\nbyon nas de dag ma lus par bsgyur te\n„schließlich ging er nach Tibet und über-\nsetzte diese restlos“ (Debm 28a8); ṅas śa\nrnams bsris nas zos pas mthar ’bus gaṅ byuṅ\nba la „da ich sparsam von dem Fleisch aß,\nwar es schließlich voll von Maden“ (Mil\n129,17); mthar ... chos rnams zad sar ’khyol\nba „am Ende gelangen alle Phänomene\nzum End"
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "contained_lexical_source_node",
+      "grammar": "Lex_assertion_delimiter_failure",
+      "count": 6,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-2825decd4210a03624a1267f9e71f178cc4bd8f75ba382d34299fab303ec252c:1073",
+          "span": {
+            "start": 1358,
+            "end": 1366
+          },
+          "literal": "Liś 19,2",
+          "context": "tet [dem Rākṣasa] seinen\nKörper dar und stellt darauf pantomimisch\neine Ohnmacht dar“ (Lokn 136,34); ne\nchuṅ yaṅ ~ ba saṅs par gyur nas „nachdem\nNe-chuṅ aus der Ohnmacht erwacht war“\n(gZer 619,5); khyogs la btsun mo ~ ba bteg\n„man hob die bewußtlose Königin auf eine\nSänfte“ (gZer 693,4).\nLex. ’bog pa ni ~ ba „ohnmächtig niedersin-\nken: brgyal ba“ (Liś 19,2, ähnl. (KloṅD\n735,3); ’khams pa ni ~ ba „bewußtlos wer-\nden: brgyal ba“ (Liś 23,10); ~ ba, ~ bog pa ≈\nsems dran pa med par ~ ba „bewußtlos um-\nfallen“ (brDa, ähnl. Dagy); ~ ba ≈ mūrcchi-\ntaḥ „ohnmächtig“ (Mvy 2195)."
+        },
+        {
+          "identity": "badw:pdf:badw-v2-2825decd4210a03624a1267f9e71f178cc4bd8f75ba382d34299fab303ec252c:1073",
+          "span": {
+            "start": 1375,
+            "end": 1386
+          },
+          "literal": "KloṅD\n735,3",
+          "context": " seinen\nKörper dar und stellt darauf pantomimisch\neine Ohnmacht dar“ (Lokn 136,34); ne\nchuṅ yaṅ ~ ba saṅs par gyur nas „nachdem\nNe-chuṅ aus der Ohnmacht erwacht war“\n(gZer 619,5); khyogs la btsun mo ~ ba bteg\n„man hob die bewußtlose Königin auf eine\nSänfte“ (gZer 693,4).\nLex. ’bog pa ni ~ ba „ohnmächtig niedersin-\nken: brgyal ba“ (Liś 19,2, ähnl. (KloṅD\n735,3); ’khams pa ni ~ ba „bewußtlos wer-\nden: brgyal ba“ (Liś 23,10); ~ ba, ~ bog pa ≈\nsems dran pa med par ~ ba „bewußtlos um-\nfallen“ (brDa, ähnl. Dagy); ~ ba ≈ mūrcchi-\ntaḥ „ohnmächtig“ (Mvy 2195)."
+        },
+        {
+          "identity": "badw:pdf:badw-v3-7aab676894ddd4a11a69cba8531e7d73112672fc8f8eaa165ce7c7866f2a709e:1934",
+          "span": {
+            "start": 292,
+            "end": 298
+          },
+          "literal": "(Dagy)",
+          "context": " die fünf kalendarischen\nGrößen: Wochentag, Datum, Na-\nkṣatra, Karaṇa und Yoga; skt. pañcāṅga\n(vgl. S\nCHUH 1973: 130).།\nźag gsum ~ „die drei [Arten] von Tagen, die\nfünf kalendarischen Größen“ (Nagdel\n101,10). \nLex. khyim skyes ≈ ~ kyi naṅ tshan byed pa\nźig „Abschnitt im Kalender, ein karaṇa\n(Dagy)."
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "unbounded_or_missing_component",
+      "grammar": "editorial_source_statement_without_canonical_clause",
+      "count": 2,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-24721193fc58948caca9113e1b3bc5f0150429cba0f96dbb50584680a61e36b5:834",
+          "span": {
+            "start": 4331,
+            "end": 4348
+          },
+          "literal": "EYER 1992: 296 f.",
+          "context": ". Webkette, Kettfaden, vgl. BHSD 91 s. v.\nātāna.\nLex. ātānam (Mvy 7519); ~ spun ≈ snam\nbu’i srid du btaṅ ba’i skud pa la ~ zer ba daṅ\n’phred skud la spun zer „für einen Faden,\nden man in der Länge des Tuches spannt,\nsagt man rgyu, für einen Querfaden sagt\nman spun“ (brDa, ähnl. Dagy) .\n 5. ein Suffix zur Nominalbildung, „patient\nof proposition“, B\nEYER 1992: 296 f., „peri-\nphrastisches Nezessitativ“ (H\nAHN 1996:\n172), „Gerundivum“ (S\nCHWIEGER 2006:\n131).\nrgya yul du skyel ~ la ... do mo’i thaṅ la\nbskyal „um ihn nach China zu geleiten,\nbrachten sie ihn nach Do-mo’i-thaṅ“ (Glr\n166,12); dbaṅ daṅ gdams ṅag ... ster ~ yod\n„ich habe Einweihungen und Unterweisun-\ngen, die ich geben will“ (Mil 97,14); la lan\ngñis sp"
+        },
+        {
+          "identity": "badw:pdf:badw-v4-5d184e00a08889cc7130ceef5543ea9186d8467742d7d20e189d9afbcd48e4db:1549",
+          "span": {
+            "start": 19,
+            "end": 44
+          },
+          "literal": "LAUFER\n1916: 517, Nr. 255",
+          "context": " eine Heilpflanze; LAUFER\n1916: 517, Nr. 255 chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4775:bdb215a14258⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:8AED:6cea3816a879⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:66F3:6d4230e3806d⟧ ti-ku-\np’i Lycium chinense Mill.\n།"
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "unbounded_or_missing_component",
+      "grammar": "parenthetical_source_in_prose_without_canonical_clause",
+      "count": 28,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-18eddce0ab258efa5dbaa3471f84918c23ef2feb7195d926e85117ef20af0a5f:1780",
+          "span": {
+            "start": 206,
+            "end": 219
+          },
+          "literal": "(Wadd\n135h 1)",
+          "context": " Vorsteher, Leiter, Aufseher; ~\ndo dam Aufseher.\nlas sgo’i ~ do dam gaṅ bkod des „wer als\nAufseher der Handelsplätze stationiert ist“\n(BhuKkh 160, 17); [go]ṅ ’thus ~ bcas „die\nRepräsentanten und Vorsteher“ (Wadd\n135h 1); ’go dmaṅ nas ... bka’ b{s}lon bcas la\nźu ’bod „die Anführer und das Volk sollen\neine Beschwerde an die Minister richten“\n(Wadd 135n 5); \n⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧rgyab gñer ... ~ rim ’byor\nnas yoṅ ba gyis „deshalb haben die sukzessiv\naufeinanderfolgenden Vorsteher Unter-\nstützung zu gewähren“ (MTH3/5/16 22);\ndmag daṅ ar jag gi ~ .."
+        },
+        {
+          "identity": "badw:pdf:badw-v2-18eddce0ab258efa5dbaa3471f84918c23ef2feb7195d926e85117ef20af0a5f:849",
+          "span": {
+            "start": 262,
+            "end": 277
+          },
+          "literal": "(MTH3/5/\n16 19)",
+          "context": " auch mgo mchan Urkun-\nde mit einem Vermerk des Herr-\nschers bzw. der Kanzlei über der ursprüng-\nlichen Urkunde.\n[sb]u[g] dam źu tho mgo mchan ma’i dgoṅs\ndon ltar „entsprechend dem Inhalt der mit\ndem sBug-tham[-Siegel versehenen] mgo-\nmchan-Urkunde zur Eingabe“ (MTH3/5/\n16 19); sgrub chag gaṅ spyir bka’ tham mgo\nmchan „ein mgo-mchan-Rechtsbrief bezüg-\nlich aller Arten von Abgaben und Freistel-\nlungen“ (MTH3/5/20 38); bka’ tham mgo\nmchan raṅ du ’thus pa źig „einen nach\neurem eigenen Belieben [ausgefertigten]\n’go-mchan-Rechtsbrief“ (MTH3/5/ 24 41);\ntham la bka’ śag nas ~ tham ka phab „das\nzum Rechtsbrief vom Ministerrat a"
+        },
+        {
+          "identity": "badw:pdf:badw-v2-20b81e0bdb6e0a29f1cf9f05183d1c61cf71e24a1a58d6b194e7306ec042cff4:707",
+          "span": {
+            "start": 349,
+            "end": 363
+          },
+          "literal": "(MTH3/5/30 a2)",
+          "context": " auch khon ’dzin pf.\n↓’khon bzuṅ feindselig, rachsüchtig\nsein, hassen.\nkhro bar mi ’gyur ba daṅ / ’khon du ’dzin pa\nmed pa daṅ ... khon bcugs la mi dga’ ba daṅ\n„er wird nicht zornig; er hegt keinen Haß;\ner freut sich nicht daran, Haß zu schüren“\n(Kāśy 230,22); [l]ab gleṅ ~ gyi khrims gtugs\n„ein mit Kontroversen und Haß verbunde-\nner Gerichtsfall“ (MTH3/5/30 a2).\nLex. khon (v. l. ’khon Ms. L) du ’dzin pa ≈\nupanāhaḥ (Mvy 1962); khon ’dzin ≈ khros\npa’i rgyun mi gtoṅ bar gnod lan gyis ’dod pa’i\nśes pa’o „geistige Haltung, bei der man an-\nhaltenden Haß nicht aufgibt, sondern\nSchaden vergelten möchte“ (brDa); khon\n’dzin ≈ sṅa ma’ ’khon yid du bcugs pa „an\nfrüheren Streitigkeiten festhalten, rach-\nsüchtig“ (Dag"
+        }
+      ]
+    },
+    {
+      "source_kind": "pdf",
+      "coarse_family": "unbounded_or_missing_component",
+      "grammar": "source_language_or_etymological_statement",
+      "count": 12,
+      "representatives": [
+        {
+          "identity": "badw:pdf:badw-v2-66532fb2daddba3f629ee3fb43be2a911ccc61b6b5f5270ec70022dd39f6f04d:44",
+          "span": {
+            "start": 133,
+            "end": 144
+          },
+          "literal": "(S751 41b2)",
+          "context": " Mönchsgemeinde, Mön-\nche, skt. saṃgha.\ngtsug lag khaṅ brtsṛgs ~ gyṛ sde btsugs „er er-\nrichtete den Tempel und gründete den\nSaṃgha“ (S751 41b2); dam pa’i chos daṅ ~\nla ma dad pas „weil sie dem wahren Dharma\nund den Mönchen gegenüber keinen Glau-\nben hatten“ (Liy2 50); ~ kun dgar bdag soṅ\nna (metr.) „als ich zu dem Kloster des\nSaṃgha kam“ (K1 kha 287b3); ~ gyi dbyen\nbyas pa ma yin nam „bist du auch keiner,\nder den Saṃgha gespalten hat!“ (Prav\n142,9); ~ la skyabs su mchi’o „ich nehme\nZufluc"
+        },
+        {
+          "identity": "badw:pdf:badw-v2-bce62703d7e03c6d5219d366dba02757e4a7944092ca2d09a321300baa89a90b:1838",
+          "span": {
+            "start": 142,
+            "end": 162
+          },
+          "literal": "(BEYER 1992: 361 f.)",
+          "context": ".\n1. Allomorph für das Diminutivsuffix ↓’u.\n2. nach cig „in finiter Form am Ende von\nFragesätzen“ (H\nAHN 1996: 188), „doubt\nparticle cig gu\n“ (BEYER 1992: 361 f.).\n’di’i srog yoṅs su bsruṅ ba’i phyir su źig raṅ\ngi lus yoṅs su gtoṅ bar byed cig ~ „könnte je-\nmand seinen Körper hingeben, um ihr Le-\nben zu erhalten!“ (Suv 158,4); rgya mtsho’i\ngos can ’di ni kun tu rab g.yo ci źig ~ (metr.)\n„was diese Erde betrifft: [gibt es] ein star-\nkes Beben!“ (Suv 162,11); ’jig rten pha rol\nyod dam med cig ~ „gibt es eine "
+        },
+        {
+          "identity": "badw:pdf:badw-v3-3832ef80fc4a4e661b53313f6b6d4cabfc2ec5cfcd5c760c0e0b933e85c55475:666",
+          "span": {
+            "start": 155,
+            "end": 182
+          },
+          "literal": "(L\nAUFER 1916: 508 Nr. 224)",
+          "context": " Pinzette; von chin. ⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:851C:a6217b35ddea⟧⟦UNKNOWN:Code2000-WinCharSetFFFF-H2:regular:4B95:3222788a72b1⟧ chia-tzu\n(L\nAUFER 1916: 508 Nr. 224)."
+        }
+      ]
+    }
+  ],
+  "assertion_punctuation_clusters": {
+    "semicolon_bounded": 7,
+    "sentence_terminal": 18,
+    "comma_continuation": 6,
+    "parenthesis_then_comparison": 1
+  },
+  "PDF_transition_causes": {
+    "same_baseline_font_run_split": 43,
+    "ordinary_body_line_wrap": 19
+  },
+  "prior_review": "data/badw_forensic_structure/assertion_owner_review.jsonl.gz",
+  "prior_review_sha256": "b83869421eb2c118b497d889c65d69090e6173d8cd07d41f697d7782f1dc3ae3",
+  "prior_layout_failure_occurrence_causes": [],
+  "final_dispositions": [
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "Lex_local_quotation_delimiter_failure",
+      "count": 10
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "Lex_local_source_parenthesis_failure",
+      "count": 10
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "Lex_source_decoding_and_quotation_failure",
+      "count": 1
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "assertion_competing_semantic_components",
+      "count": 9
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "assertion_continuation_or_editorial_opening_grammar_missing",
+      "count": 37
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "assertion_independent_punctuation_or_delimiter_recovery_missing",
+      "count": 2
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "assertion_multiple_source_notes_require_subclauses",
+      "count": 1
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "comparison_canonical_scope_missing",
+      "count": 13
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "comparison_competing_source_components",
+      "count": 1
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "comparison_independent_right_boundary_missing",
+      "count": 8
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "comparison_reference_label_split_across_font_runs",
+      "count": 29
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "comparison_reference_or_prose_grammar_incomplete",
+      "count": 5
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "example_nested_or_damaged_translation_quotes",
+      "count": 3
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "example_nested_variant_note_role_missing",
+      "count": 1
+    },
+    {
+      "status": "parser_capability_or_source_boundary_review_pending",
+      "reason": "scholar_led_etymological_assertion_grammar_missing",
+      "count": 2
+    }
+  ],
+  "final_unresolved": 132,
+  "source_genuinely_lacks_exact_passage_established": 0,
+  "ownership_closed": false,
+  "finite_batch": [
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+      "literal": "K6",
+      "context": "\n\t    \n\n  \n    \n      ཀ་ཀུ་སྟ་\n      ka ku sta\n    \n  \n  \n    \n    \n    \n     \n  \n\n\n  ein Fluß in der Nähe von Kuśinagarī; skt. kukustā.\n\n\n  \n  kun dga’ bo soṅ la chu bo ka kus sta nas (K6 da 258b1: ka ku sta nas) chu lhuṅ bzed gaṅ loṅ⧼s⧽ śig\n  „Ānanda, geh und hole aus dem Fluß Kukustā eine Schale voll Wasser!“\n    \n      (MPS\n      27.10);\n    \n  \n  \n  de’i tshe chu bo ka kus sta la (v. l. ka ku sta la K6 da 258b2) śiṅ rta lṅa brgya tsam gyi tshad cig gis brgal nas\n  „zu der Zeit hatte eine Menge von rund fünfhundert Wagen den Flu",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "example_nested_variant_note_role_missing",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v2-74dd6377f9e3de2d79895447bdca7bed3871c886ad01ed6499aa197dc443dc13:884",
+      "literal": "EYER 1987: 393",
+      "context": " [arch.] Gebälk, Abschluß-\nbalken über dem Kapitell, vgl.\nM\nEYER 1987: 393, fig. 218.\nphyi naṅ ~ ka gźu thams cad la (metr.) „auf\ndas gesamte Gebälk und alle Kapitelle im\nInneren und Äußeren“ (Glr 125,2).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_label_split_across_font_runs",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v3-69088e4acc79c6aa83431a057ba9dba9cb313698cb047f7fec70d19a801a2f25:1455",
+      "literal": "EMMERICK 1967:\n120 f.",
+      "context": " ein Vogel, Spatz; EMMERICK 1967:\n120 f. vermutet eine Herkunft von skt.\ncāṣa „der blaue Holzhäher, Coracias indica“\n(PW); vgl. ↓bya tsa śa.\n།\n~ btso ba bźin du źugs la bsregs nas „sie\nverbrannten ihn, wie man einen Spatz brät,\nim Feuer“ (Liy2 95).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "scholar_led_etymological_assertion_grammar_missing",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v3-7b1665a8de3445e07176ebbad037428cf3c0fe48513fba523c2434ee416390e3:470",
+      "literal": "CHUH\n2012: 1390",
+      "context": " auch ñis ldan dus,\ngñis ldan gyi dus das zweite\nZeitalter, skt. dvāparayuga, vgl. S\nCHUH\n2012: 1390 s. v. gñis ldan gyi dus.།\nLex. gñis ldan ’bum phrag brgyad daṅ / stoṅ\nphrag drug cu rtsa bźi’o / źes daṅ luṅ gi dus\nsam ñis ldan źes pa’aṅ „gñis ldan [dauert]\n864.000 [Jahre], heißt auch luṅ gi dus oder\nñis ldan“ (brDa); ’jig rten du mi tshaṅs spyod\ndaṅ ma byin len byuṅ la rdzun daṅ srog gcod\nma byuṅ ba’i skabs „die Zeit, wo es auf der\nWelt unrein",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_or_prose_grammar_incomplete",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v3-a6977cb079235d7724ed4d1cce806eb0283a652f0a6dfb26dde638a6c68a7bc9:114",
+      "literal": "CHWIEGER 2006: 260 f.",
+      "context": " sems can ~ la gnas (metr.)\n„du bist noch immer auf einem Niveau mit\nden Lebewesen“ (gZer 647,1).\n3. Paar.\nskas daṅ rdo them la sogs pa / gdaṅ bu ya las\n~ mi ruṅ (metr.) „die Stufen von Leitern\nund Steintreppen usw. sind nur in unge-\nrader [Anzahl], [aber] nicht in paarweiser\n[Anordnung] passend“ (Vḍk 2: 402,5).\n4. Suffix zu Nominalbildung, vgl.\nS\nCHWIEGER 2006: 260 f., z. B. dpe ~ Buch,\nbrag ~ Echo, mtshon ~ Waffe, g.yaṅ ~\nglückverheißender Gegenstand, lag ~\nInstrument, lha ~ Sakralgegenstand.\nlha ~ daṅ / nor rdzas daṅ / rkaṅ ’gros\n„Sakralgegenstände, Vermögen und Vieh“\n(In11 19); mtshon ~’i thabs la mkhas (metr.)\n„im Umgang mit Waffen erfahren“ (KanL\n74a); bu drug khri thams cad go ~ bgos śiṅ\n„er steckte alle ",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_or_prose_grammar_incomplete",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v3-f5ed2448cf2f65759137a066378d9594a17ebe9ad7be56d2c93054f35dbc4ff5:850",
+      "literal": "LETTER/KRIECHBAUM 2001: 149",
+      "context": " eine Heilpflanze, Halenia\nelliptica D. Don, bzw. Swertia pe-\ntiolata D. Don, gehört zur Gruppe der tig\nta, vgl. K\nLETTER/KRIECHBAUM 2001: 149,\n303.\n།\nLex. sṅo sman gyi rigs śig (Dagy).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_label_split_across_font_runs",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-165ccbcb686a5cdf205456fd6c669d2435e730849813c6004ad6eae7767be081:130",
+      "literal": "(K12 107b3)",
+      "context": "e-\nhorchten die Mönche dem Erhabenen“ (K1\nkha 49b1); kun dga’ bos bcom ldan ’das kyi\n~ nas / mchod rten de phye ba daṅ „Ānanda,\ndem Erhabenen gehorchend (skt. prati-\nśrutya), öffnete den Stūpa“ (Suv 155,14);\nbcom ldan ’das legs so źes gsol nas ... rab\n’byor bcom ldan ’das kyi ltar ñan pa daṅ „,ja,\nErhabener!“ so stimmte Subhūti dem Er-\nhabenen zu“ (K12 107b3).\nLex. bcom ldan ’das kyi ltar mñan (v. l. ñan)\nnas ≈ bhagavataḥ pratiśrutya (Mvy 6317).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "example_nested_or_damaged_translation_quotes",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-437bad12caa87bb364f9b4b31decb3b7a33b3a68a4b07b5066dfbb0d9f021e2f:101",
+      "literal": "CHUH 2012: 1407",
+      "context": " auch ’ther ’bum eine hohe\nZahl, eine Milliarde, 10\n9\n; vgl.\nS\nCHUH 2012: 1407 s. v. ’ther ’bum.།\ngraṅs ni ... bye ba / duṅ phyur / ~ „die\nZahlen sind: 10\n7\n, 10\n8\n und 10\n9\n [usw.]“ (Bu\n726,7). \nLex. duṅ phyur bcu tham pa 1000000000\n(brDa); graṅs duṅ phyur bcu (Dagy);\n⟦UNKNOWN:MicrosoftSansSerif:regular:0003:6dc2ca034cbe⟧ayutam(Mvy 7701, 7827); ayutaḥ (Mvy\n7998); padmam (Mvy 8060); bye ba phrag\nbrgya na ~ źes bya’o ≈ śataṃ ",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_or_prose_grammar_incomplete",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-53145de27eba00f52c41bcb82cc291cc6107b3dcede5da563e65035a342c4282:754",
+      "literal": "ASANG 1998: 89-91",
+      "context": " auch thaṅ khrom Bez.\nverschiedener Pflanzen, vor allem\nNachtschattengewächse, z. B. ~ dkar po, ~\nkhra bo, ~ nag po, ~ laṅ thaṅ rtse, ~ ser po, ~\ntsha bo; vgl. P\nASANG 1998: 89-91,\nK\nLETTER/KRIECHBAUM 2001: 146 und\nTMP s. v.\n།\nLex. dha dhu ra ≈ rgya gar skad de btsan dug\n~ „ein Sanskritwort, das sehr giftige thaṅ\nphrom“ (brDa); gñan dug ≈ btsan dug ~\n(brDa, Dagy); laṅ taṅ rtsi ni / ~ ser po / ~\nkhra bo / rgya ~ / spyi blug ’chaṅ ba zer (gSo\n138,1).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_independent_right_boundary_missing",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-53145de27eba00f52c41bcb82cc291cc6107b3dcede5da563e65035a342c4282:754",
+      "literal": "LETTER/KRIECHBAUM 2001: 146",
+      "context": " auch thaṅ khrom Bez.\nverschiedener Pflanzen, vor allem\nNachtschattengewächse, z. B. ~ dkar po, ~\nkhra bo, ~ nag po, ~ laṅ thaṅ rtse, ~ ser po, ~\ntsha bo; vgl. P\nASANG 1998: 89-91,\nK\nLETTER/KRIECHBAUM 2001: 146 und\nTMP s. v.\n།\nLex. dha dhu ra ≈ rgya gar skad de btsan dug\n~ „ein Sanskritwort, das sehr giftige thaṅ\nphrom“ (brDa); gñan dug ≈ btsan dug ~\n(brDa, Dagy); laṅ taṅ rtsi ni / ~ ser po / ~\nkhra bo / rgya ~ / spyi blug ’chaṅ ba zer (gSo\n138,1).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_independent_right_boundary_missing",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-5644b990758444b6b7b00f0adbb75fcdfe54b08c0bd3ec6c80120cbaea4a2281:1508",
+      "literal": "CHUH 2012: 1402",
+      "context": " Faden, Konstruktionsfaden\nzur Zeichnung von geraden Linien;\nvgl. S\nCHUH 2012: 1402 s. v. thig rkud.།\nLex. sūtram (Mvy 5901); thig tshad draṅ bar\nbyed pa’i skud pa (brDa); thig tshad len byed\nkyi skud pa „Faden zum Maßnehmen“\n(Dagy).",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "comparison_reference_or_prose_grammar_incomplete",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-a54e2f8a39cd95d531d4b055ac70c7f1913c128de0a139fa8883764c910f7eb4:994",
+      "literal": "(Mil 67,17)",
+      "context": "); srin mo yaṅ ~ byuṅ ste „auch die\nSchwester kam heraus“ (Mil 36,23); yul du\nmthu’i rtags ~ pa źig cis kyaṅ gyis śog cig „tue\nunbedingt etwas, damit die Zeichen der\nMagie im Lande offenbar werden!“ (Mil\n38,7); ~ byas ruṅ mi ’gro ba’i khyod kyi yus\nci yod pa „obwohl ich sagte: ,Geh hinaus!‘\nbist du nicht gegangen; was hast du mir da\nvorzuhalten!““ (Mil 67,17); bye ma’i phuṅ\npo bsal ba’i ’og nas rdo’i lha khaṅ ṅo mtshar\ncan ~ „als der Sandhaufen beseitigt war,\nkam darunter ein wundervoller Steintem-\npel zum Vorschein“ (Tār 161,11); phor pa\nlag pa khyer źiṅ phyir ~ soṅ ṅo „sie nahmen\ndie Schalen in die Hand und gingen\nhinaus“ (KunK 41,25); sku las rṅul ~ pa\n„aus dem Körper ist Schweiß ausgetreten“\n(ThK 2",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "example_nested_or_damaged_translation_quotes",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    },
+    {
+      "identity": "badw:pdf:badw-v4-bf2bd049177967fee6aba9800527ae9c3b646dc14a31621dfc4e65ae1b397d54:87",
+      "literal": "(dPe 133,21)",
+      "context": "ßlich erholen sich auch die Vidyā-\ndharas“ (Lokn 58,2); ster mo (r. sder mo)\ndag ni ~ ru sa la btab ciṅ byed (metr.) „er\nbohrt seine Krallen schließlich in die Erde“\n(Nāgn 202,16); raṅ re yaṅ ’gal rkyen med\ntsa na mthar gzigs śig zer źiṅ kha pho bzlos te\n„sobald die Schwierigkeit vorüber ist,\nsagen wir auch schließlich „Schau mal an!“\nund prahlen“ (dPe 133,21); mthar bod du\nbyon nas de dag ma lus par bsgyur te\n„schließlich ging er nach Tibet und über-\nsetzte diese restlos“ (Debm 28a8); ṅas śa\nrnams bsris nas zos pas mthar ’bus gaṅ byuṅ\nba la „da ich sparsam von dem Fleisch aß,\nwar es schließlich voll von Maden“ (Mil\n129,17); mthar ... chos rnams zad sar ’khyol\nba „am Ende gelangen alle Phänomene\nzum End",
+      "disposition": {
+        "status": "parser_capability_or_source_boundary_review_pending",
+        "reason": "example_nested_or_damaged_translation_quotes",
+        "source_lacks_exact_passage": null,
+        "interpretation": "No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication."
+      }
+    }
+  ]
+}

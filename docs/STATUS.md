@@ -29,6 +29,13 @@ is reported by the reproduction command and is not inferred from either field.
 
 ## Corpus Structural Health
 
+A subsequent reference/assertion batch has **66 source-validated targeted gains**
+from a frozen 132-survivor census. At the user's request it was committed before
+its full replay finished. **Final replay, frozen-witness preservation and residue
+accounting are pending**; the certified totals below remain the preceding tranche.
+See the current stopping-point record in
+[data/badw_forensic_structure/README.md](../data/badw_forensic_structure/README.md).
+
 The assertion-grammar replay from **cfd770283e** projects **29,877/29,877 witnesses**.
 All **114 frozen witnesses pass**; accepted owners, source text, bibliography,
 xrefs, language, canonical Lex. and reader invariants remain intact.

@@ -292,6 +292,7 @@ def main():
     ap.add_argument('--output', type=Path, default=Path('data/badw_forensic_structure/owner_review'))
     ap.add_argument('--store', type=Path, help='Completed replay store, for final owner/disposition joins')
     ap.add_argument('--prior-review', type=Path, help='Historical review, joined only to the fresh census for reason transitions')
+    ap.add_argument('--dispositions', type=Path, help='Source-reviewed exact-span dispositions; diagnostic only')
     args = ap.parse_args()
     occurrences = collections.defaultdict(list)
     for line in gzip.open(args.census, 'rt'):
@@ -353,6 +354,16 @@ def main():
                 source_lacks_exact_passage=None,
                 interpretation='No claim of irreducibility: diagnostic source grammar still requires a validated production or source-boundary adjudication.')
         db.close()
+    if args.dispositions:
+        reviewed = {(r['identity'], r['source_span']['start'], r['source_span']['end']): r
+                    for r in map(json.loads, args.dispositions.open())}
+        assert len(reviewed) == len(records)
+        for r in records:
+            d = reviewed.pop((r['identity'], r['source_span']['start'], r['source_span']['end']))
+            assert d['text_sha256'] == r['text_sha256']
+            assert (d['status'] == 'resolved_by_source_grammar') == (r['final_ownership'] != 'unresolved')
+            r['disposition'] = d
+        assert not reviewed
     records.sort(key=lambda r: (r['identity'], r['source_span']['start']))
     with gzip.GzipFile(filename=str(args.output)+'.jsonl.gz', mode='wb', mtime=0) as gz, io.TextIOWrapper(gz, encoding='utf-8') as out:
         for r in records:
@@ -381,6 +392,11 @@ def main():
         summary['final_unresolved'] = sum(r['final_ownership']=='unresolved' for r in records)
         summary['source_genuinely_lacks_exact_passage_established'] = 0
         summary['ownership_closed'] = False
+        if args.dispositions:
+            summary['reviewed_dispositions'] = str(args.dispositions)
+            summary['reviewed_dispositions_sha256'] = hashlib.sha256(args.dispositions.read_bytes()).hexdigest()
+            summary['baseline_family_outcomes'] = [dict(baseline_reason=k[0], status=k[1], count=v)
+                for k,v in sorted(collections.Counter((r['disposition']['baseline_reason'],r['disposition']['status']) for r in records).items())]
         summary['finite_batch'] = [dict(identity=r['identity'],literal=r['literal'],context=r['context'],
             disposition=r['disposition']) for r in records if any(s in r['grammar_family'] for s in ('definition','example','balanced_comparison'))]
     Path(str(args.output)+'.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n')

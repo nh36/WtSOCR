@@ -1,0 +1,79 @@
+{
+  "baseline_commit": "0f4849f7ca",
+  "baseline_occurrences": 132,
+  "split_reference_cluster_counts": {
+    "small_cap_initial_same_baseline_or_body_wrap": 25,
+    "hyphenated_author_across_body_lines": 3,
+    "roman_page_locator_no_author_split": 1
+  },
+  "editorial_opening_cluster_counts": {
+    "form_substitution_with_quoted_definition_role_missing": 7,
+    "unparenthesized_authority_between_quoted_labels": 1,
+    "bounded_editorial_or_definition_continuation": 15,
+    "botanical_equivalence_authority_roles_missing": 2,
+    "assertion_source_form_decoding_gap": 2,
+    "form_substitution_assertion_role_missing": 2,
+    "Lex_heading_missing_delimiter": 1,
+    "grammatical_category_source_note_then_further_prose": 1,
+    "coordinated_grammatical_description_with_form_roles": 3,
+    "quoted_group_claim_then_member_list": 1,
+    "scholar_led_source_language_identification": 1,
+    "standalone_quoted_gloss_assertion_role_missing": 1
+  },
+  "policy": "Occurrence-level reviewed dispositions retain exact spans. No diagnostic cluster licenses owners.",
+  "nested_example_dispositions": [
+    {
+      "identity": "badw:https://wts-digital.badw.de/lemma/ka%20ku%20sta/1",
+      "source_span": {
+        "start": 186,
+        "end": 188
+      },
+      "text_sha256": "4f88189eab79ae1226616a710f73c63eff6dc77e7dfed97ce1b5d703960a560b",
+      "baseline_reason": "example_nested_variant_note_role_missing",
+      "reason": "example_nested_variant_note_role_missing",
+      "status": "parser_capability_missing",
+      "explanation": "Raw DOM: Tibetan example contains parenthetic source locator, colon and Tibetan variant before resuming. Exact envelope visible; nested variant-note role still missing.",
+      "source_lacks_exact_passage": null
+    },
+    {
+      "identity": "badw:pdf:badw-v4-165ccbcb686a5cdf205456fd6c669d2435e730849813c6004ad6eae7767be081:130",
+      "source_span": {
+        "start": 524,
+        "end": 535
+      },
+      "text_sha256": "699c90581eeacbcf615e2df6294f1e1012d5fe6c5504ef2d80e68b193d77dba4",
+      "baseline_reason": "example_nested_or_damaged_translation_quotes",
+      "reason": "example_comma_as_inner_quote_opener",
+      "status": "parser_capability_missing",
+      "explanation": "Facsimile confirms comma-like inner quotation opener before ja, Erhabener! with double-quote closure; source-specific nested translation grammar missing.",
+      "source_lacks_exact_passage": null
+    },
+    {
+      "identity": "badw:pdf:badw-v4-a54e2f8a39cd95d531d4b055ac70c7f1913c128de0a139fa8883764c910f7eb4:994",
+      "source_span": {
+        "start": 1271,
+        "end": 1282
+      },
+      "text_sha256": "27bc8b7bcacdab2d1f6a33a1dec8e53d4602739d976470ecbbcb5792cab01b59",
+      "baseline_reason": "example_nested_or_damaged_translation_quotes",
+      "reason": "example_repeated_closing_quote",
+      "status": "insufficient_source_boundary_evidence",
+      "explanation": "Facsimile confirms inner single quotation and repeated outer closing quotation after vorzuhalten; no unambiguous balanced translation envelope recovered.",
+      "source_lacks_exact_passage": null
+    },
+    {
+      "identity": "badw:pdf:badw-v4-bf2bd049177967fee6aba9800527ae9c3b646dc14a31621dfc4e65ae1b397d54:87",
+      "source_span": {
+        "start": 6681,
+        "end": 6693
+      },
+      "text_sha256": "54a8cbd1655dfe5b1ac7327ac79d63a5949d5d28be397ed197c00ef2158889a7",
+      "baseline_reason": "example_nested_or_damaged_translation_quotes",
+      "reason": "balanced_nested_example_translation",
+      "status": "resolved_by_source_grammar",
+      "explanation": "PDF italic expression, optional explicit metrical annotation, balanced quoted gloss and whitespace-attached citation",
+      "source_lacks_exact_passage": false
+    }
+  ],
+  "Lex_local_recovery": "All 21 reviewed local delimiter/decoding failures retained; no independently closed later assertion contains these citations."
+}

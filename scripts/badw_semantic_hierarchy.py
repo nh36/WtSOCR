@@ -39,6 +39,24 @@ def citation_family(projection, text, node):
     return 'no_structural_envelope'
 
 
+def bounded_example_quotes(quote, text):
+    """Validate nesting only inside an already established example translation.
+
+    This establishes no quotation role for free prose. Every literal delimiter,
+    including all descendants, must already be complete in the source.
+    """
+    a,b=quote['visual_start'],quote['visual_end']
+    if quote.get('diagnostics') or text[a:a+1]!='„' or text[b-1:b]!='“':
+        return False
+    previous=a
+    for child in quote.get('children',[]):
+        x,y=child['visual_start'],child['visual_end']
+        if not a<x<y<b or x<previous or not bounded_example_quotes(child,text):
+            return False
+        previous=y
+    return True
+
+
 def hierarchy(projection, text):
     identity = projection['identity']
     sha = hashlib.sha256(text.encode()).hexdigest()
@@ -216,7 +234,7 @@ def hierarchy(projection, text):
             if not cites:
                 continue
             q = quotes.get((g['start'], g['end']))
-            if not q or q.get('diagnostics') or q.get('children'):
+            if not q or q.get('diagnostics') or (q.get('children') and not bounded_example_quotes(q, text)):
                 continue
             ordered = sorted(cites, key=lambda n: n['start'])
             if (t['start'] != node['start'] or t['end'] > g['start'] or

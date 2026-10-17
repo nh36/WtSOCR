@@ -1,3 +1,82 @@
+# Reference composition and bounded assertion tranche
+
+The batch starts from clean **0f4849f7ca** and freezes all **132** current survivors.
+Targeted projections establish **66 source-validated candidate gains**: 28 split
+PDF author labels, one Roman locator, 13 HTML descriptive-sibling comparisons,
+three italic multiword reference locators, 20 bounded assertion subclauses and
+one balanced nested example translation. All 53 PDF positives were inspected in
+facsimile; all 13 HTML positives against raw DOM. Exact bindings are recorded in
+`reference_positive_review.jsonl`. Physical geometry thresholds are unchanged.
+
+**Full replay and final residue accounting are pending.** At the user's explicit
+request this substantive stopping point is committed before the replay finishes.
+The accepted corpus totals remain those of the preceding tranche until replay
+validation completes; 66 remaining owners is a targeted result, not a certified
+full-corpus total. `release/current` is untouched.
+
+The frozen census is `reference_baseline_0f4849.jsonl.gz`; its structural review is
+`reference_baseline_review.jsonl.gz`. `reference_cluster_review.json` records all
+29 reference patterns, all 37 editorial-opening cases and all four nested-example
+dispositions. `reference_dispositions.jsonl` binds every baseline occurrence to
+its exact span and source hash. The 66 targeted survivors comprise **40 missing
+semantic-role capabilities** and **26 insufficient source-boundary evidence**;
+none is declared intrinsically uncitable. The 21 damaged Lex cases remain
+unresolved without source punctuation repair.
+
+Positive and negative regression validation: **897 tests and 62 subtests passed**.
+Compilation, repository hygiene and diff whitespace checks passed before commit.
+Final frozen-witness, relationship-preservation and residue totals await the
+running replay. No broad quotation-role inference was introduced.
+
+A final focused quotation-role tranche is justified by recurring quoted-form,
+definition and nested-example roles. Begin with a fresh positive packet and
+role/typography investigation; the present diagnostic residue counts do not
+justify a generic quotation absorber. The meaningful-residue baseline remains
+**10,077** until the post-replay accounting is generated.
+
+| Targeted remaining reason | Count |
+| --- | ---: |
+| Lex_heading_missing_delimiter | 1 |
+| Lex_local_quotation_delimiter_failure | 10 |
+| Lex_local_source_parenthesis_failure | 10 |
+| Lex_source_decoding_and_quotation_failure | 1 |
+| assertion_missing_closing_quote | 1 |
+| assertion_missing_opening_quote | 1 |
+| assertion_source_form_decoding_gap | 2 |
+| botanical_equivalence_authority_roles_missing | 2 |
+| comparison_to_z_B_prose_transition_missing | 1 |
+| coordinated_grammatical_description_with_form_roles | 3 |
+| example_comma_as_inner_quote_opener | 1 |
+| example_nested_variant_note_role_missing | 1 |
+| example_repeated_closing_quote | 1 |
+| form_substitution_assertion_role_missing | 2 |
+| form_substitution_with_quoted_definition_role_missing | 7 |
+| grammatical_category_source_note_then_further_prose | 1 |
+| lexical_xref_comparison_role_missing | 1 |
+| quoted_grammatical_labels_with_multiple_authorities | 1 |
+| quoted_group_claim_then_member_list | 1 |
+| quoted_source_language_comparison_role_missing | 1 |
+| reference_s_v_headword_absent | 2 |
+| scholar_led_proposal_with_nested_form_gloss | 2 |
+| scholar_led_source_language_identification | 1 |
+| second_bibliographic_reference_observation_missing | 1 |
+| source_assertion_with_unmodeled_nested_xref | 4 |
+| source_language_comparison_with_decoded_form_gap | 4 |
+| standalone_quoted_gloss_assertion_role_missing | 1 |
+| unparenthesized_authority_between_quoted_labels | 1 |
+| xref_extent_crosses_following_comparison | 1 |
+
+After the running replay finishes, regenerate `reference_after` with
+`census_badw_passage_residue.py --store semantic.sqlite --name reference_after`,
+join `build_badw_owner_review.py` to the frozen census using `--store` and
+`--dispositions data/badw_forensic_structure/reference_dispositions.jsonl`, then
+run header/residue accounting and `verify_badw_semantic_replay.py` against
+`work/badw_forensic_structure/baseline_0f4849.sqlite`. Regenerate status only after
+these totals stabilize. Historical review files below are not the live census.
+
+
+The following sections are retained as historical tranche records.
+
 # Source-supported assertion tranche (cfd770283e baseline)
 
 The full replay projects **29,877/29,877 witnesses** and establishes **109,293
