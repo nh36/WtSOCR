@@ -1714,6 +1714,19 @@ clauses (125). A focused quotation-role investigation is warranted before
 implementation; fresh source-backed examples should establish reliable role
 boundaries. See [current census, dispositions and reproduction](../data/badw_forensic_structure/README.md).
 
+An additional local replay bundle completed after this certified tranche and
+measured 109,365 established owners / 60 unresolved and 9,309 meaningful pending
+characters (HTML 2,587 / PDF 6,722); it reported all 29,877 witnesses and all
+114 frozen witnesses successful. This bundle is not certified against the
+current checkout: manifest SHA-256
+`641c65bf3e27dcf5d0ed29a9c52541aaec4ae753f0639022ab0e21fe2ec9d06d` and semantic
+store SHA-256
+`27f69cd314cbe9d6c054621733f96a458f74f93b8b7981d51366558d70158fc1` were checked,
+but seven code-input hashes and the reviewed-annotation input hash differ from
+the current checkout. The certified figures above remain authoritative; these
+later figures are recorded as measured local results only. No replay was rerun
+to reconcile them, and `release/current` was not changed.
+
 """
 
     return f"""# WtS OCR Current Status

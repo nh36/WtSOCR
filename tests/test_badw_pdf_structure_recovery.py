@@ -269,7 +269,7 @@ def test_bracketed_initial_recovery_requires_complete_token_boundary():
         assert recover_quotations(q,t)==q
 
 
-def test_independent_facsimile_panel_distinguishes_attestation_from_definition():
+def test_independent_facsimile_panel_distinguishes_attestation_from_definition(monkeypatch, tmp_path):
     panel=json.load(gzip.open(
         'data/badw_forensic_structure/quotation_role_independent_panel.json.gz',
         'rt',encoding='utf-8'))
@@ -287,6 +287,41 @@ def test_independent_facsimile_panel_distinguishes_attestation_from_definition()
     assert 'Bez. für etwas Nutz-' in negative['literal'] and '(S\nTEIN 1956: 361)' in negative['literal']
     # The source positive already has an independently bounded example;
     # its mixed italic/Roman German quote remains a translation child.
+    # Keep this test portable: its only physical-layout dependency is a
+    # narrowly scoped, tracked copy of the exact hash-verified line geometry.
+    # Production passage_layout/page_runs still require the PDF and canonical
+    # objects; this test exercises the semantic result against frozen evidence.
+    geometry=json.loads(Path(__file__).with_name('fixtures').joinpath(
+        'badw_pdf_attestation_positive_geometry.json').read_text(encoding='utf-8'))
+    source=positive['projection']['source']['source_objects'][0]
+    assert geometry['source']['identity']==positive['identity']
+    assert geometry['source']['source_text_sha256']==positive['source_text_sha256']
+    assert geometry['source']['facsimile_pdf_sha256']==positive['facsimile_pdf_sha256']
+    assert geometry['source']['canonical_object_sha256']==source['canonical_object_sha256']
+    assert geometry['source']['source_span']==positive['source_span']
+    assert geometry['source']['literal']==positive['literal']
+    observed=positive['projection']['original_structure']['visual_lines']
+    assert [(x['line_index'],x['page_id'],x['run_start'],x['run_end_exclusive'],x['text'])
+            for x in observed]==[(x['line_index'],x['page_id'],x['run_start'],
+                                 x['run_end_exclusive'],x['text'])
+                                for x in geometry['visual_lines']]
+    # Prove the semantic test cannot accidentally fall back to a developer's
+    # ignored cache. A different projection or source object fails closed.
+    missing=tmp_path/'absent-canonical-cache'
+    monkeypatch.setattr('badw_assertion_layout.CANON',missing/'canonical_v2')
+    monkeypatch.setattr('badw_assertion_layout.CACHE',missing/'pdf-cache')
+    def portable_lines(projection):
+        candidate=projection['source']['source_objects'][0]
+        assert projection['identity']==geometry['source']['identity']
+        assert candidate['canonical_object_sha256']==geometry['source']['canonical_object_sha256']
+        assert candidate['pdf_sha256']==geometry['source']['facsimile_pdf_sha256']
+        assert [(x['line_index'],x['page_id'],x['run_start'],x['run_end_exclusive'],x['text'])
+                for x in projection['original_structure']['visual_lines']]==[
+                    (x['line_index'],x['page_id'],x['run_start'],x['run_end_exclusive'],x['text'])
+                    for x in geometry['visual_lines']]
+        return geometry['physical_lines']
+    monkeypatch.setattr('badw_assertion_layout.physical_lines',portable_lines)
+    assert not missing.exists()
     recovered=recover(positive['projection'],positive['source_text'])
     from badw_semantic_hierarchy import hierarchy
     semantic=hierarchy(recovered,positive['source_text'])

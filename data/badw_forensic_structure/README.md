@@ -1,5 +1,15 @@
 # Reference composition and bounded assertion tranche
 
+**Accounting note (2026-10-17):** The certified figures in this historical
+tranche remain 109,359 owners / 66 unresolved and 9,740 meaningful pending
+characters. A later already-completed local replay measured 109,365 / 60 and
+9,309 (HTML 2,587 / PDF 6,722), with 29,877 witnesses and 114 frozen witnesses
+reported successful. Its manifest (`641c65bf3e27dcf5d0ed29a9c52541aaec4ae753f0639022ab0e21fe2ec9d06d`)
+and semantic store (`27f69cd314cbe9d6c054621733f96a458f74f93b8b7981d51366558d70158fc1`)
+were inspected, but seven code inputs and the reviewed semantic annotation input
+do not match the current checkout. Therefore these later figures are measured,
+not certified. No corpus replay was repeated to reconcile them.
+
 The batch starts from clean **0f4849f7ca** and freezes all **132** current survivors.
 Targeted projections establish **66 source-validated candidate gains**: 28 split
 PDF author labels, one Roman locator, 13 HTML descriptive-sibling comparisons,

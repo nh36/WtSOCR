@@ -1,0 +1,425 @@
+{
+  "fixture_id": "quotation_role_positive_p246_geometry_v1",
+  "purpose": "Portable exact observation for the independent attestation-positive hierarchy test; this does not replace production PDF geometry verification.",
+  "source": {
+    "identity": "badw:pdf:badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9:711",
+    "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+    "printed_page": 246,
+    "source_text_sha256": "dc42967c8e98115e2404e5f14c6198d83519e527351d9dbed2d82cedfc7a0f74",
+    "literal": "hi bdag mdun la sleb ñin mo / gto bcos ~\nred „an dem Tag, an dem man vor den\nHerrn des Todes tritt, sind die abändern-\nden gto[-Rituale wie] eine Lampe im\nWasser“ (Gesar 175, 23)",
+    "source_span": [
+      75,
+      253
+    ],
+    "facsimile_pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+    "canonical_object": "volume_3/pages/badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9.json.gz",
+    "canonical_object_sha256": "39191b7b0b8fa4df9a37808f6b2960a1d0d8721a17165a8f64ee854d143a7bf3",
+    "canonical_observation_source_text_sha256": "c02f6d67bc39269ad0fc1dd3a889841fe83f4b834c43a496e89a97e05e1c7635",
+    "pdf_url": "https://wts-digital.badw.de/pdf/chu%20yi%20rgyan"
+  },
+  "derivation": {
+    "method": "badw_assertion_layout.physical_lines() from exact cached PDF and canonical observation; both object hashes validated before coordinate extraction.",
+    "coordinate_fields": [
+      "x",
+      "right",
+      "y",
+      "bottom",
+      "top"
+    ],
+    "run_fields": [
+      "run_start",
+      "run_end_exclusive"
+    ],
+    "note": "Coordinates and run boundaries below are copied verbatim from the hash-verified derived output; original source observations are not modified."
+  },
+  "visual_lines": [
+    {
+      "first_x": 109.8925,
+      "italic_text": "",
+      "line_index": 0,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 743,
+      "run_start": 730,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 15,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 730,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 742,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": " „eine Lampe im",
+      "unknown_glyphs": 0,
+      "y": 106.8499
+    },
+    {
+      "first_x": 102.8572,
+      "italic_text": "",
+      "line_index": 1,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 770,
+      "run_start": 743,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 29,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 743,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 769,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": "Wasser“, Bez. für etwas Nutz-",
+      "unknown_glyphs": 0,
+      "y": 105.6099
+    },
+    {
+      "first_x": 98.8005,
+      "italic_text": "",
+      "line_index": 2,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 773,
+      "run_start": 770,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 8,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 770,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 3,
+          "last_run_index": 772,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": "loses (S",
+      "unknown_glyphs": 0,
+      "y": 104.3833
+    },
+    {
+      "first_x": 92.1077,
+      "italic_text": "",
+      "line_index": 3,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 782,
+      "run_start": 773,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 16,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 773,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 780,
+          "start": 0,
+          "style": "regular"
+        },
+        {
+          "end": 17,
+          "family": "RabtenTibetan",
+          "first_glyph_index": 0,
+          "first_run_index": 781,
+          "font_id": "f28fb0f9c70072a35e172ace0a5bfe8e5da641330200edcacd0c77cd156be616",
+          "last_glyph_index": 0,
+          "last_run_index": 781,
+          "start": 16,
+          "style": "regular"
+        }
+      ],
+      "text": "TEIN 1956: 361).།",
+      "unknown_glyphs": 0,
+      "y": 75.2808
+    },
+    {
+      "first_x": 50.9816,
+      "italic_text": "’chi bdag mdun la sleb ñin mo / gto bcos ~",
+      "line_index": 4,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 807,
+      "run_start": 782,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 42,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 782,
+          "font_id": "2623d7abc83b681b17440a8608607c89a02e3f7b01d28e1a34aaedeb8fc224e8",
+          "last_glyph_index": 0,
+          "last_run_index": 806,
+          "start": 0,
+          "style": "italic"
+        }
+      ],
+      "text": "’chi bdag mdun la sleb ñin mo / gto bcos ~",
+      "unknown_glyphs": 0,
+      "y": 51.5608
+    },
+    {
+      "first_x": 71.6298,
+      "italic_text": "red",
+      "line_index": 5,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 838,
+      "run_start": 807,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 3,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 807,
+          "font_id": "2623d7abc83b681b17440a8608607c89a02e3f7b01d28e1a34aaedeb8fc224e8",
+          "last_glyph_index": 0,
+          "last_run_index": 808,
+          "start": 0,
+          "style": "italic"
+        },
+        {
+          "end": 35,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 809,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 837,
+          "start": 3,
+          "style": "regular"
+        }
+      ],
+      "text": "red „an dem Tag, an dem man vor den",
+      "unknown_glyphs": 0,
+      "y": 108.0543
+    },
+    {
+      "first_x": 71.6308,
+      "italic_text": "",
+      "line_index": 6,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 872,
+      "run_start": 838,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 41,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 838,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 871,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": "Herrn des Todes tritt, sind die abändern-",
+      "unknown_glyphs": 0,
+      "y": 106.801
+    },
+    {
+      "first_x": 71.6308,
+      "italic_text": "gto",
+      "line_index": 7,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 895,
+      "run_start": 872,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 4,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 872,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 3,
+          "last_run_index": 872,
+          "start": 0,
+          "style": "regular"
+        },
+        {
+          "end": 7,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 873,
+          "font_id": "2623d7abc83b681b17440a8608607c89a02e3f7b01d28e1a34aaedeb8fc224e8",
+          "last_glyph_index": 2,
+          "last_run_index": 873,
+          "start": 4,
+          "style": "italic"
+        },
+        {
+          "end": 35,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 874,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 0,
+          "last_run_index": 894,
+          "start": 7,
+          "style": "regular"
+        }
+      ],
+      "text": "den gto[-Rituale wie] eine Lampe im",
+      "unknown_glyphs": 0,
+      "y": 105.5877
+    },
+    {
+      "first_x": 71.6297,
+      "italic_text": "",
+      "line_index": 8,
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "run_end_exclusive": 912,
+      "run_start": 895,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 24,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 895,
+          "font_id": "fcec8e83655ed4196087fc0fe01c560d2c8cf91a8570e4498f7eefb91d4b102f",
+          "last_glyph_index": 3,
+          "last_run_index": 911,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": "Wasser“ (Gesar 175, 23).",
+      "unknown_glyphs": 0,
+      "y": 104.3344
+    }
+  ],
+  "physical_lines": [
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 192.788912,
+      "right": 290.400612,
+      "y": 106.8499,
+      "bottom": 106.8499,
+      "top": 106.8499,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 730,
+      "run_end_exclusive": 743
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 102.845415,
+      "right": 286.303147,
+      "y": 90.97976,
+      "bottom": 90.97976,
+      "top": 90.97976,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 743,
+      "run_end_exclusive": 770
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 50.982129,
+      "right": 91.99129,
+      "y": 75.28112,
+      "bottom": 75.28112,
+      "top": 75.28112,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 770,
+      "run_end_exclusive": 773
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 92.1077,
+      "right": 183.799717,
+      "y": 75.2808,
+      "bottom": 75.2808,
+      "top": 75.2808,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 773,
+      "run_end_exclusive": 782
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 50.9816,
+      "right": 286.89071,
+      "y": 51.5608,
+      "bottom": 51.5608,
+      "top": 51.5608,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 782,
+      "run_end_exclusive": 807
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 314.960578,
+      "right": 554.486451,
+      "y": 774.59286,
+      "bottom": 774.59286,
+      "top": 774.59286,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 807,
+      "run_end_exclusive": 838
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 314.973362,
+      "right": 550.334012,
+      "y": 758.5525,
+      "bottom": 758.5525,
+      "top": 758.5525,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 838,
+      "run_end_exclusive": 872
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 314.973362,
+      "right": 550.470808,
+      "y": 743.02408,
+      "bottom": 743.02408,
+      "top": 743.02408,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 872,
+      "run_end_exclusive": 895
+    },
+    {
+      "page_id": "badw-v3-96fd4c039107ba104c6b9051589a2751d64a36a4c76e765c80600391b65cdec9",
+      "printed_page": 246,
+      "x": 314.959299,
+      "right": 446.53201,
+      "y": 726.98372,
+      "bottom": 726.98372,
+      "top": 726.98372,
+      "pdf_sha256": "5a6bd75b50ff9d62cca91a60778330d163e6b222a8a5d2566c801b54d5d23e9d",
+      "run_start": 895,
+      "run_end_exclusive": 912
+    }
+  ]
+}
