@@ -89,6 +89,36 @@ def add_fragment(result, text, a, b, role, evidence, continuation=()):
                 envelope=dict(start=a,end=b,literal=text[a:b]))))
 
 
+def lexical_substitution_form(form):
+    """Recognize a complete italic substitution expression.
+
+    WTS also prints the lexical base before the substitution sign (for
+    example ``glo ba ~`` and ``kha ~``). Keep the older tilde-initial form,
+    while admitting that bounded prefix construction. The surrounding
+    semicolon, italic run, Roman gloss, and physical-continuity checks remain
+    the independent evidence for this production.
+    """
+    stripped = form.strip()
+    # Preserve the established substitution form, where the printed italic
+    # expression begins with the tilde (e.g. ``~ pa``).
+    if re.match(r'~\s*\S', stripped):
+        return True
+    # Some definition lists print the italic lexical base before a terminal
+    # tilde: ``glo ba ~``, ``kha ~``, and ``khaṅ pa’i ~``. The whole observed
+    # italic span is bounded by the existing style/layout logic; require every
+    # preceding token to be lexical and the tilde to end that span. This does
+    # not accept arbitrary prose or material after the substitution marker.
+    match = re.fullmatch(r"(.+?)\s+~", stripped, re.DOTALL)
+    if not match:
+        return False
+    tokens = match.group(1).split()
+    return bool(tokens) and all(
+        any(ch.isalpha() for ch in token)
+        and all(ch.isalpha() or ch in "’'-" for ch in token)
+        for token in tokens
+    )
+
+
 def recover_mixed_clauses(projection, text):
     if projection['source_kind'] != 'pdf': return projection
     lines, spans = style_runs(projection,text)
@@ -105,7 +135,7 @@ def recover_mixed_clauses(projection, text):
         form=text[form_start:left['end']]
         prefix=text[:form_start].rstrip()
         # Tilde marks a lexical substitution, unlike an ordinary italic example.
-        if not prefix.endswith(';') or not re.match(r'\s*~\s*\S',form): continue
+        if not prefix.endswith(';') or not lexical_substitution_form(form): continue
         if any(c in form for c in '„“↑↓') or 'UNKNOWN' in form: continue
         if not contiguous_pdf_lines(lines,left['line'],s['line']): continue
         if text[left['end']:s['start']].strip(): continue

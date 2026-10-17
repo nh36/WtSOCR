@@ -12,6 +12,17 @@ def fixture(form='~ pa', gloss='Befreiung.', prefix='Bedeutung; ', occupied=()):
     return text,p
 
 
+def wrapped_fixture():
+    first='Bedeutung; kha'
+    second='~ Gerede.'
+    text=first+'\n'+second
+    split=len(first)
+    p=dict(identity='pdf:mixed-wrapped',source_kind='pdf',nodes=[dict(id='source',kind='source_division',start=0,end=len(text),parent=None)],original_structure=dict(visual_lines=[
+        dict(text=first,page_id='p',first_x=100,y=10,style_spans=[dict(start=0,end=11,style='regular',font_id='roman'),dict(start=11,end=len(first),style='italic',font_id='italic')]),
+        dict(text=second,page_id='p',first_x=100,y=8.8,style_spans=[dict(start=0,end=1,style='italic',font_id='italic'),dict(start=1,end=len(second),style='regular',font_id='roman')])]))
+    return text,p
+
+
 def test_semicolon_form_gloss_has_exact_boundaries_and_immutable_evidence():
     text,p=fixture(gloss='Befreiung; folgende Konstruktion.')
     before=copy.deepcopy(p)
@@ -23,6 +34,38 @@ def test_semicolon_form_gloss_has_exact_boundaries_and_immutable_evidence():
     assert n['source_evidence']['form_span']['literal']=='~ pa'
     assert n['structural_recovery']['role']=='semicolon_lexical_form_gloss'
     assert recover_mixed_clauses(r,text)==r
+
+
+def test_semicolon_prefixed_lexical_substitution_with_prefix_before_tilde():
+    # These forms occur in the certified pending source queue: bcag has
+    # ``glo ba ~ traurig sein`` and rgyug has ``kha\n~ Gerede``.
+    for form, gloss in (('glo ba ~', 'traurig sein.'),):
+        text,p=fixture(form=form,gloss=gloss)
+        r=recover_mixed_clauses(p,text)
+        added=[n for n in r['nodes'] if n['kind']=='definition']
+        assert added, (form, text)
+        n=added[-1]
+        assert text[n['start']:n['end']]=='traurig sein.'
+        assert n['source_evidence']['form_span']['literal']==form
+    text,p=wrapped_fixture()
+    r=recover_mixed_clauses(p,text)
+    n=[n for n in r['nodes'] if n['kind']=='definition'][-1]
+    assert text[n['start']:n['end']]=='Gerede.'
+    assert n['source_evidence']['form_span']['literal']=='kha\n~'
+
+
+def test_prefixed_tilde_requires_semicolon_complete_form_and_roman_gloss():
+    for kwargs in (
+        dict(prefix='Bedeutung. ', form='glo ba ~', gloss='traurig sein.'),
+        dict(form='glo ba ~', gloss='traurig sein,'),
+        dict(form='glo ba ~', gloss=''),
+        dict(form='glo ba ~ ...', gloss='traurig sein.'),
+        dict(form='glo ba ~ pa', gloss='traurig sein.'),
+        dict(form='glo ba ~ „traurig', gloss='sein.'),
+        dict(form='Lex.', gloss='traurig sein.'),
+    ):
+        text,p=fixture(**kwargs)
+        assert recover_mixed_clauses(p,text)==p
 
 
 def test_ordinary_italic_examples_and_unfinished_glosses_are_not_definitions():
