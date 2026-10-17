@@ -1,21 +1,21 @@
 # Bounded-passage stopping point (dcac807f73 baseline)
 
-The current replay establishes 109,190 owners (+170), leaving 235 (83 HTML,
-152 PDF). Gains comprise 124 terminal comparison clauses, 35 nested bounded
-passages and 11 semicolon-comparison owners. Exact source text and all prior accepted relationships are retained.
+The current replay establishes 109,191 owners (+171), leaving 234 (83 HTML,
+151 PDF). Gains comprise 124 terminal comparison clauses, 35 nested bounded
+passages, 11 semicolon-comparison owners and one exact correction/example owner. Exact source text and all prior accepted relationships are retained.
 All 29,877 projections and 114 frozen witnesses pass. Citations/identities remain
 109,425 / 109,079 accepted / 346 unresolved. Meaningful residue falls only 19
 alphabetic characters, from 11,670 to 11,651 (HTML 3,766; PDF 7,885).
 
 `passage_baseline.jsonl.gz` enumerates all 405 baseline owners with punctuation,
 source components and failure context; `passage_remaining.jsonl.gz` enumerates
-the preceding 246 survivors; `passage_after_semicolon.jsonl.gz` is the current
-235-occurrence census. Summary JSON files give HTML/PDF counts by actual grammar.
+the preceding 246 survivors; `passage_after_semicolon.jsonl.gz` preserves 235.
+`passage_after_short_variant.jsonl.gz` is the current 234-occurrence census. Summary JSON files give HTML/PDF counts by actual grammar.
 Thirty-nine survivors are inside broad source Lex. nodes but lack an accepted
 canonical item/subclause; these have not been promoted by broad containment.
 
 The small example/definition cases are represented in the baseline and remaining
-census. Individual scholarly disposition of the 235 survivors remains pending.
+census. Individual scholarly disposition of the 234 survivors remains pending.
 Malformed quotation boundaries and absent explicit variant markers are retained,
 not silently repaired. The exact source-bound records are the authoritative
 occurrence-level disposition.
@@ -236,3 +236,21 @@ python3 scripts/build_status.py
 Manual review files are scholarly observations retained separately from generated
 diagnostics. Runtime code hashes describe the replay; postprocessing hashes
 describe subsequent classification/status generation.
+
+## Exact short variant correction
+
+A balanced short variant note is accepted only with an explicit `r.` or `v. l.`
+introducer, an exactly coincident source correction node, and containment in an
+existing example. No broad Lex./definition containment or proximity is used. The
+sole new corpus output is `gleb mo`, volume 2, printed page 298 (scan page 1 of
+`/pdf/glo`), inspected against the facsimile and recorded in
+`passage_positive_review.jsonl`. Its correction note is separate from the German
+translation and outer K1 citation. One owner is gained; meaningful accounting is
+unchanged. Negative tests cover absent/misaligned corrections, definition-only
+containers, malformed delimiters and already-owned citations.
+
+Reproduce the current census after the documented replay with:
+
+```sh
+python3 scripts/census_badw_passage_residue.py --work work/badw_forensic_structure --output data/badw_forensic_structure --store semantic.sqlite --name passage_after_short_variant
+```

@@ -253,3 +253,25 @@ def test_semicolon_comparison_is_independent_of_citation_end():
         assert run(invalid)==[]
     for kind in ('example','lexical','lexical_parallel','lex_block','sense'):
         assert run(text,[dict(id='conflict',kind=kind,start=text.index('AAA'),end=len(text))])==[]
+
+
+def test_short_variant_requires_exact_correction_and_example():
+    from badw_bounded_passages import nested_passages
+    text = 'bod (r. ~s, SOURCE) translation'
+    a, b = text.index('('), text.index(')') + 1
+    c = text.index('SOURCE')
+    nodes = [dict(id='example', kind='example', start=0, end=len(text)),
+             dict(id='correction', kind='correction', start=a, end=b),
+             dict(id='citation', kind='citation', start=c, end=c+6)]
+    factory = lambda k,a,b,**kw: dict(kind=k,start=a,end=b,**kw)
+    def run(ns, literal=text, assigned=None):
+        return nested_passages(ns, literal, assigned or set(), factory)
+    passage = run(nodes)[0]
+    assert (passage['start'], passage['end']) == (a,b)
+    assert passage['passage_type'] == 'variant_reading'
+    assert passage['boundary_evidence']['correction_node_id'] == 'correction'
+    assert run([nodes[0], nodes[2]]) == []
+    assert run([nodes[0], dict(nodes[1], end=b-1), nodes[2]]) == []
+    assert run([dict(nodes[0], kind='definition'), *nodes[1:]]) == []
+    assert run(nodes, text.replace(')', ' ')) == []
+    assert run(nodes, assigned={'citation'}) == []

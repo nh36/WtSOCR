@@ -46,9 +46,14 @@ def nested_passages(nodes, text, assigned, object_):
             prefix = text[start + 1:a]
             suffix = text[b:end - 1]
             substantive = re.sub(r'\W', '', prefix + suffix)
-            if len(substantive) < 4:
-                continue  # A citation's own parentheses prove no assertion.
             kinds = {n['kind'] for n in containers}
+            correction = next((n for n in nodes if n['kind'] == 'correction'
+                               and n['start'] == start and n['end'] == end), None)
+            short_variant = (opener == '(' and 'example' in kinds
+                             and correction is not None
+                             and re.match(r'\s*(?:v\.\s*l\.|r\.)\s+\S', prefix))
+            if len(substantive) < 4 and not short_variant:
+                continue  # A citation's own parentheses prove no assertion.
             if re.match(r'\s*vgl\.\s+', prefix):
                 kind = 'bounded_comparison'
             elif 'example' in kinds and re.match(r'\s*(?:v\.\s*l\.|r\.)\s+', prefix):
@@ -64,21 +69,25 @@ def nested_passages(nodes, text, assigned, object_):
             container = min(containers, key=lambda n: n['end'] - n['start'])
             senses = [n for n in containers if n['kind'] == 'sense']
             sense = min(senses, key=lambda n: n['end']-n['start'])['id'] if senses else None
-            candidates.append((end-start, start, end, kind, container, sense))
+            correction_id = correction['id'] if short_variant and len(substantive) < 4 else None
+            candidates.append((end-start, start, end, kind, container, sense, correction_id))
         if not candidates:
             continue
-        _, start, end, kind, container, sense = min(candidates, key=lambda x: x[0])
+        _, start, end, kind, container, sense, correction_id = min(candidates, key=lambda x: x[0])
         key = (start, end, kind, container['id'])
         existing = next((p for p in result if p['_key'] == key), None)
         if existing:
             existing['citation_node_ids'].append(cite['id'])
         else:
+            boundary = dict(opener=text[start], closer=text[end-1],
+                            containing_kind=container['kind'])
+            if correction_id is not None:
+                boundary['correction_node_id'] = correction_id
             result.append(object_('citable_passage', start, end,
                 passage_type=kind, containing_node_id=container['id'],
                 sense_node_id=sense, ownership='sense' if sense else 'entry',
                 evidence='balanced source enclosure, explicit local syntax and exact component containment',
-                boundary_evidence=dict(opener=text[start], closer=text[end-1],
-                                       containing_kind=container['kind']),
+                boundary_evidence=boundary,
                 citation_node_ids=[cite['id']], _key=key))
     for passage in result:
         del passage['_key']

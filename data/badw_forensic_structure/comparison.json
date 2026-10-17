@@ -10,7 +10,7 @@
     },
     "citation_owner_unresolved": {
       "baseline": 405,
-      "current": 235
+      "current": 234
     },
     "crossing_components": {
       "baseline": 1063,
@@ -96,14 +96,14 @@
   "script_sha256": "8958dd0206e3b5ef1b8ee69c922bd80a01716546eb5a0e203763e9039797f4a1",
   "store_rows": {
     "citation": 109425,
-    "citation_passage": 109177,
+    "citation_passage": 109178,
     "language_conflict": 384,
     "language_correspondence": 3003,
     "language_effective": 126152,
     "language_form": 12364,
     "language_indicator": 4314,
     "lex_item": 39688,
-    "passage": 108968,
+    "passage": 108969,
     "xref": 8336
   }
 }

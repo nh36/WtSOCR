@@ -1660,29 +1660,30 @@ is untouched.
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| Established citation owners | 109,020 | 109,190 |
-| Unresolved citation owners | 405 | 235 |
+| Established citation owners | 109,020 | 109,191 |
+| Unresolved citation owners | 405 | 234 |
 | Meaningful untyped alphabetic characters | 11,670 | 11,651 |
 | HTML pending characters | 3,766 | 3,766 |
 | PDF pending characters | 7,904 | 7,885 |
 
 New exact passages establish **124 terminal comparison owners and 35 nested
 parenthetical/quotation owners**, followed by **11 semicolon-comparison owners**
-(10 passages). Rules require existing structural containment,
+(10 passages), and **one facsimile-reviewed exact correction/example owner**.
+Rules require existing structural containment,
 explicit markers, balanced delimiters and hard boundary checks. They do not attach
 citations to preceding prose by distance. Existing owners are preserved.
 Only **19 alphabetic characters** gain structural accounting; passage ownership
 and lexical accounting are separate measurements.
 
-The **235 remaining owners (83 HTML / 152 PDF)** have exact source-bound census
+The **234 remaining owners (83 HTML / 151 PDF)** have exact source-bound census
 records. Families are: comparison without accepted enclosure 88; broad Lex. source
 nodes without an accepted item/subclause 39; unbounded/missing component 91;
 definition source nodes 9; example source nodes 4; balanced comparison candidates
-3; variant-reading candidate 1. Diagnostic containment is not accepted ownership.
+3. Diagnostic containment is not accepted ownership.
 The small example/definition cases are retained in the checked-in passage census;
-individual scholarly disposition of the 235 survivors remains pending.
-The frozen `passage_remaining` census has 246; `passage_after_semicolon` is the
-current occurrence-level census. Eleven definition-contained citations acquired
+individual scholarly disposition of the 234 survivors remains pending.
+The frozen `passage_remaining` census has 246; `passage_after_semicolon` has 235.
+`passage_after_short_variant` is the current 234-occurrence census. Eleven definition-contained citations acquired
 bounded comparison subpassages; the broad diagnostic comparison family is unchanged.
 
 Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**.

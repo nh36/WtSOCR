@@ -569,9 +569,9 @@
     "classification": "measured_contract_state",
     "distribution": {
       "html": 83,
-      "pdf": 152
+      "pdf": 151
     },
-    "entries": 170,
+    "entries": 169,
     "examples": [
       {
         "details": {
@@ -672,7 +672,7 @@
     ],
     "family": "citation_owner_unresolved",
     "layer": "model",
-    "occurrences": 235,
+    "occurrences": 234,
     "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
     "severity": "high"
   },
