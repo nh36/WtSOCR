@@ -151,3 +151,73 @@ untouched. The previously recorded GitHub Actions result for `3e441902` remains
 workflow remains 69 differences. These are separate from this parser diagnosis
 and should not be hidden by changing historical expectations or the locked
 release.
+
+## Bounded implementation and replay result
+
+The implementation below supersedes the proposed next-step status above; the
+earlier diagnosis and plan are retained as the historical investigation record.
+The seven source observations are frozen in
+`quotation_role_regression_sources.json.gz`, and the independent controls are
+in `quotation_role_independent_panel.json.gz`. Tests verify the original
+decoded-text hashes, citation spans and literal readings before replaying the
+PDF recovery and semantic hierarchy.
+
+The fallback now reconstructs the complete substitution form from its exact
+decoded source interval and observed PDF runs. It accepts bracketed initials
+whose bracket and Tibetan letters occupy different glyph/font runs, but it
+requires a complete bracket pair, transliteration-shaped form through the
+printed tilde, a source-line or punctuation start, and run coverage of the
+whole reconstructed span. It retains line-continuity checks and rejects any
+overlap with an existing semantic component other than the enclosing sense or
+source division. This fixes the five split-bracket failures and prevents the
+`44` form from reaching backward across the accepted Sanskrit/definition
+component. The component-overlap guard itself is unchanged.
+
+Within an already balanced, physically continuous German quotation, italic
+runs are now permitted only as internal token-sized source-language material
+with transliteration evidence or an exact matching italic source-form token
+elsewhere in the observation. Roman translation text must occur on both sides
+of such a token. Arbitrary italic German words, unbalanced quotes, intervening
+components, citation attachment failures and broken physical continuity remain
+rejected. Tibetan form, German translation and citation remain separate child
+structures, and the exact original citation span and bibliography identity are
+preserved.
+
+The full-form case `849` remains unresolved. It does not pass through the
+substitution production, and this tranche adds no generic full-form quote
+recognizer. The case does not yet have an independently validated start
+production that separates the printed form from its neighboring definition.
+The 21 damaged Lex delimiter/decoding cases were not changed.
+
+The source-backed target tests resolve six of seven citations: `1780`, `707`,
+`1482`, `44`, `1490` and `380`. `849` remains unresolved. The independent
+panel retains the three previously facsimile-verified controls and adds a
+separate page-246 mixed-style attestation with its adjacent quoted editorial
+definition as a negative. Synthetic tests exercise multi-run bracket coverage,
+unmatched and embedded bracket rejection, and the italic-token guard. This
+panel is deliberately small; it validates the specific production correction
+but does not establish broad recall across every typography or example type.
+
+The isolated full replay projected 29,877 witnesses. Citation ownership rose
+from 109,359 to 109,365, leaving 60 unresolved (16 HTML, 44 PDF). All 114
+frozen witnesses passed. The 109,035 previously established passage-owner
+relationships in the replay comparison retained their support and sense
+relationships; the six new records add only their source-backed example
+ownership and corresponding Tibetan language-form observations. Bibliography
+identity totals remain 109,079 accepted and 346 unresolved; Lex items remain
+39,688; resolved cross-references remain 7,484, with 852 unresolved. Reader
+integrity reported no failures, and `release/current` was untouched.
+
+The regenerated residue classifier reports 9,309 meaningful pending alphabetic
+characters, a net reduction of 431 from the certified 9,740 baseline. The
+reduction is concentrated in the PDF quotation/gloss family (815 to 409) and
+PDF alias/list family (636 to 611); the classifier also reclassifies material
+across families, so these are family counts rather than a claim that all 431
+characters are precisely the newly recovered Tibetan forms. HTML pending
+heading material remains 2,295. The six citations are ownership gains; residue
+is reported separately.
+
+The targeted PDF structure recovery tests pass (24 tests). The full replay and
+all 114 frozen witnesses pass. Known external CI results remain the historical
+1,417 passed / 13 recurring failures, with 69 release-reproduction differences;
+this tranche does not alter those expectations or the locked release.

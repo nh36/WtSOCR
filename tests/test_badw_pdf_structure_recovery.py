@@ -1,7 +1,9 @@
 import copy
+import gzip
+import json
 import hashlib
-import sys
 from pathlib import Path
+import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 from badw_pdf_structure_recovery import recover
 
@@ -188,6 +190,167 @@ def test_multiline_quote_requires_continuous_column_geometry():
     assert any(n['kind']=='translation' for n in recover_quotations(p,text)['nodes'])
     p['original_structure']['visual_lines'][1]['first_x']=350
     assert recover_quotations(p,text)==p
+
+
+def test_frozen_quotation_role_occurrences_recover_only_source_bounded_examples():
+    """Replay the seven cached observations that exposed the role-gate bug."""
+    fixture=Path('data/badw_forensic_structure/quotation_role_regression_sources.json.gz')
+    cases=json.load(gzip.open(fixture,'rt',encoding='utf-8'))['cases']
+    assert {str(c['suffix']) for c in cases}=={'1780','849','707','1482','44','1490','380'}
+    expected={'1780','707','1482','44','1490','380'}
+    for case in cases:
+        text=case['source_text']; p=case['projection']
+        assert hashlib.sha256(text.encode()).hexdigest()==case['source_text_sha256']
+        assert p['identity']==case['identity']
+        citation=next(n for n in p['nodes'] if n['kind']=='citation'
+                      and (n['start'],n['end'])==tuple(case['citation_span']))
+        assert text[citation['start']:citation['end']]==case['citation_literal']
+        recovered=recover_quotations(p,text)
+        examples=[n for n in recovered['nodes'] if n['kind']=='example'
+                  and n.get('structural_recovery',{}).get('rule')=='pdf-bounded-quotation-v1']
+        if str(case['suffix']) not in expected:
+            # 849 is a complete form, not a tilde substitution. This
+            # production must not claim it merely because a quotation follows.
+            assert not examples
+            assert citation.get('parent')==next(n for n in p['nodes'] if n['id']==citation['id']).get('parent')
+            continue
+        assert len(examples)==1, case['suffix']
+        example=examples[0]
+        assert example['end']==citation['end']
+        assert text[example['start']:example['end']].endswith(case['citation_literal'])
+        updated_citation=next(n for n in recovered['nodes'] if n['id']==citation['id'])
+        assert updated_citation['parent']==example['id']
+        translation=next(n for n in recovered['nodes'] if n['kind']=='translation'
+                         and n.get('parent')==example['id'])
+        assert text[translation['start']:translation['end']].startswith('„')
+        assert text[translation['start']:translation['end']].endswith('“')
+        assert translation['end']<=citation['start']
+        # The reconstructed example may not cross any pre-existing semantic
+        # component other than its containing sense/source division.
+        for node in p['nodes']:
+            if node['kind'] not in ('source_division','sense','citation'):
+                assert not (node['start']<example['end'] and example['start']<node['end']), case['suffix']
+        from badw_semantic_hierarchy import hierarchy
+        semantic=hierarchy(recovered,text)
+        ownership=next((o for o in semantic['citation_ownership']
+                        if o['citation_node_id']==citation['id']),None)
+        assert (ownership is not None)==(str(case['suffix']) in expected),case['suffix']
+        if ownership:
+            assert ownership['evidence_class']=='PDF_example_quotation'
+            assert ownership['passage_id']
+            assert ownership['sense_node_id'] is None or any(
+                n['id']==ownership['sense_node_id'] and n['kind']=='sense'
+                for n in recovered['nodes'])
+
+
+def test_bracketed_initial_recovery_requires_complete_token_boundary():
+    # Multiple glyph runs are legitimate, but a bracket fragment embedded
+    # in preceding prose and an unmatched bracket are not complete forms.
+    text='[l]ab gleṅ ~ „eine Form“ (Dagy).'
+    a=text.index('„'); c=text.index('(Dagy)')
+    p=dict(identity='pdf:bracket-runs',source_kind='pdf',nodes=[
+        dict(id='source',kind='source_division',start=0,end=len(text),parent=None),
+        dict(id='cite',kind='citation',start=c,end=c+6,parent='source')],
+        original_structure=dict(visual_lines=[dict(text=text,page_id='p1',first_x=100,y=10,
+            style_spans=[dict(start=0,end=1,style='regular'),dict(start=1,end=2,style='italic'),
+                         dict(start=2,end=3,style='regular'),dict(start=3,end=7,style='italic'),
+                         dict(start=7,end=a-1,style='italic'),dict(start=a-1,end=len(text),style='regular')])]))
+    r=recover_quotations(p,text)
+    ex=next(n for n in r['nodes'] if n['kind']=='example')
+    assert text[ex['start']:ex['start']+5]=='[l]ab'
+    for bad in ('prefix[l]ab gleṅ ~ „eine Form“ (Dagy).',
+                '[l ab gleṅ ~ „eine Form“ (Dagy).'):
+        t=bad; qa=t.index('„'); qc=t.index('(Dagy)')
+        q=dict(identity='pdf:bad-bracket',source_kind='pdf',nodes=[
+            dict(id='source',kind='source_division',start=0,end=len(t),parent=None),
+            dict(id='cite',kind='citation',start=qc,end=qc+6,parent='source')],
+            original_structure=dict(visual_lines=[dict(text=t,page_id='p1',first_x=100,y=10,
+                style_spans=[dict(start=0,end=qa-1,style='italic'),dict(start=qa-1,end=len(t),style='regular')])]))
+        assert recover_quotations(q,t)==q
+
+
+def test_independent_facsimile_panel_distinguishes_attestation_from_definition():
+    panel=json.load(gzip.open(
+        'data/badw_forensic_structure/quotation_role_independent_panel.json.gz',
+        'rt',encoding='utf-8'))
+    assert {c['label'] for c in panel['cases']}=={
+        'textual_attestation_positive','editorial_quoted_definition_negative',
+        'previously_facsimile_verified_positive_control'}
+    positive=next(c for c in panel['cases'] if c['label']=='textual_attestation_positive')
+    negative=next(c for c in panel['cases'] if c['label']=='editorial_quoted_definition_negative')
+    for case in panel['cases']:
+        assert hashlib.sha256(case['source_text'].encode()).hexdigest()==case['source_text_sha256']
+        a,b=case['source_span']
+        assert case['source_text'][a:b]==case['literal']
+        assert case['printed_page'] and case['facsimile_pdf_sha256']
+    assert 'gto bcos ~' in positive['literal'] and '(Gesar 175, 23)' in positive['literal']
+    assert 'Bez. für etwas Nutz-' in negative['literal'] and '(S\nTEIN 1956: 361)' in negative['literal']
+    # The source positive already has an independently bounded example;
+    # its mixed italic/Roman German quote remains a translation child.
+    recovered=recover(positive['projection'],positive['source_text'])
+    from badw_semantic_hierarchy import hierarchy
+    semantic=hierarchy(recovered,positive['source_text'])
+    citation=next(n for n in recovered['nodes'] if n['kind']=='citation'
+                  and n['start']>=positive['source_span'][0]
+                  and n['end']<=positive['source_span'][1])
+    owner=next(o for o in semantic['citation_ownership']
+               if o['citation_node_id']==citation['id'])
+    assert owner['evidence_class']=='PDF_example_quotation'
+    translations=[n for n in recovered['nodes'] if n['kind']=='translation'
+                  and 'gto[-Rituale wie]' in positive['source_text'][n['start']:n['end']]]
+    assert len(translations)==1
+    assert translations[0]['start']>=positive['source_span'][0]
+    assert translations[0]['end']<citation['start']
+    # Use the independently captured full observation for the negative too;
+    # the existing adjacent attestation is a hard semantic boundary.
+    negative_projection=negative['projection']
+    before=copy.deepcopy(negative_projection['nodes'])
+    result=recover_quotations(negative_projection,negative['source_text'])
+    assert result['nodes']==before
+
+
+def test_existing_facsimile_positive_controls_keep_example_translation_and_citation():
+    panel=json.load(gzip.open(
+        'data/badw_forensic_structure/quotation_role_independent_panel.json.gz',
+        'rt',encoding='utf-8'))
+    controls=[c for c in panel['cases']
+              if c['label']=='previously_facsimile_verified_positive_control']
+    assert len(controls)==3
+    from badw_semantic_hierarchy import hierarchy
+    for case in controls:
+        text=case['source_text']; a,b=case['source_span']
+        assert hashlib.sha256(text.encode()).hexdigest()==case['source_text_sha256']
+        assert text[a:b]==case['literal']
+        cite=next(n for n in case['projection']['nodes'] if n['kind']=='citation'
+                  and (n['start'],n['end'])==tuple(case['citation_span']))
+        assert text[cite['start']:cite['end']]==case['citation_literal']
+        recovered=recover(case['projection'],text)
+        semantic=hierarchy(recovered,text)
+        owner=next(o for o in semantic['citation_ownership']
+                   if o['citation_node_id']==cite['id'])
+        examples=[n for n in recovered['nodes'] if n['kind']=='example'
+                  and n['start']<=cite['start']<n['end']]
+        assert len(examples)==1
+        example=examples[0]
+        assert example['kind']=='example'
+        translation=next(n for n in recovered['nodes'] if n['kind']=='translation'
+                         and n.get('parent')==example['id']
+                         and n['start']>=a and n['end']<=cite['start'])
+        assert text[translation['start']:translation['end']].startswith('„')
+        assert text[translation['start']:translation['end']].endswith('“')
+
+
+def test_internal_italics_require_source_language_token_evidence():
+    from badw_pdf_quotation_recovery import translation_italics_are_lexical
+    text='gto „eine Lampe im gto-Rituale wie Wasser“'
+    a=text.index('„'); b=text.index('“')+1
+    external=dict(start=0,end=3,style='italic')
+    internal=dict(start=text.rindex('gto'),end=text.rindex('gto')+3,style='italic')
+    assert translation_italics_are_lexical([internal],[external,internal],text,a,b)
+    for token in ('schön','Lampe'):
+        t=f'„eine {token} wie Wasser“'; x=t.index('„'); y=t.index('“')+1
+        italic=[dict(start=t.index(token),end=t.index(token)+len(token),style='italic')]
+        assert not translation_italics_are_lexical(italic,italic,t,x,y)
 
 
 def test_recovered_definition_rejects_decoding_placeholders():
