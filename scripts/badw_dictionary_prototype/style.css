@@ -1,32 +1,28 @@
-:root{color-scheme:light}
-body{margin:0;background:#faf8f2;color:#28251f;font-family:Georgia,serif;line-height:1.65}
-header{padding:1.3rem 2rem;border-bottom:1px solid #ddd6c9}
-header h1{font-size:1.45rem;margin:0}
-header p{font-size:.85rem;color:#625e55;margin:.3rem 0}
-main{display:grid;grid-template-columns:17rem minmax(0,1fr);max-width:1100px;margin:auto}
-nav{padding:1.5rem;border-right:1px solid #ddd6c9}
-input{box-sizing:border-box;width:100%;padding:.5rem;font:inherit}
-#entries{max-height:75vh;overflow:auto}
-#entries a{display:block;padding:.2rem}
-article{padding:2rem 3rem}
-h2{font-size:2rem;margin:0}
-.heading-tibetan{margin:0 0 1.5rem}
-.reading{white-space:normal;overflow-wrap:anywhere;font-size:1.1rem;line-height:1.5}
-.lang-bo{font-style:italic;color:#274451}
-.lang-sa{font-style:italic;color:#684123}
-.lexical{font-size:.98em}
-a{color:#35546c;text-decoration:none}
-a:hover{text-decoration:underline}
-.citation{font-variant:small-caps}
-.unresolved{text-decoration:underline dotted #aaa;text-underline-offset:4px}
-details{margin-top:1.5rem;font-size:.9rem}
-summary{cursor:pointer;color:#625e55}
-pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 monospace}
-.bibliography{border-top:1px solid #ddd6c9;padding-top:1rem}
-.note{color:#736b5e}
-.dictionary-block{margin:.25rem 0}
-.dictionary-block.sense,.dictionary-block.source_division{margin-top:1rem}
-.dictionary-block.example{margin-top:.4rem}
-.dictionary-block.lexical_parallel{margin-top:.25rem}
-.dictionary-block.lexical_section{margin-top:.65rem;margin-bottom:0}
-@media(max-width:700px){main{grid-template-columns:1fr}nav{border-right:0}#entries{max-height:12rem}article{padding:1.5rem}}
+:root{color-scheme:light;--paper:#faf8f2;--ink:#28251f;--muted:#625e55;--line:#ddd6c9;--link:#35546c;--accent:#9a642b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Noto Serif",serif;line-height:1.72}
+header{padding:1.2rem max(1.25rem,calc((100vw - 1180px)/2));border-bottom:1px solid var(--line);background:#f5f1e8}
+header h1{font-size:1.45rem;letter-spacing:.01em;margin:0}header p{font: .84rem/1.5 system-ui,sans-serif;color:var(--muted);margin:.25rem 0 0}
+main{display:grid;grid-template-columns:17rem minmax(0,1fr);max-width:1180px;margin:auto;min-height:calc(100vh - 90px)}
+nav{padding:1.35rem;border-right:1px solid var(--line);font: .92rem/1.5 system-ui,sans-serif}
+label{display:block;font-weight:600;margin-bottom:.35rem}input{width:100%;padding:.62rem .7rem;border:1px solid #aaa294;border-radius:4px;background:#fff;font:inherit}
+#entries{max-height:76vh;overflow:auto;margin-top:.75rem}#entries a{display:block;padding:.34rem .4rem;border-radius:3px;color:var(--ink);text-decoration:none}#entries a:hover,#entries a:focus-visible{background:#eee8dc;text-decoration:underline}
+#count{color:var(--muted);font-size:.8rem;margin:.55rem 0}
+article{min-width:0;padding:2.1rem clamp(1.2rem,5vw,4.2rem)}
+h2{font-size:clamp(1.7rem,3vw,2.25rem);font-weight:500;line-height:1.2;margin:0;letter-spacing:.01em}
+.heading-tibetan{font-size:1.75rem;line-height:1.5;margin:.18rem 0 1.45rem;color:#344b51}
+.reading{max-width:48rem;overflow-wrap:anywhere;font-size:1.08rem;line-height:1.85}
+.dictionary-block{margin:.5rem 0}.dictionary-block.sense,.dictionary-block.source_division{margin-top:1.25rem;padding-top:.45rem;border-top:1px solid #e7e1d6}
+.dictionary-block.example{margin:.7rem 0 .8rem 1rem;padding-left:1rem;border-left:2px solid #d4c4a8;color:#48443d}
+.dictionary-block.lexical_section{font: .84rem/1.5 system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:1.1rem 0 .2rem}
+.dictionary-block.lexical_parallel{font-size:1rem}.lang-bo{font-style:italic;color:#274451}.lang-sa{font-style:italic;color:#684123}.lexical{font-size:.97em}
+a{color:var(--link)}.citation{appearance:none;border:0;background:transparent;padding:0;color:#704c23;font:inherit;font-variant:small-caps;text-decoration:underline dotted #b79b77;text-underline-offset:3px;cursor:pointer}
+.citation:hover,.citation:focus-visible{color:#352714;text-decoration-style:solid;background:#f0eadf}.citation:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #65849a;outline-offset:2px}
+details{margin-top:1.5rem;font-size:.9rem}summary{cursor:pointer;color:var(--muted)}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 monospace}
+.note,.detail-status{color:#736b5e}.inspection{max-width:48rem;border-top:1px solid var(--line);padding-top:.5rem}
+dialog{width:min(42rem,calc(100vw - 1.25rem));max-height:min(82vh,48rem);padding:0;border:1px solid #b8ad9d;border-radius:8px;background:var(--paper);color:var(--ink);box-shadow:0 18px 60px #211c1638}
+dialog::backdrop{background:#1e211f80}.dialog-bar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);background:#f5f1e8;font:600 .9rem/1.4 system-ui,sans-serif}
+.dialog-bar button{border:1px solid #aaa294;border-radius:4px;background:white;padding:.45rem .7rem;font:inherit;cursor:pointer}#citation-detail-content{padding:.3rem 1.25rem 1.35rem}
+#citation-detail-content h2{font-size:1.25rem;margin:.8rem 0 1rem;overflow-wrap:anywhere}#citation-detail-content h3{font:600 .76rem/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:1.2rem 0 .35rem}
+#citation-detail-content h4{font-size:1.05rem;margin:.75rem 0 .2rem}#citation-detail-content p{margin:.35rem 0}.citation-occurrence blockquote{margin:.5rem 0;padding:.65rem .8rem;border-left:3px solid #c7b18e;background:#f3efe6;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:700px){main{grid-template-columns:1fr}nav{border-right:0;border-bottom:1px solid var(--line);padding:1rem 1.2rem}#entries{max-height:10rem}article{padding:1.3rem 1.1rem}.reading{font-size:1.03rem;line-height:1.8}dialog{max-height:88vh}}
