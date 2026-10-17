@@ -13,7 +13,7 @@
     {
       "source_kind": "html",
       "family": "quotation_or_gloss_candidate",
-      "count": 608
+      "count": 202
     },
     {
       "source_kind": "html",
@@ -28,12 +28,12 @@
     {
       "source_kind": "html",
       "family": "shared_or_composite_heading_syntax",
-      "count": 973
+      "count": 912
     },
     {
       "source_kind": "html",
       "family": "unregistered_heading_wording",
-      "count": 1179
+      "count": 1099
     },
     {
       "source_kind": "pdf",
@@ -78,7 +78,7 @@
     {
       "source_kind": "pdf",
       "family": "reference_clause_candidate",
-      "count": 157
+      "count": 125
     },
     {
       "source_kind": "pdf",
@@ -100,12 +100,12 @@
     {
       "source_kind": "html",
       "family": "entry_prose_without_bounded_passage",
-      "count": 30
+      "count": 15
     },
     {
       "source_kind": "html",
       "family": "no_structural_envelope",
-      "count": 52
+      "count": 34
     },
     {
       "source_kind": "pdf",
@@ -120,7 +120,7 @@
     {
       "source_kind": "pdf",
       "family": "entry_prose_without_bounded_passage",
-      "count": 120
+      "count": 111
     },
     {
       "source_kind": "pdf",
@@ -130,7 +130,7 @@
     {
       "source_kind": "pdf",
       "family": "sense_prose_without_bounded_passage",
-      "count": 19
+      "count": 18
     }
   ],
   "pending_alphabetic_families": [
@@ -147,12 +147,12 @@
     {
       "source_kind": "html",
       "family": "other_heading_source_text",
-      "count": 2793
+      "count": 2652
     },
     {
       "source_kind": "html",
       "family": "quotation_or_gloss_candidate",
-      "count": 608
+      "count": 202
     },
     {
       "source_kind": "html",
@@ -182,7 +182,7 @@
     {
       "source_kind": "pdf",
       "family": "reference_clause_candidate",
-      "count": 157
+      "count": 125
     }
   ],
   "unknown_glyph_signatures": {

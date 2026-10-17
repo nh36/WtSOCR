@@ -10,7 +10,7 @@ from badw_source_components import lexical_clauses, terminal_lexical_citation
 from badw_header_structure import header_fields
 from badw_bounded_passages import nested_passages, terminal_comparisons, semicolon_comparisons
 
-VERSION = 'badw-semantic-hierarchy-v3'
+VERSION = 'badw-semantic-hierarchy-v4'
 
 
 def citation_family(projection, text, node):
@@ -194,6 +194,8 @@ def hierarchy(projection, text):
     # whitespace-only attachment, citation, and no crossing sense boundary.
     # Candidate citation_of edges alone are deliberately insufficient.
     assigned = {cid for p in passages for cid in p['citation_node_ids']}
+    from badw_lex_assertions import lex_assertions
+    passages.extend(lex_assertions(projection, text, items, assigned, object_))
     if not html:
         quotes = {(q['visual_start'], q['visual_end']): q for q in
                   structure.get('candidates', {}).get('german_quotes', [])}
@@ -283,6 +285,10 @@ def hierarchy(projection, text):
     assigned.update(c for p in nested for c in p['citation_node_ids'])
     passages.extend(terminal_comparisons(nodes, text, assigned, object_))
     passages.extend(semicolon_comparisons(nodes, text, assigned, object_))
+    from badw_header_assertions import header_assertions
+    passages.extend(header_assertions(projection, text, assigned, object_))
+    from badw_comparison_clauses import comparison_clauses
+    passages.extend(comparison_clauses(projection, text, assigned, object_))
     for node in nodes:
         if node['kind'] != 'citation':
             continue
@@ -292,7 +298,7 @@ def hierarchy(projection, text):
             owners.append(dict(citation_node_id=node['id'], passage_id=p['id'],
                                sense_node_id=p['sense_node_id'], ownership=p['ownership'],
                                evidence=p['evidence'], evidence_class=(
-                                   'Lex_containment' if p['passage_type']=='lex_item' else
+                                   'Lex_containment' if p['passage_type'] in ('lex_item', 'lex_assertion') else
                                    'explicit_HTML_attestation' if html and p['passage_type']=='example' else
                                    'PDF_example_quotation' if p['passage_type']=='example' else
                                    'definition_comparison_clause'), status='derived_source_structure'))

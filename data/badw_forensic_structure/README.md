@@ -1,24 +1,81 @@
-# Bounded-passage stopping point (dcac807f73 baseline)
+# Source-bounded ownership grammar tranche (e26c885e06 baseline)
 
-The current replay establishes 109,191 owners (+171), leaving 234 (83 HTML,
-151 PDF). Gains comprise 124 terminal comparison clauses, 35 nested bounded
-passages, 11 semicolon-comparison owners and one exact correction/example owner. Exact source text and all prior accepted relationships are retained.
-All 29,877 projections and 114 frozen witnesses pass. Citations/identities remain
-109,425 / 109,079 accepted / 346 unresolved. Meaningful residue falls only 19
-alphabetic characters, from 11,670 to 11,651 (HTML 3,766; PDF 7,885).
+The full replay projects **29,877/29,877 witnesses**, establishing **109,234
+citation owners** and leaving **191 unresolved** (50 HTML / 141 PDF). The 43 new
+owners comprise 18 Lex assertion owners, 18 HTML heading assertion owners, four
+PDF punctuated comparison-list owners and three balanced-comparison owners.
+Citations remain 109,425; bibliography identities remain 109,079 accepted / 346
+unresolved. `release/current` is untouched.
 
-`passage_baseline.jsonl.gz` enumerates all 405 baseline owners with punctuation,
-source components and failure context; `passage_remaining.jsonl.gz` enumerates
-the preceding 246 survivors; `passage_after_semicolon.jsonl.gz` preserves 235.
-`passage_after_short_variant.jsonl.gz` is the current 234-occurrence census. Summary JSON files give HTML/PDF counts by actual grammar.
-Thirty-nine survivors are inside broad source Lex. nodes but lack an accepted
-canonical item/subclause; these have not been promoted by broad containment.
+Meaningful untyped alphabetic residue falls **579 characters**, from **11,651 to
+11,072** (HTML 3,219; PDF 7,853). Raw alphabetic gaps remain 131,068: 43,049 typed,
+66,331 structural labels, 10,616 decoding-placeholder syntax and 11,072 pending.
+Ownership and lexical accounting are separate measurements.
 
-The small example/definition cases are represented in the baseline and remaining
-census. Individual scholarly disposition of the 234 survivors remains pending.
-Malformed quotation boundaries and absent explicit variant markers are retained,
-not silently repaired. The exact source-bound records are the authoritative
-occurrence-level disposition.
+## Complete occurrence census and batch disposition
+
+`owner_review.jsonl.gz` contains all 234 baseline survivors, including source
+identity/headword, exact citation and local context, bibliography status, source
+and canonical nodes, punctuation/enclosures, markers, DOM or PDF styles/geometry,
+Lex subclause diagnostics, proposed grammar and final disposition.
+`owner_review.json` gives all 24 structural clusters, representative contexts,
+the entire 16-occurrence finite-family packet and the final reason counts.
+The frozen `passage_after_short_variant.jsonl.gz` is the 234-occurrence input,
+not the current survivor count. Earlier passage censuses remain historical.
+
+The Lex grammar recovers locally balanced semicolon assertions after a damaged
+preceding item, requiring an explicit equivalence/gloss production and a terminal
+source enclosure. It preserves canonical Lex items and delimiter diagnostics.
+Heading assertions require the HTML lemma-heading DOM envelope and a complete
+gloss or narrow grammatical-label production. PDF comparison lists require an
+explicit marker, independent terminal punctuation, accepted semantic containment,
+continuous layout and a reference-list grammar. Balanced short comparisons retain
+the explicit comparison marker requirement. Citations acquire owners only through
+exact containment in these recovered passages. No broad Lex ownership, proximity,
+bibliography-derived boundary or generic prose envelope is introduced.
+
+All 43 gains were source-validated: 33 HTML occurrences against raw DOM and all
+ten PDF occurrences across nine facsimiles. Exact spans, productions, source
+bindings and decisions are in `owner_grammar_positive_review.jsonl`. No false
+owners were observed. Raw HTML, PDFs and rendered pages remain ignored in `work/`.
+Positive and negative tests cover the production and rejection boundaries.
+
+The 191 survivors remain **parser capability or boundary review pending**;
+**zero are proven to lack an exact citable passage**. Ownership is not closed.
+The largest precise reason groups are parenthetical source prose without a
+canonical clause (47), PDF comparison layout continuity not established (36),
+source-language/etymological statements (30), heading grammatical assertions (21),
+missing comparison scope (13), and damaged Lex quotation/source delimiters (21).
+The layout label records a failed conservative guard, not proven source damage.
+The remaining 23 have the finer boundary/role reasons in the machine-readable
+census. All 88 original failed comparisons and 91 unbounded cases are classified;
+negative classification is not a scholarly finding that ownership is impossible.
+
+The largest coherent remaining residue family is PDF quotation-adjacent unbounded
+fragments (**2,108 alphabetic characters**), followed by reference/comparison
+continuations (1,539) and lexical-substitution clauses (1,092). The next parser
+tranche should recover quotation/gloss roles and nested source-note boundaries,
+using the structural clusters to select source validation.
+
+## Reproduction
+
+Use the acquired immutable witness projections and a semantic-store snapshot of
+clean `e26c885e06` in ignored storage. Run one full projection after the grammar
+tranche stabilizes; the census itself can be regenerated without a full replay.
+
+```bash
+python3 scripts/finalize_badw_corpus_structure.py --output data/badw_forensic_structure --work work/badw_forensic_structure --contextual-semantics --baseline-store work/badw_forensic_structure/baseline_e26.sqlite --baseline-commit e26c885e06 --holdout-manifest data/badw_contextual_semantics/holdout.json --citation-reviews data/bibliography_forensic_citation_reviews.tsv
+python3 scripts/build_badw_owner_review.py --store work/badw_forensic_structure/semantic.sqlite
+python3 scripts/classify_badw_header_accounting.py --work work/badw_forensic_structure --output data/badw_forensic_structure
+python3 scripts/classify_badw_forensic_residue.py
+python3 scripts/verify_badw_semantic_replay.py --output data/badw_forensic_structure --work work/badw_forensic_structure --baseline data/badw_semantic_residue --baseline-store work/badw_forensic_structure/baseline_e26.sqlite --refine-boundaries
+python3 scripts/build_status.py
+```
+
+## Historical provenance
+
+The sections below preserve earlier tranches and their then-current counts.
+They do not describe the current 191 survivors.
 
 ## Fresh positive source validation
 

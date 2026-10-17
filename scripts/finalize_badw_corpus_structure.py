@@ -14,6 +14,7 @@ from badw_semantic_annotations import validate, apply_validated_annotations, PAC
 from resolve_badw_cross_references import EntryIndex
 from badw_bibliography import AuthorityResolver
 from badw_bibliography_aliases import load_reviews
+from badw_semantic_hierarchy import VERSION as SEMANTIC_VERSION
 
 OUT=Path('data/badw_corpus_structure'); WORK=Path('work/badw_corpus_structure')
 BIB=Path('work/wts_apparatus_20261010/ingested_completed')
@@ -330,7 +331,7 @@ def main():
     for evidence in (args.citation_reviews,Path('data/bibliography_external_publications.tsv')):
         if evidence:manifest['integration_inputs_sha256'][str(evidence)]=file_hash(evidence)
     manifest['outputs_sha256']={str(p):file_hash(p) for p in sorted(OUT.glob('*')) if p.name not in ('manifest.json','anomalies.jsonl')}
-    for code in (Path(__file__),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_bounded_passages.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py'),Path('scripts/badw_header_structure.py'),Path('scripts/badw_pdf_structure_recovery.py'),Path('scripts/badw_pdf_mixed_clauses.py'),Path('scripts/badw_pdf_quotation_recovery.py'),Path('scripts/badw_recovered_fragment_integrity.py'),Path('scripts/badw_bibliography_citation_reviews.py'),Path('scripts/badw_bibliography_external.py')):
+    for code in (Path('scripts/finalize_badw_corpus_structure.py'),Path('scripts/badw_semantic_hierarchy.py'),Path('scripts/badw_bounded_passages.py'),Path('scripts/badw_lex_assertions.py'),Path('scripts/badw_comparison_clauses.py'),Path('scripts/badw_header_assertions.py'),Path('scripts/badw_semantic_store.py'),Path('scripts/badw_dictionary_entry_view.py'),Path('scripts/resolve_badw_cross_references.py'),Path('scripts/verify_badw_semantic_replay.py'),Path('scripts/badw_header_structure.py'),Path('scripts/badw_pdf_structure_recovery.py'),Path('scripts/badw_pdf_mixed_clauses.py'),Path('scripts/badw_pdf_quotation_recovery.py'),Path('scripts/badw_recovered_fragment_integrity.py'),Path('scripts/badw_bibliography_citation_reviews.py'),Path('scripts/badw_bibliography_external.py')):
         manifest['code_sha256'][str(code)]=file_hash(code)
     manifest['semantic_store_sha256']=file_hash(WORK/'semantic.sqlite')
     if WORK.name=='badw_relationship_closure':
@@ -342,7 +343,7 @@ def main():
         manifest['baseline_store_sha256']=file_hash(baseline_path)
         manifest['contextual_semantics']=True
         manifest['code_sha256']['scripts/badw_contextual_semantics.py']=file_hash(Path('scripts/badw_contextual_semantics.py'))
-        manifest['semantic_contract_version']='badw-semantic-hierarchy-v3'
+        manifest['semantic_contract_version']=SEMANTIC_VERSION
     write_json(OUT/'manifest.json',manifest)
     print(json.dumps(summary,sort_keys=True))
 

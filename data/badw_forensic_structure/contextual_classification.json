@@ -1,13 +1,14 @@
 {
   "counts": {
     "citation_owner_unresolved:html:HTML_example_envelope": 1,
-    "citation_owner_unresolved:html:source_envelope_does_not_establish_exact_passage": 47,
+    "citation_owner_unresolved:html:no_structural_envelope": 15,
+    "citation_owner_unresolved:html:source_envelope_does_not_establish_exact_passage": 32,
     "citation_owner_unresolved:pdf:PDF_example_candidate": 4,
     "citation_owner_unresolved:pdf:definition_clause": 3,
-    "citation_owner_unresolved:pdf:entry_prose_without_bounded_passage": 5,
+    "citation_owner_unresolved:pdf:entry_prose_without_bounded_passage": 12,
     "citation_owner_unresolved:pdf:explicit_comparison_clause": 161,
-    "citation_owner_unresolved:pdf:sense_prose_without_bounded_passage": 1,
-    "citation_owner_unresolved:pdf:source_envelope_does_not_establish_exact_passage": 140,
+    "citation_owner_unresolved:pdf:sense_prose_without_bounded_passage": 2,
+    "citation_owner_unresolved:pdf:source_envelope_does_not_establish_exact_passage": 132,
     "ignored_citation_cue:html:cross_reference_or_internal_editorial_number": 20,
     "ignored_citation_cue:html:date_lifespan_or_explanatory_number": 24,
     "ignored_citation_cue:html:existing_citation_in_broader_diagnostic_envelope": 364,

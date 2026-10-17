@@ -32,7 +32,8 @@ def main():
             semantic[entry].append(dict(start=span['start'],end=span['end'],family=family))
     for entry, raw in db.execute('select entry,record_json from passage'):
         r = json.loads(raw)
-        if r.get('passage_type') in ('bounded_comparison', 'variant_reading', 'definition_source_note', 'terminal_comparison'):
+        if r.get('passage_type') in ('bounded_comparison', 'variant_reading', 'definition_source_note', 'terminal_comparison',
+                                     'lex_assertion', 'punctuated_comparison_list', 'heading_grammatical_assertion'):
             span = r.get('source_span', r)
             semantic[entry].append(dict(start=span['start'], end=span['end'], family='typed_'+r['passage_type']))
     db.close()

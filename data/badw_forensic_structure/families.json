@@ -568,59 +568,11 @@
   {
     "classification": "measured_contract_state",
     "distribution": {
-      "html": 83,
-      "pdf": 151
+      "html": 50,
+      "pdf": 141
     },
-    "entries": 169,
+    "entries": 154,
     "examples": [
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/bregs/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            2720,
-            2728
-          ]
-        ],
-        "text_sha256": "0906252e042f86779f9d885e4edb189837688dda17928ced7b5c978874be7dcc"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/bro%20%E2%80%99tshal/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            801,
-            812
-          ]
-        ],
-        "text_sha256": "67465aa754dbe3b46d78ee84ba736169740601b4962b64ce189a6f90adaaa041"
-      },
-      {
-        "details": {
-          "accepted_identity": true,
-          "candidate_containment_not_ownership": true
-        },
-        "family": "citation_owner_unresolved",
-        "identity": "badw:https://wts-digital.badw.de/lemma/dme/1",
-        "source_kind": "html",
-        "spans": [
-          [
-            888,
-            899
-          ]
-        ],
-        "text_sha256": "df0bb20d1d16eaba7eeeb93485a05db9eb25b1759fc73ef0bf142bc388966c38"
-      },
       {
         "details": {
           "accepted_identity": true,
@@ -663,16 +615,64 @@
         "source_kind": "html",
         "spans": [
           [
-            204,
-            223
+            367,
+            390
           ]
         ],
         "text_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            463,
+            494
+          ]
+        ],
+        "text_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            316,
+            339
+          ]
+        ],
+        "text_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "details": {
+          "accepted_identity": true,
+          "candidate_containment_not_ownership": true
+        },
+        "family": "citation_owner_unresolved",
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "source_kind": "html",
+        "spans": [
+          [
+            375,
+            406
+          ]
+        ],
+        "text_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
       }
     ],
     "family": "citation_owner_unresolved",
     "layer": "model",
-    "occurrences": 234,
+    "occurrences": 191,
     "recommended_action": "Candidate containment/proximity is not reviewed ownership; express exact citable passages",
     "severity": "high"
   },

@@ -176,7 +176,8 @@ def entry_view(inspected, bibliography=None):
     boundaries = sorted({0, len(text)} | lexical_starts |
                         {v for s, e, _ in components for v in (s, e)} |
                         {v for x in semantic['effective_language_spans'] for v in (x['start'], x['end'])} |
-                        {v for x in semantic['lex_items'] for v in (x['start'], x['end'])})
+                        {v for x in semantic['lex_items'] for v in (x['start'], x['end'])} |
+                        {v for x in semantic['citable_passages'] for v in (x['start'], x['end'])})
     # Nested lexical observations (a quoted equivalent inside a full parallel)
     # retain their identities, but do not start additional reader paragraphs.
     # Punctuation-only observations likewise are not independent parallels.

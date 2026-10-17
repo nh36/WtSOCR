@@ -9,8 +9,8 @@
       "current": 346
     },
     "citation_owner_unresolved": {
-      "baseline": 405,
-      "current": 234
+      "baseline": 234,
+      "current": 191
     },
     "crossing_components": {
       "baseline": 1063,
@@ -84,26 +84,49 @@
   "relationship_baseline": {
     "preservation": {
       "bibliography_changed": 0,
+      "established_ownership_changed": 0,
+      "established_sense_node_id_changed": 0,
       "established_supports_changed": 0,
+      "language_conflict_added": 0,
+      "language_conflict_changed": 0,
+      "language_conflict_missing": 0,
+      "language_correspondence_added": 0,
+      "language_correspondence_changed": 0,
+      "language_correspondence_missing": 0,
+      "language_effective_added": 0,
+      "language_effective_changed": 0,
+      "language_effective_missing": 0,
+      "language_form_added": 0,
+      "language_form_changed": 0,
+      "language_form_missing": 0,
+      "language_indicator_added": 0,
+      "language_indicator_changed": 0,
+      "language_indicator_missing": 0,
+      "lex_item_added": 0,
+      "lex_item_changed": 0,
+      "lex_item_missing": 0,
       "missing_citations": 0,
       "source_binding_changed": 0,
       "source_form_changed": 0,
-      "source_span_changed": 0
+      "source_span_changed": 0,
+      "xref_added": 0,
+      "xref_changed": 0,
+      "xref_missing": 0
     },
-    "sha256": "1f81f5f1e0988feef9f0a6846d87311dcef33442c3d47f6c0beb1cc3127d3cb7",
-    "store": "work/badw_forensic_structure/baseline_dcac.sqlite"
+    "sha256": "7d309857accc2deec7e019d6897a350c80d2ed898cf83417e973d37c34462b42",
+    "store": "work/badw_forensic_structure/baseline_e26.sqlite"
   },
-  "script_sha256": "8958dd0206e3b5ef1b8ee69c922bd80a01716546eb5a0e203763e9039797f4a1",
+  "script_sha256": "8b8039ea5056e1df3fd60f1d246f7bd4184e0a593bfbf76021720bf09d6954ac",
   "store_rows": {
     "citation": 109425,
-    "citation_passage": 109178,
+    "citation_passage": 109221,
     "language_conflict": 384,
     "language_correspondence": 3003,
     "language_effective": 126152,
     "language_form": 12364,
     "language_indicator": 4314,
     "lex_item": 39688,
-    "passage": 108969,
+    "passage": 109012,
     "xref": 8336
   }
 }

@@ -112,6 +112,19 @@ def main():
         for key in ('bibliography', 'source_span', 'source_form', 'source_binding'):
             preservation[key + '_changed'] = sum(previous[i].get(key) != current[i].get(key) for i in previous.keys() & current.keys())
         preservation['established_supports_changed'] = sum(previous[i].get('supports') != current[i].get('supports') for i in previous.keys() & current.keys() if previous[i].get('supports'))
+        for key in ('ownership', 'sense_node_id'):
+            preservation['established_' + key + '_changed'] = sum(previous[i].get(key) != current[i].get(key)
+                for i in previous.keys() & current.keys() if previous[i].get('supports'))
+        # New passage grammars must leave the mature source and relationship
+        # layers byte-for-byte equivalent, including unresolved observations.
+        for table in ('lex_item', 'xref', 'language_form', 'language_correspondence',
+                      'language_indicator', 'language_conflict', 'language_effective'):
+            before = dict(prior.execute('SELECT id,record_json FROM ' + table))
+            after = dict(db.execute('SELECT id,record_json FROM ' + table))
+            preservation[table + '_missing'] = len(before.keys() - after.keys())
+            preservation[table + '_added'] = len(after.keys() - before.keys())
+            preservation[table + '_changed'] = sum(json.loads(before[i]) != json.loads(after[i])
+                                                  for i in before.keys() & after.keys())
         assert not any(preservation.values()), preservation
         relationship_baseline['preservation'] = preservation
         prior.close()

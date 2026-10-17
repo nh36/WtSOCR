@@ -11,7 +11,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 108267
+      "count": 108256
     },
     {
       "source_kind": "html",
@@ -45,13 +45,18 @@
     },
     {
       "source_kind": "html",
+      "family": "typed_heading_grammatical_assertion",
+      "count": 47
+    },
+    {
+      "source_kind": "html",
       "family": "typed_homonym_marker",
       "count": 2791
     },
     {
       "source_kind": "pdf",
       "family": "punctuation_layout",
-      "count": 71560
+      "count": 71562
     },
     {
       "source_kind": "pdf",
@@ -81,7 +86,7 @@
     {
       "source_kind": "pdf",
       "family": "typed_bounded_comparison",
-      "count": 24
+      "count": 30
     },
     {
       "source_kind": "pdf",
@@ -115,13 +120,18 @@
     },
     {
       "source_kind": "pdf",
+      "family": "typed_punctuated_comparison_list",
+      "count": 4
+    },
+    {
+      "source_kind": "pdf",
       "family": "typed_verb_form",
       "count": 495
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 530
+      "count": 528
     }
   ],
   "alphabetic_characters": [
@@ -133,7 +143,7 @@
     {
       "source_kind": "html",
       "family": "source_heading_pending_type",
-      "count": 3766
+      "count": 3219
     },
     {
       "source_kind": "html",
@@ -164,6 +174,11 @@
       "source_kind": "html",
       "family": "typed_header_relation",
       "count": 4373
+    },
+    {
+      "source_kind": "html",
+      "family": "typed_heading_grammatical_assertion",
+      "count": 547
     },
     {
       "source_kind": "html",
@@ -237,13 +252,18 @@
     },
     {
       "source_kind": "pdf",
+      "family": "typed_punctuated_comparison_list",
+      "count": 32
+    },
+    {
+      "source_kind": "pdf",
       "family": "typed_verb_form",
       "count": 2066
     },
     {
       "source_kind": "pdf",
       "family": "unparsed_lexical_prose_pending_review",
-      "count": 7885
+      "count": 7853
     }
   ],
   "canonical_header_fields": {
@@ -610,6 +630,64 @@
         "source_sha256": "a17a49d7e265e5b8c21d0cc4c273e249ce74221c98fc485f61a5832dc208d44d"
       }
     ],
+    "typed_heading_grammatical_assertion": [
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 170,
+        "end": 204,
+        "literal": "adversative conjunction particle (",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
+        "start": 226,
+        "end": 245,
+        "literal": "Konzessivpartikel (",
+        "source_sha256": "84f71665ae372897bf516f30be5a2c417ec55f49a1c1c3b3118710fe89017661"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 162,
+        "end": 181,
+        "literal": "adnominal particle ",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 181,
+        "end": 185,
+        "literal": "bzw.",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 185,
+        "end": 220,
+        "literal": " adversative conjunction particle (",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 245,
+        "end": 248,
+        "literal": "ff.",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 251,
+        "end": 268,
+        "literal": "Genitivpartikel (",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      },
+      {
+        "identity": "badw:https://wts-digital.badw.de/lemma/kyi/1",
+        "start": 291,
+        "end": 293,
+        "literal": "f.",
+        "source_sha256": "28ca8c5c6ef35b21f5c00144fa2e20638d9cec2ce9e7ab0b20cefbf174d43468"
+      }
+    ],
     "typed_citation": [
       {
         "identity": "badw:https://wts-digital.badw.de/lemma/kya%E1%B9%85/1",
@@ -691,13 +769,6 @@
         "source_sha256": "d00884d3f1a862e9a43b2e64537bfb00907c15de7e0610319836ba402274abb6"
       },
       {
-        "identity": "badw:pdf:badw-v2-138d1f2d6505e033a0f5a7fee3219bd7338bba2c6976eec32839f1875affe2be:107",
-        "start": 122,
-        "end": 146,
-        "literal": " s. v. pratijñottaraka.\n",
-        "source_sha256": "bc0ee80407bb54b399cd4ad7f1ac860c441049dbf05f9e179815358cc694c1e2"
-      },
-      {
         "identity": "badw:pdf:badw-v2-962cb758793b08eba0ec10da2973dbc4c6fd4641dcc5ec112733feb766ac2b8f:1228",
         "start": 39,
         "end": 57,
@@ -724,6 +795,13 @@
         "end": 143,
         "literal": "; auch als Bez. für ei-\nnen Buddha.\n",
         "source_sha256": "7ccb00f70f7b1ff8a3c90f25e0cd735ac0d2d730fafa2b58665725835aa635a3"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-c0c16d1577d1f69b2441ede37a15daf1fc4ef3187d60f0f0485377fdcc6a0eee:706",
+        "start": 0,
+        "end": 16,
+        "literal": " auch khaṅ bzaṅ\n",
+        "source_sha256": "041f727e7aaf0f02544ac5edbc5ecee2612fec8dca274c87a29bc80700b2ec01"
       }
     ],
     "source_decoding_residue": [
@@ -956,6 +1034,22 @@
         "end": 763,
         "literal": "Traditionslinie",
         "source_sha256": "38f260638687f0eed6b55291f229f55d3cdfb3cee8d277b5ee5a0b49b99ae962"
+      }
+    ],
+    "typed_punctuated_comparison_list": [
+      {
+        "identity": "badw:pdf:badw-v2-138d1f2d6505e033a0f5a7fee3219bd7338bba2c6976eec32839f1875affe2be:107",
+        "start": 122,
+        "end": 145,
+        "literal": " s. v. pratijñottaraka.",
+        "source_sha256": "bc0ee80407bb54b399cd4ad7f1ac860c441049dbf05f9e179815358cc694c1e2"
+      },
+      {
+        "identity": "badw:pdf:badw-v2-2cbacb38c44077d92c65917a3bc01082fdabb7e75a3d4f85318c61e9b8fcf699:1653",
+        "start": 58,
+        "end": 79,
+        "literal": " s. v. pattrachedaka.",
+        "source_sha256": "94254f1877ec3bdc47d0b41b70873bcc04ba6ee57d6cacbbde2d764f70bbfebc"
       }
     ],
     "typed_bounded_comparison": [

@@ -52,9 +52,10 @@ def nested_passages(nodes, text, assigned, object_):
             short_variant = (opener == '(' and 'example' in kinds
                              and correction is not None
                              and re.match(r'\s*(?:v\.\s*l\.|r\.)\s+\S', prefix))
-            if len(substantive) < 4 and not short_variant:
+            comparison = re.match(r'\s*vgl\.\s+\S', text[start+1:end-1])
+            if len(substantive) < 4 and not short_variant and not comparison:
                 continue  # A citation's own parentheses prove no assertion.
-            if re.match(r'\s*vgl\.\s+', prefix):
+            if comparison:
                 kind = 'bounded_comparison'
             elif 'example' in kinds and re.match(r'\s*(?:v\.\s*l\.|r\.)\s+', prefix):
                 kind = 'variant_reading'

@@ -1344,6 +1344,15 @@ def build_family_rows(stats: ReleaseStats) -> list[dict[str, str]]:
         "existing definition nodes preserved;no generic containers;exact PDF boundary evidence",
         "11563 typed header fields including2218 relations;131068 raw alphabetic gap characters partitioned exactly;11670 meaningful characters pending;5527 PDF prose characters retain explicit reasons;163 recovered definitions backaudited with15 withdrawals/shortenings and0 remaining integrity errors;3 quotation pairs establish3 owners;114 frozen witnesses pass;36 fresh PDF pages reviewed but no positive new fragments in that holdout;release/current untouched.",
     ))
+    rows.append(row(
+        "badw_owner_grammar_batch", "semantic_citation", "Lex assertions;heading assertions;punctuated comparisons;short balanced comparisons",
+        "exact source-bounded passage ownership", "234 baseline survivors;29877 witnesses", "applied",
+        "registered online corpus", "none",
+        "scripts/badw_lex_assertions.py;scripts/badw_header_assertions.py;scripts/badw_comparison_clauses.py;scripts/badw_bounded_passages.py",
+        "data/badw_forensic_structure/owner_review.json;data/badw_forensic_structure/owner_grammar_positive_review.jsonl;data/badw_forensic_structure/README.md", 0, 0,
+        "exact containment;no broad Lex or proximity ownership;all43 positives source-validated;114 frozen witnesses;baseline relationships preserved",
+        "43 additional owners:18 Lex,18 HTML heading,4 PDF punctuated comparison,3 balanced comparison;191 parser/boundary cases remain;0 proven uncitable;meaningful residue11651->11072;release/current untouched.",
+    ))
     return rows
 
 
@@ -1653,59 +1662,48 @@ def build_status_markdown(stats: ReleaseStats, family_rows: list[dict[str, str]]
     corpus_totals = corpus_summary["totals"]
     corpus_section = """## Corpus Structural Health
 
-The bounded-passage replay from **dcac807f73** projects **29,877/29,877 witnesses**.
-All **114 frozen witnesses pass**; reader integrity, source text, bibliography,
-xrefs, language and canonical Lex. invariants remain intact. `release/current`
-is untouched.
+The source-bounded grammar replay from **e26c885e06** projects **29,877/29,877
+witnesses**. All **114 frozen witnesses pass**; reader integrity, source text,
+bibliography, xrefs, language and canonical Lex. invariants remain intact.
+`release/current` is untouched.
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| Established citation owners | 109,020 | 109,191 |
-| Unresolved citation owners | 405 | 234 |
-| Meaningful untyped alphabetic characters | 11,670 | 11,651 |
-| HTML pending characters | 3,766 | 3,766 |
-| PDF pending characters | 7,904 | 7,885 |
+| Established citation owners | 109,191 | 109,234 |
+| Unresolved citation owners | 234 | 191 |
+| Meaningful untyped alphabetic characters | 11,651 | 11,072 |
+| HTML pending characters | 3,766 | 3,219 |
+| PDF pending characters | 7,885 | 7,853 |
 
-New exact passages establish **124 terminal comparison owners and 35 nested
-parenthetical/quotation owners**, followed by **11 semicolon-comparison owners**
-(10 passages), and **one facsimile-reviewed exact correction/example owner**.
-Rules require existing structural containment,
-explicit markers, balanced delimiters and hard boundary checks. They do not attach
-citations to preceding prose by distance. Existing owners are preserved.
-Only **19 alphabetic characters** gain structural accounting; passage ownership
-and lexical accounting are separate measurements.
+The **43 additional owners** follow four source-bounded productions: **18 Lex
+assertions, 18 HTML heading assertions, four PDF punctuated comparison lists and
+three balanced comparisons**. All gains were validated against source: 33 HTML
+occurrences against raw DOM and ten PDF occurrences across nine facsimiles.
+No false owners were observed. Exact containment, explicit grammar and independent
+boundaries establish ownership; no proximity or broad Lex-block owner is used.
 
-The **234 remaining owners (83 HTML / 151 PDF)** have exact source-bound census
-records. Families are: comparison without accepted enclosure 88; broad Lex. source
-nodes without an accepted item/subclause 39; unbounded/missing component 91;
-definition source nodes 9; example source nodes 4; balanced comparison candidates
-3. Diagnostic containment is not accepted ownership.
-The small example/definition cases are retained in the checked-in passage census;
-individual scholarly disposition of the 234 survivors remains pending.
-The frozen `passage_remaining` census has 246; `passage_after_semicolon` has 235.
-`passage_after_short_variant` is the current 234-occurrence census. Eleven definition-contained citations acquired
-bounded comparison subpassages; the broad diagnostic comparison family is unchanged.
+The complete **234-occurrence baseline census** records source nodes, canonical
+components, punctuation, enclosures, DOM/PDF layout, local contexts and final
+ownership. The **191 remaining owners (50 HTML / 141 PDF)** have precise reason
+clusters in `owner_review.json`: parenthetical source prose without a canonical
+clause 47; PDF comparison layout continuity unestablished 36; source-language or
+etymological statements 30; heading grammatical assertions 21; damaged Lex
+quotation/source delimiters 21; missing comparison scope 13; other boundary and
+role checks 23. These are parser or boundary-review gaps. **Zero occurrences are
+proven to lack an exact citable passage; ownership is not closed.**
 
 Citations remain **109,425**, identities **109,079 accepted / 346 unresolved**.
 Lex. remains **39,688 items**, zero duplicate/overlapping items; xrefs **7,484
 resolved / 852 unresolved**; Sanskrit **12,364 forms / 3,003 correspondences**,
 zero effective conflicts, 384 preserved source-observation overlaps.
-Raw alphabetic gaps partition exactly: **42,470 typed, 66,331 structural labels,
-10,616 decoding-placeholder syntax, 11,651 pending**.
-
-**Fresh positive validation:** 37 passages from the preceding 159-owner gain were
-reviewed: 35 PDF facsimiles and two raw HTML DOM examples, covering terminal
-comparisons in volumes 2–4 and every gain-producing nested production. No false
-owners were observed in this sample. Three review-source bindings were corrected
-explicitly. Separately, all 10 new semicolon passages (11 citations across nine
-PDF entries/pages) were facsimile-reviewed with no false owners observed. Their
-marker and balanced top-level semicolon establish boundaries inside an accepted
-definition independently of citation position or identity. Full corpus replay
-preserves all prior owners, source spans and mature-layer relationships. These
-reviews do not complete the remaining occurrence-by-occurrence census.
-Remaining coherent work includes quotation-role disambiguation and source-Lex.
-subclause recovery. No broad prose owner or generic cleanup rule is authorized.
-See [evidence and reproduction](../data/badw_forensic_structure/README.md).
+Raw alphabetic gaps partition exactly: **43,049 typed, 66,331 structural labels,
+10,616 decoding-placeholder syntax, 11,072 pending**. New structural grammars
+account for **579 additional alphabetic characters**. The next coherent parser
+work is quotation/gloss role and boundary recovery: PDF quotation-adjacent
+unbounded fragments are the largest coherent residue family (2,108 characters),
+followed by reference/comparison continuations (1,539) and lexical substitutions
+(1,092). Nested source-note and source-language roles also remain pending.
+See [evidence, exact reason counts and reproduction](../data/badw_forensic_structure/README.md).
 
 """
 
