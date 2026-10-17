@@ -24,6 +24,46 @@ established owners**, leaving **66 unresolved** (16 HTML / 50 PDF). All 109,293
 previously accepted owners and their support/sense links remain unchanged.
 `release/current` is untouched.
 
+## Completeness ledger (read-only accounting)
+
+Build a queryable SQLite ledger from the checked-in accounting and existing
+projection caches with:
+
+```sh
+python3 scripts/build_badw_completeness_ledger.py build
+python3 scripts/build_badw_completeness_ledger.py query \
+  'badw:https://wts-digital.badw.de/lemma/kos%20s%C3%B1u%E1%B9%85/1'
+```
+
+The database is written only to ignored `work/badw_completeness_ledger/` storage.
+The builder joins the checked-in semantic-hierarchy `entries.tsv` by exact
+witness identity and source-text SHA-256, retaining those semantic statistics
+alongside the structural statistics. It checks exact witness identities and source-text hashes, disjoint
+Unicode accounting spans, pending literals and reasons, and the certified
+partition: **29,877 projected witnesses; 131,068 unassigned alphabetic
+characters** comprising 45,273 typed, 66,214 structural labels, 9,841 decoding
+residue and 9,740 meaningful pending characters. The sparse header-gap stream
+omits one witness with exactly zero unassigned characters; the ledger records
+its empty gap list. The old corpus-structure cache also predates two successful
+HTML projections. `ka chen/1` and `kos sñuṅ/1` are filled from the later semantic
+hierarchy cache only after identity, source kind and SHA-256 match both frozen
+entry inventories. Their later projections attribute success to corrected
+nested arrow/link construction; duplicate-span validation remained enabled.
+
+The acquisition inventories establish coverage relative to the frozen
+2026-09-02 catalogue and acquired print snapshot: 28,245 unique catalogue
+results, 29,877 indexed witnesses, no missing or hash-mismatched cached source
+objects, and all 1,484 enumerated print pages present. This does not establish
+completeness against future or otherwise unobserved changes to the live BAdW
+website. The ledger preserves the certified citation figures (109,359 owners,
+66 unresolved) and 9,740 pending characters. A later local measurement of
+109,365 / 60 / 9,309 remains unreconciled because its replay input hashes differ;
+it is recorded as measured, not certified.
+
+The next selected parser target remains PDF lexical prose without proven
+boundaries (4,909 characters in the certified accounting); this ledger task
+does not implement or reassess that grammar.
+
 The fresh census is `reference_after.jsonl.gz`; the exact 132-occurrence
 disposition join is `reference_owner_review.jsonl.gz`. Each disposition matches
 its baseline source hash and citation span, and its resolved/unresolved status
