@@ -44,14 +44,15 @@ unresolved without source punctuation repair.
 
 Positive and negative regression validation: **897 tests and 62 subtests passed**.
 Compilation, repository hygiene and diff whitespace checks passed before commit.
-Final frozen-witness, relationship-preservation and residue totals await the
-running replay. No broad quotation-role inference was introduced.
+The full replay was completed and certified after this tranche was committed;
+the current figures at the beginning of this README supersede the provisional
+figures in this historical record. No broad quotation-role inference was introduced.
 
-A final focused quotation-role tranche is justified by recurring quoted-form,
-definition and nested-example roles. Begin with a fresh positive packet and
-role/typography investigation; the present diagnostic residue counts do not
-justify a generic quotation absorber. The meaningful-residue baseline remains
-**10,077** until the post-replay accounting is generated.
+A focused quotation-role investigation is warranted by recurring quoted-form,
+definition and nested-example roles. A fresh, independently selected positive
+sample is still required before implementation; the present diagnostic residue
+counts do not justify a generic quotation absorber. The **10,077** figure above
+is the historical pre-replay baseline, not current accounting.
 
 | Targeted remaining reason | Count |
 | --- | ---: |

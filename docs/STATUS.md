@@ -64,8 +64,8 @@ accepted citation bindings, bibliography links, source spans, forms, xrefs,
 language structures, Lex. items, source text, or reader integrity failures.
 
 Meaningful residue falls **337 characters**, from 10,077 to **9,740**: HTML
-2,587 and PDF 7,153. Raw alphabetic gaps remain partitioned into 44,692 typed,
-66,298 structural labels, 10,001 decoding-placeholder syntax and 9,740 pending.
+2,587 and PDF 7,153. Raw alphabetic gaps remain partitioned into 45,273 typed,
+66,214 structural labels, 9,841 decoding-placeholder syntax and 9,740 pending.
 The largest coherent remaining family is PDF lexical prose without a proven role
 boundary (4,909), followed by quotation/gloss candidates (815) and reference
 clauses (125). A focused quotation-role investigation is warranted before
