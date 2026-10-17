@@ -1,15 +1,28 @@
 # BAdW dictionary reader prototype
 
-This is a presentation-only five-entry development sample. It contains the
-existing HTML and PDF projections for `bkri`, `bog re`, `ce śa`, `groṅ phyi
-ñug ma`, and `chos ’khor`; it preserves their source strings and relationship
-records. The source export SHA-256 and selected entries are recorded in
-`data.json` under `sample_provenance`.
+The tracked files in this directory are reusable presentation code. The
+source-bearing `data.json` and `inspection.json` exports are generated locally
+under ignored `work/` storage; they are not part of the repository. The current
+workspace preview is preserved at `work/badw_dictionary_prototype_preview/`.
+
+When the local source projections are available, build a fresh preview with
+the projection and entry-index artifacts selected for that source snapshot:
+
+```sh
+python3 scripts/build_badw_dictionary_prototype.py \
+  --projection work/<snapshot>/projection.jsonl \
+  --entry-index work/<snapshot>/entry_index.jsonl \
+  --output work/badw_dictionary_prototype_preview
+```
+
+Supply `--citation-links`, `--bibliography`, and the applicable source-cache
+and review arguments when the projection includes citation details. The
+builder verifies source hashes and accepted relationships before writing.
 
 Serve this directory with any static HTTP server, for example:
 
 ```sh
-python3 -m http.server 8000 --directory scripts/badw_dictionary_prototype
+python3 -m http.server 8000 --directory work/badw_dictionary_prototype_preview
 ```
 
 Then open `http://localhost:8000`. Citation buttons show a concise authority

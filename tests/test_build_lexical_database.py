@@ -18,6 +18,7 @@ from validate_lexical_record_contract import CONTRACT_VERSION
 from stitch_badw_pdf_entries import _span
 from badw_canonical_pages import stable_json_bytes
 from extract_badw_pdf_lexical_candidates import extract as extract_pdf_lexical
+from parse_badw_pdf_articles import reindex_article
 
 
 def _digest(path: Path) -> str:
@@ -327,7 +328,7 @@ def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
         witness = json.loads(next(handle))
     span = witness["source_spans"][0]
     source = witness["source_faithful_text"]
-    structure = {"contract_version": "badw-pdf-structural-parser-v7",
+    structure = {"contract_version": "badw-pdf-structural-parser-v8",
         "article_id": witness["id"], "volume": witness["volume"],
         "loc_headword": witness["loc_headword"],
         "tibetan_headword": witness["tibetan_headword"], "homonym": witness["homonym"],
@@ -341,16 +342,14 @@ def _pdf_candidate_inputs(tmp_path: Path, pdf_root: Path,
             "source_text_sha256": span["source_text_sha256"],
             "run_start": span["run_start"],
             "run_end_exclusive": span["run_end_exclusive"]}],
-        "visual_lines": [{"text": source, "page_id": span["page_id"],
+        "visual_lines": [{"line_index": 0, "text": source, "page_id": span["page_id"],
             "span_index": 0, "printed_page": 1, "run_start": 0,
-            "run_end_exclusive": 1, "unknown_glyphs": [],
+            "run_end_exclusive": 1, "unknown_glyphs": 0,
             "style_spans": [{"start": 0, "end": len(source),
                              "family": "TGaramond", "style": "regular"}]}],
-        "divisions": [{"kind": "unsegmented", "label": "",
-                       "text": source,
-                       "start_line_index": 0, "end_line_index_exclusive": 1}],
-        "candidates": {"german_quotes": [], "parenthetical_citations": [],
-                       "adjacent_quote_citation_pairs": []}}
+        "diagnostics": {"visual_overprint_impressions_removed": 0,
+                        "line_count": 1, "unknown_glyphs": 0}}
+    structure = reindex_article(structure)
     if variant_gloss:
         italic_start = source.index("kha chiṅ")
         quote_start = source.index("„")
@@ -434,7 +433,7 @@ def test_pdf_candidates_are_staged_without_promotion(tmp_path: Path):
     assert conn.execute("PRAGMA foreign_key_check").fetchall() == []
     assert conn.execute("SELECT structural_contract_version,lexical_contract_version "
                         "FROM pdf_article_analysis").fetchone() == (
-                            "badw-pdf-structural-parser-v7", "badw-pdf-lexical-candidates-v10")
+                            "badw-pdf-structural-parser-v8", "badw-pdf-lexical-candidates-v14")
     conn.close()
 
 

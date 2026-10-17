@@ -1,7 +1,24 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {citationDetailModel,openCitationDetail}=require('../scripts/badw_dictionary_prototype/app.js');
-const sample=require('../scripts/badw_dictionary_prototype/data.json');
+
+// Small synthetic presentation fixture. Source-bearing development exports
+// are generated locally under ignored work/ and are never test dependencies.
+const sample={entries:[
+ {id:'html:chos-khor',headword:{loc:'chos ’khor',tibetan:'ཆོས་འཁོར'},homonym:'',
+  components:[{id:'c1',source_form:'(SOURCE 1985: 139)'},{id:'p1',source_form:'chos kyi ’khor lo'}],
+  citations:[{component_id:'c1',bibliography:[{id:'auth1',label:'SOURCE',descriptions:['Collected essays, 1985.'],coverage_status:'complete',edition_status:'reviewed'}],bibliography_status:'accepted',ownership:'reviewed'}],
+  relationships:[{type:'citation_of',from_id:'c1',to_ids:['p1']}],
+  display_blocks:[{kind:'definition',segments:[{text:'wheel of doctrine',component_ids:[],types:[],languages:[]}]}],cross_references:[]},
+ {id:'html:bkri',headword:{loc:'bkri',tibetan:'བཀྲི'},homonym:'',
+  components:[{id:'c2',source_form:'(A 2001; B 2003)'},{id:'c3',source_form:'(UNKNOWN 2010)'},{id:'p2',source_form:'a source passage'}],
+  citations:[{component_id:'c2',bibliography:[{id:'auth2',label:'A',descriptions:['A publication'],coverage_status:'matched_components_only_not_complete_citation_resolution',edition_status:'unreviewed'},{id:'auth3',label:'B',descriptions:['B publication'],coverage_status:'matched_components_only_not_complete_citation_resolution',edition_status:'unreviewed'}],bibliography_status:'partial',ownership:'reviewed'},
+   {component_id:'c3',bibliography:[],bibliography_status:'unresolved',ownership:'unresolved'}],
+  relationships:[],display_blocks:[{kind:'definition',segments:[{text:'to turn',component_ids:['c2'],types:[],languages:[]}]}],cross_references:[]},
+ {id:'pdf:sample',headword:{loc:'example',tibetan:'དཔེ'},homonym:'',components:[],citations:[],relationships:[],
+  display_blocks:[{kind:'example',segments:[{text:'Tibetan example — German translation',component_ids:[],types:[],languages:[]}]}],
+  cross_references:[{component_id:'x1',target_entry_id:'html:chos-khor'}]}
+]};
 
 class Node {
  constructor(tag='node'){this.tag=tag;this.children=[];this.textContent='';this.attrs={};this.className='';this.open=false;this.classList={add:()=>{}};}
@@ -13,10 +30,10 @@ class Node {
 }
 function findEntry(prefix){return sample.entries.find(e=>e.headword.loc===prefix)}
 
-test('curated sample retains HTML/PDF, unresolved citations, examples, xrefs and source relationships',()=>{
- assert.equal(sample.entries.length,5);
- assert(sample.entries.some(e=>e.id.startsWith('badw:entry:')));
- assert(sample.entries.some(e=>e.id.startsWith('badw:pdf:')));
+test('presentation fixture covers HTML/PDF, unresolved citations, examples and xrefs',()=>{
+ assert.equal(sample.entries.length,3);
+ assert(sample.entries.some(e=>e.id.startsWith('html:')));
+ assert(sample.entries.some(e=>e.id.startsWith('pdf:')));
  assert(sample.entries.some(e=>e.citations.some(c=>!c.bibliography.length)));
  assert(sample.entries.some(e=>e.display_blocks.some(b=>b.kind==='example')));
  assert(sample.entries.some(e=>e.cross_references.length));

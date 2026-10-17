@@ -13,25 +13,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from derive_badw_pdf_reading import build, derive_item, project
 from extract_badw_pdf_lexical_candidates import extract
+from parse_badw_pdf_articles import reindex_article
 
 
 def _line(text: str, index: int, page: str = "page-1") -> dict:
-    return {"text": text, "page_id": page, "span_index": 0,
+    return {"line_index": index, "text": text, "page_id": page, "span_index": 0,
             "printed_page": 5, "run_start": index, "run_end_exclusive": index + 1,
-            "unknown_glyphs": [], "style_spans": [{"start": 0, "end": len(text),
+            "unknown_glyphs": 0, "style_spans": [{"start": 0, "end": len(text),
                 "family": "TGaramond", "style": "regular"}]}
 
 
 def _article() -> dict:
     lines = [_line("für", 0), _line("skt. Alpha-", 1), _line("bet", 2)]
     visual = "\n".join(line["text"] for line in lines)
-    return {"contract_version": "badw-pdf-structural-parser-v7",
+    article = {"contract_version": "badw-pdf-structural-parser-v8",
             "article_id": "badw:pdf:synthetic", "volume": 2,
             "loc_headword": "test", "source_faithful_sha256": sha256(visual.encode()).hexdigest(),
-            "visual_lines": lines, "divisions": [{"kind": "unsegmented", "label": "",
-                "start_line_index": 0, "end_line_index_exclusive": len(lines)}],
-            "candidates": {"german_quotes": [], "parenthetical_citations": [],
-                           "adjacent_quote_citation_pairs": []}}
+            "source_faithful_text": visual, "visual_lines": lines,
+            "diagnostics": {"visual_overprint_impressions_removed": 0,
+                            "line_count": len(lines), "unknown_glyphs": 0}}
+    return reindex_article(article)
 
 
 def test_space_default_and_hyphen_review_keep_source_and_offsets() -> None:
