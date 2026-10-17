@@ -238,6 +238,11 @@ def _check_ordered_spans(identity: str, spans: list[dict[str, Any]], limit: int,
         previous_end = end
 
 
+def _alphabetic_offsets(text: str, start: int, end: int) -> set[int]:
+    """Return absolute Unicode code-point offsets of alphabetic source characters."""
+    return {offset for offset in range(start, end) if text[offset].isalpha()}
+
+
 def build_ledger(
     *, entries_path: Path, header_json_path: Path, header_jsonl_path: Path,
     pending_path: Path, projection_path: Path, manifest_path: Path,
@@ -259,6 +264,10 @@ def build_ledger(
     if set(projections) != set(entries):
         raise LedgerError(f"projection/accounting witness set differs: missing={len(set(entries)-set(projections))}")
     header_rows = _unique(_jsonl_gz(header_jsonl_path), "identity", "header accounting")
+    header_accounting = json.loads(header_json_path.read_text(encoding="utf-8"))
+    projection_hash = manifest.get("raw_projection_sha256")
+    if not projection_hash or header_accounting.get("source_projection_sha256") != projection_hash:
+        raise LedgerError("header-accounting source projection hash differs from pinned forensic manifest")
     missing_header = set(entries) - set(header_rows)
     extra_header = set(header_rows) - set(entries)
     if extra_header:
@@ -294,6 +303,14 @@ def build_ledger(
         _check_ordered_spans(identity, gaps, len(text), "accounting")
         gap_chars = sum(g["end"] - g["start"] for g in gaps)
         gap_alpha = sum(g.get("alphabetic_characters", 0) for g in gaps)
+        for gap in gaps:
+            source_alpha = sum(text[gap["start"]:gap["end"]][i].isalpha()
+                               for i in range(len(text[gap["start"]:gap["end"]])))
+            if source_alpha != gap.get("alphabetic_characters"):
+                raise LedgerError(
+                    f"{identity}: accounting gap alphabetic count disagrees with exact source substring "
+                    f"[{gap['start']},{gap['end']})"
+                )
         if gap_chars != entry["unassigned_characters"] or gap_alpha != entry["unassigned_alphabetic"]:
             raise LedgerError(f"{identity}: accounting interval totals disagree with entry stats")
         aggregate_gap_chars += gap_chars
@@ -302,6 +319,7 @@ def build_ledger(
 
         pending = sorted(pending_by_id.get(identity, []), key=lambda x: (x["start"], x["end"]))
         _check_ordered_spans(identity, pending, len(text), "pending meaningful")
+        pending_alpha_offsets: set[int] = set()
         for span in pending:
             if span.get("source_kind") != entry["source_kind"] or span.get("source_sha256") != entry["text_sha256"]:
                 raise LedgerError(f"{identity}: pending source kind/hash mismatch")
@@ -312,13 +330,35 @@ def build_ledger(
             alpha = sum(ch.isalpha() for ch in literal)
             if alpha != span.get("alphabetic_characters"):
                 raise LedgerError(f"{identity}: pending alphabetic count mismatch")
-            if not any(g["start"] <= start and end <= g["end"] for g in gaps):
-                raise LedgerError(f"{identity}: pending span is outside all unassigned accounting intervals")
+            pending_alpha_offsets.update(_alphabetic_offsets(text, start, end))
+            containing = [g for g in gaps if g["start"] <= start and end <= g["end"]]
+            if len(containing) != 1:
+                raise LedgerError(f"{identity}: pending span does not have exactly one accounting interval")
+            if containing[0]["family"] not in {
+                "source_heading_pending_type", "unparsed_lexical_prose_pending_review"
+            }:
+                raise LedgerError(f"{identity}: meaningful pending span is attributed to a non-pending gap")
             aggregate_pending_alpha += alpha
+        pending_gap_families = {"source_heading_pending_type", "unparsed_lexical_prose_pending_review"}
+        expected_pending_alpha_offsets: set[int] = set()
+        for gap in gaps:
+            if gap["family"] not in pending_gap_families:
+                continue
+            expected_pending_alpha_offsets.update(_alphabetic_offsets(text, gap["start"], gap["end"]))
+            covered_alpha = sum(
+                span["alphabetic_characters"] for span in pending
+                if gap["start"] <= span["start"] and span["end"] <= gap["end"]
+            )
+            if covered_alpha != gap["alphabetic_characters"]:
+                raise LedgerError(
+                    f"{identity}: meaningful pending spans do not exactly account for pending gap "
+                    f"[{gap['start']},{gap['end']})"
+                )
+        if pending_alpha_offsets != expected_pending_alpha_offsets:
+            raise LedgerError(f"{identity}: pending source alphabetic positions differ from pending accounting gaps")
     if aggregate_gap_chars != sum(e["unassigned_characters"] for e in entries.values()):
         raise LedgerError("global unassigned character count mismatch")
 
-    header_accounting = json.loads(header_json_path.read_text(encoding="utf-8"))
     alpha_rows = header_accounting.get("alphabetic_characters", [])
     alpha_families: dict[str, int] = defaultdict(int)
     for row in alpha_rows:

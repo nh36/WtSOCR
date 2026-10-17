@@ -42,7 +42,8 @@ def _fixture(tmp_path, *, pending_literal="é", source_text="ཀéx"):
                                "alphabetic_characters": 1, "source_grammar_family": "bounded_fixture",
                                "unresolved_reason": "No role boundary established.", "context": source_text}])
     accounting = tmp_path / "accounting.json"
-    accounting.write_text(json.dumps({"alphabetic_characters": [
+    projection_hash = "a" * 64
+    accounting.write_text(json.dumps({"source_projection_sha256": projection_hash, "alphabetic_characters": [
         {"family": "source_structural_label", "count": 0},
         {"family": "source_decoding_residue", "count": 0},
     ]}), encoding="utf-8")
@@ -55,7 +56,8 @@ def _fixture(tmp_path, *, pending_literal="é", source_text="ཀéx"):
               "metrics": {"identity": identity, "source_kind": "html", "text_sha256": digest}}
     projection.write_text(json.dumps(record, ensure_ascii=False) + "\n", encoding="utf-8")
     manifest = tmp_path / "manifest.json"
-    manifest.write_text(json.dumps({"baseline_commit": "test", "semantic_store_sha256": "test"}), encoding="utf-8")
+    manifest.write_text(json.dumps({"baseline_commit": "test", "semantic_store_sha256": "test",
+                                   "raw_projection_sha256": projection_hash}), encoding="utf-8")
     return identity, entries, accounting, header, pending, projection, manifest
 
 
@@ -108,6 +110,52 @@ def test_rejects_overlapping_accounting_intervals(tmp_path):
         _build(tmp_path, tuple(fixture))
 
 
+def test_rejects_accounting_gap_alpha_count_that_disagrees_with_source(tmp_path):
+    fixture = list(_fixture(tmp_path))
+    identity, _, _, header, *_ = fixture
+    _write_jsonl_gz(header, [{"identity": identity, "source_kind": "html",
+                              "source_sha256": hashlib.sha256("ཀéx".encode()).hexdigest(),
+                              "gaps": [{"start": 1, "end": 2,
+                                        "family": "unparsed_lexical_prose_pending_review",
+                                        "alphabetic_characters": 0}], "source_candidates": []}])
+    with pytest.raises(ledger.LedgerError, match="gap alphabetic count disagrees"):
+        _build(tmp_path, tuple(fixture))
+
+
+def test_rejects_missing_meaningful_pending_interval_for_pending_gap(tmp_path):
+    fixture = list(_fixture(tmp_path))
+    pending = fixture[4]
+    _write_jsonl_gz(pending, [])
+    with pytest.raises(ledger.LedgerError, match="do not exactly account for pending gap"):
+        _build(tmp_path, tuple(fixture))
+
+
+def test_rejects_pending_interval_attributed_to_non_pending_gap(tmp_path):
+    fixture = list(_fixture(tmp_path))
+    identity, _, _, header, *_ = fixture
+    _write_jsonl_gz(header, [{"identity": identity, "source_kind": "html",
+                              "source_sha256": hashlib.sha256("ཀéx".encode()).hexdigest(),
+                              "gaps": [{"start": 1, "end": 2, "family": "typed_citation",
+                                        "alphabetic_characters": 1}], "source_candidates": []}])
+    with pytest.raises(ledger.LedgerError, match="non-pending gap"):
+        _build(tmp_path, tuple(fixture))
+
+
+def test_alphabetic_offset_accounting_uses_unicode_codepoints():
+    source = "ཀ—éx"
+    assert ledger._alphabetic_offsets(source, 0, len(source)) == {0, 2, 3}
+
+
+def test_rejects_header_projection_hash_that_disagrees_with_manifest(tmp_path):
+    fixture = list(_fixture(tmp_path))
+    accounting = fixture[2]
+    payload = json.loads(accounting.read_text(encoding="utf-8"))
+    payload["source_projection_sha256"] = "b" * 64
+    accounting.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(ledger.LedgerError, match="source projection hash differs"):
+        _build(tmp_path, tuple(fixture))
+
+
 def test_rejects_duplicate_entry_identity(tmp_path):
     fixture = list(_fixture(tmp_path))
     entries = fixture[1]
@@ -140,3 +188,12 @@ def test_semantic_store_joins_by_identity_and_rejects_source_hash_mismatch(tmp_p
         ledger.build_ledger(entries_path=entries, header_json_path=accounting, header_jsonl_path=header,
                             pending_path=pending, projection_path=projection, manifest_path=manifest,
                             database_path=db, semantic_entries_path=semantic, enforce_certified_totals=False)
+
+
+def test_rejects_duplicate_pending_interval(tmp_path):
+    fixture = list(_fixture(tmp_path))
+    pending = fixture[4]
+    rows = list(ledger._jsonl_gz(pending))
+    _write_jsonl_gz(pending, rows + rows)
+    with pytest.raises(ledger.LedgerError, match="overlapping pending meaningful intervals"):
+        _build(tmp_path, tuple(fixture))
