@@ -3,6 +3,37 @@
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 let byEntry, inspection;
 function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\.badw\.de\//.test(url||'')){a.href=url;a.rel='noreferrer';}return a;}
+const relationLabels={perfect_of:'Perfect of',future_of:'Future of',imperative_of:'Imperative of'};
+function headerFieldsModel(item){
+ const fields=item?.semantic_hierarchy?.header_fields;
+ if(!Array.isArray(fields))return {alternatives:[],relations:[]};
+ const alternatives=fields.filter(f=>f?.header_kind==='alternate_headword'&&typeof f.form_span?.literal==='string')
+  .map(f=>({literal:f.form_span.literal}));
+ const relations=fields.filter(f=>f?.header_kind==='header_relation').map(f=>{
+  const types=Array.isArray(f.relation_types)&&f.relation_types.length?f.relation_types:(f.relation_type?[f.relation_type]:[]);
+  return {literal:typeof f.literal==='string'?f.literal:'',target:typeof f.target_span?.literal==='string'?f.target_span.literal:'',relationTypes:types.map(type=>({code:type,label:relationLabels[type]||String(type).replaceAll('_',' ')}))};
+ });
+ return {alternatives,relations};
+}
+function renderHeaderFields(item){
+ const model=headerFieldsModel(item);
+ if(!model.alternatives.length&&!model.relations.length)return null;
+ const section=el('section',undefined,'header-fields');section.setAttribute('aria-label','Source-derived heading information');
+ for(const form of model.alternatives){const row=el('p',undefined,'header-alternative');row.append(el('span','Alternative form: ','header-field-label'),el('span',form.literal,'header-form'));section.append(row);}
+ for(const relation of model.relations){
+  const row=el('div',undefined,'header-relation');
+  if(relation.relationTypes.length)row.append(el('span',relation.relationTypes.map(t=>t.label).join(' · '),'header-relation-types'));
+  if(relation.target)row.append(el('span',` → ${relation.target}`,'header-target'));
+  row.append(el('small',`Source: ${relation.literal}`,'header-source-literal'));section.append(row);
+ }
+ return section;
+}
+function entryMatchesSearch(item,query){
+ const q=String(query||'').toLowerCase();
+ const primary=`${item?.headword?.loc||''} ${item?.headword?.tibetan||''}`;
+ const aliases=headerFieldsModel(item).alternatives.map(form=>form.literal);
+ return [primary,...aliases].some(value=>value.toLowerCase().includes(q));
+}
 function citationDetailModel(citation,entry){
  const component=entry.components.find(c=>c.id===citation.component_id);
  const related=entry.relationships.filter(r=>r.type==='citation_of'&&(r.from_id===citation.component_id||r.to_ids.includes(citation.component_id)));
@@ -31,6 +62,7 @@ function openCitationDetail(citation,entry){
 function show(item){
  const a=document.querySelector('#article');a.replaceChildren();
  a.append(el('h2',`${item.headword.loc||''} ${item.homonym||''}`),el('p',item.headword.tibetan||'','heading-tibetan'));
+ const header=renderHeaderFields(item);if(header)a.append(header);
  const reading=el('div',undefined,'reading');
  const citations=new Map(item.citations.map(c=>[c.component_id,c]));
  const references=new Map(item.cross_references.filter(r=>r.component_id).map(r=>[r.component_id,r]));
@@ -72,8 +104,8 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load dictionary data');return r.json();}).then(d=>{
  byEntry=new Map(d.entries.map(e=>[e.id,e]));
  const search=document.querySelector('#search'),list=document.querySelector('#entries');
- function filter(){list.replaceChildren();const q=search.value.toLowerCase();const items=d.entries.filter(e=>`${e.headword.loc||''} ${e.headword.tibetan||''}`.toLowerCase().includes(q));document.querySelector('#count').textContent=`${items.length} / ${d.entries.length} entries`;for(const e of items){const link=el('a',`${e.headword.loc} ${e.homonym||''}`);link.href='#'+encodeURIComponent(e.id);list.append(link);}}
+ function filter(){list.replaceChildren();const q=search.value;const items=d.entries.filter(e=>entryMatchesSearch(e,q));document.querySelector('#count').textContent=`${items.length} / ${d.entries.length} entries`;for(const e of items){const link=el('a',`${e.headword.loc} ${e.homonym||''}`);link.href='#'+encodeURIComponent(e.id);list.append(link);}}
  search.addEventListener('input',filter);window.addEventListener('hashchange',navigate);filter();navigate();
  }).catch(e=>document.querySelector('#article').replaceChildren(el('p',e.message)));
 }
-if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail};
+if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch};
