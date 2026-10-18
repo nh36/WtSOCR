@@ -15,9 +15,9 @@ function headerFieldsModel(item){
  });
  const verbForms=fields.filter(f=>f?.header_kind==='verb_form'&&typeof f.form_span?.literal==='string')
   .map(f=>({literal:typeof f.literal==='string'?f.literal:'',form:f.form_span.literal,label:typeof f.label_span?.literal==='string'?f.label_span.literal:'',labelSpan:f.label_span||null,sourceBinding:f.source_binding||null}));
- const sameSourceBinding=(a,b)=>!a||!b||(a.identity===b.identity&&a.text_sha256===b.text_sha256);
+ const sameSourceBinding=(a,b)=>typeof a?.identity==='string'&&a.identity.length>0&&typeof b?.identity==='string'&&b.identity.length>0&&typeof a?.text_sha256==='string'&&a.text_sha256.length>0&&typeof b?.text_sha256==='string'&&b.text_sha256.length>0&&a.identity===b.identity&&a.text_sha256===b.text_sha256;
  const grammaticalLabels=fields.filter(f=>f?.header_kind==='grammatical_label'&&typeof f.literal==='string')
-  .filter(label=>!verbForms.some(form=>form.labelSpan&&label.start===form.labelSpan.start&&label.end===form.labelSpan.end&&label.literal===form.label&&sameSourceBinding(label.source_binding,form.sourceBinding)))
+  .filter(label=>!verbForms.some(form=>Number.isInteger(label.start)&&Number.isInteger(label.end)&&Number.isInteger(form.labelSpan?.start)&&Number.isInteger(form.labelSpan?.end)&&label.start===form.labelSpan.start&&label.end===form.labelSpan.end&&label.literal===form.label&&sameSourceBinding(label.source_binding,form.sourceBinding)))
   .map(f=>({literal:f.literal,sourceBinding:f.source_binding||null,start:f.start,end:f.end}));
  return {alternatives,relations,verbForms,grammaticalLabels};
 }

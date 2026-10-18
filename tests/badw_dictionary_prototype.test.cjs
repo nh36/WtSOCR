@@ -191,6 +191,29 @@ test('standalone grammatical labels display verbatim and overlapping fields are 
  delete global.document;
 });
 
+test('duplicate grammatical-label suppression requires complete matching provenance and explicit offsets',()=>{
+ const pair=(options={})=>{const {labelBinding,formBinding}=options;const has=(key)=>Object.hasOwn(options,key);return {semantic_hierarchy:{header_fields:[
+  {header_kind:'grammatical_label',literal:'pf.',...(options.labelStart===false?{}:{start:has('labelStart')?options.labelStart:1}),...(options.labelEnd===false?{}:{end:has('labelEnd')?options.labelEnd:4}),...(labelBinding===undefined?{}:{source_binding:labelBinding})},
+  {header_kind:'verb_form',form_span:{literal:'bduṅs'},label_span:{literal:'pf.',...(options.formStart===false?{}:{start:has('formStart')?options.formStart:1}),...(options.formEnd===false?{}:{end:has('formEnd')?options.formEnd:4})},...(formBinding===undefined?{}:{source_binding:formBinding})}
+ ]}};};
+ const binding={identity:'source-a',text_sha256:'hash-a'};
+ for(const [name,entry] of [
+  ['missing bindings',pair()],
+  ['missing standalone binding',pair({formBinding:binding})],
+  ['missing verb-form binding',pair({labelBinding:binding})],
+  ['incomplete standalone binding',pair({labelBinding:{identity:'source-a'},formBinding:binding})],
+  ['incomplete verb-form binding',pair({labelBinding:binding,formBinding:{text_sha256:'hash-a'}})],
+  ['empty binding values',pair({labelBinding:{identity:'',text_sha256:'hash-a'},formBinding:{identity:'',text_sha256:'hash-a'}})],
+  ['missing offsets',pair({labelBinding:binding,formBinding:binding,labelStart:false,labelEnd:false})],
+  ['missing verb-form label offsets',pair({labelBinding:binding,formBinding:binding,formStart:false,formEnd:false})],
+ ]){
+  assert.deepEqual(headerFieldsModel(entry).grammaticalLabels.map(x=>x.literal),['pf.'],name);
+ }
+ const matching=pair({labelBinding:binding,formBinding:{...binding}});
+ assert.deepEqual(headerFieldsModel(matching).grammaticalLabels,[]);
+ assert.deepEqual(headerFieldsModel(headingDisplayEntries[0]).grammaticalLabels.map(x=>x.literal),['imp.']);
+});
+
 test('definition prose and unresolved candidate forms do not become searchable aliases',()=>{
  const entry=headerEntries[0];
  entry.semantic_hierarchy.header_fields.push({header_kind:'candidate_headword',form_span:{literal:'not an alias'}});
