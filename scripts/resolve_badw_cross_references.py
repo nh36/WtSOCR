@@ -43,26 +43,62 @@ def printed_target(target, structure, text):
             if start <= position < start + len(lines[i]['text']):
                 local = position - start
                 spans = [s for s in lines[i].get('style_spans', []) if s['start'] <= local < s['end']]
-                return lines[i], spans[0] if len(spans) == 1 else {}
-        return {}, {}
+                return i, lines[i], spans[0] if len(spans) == 1 else {}
+        return None, {}, {}
     match = re.match(r'\s*([1-9][0-9]?)\s+', literal)
     start = a
     if match:
         number_start = a + match.start(1)
         word_start = a + match.end()
-        number_line, number_style = glyph(number_start)
-        word_line, word_style = glyph(word_start)
-        if (number_style.get('style') != 'regular' or word_style.get('style') != 'italic'
-                or number_line.get('page_id') != word_line.get('page_id')
-                or not 1 < number_line.get('y', 0) - word_line.get('y', 0) < 10
-                or not number_line.get('first_x', 0) < word_line.get('first_x', 0)):
+        number_line_index, number_line, number_style = glyph(number_start)
+        word_line_index, word_line, word_style = glyph(word_start)
+        raised = (number_line.get('y') is not None and word_line.get('y') is not None
+                  and number_line.get('first_x') is not None and word_line.get('first_x') is not None
+                  and 1 < number_line['y'] - word_line['y'] < 10
+                  and number_line['first_x'] < word_line['first_x'])
+        same_page = (number_line.get('page_id') and number_line.get('page_id') == word_line.get('page_id')
+                     and number_line.get('printed_page') is not None
+                     and number_line.get('printed_page') == word_line.get('printed_page'))
+        if number_style.get('style') == 'regular':
+            # Preserve the established regular-font qualifier path.
+            verified_number = (word_style.get('style') == 'italic'
+                               and number_line.get('page_id') == word_line.get('page_id')
+                               and 1 < number_line.get('y', 0) - word_line.get('y', 0) < 10
+                               and number_line.get('first_x', 0) < word_line.get('first_x', 0))
+        else:
+            # An italic numeral is a homonym only when separate physical lines
+            # and exact source spans independently establish an isolated raised
+            # qualifier before the lexical form.
+            number_digits = match.group(1)
+            digit_styles = []
+            for position in range(number_start, number_start + len(number_digits)):
+                _, _, style = glyph(position)
+                digit_styles.append(style)
+            number_explicit = (number_style.get('style') == 'italic'
+                                and number_style.get('font_id')
+                                and number_line.get('text', '').strip() == number_digits
+                                and len(digit_styles) == len(number_digits)
+                                and all(s.get('style') == 'italic' and s.get('font_id')
+                                        for s in digit_styles)
+                                and len({s.get('font_id') for s in digit_styles}) == 1)
+            word_local = word_start - offsets[word_line_index] if word_line_index is not None else -1
+            word_explicit = (word_style.get('style') == 'italic' and word_style.get('font_id')
+                             and number_line_index is not None
+                             and word_line_index == number_line_index + 1
+                             and word_local >= 0
+                             and (not word_line.get('text', '')[:word_local]
+                                  or word_line.get('text', '')[:word_local].isspace())) if word_line_index is not None else False
+            verified_number = (number_explicit and word_explicit and same_page and raised
+                               and number_line_index is not None and word_line_index is not None
+                               and text[number_start + len(number_digits):word_start].isspace())
+        if not verified_number:
             result['shape'] = 'unverified_numeric_qualifier'
             return result
         result.update(homonym=match.group(1), qualifier_span=dict(start=number_start,
                       end=a+match.end(1)), shape='raised_homonym_prefix')
         start = word_start
     positions = [i for i in range(start, b) if not text[i].isspace()]
-    styles = [glyph(i)[1] for i in positions]
+    styles = [glyph(i)[2] for i in positions]
     if not positions or any(s.get('style') != 'italic' for s in styles) or len({s.get('font_id') for s in styles}) != 1:
         result['shape'] = 'mixed_typography_or_punctuation'
         # Exact unchanged labels retain the previously accepted parser contract;
