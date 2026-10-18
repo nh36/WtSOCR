@@ -6,20 +6,28 @@ function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\
 const relationLabels={perfect_of:'Perfect of',future_of:'Future of',imperative_of:'Imperative of'};
 function headerFieldsModel(item){
  const fields=item?.semantic_hierarchy?.header_fields;
- if(!Array.isArray(fields))return {alternatives:[],relations:[]};
+ if(!Array.isArray(fields))return {alternatives:[],relations:[],verbForms:[],grammaticalLabels:[]};
  const alternatives=fields.filter(f=>f?.header_kind==='alternate_headword'&&typeof f.form_span?.literal==='string')
   .map(f=>({literal:f.form_span.literal}));
  const relations=fields.filter(f=>f?.header_kind==='header_relation').map(f=>{
   const types=Array.isArray(f.relation_types)&&f.relation_types.length?f.relation_types:(f.relation_type?[f.relation_type]:[]);
   return {literal:typeof f.literal==='string'?f.literal:'',target:typeof f.target_span?.literal==='string'?f.target_span.literal:'',relationTypes:types.map(type=>({code:type,label:relationLabels[type]||String(type).replaceAll('_',' ')}))};
  });
- return {alternatives,relations};
+ const verbForms=fields.filter(f=>f?.header_kind==='verb_form'&&typeof f.form_span?.literal==='string')
+  .map(f=>({literal:typeof f.literal==='string'?f.literal:'',form:f.form_span.literal,label:typeof f.label_span?.literal==='string'?f.label_span.literal:'',labelSpan:f.label_span||null,sourceBinding:f.source_binding||null}));
+ const sameSourceBinding=(a,b)=>!a||!b||(a.identity===b.identity&&a.text_sha256===b.text_sha256);
+ const grammaticalLabels=fields.filter(f=>f?.header_kind==='grammatical_label'&&typeof f.literal==='string')
+  .filter(label=>!verbForms.some(form=>form.labelSpan&&label.start===form.labelSpan.start&&label.end===form.labelSpan.end&&label.literal===form.label&&sameSourceBinding(label.source_binding,form.sourceBinding)))
+  .map(f=>({literal:f.literal,sourceBinding:f.source_binding||null,start:f.start,end:f.end}));
+ return {alternatives,relations,verbForms,grammaticalLabels};
 }
 function renderHeaderFields(item){
  const model=headerFieldsModel(item);
- if(!model.alternatives.length&&!model.relations.length)return null;
+ if(!model.alternatives.length&&!model.relations.length&&!model.verbForms.length&&!model.grammaticalLabels.length)return null;
  const section=el('section',undefined,'header-fields');section.setAttribute('aria-label','Source-derived heading information');
  for(const form of model.alternatives){const row=el('p',undefined,'header-alternative');row.append(el('span','Alternative form: ','header-field-label'),el('span',form.literal,'header-form'));section.append(row);}
+ for(const form of model.verbForms){const row=el('p',undefined,'header-verb-form');row.append(el('span','Verb form: ','header-field-label'));if(form.label)row.append(el('span',form.label,'header-grammatical-label'),el('span',' ','header-field-separator'));row.append(el('span',form.form,'header-form'));section.append(row);}
+ for(const label of model.grammaticalLabels){const row=el('p',undefined,'header-grammatical-label-row');row.append(el('span','Grammatical label: ','header-field-label'),el('span',label.literal,'header-grammatical-label'));section.append(row);}
  for(const relation of model.relations){
   const row=el('div',undefined,'header-relation');
   if(relation.relationTypes.length)row.append(el('span',relation.relationTypes.map(t=>t.label).join(' · '),'header-relation-types'));

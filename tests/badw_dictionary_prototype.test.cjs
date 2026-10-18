@@ -36,6 +36,16 @@ const headerEntries=[
  {id:'html:empty',headword:{loc:'empty',tibetan:'དབེན'},semantic_hierarchy:{header_fields:[]},display_blocks:[{kind:'definition',segments:[{text:'blon po che ba',component_ids:[],types:[],languages:[]}]}]},
  {id:'html:no-header',headword:{loc:'plain',tibetan:'དཔེ'},display_blocks:[{kind:'definition',segments:[{text:'blon po che',component_ids:[],types:[],languages:[]}]}]}
 ];
+const headingDisplayEntries=[
+ {id:'html:bduṅ',headword:{loc:'bduṅ',tibetan:'བདུང་'},semantic_hierarchy:{header_fields:[
+  {header_kind:'grammatical_label',literal:'pf.',start:66,end:69,source_binding:{identity:'bduṅ',text_sha256:'bduṅ-hash'}},
+  {header_kind:'verb_form',literal:'bduṅs',form_span:{literal:'bduṅs',start:70,end:75},label_span:{literal:'pf.',start:66,end:69},source_binding:{identity:'bduṅ',text_sha256:'bduṅ-hash'}},
+  {header_kind:'grammatical_label',literal:'imp.',start:76,end:80,source_binding:{identity:'bduṅ',text_sha256:'bduṅ-hash'}}
+ ]}},
+ {id:'html:bar-dag-la',headword:{loc:'bar dag la',tibetan:'བར་དག་ལ་'},semantic_hierarchy:{header_fields:[
+  {header_kind:'grammatical_label',literal:'postpos.',start:64,end:72,source_binding:{identity:'bar dag la',text_sha256:'bar-hash'}}
+ ]}}
+];
 
 class Node {
  constructor(tag='node'){this.tag=tag;this.children=[];this.textContent='';this.attrs={};this.className='';this.open=false;this.classList={add:()=>{}};}
@@ -140,10 +150,44 @@ test('singular relations render once and empty or missing header fields are harm
  assert.equal(single.children.length,1);
  assert.equal(single.children[0].children.filter(n=>n.className==='header-relation-types').length,1);
  assert.equal(single.children[0].children.find(n=>n.className==='header-relation-types').textContent,'Imperative of');
- assert.deepEqual(headerFieldsModel(headerEntries[4]),{alternatives:[],relations:[]});
+ assert.deepEqual(headerFieldsModel(headerEntries[4]),{alternatives:[],relations:[],verbForms:[],grammaticalLabels:[]});
  assert.equal(renderHeaderFields(headerEntries[4]),null);
  assert.equal(renderHeaderFields(headerEntries[5]),null);
  assert.equal(entryMatchesSearch(headerEntries[4],'empty'),true);
+ delete global.document;
+});
+
+test('verb forms display the exact form and source label once, alongside independent labels',()=>{
+ const entry=headingDisplayEntries[0],before=JSON.stringify(entry.semantic_hierarchy.header_fields);
+ global.document={createElement:tag=>new Node(tag)};
+ const model=headerFieldsModel(entry),section=renderHeaderFields(entry);
+ assert.deepEqual(model.verbForms.map(f=>({form:f.form,label:f.label})),[{form:'bduṅs',label:'pf.'}]);
+ assert.deepEqual(model.verbForms[0].sourceBinding,entry.semantic_hierarchy.header_fields[1].source_binding);
+ assert.deepEqual(model.grammaticalLabels.map(x=>x.literal),['imp.']);
+ const verbRow=section.children.find(n=>n.className==='header-verb-form');
+ assert.equal(verbRow.children.find(n=>n.className==='header-grammatical-label').textContent,'pf.');
+ assert.equal(verbRow.children.find(n=>n.className==='header-form').textContent,'bduṅs');
+ assert.equal(section.children.filter(n=>n.className==='header-grammatical-label-row').length,1);
+ assert.equal(section.children.find(n=>n.className==='header-grammatical-label-row').children[1].textContent,'imp.');
+ assert.equal(entryMatchesSearch(entry,'bduṅs'),false);
+ assert.equal(JSON.stringify(entry.semantic_hierarchy.header_fields),before);
+ delete global.document;
+});
+
+test('standalone grammatical labels display verbatim and overlapping fields are handled conservatively',()=>{
+ global.document={createElement:tag=>new Node(tag)};
+ const section=renderHeaderFields(headingDisplayEntries[1]);
+ assert.equal(section.children.length,1);
+ assert.equal(section.children[0].children[1].textContent,'postpos.');
+ const overlap={id:'html:overlap',headword:{loc:'overlap'},semantic_hierarchy:{header_fields:[
+  {header_kind:'grammatical_label',literal:'pf.',start:1,end:4,source_binding:{identity:'x',text_sha256:'hash-a'}},
+  {header_kind:'verb_form',literal:'form',form_span:{literal:'form'},label_span:{literal:'pf.',start:1,end:4},source_binding:{identity:'x',text_sha256:'hash-b'}}
+ ]}};
+ assert.deepEqual(headerFieldsModel(overlap).grammaticalLabels.map(x=>x.literal),['pf.']);
+ assert.equal(entryMatchesSearch(overlap,'form'),false);
+ const incomplete=headerFieldsModel({semantic_hierarchy:{header_fields:[{header_kind:'verb_form',form_span:{literal:'x'}}]}});
+ assert.equal(incomplete.verbForms.length,1);
+ assert.deepEqual(incomplete.grammaticalLabels,[]);
  delete global.document;
 });
 
