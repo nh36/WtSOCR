@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import subprocess
 import sys
@@ -193,3 +194,216 @@ def test_italic_qualifier_does_not_select_nearest_homonym_or_other_exact_label()
     assert result["canonical_resolution"]["parsed_target"]["literal"] == "\n2\nkheṅs"
     assert result["canonical_resolution"]["parsed_target"]["homonym"] == "2"
     assert result["canonical_resolution"]["parsed_target"]["lexical_target"] == "kheṅs"
+
+
+def plural_fixture(target_text="ka, kha", *, members=None, source_binding=True,
+                   geometry=True, article_id="source-pdf-article",
+                   source_hash=None):
+    text = "↑" + target_text
+    if members is None:
+        members = ["ka", "kha"]
+    targets = []
+    for literal in members:
+        start = text.find(literal)
+        targets.append(dict(visual_start=start, visual_end=start + len(literal),
+                            source_text=literal))
+    style_spans = []
+    for target in targets:
+        style_spans.append(dict(start=target["visual_start"], end=target["visual_end"],
+                                style="italic", font_id="italic-font"))
+    line = dict(text=text, page_id="page-1", printed_page=1, first_x=100.0, y=500.0,
+                style_spans=style_spans)
+    if not geometry:
+        line.pop("first_x")
+    actual_hash = source_hash or "a" * 64
+    structure = dict(article_id=article_id, source_faithful_sha256=actual_hash,
+                     review_text_sha256=hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                     visual_lines=[line])
+    occurrence = dict(record_type="cross_reference", id="source:ref", entry_id="source",
+                      marker="↑", target_label=target_text,
+                      source_candidate=dict(visual_start=0, visual_end=len(text),
+                                            target_label_candidate=target_text,
+                                            target_candidates=targets),
+                      source_spans=[dict(visual_start=0, visual_end=len(text),
+                                         target_label_candidate=target_text)])
+    binding = dict(identity=article_id, text_sha256=actual_hash) if source_binding else None
+    return occurrence, structure, text, binding
+
+
+def plural_index(*lemmas):
+    return EntryIndex([entry(f"entry-{i}", lemma=lemma,
+                             url=f"https://example/lemma/{lemma}/1")
+                       for i, lemma in enumerate(lemmas, 1)])
+
+
+def resolve_plural(index, fixture):
+    occurrence, structure, text, binding = fixture
+    return index.resolve_source_candidate_with_members(
+        occurrence, structure=structure, text=text, source_binding=binding)
+
+
+def test_comma_separated_targets_are_one_occurrence_with_ordered_exact_members():
+    # Source-shaped spelling from the reviewed mkhar ’gro occurrence.  This
+    # deliberately tests two target members within one printed reference.
+    fixture = plural_fixture("mkha’ ’gro, mkha’ ’gro ma",
+                             members=["mkha’ ’gro", "mkha’ ’gro ma"])
+    occurrence, _, _, _ = fixture
+    before = copy.deepcopy(occurrence)
+    result = resolve_plural(plural_index("mkha’ ’gro", "mkha’ ’gro ma"), fixture)
+    resolution = result["canonical_resolution"]
+    assert result["id"] == occurrence["id"]
+    assert result["canonical_resolution"]["status"] == "unresolved"
+    assert resolution["target_members_status"] == "complete"
+    assert "target_entry_id" not in resolution
+    assert "target_lexical_entity" not in resolution
+    assert [m["ordinal"] for m in resolution["target_members"]] == [0, 1]
+    assert [m["literal"] for m in resolution["target_members"]] == ["mkha’ ’gro", "mkha’ ’gro ma"]
+    assert [m["source_span"] for m in resolution["target_members"]] == [
+        dict(start=1, end=11), dict(start=13, end=26)]
+    assert [m["preceding_separator"] for m in resolution["target_members"]] == [None, ", "]
+    assert all(m["resolution_status"] == "resolved" for m in resolution["target_members"])
+    assert occurrence == before
+
+
+def test_three_members_and_explicit_arrows_preserve_source_order_and_separators():
+    three = plural_fixture("ka, kha und ga", members=["ka", "kha", "ga"])
+    result = resolve_plural(plural_index("ka", "kha", "ga"), three)
+    members = result["canonical_resolution"]["target_members"]
+    assert [m["literal"] for m in members] == ["ka", "kha", "ga"]
+    assert [m["preceding_separator"] for m in members] == [None, ", ", " und "]
+    arrows = plural_fixture("ka↑kha", members=["ka", "kha"])
+    result = resolve_plural(plural_index("ka", "kha"), arrows)
+    assert [m["preceding_separator"] for m in
+            result["canonical_resolution"]["target_members"]] == [None, "↑"]
+
+
+def test_homonym_member_and_exact_index_are_kept_separate_from_literal():
+    text = "↑ka, \n2\nkheṅs"
+    starts = [text.index("ka"), text.index("2")]
+    targets = [
+        dict(visual_start=starts[0], visual_end=starts[0] + 2, source_text="ka"),
+        dict(visual_start=starts[1], visual_end=len(text), source_text="2\nkheṅs"),
+    ]
+    lines = [
+        dict(text="↑ka, ", page_id="p", printed_page=1, first_x=100, y=500,
+             style_spans=[dict(start=0, end=1, style="regular", font_id="roman"),
+                          dict(start=1, end=3, style="italic", font_id="i")]),
+        dict(text="2", page_id="p", printed_page=1, first_x=101, y=496,
+             style_spans=[dict(start=0, end=1, style="italic", font_id="n")]),
+        dict(text="kheṅs", page_id="p", printed_page=1, first_x=104, y=491,
+             style_spans=[dict(start=0, end=5, style="italic", font_id="i")]),
+    ]
+    structure = dict(article_id="source-pdf-article", source_faithful_sha256="a" * 64,
+                     review_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                     visual_lines=lines)
+    occurrence = dict(record_type="cross_reference", id="source:ref", entry_id="source",
+                      marker="↑", target_label=text[1:],
+                      source_candidate=dict(visual_start=0, visual_end=len(text),
+                                            target_label_candidate=text[1:], target_candidates=targets),
+                      source_spans=[dict(visual_start=0, visual_end=len(text),
+                                         target_label_candidate=text[1:])])
+    fixture = (occurrence, structure, text,
+               dict(identity="source-pdf-article", text_sha256="a" * 64))
+    index = EntryIndex([entry("ka", "ka"),
+                        entry("kheṅs-1", "kheṅs", "1", "https://example/lemma/kheṅs/1"),
+                        entry("kheṅs-2", "kheṅs", "2", "https://example/lemma/kheṅs/2")])
+    before = copy.deepcopy(occurrence)
+    result = resolve_plural(index, fixture)
+    members = result["canonical_resolution"]["target_members"]
+    assert result["canonical_resolution"]["target_members_status"] == "complete"
+    assert members[1]["literal"] == "2\nkheṅs"
+    assert members[1]["printed_target"]["homonym"] == "2"
+    assert members[1]["printed_target"]["lexical_target"] == "kheṅs"
+    assert members[1]["homonym_qualifier"] == "2"
+    assert members[1]["target_entry_id"] == "kheṅs-2"
+    assert occurrence == before
+
+
+def test_partial_list_and_multiple_manifestations_do_not_choose_arbitrary_entry():
+    fixture = plural_fixture()
+    result = resolve_plural(plural_index("ka"), fixture)
+    resolution = result["canonical_resolution"]
+    assert resolution["target_members_status"] == "partial"
+    assert [m["resolution_status"] for m in resolution["target_members"]] == ["resolved", "unresolved"]
+    assert resolution["target_members"][0]["target_entry_id"] == "entry-1"
+    assert resolution["target_members"][1]["exact_index_candidate_ids"] == []
+    assert resolution["target_members"][1]["residual_reason"] == "exact_target_absent_from_acquired_index"
+    manifests = EntryIndex([
+        entry("entry-1", "ka", url="https://example/lemma/ka/1"),
+        entry("entry-2", "kha", url="https://example/lemma/kha/1"),
+        entry("entry-kha-2", "kha", url="https://example/lemma/kha/2"),
+    ])
+    result = resolve_plural(manifests, fixture)
+    member = result["canonical_resolution"]["target_members"][1]
+    assert member["resolution_status"] == "resolved"
+    assert member["exact_index_candidate_ids"] == ["entry-2", "entry-kha-2"]
+    assert "target_entry_id" not in member
+    assert len(member["target_lexical_entity"]["witness_entry_ids"]) == 2
+
+
+@pytest.mark.parametrize("mutation", [
+    "bare_line_break", "overlap", "wrong_literal", "altered_hash", "missing_binding",
+    "missing_geometry", "outside_parent",
+])
+def test_unproven_plural_boundaries_fall_back_to_unchanged_singular_contract(mutation):
+    fixture = list(plural_fixture("ka, kha"))
+    occurrence, structure, text, binding = fixture
+    targets = occurrence["source_candidate"]["target_candidates"]
+    if mutation == "bare_line_break":
+        text = "↑ka\nkha"
+        structure["visual_lines"] = [
+            dict(text="↑ka", page_id="page-1", printed_page=1, first_x=100, y=500,
+                 style_spans=[dict(start=0, end=1, style="regular", font_id="roman"),
+                              dict(start=1, end=3, style="italic", font_id="i")]),
+            dict(text="kha", page_id="page-1", printed_page=1, first_x=100, y=490,
+                 style_spans=[dict(start=0, end=3, style="italic", font_id="i")]),
+        ]
+        occurrence["target_label"] = "ka\nkha"
+        occurrence["source_candidate"].update(visual_end=len(text),
+                                                target_label_candidate="ka\nkha")
+        targets[1].update(visual_start=4, visual_end=7)
+        structure["review_text_sha256"] = hashlib.sha256(text.encode()).hexdigest()
+    elif mutation == "overlap":
+        targets[1].update(visual_start=2, visual_end=3, source_text="a")
+    elif mutation == "wrong_literal":
+        targets[1]["source_text"] = "xyz"
+    elif mutation == "altered_hash":
+        binding["text_sha256"] = "b" * 64
+    elif mutation == "missing_binding":
+        fixture[3] = None
+    elif mutation == "missing_geometry":
+        structure["visual_lines"][0].pop("first_x")
+    elif mutation == "outside_parent":
+        occurrence["source_candidate"]["visual_end"] = targets[1]["visual_start"]
+        occurrence["target_label"] = text[1:targets[1]["visual_start"]]
+        occurrence["source_candidate"]["target_label_candidate"] = occurrence["target_label"]
+    fixture = (occurrence, structure, text, fixture[3])
+    result = resolve_plural(plural_index("ka", "kha"), fixture)
+    assert "target_members" not in result["canonical_resolution"]
+    expected = plural_index("ka", "kha").resolve_source_candidate(
+        occurrence, structure=structure, text=text)
+    assert result == expected
+
+
+def test_single_target_output_is_byte_equivalent_to_existing_resolver_contract():
+    text = "↑ka"
+    structure = dict(article_id="source-pdf-article", source_faithful_sha256="a" * 64,
+                     review_text_sha256=hashlib.sha256(text.encode()).hexdigest(),
+                     visual_lines=[dict(text=text, page_id="page-1", printed_page=1,
+                                        first_x=100, y=500,
+                                        style_spans=[dict(start=0, end=1, style="regular", font_id="r"),
+                                                     dict(start=1, end=3, style="italic", font_id="i")])])
+    occurrence = dict(record_type="cross_reference", id="source:ref", entry_id="source",
+                      marker="↑", target_label="ka",
+                      source_candidate=dict(visual_start=1, visual_end=3,
+                                            target_label_candidate="ka",
+                                            target_candidates=[dict(visual_start=1, visual_end=3,
+                                                                    source_text="ka")]),
+                      source_spans=[dict(source_id="source-pdf-article", source_sha256="a" * 64,
+                                         start=1, end=3)])
+    binding = dict(identity="source-pdf-article", text_sha256="a" * 64)
+    index = plural_index("ka")
+    old = index.resolve_source_candidate(occurrence, structure=structure, text=text)
+    new = index.resolve_source_candidate_with_members(occurrence, structure=structure,
+                                                      text=text, source_binding=binding)
+    assert new == old

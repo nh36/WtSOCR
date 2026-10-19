@@ -169,6 +169,33 @@ class EntryIndex:
         self._same_entity(result['canonical_resolution'])
         return result
 
+    def resolve_source_candidate_with_members(self, occurrence, *, structure, text,
+                                              source_binding):
+        """Annotate independently bounded, explicitly separated PDF targets.
+
+        This is deliberately separate from the historical single-target path:
+        if any source, geometry, or list-boundary check fails, the exact old
+        annotation is returned.  A plural occurrence remains one observation.
+        """
+        result = self.resolve_source_candidate(occurrence, structure=structure, text=text)
+        members = _verified_target_members(
+            self, occurrence, structure=structure, text=text,
+            source_binding=source_binding)
+        if members is None:
+            return result
+        resolutions = [m['resolution_status'] for m in members]
+        established = sum(s == 'resolved' for s in resolutions)
+        aggregate = ('complete' if established == len(members) else
+                     'partial' if established else 'unresolved')
+        # Preserve the old conservative parent status and all original source
+        # fields. In particular, no singular parent target is introduced.
+        annotation = result['canonical_resolution']
+        annotation['target_members'] = members
+        annotation['target_members_status'] = aggregate
+        annotation.pop('target_entry_id', None)
+        annotation.pop('target_lexical_entity', None)
+        return result
+
     def _same_entity(self, resolution):
         ids = resolution['candidate_entry_ids']
         keys = {(self.records[i]['headword']['loc'], str(self.records[i].get('homonym') or '')) for i in ids}
@@ -275,6 +302,145 @@ class EntryIndex:
         result = copy.deepcopy(occurrence)
         result["canonical_resolution"] = annotation
         return result
+
+
+_EXPLICIT_MEMBER_SEPARATOR = re.compile(
+    r"(?:\s*[,;]\s*|\s+(?:und|oder|bzw\.)\s+|\s*[↑↓↗↘]\s*)", re.IGNORECASE)
+
+
+def _verified_target_members(index, occurrence, *, structure, text, source_binding):
+    """Return strict member records, or None when source evidence is incomplete."""
+    if (not isinstance(source_binding, dict) or
+            not source_binding.get('identity') or
+            not source_binding.get('text_sha256') or
+            source_binding.get('identity') != structure.get('article_id') or
+            source_binding.get('text_sha256') != structure.get('source_faithful_sha256') or
+            not structure.get('review_text_sha256') or
+            hashlib.sha256(text.encode('utf-8')).hexdigest() != structure.get('review_text_sha256')):
+        return None
+    candidate = occurrence.get('source_candidate')
+    if not isinstance(candidate, dict):
+        return None
+    targets = candidate.get('target_candidates')
+    label = occurrence.get('target_label')
+    marker = occurrence.get('marker')
+    parent_start, parent_end = candidate.get('visual_start'), candidate.get('visual_end')
+    if (not isinstance(targets, list) or len(targets) < 2 or
+            candidate.get('target_label_candidate') != label or
+            not isinstance(parent_start, int) or not isinstance(parent_end, int) or
+            not 0 <= parent_start < parent_end <= len(text) or
+            not isinstance(marker, str) or not marker or
+            text[parent_start:parent_end] != marker + label):
+        return None
+    source_spans = occurrence.get('source_spans')
+    if not isinstance(source_spans, list) or not any(
+            isinstance(span, dict) and
+            span.get('visual_start') == parent_start and
+            span.get('visual_end') == parent_end and
+            span.get('target_label_candidate') == label
+            for span in source_spans):
+        return None
+    lines = structure.get('visual_lines')
+    if not isinstance(lines, list):
+        return None
+    line_offsets, offset = [], 0
+    for line in lines:
+        line_offsets.append(offset)
+        offset += len(line.get('text', '')) + 1
+    if offset - 1 != len(text):
+        return None
+
+    def glyph(position):
+        for li, start in enumerate(line_offsets):
+            end = start + len(lines[li].get('text', ''))
+            if start <= position < end:
+                local = position - start
+                styles = [s for s in lines[li].get('style_spans', [])
+                          if s.get('start', -1) <= local < s.get('end', -1)]
+                return li, lines[li], styles[0] if len(styles) == 1 else None
+        return None, None, None
+
+    records, previous_end = [], None
+    previous_start = None
+    page_key = None
+    for ordinal, target in enumerate(targets):
+        start, end = target.get('visual_start'), target.get('visual_end')
+        literal = target.get('source_text')
+        if (not isinstance(start, int) or not isinstance(end, int) or
+                not isinstance(literal, str) or not parent_start <= start < end <= parent_end or
+                text[start:end] != literal or
+                (previous_start is not None and start <= previous_start) or
+                (previous_end is not None and start < previous_end)):
+            return None
+        separator = None
+        if previous_end is not None:
+            separator = text[previous_end:start]
+            if not separator or not _EXPLICIT_MEMBER_SEPARATOR.fullmatch(separator):
+                return None
+        parsed = printed_target(target, structure, text)
+        if not parsed.get('valid'):
+            return None
+        lexical_start = parsed.get('lexical_span', {}).get('start', start)
+        lexical_end = parsed.get('lexical_span', {}).get('end', end)
+        positions = [p for p in range(lexical_start, lexical_end) if not text[p].isspace()]
+        styles = [glyph(p)[2] for p in positions]
+        # Plural interpretation requires explicit, continuous italic evidence;
+        # printed_target's compatibility fallback is insufficient here.
+        if (not styles or any(not s or s.get('style') != 'italic' or not s.get('font_id')
+                              for s in styles) or
+                len({s.get('font_id') for s in styles}) != 1):
+            return None
+        line_ids = sorted({glyph(p)[0] for p in positions})
+        if not line_ids or None in line_ids:
+            return None
+        locations = set()
+        for li in line_ids:
+            line = lines[li]
+            if (not line.get('page_id') or line.get('printed_page') is None or
+                    line.get('first_x') is None or line.get('y') is None):
+                return None
+            locations.add((line['page_id'], line['printed_page']))
+        if len(locations) != 1:
+            return None
+        member_page = next(iter(locations))
+        if page_key is None:
+            page_key = member_page
+        elif member_page != page_key:
+            return None
+        lexical = parsed['lexical_target']
+        homonym = parsed.get('homonym')
+        ids = sorted(index.identities.get((lexical, str(homonym)), set()) if homonym
+                     else index.labels.get(lexical, set()))
+        identity_keys = {(index.records[i]['headword']['loc'],
+                          str(index.records[i].get('homonym') or '')) for i in ids}
+        if not ids:
+            status, entity = 'unresolved', None
+        elif len(identity_keys) > 1:
+            status, entity = 'ambiguous', None
+        else:
+            status, entity = 'resolved', index.target_identity(ids[0])
+        member = dict(ordinal=ordinal, literal=literal,
+                      source_span=dict(start=start, end=end),
+                      source_binding=dict(identity=source_binding['identity'],
+                                          text_sha256=source_binding['text_sha256']),
+                      preceding_separator=separator, printed_target=parsed,
+                      homonym_qualifier=homonym, exact_index_candidate_ids=ids,
+                      resolution_status=status)
+        if entity is not None:
+            member['target_lexical_entity'] = entity
+            if len(ids) == 1:
+                member['target_entry_id'] = ids[0]
+        elif status == 'ambiguous':
+            member['residual_reason'] = 'multiple_exact_homonym_identities'
+        else:
+            member['residual_reason'] = 'exact_target_absent_from_acquired_index'
+        records.append(member)
+        previous_start = start
+        previous_end = end
+    if (not targets or targets[0].get('visual_start') != parent_start + len(marker) or
+            targets[-1].get('visual_end') != parent_end):
+        return None
+    return records
 
 
 def main():
