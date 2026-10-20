@@ -249,3 +249,18 @@ test('definition prose and unresolved candidate forms do not become searchable a
  assert.equal(entryMatchesSearch(headerEntries[4],'blon po che ba'),false);
  assert.equal(entryMatchesSearch(headerEntries[5],'blon po che'),false);
 });
+
+test('incomplete accepted identities never appear as fully resolved citations',()=>{
+ const entry=findEntry('bkri'),citation={...entry.citations[0],bibliography_status:'resolved'};
+ const before=JSON.stringify(citation);
+ assert.equal(citationDetailModel(citation,entry).status,'partial');
+ assert.equal(JSON.stringify(citation),before);
+});
+test('unread glyph presentation preserves exact extraction evidence and surrounding text',()=>{
+ const {sourceTextParts}=require('../scripts/badw_dictionary_prototype/app.js');
+ const text='before ⟦UNKNOWN:Font:regular:0003:hash⟧ after';
+ const parts=sourceTextParts(text);
+ assert.equal(parts.map(p=>p.literal).join(''),text);
+ assert.deepEqual(parts.map(p=>p.unknown),[false,true,false]);
+ assert.deepEqual(sourceTextParts('ordinary Tibetan བོད'),[{literal:'ordinary Tibetan བོད',unknown:false}]);
+});

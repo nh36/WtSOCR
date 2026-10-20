@@ -263,6 +263,7 @@ def main():
     assets = Path(__file__).with_name("badw_dictionary_prototype")
     for name in ("index.html", "app.js", "style.css"):
         shutil.copyfile(assets / name, output / name)
+    shutil.copytree(assets / "fonts", output / "fonts")
     manifest = dict(entries=len(entries), data_sha256=hashlib.sha256(body).hexdigest(),
                     inputs=[dict(path=str(p), sha256=hashlib.sha256(p.read_bytes()).hexdigest())
                             for p in (args.projection, args.entry_index, args.citation_links, args.bibliography, args.pdf_citation_staging,

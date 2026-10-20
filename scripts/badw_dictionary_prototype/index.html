@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
-<title>WTS development dictionary</title><link rel="stylesheet" href="style.css">
-<header><h1>Wörterbuch der tibetischen Schriftsprache</h1><p>Read-only development edition · original WTS/LoC forms · unresolved associations remain explicit.</p></header>
-<main><nav><label for="search">Find a headword</label><input id="search" type="search" autocomplete="off"><p id="count"></p><div id="entries"></div></nav>
-<article id="article"><p>Select an entry.</p></article></main>
-<dialog id="citation-detail" aria-labelledby="citation-dialog-title"><div class="dialog-bar"><span id="citation-dialog-title">Citation details</span><button type="button" id="citation-dialog-close">Close</button></div><div id="citation-detail-content"></div></dialog>
-<script src="app.js"></script></html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WTS · A connected reader</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="skip-link" href="#article">Skip to entry</a>
+<header class="masthead"><p class="eyebrow">A scholarly dictionary · Reader preview</p><h1 lang="de">Wörterbuch der tibetischen Schriftsprache</h1><p id="scope">Loading the demonstration collection…</p></header>
+<details class="collection-guide"><summary>About this collection &amp; suggested entries</summary><p>This limited preview connects reviewed multiple-target references with their independently resolved destinations. It is a demonstration of the digital edition, not the complete dictionary. Links with a dotted underline explain uncertainty; citations open bibliographic details. Source witnesses are available beside each heading.</p><p id="ordering"></p><p>Browse with the previous/next links. In the index, use ↑ / ↓, Home / End and Enter. Escape closes a dialog; browser Back returns to the previous entry.</p><div id="suggestions" aria-label="Suggested entries"></div></details>
+<main><nav class="entry-index" aria-label="Dictionary index"><label for="search">Find a headword</label><input id="search" type="search" autocomplete="off" placeholder="LoC transliteration or Tibetan"><p id="count" aria-live="polite"></p><p id="selection-status" class="selection-status" aria-live="polite"></p><div id="entries"></div></nav><article id="article" tabindex="-1" aria-label="Dictionary entry"><p>Loading entries…</p></article></main>
+<dialog id="citation-detail" aria-labelledby="citation-dialog-title"><div class="dialog-bar"><span id="citation-dialog-title">Citation &amp; bibliography</span><button type="button" id="citation-dialog-close" autofocus>Close</button></div><div id="citation-detail-content"></div></dialog>
+<dialog id="reference-detail" aria-labelledby="reference-dialog-title"><div class="dialog-bar"><span id="reference-dialog-title">Cross-reference evidence</span><button type="button" id="reference-dialog-close" autofocus>Close</button></div><div id="reference-detail-content"></div></dialog>
+<script src="app.js"></script></body></html>

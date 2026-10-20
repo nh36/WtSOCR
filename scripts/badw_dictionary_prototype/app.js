@@ -1,7 +1,7 @@
 /* Rendering only. Language, ownership and resolved targets are data facts. */
 "use strict";
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-let byEntry, inspection;
+let byEntry, orderedEntries=[], preview={};
 function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\.badw\.de\//.test(url||'')){a.href=url;a.rel='noreferrer';}return a;}
 const relationLabels={perfect_of:'Perfect of',future_of:'Future of',imperative_of:'Imperative of'};
 function headerFieldsModel(item){
@@ -47,7 +47,10 @@ function citationDetailModel(citation,entry){
  const related=entry.relationships.filter(r=>r.type==='citation_of'&&(r.from_id===citation.component_id||r.to_ids.includes(citation.component_id)));
  const passageIds=new Set(related.flatMap(r=>r.from_id===citation.component_id?r.to_ids:[r.from_id]));
  const passages=entry.components.filter(c=>passageIds.has(c.id)).map(c=>c.source_form);
- return {literal:component?.source_form||citation.source_form||'',bibliography:citation.bibliography||[],status:citation.bibliography_status||'unresolved',ownership:citation.ownership||'unresolved',passages};
+ const bibliography=citation.bibliography||[];
+ const incomplete=bibliography.some(b=>b.coverage_status==='matched_components_only_not_complete_citation_resolution');
+ const status=incomplete?'partial':citation.bibliography_status||'unresolved';
+ return {literal:component?.source_form||citation.source_form||'',bibliography,status,ownership:citation.ownership||'unresolved',passages};
 }
 function openCitationDetail(citation,entry){
  const dialog=document.querySelector('#citation-detail'),body=document.querySelector('#citation-detail-content');
@@ -65,6 +68,7 @@ function openCitationDetail(citation,entry){
  if(model.passages.length){occurrence.append(el('h3','Source passage supported by this citation'));for(const passage of model.passages)occurrence.append(el('blockquote',passage));}
  else occurrence.append(el('p','No accepted source-passage relationship is recorded for this citation.','detail-status'));
  body.append(occurrence);
+ if(entry.sources)appendSources(body,entry);
  if(!dialog.open)dialog.showModal();
 }
 function referenceForSegment(reference,segment){
@@ -73,7 +77,7 @@ function referenceForSegment(reference,segment){
  if(binding?.component_id!==reference.component_id)return null;
  const member=reference.target_members.find(m=>m.ordinal===binding.ordinal);
  if(!member)return null;
- return {target_entry_id:member.resolution_status==='resolved'?member.target_entry_id:null,status:member.resolution_status};
+ return {...member,target_entry_id:member.resolution_status==='resolved'?member.target_entry_id:null,status:member.resolution_status};
 }
 function renderReference(reference,segment,entries){
  const target=referenceForSegment(reference,segment);
@@ -86,11 +90,71 @@ function renderReference(reference,segment,entries){
  else n.title=target.status==='ambiguous'?'Cross-reference target ambiguous':'Cross-reference target unresolved';
  return n;
 }
+function referenceExplanation(target){
+ if(target.target_entry_id)return 'The resolved destination is outside this demonstration collection.';
+ if(target.status==='resolved')return 'The lexical identity is resolved, but there is no unique source witness to open.';
+ if(target.status==='ambiguous')return 'Several possible destinations remain. No destination has been selected.';
+ return 'The source wording is preserved, but no destination has passed the source-bound resolution checks.';
+}
+function openReferenceDetail(reference,segment,item){
+ const target=referenceForSegment(reference,segment)||reference;
+ const body=document.querySelector('#reference-detail-content');body.replaceChildren(el('h2',segment.text),el('p',referenceExplanation(target)));
+ const reason=target.residual_reason||reference.residual_reason;
+ if(reason)body.append(el('p','Recorded reason: '+reason.replaceAll('_',' '),'detail-status'));
+ if(reference.target_members_status)body.append(el('p','Collection status: '+reference.target_members_status+'. Each printed target is assessed independently.','detail-status'));
+ body.append(el('p','Printed reference: '+reference.wording));
+ appendSources(body,item);
+ document.querySelector('#reference-detail').showModal();
+}
+function appendSources(container,item){
+ const section=el('section',undefined,'source-access');section.setAttribute('aria-label','Original sources');
+ section.append(el('span','Read the source','source-label'));
+ for(const source of item.sources||[{url:item.source_url,label:'BAdW source'}]){
+  if(!source.url)continue;
+  const link=source.url.startsWith('sources/')?el('a',source.label):sourceLink(source.url,source.label);
+  if(source.url.startsWith('sources/'))link.href=source.url;
+  link.target='_blank';link.rel='noopener noreferrer';section.append(link);
+ }
+ container.append(section);
+}
+// Unmapped PDF glyphs remain explicit, without exposing extraction codes in prose.
+function sourceTextParts(text){
+ return text.split(/(⟦UNKNOWN:[^⟧]+⟧)/u).filter(Boolean).map(literal=>({literal,unknown:literal.startsWith('⟦UNKNOWN:')}));
+}
+function renderSourceText(node,text,item){
+ const parts=sourceTextParts(text);if(!parts.some(p=>p.unknown))return;
+ node.replaceChildren();
+ for(const part of parts){
+  if(!part.unknown){node.append(el('span',part.literal));continue;}
+  const interactive=node.tagName!=='BUTTON'&&node.tagName!=='A';
+  const marker=el(interactive?'button':'span','[unread sign]','unknown-glyph');
+  marker.title='An original source glyph has not been decoded. Inspect the facsimile.';
+  if(interactive){marker.type='button';marker.addEventListener('click',()=>{
+   const body=document.querySelector('#reference-detail-content');
+   body.replaceChildren(el('h2','Unread source sign'),el('p','The source contains a glyph that has not been decoded. No reading has been supplied; consult the original facsimile.'));
+   const evidence=el('details');evidence.append(el('summary','Extraction evidence'),el('code',part.literal));body.append(evidence);appendSources(body,item);
+   document.querySelector('#reference-detail').showModal();
+  });}
+  node.append(marker);
+ }
+}
+function entryLabel(item){return `${item.headword.loc||''}${item.homonym?' '+item.homonym:''}`;}
 function show(item){
  const a=document.querySelector('#article');a.replaceChildren();
- a.append(el('h2',`${item.headword.loc||''} ${item.homonym||''}`),el('p',item.headword.tibetan||'','heading-tibetan'));
+ const position=orderedEntries.findIndex(e=>e.id===item.id);
+ const context=el('p',`Entry ${position+1} of ${orderedEntries.length} · ${item.source_kind==='html'?'Editorial HTML witness':'Printed PDF witness'}`,'entry-context');
+ a.append(context,el('h2',entryLabel(item)),el('p',item.headword.tibetan||'','heading-tibetan'));
+ a.querySelector('h2').id='entry-title';a.querySelector('.heading-tibetan').lang='bo';
+ appendSources(a,item);
+ const pager=el('nav',undefined,'entry-pager');pager.setAttribute('aria-label','Previous and next entries');
+ for(const [delta,label] of [[-1,'Previous'],[1,'Next']]){
+  const adjacent=orderedEntries[position+delta];
+  if(adjacent){const link=el('a',`${label} · ${entryLabel(adjacent)}`);link.href='#'+encodeURIComponent(adjacent.id);link.rel=delta<0?'prev':'next';pager.append(link);}
+  else pager.append(el('span',label+' · end of collection','muted'));
+ }
+ a.append(pager);
  const header=renderHeaderFields(item);if(header)a.append(header);
- const reading=el('div',undefined,'reading');
+ const reading=el('div',undefined,'reading');reading.lang='de';
  const citations=new Map(item.citations.map(c=>[c.component_id,c]));
  const references=new Map(item.cross_references.filter(r=>r.component_id).map(r=>[r.component_id,r]));
  for(const block of item.display_blocks){
@@ -101,35 +165,70 @@ function show(item){
    let n=el('span',segment.text);
    if(citation){
     n=el('button',segment.text,'citation');n.type='button';
-    const labels=citation.bibliography.map(b=>`${b.label}: ${b.descriptions?.[0]||'bibliographic record'}`);
+    const labels=citation.bibliography.map(b=>b.label);
     n.title=labels.length?labels.join(' · '):'Bibliographic identity unresolved';
-    n.setAttribute('aria-label',`${segment.text}. ${labels.length?labels.join('; '):'Bibliographic identity unresolved'}. Open citation details.`);
+    n.setAttribute('aria-label',`${segment.text}. Open citation details.`);
     n.addEventListener('click',()=>openCitationDetail(citation,item));
    }else if(reference){
     n=renderReference(reference,segment,byEntry);
+    const target=referenceForSegment(reference,segment);
+    if(target&&n.tagName!=='A'){
+     n=el('button',segment.text,'uncertain-reference');n.type='button';
+     n.title=referenceExplanation(target);n.setAttribute('aria-label',segment.text+'. '+n.title+' Open reference details.');
+     n.addEventListener('click',()=>openReferenceDetail(reference,segment,item));
+    }
    }
-   for(const language of (segment.effective_languages||segment.languages))n.classList.add('lang-'+language);
-   if((segment.effective_languages||segment.languages).length>1)n.title=(n.title||'')+' · overlapping source/review language claims';
+   const languages=segment.effective_languages||segment.languages||[];
+   for(const language of languages)n.classList.add('lang-'+language);
+   if(/[\u0f00-\u0fff]/u.test(segment.text)){n.classList.add('tibetan');n.lang='bo';}
+   if(languages.length>1)n.title=(n.title||'')+' · overlapping source/review language claims';
    if(segment.types.includes('lexical_parallel')||(segment.semantic_item_ids||[]).length)n.classList.add('lexical');
+   renderSourceText(n,segment.text,item);
    paragraph.append(n);
   }
   reading.append(paragraph);
  }
  a.append(reading);
- const reviewed=item.relationships.filter(r=>r.type==='citation_of');
- const debug=el('details',undefined,'inspection');debug.append(el('summary','Source / debug'));
- if(reviewed.length){const d=el('details');d.append(el('summary','Reviewed citation associations'));for(const r of reviewed){const from=item.components.find(c=>c.id===r.from_id);const targets=r.to_ids.map(id=>item.components.find(c=>c.id===id)?.source_form||'');d.append(el('p',`${from?.source_form||''} supports: ${targets.join(' / ')}`));}debug.append(d);}
- debug.addEventListener('toggle',async()=>{if(!debug.open||debug.dataset.loaded)return;try{inspection ||= await fetch('inspection.json').then(r=>r.json());const row=inspection.entries.find(e=>e.projection.identity===item.inspection_id);debug.append(sourceLink(item.source_url,'BAdW source'),el('pre',JSON.stringify(row,null,2)));debug.dataset.loaded='yes';}catch(e){debug.append(el('p',e.message));}});
- a.append(debug);
+ const plurals=item.cross_references.filter(r=>Array.isArray(r.target_members));
+ if(plurals.length){
+  const note=el('aside',undefined,'reference-note');note.append(el('h3','Cross-reference coverage'));
+  for(const ref of plurals){const resolved=ref.target_members.filter(m=>m.resolution_status==='resolved').length;
+   note.append(el('p',`${ref.wording} — ${resolved} of ${ref.target_members.length} targets resolved (${ref.target_members_status}). The plural parent remains unresolved; use the individual targets in the text.`));}
+  a.append(note);
+ }
+ const provenance=el('details',undefined,'provenance');provenance.append(el('summary','About this source witness'));
+ provenance.append(el('p','This reading preserves its source witness. Editorial HTML and printed PDF evidence are separate layers; unresolved structure and citation ownership remain provisional.'));
+ provenance.append(el('p','Source identity: '+item.inspection_id));
+ for(const source of item.sources||[]){provenance.append(el('p','SHA-256: '+source.sha256));if(source.original_url)provenance.append(sourceLink(source.original_url,'Original BAdW PDF'));}
+ a.append(provenance);
+ document.title=entryLabel(item)+' · WTS reader';
+ document.querySelector('#selection-status').textContent='Selected: '+entryLabel(item);
+ for(const link of document.querySelectorAll('#entries a')){if(link.hash==='#'+encodeURIComponent(item.id))link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
+ const active=document.querySelector('#entries [aria-current]'),list=document.querySelector('#entries');
+ if(active&&(active.offsetTop<list.scrollTop+list.offsetTop||active.offsetTop+active.offsetHeight>list.scrollTop+list.offsetTop+list.clientHeight))list.scrollTop=active.offsetTop-list.offsetTop;
 }
-function navigate(){const item=byEntry.get(decodeURIComponent(location.hash.slice(1)));if(item)show(item);}
+function navigate(focus=false){
+ let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{ id=null; }
+ const item=byEntry.get(id);
+ if(item)show(item);
+ else if(!location.hash&&orderedEntries.length){history.replaceState(null,'','#'+encodeURIComponent(orderedEntries[0].id));show(orderedEntries[0]);}
+ else {const a=document.querySelector('#article');a.replaceChildren(el('h2','Entry unavailable'),el('p','This address is not part of the demonstration collection. Choose an entry from the index.'));document.querySelector('#selection-status').textContent='No entry selected';for(const link of document.querySelectorAll('#entries a'))link.removeAttribute('aria-current');}
+ if(focus){const heading=document.querySelector('#article h2');heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});}
+}
 if(typeof document!=='undefined'&&typeof fetch==='function'){
- document.querySelector('#citation-dialog-close')?.addEventListener('click',()=>document.querySelector('#citation-detail').close());
+ document.querySelector('.skip-link')?.addEventListener('click',event=>{event.preventDefault();const article=document.querySelector('#article');article.tabIndex=-1;article.focus();});
+ for(const kind of ['citation','reference'])document.querySelector('#'+kind+'-dialog-close')?.addEventListener('click',()=>document.querySelector('#'+kind+'-detail').close());
  fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load dictionary data');return r.json();}).then(d=>{
- byEntry=new Map(d.entries.map(e=>[e.id,e]));
+ orderedEntries=d.entries;preview=d.preview||{};byEntry=new Map(d.entries.map(e=>[e.id,e]));
+ document.querySelector('#scope').textContent=`${d.entries.length} source witnesses · ${preview.reviewed_occurrences||'selected'} reviewed multiple-target references · limited demonstration collection`;
+ document.querySelector('#ordering').textContent=preview.ordering||'LoC headword order, then homonym and source identity.';
+ const examples=document.querySelector('#suggestions');for(const e of preview.suggested_entries||[]){const a=el('a',typeof e.label==='string'?e.label:e.label.loc);a.href='#'+encodeURIComponent(e.id);examples.append(a);}
  const search=document.querySelector('#search'),list=document.querySelector('#entries');
- function filter(){list.replaceChildren();const q=search.value;const items=d.entries.filter(e=>entryMatchesSearch(e,q));document.querySelector('#count').textContent=`${items.length} / ${d.entries.length} entries`;for(const e of items){const link=el('a',`${e.headword.loc} ${e.homonym||''}`);link.href='#'+encodeURIComponent(e.id);list.append(link);}}
- search.addEventListener('input',filter);window.addEventListener('hashchange',navigate);filter();navigate();
- }).catch(e=>document.querySelector('#article').replaceChildren(el('p',e.message)));
+ function filter(){list.replaceChildren();const items=d.entries.filter(e=>entryMatchesSearch(e,search.value));document.querySelector('#count').textContent=`${items.length} of ${d.entries.length} entries`;for(const e of items){const link=el('a',entryLabel(e));link.href='#'+encodeURIComponent(e.id);const tibetan=el('span',e.headword.tibetan||'','index-tibetan');tibetan.lang='bo';link.append(tibetan,el('small',e.source_kind==='html'?'Editorial':'Print','index-witness'));if(link.hash===location.hash)link.setAttribute('aria-current','page');list.append(link);}if(!items.length)list.append(el('p','No matching headword. Try a shorter LoC or Tibetan form.'));}
+ search.addEventListener('input',filter);
+ search.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();list.querySelector('a')?.focus();}});
+ list.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;const links=[...list.querySelectorAll('a')];const i=links.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?links.length-1:i+(event.key==='ArrowDown'?1:-1);if(links[next]){event.preventDefault();links[next].focus();}});
+ window.addEventListener('hashchange',()=>navigate(true));filter();navigate();
+ }).catch(e=>document.querySelector('#article').replaceChildren(el('p','The reader could not load: '+e.message+'. Serve this directory over HTTP using the documented preview command.')));
 }
-if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference};
+if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts};
