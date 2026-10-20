@@ -1,3 +1,69 @@
+# Full acquired-corpus WTS reader
+
+The full reader retains the connected preview's visual design and source conventions.
+It includes all **29,877 acquired witnesses (18,037 HTML; 11,840 PDF)**.
+This is the complete acquired corpus, not a claim that upstream editorial coverage
+is complete. There is no translation or change to the OCR release.
+
+## Open or rebuild the full reader
+
+```sh
+python3 scripts/build_badw_full_reader.py --output work/badw_full_reader_fresh
+python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_fresh
+```
+
+For the current local build, serve `work/badw_full_reader_20261020/run8` instead.
+Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
+then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
+LoC order, homonym, then stable source identity; this is not Tibetan collation.
+
+The complete lightweight headword catalog is searchable locally. Only 100 index
+rows are mounted at once; entry contents load as individual hash-verified files,
+with at most 24 cached entries. Citation details travel with their entry, rather
+than a monolithic dictionary payload. Established lexical identities with multiple
+witnesses open an explicit witness selection. Ambiguous homonyms remain unresolved.
+Deep links, browser history, keyboard navigation, source access and the existing
+83-witness fixture remain available.
+
+The build streams the frozen corpus through the current adapters and reviewed
+source-bound annotations. It verifies cached HTML/PDF/canonical hashes, preserves
+accepted citation identities and relationships from the frozen SQLite baseline,
+and checks all 23 reviewed occurrences, 50 members and 47 accepted destinations.
+It refuses existing output directories. Its manifest pins inputs and code and
+reports citations, ownership, references and incompatible annotation bindings.
+An annotation tied to a different source view is recorded in
+`annotation_conflicts.json`; its frozen projection is retained without rebinding.
+All output remains ignored under `work/`; acquired sources are never overwritten.
+Local source/cache/projection/bibliography/baseline inputs named in the script
+must be present. No network acquisition is part of the build.
+
+The 83-witness fixture has **113 accepted target units, all with included
+destinations**. Its remaining nine unresolved and two ambiguous target units
+lack an established destination identity or qualifier; none of those failures
+is caused solely by sample restriction. Expanding the catalog must not turn
+these uncertainties into arbitrary links. In particular, the wrapped target in
+**brñan** parses correctly as **gzugs brñan** but has no exact indexed destination.
+The two ambiguous references are in **btug** and **tal la**. Missing identities
+occur in **bka’ gter**, **bka’ ma**, **brñan**, **gtogs**, **gtugs**, **thig**
+(two occurrences), **ṅar**, and **ṅu**. No failed parsing was established in this
+fixture; malformed HTML targets elsewhere remain a separate investigation.
+The fixture below is retained intact.
+
+Run focused Python/Node tests listed below, adding `tests/test_badw_full_reader.py`.
+For full-corpus browser journeys, use:
+
+```sh
+BADW_READER_URL=http://127.0.0.1:8767 \
+  NODE_PATH=work/badw_reader_browser_tools/node_modules \
+  node tests/badw_full_reader.browser.cjs
+```
+
+The browser suite uses the independent 83-witness fixture for all 47 reviewed
+member journeys, source and citation checks, plus full-catalog pagination, search,
+history, keyboard, integrity failures and mobile layouts.
+
+---
+
 # Connected WTS reader preview
 
 This is a bounded demonstration of the scholarly dictionary, generated from the

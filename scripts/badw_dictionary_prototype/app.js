@@ -1,7 +1,9 @@
 /* Rendering only. Language, ownership and resolved targets are data facts. */
 "use strict";
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-let byEntry, orderedEntries=[], preview={};
+let byEntry, orderedEntries=[], preview={}, sharded=false, navigationVersion=0;
+let syncIndexSelection=()=>{};
+const loadedEntries=new Map();
 function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\.badw\.de\//.test(url||'')){a.href=url;a.rel='noreferrer';}return a;}
 const relationLabels={perfect_of:'Perfect of',future_of:'Future of',imperative_of:'Imperative of'};
 function headerFieldsModel(item){
@@ -39,7 +41,7 @@ function renderHeaderFields(item){
 function entryMatchesSearch(item,query){
  const q=String(query||'').toLowerCase();
  const primary=`${item?.headword?.loc||''} ${item?.headword?.tibetan||''}`;
- const aliases=headerFieldsModel(item).alternatives.map(form=>form.literal);
+ const aliases=item.search_aliases||headerFieldsModel(item).alternatives.map(form=>form.literal);
  return [primary,...aliases].some(value=>value.toLowerCase().includes(q));
 }
 function citationDetailModel(citation,entry){
@@ -91,7 +93,7 @@ function renderReference(reference,segment,entries){
  return n;
 }
 function referenceExplanation(target){
- if(target.target_entry_id)return 'The resolved destination is outside this demonstration collection.';
+ if(target.target_entry_id)return 'The resolved destination is outside this collection.';
  if(target.status==='resolved')return 'The lexical identity is resolved, but there is no unique source witness to open.';
  if(target.status==='ambiguous')return 'Several possible destinations remain. No destination has been selected.';
  return 'The source wording is preserved, but no destination has passed the source-bound resolution checks.';
@@ -101,6 +103,14 @@ function openReferenceDetail(reference,segment,item){
  const body=document.querySelector('#reference-detail-content');body.replaceChildren(el('h2',segment.text),el('p',referenceExplanation(target)));
  const reason=target.residual_reason||reference.residual_reason;
  if(reason)body.append(el('p','Recorded reason: '+reason.replaceAll('_',' '),'detail-status'));
+ if(target.status==='resolved'&&target.target_lexical_entity){
+  const ids=target.candidate_entry_ids||target.exact_index_candidate_ids||[];
+  const choices=ids.map(id=>byEntry.get(id)).filter(Boolean);
+  if(choices.length){
+   body.append(el('h3','Choose a source witness'));
+   for(const choice of choices){const link=el('a',entryLabel(choice)+' · '+(choice.source_kind==='html'?'Editorial HTML':'Printed PDF'));link.href='#'+encodeURIComponent(choice.id);link.addEventListener('click',()=>document.querySelector('#reference-detail').close());const row=el('p');row.append(link);body.append(row);}
+  }
+ }
  if(reference.target_members_status)body.append(el('p','Collection status: '+reference.target_members_status+'. Each printed target is assessed independently.','detail-status'));
  body.append(el('p','Printed reference: '+reference.wording));
  appendSources(body,item);
@@ -203,28 +213,51 @@ function show(item){
  a.append(provenance);
  document.title=entryLabel(item)+' · WTS reader';
  document.querySelector('#selection-status').textContent='Selected: '+entryLabel(item);
+ syncIndexSelection(item.id);
  for(const link of document.querySelectorAll('#entries a')){if(link.hash==='#'+encodeURIComponent(item.id))link.setAttribute('aria-current','page');else link.removeAttribute('aria-current');}
  const active=document.querySelector('#entries [aria-current]'),list=document.querySelector('#entries');
  if(active&&(active.offsetTop<list.scrollTop+list.offsetTop||active.offsetTop+active.offsetHeight>list.scrollTop+list.offsetTop+list.clientHeight))list.scrollTop=active.offsetTop-list.offsetTop;
 }
-function navigate(focus=false){
+async function navigate(focus=false){
+ const version=++navigationVersion;
  let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{ id=null; }
- const item=byEntry.get(id);
- if(item)show(item);
- else if(!location.hash&&orderedEntries.length){history.replaceState(null,'','#'+encodeURIComponent(orderedEntries[0].id));show(orderedEntries[0]);}
- else {const a=document.querySelector('#article');a.replaceChildren(el('h2','Entry unavailable'),el('p','This address is not part of the demonstration collection. Choose an entry from the index.'));document.querySelector('#selection-status').textContent='No entry selected';for(const link of document.querySelectorAll('#entries a'))link.removeAttribute('aria-current');}
+ if(!location.hash&&orderedEntries.length){id=orderedEntries[0].id;history.replaceState(null,'','#'+encodeURIComponent(id));}
+ let item=byEntry.get(id);
+ if(item){
+  try{
+   if(sharded){
+    if(!loadedEntries.has(id)){
+     document.querySelector('#article').replaceChildren(el('p','Loading source witness…'));
+     const response=await fetch(item.path);if(!response.ok)throw Error('Entry file unavailable');
+     const bytes=await response.arrayBuffer();
+     const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join('');
+     if(hash!==item.sha256)throw Error('Entry integrity check failed');
+     const full=JSON.parse(new TextDecoder().decode(bytes));if(full.id!==id)throw Error('Entry identity mismatch');
+     loadedEntries.set(id,full);if(loadedEntries.size>24)loadedEntries.delete(loadedEntries.keys().next().value);
+    }
+    item=loadedEntries.get(id);
+   }
+   if(version!==navigationVersion)return;
+   show(item);
+  }catch(error){if(version!==navigationVersion)return;document.querySelector('#selection-status').textContent='Entry unavailable';for(const link of document.querySelectorAll('#entries a'))link.removeAttribute('aria-current');document.querySelector('#article').replaceChildren(el('h2','Entry could not be loaded'),el('p',error.message+'. Reload to retry.'));}
+ }
+ else {const a=document.querySelector('#article');a.replaceChildren(el('h2','Entry unavailable'),el('p','This address is not part of this collection. Choose an entry from the index.'));document.querySelector('#selection-status').textContent='No entry selected';for(const link of document.querySelectorAll('#entries a'))link.removeAttribute('aria-current');}
  if(focus){const heading=document.querySelector('#article h2');heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});}
 }
 if(typeof document!=='undefined'&&typeof fetch==='function'){
  document.querySelector('.skip-link')?.addEventListener('click',event=>{event.preventDefault();const article=document.querySelector('#article');article.tabIndex=-1;article.focus();});
  for(const kind of ['citation','reference'])document.querySelector('#'+kind+'-dialog-close')?.addEventListener('click',()=>document.querySelector('#'+kind+'-detail').close());
  fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load dictionary data');return r.json();}).then(d=>{
- orderedEntries=d.entries;preview=d.preview||{};byEntry=new Map(d.entries.map(e=>[e.id,e]));
- document.querySelector('#scope').textContent=`${d.entries.length} source witnesses · ${preview.reviewed_occurrences||'selected'} reviewed multiple-target references · limited demonstration collection`;
+ orderedEntries=d.entries;preview=d.preview||{};sharded=!!d.sharded;byEntry=new Map(d.entries.map(e=>[e.id,e]));
+ document.querySelector('#scope').textContent=`${d.entries.length.toLocaleString('en')} source witnesses · ${sharded?'complete acquired corpus':'limited demonstration collection'}`;
+ if(sharded)document.querySelector('.collection-guide > p').textContent=preview.scope+' Links with a dotted underline explain uncertainty; citations open bibliographic details. Source witnesses are available beside each heading.';
  document.querySelector('#ordering').textContent=preview.ordering||'LoC headword order, then homonym and source identity.';
  const examples=document.querySelector('#suggestions');for(const e of preview.suggested_entries||[]){const a=el('a',typeof e.label==='string'?e.label:e.label.loc);a.href='#'+encodeURIComponent(e.id);examples.append(a);}
  const search=document.querySelector('#search'),list=document.querySelector('#entries');
- function filter(){list.replaceChildren();const items=d.entries.filter(e=>entryMatchesSearch(e,search.value));document.querySelector('#count').textContent=`${items.length} of ${d.entries.length} entries`;for(const e of items){const link=el('a',entryLabel(e));link.href='#'+encodeURIComponent(e.id);const tibetan=el('span',e.headword.tibetan||'','index-tibetan');tibetan.lang='bo';link.append(tibetan,el('small',e.source_kind==='html'?'Editorial':'Print','index-witness'));if(link.hash===location.hash)link.setAttribute('aria-current','page');list.append(link);}if(!items.length)list.append(el('p','No matching headword. Try a shorter LoC or Tibetan form.'));}
+ let page=0;const pageSize=100;
+ const pages=el('div',undefined,'entry-pager');list.after(pages);
+ function filter(reset=true){if(reset)page=0;list.replaceChildren();pages.replaceChildren();const items=d.entries.filter(e=>entryMatchesSearch(e,search.value));document.querySelector('#count').textContent=`${items.length} of ${d.entries.length} entries · ${items.length? page*pageSize+1:0}–${Math.min((page+1)*pageSize,items.length)} shown`;for(const e of items.slice(page*pageSize,(page+1)*pageSize)){const link=el('a',entryLabel(e));link.href='#'+encodeURIComponent(e.id);const tibetan=el('span',e.headword.tibetan||'','index-tibetan');tibetan.lang='bo';link.append(tibetan,el('small',e.source_kind==='html'?'Editorial':'Print','index-witness'));if(link.hash===location.hash)link.setAttribute('aria-current','page');list.append(link);}if(!items.length)list.append(el('p','No matching headword. Try a shorter LoC or Tibetan form.'));for(const [delta,label] of [[-1,'Previous results'],[1,'Next results']]){if(page+delta<0||(page+delta)*pageSize>=items.length)continue;const button=el('button',label);button.type='button';button.addEventListener('click',()=>{page+=delta;filter(false);list.querySelector('a')?.focus();});pages.append(button);}}
+ syncIndexSelection=id=>{if(search.value)return;const selectedPage=Math.floor(orderedEntries.findIndex(e=>e.id===id)/pageSize);if(selectedPage>=0&&selectedPage!==page){page=selectedPage;filter(false);}};
  search.addEventListener('input',filter);
  search.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();list.querySelector('a')?.focus();}});
  list.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;const links=[...list.querySelectorAll('a')];const i=links.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?links.length-1:i+(event.key==='ArrowDown'?1:-1);if(links[next]){event.preventDefault();links[next].focus();}});
