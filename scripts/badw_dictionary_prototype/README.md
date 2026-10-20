@@ -12,7 +12,7 @@ python3 scripts/build_badw_full_reader.py --output work/badw_full_reader_fresh
 python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_fresh
 ```
 
-For the current local build, serve `work/badw_full_reader_20261020/run8` instead.
+For the current local build, serve `work/badw_full_reader_20261020/run9` instead.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -61,6 +61,33 @@ BADW_READER_URL=http://127.0.0.1:8767 \
 The browser suite uses the independent 83-witness fixture for all 47 reviewed
 member journeys, source and citation checks, plus full-catalog pagination, search,
 history, keyboard, integrity failures and mobile layouts.
+
+## Reference census and shared-anchor parser family
+
+The old 852 unresolved parent occurrences become 825 unresolved **target units**
+under the current resolver: seven italic-numeral repairs and replacing 23 plural
+parents with their 50 members (47 resolved, three unresolved). Before this parser
+family: HTML 4,706 resolved / 576 unresolved; PDF 2,832 resolved / 131 unresolved /
+118 ambiguous target units. Three exact HTML labels inside malformed shared
+anchors now resolve: **ka chen bźi**, **ko sko**, **sko cig pa**. The fourth empty
+label crosses the frozen arrow extent and remains unresolved. No span is widened.
+After: HTML 4,709 / 573; PDF unchanged; total **7,541 resolved / 822 residual**.
+Full differential: 29,875 identical witnesses; only three reference records in two
+witnesses change. Citations, components, relationships and source bindings agree.
+
+```sh
+python3 scripts/census_badw_reader_references.py \
+  --reader work/badw_full_reader_20261020/run9 \
+  --output work/badw_residual_fresh.jsonl.gz
+```
+
+The compact ledger retains every residual occurrence, literal source component,
+source span/binding, facsimile/source links and exact candidate identities.
+Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
+344 HTML and three PDF identity/manifestation mismatches; 228 HTML and 128 PDF
+missing exact identities; 118 PDF ambiguities; one HTML parser-boundary failure.
+Missing identities do not establish acquisition gaps or printed errors. No printed
+or editorial correction is asserted by this census. These cases still need review.
 
 ---
 

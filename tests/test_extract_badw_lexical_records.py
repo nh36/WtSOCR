@@ -104,3 +104,49 @@ def test_jsonl_emission_is_deterministic_and_keeps_structural_failures_as_diagno
         assert manifest["diagnostics_sha256"] == hashlib.sha256(paths[0][1].read_bytes()).hexdigest()
         diagnostics = [json.loads(line) for line in paths[0][1].read_text(encoding="utf-8").splitlines()]
         assert diagnostics == [{"reason": "lemma lacks source_text", "source_identifier": "badw:https://wts-digital.badw.de/lemma/ka/2"}]
+
+
+def test_shared_malformed_anchor_keeps_exact_individual_labels_without_url_identity():
+    # A minimal article isolates the same malformed editorial shape found in
+    # ka chen and kos sñuṅ; punctuation and qualifiers must fail closed.
+    for content, expected in [
+        ('↑<a class="link lemma" href="/lemma/ko sko, ↓sko cig pa/1">ko sko, ↓sko cig pa</a>', ['ko sko', 'sko cig pa']),
+        ('↓<a href="/lemma/ka chen bźi, ↓/1">ka chen bźi, ↓</a><tib>bka’ chen</tib>', ['ka chen bźi', '']),
+        ('↑<a href="/lemma/x/1">ko sko (?), ↓sko cig pa 2</a>', ['', '']),
+    ]:
+        body = ('<div class="text"><span class="link">'+content+'</span></div>').encode()
+        parsed = parse_database_article(body, source_metadata=SOURCE | {'sha256':hashlib.sha256(body).hexdigest()})
+        refs = parsed['cross_references']
+        assert [r['target_text'] for r in refs] == expected
+        assert all(r['target_url'] is None and r['target_homonym'] is None for r in refs)
+        for ref in refs:
+            loc = ref['locator']
+            assert parsed['article_source_text'][loc['visible_text_start']:loc['visible_text_end']] == ref['source_text']
+
+
+def test_empty_label_replay_preserves_identity_spans_and_fails_on_stale_source(tmp_path):
+    import pytest
+    from badw_article_parser import replay_empty_reference_labels
+    body = b'<div class="text"><span class="link">\xe2\x86\x91<a href="/lemma/ka, ga/1">ka, \xe2\x86\x93ga</a></span></div>'
+    sha = hashlib.sha256(body).hexdigest()
+    source = SOURCE | {'sha256': sha, 'object_path': 'source.html'}
+    (tmp_path/'source.html').write_bytes(body)
+    parsed = parse_database_article(body, source_metadata=source)
+    records = [dict(record_type='cross_reference', id=str(i), target_label=r['target_text'], target_url=None, source_spans=[dict(start=r['locator']['visible_text_start'], end=r['locator']['visible_text_end'])]) for i,r in enumerate(parsed['cross_references'])]
+    original = [dict(r, target_label='', canonical_resolution={'status':'unresolved'})
+                if r['record_type']=='cross_reference' else r for r in records]
+    projection = dict(source_kind='html', source=dict(source_object=source,
+                      article_source_text=parsed['article_source_text']), original_records=original)
+    result = replay_empty_reference_labels(projection, tmp_path)
+    recovered = [r for r in result['original_records'] if r['record_type']=='cross_reference']
+    assert [r['target_label'] for r in recovered] == ['ka','ga']
+    old = [r for r in original if r['record_type']=='cross_reference']
+    assert [(r['id'],r['source_spans']) for r in recovered] == [(r['id'],r['source_spans']) for r in old]
+    assert all('canonical_resolution' not in r for r in recovered)
+    assert all(r['target_label']=='' for r in old)  # no mutation
+    projection['source']['article_source_text'] += 'stale'
+    with pytest.raises(ValueError,match='changed source text'):
+        replay_empty_reference_labels(projection,tmp_path)
+    (tmp_path/'source.html').write_bytes(body+b'changed')
+    with pytest.raises(ValueError):
+        replay_empty_reference_labels(projection,tmp_path)

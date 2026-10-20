@@ -557,15 +557,28 @@ def parse_database_article(
                            visible_text_end=origin + end)
             owns_anchor = (origin + position <= anchor_locator["visible_text_start"] <
                            anchor_locator["visible_text_end"] <= origin + end)
+            # Some editorial anchors incorrectly enclose several arrow targets.
+            # Recover only the literal alphabetic segment inside that anchor;
+            # the malformed URL supplies neither identity nor homonym evidence.
+            segment_target = ""
+            shared_anchor = (len(marker_positions) > 1 or
+                             (link_container is anchor and position > 0
+                              and container_text[:position].rstrip().endswith(",")))
+            if not owns_anchor and shared_anchor:
+                left, right = origin + position + 1, origin + end
+                if anchor_locator["visible_text_start"] <= left < right <= anchor_locator["visible_text_end"]:
+                    candidate = compact_text(container_text[position + 1:end]).rstrip(",").strip()
+                    if candidate and all(c.isalpha() or c.isspace() or c in "’'" for c in candidate):
+                        segment_target = candidate
             cross_references.append({
                 "locator": locator, "container_locator": link_field["locator"],
                 "marker": container_text[position], "source_text": container_text[position:end],
                 "target_homonym": target_homonym if owns_anchor else None,
                 "target_lemma": target_lemma if owns_anchor else None,
                 "target_text": compact_text(exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
-                               excluded_tags=HIDDEN_TAGS)) if owns_anchor else "",
+                               excluded_tags=HIDDEN_TAGS)) if owns_anchor else segment_target,
                 "target_url": target_url if owns_anchor else None,
-                "target_status": "explicit_anchor" if owns_anchor else "unresolved_arrow_segment",
+                "target_status": "explicit_anchor" if owns_anchor else "exact_segment_in_shared_anchor" if segment_target else "unresolved_arrow_segment",
             })
 
     example_index = {dom_path(node): index for index, node in enumerate(example_nodes)}
@@ -719,6 +732,36 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
     return 0 if not summary.get("failed") else 2
+
+
+def replay_empty_reference_labels(projection, cache):
+    """Replay missing HTML labels at unchanged source spans, never rebind URLs."""
+    if projection['source_kind'] != 'html':
+        return projection
+    missing = [r for r in projection.get('original_records', [])
+               if r['record_type'] == 'cross_reference' and not r.get('target_label')
+               and not r.get('target_url')]
+    if not missing:
+        return projection
+    source = projection['source']['source_object']
+    body = (Path(cache)/source['object_path']).read_bytes()
+    article = parse_database_article(body, source_metadata=dict(source, delivery_type='database_article', valid_resource=True))
+    if article['article_source_text'] != projection['source']['article_source_text']:
+        raise ValueError('HTML replay changed source text')
+    labels = {(r['locator']['visible_text_start'], r['locator']['visible_text_end']):r
+              for r in article['cross_references'] if r['target_status'] == 'exact_segment_in_shared_anchor'}
+    replacements = {}
+    for record in missing:
+        if len(record['source_spans']) != 1:
+            continue
+        span = record['source_spans'][0]
+        recovered = labels.get((span['start'], span['end']))
+        if recovered:
+            updated = dict(record, target_label=recovered['target_text'],
+                           target_parsing_evidence='exact_segment_in_shared_anchor')
+            updated.pop('canonical_resolution', None)
+            replacements[record['id']] = updated
+    return dict(projection, original_records=[replacements.get(r['id'], r) for r in projection['original_records']])
 
 
 if __name__ == "__main__":

@@ -14,6 +14,7 @@ from pathlib import Path
 from build_badw_connected_reader import ROOT, CACHE, CANON, INDEX, BIB, SEEDS, digest, write, validate_reviewed
 from audit_badw_corpus_structure import rows, file_hash
 from parse_badw_pdf_articles import reindex_article
+from badw_article_parser import replay_empty_reference_labels
 from build_badw_dictionary_prototype import view, bibliography_descriptions
 from badw_dictionary_entry_view import entry_view
 from badw_semantic_annotations import PACKET_VERSION, validate, apply_validated_annotations
@@ -138,6 +139,7 @@ def main():
                 raise ValueError('reference boundaries changed; explicit structural replay required')
             current['review_text_sha256'] = p['review_text_sha256']
             pred['original_structure'] = current
+        pred = replay_empty_reference_labels(pred, CACHE)
         p['contract_version'] = PACKET_VERSION
         if annotations[identity]:
             try:
