@@ -3,6 +3,7 @@
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 let byEntry, orderedEntries=[], preview={}, sharded=false, navigationVersion=0;
 let syncIndexSelection=()=>{};
+let displayMode='both', currentEntry=null;
 const loadedEntries=new Map();
 function sourceLink(url,label){const a=el('a',label);if(/^https:\/\/wts-digital\.badw\.de\//.test(url||'')){a.href=url;a.rel='noreferrer';}return a;}
 const relationLabels={perfect_of:'Perfect of',future_of:'Future of',imperative_of:'Imperative of'};
@@ -149,12 +150,31 @@ function renderSourceText(node,text,item){
  }
 }
 function entryLabel(item){return `${item.headword.loc||''}${item.homonym?' '+item.homonym:''}`;}
+function displayForm(source,tibetan,mode){
+ if(!tibetan)return source;
+ return mode==='tibetan'?tibetan:mode==='both'?`${source} · ${tibetan}`:source;
+}
 function show(item){
+ currentEntry=item;
  const a=document.querySelector('#article');a.replaceChildren();
  const position=orderedEntries.findIndex(e=>e.id===item.id);
  const context=el('p',`Entry ${position+1} of ${orderedEntries.length} · ${item.source_kind==='html'?'Editorial HTML witness':'Printed PDF witness'}`,'entry-context');
  a.append(context,el('h2',entryLabel(item)),el('p',item.headword.tibetan||'','heading-tibetan'));
  a.querySelector('h2').id='entry-title';a.querySelector('.heading-tibetan').lang='bo';
+ if(preview.loc_experiment){
+  const agreed=item.derived_headword?.tibetan;
+  if(agreed){
+   if(displayMode==='tibetan'){
+    a.querySelector('h2').textContent=agreed+(item.homonym?' '+item.homonym:'');
+    a.querySelector('h2').classList.add('tibetan');a.querySelector('h2').lang='bo';
+    a.querySelector('h2').title='Source headword: '+entryLabel(item);
+   }
+   a.querySelector('.heading-tibetan').hidden=displayMode!=='both';
+  }
+  const note=el('details',undefined,'loc-note');note.append(el('summary',agreed?'Experimental script display · attested agreement':'Script conversion unavailable for this headword'));
+  note.append(el('p','Conversion is a derived representation, limited to exact agreement with independently attested Tibetan forms. Unsupported forms retain their source spelling. This does not correct the published text.'));
+  note.append(el('p','Source headword: '+entryLabel(item)));a.append(note);
+ }
  appendSources(a,item);
  const pager=el('nav',undefined,'entry-pager');pager.setAttribute('aria-label','Previous and next entries');
  for(const [delta,label] of [[-1,'Previous'],[1,'Next']]){
@@ -194,6 +214,12 @@ function show(item){
    if(languages.length>1)n.title=(n.title||'')+' · overlapping source/review language claims';
    if(segment.types.includes('lexical_parallel')||(segment.semantic_item_ids||[]).length)n.classList.add('lexical');
    renderSourceText(n,segment.text,item);
+   if(preview.loc_experiment&&segment.derived_tibetan&&displayMode!=='loc'){
+    n.textContent=displayForm(segment.text,segment.derived_tibetan,displayMode);
+    n.title=(n.title?n.title+' · ':'')+'Source transliteration: '+segment.text;
+    n.classList.add('tibetan');
+    if(displayMode==='tibetan')n.lang='bo';
+   }
    paragraph.append(n);
   }
   reading.append(paragraph);
@@ -249,6 +275,11 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  for(const kind of ['citation','reference'])document.querySelector('#'+kind+'-dialog-close')?.addEventListener('click',()=>document.querySelector('#'+kind+'-detail').close());
  fetch('data.json').then(r=>{if(!r.ok)throw Error('Cannot load dictionary data');return r.json();}).then(d=>{
  orderedEntries=d.entries;preview=d.preview||{};sharded=!!d.sharded;byEntry=new Map(d.entries.map(e=>[e.id,e]));
+ const modeControl=document.querySelector('#script-mode');
+ if(modeControl&&preview.loc_experiment){
+  modeControl.closest('.script-setting').hidden=false;
+  modeControl.addEventListener('change',()=>{displayMode=modeControl.value;if(currentEntry)show(currentEntry);});
+ }
  document.querySelector('#scope').textContent=`${d.entries.length.toLocaleString('en')} source witnesses · ${sharded?'complete acquired corpus':'limited demonstration collection'}`;
  if(sharded)document.querySelector('.collection-guide > p').textContent=preview.scope+' Links with a dotted underline explain uncertainty; citations open bibliographic details. Source witnesses are available beside each heading.';
  document.querySelector('#ordering').textContent=preview.ordering||'LoC headword order, then homonym and source identity.';
@@ -264,4 +295,4 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  window.addEventListener('hashchange',()=>navigate(true));filter();navigate();
  }).catch(e=>document.querySelector('#article').replaceChildren(el('p','The reader could not load: '+e.message+'. Serve this directory over HTTP using the documented preview command.')));
 }
-if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts};
+if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts,displayForm};

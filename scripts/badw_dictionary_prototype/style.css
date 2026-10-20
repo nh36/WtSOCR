@@ -40,3 +40,5 @@ dialog::backdrop{background:#1e211f80}.dialog-bar{position:sticky;top:0;display:
 @media(max-width:700px){.entry-index{position:static;max-height:none}#entries{max-height:11rem}.masthead{padding:1rem 1.2rem}.collection-guide{font-size:.78rem}.heading-tibetan{font-size:1.9rem}.reading{font-size:1.06rem;line-height:1.95}.entry-pager{margin-bottom:1rem}.source-access a{padding:.25rem 0}article{padding-top:1.5rem}.entry-context{margin-bottom:.65rem}}
 
 .unknown-glyph{font:inherit;font-size:.85em;color:#855716;background:#fff3d7;border:0;border-bottom:1px dotted currentColor;padding:0 .15em;cursor:help}.index-witness{display:block;font: .65rem system-ui,sans-serif;color:var(--muted);letter-spacing:.03em}code{overflow-wrap:anywhere}
+
+.script-setting{margin-top:.8rem;font-size:.78rem}.script-setting select{font:inherit;padding:.35rem;background:var(--paper);color:var(--ink);border:1px solid #aaa294;border-radius:4px}.loc-note{font:.75rem/1.6 system-ui,sans-serif;margin:.5rem 0 1rem;max-width:60ch}.loc-note p{margin:.4rem 0}[hidden]{display:none!important}

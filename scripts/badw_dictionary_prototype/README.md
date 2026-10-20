@@ -12,7 +12,8 @@ python3 scripts/build_badw_full_reader.py --output work/badw_full_reader_fresh
 python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_fresh
 ```
 
-For the current local build, serve `work/badw_full_reader_20261020/run9` instead.
+For the current local build with the bounded script experiment, serve
+`work/badw_full_reader_20261020/loc1` instead (`run9` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -88,6 +89,53 @@ Its diagnostic buckets are **provisional**, not seven-way scholarly adjudication
 missing exact identities; 118 PDF ambiguities; one HTML parser-boundary failure.
 Missing identities do not establish acquisition gaps or printed errors. No printed
 or editorial correction is asserted by this census. These cases still need review.
+
+## Bounded historical LoC script experiment
+
+The optional **Both / LoC / Tibetan** control changes derived display only. Both
+retains the existing headword layout. Source headwords remain in the adjacent
+disclosure in every mode; original passage transliteration remains available in
+the title and source evidence. IDs, source spans, references and citations stay
+unchanged. Only conversions which exactly match an independently paired Tibetan
+headword are eligible. Whole exclusively `bo`-typed spans may reuse those exact
+attested forms; substrings and mixed-language spans are excluded. Unavailable
+headwords explicitly explain the limitation. This is not a Wylie converter.
+
+```sh
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run9 \
+  --output work/wts_loc_experiment_fresh
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run9 \
+  --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
+python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
+```
+
+Both commands refuse existing outputs. The derived build verifies experiment
+input hashes and every parent shard, and copies sources without overwriting them.
+The converter recombines 151 onset and 14 coda templates from 2,035 training
+syllables, using previously reviewed historical LoC role mappings. A deterministic
+Tibetan-syllable split holds out entire syllables from template training; this
+does **not** independently test discovery of the fixed role mappings.
+
+| Evaluation set | Forms | Converted | Exact among converted | Coverage |
+|---|---:|---:|---:|---:|
+| Held-out, independently corroborated clean pairs | 364 | 241 | 241/241 (100%) | 66.2% |
+| Held-out, problematic or uncorroborated pairs | 689 | 289 | 289/289 (100%) | 41.9% |
+| Damaged-source stress set, not independent holdout | 2,041 | 670 | 175/670 (26.1%) | 32.8% |
+
+Clean abstentions comprise 119 unattested structures and four unsupported inputs;
+the second group has 397 and three respectively. Stress-set errors comprise 495
+different attested forms, with 1,343 unattested and 28 unsupported inputs. A
+damaged source occurrence does not prove its transliteration is corrupt. Neither
+valid uncommon orthography nor ambiguous root parsing is silently repaired.
+Period-conditioned onsets, unsupported Sanskrit stacks and unsupported characters
+abstain. Multiple inverse candidates also abstain. The weak stress-set accuracy
+rules out unrestricted conversion; independent agreement gates reader display.
+The current build enables 4,968 headword witnesses (4,547 distinct LoC headwords)
+and 2,281 exact spans. Try **ka** and switch all three modes. Metrics, per-case
+outcomes, attestations and input hashes stay in the ignored experiment directory.
+
+Run `python3 -m pytest tests/test_wts_loc_converter.py -q` in addition to reader
+tests. The full browser suite also exercises all three display modes when enabled.
 
 ---
 

@@ -107,6 +107,28 @@ const path=require('node:path');
  const aliasEntry=catalog.find(e=>e.search_aliases?.some(a=>a.length>3));assert(aliasEntry);
  await page.locator('#search').fill(aliasEntry.search_aliases.find(a=>a.length>3));assert(await page.locator('#entries a').count()>0);
  await page.locator('#search').fill('');
+ // Script switching is a display operation: IDs, links, sources and history
+ // remain fixed, and every derived form has independent paired evidence.
+ let scriptModes=0;
+ if(data.preview.loc_experiment){
+  let specimen;
+  for(const meta of catalog.filter(e=>e.headword.loc==='ka')){
+   const entry=await (await page.request.get(base+'/'+meta.path)).json();
+   if(entry.derived_headword){specimen=entry;break;}
+  }
+  assert(specimen,'an independently corroborated headword is available');
+  await go(specimen);
+  const originalHash=await page.evaluate(()=>location.hash);
+  const sourceLinks=await page.locator('#article > .source-access a').evaluateAll(ns=>ns.map(n=>n.href));
+  for(const mode of ['loc','tibetan','both']){
+   await page.locator('#script-mode').selectOption(mode);
+   assert.equal(await page.evaluate(()=>location.hash),originalHash);
+   assert.deepEqual(await page.locator('#article > .source-access a').evaluateAll(ns=>ns.map(n=>n.href)),sourceLinks);
+   assert((await page.locator('#article h2').textContent()).includes(mode==='tibetan'?specimen.derived_headword.tibetan:specimen.headword.loc));
+   assert((await page.locator('.loc-note').textContent()).includes('Source headword: '+specimen.headword.loc));
+   scriptModes++;
+  }
+ }
  // Lexically established references retain an explicit choice of source witnesses.
  const multi=entries.get('badw:pdf:badw-v4-aa5f071493754b5a6b49af059dd9780a463b355e0ca13a25e0ec17e1c4f2d5fa:504');
  await go(multi);await page.locator('.uncertain-reference').filter({hasText:'thams cad'}).first().click();
@@ -131,6 +153,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
