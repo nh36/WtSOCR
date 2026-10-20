@@ -182,11 +182,14 @@ def view(records, index):
                 references.append(r if "canonical_resolution" in r else index.resolve_manifestation(r))
         if record["source_kind"] == "pdf":
             # Exact source target candidates retain their spans through reader binding.
-            # Unique literal labels resolve; homonyms remain ambiguous.
-            for candidate in record["original_structure"]["candidates"]["cross_references"]:
-                references.append(index.resolve_source_candidate(dict(marker=candidate["marker"],
+            structure = record["original_structure"]
+            for candidate in structure["candidates"]["cross_references"]:
+                references.append(index.resolve_source_candidate_with_members(dict(marker=candidate["marker"],
                                        target_label=candidate.get("target_label_candidate", ""),
-                                       source_candidate=candidate)))
+                                       source_candidate=candidate, source_spans=[candidate]),
+                    structure=structure, text=text,
+                    source_binding=dict(identity=identity,
+                        text_sha256=structure.get("source_faithful_sha256"))))
         result.append(dict(projection=record, entry=entries[0], review_text=text,
                            cross_references=references))
     return sorted(result, key=lambda r: (r["entry"]["headword"].get("loc", ""),

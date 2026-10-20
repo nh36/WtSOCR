@@ -1,6 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch}=require('../scripts/badw_dictionary_prototype/app.js');
+const {renderReference}=require('../scripts/badw_dictionary_prototype/app.js');
 
 // Small synthetic presentation fixture. Source-bearing development exports
 // are generated locally under ignored work/ and are never test dependencies.
@@ -55,6 +56,32 @@ class Node {
  addEventListener(){}
  showModal(){this.open=true;this.openCount=(this.openCount||0)+1}
 }
+test('plural targets link independently while separators and unresolved members stay literal',()=>{
+ global.document={createElement:tag=>new Node(tag)};
+ const ref={component_id:'xref',status:'unresolved',target_entry_id:null,target_members:[
+  {ordinal:0,resolution_status:'resolved',target_entry_id:'target:1'},
+  {ordinal:1,resolution_status:'unresolved'},
+  {ordinal:2,resolution_status:'ambiguous',target_entry_id:'must-not-link'},
+  {ordinal:3,resolution_status:'resolved',target_lexical_entity:{witness_entry_ids:['a','b']}}
+ ]};
+ const entries=new Map([['target:1',{}],['must-not-link',{}]]);
+ const segment=(text,ordinal)=>({text,...(ordinal!==undefined?{cross_reference_member:{component_id:'xref',ordinal}}:{})});
+ const nodes=[renderReference(ref,segment('↑'),entries),renderReference(ref,segment('ka',0),entries),
+  renderReference(ref,segment(', '),entries),renderReference(ref,segment('kha',1),entries)];
+ assert.equal(nodes.map(n=>n.textContent).join(''),'↑ka, kha');
+ assert.deepEqual(nodes.map(n=>n.tag),['span','a','span','span']);
+ assert.equal(nodes[1].href,'#target%3A1');
+ assert.equal(nodes[3].title,'Cross-reference target unresolved');
+ assert.equal(renderReference(ref,segment('ga',2),entries).tag,'span');
+ const multipleWitnesses=renderReference(ref,segment('nga',3),entries);
+ assert.equal(multipleWitnesses.tag,'span');assert.match(multipleWitnesses.title,/no unique target witness/);
+ assert.equal(renderReference(ref,{text:'ka',cross_reference_member:{component_id:'other',ordinal:1}},entries).tag,'span');
+ const single=renderReference({target_entry_id:'target:1'},segment('↑ka'),entries);
+ assert.equal(single.href,'#target%3A1');
+ const outside=renderReference(ref,segment('ka',0),new Map());
+ assert.equal(outside.tag,'span');assert.match(outside.title,/outside/);
+ delete global.document;
+});
 function findEntry(prefix){return sample.entries.find(e=>e.headword.loc===prefix)}
 
 test('presentation fixture covers HTML/PDF, unresolved citations, examples and xrefs',()=>{

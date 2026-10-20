@@ -156,6 +156,57 @@ def entry_view(inspected, bibliography=None):
                     c["supports"] = targets
                     c['ownership_evidence_class'] = 'reviewed_relationship'
                     c.pop('ownership_residual_reason', None)
+    references = []
+    for ref in inspected["cross_references"]:
+        resolution = ref.get("canonical_resolution", {})
+        node = next((n for n in p["nodes"] if n.get("lexical_record_id") == ref.get("id")
+                     and ref.get("id") is not None), None)
+        if node is None and p['source_kind'] == 'pdf':
+            candidate = ref.get('source_candidate')
+            if candidate is None and ref.get('source_spans'):
+                candidate = ref['source_spans'][0]
+            if candidate:
+                matches = [n for n in p['nodes'] if n['kind'] == 'cross_reference'
+                           and (n['start'], n['end']) ==
+                           (candidate.get('visual_start'), candidate.get('visual_end'))]
+                if len(matches) == 1:
+                    node = matches[0]
+        members = resolution.get('target_members')
+        if members is not None:
+            if (not node or resolution.get('target_entry_id') or
+                    resolution.get('target_lexical_entity') or resolution.get('status') == 'resolved'):
+                raise ValueError('plural reference must retain an unresolved bound parent')
+            previous_end = node['start']
+            for ordinal, member in enumerate(members):
+                span = member['source_span']
+                start, end = span['start'], span['end']
+                binding = member.get('source_binding', {})
+                if (member.get('ordinal') != ordinal or
+                        binding.get('identity') != p['identity'] or
+                        not binding.get('text_sha256') or
+                        binding['text_sha256'] != p.get('original_structure', {}).get('source_faithful_sha256') or
+                        not previous_end <= start < end <= node['end'] or
+                        text[start:end] != member['literal']):
+                    raise ValueError('target member differs from bound source span')
+                previous_end = end
+        references.append(dict(component_id=by_node[node["id"]]["id"] if node else None,
+                               marker=ref.get("marker"), wording=ref.get("target_label", ""),
+                               source_url=ref.get("target_url"),
+                               parsed_target=resolution.get("parsed_target"),
+                               residual_reason=resolution.get("residual_reason"),
+                               target_entry_id=resolution.get("target_entry_id"),
+                               target_lexical_entity=resolution.get("target_lexical_entity"),
+                               status=resolution.get("status", "unresolved"),
+                               candidate_entry_ids=resolution.get("candidate_entry_ids", []),
+                               resolution_evidence=resolution,
+                               source_binding=dict(identity=p['identity'], text_sha256=p['review_text_sha256']),
+                               source_span=dict(start=node['start'], end=node['end']) if node else None))
+        if members is not None:
+            references[-1]['target_members'] = members
+            references[-1]['target_members_status'] = resolution['target_members_status']
+    member_spans = [(m['source_span']['start'], m['source_span']['end'],
+                     dict(component_id=r['component_id'], ordinal=m['ordinal']))
+                    for r in references for m in r.get('target_members', [])]
     # Include reviewed subpassages in the display boundaries too. Every literal
     # character is emitted once even when several annotations overlap.
     # Section labels are source observations, not inferred citation owners.
@@ -174,6 +225,7 @@ def entry_view(inspected, bibliography=None):
                 raise ValueError('Lex. display boundary differs from source label')
             lexical_starts.add(start)
     boundaries = sorted({0, len(text)} | lexical_starts |
+                        {v for start, end, _ in member_spans for v in (start, end)} |
                         {v for s, e, _ in components for v in (s, e)} |
                         {v for x in semantic['effective_language_spans'] for v in (x['start'], x['end'])} |
                         {v for x in semantic['lex_items'] for v in (x['start'], x['end'])} |
@@ -203,33 +255,12 @@ def entry_view(inspected, bibliography=None):
                                                  ({'lexical_section'} if start in lexical_starts else set())),
                              types=sorted({c["type"] for c in active}),
                              languages=sorted({c["language"] for c in active if c["language"]})))
-    references = []
-    for ref in inspected["cross_references"]:
-        resolution = ref.get("canonical_resolution", {})
-        node = next((n for n in p["nodes"] if n.get("lexical_record_id") == ref.get("id")
-                     and ref.get("id") is not None), None)
-        if node is None and p['source_kind'] == 'pdf':
-            candidate = ref.get('source_candidate')
-            if candidate is None and ref.get('source_spans'):
-                candidate = ref['source_spans'][0]
-            if candidate:
-                matches = [n for n in p['nodes'] if n['kind'] == 'cross_reference'
-                           and (n['start'], n['end']) ==
-                           (candidate.get('visual_start'), candidate.get('visual_end'))]
-                if len(matches) == 1:
-                    node = matches[0]
-        references.append(dict(component_id=by_node[node["id"]]["id"] if node else None,
-                               marker=ref.get("marker"), wording=ref.get("target_label", ""),
-                               source_url=ref.get("target_url"),
-                               parsed_target=resolution.get("parsed_target"),
-                               residual_reason=resolution.get("residual_reason"),
-                               target_entry_id=resolution.get("target_entry_id"),
-                               target_lexical_entity=resolution.get("target_lexical_entity"),
-                               status=resolution.get("status", "unresolved"),
-                               candidate_entry_ids=resolution.get("candidate_entry_ids", []),
-                               resolution_evidence=resolution,
-                               source_binding=dict(identity=p['identity'], text_sha256=p['review_text_sha256']),
-                               source_span=dict(start=node['start'], end=node['end']) if node else None))
+    for segment, (start, end) in zip(segments, zip(boundaries, boundaries[1:])):
+        memberships = [m for a, b, m in member_spans if a <= start < end <= b]
+        if len(memberships) > 1:
+            raise ValueError('overlapping cross-reference target members')
+        if memberships:
+            segment['cross_reference_member'] = memberships[0]
     return dict(contract_version=VERSION, id=entry["id"],
                 headword=entry["headword"], homonym=entry.get("homonym"),
                 headword_forms=[dict(id=identifier(entry["id"],

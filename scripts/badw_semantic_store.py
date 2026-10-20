@@ -30,6 +30,9 @@ CREATE INDEX lex_entry ON lex_item(entry);
 CREATE INDEX passage_entry ON passage(entry);
 CREATE INDEX citation_entry ON citation(entry);
 CREATE INDEX xref_target ON xref(target);
+CREATE TABLE xref_member(xref TEXT REFERENCES xref(id), ordinal INTEGER, entry TEXT, target TEXT, entity TEXT, status TEXT, record_json TEXT, PRIMARY KEY(xref,ordinal));
+CREATE INDEX xref_member_target ON xref_member(target);
+CREATE INDEX xref_member_entity ON xref_member(entity);
 '''
 
 
@@ -74,8 +77,17 @@ def ingest(db,view):
         for aid in c['accepted_authority_ids']:db.execute('INSERT INTO citation_authority VALUES(?,?)',(c['component_id'],aid))
     for x in view['cross_references']:
         if not x['component_id']:raise ValueError('unbound xref cannot enter canonical store')
+        if x.get('target_members') and (x.get('target_entry_id') or x.get('target_lexical_entity') or x['status']=='resolved'):
+            raise ValueError('plural xref cannot have a resolved singular parent')
         entity=(x.get('target_lexical_entity') or {}).get('id')
         db.execute('INSERT INTO xref VALUES(?,?,?,?,?,?)',(x['component_id'],identity,x['target_entry_id'],entity,x['status'],encode(x)))
+        for member in x.get('target_members', []):
+            resolved = member['resolution_status']=='resolved'
+            if not resolved and (member.get('target_entry_id') or member.get('target_lexical_entity')):
+                raise ValueError('unresolved xref member cannot have a target')
+            db.execute('INSERT INTO xref_member VALUES(?,?,?,?,?,?,?)',
+                (x['component_id'],member['ordinal'],identity,member.get('target_entry_id'),
+                 (member.get('target_lexical_entity') or {}).get('id'),member['resolution_status'],encode(member)))
 
 
 def main():
@@ -87,9 +99,12 @@ def main():
     passage=sub.add_parser('passages');passage.add_argument('--authority')
     citation=sub.add_parser('citations');citation.add_argument('--unresolved',action='store_true');citation.add_argument('--sense');citation.add_argument('--passage');citation.add_argument('--evidence');citation.add_argument('--entry-level',action='store_true')
     xref=sub.add_parser('xrefs');xref.add_argument('--target');xref.add_argument('--unresolved',action='store_true');xref.add_argument('--status');xref.add_argument('--reason');xref.add_argument('--cross-manifestation',action='store_true')
+    xref.add_argument('--members',action='store_true',help='Query independently bounded target members instead of parent observations')
     language=sub.add_parser('language');language.add_argument('--conflicts',action='store_true');language.add_argument('--effective',action='store_true');language.add_argument('--correspondences',action='store_true');language.add_argument('--indicators',action='store_true');language.add_argument('--unresolved',action='store_true');language.add_argument('--lex',action='store_true');language.add_argument('--siglum');language.add_argument('--tibetan')
     for child in (fragments,headers,lex,passage,citation,xref,language):child.add_argument('--entry');child.add_argument('--limit',type=int,default=50)
     a=p.parse_args()
+    if a.command=='xrefs' and a.members and a.cross_manifestation:
+        p.error('--cross-manifestation applies to parent observations')
     if a.command=='language':
         if sum((a.conflicts,a.effective,a.correspondences,a.indicators))>1:
             p.error('choose one language representation')
@@ -100,7 +115,11 @@ def main():
         if a.unresolved and a.correspondences:
             p.error('unresolved indicators are queried with --indicators --unresolved')
     db=sqlite3.connect('file:'+a.db+'?mode=ro',uri=True)
+    has_members = db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='xref_member'").fetchone() is not None
+    if a.command=='xrefs' and a.members and not has_members:
+        p.error('member queries require a newly exported semantic database')
     table={'fragments':'structural_fragment','headers':'header_field','lex':'lex_item','passages':'passage','citations':'citation','xrefs':'xref','language':'language_form'}[a.command]
+    if a.command=='xrefs' and a.members:table='xref_member'
     if a.command=='language':
         table='language_conflict' if a.conflicts else 'language_effective' if a.effective else 'language_correspondence' if a.correspondences else 'language_indicator' if a.indicators else 'language_form'
     conditions=[];values=[]
@@ -124,12 +143,19 @@ def main():
         if a.evidence:conditions.append("json_extract(record_json,'$.ownership_evidence_class')=?");values.append(a.evidence)
         if a.entry_level:conditions.append("json_extract(record_json,'$.container_ownership')='entry'")
     if a.command=='xrefs':
-        if a.target:conditions.append('(target=? OR entity=?)');values.extend([a.target,a.target])
+        if a.target:
+            condition='(target=? OR entity=?)'
+            values.extend([a.target,a.target])
+            if not a.members and has_members:
+                condition='('+condition+' OR id IN (SELECT xref FROM xref_member WHERE target=? OR entity=?))'
+                values.extend([a.target,a.target])
+            conditions.append(condition)
         if a.unresolved:conditions.append("status!='resolved'")
         if a.status:conditions.append('status=?');values.append(a.status)
         if a.reason:conditions.append("json_extract(record_json,'$.residual_reason')=?");values.append(a.reason)
         if a.cross_manifestation:conditions.append("json_extract(record_json,'$.resolution_evidence.method')='exact_anchor_identity_other_manifestation'")
-    sql='SELECT record_json FROM '+table+(' WHERE '+' AND '.join(conditions) if conditions else '')+' ORDER BY id LIMIT ?'
+    order='xref, ordinal' if table=='xref_member' else 'id'
+    sql='SELECT record_json FROM '+table+(' WHERE '+' AND '.join(conditions) if conditions else '')+' ORDER BY '+order+' LIMIT ?'
     for row in db.execute(sql,values+[a.limit]):print(row[0])
 
 if __name__=='__main__':main()

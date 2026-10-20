@@ -67,6 +67,25 @@ function openCitationDetail(citation,entry){
  body.append(occurrence);
  if(!dialog.open)dialog.showModal();
 }
+function referenceForSegment(reference,segment){
+ if(!Array.isArray(reference.target_members))return reference;
+ const binding=segment.cross_reference_member;
+ if(binding?.component_id!==reference.component_id)return null;
+ const member=reference.target_members.find(m=>m.ordinal===binding.ordinal);
+ if(!member)return null;
+ return {target_entry_id:member.resolution_status==='resolved'?member.target_entry_id:null,status:member.resolution_status};
+}
+function renderReference(reference,segment,entries){
+ const target=referenceForSegment(reference,segment);
+ let n=el('span',segment.text);
+ if(!target)return n;
+ if(target.target_entry_id&&entries.has(target.target_entry_id)){n=el('a',segment.text);n.href='#'+encodeURIComponent(target.target_entry_id);}
+ else if(target.target_entry_id&&target.source_url){n=sourceLink(target.source_url,segment.text);n.title='Resolved entry outside the development subset';}
+ else if(target.target_entry_id)n.title='Resolved target outside the development subset';
+ else if(target.status==='resolved')n.title='Resolved lexical identity; no unique target witness';
+ else n.title=target.status==='ambiguous'?'Cross-reference target ambiguous':'Cross-reference target unresolved';
+ return n;
+}
 function show(item){
  const a=document.querySelector('#article');a.replaceChildren();
  a.append(el('h2',`${item.headword.loc||''} ${item.homonym||''}`),el('p',item.headword.tibetan||'','heading-tibetan'));
@@ -87,10 +106,7 @@ function show(item){
     n.setAttribute('aria-label',`${segment.text}. ${labels.length?labels.join('; '):'Bibliographic identity unresolved'}. Open citation details.`);
     n.addEventListener('click',()=>openCitationDetail(citation,item));
    }else if(reference){
-    if(reference.target_entry_id&&byEntry.has(reference.target_entry_id)){n=el('a',segment.text);n.href='#'+encodeURIComponent(reference.target_entry_id);}
-    else if(reference.target_entry_id&&reference.source_url){n=sourceLink(reference.source_url,segment.text);n.title='Resolved entry outside the development subset';}
-    else if(reference.target_entry_id)n.title='Resolved target outside the development subset';
-    else n.title='Cross-reference target unresolved';
+    n=renderReference(reference,segment,byEntry);
    }
    for(const language of (segment.effective_languages||segment.languages))n.classList.add('lang-'+language);
    if((segment.effective_languages||segment.languages).length>1)n.title=(n.title||'')+' · overlapping source/review language claims';
@@ -116,4 +132,4 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  search.addEventListener('input',filter);window.addEventListener('hashchange',navigate);filter();navigate();
  }).catch(e=>document.querySelector('#article').replaceChildren(el('p',e.message)));
 }
-if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch};
+if(typeof module!=='undefined')module.exports={citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference};
