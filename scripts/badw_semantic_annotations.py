@@ -200,7 +200,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
             _keys(old, ("start", "end", "literal"))
             if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
                     not _string(claim["node_id"]) or
-                    claim["basis"] != "reviewed_printed_extent" or
+                    claim["basis"] not in ("reviewed_printed_extent", "reviewed_printed_terminal_letter") or
                     type(old["start"]) is not int or type(old["end"]) is not int or
                     not ranges[0]["start"] == old["start"] < old["end"] < ranges[0]["end"] or
                     packet["review_text"][old["start"]:old["end"]] != old["literal"] or
@@ -360,7 +360,9 @@ def apply_validated_annotations(packet, prediction, annotations):
         positions = [i for i, c in enumerate(candidates) if
                      (c["visual_start"], c["visual_end"]) == (old["start"], old["end"])]
         proposed = _candidates(structure["visual_lines"], structure["divisions"],
-                               structure["article_id"], reviewed_wrapped_lists=True)
+                               structure["article_id"],
+                               reviewed_wrapped_lists=row['claim']['basis'] == 'reviewed_printed_extent',
+                               reviewed_terminal_letter=row['claim']['basis'] == 'reviewed_printed_terminal_letter')
         matches = [c for c in proposed["cross_references"] if
                    (c["visual_start"], c["visual_end"]) == (span["start"], span["end"])]
         if len(positions) != 1 or len(matches) != 1:

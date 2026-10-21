@@ -198,6 +198,21 @@ const path=require('node:path');
   }
  }
  assert.equal(htmlCommaJourneys,8);assert.equal(htmlCommaUncertain,4);
+ // A facsimile-reviewed upright final r belongs to the target, despite the
+ // italic-run boundary. Follow its exact destination and return by history.
+ const terminalMeta=catalog.find(e=>e.source_kind==='pdf'&&e.headword.loc==='kha kha khyer');assert(terminalMeta);
+ const terminalEntry=await (await page.request.get(base+'/'+terminalMeta.path)).json();
+ const terminalRef=terminalEntry.cross_references.find(r=>r.extent_review);assert(terminalRef);
+ assert.deepEqual(terminalRef.source_span,{start:1,end:11});
+ assert.equal(terminalRef.wording,'kha khyer');assert.equal(terminalRef.status,'resolved');
+ assert.equal(entries.get(terminalRef.target_entry_id).headword.loc,'kha khyer');
+ await go(terminalEntry);
+ const terminalHref='#'+encodeURIComponent(terminalRef.target_entry_id);
+ const terminalLinks=page.locator('.reading a');
+ const terminalIndex=await terminalLinks.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),terminalHref);assert(terminalIndex>=0);
+ await terminalLinks.nth(terminalIndex).click();await page.waitForFunction(h=>location.hash===h,terminalHref);
+ await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('kha khyer'));
+ await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('kha kha khyer'));
  // Actual unresolved bibliography identities in the current full corpus; the
  // current apparatus resolves the former preview's unresolved examples.
  for(const id of ['badw:entry:b02929dd7cac236341035182a2156e52083e149569e05a4526464d99a36cff62','badw:entry:2e1d21ca0ef668f56b2df58656c2433e124595e2c90485d45c4b04c92a20cd89','badw:pdf:badw-v3-ada4e0c7f95483b5511f159d715f24d5d1cac8a74143c1256d5b3f8ea7462b70:489']){
@@ -283,6 +298,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,terminal_letter_journeys:1,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

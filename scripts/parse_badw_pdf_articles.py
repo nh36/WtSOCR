@@ -347,7 +347,8 @@ def reviewed_quotation_spans(text: str, article_id: str,
 
 
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
-                article_id: str = "", *, reviewed_wrapped_lists: bool = False) -> dict[str, list[dict[str, Any]]]:
+                article_id: str = "", *, reviewed_wrapped_lists: bool = False,
+                reviewed_terminal_letter: bool = False) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
@@ -532,6 +533,26 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 end = offsets[line_index] + first_span["end"]
             while end > target_start and text[end - 1] in " \t\n.,;:":
                 end -= 1
+            # Only an accepted, source-bound extent review enables this path.
+            # A single upright terminal letter can belong to the printed
+            # italic word (kha khye[r]). Require contiguous source runs in the
+            # same line/family and a literal terminal stop. Never consume prose,
+            # a second word, an unknown glyph or a differently sourced run.
+            if (reviewed_terminal_letter and end == offsets[line_index] + last_span['end']
+                    and end + 1 < len(text) and text[end - 1].isalpha()
+                    and text[end].isalpha() and text[end + 1] in '.;:'
+                    and end + 1 < offsets[line_index] + len(lines[line_index]['text'])):
+                following = [s for s in lines[line_index]['style_spans']
+                             if s['start'] == end - offsets[line_index]]
+                if (len(following) == 1 and following[0]['style'] == 'regular'
+                        and following[0]['end'] >= following[0]['start'] + 2
+                        and last_span.get('family') is not None
+                        and following[0].get('family') == last_span['family']
+                        and last_span.get('font_id') and following[0].get('font_id')
+                        and following[0]['font_id'] != last_span['font_id']
+                        and type(last_span.get('last_run_index')) is int
+                        and following[0].get('first_run_index') == last_span['last_run_index'] + 1):
+                    end += 1
         else:
             # Some source runs have no useful italic boundary.  Retain the
             # older, conservative one-token candidate in that case, but do

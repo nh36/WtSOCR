@@ -532,6 +532,59 @@ def test_reviewed_reference_extent_retains_source_and_requires_exact_typography(
         run(tmp_path,p,[wrong])
 
 
+def test_reviewed_terminal_letter_requires_explicit_extent_and_source_continuity(tmp_path):
+    from parse_badw_pdf_articles import _candidates
+    p = packet(tmp_path, 'pdf')
+    text = ' ↓kha khyer.'
+    line = p['source']['visual_lines'][0]
+    line.update(text=text, span_index=0, printed_page=4, style_spans=[
+        dict(start=0, end=2, style='regular', family='TGaramond', font_id='regular'),
+        dict(start=2, end=10, style='italic', family='TGaramond', font_id='italic', last_run_index=8),
+        dict(start=10, end=12, style='regular', family='TGaramond', font_id='regular', first_run_index=9)])
+    p['source'].update(source_faithful_text=text, visual_lines=[line])
+    p.update(review_text=text, review_text_sha256=annotations.digest(text))
+    divisions = [dict(start_line_index=0, end_line_index_exclusive=1)]
+    base = prediction(p)
+    base['nodes'].append(dict(id='ref', kind='cross_reference', start=1, end=10, parent='root'))
+    base['original_structure'] = dict(article_id=p['identity'], visual_lines=copy.deepcopy([line]),
+        divisions=divisions, candidates=_candidates([line], divisions))
+    a = claim(p, kind='cross_reference_extent', ranges=[dict(start=1, end=11, literal=text[1:11])])
+    a['claim'] = dict(node_id='ref', previous_range=dict(start=1, end=10, literal=text[1:10]),
+                      basis='reviewed_printed_terminal_letter')
+    original = copy.deepcopy(base)
+    reviewed = run(tmp_path, p, [a])
+    result = annotations.apply_validated_annotations(p, base, reviewed)
+    assert base == original
+    assert result['nodes'][1]['end'] == 11
+    candidate = result['original_structure']['candidates']['cross_references'][0]
+    assert candidate['target_label_candidate'] == 'kha khyer'
+    assert result['original_structure']['visual_lines'] == p['source']['visual_lines']
+    assert _candidates([line], divisions)['cross_references'][0]['visual_end'] == 10
+    for status in ('candidate', 'rejected'):
+        inactive = copy.deepcopy(a); inactive['status'] = status
+        assert annotations.apply_validated_annotations(p, base, run(tmp_path, p, [inactive]))['nodes'][1]['end'] == 10
+    old_basis = copy.deepcopy(a); old_basis['claim']['basis'] = 'reviewed_printed_extent'
+    with pytest.raises(ValueError, match='exact typographic support'):
+        annotations.apply_validated_annotations(p, base, run(tmp_path, p, [old_basis]))
+    # Mutations remain rejected even if presented in a newly bound review view.
+    for field, value in [('family', 'Arial'), ('font_id', None), ('font_id', 'italic'),
+                         ('first_run_index', 10), ('style', 'italic'), ('start', 9)]:
+        changed = copy.deepcopy(p)
+        changed['source']['visual_lines'][0]['style_spans'][2][field] = value
+        changed_base = copy.deepcopy(base)
+        changed_base['original_structure']['visual_lines'] = copy.deepcopy(changed['source']['visual_lines'])
+        changed_claim = copy.deepcopy(a)
+        changed_claim['binding'] = annotations.binding(changed)
+        changed_claim['physical_selectors'] = annotations.physical_selectors(changed, a['ranges'])
+        with pytest.raises(ValueError, match='exact typographic support'):
+            annotations.apply_validated_annotations(changed, changed_base, run(tmp_path, changed, [changed_claim]))
+    for suffix in ('rr.', 'r Wort.', '⟦UNKNOWN:x⟧.', 'r\n.'):
+        changed = copy.deepcopy(line)
+        changed['text'] = text[:10] + suffix
+        changed['style_spans'][2]['end'] = len(changed['text'])
+        assert _candidates([changed], divisions, reviewed_terminal_letter=True)['cross_references'][0]['visual_end'] == 10
+
+
 def test_printed_abbreviation_annotation_binds_exact_headword_node_and_candidate(tmp_path):
     p=packet(tmp_path,'pdf')
     text='↑bag la ~'

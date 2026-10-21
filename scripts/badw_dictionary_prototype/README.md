@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc9` instead (`run17` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc10` instead (`run18` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,14 +78,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run17 \
+  --reader work/badw_full_reader_20261020/run18 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 221 HTML and 121 PDF
+336 HTML and three PDF identity/manifestation mismatches; 221 HTML and 120 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -192,6 +192,21 @@ characters, citation identities, structural metadata and accepted destinations
 remain unchanged. Browser tests follow all eight new links and explain all four
 uncertain members, in addition to the original 47-member regression fixture.
 
+The facsimile of **kha kha khyer** (printed p. 4, right column) confirms that
+the upright final **r** belongs to the target **kha khyer**. The frozen italic
+extent stopped at **kha khye**. One accepted source-bound annotation extends
+1:10 to 1:11, requiring the same line and font family, consecutive source runs,
+a single terminal letter and a printed stop. Ordinary parser replay does not
+enable this extension. The destination appears below on the same printed page.
+This is a parser extent defect, not a printing error. After this repair: HTML
+**4,729 resolved / 557 unresolved / two ambiguous**; PDF **2,845 resolved /
+123 unresolved / 118 ambiguous**; total **7,574 resolved / 800 residual**.
+The full differential finds one changed reference and 29,876 byte-identical
+witnesses; source characters, citations and all accepted destinations are
+preserved. The browser suite follows the repaired reference and returns through
+history. The residual classification remains provisional and requires further
+source review.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -204,9 +219,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run17 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run18 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run17 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run18 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```
