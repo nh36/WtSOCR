@@ -4,7 +4,8 @@ URL capture (the older ``resolution_status``) is not entry resolution. This
 adds a separate, replayable ``canonical_resolution`` annotation without
 altering literal observations. Only actual supplied entry records can be
 targets. There is deliberately no nearest-lemma, arrow-direction, Unicode
-normalization, stem expansion, or morphological inference.
+normalization, stem expansion, or morphological inference. Individually
+facsimile-reviewed headword abbreviations use a separate source-bound path.
 """
 from __future__ import annotations
 
@@ -194,6 +195,62 @@ class EntryIndex:
         annotation['target_members_status'] = aggregate
         annotation.pop('target_entry_id', None)
         annotation.pop('target_lexical_entity', None)
+        return result
+
+    def resolve_reviewed_printed_substitution(self, occurrence, review, *, structure, text,
+                                               source_binding):
+        """Interpret one facsimile-reviewed abbreviation without changing print.
+
+        This path requires an offline-validated annotation and the same exact
+        typographic/source-binding gates as ordinary printed target resolution.
+        It cannot replace an accepted destination or expand a plural parent.
+        """
+        result = self.resolve_source_candidate_with_members(occurrence, structure=structure,
+            text=text, source_binding=source_binding)
+        previous = result['canonical_resolution']
+        if previous['status'] == 'resolved' or 'target_members' in previous:
+            raise ValueError('review cannot replace an accepted or plural cross-reference')
+        candidate = occurrence.get('source_candidate', {})
+        parsed = previous.get('parsed_target', {})
+        span = dict(start=candidate.get('visual_start'), end=candidate.get('visual_end'))
+        if (not isinstance(source_binding, dict) or
+                not isinstance(span['start'], int) or not isinstance(span['end'], int) or
+                not 0 <= span['start'] < span['end'] <= len(text)):
+            raise ValueError('printed substitution review has no exact source binding')
+        offset = 0
+        for line in structure.get('visual_lines', []):
+            end = offset + len(line['text'])
+            if offset < span['end'] and end > span['start']:
+                if (not line.get('page_id') or line.get('printed_page') is None or
+                        line.get('first_x') is None or line.get('y') is None):
+                    raise ValueError('printed substitution review lacks source geometry')
+            offset = end + 1
+        if (review.get('basis') != 'reviewed_printed_headword_substitution' or
+                not review.get('annotation_id') or not review.get('physical_selectors') or
+                review.get('binding', {}).get('text_sha256') != hashlib.sha256(text.encode()).hexdigest() or
+                source_binding.get('identity') != structure.get('article_id') or
+                source_binding.get('text_sha256') != structure.get('source_faithful_sha256') or
+                structure.get('review_text_sha256') != review['binding']['text_sha256'] or
+                not review.get('source_headword') or
+                review['source_headword'] != structure.get('loc_headword') or
+                review.get('homonym') is not None or review.get('source_target_url') is not None or
+                not parsed.get('valid') or not parsed.get('lexical_span') or
+                parsed.get('homonym') is not None or
+                parsed.get('lexical_target', '').count('~') != 1 or
+                parsed['lexical_target'].replace('~', review['source_headword']) != review.get('lemma') or
+                review.get('ranges') != [dict(**span, literal=text[span['start']:span['end']])]):
+            raise ValueError('printed substitution review is not bound to this source target')
+        temporary = dict(occurrence, id=review['occurrence_id'], record_type='cross_reference')
+        resolution = self.resolve(temporary, reviewed_target=review)['canonical_resolution']
+        resolution.update(method='reviewed_exact_printed_substitution', parsed_target=parsed,
+                          evidence_status='facsimile_reviewed_source_interpretation')
+        self._same_entity(resolution)
+        if resolution['status'] != 'resolved':
+            resolution['residual_reason'] = ('multiple_exact_homonym_identities' if resolution['candidate_entry_ids']
+                else 'reviewed_expanded_target_absent_from_acquired_index')
+        target = resolution.get('target_entry_id')
+        if target: resolution['target_lexical_entity'] = self.target_identity(target)
+        result['canonical_resolution'] = resolution
         return result
 
     def _same_entity(self, resolution):

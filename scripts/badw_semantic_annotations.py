@@ -208,8 +208,17 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"))
-            if (packet["source_kind"] != "html" or len(ranges) != 1 or
+                          "lemma", "homonym", "basis"), ("source_headword",))
+            if claim["basis"] == "reviewed_printed_headword_substitution":
+                if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
+                        any(not _string(claim.get(k)) for k in (
+                            "occurrence_id", "source_target_label", "lemma", "source_headword")) or
+                        claim["source_target_url"] is not None or claim["homonym"] is not None or
+                        claim["source_target_label"].count("~") != 1 or
+                        " ".join(claim["source_target_label"].split()).replace("~", claim["source_headword"]) != claim["lemma"]):
+                    raise ValueError("invalid reviewed printed headword substitution")
+            elif (packet["source_kind"] != "html" or len(ranges) != 1 or
+                    "source_headword" in claim or
                     any(not _string(claim[k]) for k in ("occurrence_id", "source_target_url",
                         "source_target_label", "lemma", "homonym")) or
                     not re.fullmatch(r"[1-9][0-9]*", claim["homonym"]) or
@@ -372,6 +381,27 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
+        if claim["basis"] == "reviewed_printed_headword_substitution":
+            span = row["ranges"][0]
+            structure = result.get("original_structure", {})
+            nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
+                     and n["kind"] == "cross_reference" and
+                     (n["start"], n["end"]) == (span["start"], span["end"])]
+            candidates = [c for c in structure.get("candidates", {}).get("cross_references", [])
+                          if (c["visual_start"], c["visual_end"]) == (span["start"], span["end"])]
+            if (packet["source_kind"] != "pdf" or len(nodes) != 1 or len(candidates) != 1 or
+                    claim["occurrence_id"] in targets or
+                    structure.get("visual_lines") != packet["source"].get("visual_lines") or
+                    structure.get("loc_headword") != claim["source_headword"] or
+                    candidates[0].get("target_label_candidate") != claim["source_target_label"]):
+                raise ValueError("reviewed printed cross-reference differs from exact source occurrence")
+            targets[claim["occurrence_id"]] = dict(occurrence_id=claim["occurrence_id"],
+                source_spans=[deepcopy(candidates[0])], literal=claim["source_target_label"],
+                source_target_url=None, source_headword=claim["source_headword"],
+                lemma=claim["lemma"], homonym=None, basis=claim["basis"],
+                annotation_id=row["annotation_id"], binding=row["binding"],
+                physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
+            continue
         matches = [r for r in result.get("original_records", [])
                    if r.get("record_type") == "cross_reference" and r["id"] == claim["occurrence_id"]]
         if len(matches) != 1 or claim["occurrence_id"] in targets:

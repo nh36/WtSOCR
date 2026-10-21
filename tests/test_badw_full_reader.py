@@ -103,3 +103,16 @@ def test_extent_transition_needs_validated_review_and_preserves_accepted_members
         with pytest.raises(ValueError,match='member changed'): preserve_relationships(before,changed,[review])
     changed=copy.deepcopy(after);changed['cross_references'][0]['source_span']['end']=13
     with pytest.raises(ValueError,match='unbound'): preserve_relationships(before,changed,[review])
+
+
+def test_census_keeps_reviewed_printed_expansion_and_absent_destination_separate():
+    ref=dict(wording='bag la ~',status='unresolved',
+        parsed_target=dict(lexical_target='bag la ~'),
+        resolution_evidence=dict(method='reviewed_exact_printed_substitution',
+            target_review=dict(lemma='bag la ñal')))
+    diagnosis=classify(ref,ref,EntryIndex([]))
+    assert diagnosis['target_label']=='bag la ñal'
+    assert diagnosis['printed_facsimile_checked'] is True
+    assert diagnosis['classification']=='missing_exact_identity'
+    assert diagnosis['review_status']=='printed_abbreviation_reviewed_destination_absent'
+    assert 'No printing error or acquisition gap established' in diagnosis['diagnostic_reason']

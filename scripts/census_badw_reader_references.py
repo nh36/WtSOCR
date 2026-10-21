@@ -29,7 +29,8 @@ def classify(ref, unit, index):
     review = evidence.get('target_review') or {}
     reviewed_editorial = (evidence.get('method') == 'reviewed_exact_editorial_target'
                          and review.get('source_target_url') == url)
-    if reviewed_editorial:
+    reviewed_printed = evidence.get('method') == 'reviewed_exact_printed_substitution'
+    if reviewed_editorial or reviewed_printed:
         label = review['lemma']
     candidates = sorted(index.labels.get(label, set()))
     accepted_candidates = unit.get('candidate_entry_ids', [])
@@ -42,10 +43,13 @@ def classify(ref, unit, index):
         cause, reason = 'identity_or_manifestation_mismatch', 'Exact label exists, but explicit source homonym/manifestation identity is not established. Facsimile review required.'
     else:
         cause, reason = 'missing_exact_identity', 'No exact acquired headword. Acquisition gap, source error and decoding remain competing explanations; not a confirmed printing error.'
+    if reviewed_printed and not candidates:
+        reason = 'Printed headword abbreviation checked against the facsimile; exact expanded target absent from the acquired index. No printing error or acquisition gap established.'
     return dict(classification=cause, diagnostic_reason=reason, target_label=label,
                 candidate_destinations=[dict(id=i, headword=index.records[i]['headword'], homonym=index.records[i].get('homonym')) for i in sorted(set(candidates+accepted_candidates))],
-                review_status=('editorial_link_reviewed_destination_absent' if reviewed_editorial and not candidates
-                               else 'investigation_required'), printed_facsimile_checked=False)
+                review_status=('printed_abbreviation_reviewed_destination_absent' if reviewed_printed and not candidates
+                               else 'editorial_link_reviewed_destination_absent' if reviewed_editorial and not candidates
+                               else 'investigation_required'), printed_facsimile_checked=reviewed_printed)
 
 
 def case_record(entry, ref, unit, index):

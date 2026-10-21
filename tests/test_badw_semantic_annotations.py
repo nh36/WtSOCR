@@ -530,3 +530,37 @@ def test_reviewed_reference_extent_retains_source_and_requires_exact_typography(
     wrong=copy.deepcopy(a);wrong['claim']['previous_range']['literal']='incorrect'
     with pytest.raises(ValueError,match='invalid reviewed cross-reference extent'):
         run(tmp_path,p,[wrong])
+
+
+def test_printed_abbreviation_annotation_binds_exact_headword_node_and_candidate(tmp_path):
+    p=packet(tmp_path,'pdf')
+    text='↑bag la ~'
+    p['review_text']=p['source']['source_faithful_text']=text
+    p['review_text_sha256']=annotations.digest(text)
+    line=p['source']['visual_lines'][0]
+    line['text']=text
+    line['style_spans'][0]['end']=len(text)
+    p['source']['visual_lines']=[line]
+    candidate=dict(visual_start=0,visual_end=len(text),target_label_candidate='bag la ~')
+    base=prediction(p)
+    base['nodes'].append(dict(id='xref',kind='cross_reference',start=0,end=len(text),parent='root'))
+    base['original_structure']=dict(loc_headword='ñal',visual_lines=copy.deepcopy(p['source']['visual_lines']),
+        candidates=dict(cross_references=[candidate]))
+    a=claim(p,kind='cross_reference_target',ranges=[dict(start=0,end=len(text),literal=text)])
+    a['claim']=dict(occurrence_id='xref',source_target_url=None,source_target_label='bag la ~',
+        source_headword='ñal',lemma='bag la ñal',homonym=None,basis='reviewed_printed_headword_substitution')
+    before=copy.deepcopy(base)
+    accepted=run(tmp_path,p,[a])
+    result=annotations.apply_validated_annotations(p,base,accepted)
+    assert base==before
+    assert result['nodes']==before['nodes'] and result['original_structure']==before['original_structure']
+    assert result['reviewed_cross_reference_targets']['xref']['lemma']=='bag la ñal'
+    for field,value in [('source_headword','other'),('lemma','other'),('homonym','1'),('source_target_url','url')]:
+        bad=copy.deepcopy(a);bad['claim'][field]=value
+        with pytest.raises(ValueError): annotations.apply_validated_annotations(p,base,run(tmp_path,p,[bad]))
+    for field,value in [('loc_headword','other'),('visual_lines',[])]:
+        bad=copy.deepcopy(base);bad['original_structure'][field]=value
+        with pytest.raises(ValueError): annotations.apply_validated_annotations(p,bad,accepted)
+    for status in ('candidate','rejected'):
+        inactive=copy.deepcopy(a);inactive['status']=status
+        assert not annotations.apply_validated_annotations(p,base,run(tmp_path,p,[inactive]))['reviewed_cross_reference_targets']

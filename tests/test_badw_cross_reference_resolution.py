@@ -475,3 +475,62 @@ def test_single_target_output_is_byte_equivalent_to_existing_resolver_contract()
     new = index.resolve_source_candidate_with_members(occurrence, structure=structure,
                                                       text=text, source_binding=binding)
     assert new == old
+
+
+def substitution_fixture():
+    fixture = plural_fixture('bag la ~', members=['bag la ~'])
+    occurrence, structure, text, binding = fixture
+    structure['loc_headword'] = 'ñal'
+    occurrence['source_spans'] = [copy.deepcopy(occurrence['source_candidate'])]
+    review = dict(occurrence_id=occurrence['id'], source_spans=occurrence['source_spans'],
+        literal='bag la ~', source_target_url=None, source_headword='ñal', lemma='bag la ñal',
+        homonym=None, basis='reviewed_printed_headword_substitution', annotation_id='review-1',
+        binding=dict(text_sha256=hashlib.sha256(text.encode()).hexdigest()),
+        physical_selectors=[dict(page_id='page-1')],
+        ranges=[dict(start=0,end=len(text),literal=text)],
+        review=dict(reviewer='synthetic reviewer', reviewed_at='2026-10-21', evidence='Synthetic facsimile review'))
+    return fixture, review
+
+
+def substitute(index, fixture, review):
+    occurrence, structure, text, binding = fixture
+    return index.resolve_reviewed_printed_substitution(occurrence, review,
+        structure=structure, text=text, source_binding=binding)
+
+
+def test_reviewed_printed_abbreviation_preserves_source_and_homonym_uncertainty():
+    fixture, review = substitution_fixture()
+    before = copy.deepcopy((fixture, review))
+    index = EntryIndex([entry(lemma='bag la ñal')])
+    result = substitute(index, fixture, review)
+    assert result['canonical_resolution']['target_entry_id'] == 'entry-1'
+    assert result['canonical_resolution']['parsed_target']['lexical_target'] == 'bag la ~'
+    assert {k:v for k,v in result.items() if k!='canonical_resolution'} == fixture[0]
+    assert (fixture, review) == before
+    missing = substitute(EntryIndex([]), fixture, review)['canonical_resolution']
+    assert missing['status']=='unresolved' and not missing['candidate_entry_ids']
+    assert missing['residual_reason']=='reviewed_expanded_target_absent_from_acquired_index'
+    ambiguous = substitute(EntryIndex([entry('a',lemma='bag la ñal',homonym='1'),
+        entry('b',lemma='bag la ñal',homonym='2')]), fixture, review)['canonical_resolution']
+    assert ambiguous['status']=='ambiguous' and 'target_entry_id' not in ambiguous
+    witnesses = substitute(EntryIndex([entry('a',lemma='bag la ñal'),
+        entry('b',lemma='bag la ñal')]), fixture, review)['canonical_resolution']
+    assert witnesses['status']=='resolved' and 'target_entry_id' not in witnesses
+    assert witnesses['witness_status']=='multiple_exact_manifestations'
+
+
+@pytest.mark.parametrize('fault', ['binding','headword','lemma','span','geometry','typography','source','accepted','plural'])
+def test_reviewed_printed_abbreviation_fails_closed(fault):
+    fixture, review = substitution_fixture()
+    occurrence, structure, text, binding = fixture
+    index = EntryIndex([entry(lemma='bag la ñal')])
+    if fault=='binding': review['binding']['text_sha256']='b'*64
+    if fault=='headword': structure['loc_headword']='other'
+    if fault=='lemma': review['lemma']='other'
+    if fault=='span': review['ranges'][0]['start']=1
+    if fault=='geometry': structure['visual_lines'][0].pop('first_x')
+    if fault=='typography': structure['visual_lines'][0]['style_spans'][0]['style']='regular'
+    if fault=='source': fixture=(occurrence,structure,text,None)
+    if fault=='accepted': index=EntryIndex([entry(lemma='bag la ~')])
+    if fault=='plural': fixture=plural_fixture()
+    with pytest.raises(ValueError): substitute(index, fixture, review)
