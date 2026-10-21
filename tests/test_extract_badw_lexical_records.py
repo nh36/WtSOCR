@@ -150,3 +150,47 @@ def test_empty_label_replay_preserves_identity_spans_and_fails_on_stale_source(t
     (tmp_path/'source.html').write_bytes(body+b'changed')
     with pytest.raises(ValueError):
         replay_empty_reference_labels(projection,tmp_path)
+
+
+def test_trailing_arrow_typed_sibling_is_separately_source_bound(tmp_path):
+    from badw_article_parser import replay_empty_reference_labels
+    from resolve_badw_cross_references import EntryIndex
+    prefix = '<div class="text"><span class="link">↓<a class="link lemma" href="/lemma/ka chen bźi, ↓/1">ka chen bźi, ↓</a></span>'
+    suffix = '</div>'
+    for target, expected in [
+        ('<tib>bka’ chen</tib>.', 'bka’ chen'),
+        ('<tib>bka’ chen</tib>; sonst', 'bka’ chen'),
+        ('<tib>bka’ chen</tib> und anderes', ''),
+        (' <tib>bka’ chen</tib>.', ''),
+        ('<i>bka’ chen</i>.', ''),
+        ('<tib>bka’ chen (?)</tib>.', ''),
+        ('<tib>bka’ chen 2</tib>.', ''),
+        ('<tib>bka’ chen, ga</tib>.', ''),
+        ('<tib><a href="/lemma/other/2">bka’ chen</a></tib>.', ''),
+        ('<tib>bka’ chen</tib>', ''),
+    ]:
+        body = (prefix + target + suffix).encode()
+        source = SOURCE | {'sha256':hashlib.sha256(body).hexdigest(), 'object_path':'source.html'}
+        (tmp_path/'source.html').write_bytes(body)
+        article = parse_database_article(body, source_metadata=source)
+        refs = article['cross_references']
+        assert len(refs) == 2
+        ref = refs[1]
+        assert ref['source_text'] == '↓' and ref['target_text'] == expected
+        assert ref['target_url'] is None and ref['target_homonym'] is None
+        if not expected:
+            assert 'target_locator' not in ref
+            continue
+        loc = ref['locator']; span = dict(start=loc['visible_text_start'],end=loc['visible_text_end'])
+        old = dict(id='frozen-arrow',record_type='cross_reference',marker='↓',target_label='',target_url=None,source_spans=[span],canonical_resolution={'status':'unresolved'})
+        projection = dict(source_kind='html',source=dict(source_object=source,article_source_text=article['article_source_text']),original_records=[old])
+        new, = replay_empty_reference_labels(projection,tmp_path)['original_records']
+        assert new['id'] == old['id'] and new['source_spans'] == old['source_spans']
+        assert old['target_label'] == '' and 'canonical_resolution' not in new
+        target_loc = new['target_source_locator']
+        assert article['article_source_text'][target_loc['visible_text_start']:target_loc['visible_text_end']] == expected
+        assert target_loc['visible_text_start'] == span['end']
+        index = EntryIndex([dict(record_type='entry',id='target',headword={'loc':expected},homonym='1')])
+        resolution = index.resolve_manifestation(new)['canonical_resolution']
+        assert resolution['status'] == 'resolved'
+        assert resolution['target_parsing_evidence']['target_source_locator'] == target_loc

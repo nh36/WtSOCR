@@ -570,6 +570,36 @@ def parse_database_article(
                     candidate = compact_text(container_text[position + 1:end]).rstrip(",").strip()
                     if candidate and all(c.isalpha() or c.isspace() or c in "’'" for c in candidate):
                         segment_target = candidate
+            detached = None
+            # An editorial anchor can end with the next arrow, leaving its
+            # target in the immediately following typed Tibetan sibling. Keep
+            # the historical arrow occurrence and the target's separate span.
+            # Never inherit this malformed anchor's URL or homonym.
+            if (not owns_anchor and not segment_target and shared_anchor and
+                    container_text[position:] in ("↑", "↓") and
+                    container_text[:position].rstrip().endswith(",")):
+                boundary = link_container
+                while boundary.parent is not None and "link" in boundary.parent.classes:
+                    parent_field = _located_field(boundary.parent, fragments)
+                    if not parent_field or parent_field["locator"]["visible_text_end"] != origin + end:
+                        break
+                    boundary = boundary.parent
+                if boundary.parent is not None:
+                    siblings = boundary.parent.children
+                    following = siblings[siblings.index(boundary) + 1:]
+                    while following and isinstance(following[0], TextNode) and not following[0].text.strip():
+                        following = following[1:]
+                    if following and isinstance(following[0], Element) and following[0].tag == "tib":
+                        tib = following[0]
+                        field = _located_field(tib, fragments)
+                        candidate = exact_text(tib, excluded_classes=HIDDEN_CLASSES, excluded_tags=HIDDEN_TAGS)
+                        if (field and field["locator"]["visible_text_start"] == origin + end and
+                                candidate == candidate.strip() and candidate and
+                                all(c.isalpha() or c == " " or c in "’'" for c in candidate) and
+                                not list(find_all(tib, tag="a")) and
+                                len(following) > 1 and isinstance(following[1], TextNode) and
+                                following[1].text.startswith((".", ";"))):
+                            segment_target, detached = candidate, field["locator"]
             cross_references.append({
                 "locator": locator, "container_locator": link_field["locator"],
                 "marker": container_text[position], "source_text": container_text[position:end],
@@ -578,7 +608,8 @@ def parse_database_article(
                 "target_text": compact_text(exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
                                excluded_tags=HIDDEN_TAGS)) if owns_anchor else segment_target,
                 "target_url": target_url if owns_anchor else None,
-                "target_status": "explicit_anchor" if owns_anchor else "exact_segment_in_shared_anchor" if segment_target else "unresolved_arrow_segment",
+                "target_status": "explicit_anchor" if owns_anchor else "exact_typed_sibling_after_trailing_arrow" if detached else "exact_segment_in_shared_anchor" if segment_target else "unresolved_arrow_segment",
+                **({"target_locator": detached} if detached else {}),
             })
 
     example_index = {dom_path(node): index for index, node in enumerate(example_nodes)}
@@ -749,7 +780,8 @@ def replay_empty_reference_labels(projection, cache):
     if article['article_source_text'] != projection['source']['article_source_text']:
         raise ValueError('HTML replay changed source text')
     labels = {(r['locator']['visible_text_start'], r['locator']['visible_text_end']):r
-              for r in article['cross_references'] if r['target_status'] == 'exact_segment_in_shared_anchor'}
+              for r in article['cross_references'] if r['target_status'] in (
+                  'exact_segment_in_shared_anchor', 'exact_typed_sibling_after_trailing_arrow')}
     replacements = {}
     for record in missing:
         if len(record['source_spans']) != 1:
@@ -758,7 +790,9 @@ def replay_empty_reference_labels(projection, cache):
         recovered = labels.get((span['start'], span['end']))
         if recovered:
             updated = dict(record, target_label=recovered['target_text'],
-                           target_parsing_evidence='exact_segment_in_shared_anchor')
+                           target_parsing_evidence=recovered['target_status'])
+            if recovered.get('target_locator'):
+                updated['target_source_locator'] = recovered['target_locator']
             updated.pop('canonical_resolution', None)
             replacements[record['id']] = updated
     return dict(projection, original_records=[replacements.get(r['id'], r) for r in projection['original_records']])

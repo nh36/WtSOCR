@@ -123,6 +123,23 @@ const path=require('node:path');
   }
  }
  assert.equal(editorialJourneys,11);assert.equal(editorialAbsent,2);
+ // A trailing arrow in a malformed shared anchor has a separately typed
+ // sibling target. Its frozen arrow span remains the clickable occurrence.
+ const detachedMeta=entries.get('badw:entry:d8553ae3da5102268ab59eff76ae8427e971a905708ea9f6d0cf0f4d204d74b7');
+ const detachedEntry=await (await page.request.get(base+'/'+detachedMeta.path)).json();
+ const detachedRef=detachedEntry.cross_references.find(r=>r.resolution_evidence?.target_parsing_evidence?.method==='exact_typed_sibling_after_trailing_arrow');assert(detachedRef);
+ assert.deepEqual(detachedRef.source_span,{start:678,end:679});assert.equal(detachedRef.wording,'bka’ chen');
+ assert.equal(detachedRef.status,'resolved');assert.equal(detachedRef.source_url,null);
+ const detachedTargets=detachedRef.target_lexical_entity.witness_entry_ids;assert.equal(detachedTargets.length,1);
+ await go(detachedEntry);
+ const detachedHref='#'+encodeURIComponent(detachedTargets[0]);
+ const detachedButton=page.locator('.reading button').filter({hasText:'↓'}).last();
+ await detachedButton.click();assert(await page.locator('#reference-detail').isVisible());
+ const detachedChoice=page.locator('#reference-detail-content a[href^="#"]');assert.equal(await detachedChoice.count(),1);
+ assert.equal(await detachedChoice.getAttribute('href'),detachedHref);
+ await detachedChoice.click();await page.waitForFunction(h=>location.hash===h,detachedHref);
+ await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(detachedTargets[0]).headword.loc);
+ await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),detachedEntry.headword.loc);
  // Facsimile-reviewed headword tildes preserve their printed labels. Three
  // exact expanded targets navigate; the three absent targets explain abstention.
  let tildeJourneys=0,tildeAbsent=0;
@@ -233,6 +250,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

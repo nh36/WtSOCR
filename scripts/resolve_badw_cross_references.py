@@ -279,6 +279,10 @@ class EntryIndex:
     def resolve_manifestation(self, occurrence):
         result = self.resolve(occurrence)
         resolution = result['canonical_resolution']
+        if occurrence.get('target_source_locator'):
+            resolution['target_parsing_evidence'] = dict(
+                method=occurrence['target_parsing_evidence'],
+                target_source_locator=copy.deepcopy(occurrence['target_source_locator']))
         if resolution['status'] == 'unresolved' and occurrence.get('target_url'):
             label, homonym = occurrence.get('target_label'), occurrence.get('target_homonym')
             url = urlsplit(occurrence['target_url'])

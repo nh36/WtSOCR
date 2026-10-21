@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc7` instead (`run15` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc8` instead (`run16` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,7 +78,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run15 \
+  --reader work/badw_full_reader_20261020/run16 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -86,7 +86,8 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 225 HTML and 121 PDF
-missing exact identities; 118 PDF ambiguities; one HTML parser-boundary failure.
+missing exact identities; 118 PDF ambiguities. The diagnosed empty-label parser
+boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
 Missing identities do not establish acquisition gaps or printed errors. No printed
@@ -164,6 +165,18 @@ an acquisition gap is inferred. No general abbreviation expansion is enabled.
 After this family: HTML **4,720 resolved / 562 unresolved**; PDF **2,844 resolved /
 124 unresolved / 118 ambiguous**; total **7,564 resolved / 804 residual**.
 
+The second arrow in the malformed shared anchor of **ka chen** ends at
+678:679; its exact Tibetan-typed target **bka’ chen** occupies the adjacent
+679:688 DOM span outside that arrow. A strict boundary rule now retains these
+two separate locations and recovers the target without widening the arrow,
+inheriting the malformed URL or assuming a homonym. Immediate adjacency,
+explicit Tibetan typing, terminal punctuation and an unqualified lexical form
+are required. The full-corpus differential changes this one reference only;
+29,876 witness shards, all source characters, components, citations and accepted
+destinations are unchanged. This is an extraction boundary defect, not a
+printing-error finding. After this family: HTML **4,721 resolved / 561 unresolved**;
+PDF unchanged; total **7,565 resolved / 803 residual**.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -176,9 +189,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run15 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run16 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run15 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run16 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```
