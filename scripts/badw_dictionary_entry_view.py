@@ -201,6 +201,16 @@ def entry_view(inspected, bibliography=None):
                                resolution_evidence=resolution,
                                source_binding=dict(identity=p['identity'], text_sha256=p['review_text_sha256']),
                                source_span=dict(start=node['start'], end=node['end']) if node else None))
+        extent_reviews = [r for r in p.get('reviewed_cross_reference_extents', [])
+                          if node and r['claim']['node_id'] == node['id']]
+        if extent_reviews:
+            if len(extent_reviews) != 1:
+                raise ValueError('conflicting reviewed reference extents')
+            review = extent_reviews[0]
+            old = review['claim']['previous_range']
+            references[-1]['supersedes_component_id'] = identifier(p['identity'],
+                p['review_text_sha256'], 'cross_reference', old['start'], old['end'])
+            references[-1]['extent_review'] = review
         if members is not None:
             references[-1]['target_members'] = members
             references[-1]['target_members_status'] = resolution['target_members_status']

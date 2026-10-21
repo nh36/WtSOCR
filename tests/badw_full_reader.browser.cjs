@@ -14,6 +14,22 @@ const path=require('node:path');
  const fixture=JSON.parse(fs.readFileSync(process.env.BADW_READER_FIXTURE||'work/badw_connected_reader_20261020/run8/reader/data.json'));
  const entries=new Map(catalog.map(e=>[e.id,e]));
  data.entries=[];for(const e of fixture.entries){const meta=entries.get(e.id);assert(meta);const response=await page.request.get(base+'/'+meta.path);assert.equal(response.status(),200);data.entries.push(await response.json());}
+ // Preserve all 47 independently accepted fixture members across reviewed extent changes.
+ let frozenAccepted=0;
+ for(const original of fixture.entries){
+  const current=data.entries.find(e=>e.id===original.id);
+  for(const ref of original.cross_references)for(const member of ref.target_members||[]){
+   if(member.resolution_status!=='resolved')continue;
+   const replacement=current.cross_references.find(r=>r.component_id===ref.component_id||r.supersedes_component_id===ref.component_id);assert(replacement);
+   const actual=replacement.target_members.find(m=>m.literal===member.literal&&m.source_span.start===member.source_span.start&&m.source_span.end===member.source_span.end);assert(actual);
+   assert.equal(actual.resolution_status,'resolved');assert.equal(actual.target_entry_id,member.target_entry_id);assert.deepEqual(actual.source_binding,member.source_binding);frozenAccepted++;
+  }
+ }
+ assert.equal(frozenAccepted,47);
+ const wrapped=data.entries.find(e=>e.id==='badw:pdf:badw-v3-14b4f88a35d115421e6df75e14a8b54f43d038366ae6fff493e698d8bbe34151:1769');
+ const repaired=wrapped.cross_references.find(r=>r.extent_review);assert(repaired);
+ assert.equal(repaired.target_members.length,4);assert(repaired.target_members.every(m=>m.resolution_status==='resolved'));
+ assert.equal(repaired.status,'unresolved');assert.equal(repaired.target_entry_id,null);
  assert.equal(data.preview.reviewed_occurrences,23);
  const url=id=>base+'/#'+encodeURIComponent(id);
  const requests=[];page.on('request',r=>requests.push(r.url()));
@@ -129,7 +145,7 @@ const path=require('node:path');
  const sourceURL=await page.locator('#article > .source-access a').first().getAttribute('href');
  const [sourcePage,sourceResponse]=await Promise.all([page.waitForEvent('popup'),page.context().waitForEvent('response',{predicate:r=>r.url()===base+'/'+sourceURL}),page.locator('#article > .source-access a').first().click()]);
  assert.equal(sourceResponse.status(),200);assert(sourceResponse.headers()['content-type'].includes('application/pdf'));await sourcePage.close();
- assert(journeys>=53);assert(uncertain>=3);assert(unresolvedCitations>=3);
+ assert(journeys>=56);assert(uncertain>=2);assert(unresolvedCitations>=3);
  await go(catalog[1]);
  const next=await page.locator('[rel=next]').getAttribute('href');await page.locator('[rel=next]').click();assert.equal(decodeURIComponent(next.slice(1)),catalog[2].id);
  await page.locator('[rel=prev]').click();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,catalog[1].id);

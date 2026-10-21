@@ -475,3 +475,58 @@ def test_cli_rejects_output_outside_actual_work_root(tmp_path, monkeypatch):
         annotations.main()
     assert error.value.code == 2
     assert not (tmp_path / "elsewhere").exists()
+
+
+def extent_fixture(tmp_path):
+    from parse_badw_pdf_articles import _candidates
+    p = packet(tmp_path, 'pdf')
+    text = '↑ka, kha\nga, ga.'
+    lines = p['source']['visual_lines'][:2]
+    lines[0].update(text='↑ka, kha', style_spans=[
+        dict(start=0,end=1,style='regular'),
+        dict(start=1,end=3,style='italic',font_id='same'),
+        dict(start=3,end=5,style='regular'),
+        dict(start=5,end=8,style='italic',font_id='same')])
+    lines[1].update(text='ga, ga.', style_spans=[
+        dict(start=0,end=6,style='italic',font_id='same'),dict(start=6,end=7,style='regular')])
+    p['source'].update(source_faithful_text=text, visual_lines=lines)
+    p.update(review_text=text,review_text_sha256=annotations.digest(text))
+    for line in lines: line.update(span_index=0, printed_page=1)
+    divisions=[dict(start_line_index=0,end_line_index_exclusive=2)]
+    base=prediction(p)
+    base['source_kind']='pdf'
+    base['nodes'].append(dict(id='ref',kind='cross_reference',start=0,end=8,parent='root'))
+    base['original_structure']=dict(article_id=p['identity'],visual_lines=copy.deepcopy(lines),
+        divisions=divisions,candidates=_candidates(lines,divisions))
+    a=claim(p,kind='cross_reference_extent',ranges=[dict(start=0,end=15,literal=text[:15])])
+    a['claim']=dict(node_id='ref',previous_range=dict(start=0,end=8,literal=text[:8]),
+        basis='reviewed_printed_extent')
+    return p,base,a
+
+
+def test_reviewed_reference_extent_retains_source_and_requires_exact_typography(tmp_path):
+    p,base,a=extent_fixture(tmp_path)
+    original=copy.deepcopy(base)
+    reviewed=run(tmp_path,p,[a])
+    result=annotations.apply_validated_annotations(p,base,reviewed)
+    assert base == original
+    assert result['nodes'][1]['end'] == 15
+    assert result['reviewed_cross_reference_extents'] == reviewed
+    targets=result['original_structure']['candidates']['cross_references'][0]['target_candidates']
+    assert [t['source_text'] for t in targets] == ['ka','kha\nga','ga']
+    assert result['original_structure']['visual_lines'] == p['source']['visual_lines']
+    for status in ('candidate','rejected'):
+        inactive=copy.deepcopy(a);inactive['status']=status
+        assert annotations.apply_validated_annotations(p,base,run(tmp_path,p,[inactive]))['nodes'][1]['end']==8
+    for kind in ('node','range','typography','parent','overlap'):
+        changed=copy.deepcopy(base)
+        if kind=='node': changed['nodes'][1]['id']='wrong'
+        elif kind=='range': changed['original_structure']['candidates']['cross_references'][0]['visual_end']=7
+        elif kind=='typography': changed['original_structure']['visual_lines'][1]['style_spans'][0]['font_id']='wrong'
+        elif kind=='parent': changed['nodes'][0]['end']=12
+        else: changed['nodes'].append(dict(id='other',kind='cross_reference',start=10,end=14,parent='root'))
+        with pytest.raises(ValueError,match='reviewed cross-reference extent'):
+            annotations.apply_validated_annotations(p,changed,reviewed)
+    wrong=copy.deepcopy(a);wrong['claim']['previous_range']['literal']='incorrect'
+    with pytest.raises(ValueError,match='invalid reviewed cross-reference extent'):
+        run(tmp_path,p,[wrong])

@@ -77,3 +77,29 @@ def test_relationship_preservation_rejects_loss_but_accepts_gains():
         changed['cross_references'][0][key] = value
         with pytest.raises(ValueError, match='cross-reference'):
             preserve_relationships(before, changed)
+
+
+def test_extent_transition_needs_validated_review_and_preserves_accepted_members():
+    import copy
+    from badw_dictionary_entry_view import identifier
+    binding=dict(identity='entry',text_sha256='hash')
+    old_span=dict(start=2,end=8);new_span=dict(start=2,end=12)
+    old_id=identifier('entry','hash','cross_reference',2,8)
+    review=dict(kind='cross_reference_extent',effective_status='accepted',
+        claim=dict(previous_range=dict(**old_span,literal='↑ka, k')),
+        ranges=[dict(**new_span,literal='↑ka, kha ga')])
+    member=dict(literal='ka',source_span=dict(start=3,end=5),source_binding=binding,
+        resolution_status='resolved',target_entry_id='destination',printed_target=dict(lexical_target='ka'))
+    before=dict(citations=[],cross_references=[dict(component_id=old_id,status='unresolved',
+        source_span=old_span,source_binding=binding,target_members=[member])])
+    after=copy.deepcopy(before)
+    after['cross_references'][0].update(component_id=identifier('entry','hash','cross_reference',2,12),
+        supersedes_component_id=old_id,extent_review=review,source_span=new_span)
+    preserve_relationships(before,after,[review])
+    with pytest.raises(ValueError,match='occurrence lost'): preserve_relationships(before,after)
+    for key,value in [('target_entry_id','other'),('source_binding',dict(identity='other',text_sha256='hash')),
+                      ('resolution_status','unresolved'),('printed_target',dict(lexical_target='different'))]:
+        changed=copy.deepcopy(after);changed['cross_references'][0]['target_members'][0][key]=value
+        with pytest.raises(ValueError,match='member changed'): preserve_relationships(before,changed,[review])
+    changed=copy.deepcopy(after);changed['cross_references'][0]['source_span']['end']=13
+    with pytest.raises(ValueError,match='unbound'): preserve_relationships(before,changed,[review])

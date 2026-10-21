@@ -609,3 +609,32 @@ def test_exact_malformed_nested_quote_review_preserves_literal_and_rejects_stale
 def test_locatorless_groups_require_every_member_to_be_a_known_siglum(literal, expected):
     from parse_badw_pdf_articles import _citation_siglum
     assert _citation_siglum(literal) == expected
+
+
+def test_reviewed_wrapped_list_requires_continuous_source_typography():
+    import copy
+    text = '↑ṅar glud, ṅar phye, ṅar'
+    first = _candidate_line(text)
+    first['style_spans'] = [dict(start=0, end=1, style='regular'),
+        dict(start=1, end=9, style='italic', font_id='one-font'),
+        dict(start=9, end=11, style='regular'),
+        dict(start=11, end=len(text), style='italic', font_id='one-font')]
+    second = _candidate_line('mi, ṅar zan.', 0, 11)
+    second['style_spans'][0]['font_id'] = 'one-font'
+    lines = [first, second]
+    divisions = _candidate_division(2)
+    frozen = _candidates(lines, divisions)['cross_references'][0]
+    assert frozen['visual_end'] == len(text)
+    reviewed = _candidates(lines, divisions, reviewed_wrapped_lists=True)['cross_references'][0]
+    assert reviewed['visual_end'] == len(text) + 12
+    assert [m['source_text'] for m in reviewed['target_candidates']] == [
+        'ṅar glud', 'ṅar phye', 'ṅar\nmi', 'ṅar zan']
+    for barrier in ('font', 'page', 'division', 'regular'):
+        changed, bounds = copy.deepcopy(lines), copy.deepcopy(divisions)
+        if barrier == 'font': changed[1]['style_spans'][0]['font_id'] = 'other'
+        elif barrier == 'page': changed[1]['page_id'] = 'other'
+        elif barrier == 'regular': changed[1]['style_spans'][0]['style'] = 'regular'
+        else: bounds = [dict(start_line_index=0, end_line_index_exclusive=1),
+                        dict(start_line_index=1, end_line_index_exclusive=2)]
+        blocked = _candidates(changed, bounds, reviewed_wrapped_lists=True)['cross_references'][0]
+        assert blocked['visual_end'] == len(text)

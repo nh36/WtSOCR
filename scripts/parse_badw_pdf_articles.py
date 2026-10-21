@@ -347,7 +347,7 @@ def reviewed_quotation_spans(text: str, article_id: str,
 
 
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
-                article_id: str = "") -> dict[str, list[dict[str, Any]]]:
+                article_id: str = "", *, reviewed_wrapped_lists: bool = False) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
@@ -568,6 +568,24 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                         or division_by_line[following[2]] != division_by_line[italic[2]]):
                     break
                 next_end = following[1]
+                if reviewed_wrapped_lists:
+                    # Extent-changing continuation is available only to the
+                    # source-bound reviewed overlay. Ordinary replay retains
+                    # frozen occurrence identities and boundaries.
+                    line_index, last_span = following[2], following[3]
+                    while (next_end == offsets[line_index] + len(lines[line_index]["text"])
+                            and text[next_end - 1] not in ".;:"
+                            and line_index + 1 < len(lines) and next_end - start < 80):
+                        next_line = lines[line_index + 1]
+                        first_span = next_line["style_spans"][0]
+                        if (first_span["start"] != 0 or first_span["style"] != "italic"
+                                or first_span["font_id"] != last_span["font_id"]
+                                or next_line["page_id"] != lines[line_index]["page_id"]
+                                or division_by_line[line_index + 1] != division_by_line[line_index]):
+                            break
+                        line_index += 1
+                        last_span = first_span
+                        next_end = offsets[line_index] + first_span["end"]
                 while next_end > next_start and text[next_end - 1] in " \t\n.,;:":
                     next_end -= 1
                 if next_end <= next_start or next_end - start > 80:
@@ -583,7 +601,7 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
             # member spans to the resolver, which independently verifies each
             # member's typography, geometry, homonym and source binding.
             # Existing multi-run collections retain their reviewed segmentation.
-            if len(targets) == 1:
+            if len(targets) == 1 or reviewed_wrapped_lists:
                 split_targets = []
                 for target in targets:
                     member_start = target["visual_start"]

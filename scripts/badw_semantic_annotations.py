@@ -194,6 +194,18 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("unsupported pilot form mention")
         elif row["kind"] == "relationship":
             relationship_claim(claim, ranges)
+        elif row["kind"] == "cross_reference_extent":
+            _keys(claim, ("node_id", "previous_range", "basis"))
+            old = claim["previous_range"]
+            _keys(old, ("start", "end", "literal"))
+            if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
+                    not _string(claim["node_id"]) or
+                    claim["basis"] != "reviewed_printed_extent" or
+                    type(old["start"]) is not int or type(old["end"]) is not int or
+                    not ranges[0]["start"] == old["start"] < old["end"] < ranges[0]["end"] or
+                    packet["review_text"][old["start"]:old["end"]] != old["literal"] or
+                    ranges[0]["literal"][0] not in "↑↓"):
+                raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
                           "lemma", "homonym", "basis"))
@@ -321,6 +333,40 @@ def apply_validated_annotations(packet, prediction, annotations):
                 ids.append(row["annotation_id"])
                 ids.sort()
     result["semantic_annotations"] = selected
+    extents = []
+    for row in selected:
+        if row["kind"] != "cross_reference_extent" or row["effective_status"] != "accepted":
+            continue
+        from parse_badw_pdf_articles import _candidates
+        old, span = row["claim"]["previous_range"], row["ranges"][0]
+        nodes = [n for n in result["nodes"] if n["id"] == row["claim"]["node_id"]
+                 and n["kind"] == "cross_reference" and
+                 (n["start"], n["end"]) == (old["start"], old["end"])]
+        structure = result.get("original_structure", {})
+        if (packet["source_kind"] != "pdf" or len(nodes) != 1 or
+                text[old["start"]:old["end"]] != old["literal"] or
+                structure.get("visual_lines") != packet["source"].get("visual_lines")):
+            raise ValueError("reviewed cross-reference extent differs from frozen occurrence")
+        candidates = structure["candidates"]["cross_references"]
+        positions = [i for i, c in enumerate(candidates) if
+                     (c["visual_start"], c["visual_end"]) == (old["start"], old["end"])]
+        proposed = _candidates(structure["visual_lines"], structure["divisions"],
+                               structure["article_id"], reviewed_wrapped_lists=True)
+        matches = [c for c in proposed["cross_references"] if
+                   (c["visual_start"], c["visual_end"]) == (span["start"], span["end"])]
+        if len(positions) != 1 or len(matches) != 1:
+            raise ValueError("reviewed cross-reference extent lacks exact typographic support")
+        node = nodes[0]
+        containers = [n for n in result["nodes"] if n["id"] == node["parent"]]
+        if (len(containers) != 1 or not containers[0]["start"] <= span["start"] < span["end"] <= containers[0]["end"] or
+                any(n["parent"] == node["id"] for n in result["nodes"]) or
+                any(n["kind"] == "cross_reference" and n["id"] != node["id"] and
+                    n["start"] < span["end"] and span["start"] < n["end"] for n in result["nodes"])):
+            raise ValueError("reviewed cross-reference extent crosses existing structure")
+        candidates[positions[0]] = matches[0]
+        node["end"] = span["end"]
+        extents.append(deepcopy(row))
+    result["reviewed_cross_reference_extents"] = extents
     targets = {}
     for row in selected:
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":

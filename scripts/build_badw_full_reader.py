@@ -16,7 +16,7 @@ from audit_badw_corpus_structure import rows, file_hash
 from parse_badw_pdf_articles import reindex_article
 from badw_article_parser import replay_empty_reference_labels
 from build_badw_dictionary_prototype import view, bibliography_descriptions
-from badw_dictionary_entry_view import entry_view
+from badw_dictionary_entry_view import entry_view, identifier
 from badw_semantic_annotations import PACKET_VERSION, validate, apply_validated_annotations
 from badw_pdf_structure_recovery import recover
 from badw_contextual_semantics import augment_citations
@@ -44,7 +44,7 @@ def citation_baseline(packet, projection, reader):
     return baseline
 
 
-def preserve_relationships(before, after):
+def preserve_relationships(before, after, extent_reviews=()):
     """Do not discard accepted identities, ownership, or reference destinations."""
     citations = {c['component_id']: c for c in after['citations']}
     for old in before['citations']:
@@ -60,11 +60,38 @@ def preserve_relationships(before, after):
     for old in before['cross_references']:
         new = references.get(old['component_id'])
         if new is None:
-            raise ValueError('reference occurrence lost')
+            transitions = [r for r in references.values() if
+                r.get('supersedes_component_id') == old['component_id'] and
+                r.get('extent_review') in extent_reviews]
+            if len(transitions) != 1:
+                raise ValueError('reference occurrence lost')
+            new = transitions[0]
+            review = new['extent_review']
+            previous, span = review['claim']['previous_range'], review['ranges'][0]
+            binding = old['source_binding']
+            if (review['kind'] != 'cross_reference_extent' or review['effective_status'] != 'accepted' or
+                    old['component_id'] != identifier(binding['identity'], binding['text_sha256'],
+                        'cross_reference', previous['start'], previous['end']) or
+                    old['source_span'] != {k: previous[k] for k in ('start', 'end')} or
+                    new['source_span'] != {k: span[k] for k in ('start', 'end')} or
+                    new['source_binding'] != binding):
+                raise ValueError('unbound reference extent transition')
         if old['status'] == 'resolved' and (new['status'] != 'resolved' or (
             old.get('target_entry_id') and old['target_entry_id'] not in new['candidate_entry_ids']
         )):
             raise ValueError('accepted cross-reference changed')
+        for member in old.get('target_members', []):
+            if member['resolution_status'] != 'resolved':
+                continue
+            matches = [m for m in new.get('target_members', []) if
+                       m['source_span'] == member['source_span'] and m['literal'] == member['literal']]
+            if (len(matches) != 1 or matches[0]['resolution_status'] != 'resolved' or
+                    matches[0]['source_binding'] != member['source_binding'] or
+                    matches[0].get('target_entry_id') != member.get('target_entry_id') or
+                    matches[0].get('target_lexical_entity') != member.get('target_lexical_entity') or
+                    matches[0].get('exact_index_candidate_ids') != member.get('exact_index_candidate_ids') or
+                    matches[0].get('printed_target') != member.get('printed_target')):
+                raise ValueError('accepted cross-reference member changed')
 
 
 def main():
@@ -141,6 +168,7 @@ def main():
             pred['original_structure'] = current
         pred = replay_empty_reference_labels(pred, CACHE)
         p['contract_version'] = PACKET_VERSION
+        checkpoint_pred, extent_reviews = None, []
         if annotations[identity]:
             try:
                 accepted = validate([p], annotations[identity], cache=CACHE, canonical_root=CANON)
@@ -152,6 +180,11 @@ def main():
                 conflicts.append(dict(identity=identity, reason=str(error),
                                       annotations=annotations[identity]))
             else:
+                extent_reviews = [a for a in accepted if a['kind'] == 'cross_reference_extent'
+                                  and a['effective_status'] == 'accepted']
+                if extent_reviews:
+                    checkpoint_pred = apply_validated_annotations(p, pred,
+                        [a for a in accepted if a['kind'] != 'cross_reference_extent'])
                 pred = apply_validated_annotations(p, pred, accepted)
         pred = recover(pred, text)
         pred, _ = augment_citations(pred, text, resolver)
@@ -167,8 +200,14 @@ def main():
             ids.update(a for m in resolution['matches'] if m.get('target_status') == 'accepted_identity' for a in m['authority_ids'])
             bibliography[(identity,n['id'])] = [dict(resolver.by_id[a], descriptions=descriptions[a], coverage_status=resolution.get('coverage_status'), edition_status=resolution.get('edition_status')) for a in sorted(ids)]
         entry = entry_view(inspected, bibliography)
+        checkpoint_entry = None
+        if checkpoint_pred is not None:
+            checkpoint_pred = recover(checkpoint_pred, text)
+            checkpoint_pred, _ = augment_citations(checkpoint_pred, text, resolver)
+            checkpoint_entry = entry_view(view([checkpoint_pred], index)[0], bibliography)
+            preserve_relationships(checkpoint_entry, entry, extent_reviews)
         try:
-            preserve_relationships(dict(citations=prior_citations, cross_references=r['reader']['cross_references']), entry)
+            preserve_relationships(dict(citations=prior_citations, cross_references=r['reader']['cross_references']), entry, extent_reviews)
         except ValueError as error:
             raise ValueError(identity+': '+str(error)) from error
         entry['source_kind'] = kind
@@ -197,7 +236,7 @@ def main():
         (out/'entries'/name).write_bytes(body)
         catalog.append(dict(id=entry['id'], headword=entry['headword'], homonym=entry.get('homonym'), source_kind=kind,
             path='entries/'+name, sha256=digest(body), search_aliases=[f['form_span']['literal'] for f in entry['semantic_hierarchy'].get('header_fields', []) if f.get('header_kind') == 'alternate_headword' and f.get('form_span', {}).get('literal')]))
-        if identity in seed_ids: sample.append(entry)
+        if identity in seed_ids: sample.append(checkpoint_entry or entry)
         if (i+1)%1000 == 0: print(i+1, 'witnesses', flush=True)
     ledger.close()
     witness_ids = {e['id'] for e in catalog}
