@@ -354,6 +354,46 @@ def test_comma_reference_list_does_not_cross_font_page_or_division() -> None:
         assert len(ref['target_candidates']) == 1
 
 
+@pytest.mark.parametrize('label,members', [
+    ('sku bźi, sku gsum', ['sku bźi', 'sku gsum']),
+    ('bkroṅ, bkroṅs', ['bkroṅ', 'bkroṅs']),
+    ('ka, kha, ga', ['ka', 'kha', 'ga']),
+    ('rjes\nthob, rjes la thob pa', ['rjes\nthob', 'rjes la thob pa']),
+])
+def test_comma_inside_continuous_italic_run_keeps_parent_and_exact_members(label, members):
+    lines = [_candidate_line(part, 1 if i == 0 else 0, len(part))
+             for i, part in enumerate(('↑' + label).split('\n'))]
+    for line in lines:
+        for span in line['style_spans']:
+            if span['style'] == 'italic':
+                span['font_id'] = 'same-font'
+    ref = _candidates(lines, _candidate_division(len(lines)))['cross_references'][0]
+    assert ref['target_label_candidate'] == label
+    assert (ref['visual_start'], ref['visual_end']) == (0, len(label) + 1)
+    assert [t['source_text'] for t in ref['target_candidates']] == members
+    for target in ref['target_candidates']:
+        assert ('↑' + label)[target['visual_start']:target['visual_end']] == target['source_text']
+
+
+def test_internal_comma_does_not_resegment_an_existing_multi_run_collection():
+    text = '↑ṅar glud, ṅar phye, ṅar'
+    line = _candidate_line(text)
+    line['style_spans'] = [
+        dict(start=0, end=1, style='regular'),
+        dict(start=1, end=9, style='italic', font_id='one-font'),
+        dict(start=9, end=11, style='regular'),
+        dict(start=11, end=len(text), style='italic', font_id='one-font')]
+    ref = _candidates([line], _candidate_division(1))['cross_references'][0]
+    assert [t['source_text'] for t in ref['target_candidates']] == ['ṅar glud', 'ṅar phye, ṅar']
+
+
+def test_empty_internal_comma_member_does_not_invent_target_boundaries():
+    text = '↑ka,, kha'
+    ref = _candidates([_candidate_line(text, 1, len(text))], _candidate_division(1))['cross_references'][0]
+    assert len(ref['target_candidates']) == 1
+    assert ref['target_candidates'][0]['source_text'] == text[1:]
+
+
 def test_arrow_inside_italic_span_and_unstyled_fallback() -> None:
     lines = [_candidate_line("vgl. ↑khyim 2.", 5, 11),
              _candidate_line("↑kha dog als Zeichen")]

@@ -4,8 +4,29 @@ from pathlib import Path
 import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from build_badw_full_reader import citation_baseline, preserve_relationships
-from census_badw_reader_references import classify
+from census_badw_reader_references import classify, case_record
 from resolve_badw_cross_references import EntryIndex
+
+
+def test_residual_member_retains_its_own_parse_and_source_view():
+    ref = dict(component_id='parent', wording='ka, kha', status='unresolved',
+        source_binding=dict(identity='same-source', text_sha256='parent-view'),
+        source_span=dict(start=1,end=8), parsed_target=dict(lexical_target='ka, kha'))
+    unit = dict(member_id='member-2', literal='kha', resolution_status='unresolved',
+        source_span=dict(start=5,end=8), printed_target=dict(lexical_target='kha'),
+        source_binding=dict(identity='same-source',text_sha256='member-view'),
+        resolution_evidence=dict(reason='missing_exact_identity'))
+    entry = dict(id='entry',headword=dict(loc='source'),source_kind='pdf',sources=[],
+        components=[dict(id='parent',source_form='↑ka, kha')])
+    case = case_record(entry,ref,unit,EntryIndex([]))
+    assert case['target_label'] == 'kha'
+    assert case['literal'] == 'kha'
+    assert case['member_id'] == 'member-2'
+    assert case['source_span'] == unit['source_span']
+    assert case['source_binding'] == unit['source_binding']
+    assert case['parent_source_binding'] == ref['source_binding']
+    assert case['resolution_evidence'] == unit['resolution_evidence']
+    assert case['printed_facsimile_checked'] is False
 
 
 def test_census_uses_reviewed_editorial_target_without_claiming_print_review():

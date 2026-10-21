@@ -16,7 +16,9 @@ from resolve_badw_cross_references import EntryIndex
 
 
 def classify(ref, unit, index):
-    parsed = unit.get('parsed_target') or ref.get('parsed_target') or {}
+    # Independently resolved members have their own printed-target parse. Never
+    # diagnose one member using its plural parent's combined lexical label.
+    parsed = unit.get('printed_target') or unit.get('parsed_target') or {}
     label = parsed.get('lexical_target') or unit.get('lexical_target') or unit.get('wording') or unit.get('literal') or ''
     url = ref.get('source_url')
     if url:
@@ -46,6 +48,19 @@ def classify(ref, unit, index):
                                else 'investigation_required'), printed_facsimile_checked=False)
 
 
+def case_record(entry, ref, unit, index):
+    component=next(c for c in entry['components'] if c['id']==ref['component_id'])
+    return dict(entry_id=entry['id'], headword=entry['headword'], source_kind=entry['source_kind'],
+        source_binding=unit.get('source_binding',ref['source_binding']),
+        parent_source_binding=ref['source_binding'],
+        source_span=unit.get('source_span',ref['source_span']),
+        literal=unit.get('literal',component['source_form']), target_wording=ref['wording'],
+        source_url=ref.get('source_url'), sources=entry['sources'],
+        component_id=ref['component_id'], member_id=unit.get('member_id'),
+        resolution_evidence=unit.get('resolution_evidence',ref.get('resolution_evidence')),
+        **classify(ref,unit,index))
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--reader', type=Path, required=True)
@@ -68,14 +83,7 @@ def main():
                     if status=='resolved': continue
                     diagnosis=classify(ref,unit,index)
                     causes[kind+':'+diagnosis['classification']]+=1;total+=1
-                    component=next(c for c in entry['components'] if c['id']==ref['component_id'])
-                    ledger.write(json.dumps(dict(entry_id=entry['id'], headword=entry['headword'], source_kind=kind,
-                        source_binding=ref['source_binding'], source_span=unit.get('source_span',ref['source_span']),
-                        literal=unit.get('literal',component['source_form']), target_wording=ref['wording'],
-                        source_url=ref.get('source_url'), sources=entry['sources'],
-                        component_id=ref['component_id'], member_id=unit.get('member_id'),
-                        resolution_evidence=unit.get('resolution_evidence',ref.get('resolution_evidence')),
-                        **diagnosis),ensure_ascii=False,separators=(',',':'))+'\n')
+                    ledger.write(json.dumps(case_record(entry,ref,unit,index),ensure_ascii=False,separators=(',',':'))+'\n')
     print(json.dumps(dict(witnesses=len(catalog['entries']),counts=dict(counts),residual=total,causes=dict(causes)),indent=2))
 
 

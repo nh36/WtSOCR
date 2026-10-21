@@ -27,6 +27,20 @@ const path=require('node:path');
  assert.equal(requests.filter(u=>u.includes('/entries/')).length,0,'search needs no entry bodies');
  async function go(e){await page.goto(url(e.id));await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),e.headword.loc);await page.waitForFunction(()=>document.querySelector('#selection-status').textContent.startsWith('Selected:'));assert.equal(await page.locator('#entries [aria-current]').count(),1);}
  let journeys=0,uncertain=0,citations=0,unresolvedCitations=0;
+ // Facsimile-checked pairs inside one continuous italic run. Keep their plural
+ // parents unresolved while exercising each independently accepted destination.
+ for(const id of [
+  'badw:pdf:badw-v3-45c686fe81fc99871046464267301efa11a53030167ced5e2df92cee70380505:1288',
+  'badw:pdf:badw-v2-8b2374405a57fe2dac90bcd6f028a85a90aec5427b1f0a86bc0d6451ebbca3f1:273',
+  'badw:pdf:badw-v3-4d60bc78f20721f4e32d6b2711b54b90c41d52c0566f68c5cffba1c2148afd75:1760',
+ ]){
+  const meta=entries.get(id);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();
+  const pair=entry.cross_references.find(r=>r.target_members?.length===2);assert(pair);
+  assert.equal(pair.status,'unresolved');assert.equal(pair.target_entry_id,null);
+  assert(pair.target_members.every(m=>m.resolution_status==='resolved'));
+  data.entries.push(entry);
+ }
  const visitedSources=new Set();
  for(const entry of data.entries){
   await go(entry);
@@ -113,7 +127,7 @@ const path=require('node:path');
  const sourceURL=await page.locator('#article > .source-access a').first().getAttribute('href');
  const [sourcePage,sourceResponse]=await Promise.all([page.waitForEvent('popup'),page.context().waitForEvent('response',{predicate:r=>r.url()===base+'/'+sourceURL}),page.locator('#article > .source-access a').first().click()]);
  assert.equal(sourceResponse.status(),200);assert(sourceResponse.headers()['content-type'].includes('application/pdf'));await sourcePage.close();
- assert(journeys>=47);assert(uncertain>=3);assert(unresolvedCitations>=3);
+ assert(journeys>=53);assert(uncertain>=3);assert(unresolvedCitations>=3);
  await go(catalog[1]);
  const next=await page.locator('[rel=next]').getAttribute('href');await page.locator('[rel=next]').click();assert.equal(decodeURIComponent(next.slice(1)),catalog[2].id);
  await page.locator('[rel=prev]').click();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,catalog[1].id);

@@ -293,6 +293,28 @@ def test_comma_separated_targets_are_one_occurrence_with_ordered_exact_members()
     assert occurrence == before
 
 
+@pytest.mark.parametrize('members', [('sku bźi', 'sku gsum'), ('bkroṅ', 'bkroṅs')])
+def test_parser_continuous_italic_members_pass_independent_source_gates(members):
+    from parse_badw_pdf_articles import _candidates
+    occurrence, structure, text, binding = plural_fixture(', '.join(members), members=members)
+    line = structure['visual_lines'][0]
+    line['style_spans'] = [dict(start=1, end=len(text), style='italic', font_id='one-run')]
+    line.update(span_index=0, run_start=0, run_end_exclusive=1)
+    occurrence['source_candidate'] = _candidates(
+        [line], [dict(start_line_index=0, end_line_index_exclusive=1)])['cross_references'][0]
+    result = resolve_plural(plural_index(*members), (occurrence, structure, text, binding))
+    resolution = result['canonical_resolution']
+    assert resolution['status'] == 'unresolved'
+    assert 'target_entry_id' not in resolution
+    assert resolution['target_members_status'] == 'complete'
+    assert [m['literal'] for m in resolution['target_members']] == list(members)
+    assert all(m['resolution_status'] == 'resolved' for m in resolution['target_members'])
+    # Even exact names and typography cannot bypass a mismatched source binding.
+    wrong_binding = dict(binding, text_sha256='b' * 64)
+    rejected = resolve_plural(plural_index(*members), (occurrence, structure, text, wrong_binding))
+    assert 'target_members' not in rejected['canonical_resolution']
+
+
 def test_three_members_and_explicit_arrows_preserve_source_order_and_separators():
     three = plural_fixture("ka, kha und ga", members=["ka", "kha", "ga"])
     result = resolve_plural(plural_index("ka", "kha", "ga"), three)

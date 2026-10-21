@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc2` instead (`run10` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc4` instead (`run12` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -46,9 +46,10 @@ these uncertainties into arbitrary links. In particular, the wrapped target in
 **brñan** parses correctly as **gzugs brñan** but has no exact indexed destination.
 The two ambiguous references are in **btug** and **tal la**. Missing identities
 occur in **bka’ gter**, **bka’ ma**, **brñan**, **gtogs**, **gtugs**, **thig**
-(two occurrences), **ṅar**, and **ṅu**. No failed parsing was established in this
-fixture; malformed HTML targets elsewhere remain a separate investigation.
-The fixture below is retained intact.
+(two occurrences), **ṅar**, and **ṅu**. Subsequent facsimile inspection established
+a parsing failure in **ṅar**: printed p. 175 continues the list through **ṅar mi,
+ṅar zan**, beyond the frozen target extent. That requires a separate reviewed
+span correction; it is not a printing error. The fixture below is retained intact.
 
 Run focused Python/Node tests listed below, adding `tests/test_badw_full_reader.py`.
 For full-corpus browser journeys, use:
@@ -78,7 +79,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run10 \
+  --reader work/badw_full_reader_20261020/run12 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -106,6 +107,25 @@ mismatches. These are provisional diagnostic groups, with the absent reviewed
 editorial target explicitly distinguished. The remaining scholarly source review
 has not been completed.
 
+Three PDF references put their comma-separated targets in a single continuous
+italic run: **chos kyi sku** (printed p. 285: **sku bźi, sku gsum**), **groṅs**
+(p. 277: **bkroṅ, bkroṅs**) and **rjes su thob** (p. 416: **rjes thob, rjes la
+thob pa**). Facsimile inspection confirms that these are parser defects, not
+printing errors. Commas inside a single original italic target extent now delimit
+independent members; empty members fail closed. Existing multi-run collections
+retain their reviewed segmentation, including the frozen **ṅar** collection.
+Every member still passes the
+existing source-binding, exact-span, typography and printed-target gates. Parents
+remain unresolved and have no single destination. Three unresolved target units
+become six accepted members. After this family:
+HTML **4,713 resolved / 569 unresolved**; PDF **2,838 resolved / 128 unresolved /
+118 ambiguous**; total **7,551 resolved / 815 residual**. The full-corpus
+differential finds 29,874 identical witnesses and three changed references.
+It verifies every source/display character and structural tag across the new
+clickable member boundaries; citations, components, source bindings and all
+previously accepted destinations agree. The browser suite exercises all six new links
+in addition to the original 47 reviewed member journeys.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -118,9 +138,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run10 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run12 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run10 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run12 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

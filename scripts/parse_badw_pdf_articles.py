@@ -578,6 +578,30 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 targets.append({"source_text": text[label_start:next_end],
                                 **location(label_start, next_end)})
                 end = next_end
+            # A comma can also lie inside one continuous italic font run.
+            # Preserve the parent extent and literal punctuation; expose exact
+            # member spans to the resolver, which independently verifies each
+            # member's typography, geometry, homonym and source binding.
+            # Existing multi-run collections retain their reviewed segmentation.
+            if len(targets) == 1:
+                split_targets = []
+                for target in targets:
+                    member_start = target["visual_start"]
+                    member_end = target["visual_end"]
+                    boundaries = list(re.finditer(r",\s*", text[member_start:member_end]))
+                    if boundaries:
+                        cursor = member_start
+                        for separator in boundaries:
+                            boundary = member_start + separator.start()
+                            split_targets.append({"source_text": text[cursor:boundary],
+                                                  **location(cursor, boundary)})
+                            cursor = member_start + separator.end()
+                        split_targets.append({"source_text": text[cursor:member_end],
+                                              **location(cursor, member_end)})
+                    else:
+                        split_targets.append(target)
+                if all(t["source_text"].strip() for t in split_targets):
+                    targets = split_targets
         result["cross_references"].append({"marker": text[start],
             "target_label_candidate": text[marker.end():end], **location(start, end),
             "target_candidates": targets,
