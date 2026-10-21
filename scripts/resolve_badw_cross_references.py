@@ -280,7 +280,7 @@ class EntryIndex:
 
     def resolve_reviewed_printed_substitution(self, occurrence, review, *, structure, text,
                                                source_binding):
-        """Interpret one facsimile-reviewed abbreviation without changing print.
+        """Interpret one facsimile-reviewed abbreviation or wrapped heading.
 
         This path requires an offline-validated annotation and the same exact
         typographic/source-binding gates as ordinary printed target resolution.
@@ -306,24 +306,45 @@ class EntryIndex:
                         line.get('first_x') is None or line.get('y') is None):
                     raise ValueError('printed substitution review lacks source geometry')
             offset = end + 1
-        if (review.get('basis') != 'reviewed_printed_headword_substitution' or
+        wrapped = review.get('basis') == 'reviewed_printed_wrapped_headword'
+        lexical = parsed.get('lexical_target', '')
+        if wrapped:
+            proof = review.get('destination_heading', {})
+            destination = self.records.get(proof.get('entry_id'), {})
+            if (not destination or destination.get('source_kind') != 'pdf' or
+                    destination.get('headword') != proof.get('headword') or
+                    destination.get('entry_start_source_span') != proof.get('entry_start_source_span') or
+                    destination.get('homonym') != proof.get('homonym') or
+                    destination.get('homonym') != '' or
+                    '\n' not in review.get('lemma', '') or
+                    destination.get('headword', {}).get('loc') != review.get('lemma')):
+                raise ValueError('reviewed wrapped destination differs from actual entry index')
+            if '~' in lexical:
+                if lexical.count('~') != 1 or not review.get('source_headword'):
+                    raise ValueError('wrapped destination has unbound abbreviation')
+                lexical = lexical.replace('~', review['source_headword'])
+            elif 'source_headword' in review:
+                raise ValueError('unexpected abbreviation headword')
+            target_matches = lexical == review['lemma'].replace('\n', ' ')
+        else:
+            target_matches = (lexical.count('~') == 1 and bool(review.get('source_headword')) and
+                              lexical.replace('~', review['source_headword']) == review.get('lemma'))
+        if (review.get('basis') not in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword') or
                 not review.get('annotation_id') or not review.get('physical_selectors') or
                 review.get('binding', {}).get('text_sha256') != hashlib.sha256(text.encode()).hexdigest() or
                 source_binding.get('identity') != structure.get('article_id') or
                 source_binding.get('text_sha256') != structure.get('source_faithful_sha256') or
                 structure.get('review_text_sha256') != review['binding']['text_sha256'] or
-                not review.get('source_headword') or
-                review['source_headword'] != structure.get('loc_headword') or
+                ('source_headword' in review and review['source_headword'] != structure.get('loc_headword')) or
                 review.get('homonym') is not None or review.get('source_target_url') is not None or
                 not parsed.get('valid') or not parsed.get('lexical_span') or
                 parsed.get('homonym') is not None or
-                parsed.get('lexical_target', '').count('~') != 1 or
-                parsed['lexical_target'].replace('~', review['source_headword']) != review.get('lemma') or
+                not target_matches or
                 review.get('ranges') != [dict(**span, literal=text[span['start']:span['end']])]):
             raise ValueError('printed substitution review is not bound to this source target')
         temporary = dict(occurrence, id=review['occurrence_id'], record_type='cross_reference')
         resolution = self.resolve(temporary, reviewed_target=review)['canonical_resolution']
-        resolution.update(method='reviewed_exact_printed_substitution', parsed_target=parsed,
+        resolution.update(method='reviewed_exact_wrapped_headword' if wrapped else 'reviewed_exact_printed_substitution', parsed_target=parsed,
                           evidence_status='facsimile_reviewed_source_interpretation')
         self._same_entity(resolution)
         if resolution['status'] != 'resolved':

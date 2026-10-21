@@ -617,3 +617,90 @@ def test_printed_abbreviation_annotation_binds_exact_headword_node_and_candidate
     for status in ('candidate','rejected'):
         inactive=copy.deepcopy(a);inactive['status']=status
         assert not annotations.apply_validated_annotations(p,base,run(tmp_path,p,[inactive]))['reviewed_cross_reference_targets']
+
+
+def wrapped_fixture(tmp_path):
+    import gzip
+    import json
+    p = packet(tmp_path, 'pdf')
+    text = '↑ka kha'
+    p['review_text'] = p['source']['source_faithful_text'] = text
+    p['review_text_sha256'] = annotations.digest(text)
+    line = p['source']['visual_lines'][0]
+    line['text'] = text
+    line['style_spans'][0]['end'] = len(text)
+    p['source']['visual_lines'] = [line]
+    sha = p['source']['source_objects'][0]['pdf_sha256']
+    runs = [dict(run_index=i, decoded_unicode=t, x=12, y=y, unknown_glyphs=0,
+                 glyphs=[dict(unknown=False)]) for i, (t, y) in enumerate([('ka', 20), ('kha', 10)])]
+    page = dict(page_id='destination', printed_page=12, visible_body_sha256=annotations.digest('kakha'),
+                source_faithful_decoded_text='kakha', representative_source=dict(
+                    canonical_url='https://example.test/pdf', source_sha256=sha),
+                positioned_page=dict(positioned_text_runs=runs))
+    path = tmp_path/'destination.json.gz'
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    span = dict(canonical_object=path.name, representative_pdf_sha256=sha,
+                representative_pdf_url=page['representative_source']['canonical_url'],
+                visible_body_sha256=page['visible_body_sha256'], loc_run_indices=[0, 1],
+                homonym_run_indices=[], run_start=0, run_end_exclusive=2)
+    proof = dict(entry_id='badw:pdf:destination:0', headword=dict(loc='ka\nkha', source_loc='kakha'),
+                 homonym='', entry_start_source_span=span, printed_page=12,
+                 canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    a = claim(p, kind='cross_reference_target', ranges=[dict(start=0,end=len(text),literal=text)])
+    a['claim'] = dict(occurrence_id='xref', source_target_url=None, source_target_label='ka kha',
+                      lemma='ka\nkha', homonym=None, basis='reviewed_printed_wrapped_headword', destination_heading=proof)
+    base = prediction(p)
+    base['nodes'].append(dict(id='xref',kind='cross_reference',start=0,end=len(text),parent='root'))
+    base['original_structure'] = dict(loc_headword='other', visual_lines=copy.deepcopy(p['source']['visual_lines']),
+        candidates=dict(cross_references=[dict(visual_start=0,visual_end=len(text),target_label_candidate='ka kha')]))
+    return p, a, base, page, path
+
+
+def test_wrapped_heading_validated_overlay_preserves_source_and_identity(tmp_path):
+    p, a, base, _, _ = wrapped_fixture(tmp_path)
+    before = copy.deepcopy((p, a, base))
+    result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
+    target = result['reviewed_cross_reference_targets']['xref']
+    assert target['lemma'] == 'ka\nkha'
+    assert target['destination_heading'] == a['claim']['destination_heading']
+    assert result['nodes'] == base['nodes'] and result['original_structure'] == base['original_structure']
+    assert (p, a, base) == before
+    for status in ('candidate', 'rejected'):
+        inactive = copy.deepcopy(a); inactive['status'] = status
+        assert not annotations.apply_validated_annotations(p,base,run(tmp_path,p,[inactive]))['reviewed_cross_reference_targets']
+
+
+@pytest.mark.parametrize('fault', ['canonical_hash','pdf_hash','entry_id','printed_page','source_loc',
+    'heading','homonym','homonym_runs','run_order','run_bounds','index_type','body_hash',
+    'source_url','geometry','unknown','run_identity','label','source_homonym','source_url_claim','extra_field'])
+def test_wrapped_heading_proof_fails_closed(tmp_path, fault):
+    import gzip
+    import json
+    p, a, _, page, path = wrapped_fixture(tmp_path)
+    c = a['claim']; d = c['destination_heading']; s = d['entry_start_source_span']
+    if fault == 'canonical_hash': d['canonical_object_sha256'] = '0'*64
+    elif fault == 'pdf_hash': s['representative_pdf_sha256'] = '0'*64
+    elif fault == 'entry_id': d['entry_id'] = 'wrong'
+    elif fault == 'printed_page': d['printed_page'] = 13
+    elif fault == 'source_loc': d['headword']['source_loc'] = 'ka kha'
+    elif fault == 'heading': c['lemma'] = d['headword']['loc'] = 'ka\nkhu'
+    elif fault == 'homonym': d['homonym'] = '1'
+    elif fault == 'homonym_runs': s['homonym_run_indices'] = [0]
+    elif fault == 'run_order': s['loc_run_indices'] = [1,0]
+    elif fault == 'run_bounds': s['loc_run_indices'] = [0,2]
+    elif fault == 'index_type': s['loc_run_indices'] = [False,1]
+    elif fault == 'body_hash': s['visible_body_sha256'] = '0'*64
+    elif fault == 'source_url': s['representative_pdf_url'] = 'other'
+    elif fault == 'label': c['source_target_label'] = 'ka khu'
+    elif fault == 'source_homonym': c['homonym'] = '1'
+    elif fault == 'source_url_claim': c['source_target_url'] = 'url'
+    elif fault == 'extra_field': c['unexpected'] = 'x'
+    else:
+        r = page['positioned_page']['positioned_text_runs'][0]
+        if fault == 'geometry': r.pop('x')
+        if fault == 'unknown': r['glyphs'][0]['unknown'] = True
+        if fault == 'run_identity': r['run_index'] = 8
+        path.write_bytes(gzip.compress(json.dumps(page).encode()))
+        d['canonical_object_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises((ValueError, FileNotFoundError)):
+        run(tmp_path,p,[a])

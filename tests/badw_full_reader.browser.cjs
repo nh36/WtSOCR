@@ -141,7 +141,7 @@ const path=require('node:path');
  await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(detachedTargets[0]).headword.loc);
  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),detachedEntry.headword.loc);
  // Facsimile-reviewed headword tildes preserve their printed labels. Three
- // exact expanded targets navigate; the three absent targets explain abstention.
+ // exact expanded targets navigate; two absent targets explain abstention.
  let tildeJourneys=0,tildeAbsent=0;
  for(const label of ['cho ’phrul','ñal','gtugs','lta']){
   const meta=catalog.find(e=>e.source_kind==='pdf'&&e.headword.loc===label);assert(meta);
@@ -164,7 +164,33 @@ const path=require('node:path');
    }
   }
  }
- assert.equal(tildeJourneys,3);assert.equal(tildeAbsent,3);
+ assert.equal(tildeJourneys,3);assert.equal(tildeAbsent,2);
+ // Individually reviewed wrapped PDF headings preserve source/index readings.
+ // The three qualified HTML counterparts remain uncertain rather than having
+ // their explicit homonym 1 silently mapped to an unnumbered PDF identity.
+ let wrappedHeadingJourneys=0;
+ for(const label of ['ñu le ñab kyi lag riṅ','cho ’phrul','ñer len phuṅ po']){
+  const meta=catalog.find(e=>e.source_kind==='pdf'&&e.headword.loc===label);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();await go(entry);
+  const refs=entry.cross_references.filter(r=>r.resolution_evidence?.method==='reviewed_exact_wrapped_headword');assert.equal(refs.length,1);
+  const ref=refs[0];assert.equal(ref.status,'resolved');assert(ref.target_entry_id);
+  const target=entries.get(ref.target_entry_id);assert(target.headword.loc.includes('\n'));assert.equal(target.homonym,'');
+  const href='#'+encodeURIComponent(ref.target_entry_id);
+  const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
+  await links.nth(chosen).click();await page.waitForFunction(h=>location.hash===h,href);
+  await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+  assert(await page.locator('.source-access a').count()>0);
+  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);
+  await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+  wrappedHeadingJourneys++;
+ }
+ assert.equal(wrappedHeadingJourneys,3);
+ for(const label of ['bdud kyi źags pa dgu sgrol','dom nag sdig pa’i mgo bo can','na ra seṅ ha']){
+  const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===label);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();await go(entry);
+  const refs=entry.cross_references.filter(r=>r.wording.includes(label==='na ra seṅ ha'?'stobs ldan pho ña sde brgyad':'jo bo klu bdud mched dgu'));assert(refs.length);
+  for(const ref of refs){assert.notEqual(ref.status,'resolved');assert(!ref.target_entry_id);}
+ }
  // DOM comma lists retain their own exact members and visible qualifiers.
  let htmlCommaJourneys=0,htmlCommaUncertain=0;
  for(const id of [
@@ -298,6 +324,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,terminal_letter_journeys:1,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

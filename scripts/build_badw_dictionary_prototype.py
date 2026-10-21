@@ -193,7 +193,7 @@ def view(records, index):
                                        target_label=candidate.get("target_label_candidate", ""),
                                        source_candidate=candidate, source_spans=[candidate])
                 reviews = [r for r in record.get('reviewed_cross_reference_targets', {}).values()
-                           if r.get('basis') == 'reviewed_printed_headword_substitution' and
+                           if r.get('basis') in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword') and
                            r['source_spans'] == [candidate]]
                 if len(reviews) > 1:
                     raise ValueError('conflicting reviewed printed target interpretations')

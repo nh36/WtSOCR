@@ -534,3 +534,75 @@ def test_reviewed_printed_abbreviation_fails_closed(fault):
     if fault=='accepted': index=EntryIndex([entry(lemma='bag la ~')])
     if fault=='plural': fixture=plural_fixture()
     with pytest.raises(ValueError): substitute(index, fixture, review)
+
+
+def wrapped_destination_fixture():
+    fixture = plural_fixture('ka kha', members=['ka kha'])
+    occurrence, _, text, _ = fixture
+    occurrence['source_spans'] = [copy.deepcopy(occurrence['source_candidate'])]
+    destination = entry('wrapped', lemma='ka\nkha', homonym='')
+    destination.update(source_kind='pdf', entry_start_source_span=dict(run_start=0, loc_run_indices=[1, 2]))
+    destination['headword']['source_loc'] = 'kakha'
+    proof = {k: copy.deepcopy(destination[k]) for k in ('headword', 'homonym', 'entry_start_source_span')}
+    proof.update(entry_id='wrapped', canonical_object_sha256='b'*64, printed_page=1)
+    review = dict(occurrence_id=occurrence['id'], source_spans=occurrence['source_spans'],
+        literal='ka kha', source_target_url=None, lemma='ka\nkha', homonym=None,
+        basis='reviewed_printed_wrapped_headword', destination_heading=proof, annotation_id='review-wrapped',
+        binding=dict(text_sha256=hashlib.sha256(text.encode()).hexdigest()),
+        physical_selectors=[dict(page_id='page-1')], ranges=[dict(start=0,end=len(text),literal=text)],
+        review=dict(reviewer='synthetic reviewer', reviewed_at='2026-10-21', evidence='Synthetic facsimile review'))
+    return fixture, review, destination
+
+
+def test_reviewed_wrapped_heading_preserves_source_and_requires_exact_index_proof():
+    fixture, review, destination = wrapped_destination_fixture()
+    before = copy.deepcopy((fixture, review, destination))
+    index = EntryIndex([destination])
+    old = resolve_plural(index, fixture)['canonical_resolution']
+    assert old['status'] == 'unresolved' and not old['candidate_entry_ids']
+    result = substitute(index, fixture, review)
+    resolution = result['canonical_resolution']
+    assert resolution['status'] == 'resolved' and resolution['target_entry_id'] == 'wrapped'
+    assert resolution['method'] == 'reviewed_exact_wrapped_headword'
+    assert resolution['parsed_target']['lexical_target'] == 'ka kha'
+    assert resolution['target_lexical_entity']['headword'] == 'ka\nkha'
+    assert {k:v for k,v in result.items() if k!='canonical_resolution'} == fixture[0]
+    assert (fixture, review, destination) == before
+    # The reviewed source's literal key does not become a general alias.
+    assert resolve_plural(index, fixture)['canonical_resolution'] == old
+
+
+def test_wrapped_heading_keeps_witness_selection_and_homonym_ambiguity():
+    fixture, review, destination = wrapped_destination_fixture()
+    other = copy.deepcopy(destination);other['id'] = 'another-witness'
+    resolution = substitute(EntryIndex([destination, other]), fixture, review)['canonical_resolution']
+    assert resolution['status'] == 'resolved' and 'target_entry_id' not in resolution
+    assert resolution['witness_status'] == 'multiple_exact_manifestations'
+    assert resolution['candidate_entry_ids'] == ['another-witness', 'wrapped']
+    other['homonym'] = '1'
+    resolution = substitute(EntryIndex([destination, other]), fixture, review)['canonical_resolution']
+    assert resolution['status'] == 'ambiguous' and 'target_entry_id' not in resolution
+
+
+@pytest.mark.parametrize('fault', ['entry', 'kind', 'headword', 'span', 'homonym', 'proof',
+    'lemma', 'binding', 'range', 'geometry', 'typography', 'qualifier', 'url', 'source', 'accepted', 'plural'])
+def test_wrapped_heading_resolution_fails_closed(fault):
+    fixture, review, destination = wrapped_destination_fixture()
+    occurrence, structure, text, binding = fixture
+    if fault=='entry': destination['id']='other'
+    if fault=='kind': destination['source_kind']='html'
+    if fault=='headword': destination['headword']['source_loc']='other'
+    if fault=='span': destination['entry_start_source_span']['run_start']=1
+    if fault=='homonym': destination['homonym']='1'
+    if fault=='proof': review.pop('destination_heading')
+    if fault=='lemma': review['lemma']='ka\nkha other'
+    if fault=='binding': review['binding']['text_sha256']='b'*64
+    if fault=='range': review['ranges'][0]['end']-=1
+    if fault=='geometry': structure['visual_lines'][0].pop('first_x')
+    if fault=='typography': structure['visual_lines'][0]['style_spans'][0]['style']='regular'
+    if fault=='qualifier': review['homonym']='1'
+    if fault=='url': review['source_target_url']='https://example/lemma/ka/1'
+    if fault=='source': fixture=(occurrence,structure,text,None)
+    if fault=='accepted': destination['headword']['loc']='ka kha'
+    if fault=='plural': fixture=plural_fixture()
+    with pytest.raises(ValueError): substitute(EntryIndex([destination]), fixture, review)

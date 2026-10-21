@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import re
@@ -144,6 +145,61 @@ def _packet(packet, cache, canonical_root, verified):
         raise ValueError("unsupported source kind")
 
 
+def wrapped_heading(claim, cache, canonical_root, verified):
+    """Check an individually reviewed destination against immutable PDF runs.
+
+    The index key stays literal, including its line break. This is neither a
+    corpus-wide alias nor permission to discard an explicit homonym qualifier.
+    """
+    from extract_badw_pdf_entries import _heading_reading
+    proof = claim.get('destination_heading')
+    _keys(proof, ('entry_id', 'headword', 'homonym', 'entry_start_source_span',
+                  'canonical_object_sha256', 'printed_page'))
+    span = proof['entry_start_source_span']
+    if (not isinstance(span, dict) or canonical_root is None or
+            proof['homonym'] != '' or span.get('homonym_run_indices') != [] or
+            not isinstance(proof['headword'], dict) or
+            proof['headword'].get('loc') != claim['lemma'] or
+            not isinstance(claim['lemma'], str) or '\n' not in claim['lemma'] or
+            any(not part or part != part.strip() for part in claim['lemma'].split('\n'))):
+        raise ValueError('invalid reviewed wrapped heading identity')
+    logical = ' '.join(claim['source_target_label'].split())
+    if '~' in logical:
+        if logical.count('~') != 1 or not _string(claim.get('source_headword')):
+            raise ValueError('wrapped heading requires an exact abbreviation expansion')
+        logical = logical.replace('~', claim['source_headword'])
+    elif 'source_headword' in claim:
+        raise ValueError('unexpected abbreviation headword')
+    if logical != claim['lemma'].replace('\n', ' '):
+        raise ValueError('wrapped heading differs from literal target')
+    _object(canonical_root, span['canonical_object'], proof['canonical_object_sha256'], verified)
+    sha = span['representative_pdf_sha256']
+    _object(cache, f'objects/sha256/{sha[:2]}/{sha}', sha, verified)
+    with gzip.open(Path(canonical_root) / span['canonical_object'], 'rt', encoding='utf-8') as handle:
+        page = json.load(handle)
+    runs = page['positioned_page']['positioned_text_runs']
+    indices = span.get('loc_run_indices', [])
+    start, end = span.get('run_start'), span.get('run_end_exclusive')
+    if (type(start) is not int or type(end) is not int or not 0 <= start < end <= len(runs) or
+            not indices or any(type(i) is not int for i in indices) or
+            indices != sorted(set(indices)) or not all(start <= i < end for i in indices)):
+        raise ValueError('invalid wrapped heading run selection')
+    selected = [runs[i] for i in indices]
+    if (proof['entry_id'] != f"badw:pdf:{page['page_id']}:{start}" or
+            proof['printed_page'] != page['printed_page'] or
+            span['visible_body_sha256'] != page['visible_body_sha256'] or
+            span['representative_pdf_url'] != page['representative_source']['canonical_url'] or
+            sha != page['representative_source']['source_sha256'] or
+            page['visible_body_sha256'] != digest(page['source_faithful_decoded_text']) or
+            any(r.get('run_index') != i or r.get('unknown_glyphs') or
+                r.get('x') is None or r.get('y') is None or
+                any(g.get('unknown') for g in r.get('glyphs', [])) for i, r in zip(indices, selected)) or
+            len({r['y'] for r in selected}) < 2 or
+            _heading_reading(selected) != claim['lemma'] or
+            ''.join(r['decoded_unicode'] for r in selected).strip() != proof['headword'].get('source_loc')):
+        raise ValueError('wrapped heading differs from canonical PDF evidence')
+
+
 def validate(packets, annotations, *, cache, canonical_root=None):
     """Fail closed. Preserve candidates and superseded claims in the output."""
     source = {}
@@ -208,17 +264,23 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"), ("source_headword",))
-            if claim["basis"] == "reviewed_printed_headword_substitution":
+                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading"))
+            if claim['basis'] == 'reviewed_printed_wrapped_headword':
+                if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
+                        any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_target_label', 'lemma')) or
+                        claim['source_target_url'] is not None or claim['homonym'] is not None):
+                    raise ValueError('invalid reviewed wrapped heading reference')
+                wrapped_heading(claim, cache, canonical_root, verified)
+            elif claim["basis"] == "reviewed_printed_headword_substitution":
                 if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in (
                             "occurrence_id", "source_target_label", "lemma", "source_headword")) or
-                        claim["source_target_url"] is not None or claim["homonym"] is not None or
+                        'destination_heading' in claim or claim["source_target_url"] is not None or claim["homonym"] is not None or
                         claim["source_target_label"].count("~") != 1 or
                         " ".join(claim["source_target_label"].split()).replace("~", claim["source_headword"]) != claim["lemma"]):
                     raise ValueError("invalid reviewed printed headword substitution")
             elif (packet["source_kind"] != "html" or len(ranges) != 1 or
-                    "source_headword" in claim or
+                    "source_headword" in claim or 'destination_heading' in claim or
                     any(not _string(claim[k]) for k in ("occurrence_id", "source_target_url",
                         "source_target_label", "lemma", "homonym")) or
                     not re.fullmatch(r"[1-9][0-9]*", claim["homonym"]) or
@@ -383,7 +445,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] == "reviewed_printed_headword_substitution":
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
@@ -394,15 +456,18 @@ def apply_validated_annotations(packet, prediction, annotations):
             if (packet["source_kind"] != "pdf" or len(nodes) != 1 or len(candidates) != 1 or
                     claim["occurrence_id"] in targets or
                     structure.get("visual_lines") != packet["source"].get("visual_lines") or
-                    structure.get("loc_headword") != claim["source_headword"] or
+                    ('source_headword' in claim and structure.get("loc_headword") != claim["source_headword"]) or
                     candidates[0].get("target_label_candidate") != claim["source_target_label"]):
                 raise ValueError("reviewed printed cross-reference differs from exact source occurrence")
             targets[claim["occurrence_id"]] = dict(occurrence_id=claim["occurrence_id"],
                 source_spans=[deepcopy(candidates[0])], literal=claim["source_target_label"],
-                source_target_url=None, source_headword=claim["source_headword"],
+                source_target_url=None,
                 lemma=claim["lemma"], homonym=None, basis=claim["basis"],
                 annotation_id=row["annotation_id"], binding=row["binding"],
                 physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
+            for field in ('source_headword', 'destination_heading'):
+                if field in claim:
+                    targets[claim['occurrence_id']][field] = deepcopy(claim[field])
             continue
         matches = [r for r in result.get("original_records", [])
                    if r.get("record_type") == "cross_reference" and r["id"] == claim["occurrence_id"]]
