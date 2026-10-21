@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc4` instead (`run12` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc5` instead (`run13` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -79,15 +79,17 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run12 \
+  --reader work/badw_full_reader_20261020/run13 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-344 HTML and three PDF identity/manifestation mismatches; 228 HTML and 128 PDF
+336 HTML and three PDF identity/manifestation mismatches; 225 HTML and 125 PDF
 missing exact identities; 118 PDF ambiguities; one HTML parser-boundary failure.
+These are the current post-review groups; the family-specific counts below retain
+comparable intermediate checkpoints.
 Missing identities do not establish acquisition gaps or printed errors. No printed
 or editorial correction is asserted by this census. These cases still need review.
 
@@ -126,6 +128,19 @@ clickable member boundaries; citations, components, source bindings and all
 previously accepted destinations agree. The browser suite exercises all six new links
 in addition to the original 47 reviewed member journeys.
 
+Eight further malformed HTML hrefs contain a nested `span` whose quotes truncate
+the DOM URL. Individually reviewed raw attributes identify **dkar nag¹**, **dkar
+dmar¹**, **dkar gsum¹** (in **dkar¹**), **koṅ rje dkar po¹** (in **dkar po**),
+**dka’ thub can¹**, **dka’ thub pa¹** (in **dka’ thub**), **dar dir ku co¹** (in
+**ku co**) and **mun pa’i smag rum¹** (in **smag rum**). Seven exact destinations
+are acquired; **dar dir ku co¹** is absent and remains explicitly unresolved.
+The existing reviewed-annotation mechanism retains original malformed URLs,
+source hashes and partial visible labels without widening frozen spans. This
+establishes malformed editorial HTML, not an error in the printed dictionary.
+After this family: HTML **4,720 resolved / 562 unresolved**; PDF unchanged;
+total **7,558 resolved / 808 residual**. All remaining diagnostic classifications
+still require scholarly review; no printed error has been asserted.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -138,9 +153,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run12 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run13 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run12 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run13 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

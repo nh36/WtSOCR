@@ -82,14 +82,15 @@ const path=require('node:path');
    await page.keyboard.press('Escape');assert(await button.evaluate(n=>n===document.activeElement));citations++;
   }
  }
- // Five individually source-bound malformed editorial hrefs: four destinations,
- // one absent. The original broken URL remains evidence in every exported row.
+ // Individually source-bound malformed editorial hrefs, including nested span
+ // tags which truncate the parsed label. Broken URLs remain source evidence.
  let editorialJourneys=0,editorialAbsent=0;
- for(const [label,homonym] of [['ldaṅs','2'],['nod','1'],['rbas','1'],['snom','2'],['kun las btus pa','1']]){
+ for(const [label,homonym] of [['ldaṅs','2'],['nod','1'],['rbas','1'],['snom','2'],['kun las btus pa','1'],['dkar','1'],['dkar po','1'],['dka’ thub','1'],['ku co','1'],['smag rum','1']]){
   const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===label&&String(e.homonym)===homonym);assert(meta);
   const entry=await (await page.request.get(base+'/'+meta.path)).json();await go(entry);
-  const ref=entry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_editorial_target');assert(ref);
-  assert(ref.source_url.includes('%3Ctib%3E'));
+  const reviewed=entry.cross_references.filter(r=>r.resolution_evidence?.method==='reviewed_exact_editorial_target');assert(reviewed.length);
+  for(const ref of reviewed){
+  assert(ref.source_url.includes('%3Ctib%3E')||ref.source_url.includes('%3Cspan%20class='));
   assert.equal(ref.resolution_evidence.target_review.source_target_url,ref.source_url);
   if(ref.status==='resolved'){
    const href='#'+encodeURIComponent(ref.target_entry_id);
@@ -103,8 +104,9 @@ const path=require('node:path');
    assert((await page.locator('#reference-detail-content').textContent()).includes('no destination'));
    await page.keyboard.press('Escape');editorialAbsent++;
   }
+  }
  }
- assert.equal(editorialJourneys,4);assert.equal(editorialAbsent,1);
+ assert.equal(editorialJourneys,11);assert.equal(editorialAbsent,2);
  // Actual unresolved bibliography identities in the current full corpus; the
  // current apparatus resolves the former preview's unresolved examples.
  for(const id of ['badw:entry:b02929dd7cac236341035182a2156e52083e149569e05a4526464d99a36cff62','badw:entry:2e1d21ca0ef668f56b2df58656c2433e124595e2c90485d45c4b04c92a20cd89','badw:pdf:badw-v3-ada4e0c7f95483b5511f159d715f24d5d1cac8a74143c1256d5b3f8ea7462b70:489']){

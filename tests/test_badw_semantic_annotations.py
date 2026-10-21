@@ -96,11 +96,15 @@ def prediction(p):
         start=0, end=len(p['review_text']), parent=None)], edges=[])
 
 
-def test_reviewed_editorial_target_is_bound_and_does_not_rewrite_observations(tmp_path):
+@pytest.mark.parametrize('url,lemma', [
+    ('https://wts-digital.badw.de/lemma/%3Ctib%3Eulk%C4%81/1', 'ulkā'),
+    ('https://wts-digital.badw.de/lemma/%3Cspan%20class=', 'ulkā nag'),
+])
+def test_reviewed_editorial_target_is_bound_and_does_not_rewrite_observations(tmp_path, url, lemma):
     p = packet(tmp_path)
     base = prediction(p)
     ref = dict(record_type='cross_reference', id='xref', target_label='ulkā',
-               target_url='https://wts-digital.badw.de/lemma/%3Ctib%3Eulk%C4%81/1',
+               target_url=url,
                source_spans=[dict(source_id=p['identity'], start=11, end=15)])
     base['original_records'] = [ref]
     base['nodes'].append(dict(id='refnode', kind='cross_reference', start=11, end=15,
@@ -108,7 +112,7 @@ def test_reviewed_editorial_target_is_bound_and_does_not_rewrite_observations(tm
     a = claim(p)
     a['kind'] = 'cross_reference_target'
     a['claim'] = dict(occurrence_id='xref', source_target_url=ref['target_url'],
-        source_target_label='ulkā', lemma='ulkā', homonym='1',
+        source_target_label='ulkā', lemma=lemma, homonym='1',
         basis='reviewed_malformed_editorial_href')
     before = copy.deepcopy(base)
     accepted = run(tmp_path, p, [a])

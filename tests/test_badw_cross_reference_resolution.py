@@ -105,6 +105,24 @@ def test_deterministic_index_and_resolution():
         EntryIndex([a]).resolve(dict(record_type="cross_reference"))
 
 
+def test_reviewed_nested_href_uses_full_exact_identity_without_widening_partial_label():
+    r = reference('https://wts-digital.badw.de/lemma/%3Cspan%20class=')
+    r['target_label'] = 'dkar'
+    review = reviewed(r, homonym='1', source_target_url=r['target_url'],
+        annotation_id='nested-review', binding={'hash': 'frozen'},
+        physical_selectors=[{'raw': 'source'}], ranges=[{'start': 2, 'end': 4, 'literal': '↑dkar'}])
+    review['lemma'] = 'dkar nag'
+    before = copy.deepcopy(r)
+    index = EntryIndex([entry('partial', lemma='dkar'), entry('full', lemma='dkar nag'),
+                        entry('homonym', lemma='dkar nag', homonym='2')])
+    assert index.resolve_manifestation(r)['canonical_resolution']['status'] == 'unresolved'
+    result = index.resolve_reviewed_editorial_target(r, review)
+    assert result['canonical_resolution']['target_entry_id'] == 'full'
+    assert {k: v for k, v in result.items() if k != 'canonical_resolution'} == before
+    assert r == before
+    assert EntryIndex([entry('partial', lemma='dkar')]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+
+
 def test_cli_offline_unicode_and_byte_identical_replay(tmp_path):
     entries, refs, output = (tmp_path / name for name in ("entries.jsonl", "refs.jsonl", "output.jsonl"))
     entries.write_text(json.dumps(entry(), ensure_ascii=False)+"\n", encoding="utf-8")
