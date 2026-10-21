@@ -600,6 +600,43 @@ def parse_database_article(
                                 len(following) > 1 and isinstance(following[1], TextNode) and
                                 following[1].text.startswith((".", ";"))):
                             segment_target, detached = candidate, field["locator"]
+            member_evidence = None
+            # A single editorial hyperlink sometimes contains a literal list.
+            # Its synthetic URL cannot qualify all members. Only an explicit
+            # adjacent DOM superscript qualifies the first printed target.
+            anchor_literal = exact_text(anchor, excluded_classes=HIDDEN_CLASSES,
+                                        excluded_tags=HIDDEN_TAGS)
+            prefix = container_text[position:anchor_locator["visible_text_start"] - origin]
+            superscripts = list(find_all(link_container, tag="sup"))
+            member_homonym = None
+            prefix_valid = prefix == container_text[position]
+            if len(superscripts) == 1:
+                sup = _located_field(superscripts[0], fragments)
+                digits = exact_text(superscripts[0])
+                if (sup and re.fullmatch(r"[1-9][0-9]?", digits) and
+                        prefix == container_text[position] + digits and
+                        sup["locator"]["visible_text_start"] == origin + position + 1 and
+                        sup["locator"]["visible_text_end"] == anchor_locator["visible_text_start"]):
+                    member_homonym, prefix_valid = digits, True
+            pieces = anchor_literal.split(", ")
+            if (owns_anchor and len(marker_positions) == 1 and prefix_valid and
+                    anchor_locator["visible_text_end"] == origin + end and
+                    len(pieces) > 1 and all(piece and piece == piece.strip() and
+                        all(c.isalpha() or c in " ’'\u00a0" for c in piece) for piece in pieces) and
+                    all(e is anchor or e.tag == "tib" for e in find_all(anchor))):
+                start = anchor_locator["visible_text_start"]
+                members = []
+                for ordinal, piece in enumerate(pieces):
+                    members.append(dict(ordinal=ordinal, lexical_target=piece,
+                        lexical_span=dict(start=start, end=start + len(piece)),
+                        source_span=dict(start=origin + position + 1 if ordinal == 0 else start,
+                                         end=start + len(piece)),
+                        homonym=member_homonym if ordinal == 0 else None))
+                    start += len(piece) + 2
+                member_evidence = dict(method="exact_dom_comma_list", source_identity=f"badw:{final_url}",
+                    source_sha256=actual_sha, text_sha256=hashlib.sha256(article_source_text.encode()).hexdigest(),
+                    parent_span=dict(start=origin + position, end=origin + end),
+                    anchor_locator=anchor_locator, members=members)
             cross_references.append({
                 "locator": locator, "container_locator": link_field["locator"],
                 "marker": container_text[position], "source_text": container_text[position:end],
@@ -610,6 +647,7 @@ def parse_database_article(
                 "target_url": target_url if owns_anchor else None,
                 "target_status": "explicit_anchor" if owns_anchor else "exact_typed_sibling_after_trailing_arrow" if detached else "exact_segment_in_shared_anchor" if segment_target else "unresolved_arrow_segment",
                 **({"target_locator": detached} if detached else {}),
+                **({"html_target_members": member_evidence} if member_evidence else {}),
             })
 
     example_index = {dom_path(node): index for index, node in enumerate(example_nodes)}
@@ -766,13 +804,16 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 def replay_empty_reference_labels(projection, cache):
-    """Replay missing HTML labels at unchanged source spans, never rebind URLs."""
+    """Replay missing labels and DOM lists at unchanged HTML source spans."""
     if projection['source_kind'] != 'html':
         return projection
     missing = [r for r in projection.get('original_records', [])
                if r['record_type'] == 'cross_reference' and not r.get('target_label')
                and not r.get('target_url')]
-    if not missing:
+    plural = [r for r in projection.get('original_records', [])
+              if r['record_type'] == 'cross_reference' and ',' in r.get('target_label', '')
+              and r.get('canonical_resolution', {}).get('status') != 'resolved']
+    if not missing and not plural:
         return projection
     source = projection['source']['source_object']
     body = (Path(cache)/source['object_path']).read_bytes()
@@ -782,13 +823,21 @@ def replay_empty_reference_labels(projection, cache):
     labels = {(r['locator']['visible_text_start'], r['locator']['visible_text_end']):r
               for r in article['cross_references'] if r['target_status'] in (
                   'exact_segment_in_shared_anchor', 'exact_typed_sibling_after_trailing_arrow')}
+    lists = {(r['locator']['visible_text_start'], r['locator']['visible_text_end']): r
+             for r in article['cross_references'] if r.get('html_target_members')}
     replacements = {}
-    for record in missing:
+    for record in missing + plural:
         if len(record['source_spans']) != 1:
             continue
         span = record['source_spans'][0]
-        recovered = labels.get((span['start'], span['end']))
-        if recovered:
+        key = (span['start'], span['end'])
+        recovered_list = lists.get(key)
+        if record in plural and recovered_list:
+            updated = dict(record, html_target_members=recovered_list['html_target_members'])
+            updated.pop('canonical_resolution', None)
+            replacements[record['id']] = updated
+        recovered = labels.get(key)
+        if record in missing and recovered:
             updated = dict(record, target_label=recovered['target_text'],
                            target_parsing_evidence=recovered['target_status'])
             if recovered.get('target_locator'):

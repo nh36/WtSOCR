@@ -303,6 +303,8 @@ def extract_article(
         )
         if isinstance(reference.get("target_text"), str):
             cross_reference["target_label"] = reference["target_text"]
+        if reference.get("html_target_members"):
+            cross_reference["html_target_members"] = reference["html_target_members"]
         records.append(cross_reference)
     return records
 

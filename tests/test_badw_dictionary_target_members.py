@@ -145,3 +145,77 @@ def test_existing_single_target_queries_work_on_older_sqlite_schema(tmp_path):
     output = subprocess.check_output([sys.executable, 'scripts/badw_semantic_store.py',
         '--db', str(path), 'xrefs', '--target', 'target'], text=True)
     assert json.loads(output) == {'single': True}
+
+
+def html_comma_fixture(label='ka, kha', qualifier='2'):
+    import hashlib
+    from badw_article_parser import parse_database_article
+    from extract_badw_lexical_records import extract_article
+    from test_extract_badw_lexical_records import ARTICLE_BYTES, SOURCE
+    from test_badw_dictionary_prototype import record
+    old = '<span class="link">↑<a class="link lemma" href="/lemma/kha/1">kha</a></span>'
+    assert old in ARTICLE_BYTES.decode()
+    prefix = f'<sup>{qualifier}</sup>' if qualifier else ''
+    body = ARTICLE_BYTES.decode().replace(old,
+        f'<span class="link">↑{prefix}<a class="link lemma" href="/lemma/{label}/2">{label}</a></span>').encode()
+    article = parse_database_article(body, source_metadata=SOURCE | {'sha256':hashlib.sha256(body).hexdigest()})
+    records = extract_article(article, snapshot_id='test', extraction_run_id='test')
+    source, = [r for r in records if r['record_type']=='entry']
+    assert source['homonym'] == '2'  # target qualifiers must never shadow article identity
+    ref, = [r for r in records if r.get('html_target_members')]
+    projection = record()
+    projection.update(identity=article['source_identifier'], source=dict(article_source_text=article['article_source_text']),
+        review_text_sha256=hashlib.sha256(article['article_source_text'].encode()).hexdigest(),
+        original_records=[source, ref], nodes=[dict(id='xref',kind='cross_reference',
+            lexical_record_id=ref['id'],start=ref['source_spans'][0]['start'],end=ref['source_spans'][0]['end'])])
+    return projection, ref
+
+
+def test_html_comma_pipeline_qualifies_only_explicit_first_member_and_preserves_sql(tmp_path):
+    projection, ref = html_comma_fixture()
+    targets = [entry('ka1',lemma='ka'),entry('ka2',lemma='ka',homonym='2'),entry('kha1',lemma='kha')]
+    inspected, = view([projection],EntryIndex([projection['original_records'][0]]+targets))
+    resolution = inspected['cross_references'][0]['canonical_resolution']
+    assert resolution['status']=='unresolved'
+    assert resolution['target_members_status']=='complete'
+    assert [m.get('target_entry_id') for m in resolution['target_members']]==['ka2','kha1']
+    assert [m['homonym_qualifier'] for m in resolution['target_members']]==['2',None]
+    result = entry_view(inspected)
+    assert ''.join(s['text'] for s in result['segments'])==inspected['review_text']
+    assert [s['text'] for s in result['segments'] if 'cross_reference_member' in s]==['2ka','kha']
+    db=create(tmp_path/'html.sqlite'); ingest(db,result);db.commit()
+    assert db.execute('SELECT target,status FROM xref').fetchall()==[(None,'unresolved')]
+    assert db.execute('SELECT target,status FROM xref_member ORDER BY ordinal').fetchall()==[('ka2','resolved'),('kha1','resolved')]
+    assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+    db.close()
+
+
+def test_html_comma_keeps_homonyms_witness_choices_and_nbsp_distinct():
+    projection, ref = html_comma_fixture('ka, kha, ga\u00a0ba',qualifier='')
+    index=EntryIndex([entry('ka1'),entry('ka2',homonym='2'),entry('kha-a',lemma='kha'),
+                      entry('kha-b',lemma='kha'),entry('ga',lemma='ga ba')])
+    result=index.resolve_html_target_members(ref,text=projection['source']['article_source_text'],
+        source_binding=dict(identity=projection['identity'],text_sha256=projection['review_text_sha256']))
+    members=result['canonical_resolution']['target_members']
+    assert [m['resolution_status'] for m in members]==['ambiguous','resolved','unresolved']
+    assert members[0]['exact_index_candidate_ids']==['ka1','ka2']
+    assert members[1]['target_lexical_entity'] and 'target_entry_id' not in members[1]
+    assert members[2]['parsed_target']['lexical_target']=='ga\u00a0ba'
+
+
+@pytest.mark.parametrize('damage',['identity','text','raw','span','ordinal','separator','qualifier'])
+def test_html_comma_rejects_stale_or_inexact_bindings(damage):
+    projection, ref=html_comma_fixture()
+    text=projection['source']['article_source_text']
+    evidence=ref['html_target_members']
+    if damage=='identity': evidence['source_identity']='other'
+    if damage=='text': evidence['text_sha256']='other'
+    if damage=='raw': evidence['source_sha256']='other'
+    if damage=='span': evidence['parent_span']['end']+=1
+    if damage=='ordinal': evidence['members'][0]['ordinal']=1
+    if damage=='separator': evidence['members'][1]['source_span']['start']-=1
+    if damage=='qualifier': evidence['members'][1]['homonym']='2'
+    index=EntryIndex([entry('target',lemma='kha')])
+    result=index.resolve_html_target_members(ref,text=text,
+        source_binding=dict(identity=projection['identity'],text_sha256=projection['review_text_sha256']))
+    assert 'target_members' not in result['canonical_resolution']

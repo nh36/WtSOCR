@@ -194,3 +194,38 @@ def test_trailing_arrow_typed_sibling_is_separately_source_bound(tmp_path):
         resolution = index.resolve_manifestation(new)['canonical_resolution']
         assert resolution['status'] == 'resolved'
         assert resolution['target_parsing_evidence']['target_source_locator'] == target_loc
+
+
+def test_html_comma_dom_evidence_replay_keeps_exact_source_and_accepted_records(tmp_path):
+    from badw_article_parser import replay_empty_reference_labels
+    from test_badw_dictionary_target_members import html_comma_fixture
+    projection, ref=html_comma_fixture()
+    # Replay the actual cached object through the frozen projection adapter.
+    body=ARTICLE_BYTES.decode().replace(
+        '<span class="link">↑<a class="link lemma" href="/lemma/kha/1">kha</a></span>',
+        '<span class="link">↑<sup>2</sup><a class="link lemma" href="/lemma/ka, kha/2">ka, kha</a></span>').encode()
+    (tmp_path/'source.html').write_bytes(body)
+    projection['source']['source_object']=SOURCE | {'sha256':hashlib.sha256(body).hexdigest(),'object_path':'source.html'}
+    proof=ref.pop('html_target_members')
+    ref['canonical_resolution']={'status':'unresolved'}
+    new=replay_empty_reference_labels(projection,tmp_path)['original_records'][1]
+    assert new['html_target_members']==proof
+    assert new['id']==ref['id'] and new['source_spans']==ref['source_spans']
+    assert 'html_target_members' not in ref and 'canonical_resolution' not in new
+    ref['canonical_resolution']={'status':'resolved','target_entry_id':'existing'}
+    assert replay_empty_reference_labels(projection,tmp_path)==projection
+
+
+def test_html_comma_parser_rejects_unbounded_or_untyped_qualifiers():
+    for content in [
+        '↑2<a href="/lemma/ka, kha/2">ka, kha</a>',
+        '↑<sup>2</sup> <a href="/lemma/ka, kha/2">ka, kha</a>',
+        '↑<a href="/lemma/ka, kha/2">ka, kha</a> (?)',
+        '↑<a href="/lemma/ka, kha/2">ka, 2kha</a>',
+        '↑<a href="/lemma/ka, kha/2">ka, <sup>2</sup>kha</a>',
+        '↑<a href="/lemma/ka, kha/2">ka, kha (?)</a>',
+        '↑<a href="/lemma/ka, kha/2">ka, </a>',
+    ]:
+        body=('<div class="text"><span class="link">'+content+'</span></div>').encode()
+        parsed=parse_database_article(body,source_metadata=SOURCE | {'sha256':hashlib.sha256(body).hexdigest()})
+        assert all('html_target_members' not in r for r in parsed['cross_references'])

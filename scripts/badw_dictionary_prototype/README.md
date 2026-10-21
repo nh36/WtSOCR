@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc8` instead (`run16` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc9` instead (`run17` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,15 +78,15 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run16 \
+  --reader work/badw_full_reader_20261020/run17 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 225 HTML and 121 PDF
-missing exact identities; 118 PDF ambiguities. The diagnosed empty-label parser
+336 HTML and three PDF identity/manifestation mismatches; 221 HTML and 121 PDF
+missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -177,6 +177,21 @@ destinations are unchanged. This is an extraction boundary defect, not a
 printing-error finding. After this family: HTML **4,721 resolved / 561 unresolved**;
 PDF unchanged; total **7,565 resolved / 803 residual**.
 
+Six editorial anchors contain comma-separated lists in **bu ram chaṅ**, **drag
+po**, **rmyaṅ**, **skya thal**, **’byor ba**, and **’dul**. Exact DOM boundaries,
+raw-object and text hashes, literal commas and any adjacent superscript now bind
+12 separate targets. Eight resolve; two homonym sets remain ambiguous and two
+exact labels remain absent. Only a visible superscript qualifies the first
+member; the combined URL's homonym suffix never qualifies the entire list.
+Literal nonbreaking spaces are preserved and not silently normalized. Plural
+parents remain unresolved. This is a parser repair, not a printed-error finding.
+After this family: HTML **4,729 resolved / 557 unresolved / two ambiguous**;
+PDF unchanged; total **7,573 resolved / 801 residual**. The full differential
+finds exactly six changed references and 29,871 identical witnesses; source
+characters, citation identities, structural metadata and accepted destinations
+remain unchanged. Browser tests follow all eight new links and explain all four
+uncertain members, in addition to the original 47-member regression fixture.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -189,9 +204,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run16 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run17 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run16 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run17 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

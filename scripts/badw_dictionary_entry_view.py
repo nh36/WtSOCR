@@ -184,7 +184,8 @@ def entry_view(inspected, bibliography=None):
                 if (member.get('ordinal') != ordinal or
                         binding.get('identity') != p['identity'] or
                         not binding.get('text_sha256') or
-                        binding['text_sha256'] != p.get('original_structure', {}).get('source_faithful_sha256') or
+                        binding['text_sha256'] != (p['review_text_sha256'] if p['source_kind'] == 'html' else
+                            p.get('original_structure', {}).get('source_faithful_sha256')) or
                         not previous_end <= start < end <= node['end'] or
                         text[start:end] != member['literal']):
                     raise ValueError('target member differs from bound source span')

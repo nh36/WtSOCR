@@ -21,7 +21,7 @@ def classify(ref, unit, index):
     parsed = unit.get('printed_target') or unit.get('parsed_target') or {}
     label = parsed.get('lexical_target') or unit.get('lexical_target') or unit.get('wording') or unit.get('literal') or ''
     url = ref.get('source_url')
-    if url:
+    if url and unit is ref:
         parts = urlsplit(url).path.split('/')
         if len(parts) == 4 and parts[1] == 'lemma':
             label = unquote(parts[2])
@@ -33,7 +33,7 @@ def classify(ref, unit, index):
     if reviewed_editorial or reviewed_printed:
         label = review['lemma']
     candidates = sorted(index.labels.get(label, set()))
-    accepted_candidates = unit.get('candidate_entry_ids', [])
+    accepted_candidates = unit.get('candidate_entry_ids', unit.get('exact_index_candidate_ids', []))
     status = unit.get('resolution_status', unit.get('status'))
     if status == 'ambiguous':
         cause, reason = 'ambiguity', 'Several exact homonym identities; source qualifier does not select one.'
@@ -62,6 +62,7 @@ def case_record(entry, ref, unit, index):
         source_url=ref.get('source_url'), sources=entry['sources'],
         component_id=ref['component_id'], member_id=unit.get('member_id'),
         resolution_evidence=unit.get('resolution_evidence',ref.get('resolution_evidence')),
+        member_resolution=unit if unit is not ref else None,
         **classify(ref,unit,index))
 
 

@@ -181,6 +181,9 @@ def view(records, index):
                 # targets by approximate spelling in a presentation adapter.
                 review = record.get('reviewed_cross_reference_targets', {}).get(r['id'])
                 references.append(index.resolve_reviewed_editorial_target(r, review) if review else
+                                  index.resolve_html_target_members(r, text=text, source_binding=dict(
+                                      identity=identity, text_sha256=record["review_text_sha256"]))
+                                  if record["source_kind"] == "html" and r.get("html_target_members") else
                                   r if "canonical_resolution" in r else index.resolve_manifestation(r))
         if record["source_kind"] == "pdf":
             # Exact source target candidates retain their spans through reader binding.

@@ -170,6 +170,87 @@ class EntryIndex:
         self._same_entity(result['canonical_resolution'])
         return result
 
+    def resolve_html_target_members(self, occurrence, *, text, source_binding):
+        """Resolve an exact DOM comma list without trusting its combined URL.
+
+        Raw-object, text and occurrence bindings are all required. Qualifiers
+        belong to the member carrying the visible superscript; URL suffixes
+        are never distributed across the list. Failures retain the old result.
+        """
+        source = copy.deepcopy(occurrence)
+        previous = source.pop('canonical_resolution', None)
+        result = self.resolve_manifestation(source)
+        if (previous or {}).get('status') == 'resolved':
+            return copy.deepcopy(occurrence)
+        if result['canonical_resolution']['status'] == 'resolved':
+            return result
+        evidence = occurrence.get('html_target_members', {})
+        spans = occurrence.get('source_spans', [])
+        if (evidence.get('method') != 'exact_dom_comma_list' or len(spans) != 1 or
+                not source_binding.get('identity') or not source_binding.get('text_sha256') or
+                evidence.get('source_identity') != source_binding['identity'] or
+                evidence.get('text_sha256') != source_binding['text_sha256'] or
+                hashlib.sha256(text.encode()).hexdigest() != source_binding['text_sha256'] or
+                not evidence.get('source_sha256') or
+                spans[0].get('source_id') != source_binding['identity'] or
+                spans[0].get('source_sha256') != evidence['source_sha256']):
+            return result
+        parent = evidence.get('parent_span', {})
+        a, b = parent.get('start'), parent.get('end')
+        targets = evidence.get('members', [])
+        anchor = evidence.get('anchor_locator', {})
+        if (not isinstance(a, int) or not isinstance(b, int) or
+                not 0 <= a < b <= len(text) or
+                (spans[0].get('start'), spans[0].get('end')) != (a, b) or
+                text[a] != occurrence.get('marker') or len(targets) < 2 or
+                anchor.get('visible_text_end') != b):
+            return result
+        members, end = [], a + 1
+        for ordinal, target in enumerate(targets):
+            span = target.get('source_span', {})
+            lexical_span = target.get('lexical_span', {})
+            start, finish = span.get('start'), span.get('end')
+            left, right = lexical_span.get('start'), lexical_span.get('end')
+            label, homonym = target.get('lexical_target'), target.get('homonym')
+            separator = None if ordinal == 0 else ', '
+            if (target.get('ordinal') != ordinal or not isinstance(start, int) or
+                    not isinstance(finish, int) or not isinstance(left, int) or
+                    not start <= left < finish == right <= b or start != end + (2 if ordinal else 0) or
+                    (ordinal and text[end:start] != separator) or
+                    not isinstance(label, str) or not label or label != label.strip() or
+                    not all(c.isalpha() or c in " ’'\u00a0" for c in label) or text[left:right] != label or
+                    (homonym is not None and (ordinal != 0 or not re.fullmatch(r'[1-9][0-9]?', str(homonym)))) or
+                    text[start:left] != (homonym or '') or
+                    (ordinal == 0 and anchor.get('visible_text_start') != left)):
+                return result
+            ids = sorted(self.identities.get((label, homonym), set()) if homonym else self.labels.get(label, set()))
+            keys = {(self.records[i]['headword']['loc'], str(self.records[i].get('homonym') or '')) for i in ids}
+            status = 'unresolved' if not ids else 'ambiguous' if len(keys) > 1 else 'resolved'
+            member = dict(ordinal=ordinal, literal=text[start:finish], source_span=dict(start=start, end=finish),
+                source_binding=dict(source_binding), preceding_separator=separator,
+                parsed_target=dict(lexical_target=label, homonym=homonym, lexical_span=lexical_span,
+                                   shape='exact_dom_comma_member', valid=True),
+                homonym_qualifier=homonym, exact_index_candidate_ids=ids, resolution_status=status)
+            if status == 'resolved':
+                member['target_lexical_entity'] = self.target_identity(ids[0])
+                if len(ids) == 1:
+                    member['target_entry_id'] = ids[0]
+            else:
+                member['residual_reason'] = ('multiple_exact_homonym_identities' if ids
+                                             else 'exact_target_absent_from_acquired_index')
+            members.append(member)
+            end = finish
+        if end != b:
+            return result
+        annotation = result['canonical_resolution']
+        resolved = sum(m['resolution_status'] == 'resolved' for m in members)
+        annotation.update(method='exact_source_bound_html_comma_members', target_members=members,
+            target_members_status='complete' if resolved == len(members) else 'partial' if resolved else 'unresolved',
+            target_parsing_evidence=evidence)
+        annotation.pop('target_entry_id', None)
+        annotation.pop('target_lexical_entity', None)
+        return result
+
     def resolve_source_candidate_with_members(self, occurrence, *, structure, text,
                                               source_binding):
         """Annotate independently bounded, explicitly separated PDF targets.
