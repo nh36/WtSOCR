@@ -68,6 +68,29 @@ const path=require('node:path');
    await page.keyboard.press('Escape');assert(await button.evaluate(n=>n===document.activeElement));citations++;
   }
  }
+ // Five individually source-bound malformed editorial hrefs: four destinations,
+ // one absent. The original broken URL remains evidence in every exported row.
+ let editorialJourneys=0,editorialAbsent=0;
+ for(const [label,homonym] of [['ldaṅs','2'],['nod','1'],['rbas','1'],['snom','2'],['kun las btus pa','1']]){
+  const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===label&&String(e.homonym)===homonym);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();await go(entry);
+  const ref=entry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_editorial_target');assert(ref);
+  assert(ref.source_url.includes('%3Ctib%3E'));
+  assert.equal(ref.resolution_evidence.target_review.source_target_url,ref.source_url);
+  if(ref.status==='resolved'){
+   const href='#'+encodeURIComponent(ref.target_entry_id);
+   const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
+   await links.nth(chosen).click();await page.waitForFunction(h=>location.hash===h,href);
+   await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(ref.target_entry_id).headword.loc);
+   await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);editorialJourneys++;
+  }else{
+   assert.equal(ref.status,'unresolved');assert.equal(ref.candidate_entry_ids.length,0);
+   await page.locator('.reading .uncertain-reference').filter({hasText:ref.wording}).first().click();
+   assert((await page.locator('#reference-detail-content').textContent()).includes('no destination'));
+   await page.keyboard.press('Escape');editorialAbsent++;
+  }
+ }
+ assert.equal(editorialJourneys,4);assert.equal(editorialAbsent,1);
  // Actual unresolved bibliography identities in the current full corpus; the
  // current apparatus resolves the former preview's unresolved examples.
  for(const id of ['badw:entry:b02929dd7cac236341035182a2156e52083e149569e05a4526464d99a36cff62','badw:entry:2e1d21ca0ef668f56b2df58656c2433e124595e2c90485d45c4b04c92a20cd89','badw:pdf:badw-v3-ada4e0c7f95483b5511f159d715f24d5d1cac8a74143c1256d5b3f8ea7462b70:489']){
@@ -153,6 +176,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

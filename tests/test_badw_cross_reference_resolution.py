@@ -70,6 +70,34 @@ def test_review_bound_to_literal_and_source():
             EntryIndex([entry()]).resolve(r,reviewed_target=review)
 
 
+def test_reviewed_editorial_href_preserves_original_and_requires_exact_review():
+    r = reference('https://wts-digital.badw.de/lemma/%3Ctib%3Eka/1')
+    index = EntryIndex([entry()])
+    assert index.resolve_manifestation(r)['canonical_resolution']['status'] == 'unresolved'
+    review = reviewed(r, homonym='1', source_target_url=r['target_url'],
+        annotation_id='review-1', binding={'hash': 'frozen'}, physical_selectors=[{'raw': 'source'}],
+        ranges=[{'start': 2, 'end': 4, 'literal': '↑ka'}])
+    before = copy.deepcopy(r)
+    result = index.resolve_reviewed_editorial_target(r, review)
+    assert r == before
+    assert {k: v for k, v in result.items() if k != 'canonical_resolution'} == before
+    assert result['canonical_resolution']['target_entry_id'] == 'entry-1'
+    assert result['canonical_resolution']['method'] == 'reviewed_exact_editorial_target'
+    assert result['canonical_resolution']['target_review'] == review
+    assert EntryIndex([]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+    for field in ('source_target_url', 'literal', 'occurrence_id', 'source_spans', 'annotation_id', 'binding', 'physical_selectors', 'ranges'):
+        bad = copy.deepcopy(review)
+        bad[field] = None
+        with pytest.raises(ValueError, match='bound'):
+            index.resolve_reviewed_editorial_target(r, bad)
+    with pytest.raises(ValueError, match='accepted'):
+        index.resolve_reviewed_editorial_target(reference(), review)
+    frozen = copy.deepcopy(r)
+    frozen['canonical_resolution'] = dict(status='resolved', target_entry_id='previous')
+    with pytest.raises(ValueError, match='accepted'):
+        index.resolve_reviewed_editorial_target(frozen, review)
+
+
 def test_deterministic_index_and_resolution():
     a,b=entry(),entry("entry-2",lemma="kha",url="https://example/lemma/kha/1")
     assert EntryIndex([a,b]).resolve(reference()) == EntryIndex([b,a,a]).resolve(reference())

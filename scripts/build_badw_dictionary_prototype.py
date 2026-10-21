@@ -179,7 +179,9 @@ def view(records, index):
             if r["record_type"] == "cross_reference":
                 # Reuse the existing canonical resolver; never resolve printed
                 # targets by approximate spelling in a presentation adapter.
-                references.append(r if "canonical_resolution" in r else index.resolve_manifestation(r))
+                review = record.get('reviewed_cross_reference_targets', {}).get(r['id'])
+                references.append(index.resolve_reviewed_editorial_target(r, review) if review else
+                                  r if "canonical_resolution" in r else index.resolve_manifestation(r))
         if record["source_kind"] == "pdf":
             # Exact source target candidates retain their spans through reader binding.
             structure = record["original_structure"]

@@ -256,6 +256,33 @@ class EntryIndex:
         if target:resolution['target_lexical_entity']=self.target_identity(target)
         return result
 
+    def resolve_reviewed_editorial_target(self, occurrence, review):
+        """Apply an offline-validated exact interpretation; keep the defective URL.
+
+        This is a separate editorial assertion, never a URL normalizer. Existing
+        accepted destinations cannot be replaced through this path.
+        """
+        source = copy.deepcopy(occurrence)
+        old = source.pop('canonical_resolution', None)
+        if (old and old.get('status') == 'resolved') or self.resolve_manifestation(source)['canonical_resolution']['status'] == 'resolved':
+            raise ValueError('review cannot replace an accepted cross-reference')
+        if (not source.get('target_url') or review.get('source_target_url') != source['target_url']
+                or not review.get('annotation_id') or not review.get('binding')
+                or not review.get('physical_selectors') or not review.get('ranges')):
+            raise ValueError('editorial target review is not source-bound')
+        url = source.pop('target_url')
+        result = self.resolve(source, reviewed_target=review)
+        result['target_url'] = url
+        resolution = result['canonical_resolution']
+        resolution['method'] = 'reviewed_exact_editorial_target'
+        self._same_entity(resolution)
+        if resolution['status'] != 'resolved':
+            resolution['residual_reason'] = ('multiple_exact_homonym_identities' if resolution['candidate_entry_ids']
+                else 'reviewed_target_absent_from_acquired_index')
+        target = resolution.get('target_entry_id')
+        if target: resolution['target_lexical_entity'] = self.target_identity(target)
+        return result
+
     def resolve(self, occurrence, *, reviewed_target=None):
         """Return a copy annotated with exact-index resolution.
 

@@ -96,6 +96,44 @@ def prediction(p):
         start=0, end=len(p['review_text']), parent=None)], edges=[])
 
 
+def test_reviewed_editorial_target_is_bound_and_does_not_rewrite_observations(tmp_path):
+    p = packet(tmp_path)
+    base = prediction(p)
+    ref = dict(record_type='cross_reference', id='xref', target_label='ulkā',
+               target_url='https://wts-digital.badw.de/lemma/%3Ctib%3Eulk%C4%81/1',
+               source_spans=[dict(source_id=p['identity'], start=11, end=15)])
+    base['original_records'] = [ref]
+    base['nodes'].append(dict(id='refnode', kind='cross_reference', start=11, end=15,
+                             parent='root', lexical_record_id='xref'))
+    a = claim(p)
+    a['kind'] = 'cross_reference_target'
+    a['claim'] = dict(occurrence_id='xref', source_target_url=ref['target_url'],
+        source_target_label='ulkā', lemma='ulkā', homonym='1',
+        basis='reviewed_malformed_editorial_href')
+    before = copy.deepcopy(base)
+    accepted = run(tmp_path, p, [a])
+    result = annotations.apply_validated_annotations(p, base, accepted)
+    assert base == before
+    assert result['original_records'] == before['original_records']
+    assert result['nodes'] == before['nodes']
+    review = result['reviewed_cross_reference_targets']['xref']
+    assert review['source_spans'] == ref['source_spans']
+    assert review['annotation_id'] == a['annotation_id']
+    for field, value in [('source_target_url', 'other'), ('source_target_label', 'other'), ('occurrence_id', 'other')]:
+        bad = copy.deepcopy(a)
+        bad['claim'][field] = value
+        with pytest.raises(ValueError, match='cross-reference'):
+            annotations.apply_validated_annotations(p, base, run(tmp_path, p, [bad]))
+    bad = copy.deepcopy(base)
+    bad['nodes'][-1]['start'] = 10
+    with pytest.raises(ValueError, match='exact source occurrence'):
+        annotations.apply_validated_annotations(p, bad, accepted)
+    for status in ('candidate', 'rejected'):
+        inactive = copy.deepcopy(a)
+        inactive['status'] = status
+        assert not annotations.apply_validated_annotations(p, base, run(tmp_path, p, [inactive]))['reviewed_cross_reference_targets']
+
+
 def relationship(p, relation='gloss_of', status='accepted'):
     a = claim(p, ranges=[dict(start=0, end=len(p['review_text']), literal=p['review_text'])],
               status=status)

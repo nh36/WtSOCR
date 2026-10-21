@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc1` instead (`run9` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc2` instead (`run10` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,7 +78,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run9 \
+  --reader work/badw_full_reader_20261020/run10 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -89,6 +89,22 @@ Its diagnostic buckets are **provisional**, not seven-way scholarly adjudication
 missing exact identities; 118 PDF ambiguities; one HTML parser-boundary failure.
 Missing identities do not establish acquisition gaps or printed errors. No printed
 or editorial correction is asserted by this census. These cases still need review.
+
+Five malformed editorial hrefs containing a literal `<tib>` opening tag are
+individually reviewed in the existing semantic annotation ledger. Exact raw HTML,
+visible labels, explicit homonym numbers, source hashes, physical selectors and
+unchanged arrow extents bind each interpretation. Four now link: **ldaṅs² →
+ldaṅ²**, **nod → mno¹**, **rbas → sba²**, **snom² → nom²**. The target **bslab pa
+kun las btus pa¹**, cited in **kun las btus pa**, remains absent. Original URLs
+and source readings are retained; this is evidence of malformed editorial HTML,
+not a claim about printing errors. No general URL normalization is applied.
+After this family: HTML **4,713 resolved / 569 unresolved**; PDF unchanged;
+total **7,545 resolved / 818 residual**. The corresponding ledger has 344 HTML
+identity mismatches, 224 HTML missing identities and one HTML parser-boundary
+failure; PDF remains 118 ambiguities, 128 missing identities and three identity
+mismatches. These are provisional diagnostic groups, with the absent reviewed
+editorial target explicitly distinguished. The remaining scholarly source review
+has not been completed.
 
 ## Bounded historical LoC script experiment
 
@@ -102,9 +118,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run9 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run10 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run9 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run10 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

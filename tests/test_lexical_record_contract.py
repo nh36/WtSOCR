@@ -78,6 +78,25 @@ def test_printed_resolution_review_must_remain_bound_to_source():
     assert any("not source-bound" in error for error in validate(rows))
 
 
+def test_editorial_resolution_keeps_bad_url_and_checks_reviewed_identity():
+    rows = corpus()
+    rows[5]['target_url'] = 'https://wts-digital.badw.de/lemma/%3Ctib%3Eka/1'
+    rows[5]['target_label'] = 'ka'
+    review = dict(occurrence_id=rows[5]['id'], source_spans=rows[5]['source_spans'],
+        literal='ka', lemma='ka', source_target_url=rows[5]['target_url'],
+        annotation_id='review', binding={'hash': HASH}, physical_selectors=[{'source': HASH}],
+        ranges=[{'start': 0, 'end': 1, 'literal': 'ka'}],
+        review=dict(reviewer='test', reviewed_at='2026-10-20', evidence='Raw href checked'))
+    rows[5] = EntryIndex([rows[0]]).resolve_reviewed_editorial_target(rows[5], review)
+    assert validate(rows) == []
+    for field, value in [('source_target_url', 'wrong'), ('literal', 'kha'), ('binding', {})]:
+        broken = copy.deepcopy(rows)
+        broken[5]['canonical_resolution']['target_review'][field] = value
+        assert any('not source-bound' in error for error in validate(broken))
+    rows[0]['headword']['loc'] = 'kha'
+    assert any('reviewed printed target' in error for error in validate(rows))
+
+
 def test_rejects_wylie_label_as_layer_and_invalid_span_hash() -> None:
     records = copy.deepcopy(corpus())
     records[0]["layer"] = "wylie"

@@ -194,6 +194,15 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("unsupported pilot form mention")
         elif row["kind"] == "relationship":
             relationship_claim(claim, ranges)
+        elif row["kind"] == "cross_reference_target":
+            _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
+                          "lemma", "homonym", "basis"))
+            if (packet["source_kind"] != "html" or len(ranges) != 1 or
+                    any(not _string(claim[k]) for k in ("occurrence_id", "source_target_url",
+                        "source_target_label", "lemma", "homonym")) or
+                    not re.fullmatch(r"[1-9][0-9]*", claim["homonym"]) or
+                    claim["basis"] != "reviewed_malformed_editorial_href"):
+                raise ValueError("invalid reviewed editorial cross-reference target")
         elif row["kind"] == "citable_passage":
             # A reviewed extent, not a newly inferred sense or language node.
             _keys(claim, ())
@@ -312,6 +321,29 @@ def apply_validated_annotations(packet, prediction, annotations):
                 ids.append(row["annotation_id"])
                 ids.sort()
     result["semantic_annotations"] = selected
+    targets = {}
+    for row in selected:
+        if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
+            continue
+        claim = row["claim"]
+        matches = [r for r in result.get("original_records", [])
+                   if r.get("record_type") == "cross_reference" and r["id"] == claim["occurrence_id"]]
+        if len(matches) != 1 or claim["occurrence_id"] in targets:
+            raise ValueError("reviewed cross-reference absent, duplicated or conflicting")
+        occurrence = matches[0]
+        span = row["ranges"][0]
+        nodes = [n for n in result["nodes"] if n.get("lexical_record_id") == occurrence["id"]
+                 and n["kind"] == "cross_reference"]
+        if (len(nodes) != 1 or (nodes[0]["start"], nodes[0]["end"]) != (span["start"], span["end"]) or
+                occurrence.get("target_url") != claim["source_target_url"] or
+                occurrence.get("target_label") != claim["source_target_label"]):
+            raise ValueError("reviewed cross-reference differs from exact source occurrence")
+        targets[occurrence["id"]] = dict(occurrence_id=occurrence["id"],
+            source_spans=deepcopy(occurrence["source_spans"]), literal=occurrence["target_label"],
+            source_target_url=occurrence["target_url"], lemma=claim["lemma"], homonym=claim["homonym"],
+            annotation_id=row["annotation_id"], binding=row["binding"],
+            physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
+    result["reviewed_cross_reference_targets"] = targets
     passages = []
     seen_passages = set()
     for row in selected:

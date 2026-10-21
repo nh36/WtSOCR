@@ -187,7 +187,7 @@ def validate(records: Iterable[dict[str, Any]]) -> list[str]:
                         if claim.get("status") != status or invalid_target:
                             _error(errors, line, "canonical_resolution status/target disagrees with candidates")
                     if (claim.get("method_version") != "badw-cross-reference-exact-v1" or
-                            claim.get("method") not in {"exact_explicit_url", "reviewed_exact_printed_target", "no_reviewed_target"} or
+                            claim.get("method") not in {"exact_explicit_url", "reviewed_exact_printed_target", "reviewed_exact_editorial_target", "no_reviewed_target"} or
                             not isinstance(claim.get("entry_index_sha256"), str) or
                             not SHA256.fullmatch(claim.get("entry_index_sha256", ""))):
                         _error(errors, line, "canonical_resolution lacks valid method/version/index hash")
@@ -195,9 +195,10 @@ def validate(records: Iterable[dict[str, Any]]) -> list[str]:
                         _error(errors, line, "exact_explicit_url requires source target_url")
                     if claim.get("method") == "no_reviewed_target" and (candidates or row.get("target_url")):
                         _error(errors, line, "no_reviewed_target cannot claim candidates or source URL")
-                    if claim.get("method") == "reviewed_exact_printed_target":
+                    if claim.get("method") in ("reviewed_exact_printed_target", "reviewed_exact_editorial_target"):
                         review = claim.get("target_review")
-                        if (row.get("target_url") or not isinstance(review, dict) or
+                        editorial = claim["method"] == "reviewed_exact_editorial_target"
+                        if ((not editorial and row.get("target_url")) or not isinstance(review, dict) or
                                 review.get("occurrence_id") != row.get("id") or
                                 review.get("source_spans") != row.get("source_spans") or
                                 review.get("literal") != row.get("target_label") or
@@ -205,6 +206,10 @@ def validate(records: Iterable[dict[str, Any]]) -> list[str]:
                                 not isinstance(review.get("review"), dict) or
                                 not all(review["review"].get(k) for k in ("reviewer", "reviewed_at", "evidence"))):
                             _error(errors, line, "printed target review is not source-bound")
+                        if editorial and (not row.get("target_url") or not isinstance(review, dict) or
+                                review.get("source_target_url") != row.get("target_url") or
+                                not all(review.get(k) for k in ("annotation_id", "binding", "physical_selectors", "ranges"))):
+                            _error(errors, line, "editorial target review is not source-bound")
         elif record_type == "editorial_variant":
             if (not isinstance(row.get("entry_id"), str) or not isinstance(row.get("field_path"), str)
                     or not isinstance(row.get("base_reading"), str) or not isinstance(row.get("variant_reading"), str)
@@ -232,7 +237,7 @@ def validate(records: Iterable[dict[str, Any]]) -> list[str]:
                     if claim.get("method") == "exact_explicit_url" and entry.get("stable_url") != row.get("target_url"):
                         _error(errors, line, "canonical_resolution candidate does not match the exact source URL")
                     review = claim.get("target_review")
-                    if claim.get("method") == "reviewed_exact_printed_target" and isinstance(review, dict):
+                    if claim.get("method") in ("reviewed_exact_printed_target", "reviewed_exact_editorial_target") and isinstance(review, dict):
                         if (entry.get("headword", {}).get("loc") != review.get("lemma") or
                                 (review.get("homonym") is not None and
                                  str(entry.get("homonym") or "") != str(review["homonym"]))):

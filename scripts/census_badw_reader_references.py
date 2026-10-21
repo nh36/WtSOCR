@@ -23,6 +23,12 @@ def classify(ref, unit, index):
         parts = urlsplit(url).path.split('/')
         if len(parts) == 4 and parts[1] == 'lemma':
             label = unquote(parts[2])
+    evidence = unit.get('resolution_evidence', ref.get('resolution_evidence')) or {}
+    review = evidence.get('target_review') or {}
+    reviewed_editorial = (evidence.get('method') == 'reviewed_exact_editorial_target'
+                         and review.get('source_target_url') == url)
+    if reviewed_editorial:
+        label = review['lemma']
     candidates = sorted(index.labels.get(label, set()))
     accepted_candidates = unit.get('candidate_entry_ids', [])
     status = unit.get('resolution_status', unit.get('status'))
@@ -36,7 +42,8 @@ def classify(ref, unit, index):
         cause, reason = 'missing_exact_identity', 'No exact acquired headword. Acquisition gap, source error and decoding remain competing explanations; not a confirmed printing error.'
     return dict(classification=cause, diagnostic_reason=reason, target_label=label,
                 candidate_destinations=[dict(id=i, headword=index.records[i]['headword'], homonym=index.records[i].get('homonym')) for i in sorted(set(candidates+accepted_candidates))],
-                review_status='investigation_required', printed_facsimile_checked=False)
+                review_status=('editorial_link_reviewed_destination_absent' if reviewed_editorial and not candidates
+                               else 'investigation_required'), printed_facsimile_checked=False)
 
 
 def main():
