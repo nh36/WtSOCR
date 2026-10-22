@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc12` instead (`run20` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc13` instead (`run22` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,14 +78,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run20 \
+  --reader work/badw_full_reader_20261020/run22 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 220 HTML and 117 PDF
+337 HTML and three PDF identity/manifestation mismatches; 217 HTML and 117 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -242,6 +242,20 @@ citations, components and prior accepted destinations are unchanged. Browser
 validation follows the repaired link by keyboard, checks source access, and
 returns through back/forward history.
 
+Four individually reviewed editorial whitespace defects retain their original
+HTML, labels, URLs, source spans and explicit homonym **1**. **piṇḍa pa → pe ña ba**
+and **’brog ’brog → ’drog** now resolve to exact acquired destinations; each
+destination's cached HTML also contains the reciprocal reference. **me loṅ lta
+bu’i ye śes → ye śes lṅa** remains unresolved without an exact acquired identity.
+**po ta la → gru ’dzin** remains unresolved because its numbered href does not
+establish identity with the unnumbered PDF witness. These are source-bound
+interpretations, not general whitespace normalization or claims of printing errors.
+After this family: HTML **4,732 resolved / 554 unresolved / two ambiguous**; PDF
+unchanged; total **7,580 resolved / 794 residual**. Exactly four reference records
+change, with **29,873 byte-identical witnesses**. Source text, citations, components
+and all prior accepted destinations are unchanged. Browser regression checks
+cover both new destinations and both retained uncertainty explanations.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -254,9 +268,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run20 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run22 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run20 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run22 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

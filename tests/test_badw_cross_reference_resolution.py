@@ -53,6 +53,37 @@ def test_no_url_normalization_or_fallback_to_label():
     assert EntryIndex([entry()]).resolve(r)["canonical_resolution"]["status"] == "unresolved"
 
 
+@pytest.mark.parametrize('url,lemma', [
+    ('https://wts-digital.badw.de/lemma/pe%C2%A0%C3%B1a%20ba/1', 'pe ña ba'),
+    ('https://wts-digital.badw.de/lemma/%20%E2%80%99drog/1', '’drog'),
+    ('https://wts-digital.badw.de/lemma/ye%C2%A0%C5%9Bes%20l%E1%B9%85a/1', 'ye śes lṅa'),
+    ('https://wts-digital.badw.de/lemma/gru%C2%A0%E2%80%99dzin/1', 'gru ’dzin'),
+])
+def test_whitespace_href_requires_review_and_keeps_explicit_homonym(url, lemma):
+    from urllib.parse import quote
+    r = reference(url)
+    r['target_label'] = lemma
+    destination = entry(lemma=lemma, url='https://wts-digital.badw.de/lemma/'+quote(lemma, safe='')+'/1')
+    index = EntryIndex([destination])
+    before = copy.deepcopy(r)
+    assert index.resolve_manifestation(r)['canonical_resolution']['status'] == 'unresolved'
+    review = reviewed(r, homonym='1', source_target_url=url,
+        annotation_id='exact-source-review', binding={'hash': 'frozen'},
+        physical_selectors=[{'raw': 'source'}], ranges=[{'start': 2, 'end': 4, 'literal': '↑'+lemma}])
+    review['lemma'] = lemma
+    result = index.resolve_reviewed_editorial_target(r, review)['canonical_resolution']
+    assert result['status'] == 'resolved' and result['target_entry_id'] == destination['id']
+    assert r == before
+    assert EntryIndex([]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+    # An exact lexical spelling does not establish the URL's numbered identity.
+    unnumbered = dict(destination, homonym='', stable_url='https://example/unnumbered')
+    assert EntryIndex([unnumbered]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+    alternative = dict(destination, id='second-witness', stable_url='https://example/second')
+    choice = EntryIndex([destination, alternative]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']
+    assert choice.get('target_entry_id') is None
+    assert set(choice['candidate_entry_ids']) == {destination['id'], alternative['id']}
+
+
 def test_printed_homonyms_require_evidence_and_never_nearest_choice():
     r = reference(None)
     index = EntryIndex([entry(),entry("entry-2",homonym="2",url="https://example/lemma/ka/2")])

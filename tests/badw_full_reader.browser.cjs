@@ -123,6 +123,33 @@ const path=require('node:path');
   }
  }
  assert.equal(editorialJourneys,11);assert.equal(editorialAbsent,2);
+ // Whitespace in four individually reviewed hrefs is kept as source evidence.
+ // Exact destinations navigate; absent or differently qualified identities do not.
+ let whitespaceJourneys=0,whitespaceUnresolved=0;
+ for(const label of ['piṇḍa pa','’brog ’brog','me loṅ lta bu’i ye śes','po ta la']){
+  const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===label);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();await go(entry);
+  const ref=entry.cross_references.find(r=>r.resolution_evidence?.target_review?.annotation_id?.startsWith('badw-reviewed-editorial-whitespace-'));assert(ref);
+  assert.equal(ref.resolution_evidence.target_review.source_target_url,ref.source_url);
+  assert.equal(ref.resolution_evidence.target_review.homonym,'1');
+  if(['piṇḍa pa','’brog ’brog'].includes(label)){
+   assert.equal(ref.status,'resolved');
+   const href='#'+encodeURIComponent(ref.target_entry_id);
+   const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
+   await links.nth(chosen).focus();await page.keyboard.press('Enter');
+   await page.waitForFunction(h=>location.hash===h,href);
+   await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(ref.target_entry_id).headword.loc);
+   assert(await page.locator('#article > .source-access a').count()>0);
+   await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),label);
+   await page.goForward();await page.waitForFunction(h=>location.hash===h,href);whitespaceJourneys++;
+  }else{
+   assert.equal(ref.status,'unresolved');assert.equal(ref.target_entry_id,null);
+   await page.locator('.reading .uncertain-reference').filter({hasText:ref.wording}).first().click();
+   assert((await page.locator('#reference-detail-content').textContent()).includes('no destination'));
+   await page.keyboard.press('Escape');whitespaceUnresolved++;
+  }
+ }
+ assert.equal(whitespaceJourneys,2);assert.equal(whitespaceUnresolved,2);
  // The editorial anchor contains only the apostrophe; its immediately adjacent
  // Tibetan element supplies the rest of the individually reviewed target.
  const splitMeta=entries.get('badw:entry:055cc21052cbdb35872dc282a400ec1493f5ee80480807f9492ad33940476181');
@@ -346,6 +373,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
