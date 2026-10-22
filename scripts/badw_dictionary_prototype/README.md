@@ -13,7 +13,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc11` instead (`run19` retains the LoC-only parent).
+`work/badw_full_reader_20261020/loc12` instead (`run20` retains the LoC-only parent).
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,14 +78,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run19 \
+  --reader work/badw_full_reader_20261020/run20 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 221 HTML and 117 PDF
+336 HTML and three PDF identity/manifestation mismatches; 220 HTML and 117 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -227,6 +227,21 @@ Browser tests follow all three new links, verify source access and history, and
 retain uncertainty on the three qualified HTML references. The case ledger's
 cause assignments remain provisional; exhaustive source review is unfinished.
 
+One individually reviewed broken HTML anchor in **’drend** now links to
+**’dren**. The cached DOM contains only **↑’** inside the anchor, immediately
+followed by a Tibetan-typed **dren** and punctuation. The annotation binds both
+exact spans and the cached HTML hash; validation reparses that DOM. The source
+occurrence remains **59:61**, with its original label, URL and text unchanged.
+The broken URL's homonym number is not inherited: the full exact lemma must
+identify a unique lexical identity, with witness selection if needed. This is
+an editorial HTML anchor defect; no claim about the printed dictionary is made.
+After this family: HTML **4,730 resolved / 556 unresolved / two ambiguous**; PDF
+unchanged; total **7,578 resolved / 796 residual**. The differential finds exactly
+one changed reference and **29,876 byte-identical witnesses**; source text,
+citations, components and prior accepted destinations are unchanged. Browser
+validation follows the repaired link by keyboard, checks source access, and
+returns through back/forward history.
+
 ## Bounded historical LoC script experiment
 
 The optional **Both / LoC / Tibetan** control changes derived display only. Both
@@ -239,9 +254,9 @@ attested forms; substrings and mixed-language spans are excluded. Unavailable
 headwords explicitly explain the limitation. This is not a Wylie converter.
 
 ```sh
-python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run19 \
+python3 scripts/experiment_wts_loc.py --reader work/badw_full_reader_20261020/run20 \
   --output work/wts_loc_experiment_fresh
-python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run19 \
+python3 scripts/build_badw_loc_reader.py --reader work/badw_full_reader_20261020/run20 \
   --experiment work/wts_loc_experiment_fresh --output work/badw_loc_reader_fresh
 python3 -m http.server 8769 --bind 127.0.0.1 --directory work/badw_loc_reader_fresh
 ```

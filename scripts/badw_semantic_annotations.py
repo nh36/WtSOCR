@@ -279,6 +279,31 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         claim["source_target_label"].count("~") != 1 or
                         " ".join(claim["source_target_label"].split()).replace("~", claim["source_headword"]) != claim["lemma"]):
                     raise ValueError("invalid reviewed printed headword substitution")
+            elif claim['basis'] == 'reviewed_split_editorial_anchor':
+                from badw_article_parser import parse_database_article
+                if (packet['source_kind'] != 'html' or len(ranges) != 2 or
+                        'source_headword' in claim or 'destination_heading' in claim or
+                        any(not _string(claim[k]) for k in ('occurrence_id', 'source_target_url',
+                            'source_target_label', 'lemma')) or claim['homonym'] is not None):
+                    raise ValueError('invalid reviewed split editorial anchor')
+                obj = packet['source']['source_object']
+                article = parse_database_article((Path(cache)/obj['object_path']).read_bytes(),
+                    source_metadata=dict(obj, delivery_type='database_article', valid_resource=True))
+                matches = [r for r in article['cross_references']
+                           if (r['locator']['visible_text_start'], r['locator']['visible_text_end']) ==
+                           (ranges[0]['start'], ranges[0]['end']) and r.get('split_target_evidence')]
+                if article['article_source_text'] != packet['review_text'] or len(matches) != 1:
+                    raise ValueError('split editorial anchor lacks exact DOM evidence')
+                ref = matches[0]
+                proof = ref['split_target_evidence']
+                loc = proof['continuation_locator']
+                if (ref['target_url'] != claim['source_target_url'] or
+                        ref['target_text'] != claim['source_target_label'] or
+                        proof['lemma'] != claim['lemma'] or
+                        (loc['visible_text_start'], loc['visible_text_end']) !=
+                        (ranges[1]['start'], ranges[1]['end']) or
+                        ranges[0]['end'] != ranges[1]['start']):
+                    raise ValueError('split editorial anchor differs from exact source interpretation')
             elif (packet["source_kind"] != "html" or len(ranges) != 1 or
                     "source_headword" in claim or 'destination_heading' in claim or
                     any(not _string(claim[k]) for k in ("occurrence_id", "source_target_url",
@@ -486,6 +511,8 @@ def apply_validated_annotations(packet, prediction, annotations):
             source_target_url=occurrence["target_url"], lemma=claim["lemma"], homonym=claim["homonym"],
             annotation_id=row["annotation_id"], binding=row["binding"],
             physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
+        if claim['basis'] == 'reviewed_split_editorial_anchor':
+            targets[occurrence['id']]['basis'] = claim['basis']
     result["reviewed_cross_reference_targets"] = targets
     passages = []
     seen_passages = set()

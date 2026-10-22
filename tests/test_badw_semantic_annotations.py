@@ -138,6 +138,66 @@ def test_reviewed_editorial_target_is_bound_and_does_not_rewrite_observations(tm
         assert not annotations.apply_validated_annotations(p, base, run(tmp_path, p, [inactive]))['reviewed_cross_reference_targets']
 
 
+def split_anchor_packet(tmp_path, continuation='<tib>dren</tib>.'):
+    from badw_article_parser import parse_database_article
+    body = ('<div class="text"><span class="link">↑<a class="link lemma" '
+            'href="/lemma/’/1">’</a></span>' + continuation + '</div>').encode()
+    sha, path = put(tmp_path, body)
+    obj = dict(sha256=sha, object_path=path,
+               final_url='https://wts-digital.badw.de/lemma/’drend/1')
+    article = parse_database_article(body, source_metadata=dict(obj,
+        delivery_type='database_article', valid_resource=True))
+    text = article['article_source_text']
+    p = dict(contract_version=annotations.PACKET_VERSION, identity='split-witness',
+             source_kind='html', source=dict(source_object=obj, article_source_text=text),
+             review_text=text, review_text_sha256=annotations.digest(text))
+    a = claim(p, kind='cross_reference_target', ranges=[
+        dict(start=0, end=2, literal='↑’'), dict(start=2, end=6, literal='dren')])
+    a['claim'] = dict(occurrence_id='xref', source_target_url=article['cross_references'][0]['target_url'],
+        source_target_label='’', lemma='’dren', homonym=None, basis='reviewed_split_editorial_anchor')
+    return p, a, article
+
+
+def test_split_anchor_review_preserves_original_and_does_not_inherit_url_homonym(tmp_path):
+    p, a, article = split_anchor_packet(tmp_path)
+    assert article['cross_references'][0]['split_target_evidence']['lemma'] == '’dren'
+    assert article['cross_references'][0]['target_homonym'] == '1'
+    ref = dict(record_type='cross_reference', id='xref', target_label='’',
+        target_url=a['claim']['source_target_url'], source_spans=[dict(start=0, end=2)])
+    base = prediction(p)
+    base['original_records'] = [ref]
+    base['nodes'].append(dict(id='refnode', kind='cross_reference', start=0, end=2,
+                             parent='root', lexical_record_id='xref'))
+    before = copy.deepcopy(base)
+    result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
+    assert base == before and result['original_records'] == before['original_records']
+    assert result['nodes'] == before['nodes']
+    review = result['reviewed_cross_reference_targets']['xref']
+    assert review['homonym'] is None and review['lemma'] == '’dren'
+    assert review['source_spans'] == ref['source_spans'] and review['ranges'] == a['ranges']
+    assert review['literal'] == '’' and review['source_target_url'] == ref['target_url']
+    for field, value in [('homonym', '1'), ('lemma', '’drend'), ('source_target_label', 'dren'),
+                         ('source_target_url', 'https://other/lemma/’/1')]:
+        bad = copy.deepcopy(a)
+        bad['claim'][field] = value
+        with pytest.raises(ValueError, match='split editorial anchor'):
+            run(tmp_path, p, [bad])
+
+
+@pytest.mark.parametrize('continuation', [
+    ' <tib>dren</tib>.', '<i>dren</i>.', '<tib>dren</tib> und mehr',
+    '<tib>dren (?)</tib>.', '<tib><a href="/lemma/dren/2">dren</a></tib>.',
+    '<tib>dren</tib>', '<tib>dren2</tib>.', '<tib>dren, ga</tib>.'])
+def test_split_anchor_needs_contiguous_typed_unqualified_dom_evidence(tmp_path, continuation):
+    p, a, article = split_anchor_packet(tmp_path, continuation)
+    assert 'split_target_evidence' not in article['cross_references'][0]
+    # The claim must fail even if its ranges are made to agree with this text.
+    a['ranges'][1] = dict(start=2, end=len(p['review_text']), literal=p['review_text'][2:])
+    a['physical_selectors'] = annotations.physical_selectors(p, a['ranges'])
+    with pytest.raises(ValueError, match='split editorial anchor'):
+        run(tmp_path, p, [a])
+
+
 def relationship(p, relation='gloss_of', status='accepted'):
     a = claim(p, ranges=[dict(start=0, end=len(p['review_text']), literal=p['review_text'])],
               status=status)

@@ -98,6 +98,27 @@ def test_reviewed_editorial_href_preserves_original_and_requires_exact_review():
         index.resolve_reviewed_editorial_target(frozen, review)
 
 
+def test_reviewed_split_anchor_keeps_homonyms_ambiguous_and_witness_selection():
+    r = reference('https://wts-digital.badw.de/lemma/%E2%80%99/1')
+    r['target_label'] = '’'
+    review = reviewed(r, homonym=None, source_target_url=r['target_url'],
+        annotation_id='split-review', binding={'hash': 'frozen'},
+        physical_selectors=[{'raw': 'source'}], ranges=[
+            {'start': 2, 'end': 4, 'literal': '↑’'}, {'start': 4, 'end': 8, 'literal': 'dren'}])
+    review['lemma'] = '’dren'
+    one = entry('one', lemma='’dren', url='https://example/lemma/’dren/1')
+    two = entry('two', lemma='’dren', homonym='2', url='https://example/lemma/’dren/2')
+    witness = entry('witness', lemma='’dren', url='https://example/pdf/’dren')
+    def resolve(rows):
+        return EntryIndex(rows).resolve_reviewed_editorial_target(r, review)['canonical_resolution']
+    assert resolve([])['status'] == 'unresolved'
+    assert resolve([one])['target_entry_id'] == 'one'
+    assert resolve([one, two])['status'] == 'ambiguous'
+    selection = resolve([one, witness])
+    assert selection['status'] == 'resolved' and not selection.get('target_entry_id')
+    assert set(selection['candidate_entry_ids']) == {'one', 'witness'}
+
+
 def test_deterministic_index_and_resolution():
     a,b=entry(),entry("entry-2",lemma="kha",url="https://example/lemma/kha/1")
     assert EntryIndex([a,b]).resolve(reference()) == EntryIndex([b,a,a]).resolve(reference())

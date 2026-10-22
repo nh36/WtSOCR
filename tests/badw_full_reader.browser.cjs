@@ -123,6 +123,28 @@ const path=require('node:path');
   }
  }
  assert.equal(editorialJourneys,11);assert.equal(editorialAbsent,2);
+ // The editorial anchor contains only the apostrophe; its immediately adjacent
+ // Tibetan element supplies the rest of the individually reviewed target.
+ const splitMeta=entries.get('badw:entry:055cc21052cbdb35872dc282a400ec1493f5ee80480807f9492ad33940476181');
+ const splitEntry=await (await page.request.get(base+'/'+splitMeta.path)).json();
+ const splitRef=splitEntry.cross_references.find(r=>r.resolution_evidence?.target_review?.basis==='reviewed_split_editorial_anchor');assert(splitRef);
+ assert.deepEqual(splitRef.source_span,{start:59,end:61});
+ assert.equal(splitRef.source_url,'https://wts-digital.badw.de/lemma/%E2%80%99/1');
+ assert.equal(splitRef.resolution_evidence.target_review.lemma,'’dren');
+ assert.equal(splitRef.resolution_evidence.target_review.homonym,null);
+ assert.equal(splitRef.status,'resolved');
+ assert.equal(splitRef.target_entry_id,'badw:entry:c2d69506408ac2708416ce0f7a50c9c945568b5c94242bc447459f58e9468625');
+ await go(splitEntry);
+ const splitHref='#'+encodeURIComponent(splitRef.target_entry_id);
+ const splitLink=page.locator('.reading a').filter({hasText:'’'});
+ const splitChosen=await splitLink.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),splitHref);assert(splitChosen>=0);
+ assert.equal((await splitLink.nth(splitChosen).textContent()).replace('↑',''),'’');
+ await splitLink.nth(splitChosen).focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(h=>location.hash===h,splitHref);
+ await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’dren'));
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’drend'));
+ await page.goForward();await page.waitForFunction(h=>location.hash===h,splitHref);
  // A trailing arrow in a malformed shared anchor has a separately typed
  // sibling target. Its frozen arrow span remains the clickable occurrence.
  const detachedMeta=entries.get('badw:entry:d8553ae3da5102268ab59eff76ae8427e971a905708ea9f6d0cf0f4d204d74b7');
@@ -324,6 +346,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

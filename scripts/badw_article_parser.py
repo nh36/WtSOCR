@@ -637,6 +637,28 @@ def parse_database_article(
                     source_sha256=actual_sha, text_sha256=hashlib.sha256(article_source_text.encode()).hexdigest(),
                     parent_span=dict(start=origin + position, end=origin + end),
                     anchor_locator=anchor_locator, members=members)
+            split_target = None
+            # A broken editorial anchor may contain only the initial apostrophe
+            # of a word, with its contiguous remainder explicitly typed Tibetan.
+            # Expose evidence for individual review; do not repair the URL,
+            # inherit its homonym, or change the historical occurrence span.
+            if (owns_anchor and container_text in ("↑’", "↓’", "↑'", "↓'") and
+                    anchor_literal == container_text[1:] and
+                    link_container.parent is not None):
+                siblings = link_container.parent.children
+                following = siblings[siblings.index(link_container) + 1:]
+                if (len(following) >= 2 and isinstance(following[0], Element) and
+                        following[0].tag == 'tib' and isinstance(following[1], TextNode) and
+                        following[1].text.startswith(('.', ';'))):
+                    tib = following[0]
+                    continuation = exact_text(tib, excluded_classes=HIDDEN_CLASSES,
+                                              excluded_tags=HIDDEN_TAGS)
+                    field = _located_field(tib, fragments)
+                    if (field and field['locator']['visible_text_start'] == origin + end and
+                            continuation and all(c.isalpha() for c in continuation) and
+                            not any(isinstance(c, Element) for c in tib.children)):
+                        split_target = dict(lemma=anchor_literal + continuation,
+                                            continuation_locator=field['locator'])
             cross_references.append({
                 "locator": locator, "container_locator": link_field["locator"],
                 "marker": container_text[position], "source_text": container_text[position:end],
@@ -648,6 +670,7 @@ def parse_database_article(
                 "target_status": "explicit_anchor" if owns_anchor else "exact_typed_sibling_after_trailing_arrow" if detached else "exact_segment_in_shared_anchor" if segment_target else "unresolved_arrow_segment",
                 **({"target_locator": detached} if detached else {}),
                 **({"html_target_members": member_evidence} if member_evidence else {}),
+                **({"split_target_evidence": split_target} if split_target else {}),
             })
 
     example_index = {dom_path(node): index for index, node in enumerate(example_nodes)}
