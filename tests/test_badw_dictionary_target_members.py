@@ -219,3 +219,62 @@ def test_html_comma_rejects_stale_or_inexact_bindings(damage):
     result=index.resolve_html_target_members(ref,text=text,
         source_binding=dict(identity=projection['identity'],text_sha256=projection['review_text_sha256']))
     assert 'target_members' not in result['canonical_resolution']
+
+
+def member_whitespace_fixture():
+    projection, ref = html_comma_fixture('ka, ga\u00a0ba', qualifier='')
+    text = projection['source']['article_source_text']
+    a, b = ref['source_spans'][0]['start'], ref['source_spans'][0]['end']
+    review = dict(basis='reviewed_editorial_member_whitespace', member_ordinal=1,
+        occurrence_id=ref['id'], source_target_url=ref['target_url'], literal=ref['target_label'],
+        source_spans=copy.deepcopy(ref['source_spans']), lemma='ga ba', homonym=None,
+        annotation_id='synthetic-review', binding=dict(text_sha256=projection['review_text_sha256'], view_sha256='synthetic'),
+        physical_selectors=[dict(kind='html_visible_text', source_sha256=ref['html_target_members']['source_sha256'], ranges=[[a,b]])],
+        ranges=[dict(start=a, end=b, literal=text[a:b])], review=dict(evidence='synthetic exact review'))
+    projection['reviewed_cross_reference_targets'] = {ref['id']: review}
+    return projection, ref, review
+
+
+@pytest.mark.parametrize('targets,status', [([], 'unresolved'),
+    ([entry('ga1', lemma='ga ba')], 'resolved'),
+    ([entry('ga1', lemma='ga ba'), entry('ga2', lemma='ga ba', homonym='2')], 'ambiguous'),
+    ([entry('ga1', lemma='ga ba'), entry('ga2', lemma='ga ba')], 'resolved')])
+def test_reviewed_member_pipeline_preserves_neighbor_ambiguity_and_literal(targets, status):
+    projection, ref, review = member_whitespace_fixture()
+    before = copy.deepcopy(projection)
+    index = EntryIndex([projection['original_records'][0], entry('ka1'), entry('ka2', homonym='2')] + targets)
+    inspected, = view([projection], index)
+    assert projection == before
+    result = entry_view(inspected)
+    reference, = result['cross_references']
+    assert reference['status'] == 'unresolved' and reference['target_entry_id'] is None
+    first, second = reference['target_members']
+    assert first['resolution_status'] == 'ambiguous' and first['exact_index_candidate_ids'] == ['ka1','ka2']
+    assert second['resolution_status'] == status and second['literal'] == 'ga\u00a0ba'
+    assert second['parsed_target']['source_lexical_target'] == 'ga\u00a0ba'
+    assert second['parsed_target']['lexical_target'] == 'ga ba'
+    assert second['target_review'] == review and second['homonym_qualifier'] is None
+    assert ''.join(s['text'] for s in result['segments']) == inspected['review_text']
+    if len(targets) == 2 and status == 'resolved':
+        assert 'target_entry_id' not in second and second['target_lexical_entity']
+
+
+@pytest.mark.parametrize('damage', ['ordinal','lemma','homonym','text','raw','span','url','id'])
+def test_reviewed_member_rejects_stale_or_unbound_review(damage):
+    projection, ref, review = member_whitespace_fixture()
+    if damage == 'ordinal': review['member_ordinal'] = 0
+    if damage == 'lemma': review['lemma'] = 'ga pa'
+    if damage == 'homonym': review['homonym'] = '1'
+    if damage == 'text': review['binding']['text_sha256'] = 'other'
+    if damage == 'raw': review['physical_selectors'][0]['source_sha256'] = 'other'
+    if damage == 'span': review['ranges'][0]['start'] += 1
+    if damage == 'url': review['source_target_url'] = 'other'
+    if damage == 'id': review['occurrence_id'] = 'other'
+    with pytest.raises(ValueError, match='editorial member review'):
+        view([projection], EntryIndex([projection['original_records'][0], entry('ka1'), entry('ga1', lemma='ga ba')]))
+
+
+def test_reviewed_member_cannot_replace_accepted_member():
+    projection, ref, review = member_whitespace_fixture()
+    with pytest.raises(ValueError, match='accepted or different target'):
+        view([projection], EntryIndex([projection['original_records'][0], entry('ga', lemma='ga\u00a0ba')]))

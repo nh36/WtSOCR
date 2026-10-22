@@ -264,8 +264,37 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading"))
-            if claim['basis'] == 'reviewed_printed_wrapped_headword':
+                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal"))
+            if claim['basis'] == 'reviewed_editorial_member_whitespace':
+                from badw_article_parser import parse_database_article
+                if (packet['source_kind'] != 'html' or len(ranges) != 1 or
+                        'source_headword' in claim or 'destination_heading' in claim or
+                        type(claim.get('member_ordinal')) is not int or claim['member_ordinal'] < 0 or
+                        any(not _string(claim[k]) for k in ('occurrence_id', 'source_target_url',
+                            'source_target_label', 'lemma')) or claim['homonym'] is not None):
+                    raise ValueError('invalid reviewed editorial member whitespace')
+                obj = packet['source']['source_object']
+                article = parse_database_article((Path(cache)/obj['object_path']).read_bytes(),
+                    source_metadata=dict(obj, delivery_type='database_article', valid_resource=True))
+                matches = [r for r in article['cross_references']
+                           if (r['locator']['visible_text_start'], r['locator']['visible_text_end']) ==
+                           (ranges[0]['start'], ranges[0]['end']) and r.get('html_target_members')]
+                if article['article_source_text'] != packet['review_text'] or len(matches) != 1:
+                    raise ValueError('editorial member lacks exact DOM evidence')
+                ref = matches[0]
+                members = ref['html_target_members']['members']
+                ordinal = claim['member_ordinal']
+                if (ordinal >= len(members) or ref['target_url'] != claim['source_target_url'] or
+                        ref['target_text'] != claim['source_target_label']):
+                    raise ValueError('editorial member differs from exact source interpretation')
+                member = members[ordinal]
+                literal = member['lexical_target']
+                if ('\u00a0' not in literal or literal.replace('\u00a0', ' ') != claim['lemma'] or
+                        member['homonym'] is not None):
+                    raise ValueError('editorial member whitespace interpretation is not exact')
+            elif 'member_ordinal' in claim:
+                raise ValueError('member ordinal requires editorial member review')
+            elif claim['basis'] == 'reviewed_printed_wrapped_headword':
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_target_label', 'lemma')) or
                         claim['source_target_url'] is not None or claim['homonym'] is not None):
@@ -511,8 +540,10 @@ def apply_validated_annotations(packet, prediction, annotations):
             source_target_url=occurrence["target_url"], lemma=claim["lemma"], homonym=claim["homonym"],
             annotation_id=row["annotation_id"], binding=row["binding"],
             physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
-        if claim['basis'] == 'reviewed_split_editorial_anchor':
+        if claim['basis'] in ('reviewed_split_editorial_anchor', 'reviewed_editorial_member_whitespace'):
             targets[occurrence['id']]['basis'] = claim['basis']
+        if claim['basis'] == 'reviewed_editorial_member_whitespace':
+            targets[occurrence['id']]['member_ordinal'] = claim['member_ordinal']
     result["reviewed_cross_reference_targets"] = targets
     passages = []
     seen_passages = set()

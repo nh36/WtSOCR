@@ -170,7 +170,7 @@ class EntryIndex:
         self._same_entity(result['canonical_resolution'])
         return result
 
-    def resolve_html_target_members(self, occurrence, *, text, source_binding):
+    def resolve_html_target_members(self, occurrence, *, text, source_binding, reviewed_member=None):
         """Resolve an exact DOM comma list without trusting its combined URL.
 
         Raw-object, text and occurrence bindings are all required. Qualifiers
@@ -242,6 +242,42 @@ class EntryIndex:
             end = finish
         if end != b:
             return result
+        if reviewed_member is not None:
+            review = reviewed_member
+            ordinal = review.get('member_ordinal')
+            if (review.get('basis') != 'reviewed_editorial_member_whitespace' or
+                    type(ordinal) is not int or not 0 <= ordinal < len(members) or
+                    review.get('occurrence_id') != occurrence.get('id') or
+                    review.get('source_target_url') != occurrence.get('target_url') or
+                    review.get('literal') != occurrence.get('target_label') or
+                    review.get('source_spans') != occurrence.get('source_spans') or
+                    review.get('binding', {}).get('text_sha256') != source_binding['text_sha256'] or
+                    not review.get('binding', {}).get('view_sha256') or
+                    review.get('physical_selectors') != [dict(kind='html_visible_text',
+                        source_sha256=evidence['source_sha256'], ranges=[[a, b]])] or
+                    not all(review.get(k) for k in ('annotation_id', 'physical_selectors', 'ranges', 'review')) or
+                    review['ranges'] != [dict(start=a, end=b, literal=text[a:b])] or
+                    review.get('homonym') is not None):
+                raise ValueError('editorial member review is not source-bound')
+            member = members[ordinal]
+            label = member['parsed_target']['lexical_target']
+            if (member['resolution_status'] == 'resolved' or member['homonym_qualifier'] is not None or
+                    '\u00a0' not in label or label.replace('\u00a0', ' ') != review.get('lemma')):
+                raise ValueError('editorial member review cannot replace an accepted or different target')
+            ids = sorted(self.labels.get(review['lemma'], set()))
+            keys = {(self.records[i]['headword']['loc'], str(self.records[i].get('homonym') or '')) for i in ids}
+            status = 'unresolved' if not ids else 'ambiguous' if len(keys) > 1 else 'resolved'
+            member['parsed_target'].update(source_lexical_target=label, lexical_target=review['lemma'],
+                shape='reviewed_exact_editorial_member')
+            member.update(target_review=copy.deepcopy(review), exact_index_candidate_ids=ids, resolution_status=status)
+            member.pop('residual_reason', None)
+            if status == 'resolved':
+                member['target_lexical_entity'] = self.target_identity(ids[0])
+                if len(ids) == 1:
+                    member['target_entry_id'] = ids[0]
+            else:
+                member['residual_reason'] = ('multiple_exact_homonym_identities' if ids
+                                             else 'reviewed_target_absent_from_acquired_index')
         annotation = result['canonical_resolution']
         resolved = sum(m['resolution_status'] == 'resolved' for m in members)
         annotation.update(method='exact_source_bound_html_comma_members', target_members=members,

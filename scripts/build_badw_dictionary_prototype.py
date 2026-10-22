@@ -180,9 +180,13 @@ def view(records, index):
                 # Reuse the existing canonical resolver; never resolve printed
                 # targets by approximate spelling in a presentation adapter.
                 review = record.get('reviewed_cross_reference_targets', {}).get(r['id'])
-                references.append(index.resolve_reviewed_editorial_target(r, review) if review else
+                if review and review.get('basis') == 'reviewed_editorial_member_whitespace' and (
+                        record['source_kind'] != 'html' or not r.get('html_target_members')):
+                    raise ValueError('reviewed editorial member lacks DOM member evidence')
+                references.append(index.resolve_reviewed_editorial_target(r, review)
+                                  if review and review.get('basis') != 'reviewed_editorial_member_whitespace' else
                                   index.resolve_html_target_members(r, text=text, source_binding=dict(
-                                      identity=identity, text_sha256=record["review_text_sha256"]))
+                                      identity=identity, text_sha256=record["review_text_sha256"]), reviewed_member=review)
                                   if record["source_kind"] == "html" and r.get("html_target_members") else
                                   r if "canonical_resolution" in r else index.resolve_manifestation(r))
         if record["source_kind"] == "pdf":

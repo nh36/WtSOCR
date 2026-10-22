@@ -764,3 +764,43 @@ def test_wrapped_heading_proof_fails_closed(tmp_path, fault):
         d['canonical_object_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
     with pytest.raises((ValueError, FileNotFoundError)):
         run(tmp_path,p,[a])
+
+
+def test_reviewed_editorial_member_whitespace_requires_exact_dom_and_preserves_source(tmp_path):
+    from badw_article_parser import parse_database_article
+    body = ('<div class="text"><span class="link">↑<a class="link lemma" '
+            'href="/lemma/ka,%20ga%C2%A0ba/1">ka, ga\u00a0ba</a></span></div>').encode()
+    sha, path = put(tmp_path, body)
+    obj = dict(sha256=sha, object_path=path, final_url='https://wts-digital.badw.de/lemma/source/1')
+    article = parse_database_article(body, source_metadata=dict(obj, delivery_type='database_article', valid_resource=True))
+    text = article['article_source_text']
+    p = dict(contract_version=annotations.PACKET_VERSION, identity=article['source_identifier'], source_kind='html',
+        source=dict(source_object=obj, article_source_text=text), review_text=text,
+        review_text_sha256=annotations.digest(text))
+    raw = article['cross_references'][0]
+    ref = dict(record_type='cross_reference', id='xref', target_label=raw['target_text'],
+        target_url=raw['target_url'], source_spans=[dict(start=0, end=len(text))])
+    base = prediction(p)
+    base['original_records'] = [ref]
+    base['nodes'].append(dict(id='refnode', kind='cross_reference', start=0, end=len(text), parent='root', lexical_record_id='xref'))
+    a = claim(p, kind='cross_reference_target', ranges=[dict(start=0, end=len(text), literal=text)])
+    a['claim'] = dict(occurrence_id='xref', source_target_url=raw['target_url'], source_target_label=raw['target_text'],
+        lemma='ga ba', homonym=None, basis='reviewed_editorial_member_whitespace', member_ordinal=1)
+    before = copy.deepcopy(base)
+    accepted = run(tmp_path, p, [a])
+    result = annotations.apply_validated_annotations(p, base, accepted)
+    assert base == before and result['original_records'] == before['original_records']
+    review = result['reviewed_cross_reference_targets']['xref']
+    assert review['member_ordinal'] == 1 and review['homonym'] is None
+    assert review['basis'] == a['claim']['basis'] and review['ranges'] == a['ranges']
+    for field, value in [('member_ordinal', 0), ('member_ordinal', 2), ('member_ordinal', True),
+                         ('lemma', 'ga pa'), ('homonym', '1'), ('source_target_label', 'other'),
+                         ('source_target_url', 'https://other/lemma/ka/1')]:
+        bad = copy.deepcopy(a)
+        bad['claim'][field] = value
+        with pytest.raises(ValueError, match='editorial member'):
+            run(tmp_path, p, [bad])
+    for status in ('candidate', 'rejected'):
+        inactive = copy.deepcopy(a)
+        inactive['status'] = status
+        assert not annotations.apply_validated_annotations(p, base, run(tmp_path, p, [inactive]))['reviewed_cross_reference_targets']
