@@ -10,7 +10,8 @@ const path=require('node:path');
  const page=await browser.newPage({viewport:{width:1440,height:1050}}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  const data=await (await page.request.get(base+'/data.json')).json();
- const catalog=data.entries;assert.equal(catalog.length,29877);assert.equal(data.sharded,true);
+ const manifest=await (await page.request.get(base+'/manifest.json')).json();
+ const catalog=data.entries;assert.equal(catalog.length,29877+(manifest.supplemental_witnesses||0));assert.equal(data.sharded,true);
  const fixture=JSON.parse(fs.readFileSync(process.env.BADW_READER_FIXTURE||'work/badw_connected_reader_20261020/run8/reader/data.json'));
  const entries=new Map(catalog.map(e=>[e.id,e]));
  data.entries=[];for(const e of fixture.entries){const meta=entries.get(e.id);assert(meta);const response=await page.request.get(base+'/'+meta.path);assert.equal(response.status(),200);data.entries.push(await response.json());}
@@ -42,6 +43,24 @@ const path=require('node:path');
  requests.length=0;await page.locator('#search').fill('mkhar');await page.locator('#search').fill('');
  assert.equal(requests.filter(u=>u.includes('/entries/')).length,0,'search needs no entry bodies');
  async function go(e){await page.goto(url(e.id));await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),e.headword.loc);await page.waitForFunction(()=>document.querySelector('#selection-status').textContent.startsWith('Selected:'));assert.equal(await page.locator('#entries [aria-current]').count(),1);}
+ // A recovered editorial article has its own explicit homonym identity. The
+ // acquired homonym 1 stays distinct, and browser history returns to the source.
+ if(manifest.supplemental_witnesses){
+  const targetMeta=entries.get('badw:entry:17d8c073e0aef6a87940c7009907fbaeeebfec3aae633a87e23a527632b4816d');assert(targetMeta);
+  const drugMeta=catalog.find(e=>e.headword.loc==='drug'&&e.homonym==='2');assert(drugMeta);
+  const drug=await (await page.request.get(base+'/'+drugMeta.path)).json();
+  const ref=drug.cross_references.find(r=>r.target_entry_id===targetMeta.id);assert(ref);assert.equal(ref.status,'resolved');
+  await go(drug);
+  const link=page.locator('.reading a');
+  const n=await link.evaluateAll((nodes,href)=>nodes.findIndex(el=>el.getAttribute('href')===href),'#'+encodeURIComponent(targetMeta.id));assert(n>=0);
+  await link.nth(n).focus();await page.keyboard.press('Enter');
+  await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
+  await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('dru gu'));
+  assert(await page.locator('#article > .source-access a[href="https://wts-digital.badw.de/lemma/dru%20gu/2"]').count());
+  await page.goBack();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,drug.id);
+  await page.goForward();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
+  assert(catalog.some(e=>e.headword.loc==='dru gu'&&e.homonym==='1'&&e.id!==targetMeta.id));
+ }
  let journeys=0,uncertain=0,citations=0,unresolvedCitations=0;
  // A reviewed nonprinting font-switch interlude remains in the literal source;
  // its independently replayed lookup expression reaches the exact PDF entry.

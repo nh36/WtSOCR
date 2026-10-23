@@ -11,7 +11,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 from audit_badw_corpus_structure import rows
-from build_badw_connected_reader import INDEX
+from build_badw_connected_reader import INDEX, ROOT, CACHE
+from badw_reader_supplements import load_supplements
 from resolve_badw_cross_references import EntryIndex
 
 
@@ -72,7 +73,12 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     args=ap.parse_args()
     if args.output.exists(): ap.error('refuse to overwrite a ledger')
-    index=EntryIndex(rows(INDEX)); catalog=json.loads((args.reader/'data.json').read_text())
+    manifest=json.loads((args.reader/'manifest.json').read_text())
+    supplements = load_supplements(CACHE, ROOT/manifest['supplemental_sources'])[0] if manifest.get('supplemental_sources') else []
+    index=EntryIndex(list(rows(INDEX))+supplements)
+    if index.sha256 != manifest['entry_index_sha256']:
+        raise ValueError('census index differs from reader index')
+    catalog=json.loads((args.reader/'data.json').read_text())
     counts=collections.Counter(); causes=collections.Counter(); total=0
     args.output.parent.mkdir(parents=True, exist_ok=True)
     opener=gzip.open if args.output.suffix=='.gz' else open

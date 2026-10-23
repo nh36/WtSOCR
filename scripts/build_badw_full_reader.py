@@ -9,6 +9,7 @@ import hashlib
 import json
 import shutil
 import sqlite3
+from itertools import chain
 from pathlib import Path
 
 from build_badw_connected_reader import ROOT, CACHE, CANON, INDEX, BIB, SEEDS, digest, write, validate_reviewed
@@ -25,6 +26,7 @@ from badw_bibliography import AuthorityResolver
 from badw_bibliography_aliases import load_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_bibliography_external import load_publications
+from badw_reader_supplements import load_supplements, MANIFEST as SUPPLEMENTS
 
 
 def citation_baseline(packet, projection, reader):
@@ -99,13 +101,20 @@ def main():
     ap.add_argument('--projections', type=Path, default=ROOT/'work/badw_semantic_hierarchy/projections.jsonl')
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--baseline-store', type=Path, default=ROOT/'work/badw_forensic_structure/baseline_0f4849.sqlite', help='Frozen accepted citation relationships before the certified reference-owner tranche')
+    ap.add_argument('--supplements', type=Path, default=SUPPLEMENTS, help='Pinned reviewed editorial acquisitions; frozen corpus stays unchanged')
     args = ap.parse_args()
     out = args.output.resolve()
     if not out.is_relative_to(ROOT/'work') or out.exists():
         ap.error('output must be a new directory under work/')
     out.mkdir(parents=True)
     (out/'entries').mkdir(); (out/'sources').mkdir()
-    index = EntryIndex(rows(INDEX))
+    supplements, supplemental_projections = load_supplements(CACHE, args.supplements)
+    original_entries = list(rows(INDEX))
+    if {e['id'] for e in supplements} & {e['id'] for e in original_entries}:
+        raise ValueError('supplement duplicates frozen entry identity')
+    index = EntryIndex(original_entries + supplements)
+    for r in supplemental_projections:
+        r['reader'] = entry_view(view([r['projection']], index)[0])
     prior = sqlite3.connect('file:'+str(args.baseline_store.resolve())+'?mode=ro', uri=True)
     annotations = collections.defaultdict(list)
     for a in rows(ROOT/'data/reviewed_badw_semantic_annotations.jsonl'):
@@ -129,7 +138,7 @@ def main():
     conflicts = []
     accepted_destinations = set()
     ledger = (out/'reference_cases.jsonl').open('w')
-    for i, r in enumerate(rows(args.projections)):
+    for i, r in enumerate(chain(rows(args.projections), supplemental_projections)):
         p, pred = r['packet'], r['projection']
         baseline = citation_baseline(p, pred, r['reader'])
         identity, kind, text = p['identity'], p['source_kind'], p['review_text']
@@ -243,7 +252,7 @@ def main():
     if accepted_destinations - witness_ids:
         raise ValueError('accepted destination absent from full corpus: '+repr(sorted(accepted_destinations-witness_ids)))
     write(out/'annotation_conflicts.json', conflicts)
-    if len(catalog) != 29877: raise ValueError('incomplete corpus')
+    if len(catalog) != 29877 + len(supplements): raise ValueError('incomplete corpus')
     # Include independently resolved destinations in the existing checkpoint check.
     sample_ids = {e['id'] for e in sample}
     for e in catalog:
@@ -254,7 +263,7 @@ def main():
     assets = ROOT/'scripts/badw_dictionary_prototype'
     for name in ('index.html','app.js','style.css'): shutil.copyfile(assets/name,out/name)
     shutil.copytree(assets/'fonts', out/'fonts')
-    write(out/'manifest.json', dict(entries=len(catalog), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
+    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
     print(json.dumps(dict(reader=str(out), census=dict(census))))
 
 

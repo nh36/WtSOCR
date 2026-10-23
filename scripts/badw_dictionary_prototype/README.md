@@ -1,7 +1,8 @@
 # Full acquired-corpus WTS reader
 
 The full reader retains the connected preview's visual design and source conventions.
-It includes all **29,877 acquired witnesses (18,037 HTML; 11,840 PDF)**.
+It includes all **29,877 frozen acquired witnesses (18,037 HTML; 11,840 PDF)**
+and one separately reviewed HTML acquisition: **29,878 witnesses** in total.
 This is the complete acquired corpus, not a claim that upstream editorial coverage
 is complete. There is no translation or change to the OCR release.
 
@@ -13,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run24` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run25` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -79,18 +80,48 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run24 \
+  --reader work/badw_full_reader_20261020/run25 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-337 HTML and three PDF identity/manifestation mismatches; 215 HTML and 116 PDF
+336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 116 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
+
+The 340 identity/manifestation cases at run24 have now been partitioned against
+their actual candidates and 257 distinct live editorial URLs. None is simply a
+choice between witnesses of an already established lexical identity. There are
+331 explicit HTML homonym-1 links to unnumbered PDF candidates, one reviewed
+nonbreaking-space href with the same identity gap, five homonym-2 links with only
+homonym-1 acquisitions, and three printed raised qualifiers with unnumbered PDF
+targets. All 253 homonym-1 URLs return the identical “not yet released” page.
+Three homonym-2 URLs are heading-only shells; they cannot supply entries.
+Facsimiles of both ends of the three PDF references confirm the qualifier and
+unnumbered heading; corresponding numbered senses do not prove homonym identity.
+These 339 cases remain unresolved. No printed error is asserted.
+
+The fourth homonym-2 URL, **dru gu²**, supplies a complete article with an explicit
+numbered heading, a definition of a Turkic people and twelve examples. It is
+distinct from acquired **dru gu¹**, a ball of thread. The exact new acquisition
+resolves **drug² → dru gu²**. `data/badw_reader_supplements.jsonl` pins the cached
+bytes, heading, URL, extracted text and stable identity; the build replays the
+existing projection pipeline and rejects empty shells or changed bindings.
+It neither modifies the frozen corpus nor equates blank PDF homonyms with 1.
+Run25: HTML **4,735 resolved / 551 unresolved / 2 ambiguous**; PDF **2,849 /
+119 / 118**; total **7,584 resolved / 790 residual**, versus **7,582 / 792**
+before these two families. All 29,877 original witnesses preserve sources,
+citations, relationships and accepted destinations. Apart from the index hash,
+29,876 entry bodies are unchanged from run24; only the reference in drug² gains
+a link. The 23/50/47 fixture remains intact. Browser validation passed keyboard
+and history navigation to the new article, 56 member journeys, 82 citation
+journeys, 58 facsimile checks and four viewport sizes with no browser errors.
+Case-level source evidence stays in ignored
+`work/badw_full_reader_20261020/investigation/identity_case_review.jsonl`.
 Missing identities do not establish acquisition gaps or printed errors. No printed
 or editorial correction is asserted by this census. These cases still need review.
 
