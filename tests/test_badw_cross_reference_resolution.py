@@ -835,16 +835,18 @@ def reciprocal_destination_fixture():
     return (occurrence,structure,text,binding),review,destination
 
 
-def test_reciprocal_perfect_selects_only_individually_reviewed_homonym():
+@pytest.mark.parametrize("homonym", ["1", "2"])
+def test_reciprocal_perfect_selects_only_individually_reviewed_homonym(homonym):
     fixture,review,destination=reciprocal_destination_fixture()
-    other=copy.deepcopy(destination);other.update(id='second',homonym='2')
+    destination['homonym'] = review['homonym'] = review['destination_heading']['homonym'] = homonym
+    other=copy.deepcopy(destination);other.update(id='second',homonym='2' if homonym=='1' else '1')
     index=EntryIndex([destination,other])
     before=copy.deepcopy((fixture,review,destination,other))
     assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
     resolved=substitute(index,fixture,review)['canonical_resolution']
     assert resolved['status']=='resolved' and resolved['target_entry_id']=='wrapped'
     assert resolved['method']=='reviewed_exact_reciprocal_perfect'
-    assert resolved['target_lexical_entity']['homonym']=='1'
+    assert resolved['target_lexical_entity']['homonym']==homonym
     assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
     assert (fixture,review,destination,other)==before
     witness=copy.deepcopy(destination);witness['id']='another'

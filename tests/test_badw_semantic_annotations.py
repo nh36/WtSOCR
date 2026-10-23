@@ -1252,3 +1252,25 @@ def test_real_bcum_reciprocal_review_preserves_exact_source_and_numbered_destina
     assert c['destination_heading']['printed_page'] == 394
     assert c['destination_heading']['reciprocal_passage'] == dict(
         run_start=239, run_end_exclusive=247, literal=' pf. ↑bcum ')
+
+
+@pytest.mark.parametrize("name,node,target,homonym,end,page,runs", [
+    ("gas", "n48", "’gas", "1", 13, 368, (72,79)),
+    ("groṅs", "n50", "’groṅs", "1", 15, 401, (299,307)),
+    ("khol", "n17", "’khol", "2", 14, 155, (835,840)),
+])
+def test_real_reciprocal_family_preserves_source_and_numbered_destination(name,node,target,homonym,end,page,runs):
+    import json
+    rows = [json.loads(line) for line in (Path(__file__).resolve().parents[1] /
+            'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    a, = [r for r in rows if r['annotation_id'] ==
+          'badw-reviewed-reciprocal-perfect-'+name+'-'+target[1:]+'-'+homonym]
+    assert a['ranges'] == [dict(start=8,end=end,literal='↓'+target)]
+    c=a['claim']; proof=c['destination_heading']
+    assert c['occurrence_id']==node and c['source_headword']==name
+    assert c['lemma']==c['source_target_label']==target
+    assert c['homonym']==proof['homonym']==homonym
+    assert proof['printed_page']==page
+    passage=proof['reciprocal_passage']
+    assert (passage['run_start'],passage['run_end_exclusive'])==runs
+    assert passage['literal'].strip()=='pf. ↑'+name

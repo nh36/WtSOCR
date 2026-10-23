@@ -42,6 +42,9 @@ const path=require('node:path');
  assert.equal(repaired.status,'unresolved');assert.equal(repaired.target_entry_id,null);
  assert.equal(data.preview.reviewed_occurrences,23);
  const url=id=>base+'/#'+encodeURIComponent(id);
+ // A changed hash precedes asynchronous entry rendering. Wait for the exact
+ // selected identity and its source controls, including prefix-sharing labels.
+ async function selected(href){await page.waitForFunction(h=>location.hash===h&&document.querySelector('#entries [aria-current]')?.getAttribute('href')===h&&document.querySelector('#article > .source-access a'),href);}
  const requests=[];page.on('request',r=>requests.push(r.url()));
  const started=Date.now();await page.goto(url(catalog[0].id));
  await page.waitForFunction(()=>document.querySelector('#selection-status').textContent.startsWith('Selected:'));
@@ -63,11 +66,11 @@ const path=require('node:path');
   const link=page.locator('.reading a');
   const n=await link.evaluateAll((nodes,href)=>nodes.findIndex(el=>el.getAttribute('href')===href),'#'+encodeURIComponent(targetMeta.id));assert(n>=0);
   await link.nth(n).focus();await page.keyboard.press('Enter');
-  await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
+  await selected('#'+encodeURIComponent(targetMeta.id));
   await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('dru gu'));
   assert(await page.locator('#article > .source-access a[href="https://wts-digital.badw.de/lemma/dru%20gu/2"]').count());
-  await page.goBack();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,drug.id);
-  await page.goForward();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
+  await page.goBack();await selected('#'+encodeURIComponent(drug.id));
+  await page.goForward();await selected('#'+encodeURIComponent(targetMeta.id));
   assert(catalog.some(e=>e.headword.loc==='dru gu'&&e.homonym==='1'&&e.id!==targetMeta.id));
  }
  // Individually reviewed spelling/compound links preserve their literal
@@ -132,6 +135,23 @@ const path=require('node:path');
  assert(await page.locator('#article > .source-access a').count()>0);
  await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('bcum'));
  await page.goForward();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’jum'));
+ // Further individually reviewed paradigms include a destination homonym 2.
+ for(const [id,source,target,homonym,end] of [["badw:pdf:badw-v2-48d35d1f99eb48c897d464b20a5b6bfa05721028f717693ef68bd8fad396ee1f:477", "gas", "’gas", "1", 13], ["badw:pdf:badw-v2-8b2374405a57fe2dac90bcd6f028a85a90aec5427b1f0a86bc0d6451ebbca3f1:273", "groṅs", "’groṅs", "1", 15], ["badw:pdf:badw-v2-eafe95ccfbbc796b97a4f4987f73a344da6240c45d5a2e35ce8b7e2a4e12519d:632", "khol", "’khol", "2", 14]]){
+  const meta=entries.get(id);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();
+  const ref=entry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_reciprocal_perfect');assert(ref);
+  assert.equal(ref.status,'resolved');assert.equal(ref.wording,target);
+  assert.deepEqual(ref.source_span,{start:8,end});
+  const destination=entries.get(ref.target_entry_id);assert.equal(destination.headword.loc,target);assert.equal(destination.homonym,homonym);
+  await go(entry);
+  const link=page.locator('.reading a').filter({hasText:target});assert.equal(await link.count(),1);
+  await link.focus();await page.keyboard.press('Enter');
+  await selected('#'+encodeURIComponent(destination.id));
+  await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
+  assert(await page.locator('#article > .source-access a').count()>0);
+  await page.goBack();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),source);
+  await page.goForward();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
+ }
  // A confirmed printed marker error has an explicit interpretation, while
  // its literal ↑fut and the unresolved numbered imperative remain visible.
  const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
@@ -226,8 +246,8 @@ const path=require('node:path');
  const thigLinks=page.locator('.reading a');
  const thigLinkIndex=await thigLinks.evaluateAll((nodes,href)=>nodes.findIndex(n=>n.getAttribute('href')===href),'#'+encodeURIComponent(contracted.target_entry_id));assert(thigLinkIndex>=0);
  await thigLinks.nth(thigLinkIndex).focus();await page.keyboard.press('Enter');
- await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,contracted.target_entry_id);
- await page.goBack();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,thig.id);
+ await selected('#'+encodeURIComponent(contracted.target_entry_id));
+ await page.goBack();await selected('#'+encodeURIComponent(thig.id));
  journeys++; // The preserved fixture destination is now a single reference.
  await page.locator('.reading .uncertain-reference').filter({hasText:'tshaṅs thig'}).waitFor();
  const thigUncertain=page.locator('.reading .uncertain-reference').filter({hasText:'tshaṅs thig'});assert.equal(await thigUncertain.count(),1);
@@ -268,10 +288,10 @@ const path=require('node:path');
      const actual=page.locator('.reading a').filter({hasText:member.literal});
      const chosen=await actual.evaluateAll((nodes,h)=>nodes.findIndex(n=>n.getAttribute('href')===h),href);
      assert(chosen>=0);await actual.nth(chosen).click();
-     await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,member.target_entry_id);
+     await selected('#'+encodeURIComponent(member.target_entry_id));
      await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(member.target_entry_id).headword.loc);
      await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);
-     await page.goForward();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,member.target_entry_id);
+     await page.goForward();await selected('#'+encodeURIComponent(member.target_entry_id));
      await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);journeys++;
     }else{
      const button=page.locator('.reading .uncertain-reference').filter({hasText:member.literal}).first();
@@ -302,7 +322,7 @@ const path=require('node:path');
   if(ref.status==='resolved'){
    const href='#'+encodeURIComponent(ref.target_entry_id);
    const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
-   await links.nth(chosen).click();await page.waitForFunction(h=>location.hash===h,href);
+   await links.nth(chosen).click();await selected(href);
    await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(ref.target_entry_id).headword.loc);
    await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);editorialJourneys++;
   }else{
@@ -328,11 +348,11 @@ const path=require('node:path');
    const href='#'+encodeURIComponent(ref.target_entry_id);
    const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
    await links.nth(chosen).focus();await page.keyboard.press('Enter');
-   await page.waitForFunction(h=>location.hash===h,href);
+   await selected(href);
    await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(ref.target_entry_id).headword.loc);
    assert(await page.locator('#article > .source-access a').count()>0);
    await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),label);
-   await page.goForward();await page.waitForFunction(h=>location.hash===h,href);whitespaceJourneys++;
+   await page.goForward();await selected(href);whitespaceJourneys++;
   }else{
    assert.equal(ref.status,'unresolved');assert.equal(ref.target_entry_id,null);
    await page.locator('.reading .uncertain-reference').filter({hasText:ref.wording}).first().click();
@@ -358,11 +378,12 @@ const path=require('node:path');
  const splitChosen=await splitLink.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),splitHref);assert(splitChosen>=0);
  assert.equal((await splitLink.nth(splitChosen).textContent()).replace('↑',''),'’');
  await splitLink.nth(splitChosen).focus();await page.keyboard.press('Enter');
- await page.waitForFunction(h=>location.hash===h,splitHref);
+ await selected(splitHref);
  await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’dren'));
+ await page.waitForFunction(h=>document.querySelector('#entries [aria-current]')?.getAttribute('href')===h,splitHref);
  assert(await page.locator('#article > .source-access a').count()>0);
  await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’drend'));
- await page.goForward();await page.waitForFunction(h=>location.hash===h,splitHref);
+ await page.goForward();await selected(splitHref);
  // A trailing arrow in a malformed shared anchor has a separately typed
  // sibling target. Its frozen arrow span remains the clickable occurrence.
  const detachedMeta=entries.get('badw:entry:d8553ae3da5102268ab59eff76ae8427e971a905708ea9f6d0cf0f4d204d74b7');
@@ -377,7 +398,7 @@ const path=require('node:path');
  await detachedButton.click();assert(await page.locator('#reference-detail').isVisible());
  const detachedChoice=page.locator('#reference-detail-content a[href^="#"]');assert.equal(await detachedChoice.count(),1);
  assert.equal(await detachedChoice.getAttribute('href'),detachedHref);
- await detachedChoice.click();await page.waitForFunction(h=>location.hash===h,detachedHref);
+ await detachedChoice.click();await selected(detachedHref);
  await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(detachedTargets[0]).headword.loc);
  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),detachedEntry.headword.loc);
  // Facsimile-reviewed headword tildes preserve their printed labels. Three
@@ -392,7 +413,7 @@ const path=require('node:path');
    if(ref.status==='resolved'){
     const href='#'+encodeURIComponent(ref.target_entry_id);
     const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
-    await links.nth(chosen).click();await page.waitForFunction(h=>location.hash===h,href);
+    await links.nth(chosen).click();await selected(href);
     await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(ref.target_entry_id).headword.loc);
     await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);tildeJourneys++;
    }else{
@@ -417,7 +438,7 @@ const path=require('node:path');
   const target=entries.get(ref.target_entry_id);assert(target.headword.loc.includes('\n'));assert.equal(target.homonym,'');
   const href='#'+encodeURIComponent(ref.target_entry_id);
   const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
-  await links.nth(chosen).click();await page.waitForFunction(h=>location.hash===h,href);
+  await links.nth(chosen).click();await selected(href);
   await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
   assert(await page.locator('.source-access a').count()>0);
   await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);
@@ -457,12 +478,12 @@ const path=require('node:path');
    if(member.resolution_status==='resolved'){
     assert(member.target_entry_id);const href='#'+encodeURIComponent(member.target_entry_id);
     const links=page.locator('.reading a');const chosen=await links.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),href);assert(chosen>=0);
-    await links.nth(chosen).focus();await page.keyboard.press('Enter');await page.waitForFunction(h=>location.hash===h,href);
+    await links.nth(chosen).focus();await page.keyboard.press('Enter');await selected(href);
     await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(member.target_entry_id).headword.loc);
     assert(await page.locator('#article > .source-access a').count()>0);
     await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);htmlCommaJourneys++;
     if(reviewedWhitespace){
-     await page.goForward();await page.waitForFunction(h=>location.hash===h,href);
+     await page.goForward();await selected(href);
      await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entries.get(member.target_entry_id).headword.loc);
      await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),entry.headword.loc);
      memberWhitespaceJourneys++;
@@ -496,7 +517,7 @@ const path=require('node:path');
  const terminalHref='#'+encodeURIComponent(terminalRef.target_entry_id);
  const terminalLinks=page.locator('.reading a');
  const terminalIndex=await terminalLinks.evaluateAll((ns,h)=>ns.findIndex(n=>n.getAttribute('href')===h),terminalHref);assert(terminalIndex>=0);
- await terminalLinks.nth(terminalIndex).click();await page.waitForFunction(h=>location.hash===h,terminalHref);
+ await terminalLinks.nth(terminalIndex).click();await selected(terminalHref);
  await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('kha khyer'));
  await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('kha kha khyer'));
  // Actual unresolved bibliography identities in the current full corpus; the
@@ -524,11 +545,11 @@ const path=require('node:path');
  assert(journeys>=56);assert(uncertain>=2);assert(unresolvedCitations>=3);
  await go(catalog[1]);
  const next=await page.locator('[rel=next]').getAttribute('href');await page.locator('[rel=next]').click();assert.equal(decodeURIComponent(next.slice(1)),catalog[2].id);
- await page.locator('[rel=prev]').click();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,catalog[1].id);
+ await page.locator('[rel=prev]').click();await selected('#'+encodeURIComponent(catalog[1].id));
  assert.equal(await page.locator('#entries a').count(),100);
  const hash=await page.evaluate(()=>location.hash);await page.locator('.skip-link').focus();await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>location.hash),hash);
  await page.locator('#search').fill('impossible headword');assert((await page.locator('#entries').textContent()).includes('No matching'));
- await page.locator('#search').fill('');await page.locator('#search').focus();await page.keyboard.press('ArrowDown');assert(await page.locator('#entries a').first().evaluate(n=>n===document.activeElement));await page.keyboard.press('End');assert(await page.locator('#entries a').last().evaluate(n=>n===document.activeElement));await page.keyboard.press('Home');await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,catalog[1].id);
+ await page.locator('#search').fill('');await page.locator('#search').focus();await page.keyboard.press('ArrowDown');assert(await page.locator('#entries a').first().evaluate(n=>n===document.activeElement));await page.keyboard.press('End');assert(await page.locator('#entries a').last().evaluate(n=>n===document.activeElement));await page.keyboard.press('Home');await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await selected('#'+encodeURIComponent(catalog[1].id));
  await go(catalog[0]);await page.locator('.entry-pager button').filter({hasText:'Next results'}).click();assert.equal(await page.locator('#entries a').first().getAttribute('href'),'#'+encodeURIComponent(catalog[100].id));
  // Search all catalog fields without loading entry bodies.
  for(const [field,query] of [['loc','mkhar ’gro'],['tibetan','ངར']]){
@@ -564,7 +585,7 @@ const path=require('node:path');
  const multi=entries.get('badw:pdf:badw-v4-aa5f071493754b5a6b49af059dd9780a463b355e0ca13a25e0ec17e1c4f2d5fa:504');
  await go(multi);await page.locator('.uncertain-reference').filter({hasText:'thams cad'}).first().click();
  const choices=page.locator('#reference-detail-content a[href^="#"]');assert.equal(await choices.count(),2);
- const destination=await choices.first().getAttribute('href');await choices.first().click();await page.waitForFunction(h=>location.hash===h,destination);
+ const destination=await choices.first().getAttribute('href');await choices.first().click();await selected(destination);
  await page.waitForFunction(()=>!document.querySelector('#reference-detail').open);await page.goBack();
  const interesting=data.entries.find(e=>e.headword.loc==='ṅar');await go(interesting);
  const glyph=page.locator('button.unknown-glyph').first();
@@ -584,6 +605,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:4,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run35` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run36` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run35 \
+  --reader work/badw_full_reader_20261020/run36 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 114 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 111 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -619,3 +619,17 @@ Run35: **7,601 resolved / 773 residual** target units; HTML unchanged at 4,742
 resolved, 544 unresolved, two ambiguous; PDF 2,859 resolved, 113 unresolved,
 114 ambiguous. Only this reference gains a destination; all previously accepted
 destinations and the 23/50/47 fixture remain unchanged.
+
+The same reviewed reciprocal-perfect family additionally identifies **gas →
+’gas¹** (II pp. 203/368), **groṅs → ’groṅs¹** (II pp. 277/401), and **khol² →
+’khol²** (II pp. 73/155). Each pair was checked in the printed facsimiles. The
+competing homonyms have different paradigms or meanings: ’gas² has perfect bkas,
+’groṅs² means Wundöffnung, and ’khol¹ has perfect bkol and concerns servitude.
+The cooking paradigm selects ’khol², demonstrating that this mechanism does not
+default to homonym 1. These are individually evidenced interpretations of intact
+references, not asserted printing errors or changed source readings.
+
+Run36: **7,604 resolved / 770 residual** target units; HTML unchanged at 4,742
+resolved, 544 unresolved, two ambiguous; PDF 2,862 resolved, 113 unresolved,
+111 ambiguous. Only these three reviewed references gain destinations. Source
+text and all previously accepted destinations remain unchanged.
