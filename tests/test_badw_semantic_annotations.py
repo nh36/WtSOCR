@@ -1159,3 +1159,96 @@ def test_real_printed_gyad_mo_review_retains_unnumbered_identity_and_extent():
     assert a['claim']['homonym'] is None
     assert a['claim']['destination_heading']['homonym'] == ''
     assert 'Neb 313' in a['review']['evidence']
+
+
+def reciprocal_fixture(tmp_path):
+    import gzip, json
+    from test_extract_badw_pdf_entries import _page
+    from extract_badw_pdf_entries import extract_page
+    p = packet(tmp_path, 'pdf')
+    text = ' pf. zu ↓ka zusammenziehen.'
+    p['review_text'] = p['source']['source_faithful_text'] = text
+    p['review_text_sha256'] = annotations.digest(text)
+    line = p['source']['visual_lines'][0]
+    line['text'] = text
+    line['style_spans'][0]['end'] = len(text)
+    p['source']['visual_lines'] = [line]
+    page = _page()
+    page['representative_source']['source_sha256'] = p['source']['source_objects'][0]['pdf_sha256']
+    runs = page['positioned_page']['positioned_text_runs']
+    runs[4]['decoded_unicode'] = ' pf. ↑bcum '
+    page['source_faithful_decoded_text'] = ''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256'] = annotations.digest(page['source_faithful_decoded_text'])
+    path = tmp_path/'destination.json.gz'
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    destination = extract_page(page, path.name)[0][0]
+    proof = dict(entry_id=destination['id'], headword=dict(loc='ka', source_loc='ka', tibetan='ཀ'),
+        homonym='1', entry_start_source_span=destination['source_span'], printed_page=7,
+        canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        reciprocal_passage=dict(run_start=4, run_end_exclusive=5, literal=' pf. ↑bcum '))
+    a = claim(p, kind='cross_reference_target', ranges=[dict(start=8,end=11,literal='↓ka')])
+    a['claim'] = dict(occurrence_id='xref', source_headword='bcum', source_target_url=None,
+        source_target_label='ka', lemma='ka', homonym='1',
+        basis='reviewed_printed_reciprocal_perfect', destination_heading=proof)
+    base = prediction(p)
+    base['nodes'].append(dict(id='xref',kind='cross_reference',start=8,end=11,parent='root'))
+    base['original_structure'] = dict(loc_headword='bcum',visual_lines=copy.deepcopy(p['source']['visual_lines']),
+        candidates=dict(cross_references=[dict(visual_start=8,visual_end=11,target_label_candidate='ka')]))
+    return p,a,base,page,path
+
+
+def test_reviewed_reciprocal_perfect_retains_numbered_identity_and_source(tmp_path):
+    p,a,base,_,_ = reciprocal_fixture(tmp_path)
+    before = copy.deepcopy((p,a,base))
+    accepted = run(tmp_path,p,[a])
+    result = annotations.apply_validated_annotations(p,base,accepted)
+    assert result['reviewed_cross_reference_targets']['xref']['homonym'] == '1'
+    assert result['nodes'] == base['nodes'] and result['original_structure'] == base['original_structure']
+    assert (p,a,base) == before
+
+
+@pytest.mark.parametrize('fault', ['hash','pdf','id','homonym','heading','span','page','prefix',
+    'literal','source','passage','bounds','unknown','geometry','body','font','unnumbered'])
+def test_reciprocal_perfect_proof_fails_closed(tmp_path,fault):
+    import gzip,json
+    p,a,_,page,path = reciprocal_fixture(tmp_path)
+    c=a['claim'];d=c['destination_heading'];r=page['positioned_page']['positioned_text_runs']
+    if fault=='hash': d['canonical_object_sha256']='0'*64
+    elif fault=='pdf': d['entry_start_source_span']['representative_pdf_sha256']='0'*64
+    elif fault=='id': d['entry_id']='other'
+    elif fault=='homonym': c['homonym']='2'
+    elif fault=='heading': d['headword']['tibetan']='ཁ'
+    elif fault=='span': d['entry_start_source_span']['run_end_exclusive']+=1
+    elif fault=='page': d['printed_page']=8
+    elif fault=='prefix': p['review_text']=' xx. zu ↓ka zusammenziehen.';p['review_text_sha256']=annotations.digest(p['review_text'])
+    elif fault=='literal': a['ranges'][0]['literal']='↑ka'
+    elif fault=='source': c['source_headword']='other'
+    elif fault=='passage': d['reciprocal_passage']['literal']=' pf. ↑other '
+    elif fault=='bounds': d['reciprocal_passage']['run_end_exclusive']=6
+    elif fault=='unknown': r[4]['glyphs']=[dict(unknown=True,cid_hex='0000',glyph_signature='a'*64)]
+    elif fault=='geometry': r[4]['x']=None
+    elif fault=='body': page['visible_body_sha256']='0'*64
+    elif fault=='font': r[2]['font_id']='i'
+    elif fault=='unnumbered': r[2]['decoded_unicode']=''
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    if fault!='hash': d['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises((ValueError,FileNotFoundError,TypeError)):
+        run(tmp_path,p,[a])
+
+
+def test_real_bcum_reciprocal_review_preserves_exact_source_and_numbered_destination():
+    import json
+    rows = [json.loads(line) for line in (Path(__file__).resolve().parents[1] /
+            'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    a, = [r for r in rows if r['annotation_id'] == 'badw-reviewed-reciprocal-perfect-bcum-jum-1']
+    assert a['ranges'] == [dict(start=8, end=13, literal='↓’jum')]
+    assert a['binding']['text_sha256'] == '6145720d854f7789b55540d8ba34b7d1fa75794346ed6f48492d9ec4d0da9a71'
+    c = a['claim']
+    assert c['occurrence_id'] == 'n8'
+    assert c['basis'] == 'reviewed_printed_reciprocal_perfect'
+    assert c['source_headword'] == 'bcum'
+    assert c['source_target_label'] == c['lemma'] == '’jum'
+    assert c['homonym'] == c['destination_heading']['homonym'] == '1'
+    assert c['destination_heading']['printed_page'] == 394
+    assert c['destination_heading']['reciprocal_passage'] == dict(
+        run_start=239, run_end_exclusive=247, literal=' pf. ↑bcum ')

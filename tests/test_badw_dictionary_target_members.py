@@ -17,7 +17,7 @@ from resolve_badw_cross_references import EntryIndex
 
 def inspected_fixture(lemmas=('ka', 'kha')):
     occurrence, structure, text, binding = plural_fixture('ka, kha')
-    candidate = dict(occurrence['source_candidate'], marker='↑')
+    candidate = dict(occurrence['source_candidate'], marker=occurrence['marker'])
     structure['candidates'] = dict(cross_references=[candidate])
     projection = dict(contract_version='badw-structural-candidate-projection-v6',
         identity=binding['identity'], source_kind='pdf', source=dict(visual_lines=structure['visual_lines']),
@@ -365,25 +365,29 @@ def test_reviewed_page_continuation_survives_reader_and_store(monkeypatch,tmp_pa
     db.close()
 
 
-@pytest.mark.parametrize('compound', [False, True])
+@pytest.mark.parametrize('compound', [False, True, 'reciprocal'])
 def test_reviewed_printed_heading_reaches_reader_and_sql_without_source_mutation(tmp_path, compound):
-    from test_badw_cross_reference_resolution import wrapped_destination_fixture
-    fixture, review, destination = wrapped_destination_fixture(compound)
+    from test_badw_cross_reference_resolution import wrapped_destination_fixture, reciprocal_destination_fixture
+    fixture, review, destination = reciprocal_destination_fixture() if compound == 'reciprocal' else wrapped_destination_fixture(compound)
     occurrence, structure, text, binding = fixture
-    candidate = dict(occurrence['source_candidate'], marker='↑')
+    candidate = dict(occurrence['source_candidate'], marker=occurrence['marker'])
     review['source_spans'] = [candidate]
     structure['candidates'] = dict(cross_references=[candidate])
     projection = dict(contract_version='badw-structural-candidate-projection-v6',
         identity=binding['identity'], source_kind='pdf', source=dict(visual_lines=structure['visual_lines']),
         review_text_sha256=structure['review_text_sha256'], original_structure=structure,
         reviewed_cross_reference_targets={'xref': review},
-        nodes=[dict(id='xref', kind='cross_reference', start=0, end=len(text))], edges=[])
-    index = EntryIndex([entry(binding['identity'], lemma='source'), destination])
+        nodes=[dict(id='xref', kind='cross_reference', start=candidate['visual_start'], end=candidate['visual_end'])], edges=[])
+    destinations = [destination]
+    if compound == 'reciprocal':
+        other = copy.deepcopy(destination); other.update(id='second', homonym='2')
+        destinations.append(other)
+    index = EntryIndex([entry(binding['identity'], lemma='source'), *destinations])
     before = copy.deepcopy(projection)
     result = entry_view(view([projection], index)[0])
     ref, = result['cross_references']
     assert ref['status'] == 'resolved' and ref['target_entry_id'] == destination['id']
-    assert ref['resolution_evidence']['method'] == ('reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword')
+    assert ref['resolution_evidence']['method'] == ('reviewed_exact_reciprocal_perfect' if compound == 'reciprocal' else 'reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword')
     assert ref['resolution_evidence']['target_review']['basis'] == review['basis']
     assert ''.join(s['text'] for s in result['segments']) == text
     assert projection == before

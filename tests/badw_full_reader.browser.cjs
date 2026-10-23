@@ -117,6 +117,21 @@ const path=require('node:path');
  const numberedCompound=await (await page.request.get(base+'/'+numberedCompoundMeta.path)).json();
  const numberedRef=numberedCompound.cross_references.find(r=>r.wording==='gyad-mo');assert(numberedRef);
  assert.equal(numberedRef.status,'unresolved');assert.equal(numberedRef.target_entry_id,null);
+ // An individually reviewed reciprocal perfect paradigm identifies homonym 1.
+ const reciprocalMeta=entries.get('badw:pdf:badw-v3-6a87e97597dc33da0b83005819251e26f368adb33f4890a1103470240c63a92e:485');assert(reciprocalMeta);
+ const reciprocalEntry=await (await page.request.get(base+'/'+reciprocalMeta.path)).json();
+ const reciprocalRef=reciprocalEntry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_reciprocal_perfect');assert(reciprocalRef);
+ assert.equal(reciprocalRef.wording,'’jum');assert.deepEqual(reciprocalRef.source_span,{start:8,end:13});assert.equal(reciprocalRef.status,'resolved');
+ const reciprocalTarget=entries.get(reciprocalRef.target_entry_id);assert.equal(reciprocalTarget.headword.loc,'’jum');assert.equal(reciprocalTarget.homonym,'1');
+ await go(reciprocalEntry);
+ const reciprocalLink=page.locator('.reading a').filter({hasText:'’jum'});assert.equal(await reciprocalLink.count(),1);
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await reciprocalLink.focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’jum'));
+ assert.equal(decodeURIComponent(await page.evaluate(()=>location.hash.slice(1))),reciprocalTarget.id);
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('bcum'));
+ await page.goForward();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’jum'));
  // A confirmed printed marker error has an explicit interpretation, while
  // its literal ↑fut and the unresolved numbered imperative remain visible.
  const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
@@ -569,6 +584,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

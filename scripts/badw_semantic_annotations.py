@@ -207,6 +207,57 @@ def reviewed_pdf_heading(claim, cache, canonical_root, verified, *, compound=Fal
         raise ValueError('wrapped heading differs from canonical PDF evidence')
 
 
+def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified):
+    """Replay one facsimile-reviewed perfect-tense reciprocal homonym identity.
+
+    This is an individual interpretation, never a rule choosing homonym 1.
+    Re-extract the numbered destination heading from hash-pinned PDF runs and
+    bind its exact reciprocal grammatical passage within that same article.
+    """
+    from extract_badw_pdf_entries import extract_page
+    if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or canonical_root is None or
+            claim.get('source_target_url') is not None or
+            any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_headword',
+                'source_target_label', 'lemma', 'homonym')) or
+            not re.fullmatch(r'[1-9][0-9]*', claim['homonym']) or
+            claim['source_target_label'] != claim['lemma'] or
+            packet['review_text'][:ranges[0]['start']].strip() != 'pf. zu' or
+            ranges[0]['literal'] != '↓' + claim['lemma']):
+        raise ValueError('invalid reviewed reciprocal perfect reference')
+    proof = claim.get('destination_heading')
+    _keys(proof, ('entry_id', 'headword', 'homonym', 'entry_start_source_span',
+                  'canonical_object_sha256', 'printed_page', 'reciprocal_passage'))
+    span = proof['entry_start_source_span']
+    _object(canonical_root, span['canonical_object'], proof['canonical_object_sha256'], verified)
+    sha = span['representative_pdf_sha256']
+    _object(cache, f'objects/sha256/{sha[:2]}/{sha}', sha, verified)
+    with gzip.open(Path(canonical_root) / span['canonical_object'], 'rt', encoding='utf-8') as handle:
+        page = json.load(handle)
+    entries, _ = extract_page(page, span['canonical_object'])
+    matches = [e for e in entries if e['id'] == proof['entry_id']]
+    if (len(matches) != 1 or matches[0]['source_span'] != span or
+            matches[0]['homonym'] != claim['homonym'] or proof['homonym'] != claim['homonym'] or
+            matches[0]['loc_headword_reading'] != claim['lemma'] or
+            proof['headword'] != dict(loc=claim['lemma'], source_loc=matches[0]['loc_headword'],
+                                      tibetan=matches[0]['tibetan_headword']) or
+            proof['printed_page'] != page['printed_page'] or
+            page['visible_body_sha256'] != digest(page['source_faithful_decoded_text'])):
+        raise ValueError('reciprocal destination differs from canonical numbered heading')
+    passage = proof['reciprocal_passage']
+    _keys(passage, ('run_start', 'run_end_exclusive', 'literal'))
+    a, b = passage['run_start'], passage['run_end_exclusive']
+    if (type(a) is not int or type(b) is not int or
+            not max(span['loc_run_indices']) < a < b <= span['run_end_exclusive'] or b-a > 32):
+        raise ValueError('reciprocal passage outside reviewed destination')
+    runs = page['positioned_page']['positioned_text_runs'][a:b]
+    if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
+            passage['literal'].strip() != 'pf. ↑' + claim['source_headword'] or
+            len({r.get('y') for r in runs}) != 1 or
+            any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
+                any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):
+        raise ValueError('reciprocal perfect lacks exact positioned source evidence')
+
+
 def printed_misplaced_arrow(claim, ranges, text, lines):
     """Replay a reviewed printed marker error; never change its source extent.
 
@@ -396,6 +447,8 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
+            elif claim['basis'] == 'reviewed_printed_reciprocal_perfect':
+                reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified)
             elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_target_label', 'lemma')) or
@@ -628,7 +681,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
@@ -645,7 +698,7 @@ def apply_validated_annotations(packet, prediction, annotations):
             targets[claim["occurrence_id"]] = dict(occurrence_id=claim["occurrence_id"],
                 source_spans=[deepcopy(candidates[0])], literal=claim["source_target_label"],
                 source_target_url=None,
-                lemma=claim["lemma"], homonym=None, basis=claim["basis"],
+                lemma=claim["lemma"], homonym=claim["homonym"], basis=claim["basis"],
                 annotation_id=row["annotation_id"], binding=row["binding"],
                 physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
             for field in ('source_headword', 'destination_heading'):
