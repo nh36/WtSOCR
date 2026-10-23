@@ -571,7 +571,7 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
         next_marker = re.search(r"[↑↓]", text[target_start:end])
         if next_marker is not None:
             end = target_start + next_marker.start()
-            while end > target_start and text[end - 1].isspace():
+            while end > target_start and text[end - 1] in " \t\n,":
                 end -= 1
         if bridge:
             end = bridge['end']
@@ -620,6 +620,12 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 while next_end > next_start and text[next_end - 1] in " \t\n.,;:":
                     next_end -= 1
                 if next_end <= next_start or next_end - start > 80:
+                    break
+                # A repeated arrow starts its own occurrence, even when the
+                # PDF gives the arrow the same italic font as its headword.
+                # Do not re-absorb it through comma-list continuation after
+                # the initial extent's marker guard has already run.
+                if re.search(r"[↑↓]", text[next_start:next_end]):
                     break
                 label_start = end + 1
                 while label_start < next_start and text[label_start].isspace():

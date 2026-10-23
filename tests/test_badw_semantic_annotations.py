@@ -841,3 +841,58 @@ def test_reviewed_nonprinting_extent_requires_bound_source_and_specific_basis(tm
         else: other['ranges'][0]['end'] -= 1
         with pytest.raises(ValueError):
             annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
+
+
+def test_reviewed_arrow_contraction_preserves_independent_occurrence(tmp_path):
+    from parse_badw_pdf_articles import _candidates
+    p = packet(tmp_path, 'pdf')
+    lines = p['source']['visual_lines'][:2]
+    lines[0].update(text='↑ka,', span_index=0, printed_page=1, style_spans=[
+        dict(start=0,end=1,style='regular',font_id='regular'),
+        dict(start=1,end=3,style='italic',font_id='italic'),
+        dict(start=3,end=4,style='regular',font_id='regular')])
+    lines[1].update(text='↓kha', span_index=0, printed_page=1, style_spans=[
+        dict(start=0,end=4,style='italic',font_id='italic')])
+    text = '↑ka,\n↓kha'
+    p['source'].update(source_faithful_text=text,visual_lines=lines)
+    p.update(review_text=text,review_text_sha256=annotations.digest(text))
+    divisions=[dict(start_line_index=0,end_line_index_exclusive=2)]
+    candidates=_candidates(lines,divisions)
+    first,second=candidates['cross_references']
+    # Reproduce the frozen pre-repair comma-list extent without relying on
+    # the repaired parser to manufacture the defect.
+    first.update(visual_end=9,target_label_candidate=text[1:9],
+        source_line_end=copy.deepcopy(second['source_line_end']),end_line_index=1,line_end=4)
+    swallowed=copy.deepcopy(second['target_candidates'][0])
+    swallowed.update(source_text='↓kha',visual_start=5,line_start=0)
+    first['target_candidates'].append(swallowed)
+    base=prediction(p)
+    base['nodes'].extend([dict(id='ref',kind='cross_reference',start=0,end=9,parent='root'),
+                         dict(id='second',kind='cross_reference',start=5,end=9,parent='root')])
+    base['original_structure']=dict(article_id=p['identity'],visual_lines=copy.deepcopy(lines),
+        divisions=divisions,candidates=candidates)
+    a=claim(p,kind='cross_reference_extent',ranges=[dict(start=0,end=3,literal='↑ka')])
+    a['claim']=dict(node_id='ref',previous_range=dict(start=0,end=9,literal=text),
+                    basis='reviewed_printed_arrow_boundary')
+    reviewed=run(tmp_path,p,[a])
+    result=annotations.apply_validated_annotations(p,base,reviewed)
+    assert result['nodes'][1]['end']==3
+    assert result['nodes'][2]==base['nodes'][2]
+    assert result['original_structure']['candidates']['cross_references'][1]==second
+    assert p['review_text']==text and base['nodes'][1]['end']==9
+    for mutation in ('node','page','division','target','prose'):
+        changed=copy.deepcopy(base)
+        c=changed['original_structure']['candidates']['cross_references']
+        if mutation=='node': changed['nodes'].pop()
+        elif mutation=='page': c[1]['source_line']['page_id']='other'
+        elif mutation=='division': c[1]['division_index']=1
+        elif mutation=='target': c[0]['target_candidates'][0]['source_text']='different'
+        else: c[0]['target_candidates'].append(copy.deepcopy(swallowed))
+        with pytest.raises(ValueError,match='independent arrow boundary'):
+            annotations.apply_validated_annotations(p,changed,reviewed)
+    for mutation in ('hash','extent','basis'):
+        changed=copy.deepcopy(a)
+        if mutation=='hash': changed['binding']['text_sha256']='0'*64
+        elif mutation=='extent': changed['claim']['previous_range']['end']=8
+        else: changed['claim']['basis']='reviewed_printed_extent'
+        with pytest.raises(ValueError):run(tmp_path,p,[changed])

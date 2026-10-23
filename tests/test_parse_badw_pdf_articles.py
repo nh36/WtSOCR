@@ -408,6 +408,23 @@ def test_consecutive_arrows_in_one_italic_run_have_separate_targets():
     assert [r["target_label_candidate"] for r in refs] == ["ka thig", "tshaṅs thig"]
 
 
+def test_comma_continuation_does_not_swallow_an_italic_arrow():
+    # thig¹, printed vol. 4 p. 246: the second arrow is inside its
+    # target's italic run, unlike the upright arrow before ka thig.
+    first = _candidate_line(' Linie, Konfiguration; vgl. ↑ka thig,', 29, 36)
+    second = _candidate_line('↓tshaṅs thig.', 0, 12)
+    for line in (first, second):
+        for span in line['style_spans']: span['font_id'] = span['style']
+    refs = _candidates([first, second], _candidate_division(2))['cross_references']
+    assert [(r['visual_start'], r['visual_end'], r['target_label_candidate']) for r in refs] == [
+        (28, 36, 'ka thig'), (38, 50, 'tshaṅs thig')]
+    assert all(len(r['target_candidates']) == 1 for r in refs)
+    text = '↑ka thig, ↓tshaṅs thig'
+    refs = _candidates([_candidate_line(text, 0, len(text))],
+                       _candidate_division(1))['cross_references']
+    assert [r['target_label_candidate'] for r in refs] == ['ka thig', 'tshaṅs thig']
+
+
 def test_locatorless_citation_whitelist_does_not_promote_prose() -> None:
     line = _candidate_line("(brDa) (Dagy) (TTC) (vgl. das) (Andere) (TTC?) (Mil 74,4)")
     citations = _candidates([line], _candidate_division(1))["parenthetical_citations"]

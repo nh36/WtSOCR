@@ -87,6 +87,23 @@ def preserve_relationships(before, after, extent_reviews=()):
                 continue
             matches = [m for m in new.get('target_members', []) if
                        m['source_span'] == member['source_span'] and m['literal'] == member['literal']]
+            # A reviewed contraction can remove a duplicated second arrow from
+            # a plural extent. Its surviving accepted member becomes a single
+            # reference, with exactly the same literal, span and destination.
+            review = new.get('extent_review', {})
+            if (not matches and review in extent_reviews and
+                    review.get('claim', {}).get('basis') == 'reviewed_printed_arrow_boundary' and
+                    new.get('supersedes_component_id') == old['component_id'] and
+                    new.get('status') == 'resolved' and not new.get('target_members') and
+                    member['source_binding']['identity'] == old['source_binding']['identity'] and
+                    member['source_span'] == dict(start=new['source_span']['start'] + 1,
+                                                  end=new['source_span']['end']) and
+                    member['literal'] == new.get('wording') and
+                    member.get('target_entry_id') == new.get('target_entry_id') and
+                    member.get('target_lexical_entity') == new.get('target_lexical_entity') and
+                    member.get('exact_index_candidate_ids') == new.get('candidate_entry_ids') and
+                    member.get('printed_target') == new.get('parsed_target')):
+                continue
             if (len(matches) != 1 or matches[0]['resolution_status'] != 'resolved' or
                     matches[0]['source_binding'] != member['source_binding'] or
                     matches[0].get('target_entry_id') != member.get('target_entry_id') or
@@ -94,6 +111,33 @@ def preserve_relationships(before, after, extent_reviews=()):
                     matches[0].get('exact_index_candidate_ids') != member.get('exact_index_candidate_ids') or
                     matches[0].get('printed_target') != member.get('printed_target')):
                 raise ValueError('accepted cross-reference member changed')
+
+
+def reindex_for_review(original, reviews):
+    """Keep reviewed frozen extents until the bound annotation is validated.
+
+    Every other boundary must still match. This is staging, not acceptance:
+    validate/apply_validated_annotations subsequently replay the source proof.
+    """
+    current = reindex_article(original)
+    old = original['candidates']['cross_references']
+    new = current['candidates']['cross_references']
+    if len(old) != len(new):
+        raise ValueError('reference boundaries changed; explicit structural replay required')
+    for i, (before, after) in enumerate(zip(old, new)):
+        previous = (before['visual_start'], before['visual_end'])
+        proposed = (after['visual_start'], after['visual_end'])
+        if previous == proposed:
+            continue
+        matches = [r for r in reviews if r.get('kind') == 'cross_reference_extent' and
+            r.get('claim', {}).get('basis') == 'reviewed_printed_arrow_boundary' and
+            (r['claim']['previous_range']['start'], r['claim']['previous_range']['end']) == previous and
+            len(r.get('ranges', [])) == 1 and
+            (r['ranges'][0]['start'], r['ranges'][0]['end']) == proposed]
+        if len(matches) != 1:
+            raise ValueError('reference boundaries changed; explicit structural replay required')
+        new[i] = before
+    return current
 
 
 def main():
@@ -169,10 +213,7 @@ def main():
                 sources.append(dict(url='sources/'+sha+'.pdf', original_url=obj['pdf_url'], label='Printed facsimile', sha256=sha))
         if kind == 'pdf':
             original = pred['original_structure']
-            current = reindex_article(original)
-            spans = lambda a: [(v['visual_start'], v['visual_end']) for v in a['candidates']['cross_references']]
-            if spans(original) != spans(current):
-                raise ValueError('reference boundaries changed; explicit structural replay required')
+            current = reindex_for_review(original, annotations[identity])
             current['review_text_sha256'] = p['review_text_sha256']
             pred['original_structure'] = current
         pred = replay_empty_reference_labels(pred, CACHE)

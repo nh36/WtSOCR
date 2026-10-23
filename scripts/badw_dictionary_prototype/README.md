@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run25` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run27` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,14 +80,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run25 \
+  --reader work/badw_full_reader_20261020/run27 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 116 PDF
+336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 115 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -322,6 +322,17 @@ and one repaired reference, preserving source text, citations, relationships and
 all previously accepted destinations. Current-source physical replay reproduces
 the built target. Browser validation includes the new keyboard/history journey
 alongside all 47 independently accepted fixture members.
+
+The **thig¹** reference on printed p. 246 exposed a separate parser defect:
+comma-list continuation reabsorbed the following arrow after the initial
+arrow-boundary check. A source-bound contraction retains **↑ka thig** and its
+accepted destination; **↓tshaṅs thig** remains an independent unresolved occurrence.
+The facsimile confirms both arrows. This removes a duplicated unresolved member,
+not a missing destination. Run27: **7,584 resolved / 789 residual** (HTML
+**4,735 / 551 unresolved / 2 ambiguous**; PDF **2,849 / 118 / 118**).
+The differential verifies 29,877 byte-identical entry files out of 29,878,
+unchanged source text, citations and relationships, the same accepted target span
+and destination, and preservation of the independent second reference.
 
 ## Bounded historical LoC script experiment
 

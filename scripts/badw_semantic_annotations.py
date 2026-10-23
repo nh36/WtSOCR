@@ -256,9 +256,12 @@ def validate(packets, annotations, *, cache, canonical_root=None):
             _keys(old, ("start", "end", "literal"))
             if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
                     not _string(claim["node_id"]) or
-                    claim["basis"] not in ("reviewed_printed_extent", "reviewed_printed_terminal_letter", "reviewed_printed_nonprinting_bridge") or
+                    claim["basis"] not in ("reviewed_printed_extent", "reviewed_printed_terminal_letter", "reviewed_printed_nonprinting_bridge", "reviewed_printed_arrow_boundary") or
                     type(old["start"]) is not int or type(old["end"]) is not int or
-                    not ranges[0]["start"] == old["start"] < old["end"] < ranges[0]["end"] or
+                    not (ranges[0]["start"] == old["start"] and
+                         (old["start"] < ranges[0]["end"] < old["end"] <= len(packet["review_text"])
+                          if claim['basis'] == 'reviewed_printed_arrow_boundary' else
+                          old["start"] < old["end"] < ranges[0]["end"])) or
                     packet["review_text"][old["start"]:old["end"]] != old["literal"] or
                     ranges[0]["literal"][0] not in "↑↓"):
                 raise ValueError("invalid reviewed cross-reference extent")
@@ -485,6 +488,26 @@ def apply_validated_annotations(packet, prediction, annotations):
                    (c["visual_start"], c["visual_end"]) == (span["start"], span["end"])]
         if len(positions) != 1 or len(matches) != 1:
             raise ValueError("reviewed cross-reference extent lacks exact typographic support")
+        if row['claim']['basis'] == 'reviewed_printed_arrow_boundary':
+            previous = candidates[positions[0]]
+            following = [c for c in candidates if c['visual_start'] > span['end'] and
+                         c['visual_end'] == old['end']]
+            old_targets = previous.get('target_candidates', [])
+            new_targets = matches[0].get('target_candidates', [])
+            # Contract only a duplicated second-arrow member. Keep the first
+            # exact target, and require the swallowed suffix to survive as an
+            # independently frozen occurrence in this same division/page.
+            if (len(old_targets) != 2 or len(new_targets) != 1 or
+                    new_targets[0] != old_targets[0] or len(following) != 1 or
+                    old_targets[1]['visual_start'] != following[0]['visual_start'] or
+                    text[span['end']:following[0]['visual_start']].strip() != ',' or
+                    text[following[0]['visual_start']] not in '↑↓' or
+                    following[0]['division_index'] != previous['division_index'] or
+                    following[0]['source_line']['page_id'] != previous['source_line']['page_id'] or
+                    not any(n['kind'] == 'cross_reference' and
+                            (n['start'], n['end']) == (following[0]['visual_start'], old['end'])
+                            for n in result['nodes'])):
+                raise ValueError('reviewed cross-reference extent lacks independent arrow boundary')
         node = nodes[0]
         containers = [n for n in result["nodes"] if n["id"] == node["parent"]]
         if (len(containers) != 1 or not containers[0]["start"] <= span["start"] < span["end"] <= containers[0]["end"] or

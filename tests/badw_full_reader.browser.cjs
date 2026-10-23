@@ -22,8 +22,17 @@ const path=require('node:path');
   for(const ref of original.cross_references)for(const member of ref.target_members||[]){
    if(member.resolution_status!=='resolved')continue;
    const replacement=current.cross_references.find(r=>r.component_id===ref.component_id||r.supersedes_component_id===ref.component_id);assert(replacement);
-   const actual=replacement.target_members.find(m=>m.literal===member.literal&&m.source_span.start===member.source_span.start&&m.source_span.end===member.source_span.end);assert(actual);
-   assert.equal(actual.resolution_status,'resolved');assert.equal(actual.target_entry_id,member.target_entry_id);assert.deepEqual(actual.source_binding,member.source_binding);frozenAccepted++;
+   if(replacement.target_members){
+    const actual=replacement.target_members.find(m=>m.literal===member.literal&&m.source_span.start===member.source_span.start&&m.source_span.end===member.source_span.end);assert(actual);
+    assert.equal(actual.resolution_status,'resolved');assert.equal(actual.target_entry_id,member.target_entry_id);assert.deepEqual(actual.source_binding,member.source_binding);
+   }else{
+    assert.equal(replacement.extent_review?.annotation_id,'badw-reviewed-arrow-boundary-thig-1');
+    assert.equal(replacement.status,'resolved');assert.equal(replacement.wording,member.literal);
+    assert.deepEqual(member.source_span,{start:replacement.source_span.start+1,end:replacement.source_span.end});
+    assert.equal(replacement.target_entry_id,member.target_entry_id);assert.deepEqual(replacement.source_binding,ref.source_binding);
+    assert.deepEqual(replacement.parsed_target,member.printed_target);
+   }
+   frozenAccepted++;
   }
  }
  assert.equal(frozenAccepted,47);
@@ -78,6 +87,26 @@ const path=require('node:path');
  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeEntry.headword.loc);
  await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeTarget.headword.loc);
  assert(await page.locator('#article > .source-access a').count()>0);
+ // Two printed arrows remain separate occurrences. Contracting the first
+ // extent preserves its already accepted ka thig destination and leaves the
+ // independently printed tshaṅs thig unresolved, with its own explanation.
+ const thigMeta=entries.get('badw:pdf:badw-v4-5644b990758444b6b7b00f0adbb75fcdfe54b08c0bd3ec6c80120cbaea4a2281:605');assert(thigMeta);
+ const thig=await (await page.request.get(base+'/'+thigMeta.path)).json();
+ const contracted=thig.cross_references.find(r=>r.extent_review?.annotation_id==='badw-reviewed-arrow-boundary-thig-1');assert(contracted);
+ assert.equal(contracted.status,'resolved');assert.equal(contracted.wording,'ka thig');assert(!contracted.target_members);
+ const separate=thig.cross_references.find(r=>r.wording==='tshaṅs thig');assert(separate);assert.equal(separate.status,'unresolved');assert.equal(separate.target_entry_id,null);
+ await go(thig);
+ const thigLinks=page.locator('.reading a');
+ const thigLinkIndex=await thigLinks.evaluateAll((nodes,href)=>nodes.findIndex(n=>n.getAttribute('href')===href),'#'+encodeURIComponent(contracted.target_entry_id));assert(thigLinkIndex>=0);
+ await thigLinks.nth(thigLinkIndex).focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,contracted.target_entry_id);
+ await page.goBack();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,thig.id);
+ journeys++; // The preserved fixture destination is now a single reference.
+ await page.locator('.reading .uncertain-reference').filter({hasText:'tshaṅs thig'}).waitFor();
+ const thigUncertain=page.locator('.reading .uncertain-reference').filter({hasText:'tshaṅs thig'});assert.equal(await thigUncertain.count(),1);
+ await thigUncertain.click();assert(await page.locator('#reference-detail').isVisible());assert((await page.locator('#reference-detail-content').textContent()).includes('no destination'));
+ await page.keyboard.press('Escape');assert(await thigUncertain.evaluate(n=>n===document.activeElement));
+ uncertain++; // Its own occurrence replaces the former duplicated list member.
  // Facsimile-checked pairs inside one continuous italic run. Keep their plural
  // parents unresolved while exercising each independently accepted destination.
  for(const id of [

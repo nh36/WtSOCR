@@ -116,3 +116,63 @@ def test_census_keeps_reviewed_printed_expansion_and_absent_destination_separate
     assert diagnosis['classification']=='missing_exact_identity'
     assert diagnosis['review_status']=='printed_abbreviation_reviewed_destination_absent'
     assert 'No printing error or acquisition gap established' in diagnosis['diagnostic_reason']
+
+
+def test_reviewed_arrow_contraction_keeps_accepted_member_as_single_target():
+    import copy
+    from badw_dictionary_entry_view import identifier
+    binding=dict(identity='entry',text_sha256='review-hash')
+    old_span=dict(start=0,end=9);new_span=dict(start=0,end=3)
+    old_id=identifier('entry','review-hash','cross_reference',0,9)
+    printed=dict(literal='ka',lexical_target='ka',source_span=dict(start=1,end=3))
+    review=dict(kind='cross_reference_extent',effective_status='accepted',
+        claim=dict(basis='reviewed_printed_arrow_boundary',
+                   previous_range=dict(**old_span,literal='↑ka,\n↓kha')),
+        ranges=[dict(**new_span,literal='↑ka')])
+    member=dict(literal='ka',source_span=dict(start=1,end=3),
+        source_binding=dict(identity='entry',text_sha256='faithful-hash'),
+        resolution_status='resolved',target_entry_id='dest',target_lexical_entity='entity',
+        exact_index_candidate_ids=['dest'],printed_target=printed)
+    before=dict(citations=[],cross_references=[dict(component_id=old_id,status='unresolved',
+        source_span=old_span,source_binding=binding,target_members=[member])])
+    new=dict(component_id=identifier('entry','review-hash','cross_reference',0,3),
+        supersedes_component_id=old_id,extent_review=review,source_span=new_span,
+        source_binding=binding,status='resolved',wording='ka',target_entry_id='dest',
+        target_lexical_entity='entity',candidate_entry_ids=['dest'],parsed_target=printed)
+    after=dict(citations=[],cross_references=[new])
+    preserve_relationships(before,after,[review])
+    for key,value in [('wording','kha'),('target_entry_id','other'),
+            ('target_lexical_entity','other'),('candidate_entry_ids',['other']),
+            ('parsed_target',dict(lexical_target='different')),('status','ambiguous')]:
+        changed=copy.deepcopy(after);changed['cross_references'][0][key]=value
+        with pytest.raises(ValueError,match='member changed'):
+            preserve_relationships(before,changed,[review])
+    extra=copy.deepcopy(before);extra['cross_references'][0]['target_members'].append(
+        dict(member,literal='kha',source_span=dict(start=6,end=9)))
+    with pytest.raises(ValueError,match='member changed'):
+        preserve_relationships(extra,after,[review])
+    with pytest.raises(ValueError,match='occurrence lost'):
+        preserve_relationships(before,after)
+
+
+def test_reindex_stages_only_the_exact_reviewed_arrow_contraction(monkeypatch):
+    import copy
+    import build_badw_full_reader as builder
+    old = dict(visual_start=1, visual_end=20)
+    new = dict(visual_start=1, visual_end=8)
+    following = dict(visual_start=10, visual_end=20)
+    original = dict(candidates=dict(cross_references=[old, following]))
+    current = dict(candidates=dict(cross_references=[new, following]))
+    monkeypatch.setattr(builder, 'reindex_article', lambda _: copy.deepcopy(current))
+    review = dict(kind='cross_reference_extent', claim=dict(
+        basis='reviewed_printed_arrow_boundary', previous_range=dict(start=1,end=20)),
+        ranges=[dict(start=1,end=8)])
+    assert builder.reindex_for_review(original, [review]) == original
+    assert current['candidates']['cross_references'][0] == new
+    for reviews in ([], [review,review], [{**review, 'ranges':[dict(start=1,end=9)]}],
+                    [{**review, 'claim':{**review['claim'], 'basis':'reviewed_printed_extent'}}]):
+        with pytest.raises(ValueError, match='explicit structural replay'):
+            builder.reindex_for_review(original, reviews)
+    current['candidates']['cross_references'].append(dict(visual_start=22,visual_end=30))
+    with pytest.raises(ValueError, match='explicit structural replay'):
+        builder.reindex_for_review(original, [review])
