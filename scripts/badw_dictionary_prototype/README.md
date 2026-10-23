@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run33` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run34` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,14 +80,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run33 \
+  --reader work/badw_full_reader_20261020/run34 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 111 PDF
+336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
 missing exact identities; two HTML and 115 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -586,3 +586,21 @@ Run33: **7,599 resolved / 775 residual** target units; HTML 4,742 resolved,
 544 unresolved, two ambiguous; PDF unchanged at 2,857 resolved, 114 unresolved,
 115 ambiguous. All previously accepted destinations and all 23 reviewed
 collections / 50 members / 47 accepted member targets must remain unchanged.
+
+
+One separately reviewed PDF occurrence, **↑gyad-mo** in **’jigs byed thabs ldan
+’ug pa’i mgo can** (WTS III, p. 386), now links to the unnumbered **gyad mo**
+(WTS II, p. 237). Both describe Bon-po deities and cite **Neb 313**; the destination
+heading is independently checked against canonical PDF runs. This is a lexical
+interpretation of a correctly extracted printed compound, not a parser defect
+or a confirmed printing error. The original hyphen, arrow, source text and span
+remain literal. The PDF-only review basis cannot discard a homonym qualifier,
+change an accepted destination, or establish a general compound alias. The
+separate HTML **gyad-mo¹** reference remains unresolved.
+
+Run34: **7,600 resolved / 774 residual** target units; HTML unchanged at 4,742
+resolved, 544 unresolved, two ambiguous; PDF 2,858 resolved, 113 unresolved,
+115 ambiguous. The full differential permits only this one reference resolution;
+all other witness contents, citations, source bindings and prior destinations,
+including the 23 reviewed collections / 50 members / 47 accepted member targets,
+remain unchanged.

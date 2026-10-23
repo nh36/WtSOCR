@@ -98,6 +98,25 @@ const path=require('node:path');
   editorialVariantJourneys++;
  }
  assert.equal(editorialVariantJourneys,7);
+ // The printed compound stays literal; its individually reviewed destination
+ // is established by the deity definition and Neb 313, not a general alias.
+ const compoundMeta=entries.get('badw:pdf:badw-v3-1d977621afbefaf1db170e3bec2e2acd3a966d3fde30b8f6369a42611c434462:1579');assert(compoundMeta);
+ const compoundEntry=await (await page.request.get(base+'/'+compoundMeta.path)).json();
+ const compoundRef=compoundEntry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_printed_compound');assert(compoundRef);
+ assert.equal(compoundRef.wording,'gyad-mo');assert.deepEqual(compoundRef.source_span,{start:11,end:19});assert.equal(compoundRef.status,'resolved');
+ const compoundTarget=entries.get(compoundRef.target_entry_id);assert.equal(compoundTarget.headword.loc,'gyad mo');assert.equal(compoundTarget.homonym,'');
+ await go(compoundEntry);
+ const compoundLink=page.locator('.reading a').filter({hasText:'gyad-mo'});assert.equal(await compoundLink.count(),1);
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await compoundLink.focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('gyad mo'));
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await page.goBack();await page.waitForFunction(()=>document.querySelector('.reading')?.textContent.includes('gyad-mo'));
+ await page.goForward();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('gyad mo'));
+ const numberedCompoundMeta=catalog.find(e=>e.headword.loc==='kaṅ ka rgod mgo');assert(numberedCompoundMeta);
+ const numberedCompound=await (await page.request.get(base+'/'+numberedCompoundMeta.path)).json();
+ const numberedRef=numberedCompound.cross_references.find(r=>r.wording==='gyad-mo');assert(numberedRef);
+ assert.equal(numberedRef.status,'unresolved');assert.equal(numberedRef.target_entry_id,null);
  // A confirmed printed marker error has an explicit interpretation, while
  // its literal ↑fut and the unresolved numbered imperative remain visible.
  const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
@@ -550,6 +569,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

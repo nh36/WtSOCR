@@ -145,10 +145,10 @@ def _packet(packet, cache, canonical_root, verified):
         raise ValueError("unsupported source kind")
 
 
-def wrapped_heading(claim, cache, canonical_root, verified):
+def reviewed_pdf_heading(claim, cache, canonical_root, verified, *, compound=False):
     """Check an individually reviewed destination against immutable PDF runs.
 
-    The index key stays literal, including its line break. This is neither a
+    The index key stays literal, including any line break. This is neither a
     corpus-wide alias nor permission to discard an explicit homonym qualifier.
     """
     from extract_badw_pdf_entries import _heading_reading
@@ -160,9 +160,16 @@ def wrapped_heading(claim, cache, canonical_root, verified):
             proof['homonym'] != '' or span.get('homonym_run_indices') != [] or
             not isinstance(proof['headword'], dict) or
             proof['headword'].get('loc') != claim['lemma'] or
-            not isinstance(claim['lemma'], str) or '\n' not in claim['lemma'] or
+            not isinstance(claim['lemma'], str) or (not compound and '\n' not in claim['lemma']) or
             any(not part or part != part.strip() for part in claim['lemma'].split('\n'))):
         raise ValueError('invalid reviewed wrapped heading identity')
+    if compound and (not _string(claim.get('source_target_label')) or
+            '-' not in claim['source_target_label'] or
+            any(c in claim['source_target_label'] for c in ('~', '\n')) or
+            '\n' in claim['lemma'] or
+            claim['source_target_label'].replace('-', ' ') != claim['lemma'] or
+            any(not part for part in claim['lemma'].split(' ')) or 'source_headword' in claim):
+        raise ValueError('invalid individually reviewed printed compound identity')
     logical = ' '.join(claim['source_target_label'].split())
     if '~' in logical:
         if logical.count('~') != 1 or not _string(claim.get('source_headword')):
@@ -170,7 +177,7 @@ def wrapped_heading(claim, cache, canonical_root, verified):
         logical = logical.replace('~', claim['source_headword'])
     elif 'source_headword' in claim:
         raise ValueError('unexpected abbreviation headword')
-    if logical != claim['lemma'].replace('\n', ' '):
+    if (not compound and logical != claim['lemma'].replace('\n', ' ')):
         raise ValueError('wrapped heading differs from literal target')
     _object(canonical_root, span['canonical_object'], proof['canonical_object_sha256'], verified)
     sha = span['representative_pdf_sha256']
@@ -194,7 +201,7 @@ def wrapped_heading(claim, cache, canonical_root, verified):
             any(r.get('run_index') != i or r.get('unknown_glyphs') or
                 r.get('x') is None or r.get('y') is None or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for i, r in zip(indices, selected)) or
-            len({r['y'] for r in selected}) < 2 or
+            (not compound and len({r['y'] for r in selected}) < 2) or
             _heading_reading(selected) != claim['lemma'] or
             ''.join(r['decoded_unicode'] for r in selected).strip() != proof['headword'].get('source_loc')):
         raise ValueError('wrapped heading differs from canonical PDF evidence')
@@ -389,12 +396,13 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
-            elif claim['basis'] == 'reviewed_printed_wrapped_headword':
+            elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_target_label', 'lemma')) or
                         claim['source_target_url'] is not None or claim['homonym'] is not None):
                     raise ValueError('invalid reviewed wrapped heading reference')
-                wrapped_heading(claim, cache, canonical_root, verified)
+                reviewed_pdf_heading(claim, cache, canonical_root, verified,
+                    compound=claim['basis'] == 'reviewed_printed_compound_headword')
             elif claim["basis"] == "reviewed_printed_headword_substitution":
                 if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in (
@@ -620,7 +628,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_misplaced_arrow"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]

@@ -679,11 +679,11 @@ def test_printed_abbreviation_annotation_binds_exact_headword_node_and_candidate
         assert not annotations.apply_validated_annotations(p,base,run(tmp_path,p,[inactive]))['reviewed_cross_reference_targets']
 
 
-def wrapped_fixture(tmp_path):
+def wrapped_fixture(tmp_path, compound=False):
     import gzip
     import json
     p = packet(tmp_path, 'pdf')
-    text = '↑ka kha'
+    text = '↑ka-kha' if compound else '↑ka kha'
     p['review_text'] = p['source']['source_faithful_text'] = text
     p['review_text_sha256'] = annotations.digest(text)
     line = p['source']['visual_lines'][0]
@@ -709,19 +709,31 @@ def wrapped_fixture(tmp_path):
     a = claim(p, kind='cross_reference_target', ranges=[dict(start=0,end=len(text),literal=text)])
     a['claim'] = dict(occurrence_id='xref', source_target_url=None, source_target_label='ka kha',
                       lemma='ka\nkha', homonym=None, basis='reviewed_printed_wrapped_headword', destination_heading=proof)
+    if compound:
+        page['positioned_page']['positioned_text_runs'][0]['decoded_unicode'] = 'ka '
+        page['positioned_page']['positioned_text_runs'][1]['y'] = 20
+        page['source_faithful_decoded_text'] = 'ka kha'
+        page['visible_body_sha256'] = annotations.digest('ka kha')
+        span['visible_body_sha256'] = page['visible_body_sha256']
+        path.write_bytes(gzip.compress(json.dumps(page).encode()))
+        proof['canonical_object_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+        proof['headword'] = dict(loc='ka kha', source_loc='ka kha')
+        a['claim'].update(source_target_label='ka-kha', lemma='ka kha',
+                          basis='reviewed_printed_compound_headword')
     base = prediction(p)
     base['nodes'].append(dict(id='xref',kind='cross_reference',start=0,end=len(text),parent='root'))
     base['original_structure'] = dict(loc_headword='other', visual_lines=copy.deepcopy(p['source']['visual_lines']),
-        candidates=dict(cross_references=[dict(visual_start=0,visual_end=len(text),target_label_candidate='ka kha')]))
+        candidates=dict(cross_references=[dict(visual_start=0,visual_end=len(text),target_label_candidate=a['claim']['source_target_label'])]))
     return p, a, base, page, path
 
 
-def test_wrapped_heading_validated_overlay_preserves_source_and_identity(tmp_path):
-    p, a, base, _, _ = wrapped_fixture(tmp_path)
+@pytest.mark.parametrize('compound', [False, True])
+def test_wrapped_heading_validated_overlay_preserves_source_and_identity(tmp_path, compound):
+    p, a, base, _, _ = wrapped_fixture(tmp_path, compound)
     before = copy.deepcopy((p, a, base))
     result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
     target = result['reviewed_cross_reference_targets']['xref']
-    assert target['lemma'] == 'ka\nkha'
+    assert target['lemma'] == ('ka kha' if compound else 'ka\nkha')
     assert target['destination_heading'] == a['claim']['destination_heading']
     assert result['nodes'] == base['nodes'] and result['original_structure'] == base['original_structure']
     assert (p, a, base) == before
@@ -733,16 +745,17 @@ def test_wrapped_heading_validated_overlay_preserves_source_and_identity(tmp_pat
 @pytest.mark.parametrize('fault', ['canonical_hash','pdf_hash','entry_id','printed_page','source_loc',
     'heading','homonym','homonym_runs','run_order','run_bounds','index_type','body_hash',
     'source_url','geometry','unknown','run_identity','label','source_homonym','source_url_claim','extra_field'])
-def test_wrapped_heading_proof_fails_closed(tmp_path, fault):
+@pytest.mark.parametrize('compound', [False, True])
+def test_wrapped_heading_proof_fails_closed(tmp_path, fault, compound):
     import gzip
     import json
-    p, a, _, page, path = wrapped_fixture(tmp_path)
+    p, a, _, page, path = wrapped_fixture(tmp_path, compound)
     c = a['claim']; d = c['destination_heading']; s = d['entry_start_source_span']
     if fault == 'canonical_hash': d['canonical_object_sha256'] = '0'*64
     elif fault == 'pdf_hash': s['representative_pdf_sha256'] = '0'*64
     elif fault == 'entry_id': d['entry_id'] = 'wrong'
     elif fault == 'printed_page': d['printed_page'] = 13
-    elif fault == 'source_loc': d['headword']['source_loc'] = 'ka kha'
+    elif fault == 'source_loc': d['headword']['source_loc'] = 'incorrect'
     elif fault == 'heading': c['lemma'] = d['headword']['loc'] = 'ka\nkhu'
     elif fault == 'homonym': d['homonym'] = '1'
     elif fault == 'homonym_runs': s['homonym_run_indices'] = [0]
@@ -1124,3 +1137,25 @@ def test_real_khrud_review_retains_both_source_ranges_and_print_evidence():
     assert row['claim']['homonym'] is None
     assert row['binding']['text_sha256']=='60b17485c43eaa772ad81f6553486cb524e990569fb4ddc3ea4b34dcd1e4d66d'
     assert 'printed p. 170' in row['review']['evidence']
+
+
+@pytest.mark.parametrize('label', ['ka kha', 'ka--kha', 'ka-kha ', 'ka- kha', '~kha', 'ka-\nkha'])
+def test_printed_compound_requires_exact_individually_reviewed_spelling(tmp_path, label):
+    p, a, _, _, _ = wrapped_fixture(tmp_path, compound=True)
+    a['claim']['source_target_label'] = label
+    with pytest.raises(ValueError):
+        run(tmp_path, p, [a])
+
+
+def test_real_printed_gyad_mo_review_retains_unnumbered_identity_and_extent():
+    import json
+    rows = [json.loads(line) for line in (Path(__file__).resolve().parents[1] /
+            'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    a, = [r for r in rows if r['annotation_id'] == 'badw-reviewed-printed-compound-gyad-mo']
+    assert a['ranges'] == [dict(start=11, end=19, literal='↑gyad-mo')]
+    assert a['claim']['basis'] == 'reviewed_printed_compound_headword'
+    assert a['claim']['source_target_label'] == 'gyad-mo'
+    assert a['claim']['lemma'] == 'gyad mo'
+    assert a['claim']['homonym'] is None
+    assert a['claim']['destination_heading']['homonym'] == ''
+    assert 'Neb 313' in a['review']['evidence']

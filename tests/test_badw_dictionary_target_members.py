@@ -363,3 +363,32 @@ def test_reviewed_page_continuation_survives_reader_and_store(monkeypatch,tmp_pa
     assert db.execute('SELECT target,status FROM xref').fetchall()==[(target,status)]
     assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
     db.close()
+
+
+@pytest.mark.parametrize('compound', [False, True])
+def test_reviewed_printed_heading_reaches_reader_and_sql_without_source_mutation(tmp_path, compound):
+    from test_badw_cross_reference_resolution import wrapped_destination_fixture
+    fixture, review, destination = wrapped_destination_fixture(compound)
+    occurrence, structure, text, binding = fixture
+    candidate = dict(occurrence['source_candidate'], marker='↑')
+    review['source_spans'] = [candidate]
+    structure['candidates'] = dict(cross_references=[candidate])
+    projection = dict(contract_version='badw-structural-candidate-projection-v6',
+        identity=binding['identity'], source_kind='pdf', source=dict(visual_lines=structure['visual_lines']),
+        review_text_sha256=structure['review_text_sha256'], original_structure=structure,
+        reviewed_cross_reference_targets={'xref': review},
+        nodes=[dict(id='xref', kind='cross_reference', start=0, end=len(text))], edges=[])
+    index = EntryIndex([entry(binding['identity'], lemma='source'), destination])
+    before = copy.deepcopy(projection)
+    result = entry_view(view([projection], index)[0])
+    ref, = result['cross_references']
+    assert ref['status'] == 'resolved' and ref['target_entry_id'] == destination['id']
+    assert ref['resolution_evidence']['method'] == ('reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword')
+    assert ref['resolution_evidence']['target_review']['basis'] == review['basis']
+    assert ''.join(s['text'] for s in result['segments']) == text
+    assert projection == before
+    db = create(tmp_path/'reviewed.sqlite')
+    ingest(db, result)
+    assert db.execute('SELECT target,status FROM xref').fetchall() == [(destination['id'], 'resolved')]
+    assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+    db.close()
