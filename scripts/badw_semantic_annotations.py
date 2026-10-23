@@ -207,6 +207,21 @@ def reviewed_pdf_heading(claim, cache, canonical_root, verified, *, compound=Fal
         raise ValueError('wrapped heading differs from canonical PDF evidence')
 
 
+def reciprocal_perfect_introduction(claim, text, start):
+    """Admit exact reviewed grammatical introductions, never arbitrary prose.
+
+    An alternate spelling is evidence retained in the individually bound claim;
+    it is not an alias used for destination lookup or reciprocal matching.
+    """
+    prefix = text[:start].strip()
+    alternate = claim.get('source_alternate_headword')
+    if 'source_alternate_headword' in claim:
+        return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
+                re.fullmatch(r"[^\W\d_]+(?:[ ’][^\W\d_]+)*", alternate) is not None and
+                prefix == 'auch ' + alternate + ', pf. zu')
+    return prefix in ('pf. zu', 'pf. bzw. imp. zu')
+
+
 def reciprocal_perfect_passage(passage, source_headword, source_marker):
     """Check an exact reciprocal expression, retaining any shared-run comma.
 
@@ -238,7 +253,7 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
                 'source_target_label', 'lemma', 'homonym')) or
             not re.fullmatch(r'[1-9][0-9]*', claim['homonym']) or
             claim['source_target_label'] != claim['lemma'] or
-            packet['review_text'][:ranges[0]['start']].strip() != 'pf. zu' or
+            not reciprocal_perfect_introduction(claim, packet['review_text'], ranges[0]['start']) or
             ranges[0]['literal'] not in ('↓' + claim['lemma'], '↑' + claim['lemma'])):
         raise ValueError('invalid reviewed reciprocal perfect reference')
     proof = claim.get('destination_heading')
@@ -387,7 +402,10 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal"))
+                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword"))
+            if ('source_alternate_headword' in claim and
+                    claim['basis'] != 'reviewed_printed_reciprocal_perfect'):
+                raise ValueError('alternate source spelling outside reciprocal review')
             if claim['basis'] == 'reviewed_editorial_headword_variant':
                 from badw_article_parser import parse_database_article
                 from urllib.parse import unquote, urlsplit
@@ -719,7 +737,7 @@ def apply_validated_annotations(packet, prediction, annotations):
                 lemma=claim["lemma"], homonym=claim["homonym"], basis=claim["basis"],
                 annotation_id=row["annotation_id"], binding=row["binding"],
                 physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
-            for field in ('source_headword', 'destination_heading'):
+            for field in ('source_headword', 'destination_heading', 'source_alternate_headword'):
                 if field in claim:
                     targets[claim['occurrence_id']][field] = deepcopy(claim[field])
             continue

@@ -358,7 +358,7 @@ class EntryIndex:
         compound = review.get('basis') == 'reviewed_printed_compound_headword'
         reciprocal = review.get('basis') == 'reviewed_printed_reciprocal_perfect'
         if reciprocal:
-            from badw_semantic_annotations import reciprocal_perfect_passage
+            from badw_semantic_annotations import reciprocal_perfect_passage, reciprocal_perfect_introduction
         lexical = parsed.get('lexical_target', '')
         if wrapped or compound or reciprocal:
             proof = review.get('destination_heading', {})
@@ -378,7 +378,7 @@ class EntryIndex:
                 raise ValueError('reviewed wrapped destination differs from actual entry index')
             if reciprocal:
                 target_matches = (lexical == review.get('lemma') and
-                    text[:span['start']].strip() == 'pf. zu' and
+                    reciprocal_perfect_introduction(review, text, span['start']) and
                     text[span['start']:span['end']] in ('↓' + lexical, '↑' + lexical))
             elif compound:
                 target_matches = ('-' in lexical and '~' not in lexical and '\n' not in lexical and

@@ -895,3 +895,33 @@ def test_upward_reciprocal_review_requires_exact_opposite_passage(fault):
         assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
         result=substitute(index,fixture,review)['canonical_resolution']
         assert result['status']=='resolved' and result['target_entry_id']==destination['id']
+
+
+@pytest.mark.parametrize('prefix,alternate,fault', [
+    (' pf. bzw. imp. zu ',None,None), (' auch sgrags, pf. zu ','sgrags',None),
+    (' auch sgrags, pf. zu ','sgrag','alias'),
+    (' auch sgrags, pf. zu ',None,'missing'), (' prose pf. zu ',None,'prose'),
+    (' pf. bzw. imp. zu ',None,'hash'), (' auch sgrags, pf. zu ','sgrags','range'),
+])
+def test_reciprocal_introduction_exact_replay_in_resolver(prefix,alternate,fault):
+    fixture,review,destination=reciprocal_destination_fixture()
+    occurrence,structure,_,binding=fixture
+    text=prefix+'↓ka zusammenziehen.';start=len(prefix);end=start+3
+    candidate=occurrence['source_candidate']
+    candidate.update(visual_start=start,visual_end=end)
+    candidate['target_candidates'][0].update(visual_start=start+1,visual_end=end)
+    structure['visual_lines'][0].update(text=text,style_spans=[dict(start=start+1,end=end,style='italic',font_id='italic-font')])
+    structure['review_text_sha256']=hashlib.sha256(text.encode()).hexdigest()
+    review['binding']['text_sha256']=structure['review_text_sha256']
+    review['ranges']=[dict(start=start,end=end,literal='↓ka')]
+    if alternate is not None: review['source_alternate_headword']=alternate
+    if fault=='hash': review['binding']['text_sha256']='0'*64
+    if fault=='range': review['ranges'][0]['end']-=1
+    fixture=(occurrence,structure,text,binding)
+    index=EntryIndex([destination,entry('second',lemma='ka',homonym='2')])
+    assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
+    if fault:
+        with pytest.raises(ValueError): substitute(index,fixture,review)
+    else:
+        result=substitute(index,fixture,review)['canonical_resolution']
+        assert result['status']=='resolved' and result['target_entry_id']==destination['id']

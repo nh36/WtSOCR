@@ -1327,3 +1327,68 @@ def test_real_brgyas_reciprocal_preserves_shared_run_and_upward_source():
     assert proof['reciprocal_passage']==dict(run_start=1462,run_end_exclusive=1471,
         literal=', pf. ↓brgyas',run_start_offset=2)
     assert annotations.reciprocal_perfect_passage(proof['reciprocal_passage'],'brgyas','↑')
+
+
+@pytest.mark.parametrize('source,target,node,start,end,page,runs,alternate', [
+    ('bsgrags','sgrog','n75',21,27,496,(1490,1500),'sgrags'),
+    ('khyer','’khyer','n99',18,25,160,(1356,1362),None),
+])
+def test_real_extended_reciprocal_introductions_preserve_exact_evidence(
+        source,target,node,start,end,page,runs,alternate):
+    import json
+    rows = [json.loads(line) for line in (Path(__file__).resolve().parents[1] /
+            'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    a, = [r for r in rows if r['annotation_id'] ==
+          'badw-reviewed-reciprocal-perfect-'+source+'-'+target+'-1']
+    arrow = '↑' if source == 'bsgrags' else '↓'
+    assert a['ranges'] == [dict(start=start,end=end,literal=arrow+target)]
+    c=a['claim']; proof=c['destination_heading']
+    assert c['occurrence_id']==node and c['source_headword']==source
+    assert c['lemma']==c['source_target_label']==target
+    assert c.get('source_alternate_headword')==alternate
+    assert c['homonym']==proof['homonym']=='1'
+    assert proof['printed_page']==page
+    passage=proof['reciprocal_passage']
+    assert (passage['run_start'],passage['run_end_exclusive'])==runs
+    assert passage['literal'].strip()=='pf. '+('↓' if arrow=='↑' else '↑')+source
+    assert annotations.reciprocal_perfect_passage(passage,source,arrow)
+
+
+@pytest.mark.parametrize('prefix,alternate', [
+    (' pf. bzw. imp. zu ', None), (' auch sgrags, pf. zu ', 'sgrags'),
+])
+def test_reviewed_reciprocal_introductions_replay_bound_source(tmp_path,prefix,alternate):
+    p,a,base,_,_ = reciprocal_fixture(tmp_path)
+    text = prefix+'↓ka zusammenziehen.'
+    start,end=len(prefix),len(prefix)+3
+    p['review_text']=p['source']['source_faithful_text']=text
+    p['review_text_sha256']=annotations.digest(text)
+    p['source']['visual_lines'][0].update(text=text)
+    p['source']['visual_lines'][0]['style_spans'][0]['end']=len(text)
+    a['ranges']=[dict(start=start,end=end,literal='↓ka')]
+    a['binding']=annotations.binding(p)
+    a['physical_selectors']=annotations.physical_selectors(p,a['ranges'])
+    if alternate is not None: a['claim']['source_alternate_headword']=alternate
+    base['nodes'][-1].update(start=start,end=end)
+    base['original_structure']['visual_lines']=copy.deepcopy(p['source']['visual_lines'])
+    base['original_structure']['candidates']['cross_references'][0].update(visual_start=start,visual_end=end)
+    result=annotations.apply_validated_annotations(p,base,run(tmp_path,p,[a]))
+    review=result['reviewed_cross_reference_targets']['xref']
+    assert review['homonym']=='1'
+    assert review.get('source_alternate_headword')==alternate
+    assert result['nodes']==base['nodes']
+    assert result['original_structure']==base['original_structure']
+
+
+@pytest.mark.parametrize('prefix,alternate', [
+    ('auch sgrags, pf. zu ',None), ('auch sgrags, pf. zu ','sgrag'),
+    ('auch sgrags; pf. zu ','sgrags'), ('auch sgrags, vgl. ','sgrags'),
+    ('prose pf. zu ',None), ('pf. bzw. imp. zu prose ',None),
+    ('auch sgrags, pf. zu ',42), ('auch sgrags, pf. zu ',''),
+    ('auch sgrags, pf. zu ', 'sgrags, pf. zu'), ('auch sgrags, pf. zu ', 'sgrags\n'),
+])
+def test_reciprocal_introductions_do_not_infer_aliases_or_skip_prose(prefix,alternate):
+    claim={} if alternate is None else dict(source_alternate_headword=alternate)
+    assert not annotations.reciprocal_perfect_introduction(claim,prefix+'↓ka',len(prefix))
+    assert not annotations.reciprocal_perfect_introduction(
+        dict(source_alternate_headword=None),'pf. zu ↓ka',7)

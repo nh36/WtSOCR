@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run37` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run39` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run37 \
+  --reader work/badw_full_reader_20261020/run39 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 110 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 108 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -648,3 +648,20 @@ resolved, 544 unresolved, two ambiguous; PDF 2,863 resolved, 113 unresolved,
 110 ambiguous. Only this individually reviewed reference gains a destination;
 source text, citations, previous destinations and the 23/50/47 fixture remain
 unchanged. This is interpretation of an intact reference, not a printing error.
+
+
+The individually reviewed reciprocal family additionally identifies **bsgrags →
+sgrog¹** (II pp. 516/496) and **khyer¹ → ’khyer¹** (II pp. 93/160).
+The source introductions are respectively **auch sgrags, pf. zu ↑sgrog** and
+**pf. bzw. imp. zu ↓’khyer**. Their numbered destinations reciprocate
+**pf. ↓bsgrags** and **pf. ↑khyer**. Both source and destination facsimiles were
+checked. The alternate spelling `sgrags` is retained in the individually bound
+claim; it does not become a lookup alias. Competing homonyms remain distinct.
+The review admits these exact introductions, retaining the original spans and
+literal arrows, and rejects incorrect spellings, intervening prose and stale
+source bindings. No printing error is asserted.
+
+Run39: **7,607 resolved / 767 residual** target units; HTML unchanged at 4,742
+resolved, 544 unresolved, two ambiguous; PDF 2,865 resolved, 113 unresolved,
+108 ambiguous. Only these two reviewed references gain destinations. Source
+text, citations, previous destinations and the 23/50/47 fixture remain unchanged.
