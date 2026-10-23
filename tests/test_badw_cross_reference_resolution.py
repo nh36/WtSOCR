@@ -816,7 +816,7 @@ def test_printed_compound_review_cannot_be_reused_for_another_literal(label):
         substitute(EntryIndex([destination]), other, review)
 
 
-def reciprocal_destination_fixture():
+def reciprocal_destination_fixture(future=False):
     fixture,review,destination = wrapped_destination_fixture()
     occurrence,structure,_,binding=fixture
     text=' pf. zu ↓ka zusammenziehen.'
@@ -832,12 +832,24 @@ def reciprocal_destination_fixture():
     review.update(source_headword='bcum',literal='ka',lemma='ka',homonym='1',
         basis='reviewed_printed_reciprocal_perfect',source_spans=[candidate],
         binding=dict(text_sha256=structure['review_text_sha256']),ranges=[dict(start=8,end=11,literal='↓ka')])
+    if future:
+        prefix=' pf. und fut. zu '
+        text=prefix+'↓ka zusammenziehen.';start=len(prefix);end=start+3
+        candidate.update(visual_start=start,visual_end=end)
+        candidate['target_candidates'][0].update(visual_start=start+1,visual_end=end)
+        structure['visual_lines'][0].update(text=text,style_spans=[dict(start=start+1,end=end,style='italic',font_id='italic-font')])
+        structure['review_text_sha256']=hashlib.sha256(text.encode()).hexdigest()
+        review['binding']['text_sha256']=structure['review_text_sha256']
+        review['ranges']=[dict(start=start,end=end,literal='↓ka')]
+        review['basis']='reviewed_printed_reciprocal_perfect_future'
+        review['destination_heading']['reciprocal_passage']['literal']=' pf. und fut. ↑bcum '
     return (occurrence,structure,text,binding),review,destination
 
 
 @pytest.mark.parametrize("homonym", ["1", "2"])
-def test_reciprocal_perfect_selects_only_individually_reviewed_homonym(homonym):
-    fixture,review,destination=reciprocal_destination_fixture()
+@pytest.mark.parametrize('future',[False,True])
+def test_reciprocal_perfect_selects_only_individually_reviewed_homonym(homonym,future):
+    fixture,review,destination=reciprocal_destination_fixture(future)
     destination['homonym'] = review['homonym'] = review['destination_heading']['homonym'] = homonym
     other=copy.deepcopy(destination);other.update(id='second',homonym='2' if homonym=='1' else '1')
     index=EntryIndex([destination,other])
@@ -845,7 +857,7 @@ def test_reciprocal_perfect_selects_only_individually_reviewed_homonym(homonym):
     assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
     resolved=substitute(index,fixture,review)['canonical_resolution']
     assert resolved['status']=='resolved' and resolved['target_entry_id']=='wrapped'
-    assert resolved['method']=='reviewed_exact_reciprocal_perfect'
+    assert resolved['method']==('reviewed_exact_reciprocal_perfect_future' if future else 'reviewed_exact_reciprocal_perfect')
     assert resolved['target_lexical_entity']['homonym']==homonym
     assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
     assert (fixture,review,destination,other)==before
@@ -856,8 +868,9 @@ def test_reciprocal_perfect_selects_only_individually_reviewed_homonym(homonym):
 
 
 @pytest.mark.parametrize('fault',['hash','range','source','heading','span','homonym','unnumbered','reciprocal','missing_source','accepted'])
-def test_reciprocal_perfect_resolution_fails_closed(fault):
-    fixture,review,destination=reciprocal_destination_fixture()
+@pytest.mark.parametrize('future',[False,True])
+def test_reciprocal_perfect_resolution_fails_closed(fault,future):
+    fixture,review,destination=reciprocal_destination_fixture(future)
     if fault=='hash': review['binding']['text_sha256']='0'*64
     if fault=='range': review['ranges'][0]['end']-=1
     if fault=='source': review['source_headword']='other'

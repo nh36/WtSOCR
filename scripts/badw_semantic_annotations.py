@@ -214,6 +214,9 @@ def reciprocal_perfect_introduction(claim, text, start):
     it is not an alias used for destination lookup or reciprocal matching.
     """
     prefix = text[:start].strip()
+    if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_future':
+        return ('source_alternate_headword' not in claim and
+                prefix in ('pf. und fut. zu', 'pf. und fut.'))
     alternate = claim.get('source_alternate_headword')
     if 'source_alternate_headword' in claim:
         return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
@@ -222,7 +225,8 @@ def reciprocal_perfect_introduction(claim, text, start):
     return prefix in ('pf. zu', 'pf. bzw. imp. zu')
 
 
-def reciprocal_perfect_passage(passage, source_headword, source_marker):
+def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
+        basis="reviewed_printed_reciprocal_perfect", source_introduction=None):
     """Check an exact reciprocal expression, retaining any shared-run comma.
 
     The optional offset selects past exactly ``, `` in the first PDF run;
@@ -236,7 +240,13 @@ def reciprocal_perfect_passage(passage, source_headword, source_marker):
             source_marker not in ('↑', '↓') or not source_headword):
         return False
     opposite = {'↑': '↓', '↓': '↑'}[source_marker]
-    return literal[offset:].strip() == 'pf. ' + opposite + source_headword
+    if basis == 'reviewed_printed_reciprocal_perfect_future':
+        complementary = {'pf. und fut. zu': 'pf. und fut. ',
+                         'pf. und fut.': 'pf. und fut. zu '}
+        prefix = complementary.get(source_introduction)
+        return prefix is not None and literal[offset:].strip() == prefix + opposite + source_headword
+    return (basis == 'reviewed_printed_reciprocal_perfect' and
+            literal[offset:].strip() == 'pf. ' + opposite + source_headword)
 
 
 def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified):
@@ -283,7 +293,8 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
         raise ValueError('reciprocal passage outside reviewed destination')
     runs = page['positioned_page']['positioned_text_runs'][a:b]
     if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
-            not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0]) or
+            not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0],
+                basis=claim['basis'], source_introduction=packet['review_text'][:ranges[0]['start']].strip()) or
             passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
             len({r.get('y') for r in runs}) != 1 or
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
@@ -483,7 +494,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
-            elif claim['basis'] == 'reviewed_printed_reciprocal_perfect':
+            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future'):
                 reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified)
             elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
@@ -717,7 +728,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]

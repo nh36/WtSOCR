@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run39` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run40` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run39 \
+  --reader work/badw_full_reader_20261020/run40 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -665,3 +665,22 @@ Run39: **7,607 resolved / 767 residual** target units; HTML unchanged at 4,742
 resolved, 544 unresolved, two ambiguous; PDF 2,865 resolved, 113 unresolved,
 108 ambiguous. Only these two reviewed references gain destinations. Source
 text, citations, previous destinations and the 23/50/47 fixture remain unchanged.
+
+
+### Reviewed reciprocal perfect-and-future identities
+
+Two individually reviewed references now connect **gtad¹ ↔ gtod¹**. WTS IV
+p. 26 gives `pf. und fut. zu ↓gtod`; p. 55 reciprocates with
+`pf. und fut. ↑gtad`. Both numbered entries concern giving, transferring and
+entrusting. The competing gtad² concerns negative energy; gtod² gives the
+perfect btod, while gtod³ is a deity causing muteness. These are exact identity
+interpretations, not printed corrections or automatic homonym-1 selection.
+The separate `reviewed_printed_reciprocal_perfect_future` basis replays both
+complementary introductions, reciprocal arrow direction, numbered heading,
+article bounds, positioned runs, immutable hashes and exact source occurrence.
+It rejects mixed or noncomplementary paradigms and unbound alternate spellings.
+
+Run40: **7,609 resolved / 765 residual** target units. HTML remains 4,742
+resolved / 544 unresolved / 2 ambiguous; PDF is 2,867 resolved / 113 unresolved /
+106 ambiguous. All previous accepted destinations, text, citations and the
+23 reviewed collections / 50 members / 47 resolved targets remain unchanged.

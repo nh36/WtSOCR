@@ -1161,12 +1161,12 @@ def test_real_printed_gyad_mo_review_retains_unnumbered_identity_and_extent():
     assert 'Neb 313' in a['review']['evidence']
 
 
-def reciprocal_fixture(tmp_path):
+def reciprocal_fixture(tmp_path, future=False):
     import gzip, json
     from test_extract_badw_pdf_entries import _page
     from extract_badw_pdf_entries import extract_page
     p = packet(tmp_path, 'pdf')
-    text = ' pf. zu ↓ka zusammenziehen.'
+    text = ' pf. und fut. zu ↓ka zusammenziehen.' if future else ' pf. zu ↓ka zusammenziehen.'
     p['review_text'] = p['source']['source_faithful_text'] = text
     p['review_text_sha256'] = annotations.digest(text)
     line = p['source']['visual_lines'][0]
@@ -1194,11 +1194,27 @@ def reciprocal_fixture(tmp_path):
     base['nodes'].append(dict(id='xref',kind='cross_reference',start=8,end=11,parent='root'))
     base['original_structure'] = dict(loc_headword='bcum',visual_lines=copy.deepcopy(p['source']['visual_lines']),
         candidates=dict(cross_references=[dict(visual_start=8,visual_end=11,target_label_candidate='ka')]))
+    if future:
+        start=text.index('↓');end=start+3
+        a['ranges']=[dict(start=start,end=end,literal='↓ka')]
+        a['physical_selectors']=annotations.physical_selectors(p,a['ranges'])
+        a['claim']['basis']='reviewed_printed_reciprocal_perfect_future'
+        literal=' pf. und fut. ↑bcum '
+        runs[4]['decoded_unicode']=literal
+        page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+        page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+        path.write_bytes(gzip.compress(json.dumps(page).encode()))
+        proof['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+        proof['entry_start_source_span']['visible_body_sha256']=page['visible_body_sha256']
+        proof['reciprocal_passage']['literal']=literal
+        base['nodes'][-1].update(start=start,end=end)
+        base['original_structure']['candidates']['cross_references'][0].update(visual_start=start,visual_end=end)
     return p,a,base,page,path
 
 
-def test_reviewed_reciprocal_perfect_retains_numbered_identity_and_source(tmp_path):
-    p,a,base,_,_ = reciprocal_fixture(tmp_path)
+@pytest.mark.parametrize('future',[False,True])
+def test_reviewed_reciprocal_perfect_retains_numbered_identity_and_source(tmp_path,future):
+    p,a,base,_,_ = reciprocal_fixture(tmp_path,future)
     before = copy.deepcopy((p,a,base))
     accepted = run(tmp_path,p,[a])
     result = annotations.apply_validated_annotations(p,base,accepted)
@@ -1246,9 +1262,10 @@ def test_reciprocal_offset_and_direction_do_not_guess(literal,offset,marker):
 
 @pytest.mark.parametrize('fault', ['hash','pdf','id','homonym','heading','span','page','prefix',
     'literal','source','passage','bounds','unknown','geometry','body','font','unnumbered'])
-def test_reciprocal_perfect_proof_fails_closed(tmp_path,fault):
+@pytest.mark.parametrize('future',[False,True])
+def test_reciprocal_perfect_proof_fails_closed(tmp_path,fault,future):
     import gzip,json
-    p,a,_,page,path = reciprocal_fixture(tmp_path)
+    p,a,_,page,path = reciprocal_fixture(tmp_path,future)
     c=a['claim'];d=c['destination_heading'];r=page['positioned_page']['positioned_text_runs']
     if fault=='hash': d['canonical_object_sha256']='0'*64
     elif fault=='pdf': d['entry_start_source_span']['representative_pdf_sha256']='0'*64
@@ -1392,3 +1409,40 @@ def test_reciprocal_introductions_do_not_infer_aliases_or_skip_prose(prefix,alte
     assert not annotations.reciprocal_perfect_introduction(claim,prefix+'↓ka',len(prefix))
     assert not annotations.reciprocal_perfect_introduction(
         dict(source_alternate_headword=None),'pf. zu ↓ka',7)
+
+
+@pytest.mark.parametrize('intro,reciprocal,accepted',[
+    ('pf. und fut. zu','pf. und fut. ↑bcum',True),
+    ('pf. und fut.','pf. und fut. zu ↑bcum',True),
+    ('pf. und fut.','pf. und fut. ↑bcum',False),
+    ('pf. und fut. zu','pf. und fut. zu ↑bcum',False),
+    ('pf. zu','pf. und fut. ↑bcum',False),
+    ('pf. und fut. zu','pf. ↑bcum',False),
+    ('pf. und fut. zu','pf. und fut. ↓bcum',False),
+    ('pf. und fut. zu','pf. und fut. ↑bcum prose',False),
+    ('pf. und fut. zu','pf. und fut. ↑¹bcum',False),
+])
+def test_perfect_future_requires_complementary_exact_paradigms(intro,reciprocal,accepted):
+    basis='reviewed_printed_reciprocal_perfect_future'
+    assert annotations.reciprocal_perfect_passage(dict(literal=reciprocal),'bcum','↓',
+        basis=basis,source_introduction=intro) is accepted
+    claim=dict(basis=basis)
+    assert annotations.reciprocal_perfect_introduction(claim,intro+' ↓ka',len(intro)+1) is (intro in ('pf. und fut. zu','pf. und fut.'))
+    claim['source_alternate_headword']='other'
+    assert not annotations.reciprocal_perfect_introduction(claim,intro+' ↓ka',len(intro)+1)
+
+
+@pytest.mark.parametrize('source,target,node,start,end,lo,hi',[
+    ('gtad','gtod','n188',17,22,668,681),('gtod','gtad','n66',14,19,5,23)])
+def test_real_perfect_future_reviews_retain_exact_occurrences(source,target,node,start,end,lo,hi):
+    import json
+    rows=[json.loads(line) for line in (Path(__file__).resolve().parents[1]/
+        'data/reviewed_badw_semantic_annotations.jsonl').open()]
+    row,=[r for r in rows if r['annotation_id']=='badw-reviewed-reciprocal-perfect-future-'+source+'-'+target+'-1']
+    c=row['claim'];proof=c['destination_heading'];passage=proof['reciprocal_passage']
+    assert c['basis']=='reviewed_printed_reciprocal_perfect_future'
+    assert c['occurrence_id']==node and c['source_headword']==source
+    assert c['lemma']==target and c['homonym']==proof['homonym']=='1'
+    assert row['ranges']==[dict(start=start,end=end,literal=('↓' if source=='gtad' else '↑')+target)]
+    assert (passage['run_start'],passage['run_end_exclusive'])==(lo,hi)
+    assert passage['literal'].strip()==('pf. und fut. ↑gtad' if source=='gtad' else 'pf. und fut. zu ↓gtod')
