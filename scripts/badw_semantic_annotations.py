@@ -207,6 +207,23 @@ def reviewed_pdf_heading(claim, cache, canonical_root, verified, *, compound=Fal
         raise ValueError('wrapped heading differs from canonical PDF evidence')
 
 
+def reciprocal_perfect_passage(passage, source_headword, source_marker):
+    """Check an exact reciprocal expression, retaining any shared-run comma.
+
+    The optional offset selects past exactly ``, `` in the first PDF run;
+    it is not punctuation stripping or an unrestricted substring search.
+    Arrow direction must reciprocate the literal source arrow.
+    """
+    offset = passage.get('run_start_offset', 0)
+    literal = passage.get('literal', '')
+    if (type(offset) is not int or offset not in (0, 2) or
+            (offset == 2 and not literal.startswith(', ')) or
+            source_marker not in ('↑', '↓') or not source_headword):
+        return False
+    opposite = {'↑': '↓', '↓': '↑'}[source_marker]
+    return literal[offset:].strip() == 'pf. ' + opposite + source_headword
+
+
 def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified):
     """Replay one facsimile-reviewed perfect-tense reciprocal homonym identity.
 
@@ -222,7 +239,7 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
             not re.fullmatch(r'[1-9][0-9]*', claim['homonym']) or
             claim['source_target_label'] != claim['lemma'] or
             packet['review_text'][:ranges[0]['start']].strip() != 'pf. zu' or
-            ranges[0]['literal'] != '↓' + claim['lemma']):
+            ranges[0]['literal'] not in ('↓' + claim['lemma'], '↑' + claim['lemma'])):
         raise ValueError('invalid reviewed reciprocal perfect reference')
     proof = claim.get('destination_heading')
     _keys(proof, ('entry_id', 'headword', 'homonym', 'entry_start_source_span',
@@ -244,14 +261,15 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
             page['visible_body_sha256'] != digest(page['source_faithful_decoded_text'])):
         raise ValueError('reciprocal destination differs from canonical numbered heading')
     passage = proof['reciprocal_passage']
-    _keys(passage, ('run_start', 'run_end_exclusive', 'literal'))
+    _keys(passage, ('run_start', 'run_end_exclusive', 'literal'), ('run_start_offset',))
     a, b = passage['run_start'], passage['run_end_exclusive']
     if (type(a) is not int or type(b) is not int or
             not max(span['loc_run_indices']) < a < b <= span['run_end_exclusive'] or b-a > 32):
         raise ValueError('reciprocal passage outside reviewed destination')
     runs = page['positioned_page']['positioned_text_runs'][a:b]
     if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
-            passage['literal'].strip() != 'pf. ↑' + claim['source_headword'] or
+            not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0]) or
+            passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
             len({r.get('y') for r in runs}) != 1 or
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):

@@ -1207,6 +1207,43 @@ def test_reviewed_reciprocal_perfect_retains_numbered_identity_and_source(tmp_pa
     assert (p,a,base) == before
 
 
+@pytest.mark.parametrize('marker,prefix,offset', [('↓',' ',0), ('↑',' ',0), ('↑',', ',2)])
+def test_reciprocal_directions_and_exact_shared_run_offset(tmp_path,marker,prefix,offset):
+    import gzip,json
+    p,a,_,page,path = reciprocal_fixture(tmp_path)
+    p['review_text'] = p['review_text'].replace('↓',marker)
+    p['source']['source_faithful_text'] = p['review_text']
+    p['source']['visual_lines'][0]['text'] = p['review_text']
+    p['review_text_sha256'] = annotations.digest(p['review_text'])
+    a['ranges'][0]['literal'] = marker+'ka'
+    a['binding'] = annotations.binding(p)
+    a['physical_selectors'] = annotations.physical_selectors(p,a['ranges'])
+    literal = prefix+'pf. '+{'↓':'↑','↑':'↓'}[marker]+'bcum '
+    page['positioned_page']['positioned_text_runs'][4]['decoded_unicode'] = literal
+    page['source_faithful_decoded_text'] = ''.join(r['decoded_unicode'] for r in page['positioned_page']['positioned_text_runs'])
+    page['visible_body_sha256'] = annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    proof = a['claim']['destination_heading']
+    proof['canonical_object_sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+    proof['entry_start_source_span']['visible_body_sha256'] = page['visible_body_sha256']
+    proof['reciprocal_passage'].update(literal=literal,run_start_offset=offset)
+    before = copy.deepcopy((p,a,page))
+    assert run(tmp_path,p,[a])[0]['effective_status']=='accepted'
+    assert (p,a,page)==before
+
+
+@pytest.mark.parametrize('literal,offset,marker', [
+    (', pf. ↓bcum',0,'↑'), (', pf. ↓bcum',1,'↑'),
+    (', pf. ↓bcum',True,'↑'), (', pf. ↓bcum',2,'↓'),
+    ('; pf. ↓bcum',2,'↑'), ('x pf. ↓bcum',2,'↑'),
+    (', pf. ↓bcum prose',2,'↑'), (', pf. ↓¹bcum',2,'↑'),
+    (', pf. ↓bcum',-1,'↑'), (', pf. ↓bcum',200,'↑'),
+])
+def test_reciprocal_offset_and_direction_do_not_guess(literal,offset,marker):
+    assert not annotations.reciprocal_perfect_passage(
+        dict(literal=literal,run_start_offset=offset),'bcum',marker)
+
+
 @pytest.mark.parametrize('fault', ['hash','pdf','id','homonym','heading','span','page','prefix',
     'literal','source','passage','bounds','unknown','geometry','body','font','unnumbered'])
 def test_reciprocal_perfect_proof_fails_closed(tmp_path,fault):
@@ -1274,3 +1311,19 @@ def test_real_reciprocal_family_preserves_source_and_numbered_destination(name,n
     passage=proof['reciprocal_passage']
     assert (passage['run_start'],passage['run_end_exclusive'])==runs
     assert passage['literal'].strip()=='pf. ↑'+name
+
+
+def test_real_brgyas_reciprocal_preserves_shared_run_and_upward_source():
+    import json
+    rows = [json.loads(line) for line in (Path(__file__).resolve().parents[1] /
+            'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    a, = [r for r in rows if r['annotation_id'] == 'badw-reviewed-reciprocal-perfect-brgyas-brgya-2']
+    assert a['ranges'] == [dict(start=8,end=14,literal='↑brgya')]
+    c=a['claim']; proof=c['destination_heading']
+    assert c['occurrence_id']=='n4' and c['source_headword']=='brgyas'
+    assert c['lemma']==c['source_target_label']=='brgya'
+    assert c['homonym']==proof['homonym']=='2'
+    assert proof['printed_page']==503
+    assert proof['reciprocal_passage']==dict(run_start=1462,run_end_exclusive=1471,
+        literal=', pf. ↓brgyas',run_start_offset=2)
+    assert annotations.reciprocal_perfect_passage(proof['reciprocal_passage'],'brgyas','↑')

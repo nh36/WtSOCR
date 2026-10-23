@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run36` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run37` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run36 \
+  --reader work/badw_full_reader_20261020/run37 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 111 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 110 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -633,3 +633,18 @@ Run36: **7,604 resolved / 770 residual** target units; HTML unchanged at 4,742
 resolved, 544 unresolved, two ambiguous; PDF 2,862 resolved, 113 unresolved,
 111 ambiguous. Only these three reviewed references gain destinations. Source
 text and all previously accepted destinations remain unchanged.
+
+
+The individually reviewed reciprocal family also identifies **brgyas → brgya²**:
+WTS II p. 508 prints **pf. zu ↑brgya sprechen**, and numbered **brgya²** on
+p. 503 reciprocates **pf. ↓brgyas sprechen**. Competing **brgya¹** means hundred.
+The review supports either reciprocal arrow direction. An optional exact
+character offset of two selects past the literal comma-space within the first
+PDF run containing `, p`; the entire run remains hash-bound and preserved.
+No punctuation stripping or unreviewed homonym inference is introduced.
+
+Run37: **7,605 resolved / 769 residual** target units; HTML unchanged at 4,742
+resolved, 544 unresolved, two ambiguous; PDF 2,863 resolved, 113 unresolved,
+110 ambiguous. Only this individually reviewed reference gains a destination;
+source text, citations, previous destinations and the 23/50/47 fixture remain
+unchanged. This is interpretation of an intact reference, not a printing error.

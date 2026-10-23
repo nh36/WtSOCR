@@ -870,3 +870,28 @@ def test_reciprocal_perfect_resolution_fails_closed(fault):
     index=EntryIndex([destination,entry('second',lemma='ka',homonym='2')])
     if fault=='accepted': index=EntryIndex([destination])
     with pytest.raises(ValueError): substitute(index,fixture,review)
+
+
+@pytest.mark.parametrize('fault', [None,'same_direction','separator','offset'])
+def test_upward_reciprocal_review_requires_exact_opposite_passage(fault):
+    fixture,review,destination=reciprocal_destination_fixture()
+    occurrence,structure,text,binding=fixture
+    text=text.replace('↓','↑')
+    occurrence['marker']='↑'
+    structure['visual_lines'][0]['text']=text
+    structure['review_text_sha256']=hashlib.sha256(text.encode()).hexdigest()
+    review['binding']['text_sha256']=structure['review_text_sha256']
+    review['ranges'][0]['literal']='↑ka'
+    passage=review['destination_heading']['reciprocal_passage']
+    passage.update(literal=', pf. ↓bcum',run_start_offset=2)
+    if fault=='same_direction': passage['literal']=', pf. ↑bcum'
+    if fault=='separator': passage['literal']='; pf. ↓bcum'
+    if fault=='offset': passage['run_start_offset']=1
+    fixture=(occurrence,structure,text,binding)
+    index=EntryIndex([destination,entry('second',lemma='ka',homonym='2')])
+    if fault:
+        with pytest.raises(ValueError): substitute(index,fixture,review)
+    else:
+        assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
+        result=substitute(index,fixture,review)['canonical_resolution']
+        assert result['status']=='resolved' and result['target_entry_id']==destination['id']

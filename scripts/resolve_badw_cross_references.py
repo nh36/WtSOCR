@@ -357,6 +357,8 @@ class EntryIndex:
         wrapped = review.get('basis') == 'reviewed_printed_wrapped_headword'
         compound = review.get('basis') == 'reviewed_printed_compound_headword'
         reciprocal = review.get('basis') == 'reviewed_printed_reciprocal_perfect'
+        if reciprocal:
+            from badw_semantic_annotations import reciprocal_perfect_passage
         lexical = parsed.get('lexical_target', '')
         if wrapped or compound or reciprocal:
             proof = review.get('destination_heading', {})
@@ -369,15 +371,15 @@ class EntryIndex:
                     (reciprocal and (proof.get('homonym') != review.get('homonym') or
                      not re.fullmatch(r'[1-9][0-9]*', review.get('homonym') or '') or
                      not review.get('source_headword') or
-                     proof.get('reciprocal_passage', {}).get('literal', '').strip() !=
-                     'pf. ↑' + review['source_headword'])) or
+                     not reciprocal_perfect_passage(proof.get('reciprocal_passage', {}),
+                         review['source_headword'], text[span['start']]))) or
                     (wrapped and '\n' not in review.get('lemma', '')) or
                     destination.get('headword', {}).get('loc') != review.get('lemma')):
                 raise ValueError('reviewed wrapped destination differs from actual entry index')
             if reciprocal:
                 target_matches = (lexical == review.get('lemma') and
                     text[:span['start']].strip() == 'pf. zu' and
-                    text[span['start']:span['end']] == '↓' + lexical)
+                    text[span['start']:span['end']] in ('↓' + lexical, '↑' + lexical))
             elif compound:
                 target_matches = ('-' in lexical and '~' not in lexical and '\n' not in lexical and
                     '\n' not in review.get('lemma', '') and 'source_headword' not in review and
