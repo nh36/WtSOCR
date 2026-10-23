@@ -971,3 +971,63 @@ def test_page_continuation_extent_requires_frozen_review_and_physical_support(tm
                 for g in r['glyphs']: g['y']-=200
         with pytest.raises(ValueError):
             annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
+
+
+def editorial_variant_packet(tmp_path):
+    from badw_article_parser import parse_database_article
+    body = '<div class="text"><span class="link">↑<a class="link lemma" href="/lemma/kiṅ śị/1">kiṅ śị</a></span>.</div>'.encode()
+    sha, path = put(tmp_path, body)
+    obj = dict(sha256=sha, object_path=path)
+    article = parse_database_article(body, source_metadata=dict(obj,
+        delivery_type='database_article', valid_resource=True))
+    text = article['article_source_text']
+    p = dict(contract_version=annotations.PACKET_VERSION, identity='variant-source',
+        source_kind='html', source=dict(source_object=obj, article_source_text=text),
+        review_text=text, review_text_sha256=annotations.digest(text))
+    # Heading markup follows the actual editorial parser contract.
+    destination = '<span class="lemma"><span class="lem">kiṅ śi</span></span><div class="text">auch ker śiṅ.</div>'.encode()
+    ds, dp = put(tmp_path, destination)
+    ref = article['cross_references'][0]
+    loc = ref['locator']
+    start, end = loc['visible_text_start'], loc['visible_text_end']
+    a = claim(p, kind='cross_reference_target', ranges=[dict(start=start, end=end, literal=text[start:end])])
+    a['claim'] = dict(occurrence_id='xref', source_target_url=ref['target_url'],
+        source_target_label=ref['target_text'], lemma='kiṅ śi', homonym='1',
+        basis='reviewed_editorial_headword_variant', destination_heading=dict(
+            sha256=ds, object_path=dp, source_url='https://wts-digital.badw.de/lemma/kiṅ śi/1'))
+    return p, a
+
+
+def test_editorial_headword_variant_requires_both_immutable_sources(tmp_path):
+    p, a = editorial_variant_packet(tmp_path)
+    assert run(tmp_path, p, [a])[0]['effective_status'] == 'accepted'
+    base = prediction(p)
+    span = a['ranges'][0]
+    ref = dict(record_type='cross_reference', id='xref', target_url=a['claim']['source_target_url'],
+               target_label='kiṅ śị', source_spans=[dict(start=span['start'], end=span['end'])])
+    base['original_records'] = [ref]
+    base['nodes'].append(dict(id='refnode', kind='cross_reference', parent='root',
+        start=span['start'], end=span['end'], lexical_record_id='xref'))
+    before = copy.deepcopy(base)
+    result = annotations.apply_validated_annotations(p, base, run(tmp_path, p, [a]))
+    assert base == before and result['original_records'] == before['original_records']
+    assert result['nodes'] == before['nodes']
+    review = result['reviewed_cross_reference_targets']['xref']
+    assert review['literal'] == 'kiṅ śị' and review['lemma'] == 'kiṅ śi'
+    assert review['destination_heading'] == a['claim']['destination_heading']
+    for field, value in [('lemma', 'kiṅ śị'), ('homonym', '2'),
+                         ('source_target_label', 'kiṅ śi'), ('source_target_url', 'https://other/')]:
+        bad = copy.deepcopy(a)
+        bad['claim'][field] = value
+        with pytest.raises(ValueError):
+            run(tmp_path, p, [bad])
+    for field, value in [('sha256', '0'*64), ('object_path', '../escape'),
+                         ('source_url', 'https://other/lemma/kiṅ śi/1')]:
+        bad = copy.deepcopy(a)
+        bad['claim']['destination_heading'][field] = value
+        with pytest.raises(ValueError):
+            run(tmp_path, p, [bad])
+    bad = copy.deepcopy(a)
+    bad['binding']['text_sha256'] = '0'*64
+    with pytest.raises(ValueError):
+        run(tmp_path, p, [bad])

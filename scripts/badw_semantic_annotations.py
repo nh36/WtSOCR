@@ -268,7 +268,40 @@ def validate(packets, annotations, *, cache, canonical_root=None):
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
                           "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal"))
-            if claim['basis'] == 'reviewed_editorial_member_whitespace':
+            if claim['basis'] == 'reviewed_editorial_headword_variant':
+                from badw_article_parser import parse_database_article
+                from urllib.parse import unquote, urlsplit
+                if (packet['source_kind'] != 'html' or len(ranges) != 1 or
+                        'source_headword' in claim or 'member_ordinal' in claim or
+                        any(not _string(claim.get(k)) for k in ('occurrence_id',
+                            'source_target_url', 'source_target_label', 'lemma', 'homonym')) or
+                        not re.fullmatch(r'[1-9][0-9]*', claim['homonym'])):
+                    raise ValueError('invalid reviewed editorial headword variant')
+                proof = claim.get('destination_heading')
+                _keys(proof, ('object_path', 'sha256', 'source_url'))
+                _object(cache, proof['object_path'], proof['sha256'], verified)
+                path = urlsplit(proof['source_url'])
+                if (path.scheme != 'https' or path.netloc != 'wts-digital.badw.de' or
+                        path.query or path.fragment or unquote(path.path) !=
+                        '/lemma/' + claim['lemma'] + '/' + claim['homonym']):
+                    raise ValueError('destination URL differs from reviewed identity')
+                destination = parse_database_article((Path(cache)/proof['object_path']).read_bytes(),
+                    source_metadata=dict(proof, final_url=proof['source_url'],
+                                         delivery_type='database_article', valid_resource=True))
+                if (destination['lemma'] != claim['lemma'] or
+                        str(destination['homonym'] or '1') != claim['homonym']):
+                    raise ValueError('destination heading differs from reviewed identity')
+                obj = packet['source']['source_object']
+                article = parse_database_article((Path(cache)/obj['object_path']).read_bytes(),
+                    source_metadata=dict(obj, delivery_type='database_article', valid_resource=True))
+                matches = [r for r in article['cross_references']
+                           if (r['locator']['visible_text_start'], r['locator']['visible_text_end']) ==
+                           (ranges[0]['start'], ranges[0]['end']) and
+                           r['target_url'] == claim['source_target_url'] and
+                           r['target_text'] == claim['source_target_label']]
+                if article['article_source_text'] != packet['review_text'] or len(matches) != 1:
+                    raise ValueError('headword variant lacks exact source DOM evidence')
+            elif claim['basis'] == 'reviewed_editorial_member_whitespace':
                 from badw_article_parser import parse_database_article
                 if (packet['source_kind'] != 'html' or len(ranges) != 1 or
                         'source_headword' in claim or 'destination_heading' in claim or
@@ -569,8 +602,11 @@ def apply_validated_annotations(packet, prediction, annotations):
             source_target_url=occurrence["target_url"], lemma=claim["lemma"], homonym=claim["homonym"],
             annotation_id=row["annotation_id"], binding=row["binding"],
             physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
-        if claim['basis'] in ('reviewed_split_editorial_anchor', 'reviewed_editorial_member_whitespace'):
+        if claim['basis'] in ('reviewed_split_editorial_anchor', 'reviewed_editorial_member_whitespace',
+                              'reviewed_editorial_headword_variant'):
             targets[occurrence['id']]['basis'] = claim['basis']
+        if claim['basis'] == 'reviewed_editorial_headword_variant':
+            targets[occurrence['id']]['destination_heading'] = deepcopy(claim['destination_heading'])
         if claim['basis'] == 'reviewed_editorial_member_whitespace':
             targets[occurrence['id']]['member_ordinal'] = claim['member_ordinal']
     result["reviewed_cross_reference_targets"] = targets

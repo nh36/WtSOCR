@@ -70,6 +70,32 @@ const path=require('node:path');
   await page.goForward();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
   assert(catalog.some(e=>e.headword.loc==='dru gu'&&e.homonym==='1'&&e.id!==targetMeta.id));
  }
+ // Four individually reviewed links preserve printed kiṅ śị while reaching
+ // the hash-verified editorial heading kiṅ śi. This is no global spelling rule.
+ let editorialVariantJourneys=0;
+ for(const sourceId of [
+  'badw:entry:0e2af2fa687900651e6cfba9e312b6a6cc637f059440e67cdfab0c63320b6c12',
+  'badw:entry:c903f897858c9193923e511914000e294a6724b060ca5b04621a8202c04285ab',
+  'badw:entry:6e7f3c91163071a79e59cbcfef94e477f91457af260b09acc186b8e3fc587596',
+  'badw:entry:4acae5d5587079b033c5941094197c1d01194a5abe98afe49d6139e8a339ffa4']){
+  const meta=entries.get(sourceId);assert(meta);
+  const e=await (await page.request.get(base+'/'+meta.path)).json();
+  const r=e.cross_references.find(r=>r.resolution_evidence?.target_review?.basis==='reviewed_editorial_headword_variant');assert(r);
+  assert.equal(r.status,'resolved');assert.equal(r.wording,'kiṅ śị');
+  assert.equal(r.target_entry_id,'badw:entry:4d15166cfbb4253522e9edd0a4251e01f8542c7b87090599c922062d33a74c85');
+  const target=entries.get(r.target_entry_id);assert.equal(target.headword.loc,'kiṅ śi');
+  await go(e);
+  const links=page.locator('.reading a');
+  const n=await links.evaluateAll((nodes,href)=>nodes.findIndex(el=>el.getAttribute('href')===href),'#'+encodeURIComponent(target.id));assert(n>=0);
+  assert((await links.nth(n).textContent()).includes('kiṅ śị'));
+  await links.nth(n).focus();await page.keyboard.press('Enter');
+  await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+  assert(await page.locator('#article > .source-access a').count()>0);
+  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),e.headword.loc);
+  await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+  editorialVariantJourneys++;
+ }
+ assert.equal(editorialVariantJourneys,4);
  let journeys=0,uncertain=0,citations=0,unresolvedCitations=0;
  // A reviewed nonprinting font-switch interlude remains in the literal source;
  // its independently replayed lookup expression reaches the exact PDF entry.
@@ -505,6 +531,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

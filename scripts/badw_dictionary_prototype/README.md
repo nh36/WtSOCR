@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run29` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run30` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,14 +80,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run29 \
+  --reader work/badw_full_reader_20261020/run30 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 112 PDF
+336 HTML and three PDF identity/manifestation mismatches; 211 HTML and 112 PDF
 missing exact identities; two HTML and 115 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -366,6 +366,25 @@ printing error. Run29: **7,591 resolved / 783 residual**; HTML remains **4,735 /
 551 unresolved / 2 ambiguous**, PDF becomes **2,856 / 115 / 115**. All other
 **29,877 entry files are byte-identical**, including previously accepted targets,
 source text, citations and relationships. The 23/50/47 fixture remains intact.
+
+The four **kiṅ śị** links in **ker śiṅ**, **keṅ śe**, **keṅ śi** and
+**kin jaṅ hū** expose an editorial heading/link inconsistency. The original
+volume 1 pp. 42–43 facsimile prints **kiṅ śị** in both the destination heading
+and the kin jaṅ hū reference; BAdW retains that spelling in these links but
+publishes the destination heading as **kiṅ śi**. Its explicit aliases establish
+the first three identities, and the shared Ch’ang-an/T’ang-dynasty definitions
+establish the fourth. Four `reviewed_editorial_headword_variant` annotations
+pin the exact source DOM occurrences and hash-verified destination heading.
+They preserve all printed readings, editorial labels and URLs; there is no
+global spelling substitution and no claim of a printing error. Run30: **7,595
+resolved / 779 residual**, versus **7,591 / 783**. HTML becomes **4,739 resolved /
+547 unresolved / 2 ambiguous**; PDF remains **2,856 / 115 / 115**. All other
+**29,874 entry files are byte-identical**. Source text, citations, components,
+relationships, previously accepted destinations and the 23/50/47 fixture agree.
+Browser validation follows all four repaired links by keyboard and checks
+source access and back/forward history, alongside 82 citation journeys, 58
+facsimile checks and four viewport sizes, with zero browser errors. Desktop and
+mobile screenshots were inspected; the reader design is unchanged.
 
 ## Bounded historical LoC script experiment
 

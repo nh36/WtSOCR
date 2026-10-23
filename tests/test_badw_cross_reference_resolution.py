@@ -712,3 +712,35 @@ def test_reviewed_cross_page_target_requires_exact_identity(monkeypatch,count,st
     result=index.resolve_source_candidate(dict(target_label=candidate['target_label_candidate'],source_candidate=candidate),structure=dict(visual_lines=lines,divisions=divisions),text='\n'.join(l['text'] for l in lines))['canonical_resolution']
     assert result['status']==status
     if count!=1: assert result.get('target_entry_id') is None
+
+
+def test_editorial_headword_variant_is_occurrence_bound_not_a_spelling_rule():
+    r = reference('https://wts-digital.badw.de/lemma/kiṅ śị/1')
+    r['target_label'] = 'kiṅ śị'
+    destination = entry(lemma='kiṅ śi', url='https://wts-digital.badw.de/lemma/kiṅ śi/1')
+    review = reviewed(r, homonym='1', source_target_url=r['target_url'],
+        annotation_id='exact-source-review', binding={'hash': 'frozen'},
+        physical_selectors=[{'raw': 'source'}], ranges=[{'start': 2, 'end': 4}],
+        basis='reviewed_editorial_headword_variant', destination_heading={
+            'sha256': 'b'*64, 'object_path': 'verified-object', 'source_url': destination['stable_url']})
+    review['lemma'] = 'kiṅ śi'
+    before = copy.deepcopy(r)
+    index = EntryIndex([destination])
+    assert index.resolve_manifestation(r)['canonical_resolution']['status'] == 'unresolved'
+    linked = index.resolve_reviewed_editorial_target(r, review)
+    assert linked['canonical_resolution']['target_entry_id'] == destination['id']
+    assert linked['target_url'] == r['target_url'] and linked['target_label'] == 'kiṅ śị'
+    assert r == before
+    assert EntryIndex([]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+    unnumbered = dict(destination, homonym='', stable_url='https://example/unnumbered')
+    assert EntryIndex([unnumbered]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']['status'] == 'unresolved'
+    for field, value in [('occurrence_id', 'other'), ('literal', 'kiṅ śi'), ('source_spans', [])]:
+        bad = copy.deepcopy(review)
+        bad[field] = value
+        with pytest.raises(ValueError):
+            index.resolve_reviewed_editorial_target(r, bad)
+    # Multiple witnesses of the established identity require a reader choice.
+    second = dict(destination, id='second', stable_url='https://example/second')
+    choice = EntryIndex([destination, second]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']
+    assert choice['status'] == 'resolved' and 'target_entry_id' not in choice
+    assert set(choice['candidate_entry_ids']) == {destination['id'], 'second'}
