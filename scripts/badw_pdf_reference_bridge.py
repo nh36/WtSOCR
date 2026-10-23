@@ -9,6 +9,68 @@ from badw_pdf_expressions import NONPRINTING
 from badw_assertion_layout import page_runs
 
 
+def upright_space_continuation(line, left, sources):
+    """Replay one reviewed in-line italic/regular-space/italic transition.
+
+    This does not normalize whitespace or infer a target from plain text.
+    The single published space and every source offset remain literal.
+    """
+    if not sources or left.get('style') != 'italic':
+        return None
+    spans = line['style_spans']
+    positions = [i for i, s in enumerate(spans) if s == left]
+    if len(positions) != 1 or positions[0] + 2 >= len(spans):
+        return None
+    space, right = spans[positions[0]+1:positions[0]+3]
+    if (space['start'] != left['end'] or space['end'] != right['start'] or
+            line['text'][space['start']:space['end']] != ' ' or
+            space.get('style') != 'regular' or right.get('style') != 'italic' or
+            not left.get('family') or space.get('family') != left['family'] or
+            right.get('family') != left['family'] or not left.get('font_id') or
+            right.get('font_id') != left['font_id'] or
+            not space.get('font_id') or space['font_id'] == left['font_id'] or
+            not re.fullmatch(r"[A-Za-zÀ-žḀ-ỿ’' ]+,? *",
+                             line['text'][right['start']:right['end']])):
+        return None
+    objects = [s for s in sources if s['page_id'] == line['page_id']]
+    if len(objects) != 1:
+        return None
+    source = objects[0]
+    runs = page_runs(source['canonical_object'], source['canonical_object_sha256'],
+                     source['pdf_sha256'], source['pdf_url'])
+    if runs is None:
+        return None
+    atoms = []
+    for style in (left, space, right):
+        first, last = style['first_run_index'], style['last_run_index']
+        if not line['run_start'] <= first <= last < line['run_end_exclusive']:
+            return None
+        cursor = style['start']
+        for index in range(first, last+1):
+            run = runs[index]
+            if run['run_index'] != index or run['font_id'] != style['font_id']:
+                return None
+            begin = style['first_glyph_index'] if index == first else 0
+            stop = style['last_glyph_index']+1 if index == last else len(run['glyphs'])
+            if not 0 <= begin < stop <= len(run['glyphs']):
+                return None
+            for glyph in run['glyphs'][begin:stop]:
+                word = glyph['unicode']; end = cursor + len(word)
+                if end > style['end'] or line['text'][cursor:end] != word:
+                    return None
+                atoms.append((cursor, end, glyph)); cursor = end
+        if cursor != style['end']:
+            return None
+    if (space['first_run_index'] != left['last_run_index']+1 or
+            right['first_run_index'] != space['last_run_index']+1 or not atoms):
+        return None
+    for a, b in zip(atoms, atoms[1:]):
+        if (a[1] != b[0] or abs(a[2]['y']-b[2]['y']) > .5 or
+                not -1 <= b[2]['x']-a[2]['x']-a[2]['advance'] <= 5):
+            return None
+    return right
+
+
 def bridged_target(lines, divisions, start, sources):
     if not sources:
         return None

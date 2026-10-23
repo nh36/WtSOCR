@@ -87,6 +87,38 @@ const path=require('node:path');
  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeEntry.headword.loc);
  await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeTarget.headword.loc);
  assert(await page.locator('#article > .source-access a').count()>0);
+ // Six facsimile-reviewed upright-space extents retain literal source text.
+ // Completing an extent must not invent an unavailable destination.
+ let uprightSpaceJourneys=0,uprightSpaceAbsent=0;
+ const uprightFixtures=JSON.parse(fs.readFileSync('tests/fixtures/badw_upright_space_references.json'));
+ for(const f of uprightFixtures){
+  const meta=entries.get(f.identity);assert(meta);
+  const e=await (await page.request.get(base+'/'+meta.path)).json();
+  const r=e.cross_references.find(r=>r.extent_review?.claim.basis==='reviewed_printed_upright_space');assert(r);
+  assert.deepEqual(r.source_span,{start:f.new.start,end:f.new.end});
+  assert.equal(e.components.find(c=>c.id===r.component_id).source_form,f.new.literal);
+  const unit=r.target_members?.[0]||r;
+  await go(e);
+  if((unit.resolution_status||unit.status)==='resolved'){
+   const target=entries.get(unit.target_entry_id);assert(target);
+   const links=page.locator('.reading a');
+   const n=await links.evaluateAll((nodes,href)=>nodes.findIndex(el=>el.getAttribute('href')===href),'#'+encodeURIComponent(target.id));assert(n>=0);
+   await links.nth(n).focus();await page.keyboard.press('Enter');
+   await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+   assert(await page.locator('#article > .source-access a').count()>0);
+   await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),e.headword.loc);
+   await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
+   uprightSpaceJourneys++;
+  }else{
+   assert.equal(unit.target_entry_id,null);
+   const uncertain=page.locator('.reading .uncertain-reference').filter({hasText:f.target.split(',')[0]});assert.equal(await uncertain.count(),1);
+   await uncertain.click();assert(await page.locator('#reference-detail').isVisible());
+   assert((await page.locator('#reference-detail-content').textContent()).includes('no destination'));
+   await page.keyboard.press('Escape');assert(await uncertain.evaluate(n=>n===document.activeElement));
+   uprightSpaceAbsent++;
+  }
+ }
+ assert.equal(uprightSpaceJourneys,5);assert.equal(uprightSpaceAbsent,1);
  // Two printed arrows remain separate occurrences. Contracting the first
  // extent preserves its already accepted ka thig destination and leaves the
  // independently printed tshaṅs thig unresolved, with its own explanation.
@@ -457,6 +489,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

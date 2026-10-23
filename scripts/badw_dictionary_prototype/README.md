@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run27` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run28` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,15 +80,15 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run27 \
+  --reader work/badw_full_reader_20261020/run28 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 115 PDF
-missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
+336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 112 PDF
+missing exact identities; two HTML and 116 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -333,6 +333,26 @@ not a missing destination. Run27: **7,584 resolved / 789 residual** (HTML
 The differential verifies 29,877 byte-identical entry files out of 29,878,
 unchanged source text, citations and relationships, the same accepted target span
 and destination, and preservation of the independent second reference.
+
+Six further facsimile-reviewed PDF references stop at a single upright space
+between continuous italic target fragments: **mgon med**, **chos so so yaṅ dag
+par rig pa**, **sñug**, **ta yas**, **rtiṅ du ’braṅs**, and **ltir**. The named
+`reviewed_printed_upright_space` review requires exact source hashes, glyph/font
+replay and a continuous physical baseline within one observation line. It does
+not normalize source spaces or admit unknown ink, prose, arrows, incompatible
+fonts, page crossings or discontinuous geometry. This repairs extraction, not
+the published text. Five occurrences now provide six accepted destinations,
+including both **lto ldir ba** and **¹ldir** in the recovered **ltir** list;
+its plural parent remains unresolved. **so so yaṅ dag par rig pa bźi** is now
+fully extracted but has no exact acquired destination and stays unresolved.
+Run28: **7,590 resolved / 784 residual**, versus **7,584 / 789** before this
+family (one additional target unit is exposed by the recovered list). HTML stays
+**4,735 resolved / 551 unresolved / 2 ambiguous**; PDF becomes **2,855 / 115 /
+116**. All other **29,872 entry files are byte-identical**. Source text,
+citations, relationships, prior accepted destinations and the 23/50/47 fixture
+are preserved. Browser validation covers the five new navigable occurrences,
+the absent-target explanation, keyboard/history/source access, 82 citation
+journeys, 58 facsimile checks and four viewport sizes, with no browser errors.
 
 ## Bounded historical LoC script experiment
 

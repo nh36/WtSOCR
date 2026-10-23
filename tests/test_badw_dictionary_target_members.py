@@ -302,3 +302,34 @@ def test_nonprinting_target_survives_reader_and_store_without_rewriting_source(m
     assert db.execute('SELECT target,status FROM xref').fetchall() == [('destination','resolved')]
     assert db.execute('PRAGMA foreign_key_check').fetchall() == []
     db.close()
+
+
+@pytest.mark.parametrize('available', [False, True])
+def test_reviewed_upright_space_survives_reader_and_store(monkeypatch, tmp_path, available):
+    import hashlib
+    from test_parse_badw_pdf_articles import upright_space_fixture, _candidates
+    _, lines, divisions, sources, _ = upright_space_fixture(monkeypatch)
+    candidate, = _candidates(lines, divisions, upright_space_sources=sources)['cross_references']
+    text = lines[0]['text']
+    divisions[0]['kind'] = 'unsegmented'
+    digest = hashlib.sha256(text.encode()).hexdigest()
+    structure = dict(visual_lines=lines, divisions=divisions,
+        candidates=dict(cross_references=[candidate]), source_faithful_sha256=digest)
+    projection = dict(contract_version='badw-structural-candidate-projection-v6', identity='source',
+        source_kind='pdf', source=dict(visual_lines=lines), review_text_sha256=digest,
+        original_structure=structure, nodes=[dict(id='xref',kind='cross_reference',
+        start=candidate['visual_start'],end=candidate['visual_end'])], edges=[])
+    records = [entry('source',lemma='source')]
+    if available:
+        records.append(entry('destination',lemma='smyug ma',homonym=''))
+    inspected, = view([projection], EntryIndex(records))
+    result = entry_view(inspected)
+    ref, = result['cross_references']
+    target, status = ('destination', 'resolved') if available else (None, 'unresolved')
+    assert (ref['target_entry_id'], ref['status']) == (target, status)
+    assert ''.join(s['text'] for s in result['segments']) == text
+    assert ref['wording'] == 'smyug ma'
+    db = create(tmp_path/'semantic.sqlite'); ingest(db,result)
+    assert db.execute('SELECT target,status FROM xref').fetchall() == [(target,status)]
+    assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+    db.close()

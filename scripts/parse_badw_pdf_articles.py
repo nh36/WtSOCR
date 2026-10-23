@@ -349,7 +349,7 @@ def reviewed_quotation_spans(text: str, article_id: str,
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 article_id: str = "", *, reviewed_wrapped_lists: bool = False,
                 reviewed_terminal_letter: bool = False,
-                nonprinting_sources=None) -> dict[str, list[dict[str, Any]]]:
+                nonprinting_sources=None, upright_space_sources=None) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
@@ -519,6 +519,13 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
         if italic and (italic[0] == target_start or italic[0] <= start):
             end = italic[1]
             line_index, last_span = italic[2], italic[3]
+            if upright_space_sources:
+                from badw_pdf_reference_bridge import upright_space_continuation
+                continuation = upright_space_continuation(lines[line_index], last_span,
+                                                           upright_space_sources)
+                if continuation is not None:
+                    last_span = continuation
+                    end = offsets[line_index] + continuation['end']
             # A reference may wrap at the visual line boundary.  Continue
             # only through an immediately following italic span in the same
             # font, source page, and division; never infer from plain text.

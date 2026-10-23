@@ -896,3 +896,34 @@ def test_reviewed_arrow_contraction_preserves_independent_occurrence(tmp_path):
         elif mutation=='extent': changed['claim']['previous_range']['end']=8
         else: changed['claim']['basis']='reviewed_printed_extent'
         with pytest.raises(ValueError):run(tmp_path,p,[changed])
+
+
+def test_upright_space_extent_requires_review_hash_and_exact_physical_support(tmp_path,monkeypatch):
+    from test_parse_badw_pdf_articles import upright_space_fixture, _candidates
+    fixture, lines, divisions, sources, runs = upright_space_fixture(monkeypatch)
+    p=packet(tmp_path,'pdf')
+    sources[0].update(p['source']['source_objects'][0],page_id=lines[0]['page_id'])
+    text=lines[0]['text']; start=text.index('↓')
+    old,=_candidates(lines,divisions)['cross_references']
+    new,=_candidates(lines,divisions,upright_space_sources=sources)['cross_references']
+    p['source'].update(source_objects=sources,source_faithful_text=text,visual_lines=lines)
+    p.update(review_text=text,review_text_sha256=annotations.digest(text))
+    base=prediction(p)
+    base['nodes'].append(dict(id='ref',kind='cross_reference',start=start,end=old['visual_end'],parent='root'))
+    base['original_structure']=dict(article_id=p['identity'],visual_lines=copy.deepcopy(lines),
+        divisions=divisions,candidates=_candidates(lines,divisions))
+    a=claim(p,kind='cross_reference_extent',ranges=[dict(start=start,end=new['visual_end'],literal=text[start:new['visual_end']])])
+    a['claim']=dict(node_id='ref',previous_range=dict(start=start,end=old['visual_end'],literal=text[start:old['visual_end']]),basis='reviewed_printed_upright_space')
+    original=copy.deepcopy(base)
+    result=annotations.apply_validated_annotations(p,base,run(tmp_path,p,[a]))
+    assert result['nodes'][-1]['end']==new['visual_end'] and base==original
+    assert p['review_text']==text
+    for damage in ('hash','old_extent','new_extent','basis','geometry'):
+        other=copy.deepcopy(a)
+        if damage=='hash': other['binding']['text_sha256']='f'*64
+        elif damage=='old_extent': other['claim']['previous_range']['end']-=1
+        elif damage=='new_extent': other['ranges'][0]['end']-=1
+        elif damage=='basis': other['claim']['basis']='reviewed_printed_extent'
+        else: runs[lines[0]['style_spans'][3]['first_run_index']]['glyphs'][0]['x']+=100
+        with pytest.raises(ValueError):
+            annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))

@@ -783,3 +783,57 @@ def test_real_dgra_bla_nonprinting_reference_and_review(monkeypatch):
     assert review['identity'] == fixture['identity']
     assert review['claim']['basis'] == 'reviewed_printed_nonprinting_bridge'
     assert review['ranges'][0]['literal'] == text[36:90]
+
+
+def upright_space_fixture(monkeypatch, index=2):
+    import copy
+    import badw_pdf_reference_bridge as bridge
+    fixture = json.loads((Path(__file__).parent/'fixtures/badw_upright_space_references.json').read_text())[index]
+    line, sources = copy.deepcopy(fixture['line']), copy.deepcopy(fixture['sources'])
+    runs = {int(k): copy.deepcopy(v) for k,v in fixture['runs'].items()}
+    monkeypatch.setattr(bridge, 'page_runs', lambda *args: runs)
+    divisions = [dict(start_line_index=0,end_line_index_exclusive=1)]
+    return fixture, [line], divisions, sources, runs
+
+
+@pytest.mark.parametrize('index', range(6))
+def test_real_reviewed_upright_spaces_are_opt_in_and_source_preserving(monkeypatch, index):
+    fixture, lines, divisions, sources, _ = upright_space_fixture(monkeypatch,index)
+    before = json.dumps(lines,sort_keys=True)
+    old, = _candidates(lines,divisions)['cross_references']
+    new, = _candidates(lines,divisions,upright_space_sources=sources)['cross_references']
+    assert old['visual_end'] < new['visual_end']
+    # ltir's second raised-number member follows on later observation lines;
+    # this line fixture checks only the physically replayed first target.
+    expected = fixture['target'].split(',')[0]
+    assert new['target_candidates'][0]['source_text'] == expected
+    assert json.dumps(lines,sort_keys=True) == before
+    ledger = Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl'
+    review, = [r for r in map(json.loads,ledger.read_text().splitlines())
+               if r['identity']==fixture['identity'] and r['claim'].get('basis')=='reviewed_printed_upright_space']
+    assert review['claim']['previous_range'] == fixture['old']
+    assert review['ranges'] == [fixture['new']]
+
+
+@pytest.mark.parametrize('damage', ['font','family','style','page','baseline','gap','ink',
+                                   'glyph','run','selector','space','arrow','prose'])
+def test_upright_space_bridge_rejects_incompatible_source(monkeypatch,damage):
+    from badw_pdf_reference_bridge import upright_space_continuation
+    _, lines, _, sources, runs = upright_space_fixture(monkeypatch)
+    line=lines[0]; left,space,right=line['style_spans'][1:4]
+    if damage=='font': right['font_id']='other'
+    elif damage=='family': right['family']='other'
+    elif damage=='style': right['style']='regular'
+    elif damage=='page': sources[0]['page_id']='other'
+    elif damage in ('baseline','gap'):
+        g=runs[right['first_run_index']]['glyphs'][0]
+        g['y' if damage=='baseline' else 'x'] += 100
+    elif damage=='glyph': runs[right['first_run_index']]['glyphs'][0]['unicode']='x'
+    elif damage=='run': runs[right['first_run_index']]['run_index']=-1
+    elif damage=='selector': right['first_glyph_index']=999
+    else:
+        value={'ink':'⟦UNKNOWN:ink⟧','space':'  ','arrow':'↓ka','prose':'vgl. ka'}[damage]
+        target=space if damage=='space' else right
+        line['text']=line['text'][:target['start']]+value+line['text'][target['end']:]
+        target['end']=target['start']+len(value)
+    assert upright_space_continuation(line,left,sources) is None

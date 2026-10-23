@@ -685,3 +685,19 @@ def test_nonprinting_derived_target_requires_replay_and_exact_unique_identity(mo
     assert EntryIndex([]).resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']['status']=='unresolved'
     ref['source_candidate']['target_candidates'][0]['nonprinting_bridge']['lexical_target']='ka'
     assert index.resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']['status']=='unresolved'
+
+
+@pytest.mark.parametrize('destinations,expected', [(0,'unresolved'),(1,'resolved'),(2,'ambiguous')])
+def test_reviewed_upright_extent_uses_ordinary_exact_identity_rules(monkeypatch,destinations,expected):
+    from test_parse_badw_pdf_articles import upright_space_fixture, _candidates
+    _,lines,divisions,sources,_=upright_space_fixture(monkeypatch)
+    candidate,=_candidates(lines,divisions,upright_space_sources=sources)['cross_references']
+    text=lines[0]['text']
+    records=[entry('target-'+str(i),lemma='smyug ma',homonym=str(i+1)) for i in range(destinations)]
+    records.append(entry('near-label',lemma='smyug',homonym=''))
+    index=EntryIndex(records)
+    result=index.resolve_source_candidate(dict(target_label=candidate['target_label_candidate'],source_candidate=candidate),
+        structure=dict(visual_lines=lines,divisions=divisions),text=text)
+    assert result['canonical_resolution']['status']==expected
+    if destinations!=1: assert result['canonical_resolution'].get('target_entry_id') is None
+    else: assert result['canonical_resolution']['target_entry_id']=='target-0'
