@@ -197,14 +197,19 @@ def view(records, index):
                                        target_label=candidate.get("target_label_candidate", ""),
                                        source_candidate=candidate, source_spans=[candidate])
                 reviews = [r for r in record.get('reviewed_cross_reference_targets', {}).values()
-                           if r.get('basis') in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword') and
+                           if r.get('basis') in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword', 'reviewed_printed_misplaced_arrow') and
                            r['source_spans'] == [candidate]]
                 if len(reviews) > 1:
                     raise ValueError('conflicting reviewed printed target interpretations')
                 kwargs = dict(structure=structure, text=text,
                     source_binding=dict(identity=identity, text_sha256=structure.get("source_faithful_sha256")))
-                references.append(index.resolve_reviewed_printed_substitution(occurrence, reviews[0], **kwargs)
-                                  if reviews else index.resolve_source_candidate_with_members(occurrence, **kwargs))
+                if reviews:
+                    resolver = (index.resolve_reviewed_printed_misplaced_arrow
+                                if reviews[0]['basis'] == 'reviewed_printed_misplaced_arrow'
+                                else index.resolve_reviewed_printed_substitution)
+                    references.append(resolver(occurrence, reviews[0], **kwargs))
+                else:
+                    references.append(index.resolve_source_candidate_with_members(occurrence, **kwargs))
         result.append(dict(projection=record, entry=entries[0], review_text=text,
                            cross_references=references))
     return sorted(result, key=lambda r: (r["entry"]["headword"].get("loc", ""),

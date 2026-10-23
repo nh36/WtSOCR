@@ -96,6 +96,23 @@ const path=require('node:path');
   editorialVariantJourneys++;
  }
  assert.equal(editorialVariantJourneys,4);
+ // A confirmed printed marker error has an explicit interpretation, while
+ // its literal ↑fut and the unresolved numbered imperative remain visible.
+ const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
+ const printedEntry=await (await page.request.get(base+'/'+printedMeta.path)).json();
+ const printedRef=printedEntry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_printed_misplaced_arrow');assert(printedRef);
+ assert.equal(printedRef.marker+printedRef.wording,'↑fut');assert.deepEqual(printedRef.source_span,{start:13,end:17});assert.equal(printedRef.status,'resolved');
+ assert(printedEntry.cross_references.some(r=>r.wording.includes('khrus')&&r.status!=='resolved'));
+ await go(printedEntry);
+ assert((await page.locator('.editorial-interpretation').textContent()).includes('fut. ↑bkru'));
+ assert((await page.locator('.editorial-interpretation').textContent()).includes('↑fut'));
+ const printedLink=page.locator('.reading a').filter({hasText:'fut'});assert.equal(await printedLink.count(),1);
+ assert((await printedLink.getAttribute('title')).includes('Printed marker error'));
+ await printedLink.focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('bkru'));
+ await page.goBack();await page.waitForFunction(()=>document.querySelector('.editorial-interpretation'));
+ await page.goForward();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('bkru'));
+
  let journeys=0,uncertain=0,citations=0,unresolvedCitations=0;
  // A reviewed nonprinting font-switch interlude remains in the literal source;
  // its independently replayed lookup expression reaches the exact PDF entry.
@@ -531,6 +548,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

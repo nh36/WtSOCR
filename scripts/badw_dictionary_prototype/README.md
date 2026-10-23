@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run30` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run32` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,14 +80,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run30 \
+  --reader work/badw_full_reader_20261020/run32 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 211 HTML and 112 PDF
+336 HTML and three PDF identity/manifestation mismatches; 211 HTML and 111 PDF
 missing exact identities; two HTML and 115 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -385,6 +385,19 @@ Browser validation follows all four repaired links by keyboard and checks
 source access and back/forward history, alongside 82 citation journeys, 58
 facsimile checks and four viewport sizes, with zero browser errors. Desktop and
 mobile screenshots were inspected; the reader design is unchanged.
+
+The **’khrud** paradigm on the original volume 2 printed p. 170 places an
+arrow before the upright grammatical abbreviation: **↑fut. bkru**. The immediate
+italic **bkru** is independently identified by the acquired washing entry and
+its reciprocal ’khrud reference. A single `reviewed_printed_misplaced_arrow`
+annotation binds both source ranges, typography, physical line and cached
+source/destination hashes. It links the preserved **↑fut** occurrence to **bkru**
+and displays the separate editorial interpretation **fut. ↑bkru**. This is a
+facsimile-confirmed printed marker-placement error, not a parser defect or a
+source-text correction. The numbered **¹khrus** reference and reverse HTML
+homonym claim remain unresolved. Run31: **7,596 resolved / 778 residual**;
+HTML remains **4,739 / 547 unresolved / 2 ambiguous**, PDF becomes **2,857 / 114 /
+115**. No general abbreviation rewriting or homonym inference is permitted.
 
 ## Bounded historical LoC script experiment
 

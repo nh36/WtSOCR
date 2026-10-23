@@ -1031,3 +1031,65 @@ def test_editorial_headword_variant_requires_both_immutable_sources(tmp_path):
     bad['binding']['text_sha256'] = '0'*64
     with pytest.raises(ValueError):
         run(tmp_path, p, [bad])
+
+
+def misplaced_arrow_packet(tmp_path):
+    p = packet(tmp_path, 'pdf')
+    text = '↑fut. bkru'
+    line = dict(text=text, page_id='page-1', printed_page=170, first_x=339., y=162.,
+        run_start=0, run_end_exclusive=10, style_spans=[
+            dict(start=0,end=6,style='regular',family='TGaramond',font_id='regular'),
+            dict(start=6,end=10,style='italic',family='TGaramond',font_id='italic')])
+    p['source'].update(source_faithful_text=text,visual_lines=[line])
+    p.update(review_text=text,review_text_sha256=annotations.digest(text))
+    body='<span class="lemma"><span class="lem">bkru</span></span><div class="text">waschen <span class="link">↓<a class="link lemma" href="/lemma/’khrud/1">’khrud</a></span>.</div>'.encode()
+    sha,path=put(tmp_path,body)
+    a=claim(p,kind='cross_reference_target',ranges=[dict(start=0,end=4,literal='↑fut'),dict(start=6,end=10,literal='bkru')])
+    a['claim']=dict(occurrence_id='ref',source_target_url=None,source_target_label='fut',lemma='bkru',homonym=None,source_headword='’khrud',basis='reviewed_printed_misplaced_arrow',destination_heading=dict(sha256=sha,object_path=path,source_url='https://wts-digital.badw.de/lemma/bkru/1'))
+    return p,a
+
+
+def test_printed_misplaced_arrow_preserves_literal_extent_and_requires_reciprocal_evidence(tmp_path):
+    p,a=misplaced_arrow_packet(tmp_path)
+    base=prediction(p)
+    candidate=dict(visual_start=0,visual_end=4,target_label_candidate='fut')
+    base['nodes'].append(dict(id='ref',kind='cross_reference',start=0,end=4,parent='root'))
+    base['original_structure']=dict(loc_headword='’khrud',visual_lines=copy.deepcopy(p['source']['visual_lines']),candidates=dict(cross_references=[candidate]))
+    before=copy.deepcopy((p,base))
+    result=annotations.apply_validated_annotations(p,base,run(tmp_path,p,[a]))
+    assert (p,base)==before
+    assert result['nodes']==base['nodes']
+    assert result['reviewed_cross_reference_targets']['ref']['literal']=='fut'
+    for fault in ('hash','range','font','geometry','line','reciprocal','destination'):
+        q,b=copy.deepcopy((p,a))
+        if fault=='hash': b['binding']['text_sha256']='f'*64
+        elif fault=='range': b['ranges'][1]['end']-=1
+        elif fault=='font': q['source']['visual_lines'][0]['style_spans'][1]['style']='regular'
+        elif fault=='geometry': q['source']['visual_lines'][0].pop('first_x')
+        elif fault=='line': q['source']['visual_lines'][0]['text']='↑fut.'
+        elif fault=='reciprocal': b['claim']['source_headword']='other'
+        else: b['claim']['destination_heading']['sha256']='f'*64
+        # Rebind changed physical evidence to test structural gates themselves.
+        if fault in ('font','geometry','line'): b['binding']=annotations.binding(q);b['physical_selectors']=annotations.physical_selectors(q,b['ranges'])
+        with pytest.raises(ValueError): run(tmp_path,q,[b])
+
+
+@pytest.mark.parametrize('separator',['. ↑','. deutscher Text ','.\n','. ⟦UNKNOWN:ink⟧ '])
+def test_printed_misplaced_arrow_never_bridges_prose_other_arrows_or_unknown_ink(tmp_path,separator):
+    p,a=misplaced_arrow_packet(tmp_path)
+    text='↑fut'+separator+'bkru'
+    start=4+len(separator)
+    ranges=[dict(start=0,end=4,literal='↑fut'),dict(start=start,end=len(text),literal='bkru')]
+    with pytest.raises(ValueError):
+        annotations.printed_misplaced_arrow(a['claim'],ranges,text,p['source']['visual_lines'])
+
+
+def test_real_khrud_review_retains_both_source_ranges_and_print_evidence():
+    import json
+    rows=[json.loads(l) for l in (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    row=next(r for r in rows if r['annotation_id']=='badw-reviewed-printed-misplaced-arrow-khrud')
+    assert row['ranges']==[dict(start=13,end=17,literal='↑fut'),dict(start=19,end=23,literal='bkru')]
+    assert row['claim']['basis']=='reviewed_printed_misplaced_arrow'
+    assert row['claim']['homonym'] is None
+    assert row['binding']['text_sha256']=='60b17485c43eaa772ad81f6553486cb524e990569fb4ddc3ea4b34dcd1e4d66d'
+    assert 'printed p. 170' in row['review']['evidence']

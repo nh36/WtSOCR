@@ -744,3 +744,55 @@ def test_editorial_headword_variant_is_occurrence_bound_not_a_spelling_rule():
     choice = EntryIndex([destination, second]).resolve_reviewed_editorial_target(r, review)['canonical_resolution']
     assert choice['status'] == 'resolved' and 'target_entry_id' not in choice
     assert set(choice['candidate_entry_ids']) == {destination['id'], 'second'}
+
+
+def misplaced_arrow_fixture():
+    fixture=plural_fixture('fut. bkru',members=['fut'])
+    o,s,text,binding=fixture
+    c=o['source_candidate'];c.update(visual_end=4,target_label_candidate='fut')
+    o['target_label']='fut';o['source_spans']=[copy.deepcopy(c)]
+    s['loc_headword']='’khrud'
+    s['visual_lines'][0].update(run_start=0,run_end_exclusive=10,style_spans=[
+        dict(start=0,end=6,style='regular',family='TGaramond',font_id='regular'),
+        dict(start=6,end=10,style='italic',family='TGaramond',font_id='italic')])
+    review=dict(occurrence_id=o['id'],source_spans=copy.deepcopy(o['source_spans']),literal='fut',source_target_url=None,source_headword='’khrud',lemma='bkru',homonym=None,basis='reviewed_printed_misplaced_arrow',annotation_id='review-arrow',review=dict(reviewer='synthetic reviewer',reviewed_at='2026-10-23',evidence='Synthetic facsimile review'),binding=dict(text_sha256=hashlib.sha256(text.encode()).hexdigest()),physical_selectors=[dict(page_id='page-1')],ranges=[dict(start=0,end=4,literal='↑fut'),dict(start=6,end=10,literal='bkru')],destination_heading=dict(source_url='https://example/lemma/bkru/1',sha256='b'*64))
+    dest=entry(lemma='bkru',url='https://example/lemma/bkru/1')
+    dest['source_spans']=[dict(source_sha256='b'*64)]
+    return fixture,review,dest
+
+
+def misplaced(index,fixture,review):
+    o,s,text,b=fixture
+    return index.resolve_reviewed_printed_misplaced_arrow(o,review,structure=s,text=text,source_binding=b)
+
+
+def test_printed_misplaced_arrow_is_separate_from_preserved_source_and_ambiguity():
+    fixture,review,dest=misplaced_arrow_fixture()
+    before=copy.deepcopy((fixture,review))
+    result=misplaced(EntryIndex([dest]),fixture,review)
+    r=result['canonical_resolution']
+    assert r['status']=='resolved' and r['target_entry_id']=='entry-1'
+    assert r['editorial_interpretation']=='fut. ↑bkru'
+    assert r['method']=='reviewed_printed_misplaced_arrow'
+    assert {k:v for k,v in result.items() if k!='canonical_resolution'}==fixture[0]
+    assert (fixture,review)==before
+    other=entry('homonym-2',lemma='bkru',homonym='2')
+    r=misplaced(EntryIndex([dest,other]),fixture,review)['canonical_resolution']
+    assert r['status']=='ambiguous' and 'target_entry_id' not in r
+    with pytest.raises(ValueError): misplaced(EntryIndex([]),fixture,review)
+
+
+@pytest.mark.parametrize('fault',['binding','headword','range','geometry','font','candidate','proof','accepted'])
+def test_printed_misplaced_arrow_fails_closed(fault):
+    fixture,review,dest=misplaced_arrow_fixture()
+    o,s,_,_=fixture
+    index=EntryIndex([dest])
+    if fault=='binding':review['binding']['text_sha256']='f'*64
+    elif fault=='headword':s['loc_headword']='other'
+    elif fault=='range':review['ranges'][1]['start']-=1
+    elif fault=='geometry':s['visual_lines'][0].pop('first_x')
+    elif fault=='font':s['visual_lines'][0]['style_spans'][1]['style']='regular'
+    elif fault=='candidate':o['source_candidate']['visual_end']+=1
+    elif fault=='proof':review['destination_heading']['sha256']='f'*64
+    else:index=EntryIndex([dest,entry('old',lemma='fut')])
+    with pytest.raises(ValueError):misplaced(index,fixture,review)

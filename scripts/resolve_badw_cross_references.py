@@ -403,6 +403,53 @@ class EntryIndex:
         result['canonical_resolution'] = resolution
         return result
 
+    def resolve_reviewed_printed_misplaced_arrow(self, occurrence, review, *, structure, text,
+                                                source_binding):
+        """Keep a faulty printed marker and expose its reviewed interpretation."""
+        from badw_semantic_annotations import printed_misplaced_arrow
+        result = self.resolve_source_candidate_with_members(occurrence, structure=structure,
+            text=text, source_binding=source_binding)
+        previous = result['canonical_resolution']
+        if previous['status'] == 'resolved' or 'target_members' in previous:
+            raise ValueError('review cannot replace an accepted or plural cross-reference')
+        candidate = occurrence.get('source_candidate', {})
+        ranges = review.get('ranges', [])
+        printed_misplaced_arrow(dict(review, source_target_label=review.get('literal')),
+            ranges, text, structure.get('visual_lines', []))
+        span = ranges[0]
+        if (review.get('basis') != 'reviewed_printed_misplaced_arrow' or
+                not review.get('annotation_id') or not review.get('physical_selectors') or
+                review.get('binding', {}).get('text_sha256') != hashlib.sha256(text.encode()).hexdigest() or
+                not isinstance(source_binding, dict) or
+                source_binding.get('identity') != structure.get('article_id') or
+                source_binding.get('text_sha256') != structure.get('source_faithful_sha256') or
+                structure.get('review_text_sha256') != review['binding']['text_sha256'] or
+                review['source_headword'] != structure.get('loc_headword') or
+                (candidate.get('visual_start'), candidate.get('visual_end')) != (span['start'], span['end']) or
+                candidate.get('target_label_candidate') != review.get('literal') or
+                review.get('source_spans') != occurrence.get('source_spans')):
+            raise ValueError('printed misplaced-arrow review is not bound to the source occurrence')
+        proof = review.get('destination_heading', {})
+        if not any(r.get('stable_url') == proof.get('source_url') and
+                   r.get('headword', {}).get('loc') == review['lemma'] and
+                   any(s.get('source_sha256') == proof.get('sha256') for s in r.get('source_spans', []))
+                   for r in self.records.values()):
+            raise ValueError('reviewed destination differs from acquired source index')
+        temporary = dict(occurrence, id=review['occurrence_id'], record_type='cross_reference')
+        resolution = self.resolve(temporary, reviewed_target=review)['canonical_resolution']
+        resolution.update(method='reviewed_printed_misplaced_arrow',
+            parsed_target=previous.get('parsed_target'),
+            evidence_status='facsimile_confirmed_printed_marker_error',
+            editorial_interpretation='fut. ↑' + review['lemma'])
+        self._same_entity(resolution)
+        if resolution['status'] != 'resolved':
+            resolution['residual_reason'] = ('multiple_exact_homonym_identities' if resolution['candidate_entry_ids']
+                else 'reviewed_target_absent_from_acquired_index')
+        if resolution.get('target_entry_id'):
+            resolution['target_lexical_entity'] = self.target_identity(resolution['target_entry_id'])
+        result['canonical_resolution'] = resolution
+        return result
+
     def _same_entity(self, resolution):
         ids = resolution['candidate_entry_ids']
         keys = {(self.records[i]['headword']['loc'], str(self.records[i].get('homonym') or '')) for i in ids}

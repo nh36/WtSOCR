@@ -91,6 +91,7 @@ function renderReference(reference,segment,entries){
  else if(target.target_entry_id)n.title='Resolved target outside the development subset';
  else if(target.status==='resolved')n.title='Resolved lexical identity; no unique target witness';
  else n.title=target.status==='ambiguous'?'Cross-reference target ambiguous':'Cross-reference target unresolved';
+ if(reference.resolution_evidence?.editorial_interpretation)n.title='Printed marker error. Reviewed interpretation: '+reference.resolution_evidence.editorial_interpretation;
  return n;
 }
 function referenceExplanation(target){
@@ -225,6 +226,14 @@ function show(item){
   reading.append(paragraph);
  }
  a.append(reading);
+ const corrections=item.cross_references.filter(r=>r.resolution_evidence?.editorial_interpretation);
+ if(corrections.length){
+  const note=el('aside',undefined,'reference-note editorial-interpretation');note.append(el('h3','Editorial interpretation'));
+  for(const ref of corrections){
+   note.append(el('p',`The source prints “${ref.marker||''}${ref.wording}”. The arrow precedes the grammatical abbreviation. Reviewed interpretation: ${ref.resolution_evidence.editorial_interpretation}. The printed text is preserved; the link follows this separately recorded interpretation.`));
+  }
+  a.append(note);
+ }
  const plurals=item.cross_references.filter(r=>Array.isArray(r.target_members));
  if(plurals.length){
   const note=el('aside',undefined,'reference-note');note.append(el('h3','Cross-reference coverage'));

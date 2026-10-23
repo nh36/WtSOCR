@@ -200,6 +200,50 @@ def wrapped_heading(claim, cache, canonical_root, verified):
         raise ValueError('wrapped heading differs from canonical PDF evidence')
 
 
+def printed_misplaced_arrow(claim, ranges, text, lines):
+    """Replay a reviewed printed marker error; never change its source extent.
+
+    Only the individually reviewed upright ``↑fut.`` followed immediately by
+    an italic target on the same physical line is admitted. This is not a
+    parser rule: each occurrence still requires immutable facsimile evidence.
+    """
+    if (len(ranges) != 2 or claim.get('source_target_url') is not None or
+            claim.get('homonym') is not None or not _string(claim.get('source_headword'))):
+        raise ValueError('invalid printed misplaced-arrow interpretation')
+    first, target = ranges
+    a, b, c, d = first['start'], first['end'], target['start'], target['end']
+    if (not 0 <= a < b < c < d <= len(text) or d-a > 80 or
+            first != dict(start=a, end=b, literal=text[a:b]) or
+            target != dict(start=c, end=d, literal=text[c:d]) or
+            text[a:b] != '↑fut' or claim.get('source_target_label') != 'fut' or
+            text[b:c] != '. ' or text[c:d] != claim.get('lemma') or
+            not re.fullmatch(r"[^\W\d_]+(?:[ ’‘'\-][^\W\d_]+)*", text[c:d]) or
+            (d < len(text) and text[d] != ',')):
+        raise ValueError('printed misplaced-arrow ranges differ from exact wording')
+    offset = 0
+    matches = []
+    for line in lines:
+        end = offset + len(line['text'])
+        if offset <= a < d <= end:
+            matches.append((line, offset))
+        offset = end + 1
+    if len(matches) != 1 or '\n'.join(l['text'] for l in lines) != text:
+        raise ValueError('printed misplaced arrow crosses a physical line')
+    line, offset = matches[0]
+    if (not line.get('page_id') or line.get('printed_page') is None or
+            line.get('first_x') is None or line.get('y') is None or
+            not isinstance(line.get('run_start'), int) or
+            not isinstance(line.get('run_end_exclusive'), int) or
+            line['run_start'] >= line['run_end_exclusive']):
+        raise ValueError('printed misplaced arrow lacks physical provenance')
+    for start, end, style in ((a, c, 'regular'), (c, d, 'italic')):
+        for position in range(start-offset, end-offset):
+            spans = [s for s in line['style_spans'] if s['start'] <= position < s['end']]
+            if (len(spans) != 1 or spans[0].get('style') != style or
+                    spans[0].get('family') != 'TGaramond' or not spans[0].get('font_id')):
+                raise ValueError('printed misplaced arrow lacks exact source typography')
+
+
 def validate(packets, annotations, *, cache, canonical_root=None):
     """Fail closed. Preserve candidates and superseded claims in the output."""
     source = {}
@@ -330,6 +374,21 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                     raise ValueError('editorial member whitespace interpretation is not exact')
             elif 'member_ordinal' in claim:
                 raise ValueError('member ordinal requires editorial member review')
+            elif claim['basis'] == 'reviewed_printed_misplaced_arrow':
+                from badw_article_parser import parse_database_article
+                if packet['source_kind'] != 'pdf':
+                    raise ValueError('printed misplaced arrow requires PDF evidence')
+                printed_misplaced_arrow(claim, ranges, packet['review_text'], packet['source']['visual_lines'])
+                proof = claim.get('destination_heading')
+                _keys(proof, ('object_path', 'sha256', 'source_url'))
+                _object(cache, proof['object_path'], proof['sha256'], verified)
+                destination = parse_database_article((Path(cache)/proof['object_path']).read_bytes(),
+                    source_metadata=dict(proof, final_url=proof['source_url'],
+                                         delivery_type='database_article', valid_resource=True))
+                if (destination['lemma'] != claim['lemma'] or not any(
+                        r['target_text'] == claim['source_headword']
+                        for r in destination['cross_references'])):
+                    raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
             elif claim['basis'] == 'reviewed_printed_wrapped_headword':
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
                         any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_target_label', 'lemma')) or
@@ -561,7 +620,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_misplaced_arrow"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
