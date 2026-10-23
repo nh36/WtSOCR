@@ -973,9 +973,9 @@ def test_page_continuation_extent_requires_frozen_review_and_physical_support(tm
             annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
 
 
-def editorial_variant_packet(tmp_path):
+def editorial_variant_packet(tmp_path, literal='kiṅ śị', lemma='kiṅ śi'):
     from badw_article_parser import parse_database_article
-    body = '<div class="text"><span class="link">↑<a class="link lemma" href="/lemma/kiṅ śị/1">kiṅ śị</a></span>.</div>'.encode()
+    body = f'<div class="text"><span class="link">↑<a class="link lemma" href="/lemma/{literal}/1">{literal}</a></span>.</div>'.encode()
     sha, path = put(tmp_path, body)
     obj = dict(sha256=sha, object_path=path)
     article = parse_database_article(body, source_metadata=dict(obj,
@@ -985,16 +985,16 @@ def editorial_variant_packet(tmp_path):
         source_kind='html', source=dict(source_object=obj, article_source_text=text),
         review_text=text, review_text_sha256=annotations.digest(text))
     # Heading markup follows the actual editorial parser contract.
-    destination = '<span class="lemma"><span class="lem">kiṅ śi</span></span><div class="text">auch ker śiṅ.</div>'.encode()
+    destination = f'<span class="lemma"><span class="lem">{lemma}</span></span><div class="text">auch ker śiṅ.</div>'.encode()
     ds, dp = put(tmp_path, destination)
     ref = article['cross_references'][0]
     loc = ref['locator']
     start, end = loc['visible_text_start'], loc['visible_text_end']
     a = claim(p, kind='cross_reference_target', ranges=[dict(start=start, end=end, literal=text[start:end])])
     a['claim'] = dict(occurrence_id='xref', source_target_url=ref['target_url'],
-        source_target_label=ref['target_text'], lemma='kiṅ śi', homonym='1',
+        source_target_label=ref['target_text'], lemma=lemma, homonym='1',
         basis='reviewed_editorial_headword_variant', destination_heading=dict(
-            sha256=ds, object_path=dp, source_url='https://wts-digital.badw.de/lemma/kiṅ śi/1'))
+            sha256=ds, object_path=dp, source_url=f'https://wts-digital.badw.de/lemma/{lemma}/1'))
     return p, a
 
 
@@ -1031,6 +1031,37 @@ def test_editorial_headword_variant_requires_both_immutable_sources(tmp_path):
     bad['binding']['text_sha256'] = '0'*64
     with pytest.raises(ValueError):
         run(tmp_path, p, [bad])
+
+
+@pytest.mark.parametrize('literal,lemma', [('dug-mo-ñuṅ', 'dug mo ñuṅ'),
+                                         ('mu-stegs-pa', 'mu stegs pa')])
+def test_compound_interpretation_requires_an_individual_bound_review(tmp_path, literal, lemma):
+    p, row = editorial_variant_packet(tmp_path, literal, lemma)
+    assert run(tmp_path, p, [row])[0]['effective_status'] == 'accepted'
+    assert row['ranges'][0]['literal'] == '↑' + literal
+    assert literal in p['review_text'] and lemma not in p['review_text']
+    for field, value in [('source_target_label', lemma), ('lemma', literal), ('homonym', '2')]:
+        bad = copy.deepcopy(row)
+        bad['claim'][field] = value
+        with pytest.raises(ValueError):
+            run(tmp_path, p, [bad])
+
+
+def test_real_compound_reviews_preserve_explicit_identity_and_reciprocal_evidence():
+    import json
+    rows = [json.loads(line) for line in
+            (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    reviews = [r for r in rows if r['annotation_id'].startswith('badw-reviewed-editorial-compound-')]
+    assert len(reviews) == 3
+    assert sorted(r['claim']['source_target_label'] for r in reviews) == ['dug-mo-ñuṅ', 'dug-mo-ñuṅ', 'mu-stegs-pa']
+    for row in reviews:
+        assert row['claim']['basis'] == 'reviewed_editorial_headword_variant'
+        assert row['claim']['homonym'] == '1'
+        assert row['ranges'][0]['literal'] == '↓' + row['claim']['source_target_label']
+        assert len(row['claim']['destination_heading']['sha256']) == 64
+        assert 'independently' in row['review']['evidence']
+        assert 'not a parser defect' in row['review']['evidence']
+        assert 'No general hyphen-to-space' in row['review']['evidence']
 
 
 def misplaced_arrow_packet(tmp_path):

@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run32` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run33` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,14 +80,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run32 \
+  --reader work/badw_full_reader_20261020/run33 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-336 HTML and three PDF identity/manifestation mismatches; 211 HTML and 111 PDF
+336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 111 PDF
 missing exact identities; two HTML and 115 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -568,3 +568,21 @@ facsimile hashes, opens citations by keyboard, checks index navigation and
 320/390/768/1440-pixel layouts, and saves screenshots under ignored `work/`.
 These integration tests require the local corpus; synthetic Python/Node tests do
 not. Repository-wide mandatory validation in `AGENTS.md` also applies.
+
+## Individually reviewed compound-headword links
+
+Three HTML occurrences now navigate through exact, source-bound editorial
+interpretations: **dug-mo-ñuṅ** in **ka ku bha ya** and **ka liṅ ka** to
+**dug mo ñuṅ¹**, and **mu-stegs-pa** in **kā la yakṣa nag po** to
+**mu stegs pa¹**. The destination's reciprocal equations independently identify
+the first two; the matching deity-class definition and **Neb 282** establish
+the third. These are editorial link-label variants, not parser defects or
+confirmed printed errors. Literal labels, URLs, source spans and explicit
+homonym numbers remain unchanged. No general hyphen-to-space rule is added.
+Botanical descriptions are not harmonized. Other superficially similar labels
+remain unresolved pending independent identity evidence.
+
+Run33: **7,599 resolved / 775 residual** target units; HTML 4,742 resolved,
+544 unresolved, two ambiguous; PDF unchanged at 2,857 resolved, 114 unresolved,
+115 ambiguous. All previously accepted destinations and all 23 reviewed
+collections / 50 members / 47 accepted member targets must remain unchanged.

@@ -70,24 +70,26 @@ const path=require('node:path');
   await page.goForward();await page.waitForFunction(id=>decodeURIComponent(location.hash.slice(1))===id,targetMeta.id);
   assert(catalog.some(e=>e.headword.loc==='dru gu'&&e.homonym==='1'&&e.id!==targetMeta.id));
  }
- // Four individually reviewed links preserve printed kiṅ śị while reaching
- // the hash-verified editorial heading kiṅ śi. This is no global spelling rule.
+ // Individually reviewed spelling/compound links preserve their literal
+ // labels while reaching hash-verified editorial headings. No global rule.
  let editorialVariantJourneys=0;
- for(const sourceId of [
-  'badw:entry:0e2af2fa687900651e6cfba9e312b6a6cc637f059440e67cdfab0c63320b6c12',
-  'badw:entry:c903f897858c9193923e511914000e294a6724b060ca5b04621a8202c04285ab',
-  'badw:entry:6e7f3c91163071a79e59cbcfef94e477f91457af260b09acc186b8e3fc587596',
-  'badw:entry:4acae5d5587079b033c5941094197c1d01194a5abe98afe49d6139e8a339ffa4']){
+ for(const [sourceId,literal,destination] of [
+  ['badw:entry:0e2af2fa687900651e6cfba9e312b6a6cc637f059440e67cdfab0c63320b6c12','kiṅ śị','kiṅ śi'],
+  ['badw:entry:c903f897858c9193923e511914000e294a6724b060ca5b04621a8202c04285ab','kiṅ śị','kiṅ śi'],
+  ['badw:entry:6e7f3c91163071a79e59cbcfef94e477f91457af260b09acc186b8e3fc587596','kiṅ śị','kiṅ śi'],
+  ['badw:entry:4acae5d5587079b033c5941094197c1d01194a5abe98afe49d6139e8a339ffa4','kiṅ śị','kiṅ śi'],
+  ['badw:entry:fb59948c7cf7f58dff4862ca71f5593f6399c9951cf471569ef5b19a087c5d5c','dug-mo-ñuṅ','dug mo ñuṅ'],
+  ['badw:entry:f83b9ff2bb09f46b18632bfad212b7c208a79e99e65a724a8a88741a684395d6','dug-mo-ñuṅ','dug mo ñuṅ'],
+  ['badw:entry:25928411ccc5f88650577b84c9edb571462a4c4a21b3ccb89524be82528ec598','mu-stegs-pa','mu stegs pa']]){
   const meta=entries.get(sourceId);assert(meta);
   const e=await (await page.request.get(base+'/'+meta.path)).json();
   const r=e.cross_references.find(r=>r.resolution_evidence?.target_review?.basis==='reviewed_editorial_headword_variant');assert(r);
-  assert.equal(r.status,'resolved');assert.equal(r.wording,'kiṅ śị');
-  assert.equal(r.target_entry_id,'badw:entry:4d15166cfbb4253522e9edd0a4251e01f8542c7b87090599c922062d33a74c85');
-  const target=entries.get(r.target_entry_id);assert.equal(target.headword.loc,'kiṅ śi');
+  assert.equal(r.status,'resolved');assert.equal(r.wording,literal);
+  const target=entries.get(r.target_entry_id);assert.equal(target.headword.loc,destination);assert.equal(target.homonym,'1');
   await go(e);
   const links=page.locator('.reading a');
   const n=await links.evaluateAll((nodes,href)=>nodes.findIndex(el=>el.getAttribute('href')===href),'#'+encodeURIComponent(target.id));assert(n>=0);
-  assert((await links.nth(n).textContent()).includes('kiṅ śị'));
+  assert((await links.nth(n).textContent()).includes(literal));
   await links.nth(n).focus();await page.keyboard.press('Enter');
   await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
   assert(await page.locator('#article > .source-access a').count()>0);
@@ -95,7 +97,7 @@ const path=require('node:path');
   await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),target.headword.loc);
   editorialVariantJourneys++;
  }
- assert.equal(editorialVariantJourneys,4);
+ assert.equal(editorialVariantJourneys,7);
  // A confirmed printed marker error has an explicit interpretation, while
  // its literal ↑fut and the unresolved numbered imperative remain visible.
  const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
