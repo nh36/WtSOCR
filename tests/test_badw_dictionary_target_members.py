@@ -333,3 +333,33 @@ def test_reviewed_upright_space_survives_reader_and_store(monkeypatch, tmp_path,
     assert db.execute('SELECT target,status FROM xref').fetchall() == [(target,status)]
     assert db.execute('PRAGMA foreign_key_check').fetchall() == []
     db.close()
+
+
+@pytest.mark.parametrize('available',[False,True])
+def test_reviewed_page_continuation_survives_reader_and_store(monkeypatch,tmp_path,available):
+    import hashlib
+    from test_parse_badw_pdf_articles import page_continuation_fixture, _candidates
+    _,lines,divisions,sources,_=page_continuation_fixture(monkeypatch)
+    candidate,=_candidates(lines,divisions,page_continuation_sources=sources)['cross_references']
+    text='\n'.join(l['text'] for l in lines)
+    divisions[0]['kind']='unsegmented'
+    digest=hashlib.sha256(text.encode()).hexdigest()
+    structure=dict(visual_lines=lines,divisions=divisions,
+        candidates=dict(cross_references=[candidate]),source_faithful_sha256=digest)
+    projection=dict(contract_version='badw-structural-candidate-projection-v6',identity='source',
+        source_kind='pdf',source=dict(visual_lines=lines),review_text_sha256=digest,
+        original_structure=structure,nodes=[dict(id='xref',kind='cross_reference',
+        start=candidate['visual_start'],end=candidate['visual_end'])],edges=[])
+    records=[entry('source',lemma='source')]
+    if available: records.append(entry('destination',lemma='pha rol tu phyin pa',homonym='1'))
+    inspected,=view([projection],EntryIndex(records))
+    result=entry_view(inspected)
+    ref,=result['cross_references']
+    target,status=('destination','resolved') if available else (None,'unresolved')
+    assert (ref['target_entry_id'],ref['status'])==(target,status)
+    assert ''.join(s['text'] for s in result['segments'])==text
+    assert ref['wording']=='pha\nrol tu phyin pa'
+    db=create(tmp_path/'semantic.sqlite'); ingest(db,result)
+    assert db.execute('SELECT target,status FROM xref').fetchall()==[(target,status)]
+    assert db.execute('PRAGMA foreign_key_check').fetchall()==[]
+    db.close()

@@ -837,3 +837,56 @@ def test_upright_space_bridge_rejects_incompatible_source(monkeypatch,damage):
         line['text']=line['text'][:target['start']]+value+line['text'][target['end']:]
         target['end']=target['start']+len(value)
     assert upright_space_continuation(line,left,sources) is None
+
+
+def page_continuation_fixture(monkeypatch):
+    import copy
+    import badw_pdf_reference_bridge as bridge
+    f=json.loads((Path(__file__).parent/'fixtures/badw_pdf_page_continuation.json').read_text())
+    lines,sources,runs=copy.deepcopy((f['lines'],f['sources'],f['runs']))
+    runs={k:{int(i):r for i,r in v.items()} for k,v in runs.items()}
+    class IndexedRuns(dict):
+        def __getitem__(self,key):
+            if isinstance(key,slice): return [self[i] for i in range(key.start,key.stop)]
+            return super().__getitem__(key)
+    runs={k:IndexedRuns(v) for k,v in runs.items()}
+    monkeypatch.setattr(bridge,'page_runs',lambda canonical,*args:runs[canonical])
+    divisions=[dict(start_line_index=0,end_line_index_exclusive=2)]
+    return f,lines,divisions,sources,runs
+
+
+def test_real_thabs_page_continuation_is_reviewed_and_source_preserving(monkeypatch):
+    f,lines,divisions,sources,_=page_continuation_fixture(monkeypatch)
+    original=json.dumps(lines,sort_keys=True)
+    old,=_candidates(lines,divisions)['cross_references']
+    new,=_candidates(lines,divisions,page_continuation_sources=sources)['cross_references']
+    assert old['target_label_candidate']=='pha'
+    assert new['target_label_candidate']=='pha\nrol tu phyin pa'
+    assert new['source_line']['printed_page']==228
+    assert new['source_line_end']['printed_page']==229
+    assert json.dumps(lines,sort_keys=True)==original
+    ledger=Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl'
+    review,=[r for r in map(json.loads,ledger.read_text().splitlines()) if r['annotation_id']=='badw-reviewed-page-continuation-thabs']
+    assert review['identity']==f['identity'] and review['ranges']==[f['new']]
+
+
+@pytest.mark.parametrize('damage',['page','span','pdf','order','division','font','style','start',
+                                    'bottom','top','column','glyph','arrow','unknown','prose'])
+def test_page_continuation_rejects_unsupported_wraps(monkeypatch,damage):
+    _,lines,divisions,sources,runs=page_continuation_fixture(monkeypatch)
+    if damage=='page': lines[1]['printed_page']+=1
+    elif damage=='span': lines[1]['span_index']+=1
+    elif damage=='pdf': sources[1]['pdf_sha256']='other'
+    elif damage=='order': sources.reverse()
+    elif damage=='division': divisions=[dict(start_line_index=0,end_line_index_exclusive=1),dict(start_line_index=1,end_line_index_exclusive=2)]
+    elif damage=='font': lines[1]['style_spans'][0]['font_id']='other'
+    elif damage=='style': lines[1]['style_spans'][0]['style']='regular'
+    elif damage=='start': lines[1]['style_spans'][0]['start']=1
+    elif damage in ('bottom','top','column'):
+        line=lines[0 if damage=='bottom' else 1]
+        for run in runs[next(s['canonical_object'] for s in sources if s['page_id']==line['page_id'])].values():
+            for g in run['glyphs']: g['x' if damage=='column' else 'y']+=200
+    elif damage=='glyph': runs[sources[1]['canonical_object']][0]['decoded_unicode']='other'
+    else: lines[1]['text']={'arrow':'↓ka','unknown':'⟦UNKNOWN:ink⟧','prose':'vgl. Deutsch'}[damage]+lines[1]['text']
+    candidate=_candidates(lines,divisions,page_continuation_sources=sources)['cross_references'][0]
+    assert candidate['target_label_candidate']=='pha'

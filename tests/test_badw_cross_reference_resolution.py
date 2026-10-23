@@ -701,3 +701,14 @@ def test_reviewed_upright_extent_uses_ordinary_exact_identity_rules(monkeypatch,
     assert result['canonical_resolution']['status']==expected
     if destinations!=1: assert result['canonical_resolution'].get('target_entry_id') is None
     else: assert result['canonical_resolution']['target_entry_id']=='target-0'
+
+
+@pytest.mark.parametrize('count,status',[(0,'unresolved'),(1,'resolved'),(2,'ambiguous')])
+def test_reviewed_cross_page_target_requires_exact_identity(monkeypatch,count,status):
+    from test_parse_badw_pdf_articles import page_continuation_fixture,_candidates
+    _,lines,divisions,sources,_=page_continuation_fixture(monkeypatch)
+    candidate,=_candidates(lines,divisions,page_continuation_sources=sources)['cross_references']
+    index=EntryIndex([entry('destination'+str(i),lemma='pha rol tu phyin pa',homonym=str(i+1)) for i in range(count)]+[entry('near',lemma='pha',homonym='')])
+    result=index.resolve_source_candidate(dict(target_label=candidate['target_label_candidate'],source_candidate=candidate),structure=dict(visual_lines=lines,divisions=divisions),text='\n'.join(l['text'] for l in lines))['canonical_resolution']
+    assert result['status']==status
+    if count!=1: assert result.get('target_entry_id') is None

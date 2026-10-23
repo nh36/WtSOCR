@@ -173,3 +173,47 @@ def bridged_target(lines, divisions, start, sources):
         previous = glyph, nonprinting
         pos += len(word)
     return None
+
+
+def page_continuation(left, right, sources):
+    """Verify one individually reviewed bottom-right/top-left page wrap.
+
+    Callers independently require the same article division and italic font.
+    This is unavailable to ordinary extraction and never joins source objects
+    from different PDFs or nonconsecutive article spans.
+    """
+    if (left.get('page_id') == right.get('page_id') or
+            type(left.get('printed_page')) is not int or
+            right.get('printed_page') != left['printed_page'] + 1 or
+            type(left.get('span_index')) is not int or
+            right.get('span_index') != left['span_index'] + 1 or
+            right.get('run_start') != 0):
+        return False
+    positions = [[i for i,s in enumerate(sources or []) if s['page_id'] == l['page_id']]
+                 for l in (left, right)]
+    if any(len(p) != 1 for p in positions) or positions[1][0] != positions[0][0]+1:
+        return False
+    a,b = (sources[p[0]] for p in positions)
+    if (not a.get('pdf_sha256') or a['pdf_sha256'] != b.get('pdf_sha256') or
+            a.get('pdf_url') != b.get('pdf_url') or
+            left['run_end_exclusive'] != a.get('run_end_exclusive') or
+            b.get('run_start') != 0):
+        return False
+    physical = []
+    for line, source in ((left,a),(right,b)):
+        runs = page_runs(source['canonical_object'], source['canonical_object_sha256'],
+                         source['pdf_sha256'], source['pdf_url'])
+        if runs is None:
+            return False
+        selected = runs[line['run_start']:line['run_end_exclusive']]
+        if ''.join(r['decoded_unicode'] for r in selected) != line['text']:
+            return False
+        atoms = [g for r in selected for g in r['glyphs']]
+        if not atoms or max(g['y'] for g in atoms)-min(g['y'] for g in atoms) > .5:
+            return False
+        physical.append(atoms)
+    # Physical replay, not the legacy unscaled observation coordinates.
+    return (min(g['x'] for g in physical[0]) >= 300 and
+            30 <= physical[0][0]['y'] <= 80 and
+            40 <= physical[1][0]['x'] <= 80 and
+            750 <= physical[1][0]['y'] <= 800)

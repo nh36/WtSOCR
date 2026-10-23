@@ -349,7 +349,7 @@ def reviewed_quotation_spans(text: str, article_id: str,
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 article_id: str = "", *, reviewed_wrapped_lists: bool = False,
                 reviewed_terminal_letter: bool = False,
-                nonprinting_sources=None, upright_space_sources=None) -> dict[str, list[dict[str, Any]]]:
+                nonprinting_sources=None, upright_space_sources=None, page_continuation_sources=None) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
@@ -535,9 +535,14 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                     and end - start < 80):
                 next_line = lines[line_index + 1]
                 first_span = next_line["style_spans"][0]
+                same_page = next_line["page_id"] == lines[line_index]["page_id"]
+                if not same_page and page_continuation_sources:
+                    from badw_pdf_reference_bridge import page_continuation
+                    same_page = page_continuation(lines[line_index], next_line,
+                                                  page_continuation_sources)
                 if (first_span["start"] != 0 or first_span["style"] != "italic"
                         or first_span["font_id"] != last_span["font_id"]
-                        or next_line["page_id"] != lines[line_index]["page_id"]
+                        or not same_page
                         or division_by_line[line_index + 1] != division_by_line[line_index]):
                     break
                 line_index += 1

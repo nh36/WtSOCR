@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run28` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run29` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run28 \
+  --reader work/badw_full_reader_20261020/run29 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 215 HTML and 112 PDF
-missing exact identities; two HTML and 116 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 115 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -353,6 +353,19 @@ citations, relationships, prior accepted destinations and the 23/50/47 fixture
 are preserved. Browser validation covers the five new navigable occurrences,
 the absent-target explanation, keyboard/history/source access, 82 citation
 journeys, 58 facsimile checks and four viewport sizes, with no browser errors.
+
+The facsimile-reviewed **thabs** reference continues from **↓pha** at the bottom
+right of printed p. 228 to **rol tu phyin pa** at the top left of p. 229. Ordinary
+extraction stopped at the page boundary and left the truncated **pha** ambiguous.
+The named `reviewed_printed_page_continuation` annotation requires consecutive
+article spans in the same hash-checked PDF, the same division and italic font,
+and physically replayed bottom-right/top-left coordinates. It preserves the
+literal newline and resolves the complete exact target **pha rol tu phyin pa**;
+ordinary cross-page extraction stays disabled. This is a parser defect, not a
+printing error. Run29: **7,591 resolved / 783 residual**; HTML remains **4,735 /
+551 unresolved / 2 ambiguous**, PDF becomes **2,856 / 115 / 115**. All other
+**29,877 entry files are byte-identical**, including previously accepted targets,
+source text, citations and relationships. The 23/50/47 fixture remains intact.
 
 ## Bounded historical LoC script experiment
 

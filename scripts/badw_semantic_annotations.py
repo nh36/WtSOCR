@@ -256,7 +256,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
             _keys(old, ("start", "end", "literal"))
             if (packet["source_kind"] != "pdf" or len(ranges) != 1 or
                     not _string(claim["node_id"]) or
-                    claim["basis"] not in ("reviewed_printed_extent", "reviewed_printed_terminal_letter", "reviewed_printed_nonprinting_bridge", "reviewed_printed_arrow_boundary", "reviewed_printed_upright_space") or
+                    claim["basis"] not in ("reviewed_printed_extent", "reviewed_printed_terminal_letter", "reviewed_printed_nonprinting_bridge", "reviewed_printed_arrow_boundary", "reviewed_printed_upright_space", "reviewed_printed_page_continuation") or
                     type(old["start"]) is not int or type(old["end"]) is not int or
                     not (ranges[0]["start"] == old["start"] and
                          (old["start"] < ranges[0]["end"] < old["end"] <= len(packet["review_text"])
@@ -485,7 +485,9 @@ def apply_validated_annotations(packet, prediction, annotations):
                                nonprinting_sources=packet['source']['source_objects']
                                if row['claim']['basis'] == 'reviewed_printed_nonprinting_bridge' else None,
                                upright_space_sources=packet['source']['source_objects']
-                               if row['claim']['basis'] == 'reviewed_printed_upright_space' else None)
+                               if row['claim']['basis'] == 'reviewed_printed_upright_space' else None,
+                               page_continuation_sources=packet['source']['source_objects']
+                               if row['claim']['basis'] == 'reviewed_printed_page_continuation' else None)
         matches = [c for c in proposed["cross_references"] if
                    (c["visual_start"], c["visual_end"]) == (span["start"], span["end"])]
         if len(positions) != 1 or len(matches) != 1:

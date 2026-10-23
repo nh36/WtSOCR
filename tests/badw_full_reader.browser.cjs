@@ -87,6 +87,22 @@ const path=require('node:path');
  await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeEntry.headword.loc);
  await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeTarget.headword.loc);
  assert(await page.locator('#article > .source-access a').count()>0);
+ // A reviewed reference continues across consecutive printed pages in one PDF.
+ const pageFixture=JSON.parse(fs.readFileSync('tests/fixtures/badw_pdf_page_continuation.json'));
+ const pageMeta=entries.get(pageFixture.identity);assert(pageMeta);
+ const pageEntry=await (await page.request.get(base+'/'+pageMeta.path)).json();
+ const pageRef=pageEntry.cross_references.find(r=>r.extent_review?.annotation_id==='badw-reviewed-page-continuation-thabs');assert(pageRef);
+ assert.equal(pageRef.status,'resolved');assert.equal(pageRef.wording,'pha\nrol tu phyin pa');
+ assert.deepEqual(pageRef.source_span,{start:pageFixture.new.start,end:pageFixture.new.end});
+ const pageTarget=entries.get(pageRef.target_entry_id);assert.equal(pageTarget.headword.loc,'pha rol tu phyin pa');
+ await go(pageEntry);
+ const pageLinks=page.locator('.reading a');
+ const pageLinkIndex=await pageLinks.evaluateAll((nodes,href)=>nodes.findIndex(n=>n.getAttribute('href')===href),'#'+encodeURIComponent(pageTarget.id));assert(pageLinkIndex>=0);
+ await pageLinks.nth(pageLinkIndex).focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),pageTarget.headword.loc);
+ assert(await page.locator('#article > .source-access a').count()>0);
+ await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),pageEntry.headword.loc);
+ await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),pageTarget.headword.loc);
  // Six facsimile-reviewed upright-space extents retain literal source text.
  // Completing an extent must not invent an unavailable destination.
  let uprightSpaceJourneys=0,uprightSpaceAbsent=0;
@@ -489,6 +505,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

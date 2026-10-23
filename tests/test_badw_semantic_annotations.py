@@ -927,3 +927,47 @@ def test_upright_space_extent_requires_review_hash_and_exact_physical_support(tm
         else: runs[lines[0]['style_spans'][3]['first_run_index']]['glyphs'][0]['x']+=100
         with pytest.raises(ValueError):
             annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
+
+
+def test_page_continuation_extent_requires_frozen_review_and_physical_support(tmp_path,monkeypatch):
+    from test_parse_badw_pdf_articles import page_continuation_fixture, _candidates
+    import badw_pdf_reference_bridge as bridge
+    _,lines,divisions,sources,runs=page_continuation_fixture(monkeypatch)
+    p=packet(tmp_path,'pdf')
+    mock=p['source']['source_objects'][0]
+    remapped={}
+    for i,s in enumerate(sources):
+        physical=runs[s['canonical_object']]
+        page=tmp_path/f'page-{i}.json.gz'
+        page.write_bytes(b'synthetic positioned provenance')
+        s.update(pdf_sha256=mock['pdf_sha256'],canonical_object=page.name,
+                 canonical_object_sha256=hashlib.sha256(page.read_bytes()).hexdigest())
+        remapped[page.name]=physical
+    monkeypatch.setattr(bridge,'page_runs',lambda canonical,*args:remapped[canonical])
+    text='\n'.join(l['text'] for l in lines)
+    old,=_candidates(lines,divisions)['cross_references']
+    new,=_candidates(lines,divisions,page_continuation_sources=sources)['cross_references']
+    start=old['visual_start']
+    p['source'].update(source_objects=sources,source_faithful_text=text,visual_lines=lines)
+    p.update(review_text=text,review_text_sha256=annotations.digest(text))
+    base=prediction(p)
+    base['nodes'].append(dict(id='ref',kind='cross_reference',start=start,end=old['visual_end'],parent='root'))
+    base['original_structure']=dict(article_id=p['identity'],visual_lines=copy.deepcopy(lines),
+        divisions=divisions,candidates=_candidates(lines,divisions))
+    a=claim(p,kind='cross_reference_extent',ranges=[dict(start=start,end=new['visual_end'],literal=text[start:new['visual_end']])])
+    a['claim']=dict(node_id='ref',previous_range=dict(start=start,end=old['visual_end'],literal=text[start:old['visual_end']]),basis='reviewed_printed_page_continuation')
+    original=copy.deepcopy(base)
+    result=annotations.apply_validated_annotations(p,base,run(tmp_path,p,[a]))
+    assert result['nodes'][-1]['end']==new['visual_end'] and base==original
+    assert p['review_text']==text
+    for damage in ('hash','old_extent','new_extent','basis','geometry'):
+        other=copy.deepcopy(a)
+        if damage=='hash': other['binding']['text_sha256']='f'*64
+        elif damage=='old_extent': other['claim']['previous_range']['end']-=1
+        elif damage=='new_extent': other['ranges'][0]['end']-=1
+        elif damage=='basis': other['claim']['basis']='reviewed_printed_extent'
+        else:
+            for r in remapped[sources[1]['canonical_object']].values():
+                for g in r['glyphs']: g['y']-=200
+        with pytest.raises(ValueError):
+            annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
