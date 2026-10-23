@@ -938,3 +938,45 @@ def test_reciprocal_introduction_exact_replay_in_resolver(prefix,alternate,fault
     else:
         result=substitute(index,fixture,review)['canonical_resolution']
         assert result['status']=='resolved' and result['target_entry_id']==destination['id']
+
+
+@pytest.mark.parametrize('source_homonym',['1','2'])
+def test_qualified_reciprocal_selects_reviewed_identity_and_retains_witness_choice(source_homonym):
+    fixture,review,destination=reciprocal_destination_fixture()
+    fixture[1]['homonym']=source_homonym
+    review.update(basis='reviewed_printed_qualified_reciprocal_perfect',source_homonym=source_homonym)
+    review['destination_heading']['reciprocal_passage']['literal']=' pf. ↑'+source_homonym+'bcum '
+    other=copy.deepcopy(destination);other.update(id='second',homonym='2')
+    before=copy.deepcopy((fixture,review,destination,other))
+    index=EntryIndex([destination,other])
+    assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
+    result=substitute(index,fixture,review)['canonical_resolution']
+    assert result['status']=='resolved' and result['target_entry_id']==destination['id']
+    assert result['method']=='reviewed_exact_qualified_reciprocal_perfect'
+    assert (fixture,review,destination,other)==before
+    witness=copy.deepcopy(destination);witness['id']='another'
+    result=substitute(EntryIndex([destination,other,witness]),fixture,review)['canonical_resolution']
+    assert result['status']=='resolved' and 'target_entry_id' not in result
+    assert result['witness_status']=='multiple_exact_manifestations'
+
+
+@pytest.mark.parametrize('fault',['missing_source_number','wrong_source_number','missing_heading_number',
+    'wrong_reciprocal_number','unqualified_reciprocal','same_arrow','prose','offset','hash','extent','accepted'])
+def test_qualified_reciprocal_resolver_fails_closed(fault):
+    fixture,review,destination=reciprocal_destination_fixture()
+    fixture[1]['homonym']='1'
+    review.update(basis='reviewed_printed_qualified_reciprocal_perfect',source_homonym='1')
+    passage=review['destination_heading']['reciprocal_passage']
+    passage['literal']=' pf. ↑1bcum '
+    if fault=='missing_source_number': review.pop('source_homonym')
+    if fault=='wrong_source_number': fixture[1]['homonym']='2'
+    if fault=='missing_heading_number': fixture[1].pop('homonym')
+    if fault=='wrong_reciprocal_number': passage['literal']=' pf. ↑2bcum '
+    if fault=='unqualified_reciprocal': passage['literal']=' pf. ↑bcum '
+    if fault=='same_arrow': passage['literal']=' pf. ↓1bcum '
+    if fault=='prose': passage['literal']=' pf. ↑1bcum prose'
+    if fault=='offset': passage.update(literal=', pf. ↑1bcum ',run_start_offset=2)
+    if fault=='hash': review['binding']['text_sha256']='0'*64
+    if fault=='extent': review['ranges'][0]['end']-=1
+    index=EntryIndex([destination] if fault=='accepted' else [destination,entry('second',lemma='ka',homonym='2')])
+    with pytest.raises(ValueError): substitute(index,fixture,review)

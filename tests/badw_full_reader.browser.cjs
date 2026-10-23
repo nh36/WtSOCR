@@ -170,6 +170,24 @@ const path=require('node:path');
   await page.goBack();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),source);
   await page.goForward();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
  }
+ // The printed raised reciprocal qualifier establishes thul 1 specifically.
+ {
+  const meta=entries.get('badw:pdf:badw-v4-bd3109dea567834eac8fb3e7c547ab652c3c4329ddd1ede095333f602c0957ac:445');assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();
+  const ref=entry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_qualified_reciprocal_perfect');assert(ref);
+  assert.equal(ref.status,'resolved');assert.equal(ref.wording,'’thul');
+  assert.deepEqual(ref.source_span,{start:8,end:14});
+  assert.equal(ref.resolution_evidence.target_review.source_homonym,'1');
+  const destination=entries.get(ref.target_entry_id);assert.equal(destination.headword.loc,'’thul');assert.equal(destination.homonym,'1');
+  await go(entry);
+  const link=page.locator('.reading a').filter({hasText:'’thul'});assert.equal(await link.count(),1);
+  await link.focus();await page.keyboard.press('Enter');await selected('#'+encodeURIComponent(destination.id));
+  await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('’thul'));
+  assert(await page.locator('#article > .source-access a').count()>0);
+  await page.goBack();await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent.includes('thul'));
+  await selected('#'+encodeURIComponent(entry.id));
+  await page.goForward();await selected('#'+encodeURIComponent(destination.id));
+ }
  // A confirmed printed marker error has an explicit interpretation, while
  // its literal ↑fut and the unresolved numbered imperative remain visible.
  const printedMeta=entries.get('badw:pdf:badw-v2-a58041c8ebea1dab16a0479fa5d9830cf2d2f3bd393a95b4f62c7d801b8b2574:2381');
@@ -623,6 +641,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:7,reciprocal_perfect_future_journeys:2,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:7,reciprocal_perfect_future_journeys:2,qualified_reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

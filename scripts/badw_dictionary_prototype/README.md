@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run40` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run41` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run40 \
+  --reader work/badw_full_reader_20261020/run41 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 108 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 105 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -684,3 +684,24 @@ Run40: **7,609 resolved / 765 residual** target units. HTML remains 4,742
 resolved / 544 unresolved / 2 ambiguous; PDF is 2,867 resolved / 113 unresolved /
 106 ambiguous. All previous accepted destinations, text, citations and the
 23 reviewed collections / 50 members / 47 resolved targets remain unchanged.
+
+
+### Reviewed raised reciprocal homonym qualifier
+
+An individual review connects **thul¹ → ’thul¹**. WTS IV p. 282 prints
+`pf. zu ↓’thul aufsteigen`; p. 376, under ’thul¹, explicitly reciprocates
+`pf. ↑¹thul`. The printed raised numeral identifies thul¹ independently of
+its competing homonyms. Both facsimiles were checked. The source reference
+was correctly extracted; this is an identity interpretation, not a printing
+correction. Other unresolved homonyms retain their uncertainty.
+
+The separate `reviewed_printed_qualified_reciprocal_perfect` basis verifies the
+source's numbered canonical heading and the destination's exact numbered
+heading, reciprocal passage, upright raised numeral, adjacent italic target,
+shared body baseline, article bounds and immutable hashes. The literal source
+and reciprocal runs remain intact; no default homonym selection is introduced.
+
+Run41: **7,610 resolved / 764 residual** target units. HTML remains 4,742
+resolved / 544 unresolved / 2 ambiguous; PDF is 2,868 resolved / 113 unresolved /
+105 ambiguous. Only this reviewed reference gains a destination; prior accepted
+relationships, source text, citations and the 23/50/47 fixture remain unchanged.

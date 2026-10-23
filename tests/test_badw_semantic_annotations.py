@@ -1212,6 +1212,86 @@ def reciprocal_fixture(tmp_path, future=False):
     return p,a,base,page,path
 
 
+def qualified_reciprocal_fixture(tmp_path):
+    import gzip, json
+    from test_extract_badw_pdf_entries import _page, _run
+    from extract_badw_pdf_entries import extract_page
+    p,a,base,page,path = reciprocal_fixture(tmp_path)
+    source = _page()
+    source['representative_source']['source_sha256'] = p['source']['source_objects'][0]['pdf_sha256']
+    source['positioned_page']['positioned_text_runs'][3]['decoded_unicode'] = 'bcum'
+    source['source_faithful_decoded_text'] = ''.join(r['decoded_unicode'] for r in source['positioned_page']['positioned_text_runs'])
+    source['visible_body_sha256'] = annotations.digest(source['source_faithful_decoded_text'])
+    source_path = tmp_path/'numbered-source.json.gz'
+    source_path.write_bytes(gzip.compress(json.dumps(source).encode()))
+    p['identity'] = extract_page(source, source_path.name)[0][0]['id']
+    base['identity'] = p['identity']
+    p['source']['source_objects'][0].update(canonical_object=source_path.name,
+        canonical_object_sha256=hashlib.sha256(source_path.read_bytes()).hexdigest())
+    a.update(identity=p['identity'],binding=annotations.binding(p))
+    a['claim'].update(basis='reviewed_printed_qualified_reciprocal_perfect',source_homonym='1')
+    base['original_structure']['homonym'] = '1'
+    runs = page['positioned_page']['positioned_text_runs']
+    runs[4:5] = [_run(4,' pf. ↑','r'),_run(5,'1','r',404),_run(6,'bcum ','i')]
+    runs[5]['x']=12; runs[6]['x']=15
+    for i,r in enumerate(runs): r['run_index']=i
+    page['positioned_page']['tibetan_text_candidates'][1]['run_indices']=[7]
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    proof=a['claim']['destination_heading']
+    proof.update(canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        entry_start_source_span=extract_page(page,path.name)[0][0]['source_span'],
+        reciprocal_passage=dict(run_start=4,run_end_exclusive=7,literal=' pf. ↑1bcum '))
+    return p,a,base,page,path
+
+
+def test_qualified_reciprocal_replays_source_number_and_raised_destination_evidence(tmp_path):
+    p,a,base,_,_=qualified_reciprocal_fixture(tmp_path)
+    before=copy.deepcopy((p,a,base))
+    accepted=run(tmp_path,p,[a])
+    result=annotations.apply_validated_annotations(p,base,accepted)
+    review=result['reviewed_cross_reference_targets']['xref']
+    assert review['source_homonym']=='1' and review['homonym']=='1'
+    assert result['original_structure']==base['original_structure'] and result['nodes']==base['nodes']
+    assert (p,a,base)==before
+
+
+@pytest.mark.parametrize('fault', ['source_number','source_headword','source_identity','source_hash',
+    'destination_hash','unraised','too_raised','distant','reversed_x','target_baseline',
+    'numeral_font','target_font','prefix_font','unknown','literal','extra_prose','other_basis','extent'])
+def test_qualified_reciprocal_rejects_unestablished_number_or_typography(tmp_path,fault):
+    import gzip,json
+    p,a,_,page,path=qualified_reciprocal_fixture(tmp_path)
+    c=a['claim'];proof=c['destination_heading'];runs=page['positioned_page']['positioned_text_runs']
+    if fault=='source_number': c['source_homonym']='2'
+    if fault=='source_headword': c['source_headword']='other'
+    if fault=='source_identity': p['identity']=a['identity']='another';a['binding']=annotations.binding(p)
+    if fault=='source_hash':
+        p['source']['source_objects'][0]['canonical_object_sha256']='0'*64;a['binding']=annotations.binding(p)
+    if fault=='unraised': runs[5]['y']=400
+    if fault=='too_raised': runs[5]['y']=407
+    if fault=='distant': runs[6]['x']=18
+    if fault=='reversed_x': runs[6]['x']=11
+    if fault=='target_baseline': runs[6]['y']=399
+    if fault=='numeral_font': runs[5]['font_id']='i'
+    if fault=='target_font': runs[6]['font_id']='r'
+    if fault=='prefix_font': runs[4]['font_id']='i'
+    if fault=='unknown': runs[5]['unknown_glyphs']=1
+    if fault=='literal': proof['reciprocal_passage']['literal']=' pf. ↑2bcum '
+    if fault=='extra_prose':
+        runs[6]['decoded_unicode']+='prose';proof['reciprocal_passage']['literal']+='prose'
+    if fault=='other_basis': c['basis']='reviewed_printed_reciprocal_perfect'
+    if fault=='extent': proof['reciprocal_passage']['run_end_exclusive']=8
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    proof['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+    proof['entry_start_source_span']['visible_body_sha256']=page['visible_body_sha256']
+    if fault=='destination_hash': proof['canonical_object_sha256']='0'*64
+    with pytest.raises(ValueError): run(tmp_path,p,[a])
+
+
 @pytest.mark.parametrize('future',[False,True])
 def test_reviewed_reciprocal_perfect_retains_numbered_identity_and_source(tmp_path,future):
     p,a,base,_,_ = reciprocal_fixture(tmp_path,future)
@@ -1446,3 +1526,17 @@ def test_real_perfect_future_reviews_retain_exact_occurrences(source,target,node
     assert row['ranges']==[dict(start=start,end=end,literal=('↓' if source=='gtad' else '↑')+target)]
     assert (passage['run_start'],passage['run_end_exclusive'])==(lo,hi)
     assert passage['literal'].strip()==('pf. und fut. ↑gtad' if source=='gtad' else 'pf. und fut. zu ↓gtod')
+
+
+def test_real_qualified_reciprocal_preserves_numbered_source_and_positioned_passage():
+    import json
+    rows=[json.loads(line) for line in (Path(__file__).resolve().parents[1]/
+        'data/reviewed_badw_semantic_annotations.jsonl').open()]
+    row,=[r for r in rows if r['annotation_id']=='badw-reviewed-qualified-reciprocal-perfect-thul-1']
+    c=row['claim'];proof=c['destination_heading'];passage=proof['reciprocal_passage']
+    assert c['basis']=='reviewed_printed_qualified_reciprocal_perfect'
+    assert c['occurrence_id']=='n12' and c['source_headword']=='thul' and c['source_homonym']=='1'
+    assert c['lemma']=='’thul' and c['homonym']==proof['homonym']=='1'
+    assert row['ranges']==[dict(start=8,end=14,literal='↓’thul')]
+    assert proof['printed_page']==376
+    assert (passage['run_start'],passage['run_end_exclusive'],passage['literal'])==(872,879,' pf. ↑1thul')

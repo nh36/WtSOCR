@@ -214,6 +214,8 @@ def reciprocal_perfect_introduction(claim, text, start):
     it is not an alias used for destination lookup or reciprocal matching.
     """
     prefix = text[:start].strip()
+    if claim.get('basis') == 'reviewed_printed_qualified_reciprocal_perfect':
+        return 'source_alternate_headword' not in claim and prefix == 'pf. zu'
     if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_future':
         return ('source_alternate_headword' not in claim and
                 prefix in ('pf. und fut. zu', 'pf. und fut.'))
@@ -226,7 +228,7 @@ def reciprocal_perfect_introduction(claim, text, start):
 
 
 def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
-        basis="reviewed_printed_reciprocal_perfect", source_introduction=None):
+        basis="reviewed_printed_reciprocal_perfect", source_introduction=None, source_homonym=None):
     """Check an exact reciprocal expression, retaining any shared-run comma.
 
     The optional offset selects past exactly ``, `` in the first PDF run;
@@ -240,6 +242,10 @@ def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
             source_marker not in ('↑', '↓') or not source_headword):
         return False
     opposite = {'↑': '↓', '↓': '↑'}[source_marker]
+    if basis == 'reviewed_printed_qualified_reciprocal_perfect':
+        return (offset == 0 and isinstance(source_homonym, str) and
+                re.fullmatch(r'[1-9][0-9]*', source_homonym) is not None and
+                literal.strip() == 'pf. ' + opposite + source_homonym + source_headword)
     if basis == 'reviewed_printed_reciprocal_perfect_future':
         complementary = {'pf. und fut. zu': 'pf. und fut. ',
                          'pf. und fut.': 'pf. und fut. zu '}
@@ -247,6 +253,47 @@ def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
         return prefix is not None and literal[offset:].strip() == prefix + opposite + source_headword
     return (basis == 'reviewed_printed_reciprocal_perfect' and
             literal[offset:].strip() == 'pf. ' + opposite + source_headword)
+
+
+def qualified_reciprocal_geometry(page, runs, source_homonym):
+    """One raised upright qualifier immediately preceding an italic headword.
+
+    This replays individually reviewed canonical runs, not a general PDF parser.
+    The arrow and preceding grammatical text remain on the body baseline.
+    """
+    fonts = {f['font_id']: (f.get('family'), f.get('style'))
+             for f in page['representative_fonts']}
+    numerals = [i for i, r in enumerate(runs) if r['decoded_unicode'] == source_homonym]
+    if len(numerals) != 1:
+        return False
+    i = numerals[0]
+    if not 0 < i < len(runs)-1:
+        return False
+    baseline = runs[0].get('y')
+    if any(r.get('x') is None or r.get('y') is None for r in runs):
+        return False
+    return (1 <= runs[i]['y']-baseline <= 6 and
+            0 <= runs[i+1]['x']-runs[i]['x'] <= 5 and
+            all(r['y'] == baseline for j, r in enumerate(runs) if j != i) and
+            all(fonts.get(r.get('font_id')) == ('TGaramond', 'regular' if j <= i else 'italic')
+                for j, r in enumerate(runs)))
+
+
+def reviewed_source_homonym(claim, packet, canonical_root):
+    """Recover the source's numbered identity independently of the reciprocal."""
+    from extract_badw_pdf_entries import extract_page
+    matches = []
+    for obj in packet['source']['source_objects']:
+        # _packet has already verified every canonical object and original PDF.
+        with gzip.open(Path(canonical_root)/obj['canonical_object'], 'rt', encoding='utf-8') as handle:
+            page = json.load(handle)
+        if page['visible_body_sha256'] != digest(page['source_faithful_decoded_text']):
+            raise ValueError('qualified reciprocal source body hash differs')
+        entries, _ = extract_page(page, obj['canonical_object'])
+        matches.extend(e for e in entries if e['id'] == packet['identity'])
+    if (len(matches) != 1 or matches[0]['homonym'] != claim.get('source_homonym') or
+            matches[0]['loc_headword_reading'] != claim['source_headword']):
+        raise ValueError('qualified reciprocal differs from canonical source homonym')
 
 
 def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified):
@@ -266,6 +313,11 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
             not reciprocal_perfect_introduction(claim, packet['review_text'], ranges[0]['start']) or
             ranges[0]['literal'] not in ('↓' + claim['lemma'], '↑' + claim['lemma'])):
         raise ValueError('invalid reviewed reciprocal perfect reference')
+    qualified = claim['basis'] == 'reviewed_printed_qualified_reciprocal_perfect'
+    if qualified:
+        if not isinstance(claim.get('source_homonym'), str) or not re.fullmatch(r'[1-9][0-9]*', claim['source_homonym']):
+            raise ValueError('qualified reciprocal requires an explicit source homonym')
+        reviewed_source_homonym(claim, packet, canonical_root)
     proof = claim.get('destination_heading')
     _keys(proof, ('entry_id', 'headword', 'homonym', 'entry_start_source_span',
                   'canonical_object_sha256', 'printed_page', 'reciprocal_passage'))
@@ -294,9 +346,11 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
     runs = page['positioned_page']['positioned_text_runs'][a:b]
     if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
             not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0],
-                basis=claim['basis'], source_introduction=packet['review_text'][:ranges[0]['start']].strip()) or
+                basis=claim['basis'], source_introduction=packet['review_text'][:ranges[0]['start']].strip(),
+                source_homonym=claim.get('source_homonym')) or
             passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
-            len({r.get('y') for r in runs}) != 1 or
+            (not qualified_reciprocal_geometry(page, runs, claim.get('source_homonym')) if qualified
+             else len({r.get('y') for r in runs}) != 1) or
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):
         raise ValueError('reciprocal perfect lacks exact positioned source evidence')
@@ -413,7 +467,10 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword"))
+                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword", "source_homonym"))
+            if ('source_homonym' in claim and
+                    claim['basis'] != 'reviewed_printed_qualified_reciprocal_perfect'):
+                raise ValueError('source homonym outside qualified reciprocal review')
             if ('source_alternate_headword' in claim and
                     claim['basis'] != 'reviewed_printed_reciprocal_perfect'):
                 raise ValueError('alternate source spelling outside reciprocal review')
@@ -494,7 +551,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
-            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future'):
+            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_qualified_reciprocal_perfect'):
                 reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified)
             elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
@@ -728,7 +785,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future", "reviewed_printed_qualified_reciprocal_perfect"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
@@ -740,6 +797,7 @@ def apply_validated_annotations(packet, prediction, annotations):
                     claim["occurrence_id"] in targets or
                     structure.get("visual_lines") != packet["source"].get("visual_lines") or
                     ('source_headword' in claim and structure.get("loc_headword") != claim["source_headword"]) or
+                    ('source_homonym' in claim and structure.get('homonym') != claim['source_homonym']) or
                     candidates[0].get("target_label_candidate") != claim["source_target_label"]):
                 raise ValueError("reviewed printed cross-reference differs from exact source occurrence")
             targets[claim["occurrence_id"]] = dict(occurrence_id=claim["occurrence_id"],
@@ -748,7 +806,7 @@ def apply_validated_annotations(packet, prediction, annotations):
                 lemma=claim["lemma"], homonym=claim["homonym"], basis=claim["basis"],
                 annotation_id=row["annotation_id"], binding=row["binding"],
                 physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
-            for field in ('source_headword', 'destination_heading', 'source_alternate_headword'):
+            for field in ('source_headword', 'destination_heading', 'source_alternate_headword', 'source_homonym'):
                 if field in claim:
                     targets[claim['occurrence_id']][field] = deepcopy(claim[field])
             continue
