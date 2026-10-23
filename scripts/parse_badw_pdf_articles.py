@@ -348,7 +348,8 @@ def reviewed_quotation_spans(text: str, article_id: str,
 
 def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
                 article_id: str = "", *, reviewed_wrapped_lists: bool = False,
-                reviewed_terminal_letter: bool = False) -> dict[str, list[dict[str, Any]]]:
+                reviewed_terminal_letter: bool = False,
+                nonprinting_sources=None) -> dict[str, list[dict[str, Any]]]:
     result: dict[str, list[dict[str, Any]]] = {"german_quotes": [], "parenthetical_citations": [],
         "cross_references": [], "adjacent_quote_citation_pairs": [], "quotation_diagnostics": [],
         "sanskrit": [], "unclassified_italic_spans": [], "language_diagnostics": [],
@@ -510,6 +511,10 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
         interlude = re.match(r"\s*(?:[1-9][0-9]?\s*)?", text[target_start:])
         if interlude:
             target_start += interlude.end()
+        bridge = None
+        if nonprinting_sources:
+            from badw_pdf_reference_bridge import bridged_target
+            bridge = bridged_target(lines, divisions, start, nonprinting_sources)
         italic = italic_span_at(target_start)
         if italic and (italic[0] == target_start or italic[0] <= start):
             end = italic[1]
@@ -568,10 +573,15 @@ def _candidates(lines: list[dict[str, Any]], divisions: list[dict[str, Any]],
             end = target_start + next_marker.start()
             while end > target_start and text[end - 1].isspace():
                 end -= 1
-        if end == target_start or end - start > 80:
+        if bridge:
+            end = bridge['end']
+            italic = None  # No comma-list inference across this reviewed bridge.
+        if end == target_start or (not bridge and end - start > 80):
             continue
         targets = [{"source_text": text[marker.end():end],
                     **location(marker.end(), end)}]
+        if bridge:
+            targets[0]['nonprinting_bridge'] = bridge
         # A comma-separated source list can carry a second printed homonym
         # and target without repeating the arrow. Require the original
         # target's italic font plus exact page/division continuity; plain

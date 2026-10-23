@@ -638,3 +638,131 @@ def test_reviewed_wrapped_list_requires_continuous_source_typography():
                         dict(start_line_index=1, end_line_index_exclusive=2)]
         blocked = _candidates(changed, bounds, reviewed_wrapped_lists=True)['cross_references'][0]
         assert blocked['visual_end'] == len(text)
+
+
+def nonprinting_fixture(monkeypatch, tokens=None):
+    """One glyph per atom; diagnostic strings are still single PDF glyphs."""
+    import badw_pdf_reference_bridge as bridge
+    token = '⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧'
+    tokens = tokens or [('↓', 'regular'), ('’', 'regular'), ('\n', None),
+                        (token, 'layout'), ('go ba’i lha', 'italic'), ('.', 'regular')]
+    lines = []; runs = []; text = ''; spans = []; x = 10
+    def finish():
+        lines.append(dict(text=text, style_spans=list(spans), page_id='page',
+            printed_page=337, span_index=0, run_start=spans[0]['first_run_index'],
+            run_end_exclusive=spans[-1]['last_run_index']+1))
+    for word, style in tokens:
+        if word == '\n':
+            finish(); text=''; spans=[]; continue
+        font = style; family = 'Arial' if style == 'layout' else 'TGaramond'
+        index = len(runs); glyphs = []
+        for atom in ([word] if word.startswith('⟦') else word):
+            glyphs.append(dict(unicode=atom, x=x, y=100, advance=1))
+            if style != 'layout': x += 1
+        runs.append(dict(decoded_unicode=word, font_id=font, glyphs=glyphs))
+        spans.append(dict(start=len(text), end=len(text)+len(word), font_id=font,
+            family=family, style='italic' if style=='layout' else style,
+            first_run_index=index, last_run_index=index))
+        text += word
+    finish()
+    sources=[dict(page_id='page',canonical_object='canonical',canonical_object_sha256='a'*64,
+                  pdf_sha256='b'*64,pdf_url='https://example/pdf')]
+    def replay(*args):
+        if args[1] != 'a'*64 or args[2] != 'b'*64:
+            raise ValueError('source hash mismatch')
+        return runs
+    monkeypatch.setattr(bridge, 'page_runs', replay)
+    divisions=[dict(start_line_index=0,end_line_index_exclusive=len(lines))]
+    return lines, divisions, sources, runs
+
+
+def test_reviewed_nonprinting_bridge_preserves_source_and_frozen_default(monkeypatch):
+    from badw_pdf_reference_bridge import bridged_target
+    lines, divisions, sources, runs = nonprinting_fixture(monkeypatch)
+    before = json.dumps(lines,sort_keys=True)
+    assert _candidates(lines,divisions)['cross_references'][0]['target_label_candidate'] == '’'
+    ref, = _candidates(lines,divisions,nonprinting_sources=sources)['cross_references']
+    target, = ref['target_candidates']
+    assert target['nonprinting_bridge']['lexical_target'] == '’go ba’i lha'
+    assert '⟦UNKNOWN:' in target['source_text'] and '\n' in target['source_text']
+    assert ref['visual_end'] == len('\n'.join(l['text'] for l in lines))-1
+    assert json.dumps(lines,sort_keys=True) == before
+    # Two 40-character placeholders exceed the old raw 80-character cap;
+    # logical expression length and bounded source length are separate guards.
+    token=target['nonprinting_bridge']['nonprinting_spans'][0]['literal']
+    lines, divisions, sources, _ = nonprinting_fixture(monkeypatch,
+        [('↓','regular'),('ka','italic'),(token,'layout'),(' kha','italic'),
+         (token,'layout'),(' ga','italic'),('.','regular')])
+    assert len(lines[0]['text']) > 80
+    result=bridged_target(lines,divisions,0,sources)
+    assert result['lexical_target'] == 'ka kha ga'
+    ref, = _candidates(lines,divisions,nonprinting_sources=sources)['cross_references']
+    assert ref['visual_end'] == result['end']
+
+
+@pytest.mark.parametrize('damage', ['ink','font','geometry','baseline','page','division',
+                                    'arrow','prose','punctuation','long','stale_hash','extent',
+                                    'terminal_geometry','arrow_geometry'])
+def test_nonprinting_bridge_rejects_unestablished_evidence(monkeypatch,damage):
+    from badw_pdf_reference_bridge import bridged_target
+    lines, divisions, sources, runs = nonprinting_fixture(monkeypatch)
+    if damage == 'ink':
+        token=lines[1]['text'].split('⟧')[0]+'⟧'
+        other=token.replace('ebbba6ed181c','ffffffffffff')
+        lines[1]['text']=lines[1]['text'].replace(token,other)
+        runs[2]['decoded_unicode']=other;runs[2]['glyphs'][0]['unicode']=other
+    elif damage == 'font': lines[1]['style_spans'][1]['font_id']='other'
+    elif damage in ('geometry','baseline'):
+        runs[3]['glyphs'][0]['x' if damage=='geometry' else 'y'] += 30
+    elif damage == 'terminal_geometry': runs[4]['glyphs'][0]['x'] += 30
+    elif damage == 'arrow_geometry': runs[0]['glyphs'][0]['x'] -= 30
+    elif damage == 'page': lines[1]['page_id']='other'
+    elif damage == 'division': divisions[:]=[dict(start_line_index=0,end_line_index_exclusive=1),dict(start_line_index=1,end_line_index_exclusive=2)]
+    elif damage in ('arrow','prose','punctuation','long'):
+        token=lines[1]['text'].split('⟧')[0]+'⟧'
+        extra={'arrow':'↑','prose':' Deutsch','punctuation':',','long':'k'*81}[damage]
+        style='regular' if damage=='prose' else 'italic'
+        lines,divisions,sources,runs=nonprinting_fixture(monkeypatch,
+            [('↓','regular'),('’','regular'),('\n',None),(token,'layout'),
+             ('go','italic'),(extra,style),(' ba','italic'),('.','regular')])
+    elif damage == 'extent': lines[1]['text']+='x'
+    else: sources[0]['pdf_sha256']='c'*64
+    if damage=='stale_hash':
+        with pytest.raises(ValueError,match='hash mismatch'):
+            bridged_target(lines,divisions,0,sources)
+    else:
+        assert bridged_target(lines,divisions,0,sources) is None
+
+
+def test_real_dgra_bla_nonprinting_reference_and_review(monkeypatch):
+    from pathlib import Path
+    import badw_pdf_reference_bridge as bridge
+    from resolve_badw_cross_references import EntryIndex
+    root = Path(__file__).resolve().parents[1]
+    fixture = json.loads((root/'tests/fixtures/badw_pdf_nonprinting_reference.json').read_text())
+    source = fixture['source']
+    def replay(canonical, canonical_sha, pdf_sha, url):
+        assert (canonical, canonical_sha, pdf_sha, url) == tuple(source[k] for k in
+            ('canonical_object','canonical_object_sha256','pdf_sha256','pdf_url'))
+        return [{}]*fixture['run_start'] + fixture['runs']
+    monkeypatch.setattr(bridge, 'page_runs', replay)
+    lines = fixture['visual_lines']
+    divisions = [dict(start_line_index=0,end_line_index_exclusive=len(lines))]
+    text = '\n'.join(l['text'] for l in lines)
+    before, = _candidates(lines,divisions)['cross_references']
+    assert (before['visual_start'],before['visual_end'],before['target_label_candidate']) == (36,38,'’')
+    repaired, = _candidates(lines,divisions,nonprinting_sources=[source])['cross_references']
+    assert (repaired['visual_start'],repaired['visual_end']) == (36,90)
+    # The real 54-character source span never reached the raw 80-character cap.
+    assert repaired['visual_end']-repaired['visual_start'] == 54
+    assert repaired['target_candidates'][0]['nonprinting_bridge']['lexical_target'] == '’go ba’i lha'
+    destination = 'badw:pdf:badw-v2-2c32586b1fc00dc3fe4311f06492df61fb822c47f5f5f3f928f57569a60a9b93:421'
+    index = EntryIndex([dict(record_type='entry',id=destination,headword=dict(loc='’go ba’i lha'),homonym='')])
+    result = index.resolve_source_candidate(dict(target_label=repaired['target_label_candidate'],
+        source_candidate=repaired),structure=dict(visual_lines=lines,divisions=divisions),text=text)
+    assert result['canonical_resolution']['target_entry_id'] == destination
+    review, = [r for r in map(json.loads,(root/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines())
+               if r['annotation_id']=='badw-reviewed-nonprinting-bridge-dgra-bla']
+    assert review['identity'] == fixture['identity']
+    assert review['claim']['basis'] == 'reviewed_printed_nonprinting_bridge'
+    assert review['ranges'][0]['literal'] == text[36:90]

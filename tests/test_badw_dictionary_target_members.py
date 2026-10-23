@@ -278,3 +278,27 @@ def test_reviewed_member_cannot_replace_accepted_member():
     projection, ref, review = member_whitespace_fixture()
     with pytest.raises(ValueError, match='accepted or different target'):
         view([projection], EntryIndex([projection['original_records'][0], entry('ga', lemma='ga\u00a0ba')]))
+
+
+def test_nonprinting_target_survives_reader_and_store_without_rewriting_source(monkeypatch, tmp_path):
+    from test_badw_cross_reference_resolution import nonprinting_reference
+    import hashlib
+    occurrence, structure, text = nonprinting_reference(monkeypatch)
+    structure['divisions'][0]['kind'] = 'unsegmented'
+    structure.update(candidates=dict(cross_references=[dict(occurrence['source_candidate'],marker='↓')]),
+                     source_faithful_sha256=hashlib.sha256(text.encode()).hexdigest())
+    projection = dict(contract_version='badw-structural-candidate-projection-v6', identity='source',
+        source_kind='pdf', source=dict(visual_lines=structure['visual_lines']),
+        review_text_sha256=structure['source_faithful_sha256'], original_structure=structure,
+        nodes=[dict(id='xref',kind='cross_reference',start=0,end=len(text)-1)],edges=[])
+    index = EntryIndex([entry('source',lemma='source'),entry('destination',lemma='’go ba’i lha',homonym='')])
+    inspected, = view([projection], index)
+    result = entry_view(inspected)
+    ref, = result['cross_references']
+    assert ref['status'] == 'resolved' and ref['target_entry_id'] == 'destination'
+    assert ''.join(s['text'] for s in result['segments']) == text
+    assert ref['resolution_evidence']['parsed_target']['lexical_target'] == '’go ba’i lha'
+    db = create(tmp_path/'semantic.sqlite'); ingest(db,result)
+    assert db.execute('SELECT target,status FROM xref').fetchall() == [('destination','resolved')]
+    assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+    db.close()

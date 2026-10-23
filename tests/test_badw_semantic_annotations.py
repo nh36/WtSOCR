@@ -804,3 +804,40 @@ def test_reviewed_editorial_member_whitespace_requires_exact_dom_and_preserves_s
         inactive = copy.deepcopy(a)
         inactive['status'] = status
         assert not annotations.apply_validated_annotations(p, base, run(tmp_path, p, [inactive]))['reviewed_cross_reference_targets']
+
+
+def test_reviewed_nonprinting_extent_requires_bound_source_and_specific_basis(tmp_path, monkeypatch):
+    from test_parse_badw_pdf_articles import nonprinting_fixture, _candidates
+    import badw_pdf_reference_bridge as bridge
+    lines, divisions, sources, runs = nonprinting_fixture(monkeypatch)
+    p = packet(tmp_path, 'pdf')
+    sources[0].update(p['source']['source_objects'][0], page_id='page')
+    monkeypatch.setattr(bridge, 'page_runs', lambda *args: runs)
+    text = '\n'.join(l['text'] for l in lines)
+    p['source'].update(source_objects=sources, source_faithful_text=text, visual_lines=lines)
+    p.update(review_text=text, review_text_sha256=annotations.digest(text))
+    base = prediction(p)
+    base['nodes'].append(dict(id='ref', kind='cross_reference', start=0, end=2, parent='root'))
+    base['original_structure'] = dict(article_id=p['identity'], visual_lines=copy.deepcopy(lines),
+        divisions=divisions, candidates=_candidates(lines, divisions))
+    a = claim(p, kind='cross_reference_extent', ranges=[dict(start=0,end=len(text)-1,literal=text[:-1])])
+    a['claim'] = dict(node_id='ref', previous_range=dict(start=0,end=2,literal='↓’'),
+                      basis='reviewed_printed_nonprinting_bridge')
+    original = copy.deepcopy(base)
+    accepted = run(tmp_path,p,[a])
+    result = annotations.apply_validated_annotations(p,base,accepted)
+    assert base == original
+    assert result['nodes'][1]['end'] == len(text)-1
+    candidate, = result['original_structure']['candidates']['cross_references']
+    assert candidate['target_candidates'][0]['nonprinting_bridge']['lexical_target'] == '’go ba’i lha'
+    for basis in ('reviewed_printed_extent', 'reviewed_printed_terminal_letter'):
+        other = copy.deepcopy(a); other['claim']['basis'] = basis
+        with pytest.raises(ValueError, match='exact typographic support'):
+            annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))
+    for damage in ('hash','old_extent','new_extent'):
+        other = copy.deepcopy(a)
+        if damage == 'hash': other['binding']['text_sha256'] = 'f'*64
+        elif damage == 'old_extent': other['claim']['previous_range']['end'] = 3
+        else: other['ranges'][0]['end'] -= 1
+        with pytest.raises(ValueError):
+            annotations.apply_validated_annotations(p,base,run(tmp_path,p,[other]))

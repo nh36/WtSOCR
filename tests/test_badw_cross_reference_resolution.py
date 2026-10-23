@@ -658,3 +658,30 @@ def test_wrapped_heading_resolution_fails_closed(fault):
     if fault=='accepted': destination['headword']['loc']='ka kha'
     if fault=='plural': fixture=plural_fixture()
     with pytest.raises(ValueError): substitute(EntryIndex([destination]), fixture, review)
+
+
+def nonprinting_reference(monkeypatch):
+    from test_parse_badw_pdf_articles import nonprinting_fixture, _candidates
+    lines, divisions, sources, _ = nonprinting_fixture(monkeypatch)
+    candidate, = _candidates(lines,divisions,nonprinting_sources=sources)['cross_references']
+    structure=dict(visual_lines=lines,divisions=divisions)
+    text='\n'.join(l['text'] for l in lines)
+    occurrence=dict(record_type='cross_reference',id='ref',entry_id='source',
+                    target_label=candidate['target_label_candidate'],source_candidate=candidate)
+    return occurrence, structure, text
+
+
+def test_nonprinting_derived_target_requires_replay_and_exact_unique_identity(monkeypatch):
+    ref, structure, text=nonprinting_reference(monkeypatch)
+    original=copy.deepcopy(ref)
+    index=EntryIndex([entry('target',lemma='’go ba’i lha',homonym='')])
+    result=index.resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']
+    assert result['status']=='resolved' and result['target_entry_id']=='target'
+    assert result['parsed_target']['literal']==ref['target_label']
+    assert result['parsed_target']['lexical_target']=='’go ba’i lha'
+    assert ref==original
+    ambiguous=EntryIndex([entry('a',lemma='’go ba’i lha',homonym='1'),entry('b',lemma='’go ba’i lha',homonym='2')])
+    assert ambiguous.resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']['status']=='ambiguous'
+    assert EntryIndex([]).resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']['status']=='unresolved'
+    ref['source_candidate']['target_candidates'][0]['nonprinting_bridge']['lexical_target']='ka'
+    assert index.resolve_source_candidate(ref,structure=structure,text=text)['canonical_resolution']['status']=='unresolved'

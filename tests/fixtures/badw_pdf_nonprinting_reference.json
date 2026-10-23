@@ -1,0 +1,623 @@
+{
+  "purpose": "Portable excerpt of reviewed dgra bla reference, copied from hash-verified PDF replay. Production still verifies both source objects and every CID/font/Unicode run.",
+  "identity": "badw:pdf:badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40:1108",
+  "source": {
+    "canonical_object": "volume_2/pages/badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40.json.gz",
+    "canonical_object_sha256": "d0bd009c910f8b07a4e402714339f72edcdbc8667755d87af34fa747497bd41a",
+    "page_id": "badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40",
+    "pdf_sha256": "f0a11728e50cd447995ce108f0f295310fe786d29dcb41866373b2f7e911a9ed",
+    "pdf_url": "https://wts-digital.badw.de/pdf/dgra%20zun",
+    "run_end_exclusive": 1242,
+    "run_start": 1108,
+    "source_text_sha256": "6c0dcba9f07e3af5792118ad8d3a8a21793507624eb459f09a3329973b3e4e4b"
+  },
+  "visual_lines": [
+    {
+      "first_x": 344.2379,
+      "italic_text": "",
+      "line_index": 0,
+      "page_id": "badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40",
+      "printed_page": 337,
+      "run_end_exclusive": 1137,
+      "run_start": 1116,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 29,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 1116,
+          "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+          "last_glyph_index": 2,
+          "last_run_index": 1136,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": " eine persönliche Schutzgott-",
+      "unknown_glyphs": 0,
+      "y": 536.1997
+    },
+    {
+      "first_x": 340.7407,
+      "italic_text": "",
+      "line_index": 1,
+      "page_id": "badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40",
+      "printed_page": 337,
+      "run_end_exclusive": 1141,
+      "run_start": 1137,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 8,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 1137,
+          "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+          "last_glyph_index": 3,
+          "last_run_index": 1140,
+          "start": 0,
+          "style": "regular"
+        }
+      ],
+      "text": "heit, ↓’",
+      "unknown_glyphs": 0,
+      "y": 534.933
+    },
+    {
+      "first_x": 377.2597,
+      "italic_text": "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧go ba’i lha",
+      "line_index": 2,
+      "page_id": "badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40",
+      "printed_page": 337,
+      "run_end_exclusive": 1150,
+      "run_start": 1141,
+      "span_index": 0,
+      "style_spans": [
+        {
+          "end": 40,
+          "family": "Arial",
+          "first_glyph_index": 0,
+          "first_run_index": 1141,
+          "font_id": "977289d4640dc35ee10b2adfc9a10a0f472d8aaed6a987b5196a1ae965a3809e",
+          "last_glyph_index": 0,
+          "last_run_index": 1141,
+          "start": 0,
+          "style": "italic"
+        },
+        {
+          "end": 51,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 1142,
+          "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+          "last_glyph_index": 0,
+          "last_run_index": 1148,
+          "start": 40,
+          "style": "italic"
+        },
+        {
+          "end": 52,
+          "family": "TGaramond",
+          "first_glyph_index": 0,
+          "first_run_index": 1149,
+          "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+          "last_glyph_index": 0,
+          "last_run_index": 1149,
+          "start": 51,
+          "style": "regular"
+        }
+      ],
+      "text": "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧go ba’i lha.",
+      "unknown_glyphs": 1,
+      "y": 519.9877
+    }
+  ],
+  "run_start": 1116,
+  "runs": [
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": " ",
+      "glyphs": [
+        {
+          "unicode": " ",
+          "x": 385.451003,
+          "y": 536.1997,
+          "advance": 3.155239
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "e",
+      "glyphs": [
+        {
+          "unicode": "e",
+          "x": 391.594003,
+          "y": 536.1997,
+          "advance": 5.661021
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "in",
+      "glyphs": [
+        {
+          "unicode": "i",
+          "x": 397.054306,
+          "y": 536.1997,
+          "advance": 3.359793
+        },
+        {
+          "unicode": "n",
+          "x": 400.414099,
+          "y": 536.1997,
+          "advance": 6.990619
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "e",
+      "glyphs": [
+        {
+          "unicode": "e",
+          "x": 407.581146,
+          "y": 536.1997,
+          "advance": 5.661021
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": " ",
+      "glyphs": [
+        {
+          "unicode": " ",
+          "x": 413.041448,
+          "y": 536.1997,
+          "advance": 3.155239
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "per",
+      "glyphs": [
+        {
+          "unicode": "p",
+          "x": 419.014413,
+          "y": 536.1997,
+          "advance": 6.811635
+        },
+        {
+          "unicode": "e",
+          "x": 425.826048,
+          "y": 536.1997,
+          "advance": 5.661021
+        },
+        {
+          "unicode": "r",
+          "x": 431.487069,
+          "y": 536.1997,
+          "advance": 4.753314
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "s",
+      "glyphs": [
+        {
+          "unicode": "s",
+          "x": 436.094639,
+          "y": 536.1997,
+          "advance": 5.009006
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "ö",
+      "glyphs": [
+        {
+          "unicode": "ö",
+          "x": 441.384907,
+          "y": 536.1997,
+          "advance": 6.977835
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "n",
+      "glyphs": [
+        {
+          "unicode": "n",
+          "x": 448.723267,
+          "y": 536.1997,
+          "advance": 6.990619
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "l",
+      "glyphs": [
+        {
+          "unicode": "l",
+          "x": 455.548965,
+          "y": 536.1997,
+          "advance": 3.359793
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "i",
+      "glyphs": [
+        {
+          "unicode": "i",
+          "x": 459.132488,
+          "y": 536.1997,
+          "advance": 3.359793
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "ch",
+      "glyphs": [
+        {
+          "unicode": "c",
+          "x": 462.545976,
+          "y": 536.1997,
+          "advance": 5.661021
+        },
+        {
+          "unicode": "h",
+          "x": 468.206997,
+          "y": 536.1997,
+          "advance": 6.977835
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "e",
+      "glyphs": [
+        {
+          "unicode": "e",
+          "x": 475.545358,
+          "y": 536.1997,
+          "advance": 5.661021
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": " ",
+      "glyphs": [
+        {
+          "unicode": " ",
+          "x": 480.835625,
+          "y": 536.1997,
+          "advance": 3.155239
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "S",
+      "glyphs": [
+        {
+          "unicode": "S",
+          "x": 486.80859,
+          "y": 536.1997,
+          "advance": 6.313035
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "c",
+      "glyphs": [
+        {
+          "unicode": "c",
+          "x": 493.464253,
+          "y": 536.1997,
+          "advance": 5.661021
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "hu",
+      "glyphs": [
+        {
+          "unicode": "h",
+          "x": 499.095869,
+          "y": 536.1997,
+          "advance": 6.977835
+        },
+        {
+          "unicode": "u",
+          "x": 506.073704,
+          "y": 536.1997,
+          "advance": 6.824419
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "t",
+      "glyphs": [
+        {
+          "unicode": "t",
+          "x": 513.070716,
+          "y": 536.1997,
+          "advance": 4.446484
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "z",
+      "glyphs": [
+        {
+          "unicode": "z",
+          "x": 517.336937,
+          "y": 536.1997,
+          "advance": 6.197974
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "go",
+      "glyphs": [
+        {
+          "unicode": "g",
+          "x": 523.651251,
+          "y": 536.1997,
+          "advance": 6.338605
+        },
+        {
+          "unicode": "o",
+          "x": 529.989855,
+          "y": 536.1997,
+          "advance": 6.977835
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "tt-",
+      "glyphs": [
+        {
+          "unicode": "t",
+          "x": 537.156902,
+          "y": 536.1997,
+          "advance": 4.446484
+        },
+        {
+          "unicode": "t",
+          "x": 541.603386,
+          "y": 536.1997,
+          "advance": 4.446484
+        },
+        {
+          "unicode": "-",
+          "x": 546.04987,
+          "y": 536.1997,
+          "advance": 4.625468
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "h",
+      "glyphs": [
+        {
+          "unicode": "h",
+          "x": 340.7407,
+          "y": 519.98784,
+          "advance": 7.060935
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "e",
+      "glyphs": [
+        {
+          "unicode": "e",
+          "x": 347.737712,
+          "y": 519.98784,
+          "advance": 5.744121
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": "it",
+      "glyphs": [
+        {
+          "unicode": "i",
+          "x": 353.198014,
+          "y": 519.98784,
+          "advance": 3.442893
+        },
+        {
+          "unicode": "t",
+          "x": 356.640907,
+          "y": 519.98784,
+          "advance": 4.529584
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": ", ↓’",
+      "glyphs": [
+        {
+          "unicode": ",",
+          "x": 361.078442,
+          "y": 519.98784,
+          "advance": 3.238339
+        },
+        {
+          "unicode": " ",
+          "x": 364.316781,
+          "y": 519.98784,
+          "advance": 3.238339
+        },
+        {
+          "unicode": "↓",
+          "x": 367.55512,
+          "y": 519.98784,
+          "advance": 6.434489
+        },
+        {
+          "unicode": "’",
+          "x": 373.989609,
+          "y": 519.98784,
+          "advance": 3.353401
+        }
+      ]
+    },
+    {
+      "font_id": "977289d4640dc35ee10b2adfc9a10a0f472d8aaed6a987b5196a1ae965a3809e",
+      "decoded_unicode": "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+      "glyphs": [
+        {
+          "unicode": "⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧",
+          "x": 377.2597,
+          "y": 519.9877,
+          "advance": 3.870066
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": "go",
+      "glyphs": [
+        {
+          "unicode": "g",
+          "x": 377.2467,
+          "y": 519.9877,
+          "advance": 5.31328
+        },
+        {
+          "unicode": "o",
+          "x": 382.55998,
+          "y": 519.9877,
+          "advance": 6.233771
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": " b",
+      "glyphs": [
+        {
+          "unicode": " ",
+          "x": 388.874294,
+          "y": 519.9877,
+          "advance": 3.216605
+        },
+        {
+          "unicode": "b",
+          "x": 392.090899,
+          "y": 519.9877,
+          "advance": 6.374402
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": "a’i",
+      "glyphs": [
+        {
+          "unicode": "a",
+          "x": 398.233899,
+          "y": 519.9877,
+          "advance": 6.016433
+        },
+        {
+          "unicode": "’",
+          "x": 404.250332,
+          "y": 519.9877,
+          "advance": 3.216605
+        },
+        {
+          "unicode": "i",
+          "x": 407.466937,
+          "y": 519.9877,
+          "advance": 3.855835
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": " ",
+      "glyphs": [
+        {
+          "unicode": " ",
+          "x": 411.39181,
+          "y": 519.9877,
+          "advance": 3.216605
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": "l",
+      "glyphs": [
+        {
+          "unicode": "l",
+          "x": 414.633984,
+          "y": 519.9877,
+          "advance": 3.510651
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": "h",
+      "glyphs": [
+        {
+          "unicode": "h",
+          "x": 418.034688,
+          "y": 519.9877,
+          "advance": 6.284909
+        }
+      ]
+    },
+    {
+      "font_id": "036315c9766ec43937d896537d7da91a0275000b5d8460af3a06c613d361daae",
+      "decoded_unicode": "a",
+      "glyphs": [
+        {
+          "unicode": "a",
+          "x": 424.177688,
+          "y": 519.9877,
+          "advance": 6.016433
+        }
+      ]
+    },
+    {
+      "font_id": "57b174376c2a6dc1f403811df14cf1bb77703a9855b0d6491a17ec0ec29422ad",
+      "decoded_unicode": ".",
+      "glyphs": [
+        {
+          "unicode": ".",
+          "x": 430.160881,
+          "y": 519.9877,
+          "advance": 3.19615
+        }
+      ]
+    }
+  ]
+}

@@ -43,6 +43,22 @@ const path=require('node:path');
  assert.equal(requests.filter(u=>u.includes('/entries/')).length,0,'search needs no entry bodies');
  async function go(e){await page.goto(url(e.id));await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),e.headword.loc);await page.waitForFunction(()=>document.querySelector('#selection-status').textContent.startsWith('Selected:'));assert.equal(await page.locator('#entries [aria-current]').count(),1);}
  let journeys=0,uncertain=0,citations=0,unresolvedCitations=0;
+ // A reviewed nonprinting font-switch interlude remains in the literal source;
+ // its independently replayed lookup expression reaches the exact PDF entry.
+ const bridgeMeta=entries.get('badw:pdf:badw-v2-75b4d859af9a9790acfa1e6532e8ab9c71309fb693334b0372f229c24f02cf40:1108');
+ const bridgeEntry=await (await page.request.get(base+'/'+bridgeMeta.path)).json();
+ const bridgeRef=bridgeEntry.cross_references.find(r=>r.extent_review?.annotation_id==='badw-reviewed-nonprinting-bridge-dgra-bla');assert(bridgeRef);
+ assert.equal(bridgeRef.status,'resolved');assert(bridgeRef.wording.includes('⟦UNKNOWN:Arial:italic:0003:ebbba6ed181c⟧'));
+ const bridgeTarget=entries.get(bridgeRef.target_entry_id);assert.equal(bridgeTarget.headword.loc,'’go ba’i lha');
+ await go(bridgeEntry);
+ const bridgeLink=page.locator('.reading a');
+ const bridgeHref='#'+encodeURIComponent(bridgeRef.target_entry_id);
+ const bridgeIndex=await bridgeLink.evaluateAll((nodes,href)=>nodes.findIndex(n=>n.getAttribute('href')===href),bridgeHref);assert(bridgeIndex>=0);
+ await bridgeLink.nth(bridgeIndex).focus();await page.keyboard.press('Enter');
+ await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeTarget.headword.loc);
+ await page.goBack();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeEntry.headword.loc);
+ await page.goForward();await page.waitForFunction(label=>document.querySelector('#article h2')?.textContent.includes(label),bridgeTarget.headword.loc);
+ assert(await page.locator('#article > .source-access a').count()>0);
  // Facsimile-checked pairs inside one continuous italic run. Keep their plural
  // parents unresolved while exercising each independently accepted destination.
  for(const id of [

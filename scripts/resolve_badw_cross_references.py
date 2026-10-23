@@ -35,6 +35,18 @@ def printed_target(target, structure, text):
                   source_span=dict(start=a, end=b))
     if text[a:b] != literal:
         return result
+    proof = target.get('nonprinting_bridge')
+    if proof:
+        from badw_pdf_reference_bridge import bridged_target
+        replay = bridged_target(structure.get('visual_lines', []),
+                                structure.get('divisions', []), a-1,
+                                proof.get('source_objects'))
+        if replay == proof and (proof['start'], proof['end']) == (a, b):
+            result.update(lexical_target=proof['lexical_target'], valid=True,
+                          shape='reviewed_nonprinting_bridge',
+                          lexical_span=dict(start=a, end=b),
+                          nonprinting_spans=proof['nonprinting_spans'])
+        return result
     lines = structure.get('visual_lines', [])
     offsets = []; offset = 0
     for line in lines:

@@ -12,8 +12,9 @@ python3 scripts/build_badw_full_reader.py --output work/badw_full_reader_fresh
 python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_fresh
 ```
 
-For the current local build with the bounded script experiment, serve
-`work/badw_full_reader_20261020/loc14` instead (`run23` retains the LoC-only parent).
+For the current cross-reference build, serve
+`work/badw_full_reader_20261020/run24` instead. The earlier bounded script
+experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
 LoC order, homonym, then stable source identity; this is not Tibetan collation.
@@ -78,14 +79,14 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run23 \
+  --reader work/badw_full_reader_20261020/run24 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
 The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
-337 HTML and three PDF identity/manifestation mismatches; 215 HTML and 117 PDF
+337 HTML and three PDF identity/manifestation mismatches; 215 HTML and 116 PDF
 missing exact identities; two HTML and 118 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
@@ -269,6 +270,27 @@ unchanged; total **7,582 resolved / 792 residual**. The differential checks two
 changed members and **29,875 byte-identical witnesses**, preserving source text,
 citations, components, neighboring members and all prior accepted destinations.
 Browser checks cover keyboard navigation, source access and back/forward history.
+
+The printed **dgra bla → ’go ba’i lha** reference (volume 2, p. 337, right
+column) was truncated at an upright opening apostrophe before a font switch.
+An intervening Arial italic CID 0003 (`ebbba6ed181c`) is independently verified
+as nonprinting. Hash-checked PDF replay places the apostrophe and italic target
+on one continuous baseline. The original 54-character reference extent did not
+hit the 80-character limit. A separately named, source-bound extent review now
+admits a narrow bridge, retaining the original placeholder, text, hashes and
+offsets while deriving **’go ba’i lha** for exact lookup. Unknown ink, conflicting
+typography, discontinuous geometry and crossing boundaries fail closed; logical
+length is capped at 80 and source extent at 256 characters. No global UNKNOWN
+stripping or headword normalization is introduced. One matching extraction defect
+now links to its unique acquired PDF destination. Two other residual references
+with nearby UNKNOWN tokens already end correctly and still lack exact targets.
+After this family: HTML **4,734 resolved / 552 unresolved / two ambiguous**;
+PDF **2,849 resolved / 119 unresolved / 118 ambiguous**; total **7,583 resolved /
+791 residual**. The full differential finds **29,876 byte-identical witnesses**
+and one repaired reference, preserving source text, citations, relationships and
+all previously accepted destinations. Current-source physical replay reproduces
+the built target. Browser validation includes the new keyboard/history journey
+alongside all 47 independently accepted fixture members.
 
 ## Bounded historical LoC script experiment
 
