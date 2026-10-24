@@ -63,6 +63,36 @@ async function validateSearch(browser,base,catalog){
  assert((await page.locator('#entries').textContent()).includes('No matching'));
  assert.equal(await page.evaluate(()=>location.hash),selectedHash);
  assert((await page.locator('#selection-status').textContent()).startsWith('Selected:'));
+ // IME confirmation/navigation keys must stay with the input method.
+ await fill('འགྱུར');await page.locator('#search').focus();
+ const compositionBefore=await page.evaluate(()=>({hash:location.hash,history:history.length,selected:document.querySelector('#selection-status').textContent}));
+ const compositionKeys=await page.locator('#search').evaluate(input=>{
+  const results=[];
+  const press=options=>{const event=new KeyboardEvent('keydown',{bubbles:true,cancelable:true,...options});input.dispatchEvent(event);results.push({prevented:event.defaultPrevented,focused:document.activeElement===input});};
+  for(const key of ['Enter','ArrowDown'])press({key,isComposing:true});
+  input.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));
+  for(const key of ['Enter','ArrowDown'])press({key});
+  input.dispatchEvent(new CompositionEvent('compositionend',{bubbles:true,data:'འགྱུར'}));
+  // Legacy IMEs can report 229 even when isComposing is false.
+  press({key:'Enter',keyCode:229});
+  return results;
+ });
+ await page.waitForTimeout(50);
+ assert(compositionKeys.every(e=>!e.prevented&&e.focused));
+ assert.deepEqual(await page.evaluate(()=>({hash:location.hash,history:history.length,selected:document.querySelector('#selection-status').textContent})),compositionBefore);
+ // Enter must reselect an already-open destination without a new history entry.
+ const gyuTop=filtered[0],gyuHash='#'+encodeURIComponent(gyuTop.id);
+ await fill('gyu');await page.goto(base+'/'+gyuHash);
+ await page.waitForFunction(h=>document.querySelector('#entries [aria-current]')?.hash===h,gyuHash);
+ await fill('gyu');await page.getByRole('button',{name:'Next results',exact:true}).click();
+ assert.equal(await page.locator('#entries [aria-current]').count(),0);
+ const sameDestinationHistory=await page.evaluate(()=>history.length);
+ await page.locator('#search').press('Enter');
+ await page.waitForFunction(h=>document.querySelector('#entries [aria-current]')?.hash===h&&document.activeElement===document.querySelector('#article h2'),gyuHash);
+ assert.deepEqual(await ids(),filtered.slice(0,100).map(e=>e.id));
+ assert.equal(await page.evaluate(()=>history.length),sameDestinationHistory);
+ assert.equal(await page.evaluate(()=>location.hash),gyuHash);
+ assert(await page.locator('#entries [aria-current]').evaluate(n=>{const list=document.querySelector('#entries');return n.getBoundingClientRect().top>=list.getBoundingClientRect().top&&n.getBoundingClientRect().bottom<=list.getBoundingClientRect().bottom;}));
  // Enter opens the highest-ranked result, while ordinary next remains global.
  await fill("'gyur");await page.locator('#search').press('Enter');
  const topHash='#'+encodeURIComponent(expected[0].id);
