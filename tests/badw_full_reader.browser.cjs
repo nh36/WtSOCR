@@ -12,6 +12,7 @@ const path=require('node:path');
  const data=await (await page.request.get(base+'/data.json')).json();
  const manifest=await (await page.request.get(base+'/manifest.json')).json();
  const catalog=data.entries;assert.equal(catalog.length,29877+(manifest.supplemental_witnesses||0));assert.equal(data.sharded,true);
+ await require('./badw_reader_search.browser.cjs').validateSearch(browser,base,catalog);
  const fixture=JSON.parse(fs.readFileSync(process.env.BADW_READER_FIXTURE||'work/badw_connected_reader_20261020/run8/reader/data.json'));
  const entries=new Map(catalog.map(e=>[e.id,e]));
  data.entries=[];for(const e of fixture.entries){const meta=entries.get(e.id);assert(meta);const response=await page.request.get(base+'/'+meta.path);assert.equal(response.status(),200);data.entries.push(await response.json());}

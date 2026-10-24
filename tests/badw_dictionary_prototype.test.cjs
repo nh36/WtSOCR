@@ -264,3 +264,24 @@ test('unread glyph presentation preserves exact extraction evidence and surround
  assert.deepEqual(parts.map(p=>p.unknown),[false,true,false]);
  assert.deepEqual(sourceTextParts('ordinary Tibetan བོད'),[{literal:'ordinary Tibetan བོད',unknown:false}]);
 });
+
+test('search normalizes reviewed apostrophes and NFC without changing source or lexical distinctions',()=>{
+ const {normalizeSearchKey,entrySearchKeys}=require('../scripts/badw_dictionary_prototype/app.js');
+ const entries=[1,2].map(n=>({id:String(n),headword:{loc:'’gyur'+(n===1?'¹':'²'),tibetan:'འགྱུར'},homonym:n,search_aliases:['‘accepted','é-form']}));
+ const original=JSON.stringify(entries);
+ for(const q of ["'gyur",'’gyur','‘gyur','ʼgyur'])assert.deepEqual(entries.filter(e=>entryMatchesSearch(e,q)).map(e=>e.id),['1','2']);
+ const plain={headword:{loc:'gyur',tibetan:'གྱུར'}};
+ assert(entryMatchesSearch(plain,'gyu'));assert(entryMatchesSearch(entries[0],'gyu'));
+ assert(!entryMatchesSearch(plain,"'gyur"));assert(entryMatchesSearch(plain,'gyur'));
+ assert.notDeepEqual([...entries,plain].filter(e=>entryMatchesSearch(e,'gyur')),[...entries,plain].filter(e=>entryMatchesSearch(e,"'gyur")));
+ assert(entryMatchesSearch(entries[0],'ʼaccepted'));assert(entryMatchesSearch(entries[0],'e\u0301-form'));
+ assert(entryMatchesSearch(entries[0],'འགྱུར'));assert(entryMatchesSearch(entries[0],''));
+ for(const q of ['unrelated','acceptedx','e-form','é form','gy-ur'])assert(!entryMatchesSearch(entries[0],q));
+ assert.equal(normalizeSearchKey("‘A’-ʼé"),"'a'-'é");
+ assert.equal(normalizeSearchKey('ṅ ñ ś ź'), 'ṅ ñ ś ź');
+ assert.equal(normalizeSearchKey('གྷ'),normalizeSearchKey('གྷ'));
+ assert.equal(JSON.stringify(entries),original);
+ assert.strictEqual(entrySearchKeys(entries[0]),entrySearchKeys(entries[0]));
+ const indexed={...entries[0],search_keys:entrySearchKeys(entries[0])};
+ assert(entryMatchesSearch(indexed,"'gyur"));
+});
