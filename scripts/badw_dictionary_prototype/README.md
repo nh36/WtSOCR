@@ -926,3 +926,98 @@ new bkye return link), keyboard/history navigation, 56 member journeys, 82
 citation journeys and 58 facsimile checks at widths 1440, 320, 390 and 768,
 with no browser errors. Initial catalog load took 298 milliseconds in the local
 test. The rendered mobile page was visually inspected.
+
+## Reviewed original printed pages for editorial HTML
+
+The optional HTML facsimile layer uses `data/badw_html_print_pages.json`.
+Each accepted record binds an exact acquired HTML URL and SHA-256, its own
+homonym, and a checked printed heading/definition to a registered original
+scan and a one-based physical PDF page. It performs no lexical matching and
+never assigns pages to PDF-derived witnesses. Existing BAdW PDF sources are
+unchanged. HTML entries without a reviewed match retain their editorial link.
+
+Generate the shared single-page PDFs before building the reader:
+
+```sh
+python3 scripts/badw_html_print_facsimiles.py \
+  --scans-root /path/to/checkout-containing-pdfs \
+  --output work/html-print-pages
+python3 scripts/build_badw_full_reader.py \
+  --print-facsimiles work/html-print-pages/manifest.json \
+  --output work/html-print-reader
+python3 -m http.server 8806 --bind 127.0.0.1 --directory work/html-print-reader
+```
+
+The registered scans must be locally available; this does not download or
+publish them. Derivatives and manifests stay in ignored `work/`. The reader
+copies each distinct prepared page once to `sources/print/`. Complete original
+scans remain in the private source cache and are never linked into the served
+reader. Provenance retains source identities, checksums, physical pages and crop
+coordinates without private paths. PDF page boxes provide a visual crop, not
+redaction: neighbouring image data may remain in a derivative. These derivatives
+are local research material; do not publish them externally without a separate
+source-publication decision.
+
+Preparation verifies the registry and original checksums. `pypdf` (the existing
+`>=6.10,<7` development dependency) copies one physical page and sets its MediaBox
+and CropBox to reviewed PDF coordinates, preserving image data and resolution.
+It does not rasterise, rescale or recompress images. IDs hash the original
+checksum, physical page, crop rectangle and transformation version
+`pdf-page-boxes-v1`; repeated entries share the same derivative. Both manifest
+and derivative hashes are checked at build time. Printed page numbers are
+explicit reviewed records, never a volume-wide offset guessed from pagination.
+
+The inspected WtS 1–34 scan has landscape spreads through physical page 1076
+(the last has a blank right side), then portrait title matter and single pages;
+physical page 1081 is volume 5 page 1. WtS 35–51 has single printed pages and
+inserted fascicle/volume matter; physical page 350 is volume 6 page 1. WtS 8-b
+and 9-m are single-page scans. Two text columns do not mean two printed pages.
+These observations do not authorise automatic cropping of unreviewed pages.
+The published spread at physical page 40 uses a reviewed noncentral gutter,
+438 points from the left; full height and outer margins are retained. The two
+sides are volume 1 pages 14 and 15. Other published pages retain their complete
+single-page boxes. Rotated pages and invalid geometry fail closed.
+
+Current HTML-only coverage is **18,038 witnesses: 32 exact, 11,418 with existing
+unconfirmed candidates, and 6,588 without an established correspondence**.
+Candidate counts are the URL intersection with the existing C11 identity
+handoff, not new matches or evidence of exact printed locations. Weak one-field
+matches, running headers, continuation pages, insufficient independent source
+discriminators and unresolved homonym identities prevent bulk promotion.
+There are **10 distinct derivatives: two cropped sides of one reviewed spread
+and eight genuine single pages**. One physical spread needs exceptional
+noncentral geometry; no published page has pending crop review. Unreviewed
+pages are not supplied speculatively.
+
+The reviewed examples include ka ba¹ and its compounds (volume 1 pp. 14–15),
+da¹/² and ḍā ki ma¹ (volume 5 p. 1), da ko¹ and da ci¹ (p. 2), mda’ rgyus¹
+(p. 353), na¹/² (volume 6 p. 1), rnam byuṅ¹ (p. 251), ba¹/²/³ and ba ka¹
+(volume 8 p. 1), ma¹/² (volume 9 p. 1), and ma⁵/ma ki ta¹ (p. 12).
+Long entries link to their heading page. A running `ma` header on page 12 does
+not identify the start of ma⁴. Raised `ka` beside ka ba is a cross-reference,
+not a second homonym. **’gyur¹ is PDF-derived** in the current catalogue and
+therefore retains its existing born-digital facsimile without an extra link.
+
+Focused checks:
+
+```sh
+python3 -m pytest tests/test_badw_html_print_facsimiles.py tests/test_badw_full_reader.py -q
+node --test tests/badw_dictionary_prototype.test.cjs
+BADW_READER_URL=http://127.0.0.1:8806 node tests/badw_html_print_facsimiles.browser.cjs
+```
+
+The browser command also needs Playwright and Chrome as described above. Its
+screenshot directory is controlled by `BADW_SCREENSHOTS` (default:
+`work/html-print-browser`). Full-reader certification and the source-integrity
+differential must accompany changes at a corpus milestone.
+
+The fresh 29,878-witness milestone build preserves catalogue order, search keys,
+source text, all accepted relationships and the reference census (7,626 resolved
+targets; 748 residuals). All 11,840 PDF witness bodies and 1,377 existing PDF
+assets are byte-identical to the merged frontend baseline. Focused checks pass
+(21 Python tests; 19 Node tests), as do the required 315 regressions with 62
+subtests. The full Python suite has 2,052 passes and the two inherited failures
+(external-publications checksum and WtS 8-b p. 409 line 73 evidence). Chrome
+certification passes all 32 new links, opens all ten prepared PDFs, and checks
+desktop/mobile views without browser errors. The existing full-reader Chrome
+suite also passes search, history, keyboard and grammatical-reference journeys.
