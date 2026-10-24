@@ -22,11 +22,19 @@ const {chromium}=require('playwright-core');
   if(reviewed.witnesses.some(r=>r.source_url===body.source_url))bodies.push({...body,path:meta.path});
  }
  assert.equal(bodies.length,32);
+ assert(!JSON.stringify(printed).includes('originals/'));
+ for(const body of bodies){
+  const provenance=body.sources[1].print_provenance;
+  assert(!('original_url' in provenance));
+  assert(!/file:|\/Users\/|\/private\//.test(JSON.stringify(body)));
+  assert.equal((await page.request.get(base+'/sources/originals/'+provenance.source_sha256+'.pdf')).status(),404);
+ }
  const go=async body=>{await page.goto(base+'/#'+encodeURIComponent(body.id));await page.waitForFunction(id=>document.querySelector('#entries [aria-current]')?.hash==='#'+encodeURIComponent(id)&&document.querySelector('#article > .source-access a'),body.id);};
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:1050});
   for(const body of bodies){
    await go(body);
+   assert.equal(await page.getByText('Complete original scan',{exact:true}).count(),0);
    const links=page.locator('#article > .source-access a');assert.equal(await links.count(),2);
    assert.equal(await links.nth(0).textContent(),'BAdW editorial text');assert.equal(await links.nth(0).getAttribute('href'),body.source_url);
    const source=body.sources[1];assert((await links.nth(1).textContent()).startsWith('Original printed edition'));
@@ -56,7 +64,7 @@ const {chromium}=require('playwright-core');
   const [popup]=await Promise.all([page.waitForEvent('popup'),page.locator('#article > .source-access a').nth(1).click()]);
   await popup.waitForLoadState();assert(popup.url().endsWith(source.url));
   await popup.waitForTimeout(800);
-  if(source.print_provenance.side!=='single')await popup.screenshot({path:path.join(screenshots,'printed-'+source.print_provenance.printed_page+'.png')});
+  await popup.screenshot({path:path.join(screenshots,'printed-'+source.print_provenance.volume+'-'+source.print_provenance.printed_page+'.png')});
   await popup.close();
  }
  // Compare original-print and existing born-digital single-page presentation

@@ -950,10 +950,13 @@ python3 -m http.server 8806 --bind 127.0.0.1 --directory work/html-print-reader
 
 The registered scans must be locally available; this does not download or
 publish them. Derivatives and manifests stay in ignored `work/`. The reader
-copies each distinct prepared page once to `sources/print/` and symlinks each
-complete registered scan once under `sources/originals/` for provenance. Keep
-those originals available while serving locally. Do not deploy that directory
-externally without a separate source-publication decision.
+copies each distinct prepared page once to `sources/print/`. Complete original
+scans remain in the private source cache and are never linked into the served
+reader. Provenance retains source identities, checksums, physical pages and crop
+coordinates without private paths. PDF page boxes provide a visual crop, not
+redaction: neighbouring image data may remain in a derivative. These derivatives
+are local research material; do not publish them externally without a separate
+source-publication decision.
 
 Preparation verifies the registry and original checksums. `pypdf` (the existing
 `>=6.10,<7` development dependency) copies one physical page and sets its MediaBox

@@ -80,7 +80,12 @@ def test_asymmetric_spread_single_and_deterministic_reuse(prepared):
     assert first['sources'][0]['url'] == second['sources'][0]['url']
     assert first['sources'][1]['url'].endswith('#page=1&view=Fit')
     assert first['sources'][1]['print_provenance']['physical_page'] == 1
-    assert list((root/'reader/sources/originals').glob('*.pdf'))[0].resolve() == original
+    assert not (root/'reader/sources/originals').exists()
+    assert not any(p.is_symlink() for p in (root/'reader').rglob('*'))
+    assert 'original_url' not in first['sources'][1]['print_provenance']
+    assert str(root) not in json.dumps(first)
+    assert 'file:' not in json.dumps(first)
+    assert first['sources'][1]['print_provenance']['source_sha256'] == fac.sha256(original)
 
 
 def test_missing_homonym_checksum_and_pdf_are_not_promoted(prepared):

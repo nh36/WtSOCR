@@ -326,6 +326,6 @@ test('Tibetan exact, prefix, boundary and embedded matches preserve orthography'
 test('local source routes admit only shared checked PDFs and page destinations',()=>{
  const {localSourceURL}=require('../scripts/badw_dictionary_prototype/app.js');
  const sha='a'.repeat(64);
- for(const url of [`sources/${sha}.pdf`,`sources/print/${sha}.pdf#page=1&view=Fit`,`sources/originals/${sha}.pdf#page=40`])assert(localSourceURL(url),url);
- for(const url of ['sources/../secret.pdf','sources/print/../../secret.pdf',`sources/print/${sha}.pdf#page=0`,`sources/print/${sha}.pdf?script=bad`,'javascript:alert(1)','https://example.com/source.pdf'])assert(!localSourceURL(url),url);
+ for(const url of [`sources/${sha}.pdf`,`sources/print/${sha}.pdf#page=1&view=Fit`])assert(localSourceURL(url),url);
+ for(const url of [`sources/originals/${sha}.pdf#page=40`,'sources/../secret.pdf','sources/print/../../secret.pdf',`sources/print/${sha}.pdf#page=0`,`sources/print/${sha}.pdf?script=bad`,'javascript:alert(1)','https://example.com/source.pdf'])assert(!localSourceURL(url),url);
 });

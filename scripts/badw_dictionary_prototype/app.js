@@ -161,7 +161,7 @@ function openReferenceDetail(reference,segment,item){
  document.querySelector('#reference-detail').showModal();
 }
 function localSourceURL(url){
- return /^sources\/(?:[a-f0-9]{64}|(?:print|originals)\/[a-f0-9]{64})\.pdf(?:#page=[1-9][0-9]*(?:&view=Fit)?)?$/.test(url);
+ return /^sources\/(?:[a-f0-9]{64}|print\/[a-f0-9]{64})\.pdf(?:#page=[1-9][0-9]*(?:&view=Fit)?)?$/.test(url);
 }
 function appendSources(container,item){
  const section=el('section',undefined,'source-access');section.setAttribute('aria-label','Original sources');
@@ -295,7 +295,6 @@ function show(item){
   if(source.print_provenance){
    const p=source.print_provenance;
    provenance.append(el('p',`Original scan: ${p.source}; SHA-256: ${p.source_sha256}. Physical PDF page ${p.physical_page}, ${p.side}; crop [${p.crop.join(', ')}] PDF points; ${p.method}. Printed heading: ${p.printed_heading}. ${p.evidence}`));
-   if(localSourceURL(p.original_url)){const link=el('a','Complete original scan');link.href=p.original_url;link.target='_blank';link.rel='noopener noreferrer';provenance.append(link);}
   }
  }
 

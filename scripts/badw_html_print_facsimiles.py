@@ -131,20 +131,16 @@ class Facsimiles:
             dest = self.output/'sources/print'/page['filename']
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(src, dest)
-            # One shared, read-only original per registered scan; never per entry.
+            # Verify private originals without exposing them in the served reader.
             original = Path(self.data['originals'][page['source_sha256']])
             if sha256(original) != page['source_sha256']:
                 raise ValueError('original scan checksum mismatch')
-            link = self.output/'sources/originals'/(page['source_sha256']+'.pdf')
-            link.parent.mkdir(parents=True, exist_ok=True)
-            if not link.exists():
-                link.symlink_to(original)
             self.used.add(page['id'])
         editorial['label'] = 'BAdW editorial text'
         entry['sources'].append(dict(url='sources/print/'+page['filename']+'#page=1&view=Fit',
             label=f"Original printed edition · {page['volume']}, p. {page['printed_page']}",
             sha256=page['sha256'], print_provenance=dict(page, evidence=row['evidence'],
-                printed_heading=row['printed_heading'], original_url='sources/originals/'+page['source_sha256']+'.pdf#page='+str(page['physical_page']))))
+                printed_heading=row['printed_heading'])))
 
 
 def main():
