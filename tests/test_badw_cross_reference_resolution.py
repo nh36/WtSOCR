@@ -1023,3 +1023,17 @@ def test_perfect_imperative_exact_identity_and_witness_selection(wrapped,fault):
         assert result['status']=='resolved' and 'target_entry_id' not in result
         assert result['witness_status']=='multiple_exact_manifestations'
         assert (fixture,review,destination)==before
+
+
+def test_declarative_grammatical_pattern_resolves_only_reviewed_identity():
+    fixture,review,destination=reciprocal_destination_fixture()
+    review.update(basis='reviewed_printed_grammatical_reciprocal',grammatical_pattern='perfect_to_paradigm')
+    other=copy.deepcopy(destination);other.update(id='competitor',homonym='2')
+    index=EntryIndex([destination,other])
+    assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
+    result=substitute(index,fixture,review)['canonical_resolution']
+    assert result['status']=='resolved' and result['target_entry_id']==destination['id']
+    assert result['method']=='reviewed_exact_grammatical_reciprocal'
+    review['grammatical_pattern']='paradigm_to_future'
+    with pytest.raises(ValueError,match='destination differs'):
+        substitute(index,fixture,review)

@@ -9,6 +9,7 @@ import hashlib
 import json
 import shutil
 import sqlite3
+import time
 from itertools import chain
 from pathlib import Path
 
@@ -146,7 +147,22 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--baseline-store', type=Path, default=ROOT/'work/badw_forensic_structure/baseline_0f4849.sqlite', help='Frozen accepted citation relationships before the certified reference-owner tranche')
     ap.add_argument('--supplements', type=Path, default=SUPPLEMENTS, help='Pinned reviewed editorial acquisitions; frozen corpus stays unchanged')
+    ap.add_argument('--witness-ids', type=Path, help='JSON list: validate only these witnesses (investigation output, never a complete reader)')
+    ap.add_argument('--baseline-reader', type=Path, help='Certified reader required for affected-witness relationship comparison')
     args = ap.parse_args()
+    if bool(args.witness_ids) != bool(args.baseline_reader):
+        ap.error('--witness-ids and --baseline-reader must be supplied together')
+    started = time.monotonic()
+    timings = collections.Counter()
+    selected, frozen = None, {}
+    if args.witness_ids:
+        selected = json.loads(args.witness_ids.read_text())
+        if not isinstance(selected, list) or not selected or any(not isinstance(s, str) for s in selected) or len(set(selected)) != len(selected):
+            ap.error('witness IDs must be a nonempty unique string list')
+        selected = set(selected)
+        frozen = {e['id']: e for e in json.loads((args.baseline_reader/'data.json').read_text())['entries']}
+        if selected - frozen.keys():
+            ap.error('selected witnesses absent from baseline')
     out = args.output.resolve()
     if not out.is_relative_to(ROOT/'work') or out.exists():
         ap.error('output must be a new directory under work/')
@@ -182,8 +198,12 @@ def main():
     conflicts = []
     accepted_destinations = set()
     ledger = (out/'reference_cases.jsonl').open('w')
+    timings['setup'] = time.monotonic() - started
     for i, r in enumerate(chain(rows(args.projections), supplemental_projections)):
         p, pred = r['packet'], r['projection']
+        if selected is not None and p['identity'] not in selected:
+            continue
+        tick = time.monotonic()
         baseline = citation_baseline(p, pred, r['reader'])
         identity, kind, text = p['identity'], p['source_kind'], p['review_text']
         prior_citations = [json.loads(v[0]) for v in prior.execute('SELECT record_json FROM citation WHERE entry=?', (identity,))]
@@ -211,6 +231,8 @@ def main():
                 dest = out/'sources'/(sha+'.pdf')
                 if not dest.exists(): shutil.copyfile(path, dest)
                 sources.append(dict(url='sources/'+sha+'.pdf', original_url=obj['pdf_url'], label='Printed facsimile', sha256=sha))
+        timings['source_verification_and_copy'] += time.monotonic() - tick
+        tick = time.monotonic()
         if kind == 'pdf':
             original = pred['original_structure']
             current = reindex_for_review(original, annotations[identity])
@@ -262,6 +284,17 @@ def main():
             raise ValueError(identity+': '+str(error)) from error
         entry['source_kind'] = kind
         entry['sources'] = sources or [dict(url=entry['source_url'], label='BAdW editorial source', sha256=objects[0]['sha256'])]
+        if selected is not None:
+            meta = frozen[identity]
+            body = (args.baseline_reader/meta['path']).read_bytes()
+            if digest(body) != meta['sha256']:
+                raise ValueError('baseline reader shard hash differs')
+            before = json.loads(body)
+            if before['segments'] != entry['segments']:
+                raise ValueError('affected witness source segments changed')
+            preserve_relationships(before, entry, extent_reviews)
+        timings['projection_and_evidence'] += time.monotonic() - tick
+        tick = time.monotonic()
         for c in entry['citations']:
             census[kind+':citations:'+c['bibliography_status']] += 1
             census[kind+':ownership:'+('unresolved' if c['ownership']=='unresolved' else 'established')] += 1
@@ -287,12 +320,22 @@ def main():
         catalog.append(dict(id=entry['id'], headword=entry['headword'], homonym=entry.get('homonym'), source_kind=kind,
             path='entries/'+name, sha256=digest(body), search_aliases=[f['form_span']['literal'] for f in entry['semantic_hierarchy'].get('header_fields', []) if f.get('header_kind') == 'alternate_headword' and f.get('form_span', {}).get('literal')]))
         if identity in seed_ids: sample.append(checkpoint_entry or entry)
+        timings['serialization'] += time.monotonic() - tick
         if (i+1)%1000 == 0: print(i+1, 'witnesses', flush=True)
     ledger.close()
     witness_ids = {e['id'] for e in catalog}
-    if accepted_destinations - witness_ids:
+    available = set(frozen) if selected is not None else witness_ids
+    if accepted_destinations - available:
         raise ValueError('accepted destination absent from full corpus: '+repr(sorted(accepted_destinations-witness_ids)))
     write(out/'annotation_conflicts.json', conflicts)
+    if selected is not None:
+        if witness_ids != selected:
+            raise ValueError('affected witness selection incomplete')
+        write(out/'data.json', dict(entries=catalog, investigation_only=True))
+        write(out/'manifest.json', dict(investigation_only=True, entries=len(catalog), census=dict(census),
+            baseline_reader=str(args.baseline_reader), timings=dict(timings), seconds=time.monotonic()-started))
+        print(json.dumps(dict(affected_witnesses=len(catalog), census=dict(census), timings=dict(timings), seconds=time.monotonic()-started)))
+        return
     if len(catalog) != 29877 + len(supplements): raise ValueError('incomplete corpus')
     # Include independently resolved destinations in the existing checkpoint check.
     sample_ids = {e['id'] for e in sample}
@@ -306,6 +349,7 @@ def main():
     shutil.copytree(assets/'fonts', out/'fonts')
     write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
     print(json.dumps(dict(reader=str(out), census=dict(census))))
+    write(out/'build_timing.json', dict(phases=dict(timings), seconds=time.monotonic()-started))
 
 
 if __name__ == '__main__': main()

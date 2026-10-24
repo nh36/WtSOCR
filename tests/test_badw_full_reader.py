@@ -176,3 +176,27 @@ def test_reindex_stages_only_the_exact_reviewed_arrow_contraction(monkeypatch):
     current['candidates']['cross_references'].append(dict(visual_start=22,visual_end=30))
     with pytest.raises(ValueError, match='explicit structural replay'):
         builder.reindex_for_review(original, [review])
+
+
+@pytest.mark.parametrize('arguments', [
+    ['--witness-ids', 'ids.json'], ['--baseline-reader', 'baseline'],
+])
+def test_affected_witness_mode_requires_paired_baseline(monkeypatch, arguments):
+    import build_badw_full_reader as builder
+    monkeypatch.setattr('sys.argv', ['builder', '--output', 'work/unused', *arguments])
+    with pytest.raises(SystemExit) as error:
+        builder.main()
+    assert error.value.code == 2
+
+
+@pytest.mark.parametrize('selection', [[], 'source', ['source', 'source'], [42]])
+def test_affected_witness_mode_rejects_invalid_selection(tmp_path, monkeypatch, selection):
+    import json
+    import build_badw_full_reader as builder
+    path = tmp_path/'ids.json'
+    path.write_text(json.dumps(selection))
+    monkeypatch.setattr('sys.argv', ['builder', '--output', 'work/unused',
+        '--witness-ids', str(path), '--baseline-reader', str(tmp_path)])
+    with pytest.raises(SystemExit) as error:
+        builder.main()
+    assert error.value.code == 2

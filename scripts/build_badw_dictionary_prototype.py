@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from badw_grammatical_references import BASES as GRAMMATICAL_BASES, GRAMMATICAL
+
 from pathlib import Path
 import shutil
 import sqlite3
@@ -197,7 +199,7 @@ def view(records, index):
                                        target_label=candidate.get("target_label_candidate", ""),
                                        source_candidate=candidate, source_spans=[candidate])
                 reviews = [r for r in record.get('reviewed_cross_reference_targets', {}).values()
-                           if r.get('basis') in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword', 'reviewed_printed_misplaced_arrow', 'reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect') and
+                           if r.get('basis') in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword', 'reviewed_printed_misplaced_arrow', 'reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect', GRAMMATICAL) and
                            r['source_spans'] == [candidate]]
                 if len(reviews) > 1:
                     raise ValueError('conflicting reviewed printed target interpretations')

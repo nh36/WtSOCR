@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run42` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run43` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run42 \
+  --reader work/badw_full_reader_20261020/run43 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 105 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 93 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -729,3 +729,76 @@ resolved / 544 unresolved / 2 ambiguous; PDF is 2,870 resolved / 113 unresolved 
 103 ambiguous. Only these two reviewed references gain destinations; prior
 accepted relationships, source text, citations and the 23/50/47 fixture remain
 unchanged. The original 7,582 / 792 checkpoint remains the comparable baseline.
+
+### Batched grammatical-reference review
+
+`badw_grammatical_references.py` shares exact grammatical templates and
+complementarity checks across reciprocal perfect, future and imperative reviews.
+Historical annotation bases and their geometry contracts remain valid; their
+records are unchanged. New reviews name a supported grammatical pattern and
+still require individually inspected facsimiles, exact numbered headings,
+source/destination hashes, article-bounded passages and positioned typography.
+A return arrow alone never selects a homonym. A PDF run ending inside a longer
+word is rejected as reciprocal evidence.
+
+Run43 adds ten individually reviewed links: **bsgrag → sgrog¹**, **rgyoṅ →
+brgyaṅs¹**, **ños → ño²**, **’groṅ¹ ↔ ’groṅs¹**, **’joms → bcom¹**, **’khol² →
+khol²**, **’khon bzuṅ → ’khon ’dzin¹**, **’khu → ’khus¹**, and **’khyer¹ →
+khyer¹**. These resolve identity ambiguities, not parser defects or printed
+errors. All 103 PDF ambiguities were examined mechanically: 19 occurrences had
+21 candidate return relationships; ten were accepted after source review.
+The remaining 93 occurrences retain explicit deferral reasons in ignored
+`work/badw_full_reader_20261020/grammatical_batch43/adjudicated_queue.jsonl`.
+Two misleading return hints ended inside longer words and were rejected.
+In particular, reciprocal arrows shared by competing **khrol/’khrol** homonyms
+do not establish a unique identity.
+
+Reproduce discovery against the certified pre-batch reader:
+
+```sh
+python3 scripts/discover_badw_grammatical_references.py \
+  --reader work/badw_full_reader_20261020/run42 \
+  --census work/badw_full_reader_20261020/residue_after_perfect_imperative_run42.jsonl.gz \
+  --output work/badw_grammatical_queue_fresh
+```
+
+The queue pins the reader, census, entry index, canonical objects, source
+occurrences, competing identities and bounded destination runs with PDF locations.
+Its support classifications are discovery hints, never accepted annotations.
+Discovery of all 103 cases took approximately six seconds.
+
+During investigation, use the existing builder with a JSON list of affected
+witness IDs and a certified baseline. An optional `--projections` file containing
+only those existing projection records avoids streaming the complete corpus:
+
+```sh
+python3 scripts/build_badw_full_reader.py \
+  --projections work/badw_full_reader_20261020/grammatical_batch43/affected_projections.jsonl \
+  --witness-ids work/badw_full_reader_20261020/grammatical_batch43/affected_ids.json \
+  --baseline-reader work/badw_full_reader_20261020/run42 \
+  --output work/badw_affected_check_fresh
+```
+
+This reuses the full source verification, annotation replay, projection and
+relationship checks, verifies baseline shard hashes, and checks destination
+membership against the certified catalog. Its output is explicitly marked
+`investigation_only`; it is not a complete reader or batch certification.
+The ten-witness check took 3.5 seconds. Full builds still certify all witnesses,
+accepted relationships, citations and the 23/50/47 checkpoint; phase costs are
+recorded in `build_timing.json` before considering additional caching.
+
+Run43 certification: **7,622 resolved / 752 residual** target units; PDF is
+2,880 resolved / 113 unresolved / 93 ambiguous, and HTML is unchanged. The
+29,878-witness differential found precisely ten improved references and 29,868
+byte-identical entry files. Source text, citations, components, prior accepted
+destinations and the 23/50/47 checkpoint are unchanged. Browser validation passed
+all ten new keyboard/history/source journeys, 56 member journeys, 82 citation
+journeys and 58 facsimile checks at desktop and three mobile/tablet widths,
+with no browser errors. The rendered mobile page was visually inspected.
+
+One complete build took 836 seconds: 767 seconds in projection/evidence
+validation, 14 seconds in source verification/copying, and 19 seconds in
+serialization. Projection/evidence validation is the measured bottleneck;
+source-copy caching would not address it. The focused suite passed 673 tests;
+the required release regressions passed 315 tests and 62 subtests. Existing
+status warnings remain unchanged; no release artifacts were rebuilt.

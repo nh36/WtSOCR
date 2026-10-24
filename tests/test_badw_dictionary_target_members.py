@@ -365,10 +365,12 @@ def test_reviewed_page_continuation_survives_reader_and_store(monkeypatch,tmp_pa
     db.close()
 
 
-@pytest.mark.parametrize('compound', [False, True, 'reciprocal'])
+@pytest.mark.parametrize('compound', [False, True, 'reciprocal', 'grammatical'])
 def test_reviewed_printed_heading_reaches_reader_and_sql_without_source_mutation(tmp_path, compound):
     from test_badw_cross_reference_resolution import wrapped_destination_fixture, reciprocal_destination_fixture
-    fixture, review, destination = reciprocal_destination_fixture() if compound == 'reciprocal' else wrapped_destination_fixture(compound)
+    fixture, review, destination = reciprocal_destination_fixture() if compound in ('reciprocal','grammatical') else wrapped_destination_fixture(compound)
+    if compound == 'grammatical':
+        review.update(basis='reviewed_printed_grammatical_reciprocal',grammatical_pattern='perfect_to_paradigm')
     occurrence, structure, text, binding = fixture
     candidate = dict(occurrence['source_candidate'], marker=occurrence['marker'])
     review['source_spans'] = [candidate]
@@ -379,7 +381,7 @@ def test_reviewed_printed_heading_reaches_reader_and_sql_without_source_mutation
         reviewed_cross_reference_targets={'xref': review},
         nodes=[dict(id='xref', kind='cross_reference', start=candidate['visual_start'], end=candidate['visual_end'])], edges=[])
     destinations = [destination]
-    if compound == 'reciprocal':
+    if compound in ('reciprocal','grammatical'):
         other = copy.deepcopy(destination); other.update(id='second', homonym='2')
         destinations.append(other)
     index = EntryIndex([entry(binding['identity'], lemma='source'), *destinations])
@@ -387,7 +389,7 @@ def test_reviewed_printed_heading_reaches_reader_and_sql_without_source_mutation
     result = entry_view(view([projection], index)[0])
     ref, = result['cross_references']
     assert ref['status'] == 'resolved' and ref['target_entry_id'] == destination['id']
-    assert ref['resolution_evidence']['method'] == ('reviewed_exact_reciprocal_perfect' if compound == 'reciprocal' else 'reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword')
+    assert ref['resolution_evidence']['method'] == ('reviewed_exact_grammatical_reciprocal' if compound == 'grammatical' else 'reviewed_exact_reciprocal_perfect' if compound == 'reciprocal' else 'reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword')
     assert ref['resolution_evidence']['target_review']['basis'] == review['basis']
     assert ''.join(s['text'] for s in result['segments']) == text
     assert projection == before

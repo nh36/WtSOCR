@@ -1625,7 +1625,8 @@ def test_perfect_imperative_proof_fails_closed(tmp_path,wrapped,fault):
 def test_real_gyur_perfect_imperative_reviews_pin_printed_evidence():
     import json
     rows=[json.loads(line) for line in (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
-    selected=[r for r in rows if r['claim'].get('basis')=='reviewed_printed_reciprocal_perfect_imperative']
+    selected=[r for r in rows if r['claim'].get('basis')=='reviewed_printed_reciprocal_perfect_imperative'
+              and r['claim'].get('source_headword') in ('gyur', '’gyur')]
     assert len(selected)==2
     expected={'gyur':(36,42,'↓’gyur',379,798,809,' pf. und imp. ↑gyur'),
               '’gyur':(14,19,'↑gyur',239,1607,1623,'pf. und imp. zu↓’gyur')}
@@ -1636,3 +1637,54 @@ def test_real_gyur_perfect_imperative_reviews_pin_printed_evidence():
         assert c['destination_heading']['printed_page']==page
         assert c['destination_heading']['reciprocal_passage']==dict(run_start=rs,run_end_exclusive=re,literal=passage)
         assert c.get('source_alternate_headword')==('gyurd' if c['source_headword']=='gyur' else None)
+
+
+def grammatical_fixture(tmp_path):
+    import gzip, json
+    from test_extract_badw_pdf_entries import _run
+    from extract_badw_pdf_entries import extract_page
+    p,a,base,page,path=reciprocal_fixture(tmp_path)
+    runs=page['positioned_page']['positioned_text_runs']
+    runs[4:5]=[_run(4,' pf. ↑','r'),_run(5,'bcum','i')]
+    runs[4]['x']=10; runs[5]['x']=15
+    for i,r in enumerate(runs):r['run_index']=i
+    page['positioned_page']['tibetan_text_candidates'][1]['run_indices']=[6]
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    dest=extract_page(page,path.name)[0][0]
+    proof=a['claim']['destination_heading']
+    proof.update(entry_id=dest['id'],entry_start_source_span=dest['source_span'],
+                 canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                 reciprocal_passage=dict(run_start=4,run_end_exclusive=6,literal=' pf. ↑bcum'))
+    a['claim'].update(basis=annotations.GRAMMATICAL,grammatical_pattern='perfect_to_paradigm')
+    return p,a,base,page,path
+
+
+def test_grammatical_review_replays_source_and_canonical_proof(tmp_path):
+    p,a,base,_,_=grammatical_fixture(tmp_path)
+    result=run(tmp_path,p,[a])
+    changed=annotations.apply_validated_annotations(p,base,result)
+    assert next(iter(changed['reviewed_cross_reference_targets'].values()))['grammatical_pattern']=='perfect_to_paradigm'
+    assert changed['nodes'][-1]['start']==8
+    assert changed['original_structure']['visual_lines']==base['original_structure']['visual_lines']
+
+
+@pytest.mark.parametrize('mutation',['hash','extent','pattern','intro','destination','font','geometry','article'])
+def test_grammatical_review_rejects_stale_or_incompatible_evidence(tmp_path,mutation):
+    p,a,base,page,path=grammatical_fixture(tmp_path)
+    proof=a['claim']['destination_heading']
+    if mutation=='hash':proof['canonical_object_sha256']='0'*64
+    if mutation=='extent':a['ranges'][0]['end']-=1
+    if mutation=='pattern':a['claim']['grammatical_pattern']='paradigm_to_future'
+    if mutation=='intro':a['claim']['source_alternate_headword']='unprinted'
+    if mutation=='destination':proof['entry_id']='different'
+    if mutation=='article':proof['reciprocal_passage']['run_start']=0
+    if mutation in ('font','geometry'):
+        import gzip,json
+        runs=page['positioned_page']['positioned_text_runs']
+        if mutation=='font':runs[5]['font_id']='r'
+        else:runs[5]['x']=500
+        path.write_bytes(gzip.compress(json.dumps(page).encode()))
+        proof['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises(ValueError):run(tmp_path,p,[a])

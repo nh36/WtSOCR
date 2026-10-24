@@ -18,6 +18,9 @@ import re
 
 from build_badw_structural_review_packet import VERSION as PACKET_VERSION, rows
 
+from badw_grammatical_references import (BASES as GRAMMATICAL_BASES, GRAMMATICAL,
+    introduction, passage_matches, positioned_passage, complete_target)
+
 VERSION = "badw-semantic-annotation-v1"
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 RELATIONS = {
@@ -207,67 +210,9 @@ def reviewed_pdf_heading(claim, cache, canonical_root, verified, *, compound=Fal
         raise ValueError('wrapped heading differs from canonical PDF evidence')
 
 
-def reciprocal_perfect_introduction(claim, text, start):
-    """Admit exact reviewed grammatical introductions, never arbitrary prose.
-
-    An alternate spelling is evidence retained in the individually bound claim;
-    it is not an alias used for destination lookup or reciprocal matching.
-    """
-    prefix = text[:start].strip()
-    if claim.get('basis') == 'reviewed_printed_qualified_reciprocal_perfect':
-        return 'source_alternate_headword' not in claim and prefix == 'pf. zu'
-    if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_future':
-        return ('source_alternate_headword' not in claim and
-                prefix in ('pf. und fut. zu', 'pf. und fut.'))
-    if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_imperative':
-        alternate = claim.get('source_alternate_headword')
-        if 'source_alternate_headword' in claim:
-            return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
-                    re.fullmatch(r"[^\W\d_]+(?:[ ’][^\W\d_]+)*", alternate) is not None and
-                    prefix == 'alttib. auch ' + alternate + ' pf. und imp. zu')
-        return prefix in ('pf. und imp. zu', 'pf. und imp.')
-    alternate = claim.get('source_alternate_headword')
-    if 'source_alternate_headword' in claim:
-        return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
-                re.fullmatch(r"[^\W\d_]+(?:[ ’][^\W\d_]+)*", alternate) is not None and
-                prefix == 'auch ' + alternate + ', pf. zu')
-    return prefix in ('pf. zu', 'pf. bzw. imp. zu')
-
-
-def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
-        basis="reviewed_printed_reciprocal_perfect", source_introduction=None, source_homonym=None):
-    """Check an exact reciprocal expression, retaining any shared-run comma.
-
-    The optional offset selects past exactly ``, `` in the first PDF run;
-    it is not punctuation stripping or an unrestricted substring search.
-    Arrow direction must reciprocate the literal source arrow.
-    """
-    offset = passage.get('run_start_offset', 0)
-    literal = passage.get('literal', '')
-    if (type(offset) is not int or offset not in (0, 2) or
-            (offset == 2 and not literal.startswith(', ')) or
-            source_marker not in ('↑', '↓') or not source_headword):
-        return False
-    opposite = {'↑': '↓', '↓': '↑'}[source_marker]
-    if basis == 'reviewed_printed_qualified_reciprocal_perfect':
-        return (offset == 0 and isinstance(source_homonym, str) and
-                re.fullmatch(r'[1-9][0-9]*', source_homonym) is not None and
-                literal.strip() == 'pf. ' + opposite + source_homonym + source_headword)
-    if basis == 'reviewed_printed_reciprocal_perfect_imperative':
-        if offset != 0 or not isinstance(source_introduction, str):
-            return False
-        # The second spelling is the exact joined canonical run text of a
-        # reviewed wrap after 'zu'. Geometry must independently verify that wrap.
-        prefix = ('pf. und imp. ' if source_introduction.endswith('pf. und imp. zu')
-                  else 'pf. und imp. zu' if source_introduction == 'pf. und imp.' else None)
-        return prefix is not None and literal.strip() == prefix + opposite + source_headword
-    if basis == 'reviewed_printed_reciprocal_perfect_future':
-        complementary = {'pf. und fut. zu': 'pf. und fut. ',
-                         'pf. und fut.': 'pf. und fut. zu '}
-        prefix = complementary.get(source_introduction)
-        return prefix is not None and literal[offset:].strip() == prefix + opposite + source_headword
-    return (basis == 'reviewed_printed_reciprocal_perfect' and
-            literal[offset:].strip() == 'pf. ' + opposite + source_headword)
+# Keep public helper names for historical callers and review records.
+reciprocal_perfect_introduction = introduction
+reciprocal_perfect_passage = passage_matches
 
 
 def qualified_reciprocal_geometry(page, runs, source_homonym):
@@ -404,11 +349,15 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
     if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
             not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0],
                 basis=claim['basis'], source_introduction=packet['review_text'][:ranges[0]['start']].strip(),
-                source_homonym=claim.get('source_homonym')) or
+                source_homonym=claim.get('source_homonym'), grammatical_pattern=claim.get('grammatical_pattern')) or
             passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
             (not qualified_reciprocal_geometry(page, runs, claim.get('source_homonym')) if qualified
              else not reciprocal_perfect_imperative_geometry(page, runs, claim['source_headword'])
              if claim['basis'] == 'reviewed_printed_reciprocal_perfect_imperative'
+             else not (positioned_passage(page, runs, claim['source_headword']) and
+                       complete_target(page['positioned_page']['positioned_text_runs'], b,
+                                       span['run_end_exclusive']))
+             if claim['basis'] == GRAMMATICAL
              else len({r.get('y') for r in runs}) != 1) or
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):
@@ -526,13 +475,15 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                 raise ValueError("invalid reviewed cross-reference extent")
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
-                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword", "source_homonym"))
+                          "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword", "source_homonym", "grammatical_pattern"))
+            if ('grammatical_pattern' in claim and claim['basis'] != GRAMMATICAL):
+                raise ValueError('grammatical pattern outside grammatical review')
             if ('source_homonym' in claim and
                     claim['basis'] != 'reviewed_printed_qualified_reciprocal_perfect'):
                 raise ValueError('source homonym outside qualified reciprocal review')
             if ('source_alternate_headword' in claim and
                     claim['basis'] not in ('reviewed_printed_reciprocal_perfect',
-                        'reviewed_printed_reciprocal_perfect_imperative')):
+                        'reviewed_printed_reciprocal_perfect_imperative', GRAMMATICAL)):
                 raise ValueError('alternate source spelling outside reciprocal review')
             if claim['basis'] == 'reviewed_editorial_headword_variant':
                 from badw_article_parser import parse_database_article
@@ -611,7 +562,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
-            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect'):
+            elif claim['basis'] in GRAMMATICAL_BASES:
                 reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified)
             elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
@@ -845,7 +796,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future", "reviewed_printed_reciprocal_perfect_imperative", "reviewed_printed_qualified_reciprocal_perfect"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future", "reviewed_printed_reciprocal_perfect_imperative", "reviewed_printed_qualified_reciprocal_perfect", GRAMMATICAL):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]
@@ -866,7 +817,7 @@ def apply_validated_annotations(packet, prediction, annotations):
                 lemma=claim["lemma"], homonym=claim["homonym"], basis=claim["basis"],
                 annotation_id=row["annotation_id"], binding=row["binding"],
                 physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
-            for field in ('source_headword', 'destination_heading', 'source_alternate_headword', 'source_homonym'):
+            for field in ('source_headword', 'destination_heading', 'source_alternate_headword', 'source_homonym', 'grammatical_pattern'):
                 if field in claim:
                     targets[claim['occurrence_id']][field] = deepcopy(claim[field])
             continue
