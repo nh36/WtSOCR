@@ -52,6 +52,40 @@ function entrySearchKeys(item){
  return searchKeyCache.get(item);
 }
 function matchesSearchKey(item,key){return entrySearchKeys(item).some(value=>value.includes(key));}
+// search_keys has a fixed schema: primary LoC, primary Tibetan, then accepted
+// alternatives. Preserve that distinction without changing the catalogue format.
+// Categories are zero-based in priority order; Infinity means no match.
+// Callers supply an already normalized query.
+function searchMatchRank(item,key){
+ let best=Infinity;
+ const keys=entrySearchKeys(item);
+ for(let i=0;i<keys.length;i++){
+  const value=keys[i], offset=i<2?0:1;
+  const at=value.indexOf(key);
+  if(at<0)continue;
+  let rank;
+  if(value===key)rank=offset;
+  else if(at===0)rank=2+offset;
+  else {
+   // LoC whitespace and Tibetan tsheg/shad delimit words or syllables.
+   // Check every occurrence: an earlier embedded match can precede a boundary.
+   let boundary=false;
+   for(let pos=at;pos>=0;pos=value.indexOf(key,pos+1)){
+    if(/[\s་༌།༎༏༐༑༔]/u.test(value[pos-1])){boundary=true;break;}
+   }
+   rank=(boundary?4:6)+offset;
+  }
+  best=Math.min(best,rank);
+  if(best===0)break;
+ }
+ return best;
+}
+function rankSearchResults(entries,key){
+ if(!key)return entries;
+ const buckets=Array.from({length:8},()=>[]);
+ for(const entry of entries){const rank=searchMatchRank(entry,key);if(rank<8)buckets[rank].push(entry);}
+ return buckets.flat();
+}
 function entryMatchesSearch(item,query){return matchesSearchKey(item,normalizeSearchKey(query));}
 function citationDetailModel(citation,entry){
  const component=entry.components.find(c=>c.id===citation.component_id);
@@ -304,12 +338,12 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  const search=document.querySelector('#search'),list=document.querySelector('#entries');
  let page=0,items=d.entries;const pageSize=100;
  const pages=el('div',undefined,'entry-pager');list.after(pages);
- function filter(reset=true){if(reset){page=0;const key=normalizeSearchKey(search.value);items=key?d.entries.filter(e=>matchesSearchKey(e,key)):d.entries;}list.replaceChildren();pages.replaceChildren();document.querySelector('#count').textContent=`${items.length} of ${d.entries.length} entries · ${items.length? page*pageSize+1:0}–${Math.min((page+1)*pageSize,items.length)} shown`;for(const e of items.slice(page*pageSize,(page+1)*pageSize)){const link=el('a',entryLabel(e));link.href='#'+encodeURIComponent(e.id);const tibetan=el('span',e.headword.tibetan||'','index-tibetan');tibetan.lang='bo';link.append(tibetan,el('small',e.source_kind==='html'?'Editorial':'Print','index-witness'));if(link.hash===location.hash)link.setAttribute('aria-current','page');list.append(link);}if(!items.length)list.append(el('p','No matching headword. Try a shorter LoC or Tibetan form.'));for(const [delta,label] of [[-1,'Previous results'],[1,'Next results']]){if(page+delta<0||(page+delta)*pageSize>=items.length)continue;const button=el('button',label);button.type='button';button.addEventListener('click',()=>{page+=delta;filter(false);list.querySelector('a')?.focus();});pages.append(button);}}
+ function filter(reset=true){if(reset){page=0;const key=normalizeSearchKey(search.value);items=rankSearchResults(d.entries,key);}list.replaceChildren();pages.replaceChildren();document.querySelector('#count').textContent=`${items.length} of ${d.entries.length} entries · ${items.length? page*pageSize+1:0}–${Math.min((page+1)*pageSize,items.length)} shown`;for(const e of items.slice(page*pageSize,(page+1)*pageSize)){const link=el('a',entryLabel(e));link.href='#'+encodeURIComponent(e.id);const tibetan=el('span',e.headword.tibetan||'','index-tibetan');tibetan.lang='bo';link.append(tibetan,el('small',e.source_kind==='html'?'Editorial':'Print','index-witness'));if(link.hash===location.hash)link.setAttribute('aria-current','page');list.append(link);}if(!items.length)list.append(el('p','No matching headword. Try a shorter LoC or Tibetan form.'));for(const [delta,label] of [[-1,'Previous results'],[1,'Next results']]){if(page+delta<0||(page+delta)*pageSize>=items.length)continue;const button=el('button',label);button.type='button';button.addEventListener('click',()=>{page+=delta;filter(false);list.querySelector('a')?.focus();});pages.append(button);}}
  syncIndexSelection=id=>{const selectedPage=Math.floor(items.findIndex(e=>e.id===id)/pageSize);if(selectedPage>=0&&selectedPage!==page){page=selectedPage;filter(false);}};
  search.addEventListener('input',filter);
- search.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();list.querySelector('a')?.focus();}});
+ search.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();list.querySelector('a')?.focus();}else if(event.key==='Enter'&&items.length){event.preventDefault();location.hash=encodeURIComponent(items[0].id);}});
  list.addEventListener('keydown',event=>{if(!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;const links=[...list.querySelectorAll('a')];const i=links.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?links.length-1:i+(event.key==='ArrowDown'?1:-1);if(links[next]){event.preventDefault();links[next].focus();}});
  window.addEventListener('hashchange',()=>navigate(true));filter();navigate();
  }).catch(e=>document.querySelector('#article').replaceChildren(el('p','The reader could not load: '+e.message+'. Serve this directory over HTTP using the documented preview command.')));
 }
-if(typeof module!=='undefined')module.exports={normalizeSearchKey,entrySearchKeys,matchesSearchKey,citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts,displayForm};
+if(typeof module!=='undefined')module.exports={searchMatchRank,rankSearchResults,normalizeSearchKey,entrySearchKeys,matchesSearchKey,citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts,displayForm};

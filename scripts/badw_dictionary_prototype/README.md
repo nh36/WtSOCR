@@ -17,8 +17,14 @@ For the current cross-reference build, serve
 `work/badw_full_reader_20261020/run43` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
-then search any acquired LoC or Tibetan headword. Catalogue, search results and
-previous/next use the Tibetan ordering described below.
+then search any acquired LoC or Tibetan headword. The unfiltered catalogue and
+previous/next use the Tibetan ordering described below. Nonempty searches rank
+exact primary headwords, exact accepted alternatives, primary prefixes, alternative
+prefixes, primary word/syllable boundaries, alternative boundaries, primary
+substrings, and alternative substrings, in that order. Each bucket retains
+Tibetan catalogue order. LoC whitespace and Tibetan tsheg/shad mark boundaries;
+search keys retain punctuation and orthographic distinctions. Enter in the search
+input opens the highest-ranked result; typing alone preserves the open entry.
 
 The complete lightweight headword catalog is searchable locally. Only 100 index
 rows are mounted at once; entry contents load as individual hash-verified files,

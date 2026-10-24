@@ -285,3 +285,39 @@ test('search normalizes reviewed apostrophes and NFC without changing source or 
  const indexed={...entries[0],search_keys:entrySearchKeys(entries[0])};
  assert(entryMatchesSearch(indexed,"'gyur"));
 });
+
+test('relevance uses eight independent categories and stable catalogue buckets',()=>{
+ const {normalizeSearchKey,searchMatchRank,rankSearchResults}=require('../scripts/badw_dictionary_prototype/app.js');
+ const make=(id,loc,aliases=[],tibetan='')=>({id,headword:{loc,tibetan},search_aliases:aliases});
+ // Deliberately place the lower relevance categories earlier in dictionary order.
+ const entries=[make('substring-alias','other',['x’gyur']),make('substring','x’gyur'),
+  make('boundary-alias','other',['kun ’gyur']),make('boundary','kun tu myoṅ bar ’gyur ba'),
+  make('prefix-alias','other',['’gyur ba']),make('prefix','’gyur ba'),
+  make('exact-alias','other',['’gyur']),make('exact-2','’gyur'),make('exact-10','’gyur')];
+ const original=JSON.stringify(entries), key=normalizeSearchKey("'gyur");
+ assert.deepEqual(entries.map(e=>searchMatchRank(e,key)),[7,6,5,4,3,2,1,0,0]);
+ const ids=['exact-2','exact-10','exact-alias','prefix','prefix-alias','boundary','boundary-alias','substring','substring-alias'];
+ for(const q of ["'gyur",'’gyur','‘gyur','ʼgyur'])assert.deepEqual(rankSearchResults(entries,normalizeSearchKey(q)).map(e=>e.id),ids);
+ assert.strictEqual(rankSearchResults(entries,''),entries);
+ assert.equal(searchMatchRank(make('best','’gyur',['’gyur ba','’gyur']),key),0);
+ assert.equal(searchMatchRank(make('later','x’gyur and ’gyur'),key),4);
+ assert.equal(searchMatchRank(make('none','gyur'),key),Infinity);
+ assert.equal(searchMatchRank(make('diacritics','ṅgyur'),normalizeSearchKey('ngyur')),Infinity);
+ const prose={headword:{loc:'other'},display_blocks:[{literal:'’gyur'}],provisional_aliases:['’gyur']};
+ assert.equal(searchMatchRank(prose,key),Infinity);
+ const indexed=entries.map(e=>({...e,search_keys:require('../scripts/badw_dictionary_prototype/app.js').entrySearchKeys(e)}));
+ assert.deepEqual(rankSearchResults(indexed,key).map(e=>e.id),ids);
+ assert.equal(JSON.stringify(entries),original);
+});
+
+test('Tibetan exact, prefix, boundary and embedded matches preserve orthography',()=>{
+ const {searchMatchRank,rankSearchResults,normalizeSearchKey}=require('../scripts/badw_dictionary_prototype/app.js');
+ const make=(id,tibetan)=>({id,headword:{loc:'unrelated',tibetan}});
+ const entries=[make('embedded','ཀའགྱུར'),make('boundary','ཀ་འགྱུར'),make('prefix','འགྱུར་བ'),make('exact','འགྱུར')];
+ const key=normalizeSearchKey('འགྱུར');
+ assert.deepEqual(entries.map(e=>searchMatchRank(e,key)),[6,4,2,0]);
+ assert.deepEqual(rankSearchResults(entries,key).map(e=>e.id),['exact','prefix','boundary','embedded']);
+ for(const separator of [' ','་','༌','།','༎','༏','༐','༑','༔'])assert.equal(searchMatchRank(make('boundary','ཀ'+separator+'འགྱུར'),key),4);
+ assert.equal(searchMatchRank(make('distinct','གྱུར'),key),Infinity);
+ assert.equal(searchMatchRank({headword:{loc:'é-form'}},normalizeSearchKey('e\u0301-form')),0);
+});
