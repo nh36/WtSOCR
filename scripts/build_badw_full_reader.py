@@ -29,6 +29,7 @@ from badw_bibliography_aliases import load_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_bibliography_external import load_publications
 from badw_reader_supplements import load_supplements, MANIFEST as SUPPLEMENTS
+from badw_html_print_facsimiles import Facsimiles
 
 
 def prepare_catalogue(catalog):
@@ -157,6 +158,7 @@ def main():
     ap.add_argument('--supplements', type=Path, default=SUPPLEMENTS, help='Pinned reviewed editorial acquisitions; frozen corpus stays unchanged')
     ap.add_argument('--witness-ids', type=Path, help='JSON list: validate only these witnesses (investigation output, never a complete reader)')
     ap.add_argument('--baseline-reader', type=Path, help='Certified reader required for affected-witness relationship comparison')
+    ap.add_argument('--print-facsimiles', type=Path, help='Prepared, reviewed HTML-only original-print manifest')
     args = ap.parse_args()
     if bool(args.witness_ids) != bool(args.baseline_reader):
         ap.error('--witness-ids and --baseline-reader must be supplied together')
@@ -176,6 +178,7 @@ def main():
         ap.error('output must be a new directory under work/')
     out.mkdir(parents=True)
     (out/'entries').mkdir(); (out/'sources').mkdir()
+    facsimiles = Facsimiles(args.print_facsimiles, out) if args.print_facsimiles else None
     supplements, supplemental_projections = load_supplements(CACHE, args.supplements)
     original_entries = list(rows(INDEX))
     if {e['id'] for e in supplements} & {e['id'] for e in original_entries}:
@@ -291,7 +294,9 @@ def main():
         except ValueError as error:
             raise ValueError(identity+': '+str(error)) from error
         entry['source_kind'] = kind
-        entry['sources'] = sources or [dict(url=entry['source_url'], label='BAdW editorial source', sha256=objects[0]['sha256'])]
+        entry['sources'] = sources or [dict(url=entry['source_url'], label='BAdW editorial text', sha256=objects[0]['sha256'])]
+        if facsimiles:
+            facsimiles.attach(entry)
         if selected is not None:
             meta = frozen[entry['id']]
             body = (args.baseline_reader/meta['path']).read_bytes()
@@ -357,7 +362,9 @@ def main():
     assets = ROOT/'scripts/badw_dictionary_prototype'
     for name in ('index.html','app.js','style.css'): shutil.copyfile(assets/name,out/name)
     shutil.copytree(assets/'fonts', out/'fonts')
-    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), ROOT/'scripts/prepare_badw_catalogue.mjs', *sorted((ROOT/'scripts/vendor/tibetan-sort-js').glob('*')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
+    if facsimiles:
+        write(out/'print_facsimiles.json', dict(reviews_sha256=facsimiles.data['reviews_sha256'], registry_sha256=facsimiles.data['registry_sha256'], pages={k: p for k, p in facsimiles.data['pages'].items() if p['id'] in facsimiles.used}, witnesses=facsimiles.data['witnesses']))
+    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.absolute(), args.baseline_store.absolute(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/badw_html_print_pages.json', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), ROOT/'scripts/prepare_badw_catalogue.mjs', *sorted((ROOT/'scripts/vendor/tibetan-sort-js').glob('*')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
     print(json.dumps(dict(reader=str(out), census=dict(census))))
     write(out/'build_timing.json', dict(phases=dict(timings), seconds=time.monotonic()-started))
 

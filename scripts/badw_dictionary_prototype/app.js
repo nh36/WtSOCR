@@ -160,13 +160,18 @@ function openReferenceDetail(reference,segment,item){
  appendSources(body,item);
  document.querySelector('#reference-detail').showModal();
 }
+function localSourceURL(url){
+ return /^sources\/(?:[a-f0-9]{64}|(?:print|originals)\/[a-f0-9]{64})\.pdf(?:#page=[1-9][0-9]*(?:&view=Fit)?)?$/.test(url);
+}
 function appendSources(container,item){
  const section=el('section',undefined,'source-access');section.setAttribute('aria-label','Original sources');
  section.append(el('span','Read the source','source-label'));
  for(const source of item.sources||[{url:item.source_url,label:'BAdW source'}]){
   if(!source.url)continue;
-  const link=source.url.startsWith('sources/')?el('a',source.label):sourceLink(source.url,source.label);
-  if(source.url.startsWith('sources/'))link.href=source.url;
+  const local=localSourceURL(source.url);
+  if(source.url.startsWith('sources/')&&!local)continue;
+  const link=local?el('a',source.label):sourceLink(source.url,source.label);
+  if(local)link.href=source.url;
   link.target='_blank';link.rel='noopener noreferrer';section.append(link);
  }
  container.append(section);
@@ -286,7 +291,14 @@ function show(item){
  const provenance=el('details',undefined,'provenance');provenance.append(el('summary','About this source witness'));
  provenance.append(el('p','This reading preserves its source witness. Editorial HTML and printed PDF evidence are separate layers; unresolved structure and citation ownership remain provisional.'));
  provenance.append(el('p','Source identity: '+item.inspection_id));
- for(const source of item.sources||[]){provenance.append(el('p','SHA-256: '+source.sha256));if(source.original_url)provenance.append(sourceLink(source.original_url,'Original BAdW PDF'));}
+ for(const source of item.sources||[]){provenance.append(el('p','SHA-256: '+source.sha256));if(source.original_url)provenance.append(sourceLink(source.original_url,'Original BAdW PDF'));
+  if(source.print_provenance){
+   const p=source.print_provenance;
+   provenance.append(el('p',`Original scan: ${p.source}; SHA-256: ${p.source_sha256}. Physical PDF page ${p.physical_page}, ${p.side}; crop [${p.crop.join(', ')}] PDF points; ${p.method}. Printed heading: ${p.printed_heading}. ${p.evidence}`));
+   if(localSourceURL(p.original_url)){const link=el('a','Complete original scan');link.href=p.original_url;link.target='_blank';link.rel='noopener noreferrer';provenance.append(link);}
+  }
+ }
+
  a.append(provenance);
  document.title=entryLabel(item)+' · WTS reader';
  document.querySelector('#selection-status').textContent='Selected: '+entryLabel(item);
@@ -357,4 +369,4 @@ if(typeof document!=='undefined'&&typeof fetch==='function'){
  window.addEventListener('hashchange',()=>navigate(true));filter();navigate();
  }).catch(e=>document.querySelector('#article').replaceChildren(el('p','The reader could not load: '+e.message+'. Serve this directory over HTTP using the documented preview command.')));
 }
-if(typeof module!=='undefined')module.exports={searchMatchRank,rankSearchResults,normalizeSearchKey,entrySearchKeys,matchesSearchKey,citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts,displayForm};
+if(typeof module!=='undefined')module.exports={localSourceURL,searchMatchRank,rankSearchResults,normalizeSearchKey,entrySearchKeys,matchesSearchKey,citationDetailModel,openCitationDetail,headerFieldsModel,renderHeaderFields,entryMatchesSearch,referenceForSegment,renderReference,referenceExplanation,sourceTextParts,displayForm};

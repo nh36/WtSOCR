@@ -1,0 +1,488 @@
+{
+  "version": 1,
+  "policy": "Exact reviewed HTML witnesses only. No inference from a headword, OCR running header, neighbour or homonym group. Unlisted witnesses remain unconfirmed. PDF-derived witnesses excluded.",
+  "pages": {
+    "ka14": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 40,
+      "volume": 1,
+      "printed_page": 14,
+      "side": "left",
+      "crop": [
+        0.0,
+        0.0,
+        438,
+        632.76
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "ka15": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 40,
+      "volume": 1,
+      "printed_page": 15,
+      "side": "right",
+      "crop": [
+        438,
+        0.0,
+        892.44,
+        632.76
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; gutter at x=438 points, displaced from midpoint; no text in cut",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "da1": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 1081,
+      "volume": 5,
+      "printed_page": 1,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        470.065,
+        682.115
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "da2": {
+      "source": "WtS_1-34",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "physical_page": 1082,
+      "volume": 5,
+      "printed_page": 2,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        473.04,
+        685.8
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "mda353": {
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 100,
+      "volume": 5,
+      "printed_page": 353,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        467.0,
+        675.0
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "na1": {
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 350,
+      "volume": 6,
+      "printed_page": 1,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        471.0,
+        682.0
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "rnam251": {
+      "source": "WtS_35-51",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "physical_page": 600,
+      "volume": 6,
+      "printed_page": 251,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        473.0,
+        678.0
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "ba1": {
+      "source": "WtS_8-b",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "physical_page": 11,
+      "volume": 8,
+      "printed_page": 1,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        472.32,
+        681.84
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "ma1": {
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 5,
+      "volume": 9,
+      "printed_page": 1,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        473.52,
+        686.64
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    },
+    "ma12": {
+      "source": "WtS_9-m",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "physical_page": 16,
+      "volume": 9,
+      "printed_page": 12,
+      "side": "single",
+      "crop": [
+        0.0,
+        0.0,
+        459.36,
+        680.64
+      ],
+      "geometry_review": "Visual inspection of full scan: complete outer margins, running header and printed folio retained; genuine single printed page, two text columns; no splitting",
+      "page_evidence": "Printed folio and volume heading inspected; physical index counted in registered PDF, not inferred from OCR page numbers."
+    }
+  },
+  "witnesses": [
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba/1",
+      "html_sha256": "41f59b17b195e33a032903a0012e3cb0a2a7e63f4cbeb7bd51272eeaf15dba0f",
+      "headword": "ka ba",
+      "homonym": 1,
+      "page": "ka14",
+      "printed_heading": "ka ba",
+      "evidence": "Säule, Pfosten, Pfeiler; Prav 67,11. The raised ka is a cross-reference, not a homonym number.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20khri%20skyid/1",
+      "html_sha256": "6c8c78bcd55fdf4574a64fd55b504dd83b488ec49edd2143990c772c3d65efd1",
+      "headword": "ka ba khri skyid",
+      "homonym": 1,
+      "page": "ka14",
+      "printed_heading": "ka ba khri skyid",
+      "evidence": "npr. ein Pferd; Gesar 328,24 and 331,46; variant ka ba khrid skyid.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20%E2%80%99dra%20ba/1",
+      "html_sha256": "e2b9034bfedb25bd94f2a31a65b6a6e234b803883688875f8848d177e303791a",
+      "headword": "ka ba ’dra ba",
+      "homonym": 1,
+      "page": "ka14",
+      "printed_heading": "ka ba ’dra ba",
+      "evidence": "säulenähnlich, säulengestaltig; Prav 296,7.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20dpal%20brtsegs/1",
+      "html_sha256": "37a02a3b59739f89f4c3fd58127524c02c81d861fc2f6c0eea3acaf86909ecde",
+      "headword": "ka ba dpal brtsegs",
+      "homonym": 1,
+      "page": "ka14",
+      "printed_heading": "ka ba dpal brtsegs",
+      "evidence": "Übersetzer aus der Frühzeit; Nel 11a5 and Padm 286b1; variant ska ba dpal brtsegs.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20b%C5%BAi/1",
+      "html_sha256": "5fa2ea69f4a76819c4b2abe9ad791328a11a46014e857f4fdbdae78afec7a40c",
+      "headword": "ka ba bźi",
+      "homonym": 1,
+      "page": "ka14",
+      "printed_heading": "ka ba bźi",
+      "evidence": "die vier Säulen; named pupils of Klu-mes and Sum-pa; Nel 21b3. Heading begins p.14, definition continues p.15.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20li/1",
+      "html_sha256": "79a6893df27992e2c5c9dbb77fda628e9fc283e875f8119276fe4bf809bbd8a7",
+      "headword": "ka ba li",
+      "homonym": 1,
+      "page": "ka15",
+      "printed_heading": "ka ba li",
+      "evidence": "aufklappbarer Buchbehälter; Be’uD 203,1.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ba%20%C5%9B%C4%81kya%20dba%E1%B9%85%20phyug/1",
+      "html_sha256": "9604bcfa1a84f456c58da8af9e945c9d7e002362e6a59cb10b2cfb537cffb7cf",
+      "headword": "ka ba śākya dbaṅ phyug",
+      "homonym": 1,
+      "page": "ka15",
+      "printed_heading": "ka ba śākya dbaṅ phyug",
+      "evidence": "Mönch aus der Zeit der zweiten Verbreitung; Nel 22b7 and AtiNth 296,8.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da/1",
+      "html_sha256": "b06dc2da0cdcb4da5fb7fb8f8e4849b60db9e56cd271eb33f631dee59a7f5e45",
+      "headword": "da",
+      "homonym": 1,
+      "page": "da1",
+      "printed_heading": "¹da",
+      "evidence": "elfter Buchstabe; ScpRol 36,8 and 37,15; Ziffer 11.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da/2",
+      "html_sha256": "4c1359738fec836784b3ec22d7de76f4c665d0babe750a2a117967e74ce546e7",
+      "headword": "da",
+      "homonym": 2,
+      "page": "da1",
+      "printed_heading": "²da",
+      "evidence": "nun, jetzt, jetzt noch, schon, einstweilen; In12 W36. Heading starts p.1, continues p.2.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/%E1%B8%8D%C4%81%20ki%20ma/1",
+      "html_sha256": "e6f5e5fb01e4b1392e5f91f647fa7c718d85f7be1ba53f427c352f48eb6faafe",
+      "headword": "ḍā ki ma",
+      "homonym": 1,
+      "page": "da1",
+      "printed_heading": "ḍā ki ma",
+      "evidence": "Ḍākinī; variants ḍākki, ḍākki ma; Padm 58a3. Heading starts at bottom of p.1.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da%20ko/1",
+      "html_sha256": "c74bd9b192b0253223b1a819c4c711453e20f94d7a22dfd0805579eb1e7d0300",
+      "headword": "da ko",
+      "homonym": 1,
+      "page": "da2",
+      "printed_heading": "¹da ko",
+      "evidence": "jetzt; Ppu 143c; Lex. da ni (brDa, Dagy, TTC). Only first homonym established.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da%20ga/1",
+      "html_sha256": "86fe5e1a6d29b9609c3115f4e65abf08972abc79afa80bee1dc29f93c50b4ce7",
+      "headword": "da ga",
+      "homonym": 1,
+      "page": "da2",
+      "printed_heading": "da ga",
+      "evidence": "so, ebenso; MTH3/5/20 3.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da%20ga%20se/1",
+      "html_sha256": "fb1e4b42ebd2bea579ad8dbc19c7df1d439f47547d5635f5f6321323455e82ea",
+      "headword": "da ga se",
+      "homonym": 1,
+      "page": "da2",
+      "printed_heading": "da ga se",
+      "evidence": "nichtig, unsinnig; Lex. de ga se (brDa).",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da%20dgo%E1%B9%85/1",
+      "html_sha256": "d5f64f1997147e87cb1c6402506d3f6a1b0a25a5b52b67c01d99fa5b1c311dca",
+      "headword": "da dgoṅ",
+      "homonym": 1,
+      "page": "da2",
+      "printed_heading": "da dgoṅ",
+      "evidence": "heute Abend; variants da dgoṅs, do dgoṅ, do dgoṅs; Dagy, brDa.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/da%20ci/1",
+      "html_sha256": "4880619f7479fe64e97ff054e9acf4f213b3fc5c38a8e417ffcd9c888c7d575e",
+      "headword": "da ci",
+      "homonym": 1,
+      "page": "da2",
+      "printed_heading": "da ci",
+      "evidence": "vorhin, vorher; gZer 620,5. Heading begins at bottom of p.2, continues p.3.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20rgyus/1",
+      "html_sha256": "010432b3cf2fa5740a59cdc74e07a827971689b9e694021ba94b004b32bebdf9",
+      "headword": "mda’ rgyus",
+      "homonym": 1,
+      "page": "mda353",
+      "printed_heading": "mda’ rgyus",
+      "evidence": "Paternostererbse, Abrus precatorius; Pasang 1998:107; dmar ru mgo nag.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20l%E1%B9%85a/1",
+      "html_sha256": "b0d07dc1efdd389827594c07b4acf364f240fbee26997475794eb754e0408260",
+      "headword": "mda’ lṅa",
+      "homonym": 1,
+      "page": "mda353",
+      "printed_heading": "mda’ lṅa",
+      "evidence": "mit fünf Pfeilen, Beiname des Liebesgottes; Lokn 90,21 and Megh 106b.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20chen/1",
+      "html_sha256": "72d32eb706c0b1d362c870cc6afe5d9ba47c0762b85545363c25849fd3930a0b",
+      "headword": "mda’ chen",
+      "homonym": 1,
+      "page": "mda353",
+      "printed_heading": "mda’ chen",
+      "evidence": "großer Pfeil, Lanze; Srkk 177.2 and ViśṬ 86,31.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20tham/1",
+      "html_sha256": "605eb1df422e25473929b6ac2449a3932902b49d19e43ebf90ca2cdb645b68f5",
+      "headword": "mda’ tham",
+      "homonym": 1,
+      "page": "mda353",
+      "printed_heading": "mda’ tham",
+      "evidence": "Rechtsbrief des Armeekommandeurs; MTH3/5/28 1.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/na/1",
+      "html_sha256": "e2311293954267dfdc7446bcd55379f202b24037eafea0585212cca2baf8d036",
+      "headword": "na",
+      "homonym": 1,
+      "page": "na1",
+      "printed_heading": "¹na",
+      "evidence": "zwölfter Buchstabe; ScpBy 10; Ziffer 12.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/na/2",
+      "html_sha256": "4aedfba12bf938e010a70b797c5bc50b2cc5ca7217cdeda05b5a31bf49e10f98",
+      "headword": "na",
+      "homonym": 2,
+      "page": "na1",
+      "printed_heading": "²na",
+      "evidence": "alttib. na’, engerer Lokativ; Hahn 1996:91,373, Schiefner 1865:19, Beyer 1992:268. Heading starts p.1; long entry continues.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/rnam%20byu%E1%B9%85/1",
+      "html_sha256": "303714caecd9307a307e8594b81b92ef9da56c3f8a79ddd10b82bd9a40ecc283",
+      "headword": "rnam byuṅ",
+      "homonym": 1,
+      "page": "rnam251",
+      "printed_heading": "¹rnam byuṅ",
+      "evidence": "1. rnam ’byuṅ; 2. zweites Jahr des Sechzigjahreszyklus, Erde-Drache; Schuh 2012:1451.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/rnam%20dbye/1",
+      "html_sha256": "f963d90104760cebfb2beb2f0ffccdf7d7bceefef269b426e68e9eb6b9ce567d",
+      "headword": "rnam dbye",
+      "homonym": 1,
+      "page": "rnam251",
+      "printed_heading": "rnam dbye",
+      "evidence": "1. rnam par dbye; 2. Kasus; ScpRol 30,6 and rTjBy 7,155.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/rnam%20sbya%E1%B9%85s/1",
+      "html_sha256": "fcb89b1f49df11618a58f6bf559b06fb395fbba59d3147b0fd574f96fea5b5bf",
+      "headword": "rnam sbyaṅs",
+      "homonym": 1,
+      "page": "rnam251",
+      "printed_heading": "rnam sbyaṅs",
+      "evidence": "gelehrt, Gelehrter; Lex. mkhas pa (brDa, Dagy).",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ba/1",
+      "html_sha256": "c0668016f4ef1288b7ea291e2ef256887423194ff9d24e65672f5779d842814d",
+      "headword": "ba",
+      "homonym": 1,
+      "page": "ba1",
+      "printed_heading": "¹ba",
+      "evidence": "fünfzehnter Buchstabe; ScpRol 37,15 and rTjBy 2,12; Ziffer 15.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ba/2",
+      "html_sha256": "bc23519ceb3aabc4b29dd053f40c9b8f5bc06d4c0a7f7a5a276ba5caa392d8cd",
+      "headword": "ba",
+      "homonym": 2,
+      "page": "ba1",
+      "printed_heading": "²ba",
+      "evidence": "Reference to pa; distinct from letter ¹ba and cow ³ba.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ba/3",
+      "html_sha256": "c0cb3eee9a99cf32d46db69eb9245b6e387c28ca91a38f9f274fe6514e7b73a8",
+      "headword": "ba",
+      "homonym": 3,
+      "page": "ba1",
+      "printed_heading": "³ba",
+      "evidence": "Kuh; K1 ka 264b3 and Prav 83,13; distinct numbered heading starts on this page.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20ka/1",
+      "html_sha256": "5ddde7e15f43b379bd7d18cead6bef26fcf163e0ebb256ff68564ea7eb78104a",
+      "headword": "ba ka",
+      "homonym": 1,
+      "page": "ba1",
+      "printed_heading": "ba ka",
+      "evidence": "ein Baum; Lex. śiṅ źig (Dagy).",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma/1",
+      "html_sha256": "56d46a202b37e6731acffee5a0839a015f208006ca5b360d3319943c5f32c839",
+      "headword": "ma",
+      "homonym": 1,
+      "page": "ma1",
+      "printed_heading": "¹ma",
+      "evidence": "sechzehnter Buchstabe; Hev 1.1.22c and rTjBy 2,14; Ziffer 16.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma/2",
+      "html_sha256": "fabe718abccdd15d8de39a5bea3fbcbd82a05b1cf1360c967adae26c44592eb6",
+      "headword": "ma",
+      "homonym": 2,
+      "page": "ma1",
+      "printed_heading": "²ma",
+      "evidence": "Nominalsuffix; Beyer 1992:123ff., Hahn 1996:34f.; bildet Nomina von Verbstämmen. Begins p.1, not running header on p.3 or p.12.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma/5",
+      "html_sha256": "1d38e69d283fee695adab69df050b2d7495162d91f8f4b57b0a38010cce29019",
+      "headword": "ma",
+      "homonym": 5,
+      "page": "ma12",
+      "printed_heading": "⁵ma",
+      "evidence": "das unten Befindliche, Unteres; Hipp 140,15. Distinct from continuation of ⁴ma Mutter above it.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    },
+    {
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20ki%20ta/1",
+      "html_sha256": "c740f82d393abd48b62acab3eb0c001c63c8a895b0d180d869e7f49e66a32074",
+      "headword": "ma ki ta",
+      "homonym": 1,
+      "page": "ma12",
+      "printed_heading": "ma ki ta",
+      "evidence": "eine Biene; gZi 1:448,5.",
+      "review_basis": "Direct visual comparison of registered scan heading, numbering and definition/citations against acquired editorial witness; headword starts on this page."
+    }
+  ]
+}
