@@ -17,8 +17,14 @@ For the current cross-reference build, serve
 `work/badw_full_reader_20261020/run45` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
-then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
-LoC order, homonym, then stable source identity; this is not Tibetan collation.
+then search any acquired LoC or Tibetan headword. The unfiltered catalogue and
+previous/next use the Tibetan ordering described below. Nonempty searches rank
+exact primary headwords, exact accepted alternatives, primary prefixes, alternative
+prefixes, primary word/syllable boundaries, alternative boundaries, primary
+substrings, and alternative substrings, in that order. Each bucket retains
+Tibetan catalogue order. LoC whitespace and Tibetan tsheg/shad mark boundaries;
+search keys retain punctuation and orthographic distinctions. Enter in the search
+input opens the highest-ranked result; typing alone preserves the open entry.
 
 The complete lightweight headword catalog is searchable locally. Only 100 index
 rows are mounted at once; entry contents load as individual hash-verified files,
@@ -64,6 +70,47 @@ BADW_READER_URL=http://127.0.0.1:8767 \
 The browser suite uses the independent 83-witness fixture for all 47 reviewed
 member journeys, source and citation checks, plus full-catalog pagination, search,
 history, keyboard, integrity failures and mobile layouts.
+
+## Tibetan ordering and search
+
+The build requires Node.js and prepares the catalogue once with the vendored,
+MIT-licensed BDRC `@buda-base/tibetan-sort` 2.3.1 Unicode comparator. There is
+no runtime dependency download or per-keystroke catalogue sort. See
+[`../vendor/tibetan-sort-js/README.md`](../vendor/tibetan-sort-js/README.md)
+for the pinned commit, independent printed WTS fixtures and limitations.
+Attested Tibetan keys take precedence, followed by numeric homonyms and stable
+source-witness identifiers. HTML and PDF witnesses remain separate. WTS's
+wa-zur convention is applied in a wrapper; upstream code is unchanged.
+
+Missing, mixed-script or structurally unsupported Tibetan keys follow keyed
+entries in deterministic NFC LoC code-point order, then numeric homonym and
+source identity. This fallback makes no claim to Sanskrit alphabetical order.
+No speculative spelling is generated. The generated preview records keyed and
+fallback counts and reasons; each fallback catalogue row records its reason.
+
+Search keys use NFC and lowercase, equating only ASCII apostrophe U+0027,
+left/right single quotation marks U+2018/U+2019 and modifier apostrophe U+02BC.
+Apostrophes remain present. Accents, spacing, hyphens and Tibetan distinctions
+are preserved. Primary LoC, attested Tibetan and accepted alternative headwords
+remain searchable. Generated search keys leave every source string unchanged;
+reference resolution does not use them. Empty search restores the catalogue;
+no-match feedback retains the current article without a result highlight.
+
+Small fixtures require no acquired corpus:
+
+```sh
+python3 -m pytest tests/test_badw_full_reader.py -q
+node --test tests/badw_dictionary_prototype.test.cjs
+NODE_PATH=work/badw_reader_browser_tools/node_modules node tests/badw_reader_search.browser.cjs
+```
+
+The full browser suite additionally checks apostrophe equivalence, independent
+Tibetan order, pagination without skipped/duplicated witnesses, selection,
+history, keyboard navigation, mobile widths and absence of entry-body requests
+while filtering/paging. It prints index-load, filter, render and pagination
+timings. Use a fresh output directory and unused server port for concurrent work.
+A cached catalogue may be reprocessed for integration testing without rebuilding
+or modifying its entry shards; this does not replace a complete source rebuild.
 
 ## Reference census and shared-anchor parser family
 

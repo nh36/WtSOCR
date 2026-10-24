@@ -200,3 +200,39 @@ def test_affected_witness_mode_rejects_invalid_selection(tmp_path, monkeypatch, 
     with pytest.raises(SystemExit) as error:
         builder.main()
     assert error.value.code == 2
+
+
+def test_catalogue_independent_print_sequences():
+    import json
+    from build_badw_full_reader import prepare_catalogue
+    fixture = json.loads((Path(__file__).parent/'fixtures/wts_tibetan_order.json').read_text())
+    for sequence in fixture['sequences']:
+        entries = [dict(id=f'pdf:{i}', headword=dict(tibetan=word, loc=f'roman-{99-i}'), source_kind='pdf') for i, word in enumerate(sequence)]
+        prepared = prepare_catalogue(list(reversed(entries)))
+        assert [e['headword']['tibetan'] for e in prepared['entries']] == sequence
+        assert prepared['collation']['fallback'] == 0
+
+
+def test_catalogue_numeric_homonyms_witnesses_fallback_and_source_preservation():
+    import copy
+    from build_badw_full_reader import prepare_catalogue
+    entries = [dict(id=f'{kind}:{number}', headword=dict(tibetan='འགྱུར་།' if kind=='pdf' else 'འགྱུར་', loc='’gyur'),
+                    homonym=number, source_kind=kind, search_aliases=['‘alternative'])
+               for number in [10, 2, 1] for kind in ['pdf', 'html']]
+    for identity, tibetan in [('missing', ''), ('mixed', 'ཀā'), ('sanskrit', 'ཀཱ'), ('stack', 'ཀརྐ'), ('noncanonical', 'ཀཷ')]:
+        entries.append(dict(id=identity, headword=dict(tibetan=tibetan, loc=identity)))
+    original = copy.deepcopy(entries)
+    prepared = prepare_catalogue(entries)
+    actual = prepared['entries']
+    assert entries == original
+    assert [e['id'] for e in actual[:6]] == ['html:1','pdf:1','html:2','pdf:2','html:10','pdf:10']
+    assert len(actual) == len(entries)
+    assert {e['id'] for e in actual} == {e['id'] for e in original}
+    assert prepared['collation']['keyed'] == 6
+    assert prepared['collation']['fallback'] == 5
+    for e in actual[:6]:
+        assert e['headword']['loc'] == '’gyur'
+        assert e['search_keys'][0] == "'gyur"
+        assert "'alternative" in e['search_keys']
+    again = prepare_catalogue(list(reversed(entries)))
+    assert again['entries'] == actual

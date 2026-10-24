@@ -9,6 +9,7 @@ import hashlib
 import json
 import shutil
 import sqlite3
+import subprocess
 import time
 from itertools import chain
 from pathlib import Path
@@ -28,6 +29,13 @@ from badw_bibliography_aliases import load_reviews
 from badw_bibliography_citation_reviews import CitationReviews
 from badw_bibliography_external import load_publications
 from badw_reader_supplements import load_supplements, MANIFEST as SUPPLEMENTS
+
+
+def prepare_catalogue(catalog):
+    """Use pinned BDRC Unicode collation and shared JS search keys offline."""
+    result = subprocess.run(['node', str(ROOT/'scripts/prepare_badw_catalogue.mjs')],
+        input=json.dumps(catalog, ensure_ascii=False), text=True, capture_output=True, check=True)
+    return json.loads(result.stdout)
 
 
 def citation_baseline(packet, projection, reader):
@@ -342,12 +350,14 @@ def main():
     for e in catalog:
         if e['id'] not in sample_ids: sample.append(dict(id=e['id']))
     validate_reviewed(sample, list(rows(SEEDS)))
-    catalog.sort(key=lambda e:(e['headword'].get('loc',''),str(e.get('homonym') or ''),e['id']))
-    write(out/'data.json', dict(entries=catalog, sharded=True, preview=dict(scope='All acquired HTML and PDF witnesses. Source acquisition is not a claim of complete editorial coverage.', ordering='Unicode order of LoC headword, then homonym, then source identity; not traditional Tibetan collation.', reviewed_occurrences=23, suggested_entries=[dict(id=r['source_identity'],label=r['headword']) for r in list(rows(SEEDS))[:5]])))
+    prepared = prepare_catalogue(catalog)
+    catalog = prepared['entries']
+    timings['catalogue_preparation'] = prepared['collation']['seconds']
+    write(out/'data.json', dict(entries=catalog, sharded=True, preview=dict(scope='All acquired HTML and PDF witnesses. Source acquisition is not a claim of complete editorial coverage.', ordering=prepared['ordering'], collation=prepared['collation'], reviewed_occurrences=23, suggested_entries=[dict(id=r['source_identity'],label=r['headword']) for r in list(rows(SEEDS))[:5]])))
     assets = ROOT/'scripts/badw_dictionary_prototype'
     for name in ('index.html','app.js','style.css'): shutil.copyfile(assets/name,out/name)
     shutil.copytree(assets/'fonts', out/'fonts')
-    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
+    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.resolve(), args.baseline_store.resolve(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), ROOT/'scripts/prepare_badw_catalogue.mjs', *sorted((ROOT/'scripts/vendor/tibetan-sort-js').glob('*')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
     print(json.dumps(dict(reader=str(out), census=dict(census))))
     write(out/'build_timing.json', dict(phases=dict(timings), seconds=time.monotonic()-started))
 
