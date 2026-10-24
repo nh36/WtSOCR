@@ -5,6 +5,15 @@ basis names and their geometry policies remain part of the annotation contract.
 """
 import re
 
+# Single, undamaged transliteration words; neither prose nor arbitrary arrows
+# can be consumed as a preceding paradigm member. Productions match the whole
+# introduction and remain subordinate to an individually source-bound review.
+PARADIGM_WORD = r"’?[^\W\d_]{1,40}(?:’[^\W\d_]{1,40})?"
+COMPOUND_FUTURE = (
+    r'(?:auch ' + PARADIGM_WORD + r'(?:, ' + PARADIGM_WORD + r'){0,1}, )?'
+    r'pf\. [↑↓]' + PARADIGM_WORD + r' fut\.'
+)
+
 PERFECT = 'reviewed_printed_reciprocal_perfect'
 FUTURE = PERFECT + '_future'
 IMPERATIVE = PERFECT + '_imperative'
@@ -27,7 +36,8 @@ PATTERNS = {
     'paradigm_to_perfect': dict(pairs=(('pf.', 'pf. zu '), ('pf.', 'pf. bzw. imp. zu ')),
                                alternate=('auch {alternate} pf.', 'pf. zu '), offsets=(0,)),
     'future_to_paradigm': dict(pairs=(('fut. zu', 'fut. '), ('fut. zu', 'fut.')), offsets=(0,)),
-    'paradigm_to_future': dict(pairs=(('fut.', 'fut. zu '),), offsets=(0,)),
+    'paradigm_to_future': dict(pairs=(('fut.', 'fut. zu '),), offsets=(0,),
+                               productions=((COMPOUND_FUTURE, 'fut. zu '),)),
 }
 BASES = frozenset((PERFECT, FUTURE, IMPERATIVE, QUALIFIED, GRAMMATICAL))
 METHODS = {basis: basis.replace('reviewed_printed_', 'reviewed_exact_') for basis in BASES}
@@ -57,8 +67,20 @@ def pairs(claim):
     return ((template[0].format(alternate=alternate), template[1]),)
 
 
+def destinations(claim, source_introduction):
+    desc = description(claim)
+    if desc is None or not isinstance(source_introduction, str):
+        return set()
+    result = {destination for source, destination in pairs(claim)
+              if source_introduction == source}
+    if 'source_alternate_headword' not in claim and len(source_introduction) <= 120:
+        result.update(destination for production, destination in desc.get('productions', ())
+                      if re.fullmatch(production, source_introduction))
+    return result
+
+
 def introduction(claim, text, start):
-    return any(text[:start].strip() == source for source, _ in pairs(claim))
+    return bool(destinations(claim, text[:start].strip()))
 
 
 def passage_matches(passage, source_headword, source_marker, *, basis=PERFECT,
@@ -81,8 +103,7 @@ def passage_matches(passage, source_headword, source_marker, *, basis=PERFECT,
         suffix = opposite + source_homonym + source_headword
     # Historical perfect/qualified records did not pass an introduction into
     # this helper. Their source validator still checks its exact introduction.
-    destinations = {destination for source, destination in desc['pairs']
-                    if source_introduction == source}
+    prefixes = destinations(claim, source_introduction)
     if desc.get('alternate'):
         template, destination = desc['alternate']
         before, after = template.split('{alternate}')
@@ -90,10 +111,10 @@ def passage_matches(passage, source_headword, source_marker, *, basis=PERFECT,
                 source_introduction.endswith(after)):
             alternate = source_introduction[len(before):len(source_introduction)-len(after)]
             if pairs(dict(claim, source_alternate_headword=alternate)):
-                destinations.add(destination)
+                prefixes.add(destination)
     if basis in (PERFECT, QUALIFIED):
-        destinations = {'pf. '}
-    return any(literal[offset:].strip() == prefix + suffix for prefix in destinations)
+        prefixes = {'pf. '}
+    return any(literal[offset:].strip() == prefix + suffix for prefix in prefixes)
 
 
 def positioned_passage(page, runs, source_headword):

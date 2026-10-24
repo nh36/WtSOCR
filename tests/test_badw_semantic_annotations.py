@@ -1688,3 +1688,19 @@ def test_grammatical_review_rejects_stale_or_incompatible_evidence(tmp_path,muta
         path.write_bytes(gzip.compress(json.dumps(page).encode()))
         proof['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
     with pytest.raises(ValueError):run(tmp_path,p,[a])
+
+
+@pytest.mark.parametrize('word,start,end,prefix,target,lo,hi,literal', [
+    ('rgyoṅ',19,26,'pf. ↓brgyaṅs fut.','brgyaṅ',1344,1355,' fut. zu ↑rgyoṅ'),
+    ('’gyed',33,38,'auch ’ged, gyed, pf. ↑bkye fut.','dgye',617,629,' fut. zu ↓’gyed'),
+])
+def test_real_compound_future_reviews_keep_exact_source_and_destination(word,start,end,prefix,target,lo,hi,literal):
+    import json
+    from pathlib import Path
+    rows=[json.loads(line) for line in (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    row,=[r for r in rows if r['claim'].get('source_headword')==word and r['claim'].get('grammatical_pattern')=='paradigm_to_future' and r['claim'].get('lemma')==target]
+    assert row['ranges']==[dict(start=start,end=end,literal=('↓' if word=='rgyoṅ' else '↑')+target)]
+    claim=row['claim'];assert claim['homonym']=='1'
+    assert annotations.reciprocal_perfect_introduction(claim,prefix+' '+row['ranges'][0]['literal'],len(prefix)+1)
+    assert claim['destination_heading']['reciprocal_passage']==dict(run_start=lo,run_end_exclusive=hi,literal=literal)
+    assert row['binding'] and row['physical_selectors']

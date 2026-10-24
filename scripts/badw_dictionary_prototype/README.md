@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run43` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run44` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run43 \
+  --reader work/badw_full_reader_20261020/run44 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -88,7 +88,7 @@ The compact ledger retains every residual occurrence, literal source component,
 source span/binding, facsimile/source links and exact candidate identities.
 Its diagnostic buckets are **provisional**, not seven-way scholarly adjudications:
 336 HTML and three PDF identity/manifestation mismatches; 208 HTML and 110 PDF
-missing exact identities; two HTML and 93 PDF ambiguities. The diagnosed empty-label parser
+missing exact identities; two HTML and 91 PDF ambiguities. The diagnosed empty-label parser
 boundary has now been repaired.
 These are the current post-review groups; the family-specific counts below retain
 comparable intermediate checkpoints.
@@ -802,3 +802,30 @@ serialization. Projection/evidence validation is the measured bottleneck;
 source-copy caching would not address it. The focused suite passed 673 tests;
 the required release regressions passed 315 tests and 62 subtests. Existing
 status warnings remain unchanged; no release artifacts were rebuilt.
+
+Run44 continues with the bounded compound-future family: **rgyoṅ → brgyaṅ¹**
+(WTS 2 pp. 461/505) and **’gyed → dgye¹** (WTS 2 pp. 382/333).
+The printed source paradigms name a preceding perfect form; each numbered
+destination explicitly returns to the source with `fut. zu`. All competing
+homonyms were inspected. One bounded declarative production supports these two
+individually bound reviews; no headword-specific validation branch is added.
+Historical annotations remain byte-for-byte intact.
+
+Current census: **7,624 resolved / 750 residual** target units. HTML remains
+4,742 resolved / 544 unresolved / 2 ambiguous; PDF is 2,882 resolved / 113
+unresolved / 91 ambiguous. Across the two batches, 12 of the original 103 PDF
+ambiguities are accepted and 91 deferred. Decisions and explicit reasons are in
+`work/badw_full_reader_20261020/grammatical_batch44/adjudicated_queue.jsonl`.
+Semantic return references and shared returns remain insufficient evidence;
+the interleaved sense-number typography in **’khris** requires a separately
+guarded mechanism. No printed error is asserted.
+
+The two-witness investigation check took 3.3 seconds. The second full build took
+828 seconds (761 in projection/evidence validation). Its 29,878-witness
+differential found exactly two improved references and 29,876 byte-identical
+entries; source text, citations, existing destinations and the 23/50/47 checkpoint
+remain unchanged. The focused suite passed 687 tests, Node passed 15 tests, and
+the required regressions passed 315 tests and 62 subtests. Browser validation
+passed all 12 batch journeys, 56 member journeys, 82 citation journeys and 58
+facsimile checks at widths 1440, 320, 390 and 768, with no browser errors.
+Two complete builds were performed across these batches, totaling about 28 minutes.

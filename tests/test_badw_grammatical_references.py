@@ -52,6 +52,31 @@ def test_alternate_form_is_literal_and_individually_bound():
     assert not description(dict(basis=GRAMMATICAL,grammatical_pattern=PERFECT))
 
 
+@pytest.mark.parametrize('prefix', ['pf. ↓brgyaṅs fut.', 'auch ’ged, gyed, pf. ↑bkye fut.'])
+def test_future_inside_bounded_compound_paradigm(prefix):
+    claim=dict(basis=GRAMMATICAL,grammatical_pattern='paradigm_to_future')
+    text=prefix+' ↓ka'
+    assert introduction(claim,text,len(prefix)+1)
+    assert passage_matches(dict(literal=' fut. zu ↑bcum'),'bcum','↓',
+        basis=GRAMMATICAL,grammatical_pattern='paradigm_to_future',source_introduction=prefix)
+    assert not passage_matches(dict(literal=' pf. zu ↑bcum'),'bcum','↓',
+        basis=GRAMMATICAL,grammatical_pattern='paradigm_to_future',source_introduction=prefix)
+
+
+@pytest.mark.parametrize('prefix', [
+    'German prose pf. ↓brgyaṅs fut.', 'pf. ↓brgyaṅs ↑ka fut.',
+    'pf. ↓⟦UNKNOWN:ink⟧ fut.', 'pf. ↓'+'a'*41+' fut.',
+    'pf. ↓brgyaṅs imp.', 'pf. ↓brgyaṅs, fut.',
+    'auch ka, kha, ga, pf. ↑bkye fut.', 'auch ka German, pf. ↑bkye fut.',
+    'pf. ↓brgyaṅs German fut.', 'pf. ↓brgyaṅs\nfut.',
+])
+def test_compound_paradigm_cannot_consume_prose_or_unbounded_members(prefix):
+    claim=dict(basis=GRAMMATICAL,grammatical_pattern='paradigm_to_future')
+    assert not introduction(claim,prefix+' ↓ka',len(prefix)+1)
+    assert not passage_matches(dict(literal=' fut. zu ↑bcum'),'bcum','↓',
+        basis=GRAMMATICAL,grammatical_pattern='paradigm_to_future',source_introduction=prefix)
+
+
 def geometry():
     page=dict(representative_fonts=[dict(font_id='r',family='TGaramond',style='regular'),
                                     dict(font_id='i',family='TGaramond',style='italic')])
