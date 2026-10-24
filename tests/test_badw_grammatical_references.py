@@ -114,3 +114,48 @@ def test_terminal_boundary_is_not_a_run_boundary(following,accepted):
     runs=[dict(decoded_unicode='bsgrag'),dict(decoded_unicode=following)]
     assert complete_target(runs,1,2)==accepted
     assert complete_target(runs,2,2)
+
+
+def first_sense_geometry():
+    from badw_grammatical_references import first_sense_prefix
+    page,_=geometry()
+    def run(text,xs):
+        return dict(decoded_unicode=text,font_id='r',glyphs=[dict(unicode=c,x=x,y=100) for c,x in zip(text,xs)])
+    runs=[run('heading',[1]*7),run('.',[11]),run('1',[10]),run('1.',[10,11]),
+          run('.  pf. zu ↑',[11,11.3,11.6,12,12.5,13,13.5,14,14.5,15,15.5])]
+    page['positioned_page']=dict(positioned_text_runs=runs)
+    span=dict(loc_run_indices=[0],run_end_exclusive=8)
+    proof=dict(run_start=4,run_end_exclusive=7,run_start_offset=3,
+               literal='.  pf. zu ↑bcum',numbered_sense=dict(run_start=2,label='1.'))
+    return page,span,proof
+
+
+def test_overprinted_first_sense_retains_literal_and_requires_physical_proof():
+    from badw_grammatical_references import first_sense_prefix
+    page,span,proof=first_sense_geometry()
+    assert first_sense_prefix(page,span,proof)
+    assert passage_matches(proof,'bcum','↓',basis=GRAMMATICAL,
+        source_introduction='pf.',grammatical_pattern='paradigm_to_perfect')
+    assert proof['literal']=='.  pf. zu ↑bcum'
+    assert not passage_matches(dict(proof,numbered_sense=None),'bcum','↓',basis=GRAMMATICAL,
+        source_introduction='pf.',grammatical_pattern='paradigm_to_perfect')
+
+
+@pytest.mark.parametrize('damage',['later_sense','prior_body','prior_sense','font','unknown',
+    'baseline','horizontal','different_digit','missing_copy','offset','outside','heading'])
+def test_first_sense_cannot_join_unrelated_or_unverified_typography(damage):
+    from badw_grammatical_references import first_sense_prefix
+    page,span,p=first_sense_geometry();r=page['positioned_page']['positioned_text_runs']
+    if damage=='later_sense':p['numbered_sense']['label']='2.'
+    if damage=='prior_body':r[1]['decoded_unicode']='German prose'
+    if damage=='prior_sense':r[1]['decoded_unicode']='1. pf. ↑other 2.'
+    if damage=='font':r[2]['font_id']='i'
+    if damage=='unknown':r[2]['glyphs'][0]['unknown']=True
+    if damage=='baseline':r[2]['glyphs'][0]['y']=99
+    if damage=='horizontal':r[2]['glyphs'][0]['x']=30
+    if damage=='different_digit':r[2]['decoded_unicode']='2';r[2]['glyphs'][0]['unicode']='2'
+    if damage=='missing_copy':r[2]['decoded_unicode']='';r[2]['glyphs']=[]
+    if damage=='offset':p['run_start_offset']=2
+    if damage=='outside':span['run_end_exclusive']=4
+    if damage=='heading':span['loc_run_indices']=[3]
+    assert not first_sense_prefix(page,span,p)

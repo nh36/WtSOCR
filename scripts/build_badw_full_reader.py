@@ -201,7 +201,7 @@ def main():
     timings['setup'] = time.monotonic() - started
     for i, r in enumerate(chain(rows(args.projections), supplemental_projections)):
         p, pred = r['packet'], r['projection']
-        if selected is not None and p['identity'] not in selected:
+        if selected is not None and r['reader']['id'] not in selected:
             continue
         tick = time.monotonic()
         baseline = citation_baseline(p, pred, r['reader'])
@@ -285,7 +285,7 @@ def main():
         entry['source_kind'] = kind
         entry['sources'] = sources or [dict(url=entry['source_url'], label='BAdW editorial source', sha256=objects[0]['sha256'])]
         if selected is not None:
-            meta = frozen[identity]
+            meta = frozen[entry['id']]
             body = (args.baseline_reader/meta['path']).read_bytes()
             if digest(body) != meta['sha256']:
                 raise ValueError('baseline reader shard hash differs')

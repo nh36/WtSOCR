@@ -11,7 +11,7 @@ import time
 from pathlib import Path
 
 from build_badw_connected_reader import ROOT, INDEX, CANON
-from badw_grammatical_references import complete_target
+from badw_grammatical_references import complete_target, first_sense_prefix
 
 
 def sha(path):
@@ -68,6 +68,14 @@ def discover(reader, census, index_path=INDEX, canonical=CANON):
                             window = dict(run_start=start, run_end_exclusive=end+1,
                                           literal=literal, runs=runs[start:end+1])
                             if complete_target(runs, end+1, hi):
+                                # A discovery hint only: bind a possible first-sense
+                                # offset to actual overprinted glyph coordinates.
+                                for sense_start in range(max(max(span['loc_run_indices'])+1, start-8), start):
+                                    proof = dict(window, run_start_offset=3,
+                                                 numbered_sense=dict(run_start=sense_start, label='1.'))
+                                    if first_sense_prefix(page, span, proof):
+                                        window['numbered_sense_candidate'] = dict(
+                                            run_start_offset=3, numbered_sense=proof['numbered_sense'])
                                 matches.append(window)
                             else:
                                 contradicted.append(dict(window, reason='Return is a prefix inside a longer word split across PDF runs.'))

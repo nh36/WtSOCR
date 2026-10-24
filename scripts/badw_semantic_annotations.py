@@ -19,9 +19,10 @@ import re
 from build_badw_structural_review_packet import VERSION as PACKET_VERSION, rows
 
 from badw_grammatical_references import (BASES as GRAMMATICAL_BASES, GRAMMATICAL,
-    introduction, passage_matches, positioned_passage, complete_target)
+    introduction, passage_matches, positioned_passage, complete_target, first_sense_prefix)
 
 VERSION = "badw-semantic-annotation-v1"
+EDITORIAL_PDF_GRAMMAR = 'reviewed_editorial_pdf_grammatical_identity'
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 RELATIONS = {
     "citation_of": ({"citation"}, {"example", "definition", "sense", "lexical_parallel", "citable_passage"}),
@@ -320,6 +321,14 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
         if not isinstance(claim.get('source_homonym'), str) or not re.fullmatch(r'[1-9][0-9]*', claim['source_homonym']):
             raise ValueError('qualified reciprocal requires an explicit source homonym')
         reviewed_source_homonym(claim, packet, canonical_root)
+    reviewed_reciprocal_destination(claim, ranges[0]['literal'][0],
+        packet['review_text'][:ranges[0]['start']].strip(), cache, canonical_root, verified)
+
+
+def reviewed_reciprocal_destination(claim, marker, source_introduction, cache, canonical_root, verified):
+    """Replay the shared, article-bound destination evidence for a review."""
+    from extract_badw_pdf_entries import extract_page
+    qualified = claim['basis'] == 'reviewed_printed_qualified_reciprocal_perfect'
     proof = claim.get('destination_heading')
     _keys(proof, ('entry_id', 'headword', 'homonym', 'entry_start_source_span',
                   'canonical_object_sha256', 'printed_page', 'reciprocal_passage'))
@@ -340,15 +349,18 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
             page['visible_body_sha256'] != digest(page['source_faithful_decoded_text'])):
         raise ValueError('reciprocal destination differs from canonical numbered heading')
     passage = proof['reciprocal_passage']
-    _keys(passage, ('run_start', 'run_end_exclusive', 'literal'), ('run_start_offset',))
+    _keys(passage, ('run_start', 'run_end_exclusive', 'literal'), ('run_start_offset', 'numbered_sense'))
     a, b = passage['run_start'], passage['run_end_exclusive']
     if (type(a) is not int or type(b) is not int or
             not max(span['loc_run_indices']) < a < b <= span['run_end_exclusive'] or b-a > 32):
         raise ValueError('reciprocal passage outside reviewed destination')
     runs = page['positioned_page']['positioned_text_runs'][a:b]
+    if 'numbered_sense' in passage and (claim['basis'] != GRAMMATICAL or
+            not first_sense_prefix(page, span, passage)):
+        raise ValueError('reciprocal numbered sense lacks exact positioned first-sense evidence')
     if (''.join(r['decoded_unicode'] for r in runs) != passage['literal'] or
-            not reciprocal_perfect_passage(passage, claim['source_headword'], ranges[0]['literal'][0],
-                basis=claim['basis'], source_introduction=packet['review_text'][:ranges[0]['start']].strip(),
+            not reciprocal_perfect_passage(passage, claim['source_headword'], marker,
+                basis=claim['basis'], source_introduction=source_introduction,
                 source_homonym=claim.get('source_homonym'), grammatical_pattern=claim.get('grammatical_pattern')) or
             passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
             (not qualified_reciprocal_geometry(page, runs, claim.get('source_homonym')) if qualified
@@ -362,6 +374,56 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):
         raise ValueError('reciprocal perfect lacks exact positioned source evidence')
+
+
+def reviewed_editorial_pdf_grammar(claim, ranges, packet, cache, canonical_root, verified):
+    """Validate one reviewed numbered HTML link to an unnumbered PDF identity.
+
+    An explicit DOM heading introduction and a complementary printed paradigm
+    must agree. This does not create a general equivalence between homonym 1
+    and an unnumbered witness, or repair an absent editorial URL globally.
+    """
+    from badw_article_parser import (parse_database_article, parse_html, decode_html_bytes,
+        find_first, find_all, _build_text_audit, _located_field)
+    from urllib.parse import unquote, urlsplit
+    if (packet['source_kind'] != 'html' or len(ranges) != 1 or canonical_root is None or
+            claim.get('homonym') != '' or 'member_ordinal' in claim or
+            any(not _string(claim.get(k)) for k in ('occurrence_id', 'source_headword',
+                'source_target_url', 'source_target_label', 'lemma')) or
+            claim['source_target_label'] != claim['lemma'] or
+            ranges[0]['literal'] not in ('↑'+claim['lemma'], '↓'+claim['lemma'])):
+        raise ValueError('invalid reviewed editorial PDF grammatical identity')
+    url = urlsplit(claim['source_target_url'])
+    if (url.scheme != 'https' or url.netloc != 'wts-digital.badw.de' or url.query or url.fragment or
+            unquote(url.path) != '/lemma/'+claim['lemma']+'/1'):
+        raise ValueError('editorial numbered URL differs from exact reviewed identity')
+    obj = packet['source']['source_object']
+    raw = (Path(cache)/obj['object_path']).read_bytes()
+    article = parse_database_article(raw,
+        source_metadata=dict(obj, delivery_type='database_article', valid_resource=True))
+    matches = [r for r in article['cross_references']
+        if (r['locator']['visible_text_start'], r['locator']['visible_text_end']) ==
+           (ranges[0]['start'], ranges[0]['end']) and
+        r['target_url'] == claim['source_target_url'] and r['target_text'] == claim['source_target_label']]
+    if (article['article_source_text'] != packet['review_text'] or
+            article['lemma'] != claim['source_headword'] or len(matches) != 1):
+        raise ValueError('editorial grammar lacks exact source DOM reference')
+    dom = find_first(parse_html(decode_html_bytes(raw)[0]), tag='div', class_name='text')
+    _, _, fragments = _build_text_audit(dom)
+    fields = [_located_field(e, fragments) for e in find_all(dom, class_name='zusatz')]
+    fields = [f for f in fields if f['locator']['visible_text_start'] <= ranges[0]['start'] <
+              ranges[0]['end'] <= f['locator']['visible_text_end']]
+    if len(fields) != 1:
+        raise ValueError('editorial reference lacks bounded grammatical introduction')
+    field = fields[0]['locator']
+    intro = packet['review_text'][field['visible_text_start']:ranges[0]['start']].strip()
+    if packet['review_text'][ranges[0]['end']:field['visible_text_end']].strip() != '.':
+        raise ValueError('editorial reference crosses grammatical destination boundary')
+    grammatical = dict(claim, basis=GRAMMATICAL)
+    if not introduction(grammatical, intro, len(intro)):
+        raise ValueError('editorial introduction differs from complementary grammar')
+    reviewed_reciprocal_destination(grammatical, ranges[0]['literal'][0], intro,
+                                   cache, canonical_root, verified)
 
 
 def printed_misplaced_arrow(claim, ranges, text, lines):
@@ -476,7 +538,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
         elif row["kind"] == "cross_reference_target":
             _keys(claim, ("occurrence_id", "source_target_url", "source_target_label",
                           "lemma", "homonym", "basis"), ("source_headword", "destination_heading", "member_ordinal", "source_alternate_headword", "source_homonym", "grammatical_pattern"))
-            if ('grammatical_pattern' in claim and claim['basis'] != GRAMMATICAL):
+            if ('grammatical_pattern' in claim and claim['basis'] not in (GRAMMATICAL, EDITORIAL_PDF_GRAMMAR)):
                 raise ValueError('grammatical pattern outside grammatical review')
             if ('source_homonym' in claim and
                     claim['basis'] != 'reviewed_printed_qualified_reciprocal_perfect'):
@@ -485,7 +547,9 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                     claim['basis'] not in ('reviewed_printed_reciprocal_perfect',
                         'reviewed_printed_reciprocal_perfect_imperative', GRAMMATICAL)):
                 raise ValueError('alternate source spelling outside reciprocal review')
-            if claim['basis'] == 'reviewed_editorial_headword_variant':
+            if claim['basis'] == EDITORIAL_PDF_GRAMMAR:
+                reviewed_editorial_pdf_grammar(claim, ranges, packet, cache, canonical_root, verified)
+            elif claim['basis'] == 'reviewed_editorial_headword_variant':
                 from badw_article_parser import parse_database_article
                 from urllib.parse import unquote, urlsplit
                 if (packet['source_kind'] != 'html' or len(ranges) != 1 or
@@ -839,10 +903,13 @@ def apply_validated_annotations(packet, prediction, annotations):
             annotation_id=row["annotation_id"], binding=row["binding"],
             physical_selectors=row["physical_selectors"], ranges=row["ranges"], review=row["review"])
         if claim['basis'] in ('reviewed_split_editorial_anchor', 'reviewed_editorial_member_whitespace',
-                              'reviewed_editorial_headword_variant'):
+                              'reviewed_editorial_headword_variant', EDITORIAL_PDF_GRAMMAR):
             targets[occurrence['id']]['basis'] = claim['basis']
         if claim['basis'] == 'reviewed_editorial_headword_variant':
             targets[occurrence['id']]['destination_heading'] = deepcopy(claim['destination_heading'])
+        if claim['basis'] == EDITORIAL_PDF_GRAMMAR:
+            for field in ('destination_heading', 'source_headword', 'grammatical_pattern'):
+                targets[occurrence['id']][field] = deepcopy(claim[field])
         if claim['basis'] == 'reviewed_editorial_member_whitespace':
             targets[occurrence['id']]['member_ordinal'] = claim['member_ordinal']
     result["reviewed_cross_reference_targets"] = targets

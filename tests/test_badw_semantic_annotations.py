@@ -1704,3 +1704,71 @@ def test_real_compound_future_reviews_keep_exact_source_and_destination(word,sta
     assert annotations.reciprocal_perfect_introduction(claim,prefix+' '+row['ranges'][0]['literal'],len(prefix)+1)
     assert claim['destination_heading']['reciprocal_passage']==dict(run_start=lo,run_end_exclusive=hi,literal=literal)
     assert row['binding'] and row['physical_selectors']
+
+
+def editorial_pdf_grammar_fixture(tmp_path, *, intro='pf. zu', tail='.', url_number='1', in_heading=True):
+    import gzip,json
+    from badw_article_parser import parse_database_article
+    from extract_badw_pdf_entries import extract_page
+    _,a,_,page,path=grammatical_fixture(tmp_path)
+    # An independently unnumbered destination, rather than a silently assigned 1.
+    runs=page['positioned_page']['positioned_text_runs']
+    del runs[2]
+    for i,r in enumerate(runs):r['run_index']=i
+    page['positioned_page']['tibetan_text_candidates'][1]['run_indices']=[5]
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in page['positioned_page']['positioned_text_runs'])
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    d=extract_page(page,path.name)[0][0]
+    proof=a['claim']['destination_heading']
+    proof['reciprocal_passage']['run_start']-=1
+    proof['reciprocal_passage']['run_end_exclusive']-=1
+    proof.update(homonym='',entry_id=d['id'],entry_start_source_span=d['source_span'],canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    tag='zusatz' if in_heading else 'sense'
+    raw=(f'<div class="text"><span class="lemma"><span class="lem">bcum</span></span>'
+         f'<span class="{tag}">{intro} <span class="link">↓<a class="link lemma" href="/lemma/ka/{url_number}">ka</a></span>{tail}</span></div>').encode()
+    sha,rel=put(tmp_path,raw);obj=dict(sha256=sha,object_path=rel,final_url='https://wts-digital.badw.de/lemma/bcum/1')
+    article=parse_database_article(raw,source_metadata=dict(obj,delivery_type='database_article',valid_resource=True,final_url='https://wts-digital.badw.de/lemma/bcum/1'))
+    text=article['article_source_text'];p=packet(tmp_path)
+    p.update(review_text=text,review_text_sha256=annotations.digest(text),source=dict(source_object=obj,article_source_text=text,dom_full_text=text))
+    ref=article['cross_references'][0];loc=ref['locator'];ranges=[dict(start=loc['visible_text_start'],end=loc['visible_text_end'],literal='↓ka')]
+    row=claim(p,kind='cross_reference_target',ranges=ranges)
+    row['claim']=dict(a['claim'],basis=annotations.EDITORIAL_PDF_GRAMMAR,homonym='',source_target_url=ref['target_url'])
+    return p,row
+
+
+def test_reviewed_editorial_url_retains_distinct_unnumbered_printed_identity(tmp_path):
+    p,a=editorial_pdf_grammar_fixture(tmp_path)
+    original=copy.deepcopy(p)
+    accepted=run(tmp_path,p,[a]);assert accepted[0]['effective_status']=='accepted'
+    assert a['claim']['source_target_url'].endswith('/ka/1')
+    assert a['claim']['homonym']=='' and p==original
+
+
+@pytest.mark.parametrize('damage',['hash','span','source','numbered_destination','url_number','intro','tail','outside_heading','destination'])
+def test_editorial_pdf_review_rejects_unbound_or_noncomplementary_identity(tmp_path,damage):
+    opts={}
+    if damage=='url_number':opts['url_number']='2'
+    if damage=='intro':opts['intro']='German prose pf. zu'
+    if damage=='tail':opts['tail']='. Another statement'
+    if damage=='outside_heading':opts['in_heading']=False
+    p,a=editorial_pdf_grammar_fixture(tmp_path,**opts)
+    if damage=='hash':a['binding']['text_sha256']='0'*64
+    if damage=='span':a['ranges'][0]['end']-=1
+    if damage=='source':a['claim']['source_headword']='other'
+    if damage=='numbered_destination':a['claim']['homonym']='1'
+    if damage=='destination':a['claim']['destination_heading']['entry_id']='other'
+    with pytest.raises(ValueError):run(tmp_path,p,[a])
+
+
+def test_real_return_and_first_sense_reviews_preserve_source_and_competitors():
+    import json
+    rows=[json.loads(l) for l in (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    bkye,=[r for r in rows if r['claim'].get('basis')==annotations.EDITORIAL_PDF_GRAMMAR]
+    assert bkye['ranges']==[dict(start=62,end=68,literal='↓’gyed')]
+    assert bkye['claim']['homonym']==''
+    khri,=[r for r in rows if r['claim'].get('source_headword')=='’khri' and r['claim'].get('basis')==annotations.GRAMMATICAL]
+    passage=khri['claim']['destination_heading']['reciprocal_passage']
+    assert passage==dict(run_start=776,run_end_exclusive=787,literal='.  pf. zu ↑’khri',run_start_offset=3,numbered_sense=dict(run_start=771,label='1.'))
+    assert khri['claim']['homonym']=='1'
+    assert '²’khris' in khri['review']['evidence']

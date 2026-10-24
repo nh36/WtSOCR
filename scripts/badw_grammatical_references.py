@@ -91,7 +91,10 @@ def passage_matches(passage, source_headword, source_marker, *, basis=PERFECT,
     desc = description(claim)
     offset = passage.get('run_start_offset', 0)
     literal = passage.get('literal', '')
-    if (desc is None or type(offset) is not int or offset not in desc['offsets'] or
+    numbered = (basis == GRAMMATICAL and offset == 3 and
+                literal.startswith('.  ') and isinstance(passage.get('numbered_sense'), dict) and
+                passage['numbered_sense'].get('label') == '1.')
+    if (desc is None or type(offset) is not int or (offset not in desc['offsets'] and not numbered) or
             (offset == 2 and not literal.startswith(', ')) or
             source_marker not in ('↑', '↓') or not source_headword):
         return False
@@ -115,6 +118,51 @@ def passage_matches(passage, source_headword, source_marker, *, basis=PERFECT,
     if basis in (PERFECT, QUALIFIED):
         prefixes = {'pf. '}
     return any(literal[offset:].strip() == prefix + suffix for prefix in prefixes)
+
+
+def first_sense_prefix(page, span, passage):
+    """Verify an overprinted first-sense label attached to a grammar run.
+
+    This removes nothing from the source. It licenses a review's three-character
+    lookup offset only at the beginning of an article, with independently
+    positioned copies of the same 1 and period. Later senses cannot qualify.
+    """
+    proof = passage.get('numbered_sense')
+    if not isinstance(proof, dict) or set(proof) != {'run_start', 'label'} or proof['label'] != '1.':
+        return False
+    start, a = proof['run_start'], passage['run_start']
+    heading_end = max(span['loc_run_indices']) + 1
+    if (type(start) is not int or passage.get('run_start_offset') != 3 or
+            not heading_end <= start < a < span['run_end_exclusive'] or a-start > 8):
+        return False
+    runs = page['positioned_page']['positioned_text_runs']
+    if ''.join(r['decoded_unicode'] for r in runs[heading_end:start]).strip() not in ('', '.'):
+        return False
+    fonts = {f['font_id']: (f.get('family'), f.get('style')) for f in page['representative_fonts']}
+    selected = runs[start:a+1]
+    first = selected[-1]
+    if not first['decoded_unicode'].startswith('.  p') or len(first.get('glyphs', [])) < 4:
+        return False
+    glyphs = []
+    for i, run in enumerate(selected):
+        gs = run.get('glyphs', [])[:3] if i == len(selected)-1 else run.get('glyphs', [])
+        text = run['decoded_unicode'][:3] if i == len(selected)-1 else run['decoded_unicode']
+        if (fonts.get(run.get('font_id')) != ('TGaramond', 'regular') or run.get('unknown_glyphs') or
+                not gs or ''.join(g.get('unicode', '') for g in gs) != text or
+                any(g.get('unknown') or g.get('x') is None or g.get('y') is None for g in gs)):
+            return False
+        glyphs.extend(gs)
+    p = first['glyphs'][3]
+    if (p.get('unicode') != 'p' or p.get('x') is None or p.get('y') is None or
+            any(g['unicode'] not in '1. ' or abs(g['y']-p['y']) > .04 or
+                not 0 < p['x']-g['x'] < 3 for g in glyphs)):
+        return False
+    digits = [g for g in glyphs if g['unicode'] == '1']
+    dots = [g for g in glyphs if g['unicode'] == '.']
+    return (len(digits) >= 2 and len(dots) >= 2 and
+            max(g['x'] for g in digits)-min(g['x'] for g in digits) <= .04 and
+            max(g['x'] for g in dots)-min(g['x'] for g in dots) <= .04 and
+            max(g['x'] for g in digits) < min(g['x'] for g in dots))
 
 
 def positioned_passage(page, runs, source_headword):

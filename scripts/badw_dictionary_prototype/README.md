@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run44` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run45` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -829,3 +829,53 @@ the required regressions passed 315 tests and 62 subtests. Browser validation
 passed all 12 batch journeys, 56 member journeys, 82 citation journeys and 58
 facsimile checks at widths 1440, 320, 390 and 768, with no browser errors.
 Two complete builds were performed across these batches, totaling about 28 minutes.
+
+Run45 repairs two source-bound return references. **bkye → ’gyed** is explicit
+in both the printed entry (WTS 1 p. 215) and its acquired HTML heading. Parsing
+was correct; the unresolved numbered editorial URL did not establish identity
+with the acquired unnumbered PDF witness. A new reviewed grammatical-identity
+basis validates the exact DOM anchor and bounded heading introduction against
+the complementary printed paradigm in ’gyed (WTS 2 p. 382). It does not equate
+HTML homonym 1 with unnumbered PDFs generally. The accepted ’gyed → dgye¹
+interpretation is unchanged.
+
+**’khri → ’khris¹** (WTS 2 pp. 163/166) is established by the destination's
+first sense, `pf. zu ↑’khri`; competing ’khris² lacks that paradigm. Overprinted
+copies of the first sense number and period interleave with the grammatical
+run, yielding `.  pf. zu ↑’khri`. The shared validator now admits the exact
+reviewed lookup offset only with same-baseline overlapping glyph evidence at
+the start of the destination article. Source literals and sense labels remain
+intact; later senses, intervening text, incompatible fonts and displaced glyphs
+are rejected. No parser rewrite, source correction or printed error is asserted.
+
+Discovery screened all **91 PDF ambiguities** in 6.8 seconds: seven occurrences
+have nine candidate return identities, but only ’khri has the verified
+overprinted-first-sense structure. One is accepted and 90 remain deferred;
+previous adjudications are retained in
+`work/badw_full_reader_20261020/grammatical_batch45/adjudicated_queue.jsonl`.
+The next family is HTML-to-PDF grammatical identity: screening the 336 baseline
+HTML identity mismatches found 26 grammatical occurrences including bkye.
+The other 25 are discovery candidates, not accepted links; their queue is
+`grammatical_batch45/html_grammatical_identity_queue.jsonl` under the same work root.
+
+Current census: **7,626 resolved / 748 residual** target units across 29,878
+witnesses. HTML has 4,743 resolved / 543 unresolved / 2 ambiguous; PDF has
+2,883 resolved / 113 unresolved / 90 ambiguous. The full differential finds
+exactly two improved references and 29,876 byte-identical entry files. All
+source text, citations, components, prior accepted destinations and the
+23/50/47 multiple-target checkpoint remain unchanged. Historical annotation
+rows are byte-for-byte unchanged; two reviews are appended.
+
+The two-witness investigation check took 4.6 seconds. One complete build took
+936 seconds, including 848 seconds in projection/evidence validation. The fast
+path also now selects HTML witnesses using stable reader identities, matching
+the catalog rather than the packet's editorial URL identity. The focused suite
+passed 711 tests; Node passed 15 tests; the required regressions passed 315 tests
+and 62 subtests. Existing status warnings remain unchanged; release artifacts
+and frontend assets were not modified.
+
+Browser certification passed all 14 grammatical batch journeys (including the
+new bkye return link), keyboard/history navigation, 56 member journeys, 82
+citation journeys and 58 facsimile checks at widths 1440, 320, 390 and 768,
+with no browser errors. Initial catalog load took 298 milliseconds in the local
+test. The rendered mobile page was visually inspected.
