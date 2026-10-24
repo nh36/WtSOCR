@@ -1540,3 +1540,99 @@ def test_real_qualified_reciprocal_preserves_numbered_source_and_positioned_pass
     assert row['ranges']==[dict(start=8,end=14,literal='↓’thul')]
     assert proof['printed_page']==376
     assert (passage['run_start'],passage['run_end_exclusive'],passage['literal'])==(872,879,' pf. ↑1thul')
+
+
+def imperative_reciprocal_fixture(tmp_path, wrapped=False):
+    import gzip, json
+    from test_extract_badw_pdf_entries import _run
+    from extract_badw_pdf_entries import extract_page
+    p,a,base,page,path=reciprocal_fixture(tmp_path)
+    prefix=' pf. und imp. ' if wrapped else ' alttib. auch bcumd pf. und imp. zu '
+    marker='↑' if wrapped else '↓'
+    text=prefix+marker+'ka zusammenziehen.';start=len(prefix);end=start+3
+    p['review_text']=p['source']['source_faithful_text']=text
+    p['review_text_sha256']=annotations.digest(text)
+    p['source']['visual_lines'][0].update(text=text)
+    p['source']['visual_lines'][0]['style_spans'][0]['end']=len(text)
+    a.update(binding=annotations.binding(p),ranges=[dict(start=start,end=end,literal=marker+'ka')])
+    a['physical_selectors']=annotations.physical_selectors(p,a['ranges'])
+    a['claim']['basis']='reviewed_printed_reciprocal_perfect_imperative'
+    if not wrapped: a['claim']['source_alternate_headword']='bcumd'
+    base['nodes'][0]['end']=len(text)
+    base['nodes'][-1].update(start=start,end=end)
+    base['original_structure']['visual_lines']=copy.deepcopy(p['source']['visual_lines'])
+    base['original_structure']['candidates']['cross_references'][0].update(visual_start=start,visual_end=end)
+    runs=page['positioned_page']['positioned_text_runs']
+    replacement=([_run(4,'pf. und imp. zu','r'),_run(5,'↓','r',398.76),_run(6,'bcum','i',398.76)]
+                 if wrapped else [_run(4,' pf. und imp. ↑','r'),_run(5,'bcum','i')])
+    if wrapped:
+        replacement[0]['x']=25;replacement[1]['x']=10;replacement[2]['x']=11
+    else: replacement[1]['x']=12
+    runs[4:5]=replacement
+    for i,r in enumerate(runs): r['run_index']=i
+    page['positioned_page']['tibetan_text_candidates'][1]['run_indices']=[4+len(replacement)]
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    a['claim']['destination_heading'].update(canonical_object_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        entry_start_source_span=extract_page(page,path.name)[0][0]['source_span'],
+        reciprocal_passage=dict(run_start=4,run_end_exclusive=4+len(replacement),literal=''.join(r['decoded_unicode'] for r in replacement)))
+    return p,a,base,page,path
+
+
+@pytest.mark.parametrize('wrapped',[False,True])
+def test_perfect_imperative_replays_exact_introduction_and_preserves_source(tmp_path,wrapped):
+    p,a,base,_,_=imperative_reciprocal_fixture(tmp_path,wrapped)
+    before=copy.deepcopy((p,a,base))
+    accepted=run(tmp_path,p,[a])
+    result=annotations.apply_validated_annotations(p,base,accepted)
+    assert result['reviewed_cross_reference_targets']['xref']['homonym']=='1'
+    assert result['nodes']==base['nodes'] and result['original_structure']==base['original_structure']
+    assert (p,a,base)==before
+
+
+@pytest.mark.parametrize('wrapped',[False,True])
+@pytest.mark.parametrize('fault',['hash','page','extent','bounds','unknown','prefix_font','target_font',
+    'x_missing','x_backwards','x_distant','wrong_baseline','prose','direction','intro','alternate'])
+def test_perfect_imperative_proof_fails_closed(tmp_path,wrapped,fault):
+    import gzip,json
+    p,a,_,page,path=imperative_reciprocal_fixture(tmp_path,wrapped)
+    proof=a['claim']['destination_heading'];runs=page['positioned_page']['positioned_text_runs']
+    last=6 if wrapped else 5
+    if fault=='page': proof['printed_page']=8
+    if fault=='extent': proof['reciprocal_passage']['run_end_exclusive']+=1
+    if fault=='bounds': proof['reciprocal_passage']['run_start']=3
+    if fault=='unknown': runs[last]['unknown_glyphs']=1
+    if fault=='prefix_font': runs[4]['font_id']='i'
+    if fault=='target_font': runs[last]['font_id']='r'
+    if fault=='x_missing': runs[last]['x']=None
+    if fault=='x_backwards': runs[last]['x']=0
+    if fault=='x_distant': runs[last]['x']=100
+    if fault=='wrong_baseline': runs[last]['y']=410
+    if fault=='prose': runs[last]['decoded_unicode']+=' prose';proof['reciprocal_passage']['literal']+=' prose'
+    if fault=='direction': proof['reciprocal_passage']['literal']=proof['reciprocal_passage']['literal'].replace('↓','↑') if wrapped else proof['reciprocal_passage']['literal'].replace('↑','↓')
+    if fault=='intro': a['claim']['basis']='reviewed_printed_reciprocal_perfect_future'
+    if fault=='alternate': a['claim']['source_alternate_headword']='other'
+    page['source_faithful_decoded_text']=''.join(r['decoded_unicode'] for r in runs)
+    page['visible_body_sha256']=annotations.digest(page['source_faithful_decoded_text'])
+    path.write_bytes(gzip.compress(json.dumps(page).encode()))
+    proof['canonical_object_sha256']=hashlib.sha256(path.read_bytes()).hexdigest()
+    proof['entry_start_source_span']['visible_body_sha256']=page['visible_body_sha256']
+    if fault=='hash': proof['canonical_object_sha256']='0'*64
+    with pytest.raises(ValueError): run(tmp_path,p,[a])
+
+
+def test_real_gyur_perfect_imperative_reviews_pin_printed_evidence():
+    import json
+    rows=[json.loads(line) for line in (Path(__file__).resolve().parents[1]/'data/reviewed_badw_semantic_annotations.jsonl').read_text().splitlines()]
+    selected=[r for r in rows if r['claim'].get('basis')=='reviewed_printed_reciprocal_perfect_imperative']
+    assert len(selected)==2
+    expected={'gyur':(36,42,'↓’gyur',379,798,809,' pf. und imp. ↑gyur'),
+              '’gyur':(14,19,'↑gyur',239,1607,1623,'pf. und imp. zu↓’gyur')}
+    for row in selected:
+        c=row['claim'];start,end,literal,page,rs,re,passage=expected[c['source_headword']]
+        assert row['ranges']==[dict(start=start,end=end,literal=literal)]
+        assert c['homonym']==c['destination_heading']['homonym']=='1'
+        assert c['destination_heading']['printed_page']==page
+        assert c['destination_heading']['reciprocal_passage']==dict(run_start=rs,run_end_exclusive=re,literal=passage)
+        assert c.get('source_alternate_headword')==('gyurd' if c['source_headword']=='gyur' else None)

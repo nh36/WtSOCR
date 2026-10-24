@@ -170,6 +170,24 @@ const path=require('node:path');
   await page.goBack();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),source);
   await page.goForward();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
  }
+ // Complementary perfect-and-imperative paradigms identify two numbered entries.
+ for(const [id,source,target,start,end] of [
+  ["badw:pdf:badw-v2-82e01ef85ce15f1c8626bb1548d2999953dc75355fd9cc4f9edb9681a5c59cb0:1588", "gyur", "’gyur", 36, 42],
+  ["badw:pdf:badw-v2-1b84ba2586a82f90866aedbb0f595515e5b308f2a3f72af2a9e7459a0549a934:793", "’gyur", "gyur", 14, 19]]){
+  const meta=entries.get(id);assert(meta);
+  const entry=await (await page.request.get(base+'/'+meta.path)).json();
+  const ref=entry.cross_references.find(r=>r.resolution_evidence?.method==='reviewed_exact_reciprocal_perfect_imperative');assert(ref);
+  assert.equal(ref.status,'resolved');assert.equal(ref.wording,target);
+  assert.deepEqual(ref.source_span,{start,end});
+  const destination=entries.get(ref.target_entry_id);assert.equal(destination.headword.loc,target);assert.equal(destination.homonym,'1');
+  await go(entry);
+  const link=page.locator('.reading a').filter({hasText:target});assert.equal(await link.count(),1);
+  await link.focus();await page.keyboard.press('Enter');await selected('#'+encodeURIComponent(destination.id));
+  await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
+  assert(await page.locator('#article > .source-access a').count()>0);
+  await page.goBack();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),source);
+  await page.goForward();await page.waitForFunction(word=>document.querySelector('#article h2')?.textContent.includes(word),target);
+ }
  // The printed raised reciprocal qualifier establishes thul 1 specifically.
  {
   const meta=entries.get('badw:pdf:badw-v4-bd3109dea567834eac8fb3e7c547ab652c3c4329ddd1ede095333f602c0957ac:445');assert(meta);
@@ -641,6 +659,6 @@ const path=require('node:path');
  const victim=catalog[500];await page.route('**/'+victim.path,route=>route.fulfill({status:200,contentType:'application/json',body:'{}'}));
  await page.goto(url(victim.id));await page.waitForFunction(()=>document.querySelector('#article h2')?.textContent==='Entry could not be loaded');assert((await page.locator('#article').textContent()).includes('integrity check failed'));await page.unroute('**/'+victim.path);
  await page.goto(base+'/#%ZZ');await page.waitForSelector('#article h2');assert.equal(await page.locator('#article h2').textContent(),'Entry unavailable');
- assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:7,reciprocal_perfect_future_journeys:2,qualified_reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({entries:entries.size,editorial_variant_journeys:editorialVariantJourneys,printed_compound_journeys:1,reciprocal_perfect_journeys:7,reciprocal_perfect_future_journeys:2,reciprocal_perfect_imperative_journeys:2,qualified_reciprocal_perfect_journeys:1,printed_marker_journeys:1,page_continuation_journeys:1,upright_space_journeys:uprightSpaceJourneys,upright_space_absent:uprightSpaceAbsent,initial_milliseconds:initialMilliseconds,member_journeys:journeys,editorial_journeys:editorialJourneys,editorial_absent:editorialAbsent,whitespace_journeys:whitespaceJourneys,whitespace_unresolved:whitespaceUnresolved,split_anchor_journeys:1,detached_target_journeys:1,terminal_letter_journeys:1,wrapped_heading_journeys:wrappedHeadingJourneys,html_comma_journeys:htmlCommaJourneys,html_comma_uncertain:htmlCommaUncertain,member_whitespace_journeys:memberWhitespaceJourneys,member_whitespace_ambiguous:memberWhitespaceAmbiguous,tilde_journeys:tildeJourneys,tilde_absent:tildeAbsent,unresolved_dialogs:uncertain,citation_journeys:citations,unresolved_citation_dialogs:unresolvedCitations,verified_facsimiles:visitedSources.size,script_modes:scriptModes,viewports:[1440,320,390,768],browser_errors:errors.length}));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

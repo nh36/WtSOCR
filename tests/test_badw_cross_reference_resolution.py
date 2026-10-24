@@ -980,3 +980,46 @@ def test_qualified_reciprocal_resolver_fails_closed(fault):
     if fault=='extent': review['ranges'][0]['end']-=1
     index=EntryIndex([destination] if fault=='accepted' else [destination,entry('second',lemma='ka',homonym='2')])
     with pytest.raises(ValueError): substitute(index,fixture,review)
+
+
+@pytest.mark.parametrize('wrapped',[False,True])
+@pytest.mark.parametrize('fault',[None,'hash','range','source','alternate','prose','same_direction','homonym','unnumbered','accepted'])
+def test_perfect_imperative_exact_identity_and_witness_selection(wrapped,fault):
+    fixture,review,destination=reciprocal_destination_fixture()
+    occurrence,structure,_,binding=fixture
+    prefix=' pf. und imp. ' if wrapped else ' alttib. auch bcumd pf. und imp. zu '
+    marker='↑' if wrapped else '↓'
+    text=prefix+marker+'ka zusammenziehen.';start=len(prefix);end=start+3
+    candidate=occurrence['source_candidate'];candidate.update(visual_start=start,visual_end=end)
+    candidate['target_candidates'][0].update(visual_start=start+1,visual_end=end)
+    occurrence['marker']=marker
+    structure['visual_lines'][0].update(text=text,style_spans=[dict(start=start+1,end=end,style='italic',font_id='italic-font')])
+    structure['review_text_sha256']=hashlib.sha256(text.encode()).hexdigest()
+    review['binding']['text_sha256']=structure['review_text_sha256']
+    review.update(basis='reviewed_printed_reciprocal_perfect_imperative',ranges=[dict(start=start,end=end,literal=marker+'ka')])
+    if not wrapped: review['source_alternate_headword']='bcumd'
+    passage=review['destination_heading']['reciprocal_passage']
+    passage['literal']='pf. und imp. zu↓bcum' if wrapped else ' pf. und imp. ↑bcum'
+    if fault=='hash': review['binding']['text_sha256']='0'*64
+    if fault=='range': review['ranges'][0]['end']-=1
+    if fault=='source': review['source_headword']='other'
+    if fault=='alternate': review['source_alternate_headword']='other'
+    if fault=='prose': passage['literal']+=' prose'
+    if fault=='same_direction': passage['literal']=passage['literal'].replace('↓','↑') if wrapped else passage['literal'].replace('↑','↓')
+    if fault=='homonym': review['homonym']='2'
+    if fault=='unnumbered': destination['homonym']=''
+    fixture=(occurrence,structure,text,binding)
+    index=EntryIndex([destination,entry('second',lemma='ka',homonym='2')]) if fault!='accepted' else EntryIndex([destination])
+    if fault:
+        with pytest.raises(ValueError): substitute(index,fixture,review)
+    else:
+        before=copy.deepcopy((fixture,review,destination))
+        assert resolve_plural(index,fixture)['canonical_resolution']['status']=='ambiguous'
+        result=substitute(index,fixture,review)['canonical_resolution']
+        assert result['status']=='resolved' and result['target_entry_id']==destination['id']
+        assert result['method']=='reviewed_exact_reciprocal_perfect_imperative'
+        witness=copy.deepcopy(destination);witness['id']='another'
+        result=substitute(EntryIndex([destination,witness,entry('second',lemma='ka',homonym='2')]),fixture,review)['canonical_resolution']
+        assert result['status']=='resolved' and 'target_entry_id' not in result
+        assert result['witness_status']=='multiple_exact_manifestations'
+        assert (fixture,review,destination)==before

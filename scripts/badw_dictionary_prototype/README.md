@@ -14,7 +14,7 @@ python3 -m http.server 8767 --bind 127.0.0.1 --directory work/badw_full_reader_f
 ```
 
 For the current cross-reference build, serve
-`work/badw_full_reader_20261020/run41` instead. The earlier bounded script
+`work/badw_full_reader_20261020/run42` instead. The earlier bounded script
 experiment remains at `work/badw_full_reader_20261020/loc14`.
 Open <http://127.0.0.1:8767>. Try **mkhar ’gro**, **ṅar**, **rños**, and **ṅu**,
 then search any acquired LoC or Tibetan headword. Previous/next follows Unicode
@@ -80,7 +80,7 @@ witnesses change. Citations, components, relationships and source bindings agree
 
 ```sh
 python3 scripts/census_badw_reader_references.py \
-  --reader work/badw_full_reader_20261020/run41 \
+  --reader work/badw_full_reader_20261020/run42 \
   --output work/badw_residual_fresh.jsonl.gz
 ```
 
@@ -705,3 +705,27 @@ Run41: **7,610 resolved / 764 residual** target units. HTML remains 4,742
 resolved / 544 unresolved / 2 ambiguous; PDF is 2,868 resolved / 113 unresolved /
 105 ambiguous. Only this reviewed reference gains a destination; prior accepted
 relationships, source text, citations and the 23/50/47 fixture remain unchanged.
+
+
+### Reviewed perfect-and-imperative identities
+
+Two source-bound reviews establish **gyur¹ ↔ ’gyur¹** from the complementary
+`alttib. auch gyurd pf. und imp. zu ↓’gyur` (WTS II p. 239) and
+`pf. und imp. ↑gyur` (p. 379). Both printed facsimiles were inspected. These
+are correctly parsed references whose numbered identities needed review,
+not errors in the printed dictionary. The alternate `gyurd` is preserved as
+source evidence, never introduced as a lookup alias.
+
+The `reviewed_printed_reciprocal_perfect_imperative` basis requires exact
+introductions, numbered canonical headings, hashes, bounded article spans,
+upright grammar/arrow and italic target runs. A reciprocal line wrap is
+accepted only directly before the arrow after `zu`, with adjacent baselines
+and a bounded return in the same column. Other prose, qualifiers, fonts,
+distant geometry and unknown glyphs fail closed. No ordinary parsing rule
+or automatic homonym preference is changed.
+
+Run42: **7,612 resolved / 762 residual** target units. HTML remains 4,742
+resolved / 544 unresolved / 2 ambiguous; PDF is 2,870 resolved / 113 unresolved /
+103 ambiguous. Only these two reviewed references gain destinations; prior
+accepted relationships, source text, citations and the 23/50/47 fixture remain
+unchanged. The original 7,582 / 792 checkpoint remains the comparable baseline.

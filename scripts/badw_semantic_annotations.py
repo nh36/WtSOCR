@@ -219,6 +219,13 @@ def reciprocal_perfect_introduction(claim, text, start):
     if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_future':
         return ('source_alternate_headword' not in claim and
                 prefix in ('pf. und fut. zu', 'pf. und fut.'))
+    if claim.get('basis') == 'reviewed_printed_reciprocal_perfect_imperative':
+        alternate = claim.get('source_alternate_headword')
+        if 'source_alternate_headword' in claim:
+            return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
+                    re.fullmatch(r"[^\W\d_]+(?:[ ’][^\W\d_]+)*", alternate) is not None and
+                    prefix == 'alttib. auch ' + alternate + ' pf. und imp. zu')
+        return prefix in ('pf. und imp. zu', 'pf. und imp.')
     alternate = claim.get('source_alternate_headword')
     if 'source_alternate_headword' in claim:
         return (isinstance(alternate, str) and 0 < len(alternate) <= 40 and
@@ -246,6 +253,14 @@ def reciprocal_perfect_passage(passage, source_headword, source_marker, *,
         return (offset == 0 and isinstance(source_homonym, str) and
                 re.fullmatch(r'[1-9][0-9]*', source_homonym) is not None and
                 literal.strip() == 'pf. ' + opposite + source_homonym + source_headword)
+    if basis == 'reviewed_printed_reciprocal_perfect_imperative':
+        if offset != 0 or not isinstance(source_introduction, str):
+            return False
+        # The second spelling is the exact joined canonical run text of a
+        # reviewed wrap after 'zu'. Geometry must independently verify that wrap.
+        prefix = ('pf. und imp. ' if source_introduction.endswith('pf. und imp. zu')
+                  else 'pf. und imp. zu' if source_introduction == 'pf. und imp.' else None)
+        return prefix is not None and literal.strip() == prefix + opposite + source_headword
     if basis == 'reviewed_printed_reciprocal_perfect_future':
         complementary = {'pf. und fut. zu': 'pf. und fut. ',
                          'pf. und fut.': 'pf. und fut. zu '}
@@ -277,6 +292,48 @@ def qualified_reciprocal_geometry(page, runs, source_homonym):
             all(r['y'] == baseline for j, r in enumerate(runs) if j != i) and
             all(fonts.get(r.get('font_id')) == ('TGaramond', 'regular' if j <= i else 'italic')
                 for j, r in enumerate(runs)))
+
+
+def reciprocal_perfect_imperative_geometry(page, runs, source_headword):
+    """Replay upright grammar/arrow and italic target on one or two lines.
+
+    A wrap is admitted only immediately before the arrow, after literal 'zu',
+    with adjacent baselines and a bounded return within the same column. This
+    applies only to individually reviewed canonical reciprocal passages.
+    """
+    fonts = {f['font_id']: (f.get('family'), f.get('style'))
+             for f in page['representative_fonts']}
+    literal = ''.join(r['decoded_unicode'] for r in runs)
+    arrows = [i for i, c in enumerate(literal) if c in '↑↓']
+    if len(arrows) != 1 or any(r.get('x') is None or r.get('y') is None for r in runs):
+        return False
+    arrow = arrows[0]
+    if literal[arrow+1:].strip() != source_headword:
+        return False
+    offset = 0
+    lines = []
+    for r in runs:
+        value = r['decoded_unicode']
+        # Runs cannot straddle the upright-arrow / italic-target boundary.
+        style = 'regular' if offset + len(value) <= arrow+1 else 'italic'
+        if (not value or (offset <= arrow < offset+len(value)-1) or
+                fonts.get(r.get('font_id')) != ('TGaramond', style)):
+            return False
+        if not lines or lines[-1][0]['y'] != r['y']:
+            lines.append([])
+        if lines[-1] and not 0 <= r['x']-lines[-1][-1]['x'] <= 40:
+            return False
+        lines[-1].append(r)
+        offset += len(value)
+    if len(lines) == 1:
+        return literal[:arrow].strip() == 'pf. und imp.'
+    if len(lines) != 2:
+        return False
+    first, second = lines
+    return (''.join(r['decoded_unicode'] for r in first).strip() == 'pf. und imp. zu' and
+            ''.join(r['decoded_unicode'] for r in second) == literal[arrow:] and
+            0.5 <= first[0]['y']-second[0]['y'] <= 2 and
+            0 < first[-1]['x']-second[0]['x'] <= 40)
 
 
 def reviewed_source_homonym(claim, packet, canonical_root):
@@ -350,6 +407,8 @@ def reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root
                 source_homonym=claim.get('source_homonym')) or
             passage.get('run_start_offset', 0) >= len(runs[0]['decoded_unicode']) or
             (not qualified_reciprocal_geometry(page, runs, claim.get('source_homonym')) if qualified
+             else not reciprocal_perfect_imperative_geometry(page, runs, claim['source_headword'])
+             if claim['basis'] == 'reviewed_printed_reciprocal_perfect_imperative'
              else len({r.get('y') for r in runs}) != 1) or
             any(r.get('x') is None or r.get('y') is None or r.get('unknown_glyphs') or
                 any(g.get('unknown') for g in r.get('glyphs', [])) for r in runs)):
@@ -472,7 +531,8 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                     claim['basis'] != 'reviewed_printed_qualified_reciprocal_perfect'):
                 raise ValueError('source homonym outside qualified reciprocal review')
             if ('source_alternate_headword' in claim and
-                    claim['basis'] != 'reviewed_printed_reciprocal_perfect'):
+                    claim['basis'] not in ('reviewed_printed_reciprocal_perfect',
+                        'reviewed_printed_reciprocal_perfect_imperative')):
                 raise ValueError('alternate source spelling outside reciprocal review')
             if claim['basis'] == 'reviewed_editorial_headword_variant':
                 from badw_article_parser import parse_database_article
@@ -551,7 +611,7 @@ def validate(packets, annotations, *, cache, canonical_root=None):
                         r['target_text'] == claim['source_headword']
                         for r in destination['cross_references'])):
                     raise ValueError('printed interpretation lacks exact reciprocal destination evidence')
-            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_qualified_reciprocal_perfect'):
+            elif claim['basis'] in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect'):
                 reviewed_pdf_reciprocal_perfect(claim, ranges, packet, cache, canonical_root, verified)
             elif claim['basis'] in ('reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword'):
                 if (packet['source_kind'] != 'pdf' or len(ranges) != 1 or
@@ -785,7 +845,7 @@ def apply_validated_annotations(packet, prediction, annotations):
         if row["kind"] != "cross_reference_target" or row["effective_status"] != "accepted":
             continue
         claim = row["claim"]
-        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future", "reviewed_printed_qualified_reciprocal_perfect"):
+        if claim["basis"] in ("reviewed_printed_headword_substitution", "reviewed_printed_wrapped_headword", "reviewed_printed_compound_headword", "reviewed_printed_misplaced_arrow", "reviewed_printed_reciprocal_perfect", "reviewed_printed_reciprocal_perfect_future", "reviewed_printed_reciprocal_perfect_imperative", "reviewed_printed_qualified_reciprocal_perfect"):
             span = row["ranges"][0]
             structure = result.get("original_structure", {})
             nodes = [n for n in result["nodes"] if n["id"] == claim["occurrence_id"]

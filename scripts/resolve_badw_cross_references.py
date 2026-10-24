@@ -356,7 +356,7 @@ class EntryIndex:
             offset = end + 1
         wrapped = review.get('basis') == 'reviewed_printed_wrapped_headword'
         compound = review.get('basis') == 'reviewed_printed_compound_headword'
-        reciprocal = review.get('basis') in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_qualified_reciprocal_perfect')
+        reciprocal = review.get('basis') in ('reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect')
         if reciprocal:
             from badw_semantic_annotations import reciprocal_perfect_passage, reciprocal_perfect_introduction
         lexical = parsed.get('lexical_target', '')
@@ -397,7 +397,7 @@ class EntryIndex:
         else:
             target_matches = (lexical.count('~') == 1 and bool(review.get('source_headword')) and
                               lexical.replace('~', review['source_headword']) == review.get('lemma'))
-        if (review.get('basis') not in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword', 'reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_qualified_reciprocal_perfect') or
+        if (review.get('basis') not in ('reviewed_printed_headword_substitution', 'reviewed_printed_wrapped_headword', 'reviewed_printed_compound_headword', 'reviewed_printed_reciprocal_perfect', 'reviewed_printed_reciprocal_perfect_future', 'reviewed_printed_reciprocal_perfect_imperative', 'reviewed_printed_qualified_reciprocal_perfect') or
                 not review.get('annotation_id') or not review.get('physical_selectors') or
                 review.get('binding', {}).get('text_sha256') != hashlib.sha256(text.encode()).hexdigest() or
                 source_binding.get('identity') != structure.get('article_id') or
@@ -414,7 +414,7 @@ class EntryIndex:
             raise ValueError('printed substitution review is not bound to this source target')
         temporary = dict(occurrence, id=review['occurrence_id'], record_type='cross_reference')
         resolution = self.resolve(temporary, reviewed_target=review)['canonical_resolution']
-        resolution.update(method='reviewed_exact_qualified_reciprocal_perfect' if review.get('basis') == 'reviewed_printed_qualified_reciprocal_perfect' else 'reviewed_exact_reciprocal_perfect_future' if review.get('basis') == 'reviewed_printed_reciprocal_perfect_future' else 'reviewed_exact_reciprocal_perfect' if reciprocal else 'reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword' if wrapped else 'reviewed_exact_printed_substitution', parsed_target=parsed,
+        resolution.update(method='reviewed_exact_reciprocal_perfect_imperative' if review.get('basis') == 'reviewed_printed_reciprocal_perfect_imperative' else 'reviewed_exact_qualified_reciprocal_perfect' if review.get('basis') == 'reviewed_printed_qualified_reciprocal_perfect' else 'reviewed_exact_reciprocal_perfect_future' if review.get('basis') == 'reviewed_printed_reciprocal_perfect_future' else 'reviewed_exact_reciprocal_perfect' if reciprocal else 'reviewed_exact_printed_compound' if compound else 'reviewed_exact_wrapped_headword' if wrapped else 'reviewed_exact_printed_substitution', parsed_target=parsed,
                           evidence_status='facsimile_reviewed_source_interpretation')
         self._same_entity(resolution)
         if resolution['status'] != 'resolved':
