@@ -975,19 +975,92 @@ and 9-m are single-page scans. Two text columns do not mean two printed pages.
 These observations do not authorise automatic cropping of unreviewed pages.
 The published spread at physical page 40 uses a reviewed noncentral gutter,
 438 points from the left; full height and outer margins are retained. The two
-sides are volume 1 pages 14 and 15. Other published pages retain their complete
-single-page boxes. Rotated pages and invalid geometry fail closed.
+sides are volume 1 pages 14 and 15. The new spreads at physical pages 41–44
+use individually reviewed gutters at 441, 439, 438 and 439 points. Genuine
+single pages retain their complete boxes. Rotated pages and invalid geometry
+fail closed.
 
-Current HTML-only coverage is **18,038 witnesses: 32 exact, 11,418 with existing
-unconfirmed candidates, and 6,588 without an established correspondence**.
-Candidate counts are the URL intersection with the existing C11 identity
-handoff, not new matches or evidence of exact printed locations. Weak one-field
-matches, running headers, continuation pages, insufficient independent source
-discriminators and unresolved homonym identities prevent bulk promotion.
-There are **10 distinct derivatives: two cropped sides of one reviewed spread
-and eight genuine single pages**. One physical spread needs exceptional
-noncentral geometry; no published page has pending crop review. Unreviewed
-pages are not supplied speculatively.
+Current HTML-only coverage is **18,038 witnesses: 165 exact, 11,285 candidate-only,
+and 6,588 without a usable candidate** (previously 32 / 11,418 / 6,588).
+There are **48 distinct derivatives: nine cropped printed pages and 39 genuine
+single pages**. The expanded batch adds 133 links on 38 pages from 40 inspected
+printed pages across all four registered scan families. Two inspected pages
+produce no accepted links. Thirteen proposals were rejected and fifteen deferred.
+This is 3.325 verified entries per inspected page; it is not an automatic matching
+accuracy estimate, since every acceptance still required scan inspection.
+
+`data/badw_html_print_alignment.json` holds compact page certificates and explicit
+negative decisions. `data/badw_html_print_alignment.generated.json` is their
+reproducible expansion, separate from the initial manual ledger. Each accepted
+witness pins an acquired HTML checksum, C6 heading anchor and definition component
+checksum, heading column, explicit printed homonym (including absence), and a
+scan-reviewed distinguishing definition. An absent printed numeral is never
+defaulted to homonym 1. An unnumbered printed article may correspond to an editorial
+number only through its individually reviewed definition, not the headword alone.
+Candidate edges locate evidence; they confer no acceptance. Headers, continuation
+text, competing meanings and weak short definitions are rejected or deferred.
+
+Recompile or check the ledger against an existing complete reader and the pinned
+C6/C11 ignored inputs (no source acquisition is performed):
+
+```sh
+python3 scripts/badw_html_print_alignment.py \
+  --reader work/existing-reader --check --inventory work/html-print-inventory.json
+```
+
+Omit `--check` only after reviewing changed certificates to regenerate the expanded
+ledger. The complete-reader build checks both ledger hashes; derivative preparation
+checks registered original hashes. The compiler rejects stale anchors, HTML,
+definition evidence and candidate input files. The inventory categorises all HTML
+witnesses without silently certifying historical candidates. Current categories:
+165 reviewed exact pages; 5,559 dual-script heading candidates with unverified
+pages; 4,691 one-field lexical candidates; 1,035 competing exact headings; 6,588
+without a usable candidate. The historical HTML handoff contains no independently
+accepted lexical identities. Running-header and continuation counts outside the
+reviewed batch are unknown; they cannot be inferred from candidate confidence.
+Candidate volumes remain scan-family locators, not verified printed pagination.
+
+Historical candidate locators break down as follows. A witness with edges in
+several scans appears once in the multiple-family row; reviewed links may have
+superseded those historical locators.
+
+| Candidate scan family | Reviewed | Dual heading | One-field | Competing | No candidate |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| WtS 1–34 | 53 | 1,809 | 1,056 | 392 | 0 |
+| WtS 35–51 | 33 | 2,181 | 1,896 | 398 | 0 |
+| WtS 8-b | 27 | 1,031 | 1,038 | 160 | 0 |
+| WtS 9-m | 35 | 496 | 579 | 55 | 0 |
+| Multiple families | 13 | 42 | 122 | 30 | 0 |
+| No historical locator | 4 | 0 | 0 | 0 | 6,588 |
+
+Accepted links by printed volume are 1: 26, 5: 63, 6: 5, 8: 32 and 9: 39.
+By registered scan they are WtS 1–34: 58, WtS 35–51: 36, WtS 8-b: 32 and
+WtS 9-m: 39. The new batch reviews volume 1 pp.16–23, volume 5 pp.3–10 and
+354–361, volume 8 pp.2–9 and volume 9 pp.13–20. Volume 1 p.21 has no accepted
+identity; volume 5 p.360 contains continuation text only. Examples include
+kamalaśīla (1:17), kalapiṅka (1:23), ḍa ma ru (5:10), mda’ mo¹ (5:355),
+ba thag¹/² (8:4), ba spu² (8:6) and ma gcig lab kyi sgron ma (9:18).
+Ka riṅ is rejected for a printed/editorial sense mismatch; competing ka ru
+homonyms and short insufficiently distinctive glosses remain deferred.
+
+The four newly inspected spreads use gutters at 441, 439, 438 and 439 points
+(physical pages 41–44), retaining full height and outer margins. Seven of their
+eight printed sides have accepted links. These are explicit geometry reviews,
+not a universal half-width rule. All other new pages retain their full boxes.
+There are no additional exceptional transformation overrides or pending crop
+reviews among published pages. The existing crosswalk covers volumes 2–4 and
+must not be extrapolated across inserted titles or pagination changes. Physical
+1076/1077 were separately checked as a blank-half/title transition; neither is
+published by this batch.
+
+The method removes repetitive page/provenance authoring and shares derivatives;
+it does not remove scholarly identity review. A larger batch needs fresh heading,
+definition, neighbour and folio inspection, particularly for homonyms and long
+articles, plus reviewed gutter coordinates for each new spread. Manual review
+elapsed time was not instrumented, so no links-per-hour claim is made. The next
+batch should record review time separately from compiler/build time.
+Certificate checking plus the complete HTML inventory took 16.75 seconds; the
+fresh full-reader build took 829.33 seconds (mostly existing evidence projection).
 
 The reviewed examples include ka ba¹ and its compounds (volume 1 pp. 14–15),
 da¹/² and ḍā ki ma¹ (volume 5 p. 1), da ko¹ and da ci¹ (p. 2), mda’ rgyus¹
@@ -1001,7 +1074,7 @@ therefore retains its existing born-digital facsimile without an extra link.
 Focused checks:
 
 ```sh
-python3 -m pytest tests/test_badw_html_print_facsimiles.py tests/test_badw_full_reader.py -q
+python3 -m pytest tests/test_badw_html_print_alignment.py tests/test_badw_html_print_facsimiles.py tests/test_badw_full_reader.py -q
 node --test tests/badw_dictionary_prototype.test.cjs
 BADW_READER_URL=http://127.0.0.1:8806 node tests/badw_html_print_facsimiles.browser.cjs
 ```
@@ -1014,10 +1087,10 @@ differential must accompany changes at a corpus milestone.
 The fresh 29,878-witness milestone build preserves catalogue order, search keys,
 source text, all accepted relationships and the reference census (7,626 resolved
 targets; 748 residuals). All 11,840 PDF witness bodies and 1,377 existing PDF
-assets are byte-identical to the merged frontend baseline. Focused checks pass
-(21 Python tests; 19 Node tests), as do the required 315 regressions with 62
-subtests. The full Python suite has 2,052 passes and the two inherited failures
+assets are byte-identical to the merged PR #9 baseline. Focused checks pass
+(33 Python tests; 19 Node tests), as do the required 315 regressions with 62
+subtests. The full Python suite has 2,064 passes and the two inherited failures
 (external-publications checksum and WtS 8-b p. 409 line 73 evidence). Chrome
-certification passes all 32 new links, opens all ten prepared PDFs, and checks
+certification passes all 165 links, opens all 48 prepared PDFs, and checks
 desktop/mobile views without browser errors. The existing full-reader Chrome
 suite also passes search, history, keyboard and grammatical-reference journeys.

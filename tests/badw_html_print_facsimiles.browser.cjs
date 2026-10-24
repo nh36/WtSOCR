@@ -9,19 +9,21 @@ const {chromium}=require('playwright-core');
  const base=process.env.BADW_READER_URL||'http://127.0.0.1:8806';
  const screenshots=process.env.BADW_SCREENSHOTS||'work/html-print-browser';fs.mkdirSync(screenshots,{recursive:true});
  const reviewed=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_pages.json')));
+ const generated=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_alignment.generated.json')));
+ reviewed.witnesses.push(...generated.witnesses);Object.assign(reviewed.pages,generated.pages);
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:process.env.BADW_HEADED!=='1'});
  const errors=[];const report={};
  try{
  const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
  const catalog=(await (await page.request.get(base+'/data.json')).json()).entries;
  const printed=await (await page.request.get(base+'/print_facsimiles.json')).json();
- assert.equal(catalog.length,29878);assert.equal(printed.witnesses.length,32);assert.equal(Object.keys(printed.pages).length,10);
+ assert.equal(catalog.length,29878);assert.equal(printed.witnesses.length,reviewed.witnesses.length);assert.equal(Object.keys(printed.pages).length,Object.keys(reviewed.pages).length);
  const bodies=[];
- for(const meta of catalog.filter(e=>reviewed.witnesses.some(r=>r.headword===e.headword.loc&&String(r.homonym)===String(e.homonym||1)))){
+ for(const meta of catalog.filter(e=>reviewed.witnesses.some(r=>r.headword===e.headword.loc&&String(r.homonym)===String(e.homonym)))){
   const response=await page.request.get(base+'/'+meta.path);assert(response.ok());const body=await response.json();
   if(reviewed.witnesses.some(r=>r.source_url===body.source_url))bodies.push({...body,path:meta.path});
  }
- assert.equal(bodies.length,32);
+ assert.equal(bodies.length,reviewed.witnesses.length);
  assert(!JSON.stringify(printed).includes('originals/'));
  for(const body of bodies){
   const provenance=body.sources[1].print_provenance;
