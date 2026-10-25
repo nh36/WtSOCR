@@ -111,6 +111,19 @@ def test_missing_homonym_checksum_and_pdf_are_not_promoted(prepared):
         attach.attach(record)
 
 
+def test_machine_metadata_cannot_authorize_attachment(prepared):
+    root, *_ = prepared
+    attach = fac.Facsimiles(root/'cache/manifest.json', root/'reader')
+    record = entry()
+    record['source_url'] = 'https://wts-digital.badw.de/lemma/unreviewed/1'
+    record.update(eligible_for_original_print_link=True, result_category='verified',
+                  reviewed_page='left', eligibility_basis='machine changed metadata')
+    before = copy.deepcopy(record)
+    attach.attach(record)
+    assert record == before
+    assert not list((root/'reader').rglob('*.pdf'))
+
+
 def test_fail_closed_stale_tampered_manifest_and_derivative(prepared):
     root, manifest, *_ = prepared
     path = root/'cache/manifest.json'

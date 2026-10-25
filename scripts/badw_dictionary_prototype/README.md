@@ -1265,3 +1265,169 @@ matches and 447 gyu matches, global navigation and grammatical/citation links.
 Search issues no entry-body requests; mean filter time is 2.8–3.5 ms on this run.
 The corrected ba tshwa page and desktop/mobile presentation were inspected;
 da yaṅ and mdun correctly retain editorial-only source access.
+
+### Full-corpus mechanical proposal engine (after PR #10)
+
+PR #10 was merged normally at `7039a5bd62319b8119394263a54488c31ef7d707`.
+The separate automation engine does not change its 163 attachable reviewed links,
+manual certificates, reader, original scans, PDF witnesses or release files.
+This is an executed proposal engine, **not a validated automatic link publisher**.
+
+Run offline against the existing local acquisitions (Python 3, pypdf and Poppler):
+
+```sh
+python3 scripts/run_badw_html_print_alignment.py \
+  --all-volumes --resume --output work/html-print-full-alignment
+python3 scripts/render_badw_alignment_review.py --run work/html-print-full-alignment
+python3 -m http.server 8812 --bind 127.0.0.1 \
+  --directory work/html-print-full-alignment/report
+```
+
+Input preparation (infrastructure hardening, v2.1):
+
+```sh
+# Restore the complete private reader/acquisition assets, then optionally rebuild:
+python3 scripts/build_badw_full_reader.py --output work/alignment-source-reader
+python3 scripts/prepare_badw_alignment_inputs.py \
+  --reader work/alignment-source-reader --output work/html-print-inputs
+python3 scripts/run_badw_html_print_alignment.py \
+  --all-volumes --inputs work/html-print-inputs --output work/alignment-run --resume
+```
+
+A public Git checkout alone cannot reconstruct private BAdW acquisitions. Restore
+these from the registered local source/cache environment; this command does not
+reacquire or redistribute the corpus. The reader build's acquisition dependencies
+are listed at the start of `build_badw_connected_reader.py` (CACHE, CANON, INDEX,
+SEEDS, PDF, HTML and BIB), plus the full-reader projection/baseline/supplement
+arguments. They include reviewed semantic evidence, not just downloadable scans.
+An already certified complete reader is an equivalent input; no OCR or reader
+rebuild is required for alignment. The preparer verifies every HTML shard against
+its catalogue checksum and requires exactly 29,878 entries / 18,038 HTML bodies.
+It writes a portable `bodies.json`, `catalogue.json` and SHA-256 `manifest.json`.
+The runner defaults to this bundle, never a historically named directory.
+Duplicate, missing, extra, mismatched or malformed body identities fail explicitly.
+
+Original source assets: restore the four files at the paths in
+`data/source_pdfs.tsv`; that registry supplies their exact SHA-256 identities:
+
+| Scan | Pages | SHA-256 |
+| --- | ---: | --- |
+| WtS 1–34 | 1352 | `20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62` |
+| WtS 35–51 | 1128 | `8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239` |
+| WtS 8-b | 585 | `f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263` |
+| WtS 9-m | 401 | `7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb` |
+
+The tracked `release/current/qa/*/*_line_zones.tsv` files and reviewed ledgers
+supply the other mandatory source evidence. No source download occurs. Optional
+historical corroboration can be included with preparer `--anchors` and `--edges`;
+these are respectively the JSONL outputs of `badw_source_matcher.py` and
+`badw_identity_handoff.py` (their `--help` documents reconstruction inputs).
+Without them the runner explicitly records zero historical anchors/edges; all-QA
+start discovery and matching still run, and C6-origin metrics mean “not supplied”.
+Historical evidence is not essential truth or a hidden default dependency.
+
+Input, PDF and implementation hashes and Python/pypdf/SQLite/Poppler versions
+are pinned in `inputs.json`. Changed inputs require a fresh run directory.
+Serve **only** the report subdirectory, never the run cache, prepared body bundle
+or source directories. Images and derivatives remain local research material;
+PDF crop boxes are not redaction. No complete source PDF is copied or linked.
+Machine JSON is never an attachment ledger: only the separately reviewed
+certificate and exact current HTML checksum can authorize reader attachment.
+
+The single-worker runner streams HTML bodies into a SQLite index with a bounded
+page cache. It indexes every QA line and physical PDF page, recording actual PDF
+geometry and rotation. Embedded PDF OCR is aligned conservatively to QA text;
+ambiguous coordinates remain unavailable. All QA lines can propose article starts,
+including those absent from C6. Exact Tibetan and LoC indexes, flagged spacing
+variants, IDF-weighted definition/citation evidence, competing-heading penalties
+and a maximum-weight monotone **page-local** sequence check rank proposals.
+C6/C11 evidence is retained as corroboration, never unquestioned boundary truth.
+Repeated headings cannot borrow a later same-spelling article's definition;
+prefixes of longer observed compounds are flagged. This is structural screening,
+not proof that OCR segmentation or a lexical identity is correct.
+
+Each stage commits its SQLite data and checkpoint together. Interrupted stages
+roll back and restart; completed stages are reused by `--resume`. `--stop-after`
+allows controlled interruption at a named stage (for example `history`). Output
+JSON is replaced atomically. Intermediate work requires no agent or human action.
+The final JSONL accounts for every HTML witness, including no-candidate cases,
+retains ten ranked alternatives plus the omitted-alternative count, and binds
+HTML components, QA spans, original checksums and available coordinates. The
+private SQLite cache retains the remaining proposals. Stage timing is separate
+from deterministic output; `timing-latest.json` describes the latest invocation.
+
+The completed v2 run processed **18,038 HTML witnesses, 3,466 physical scan pages,
+352,244 QA lines and 524,606 proposals** across all four registered scan families.
+It detected **160,855 article-start hypotheses, 136,626 absent from C6**; these
+counts include false and duplicate starts and must not be called printed articles.
+Results: **2,342 mechanically supported provisional, 13,288 review-required,
+2,408 unresolved**. The 163 reviewed attachable links are an overlapping existing
+status, not an additional result category. No new reader links were generated.
+
+| Proposed family | Supported provisional | Review-required |
+| --- | ---: | ---: |
+| WtS 1–34 | 840 | 4,280 |
+| WtS 35–51 | 900 | 4,824 |
+| WtS 8-b | 420 | 2,543 |
+| WtS 9-m | 182 | 1,641 |
+
+Execution after input hashing took **201.059 seconds**, with **455,835,648 bytes**
+peak RSS on macOS. The original timing is saved locally as `timing-full.json`.
+A second fresh run stopped after `history`, then resumed to completion. Its
+manifest, witness JSONL, validation JSON and sample HTML hashes match the first
+run byte-for-byte; a cached resume also reproduces them. The input identity is
+`1188853a6888106be7abfa01efef80ef6cea449ebf4c882dca7318c1a085f7df`.
+The witness JSONL SHA-256 is
+`956b9ba43a650a677c0b7575c73f8df838ce151fe17759b7fd0f3f1693fca5d1`.
+
+Validation deliberately separates boundary compatibility from lexical identity.
+Against 131 previously reviewed new links, all expected starts were detected;
+the top proposal has 126 correct physical pages and 120 exact starts. This is a
+retrospective diagnostic, not independent precision. The eleven errors (five
+wrong pages, six same-page wrong starts) are all in the review-required category:
+generic evidence, OCR spacing and displaced/incidental headword prefixes cause
+false rankings. That category remains quarantined from automatic promotion.
+
+A deterministic, held-out-from-certificates sample of forty supported proposals
+was rendered and visually inspected on its actual scan pages, with enlarged
+checks of repeated-heading cases. All forty have compatible visible article
+headings and physical pages (40/40; Wilson 95% lower bound 91.24%). This coarse
+check **does not measure complete lexical or homonym precision**. The local
+`report/assessment.json` records that distinction. Printed homonym readings,
+complete article extents, unreviewed folios and spread sides remain unverified;
+no crop geometry or pagination is extrapolated. Whole-volume sequence alignment
+and reliable printed-homonym parsing are not implemented. Consequently **bulk
+link promotion is not safe**. The next work is to annotate independent lexical,
+homonym and negative boundary examples, evaluate these risk classes separately,
+and improve segmentation before any promotion-policy decision.
+
+`report/index.html` displays forty sampled scan images; `report/review.html`
+contains their OCR/HTML evidence, alternatives and risk reasons.
+`report/exceptions/index.html` paginates all 15,696 review or
+unresolved records; their full source/coordinate records allow focused source
+inspection, but only the forty sampled pages have rendered images. Complete
+machine outputs are local under `work/html-print-full-alignment/`; a second run
+is under `work/html-print-reproduction/`. The reader remains at port 8811 and
+its source-link coverage remains 163 / 11,287 candidate-only / 6,588 no-candidate.
+
+Certification: engine fixtures cover independent start discovery, a held-out
+heading, running-header definition borrowing, neighbouring compounds, generic
+definitions, dynamic programming, streamed input and transactional checkpoints.
+Chrome passes the full reader journeys and all 163 reviewed links / 48 PDFs,
+with no browser errors. Final full Python testing reported 2,105 passed,
+62 subtests and the two inherited failures (bibliography
+external-publications checksum; WtS 8-b p.409 line73 residual ledger). The known
+69 release-reproduction differences remain inherited; release evidence was not
+modified. The combined focused alignment/facsimile and repository regressions report
+373 passed and 62 subtests passed. The Node suite reports 19 passed. Hygiene,
+status and compilation pass. Chrome also passes the review gallery at
+desktop/mobile widths and the 157-page exception index with its first page,
+without browser errors.
+
+Full-suite scope is `tests/`, excluding ignored worktree copies under `work/`.
+On this machine an installed `scripts` package shadows the repository's namespace;
+the final invocation explicitly bound that namespace before pytest collection:
+
+```sh
+python3 -c 'import sys, types, pathlib, pytest; package = types.ModuleType("scripts"); package.__path__ = [str(pathlib.Path("scripts").resolve())]; sys.modules["scripts"] = package; raise SystemExit(pytest.main(["tests", "-q"]))'
+```
