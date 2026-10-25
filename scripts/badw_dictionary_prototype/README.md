@@ -1602,3 +1602,129 @@ mobile, 61 apostrophe-equivalent and 447 gyu results, no search body fetches, an
 58 facsimile checks. Historical 69 release-reproduction differences are inherited,
 not eliminated by changes to source evidence. No automatic publication class is
 authorised by this diagnostic milestone.
+
+
+### Printed-source reconstruction experiment (v4, publication disabled)
+
+PR #12 was merged normally at `c6a8c46eeabee7c8352c092f0625ae2695925115`.
+The reconstruction experiment extends that engine and its existing SQLite stages:
+
+```bash
+python3 scripts/run_badw_html_print_alignment.py --all-volumes --resume \
+  --output work/html-print-reconstruction-certified
+python3 scripts/evaluate_badw_alignment.py \
+  --baseline work/html-print-hardened-final \
+  --run work/html-print-reconstruction-certified \
+  --labels data/badw_html_print_evaluation.json \
+  --observed-renders work/html-print-validation-final/report/pages \
+  --prepare-calibration
+```
+
+Repeated body-line left edges in embedded PDF OCR supply candidate column clusters;
+uniquely mapped QA lines receive page/column/y/x reading positions. Landscape pages
+require four clusters and portrait pages two, with rotation/irregular layouts left
+ambiguous. Candidate inter-page gutters come from the whitespace between the two
+central content columns, rather than a universal midpoint. These are geometric
+hypotheses: margins, folios and page-side identities remain uncertified.
+
+Article intervals extend to the next plausible heading in reconstructed order,
+including cross-column/page alternatives. In this run **zero intervals satisfy the
+complete-coordinate coverage checks**. Matching therefore still uses the existing
+uncertain 48-line fallback. This experiment does not claim solved article ownership.
+
+Heading-prefix numeral parsing distinguishes agreeing QA/embedded OCR, single-OCR
+readings, conflicts, intact unnumbered QA prefixes and unread prefixes. Punctuation,
+senses and trailing numerals do not become homonym numbers; unnumbered never means
+homonym 1. Two OCR readings of the same scan are not independent scholarly witnesses.
+Source regressions include damaged `ldoṅs` and `’bum pa` prefixes, which remain unread.
+
+Distinctive dual-script local matches with a ranking margin can bracket another
+candidate between two *other* witnesses over at most ten physical pages. This adds
+one ranking point only to an already existing candidate with distinctive definition
+features; it cannot create identity or erase a contradiction. Of 907 anchors,
+1,866 proposals receive bracket support and 40 top predictions change. Fresh
+independent assessment of those changed predictions remains outstanding.
+
+The full run processes 18,038 HTML witnesses, 3,466 physical pages and 352,244 QA
+lines: 160,855 start hypotheses (136,626 non-C6) and 524,606 proposals. Start hypotheses
+are not established articles. Results: 2,387 provisionally supported, 13,040 requiring
+review, 203 contradictory identities and 2,408 unresolved. Against PR #11, 2,284 of
+the 2,342 supported cases remain supported, 29 become contradictory and 29 require
+review; 103 former review cases become provisionally supported. The 163 reviewed
+reader attachments remain entirely separate and unchanged.
+
+| Source family | Column-cluster pages / ambiguous | Content-gap spread candidates | Single mediabox / reviewed physical pages | Agreeing numeral OCR / unread hypotheses |
+| --- | ---: | ---: | ---: | ---: |
+| wts_1_34 | 812 / 540 | 742 | 266 / 15 | 1,102 / 73,554 |
+| wts_35_51 | 1,090 / 38 | 0 | 1,118 / 10 | 108 / 38,177 |
+| wts_8_b | 570 / 15 | 0 | 576 / 9 | 69 / 19,766 |
+| wts_9_m | 395 / 6 | 0 | 391 / 10 | 72 / 13,470 |
+
+Across all hypotheses there are 1,351 agreeing numeral OCR observations, 4,594
+single-OCR numeral readings, eight conflicting readings, 9,935 assessable unnumbered
+QA prefixes and 144,967 unread prefixes. There are 56,700 alternative coordinate
+intervals, 103,217 unlocated starts and 938 top-furniture candidates; 31,628 intervals
+cross a column/page. These counts measure reconstructed evidence, not its independently
+verified accuracy. No new PDF derivatives or reader links are generated.
+
+The existing 32 source-observation records remain diagnostic, not a new gold standard.
+Their prediction accounting is 17 retained correct, 11 changed/unassessed, three
+explicitly incorrect and one insufficient; no newly corrected prediction is claimed.
+For assessable predictions the article-start result is 19/21 (Wilson 95% 71.1–97.3%),
+page 18/20 (69.9–97.2%), lexical identity 17/20 (64.0–94.8%), and homonym 1/2
+(9.5–90.5%). These are small, incomplete diagnostic denominators, not population
+precision. Extent/crop accuracy and fresh reranking precision are not established.
+
+A deterministic 200-case calibration queue is generated separately, stratified by
+four families and supported/difficult populations, excluding existing cases and
+preserving development/held-out splits. Its labels and inspected-render hashes are
+**empty**. Preparing this queue does not constitute independent adjudication of
+200 cases. Independent source inspection and frozen held-out judgments are required
+before any automatic-acceptance policy can be evaluated.
+
+Full execution took 542.891 seconds with peak RSS 710,901,760 bytes. Cached resume
+executed no stages and reproduced canonical witness output SHA-256
+`1f4e43423e51ef6b63776c2f8024ea2223c16cf0eb43fa5f8c7dbaa05dfd6b45`.
+Focused tests: 48 passed. Full Python: 2,140 passed / 62 subtests, with only the two
+inherited failures (bibliography checksum and wts_8_b 409:73). Required regressions:
+315 passed / 62 subtests; Node: 19 passed. Historical release-reproduction differences
+were not rerun or altered. No release source evidence changes.
+
+A separate stop-after-starts run followed by resume reproduced `witnesses.jsonl`,
+`validation.json` and `report/review.html` byte for byte. The fresh full-reader
+differential retains all 29,878 witness identities, all 11,840 byte-identical PDF
+bodies, all 163 reviewed HTML links, all 48 derivative files and the 7,626 resolved /
+748 residual reference census. Source text, relationships, catalogue order and search
+keys are unchanged. The served tree contains no private paths, volume routes or
+symlinks. Chrome reader journeys pass across desktop/mobile sizes, including 61
+apostrophe-equivalent matches, 447 `gyu` matches, source/citation/reference journeys
+and zero unnecessary search body requests or browser errors. Page-grouped review
+checks also pass at desktop/mobile widths. Local previews use ports 8816 (reader)
+and 8815 (review); these local research outputs are not uploaded with the branch.
+
+**This is a partial reconstruction milestone, not a demonstrated automatic publication
+system.** Missing QA coordinate coverage prevents certified article ownership;
+printed numerals remain OCR observations; unreviewed folios/margins and absent
+independent calibration labels prevent publication. All machine publication decisions
+remain false. The next work must improve coordinate reconciliation and article-boundary
+ownership, then independently assess frozen predictions, rather than rename provisional
+classes or publish another manually curated page batch.
+
+PR #13 bounded hardening distinguishes tentative OCR disputes from verified print
+contradictions. Of the previous 203 contradictory top predictions, 174 have only
+one OCR numeral conflicting with HTML, 28 have agreeing QA/embedded-OCR numerals
+conflicting with HTML, and one has disagreeing OCR readings. None has independently
+verified contradictory print evidence. All 29 formerly-supported cases in that
+population have single-OCR conflicts; they remain provisionally supported with
+explicit outstanding homonym requirements, never publication authority. The new
+full run has 2,416 provisionally supported, 13,214 review-required and 2,408 unresolved
+witnesses. The two OCR readings are dependent observations of one printed source.
+
+Every witness retains both local and sequence-adjusted rankings. Each adjustment
+records scores, ranks and the source IDs/positions of its provisional supporting
+witnesses. `--disable-sequence-reranking` leaves local scores authoritative while
+retaining sequence diagnostics; it is pinned in the run configuration. The same
+907 provisional anchors still change 40 tops, without any claim of correct recovery.
+`work/html-print-reconstruction-hardening/sequence-changes.json` enumerates all 40
+changes and their evidence. These changes remain unassessed, not confirmed recoveries.
+The publication decision is independent of both scores and remains false.
