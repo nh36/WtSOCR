@@ -64,7 +64,8 @@ def test_machine_category_is_explicitly_provisional():
     p=dict(score=12, heading_evidence=['loc_exact','leading_tibetan_exact'],
            definition_evidence={'rare_definition_tokens':['distinctive','definition']},
            sequence_consistent=True, risks=['printed_homonym_unread'])
-    assert engine.category([p])[0]=='mechanically_supported_provisional'
+    assert engine.baseline_category([p])[0]=='mechanically_supported_provisional'
+    assert engine.category([p])[0]=='review_required'
     p['risks'].append('header_or_continuation_with_better_article_on_page')
     assert engine.category([p])[0]=='review_required'
     assert engine.category([])[0]=='unresolved'

@@ -19,7 +19,7 @@ import time
 
 from badw_html_print_alignment import FAMILIES, digest, object_digest
 from badw_html_print_engine import (VERSION, atomic_json, connection, completed, checkpoint,
-    index_witnesses, index_family, index_history, discover, match_page, tokens, write_results)
+    index_witnesses, index_family, index_history, discover, match_page, tokens, write_results, section_sequences)
 import collections
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -54,6 +54,7 @@ def main(argv=None):
         'registry':ROOT/'data/source_pdfs.tsv','certificate':ROOT/'data/badw_html_print_alignment.json',
         'expanded':ROOT/'data/badw_html_print_alignment.generated.json','baseline':ROOT/'data/badw_html_print_pages.json',
         'preparer':Path(__file__).with_name('prepare_badw_alignment_inputs.py'),
+        'structure':Path(__file__).with_name('badw_print_structure.py'),
         'engine':Path(__file__).with_name('badw_html_print_engine.py'),'runner':Path(__file__),
         'certificate_compiler':ROOT/'scripts/badw_html_print_alignment.py',
         'facsimiles':ROOT/'scripts/badw_html_print_facsimiles.py',
@@ -70,7 +71,7 @@ def main(argv=None):
     poppler=subprocess.run(['pdftotext','-v'],capture_output=True,text=True,check=True).stderr.splitlines()[0]
     configuration=dict(version=VERSION,inputs=hashes,python=platform.python_version(),
         pypdf=pypdf.__version__,sqlite=__import__('sqlite3').sqlite_version,poppler=poppler,
-        concurrency=1,definition_window_lines=24,sample_seed='20261025')
+        concurrency=1,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
     identity=object_digest(configuration)
     pin=output/'inputs.json'
     if pin.exists():
@@ -122,6 +123,7 @@ def main(argv=None):
                     print(f'  {f}: physical page {page}',flush=True)
             return dict(proposals=n)
         stage('match:'+family,match_family)
+    stage('section-sequences',lambda:section_sequences(db,witnesses))
     summary=write_results(db,output,ROOT,witnesses,identity)
     atomic_json(output/'timing-latest.json',dict(stages=timings,seconds=round(time.monotonic()-started,3),
         max_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,platform=sys.platform))

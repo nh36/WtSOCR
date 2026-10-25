@@ -1431,3 +1431,144 @@ the final invocation explicitly bound that namespace before pytest collection:
 ```sh
 python3 -c 'import sys, types, pathlib, pytest; package = types.ModuleType("scripts"); package.__path__ = [str(pathlib.Path("scripts").resolve())]; sys.modules["scripts"] = package; raise SystemExit(pytest.main(["tests", "-q"]))'
 ```
+
+### Accuracy and segmentation milestone (engine v3)
+
+PR #11 infrastructure was merged with merge commit
+`130581e25e09ca5837d25b3fa61320183792a385`. That merge authorises no
+machine-proposed original-print links. The following experiment remains separate
+from the 163 reviewed, attachable HTML source links.
+
+The input-preparation procedure above still applies. Run the complete experiment:
+
+```sh
+python3 scripts/run_badw_html_print_alignment.py --all-volumes --resume --output work/html-print-validation-final
+python3 scripts/evaluate_badw_alignment.py --baseline work/html-print-hardened-final --run work/html-print-validation-final --labels data/badw_html_print_evaluation.json
+python3 scripts/review_badw_alignment_cases.py --run work/html-print-validation-final --selection work/html-print-validation-final/evaluation-selection.json
+# All page groups, retaining already cached images:
+python3 scripts/review_badw_alignment_cases.py --run work/html-print-validation-final
+# Explicit additional rendering, never a complete PDF link:
+python3 scripts/review_badw_alignment_cases.py --run work/html-print-validation-final --page wts_8_b:17
+python3 -m http.server 8813 --bind 127.0.0.1 --directory work/html-print-validation-final/report
+```
+
+Serve only `report/`, locally. `groups.html` groups proposals by top proposed
+physical page, sorted by candidate density. Cards show OCR heading, coordinates,
+provisional extent, HTML definition, competing locations and uncertainty classes.
+Images are checksum-bound PNG caches rendered only when explicitly requested.
+They are physical-page research views, **not certified single-page derivatives**.
+No source PDF or symlink is placed in the report. Separate JSON decisions supplied
+with `--decisions` bind HTML/scan/evidence hashes and anchor, require an observation
+and accept/reject/defer, and remain ineligible for reader attachment. Changed
+underlying evidence invalidates the decision instead of carrying it forward.
+
+`badw_print_structure.py` bounds article text at independently plausible next
+headings, including non-C6 headings. It uses horizontal box overlap when available
+and excludes other columns; missing coordinates retain an explicitly uncertain
+line-order fallback. Bare top-margin headings and repeated same-spelling headings
+are flagged. This reduces neighbouring-definition borrowing but is not a complete
+article reconstruction: cross-column/page continuations are deliberately not joined,
+and a 48-line cap remains. No universal gutter or pagination offset is inferred.
+The three-page weighted monotone chain allows skipped articles and supplies
+section-consistency diagnostics; it does not force assignments or increase their
+acceptance category. Missing geometry limits its interpretation.
+
+Only a numeral before the leading Tibetan cluster is parsed as a *tentative OCR
+homonym candidate*. Sense/citation numbers later in the line are excluded. Missing
+numbering is unknown, never homonym 1. Neither this parser nor its output establishes
+typographic homonym identity. The stricter supported predicate excludes unread or
+conflicting homonyms, uncertain starts, coordinates and article extents. No proposal
+in this run satisfies that predicate; no stricter automatic-publication class is
+claimed.
+
+Full execution processed all 18,038 HTML witnesses and 3,466 physical pages
+(352,244 QA lines). It retained 160,855 start **hypotheses**, not articles:
+24,229 C6-linked and 136,626 without C6; 524,606 correspondence proposals.
+Against the hardened engine-v2 baseline:
+
+| Result | Before | After |
+| --- | ---: | ---: |
+| Mechanically supported, provisional | 2,342 | 0 |
+| Review required | 13,288 | 15,630 |
+| Unresolved | 2,408 | 2,408 |
+| Already reviewed reader links | 163 | 163 |
+
+All 2,342 formerly supported cases are downgraded. There is no demonstrated new
+automatic recovery from review. Top proposal anchors changed for 280 witnesses;
+page-local chain membership is 9,991 versus 10,245 section-chain memberships,
+with 1,830 membership changes. These are diagnostics, not correct-recovery counts.
+The existing reviewed-anchor retrospective improves from 120 to 121 exact starts
+and 126 to 127 correct physical pages out of 131 detected cases; it is not an
+independent precision estimate.
+
+`comparison.json` includes overlapping uncertainty counts by scan family. Totals:
+unread/conflicting homonym 15,630; uncertain page/column 14,871; incomplete extent
+14,182; unreviewed folio/crop 15,276; uncertain start 3,701; generic/absent definition
+4,346; header/continuation risk 1,020; neighbouring compound 33; OCR spacing 968;
+missing historical identity edge 5,564; competing location/identity 2,552.
+These are deterministic screening flags, not independently adjudicated error counts.
+
+The separate `data/badw_html_print_evaluation.json` contains 32 source observations:
+four per scan family and baseline supported/review stratum, selected by fixed seed
+`20261026-independent`. Alternating development/held-out assignments were fixed
+before inspection; labels were not used to tune the algorithm. The labels include
+scan, HTML, QA-line, render and evidence identities, actual observations, unknowns,
+and distinct heading/start/page/lexical/homonym/own-evidence/crop judgments.
+Changed predicted anchors or evidence do not inherit a positive judgment blindly.
+
+| Independent diagnostic | Correct / known | Unknown | Wilson 95% interval |
+| --- | ---: | ---: | --- |
+| Heading / article start | 30 / 32 | 0 | 79.85–98.27% |
+| Physical page | 29 / 31 | 1 | 79.28–98.21% |
+| Lexical article identity | 26 / 31 | 1 | 67.37–92.91% |
+| Printed homonym | 1 / 3 | 29 | 6.15–79.23% |
+| Evidence belongs to article | 17 / 20 | 12 | 63.96–94.76% |
+| Certified folio/crop | 0 / 0 | 32 | unavailable |
+
+The 16 formerly supported sampled proposals have compatible starts/pages/lexical
+identities (16/16, lower Wilson bound 80.64%), but only one known homonym and twelve
+known own-evidence judgments. The held-out half has 15/16 correct lexical identities
+(71.67–98.89%) and no established homonym labels. These small stratified samples
+cannot establish population precision; no article-recall denominator is available.
+Examples expose quotation-as-heading errors (`dpyid dus`, `’brog pa`), neighbouring
+compound confusion (`dkor sruṅ`), and explicit homonym errors (`ldoṅs¹` versus printed
+²ldoṅs; `’bum pa²` versus printed ³’bum pa). Unknowns are not counted as successes.
+A larger independent held-out lexical/homonym/extent dataset remains necessary.
+
+For exact historical-origin reproduction, retain the pinned portable input bundle
+listed in `inputs.json`; rebuilding it must include the same optional anchor and
+edge JSONL inputs. Omitting them remains supported but changes C6/history metrics.
+
+Measured full-run wall time was 268.42 seconds and peak RSS 552,632,320 bytes.
+A cached resume reproduced all canonical files. A separate stop-after-starts run
+and resume also test stage checkpoint recovery; SQLite interruption rolls back
+incomplete stage work. Timings are execution observations, not scholarly review
+throughput. Canonical SHA-256 identities for the complete experiment:
+
+- `witnesses.jsonl`: `fbdd8ee3dfb297e5f98bacd6c51d2f861f5b4e03984be7a0191e6c20330d1362`
+- `validation.json`: `b27e3b687e8e837a0673bc047fb4228a1152bbdb24fb65e32b8402d23078776b`
+- `report/review.html`: `381b59c39944b2cd55edfd15ee20c6bca2688c4722696472358d02d0c971f3e9`
+
+Focused tests include real QA coordinates for da yaṅ 1090:55/89, mdun 106:47/59,
+and ba tshwa 17:63 versus ba tshwa can 17:77, plus held-out synthetic boundaries,
+column separation, numeral placement and monotone-chain equivalence. The full
+Python suite reports 2,126 passed / 62 subtests, with the same two inherited
+failures documented above. Required repository regressions report 315 passed /
+62 subtests; Node reports 19 passed. No release evidence is changed.
+
+A fresh full-reader build and source-integrity differential retain 29,878 witness
+identities, 163 attached HTML print links, 11,840 byte-identical PDF witness bodies
+and 1,377 unchanged source assets. Catalogue order/search keys, source strings,
+citations and relationship census match the prior certified reader. All 48 print
+derivatives match the reviewed cache; no complete-volume route, private path or
+symlink is served. Chrome certification passes at widths 1440, 320, 390 and 768,
+including 61 apostrophe-equivalent matches, 447 `gyu` matches, reference/citation
+journeys and 58 facsimile checks, with zero browser errors. The separate grouped
+review report also passes desktop/mobile Chrome checks.
+
+**No defined class has yet been demonstrated safe for bulk publication.** The main
+obstacles are incomplete coordinate coverage, uncertain article extents and
+independent printed homonym identity, followed by unreviewed folio/crop mapping.
+The next experiment should improve those source features and test on a larger
+held-out dataset, without publishing additional reader links or repeatedly
+hand-curating acceptance batches.
