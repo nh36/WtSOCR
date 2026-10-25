@@ -103,6 +103,12 @@ def test_missing_homonym_checksum_and_pdf_are_not_promoted(prepared):
     record['headword']['loc'] = 'other'
     with pytest.raises(ValueError, match='identity changed'):
         attach.attach(record)
+    # The exact URL still identifies the reviewed witness, but an absent
+    # homonym must never be silently converted to the ledger's numeral 1.
+    record = entry()
+    record['homonym'] = None
+    with pytest.raises(ValueError, match='identity changed'):
+        attach.attach(record)
 
 
 def test_fail_closed_stale_tampered_manifest_and_derivative(prepared):

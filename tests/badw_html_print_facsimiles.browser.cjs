@@ -9,22 +9,33 @@ const {chromium}=require('playwright-core');
  const base=process.env.BADW_READER_URL||'http://127.0.0.1:8806';
  const screenshots=process.env.BADW_SCREENSHOTS||'work/html-print-browser';fs.mkdirSync(screenshots,{recursive:true});
  const reviewed=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_pages.json')));
+ const generated=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/badw_html_print_alignment.generated.json')));
+ reviewed.witnesses.push(...generated.witnesses);Object.assign(reviewed.pages,generated.pages);
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:process.env.BADW_HEADED!=='1'});
  const errors=[];const report={};
  try{
  const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
  const catalog=(await (await page.request.get(base+'/data.json')).json()).entries;
  const printed=await (await page.request.get(base+'/print_facsimiles.json')).json();
- assert.equal(catalog.length,29878);assert.equal(printed.witnesses.length,32);assert.equal(Object.keys(printed.pages).length,10);
+ assert.equal(catalog.length,29878);assert.equal(printed.witnesses.length,reviewed.witnesses.length);assert.equal(Object.keys(printed.pages).length,Object.keys(reviewed.pages).length);
  const bodies=[];
- for(const meta of catalog.filter(e=>reviewed.witnesses.some(r=>r.headword===e.headword.loc&&String(r.homonym)===String(e.homonym||1)))){
+ for(const meta of catalog.filter(e=>reviewed.witnesses.some(r=>r.headword===e.headword.loc&&String(r.homonym)===String(e.homonym)))){
   const response=await page.request.get(base+'/'+meta.path);assert(response.ok());const body=await response.json();
   if(reviewed.witnesses.some(r=>r.source_url===body.source_url))bodies.push({...body,path:meta.path});
  }
- assert.equal(bodies.length,32);
+ assert.equal(bodies.length,reviewed.witnesses.length);
  assert(!JSON.stringify(printed).includes('originals/'));
  for(const body of bodies){
   const provenance=body.sources[1].print_provenance;
+  const reviewedWitness=reviewed.witnesses.find(r=>r.source_url===body.source_url);
+  assert.equal(provenance.printed_heading,reviewedWitness.printed_heading);
+  assert.deepEqual(provenance.evidence,reviewedWitness.evidence);
+  if(provenance.evidence.certificate){
+   const observation=provenance.evidence.certificate.print_observation;
+   assert.equal(observation.verification,'visual transcription; not machine-verified');
+   assert.equal(observation.heading,provenance.printed_heading);
+   assert.equal(observation.heading_anchor,observation.evidence_anchor);
+  }
   assert(!('original_url' in provenance));
   assert(!/file:|\/Users\/|\/private\//.test(JSON.stringify(body)));
   assert.equal((await page.request.get(base+'/sources/originals/'+provenance.source_sha256+'.pdf')).status(),404);
@@ -44,12 +55,24 @@ const {chromium}=require('playwright-core');
    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),source.sha256);
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    if(body.headword.loc==='ba'&&String(body.homonym)==='1')await page.screenshot({path:path.join(screenshots,`ba1-${width}.png`),fullPage:true});
+   if(body.headword.loc==='ba tshwa'){
+    assert.equal(provenanceAnchor(body),'wts_8_b:17:63');
+    await page.screenshot({path:path.join(screenshots,`ba-tshwa-${width}.png`),fullPage:true});
+   }
   }
  }
  // A continuation-page running header must not turn ma4 into an exact link.
  const ma4=catalog.find(e=>e.source_kind==='html'&&e.headword.loc==='ma'&&String(e.homonym)==='4');assert(ma4);
  await go(ma4);assert.equal(await page.locator('#article > .source-access a').count(),1);
  assert.equal(await page.locator('#article > .source-access a').textContent(),'BAdW editorial text');
+ // Correct printed pages do not justify retaining running-header identities.
+ // Both actual article starts lack C6 anchors and remain explicitly deferred.
+ for(const heading of ['da yaṅ','mdun']){
+  const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===heading&&String(e.homonym)==='1');assert(meta);
+  await go(meta);
+  assert.equal(await page.locator('#article > .source-access a').count(),1);
+  assert.equal(await page.locator('#article > .source-access a').textContent(),'BAdW editorial text');
+ }
  const gyur=catalog.find(e=>e.source_kind==='pdf'&&e.headword.loc==='’gyur'&&String(e.homonym)==='1');assert(gyur);
  const pdfBody=await (await page.request.get(base+'/'+gyur.path)).json();assert(!pdfBody.sources.some(s=>s.print_provenance));
  await go(gyur);assert.equal(await page.locator('#article > .source-access a').count(),pdfBody.sources.length);
@@ -80,3 +103,5 @@ const {chromium}=require('playwright-core');
  console.log(JSON.stringify(report));
  }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});
+
+function provenanceAnchor(body){return body.sources[1].print_provenance.evidence.certificate.anchor;}

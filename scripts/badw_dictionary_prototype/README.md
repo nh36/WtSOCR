@@ -975,19 +975,93 @@ and 9-m are single-page scans. Two text columns do not mean two printed pages.
 These observations do not authorise automatic cropping of unreviewed pages.
 The published spread at physical page 40 uses a reviewed noncentral gutter,
 438 points from the left; full height and outer margins are retained. The two
-sides are volume 1 pages 14 and 15. Other published pages retain their complete
-single-page boxes. Rotated pages and invalid geometry fail closed.
+sides are volume 1 pages 14 and 15. The new spreads at physical pages 41–44
+use individually reviewed gutters at 441, 439, 438 and 439 points. Genuine
+single pages retain their complete boxes. Rotated pages and invalid geometry
+fail closed.
 
-Current HTML-only coverage is **18,038 witnesses: 32 exact, 11,418 with existing
-unconfirmed candidates, and 6,588 without an established correspondence**.
-Candidate counts are the URL intersection with the existing C11 identity
-handoff, not new matches or evidence of exact printed locations. Weak one-field
-matches, running headers, continuation pages, insufficient independent source
-discriminators and unresolved homonym identities prevent bulk promotion.
-There are **10 distinct derivatives: two cropped sides of one reviewed spread
-and eight genuine single pages**. One physical spread needs exceptional
-noncentral geometry; no published page has pending crop review. Unreviewed
-pages are not supplied speculatively.
+Current HTML-only coverage is **18,038 witnesses: 163 exact, 11,287 candidate-only,
+and 6,588 without a usable candidate** (previously 32 / 11,418 / 6,588).
+There are **48 distinct derivatives: nine cropped printed pages and 39 genuine
+single pages**. After the article-boundary correction below, the expanded batch
+retains 131 links on 38 pages from 40 inspected
+printed pages across all four registered scan families. Two inspected pages
+produce no accepted links. Thirteen proposals were rejected and seventeen deferred.
+This is 3.275 retained verified entries per inspected page; it is not an automatic matching
+accuracy estimate, since every acceptance still required scan inspection.
+
+`data/badw_html_print_alignment.json` holds compact page certificates and explicit
+negative decisions. `data/badw_html_print_alignment.generated.json` is their
+reproducible expansion, separate from the initial manual ledger. Each accepted
+witness pins an acquired HTML checksum, C6 heading anchor and definition component
+checksum, heading column, explicit printed homonym (including absence), and a
+scan-reviewed distinguishing definition. An absent printed numeral is never
+defaulted to homonym 1. An unnumbered printed article may correspond to an editorial
+number only through its individually reviewed definition, not the headword alone.
+Candidate edges locate evidence; they confer no acceptance. Headers, continuation
+text, competing meanings and weak short definitions are rejected or deferred.
+
+Recompile or check the ledger against an existing complete reader and the pinned
+C6/C11 ignored inputs (no source acquisition is performed):
+
+```sh
+python3 scripts/badw_html_print_alignment.py \
+  --reader work/existing-reader --check --inventory work/html-print-inventory.json
+```
+
+Omit `--check` only after reviewing changed certificates to regenerate the expanded
+ledger. The complete-reader build checks both ledger hashes; derivative preparation
+checks registered original hashes. The compiler rejects stale anchors, HTML,
+definition evidence and candidate input files. The inventory categorises all HTML
+witnesses without silently certifying historical candidates. Current categories:
+163 reviewed exact pages; 5,560 dual-script heading candidates with unverified
+pages; 4,691 one-field lexical candidates; 1,036 competing exact headings; 6,588
+without a usable candidate. The historical HTML handoff contains no independently
+accepted lexical identities. Running-header and continuation counts outside the
+reviewed batch are unknown; they cannot be inferred from candidate confidence.
+Candidate volumes remain scan-family locators, not verified printed pagination.
+
+Historical candidate locators break down as follows. A witness with edges in
+several scans appears once in the multiple-family row; reviewed links may have
+superseded those historical locators.
+
+| Candidate scan family | Reviewed | Dual heading | One-field | Competing | No candidate |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| WtS 1–34 | 52 | 1,810 | 1,056 | 392 | 0 |
+| WtS 35–51 | 32 | 2,181 | 1,896 | 399 | 0 |
+| WtS 8-b | 27 | 1,031 | 1,038 | 160 | 0 |
+| WtS 9-m | 35 | 496 | 579 | 55 | 0 |
+| Multiple families | 13 | 42 | 122 | 30 | 0 |
+| No historical locator | 4 | 0 | 0 | 0 | 6,588 |
+
+Accepted links by printed volume are 1: 26, 5: 61, 6: 5, 8: 32 and 9: 39.
+By registered scan they are WtS 1–34: 57, WtS 35–51: 35, WtS 8-b: 32 and
+WtS 9-m: 39. The new batch reviews volume 1 pp.16–23, volume 5 pp.3–10 and
+354–361, volume 8 pp.2–9 and volume 9 pp.13–20. Volume 1 p.21 has no accepted
+identity; volume 5 p.360 contains continuation text only. Examples include
+kamalaśīla (1:17), kalapiṅka (1:23), ḍa ma ru (5:10), mda’ mo¹ (5:355),
+ba thag¹/² (8:4), ba spu² (8:6) and ma gcig lab kyi sgron ma (9:18).
+Ka riṅ is rejected for a printed/editorial sense mismatch; competing ka ru
+homonyms and short insufficiently distinctive glosses remain deferred.
+
+The four newly inspected spreads use gutters at 441, 439, 438 and 439 points
+(physical pages 41–44), retaining full height and outer margins. Seven of their
+eight printed sides have accepted links. These are explicit geometry reviews,
+not a universal half-width rule. All other new pages retain their full boxes.
+There are no additional exceptional transformation overrides or pending crop
+reviews among published pages. The existing crosswalk covers volumes 2–4 and
+must not be extrapolated across inserted titles or pagination changes. Physical
+1076/1077 were separately checked as a blank-half/title transition; neither is
+published by this batch.
+
+The method removes repetitive page/provenance authoring and shares derivatives;
+it does not remove scholarly identity review. A larger batch needs fresh heading,
+definition, neighbour and folio inspection, particularly for homonyms and long
+articles, plus reviewed gutter coordinates for each new spread. Manual review
+elapsed time was not instrumented, so no links-per-hour claim is made. The next
+batch should record review time separately from compiler/build time.
+Certificate checking plus the complete HTML inventory took 16.75 seconds; the
+fresh full-reader build took 829.33 seconds (mostly existing evidence projection).
 
 The reviewed examples include ka ba¹ and its compounds (volume 1 pp. 14–15),
 da¹/² and ḍā ki ma¹ (volume 5 p. 1), da ko¹ and da ci¹ (p. 2), mda’ rgyus¹
@@ -1001,7 +1075,7 @@ therefore retains its existing born-digital facsimile without an extra link.
 Focused checks:
 
 ```sh
-python3 -m pytest tests/test_badw_html_print_facsimiles.py tests/test_badw_full_reader.py -q
+python3 -m pytest tests/test_badw_html_print_alignment.py tests/test_badw_html_print_facsimiles.py tests/test_badw_full_reader.py -q
 node --test tests/badw_dictionary_prototype.test.cjs
 BADW_READER_URL=http://127.0.0.1:8806 node tests/badw_html_print_facsimiles.browser.cjs
 ```
@@ -1014,10 +1088,180 @@ differential must accompany changes at a corpus milestone.
 The fresh 29,878-witness milestone build preserves catalogue order, search keys,
 source text, all accepted relationships and the reference census (7,626 resolved
 targets; 748 residuals). All 11,840 PDF witness bodies and 1,377 existing PDF
-assets are byte-identical to the merged frontend baseline. Focused checks pass
-(21 Python tests; 19 Node tests), as do the required 315 regressions with 62
-subtests. The full Python suite has 2,052 passes and the two inherited failures
+assets are byte-identical to the merged PR #9 baseline. Focused checks pass
+(33 Python tests; 19 Node tests), as do the required 315 regressions with 62
+subtests. The full Python suite has 2,064 passes and the two inherited failures
 (external-publications checksum and WtS 8-b p. 409 line 73 evidence). Chrome
-certification passes all 32 new links, opens all ten prepared PDFs, and checks
+certification passes all 165 links, opens all 48 prepared PDFs, and checks
 desktop/mobile views without browser errors. The existing full-reader Chrome
 suite also passes search, history, keyboard and grammatical-reference journeys.
+
+
+PR #10 independent evidence audit (historical; corrected below)
+
+The earlier follow-up audit reported a reread of all 133 new assignments, including all 31 whose
+HTML evidence has at most 12 alphanumeric characters, all six explicitly
+numbered printed headings, every accepted spread side, and the remaining
+records across all four scan families. Its claim that all 133 survived was
+premature: review subsequently identified two running-header anchors and one
+neighbouring-compound anchor. The correction below supersedes that conclusion
+and its 165-link coverage figure. The existing 32 baseline links are unchanged.
+
+Each compact assertion now separates `print_observation` (actual heading,
+explicit numeral or absence, printed evidence and discriminating context) from
+`definition_evidence` and its hashed HTML definition component. The editorial
+primary headword remains in the expanded record. Every audited case has its own
+printed observation and exclusion/context statement in
+`data/badw_html_print_alignment.json`; the expanded ledger is generated, not an
+independent source of scholarly authority. Eighteen printed headings differ
+from the editorial primary form, mostly by alternatives or numeral notation.
+One substantive reading is printed `mdud lha sum brgyad drug bcu`, versus HTML
+`mdud lha sum brgya drug bcu`. Both readings are retained without changing the
+reader headword. Numbered cases are da phan, ba dkar, ba thag 1/2 and ba spu 1/2.
+Generic glosses such as `ein Vogel` require heading/context discrimination;
+there is no arbitrary minimum quote length.
+
+The compiler binds the observation to the same heading/evidence anchor, scan
+family, physical page, printed folio, column and geometry, and verifies source,
+anchor and HTML component hashes. It rejects conflicting anchor reuse unless an
+explicit reviewed multi-witness relationship explains it. A previously negative
+source/anchor pair requires a checksum-bound reconsideration. It also verifies
+the complete reviewed projection in the expanded ledger before preparation.
+These checks establish mechanical consistency, **not automatic verification of
+printed wording**: a false transcription or an adjacent definition attributed
+to the same anchor still requires human detection. The retained observations
+are explicitly labelled human visual transcriptions.
+
+All 48 shared derivatives remain byte-identical: nine cropped spread sides and
+39 complete single-page views. No gutter, orientation, homonym assignment or
+page-location correction was needed. Original scans remain private and unchanged.
+The rendered contact sheets and ordinary Chrome PDF views supplement the
+source-page reread. PDF page boxes are visual crops, not secure redaction;
+these derivatives remain local research material pending a separate distribution
+and rights decision.
+
+The next queue is reproducible with:
+
+```sh
+python3 scripts/badw_html_print_alignment.py --bodies work/html-print-alignment-20261024/bodies.json --check --queue data/badw_html_print_review_queue.json
+```
+
+It prepares 48 unreviewed physical pages (12 per family), with 683 page-level
+candidate incidences covering 678 distinct HTML witnesses, not accepted identities. Folios and crop geometry are
+null until inspected. Each family contributes eight density-ranked pages, two
+competing/numbered-homonym controls and two sparse-definition controls.
+
+| Scan family | Proposed physical pages, in review priority | Candidate incidences |
+| --- | --- | ---: |
+| WtS 1–34 | 86, 159, 81, 120, 99, 62, 222, 215, 46, 36, 162, 1193 | 235 |
+| WtS 35–51 | 682, 683, 733, 859, 377, 636, 616, 723, 1070, 1071, 1106, 1052 | 179 |
+| WtS 8-b | 56, 322, 358, 480, 487, 186, 263, 227, 199, 410, 247, 284 | 154 |
+| WtS 9-m | 74, 198, 359, 151, 360, 27, 316, 364, 372, 321, 152, 154 | 115 |
+
+Dual-script agreement and candidate density rank preparation only. Competing
+homonyms, continuation starts, running headers, sparse glosses and missing
+crosswalk coverage remain likely obstacles. Each new spread needs its own gutter
+review; no offset or geometry is extrapolated. The next batch must record separate
+timers for selection, actual facsimile review, evidence entry, generation, tests
+and full certification before making an acceptance-throughput claim.
+
+The follow-up scan reread and evidence entry took a combined 8 min 49 s; those
+phases were interleaved, so isolated visual-review time and accepted links per
+hour of actual review are **not measured**. No pure-review throughput is inferred
+from that interval. All 133 audited links were retained on 38 linked printed
+pages (3.50 retained links/page); this is an audit retention rate, not new
+acceptance throughput. The original batch inspected 40 printed pages, accepted
+133 witness links and recorded 28 rejected/deferred cases (17.4% of 161 recorded
+witness decisions). Queue preparation and build timings are computational costs,
+not scholarly review time. Substantial new review remains outside PR #10.
+
+Follow-up certification: 47 focused Python tests, 19 Node tests and the required
+315 regressions (62 subtests) pass. The full Python run has 2,076 passes and the
+same two inherited failures described above; two subsequent queue tests also
+pass in the focused run. Repository hygiene, generated status and compilation
+checks pass. Certificate/source-hash checking took 35.69 s and deterministic
+queue preparation 34.24 s; neither measures visual review.
+
+A fresh full reader retains all 29,878 witnesses and the 7,626 resolved / 748
+residual reference census. Differential checks preserve every source body,
+catalogue/search order, relationship, all 11,840 PDF witness bodies and 1,377
+cached assets. Against the pre-audit reader, only the 133 new links' provenance
+changes; all 48 derivative PDFs are byte-identical. Chrome checks exercise all
+165 assignments and open all 48 PDFs, including desktop/mobile comparisons;
+the full-reader search/history/keyboard/reference journeys pass without browser
+errors. The local preview is http://127.0.0.1:8810/. Screenshots and build logs
+remain in ignored `work/html-print-evidence-audit/`. The historical 69 release
+reproduction differences were not rerun during this audit; `release/current`
+is unchanged.
+
+Both Chrome runners exited successfully. The facsimile runner took several
+minutes to finish shutdown after emitting its assertion summary.
+
+
+PR #10 article-boundary correction (supersedes the historical audit above)
+
+The second source-image/QA audit covers every one of the original 133 new
+assertions. It retains 130 unchanged, corrects one anchor on the same printed
+page, and defers two. No printed-page destination or crop geometry changed.
+The compact per-assertion results, previous assertion hashes and reasons are in
+`article_boundary_audit` in the existing certificate; this preserves the errors
+rather than rewriting their history.
+
+| Witness | Incorrect binding | Source finding and disposition |
+| --- | --- | --- |
+| da yaṅ | WtS 1–34 physical 1090, line 55 | Running header. The article begins at 89 and its definition occupies 89–91. No C6 heading anchor exists at 89; deferred, editorial link retained. |
+| mdun | WtS 35–51 physical 106, line 47 | Running header. The article begins at 59, with definition at 60. No C6 heading anchor exists at 59; deferred, editorial link retained. The following sense numeral is not a homonym numeral. |
+| ba tshwa | WtS 8-b physical 17, line 77 | Neighbouring ba tshwa can, defined as salzig. Rebound to existing anchor 63, ba tshwa auch ba tsha, with its own Kuhsalz/Soda evidence at 63–66; 77–78 explicitly excluded. Same derivative. |
+
+Each retained assertion now pins the actual reviewed heading line, its own
+selected evidence lines, excluded adjacent lines where needed, and the SHA-256
+of the exact source-faithful QA rows. The printed observation remains separate
+from the editorial identity and hashed definition component. Two-column QA can
+interleave articles: mdud pa at physical 105 line 40 uses definition lines
+73–74, while ba gam at physical 16 line 41 uses 66–67. Intervening other-column
+material is explicitly excluded. QA `headword_line` itself is not an article-start
+classification and can include running headers and continuation text. The
+compiler checks the reviewed spans and bindings; it cannot independently prove
+a human transcription or article-boundary judgement from their declarations.
+
+The generated ledger is compared against the complete deterministic projection
+of the reviewed certificate, including source URL, editorial headword, homonym,
+review basis, evidence identities and input hashes. Rehashing a modified expanded
+record does not make it acceptable. The actual compiler `--check`, using private
+source inputs and current HTML bodies, passes before derivative preparation.
+Inventory and queue exclusion both use `(source_url, html_sha256)`, matching
+reader attachment; a reacquired URL with changed HTML is no longer counted as a
+current reviewed attachment. There are 131 accepted new certificate records and
+32 baseline records; all 163 are attachable to the current acquired corpus.
+Coverage is 163 verified / 11,287 candidate-only / 6,588 without candidates.
+The 48-page next queue was regenerated, with no new acceptances.
+
+All 48 existing single-page derivatives are retained with identical bytes:
+nine cropped spread sides and 39 single pages. Their original scans remain
+unchanged outside the served tree. Crop boxes are visual crops, not redaction;
+derivatives remain authorised local research material.
+
+Correction certification: 63 focused Python tests, 19 Node tests and the required
+315 regression tests (62 subtests) pass. The full Python suite reports 2,094
+passed (62 subtests) and the same two inherited failures: the bibliography
+external-publications input checksum and residual ledger WtS 8-b p. 409 line 73.
+The historical 69 release-reproduction differences were not rerun here.
+Repository hygiene, generated-status check and required Python compilation pass.
+
+A fresh 29,878-witness reader is served locally at http://127.0.0.1:8811/.
+Differential checks preserve all 11,840 PDF witness bodies byte-for-byte, all
+1,377 cached source assets, source text, citations, relationships, catalogue
+order, search keys and the 32 PR #9 links. Cross-reference targets remain
+7,626 resolved / 748 residual. Against the previous PR reader, changes are
+limited to 131 provenance records and two removed/deferred print links; all
+48 derivative PDFs are byte-identical. No private paths, original-volume routes
+or symlinks are present. Local evidence and screenshots are under ignored
+`work/html-print-boundary-correction/`; `release/current` is unchanged.
+
+Chrome certification passes both runners: all 163 attached HTML assignments at
+1440/390 pixels, all 48 single-page PDFs opened in Chrome, three mobile PDF
+comparisons, no browser errors. The full reader journeys preserve 61 apostrophe
+matches and 447 gyu matches, global navigation and grammatical/citation links.
+Search issues no entry-body requests; mean filter time is 2.8–3.5 ms on this run.
+The corrected ba tshwa page and desktop/mobile presentation were inspected;
+da yaṅ and mdun correctly retain editorial-only source access.

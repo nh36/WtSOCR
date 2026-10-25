@@ -46,11 +46,29 @@ def check_page(page, review):
         raise ValueError('single-page source must retain its complete page')
 
 
+def reviewed_records(reviews):
+    """Baseline manual adjudications plus separately generated page certificates."""
+    reviewed = json.loads(Path(reviews).read_text())
+    bindings = {}
+    certificate = ROOT/'data/badw_html_print_alignment.json'
+    generated = ROOT/'data/badw_html_print_alignment.generated.json'
+    if Path(reviews).resolve() == REVIEWS.resolve() and certificate.exists():
+        from badw_html_print_alignment import validate_expansion
+        expanded = json.loads(generated.read_text())
+        validate_expansion(json.loads(certificate.read_text()), expanded)
+        if set(reviewed['pages']) & set(expanded['pages']):
+            raise ValueError('duplicate alignment page')
+        reviewed['pages'].update(expanded['pages'])
+        reviewed['witnesses'].extend(expanded['witnesses'])
+        bindings = dict(alignment_sha256=sha256(generated), certificate_sha256=sha256(certificate))
+    return reviewed, bindings
+
+
 def prepare(scans_root, output, reviews=REVIEWS, registry=ROOT/'data/source_pdfs.tsv'):
     """Generate each distinct page once. Never modify registered originals."""
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    reviewed = json.loads(Path(reviews).read_text())
+    reviewed, bindings = reviewed_records(reviews)
     sources = {r['label']: r for r in csv.DictReader(Path(registry).open(), delimiter='\t')}
     readers, originals, pages = {}, {}, {}
     for key, row in reviewed['pages'].items():
@@ -89,7 +107,7 @@ def prepare(scans_root, output, reviews=REVIEWS, registry=ROOT/'data/source_pdfs
         seen.add(binding)
         witnesses.append(row)
     manifest = dict(version=1, reviews_sha256=sha256(reviews), registry_sha256=sha256(registry),
-                    pages=pages, witnesses=witnesses, originals=originals)
+                    pages=pages, witnesses=witnesses, originals=originals, **bindings)
     (output/'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
     return manifest
 
@@ -100,7 +118,9 @@ class Facsimiles:
         self.data = json.loads(self.path.read_text())
         if self.data['version'] != 1 or self.data['reviews_sha256'] != sha256(REVIEWS) or self.data['registry_sha256'] != sha256(ROOT/'data/source_pdfs.tsv'):
             raise ValueError('stale facsimile manifest')
-        reviewed = json.loads(REVIEWS.read_text())
+        reviewed, bindings = reviewed_records(REVIEWS)
+        if any(self.data.get(k) != v for k, v in bindings.items()):
+            raise ValueError('stale generated alignment manifest')
         if self.data['witnesses'] != reviewed['witnesses'] or set(self.data['pages']) != set(reviewed['pages']):
             raise ValueError('facsimile manifest differs from reviewed evidence')
         for key, review in reviewed['pages'].items():
@@ -118,7 +138,7 @@ class Facsimiles:
         row = self.witnesses.get((entry['source_url'], editorial['sha256']))
         if row is None:
             return
-        if entry['headword']['loc'] != row['headword'] or str(entry.get('homonym') or 1) != str(row['homonym']):
+        if entry['headword']['loc'] != row['headword'] or str(entry.get('homonym')) != str(row['homonym']):
             raise ValueError('reviewed HTML witness identity changed')
         page = self.data['pages'][row['page']]
         expected_id = derivative_id(page['source_sha256'], page['physical_page'], page['crop'])
