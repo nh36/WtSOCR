@@ -128,3 +128,47 @@ def test_neighbouring_compound_is_not_the_salt_article():
     own = engine.discover_line({'line_text': 'བ་ཚ་ batshwa auch ba tsha "Kuhsalz", ein Salz;'}, indexes)
     assert 'salt' in own
     assert 'salty' not in own
+
+
+def corpus_fixture(tmp_path):
+    row = dict(id='entry', source_kind='html', headword={'loc':'ka'}, homonym=None)
+    body = dict(row, inspection_id='badw:https://wts-digital.badw.de/lemma/ka',
+                source_url='https://wts-digital.badw.de/lemma/ka', components=[],
+                sources=[dict(url='https://wts-digital.badw.de/lemma/ka',sha256='a'*64)])
+    catalogue, bodies = tmp_path/'catalogue.json', tmp_path/'bodies.json'
+    catalogue.write_text(json.dumps(dict(entries=[row])))
+    bodies.write_text(json.dumps({body['inspection_id']:body}))
+    return catalogue, bodies, row, body
+
+
+def test_complete_identity_preflight(tmp_path):
+    catalogue, bodies, row, body = corpus_fixture(tmp_path)
+    db = engine.connection(':memory:')
+    assert engine.index_witnesses(db,bodies,catalogue,expected=(1,1))['html_witnesses']==1
+    with pytest.raises(ValueError, match='incomplete catalogue'):
+        engine.index_witnesses(engine.connection(':memory:'),bodies,catalogue)
+    bodies.write_text('{}')
+    with pytest.raises(ValueError, match='incomplete HTML'):
+        engine.index_witnesses(engine.connection(':memory:'),bodies,catalogue,expected=(1,1))
+
+
+@pytest.mark.parametrize('change', ['headword','id','checksum','duplicate'])
+def test_inconsistent_corpus_is_rejected(tmp_path, change):
+    catalogue, bodies, row, body = corpus_fixture(tmp_path)
+    if change == 'headword':
+        body['headword'] = {'loc':'other'}
+    elif change == 'id':
+        body['id'] = 'absent'
+    elif change == 'checksum':
+        body['sources'][0]['sha256'] = 'invalid'
+    else:
+        catalogue.write_text(json.dumps(dict(entries=[row,row])))
+    bodies.write_text(json.dumps({body['inspection_id']:body}))
+    with pytest.raises(ValueError):
+        engine.index_witnesses(engine.connection(':memory:'),bodies,catalogue,expected=(1,1))
+
+
+def test_history_is_explicitly_optional():
+    result = engine.index_history(engine.connection(':memory:'),Path('/absent'),{})
+    assert result['edges']==result['anchors']==0
+    assert 'not supplied' in result['status']

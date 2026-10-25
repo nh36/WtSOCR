@@ -27,7 +27,7 @@ from badw_html_print_facsimiles import reviewed_records, REVIEWS
 from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 
-VERSION = 'html-print-engine-v2'
+VERSION = 'html-print-engine-v2.1'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -126,14 +126,41 @@ def checkpoint(db, name, details):
     db.commit()  # Stage data and completion marker commit together or both roll back.
 
 
-def index_witnesses(db, bodies, catalogue):
-    ranks = {r['id']: n for n, r in enumerate(json.loads(Path(catalogue).read_text())['entries'])}
+def catalogue_records(catalogue, expected=(29878, 18038)):
+    rows = json.loads(Path(catalogue).read_text())['entries']
+    records = {r['id']: r for r in rows}
+    if len(records) != len(rows):
+        raise ValueError('duplicate catalogue identity')
+    html_count = sum(r['source_kind'] == 'html' for r in rows)
+    if (len(rows), html_count) != expected:
+        raise ValueError(f'incomplete catalogue: {(len(rows), html_count)}; expected {expected}')
+    if any(r['source_kind'] not in ('html', 'pdf') for r in rows):
+        raise ValueError('unknown catalogue source kind')
+    return rows, records
+
+
+def index_witnesses(db, bodies, catalogue, expected=(29878, 18038)):
+    rows, records = catalogue_records(catalogue, expected)
+    ranks = {r['id']: n for n, r in enumerate(rows)}
+    seen = set()
     count = 0
     for sid, body in json_map(bodies):
         if body['source_kind'] != 'html':
             raise ValueError('non-HTML body in HTML input')
         if sid != body['inspection_id']:
             raise ValueError('body identity mismatch')
+        record = records.get(body['id'])
+        if record is None or record['source_kind'] != 'html':
+            raise ValueError('HTML body absent from catalogue')
+        if body['id'] in seen:
+            raise ValueError('duplicate HTML body identity')
+        seen.add(body['id'])
+        if any(record.get(k) != body.get(k) for k in ('headword', 'homonym')):
+            raise ValueError('catalogue/body lexical identity mismatch')
+        source = body['sources'][0]
+        if (sid != 'badw:' + body['source_url'] or source['url'] != body['source_url'] or
+                not re.fullmatch(r'[0-9a-f]{64}', source['sha256'])):
+            raise ValueError('invalid HTML source identity/checksum')
         definitions = [c for c in body['components'] if c['type'] == 'definition']
         citations = [c for c in body['components'] if 'citation' in c['type']]
         text = '\n'.join(c['source_form'] for c in definitions)
@@ -144,6 +171,8 @@ def index_witnesses(db, bodies, catalogue):
             citations=[c['source_form'] for c in citations])
         db.execute('INSERT INTO witnesses VALUES (?,?)', (sid, json.dumps(record, ensure_ascii=False)))
         count += 1
+    if seen != {r['id'] for r in rows if r['source_kind'] == 'html'}:
+        raise ValueError('incomplete HTML body corpus')
     return dict(html_witnesses=count, catalogue_ranks=len(ranks))
 
 
@@ -212,12 +241,15 @@ def index_family(db, root, family, registry, output):
     return dict(physical_pages=number, qa_lines=rows_count)
 
 
-def index_history(db, root):
-    for line in (root / INPUTS['anchors']).open():
+def index_history(db, root, inputs=None):
+    inputs = inputs if inputs is not None else {k: root / v for k, v in INPUTS.items()}
+    if not inputs:
+        return dict(edges=0, anchors=0, status='historical corroboration not supplied')
+    for line in Path(inputs['anchors']).open():
         row = json.loads(line)
         db.execute('INSERT INTO anchors VALUES (?,?)', (row['anchor_id'], line))
     count = 0
-    for line in (root / INPUTS['edges']).open():
+    for line in Path(inputs['edges']).open():
         row = json.loads(line)
         db.execute('INSERT OR IGNORE INTO edges VALUES (?,?,?)', (row['source_id'], row['local_anchor_id'], line))
         count += 1

@@ -1283,15 +1283,56 @@ python3 -m http.server 8812 --bind 127.0.0.1 \
   --directory work/html-print-full-alignment/report
 ```
 
-The defaults reuse `work/html-print-alignment-20261024/bodies.json` and
-`work/html-print-boundary-correction/reader/data.json`; use `--bodies` and
-`--catalogue` for equivalent acquisitions elsewhere. They are private, ignored
-inputs, not downloaded by the runner. Input, source-PDF and implementation hashes,
-Python/pypdf/SQLite/Poppler versions and fixed settings are pinned in `inputs.json`.
-Changed inputs require a fresh output directory. Missing artifacts fail explicitly.
-Serve **only** the report subdirectory, never the run cache or source directories.
-Its rendered scan-page PNGs are private research evidence, not publication assets
-or newly approved cropped facsimiles. No complete source PDF is copied or linked.
+Input preparation (infrastructure hardening, v2.1):
+
+```sh
+# Restore the complete private reader/acquisition assets, then optionally rebuild:
+python3 scripts/build_badw_full_reader.py --output work/alignment-source-reader
+python3 scripts/prepare_badw_alignment_inputs.py \
+  --reader work/alignment-source-reader --output work/html-print-inputs
+python3 scripts/run_badw_html_print_alignment.py \
+  --all-volumes --inputs work/html-print-inputs --output work/alignment-run --resume
+```
+
+A public Git checkout alone cannot reconstruct private BAdW acquisitions. Restore
+these from the registered local source/cache environment; this command does not
+reacquire or redistribute the corpus. The reader build's acquisition dependencies
+are listed at the start of `build_badw_connected_reader.py` (CACHE, CANON, INDEX,
+SEEDS, PDF, HTML and BIB), plus the full-reader projection/baseline/supplement
+arguments. They include reviewed semantic evidence, not just downloadable scans.
+An already certified complete reader is an equivalent input; no OCR or reader
+rebuild is required for alignment. The preparer verifies every HTML shard against
+its catalogue checksum and requires exactly 29,878 entries / 18,038 HTML bodies.
+It writes a portable `bodies.json`, `catalogue.json` and SHA-256 `manifest.json`.
+The runner defaults to this bundle, never a historically named directory.
+Duplicate, missing, extra, mismatched or malformed body identities fail explicitly.
+
+Original source assets: restore the four files at the paths in
+`data/source_pdfs.tsv`; that registry supplies their exact SHA-256 identities:
+
+| Scan | Pages | SHA-256 |
+| --- | ---: | --- |
+| WtS 1–34 | 1352 | `20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62` |
+| WtS 35–51 | 1128 | `8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239` |
+| WtS 8-b | 585 | `f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263` |
+| WtS 9-m | 401 | `7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb` |
+
+The tracked `release/current/qa/*/*_line_zones.tsv` files and reviewed ledgers
+supply the other mandatory source evidence. No source download occurs. Optional
+historical corroboration can be included with preparer `--anchors` and `--edges`;
+these are respectively the JSONL outputs of `badw_source_matcher.py` and
+`badw_identity_handoff.py` (their `--help` documents reconstruction inputs).
+Without them the runner explicitly records zero historical anchors/edges; all-QA
+start discovery and matching still run, and C6-origin metrics mean “not supplied”.
+Historical evidence is not essential truth or a hidden default dependency.
+
+Input, PDF and implementation hashes and Python/pypdf/SQLite/Poppler versions
+are pinned in `inputs.json`. Changed inputs require a fresh run directory.
+Serve **only** the report subdirectory, never the run cache, prepared body bundle
+or source directories. Images and derivatives remain local research material;
+PDF crop boxes are not redaction. No complete source PDF is copied or linked.
+Machine JSON is never an attachment ledger: only the separately reviewed
+certificate and exact current HTML checksum can authorize reader attachment.
 
 The single-worker runner streams HTML bodies into a SQLite index with a bounded
 page cache. It indexes every QA line and physical PDF page, recording actual PDF
