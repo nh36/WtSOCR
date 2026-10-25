@@ -42,11 +42,53 @@ def proof_key(text):
     return ''.join(c for c in unicodedata.normalize('NFC', text).casefold() if c.isalnum())
 
 
+REVIEW_BASIS = 'Human visual transcription and identity adjudication, not automatic verification of printed wording; compiler verifies source, page, anchor, QA spans and HTML component bindings.'
+
+
+def witness_record(page_key, assertion):
+    editorial = assertion['editorial']
+    observed = assertion['print_observation']
+    return dict(source_url=editorial['source_url'], html_sha256=assertion['html_sha256'],
+        headword=editorial['headword'], homonym=editorial['homonym'], page=page_key,
+        printed_heading=observed['heading'], printed_homonym=observed['homonym'],
+        evidence=dict(certificate=assertion, anchor_sha256=assertion['anchor_sha256'],
+            definition_component_sha256=assertion['definition_component_sha256']), review_basis=REVIEW_BASIS)
+
+
+def validate_boundary(assertion, anchor, qa_rows):
+    """Validate source bindings of a HUMAN article-boundary adjudication.
+
+    QA headword_line includes running headers and is not an article classifier.
+    Selected lines may be noncontiguous because QA reading order interleaves columns.
+    """
+    boundary = assertion['article_boundary']
+    heading, evidence = boundary['heading_lines'], boundary['evidence_lines']
+    if (boundary.get('classification') != 'reviewed lexical article start' or
+        not heading or not evidence or anchor['start_line'] != min(heading) or
+        set(heading + evidence) & set(boundary['excluded_lines'])):
+        raise ValueError('anchor is not the reviewed article beginning')
+    selected = sorted(set(heading + evidence))
+    rows = [qa_rows[(anchor['volume'], anchor['start_page'], line)] for line in selected]
+    if boundary['qa_rows_sha256'] != object_digest(rows):
+        raise ValueError('stale article-boundary QA evidence')
+    if not boundary.get('review_reason'):
+        raise ValueError('manual article-boundary adjudication required')
+
+
 def validate_assertion(assertion, body, anchor, edges):
     if body['source_kind'] != 'html' or assertion['source_id'] != body['inspection_id']:
         raise ValueError('not an exact HTML witness')
-    if assertion['anchor'] != anchor['anchor_id'] or not any(e['source_id'] == assertion['source_id'] and e['local_anchor_id'] == assertion['anchor'] for e in edges):
+    if assertion['anchor'] != anchor['anchor_id']:
         raise ValueError('assertion has no pinned candidate edge')
+    candidates = [e for e in edges if e['source_id'] == assertion['source_id']]
+    if not any(e['local_anchor_id'] == assertion['anchor'] for e in candidates):
+        correction = assertion.get('candidate_anchor_correction', {})
+        old = [e for e in candidates if e['local_anchor_id'] == correction.get('previous_anchor')]
+        if (len(old) != 1 or object_digest(old[0]) != correction.get('previous_edge_sha256') or
+            not correction.get('reason')):
+            raise ValueError('assertion has no pinned candidate edge or reviewed anchor correction')
+    if assertion['editorial'] != dict(source_url=body['source_url'], headword=body['headword']['loc'], homonym=body['homonym']):
+        raise ValueError('stale editorial identity')
     if assertion.get('heading_position') not in ('left column', 'right column'):
         raise ValueError('a running header or continuation is not a heading position')
     if 'printed_homonym' not in assertion:
@@ -85,7 +127,7 @@ def validate_assertion(assertion, body, anchor, edges):
     return components[0]
 
 
-def compile_records(certificate, bodies, anchors, edges, registry):
+def compile_records(certificate, bodies, anchors, edges, registry, qa_rows=None):
     """Pure deterministic expansion. Every emitted witness has an explicit certificate."""
     pages, witnesses, seen, used_anchors = {}, [], set(), {}
     decisions = {(d['source_id'], d['anchor']): d for d in certificate.get('decisions', [])}
@@ -113,6 +155,9 @@ def compile_records(certificate, bodies, anchors, edges, registry):
                 if reconsideration.get('decision_sha256') != object_digest(decision) or not reconsideration.get('reason'):
                     raise ValueError('rejected/deferred decision requires explicit reconsideration')
             component = validate_assertion(assertion, body, anchor, edges)
+            if qa_rows is None:
+                raise ValueError('source-bound QA records required')
+            validate_boundary(assertion, anchor, qa_rows)
             observation = assertion['print_observation']
             binding = {k: page[k] for k in ('source', 'source_sha256', 'physical_page', 'volume', 'printed_page', 'side', 'crop')}
             if observation.get('page_sha256') != object_digest(binding):
@@ -126,13 +171,8 @@ def compile_records(certificate, bodies, anchors, edges, registry):
                     observation != previous['print_observation']):
                     raise ValueError('conflicting reuse of a printed heading anchor')
             used_anchors[assertion['anchor']] = assertion
-            witnesses.append(dict(source_url=body['source_url'], html_sha256=body['sources'][0]['sha256'],
-                headword=body['headword']['loc'], homonym=body['homonym'], page=key,
-                printed_heading=observation['heading'], printed_homonym=observation['homonym'],
-                evidence=dict(certificate=assertion, anchor_sha256=object_digest(anchor),
-                    definition_component_sha256=object_digest(component)),
-                review_basis='Human visual transcription and identity adjudication, not automatic verification of printed wording; compiler verifies source, page, anchor and HTML component bindings.'))
-    result = dict(version=2, certificate_sha256=object_digest(certificate), pages=pages, witnesses=witnesses)
+            witnesses.append(witness_record(key, assertion))
+    result = dict(version=2, certificate_sha256=object_digest(certificate), pages=pages, witnesses=witnesses, inputs=certificate.get('inputs', {}))
     result['content_sha256'] = object_digest(result)
     return result
 
@@ -153,14 +193,11 @@ def validate_expansion(certificate, expanded):
     assertions = [(p['key'], r) for p in certificate['pages'] for r in p['accepted']]
     if len(expanded['witnesses']) != len(assertions):
         raise ValueError('generated witness count differs from certificate')
-    for witness, (key, assertion) in zip(expanded['witnesses'], assertions):
-        observed = assertion['print_observation']
-        if (witness['page'] != key or witness['evidence']['certificate'] != assertion or
-            witness['printed_heading'] != observed['heading'] or witness['printed_homonym'] != observed['homonym'] or
-            witness['html_sha256'] != assertion['html_sha256'] or
-            witness['evidence']['definition_component_sha256'] != assertion['definition_component_sha256'] or
-            witness['evidence']['anchor_sha256'] != assertion['anchor_sha256']):
-            raise ValueError('generated witness differs from certificate')
+    expected = dict(version=2, certificate_sha256=object_digest(certificate),
+        pages=expected_pages, witnesses=[witness_record(key, r) for key, r in assertions], inputs=certificate.get('inputs', {}))
+    expected['content_sha256'] = object_digest(expected)
+    if expanded != expected:
+        raise ValueError('generated witness differs from certificate or unexpected generated fields')
 
 
 def inventory(bodies, handoff, edges, accepted):
@@ -171,7 +208,7 @@ def inventory(bodies, handoff, edges, accepted):
     families = collections.defaultdict(collections.Counter)
     for sid, body in bodies.items():
         es = by_source[sid]
-        if body['source_url'] in accepted:
+        if (body['source_url'], body['sources'][0]['sha256']) in accepted:
             category = 'reviewed_exact_heading_page'
         elif not es:
             category = 'no_usable_candidate'
@@ -194,8 +231,8 @@ def review_queue(certificate, baseline, bodies, anchors, edges):
     Printed folios, entry starts, geometry and candidate identities still need
     facsimile inspection. Density and dual-script agreement only prepare review.
     """
-    accepted = {r['source_url'] for r in baseline['witnesses']}
-    accepted.update(bodies[r['source_id']]['source_url'] for p in certificate['pages'] for r in p['accepted'])
+    accepted = {(r['source_url'], r['html_sha256']) for r in baseline['witnesses']}
+    accepted.update((r['editorial']['source_url'], r['html_sha256']) for p in certificate['pages'] for r in p['accepted'])
     occupied = {(p['source'], p['physical_page']) for p in baseline['pages'].values()}
     occupied.update((p['source'], p['physical_page']) for p in certificate['pages'])
     # Includes inspected pages with no acceptance, retained as negative controls.
@@ -206,7 +243,7 @@ def review_queue(certificate, baseline, bodies, anchors, edges):
         alternatives[edge['source_id']].add(edge['local_anchor_id'])
     for edge in edges:
         sid, aid = edge['source_id'], edge['local_anchor_id']
-        if sid not in bodies or aid not in anchors or bodies[sid]['source_url'] in accepted:
+        if sid not in bodies or aid not in anchors or (bodies[sid]['source_url'], bodies[sid]['sources'][0]['sha256']) in accepted:
             continue
         anchor = anchors[aid]
         family, physical = anchor['volume'], anchor['start_page']
@@ -274,7 +311,12 @@ def main():
     anchors = {r['anchor_id']: r for r in map(json.loads, (ROOT/INPUTS['anchors']).open())}
     edges = list(map(json.loads, (ROOT/INPUTS['edges']).open()))
     registry = {r['label']: r for r in csv.DictReader((ROOT/'data/source_pdfs.tsv').open(), delimiter='\t')}
-    generated = compile_records(cert, bodies, anchors, edges, registry)
+    qa_rows = {}
+    for family in FAMILIES:
+        path = ROOT/f'release/current/qa/{family}/{family}_line_zones.tsv'
+        for row in csv.DictReader(path.open(), delimiter='\t'):
+            qa_rows[family, int(row['page']), int(row['line'])] = row
+    generated = compile_records(cert, bodies, anchors, edges, registry, qa_rows)
     generated['inputs'] = cert['inputs']
     generated['content_sha256'] = object_digest({k:v for k,v in generated.items() if k != 'content_sha256'})
     text = json.dumps(generated, ensure_ascii=False, indent=2)+'\n'
@@ -286,7 +328,7 @@ def main():
     if args.inventory:
         handoff = {r['source_id']: r for r in map(json.loads, (ROOT/INPUTS['handoff']).open())}
         baseline = json.loads((ROOT/'data/badw_html_print_pages.json').read_text())
-        accepted = {r['source_url'] for r in baseline['witnesses']+generated['witnesses']}
+        accepted = {(r['source_url'], r['html_sha256']) for r in baseline['witnesses']+generated['witnesses']}
         args.inventory.write_text(json.dumps(inventory(bodies, handoff, edges, accepted), ensure_ascii=False, indent=2)+'\n')
     if args.queue:
         baseline = json.loads((ROOT/'data/badw_html_print_pages.json').read_text())

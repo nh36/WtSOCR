@@ -1,11 +1,15 @@
 {
   "version": 1,
   "status": "Review preparation only; no new acceptances",
-  "certificate_sha256": "aa23f2b71342f2390f09ea0377c109b658bf0c6f81638a03da94221cfbc1e65c",
+  "certificate_sha256": "83fad0b2a8907dddaf5d435e4c619c6b776b6f5d5bb45ee6ac017aa90b02ad12",
   "inputs": {
     "work/badw_stage_c6_20260918/from_frozen_c5/local_heading_inventory.jsonl": "60c72d85a9861ec1cf81792a3d10c11b9ed92c3fea009bb5585796238ffb306b",
     "work/badw_stage_c11_20260924/identity_handoff/candidate_identity_edges.jsonl": "262c778abe794becbccf883cf9be7e58b9121a3f890a9a42093a7c9dc0e17d0d",
-    "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67"
+    "work/badw_stage_c11_20260924/identity_handoff/source_identity_handoff.jsonl": "21ef650ebffcdb7fda3f5724723945dd2fb5373f06dea75d80ff29a502970e67",
+    "release/current/qa/wts_1_34/wts_1_34_line_zones.tsv": "7a108c6ed4617fbe2bfe718f2914c24637d2e09e9d5862c799f83247230b36b8",
+    "release/current/qa/wts_35_51/wts_35_51_line_zones.tsv": "c6d0d8c7faa2401a2d19d18c6d6da99e9abf3641c151dec1b436b73342febd27",
+    "release/current/qa/wts_8_b/wts_8_b_line_zones.tsv": "521f8b9717b8d6861aa6aba6797c13b827b37518cc3a0bc1049e92369732b4c1",
+    "release/current/qa/wts_9_m/wts_9_m_line_zones.tsv": "8d92a7f86b4a8890788c719eda82fcc985afb043e9f848e7c75fb44f6cfa92f1"
   },
   "policy": "Physical-page locators only. Printed folios, spread sides, headings, identity and gutter geometry require independent review. No pagination offset or crop is extrapolated. Includes density and difficult controls; lexical agreement is not proof.",
   "physical_pages": 48,

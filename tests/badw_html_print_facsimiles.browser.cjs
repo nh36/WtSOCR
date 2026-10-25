@@ -55,12 +55,24 @@ const {chromium}=require('playwright-core');
    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),source.sha256);
    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    if(body.headword.loc==='ba'&&String(body.homonym)==='1')await page.screenshot({path:path.join(screenshots,`ba1-${width}.png`),fullPage:true});
+   if(body.headword.loc==='ba tshwa'){
+    assert.equal(provenanceAnchor(body),'wts_8_b:17:63');
+    await page.screenshot({path:path.join(screenshots,`ba-tshwa-${width}.png`),fullPage:true});
+   }
   }
  }
  // A continuation-page running header must not turn ma4 into an exact link.
  const ma4=catalog.find(e=>e.source_kind==='html'&&e.headword.loc==='ma'&&String(e.homonym)==='4');assert(ma4);
  await go(ma4);assert.equal(await page.locator('#article > .source-access a').count(),1);
  assert.equal(await page.locator('#article > .source-access a').textContent(),'BAdW editorial text');
+ // Correct printed pages do not justify retaining running-header identities.
+ // Both actual article starts lack C6 anchors and remain explicitly deferred.
+ for(const heading of ['da yaṅ','mdun']){
+  const meta=catalog.find(e=>e.source_kind==='html'&&e.headword.loc===heading&&String(e.homonym)==='1');assert(meta);
+  await go(meta);
+  assert.equal(await page.locator('#article > .source-access a').count(),1);
+  assert.equal(await page.locator('#article > .source-access a').textContent(),'BAdW editorial text');
+ }
  const gyur=catalog.find(e=>e.source_kind==='pdf'&&e.headword.loc==='’gyur'&&String(e.homonym)==='1');assert(gyur);
  const pdfBody=await (await page.request.get(base+'/'+gyur.path)).json();assert(!pdfBody.sources.some(s=>s.print_provenance));
  await go(gyur);assert.equal(await page.locator('#article > .source-access a').count(),pdfBody.sources.length);
@@ -91,3 +103,5 @@ const {chromium}=require('playwright-core');
  console.log(JSON.stringify(report));
  }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});
+
+function provenanceAnchor(body){return body.sources[1].print_provenance.evidence.certificate.anchor;}
