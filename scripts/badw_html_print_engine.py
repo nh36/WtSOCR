@@ -397,16 +397,7 @@ def match_page(db, family, page, witnesses, frequencies):
             proof = evidence_score(witness, own_article, frequencies, len(witnesses))
             hom=reconstructed.get('homonym_observation',dict(status='unread',number=None))
             risks = list(extent['risks'])
-            if hom['status']=='unread':
-                risks.append('printed_homonym_unread')
-            elif hom['status']=='conflicting_ocr_number':
-                risks.append('printed_homonym_conflict')
-            if hom.get('number') and str(witness['homonym']) != hom['number']:
-                risks.append('printed_homonym_conflict')
-            if hom['status']=='explicit_number_single_ocr':
-                risks.append('printed_numeral_requires_corroboration')
-            if extent['homonym']['homonym'] and str(witness['homonym']) != extent['homonym']['homonym']:
-                risks.append('printed_homonym_conflict')
+            risks.extend(homonym_risks(hom, witness['homonym'], extent['homonym']['homonym']))
             if 'prefix_of_longer_observed_heading' in heading_evidence:
                 risks.append('neighbouring_compound_heading')
             if repeat is not None:
@@ -478,14 +469,34 @@ def baseline_category(proposals):
     return 'review_required', ['OCR/identity/boundary or competing-candidate uncertainty']
 
 
+def homonym_risks(observation, editorial_number, fallback_number=None):
+    """Dependent OCR observations are not independently verified print readings."""
+    status = observation['status']
+    number = observation.get('number')
+    if status == 'verified_printed_number':
+        return ['verified_printed_homonym_conflict'] if number != str(editorial_number) else []
+    if status == 'conflicting_ocr_number':
+        return ['homonym_ocr_sources_disagree']
+    if number and number != str(editorial_number):
+        return ['homonym_agreeing_ocr_conflicts_html' if status == 'explicit_number_ocr_agreement'
+                else 'homonym_single_ocr_conflicts_html']
+    if fallback_number and fallback_number != str(editorial_number):
+        return ['homonym_single_ocr_conflicts_html']
+    if status == 'explicit_number_single_ocr':
+        return ['printed_numeral_requires_corroboration']
+    return ['printed_homonym_unread'] if status == 'unread' else []
+
+
 def category(proposals):
-    if proposals and 'printed_homonym_conflict' in proposals[0]['risks']:
+    if proposals and 'verified_printed_homonym_conflict' in proposals[0]['risks']:
         return 'contradictory_identity', ['printed numeral contradicts editorial homonym; identity excluded']
     previous, reasons = baseline_category(proposals)
     if previous != 'mechanically_supported_provisional':
         return previous, reasons
     risks = set(proposals[0]['risks'])
     requirements = []
+    if any(r.startswith('homonym_') for r in risks):
+        requirements.append('tentative OCR homonym disagreement; requires source assessment')
     if 'printed_homonym_unread' in risks:
         requirements.append('printed homonym unresolved')
     structural = {'unverified_article_extent', 'uncertain_column_membership',
@@ -568,6 +579,8 @@ def write_results(db, output, root, witnesses, identity):
                 editorial_definition=witness['definition'], editorial_citations=witness['citations'],
                 result_category=classification, reasons=reasons,
                 baseline_feature_category=baseline_category(proposals)[0], proposed=proposals[:10],
+                local_ranking=sorted([dict(anchor=p['anchor'], score=p.get('sequence_ranking',{}).get('local_score',p['score'])) for p in proposals], key=lambda p:(-p['score'],p['anchor'])),
+                sequence_ranking=[dict(anchor=p['anchor'], score=p['score'], evidence=p.get('sequence_ranking')) for p in proposals],
                 machine_publication=publication_eligibility(proposals[0] if proposals else None),
                 candidate_count=len(proposals), omitted_candidates=max(0,len(proposals)-10),
                 eligible_for_original_print_link=attached is not None,

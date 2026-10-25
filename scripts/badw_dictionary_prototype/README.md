@@ -1709,3 +1709,22 @@ independent calibration labels prevent publication. All machine publication deci
 remain false. The next work must improve coordinate reconciliation and article-boundary
 ownership, then independently assess frozen predictions, rather than rename provisional
 classes or publish another manually curated page batch.
+
+PR #13 bounded hardening distinguishes tentative OCR disputes from verified print
+contradictions. Of the previous 203 contradictory top predictions, 174 have only
+one OCR numeral conflicting with HTML, 28 have agreeing QA/embedded-OCR numerals
+conflicting with HTML, and one has disagreeing OCR readings. None has independently
+verified contradictory print evidence. All 29 formerly-supported cases in that
+population have single-OCR conflicts; they remain provisionally supported with
+explicit outstanding homonym requirements, never publication authority. The new
+full run has 2,416 provisionally supported, 13,214 review-required and 2,408 unresolved
+witnesses. The two OCR readings are dependent observations of one printed source.
+
+Every witness retains both local and sequence-adjusted rankings. Each adjustment
+records scores, ranks and the source IDs/positions of its provisional supporting
+witnesses. `--disable-sequence-reranking` leaves local scores authoritative while
+retaining sequence diagnostics; it is pinned in the run configuration. The same
+907 provisional anchors still change 40 tops, without any claim of correct recovery.
+`work/html-print-reconstruction-hardening/sequence-changes.json` enumerates all 40
+changes and their evidence. These changes remain unassessed, not confirmed recoveries.
+The publication decision is independent of both scores and remains false.

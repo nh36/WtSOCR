@@ -85,6 +85,29 @@ def test_two_other_witnesses_can_rerank_but_never_create_identity():
     assert bracket_candidates([q],[a,b],dict(a=3,p=2,b=1))[0]['score']==10
 
 
+@pytest.mark.parametrize('enabled',[False,True])
+def test_sequence_ablation_preserves_local_and_adjusted_ranks(tmp_path,enabled):
+    import json
+    from badw_html_print_engine import connection
+    from badw_print_reconstruction import sequence_rerank
+    db=connection(tmp_path/'index.sqlite')
+    a=proposal('a',2,100); b=proposal('b',4,100)
+    local=proposal('p',8,100,10.5); bracketed=proposal('p',3,100,10)
+    for p in (a,b,local,bracketed):
+        p['heading_evidence']=['leading_tibetan_exact','loc_exact']
+        db.execute('INSERT INTO proposals VALUES (?,?,?,?)',
+                   (p['sid'],p['anchor'],p['score'],json.dumps(p)))
+    result=sequence_rerank(db,{s:dict(order=i) for i,s in enumerate(('a','p','b'))},enabled)
+    rows=[json.loads(r[0]) for r in db.execute('SELECT body FROM proposals WHERE sid=? ORDER BY score DESC,aid',('p',))]
+    assert rows[0]['anchor']==(bracketed if enabled else local)['anchor']
+    adjusted=next(p for p in rows if p['anchor']==bracketed['anchor'])['sequence_ranking']
+    assert adjusted['local_rank']==2 and adjusted['adjusted_rank']==1
+    assert adjusted['local_score']==10 and adjusted['adjusted_score']==11
+    assert {r['source_id'] for r in adjusted['anchor_witnesses']}=={'a','b'}
+    assert result['changed_top_predictions']==int(enabled)
+    assert not publication_eligibility(rows[0])['eligible']
+
+
 @pytest.mark.parametrize('family,page,line,loc',[
     ('wts_35_51',267,38,'ldoṅs'),
     ('wts_8_b',445,32,'’bum pa'),

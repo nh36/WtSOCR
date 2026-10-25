@@ -29,6 +29,7 @@ def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--all-volumes',action='store_true',required=True)
     p.add_argument('--resume',action='store_true')
+    p.add_argument('--disable-sequence-reranking',action='store_true',help='retain local scores; compute sequence diagnostics only')
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--inputs',type=Path,default=ROOT/'work/html-print-inputs',
                    help='portable bundle from prepare_badw_alignment_inputs.py')
@@ -72,7 +73,7 @@ def main(argv=None):
     poppler=subprocess.run(['pdftotext','-v'],capture_output=True,text=True,check=True).stderr.splitlines()[0]
     configuration=dict(version=VERSION,inputs=hashes,python=platform.python_version(),
         pypdf=pypdf.__version__,sqlite=__import__('sqlite3').sqlite_version,poppler=poppler,
-        concurrency=1,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
+        concurrency=1,sequence_reranking=not args.disable_sequence_reranking,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
     identity=object_digest(configuration)
     pin=output/'inputs.json'
     if pin.exists():
@@ -133,7 +134,7 @@ def main(argv=None):
             return dict(proposals=n)
         stage('match:'+family,match_family)
     stage('section-sequences',lambda:section_sequences(db,witnesses))
-    stage('sequence-rerank',lambda:sequence_rerank(db,witnesses))
+    stage('sequence-rerank',lambda:sequence_rerank(db,witnesses,enabled=not args.disable_sequence_reranking))
     summary=write_results(db,output,ROOT,witnesses,identity)
     atomic_json(output/'timing-latest.json',dict(stages=timings,seconds=round(time.monotonic()-started,3),
         max_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,platform=sys.platform))

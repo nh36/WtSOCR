@@ -202,6 +202,10 @@ def reconstruct(db, reviewed_pages, witnesses):
     return dict(counts=dict(counts),by_family=families)
 
 
+def homonym_dispute(risks):
+    return any(r.startswith('homonym_') or r in ('printed_homonym_conflict','verified_printed_homonym_conflict') for r in risks)
+
+
 def bracket_candidates(candidates, anchors, ranks, max_pages=10):
     """Rerank close lexical alternatives between two distinctive neighbours.
 
@@ -214,7 +218,7 @@ def bracket_candidates(candidates, anchors, ranks, max_pages=10):
         q=dict(p); pos=p.get('reconstruction',{}).get('position')
         proof=p['definition_evidence']
         before=[];after=[]
-        if pos and len(proof['rare_definition_tokens'])>=2 and 'printed_homonym_conflict' not in p['risks']:
+        if pos and len(proof['rare_definition_tokens'])>=2 and not homonym_dispute(p['risks']):
             for a in anchors:
                 ap=a['reconstruction']['position']
                 if a['sid']==p['sid'] or a['family']!=p['family'] or abs(ap[0]-pos[0])>max_pages:
@@ -226,6 +230,7 @@ def bracket_candidates(candidates, anchors, ranks, max_pages=10):
         supported=bool(left and right and ranks[left['sid']]<ranks[p['sid']]<ranks[right['sid']])
         q['sequence_ranking']=dict(status='distinctive_neighbour_bracket' if supported else 'local_fallback',
             anchors=[left['anchor'],right['anchor']] if supported else [],
+            anchor_witnesses=[dict(source_id=a['sid'], anchor=a['anchor'], local_score=a['score'], position=a['reconstruction']['position'], authority='provisional machine-selected witness') for a in (left,right)] if supported else [],
             local_score=p['score'],bonus=1 if supported else 0,
             authority='ranking evidence only; no identity or publication authority')
         q['score']=round(p['score']+(1 if supported else 0),6)
@@ -233,7 +238,7 @@ def bracket_candidates(candidates, anchors, ranks, max_pages=10):
     return result
 
 
-def sequence_rerank(db,witnesses):
+def sequence_rerank(db,witnesses, enabled=True):
     ranks={sid:w['order'] for sid,w in witnesses.items()}
     anchors=[];total=changed=boosted=0
     # Distinctive, unambiguous local identities alone can anchor another witness.
@@ -244,6 +249,7 @@ def sequence_rerank(db,witnesses):
             len(p['definition_evidence']['rare_definition_tokens'])>=2 and
             {'leading_tibetan_exact','loc_exact'}<=set(p['heading_evidence']) and
             (len(ps)==1 or p['score']-ps[1]['score']>=2) and
+            not homonym_dispute(p['risks']) and
             not set(p['risks'])&{'printed_homonym_conflict','neighbouring_compound_heading',
                 'same_spelling_heading_repeated_on_page','displaced_or_incidental_heading'}):
             anchors.append(p)
@@ -253,15 +259,25 @@ def sequence_rerank(db,witnesses):
     for (sid,) in db.execute('SELECT DISTINCT sid FROM proposals ORDER BY sid').fetchall():
         ps=[json.loads(r[0]) for r in db.execute('SELECT body FROM proposals WHERE sid=? ORDER BY score DESC,aid',(sid,))]
         original=ps[0]['anchor']; updated=[]
+        local_ranks={p['anchor']:i+1 for i,p in enumerate(ps)}
         for p in ps:
             bucket=p['physical_page']//10
             neighbours=[a for b in (bucket-1,bucket,bucket+1) for a in by_section.get((p['family'],b),[])]
             updated.extend(bracket_candidates([p],neighbours,ranks))
+        for p in updated:
+            p['sequence_ranking']['enabled']=enabled
+            p['sequence_ranking']['adjusted_score']=p['score']
+            p['sequence_ranking']['local_rank']=local_ranks[p['anchor']]
+        adjusted=sorted(updated,key=lambda p:(-p['score'],p['anchor']))
+        for i,p in enumerate(adjusted):
+            p['sequence_ranking']['adjusted_rank']=i+1
+            if not enabled:
+                p['score']=p['sequence_ranking']['local_score']
         updated.sort(key=lambda p:(-p['score'],p['anchor']))
         changed+=updated[0]['anchor']!=original
         for p in updated:
             total+=1;boosted+=bool(p['sequence_ranking']['bonus'])
             db.execute('UPDATE proposals SET score=?,body=? WHERE sid=? AND aid=?',
                 (p['score'],json.dumps(p,ensure_ascii=False,sort_keys=True),sid,p['anchor']))
-    return dict(anchors=len(anchors),proposals=total,bracket_supported=boosted,changed_top_predictions=changed,
+    return dict(enabled=enabled,anchors=len(anchors),proposals=total,bracket_supported=boosted,changed_top_predictions=changed,
                 maximum_bracket_distance_physical_pages=10,publication_authority=False)

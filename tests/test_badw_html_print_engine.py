@@ -179,8 +179,23 @@ def test_history_is_explicitly_optional():
 def test_homonym_contradiction_excludes_even_strong_identity():
     p=dict(score=12,heading_evidence=['loc_exact','leading_tibetan_exact'],
            definition_evidence={'rare_definition_tokens':['distinctive','definition']},
-           sequence_consistent=True,risks=['printed_homonym_conflict'])
+           sequence_consistent=True,risks=['verified_printed_homonym_conflict'])
     assert engine.category([p])[0]=='contradictory_identity'
     p['definition_evidence']['rare_definition_tokens']=[]
     assert engine.category([p])[0]=='contradictory_identity'
     assert not engine.publication_eligibility(dict(eligible=True,reviewed=True))['eligible']
+
+
+def test_tentative_numerals_do_not_exclude_lexical_identity():
+    p=dict(score=12,heading_evidence=['loc_exact','leading_tibetan_exact'],
+           definition_evidence={'rare_definition_tokens':['distinctive','definition']},
+           sequence_consistent=True,risks=[])
+    cases=[('conflicting_ocr_number',None,'homonym_ocr_sources_disagree'),
+           ('explicit_number_single_ocr','2','homonym_single_ocr_conflicts_html'),
+           ('explicit_number_ocr_agreement','2','homonym_agreeing_ocr_conflicts_html')]
+    for status,number,risk in cases:
+        p['risks']=engine.homonym_risks(dict(status=status,number=number),'1')
+        assert p['risks']==[risk]
+        assert engine.category([p])[0]=='mechanically_supported_provisional'
+        assert not engine.publication_eligibility(p)['eligible']
+    assert engine.homonym_risks(dict(status='unread',number=None),None)==['printed_homonym_unread']
