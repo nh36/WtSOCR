@@ -1094,3 +1094,105 @@ subtests. The full Python suite has 2,064 passes and the two inherited failures
 certification passes all 165 links, opens all 48 prepared PDFs, and checks
 desktop/mobile views without browser errors. The existing full-reader Chrome
 suite also passes search, history, keyboard and grammatical-reference journeys.
+
+
+PR #10 independent evidence audit
+
+The follow-up audit re-read all 133 new assignments, including all 31 whose
+HTML evidence has at most 12 alphanumeric characters, all six explicitly
+numbered printed headings, every accepted spread side, and the remaining
+records across all four scan families. All 133 remain accepted; none were
+silently grandfathered or downgraded. The 13 rejected and 15 deferred decisions
+remain in the certificate. The existing 32 baseline links are unchanged.
+The updated total remains 165 verified / 11,285 candidate-only / 6,588 without
+a candidate, among 18,038 HTML witnesses. No new assignments were added.
+
+Each compact assertion now separates `print_observation` (actual heading,
+explicit numeral or absence, printed evidence and discriminating context) from
+`definition_evidence` and its hashed HTML definition component. The editorial
+primary headword remains in the expanded record. Every audited case has its own
+printed observation and exclusion/context statement in
+`data/badw_html_print_alignment.json`; the expanded ledger is generated, not an
+independent source of scholarly authority. Eighteen printed headings differ
+from the editorial primary form, mostly by alternatives or numeral notation.
+One substantive reading is printed `mdud lha sum brgyad drug bcu`, versus HTML
+`mdud lha sum brgya drug bcu`. Both readings are retained without changing the
+reader headword. Numbered cases are da phan, ba dkar, ba thag 1/2 and ba spu 1/2.
+Generic glosses such as `ein Vogel` require heading/context discrimination;
+there is no arbitrary minimum quote length.
+
+The compiler binds the observation to the same heading/evidence anchor, scan
+family, physical page, printed folio, column and geometry, and verifies source,
+anchor and HTML component hashes. It rejects conflicting anchor reuse unless an
+explicit reviewed multi-witness relationship explains it. A previously negative
+source/anchor pair requires a checksum-bound reconsideration. It also verifies
+the complete reviewed projection in the expanded ledger before preparation.
+These checks establish mechanical consistency, **not automatic verification of
+printed wording**: a false transcription or an adjacent definition attributed
+to the same anchor still requires human detection. The retained observations
+are explicitly labelled human visual transcriptions.
+
+All 48 shared derivatives remain byte-identical: nine cropped spread sides and
+39 complete single-page views. No gutter, orientation, homonym assignment or
+page-location correction was needed. Original scans remain private and unchanged.
+The rendered contact sheets and ordinary Chrome PDF views supplement the
+source-page reread. PDF page boxes are visual crops, not secure redaction;
+these derivatives remain local research material pending a separate distribution
+and rights decision.
+
+The next queue is reproducible with:
+
+```sh
+python3 scripts/badw_html_print_alignment.py --bodies work/html-print-alignment-20261024/bodies.json --check --queue data/badw_html_print_review_queue.json
+```
+
+It prepares 48 unreviewed physical pages (12 per family), with 683 page-level
+candidate incidences covering 678 distinct HTML witnesses, not accepted identities. Folios and crop geometry are
+null until inspected. Each family contributes eight density-ranked pages, two
+competing/numbered-homonym controls and two sparse-definition controls.
+
+| Scan family | Proposed physical pages, in review priority | Candidate incidences |
+| --- | --- | ---: |
+| WtS 1–34 | 86, 159, 81, 120, 99, 62, 222, 215, 46, 36, 162, 1193 | 235 |
+| WtS 35–51 | 682, 683, 733, 859, 377, 636, 616, 723, 1070, 1071, 1106, 1052 | 179 |
+| WtS 8-b | 56, 322, 358, 480, 487, 186, 263, 227, 199, 410, 247, 284 | 154 |
+| WtS 9-m | 74, 198, 359, 151, 360, 27, 316, 364, 372, 321, 152, 154 | 115 |
+
+Dual-script agreement and candidate density rank preparation only. Competing
+homonyms, continuation starts, running headers, sparse glosses and missing
+crosswalk coverage remain likely obstacles. Each new spread needs its own gutter
+review; no offset or geometry is extrapolated. The next batch must record separate
+timers for selection, actual facsimile review, evidence entry, generation, tests
+and full certification before making an acceptance-throughput claim.
+
+The follow-up scan reread and evidence entry took a combined 8 min 49 s; those
+phases were interleaved, so isolated visual-review time and accepted links per
+hour of actual review are **not measured**. No pure-review throughput is inferred
+from that interval. All 133 audited links were retained on 38 linked printed
+pages (3.50 retained links/page); this is an audit retention rate, not new
+acceptance throughput. The original batch inspected 40 printed pages, accepted
+133 witness links and recorded 28 rejected/deferred cases (17.4% of 161 recorded
+witness decisions). Queue preparation and build timings are computational costs,
+not scholarly review time. Substantial new review remains outside PR #10.
+
+Follow-up certification: 47 focused Python tests, 19 Node tests and the required
+315 regressions (62 subtests) pass. The full Python run has 2,076 passes and the
+same two inherited failures described above; two subsequent queue tests also
+pass in the focused run. Repository hygiene, generated status and compilation
+checks pass. Certificate/source-hash checking took 35.69 s and deterministic
+queue preparation 34.24 s; neither measures visual review.
+
+A fresh full reader retains all 29,878 witnesses and the 7,626 resolved / 748
+residual reference census. Differential checks preserve every source body,
+catalogue/search order, relationship, all 11,840 PDF witness bodies and 1,377
+cached assets. Against the pre-audit reader, only the 133 new links' provenance
+changes; all 48 derivative PDFs are byte-identical. Chrome checks exercise all
+165 assignments and open all 48 PDFs, including desktop/mobile comparisons;
+the full-reader search/history/keyboard/reference journeys pass without browser
+errors. The local preview is http://127.0.0.1:8810/. Screenshots and build logs
+remain in ignored `work/html-print-evidence-audit/`. The historical 69 release
+reproduction differences were not rerun during this audit; `release/current`
+is unchanged.
+
+Both Chrome runners exited successfully. The facsimile runner took several
+minutes to finish shutdown after emitting its assertion summary.

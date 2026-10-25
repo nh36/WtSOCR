@@ -27,6 +27,15 @@ const {chromium}=require('playwright-core');
  assert(!JSON.stringify(printed).includes('originals/'));
  for(const body of bodies){
   const provenance=body.sources[1].print_provenance;
+  const reviewedWitness=reviewed.witnesses.find(r=>r.source_url===body.source_url);
+  assert.equal(provenance.printed_heading,reviewedWitness.printed_heading);
+  assert.deepEqual(provenance.evidence,reviewedWitness.evidence);
+  if(provenance.evidence.certificate){
+   const observation=provenance.evidence.certificate.print_observation;
+   assert.equal(observation.verification,'visual transcription; not machine-verified');
+   assert.equal(observation.heading,provenance.printed_heading);
+   assert.equal(observation.heading_anchor,observation.evidence_anchor);
+  }
   assert(!('original_url' in provenance));
   assert(!/file:|\/Users\/|\/private\//.test(JSON.stringify(body)));
   assert.equal((await page.request.get(base+'/sources/originals/'+provenance.source_sha256+'.pdf')).status(),404);

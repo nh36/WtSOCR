@@ -53,10 +53,9 @@ def reviewed_records(reviews):
     certificate = ROOT/'data/badw_html_print_alignment.json'
     generated = ROOT/'data/badw_html_print_alignment.generated.json'
     if Path(reviews).resolve() == REVIEWS.resolve() and certificate.exists():
-        from badw_html_print_alignment import object_digest
+        from badw_html_print_alignment import validate_expansion
         expanded = json.loads(generated.read_text())
-        if expanded['certificate_sha256'] != object_digest(json.loads(certificate.read_text())):
-            raise ValueError('stale generated alignment certificate')
+        validate_expansion(json.loads(certificate.read_text()), expanded)
         if set(reviewed['pages']) & set(expanded['pages']):
             raise ValueError('duplicate alignment page')
         reviewed['pages'].update(expanded['pages'])
