@@ -10,6 +10,8 @@ import collections
 import hashlib
 import json
 import math
+import sqlite3
+from badw_html_print_alignment import digest, object_digest
 from pathlib import Path
 from badw_html_print_engine import atomic_json
 
@@ -90,6 +92,56 @@ def select_sample(rows, seed='20261026-independent', per_class=4):
     return result
 
 
+def verify_observations(labels, run, render_root):
+    """Check stored source bindings, not the truth of a human transcription."""
+    pins=json.loads((run/'inputs.json').read_text())['inputs']
+    db=sqlite3.connect('file:'+str((run/'index.sqlite').resolve())+'?mode=ro',uri=True)
+    try:
+        for label in labels['cases']:
+            family,page,line=label['anchor'].split(':')
+            if family != label['family'] or pins['scan:'+family] != labels['scan_sha256'][family]:
+                raise ValueError('stale evaluation scan/coordinate binding')
+            found=db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',
+                             (family,int(page),int(line))).fetchone()
+            if not found:
+                raise ValueError('evaluation QA row absent')
+            row=json.loads(found[0])
+            if (hashlib.sha256(row['line_text'].encode()).hexdigest() != label['qa_line_sha256'] or
+                object_digest({k:v for k,v in row.items() if k!='coordinate'}) != label['qa_row_sha256']):
+                raise ValueError('stale evaluation QA binding')
+            if row['coordinate'] != label['coordinate']:
+                raise ValueError('stale evaluation coordinate binding')
+            image=render_root/f'{family}-{page}.png'
+            record=json.loads(image.with_suffix('.json').read_text())
+            if (record['scan_sha256'] != pins['scan:'+family] or
+                record['physical_page'] != int(page) or record['family'] != family or
+                digest(image) != label['inspected_render_sha256'] or
+                record['image_sha256'] != label['inspected_render_sha256']):
+                raise ValueError('stale evaluation rendered evidence')
+    finally:
+        db.close()
+
+
+def prediction_changes(labels, predictions):
+    """Changed anchors/evidence require assessment; never inherit a positive label."""
+    counts=collections.Counter()
+    records=[]
+    for label in labels:
+        top=next(iter(predictions[label['source_id']]['proposed']),None)
+        changed=not top or top['anchor'] != label['anchor'] or top['evidence_sha256'] != label['evidence_sha256']
+        judgment=label['judgments']['lexical_identity']
+        status=('changed_prediction_not_yet_assessable' if changed else
+                'explicitly_incorrect_identity' if judgment is False or label['judgments']['homonym'] is False else
+                'retained_correct_prediction' if judgment is True else
+                'insufficient_independent_ground_truth')
+        counts[status]+=1
+        records.append(dict(source_id=label['source_id'],status=status,
+            inspected_anchor=label['anchor'],current_anchor=top['anchor'] if top else None))
+    return dict(counts=dict(counts),cases=records,
+        corrected_predictions=0,newly_incorrect_predictions=0,
+        interpretation='Changed predictions need separate labels before correction/error rates can be measured. Binding verification is not visual adjudication.')
+
+
 def evaluate(labels, predictions):
     metrics = collections.defaultdict(lambda:collections.Counter())
     for label in labels:
@@ -102,7 +154,7 @@ def evaluate(labels, predictions):
         top = row['proposed'][0] if row['proposed'] else None
         # Judgments refer to the inspected baseline anchor. Changed proposals need
         # new inspection; do not transfer lexical judgments to another article.
-        same = top and top['anchor']==label['anchor']
+        same = top and top['anchor']==label['anchor'] and top['evidence_sha256']==label['evidence_sha256']
         for metric, judgment in label['judgments'].items():
             for group in ('all', 'family:'+label['family'], 'split:'+label['split'], 'class:'+row['result_category'], 'baseline_class:'+label['stratum'][1]):
                 key = group+'/'+metric
@@ -148,6 +200,7 @@ def main():
     p.add_argument('--baseline',type=Path,required=True)
     p.add_argument('--run',type=Path,required=True)
     p.add_argument('--labels',type=Path)
+    p.add_argument('--observed-renders',type=Path,help='original inspected PNG directory; required with labels')
     args=p.parse_args()
     root=Path(__file__).resolve().parents[1]
     if not args.run.resolve().is_relative_to(root/'work'):
@@ -165,9 +218,13 @@ def main():
         for family, sha in labels['scan_sha256'].items():
             if pins['scan:'+family] != sha:
                 raise ValueError('stale evaluation scan binding: '+family)
+        if not args.observed_renders:
+            p.error('--labels requires --observed-renders for verification')
+        verify_observations(labels,args.run,args.observed_renders)
         ids={c['source_id'] for c in labels['cases']}
         predictions={r['source_id']:r for r in read_rows(args.run/'witnesses.jsonl') if r['source_id'] in ids}
         report['evaluation']=evaluate(labels['cases'],predictions)
+        report['prediction_assessment']=prediction_changes(labels['cases'],predictions)
     atomic_json(args.run/'comparison.json',report)
     print(json.dumps(report,indent=2))
 

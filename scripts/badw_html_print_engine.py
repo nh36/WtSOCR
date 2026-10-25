@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v3'
+VERSION = 'html-print-engine-v3.1'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -456,19 +456,33 @@ def baseline_category(proposals):
 
 
 def category(proposals):
+    if proposals and 'printed_homonym_conflict' in proposals[0]['risks']:
+        return 'contradictory_identity', ['printed numeral contradicts editorial homonym; identity excluded']
     previous, reasons = baseline_category(proposals)
     if previous != 'mechanically_supported_provisional':
         return previous, reasons
-    # No OCR-only homonym/extent class has passed independent lexical evaluation.
-    # Keep the former feature class available for comparison, never promotion.
-    exclusions = {'unverified_article_extent', 'uncertain_column_membership',
+    risks = set(proposals[0]['risks'])
+    requirements = []
+    if 'printed_homonym_unread' in risks:
+        requirements.append('printed homonym unresolved')
+    structural = {'unverified_article_extent', 'uncertain_column_membership',
                   'weak_article_start_structure', 'top_margin_bare_heading',
-                  'printed_homonym_unread', 'printed_homonym_conflict',
                   'no_unique_embedded_ocr_coordinates'}
-    blockers = sorted(exclusions.intersection(proposals[0]['risks']))
-    if blockers:
-        return 'review_required', ['former support features present; exclusions: '+', '.join(blockers)]
-    return previous, reasons
+    if structural & risks:
+        requirements.append('article extent or coordinates unresolved')
+    return 'mechanically_supported_provisional', reasons + requirements
+
+
+def publication_eligibility(proposal):
+    """No machine evidence class has a validated publication policy.
+
+    Deliberately independent of confidence/result metadata. Only the existing
+    checksum-bound reviewed certificates can attach links in write_results.
+    """
+    return dict(eligible=False, requirements=[
+        'independently validated lexical/homonym identity',
+        'secure printed folio and single-page crop',
+        'approved publication policy'])
 
 
 def section_sequences(db, witnesses, width=3):
@@ -531,6 +545,7 @@ def write_results(db, output, root, witnesses, identity):
                 editorial_definition=witness['definition'], editorial_citations=witness['citations'],
                 result_category=classification, reasons=reasons,
                 baseline_feature_category=baseline_category(proposals)[0], proposed=proposals[:10],
+                machine_publication=publication_eligibility(proposals[0] if proposals else None),
                 candidate_count=len(proposals), omitted_candidates=max(0,len(proposals)-10),
                 eligible_for_original_print_link=attached is not None,
                 eligibility_basis='existing reviewed checksum-bound certificate' if attached else 'none; machine proposal is provisional',

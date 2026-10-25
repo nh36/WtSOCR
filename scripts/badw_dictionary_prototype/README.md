@@ -1572,3 +1572,33 @@ independent printed homonym identity, followed by unreviewed folio/crop mapping.
 The next experiment should improve those source features and test on a larger
 held-out dataset, without publishing additional reader links or repeatedly
 hand-curating acceptance batches.
+
+### PR #12 diagnostic classification correction (v3.1)
+
+The complete rerun preserves strong lexical/sequence matches as provisional even
+when printed homonyms or geometry remain unread. Explicit contradictory homonyms
+block identity. Publication eligibility is an independent, always-false machine
+policy; result metadata cannot grant reader attachment. The corpus contains 2,416
+provisionally supported, 13,210 review-required, four contradictory and 2,408
+unresolved identities; the 163 reviewed attachments remain separate. Against the
+PR #11 population, 2,314 formerly supported cases remain supported, 28 are
+downgraded, and 102 former review cases meet the provisional lexical criteria.
+
+All 32 evaluation observations are bound to registered scan checksums, HTML
+checksums, exact QA row/text hashes and coordinates, and rendered PNG identities.
+These checks establish provenance, not the truth of human observations. Changed
+prediction evidence or anchors require reassessment: 17 retained correct, three
+explicit incorrect lexical/homonym identities, one insufficient ground truth and
+11 changed predictions not yet assessable. No corrected/newly incorrect prediction
+is claimed without fresh judgments. Development/held-out labels remain separate.
+
+Full execution took 288.265 seconds, peak RSS 552,124,416 bytes; cached resume
+reproduced canonical outputs. Witness output SHA-256:
+`dd53836a3a748570db635f66d1b9e44acc7da2a781816d3671f8a54d644ceb47`.
+Focused tests: 34 passed. Full Python: 2,129 passed / 62 subtests, with the same
+inherited bibliography checksum and wts_8_b 409:73 failures. Required regressions:
+315 passed / 62 subtests; Node: 19 passed. Chrome: zero errors across desktop and
+mobile, 61 apostrophe-equivalent and 447 gyu results, no search body fetches, and
+58 facsimile checks. Historical 69 release-reproduction differences are inherited,
+not eliminated by changes to source evidence. No automatic publication class is
+authorised by this diagnostic milestone.
