@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v3.1'
+VERSION = 'html-print-engine-v4'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -102,6 +102,10 @@ def connection(path):
     db.execute('PRAGMA foreign_keys=ON')
     db.execute('PRAGMA cache_size=-32768')
     db.executescript('''
+      CREATE TABLE IF NOT EXISTS layouts(family TEXT,page INTEGER,body TEXT,PRIMARY KEY(family,page));
+      CREATE TABLE IF NOT EXISTS reading_pages(family TEXT,page INTEGER,body TEXT,PRIMARY KEY(family,page));
+      CREATE TABLE IF NOT EXISTS extents(aid TEXT PRIMARY KEY,body TEXT);
+      CREATE TABLE IF NOT EXISTS reading_lines(family TEXT,page INTEGER,line INTEGER,position INTEGER,body TEXT,PRIMARY KEY(family,page,line));
       CREATE TABLE IF NOT EXISTS stages(name TEXT PRIMARY KEY, details TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS witnesses(sid TEXT PRIMARY KEY, body TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS pages(family TEXT,page INTEGER,features TEXT NOT NULL,PRIMARY KEY(family,page));
@@ -221,6 +225,7 @@ def index_family(db, root, family, registry, output):
     current = next(qa_pages, (None, []))
     rows_count = 0
     for number, layout in enumerate(pdf_layout(pdf, output / (family + '.bbox.xml')), 1):
+        db.execute('INSERT INTO layouts VALUES (?,?,?)',(family,number,json.dumps(layout,sort_keys=True)))
         page = reader.pages[number-1]
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         features = dict(source=FAMILIES[family], source_sha256=source['sha256'], physical_page=number,
@@ -373,16 +378,33 @@ def match_page(db, family, page, witnesses, frequencies):
         geometry = db.execute('SELECT features FROM pages WHERE family=? AND page=?', (family,page)).fetchone()
         geometry = json.loads(geometry[0]) if geometry else {}
         extent = segment(line, start, rows, starts, geometry.get('height'))
+        reconstructed_row=db.execute('SELECT body FROM extents WHERE aid=?',(start['anchor'],)).fetchone()
+        reconstructed=json.loads(reconstructed_row[0]) if reconstructed_row else {}
+        # Only complete coordinate coverage permits replacing the local fallback.
+        refs=reconstructed.get('refs',[]) if reconstructed.get('status')=='coordinate_bounded' else []
+        if refs:
+            extent['lines']=[((p,n),json.loads(db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',(family,p,n)).fetchone()[0])['line_text']) for p,n in refs]
+            extent['risks']=[r for r in extent['risks'] if r not in ('uncertain_column_membership','unverified_article_extent')]
+            extent['boundary_method']='source_coordinate_interval'
         selected = extent['lines']
         for sid, heading_evidence in start['matches'].items():
             witness = witnesses[sid]
             # A repeated spelling farther down the page is a competing article
             # beginning. Never borrow its definition to support the earlier header.
             repeat = next((n for n,s in starts if n > line and sid in s['matches']), None)
-            own_selected = [(n,t) for n,t in selected if repeat is None or n < repeat]
+            own_selected = [(n,t) for n,t in selected if refs or repeat is None or n < repeat]
             own_article = '\n'.join(t for _,t in own_selected)
             proof = evidence_score(witness, own_article, frequencies, len(witnesses))
-            risks = list(extent['risks']) + ['printed_homonym_unread']
+            hom=reconstructed.get('homonym_observation',dict(status='unread',number=None))
+            risks = list(extent['risks'])
+            if hom['status']=='unread':
+                risks.append('printed_homonym_unread')
+            elif hom['status']=='conflicting_ocr_number':
+                risks.append('printed_homonym_conflict')
+            if hom.get('number') and str(witness['homonym']) != hom['number']:
+                risks.append('printed_homonym_conflict')
+            if hom['status']=='explicit_number_single_ocr':
+                risks.append('printed_numeral_requires_corroboration')
             if extent['homonym']['homonym'] and str(witness['homonym']) != extent['homonym']['homonym']:
                 risks.append('printed_homonym_conflict')
             if 'prefix_of_longer_observed_heading' in heading_evidence:
@@ -414,6 +436,7 @@ def match_page(db, family, page, witnesses, frequencies):
                 definition_component_bindings=witness['definition_components'], definition_evidence=proof,
                 score=round(score,6), risks=risks, sequence_consistent=False,
                 segmentation={k:v for k,v in extent.items() if k != 'lines'},
+                reconstruction=reconstructed,
                 source_line_hash=start.get('qa_sha256'),
                 lexical_identity_status='provisional; not independently validated')
             proposals.append(proposal)
@@ -578,6 +601,8 @@ def write_results(db, output, root, witnesses, identity):
     report.mkdir(exist_ok=True)
     write_review(report, sample)
     summary = dict(version=VERSION, policy=POLICY, input_identity=identity,
+        reconstruction=completed(db,'reconstruction'),
+        sequence_ranking=completed(db,'sequence-rerank'),
         html_witnesses=len(witnesses), counts=dict(counts), by_proposed_scan_family=dict(by_family),
         physical_pages=db.execute('SELECT count(*) FROM pages').fetchone()[0],
         qa_lines=db.execute('SELECT count(*) FROM lines').fetchone()[0],

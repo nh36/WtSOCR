@@ -37,6 +37,25 @@ def test_seeded_selection_is_order_invariant_and_bounded():
     assert {c['split'] for c in select_sample(rows)}=={'development','held_out'}
 
 
+def test_calibration_queue_binds_qa_and_excludes_prior_labels(tmp_path):
+    import json
+    import sqlite3
+    from evaluate_badw_alignment import calibration_queue
+    baseline=tmp_path/'baseline'; baseline.mkdir()
+    run=tmp_path/'run'; run.mkdir()
+    (baseline/'witnesses.jsonl').write_text('\n'.join(json.dumps(row(str(i))) for i in range(30)))
+    (run/'inputs.json').write_text(json.dumps({'inputs':{'scan:f':'scan-hash'}}))
+    db=sqlite3.connect(run/'index.sqlite')
+    db.execute('CREATE TABLE lines(family TEXT,page INTEGER,line INTEGER,body TEXT)')
+    db.execute('INSERT INTO lines VALUES(?,?,?,?)',('f',1,2,json.dumps({'line_text':'ka meaning','coordinate':None})))
+    db.commit(); db.close()
+    a=calibration_queue(baseline,run,['0'])
+    assert a==calibration_queue(baseline,run,['0'])
+    assert len(a['cases'])==25 and all(c['source_id']!='0' for c in a['cases'])
+    assert all(c['scan_sha256']=='scan-hash' and c['qa_row_sha256'] for c in a['cases'])
+    assert all(c['inspected_render_sha256'] is None and not any(c['judgments'].values()) for c in a['cases'])
+
+
 def test_multiple_causes_are_not_exclusive_labels():
     value=causes(row())
     assert 'ambiguous_homonym' in value and 'incomplete_article' in value

@@ -62,6 +62,8 @@ def card(row):
         '</pre><h4>HTML definition</h4><pre>'+esc(row['editorial_definition'])+
         '</pre><p>Definition overlap: '+esc(p['definition_evidence'])+'</p><details><summary>Competing assignments</summary><pre>'+
         esc('\n'.join(q['anchor']+' '+q['heading_text']+' score='+str(q['score']) for q in row['proposed'][1:]))+
+        '</pre></details><details><summary>Reconstructed source structure (machine evidence)</summary><pre>'+
+        esc(json.dumps(p.get('reconstruction',{}),ensure_ascii=False,indent=2))+
         '</pre></details><p>Evidence identity: '+esc(p['evidence_sha256'])+'</p></article>')
 
 

@@ -122,6 +122,33 @@ def verify_observations(labels, run, render_root):
         db.close()
 
 
+def calibration_queue(baseline, run, excluded=()):
+    """Select unlabelled calibration cases; source bindings are not judgments."""
+    cases=select_sample((r for r in read_rows(baseline/'witnesses.jsonl')
+                         if r['source_id'] not in set(excluded)),
+                        seed='20261027-reconstruction-calibration',per_class=25)
+    pins=json.loads((run/'inputs.json').read_text())['inputs']
+    db=sqlite3.connect('file:'+str((run/'index.sqlite').resolve())+'?mode=ro',uri=True)
+    try:
+        for case in cases:
+            family,page,line=case['anchor'].split(':')
+            found=db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',
+                             (family,int(page),int(line))).fetchone()
+            if found is None:
+                raise ValueError('calibration QA row absent: '+case['anchor'])
+            row=json.loads(found[0])
+            case.update(scan_sha256=pins['scan:'+family],
+                qa_line_sha256=hashlib.sha256(row['line_text'].encode()).hexdigest(),
+                qa_row_sha256=object_digest({k:v for k,v in row.items() if k!='coordinate'}),
+                coordinate=row['coordinate'],inspected_render_sha256=None)
+    finally:
+        db.close()
+    return dict(seed='20261027-reconstruction-calibration',
+        status='unadjudicated; not a gold standard or accuracy measurement',
+        policy='Baseline-stratified; excludes prior evaluation cases. Held-out labels must remain unavailable during rule development.',
+        cases=cases)
+
+
 def prediction_changes(labels, predictions):
     """Changed anchors/evidence require assessment; never inherit a positive label."""
     counts=collections.Counter()
@@ -201,6 +228,7 @@ def main():
     p.add_argument('--run',type=Path,required=True)
     p.add_argument('--labels',type=Path)
     p.add_argument('--observed-renders',type=Path,help='original inspected PNG directory; required with labels')
+    p.add_argument('--prepare-calibration',action='store_true',help='prepare 200 unlabelled, source-bound cases, excluding prior labels')
     args=p.parse_args()
     root=Path(__file__).resolve().parents[1]
     if not args.run.resolve().is_relative_to(root/'work'):
@@ -226,6 +254,9 @@ def main():
         report['evaluation']=evaluate(labels['cases'],predictions)
         report['prediction_assessment']=prediction_changes(labels['cases'],predictions)
     atomic_json(args.run/'comparison.json',report)
+    if args.prepare_calibration:
+        excluded=[c['source_id'] for c in labels['cases']] if args.labels else []
+        atomic_json(args.run/'calibration-selection.json',calibration_queue(args.baseline,args.run,excluded))
     print(json.dumps(report,indent=2))
 
 

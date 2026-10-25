@@ -54,6 +54,7 @@ def main(argv=None):
         'registry':ROOT/'data/source_pdfs.tsv','certificate':ROOT/'data/badw_html_print_alignment.json',
         'expanded':ROOT/'data/badw_html_print_alignment.generated.json','baseline':ROOT/'data/badw_html_print_pages.json',
         'preparer':Path(__file__).with_name('prepare_badw_alignment_inputs.py'),
+        'reconstruction':Path(__file__).with_name('badw_print_reconstruction.py'),
         'structure':Path(__file__).with_name('badw_print_structure.py'),
         'engine':Path(__file__).with_name('badw_html_print_engine.py'),'runner':Path(__file__),
         'certificate_compiler':ROOT/'scripts/badw_html_print_alignment.py',
@@ -111,6 +112,14 @@ def main(argv=None):
         stage('pages:'+family,lambda f=family:index_family(db,ROOT,f,registry,output))
     witnesses={sid:json.loads(body) for sid,body in db.execute('SELECT * FROM witnesses')}
     stage('starts',lambda:discover(db,witnesses))
+    from badw_print_reconstruction import reconstruct, sequence_rerank
+    from badw_html_print_facsimiles import reviewed_records, REVIEWS
+    from badw_html_print_engine import FAMILIES_INV
+    reviewed,_=reviewed_records(REVIEWS)
+    reviewed_pages=collections.defaultdict(list)
+    for key,row in reviewed['pages'].items():
+        reviewed_pages[FAMILIES_INV[row['source']],row['physical_page']].append(dict(key=key,**row))
+    stage('reconstruction',lambda:reconstruct(db,reviewed_pages,witnesses))
     frequencies=collections.Counter()
     for w in witnesses.values():
         frequencies.update(tokens(w['definition']))
@@ -124,6 +133,7 @@ def main(argv=None):
             return dict(proposals=n)
         stage('match:'+family,match_family)
     stage('section-sequences',lambda:section_sequences(db,witnesses))
+    stage('sequence-rerank',lambda:sequence_rerank(db,witnesses))
     summary=write_results(db,output,ROOT,witnesses,identity)
     atomic_json(output/'timing-latest.json',dict(stages=timings,seconds=round(time.monotonic()-started,3),
         max_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,platform=sys.platform))
