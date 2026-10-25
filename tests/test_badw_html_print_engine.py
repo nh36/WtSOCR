@@ -64,7 +64,9 @@ def test_machine_category_is_explicitly_provisional():
     p=dict(score=12, heading_evidence=['loc_exact','leading_tibetan_exact'],
            definition_evidence={'rare_definition_tokens':['distinctive','definition']},
            sequence_consistent=True, risks=['printed_homonym_unread'])
+    assert engine.baseline_category([p])[0]=='mechanically_supported_provisional'
     assert engine.category([p])[0]=='mechanically_supported_provisional'
+    assert not engine.publication_eligibility(p)['eligible']
     p['risks'].append('header_or_continuation_with_better_article_on_page')
     assert engine.category([p])[0]=='review_required'
     assert engine.category([])[0]=='unresolved'
@@ -172,3 +174,13 @@ def test_history_is_explicitly_optional():
     result = engine.index_history(engine.connection(':memory:'),Path('/absent'),{})
     assert result['edges']==result['anchors']==0
     assert 'not supplied' in result['status']
+
+
+def test_homonym_contradiction_excludes_even_strong_identity():
+    p=dict(score=12,heading_evidence=['loc_exact','leading_tibetan_exact'],
+           definition_evidence={'rare_definition_tokens':['distinctive','definition']},
+           sequence_consistent=True,risks=['printed_homonym_conflict'])
+    assert engine.category([p])[0]=='contradictory_identity'
+    p['definition_evidence']['rare_definition_tokens']=[]
+    assert engine.category([p])[0]=='contradictory_identity'
+    assert not engine.publication_eligibility(dict(eligible=True,reviewed=True))['eligible']

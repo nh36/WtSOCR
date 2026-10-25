@@ -1,0 +1,1202 @@
+{
+  "cases": [
+    {
+      "anchor": "wts_1_34:1239:62",
+      "coordinate": null,
+      "editorial_definition": "\n  in demselben Moment.\n",
+      "editorial_headword": {
+        "loc": "de’i mod la",
+        "tibetan": "དེའི་མོད་ལ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "35ea6eb267c9a6d417f405e62621d50558e5e8c35ab3667ed8e5ec4da97734bb",
+      "family": "wts_1_34",
+      "heading": "དེའི་མོད་ལ་ de’i mod la in demselben Moment.",
+      "html_sha256": "84947b236c60740f93e7a4c5d185dd9755e2ef2c9061275ef08ff615bdf1bcf3",
+      "inspected_render_sha256": "ad906da025e834200d6d184ee34df0f70eee6ce4017748bb18c82b17a4332519",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དེའི་མོད་ལ་ de’i mod la in demselben Moment.\ngan gi cho ga ci byas pa / de yi mod la skrod\npar ’gyur (metr.) „für wen auch immer man\ndas Ritual gemacht hat, in demselben Mo-\nment wird [die betreffende Person] vertrie-\nben“ (Samv 10.55f); skrag pas de yi mod la\ndor (metr.) „man soll [über das eigene Tun]\nerschrecken und im selben Augenblick da-\nvon ablassen“ (Bca 5.46d).",
+      "qa_line_sha256": "192f9ec344fd8076e29386cf8524c929f0f13e00ef3242343880814c1e92b725",
+      "qa_row_sha256": "088089e699fb8a171178f90c4487e432f5b9723c1e7a5dda65fd451da0cae293",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/de%E2%80%99i%20mod%20la/1",
+      "source_observation": "de’i mod la, folio 151 right middle: in demselben Moment. Between de’i bar and de’i tshe ma; quotation gaṅ ci bgo ... de yi mod la skrod par ’gyur. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_1_34",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:1348:98",
+      "coordinate": null,
+      "editorial_definition": "\n  warme Brise, warmer Wind.\n",
+      "editorial_headword": {
+        "loc": "drod rluṅ",
+        "tibetan": "དྲོད་རླུང་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "c303d15a5f3391842ec6b474ceab05278dfb35b3d6d51e31221134d3b41245b1",
+      "family": "wts_1_34",
+      "heading": "དྲོད་རླུང་ drod rluṅ warme Brise, warmer Wind.",
+      "html_sha256": "818cb05ca6018e53e57251780f7ab0a2dc758bedbd325d246e55ca762d16d9d9",
+      "inspected_render_sha256": "44ab1a0169cfb6a3a06dd2fd5a182740054258f3ab9ee40ff922e0223617fb41",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དྲོད་རླུང་ drod rluṅ warme Brise, warmer Wind.\nLex. drod las byun ba’i rlans pa „aus Wärme\nentstandener Dunst“ (Dagy).\nདྲོད་ཤེས་ drod 465 maßvoll, moderat.\nLex. drod mi śes = ran tshod mi śes pa la’an\n„auch für: die eigene Grenze nicht kennen“\n(brDa, ähnl. Dagy).",
+      "qa_line_sha256": "7d38c71459566ab061a8edda52963f4b73f9c6e5cd4357ee22626126feaa75b9",
+      "qa_row_sha256": "61c247b88e64664d225a335f80beda76236799d8b30a1f2075b3de8ac3718175",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/drod%20rlu%E1%B9%85/1",
+      "source_observation": "drod rluṅ, folio 254 right lower: warme Brise, warmer Wind. Between drod rig pa and drod śes; Lex. aus Wärme entstandener Dunst (Dagy). No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_1_34",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:39:171",
+      "coordinate": {
+        "box": [
+          677.67,
+          138.6356,
+          849.64272,
+          148.6256
+        ],
+        "embedded_text": "'Tj'!:i,q· ka dpe ('ka) ,Schriftvorlage fur das Al-",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  Schriftvorlage für das Alphabet.\n",
+      "editorial_headword": {
+        "loc": "ka dpe",
+        "tibetan": "ཀ་དཔེ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "515179d500071d7e996e996e01410ec158be195ef0b3ffd271c3e73560513b7b",
+      "family": "wts_1_34",
+      "heading": "ཀ་དཔེ་ ka dpe (ka) „Schriftvorlage für das Al-",
+      "html_sha256": "c705b907ed355e5baed1646e85c3357ea8bd8afd601c267a4ac9a507e2f4dc14",
+      "inspected_render_sha256": "682308a4fd29b639e55455241372d54850abd04a5e4a0498d1e93755a2b1d685",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "ཀ་དཔེ་ ka dpe (ka) „Schriftvorlage für das Al-\nphabet“, Fibel, ABC-Buch.\nLex. ka kha’i ma phyi „[Schrift]vorlage für das\nAlphabet“ (Dagy); ka kha sogs ka man (r. mad)\nsum cu tham pa „angefangen mit ka, kha, die 30\nBuchstaben des Alphabets“ (brDa).",
+      "qa_line_sha256": "c2e36d785e2cbeb761a05408c58f37723e7e3e45d7dae8d37c429c2356bc4a12",
+      "qa_row_sha256": "421e4b776c6107d8e45fb90da676b60e34c220c7ba4232668f93fd50a95dfab7",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20dpe/1",
+      "source_observation": "ka dpe (ka), spread 12/13 right page upper right: Schriftvorlage für das Alphabet, Fibel, ABC-Buch. Between ka pod and ka phuṅs. No printed homonym numeral observed; split geometry not independently certified.",
+      "split": "development",
+      "stratum": [
+        "wts_1_34",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:130:172",
+      "coordinate": {
+        "box": [
+          681.85,
+          185.51,
+          852.2624,
+          197.51
+        ],
+        "embedded_text": "lij~-~~· dkril gyis auch kril gyis fest; drehend.",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  fest; drehend.\n",
+      "editorial_headword": {
+        "loc": "dkril gyis",
+        "tibetan": "དཀྲིལ་གྱིས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "f326c75b72c4e3cba02bf9b0075238bcd4cfc4b129a0fbe40f427322b64150ca",
+      "family": "wts_1_34",
+      "heading": "དཀྲིལ་གྱིས་ dkril gyis auch kril gyis fest; drehend.",
+      "html_sha256": "86215bde06f424093ed752ddae75aafe0259cfea347a62e14c1fd3b9f285ba43",
+      "inspected_render_sha256": "0097279c4088178050773ad76ac5e0d61c1c14f9f2c5f7ac0a947c380190e248",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དཀྲིལ་གྱིས་ dkril gyis auch kril gyis fest; drehend.\nkho la — ’khrilnas khyod ran śes zer „indem er\nsich fest an ihn klammerte, sagte er: ‚Du\nmußt es wissen!‘“ (dPe 36,7); lcags kyi mda’\nni kril gyis bkan „der Eisenpfeil wurde drehend angelegt“ (gZer 668,5).",
+      "qa_line_sha256": "bcdb1ff61c9d19068b1f87c3f19af297b5ff7163c3341af01251505d43911140",
+      "qa_row_sha256": "5a0ec590e19f1f3ddd5ff1c995dd8fba2c9852faaebd534889b8a3df9137671b",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dkril%20gyis/1",
+      "source_observation": "dkril gyis auch khril gyis, spread 182/183 upper right: fest; drehend. Between dkrigs ldan and dkril le. No printed homonym numeral observed; split geometry not certified.",
+      "split": "held_out",
+      "stratum": [
+        "wts_1_34",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:128:80",
+      "coordinate": {
+        "box": [
+          41.95,
+          359.613,
+          118.6741,
+          367.713
+        ],
+        "embedded_text": "Lex. dkor pa (br Da).",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 0.5
+      },
+      "editorial_definition": "\n  1.\n  „Schatzhüter“, Klosterverwalter.\n\n\n  2.\n  Beiname der Ma-mo gnod-sbyin mdzes-ldan-ma (Neb 35).\n",
+      "editorial_headword": {
+        "loc": "dkor sruṅ",
+        "tibetan": "དཀོར་སྲུང་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "5973cef4c8190238182338091705f968a0b1d5c35cf3be393b1db5a92c860281",
+      "family": "wts_1_34",
+      "heading": "དཀོར་སྲུང་ dkor sruṅ.",
+      "html_sha256": "a28618e8c084fda1b971c8689cf2260aedff1578a01ebfea1d413c27ada1949a",
+      "inspected_render_sha256": "88db40ff450cd46d30ce2e75aab97370122b62e63b9865e7e2cacc551c83e148",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": false,
+        "own_evidence": false,
+        "page": true
+      },
+      "printed_evidence": "དཀོར་སྲུང་ dkor sruṅ.\n1. „Schatzhüter“, Klosterverwalter.\nPe-har (Neb 120).\nLex. nam thag, skt. artah (7. ärtab) (Tshe",
+      "qa_line_sha256": "9913a1e0119c3e9748921c6ec7529da62f96c4408ff7078aafad457445e9fa11",
+      "qa_row_sha256": "1efb2536d285c5b36be7b5f7c0ffed500abe4f67e82439265c11a0677b09896b",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dkor%20sru%E1%B9%85/1",
+      "source_observation": "Claimed box identifies dkor pa Schatzmeister, not dkor sruṅ. Intended entry occurs on the same spread in the other column, with Schatzhüter, Klosterverwalter and Beiname der Ma-mo. The definition must not be borrowed across columns.",
+      "split": "development",
+      "stratum": [
+        "wts_1_34",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:1295:8",
+      "coordinate": null,
+      "editorial_definition": "\n  Vornehmer und Gemeiner, Adliger oder Gemeiner, jede soziale Schicht; vgl. ↑1drag 5, drag pa 3.\n",
+      "editorial_headword": {
+        "loc": "drag źan",
+        "tibetan": "དྲག་ཞན་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "32a97cd3c18a5a06fc8504dca4ca17065d541752b927b5f981d21ad33d6d2776",
+      "family": "wts_1_34",
+      "heading": "དྲག་ཞན་ drag Zan auch drags Zan Vornehmer",
+      "html_sha256": "acff3537e5a520cd260b9087d3dc2bf7d97e65bbefc744c5178e2e4217c0a0f2",
+      "inspected_render_sha256": "27ddf65791885b1cdf43d80e49394dd48b7cab33011aaa6af1fbcf2d8a8159e1",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དྲག་ཞན་ drag Zan auch drags Zan Vornehmer\nund Gemeiner, Adliger oder Gemei-\nner, jede soziale Schicht; vgl. t'drag 5, drag\npa.\ndrags zen (r. Zan) su la’an phogs byin mi\nchog „es ist nicht erlaubt, irgendjemandem,\nsei er ein Vornehmer oder Gemeiner, ei-\nnen Lohn zu geben“ (BhuKkh 148,15); ser\nskya — ... mtha’ dag la sprins pa „gesandt\nan alle Mönche und Laien jeder sozialen\nSchicht“ (MTH3/3/2 5); drag {g}Zan kyıi ro\ntshab ... nas nes dgos {b}rgyur „von den Vertretern der Vornehmen und Gemeinen not-\nwendigerweise zu beachten“ (MTH3/3/8\n1); bya ri dwags sogs la — sus kyan gnod pa\nmi byun na „Vögeln, Wildtieren usw. darf\nvon Vornehmen und Gemeinen, von wem\nauch immer, kein Schaden zugefügt werden“\n(MTH3/3/34 27); khyod — sus kyan ... brtan\n(r. gtan) nas ma byed „von euch Vornehmen\nund Gemeinen, von wem auch immer, ist das\ngrundsätzlich nicht zu tun“ (MTH3/5/2 6);\n[Jam thog gi sgrub cha 'di bin — su la’an",
+      "qa_line_sha256": "50d0800d230b5545201582dfe1fcabd733f411d3e2a289733395d64a5d4b6edf",
+      "qa_row_sha256": "5767a67506f716976592aff9757369dca152085e6a938744062287cd02f82da9",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/drag%20%C5%BAan/1",
+      "source_observation": "drag źan auch drags źan, folio 201 left upper: Vornehmer und Gemeiner, Adliger oder Gemeiner, jede soziale Schicht. References 1’drag 5 and drag pa 3. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_1_34",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:184:201",
+      "coordinate": null,
+      "editorial_definition": "",
+      "editorial_headword": {
+        "loc": "bem",
+        "tibetan": "བེམ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "a5dd512ed38b374a6e2a50beea9a1fde688f985a4b10874583d1fbd108583352",
+      "family": "wts_1_34",
+      "heading": "Lex. sku bem = zla gam na bza’ lta bu „wie:",
+      "html_sha256": "6693ec478c92f3dac36c5e80eed5bf082afa4bbcd2e33017048e82e245d3d7b3",
+      "inspected_render_sha256": "7c1a340a6362da11fb759b5642751b6dbbc9206616afc3c895bfc9c408e1ac29",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": null,
+        "own_evidence": null,
+        "page": null
+      },
+      "printed_evidence": "Lex. sku bem = zla gam na bza’ lta bu „wie:\nMantel, Gewand“ (brDa); —, sk bem = bla\ndpon gyi bies rgyn’i ber daṅ zla gam sogs „ein\nvon geistlichen Lehrern und Gouverneuren\nzu tragender Überwurf, Mantel usw,“\n(Dasy).",
+      "qa_line_sha256": "417575817ade314e620887f02258512f71ebb23de9e40a025ca1c6c766dfabe0",
+      "qa_row_sha256": "df5b9a74c7975b5b845f78fba8732c5cffd2c16376e5a9d55556efa120ef9cd8",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bem/1",
+      "source_observation": "Actual heading is sku ber auch sku bem resp. Obergewand, Mantel, spread 280/281 lower right. HTML bem has no definition. Whether this alias establishes the intended lexical witness remains unresolved.",
+      "split": "development",
+      "stratum": [
+        "wts_1_34",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_1_34:373:173",
+      "coordinate": {
+        "box": [
+          720.49,
+          190.403,
+          886.2235,
+          198.503
+        ],
+        "embedded_text": "dpyid dus dan (metr.) ,die kalte Jahreszeit",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  1.\n  Frühling, Frühjahr; Zeit des Frühlings\r\n.\n\n\n  2.\n  Sommer.\n",
+      "editorial_headword": {
+        "loc": "dpyid dus",
+        "tibetan": "དཔྱིད་དུས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "31c657067ddf098981ad89fdbbdcd17e18107666c267f24d395bb1df37f485af",
+      "family": "wts_1_34",
+      "heading": "dpyid dus dan (metr.) „die kalte Jahreszeit",
+      "html_sha256": "3a820f5b08243458ff02a949b6d2e78a4d841474453a3552f54565c05ab4aadc",
+      "inspected_render_sha256": "b5a1f143359889c3577ee05348d378340090f3dc8a26602f0e970c35f23e79ed",
+      "judgments": {
+        "article_start": false,
+        "crop": null,
+        "heading": false,
+        "homonym": null,
+        "lexical_identity": false,
+        "own_evidence": false,
+        "page": false
+      },
+      "printed_evidence": "dpyid dus dan (metr.) „die kalte Jahreszeit\n(skt. sitakäla) und der Frühling“ (Ahs\n1.2.11b).\nLex. dgun kha’am dgun smad (brDa); dgun\ngyi dus (Dagy); gran nar dus = dgun kha’am\ndgun smad (brDa); dgun gyi dus (Dagy).",
+      "qa_line_sha256": "d00672af3119fdea5346776d5564884720003d135fae552b1c2df56257591ec2",
+      "qa_row_sha256": "2c0385dd920a89e8115ad9e0cbeff8aca77d2e98ee53928aa7ba82fb2856eb6f",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dpyid%20dus/1",
+      "source_observation": "Box falls inside graṅ dus, spread 250/251 upper right: kalte Jahreszeit, Winter, Winterzeit. dpyid dus occurs in a quotation, not as the article heading. HTML Frühling; Sommer does not establish this article.",
+      "split": "held_out",
+      "stratum": [
+        "wts_1_34",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:302:42",
+      "coordinate": null,
+      "editorial_definition": "\n  Zusammenfassung, Merkvers.\n",
+      "editorial_headword": {
+        "loc": "sdom tshig",
+        "tibetan": "སྡོམ་ཚིག་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "c6a3da2bfae8939385a0913a85c5f615fa27372ce444b1460cf3415a6e883f2b",
+      "family": "wts_35_51",
+      "heading": "སྡོམ་ཚིག་ sdom tshig Zusammenfassung,",
+      "html_sha256": "d36f218ef01f10a46382bb93fb4d53e4e7d3342fe6153aeff3c5652ff8796603",
+      "inspected_render_sha256": "e0736c951074c05a9a1cd59b4fe82c3a3314638b0e8fad6302ee94fc1aee6e34",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "སྡོམ་ཚིག་ sdom tshig Zusammenfassung,\nMerkvers.\nx, |\nསྡོམས་ sdoms\nLex. rgyas pa bsdus te bsdoms pa' sdom\nlta bu \"Ausführliches kurzgefaßt, wie: Zu-\nsammenfassung von Zusammengefaßtem\"\n(brDa); briod bya rnams sdom du byas pa'i\ntshig \"Worte, die den Inhalt zusammenfas-\nsen\" (Dagy).",
+      "qa_line_sha256": "2954140b53ffd838980b9487efb038d84b246a819742c01fb575c8fd64f6c0d3",
+      "qa_row_sha256": "6bfb079284b095559ac63a5f1f6a3785a089f9256505867859aa4e23f7cfbc01",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/sdom%20tshig/1",
+      "source_observation": "sdom tshig, folio 557 left bottom: Zusammenfassung, Merkvers. Below sdom brtson dam pa. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_35_51",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:765:26",
+      "coordinate": null,
+      "editorial_definition": "\n  Würde, Gewichtigkeit.\n",
+      "editorial_headword": {
+        "loc": "spa mo",
+        "tibetan": "སྤ་མོ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "fcdd96837eec6593ef8e47365c6285d360fd13b2fd65b2aa721b02ce9680f3f4",
+      "family": "wts_35_51",
+      "heading": "སྤ་མོ་ spa mo Würde, Gewichtigkeit.",
+      "html_sha256": "81164d80e7dc5bb45b2c9a0e9487a1ed974f4ceb7801a470c05a5cb69e65a100",
+      "inspected_render_sha256": "857176537bfcc501ca69d577b6b85b1493b3240cd04d0c985488d51ff9d688bf",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "སྤ་མོ་ spa mo Würde, Gewichtigkeit.\nLex. sra brtan la'an \"auch für Festigkeit\"\n(Dagy).",
+      "qa_line_sha256": "d3a3b5892f0b70e8bd07d38dc62fa7bc04c6134a4f469dcc8f5af2d4ef92fa6b",
+      "qa_row_sha256": "e40b1d1ab3925001279b0b97d619cda8d0f6bec535fc06d5df129ef3752475ad",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/spa%20mo/1",
+      "source_observation": "spa mo, folio 416 left lower: Würde, Gewichtigkeit. Between spa ma Wacholder and spa yul. Lex. auch für: Festigkeit (Dagy). No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_35_51",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:612:72",
+      "coordinate": null,
+      "editorial_definition": "\n  1.\n  Nase, Rüssel; sna yi sgo Nasenloch; sman snar blugs pa medizinische Nasenspülung.\n\n\n  2.\n  das Riechen, der Geruchssinn.\n\n\n  3.\n  Bergnase; ri sna, gdoṅs sna dass..\n\n\n  4.\n  Ende, Spitze, Rand, Kante; rkaṅ pa’i sna Fußspitze, thig sna Seilende, gduṅ sna Balkenende, sa sna Landspitze; le bar bcu gsum tsam gyi snar etwa 13 le bar entfernt.\n\n\n  5.\n  in sna sgyur Richtung ändern.\n\n\n  6.\n  zuerst, vorne; sna la ’gro zuerst gehen, vorausgehen.\n\n\n  7.\n  Art; verschieden; in jeder Weise; rtsa bźi sna die vier Grundregeln; zas sna dpag tu med pa alle erdenklichen Speisen.\n\n\n  8.\n  mit Zahlen: sna dgu neun Arten, jegliche, sna lṅa fünfteilig, fünferlei, sna bcu zehn verschiedene, sna bdun sieben Arten, rin po che sna bdun die sieben Kostbarkeiten; ’ja’ tshon sna lṅa die fünf Farben des Regenbogens, śiṅ sna brgyad acht verschiedene Hölzer.\n\n\n  9.\n  (zw.) Muskat.\n",
+      "editorial_headword": {
+        "loc": "sna",
+        "tibetan": "སྣ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "603c3c1805935e3c29936db10d85ba35c5239a75efbfab87685e317dadaf7187",
+      "family": "wts_35_51",
+      "heading": "སྣ་ sna.",
+      "html_sha256": "b8646a356937b7cccb7d6df1340df19a83ee699256de189765c7cfc21a4a3118",
+      "inspected_render_sha256": "5193a88b7583fea518e5b3f72d8b3bfedd861f293bf96ea6a820f15bea5518c8",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "སྣ་ sna.\n1. Nase, Rüssel; ~ yi sgo Nasenloch; sman\n—r blugs pa medizinische Nasenspülung.\nri dans mi —r myi mnam (metr.) \"er roch\nden aufgestiegenen Geruch mit seiner Na-\nse nicht\" (PT1287 466); khye'n\nmtho ba Zig btsas so \"da wurde ein Junge ge-\n~~\" gzens\nboren, seine Nase war hochaufragend\" (Prav\n34,22); glan chen dban po'i — 'dra rgyal ba'i\nphyag (metr.) \"der Arm des Siegers gleicht\ndem Rüssel (skt. saunda) des Elefantenkö-\nnigs\" (Suv 37,19); kun don gi khu ba... —r\nblugs na yani — khrag zag pa gcod \"auch wenn\nman Zwiebelsaft in die Nase gießt, wird\ndas Nasenbluten beendet\" (Siddh 7.31); las\nmnanis Ina ni ... bkru sman dan / sman —r\nblugs pa dan \"die fünf Behandlungsmetho-\nden sind: Abführmittel, medizinische Na-",
+      "qa_line_sha256": "9e6e03f512ef5d0e19b6dfd6c2893d8d85ad514f0e9abb6f951173bb3a333c80",
+      "qa_row_sha256": "8e1e27ec919c47209b4c4503c534c4cccb2ed7bb9bb9f89b25062f0a58ac16ff",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/sna/1",
+      "source_observation": "sna, folio 263 right lower: sense 1 Nase, Rüssel; Nasenloch and medizinische Nasenspülung. HTML editorial variants glo > sgo and blugs do not change the identified article. Printed 1 belongs to sense, not homonym; article continues.",
+      "split": "development",
+      "stratum": [
+        "wts_35_51",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:752:36",
+      "coordinate": null,
+      "editorial_definition": "\n  1.\n  Vorsteher.\n\n\n  2.\n  verschiedene Landesherren.\n",
+      "editorial_headword": {
+        "loc": "dpon sna",
+        "tibetan": "དཔོན་སྣ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "8b4fb546364f0c99e33b59de4d8365548dabf3cb4249f0f744cb5c2fbd8382b9",
+      "family": "wts_35_51",
+      "heading": "དཔོན་སྣ་ dpon sna.",
+      "html_sha256": "07dbad9b1e5d9271c34a3c0b63b7bd831715248157e2d52a41a8f1dec0b48fc2",
+      "inspected_render_sha256": "04421fcc5a06e5c5224690a60ba0166d87ce2373ea51468a30e15b5d218268e7",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དཔོན་སྣ་ dpon sna.\n1. Vorsteher.\nkhab so — dagis / khral kyj sna 'tshal te \"wenn\ndie Vorsteher der Steuerbeamten des btsan\npo verschiedene Steuern [einfordern] wol-\nlen\" (In? 10); Zin pa' inyi grans yig du bgyis\nདཔོན་དམག་ dpon dinag\nnas mkhar ris kyl — la gtan \"die Anzahl der\nFeldarbeiter ist schriftlich festgehalten und\ndem Vorsteher des befestigten Siedlungsbe-\nreichs übergeben\" (OTM427 a7).\n2. verschiedene Landesherren.\nyul gyi — rnams kyis ,... mchod rten 'di ...\nmchod pa che than du bgyid \"die verschiede-\nnen Landesherren verehrten diesen Stüpa in\ngroßem Ausmaß\" (Liyl 17252).",
+      "qa_line_sha256": "7ce59e8cac564de338d160c162ca4a3823e45a78c8afa37cae8d951c21649916",
+      "qa_row_sha256": "eb4f85ac19aeddf8b023bb6033c1d704fe02b7ffc57fde42bd91a5abc5d1d1fd",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dpon%20sna/1",
+      "source_observation": "dpon sna, folio 403 left bottom: sense 1 Vorsteher. Quotation khab so ... thag ... Steuern einfordern (In 710). HTML sense 2 continues beyond this page; no printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_35_51",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:1023:66",
+      "coordinate": null,
+      "editorial_definition": "\n  Nomade, Viehzüchter.\n",
+      "editorial_headword": {
+        "loc": "’brog pa",
+        "tibetan": "འབྲོག་པ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "024568383f2cf1235aaf6b18f4297c02ebdadb4797bb1f0833bf6ffaef43d6cc",
+      "family": "wts_35_51",
+      "heading": "Lex. 'brog pa Zig \"ein Nomade\" (Dagy).",
+      "html_sha256": "50c8acebf72b0ba609a5616bb28149738f602e455fc99c0806ebb6ed416ead9b",
+      "inspected_render_sha256": "b96d7d83e3f9ad71d45deafdba6ebc959aac58dfd2870cba3e4538573d644541",
+      "judgments": {
+        "article_start": false,
+        "crop": null,
+        "heading": false,
+        "homonym": null,
+        "lexical_identity": false,
+        "own_evidence": false,
+        "page": false
+      },
+      "printed_evidence": "Lex. 'brog pa Zig \"ein Nomade\" (Dagy).\n2. npr. cin König der Nägas.\nLex. klu'i rgyal po (brDa, Dagy).\n3. auch — chen po Beiname śivas, skt. Pasu-\npati.\nLex. pasupatib (Mvy 3121, Abt. ig rten pa'\nlha'i min), — chen po ‰ dban phyug chen po\n\"Mahesvara\" (brDa, Dagy).",
+      "qa_line_sha256": "8235354db5987f0de3542b8670f492896d34c6191832d9d88fbe0f457b6ae510",
+      "qa_row_sha256": "cb940fca02d137a99665ac8c0fd03d52c2e6cd41305d97250eb37a9e1b835b79",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99brog%20pa/1",
+      "source_observation": "Actual heading is phyugs bdag, folio 154 right: Bez. für Nomade; Lex. ’brog pa źig, ein Nomade (Dagy). ’brog pa is quoted gloss, not article beginning. Later senses describe Nāga king and Śiva.",
+      "split": "development",
+      "stratum": [
+        "wts_35_51",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:688:73",
+      "coordinate": null,
+      "editorial_definition": "\n  npr. ein Gelehrter im Kloster Kaḥ-thog.\n",
+      "editorial_headword": {
+        "loc": "padma blo gros",
+        "tibetan": "པདྨ་བློ་གྲོས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "44b4d8d34115ff6b7c1736ecafd617d1b43d47840c608554cb883328107d9eb9",
+      "family": "wts_35_51",
+      "heading": "པདྨ་བློ་གྲོས་ padma blo gros npr. ein Gelehrter",
+      "html_sha256": "4c56588d2733d3ec36cb84f1bfdfbd83176478eec2d76a1254d2326f3e1646eb",
+      "inspected_render_sha256": "ad4973e9d77bb4f04a9d4f99168102e84d2a2747c380bfd95a1f441de483543c",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "པདྨ་བློ་གྲོས་ padma blo gros npr. ein Gelehrter\nim Kloster Kah-thog.\nkun mkhyen — kyigdan sar mna'gsol \"er wur-\nde auf dem Sitz. des Kun-mkhyen Padma blo-\ngros inthronisiert\" (KTh 1: 382,5).\nsambhava, vgl. Ipadima sam bha wa.\npadma byun gnas npr. ein tan-\ntrischer Lehrer, skt. Padina-\ndes da lta'ai srin po'ikba gnon byed par grags\npas — yin zer \"man sagt, er 501 Padmasam-\nbhava, da er dafür bekannt ist, (131) er auch\nheute noch die srin po unter Kontrolle hält\"\n(Debm 1432); ~ sprul sku 'gro ba'i mgon\n339",
+      "qa_line_sha256": "0b388a4178ede33e3d8c35543a88b9ce9eba465cc44ae4fdf21b682da26326e1",
+      "qa_row_sha256": "b137fe3973e3b08c3b87cf620e37e12fe34ce4a7fea8742f810a5c6a2ffc9179",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/padma%20blo%20gros/1",
+      "source_observation": "padma blo gros, folio 339 right lower: ein Gelehrter im Kloster Kah-thog. Quotation kun mkhyen ... gdan sar mṅa’ gsol (KTh 1:382,5). Between padma bla ma and padma ’byuṅ gnas. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_35_51",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:267:38",
+      "coordinate": null,
+      "editorial_definition": "\n  erblinden, blind, verblendet sein.\n",
+      "editorial_headword": {
+        "loc": "ldoṅs",
+        "tibetan": "ལྡོངས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "2f979af57ec3dbca2bb636af9022ca5fa55e3d0e1568c5596e1234d05d758abf",
+      "family": "wts_35_51",
+      "heading": "ལྡོངས་ T'mdoṅs",
+      "html_sha256": "151720ccf07bf39c6b30f88ad1b785ba7d7d0da06f577c467faa4e60eade1817",
+      "inspected_render_sha256": "31e0814c7660bce6fae7422bf05f21310787fdafd19f52c59dbf84da98e68c31",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": false,
+        "lexical_identity": false,
+        "own_evidence": false,
+        "page": true
+      },
+      "printed_evidence": "ལྡོངས་ T'mdoṅs",
+      "qa_line_sha256": "78624de370b010704f20082306dbef13f0a2a781811ea9b959ccc70b278f3713",
+      "qa_row_sha256": "e777481b6d2a65e596a5cb251100769d7cc6786a956321b3dc611ff44db8975c",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ldo%E1%B9%85s/1",
+      "source_observation": "Folio 522 left: line 38 is explicitly ²ldoṅs, reference to ¹mdoṅs 2. The distinct ¹ldoṅs article above says auch mdoṅs, pf. zu ¹ldon, erblinden, blind, verblendet sein. The proposed HTML homonym 1 binds to printed homonym 2.",
+      "split": "development",
+      "stratum": [
+        "wts_35_51",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_35_51:733:67",
+      "coordinate": null,
+      "editorial_definition": "\n  npr. eine Erscheinungsform des Mahākāla (Neb 66).\n",
+      "editorial_headword": {
+        "loc": "dpal rdo rje nag po bstan bsruṅ yoṅs rdzogs",
+        "tibetan": "དཔལ་རྡོ་རྗེ་ནག་པོ་བསྟན་བསྲུང་ཡོངས་རྫོགས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "238475a14c0b40a3a3cba9d483abd62c76aeedbdc2d15a261f8ba65742a4e9f5",
+      "family": "wts_35_51",
+      "heading": "དཔལ་རྡོ་རྗེ་ནག་པོ་བསྟན་བསྲུང་ཡོངས་རྫོགས་ dpal",
+      "html_sha256": "5fe9baf08866f8213139c8433eee914a412745d0c64f132c9918e88336b4613b",
+      "inspected_render_sha256": "9137b9ade492429abe1359046e68ba210c047fd5c62ac0d3f227eb096638b4f8",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དཔལ་རྡོ་རྗེ་ནག་པོ་བསྟན་བསྲུང་ཡོངས་རྫོགས་ dpal\nrdo rje\nnag po bstan bsrun yons rdzogs npr. eine\nErscheinungsform des Mahäkäla (Neb 66).",
+      "qa_line_sha256": "bc4d96e1bdced713820ff7f1418513fd19fa9c3e3c837c34963c2abbe076dda1",
+      "qa_row_sha256": "163e86ec97e8a5889a67a7d8de46c66f4c252b4ea51f8fa981fe6185cedc7f6f",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dpal%20rdo%20rje%20nag%20po%20bstan%20bsru%E1%B9%85%20yo%E1%B9%85s%20rdzogs/1",
+      "source_observation": "dpal rdo rje nag po bstan bsruṅ yoṅs rdzogs, folio 384 right bottom: eine Erscheinungsform des Mahākāla (Neb 66). No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_35_51",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:365:71",
+      "coordinate": null,
+      "editorial_definition": "\n  herausreißen, ziehen.\n",
+      "editorial_headword": {
+        "loc": "dbad",
+        "tibetan": "དབད་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "42be45a4bab2577d7c88d08505c5c0044aa99eb96c00b2b853c8ca9afc727aab",
+      "family": "wts_8_b",
+      "heading": "དབད་ dbad herausreißen, ziehen.",
+      "html_sha256": "9061d9ddb50e5acfde0a2df9d657cbc3923631dd5830deefc800b5d80b4a7a0f",
+      "inspected_render_sha256": "65fefe3677ccaa0f6d3dd3694e8b46b0ab776f57096210954d261e571891d639",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དབད་ dbad herausreißen, ziehen.\nLex. ~ pa = 'thog pa daṅ then pa (TTC).",
+      "qa_line_sha256": "460f51ee4b1ad3db8ff5d0dbc0173a214cc67330cf2abe398a45c8be49c4692a",
+      "qa_row_sha256": "b56a7a75e7f1006335357370e23fad149d79f506b767a9ca76fc45a8aa236f14",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbad/1",
+      "source_observation": "dbad, folio 355 right middle/lower: herausreißen, ziehen. Lex. ’thog pa daṅ ’then pa (TTC). Between dbaṅ śed and drab. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_8_b",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:547:83",
+      "coordinate": null,
+      "editorial_definition": "\n  1.\n  ↑sbyaṅ.\n\n\n  2.\n  Purgativum, Abführmittel; Klistier.\n\n\n  3.\n  Weihe.\n",
+      "editorial_headword": {
+        "loc": "sbyaṅ ba",
+        "tibetan": "སྦྱང་བ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "f33388ebabbb0ca2ce07b745e5fea1075114551268251b5495012c1859532bfb",
+      "family": "wts_8_b",
+      "heading": "སྦྱང་བ་ sbyaṅ ba.",
+      "html_sha256": "18ac6a2d977c874047fd49cb152ce2234694426b80ae6b9cea3ea35e9abd68fe",
+      "inspected_render_sha256": "be94d442edad9b598e1e0e9035d33ccd7a3d0b83fe7031b6b272a049eb81af37",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "སྦྱང་བ་ sbyaṅ ba.\n1. Isbyani.\n2. Purgativum, Abführmittel; Klistier.\nmdor na sinan ni nam grüste / — dan mi Zi\nba'o (metr.) \"kurzgesagt [gibt es] zwei Ar-\nten von Heilmitteln: Purgativa und Sedati-\nva\" (Ahs 1.1.24); sbyan sogs snum chos khrus",
+      "qa_line_sha256": "d1fad1f988a69e180b83323fa7b6fb7b09f5adf9cb1e1a49b6fbb2ebc850def8",
+      "qa_row_sha256": "bc1687abc54d823bc8a7095a91842fdd98fea4e834e9618e1a3246d1369eaeb4",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/sbya%E1%B9%85%20ba/1",
+      "source_observation": "sbyaṅ ba, folio 537 right bottom: sense 1 reference to ¹sbyaṅ; sense 2 Purgativum, Abführmittel; Klistier. HTML has continuation sense 3 Weihe. After sbyaṅ dka’ ba; no printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_8_b",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:89:55",
+      "coordinate": null,
+      "editorial_definition": "\n  Ergänzungswerk bzw. Kommentar zu einer grundlegenden Abhandlung (ma dpe); vgl. Schuh 2012: 1484.\n",
+      "editorial_headword": {
+        "loc": "bu yig",
+        "tibetan": "བུ་ཡིག་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "b8e89e385ec253807b7c700c59d78bfcb293a46470258ccaf96f632900519f71",
+      "family": "wts_8_b",
+      "heading": "བུ་ཡིག་ bu yig Ergänzungswerk bzw. Kom-",
+      "html_sha256": "3b02b7fd3fbd040c94774d7466d5d17ca585b5b3f8fe912134fa3cdbfeeb3388",
+      "inspected_render_sha256": "f4425bfdebf766b7eda3666c2c1bbb3422f9700a56fe1f41e59fd5ac6481b079",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "བུ་ཡིག་ bu yig Ergänzungswerk bzw. Kom-\nmentar zu einer grundlegenden Ab-\nhandlung (ma dpe); vgl. Schun 2012: 1484.\nབུ་ཡུག་ bu yug Schneesturm.\nme tog gi char — ltar babs pa la sogs pa'i no\nmtshar ba'i ltas \"wundervolle Zeichen wie ci-\nnem Blumenregen, der gleich einem Schnee-\nsturm niederging\" (RGNth 41b5); — dan ...\ngos gsum / mtho gans dkar giltons su \"khrug\npa Sor (metr.) \"auf dem Abhang des hohen\nweißen Gletscherberges brach ein Kampf\naus [zwischen] dem Schneesturm und mei-\nnen drei Baumwollroben\" (MilGb 220,8);\n'byun ba'i — /6/ ///)$ se tshub (metr.) \"Schnee-\nsturm der Elemente, tshubs se tshub\" (gZi\n2: 64,4); khrag gi skyin 'dan daṅ nad kyi ~\ndan \"Regenfälle aus Blut, Schneesturm von\nKrankheiten\" ([ 612 160,5).\nLex. rlun 'tshub — \"rauher Wind, bu yug\"\n(brDa); rlun 'tsbub dan 'dres pa'i kha ba\n\"Schnee, verbunden mit rauhem Wind\"\n(Dagy).\n79",
+      "qa_line_sha256": "0903701df49ad81bc9f3801b7f1134428bc267e5c3744735e8fbd397315b9bda",
+      "qa_row_sha256": "f43a9c3ce052c9e180f9e40dcc25fccf5620ccff591bf14bf6b4ba3b631d0c9c",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bu%20yig/1",
+      "source_observation": "bu yig, folio 79 right middle: Ergänzungswerk bzw. Kommentar zu einer grundlegenden Abhandlung (ma dpe); Schuh 2012:1484. Followed by bu yug Schneesturm. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_8_b",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:329:49",
+      "coordinate": {
+        "box": [
+          241.44,
+          230.109,
+          413.8075,
+          255.048
+        ],
+        "embedded_text": "���- blo so rgod schnell agierend, ent­",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  schnell agierend, entscheidungsfreudig, risikofreudig.\n",
+      "editorial_headword": {
+        "loc": "blo śo rgod",
+        "tibetan": "བློ་ཤོ་རྒོད་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "5e24992e3246b0885697ccf80dfcdb40ae9ad7e5a1a3fa54e3f9459ce931bc0a",
+      "family": "wts_8_b",
+      "heading": "བློ་ཤོ་རྒོད་ blo śo rgod schnell agierend, ent-",
+      "html_sha256": "fa5783cfd67bd9fb1f8ce255871a3fea5324ffa1f19519899f07482729212d6d",
+      "inspected_render_sha256": "a6847c6915a3f0ec597b45b1b2067a2638734513bd47c445605e53280394a3a4",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "བློ་ཤོ་རྒོད་ blo śo rgod schnell agierend, ent-\nscheidungsfreudig, risikofreudig.\nLex. dal bu ma yin pa \"nicht langsam sein\"\n(brDa).",
+      "qa_line_sha256": "a72a758a15f8d634a5eaa603639f4522f280ddd6bface28c09923792b13efaaf",
+      "qa_row_sha256": "4c7944266553055b589c9f8eaae01e7edbb559c64c0e4a889b88b157b8c0a44b",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/blo%20%C5%9Bo%20rgod/1",
+      "source_observation": "blo śo rgod, folio 319 right middle: schnell agierend, entscheidungsfreudig, risikofreudig. Lex. dal ba ma yin pa (brDa). Between blo liṅ gis bkal and blo bśad. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_8_b",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:327:23",
+      "coordinate": null,
+      "editorial_definition": "\n  „zu viele Gedanken habend“, verzettelt, unentschlossen.\n",
+      "editorial_headword": {
+        "loc": "blo maṅ",
+        "tibetan": "བློ་མང་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "238cb846b77460d54d35295e867fddcb04088840246c25f88773a226a2f61762",
+      "family": "wts_8_b",
+      "heading": "བློ་མང་ blo mar \"zu viele Gedanken habend\",",
+      "html_sha256": "5041dca3c6c52164d227e1bb508cd2d6a29b4af50b6fab9ad0b159829a3837c1",
+      "inspected_render_sha256": "ecd1095f266d0413d14b8cd70d283fc90498d08c5c8d1d84564a51009a0d80d5",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "བློ་མང་ blo mar \"zu viele Gedanken habend\",\nverzettelt, unentschlossen.\nLex. bsam pa man po (brDa, Dagy).\nJa blo mig Bez. für Weisheit.\nLex. sesrab (brDa, Dagy).\nབློ་མོས་ blo mos Absicht, Interesse.\nLex. sems kyi mos pa (Dagy).",
+      "qa_line_sha256": "fd7cfd237d87f8892878ddad2375c796967722077ad49a23cca5ac9b0bb26770",
+      "qa_row_sha256": "3ff7e653cc9b53f0ccb4f2eccbe9a8d1d1999b0d129e094dfc9a4424e64a1c2b",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/blo%20ma%E1%B9%85/1",
+      "source_observation": "blo maṅ, folio 317 left middle: zu viele Gedanken habend, verzettelt, unentschlossen. Lex. bsam pa maṅ po. Scan Tibetan shows maṅ despite OCR mar. Between blo byoṅ and blo mig. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_8_b",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:166:26",
+      "coordinate": {
+        "box": [
+          72.0,
+          366.174459,
+          247.8035,
+          398.682311
+        ],
+        "embedded_text": "sr:: �z:::i·t�9�·2_�·q�z:::i�c3\\·t. r b mi chub k i",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 0.5
+      },
+      "editorial_definition": "\n  npr. ein buddh. Text, skt. Bodhipakṣanirdeśa (Toh 178).\n",
+      "editorial_headword": {
+        "loc": "byaṅ chub kyi phyogs ṅes par bstan pa",
+        "tibetan": "བྱང་ཆུབ་ཀྱི་ཕྱོགས་ངེས་པར་བསྟན་པ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "233d6ddb111b17203568a477aaf86961da1f7f396ae8e88ae72a73a9962401b1",
+      "family": "wts_8_b",
+      "heading": "བྱང་ཆུབ་ཀྱི་ཕྱོགས་ངེས་པར་བསྟན་པ་ byaṅ chub kyi",
+      "html_sha256": "c35354af940f669940de4a8df689fdf0096fb6c5b9acd79fe70b54717a6d94df",
+      "inspected_render_sha256": "3a9c0e44a8c6817ad98cb6e09dceb76fb9eb05155b304ed5b53e7ddffd4dd64b",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "བྱང་ཆུབ་ཀྱི་ཕྱོགས་ངེས་པར་བསྟན་པ་ byaṅ chub kyi\nphyogs hes par\nbstan pa npr. ein buddh. Text, skt. Bodhr-\npaksanirdesa (Toh 178).\nLex. bodhipaksanirdesab (Mvy 1382, Abt.\ndam pa'ichos kyi min).",
+      "qa_line_sha256": "b93caf2e0eba564f20e8fad8c3e6f8006904d699f35dde56c8732fb369451a70",
+      "qa_row_sha256": "e2c7b9705fe26d6d4c6bde831e3ffb5c3bab1197e73bb5a03b859f29ec2802c8",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bya%E1%B9%85%20chub%20kyi%20phyogs%20%E1%B9%85es%20par%20bstan%20pa/1",
+      "source_observation": "byaṅ chub kyi phyogs ṅes par bstan pa, folio 156 left middle, two-line heading: ein buddh. Text, skt. Bodhipakṣanirdeśa (Toh 178); Mvy 1382. Between phyogs and yan lag references. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_8_b",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:445:32",
+      "coordinate": null,
+      "editorial_definition": "\n  npr. Name einer Gegend und eines Klans.\n",
+      "editorial_headword": {
+        "loc": "’bum pa",
+        "tibetan": "འབུམ་པ་"
+      },
+      "editorial_homonym": "2",
+      "evidence_sha256": "3f79d108a7b2b01069cf756f8808d4a627b7b05a2b625fbbb4da255c97179ea1",
+      "family": "wts_8_b",
+      "heading": "འབུམ་པ་ \"bum pa Bez. für Stüpa.",
+      "html_sha256": "b91d3422e54ad9e7f08a53deb32922e3d75720767c4f68cd1fc3f0d7e3ef1408",
+      "inspected_render_sha256": "b06987e9b4042155b79b7662587cf46b664e21356ae871775794d4ce6d1b7ad7",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": false,
+        "lexical_identity": false,
+        "own_evidence": false,
+        "page": true
+      },
+      "printed_evidence": "འབུམ་པ་ \"bum pa Bez. für Stüpa.\ndge bæi bses gñen pa ~ la skor ba mdzad\npa \"der Tugendfreund, der einen Stüpa um-\nrundete\" (Debri 245,2); dbu rtse dan —'i\nmkhar las mdzad pa'i tsbe \"als sie den Bau\ndes Haupttempels und des Stüpas durch-\nführten\" (Debn 256,5); sa 'bum tsam du gyur\nའབུར་ \"bur\nba \"Erde, die so hoch wie ein Stüpa [aufge-\nhäuft] wurde\" (ThK 2: 530,5); sar ba' gduni\nrten Sar —r grags pa dan \"der Reliquienbehäl-\nter des Sar-ba ist bekannt als Sar-\"bum-pa\"\n('Dzam 29,7).",
+      "qa_line_sha256": "bf9132e148e4e3d3dcd1b5ec5f61208763efd8b45166d6b62da9948cdf43f910",
+      "qa_row_sha256": "2d2eefb354070ecdbe0ecece6d138547d02877f0c919c3c1e0ff752b52b83265",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99bum%20pa/2",
+      "source_observation": "Folio 435 left: line 32 is explicitly ³’bum pa, Bez. für Stūpa. HTML homonym 2 names Gegend und Klan, printed at line 22 as ²’bum pa. Printed ¹’bum pa above is Abbild (bimba). Wrong homonym, correct physical page.",
+      "split": "development",
+      "stratum": [
+        "wts_8_b",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_8_b:529:55",
+      "coordinate": {
+        "box": [
+          222.49,
+          266.4,
+          393.6445,
+          292.04
+        ],
+        "embedded_text": "�9-�· sbag sa npr. Buxa, ein On in Assam;",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  npr. Buxa, ein Ort in Assam; vgl. Schuh 2012: 1512.\n",
+      "editorial_headword": {
+        "loc": "sbag sa",
+        "tibetan": "སྦག་ས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "cad2779c44dbc99a3ee2935fc7144e6fc688f7b5dbd13b43d0ab96eed96c263f",
+      "family": "wts_8_b",
+      "heading": "སྤག་ས་ sbag sa npr. Buxa, ein Ort in Assam;",
+      "html_sha256": "d2dffa3608cd0f49f867b27b42cca3090cda200ec85eddfc8d7421800ad7771c",
+      "inspected_render_sha256": "383edb3d609a207c13af443a5c12d3dc8e9487da36cdd6cfb74c798c298c369d",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "སྤག་ས་ sbag sa npr. Buxa, ein Ort in Assam;\nvgl. SchuH 2012: 1512.\nya 'sbags pf. zu !'sbag.\n1. beschmieren, beschmutzen, besudeln,\nverunreinigen.\nyan lag klirag — Sir (metr.) \"die Glieder sind\nmit Blut beschmiert\" (Suv 171,1); dri mas\n— pa dan (metr.) \"es ist mit Schmutz ver-\nmischt\" (Ahs 1.5.44); rtog ge'i ran rtog dag\ngis ci dgar ma — pa'i ... dbyins \"die schlech-\nten Vorstellungen der Logiker haben die\nSphāre nicht beliebig beschmutzt\" (SākNth\n21,2); Jam gtin du ni / gtor zor khrag gis —\npa'am (metr.) \"auf dem Boden eines We-\nges [liegt] ein mit Blut besudeltes Wurf-gtor-\nma\" (Vdk-M 119,4); srog med ... kon zor\nnag / khrag — ... ker rus (metr.) \"unbeleb-\nte [Beispiele sind u.a.] ein schwarzes, mit\nBlut besudeltes, dreieckiges Loch, ein Ske-\nlett [usw.]\" (Vdk-M 119,28).\nLex. — pa = btsog pas — zin pa 'bags zin pa\nZes pa'ani snan \"mit Dreck beschmutzt ha-\nben, erscheint auch als 'bags zin pa\" (brDa);\n— pa = skyon dan dri mas — pa ... te 'das\npa la snaii \"mit Makeln und Verunreinigun-",
+      "qa_line_sha256": "dd0dc5638fb04aafcf0a5c9b8f012886e0a28883b0e7dfde9921211131c59dbf",
+      "qa_row_sha256": "72dbd4d0143be401d399fcbcd72c13107fd0d9995254bbd066cbe2074f19bb88",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/sbag%20sa/1",
+      "source_observation": "sbag sa, folio 519 right middle: Buxa, ein Ort in Assam; Schuh 2012:1512. Between sbag sblag byuṅ and sbags. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_8_b",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:124:32",
+      "coordinate": {
+        "box": [
+          55.2,
+          500.0,
+          220.594,
+          515.313
+        ],
+        "embedded_text": "£.l-� -r_r· mi phyed pa npr. ein Arhat, skt. Ab-",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  npr. ein Arhat, skt. Abhedya.\n",
+      "editorial_headword": {
+        "loc": "mi phyed pa",
+        "tibetan": "མི་ཕྱེད་པ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "86440f7b7e7f485ac29d89f0e3599eb6788bd14a7e69716fbec96b8a4fd76e6c",
+      "family": "wts_9_m",
+      "heading": "མི་ཕྱེད་པ་ mi phyed pa npr. ein Arhat, skt. Ab-",
+      "html_sha256": "4e893aa3b38072fba17c2ee9182e4e13a465ae4acf10acd662e3e80d8f3483fa",
+      "inspected_render_sha256": "b959d7c576487b3be1ba201714e5be621d06c2348528613c5cf46678b9f8c84d",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "མི་ཕྱེད་པ་ mi phyed pa npr. ein Arhat, skt. Ab-\nhedya.\ngnas brtan bcu drug gis skyon ste / gans\ncan na gnas brtan — \"[die Lehre] wird von\nden sechzehn Sthaviras beschützt, [darun-\nter] der Sthavira Abhedya auf dem Himäla-\nya\" (Bu 828,3).",
+      "qa_line_sha256": "fe1a28387afbc50287c83eaab4948246992eacebaabc534be873aa9fb018ea07",
+      "qa_row_sha256": "d7a9ba29c3c418c58ce2d36c1e2e3cb13501fa1582cdc7eb6dbfa33ca9e883f5",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mi%20phyed%20pa/1",
+      "source_observation": "mi phyed pa, folio 120 left bottom: ein Arhat, skt. Abhedya; Bu 828,3. After mi phyed thugs rje. Adjacent next-column mi phyed pa’i blo mṅa’ ba refers to Buddha and is distinct. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_9_m",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:314:79",
+      "coordinate": null,
+      "editorial_definition": "\n  die mythische Leiter, mit der die ersten Könige zur Welt hinabstiegen.\n",
+      "editorial_headword": {
+        "loc": "dmu skas",
+        "tibetan": "དམུ་སྐས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "a0f2943c7a0f45a612637d5f801ff2ca0778181f36c93fe4944bada4b3335f90",
+      "family": "wts_9_m",
+      "heading": "དམུ་སྐས་ dmu skas auch rmu skas die mytli-",
+      "html_sha256": "6c9f1645b3c947e2e3c2337ca68cbf77d1a3d90752eb8ca95ecd0b6b79450c4f",
+      "inspected_render_sha256": "3c2a8dd6d01b4d2ba581d2267b027c79f5c33c310d36df94103aba4c53ed7ce5",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དམུ་སྐས་ dmu skas auch rmu skas die mytli-\nsche Leiter, mit der die ersten Könige\nzur Welt hinabstiegen.\ndmu thag dan — la yons pas lha yin \"daermit\ndem Himmelsseil und der Himmelsleiter ge-\nkommen sei, 501 er ein Gott\" (Bu-Sz 3,10);\nlha'irmu skas ...la jus nas mii yul du bals\npa yin \"sie ergriffen die göttliche ?7////-1-0100\nund stiegen ins Land der Menschen hinab\"",
+      "qa_line_sha256": "c30e1ab5ded9425fb37c7d29ccbf15b85483e22c2a53485111fbe9445a043694",
+      "qa_row_sha256": "1831949a04703d14866c5899789285a65a94a0f0d3e91f65c584e76e866c2b86",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dmu%20skas/1",
+      "source_observation": "dmu skas auch rmu skas, folio 310 right bottom: die mythische Leiter, mit der die ersten Könige zur Welt hinabstiegen. Bu-Sz 3,10. After dmu skran Wassersucht; no printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_9_m",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:108:74",
+      "coordinate": null,
+      "editorial_definition": "\n  1.\n  „großer Mensch, großer Mann“, Bez. für hochstehende, bedeutende Persönlichkeiten.\n\n\n  2.\n  Bez. für den Schneemenschen, Yeti (Neb 344, Anm. 1).\n\n\n  3.\n  npr., Kurzf. für Seṅ-go myi-chen.\n",
+      "editorial_headword": {
+        "loc": "mi chen",
+        "tibetan": "མི་ཆེན་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "bd5940582624c07c08e6f1a70f88c2a7f224443012fb43ee5b357453966ca611",
+      "family": "wts_9_m",
+      "heading": "མི་ཆེན་ mi chen auch — po, alttib. myi chen.",
+      "html_sha256": "35b5620625de554c4b8a6f3254108b8ef396d64226a051b2e93706d6f7c20333",
+      "inspected_render_sha256": "b1e791a0e03b6592b0adcfafec4f0b6d18b49b436a9d81c9cbfd3eed58e38599",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": true,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "མི་ཆེན་ mi chen auch — po, alttib. myi chen.\n1. \"großer Mensch, grofßer Mann\", Bez.\nfür hochstehende, bedeutende Persönlich-\nkeiten.\n— po rgyal ba 'di ni ... de bZin gsegs pa spyan\nchen Zes bya ba'i sprul pa yin pas \"weil die-\nser große, siegreiche Mensch eine Verkör-\nperung des Tathāgata Mahäcakssus ist\" (Nel\n1931); bod kyi — bZir grags pa geig yin skad\n\"er soll als einer der vier großen Männer Ti-\nbets berühmt sein\" (Debm 3846); ka'u lila\nsogs kyi — dan sde dpon \"bedeutende Persön-\nlichkeiten und Distriktsvorsteher aus Korea\n(Debn 437,2); raog — po yin pas bsu ba\nbyed dgos \"da rNog ein bedeutender Mann\n\"\n11. 3.\nist, müssen wir ihm zum Empfang entgegen-",
+      "qa_line_sha256": "58d2bdf9b975a3950baaafea366454bad62b36c1103f0a148dbbc7fbeebee82c",
+      "qa_row_sha256": "1303a630150b0a3f765ceb2a2eacc0a07f78f818e6ce3ae17795b632d4d81dd8",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mi%20chen/1",
+      "source_observation": "Explicit ¹mi chen auch mi chen po, alttib. myi chen, folio 104 right lower: großer Mensch, großer Mann; hochstehende bedeutende Persönlichkeiten. Adjacent left ²mi che is different. Heading numeral is distinct from following numbered senses. Article continues.",
+      "split": "development",
+      "stratum": [
+        "wts_9_m",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:322:84",
+      "coordinate": {
+        "box": [
+          267.37,
+          524.68,
+          436.11,
+          542.763
+        ],
+        "embedded_text": "1ij\"-l'tl�-�-t:f\"� · dmyal ba'i s,1 hon ,,Sa.it dcr",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 0.5
+      },
+      "editorial_definition": "\n  „Saat der Hölle“, Verfehlungen.\n",
+      "editorial_headword": {
+        "loc": "dmyal ba’i sa bon",
+        "tibetan": "དམྱལ་བའི་ས་བོན་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "d4ce7fe1f2dcf14cfc143a5b4f3be2b6e09d8682f0d6a5a9a2f6a0af3ac5150b",
+      "family": "wts_9_m",
+      "heading": "དམྱལ་བའི་ས་བོན་ dmyal ba'i sa bon 'Saat der",
+      "html_sha256": "d44e297ca1871ce6b8dc6b5cf49f9d2674dcb5ad030ad7420bad779262b1a1c3",
+      "inspected_render_sha256": "4ff89df77141e8d066ad7eaa3b1e152f717439f99bfc619339b42e7019f0ef93",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དམྱལ་བའི་ས་བོན་ dmyal ba'i sa bon 'Saat der\nHölle\", Verfehlungen.\nLex. sdig pa mi dge ba \"Verfehlung, Un-\ntugend\" (brDa); sdig It \"Verfehlung und\nVergehen\" (Dagy).",
+      "qa_line_sha256": "cc3686bc271f5c1bd8702df1b7fe77d7e741cfdb3a245d9b8fb7c94cd1ea8651",
+      "qa_row_sha256": "a8e1dba46f5666ac2e51b76099d6c90c08b032e9f7fe0f0c62ab31e237cb037c",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dmyal%20ba%E2%80%99i%20sa%20bon/1",
+      "source_observation": "dmyal ba’i sa bon, folio 318 right bottom: Saat der Hölle, Verfehlungen. Lex. sdig pa mi dge ba (brDa), sdig ltuṅ (Dagy). After dmyal ba’i lo pha. Neighbour ²dmyal ba Lehre is distinct. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_9_m",
+        "mechanically_supported_provisional"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:274:48",
+      "coordinate": null,
+      "editorial_definition": "\n  Vogelmensch.\n",
+      "editorial_headword": {
+        "loc": "myi bya",
+        "tibetan": "མྱི་བྱ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "36bf07544702462317d19d30e4a898b39bb50b5de083074cd5238854db05f35c",
+      "family": "wts_9_m",
+      "heading": "རྱི་བྱ་ myi bya Vogelmensch.",
+      "html_sha256": "d7220905d17c5f98e05534f43cb70c7e5b87f357e68fb3f576282fb18b79e14f",
+      "inspected_render_sha256": "8a76bcc81d497e446794aaf707113f2f9257ef60cc887b7f25c5dce62a677eba",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "རྱི་བྱ་ myi bya Vogelmensch.\ncho ~ 'i bu mo Zig \"ein Mädchen aus einer\nSippe von Vogelmenschen\" (PT1287 43).",
+      "qa_line_sha256": "954f28453809b737e9f117ecd3d001c4e9e410b5a8680cee394833cbc002acf5",
+      "qa_row_sha256": "9adf4f10d615eaddc0f3a2ef9320c2c50a7ec068dd28fe27d0944dc53fb6de0b",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/myi%20bya/1",
+      "source_observation": "myi bya, folio 270 right upper: Vogelmensch; PT 1287:43. Distinct from left-column myi bu and following myi ’baṅs Untertan. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_9_m",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:132:32",
+      "coordinate": null,
+      "editorial_definition": "\n  Personen, Leute.\n",
+      "editorial_headword": {
+        "loc": "mi zla",
+        "tibetan": "མི་ཟླ་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "2ea56a30b00ff5bde8dc83324e29bc96c5b0a7256ae4f1fbddb050c581c74d6e",
+      "family": "wts_9_m",
+      "heading": "མ་ཟླ་ mi zla Personen, Leute.",
+      "html_sha256": "845ff8ea2b366efb8f65fed0e13c6b0c77165cce83ccea230f8ce5824cd0bc94",
+      "inspected_render_sha256": "70c653ffc32ce8c43aa108a420c46bf709ac5e0eb70c8b7877fd5357c38305cf",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "མ་ཟླ་ mi zla Personen, Leute.\nned ma smad la Sin tu sdan ba'i mi mda? (r.\nzla) sum cu so Ira \"35 Personen, die auf mich,\nmeine Mutter und ihre Kinder schr zornig\nwaren\" (Mil 42,13).\nEN . .\nམེ་གཟུགས་ mi gaugs Kurzf. f. mi yi gzugs\nmenschlicher Körper; Menschen-\ngestalt, -figur.\nder yari grib ma — ni / grib ma skya bo\nmthor 'gyur la (metr.) \"dort aber erscheint\nIN 2 . ¢",
+      "qa_line_sha256": "c83bc0cc2d2c37e20a9db545ef7659f2a9d12bc912201deeddfc348216bea8de",
+      "qa_row_sha256": "7856b04260b9bc0b74c6a388f998e71621fdc25f35f4b681404c383c750ad54a",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mi%20zla/1",
+      "source_observation": "mi zla, folio 128 left lower: Personen, Leute. Mil 42,13 quotation explicitly corrects mṅa’ to zla. Between mi zin pa and mi gzugs. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_9_m",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:341:16",
+      "coordinate": {
+        "box": [
+          23.638628,
+          242.341305,
+          166.528594,
+          269.296566
+        ],
+        "embedded_text": "�-�·j�r rme ru skyes npr. cin Metzger.",
+        "method": "unique embedded-OCR line token agreement; not visual verification",
+        "token_jaccard": 1.0
+      },
+      "editorial_definition": "\n  npr. ein Metzger.\n",
+      "editorial_headword": {
+        "loc": "rme ru skyes",
+        "tibetan": "རྨེ་རུ་སྐྱེས་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "c7363542bd60539a3a82aa5d711beacf743f9b1c9a488fc2fb739a9c92539244",
+      "family": "wts_9_m",
+      "heading": "ྨརུ་སྐྱེས་ rme ru skyes npr. cin Metzger.",
+      "html_sha256": "e87405e7de23472fa3577a824117a699446bbf46e68a9df3b7e6d3b39a83b23e",
+      "inspected_render_sha256": "40f108b56736103ff60623d219fc3c1d15bc6c8b9ee604551d7fb5057035d649",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "ྨརུ་སྐྱེས་ rme ru skyes npr. cin Metzger.\n~ dan / ri bo 'dzin / span leb 'dzin te bśan\npa gri thegs pa gsum Zes zer \"rMe-ru-skyes,\nRi-bo-'dzin, und sPan-leb-\"dzin hießen die\ndrei Metzger, die 0111] Messer trugen\" (Myan\n30,18).\nnu rmerurtse Imarirtse\nSS |",
+      "qa_line_sha256": "d6dc8bf801e16bb734bb375099cb55a1d54fa4c433afd9d94a56fa94208b8d20",
+      "qa_row_sha256": "a3d3c886628d1d84dfbf6ba17a1f244ad986186d63bc678bd28c180206d2317c",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/rme%20ru%20skyes/1",
+      "source_observation": "rme ru skyes, folio 337 left middle: ein Metzger. Myaṅ 30,18 names three butchers Rme-ru-skyes, Ri-bo-’dzin and sPaṅ-leb-’dzin. Distinct from previous rme ru continuation and following rmer tse. No printed homonym numeral observed.",
+      "split": "development",
+      "stratum": [
+        "wts_9_m",
+        "review_required"
+      ]
+    },
+    {
+      "anchor": "wts_9_m:303:38",
+      "coordinate": null,
+      "editorial_definition": "\n  „rotes Opfer“, Bez. für ein Opfer aus Fleisch und Blut in tantrischen Ritualen.\n",
+      "editorial_headword": {
+        "loc": "dmar mchod",
+        "tibetan": "དམར་མཆོད་"
+      },
+      "editorial_homonym": "1",
+      "evidence_sha256": "89b07aa55af021a7aa4c80687e3adaaf2e342f91e3bc4803afd02e55d15155f6",
+      "family": "wts_9_m",
+      "heading": "དམར་མཆོད་ dinar mchod \"rotes Opfer\", Bez.",
+      "html_sha256": "a58fd2d67a4b01cce5ea2fcbf49a4f2ad14d9026111ca80d840f14121757873d",
+      "inspected_render_sha256": "c1a11b7f2fe6477a1c232043f525d34dc2ec48cbea2de96957dcc0d6180d3980",
+      "judgments": {
+        "article_start": true,
+        "crop": null,
+        "heading": true,
+        "homonym": null,
+        "lexical_identity": true,
+        "own_evidence": true,
+        "page": true
+      },
+      "printed_evidence": "དམར་མཆོད་ dinar mchod \"rotes Opfer\", Bez.\nfür ein Opfer aus Fleisch und Blut\nin tantrischen Ritualen.\ndmar chen ye śes rol pa'i — bteg \"man bringe\naus Menschenblut ein rotes Opfer zur Ent-\nfaltung der Weisheit dar\" (gZi 4: 210,4).",
+      "qa_line_sha256": "a13d9e416226a6179d4e2f17ce40cb7e794e296089bea0095628cd7dccb98681",
+      "qa_row_sha256": "2e42105df16d3fc4c442cf70af2d4a8807d71a2152043e002da2f9eab7f9d059",
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dmar%20mchod/1",
+      "source_observation": "dmar mchod, folio 299 right top: rotes Opfer, Opfer aus Fleisch und Blut in tantrischen Ritualen; gZi 4:210,4. Above is running header dmar than. Left dmar chen shares citation but is a different article. No printed homonym numeral observed.",
+      "split": "held_out",
+      "stratum": [
+        "wts_9_m",
+        "review_required"
+      ]
+    }
+  ],
+  "policy": "Independent facsimile observations; no attachment authority. Null means not established, including homonym identity when print is unnumbered. Small stratified sample is diagnostic, not publication certification.",
+  "sampling": "Four baseline proposals per family and class, SHA-256 seeded order; alternating development/held-out fixed before inspection. No algorithm tuning from held-out labels.",
+  "scan_sha256": {
+    "wts_1_34": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+    "wts_35_51": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+    "wts_8_b": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+    "wts_9_m": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb"
+  },
+  "schema": 1,
+  "seed": "20261026-independent"
+}

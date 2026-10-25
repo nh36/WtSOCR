@@ -26,8 +26,9 @@ from badw_html_print_alignment import FAMILIES, INPUTS, digest, object_digest
 from badw_html_print_facsimiles import reviewed_records, REVIEWS
 from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
+from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v2.1'
+VERSION = 'html-print-engine-v3.1'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -112,6 +113,7 @@ def connection(path):
       CREATE INDEX IF NOT EXISTS starts_page ON starts(family,page,line);
       CREATE TABLE IF NOT EXISTS proposals(sid TEXT,aid TEXT,score REAL,body TEXT NOT NULL,PRIMARY KEY(sid,aid));
       CREATE INDEX IF NOT EXISTS proposal_sid ON proposals(sid,score DESC,aid);
+      CREATE INDEX IF NOT EXISTS proposal_aid ON proposals(aid);
     ''')
     return db
 
@@ -223,7 +225,7 @@ def index_family(db, root, family, registry, output):
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         features = dict(source=FAMILIES[family], source_sha256=source['sha256'], physical_page=number,
             mediabox=list(map(float, page.mediabox)), rotation=page.rotation,
-            landscape=width > height, embedded_ocr_lines=len(layout),
+            width=width, height=height, landscape=width > height, embedded_ocr_lines=len(layout),
             printed_folio=None, crop=None, geometry_status='unreviewed; no automatic spread split')
         inv = collections.defaultdict(list)
         for i, row in enumerate(layout):
@@ -368,21 +370,10 @@ def match_page(db, family, page, witnesses, frequencies):
         'SELECT e.sid,e.aid FROM edges e JOIN starts s ON e.aid=s.aid WHERE s.family=? AND s.page=?', (family,page))}
     for line, start in starts:
         box = (start.get('coordinate') or {}).get('box')
-        # Adjacent QA lines may be another column. Use reliable PDF x coordinates
-        # where available; otherwise record the unresolved column/extent explicitly.
-        selected = []
-        for n in sorted(rows):
-            if n < line or n > line + 24:
-                continue
-            coordinate = rows[n].get('coordinate')
-            if box and coordinate and abs(coordinate['box'][0] - box[0]) > 120:
-                continue
-            if n != line and rows[n]['zone'] == 'headword_line':
-                # Only a provisional stop: interleaved columns can defeat this heuristic.
-                if not box or not coordinate or abs(coordinate['box'][0] - box[0]) <= 120:
-                    break
-            selected.append((n, rows[n]['line_text']))
-        article = '\n'.join(t for _,t in selected)
+        geometry = db.execute('SELECT features FROM pages WHERE family=? AND page=?', (family,page)).fetchone()
+        geometry = json.loads(geometry[0]) if geometry else {}
+        extent = segment(line, start, rows, starts, geometry.get('height'))
+        selected = extent['lines']
         for sid, heading_evidence in start['matches'].items():
             witness = witnesses[sid]
             # A repeated spelling farther down the page is a competing article
@@ -391,7 +382,9 @@ def match_page(db, family, page, witnesses, frequencies):
             own_selected = [(n,t) for n,t in selected if repeat is None or n < repeat]
             own_article = '\n'.join(t for _,t in own_selected)
             proof = evidence_score(witness, own_article, frequencies, len(witnesses))
-            risks = ['unverified_article_extent', 'printed_homonym_unread']
+            risks = list(extent['risks']) + ['printed_homonym_unread']
+            if extent['homonym']['homonym'] and str(witness['homonym']) != extent['homonym']['homonym']:
+                risks.append('printed_homonym_conflict')
             if 'prefix_of_longer_observed_heading' in heading_evidence:
                 risks.append('neighbouring_compound_heading')
             if repeat is not None:
@@ -419,7 +412,10 @@ def match_page(db, family, page, witnesses, frequencies):
                 evidence_lines=[n for n,_ in own_selected], printed_evidence=own_article,
                 evidence_sha256=object_digest(own_selected), html_sha256=witness['html_sha256'],
                 definition_component_bindings=witness['definition_components'], definition_evidence=proof,
-                score=round(score,6), risks=risks, sequence_consistent=False)
+                score=round(score,6), risks=risks, sequence_consistent=False,
+                segmentation={k:v for k,v in extent.items() if k != 'lines'},
+                source_line_hash=start.get('qa_sha256'),
+                lexical_identity_status='provisional; not independently validated')
             proposals.append(proposal)
     # Same lexical witness appearing as a bare heading before its substantive article
     # is a header/continuation risk even when C6 calls it a headword.
@@ -443,7 +439,7 @@ def match_page(db, family, page, witnesses, frequencies):
     return len(proposals)
 
 
-def category(proposals):
+def baseline_category(proposals):
     if not proposals:
         return 'unresolved', ['no lexical article-start candidate']
     top = proposals[0]
@@ -457,6 +453,72 @@ def category(proposals):
              'same_spelling_heading_repeated_on_page','displaced_or_incidental_heading'))):
         return 'mechanically_supported_provisional', ['dual heading, distinctive definition, unique score margin and page sequence; uncalibrated']
     return 'review_required', ['OCR/identity/boundary or competing-candidate uncertainty']
+
+
+def category(proposals):
+    if proposals and 'printed_homonym_conflict' in proposals[0]['risks']:
+        return 'contradictory_identity', ['printed numeral contradicts editorial homonym; identity excluded']
+    previous, reasons = baseline_category(proposals)
+    if previous != 'mechanically_supported_provisional':
+        return previous, reasons
+    risks = set(proposals[0]['risks'])
+    requirements = []
+    if 'printed_homonym_unread' in risks:
+        requirements.append('printed homonym unresolved')
+    structural = {'unverified_article_extent', 'uncertain_column_membership',
+                  'weak_article_start_structure', 'top_margin_bare_heading',
+                  'no_unique_embedded_ocr_coordinates'}
+    if structural & risks:
+        requirements.append('article extent or coordinates unresolved')
+    return 'mechanically_supported_provisional', reasons + requirements
+
+
+def publication_eligibility(proposal):
+    """No machine evidence class has a validated publication policy.
+
+    Deliberately independent of confidence/result metadata. Only the existing
+    checksum-bound reviewed certificates can attach links in write_results.
+    """
+    return dict(eligible=False, requirements=[
+        'independently validated lexical/homonym identity',
+        'secure printed folio and single-page crop',
+        'approved publication policy'])
+
+
+def section_sequences(db, witnesses, width=3):
+    """Disjoint three-physical-page chains, alongside the page-local baseline.
+
+    No forced insertions or score boost. Unknown coordinates remain an uncertainty;
+    a monotone path does not prove reading order or lexical identity.
+    """
+    from itertools import groupby
+    total = changes = 0
+    keys = db.execute('SELECT family,page FROM pages ORDER BY family,page').fetchall()
+    for family, group in groupby(keys, key=lambda x:x[0]):
+        pages = [p for _,p in group]
+        for offset in range(0,len(pages),width):
+            section = pages[offset:offset+width]
+            rows = db.execute('SELECT p.sid,p.aid,p.body FROM proposals p JOIN starts s ON p.aid=s.aid WHERE s.family=? AND s.page BETWEEN ? AND ? ORDER BY s.page,s.line,p.sid',
+                              (family,section[0],section[-1])).fetchall()
+            options = []
+            decoded = []
+            for sid,aid,body in rows:
+                p = json.loads(body); decoded.append((sid,aid,p))
+                rank = witnesses[sid]['order']
+                b = (p['coordinate'] or {}).get('box')
+                position = (p['physical_page'],round(b[0]/120),b[1]) if b else (p['physical_page'],0,p['line'])
+                if rank is not None:
+                    options.append((position,rank,max(0,p['score']),(sid,aid)))
+            chosen = increasing_chain(options)
+            for sid,aid,p in decoded:
+                p['section_sequence_consistent'] = (sid,aid) in chosen
+                p['sequence_section'] = [family,section[0],section[-1]]
+                p['section_sequence_role'] = 'diagnostic only; no ranking or acceptance boost'
+                changes += p['section_sequence_consistent'] != p['sequence_consistent']
+                total += 1
+                db.execute('UPDATE proposals SET body=? WHERE sid=? AND aid=?',
+                           (json.dumps(p,ensure_ascii=False,sort_keys=True),sid,aid))
+    return dict(proposals=total,changed_sequence_membership=changes,width_physical_pages=width)
 
 
 def write_results(db, output, root, witnesses, identity):
@@ -481,7 +543,9 @@ def write_results(db, output, root, witnesses, identity):
             row = dict(source_id=sid, source_url=witness['source_url'], html_sha256=witness['html_sha256'],
                 editorial_headword=witness['headword'], editorial_homonym=witness['homonym'],
                 editorial_definition=witness['definition'], editorial_citations=witness['citations'],
-                result_category=classification, reasons=reasons, proposed=proposals[:10],
+                result_category=classification, reasons=reasons,
+                baseline_feature_category=baseline_category(proposals)[0], proposed=proposals[:10],
+                machine_publication=publication_eligibility(proposals[0] if proposals else None),
                 candidate_count=len(proposals), omitted_candidates=max(0,len(proposals)-10),
                 eligible_for_original_print_link=attached is not None,
                 eligibility_basis='existing reviewed checksum-bound certificate' if attached else 'none; machine proposal is provisional',
@@ -492,7 +556,7 @@ def write_results(db, output, root, witnesses, identity):
             counts['reviewed_attachable'] += bool(attached)
             if proposals:
                 by_family[proposals[0]['family']][classification] += 1
-            if classification=='mechanically_supported_provisional':
+            if baseline_category(proposals)[0]=='mechanically_supported_provisional':
                 sample_pool.append((hashlib.sha256(('20261025:'+sid).encode()).hexdigest(),row))
             if sid in reviewed_assertions:
                 page, assertion = reviewed_assertions[sid]
