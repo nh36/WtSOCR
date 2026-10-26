@@ -149,6 +149,18 @@ def test_unlocated_heading_interrupts_physical_interval():
     assert clip_at_unlocated_heading(selected, 267, 16, [(267, 15)]) == (selected, [])
 
 
+@pytest.mark.parametrize('positions,barrier,expected', [
+    ([(1,1),(1,2),(2,1)], (1,3), [(1,1),(1,2)]),
+    ([(1,1),(3,1)], (2,1), [(1,1)]),
+    ([(1,1),(1,4),(1,2)], (1,3), [(1,1)]),
+])
+def test_unlocated_barrier_keeps_only_physical_prefix(positions, barrier, expected):
+    selected = [((p,0,i,10,n),n,{}) for i,(p,n) in enumerate(positions)]
+    safe, threats = clip_at_unlocated_heading(selected, 1, 1, [barrier])
+    assert [(key[0],n) for key,n,_ in safe] == expected
+    assert threats == [barrier]
+
+
 @pytest.mark.parametrize('text', ['༡༢་ 12', '།་ ka', 'German prose', '2. Bedeutung'])
 def test_punctuation_and_sense_numbers_are_not_source_headings(text):
     assert source_heading(dict(line_text=text))['status'] == 'not_heading'

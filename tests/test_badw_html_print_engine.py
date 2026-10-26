@@ -1,5 +1,6 @@
 """Independent discovery, non-promotion and atomic recovery regression fixtures."""
 import json
+from collections import Counter
 import sys
 from pathlib import Path
 import pytest
@@ -42,6 +43,37 @@ def test_render_bound_hocr_index_keeps_dependent_readings_separate(tmp_path, mon
 def witness(loc, tib='', definition=''):
     return dict(headword=dict(loc=loc, tibetan=tib), definition=definition,
                 citations=[], homonym='1', order=1)
+
+
+@pytest.mark.parametrize('empty_clip', [False, True])
+def test_physical_repeated_heading_preserves_earlier_column_definition(tmp_path, empty_clip):
+    db=engine.connection(tmp_path/'physical.sqlite')
+    word=witness('ka',definition='distinctive earlier column definition')
+    word.update(html_sha256='fixture',definition_components=[])
+    rows={100:'ཀ ka',120:word['definition'],110:'ཀ ka competing article'}
+    for n,text in rows.items():
+        db.execute('INSERT INTO lines VALUES (?,?,?,?)',
+                   ('fixture',1,n,json.dumps(dict(line_text=text))))
+    # QA numbering interleaves columns. The definition at QA 120 precedes
+    # the competing heading at QA 110 in physical reading order.
+    for pos,n in enumerate((100,120,110)):
+        db.execute('INSERT INTO reading_lines VALUES (?,?,?,?,?)',
+                   ('fixture',1,n,pos,'{}'))
+    for n in (100,110):
+        start=dict(anchor=f'fixture:1:{n}',text=rows[n],coordinate=None,
+                   historical_c6=False,matches={'w':{'loc_exact':True}})
+        db.execute('INSERT INTO starts VALUES (?,?,?,?,?)',
+                   (start['anchor'],'fixture',1,n,json.dumps(start)))
+    extent=dict(status='coordinate_extent_alternative' if empty_clip else 'coordinate_bounded',
+                refs=[] if empty_clip else [[1,100],[1,120]],
+                unlocated_boundary_alternatives=[dict(page=1,line=101)] if empty_clip else [])
+    db.execute('INSERT INTO extents VALUES (?,?)',('fixture:1:100',json.dumps(extent)))
+    engine.match_page(db,'fixture',1,{'w':word},Counter(engine.tokens(word['definition'])))
+    p=json.loads(db.execute('SELECT body FROM proposals WHERE aid=?',('fixture:1:100',)).fetchone()[0])
+    assert p['evidence_lines']==([] if empty_clip else [[1,100],[1,120]])
+    assert (word['definition'] in p['printed_evidence']) is not empty_clip
+    assert 'unverified_definition_ownership' in p['risks']
+    db.close()
 
 
 def test_stream_json_map(tmp_path):

@@ -22,7 +22,8 @@ def columns(edges):
 def test_reconstruction_stops_at_heading_without_reliable_column(tmp_path, intervening_box):
     """A missing C6 start/column must not donate the next article's definition."""
     import json
-    from badw_html_print_engine import connection
+    from badw_html_print_engine import connection, match_page, tokens
+    from collections import Counter
     from badw_print_reconstruction import reconstruct
     db=connection(tmp_path/'ownership.sqlite')
     db.execute('INSERT INTO pages VALUES (?,?,?)',('fixture',1,json.dumps(geometry())))
@@ -40,7 +41,7 @@ def test_reconstruction_stops_at_heading_without_reliable_column(tmp_path, inter
         db.execute('INSERT INTO lines VALUES (?,?,?,?)',('fixture',1,n,json.dumps(row)))
     for n in (1,5):
         st=dict(rows[n],text=rows[n]['line_text'],anchor=f'fixture:1:{n}',
-                matches={'w':{'loc_exact':True}})
+                matches={'w':{'loc_exact':True}},historical_c6=False)
         db.execute('INSERT INTO starts VALUES (?,?,?,?,?)',
                    (st['anchor'],'fixture',1,n,json.dumps(st)))
     reconstruct(db,{}, {'w':dict(headword=dict(loc='ka'))})
@@ -48,6 +49,45 @@ def test_reconstruction_stops_at_heading_without_reliable_column(tmp_path, inter
     assert extent['refs']==[[1,1],[1,2]]
     assert extent['unlocated_boundary_alternatives']==[dict(family='fixture',page=1,line=3)]
     assert extent['evidence_states']['definition_ownership']=='unverified'
+    assert extent['status']=='coordinate_extent_alternative'
+    # Matching must consume the clipped alternative, rather than falling back
+    # to QA order and borrowing the second article's distinctive definition.
+    word=dict(headword=dict(loc='ka'), definition='definition belonging only to kha',
+              citations=[], homonym=None, order=1, html_sha256='fixture',
+              definition_components=[])
+    match_page(db,'fixture',1,{'w':word},Counter(tokens(word['definition'])))
+    proposal=json.loads(db.execute('SELECT body FROM proposals WHERE aid=?',
+                                  ('fixture:1:1',)).fetchone()[0])
+    assert proposal['evidence_lines']==[[1,1],[1,2]]
+    assert 'belonging only to kha' not in proposal['printed_evidence']
+    assert 'unverified_definition_ownership' in proposal['risks']
+    db.close()
+
+
+def test_wholly_unlocated_intermediate_page_interrupts_interval(tmp_path):
+    """A page omitted from the located-line index still contains boundaries."""
+    import json
+    from badw_html_print_engine import connection
+    from badw_print_reconstruction import reconstruct
+    db=connection(tmp_path/'missing-page.sqlite')
+    for page in (1,2,3):
+        db.execute('INSERT INTO pages VALUES (?,?,?)',('fixture',page,json.dumps(geometry())))
+        layout=[dict(box=r['coordinate']['box'],text=r['line_text'])
+                for r in columns([30,550]).values()]
+        db.execute('INSERT INTO layouts VALUES (?,?,?)',('fixture',page,json.dumps(layout)))
+    for page,text in ((1,'ཀ ka first article'),(2,'ཁ kha second article'),
+                      (3,'ག ga third article')):
+        row=dict(line_text=text,coordinate=None if page==2 else dict(box=[30,300,190,310]))
+        db.execute('INSERT INTO lines VALUES (?,?,?,?)',('fixture',page,1,json.dumps(row)))
+        if page!=2:
+            st=dict(row,text=text,anchor=f'fixture:{page}:1',
+                    matches={'w':{'loc_exact':True}},historical_c6=False)
+            db.execute('INSERT INTO starts VALUES (?,?,?,?,?)',
+                       (st['anchor'],'fixture',page,1,json.dumps(st)))
+    reconstruct(db,{}, {'w':dict(headword=dict(loc='ka'))})
+    extent=json.loads(db.execute('SELECT body FROM extents WHERE aid=?',('fixture:1:1',)).fetchone()[0])
+    assert extent['unlocated_boundary_alternatives']==[dict(family='fixture',page=2,line=1)]
+    assert extent['refs']==[[1,1]]
     assert extent['status']=='coordinate_extent_alternative'
     db.close()
 

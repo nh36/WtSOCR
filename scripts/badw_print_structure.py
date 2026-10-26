@@ -182,7 +182,7 @@ def segment(line, start, rows, starts, height=None):
                 continuation='not joined across page/column; unresolved if open')
 
 
-def clip_at_unlocated_heading(selected, start_page, start_line, barriers):
+def clip_at_unlocated_heading(selected, start_page, start_line, barriers, end_page=None):
     """Conservatively exclude text after an unlocated possible heading.
 
     QA order is not asserted to be physical reading order. If it introduces an
@@ -195,13 +195,20 @@ def clip_at_unlocated_heading(selected, start_page, start_line, barriers):
     for page, line in barriers:
         if page < start_page or (page == start_page and line <= start_line):
             continue
-        if any(key[0] == page and n >= line for key, n, _ in selected):
+        if (end_page is not None and page < end_page) or any(
+                key[0] > page or (key[0] == page and n >= line)
+                for key, n, _ in selected):
             threats.append((page, line))
     if not threats:
         return selected, []
     page, line = min(threats)
-    safe = [item for item in selected
-            if item[0][0] < page or (item[0][0] == page and item[1] < line)]
+    # Keep a prefix in physical order. Filtering individual QA line numbers can
+    # reintroduce text from a later column whose QA numbers happen to be smaller.
+    safe = []
+    for item in selected:
+        if item[0][0] > page or (item[0][0] == page and item[1] >= line):
+            break
+        safe.append(item)
     return safe, threats
 
 

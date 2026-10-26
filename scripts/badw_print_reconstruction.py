@@ -200,9 +200,11 @@ def reconstruct(db, reviewed_pages, witnesses):
                 end=bisect_right(boundaries,i); stop=boundaries[end] if end<len(boundaries) else len(ordered)
                 # End-of-family without a following heading is always open.
                 selected=ordered[i:stop] if stop<len(ordered) else ordered[i:i+1]
-                relevant_pages={k[0] for k,_,_ in selected}
+                # Entire physical span, including pages with no located lines.
+                last_page=ordered[stop][0][0] if stop<len(ordered) else page
+                relevant_pages=range(page,last_page+1)
                 selected,interruptions=clip_at_unlocated_heading(selected,page,n,
-                    [b for p in relevant_pages for b in unlocated.get(p,[])])
+                    [b for p in relevant_pages for b in unlocated.get(p,[])],end_page=last_page)
                 pages={k[0] for k,_,_ in selected}
                 complete=(not interruptions and stop<len(ordered) and all(models[p]['coordinate_coverage']>=.95 for p in pages)
                           and i in boundaries)
