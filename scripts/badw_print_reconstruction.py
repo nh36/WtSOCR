@@ -11,7 +11,7 @@ import json
 import re
 from statistics import median
 
-from badw_print_structure import boundary, box
+from badw_print_structure import boundary, box, source_barriers, clip_at_unlocated_heading, heading_layout
 
 
 def column_model(rows, geometry):
@@ -145,7 +145,7 @@ def reconstruct(db, reviewed_pages, witnesses):
     db_reconstruction_locs={sid:[w['headword'].get('loc','')] for sid,w in witnesses.items()}
     counts=Counter(); families={}
     for (family,) in db.execute('SELECT DISTINCT family FROM pages ORDER BY family').fetchall():
-        fc=Counter(); ordered=[]; models={}; geometries={}; starts={}
+        fc=Counter(); ordered=[]; models={}; geometries={}; starts={}; barriers={}; unlocated={}
         for page,features in db.execute('SELECT page,features FROM pages WHERE family=? ORDER BY page',(family,)).fetchall():
             geometry=json.loads(features); geometries[page]=geometry
             rows={n:json.loads(b) for n,b in db.execute('SELECT line,body FROM lines WHERE family=? AND page=?',(family,page))}
@@ -161,16 +161,32 @@ def reconstruct(db, reviewed_pages, witnesses):
                 col=column_of(box(row),model)
                 if col is not None:
                     ordered.append(((page,col,box(row)[1],box(row)[0],n),n,row))
+            page_starts=[]
             for n,b in db.execute('SELECT line,body FROM starts WHERE family=? AND page=?',(family,page)):
                 st=json.loads(b)
                 st['loc_forms']=sorted({w for sid in st['matches'] for w in db_reconstruction_locs.get(sid,[])})
                 starts[page,n]=st
+                page_starts.append((n,st))
+            source_layout=heading_layout(rows, lambda b: column_of(b,model))
+            page_barriers=source_barriers(rows,page_starts,geometry['height'],source_layout)
+            fc['lines_with_column_baseline']+=len(source_layout)
+            for _,st in page_barriers:
+                for reason in st['source_observation']['reasons']:
+                    fc['heading_feature:'+reason]+=1
+            for n,st in page_barriers:
+                barriers[page,n]=st
+                # A recovered box is insufficient when its physical column is
+                # unresolved. Such a heading must still interrupt ownership.
+                if column_of(box(st),model) is None:
+                    unlocated.setdefault(page,[]).append((page,n))
+            fc['source_boundary_hypotheses']+=len(page_barriers)
+            fc['unlocated_boundary_hypotheses']+=len(unlocated.get(page,[]))
         ordered.sort(key=lambda x:x[0]); positions={}; boundaries=[]
         for i,(key,n,row) in enumerate(ordered):
             page,col=key[:2]; positions[page,n]=i
             db.execute('INSERT INTO reading_lines VALUES (?,?,?,?,?)',(family,page,n,i,json.dumps(dict(column=col,box=box(row)),sort_keys=True)))
-            start=starts.get((page,n))
-            if start and boundary(start):
+            start=barriers.get((page,n))
+            if start:
                 # Top furniture cannot become a boundary merely through C6/QA.
                 if box(row)[1] >= .09*geometries[page]['height']:
                     boundaries.append(i)
@@ -183,8 +199,12 @@ def reconstruct(db, reviewed_pages, witnesses):
             else:
                 end=bisect_right(boundaries,i); stop=boundaries[end] if end<len(boundaries) else len(ordered)
                 # End-of-family without a following heading is always open.
-                selected=ordered[i:stop] if stop<len(ordered) else ordered[i:i+1]; pages={k[0] for k,_,_ in selected}
-                complete=(stop<len(ordered) and all(models[p]['coordinate_coverage']>=.95 for p in pages)
+                selected=ordered[i:stop] if stop<len(ordered) else ordered[i:i+1]
+                relevant_pages={k[0] for k,_,_ in selected}
+                selected,interruptions=clip_at_unlocated_heading(selected,page,n,
+                    [b for p in relevant_pages for b in unlocated.get(p,[])])
+                pages={k[0] for k,_,_ in selected}
+                complete=(not interruptions and stop<len(ordered) and all(models[p]['coordinate_coverage']>=.95 for p in pages)
                           and i in boundaries)
                 # A weak / missing heading can be a missed boundary. Preserve as
                 # an alternative rather than treating all text as owned evidence.
@@ -192,12 +212,16 @@ def reconstruct(db, reviewed_pages, witnesses):
                 if len(refs)>2048:
                     refs=[];complete=False
                 extent=dict(status='coordinate_bounded' if complete else 'coordinate_extent_alternative',
-                    refs=refs,next_anchor=starts.get((ordered[stop][0][0],ordered[stop][1]),{}).get('anchor') if stop<len(ordered) else None,
+                    refs=refs,unlocated_boundary_alternatives=[dict(family=family,page=p,line=ln) for p,ln in interruptions],
+                    next_anchor=barriers.get((ordered[stop][0][0],ordered[stop][1]),{}).get('anchor') if stop<len(ordered) else None,
+                    next_boundary=dict(family=family,page=ordered[stop][0][0],line=ordered[stop][1],
+                        observation=barriers.get((ordered[stop][0][0],ordered[stop][1]),{}).get('source_observation')) if stop<len(ordered) else None,
                     homonym_observation=hom,position=list(ordered[i][0][:3]),
                     crosses_columns=len({(k[0],k[1]) for k,_,_ in selected})>1,
                     coverage_by_page={str(p):models[p]['coordinate_coverage'] for p in sorted(pages)},
                     ownership='proposed interval between plausible source headings; not independently verified')
                 fc['cross_column_or_page']+=extent['crosses_columns']
+                fc['interval_interrupted_by_unlocated_heading']+=bool(interruptions)
             extent['evidence_states']=dict(
                 coordinates_recovered=extent['status']=='coordinate_bounded',
                 reading_order='geometric_hypothesis' if extent.get('position') else 'unlocated',

@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v6'
+VERSION = 'html-print-engine-v7'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -435,7 +435,7 @@ def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_in
             # A repeated spelling farther down the page is a competing article
             # beginning. Never borrow its definition to support the earlier header.
             repeat = next((n for n,s in starts if n > line and sid in s['matches']), None)
-            own_selected = [(n,t) for n,t in selected if refs or repeat is None or n < repeat]
+            own_selected = [(n,t) for n,t in selected if repeat is None or n < ((page,repeat) if refs else repeat)]
             own_article = '\n'.join(t for _,t in own_selected)
             proof = evidence_score(witness, own_article, frequencies, len(witnesses))
             hom=reconstructed.get('homonym_observation',dict(status='unread',number=None))

@@ -18,6 +18,40 @@ def columns(edges):
                            line_text='substantial body text') for x in edges for i in range(20)}
 
 
+@pytest.mark.parametrize('intervening_box', [None, [450,340,900,350]])
+def test_reconstruction_stops_at_heading_without_reliable_column(tmp_path, intervening_box):
+    """A missing C6 start/column must not donate the next article's definition."""
+    import json
+    from badw_html_print_engine import connection
+    from badw_print_reconstruction import reconstruct
+    db=connection(tmp_path/'ownership.sqlite')
+    db.execute('INSERT INTO pages VALUES (?,?,?)',('fixture',1,json.dumps(geometry())))
+    layout=[dict(box=r['coordinate']['box'],text=r['line_text'])
+            for r in columns([30,550]).values()]
+    db.execute('INSERT INTO layouts VALUES (?,?,?)',('fixture',1,json.dumps(layout)))
+    rows={
+        1:dict(line_text='ཀ ka first article',coordinate=dict(box=[30,300,190,310])),
+        2:dict(line_text='first definition',coordinate=dict(box=[30,320,190,330])),
+        3:dict(line_text='ཁ kha second article',coordinate=dict(box=intervening_box) if intervening_box else None),
+        4:dict(line_text='definition belonging only to kha',coordinate=dict(box=[30,360,190,370])),
+        5:dict(line_text='ག ga third article',coordinate=dict(box=[30,400,190,410])),
+    }
+    for n,row in rows.items():
+        db.execute('INSERT INTO lines VALUES (?,?,?,?)',('fixture',1,n,json.dumps(row)))
+    for n in (1,5):
+        st=dict(rows[n],text=rows[n]['line_text'],anchor=f'fixture:1:{n}',
+                matches={'w':{'loc_exact':True}})
+        db.execute('INSERT INTO starts VALUES (?,?,?,?,?)',
+                   (st['anchor'],'fixture',1,n,json.dumps(st)))
+    reconstruct(db,{}, {'w':dict(headword=dict(loc='ka'))})
+    extent=json.loads(db.execute('SELECT body FROM extents WHERE aid=?',('fixture:1:1',)).fetchone()[0])
+    assert extent['refs']==[[1,1],[1,2]]
+    assert extent['unlocated_boundary_alternatives']==[dict(family='fixture',page=1,line=3)]
+    assert extent['evidence_states']['definition_ownership']=='unverified'
+    assert extent['status']=='coordinate_extent_alternative'
+    db.close()
+
+
 def test_noncentral_spread_content_gap_not_universal_half():
     rows=columns([30,230,610,810]);g=geometry(True);m=column_model(rows,g)
     assert m['status']=='coordinate_clusters'
