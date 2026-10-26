@@ -230,3 +230,14 @@ def test_tentative_numerals_do_not_exclude_lexical_identity():
         assert engine.category([p])[0]=='mechanically_supported_provisional'
         assert not engine.publication_eligibility(p)['eligible']
     assert engine.homonym_risks(dict(status='unread',number=None),None)==['printed_homonym_unread']
+
+
+def test_coordinate_interval_does_not_certify_lexical_ownership():
+    extent = dict(risks=['unverified_article_extent', 'uncertain_column_membership'])
+    result = engine.coordinate_interval_evidence(extent, dict(status='coordinate_bounded'))
+    assert result['evidence_states']['coordinates_recovered'] is True
+    assert result['evidence_states']['lexical_boundaries'] == 'unverified'
+    assert result['evidence_states']['definition_ownership'] == 'unverified'
+    assert {'unverified_article_extent', 'uncertain_column_membership',
+            'unverified_definition_ownership'} <= set(result['risks'])
+    assert not engine.publication_eligibility(result)['eligible']

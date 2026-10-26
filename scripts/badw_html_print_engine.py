@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v5'
+VERSION = 'html-print-engine-v6'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -397,7 +397,20 @@ def evidence_score(witness, article, frequencies, total):
                 citation_tokens=citations)
 
 
-def match_page(db, family, page, witnesses, frequencies):
+def coordinate_interval_evidence(extent, reconstructed):
+    """Geometry supplies a candidate span, never lexical ownership authority."""
+    extent['evidence_states'] = dict(
+        coordinates_recovered=reconstructed.get('status') == 'coordinate_bounded',
+        reading_order='geometric_hypothesis',
+        interval='plausible_heading_interval',
+        lexical_boundaries='unverified', definition_ownership='unverified')
+    extent['risks'] = sorted(set(extent['risks']) | {
+        'unverified_article_extent', 'uncertain_column_membership',
+        'unverified_definition_ownership'})
+    return extent
+
+
+def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_intervals=True):
     rows = {line: json.loads(body) for line, body in db.execute('SELECT line,body FROM lines WHERE family=? AND page=? ORDER BY line', (family,page))}
     starts = [(line, json.loads(body)) for line, body in db.execute('SELECT line,body FROM starts WHERE family=? AND page=? ORDER BY line', (family,page))]
     proposals = []
@@ -411,10 +424,10 @@ def match_page(db, family, page, witnesses, frequencies):
         reconstructed_row=db.execute('SELECT body FROM extents WHERE aid=?',(start['anchor'],)).fetchone()
         reconstructed=json.loads(reconstructed_row[0]) if reconstructed_row else {}
         # Only complete coordinate coverage permits replacing the local fallback.
-        refs=reconstructed.get('refs',[]) if reconstructed.get('status')=='coordinate_bounded' else []
+        refs=reconstructed.get('refs',[]) if use_reconstructed_intervals and reconstructed.get('status')=='coordinate_bounded' else []
         if refs:
             extent['lines']=[((p,n),json.loads(db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',(family,p,n)).fetchone()[0])['line_text']) for p,n in refs]
-            extent['risks']=[r for r in extent['risks'] if r not in ('uncertain_column_membership','unverified_article_extent')]
+            extent=coordinate_interval_evidence(extent, reconstructed)
             extent['boundary_method']='source_coordinate_interval'
         selected = extent['lines']
         for sid, heading_evidence in start['matches'].items():

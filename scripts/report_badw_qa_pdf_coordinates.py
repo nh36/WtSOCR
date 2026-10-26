@@ -9,9 +9,18 @@ from itertools import zip_longest
 from badw_qa_pdf_coordinates import normal
 
 
+def evidence_snapshot(proposal):
+    """Retain evidence for assessment, without inferring correctness from overlap."""
+    if proposal is None:
+        return None
+    return {key:proposal.get(key) for key in (
+        'anchor','family','page','heading','score','printed_evidence',
+        'evidence_lines','definition_evidence','segmentation','reconstruction')}
+
+
 def compare_predictions(baseline, current):
     """Stream pinned witness inventories; never label a ranking change correct."""
-    counts=Counter();changes=[]
+    counts=Counter();changes=[];evidence_changes=[]
     with baseline.open() as old, current.open() as new:
         for a,b in zip_longest(old,new):
             if a is None or b is None:
@@ -25,7 +34,9 @@ def compare_predictions(baseline, current):
             if first(before)!=first(after):
                 counts['changed_top_predictions']+=1
                 changes.append(dict(source_id=b['source_id'],before=first(before),
-                                    after=first(after),assessment='unassessed'))
+                                    after=first(after),assessment='unassessed',
+                                    original=evidence_snapshot(before[0] if before else None),
+                                    reconstructed=evidence_snapshot(after[0] if after else None)))
             prior={p['anchor']:p for p in before}
             for p in after:
                 q=prior.get(p['anchor'])
@@ -33,13 +44,18 @@ def compare_predictions(baseline, current):
                     counts['shared_proposals']+=1
                     counts['changed_definition_evidence']+=p['definition_evidence']!=q['definition_evidence']
                     counts['changed_evidence_lines']+=p['evidence_lines']!=q['evidence_lines']
+                    if (p['definition_evidence'],p['evidence_lines']) != (q['definition_evidence'],q['evidence_lines']):
+                        evidence_changes.append(dict(source_id=b['source_id'],anchor=p['anchor'],
+                            original=evidence_snapshot(q),reconstructed=evidence_snapshot(p),
+                            assessment='unassessed',
+                            intervening_heading_assessment='requires source-bound boundary assessment'))
             reviewed=a.get('eligible_for_original_print_link',False)
             counts['previously_reviewed_attachable']+=reviewed
             counts['reviewed_attachment_status_changed']+=reviewed != b.get('eligible_for_original_print_link',False)
             if reviewed:
                 counts['reviewed_page_changed']+=a.get('reviewed_page')!=b.get('reviewed_page')
             counts['machine_eligible']+=b['machine_publication']['eligible']
-    return dict(counts=dict(counts),changed_predictions=changes,
+    return dict(counts=dict(counts),changed_predictions=changes,changed_evidence=evidence_changes,
                 authority='Ranking changes are unassessed; unchanged reviewed attachment metadata is not machine recovery of lexical identity.')
 
 

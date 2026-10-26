@@ -198,6 +198,11 @@ def reconstruct(db, reviewed_pages, witnesses):
                     coverage_by_page={str(p):models[p]['coordinate_coverage'] for p in sorted(pages)},
                     ownership='proposed interval between plausible source headings; not independently verified')
                 fc['cross_column_or_page']+=extent['crosses_columns']
+            extent['evidence_states']=dict(
+                coordinates_recovered=extent['status']=='coordinate_bounded',
+                reading_order='geometric_hypothesis' if extent.get('position') else 'unlocated',
+                interval='plausible_heading_interval' if extent.get('refs') else 'unbounded',
+                lexical_boundaries='unverified', definition_ownership='unverified')
             fc['extent:'+extent['status']]+=1
             db.execute('INSERT INTO extents VALUES (?,?)',(start['anchor'],json.dumps(extent,sort_keys=True)))
         families[family]=dict(fc);counts.update(fc)

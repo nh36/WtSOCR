@@ -1823,6 +1823,27 @@ Page-level 95% coverage cannot establish that every intervening heading was
 recovered. Boundary recognition and text ownership remain the principal blocker;
 the 79,976 cross-column/page alternatives are not certified continuations.
 
+The PR #14 hardening retains `unverified_article_extent`,
+`uncertain_column_membership` and `unverified_definition_ownership` even when
+a coordinate interval replaces the local text window. Explicit evidence states
+separate recovered coordinates, a geometric reading-order hypothesis and a
+plausible interval from unverified lexical boundaries and definition ownership.
+These intervals remain proposals and cannot authorise reader attachment.
+
+For a controlled segmentation ablation, run the same runner and pinned inputs
+into a separate output directory with `--disable-reconstructed-intervals`.
+This retains the local 48-line segmentation while using the same coordinate
+inputs. `--disable-sequence-reranking` remains an independent switch; use it
+in both runs to isolate segmentation effects from sequence changes. The
+coordinate comparison report retains before/after top predictions and changed
+evidence spans, all marked unassessed. Counts below describe the original
+PR #14 run rather than a completed hardening ablation.
+
+Overlapping OCR-span alternatives are retained separately from competing
+disjoint locations. Their presence does not count as independent observations
+or as visual confirmation. Test dependencies include Pillow (`>=11.3,<13`),
+which is required for source-bound raster checks and must be installed in CI.
+
 The full run takes 1,983.02 seconds with 1.506 GB peak RSS. An all-cached resume
 takes 99.53 seconds and reproduces witness, validation and review-report hashes.
 It yields 2,457 provisionally supported, 13,173 review-required and 2,408 unresolved

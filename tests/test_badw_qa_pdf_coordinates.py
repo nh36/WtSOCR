@@ -30,6 +30,16 @@ def test_many_qa_lines_can_share_pdf_line_without_inventing_boxes():
     assert all(r['coordinate']['box']==layout[0]['box'] for r in results)
 
 
+def test_overlapping_span_alternatives_remain_visible_without_false_ambiguity():
+    result=reconcile(qa('A sufficiently distinctive heading phrase'), [
+        pdf('A sufficiently distinctive heading phrase',y=10),
+        pdf('and neighbouring article material',y=25)])[0]
+    assert result['status']=='unique'
+    assert result['coordinate']['pdf_lines']==[0]
+    assert any(set(c['pdf_lines'])=={0,1} for c in result['span_alternatives'])
+    assert result['span_alternative_count']>=2
+
+
 def test_repeated_lines_ambiguous_and_missing_text_unlocated():
     result=reconcile(qa('Repeated generic dictionary text','unrecoverable nonsense'),
                      [pdf('Repeated generic dictionary text'),pdf('Repeated generic dictionary text',x=300)])

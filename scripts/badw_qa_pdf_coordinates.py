@@ -128,6 +128,14 @@ def reconcile(rows, layout):
                                        embedded_text='\n'.join(layout[i]['text'] for i in ids),exact=exact))
         # Prefer the smallest extent when equivalent windows include extra text.
         candidates.sort(key=lambda c:(-c['score'],len(c['pdf_lines']),c['pdf_lines']))
+        # Overlapping windows are alternative extents of the same OCR region,
+        # not independent competitors for its location. Preserve them for
+        # ownership diagnostics even when a compact representative wins.
+        span_alternatives=[]; seen_spans=set()
+        for c in candidates:
+            identity=(tuple(c['pdf_lines']), c['embedded_text'])
+            if identity not in seen_spans:
+                span_alternatives.append(c); seen_spans.add(identity)
         unique=[]
         for c in candidates:
             if not any(set(c['pdf_lines'])&set(a['pdf_lines']) for a in unique):unique.append(c)
@@ -139,6 +147,8 @@ def reconcile(rows, layout):
         candidates_by_line.append(unique)
         results.append(dict(status=status,coordinate=dict(best,method=VERSION,margin=round(margin,6)) if located else None,
                             alternatives=unique[:3] if not located else [],normalized_length=len(key),
+                            span_alternatives=span_alternatives[:8],
+                            span_alternative_count=len(span_alternatives),
                             authority='dependent OCR text alignment; not visual verification'))
     # Explicit monotone context: the immediate unique neighbours must constrain
     # a repeated exact line to one column, without crossing a furniture gap.

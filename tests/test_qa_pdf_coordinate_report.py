@@ -21,6 +21,10 @@ def test_changed_top_is_unassessed_and_changed_evidence_counted(tmp_path):
     assert report['counts']['reviewed_page_changed']==0
     assert report['counts']['machine_eligible']==0
     assert report['changed_predictions'][0]['assessment']=='unassessed'
+    assert report['changed_predictions'][0]['original']['anchor']=='a'
+    assert report['changed_predictions'][0]['reconstructed']['anchor']=='b'
+    assert report['changed_evidence'][0]['original']['definition_evidence']=={'word':'old'}
+    assert report['changed_evidence'][0]['reconstructed']['definition_evidence']=={'word':'new'}
     b['html_sha256']='reacquired'
     new.write_text(json.dumps(b)+'\n')
     with pytest.raises(ValueError,match='identities/checksums'):

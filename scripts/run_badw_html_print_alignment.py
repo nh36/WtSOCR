@@ -29,6 +29,7 @@ def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--all-volumes',action='store_true',required=True)
     p.add_argument('--resume',action='store_true')
+    p.add_argument('--disable-reconstructed-intervals',action='store_true',help='ablation: retain the local 48-line segmentation with identical coordinate inputs')
     p.add_argument('--disable-sequence-reranking',action='store_true',help='retain local scores; compute sequence diagnostics only')
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--inputs',type=Path,default=ROOT/'work/html-print-inputs',
@@ -82,7 +83,7 @@ def main(argv=None):
     poppler=subprocess.run(['pdftotext','-v'],capture_output=True,text=True,check=True).stderr.splitlines()[0]
     configuration=dict(version=VERSION,inputs=hashes,python=platform.python_version(),
         pypdf=pypdf.__version__,sqlite=__import__('sqlite3').sqlite_version,poppler=poppler,
-        concurrency=1,sequence_reranking=not args.disable_sequence_reranking,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
+        concurrency=1,reconstructed_intervals=not args.disable_reconstructed_intervals,sequence_reranking=not args.disable_sequence_reranking,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
     identity=object_digest(configuration)
     pin=output/'inputs.json'
     if pin.exists():
@@ -137,7 +138,7 @@ def main(argv=None):
         def match_family(f=family):
             n=0
             for (page,) in db.execute('SELECT page FROM pages WHERE family=? ORDER BY page',(f,)).fetchall():
-                n+=match_page(db,f,page,witnesses,frequencies)
+                n+=match_page(db,f,page,witnesses,frequencies,use_reconstructed_intervals=not args.disable_reconstructed_intervals)
                 if page%100==0:
                     print(f'  {f}: physical page {page}',flush=True)
             return dict(proposals=n)
