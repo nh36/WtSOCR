@@ -1836,15 +1836,26 @@ This retains the local 48-line segmentation while using the same coordinate
 inputs. `--disable-sequence-reranking` remains an independent switch; use it
 in both runs to isolate segmentation effects from sequence changes. The
 coordinate comparison report retains before/after top predictions and changed
-evidence spans, all marked unassessed. Counts below describe the original
-PR #14 run rather than a completed hardening ablation.
+evidence spans, all marked unassessed. It also records intervening start
+hypotheses, token-overlap changes and the original local rankings. A candidate
+inside an evidence span is a warning, not a verified article boundary.
+
+The completed hardening ablation uses identical inputs and enables sequence
+reranking in both runs. Reconstructed intervals change 49 local top predictions
+and 48 final tops, 404 definition-evidence records and 2,881 line spans among
+49,653 shared retained proposals. These are controlled presentation/evidence
+changes, not independently verified corrections. Neither reviewed attachment
+status nor reviewed pages change; machine-publication eligibility remains zero.
+The reconstructed run takes 1,911.28 seconds (2.467 GB peak RSS); the fallback
+run takes 2,159.20 seconds (2.501 GB peak RSS). These counts concern retained
+top-ten proposals, not all 524,606 scored proposals.
 
 Overlapping OCR-span alternatives are retained separately from competing
 disjoint locations. Their presence does not count as independent observations
 or as visual confirmation. Test dependencies include Pillow (`>=11.3,<13`),
 which is required for source-bound raster checks and must be installed in CI.
 
-The full run takes 1,983.02 seconds with 1.506 GB peak RSS. An all-cached resume
+The original coordinate run takes 1,983.02 seconds with 1.506 GB peak RSS. Its all-cached resume
 takes 99.53 seconds and reproduces witness, validation and review-report hashes.
 It yields 2,457 provisionally supported, 13,173 review-required and 2,408 unresolved
 cases, with zero machine-publication eligibility. All 163 reviewed attachments
