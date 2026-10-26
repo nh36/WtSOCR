@@ -1903,11 +1903,11 @@ Reproduce the full run and source-region evaluation:
 ```bash
 python3 scripts/run_badw_html_print_alignment.py --all-volumes --resume \
   --coordinate-inputs work/qa-coordinate-inputs \
-  --output work/article-ownership-full-v1
+  --output work/article-ownership-full-v2
 python3 scripts/evaluate_badw_article_ownership.py \
-  --database work/article-ownership-full-v1/index.sqlite \
+  --database work/article-ownership-full-v2/index.sqlite \
   --images work/qa-coordinate-benchmark \
-  --output work/article-ownership-evaluation.json
+  --output work/article-ownership-v2-evaluation.json
 ```
 
 The checked-in `data/article_ownership/regions.json` binds eight complete source
@@ -1930,13 +1930,30 @@ merged QA rows and geometrically misplaced lines. No rules were tuned against
 the held-out answers. Missing source text cannot be recovered by geometry alone.
 
 The complete run processes 18,038 HTML witnesses, 3,466 physical pages and
-352,244 QA lines in 2,078.64 seconds (2.456 GB peak RSS). It retains 160,855 start
+352,244 QA lines in 2,218.05 seconds (2.418 GB peak RSS). It retains 160,855 start
 hypotheses and 524,606 correspondence proposals. There are 26,293 source-boundary
-hypotheses (10,293 unlocated); 63,065 reconstructed alternatives are interrupted
+hypotheses (10,293 unlocated); 63,365 reconstructed alternatives are interrupted
 by unlocated headings. The 2,377 geometrically bounded intervals remain
-unverified lexical extents. Results comprise 2,463 provisionally supported,
-13,167 review-required and 2,408 unresolved witnesses; none authorises new links.
+unverified lexical extents. Results comprise 2,468 provisionally supported,
+13,162 review-required and 2,408 unresolved witnesses; none authorises new links.
 The existing 163 reviewed attachments remain separate. There are 139 sequence
 ranking changes, not independently established corrections. The principal
 remaining blocker is missing/damaged heading evidence and reliable sub-line
 ownership, rather than overall coordinate coverage.
+
+Unlocated barriers on intervening pages stop evidence even when that entire page
+has no located text. Clipping retains a prefix of physical reading order and
+cannot resume in a later column or page. Matching consumes clipped alternatives,
+including empty spans, instead of restoring the 48-line fallback. Repeated-heading
+cutoffs use physical order where available, rather than QA line-number order.
+
+Relative to the PR #14 safeguard run, 359 local and 356 final top predictions
+change; 2,338 shared proposal definition records and 15,442 evidence spans change.
+These are unassessed differences, not established corrections. Cached resume
+reproduces witness, validation and review-report SHA-256 identities. The fresh
+reader differential preserves all 29,878 witnesses, 11,840 PDF bodies, 163 reviewed
+links, 48 derivatives and the 7,626 resolved / 748 residual cross-reference census.
+Chrome desktop/mobile journeys pass without browser errors or search body fetches.
+The full clean-environment Python suite has 2,198 passes and the two inherited
+bibliography-checksum and residual-ledger failures; release reproduction retains
+69 inherited differences. No release evidence is changed.
