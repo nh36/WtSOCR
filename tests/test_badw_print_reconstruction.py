@@ -40,6 +40,13 @@ def test_single_page_keeps_original_geometry_and_rotation_is_deferred():
     assert column_model(columns([30]),geometry())['status']=='ambiguous_columns'
 
 
+def test_orientation_does_not_determine_number_of_columns_or_spread_side():
+    rows=columns([30,550]);g=geometry(True);m=column_model(rows,g)
+    assert m['status']=='coordinate_clusters' and m['observed_columns']==2
+    assert page_destination(rows,g,m,[])['geometry_status']=='spread_columns_unresolved'
+    assert column_model(columns([30,230,550,750]),geometry())['observed_columns']==4
+
+
 @pytest.mark.parametrize('text,status,number',[
     ('ཀ་ ² ka erstes Wort','explicit_ocr_number','2'),
     ('ཀ་ ka 2. Bedeutung','unnumbered_complete_qa_heading',None),

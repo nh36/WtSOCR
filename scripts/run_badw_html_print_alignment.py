@@ -33,6 +33,7 @@ def main(argv=None):
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--inputs',type=Path,default=ROOT/'work/html-print-inputs',
                    help='portable bundle from prepare_badw_alignment_inputs.py')
+    p.add_argument('--coordinate-inputs',type=Path,help='render-bound hOCR bundle from prepare_badw_coordinate_inputs.py')
     p.add_argument('--stop-after',help='Testing/recovery: exit after named atomic stage')
     args=p.parse_args(argv)
     output=args.output.resolve()
@@ -56,11 +57,19 @@ def main(argv=None):
         'expanded':ROOT/'data/badw_html_print_alignment.generated.json','baseline':ROOT/'data/badw_html_print_pages.json',
         'preparer':Path(__file__).with_name('prepare_badw_alignment_inputs.py'),
         'reconstruction':Path(__file__).with_name('badw_print_reconstruction.py'),
+        'coordinates':Path(__file__).with_name('badw_qa_pdf_coordinates.py'),
         'structure':Path(__file__).with_name('badw_print_structure.py'),
         'engine':Path(__file__).with_name('badw_html_print_engine.py'),'runner':Path(__file__),
         'certificate_compiler':ROOT/'scripts/badw_html_print_alignment.py',
         'facsimiles':ROOT/'scripts/badw_html_print_facsimiles.py',
         'matcher':ROOT/'scripts/badw_source_matcher.py','crosswalk':ROOT/'scripts/badw_print_crosswalk.py'}
+    if args.coordinate_inputs:
+        from prepare_badw_coordinate_inputs import validate_bundle
+        validate_bundle(args.coordinate_inputs, registry)
+        paths['coordinate_manifest'] = args.coordinate_inputs/'manifest.json'
+        paths['coordinate_preparer'] = Path(__file__).with_name('prepare_badw_coordinate_inputs.py')
+        for family in FAMILIES:
+            paths['coordinate:'+family] = args.coordinate_inputs/(family+'.jsonl')
     for family,label in FAMILIES.items():
         paths['qa:'+family]=ROOT/f'release/current/qa/{family}/{family}_line_zones.tsv'
         paths['scan:'+family]=ROOT/registry[label]['filename']
@@ -110,7 +119,7 @@ def main(argv=None):
     stage('witnesses',lambda:index_witnesses(db,args.bodies,args.catalogue))
     stage('history',lambda:index_history(db,ROOT,history))
     for family in FAMILIES:
-        stage('pages:'+family,lambda f=family:index_family(db,ROOT,f,registry,output))
+        stage('pages:'+family,lambda f=family:index_family(db,ROOT,f,registry,output,args.coordinate_inputs))
     witnesses={sid:json.loads(body) for sid,body in db.execute('SELECT * FROM witnesses')}
     stage('starts',lambda:discover(db,witnesses))
     from badw_print_reconstruction import reconstruct, sequence_rerank

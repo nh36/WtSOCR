@@ -1,0 +1,1147 @@
+{
+  "schema": 1,
+  "authority": "Source-image observations by the development agent; independent of OCR predictions, not independent scholarly certification. Coarse line regions only; no lexical or full-extent acceptance.",
+  "selection": "Eight purposive pages; four development and four held-out; held-out region labels fixed before querying new predictions. Not a random corpus precision estimate.",
+  "cases": [
+    {
+      "id": "wts_1_34:1090:1",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 1,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "e1f0dc892bdfee8c29792f4284d91445f682a4e6939a451f1f9f28b29f1b37ac",
+      "qa_text": "ད་བུར་ da bur",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.16,
+        0.061111,
+        0.55,
+        0.1
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:11",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 11,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "0457c78f97c88d5757bdbdd77ed4945b8fd6af9e73cc570cfe16ad5846e0cbcb",
+      "qa_text": "ད་བུར་ da bur Verbrennungsplatz, Feuerstelle.",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.16,
+        0.219444,
+        0.55,
+        0.258333
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:24",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 24,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "8d7cebafe94c846a566ab3a4e4e04f6a7c5925da49e9ad755bc0a5a45a9a9401",
+      "qa_text": "ཌ་མ་རུ་ da ma ru auch da ru rituell verwende-",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.16,
+        0.436111,
+        0.55,
+        0.475
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:39",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 39,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "55a74915326ebec88ba98ac40cba9c8bec3032b75a8497806f0e58ae45c1b69b",
+      "qa_text": "ད་མུས་བཞིན da mus bZin wie bisher.",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.16,
+        0.636111,
+        0.55,
+        0.675
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:47",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 47,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "8e66eea3100c8626cd862845ed58db6cb46692744e778c911a3eaad61d7c372a",
+      "qa_text": "'ཾ' datsha ein Heilmittel, Cinnamomum ta-",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.16,
+        0.758333,
+        0.55,
+        0.797222
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:55",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 55,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "954a7d86cef4ff8e573315447d903c0a74959957bde7e43d9aff1952df5dbb9b",
+      "qa_text": "ད་ཡང་ da yaṅ",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.54,
+        0.061111,
+        0.96,
+        0.1
+      ],
+      "column": 1,
+      "observation": "running header; not article"
+    },
+    {
+      "id": "wts_1_34:1090:59",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 59,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "7714c036b6b5ff2551a7773f9059792b1ac9496698ad140852ee3fad435af1bf",
+      "qa_text": "jetzt; daraufhin.",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.54,
+        0.122222,
+        0.96,
+        0.161111
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:74",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 74,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "fe1a1dfa71d32e22c3937efaf913231457a25a24621538863312e319abc78b35",
+      "qa_text": "ད་གཟོད་ནས་བཟུང་ dagzod nas bzuṅ von nun an.",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.54,
+        0.355556,
+        0.96,
+        0.394444
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:1090:89",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "qa_line": 89,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "631152d27b7874a5f6b257376a74d46c27daf07dc6a8881f147b45935924f756",
+      "qa_text": "ད་ཡང་ dayan nun; auch jetzt, auch jetzt noch;",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "image_name": "wts_1_34-1090.png",
+      "region": [
+        0.54,
+        0.558333,
+        0.96,
+        0.597222
+      ],
+      "column": 1,
+      "observation": "actual da yang article"
+    },
+    {
+      "id": "wts_35_51:106:1",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 1,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "3ed3527dc54350827496c5a59fa9c68ddd7a3e336b41a40cdb737cb1972bd9db",
+      "qa_text": "མདུད་པར་འཛིན་པ་ mdud par 'dzin pa",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.16,
+        0.061111,
+        0.55,
+        0.1
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:106:47",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 47,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "40813e756b3e9047910d73ac101f4182247e7e6a17051547aa8367cdc3b95174",
+      "qa_text": "མདུན་ mdun",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.54,
+        0.061111,
+        0.96,
+        0.1
+      ],
+      "column": 1,
+      "observation": "running header; not article"
+    },
+    {
+      "id": "wts_35_51:106:53",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 53,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "69766b991fb1df8039eeb7c3ddcd943734f1c10e7f7144ef3cf603db44c01f52",
+      "qa_text": "མདུད་པར་འཛིན་པ་ mmdud par pa anhaltende",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.54,
+        0.202778,
+        0.96,
+        0.241667
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:106:56",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 56,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "32899b167330911e01df708d2f1271b1072a8926a224113f0919ce127899afc8",
+      "qa_text": "མདུད་ལྷ་སུམ་བརྒྱ་དྲུག་བཅུ་ mdud lba sum brora",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.54,
+        0.277778,
+        0.96,
+        0.316667
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:106:59",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 59,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "adf1f313a98e113881e46717e181504df347f829aa4aa6bbb35c7fc5c52e91d9",
+      "qa_text": "zz mdun auch sdun.",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.54,
+        0.336111,
+        0.96,
+        0.375
+      ],
+      "column": 1,
+      "observation": "actual mdun article"
+    },
+    {
+      "id": "wts_35_51:106:60",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "qa_line": 60,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "bdba3be73b033fc69cdc10b81e3dcc96510c2bc10ac04909f12ced23fbba650c",
+      "qa_text": "1. das Vordere, Vorderseite, Frontseite; —",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "image_name": "mdun.png",
+      "region": [
+        0.54,
+        0.361111,
+        0.96,
+        0.4
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:1",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 1,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "c2ffd87a4a4a3fe9d1ba3fadc72f327e819efa9489b5dc8b28b66d30e3cc5fbb",
+      "qa_text": "az ba sbrub",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.16,
+        0.061111,
+        0.55,
+        0.1
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:11",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 11,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "f3ef96f0ceaba3f64752286fe7c8380727e08719534b7413a42f110fc7deb161",
+      "qa_text": "བ་སྦྲུབ་ ba sbrub Tba spru.",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.16,
+        0.280556,
+        0.55,
+        0.319444
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:12",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 12,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "6cfee7623b0032d0b6aefcd13cb1fb963c4af650ead4505c89715ba82a865d56",
+      "qa_text": "བ་མ་ལ་གྷིར་ཏི་ ba ma la ghir ti npr. ein Bodhi-",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.16,
+        0.319444,
+        0.55,
+        0.358333
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:24",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 24,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "d96bbdbca44496fbfafc829bfdca58c05ed28c34cbe22b21f6848cb95cf523f0",
+      "qa_text": "བ་མེན་ ba men ein Rind, Gaur bzw. Gayal.",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.16,
+        0.580556,
+        0.55,
+        0.619444
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:39",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 39,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "aaa0d1fb5176d39133702a592a7f70e255a3953170a3c57c89b41272f6bbc3a6",
+      "qa_text": "བ་ཚྭ་ཅན་ ba tshwa can",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.54,
+        0.061111,
+        0.96,
+        0.1
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:52",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 52,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "cf8730997d1faee703164fa55c3f5769a9af3b3e3ad622dd7b36f840f7b46a6a",
+      "qa_text": "བ་མོ་བྱེའུ་ ba mo bye’u ein kleiner Vogel.",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.54,
+        0.336111,
+        0.96,
+        0.375
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:55",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 55,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "618ed146541ca4607dee75a6e5a68868fd176cb779cd4e0c7a7cd7be2a97fa1d",
+      "qa_text": "བ་དམར་ ba dmar rote Kuh.",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.54,
+        0.408333,
+        0.96,
+        0.447222
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:17:63",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 63,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "feb481eca4814260b69715d27b9c04bb3a3570d484d20131cff13127d8eaea8c",
+      "qa_text": "བ་ཚ་ batshwa auch ba tsha \"Kuhsalz\", ein Salz;",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.54,
+        0.569444,
+        0.96,
+        0.608333
+      ],
+      "column": 1,
+      "observation": "ba tshwa; Kuhsalz"
+    },
+    {
+      "id": "wts_8_b:17:77",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "qa_line": 77,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "676123cdf33108e2b62911c8fb4f394495258b3f976442220a6f0d6e4bdbdf38",
+      "qa_text": "བཚྭ་ཅན་ ba tshwa can.",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "image_name": "wts_8_b-17.png",
+      "region": [
+        0.54,
+        0.833333,
+        0.96,
+        0.872222
+      ],
+      "column": 1,
+      "observation": "ba tshwa can; distinct neighbouring article"
+    },
+    {
+      "id": "wts_9_m:100:1",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "qa_line": 1,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "f79d6815e39b4b36aba5030ebd2348084b37ef240becd00e11c1b07d968d2c05",
+      "qa_text": "Am mi kha",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "image_name": "wts_9_m-100.png",
+      "region": [
+        0.16,
+        0.058333,
+        0.55,
+        0.097222
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:100:38",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "qa_line": 38,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "cad04e46d68005bce58c129b46154753a5b666c3671473b873febedd4a60ec30",
+      "qa_text": "མེ་ཁར་ mikbur auch mi 'khur die Last, die ein",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "image_name": "wts_9_m-100.png",
+      "region": [
+        0.16,
+        0.755556,
+        0.55,
+        0.794444
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:100:45",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "qa_line": 45,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "e4ceb515c54827761162eb81c542c00377088611fce7f29e8c6888b1da96d738",
+      "qa_text": "མི་ཁོམ་པ་བརྒྱད་ mi khom pa brgyad",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "image_name": "wts_9_m-100.png",
+      "region": [
+        0.54,
+        0.058333,
+        0.96,
+        0.097222
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:100:49",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "qa_line": 49,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "55ddeedfc98132c442b32df91d06d5782ed88cb19293ea30dab9b8cf97eb9daf",
+      "qa_text": "མི་ཁོར།་ mi kbom auch — pa, mi khoms, mi",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "image_name": "wts_9_m-100.png",
+      "region": [
+        0.54,
+        0.177778,
+        0.96,
+        0.216667
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:100:71",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "qa_line": 71,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "29a1613a0df3ce903103e45d1704625df9f5ae93d93564402b2e3262cd9795a4",
+      "qa_text": "མི་ཁོམ་པ་བརྒྱད་ Mi khom pa brgyad \"die acht",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "image_name": "wts_9_m-100.png",
+      "region": [
+        0.54,
+        0.55,
+        0.96,
+        0.588889
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:1",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 1,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "5a177e489839b4f136ad991d375c7b00bbd72d25a1dc0f4d67253c0de6fccf5f",
+      "qa_text": "བཅད་ bcad",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.072222,
+        0.090338,
+        0.241667,
+        0.145326
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:105",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 105,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "58639bbba760f811282490f64697d028f0f36aabe6e488dd597ce039a516deb5",
+      "qa_text": "བཅད་སྐྱེས་ bcad skyes",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.511111,
+        0.090338,
+        0.691667,
+        0.145326
+      ],
+      "column": 2,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:150",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 150,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "e62523a0ff835ef95f8d0dde8e1cb517de0a03b7cf1deae5ac644673f358234b",
+      "qa_text": "བཅད་སྐྱེས་ bcad skyes Bez. für Fingernagel.",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.511111,
+        0.475255,
+        0.691667,
+        0.530244
+      ],
+      "column": 2,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:153",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 153,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "59b06ba2538c62b21b372d87fb6336356318620d1a4161681c06d2dbbfe92ce7",
+      "qa_text": "བཅད་།མ་ bcad kham ein Mundvoll, ein",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.511111,
+        0.530244,
+        0.691667,
+        0.585232
+      ],
+      "column": 2,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:186",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 186,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "ade5c607dd12f68884fe2873e5836829544196f8eca2e3fef57d68d282290c75",
+      "qa_text": "བཅད་རིགས་ bcad rigs Zuteilung.",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.694444,
+        0.605656,
+        0.877778,
+        0.660644
+      ],
+      "column": 3,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:194",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 194,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "bebcf8f6763aba78f8605bf23dd8bfe970446d2fb22bbef49e4bff6edd832346",
+      "qa_text": "བཅད་ཤེས་ bcad ses eine Schlußfolgerung,",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.694444,
+        0.706991,
+        0.877778,
+        0.76198
+      ],
+      "column": 3,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_1_34:600:196",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "qa_line": 196,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "qa_row_sha256": "7d30cd7d8b4beece4a0ba3d00e81950b0abe97bcd1703d8341ad0269acd51a1c",
+      "qa_text": "བཅད་རྒྱ་ bcad rgya Abgeschiedenheit, Retreat,",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "image_name": "wts_1_34-600.png",
+      "region": [
+        0.511111,
+        0.72663,
+        0.691667,
+        0.781618
+      ],
+      "column": 2,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:267:1",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 1,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "24da9ba74e2e099e2e99f42cd8d1d2b0a12c72855e30f8ac1da6345ca19f731c",
+      "qa_text": "ལྡོངས་ '//9:;",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.16,
+        0.061111,
+        0.55,
+        0.1
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:267:16",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 16,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "7e7b0c656496d7449689f3fbfecb6cbbbdf3945c40ff4dbbd8f71fa7325438ea",
+      "qa_text": "ལྡོངས་ 'ldoṅs auch mdons pf. zu !'Idon erblin-",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.16,
+        0.375,
+        0.55,
+        0.413889
+      ],
+      "column": 0,
+      "observation": "first numbered ldo ngs"
+    },
+    {
+      "id": "wts_35_51:267:38",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 38,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "e777481b6d2a65e596a5cb251100769d7cc6786a956321b3dc611ff44db8975c",
+      "qa_text": "ལྡོངས་ T'mdoṅs",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.16,
+        0.786111,
+        0.55,
+        0.825
+      ],
+      "column": 0,
+      "observation": "second numbered ldo ngs; cross reference"
+    },
+    {
+      "id": "wts_35_51:267:39",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 39,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "19f9935f8ee239a2dd31dc1df1e4518339b3372fb646fb8f65f6b9a9fa9aebf7",
+      "qa_text": "ལྡོངས་གསལ་ lldoṅs gsal aufrichtige Rede.",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.16,
+        0.825,
+        0.55,
+        0.863889
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:267:59",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 59,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "d3610653787f74f0d05162b00a826f21bce0e627240090578bbda1df999ed5bc",
+      "qa_text": "ལྡོབ་སྐྱེན་ Idob skyen auch — pa, ldobs skyen",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.54,
+        0.411111,
+        0.96,
+        0.45
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_35_51:267:71",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "qa_line": 71,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "qa_row_sha256": "fa21397d64795763450510003a4810c4f6eeb7892647217c617ce9b1ec6a9588",
+      "qa_text": "ལྡོབས་སྐྱེན་ ldobs skyen Yldob skyen.",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "image_name": "wts_35_51-267.png",
+      "region": [
+        0.54,
+        0.675,
+        0.96,
+        0.713889
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:1",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 1,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "26b6d27a49c037924149456fb977ea565ebe6739add20a7476e051c3ed2301af",
+      "qa_text": "འབུམ་ཐེར་ 'bum ther",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.061111,
+        0.55,
+        0.1
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:2",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 2,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "76ddacb7f6cc3df4650a019cd9e67b0a1975133a0834cdbe9ae036bd7322ef93",
+      "qa_text": "འབུམ་ཐེར་ bum ther hunderttausend, vgl. tiber",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.108333,
+        0.55,
+        0.147222
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:6",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 6,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "aca740fe897a8852f61c97a7f736c32725b72a29abd66dbbb662787fb65eeb8b",
+      "qa_text": "འབུམ་སྡེ་ 'bum sde eine Abteilung bzw. Grup-",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.205556,
+        0.55,
+        0.244444
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:15",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 15,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "81bf50e2f41dc1432d5950cec057f03cbc3bd0f83ea2319c15e45a5691ef83c6",
+      "qa_text": "འབུམ་པ་ \"bum pa Abbild; von skt. bimba",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.408333,
+        0.55,
+        0.447222
+      ],
+      "column": 0,
+      "observation": "first numbered bum pa; Abbild"
+    },
+    {
+      "id": "wts_8_b:445:22",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 22,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "3d8c58dd331d40f82e2934e4a82b4d4f114ae3ec6d9edb467eb5de48f610786b",
+      "qa_text": "འབུམ་པ་ \"bum pa npr. Name einer Gegend",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.552778,
+        0.55,
+        0.591667
+      ],
+      "column": 0,
+      "observation": "second numbered bum pa; npr"
+    },
+    {
+      "id": "wts_8_b:445:32",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 32,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "2d2eefb354070ecdbe0ecece6d138547d02877f0c919c3c1e0ff752b52b83265",
+      "qa_text": "འབུམ་པ་ \"bum pa Bez. für Stüpa.",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.16,
+        0.744444,
+        0.55,
+        0.783333
+      ],
+      "column": 0,
+      "observation": "third numbered bum pa; Stupa"
+    },
+    {
+      "id": "wts_8_b:445:45",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 45,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "3e6540440aa843232ff52cdd8681ecc7b8f43f14c45c3ef301f9494a60c2f1a2",
+      "qa_text": "འབུམ་ཕྲག་བཅུ་ 'bum phrag beu !'bum beu.",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.54,
+        0.205556,
+        0.96,
+        0.244444
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:46",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 46,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "bffeaf8a6811e150643ec330097e3759eb98c2c573fe3944270b33765f120e52",
+      "qa_text": "འབུམ་ཕྲག་གསུམ་པ་ bum phrag gum pa npr.",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.54,
+        0.236111,
+        0.96,
+        0.275
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_8_b:445:58",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "qa_line": 58,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "qa_row_sha256": "e73e9e26017f0736919db23cb805adbdca4d005246a862119e6b9dd1e7689253",
+      "qa_text": "འབུམ་དབྱེལ་ 'bum dbyel Kettenhemd.",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "image_name": "wts_8_b-445.png",
+      "region": [
+        0.54,
+        0.463889,
+        0.96,
+        0.502778
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:1",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 1,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "229c1995b604cfeca2e35aeec2cafcfcf4df921dcdd34d63152b0b462e00ffea",
+      "qa_text": "མུན་འཕྲང་ mun 'phraṅ",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.16,
+        0.058333,
+        0.55,
+        0.097222
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:14",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 14,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "210d64d981e00560b8d61857a905ab1e295967c550e28bfc1bc8eaebd071d421",
+      "qa_text": "མུན་འཕྲང་ mun 'phrari dunkler Pfad.",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.16,
+        0.319444,
+        0.55,
+        0.358333
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:17",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 17,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "31646b5288f55aec33190aa35d9f82d2b41292ecc1d880b3a7b29fad82bcecc4",
+      "qa_text": "མུན་བྱེད་ mun byed cin Volk; skt. Andhaka.",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.16,
+        0.394444,
+        0.55,
+        0.433333
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:32",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 32,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "0ec5ed6faf99b865ae00d6fe1e6019e380e0b57f4c41ea838c671385066dd573",
+      "qa_text": "མུན་མཚན་ mun mtshan Bez. für Nacht.",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.16,
+        0.713889,
+        0.55,
+        0.752778
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:34",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 34,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "41fd7b921a17f0c85e7e9de02a5704e9ca0f0a4d4c4986a9c7cda2da271206ef",
+      "qa_text": "མུན་ཛ་ mun dza.",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.16,
+        0.772222,
+        0.55,
+        0.811111
+      ],
+      "column": 0,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    },
+    {
+      "id": "wts_9_m:200:39",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "qa_line": 39,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "qa_row_sha256": "969179ffa78269f725bac858e29bb8d985b61cf8d1c4989b382fb46edd69a270",
+      "qa_text": "མུན་ཤེང་ཀོང་ཅོ་ mun Seṅ koṅ co",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "image_name": "wts_9_m-200.png",
+      "region": [
+        0.54,
+        0.058333,
+        0.96,
+        0.097222
+      ],
+      "column": 1,
+      "observation": "visible source line; coarse region, not word-level transcription"
+    }
+  ]
+}

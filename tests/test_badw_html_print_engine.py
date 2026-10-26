@@ -8,6 +8,37 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import badw_html_print_engine as engine
 
 
+def test_render_bound_hocr_index_keeps_dependent_readings_separate(tmp_path, monkeypatch):
+    from pypdf import PdfWriter
+    family = 'wts_1_34'
+    pdf = tmp_path/'source.pdf'
+    writer = PdfWriter(); writer.add_blank_page(width=400, height=600)
+    writer.write(pdf)
+    qa = tmp_path/f'release/current/qa/{family}/{family}_line_zones.tsv'
+    qa.parent.mkdir(parents=True)
+    qa.write_text('page\tline\tline_text\n1\t1\tdistinctive printed definition\n')
+    bundle = tmp_path/'coordinates'; bundle.mkdir()
+    record = dict(physical_page=1, source_sha256='registered', hocr_sha256='hocr',
+                  raster_sha256='raster', lines=[dict(text='distinctive printed definition',
+                                                    box=[20,100,200,110])])
+    (bundle/(family+'.jsonl')).write_text(json.dumps(record)+'\n')
+    # Damaged embedded OCR cannot become independent agreement just because
+    # a different, render-bound OCR cache supplies the selected coordinates.
+    monkeypatch.setattr(engine, 'pdf_layout', lambda *args: iter([
+        [dict(text='unrelated damaged OCR', box=[20,100,200,110])]]))
+    db = engine.connection(tmp_path/'index.sqlite')
+    registry = {engine.FAMILIES[family]: dict(filename=pdf.name, sha256='registered')}
+    result = engine.index_family(db,tmp_path,family,registry,tmp_path,bundle)
+    row = json.loads(db.execute('SELECT body FROM lines').fetchone()[0])
+    assert result['coordinates']['unique'] == 1
+    assert row['coordinate']['hocr_text'] == 'distinctive printed definition'
+    assert 'embedded_text' not in row['coordinate']
+    assert row['coordinate_reconciliation']['hocr_sha256'] == 'hocr'
+    assert row['embedded_reconciliation']['coordinate'] is None
+    assert row['line_text'] == 'distinctive printed definition'
+    db.close()
+
+
 def witness(loc, tib='', definition=''):
     return dict(headword=dict(loc=loc, tibetan=tib), definition=definition,
                 citations=[], homonym='1', order=1)

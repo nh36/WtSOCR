@@ -1,0 +1,1126 @@
+{
+  "authority": "Development-agent source-image observations; not independent scholarly gold or reader attachment authority.",
+  "selection": "All forty PR13 sequence-reranked predictions, not a representative random sample.",
+  "cases": [
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/babs/1",
+      "html_sha256": "9148fa6a2ac713639a7f9c6abd58305a02de40e6575da20b23afa71926579ea8",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:45:48",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "f18d28572b1b79228719512d03f34b91c50b872f11fe8e6e75bec004d989af18",
+          "qa_row_sha256": "fec1d3b70c644fec9e52cd1dd494235445858f9a119b68d23238dff65a0c73a7",
+          "qa_text": "བབས་ 'babs"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:44:32",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "f1f98241a68dda79ec0d41b3373f36bae419dff9b35bdef76e5d3318b190f1e8",
+          "qa_row_sha256": "9b25c5eaa18d9947f2492c25235770742afbedec6f3523eadb91e5d42a1b897e",
+          "qa_text": "babs pa\" (brDa)."
+        }
+      ],
+      "comparison_image": "00.jpg",
+      "comparison_image_sha256": "68b42460fa67dfc71bc1c230235c9250d5cbc15092b7fd1add0872243bb471f1",
+      "assessment": "both_wrong_article_start",
+      "observation": "Both anchors miss the heading: local is a running header; adjusted is sense-2 continuation within babs.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ban%20de/1",
+      "html_sha256": "45c58ce3b9552584b23e6044c4bd31327b80df58f0be21b3457718883a5c8120",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:211:123",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "d77d36437804eddbc7ed174ec77fdfe6eb43e952c32f4f2a04f6b775ba40fd1f",
+          "qa_row_sha256": "f1af05e6bc882945145d950f6f83752312c98adde62d7b57922525d352bf2230",
+          "qa_text": "ban de tshan gi sari skyeld pa’) rnam|[s] „das"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:40:24",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "e69fc9a09cee442b501e138d5145873e68c541b2235b3bde1121e1c7b66c95a7",
+          "qa_row_sha256": "0f86181b163a389f837ab10804784f75390ce995004bf374cd5549869b5394aa",
+          "qa_text": "བན་དེ་ bande auch ba nde,ban dhe, bande Bez."
+        }
+      ],
+      "comparison_image": "01.jpg",
+      "comparison_image_sha256": "934833fb01a369f354656dba06008fa86f7971b3352ad4b48c2a1c41af14b6d9",
+      "assessment": "corrected_article_start",
+      "observation": "Local quotation belongs to skyel; adjusted heading ban de defines a monk, with Pali bhante and Sanskrit bhadanta.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ban/4",
+      "html_sha256": "5f8de86c778907a3f11a57177830a41f5644fd2386e9028409ea2db542e33a91",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1040:98",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "aa787a86f36570aaf0eff1ba250d320c9b6727a71f87e32a5056a7ad03f94609",
+          "qa_row_sha256": "66f062e91cee41e7baf0cc0dd3c253910c7f34cb0ca3086c8a23e817e2e8d478",
+          "qa_text": "dbus pa’i ban btsun man po dan phrad de"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:39:40",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "c97191779f8e971e707cb0403e5c4148e7c967a2406297ff116e6472c9f64830",
+          "qa_row_sha256": "1efd21a61f8326036a775ab165894bf952a006b610cbbe99c7b0a18ecbdc3504",
+          "qa_text": "az' \"ban ein Messer, das die Lepcha am Gür-"
+        }
+      ],
+      "comparison_image": "02.jpg",
+      "comparison_image_sha256": "a35e9150d9d62fa89b9afe1649342ea079ede5f2c6d1a0529042244a4707105a",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a geographic quotation in thon lug; adjusted explicitly numbered 4 ban defines a Lepcha belt knife.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bka%E2%80%99%20gdams/1",
+      "html_sha256": "db612b813d0c28b4e1e519f506f05cbb5651f238e8b42da0a6533af7699c21d8",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:521:20",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "21782b478bf1ba5691faab43f767f5c047e95d365c14bd1fdbd436d3d42d49f1",
+          "qa_row_sha256": "b61bb3711122b5fbbc6cefafd4b234e532797edcb86775cd788afd78036f0ce3",
+          "qa_text": "bka' gdams kyi mes po — ston rgyal ba'i 'bymi"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:140:128",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "8ff7729a61ee469cfc2a764b70e906ea884b205c75c6f7d59c8fa29baec4ab38",
+          "qa_row_sha256": "799263d24e9a357f1761f8fe99a28384d830128b1bc1e9bb54049dd404ae604d",
+          "qa_text": "བཀའ་གདམས་ bka’ gdams Richtung des tib. Bud-"
+        }
+      ],
+      "comparison_image": "03.jpg",
+      "comparison_image_sha256": "79719fcfff72b2707f82e69f1ec44e491985bb40ce2db6b1bbcb1679a3946214",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a quotation; adjusted bka’ gdams heading names the Tibetan Buddhist school founded by ’Brom.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bkus%20te%20bor%20ba/1",
+      "html_sha256": "a36b1102e623812acc37ecfa25bebba1cd78482a618f702c6ad8dbafaa900f1b",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:146:139",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "556d55723ba39bfbe29bf097b97e44ba582304c4a7306451e949b0ad345c96f4",
+          "qa_row_sha256": "d9194dd42f508304caecaeacb7ccbf9712105cd4d8539fc185dd68d69444e749",
+          "qa_text": "bkus te bor ba findet“ (Prav 152,24); khyod ji"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:146:133",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "556d55723ba39bfbe29bf097b97e44ba582304c4a7306451e949b0ad345c96f4",
+          "qa_row_sha256": "1bffd541da4970e1e873557c33d18f20edf0459f1aecc0c82108dc880a48ffff",
+          "qa_text": "བཀུས་ཏེ་བོར་བ་ bkus te bor ba Bez. einer Heilmit-"
+        }
+      ],
+      "comparison_image": "04.jpg",
+      "comparison_image_sha256": "3d963dce3bd02ee739e403868d40ee11ee7370f75ad93b4d91109fca4e4236d4",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a later example in the same article; adjusted heading names a medicinal preparation and cites putimukta/BHSD.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bod%20skad/1",
+      "html_sha256": "0a0d60c266813cd4653053c429fbaea4660836693420c39189599bb36aae3f0e",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:169:3",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "1bc46406a0da744b3a2c2438a6df81536eb88f83cd285f2f62827fb69aa2e054",
+          "qa_row_sha256": "1d5409016c4e1a193f97c2c28d69a9e03aff0b24c46bda0062e410b112a30cec",
+          "qa_text": "bod skad du / ’dul ba 92/ „in indischer Sprache [d. h. auf Sanskrit]: Vinayavastu, in tibe-"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:119:16",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "78feb23a04b65b73c3e7c1e586a3debf93df92f02f78e911c2cc326e9655ae9f",
+          "qa_row_sha256": "26b23be6df1f5af93c8f5e4d46a1b06a09576835ee230f9e102d503de49df0b7",
+          "qa_text": "བོད་སྐ * bod skad Kurzf. [117 /? 0¢¿/ /03// skad die"
+        }
+      ],
+      "comparison_image": "05.jpg",
+      "comparison_image_sha256": "6786327bdea70627d745e0b088eca0809ba7b2665cc5fba25f81310706f9c07a",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a skad continuation quotation; adjusted bod skad heading defines Tibetan language.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/brul/1",
+      "html_sha256": "efc6d6a6fbbebd9058f9cadb604a0c51e5cd0fe35422161c3a3d13236576a473",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:511:7",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "74473b89d702c1e9877f79366a41d9956ac855f7e2003f5e0de7cac639e7be41",
+          "qa_row_sha256": "ce6b4fc081c52d5a23c963722190b7a726a150423caa4846ce3492e862edef28",
+          "qa_text": "༢ \"brul pf. und fut. 1744 herabfallen,"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:279:41",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "393a33b462feece2651e886392458455bcbda1cf046fc7f2f868738d871ba8c0",
+          "qa_row_sha256": "df0e9af2f94ebf2f1c279f9b8100006afd0fda9095f613a06fc7b0bedcfe8e41",
+          "qa_text": "brul pf. und fur. zu 1'/))7// sich verstreu-"
+        }
+      ],
+      "comparison_image": "06.jpg",
+      "comparison_image_sha256": "211f3e83b8fb407f4be3067e23b9fdb13470803cff555d2c76ea0a1e3ff950de",
+      "assessment": "corrected_article_start",
+      "observation": "Local apostrophized ’brul is another article; adjusted brul heading refers to ’brul and dispersing/falling from a tree.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bskal%20pa/1",
+      "html_sha256": "684c321fdba33df82f3eeb079f5e9b019e38067bc23d95c448dcf221c7e0be6e",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:227:103",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "49c087f938c5e83040190f71887505d8eca0448bace1606b09c79c21ba2b33a5",
+          "qa_row_sha256": "8f0668a4e4c237b0e91baf0b431110b552a60c593f6df6c861cfbeff1bb80eb0",
+          "qa_text": "བསྐལ་པ་ bskal pa"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:227:96",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "49c087f938c5e83040190f71887505d8eca0448bace1606b09c79c21ba2b33a5",
+          "qa_row_sha256": "615f230ba549363c146c35249d9199a91319dd7e82b097026ac31c877098ebd6",
+          "qa_text": "བསྐལ་པ་ bskal pa Weltzeitalter, Weltperiode;"
+        }
+      ],
+      "comparison_image": "07.jpg",
+      "comparison_image_sha256": "5f47bfe070f27c5bf06027bb021bc8f7dca12369c5a0954cb715f0c502785280",
+      "assessment": "corrected_article_start",
+      "observation": "Local is running-header/continuation text; adjusted bskal pa heading defines a world age, Sanskrit kalpa.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/bu%20ram/1",
+      "html_sha256": "41a6adb24974e844dcb8d75f2250edde20305de4d00603d7d83859249b709f6b",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1111:83",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "e7bafd7da674e8e0b90d400ce0cd82d0638de245835115085ef2f90426cf624f",
+          "qa_row_sha256": "06c092036b250fd286feedf1664e195ee6fd23b8e7d2d10cffa5f0ab158fb045",
+          "qa_text": "(Prav 87,9); bu ram chan dan chan — chan"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:90:7",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "65ba8208fbc5984b0e9b47f7ccedf337488f5ff7743bf084cab5d4cc1b8a8f6e",
+          "qa_row_sha256": "105560fcef12bd4732c51425fd207409b9a7c9f1a343d9a6a8c73baa0fb59c4e",
+          "qa_text": "བུ་རམ་ bu ram Melasse, Zuckerrohrsirup; vgl."
+        }
+      ],
+      "comparison_image": "08.jpg",
+      "comparison_image_sha256": "645345af7a3c6273343f9d8fdde931db3ac0bc1028448bff8ca3647d178d4144",
+      "assessment": "corrected_article_start",
+      "observation": "Local quotation belongs to daṅs; adjusted bu ram heading defines molasses/sugar-cane syrup, Laufer 1916.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/byer/2",
+      "html_sha256": "e7197dba7a1cfcd5a8ce68e252cffb3ac0a5fec587aacc530f3dd03647f59dc1",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:247:74",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "d988f13be50c058e14f6c33920ac0d14672f4d3a94ac833af86c9c141befa5a3",
+          "qa_row_sha256": "f06539fc59c751461115178c21184efd171c27f1fd3bfc87828c0c2d4b09d57e",
+          "qa_text": "བྱེར་ \"byer npr. eine Gegend, Bye-ru."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:247:70",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "d988f13be50c058e14f6c33920ac0d14672f4d3a94ac833af86c9c141befa5a3",
+          "qa_row_sha256": "0d85ee627ecc5d3752bdd99c912fa1a97f2e3471dab1a1e4c87f63476f4722fb",
+          "qa_text": "བྱེར་ \"byer niedrig, schwach."
+        }
+      ],
+      "comparison_image": "09.jpg",
+      "comparison_image_sha256": "5f04119a14f6c57e4a6522d99995fb157d47c2b51d8146b628c0ab5f417cb578",
+      "assessment": "corrected_article_start",
+      "observation": "Local explicitly numbered 3 ’byer is a place; adjusted explicitly numbered 2 ’byer means low/weak.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/byil/3",
+      "html_sha256": "1dd70a6807c13e060e5ad400fa5d71e99b3c3dfbb6b5f5b04dab3a73a653d5ee",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:462:13",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "fbfb9f2470a2a349b37dde8e229f2a04cf280c7e801837e8ee95decf761f8124",
+          "qa_row_sha256": "c21a520fa8aff2f27befe7e606bec87e7e34f52916df15c25375a89b10a07cbb",
+          "qa_text": "adar \"byil pf. Pbyil."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:212:8",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "f6e907eee4f57378f45d7e1c129665a12de7aad9398d209eb56f4291874b4af0",
+          "qa_row_sha256": "9e1fab65f51a3d86afde976b1a4c92539a554789b4a88f7ce958a2dc1dc272d4",
+          "qa_text": "gar byil langes Ohrgehänge tibetischer Be-"
+        }
+      ],
+      "comparison_image": "10.jpg",
+      "comparison_image_sha256": "c3d349cf13dbeeeb4124f8d4d19c99dbff20e69f56fc0a3a9a9db7afe1414c3a",
+      "assessment": "corrected_article_start",
+      "observation": "Local ’byil is a past form meaning fall; adjusted explicitly numbered 3 byil is an official’s long earring.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dad%20pa%20gsum/1",
+      "html_sha256": "ab6bdb216029691785a977649f05e6ce89c5293528661046224b75424591ab7c",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1115:35",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "369a22e945f7e7475016ff7ee15f2ca2c831f4bbc3df505947aa10b79b1564be",
+          "qa_row_sha256": "e816b85eea63af471245f4a74dd65b7d819be5396c20f91cf5ea60790cc68a45",
+          "qa_text": "kyi dad pa gsum la „für: reiner Glaube, überzeugter Glaube, leidenschaftlicher Glaube,"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:1115:30",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "369a22e945f7e7475016ff7ee15f2ca2c831f4bbc3df505947aa10b79b1564be",
+          "qa_row_sha256": "d522811fecca0f01edf778e8775f41545c62164199f065f81fe64bd8c4bdf2d2",
+          "qa_text": "དད་པ་གསུམ་ dad pa gsum drei Arten von Ver-"
+        }
+      ],
+      "comparison_image": "11.jpg",
+      "comparison_image_sha256": "bb172b41689fa348a0bf8e9ea9708f47612c89dc9f0e9f2f183fd384dd64e96b",
+      "assessment": "corrected_article_start",
+      "observation": "Local is later quotation; adjusted dad pa gsum heading defines three kinds of faith.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dad/1",
+      "html_sha256": "b4567169e8945a02172408489260c43c5e5e710ec924637e4b476589c11ca4ba",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:263:51",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "c24ea081ff23f3f79bdde48d3c7eae5d06ae5cd5ff2f75349c3219a853dbe872",
+          "qa_row_sha256": "d4444afd517d9ff8e87e0bd22bc03f33aa5dc3d0a1db3b3ee8e371e5d782420e",
+          "qa_text": "kyi min); dad pa'! — pa 77/4)/5 mnon par"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:1112:35",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "900c3d318c64d9d869b175bc59dc1eeac7d4ed9098f856388f07abd39cd1a9de",
+          "qa_row_sha256": "4a889890e8c2ed1d8e02197df636340c811de39e4e73d5effb94a95d6652370f",
+          "qa_text": "' dad glauben, vertrauen, einverstanden"
+        }
+      ],
+      "comparison_image": "12.jpg",
+      "comparison_image_sha256": "367e39acb5cb4bad692376e158507a9dd9e2447ad7fc9c36401eceae7cd4d075",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a mos quotation; adjusted dad heading defines believing/trusting.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dam%20phrug/1",
+      "html_sha256": "edcfe94e2d01c23fd9e7552c1bbe9f37035971d3cbdf00fe92f9c67e86c37774",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:459:22",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "6798d5188786e453e14e5e5be6c9f97ad8d8e49a18fec2f92f1f07af6bd9c565",
+          "qa_row_sha256": "d9d8356adb1f3588b9337dfe020569d78829b83ddf1ff73efa41f589b35a824e",
+          "qa_text": "rtse’am dam phrug / - yi ’bur ni dam phrug"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:1125:55",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "b6b1905f11cb698e5fea85509fc51afe29a641d113620dba4231032dafa5fdb6",
+          "qa_row_sha256": "0ca05bc47dd88fb0ce01d10375151c0237fcadd18966f3f32a6e86696eceb0d1",
+          "qa_text": "དམ་ཕྲུག་ dam phrug Siegel, Stempel; Rechts-"
+        }
+      ],
+      "comparison_image": "13.jpg",
+      "comparison_image_sha256": "cc849236fac9f932d816f9c97bfd6c2bdd6a3fdbdafb5f0010e49f7bbc2516e3",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a rgya quotation; adjusted dam phrug heading defines seal/stamp and legal letter.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dan%20rogs/1",
+      "html_sha256": "950bbc9a420565b347a281795d3ef34e3dd0b3dd224420fa94e49d588481ec94",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1117:71",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "92e1187535bb76b225d8e283070e4f0aa8a371cc164898ab013f7acd78dacafa",
+          "qa_row_sha256": "427d09e639048c5e4e3def24738db21ec77d4673835ebba4973214e2767dfeb0",
+          "qa_text": "དན་རོགས་ \"dan rogs 1@4/ rog."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:1117:58",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "92e1187535bb76b225d8e283070e4f0aa8a371cc164898ab013f7acd78dacafa",
+          "qa_row_sha256": "9aa06387433a5283d4221c6359b9b74ccb698fa1c46a7f01dce224578146ea5f",
+          "qa_text": "དན་རོགས་ 'dan rogs auch dan grogs Ehemann,"
+        }
+      ],
+      "comparison_image": "14.jpg",
+      "comparison_image_sha256": "ea190a010fab425508fafaa45087f8fa7db6845d3700b43ccf50e9fe2552bd12",
+      "assessment": "corrected_article_start",
+      "observation": "Local dan da is a month; adjusted explicitly numbered 1 dan rogs defines husband/patron, with daṅ rogs variant.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbugs%20%E2%80%99byin/1",
+      "html_sha256": "233f2f0dff65a45a4d698b0b150bd6fdd6c04781d8669d8ed77c91497a9ec5f7",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:268:25",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "b07e224efd3cd242c7f778f7994f2986c82b669299e998d0325d7d2cbc6ec42e",
+          "qa_row_sha256": "96b865c98c0bdb20d4c85d06221927b98166ebe865ffb0cc5c92f3ab84edaf4f",
+          "qa_text": "Lex. dbugs ’byin skad ’byin pa „Atem ausstoßen, einen Laut hervorbringen“ (brDa)."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:383:81",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "9794a145a5ed34858cb70a1b94377d5b6513030bea342105ddcefcc132b006c8",
+          "qa_row_sha256": "2a9b20b0f8913c7978f6ad1cd3fa53f58c233be2c4544db390bddf3bea598455",
+          "qa_text": "བུགས་འབྱེན་ dbugs 'byin alttib. auch dbugs"
+        }
+      ],
+      "comparison_image": "15.jpg",
+      "comparison_image_sha256": "55947b93ec3dce188e8cd649cd6ba521f05f1933d299c825f45a999bc8d8ddad",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a lexicographic quotation; adjusted dbugs ’byin heading defines exhaling and refers to dbugs dbyuṅ.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbul/2",
+      "html_sha256": "c03e2e5f27281f3ce613be3bd429c5fb5dedf02dc6502d7dad3de314f0be7b18",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:423:88",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "417a89b6af5de16819a79e89eda0c1be0b0a299158dc5c34ef4019712c0d6bc7",
+          "qa_row_sha256": "f4e2bd042d715c0e3e5630ad6924f30c40216fcc769ba3602bf277a8bc264624",
+          "qa_text": "dbul bar - (metr.) „auch Edelsteinlampen"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:386:34",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "77c5a37fa8ac4f2e1c3dc21d008347920ec0ad6934a94b3302f13de940c759b2",
+          "qa_row_sha256": "bbd65d52f526ab1bc3372aa32c6e0e89769770ee74c426740245d55a51ec8f15",
+          "qa_text": "དབུལ་ 'dbul fur. zu 1?/)///."
+        }
+      ],
+      "comparison_image": "16.jpg",
+      "comparison_image_sha256": "a45ad0c759153eb48ca653d024c20bc8bd2117cdcbb60ef986c992c9ab0530a4",
+      "assessment": "corrected_article_start",
+      "observation": "Local is quotation; adjusted explicitly numbered 2 dbul is future of ’bul, giving/offering.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbya%E1%B9%85s/1",
+      "html_sha256": "38569a7016ba270d3a2a98430da811a1f2dbed1baaff259583b6510451f3d2a7",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:399:41",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "88421a48fc84d5f9b1fd6a46178ae2fc6c0917de7046dec81f16cfc6efe5b9ef",
+          "qa_row_sha256": "3596d14cc9b6531655c72636caf6c4f1723884ab93d04ff0d3234f034f0ad392",
+          "qa_text": "དབྱངས་ 'dbyaṅs"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:399:28",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "88421a48fc84d5f9b1fd6a46178ae2fc6c0917de7046dec81f16cfc6efe5b9ef",
+          "qa_row_sha256": "a8b583d3c374289506ffa97c344867d935ba968986ce1f7da1c1ace382421eae",
+          "qa_text": "དབྱངས་ 'dbyaṅs ermitteln; Zal ce — Anklage"
+        }
+      ],
+      "comparison_image": "17.jpg",
+      "comparison_image_sha256": "fcba15f12959ef6f5054e8c5e458761191c38d8ddf0ffc5328df07be4867d871",
+      "assessment": "corrected_article_start",
+      "observation": "Local explicitly numbered 2 dbyangs means disloyal; adjusted explicitly numbered 1 dbyangs means investigating, žal ce dbyangs.",
+      "homonym_assessment": "explicit_print_number_agrees",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbyug%20pa/1",
+      "html_sha256": "2729f3d83670bbcc3fe75b9e4e62e15f70a191aaa7cd63143dfbf5ea3fd7ee20",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_35_51:944:49",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "746e348014f2d2b07e267a8a43740cb8a9ab673cc6cc2e08b9d02dce3d65746f",
+          "qa_row_sha256": "e6366c3317d8ab14251455a7effb4a2270eb89143b15220dbd4b265f78863a65",
+          "qa_text": "kyi dbyug pa dan / ril bu dan / — gis ... mal"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_8_b:416:20",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "22d216041012e695f97d71212febb29e888749d520ed410e6c48e96019fb769b",
+          "qa_row_sha256": "a3af54cf17dfa9ea2ffb5d7e603a9fcd6ad51a15d080fc56151803b7fa630580",
+          "qa_text": "དབྱུག་པ་ dbyug pa auch dbyug, dbyig, dbyig pa"
+        }
+      ],
+      "comparison_image": "18.jpg",
+      "comparison_image_sha256": "43c0e0fcf020f36cf31db4d7d5ba3c876ad8375589e3b1ff2b2050972adf6b97",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a sbyor quotation; adjusted dbyug pa heading defines stick/staff with meditation example.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dka%E2%80%99%20spyad/1",
+      "html_sha256": "be0385bfe29f5335bcdcf68b2d45d977ecbdf1c48a2d8f83e01683146042a3de",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_35_51:287:54",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "59c911b04f1e46b1b603b054a798b022c36be8242bc8a179d8464ccd7bf851dc",
+          "qa_row_sha256": "b273f7254fc067cf96c107e8087873fb67ecf148fb45af164b4f08377740d5b1",
+          "qa_text": "Schülern: dka' spyad kyi sde, sla 'gyur gi sde"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:120:43",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "08fecc9431e3cf3e8482fdff816cf1f0cb4018f32614292ca9fd99da76eb39d1",
+          "qa_row_sha256": "f01b4f56a00acf7c6a3832c49516b225df5a98c7009a7f462ddb2f97ace496d1",
+          "qa_text": "དཀའ་སྤྱད་ dka’ spyad Mühe, Askese."
+        }
+      ],
+      "comparison_image": "19.jpg",
+      "comparison_image_sha256": "46ab1e8edca4edcc22aecb0c041ce72f72f559baab65fbd5c477e6ccfa505f7d",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a sde snod quotation; adjusted dka’ spyad heading defines effort/asceticism.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dkar%20nag/1",
+      "html_sha256": "ae4b470ee2f6ccce37633ac604d5385a4c94dcc172c806389052efd5a3d02ce0",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1026:77",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "07d0b58579fcf9433593cbb310c5f13b400af571c5997f9fbfa9a494977d1d1c",
+          "qa_row_sha256": "04ea57c3bd67495a0309a52782a42acc7d37d8eedd0e34515646999638861d0d",
+          "qa_text": "dkar nag mtshams su ~ nas „Jan-sras schoß"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:122:51",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "1d58ea5fa53acbe5592ad01d54903913e93f11379c446fce7af8d98f0ca72f8a",
+          "qa_row_sha256": "30fe20af703a1671de56d106cd151abb414490c2505d6935de0c759962622fff",
+          "qa_text": "དཀར་ནག་ dkar nag auch dkar gnag."
+        }
+      ],
+      "comparison_image": "20.jpg",
+      "comparison_image_sha256": "bb8e1988eabfa44c9aea59cf9dc8c17fe404a0e2c12a60b59e91e460f15a863c",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a theb quotation; adjusted dkar nag heading defines white and black, with dkar gnag variant.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20%C5%9Ba/2",
+      "html_sha256": "7f312797fe305ba35c6309e80c8ec57c89a1cfe0ab46fe208182577f4b2323e6",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:46:177",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "6a757bc3aa49d9abb1fef86d1b2beceef89d0a9d2fd60dd25a317f32be02e949",
+          "qa_row_sha256": "e78573ed66e51f9dcd40d2ee9256c12fa4d27576bae9a668d7543ec66de936de",
+          "qa_text": "ཀ་ཤ་ \"ka % ein Land oder Volk. - für skt. khasa."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:46:160",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "6a757bc3aa49d9abb1fef86d1b2beceef89d0a9d2fd60dd25a317f32be02e949",
+          "qa_row_sha256": "7c2e9a629e9c094ba4e2ea529f1a2311cdab38aa30c7473211119d9f2d51cc54",
+          "qa_text": "ཀ་ཤ་ ka sa schlagen, Schlag. - für skt. kasa"
+        }
+      ],
+      "comparison_image": "21.jpg",
+      "comparison_image_sha256": "0254639381782e86188894ebdea206bb7ba99b847f31ae65696d588e75291897",
+      "assessment": "corrected_article_start",
+      "observation": "Local ka śa identifies a people/country, Sanskrit khasa; adjusted ka śa means striking/blow, Sanskrit kaśā whip.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20so%20ri%20pa/1",
+      "html_sha256": "d95a44c27b0eea4874250a506adfff3ef9381e79bd0707c292724a81e48e7f84",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:47:165",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "2561c6947ebc0b803ff67cbc9224e8858e212f51b4ea1be9b85635fc90dc9cbb",
+          "qa_row_sha256": "0b87e0eb85aae4d4c3fa2041bd8b39f1d40e944c25ad77eb4ad04efdf29f72c4",
+          "qa_text": "„Kasoripa führte ausschließlich die Vajrayogini-Praxis aus“ (Tär 185,12); — (ThK 1:"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:47:161",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "2561c6947ebc0b803ff67cbc9224e8858e212f51b4ea1be9b85635fc90dc9cbb",
+          "qa_row_sha256": "e9a3276306d176ad5505c97fbcc30be562fc290ffa0532bbe9553356e487367f",
+          "qa_text": "ཀ་སོ་ རི་པ་ ka so ri pa der Siddha Kasoripa."
+        }
+      ],
+      "comparison_image": "22.jpg",
+      "comparison_image_sha256": "64dd465086366d59953fe53505dd7f2baf0ab29e1e26e83788486bd45fcd5ac8",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a later quotation about Kasoripa; adjusted heading identifies the siddha Ka so ri pa.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ko%20krad/1",
+      "html_sha256": "b0db5f38816b73885e66ef2b63edfa7b693d2d25c268902629ab4040e5d35bee",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:93:107",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "358c6b62642661fb7ad841bb17543f593f5385ff709edb40a237bc131f2a982d",
+          "qa_row_sha256": "bf8136cb43db7254b0f954f58b29e488c380aad255fb259379004b1c0cbc62fc",
+          "qa_text": "Lex. ko krad (Bon 19,16)."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:93:53",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "358c6b62642661fb7ad841bb17543f593f5385ff709edb40a237bc131f2a982d",
+          "qa_row_sha256": "91c11034613832c4efccc07fdb518214430712e6a7ad254ad8f5d88e6bdf611b",
+          "qa_text": "A: ཀྲད་ ko krad, auch ko skrad hartes Leder [für"
+        }
+      ],
+      "comparison_image": "23.jpg",
+      "comparison_image_sha256": "863ad06cb6ae5fedac46a8dcab0003ec74c9d8fa0ea97a60a5c5d37cbfbe6965",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a Lex quotation inside ko gyoṅ, hard leather; adjusted ko krad heading gives ko skrad variant and shoe-sole leather.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ko/2",
+      "html_sha256": "967340742678ac3691872cbdb084bbb6cb306bc550b4e635a379a00944a676be",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:93:209",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "358c6b62642661fb7ad841bb17543f593f5385ff709edb40a237bc131f2a982d",
+          "qa_row_sha256": "55b7aae3486216921d22365e1f1b473d1da296f9fa417f7b737859a81b3f9bf7",
+          "qa_text": "ཀོ; མཁན་ ko mkhan."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:92:129",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "0b3ea3a432b52323035d0c1fddc860f03261c4a763c50b9e0931b4fb48994993",
+          "qa_row_sha256": "f991bb9bbed91981c53c5531836c5fb06d7a3d97bd74683be0bfc5614d65779d",
+          "qa_text": "ཀོ་ 9, auch go Partikel nach Pronomina und"
+        }
+      ],
+      "comparison_image": "24.jpg",
+      "comparison_image_sha256": "69a747f5f23a471102ab20c170fd8ffd09260b3516d1b1759a41fa09946a2264",
+      "assessment": "corrected_article_start",
+      "observation": "Local kom khan is leatherworker; adjusted ko/go heading defines an emphatic particle after pronouns/nouns.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ku%20sa%20li/1",
+      "html_sha256": "d928f701ad89260f9976feb4a4a1620d9a85c6ad788fb30ca474482d955b7cab",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:60:194",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "02d14e6dec85b21c3efe3731a0a907c2401bd46a7ff1d4b57132cb94f7c7b7e5",
+          "qa_row_sha256": "73715faf1a63d7c8e290688fee128ca425bb5fa0d75ddc0462c35a3b593190a9",
+          "qa_text": "ku sa li. ~ zu skt. kusalin."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:60:95",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "02d14e6dec85b21c3efe3731a0a907c2401bd46a7ff1d4b57132cb94f7c7b7e5",
+          "qa_row_sha256": "4c746635f73d7787a82862b2bb0183e36459f5028a91b77cbeb404a74a8ceffe",
+          "qa_text": "ཀུ་ས་ལི་ ku sa li, auch ku su Iu. - skt. kusalin."
+        }
+      ],
+      "comparison_image": "25.jpg",
+      "comparison_image_sha256": "c3f3019ca642e44092b5c906fbc7d801060470179da394f32ecf71c15b4c6ca1",
+      "assessment": "corrected_article_start",
+      "observation": "Local ku su lu pa is a related yogin designation; adjusted ku sa li heading gives ku su lu and Sanskrit kuśalin, virtuous.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/kun%20la/1",
+      "html_sha256": "5fd0774f19381e23de40cfa308d06d6b7c67aed49e4d5f27cfd84e4a8c654868",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:161:7",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "8b03c4ca9d66daeae40539ff795442f7aef9e534bd0bd7e89899ebb82bcf9e42",
+          "qa_row_sha256": "a008cc63cf797204329cb59db5cd3c3217dee485befb42247d4565466b178fa5",
+          "qa_text": "nas kun la — sna 'jags mam par spel ba gal"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:86:129",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "a0702d2043ee2ed71d0fe1e6adecbd7535dc2e6cb80e298a9b5aa864048a2620",
+          "qa_row_sha256": "02a0dd6a69b247ad23397236962c93e548e3c31c7c77cf19834a314e10693200",
+          "qa_text": "“' kun la überall; immer; in jeder Weise,"
+        }
+      ],
+      "comparison_image": "26.jpg",
+      "comparison_image_sha256": "a0e9e29b062d99db150342f143dd8419e0ecec2e1a5f75918ec518c3d2052300",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a mig quotation; adjusted kun la heading defines everywhere/always/in every way.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/kwa%20cu/1",
+      "html_sha256": "f0c7b20b8c86eca878b97d087b215298468adb2fe05fdf63f3ab1b48e9b31edf",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:35:135",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "71590191f093fc2a2fbc1a50563f6b3c7fd7e6b4048743710cda54b02cbc0160",
+          "qa_row_sha256": "df8b43e84d41c4174925ed19d1a089b02f2059231c1af788e4eb885029cf72ef",
+          "qa_text": "drun-rtse in Kwa-cu“ (Nel 1117)."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:35:126",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "71590191f093fc2a2fbc1a50563f6b3c7fd7e6b4048743710cda54b02cbc0160",
+          "qa_row_sha256": "79e7df10a463916e3d08f02e74f52c546c4cf2e5ca719b6021553a33151432f8",
+          "qa_text": "IE kwa cu, auch kwa chu, ka chu Kurzf. kwa.-"
+        }
+      ],
+      "comparison_image": "27.jpg",
+      "comparison_image_sha256": "816538b641e1942fd0bf426261a88cc3ff33a346c0b908329cfb400ca60de5c2",
+      "assessment": "corrected_article_start",
+      "observation": "Local is sense 2 of the same article, place near bSam yas; adjusted kwa cu heading identifies Chinese Kua-chou and variants.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mi/3",
+      "html_sha256": "07bc62d8aba4c59ce4ffd7c838e68704209daf67cc9eace6f1083fce74d0e52e",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:96:51",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "02c3c9743be7e8956187ed56a3d51f1329d5706dd5da5ef64840be21b4bcc215",
+          "qa_row_sha256": "81036b5c912d14236d0a33b5033d8d9dfbc8840ea4c6bdacfba47ffee10abce4",
+          "qa_text": "al \"mi"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_9_m:97:53",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "803ee170bdc486d7c53bb98124d829e4e3175ac2d6205b45191782bb1cb34700",
+          "qa_row_sha256": "36d7e310e182f128381e2ad3d13b21ca32f1b4b23b08a4b5af3d385e7b419311",
+          "qa_text": "thams cad mi bde Zin sdug bsral bar son bas"
+        }
+      ],
+      "comparison_image": "28.jpg",
+      "comparison_image_sha256": "13b54dc383f7bdb9f2e319cda88420d9451571cd3041327e7e01e9f835c5d3fd",
+      "assessment": "both_wrong_article_start",
+      "observation": "Both are quotations/continuations within 3 mi, not its article beginning.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mu%20gnas/1",
+      "html_sha256": "8aae5109de8f34856625d792456e9bfa9334652d1b7d3422998e49be51f09983",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:182:7",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "2ee1c46f1730f5ef15ff65b473dfaed92a8b948d7068b256dd5c49f35c9a0474",
+          "qa_row_sha256": "77372dd2f6ddfd9aef22c175aaafdb58f7fbb427b59fe4971ecebeb90d65ea87",
+          "qa_text": "'oggi cha'! mu gnas nas pharoldu'gro'o \"es ist"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_9_m:189:10",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "8eedb547f4e9c2c0ae7d0e3c2d86dcee30a5317d8e86a9507e25df0e7d5f5e07",
+          "qa_row_sha256": "30b09a5f834fb63a6b19f88c33ee299dcd30d64aa656103a79183e1509a6bb62",
+          "qa_text": "ལུ་གྐནས་ mu gnas Stelle am Rand."
+        }
+      ],
+      "comparison_image": "29.jpg",
+      "comparison_image_sha256": "955b6ff19a1f424760150d5e6f23fb5ce904fe1fa9bd9bacf42c90f084b7d2db",
+      "assessment": "corrected_article_start",
+      "observation": "Local mu ’gram is edge; adjusted mu gnas heading defines a place at the edge, matching K 32 194a6.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mun%20pa/1",
+      "html_sha256": "bb0a82436315b81b70d3c9b8b70ab820a653d4b5da2e5165e83fdd16536276a2",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:197:48",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "470d59cca9bccf9c03b7f7702d11153f5634e51dd628d62e350badf9c81f89b9",
+          "qa_row_sha256": "7271220d306bc216f6820db9d94b6db41424b8ddddc8316cc31caddd4a9abb11",
+          "qa_text": "མུན་པ་ mun pa"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_9_m:196:62",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "56138b45e79a5d0fcea041c768c48aa121b87fe3e80af3aae29d9145cd3043a6",
+          "qa_row_sha256": "06c3bca41ced5d93cd2027b1f576224cd81f87e00d04c890dddbf043466d32d6",
+          "qa_text": "མུན་པ་ mun pa auch mun."
+        }
+      ],
+      "comparison_image": "30.jpg",
+      "comparison_image_sha256": "3bdfb5399e760dc7796913024367c8aded92443573f0130d5d8aae4784f3bdb2",
+      "assessment": "corrected_article_start",
+      "observation": "Local is running header; adjusted mun pa heading defines darkness and gives mun variant.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/rdo%20rje%20ldan/1",
+      "html_sha256": "c9f230e5b8352389657ca64a693f1e648d2ebd35554e11ab39a9233cfe4b6d3a",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:714:69",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "f7ca02e05930fbb38baad5baf08710116b173c43561a70efae975fd4f296c6ae",
+          "qa_row_sha256": "6251ae3eb640b79900d61b794e9792c225e53d38efbe124289c18140dbfb3ec3",
+          "qa_text": "„Jo-mo rDo-rje-ldan, eine Schülerin der"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_35_51:240:10",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "fe9d9c491189f035d04c051c854baa3bc8d25513c68d6a7dab107c0fcb7c944f",
+          "qa_row_sha256": "d7627b30c865ead5f0fc9a912d1c3247984952b98092b36287e0e3786fa15a86",
+          "qa_text": "mo rdo-rje-ldan, eine Schülerin der lHa-gcig"
+        }
+      ],
+      "comparison_image": "31.jpg",
+      "comparison_image_sha256": "367d1c8f96c1ae45426c648bd39097054d7d130f022679ed6f14666629934be0",
+      "assessment": "corrected_article_start",
+      "observation": "Local is quotation; adjusted rdo rje lden heading identifies a female disciple of lHa-gcig mdzes-ma.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/rnam%20grol/1",
+      "html_sha256": "687703d02b2919dce9003418214dcf5a2e9498910d444f1a821bb9f3c0135a51",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:17:134",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "b57220a24b52a1416937466e4bf826f6190f1ca829e0b0866c83e1280381c697",
+          "qa_row_sha256": "33a25ff13556d9e3dc7de256809132cca259c484ec79f23b9f193d53f936074d",
+          "qa_text": "11: 1-781] rNam grol lag bcans su gtod pa’i man nag zab mo tshan la ma nor ba mtshuns"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_35_51:556:51",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "91b2c71fd6f2e459d772632ca9895e4612cd4637ed24552f6bebf009b737c7cc",
+          "qa_row_sha256": "9f408e40b3944a69f428c02aa013d1b06d2bdc07c7cfa8ea7e0fd491dfcefc86",
+          "qa_text": "རྣམ་གྲོལ་ rnam grol."
+        }
+      ],
+      "comparison_image": "32.jpg",
+      "comparison_image_sha256": "abee8dc37d97e9665c05d62f04ecef787e1c916752bd6231791e2be770607d55",
+      "assessment": "corrected_article_start",
+      "observation": "Local is bibliography; adjusted rnam grol heading gives liberation abbreviation, air space, and monk senses.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/skabs%20phye/1",
+      "html_sha256": "94791e07c115ef9ede1b37459565fe560b9263d4afdaccb6c5821e97cf140eb2",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:174:174",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "cc28cbd83e6943d7b26c707c5d14d3b63d3220fe088855143800de89499b9095",
+          "qa_row_sha256": "af5c21631a4895d4ee8e45641a800379776bb48876ab02d1bd953a2531eb57f8",
+          "qa_text": "Lex. siehe skabs phye ba (brDa)."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:174:128",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "cc28cbd83e6943d7b26c707c5d14d3b63d3220fe088855143800de89499b9095",
+          "qa_row_sha256": "498c3cbec6ba38e91b8b8ac82b263eef9990c425fc2a131ef245dd10671123a3",
+          "qa_text": "སྐབས་ཕྱེ་ skabs phye auch skabs phyed pf. zu"
+        }
+      ],
+      "comparison_image": "33.jpg",
+      "comparison_image_sha256": "9d120ffbf724ef20f49ce17c70105654dba54f477112e43b1c8ab1a18189fcab",
+      "assessment": "corrected_article_start",
+      "observation": "Local is sense-2 continuation; adjusted skabs phye heading gives skabs phyed, past of skabs ’byed, opportunity/time senses.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/skag/1",
+      "html_sha256": "0aeac7dbd3b68c0659216039082bf671e666dff79444d623b6b0db73c9f24bb8",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_35_51:32:10",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "1075e04240491556aade20073bdbe138d0a72d5212208a6b536c712e2bd6eae6",
+          "qa_row_sha256": "62c734f4e3731287087c053725dce932df867bbf6e3aa4f540d4a12cd6c4763e",
+          "qa_text": "Mondhaus skag."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:168:75",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "ad667bab717736d0c130ffdbb63c3e2bd01da02ba7fdca2ac947ad4fe00995e8",
+          "qa_row_sha256": "9281eb8316c0ad8147bf345ee4ba35745c88c5be992d894caac72daf8404f9dc",
+          "qa_text": "NIT skag."
+        }
+      ],
+      "comparison_image": "34.jpg",
+      "comparison_image_sha256": "804fe1fefbf258f252a8f1a00785a26d9f8664f85dd4106425dab3a5f6b5d8bc",
+      "assessment": "corrected_article_start",
+      "observation": "Local gdens can lha mo designates the lunar mansion; adjusted skag heading identifies Aślesā/Āśleṣā.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/sku%20tshe/1",
+      "html_sha256": "b7ec6c1d06922294821360a258fbb12fdb58961c85971fbe0ce424f244bbfdc7",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:1016:4",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "616f2105f1f8ec6edc8d583dc420722068e31e130e54f95a26705f93b64b004b",
+          "qa_row_sha256": "dfbf9ddb611e50b9e4a953804af1e052a7f0c39053f3ecf9d6644ccb5f0715ba",
+          "qa_text": "sku tshe ~ ro „der Weise der Säkyas, hat ein"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:185:147",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "209644bd5f774a2c01c8b870d6f370826b3cbfc51acc7f4d7d167b59382a799b",
+          "qa_row_sha256": "081fd74c445d2fa094c90610ed0cf4f6d8ec263cba82f1f11fbd7eef310aeafb",
+          "qa_text": "སྐུ་ཚེ་ sku tshe resp. Leben, Lebenszeit, -spanne,"
+        }
+      ],
+      "comparison_image": "35.jpg",
+      "comparison_image_sha256": "767ec34fa2d8b5b5e5d61c4915809250dea488bce39d448765ce3a11270f52a2",
+      "assessment": "corrected_article_start",
+      "observation": "Local is another article’s running-header/quotation; adjusted sku tshe heading defines honorific life/lifespan.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/skyo%20med/1",
+      "html_sha256": "a7c892dced4652f96d53046e565a06ac45a0d0e3a3f0b0b3d731b35e293cc66f",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_35_51:571:11",
+          "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+          "raster_sha256": "1889ec66e3ca8d6f04a60ba2f0cec1808a3d612233173ad644772cfd759d016a",
+          "qa_row_sha256": "4cd7ee3e840a7c386e9d255225525b6726f461cc923998d5173510b3d427bd7b",
+          "qa_text": "རྣམ་པར་སྐྱོ་མེད་ mam par skyo med unermüd-"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:216:191",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "dc0c4fd29743fe23f1bfc8a9b6ef6f7caa709644ea17b0552f68b0c95a62bedf",
+          "qa_row_sha256": "939e407960a8ff4ee287283c4e00e28586e96c4eb32c43b9f6aade5d41e17466",
+          "qa_text": "gar skyo med „sorglos“, Bez. für die indi-"
+        }
+      ],
+      "comparison_image": "36.jpg",
+      "comparison_image_sha256": "bd23d96b947163a64831d3745b2510f51bbabfc752244d81df2c798333deff58",
+      "assessment": "corrected_article_start",
+      "observation": "Local rnam par skyo med is a compound meaning tireless; adjusted skyo med heading names the Indian gods, carefree.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/skyon%20nas%20brjod/1",
+      "html_sha256": "2fd351aea3d0c4d17135ac7701512aa6ab5485387a1377d792f22541b8de82dd",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_1_34:560:23",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "e1e5e8c4bcca63074f48b4b2f59e17cbbb581433e1c361d3cc9b76df1b8456f9",
+          "qa_row_sha256": "40f7738f4930c2620f1dc702e523adbce45773f7c5db9528df1055c298bb0af0",
+          "qa_text": "skyon nas brjod pa „man bgran: tadeln“"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:219:133",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "30efc6bc4cd324a325b14e74d3066c7174e551a241c11b7f54dae119a1320fb5",
+          "qa_row_sha256": "b8990d9fb48bc26627eabeb56149598c95a92d9d46ee9e962649cc8a54376ec0",
+          "qa_text": "skyon nas brjod pa“ (KlonD 741,3); skyon"
+        }
+      ],
+      "comparison_image": "37.jpg",
+      "comparison_image_sha256": "8cc07afd33500cf2f3e9ccc4e8d791313f366e17f602b42e8233d7af131fc026",
+      "assessment": "correct_article_wrong_start",
+      "observation": "Local is quotation inside rnan bgran; adjusted reaches skyon nas brjod article, but selected line is its Lex evidence below the true heading.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/skyu%20ru%20ra/1",
+      "html_sha256": "27bb072240b6c349e724270470417acbc1318cbbcbc0ad6239d41930e4bf4aa7",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_8_b:19:68",
+          "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+          "raster_sha256": "b6545401e99ca999482913b3769d934343609cbd0494d5794a87e40b61c6b274",
+          "qa_row_sha256": "0b0e7ef0a036893ef4f5217d17431d78428aeb6d9ecc8539e3d0042148b4fa5c",
+          "qa_text": "skyu ru ra dai /arura dan / — dan..."
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_1_34:200:190",
+          "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+          "raster_sha256": "438a4c15075ebfed6dc5938e1fe7e7d9fcc36d9d772ce6f312e1dadaeb8a9e7f",
+          "qa_row_sha256": "17ab6157d47605a22bab81b1f790463f36ff176200528c74ab09a3f84d6c1335",
+          "qa_text": "སྐྱུ་རུར་ skyu ru ra auch kyu ru ra Kurzf. skyu ru"
+        }
+      ],
+      "comparison_image": "38.jpg",
+      "comparison_image_sha256": "35fd4ee9f9fc7da1358cfcaa21f2ac8016970cfeab08deda1e5573fc839f45a2",
+      "assessment": "corrected_article_start",
+      "observation": "Local is a quotation under ba ru ra, Terminalia bellirica; adjusted skyu ru ra heading identifies medicinal myrobalan/Emblica with variants.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/smin%20phrag/1",
+      "html_sha256": "e654610e5f0963919f2efc6a75155e138c3dcf36d2f6e4468b86e572ddcd5d1b",
+      "candidates": [
+        {
+          "label": "local",
+          "anchor": "wts_9_m:371:39",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "20cd4e238c75f80dd588aab5b085c08dd4b937cd8a3ef0402504496c277ef931",
+          "qa_row_sha256": "3ff0ff5de5d70ef95372f1d6002afcfcf5df70b65409a3363ae9943305a180f3",
+          "qa_text": "mtsbams \"smin phrag: Stelle zwischen den"
+        },
+        {
+          "label": "adjusted",
+          "anchor": "wts_9_m:371:34",
+          "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+          "raster_sha256": "20cd4e238c75f80dd588aab5b085c08dd4b937cd8a3ef0402504496c277ef931",
+          "qa_row_sha256": "b487ad5ca769c032abebf3b8816a7659ca2d6fdb852ca981ddac1bd6bf2b1920",
+          "qa_text": "སྨིན་ཕྲག་ smin phrag auch smin dbrag."
+        }
+      ],
+      "comparison_image": "39.jpg",
+      "comparison_image_sha256": "3e76efe011d816fb4e22629d81d2c1452515d753f93ad17ec6447abffb6a6a9d",
+      "assessment": "corrected_article_start",
+      "observation": "Local is Lex evidence within the same article; adjusted smin phrag heading gives smin dbrag variant and space between eyebrows.",
+      "homonym_assessment": "not_independently_established",
+      "publication_eligible": false
+    }
+  ]
+}

@@ -30,11 +30,13 @@ def column_model(rows, geometry):
         else:
             groups[-1].append(x)
     centres = [median(g) for g in groups if len(g) >= 8]
-    expected = 4 if geometry['landscape'] else 2
     separated = all(b-a > .12*width for a,b in zip(centres, centres[1:]))
-    reliable = len(centres) == expected and separated and not geometry['rotation']
+    # Orientation alone establishes neither a spread nor its column count.
+    # Repeated left edges support a multi-column hypothesis; page-side identity
+    # remains a separate, unverified destination observation below.
+    reliable = 2 <= len(centres) <= 4 and separated and not geometry['rotation']
     return dict(centres=centres, status='coordinate_clusters' if reliable else 'ambiguous_columns',
-                expected_columns=expected, observations=len(edges),
+                observed_columns=len(centres), observations=len(edges),
                 coordinate_coverage=round(sum(bool(box(r)) for r in rows.values())/max(1,len(rows)),6))
 
 
@@ -109,7 +111,7 @@ def page_destination(rows, geometry, model, reviewed):
     elif not geometry['landscape']:
         result['geometry_status']='single_page_mediabox'
         result['candidates']=[dict(side='single',crop=geometry['mediabox'])]
-    elif model['status']=='coordinate_clusters':
+    elif model['status']=='coordinate_clusters' and len(model['centres']) == 4:
         # Content-derived inter-page whitespace, not 50% of physical width.
         left = [box(r)[2] for r in rows.values() if column_of(box(r),model) == 1]
         right = [box(r)[0] for r in rows.values() if column_of(box(r),model) == 2]
