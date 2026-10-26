@@ -29,10 +29,12 @@ def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--all-volumes',action='store_true',required=True)
     p.add_argument('--resume',action='store_true')
+    p.add_argument('--disable-reconstructed-intervals',action='store_true',help='ablation: retain the local 48-line segmentation with identical coordinate inputs')
     p.add_argument('--disable-sequence-reranking',action='store_true',help='retain local scores; compute sequence diagnostics only')
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--inputs',type=Path,default=ROOT/'work/html-print-inputs',
                    help='portable bundle from prepare_badw_alignment_inputs.py')
+    p.add_argument('--coordinate-inputs',type=Path,help='render-bound hOCR bundle from prepare_badw_coordinate_inputs.py')
     p.add_argument('--stop-after',help='Testing/recovery: exit after named atomic stage')
     args=p.parse_args(argv)
     output=args.output.resolve()
@@ -56,11 +58,19 @@ def main(argv=None):
         'expanded':ROOT/'data/badw_html_print_alignment.generated.json','baseline':ROOT/'data/badw_html_print_pages.json',
         'preparer':Path(__file__).with_name('prepare_badw_alignment_inputs.py'),
         'reconstruction':Path(__file__).with_name('badw_print_reconstruction.py'),
+        'coordinates':Path(__file__).with_name('badw_qa_pdf_coordinates.py'),
         'structure':Path(__file__).with_name('badw_print_structure.py'),
         'engine':Path(__file__).with_name('badw_html_print_engine.py'),'runner':Path(__file__),
         'certificate_compiler':ROOT/'scripts/badw_html_print_alignment.py',
         'facsimiles':ROOT/'scripts/badw_html_print_facsimiles.py',
         'matcher':ROOT/'scripts/badw_source_matcher.py','crosswalk':ROOT/'scripts/badw_print_crosswalk.py'}
+    if args.coordinate_inputs:
+        from prepare_badw_coordinate_inputs import validate_bundle
+        validate_bundle(args.coordinate_inputs, registry)
+        paths['coordinate_manifest'] = args.coordinate_inputs/'manifest.json'
+        paths['coordinate_preparer'] = Path(__file__).with_name('prepare_badw_coordinate_inputs.py')
+        for family in FAMILIES:
+            paths['coordinate:'+family] = args.coordinate_inputs/(family+'.jsonl')
     for family,label in FAMILIES.items():
         paths['qa:'+family]=ROOT/f'release/current/qa/{family}/{family}_line_zones.tsv'
         paths['scan:'+family]=ROOT/registry[label]['filename']
@@ -73,7 +83,7 @@ def main(argv=None):
     poppler=subprocess.run(['pdftotext','-v'],capture_output=True,text=True,check=True).stderr.splitlines()[0]
     configuration=dict(version=VERSION,inputs=hashes,python=platform.python_version(),
         pypdf=pypdf.__version__,sqlite=__import__('sqlite3').sqlite_version,poppler=poppler,
-        concurrency=1,sequence_reranking=not args.disable_sequence_reranking,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
+        concurrency=1,reconstructed_intervals=not args.disable_reconstructed_intervals,sequence_reranking=not args.disable_sequence_reranking,definition_safety_cap_lines=48,sequence_section_pages=3,sample_seed='20261025')
     identity=object_digest(configuration)
     pin=output/'inputs.json'
     if pin.exists():
@@ -110,7 +120,7 @@ def main(argv=None):
     stage('witnesses',lambda:index_witnesses(db,args.bodies,args.catalogue))
     stage('history',lambda:index_history(db,ROOT,history))
     for family in FAMILIES:
-        stage('pages:'+family,lambda f=family:index_family(db,ROOT,f,registry,output))
+        stage('pages:'+family,lambda f=family:index_family(db,ROOT,f,registry,output,args.coordinate_inputs))
     witnesses={sid:json.loads(body) for sid,body in db.execute('SELECT * FROM witnesses')}
     stage('starts',lambda:discover(db,witnesses))
     from badw_print_reconstruction import reconstruct, sequence_rerank
@@ -128,7 +138,7 @@ def main(argv=None):
         def match_family(f=family):
             n=0
             for (page,) in db.execute('SELECT page FROM pages WHERE family=? ORDER BY page',(f,)).fetchall():
-                n+=match_page(db,f,page,witnesses,frequencies)
+                n+=match_page(db,f,page,witnesses,frequencies,use_reconstructed_intervals=not args.disable_reconstructed_intervals)
                 if page%100==0:
                     print(f'  {f}: physical page {page}',flush=True)
             return dict(proposals=n)

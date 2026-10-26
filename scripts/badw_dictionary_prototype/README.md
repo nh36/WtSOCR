@@ -1728,3 +1728,155 @@ retaining sequence diagnostics; it is pinned in the run configuration. The same
 `work/html-print-reconstruction-hardening/sequence-changes.json` enumerates all 40
 changes and their evidence. These changes remain unassessed, not confirmed recoveries.
 The publication decision is independent of both scores and remains false.
+
+### QA-to-PDF coordinate reconciliation
+
+The coordinate runner can use either embedded PDF OCR or existing raster OCR.
+These are dependent readings of the same scan, not independent witnesses. The
+embedded text is retained even when raster OCR supplies the better coordinate
+map. Original QA text and OCR readings are never rewritten.
+
+Prepare a private JSON cache map with the four keys `wts_1_34`, `wts_35_51`,
+`wts_8_b`, and `wts_9_m`. Each value names its local cached `pages` directory,
+containing `pNNNN.png` and `pNNNN_A.hocr`. The existing locked line-anchor caches
+provide these assets. A fresh environment needs those OCR acquisitions as well
+as the four unchanged PDFs registered in `data/source_pdfs.tsv`; the preparer
+does not manufacture OCR or download sources. It requires Poppler `pdftoppm`,
+Pillow and pypdf.
+
+```bash
+python3 scripts/prepare_badw_coordinate_inputs.py \
+  --cache-map work/qa-coordinate-cache-map.json \
+  --output work/qa-coordinate-inputs --workers 4
+python3 scripts/run_badw_html_print_alignment.py --all-volumes \
+  --coordinate-inputs work/qa-coordinate-inputs \
+  --output work/html-print-coordinate-hocr --resume
+python3 scripts/report_badw_qa_pdf_coordinates.py \
+  --database work/html-print-coordinate-hocr/index.sqlite \
+  --baseline work/html-print-reconstruction-hardening/witnesses.jsonl \
+  --output work/html-print-coordinate-hocr/coordinate-diagnostics.json
+python3 scripts/evaluate_badw_qa_pdf_coordinates.py \
+  --database work/html-print-coordinate-hocr/index.sqlite \
+  --benchmark data/qa_pdf_coordinates/benchmark.json \
+  --images work/qa-coordinate-benchmark \
+  --output work/html-print-coordinate-hocr/coordinate-evaluation.json
+```
+
+Preparation verifies each registered PDF checksum and page count, reproduces
+each cached raster at 300 dpi, and requires identical decoded RGB pixels.
+Only then are hOCR pixel boxes transformed to PDF points. Checksummed per-page
+checkpoints permit restart; family JSONL files and their final manifest are
+atomic. Rotated pages or nonzero MediaBox origins require an explicit transform
+and fail rather than receive an assumed one. Empty hOCR is recorded as
+unsupported, never interpreted as proof of a blank source page. The runner pins
+the manifest and all four data files in its input identity. Keep these private
+inputs outside every served directory.
+
+Reconciliation indexes normalized character grams, tests compact spatial OCR
+spans, and joins close baseline fragments without assuming extraction order.
+Distinctive matches anchor bounded monotone character alignment, supporting
+one-to-many and many-to-one line breaks. Repeated short text remains ambiguous
+unless neighbouring distinctive matches isolate its position. Coordinates are
+never interpolated for unmatched text. Normalization is an alignment key only;
+it does not change historical spellings, punctuation or Tibetan source text.
+
+Reading-order hypotheses measure column clusters instead of prescribing two
+columns for portrait pages or four for landscape pages. A column hypothesis
+does not itself certify a spread side, printed folio or crop. Article intervals
+still require the existing 95% page coordinate coverage and bounded starts;
+partial intervals retain the uncertain fallback. No new reader links or page
+derivatives are authorised by this layer.
+
+The checked-in coordinate benchmark records coarse source-image regions,
+registered checksums, QA-row identities, render hashes and development/held-out
+splits. These are purposive, heading-heavy observations by the development
+agent, not an independent scholarly lexical gold standard. Its evaluator tests
+whether a predicted centre lies in the recorded region; it does not certify
+complete article extents, homonyms, crops or population-level precision.
+
+The completed raster-OCR run processes all 18,038 HTML witnesses and 3,466
+physical pages. Coordinate recovery is measured against all 352,244 QA rows:
+
+| Scan family | Previous located | Reconciled located | QA rows | Coverage |
+| --- | ---: | ---: | ---: | ---: |
+| 1–34 | 86,474 | 153,333 | 178,435 | 85.93% |
+| 35–51 | 13,763 | 86,665 | 91,855 | 94.35% |
+| 8-b | 14,091 | 45,565 | 48,290 | 94.36% |
+| 9-m | 8,294 | 31,429 | 33,664 | 93.36% |
+| Total | 122,622 | 316,992 | 352,244 | 89.99% |
+
+There are 3,943 ambiguous and 31,309 unmatched rows. The diagnostic comparison
+also identifies 3,643 disjoint old/new placements; these need assessment rather
+than being assumed to be improvements. Of 57 coarse source-image observations,
+47 reconciled centres fall in their observed regions and ten remain unlocated;
+the previous method has 18 within, three outside and 36 unlocated. The held-out
+subset has 22 within and six unlocated. This small purposive benchmark supports
+improved location recovery, not an independently estimated corpus precision.
+
+The reconstructed index has 2,630 `coordinate_bounded` hypotheses, compared
+with zero before reconciliation. This means the mechanical coordinate conditions
+passed, **not** that article ownership was verified. Source inspection finds a
+valid boundary between `ba tshwa` (8-b:17:63) and `ba tshwa can` (17:77), but also
+an interval from 35–51:267:16 to :39 that misses the intervening unlocated
+second `ldoṅs` heading at :38. A proposed start at 9-m:17:29 is continuation text.
+Page-level 95% coverage cannot establish that every intervening heading was
+recovered. Boundary recognition and text ownership remain the principal blocker;
+the 79,976 cross-column/page alternatives are not certified continuations.
+
+The PR #14 hardening retains `unverified_article_extent`,
+`uncertain_column_membership` and `unverified_definition_ownership` even when
+a coordinate interval replaces the local text window. Explicit evidence states
+separate recovered coordinates, a geometric reading-order hypothesis and a
+plausible interval from unverified lexical boundaries and definition ownership.
+These intervals remain proposals and cannot authorise reader attachment.
+
+For a controlled segmentation ablation, run the same runner and pinned inputs
+into a separate output directory with `--disable-reconstructed-intervals`.
+This retains the local 48-line segmentation while using the same coordinate
+inputs. `--disable-sequence-reranking` remains an independent switch; use it
+in both runs to isolate segmentation effects from sequence changes. The
+coordinate comparison report retains before/after top predictions and changed
+evidence spans, all marked unassessed. It also records intervening start
+hypotheses, token-overlap changes and the original local rankings. A candidate
+inside an evidence span is a warning, not a verified article boundary.
+
+The completed hardening ablation uses identical inputs and enables sequence
+reranking in both runs. Reconstructed intervals change 49 local top predictions
+and 48 final tops, 404 definition-evidence records and 2,881 line spans among
+49,653 shared retained proposals. These are controlled presentation/evidence
+changes, not independently verified corrections. Neither reviewed attachment
+status nor reviewed pages change; machine-publication eligibility remains zero.
+The reconstructed run takes 1,911.28 seconds (2.467 GB peak RSS); the fallback
+run takes 2,159.20 seconds (2.501 GB peak RSS). These counts concern retained
+top-ten proposals, not all 524,606 scored proposals.
+
+Overlapping OCR-span alternatives are retained separately from competing
+disjoint locations. Their presence does not count as independent observations
+or as visual confirmation. Test dependencies include Pillow (`>=11.3,<13`),
+which is required for source-bound raster checks and must be installed in CI.
+
+The original coordinate run takes 1,983.02 seconds with 1.506 GB peak RSS. Its all-cached resume
+takes 99.53 seconds and reproduces witness, validation and review-report hashes.
+It yields 2,457 provisionally supported, 13,173 review-required and 2,408 unresolved
+cases, with zero machine-publication eligibility. All 163 reviewed attachments
+retain their status and page. Relative to the PR #13 baseline, 259 tops change
+and 2,086 shared proposals change definition evidence; these changes are not
+independently verified recoveries. The current sequence stage changes 138 tops.
+
+The forty frozen PR #13 sequence comparisons have separate checksum-bound
+development-agent source observations in
+`data/qa_pdf_coordinates/sequence_assessments.json`: 37 move to an observed
+article start, one reaches the article but misses its heading, and two retain
+incorrect starts. Only six comparisons establish an explicit printed numeral;
+the remaining homonym identities are not established. These observations do
+not label the 138 new adjustments or demonstrate complete lexical precision.
+Use the evaluator's `--sequence-witnesses` option with the frozen PR #13 output
+to check their prediction, source, QA-row and image identities.
+
+Fresh-reader preservation checks retain all 29,878 identities, all 11,840
+byte-identical PDF witness bodies, 163 reviewed links and 48 byte-identical page
+derivatives. The cross-reference census remains 7,626 resolved / 748 residual.
+Chrome desktop/mobile journeys retain apostrophe equivalence (61 results),
+`gyu` (447 results), global navigation and source/citation journeys, with no
+browser errors or entry-body requests during search. No complete original scan,
+private path or source symlink is introduced into the reader.

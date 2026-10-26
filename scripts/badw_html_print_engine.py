@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v4'
+VERSION = 'html-print-engine-v6'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -214,7 +214,7 @@ def locate_line(text, layout, inverted):
                 method='unique embedded-OCR line token agreement; not visual verification')
 
 
-def index_family(db, root, family, registry, output):
+def index_family(db, root, family, registry, output, coordinate_inputs=None):
     from pypdf import PdfReader
     source = registry[FAMILIES[family]]
     pdf = root / source['filename']
@@ -223,9 +223,16 @@ def index_family(db, root, family, registry, output):
     grouped = itertools.groupby(csv.DictReader(qa.open(), delimiter='\t'), key=lambda r: int(r['page']))
     qa_pages = iter(grouped)
     current = next(qa_pages, (None, []))
+    from badw_qa_pdf_coordinates import reconcile
+    coordinate_counts = collections.Counter()
     rows_count = 0
+    hocr_stream = (coordinate_inputs/(family+'.jsonl')).open() if coordinate_inputs else None
     for number, layout in enumerate(pdf_layout(pdf, output / (family + '.bbox.xml')), 1):
-        db.execute('INSERT INTO layouts VALUES (?,?,?)',(family,number,json.dumps(layout,sort_keys=True)))
+        hocr = json.loads(next(hocr_stream)) if hocr_stream else None
+        if hocr and (hocr['physical_page'] != number or hocr['source_sha256'] != source['sha256']):
+            raise ValueError('coordinate page/source mismatch')
+        spatial_layout = hocr['lines'] if hocr else layout
+        db.execute('INSERT INTO layouts VALUES (?,?,?)',(family,number,json.dumps(spatial_layout,sort_keys=True)))
         page = reader.pages[number-1]
         width, height = float(page.mediabox.width), float(page.mediabox.height)
         features = dict(source=FAMILIES[family], source_sha256=source['sha256'], physical_page=number,
@@ -237,15 +244,38 @@ def index_family(db, root, family, registry, output):
             for token in tokens(row['text']):
                 inv[token].append(i)
         if current[0] == number:
-            for row in current[1]:
-                evidence = dict(row, coordinate=locate_line(row['line_text'], layout, inv))
+            qa_rows = list(current[1])
+            embedded_maps = reconcile(qa_rows, layout)
+            reconciled = reconcile(qa_rows, spatial_layout) if hocr else embedded_maps
+            for row, mapping, embedded in zip(qa_rows, reconciled, embedded_maps):
+                if hocr:
+                    mapping['authority'] = 'render-bound cached hOCR; dependent reading of original scan'
+                    mapping['hocr_sha256'] = hocr['hocr_sha256']
+                    mapping['raster_sha256'] = hocr['raster_sha256']
+                    for candidate in [mapping.get('coordinate'), *mapping.get('alternatives', [])]:
+                        if candidate:
+                            candidate['hocr_text'] = candidate.pop('embedded_text', '')
+                    chosen, other = mapping.get('coordinate'), embedded.get('coordinate')
+                    if chosen and other:
+                        a,b = chosen['box'],other['box']
+                        if min(a[2],b[2]) > max(a[0],b[0]) and min(a[3],b[3]) > max(a[1],b[1]):
+                            chosen['embedded_text'] = other['embedded_text']
+                legacy = locate_line(row['line_text'], layout, inv)
+                coordinate_counts[mapping['status']] += 1
+                coordinate_counts['legacy_located'] += bool(legacy)
+                evidence = dict(row, coordinate=mapping['coordinate'], coordinate_reconciliation=mapping,
+                                legacy_coordinate=legacy, embedded_reconciliation=embedded, qa_source_sha256=object_digest(row))
                 db.execute('INSERT INTO lines VALUES (?,?,?,?)', (family, number, int(row['line']), json.dumps(evidence, ensure_ascii=False)))
                 rows_count += 1
             current = next(qa_pages, (None, []))
         db.execute('INSERT INTO pages VALUES (?,?,?)', (family, number, json.dumps(features, sort_keys=True)))
+    if hocr_stream:
+        if next(hocr_stream, None) is not None:
+            raise ValueError('extra coordinate pages')
+        hocr_stream.close()
     if current[0] is not None or len(reader.pages) != number:
         raise ValueError('QA or extracted PDF page outside registered physical range')
-    return dict(physical_pages=number, qa_lines=rows_count)
+    return dict(physical_pages=number, qa_lines=rows_count, coordinates=dict(sorted(coordinate_counts.items())))
 
 
 def index_history(db, root, inputs=None):
@@ -322,7 +352,7 @@ def discover(db, witnesses):
         if not matches and row['zone'] != 'headword_line':
             continue
         aid = f'{family}:{page}:{line}'
-        record = dict(anchor=aid, qa_sha256=object_digest({k:v for k,v in row.items() if k != 'coordinate'}),
+        record = dict(anchor=aid, qa_sha256=row['qa_source_sha256'],
             text=row['line_text'], zone=row['zone'], coordinate=row['coordinate'],
             historical_c6=aid in c6, matches=matches,
             status='article-start hypothesis; not a verified boundary')
@@ -367,7 +397,20 @@ def evidence_score(witness, article, frequencies, total):
                 citation_tokens=citations)
 
 
-def match_page(db, family, page, witnesses, frequencies):
+def coordinate_interval_evidence(extent, reconstructed):
+    """Geometry supplies a candidate span, never lexical ownership authority."""
+    extent['evidence_states'] = dict(
+        coordinates_recovered=reconstructed.get('status') == 'coordinate_bounded',
+        reading_order='geometric_hypothesis',
+        interval='plausible_heading_interval',
+        lexical_boundaries='unverified', definition_ownership='unverified')
+    extent['risks'] = sorted(set(extent['risks']) | {
+        'unverified_article_extent', 'uncertain_column_membership',
+        'unverified_definition_ownership'})
+    return extent
+
+
+def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_intervals=True):
     rows = {line: json.loads(body) for line, body in db.execute('SELECT line,body FROM lines WHERE family=? AND page=? ORDER BY line', (family,page))}
     starts = [(line, json.loads(body)) for line, body in db.execute('SELECT line,body FROM starts WHERE family=? AND page=? ORDER BY line', (family,page))]
     proposals = []
@@ -381,10 +424,10 @@ def match_page(db, family, page, witnesses, frequencies):
         reconstructed_row=db.execute('SELECT body FROM extents WHERE aid=?',(start['anchor'],)).fetchone()
         reconstructed=json.loads(reconstructed_row[0]) if reconstructed_row else {}
         # Only complete coordinate coverage permits replacing the local fallback.
-        refs=reconstructed.get('refs',[]) if reconstructed.get('status')=='coordinate_bounded' else []
+        refs=reconstructed.get('refs',[]) if use_reconstructed_intervals and reconstructed.get('status')=='coordinate_bounded' else []
         if refs:
             extent['lines']=[((p,n),json.loads(db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',(family,p,n)).fetchone()[0])['line_text']) for p,n in refs]
-            extent['risks']=[r for r in extent['risks'] if r not in ('uncertain_column_membership','unverified_article_extent')]
+            extent=coordinate_interval_evidence(extent, reconstructed)
             extent['boundary_method']='source_coordinate_interval'
         selected = extent['lines']
         for sid, heading_evidence in start['matches'].items():
@@ -421,7 +464,11 @@ def match_page(db, family, page, witnesses, frequencies):
             proposal = dict(sid=sid, anchor=start['anchor'], family=family, physical_page=page,
                 line=line, heading_text=start['text'], heading_evidence=heading_evidence,
                 historical_c6=start['historical_c6'], historical_identity_edge=(sid,start['anchor']) in historical,
-                independent_embedded_ocr_agreement=bool(start['coordinate']), coordinate=start['coordinate'],
+                # These OCR readings describe the same scan. Neither a located
+                # hOCR box nor embedded-text agreement is independent scholarship.
+                independent_embedded_ocr_agreement=False,
+                embedded_ocr_text_available=bool((start['coordinate'] or {}).get('embedded_text')),
+                coordinate=start['coordinate'],
                 evidence_lines=[n for n,_ in own_selected], printed_evidence=own_article,
                 evidence_sha256=object_digest(own_selected), html_sha256=witness['html_sha256'],
                 definition_component_bindings=witness['definition_components'], definition_evidence=proof,
