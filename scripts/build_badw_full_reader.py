@@ -159,6 +159,7 @@ def main():
     ap.add_argument('--witness-ids', type=Path, help='JSON list: validate only these witnesses (investigation output, never a complete reader)')
     ap.add_argument('--baseline-reader', type=Path, help='Certified reader required for affected-witness relationship comparison')
     ap.add_argument('--print-facsimiles', type=Path, help='Prepared, reviewed HTML-only original-print manifest')
+    ap.add_argument('--editorial-collection', action='store_true', help='Include the local-only editorial collection from registered scans')
     args = ap.parse_args()
     if bool(args.witness_ids) != bool(args.baseline_reader):
         ap.error('--witness-ids and --baseline-reader must be supplied together')
@@ -362,9 +363,17 @@ def main():
     assets = ROOT/'scripts/badw_dictionary_prototype'
     for name in ('index.html','app.js','style.css'): shutil.copyfile(assets/name,out/name)
     shutil.copytree(assets/'fonts', out/'fonts')
+    if args.editorial_collection:
+        from build_badw_editorial_collection import build as build_editorial
+        build_editorial(out/'editorial')
+        page = (out/'index.html').read_text()
+        page = page.replace('</header>', '<p><a href="editorial/">Editorial Prefaces and Introductions</a> · Local research collection</p></header>', 1)
+        (out/'index.html').write_text(page)
+        editorial_page = out/'editorial/index.html'
+        editorial_page.write_text(editorial_page.read_text().replace('</header>', '<p><a href="../">Return to the dictionary</a></p></header>', 1))
     if facsimiles:
         write(out/'print_facsimiles.json', dict(**{k: facsimiles.data[k] for k in ('alignment_sha256', 'certificate_sha256') if k in facsimiles.data}, reviews_sha256=facsimiles.data['reviews_sha256'], registry_sha256=facsimiles.data['registry_sha256'], pages={k: p for k, p in facsimiles.data['pages'].items() if p['id'] in facsimiles.used}, witnesses=facsimiles.data['witnesses']))
-    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.absolute(), args.baseline_store.absolute(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/badw_html_print_pages.json', ROOT/'data/badw_html_print_alignment.json', ROOT/'data/badw_html_print_alignment.generated.json', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), ROOT/'scripts/prepare_badw_catalogue.mjs', *sorted((ROOT/'scripts/vendor/tibetan-sort-js').glob('*')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
+    write(out/'manifest.json', dict(entries=len(catalog), frozen_witnesses=29877, supplemental_witnesses=len(supplements), supplemental_sources=str(args.supplements.resolve().relative_to(ROOT)), source_counts=dict(collections.Counter(e['source_kind'] for e in catalog)), census=dict(census), entry_index_sha256=index.sha256, catalog_sha256=digest((out/'data.json').read_bytes()), annotation_conflict_witnesses=len(conflicts), inputs=[dict(path=str(p.relative_to(ROOT)),sha256=file_hash(p)) for p in [args.projections.absolute(), args.baseline_store.absolute(), args.supplements.resolve(), INDEX, SEEDS, BIB/'bibliography.sqlite', BIB/'source_rows.jsonl', BIB/'print_occurrences.jsonl', ROOT/'data/source_pdfs.tsv', ROOT/'data/badw_html_print_pages.json', ROOT/'data/badw_html_print_alignment.json', ROOT/'data/badw_html_print_alignment.generated.json', ROOT/'data/reviewed_badw_semantic_annotations.jsonl', *([ROOT/'data/badw_editorial_collection.json', ROOT/'data/bibliography_apparatus_editorial_pages.jsonl'] if args.editorial_collection else []), *sorted((ROOT/'data').glob('bibliography*.tsv')), *sorted((ROOT/'scripts').glob('*.py')), ROOT/'scripts/prepare_badw_catalogue.mjs', *sorted((ROOT/'scripts/vendor/tibetan-sort-js').glob('*')), *sorted(q for q in assets.rglob('*') if q.is_file())]]))
     print(json.dumps(dict(reader=str(out), census=dict(census))))
     write(out/'build_timing.json', dict(phases=dict(timings), seconds=time.monotonic()-started))
 

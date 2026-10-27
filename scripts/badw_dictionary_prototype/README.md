@@ -1957,3 +1957,42 @@ Chrome desktop/mobile journeys pass without browser errors or search body fetche
 The full clean-environment Python suite has 2,198 passes and the two inherited
 bibliography-checksum and residual-ledger failures; release reproduction retains
 69 inherited differences. No release evidence is changed.
+
+## Editorial Prefaces and Introductions (local research)
+
+Build the separate collection with:
+
+```bash
+python3 scripts/build_badw_editorial_collection.py --output work/editorial-reader
+```
+
+Alternatively add `--editorial-collection` to the full-reader build. This opt-in
+adds a separate navigation link; documents never enter the lexical search index.
+Serve the resulting directory locally, rather than deploying it externally.
+
+The collection uses the reviewed apparatus inventory and registered scans in
+`data/source_pdfs.tsv`; these private PDFs must already exist locally. The builder
+checks the inventory and scan checksums and records the text spans, source page,
+crop geometry and derivative checksum. It extracts shared single-page PDFs without
+rasterising the scans. Individual reviewed gutter positions are specified in
+`data/badw_editorial_collection.json`; page-box cropping is visual, not redaction.
+Complete scans and private source paths are never copied into the served tree.
+No external distribution permission is established by this build.
+
+Eight documents cover the available Lieferungen 1, 3 and 24 introductions or
+prefaces, Band 6 and Band 8 editorial notices, and the related Franke, Uebach and
+Panglung memorials. There are 24 source sections and 32 printed-page views.
+Bibliographies and imprints are excluded. Only the Franke memorial has a reviewed
+transcription in the inventory; all other text is explicitly labelled unreviewed
+OCR. Facing-page OCR can have interleaved reading order, and the alphabet table
+in Lieferung 1 is particularly unreliable. The complete available text is
+readable alongside its facsimiles, but it is not a proofread digital edition.
+Authorship is shown only where established; missing metadata stays explicit.
+Portrait pages contain their available OCR captions, not invented descriptions.
+
+Focused tests: `python3 -m pytest tests/test_badw_editorial_collection.py -q`.
+Browser checks, after serving an integrated build:
+
+```bash
+BADW_READER_URL=http://127.0.0.1:8830 node tests/badw_editorial_collection.browser.cjs
+```

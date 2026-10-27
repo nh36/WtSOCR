@@ -1,0 +1,360 @@
+{
+  "inventory_sha256": "46ea0c90fa76cb8730044050b3962a4d06ed53bb43fc87b9a09cf7935814cb0d",
+  "geometry_basis": "Local facsimile inspection; individual gutter positions. Page boxes are visual crops, not redaction.",
+  "documents": [
+    {
+      "id": "delivery01-introduction",
+      "title": "Vorwort · Einleitung",
+      "volume": "Lieferung 1",
+      "category": "Preface and introduction",
+      "authors": [
+        "Herbert Franke (Vorwort)",
+        "Helga Uebach (Einleitung)"
+      ],
+      "sections": [
+        {
+          "scan_page": 4,
+          "views": [
+            {
+              "side": "right",
+              "folio": "vii",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 5,
+          "views": [
+            {
+              "side": "right",
+              "folio": "ix",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 6,
+          "views": [
+            {
+              "side": "left",
+              "folio": "x",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xi",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 7,
+          "views": [
+            {
+              "side": "left",
+              "folio": "xii",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xiii",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 8,
+          "views": [
+            {
+              "side": "left",
+              "folio": "xiv",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xv",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 9,
+          "views": [
+            {
+              "side": "left",
+              "folio": "xvi",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xvii",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 10,
+          "views": [
+            {
+              "side": "left",
+              "folio": "xviii",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xix",
+              "gutter_fraction": 0.5
+            }
+          ]
+        },
+        {
+          "scan_page": 11,
+          "views": [
+            {
+              "side": "left",
+              "folio": "xx",
+              "gutter_fraction": 0.5
+            },
+            {
+              "side": "right",
+              "folio": "xxi",
+              "gutter_fraction": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery03-preface",
+      "title": "Vorwort zur dritten Lieferung",
+      "volume": "Lieferung 3",
+      "category": "Preface",
+      "authors": [
+        "Thomas O. Höllmann",
+        "Jens-Uwe Hartmann"
+      ],
+      "sections": [
+        {
+          "scan_page": 101,
+          "views": [
+            {
+              "side": "right",
+              "folio": "i",
+              "gutter_fraction": 0.473
+            }
+          ],
+          "start": "Das Akademienprogramm"
+        }
+      ]
+    },
+    {
+      "id": "delivery24-introduction",
+      "title": "Ergänzende Hinweise",
+      "volume": "Lieferung 24",
+      "category": "Editorial introduction",
+      "authors": [],
+      "sections": [
+        {
+          "scan_page": 835,
+          "views": [
+            {
+              "side": "right",
+              "folio": "i",
+              "gutter_fraction": 0.486
+            }
+          ],
+          "start": "Ergänzende Hinweise"
+        },
+        {
+          "scan_page": 836,
+          "views": [
+            {
+              "side": "left",
+              "folio": "ii",
+              "gutter_fraction": 0.491
+            },
+            {
+              "side": "right",
+              "folio": "iii",
+              "gutter_fraction": 0.491
+            }
+          ]
+        },
+        {
+          "scan_page": 837,
+          "views": [
+            {
+              "side": "left",
+              "folio": "iv",
+              "gutter_fraction": 0.492
+            },
+            {
+              "side": "right",
+              "folio": "v",
+              "gutter_fraction": 0.492
+            }
+          ]
+        },
+        {
+          "scan_page": 838,
+          "views": [
+            {
+              "side": "left",
+              "folio": "vi",
+              "gutter_fraction": 0.498
+            }
+          ],
+          "end_before": "\nLiteratur- und Abkürzungsverzeichnisse\n1. Abkürzungen"
+        }
+      ]
+    },
+    {
+      "id": "band06-uebach-memorial",
+      "title": "Dr. Helga Uebach (19. Juni 1940 – 8. Februar 2021)",
+      "volume": "Band 6",
+      "category": "Memorial",
+      "authors": [],
+      "sections": [
+        {
+          "scan_page": 334,
+          "views": [
+            {
+              "side": "single",
+              "folio": "i"
+            }
+          ]
+        },
+        {
+          "scan_page": 335,
+          "views": [
+            {
+              "side": "single",
+              "folio": "ii"
+            }
+          ]
+        },
+        {
+          "scan_page": 336,
+          "views": [
+            {
+              "side": "single",
+              "folio": "iii"
+            }
+          ]
+        },
+        {
+          "scan_page": 337,
+          "views": [
+            {
+              "side": "single",
+              "folio": "iv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "band06-editorial",
+      "title": "Hinweise der Herausgeber",
+      "volume": "Band 6",
+      "category": "Editorial notice",
+      "authors": [],
+      "sections": [
+        {
+          "scan_page": 344,
+          "views": [
+            {
+              "side": "single",
+              "folio": "unnumbered"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "band08-panglung-memorial",
+      "title": "Dr. Jampa Losang Panglung (26. September 1939 – 19. August 2022)",
+      "volume": "Band 8",
+      "category": "Memorial",
+      "authors": [],
+      "sections": [
+        {
+          "scan_page": 3,
+          "views": [
+            {
+              "side": "single",
+              "folio": "i"
+            }
+          ]
+        },
+        {
+          "scan_page": 4,
+          "views": [
+            {
+              "side": "single",
+              "folio": "ii"
+            }
+          ]
+        },
+        {
+          "scan_page": 5,
+          "views": [
+            {
+              "side": "single",
+              "folio": "iii"
+            }
+          ]
+        },
+        {
+          "scan_page": 6,
+          "views": [
+            {
+              "side": "single",
+              "folio": "iv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "band08-editorial",
+      "title": "Hinweise der Herausgeber",
+      "volume": "Band 8",
+      "category": "Editorial notice",
+      "authors": [],
+      "sections": [
+        {
+          "scan_page": 9,
+          "views": [
+            {
+              "side": "single",
+              "folio": "vii"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery15-franke-memorial",
+      "title": "Nachruf",
+      "volume": "Lieferung 15",
+      "category": "Memorial",
+      "authors": [
+        "Die Herausgeber und die Mitarbeiter"
+      ],
+      "sections": [
+        {
+          "scan_page": 520,
+          "views": [
+            {
+              "side": "right",
+              "folio": "unnumbered",
+              "gutter_fraction": 0.438
+            }
+          ]
+        }
+      ],
+      "subject": "Herbert Franke"
+    }
+  ]
+}
