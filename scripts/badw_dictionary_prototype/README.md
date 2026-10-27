@@ -1957,3 +1957,57 @@ Chrome desktop/mobile journeys pass without browser errors or search body fetche
 The full clean-environment Python suite has 2,198 passes and the two inherited
 bibliography-checksum and residual-ledger failures; release reproduction retains
 69 inherited differences. No release evidence is changed.
+
+### Page-first linking pilot (local research)
+
+PR #15 is merged at `cf59fe7852f856d2d5c841cf7372a2f4d15ef422`.
+The subsequent pilot reuses its proposals, rather than running another article
+reconstruction experiment. A useful page link needs an actual article heading,
+its physical scan page, an established printed-page side/crop, and discriminating
+lexical/homonym evidence. Complete article reconstruction is normally unnecessary:
+the existing 163 reviewed attachments use source-bound heading and identity
+assertions, not a requirement to reconstruct every article's complete text.
+Neither a matching running header nor an unnumbered heading establishes an
+editorial numbered homonym.
+
+The historical identity graph accounts for the 18,038 HTML witnesses as 163
+reviewed attachments, 5,560 dual-field unconfirmed candidates, 4,691 single-field
+candidates, 1,036 competing exact candidates and 6,588 without a candidate. These
+are evidence categories, **not proof that every HTML entry occurs in the four
+registered scans**. The available crosswalks are incomplete; canonical printed
+page numbers do not themselves establish editorial witness identity.
+
+Build a bounded local review pack using existing, checksum-verified single-page
+derivatives:
+
+```bash
+python3 scripts/build_badw_page_link_pilot.py \
+  --proposals work/article-ownership-full-v2/witnesses.jsonl \
+  --facsimiles work/html-print-boundary-correction/pages/manifest.json \
+  --output work/page-link-pilot-v2
+```
+
+This selects 205 unaccepted candidates on 41 physical pages (45 printed-page
+views), including a fixed-seed 40-case assessment sample. Selection deliberately
+requires existing reviewed geometry and therefore does not estimate coverage on
+unreviewed scan layouts. The pack contains only shared single-page derivatives,
+never complete source volumes or private paths. It grants no attachment authority.
+
+`data/badw_page_link_pilot.json` separately records source-image observations,
+rejections and deferrals. Its first 57 observations cover eight printed pages;
+these are developer-agent observations, not independent scholarly certification,
+and have not added reader links. Earlier visual review was not timed, so no
+links-per-hour claim can be derived from it. Validate its exact witness, scan,
+geometry, pilot and image identities before reusing observations:
+
+```bash
+python3 scripts/build_badw_page_link_pilot.py \
+  --pilot work/page-link-pilot-v2/pilot.json \
+  --validate-observations data/badw_page_link_pilot.json \
+  --images work/page-link-pilot-visual
+```
+
+An observation remains separate from the existing reviewed source certificate.
+Neither editing a result status nor changing a score authorises a reader link.
+The pilot must report verified links actually delivered, rejected/deferred cases
+and measured review effort before any recommendation to scale.

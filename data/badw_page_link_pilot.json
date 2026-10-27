@@ -1,0 +1,1165 @@
+{
+  "version": 1,
+  "policy": "Developer-agent source-image observations, not independent scholarly certification or reviewed source-identity assertions. No reader attachment authority. Unnumbered print does not establish editorial homonym 1.",
+  "pilot_sha256": "aada235a5be6688efc77e9b3172858fa38456fa60860d41d093a95ea1dfc0fa5",
+  "review_time": {
+    "historical_elapsed_seconds": null,
+    "reason": "Earlier visual review was not timed; throughput cannot be inferred."
+  },
+  "observations": [
+    {
+      "family": "wts_1_34",
+      "page_key": "v1-p19",
+      "page": {
+        "source": "WtS_1-34",
+        "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+        "physical_page": 42,
+        "volume": 1,
+        "printed_page": 19,
+        "side": "right",
+        "crop": [
+          439,
+          0.0,
+          892.44,
+          632.76
+        ],
+        "sha256": "b12c9a2d74eaa9f418340bc9a2998862591c15e489b71d3d62ef372d14a9ab01",
+        "filename": "0d72156e728b2405492bd4efbe11a8f3b788f706e3ed8b512215aa91f10b3ede.pdf"
+      },
+      "image_sha256": "55fcfc063c5a85b66cfec6270b10080920799baf5c34dbd83b4fb3721900bc8b",
+      "reading": "Right page, folio 19; ka ya sta medicinal plant with Sanskrit equivalent; ka yaṅ rtse highest; ka yig letter ka; ka ye cross-reference. Full gutter text visible."
+    },
+    {
+      "family": "wts_1_34",
+      "page_key": "v1-p18",
+      "page": {
+        "source": "WtS_1-34",
+        "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+        "physical_page": 42,
+        "volume": 1,
+        "printed_page": 18,
+        "side": "left",
+        "crop": [
+          0.0,
+          0.0,
+          439,
+          632.76
+        ],
+        "sha256": "3e5252c8fb9554ecb29b54d737d4bb776213ab4818462e385c03089783bfbeb8",
+        "filename": "69ca5e8d3bc953db52257d4c2f63916975454ef101cd31f846355cb9fd9887b5.pdf"
+      },
+      "image_sha256": "dcced0afaa29db9d3f1e0a03ce202b5f3519987bdb06d72db029f2a1dc5de60c",
+      "reading": "Left page, folio 18. kā tsa lin da soft cloth continues into right column; ka tsi li ban place; ka rtsam oats; ka rtsal monastery; ka rtsom alphabetic poem. ka tshal and ka dzi li ban headings occur on the facing printed page 19. HTML karma śataṃ differs from printed karma śatam."
+    },
+    {
+      "family": "wts_35_51",
+      "page_key": "v5-p361",
+      "page": {
+        "source": "WtS_35-51",
+        "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+        "physical_page": 108,
+        "volume": 5,
+        "printed_page": 361,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          465.0,
+          671.0
+        ],
+        "sha256": "8f01d6ec87c057d19a3968303bb3b94f157f368ddbd924226a1b9d3d1abf6892",
+        "filename": "c24c181e6f8a854700ce7a7b45046cc77a450e61ed7bbe90ee5dee69f808304c.pdf"
+      },
+      "image_sha256": "f0b2d015cbd2761f139a61ecb345636df5546a1b78c356975e17ac585325c637",
+      "reading": "mdun khur divination continues into right column; mdun gros plan; mdun cog table; mdun du ñe bar gnas assist; mdun du lta look; mdun du bdar cross-reference; mdun du bsdogs pa prepared continues. rkya is a quotation, phyag rten a synonym, neither an independent heading here."
+    },
+    {
+      "family": "wts_9_m",
+      "page_key": "v9-p13",
+      "page": {
+        "source": "WtS_9-m",
+        "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+        "physical_page": 17,
+        "volume": 9,
+        "printed_page": 13,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          469.92,
+          679.68
+        ],
+        "sha256": "0c82580222a490a65f2a391b1e0c19e7bf161f91f1aeeca64243755823913ffa",
+        "filename": "de625408f7d0f1b9419a0735e61e246ce641d1fd443fbc9c53fe6a9202edb661.pdf"
+      },
+      "image_sha256": "9fc210ee24f590221efc2a18ce255b8f573005b933a908ca9a74e6eb3cbfcedf",
+      "reading": "ma skyes pa epithet of Brahman; ma kha ma ti Mohammed; ma mkhal cross-reference. Upper left continues ma skyes dgra; line 29 continuation is not a new heading."
+    },
+    {
+      "family": "wts_8_b",
+      "page_key": "v8-p3",
+      "page": {
+        "source": "WtS_8-b",
+        "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+        "physical_page": 13,
+        "volume": 8,
+        "printed_page": 3,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          473.04,
+          679.2
+        ],
+        "sha256": "8f1f71e92868a8772e0a10be5fba4ea556b2044c73a7795dabca99c979762017",
+        "filename": "3cddac4abcdd56520b44ae1b8dd592ba7f55865bdea069a82f5149c2cb9ed2f3.pdf"
+      },
+      "image_sha256": "4ed4fc3ddbe64dde5ec3f9679fbb03e4f64f4ebb325455de2571b1705ef72d1e",
+      "reading": "ba glaṅ cross-reference; ba glaṅ rdzas utpala plant; ba rgya can spider; ba lci cow dung; ba ’jo mkhan cow milker; ba gñis pa two-sided. ba yig cin occurs as alternative under ba gcin; its independent reference is on page 8, not here."
+    },
+    {
+      "family": "wts_35_51",
+      "page_key": "v5-p354",
+      "page": {
+        "source": "WtS_35-51",
+        "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+        "physical_page": 101,
+        "volume": 5,
+        "printed_page": 354,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          477.0,
+          673.0
+        ],
+        "sha256": "1a8acffe79a9e73c4eee94b2dcecf85c2f783aca7d4fabad21eac6d6028d5307",
+        "filename": "7737656aca92f956f79c0b4e0871814050cad2da16f1605a10e7414695eb3c2c.pdf"
+      },
+      "image_sha256": "1e0403ddc50fb8b661f024adbc5befe9364c87b71b447e746268dc9b52716289",
+      "reading": "mda’ doṅ quiver; mda’ snun byed bow; mda’ ’phen bow; mda’ ’phoṅ rwa archery ground; mda’ bo che javelin. dbu rgyan occurs in citation, nu ma ba in definition, ’phoṅ inside compound: these are not the proposed independent articles."
+    },
+    {
+      "family": "wts_8_b",
+      "page_key": "v8-p8",
+      "page": {
+        "source": "WtS_8-b",
+        "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+        "physical_page": 18,
+        "volume": 8,
+        "printed_page": 8,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          482.4,
+          683.76
+        ],
+        "sha256": "e14bce2dbda7e6b1a75313880ae5cb05cac3e8573ee899ce6cc31b489937c874",
+        "filename": "29eda0375f2ff9e66f0380da612ea91f003edc50e113be451b0b86f1c49610e4.pdf"
+      },
+      "image_sha256": "7ee2078cf7e511f630f8ea603c3b8c363adb598511602094d609ebfb7ca51363",
+      "reading": "ba rdzi herdsman; ba yar cow calved last year; bā yi mchog sbyin Godāvarī; ba yi dug plant; ba ra dhva dza cross-reference (HTML dhwa differs); ba ra na ga coral. Printed folio and full margins visible."
+    },
+    {
+      "family": "wts_9_m",
+      "page_key": "ma12",
+      "page": {
+        "source": "WtS_9-m",
+        "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+        "physical_page": 16,
+        "volume": 9,
+        "printed_page": 12,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          459.36,
+          680.64
+        ],
+        "sha256": "6a133929a1e1242e2207596a2e79ba52a7265e70b22f710cb0cd5ae053fefa36",
+        "filename": "869cff191beaf061fcea1c6abe14bbe8aa8d317214882bdb84e22412640a7bde.pdf"
+      },
+      "image_sha256": "3f0e516fb03c24185cca7b27820890440d7858d985c8b0ee5d3dbaf6db440332",
+      "reading": "Explicit ⁵ma lower thing; ma kī goddess, Sanskrit Māmakī; ma ku ra mirror; ma ke na cross-reference; ma klas contempt; ma skyes dgra Ajātaśatru continues. ma bi is a reference under ⁵ma, mā ma kī part of ma kī evidence, not separate headings.",
+      "image_filename": "v9-p12.png"
+    }
+  ],
+  "candidates": [
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20rma%20%C5%9Ba%20ta%E1%B9%83/1",
+      "html_sha256": "8db834c328ca144662e442499b1de1661e3ee5a1535d69dd1ad276decb4b2ae4",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:25",
+      "headword": {
+        "loc": "ka rma śa taṃ",
+        "tibetan": "ཀ་རྨ་ཤ་ཏཾ་"
+      },
+      "homonym": "1",
+      "observation_status": "deferred",
+      "reason": "Printed śatam and editorial śataṃ differ; identity has not been adjudicated.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rma/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20rma/1",
+      "html_sha256": "a788d4480c63820b071faaf079e0cb4e60c569d8aacb5e2c2952b81a90acc66b",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:25",
+      "headword": {
+        "loc": "ka rma",
+        "tibetan": "ཀ་རྨ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20smad/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20smad/1",
+      "html_sha256": "a332face5481aebc94650ed3f049d493a299322db07295a52d75878b96b13adf",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:26",
+      "headword": {
+        "loc": "ka smad",
+        "tibetan": "ཀ་སྨད་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20tsa%20lin%20da/1",
+      "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20tsa%20lin%20da/1",
+      "html_sha256": "acca869d4a30ae066d0864681ed72e09c644ab6ab2113b6bc52d4649513b3733",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:43",
+      "headword": {
+        "loc": "kā tsa lin da",
+        "tibetan": "ཀཱ་ཙ་ལིན་ད་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20tsi%20li%20ban/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20tsi%20li%20ban/1",
+      "html_sha256": "3f6b347e9fa11f18df306ef4c2c5ef31002a5ba1682ea3b7f0f9783fb5f149f4",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:78",
+      "headword": {
+        "loc": "ka tsi li ban",
+        "tibetan": "ཀ་ཙི་ལི་བན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsam/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsam/1",
+      "html_sha256": "1575c2e7b8c444331153798af7037b250ab1f70466fc8fc9eb699d8db38bace6",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:93",
+      "headword": {
+        "loc": "ka rtsam",
+        "tibetan": "ཀ་རྩམ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsal/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsal/1",
+      "html_sha256": "fa335ca7cf6c945895a83ea43ee9ad8c5bea7d3629496da0c9b14ae4260345b7",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:96",
+      "headword": {
+        "loc": "ka rtsal",
+        "tibetan": "ཀ་རྩལ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mal%20tro/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mal%20tro/1",
+      "html_sha256": "82c959b0886333bb736808f12f4d56fce20f44f0e17fe87b1dc8595fbf25ef6a",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:97",
+      "headword": {
+        "loc": "mal tro",
+        "tibetan": "མལ་ཏྲོ་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20rtsom/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20rtsom/1",
+      "html_sha256": "dbc01005bca407f68186316395d3852e4dc06bd8830deffa530b401fd425c7c5",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:105",
+      "headword": {
+        "loc": "ka rtsom",
+        "tibetan": "ཀ་རྩོམ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20tshal/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20tshal/1",
+      "html_sha256": "4f2aead6ac577568b8ae8cec73b995d14dc522bbf74cd7ff699c74cb048245dd",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:112",
+      "headword": {
+        "loc": "ka tshal",
+        "tibetan": "ཀ་ཚལ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20dzi%20li%20ban/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20dzi%20li%20ban/1",
+      "html_sha256": "d07bb8d842e7c3cf5f4cd302f3dd39d08e0b4bdd03751b9ff90439e7767157ff",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:114",
+      "headword": {
+        "loc": "ka dzi li ban",
+        "tibetan": "ཀ་ཛི་ལི་བན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/kwa%20%E2%80%99od%20mchog%20grags%20pa/1",
+      "source_url": "https://wts-digital.badw.de/lemma/kwa%20%E2%80%99od%20mchog%20grags%20pa/1",
+      "html_sha256": "66b98c31a409564ff09f02a5f658d99b25f6d2ac9bb6a2631904ef637cd13a45",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:142",
+      "headword": {
+        "loc": "kwa ’od mchog grags pa",
+        "tibetan": "ཀྭ་འོད་མཆོག་གྲགས་པ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ya%20sta/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ya%20sta/1",
+      "html_sha256": "e52c635b0c09a8d0b931842434d80fe4e99027c95c12324f4303841977161e1a",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:162",
+      "headword": {
+        "loc": "ka ya sta",
+        "tibetan": "ཀ་ཡ་སྟ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20yig/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20yig/1",
+      "html_sha256": "e6fc06394c0595ca41aa8614a326faff6166bb982bb3ed561686e7af23792917",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:179",
+      "headword": {
+        "loc": "ka yig",
+        "tibetan": "ཀ་ཡིག་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ye/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ye/1",
+      "html_sha256": "7f56f5f698920b27373210739c053219adfc8ce20589dca6a274ca1d2f324199",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_1_34",
+      "physical_page": 42,
+      "anchor": "wts_1_34:42:188",
+      "headword": {
+        "loc": "ka ye",
+        "tibetan": "ཀ་ཡེ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%20rgyan/1",
+      "source_url": "https://wts-digital.badw.de/lemma/dbu%20rgyan/1",
+      "html_sha256": "813512df0c900d0bbc513337db22ee7fb4568f822dad74d2a52491a9f32d4c91",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:5",
+      "headword": {
+        "loc": "dbu rgyan",
+        "tibetan": "དབུ་རྒྱན་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%20rgyan/2",
+      "source_url": "https://wts-digital.badw.de/lemma/dbu%20rgyan/2",
+      "html_sha256": "d5500b6cdda660e43e9424f05bde61c090a3ebb237ded85bee12dcda89783e69",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:5",
+      "headword": {
+        "loc": "dbu rgyan",
+        "tibetan": "དབུ་རྒྱན་"
+      },
+      "homonym": "2",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20do%E1%B9%85/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20do%E1%B9%85/1",
+      "html_sha256": "55380ba73dd8585dbf1034f7bf2071eb2c49c279cd8a4814b2781e11951a70a6",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:18",
+      "headword": {
+        "loc": "mda’ doṅ",
+        "tibetan": "མདའ་དོང་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20snun%20byed/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20snun%20byed/1",
+      "html_sha256": "084e26ed73fbf534b9f8f6feadfe1f44ef9df427a7754a62ab1f0c2107ff169d",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:25",
+      "headword": {
+        "loc": "mda’ snun byed",
+        "tibetan": "མདའ་སྣུན་བྱེད་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/nu%20ma%20ba/1",
+      "source_url": "https://wts-digital.badw.de/lemma/nu%20ma%20ba/1",
+      "html_sha256": "768090f50a58eabdd999ca505689f55c721f7b5d569cf38544a3661a8dcf83f4",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:47",
+      "headword": {
+        "loc": "nu ma ba",
+        "tibetan": "ནུ་མ་བ་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99phen/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99phen/1",
+      "html_sha256": "7e57cf03af0bd9404e45d1bca2f0a3fcbcefee31767995d349aaddb63561bcf2",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:62",
+      "headword": {
+        "loc": "mda’ ’phen",
+        "tibetan": "མདའ་འཕེན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99pho%E1%B9%85/1",
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99pho%E1%B9%85/1",
+      "html_sha256": "340f098e66cff9505349daaface0fb6ca010a12e3d4fd346f42e9e7b0df72284",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:66",
+      "headword": {
+        "loc": "’phoṅ",
+        "tibetan": "འཕོང་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/%E2%80%99pho%E1%B9%85/2",
+      "source_url": "https://wts-digital.badw.de/lemma/%E2%80%99pho%E1%B9%85/2",
+      "html_sha256": "683b9cde3a102d093d4627505b3a1aa2c31a4544fa06ccd117b59ace900985dd",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:66",
+      "headword": {
+        "loc": "’phoṅ",
+        "tibetan": "འཕོང་"
+      },
+      "homonym": "2",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99pho%E1%B9%85%20rwa/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99pho%E1%B9%85%20rwa/1",
+      "html_sha256": "44d64fb2190e787c5c0274e84e3fd607aca88234a302d2cf0d8466ccf4edeacf",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:66",
+      "headword": {
+        "loc": "mda’ ’phoṅ rwa",
+        "tibetan": "མདའ་འཕོང་རྭ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20bo%20che/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20bo%20che/1",
+      "html_sha256": "985ee25936d06320f06cb1184204b086120b28c15054617fa7ab1a3ed8404d12",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 101,
+      "anchor": "wts_35_51:101:70",
+      "headword": {
+        "loc": "mda’ bo che",
+        "tibetan": "མདའ་བོ་ཆེ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/rkya/2",
+      "source_url": "https://wts-digital.badw.de/lemma/rkya/2",
+      "html_sha256": "c1095f00f973466964c898ddc414aaff72eb3bd08980d15528c9fc96911e1417",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:12",
+      "headword": {
+        "loc": "rkya",
+        "tibetan": "རྐྱ་"
+      },
+      "homonym": "2",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20khur/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20khur/1",
+      "html_sha256": "4c7b75d616b57465949404b6cdbb445dc6115bd2fefb97fb0e3c74bdcd26df41",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:37",
+      "headword": {
+        "loc": "mdun khur",
+        "tibetan": "མདུན་ཁུར་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20gros/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20gros/1",
+      "html_sha256": "6fa9997710a92aeae0f92c04094272adc362d49143077759f9ca1b219d1889d5",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:49",
+      "headword": {
+        "loc": "mdun gros",
+        "tibetan": "མདུན་གྲོས་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20cog/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20cog/1",
+      "html_sha256": "57170e1c56d2ff150e6b2dcd78441914f9ec03bbd62b4c30692007c20c9288ac",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:53",
+      "headword": {
+        "loc": "mdun cog",
+        "tibetan": "མདུན་ཅོག་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/phyag%20rten/1",
+      "source_url": "https://wts-digital.badw.de/lemma/phyag%20rten/1",
+      "html_sha256": "973f1078887582b7c517f983a1c7072544f2c4bdf9c94d342a994293a3a0db8f",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:58",
+      "headword": {
+        "loc": "phyag rten",
+        "tibetan": "ཕྱག་རྟེན་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20du%20%C3%B1e%20bar%20gnas/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20du%20%C3%B1e%20bar%20gnas/1",
+      "html_sha256": "a2f75d3b65ca21313dff793b27771cb1257ceaa46b9ac4d79de60706061d2374",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:68",
+      "headword": {
+        "loc": "mdun du ñe bar gnas",
+        "tibetan": "མདུན་དུ་ཉེ་བར་གནས་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20du%20lta/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20du%20lta/1",
+      "html_sha256": "cb30de53f12bcf69e60dbed1cc229e568e42fc73595b693d8d191420001a3124",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:74",
+      "headword": {
+        "loc": "mdun du lta",
+        "tibetan": "མདུན་དུ་ལྟ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20du%20bdar/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20du%20bdar/1",
+      "html_sha256": "e847c3c4c213535011b89b8a2680ce8d4838911b3a75246f8a4317bee0d43bec",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:78",
+      "headword": {
+        "loc": "mdun du bdar",
+        "tibetan": "མདུན་དུ་བདར་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mdun%20du%20bsdogs%20pa/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mdun%20du%20bsdogs%20pa/1",
+      "html_sha256": "8ec0f4bf4dcf2216d3df958c105302fa9ea2548cd9eb109c450e1cdb0f5393ff",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_35_51",
+      "physical_page": 108,
+      "anchor": "wts_35_51:108:79",
+      "headword": {
+        "loc": "mdun du bsdogs pa",
+        "tibetan": "མདུན་དུ་བསྡོགས་པ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20gla%E1%B9%85/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20gla%E1%B9%85/1",
+      "html_sha256": "ec9eb9bf42ec5bdd71b3834e7ab83426b551fbe4c12daf8f4290cf93903e267c",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:30",
+      "headword": {
+        "loc": "ba glaṅ",
+        "tibetan": "བ་གླང་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20gla%E1%B9%85%20rdzas/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20gla%E1%B9%85%20rdzas/1",
+      "html_sha256": "94894ca704acc9997d40fce19ef2136d23c28f086782a31aef0fbf18eea28e07",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:31",
+      "headword": {
+        "loc": "ba glaṅ rdzas",
+        "tibetan": "བ་གླང་རྫས་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20rgya%20can/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20rgya%20can/1",
+      "html_sha256": "99d71894026b502092c7e1bacbfa434a194e8476a0d487c7f7e3345f04a94540",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:38",
+      "headword": {
+        "loc": "ba rgya can",
+        "tibetan": "བ་རྒྱ་ཅན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20yi%20gcin/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20yi%20gcin/1",
+      "html_sha256": "31e9890eb05503a5e25817694c989d16262ca29c7c01e9f83af92a40b4f8c1b2",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:60",
+      "headword": {
+        "loc": "ba yi gcin",
+        "tibetan": "བ་ཡི་གཅིན་"
+      },
+      "homonym": "1",
+      "observation_status": "deferred",
+      "reason": "Alternative appears under ba gcin; independent reference heading is on another printed page.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20lci/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20lci/1",
+      "html_sha256": "5e282d1941a9baa034579f852fc765acd214a8109a096ab49890d799d1f9ab3c",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:63",
+      "headword": {
+        "loc": "ba lci",
+        "tibetan": "བ་ལྕི་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20%E2%80%99jo%20mkhan/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20%E2%80%99jo%20mkhan/1",
+      "html_sha256": "f75bfab503adac11ea629e71414bddb1705fc4f7b6691e9338e3df1c9e91cec2",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:71",
+      "headword": {
+        "loc": "ba ’jo mkhan",
+        "tibetan": "བ་འཇོ་མཁན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20g%C3%B1is%20pa/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20g%C3%B1is%20pa/1",
+      "html_sha256": "8e9c562a461ce2e0299aaf363210f3376852693f03d929e861d0a7b1c5b72e81",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 13,
+      "anchor": "wts_8_b:13:74",
+      "headword": {
+        "loc": "ba gñis pa",
+        "tibetan": "བ་གཉིས་པ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20rdzi/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20rdzi/1",
+      "html_sha256": "5e9de65b6875104aa1df87a654b6fe93f07f43731e13d791ee5ad4083bbb9b78",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:26",
+      "headword": {
+        "loc": "ba rdzi",
+        "tibetan": "བ་རྫི་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20yar/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20yar/1",
+      "html_sha256": "e50059b888375c93df41044dfc6631f074813aad4c21de61ce027d92e35599b9",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:54",
+      "headword": {
+        "loc": "ba yar",
+        "tibetan": "བ་ཡར་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/b%C4%81%20yi%20mchog%20sbyin/1",
+      "source_url": "https://wts-digital.badw.de/lemma/b%C4%81%20yi%20mchog%20sbyin/1",
+      "html_sha256": "a12695437603052d9e2e2fd460b95a5217786fd78534a5e243f49cfdedd45493",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:59",
+      "headword": {
+        "loc": "bā yi mchog sbyin",
+        "tibetan": "བཱ་ཡི་མཆོག་སྦྱིན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20yi%20dug/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20yi%20dug/1",
+      "html_sha256": "dab8ab67e9c119646b6cd47f1c1ed8cf1b1c94ca0f3d41befc10e8c7f77052c5",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:65",
+      "headword": {
+        "loc": "ba yi dug",
+        "tibetan": "བ་ཡི་དུག་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20ra%20dhwa%20dza/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20ra%20dhwa%20dza/1",
+      "html_sha256": "4e33420039521d57a97ecbf0b9480d71164fc5a31a1812f82054f12989e08c8a",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:68",
+      "headword": {
+        "loc": "ba ra dhwa dza",
+        "tibetan": "བ་ར་དྷྭ་ཛ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ba%20ra%20na%20ga/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ba%20ra%20na%20ga/1",
+      "html_sha256": "598850e5a2d825ae28b6e1666e77b8cfe755568403160eed5a155486bf41c797",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_8_b",
+      "physical_page": 18,
+      "anchor": "wts_8_b:18:69",
+      "headword": {
+        "loc": "ba ra na ga",
+        "tibetan": "བ་ར་ན་ག་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20bi/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20bi/1",
+      "html_sha256": "6e43d9807a66263df86ea8d845d85ce224ea47e6af7ec07c024470a3102b3c19",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:7",
+      "headword": {
+        "loc": "ma bi",
+        "tibetan": "མ་བི་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20k%C4%AB/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20k%C4%AB/1",
+      "html_sha256": "1c79b13a1bf46c3335c1b25223f6fa8575f25a8b9131784a8fc1b7bc2c4b6fcc",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:14",
+      "headword": {
+        "loc": "ma kī",
+        "tibetan": "མ་ཀཱི་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+      "source_url": "https://wts-digital.badw.de/lemma/m%C4%81%20ma%20k%C4%AB/1",
+      "html_sha256": "67db358b023289c7a032fd07d3050d06704b841b3cc201d739fb8531f426c46b",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:19",
+      "headword": {
+        "loc": "mā ma kī",
+        "tibetan": "མཱ་མ་ཀཱི་"
+      },
+      "homonym": "1",
+      "observation_status": "rejected_proposed_article",
+      "reason": "Observed text belongs to a quotation, synonym or neighbouring compound rather than this independent HTML article; see page observation.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ku%20ra/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20ku%20ra/1",
+      "html_sha256": "57acd2f87e2f36460c04ab4002d368e6c16090826befcd24d83fe9864f3930d7",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:25",
+      "headword": {
+        "loc": "ma ku ra",
+        "tibetan": "མ་ཀུ་ར་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20ke%20na/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20ke%20na/1",
+      "html_sha256": "0dd59d27079ef50142968f2dbc38a8a678f2e70553ceafc1eb9c2946e4c3ce02",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:27",
+      "headword": {
+        "loc": "ma ke na",
+        "tibetan": "མ་ཀེ་ན་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20klas/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20klas/1",
+      "html_sha256": "28ab8188df55b44989f50a77dd2c4847a961e58e214e56c9cbd51fd75955aaa2",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:31",
+      "headword": {
+        "loc": "ma klas",
+        "tibetan": "མ་ཀླས་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20skyes%20dgra/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20skyes%20dgra/1",
+      "html_sha256": "1aa3d5a6633b8c298afe3da8f0287f7b8a5cd5e9dc7bb0797257f1c6ac6fab31",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 16,
+      "anchor": "wts_9_m:16:58",
+      "headword": {
+        "loc": "ma skyes dgra",
+        "tibetan": "མ་སྐྱེས་དགྲ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20skyes%20pa/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20skyes%20pa/1",
+      "html_sha256": "99f9d374ee1a4b5a20b5577633ff3d60a790c4fc2c3f2adeafc3be4792d2fef7",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 17,
+      "anchor": "wts_9_m:17:25",
+      "headword": {
+        "loc": "ma skyes pa",
+        "tibetan": "མ་སྐྱེས་པ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20kha%20ma%20ti/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20kha%20ma%20ti/1",
+      "html_sha256": "cd1237a13d89424b3812d59f8f879b6f1f57c284c95d3db79f1e7cdd3eea1151",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 17,
+      "anchor": "wts_9_m:17:44",
+      "headword": {
+        "loc": "ma kha ma ti",
+        "tibetan": "མ་ཁ་མ་ཏི་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ma%20mkhal/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ma%20mkhal/1",
+      "html_sha256": "1e6b0af044c35f3fbcb477b5f41dd7a429a39ec4bb0db344d51aeeff325d22ea",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "family": "wts_9_m",
+      "physical_page": 17,
+      "anchor": "wts_9_m:17:73",
+      "headword": {
+        "loc": "ma mkhal",
+        "tibetan": "མ་མཁལ་"
+      },
+      "homonym": "1",
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
+      "eligible_for_original_print_link": false
+    }
+  ],
+  "counts": {
+    "printed_pages_observed": 8,
+    "physical_pages_observed": 7,
+    "candidates_observed": 57,
+    "new_verified_links": 0
+  }
+}
