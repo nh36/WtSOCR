@@ -1880,3 +1880,80 @@ Chrome desktop/mobile journeys retain apostrophe equivalence (61 results),
 `gyu` (447 results), global navigation and source/citation journeys, with no
 browser errors or entry-body requests during search. No complete original scan,
 private path or source symlink is introduced into the reader.
+
+### Article boundaries and evidence ownership experiment
+
+The article-ownership engine adds source-only heading hypotheses from leading
+Tibetan, QA zones and measured indentation, line height and preceding spacing.
+Page furniture remains separate. Column models require measured support rather
+than an assumed number of columns. These features are hypotheses, not scholarly
+identifications. In particular, an unlocated plausible heading can interrupt an
+interval: missing coordinates must not let an earlier article absorb its text.
+The source-heading inventory includes hypotheses absent from C6 and from the
+HTML candidate graph. Matching does not supply proof of its own boundaries.
+
+Intervals retain exact page/line references, competing boundaries and geometry
+states. Missing-coordinate interruptions clip the available evidence; uncertain
+ownership remains explicit even for `coordinate_bounded` intervals. All machine
+results remain publication-ineligible. Sequence anchors and adjusted rankings
+remain provisional and separately switchable; changes are not verified recoveries.
+
+Reproduce the full run and source-region evaluation:
+
+```bash
+python3 scripts/run_badw_html_print_alignment.py --all-volumes --resume \
+  --coordinate-inputs work/qa-coordinate-inputs \
+  --output work/article-ownership-full-v2
+python3 scripts/evaluate_badw_article_ownership.py \
+  --database work/article-ownership-full-v2/index.sqlite \
+  --images work/qa-coordinate-benchmark \
+  --output work/article-ownership-v2-evaluation.json
+```
+
+The checked-in `data/article_ownership/regions.json` binds eight complete source
+regions across all four families to scan, QA and observed-image checksums. Its
+65 heading observations have a fixed development/held-out split. They are
+checkable development-agent source-image observations, **not independent
+scholarly certification**, and the purposive sample is too small for a publication
+policy. Source images remain private; the evaluator rejects changed source,
+image, QA and indexed evidence. Whole QA rows merging several articles cannot
+establish sub-line ownership.
+
+The held-out regions yield 24 true headings, four false splits and nine missed
+headings: precision 85.71%, recall 72.73%. Two of 21 testable intervals contain
+observed foreign article text (previous reconstruction: three); 16/17 sampled
+owned definition probes remain present. Across all regions, observed foreign-text
+intervals fall from nine to five of 46. These are contamination probes, not proof
+that the remaining extents are complete and correct. Residual failures include
+non-Tibetan OCR headings (`da byid`, `mdun`), damaged or punctuation-only headings,
+merged QA rows and geometrically misplaced lines. No rules were tuned against
+the held-out answers. Missing source text cannot be recovered by geometry alone.
+
+The complete run processes 18,038 HTML witnesses, 3,466 physical pages and
+352,244 QA lines in 2,218.05 seconds (2.418 GB peak RSS). It retains 160,855 start
+hypotheses and 524,606 correspondence proposals. There are 26,293 source-boundary
+hypotheses (10,293 unlocated); 63,365 reconstructed alternatives are interrupted
+by unlocated headings. The 2,377 geometrically bounded intervals remain
+unverified lexical extents. Results comprise 2,468 provisionally supported,
+13,162 review-required and 2,408 unresolved witnesses; none authorises new links.
+The existing 163 reviewed attachments remain separate. There are 139 sequence
+ranking changes, not independently established corrections. The principal
+remaining blocker is missing/damaged heading evidence and reliable sub-line
+ownership, rather than overall coordinate coverage.
+
+Unlocated barriers on intervening pages stop evidence even when that entire page
+has no located text. Clipping retains a prefix of physical reading order and
+cannot resume in a later column or page. Matching consumes clipped alternatives,
+including empty spans, instead of restoring the 48-line fallback. Repeated-heading
+cutoffs use physical order where available, rather than QA line-number order.
+
+Relative to the PR #14 safeguard run, 359 local and 356 final top predictions
+change; 2,338 shared proposal definition records and 15,442 evidence spans change.
+These are unassessed differences, not established corrections. Cached resume
+reproduces witness, validation and review-report SHA-256 identities. The fresh
+reader differential preserves all 29,878 witnesses, 11,840 PDF bodies, 163 reviewed
+links, 48 derivatives and the 7,626 resolved / 748 residual cross-reference census.
+Chrome desktop/mobile journeys pass without browser errors or search body fetches.
+The full clean-environment Python suite has 2,198 passes and the two inherited
+bibliography-checksum and residual-ledger failures; release reproduction retains
+69 inherited differences. No release evidence is changed.

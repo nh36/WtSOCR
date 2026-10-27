@@ -1,0 +1,914 @@
+{
+  "schema": 1,
+  "authority": "Development-agent source-image observations; independently checkable, not independent scholarly certification",
+  "selection": "Eight purposive complete source pages across four families. Fixed development/held-out split before ownership predictions were queried. Held-out outcomes must not be used to tune this version. Not a population-random precision sample.",
+  "publication_eligible": false,
+  "regions": [
+    {
+      "id": "wts_1_34:1090",
+      "family": "wts_1_34",
+      "physical_page": 1090,
+      "split": "development",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "page_qa_sha256": "4aa69a718a2b53f3711e07612167eefb23d9c3331a8a83505f86da0de1798728",
+      "image_name": "wts_1_34-1090.png",
+      "image_sha256": "cf7372688814a78950432c0312b73bdb51626bac6e438cf374fa1de0e1138e99",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "da bur",
+          "printed_homonym": null,
+          "qa_line": 11,
+          "definition_probes": [
+            {
+              "qa_line": 12,
+              "qa_row_sha256": "a09bef8fbe4e5774dd115aa52e31442db9f7837cb2c51fe6ef13ecf71885567d",
+              "qa_text": "Lex. sreg gnas sam tsha sreg gi gnas (TTC)."
+            }
+          ],
+          "qa_row_sha256": "0457c78f97c88d5757bdbdd77ed4945b8fd6af9e73cc570cfe16ad5846e0cbcb",
+          "qa_text": "ད་བུར་ da bur Verbrennungsplatz, Feuerstelle."
+        },
+        {
+          "printed_heading": "da byid",
+          "printed_homonym": null,
+          "qa_line": 14,
+          "definition_probes": [
+            {
+              "qa_line": 15,
+              "qa_row_sha256": "70a9e9ffcc97af8a0c525688aede5b4ba097fc8227862a15684cc6d26fb86688",
+              "qa_text": "Batrachuporus pinchonii (David) (Pa-"
+            }
+          ],
+          "qa_row_sha256": "3734afe7cd3776904960a914ab31006f7c1b37649ecdf013d60aee44fd34b99c",
+          "qa_text": "ad da byid eine Eidechse oder Amphibie;"
+        },
+        {
+          "printed_heading": "da ma ru",
+          "printed_homonym": null,
+          "qa_line": 24,
+          "definition_probes": [
+            {
+              "qa_line": 26,
+              "qa_row_sha256": "9c9aba26930c258873a0ddd43a83b3ae39408d4c179c939e0c89b24167432d8e",
+              "qa_text": "te Trommel, Schädeltrommel, skt. da-"
+            }
+          ],
+          "qa_row_sha256": "8d7cebafe94c846a566ab3a4e4e04f6a7c5925da49e9ad755bc0a5a45a9a9401",
+          "qa_text": "ཌ་མ་རུ་ da ma ru auch da ru rituell verwende-"
+        },
+        {
+          "printed_heading": "da mus bžin",
+          "printed_homonym": null,
+          "qa_line": 39,
+          "definition_probes": [
+            {
+              "qa_line": 41,
+              "qa_row_sha256": "9f9bdd47bd0ad1eb2a6c0de34f19bbd1ae1dea3947777f1bb66551ee1ae9f8c2",
+              "qa_text": "bsam gtan glin nas kyan dkon 9707 dge slon"
+            }
+          ],
+          "qa_row_sha256": "55a74915326ebec88ba98ac40cba9c8bec3032b75a8497806f0e58ae45c1b69b",
+          "qa_text": "ད་མུས་བཞིན da mus bZin wie bisher."
+        },
+        {
+          "printed_heading": "da tsha",
+          "printed_homonym": null,
+          "qa_line": 47,
+          "definition_probes": [
+            {
+              "qa_line": 48,
+              "qa_row_sha256": "dd096cedcc0277e8303fca2b299c34c83bcb355b48b2cdb89e26c06807c71f14",
+              "qa_text": "mala (Ham.) Nees and Eberm. (PasanG"
+            }
+          ],
+          "qa_row_sha256": "8e66eea3100c8626cd862845ed58db6cb46692744e778c911a3eaad61d7c372a",
+          "qa_text": "'ཾ' datsha ein Heilmittel, Cinnamomum ta-"
+        },
+        {
+          "printed_heading": "da tshur",
+          "printed_homonym": null,
+          "qa_line": 53,
+          "definition_probes": [],
+          "qa_row_sha256": "431dbf9e581630ce67e268a796ede0ea3cf5390a8e01787093fd55260fabc9a9",
+          "qa_text": "ད་ཚུར་ da tshur \\dar mtshur."
+        },
+        {
+          "printed_heading": "da gzod",
+          "printed_homonym": null,
+          "qa_line": 57,
+          "definition_probes": [
+            {
+              "qa_line": 59,
+              "qa_row_sha256": "7714c036b6b5ff2551a7773f9059792b1ac9496698ad140852ee3fad435af1bf",
+              "qa_text": "jetzt; daraufhin."
+            }
+          ],
+          "qa_row_sha256": "c25b409a071dc463e6c3596352e762803bf4feda12f5453bf4f47a242e99e26c",
+          "qa_text": "ད་གཟོད་ da gzod nun, gegenwärtig, gerade,"
+        },
+        {
+          "printed_heading": "da gzod nas bzuṅ",
+          "printed_homonym": null,
+          "qa_line": 74,
+          "definition_probes": [
+            {
+              "qa_line": 76,
+              "qa_row_sha256": "5949881661becba83b9b063617032298bef7c645616470b829aee6c1ccc2a615",
+              "qa_text": "Lex. da nas bzuṅ (brDa, Dagy)."
+            }
+          ],
+          "qa_row_sha256": "fe1a1dfa71d32e22c3937efaf913231457a25a24621538863312e319abc78b35",
+          "qa_text": "ད་གཟོད་ནས་བཟུང་ dagzod nas bzuṅ von nun an."
+        },
+        {
+          "printed_heading": "da ’u",
+          "printed_homonym": null,
+          "qa_line": 78,
+          "definition_probes": [
+            {
+              "qa_line": 80,
+              "qa_row_sha256": "9cc66c855ecb704d8021308e6598e3656ebf7836f3217455579b01a15d137395",
+              "qa_text": "Pocken."
+            }
+          ],
+          "qa_row_sha256": "7f79fa4ced6176a22f50f08a859d5564a692b04ec3483a3ac4d3f5a885cc2c55",
+          "qa_text": "ད་འུ་ da ¿¢ eine Krankheit, vgl. chin. & tou"
+        },
+        {
+          "printed_heading": "da ’ur",
+          "printed_homonym": null,
+          "qa_line": 85,
+          "definition_probes": [
+            {
+              "qa_line": 87,
+              "qa_row_sha256": "a86fad47aa44e08fe439e85971ddbb6a1d18158fb13a865b40e867725a77d058",
+              "qa_text": "Lex. glo bur la (Dagy)."
+            }
+          ],
+          "qa_row_sha256": "259c7afd40268fd827bd8c65e8570aecb236900fc66d5842dd5a6ac78fbb70b8",
+          "qa_text": "Zar da ’ur plötzlich."
+        },
+        {
+          "printed_heading": "da yaṅ",
+          "printed_homonym": null,
+          "qa_line": 89,
+          "definition_probes": [
+            {
+              "qa_line": 91,
+              "qa_row_sha256": "f143ad70fa5ac267f5e229d516e64355096e9ed57b855488c5963abdf76c798d",
+              "qa_text": "mit neg. nicht wieder."
+            }
+          ],
+          "qa_row_sha256": "631152d27b7874a5f6b257376a74d46c27daf07dc6a8881f147b45935924f756",
+          "qa_text": "ད་ཡང་ dayan nun; auch jetzt, auch jetzt noch;"
+        }
+      ],
+      "observation": "Left da bur and right da yaṅ running headers excluded; da yaṅ begins at 89. QA loses Tibetan at 14 and 85 and retains punctuation only at 47."
+    },
+    {
+      "id": "wts_35_51:267",
+      "family": "wts_35_51",
+      "physical_page": 267,
+      "split": "development",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "page_qa_sha256": "4560ae82694e1d44c9f0acdae1d114ce8d1d3f0b7368de0d386828e77a056254",
+      "image_name": "wts_35_51-267.png",
+      "image_sha256": "2ec0cd656e490fdd548a53ba331589cb0c94331e4e5f3aabba2bbbec95d49aa2",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "ldoṅs",
+          "printed_homonym": 1,
+          "qa_line": 16,
+          "definition_probes": [
+            {
+              "qa_line": 17,
+              "qa_row_sha256": "c75ffb90c71e87c87a06e544a0fa216a39591f234fdd9df0e2c516088c27d7eb",
+              "qa_text": "den, blind, verblendet sein."
+            }
+          ],
+          "qa_row_sha256": "7e7b0c656496d7449689f3fbfecb6cbbbdf3945c40ff4dbbd8f71fa7325438ea",
+          "qa_text": "ལྡོངས་ 'ldoṅs auch mdons pf. zu !'Idon erblin-"
+        },
+        {
+          "printed_heading": "ldoṅs",
+          "printed_homonym": 2,
+          "qa_line": 38,
+          "definition_probes": [],
+          "qa_row_sha256": "e777481b6d2a65e596a5cb251100769d7cc6786a956321b3dc611ff44db8975c",
+          "qa_text": "ལྡོངས་ T'mdoṅs"
+        },
+        {
+          "printed_heading": "ldoṅs gsal",
+          "printed_homonym": null,
+          "qa_line": 39,
+          "definition_probes": [
+            {
+              "qa_line": 40,
+              "qa_row_sha256": "2f78d23104c0542df4a33d5886ee3e2d18139a29f62e5e1ccad1a033e597b90e",
+              "qa_text": "Lex. gtam dran po la snani \"steht für: aufrich-"
+            }
+          ],
+          "qa_row_sha256": "19f9935f8ee239a2dd31dc1df1e4518339b3372fb646fb8f65f6b9a9fa9aebf7",
+          "qa_text": "ལྡོངས་གསལ་ lldoṅs gsal aufrichtige Rede."
+        },
+        {
+          "printed_heading": "ldon",
+          "printed_homonym": null,
+          "qa_line": 43,
+          "definition_probes": [
+            {
+              "qa_line": 44,
+              "qa_row_sha256": "3aa4e8c1b51e44a45c0017fb800e553d8de1a404eac6655185cbf7abc2ea6f7e",
+              "qa_text": "kun la... ñi ma lta bu'i phan byas na / kun gyi"
+            }
+          ],
+          "qa_row_sha256": "e82ba4616382ef67e86073fc221c29ecf2500f714cd9c640a7d72347b9cd81b7",
+          "qa_text": "ལྡོན་ ldon vergelten, erwidern; lan — dass."
+        },
+        {
+          "printed_heading": "ldob skyen",
+          "printed_homonym": null,
+          "qa_line": 59,
+          "definition_probes": [
+            {
+              "qa_line": 60,
+              "qa_row_sha256": "06d86f1ff4c83b825a3f7c463535c4d3f4935226fcc91846599dfe3d2b24d09a",
+              "qa_text": "scharfsinnig."
+            }
+          ],
+          "qa_row_sha256": "d3610653787f74f0d05162b00a826f21bce0e627240090578bbda1df999ed5bc",
+          "qa_text": "ལྡོབ་སྐྱེན་ Idob skyen auch — pa, ldobs skyen"
+        },
+        {
+          "printed_heading": "ldobs",
+          "printed_homonym": null,
+          "qa_line": 67,
+          "definition_probes": [
+            {
+              "qa_line": 68,
+              "qa_row_sha256": "f5aec8269b0134a14b3dd5bfbf337290019a95beb74ce57b9e8e34a5c3628c5d",
+              "qa_text": "Lex. — pa = spobs pa \"redegewandt\" (brDa};"
+            }
+          ],
+          "qa_row_sha256": "49173b0b5006b864589f761ad02fc60030f11cc9e00fdbd8dfbdf19e75d9579c",
+          "qa_text": "ལྡོབས་ ldobs leicht begreifen, verstehen."
+        },
+        {
+          "printed_heading": "ldobs skyen",
+          "printed_homonym": null,
+          "qa_line": 71,
+          "definition_probes": [],
+          "qa_row_sha256": "fa21397d64795763450510003a4810c4f6eeb7892647217c617ce9b1ec6a9588",
+          "qa_text": "ལྡོབས་སྐྱེན་ ldobs skyen Yldob skyen."
+        },
+        {
+          "printed_heading": "ldom",
+          "printed_homonym": null,
+          "qa_line": 72,
+          "definition_probes": [
+            {
+              "qa_line": 73,
+              "qa_row_sha256": "fb3b59cdeaa23ffc4c443a5edb6f48637b53b0341985ea478b9c7514da159a0f",
+              "qa_text": "bu mo gaṅ Zig gis skra kar 57 pa na lṅa brgyar"
+            }
+          ],
+          "qa_row_sha256": "fe42e54ec053738b2b268da34aca8c5d1589f09af492415113eae875df908022",
+          "qa_text": "Far ldom betteln, erbitten."
+        }
+      ],
+      "observation": "Running headers 1 and 42 are excluded. Explicit second ldoṅs at 38 interrupts the first even without coordinates; preceding ldon ros article continues at page top."
+    },
+    {
+      "id": "wts_8_b:17",
+      "family": "wts_8_b",
+      "physical_page": 17,
+      "split": "development",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "page_qa_sha256": "65e93a76f44c90e6cedeeab4c5e5ddfc55462f886e906656f960ec9f6006a9f0",
+      "image_name": "wts_8_b-17.png",
+      "image_sha256": "e02b4a570e644ed08c2363e3fdb611a0906240f6b5ad37f6fda83718853f835b",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "ba sbrub",
+          "printed_homonym": null,
+          "qa_line": 11,
+          "definition_probes": [],
+          "qa_row_sha256": "f3ef96f0ceaba3f64752286fe7c8380727e08719534b7413a42f110fc7deb161",
+          "qa_text": "བ་སྦྲུབ་ ba sbrub Tba spru."
+        },
+        {
+          "printed_heading": "ba ma la ghir ti",
+          "printed_homonym": null,
+          "qa_line": 12,
+          "definition_probes": [
+            {
+              "qa_line": 13,
+              "qa_row_sha256": "02c4f61198b3d0d1198679566e4a9a1e487a839ba42238b7deeee4c165d48c29",
+              "qa_text": "sattva, Vimalakirti."
+            }
+          ],
+          "qa_row_sha256": "6cfee7623b0032d0b6aefcd13cb1fb963c4af650ead4505c89715ba82a865d56",
+          "qa_text": "བ་མ་ལ་གྷིར་ཏི་ ba ma la ghir ti npr. ein Bodhi-"
+        },
+        {
+          "printed_heading": "ba mar",
+          "printed_homonym": null,
+          "qa_line": 17,
+          "definition_probes": [
+            {
+              "qa_line": 18,
+              "qa_row_sha256": "98955b9127e1c06b6784c2673e6104b67aa280aea676e3206d5615a789588c76",
+              "qa_text": "khur ba ~ gyi naṅ du btsos pa ni \"Gebäck,"
+            }
+          ],
+          "qa_row_sha256": "b7b6b4591094ab66ea8e2f1ed6af28d2c4525a221c50a7381586352e2c8ffdb7",
+          "qa_text": "བ་མར་ bamar Kuhbutter."
+        },
+        {
+          "printed_heading": "ba men",
+          "printed_homonym": null,
+          "qa_line": 24,
+          "definition_probes": [
+            {
+              "qa_line": 25,
+              "qa_row_sha256": "cd7791a1f77c784d1c5aabb96a8cd0d0193a0e48a5d94743677d57cd5beaf7ce",
+              "qa_text": "Lex. rgya gar skad la ga ba ya Zes pa ste ba"
+            }
+          ],
+          "qa_row_sha256": "d96bbdbca44496fbfafc829bfdca58c05ed28c34cbe22b21f6848cb95cf523f0",
+          "qa_text": "བ་མེན་ ba men ein Rind, Gaur bzw. Gayal."
+        },
+        {
+          "printed_heading": "ba mo",
+          "printed_homonym": null,
+          "qa_line": 33,
+          "definition_probes": [
+            {
+              "qa_line": 34,
+              "qa_row_sha256": "98b914df2ab046039c0cd6394880a1549b634459527af88e67426e8a6f910f63",
+              "qa_text": "ñi tshan rdul / ~ dannirlunrtsubdan (metr.)"
+            }
+          ],
+          "qa_row_sha256": "799beb9355600609519fbb3357f588fe01928f1ffe3f23bb76abebc4d930ecdb",
+          "qa_text": "a3) bamo Frost, Reif."
+        },
+        {
+          "printed_heading": "ba mo bye’u",
+          "printed_homonym": null,
+          "qa_line": 52,
+          "definition_probes": [
+            {
+              "qa_line": 53,
+              "qa_row_sha256": "318d7c84b5ce304666657886bb073620659da7746ea34f27ac83078ddce0c633",
+              "qa_text": "Lex. tsa fa ga'am lan cig dka' (brDa); tsa fa ga"
+            }
+          ],
+          "qa_row_sha256": "cf8730997d1faee703164fa55c3f5769a9af3b3e3ad622dd7b36f840f7b46a6a",
+          "qa_text": "བ་མོ་བྱེའུ་ ba mo bye’u ein kleiner Vogel."
+        },
+        {
+          "printed_heading": "ba dmar",
+          "printed_homonym": null,
+          "qa_line": 55,
+          "definition_probes": [
+            {
+              "qa_line": 56,
+              "qa_row_sha256": "6cf473ae6a64dd566211380d47a77953b353092c12de7f0911e70289c42b6f64",
+              "qa_text": "—radkar'o ma dan / ghi han byugs te (metr.)"
+            }
+          ],
+          "qa_row_sha256": "618ed146541ca4607dee75a6e5a68868fd176cb779cd4e0c7a7cd7be2a97fa1d",
+          "qa_text": "བ་དམར་ ba dmar rote Kuh."
+        },
+        {
+          "printed_heading": "ba tshwa",
+          "printed_homonym": null,
+          "qa_line": 63,
+          "definition_probes": [
+            {
+              "qa_line": 64,
+              "qa_row_sha256": "e16bdd6970430c0ff6374ce0d847a8c5ff54e461631db397ad7ba5f6d1a046bc",
+              "qa_text": "schlechte, unreine Soda (Jä 368), Pott-"
+            }
+          ],
+          "qa_row_sha256": "feb481eca4814260b69715d27b9c04bb3a3570d484d20131cff13127d8eaea8c",
+          "qa_text": "བ་ཚ་ batshwa auch ba tsha \"Kuhsalz\", ein Salz;"
+        },
+        {
+          "printed_heading": "ba tshwa can",
+          "printed_homonym": null,
+          "qa_line": 77,
+          "definition_probes": [
+            {
+              "qa_line": 78,
+              "qa_row_sha256": "51bb1923b8a8bdd042134e29e202b39a4b7ec5aa8a928eb737a82b062166333d",
+              "qa_text": "1. salzig; — gyi chu Salzwasser."
+            }
+          ],
+          "qa_row_sha256": "676123cdf33108e2b62911c8fb4f394495258b3f976442220a6f0d6e4bdbdf38",
+          "qa_text": "བཚྭ་ཅན་ ba tshwa can."
+        }
+      ],
+      "observation": "ba mo continues into right column before 52. ba tshwa Kuhsalz begins at 63, not neighbouring ba tshwa can salzig at 77. Lines 1 and 39 are running headers."
+    },
+    {
+      "id": "wts_9_m:100",
+      "family": "wts_9_m",
+      "physical_page": 100,
+      "split": "development",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "page_qa_sha256": "c359df9413578550f58d76373def4e4110a691dfde1918c20f4ba076e7e2381f",
+      "image_name": "wts_9_m-100.png",
+      "image_sha256": "4e302a639342d97c58b1256ebb636f4cc5a514659c8f4e8a671cd45a5c18cfc8",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "mi kha",
+          "printed_homonym": null,
+          "qa_line": 7,
+          "definition_probes": [
+            {
+              "qa_line": 8,
+              "qa_row_sha256": "377fad1adfc140b832ee06c012f819ad091cbbe20dcb62025ef8312c37b7fc15",
+              "qa_text": "1985: ×], Scrur 2012: 1518; — zlog pa"
+            }
+          ],
+          "qa_row_sha256": "f90d1eb3a72a513aa919c82cdf101b8678261d4b95a13bfba6b26b5cc03f6171",
+          "qa_text": "མི་ཁ་ mikba üble Nachrede, vgl. SchwiEGer"
+        },
+        {
+          "printed_heading": "mi khur",
+          "printed_homonym": null,
+          "qa_line": 38,
+          "definition_probes": [
+            {
+              "qa_line": 40,
+              "qa_row_sha256": "69db429e41f4f062019416a911b7d8b27126a71db7d9f8e19c9ce39ed4629f7a",
+              "qa_text": "Mensch tragen kann, Traglast."
+            }
+          ],
+          "qa_row_sha256": "cad04e46d68005bce58c129b46154753a5b666c3671473b873febedd4a60ec30",
+          "qa_text": "མེ་ཁར་ mikbur auch mi 'khur die Last, die ein"
+        },
+        {
+          "printed_heading": "mi khom",
+          "printed_homonym": null,
+          "qa_line": 49,
+          "definition_probes": [
+            {
+              "qa_line": 50,
+              "qa_row_sha256": "6a3174aa3cf1e74416958d9541a6e6fea20a55e030d5e9890528d07a3faf96e6",
+              "qa_text": "khoms pa Unruhe, Ruhelosigkeit, kei-"
+            }
+          ],
+          "qa_row_sha256": "55ddeedfc98132c442b32df91d06d5782ed88cb19293ea30dab9b8cf97eb9daf",
+          "qa_text": "མི་ཁོར།་ mi kbom auch — pa, mi khoms, mi"
+        },
+        {
+          "printed_heading": "mi khom pa brgyad",
+          "printed_homonym": null,
+          "qa_line": 71,
+          "definition_probes": [
+            {
+              "qa_line": 72,
+              "qa_row_sha256": "d1e1b2f89a62cce7356381c922ef9d8eecf80e838d09c28df371bbacc1452fa7",
+              "qa_text": "Ruhelosigkeiten\", Bez. für acht"
+            }
+          ],
+          "qa_row_sha256": "29a1613a0df3ce903103e45d1704625df9f5ae93d93564402b2e3262cd9795a4",
+          "qa_text": "མི་ཁོམ་པ་བརྒྱད་ Mi khom pa brgyad \"die acht"
+        }
+      ],
+      "observation": "Prior article continues at top; mi khur crosses columns; lines 1 and 45 are running headers, 39 and 70 are ornaments."
+    },
+    {
+      "id": "wts_1_34:600",
+      "family": "wts_1_34",
+      "physical_page": 600,
+      "split": "held_out",
+      "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+      "page_qa_sha256": "8e51721662ab916f0ac84243a6d011d20422bf1d8dd3cdb88681c1b923ca178e",
+      "image_name": "wts_1_34-600.png",
+      "image_sha256": "faefd1ecf501315a87ad3752b112818c31a46b83d8f6ff6ad2df3c45a802f47c",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "bcad skyes",
+          "printed_homonym": null,
+          "qa_line": 150,
+          "definition_probes": [],
+          "qa_row_sha256": "e62523a0ff835ef95f8d0dde8e1cb517de0a03b7cf1deae5ac644673f358234b",
+          "qa_text": "བཅད་སྐྱེས་ bcad skyes Bez. für Fingernagel."
+        },
+        {
+          "printed_heading": "bcad kham",
+          "printed_homonym": null,
+          "qa_line": 153,
+          "definition_probes": [],
+          "qa_row_sha256": "59b06ba2538c62b21b372d87fb6336356318620d1a4161681c06d2dbbfe92ce7",
+          "qa_text": "བཅད་།མ་ bcad kham ein Mundvoll, ein"
+        },
+        {
+          "printed_heading": "bcad khra",
+          "printed_homonym": null,
+          "qa_line": 178,
+          "definition_probes": [],
+          "qa_row_sha256": "1095019bcb7bcf7868e38646198d7d59b9d1d71fd34623c673065b8c9386fdf1",
+          "qa_text": "Sch bcad khra Urteil, Entscheidung; vgl."
+        },
+        {
+          "printed_heading": "bcad rgya",
+          "printed_homonym": null,
+          "qa_line": 196,
+          "definition_probes": [],
+          "qa_row_sha256": "7d30cd7d8b4beece4a0ba3d00e81950b0abe97bcd1703d8341ad0269acd51a1c",
+          "qa_text": "བཅད་རྒྱ་ bcad rgya Abgeschiedenheit, Retreat,"
+        },
+        {
+          "printed_heading": "bcad rgyag",
+          "printed_homonym": null,
+          "qa_line": 122,
+          "definition_probes": [],
+          "qa_row_sha256": "81cdbe4cfb30d18c00ce0d40e06098a0ff7909b2e660c6333e1320c4e7cef060",
+          "qa_text": "rgyal po’i khab tu Zugs nas sgo = de „sie བཅད་རྒྱག་ bcad rgyag abteilen, abtrennen."
+        },
+        {
+          "printed_heading": "bcad ’phro",
+          "printed_homonym": null,
+          "qa_line": 138,
+          "definition_probes": [],
+          "qa_row_sha256": "35c9a913353c918f5677a0778f325a2a4451e538f722d7004fcd83607086671d",
+          "qa_text": "Zugang ab, indem er die Außentür zum བཅད་འཕྲོ་ bcad ’phro auch bcad ’phros Rest von"
+        },
+        {
+          "printed_heading": "bcad mtshams",
+          "printed_homonym": null,
+          "qa_line": 173,
+          "definition_probes": [],
+          "qa_row_sha256": "154025b49bcf818762a9a13515364cd24ee9047dbb464eac2bfc7e94046d336d",
+          "qa_text": "Lex. kham gan gi tshod du bcad pa’i zas sogs བཅད་མཆམས་ bcad mtshams ↓ dpyad mishams."
+        },
+        {
+          "printed_heading": "bcad rigs",
+          "printed_homonym": null,
+          "qa_line": 186,
+          "definition_probes": [],
+          "qa_row_sha256": "ade5c607dd12f68884fe2873e5836829544196f8eca2e3fef57d68d282290c75",
+          "qa_text": "བཅད་རིགས་ bcad rigs Zuteilung."
+        },
+        {
+          "printed_heading": "bcad ses",
+          "printed_homonym": null,
+          "qa_line": 194,
+          "definition_probes": [],
+          "qa_row_sha256": "bebcf8f6763aba78f8605bf23dd8bfe970446d2fb22bbef49e4bff6edd832346",
+          "qa_text": "བཅད་ཤེས་ bcad ses eine Schlußfolgerung,"
+        }
+      ],
+      "observation": "Complete noncentral spread: first two columns are bcad continuation. QA interleaves all four columns. Starts 122,138,173 occur inside merged OCR rows; whole-row ownership cannot be certified. Physical heading order recorded separately from QA order."
+    },
+    {
+      "id": "wts_35_51:106",
+      "family": "wts_35_51",
+      "physical_page": 106,
+      "split": "held_out",
+      "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+      "page_qa_sha256": "c22bc230fd04139241f479832b7b26825e0bb125f046ee4f26b8e650dd32877b",
+      "image_name": "mdun.png",
+      "image_sha256": "d399788916d6ef658e998f296e9b1ff51de6b687e17c5fea0b6c05fdb13c3e89",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "mdud par ’dzin pa",
+          "printed_homonym": null,
+          "qa_line": 53,
+          "definition_probes": [
+            {
+              "qa_line": 54,
+              "qa_row_sha256": "beebf7274f2b021195c325bdc5de69d8c008b8a52fd1b05c7ec53f227e4507a5",
+              "qa_text": "Feindschaft."
+            }
+          ],
+          "qa_row_sha256": "69766b991fb1df8039eeb7c3ddcd943734f1c10e7f7144ef3cf603db44c01f52",
+          "qa_text": "མདུད་པར་འཛིན་པ་ mmdud par pa anhaltende"
+        },
+        {
+          "printed_heading": "mdud lha sum brgya drug cu",
+          "printed_homonym": null,
+          "qa_line": 56,
+          "definition_probes": [
+            {
+              "qa_line": 57,
+              "qa_row_sha256": "bce655eb76401b4c1040bbb1e96497c5f0117707794debb3e907c31421130506",
+              "qa_text": "drug beu eine Gruppe"
+            }
+          ],
+          "qa_row_sha256": "32899b167330911e01df708d2f1271b1072a8926a224113f0919ce127899afc8",
+          "qa_text": "མདུད་ལྷ་སུམ་བརྒྱ་དྲུག་བཅུ་ mdud lba sum brora"
+        },
+        {
+          "printed_heading": "mdun",
+          "printed_homonym": null,
+          "qa_line": 59,
+          "definition_probes": [
+            {
+              "qa_line": 60,
+              "qa_row_sha256": "bdba3be73b033fc69cdc10b81e3dcc96510c2bc10ac04909f12ced23fbba650c",
+              "qa_text": "1. das Vordere, Vorderseite, Frontseite; —"
+            }
+          ],
+          "qa_row_sha256": "adf1f313a98e113881e46717e181504df347f829aa4aa6bbb35c7fc5c52e91d9",
+          "qa_text": "zz mdun auch sdun."
+        }
+      ],
+      "observation": "Entire left column and right top are continuation. mdun at 47 is running header, actual article begins 59; QA loses Tibetan prefix at 59 and corrupts headword 53."
+    },
+    {
+      "id": "wts_8_b:445",
+      "family": "wts_8_b",
+      "physical_page": 445,
+      "split": "held_out",
+      "source_sha256": "f9d94766c88362472576250c34dcc313c55e3036e19dcfe454e0a82b9d1d4263",
+      "page_qa_sha256": "750fdd8fffdd12881d719bd74b74764f92a7d94da8757fc43fc01b5cdd9643ba",
+      "image_name": "wts_8_b-445.png",
+      "image_sha256": "66cbea6fb0c0c151124cefc3a04ba34b90bf959a1e92ee6eb2c0622ebeb43b5e",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "’bum ther",
+          "printed_homonym": null,
+          "qa_line": 2,
+          "definition_probes": [
+            {
+              "qa_line": 3,
+              "qa_row_sha256": "598aaae26ac7140abacfa44f77bffd2bc47b8df9b0fc3a3decf02544bdccfa1b",
+              "qa_text": "'bum."
+            }
+          ],
+          "qa_row_sha256": "76ddacb7f6cc3df4650a019cd9e67b0a1975133a0834cdbe9ae036bd7322ef93",
+          "qa_text": "འབུམ་ཐེར་ bum ther hunderttausend, vgl. tiber"
+        },
+        {
+          "printed_heading": "’bum sde",
+          "printed_homonym": null,
+          "qa_line": 6,
+          "definition_probes": [
+            {
+              "qa_line": 7,
+              "qa_row_sha256": "c33c8425652b6265049aaa122c9086f82f0b1c1b52df1a9fca320269af74464a",
+              "qa_text": "pe von 100 000 Einheiten bzw. Perso-"
+            }
+          ],
+          "qa_row_sha256": "aca740fe897a8852f61c97a7f736c32725b72a29abd66dbbb662787fb65eeb8b",
+          "qa_text": "འབུམ་སྡེ་ 'bum sde eine Abteilung bzw. Grup-"
+        },
+        {
+          "printed_heading": "’bum nag ma",
+          "printed_homonym": null,
+          "qa_line": 13,
+          "definition_probes": [
+            {
+              "qa_line": 14,
+              "qa_row_sha256": "3cf3f185ebe69dbb69309399050d59a8a93670921b7f616f0bf65505a921423f",
+              "qa_text": "Lex. mchod rten Zigla'an (brDa, ähnl. Dagy)."
+            }
+          ],
+          "qa_row_sha256": "d6a8581484fea06f5b3f6a6b7a194ef528cb66ac2e69d1f8c3dabb6901a028d5",
+          "qa_text": "འབུམ་ནག་མ་ 'Dum nagma ein Stüpa."
+        },
+        {
+          "printed_heading": "’bum pa",
+          "printed_homonym": 1,
+          "qa_line": 15,
+          "definition_probes": [
+            {
+              "qa_line": 16,
+              "qa_row_sha256": "8d2f921bfd8acd1c20842ab8cfaab558aa849a3ea6fbcc374b43cf37c6d79947",
+              "qa_text": "Scheibe, Kugel, Bild usw.; vgl. LAUFER"
+            }
+          ],
+          "qa_row_sha256": "81bf50e2f41dc1432d5950cec057f03cbc3bd0f83ea2319c15e45a5691ef83c6",
+          "qa_text": "འབུམ་པ་ \"bum pa Abbild; von skt. bimba"
+        },
+        {
+          "printed_heading": "’bum pa",
+          "printed_homonym": 2,
+          "qa_line": 22,
+          "definition_probes": [
+            {
+              "qa_line": 23,
+              "qa_row_sha256": "585dc458da43d35b87d39a619985192d93027607368a9e930d1f2c31c854740e",
+              "qa_text": "und eines Klans."
+            }
+          ],
+          "qa_row_sha256": "3d8c58dd331d40f82e2934e4a82b4d4f114ae3ec6d9edb467eb5de48f610786b",
+          "qa_text": "འབུམ་པ་ \"bum pa npr. Name einer Gegend"
+        },
+        {
+          "printed_heading": "’bum pa",
+          "printed_homonym": 3,
+          "qa_line": 32,
+          "definition_probes": [
+            {
+              "qa_line": 33,
+              "qa_row_sha256": "1a0b8843981d978a6490fde299fd66eacc91b98fee80eba412d270e9cb1a5f17",
+              "qa_text": "dge bæi bses gñen pa ~ la skor ba mdzad"
+            }
+          ],
+          "qa_row_sha256": "2d2eefb354070ecdbe0ecece6d138547d02877f0c919c3c1e0ff752b52b83265",
+          "qa_text": "འབུམ་པ་ \"bum pa Bez. für Stüpa."
+        },
+        {
+          "printed_heading": "’bum phrag bcu",
+          "printed_homonym": null,
+          "qa_line": 45,
+          "definition_probes": [],
+          "qa_row_sha256": "3e6540440aa843232ff52cdd8681ecc7b8f43f14c45c3ef301f9494a60c2f1a2",
+          "qa_text": "འབུམ་ཕྲག་བཅུ་ 'bum phrag beu !'bum beu."
+        },
+        {
+          "printed_heading": "’bum phrag gsum pa",
+          "printed_homonym": null,
+          "qa_line": 46,
+          "definition_probes": [
+            {
+              "qa_line": 47,
+              "qa_row_sha256": "46dd827688f580c7b62ba786785de1e49490412f2bfdcac81a1c667574879539",
+              "qa_text": "ein Pandita, \"Sthirapālatri-"
+            }
+          ],
+          "qa_row_sha256": "bffeaf8a6811e150643ec330097e3759eb98c2c573fe3944270b33765f120e52",
+          "qa_text": "འབུམ་ཕྲག་གསུམ་པ་ bum phrag gum pa npr."
+        },
+        {
+          "printed_heading": "’bum dbyel",
+          "printed_homonym": null,
+          "qa_line": 58,
+          "definition_probes": [
+            {
+              "qa_line": 59,
+              "qa_row_sha256": "17f59f095c5f50c1eb6f6aedd1e8721ac9e0fcbc3b2cb580c377195ed4dc6b1d",
+              "qa_text": "'bud (r. 'bum) dbyel srion mo'i sgra bla de /"
+            }
+          ],
+          "qa_row_sha256": "e73e9e26017f0736919db23cb805adbdca4d005246a862119e6b9dd1e7689253",
+          "qa_text": "འབུམ་དབྱེལ་ 'bum dbyel Kettenhemd."
+        },
+        {
+          "printed_heading": "’bur",
+          "printed_homonym": 1,
+          "qa_line": 66,
+          "definition_probes": [
+            {
+              "qa_line": 67,
+              "qa_row_sha256": "2f0f0e7c39c16085af5ddcb93688137902c9456d8f52a7c532129e29b2284120",
+              "qa_text": "vorstehen."
+            }
+          ],
+          "qa_row_sha256": "44056e391001fa6150267009df8fc895ce8ecd0f50baa23a024c6d6824738647",
+          "qa_text": "འབུར་ \"bur hervorragen, hervortreten, her-"
+        },
+        {
+          "printed_heading": "’bur",
+          "printed_homonym": 2,
+          "qa_line": 75,
+          "definition_probes": [
+            {
+              "qa_line": 76,
+              "qa_row_sha256": "dc14ea569a525a3dda9181603ed83871c68a7de4e109bbb8509f68ea023ba0ed",
+              "qa_text": "1. Anhöhe, Erhebung."
+            }
+          ],
+          "qa_row_sha256": "2f913d66b61d5c73e5e380c7d4a04ab519635efcee784337e6adb60a54bf7c52",
+          "qa_text": "འབུར་ \"bur."
+        }
+      ],
+      "observation": "Explicit superscript homonyms distinguish three ’bum pa and two ’bur headings. ’bum pa 3 crosses columns. Headers 1,39 and folio 79 excluded."
+    },
+    {
+      "id": "wts_9_m:200",
+      "family": "wts_9_m",
+      "physical_page": 200,
+      "split": "held_out",
+      "source_sha256": "7c9366616d41c2788088085208e5395111d19abb31bb801a03443af14910ffeb",
+      "page_qa_sha256": "08e8a7eb9d8aa29ede22e4c8aa063ce3592992a71841a9c386dd8ca6d392c5d2",
+      "image_name": "wts_9_m-200.png",
+      "image_sha256": "2dcacb51d3bd692d1f7a6183163c58a30a9e03a2ca1cc7aaff7300fea2dfbdc6",
+      "scope": "complete visible lexical headings on physical scan page; continuation text is not a new heading",
+      "headings": [
+        {
+          "printed_heading": "mun phraṅ",
+          "printed_homonym": null,
+          "qa_line": 14,
+          "definition_probes": [
+            {
+              "qa_line": 15,
+              "qa_row_sha256": "b67a20c9aff34223744b0b7877d8ad8f05ec08651701c113c574dcaf2072b185",
+              "qa_text": "gcan 'phrari dari — \"schmale Pfade und dunk-"
+            }
+          ],
+          "qa_row_sha256": "210d64d981e00560b8d61857a905ab1e295967c550e28bfc1bc8eaebd071d421",
+          "qa_text": "མུན་འཕྲང་ mun 'phrari dunkler Pfad."
+        },
+        {
+          "printed_heading": "mun byed",
+          "printed_homonym": null,
+          "qa_line": 17,
+          "definition_probes": [
+            {
+              "qa_line": 18,
+              "qa_row_sha256": "18f56fc9cb747bc2f63a30edd059c5ca66a17fda961d23f5bb3d64aa9c6983f3",
+              "qa_text": "khyab \"ug daṅ / ~ sgra nan skya bsen bu"
+            }
+          ],
+          "qa_row_sha256": "31646b5288f55aec33190aa35d9f82d2b41292ecc1d880b3a7b29fad82bcecc4",
+          "qa_text": "མུན་བྱེད་ mun byed cin Volk; skt. Andhaka."
+        },
+        {
+          "printed_heading": "mun bral",
+          "printed_homonym": null,
+          "qa_line": 21,
+          "definition_probes": [
+            {
+              "qa_line": 22,
+              "qa_row_sha256": "8d7850dfeaba1c770c364d2d84cef6aba68e33921cdca137a048bbed2e5e254b",
+              "qa_text": "Lex. ñin mo la'an (brDa, Dagy)."
+            }
+          ],
+          "qa_row_sha256": "8471c1cc0494cf5e3b06fdff86ebf206146e4f108a61593059154783dafddaed",
+          "qa_text": "མུན་བྲལ་ mun bral Bez. für Tag."
+        },
+        {
+          "printed_heading": "mun mag",
+          "printed_homonym": null,
+          "qa_line": 23,
+          "definition_probes": [
+            {
+              "qa_line": 24,
+              "qa_row_sha256": "63423e17dcfea9190ffd531bfcb3261a5b8fcaf447fb94db1aff2781fdee3bca",
+              "qa_text": "—i rkan ton beyis \"man bereitete die Ein-"
+            }
+          ],
+          "qa_row_sha256": "51f70b10e30d3659920c74ece86151f350e40a8abfb0ca36224bd5a6259cdee3",
+          "qa_text": "མུན་མག་ mun mag Grenzsoldaten."
+        },
+        {
+          "printed_heading": "mun mtshan",
+          "printed_homonym": null,
+          "qa_line": 32,
+          "definition_probes": [
+            {
+              "qa_line": 33,
+              "qa_row_sha256": "3595548760c02546f693d5f0d3b4099e0535cfb838e6876759dcabcf6e725fb3",
+              "qa_text": "Lex. mtshan mo (brDa, Dagy)."
+            }
+          ],
+          "qa_row_sha256": "0ec5ed6faf99b865ae00d6fe1e6019e380e0b57f4c41ea838c671385066dd573",
+          "qa_text": "མུན་མཚན་ mun mtshan Bez. für Nacht."
+        },
+        {
+          "printed_heading": "mundza",
+          "printed_homonym": null,
+          "qa_line": 34,
+          "definition_probes": [
+            {
+              "qa_line": 35,
+              "qa_row_sha256": "1005194d1574a1468cf8008e2e964aafd543e71ee7cb128eeccd9c9e19d6a39c",
+              "qa_text": "1. ein Gras, skt. muñja, Saccharum Munja"
+            }
+          ],
+          "qa_row_sha256": "41fd7b921a17f0c85e7e9de02a5704e9ca0f0a4d4c4986a9c7cda2da271206ef",
+          "qa_text": "མུན་ཛ་ mun dza."
+        },
+        {
+          "printed_heading": "mun rub",
+          "printed_homonym": null,
+          "qa_line": null,
+          "definition_probes": []
+        },
+        {
+          "printed_heading": "mun rum",
+          "printed_homonym": null,
+          "qa_line": null,
+          "definition_probes": []
+        },
+        {
+          "printed_heading": "mun rum dkar po",
+          "printed_homonym": null,
+          "qa_line": null,
+          "definition_probes": []
+        },
+        {
+          "printed_heading": "mun sheng koṅ co",
+          "printed_homonym": null,
+          "qa_line": null,
+          "definition_probes": []
+        }
+      ],
+      "observation": "Right-column headings at image y≈642,985,1040,1310 lack intact QA heading rows. Count as missed observable headings, not absent ground truth. mundza continues into right column and includes numbered senses; headers 1,39 excluded."
+    }
+  ]
+}

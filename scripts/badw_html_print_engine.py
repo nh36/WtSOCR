@@ -28,7 +28,7 @@ from badw_source_matcher import lemma_key, tibetan_key
 from badw_print_crosswalk import tokens
 from badw_print_structure import segment, increasing_chain
 
-VERSION = 'html-print-engine-v6'
+VERSION = 'html-print-engine-v8'
 POLICY = 'All machine categories provisional; no automatic link promotion. Reviewed URL + HTML checksum bindings only.'
 
 
@@ -416,6 +416,9 @@ def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_in
     proposals = []
     historical = {(sid,aid) for sid,aid in db.execute(
         'SELECT e.sid,e.aid FROM edges e JOIN starts s ON e.aid=s.aid WHERE s.family=? AND s.page=?', (family,page))}
+    reading_positions = {(page,n):pos for n,pos in db.execute(
+        'SELECT line,position FROM reading_lines WHERE family=? AND page=?', (family,page))}
+    loaded_position_pages = {page}
     for line, start in starts:
         box = (start.get('coordinate') or {}).get('box')
         geometry = db.execute('SELECT features FROM pages WHERE family=? AND page=?', (family,page)).fetchone()
@@ -423,9 +426,16 @@ def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_in
         extent = segment(line, start, rows, starts, geometry.get('height'))
         reconstructed_row=db.execute('SELECT body FROM extents WHERE aid=?',(start['anchor'],)).fetchone()
         reconstructed=json.loads(reconstructed_row[0]) if reconstructed_row else {}
-        # Only complete coordinate coverage permits replacing the local fallback.
-        refs=reconstructed.get('refs',[]) if use_reconstructed_intervals and reconstructed.get('status')=='coordinate_bounded' else []
-        if refs:
+        # A clipped alternative is a safety restriction too, even when empty.
+        use_refs = use_reconstructed_intervals and (
+            reconstructed.get('status') == 'coordinate_bounded' or
+            bool(reconstructed.get('unlocated_boundary_alternatives')))
+        refs=reconstructed.get('refs',[]) if use_refs else []
+        if use_refs:
+            for p in {p for p,n in refs} - loaded_position_pages:
+                reading_positions.update({(p,n):pos for n,pos in db.execute(
+                    'SELECT line,position FROM reading_lines WHERE family=? AND page=?', (family,p))})
+                loaded_position_pages.add(p)
             extent['lines']=[((p,n),json.loads(db.execute('SELECT body FROM lines WHERE family=? AND page=? AND line=?',(family,p,n)).fetchone()[0])['line_text']) for p,n in refs]
             extent=coordinate_interval_evidence(extent, reconstructed)
             extent['boundary_method']='source_coordinate_interval'
@@ -434,8 +444,17 @@ def match_page(db, family, page, witnesses, frequencies, *, use_reconstructed_in
             witness = witnesses[sid]
             # A repeated spelling farther down the page is a competing article
             # beginning. Never borrow its definition to support the earlier header.
-            repeat = next((n for n,s in starts if n > line and sid in s['matches']), None)
-            own_selected = [(n,t) for n,t in selected if refs or repeat is None or n < repeat]
+            if use_refs:
+                origin = reading_positions.get((page,line))
+                repeats = [reading_positions[(page,n)] for n,s in starts
+                           if sid in s['matches'] and (page,n) in reading_positions
+                           and origin is not None and reading_positions[(page,n)] > origin]
+                repeat = min(repeats, default=None)
+                own_selected = [(n,t) for n,t in selected if repeat is None or
+                                reading_positions.get(n, float('inf')) < repeat]
+            else:
+                repeat = next((n for n,s in starts if n > line and sid in s['matches']), None)
+                own_selected = [(n,t) for n,t in selected if repeat is None or n < repeat]
             own_article = '\n'.join(t for _,t in own_selected)
             proof = evidence_score(witness, own_article, frequencies, len(witnesses))
             hom=reconstructed.get('homonym_observation',dict(status='unread',number=None))
