@@ -183,6 +183,94 @@
       "image_sha256": "3f0e516fb03c24185cca7b27820890440d7858d985c8b0ee5d3dbaf6db440332",
       "reading": "Explicit ⁵ma lower thing; ma kī goddess, Sanskrit Māmakī; ma ku ra mirror; ma ke na cross-reference; ma klas contempt; ma skyes dgra Ajātaśatru continues. ma bi is a reference under ⁵ma, mā ma kī part of ma kī evidence, not separate headings.",
       "image_filename": "v9-p12.png"
+    },
+    {
+      "family": "wts_1_34",
+      "page_key": "v1-p16",
+      "page": {
+        "source": "WtS_1-34",
+        "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+        "physical_page": 41,
+        "volume": 1,
+        "printed_page": 16,
+        "side": "left",
+        "crop": [
+          0.0,
+          0.0,
+          441,
+          634.44
+        ],
+        "sha256": "aade464f757072037666ec42a724baa3a43e3878d00e7a18f50bf135e28cf41a",
+        "filename": "c585ccb77cce388cba5cd4ef80f4babbba0cd5c5063cdbdcae50f6bfcb2f4444.pdf"
+      },
+      "image_sha256": "e64e2997b3759f59d66646a231401288425a44fae3f3a67dc71573474816cf35",
+      "reading": "Left printed page 16, two complete columns, folio and gutter retained. Independently visible headings: ka ma la gar bha (Madhyamaka teacher; kamalagarbha), ka ma la go mi (learned monk in southern India; kamalagomin), ka ma la can (Viṣṇu’s lotus-bearing consort), ka ma la buddhi (scholar; kamalabuddhi). dbu ma’i tshul lugs occurs within the Kamalagarbha quotation, not as an article heading. No homonym numerals visible on these four headings."
+    },
+    {
+      "family": "wts_1_34",
+      "page_key": "v1-p17",
+      "page": {
+        "source": "WtS_1-34",
+        "source_sha256": "20021354ae3c838a5641f59af4a4421c1e59e6b0d2c1760d5fe3f62faeb47c62",
+        "physical_page": 41,
+        "volume": 1,
+        "printed_page": 17,
+        "side": "right",
+        "crop": [
+          441,
+          0.0,
+          893.64,
+          634.44
+        ],
+        "sha256": "3e8b96391e91d806038be81d31941c75ee27fced8ee5ee03a8de7e4cb466ae13",
+        "filename": "68bb1f17eebf13823141b65f38c7a606dd9241be4e98372155bdbf6db447e649.pdf"
+      },
+      "image_sha256": "15b1a7e118952755979bc639b5c47828f623ffd70e770f7810e44f54b1f8cf1d",
+      "reading": "Right printed page 17, full margins and folio. Actual unnumbered headings include kā ma log (A-mdo monastery), kā ma a śo ka (young Aśoka), ka mad (the thirty letters), ka mi yam (spleen), ka mi log (country), ka mig (architectural area measure), ka mu gnas (cross-reference), ka me ka me (bending here and there). Raised 1 explicitly precedes ka med; its definition continues on page 18. Parenthetical ka references beside ka mad and ka mig are not homonym numbers."
+    },
+    {
+      "family": "wts_35_51",
+      "page_key": "mda353",
+      "page": {
+        "source": "WtS_35-51",
+        "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+        "physical_page": 100,
+        "volume": 5,
+        "printed_page": 353,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          467.0,
+          675.0
+        ],
+        "sha256": "ac5f217cb7ac780df32dbe26ecc7e96004cc728b941d5ffa3fc9c3c7ce9e46a7",
+        "filename": "07dde045ad7436b0f8341fa73e9c56fa8b995eb1ef85ad0c28122676782e5a1d.pdf"
+      },
+      "image_sha256": "f610a5b222421d3a1e0c94e52240de44f2f388221c34161803e45adafb9bf7a3",
+      "reading": "Printed folio 353, genuine single page with two columns and complete margins. Right-column actual unnumbered headings mda’ ’joms (Wolfsmilchgewächs; dur byid), mda’ rten and mda’ lto ba (bow), mda’ ltoṅ (arrow nock; alternative mda’ stoṅ), mda’ stan (bow). Separate raised 1 mda’ stoṅ is a cross-reference to mda’ ltoṅ; raised 2 mda’ stoṅ has wüste Talöffnung and Vḍk-M 114,9. These two articles must remain distinct."
+    },
+    {
+      "family": "wts_35_51",
+      "page_key": "v5-p355",
+      "page": {
+        "source": "WtS_35-51",
+        "source_sha256": "8babd045a04876d373631169677eff7fc033066a3ed1f5649aeaaad5eed67239",
+        "physical_page": 102,
+        "volume": 5,
+        "printed_page": 355,
+        "side": "single",
+        "crop": [
+          0.0,
+          0.0,
+          467.0,
+          673.0
+        ],
+        "sha256": "73d4c7cab8e36fb9e9f60873f6f5b1fc14b2cad2e2359eac61f0da990173a613",
+        "filename": "4045325d0d7fb04863fa133dd14664149b1bbadc4b769be715ea3aa6f599d914.pdf"
+      },
+      "image_sha256": "48f8609e5ff10a5edb610d1858b86be70c7f50e645db6e5d688bf1cb24f9cdab",
+      "reading": "Printed folio 355, genuine single page with two complete columns. Left: unnumbered mda’ sbyin dus (Herbst; ston ka’i dus), mda’ sbron (zu Hilfe rufen); separately numbered 1 mda’ mo with Pfeil, Gewehr, divination and number-five senses, and 2 mda’ mo with Taleingang. Unnumbered mda’ tshan po means Bogenschütze. Right: mda’ ’dzin means Köcher, with iṣudhi and Ak 212.88. Both proposed mda’ mo witnesses reuse QA anchor 102:23 although the scan shows two distinct headings; this binding requires correction before certification."
     }
   ],
   "candidates": [
@@ -1154,12 +1242,471 @@
       "observation_status": "observed_candidate_requires_certificate",
       "reason": "Printed heading/context observed; exact HTML component, homonym and source-anchor certification still required. This record does not grant attachment authority.",
       "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20gar%20bha/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20gar%20bha/1",
+      "html_sha256": "9b37482918102bb5108c9c7cf19fdd3c0db287d347f29a14a176cb6340677532",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:78",
+      "headword": {
+        "loc": "ka ma la gar bha",
+        "tibetan": "ཀ་མ་ལ་གར་བྷ་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading and Madhyamaka-teacher definition, Sanskrit kamalagarbha and Tār 53,15 distinguish the article from its embedded quotation. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/dbu%20ma%E2%80%99i%20tshul%20lugs/1",
+      "source_url": "https://wts-digital.badw.de/lemma/dbu%20ma%E2%80%99i%20tshul%20lugs/1",
+      "html_sha256": "c458b1d3fbfff68116fa711123d5d23e95753bb84613b6443817f9f54bc61712",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:80",
+      "headword": {
+        "loc": "dbu ma’i tshul lugs",
+        "tibetan": "དབུ་མའི་ཚུལ་ལུགས་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "rejected_proposed_article",
+      "reason": "The phrase occurs in the Kamalagarbha quotation on folio 16, not as a lexical article beginning. This proposed anchor cannot establish a heading-page link.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20go%20mi/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20go%20mi/1",
+      "html_sha256": "407d4863fa3a0963ab5a7d85e95feb52ed2735a0878243bbbef30d4ebe64cf45",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:83",
+      "headword": {
+        "loc": "ka ma la go mi",
+        "tibetan": "ཀ་མ་ལ་གོ་མི་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading, learned monk in southern India and Sanskrit kamalagomin; Tār 148,4. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20can/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20can/1",
+      "html_sha256": "02b3f68eedf67d068021af9de2b69b464acc4e5f2155f7151077d75cbabdb078",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:90",
+      "headword": {
+        "loc": "ka ma la can",
+        "tibetan": "ཀ་མ་ལ་ཅན་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading and lotus-bearing consort of Viṣṇu, supported by the khyab ’jug chun ma lexical gloss. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20ma%20la%20buddhi/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20ma%20la%20buddhi/1",
+      "html_sha256": "f732f6b81fba9db0489d1d14dc7f30cccec61799afc93c549b20b9eacafbea2f",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:93",
+      "headword": {
+        "loc": "ka ma la buddhi",
+        "tibetan": "ཀ་མ་ལ་བུདྡྷི་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading, scholar and Sanskrit kamalabuddhi; Buddhapālita-student context and Tār 113,12. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20ma%20log/1",
+      "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20ma%20log/1",
+      "html_sha256": "ef0e36713236bd5ab9a5279ea8ed1e0b213d0dd77c1589e8268a491990eefed0",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:121",
+      "headword": {
+        "loc": "kā ma log",
+        "tibetan": "ཀཱ་མ་ལོག་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered monastery heading, A-mdo and ’Dzam 49,13. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/k%C4%81%20ma%20a%20%C5%9Bo%20ka/1",
+      "source_url": "https://wts-digital.badw.de/lemma/k%C4%81%20ma%20a%20%C5%9Bo%20ka/1",
+      "html_sha256": "b716fed283c3ee8c1c13e589d95548cd84ad98947e0a1ad42761dfe31ed0bc4a",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:132",
+      "headword": {
+        "loc": "kā ma a śo ka",
+        "tibetan": "ཀཱ་མ་ཨ་ཤོ་ཀ་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered Begierden-Aśoka heading, young Aśoka and Tār 22,15. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mad/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20mad/1",
+      "html_sha256": "956cbf13af0ebc60b571ef6050f98e383e77a80485364faebf3d2a3581a22854",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:145",
+      "headword": {
+        "loc": "ka mad",
+        "tibetan": "ཀ་མད་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading, the letter ka and following thirty letters; parenthetical ka reference is not a homonym numeral. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mi%20yam/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20mi%20yam/1",
+      "html_sha256": "97ea3507ad96f8ca12efc66109b6eb97bce0195947f1fa694f4db1ff3cd1294c",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:165",
+      "headword": {
+        "loc": "ka mi yam",
+        "tibetan": "ཀ་མི་ཡམ་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading and Milz, with mcher ba lexical gloss. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mi%20log/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20mi%20log/1",
+      "html_sha256": "788e7c0b19f877be705b36a6bb8c8ff5981ff6ce798ecbfef607b7cb5c80e3c8",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:167",
+      "headword": {
+        "loc": "ka mi log",
+        "tibetan": "ཀ་མི་ལོག་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading and country definition; Nañ 64,1,4. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mig/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20mig/1",
+      "html_sha256": "0b78990196c0c3109274ff16e098c7f4931417eb1450b8b721a3d8f6e88ba239",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:173",
+      "headword": {
+        "loc": "ka mig",
+        "tibetan": "ཀ་མིག་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered Säulenquadrat heading and architectural area measure; parenthetical ka reference is not a homonym numeral. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20mu%20gnas/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20mu%20gnas/1",
+      "html_sha256": "2943e20aae6bd9bcd99ca39d4210d460430e0119acb508f0825e677ac672de40",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:189",
+      "headword": {
+        "loc": "ka mu gnas",
+        "tibetan": "ཀ་མུ་གནས་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Actual unnumbered cross-reference heading to ka ’bur / ṅas maṅ; no independent definition, so identity needs certificate-level corroboration. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20me%20ka%20me/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20me%20ka%20me/1",
+      "html_sha256": "d907f23d69f110d75a737cd98127a00efd60b083aa4b5e1708f5f3b2597ee204",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:190",
+      "headword": {
+        "loc": "ka me ka me",
+        "tibetan": "ཀ་མེ་ཀ་མེ་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading, bending here and there, alternative kam me kam me / skam me skum me; dPe 277,1. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/ka%20med/1",
+      "source_url": "https://wts-digital.badw.de/lemma/ka%20med/1",
+      "html_sha256": "16430dc5c5ba507361a528ae87812a9aa6af3e928c7cb3a3aad93f883ca01d70",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_1_34:41:206",
+      "headword": {
+        "loc": "ka med",
+        "tibetan": "ཀ་མེད་"
+      },
+      "homonym": "1",
+      "family": "wts_1_34",
+      "physical_page": 41,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Explicit raised homonym 1; unvermeidbar / unausweichlich / unbedingt notwendig begins here and continues on page 18. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99joms/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99joms/1",
+      "html_sha256": "0977a62c3210b0a00a49c764ec750d8973f371af7f3cb97b01e808eab71a5d3a",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:46",
+      "headword": {
+        "loc": "mda’ ’joms",
+        "tibetan": "མདའ་འཇོམས་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered heading, Wolfsmilchgewächs and synonym dur byid. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20rten/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20rten/1",
+      "html_sha256": "71065a032b4ab641e42078c0fc5f5abc0a5e682f81c76680447d18d4e08606dd",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:49",
+      "headword": {
+        "loc": "mda’ rten",
+        "tibetan": "མདའ་རྟེན་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered bow heading; generic definition requires exact heading and neighbouring sequence, not definition alone. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20lto%20ba/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20lto%20ba/1",
+      "html_sha256": "adad744d29253d3eb7fe8e94970e0eed9a8903834b47a8385eaee7cba9768a59",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:51",
+      "headword": {
+        "loc": "mda’ lto ba",
+        "tibetan": "མདའ་ལྟོ་བ་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered bow heading; distinguish adjacent mda’ rten and mda’ ltoṅ by actual heading. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20lto%E1%B9%85/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20lto%E1%B9%85/1",
+      "html_sha256": "dc49a21489da95f24cb1a3916e30a53ab492a7d39fcce500760504622e34621d",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:53",
+      "headword": {
+        "loc": "mda’ ltoṅ",
+        "tibetan": "མདའ་ལྟོང་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered arrow-nock heading, alternative mda’ stoṅ, Ak 376.17 puṅkha and Bu-Sz 50,6. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20stan/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20stan/1",
+      "html_sha256": "32a60e32036ab6a714ed0065d2c149853474ed7ca1570b286a8e0343a0096b07",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:64",
+      "headword": {
+        "loc": "mda’ stan",
+        "tibetan": "མདའ་སྟན་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered bow heading; generic definition needs actual heading and neighbouring sequence. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20sto%E1%B9%85/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20sto%E1%B9%85/1",
+      "html_sha256": "270d0b1991481c0cf4047e1ef8cf0aab80e6f8687a447e56c2f5e7c1f92322ea",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:66",
+      "headword": {
+        "loc": "mda’ stoṅ",
+        "tibetan": "མདའ་སྟོང་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Explicit raised 1 heading is a cross-reference to mda’ ltoṅ, not the adjacent raised 2 article. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20sto%E1%B9%85/2",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20sto%E1%B9%85/2",
+      "html_sha256": "361d18baea27297b5edd000dcf68c1a77995ecc6c563c7baf8e83e6075470ebc",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:100:67",
+      "headword": {
+        "loc": "mda’ stoṅ",
+        "tibetan": "མདའ་སྟོང་"
+      },
+      "homonym": "2",
+      "family": "wts_35_51",
+      "physical_page": 100,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Explicit raised 2 heading has wüste Talöffnung and Vḍk-M 114,9; distinguish the preceding raised 1 cross-reference. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20sbyin%20dus/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20sbyin%20dus/1",
+      "html_sha256": "a1494bb1aed0f8346d9dfacda15adf741bfc8b017c8a1e610208ac1f93286c3d",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:3",
+      "headword": {
+        "loc": "mda’ sbyin dus",
+        "tibetan": "མདའ་སྦྱིན་དུས་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered Herbst heading, alternative mda’ sbyin and ston ka’i dus gloss; Schuh 2012:1425. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20sbron/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20sbron/1",
+      "html_sha256": "fe6a788e135be4034de238825a502caad7b8a031c5cfd94c732f56094549d0a9",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:7",
+      "headword": {
+        "loc": "mda’ sbron",
+        "tibetan": "མདའ་སྦྲོན་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered zu Hilfe rufen heading and rogs pa bod pa gloss. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20mo/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20mo/1",
+      "html_sha256": "2182d77421b5d9aefc9f20666837140f4ea94f7dfd5d1beccc6cc9c182674b5d",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:23",
+      "headword": {
+        "loc": "mda’ mo",
+        "tibetan": "མདའ་མོ་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "deferred",
+      "reason": "The scan independently shows raised 1 (Pfeil and further senses) and raised 2 (Taleingang) as separate headings, but both proposals reuse QA anchor 102:23. Correct source-anchor binding is required; do not certify either from the shared anchor.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20mo/2",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20mo/2",
+      "html_sha256": "6981be94468727cac1b638058b3d44cfe61484c96dbca1f5e0ae95194ba19c7b",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:23",
+      "headword": {
+        "loc": "mda’ mo",
+        "tibetan": "མདའ་མོ་"
+      },
+      "homonym": "2",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "deferred",
+      "reason": "The scan independently shows raised 1 (Pfeil and further senses) and raised 2 (Taleingang) as separate headings, but both proposals reuse QA anchor 102:23. Correct source-anchor binding is required; do not certify either from the shared anchor.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20tshan%20po/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20tshan%20po/1",
+      "html_sha256": "1ba619e5d70856920d7863618fa4684949f7a22cf7400f1de6d75ed6de2f672e",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:37",
+      "headword": {
+        "loc": "mda’ tshan po",
+        "tibetan": "མདའ་ཚན་པོ་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered Bogenschütze heading and mda’ ’phen mkhan gloss. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
+    },
+    {
+      "source_id": "badw:https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99dzin/1",
+      "source_url": "https://wts-digital.badw.de/lemma/mda%E2%80%99%20%E2%80%99dzin/1",
+      "html_sha256": "bb1c096b6f2af1720c51e723760604ae9fc7fe1a95aeb732171ccb1f874621d7",
+      "input_identity": "623ae62604430ff582bab9477bafe1ba502b22944e2f40aae171422f30aad962",
+      "anchor": "wts_35_51:102:40",
+      "headword": {
+        "loc": "mda’ ’dzin",
+        "tibetan": "མདའ་འཛིན་"
+      },
+      "homonym": "1",
+      "family": "wts_35_51",
+      "physical_page": 102,
+      "observation_status": "observed_candidate_requires_certificate",
+      "reason": "Unnumbered Köcher heading, iṣudhi / Ak 212.88 and mda’ snod gloss; distinct from following mda’ gźu. Developer-agent image observation only; source-bound certification remains outstanding. Unnumbered print is not evidence of editorial homonym 1.",
+      "eligible_for_original_print_link": false
     }
   ],
   "counts": {
-    "printed_pages_observed": 8,
-    "physical_pages_observed": 7,
-    "candidates_observed": 57,
+    "printed_pages_observed": 12,
+    "physical_pages_observed": 10,
+    "candidates_observed": 84,
     "new_verified_links": 0
   }
 }
